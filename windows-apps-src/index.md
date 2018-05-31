@@ -1,24 +1,51 @@
 ---
 author: mijacobs
 layout: LandingPage
-description: "ユニバーサル Windows プラットフォーム (UWP) では、どのような Windows デバイス (PC、電話、Xbox One、HoloLens など) 向けのアプリでも構築して、ストアに公開できます。"
-title: "UWP ドキュメンテーション - UWP アプリ開発者 |Microsoft Docs"
+description: ユニバーサル Windows プラットフォーム (UWP) では、どのような Windows デバイス (PC、電話、Xbox One、HoloLens など) 向けのアプリでも構築して、ストアに公開できます。
+title: UWP ドキュメンテーション - UWP アプリ開発者 |Microsoft Docs
 ms.prod: windows
-ms.topic: article
+ms.topic: landing-page
 ms.author: mijacobs
 ms.date: 08/4/2017
 ms.technology: uwp
-keywords: "Windows UWP, ユニバーサル Windows プラットフォーム, Windows ランタイム API、Windows API、Windows API リファレンス、WinRT API, Windows API リファレンス, UWP API、UWP API リファレンス, UWP の開発, UWP の設計, UWP の公開"
-ms.openlocfilehash: 92d80e140ee77ca29b04303e226056324e774eeb
-ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+keywords: Windows UWP, ユニバーサル Windows プラットフォーム, Windows ランタイム API、Windows API、Windows API リファレンス、WinRT API, Windows API リファレンス, UWP API、UWP API リファレンス, UWP の開発, UWP の設計, UWP の公開
+ms.localizationpriority: medium
+ms.openlocfilehash: 48faa2eb29e29dd95028d8404190a7add2536352
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1692337"
 ---
-# <a name="universal-windows-platform-documentation"></a><span data-ttu-id="72a63-104">ユニバーサル Windows プラットフォームのドキュメント</span><span class="sxs-lookup"><span data-stu-id="72a63-104">Universal Windows Platform documentation</span></span>
-<span data-ttu-id="72a63-105">ユニバーサル Windows プラットフォーム (UWP) では、どのような Windows デバイス (PC、電話、Xbox One、HoloLens など) 向けのアプリでも構築して、ストアに公開できます。</span><span class="sxs-lookup"><span data-stu-id="72a63-105">The Universal Windows Platform (UWP) lets you build apps for any Windows device—PCs, phones, Xbox One, HoloLens, and more—and publish them to the Store.</span></span>
+# <a name="universal-windows-platform-documentation"></a>ユニバーサル Windows プラットフォームのドキュメント
+ユニバーサル Windows プラットフォーム (UWP) では、どのような Windows デバイス (PC、電話、Xbox One、HoloLens など) 向けのアプリでも構築して、Microsoft Store に公開できます。
 
 <ul class="panelContent cardsF">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_whats-new.svg" alt="What's new icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>新着情報</h3>
+                        <p>
+                            <a href="whats-new/windows-10-version-latest.md">新しい API と新機能</a>
+                        </p>
+                        <p>
+                            <a href="whats-new/windows-docs-latest.md">ドキュメントの新着情報</a>
+                        </p>
+                        <p>
+                            <a href="whats-new/experimental-apis.md">試験的な API</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -29,18 +56,18 @@ ms.lasthandoff: 08/08/2017
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><span data-ttu-id="72a63-106">はじめに</span><span class="sxs-lookup"><span data-stu-id="72a63-106">Get started</span></span></h3>
+                        <h3>はじめに</h3>
                         <p>
-                            <a href="get-started/whats-a-uwp.md"><span data-ttu-id="72a63-107">UWP アプリとは</span><span class="sxs-lookup"><span data-stu-id="72a63-107">What's a UWP app?</span></span></a>
+                            <a href="get-started/universal-application-platform-guide.md">UWP アプリとは</a>
                         </p>
                         <p>
-                            <a href="get-started/sign-up.md"><span data-ttu-id="72a63-108">開発者アカウントへのサインアップ</span><span class="sxs-lookup"><span data-stu-id="72a63-108">Sign up for a developer account</span></span></a>
+                            <a href="get-started/sign-up.md">開発者アカウントへのサインアップ</a>
                         </p>
                         <p>
-                            <a href="get-started/get-set-up.md"><span data-ttu-id="72a63-109">準備</span><span class="sxs-lookup"><span data-stu-id="72a63-109">Get set up</span></span></a>
+                            <a href="get-started/get-set-up.md">準備</a>
                         </p>
                         <p>
-                            <a href="get-started/your-first-app.md"><span data-ttu-id="72a63-110">初めてのアプリの作成</span><span class="sxs-lookup"><span data-stu-id="72a63-110">Create your first app</span></span></a>
+                            <a href="get-started/your-first-app.md">初めてのアプリの作成</a>
                         </p>
                     </div>
                 </div>
@@ -57,22 +84,19 @@ ms.lasthandoff: 08/08/2017
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><span data-ttu-id="72a63-111">設計と UI</span><span class="sxs-lookup"><span data-stu-id="72a63-111">Design and UI</span></span></h3>
+                        <h3>設計と UI</h3>
                         <p>
-                            <a href="layout/index.md"><span data-ttu-id="72a63-112">レイアウト</span><span class="sxs-lookup"><span data-stu-id="72a63-112">Layout</span></span></a>
+                            <a href="design/basics/design-and-ui-intro.md">設計の基本</a>
+                        </p>
+                         <p>
+                            <a href="design/fluent-design-system/index.md">Fluent Design System</a>
                         </p>
                         <p>
-                            <a href="style/index.md"><span data-ttu-id="72a63-113">スタイル</span><span class="sxs-lookup"><span data-stu-id="72a63-113">Style</span></span></a>
+                            <a href="design/controls-and-patterns/index.md">コントロールとパターン</a>
                         </p>
                         <p>
-                            <a href="controls-and-patterns/index.md"><span data-ttu-id="72a63-114">コントロールとパターン</span><span class="sxs-lookup"><span data-stu-id="72a63-114">Controls and patterns</span></span></a>
-                        </p>
-                        <p>
-                            <a href="design-downloads/index.md"><span data-ttu-id="72a63-115">設計ツールキット</span><span class="sxs-lookup"><span data-stu-id="72a63-115">Design toolkits</span></span></a>
-                        </p>
-                        <p>
-                            <a href="input-and-devices/index.md"><span data-ttu-id="72a63-116">入力とデバイス</span><span class="sxs-lookup"><span data-stu-id="72a63-116">Input and devices</span></span></a>
-                        </p>
+                            <a href="design/downloads/index.md">設計ツールキット</a>
+                        </p>                      
                     </div>
                 </div>
             </div>
@@ -88,21 +112,27 @@ ms.lasthandoff: 08/08/2017
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><span data-ttu-id="72a63-117">優れたアプリの開発</span><span class="sxs-lookup"><span data-stu-id="72a63-117">Develop great apps</span></span></h3>
+                        <h3>アプリを開発する</h3>
                         <p>
-                            <a href="packaging/index.md"><span data-ttu-id="72a63-118">アプリのパッケージ化</span><span class="sxs-lookup"><span data-stu-id="72a63-118">Packaging apps</span></span></a>
+                            <a href="enterprise/index.md">エンタープライズ アプリ</a>
                         </p>
                         <p>
-                            <a href="porting/index.md"><span data-ttu-id="72a63-119">Windows 10 へのアプリの移植</span><span class="sxs-lookup"><span data-stu-id="72a63-119">Porting apps to Windows 10</span></span></a>
+                            <a href="packaging/index.md">アプリのパッケージ化</a>
                         </p>
                         <p>
-                            <a href="winrt-components/index.md"><span data-ttu-id="72a63-120">Windows ランタイム コンポーネント</span><span class="sxs-lookup"><span data-stu-id="72a63-120">Windows Runtime components</span></span></a>
+                            <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">UWP コミュニティ ツールキット</a>
                         </p>
                         <p>
-                            <a href="xbox-apps/index.md"><span data-ttu-id="72a63-121">Xbox One の UWP</span><span class="sxs-lookup"><span data-stu-id="72a63-121">UWP on Xbox One</span></span></a>
+                            <a href="porting/index.md">Windows 10 へのアプリの移植</a>
                         </p>
                         <p>
-                            <a href="apps-for-education/index.md"><span data-ttu-id="72a63-122">UWP の教育アプリ</span><span class="sxs-lookup"><span data-stu-id="72a63-122">UWP education apps</span></span></a>
+                            <a href="winrt-components/index.md">Windows ランタイム コンポーネント</a>
+                        </p>
+                        <p>
+                            <a href="apps-for-education/index.md">教育アプリ</a>
+                        </p>
+                        <p>
+                            <a href="porting/apps-on-arm.md">ARM 版 Windows 10</a>
                         </p>
                     </div>
                 </div>
@@ -115,25 +145,56 @@ ms.lasthandoff: 08/08/2017
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
+                            <img src="/media/common/i_build.svg" alt="Develop Games icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>ゲームの開発</h3>
+                        <p>
+                            <a href="gaming/e2e.md">Windows 10 ゲーム開発ガイド</a>
+                        </p>
+                        <p>
+                            <a href="gaming/index.md">ゲーム プログラミング</a>
+                        </p>
+                        <p>
+                            <a href="gaming/directx-programming.md">DirectX プログラミング</a>
+                        </p>
+                        <p>
+                            <a href="xbox-apps/index.md">Xbox One の UWP</a>
+                        </p>
+                        <p>
+                            <a href="xbox-live/index.md">Xbox Live</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>    
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
                             <img src="/media/common/i_upgrade.svg" alt="Publish icon" />
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><span data-ttu-id="72a63-123">公開</span><span class="sxs-lookup"><span data-stu-id="72a63-123">Publish</span></span></h3>
+                        <h3>公開</h3>
                         <p>
-                            <a href="publish/app-submissions.md"><span data-ttu-id="72a63-124">アプリの申請</span><span class="sxs-lookup"><span data-stu-id="72a63-124">App submissions</span></span></a>
+                            <a href="publish/app-submissions.md">アプリの申請</a>
                         </p>
                         <p>
-                            <a href="publish/the-app-certification-process.md"><span data-ttu-id="72a63-125">アプリの認定プロセス</span><span class="sxs-lookup"><span data-stu-id="72a63-125">App certification process</span></span></a>
+                            <a href="publish/the-app-certification-process.md">アプリの認定プロセス</a>
                         </p>
                         <p>
-                            <a href="publish/upload-app-packages.md"><span data-ttu-id="72a63-126">アプリ パッケージのアップロード</span><span class="sxs-lookup"><span data-stu-id="72a63-126">Upload app packages</span></span></a>
+                            <a href="publish/upload-app-packages.md">アプリ パッケージのアップロード</a>
                         </p>
                         <p>
-                            <a href="publish/create-your-app-by-reserving-a-name.md"><span data-ttu-id="72a63-127">名前の予約</span><span class="sxs-lookup"><span data-stu-id="72a63-127">Reserve a name</span></span></a>
+                            <a href="publish/create-your-app-by-reserving-a-name.md">名前の予約</a>
                         </p>
                         <p>
-                            <a href="publish/set-app-pricing-and-availability.md"><span data-ttu-id="72a63-128">アプリの価格と使用可能状況の設定</span><span class="sxs-lookup"><span data-stu-id="72a63-128">Set app pricing and availability</span></span></a>
+                            <a href="publish/set-app-pricing-and-availability.md">アプリの価格と使用可能状況の設定</a>
                         </p>
                     </div>
                 </div>
@@ -150,12 +211,18 @@ ms.lasthandoff: 08/08/2017
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><span data-ttu-id="72a63-129">API リファレンス</span><span class="sxs-lookup"><span data-stu-id="72a63-129">API reference</span></span></h3>
+                        <h3>API reference (API リファレンス)</h3>
                         <p>
-                            <a href="whats-new/windows-10-version-1703.md"><span data-ttu-id="72a63-130">新着情報</span><span class="sxs-lookup"><span data-stu-id="72a63-130">What's new</span></span></a>
+                            <a href="//docs.microsoft.com/uwp/">ユニバーサル Windows プラットフォーム API</a>
                         </p>
                         <p>
-                            <a href="//docs.microsoft.com/uwp/"><span data-ttu-id="72a63-131">ユニバーサル Windows プラットフォーム API</span><span class="sxs-lookup"><span data-stu-id="72a63-131">Universal Windows Platform APIs</span></span></a>
+                            <a href="//docs.microsoft.com/uwp/API">Windows UWP 名前空間</a>
+                        </p>
+                        <p>
+                            <a href="//docs.microsoft.com/uwp/extension-sdks">拡張 SDK</a>
+                        </p>
+                        <p>
+                            <a href="//docs.microsoft.com/uwp/schemas">スキーマ</a>
                         </p>
                     </div>
                 </div>
@@ -172,21 +239,21 @@ ms.lasthandoff: 08/08/2017
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><span data-ttu-id="72a63-132">関連リンク</span><span class="sxs-lookup"><span data-stu-id="72a63-132">Related links</span></span></h3>
+                        <h3>関連リンク</h3>
                         <p>
-                            <a href="//docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps"><span data-ttu-id="72a63-133">UWP アプリ用の Win32 API と COM API</span><span class="sxs-lookup"><span data-stu-id="72a63-133">Win32 and COM APIs for UWP apps</span></span></a>
+                            <a href="//docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps">UWP アプリ用の Win32 API と COM API</a>
                         </p>
                         <p>
-                            <a href="//msdn.microsoft.com/library/windows/apps/mt185501.aspx"><span data-ttu-id="72a63-134">UWP アプリの .NET</span><span class="sxs-lookup"><span data-stu-id="72a63-134">.NET for UWP apps</span></span></a>
+                            <a href="//msdn.microsoft.com/library/windows/apps/mt185501.aspx">UWP アプリの .NET</a>
                         </p>
                         <p>
-                            <a href="//msdn.microsoft.com/library/windows/apps/mt691886.aspx"><span data-ttu-id="72a63-135">Microsoft Store Services SDK API</span><span class="sxs-lookup"><span data-stu-id="72a63-135">Microsoft Store Services SDK APIs</span></span></a>
+                            <a href="//msdn.microsoft.com/library/windows/apps/mt691886.aspx">Microsoft Store Services SDK API</a>
                         </p>
                         <p>
-                            <a href="//docs.microsoft.com/en-us/uwp/extension-sdks"><span data-ttu-id="72a63-136">デバイス ファミリの拡張 SDK および API コントラクト</span><span class="sxs-lookup"><span data-stu-id="72a63-136">Device Family Extension SDKs and API contracts</span></span></a>
+                            <a href="//docs.microsoft.com/uwp/extension-sdks">デバイス ファミリの拡張 SDK および API コントラクト</a>
                         </p>
                         <p>
-                            <a href="//docs.microsoft.com/uwp/schemas/"><span data-ttu-id="72a63-137">UWP アプリのファイルと XML スキーマの仕様</span><span class="sxs-lookup"><span data-stu-id="72a63-137">File and XML schema specifications for UWP apps</span></span></a>
+                            <a href="//docs.microsoft.com/uwp/schemas/">UWP アプリのファイルと XML スキーマの仕様</a>
                         </p>
                     </div>
                 </div>

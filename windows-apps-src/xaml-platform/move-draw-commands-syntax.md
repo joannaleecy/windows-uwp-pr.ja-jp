@@ -1,247 +1,246 @@
 ---
 author: jwmsft
-description: "ここでは、パスの形状を XAML 属性値として指定するために使うことのできる、移動と描画のコマンド (ミニ言語) について説明します。"
-title: "移動と描画のコマンド構文"
+description: ここでは、パスの形状を XAML 属性値として指定するために使うことのできる、移動と描画のコマンド (ミニ言語) について説明します。
+title: 移動と描画のコマンド構文
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ea01f8191190db0a9b13b8081bc6fef687369c13
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, UWP
+ms.localizationpriority: medium
+ms.openlocfilehash: a66faebf8447253cc158ea8aa2312eb61474bc08
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/22/2018
+ms.locfileid: "1675259"
 ---
+# <a name="move-and-draw-commands-syntax"></a><span data-ttu-id="efe9c-104">移動と描画のコマンド構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-104">Move and draw commands syntax</span></span>
 
-# <a name="move-and-draw-commands-syntax"></a>移動と描画のコマンド構文
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+<span data-ttu-id="efe9c-105">ここでは、パスの形状を XAML 属性値として指定するために使うことのできる、移動と描画のコマンド (ミニ言語) について説明します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-105">Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value.</span></span> <span data-ttu-id="efe9c-106">移動と描画のコマンドは、ベクター グラフィックや図形の出力に対応するさまざまなデザイン ツールやグラフィックス ツールで、シリアル化形式や交換形式として使われます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-106">Move and draw commands are used by many design and graphics tools that can output a vector graphic or shape, as a serialization and interchange format.</span></span>
 
-ここでは、パスの形状を XAML 属性値として指定するために使うことのできる、移動と描画のコマンド (ミニ言語) について説明します。 移動と描画のコマンドは、ベクター グラフィックや図形の出力に対応するさまざまなデザイン ツールやグラフィックス ツールで、シリアル化形式や交換形式として使われます。
+## <a name="properties-that-use-move-and-draw-command-strings"></a><span data-ttu-id="efe9c-107">移動と描画のコマンド文字列を使うプロパティ</span><span class="sxs-lookup"><span data-stu-id="efe9c-107">Properties that use move and draw command strings</span></span>
 
-## <a name="properties-that-use-move-and-draw-command-strings"></a>移動と描画のコマンド文字列を使うプロパティ
+<span data-ttu-id="efe9c-108">移動と描画のコマンド構文は、XAML の内部型コンバーターによってサポートされます。コンバーターはコマンドを解析し、実行時にグラフィックス表現を生成します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-108">The move and draw command syntax is supported by an internal type converter for XAML, which parses the commands and produces a run-time graphics representation.</span></span> <span data-ttu-id="efe9c-109">この表現は、基本的には完成したベクター セットであり、そのまま表示することができます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-109">This representation is basically a finished set of vectors that is ready for presentation.</span></span> <span data-ttu-id="efe9c-110">ただし、ベクター自体では表現の詳細までは定義されないため、他の値を要素に設定する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="efe9c-110">The vectors themselves don't complete the presentation details; you'll still need to set other values on the elements.</span></span> <span data-ttu-id="efe9c-111">[**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) オブジェクトについては、[**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) や [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383) などのプロパティに値を設定してから、その **Path** を何らかの方法でビジュアル ツリーに関連付ける必要もあります。</span><span class="sxs-lookup"><span data-stu-id="efe9c-111">For a [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) object you also need values for [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill), [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383), and other properties, and then that **Path** must be connected to the visual tree somehow.</span></span> <span data-ttu-id="efe9c-112">[**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) オブジェクトでは、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-112">For a [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) object, set the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) property.</span></span>
 
-移動と描画のコマンド構文は、XAML の内部型コンバーターによってサポートされます。コンバーターはコマンドを解析し、実行時にグラフィックス表現を生成します。 この表現は、基本的には完成したベクター セットであり、そのまま表示することができます。 ただし、ベクター自体では表現の詳細までは定義されないため、他の値を要素に設定する必要もあります。 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) オブジェクトについては、[**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) や [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383) などのプロパティに値を設定してから、その **Path** を何らかの方法でビジュアル ツリーに関連付ける必要もあります。 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) オブジェクトでは、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) プロパティを設定します。
-
-Windows ランタイムには、移動と描画のコマンドを表す文字列を使うことのできるプロパティとして、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) と [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723) の 2 つがあります。 通常、これらのプロパティに移動と描画のコマンドを指定するときは、その要素に必要な他の属性と共に、コマンドを XAML 属性値として設定します。 単純な例としては次のようになります。
+<span data-ttu-id="efe9c-113">Windows ランタイムには、移動と描画のコマンドを表す文字列を使うことのできるプロパティとして、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) と [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723) の 2 つがあります。</span><span class="sxs-lookup"><span data-stu-id="efe9c-113">There are two properties in the Windows Runtime that can use a string representing move and draw commands: [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) and [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723).</span></span> <span data-ttu-id="efe9c-114">通常、これらのプロパティに移動と描画のコマンドを指定するときは、その要素に必要な他の属性と共に、コマンドを XAML 属性値として設定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-114">If you set one of these properties by specifying move and draw commands, you typically set it as a XAML attribute value along with other required attributes of that element.</span></span> <span data-ttu-id="efe9c-115">単純な例としては次のようになります。</span><span class="sxs-lookup"><span data-stu-id="efe9c-115">Without getting into the specifics, here's what that looks like:</span></span>
 
 ```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) でも移動と描画のコマンドを使うことができます。 移動と描画のコマンドを使う [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) オブジェクトは、[**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) オブジェクトに含まれる他の [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 型と結合して、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) の値として使うこともできます。 ただし、この使い方は、属性定義のデータで移動と描画のコマンドを使う方法ほど一般的ではありません。
+<span data-ttu-id="efe9c-116">[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) でも移動と描画のコマンドを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-116">[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) can also use move and draw commands.</span></span> <span data-ttu-id="efe9c-117">移動と描画のコマンドを使う [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) オブジェクトは、[**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) オブジェクトに含まれる他の [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) 型と結合して、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) の値として使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-117">You might combine a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) object that uses move and draw commands with other [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) types in a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) object, which you'd then use as the value for [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356).</span></span> <span data-ttu-id="efe9c-118">ただし、この使い方は、属性定義のデータで移動と描画のコマンドを使う方法ほど一般的ではありません。</span><span class="sxs-lookup"><span data-stu-id="efe9c-118">But that isn't nearly as common as using move and draw commands for attribute-defined data.</span></span>
 
-## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>移動と描画のコマンドの使用と **PathGeometry** の使用
+## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a><span data-ttu-id="efe9c-119">移動と描画のコマンドの使用と **PathGeometry** の使用</span><span class="sxs-lookup"><span data-stu-id="efe9c-119">Using move and draw commands versus using a **PathGeometry**</span></span>
 
-Windows ランタイム XAML では、移動と描画のコマンドにより、単一の [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) オブジェクトと [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) プロパティの値を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) が生成されます。 各描画コマンドは、その単一の **PathFigure** の [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) コレクションに [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) 派生クラスを生成します。移動コマンドは [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166) を変更します。終了コマンドがある場合は、[**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) が **true** に設定されます。 実行時に **Data** の値を調べると、この構造をオブジェクト モデルとしてたどることができます。
+<span data-ttu-id="efe9c-120">Windows ランタイム XAML では、移動と描画のコマンドにより、単一の [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) オブジェクトと [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) プロパティの値を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) が生成されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-120">For Windows Runtime XAML, the move and draw commands produce a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a single [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) object with a [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) property value.</span></span> <span data-ttu-id="efe9c-121">各描画コマンドは、その単一の **PathFigure** の [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) コレクションに [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) 派生クラスを生成します。移動コマンドは [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166) を変更します。終了コマンドがある場合は、[**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) が **true** に設定されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-121">Each draw command produces a [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) derived class in that single **PathFigure**'s [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) collection, the move command changes the [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166), and existence of a close command sets [**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) to **true**.</span></span> <span data-ttu-id="efe9c-122">実行時に **Data** の値を調べると、この構造をオブジェクト モデルとしてたどることができます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-122">You can navigate this structure as an object model if you examine the **Data** values at run time.</span></span>
 
-## <a name="the-basic-syntax"></a>基本構文
+## <a name="the-basic-syntax"></a><span data-ttu-id="efe9c-123">基本構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-123">The basic syntax</span></span>
 
-移動と描画のコマンド構文を簡単にまとめると、次のようになります。
+<span data-ttu-id="efe9c-124">移動と描画のコマンド構文を簡単にまとめると、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="efe9c-124">The syntax for move and draw commands can be summarized like this:</span></span>
 
-1.  まず、オプションの塗りつぶしルールを指定します。 通常、これを指定するのは、既定の **EvenOdd** では望ましくない場合だけです  (**EvenOdd** については後ほど詳しく説明します)。
-2.  移動コマンドを 1 つだけ指定します。
-3.  1 つ以上の描画コマンドを指定します。
-4.  終了コマンドを指定します。 終了コマンドは省略することもできますが、その場合は図が開いたままになります (これは一般的ではありません)。
+1.  <span data-ttu-id="efe9c-125">まず、オプションの塗りつぶしルールを指定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-125">Start with an optional fill rule.</span></span> <span data-ttu-id="efe9c-126">通常、これを指定するのは、既定の **EvenOdd** では望ましくない場合だけです </span><span class="sxs-lookup"><span data-stu-id="efe9c-126">Typically you specify this only if you don't want the **EvenOdd** default.</span></span> <span data-ttu-id="efe9c-127">(**EvenOdd** については後ほど詳しく説明します)。</span><span class="sxs-lookup"><span data-stu-id="efe9c-127">(More about **EvenOdd** later.)</span></span>
+2.  <span data-ttu-id="efe9c-128">移動コマンドを 1 つだけ指定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-128">Specify exactly one move command.</span></span>
+3.  <span data-ttu-id="efe9c-129">1 つ以上の描画コマンドを指定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-129">Specify one or more draw commands.</span></span>
+4.  <span data-ttu-id="efe9c-130">終了コマンドを指定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-130">Specify a close command.</span></span> <span data-ttu-id="efe9c-131">終了コマンドは省略することもできますが、その場合は図が開いたままになります (これは一般的ではありません)。</span><span class="sxs-lookup"><span data-stu-id="efe9c-131">You can omit a close command , but that would leave your figure open (that's uncommon).</span></span>
 
-この構文の一般的な規則は次のとおりです。
+<span data-ttu-id="efe9c-132">この構文の一般的な規則は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="efe9c-132">General rules of this syntax are:</span></span>
 
--   各コマンドは 1 文字で表されます。
--   コマンドの文字は大文字または小文字で指定できます。 後で説明するように、大文字と小文字は区別されます。
--   通常、終了コマンド以外の各コマンドには 1 つ以上の数値が続きます。
--   1 つのコマンドに複数の数値を指定する場合は、コンマまたはスペースで区切ります。
+-   <span data-ttu-id="efe9c-133">各コマンドは 1 文字で表されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-133">Each command is represented by exactly one letter.</span></span>
+-   <span data-ttu-id="efe9c-134">コマンドの文字は大文字または小文字で指定できます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-134">That letter can be upper-case or lower-case.</span></span> <span data-ttu-id="efe9c-135">後で説明するように、大文字と小文字は区別されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-135">Case matters, as we'll describe.</span></span>
+-   <span data-ttu-id="efe9c-136">通常、終了コマンド以外の各コマンドには 1 つ以上の数値が続きます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-136">Each command except the close command is typically followed by one or more numbers.</span></span>
+-   <span data-ttu-id="efe9c-137">1 つのコマンドに複数の数値を指定する場合は、コンマまたはスペースで区切ります。</span><span class="sxs-lookup"><span data-stu-id="efe9c-137">If more than one number for a command, separate with a comma or space.</span></span>
 
-**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
+<span data-ttu-id="efe9c-138">**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**</span><span class="sxs-lookup"><span data-stu-id="efe9c-138">**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**</span></span>
 
-描画コマンドの多くでは点が使われますが、これは _x,y_ 値として指定します。 \*_points_ というプレースホルダーで示されている部分には、点の _x,y_ 値として 2 つの 10 進数値を指定できます。
+<span data-ttu-id="efe9c-139">描画コマンドの多くでは点が使われますが、これは _x,y_ 値として指定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-139">Many of the draw commands use points, where you provide an _x,y_ value.</span></span> <span data-ttu-id="efe9c-140">\*_points_ というプレースホルダーで示されている部分には、点の _x,y_ 値として 2 つの 10 進数値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-140">Whenever you see a \*_points_ placeholder you can assume you're giving two decimal values for the _x,y_ value of a point.</span></span>
 
-空白がなくても結果があいまいにならない場合は、空白を省略できます。 すべての数値 (ポイントとサイズ) の区切り文字をコンマにすると、空白をすべて省略することができます。 たとえば、`F1M0,58L2,56L6,60L13,51L15,53L6,64z` という使い方は正当です。 ただし、読みやすくするために、コマンドの間には空白を含めるのが一般的です。
+<span data-ttu-id="efe9c-141">空白がなくても結果があいまいにならない場合は、空白を省略できます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-141">White space can often be omitted when the result is not ambiguous.</span></span> <span data-ttu-id="efe9c-142">すべての数値 (ポイントとサイズ) の区切り文字をコンマにすると、空白をすべて省略することができます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-142">You can in fact omit all white space if you use commas as your separator for all number sets (points and size).</span></span> <span data-ttu-id="efe9c-143">たとえば、`F1M0,58L2,56L6,60L13,51L15,53L6,64z` という使い方は正当です。</span><span class="sxs-lookup"><span data-stu-id="efe9c-143">For example, this usage is legal: `F1M0,58L2,56L6,60L13,51L15,53L6,64z`.</span></span> <span data-ttu-id="efe9c-144">ただし、読みやすくするために、コマンドの間には空白を含めるのが一般的です。</span><span class="sxs-lookup"><span data-stu-id="efe9c-144">But it's more typical to include white space between commands for clarity.</span></span>
 
-コンマを 10 進数の小数点として使わないでください。コマンド文字列は XAML によって解釈され、**en-us** ロケール以外で使われるカルチャ固有の数値形式の規則は考慮されません。
+<span data-ttu-id="efe9c-145">コンマを 10 進数の小数点として使わないでください。コマンド文字列は XAML によって解釈され、**en-us** ロケール以外で使われるカルチャ固有の数値形式の規則は考慮されません。</span><span class="sxs-lookup"><span data-stu-id="efe9c-145">Don't use commas as the decimal point for decimal numbers; the command string is interpreted by XAML and doesn't account for culture-specific number-formatting conventions that differ from those used in the **en-us** locale.</span></span>
 
-## <a name="syntax-specifics"></a>構文仕様
+## <a name="syntax-specifics"></a><span data-ttu-id="efe9c-146">構文仕様</span><span class="sxs-lookup"><span data-stu-id="efe9c-146">Syntax specifics</span></span>
 
-**塗りつぶしルール**
+**<span data-ttu-id="efe9c-147">塗りつぶしルール</span><span class="sxs-lookup"><span data-stu-id="efe9c-147">Fill rule</span></span>**
 
-オプションの塗りつぶしルールとして指定できる値には、**F0** と **F1** の 2 つがあります  (**F** は常に大文字です)。**F0** が既定のルールです。これは **EvenOdd** の塗りつぶし動作になるので、通常は指定しません。 **Nonzero** の塗りつぶし動作を有効にするには、**F1** を使います。 これらの塗りつぶしの値は、[**FillRule**](https://msdn.microsoft.com/library/windows/apps/br210030) 列挙体の値と対応しています。
+<span data-ttu-id="efe9c-148">オプションの塗りつぶしルールとして指定できる値には、**F0** と **F1** の 2 つがあります </span><span class="sxs-lookup"><span data-stu-id="efe9c-148">There are two possible values for the optional fill rule: **F0** or **F1**.</span></span> <span data-ttu-id="efe9c-149">(**F** は常に大文字です)。**F0** が既定のルールです。これは **EvenOdd** の塗りつぶし動作になるので、通常は指定しません。</span><span class="sxs-lookup"><span data-stu-id="efe9c-149">(The **F** is always uppercase.) **F0** is the default value; it produces **EvenOdd** fill behavior, so you don't typically specify it.</span></span> <span data-ttu-id="efe9c-150">**Nonzero** の塗りつぶし動作を有効にするには、**F1** を使います。</span><span class="sxs-lookup"><span data-stu-id="efe9c-150">Use **F1** to get the **Nonzero** fill behavior.</span></span> <span data-ttu-id="efe9c-151">これらの塗りつぶしの値は、[**FillRule**](https://msdn.microsoft.com/library/windows/apps/br210030) 列挙体の値と対応しています。</span><span class="sxs-lookup"><span data-stu-id="efe9c-151">These fill values align with the values of the [**FillRule**](https://msdn.microsoft.com/library/windows/apps/br210030) enumeration.</span></span>
 
-**移動コマンド**
+**<span data-ttu-id="efe9c-152">移動コマンド</span><span class="sxs-lookup"><span data-stu-id="efe9c-152">Move command</span></span>**
 
-新しい図の始点を指定します。
+<span data-ttu-id="efe9c-153">新しい図の始点を指定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-153">Specifies the start point of a new figure.</span></span>
 
-| 構文 |
+| <span data-ttu-id="efe9c-154">構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-154">Syntax</span></span> |
 |--------|
-| `M ` _startPoint_ <br/>- または -<br/>`m` _startPoint_|
+| `M ` _<span data-ttu-id="efe9c-155">startPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-155">startPoint</span></span>_ <br/><span data-ttu-id="efe9c-156">- または -</span><span class="sxs-lookup"><span data-stu-id="efe9c-156">- or -</span></span><br/>`m` _<span data-ttu-id="efe9c-157">startPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-157">startPoint</span></span>_|
 
-| 用語 | 説明 |
+| <span data-ttu-id="efe9c-158">用語</span><span class="sxs-lookup"><span data-stu-id="efe9c-158">Term</span></span> | <span data-ttu-id="efe9c-159">説明</span><span class="sxs-lookup"><span data-stu-id="efe9c-159">Description</span></span> |
 |------|-------------|
-| _startPoint_ | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>新しい図の始点。|
+| _<span data-ttu-id="efe9c-160">startPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-160">startPoint</span></span>_ | [**<span data-ttu-id="efe9c-161">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-161">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/><span data-ttu-id="efe9c-162">新しい図の始点。</span><span class="sxs-lookup"><span data-stu-id="efe9c-162">The start point of a new figure.</span></span>|
 
-大文字の **M** は *startPoint* が絶対座標であることを示し、小文字の **m** は、*startPoint* が前の点からのオフセットか、前の点がない場合は (0,0) からのオフセットであることを示します。
+<span data-ttu-id="efe9c-163">大文字の **M** は *startPoint* が絶対座標であることを示し、小文字の **m** は、*startPoint* が前の点からのオフセットか、前の点がない場合は (0,0) からのオフセットであることを示します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-163">An uppercase **M** indicates that *startPoint* is an absolute coordinate; a lowercase **m** indicates that *startPoint* is an offset to the previous point, or (0,0) if there was no previous point.</span></span>
 
-**注**  移動コマンドに続けて複数の点を指定することもできます。 これらの点の間には、直線コマンドを指定した場合と同様に直線が描画されます。 ただし、これは推奨されるスタイルではありません。代わりに専用の直線コマンドを使ってください。
+<span data-ttu-id="efe9c-164">**注**  移動コマンドに続けて複数の点を指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-164">**Note**  It's legal to specify multiple points after the move command.</span></span> <span data-ttu-id="efe9c-165">これらの点の間には、直線コマンドを指定した場合と同様に直線が描画されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-165">A line is drawn to those points as if you specified the line command.</span></span> <span data-ttu-id="efe9c-166">ただし、これは推奨されるスタイルではありません。代わりに専用の直線コマンドを使ってください。</span><span class="sxs-lookup"><span data-stu-id="efe9c-166">However that's not a recommended style; use the dedicated line command instead.</span></span>
 
-**描画コマンド**
+**<span data-ttu-id="efe9c-167">描画コマンド</span><span class="sxs-lookup"><span data-stu-id="efe9c-167">Draw commands</span></span>**
 
-描画コマンドはいくつかの図形コマンドから構成されます。図形コマンドには、直線、水平線、垂直線、三次ベジエ曲線、二次ベジエ曲線、平滑三次ベジエ曲線、平滑二次ベジエ曲線、楕円円弧があります。
+<span data-ttu-id="efe9c-168">描画コマンドはいくつかの図形コマンドから構成されます。図形コマンドには、直線、水平線、垂直線、三次ベジエ曲線、二次ベジエ曲線、平滑三次ベジエ曲線、平滑二次ベジエ曲線、楕円円弧があります。</span><span class="sxs-lookup"><span data-stu-id="efe9c-168">A draw command can consist of several shape commands: line, horizontal line, vertical line, cubic Bezier curve, quadratic Bezier curve, smooth cubic Bezier curve, smooth quadratic Bezier curve, and elliptical arc.</span></span>
 
-すべての描画コマンドで大文字と小文字が区別されます。 大文字は絶対座標を示し、小文字は前のコマンドからの相対座標を示します。
+<span data-ttu-id="efe9c-169">すべての描画コマンドで大文字と小文字が区別されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-169">For all draw commands, case matters.</span></span> <span data-ttu-id="efe9c-170">大文字は絶対座標を示し、小文字は前のコマンドからの相対座標を示します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-170">Uppercase letters denote absolute coordinates and lowercase letters denote coordinates relative to the previous command.</span></span>
 
-セグメントの制御点は、前のセグメントの終点からの相対値で表されます。 同じ種類のコマンドを複数回続けて入力するときは、重複するコマンドの入力を省略できます。 たとえば、`L 100,200 300,400` は `L 100,200 L 300,400` と同じです。
+<span data-ttu-id="efe9c-171">セグメントの制御点は、前のセグメントの終点からの相対値で表されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-171">The control points for a segment are relative to the end point of the preceding segment.</span></span> <span data-ttu-id="efe9c-172">同じ種類のコマンドを複数回続けて入力するときは、重複するコマンドの入力を省略できます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-172">When sequentially entering more than one command of the same type, you can omit the duplicate command entry.</span></span> <span data-ttu-id="efe9c-173">たとえば、`L 100,200 300,400` は `L 100,200 L 300,400` と同じです。</span><span class="sxs-lookup"><span data-stu-id="efe9c-173">For example, `L 100,200 300,400` is equivalent to `L 100,200 L 300,400`.</span></span>
 
-**直線コマンド**
+**<span data-ttu-id="efe9c-174">直線コマンド</span><span class="sxs-lookup"><span data-stu-id="efe9c-174">Line command</span></span>**
 
-現在の点と指定した終点の間に直線を作成します。 `l 20 30`  や `L 20,30` は有効な直線コマンドの例です。 [**LineGeometry**](https://msdn.microsoft.com/library/windows/apps/br210117) オブジェクトと同等の結果が定義されます。
+<span data-ttu-id="efe9c-175">現在の点と指定した終点の間に直線を作成します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-175">Creates a straight line between the current point and the specified end point.</span></span> `l 20 30` <span data-ttu-id="efe9c-176"> や `L 20,30` は有効な直線コマンドの例です。</span><span class="sxs-lookup"><span data-stu-id="efe9c-176">and `L 20,30` are examples of valid line commands.</span></span> <span data-ttu-id="efe9c-177">[**LineGeometry**](https://msdn.microsoft.com/library/windows/apps/br210117) オブジェクトと同等の結果が定義されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-177">Defines the equivalent of a [**LineGeometry**](https://msdn.microsoft.com/library/windows/apps/br210117) object.</span></span>
 
-| 構文 |
+| <span data-ttu-id="efe9c-178">構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-178">Syntax</span></span> |
 |--------|
-| `L` _endPoint_ <br/>- または -<br/>`l` _endPoint_ |
+| `L` _<span data-ttu-id="efe9c-179">endPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-179">endPoint</span></span>_ <br/><span data-ttu-id="efe9c-180">- または -</span><span class="sxs-lookup"><span data-stu-id="efe9c-180">- or -</span></span><br/>`l` _<span data-ttu-id="efe9c-181">endPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-181">endPoint</span></span>_ |
 
-| 用語 | 説明 |
+| <span data-ttu-id="efe9c-182">用語</span><span class="sxs-lookup"><span data-stu-id="efe9c-182">Term</span></span> | <span data-ttu-id="efe9c-183">説明</span><span class="sxs-lookup"><span data-stu-id="efe9c-183">Description</span></span> |
 |------|-------------|
-| endPoint | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>直線の終点。|
+| <span data-ttu-id="efe9c-184">endPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-184">endPoint</span></span> | [**<span data-ttu-id="efe9c-185">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-185">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/><span data-ttu-id="efe9c-186">直線の終点。</span><span class="sxs-lookup"><span data-stu-id="efe9c-186">The end point of the line.</span></span>|
 
-**水平線コマンド**
+**<span data-ttu-id="efe9c-187">水平線コマンド</span><span class="sxs-lookup"><span data-stu-id="efe9c-187">Horizontal line command</span></span>**
 
-現在の点と指定した x 座標の間に水平線を作成します。 `H 90`  は有効な水平線コマンドの例です。
+<span data-ttu-id="efe9c-188">現在の点と指定した x 座標の間に水平線を作成します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-188">Creates a horizontal line between the current point and the specified x-coordinate.</span></span> `H 90` <span data-ttu-id="efe9c-189"> は有効な水平線コマンドの例です。</span><span class="sxs-lookup"><span data-stu-id="efe9c-189">is an example of a valid horizontal line command.</span></span>
 
-| 構文 |
+| <span data-ttu-id="efe9c-190">構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-190">Syntax</span></span> |
 |--------|
-| `H ` _x_ <br/> - または - <br/>`h ` _x_ |
+| `H ` _<span data-ttu-id="efe9c-191">x</span><span class="sxs-lookup"><span data-stu-id="efe9c-191">x</span></span>_ <br/> <span data-ttu-id="efe9c-192">- または -</span><span class="sxs-lookup"><span data-stu-id="efe9c-192">- or -</span></span> <br/>`h ` _<span data-ttu-id="efe9c-193">x</span><span class="sxs-lookup"><span data-stu-id="efe9c-193">x</span></span>_ |
 
-| 用語 | 説明 |
+| <span data-ttu-id="efe9c-194">用語</span><span class="sxs-lookup"><span data-stu-id="efe9c-194">Term</span></span> | <span data-ttu-id="efe9c-195">説明</span><span class="sxs-lookup"><span data-stu-id="efe9c-195">Description</span></span> |
 |------|-------------|
-| x | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直線の終点の x 座標。 |
+| <span data-ttu-id="efe9c-196">x</span><span class="sxs-lookup"><span data-stu-id="efe9c-196">x</span></span> | [**<span data-ttu-id="efe9c-197">Double</span><span class="sxs-lookup"><span data-stu-id="efe9c-197">Double</span></span>**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> <span data-ttu-id="efe9c-198">直線の終点の x 座標。</span><span class="sxs-lookup"><span data-stu-id="efe9c-198">The x-coordinate of the end point of the line.</span></span> |
 
-**垂直線コマンド**
+**<span data-ttu-id="efe9c-199">垂直線コマンド</span><span class="sxs-lookup"><span data-stu-id="efe9c-199">Vertical line command</span></span>**
 
-現在の点と指定した y 座標の間に垂直線を作成します。 `v 90`  は有効な垂直線コマンドの例です。
+<span data-ttu-id="efe9c-200">現在の点と指定した y 座標の間に垂直線を作成します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-200">Creates a vertical line between the current point and the specified y-coordinate.</span></span> `v 90` <span data-ttu-id="efe9c-201"> は有効な垂直線コマンドの例です。</span><span class="sxs-lookup"><span data-stu-id="efe9c-201">is an example of a valid vertical line command.</span></span>
 
-| 構文 |
+| <span data-ttu-id="efe9c-202">構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-202">Syntax</span></span> |
 |--------|
-| `V ` _y_ <br/> - または - <br/> `v ` _y_ |
+| `V ` _<span data-ttu-id="efe9c-203">y</span><span class="sxs-lookup"><span data-stu-id="efe9c-203">y</span></span>_ <br/> <span data-ttu-id="efe9c-204">- または -</span><span class="sxs-lookup"><span data-stu-id="efe9c-204">- or -</span></span> <br/> `v ` _<span data-ttu-id="efe9c-205">y</span><span class="sxs-lookup"><span data-stu-id="efe9c-205">y</span></span>_ |
 
-| 用語 | 説明 |
+| <span data-ttu-id="efe9c-206">用語</span><span class="sxs-lookup"><span data-stu-id="efe9c-206">Term</span></span> | <span data-ttu-id="efe9c-207">説明</span><span class="sxs-lookup"><span data-stu-id="efe9c-207">Description</span></span> |
 |------|-------------|
-| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直線の終点の y 座標。 |
+| *<span data-ttu-id="efe9c-208">y</span><span class="sxs-lookup"><span data-stu-id="efe9c-208">y</span></span>* | [**<span data-ttu-id="efe9c-209">Double</span><span class="sxs-lookup"><span data-stu-id="efe9c-209">Double</span></span>**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> <span data-ttu-id="efe9c-210">直線の終点の y 座標。</span><span class="sxs-lookup"><span data-stu-id="efe9c-210">The y-coordinate of the end point of the line.</span></span> |
 
-**三次ベジエ曲線コマンド**
+**<span data-ttu-id="efe9c-211">三次ベジエ曲線コマンド</span><span class="sxs-lookup"><span data-stu-id="efe9c-211">Cubic Bézier curve command</span></span>**
 
-指定した 2 つの制御点 (*controlPoint1* と *controlPoint2*) を使って、現在の点と指定した終点の間に三次ベジエ曲線を作成します。 `C 100,200 200,400 300,200`  は有効な曲線コマンドの例です。 [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) オブジェクトを持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) オブジェクトと同等の結果が定義されます。
+<span data-ttu-id="efe9c-212">指定した 2 つの制御点 (*controlPoint1* と *controlPoint2*) を使って、現在の点と指定した終点の間に三次ベジエ曲線を作成します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-212">Creates a cubic Bézier curve between the current point and the specified end point by using the two specified control points (*controlPoint1* and *controlPoint2*).</span></span> `C 100,200 200,400 300,200` <span data-ttu-id="efe9c-213"> は有効な曲線コマンドの例です。</span><span class="sxs-lookup"><span data-stu-id="efe9c-213">is an example of a valid curve command.</span></span> <span data-ttu-id="efe9c-214">[**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) オブジェクトを持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) オブジェクトと同等の結果が定義されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-214">Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) object with a [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) object.</span></span>
 
-| 構文 |
+| <span data-ttu-id="efe9c-215">構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-215">Syntax</span></span> |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - または - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` <span data-ttu-id="efe9c-216">*controlPoint1* *controlPoint2* *endPoint*</span><span class="sxs-lookup"><span data-stu-id="efe9c-216">*controlPoint1* *controlPoint2* *endPoint*</span></span> <br/> <span data-ttu-id="efe9c-217">- または -</span><span class="sxs-lookup"><span data-stu-id="efe9c-217">- or -</span></span> <br/> `c ` <span data-ttu-id="efe9c-218">*controlPoint1* *controlPoint2* *endPoint*</span><span class="sxs-lookup"><span data-stu-id="efe9c-218">*controlPoint1* *controlPoint2* *endPoint*</span></span> |
 
-| 用語 | 説明 |
+| <span data-ttu-id="efe9c-219">用語</span><span class="sxs-lookup"><span data-stu-id="efe9c-219">Term</span></span> | <span data-ttu-id="efe9c-220">説明</span><span class="sxs-lookup"><span data-stu-id="efe9c-220">Description</span></span> |
 |------|-------------|
-| *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線の 1 つ目の制御点。曲線の開始接線を決定します。 |
-| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線の 2 つ目の制御点。曲線の終了接線を決定します。 |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 描画される曲線の終点。 | 
+| *<span data-ttu-id="efe9c-221">controlPoint1</span><span class="sxs-lookup"><span data-stu-id="efe9c-221">controlPoint1</span></span>* | [**<span data-ttu-id="efe9c-222">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-222">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> <span data-ttu-id="efe9c-223">曲線の 1 つ目の制御点。曲線の開始接線を決定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-223">The first control point of the curve, which determines the starting tangent of the curve.</span></span> |
+| *<span data-ttu-id="efe9c-224">controlPoint2</span><span class="sxs-lookup"><span data-stu-id="efe9c-224">controlPoint2</span></span>* | [**<span data-ttu-id="efe9c-225">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-225">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> <span data-ttu-id="efe9c-226">曲線の 2 つ目の制御点。曲線の終了接線を決定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-226">The second control point of the curve, which determines the ending tangent of the curve.</span></span> |
+| *<span data-ttu-id="efe9c-227">endPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-227">endPoint</span></span>* | [**<span data-ttu-id="efe9c-228">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-228">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> <span data-ttu-id="efe9c-229">描画される曲線の終点。</span><span class="sxs-lookup"><span data-stu-id="efe9c-229">The point to which the curve is drawn.</span></span> | 
 
-**二次ベジエ曲線コマンド**
+**<span data-ttu-id="efe9c-230">二次ベジエ曲線コマンド</span><span class="sxs-lookup"><span data-stu-id="efe9c-230">Quadratic Bézier curve command</span></span>**
 
-指定した制御点 (*controlPoint*) を使って、現在の点と指定した終点の間に二次ベジエ曲線を作成します。 `q 100,200 300,200`  は有効な二次ベジエ曲線コマンドの例です。 [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) と同等の結果が定義されます。
+<span data-ttu-id="efe9c-231">指定した制御点 (*controlPoint*) を使って、現在の点と指定した終点の間に二次ベジエ曲線を作成します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-231">Creates a quadratic Bézier curve between the current point and the specified end point by using the specified control point (*controlPoint*).</span></span> `q 100,200 300,200` <span data-ttu-id="efe9c-232"> は有効な二次ベジエ曲線コマンドの例です。</span><span class="sxs-lookup"><span data-stu-id="efe9c-232">is an example of a valid quadratic Bézier curve command.</span></span> <span data-ttu-id="efe9c-233">[**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) と同等の結果が定義されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-233">Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249).</span></span>
 
-| 構文 |
+| <span data-ttu-id="efe9c-234">構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-234">Syntax</span></span> |
 |--------|
-| `Q ` *controlPoint endPoint* <br/> - または - <br/> `q ` *controlPoint endPoint* |
+| `Q ` *<span data-ttu-id="efe9c-235">controlPoint endPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-235">controlPoint endPoint</span></span>* <br/> <span data-ttu-id="efe9c-236">- または -</span><span class="sxs-lookup"><span data-stu-id="efe9c-236">- or -</span></span> <br/> `q ` *<span data-ttu-id="efe9c-237">controlPoint endPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-237">controlPoint endPoint</span></span>* |
 
-| 用語 | 説明 |
+| <span data-ttu-id="efe9c-238">用語</span><span class="sxs-lookup"><span data-stu-id="efe9c-238">Term</span></span> | <span data-ttu-id="efe9c-239">説明</span><span class="sxs-lookup"><span data-stu-id="efe9c-239">Description</span></span> |
 |------|-------------|
-| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線の制御点。曲線の開始接線と終了接線を決定します。 |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 描画される曲線の終点。 |
+| *<span data-ttu-id="efe9c-240">controlPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-240">controlPoint</span></span>* | [**<span data-ttu-id="efe9c-241">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-241">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> <span data-ttu-id="efe9c-242">曲線の制御点。曲線の開始接線と終了接線を決定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-242">The control point of the curve, which determines the starting and ending tangents of the curve.</span></span> |
+| *<span data-ttu-id="efe9c-243">endPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-243">endPoint</span></span>* | [**<span data-ttu-id="efe9c-244">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-244">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> <span data-ttu-id="efe9c-245">描画される曲線の終点。</span><span class="sxs-lookup"><span data-stu-id="efe9c-245">The point to which the curve is drawn.</span></span> |
 
-**平滑三次ベジエ曲線コマンド**
+**<span data-ttu-id="efe9c-246">平滑三次ベジエ曲線コマンド</span><span class="sxs-lookup"><span data-stu-id="efe9c-246">Smooth cubic Bézier curve command</span></span>**
 
-現在の点と指定した終点の間に三次ベジエ曲線を作成します。 1 つ目の制御点は、現在の点を基準として、前のコマンドの 2 つ目の制御点に点対称となるものと想定されます。 前のコマンドがない場合や、前のコマンドが三次ベジエ曲線コマンドまたは平滑三次ベジエ曲線コマンドでない場合、1 つ目の制御点は現在の点と一致すると見なされます。 2 つ目の制御点 (曲線の終端の制御点) は、*controlPoint2* によって指定します。 たとえば、 `S 100,200 200,300` は有効な平滑三次ベジエ曲線コマンドです。 このコマンドは、前に曲線セグメントがある場合の、[**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) と同等の結果を定義します。
+<span data-ttu-id="efe9c-247">現在の点と指定した終点の間に三次ベジエ曲線を作成します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-247">Creates a cubic Bézier curve between the current point and the specified end point.</span></span> <span data-ttu-id="efe9c-248">1 つ目の制御点は、現在の点を基準として、前のコマンドの 2 つ目の制御点に点対称となるものと想定されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-248">The first control point is assumed to be the reflection of the second control point of the previous command relative to the current point.</span></span> <span data-ttu-id="efe9c-249">前のコマンドがない場合や、前のコマンドが三次ベジエ曲線コマンドまたは平滑三次ベジエ曲線コマンドでない場合、1 つ目の制御点は現在の点と一致すると見なされます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-249">If there is no previous command or if the previous command was not a cubic Bézier curve command or a smooth cubic Bézier curve command, assume the first control point is coincident with the current point.</span></span> <span data-ttu-id="efe9c-250">2 つ目の制御点 (曲線の終端の制御点) は、*controlPoint2* によって指定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-250">The second control point—the control point for the end of the curve—is specified by *controlPoint2*.</span></span> <span data-ttu-id="efe9c-251">たとえば、 `S 100,200 200,300` は有効な平滑三次ベジエ曲線コマンドです。</span><span class="sxs-lookup"><span data-stu-id="efe9c-251">For example, `S 100,200 200,300` is a valid smooth cubic Bézier curve command.</span></span> <span data-ttu-id="efe9c-252">このコマンドは、前に曲線セグメントがある場合の、[**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) と同等の結果を定義します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-252">This command defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) where there was preceding curve segment.</span></span>
 
-| 構文 |
+| <span data-ttu-id="efe9c-253">構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-253">Syntax</span></span> |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - または - <br/>`s` *controlPoint2 endPoint* |
+| `S` <span data-ttu-id="efe9c-254">*controlPoint2* *endPoint*</span><span class="sxs-lookup"><span data-stu-id="efe9c-254">*controlPoint2* *endPoint*</span></span> <br/> <span data-ttu-id="efe9c-255">- または -</span><span class="sxs-lookup"><span data-stu-id="efe9c-255">- or -</span></span> <br/>`s` *<span data-ttu-id="efe9c-256">controlPoint2 endPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-256">controlPoint2 endPoint</span></span>* |
 
-| 用語 | 説明 |
+| <span data-ttu-id="efe9c-257">用語</span><span class="sxs-lookup"><span data-stu-id="efe9c-257">Term</span></span> | <span data-ttu-id="efe9c-258">説明</span><span class="sxs-lookup"><span data-stu-id="efe9c-258">Description</span></span> |
 |------|-------------|
-| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線の制御点。曲線の終了接線を決定します。 |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 描画される曲線の終点。 |
+| *<span data-ttu-id="efe9c-259">controlPoint2</span><span class="sxs-lookup"><span data-stu-id="efe9c-259">controlPoint2</span></span>* | [**<span data-ttu-id="efe9c-260">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-260">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> <span data-ttu-id="efe9c-261">曲線の制御点。曲線の終了接線を決定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-261">The control point of the curve, which determines the ending tangent of the curve.</span></span> |
+| *<span data-ttu-id="efe9c-262">endPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-262">endPoint</span></span>* | [**<span data-ttu-id="efe9c-263">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-263">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> <span data-ttu-id="efe9c-264">描画される曲線の終点。</span><span class="sxs-lookup"><span data-stu-id="efe9c-264">The point to which the curve is drawn.</span></span> |
 
-**平滑二次ベジエ曲線コマンド**
+**<span data-ttu-id="efe9c-265">平滑二次ベジエ曲線コマンド</span><span class="sxs-lookup"><span data-stu-id="efe9c-265">Smooth quadratic Bézier curve command</span></span>**
 
-現在の点と指定した終点の間に二次ベジエ曲線を作成します。 制御点は、現在の点を基準として、前のコマンドの制御点に点対称となるものと想定されます。 前のコマンドがない場合や、前のコマンドが二次ベジエ曲線コマンドまたは平滑二次ベジエ曲線コマンドでない場合、制御点は現在の点と一致します。 このコマンドは、前に曲線セグメントがある場合の、[**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) と同等の結果を定義します。
+<span data-ttu-id="efe9c-266">現在の点と指定した終点の間に二次ベジエ曲線を作成します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-266">Creates a quadratic Bézier curve between the current point and the specified end point.</span></span> <span data-ttu-id="efe9c-267">制御点は、現在の点を基準として、前のコマンドの制御点に点対称となるものと想定されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-267">The control point is assumed to be the reflection of the control point of the previous command relative to the current point.</span></span> <span data-ttu-id="efe9c-268">前のコマンドがない場合や、前のコマンドが二次ベジエ曲線コマンドまたは平滑二次ベジエ曲線コマンドでない場合、制御点は現在の点と一致します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-268">If there is no previous command or if the previous command was not a quadratic Bézier curve command or a smooth quadratic Bézier curve command, the control point is coincident with the current point.</span></span> <span data-ttu-id="efe9c-269">このコマンドは、前に曲線セグメントがある場合の、[**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) と同等の結果を定義します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-269">This command defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) where there was preceding curve segment.</span></span>
 
-| 構文 |
+| <span data-ttu-id="efe9c-270">構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-270">Syntax</span></span> |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - または - <br/> `t` *controlPoint* *endPoint* |
+| `T` <span data-ttu-id="efe9c-271">*controlPoint* *endPoint*</span><span class="sxs-lookup"><span data-stu-id="efe9c-271">*controlPoint* *endPoint*</span></span> <br/> <span data-ttu-id="efe9c-272">- または -</span><span class="sxs-lookup"><span data-stu-id="efe9c-272">- or -</span></span> <br/> `t` <span data-ttu-id="efe9c-273">*controlPoint* *endPoint*</span><span class="sxs-lookup"><span data-stu-id="efe9c-273">*controlPoint* *endPoint*</span></span> |
 
-| 用語 | 説明 |
+| <span data-ttu-id="efe9c-274">用語</span><span class="sxs-lookup"><span data-stu-id="efe9c-274">Term</span></span> | <span data-ttu-id="efe9c-275">説明</span><span class="sxs-lookup"><span data-stu-id="efe9c-275">Description</span></span> |
 |------|-------------|
-| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 曲線の制御点。曲線の開始接線を決定します。 |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> 描画される曲線の終点。 |
+| *<span data-ttu-id="efe9c-276">controlPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-276">controlPoint</span></span>* | [**<span data-ttu-id="efe9c-277">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-277">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> <span data-ttu-id="efe9c-278">曲線の制御点。曲線の開始接線を決定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-278">The control point of the curve, which determines the starting and tangent of the curve.</span></span> |
+| *<span data-ttu-id="efe9c-279">endPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-279">endPoint</span></span>* | [**<span data-ttu-id="efe9c-280">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-280">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> <span data-ttu-id="efe9c-281">描画される曲線の終点。</span><span class="sxs-lookup"><span data-stu-id="efe9c-281">The point to which the curve is drawn.</span></span> |
 
-**楕円円弧コマンド**
+**<span data-ttu-id="efe9c-282">楕円円弧コマンド</span><span class="sxs-lookup"><span data-stu-id="efe9c-282">Elliptical arc command</span></span>**
 
-現在の点と指定した終点の間に楕円の円弧を作成します。 [**ArcSegment**](https://msdn.microsoft.com/library/windows/apps/br228054) を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) と同等の結果が定義されます。
+<span data-ttu-id="efe9c-283">現在の点と指定した終点の間に楕円の円弧を作成します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-283">Creates an elliptical arc between the current point and the specified end point.</span></span> <span data-ttu-id="efe9c-284">[**ArcSegment**](https://msdn.microsoft.com/library/windows/apps/br228054) を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) と同等の結果が定義されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-284">Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with an [**ArcSegment**](https://msdn.microsoft.com/library/windows/apps/br228054).</span></span>
 
-| 構文 |
+| <span data-ttu-id="efe9c-285">構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-285">Syntax</span></span> |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - または - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` <span data-ttu-id="efe9c-286">*size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint*</span><span class="sxs-lookup"><span data-stu-id="efe9c-286">*size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint*</span></span> <br/> <span data-ttu-id="efe9c-287">- または -</span><span class="sxs-lookup"><span data-stu-id="efe9c-287">- or -</span></span> <br/>`a ` *<span data-ttu-id="efe9c-288">sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-288">sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint</span></span>* |
 
-| 用語 | 説明 |
+| <span data-ttu-id="efe9c-289">用語</span><span class="sxs-lookup"><span data-stu-id="efe9c-289">Term</span></span> | <span data-ttu-id="efe9c-290">説明</span><span class="sxs-lookup"><span data-stu-id="efe9c-290">Description</span></span> |
 |------|-------------|
-| *size* | [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>円弧の x 半径と y 半径。 |
-| *rotationAngle* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 楕円の回転角度。 |
-| *isLargeArcFlag* | 円弧の角度を 180°以上にする場合は 1、それ以外の場合は 0 に設定します。 |
-| *sweepDirectionFlag* | 円弧を正方向の角度に描画する場合は 1、それ以外の場合は 0 に設定します。 |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 描画される円弧の終点。|
+| *<span data-ttu-id="efe9c-291">size</span><span class="sxs-lookup"><span data-stu-id="efe9c-291">size</span></span>* | [**<span data-ttu-id="efe9c-292">Size</span><span class="sxs-lookup"><span data-stu-id="efe9c-292">Size</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/><span data-ttu-id="efe9c-293">円弧の x 半径と y 半径。</span><span class="sxs-lookup"><span data-stu-id="efe9c-293">The x-radius and y-radius of the arc.</span></span> |
+| *<span data-ttu-id="efe9c-294">rotationAngle</span><span class="sxs-lookup"><span data-stu-id="efe9c-294">rotationAngle</span></span>* | [**<span data-ttu-id="efe9c-295">Double</span><span class="sxs-lookup"><span data-stu-id="efe9c-295">Double</span></span>**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> <span data-ttu-id="efe9c-296">楕円の回転角度。</span><span class="sxs-lookup"><span data-stu-id="efe9c-296">The rotation of the ellipse, in degrees.</span></span> |
+| *<span data-ttu-id="efe9c-297">isLargeArcFlag</span><span class="sxs-lookup"><span data-stu-id="efe9c-297">isLargeArcFlag</span></span>* | <span data-ttu-id="efe9c-298">円弧の角度を 180°以上にする場合は 1、それ以外の場合は 0 に設定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-298">Set to 1 if the angle of the arc should be 180 degrees or greater; otherwise, set to 0.</span></span> |
+| *<span data-ttu-id="efe9c-299">sweepDirectionFlag</span><span class="sxs-lookup"><span data-stu-id="efe9c-299">sweepDirectionFlag</span></span>* | <span data-ttu-id="efe9c-300">円弧を正方向の角度に描画する場合は 1、それ以外の場合は 0 に設定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-300">Set to 1 if the arc is drawn in a positive-angle direction; otherwise, set to 0.</span></span> |
+| *<span data-ttu-id="efe9c-301">endPoint</span><span class="sxs-lookup"><span data-stu-id="efe9c-301">endPoint</span></span>* | [**<span data-ttu-id="efe9c-302">Point</span><span class="sxs-lookup"><span data-stu-id="efe9c-302">Point</span></span>**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> <span data-ttu-id="efe9c-303">描画される円弧の終点。</span><span class="sxs-lookup"><span data-stu-id="efe9c-303">The point to which the arc is drawn.</span></span>|
  
-**終了コマンド**
+**<span data-ttu-id="efe9c-304">終了コマンド</span><span class="sxs-lookup"><span data-stu-id="efe9c-304">Close command</span></span>**
 
-現在の図を終了し、現在の点と図の始点を結ぶ直線を作成します。 このコマンドは、図の最後のセグメントと最初のセグメントの間に線結合 (角) を作成します。
+<span data-ttu-id="efe9c-305">現在の図を終了し、現在の点と図の始点を結ぶ直線を作成します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-305">Ends the current figure and creates a line that connects the current point to the starting point of the figure.</span></span> <span data-ttu-id="efe9c-306">このコマンドは、図の最後のセグメントと最初のセグメントの間に線結合 (角) を作成します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-306">This command creates a line-join (corner) between the last segment and the first segment of the figure.</span></span>
 
-| 構文 |
+| <span data-ttu-id="efe9c-307">構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-307">Syntax</span></span> |
 |--------|
-| `Z` <br/> - または - <br/> `z ` |
+| `Z` <br/> <span data-ttu-id="efe9c-308">- または -</span><span class="sxs-lookup"><span data-stu-id="efe9c-308">- or -</span></span> <br/> `z ` |
 
-**点の構文**
+**<span data-ttu-id="efe9c-309">点の構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-309">Point syntax</span></span>**
 
-点の x 座標と y 座標を記述します。 [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) もご覧ください。
+<span data-ttu-id="efe9c-310">点の x 座標と y 座標を記述します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-310">Describes the x-coordinate and y-coordinate of a point.</span></span> <span data-ttu-id="efe9c-311">[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) もご覧ください。</span><span class="sxs-lookup"><span data-stu-id="efe9c-311">See also [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870).</span></span>
 
-| 構文 |
+| <span data-ttu-id="efe9c-312">構文</span><span class="sxs-lookup"><span data-stu-id="efe9c-312">Syntax</span></span> |
 |--------|
-| *x*,*y*<br/> - または - <br/>*x* *y* |
+| <span data-ttu-id="efe9c-313">*x*,*y*</span><span class="sxs-lookup"><span data-stu-id="efe9c-313">*x*,*y*</span></span><br/> <span data-ttu-id="efe9c-314">- または -</span><span class="sxs-lookup"><span data-stu-id="efe9c-314">- or -</span></span> <br/><span data-ttu-id="efe9c-315">*x* *y*</span><span class="sxs-lookup"><span data-stu-id="efe9c-315">*x* *y*</span></span> |
 
-| 用語 | 説明 |
+| <span data-ttu-id="efe9c-316">用語</span><span class="sxs-lookup"><span data-stu-id="efe9c-316">Term</span></span> | <span data-ttu-id="efe9c-317">説明</span><span class="sxs-lookup"><span data-stu-id="efe9c-317">Description</span></span> |
 |------|-------------|
-| *x* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点の x 座標。 |
-| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点の y 座標。 |
+| *<span data-ttu-id="efe9c-318">x</span><span class="sxs-lookup"><span data-stu-id="efe9c-318">x</span></span>* | [**<span data-ttu-id="efe9c-319">Double</span><span class="sxs-lookup"><span data-stu-id="efe9c-319">Double</span></span>**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> <span data-ttu-id="efe9c-320">点の x 座標。</span><span class="sxs-lookup"><span data-stu-id="efe9c-320">The x-coordinate of the point.</span></span> |
+| *<span data-ttu-id="efe9c-321">y</span><span class="sxs-lookup"><span data-stu-id="efe9c-321">y</span></span>* | [**<span data-ttu-id="efe9c-322">Double</span><span class="sxs-lookup"><span data-stu-id="efe9c-322">Double</span></span>**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> <span data-ttu-id="efe9c-323">点の y 座標。</span><span class="sxs-lookup"><span data-stu-id="efe9c-323">The y-coordinate of the point.</span></span> |
 
-**追加説明**
+**<span data-ttu-id="efe9c-324">追加説明</span><span class="sxs-lookup"><span data-stu-id="efe9c-324">Additional notes</span></span>**
 
-標準的な数値の代わりに、次の特殊な値を使うこともできます。 これらの値では、大文字と小文字が区別されます。
+<span data-ttu-id="efe9c-325">標準的な数値の代わりに、次の特殊な値を使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-325">Instead of a standard numerical value, you can also use the following special values.</span></span> <span data-ttu-id="efe9c-326">これらの値では、大文字と小文字が区別されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-326">These values are case sensitive.</span></span>
 
--   **Infinity**: **PositiveInfinity** を表します。
--   **\-Infinity**: **NegativeInfinity** を表します。
--   **NaN**: **NaN** を表します。
+-   <span data-ttu-id="efe9c-327">**Infinity**: **PositiveInfinity** を表します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-327">**Infinity**: Represents **PositiveInfinity**.</span></span>
+-   <span data-ttu-id="efe9c-328">**\-Infinity**: **NegativeInfinity** を表します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-328">**\-Infinity**: Represents **NegativeInfinity**.</span></span>
+-   <span data-ttu-id="efe9c-329">**NaN**: **NaN** を表します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-329">**NaN**: Represents **NaN**.</span></span>
 
-10 進数や整数を使う代わりに、指数表記を使うこともできます。 たとえば、`+1.e17` は有効な値です。
+<span data-ttu-id="efe9c-330">10 進数や整数を使う代わりに、指数表記を使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-330">Instead of using decimals or integers, you can use scientific notation.</span></span> <span data-ttu-id="efe9c-331">たとえば、`+1.e17` は有効な値です。</span><span class="sxs-lookup"><span data-stu-id="efe9c-331">For example, `+1.e17` is a valid value.</span></span>
 
-## <a name="design-tools-that-produce-move-and-draw-commands"></a>移動と描画のコマンドを生成するデザイン ツール
+## <a name="design-tools-that-produce-move-and-draw-commands"></a><span data-ttu-id="efe9c-332">移動と描画のコマンドを生成するデザイン ツール</span><span class="sxs-lookup"><span data-stu-id="efe9c-332">Design tools that produce move and draw commands</span></span>
 
-Blend for Microsoft Visual Studio 2015 で**ペン** ツールやその他の描画ツールを使うと、通常、[**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) オブジェクトが移動と描画のコマンドと共に生成されます。
+<span data-ttu-id="efe9c-333">Blend for Microsoft Visual Studio 2015 で**ペン** ツールやその他の描画ツールを使うと、通常、[**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) オブジェクトが移動と描画のコマンドと共に生成されます。</span><span class="sxs-lookup"><span data-stu-id="efe9c-333">Using the **Pen** tool and other drawing tools in Blend for Microsoft Visual Studio 2015 will usually produce a [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) object, with move and draw commands.</span></span>
 
-Windows ランタイムのコントロール用の既定の XAML テンプレートを見ると、定義されているコントロールのパーツの一部に、移動と描画のコマンドのデータが含まれていることに気付くことがあります。 たとえば、一部のコントロールで使われる [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) では、データが移動と描画のコマンドとして定義されています。
+<span data-ttu-id="efe9c-334">Windows ランタイムのコントロール用の既定の XAML テンプレートを見ると、定義されているコントロールのパーツの一部に、移動と描画のコマンドのデータが含まれていることに気付くことがあります。</span><span class="sxs-lookup"><span data-stu-id="efe9c-334">You might see existing move and draw command data in some of the control parts defined in the Windows Runtime XAML default templates for controls.</span></span> <span data-ttu-id="efe9c-335">たとえば、一部のコントロールで使われる [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) では、データが移動と描画のコマンドとして定義されています。</span><span class="sxs-lookup"><span data-stu-id="efe9c-335">For example, some controls use a [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) that has the data defined as move and draw commands.</span></span>
 
-その他のよく使われるベクター グラフィックス デザイン ツールにも、ベクターを XAML 形式で出力できるエクスポーターやプラグインがあります。 これらは通常、レイアウト コンテナーに [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) オブジェクトを作成し、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) に移動と描画のコマンドを設定します。 XAML には、別々のブラシを適用できるように複数の **Path** 要素が含まれている場合があります。 これらのエクスポーターやプラグインの多くは、本来は Windows Presentation Foundation (WPF) の XAML や Silverlight 用に作成されたものですが、XAML のパス構文は Windows ランタイム XAML と同じです。 通常、エクスポーターからの XAML の大部分を Windows ランタイムの XAML ページに直接貼り付けることができます  (ただし、変換後の XAML に **RadialGradientBrush** が含まれている場合、このブラシは Windows ランタイム XAML でサポートされないため、使うことはできません)。
+<span data-ttu-id="efe9c-336">その他のよく使われるベクター グラフィックス デザイン ツールにも、ベクターを XAML 形式で出力できるエクスポーターやプラグインがあります。</span><span class="sxs-lookup"><span data-stu-id="efe9c-336">There are exporters or plug-ins available for other commonly used vector-graphics design tools that can output the vector in XAML form.</span></span> <span data-ttu-id="efe9c-337">これらは通常、レイアウト コンテナーに [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) オブジェクトを作成し、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) に移動と描画のコマンドを設定します。</span><span class="sxs-lookup"><span data-stu-id="efe9c-337">These usually create [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) objects in a layout container, with move and draw commands for [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356).</span></span> <span data-ttu-id="efe9c-338">XAML には、別々のブラシを適用できるように複数の **Path** 要素が含まれている場合があります。</span><span class="sxs-lookup"><span data-stu-id="efe9c-338">There may be multiple **Path** elements in the XAML so that different brushes can be applied.</span></span> <span data-ttu-id="efe9c-339">これらのエクスポーターやプラグインの多くは、本来は Windows Presentation Foundation (WPF) の XAML や Silverlight 用に作成されたものですが、XAML のパス構文は Windows ランタイム XAML と同じです。</span><span class="sxs-lookup"><span data-stu-id="efe9c-339">Many of these exporters or plug-ins were originally written for Windows Presentation Foundation (WPF)  XAML or Silverlight, but the XAML path syntax is identical with Windows Runtime XAML.</span></span> <span data-ttu-id="efe9c-340">通常、エクスポーターからの XAML の大部分を Windows ランタイムの XAML ページに直接貼り付けることができます </span><span class="sxs-lookup"><span data-stu-id="efe9c-340">Usually, you can use chunks of XAML from an exporter and paste them right into a Windows Runtime XAML page.</span></span> <span data-ttu-id="efe9c-341">(ただし、変換後の XAML に **RadialGradientBrush** が含まれている場合、このブラシは Windows ランタイム XAML でサポートされないため、使うことはできません)。</span><span class="sxs-lookup"><span data-stu-id="efe9c-341">(However, you won't be able to use a **RadialGradientBrush**, if that was part of the converted XAML, because Windows Runtime XAML doesn't support that brush.)</span></span>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="efe9c-342">関連トピック</span><span class="sxs-lookup"><span data-stu-id="efe9c-342">Related topics</span></span>
 
-* [図形の描画](https://msdn.microsoft.com/library/windows/apps/mt280380)
-* [ブラシの使用](https://msdn.microsoft.com/library/windows/apps/mt280383)
-* [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
-* [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
-
+* [<span data-ttu-id="efe9c-343">図形の描画</span><span class="sxs-lookup"><span data-stu-id="efe9c-343">Draw shapes</span></span>](https://msdn.microsoft.com/library/windows/apps/mt280380)
+* [<span data-ttu-id="efe9c-344">ブラシの使用</span><span class="sxs-lookup"><span data-stu-id="efe9c-344">Use brushes</span></span>](https://msdn.microsoft.com/library/windows/apps/mt280383)
+* [**<span data-ttu-id="efe9c-345">Path.Data</span><span class="sxs-lookup"><span data-stu-id="efe9c-345">Path.Data</span></span>**](https://msdn.microsoft.com/library/windows/apps/br243356)
+* [**<span data-ttu-id="efe9c-346">PathIcon</span><span class="sxs-lookup"><span data-stu-id="efe9c-346">PathIcon</span></span>**](https://msdn.microsoft.com/library/windows/apps/dn252722)
 

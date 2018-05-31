@@ -1,94 +1,90 @@
 ---
 author: mcleanbyron
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
-description: "Azure AD クライアント ID に関連付けられているアプリでユーザーが所有しているすべての製品を取得するには、Windows ストア コレクション API のこのメソッドを使用します。 スコープを指定して特定の製品を照会することができ、また他のフィルターを使用することもできます。"
-title: "製品の照会"
+description: Azure AD クライアント ID に関連付けられているアプリでユーザーが所有しているすべての製品を取得するには、Microsoft Store コレクション API の以下のメソッドを使います。 スコープを指定して特定の製品を照会したり、その他のフィルターを使用したりできます。
+title: 製品の照会
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows ストア コレクション API, 製品の表示"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 29db10862533e7b15c7a676fc3aecd4ba58f9514
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10, UWP, Microsoft Store コレクション API, 製品の表示
+ms.localizationpriority: medium
+ms.openlocfilehash: 696d2c0ca4f8d0d92bef66efb9d551a2f19d2aa3
+ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/19/2018
+ms.locfileid: "1664968"
 ---
-
-# <a name="query-for-products"></a>製品の照会
-
-
-Azure AD クライアント ID に関連付けられているアプリでユーザーが所有しているすべての製品を取得するには、Windows ストア コレクション API のこのメソッドを使用します。 スコープを指定して特定の製品を照会することができ、また他のフィルターを使用することもできます。
-
-このメソッドは、アプリからのメッセージに対する応答としてサービスから呼び出されるように設計されています。 サービスで、スケジュールに従って定期的にすべてのユーザーをポーリングしないでください。
-
-## <a name="prerequisites"></a>前提条件
+# <a name="query-for-products"></a><span data-ttu-id="22bc9-105">製品の照会</span><span class="sxs-lookup"><span data-stu-id="22bc9-105">Query for products</span></span>
 
 
-このメソッドを使用するための要件:
+<span data-ttu-id="22bc9-106">Azure AD クライアント ID に関連付けられているアプリでユーザーが所有しているすべての製品を取得するには、Microsoft Store コレクション API の以下のメソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="22bc9-106">Use this method in the Microsoft Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID.</span></span> <span data-ttu-id="22bc9-107">スコープを指定して特定の製品を照会したり、その他のフィルターを使用したりできます。</span><span class="sxs-lookup"><span data-stu-id="22bc9-107">You can scope your query to a particular product, or use other filters.</span></span>
 
-* `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
-* 取得対象の製品を所有するユーザーの ID を表す Windows ストア ID キー。
+<span data-ttu-id="22bc9-108">このメソッドは、アプリからのメッセージに対する応答としてサービスから呼び出されるように設計されています。</span><span class="sxs-lookup"><span data-stu-id="22bc9-108">This method is designed to be called by your service in response to a message from your app.</span></span> <span data-ttu-id="22bc9-109">サービスで、スケジュールに従って定期的にすべてのユーザーをポーリングしないでください。</span><span class="sxs-lookup"><span data-stu-id="22bc9-109">Your service should not regularly poll for all users on a schedule.</span></span>
 
-詳しくは、「[サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)」をご覧ください。
+## <a name="prerequisites"></a><span data-ttu-id="22bc9-110">前提条件</span><span class="sxs-lookup"><span data-stu-id="22bc9-110">Prerequisites</span></span>
 
-## <a name="request"></a>要求
 
-### <a name="request-syntax"></a>要求の構文
+<span data-ttu-id="22bc9-111">このメソッドを使用するための要件:</span><span class="sxs-lookup"><span data-stu-id="22bc9-111">To use this method, you will need:</span></span>
 
-| メソッド | 要求 URI                                                 |
+* <span data-ttu-id="22bc9-112">対象ユーザー URI の値が `https://onestore.microsoft.com` の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="22bc9-112">An Azure AD access token that has the audience URI value `https://onestore.microsoft.com`.</span></span>
+* <span data-ttu-id="22bc9-113">取得対象の製品を所有するユーザーの ID を表す Microsoft Store ID キー。</span><span class="sxs-lookup"><span data-stu-id="22bc9-113">A Microsoft Store ID key that represents the identity of the user whose products you want to get.</span></span>
+
+<span data-ttu-id="22bc9-114">詳しくは、「[サービスによる製品の権利の管理](view-and-grant-products-from-a-service.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="22bc9-114">For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).</span></span>
+
+## <a name="request"></a><span data-ttu-id="22bc9-115">要求</span><span class="sxs-lookup"><span data-stu-id="22bc9-115">Request</span></span>
+
+### <a name="request-syntax"></a><span data-ttu-id="22bc9-116">要求の構文</span><span class="sxs-lookup"><span data-stu-id="22bc9-116">Request syntax</span></span>
+
+| <span data-ttu-id="22bc9-117">メソッド</span><span class="sxs-lookup"><span data-stu-id="22bc9-117">Method</span></span> | <span data-ttu-id="22bc9-118">要求 URI</span><span class="sxs-lookup"><span data-stu-id="22bc9-118">Request URI</span></span>                                                 |
 |--------|-------------------------------------------------------------|
-| POST   | ```https://collections.mp.microsoft.com/v6.0/collections/query``` |
+| <span data-ttu-id="22bc9-119">POST</span><span class="sxs-lookup"><span data-stu-id="22bc9-119">POST</span></span>   | ```https://collections.mp.microsoft.com/v6.0/collections/query``` |
 
-<span/>
- 
-### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー         | タイプ   | 説明                                                                                           |
+### <a name="request-header"></a><span data-ttu-id="22bc9-120">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="22bc9-120">Request header</span></span>
+
+| <span data-ttu-id="22bc9-121">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="22bc9-121">Header</span></span>         | <span data-ttu-id="22bc9-122">型</span><span class="sxs-lookup"><span data-stu-id="22bc9-122">Type</span></span>   | <span data-ttu-id="22bc9-123">説明</span><span class="sxs-lookup"><span data-stu-id="22bc9-123">Description</span></span>                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。                           |
-| Host           | string | 値 **collections.mp.microsoft.com** に設定する必要があります。                                            |
-| Content-Length | number | 要求の本文の長さ。                                                                       |
-| Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
+| <span data-ttu-id="22bc9-124">Authorization</span><span class="sxs-lookup"><span data-stu-id="22bc9-124">Authorization</span></span>  | <span data-ttu-id="22bc9-125">文字列</span><span class="sxs-lookup"><span data-stu-id="22bc9-125">string</span></span> | <span data-ttu-id="22bc9-126">必須。</span><span class="sxs-lookup"><span data-stu-id="22bc9-126">Required.</span></span> <span data-ttu-id="22bc9-127">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="22bc9-127">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span>                           |
+| <span data-ttu-id="22bc9-128">Host</span><span class="sxs-lookup"><span data-stu-id="22bc9-128">Host</span></span>           | <span data-ttu-id="22bc9-129">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-129">string</span></span> | <span data-ttu-id="22bc9-130">値 **collections.mp.microsoft.com** に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="22bc9-130">Must be set to the value **collections.mp.microsoft.com**.</span></span>                                            |
+| <span data-ttu-id="22bc9-131">Content-Length</span><span class="sxs-lookup"><span data-stu-id="22bc9-131">Content-Length</span></span> | <span data-ttu-id="22bc9-132">number</span><span class="sxs-lookup"><span data-stu-id="22bc9-132">number</span></span> | <span data-ttu-id="22bc9-133">要求の本文の長さ。</span><span class="sxs-lookup"><span data-stu-id="22bc9-133">The length of the request body.</span></span>                                                                       |
+| <span data-ttu-id="22bc9-134">Content-Type</span><span class="sxs-lookup"><span data-stu-id="22bc9-134">Content-Type</span></span>   | <span data-ttu-id="22bc9-135">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-135">string</span></span> | <span data-ttu-id="22bc9-136">要求と応答の種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="22bc9-136">Specifies the request and response type.</span></span> <span data-ttu-id="22bc9-137">現時点では、サポートされている唯一の値は **application/json** です。</span><span class="sxs-lookup"><span data-stu-id="22bc9-137">Currently, the only supported value is **application/json**.</span></span> |
 
-<span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a><span data-ttu-id="22bc9-138">要求本文</span><span class="sxs-lookup"><span data-stu-id="22bc9-138">Request body</span></span>
 
-| パラメーター         | タイプ         | 説明         | 必須かどうか |
+| <span data-ttu-id="22bc9-139">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bc9-139">Parameter</span></span>         | <span data-ttu-id="22bc9-140">型</span><span class="sxs-lookup"><span data-stu-id="22bc9-140">Type</span></span>         | <span data-ttu-id="22bc9-141">説明</span><span class="sxs-lookup"><span data-stu-id="22bc9-141">Description</span></span>         | <span data-ttu-id="22bc9-142">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="22bc9-142">Required</span></span> |
 |-------------------|--------------|---------------------|----------|
-| beneficiaries     | UserIdentity | 製品照会の対象となるユーザーを表す UserIdentity オブジェクト。 詳細については、次の表をご覧ください。    | 必須      |
-| continuationToken | string       | 製品のセットが複数ある場合、ページ制限に達すると、応答本文で継続トークンが返されます。 残りの製品を取得する後続の呼び出しで、この継続トークンを指定します。       | 省略可能       |
-| maxPageSize       | number       | 1 つの応答で返す製品の最大数。 既定値および最大値は 100 です。                 | 省略可能       |
-| modifiedAfter     | datetime     | 指定した場合、この日付以降に変更された製品だけがサービスから返されます。        | 省略可能       |
-| parentProductId   | string       | 指定した場合、指定されたアプリに対応するアドオンだけがサービスから返されます。      | 省略可能       |
-| productSkuIds     | list&lt;ProductSkuId&gt; | 指定した場合、指定された製品/SKU のペアに該当する製品だけがサービスから返されます。 詳細については、次の表をご覧ください。      | 省略可能       |
-| productTypes      | string       | 指定した場合、指定された製品タイプに一致する製品だけがサービスから返されます。 サポートされている製品タイプは **Application**、**Durable**、および **UnmanagedConsumable** です。     | 省略可能       |
-| validityType      | string       | **All** に設定した場合、有効期限が切れた項目を含む、ユーザーのすべての製品が返されます。 **Valid** に設定した場合、その時点で有効な製品だけが返されます (つまり、アクティブな状態で、開始日が現在より前、終了日が現在より後である製品)。 | 省略可能       |
+| <span data-ttu-id="22bc9-143">beneficiaries</span><span class="sxs-lookup"><span data-stu-id="22bc9-143">beneficiaries</span></span>     | <span data-ttu-id="22bc9-144">UserIdentity</span><span class="sxs-lookup"><span data-stu-id="22bc9-144">UserIdentity</span></span> | <span data-ttu-id="22bc9-145">製品照会の対象となるユーザーを表す UserIdentity オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="22bc9-145">A UserIdentity object that represents the user being queried for products.</span></span> <span data-ttu-id="22bc9-146">詳細については、次の表をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="22bc9-146">For more information, see the table below.</span></span>    | <span data-ttu-id="22bc9-147">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-147">Yes</span></span>      |
+| <span data-ttu-id="22bc9-148">continuationToken</span><span class="sxs-lookup"><span data-stu-id="22bc9-148">continuationToken</span></span> | <span data-ttu-id="22bc9-149">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-149">string</span></span>       | <span data-ttu-id="22bc9-150">製品のセットが複数ある場合、ページ制限に達すると、応答本文で継続トークンが返されます。</span><span class="sxs-lookup"><span data-stu-id="22bc9-150">If there are multiple sets of products, the response body returns a continuation token when the page limit is reached.</span></span> <span data-ttu-id="22bc9-151">残りの製品を取得する後続の呼び出しで、この継続トークンを指定します。</span><span class="sxs-lookup"><span data-stu-id="22bc9-151">Provide that continuation token here in subsequent calls to retrieve remaining products.</span></span>       | <span data-ttu-id="22bc9-152">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-152">No</span></span>       |
+| <span data-ttu-id="22bc9-153">maxPageSize</span><span class="sxs-lookup"><span data-stu-id="22bc9-153">maxPageSize</span></span>       | <span data-ttu-id="22bc9-154">number</span><span class="sxs-lookup"><span data-stu-id="22bc9-154">number</span></span>       | <span data-ttu-id="22bc9-155">1 つの応答で返す製品の最大数。</span><span class="sxs-lookup"><span data-stu-id="22bc9-155">The maximum number of products to return in one response.</span></span> <span data-ttu-id="22bc9-156">既定値および最大値は 100 です。</span><span class="sxs-lookup"><span data-stu-id="22bc9-156">The default and maximum value is 100.</span></span>                 | <span data-ttu-id="22bc9-157">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-157">No</span></span>       |
+| <span data-ttu-id="22bc9-158">modifiedAfter</span><span class="sxs-lookup"><span data-stu-id="22bc9-158">modifiedAfter</span></span>     | <span data-ttu-id="22bc9-159">datetime</span><span class="sxs-lookup"><span data-stu-id="22bc9-159">datetime</span></span>     | <span data-ttu-id="22bc9-160">指定した場合、この日付以降に変更された製品だけがサービスから返されます。</span><span class="sxs-lookup"><span data-stu-id="22bc9-160">If specified, the service only returns products that have been modified after this date.</span></span>        | <span data-ttu-id="22bc9-161">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-161">No</span></span>       |
+| <span data-ttu-id="22bc9-162">parentProductId</span><span class="sxs-lookup"><span data-stu-id="22bc9-162">parentProductId</span></span>   | <span data-ttu-id="22bc9-163">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-163">string</span></span>       | <span data-ttu-id="22bc9-164">指定した場合、指定されたアプリに対応するアドオンだけがサービスから返されます。</span><span class="sxs-lookup"><span data-stu-id="22bc9-164">If specified, the service only returns add-ons that correspond to the specified app.</span></span>      | <span data-ttu-id="22bc9-165">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-165">No</span></span>       |
+| <span data-ttu-id="22bc9-166">productSkuIds</span><span class="sxs-lookup"><span data-stu-id="22bc9-166">productSkuIds</span></span>     | <span data-ttu-id="22bc9-167">list&lt;ProductSkuId&gt;</span><span class="sxs-lookup"><span data-stu-id="22bc9-167">list&lt;ProductSkuId&gt;</span></span> | <span data-ttu-id="22bc9-168">指定した場合、指定された製品/SKU のペアに該当する製品だけがサービスから返されます。</span><span class="sxs-lookup"><span data-stu-id="22bc9-168">If specified, the service only returns products applicable to the provided product/SKU pairs.</span></span> <span data-ttu-id="22bc9-169">詳細については、次の表をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="22bc9-169">For more information, see the table below.</span></span>      | <span data-ttu-id="22bc9-170">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-170">No</span></span>       |
+| <span data-ttu-id="22bc9-171">productTypes</span><span class="sxs-lookup"><span data-stu-id="22bc9-171">productTypes</span></span>      | <span data-ttu-id="22bc9-172">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-172">string</span></span>       | <span data-ttu-id="22bc9-173">指定した場合、指定された製品タイプに一致する製品だけがサービスから返されます。</span><span class="sxs-lookup"><span data-stu-id="22bc9-173">If specified, the service only returns products that match the specified product types.</span></span> <span data-ttu-id="22bc9-174">サポートされている製品タイプは **Application**、**Durable**、および **UnmanagedConsumable** です。</span><span class="sxs-lookup"><span data-stu-id="22bc9-174">Supported product types are **Application**, **Durable**, and **UnmanagedConsumable**.</span></span>     | <span data-ttu-id="22bc9-175">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-175">No</span></span>       |
+| <span data-ttu-id="22bc9-176">validityType</span><span class="sxs-lookup"><span data-stu-id="22bc9-176">validityType</span></span>      | <span data-ttu-id="22bc9-177">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-177">string</span></span>       | <span data-ttu-id="22bc9-178">**All** に設定した場合、有効期限が切れた項目を含む、ユーザーのすべての製品が返されます。</span><span class="sxs-lookup"><span data-stu-id="22bc9-178">When set to **All**, all products for a user will be returned, including expired items.</span></span> <span data-ttu-id="22bc9-179">**Valid** に設定した場合、その時点で有効な製品だけが返されます (つまり、アクティブな状態で、開始日が現在より前、終了日が現在より後である製品)。</span><span class="sxs-lookup"><span data-stu-id="22bc9-179">When set to **Valid**, only products that are valid at this point in time are returned (that is, they have an active status, start date &lt; now, and end date is &gt; now).</span></span> | <span data-ttu-id="22bc9-180">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-180">No</span></span>       |
 
-<span/>
 
-UserIdentity オブジェクトには以下のパラメーターが含まれています。
+<span data-ttu-id="22bc9-181">UserIdentity オブジェクトには以下のパラメーターが含まれています。</span><span class="sxs-lookup"><span data-stu-id="22bc9-181">The UserIdentity object contains the following parameters.</span></span>
 
-| パラメーター            | タイプ   |  説明      | 必須かどうか |
+| <span data-ttu-id="22bc9-182">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bc9-182">Parameter</span></span>            | <span data-ttu-id="22bc9-183">型</span><span class="sxs-lookup"><span data-stu-id="22bc9-183">Type</span></span>   |  <span data-ttu-id="22bc9-184">説明</span><span class="sxs-lookup"><span data-stu-id="22bc9-184">Description</span></span>      | <span data-ttu-id="22bc9-185">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="22bc9-185">Required</span></span> |
 |----------------------|--------|----------------|----------|
-| identityType         | string | 文字列値 **b2b** を指定します。    | 必須      |
-| identityValue        | string | 照会する製品のユーザーの ID を表す [Windows ストア ID キー](view-and-grant-products-from-a-service.md#step-4)。  | 必須      |
-| localTicketReference | string | 返された製品で必要な識別子。 応答本文で返された項目には、一致する *localTicketReference* があります。 Windows ストア ID キーの *userId* 要求と同じ値を使用することをお勧めします。 | 必須      |
+| <span data-ttu-id="22bc9-186">identityType</span><span class="sxs-lookup"><span data-stu-id="22bc9-186">identityType</span></span>         | <span data-ttu-id="22bc9-187">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-187">string</span></span> | <span data-ttu-id="22bc9-188">文字列値 **b2b** を指定します。</span><span class="sxs-lookup"><span data-stu-id="22bc9-188">Specify the string value **b2b**.</span></span>    | <span data-ttu-id="22bc9-189">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-189">Yes</span></span>      |
+| <span data-ttu-id="22bc9-190">identityValue</span><span class="sxs-lookup"><span data-stu-id="22bc9-190">identityValue</span></span>        | <span data-ttu-id="22bc9-191">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-191">string</span></span> | <span data-ttu-id="22bc9-192">照会する製品のユーザーの ID を表す [Microsoft Store ID キー](view-and-grant-products-from-a-service.md#step-4)。</span><span class="sxs-lookup"><span data-stu-id="22bc9-192">The [Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user for whom you want to query products.</span></span>  | <span data-ttu-id="22bc9-193">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-193">Yes</span></span>      |
+| <span data-ttu-id="22bc9-194">localTicketReference</span><span class="sxs-lookup"><span data-stu-id="22bc9-194">localTicketReference</span></span> | <span data-ttu-id="22bc9-195">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-195">string</span></span> | <span data-ttu-id="22bc9-196">返された製品で必要な識別子。</span><span class="sxs-lookup"><span data-stu-id="22bc9-196">The requested identifier for the returned products.</span></span> <span data-ttu-id="22bc9-197">応答本文で返された項目には、一致する *localTicketReference* があります。</span><span class="sxs-lookup"><span data-stu-id="22bc9-197">Returned items in the response body will have a matching *localTicketReference*.</span></span> <span data-ttu-id="22bc9-198">Microsoft Store ID キーの *userId* 要求と同じ値を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="22bc9-198">We recommend that you use the same value as the *userId* claim in the Microsoft Store ID key.</span></span> | <span data-ttu-id="22bc9-199">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-199">Yes</span></span>      |
 
-<span/> 
 
-ProductSkuId オブジェクトには以下のパラメーターが含まれています。
+<span data-ttu-id="22bc9-200">ProductSkuId オブジェクトには、次のパラメーターが含まれています。</span><span class="sxs-lookup"><span data-stu-id="22bc9-200">The ProductSkuId object contains the following parameters.</span></span>
 
-| パラメーター | タイプ   | 説明          | 必須かどうか |
+| <span data-ttu-id="22bc9-201">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bc9-201">Parameter</span></span> | <span data-ttu-id="22bc9-202">型</span><span class="sxs-lookup"><span data-stu-id="22bc9-202">Type</span></span>   | <span data-ttu-id="22bc9-203">説明</span><span class="sxs-lookup"><span data-stu-id="22bc9-203">Description</span></span>          | <span data-ttu-id="22bc9-204">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="22bc9-204">Required</span></span> |
 |-----------|--------|----------------------|----------|
-| productId | string | Windows ストア カタログ内の[製品](in-app-purchases-and-trials.md#products-skus-and-availabilities)の[ストア ID](in-app-purchases-and-trials.md#store-ids)。 製品のストア ID の例は、9NBLGGH42CFD です。 | 必須      |
-| skuID     | string | Windows ストア カタログ内の製品の [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) の[ストア ID](in-app-purchases-and-trials.md#store-ids)。 SKU のストア ID の例は、0010 です。       | 必須      |
+| <span data-ttu-id="22bc9-205">productId</span><span class="sxs-lookup"><span data-stu-id="22bc9-205">productId</span></span> | <span data-ttu-id="22bc9-206">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-206">string</span></span> | <span data-ttu-id="22bc9-207">Microsoft Store カタログ内の[製品](in-app-purchases-and-trials.md#products-skus-and-availabilities)の [Store ID](in-app-purchases-and-trials.md#store-ids)。</span><span class="sxs-lookup"><span data-stu-id="22bc9-207">The [Store ID](in-app-purchases-and-trials.md#store-ids) for a [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog.</span></span> <span data-ttu-id="22bc9-208">製品の Store ID の例は、9NBLGGH42CFD です。</span><span class="sxs-lookup"><span data-stu-id="22bc9-208">An example Store ID for a product is 9NBLGGH42CFD.</span></span> | <span data-ttu-id="22bc9-209">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-209">Yes</span></span>      |
+| <span data-ttu-id="22bc9-210">skuID</span><span class="sxs-lookup"><span data-stu-id="22bc9-210">skuID</span></span>     | <span data-ttu-id="22bc9-211">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-211">string</span></span> | <span data-ttu-id="22bc9-212">Microsoft Store カタログ内の製品の [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) の [Store ID](in-app-purchases-and-trials.md#store-ids)。</span><span class="sxs-lookup"><span data-stu-id="22bc9-212">The [Store ID](in-app-purchases-and-trials.md#store-ids) for a product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog.</span></span> <span data-ttu-id="22bc9-213">SKU の Store ID の例は、0010 です。</span><span class="sxs-lookup"><span data-stu-id="22bc9-213">An example Store ID for a SKU is 0010.</span></span>       | <span data-ttu-id="22bc9-214">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-214">Yes</span></span>      |
 
-<span/>
 
-### <a name="request-example"></a>要求の例
+### <a name="request-example"></a><span data-ttu-id="22bc9-215">要求の例</span><span class="sxs-lookup"><span data-stu-id="22bc9-215">Request example</span></span>
 
 ```syntax
 POST https://collections.mp.microsoft.com/v6.0/collections/query HTTP/1.1
@@ -120,58 +116,55 @@ Content-Type: application/json
 }
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a><span data-ttu-id="22bc9-216">応答</span><span class="sxs-lookup"><span data-stu-id="22bc9-216">Response</span></span>
 
 
-### <a name="response-body"></a>応答本文
+### <a name="response-body"></a><span data-ttu-id="22bc9-217">応答本文</span><span class="sxs-lookup"><span data-stu-id="22bc9-217">Response body</span></span>
 
-| パラメーター         | タイプ                     | 説明          | 必須かどうか |
+| <span data-ttu-id="22bc9-218">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bc9-218">Parameter</span></span>         | <span data-ttu-id="22bc9-219">型</span><span class="sxs-lookup"><span data-stu-id="22bc9-219">Type</span></span>                     | <span data-ttu-id="22bc9-220">説明</span><span class="sxs-lookup"><span data-stu-id="22bc9-220">Description</span></span>          | <span data-ttu-id="22bc9-221">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="22bc9-221">Required</span></span> |
 |-------------------|--------------------------|-----------------------|----------|
-| continuationToken | string                   | 製品のセットが複数ある場合、ページ制限に達すると、このトークンが返されます。 残りの製品を取得する後続の呼び出しで、この継続トークンを指定できます。 | 省略可能       |
-| items             | CollectionItemContractV6 | 指定したユーザーの製品の配列。 詳細については、次の表をご覧ください。        | 省略可能       |
+| <span data-ttu-id="22bc9-222">continuationToken</span><span class="sxs-lookup"><span data-stu-id="22bc9-222">continuationToken</span></span> | <span data-ttu-id="22bc9-223">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-223">string</span></span>                   | <span data-ttu-id="22bc9-224">製品のセットが複数ある場合、ページ制限に達すると、このトークンが返されます。</span><span class="sxs-lookup"><span data-stu-id="22bc9-224">If there are multiple sets of products, this token is returned when the page limit is reached.</span></span> <span data-ttu-id="22bc9-225">残りの製品を取得する後続の呼び出しで、この継続トークンを指定できます。</span><span class="sxs-lookup"><span data-stu-id="22bc9-225">You can specify this continuation token in subsequent calls to retrieve remaining products.</span></span> | <span data-ttu-id="22bc9-226">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-226">No</span></span>       |
+| <span data-ttu-id="22bc9-227">items</span><span class="sxs-lookup"><span data-stu-id="22bc9-227">items</span></span>             | <span data-ttu-id="22bc9-228">CollectionItemContractV6</span><span class="sxs-lookup"><span data-stu-id="22bc9-228">CollectionItemContractV6</span></span> | <span data-ttu-id="22bc9-229">指定したユーザーの製品の配列。</span><span class="sxs-lookup"><span data-stu-id="22bc9-229">An array of products for the specified user.</span></span> <span data-ttu-id="22bc9-230">詳細については、次の表をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="22bc9-230">For more information, see the table below.</span></span>        | <span data-ttu-id="22bc9-231">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-231">No</span></span>       |
 
-<span/> 
 
-CollectionItemContractV6 オブジェクトには以下のパラメーターが含まれています。
+<span data-ttu-id="22bc9-232">CollectionItemContractV6 オブジェクトには以下のパラメーターが含まれています。</span><span class="sxs-lookup"><span data-stu-id="22bc9-232">The CollectionItemContractV6 object contains the following parameters.</span></span>
 
-| パラメーター            | タイプ               | 説明            | 必須かどうか |
+| <span data-ttu-id="22bc9-233">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bc9-233">Parameter</span></span>            | <span data-ttu-id="22bc9-234">型</span><span class="sxs-lookup"><span data-stu-id="22bc9-234">Type</span></span>               | <span data-ttu-id="22bc9-235">説明</span><span class="sxs-lookup"><span data-stu-id="22bc9-235">Description</span></span>            | <span data-ttu-id="22bc9-236">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="22bc9-236">Required</span></span> |
 |----------------------|--------------------|-------------------------|----------|
-| acquiredDate         | datetime           | ユーザーが項目を取得した日付。                  | 必須      |
-| campaignId           | string             | この項目の購入時に提供されたキャンペーン ID。                  | 省略可能       |
-| devOfferId           | string             | アプリ内購入からのプラン ID。              | 省略可能       |
-| endDate              | datetime           | 項目の終了日。              | 必須      |
-| fulfillmentData      | string             | 該当なし         | 省略可能       |
-| inAppOfferToken      | string             | Windows デベロッパー センター ダッシュボードで項目に割り当てられている、開発者が指定した製品 ID 文字列。 製品 ID の例は *product123* です。 | 省略可能       |
-| itemId               | string             | ユーザーが所有する他の項目からこのコレクション項目を識別する ID。 この ID は製品ごとに一意です。   | 必須      |
-| localTicketReference | string             | 要求本文の *localTicketReference* で指定された ID。                  | 必須      |
-| modifiedDate         | datetime           | この項目が最後に更新された日付。              | 必須      |
-| orderId              | string             | 存在する場合、この項目が取得された注文 ID。              | 省略可能       |
-| orderLineItemId      | string             | 存在する場合、この項目が取得された特定の注文の行項目。              | 省略可能       |
-| ownershipType        | string             | 文字列 *OwnedByBeneficiary*。   | 必須      |
-| productId            | string             | Windows ストア カタログ内の[製品](in-app-purchases-and-trials.md#products-skus-and-availabilities)の[ストア ID](in-app-purchases-and-trials.md#store-ids)。 製品のストア ID の例は、9NBLGGH42CFD です。          | 必須      |
-| productType          | string             | **Application**、**Durable**、および **UnmanagedConsumable** の製品タイプのいずれか。        | 必須      |
-| purchasedCountry     | string             | 該当なし。   | 省略可能       |
-| purchaser            | IdentityContractV6 | 存在する場合、項目の購入者の ID を表します。 下記に示すこのオブジェクトの詳細を参照してください。        | 省略可能       |
-| quantity             | number             | 項目の数量。 現在、これは常に 1 になります。      | 省略可能       |
-| skuId                | string             | Windows ストア カタログ内の[製品](in-app-purchases-and-trials.md#products-skus-and-availabilities)の SKU の[ストア ID](in-app-purchases-and-trials.md#store-ids)。 SKU のストア ID の例は、0010 です。     | 必須      |
-| skuType              | string             | SKU のタイプ。 可能な値は **Trial**、**Full**、および **Rental** です。        | 必須      |
-| startDate            | datetime           | 項目の有効期間の開始日。       | 必須      |
-| status               | string             | アイテムの状態。 可能な値は **Active**、**Expired**、**Revoked**、および **Banned** です。    | 必須      |
-| tags                 | string             | 該当なし。    | 必須      |
-| transactionId        | guid               | この項目の購入の結果としてのトランザクション ID。 フルフィルメント完了として項目を報告するのに使用できます。      | 必須      |
+| <span data-ttu-id="22bc9-237">acquiredDate</span><span class="sxs-lookup"><span data-stu-id="22bc9-237">acquiredDate</span></span>         | <span data-ttu-id="22bc9-238">datetime</span><span class="sxs-lookup"><span data-stu-id="22bc9-238">datetime</span></span>           | <span data-ttu-id="22bc9-239">ユーザーが項目を取得した日付。</span><span class="sxs-lookup"><span data-stu-id="22bc9-239">The date on which the user acquired the item.</span></span>                  | <span data-ttu-id="22bc9-240">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-240">Yes</span></span>      |
+| <span data-ttu-id="22bc9-241">campaignId</span><span class="sxs-lookup"><span data-stu-id="22bc9-241">campaignId</span></span>           | <span data-ttu-id="22bc9-242">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-242">string</span></span>             | <span data-ttu-id="22bc9-243">この項目の購入時に提供されたキャンペーン ID。</span><span class="sxs-lookup"><span data-stu-id="22bc9-243">The campaign ID that was provided at purchase time for this item.</span></span>                  | <span data-ttu-id="22bc9-244">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-244">No</span></span>       |
+| <span data-ttu-id="22bc9-245">devOfferId</span><span class="sxs-lookup"><span data-stu-id="22bc9-245">devOfferId</span></span>           | <span data-ttu-id="22bc9-246">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-246">string</span></span>             | <span data-ttu-id="22bc9-247">アプリ内購入からのプラン ID。</span><span class="sxs-lookup"><span data-stu-id="22bc9-247">The offer ID from an in-app purchase.</span></span>              | <span data-ttu-id="22bc9-248">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-248">No</span></span>       |
+| <span data-ttu-id="22bc9-249">endDate</span><span class="sxs-lookup"><span data-stu-id="22bc9-249">endDate</span></span>              | <span data-ttu-id="22bc9-250">datetime</span><span class="sxs-lookup"><span data-stu-id="22bc9-250">datetime</span></span>           | <span data-ttu-id="22bc9-251">項目の終了日。</span><span class="sxs-lookup"><span data-stu-id="22bc9-251">The end date of the item.</span></span>              | <span data-ttu-id="22bc9-252">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-252">Yes</span></span>      |
+| <span data-ttu-id="22bc9-253">fulfillmentData</span><span class="sxs-lookup"><span data-stu-id="22bc9-253">fulfillmentData</span></span>      | <span data-ttu-id="22bc9-254">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-254">string</span></span>             | <span data-ttu-id="22bc9-255">該当なし</span><span class="sxs-lookup"><span data-stu-id="22bc9-255">N/A</span></span>         | <span data-ttu-id="22bc9-256">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-256">No</span></span>       |
+| <span data-ttu-id="22bc9-257">inAppOfferToken</span><span class="sxs-lookup"><span data-stu-id="22bc9-257">inAppOfferToken</span></span>      | <span data-ttu-id="22bc9-258">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-258">string</span></span>             | <span data-ttu-id="22bc9-259">Windows デベロッパー センター ダッシュボードで項目に割り当てられている、開発者が指定した製品 ID 文字列。</span><span class="sxs-lookup"><span data-stu-id="22bc9-259">The developer-specified product ID string that is assigned to the item in the Windows Dev Center dashboard.</span></span> <span data-ttu-id="22bc9-260">製品 ID の例は *product123* です。</span><span class="sxs-lookup"><span data-stu-id="22bc9-260">An example product ID is *product123*.</span></span> | <span data-ttu-id="22bc9-261">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-261">No</span></span>       |
+| <span data-ttu-id="22bc9-262">itemId</span><span class="sxs-lookup"><span data-stu-id="22bc9-262">itemId</span></span>               | <span data-ttu-id="22bc9-263">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-263">string</span></span>             | <span data-ttu-id="22bc9-264">ユーザーが所有する他の項目からこのコレクション項目を識別する ID。</span><span class="sxs-lookup"><span data-stu-id="22bc9-264">An ID that identifies this collection item from other items the user owns.</span></span> <span data-ttu-id="22bc9-265">この ID は製品ごとに一意です。</span><span class="sxs-lookup"><span data-stu-id="22bc9-265">This ID is unique per product.</span></span>   | <span data-ttu-id="22bc9-266">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-266">Yes</span></span>      |
+| <span data-ttu-id="22bc9-267">localTicketReference</span><span class="sxs-lookup"><span data-stu-id="22bc9-267">localTicketReference</span></span> | <span data-ttu-id="22bc9-268">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-268">string</span></span>             | <span data-ttu-id="22bc9-269">要求本文の *localTicketReference* で指定された ID。</span><span class="sxs-lookup"><span data-stu-id="22bc9-269">The ID of the previously supplied *localTicketReference* in the request body.</span></span>                  | <span data-ttu-id="22bc9-270">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-270">Yes</span></span>      |
+| <span data-ttu-id="22bc9-271">modifiedDate</span><span class="sxs-lookup"><span data-stu-id="22bc9-271">modifiedDate</span></span>         | <span data-ttu-id="22bc9-272">datetime</span><span class="sxs-lookup"><span data-stu-id="22bc9-272">datetime</span></span>           | <span data-ttu-id="22bc9-273">この項目が最後に更新された日付。</span><span class="sxs-lookup"><span data-stu-id="22bc9-273">The date this item was last modified.</span></span>              | <span data-ttu-id="22bc9-274">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-274">Yes</span></span>      |
+| <span data-ttu-id="22bc9-275">orderId</span><span class="sxs-lookup"><span data-stu-id="22bc9-275">orderId</span></span>              | <span data-ttu-id="22bc9-276">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-276">string</span></span>             | <span data-ttu-id="22bc9-277">存在する場合、この項目が取得された注文 ID。</span><span class="sxs-lookup"><span data-stu-id="22bc9-277">If present, the order ID of which this item was obtained.</span></span>              | <span data-ttu-id="22bc9-278">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-278">No</span></span>       |
+| <span data-ttu-id="22bc9-279">orderLineItemId</span><span class="sxs-lookup"><span data-stu-id="22bc9-279">orderLineItemId</span></span>      | <span data-ttu-id="22bc9-280">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-280">string</span></span>             | <span data-ttu-id="22bc9-281">存在する場合、この項目が取得された特定の注文の行項目。</span><span class="sxs-lookup"><span data-stu-id="22bc9-281">If present, the line item of the particular order for which this item was obtained.</span></span>              | <span data-ttu-id="22bc9-282">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-282">No</span></span>       |
+| <span data-ttu-id="22bc9-283">ownershipType</span><span class="sxs-lookup"><span data-stu-id="22bc9-283">ownershipType</span></span>        | <span data-ttu-id="22bc9-284">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-284">string</span></span>             | <span data-ttu-id="22bc9-285">文字列 *OwnedByBeneficiary*。</span><span class="sxs-lookup"><span data-stu-id="22bc9-285">The string *OwnedByBeneficiary*.</span></span>   | <span data-ttu-id="22bc9-286">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-286">Yes</span></span>      |
+| <span data-ttu-id="22bc9-287">productId</span><span class="sxs-lookup"><span data-stu-id="22bc9-287">productId</span></span>            | <span data-ttu-id="22bc9-288">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-288">string</span></span>             | <span data-ttu-id="22bc9-289">Microsoft Store カタログ内の[製品](in-app-purchases-and-trials.md#products-skus-and-availabilities)の [Store ID](in-app-purchases-and-trials.md#store-ids)。</span><span class="sxs-lookup"><span data-stu-id="22bc9-289">The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog.</span></span> <span data-ttu-id="22bc9-290">製品の Store ID の例は、9NBLGGH42CFD です。</span><span class="sxs-lookup"><span data-stu-id="22bc9-290">An example Store ID for a product is 9NBLGGH42CFD.</span></span>          | <span data-ttu-id="22bc9-291">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-291">Yes</span></span>      |
+| <span data-ttu-id="22bc9-292">productType</span><span class="sxs-lookup"><span data-stu-id="22bc9-292">productType</span></span>          | <span data-ttu-id="22bc9-293">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-293">string</span></span>             | <span data-ttu-id="22bc9-294">**Application**、**Durable**、および **UnmanagedConsumable** の製品タイプのいずれか。</span><span class="sxs-lookup"><span data-stu-id="22bc9-294">One of the following product types: **Application**, **Durable**, and **UnmanagedConsumable**.</span></span>        | <span data-ttu-id="22bc9-295">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-295">Yes</span></span>      |
+| <span data-ttu-id="22bc9-296">purchasedCountry</span><span class="sxs-lookup"><span data-stu-id="22bc9-296">purchasedCountry</span></span>     | <span data-ttu-id="22bc9-297">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-297">string</span></span>             | <span data-ttu-id="22bc9-298">該当なし。</span><span class="sxs-lookup"><span data-stu-id="22bc9-298">N/A</span></span>   | <span data-ttu-id="22bc9-299">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-299">No</span></span>       |
+| <span data-ttu-id="22bc9-300">purchaser</span><span class="sxs-lookup"><span data-stu-id="22bc9-300">purchaser</span></span>            | <span data-ttu-id="22bc9-301">IdentityContractV6</span><span class="sxs-lookup"><span data-stu-id="22bc9-301">IdentityContractV6</span></span> | <span data-ttu-id="22bc9-302">存在する場合、項目の購入者の ID を表します。</span><span class="sxs-lookup"><span data-stu-id="22bc9-302">If present, this represents the identity of the purchaser of the item.</span></span> <span data-ttu-id="22bc9-303">下記に示すこのオブジェクトの詳細を参照してください。</span><span class="sxs-lookup"><span data-stu-id="22bc9-303">See the details for this object below.</span></span>        | <span data-ttu-id="22bc9-304">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-304">No</span></span>       |
+| <span data-ttu-id="22bc9-305">quantity</span><span class="sxs-lookup"><span data-stu-id="22bc9-305">quantity</span></span>             | <span data-ttu-id="22bc9-306">number</span><span class="sxs-lookup"><span data-stu-id="22bc9-306">number</span></span>             | <span data-ttu-id="22bc9-307">項目の数量。</span><span class="sxs-lookup"><span data-stu-id="22bc9-307">The quantity of the item.</span></span> <span data-ttu-id="22bc9-308">現在、これは常に 1 になります。</span><span class="sxs-lookup"><span data-stu-id="22bc9-308">Currently, this will always be 1.</span></span>      | <span data-ttu-id="22bc9-309">省略可能</span><span class="sxs-lookup"><span data-stu-id="22bc9-309">No</span></span>       |
+| <span data-ttu-id="22bc9-310">skuId</span><span class="sxs-lookup"><span data-stu-id="22bc9-310">skuId</span></span>                | <span data-ttu-id="22bc9-311">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-311">string</span></span>             | <span data-ttu-id="22bc9-312">Microsoft Store カタログ内の製品の [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) の [Store ID](in-app-purchases-and-trials.md#store-ids)。</span><span class="sxs-lookup"><span data-stu-id="22bc9-312">The [Store ID](in-app-purchases-and-trials.md#store-ids) for the product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog.</span></span> <span data-ttu-id="22bc9-313">SKU の Store ID の例は、0010 です。</span><span class="sxs-lookup"><span data-stu-id="22bc9-313">An example Store ID for a SKU is 0010.</span></span>     | <span data-ttu-id="22bc9-314">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-314">Yes</span></span>      |
+| <span data-ttu-id="22bc9-315">skuType</span><span class="sxs-lookup"><span data-stu-id="22bc9-315">skuType</span></span>              | <span data-ttu-id="22bc9-316">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-316">string</span></span>             | <span data-ttu-id="22bc9-317">SKU のタイプ。</span><span class="sxs-lookup"><span data-stu-id="22bc9-317">Type of the SKU.</span></span> <span data-ttu-id="22bc9-318">可能な値は **Trial**、**Full**、および **Rental** です。</span><span class="sxs-lookup"><span data-stu-id="22bc9-318">Possible values include **Trial**, **Full**, and **Rental**.</span></span>        | <span data-ttu-id="22bc9-319">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-319">Yes</span></span>      |
+| <span data-ttu-id="22bc9-320">startDate</span><span class="sxs-lookup"><span data-stu-id="22bc9-320">startDate</span></span>            | <span data-ttu-id="22bc9-321">datetime</span><span class="sxs-lookup"><span data-stu-id="22bc9-321">datetime</span></span>           | <span data-ttu-id="22bc9-322">項目の有効期間の開始日。</span><span class="sxs-lookup"><span data-stu-id="22bc9-322">The date that the item starts being valid.</span></span>       | <span data-ttu-id="22bc9-323">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-323">Yes</span></span>      |
+| <span data-ttu-id="22bc9-324">status</span><span class="sxs-lookup"><span data-stu-id="22bc9-324">status</span></span>               | <span data-ttu-id="22bc9-325">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-325">string</span></span>             | <span data-ttu-id="22bc9-326">アイテムの状態。</span><span class="sxs-lookup"><span data-stu-id="22bc9-326">The status of the item.</span></span> <span data-ttu-id="22bc9-327">可能な値は **Active**、**Expired**、**Revoked**、および **Banned** です。</span><span class="sxs-lookup"><span data-stu-id="22bc9-327">Possible values include **Active**, **Expired**, **Revoked**, and **Banned**.</span></span>    | <span data-ttu-id="22bc9-328">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-328">Yes</span></span>      |
+| <span data-ttu-id="22bc9-329">tags</span><span class="sxs-lookup"><span data-stu-id="22bc9-329">tags</span></span>                 | <span data-ttu-id="22bc9-330">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-330">string</span></span>             | <span data-ttu-id="22bc9-331">該当なし。</span><span class="sxs-lookup"><span data-stu-id="22bc9-331">N/A</span></span>    | <span data-ttu-id="22bc9-332">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-332">Yes</span></span>      |
+| <span data-ttu-id="22bc9-333">transactionId</span><span class="sxs-lookup"><span data-stu-id="22bc9-333">transactionId</span></span>        | <span data-ttu-id="22bc9-334">guid</span><span class="sxs-lookup"><span data-stu-id="22bc9-334">guid</span></span>               | <span data-ttu-id="22bc9-335">この項目の購入の結果としてのトランザクション ID。</span><span class="sxs-lookup"><span data-stu-id="22bc9-335">The transaction ID as a result of the purchase of this item.</span></span> <span data-ttu-id="22bc9-336">フルフィルメント完了として項目を報告するのに使用できます。</span><span class="sxs-lookup"><span data-stu-id="22bc9-336">Can be used for reporting an item as fulfilled.</span></span>      | <span data-ttu-id="22bc9-337">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-337">Yes</span></span>      |
 
-<span/> 
 
-IdentityContractV6 オブジェクトには以下のパラメーターが含まれています。
+<span data-ttu-id="22bc9-338">IdentityContractV6 オブジェクトには以下のパラメーターが含まれています。</span><span class="sxs-lookup"><span data-stu-id="22bc9-338">The IdentityContractV6 object contains the following parameters.</span></span>
 
-| パラメーター     | タイプ   | 説明                                                                        | 必須かどうか |
+| <span data-ttu-id="22bc9-339">パラメーター</span><span class="sxs-lookup"><span data-stu-id="22bc9-339">Parameter</span></span>     | <span data-ttu-id="22bc9-340">型</span><span class="sxs-lookup"><span data-stu-id="22bc9-340">Type</span></span>   | <span data-ttu-id="22bc9-341">説明</span><span class="sxs-lookup"><span data-stu-id="22bc9-341">Description</span></span>                                                                        | <span data-ttu-id="22bc9-342">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="22bc9-342">Required</span></span> |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
-| identityType  | string | 値 *pub* を格納します。                                                      | 必須      |
-| identityValue | string | 指定された Windows ストア ID キーの *publisherUserId* の文字列値。 | 必須      |
+| <span data-ttu-id="22bc9-343">identityType</span><span class="sxs-lookup"><span data-stu-id="22bc9-343">identityType</span></span>  | <span data-ttu-id="22bc9-344">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-344">string</span></span> | <span data-ttu-id="22bc9-345">値 *pub* を格納します。</span><span class="sxs-lookup"><span data-stu-id="22bc9-345">Contains the value *pub*.</span></span>                                                      | <span data-ttu-id="22bc9-346">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-346">Yes</span></span>      |
+| <span data-ttu-id="22bc9-347">identityValue</span><span class="sxs-lookup"><span data-stu-id="22bc9-347">identityValue</span></span> | <span data-ttu-id="22bc9-348">string</span><span class="sxs-lookup"><span data-stu-id="22bc9-348">string</span></span> | <span data-ttu-id="22bc9-349">指定された Microsoft Store ID キーの *publisherUserId* の文字列値。</span><span class="sxs-lookup"><span data-stu-id="22bc9-349">The string value of the *publisherUserId* from the specified Microsoft Store ID key.</span></span> | <span data-ttu-id="22bc9-350">必須</span><span class="sxs-lookup"><span data-stu-id="22bc9-350">Yes</span></span>      |
 
-<span/> 
 
-### <a name="response-example"></a>応答の例
+### <a name="response-example"></a><span data-ttu-id="22bc9-351">応答の例</span><span class="sxs-lookup"><span data-stu-id="22bc9-351">Response example</span></span>
 
 ```syntax
 HTTP/1.1 200 OK
@@ -213,10 +206,9 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 }
 ```
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="22bc9-352">関連トピック</span><span class="sxs-lookup"><span data-stu-id="22bc9-352">Related topics</span></span>
 
-* [サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)
-* [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
-* [無料の製品の付与](grant-free-products.md)
-* [Windows ストア ID キーの更新](renew-a-windows-store-id-key.md)
-
+* [<span data-ttu-id="22bc9-353">サービスによる製品の権利の管理</span><span class="sxs-lookup"><span data-stu-id="22bc9-353">Manage product entitlements from a service</span></span>](view-and-grant-products-from-a-service.md)
+* [<span data-ttu-id="22bc9-354">コンシューマブルな製品のフルフィルメント完了の報告</span><span class="sxs-lookup"><span data-stu-id="22bc9-354">Report consumable products as fulfilled</span></span>](report-consumable-products-as-fulfilled.md)
+* [<span data-ttu-id="22bc9-355">無料の製品の付与</span><span class="sxs-lookup"><span data-stu-id="22bc9-355">Grant free products</span></span>](grant-free-products.md)
+* [<span data-ttu-id="22bc9-356">Microsoft Store ID キーの更新</span><span class="sxs-lookup"><span data-stu-id="22bc9-356">Renew a Microsoft Store ID key</span></span>](renew-a-windows-store-id-key.md)

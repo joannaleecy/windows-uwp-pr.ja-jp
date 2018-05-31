@@ -1,220 +1,313 @@
 ---
 author: mijacobs
-description: "言語の視覚的な表現として、文字体裁の主な役割は明確であることです。 スタイルによってその目的が邪魔されてはなりません。 ただし、文字体裁にはレイアウト コンポーネントとしての重要な役割もあり、そのデザインの密度と複雑さに強い影響を与え、そのデザインのユーザー エクスペリエンスにも影響します。"
-title: "文字体裁"
-ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
-template: detail.hbs
+description: コンテンツをユーザーに理解しやすくするための、アプリにおける文字体裁の使用方法について説明します。
+title: UWP アプリの文字体裁
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 04/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bec416694e347a1432892f9dc591afdfe8548e61
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 3dd5e6f3dbddca2f6a944ee18e32463afe029f89
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1816777"
 ---
-# <a name="typography"></a><span data-ttu-id="cd903-106">文字体裁</span><span class="sxs-lookup"><span data-stu-id="cd903-106">Typography</span></span>
+# <a name="typography"></a><span data-ttu-id="33cf5-104">文字体裁</span><span class="sxs-lookup"><span data-stu-id="33cf5-104">Typography</span></span>
 
-<span data-ttu-id="cd903-107">言語の視覚的な表現として、文字体裁の主な役割は明確であることです。</span><span class="sxs-lookup"><span data-stu-id="cd903-107">As the visual representation of language, typography’s main task is to be clear.</span></span> <span data-ttu-id="cd903-108">スタイルによってその目的が邪魔されてはなりません。</span><span class="sxs-lookup"><span data-stu-id="cd903-108">Its style should never get in the way of that goal.</span></span> <span data-ttu-id="cd903-109">ただし、文字体裁にはレイアウト コンポーネントとしての重要な役割もあり、そのデザインの密度と複雑さに強い影響を与え、そのデザインのユーザー エクスペリエンスにも影響します。</span><span class="sxs-lookup"><span data-stu-id="cd903-109">But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.</span></span>
+![文字体裁のヘッダー画像](images/type/header-typography.svg)
 
-## <a name="typeface"></a><span data-ttu-id="cd903-110">書体</span><span class="sxs-lookup"><span data-stu-id="cd903-110">Typeface</span></span>
+<span data-ttu-id="33cf5-106">言語の視覚的表現である文字体裁において、何よりも重要な役割は情報を伝達することです。</span><span class="sxs-lookup"><span data-stu-id="33cf5-106">As the visual representation of language, typography’s main task is to communicate information.</span></span> <span data-ttu-id="33cf5-107">スタイルは、その目的を阻害するものであってはなりません。</span><span class="sxs-lookup"><span data-stu-id="33cf5-107">Its style should never get in the way of that goal.</span></span> <span data-ttu-id="33cf5-108">この記事では、ユーザーが簡単かつ効率的にコンテンツを理解できるように、UWP アプリで文字体裁のスタイルを決定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="33cf5-108">In this article, we'll discuss how to style typography in your UWP app to help users understand content easily and efficiently.</span></span>
 
-<span data-ttu-id="cd903-111">すべての Microsoft デジタル デザインで使う書体として Segoe UI が選択されました。</span><span class="sxs-lookup"><span data-stu-id="cd903-111">We’ve selected Segoe UI for use on all Microsoft digital designs.</span></span> <span data-ttu-id="cd903-112">Segoe UI には多くの文字が用意されており、さまざまなサイズとピクセル密度で最適な読みやすさが維持されるように設計されています。</span><span class="sxs-lookup"><span data-stu-id="cd903-112">Segoe UI provides a wide range of characters and is designed to maintain optimal legibility across sizes and pixel densities.</span></span> <span data-ttu-id="cd903-113">システムのコンテンツを補完する、きれいで明るくオープンな美しさを備えています。</span><span class="sxs-lookup"><span data-stu-id="cd903-113">It offers a clean, light, and open aesthetic that complements the content of the system.</span></span>
+## <a name="font"></a><span data-ttu-id="33cf5-109">フォント</span><span class="sxs-lookup"><span data-stu-id="33cf5-109">Font</span></span>
 
-![Segoe UI フォントのサンプル テキスト](images/segoe-sample.png)
+<span data-ttu-id="33cf5-110">アプリ全体で同じフォントを使用してください。UWP アプリの既定のフォントである **Segoe UI** に統一することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="33cf5-110">You should use one font throughout your app's UI, and we recommend sticking with the default font for UWP apps, **Segoe UI**.</span></span> <span data-ttu-id="33cf5-111">このフォントは、常に最適な読みやすさが維持されるサイズとピクセル密度を備え、システムのコンテンツを清潔で軽快、かつオープンに美しく表示します。</span><span class="sxs-lookup"><span data-stu-id="33cf5-111">It's designed to maintain optimal legibility across sizes and pixel densities and offers a clean, light, and open aesthetic that complements the content of the system.</span></span>
 
-## <a name="weights"></a><span data-ttu-id="cd903-115">太さ</span><span class="sxs-lookup"><span data-stu-id="cd903-115">Weights</span></span>
+![Segoe UI フォントのサンプル テキスト](images/type/segoe-sample.svg)
 
-<span data-ttu-id="cd903-116">Microsoft では、シンプルさと効率性を考慮に入れて文字体裁に取り組んでいます。</span><span class="sxs-lookup"><span data-stu-id="cd903-116">We approach typography with an eye to simplicity and efficiency.</span></span> <span data-ttu-id="cd903-117">1 つの書体、最小限の太さとサイズ、明確な階層構造を使うことを選択しました。</span><span class="sxs-lookup"><span data-stu-id="cd903-117">We choose to use one typeface, a minimum of weights and sizes, and a clear hierarchy.</span></span> <span data-ttu-id="cd903-118">配置と位置合わせは、各言語の既定のスタイルに従います。</span><span class="sxs-lookup"><span data-stu-id="cd903-118">Positioning and alignment follow the default style for the given language.</span></span> <span data-ttu-id="cd903-119">英語では、文字が左から右、上から下へと進みます。</span><span class="sxs-lookup"><span data-stu-id="cd903-119">In English the sequence runs left to right, top to bottom.</span></span> <span data-ttu-id="cd903-120">テキストと画像の関係は、明確で直接的です。</span><span class="sxs-lookup"><span data-stu-id="cd903-120">Relationships between text and images are clear and straightforward.</span></span>
+<span data-ttu-id="33cf5-113">アプリで英語以外の言語を表示する場合、または異なるフォントを選択する場合は、「[言語](#Languages)」と「[フォント](#Fonts)」のセクションで、弊社が UWP アプリ向けに推奨するフォントを確認してください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-113">To display non-English languages or to select a different font for your app, please see [Languages](#Languages) and [Fonts](#Fonts) for our recommended fonts for UWP apps.</span></span>
 
-![サポートされるフォントの太さを示します。](images/weights.png)
+<span data-ttu-id="33cf5-114">:::row::: :::column::: ![推奨](images/do.svg) UI のフォントを統一してください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-114">:::row::: :::column::: ![do](images/do.svg) Pick one font for your UI.</span></span>
+<span data-ttu-id="33cf5-115">:::column-end::: :::column::: ![非推奨](images/dont.svg) 複数のフォントを混在させないでください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-115">:::column-end::: :::column::: ![don't](images/dont.svg) Don't mix multiple fonts.</span></span>
+<span data-ttu-id="33cf5-116">:::column-end::: :::row-end:::</span><span class="sxs-lookup"><span data-stu-id="33cf5-116">:::column-end::: :::row-end:::</span></span>
 
-## <a name="line-spacing"></a><span data-ttu-id="cd903-123">行間</span><span class="sxs-lookup"><span data-stu-id="cd903-123">Line spacing</span></span>
+## <a name="size-and-scaling"></a><span data-ttu-id="33cf5-117">サイズとスケーリング</span><span class="sxs-lookup"><span data-stu-id="33cf5-117">Size and scaling</span></span>
 
-![行間 125% の例](images/line-spacing.png)
+<span data-ttu-id="33cf5-118">UWP アプリのフォント サイズは、すべてのデバイスで自動的に拡大縮小します。</span><span class="sxs-lookup"><span data-stu-id="33cf5-118">Font sizes in UWP apps automatically scale on all devices.</span></span> <span data-ttu-id="33cf5-119">スケーリング アルゴリズムによって、10 フィート離れた Surface Hub 上の 24 ピクセル フォントが、目の前にある 5 インチ サイズの電話の画面に表示された 24 ピクセル フォントと同じ読みやすさで表示されます。</span><span class="sxs-lookup"><span data-stu-id="33cf5-119">The scaling algorithm ensures that a 24 px font on Surface Hub 10 feet away is just as legible as a 24 px font on 5" phone that's a few inches away.</span></span>
 
-<span data-ttu-id="cd903-125">行間はフォント サイズの 125% で計算し、必要に応じて 4 の倍数の近似値に丸めてください。</span><span class="sxs-lookup"><span data-stu-id="cd903-125">Line spacing should be calculated at 125% of the font size, rounding to the closest multiple of four when necessary.</span></span> <span data-ttu-id="cd903-126">たとえば 15 ピクセルの Segoe UI の場合、15 ピクセルの 125% は 18.75 ピクセルです。</span><span class="sxs-lookup"><span data-stu-id="cd903-126">For example with 15px Segoe UI, 125% of 15px is 18.75px.</span></span> <span data-ttu-id="cd903-127">4 ピクセル グリッドが維持されるように、行の高さを 20 ピクセルに切り上げて設定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="cd903-127">We recommend rounding up and setting line height to 20px to stay on the 4px grid.</span></span> <span data-ttu-id="cd903-128">これにより、読みやすくなり、発音区分符のスペースが十分確保されます。</span><span class="sxs-lookup"><span data-stu-id="cd903-128">This ensures a good reading experience and adequate space for diacritical marks.</span></span> <span data-ttu-id="cd903-129">具体的な例については、以下の「書体見本」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="cd903-129">See the Type ramp section below for specific examples.</span></span>
+![さまざまなデバイスの視聴距離](images/type/scaling-chart.svg)
 
-<span data-ttu-id="cd903-130">小さい書体の上に大きい書体を重ねる場合、大きい書体の最後のベースラインから小さい書体の最初のベースラインまでの距離が、大きい書体の行の高さと等しくなるようにしてください。</span><span class="sxs-lookup"><span data-stu-id="cd903-130">When stacking larger type on top of smaller type, the distance from the last baseline of the larger type to the first baseline of the smaller type should be equal to the larger type’s line height.</span></span>
+<span data-ttu-id="33cf5-121">スケーリング システムのしくみを踏まえ、実際の物理ピクセルではなく、有効ピクセルに基づいてデザインしてください。異なる画面サイズや解像度に応じてフォント サイズを変更する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="33cf5-121">Because of how the scaling system works, you're designing in effective pixels, not actual physical pixels, and you shouldn't have to alter font sizes for different screens sizes or resolutions.</span></span>
 
-![小さい書体に対する大きい書体の重なり方を示す図](images/line-height-stacking.png)
+<span data-ttu-id="33cf5-122">:::row::: :::column::: ![推奨](images/do.svg) UWP の[書体見本](#type-ramp)に従います。</span><span class="sxs-lookup"><span data-stu-id="33cf5-122">:::row::: :::column::: ![do](images/do.svg) Follow the UWP [type ramp](#type-ramp) sizing.</span></span>
+<span data-ttu-id="33cf5-123">:::column-end::: :::column::: ![非推奨](images/dont.svg) 12 ピクセルよりも小さいフォント サイズを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-123">:::column-end::: :::column::: ![don't](images/dont.svg) Use a font size smaller than 12 px.</span></span>
+<span data-ttu-id="33cf5-124">:::column-end::: :::row-end:::</span><span class="sxs-lookup"><span data-stu-id="33cf5-124">:::column-end::: :::row-end:::</span></span>
 
-<span data-ttu-id="cd903-132">XAML では、これは 2 つの [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を重ね、適切な余白を設定することで実現できます。</span><span class="sxs-lookup"><span data-stu-id="cd903-132">In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) and setting the appropriate margin.</span></span>
+## <a name="hierarchy"></a><span data-ttu-id="33cf5-125">階層</span><span class="sxs-lookup"><span data-stu-id="33cf5-125">Hierarchy</span></span>
 
-```xaml
-<StackPanel Width="200">
-    <!-- Setting a bottom margin of 3px on the header
-         puts the baseline of the body text exactly 24px
-         below the baseline of the header. 24px is the
-         recommended line height for a 20px font size,
-         which is what’s set in SubtitleTextBlockStyle.
-         The bottom margin will be different for
-         different font size pairings. -->
-    <TextBlock
-        Style="{StaticResource SubtitleTextBlockStyle}"
-        Margin="0,0,0,3"
-        Text="Header text" />
-    <TextBlock
-        Style="{StaticResource BodyTextBlockStyle}"
-        TextWrapping="Wrap"
-        Text="This line of text should be positioned where the above header would have wrapped." />
-</StackPanel>
+<span data-ttu-id="33cf5-126">:::row::: :::column::: ユーザーはページを斜め読みするとき、視覚的な階層を手掛かりにしています。見出しは内容を要約し、本文は詳細を説明するものと想定されます。</span><span class="sxs-lookup"><span data-stu-id="33cf5-126">:::row::: :::column::: Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail.</span></span> <span data-ttu-id="33cf5-127">アプリでわかりやすい視覚的階層を作成するためには、UWP 書体見本に従ってください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-127">To create a clear visual hierarchy in your app, follow the UWP type ramp.</span></span>
+<span data-ttu-id="33cf5-128">:::column-end::: :::column::: ![テキスト ブロックのスタイル](images/type/type-hierarchy.svg) :::column-end::: :::row-end:::</span><span class="sxs-lookup"><span data-stu-id="33cf5-128">:::column-end::: :::column::: ![text block styles](images/type/type-hierarchy.svg) :::column-end::: :::row-end:::</span></span>
+
+### <a name="type-ramp"></a><span data-ttu-id="33cf5-129">書体見本</span><span class="sxs-lookup"><span data-stu-id="33cf5-129">Type ramp</span></span>
+
+<span data-ttu-id="33cf5-130">UWP 書体見本は、ユーザーがコンテンツを読みやすいように、ページ上の各書体スタイル間の重要な関係を定めたものです。</span><span class="sxs-lookup"><span data-stu-id="33cf5-130">The UWP type ramp establishes crucial relationships between the type styles on a page, helping users read content easily.</span></span> <span data-ttu-id="33cf5-131">すべてのサイズは有効ピクセル単位で示され、UWP アプリが動作するデバイスを問わず、常に最適に表示されるように調整されています。</span><span class="sxs-lookup"><span data-stu-id="33cf5-131">All sizes are in effective pixels and are optimized for UWP apps running on all devices.</span></span>
+
+![書体見本](images/type/type-ramp.svg)
+
+### <a name="using-the-type-ramp"></a><span data-ttu-id="33cf5-133">書体見本の使用</span><span class="sxs-lookup"><span data-stu-id="33cf5-133">Using the type ramp</span></span>
+
+<span data-ttu-id="33cf5-134">:::row::: :::column::: 各レベルの書体見本は、XAML の[静的リソース](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)としてアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="33cf5-134">:::row::: :::column::: You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp).</span></span> <span data-ttu-id="33cf5-135">これらのスタイルは、`*TextBlockStyle` 名前付け規則に従っています。</span><span class="sxs-lookup"><span data-stu-id="33cf5-135">The styles follow the `*TextBlockStyle` naming convention.</span></span>
+<span data-ttu-id="33cf5-136">:::column-end::: :::column::: ![テキスト ブロックのスタイル](images/type/text-block-type-ramp.svg) :::column-end::: :::row-end:::</span><span class="sxs-lookup"><span data-stu-id="33cf5-136">:::column-end::: :::column::: ![text block styles](images/type/text-block-type-ramp.svg) :::column-end::: :::row-end:::</span></span>
+
+```XAML
+<TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
+<TextBlock Text="SubHeader" Style="{StaticResource SubheaderTextBlockStyle}"/>
+<TextBlock Text="Title" Style="{StaticResource TitleTextBlockStyle}"/>
+<TextBlock Text="SubTitle" Style="{StaticResource SubtitleTextBlockStyle}"/>
+<TextBlock Text="Base" Style="{StaticResource BaseTextBlockStyle}"/>
+<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
+<TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
 
+<span data-ttu-id="33cf5-137">:::row::: :::column::: ![推奨](images/do.svg) ほとんどのテキストは、"Body" スタイルを使用して表示してください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-137">:::row::: :::column::: ![do](images/do.svg) Use "Body" for most text.</span></span>
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-<h2><span data-ttu-id="cd903-133">カーニングとトラッキング</span><span class="sxs-lookup"><span data-stu-id="cd903-133">Kerning and tracking</span></span></h2>
+        Use "Base" for titles when space is constrained.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use "Caption" for primary action or any long strings.
 
-<span data-ttu-id="cd903-134">Segoe は、ソフトでわかりやすい外観をした人間的な書体であり、手書き文字に基づく自然でオープンな形をしています。</span><span class="sxs-lookup"><span data-stu-id="cd903-134">Segoe is a humanist typeface, with a soft, friendly appearance, it has organic, open forms based on handwritten text.</span></span> <span data-ttu-id="cd903-135">できるだけ読みやすくし、人間的な一貫性を保つため、カーニングとトラッキングの設定を特定の値にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="cd903-135">To ensure optimum legibility and maintain its humanist integrity, the kerning and tracking settings must have specific values.</span></span>
+        Use "Header" or "Subheader" if text needs to wrap.
+    :::column-end:::
+<span data-ttu-id="33cf5-138">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="33cf5-138">:::row-end:::</span></span>
 
-<span data-ttu-id="cd903-136">カーニングを "メトリック" に設定し、トラッキングを "0" に設定してください。</span><span class="sxs-lookup"><span data-stu-id="cd903-136">Kerning should be set to “metrics” and tracking should be set to “0”.</span></span>
-  </div>
-  <div class="side-by-side-content-right">
-<h2><span data-ttu-id="cd903-137">単語や文字の間隔</span><span class="sxs-lookup"><span data-stu-id="cd903-137">Word and letter spacing</span></span></h2>
+## <a name="alignment"></a><span data-ttu-id="33cf5-139">配置</span><span class="sxs-lookup"><span data-stu-id="33cf5-139">Alignment</span></span>
 
-<span data-ttu-id="cd903-138">カーニングやトラッキングと同様、できるだけ読みやすくし、人間的な一貫性を保つため、単語の間隔と文字間隔でも特定の設定を使います。</span><span class="sxs-lookup"><span data-stu-id="cd903-138">Similar to kerning and tracking, word spacing and letter spacing use specific settings to ensure optimum legibility and humanist integrity.</span></span>
+<span data-ttu-id="33cf5-140">既定の [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) (行揃え) は Left (左揃え) です。ほとんどの場合、左揃え、右不揃いの形式でコンテンツを一貫してアンカー設定することで、均一なレイアウトが実現します。</span><span class="sxs-lookup"><span data-stu-id="33cf5-140">The default [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) is Left, and in most instances, flush-left and ragged right provides consistent anchoring of the content and a uniform layout.</span></span> <span data-ttu-id="33cf5-141">RTL 言語については、[グローバリゼーションをサポートするためのレイアウトとフォントの調整に関するページ](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-141">For RTL languages, see [Adjusting layout and fonts to support globalization](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).</span></span>
 
-<span data-ttu-id="cd903-139">既定では、単語の間隔は常に 100% であり、文字間隔は "0" に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cd903-139">Word spacing by default is always 100% and letter spacing should be set to “0”.</span></span>
-  </div>
-</div>
-</div>
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-![カーニングとトラッキングの差](images/kerning-tracking.png)  
-  </div>
-  <div class="side-by-side-content-right">
-![単語の間隔と文字の間隔の差](images/word-letter.png) 
-  </div>
-</div>
-</div>
+![左揃えテキストを示します。](images/type/alignment.svg)
 
+```xaml
+<TextBlock TextAlignment="Left">
+```
 
->[!NOTE]
-><span data-ttu-id="cd903-142">XAML テキスト コントロールでは、[Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) を使ってカーニングを制御し、[FontStretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_FontStretch) を使ってトラッキングを制御します。</span><span class="sxs-lookup"><span data-stu-id="cd903-142">In a XAML text control use [Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) to control kerning and [FontStretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_FontStretch) to control tracking.</span></span> <span data-ttu-id="cd903-143">既定では、Typography.Kerning は "true" に設定され、FontStretch は推奨値である" Normal" に設定されます。</span><span class="sxs-lookup"><span data-stu-id="cd903-143">By default Typography.Kerning is set to “true” and FontStretch is set to “Normal”, which are the recommended values.</span></span>
+## <a name="character-count"></a><span data-ttu-id="33cf5-143">文字カウント</span><span class="sxs-lookup"><span data-stu-id="33cf5-143">Character count</span></span>
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-<h2><span data-ttu-id="cd903-144">配置</span><span class="sxs-lookup"><span data-stu-id="cd903-144">Alignment</span></span></h2>
+<span data-ttu-id="33cf5-144">:::row::: :::column::: ![推奨](images/do.svg) 読みやすさを確保するため、1 行当たり 50 ～ 60 文字の文字カウントを維持します。</span><span class="sxs-lookup"><span data-stu-id="33cf5-144">:::row::: :::column::: ![do](images/do.svg) Keep to 50–60 letters per line for ease of reading.</span></span>
+<span data-ttu-id="33cf5-145">:::column-end::: :::column::: ![非推奨](images/dont.svg) 1 行当たりの文字カウントが 20 文字を下回るか 60 文字を超えると読みにくくなります。</span><span class="sxs-lookup"><span data-stu-id="33cf5-145">:::column-end::: :::column::: ![don't](images/dont.svg) Less than 20 characters or more than 60 characters per line is difficult to read.</span></span>
+<span data-ttu-id="33cf5-146">:::column-end::: :::row-end:::</span><span class="sxs-lookup"><span data-stu-id="33cf5-146">:::column-end::: :::row-end:::</span></span>
 
-<span data-ttu-id="cd903-145">通常は、視覚要素と書体の列を左揃えにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="cd903-145">Generally, we recommend that visual elements and columns of type be left-aligned.</span></span> <span data-ttu-id="cd903-146">ほとんどの場合、このような左揃えおよび右不揃いのアプローチによって、コンテンツが一貫したアンカー設定となり、均一なレイアウトになります。</span><span class="sxs-lookup"><span data-stu-id="cd903-146">In most instances, this flush-left and ragged-right approach provides consistent anchoring of the content and a uniform layout.</span></span> 
-  </div>
-  <div class="side-by-side-content-right">
-<h2><span data-ttu-id="cd903-147">行の末尾</span><span class="sxs-lookup"><span data-stu-id="cd903-147">Line endings</span></span></h2>
+## <a name="clipping-and-ellipses"></a><span data-ttu-id="33cf5-147">クリッピングと省略記号</span><span class="sxs-lookup"><span data-stu-id="33cf5-147">Clipping and ellipses</span></span>
 
-<span data-ttu-id="cd903-148">文字体裁が左揃えおよび右不揃いで配置されていない場合、行の末尾が均等になるようにし、ハイフンを使わないでください。</span><span class="sxs-lookup"><span data-stu-id="cd903-148">When typography is not positioned as flush left and ragged right, try to ensure even line endings and avoid hyphenation.</span></span>
-  </div>
-</div>
-</div>
+<span data-ttu-id="33cf5-148">テキストの量が利用可能なスペースを超えている場合は、テキストをクリッピングすることが推奨されます。クリッピングは、ほとんどの [UWP テキスト コントロール](../controls-and-patterns/text-controls.md) で既定の処理です。</span><span class="sxs-lookup"><span data-stu-id="33cf5-148">When the amount of text extends beyond the space available, we recommend clipping text, which is the default behavior of most [UWP text controls](../controls-and-patterns/text-controls.md).</span></span>
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-![左揃えテキストを示します。](images/alignment.png)  
-  </div>
-  <div class="side-by-side-content-right">
-![均等な行の末尾を示します。](images/line-endings.png) 
-  </div>
-</div>
-</div>
+![いくつかのテキストがクリッピングされているデバイス フレームを示します。](images/type/clipping.svg)
 
+```xaml
+<TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>
+```
 
-## <a name="paragraphs"></a><span data-ttu-id="cd903-151">段落</span><span class="sxs-lookup"><span data-stu-id="cd903-151">Paragraphs</span></span>
+<span data-ttu-id="33cf5-150">:::row::: :::column::: ![推奨](images/do.svg) テキストをクリップし、複数行を使用できる場合は、行を折り返します。</span><span class="sxs-lookup"><span data-stu-id="33cf5-150">:::row::: :::column::: ![do](images/do.svg) Clip text, and wrap if multiple lines are enabled.</span></span>
+<span data-ttu-id="33cf5-151">:::column-end::: :::column::: ![非推奨](images/dont.svg) すっきりと表示するため、省略記号は使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-151">:::column-end::: :::column::: ![don't](images/dont.svg) Use ellipses to avoid visual clutter.</span></span>
+<span data-ttu-id="33cf5-152">:::column-end::: :::row-end:::</span><span class="sxs-lookup"><span data-stu-id="33cf5-152">:::column-end::: :::row-end:::</span></span>
 
-<span data-ttu-id="cd903-152">列の端を揃えるため、インデントなしの行をスキップすることで段落を示してください。</span><span class="sxs-lookup"><span data-stu-id="cd903-152">To provide aligned column edges, paragraphs should be indicated by skipping a line without indentation.</span></span>
+<span data-ttu-id="33cf5-153">**注**: 表示領域が不明確な場合 (領域が異なる背景色によって明確に表示されていない場合など)、または詳細テキストへのリンクがある場合は、省略記号を使用します。</span><span class="sxs-lookup"><span data-stu-id="33cf5-153">**Note**: If containers are not well-defined (e.g. no differentiating background color), or when there is a link to see more text, then use ellipses.</span></span>
 
-![段落間のスペースの行全体を示します。](images/paragraphs.png)
+## <a name="languages"></a><span data-ttu-id="33cf5-154">言語</span><span class="sxs-lookup"><span data-stu-id="33cf5-154">Languages</span></span> 
 
-## <a name="character-count"></a><span data-ttu-id="cd903-154">文字カウント</span><span class="sxs-lookup"><span data-stu-id="cd903-154">Character count</span></span>
+<span data-ttu-id="33cf5-155">Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブライ語、アルメニア語、ジョージア語、アラビア語に対応した弊社のフォントです。</span><span class="sxs-lookup"><span data-stu-id="33cf5-155">Segoe UI is our font for English, European languages, Greek, Hebrew, Armenian, Georgian, and Arabic.</span></span> <span data-ttu-id="33cf5-156">他の言語については、以下の推奨事項を参照してください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-156">For other languages, see the following recommendations.</span></span>
 
-<span data-ttu-id="cd903-155">行が短すぎると、目を左から右へと頻繁に動かさなければならなくなり、読者のリズムが崩れます。</span><span class="sxs-lookup"><span data-stu-id="cd903-155">If a line is too short, the eye will have to travel left and right too often, breaking the reader’s rhythm.</span></span> <span data-ttu-id="cd903-156">可能であれば、1 行あたり 50 ~ 60 文字にすると最も読みやすくなります。</span><span class="sxs-lookup"><span data-stu-id="cd903-156">If possible, 50–60 letters per line is best for ease of reading.</span></span>
+### <a name="globalizinglocalizing-fonts"></a><span data-ttu-id="33cf5-157">フォントのグローバリゼーション/ローカライズ</span><span class="sxs-lookup"><span data-stu-id="33cf5-157">Globalizing/localizing fonts</span></span>
 
-<span data-ttu-id="cd903-157">Segoe UI には多くの文字が用意されており、サイズが小さくても大きくても、またはピクセル密度が低くても高くても最適な読みやすさが維持されるように設計されています。</span><span class="sxs-lookup"><span data-stu-id="cd903-157">Segoe provides a wide range of characters and is designed to maintain optimal legibility in both small and large sizes as well as low and high pixel densities.</span></span> <span data-ttu-id="cd903-158">テキスト列の行の文字数を最適にすると、アプリケーションでの読みやすさが確保されます。</span><span class="sxs-lookup"><span data-stu-id="cd903-158">Using the optimal number of letters in a text column line ensures good legibility in an application.</span></span>
+<span data-ttu-id="33cf5-158">特定言語の推奨フォント ファミリー、サイズ、太さ、スタイルにプログラムを使ってアクセスする場合は、[LanguageFont フォント マッピング API](https://docs.microsoft.com/uwp/api/Windows.Globalization.Fonts.LanguageFont) を使ってください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-158">Use the [LanguageFont font-mapping APIs](https://docs.microsoft.com/uwp/api/Windows.Globalization.Fonts.LanguageFont) for programmatic access to the recommended font family, size, weight, and style for a particular language.</span></span> <span data-ttu-id="33cf5-159">LanguageFont オブジェクトを使うと、コンテンツのさまざまなカテゴリ (UI ヘッダー、通知、本文のテキスト、ユーザー自身で編集できるドキュメント本文のフォントなど) の正しいフォント情報にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="33cf5-159">The LanguageFont object provides access to the correct font info for various categories of content including UI headers, notifications, body text, and user-editable document body fonts.</span></span> <span data-ttu-id="33cf5-160">詳しくは、[グローバリゼーションをサポートするためのレイアウトとフォントの調整に関するページ](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-160">For more info, see [Adjusting layout and fonts to support globalization](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).</span></span>
 
-<span data-ttu-id="cd903-159">行が長すぎると目に負担がかかり、ユーザーが混乱する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cd903-159">Lines that are too long will strain the eye and may disorient the user.</span></span> <span data-ttu-id="cd903-160">行が短すぎると読者が目を頻繁に動かさなければならず、疲れる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cd903-160">Lines that are too short force the reader’s eye to travel too much and can cause fatigue.</span></span>
+### <a name="fonts-for-non-latin-languages"></a><span data-ttu-id="33cf5-161">ラテン語以外の言語用のフォント</span><span class="sxs-lookup"><span data-stu-id="33cf5-161">Fonts for non-Latin languages</span></span>
 
-![行の長さが異なる 3 つの段落を示します。](images/character-count.png)
+<table>
+<thead>
+<tr class="header">
+<th align="left"><span data-ttu-id="33cf5-162">フォント ファミリー</span><span class="sxs-lookup"><span data-stu-id="33cf5-162">Font-family</span></span></th>
+<th align="left"><span data-ttu-id="33cf5-163">スタイル</span><span class="sxs-lookup"><span data-stu-id="33cf5-163">Styles</span></span></th>
+<th align="left"><span data-ttu-id="33cf5-164">コメント</span><span class="sxs-lookup"><span data-stu-id="33cf5-164">Notes</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="font-family: Embrima;"><span data-ttu-id="33cf5-165">Ebrima</span><span class="sxs-lookup"><span data-stu-id="33cf5-165">Ebrima</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-166">標準、太字</span><span class="sxs-lookup"><span data-stu-id="33cf5-166">Regular, Bold</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-167">アフリカのスクリプト (エチオピア文字、ンコ文字、オスマニア文字、ティフィナグ文字、ヴァイ文字) 用のユーザー インターフェイス フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-167">User-interface font for African scripts (Ethiopic, N'Ko, Osmanya, Tifinagh, Vai).</span></span></td>
+</tr>
+<tr class="even">
+<td style="font-family: Gadugi;"><span data-ttu-id="33cf5-168">Gadugi</span><span class="sxs-lookup"><span data-stu-id="33cf5-168">Gadugi</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-169">標準、太字</span><span class="sxs-lookup"><span data-stu-id="33cf5-169">Regular, Bold</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-170">北アメリカ スクリプト (カナダ音節文字、チェロキー文字) 用のユーザー インターフェイス フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-170">User-interface font for North American scripts (Canadian Syllabics, Cherokee).</span></span></td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Leelawadee UI;"><span data-ttu-id="33cf5-171">Leelawadee UI</span><span class="sxs-lookup"><span data-stu-id="33cf5-171">Leelawadee UI</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-172">通常、Semilight、太字</span><span class="sxs-lookup"><span data-stu-id="33cf5-172">Regular, Semilight, Bold</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-173">東南アジアのスクリプト (ブギス文字、ラオス文字、クメール文字、タイ文字) 用のユーザー インターフェイス フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-173">User-interface font for Southeast Asian scripts (Buginese, Lao, Khmer, Thai).</span></span></td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Malgun Gothic;"><span data-ttu-id="33cf5-174">Malgun Gothic</span><span class="sxs-lookup"><span data-stu-id="33cf5-174">Malgun Gothic</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-175">標準</span><span class="sxs-lookup"><span data-stu-id="33cf5-175">Regular</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-176">韓国語用のユーザー インターフェイス フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-176">User-interface font for Korean.</span></span></td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Microsoft JhengHei UI;"><span data-ttu-id="33cf5-177">Microsoft JhengHei UI</span><span class="sxs-lookup"><span data-stu-id="33cf5-177">Microsoft JhengHei UI</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-178">標準、太字、細字</span><span class="sxs-lookup"><span data-stu-id="33cf5-178">Regular, Bold, Light</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-179">繁体字中国語用のユーザー インターフェイス フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-179">User-interface font for Traditional Chinese.</span></span></td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Microsoft YaHei UI;"><span data-ttu-id="33cf5-180">Microsoft YaHei UI</span><span class="sxs-lookup"><span data-stu-id="33cf5-180">Microsoft YaHei UI</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-181">標準、太字、細字</span><span class="sxs-lookup"><span data-stu-id="33cf5-181">Regular, Bold, Light</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-182">簡体字中国語用のユーザー インターフェイス フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-182">User-interface font for Simplified Chinese.</span></span></td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Myanmar Text;"><span data-ttu-id="33cf5-183">Myanmar Text</span><span class="sxs-lookup"><span data-stu-id="33cf5-183">Myanmar Text</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-184">標準</span><span class="sxs-lookup"><span data-stu-id="33cf5-184">Regular</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-185">ミャンマー文字のスクリプト用のフォールバック フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-185">Fallback font for Myanmar script.</span></span></td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Nirmala UI;"><span data-ttu-id="33cf5-186">Nirmala UI</span><span class="sxs-lookup"><span data-stu-id="33cf5-186">Nirmala UI</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-187">標準、中細、太字</span><span class="sxs-lookup"><span data-stu-id="33cf5-187">Regular, Semilight, Bold</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-188">南アジア言語のスクリプト (バングラ文字、デーバナーガリー文字、グジャラート文字、グルムキー文字、カンナダ文字、マラヤーラム文字、オディア文字、オル チキ文字、シンハラ文字、ソラング ソンペング文字、タミール文字、テルグ文字) 用のユーザー インターフェイス フォント</span><span class="sxs-lookup"><span data-stu-id="33cf5-188">User-interface font for South Asian scripts (Bangla, Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Odia, Ol Chiki, Sinhala, Sora Sompeng, Tamil, Telugu)</span></span></td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: SimSun;"><span data-ttu-id="33cf5-189">SimSun</span><span class="sxs-lookup"><span data-stu-id="33cf5-189">SimSun</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-190">標準</span><span class="sxs-lookup"><span data-stu-id="33cf5-190">Regular</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-191">中国語繁体字の UI フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-191">A legacy Chinese UI font.</span></span> </td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Yu Gothic UI;"><span data-ttu-id="33cf5-192">Yu Gothic UI</span><span class="sxs-lookup"><span data-stu-id="33cf5-192">Yu Gothic UI</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-193">細字、中細、標準、中太、太字</span><span class="sxs-lookup"><span data-stu-id="33cf5-193">Light, Semilight, Regular, Semibold, Bold</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-194">日本語用のユーザー インターフェイス フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-194">User-interface font for Japanese.</span></span></td>
+</tr>
+</tbody>
+</table>
 
-## <a name="hanging-text-alignment"></a><span data-ttu-id="cd903-162">ぶら下げテキストの配置</span><span class="sxs-lookup"><span data-stu-id="cd903-162">Hanging text alignment</span></span>
+## <a name="fonts"></a><span data-ttu-id="33cf5-195">フォント</span><span class="sxs-lookup"><span data-stu-id="33cf5-195">Fonts</span></span>
 
-<span data-ttu-id="cd903-163">横方向に配置されたテキスト付きアイコンは、アイコンのサイズとテキストの量に応じてさまざまな方法で処理することができます。</span><span class="sxs-lookup"><span data-stu-id="cd903-163">The horizontal alignment of icons with text can be handled in a number of ways depending on the size of the icon and the amount of text.</span></span> <span data-ttu-id="cd903-164">1 行であっても複数行であってもテキストがアイコンの高さに収まる場合、テキストを上下に中央揃えにしてください。</span><span class="sxs-lookup"><span data-stu-id="cd903-164">When the text, either single or multiple lines, fits within the height of the icon, the text should be vertically centered.</span></span>
+### <a name="sans-serif-fonts"></a><span data-ttu-id="33cf5-196">サンセリフ フォント</span><span class="sxs-lookup"><span data-stu-id="33cf5-196">Sans-serif fonts</span></span>
 
-<span data-ttu-id="cd903-165">テキストの高さがアイコンの高さより高い場合、テキストの先頭行を縦方向に揃え、残りのテキストが自然に下に流れるようにしてください。</span><span class="sxs-lookup"><span data-stu-id="cd903-165">Once the height of the text extends beyond the height of the icon, the first line of text should align vertically and the additional text should flow on naturally below.</span></span> <span data-ttu-id="cd903-166">大文字、アセンダー、ディセンダーの高さが通常よりも大きい文字を使うときは、同じ配置ガイダンスが守られるように注意してください。</span><span class="sxs-lookup"><span data-stu-id="cd903-166">When using characters with larger cap, ascender and descender heights, care should be taken to observe the same alignment guidance.</span></span>
+<span data-ttu-id="33cf5-197">サンセリフ フォントは、ヘッダーと UI 要素に適しています。</span><span class="sxs-lookup"><span data-stu-id="33cf5-197">Sans-serif fonts are a great choice for headings and UI elements.</span></span> 
 
-![アイコンとテキストの組み合わせの例](images/hanging-text-alignment.png)
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"><span data-ttu-id="33cf5-198">フォント ファミリー</span><span class="sxs-lookup"><span data-stu-id="33cf5-198">Font-family</span></span></th>
+<th align="left"><span data-ttu-id="33cf5-199">スタイル</span><span class="sxs-lookup"><span data-stu-id="33cf5-199">Styles</span></span></th>
+<th align="left"><span data-ttu-id="33cf5-200">コメント</span><span class="sxs-lookup"><span data-stu-id="33cf5-200">Notes</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left" style="font-family: Arial;"><span data-ttu-id="33cf5-201">Arial</span><span class="sxs-lookup"><span data-stu-id="33cf5-201">Arial</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-202">標準、斜体、太字、太字斜体、黒</span><span class="sxs-lookup"><span data-stu-id="33cf5-202">Regular, Italic, Bold, Bold Italic, Black</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-203">ヨーロッパおよび中東のスクリプト (ラテン文字、ギリシャ文字、キリル文字、アラビア文字、アルメニア文字、ヘブライ文字) をサポートしています。極太の太さがサポートされているのはヨーロッパのスクリプトだけです。</span><span class="sxs-lookup"><span data-stu-id="33cf5-203">Supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic, Armenian, and Hebrew) Black weight supports European scripts only.</span></span></td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Calibri;"><span data-ttu-id="33cf5-204">Calibri</span><span class="sxs-lookup"><span data-stu-id="33cf5-204">Calibri</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-205">標準、斜体、太字、太字斜体、細字、細字斜体</span><span class="sxs-lookup"><span data-stu-id="33cf5-205">Regular, Italic, Bold, Bold Italic, Light, Light Italic</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-206">ヨーロッパおよび中東のスクリプト (ラテン文字、ギリシャ文字、キリル文字、アラビア語、ヘブライ語) をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="33cf5-206">Supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic and Hebrew).</span></span> <span data-ttu-id="33cf5-207">アラビア語は縦書きでのみ利用できます。</span><span class="sxs-lookup"><span data-stu-id="33cf5-207">Arabic available in the uprights only.</span></span></td>
+</tr>
+<td style="font-family: Consolas;"><span data-ttu-id="33cf5-208">Consolas</span><span class="sxs-lookup"><span data-stu-id="33cf5-208">Consolas</span></span></td>
+<td><span data-ttu-id="33cf5-209">標準、斜体、太字、太字斜体</span><span class="sxs-lookup"><span data-stu-id="33cf5-209">Regular, Italic, Bold, Bold Italic</span></span></td>
+<td><span data-ttu-id="33cf5-210">ヨーロッパのスクリプト (ラテン文字、ギリシャ文字、キリル文字) をサポートする等幅フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-210">Fixed width font that supports European scripts (Latin, Greek and Cyrillic).</span></span></td>
+</tr>
 
->[!NOTE]
-><span data-ttu-id="cd903-168">XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) プロパティを使うと、大文字の高さやベースライン フォント メトリックにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="cd903-168">XAML’s [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) property provides access to the cap height and baseline font metrics.</span></span> <span data-ttu-id="cd903-169">このプロパティは、書体を視覚的に上下中央に配置したり、上揃えに配置する場合に利用できます。</span><span class="sxs-lookup"><span data-stu-id="cd903-169">It can be used to visually vertically center or top-align type.</span></span>
+<tr>
+<td style="font-family: Segoe UI;"><span data-ttu-id="33cf5-211">Segoe UI</span><span class="sxs-lookup"><span data-stu-id="33cf5-211">Segoe UI</span></span></td>
+<td><span data-ttu-id="33cf5-212">標準、斜体、細字斜体、極太斜体、太字、太字斜体、細字、中細、中太、極太</span><span class="sxs-lookup"><span data-stu-id="33cf5-212">Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black</span></span></td>
+<td><span data-ttu-id="33cf5-213">ヨーロッパおよび中東のスクリプト (アラビア文字、アルメニア文字、キリル文字、ジョージア文字、ギリシャ文字、ヘブライ文字、ラテン文字) およびリス文字のスクリプト用のユーザー インターフェイス フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-213">User-interface font for European and Middle East scripts (Arabic, Armenian, Cyrillic, Georgian, Greek, Hebrew, Latin), and also Lisu script.</span></span></td>
+</tr>
 
-## <a name="clipping-and-ellipses"></a><span data-ttu-id="cd903-170">クリッピングと省略記号</span><span class="sxs-lookup"><span data-stu-id="cd903-170">Clipping and ellipses</span></span>
+<tr class="even">
+<td style="font-family: Selawik;"><span data-ttu-id="33cf5-214">Selawik</span><span class="sxs-lookup"><span data-stu-id="33cf5-214">Selawik</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-215">標準、中細、細字、太字、中太</span><span class="sxs-lookup"><span data-stu-id="33cf5-215">Regular, Semilight, Light, Bold, Semibold</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-216">他のプラットフォーム上で動作する Segoe UI をバンドルしないアプリ向けの、Segoe UI と測定上の互換性があるオープン ソース フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-216">An open-source font that's metrically compatible with Segoe UI, intended for apps on other platforms that don’t want to bundle Segoe UI.</span></span> <a href="https://github.com/Microsoft/Selawik"><span data-ttu-id="33cf5-217">Selawik は、GitHub で入手できます。</span><span class="sxs-lookup"><span data-stu-id="33cf5-217">Get Selawik on GitHub.</span></span></a></td>
+</tr>
 
-<span data-ttu-id="cd903-171">既定でクリップ - 赤線により指定されている場合除き、テキストが折り返されることを前提とします。</span><span class="sxs-lookup"><span data-stu-id="cd903-171">Clip by default—assume that text will wrap unless the redline specifies otherwise.</span></span> <span data-ttu-id="cd903-172">折り返しのないテキストを使う場合、省略記号ではなくクリッピングをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="cd903-172">When using non-wrapping text, we recommend clipping rather than using ellipses.</span></span> <span data-ttu-id="cd903-173">クリッピングは、コンテナーの端、デバイスの端、スクロール バーの端などで行われます。</span><span class="sxs-lookup"><span data-stu-id="cd903-173">Clipping can occur at the edge of the container, at the edge of the device, at the edge of a scrollbar, etc.</span></span>
+</tbody>
+</table>
 
-<span data-ttu-id="cd903-174">例外: 明確に定義されていないコンテナーの場合 (はっきりした背景色がないなど)、折り返しのないテキストに赤線を付けて省略記号 "..." を使うことができます。</span><span class="sxs-lookup"><span data-stu-id="cd903-174">Exceptions—for containers which are not well-defined (e.g. no differentiating background color), then non-wrapping text can be redlined to use the ellipse ”…”.</span></span>
+### <a name="serif-fonts"></a><span data-ttu-id="33cf5-218">セリフ フォント</span><span class="sxs-lookup"><span data-stu-id="33cf5-218">Serif fonts</span></span>
 
-![いくつかのテキスト クリッピングがあるデバイス フレームを示します。](images/clipping.png)
+<span data-ttu-id="33cf5-219">セリフ フォントは、大量のテキストを表示するのに適しています。</span><span class="sxs-lookup"><span data-stu-id="33cf5-219">Serif fonts are good for presenting large amounts of text.</span></span> 
 
-## <a name="type-ramp"></a><span data-ttu-id="cd903-176">書体見本</span><span class="sxs-lookup"><span data-stu-id="cd903-176">Type ramp</span></span>
-<span data-ttu-id="cd903-177">書体見本 (type ramp) は、ヘッドラインからの本文までの重要なデザインの関係を確立し、異なるレベル間の明快でわかりやすい階層を保証します。</span><span class="sxs-lookup"><span data-stu-id="cd903-177">The type ramp establishes a crucial design relationship from headlines to body text and ensures a clear and understandable hierarchy between the different levels.</span></span> <span data-ttu-id="cd903-178">この階層により、ユーザーが書面によるコミュニケーションを通じて簡単にナビゲートできる構造が作成されます。</span><span class="sxs-lookup"><span data-stu-id="cd903-178">This hierarchy builds a structure which enables users to easily navigate through written communication.</span></span>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><span data-ttu-id="33cf5-220">フォント ファミリー</span><span class="sxs-lookup"><span data-stu-id="33cf5-220">Font-family</span></span></th>
+<th align="left"><span data-ttu-id="33cf5-221">スタイル</span><span class="sxs-lookup"><span data-stu-id="33cf5-221">Styles</span></span></th>
+<th align="left"><span data-ttu-id="33cf5-222">コメント</span><span class="sxs-lookup"><span data-stu-id="33cf5-222">Notes</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="font-family: Cambria;"><span data-ttu-id="33cf5-223">Cambria</span><span class="sxs-lookup"><span data-stu-id="33cf5-223">Cambria</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-224">標準</span><span class="sxs-lookup"><span data-stu-id="33cf5-224">Regular</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-225">ヨーロッパのスクリプト (ラテン文字、ギリシャ文字、キリル文字) をサポートするセリフ フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-225">Serif font that supports European scripts (Latin, Greek, Cyrillic).</span></span></td>
+</tr>
+<tr class="even">
+<td style="font-family: Courier New;"><span data-ttu-id="33cf5-226">Courier New</span><span class="sxs-lookup"><span data-stu-id="33cf5-226">Courier New</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-227">標準、斜体、太字、太字斜体</span><span class="sxs-lookup"><span data-stu-id="33cf5-227">Regular, Italic, Bold, Bold Italic</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-228">セリフ等幅フォントは、ヨーロッパおよび中東のスクリプト (ラテン文字、ギリシャ文字、キリル文字、アラビア文字、アルメニア文字、ヘブライ文字) をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="33cf5-228">Serif fixed width font supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic, Armenian, and Hebrew).</span></span></td>
+</tr>
+<tr class="odd">
+<td style="font-family: Georgia;"><span data-ttu-id="33cf5-229">Georgia</span><span class="sxs-lookup"><span data-stu-id="33cf5-229">Georgia</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-230">標準、斜体、太字、太字斜体</span><span class="sxs-lookup"><span data-stu-id="33cf5-230">Regular, Italic, Bold, Bold Italic</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-231">ヨーロッパのスクリプト (ラテン文字、ギリシャ文字、キリル文字) をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="33cf5-231">Supports European scripts (Latin, Greek and Cyrillic).</span></span></td>
+</tr>
 
-<div class="uwpd-image-with-caption">
-    <img src="images/type-ramp.png" alt="Shows the type ramp" />
-    <div><span data-ttu-id="cd903-179">すべてのサイズは有効ピクセル単位です。</span><span class="sxs-lookup"><span data-stu-id="cd903-179">All sizes are in effective pixels.</span></span> <span data-ttu-id="cd903-180">詳しくは、「[UWP アプリ設計の概要](../basics/design-and-ui-intro.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="cd903-180">For more details, see [Intro to UWP app design](../basics/design-and-ui-intro.md).</span></span></div>
-</div>
+<tr class="even">
+<td style="font-family: Times New Roman;"><span data-ttu-id="33cf5-232">Times New Roman</span><span class="sxs-lookup"><span data-stu-id="33cf5-232">Times New Roman</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-233">標準、斜体、太字、太字斜体</span><span class="sxs-lookup"><span data-stu-id="33cf5-233">Regular, Italic, Bold, Bold Italic</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-234">ヨーロッパのスクリプト (ラテン文字、ギリシャ文字、キリル文字、アラビア文字、アルメニア文字、ヘブライ文字) をサポートしている従来のフォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-234">Legacy font that supports European scripts (Latin, Greek, Cyrillic, Arabic, Armenian, Hebrew).</span></span></td>
+</tr>
 
->[!NOTE]
-><span data-ttu-id="cd903-181">書体見本のほとんどのレベルは、XAML の[静的リソース](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)として利用できます。これらのリソースは、`*TextBlockStyle` 名前付け規則に従っています (例: `HeaderTextBlockStyle`)。</span><span class="sxs-lookup"><span data-stu-id="cd903-181">Most levels of the ramp are available as XAML [static resources](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) that follow the `*TextBlockStyle` naming convention (ex: `HeaderTextBlockStyle`).</span></span>
+</tbody>
+</table>
 
+### <a name="symbols-and-icons"></a><span data-ttu-id="33cf5-235">シンボルとアイコン</span><span class="sxs-lookup"><span data-stu-id="33cf5-235">Symbols and icons</span></span>
 
-<!--
-<div class="microsoft-internal-note">
-SubtitleAlt, BaseAlt, and CaptionAlt are not currently included. You can create the styles in your own app following the code snippets in the above link. Also note that XAML does not currently match the line height exactly.
-</div>
--->
+<table>
+<thead>
+<tr class="header">
+<th align="left"><span data-ttu-id="33cf5-236">フォント ファミリー</span><span class="sxs-lookup"><span data-stu-id="33cf5-236">Font-family</span></span></th>
+<th align="left"><span data-ttu-id="33cf5-237">スタイル</span><span class="sxs-lookup"><span data-stu-id="33cf5-237">Styles</span></span></th>
+<th align="left"><span data-ttu-id="33cf5-238">コメント</span><span class="sxs-lookup"><span data-stu-id="33cf5-238">Notes</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span data-ttu-id="33cf5-239">Segoe MDL2 アセット</span><span class="sxs-lookup"><span data-stu-id="33cf5-239">Segoe MDL2 Assets</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-240">標準</span><span class="sxs-lookup"><span data-stu-id="33cf5-240">Regular</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-241">アプリ アイコン用のユーザー インターフェイス フォント。</span><span class="sxs-lookup"><span data-stu-id="33cf5-241">User-interface font for app icons.</span></span> <span data-ttu-id="33cf5-242">詳しくは、<a href="segoe-ui-symbol-font.md">Segoe MDL2 アセットの記事</a>をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="33cf5-242">For more info, see the <a href="segoe-ui-symbol-font.md">Segoe MDL2 assets article</a>.</span></span></td>
+</tr>
+<tr class="even">
+<td align="left"><span data-ttu-id="33cf5-243">Segoe UI Emoji</span><span class="sxs-lookup"><span data-stu-id="33cf5-243">Segoe UI Emoji</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-244">標準</span><span class="sxs-lookup"><span data-stu-id="33cf5-244">Regular</span></span></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><span data-ttu-id="33cf5-245">Segoe UI Symbol</span><span class="sxs-lookup"><span data-stu-id="33cf5-245">Segoe UI Symbol</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-246">標準</span><span class="sxs-lookup"><span data-stu-id="33cf5-246">Regular</span></span></td>
+<td align="left"><span data-ttu-id="33cf5-247">記号用のフォールバック フォント</span><span class="sxs-lookup"><span data-stu-id="33cf5-247">Fallback font for symbols</span></span></td>
+</tr>
+</tbody>
+</table>
 
+## <a name="related-articles"></a><span data-ttu-id="33cf5-248">関連記事</span><span class="sxs-lookup"><span data-stu-id="33cf5-248">Related articles</span></span>
 
-## <a name="primary-and-secondary-text"></a><span data-ttu-id="cd903-182">プライマリ テキストとセカンダリ テキスト</span><span class="sxs-lookup"><span data-stu-id="cd903-182">Primary and secondary text</span></span>
-
-<span data-ttu-id="cd903-183">書体見本を超えて追加の階層を作成するには、セカンダリ テキストの不透明度を 60% に設定します。</span><span class="sxs-lookup"><span data-stu-id="cd903-183">To create additional hierarchy beyond the type ramp, set secondary text to 60% opacity.</span></span> <span data-ttu-id="cd903-184">[テーマ カラー パレット](color.md#themes) で、BaseMedium を使います。</span><span class="sxs-lookup"><span data-stu-id="cd903-184">In the [theming color palette](color.md#themes), you would use BaseMedium.</span></span> <span data-ttu-id="cd903-185">プライマリ テキストは、常に不透明度を 100% にするか、BaseHigh にしてください。</span><span class="sxs-lookup"><span data-stu-id="cd903-185">Primary text should always be at 100% opacity, or BaseHigh.</span></span>
-
-<!-- Need new images
-![Two phone apps using SubtitleAlt](images/type-ramp-example-2.png)
-Recommended use of SubtitleAlt. Also note the primary and secondary text usage in list items.
-
-![Two phone apps using CaptionAlt](images/type-ramp-example-1.png)
-Recommended use of CaptionAlt.
--->
-
-## <a name="all-caps-titles"></a><span data-ttu-id="cd903-186">すべて大文字のタイトル</span><span class="sxs-lookup"><span data-stu-id="cd903-186">All caps titles</span></span>
-
-<span data-ttu-id="cd903-187">特定のページ タイトルでは、階層に新たな次元を加えるため、すべて大文字にしてください。</span><span class="sxs-lookup"><span data-stu-id="cd903-187">Certain page titles should be in ALL CAPS to add yet another dimension of hierarchy.</span></span> <span data-ttu-id="cd903-188">これらのタイトルでは、BaseAlt を使い、文字間隔を em の 1,000 分の 75 にしてください。</span><span class="sxs-lookup"><span data-stu-id="cd903-188">These titles should use BaseAlt with the character spacing set to 75 thousandths of an em.</span></span> <span data-ttu-id="cd903-189">この処理は、アプリのナビゲーションに使っても役立つことがあります。</span><span class="sxs-lookup"><span data-stu-id="cd903-189">This treatment may also be used to help with app navigation.</span></span>
-
-<span data-ttu-id="cd903-190">ただし、言語によっては固有名詞を大文字にすると意味が変わるため、名前やユーザー入力に基づくページ タイトルはすべて大文字に変換*しない*でください。</span><span class="sxs-lookup"><span data-stu-id="cd903-190">However, proper names change their meaning when capitalized in certain languages, so any page titles based on names or user input should *not* be converted to all caps.</span></span>
-
-
-<!-- Need new images
-![Shows several apps where they should and should not use all caps](images/all-caps.png)
-Green shows where all caps should be used. Red shows where it should not.
--->
-
-## <a name="dos-and-donts"></a><span data-ttu-id="cd903-191">推奨と非推奨</span><span class="sxs-lookup"><span data-stu-id="cd903-191">Do’s and don’ts</span></span>
-* <span data-ttu-id="cd903-192">ほとんどのテキストには Body を使う</span><span class="sxs-lookup"><span data-stu-id="cd903-192">Use Body for most text</span></span>
-* <span data-ttu-id="cd903-193">スペースに制約がある場合はタイトルに Base を使う</span><span class="sxs-lookup"><span data-stu-id="cd903-193">Use Base for titles when space is constrained</span></span>
-* <span data-ttu-id="cd903-194">SubtitleAlt を組み込んで、最上位のコンテンツを強調することでコントラストと階層を作る</span><span class="sxs-lookup"><span data-stu-id="cd903-194">Incorporate SubtitleAlt to create contrast and hierarchy by emphasizing top level content</span></span>
-* <span data-ttu-id="cd903-195">長い文字列やプライマリ操作には Caption を使わない</span><span class="sxs-lookup"><span data-stu-id="cd903-195">Don’t use Caption for long strings or any primary action</span></span>
-* <span data-ttu-id="cd903-196">テキストを折り返す必要がある場合は Header や Subheader を使わない</span><span class="sxs-lookup"><span data-stu-id="cd903-196">Don’t use Header or Subheader if text needs to wrap</span></span>
-* <span data-ttu-id="cd903-197">同じページで Subtitle と SubtitleAlt を組み合わせない</span><span class="sxs-lookup"><span data-stu-id="cd903-197">Don’t combine Subtitle and SubtitleAlt on the same page</span></span>
-
-
-## <a name="related-articles"></a><span data-ttu-id="cd903-198">関連記事</span><span class="sxs-lookup"><span data-stu-id="cd903-198">Related articles</span></span>
-
-* [<span data-ttu-id="cd903-199">テキスト コントロール</span><span class="sxs-lookup"><span data-stu-id="cd903-199">Text controls</span></span>](../controls-and-patterns/text-controls.md)
-* [<span data-ttu-id="cd903-200">フォント</span><span class="sxs-lookup"><span data-stu-id="cd903-200">Fonts</span></span>](../style/fonts.md)
-* [<span data-ttu-id="cd903-201">Segoe MDL2 アイコン</span><span class="sxs-lookup"><span data-stu-id="cd903-201">Segoe MDL2 icons</span></span>](segoe-ui-symbol-font.md)
+* [<span data-ttu-id="33cf5-249">テキスト コントロール</span><span class="sxs-lookup"><span data-stu-id="33cf5-249">Text controls</span></span>](../controls-and-patterns/text-controls.md)
+* [<span data-ttu-id="33cf5-250">XAML テーマ リソース</span><span class="sxs-lookup"><span data-stu-id="33cf5-250">XAML theme resources</span></span>](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
+* [<span data-ttu-id="33cf5-251">XAML スタイル</span><span class="sxs-lookup"><span data-stu-id="33cf5-251">XAML styles</span></span>](../controls-and-patterns/xaml-styles.md)
+* [<span data-ttu-id="33cf5-252">Microsoft の文字体裁</span><span class="sxs-lookup"><span data-stu-id="33cf5-252">Microsoft Typography</span></span>](https://docs.microsoft.com/typography/)

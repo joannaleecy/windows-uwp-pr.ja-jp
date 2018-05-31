@@ -1,42 +1,276 @@
 ---
 author: jnHs
+layout: LandingPage
 Description: See how to publish your Windows apps to the Microsoft Store.
-title: "Windows アプリを公開する"
+title: Windows アプリを公開する
 ms.author: wdg-dev-content
 ms.date: 01/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 公開する, 公開, 販売, 販売する, 配布, 配布する, store, ダッシュボード"
+keywords: windows 10, uwp, 公開する, 公開, 販売, 販売する, 配布, 配布する, store, ダッシュボード
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: high
-ms.openlocfilehash: cd454ce7ead04e4e36811ddbb8c786dab566c822
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: 37cfce48a60f95109dfff99b45750fa8fbe1f220
+ms.sourcegitcommit: 4e39a2bdb5b895ed09b64957dc1a86ccf1f8e1af
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 04/16/2018
+ms.locfileid: "1718666"
 ---
-# <a name="publish-windows-apps"></a><span data-ttu-id="1da0b-103">Windows アプリを公開する</span><span class="sxs-lookup"><span data-stu-id="1da0b-103">Publish Windows apps</span></span>
-
-<span data-ttu-id="1da0b-104">Windows デベロッパー センター ダッシュボードを使用すると、アプリを Microsoft Store に公開できます。</span><span class="sxs-lookup"><span data-stu-id="1da0b-104">You can use the Windows Dev Center dashboard to publish your apps to the Microsoft Store.</span></span> 
-
-> [!NOTE]
-> <span data-ttu-id="1da0b-105">Windows デベロッパー センター ダッシュボードにアクセスして、アプリを申請するには、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。</span><span class="sxs-lookup"><span data-stu-id="1da0b-105">You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard and submit apps.</span></span>
-
-<span data-ttu-id="1da0b-106">このセクションには、アプリの公開と管理に関する情報が記載されています。</span><span class="sxs-lookup"><span data-stu-id="1da0b-106">This section contains info about publishing and managing your apps.</span></span>
-
-| **<span data-ttu-id="1da0b-107">トピック</span><span class="sxs-lookup"><span data-stu-id="1da0b-107">Topic</span></span>** | **<span data-ttu-id="1da0b-108">説明</span><span class="sxs-lookup"><span data-stu-id="1da0b-108">Description</span></span>** |
-|-----------|-----------------|
-| [<span data-ttu-id="1da0b-109">Windows デベロッパー センター ダッシュボードの使用</span><span class="sxs-lookup"><span data-stu-id="1da0b-109">Using the Windows Dev Center dashboard</span></span>](using-the-windows-dev-center-dashboard.md) | <span data-ttu-id="1da0b-110">[アカウントを登録する方法](opening-a-developer-account.md)と、デベロッパー センター ダッシュボードで実行できることの概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="1da0b-110">Learn [how to register for an account](opening-a-developer-account.md) and get an overview of what you can do in the Dev Center dashboard.</span></span> |
-| [<span data-ttu-id="1da0b-111">アカウント ユーザーの管理</span><span class="sxs-lookup"><span data-stu-id="1da0b-111">Manage account users</span></span>](manage-account-users.md) | <span data-ttu-id="1da0b-112">ユーザー、グループ、Azure Active Directory アプリケーションをデベロッパー センター アカウントに追加して、アクセス許可を指定します。</span><span class="sxs-lookup"><span data-stu-id="1da0b-112">Add users, groups, and Azure Active Directory applications to your Dev Center account with designated permissions.</span></span> |
-| [<span data-ttu-id="1da0b-113">名前の予約によるアプリの作成</span><span class="sxs-lookup"><span data-stu-id="1da0b-113">Create your app by reserving a name</span></span>](create-your-app-by-reserving-a-name.md) | <span data-ttu-id="1da0b-114">アプリ名を予約する方法について説明し、優れたアプリ名を選ぶための推奨事項を紹介します。</span><span class="sxs-lookup"><span data-stu-id="1da0b-114">See how to reserve names and find suggestions for choosing a great app name.</span></span> |
-| [<span data-ttu-id="1da0b-115">アプリの申請</span><span class="sxs-lookup"><span data-stu-id="1da0b-115">App submissions</span></span>](app-submissions.md) | <span data-ttu-id="1da0b-116">「アプリの申請」では、[価格と使用可能状況の詳細](set-app-pricing-and-availability.md)、[プロパティ](enter-app-properties.md)、[年齢区分](age-ratings.md)、[パッケージ](upload-app-packages.md)、[ストア登録情報の詳細](create-app-store-listings.md)について説明します。</span><span class="sxs-lookup"><span data-stu-id="1da0b-116">An app submission includes [pricing and availability details](set-app-pricing-and-availability.md), [properties](enter-app-properties.md), [age ratings](age-ratings.md), [packages](upload-app-packages.md), and [Store listing details](create-app-store-listings.md).</span></span> <span data-ttu-id="1da0b-117">アプリがストアで公開される前に、アプリの申請に対して[認定プロセス](the-app-certification-process.md)が実施されます。</span><span class="sxs-lookup"><span data-stu-id="1da0b-117">Your submission will go through the [certification process](the-app-certification-process.md) before it's published to the Store.</span></span> <span data-ttu-id="1da0b-118">利用できるオプションの機能として、[パッケージ フライト](package-flights.md)、[ベータ テスト](beta-testing-and-targeted-distribution.md)、[段階的なパッケージのロールアウト](gradual-package-rollout.md)、[企業に対する LOB の直接配布](distribute-lob-apps-to-enterprises.md)があります。</span><span class="sxs-lookup"><span data-stu-id="1da0b-118">Optional features you can use include [package flighting](package-flights.md), [beta testing](beta-testing-and-targeted-distribution.md), [gradual package rollout](gradual-package-rollout.md) and [LOB distribution directly to enterprises](distribute-lob-apps-to-enterprises.md).</span></span> |
-| [<span data-ttu-id="1da0b-119">アドオンの申請</span><span class="sxs-lookup"><span data-stu-id="1da0b-119">Add-on submissions</span></span>](add-on-submissions.md) | <span data-ttu-id="1da0b-120">Windows デベロッパー センター ダッシュボードを使用してアドオン (アプリ内製品) を公開する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1da0b-120">Learn how to publish add-ons (in-app products) through the Windows Dev Center dashboard.</span></span> |
-| [<span data-ttu-id="1da0b-121">アプリ内広告</span><span class="sxs-lookup"><span data-stu-id="1da0b-121">In-app ads</span></span>](in-app-ads.md) | <span data-ttu-id="1da0b-122">カスタム広告仲介の構成など、アプリ内での広告の利用を管理します。</span><span class="sxs-lookup"><span data-stu-id="1da0b-122">Manage your use of ads in your apps, including ad mediation configurations.</span></span> |
-| [<span data-ttu-id="1da0b-123">アプリの管理とサービス</span><span class="sxs-lookup"><span data-stu-id="1da0b-123">App management and services</span></span>](app-management-and-services.md) | <span data-ttu-id="1da0b-124">A/B テスト (実験)、マップなどのサービスを使用し、[アプリ ID の詳細の表示方法](view-app-identity-details.md)や[追加のアプリ名の予約方法](manage-app-names.md)を紹介します。</span><span class="sxs-lookup"><span data-stu-id="1da0b-124">Use services like A/B testing (experimentation) and maps, and see how to [view app identity details](view-app-identity-details.md) and [reserve additional app names](manage-app-names.md).</span></span> |
-| [<span data-ttu-id="1da0b-125">ユーザーへのアピールとアプリの宣伝</span><span class="sxs-lookup"><span data-stu-id="1da0b-125">Attract customers and promote your apps</span></span>](attract-customers-and-promote-your-apps.md) | <span data-ttu-id="1da0b-126">[広告キャンペーン](create-an-ad-campaign-for-your-app.md)、[プロモーション コード](generate-promotional-codes.md)、[セール価格](put-apps-and-add-ons-on-sale.md)など、製品を宣伝し、顧客ベースの拡大を図るうえで役立つさまざまな機能を提供しています。</span><span class="sxs-lookup"><span data-stu-id="1da0b-126">Promote your products and grow your customer base, including [ad campaigns](create-an-ad-campaign-for-your-app.md), [promo codes](generate-promotional-codes.md), [sale pricing](put-apps-and-add-ons-on-sale.md), and more.</span></span> |
-| [<span data-ttu-id="1da0b-127">ユーザーとの関係を深める</span><span class="sxs-lookup"><span data-stu-id="1da0b-127">Engage with your customers</span></span>](engage-with-your-customers.md) | <span data-ttu-id="1da0b-128">[通知](send-push-notifications-to-your-apps-customers.md)、[対象のプラン](use-targeted-offers-to-maximize-engagement-and-conversions.md)、[レビュー](respond-to-customer-reviews.md)や[フィードバックへ](respond-to-customer-feedback.md)の応答などの機能を使用して、ユーザーとの関係を深め、顧客満足度を高めることができます。</span><span class="sxs-lookup"><span data-stu-id="1da0b-128">Drive customer engagement and satisfaction by using features like [notifications](send-push-notifications-to-your-apps-customers.md), [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md), responding to [reviews](respond-to-customer-reviews.md) and [feedback](respond-to-customer-feedback.md), and more.</span></span> 
-| [<span data-ttu-id="1da0b-129">アプリのパフォーマンスの分析</span><span class="sxs-lookup"><span data-stu-id="1da0b-129">Analyze app performance</span></span>](analytics.md) | <span data-ttu-id="1da0b-130">アプリの詳細な分析データを表示して、パフォーマンスを確認します。</span><span class="sxs-lookup"><span data-stu-id="1da0b-130">View detailed analytic data for your apps to see how they're doing.</span></span> <span data-ttu-id="1da0b-131">獲得したユーザーの数、ユーザーによるアプリの使い方、ユーザーによるアプリの評判などを詳しく知ることができます。</span><span class="sxs-lookup"><span data-stu-id="1da0b-131">Get details on how many customers you've reached, how they're using your app, what they have to say about it, and more.</span></span>|
-| [<span data-ttu-id="1da0b-132">支払いの受け取り</span><span class="sxs-lookup"><span data-stu-id="1da0b-132">Getting paid</span></span>](getting-paid-apps.md) | <span data-ttu-id="1da0b-133">アプリ、アドオン、広告による売り上げの受け取りについて説明します。</span><span class="sxs-lookup"><span data-stu-id="1da0b-133">Learn about receiving earnings from your apps, add-ons, and advertising.</span></span> |
-| [<span data-ttu-id="1da0b-134">ストアのポリシーと倫理規定</span><span class="sxs-lookup"><span data-stu-id="1da0b-134">Store Policies and Code of Conduct</span></span>](https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct) | <span data-ttu-id="1da0b-135">このセクションでは、Windows アプリとコンテンツに適用される[ストア ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies)と[アプリの品質](https://docs.microsoft.com/legal/windows/agreements/store-app-quality)基準、および開発者が従う必要のある[倫理規定](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct)について説明します。</span><span class="sxs-lookup"><span data-stu-id="1da0b-135">This section includes the [Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies) and [App Quality](https://docs.microsoft.com/legal/windows/agreements/store-app-quality) criteria that apply to Windows apps and content, and the [Code of Conduct](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct) that developers should follow.</span></span> |
+# <a name="publish-windows-apps-and-games"></a>Windows アプリとゲームを公開する  
  
+Windows デベロッパー センター ダッシュボードを使用すると、アプリとゲームを Microsoft Store に公開できます。 <a href="//developer.microsoft.com/store/register">今すぐサインアップしましょう。</a>
+<br>
+<ul id="cardtypes-K" class="cardsK panelContent">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="//docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt="App submission illustration" data-linktype="external" class="x-hidden-focus">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>アプリの申請</h3>
+                        <p>申請に必要な項目を確認して、アプリの認定を受けましょう。</p>
+                        <ul>
+                        <li><a href="app-submissions.md">アプリの申請用チェック リスト</a></li>
+                        <li><a href="the-app-certification-process.md">認定プロセス</a></li>                      
+                        <li><a href="//docs.microsoft.com/legal/windows/agreements/store-policies">Microsoft Store ポリシー</a></li>   
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="//docs.microsoft.com/media/illustrations/bcs-partner-advanced-management- billing-7.svg" alt="Pricing illustration" data-linktype="external" class="x-hidden-focus">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                    <h3>価格と使用可能状況</h3>
+                    <p>市場ごとの価格設定とスケジュール、表示オプション、セール価格などによって、アプリの使用可能状況をカスタマイズすることができます。</p>
+                    <ul>
+                        <li><a href="define-pricing-and-market-selection.md">市場を選ぶ</a></li>
+                        <li><a href="set-and-schedule-app-pricing.md">価格の設定とスケジュール </a></li>
+                        <li><a href="configure-precise-release-scheduling.md">正確なリリース日の構成</a></li>
+                        <li><a href="set-app-pricing-and-availability.md">使用可能状況のすべてのオプションを見る</a></li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="https://docs.microsoft.com/media/illustrations/biztalk-get-started-scenarios.svg" alt="Store listing illustration" data-linktype="external" class="x-hidden-focus">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Store 登録情報のオプション</h3>
+                        <p>お客様がアプリを試してみたくなるようなテキストとビジュアル アセットを表示しましょう。</p>
+                        <ul>
+                            <li><a href="create-app-store-listings.md">Store 登録情報の概要</a></li>
+                            <li><a href="app-screenshots-and-images.md">スクリーンショット、画像、トレーラー</a></li>
+                              <li><a href="import-and-export-store-listings.md">登録情報の一括管理 </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<ul class="panelContent cardsF">
+<li>
+    <div class="cardSize">
+        <div class="cardPadding">
+            <div class="card">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="//docs.microsoft.com/media/common/i_billing.svg" alt="Payment icon"/>
+                    </div>
+                </div>
+                <div class="cardText">
+                    <h3>支払いとレポート</h3>                  
+                    <p><a href="getting-paid-apps.md">支払いの受け取り</a></p>
+                    <p><a href="in-app-ads.md">アプリ内広告</a></p>
+                    <p><a href="analytics.md">分析レポート</a></p>                   
+                </div>
+            </div>
+        </div>
+    </div>
+  </li>
+  <li>
+    <div class="cardSize">
+        <div class="cardPadding">
+            <div class="card">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="//docs.microsoft.com/media/common/i_whats-new.svg" alt="Promote icon"/>
+                    </div>
+                </div>
+                <div class="cardText">
+                    <h3>アプリの販売促進</h3>   
+                    <p><a href="generate-promotional-codes.md">プロモーション コードを生成する</a></p>
+                    <p><a href="create-an-ad-campaign-for-your-app.md">広告キャンペーンの作成</a></p>
+                    <p><a href="put-apps-and-add-ons-on-sale.md">セール価格の提供</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </li>
+<li>
+    <div class="cardSize">
+        <div class="cardPadding">
+            <div class="card">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="//docs.microsoft.com/media/common/i_multi-connect.svg" alt="Multi-connect icon"/>
+                    </div>
+                </div>
+                <div class="cardText">
+                    <h3>ユーザーとの関係を深める</h3>
+                    <p><a href="create-customer-groups.md">ユーザー グループを作成する</a></p>
+                    <p><a href="send-push-notifications-to-your-apps-customers.md">プッシュ通知の送信</a></p>
+                    <p><a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">対象のプランの作成</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </li>
+  <li>
+</ul>
+
+<ul class="panelContent cardsF">
+<li>
+    <div class="cardSize">
+        <div class="cardPadding">
+            <div class="card">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="//docs.microsoft.com/media/common/i_configure-teams.svg" alt="Account icon"/>
+                    </div>
+                </div>
+                <div class="cardText">
+                    <h3>アカウント ユーザーの管理</h3>                    
+                    <p><a href="associate-azure-ad-with-dev-center.md">Azure AD のセットアップ</a></p>
+                    <p><a href="add-users-groups-and-azure-ad-applications.md">アカウント ユーザーの追加</a></p>
+                    <p><a href="set-custom-permissions-for-account-users.md">役割とアクセス許可</a></p>                   
+                </div>
+            </div>
+        </div>
+    </div>
+  </li>
+  <li>
+    <div class="cardSize">
+        <div class="cardPadding">
+            <div class="card">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="//docs.microsoft.com/media/common/i_extend.svg" alt="Shopping cart icon"/>
+                    </div>
+                </div>
+                <div class="cardText">
+                    <h3>アドオン (アプリ内製品)</h3>      
+                    <p><a href="add-on-submissions.md">アドオンの申請</a></p>
+                    <p><a href="../monetize/in-app-purchases-and-trials.md">アプリのコードでのアドオンの有効化</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </li>
+<li>
+    <div class="cardSize">
+        <div class="cardPadding">
+            <div class="card">
+                <div class="cardImageOuter">
+                    <div class="cardImage">
+                        <img src="//docs.microsoft.com/media/common/i_continuous-testing.svg" alt="Test icon"/>
+                    </div>
+                </div>
+                <div class="cardText">
+                    <h3>テスト方針</h3>
+                    <p><a href="beta-testing-and-targeted-distribution.md">ベータ テストとターゲット配布</a></p>
+                    <p><a href="choose-visibility-options.md#audience">プライベート対象ユーザー</a></p>
+                    <p><a href="package-flights.md">パッケージ フライト</a></p>
+                     <p><a href="gradual-package-rollout.md">段階的なロールアウト</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </li>
+  <li>
+</ul>
+
+<div class="container">
+    <ul class="cardsY panelContent featuredContent">
+       <li>
+            <a href="dev-center-insider-program.md">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="//docs.microsoft.com//media/common/i_preview.svg" src="//docs.microsoft.com//media/common/i_preview.svg" alt="Preview icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>デベロッパー センター Insider Program</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="distribute-lob-apps-to-enterprises.md">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="//docs.microsoft.com/media/common/i_portal.svg" src="//docs.microsoft.com/media/common/i_portal.svg" alt="Web portal icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>LOB 配布</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="//docs.microsoft.com/legal/windows/agreements/app-developer-agreement">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img data-hoverimage="//docs.microsoft.com/media/common/i_learn-about.svg" src="//docs.microsoft.com//media/common/i_learn-about.svg" alt="Agreement icon" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>アプリ開発者契約をご覧ください。</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+---

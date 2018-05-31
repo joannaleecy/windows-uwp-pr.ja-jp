@@ -1,197 +1,86 @@
 ---
 author: Mtoepke
-title: "Xbox One 開発者プログラムの UWP の既知の問題"
-description: 
-ms.author: mtoepke
-ms.date: 02/08/2017
+title: Xbox 開発者プログラムの UWP の既知の問題
+description: Xbox 開発者プログラムの UWP の既知の問題を示します。
+ms.author: mstahl
+ms.date: 03/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 4b13b9bbbc75de47ed69112680894d5e3f34d8a1
-ms.lasthandoff: 02/08/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: b93da1603056a75c746e0e5c2a8ebe1d4044a1e5
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1690398"
 ---
+# <a name="known-issues-with-uwp-on-xbox-developer-program"></a><span data-ttu-id="73884-104">Xbox 開発者プログラムの UWP の既知の問題</span><span class="sxs-lookup"><span data-stu-id="73884-104">Known issues with UWP on Xbox Developer Program</span></span>
 
-# <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開発者プログラムの UWP の既知の問題
+<span data-ttu-id="73884-105">このトピックでは、Xbox One 開発者プログラムの UWP の既知の問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="73884-105">This topic describes known issues with the UWP on Xbox One Developer Program.</span></span> <span data-ttu-id="73884-106">このプログラムについて詳しくは、「[Xbox One の UWP](index.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="73884-106">For more information about this program, see [UWP on Xbox](index.md).</span></span> 
 
-このトピックでは、Xbox One 開発者プログラムの UWP の既知の問題について説明します。 このプログラムについて詳しくは、「[Xbox One の UWP](index.md)」をご覧ください。 
+<span data-ttu-id="73884-107">\[API リファレンス トピックのリンクからこのページを見つけた、ユニバーサル デバイス ファミリの API の情報を探している方は、「[Xbox でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/?LinkID=760755)」をご覧ください。\]</span><span class="sxs-lookup"><span data-stu-id="73884-107">\[If you came here from a link in an API reference topic, and are looking for Universal device family API information, please see [UWP features that aren't yet supported on Xbox](http://go.microsoft.com/fwlink/?LinkID=760755).\]</span></span>
 
-\[API リファレンス トピックのリンクからこのページを見つけた、ユニバーサル デバイス ファミリの API の情報を探している方は、「[Xbox でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/?LinkID=760755)」をご覧ください。\]
+<span data-ttu-id="73884-108">以下では、発生する可能性のある既知の問題を示していますが、すべての問題は網羅されていません。</span><span class="sxs-lookup"><span data-stu-id="73884-108">The following list highlights some known issues that you may encounter, but this list is not exhaustive.</span></span> 
 
-以下では、発生する可能性のある既知の問題を示していますが、すべての問題は網羅されていません。 
+<span data-ttu-id="73884-109">**お客様からのフィードバックは重要ですので**、問題が見つかりましたら[ユニバーサル Windows プラットフォーム アプリの開発](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop)フォーラムでご報告ください。</span><span class="sxs-lookup"><span data-stu-id="73884-109">**We want to get your feedback**, so please report any issues that you find on the [Developing Universal Windows Platform apps](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop) forum.</span></span> 
 
-**お客様からのフィードバックは重要ですので**、問題が見つかりましたら[ユニバーサル Windows プラットフォーム アプリの開発](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop)フォーラムでご報告ください。 
+<span data-ttu-id="73884-110">行き詰まった場合は、このトピックの情報をお読みください。「[よく寄せられる質問](frequently-asked-questions.md)」を利用することも、フォーラムに質問を投稿することもできます。</span><span class="sxs-lookup"><span data-stu-id="73884-110">If you get stuck, read the information in this topic, see [Frequently asked questions](frequently-asked-questions.md), and use the forums to ask for help.</span></span>
 
-行き詰まった場合は、このトピックの情報をお読みください。「[よく寄せられる質問](frequently-asked-questions.md)」を利用することも、フォーラムに質問を投稿することもできます。
-
-
-<!--## Developing games-->
-
-## <a name="issue-when-leaving-dev-mode"></a>開発者モード終了時に発生する問題
-DevHome を使用しても [開発者向け設定] からも、開発者モードを終了できない場合があります。
-この問題の回避策として、次の 2 つが考えられます。 
-1. 開発者モードを終了するときに、**[Delete side loaded games and apps]** (サイドローディングされたゲームとアプリを削除する) チェック ボックスをオフにする
-2. [マイ コレクション] に移動し、コンソールにインストールした開発者向けアプリをアンインストールする
  
-<!--## Memory limits for background apps are partially enforced
+## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a><span data-ttu-id="73884-111">[保護者による制限] を有効にしたことにより VS からの展開に失敗する</span><span class="sxs-lookup"><span data-stu-id="73884-111">Deploying from VS fails with Parental Controls turned on</span></span>
+
+<span data-ttu-id="73884-112">本体で [設定] の [保護者による制限] を有効にした場合、VS からのアプリの起動が失敗します。</span><span class="sxs-lookup"><span data-stu-id="73884-112">Launching your app from VS will fail if the console has Parental Controls turned on in Settings.</span></span>
+
+<span data-ttu-id="73884-113">この問題を回避するには、[保護者による制限] を一時的に無効にするか、次の操作を行います。</span><span class="sxs-lookup"><span data-stu-id="73884-113">To work around this issue, either temporarily disable Parental Controls, or:</span></span>
+1. <span data-ttu-id="73884-114">[保護者による制限] を無効にして、本体にアプリを展開します。</span><span class="sxs-lookup"><span data-stu-id="73884-114">Deploy your app to the console with Parental Controls turned off.</span></span>
+2. <span data-ttu-id="73884-115">[保護者による制限] 有効にします。</span><span class="sxs-lookup"><span data-stu-id="73884-115">Turn on Parental Controls.</span></span>
+3. <span data-ttu-id="73884-116">本体からアプリを起動します。</span><span class="sxs-lookup"><span data-stu-id="73884-116">Launch your app from the console.</span></span>
+4. <span data-ttu-id="73884-117">アプリを起動できるように、PIN またはパスワードを入力します。</span><span class="sxs-lookup"><span data-stu-id="73884-117">Enter a PIN or password to allow the app to launch.</span></span>
+5. <span data-ttu-id="73884-118">アプリが起動します。</span><span class="sxs-lookup"><span data-stu-id="73884-118">App will launch.</span></span>
+6. <span data-ttu-id="73884-119">アプリを閉じます。</span><span class="sxs-lookup"><span data-stu-id="73884-119">Close the app.</span></span>
+7. <span data-ttu-id="73884-120">F5 キーを使用して VS から起動すると、プロンプトを表示せずにアプリが起動します。</span><span class="sxs-lookup"><span data-stu-id="73884-120">Launch from VS using F5, and the app will launch with no prompting.</span></span>
+
+<span data-ttu-id="73884-121">この時点では、アプリのアンインストールと再インストールを行っても、ユーザーをサインアウトさせるまで、アクセス許可は_固定_されます。</span><span class="sxs-lookup"><span data-stu-id="73884-121">At this point the permission is _sticky_ until you sign the user out, even if you uninstall and reinstall the app.</span></span>
  
-The maximum memory footprint for apps running in the background is 128 megabytes. In the current version of UWP on Xbox One, your app will be suspended if it is above this limit when it is moved to the background. This limit is not currently enforced if your app exceeds the limit while it is already running in the background—this means that if your app exceeds 128 MB while running in the background, it will still be able to allocate memory.
+<span data-ttu-id="73884-122">お子様のアカウントのみで利用できる、不適切なコンテンツの除外方法もあります。</span><span class="sxs-lookup"><span data-stu-id="73884-122">There is another type of exemption that is only available for child accounts.</span></span> <span data-ttu-id="73884-123">お子様のアカウントでは、保護者がサインインしてアクセス許可を付与する必要がありますが、アクセス許可を付与するときに、保護者は、お子様によるアプリの起動を**常に許可**するように選ぶこともできます。</span><span class="sxs-lookup"><span data-stu-id="73884-123">A child account requires a parent to sign in to grant permission, but when they do, the parent has the option of choosing to **Always** allow the child to launch the app.</span></span> <span data-ttu-id="73884-124">このような除外の情報はクラウドに保存され、お子様がサインアウトして、もう一度サインインした場合でも、維持されます。</span><span class="sxs-lookup"><span data-stu-id="73884-124">That exemption is stored in the cloud and will persist even if the child signs out and signs back in.</span></span>
+
+## <a name="storagefilecopyasync-fails-to-copy-encrypted-files-to-unencrypted-destination"></a><span data-ttu-id="73884-125">StorageFile.CopyAsync で暗号化されていない宛先に暗号化されたファイルをコピーできない</span><span class="sxs-lookup"><span data-stu-id="73884-125">StorageFile.CopyAsync fails to copy encrypted files to unencrypted destination</span></span> 
+
+<span data-ttu-id="73884-126">StorageFile.CopyAsync を使用して、暗号化されていない宛先に暗号化されたファイルをコピーする場合、次の例外が発生して呼び出しは失敗します。</span><span class="sxs-lookup"><span data-stu-id="73884-126">When StorageFile.CopyAsync is used to copy a file that is encrypted to a destination that is not encrypted, the call will fail with the following exception:</span></span>
+
+```
+System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070005)
+```
+
+<span data-ttu-id="73884-127">これは、Xbox 開発者が、アプリ パッケージの一部として展開されているファイルを別の場所にコピーする場合に影響を及ぼす可能性があります。</span><span class="sxs-lookup"><span data-stu-id="73884-127">This can affect Xbox developers who want to copy files that are deployed as part of their app package to another location.</span></span> <span data-ttu-id="73884-128">この原因は、パッケージの内容が、Xbox の開発者モードではなく、リテール モードで暗号化されることです。</span><span class="sxs-lookup"><span data-stu-id="73884-128">The reason for this is that the package contents are encrypted on an Xbox in retail mode, but not in Dev Mode.</span></span> <span data-ttu-id="73884-129">その結果、アプリは、開発およびテスト中には期待どおりに動作しているように見えますが、公開され、製品版の Xbox にインストールされると動作しない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="73884-129">As a result, the app may appear to work as expected during development and testing, but then fail once it has been published and then installed to a retail Xbox.</span></span>
  
-There is currently no workaround for this issue. Apps should govern their memory usage accordingly and continue to stay under the 128 MB limit while running in the background.-->
- 
-## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>[保護者による制限] を有効にしたことにより VS からの展開に失敗する
 
-本体で [設定] の [保護者による制限] を有効にした場合、VS からのアプリの起動が失敗します。
+## <a name="blocked-networking-ports-on-xbox-one"></a><span data-ttu-id="73884-130">Xbox One のネットワーク ポートのブロック</span><span class="sxs-lookup"><span data-stu-id="73884-130">Blocked networking ports on Xbox One</span></span>
 
-この問題を回避するには、[保護者による制限] を一時的に無効にするか、次の操作を行います。
-1. [保護者による制限] を無効にして、本体にアプリを展開します。
-2. [保護者による制限] 有効にします。
-3. 本体からアプリを起動します。
-4. アプリを起動できるように、PIN またはパスワードを入力します。
-5. アプリが起動します。
-6. アプリを閉じます。
-7. F5 キーを使用して VS から起動すると、プロンプトを表示せずにアプリが起動します。
+<span data-ttu-id="73884-131">Xbox One デバイスでは、範囲 [57344, 65535] に含まれるポートへのユニバーサル Windows プラットフォーム (UWP) アプリのバインドは制限されています。</span><span class="sxs-lookup"><span data-stu-id="73884-131">Universal Windows Platform (UWP) apps on Xbox One devices are restricted from binding to ports in the range [57344, 65535], inclusive.</span></span> <span data-ttu-id="73884-132">実行時にはこの範囲のポートへのバインドは成功しているように見えても、ネットワーク トラフィックはアプリに到達する前にエラーや警告なしで破棄される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="73884-132">Although binding to these ports might appear to succeed at run-time, network traffic can be silently dropped before reaching your app.</span></span> <span data-ttu-id="73884-133">できる限りポート 0 にアプリをバインドし、システムによってローカル ポートが選択されるようにしてください。</span><span class="sxs-lookup"><span data-stu-id="73884-133">Your app should bind to port 0 wherever possible, which allows the system to select the local port.</span></span> <span data-ttu-id="73884-134">使用するポートを指定する必要がある場合は、範囲 [1025, 49151] 内のポート番号を使用する必要があります。この場合、IANA レジストリと競合しないように、確認してください。</span><span class="sxs-lookup"><span data-stu-id="73884-134">If you need to use a specific port, the port number must be in the range [1025, 49151], and you should check and avoid conflicts with the IANA registry.</span></span> <span data-ttu-id="73884-135">詳しくは、[サービス名およびトランスポート プロトコル ポート番号のレジストリ](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)についてのページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="73884-135">For more information, see the [Service Name and Transport Protocol Port Number Registry](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).</span></span>
 
-この時点では、アプリのアンインストールと再インストールを行っても、ユーザーをサインアウトさせるまで、アクセス許可は_固定_されます。
- 
-お子様のアカウントのみで利用できる、不適切なコンテンツの除外方法もあります。 お子様のアカウントでは、保護者がサインインしてアクセス許可を付与する必要がありますが、アクセス許可を付与するときに、保護者は、お子様によるアプリの起動を**常に許可**するように選ぶこともできます。 このような除外の情報はクラウドに保存され、お子様がサインアウトして、もう一度サインインした場合でも、維持されます。   
+## <a name="uwp-api-coverage"></a><span data-ttu-id="73884-136">UWP API カバレッジ</span><span class="sxs-lookup"><span data-stu-id="73884-136">UWP API coverage</span></span>
 
-<!--### x86 vs. x64
-
-By the time we release later this year, we will have great support for both x86 and x64, and we do support x86 in this preview. 
-However, x64 has had much more testing to date (the Xbox shell and all of the apps running on the console today are x64), and so we recommend using x64 for your projects. 
-This is particularly true for games.
-
-If you decide to use x86, please report any issues you see on the forum.
-
-Also see [Switching build flavors can cause deployment failures](known-issues.md#switching-build-flavors-can-cause-deployment-failures) later on this page.-->
-
-<!--### Game engines
-
-We have tested some popular game engines, but not all of them, and our test coverage for this preview has not been comprehensive. 
-Your mileage may vary. 
-
-The following game engines have been confirmed to work:
-* [Construct 2](https://www.scirra.com/)
-
-There are likely others that are working too. We would love to get your feedback on what you find. 
-Please use the forum to report any issues you see.-->
-
-## <a name="directx-12-support"></a>DirectX 12 のサポート
-
-Xbox One の UWP は、DirectX 11 の機能レベル 10 をサポートしています。 現時点では DirectX 12 はサポートされていません。 
-
-Xbox One は、従来のすべてのゲーム コンソールと同じように、その潜在的な機能を最大限に利用するために特定の SDK を必要とする特殊なハードウェアです。 Xbox One のハードウェアの機能を最大限に利用する必要があるゲームを開発している場合、[ID@XBOX](http://www.xbox.com/Developers/id) プログラムに登録することで、DirectX 12 のサポートを含む SDK にアクセスできます。
-
-<!-- ### Xbox One Developer Preview disables game streaming to Windows 10
-
-Activating the Xbox One Developer Preview on your console will prevent you from streaming games from your Xbox One to the Xbox app on Windows 10, even if your console is set to retail mode. 
-To restore the game streaming feature, you must leave the developer preview. -->
-
-<!--## System resources for UWP apps and games on Xbox One
-
-UWP apps and games running on Xbox One share resources with the system and other apps, and so the system governs the resources that are available to any one game or app. 
-If you are running into memory or performance issues, this may be why. 
-For more details, see [System resources for UWP apps and games on Xbox One](system-resource-allocation.md).-->
-
-<!--
-## Networking using traditional sockets
-
-In this developer preview, inbound and outbound network access from the console that uses traditional TCP/UDP sockets (WinSock, Windows.Networking.Sockets) is not available. 
-Developers can still use HTTP and WebSockets.
---> 
-
-## <a name="blocked-networking-ports-on-xbox-one"></a>Xbox One のネットワーク ポートのブロック
-
-Xbox One デバイスでは、範囲 [57344, 65535] に含まれるポートへのユニバーサル Windows プラットフォーム (UWP) アプリのバインドは制限されています。 実行時にはこの範囲のポートへのバインドは成功しているように見えても、ネットワーク トラフィックはアプリに到達する前にエラーや警告なしで破棄される可能性があります。 できる限りポート 0 にアプリをバインドし、システムによってローカル ポートが選択されるようにしてください。 使用するポートを指定する必要がある場合は、範囲 [1025, 49151] 内のポート番号を使用する必要があります。この場合、IANA レジストリと競合しないように、確認してください。 詳しくは、[サービス名およびトランスポート プロトコル ポート番号のレジストリ](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)についてのページをご覧ください。
-
-## <a name="uwp-api-coverage"></a>UWP API カバレッジ
-
-Xbox では、すべての UWP API がサポートされているわけではありません。 動作しないことが確認されている API の一覧については、「[Xbox でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/p/?LinkId=760755)」をご覧ください。 他の API に問題が見つかった場合は、フォーラムでご報告ください。 
-
-<!--## XAML controls do not look like or behave like the controls in the Xbox One shell
-
-In this developer preview, the XAML controls are not in their final form. In particular:
-* Gamepad X-Y navigation does not work reliably for all controls.
-* Controls do not look like controls in the Xbox shell. This includes the control focus rectangle.
-* Navigating between controls does not automatically make “navigation sounds.”
-
-These issues will be addressed in a future developer preview.-->
-
-<!--## Visual Studio and deployment issues
-
-### Switching build flavors can cause deployment failures
-
-Switching between Debug and Release builds, or between x86 and x64, or between Managed and .Net Native builds, can cause deployment failures. 
-
-The simplest way to avoid these issues for this preview is to stick to Debug and one architecture. 
-
-If you do hit this issue, uninstalling your app in the Collections app on your Xbox One will typically resolve it.
-
-> ****&nbsp;&nbsp;Uninstalling your app from Windows Device Portal (WDP) will not resolve the issue.
-
-If your issues persist, uninstall your app or game in the Collections app, leave Developer Mode, restart to Retail Mode and then switch back to Developer Mode.
-You may also need to restart Visual Studio and clean your solution.
-
-For more information, see the “Fixing deployment failures” section in [Frequently asked questions](frequently-asked-questions.md).
-
-### Uninstalling an app while you are debugging it in Visual Studio will cause it to fail silently
-
-Attempting to uninstall an app that is running under the debugger via the WDP “Installed Apps” tool will cause it to silently fail. 
-The workaround is to stop debugging the app in Visual Studio before attempting to remove it via WDP.
-
-### Visual Studio/Xbox PIN pairing failures
-
-It is possible to get into a state where the PIN pairing between Visual Studio and your Xbox One gets out of sync. 
-If PIN pairing fails, use the “Remove all pairings” button in Dev Home, restart Xbox One, restart your development PC, and then try again.--> 
+<span data-ttu-id="73884-137">Xbox では、すべての UWP API がサポートされているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="73884-137">Not all UWP APIs are supported on Xbox.</span></span> <span data-ttu-id="73884-138">動作しないことが確認されている API の一覧については、「[Xbox でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/p/?LinkId=760755)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="73884-138">For the list of APIs that we know don’t work, see [UWP features that aren't yet supported on Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755).</span></span> <span data-ttu-id="73884-139">他の API に問題が見つかった場合は、フォーラムでご報告ください。</span><span class="sxs-lookup"><span data-stu-id="73884-139">If you find issues with other APIs, please report them on the forums.</span></span> 
 
 
-<!--## Windows Device Portal (WDP) preview-->
+## <a name="navigating-to-wdp-causes-a-certificate-warning"></a><span data-ttu-id="73884-140">WDP に移動すると証明書の警告が表示される</span><span class="sxs-lookup"><span data-stu-id="73884-140">Navigating to WDP causes a certificate warning</span></span>
 
-<!--### Starting WDP from Dev Home crashes Dev Home
-
-When you start WDP in Dev Home, it will cause Dev Home to crash after you have entered your user name and password and selected **Save**. 
-The credentials are saved but WDP is not started. 
-You can start WDP by restarting Xbox One.--> 
-
-<!--### Disabling WDP in Dev Home does not work
-
-If you disable WDP in Dev Home, it will be turned off. 
-However, when you restart your Xbox One, WDP will be started again. 
-You can work around this issue by using **Reset and keep my games & apps** to delete any stored state on your Xbox One. 
-Go to Settings > System > Console info & updates > Reset console, and then select the **Reset and keep my games & apps** button.
-
-> **Caution**&nbsp;&nbsp;Doing this will delete all saved settings on your Xbox One including wireless settings, user accounts and any game progress that has not been saved to cloud storage.
-
-> **Caution**&nbsp;&nbsp;DO NOT select the **Reset and remove everything** button.
-This will delete all of your games, apps, settings and content, deactivate Developer Mode, and remove you console from the Developer Preview group.
-
-### The columns in the “Running Apps” table do not update predictably. 
-
-Sometimes this is resolved by sorting a column on the table.-->
-
-## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>WDP に移動すると証明書の警告が表示される
-
-提供された証明書についての、次のスクリーン ショットのような警告が表示されます。これは、Xbox One 本体によって署名されたセキュリティ証明書が、既知の信頼された発行元とは見なされないためです。 Windows Device Portal にアクセスするには、**[このサイトの閲覧を続行する]** をクリックします。
+<span data-ttu-id="73884-141">提供された証明書についての、次のスクリーン ショットのような警告が表示されます。これは、Xbox One 本体によって署名されたセキュリティ証明書が、既知の信頼された発行元とは見なされないためです。</span><span class="sxs-lookup"><span data-stu-id="73884-141">You will receive a warning about the certificate that was provided, similar to the following screenshot, because the security certificate signed by your Xbox One console is not considered a well-known trusted publisher.</span></span> <span data-ttu-id="73884-142">Windows Device Portal にアクセスするには、**[このサイトの閲覧を続行する]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="73884-142">To access the Windows Device Portal, click **Continue to this website**.</span></span>
 
 ![Web サイトのセキュリティ証明書の警告](images/security_cert_warning.jpg)
 
-<!--## Dev Home
 
-Occasionally, selecting the “Manage Windows Device Portal” option in Dev Home will cause Dev Home to silently exit to the Home screen. 
-This is caused by a failure in the WDP infrastructure on the console and can be resolved by restarting the console.-->
+## <a name="knownfoldersmediaserverdevices-caveat-on-xbox"></a><span data-ttu-id="73884-144">Xbox での KnownFolders.MediaServerDevices の注意事項</span><span class="sxs-lookup"><span data-stu-id="73884-144">KnownFolders.MediaServerDevices caveat on Xbox</span></span>
 
-## <a name="knownfoldersmediaserverdevices-caveat-on-xbox"></a>Xbox での KnownFolders.MediaServerDevices の注意事項
+<span data-ttu-id="73884-145">デスクトップでは、メディア サーバーが PC と "ペアリング" されており、どのサーバーが現在オンラインかをデバイス関連付けサービスが常に追跡しているため、初期ファイル システム クエリが現在オンラインのペアリング済みサーバーの一覧をすぐに返すことができます。</span><span class="sxs-lookup"><span data-stu-id="73884-145">On Desktop, media servers are “paired” with the PC, and the Device Association Service is constantly tracking which of the servers are currently on-line, so an initial file system query can immediately return a list of the paired servers that are currently online.</span></span>
 
-デスクトップでは、メディア サーバーが PC と "ペアリング" されており、どのサーバーが現在オンラインかをデバイス関連付けサービスが常に追跡しているため、初期ファイル システム クエリが現在オンラインのペアリング済みサーバーの一覧をすぐに返すことができます。
+<span data-ttu-id="73884-146">Xbox では、サーバーを追加または削除する UI がないため、初期ファイル システム クエリは常に空の一覧を返します。</span><span class="sxs-lookup"><span data-stu-id="73884-146">On Xbox, there is no UI to add or remove servers, so the initial file system query will always return empty.</span></span> <span data-ttu-id="73884-147">クエリを作成して ContentsChanged イベントにサブスクライブし、通知を受け取るたびにクエリを更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="73884-147">You must create a query and subscribe to the ContentsChanged event and refresh the query each time you get a notification.</span></span> <span data-ttu-id="73884-148">サーバーは少しずつ明らかになり、ほとんどは 3 秒以内に検出されます。</span><span class="sxs-lookup"><span data-stu-id="73884-148">Servers will trickle in and most will have been discovered within 3 seconds.</span></span>
 
-Xbox では、サーバーを追加または削除する UI がないため、初期ファイル システム クエリは常に空の一覧を返します。 クエリを作成して ContentsChanged イベントにサブスクライブし、通知を受け取るたびにクエリを更新する必要があります。 サーバーは少しずつ明らかになり、ほとんどは 3 秒以内に検出されます。
-
-シンプルなサンプル コード:
+<span data-ttu-id="73884-149">シンプルなサンプル コード:</span><span class="sxs-lookup"><span data-stu-id="73884-149">Simple example code:</span></span>
 
 ```
 namespace TestDNLA {
@@ -230,7 +119,6 @@ namespace TestDNLA {
 }
 ```
 
-## <a name="see-also"></a>関連項目
-- [よく寄せられる質問](frequently-asked-questions.md)
-- [Xbox One の UWP](index.md)
-
+## <a name="see-also"></a><span data-ttu-id="73884-150">関連項目</span><span class="sxs-lookup"><span data-stu-id="73884-150">See also</span></span>
+- [<span data-ttu-id="73884-151">よく寄せられる質問</span><span class="sxs-lookup"><span data-stu-id="73884-151">Frequently asked questions</span></span>](frequently-asked-questions.md)
+- [<span data-ttu-id="73884-152">Xbox One の UWP</span><span class="sxs-lookup"><span data-stu-id="73884-152">UWP on Xbox One</span></span>](index.md)
