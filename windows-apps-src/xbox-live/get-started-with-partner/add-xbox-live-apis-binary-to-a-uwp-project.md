@@ -1,6 +1,6 @@
 ---
 title: Xbox Live API のバイナリを UWP プロジェクトに追加する
-author: StaceyHaffner
+author: KevinAsgari
 description: NuGet を使用して Xbox Live API のバイナリ パッケージを UWP プロジェクトに追加する方法について説明します。
 ms.assetid: 1e77ce9f-8a0e-402c-9f46-e37f9cda90ed
 ms.author: kevinasg
@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, NuGet
 ms.localizationpriority: low
-ms.openlocfilehash: 2440fc0d0362820e9ca21caca4c09412ec6e87e3
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 9f274e26638ca2b37bdca778c50e6bf787b949f2
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935847"
 ---
 # <a name="add-xbox-live-apis-binary-package-to-your-uwp-project"></a>Xbox Live API のバイナリ パッケージを UWP プロジェクトに追加する
 
@@ -26,12 +27,12 @@ ms.lasthandoff: 02/24/2018
 
 ## <a name="add-the-binary-package-via-nuget"></a>NuGet を使ったバイナリ パッケージの追加
 
-プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使うか API ソースを追加してバイナリへの参照を追加します。 NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。 この記事では、NuGet パッケージを使う方法について説明します。 ソースを使用する場合は、「[UWP プロジェクトでの Xbox Live API ソースのコンパイル](add-xbox-live-apis-source-to-a-uwp-project.md)」をご覧ください。 
+プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使うか API ソースを追加してバイナリへの参照を追加します。 NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。 この記事では、NuGet パッケージを使う方法について説明します。 ソースを使用する場合は、「[UWP プロジェクトでの Xbox Live API ソースのコンパイル](add-xbox-live-apis-source-to-a-uwp-project.md)」をご覧ください。
 
-Xbox Services API には、UWP と XDK の両方で使用できるものと、C++ で使用できるもの、WinRT で使用できるものがあり名前空間の構造は **Microsoft.Xbox.Live.SDK.*.UWP** と **Microsoft.Xbox.Live.SDK.*.XboxOneXDK** です。 
+Xbox Services API には、UWP と XDK の両方で使用できるものと、C++ で使用できるもの、WinRT で使用できるものがあり名前空間の構造は **Microsoft.Xbox.Live.SDK.*.UWP** と **Microsoft.Xbox.Live.SDK.*.XboxOneXDK** です。
 
-1. **UWP** は、PC、Xbox One、Windows Phone で実行できる UWP ゲームをビルドしている開発者向けのものです。 
-2. **XboxOneXDK** は、ID@Xbox 用のものであり、Xbox One XDK を使用している管理対象の開発者が利用します。 
+1. **UWP** は、PC、Xbox One、Windows Phone で実行できる UWP ゲームをビルドしている開発者向けのものです。
+2. **XboxOneXDK** は、ID@Xbox 用のものであり、Xbox One XDK を使用している管理対象の開発者が利用します。
 3. C++ SDK は C++ ゲーム エンジンに使用できます。 WinRT SDK は、C++、C#、JavaScript を使って記述されたゲーム エンジン用です。
 4. C++ エンジンで WinRT を使用する場合は、ハット (^) を使う C++/CX を使用してください。 C++ は、C++ ゲーム エンジンで使用する際に推奨される API です。  
 
@@ -41,9 +42,9 @@ Xbox Services API には、UWP と XDK の両方で使用できるものと、C+
 Xbox Live SDK NuGet パッケージは次の方法で追加できます。
 
 1. Visual Studio では、**[ツール]** > **[NuGet パッケージ マネージャー]** > **[ソリューションの NuGet パッケージの管理...]** の順に移動します。
-2. NuGet パッケージ マネージャーで、**[参照]** をクリックして検索ボックスに「**Xbox.Live.SDK**」と入力します。 
-3. 左側の一覧から使う Xbox Live SDK のバージョンを選びます。 
-3. ウィンドウの右側にある、プロジェクトの横にあるチェック ボックスをオンにして **[インストール]** をクリックします。 
+2. NuGet パッケージ マネージャーで、**[参照]** をクリックして検索ボックスに「**Xbox.Live.SDK**」と入力します。
+3. 左側の一覧から使う Xbox Live SDK のバージョンを選びます。
+3. ウィンドウの右側にある、プロジェクトの横にあるチェック ボックスをオンにして **[インストール]** をクリックします。
 
 > [!NOTE]
 > Xbox Live クリエーターズ プログラムの開発者は、XDK がサポートされていないため、UWP バージョンの Xbox Live SDK を使用する必要があります。
@@ -51,4 +52,4 @@ Xbox Live SDK NuGet パッケージは次の方法で追加できます。
 ![NuGet による XBL の追加](../images/getting_started/vs-add-nuget-xbl.gif)
 
 > [!IMPORTANT]
-> `Microsoft.Xbox.Live.SDK.Cpp.*` ベースのプロジェクトの場合、必ずプロジェクトのソースにヘッダー `#include <xsapi\services.h>` を含めてください。 
+> `Microsoft.Xbox.Live.SDK.Cpp.*` ベースのプロジェクトの場合、必ずプロジェクトのソースにヘッダー `#include <xsapi\services.h>` を含めてください。

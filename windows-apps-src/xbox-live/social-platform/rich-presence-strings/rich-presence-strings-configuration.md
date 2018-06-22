@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: low
-ms.openlocfilehash: 2dc4e928d1b082c8d884f6c4c799595045438673
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 1fb60a2c98695eae1445017beb6736dc6a56dae8
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989289"
 ---
 # <a name="rich-presence-configuration"></a>リッチ プレゼンスの構成
 
@@ -80,42 +81,41 @@ Xbox デベロッパー ポータル (XDP: Xbox Developer Portal) で、リッ�
 列挙値 | 関連する統計情報 | フレンドリ名 | ロケール | String
 ----------- | ----------------- | ------------- | ------ | ----
 Map | CurrentMap | Map_Mountains | 既定 | Mountains
-    |            |               | en | Mountains
- |  |  | en-US | Mountains
- |  |  | en-GB | Mountains
- |  |  |  de | Gebirge
- | |  | など |
- | | Map_Desert | 既定 | Desert
- |  ||  en | Desert
- |  ||  en-US | Desert
- |  ||   en-GB | Desert
- |  ||  de | Wuste
- |  ||  など |
-| |  Map_Beach | 既定 | Beach
- ||    | en | Beach
- ||    | en-US | Beach
- ||    | en-GB | Beach
- ||    | de | Strand
- | |   | など |
+ |  |  |  | en | Mountains
+ |  |  |  | en-US | Mountains
+ |  |  |  | en-GB | Mountains
+ |  |  |  |  de | Gebirge
+ | |  |  | など |
+ | |  | Map_Desert | 既定 | Desert
+ |  ||  |  en | Desert
+ |  ||  |  en-US | Desert
+ |  ||  |   en-GB | Desert
+ |  ||  |  de | Wuste
+ |  ||  |  など |
+| |  |  Map_Beach | 既定 | Beach
+ ||    |  | en | Beach
+ ||    |  | en-US | Beach
+ ||    |  | en-GB | Beach
+ ||    |  | de | Strand
+ | |   |  | など |
 Boot | CurrentWeapon | Boot_Light | 既定 | Light
- |  ||  en | Light
- |  ||   en-US | Light
- |  ||   en-GB | Light
- |  ||   de | Leicht
- |  ||   など  |
- |  | Boot_Medium | 既定 | Medium
- |  |  | en | Medium
- |  |  | en-US | Medium
- |  |  | en-GB | Medium
- |  |  | de | Mittel
- |  |  | など |
- |  | Boot_Strong | 既定 | Strong
- |  |  | en | Strong
- |  |  | en-US | Strong
- |  |  | en-GB | Strong
- |  |  | de | Stark
+ |  ||  |  en | Light
+ |  ||  |   en-US | Light
+ |  ||  |   en-GB | Light
+ |  ||  |   de | Leicht
+ |  ||  |   など  |
+ |  | |  Boot_Medium | 既定 | Medium
+ |  |  |  | en | Medium
+ |  |  |  | en-US | Medium
+ |  |  |  | en-GB | Medium
+ |  |  |  | de | Mittel
+ |  |  |  | など |
+ |  | |  Boot_Strong | 既定 | Strong
+ |  |  |  | en | Strong
+ |  |  |  | en-US | Strong
+ |  |  |  | en-GB | Strong
+ |  |  |  | de | Stark
  |  ||  | など
-など | | | |
 
 ## <a name="string-configuration-example"></a>文字列の構成例
 
@@ -131,24 +131,24 @@ Boot | CurrentWeapon | Boot_Light | 既定 | Light
 
 フレンドリ名 | ロケール | String | Parameters
 --- | --- | --- | ---
-playingMap | 既定 | Playing on map:{0} | CurrentMap
- | en | Playing on map:{0} |
- | en-US | Playing on map:{0} |
- | en-GB | Playing on map:{0} |
- | de | Spielt auf Karte: {0} |
- | など | |
-totalKicked | 既定 | Kicked {0} Buckets! | BucketsKicked
- | en | Kicked {0} Buckets! |
- | en-US | Kicked {0} Buckets! |
- | en-GB | Kicked {0} Buckets! |
- | de | {0} Eimer getreten! |
- | など | |
+playingMap | 既定値 | Playing on map:{0} | CurrentMap
+ |  | en | Playing on map:{0} |
+ |  | en-US | Playing on map:{0} |
+ |  | en-GB | Playing on map:{0} |
+ |  | de | Spielt auf Karte: {0} |
+ |  | など | |
+totalKicked | 既定値 | Kicked {0} Buckets! | BucketsKicked
+ |  | en | Kicked {0} Buckets! |
+ |  | en-US | Kicked {0} Buckets! |
+ |  | en-GB | Kicked {0} Buckets! |
+ |  | de | {0} Eimer getreten! |
+ |  | など | |
 multiplayer | 既定 | Playing multiplayer |
- | en | Playing multiplayer |
- | en-US | Playing multiplayer |
- | en-GB | Playing multiplayer |
- | de | Spielt Mehrspieler |
- | など | | 
+ |  | en | Playing multiplayer |
+ |  | en-US | Playing multiplayer |
+ |  | en-GB | Playing multiplayer |
+ |  | de | Spielt Mehrspieler |
+ |  | など | 
 
 作成できる文字列の数に制限はありませんが、タイトルには少なくとも 1 つの文字列が必要です。
 

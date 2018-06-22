@@ -10,18 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: low
-ms.openlocfilehash: aa926ce695a538d5019ff5571cada093ab262c70
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 4ea89114dc7b1d24f3e92a5b60f3ba189d44347e
+ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1893644"
 ---
 # <a name="game-chat-overview"></a>ゲーム チャットの概要
 
  ゲーム チャットとは、リモート本体上の 1 つのタイトルのユーザー間でのボイス チャットを可能にするために使用できるテクノロジです。 これには、本体ユーザー間のより広範な独立したコミュニケーションは含まれません。
 
  > [!Note]
- > 新しいタイトルでは、ゲーム チャットの代わりに[ゲーム チャット 2](game-chat-2-overview.md) を使う必要があります。 元のゲーム チャットは、2017 年末までに廃止される予定です。
+ > 新しいタイトルでは、ゲーム チャットの代わりに[ゲーム チャット 2](game-chat-2-overview.md) を使う必要があります。 元のゲーム チャットは、2017 年末に非推奨となりました。 元のゲーム チャットを利用しているタイトルでは、[ゲーム チャット 2 移行ガイド](game-chat-2-migration.md)に従って、ゲーム チャットの概念と呼び出しパターンをゲーム チャット 2 にマップすることができます。
 
  Xbox One には、ハードウェア アクセラレーションに対応した専用のボイス チャット コーデックが用意されています。このコーデックはエンコードとデコードに使用され、`Microsoft.Xbox.GameChat` 名前空間を通じて公開されます。 このコーデックは、タイトルのネットワーク帯域幅の柔軟性に関する複数の品質設定をサポートし、本体が送信するすべてのボイス チャット通信でこのコーデックを使用する必要があります。 他のコーデックはサポートされません。
 

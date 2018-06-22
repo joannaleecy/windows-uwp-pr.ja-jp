@@ -1,6 +1,6 @@
 ---
 title: Xbox Live の新機能
-author: staceyhaffner
+author: PhillipLucas
 description: Xbox Live SDK の新機能
 ms.author: sthaff
 ms.date: 10/04/2017
@@ -9,11 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: low
-ms.openlocfilehash: df7cfaff8eb4f3129b3effc2ba3c7acc1b65c003
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 02c0acdb252ce9e86b2635fa4845427c92ef8964
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935655"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live の新機能
 [Xbox Live API GitHub コミット履歴](https://github.com/Microsoft/xbox-live-api/commits/master)に関するページで、Xbox Live API に最近加えられたすべてのコード変更について確認することもできます。
@@ -120,7 +121,7 @@ Xbox Live API は、ユニバーサル Windows プラットフォーム (UWP) �
 
 #### <a name="github"></a>GitHub
 
-Xbox Live API (XSAPI) が [https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api) の GitHub で利用できるようになりました。  XDK に付属のバイナリまたは NuGet パッケージとしての使用も推奨していますが、ソースを使用したり、ソース コードに貢献していただくことも歓迎します。  
+Xbox Live API (XSAPI) は、GitHub ([https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api)) に公開されています。  XDK に付属のバイナリまたは NuGet パッケージとしての使用も推奨していますが、ソースを使用したり、ソース コードに貢献していただくことも歓迎します。  
 
 ### <a name="xbox-live-creators-program"></a>Xbox Live クリエーターズ プログラム
 
@@ -152,4 +153,3 @@ Xbox Live クリエーターズ プログラムは、幅広い対象デベロッ
 * [2015 年 9 月](1509-whats-new.md)
 * [2015 年 8 月](1508-whats-new.md)
 * [2015 年 6 月](1506-whats-new.md)
-

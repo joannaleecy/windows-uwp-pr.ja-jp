@@ -3,17 +3,18 @@ title: XIM (C++) の使用
 author: KevinAsgari
 description: C++ で Xbox Integrated Multiplayer (XIM) を使用する方法について説明します。
 ms.author: kevinasg
-ms.date: 01/24/2018
+ms.date: 04/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, Xbox One, Xbox Integrated Multiplayer
 ms.localizationpriority: low
-ms.openlocfilehash: a2768fb34e2552af4699b106380591e584ec9977
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 6b333c58c996419f561d37cbc34d80406484cbf9
+ms.sourcegitcommit: aa7eab04a24c58d43d63cec1e1e99dbf9aab59f6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1913938"
 ---
 # <a name="using-xim-c"></a>XIM (C++) の使用
 
@@ -43,6 +44,7 @@ ms.lasthandoff: 02/24/2018
     - [プレイヤーを消音する](#muting-players)
     - [プレイヤーのチームを使ったチャット ターゲットの構成](#configuring-chat-targets-using-player-teams)
     - [プレイヤー スロットの自動バックグラウンド設定 ("バックフィル" マッチメイキング)](#automatic-background-filling-of-player-slots-backfill-matchmaking)
+    - [参加可能なネットワークの照会](#querying-joinable-networks)
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -161,15 +163,17 @@ myPlayerStateObject = reinterpret_cast<MyPlayerState *>(newXimPlayer->custom_pla
 
 ## <a name="enabling-friends-to-join-and-inviting-them"></a>フレンド参加の有効化とフレンドの招待
 
-プライバシーとセキュリティのため、すべての新しい XIM ネットワークは既定では追加プレイヤーが参加できないように自動的に構成されるので、アプリ側で参加を明示的に許可する必要があります。 次の例では、`xim::set_allowed_player_joins()` を使用して、プレイヤーとして参加する新しいローカル ユーザー、および招待されている、または "フォロー" されている (Xbox Live ソーシャル関係) ユーザーの許可を開始する方法を示します。
+プライバシーとセキュリティのため、すべての新しい XIM ネットワークは既定ではローカル プレイヤーのみが参加できるように自動的に構成されるので、準備ができたらアプリ側で明示的に他のプレイヤーを許可する必要があります。 次の例は、`xim::network_configuration()` を使用して現在のネットワーク構成を取得し、`xim::set_network_configuration()` を使用して参加可能性を更新して、新しいローカル ユーザー、および XIM ネットワーク内の既存のプレイヤーによって招待されたユーザーや "フォロー" されている (Xbox Live ソーシャル関係) ユーザーを、プレイヤーとして参加できるように許可します。
 
 ```cpp
-xim::singleton_instance().set_allowed_player_joins(xim_allowed_player_joins::local_invited_or_followed);
+xim_network_configuration networkConfiguration = *xim::singleton_instance.network_configuration();
+networkConfiguration.allowed_player_joins = xim_allowed_player_joins::local | xim_allowed_player_joins::invited | xim_allowed_player_joins::followed;
+xim::singleton_instance().set_network_configuration(&networkConfiguration);
 ```
 
-`xim::set_allowed_player_joins()` が非同期で実行されます。 前のコード サンプルの呼び出しが完了すると、参加可能性の値がその既定値 `xim_allowed_player_joins::none` から変更されたことを通知する `xim_allowed_player_joins_changed_state_change` が生成されます。 その後、`xim::allowed_player_joins()` を使用して新しい値を照会できます。
+`xim::set_network_configuration()` が非同期で実行されます。 前のコード サンプルの呼び出しが完了すると、参加可能性の値がその既定値 `xim_allowed_player_joins::none` から変更されたことを通知する `xim_network_configuration_changed_state_change` が生成されます。 その後、新しい値は、`xim::network_configuration()` が返す `xim_network_configuration` の `allowed_player_joins` プロパティをチェックすることで照会できます。 
 
-`xim::allowed_player_joins()` はいつでも呼び出して、ネットワーク上の参加可能性の設定を確認できます。
+デバイスが XIM ネットワーク内にあるときに、`allowed_player_joins` をチェックすることで、ネットワークの参加可能性を確認できます。
 
 いずれかのローカル プレイヤーが、この XIM ネットワークへの参加招待をリモート ユーザーに送信する場合、アプリは `xim_player::xim_local::show_invite_ui()` を呼び出してシステム招待 UI を起動できます。 ここでは、ローカル ユーザーが招待するユーザーを選択して、招待を送信できます。 このしくみは、次の例で示されています。変数 'ximPlayer' は有効なローカル `xim_player` を指しているものとします。
 
@@ -213,7 +217,9 @@ XIM を使って基本的なマッチメイキングを開始するには、デ�
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_8_players_minimum_2;
+matchmakingConfiguration.team_configuration.team_count = 1;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 2;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 8;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
 
 xim::singleton_instance().move_to_network_using_matchmaking(matchmakingConfiguration, xim_players_to_move::bring_existing_social_players);
@@ -356,79 +362,82 @@ PCWSTR mapName = xim::singleton_instance().get_network_custom_property(L"map");
 
 固有のアプリ指定のゲーム モードの共通の関心を使用したプレイヤーのマッチングは、優れた基本戦略です。 利用可能なプレイヤーのプールが大きくなるにつれて、ベテラン プレイヤーが、他のベテランと正当な対戦を楽しめるように、ゲームの個人スキル、または体験に基づいて、マッチプレイヤーを考慮する必要がありますが、新しいプレイヤーは、同様の能力の他者と対戦することで、レベルを上げることができます。
 
-これを行うにはまず、マッチメイキングを使用して XIM ネットワークに移動し始める前に、`xim_player::xim_local::set_matchmaking_configuration()` の呼び出しで指定されるプレイヤーごとのマッチメイキング設定構造体で、すべてのローカル プレイヤーにスキル レベルを提供します。 スキル レベルはアプリ固有の概念であり、数が XIM で解釈されることはありません。例外として、マッチメイキングでまず同一のスキル値を持つプレイヤーを探してから、定期的に +/- 10 単位で検索対象の増減を行い、そのスキル範囲内でスキル値を宣言する他のプレイヤーを探すことができます。 以下の例では、ローカルの `xim_player` オブジェクトを想定しています。このオブジェクトのポインターは 'localPlayer' であり、ローカルまたは Xbox Live のストレージから 'playerSkillValue' と呼ばれる変数に対して取得されたアプリ固有のスキル値 uint32_t が格納されます。
+これを行うにはまず、マッチメイキングを使用して XIM ネットワークに移動する前に、`xim_player::xim_local::set_roles_and_skill_configuration()` の呼び出しで指定されるプレイヤーごとのロールとスキル構成構造体で、すべてのローカル プレイヤーにスキル レベルを提供します。 スキル レベルはアプリ固有の概念であり、数が XIM で解釈されることはありません。例外として、マッチメイキングでまず同一のスキル値を持つプレイヤーを探してから、定期的に +/- 10 単位で検索対象の増減を行い、そのスキル範囲内でスキル値を宣言する他のプレイヤーを探すことができます。 以下の例では、ローカルの `xim_player` オブジェクトを想定しています。このオブジェクトのポインターは 'localPlayer' であり、ローカルまたは Xbox Live のストレージから 'playerSkillValue' と呼ばれる変数に対して取得されたアプリ固有のスキル値 uint32_t が格納されます。
 
 ```cpp
- xim_player_matchmaking_configuration playerMatchmakingConfiguration = { 0 };
- playerMatchmakingConfiguration.skill = playerSkillValue;
+xim_player_roles_and_skill_configuration playerRolesAndSkillConfiguration = { 0 };
+playerRolesAndSkillConfiguration.skill = playerSkillValue;
 
- localPlayer->local()->set_matchmaking_configuration(&playerMatchmakingConfiguration);
+localPlayer->local()->set_roles_and_skill_configuration(&playerRolesAndSkillConfiguration);
 ```
 
-これが完了すると、この `xim_player` によってプレイヤーごとのマッチメイキング設定が変更されたことを示す `xim_player_matchmaking_configuration_changed_state_change` が、すべての参加者に送信されます。 新しい値を取得するには、`xim_player::matchmaking_configuration()` を呼び出します。 すべてのプレイヤーに null 以外のマッチメイキング設定が適用されたら、`xim::move_to_network_using_matchmaking()` に渡された `xim_matchmaking_configuration` 構造体の `require_player_matchmaking_configuration` フィールドに true 値を指定してマッチメイキングを使用することで XIM に移動できます。
-
-次の例では、no-teams free-for-all 用に合計 2 ～ 8 人のプレイヤーを探すマッチメイキング構成を事前設定します。 さらに、この例では、フィルターで除外するゲーム モードを表す、アプリによって定義された定数 (型は uint64_t、名前は MYGAMEMODE_DEATHMATCH) を使います。 XIM ネットワークのプレイヤーと、同じ値を指定しており、プレイヤーごとのマッチメイキング構成を必要とする他のプレイヤーをマッチングするようにマッチメイキングが構成されます。
+これが完了すると、この `xim_player` によってプレイヤーごとのロールとスキル構成が変更されたことを示す `xim_player_roles_and_skill_configuration_changed_state_change` が、すべての参加者に送信されます。 新しい値を取得するには、`xim_player::roles_and_skill_configuration()` を呼び出します。 すべてのプレイヤーに null 以外のロールとスキル構成が適用されたら、`xim::move_to_network_using_matchmaking()` に指定された `xim_matchmaking_configuration` 構造体の `require_player_roles_and_skill_configuration` フィールドに true 値を指定してマッチメイキングを使用することで XIM に移動できます。 以下の例では、no-teams free-for-all 用に 合計 2 ～ 8 人のプレイヤーを探すマッチメイキング構成を追加します。このとき、MYGAMEMODE_DEATHMATCH の値で定義されるアプリ固有のゲーム モード定数である uint64_t を使用します。この値は、同一値を指定した他のプレイヤーのみと一致し、使用するにはプレイヤーごとのロールとスキル構成が必要になります。
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_8_players_minimum_2;
+matchmakingConfiguration.team_configuration.team_count = 1;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 2;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 8;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
-matchmakingConfiguration.require_player_matchmaking_configuration = true;
+matchmakingConfiguration.require_player_roles_and_skill_configuration = true;
 ```
 
-この構造体が `xim::move_to_network_using_matchmaking()` に送信されると、移動するプレイヤーによって、null 以外の `xim_player_matchmaking_configuration` ポインターを使用して `xim_player::xim_local::set_matchmaking_configuration()` が呼び出されている限り、この移動操作は正常に開始されます。 これが行われていないプレイヤーがいる場合、マッチメイキング処理は一時停止され、`xim_matchmaking_status::waiting_for_player_matchmaking_configuration` 値が指定された `xim_matchmaking_progress_updated_state_change` がすべての参加者に送信されます。 これには、マッチメイキングが完了する前に、事前に送信された招待または他のソーシャルな手段 (`xim::move_to_network_using_joinable_xbox_user_id` の呼び出しなど) で、XIM ネットワークに途中参加したプレイヤーも含まれます。 すべてのプレイヤーが `xim_player_matchmaking_configuration` 構造体を送信した時点で、マッチメイキングが再開されます。
+この構造体が `xim::move_to_network_using_matchmaking()` に送信されると、移動するプレイヤーによって、null 以外の `xim_player_roles_and_skill_configuration` ポインターを使用して `xim_player::xim_local::set_roles_and_skill_configuration()` が呼び出されている限り、この移動操作は正常に開始されます。 これが行われていないプレイヤーがいる場合、マッチメイキング処理は一時停止され、`xim_matchmaking_status::waiting_for_player_roles_and_skill_configuration` 値が指定された `xim_matchmaking_progress_updated_state_change` がすべての参加者に送信されます。 これには、マッチメイキングが完了する前に、事前に送信された招待または他の手段 (`xim::move_to_network_using_joinable_xbox_user_id()` の呼び出しなど) で、XIM ネットワークに途中参加したプレイヤーも含まれます。 すべてのプレイヤーが `xim_player_roles_and_skill_configuration` 構造体を送信した時点で、マッチメイキングが再開されます。
 
-次のセクションで説明するように、プレイヤーごとのスキルを使うマッチメイキングを、プレイヤーごとのロールを使うマッチメイキングと組み合わせることもできます。 いずれかのみ指定する場合は、他のマッチメイキングに値 0 を指定できます。 これは、スキル値 `xim_player_matchmaking_configuration` が 0 であると宣言するすべてのプレイヤーは必ず互いにマッチングされるためです。
+次のセクションで説明するように、プレイヤーごとのスキルを使うマッチメイキングを、プレイヤーごとのロールを使うマッチメイキングと組み合わせることもできます。 いずれかのみ指定する場合は、他のマッチメイキングに値 0 を指定できます。 これは、スキル値 `xim_player_roles_and_skill_configuration` が 0 であると宣言するすべてのプレイヤーは必ず互いにマッチングされるためです。
 
-`xim::move_to_network_using_matchmaking()` や、その他すべての XIM ネットワークの移動操作が完了すると、すべてのプレイヤーの `xim_player_matchmaking_configuration` 構造体は、自動的に null ポインターにクリアされます (付随して `xim_player_matchmaking_configuration_changed_state_change` 通知が送信されます)。 プレイヤーごとの設定が必要なマッチメイキングを使用して、別の XIM ネットワークに移動する場合、常に最新の情報を含む新しい構造体のポインターで、再度 `xim_player::xim_local::set_matchmaking_configuration()` を呼び出します。
+`xim::move_to_network_using_matchmaking()` や、その他すべての XIM ネットワークの移動操作が完了すると、すべてのプレイヤーの `xim_player_roles_and_skill_configuration` 構造体は、自動的に null ポインターにクリアされます (付随して `xim_player_roles_and_skill_configuration_changed_state_change` 通知が送信されます)。 プレイヤーごとの設定が必要なマッチメイキングを使用して、別の XIM ネットワークに移動する場合、常に最新の情報を含む新しい構造体のポインターで、再度 `xim_player::xim_local::set_roles_and_skill_configuration()` を呼び出します。
 
 ## <a name="matchmaking-using-per-player-role"></a>プレイヤーごとのロールによるマッチメイキング
 
-プレイヤーごとのマッチメイキング設定を使用してユーザーのマッチメイキング エクスペリエンスを高める別の方法として、必要なプレイヤー ロールを使うことができます。 これは、さまざまな協力型プレイ スタイルを提案するキャラクター タイプを選択できるゲームに最も適しています。 これらのキャラクター タイプは、ゲーム内のグラフィカル表現をただ変更するのではなく、代わりにプレイヤーのゲームプレイ スタイルを変更するものです。 ユーザーは、専門分野としてプレイする場合があるということを意味します。 しかし、各ロールを満たす者が存在せずに、機能的に目的を完了させることができないようにゲームが設計されている場合は、任意のプレイヤーをまとめてマッチングさせるよりもそのようなプレイヤーをまとめてマッチングさせ、集まった時点でプレイヤー間でプレイ スタイルを検討する方が望ましい場合があります。 これを行うには、指定のプレイヤーの `xim_player_matchmaking_configuration` 構造体で指定される各ロールを表す一意のビット フラグを最初に定義します。
+プレイヤーごとのロールとスキル構成を使用してユーザーのマッチメイキング エクスペリエンスを高める別の方法として、必要なプレイヤー ロールを使うことができます。 これは、さまざまな協力型プレイ スタイルを提案するキャラクター タイプを選択できるゲームに最も適しています。つまり、ゲーム内のグラフィカル表現をただ変更するのではなく、防御型 "ヒーラー" に対して近距離型の "メレー" 攻撃や遠距離型の "レンジ" 攻撃のサポートなど、補完的で影響の強い属性を制御するようなものを指します。 ユーザーのパーソナリティは、専門分野としてプレイする場合があるということを意味します。 しかし、各ロールを満たす者が存在せずに、機能的に目的を完了させることができないようにゲームが設計されている場合は、任意のプレイヤーをまとめてマッチングさせるよりもそのようなプレイヤーをまとめてマッチングさせ、集まった時点でプレイヤー間でプレイ スタイルを検討する方が望ましい場合があります。 これを行うには、指定のプレイヤーの `xim_player_roles_and_skill_configuration` 構造体で指定される各ロールを表す一意のビット フラグを最初に定義します。
 
-以下の例では、ローカルの `xim_player` オブジェクトに対して、アプリ固有のロール値 (型は uint8_t、名前は MYROLEBITFLAG_HEALER) を設定します。このポインターは、'localPlayer' になります。
+以下の例では、ローカルの xim_player オブジェクトに対して、アプリ固有のロール値である MYROLEBITFLAG_HEALER uint8_t を設定します。このポインターは、'localPlayer' になります。
 
 ```cpp
+xim_player_roles_and_skill_configuration playerRolesAndSkillConfiguration = { 0 };
+playerRolesAndSkillConfiguration.roles = MYROLEBITFLAG_HEALER;
 
-xim_player_matchmaking_configuration playerMatchmakingConfiguration = { 0 };
-playerMatchmakingConfiguration.roles = MYROLEBITFLAG_HEALER;
-localPlayer->local()->set_matchmaking_configuration(&playerMatchmakingConfiguration);
-
+localPlayer->local()->set_roles_and_skill_configuration(&playerRolesAndSkillConfiguration);
 ```
 
-これが完了すると、この `xim_player` によってプレイヤーごとのマッチメイキング設定が変更されたことを示す `xim_player_matchmaking_configuration_changed_state_change` が、すべての参加者に送信されます。 新しい値を取得するには、`xim_player::matchmaking_configuration()` を呼び出します。
+これが完了すると、この `xim_player` によってプレイヤーごとのロール構成が変更されたことを示す `xim_player_roles_and_skill_configuration_changed_state_change` が、すべての参加者に送信されます。 新しい値を取得するには、`xim_player::roles_and_skill_configuration()` を呼び出します。
 
 `xim::move_to_network_using_matchmaking()` に指定されたグローバル構造体 `xim_matchmaking_configuration` には、ビットごとの OR を使用して結合されたすべての必要なロール フラグや、require_player_matchmaking_configuration フィールドに対する true 値が含まれます。
 
-次の例では、no-teams free-for-all 用に合計 3 人のプレイヤーを探すマッチメイキング構成を事前設定します。 さらに、この例では、フィルターで除外するゲーム モードを表す、アプリによって定義された定数 (型は uint64_t、名前は MYGAMEMODE_COOPERATIVE) を使います。 さらに、プレイヤーごとのマッチメイキング構成を要求する構成がセットアップされます。この構成では、1 人以上のプレイヤーが各アプリ固有の uint8_t ロールを果たします。これらのロールにはまとめてビット単位で OR が適用されて構成に配置されます (MYROLEBITFLAG_HEALER、MYROLEBITFLAG_MELEE、MYROLEBITFLAG_RANGE)。
+次の例では、no-teams free-for-all 用に合計 3 人のプレイヤーを探すマッチメイキング構成を事前設定します。 さらに、この例では、フィルターで除外するゲーム モードを表す、アプリによって定義された定数 (型は uint64_t、名前は MYGAMEMODE_COOPERATIVE) を使います。 さらに、プレイヤーごとのロールとスキル構成を要求する構成がセットアップされます。この構成では、1 人以上のプレイヤーが各アプリ固有の uint8_t ロールを果たします。これらのロールにはまとめてビット単位で OR が適用されて構成に配置されます (MYROLEBITFLAG_HEALER、MYROLEBITFLAG_MELEE、MYROLEBITFLAG_RANGE)。
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_3_players_minimum_3;
+matchmakingConfiguration.team_configuration.team_count = 1;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 3;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 3;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_COOPERATIVE;
 matchmakingConfiguration.required_roles = MYROLEBITFLAG_HEALER | MYROLEBITFLAG_MELEE | MYROLEBITFLAG_RANGE;
-matchmakingConfiguration.require_player_matchmaking_configuration = true;
+matchmakingConfiguration.require_player_roles_and_skill_configuration = true;
 ```
 
 この構造体が `xim::move_to_network_using_matchmaking()` に送信されると、上記のように移動操作が開始されます。
 
-プレイヤーごとのロールを使うマッチメイキングを、プレイヤーごとのスキールを使うマッチメイキングと組み合わせることもできます。 いずれかのみ指定する場合は、他の構造体に値 0 を指定します。 これは、`xim_player_matchmaking_configuration` スキル値が 0 であると宣言しているすべてのプレイヤーが常に互いに一致するためであり、`xim_matchmaking_configuration` の required_roles フィールドのすべてのビットがゼロの場合は、一致させるためのロール ビットは必要ありません。
+プレイヤーごとのロールを使うマッチメイキングを、プレイヤーごとのスキールを使うマッチメイキングと組み合わせることもできます。 いずれかのみ指定する場合は、他の構造体に値 0 を指定します。 これは、`xim_player_roles_and_skill_configuration` スキル値が 0 であると宣言しているすべてのプレイヤーが常に互いに一致するためであり、`xim_matchmaking_configuration` の required_roles フィールドのすべてのビットがゼロの場合は、一致させるためのロール ビットは必要ありません。
 
-`xim::move_to_network_using_matchmaking()` や、その他すべての XIM ネットワークの移動操作が完了すると、すべてのプレイヤーの `xim_player_matchmaking_configuration` 構造体は、自動的に null ポインターにクリアされます (付随して `xim_player_matchmaking_configuration_changed_state_change` 通知が送信されます)。 プレイヤーごとの設定が必要なマッチメイキングを使用して、別の XIM ネットワークに移動する場合、常に最新の情報を含む新しい構造体のポインターで、再度 `xim_player::xim_local::set_matchmaking_configuration()` を呼び出します。
+`xim::move_to_network_using_matchmaking()` や、その他すべての XIM ネットワークの移動操作が完了すると、すべてのプレイヤーの `xim_player_roles_and_skill_configuration` 構造体は、自動的に null ポインターにクリアされます (付随して `xim_player_roles_and_skill_configuration_changed_state_change` 通知が送信されます)。 プレイヤーごとの設定が必要なマッチメイキングを使用して、別の XIM ネットワークに移動する場合、常に最新の情報を含む新しい構造体のポインターで、再度 `xim_player::xim_local::set_roles_and_skill_configuration()` を呼び出します。
 
 ## <a name="how-xim-works-with-player-teams"></a>XIM とプレイヤー チームの連携について
 
-マルチプレイヤーのゲームでは、プレイヤーを相手チームに組み込むことも必要になります。 XIM では、指定の設定で 2 つ以上のチームを要求する `xim_team_matchmaking_mode` 値を使用してマッチメイキングを行う際にチームを割り当てやすくなります。 以下の例では、2 チーム 4 人ずつ (4 人見つからない場合は 1 ～ 3 人でも許容可能) の合計 8 人のプレイヤーを探すように構成されたマッチメイキングを使用して移動を開始します。 さらに、この例では、フィルターで除外するゲーム モードを表す、アプリによって定義された定数 (型は uint64_t、名前は MYGAMEMODE_CAPTURETHEFLAG) を使います。  さらに、ソーシャルな方法で参加したすべてのプレイヤーを現在の XIM ネットワークから移動するように構成がセットアップされます。
+マルチプレイヤーのゲームでは、プレイヤーを相手チームに組み込むことも必要になります。 XIM では、`xim_team_configuration` を設定することにより、マッチメイキング時のチームの割り当てが容易になります。 以下の例では、2 チーム 4 人ずつ (4 人見つからない場合は 1 ～ 3 人でも許容可能) の合計 8 人のプレイヤーを探すように構成されたマッチメイキングを使用して移動を開始します。このとき、MYGAMEMODE_CAPTURETHEFLAG の値 (この値は、同一値を指定した他のプレイヤーのみと一致します) によって定義されるアプリ固有のゲーム モード定数 uint64_t を使用し、ソーシャルな方法で参加したすべてのプレイヤーを現在の XIM ネットワークから移動します。
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
-matchmakingConfiguration.team_matchmaking_mode = two_teams_4v4_minimum_1_per_team;
+matchmakingConfiguration.team_configuration.team_count = 2;
+matchmakingConfiguration.team_configuration.min_player_count_per_team = 1;
+matchmakingConfiguration.team_configuration.max_player_count_per_team = 4;
 matchmakingConfiguration.custom_game_mode = MYGAMEMODE_CAPTURETHEFLAG;
 
 xim::singleton_instance().move_to_network_using_matchmaking(matchmakingConfiguration, xim_players_to_move::bring_existing_social_players);
 ```
 
-このような XIM ネットワークの移動操作が完了すると、リクエストされたチーム数に対応して、プレイヤーに 1 から {n} のチーム インデックス値が割り当てられます。 特定のチーム インデックス値の本当の意味は、アプリごとに設定できます。 プレイヤーのチーム インデックスの値は、`xim_player::team_index()` を使用して取得されます。 2 つ以上のチームで `xim_team_matchmaking_mode` を使用している場合、`xim::move_to_network_using_matchmaking()` の呼び出しで、プレイヤーにチームインデックス値 0 が割り当てられることはありません。 これは、他の構成や種類の移動操作 (招待の承認によるプロトコルのアクティブ化など) で XIM ネットワークに追加されるプレイヤーと対照的です。これらのプレイヤーには、常にチーム インデックス値 0 が割り当てられます。 インデックス 0 のチームを特別な "未割り当て" チームとして扱うと便利な場合があります。
+このような XIM ネットワークの移動操作が完了すると、リクエストされたチーム数に対応して、プレイヤーに 1 から {n} のチーム インデックス値が割り当てられます。 特定のチーム インデックス値の本当の意味は、アプリごとに設定できます。 プレイヤーのチーム インデックスの値は、`xim_player::team_index()` を使用して取得されます。 2 つ以上のチームで `xim_team_configuration` を使用している場合、`xim::move_to_network_using_matchmaking()` の呼び出しで、プレイヤーにチームインデックス値 0 が割り当てられることはありません。 これは、他の構成や種類の移動操作 (招待の承認によるプロトコルのアクティブ化など) で XIM ネットワークに追加されるプレイヤーと対照的です。これらのプレイヤーには、常にチーム インデックス値 0 が割り当てられます。 インデックス 0 のチームを特別な "未割り当て" チームとして扱うと便利な場合があります。
 
 以下の例では、ポインターが 'ximPlayer' 変数にある xim_player オブジェクトのチーム インデックスを取得します。
 
@@ -454,7 +463,7 @@ XIM ネットワーク内のプレイヤー間の音声およびテキスト チ
 
 `xim_player::xim_local::chat_text_to_speech_conversion_preference_enabled()` および `xim_player::xim_local::chat_speech_to_text_conversion_preference_enabled()` を呼び出すと、ローカル プレーヤーがこれらの設定を検出できます。必要に応じて、テキストのメカニズムを有効にすることもできます。 ただし、テキスト入力および表示オプションを常に有効にすることを検討することをお勧めします。
 
- `Windows::Xbox::UI::Accessability` は、テキストから音声の変換支援技術を搭載したゲーム内のテキストチャットを単純にレンダリングできるように特別に設計された Xbox One のクラスです。
+ `Windows::Xbox::UI::Accessability` は、音声テキスト変換支援技術を搭載したゲーム内のテキストチャットを単純にレンダリングできるように特別に設計された Xbox One のクラスです。
 
 現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `xim_player::xim_local::send_chat_text()` メソッドに渡します。 以下のコードは、'localPlayer' 変数によって指定されたローカルの `xim_player` オブジェクトからハード コードされたサンプル文字列の送信を示します。
 
@@ -533,28 +542,97 @@ xim::singleton_instance().set_chat_targets(xim_chat_targets::all_players);
 
 ## <a name="automatic-background-filling-of-player-slots-backfill-matchmaking"></a>プレイヤー スロットの自動バックグラウンド設定 ("バックフィル" マッチメイキング)
 
-異なるプレイヤー グループが同時に `xim::move_to_network_using_matchmaking()` を呼び出すことで、Xbox Live マッチメイキング サービスで新しく最適な XIM ネットワークをすばやく構成するための柔軟性が最大になります。 ただし、ゲームプレイ シナリオによっては、特定の XIM ネットワークが変更されない状態で維持する必要があり、追加プレイヤーのマッチメイキングが行われるのは空いているプレイヤー スロットを満たす場合のみというケースもあります。 XIM では、`xim::set_backfill_matchmaking_configuration()` メソッドを使用して自動バックグラウンド設定モードで動作するマッチメイキングの構成 ("バックフィリング") もサポートされます。
+異なるプレイヤー グループが同時に `xim::move_to_network_using_matchmaking()` を呼び出すことで、Xbox Live マッチメイキング サービスで新しく最適な XIM ネットワークをすばやく構成するための柔軟性が最大になります。 ただし、ゲームプレイ シナリオによっては、特定の XIM ネットワークが変更されない状態で維持する必要があり、追加プレイヤーのマッチメイキングが行われるのは空いているプレイヤー スロットを満たす場合のみというケースもあります。 XIM では、`xim::set_network_configuration()` を呼び出して、`xim_network_configuration` の `xim_network_configuration::allowed_player_joins` プロパティで `xim_allowed_player_joins::matchmade` フラグを設定することで、自動バックグラウンド設定モードで動作するマッチメイキングの構成 ("バックフィリング") もサポートされます。
 
-次の例では、マッチメイキング構成を事前設定し、バックフィル マッチメイキングを構成することにより、no-teams free-for-all 用に合計 8 人のプレイヤーを探します (8 人見つからない場合は、2 ～ 7 人でも許容)。 さらに、この例では、フィルターで除外するゲーム モードを表す、アプリによって定義された定数 (型は uint64_t、名前は MYGAMEMODE_DEATHMATCH) を使います。
-
-```cpp
- xim_matchmaking_configuration matchmakingConfiguration = { 0 };
- matchmakingConfiguration.team_matchmaking_mode = xim_team_matchmaking_mode::no_teams_8_players_minimum_2;
- matchmakingConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
-
- xim::singleton_instance().set_backfill_matchmaking_configuration(&matchmakingConfiguration);
-```
-
-これにより、通常の方法で `xim::move_to_network_using_matchmaking()` を呼び出すデバイスが既存の XIM ネットワークを利用できるようになります。 これらのデバイスでは、動作の変更がありません。 バックフィリング中の XIM ネットワークにいる参加者は移動できませんが、これらの参加者には、バックフィルが有効になったことを表す <`xim_backfill_matchmaking_configuration_changed_state_change` や複数の `xim_matchmaking_progress_updated_state_change` 通知 (該当する場合) が送信されます。 マッチメイキングで見つかったプレイヤーは、通常の `xim_player_joined_state_change` を使用して XIM ネットワークに追加されます。
-
-既定では、バックフィル マッチメイキングは無期限に有効になります (XIM ネットワークで既に最大プレイヤー数が `xim_team_matchmaking_mode` 値で指定されている場合はプレイヤーが追加されることはありません)。 バックフィルは、null ポインターで `xim::set_backfill_matchmaking_configuration()` を呼び出して無効にすることができます。
+以下の例では、バックフィル マッチメイキングを構成して、no-teams free-for-all 用に合計 8 人のプレイヤーを探します (8 人見つからない場合は、2 ～ 7 人でも許容可能)。このとき、MYGAMEMODE_DEATHMATCH の値 (この値は、同一値を指定した他のプレイヤーのみと一致します) で定義されるアプリ固有のゲーム モード定数 uint64_t を使用します。
 
 ```cpp
- xim::singleton_instance().set_backfill_matchmaking_configuration(nullptr);
+xim_network_configuration networkConfiguration = *xim::singleton_instance().network_configuration();
+networkConfiguration.allowed_player_joins |= xim_allowed_player_joins::matchmade;
+networkConfiguration.team_configuration.team_count = 1;
+networkConfiguration.team_configuration.min_player_count_per_team = 2;
+networkConfiguration.team_configuration.max_player_count_per_team = 8;
+networkConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
+
+xim::singleton_instance().set_network_configuration(&networkConfiguration);
 ```
 
-対応する `xim_backfill_matchmaking_configuration_changed_state_change` がすべてのデバイスに送信され、この非同期処理が完了すると、マッチメイキングされたプレイヤーがこれ以上 XIM ネットワークに追加されないことを表す `xim_matchmaking_status::none` で最終的な `xim_matchmaking_progress_updated_state_change` が送信されます。
+これにより、通常の方法で `xim::move_to_network_using_matchmaking()` を呼び出すデバイスが既存の XIM ネットワークを利用できるようになります。 これらのデバイスでは、動作の変更がありません。 バックフィリング中の XIM ネットワークにいる参加者は移動できませんが、これらの参加者には、バックフィルが有効になったことを表す <`xim_network_configuration_changed_state_change` や複数の `xim_matchmaking_progress_updated_state_change` 通知 (該当する場合) が送信されます。 マッチメイキングで見つかったプレイヤーは、通常の `xim_player_joined_state_change` を使用して XIM ネットワークに追加されます。
 
-2 つ以上のチームを宣言する `xim_team_matchmaking_mode` を使用してバックフィル マッチメイキングを有効にする場合、既存のすべてのプレイヤーに有効なチームインデックス値 (1 ～チーム数) が必要になります。 これには、`xim_player::xim_local::set_team_index()` を呼び出してカスタム値を指定したプレイヤーや、招待または他のソーシャルな手段 (例: `xim::move_to_network_using_joinable_xbox_user_id` の呼び出し) によって参加して既定のインデックス値 0 が追加されたプレイヤーも含まれます。 有効なチームインデックス値を持つプレイヤーがいない場合、マッチメイキング処理は保留され、`xim_matchmaking_status::waiting_for_player_team_index` 値が指定された `xim_matchmaking_progress_updated_state_change` がすべての参加者に送信されます。 すべてのプレイヤーについて、`xim_player::xim_local::set_team_index()` でチーム インデックス値が指定または修正されると、バックフィル マッチメイキングが再開されます。 詳しくは、このドキュメントの「[XIM とプレイヤー チームの連携について](#how-xim-works-with-player-teams)」をご覧ください。
+既定では、バックフィル マッチメイキングは無期限に進行中になります (XIM ネットワークで既に最大プレイヤー数が xim_team_configuration setting で指定されている場合はプレイヤーが追加されることはありません)。 xim_allowed_player_joins を matchmade を許可しないように設定することで、バックフィルを無効にすることができます。 次の例では、他のすべての既存のフラグとネットワーク構成の設定を維持したまま、xim_allowed_player_joins::matchmade フラグをクリアしてバックフィルを無効にします。
 
-同様に、require_player_matchmaking_configuration フィールドでロールまたはスキルが true に設定されている `xim_matchmaking_configuration` 構造体を使用してバックフィル マッチメイキングを有効にする場合、すべてのプレイヤーについて、プレイヤーごとのマッチメイキング構成が null 以外に指定されている必要があります。 これが行われていないプレイヤーがいる場合、マッチメイキング処理は一時停止され、`xim_matchmaking_status::waiting_for_player_matchmaking_configuration` 値が指定された `xim_matchmaking_progress_updated_state_change` がすべての参加者に送信されます。 すべてのプレイヤーが `xim_player_matchmaking_configuration` 構造体を送信した時点で、バックフィル マッチメイキングが再開されます。 詳しくは、このドキュメントの「[プレイヤーごとのスキルまたはロールによるマッチメイキング](#matchmaking-using-per-player-skill)」と「[プレイヤーごとのロールによるマッチメイキング](#matchmaking-using-per-player-role)」をご覧ください。
+```cpp
+xim_network_configuration networkConfiguration = *xim::singleton_instance().network_configuration();
+networkConfiguration.allowed_player_joins &= ~xim_allowed_player_joins::matchmade;
+xim::singleton_instance().set_network_configuration(&networkConfiguration);
+```
+
+対応する `xim_network_configuration_changed_state_change` がすべてのデバイスに送信され、この非同期処理が完了すると、マッチメイキングされたプレイヤーがこれ以上 XIM ネットワークに追加されないことを表す `xim_matchmaking_status::none` で最終的な `xim_matchmaking_progress_updated_state_change` が送信されます。
+
+2 つ以上のチームを宣言する `xim_team_configuration` 設定を使用してバックフィル マッチメイキングを有効にする場合、既存のすべてのプレイヤーに有効なチームインデックス値 (1 ～チーム数) が必要になります。 これには、`xim_player::xim_local::set_team_index()` を呼び出してカスタム値を指定したプレイヤーや、招待または他のソーシャルな手段 (例: `xim::move_to_network_using_joinable_xbox_user_id` の呼び出し) によって参加して既定のインデックス値 0 が追加されたプレイヤーも含まれます。 有効なチームインデックス値を持つプレイヤーがいない場合、マッチメイキング処理は保留され、`xim_matchmaking_status::waiting_for_player_team_index` 値が指定された `xim_matchmaking_progress_updated_state_change` がすべての参加者に送信されます。 すべてのプレイヤーについて、`xim_player::xim_local::set_team_index()` でチーム インデックス値が指定または修正されると、バックフィル マッチメイキングが再開されます。 詳しくは、このドキュメントの「[XIM とプレイヤー チームの連携について](#how-xim-works-with-player-teams)」をご覧ください。
+
+同様に、`require_player_roles_and_skill_configuration` フィールドでロールまたはスキルが true に設定されている `xim_network_configuration` 構造体を使用してバックフィル マッチメイキングを有効にする場合、すべてのプレイヤーについて、プレイヤーごとのマッチメイキング構成が null 以外に指定されている必要があります。 これが行われていないプレイヤーがいる場合、マッチメイキング処理は一時停止され、`xim_matchmaking_status::waiting_for_player_roles_and_skill_configuration` 値が指定された `xim_matchmaking_progress_updated_state_change` がすべての参加者に送信されます。 すべてのプレイヤーが `xim_player_roles_and_skill_configuration` 構造体を送信した時点で、バックフィル マッチメイキングが再開されます。 詳しくは、このドキュメントの「[プレイヤーごとのスキルによるマッチメイキング](#matchmaking-using-per-player-skill)」と「[プレイヤーごとのロールによるマッチメイキング](#matchmaking-using-per-player-role)」をご覧ください。
+
+## <a name="querying-joinable-networks"></a>参加可能なネットワークの照会
+
+マッチメイキングは、プレイヤーをまとめて簡単に接続する優れた方法ですが、プレイヤーが独自の検索条件を使用して参加可能なネットワークを検出し、参加するネットワークを選択することを許可した方がよい場合もあります。 これは、ゲーム セッションの構成可能なゲーム ルールとプレイヤーの基本設定のセットが大規模である場合に特に便利です。 これを行うには、まず既存のネットワークを照会可能にする必要があります。そのために、参加可能性 `xim_allowed_player_joins::queried` を有効にし、`xim::set_network_configuration()` の呼び出しによってネットワーク外部の他のユーザーがネットワーク情報を利用できるように構成します。
+
+次の例では、`xim_allowed_player_joins::queried` の参加可能性を有効にして、ネットワーク構成を設定します。このネットワーク構成では、合計 1 ～ 8 人のプレイヤーを 1 チームにまとめることができるチーム構成、値 GAME_MODE_BRAWL によって定義されるアプリ固有のゲーム モード定数 uint64_t、"cat and sheep's boxing match" という説明、値 MAP_KITCHEN によって定義されるアプリ固有のマップ インデックス定数 uint32_t が指定され、および "chatrequired"、"easy"、"spectatorallowed" というタグが含まれています。
+
+```cpp
+PCWSTR tags[] = { L"chatrequired", L"easy", L"spectatorallowed" };
+xim_network_configuration networkConfiguration = *xim::singleton_instance().network_configuration();
+networkConfiguration.allowed_player_joins |= xim_allowed_player_joins::queried;
+networkConfiguration.team_configuration.team_count = 1;
+networkConfiguration.team_configuration.min_player_count_per_team = 1;
+networkConfiguration.team_configuration.max_player_count_per_team = 8;
+networkConfiguration.custom_game_mode = GAME_MODE_BRAWL;
+networkConfiguration.description = L"cat and sheep's boxing match";
+networkConfiguration.map_index = MAP_KITCHEN;
+networkConfiguration.tag_count = _countof(tags);
+networkConfiguration.tags = tags;
+
+xim::set_network_configuration(&networkConfiguration);
+```
+
+ネットワーク外部の他のプレイヤーは、前の `xim::set_network_configuration()` の呼び出しで取得したネットワーク情報に一致するフィルターのセットを使用して `xim::start_joinable_network_query()` を呼び出すことにより、このネットワークを検出できます。 次の例では、GAME_MODE_BRAWL 値によって定義されたアプリ固有のゲーム モードを使用するネットワークのみを照会する、ゲーム モード フィルター オプションを使用して、参加可能なネットワークのクエリを開始します。
+
+```cpp
+xim_joinable_network_query_filters queryFilters = { 0 };
+queryFilters.custom_game_mode_filter = GAME_MODE_BRAWL;
+
+xim::start_joinable_network_query(queryFilters);
+```
+
+次に示す別の例では、タグ フィルター オプションを使用して、一般にクエリ可能な構成で "easy" と "spectatorallowed" というタグが設定されているネットワークのクエリを実行します。
+
+```cpp
+PCWSTR tagFilters[] = { L"easy", L"spectatorallowed" };
+xim_joinable_network_query_filters queryFilters = { 0 };
+queryFilters.tag_filter_count = _countof(tagFilters);
+queryFilters.tag_filters = tagFilters;
+
+xim::start_joinable_network_query(queryFilters);
+```
+
+複数のフィルター オプションを組み合わせることもできます。 次の例では、ゲーム モード フィルター オプションとタグ フィルター オプションの両方を使用して、アプリ固有のゲーム モード定数 GAME_MODE_BRAWL とタグ "easy" の両方を含むネットワークのクエリを開始します。
+
+```cpp
+PCWSTR tagFilters[] = { L"easy" };
+xim_joinable_network_query_filters queryFilters = { 0 };
+queryFilters.custom_game_mode_filter = GAME_MODE_BRAWL;
+queryFilters.tag_filter_count = _countof(tagFilters);
+queryFilters.tag_filters = tagFilters;
+
+xim::start_joinable_network_query(queryFilters);
+```
+
+クエリの操作が成功すると、アプリは `xim_start_joinable_network_query_completed_state_change` を受け取り、そこから参加可能なネットワークの一覧を取得できます。 アプリは、手動または自動で停止されるまで、他の参加可能なネットワークと、返された参加可能なネットワークの一覧に加えられた変更を示す `xim_joinable_network_query_updated_state_change` を継続的に受け取ります。 進行中のクエリは、`xim::stop_joinable_network_query()` を呼び出すことによって手動で停止できます。 クエリは、`xim::start_joinable_network_query()` を呼び出して新しいクエリを開始すると、自動的に停止します。
+
+アプリは、`xim::move_to_network_using_joinable_network_information()` を呼び出すことによって、参加可能なネットワークの一覧にあるネットワークへの参加を試行することができます。 次の例では、ポインター 'selectedNetwork' で指定された、パスコードでセキュリティが保護されていない (そのため、2 番目のパラメーターで nullptr を渡している) `xim_joinable_network_information` に参加しようとしていると仮定しています。
+
+```cpp
+xim::move_to_network_using_joinable_network_information(selectedNetwork, nullptr);
+```
+
+2 つ以上のチームを宣言する xim_team_configuration を使用してネットワークのクエリを有効にすると、`xim::move_to_network_using_joinable_network_information()` を呼び出すことによって参加したプレイヤーの既定のチーム インデックス値は 0 になります。

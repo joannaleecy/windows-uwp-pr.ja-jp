@@ -4,17 +4,18 @@ author: KevinAsgari
 description: Xbox Live を使うために利用できる、さまざまな開発者プログラムについて説明します。
 ms.assetid: 1166308a-4079-41b4-8550-ce04b82b4f72
 ms.author: kevinasg
-ms.date: 12/13/2017
+ms.date: 5/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム, クリエーター
 ms.localizationpriority: low
-ms.openlocfilehash: 6d3aa30d711d903c287c395784540e9cdc6e20ed
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: dc839c6ebbb5dc754da84c5084cdff17b9aa0bb9
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935677"
 ---
 # <a name="developer-program-overview"></a>開発者プログラムの概要
 
@@ -22,7 +23,7 @@ Xbox Live 対応のタイトルを開発する場合、いくつかのオプシ�
 
 ## <a name="xbox-live-creators-program"></a>Xbox Live クリエーターズ プログラム
 
-Xbox Live 開発を理解するには、Xbox Live クリエーターズ プログラムが Xbox Live の良い出発点になります。 このプログラムへの参加には、マイクロソフトによる承認プロセスは必要ありませんが、最小限の認定要件と公開要件があります。 
+Xbox Live 開発を理解するには、Xbox Live クリエーターズ プログラムが Xbox Live の良い出発点になります。 このプログラムへの参加には、マイクロソフトによる承認プロセスは必要ありませんが、最小限の認定要件と公開要件があります。
 
 Xbox Live クリエーターズ プログラムは、[ユニバーサル Windows プラットフォーム](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) (UWP) 向けのタイトルの作成のみをサポートしています。  UWP ゲームとして作成されたタイトルは Windows 10 PC と Xbox One 本体で動作します。  Xbox One での UWP ゲームの実行の詳細については、「[Xbox One の UWP](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/index)」を参照してください。  
 
@@ -42,11 +43,11 @@ Xbox Live クリエーターズ プログラム対応のタイトルでは、ラ
 ### <a name="supported-third-party-game-development-engines"></a>サポートされているサード パーティ製ゲーム開発エンジン
 Xbox Live クリエーターズ プログラム タイトルは、さまざまな人気のゲーム エンジンでビルドできる UWP ゲームです。 Microsoft では、[Unity ゲーム エンジン](https://unity.com)でビルドされた UWP ゲームに Xbox Live シリーズを統合するためのドキュメントを用意しています。 Xbox Live と Unity ゲームの統合に関する詳しい[ドキュメント](get-started-with-creators/develop-creators-title-with-unity.md)をこのサイトで確認できるだけでなく、Microsoft が作成した [Xbox Live Unity プラグイン](https://github.com/Microsoft/xbox-live-unity-plugin)をダウンロードして詳しく調べることもできます。
 
-Xbox Live クリエーターズ プログラム タイトルは、ゲーム エンジン [Construct (2 & 3)](https://www.scirra.com/construct2) および [Game Maker Studio](https://www.yoyogames.com/gamemaker) を使ってビルドすることもできます。 どちらのゲーム エンジンにも Xbox Live サポートが追加されていますが、そのサポートは Microsoft ではなくゲーム エンジンの作成元によって処理されます。 Construct または Game Maker Studio プロジェクトへの Xbox Live の追加に関する詳細とサポートについては、各ゲーム エンジンのドキュメントをご覧ください。
+Xbox Live クリエーターズ プログラム タイトルは、ゲーム エンジン [Construct (2 & 3)](https://www.scirra.com/construct2) および [GameMaker Studio 2](https://www.yoyogames.com/gamemaker) を使ってビルドすることもできます。 どちらのゲーム エンジンにも Xbox Live サポートが追加されていますが、そのサポートは Microsoft ではなくゲーム エンジンの作成元によって処理されます。 Construct または GameMaker Studio 2 プロジェクトへの Xbox Live の追加に関する詳細とサポートについては、各ゲーム エンジンのドキュメントをご覧ください。
 
 [Xbox Live を Construct プロジェクトに統合する方法について説明します。](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)
 
-[Xbox Live を Game Maker Studio プロジェクトに統合する方法について説明します。](https://www.yoyogames.com/gamemaker/xblc)
+[Xbox Live を GameMaker Studio 2 プロジェクトに統合する方法について説明します。](https://www.yoyogames.com/gamemaker/xblc)
 
 [MonoGame](http://www.monogame.net/) や [Xenko](https://xenko.com/) など、Xbox Live の機能やプラグインが組み込まれていない他のゲーム開発エンジンについては、引き続き Xbox Live API を使って Xbox Live をタイトルに追加できます。 プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使ってバイナリへの参照を追加するか、API ソースを追加します。 NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。
 

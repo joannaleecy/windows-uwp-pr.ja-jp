@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity
 ms.localizationpriority: low
-ms.openlocfilehash: c45bb6accfbb9c3ae6aa0684f701cdb5ed5ff63e
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 15c542aa0496c0c2db7726938e1e8aeb2bce7569
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983622"
 ---
 # <a name="add-xbox-live-support-to-unity-for-uwp-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a>ID@Xbox および対象パートナー向けに、IL2CPP スクリプト バックエンドを使用して、Xbox Live サポートを UWP 用 Unity に追加する
 
@@ -24,7 +25,7 @@ Unity での IL2CPP 用の Windows ランタイム サポート
 
 Unity 5.6f3 のリリースでは、エンジンに新しい機能が組み込まれました。この新機能によって、開発者は Windows ランタイム (WinRT) コンポーネントをスクリプト内で直接使用することができます。そのためには、コンポーネントをゲーム プロジェクトに直接取り込みます。 Until 5.6 を利用していた開発者は、UWP でゲーム スクリプトによってプラットフォーム機能 (Xbox Live SDK など) をサポートするために、プラグインや dll を必要としていました。 この新しいプロジェクション レイヤーによって、プラグインを使用する必要がなくなり、IL2CPP スクリプト バックエンドを選んだゲームでのみサポートされる、新しい簡略化されたワークフローが導入されました。
 
-作業の開始方法について詳しくは、Unity に関するドキュメント (https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html) をご覧ください。
+作業を開始する方法について詳しくは、Unity のドキュメント (https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html) をご覧ください。
 
 ## <a name="steps"></a>手順
 
@@ -59,7 +60,7 @@ Unity 5.6 以上をインストールし、インストール時には **[Window
 
 **9) 次の Xbox Live コードを XboxLiveTest.cs ソース ファイルに追加します。**
 
-```cpp
+```csharp
 
 using System.Collections;
 using System.Collections.Generic;

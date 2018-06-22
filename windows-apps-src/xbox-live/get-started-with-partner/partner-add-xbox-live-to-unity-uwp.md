@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity
 ms.localizationpriority: low
-ms.openlocfilehash: 4931d5f8dd48199c3f8bacf06342c669dc0c72c1
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 71fc747dd024c8c22d962a5b14b3e6976599a3da
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983538"
 ---
 # <a name="add-xbox-live-support-to-unity-for-uwp-with-net-scripting-backend-for-idxbox-and-managed-partners"></a>ID@Xbox および対象パートナー向けに、.NET スクリプト バックエンドを使用して、Xbox Live サポートを UWP 用 Unity に追加する
 
@@ -72,7 +73,7 @@ Unity では、エクスプローラーで出力プロジェクト フォルダ�
 
 以下のサンプルの Xbox Live コードをコピーし、ゲーム オブジェクトにアタッチしたスクリプトに貼り付けます。 このスクリプトは "Assembly-CSharp" プロジェクトに表示されます。 コードは自由に変更できます。
 
-```cpp
+```csharp
 #if NETFX_CORE
 
 using UnityEngine;

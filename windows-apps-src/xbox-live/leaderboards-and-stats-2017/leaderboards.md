@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: low
-ms.openlocfilehash: 8b30b7d5ac644f7787bb58461f6fb26a60c3d095
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 9452956e85c5156503ae15fb2c0880fa06642cfd
+ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "1917644"
 ---
 # <a name="leaderboards"></a>ランキング
 
@@ -120,7 +121,7 @@ pplx::task<xbox_live_result<leaderboard_result>> get_leaderboard_skip_to_xuid(
 
 次に、サービスからランキング結果が返されたときに呼び出されるコールバックを設定できます。  以下にこの例を示します。
 
-これらの API から返される `pplx::task` について簡単に説明すると、これは Microsoft 並列プログラミング ライブラリ (PPL) からの非同期タスク オブジェクトです。  詳しくは、[https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks](https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks) をご覧ください。
+これらの API から返される `pplx::task` について簡単に説明すると、これは Microsoft 並列プログラミング ライブラリ (PPL) からの非同期タスク オブジェクトです。  詳しくは、[https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks](https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks) を参照してください。
 
 以下のセクションでは、ランキング結果を取得して使用する方法について説明します。
 
@@ -153,7 +154,7 @@ asyncTask.then([this](xbox::services::xbox_live_result<xbox::services::leaderboa
 
 #### <a name="3-display-leaderboard"></a>3. ランキングを表示する
 
-ランキング データは ``leaderboard_result``` に含まれており、フィールドは一目見ただけでその内容がわかります。  以下の例をご覧ください。
+ランキング データは ```leaderboard_result``` に含まれており、フィールドは一目見ただけでその内容がわかります。  以下の例をご覧ください。
 
 ```cpp
 auto leaderboard = result.payload();
@@ -169,4 +170,4 @@ for (const xbox::services::leaderboard::leaderboard_row& row : leaderboard.rows(
     m_console->Format(L"%18s %8d %14f %10s\n", row.gamertag().c_str(), row.rank(), row.percentile(), colValues.c_str());
 }
 
-````
+```

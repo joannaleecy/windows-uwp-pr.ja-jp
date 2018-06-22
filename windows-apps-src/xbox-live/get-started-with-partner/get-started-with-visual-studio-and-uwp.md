@@ -1,6 +1,6 @@
 ---
 title: UWP ゲーム用 Visual Studio の概要
-author: StaceyHaffner
+author: KevinAsgari
 description: UWP ゲーム用に Xbox Live を有効にするように Visual Studio プロジェクトをセットアップする方法について説明します
 ms.assetid: b53bc91f-79db-4d8f-8919-b9144e2d609b
 ms.author: kevinasg
@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: low
-ms.openlocfilehash: 70e7ffcece0245767dc964cbc4675bec4bae8e1f
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 4914f098511c4553fae7fd83d09fd1c43a550d9f
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935581"
 ---
 # <a name="get-started-using-visual-studio-for-uwp-games"></a>UWP ゲーム用 Visual Studio の使用に関する概要
 
@@ -54,21 +55,21 @@ ms.lasthandoff: 02/24/2018
 既存の UWP プロジェクトがない場合は、次の手順で作成できます。
 
 1. Visual Studio で、**[ファイル]** > **[新規作成]** > **[プロジェクト]** の順に選択します。
-2. **[新しいプロジェクト]** ダイアログ ボックスが表示されたら、左側のウィンドウで **[Visual C#]** > **[Windows]** > **[ユニバーサル]** ノードを選択し、右側のウィンドウで **[空白のアプリ (ユニバーサル Windows)]** をクリックします。 
+2. **[新しいプロジェクト]** ダイアログ ボックスが表示されたら、左側のウィンドウで **[Visual C#]** > **[Windows]** > **[ユニバーサル]** ノードを選択し、右側のウィンドウで **[空白のアプリ (ユニバーサル Windows)]** をクリックします。
 3. ダイアログ ボックスの下部で、プロジェクトに名前を付け、プロジェクトの場所を指定します。
 4. Windows 10 SDK のターゲット バージョンと最小バージョンを指定します。 詳しくは、「[UWP バージョンの選択](https://docs.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version)」をご覧ください。
 
-![VS でのプロジェクトの作成](../images/getting_started/vs-create-project.gif) 
+![VS でのプロジェクトの作成](../images/getting_started/vs-create-project.gif)
 
 > [!NOTE]
 > Xbox Live API (XSAPI) は、バージョン 10.0.10586.0 以上でなければなりません。
 
 ### <a name="2-add-references-to-the-xbox-live-api-xsapi-in-your-project"></a>2. プロジェクトで Xbox Live API (XSAPI) への参照を追加する
 
-Xbox Services API には、UWP と XDK の両方で使用できるものと、C++ で使用できるもの、WinRT で使用できるものがあり名前空間の構造は **Microsoft.Xbox.Live.SDK.*.UWP** と **Microsoft.Xbox.Live.SDK.*.XboxOneXDK** です。 
+Xbox Services API には、UWP と XDK の両方で使用できるものと、C++ で使用できるもの、WinRT で使用できるものがあり名前空間の構造は **Microsoft.Xbox.Live.SDK.*.UWP** と **Microsoft.Xbox.Live.SDK.*.XboxOneXDK** です。
 
-1. **UWP** は、PC、Xbox One、Windows Phone で実行できる UWP ゲームをビルドしている開発者向けのものです。 
-2. **XboxOneXDK** は、ID@Xbox 用のものであり、Xbox One XDK を使用している管理対象の開発者が利用します。 
+1. **UWP** は、PC、Xbox One、Windows Phone で実行できる UWP ゲームをビルドしている開発者向けのものです。
+2. **XboxOneXDK** は、ID@Xbox 用のものであり、Xbox One XDK を使用している管理対象の開発者が利用します。
 3. C++ SDK は C++ ゲーム エンジンに使用できます。 WinRT SDK は、C++、C#、JavaScript を使って記述されたゲーム エンジン用です。
 4. C++ エンジンで WinRT を使用する場合は、ハット (^) を使う C++/CX を使用してください。 C++ は、C++ ゲーム エンジンで使用する際に推奨される API です。  
 
@@ -78,9 +79,9 @@ Xbox Services API には、UWP と XDK の両方で使用できるものと、C+
 プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使うか API ソースを追加してバイナリへの参照を追加します。 NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。 この記事では、NuGet パッケージを使う方法について説明します。 ソースを使用する場合は、「[UWP プロジェクトでの Xbox Live API ソースのコンパイル](add-xbox-live-apis-source-to-a-uwp-project.md)」をご覧ください。 Xbox Live SDK NuGet パッケージは次の方法で追加できます。
 
 1. Visual Studio では、**[ツール]** > **[NuGet パッケージ マネージャー]** > **[ソリューションの NuGet パッケージの管理...]** の順に移動します。
-2. NuGet パッケージ マネージャーで、**[参照]** をクリックして検索ボックスに「**Xbox.Live.SDK**」と入力します。 
+2. NuGet パッケージ マネージャーで、**[参照]** をクリックして検索ボックスに「**Xbox.Live.SDK**」と入力します。
 3. 左側の一覧から使う Xbox Live SDK のバージョンを選びます。 この場合、Microsoft.Xbox.Live.UWP パッケージを使います。
-3. ウィンドウの右側にある、プロジェクトの横にあるチェック ボックスをオンにして **[インストール]** をクリックします。 
+3. ウィンドウの右側にある、プロジェクトの横にあるチェック ボックスをオンにして **[インストール]** をクリックします。
 
 ![NuGet による XBL の追加](../images/getting_started/vs-add-nuget-xbl.gif)
 
@@ -94,9 +95,9 @@ Xbox Services API には、UWP と XDK の両方で使用できるものと、C+
 #### <a name="windows-10-sdk-version-10016299-or-higher"></a>Windows 10 SDK バージョン 10.0.16299 以降
 Windows 10 SDK 10.0.16299 以降をターゲットとした場合、追加の作業を行わなくても接続ストレージ名前空間にアクセスできるようになります。 セキュア ソケットにアクセスには、**UWP 用の Windows デスクトップ拡張機能**に参照を追加する必要があります。 そのためには、次のようにします。
 
-1. **ソリューション エクスプローラー**で、**[参照設定]** ノードを右クリックし、**[参照の追加]** をクリックします。 
+1. **ソリューション エクスプローラー**で、**[参照設定]** ノードを右クリックし、**[参照の追加]** をクリックします。
 2. **[参照マネージャー]** ダイアログ ボックスの左側で、**[ユニバーサル Windows]** > **[拡張機能]** の順に選びます。
-3. 表示される一覧で、**[Windows Desktop Extensions for UWP]** を検索し、使っている Windows 10 SDK に一致するバージョンの横のチェック ボックスをオンにします。 
+3. 表示される一覧で、**[Windows Desktop Extensions for UWP]** を検索し、使っている Windows 10 SDK に一致するバージョンの横のチェック ボックスをオンにします。
 4. **[OK]** をクリックします。
 
 ![VS での新しい参照の追加](../images/getting_started/get-started-vs-add-ref.png)
@@ -105,13 +106,13 @@ Windows 10 SDK 10.0.16299 以降をターゲットとした場合、追加の作
 接続ストレージまたはセキュア ソケットを使用する場合は、プロジェクトに参照を追加する前に、Xbox Live Platform Extensions SDK をインストールする必要があります。 そのためには、次のようにします。
 
 1. [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk) をダウンロードして抽出します。
-2. 抽出されたら、使っている Windows 10 SDK バージョンに対応するインクルード MSI ファイルを実行します。 
+2. 抽出されたら、使っている Windows 10 SDK バージョンに対応するインクルード MSI ファイルを実行します。
 
 Xbox Live Platform Extensions SDK をインストールしたら、Visual Studio で参照を追加する必要があります。 そのためには、次のようにします。
 
-1. **ソリューション エクスプローラー**で、**[参照設定]** ノードを右クリックし、**[参照の追加]** をクリックします。 
+1. **ソリューション エクスプローラー**で、**[参照設定]** ノードを右クリックし、**[参照の追加]** をクリックします。
 2. **[参照マネージャー]** ダイアログ ボックスの左側で、**[ユニバーサル Windows]** > **[拡張機能]** の順に選びます。
-3. 表示される一覧で、**[Windows Desktop Extensions for UWP]** を検索し、使っている Windows 10 SDK に一致するバージョンの横のチェック ボックスをオンにします。 
+3. 表示される一覧で、**[Windows Desktop Extensions for UWP]** を検索し、使っている Windows 10 SDK に一致するバージョンの横のチェック ボックスをオンにします。
 4. **[OK]** をクリックします。
 
 ### <a name="4-associate-your-visual-studio-project-with-your-uwp-app"></a>4. Visual Studio のプロジェクトと UWP アプリを関連付ける
@@ -168,4 +169,4 @@ Xbox Live サービスと通信するには、プロジェクトにサービス�
 
 ## <a name="learn-more"></a>詳細情報
 
-[Xbox Live SDK サンプル](https://github.com/Microsoft/xbox-live-samples)では、Xbox Live API の使用方法が示されており、ID@Xbox プログラムで開発者が利用できる API も挙げられています。 サンプルを使用するには、サンドボックスを XDKS.1 に変更する必要があります。1。 
+[Xbox Live SDK サンプル](https://github.com/Microsoft/xbox-live-samples)では、Xbox Live API の使用方法が示されており、ID@Xbox プログラムで開発者が利用できる API も挙げられています。 サンプルを使用するには、サンドボックスを XDKS.1 に変更する必要があります。1。

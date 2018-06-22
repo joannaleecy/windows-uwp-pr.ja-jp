@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, クリエーター
 ms.localizationpriority: low
-ms.openlocfilehash: c39d1680e60d3575d449b5472de462b2057eea36
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: 65e6c45c509217389e2bb3d10a264d7922c3dba3
+ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 05/21/2018
+ms.locfileid: "1905354"
 ---
 # <a name="add-player-stats-and-leaderboards-to-your-unity-project"></a>Unity プロジェクトにプレイヤーの統計とランキングを追加する
 
@@ -65,10 +66,14 @@ Xbox Live Unity プラグインには、プレイヤーの統計に関連して�
 
 統計が **StatPanel** オブジェクトにもバインドされている場合、ボタンをクリックするたびに統計の値が更新されるのを確認できます。
 
-統計を更新するたびに (増加、減少など)、値がローカルで更新されます。 データは、`StatManagerComponent` スクリプトにより 5 分ごとに自動的にフラッシュされます。  5 分経過する前にゲームが終了する場合は、その進行状況が失われないように、まずデータを手動でフラッシュする必要があります。 そのためには、`statManagerComponent.RequestFlushToService()` メソッドを呼び出す必要があります。必ず、統計が書き込まれる **XboxLiveUser** に対して呼び出してください。
+統計を更新するたびに (増加、減少など)、値がローカルで更新されます。 Xbox Live にこれらの統計の更新が反映されるには、2 つの処理が必要です。 最初に、StatisticManager.SetStatistic 関数の 1 つを使用して統計の値を設定する必要があります。 統計を設定する `StatisticManager` 関数 には、`StatisticManager.SetStatisticIntegerData(XboxLiveUser user, String statName, Int64 value)`、`StatisticManager.SetStatisticNumberData(XboxLiveUser user, String statName, Double value)`、`StatisticManager.SetStatisticStringData(XboxLiveUser user, String statName, String value)` の 3 つがあります。 統計のデータ型に合わせて適切な値を設定するために、これらの関数のいずれかを使用します。サーバーで統計を更新するために必要な 2 つ目の処理は、ローカル データを*フラッシュ*することです。 データは、`StatManagerComponent` スクリプトにより 5 分ごとに自動的にフラッシュされます。  5 分経過する前にゲームが終了する場合は、その進行状況が失われないように、まずデータを手動でフラッシュする必要があります。 そのためには、`statManagerComponent.RequestFlushToService()` メソッドを呼び出す必要があります。必ず、統計が書き込まれる **XboxLiveUser** に対して呼び出してください。
 
 > [!TIP]
 > ベスト プラクティスとして、進行状況が失われないように、必ずゲームが終了する前にデータをフラッシュしてください。
+
+### <a name="checking-and-verifying-stats"></a>統計の確認と検証
+
+`StatisticManager` クラスには、`XboxLiveUser` 用に構成された統計情報を確認するために便利な関数として、`StatisticManager.GetStatisticNames(XboxLiveUser user)` と `StatisticManager.GetStatistic(XboxLiveUser user, String statName)` の 2 つがあります。 `GetStatisticNames()` は、指定された XboxLiveUser の統計の名前が設定された `list<string>` を提供します。 これらの名前は、`GetStatistic()` 関数を呼び出すことによって、統計の現在の値を呼び出すために使用できます。 Xbox Live 統計サービスから統計を読み込むことはできますが、ゲーム ロジックでこの統計を使用することはお勧めできないことに注意してください。この統計は、プッシュされた後、統計の状態を確認するために使用します。 このサービスは、ランキングなどの他のサービスを実行するためのものであり、ゲームの統計の信頼できるソースとして使用することを想定していません。 Xbox サービスでは統計に関する確認は行われず、現在の統計として渡された値をそのまま受け入れるだけであるため、タイトルによってすべての統計のロジックを処理する必要があります。
 
 ## <a name="leaderboards"></a>ランキング
 
@@ -89,9 +94,12 @@ Xbox Live Unity プラグインには、ランキング用の 2 つのプレハ�
 
 **ランキング** プレハブはシーンにドラッグできます。 Unity インスペクターでは、次の属性を設定できます。
 
-* 統計: このランキングが関連付けられている統計ゲーム オブジェクト。 
-* ランキングの種類: ランキング エントリに返される結果のスコープ。 
+* 統計: このランキングが関連付けられている統計ゲーム オブジェクト。
+* ランキングの種類: ランキング エントリに返される結果のスコープ。
 * エントリ数: 1 ページあたりに表示するデータの行数。
+
+> [!NOTE]
+> ランキング プレハブの統計の部分は、最初は空です。 テストのために、上記の統計プレハブのいずれかを gameobject スロットにドラッグしてみてください。
 
 Unity エディターでは、インスペクターの設定に関係なく、常に同じモック データが**ランキング** プレハブに表示されます。 実際のデータ値を表示するには、プロジェクトをビルドして Visual Studio にエクスポートし、承認されたユーザーとしてログインする必要があります。 詳しくは、「[Unity で Xbox Live を構成する](configure-xbox-live-in-unity.md)」をご覧ください。
 
@@ -99,3 +107,5 @@ Unity エディターでは、インスペクターの設定に関係なく、�
 
 * [Unity で Xbox Live にサインインする](sign-in-to-xbox-live-in-unity.md)
 * [Unity で Xbox Live を構成する](configure-xbox-live-in-unity.md)
+* [ランキングのサンプル シーン](setup-leaderboard-example-scene.md)
+* [ランキング データを取得する](unity-leaderboard-from-scratch.md)

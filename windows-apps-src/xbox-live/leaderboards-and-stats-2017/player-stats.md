@@ -1,6 +1,6 @@
 ---
 title: プレイヤーの統計
-author: StaceyHaffner
+author: KevinAsgari
 description: Xbox Live でプレイヤーの統計をセットアップする方法について説明します。
 ms.assetid: 5ec7cec6-4296-483d-960d-2f025af6896e
 ms.author: kevinasg
@@ -10,11 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, プレイヤーの統計, ランキング
 ms.localizationpriority: low
-ms.openlocfilehash: 252dd93c0382f19d0135345434ab197137add141
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: c3a6f5ec0cbe983d07bc98f5cf4fd7c92f10614c
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935609"
 ---
 # <a name="player-stats"></a>プレイヤーの統計
 
@@ -51,5 +52,3 @@ XDK と以前の UWP のタイトルで使用されているデータ プラッ�
 ## <a name="next-steps"></a>次の手順
 
 以上で、プレイヤーの統計と注目の統計の構成が完了しました。 これで、ランキングの作成に取りかかることができます。 作業を開始するには「[ランキング](leaderboards.md)」をご覧ください。
-
-
