@@ -10,17 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: low
 keywords: Xbox Live, Xbox, ゲーム, uwp, windows 10, Xbox one, 注目の統計とランキング, ランキング, 統計 2017, Windows デベロッパー センター
-ms.openlocfilehash: dda7604b52420d03bc8dc21aacb8a26b9496ccad
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: a1fbf30e4b78f3160190815911298cf3522845c5
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018551"
 ---
 # <a name="configuring-featured-stats-and-leaderboards-2017-on-windows-dev-center"></a>Windows デベロッパー センターで注目の統計とランキング 2017 を構成する
 
 ゲームで統計サービスを操作するには、[Windows デベロッパー センター](https://developer.microsoft.com/dashboard)で統計を定義する必要があります。 注目の統計はすべてゲーム ハブに表示され、自動的にランキングとして機能します。 生の値が保存されますが、ゲームには新しい値が生成する必要があるかどうかを判断するロジックが追加されます。
 
-![ゲーム ハブの実績ページのスクリーンショット](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-2.png)
+![ゲーム ハブの実績ページのスクリーンショット](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-2.png) 上の図は、タイトルのゲーム ハブに、注目の統計がどのように表示されるかを示しています。 注目の統計は赤のボックス内に表示されています。
 
 データ プラットフォーム 2017 では、プレイヤーのゲーム ハブ ページで注目として表示されるグローバル ランキングに使用される統計を構成するだけでかまいません。
 
@@ -36,6 +37,14 @@ Windows デベロッパー センターを使うと、ゲームに関連付け�
 **[ID]** フィールドは統計の名前です。統計をコードから更新する場合は、この ID で統計を指定します。 詳しくは、「[統計の更新](../../leaderboards-and-stats-2017/player-stats-updating.md)」をご覧ください。
 
 **[形式]** は、統計のデータ形式です。整数、10 進数、パーセンテージ、ショート タイムスパン、ロング タイムスパン、文字列などのオプションがあります。
+
+**[形式]** の各オプションを選択すると、ドロップダウン リストに指定できる値や形式に関する情報が表示されます。
+
+* 整数の統計では、1、2、100 のような整数を使用できます。
+* 10 進数の統計では、1.05 や 12.00 などの小数点以下 2 桁は小数を使用できます。
+* パーセンテージの統計では、0 ～ 100 の整数を使用できます。 整数の末尾に「%」が追加されます  (例: 0%、100%)。
+* ショート タイムスパンの統計では、HH:MM:SS 形式 (02:10:30 など) に従い、統計の時間単位を指定するよう求められます。使用可能な時間単位は、ミリ秒、秒、分、時間、日です。
+* ロング タイムスパンの統計では、Xd Xh Xm 形式 (1d 2h 10m など) に従い、この統計も統計の時間単位を指定するよう求められます。
 
 **[並べ替え]** フィールドでは、ランキングの並べ替え順序を昇順または降順に変更できます。
 
