@@ -1,89 +1,73 @@
 ---
 author: mcleanbyron
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
-description: "アプリで AdControl エラーをキャッチする方法について説明します。"
-title: "JavaScript ウォークスルーでのエラー処理"
+description: アプリで AdControl エラーをキャッチする方法について説明します。
+title: JavaScript ウォークスルーでのエラー処理
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, 広告, 宣伝, エラー処理, JavaScript"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 935ce9ca17d2b9d4a63496ab0b254960bd68e23d
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10, UWP, 広告, 宣伝, エラー処理, JavaScript
+ms.localizationpriority: medium
+ms.openlocfilehash: 6b6d8e2b9e4d2e61901bd7de304134e5236af672
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1880933"
 ---
+# <a name="error-handling-in-javascript-walkthrough"></a><span data-ttu-id="64838-104">JavaScript ウォークスルーでのエラー処理</span><span class="sxs-lookup"><span data-stu-id="64838-104">Error handling in JavaScript walkthrough</span></span>
 
-# <a name="error-handling-in-javascript-walkthrough"></a>JavaScript ウォークスルーでのエラー処理
+<span data-ttu-id="64838-105">このチュートリアルでは、JavaScript アプリで広告関連のエラーをキャッチする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="64838-105">This walkthrough demonstrates how to catch ad-related errors in your JavaScript app.</span></span> <span data-ttu-id="64838-106">このチュートリアルでは、[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) を使用してバナー広告を表示していますが、その中の一般的な概念はスポット広告やネイティブ広告にも適用されます。</span><span class="sxs-lookup"><span data-stu-id="64838-106">This walkthrough uses an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) to display a banner ad, but the general concepts in it also apply to interstitial ads and native ads.</span></span>
 
+<span data-ttu-id="64838-107">これらの例は、**AdControl** を含む JavaScript アプリがあることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="64838-107">These examples assume that you have a JavaScript app that contains an **AdControl**.</span></span> <span data-ttu-id="64838-108">アプリに **AdControl** を追加する方法を示す具体的な手順については、「[HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="64838-108">For step-by-step instructions that demonstrate how to add an **AdControl** to your app, see [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md).</span></span> <span data-ttu-id="64838-109">JavaScript/HTML アプリにバナー広告を追加する方法を示す完全なサンプル プロジェクトについては、「[GitHub の広告サンプル](http://aka.ms/githubads)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="64838-109">For a complete sample project that demonstrates how to add banner ads to a JavaScript/HTML app, see the [advertising samples on GitHub](http://aka.ms/githubads).</span></span>
 
-
-
-このトピックでは、アプリで [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) エラーをキャッチする方法について説明します。
-
-これらの例は、**AdControl** を含む JavaScript/HTML アプリがあることを前提としています。 アプリに **AdControl** を追加する方法を示す具体的な手順については、「[HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)」をご覧ください。 JavaScript/HTML アプリにバナー広告を追加する方法を示す完全なサンプル プロジェクトについては、「[GitHub の広告サンプル](http://aka.ms/githubads)」をご覧ください。
-
-1.  default.html ファイルで、**AdControl** の **div** の **data-win-options** を定義する **onErrorOccurred** イベントの値を追加します。 default.html ファイルで次のコードを探します。
-
-  > [!div class="tabbedCodeSnippets"]
-  ``` html
-  <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
+1.  <span data-ttu-id="64838-110">default.html ファイルで、**AdControl** の **div** の **data-win-options** を定義する **onErrorOccurred** イベントの値を追加します。</span><span class="sxs-lookup"><span data-stu-id="64838-110">In the default.html file, add a value for the **onErrorOccurred** event where you define the **data-win-options** in the **div** for the **AdControl**.</span></span> <span data-ttu-id="64838-111">default.html ファイルで次のコードを探します。</span><span class="sxs-lookup"><span data-stu-id="64838-111">Find the following code in the default.html file.</span></span>
+    ``` HTML
+    <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"
-      data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: '10865270'}">
-  </div>
-  ```
-
-  **adUnitId** 属性の後に、**onErrorOccurred** イベントの値を追加します。
-
-  > [!div class="tabbedCodeSnippets"]
-  ``` html
-  <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
+      data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: 'test'}">
+    </div>
+    ```
+    <span data-ttu-id="64838-112">**adUnitId** 属性の後に、**onErrorOccurred** イベントの値を追加します。</span><span class="sxs-lookup"><span data-stu-id="64838-112">Following the **adUnitId** attribute, add the value for the **onErrorOccurred** event.</span></span>
+    ``` HTML
+    <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"
-      data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: '10865270', onErrorOccurred: errorLogger}">
+      data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: 'test', onErrorOccurred: errorLogger}">
   </div>
   ```
 
-2.  テキストを表示する **div** を作成して、生成されたメッセージを確認できるようにします。 これを行うには、**myAd** の **div** の後に次のコードを追加します。
+2.  <span data-ttu-id="64838-113">テキストを表示する **div** を作成して、生成されたメッセージを確認できるようにします。</span><span class="sxs-lookup"><span data-stu-id="64838-113">Create a **div** that will display text so you can see the messages being generated.</span></span> <span data-ttu-id="64838-114">これを行うには、**myAd** の **div** の後に次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="64838-114">To do this, add the following code after the **div** for **myAd**.</span></span>
+    ``` HTML
+    <div style="position:absolute; width:100%; height:130px; top:300px; left:0px">
+        <b>Ad Events</b><br />
+        <div id="adEvents" style="width:100%; height:110px; overflow:auto"></div>
+    </div>
+    ```
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` html
-  <div style="position:absolute; width:100%; height:130px; top:300px; left:0px">
-      <b>Ad Events</b><br />
-      <div id="adEvents" style="width:100%; height:110px; overflow:auto"></div>
-  </div>
-  ```
-
-3.  エラー イベントをトリガーする **AdControl** を作成します。 アプリ内のすべての **AdControl** オブジェクトには、アプリケーション ID が 1 つだけ存在できます。 そのため、異なるアプリケーション ID で追加のオブジェクトを作成すると、実行時にエラーがトリガーされます。 これを行うには、追加済みの前の **div** セクションの後に、default.html ページの本文に次のコードを追加します。
-
-  > [!div class="tabbedCodeSnippets"]
-  ``` html
-  <!-- Because only one applicationId can be used, the following ad control will fire an error event. -->
-  <div id="liveAd" style="position: absolute; top:500px; left:0px; width:480px; height:80px"
+3.  <span data-ttu-id="64838-115">エラー イベントをトリガーする **AdControl** を作成します。</span><span class="sxs-lookup"><span data-stu-id="64838-115">Create an **AdControl** that will trigger an error event.</span></span> <span data-ttu-id="64838-116">アプリ内のすべての **AdControl** オブジェクトには、アプリケーション ID が 1 つだけ存在できます。</span><span class="sxs-lookup"><span data-stu-id="64838-116">There can only be one application id for all **AdControl** objects in an app.</span></span> <span data-ttu-id="64838-117">そのため、異なるアプリケーション ID で追加のオブジェクトを作成すると、実行時にエラーがトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="64838-117">So creating an additional one with a different application id will trigger an error at runtime.</span></span> <span data-ttu-id="64838-118">これを行うには、追加済みの前の **div** セクションの後に、default.html ページの本文に次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="64838-118">To do this, after the previous **div** sections you have added, add the following code to the body of the default.html page.</span></span>
+    ``` HTML
+    <!-- Because only one applicationId can be used, the following ad control will fire an error event. -->
+    <div id="liveAd" style="position: absolute; top:500px; left:0px; width:480px; height:80px"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"
-      data-win-options="{applicationId: '00000000-0000-0000-0000-000000000000', adUnitId: '10865270', onErrorOccurred: errorLogger }" >
-  </div>
-  ```
+      data-win-options="{applicationId: '00000000-0000-0000-0000-000000000000', adUnitId: 'test', onErrorOccurred: errorLogger }" >
+    </div>
+    ```
 
-4.  プロジェクトの default.js ファイルで、既定の初期化関数の後に **errorLogger** のイベント ハンドラーを追加します。 ファイルの最後までスクロールし、最後のセミコロンの後に次のコードを配置します。
-
-  > [!div class="tabbedCodeSnippets"]
-  ``` javascript
-  WinJS.Utilities.markSupportedForProcessing(
-  window.errorLogger = function (sender, evt) {
+4.  <span data-ttu-id="64838-119">プロジェクトの default.js ファイルで、既定の初期化関数の後に **errorLogger** のイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="64838-119">In the project’s default.js file, after the default initialization function, you will add the event handler for **errorLogger**.</span></span> <span data-ttu-id="64838-120">ファイルの最後までスクロールし、最後のセミコロンの後に次のコードを配置します。</span><span class="sxs-lookup"><span data-stu-id="64838-120">Scroll to the end of the file and after the last semi-colon is where you will put the following code.</span></span>
+    ``` javascript
+    WinJS.Utilities.markSupportedForProcessing(
+    window.errorLogger = function (sender, evt) {
         adEvents.innerHTML = (new Date()).toLocaleTimeString() + ": " +
         sender.element.id + " error: " + evt.errorMessage + " error code: " +
         evt.errorCode + "<br>" + adEvents.innerHTML;
         console.log("errorhandler hit. \n");
-  });
-  ```
+    });
+    ```
 
-5.  ファイルをビルドして実行します。 前にビルドしたサンプル アプリの元の広告が表示され、その広告の下にエラーを説明するテキストが表示されます。 **liveAd** の ID を持つ広告は表示されません。
+5.  <span data-ttu-id="64838-121">ファイルをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="64838-121">Build and run the file.</span></span> <span data-ttu-id="64838-122">前にビルドしたサンプル アプリの元の広告が表示され、その広告の下にエラーを説明するテキストが表示されます。</span><span class="sxs-lookup"><span data-stu-id="64838-122">You will see the original ad from the sample app you built previously and text under that ad describing the error.</span></span> <span data-ttu-id="64838-123">**liveAd** の ID を持つ広告は表示されません。</span><span class="sxs-lookup"><span data-stu-id="64838-123">You will not see the ad with the id of **liveAd**.</span></span>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="64838-124">関連トピック</span><span class="sxs-lookup"><span data-stu-id="64838-124">Related topics</span></span>
 
-* [GitHub の広告サンプル](http://aka.ms/githubads)
-
- 
-
+* [<span data-ttu-id="64838-125">GitHub の広告サンプル</span><span class="sxs-lookup"><span data-stu-id="64838-125">Advertising samples on GitHub</span></span>](http://aka.ms/githubads)

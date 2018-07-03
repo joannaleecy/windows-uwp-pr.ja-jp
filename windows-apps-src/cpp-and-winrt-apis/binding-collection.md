@@ -3,40 +3,43 @@ author: stevewhims
 description: XAML アイテム コントロールに効果的にバインドできるコレクションは、*監視可能な*コレクションと呼ばれます。 このトピックでは、監視可能なコレクションを実装および使用する方法と、それに XAML アイテム コントロールをバインドする方法を示します。
 title: 'XAML アイテム コントロール: C++/WinRT コレクションへのバインド'
 ms.author: stwhi
-ms.date: 03/07/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML、コントロール、バインド、コレクション
 ms.localizationpriority: medium
-ms.openlocfilehash: 2384dd385208574276dc0b6d03a56f838aad7b84
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 3d9f74e6d0c755e0a247a65751bdab65964ac1f7
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832306"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935728"
 ---
-# <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a><span data-ttu-id="52834-105">XAML アイテム コントロール: [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) コレクションへのバインド</span><span class="sxs-lookup"><span data-stu-id="52834-105">XAML items controls; bind to a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) collection</span></span>
+# <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a><span data-ttu-id="ae6c7-105">XAML アイテム コントロール: [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) コレクションへのバインド</span><span class="sxs-lookup"><span data-stu-id="ae6c7-105">XAML items controls; bind to a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) collection</span></span>
 > [!NOTE]
-> **<span data-ttu-id="52834-106">一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="52834-106">Some information relates to pre-released product which may be substantially modified before it’s commercially released.</span></span> <span data-ttu-id="52834-107">本書に記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。</span><span class="sxs-lookup"><span data-stu-id="52834-107">Microsoft makes no warranties, express or implied, with respect to the information provided here.</span></span>**
+> **<span data-ttu-id="ae6c7-106">一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-106">Some information relates to pre-released product which may be substantially modified before it’s commercially released.</span></span> <span data-ttu-id="ae6c7-107">本書に記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-107">Microsoft makes no warranties, express or implied, with respect to the information provided here.</span></span>**
 
-<span data-ttu-id="52834-108">XAML アイテム コントロールに効果的にバインドできるコレクションは、*監視可能な*コレクションと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="52834-108">A collection that can be effectively bound to a XAML items control is known as an *observable* collection.</span></span> <span data-ttu-id="52834-109">この概念は、*オブザーバー パターン*と呼ばれるソフトウェアの設計パターンに基づいています。</span><span class="sxs-lookup"><span data-stu-id="52834-109">This idea is based on the software design pattern known as the *observer pattern*.</span></span> <span data-ttu-id="52834-110">このトピックでは、C++/WinRT で監視可能なコレクションを実装する方法と、これらに XAML アイテム コントロールをバインドする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="52834-110">This topic shows how to implement observable collections in C++/WinRT, and how to bind XAML items controls to them.</span></span>
+<span data-ttu-id="ae6c7-108">XAML アイテム コントロールに効果的にバインドできるコレクションは、*監視可能な*コレクションと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-108">A collection that can be effectively bound to a XAML items control is known as an *observable* collection.</span></span> <span data-ttu-id="ae6c7-109">この概念は、*オブザーバー パターン*と呼ばれるソフトウェアの設計パターンに基づいています。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-109">This idea is based on the software design pattern known as the *observer pattern*.</span></span> <span data-ttu-id="ae6c7-110">このトピックでは、C++/WinRT で監視可能なコレクションを実装する方法と、これらに XAML アイテム コントロールをバインドする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-110">This topic shows how to implement observable collections in C++/WinRT, and how to bind XAML items controls to them.</span></span>
 
-<span data-ttu-id="52834-111">このチュートリアルでは、「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」で作成したプロジェクトをビルドし、そのトピックで説明する概念に追加します。</span><span class="sxs-lookup"><span data-stu-id="52834-111">This walkthrough builds on the project created in [XAML controls; bind to a C++/WinRT property](binding-property.md), and it adds to the concepts explained in that topic.</span></span>
+<span data-ttu-id="ae6c7-111">このチュートリアルでは、「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」で作成したプロジェクトをビルドし、そのトピックで説明する概念に追加します。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-111">This walkthrough builds on the project created in [XAML controls; bind to a C++/WinRT property](binding-property.md), and it adds to the concepts explained in that topic.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="52834-112">C++/WinRT でランタイム クラスを使用および作成する方法についての理解をサポートするために重要な概念と用語については、「[C++/WinRT での API の使用](consume-apis.md)」と「[C++/WinRT での作成者 API](author-apis.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="52834-112">For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).</span></span>
+> <span data-ttu-id="ae6c7-112">C++/WinRT でランタイム クラスを使用および作成する方法についての理解をサポートするために重要な概念と用語については、「[C++/WinRT での API の使用](consume-apis.md)」と「[C++/WinRT での作成者 API](author-apis.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-112">For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).</span></span>
 
-## <a name="what-does-observable-mean-for-a-collection"></a><span data-ttu-id="52834-113">コレクションの*監視可能*とはどういう意味ですか?</span><span class="sxs-lookup"><span data-stu-id="52834-113">What does *observable* mean for a collection?</span></span>
-<span data-ttu-id="52834-114">コレクションを表すランタイム クラスが、要素が追加されるまたは削除されるたびに [**IObservableVector&lt;T&gt;:: VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) イベントを発生することを選択する場合、そのランタイム クラスは監視可能なコレクションです。</span><span class="sxs-lookup"><span data-stu-id="52834-114">If a runtime class that represents a collection chooses to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) event whenever an element is added to it or removed from it, then the runtime class is an observable collection.</span></span>
+## <a name="what-does-observable-mean-for-a-collection"></a><span data-ttu-id="ae6c7-113">コレクションの*監視可能*とはどういう意味ですか?</span><span class="sxs-lookup"><span data-stu-id="ae6c7-113">What does *observable* mean for a collection?</span></span>
+<span data-ttu-id="ae6c7-114">コレクションを表すランタイム クラスが、要素が追加されるまたは削除されるたびに [**IObservableVector&lt;T&gt;:: VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) イベントを発生することを選択する場合、そのランタイム クラスは監視可能なコレクションです。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-114">If a runtime class that represents a collection chooses to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) event whenever an element is added to it or removed from it, then the runtime class is an observable collection.</span></span>
 
-<span data-ttu-id="52834-115">XAML アイテム コントロールでは、更新されたコレクションを取得して、現在の要素を表示するためにそれ自体を更新することで、これらのイベントをバインドし、処理することができます。</span><span class="sxs-lookup"><span data-stu-id="52834-115">A XAML items control can bind to, and handle, these events by retrieving the updated collection and then updating itself to show the current elements.</span></span>
+<span data-ttu-id="ae6c7-115">XAML アイテム コントロールでは、更新されたコレクションを取得して、現在の要素を表示するためにそれ自体を更新することで、これらのイベントをバインドし、処理することができます。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-115">A XAML items control can bind to, and handle, these events by retrieving the updated collection and then updating itself to show the current elements.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="52834-116">現在利用可能な C++/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートおよび C++/WinRT MSBuild プロパティとターゲットを提供) の詳細については、「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="52834-116">For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).</span></span>
+> <span data-ttu-id="ae6c7-116">C++/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートおよび C++/WinRT MSBuild プロパティとターゲットを提供) のインストールと使用については、「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-116">For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).</span></span>
 
-## <a name="implement-singlethreadedobservablevectorlttgt"></a><span data-ttu-id="52834-117">**single_threaded_observable_vector&lt;T&gt;** を実装する</span><span class="sxs-lookup"><span data-stu-id="52834-117">Implement **single_threaded_observable_vector&lt;T&gt;**</span></span>
-<span data-ttu-id="52834-118">[**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_) の便利で汎用的な実装として機能するように、監視可能なベクター テンプレートを持つことは役に立ちます。</span><span class="sxs-lookup"><span data-stu-id="52834-118">It will be good to have an observable vector template to serve as a useful, general-purpose implementation of  [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_).</span></span> <span data-ttu-id="52834-119">次に **single_threaded_observable_vector&lt;T&gt;** と呼ばれるクラスの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="52834-119">Here's a listing of a class called **single_threaded_observable_vector&lt;T&gt;**.</span></span> <span data-ttu-id="52834-120">将来、これが C++/WinRT 型になる場合に、その正式なバージョンを使用して切り替えることが簡単になります。</span><span class="sxs-lookup"><span data-stu-id="52834-120">In future, if this becomes a C++/WinRT type, it will be easy to switch over to using the official version of it.</span></span>
+## <a name="implement-singlethreadedobservablevectorlttgt"></a><span data-ttu-id="ae6c7-117">**single_threaded_observable_vector&lt;T&gt;** を実装する</span><span class="sxs-lookup"><span data-stu-id="ae6c7-117">Implement **single_threaded_observable_vector&lt;T&gt;**</span></span>
+<span data-ttu-id="ae6c7-118">[**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_) の便利で汎用的な実装として機能するように、監視可能なベクター テンプレートを持つことは役に立ちます。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-118">It will be good to have an observable vector template to serve as a useful, general-purpose implementation of  [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_).</span></span> <span data-ttu-id="ae6c7-119">次に **single_threaded_observable_vector\<T\>** と呼ばれるクラスの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-119">Below is a listing of a class called **single_threaded_observable_vector\<T\>**.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="ae6c7-120">[Windows 10 SDK プレビュー ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK) 以降をインストールした場合は、以下に示すコードの代わりに **winrt::single_threaded_observable_vector\<T\>** 型を直接使用することができます。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-120">If you've installed the [Windows 10 SDK Preview Build 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK), or later, then you can just directly use the **winrt::single_threaded_observable_vector\<T\>** type instead of the code listing below.</span></span> <span data-ttu-id="ae6c7-121">まだそのバージョンの SDK を使用していない場合は、それをインストールした時点でコード バージョンを使用して **winrt** 型に切り替えることが簡単になります。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-121">If you're not already on that version of the SDK, then it will be easy to switch over from using the code listing version to the **winrt** type when you are.</span></span>
 
 ```cppwinrt
 // single_threaded_observable_vector.h
@@ -279,18 +282,18 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-<span data-ttu-id="52834-121">**Append** 関数は、[**IObservableVector&lt;T&gt;:: VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) イベントを発生させる方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="52834-121">The **Append** function illustrates how to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) event.</span></span>
+<span data-ttu-id="ae6c7-122">**Append** 関数は、[**IObservableVector&lt;T&gt;:: VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) イベントを発生させる方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-122">The **Append** function illustrates how to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) event.</span></span>
 
 ```cppwinrt
 m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 ```
 
-<span data-ttu-id="52834-122">イベントの引数は、要素が挿入されていることと、そのインデックスが何であるか (ここでは最後の要素) を示します。</span><span class="sxs-lookup"><span data-stu-id="52834-122">The event arguments indicate both that an element was inserted, and also what its index is (the last element, in this case).</span></span> <span data-ttu-id="52834-123">これらの引数は、最適な方法で XAML アイテム コントロールがイベントに応答し、それ自体を更新できるようにします。</span><span class="sxs-lookup"><span data-stu-id="52834-123">These arguments enable a XAML items control to respond to the event and to refresh itself in the optimal way.</span></span>
+<span data-ttu-id="ae6c7-123">イベントの引数は、要素が挿入されていることと、そのインデックスが何であるか (ここでは最後の要素) を示します。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-123">The event arguments indicate both that an element was inserted, and also what its index is (the last element, in this case).</span></span> <span data-ttu-id="ae6c7-124">これらの引数は、最適な方法で XAML アイテム コントロールがイベントに応答し、それ自体を更新できるようにします。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-124">These arguments enable a XAML items control to respond to the event and to refresh itself in the optimal way.</span></span>
 
-## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a><span data-ttu-id="52834-124">**BookSkus** コレクションを **BookstoreViewModel** に追加する</span><span class="sxs-lookup"><span data-stu-id="52834-124">Add a **BookSkus** collection to **BookstoreViewModel**</span></span>
-<span data-ttu-id="52834-125">「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」では、**BookSku** 型のプロパティをメイン ビュー モデルに追加しました。</span><span class="sxs-lookup"><span data-stu-id="52834-125">In [XAML controls; bind to a C++/WinRT property](binding-property.md), we added a property of type **BookSku** to our main view model.</span></span> <span data-ttu-id="52834-126">この手順では、**single_threaded_observable_vector&lt;T&gt;** を使用して、同じビュー モデルへの **BookSku** の監視可能なコレクションの実装に役立てます。</span><span class="sxs-lookup"><span data-stu-id="52834-126">In this step, we'll use **single_threaded_observable_vector&lt;T&gt;** to help us implement an observable collection of **BookSku** on the same view model.</span></span>
+## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a><span data-ttu-id="ae6c7-125">**BookSkus** コレクションを **BookstoreViewModel** に追加する</span><span class="sxs-lookup"><span data-stu-id="ae6c7-125">Add a **BookSkus** collection to **BookstoreViewModel**</span></span>
+<span data-ttu-id="ae6c7-126">「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」では、**BookSku** 型のプロパティをメイン ビュー モデルに追加しました。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-126">In [XAML controls; bind to a C++/WinRT property](binding-property.md), we added a property of type **BookSku** to our main view model.</span></span> <span data-ttu-id="ae6c7-127">この手順では、**single_threaded_observable_vector&lt;T&gt;** を使用して、同じビュー モデルへの **BookSku** の監視可能なコレクションの実装に役立てます。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-127">In this step, we'll use **single_threaded_observable_vector&lt;T&gt;** to help us implement an observable collection of **BookSku** on the same view model.</span></span>
 
-<span data-ttu-id="52834-127">`BookstoreViewModel.idl` で新しいプロパティを宣言します。</span><span class="sxs-lookup"><span data-stu-id="52834-127">Declare a new property in `BookstoreViewModel.idl`.</span></span>
+<span data-ttu-id="ae6c7-128">`BookstoreViewModel.idl` で新しいプロパティを宣言します。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-128">Declare a new property in `BookstoreViewModel.idl`.</span></span>
 
 ```idl
 // BookstoreViewModel.idl
@@ -303,7 +306,7 @@ m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 ...
 ```
 
-<span data-ttu-id="52834-128">保存してビルドします。</span><span class="sxs-lookup"><span data-stu-id="52834-128">Save and build.</span></span> <span data-ttu-id="52834-129">`Generated Files` フォルダーの `BookstoreViewModel.h` と `BookstoreViewModel.cpp` からアクセサー スタブをコピーし、それらを実装します。</span><span class="sxs-lookup"><span data-stu-id="52834-129">Copy the accessor stubs from `BookstoreViewModel.h` and `BookstoreViewModel.cpp` in the `Generated Files` folder, and implement them.</span></span>
+<span data-ttu-id="ae6c7-129">保存してビルドします。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-129">Save and build.</span></span> <span data-ttu-id="ae6c7-130">`Generated Files` フォルダーの `BookstoreViewModel.h` と `BookstoreViewModel.cpp` からアクセサー スタブをコピーし、それらを実装します。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-130">Copy the accessor stubs from `BookstoreViewModel.h` and `BookstoreViewModel.cpp` in the `Generated Files` folder, and implement them.</span></span>
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -338,8 +341,8 @@ m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 ...
 ```
 
-## <a name="bind-a-listbox-to-the-bookskus-property"></a><span data-ttu-id="52834-130">**BookSkus** プロパティに ListBox をバインドします。</span><span class="sxs-lookup"><span data-stu-id="52834-130">Bind a ListBox to the **BookSkus** property</span></span>
-<span data-ttu-id="52834-131">メイン UI ページの XAML マークアップが含まれている `MainPage.xaml` を開きます。</span><span class="sxs-lookup"><span data-stu-id="52834-131">Open `MainPage.xaml`, which contains the XAML markup for our main UI page.</span></span> <span data-ttu-id="52834-132">**Button** と同じ **StackPanel** 内に次のマークアップを追加します。</span><span class="sxs-lookup"><span data-stu-id="52834-132">Add the following markup inside the same **StackPanel** as the **Button**.</span></span>
+## <a name="bind-a-listbox-to-the-bookskus-property"></a><span data-ttu-id="ae6c7-131">**BookSkus** プロパティに ListBox をバインドします。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-131">Bind a ListBox to the **BookSkus** property</span></span>
+<span data-ttu-id="ae6c7-132">メイン UI ページの XAML マークアップが含まれている `MainPage.xaml` を開きます。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-132">Open `MainPage.xaml`, which contains the XAML markup for our main UI page.</span></span> <span data-ttu-id="ae6c7-133">**Button** と同じ **StackPanel** 内に次のマークアップを追加します。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-133">Add the following markup inside the same **StackPanel** as the **Button**.</span></span>
 
 ```xaml
 <ListBox ItemsSource="{x:Bind MainViewModel.BookSkus}">
@@ -351,7 +354,7 @@ m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 </ListBox>
 ```
 
-<span data-ttu-id="52834-133">`MainPage.cpp` で、**クリック** イベント ハンドラーにコードの行を追加してブックをコレクションに追加します。</span><span class="sxs-lookup"><span data-stu-id="52834-133">In `MainPage.cpp`, add a line of code to the **Click** event handler to append a book to the collection.</span></span>
+<span data-ttu-id="ae6c7-134">`MainPage.cpp` で、**クリック** イベント ハンドラーにコードの行を追加してブックをコレクションに追加します。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-134">In `MainPage.cpp`, add a line of code to the **Click** event handler to append a book to the collection.</span></span>
 
 ```cppwinrt
 // MainPage.cpp
@@ -364,12 +367,12 @@ m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 ...
 ```
 
-<span data-ttu-id="52834-134">ここでプロジェクトをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="52834-134">Now build and run the project.</span></span> <span data-ttu-id="52834-135">ボタンをクリックして**クリック** イベント ハンドラーを実行します。</span><span class="sxs-lookup"><span data-stu-id="52834-135">Click the button to execute the **Click** event handler.</span></span> <span data-ttu-id="52834-136">**Append** の実装によりイベントが発生し、コレクションが変更されたことを UI が把握できるようにすることが分かります。**ListBox** はその独自の **Items** 値を更新するためにコレクションを再クエリします。</span><span class="sxs-lookup"><span data-stu-id="52834-136">We saw that the implementation of **Append** raises an event to let the UI know that the collection has changed; and the **ListBox** re-queries the collection to update its own **Items** value.</span></span> <span data-ttu-id="52834-137">前と同様に、ブックのいずれかのタイトルが変わります。このタイトル変更は、ボタンとリスト ボックス内の両方に反映されます。</span><span class="sxs-lookup"><span data-stu-id="52834-137">Just as before, the title of one of the books changes; and that title change is reflected both on the button and in the list box.</span></span>
+<span data-ttu-id="ae6c7-135">ここでプロジェクトをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-135">Now build and run the project.</span></span> <span data-ttu-id="ae6c7-136">ボタンをクリックして**クリック** イベント ハンドラーを実行します。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-136">Click the button to execute the **Click** event handler.</span></span> <span data-ttu-id="ae6c7-137">**Append** の実装によりイベントが発生し、コレクションが変更されたことを UI が把握できるようにすることが分かります。**ListBox** はその独自の **Items** 値を更新するためにコレクションを再クエリします。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-137">We saw that the implementation of **Append** raises an event to let the UI know that the collection has changed; and the **ListBox** re-queries the collection to update its own **Items** value.</span></span> <span data-ttu-id="ae6c7-138">前と同様に、ブックのいずれかのタイトルが変わります。このタイトル変更は、ボタンとリスト ボックス内の両方に反映されます。</span><span class="sxs-lookup"><span data-stu-id="ae6c7-138">Just as before, the title of one of the books changes; and that title change is reflected both on the button and in the list box.</span></span>
 
-## <a name="important-apis"></a><span data-ttu-id="52834-138">重要な API</span><span class="sxs-lookup"><span data-stu-id="52834-138">Important APIs</span></span>
-* [<span data-ttu-id="52834-139">IObservableVector&lt;T&gt;::VectorChanged</span><span class="sxs-lookup"><span data-stu-id="52834-139">IObservableVector&lt;T&gt;::VectorChanged</span></span>](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
-* [<span data-ttu-id="52834-140">winrt::make 関数テンプレート</span><span class="sxs-lookup"><span data-stu-id="52834-140">winrt::make function template</span></span>](/uwp/cpp-ref-for-winrt/make)
+## <a name="important-apis"></a><span data-ttu-id="ae6c7-139">重要な API</span><span class="sxs-lookup"><span data-stu-id="ae6c7-139">Important APIs</span></span>
+* [<span data-ttu-id="ae6c7-140">IObservableVector&lt;T&gt;::VectorChanged</span><span class="sxs-lookup"><span data-stu-id="ae6c7-140">IObservableVector&lt;T&gt;::VectorChanged</span></span>](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
+* [<span data-ttu-id="ae6c7-141">winrt::make 関数テンプレート</span><span class="sxs-lookup"><span data-stu-id="ae6c7-141">winrt::make function template</span></span>](/uwp/cpp-ref-for-winrt/make)
 
-## <a name="related-topics"></a><span data-ttu-id="52834-141">関連トピック</span><span class="sxs-lookup"><span data-stu-id="52834-141">Related topics</span></span>
-* [<span data-ttu-id="52834-142">C++/WinRT での API の使用</span><span class="sxs-lookup"><span data-stu-id="52834-142">Consume APIs with C++/WinRT</span></span>](consume-apis.md)
-* [<span data-ttu-id="52834-143">C++/WinRT での API の作成</span><span class="sxs-lookup"><span data-stu-id="52834-143">Author APIs with C++/WinRT</span></span>](author-apis.md)
+## <a name="related-topics"></a><span data-ttu-id="ae6c7-142">関連トピック</span><span class="sxs-lookup"><span data-stu-id="ae6c7-142">Related topics</span></span>
+* [<span data-ttu-id="ae6c7-143">C++/WinRT での API の使用</span><span class="sxs-lookup"><span data-stu-id="ae6c7-143">Consume APIs with C++/WinRT</span></span>](consume-apis.md)
+* [<span data-ttu-id="ae6c7-144">C++/WinRT での API の作成</span><span class="sxs-lookup"><span data-stu-id="ae6c7-144">Author APIs with C++/WinRT</span></span>](author-apis.md)

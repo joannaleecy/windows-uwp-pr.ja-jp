@@ -1,49 +1,46 @@
 ---
 author: msatranjr
-title: "C++ での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し#"
-description: "このチュートリアルでは、JavaScript、C#、または Visual Basic から呼び出すことができる基本的な Windows ランタイム コンポーネント DLL を作成する方法について説明します。"
+title: C++/CX での Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し
+description: このチュートリアルでは、JavaScript、C#、または Visual Basic から呼び出すことができる基本的な Windows ランタイム コンポーネント DLL を作成する方法について説明します。
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 ms.author: misatran
-ms.date: 02/08/2017
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
-ms.openlocfilehash: e02d7fabf6337fa23ab97858046c3b089c39a087
-ms.lasthandoff: 01/19/2017
-
+keywords: windows 10, uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 0be1a9ff09593676ded28f5024b0338df966da67
+ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1893661"
 ---
+# <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a><span data-ttu-id="72b39-104">チュートリアル: C++/CX での Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し</span><span class="sxs-lookup"><span data-stu-id="72b39-104">Walkthrough: Creating a Windows Runtime component in C++/CX, and calling it from JavaScript or C#</span></span>
+> [!NOTE]
+> <span data-ttu-id="72b39-105">このトピックは、C++/CX アプリケーションの管理ができるようにすることを目的としています。</span><span class="sxs-lookup"><span data-stu-id="72b39-105">This topic exists to help you maintain your C++/CX application.</span></span> <span data-ttu-id="72b39-106">ただし、新しいアプリケーションには [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="72b39-106">But we recommend that you use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for new applications.</span></span> <span data-ttu-id="72b39-107">C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="72b39-107">C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.</span></span>
 
-<h1>チュートリアル: C++ での Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し#</h1>
+<span data-ttu-id="72b39-108">このチュートリアルでは、JavaScript、C#、または Visual Basic から呼び出すことができる基本的な Windows ランタイム コンポーネント DLL を作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="72b39-108">This walkthrough shows how to create a basic Windows Runtime Component DLL that's callable from JavaScript, C#, or Visual Basic.</span></span> <span data-ttu-id="72b39-109">このチュートリアルを開始する前に、抽象バイナリ インターフェイス (ABI)、ref クラス、Visual C++ コンポーネント拡張などの概念を必ず理解しておいてください。ref クラスの操作が容易になります。</span><span class="sxs-lookup"><span data-stu-id="72b39-109">Before you begin this walkthrough, make sure that you understand concepts such as the Abstract Binary Interface (ABI), ref classes, and the Visual C++ Component Extensions that make working with ref classes easier.</span></span> <span data-ttu-id="72b39-110">詳しくは、「[C++ での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)」および「[Visual C++ の言語リファレンス (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="72b39-110">For more information, see [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md) and [Visual C++ Language Reference (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).</span></span>
 
+## <a name="creating-the-c-component-dll"></a><span data-ttu-id="72b39-111">C++ コンポーネント DLL の作成</span><span class="sxs-lookup"><span data-stu-id="72b39-111">Creating the C++ component DLL</span></span>
+<span data-ttu-id="72b39-112">この例では、最初にコンポーネント プロジェクトを作成しますが、JavaScript プロジェクトを最初に作成しても構いません。</span><span class="sxs-lookup"><span data-stu-id="72b39-112">In this example, we create the component project first, but you could create the JavaScript project first.</span></span> <span data-ttu-id="72b39-113">順序は重要ではありません。</span><span class="sxs-lookup"><span data-stu-id="72b39-113">The order doesn’t matter.</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
+<span data-ttu-id="72b39-114">コンポーネントのメイン クラスには、プロパティとメソッドの定義およびイベント宣言の例が含まれています。</span><span class="sxs-lookup"><span data-stu-id="72b39-114">Notice that the main class of the component contains examples of property and method definitions, and an event declaration.</span></span> <span data-ttu-id="72b39-115">これらは方法を示すことだけを目的に用意されており、</span><span class="sxs-lookup"><span data-stu-id="72b39-115">These are provided just to show you how it's done.</span></span> <span data-ttu-id="72b39-116">必須ではありません。この例では、生成されたコードはすべて独自のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="72b39-116">They are not required, and in this example, we'll replace all of the generated code with our own code.</span></span>
 
-このチュートリアルでは、JavaScript、C#、または Visual Basic から呼び出すことができる基本的な Windows ランタイム コンポーネント DLL を作成する方法について説明します。 このチュートリアルを開始する前に、抽象バイナリ インターフェイス (ABI)、ref クラス、Visual C++ コンポーネント拡張などの概念を必ず理解しておいてください。ref クラスの操作が容易になります。 詳しくは、「[C++ での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)」および「[Visual C++ の言語リファレンス (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)」をご覧ください。
+## **<a name="to-create-the-c-component-project"></a><span data-ttu-id="72b39-117">C++ コンポーネント プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="72b39-117">To create the C++ component project</span></span>**
+<span data-ttu-id="72b39-118">Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[プロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-118">On the Visual Studio menu bar, choose **File, New, Project**.</span></span>
 
-## <a name="creating-the-c-component-dll"></a>C++ コンポーネント DLL の作成
+<span data-ttu-id="72b39-119">**[新しいプロジェクト]** ダイアログ ボックスの左ペインで、**[Visual C++]** を展開し、ユニバーサル Windows アプリのノードを選択します。</span><span class="sxs-lookup"><span data-stu-id="72b39-119">In the **New Project** dialog box, in the left pane, expand **Visual C++** and then select the node for Universal Windows apps.</span></span>
 
-この例では、最初にコンポーネント プロジェクトを作成しますが、JavaScript プロジェクトを最初に作成しても構いません。 順序は重要ではありません。
+<span data-ttu-id="72b39-120">中央ペインで **[Windows ランタイム コンポーネント]** を選び、プロジェクトに WinRT\_CPP という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="72b39-120">In the center pane, select **Windows Runtime Component** and then name the project WinRT\_CPP.</span></span>
 
-コンポーネントのメイン クラスには、プロパティとメソッドの定義およびイベント宣言の例が含まれています。 これらは方法を示すことだけを目的に用意されており、 必須ではありません。この例では、生成されたコードはすべて独自のコードに置き換えます。
+<span data-ttu-id="72b39-121">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-121">Choose the **OK** button.</span></span>
 
-## **<a name="to-create-the-c-component-project"></a>C++ コンポーネント プロジェクトを作成するには**
+## **<a name="to-add-an-activatable-class-to-the-component"></a><span data-ttu-id="72b39-122">コンポーネントにアクティブ化可能なクラスを追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-122">To add an activatable class to the component</span></span>**
+<span data-ttu-id="72b39-123">アクティブ化可能なクラスとは、クライアント コードで **new** 式 (Visual Basic では **New**、C++ では **ref new**) を使って作成できるクラスのことです。</span><span class="sxs-lookup"><span data-stu-id="72b39-123">An activatable class is one that client code can create by using a **new** expression (**New** in Visual Basic, or **ref new** in C++).</span></span> <span data-ttu-id="72b39-124">コンポーネントでは、**public ref class sealed** として宣言します。</span><span class="sxs-lookup"><span data-stu-id="72b39-124">In your component, you declare it as **public ref class sealed**.</span></span> <span data-ttu-id="72b39-125">実際には、Class1.h ファイルと .cpp ファイルに ref クラスが既に含まれています。</span><span class="sxs-lookup"><span data-stu-id="72b39-125">In fact, the Class1.h and .cpp files already have a ref class.</span></span> <span data-ttu-id="72b39-126">名前を変更することはできますが、この例では既定の名前 (Class1) を使います。</span><span class="sxs-lookup"><span data-stu-id="72b39-126">You can change the name, but in this example we’ll use the default name—Class1.</span></span> <span data-ttu-id="72b39-127">必要に応じて、コンポーネント内で追加の ref クラスまたは regular クラスを定義できます。</span><span class="sxs-lookup"><span data-stu-id="72b39-127">You can define additional ref classes or regular classes in your component if they are required.</span></span> <span data-ttu-id="72b39-128">ref クラスについて詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="72b39-128">For more information about ref classes, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).</span></span>
 
-Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[プロジェクト]** の順にクリックします。
-
-**[新しいプロジェクト]** ダイアログ ボックスの左ペインで、**[Visual C++]** を展開し、ユニバーサル Windows アプリのノードを選択します。
-
-中央ペインで **[Windows ランタイム コンポーネント]** を選び、プロジェクトに WinRT\_CPP という名前を付けます。
-
-**[OK]** をクリックします。
-
-## **<a name="to-add-an-activatable-class-to-the-component"></a>コンポーネントにアクティブ化可能なクラスを追加するには**
-
-アクティブ化可能なクラスとは、クライアント コードで **new** 式 (Visual Basic では **New**、C++ では **ref new**) を使って作成できるクラスのことです。 コンポーネントでは、**public ref class sealed** として宣言します。 実際には、Class1.h ファイルと .cpp ファイルに ref クラスが既に含まれています。 名前を変更することはできますが、この例では既定の名前 (Class1) を使います。 必要に応じて、コンポーネント内で追加の ref クラスまたは regular クラスを定義できます。 ref クラスについて詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。
-
-次の \#include ディレクティブを Class1.h に追加します。
+<span data-ttu-id="72b39-129">次の \#include ディレクティブを Class1.h に追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-129">Add these \#include directives to Class1.h:</span></span>
 
 ```cpp
 #include <collection.h>
@@ -52,23 +49,21 @@ Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[�
 #include <amp_math.h>
 ```
 
-collection.h は、Windows ランタイムによって定義されている言語に依存しないインターフェイスを実装する C++ の具象クラス (Platform::Collections::Vector クラスや Platform::Collections::Map クラスなど) のヘッダー ファイルです。 amp ヘッダーは、GPU で計算を実行する際に使用されます。 Windows ランタイムには amp ヘッダーに相当するものはありませんが、これらはプライベートであるため、問題はありません。 一般に、パフォーマンス上の理由から、コンポーネント内部では ISO C++ コードと標準ライブラリを使います。Windows ランタイム型で表現する必要があるのは、Windows ランタイム インターフェイスだけです。
+<span data-ttu-id="72b39-130">collection.h は、Windows ランタイムによって定義されている言語に依存しないインターフェイスを実装する C++ の具象クラス (Platform::Collections::Vector クラスや Platform::Collections::Map クラスなど) のヘッダー ファイルです。</span><span class="sxs-lookup"><span data-stu-id="72b39-130">collection.h is the header file for C++ concrete classes such as the Platform::Collections::Vector class and the Platform::Collections::Map class, which implement language-neutral interfaces that are defined by the Windows Runtime.</span></span> <span data-ttu-id="72b39-131">amp ヘッダーは、GPU で計算を実行する際に使用されます。</span><span class="sxs-lookup"><span data-stu-id="72b39-131">The amp headers are used to run computations on the GPU.</span></span> <span data-ttu-id="72b39-132">Windows ランタイムには amp ヘッダーに相当するものはありませんが、これらはプライベートであるため、問題はありません。</span><span class="sxs-lookup"><span data-stu-id="72b39-132">They have no Windows Runtime equivalents, and that’s fine because they are private.</span></span> <span data-ttu-id="72b39-133">一般に、パフォーマンス上の理由から、コンポーネント内部では ISO C++ コードと標準ライブラリを使います。Windows ランタイム型で表現する必要があるのは、Windows ランタイム インターフェイスだけです。</span><span class="sxs-lookup"><span data-stu-id="72b39-133">In general, for performance reasons you should use ISO C++ code and standard libraries internally within the component; it’s just the Windows Runtime interface that must be expressed in Windows Runtime types.</span></span>
 
-## <a name="to-add-a-delegate-at-namespace-scope"></a>名前空間スコープでデリゲートを追加するには
+## <a name="to-add-a-delegate-at-namespace-scope"></a><span data-ttu-id="72b39-134">名前空間スコープでデリゲートを追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-134">To add a delegate at namespace scope</span></span>
+<span data-ttu-id="72b39-135">デリゲートとは、メソッドのパラメーターと戻り値の型を定義するコンストラクトです。</span><span class="sxs-lookup"><span data-stu-id="72b39-135">A delegate is a construct that defines the parameters and return type for methods.</span></span> <span data-ttu-id="72b39-136">イベントは特定のデリゲート型のインスタンスであり、イベントにサブスクライブするイベント ハンドラー メソッドには、デリゲートで指定されているシグネチャが必要です。</span><span class="sxs-lookup"><span data-stu-id="72b39-136">An event is an instance of a particular delegate type, and any event handler method that subscribes to the event must have the signature that's specified in the delegate.</span></span> <span data-ttu-id="72b39-137">次のコードでは、int を受け取り、void を返すデリゲート型を定義します。</span><span class="sxs-lookup"><span data-stu-id="72b39-137">The following code defines a delegate type that takes an int and returns void.</span></span> <span data-ttu-id="72b39-138">次に、このコードでこの型のパブリック イベントを宣言します。これにより、クライアント コードはイベントが発生したときに呼び出されるメソッドを提供できるようになります。</span><span class="sxs-lookup"><span data-stu-id="72b39-138">Next the code declares a public event of this type; this enables client code to provide methods that are invoked when the event is fired.</span></span>
 
-デリゲートとは、メソッドのパラメーターと戻り値の型を定義するコンストラクトです。 イベントは特定のデリゲート型のインスタンスであり、イベントにサブスクライブするイベント ハンドラー メソッドには、デリゲートで指定されているシグネチャが必要です。 次のコードでは、int を受け取り、void を返すデリゲート型を定義します。 次に、このコードでこの型のパブリック イベントを宣言します。これにより、クライアント コードはイベントが発生したときに呼び出されるメソッドを提供できるようになります。
-
-Class1.h で、Class1 宣言の直前に名前空間スコープで次のデリゲート宣言を追加します。
+<span data-ttu-id="72b39-139">Class1.h で、Class1 宣言の直前に名前空間スコープで次のデリゲート宣言を追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-139">Add the following delegate declaration at namespace scope in Class1.h, just before the Class1 declaration.</span></span>
 
 ```cpp
 public delegate void PrimeFoundHandler(int result);
 ```
 
-Visual Studio に貼り付けたときにコードが整列されていない場合は、Ctrl + K + D キーを押すと、ファイル全体のインデントが修正されます。
+<span data-ttu-id="72b39-140">Visual Studio に貼り付けたときにコードが整列されていない場合は、Ctrl + K + D キーを押すと、ファイル全体のインデントが修正されます。</span><span class="sxs-lookup"><span data-stu-id="72b39-140">If the code isn’t lining up correctly when you paste it into Visual Studio, just press Ctrl+K+D to fix the indentation for the entire file.</span></span>
 
-## <a name="to-add-the-public-members"></a>パブリック メンバーを追加するには
-
-クラスで 3 つのパブリック メソッドと 1 つのパブリック イベントを公開します。 最初のメソッドは常に高速で実行されるので、同期メソッドです。 他の 2 つのメソッドは時間がかかる場合があるので、UI スレッドをブロックしないように非同期にします。 これらのメソッドは、IAsyncOperationWithProgress と IAsyncActionWithProgress を返します。 前者は結果を返す非同期メソッドを定義し、後者は void を返す非同期メソッドを定義します。 また、これらのインターフェイスにより、クライアント コードは操作の進行状況の更新を受け取ることができます。
+## <a name="to-add-the-public-members"></a><span data-ttu-id="72b39-141">パブリック メンバーを追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-141">To add the public members</span></span>
+<span data-ttu-id="72b39-142">クラスで 3 つのパブリック メソッドと 1 つのパブリック イベントを公開します。</span><span class="sxs-lookup"><span data-stu-id="72b39-142">The class exposes three public methods and one public event.</span></span> <span data-ttu-id="72b39-143">最初のメソッドは常に高速で実行されるので、同期メソッドです。</span><span class="sxs-lookup"><span data-stu-id="72b39-143">The first method is synchronous because it always executes very fast.</span></span> <span data-ttu-id="72b39-144">他の 2 つのメソッドは時間がかかる場合があるので、UI スレッドをブロックしないように非同期にします。</span><span class="sxs-lookup"><span data-stu-id="72b39-144">Because the other two methods might take some time, they are asynchronous so that they don’t block the UI thread.</span></span> <span data-ttu-id="72b39-145">これらのメソッドは、IAsyncOperationWithProgress と IAsyncActionWithProgress を返します。</span><span class="sxs-lookup"><span data-stu-id="72b39-145">These methods return IAsyncOperationWithProgress and IAsyncActionWithProgress.</span></span> <span data-ttu-id="72b39-146">前者は結果を返す非同期メソッドを定義し、後者は void を返す非同期メソッドを定義します。</span><span class="sxs-lookup"><span data-stu-id="72b39-146">The former defines an async method that returns a result, and the latter defines an async method that returns void.</span></span> <span data-ttu-id="72b39-147">また、これらのインターフェイスにより、クライアント コードは操作の進行状況の更新を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="72b39-147">These interfaces also enable client code to receive updates on the progress of the operation.</span></span>
 
 ```cpp
 public:
@@ -85,9 +80,8 @@ public:
         event PrimeFoundHandler^ primeFoundEvent;
 
 ```
-## <a name="to-add-the-private-members"></a>プライベート メンバーを追加するには
-
-クラスには 3 つのプライベート メンバーが含まれています。数値計算用の 2 つのヘルパー メソッドと、ワーカー スレッドから UI スレッドにイベント呼び出しをマーシャリングするために使われる CoreDispatcher オブジェクトです。
+## <a name="to-add-the-private-members"></a><span data-ttu-id="72b39-148">プライベート メンバーを追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-148">To add the private members</span></span>
+<span data-ttu-id="72b39-149">クラスには 3 つのプライベート メンバーが含まれています。数値計算用の 2 つのヘルパー メソッドと、ワーカー スレッドから UI スレッドにイベント呼び出しをマーシャリングするために使われる CoreDispatcher オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="72b39-149">The class contains three private members: two helper methods for the numeric computations and a CoreDispatcher object that’s used to marshal the event invocations from worker threads back to the UI thread.</span></span>
 
 ```cpp
 private:
@@ -95,16 +89,15 @@ private:
         Windows::UI::Core::CoreDispatcher^ m_dispatcher;
 ```
 
-## <a name="to-add-the-header-and-namespace-directives"></a>ヘッダーと名前空間のディレクティブを追加するには
-
-Class1.cpp で、次の #include ディレクティブを追加します。
+## <a name="to-add-the-header-and-namespace-directives"></a><span data-ttu-id="72b39-150">ヘッダーと名前空間のディレクティブを追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-150">To add the header and namespace directives</span></span>
+<span data-ttu-id="72b39-151">Class1.cpp で、次の #include ディレクティブを追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-151">In Class1.cpp, add these #include directives:</span></span>
 
 ```cpp
 #include <ppltasks.h>
 #include <concurrent_vector.h>
 ```
 
-次の using ステートメントを追加して必要な名前空間を追加します。
+<span data-ttu-id="72b39-152">次の using ステートメントを追加して必要な名前空間を追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-152">Now add these using statements to pull in the required namespaces:</span></span>
 
 ```cpp
 using namespace concurrency;
@@ -114,9 +107,8 @@ using namespace Windows::Foundation;
 using namespace Windows::UI::Core;
 ```
 
-## <a name="to-add-the-implementation-for-computeresult"></a>ComputeResult の実装を追加するには
-
-Class1.cpp で、次のメソッド実装を追加します。 このメソッドは呼び出しスレッドで同期的に実行されますが、C++ AMP を使って GPU での計算を並列化するため、非常に高速です。 詳しくは、「C++ AMP の概要」をご覧ください。 結果は Platform::Collections::Vector<T> 具象型に追加されます。この型は、返されるときに Windows::Foundation::Collections::IVector<T> に暗黙的に変換されます。
+## <a name="to-add-the-implementation-for-computeresult"></a><span data-ttu-id="72b39-153">ComputeResult の実装を追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-153">To add the implementation for ComputeResult</span></span>
+<span data-ttu-id="72b39-154">Class1.cpp で、次のメソッド実装を追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-154">In Class1.cpp, add the following method implementation.</span></span> <span data-ttu-id="72b39-155">このメソッドは呼び出しスレッドで同期的に実行されますが、C++ AMP を使って GPU での計算を並列化するため、非常に高速です。</span><span class="sxs-lookup"><span data-stu-id="72b39-155">This method executes synchronously on the calling thread, but it is very fast because it uses C++ AMP to parallelize the computation on the GPU.</span></span> <span data-ttu-id="72b39-156">詳しくは、「C++ AMP の概要」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="72b39-156">For more information, see C++ AMP Overview.</span></span> <span data-ttu-id="72b39-157">結果は Platform::Collections::Vector<T> 具象型に追加されます。この型は、返されるときに Windows::Foundation::Collections::IVector<T> に暗黙的に変換されます。</span><span class="sxs-lookup"><span data-stu-id="72b39-157">The results are appended to a Platform::Collections::Vector<T> concrete type, which is implicitly converted to a Windows::Foundation::Collections::IVector<T> when it is returned.</span></span>
 
 ```cpp
 //Public API
@@ -148,11 +140,10 @@ IVector<double>^ Class1::ComputeResult(double input)
     return res;
 }
 ```
-## <a name="to-add-the-implementation-for-getprimesordered-and-its-helper-method"></a>GetPrimesOrdered とそのヘルパー メソッドの実装を追加するには
+## <a name="to-add-the-implementation-for-getprimesordered-and-its-helper-method"></a><span data-ttu-id="72b39-158">GetPrimesOrdered とそのヘルパー メソッドの実装を追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-158">To add the implementation for GetPrimesOrdered and its helper method</span></span>
+<span data-ttu-id="72b39-159">Class1.cpp で、GetPrimesOrdered と is_prime ヘルパー メソッドの実装を追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-159">In Class1.cpp, add the implementations for GetPrimesOrdered and the is_prime helper method.</span></span> <span data-ttu-id="72b39-160">GetPrimesOrdered は、concurrent_vector クラスと parallel_for 関数ループを使って作業を分割し、プログラムが実行されているコンピューターのリソースを最大限に使って結果を生成します。</span><span class="sxs-lookup"><span data-stu-id="72b39-160">GetPrimesOrdered uses a concurrent_vector class and a parallel_for function loop to divide up the work and use the maximum resources of the computer on which the program is running to produce results.</span></span> <span data-ttu-id="72b39-161">結果の計算、保存、並べ替えが終わると、結果は Platform::Collections::Vector<T> に追加され、Windows::Foundation::Collections::IVector<T> としてクライアント コードに返されます。</span><span class="sxs-lookup"><span data-stu-id="72b39-161">After the results are computed, stored, and sorted, they are added to a Platform::Collections::Vector<T> and returned as Windows::Foundation::Collections::IVector<T> to client code.</span></span>
 
-Class1.cpp で、GetPrimesOrdered と is_prime ヘルパー メソッドの実装を追加します。 GetPrimesOrdered は、concurrent_vector クラスと parallel_for 関数ループを使って作業を分割し、プログラムが実行されているコンピューターのリソースを最大限に使って結果を生成します。 結果の計算、保存、並べ替えが終わると、結果は Platform::Collections::Vector<T> に追加され、Windows::Foundation::Collections::IVector<T> としてクライアント コードに返されます。
-
-進行状況レポーターのコードに注意してください。このコードにより、クライアントは操作の予想される所要時間をユーザーに示す進行状況バーまたは他の UI をフックできます。 進行状況レポートにはコストがかかります。 イベントはコンポーネント側で発生させ、UI スレッドで処理する必要があります。また、イテレーションごとに進行状況値を保存する必要があります。 コストを最小限に抑える 1 つの方法として、進行状況イベントの発生頻度を制限します。 それでもコストがかかりすぎる場合や、操作の所要時間を推定できない場合は、完了までの残り時間は示さず、操作が進行中であることだけを示すプログレス リングを使うことを検討してください。
+<span data-ttu-id="72b39-162">進行状況レポーターのコードに注意してください。このコードにより、クライアントは操作の予想される所要時間をユーザーに示す進行状況バーまたは他の UI をフックできます。</span><span class="sxs-lookup"><span data-stu-id="72b39-162">Notice the code for the progress reporter, which enables the client to hook up a progress bar or other UI to show the user how much longer the operation is going to take.</span></span> <span data-ttu-id="72b39-163">進行状況レポートにはコストがかかります。</span><span class="sxs-lookup"><span data-stu-id="72b39-163">Progress reporting has a cost.</span></span> <span data-ttu-id="72b39-164">イベントはコンポーネント側で発生させ、UI スレッドで処理する必要があります。また、イテレーションごとに進行状況値を保存する必要があります。</span><span class="sxs-lookup"><span data-stu-id="72b39-164">An event must be fired on the component side and handled on the UI thread, and the progress value must be stored on each iteration.</span></span> <span data-ttu-id="72b39-165">コストを最小限に抑える 1 つの方法として、進行状況イベントの発生頻度を制限します。</span><span class="sxs-lookup"><span data-stu-id="72b39-165">One way to minimize the cost is by limiting the frequency at which a progress event is fired.</span></span> <span data-ttu-id="72b39-166">それでもコストがかかりすぎる場合や、操作の所要時間を推定できない場合は、完了までの残り時間は示さず、操作が進行中であることだけを示すプログレス リングを使うことを検討してください。</span><span class="sxs-lookup"><span data-stu-id="72b39-166">If the cost is still prohibitive, or if you can't estimate the length of the operation, then consider using a progress ring, which shows that an operation is in progress but doesn't show time remaining until completion.</span></span>
 
 ```cpp
 // Determines whether the input value is prime.
@@ -218,9 +209,8 @@ IAsyncOperationWithProgress<IVector<int>^, double>^ Class1::GetPrimesOrdered(int
 }
 ```
 
-## <a name="to-add-the-implementation-for-getprimesunordered"></a>GetPrimesUnordered の実装を追加するには
-
-C++ コンポーネントを作成する最後の手順として、Class1.cpp で GetPrimesUnordered の実装を追加します。 このメソッドは、すべての結果が見つかるまで待たずに、結果が見つかるたびに各結果を返します。 各結果はイベント ハンドラー内で返され、UI にリアルタイムで表示されます。 ここでも進行状況レポーターが使われていることに注意してください。 このメソッドも、is_prime ヘルパー メソッドを使います。
+## <a name="to-add-the-implementation-for-getprimesunordered"></a><span data-ttu-id="72b39-167">GetPrimesUnordered の実装を追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-167">To add the implementation for GetPrimesUnordered</span></span>
+<span data-ttu-id="72b39-168">C++ コンポーネントを作成する最後の手順として、Class1.cpp で GetPrimesUnordered の実装を追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-168">The last step to create the C++ component is to add the implementation for the GetPrimesUnordered in Class1.cpp.</span></span> <span data-ttu-id="72b39-169">このメソッドは、すべての結果が見つかるまで待たずに、結果が見つかるたびに各結果を返します。</span><span class="sxs-lookup"><span data-stu-id="72b39-169">This method returns each result as it is found, without waiting until all results are found.</span></span> <span data-ttu-id="72b39-170">各結果はイベント ハンドラー内で返され、UI にリアルタイムで表示されます。</span><span class="sxs-lookup"><span data-stu-id="72b39-170">Each result is returned in the event handler and displayed on the UI in real time.</span></span> <span data-ttu-id="72b39-171">ここでも進行状況レポーターが使われていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="72b39-171">Again, notice that a progress reporter is used.</span></span> <span data-ttu-id="72b39-172">このメソッドも、is_prime ヘルパー メソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="72b39-172">This method also uses the is_prime helper method.</span></span>
 
 ```cpp
 // This method returns no value. Instead, it fires an event each time a
@@ -280,31 +270,28 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 }
 ```
 
-## <a name="creating-a-javascript-client-app"></a>JavaScript クライアント アプリケーションの作成
+## <a name="creating-a-javascript-client-app"></a><span data-ttu-id="72b39-173">JavaScript クライアント アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="72b39-173">Creating a JavaScript client app</span></span>
+<span data-ttu-id="72b39-174">C# クライアントだけを作成する場合は、このセクションをスキップして構いません。</span><span class="sxs-lookup"><span data-stu-id="72b39-174">If you just want to create a C# client, you can skip this section.</span></span>
 
-C# クライアントだけを作成する場合は、このセクションをスキップして構いません。
+## <a name="to-create-a-javascript-project"></a><span data-ttu-id="72b39-175">JavaScript プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="72b39-175">To create a JavaScript project</span></span>
+<span data-ttu-id="72b39-176">ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-176">In Solution Explorer, open the shortcut menu for the Solution node and choose **Add, New Project**.</span></span>
 
-## <a name="to-create-a-javascript-project"></a>JavaScript プロジェクトを作成するには
+<span data-ttu-id="72b39-177">[JavaScript] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[空白のアプリ (ユニバーサル Windows)]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="72b39-177">Expand JavaScript (it might be nested under **Other Languages**) and choose **Blank App (Universal Windows)**.</span></span>
 
-ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。
+<span data-ttu-id="72b39-178">**[OK]** をクリックして、既定の名前 (App1) を受け入れます。</span><span class="sxs-lookup"><span data-stu-id="72b39-178">Accept the default name—App1—by choosing the **OK** button.</span></span>
 
-[JavaScript] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[空白のアプリ (ユニバーサル Windows)]** を選択します。
+<span data-ttu-id="72b39-179">App1 プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-179">Open the shortcut menu for the App1 project node and choose **Set as Startup Project**.</span></span>
 
-**[OK]** をクリックして、既定の名前 (App1) を受け入れます。
+<span data-ttu-id="72b39-180">WinRT_CPP へのプロジェクト参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-180">Add a project reference to WinRT_CPP:</span></span>
 
-App1 プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。
+<span data-ttu-id="72b39-181">[参照] ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-181">Open the shortcut menu for the References node and choose **Add Reference**.</span></span>
 
-WinRT_CPP へのプロジェクト参照を追加します。
+<span data-ttu-id="72b39-182">[参照マネージャー] ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-182">In the left pane of the References Manager dialog box, select **Projects** and then select **Solution**.</span></span>
 
-[参照] ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。
+<span data-ttu-id="72b39-183">中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-183">In the center pane, select WinRT_CPP and then choose the **OK** button</span></span>
 
-[参照マネージャー] ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。
-
-中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。
-
-## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a>JavaScript イベント ハンドラーを呼び出す HTML を追加するには
-
-default.html ページの <body> ノードに、次の HTML を貼り付けます。
+## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a><span data-ttu-id="72b39-184">JavaScript イベント ハンドラーを呼び出す HTML を追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-184">To add the HTML that invokes the JavaScript event handlers</span></span>
+<span data-ttu-id="72b39-185">default.html ページの <body> ノードに、次の HTML を貼り付けます。</span><span class="sxs-lookup"><span data-stu-id="72b39-185">Paste this HTML into the <body> node of the default.html page:</span></span>
 
 ```HTML
 <div id="LogButtonDiv">
@@ -340,9 +327,8 @@ default.html ページの <body> ノードに、次の HTML を貼り付けま�
  </div>
 ```
 
-## <a name="to-add-styles"></a>スタイルを追加するには
-
-default.css で body スタイルを削除し、次のスタイルを追加します。
+## <a name="to-add-styles"></a><span data-ttu-id="72b39-186">スタイルを追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-186">To add styles</span></span>
+<span data-ttu-id="72b39-187">default.css で body スタイルを削除し、次のスタイルを追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-187">In default.css, remove the body style and then add these styles:</span></span>
 
 ```css
 #LogButtonDiv {
@@ -375,9 +361,8 @@ font-size:smaller;
 }
 ```
 
-## <a name="to-add-the-javascript-event-handlers-that-call-into-the-component-dll"></a>コンポーネント DLL を呼び出す JavaScript イベント ハンドラーを追加するには
-
-default.js ファイルの末尾に次の関数を追加します。 これらの関数は、メイン ページのボタンが選択されたときに呼び出されます。 JavaScript が C++ クラスをアクティブにして、そのメソッドを呼び出し、戻り値を使って HTML ラベルを設定する手順に注目してください。
+## <a name="to-add-the-javascript-event-handlers-that-call-into-the-component-dll"></a><span data-ttu-id="72b39-188">コンポーネント DLL を呼び出す JavaScript イベント ハンドラーを追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-188">To add the JavaScript event handlers that call into the component DLL</span></span>
+<span data-ttu-id="72b39-189">default.js ファイルの末尾に次の関数を追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-189">Add the following functions at the end of the default.js file.</span></span> <span data-ttu-id="72b39-190">これらの関数は、メイン ページのボタンが選択されたときに呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="72b39-190">These functions are called when the buttons on the main page are chosen.</span></span> <span data-ttu-id="72b39-191">JavaScript が C++ クラスをアクティブにして、そのメソッドを呼び出し、戻り値を使って HTML ラベルを設定する手順に注目してください。</span><span class="sxs-lookup"><span data-stu-id="72b39-191">Notice how JavaScript activates the C++ class, and then calls its methods and uses the return values to populate the HTML labels.</span></span>
 
 ```JavaScript
 var nativeObject = new WinRT_CPP.Class1();
@@ -440,7 +425,7 @@ function ButtonClear_Click() {
 }
 ```
 
-default.js 内の app.onactivated での WinJS.UI.processAll の既存の呼び出しを、then ブロックでイベント登録を実装する次のコードに置き換えて、イベント リスナーを追加するコードを追加します。 詳しくは、「"Hello, world" アプリを作成する (JS)」をご覧ください。
+<span data-ttu-id="72b39-192">default.js 内の app.onactivated での WinJS.UI.processAll の既存の呼び出しを、then ブロックでイベント登録を実装する次のコードに置き換えて、イベント リスナーを追加するコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-192">Add code to add the event listeners by replacing the existing call to WinJS.UI.processAll in app.onactivated in default.js with the following code that implements event registration in a then block.</span></span> <span data-ttu-id="72b39-193">詳しくは、「"Hello, world" アプリを作成する (JS)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="72b39-193">For a detailed explanation of this, see Create a "Hello World" app (JS).</span></span>
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {
@@ -455,31 +440,29 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 }));
 ```
 
-F5 キーを押してアプリを実行します。
+<span data-ttu-id="72b39-194">F5 キーを押してアプリを実行します。</span><span class="sxs-lookup"><span data-stu-id="72b39-194">Press F5 to run the app.</span></span>
 
-## <a name="creating-a-c-client-app"></a>C# クライアント アプリケーションの作成
+## <a name="creating-a-c-client-app"></a><span data-ttu-id="72b39-195">C# クライアント アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="72b39-195">Creating a C# client app</span></span>
 
-## <a name="to-create-a-c-project"></a>C# プロジェクトを作成するには
+## <a name="to-create-a-c-project"></a><span data-ttu-id="72b39-196">C# プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="72b39-196">To create a C# project</span></span>
+<span data-ttu-id="72b39-197">ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-197">In Solution Explorer, open the shortcut menu for the Solution node and then choose **Add, New Project**.</span></span>
 
-ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。
+<span data-ttu-id="72b39-198">[Visual C#] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[Windows]** をクリックします。左ペインで **[ユニバーサル]** をクリックし、中央ペインで **[空のアプリケーション]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="72b39-198">Expand Visual C# (it might be nested under **Other Languages**), select **Windows** and then **Universal** in the left pane, and then select **Blank App** in the middle pane.</span></span>
 
-[Visual C#] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[Windows]** をクリックします。左ペインで **[ユニバーサル]** をクリックし、中央ペインで **[空のアプリケーション]** を選択します。
+<span data-ttu-id="72b39-199">このアプリケーションに CS_Client という名前を付け、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-199">Name this app CS_Client and then choose the **OK** button.</span></span>
 
-このアプリケーションに CS_Client という名前を付け、**[OK]** をクリックします。
+<span data-ttu-id="72b39-200">CS_Client プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-200">Open the shortcut menu for the CS_Client project node and choose **Set as Startup Project**.</span></span>
 
-CS_Client プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。
+<span data-ttu-id="72b39-201">WinRT_CPP へのプロジェクト参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-201">Add a project reference to WinRT_CPP:</span></span>
 
-WinRT_CPP へのプロジェクト参照を追加します。
+<span data-ttu-id="72b39-202">**[参照]** ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-202">Open the shortcut menu for the **References** node and choose **Add Reference**.</span></span>
 
-**[参照]** ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。
+<span data-ttu-id="72b39-203">**[参照マネージャー]** ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-203">In the left pane of the **References Manager** dialog box, select **Projects** and then select **Solution**.</span></span>
 
-**[参照マネージャー]** ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。
+<span data-ttu-id="72b39-204">中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-204">In the center pane, select WinRT_CPP and then choose the **OK** button.</span></span>
 
-中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。
-
-## <a name="to-add-the-xaml-that-defines-the-user-interface"></a>ユーザー インターフェイスを定義する XAML を追加するには
-
-MainPage.xaml 内の Grid 要素に次のコードをコピーします。
+## <a name="to-add-the-xaml-that-defines-the-user-interface"></a><span data-ttu-id="72b39-205">ユーザー インターフェイスを定義する XAML を追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-205">To add the XAML that defines the user interface</span></span>
+<span data-ttu-id="72b39-206">MainPage.xaml 内の Grid 要素に次のコードをコピーします。</span><span class="sxs-lookup"><span data-stu-id="72b39-206">Copy the following code into the Grid element in MainPage.xaml.</span></span>
 
 ```xaml
 <ScrollViewer>
@@ -499,9 +482,8 @@ MainPage.xaml 内の Grid 要素に次のコードをコピーします。
 </ScrollViewer>
 ```
 
-## <a name="to-add-the-event-handlers-for-the-buttons"></a>ボタンのイベント ハンドラーを追加するには
-
-ソリューション エクスプローラーで、MainPage.xaml.cs を開きます  (このファイルは MainPage.xaml の下に入れ子になっていることがあります)。System.Text の using ディレクティブを追加し、MainPage クラスに対数計算用のイベント ハンドラーを追加します。
+## <a name="to-add-the-event-handlers-for-the-buttons"></a><span data-ttu-id="72b39-207">ボタンのイベント ハンドラーを追加するには</span><span class="sxs-lookup"><span data-stu-id="72b39-207">To add the event handlers for the buttons</span></span>
+<span data-ttu-id="72b39-208">ソリューション エクスプローラーで、MainPage.xaml.cs を開きます </span><span class="sxs-lookup"><span data-stu-id="72b39-208">In Solution Explorer, open MainPage.xaml.cs.</span></span> <span data-ttu-id="72b39-209">(このファイルは MainPage.xaml の下に入れ子になっていることがあります)。System.Text の using ディレクティブを追加し、MainPage クラスに対数計算用のイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-209">(The file might be nested under MainPage.xaml.) Add a using directive for System.Text, and then add the event handler for the Logarithm calculation in the MainPage class.</span></span>
 
 ```csharp
 private void Button1_Click_1(object sender, RoutedEventArgs e)
@@ -521,7 +503,7 @@ private void Button1_Click_1(object sender, RoutedEventArgs e)
 }
 ```
 
-順序付けされた結果のイベント ハンドラーを追加します。
+<span data-ttu-id="72b39-210">順序付けされた結果のイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-210">Add the event handler for the ordered result:</span></span>
 
 ```csharp
 async private void PrimesOrderedButton_Click_1(object sender, RoutedEventArgs e)
@@ -559,7 +541,7 @@ async private void PrimesOrderedButton_Click_1(object sender, RoutedEventArgs e)
 }
 ```
 
-順序付けされていない結果のイベント ハンドラーと、コードを再度実行できるように結果をクリアするボタンのイベント ハンドラーを追加します。
+<span data-ttu-id="72b39-211">順序付けされていない結果のイベント ハンドラーと、コードを再度実行できるように結果をクリアするボタンのイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="72b39-211">Add the event handler for the unordered result, and for the button that clears the results so that you can run the code again.</span></span>
 
 ```csharp
 private void PrimesUnOrderedButton_Click_1(object sender, RoutedEventArgs e)
@@ -600,43 +582,36 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="running-the-app"></a>アプリの実行
+## <a name="running-the-app"></a><span data-ttu-id="72b39-212">アプリの実行</span><span class="sxs-lookup"><span data-stu-id="72b39-212">Running the app</span></span>
+<span data-ttu-id="72b39-213">ソリューション エクスプローラーでプロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックして、C# プロジェクトまたは JavaScript プロジェクトをスタートアップ プロジェクトとして選択します。</span><span class="sxs-lookup"><span data-stu-id="72b39-213">Select either the C# project or JavaScript project as the startup project by opening the shortcut menu for the project node in Solution Explorer and choosing **Set As Startup Project**.</span></span> <span data-ttu-id="72b39-214">デバッグして実行する場合は、F5 キーを押します。デバッグせずに実行する場合は、Ctrl キーを押しながら F5 キーを押します。</span><span class="sxs-lookup"><span data-stu-id="72b39-214">Then press F5 to run with debugging, or Ctrl+F5 to run without debugging.</span></span>
 
-ソリューション エクスプローラーでプロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックして、C# プロジェクトまたは JavaScript プロジェクトをスタートアップ プロジェクトとして選択します。 デバッグして実行する場合は、F5 キーを押します。デバッグせずに実行する場合は、Ctrl キーを押しながら F5 キーを押します。
+## <a name="inspecting-your-component-in-object-browser-optional"></a><span data-ttu-id="72b39-215">オブジェクト ブラウザーでのコンポーネントの検査 (省略可能)</span><span class="sxs-lookup"><span data-stu-id="72b39-215">Inspecting your component in Object Browser (optional)</span></span>
+<span data-ttu-id="72b39-216">オブジェクト ブラウザーで、.winmd ファイルで定義されているすべての Windows ランタイム型を検査できます。</span><span class="sxs-lookup"><span data-stu-id="72b39-216">In Object Browser, you can inspect all Windows Runtime types that are defined in .winmd files.</span></span> <span data-ttu-id="72b39-217">これには、Platform 名前空間と既定の名前空間の型が含まれます。</span><span class="sxs-lookup"><span data-stu-id="72b39-217">This includes the types in the Platform namespace and the default namespace.</span></span> <span data-ttu-id="72b39-218">ただし、Platform::Collections 名前空間の型は、winmd ファイルではなく、collections.h ヘッダー ファイルで定義されているため、オブジェクト ブラウザーでは表示されません。</span><span class="sxs-lookup"><span data-stu-id="72b39-218">However, because the types in the Platform::Collections namespace are defined in the header file collections.h, not in a winmd file, they don’t appear in Object Browser.</span></span>
 
-## <a name="inspecting-your-component-in-object-browser-optional"></a>オブジェクト ブラウザーでのコンポーネントの検査 (省略可能)
+## **<a name="to-inspect-a-component"></a><span data-ttu-id="72b39-219">コンポーネントを検査するには</span><span class="sxs-lookup"><span data-stu-id="72b39-219">To inspect a component</span></span>**
+<span data-ttu-id="72b39-220">メニュー バーで、**[表示]、[オブジェクト ブラウザー]** の順にクリックします (または、Ctrl + Alt + J キーを押します)。</span><span class="sxs-lookup"><span data-stu-id="72b39-220">On the menu bar, choose **View, Object Browser** (Ctrl+Alt+J).</span></span>
 
-オブジェクト ブラウザーで、.winmd ファイルで定義されているすべての Windows ランタイム型を検査できます。 これには、Platform 名前空間と既定の名前空間の型が含まれます。 ただし、Platform::Collections 名前空間の型は、winmd ファイルではなく、collections.h ヘッダー ファイルで定義されているため、オブジェクト ブラウザーでは表示されません。
+<span data-ttu-id="72b39-221">オブジェクト ブラウザーの左ペインで、[WinRT\_CPP] ノードを展開して、コンポーネントで定義されている型とメソッドを表示します。</span><span class="sxs-lookup"><span data-stu-id="72b39-221">In the left pane of the Object Browser, expand the WinRT\_CPP node to show the types and methods that are defined on your component.</span></span>
 
-## **<a name="to-inspect-a-component"></a>コンポーネントを検査するには**
+## <a name="debugging-tips"></a><span data-ttu-id="72b39-222">デバッグのヒント</span><span class="sxs-lookup"><span data-stu-id="72b39-222">Debugging tips</span></span>
+<span data-ttu-id="72b39-223">デバッグ操作を向上させるには、パブリックな Microsoft シンボル サーバーからデバッグ シンボルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="72b39-223">For a better debugging experience, download the debugging symbols from the public Microsoft symbol servers:</span></span>
 
-メニュー バーで、**[表示]、[オブジェクト ブラウザー]** の順にクリックします (または、Ctrl + Alt + J キーを押します)。
+## **<a name="to-download-debugging-symbols"></a><span data-ttu-id="72b39-224">デバッグ シンボルをダウンロードするには</span><span class="sxs-lookup"><span data-stu-id="72b39-224">To download debugging symbols</span></span>**
+<span data-ttu-id="72b39-225">メニュー バーで、**[ツール]、[オプション]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-225">On the menu bar, choose **Tools, Options**.</span></span>
 
-オブジェクト ブラウザーの左ペインで、[WinRT\_CPP] ノードを展開して、コンポーネントで定義されている型とメソッドを表示します。
+<span data-ttu-id="72b39-226">**[オプション]** ダイアログ ボックスで、**[デバッグ]** を展開し、**[シンボル]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-226">In the **Options** dialog box, expand **Debugging** and select **Symbols**.</span></span>
 
-## <a name="debugging-tips"></a>デバッグのヒント
+<span data-ttu-id="72b39-227">**[Microsoft シンボル サーバー]** を選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-227">Select **Microsoft Symbol Servers** and the choose the **OK** button.</span></span>
 
-デバッグ操作を向上させるには、パブリックな Microsoft シンボル サーバーからデバッグ シンボルをダウンロードします。
+<span data-ttu-id="72b39-228">シンボルを初めてダウンロードするときは時間がかかる場合があります。</span><span class="sxs-lookup"><span data-stu-id="72b39-228">It might take some time to download the symbols the first time.</span></span> <span data-ttu-id="72b39-229">次回 F5 キーを押したときのパフォーマンスを向上させるには、シンボルをキャッシュするローカル ディレクトリを指定します。</span><span class="sxs-lookup"><span data-stu-id="72b39-229">For faster performance the next time you press F5, specify a local directory in which to cache the symbols.</span></span>
 
-## **<a name="to-download-debugging-symbols"></a>デバッグ シンボルをダウンロードするには**
+<span data-ttu-id="72b39-230">コンポーネント DLL を含む JavaScript ソリューションをデバッグするときは、コンポーネントでスクリプトのステップ実行またはネイティブ コードのステップ実行を有効にするようにデバッガーを設定できますが、この両方を同時に有効にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="72b39-230">When you debug a JavaScript solution that has a component DLL, you can set the debugger to enable either stepping through script or stepping through native code in the component, but not both at the same time.</span></span> <span data-ttu-id="72b39-231">設定を変更するには、ソリューション エクスプローラーで JavaScript プロジェクト ノードのショートカット メニューを開き、**[プロパティ]、[デバッグ]、[デバッガーの種類]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="72b39-231">To change the setting, open the shortcut menu for the JavaScript project node in Solution Explorer and choose **Properties, Debugging, Debugger Type**.</span></span>
 
-メニュー バーで、**[ツール]、[オプション]** の順にクリックします。
+<span data-ttu-id="72b39-232">パッケージ デザイナーで必ず適切な機能を選択してください。</span><span class="sxs-lookup"><span data-stu-id="72b39-232">Be sure to select appropriate capabilities in the package designer.</span></span> <span data-ttu-id="72b39-233">パッケージ デザイナーを開くには、Package.appxmanifest ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="72b39-233">You can open the package designer by opening the Package.appxmanifest file.</span></span> <span data-ttu-id="72b39-234">たとえば、プログラムを使ってピクチャ フォルダーのファイルにアクセスする場合は、パッケージ デザイナーの **[機能]** ペインで **[画像ライブラリ]** チェック ボックスをオンにしてください。</span><span class="sxs-lookup"><span data-stu-id="72b39-234">For example, if you are attempting to programmatically access files in the Pictures folder, be sure to select the **Pictures Library** check box in the **Capabilities** pane of the package designer.</span></span>
 
-**[オプション]** ダイアログ ボックスで、**[デバッグ]** を展開し、**[シンボル]** をクリックします。
+<span data-ttu-id="72b39-235">JavaScript コードがコンポーネントのパブリック プロパティまたはパブリック メソッドを認識しない場合は、JavaScript で camel 規約を使っていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="72b39-235">If your JavaScript code doesn't recognize the public properties or methods in the component, make sure that in JavaScript you are using camel casing.</span></span> <span data-ttu-id="72b39-236">たとえば、`ComputeResult` C++ メソッドは、JavaScript で `computeResult` として参照する必要があります。</span><span class="sxs-lookup"><span data-stu-id="72b39-236">For example, the `ComputeResult` C++ method must be referenced as `computeResult` in JavaScript.</span></span>
 
-**[Microsoft シンボル サーバー]** を選択し、**[OK]** をクリックします。
+<span data-ttu-id="72b39-237">C++ Windows ランタイム コンポーネント プロジェクトをソリューションから削除する場合、JavaScript プロジェクトからプロジェクト参照も手動で削除する必要があります。</span><span class="sxs-lookup"><span data-stu-id="72b39-237">If you remove a C++ Windows Runtime Component project from a solution, you must also manually remove the project reference from the JavaScript project.</span></span> <span data-ttu-id="72b39-238">これを行わないと、後続のデバッグまたはビルド操作が妨げられます。</span><span class="sxs-lookup"><span data-stu-id="72b39-238">Failure to do so prevents subsequent debug or build operations.</span></span> <span data-ttu-id="72b39-239">その後、必要に応じてアセンブリ参照を DLL に追加できます。</span><span class="sxs-lookup"><span data-stu-id="72b39-239">If necessary, you can then add an assembly reference to the DLL.</span></span>
 
-シンボルを初めてダウンロードするときは時間がかかる場合があります。 次回 F5 キーを押したときのパフォーマンスを向上させるには、シンボルをキャッシュするローカル ディレクトリを指定します。
-
-コンポーネント DLL を含む JavaScript ソリューションをデバッグするときは、コンポーネントでスクリプトのステップ実行またはネイティブ コードのステップ実行を有効にするようにデバッガーを設定できますが、この両方を同時に有効にすることはできません。 設定を変更するには、ソリューション エクスプローラーで JavaScript プロジェクト ノードのショートカット メニューを開き、**[プロパティ]、[デバッグ]、[デバッガーの種類]** の順にクリックします。
-
-パッケージ デザイナーで必ず適切な機能を選択してください。 パッケージ デザイナーを開くには、Package.appxmanifest ファイルを開きます。 たとえば、プログラムを使ってピクチャ フォルダーのファイルにアクセスする場合は、パッケージ デザイナーの **[機能]** ペインで **[画像ライブラリ]** チェック ボックスをオンにしてください。
-
-JavaScript コードがコンポーネントのパブリック プロパティまたはパブリック メソッドを認識しない場合は、JavaScript で camel 規約を使っていることを確認します。 たとえば、`ComputeResult` C++ メソッドは、JavaScript で `computeResult` として参照する必要があります。
-
-C++ Windows ランタイム コンポーネント プロジェクトをソリューションから削除する場合、JavaScript プロジェクトからプロジェクト参照も手動で削除する必要があります。 これを行わないと、後続のデバッグまたはビルド操作が妨げられます。 その後、必要に応じてアセンブリ参照を DLL に追加できます。
-
-## <a name="related-topics"></a>関連トピック
-
-* [C++ での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)
-
+## <a name="related-topics"></a><span data-ttu-id="72b39-240">関連トピック</span><span class="sxs-lookup"><span data-stu-id="72b39-240">Related topics</span></span>
+* [<span data-ttu-id="72b39-241">C++/CX での Windows ランタイム コンポーネントの作成</span><span class="sxs-lookup"><span data-stu-id="72b39-241">Creating Windows Runtime Components in C++/CX</span></span>](creating-windows-runtime-components-in-cpp.md)

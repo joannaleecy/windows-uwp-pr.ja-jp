@@ -1,45 +1,43 @@
 ---
 author: TylerMSFT
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
-title: "スレッド化と非同期プログラミング"
-description: "スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。"
+title: スレッド化と非同期プログラミング
+description: スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, 非同期, スレッド, スレッド化"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fb249a1c7a562cb4b1eb7ff8590e8525c00c64f2
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, uwp, 非同期, スレッド, スレッド化
+ms.localizationpriority: medium
+ms.openlocfilehash: 9bdbc9e73d2ffe25ac848a1ed1b88a649214b9f5
+ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1893494"
 ---
-# <a name="threading-and-async-programming"></a>スレッド化と非同期プログラミング
+# <a name="threading-and-async-programming"></a><span data-ttu-id="57a39-104">スレッド化と非同期プログラミング</span><span class="sxs-lookup"><span data-stu-id="57a39-104">Threading and async programming</span></span>
+<span data-ttu-id="57a39-105">スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。</span><span class="sxs-lookup"><span data-stu-id="57a39-105">Threading and async programming enables your app to accomplish work asynchronously in parallel threads.</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+<span data-ttu-id="57a39-106">アプリでは、スレッド プールを使って、並列スレッドで作業を非同期的に実行できます。</span><span class="sxs-lookup"><span data-stu-id="57a39-106">Your app can use the thread pool to accomplish work asynchronously in parallel threads.</span></span> <span data-ttu-id="57a39-107">スレッド プールでは、一連のスレッドを管理し、スレッドが使用可能になるとキューを使って作業項目をそのスレッドに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="57a39-107">The thread pool manages a set of threads and uses a queue to assign work items to threads as they become available.</span></span> <span data-ttu-id="57a39-108">スレッド プールを使うと UI をブロックすることなく広範な作業を実行できるため、スレッド プールは Windows ランタイムで利用できる非同期プログラミング パターンと似ています。ただし、スレッド プールは非同期プログラミング パターンよりも細かく制御でき、これを使って複数の作業項目を並列的に実行できます。</span><span class="sxs-lookup"><span data-stu-id="57a39-108">The thread pool is similar to the asynchronous programming patterns available in the Windows Runtime because it can be used to accomplish extended work without blocking the UI, but the thread pool offers more control than the asynchronous programming patterns and you can use it to complete multiple work items in parallel.</span></span> <span data-ttu-id="57a39-109">スレッド プールを使うと、次のことが可能になります。</span><span class="sxs-lookup"><span data-stu-id="57a39-109">You can use the thread pool to:</span></span>
 
-スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。
+-   <span data-ttu-id="57a39-110">作業項目の送信、作業項目の優先度の管理、作業項目の取り消し。</span><span class="sxs-lookup"><span data-stu-id="57a39-110">Submit work items, control their priority, and cancel work items.</span></span>
 
-アプリでは、スレッド プールを使って、並列スレッドで作業を非同期的に実行できます。 スレッド プールでは、一連のスレッドを管理し、スレッドが使用可能になるとキューを使って作業項目をそのスレッドに割り当てます。 スレッド プールを使うと UI をブロックすることなく広範な作業を実行できるため、スレッド プールは Windows ランタイムで利用できる非同期プログラミング パターンと似ています。ただし、スレッド プールは非同期プログラミング パターンよりも細かく制御でき、これを使って複数の作業項目を並列的に実行できます。 スレッド プールを使うと、次のことが可能になります。
+-   <span data-ttu-id="57a39-111">タイマーおよび定期タイマーを使った作業項目のスケジュール設定。</span><span class="sxs-lookup"><span data-stu-id="57a39-111">Schedule work items using timers and periodic timers.</span></span>
 
--   作業項目の送信、作業項目の優先度の管理、作業項目の取り消し。
+-   <span data-ttu-id="57a39-112">重要な作業項目のためのリソースの確保。</span><span class="sxs-lookup"><span data-stu-id="57a39-112">Set aside resources for critical work items.</span></span>
 
--   タイマーおよび定期タイマーを使った作業項目のスケジュール設定。
+-   <span data-ttu-id="57a39-113">指定されたイベントとセマフォに応答した作業項目の実行。</span><span class="sxs-lookup"><span data-stu-id="57a39-113">Run work items in response to named events and semaphores.</span></span>
 
--   重要な作業項目のためのリソースの確保。
+<span data-ttu-id="57a39-114">スレッド プールにより、スレッドの作成と破棄のオーバーヘッドが少なくなるため、効率的にスレッドを管理できます。</span><span class="sxs-lookup"><span data-stu-id="57a39-114">The thread pool is more efficient at managing threads because it reduces the overhead of creating and destroying threads.</span></span> <span data-ttu-id="57a39-115">つまり、複数の CPU コアを使ってスレッドを最適化でき、バックグラウンド タスクが実行されているときにアプリ間でスレッド リソースを分配することができます。</span><span class="sxs-lookup"><span data-stu-id="57a39-115">The means it has access to optimize threads across multiple CPU cores, and it can balance thread resources between apps and when background tasks are running.</span></span> <span data-ttu-id="57a39-116">スレッド管理のしくみよりも、タスクを実行するコードを作成することが主な目的であるので、組み込みスレッド プールを使うと便利です。</span><span class="sxs-lookup"><span data-stu-id="57a39-116">Using the built-in thread pool is convenient because you focus on writing code that accomplishes a task instead of the mechanics of thread management.</span></span>
 
--   指定されたイベントとセマフォに応答した作業項目の実行。
-
-スレッド プールにより、スレッドの作成と破棄のオーバーヘッドが少なくなるため、効率的にスレッドを管理できます。 つまり、複数の CPU コアを使ってスレッドを最適化でき、バックグラウンド タスクが実行されているときにアプリ間でスレッド リソースを分配することができます。 スレッド管理のしくみよりも、タスクを実行するコードを作成することが主な目的であるので、組み込みスレッド プールを使うと便利です。
-
-| トピック                                                                                                          | 説明                         |
+| <span data-ttu-id="57a39-117">トピック</span><span class="sxs-lookup"><span data-stu-id="57a39-117">Topic</span></span>                                                                                                          | <span data-ttu-id="57a39-118">説明</span><span class="sxs-lookup"><span data-stu-id="57a39-118">Description</span></span>                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| [非同期プログラミング (UWP アプリ)](asynchronous-programming-universal-windows-platform-apps.md)              | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) での非同期プログラミングと、C#、Microsoft Visual Basic .NET、Visual C++ コンポーネント拡張機能 (C++/CX)、および JavaScript における非同期プログラミングの表現について説明します。 |
-| [C++ での非同期プログラミング (UWP アプリ)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| ここでは、ppltasks.h の <code>task</code> 名前空間で定義された <code>concurrency</code> クラスを使って C++/CX の非同期メソッドを実装する際に推奨される方法について説明します。 |
-| [スレッド プールを使うためのベスト プラクティス](best-practices-for-using-the-thread-pool.md)                         | このトピックでは、スレッド プールを使った操作のベスト プラクティスについて説明します。 |
-| [C# または Visual Basic での非同期 API の呼び出し](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。 このトピックでは、C# または Microsoft Visual Basic で UWP の非同期メソッドを使う方法について説明します。 |
-| [定期的な作業項目の作成](create-a-periodic-work-item.md)                                                   | 定期的に実行される作業項目の作成方法を説明します。 |
-| [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)                               | スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。 |
-| [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)                                       | タイマーが終了した後に実行される作業項目の作成方法を説明します。 |
-
+| [<span data-ttu-id="57a39-119">非同期プログラミング (UWP アプリ)</span><span class="sxs-lookup"><span data-stu-id="57a39-119">Asynchronous programming (UWP apps)</span></span>](asynchronous-programming-universal-windows-platform-apps.md)              | <span data-ttu-id="57a39-120">このトピックでは、ユニバーサル Windows プラットフォーム (UWP) での非同期プログラミングと、C#、Microsoft Visual Basic .NET、Visual C++ コンポーネント拡張機能 (C++/CX)、および JavaScript における非同期プログラミングの表現について説明します。</span><span class="sxs-lookup"><span data-stu-id="57a39-120">This topic describes asynchronous programming in the Universal Windows Platform (UWP) and its representation in C#, Microsoft Visual Basic .NET, Visual C++ component extensions (C++/CX), and JavaScript.</span></span> |
+| [<span data-ttu-id="57a39-121">C++/CX での非同期プログラミング (UWP アプリ)</span><span class="sxs-lookup"><span data-stu-id="57a39-121">Asynchronous programming in C++/CX (UWP apps)</span></span>](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| <span data-ttu-id="57a39-122">ここでは、ppltasks.h の <code>task</code> 名前空間で定義された <code>concurrency</code> クラスを使って C++/CX の非同期メソッドを実装する際に推奨される方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="57a39-122">This article describes the recommended way to consume asynchronous methods in C++/CX by using the <code>task</code> class that's defined in the <code>concurrency</code> namespace in ppltasks.h.</span></span> |
+| [<span data-ttu-id="57a39-123">スレッド プールを使うためのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="57a39-123">Best practices for using the thread pool</span></span>](best-practices-for-using-the-thread-pool.md)                         | <span data-ttu-id="57a39-124">このトピックでは、スレッド プールを使った操作のベスト プラクティスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="57a39-124">This topic describes best practices for working with the thread pool.</span></span> |
+| [<span data-ttu-id="57a39-125">C# または Visual Basic での非同期 API の呼び出し</span><span class="sxs-lookup"><span data-stu-id="57a39-125">Call asynchronous APIs in C# or Visual Basic</span></span>](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | <span data-ttu-id="57a39-126">ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。</span><span class="sxs-lookup"><span data-stu-id="57a39-126">The Universal Windows Platform (UWP) includes many asynchronous APIs to ensure that your app remains responsive when it does work that might take an extended amount of time.</span></span> <span data-ttu-id="57a39-127">このトピックでは、C# または Microsoft Visual Basic で UWP の非同期メソッドを使う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="57a39-127">This topic discusses how to use asynchronous methods from the UWP in C# or Microsoft Visual Basic.</span></span> |
+| [<span data-ttu-id="57a39-128">定期的な作業項目の作成</span><span class="sxs-lookup"><span data-stu-id="57a39-128">Create a periodic work item</span></span>](create-a-periodic-work-item.md)                                                   | <span data-ttu-id="57a39-129">定期的に実行される作業項目の作成方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="57a39-129">Learn how to create a work item that repeats periodically.</span></span> |
+| [<span data-ttu-id="57a39-130">スレッド プールへの作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="57a39-130">Submit a work item to the thread pool</span></span>](submit-a-work-item-to-the-thread-pool.md)                               | <span data-ttu-id="57a39-131">スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="57a39-131">Learn how to do work in a separate thread by submitting a work item to the thread pool.</span></span> |
+| [<span data-ttu-id="57a39-132">タイマーを使った作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="57a39-132">Use a timer to submit a work item</span></span>](use-a-timer-to-submit-a-work-item.md)                                       | <span data-ttu-id="57a39-133">タイマーが終了した後に実行される作業項目の作成方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="57a39-133">Learn how to create a work item that runs after a timer elapses.</span></span> |

@@ -1,7 +1,7 @@
 ---
 author: jwmsft
-title: "xDeferLoadStrategy 属性"
-description: "xDeferLoadStrategy は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。"
+title: xDeferLoadStrategy 属性
+description: xDeferLoadStrategy は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ms.author: jimwalk
 ms.date: 02/08/2017
@@ -9,64 +9,67 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4ccc18920a98b3c2258b4965e96fa063124d0546
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: ff89fea215ea4af58ab9b51a40baeb81ecb39bcc
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1881103"
 ---
+# <a name="xdeferloadstrategy-attribute"></a><span data-ttu-id="1cbb0-105">x:DeferLoadStrategy 属性</span><span class="sxs-lookup"><span data-stu-id="1cbb0-105">x:DeferLoadStrategy attribute</span></span>
 
-# <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 属性
+> [!IMPORTANT]
+> <span data-ttu-id="1cbb0-106">Windows 10 Version 1703 (Creators Update) 以降、**x:DeferLoadStrategy** は [**x:Load attribute**](x-load-attribute.md) に置き換わります。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-106">Starting in Windows 10, version 1703 (Creators Update), **x:DeferLoadStrategy** is superseded by the [**x:Load attribute**](x-load-attribute.md).</span></span> <span data-ttu-id="1cbb0-107">`x:Load="False"` を使うと、`x:DeferLoadStrategy="Lazy"` と同じ効果がありますが、さらに必要に応じて UI のアンロードも可能です。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-107">Using `x:Load="False"` is equivalent to `x:DeferLoadStrategy="Lazy"`, but provides the ability to unload the UI if required.</span></span> <span data-ttu-id="1cbb0-108">詳しくは、「[x:Load 属性](x-load-attribute.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-108">See the [x:Load attribute](x-load-attribute.md) for more info.</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="1cbb0-109">**x:DeferLoadStrategy="Lazy"** を使うと、XAML アプリの起動やツリー作成パフォーマンスを最適化できます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-109">You can use **x:DeferLoadStrategy="Lazy"** to optimize the startup or tree creation performance of your XAML app.</span></span> <span data-ttu-id="1cbb0-110">**x:DeferLoadStrategy="Lazy"** を使うと、要素とその子の作成が遅延されるため、起動時間とメモリ コストが縮小されます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-110">When you use **x:DeferLoadStrategy="Lazy"**, creation of an element and its children is delayed, which decreases startup time and memory costs.</span></span> <span data-ttu-id="1cbb0-111">これは、表示頻度の低い要素や条件付きで表示される要素のコストを削減するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-111">This is useful to reduce the costs of elements that are shown infrequently or conditionally.</span></span> <span data-ttu-id="1cbb0-112">要素は、コードまたは VisualStateManager から参照された時点で実体化されます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-112">The element will be realized when it's referred to from code or VisualStateManager.</span></span>
 
-**x:DeferLoadStrategy="Lazy"** を使うと、XAML アプリの起動時またはツリー作成時のパフォーマンスを最適化できます。 **x:DeferLoadStrategy="Lazy"** を使うと、要素とその子の作成が遅延され、要素を作成する必要がなくなることにより、起動時間とメモリ コストが減ります。 これは、あまり必要のない要素や条件付きで必要な要素のコストを削減するのに役立ちます。 要素は、コードまたは VisualStateManager から参照された時点で実体化されます。
+<span data-ttu-id="1cbb0-113">ただし、XAML フレームワークによる遅延要素の追跡で、影響を受ける各要素のメモリ使用量に約 600 バイトが追加されます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-113">However, the tracking of deferred elements by the XAML framework adds about 600 bytes to the memory usage for each element affected.</span></span> <span data-ttu-id="1cbb0-114">遅延させる要素ツリーが大きいほど、起動時間がより節約されます。ただし、メモリ使用量のコストは増加します。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-114">The larger the element tree you defer, the more startup time you'll save, but at the cost of a greater memory footprint.</span></span> <span data-ttu-id="1cbb0-115">したがって、この属性を過剰に使うとパフォーマンスが低下する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-115">Therefore, it's possible to overuse this attribute to the extent that your performance decreases.</span></span>
 
-ただし、遅延のための予約により、影響を受ける要素ごとにメモリ使用量が約 600 バイト増えます。 遅延させる要素ツリーが大きいほど、起動時間がより節約されます。ただし、メモリ使用量のコストは増加します。 したがって、この属性を過剰に使うとパフォーマンスが低下する可能性があります。
-
-## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a><span data-ttu-id="1cbb0-116">XAML 属性の使用方法</span><span class="sxs-lookup"><span data-stu-id="1cbb0-116">XAML attribute usage</span></span>
 
 ``` syntax
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a><span data-ttu-id="1cbb0-117">注釈</span><span class="sxs-lookup"><span data-stu-id="1cbb0-117">Remarks</span></span>
 
-**x:DeferLoadStrategy** を使う際の制約を以下に示します。
+<span data-ttu-id="1cbb0-118">**x:DeferLoadStrategy** を使う際の制約を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-118">The restrictions for using **x:DeferLoadStrategy** are:</span></span>
 
--   この要素を後で検索する手段が必要なため、定義済みの [x:Name](x-name-attribute.md) が必要です。
--   遅延としてマークできるのは、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) のみです ([**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) から派生した型は除く)。
--   [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol)、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) では、ルート要素を遅延できません。
--   [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の要素は遅延できません。
--   [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) で読み込まれた Loose XAML では機能しません。
--   親要素を移動すると、実現されていない要素はすべて消去されます。
+- <span data-ttu-id="1cbb0-119">要素を後で検索する手段として、要素の [x:Name](x-name-attribute.md) を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-119">You must define an [x:Name](x-name-attribute.md) for the element, as there needs to be a way to find the element later.</span></span>
+- <span data-ttu-id="1cbb0-120">遅延できるのは、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) または [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) から派生した型のみです。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-120">You can only defer types that derive from [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) or [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).</span></span>
+- <span data-ttu-id="1cbb0-121">[**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)、または [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) のルート要素は遅延できません。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-121">You cannot defer root elements in a [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), a [**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol), or a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).</span></span>
+- <span data-ttu-id="1cbb0-122">[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の要素は遅延できません。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-122">You cannot defer elements in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).</span></span>
+- <span data-ttu-id="1cbb0-123">[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) で読み込まれた Loose XAML は遅延できません。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-123">You cannot defer loose XAML loaded with [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).</span></span>
+- <span data-ttu-id="1cbb0-124">親要素を移動すると、実体化されていない要素はすべて消去されます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-124">Moving a parent element will clear out any elements that have not been realized.</span></span>
 
-遅延要素を実現するには、いくつかの方法があります。
+<span data-ttu-id="1cbb0-125">遅延要素を実体化するには、いくつかの方法があります。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-125">There are several different ways to realize the deferred elements:</span></span>
 
--   要素で定義された名前を指定して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出します。
--   要素で定義された名前を指定して [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) を呼び出します。
--   [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) で、遅延要素をターゲットに設定している [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) または **Storyboard** アニメーションを使います。
--   任意の **Storyboard** の遅延要素をターゲットに設定します。
--   遅延要素をターゲットに設定しているバインドを使います。
--   注: 要素のインスタンス化が開始されると、インスタンスは UI スレッド上で作成されます。そのため、一度に作成されるインスタンスが多すぎると、UI で引っかかりが起きることがあります。
+- <span data-ttu-id="1cbb0-126">要素に対して定義した名前を指定して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-126">Call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) with the name that you defined on the element.</span></span>
+- <span data-ttu-id="1cbb0-127">要素に対して定義した名前を指定して [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-127">Call [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) with the name that you defined on the element.</span></span>
+- <span data-ttu-id="1cbb0-128">[**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) で、遅延要素をターゲットに設定している [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) または **Storyboard** アニメーションを使います。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-128">In a [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), use a [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) or **Storyboard** animation that targets the deferred element.</span></span>
+- <span data-ttu-id="1cbb0-129">任意の **Storyboard** で遅延要素をターゲットに設定します。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-129">Target the deferred element in any **Storyboard**.</span></span>
+- <span data-ttu-id="1cbb0-130">遅延要素をターゲットに設定しているバインドを使います。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-130">Use a binding that targets the deferred element.</span></span>
 
-上記のいずれかの方法で遅延要素が作成されると、いくつかの処理が実行されます。
+> <span data-ttu-id="1cbb0-131">注: 要素のインスタンス化が開始されると、インスタンスは UI スレッド上で作成されます。そのため、一度に作成されるインスタンスが多すぎると、UI で引っかかりが起きることがあります。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-131">NOTE: Once the instantiation of an element has started, it is created on the UI thread, so it could cause the UI to stutter if too much is created at once.</span></span>
 
--   要素の [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) イベントが生成されます。
--   要素の任意のバインドが評価されます。
--   遅延要素を含むプロパティに関するプロパティ変更通知を受信するようにアプリケーションが登録されている場合は、通知が生成されます。
+<span data-ttu-id="1cbb0-132">上に示したいずれかの方法で遅延要素が作成されると、以下の動作が発生します。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-132">Once a deferred element is created in any of the ways listed previously, several things happen:</span></span>
 
-遅延要素は入れ子にできますが、最も外側の要素から実現する必要があります。  親が実現される前に子要素を実現しようとすると、例外が生成されます。
+- <span data-ttu-id="1cbb0-133">要素の [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) イベントが生成されます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-133">The [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) event on the element is raised.</span></span>
+- <span data-ttu-id="1cbb0-134">要素のバインドが評価されます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-134">Any bindings on the element are evaluated.</span></span>
+- <span data-ttu-id="1cbb0-135">遅延要素を含むプロパティに関するプロパティ変更通知を受信するように登録した場合は、通知が生成されます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-135">If you have registered to receive property change notifications on the property containing the deferred element(s), the notification is raised.</span></span>
 
-通常は、最初のフレームに表示できないものを遅延させることをお勧めします。  遅延対象の候補を見つけるための指針の 1 つは、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) が折りたたまれた状態で作成されている要素を探すことです。  また、付随 UI (ユーザーの操作によってトリガーされる UI) は、遅延要素を探すのに適した場所です。  
+<span data-ttu-id="1cbb0-136">遅延要素は入れ子にできますが、最も外側の要素から実体化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-136">You can nest deferred elements, however they have to be realized from the outer-most element in.</span></span>  <span data-ttu-id="1cbb0-137">親が実体化される前に子要素を実体化しようとすると、例外が生成されます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-137">If you try to realize a child element before the parent has been realized, an exception is raised.</span></span>
 
-[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) シナリオでの遅延要素に注意してください。この場合、遅延要素により起動時間が短縮しますが、作成する内容によっては、パンのパフォーマンスも低下することがあります。  パンのパフォーマンスを向上させるには、[{x:Bind} マークアップ拡張](x-bind-markup-extension.md) および [x:Phase 属性](x-phase-attribute.md) に関するドキュメントをご覧ください。
+<span data-ttu-id="1cbb0-138">通常は、最初のフレームに表示できないものを遅延させることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-138">Typically, we recommend that you defer elements that are not viewable in the first frame.</span></span> <span data-ttu-id="1cbb0-139">遅延対象の候補を見つけるための指針の 1 つは、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) が折りたたまれた状態で作成されている要素を探すことです。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-139">A good guideline for finding candidates to be deferred is to look for elements that are being created with collapsed [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992).</span></span> <span data-ttu-id="1cbb0-140">また、ユーザーの操作によってトリガーされる UI は、遅延できる要素がないか探す対象として適しています。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-140">Also, UI that is triggered by user interaction is a good place to look for elements that you can defer.</span></span>
 
-**x:DeferLoadStrategy** と同時に [x:Phase](x-phase-attribute.md) 属性を使った場合、要素または要素ツリーが実現すると、バインディングが現在のフェーズまで (現在のフェーズを含む) 適用されます。 **x:Phase** に指定されたフェーズが、要素の保留に影響を与えたり、制御したりすることはありません。 パンの一部としてリスト項目がリサイクルされると、実現した要素は、アクティブな他の要素と同じように機能し、コンパイル済みバインド (**{x:Bind}** バインディング) は同じルール (フェージングを含む) を使って処理されます。
+<span data-ttu-id="1cbb0-141">[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) の遅延要素に注意してください。この場合、遅延要素により起動時間が短縮しますが、作成する内容によっては、パンのパフォーマンスも低下することがあります。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-141">Be wary of deferring elements in a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878), as it will decrease your startup time, but could also decrease your panning performance depending on what you're creating.</span></span> <span data-ttu-id="1cbb0-142">パンのパフォーマンスを向上させる方法については、[{x:Bind} マークアップ拡張](x-bind-markup-extension.md) および [x:Phase 属性](x-phase-attribute.md) に関するドキュメントをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-142">If you are looking to increase panning performance, see the [{x:Bind} markup extension](x-bind-markup-extension.md) and [x:Phase attribute](x-phase-attribute.md) documentation.</span></span>
 
-一般的なガイドラインでは、必要なパフォーマンスが得られていることを確認するために、作業の前と後にアプリケーションを測定します。
+<span data-ttu-id="1cbb0-143">**x:DeferLoadStrategy** と同時に [x:Phase 属性](x-phase-attribute.md)を使った場合、要素または要素ツリーが実体化されると、バインディングが現在のフェーズまで (現在のフェーズを含めて) 適用されます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-143">If the [x:Phase attribute](x-phase-attribute.md) is used in conjunction with **x:DeferLoadStrategy** then, when an element or an element tree is realized, the bindings are applied up to and including the current phase.</span></span> <span data-ttu-id="1cbb0-144">**x:Phase** に指定されたフェーズによって、要素の遅延が影響または制御されることはありません。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-144">The phase specified for **x:Phase** does not affect or control the deferral of the element.</span></span> <span data-ttu-id="1cbb0-145">パンの一部としてリスト項目がリサイクルされると、実体化された要素は、アクティブな他の要素と同じように機能し、コンパイル済みバインド (**{x:Bind}** バインディング) は同じルール (フェージングを含む) を使って処理されます。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-145">When a list item is recycled as part of panning, realized elements behave in the same way as other active elements, and compiled bindings (**{x:Bind}** bindings) are processed using the same rules, including phasing.</span></span>
 
-## <a name="example"></a>例
+<span data-ttu-id="1cbb0-146">一般的なガイドラインでは、必要なパフォーマンスが得られていることを確認するために、作業の前と後にアプリのパフォーマンスを測定します。</span><span class="sxs-lookup"><span data-stu-id="1cbb0-146">A general guideline is to measure the performance of your app before and after to make sure you are getting the performance that you want.</span></span>
+
+## <a name="example"></a><span data-ttu-id="1cbb0-147">例</span><span class="sxs-lookup"><span data-stu-id="1cbb0-147">Example</span></span>
 
 ```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
@@ -90,8 +93,7 @@ ms.lasthandoff: 02/07/2017
 ```csharp
 private void RealizeElements_Click(object sender, RoutedEventArgs e)
 {
-    this.FindName("DeferredGrid"); // This will realize the deferred grid
+    // This will realize the deferred grid.
+    this.FindName("DeferredGrid");
 }
 ```
-
-

@@ -4,46 +4,46 @@ description: ソケットは、下位レベルのデータ転送テクノロジ�
 title: ソケット
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.author: stwhi
-ms.date: 11/27/2017
+ms.date: 06/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 70d51009fc2231900ad0eba8dfc0e706433e2338
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 31d05f57c674b7b882cf3494e8fb29611963f83c
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690988"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983483"
 ---
-# <a name="sockets"></a><span data-ttu-id="63aa6-105">ソケット</span><span class="sxs-lookup"><span data-stu-id="63aa6-105">Sockets</span></span>
-<span data-ttu-id="63aa6-106">ソケットは、下位レベルのデータ転送テクノロジであり、多くのネットワーク プロトコルがこの上に実装されています。</span><span class="sxs-lookup"><span data-stu-id="63aa6-106">Sockets are a low-level data transfer technology on top of which many networking protocols are implemented.</span></span> <span data-ttu-id="63aa6-107">UWP は、接続が長期間維持されるか、確立された接続が必要あるかどうかに関係なく、クライアント/サーバー アプリケーションまたは ピア ツー ピア アプリケーションの TCP および UDP ソケット クラスを提供します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-107">UWP offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.</span></span>
+# <a name="sockets"></a><span data-ttu-id="a6e34-105">ソケット</span><span class="sxs-lookup"><span data-stu-id="a6e34-105">Sockets</span></span>
+<span data-ttu-id="a6e34-106">ソケットは、下位レベルのデータ転送テクノロジであり、多くのネットワーク プロトコルがこの上に実装されています。</span><span class="sxs-lookup"><span data-stu-id="a6e34-106">Sockets are a low-level data transfer technology on top of which many networking protocols are implemented.</span></span> <span data-ttu-id="a6e34-107">UWP は、接続が長期間維持されるか、確立された接続が必要あるかどうかに関係なく、クライアント/サーバー アプリケーションまたは ピア ツー ピア アプリケーションの TCP および UDP ソケット クラスを提供します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-107">UWP offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.</span></span>
 
-<span data-ttu-id="63aa6-108">このトピックでは、[**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) 名前空間にあるユニバーサル Windows プラットフォーム (UWP) ソケット クラスを使う方法に焦点を当てます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-108">This topic focuses on how to use the Universal Windows Platform (UWP) socket classes that are in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) namespace.</span></span> <span data-ttu-id="63aa6-109">しかし、[Windows ソケット 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673) を UWP アプリで使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-109">But you can also use [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673) in a UWP app.</span></span>
+<span data-ttu-id="a6e34-108">このトピックでは、[**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) 名前空間にあるユニバーサル Windows プラットフォーム (UWP) ソケット クラスを使う方法に焦点を当てます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-108">This topic focuses on how to use the Universal Windows Platform (UWP) socket classes that are in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) namespace.</span></span> <span data-ttu-id="a6e34-109">しかし、[Windows ソケット 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673) を UWP アプリで使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-109">But you can also use [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673) in a UWP app.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="63aa6-110">[ネットワーク分離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)の結果として、Windows では、同じコンピューターで実行される 2 つの UWP アプリ間での、ローカル ループバック アドレス (127.0.0.0) 経由であるか明示的なローカル IP アドレスの指定によるかに関係なく、ソケット接続 (Sockets または WinSock) の確立を禁止しています。</span><span class="sxs-lookup"><span data-stu-id="63aa6-110">As a consequence of [network isolation](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), Windows disallows establishing a socket connection (Sockets or WinSock) between two UWP apps running on the same machine; whether that's via the local loopback address (127.0.0.0), or by explicitly specifying the local IP address.</span></span> <span data-ttu-id="63aa6-111">UWP アプリが別の UWP アプリとの通信に使うメカニズムについて詳しくは、「[アプリ間通信](/windows/uwp/app-to-app/index?branch=live)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="63aa6-111">For details about mechanisms by which UWP apps can communicate with one another, see [App-to-app communication](/windows/uwp/app-to-app/index?branch=live).</span></span>
+> <span data-ttu-id="a6e34-110">[ネットワーク分離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)の結果として、Windows では、同じコンピューターで実行される 2 つの UWP アプリ間での、ローカル ループバック アドレス (127.0.0.0) 経由であるか明示的なローカル IP アドレスの指定によるかに関係なく、ソケット接続 (Sockets または WinSock) の確立を禁止しています。</span><span class="sxs-lookup"><span data-stu-id="a6e34-110">As a consequence of [network isolation](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), Windows disallows establishing a socket connection (Sockets or WinSock) between two UWP apps running on the same machine; whether that's via the local loopback address (127.0.0.0), or by explicitly specifying the local IP address.</span></span> <span data-ttu-id="a6e34-111">UWP アプリが別の UWP アプリとの通信に使うメカニズムについて詳しくは、「[アプリ間通信](/windows/uwp/app-to-app/index)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a6e34-111">For details about mechanisms by which UWP apps can communicate with one another, see [App-to-app communication](/windows/uwp/app-to-app/index).</span></span>
 
-## <a name="build-a-basic-tcp-socket-client-and-server"></a><span data-ttu-id="63aa6-112">基本的な TCP ソケット クライアントおよびサーバーを構築する</span><span class="sxs-lookup"><span data-stu-id="63aa6-112">Build a basic TCP socket client and server</span></span>
-<span data-ttu-id="63aa6-113">TCP (伝送制御プロトコル) ソケットは、有効期間が長い接続用にどちらの方向にも下位レベルのネットワーク データ転送機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-113">A TCP (Transmission Control Protocol) socket provides low-level network data transfers in either direction for connections that are long-lived.</span></span> <span data-ttu-id="63aa6-114">TCP ソケットは、インターネットで使われるほとんどのネットワーク プロトコルのベースとなる機能です。</span><span class="sxs-lookup"><span data-stu-id="63aa6-114">TCP sockets are the underlying feature used by most of the network protocols used on the Internet.</span></span> <span data-ttu-id="63aa6-115">基本的な TCP 操作の方法を示すため、以下のコード例では、TCP 経由でデータを送受信してエコー クライアントおよびサーバーを形成する [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) と [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) を示しています。</span><span class="sxs-lookup"><span data-stu-id="63aa6-115">To demonstrate basic TCP operations, the example code below shows a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) and a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) sending and receiving data over TCP to form an echo client and server.</span></span>
+## <a name="build-a-basic-tcp-socket-client-and-server"></a><span data-ttu-id="a6e34-112">基本的な TCP ソケット クライアントおよびサーバーを構築する</span><span class="sxs-lookup"><span data-stu-id="a6e34-112">Build a basic TCP socket client and server</span></span>
+<span data-ttu-id="a6e34-113">TCP (伝送制御プロトコル) ソケットは、有効期間が長い接続用にどちらの方向にも下位レベルのネットワーク データ転送機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-113">A TCP (Transmission Control Protocol) socket provides low-level network data transfers in either direction for connections that are long-lived.</span></span> <span data-ttu-id="a6e34-114">TCP ソケットは、インターネットで使われるほとんどのネットワーク プロトコルのベースとなる機能です。</span><span class="sxs-lookup"><span data-stu-id="a6e34-114">TCP sockets are the underlying feature used by most of the network protocols used on the Internet.</span></span> <span data-ttu-id="a6e34-115">基本的な TCP 操作の方法を示すため、以下のコード例では、TCP 経由でデータを送受信してエコー クライアントおよびサーバーを形成する [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) と [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) を示しています。</span><span class="sxs-lookup"><span data-stu-id="a6e34-115">To demonstrate basic TCP operations, the example code below shows a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) and a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) sending and receiving data over TCP to form an echo client and server.</span></span>
 
-<span data-ttu-id="63aa6-116">できる限り少ない可変要素から始めるため (さらに、今のところはネットワーク分離の問題を回避するため)、新しいプロジェクトを作成し、以下のクライアント コードとサーバー コードの両方を同じプロジェクトを配置します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-116">To begin with as few moving parts as possible&mdash;and to sidestep network isolation issues for the present&mdash;create a new project, and put both the client and the server code below into the same project.</span></span>
+<span data-ttu-id="a6e34-116">できる限り少ない可変要素から始めるため (さらに、今のところはネットワーク分離の問題を回避するため)、新しいプロジェクトを作成し、以下のクライアント コードとサーバー コードの両方を同じプロジェクトを配置します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-116">To begin with as few moving parts as possible&mdash;and to sidestep network isolation issues for the present&mdash;create a new project, and put both the client and the server code below into the same project.</span></span>
 
-<span data-ttu-id="63aa6-117">プロジェクトで[アプリの機能を宣言](../packaging/app-capability-declarations.md)する必要があります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-117">You'll need to [declare an app capability](../packaging/app-capability-declarations.md) in your project.</span></span> <span data-ttu-id="63aa6-118">アプリ パッケージ マニフェストのソース ファイル (`Package.appxmanifest` ファイル) を開き、[機能] タブで **[プライベート ネットワーク (クライアントとサーバー)]** をオンにします。</span><span class="sxs-lookup"><span data-stu-id="63aa6-118">Open your app package manifest source file (the `Package.appxmanifest` file) and, on the Capabilities tab, check **Private Networks (Client & Server)**.</span></span> <span data-ttu-id="63aa6-119">`Package.appxmanifest` マークアップはこのようになります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-119">This is how that looks in the `Package.appxmanifest` markup.</span></span>
+<span data-ttu-id="a6e34-117">プロジェクトで[アプリの機能を宣言](../packaging/app-capability-declarations.md)する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-117">You'll need to [declare an app capability](../packaging/app-capability-declarations.md) in your project.</span></span> <span data-ttu-id="a6e34-118">アプリ パッケージ マニフェストのソース ファイル (`Package.appxmanifest` ファイル) を開き、[機能] タブで **[プライベート ネットワーク (クライアントとサーバー)]** をオンにします。</span><span class="sxs-lookup"><span data-stu-id="a6e34-118">Open your app package manifest source file (the `Package.appxmanifest` file) and, on the Capabilities tab, check **Private Networks (Client & Server)**.</span></span> <span data-ttu-id="a6e34-119">`Package.appxmanifest` マークアップはこのようになります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-119">This is how that looks in the `Package.appxmanifest` markup.</span></span>
 
 ```xml
 <Capability Name="privateNetworkClientServer" />
 ```
 
-<span data-ttu-id="63aa6-120">インターネット経由で接続する場合は、`privateNetworkClientServer` の代わりに `internetClientServer` を宣言できます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-120">Instead of `privateNetworkClientServer`, you can declare `internetClientServer` if you're connecting over the internet.</span></span> <span data-ttu-id="63aa6-121">**StreamSocket** と **StreamSocketListener** のどちらでも 1 つ以上のアプリ機能を宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-121">Both **StreamSocket** and **StreamSocketListener** need one or other of these app capabilities to be declared.</span></span>
+<span data-ttu-id="a6e34-120">インターネット経由で接続する場合は、`privateNetworkClientServer` の代わりに `internetClientServer` を宣言できます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-120">Instead of `privateNetworkClientServer`, you can declare `internetClientServer` if you're connecting over the internet.</span></span> <span data-ttu-id="a6e34-121">**StreamSocket** と **StreamSocketListener** のどちらでも 1 つ以上のアプリ機能を宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-121">Both **StreamSocket** and **StreamSocketListener** need one or other of these app capabilities to be declared.</span></span>
 
-### <a name="an-echo-client-and-server-using-tcp-sockets"></a><span data-ttu-id="63aa6-122">TCP ソケットを使ったエコー クライアントおよびサーバー</span><span class="sxs-lookup"><span data-stu-id="63aa6-122">An echo client and server, using TCP sockets</span></span>
-<span data-ttu-id="63aa6-123">[**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) を構築し、受信 TCP 接続のリッスンを開始します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-123">Construct a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) and begin listening for incoming TCP connections.</span></span> <span data-ttu-id="63aa6-124">[**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) イベントは、クライアントが **StreamSocketListener** との接続を確立するたびに発生します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-124">The [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) event is raised each time a client establishes a connection with the **StreamSocketListener**.</span></span>
+### <a name="an-echo-client-and-server-using-tcp-sockets"></a><span data-ttu-id="a6e34-122">TCP ソケットを使ったエコー クライアントおよびサーバー</span><span class="sxs-lookup"><span data-stu-id="a6e34-122">An echo client and server, using TCP sockets</span></span>
+<span data-ttu-id="a6e34-123">[**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) を構築し、受信 TCP 接続のリッスンを開始します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-123">Construct a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) and begin listening for incoming TCP connections.</span></span> <span data-ttu-id="a6e34-124">[**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) イベントは、クライアントが **StreamSocketListener** との接続を確立するたびに発生します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-124">The [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) event is raised each time a client establishes a connection with the **StreamSocketListener**.</span></span>
 
-<span data-ttu-id="63aa6-125">さらに、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) を構築してサーバーへの接続を確立し、要求を送信して応答を受信します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-125">Also construct a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live), establish a connection to the server, send a request, and receive a response.</span></span>
+<span data-ttu-id="a6e34-125">さらに、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) を構築してサーバーへの接続を確立し、要求を送信して応答を受信します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-125">Also construct a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket), establish a connection to the server, send a request, and receive a response.</span></span>
 
-<span data-ttu-id="63aa6-126">`StreamSocketAndListenerPage` という新しい **Page** を作成します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-126">Create a new **Page** named `StreamSocketAndListenerPage`.</span></span> <span data-ttu-id="63aa6-127">`StreamSocketAndListenerPage.xaml` に XAML マークアップを置き、`StreamSocketAndListenerPage` クラス内に命令型コードを置きます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-127">Put the XAML markup in `StreamSocketAndListenerPage.xaml`, and the put the imperative code inside the `StreamSocketAndListenerPage` class.</span></span>
+<span data-ttu-id="a6e34-126">`StreamSocketAndListenerPage` という新しい **Page** を作成します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-126">Create a new **Page** named `StreamSocketAndListenerPage`.</span></span> <span data-ttu-id="a6e34-127">`StreamSocketAndListenerPage.xaml` に XAML マークアップを置き、`StreamSocketAndListenerPage` クラス内に命令型コードを置きます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-127">Put the XAML markup in `StreamSocketAndListenerPage.xaml`, and the put the imperative code inside the `StreamSocketAndListenerPage` class.</span></span>
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -185,19 +185,164 @@ private async void StartClient()
 }
 ```
 
-```cpp
-#include <ppltasks.h>
+```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Networking.Sockets.h>
+#include <winrt/Windows.Storage.Streams.h>
+#include <winrt/Windows.UI.Core.h>
+#include <winrt/Windows.UI.Xaml.Navigation.h>
 #include <sstream>
 
-    ...
-    
+using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
 using namespace Windows::UI::Core;
 using namespace Windows::UI::Xaml::Navigation;
+...
+private:
+    Windows::Networking::Sockets::StreamSocketListener m_streamSocketListener;
+    Windows::Networking::Sockets::StreamSocket m_streamSocket;
 
-    ...
+public:
+    void OnNavigatedTo(NavigationEventArgs const& /* e */)
+    {
+        StartServer();
+        StartClient();
+    }
 
+private:
+    IAsyncAction StartServer()
+    {
+        try
+        {
+            // The ConnectionReceived event is raised when connections are received.
+            m_streamSocketListener.ConnectionReceived({ this, &StreamSocketAndListenerPage::OnConnectionReceived });
+
+            // Start listening for incoming TCP connections on the specified port. You can specify any port that's not currently in use.
+            // Every protocol typically has a standard port number. For example, HTTP is typically 80, FTP is 20 and 21, etc.
+            // For this example, we'll choose an arbitrary port number.
+            co_await m_streamSocketListener.BindServiceNameAsync(L"1337");
+            serverListBox().Items().Append(winrt::box_value(L"server is listening..."));
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Networking::Sockets::SocketErrorStatus webErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(ex.to_abi()) };
+            serverListBox().Items().Append(webErrorStatus != Windows::Networking::Sockets::SocketErrorStatus::Unknown ? winrt::box_value(winrt::to_hstring((int32_t)webErrorStatus)) : winrt::box_value(winrt::to_hstring(ex.to_abi())));
+        }
+    }
+
+    IAsyncAction OnConnectionReceived(Windows::Networking::Sockets::StreamSocketListener /* sender */, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs args)
+    {
+        try
+        {
+            auto socket{ args.Socket() }; // Keep the socket referenced, and alive.
+            DataReader dataReader{ socket.InputStream() };
+
+            unsigned int bytesLoaded = co_await dataReader.LoadAsync(sizeof(unsigned int));
+
+            unsigned int stringLength = dataReader.ReadUInt32();
+            bytesLoaded = co_await dataReader.LoadAsync(stringLength);
+            winrt::hstring request = dataReader.ReadString(bytesLoaded);
+
+            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            {
+                std::wstringstream wstringstream;
+                wstringstream << L"server received the request: \"" << request.c_str() << L"\"";
+                serverListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+            });
+
+            // Echo the request back as the response.
+            DataWriter dataWriter{ socket.OutputStream() };
+            dataWriter.WriteUInt32(request.size());
+            dataWriter.WriteString(request);
+            co_await dataWriter.StoreAsync();
+            dataWriter.DetachStream();
+
+            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            {
+                std::wstringstream wstringstream;
+                wstringstream << L"server sent back the response: \"" << request.c_str() << L"\"";
+                serverListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+            });
+
+            m_streamSocketListener = nullptr;
+
+            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            {
+                serverListBox().Items().Append(winrt::box_value(L"server closed its socket"));
+            });
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Networking::Sockets::SocketErrorStatus webErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(ex.to_abi()) };
+            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            {
+                serverListBox().Items().Append(webErrorStatus != Windows::Networking::Sockets::SocketErrorStatus::Unknown ? winrt::box_value(winrt::to_hstring((int32_t)webErrorStatus)) : winrt::box_value(winrt::to_hstring(ex.to_abi())));
+            });
+        }
+    }
+
+    IAsyncAction StartClient()
+    {
+        try
+        {
+            // Establish a connection to the echo server.
+
+            // The server hostname that we will be establishing a connection to. In this example, the server and client are in the same process.
+            Windows::Networking::HostName hostName{ L"localhost" };
+
+            clientListBox().Items().Append(winrt::box_value(L"client is trying to connect..."));
+
+            co_await m_streamSocket.ConnectAsync(hostName, L"1337");
+            clientListBox().Items().Append(winrt::box_value(L"client connected"));
+
+            // Send a request to the echo server.
+            DataWriter dataWriter{ m_streamSocket.OutputStream() };
+            winrt::hstring request{ L"Hello, World!" };
+            dataWriter.WriteUInt32(request.size());
+            dataWriter.WriteString(request);
+
+            co_await dataWriter.StoreAsync();
+
+            std::wstringstream wstringstream;
+            wstringstream << L"client sent the request: \"" << request.c_str() << L"\"";
+            clientListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+
+            co_await dataWriter.FlushAsync();
+            dataWriter.DetachStream();
+
+            // Read data from the echo server.
+            DataReader dataReader{ m_streamSocket.InputStream() };
+            unsigned int bytesLoaded = co_await dataReader.LoadAsync(sizeof(unsigned int));
+            unsigned int stringLength = dataReader.ReadUInt32();
+            bytesLoaded = co_await dataReader.LoadAsync(stringLength);
+            winrt::hstring response{ dataReader.ReadString(bytesLoaded) };
+
+            wstringstream.str(L"");
+            wstringstream << L"client received the response: \"" << response.c_str() << L"\"";
+            clientListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+
+            m_streamSocket = nullptr;
+
+            clientListBox().Items().Append(winrt::box_value(L"client closed its socket"));
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Networking::Sockets::SocketErrorStatus webErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(ex.to_abi()) };
+            serverListBox().Items().Append(webErrorStatus != Windows::Networking::Sockets::SocketErrorStatus::Unknown ? winrt::box_value(winrt::to_hstring((int32_t)webErrorStatus)) : winrt::box_value(winrt::to_hstring(ex.to_abi())));
+        }
+    }
+```
+
+```cpp
+#include <ppltasks.h>
+#include <sstream>
+...
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml::Navigation;
+...
 private:
     Windows::Networking::Sockets::StreamSocketListener^ streamSocketListener;
     Windows::Networking::Sockets::StreamSocket^ streamSocket;
@@ -360,10 +505,13 @@ private:
     }
 ```
 
-## <a name="references-to-streamsockets-in-c-ppl-continuations"></a><span data-ttu-id="63aa6-128">C++ PPL 継続での StreamSockets の参照</span><span class="sxs-lookup"><span data-stu-id="63aa6-128">References to StreamSockets in C++ PPL continuations</span></span>
-<span data-ttu-id="63aa6-129">[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) は、その入出力ストリームにアクティブな読み取り/書き込みがある限り存続します (たとえば、[**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) イベント ハンドラー内でアクセス権を持つ [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) など)。</span><span class="sxs-lookup"><span data-stu-id="63aa6-129">A [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) remains alive as long as there's an active read/write on its input/output stream (let's take for example the [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) that you have access to in your [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) event handler).</span></span> <span data-ttu-id="63aa6-130">[**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync?branch=live) (または `ReadAsync/WriteAsync/StoreAsync`) を呼び出すと、**LoadAsync** の完了ハンドラーが実行を完了するまでソケットへの参照を保持します (ソケットの入力ストリームを使用)。</span><span class="sxs-lookup"><span data-stu-id="63aa6-130">When you call [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync?branch=live) (or `ReadAsync/WriteAsync/StoreAsync`), then that holds a reference to the socket (via the socket's input stream) until the completion handler of the **LoadAsync** is done executing.</span></span>
+## <a name="references-to-streamsockets-in-c-ppl-continuations-applies-to-ccx-primarily"></a><span data-ttu-id="a6e34-128">C++ PPL 継続での StreamSockets の参照 (主に C++/CX に該当)</span><span class="sxs-lookup"><span data-stu-id="a6e34-128">References to StreamSockets in C++ PPL continuations (applies to C++/CX, primarily)</span></span>
+> [!NOTE]
+> <span data-ttu-id="a6e34-129">C++/WinRT コルーチンを使用し、値によるパラメーターを渡す場合は、この問題は該当しません。</span><span class="sxs-lookup"><span data-stu-id="a6e34-129">If you use C++/WinRT coroutines, and you pass parameters by value, then this issue doesn't apply.</span></span> <span data-ttu-id="a6e34-130">パラメーターの引き渡しに関する推奨事項については、「[C++/WinRT を使用した同時実行と非同期操作](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6e34-130">For parameter-passing recommendations, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing).</span></span>
 
-<span data-ttu-id="63aa6-131">ただし、並列パターン ライブラリ (PPL) は既定では継続タスクをインラインでスケジュールしません。</span><span class="sxs-lookup"><span data-stu-id="63aa6-131">But the Parallel Patterns Library (PPL) doesn't schedule task continuations inline by default.</span></span> <span data-ttu-id="63aa6-132">つまり、継続タスクを追加しても (`task::then()` を使用)、継続タスクが完了ハンドラーとしてインラインで実行されるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="63aa6-132">In other words, adding a continuation task (with `task::then()`) doesn't guarantee that the continuation task will execute inline as the completion handler.</span></span>
+<span data-ttu-id="a6e34-131">[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) は、その入出力ストリームにアクティブな読み取り/書き込みがある限り存続します (たとえば、[**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) イベント ハンドラー内でアクセス権を持つ [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) など)。</span><span class="sxs-lookup"><span data-stu-id="a6e34-131">A [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) remains alive as long as there's an active read/write on its input/output stream (let's take for example the [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) that you have access to in your [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) event handler).</span></span> <span data-ttu-id="a6e34-132">[**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (または `ReadAsync/WriteAsync/StoreAsync`) を呼び出す場合、**LoadAsync** の **Completed** イベント ハンドラー (ある場合) が実行を完了するまでソケットへの参照を保持します (ソケットの入力ストリームを使用)。</span><span class="sxs-lookup"><span data-stu-id="a6e34-132">When you call [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (or `ReadAsync/WriteAsync/StoreAsync`), then that holds a reference to the socket (via the socket's input stream) until the **Completed** event handler (if any) of the **LoadAsync** is done executing.</span></span>
+
+<span data-ttu-id="a6e34-133">並列パターン ライブラリ (PPL) は既定では継続タスクをインラインでスケジュールしません。</span><span class="sxs-lookup"><span data-stu-id="a6e34-133">The Parallel Patterns Library (PPL) doesn't schedule task continuations inline by default.</span></span> <span data-ttu-id="a6e34-134">つまり、継続タスクを追加しても (`task::then()` を使用)、継続タスクが完了ハンドラーとしてインラインで実行されるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="a6e34-134">In other words, adding a continuation task (with `task::then()`) doesn't guarantee that the continuation task will execute inline as the completion handler.</span></span>
 
 ```cpp
 void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::StreamSocketListener^ sender, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^ args)
@@ -377,9 +525,9 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-<span data-ttu-id="63aa6-133">**StreamSocket** の観点では、完了ハンドラーは継続本文が実行される前に実行を完了します (およびソケットは破棄の対象となります)。</span><span class="sxs-lookup"><span data-stu-id="63aa6-133">From the perspective of the **StreamSocket**, the completion handler is done executing (and the socket is eligible for disposal) before the continuation body runs.</span></span> <span data-ttu-id="63aa6-134">したがって、ソケットをその継続内で使用する場合はソケットが破棄されないようにするには、ソケットを直接参照 (ラムダ キャプチャを使用) して使うか、間接的に参照 (継続内の `args->Socket` にアクセスし続けることにより) するか、継続タスクを強制的にインラインにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-134">So, to keep your socket from being disposed if you want to use it inside that continuation, you need to either reference the socket directly (via lambda capture) and use it, or indirectly (by continuing to access `args->Socket` inside continuations), or force continuation tasks to be inline.</span></span> <span data-ttu-id="63aa6-135">[StreamSocket のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620609)では、最初の手法 (ラムダ キャプチャ) が実行される様子を確認できます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-135">You can see the first technique (lambda capture) in action in the [StreamSocket sample](http://go.microsoft.com/fwlink/p/?LinkId=620609).</span></span> <span data-ttu-id="63aa6-136">上記の「[基本的な TCP ソケット クライアントおよびサーバーを構築する](#build-a-basic-tcp-socket-client-and-server)」の C++ コードでは、2 番目の手法を使っています。要求を応答としてエコーし、最も内側にあるいずれかの継続内から `args->Socket` にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="63aa6-136">The C++ code in the [Build a basic TCP socket client and server](#build-a-basic-tcp-socket-client-and-server) section above uses the second technique&mdash;it echoes the request back as a response, and it accesses `args->Socket` from within one of the innermost continuations.</span></span>
+<span data-ttu-id="a6e34-135">**StreamSocket** の観点では、完了ハンドラーは継続本文が実行される前に実行を完了します (およびソケットは破棄の対象となります)。</span><span class="sxs-lookup"><span data-stu-id="a6e34-135">From the perspective of the **StreamSocket**, the completion handler is done executing (and the socket is eligible for disposal) before the continuation body runs.</span></span> <span data-ttu-id="a6e34-136">したがって、ソケットをその継続内で使用する場合はソケットが破棄されないようにするには、ソケットを直接参照 (ラムダ キャプチャを使用) して使うか、間接的に参照 (継続内の `args->Socket` にアクセスし続けることにより) するか、継続タスクを強制的にインラインにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-136">So, to keep your socket from being disposed if you want to use it inside that continuation, you need to either reference the socket directly (via lambda capture) and use it, or indirectly (by continuing to access `args->Socket` inside continuations), or force continuation tasks to be inline.</span></span> <span data-ttu-id="a6e34-137">[StreamSocket のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620609)では、最初の手法 (ラムダ キャプチャ) が実行される様子を確認できます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-137">You can see the first technique (lambda capture) in action in the [StreamSocket sample](http://go.microsoft.com/fwlink/p/?LinkId=620609).</span></span> <span data-ttu-id="a6e34-138">上記の「[基本的な TCP ソケット クライアントおよびサーバーを構築する](#build-a-basic-tcp-socket-client-and-server)」の C++/CX コードでは、2 番目の手法を使っています。要求を応答としてエコーし、最も内側にあるいずれかの継続内から `args->Socket` にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="a6e34-138">The C++/CX code in the [Build a basic TCP socket client and server](#build-a-basic-tcp-socket-client-and-server) section above uses the second technique&mdash;it echoes the request back as a response, and it accesses `args->Socket` from within one of the innermost continuations.</span></span>
 
-<span data-ttu-id="63aa6-137">3 番目の手法は、応答をエコーしない場合に適しています。</span><span class="sxs-lookup"><span data-stu-id="63aa6-137">The third technique is appropriate when you're not echoing a response back.</span></span> <span data-ttu-id="63aa6-138">PPL が継続本文をインラインで実行すること強制するには、`task_continuation_context::use_synchronous_execution()` オプションを使います。</span><span class="sxs-lookup"><span data-stu-id="63aa6-138">You use the `task_continuation_context::use_synchronous_execution()` option to force PPL to execute the continuation body inline.</span></span> <span data-ttu-id="63aa6-139">この方法を示すコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-139">Here's a code example showing how to do it.</span></span>
+<span data-ttu-id="a6e34-139">3 番目の手法は、応答をエコーしない場合に適しています。</span><span class="sxs-lookup"><span data-stu-id="a6e34-139">The third technique is appropriate when you're not echoing a response back.</span></span> <span data-ttu-id="a6e34-140">PPL が継続本文をインラインで実行すること強制するには、`task_continuation_context::use_synchronous_execution()` オプションを使います。</span><span class="sxs-lookup"><span data-stu-id="a6e34-140">You use the `task_continuation_context::use_synchronous_execution()` option to force PPL to execute the continuation body inline.</span></span> <span data-ttu-id="a6e34-141">この方法を示すコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-141">Here's a code example showing how to do it.</span></span>
 
 ```cpp
 void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::StreamSocketListener^ sender, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^ args)
@@ -406,21 +554,19 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-<span data-ttu-id="63aa6-140">この動作は、[**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) 名前空間内のすべてのソケットと Websocket クラスに適用されます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-140">This behavior applies to all of the sockets and WebSockets classes in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) namespace.</span></span> <span data-ttu-id="63aa6-141">ただし、クライアント側のシナリオは通常メンバー変数にソケットを格納するため、上の図に示すように、この問題は [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) シナリオに最もよく当てはまります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-141">But client-side scenarios usually store sockets in member variables, so the issue is most applicable to the [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) scenario, as illustrated above.</span></span>
+<span data-ttu-id="a6e34-142">この動作は、[**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) 名前空間内のすべてのソケットと Websocket クラスに適用されます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-142">This behavior applies to all of the sockets and WebSockets classes in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) namespace.</span></span> <span data-ttu-id="a6e34-143">ただし、クライアント側のシナリオは通常メンバー変数にソケットを格納するため、上の図に示すように、この問題は [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) シナリオに最もよく当てはまります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-143">But client-side scenarios usually store sockets in member variables, so the issue is most applicable to the [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) scenario, as illustrated above.</span></span>
 
-## <a name="build-a-basic-udp-socket-client-and-server"></a><span data-ttu-id="63aa6-142">基本的な UDP ソケット クライアントおよびサーバーを構築する</span><span class="sxs-lookup"><span data-stu-id="63aa6-142">Build a basic UDP socket client and server</span></span>
-<span data-ttu-id="63aa6-143">UDP (ユーザー データグラム プロトコル) ソケットは、どちらの方向にも低レベルのネットワーク データ転送を提供する TCP ソケットに似ています。</span><span class="sxs-lookup"><span data-stu-id="63aa6-143">A UDP (User Datagram Protocol) socket is similar to a TCP socket in that it also provides low-level network data transfers in either direction.</span></span> <span data-ttu-id="63aa6-144">ただし、TCP ソケットは有効期間が長い接続向けであり、UDP ソケットは確立された接続が必要ないアプリケーション向けです。</span><span class="sxs-lookup"><span data-stu-id="63aa6-144">But, while a TCP socket is for long-lived connections, a UDP socket is for applications where an established connection is not required.</span></span> <span data-ttu-id="63aa6-145">UDP ソケットはどちらのエンドポイントでも接続を保持しないため、リモート コンピューター間のネットワーク向けの高速でシンプルなソリューションです。</span><span class="sxs-lookup"><span data-stu-id="63aa6-145">Because UDP sockets don't maintain connection on both endpoints, they're a fast and simple solution for networking between remote machines.</span></span> <span data-ttu-id="63aa6-146">ただし、UDP ソケットは、ネットワーク パケットの整合性も、パケットがリモートの宛先に到達するかどうかもまったく保証しません。</span><span class="sxs-lookup"><span data-stu-id="63aa6-146">But UDP sockets don't ensure integrity of the network packets nor even whether packets make it to the remote destination at all.</span></span> <span data-ttu-id="63aa6-147">したがって、アプリはそれを許容するように設計されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-147">So your app will need to be designed to tolerate that.</span></span> <span data-ttu-id="63aa6-148">UDP ソケットを使うアプリケーションの例には、ローカル ネットワーク探索やローカル チャット クライアントなどがあります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-148">Some examples of applications that use UDP sockets are local network discovery, and local chat clients.</span></span>
+## <a name="build-a-basic-udp-socket-client-and-server"></a><span data-ttu-id="a6e34-144">基本的な UDP ソケット クライアントおよびサーバーを構築する</span><span class="sxs-lookup"><span data-stu-id="a6e34-144">Build a basic UDP socket client and server</span></span>
+<span data-ttu-id="a6e34-145">UDP (ユーザー データグラム プロトコル) ソケットは、どちらの方向にも低レベルのネットワーク データ転送を提供する TCP ソケットに似ています。</span><span class="sxs-lookup"><span data-stu-id="a6e34-145">A UDP (User Datagram Protocol) socket is similar to a TCP socket in that it also provides low-level network data transfers in either direction.</span></span> <span data-ttu-id="a6e34-146">ただし、TCP ソケットは有効期間が長い接続向けであり、UDP ソケットは確立された接続が必要ないアプリケーション向けです。</span><span class="sxs-lookup"><span data-stu-id="a6e34-146">But, while a TCP socket is for long-lived connections, a UDP socket is for applications where an established connection is not required.</span></span> <span data-ttu-id="a6e34-147">UDP ソケットはどちらのエンドポイントでも接続を保持しないため、リモート コンピューター間のネットワーク向けの高速でシンプルなソリューションです。</span><span class="sxs-lookup"><span data-stu-id="a6e34-147">Because UDP sockets don't maintain connection on both endpoints, they're a fast and simple solution for networking between remote machines.</span></span> <span data-ttu-id="a6e34-148">ただし、UDP ソケットは、ネットワーク パケットの整合性も、パケットがリモートの宛先に到達するかどうかもまったく保証しません。</span><span class="sxs-lookup"><span data-stu-id="a6e34-148">But UDP sockets don't ensure integrity of the network packets nor even whether packets make it to the remote destination at all.</span></span> <span data-ttu-id="a6e34-149">したがって、アプリはそれを許容するように設計されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-149">So your app will need to be designed to tolerate that.</span></span> <span data-ttu-id="a6e34-150">UDP ソケットを使うアプリケーションの例には、ローカル ネットワーク探索やローカル チャット クライアントなどがあります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-150">Some examples of applications that use UDP sockets are local network discovery, and local chat clients.</span></span>
 
-<span data-ttu-id="63aa6-149">基本的な UDP 操作の方法を示すため、以下のコード例では、UDP 経由でデータを送受信してエコー クライアントおよびサーバーを形成するために使用される [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) クラスを示しています。</span><span class="sxs-lookup"><span data-stu-id="63aa6-149">To demonstrate basic UDP operations, the example code below shows the [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) class being used to both send and receive data over UDP to form an echo client and server.</span></span> <span data-ttu-id="63aa6-150">新しいプロジェクトを作成し、以下のクライアント コードとサーバー コードの両方を同じプロジェクトに配置します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-150">Create a new project, and put both the client and the server code below into the same project.</span></span> <span data-ttu-id="63aa6-151">TCP ソケットの場合と同様、**[プライベート ネットワーク (クライアントとサーバー)]** アプリ機能を宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-151">Just as for a TCP socket, you'll need to declare the **Private Networks (Client & Server)** app capability.</span></span>
+<span data-ttu-id="a6e34-151">基本的な UDP 操作の方法を示すため、以下のコード例では、UDP 経由でデータを送受信してエコー クライアントおよびサーバーを形成するために使用される [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) クラスを示しています。</span><span class="sxs-lookup"><span data-stu-id="a6e34-151">To demonstrate basic UDP operations, the example code below shows the [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) class being used to both send and receive data over UDP to form an echo client and server.</span></span> <span data-ttu-id="a6e34-152">新しいプロジェクトを作成し、以下のクライアント コードとサーバー コードの両方を同じプロジェクトに配置します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-152">Create a new project, and put both the client and the server code below into the same project.</span></span> <span data-ttu-id="a6e34-153">TCP ソケットの場合と同様、**[プライベート ネットワーク (クライアントとサーバー)]** アプリ機能を宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-153">Just as for a TCP socket, you'll need to declare the **Private Networks (Client & Server)** app capability.</span></span>
 
-### <a name="an-echo-client-and-server-using-udp-sockets"></a><span data-ttu-id="63aa6-152">UDP ソケットを使ったエコー クライアントおよびサーバー</span><span class="sxs-lookup"><span data-stu-id="63aa6-152">An echo client and server, using UDP sockets</span></span>
-<span data-ttu-id="63aa6-153">エコー サーバーの役割を果たす [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) を構築して特定のポート番号にバインドし、受信 UDP メッセージをリッスンしてエコーし直します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-153">Construct a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) to play the role of the echo server, bind it to a specific port number, listen for an incoming UDP message, and echo it back.</span></span> <span data-ttu-id="63aa6-154">[**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived) イベントは、メッセージがソケットで受信されたときに発生します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-154">The [**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived) event is raised when a message is receieved on the socket.</span></span>
+### <a name="an-echo-client-and-server-using-udp-sockets"></a><span data-ttu-id="a6e34-154">UDP ソケットを使ったエコー クライアントおよびサーバー</span><span class="sxs-lookup"><span data-stu-id="a6e34-154">An echo client and server, using UDP sockets</span></span>
+<span data-ttu-id="a6e34-155">エコー サーバーの役割を果たす [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) を構築して特定のポート番号にバインドし、受信 UDP メッセージをリッスンしてエコーし直します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-155">Construct a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) to play the role of the echo server, bind it to a specific port number, listen for an incoming UDP message, and echo it back.</span></span> <span data-ttu-id="a6e34-156">[**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived) イベントは、メッセージがソケットで受信されたときに発生します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-156">The [**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived) event is raised when a message is receieved on the socket.</span></span>
 
-<span data-ttu-id="63aa6-155">エコー クライアントの役割を果たす別の **DatagramSocket** を構築して特定のポート番号にバインドし、UDP メッセージを送信して応答を受信します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-155">Construct another **DatagramSocket** to play the role of the echo client, bind it to a specific port number, send a UDP message, and receive a response.</span></span>
+<span data-ttu-id="a6e34-157">エコー クライアントの役割を果たす別の **DatagramSocket** を構築して特定のポート番号にバインドし、UDP メッセージを送信して応答を受信します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-157">Construct another **DatagramSocket** to play the role of the echo client, bind it to a specific port number, send a UDP message, and receive a response.</span></span>
 
-<span data-ttu-id="63aa6-156">`MainPage.xaml` に XAML マークアップを置き、`MainPage` クラス内に命令型コードを置きます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-156">Put the XAML markup in `MainPage.xaml`, and the put the imperative code inside your `MainPage` class.</span></span>
-
-<span data-ttu-id="63aa6-157">`DatagramSocketPage` という新しい **Page** を作成します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-157">Create a new **Page** named `DatagramSocketPage`.</span></span> <span data-ttu-id="63aa6-158">`DatagramSocketPage.xaml` に XAML マークアップを置き、`DatagramSocketPage` クラス内に命令型コードを置きます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-158">Put the XAML markup in `DatagramSocketPage.xaml`, and the put the imperative code inside the `DatagramSocketPage` class.</span></span>
+<span data-ttu-id="a6e34-158">`DatagramSocketPage` という新しい **Page** を作成します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-158">Create a new **Page** named `DatagramSocketPage`.</span></span> <span data-ttu-id="a6e34-159">`DatagramSocketPage.xaml` に XAML マークアップを置き、`DatagramSocketPage` クラス内に命令型コードを置きます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-159">Put the XAML markup in `DatagramSocketPage.xaml`, and the put the imperative code inside the `DatagramSocketPage` class.</span></span>
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -570,19 +716,149 @@ private async void ClientDatagramSocket_MessageReceived(Windows.Networking.Socke
 }
 ```
 
-```cpp
-#include <ppltasks.h>
+```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Networking.Sockets.h>
+#include <winrt/Windows.Storage.Streams.h>
+#include <winrt/Windows.UI.Core.h>
+#include <winrt/Windows.UI.Xaml.Navigation.h>
 #include <sstream>
 
-    ...
-
+using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
 using namespace Windows::UI::Core;
 using namespace Windows::UI::Xaml::Navigation;
+...
+private:
+    Windows::Networking::Sockets::DatagramSocket m_clientDatagramSocket;
+    Windows::Networking::Sockets::DatagramSocket m_serverDatagramSocket;
 
-    ...
+public:
+    void OnNavigatedTo(NavigationEventArgs const& /* e */)
+    {
+        StartServer();
+        StartClient();
+    }
 
+private:
+    IAsyncAction StartServer()
+    {
+        try
+        {
+            // The ConnectionReceived event is raised when connections are received.
+            m_serverDatagramSocket.MessageReceived({ this, &DatagramSocketPage::ServerDatagramSocket_MessageReceived });
+
+            serverListBox().Items().Append(winrt::box_value(L"server is about to bind..."));
+
+            // Start listening for incoming TCP connections on the specified port. You can specify any port that's not currently in use.
+            co_await m_serverDatagramSocket.BindServiceNameAsync(L"1337");
+            serverListBox().Items().Append(winrt::box_value(L"server is bound to port number 1337"));
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Networking::Sockets::SocketErrorStatus webErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(ex.to_abi()) };
+            serverListBox().Items().Append(webErrorStatus != Windows::Networking::Sockets::SocketErrorStatus::Unknown ? winrt::box_value(winrt::to_hstring((int32_t)webErrorStatus)) : winrt::box_value(winrt::to_hstring(ex.to_abi())));
+        }
+    }
+
+    IAsyncAction ServerDatagramSocket_MessageReceived(Windows::Networking::Sockets::DatagramSocket sender, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs args)
+    {
+        DataReader dataReader{ args.GetDataReader() };
+        winrt::hstring request{ dataReader.ReadString(dataReader.UnconsumedBufferLength()) };
+
+        serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        {
+            std::wstringstream wstringstream;
+            wstringstream << L"server received the request: \"" << request.c_str() << L"\"";
+            serverListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+        });
+
+        // Echo the request back as the response.
+        IOutputStream outputStream = co_await sender.GetOutputStreamAsync(args.RemoteAddress(), L"1336");
+        DataWriter dataWriter{ outputStream };
+        dataWriter.WriteString(request);
+
+        co_await dataWriter.StoreAsync();
+        dataWriter.DetachStream();
+
+        serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        {
+            std::wstringstream wstringstream;
+            wstringstream << L"server sent back the response: \"" << request.c_str() << L"\"";
+            serverListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+
+            m_serverDatagramSocket = nullptr;
+
+            serverListBox().Items().Append(winrt::box_value(L"server closed its socket"));
+        });
+    }
+
+    IAsyncAction StartClient()
+    {
+        try
+        {
+            m_clientDatagramSocket.MessageReceived({ this, &DatagramSocketPage::ClientDatagramSocket_MessageReceived });
+
+            // Establish a connection to the echo server.
+            // The server hostname that we will be establishing a connection to. In this example, the server and client are in the same process.
+            Windows::Networking::HostName hostName{ L"localhost" };
+
+            clientListBox().Items().Append(winrt::box_value(L"client is about to bind..."));
+
+            co_await m_clientDatagramSocket.BindServiceNameAsync(L"1336");
+            clientListBox().Items().Append(winrt::box_value(L"client is bound to port number 1336"));
+
+            // Send a request to the echo server.
+            Windows::Networking::Sockets::DatagramSocket serverDatagramSocket;
+            IOutputStream outputStream = co_await m_serverDatagramSocket.GetOutputStreamAsync(hostName, L"1337");
+
+            winrt::hstring request{ L"Hello, World!" };
+            DataWriter dataWriter{ outputStream };
+            dataWriter.WriteString(request);
+            co_await dataWriter.StoreAsync();
+            dataWriter.DetachStream();
+
+            std::wstringstream wstringstream;
+            wstringstream << L"client sent the request: \"" << request.c_str() << L"\"";
+            clientListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Networking::Sockets::SocketErrorStatus webErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(ex.to_abi()) };
+            serverListBox().Items().Append(webErrorStatus != Windows::Networking::Sockets::SocketErrorStatus::Unknown ? winrt::box_value(winrt::to_hstring((int32_t)webErrorStatus)) : winrt::box_value(winrt::to_hstring(ex.to_abi())));
+        }
+    }
+
+    void ClientDatagramSocket_MessageReceived(Windows::Networking::Sockets::DatagramSocket const& /* sender */, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs const& args)
+    {
+        DataReader dataReader{ args.GetDataReader() };
+        winrt::hstring response{ dataReader.ReadString(dataReader.UnconsumedBufferLength()) };
+        clientListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        {
+            std::wstringstream wstringstream;
+            wstringstream << L"client received the response: \"" << response.c_str() << L"\"";
+            clientListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+        });
+
+        m_clientDatagramSocket = nullptr;
+
+        clientListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        {
+            clientListBox().Items().Append(winrt::box_value(L"client closed its socket"));
+        });
+    }
+```
+
+```cpp
+#include <ppltasks.h>
+#include <sstream>
+...
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml::Navigation;
+...
 private:
     Windows::Networking::Sockets::DatagramSocket^ clientDatagramSocket;
     Windows::Networking::Sockets::DatagramSocket^ serverDatagramSocket;
@@ -724,15 +1000,15 @@ private:
     }
 ```
 
-## <a name="background-operations-and-the-socket-broker"></a><span data-ttu-id="63aa6-159">バックグラウンド操作とソケット ブローカー</span><span class="sxs-lookup"><span data-stu-id="63aa6-159">Background operations and the socket broker</span></span>
-<span data-ttu-id="63aa6-160">ソケット ブローカーを使ってチャネル トリガーを制御すると、アプリがフォアグラウンドでないときもソケットで接続やデータを適切に受け取るようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-160">You can use the socket broker, and control channel triggers, to ensure that your app properly receives connections or data on sockets while it's not in the foreground.</span></span> <span data-ttu-id="63aa6-161">詳しくは、「[バックグラウンドでのネットワーク通信](network-communications-in-the-background.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="63aa6-161">For more info, see [Network communications in the background](network-communications-in-the-background.md).</span></span>
+## <a name="background-operations-and-the-socket-broker"></a><span data-ttu-id="a6e34-160">バックグラウンド操作とソケット ブローカー</span><span class="sxs-lookup"><span data-stu-id="a6e34-160">Background operations and the socket broker</span></span>
+<span data-ttu-id="a6e34-161">ソケット ブローカーを使ってチャネル トリガーを制御すると、アプリがフォアグラウンドでないときもソケットで接続やデータを適切に受け取るようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-161">You can use the socket broker, and control channel triggers, to ensure that your app properly receives connections or data on sockets while it's not in the foreground.</span></span> <span data-ttu-id="a6e34-162">詳しくは、「[バックグラウンドでのネットワーク通信](network-communications-in-the-background.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a6e34-162">For more info, see [Network communications in the background](network-communications-in-the-background.md).</span></span>
 
-## <a name="batched-sends"></a><span data-ttu-id="63aa6-162">バッチ送信</span><span class="sxs-lookup"><span data-stu-id="63aa6-162">Batched sends</span></span>
-<span data-ttu-id="63aa6-163">ソケットに関連付けられているストリームを記述すると必ず、ユーザー モード (コード) からカーネル モード (ネットワーク スタックの存在する場所) への遷移が発生します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-163">Whenever you write to the stream associated with a socket, a transition happens from user mode (your code) to kernel mode (where the network stack is).</span></span> <span data-ttu-id="63aa6-164">一度に多くのバッファーを記述する場合、この遷移が繰り返されて大きいオーバーヘッドとなります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-164">If you're writing many buffers at a time then these repeated transitions compound into substantial overhead.</span></span> <span data-ttu-id="63aa6-165">1 つの方法として、送信をバッチ処理することにより、データの複数のバッファーを同時に送信してこのオーバーヘッドを回避できます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-165">Batching your sends is a way to send multiple buffers of data together, and avoid that overhead.</span></span> <span data-ttu-id="63aa6-166">これは、多くのデータをできるだけ効率的に移動させる必要がある VoIP、VPN、またはその他のタスクをアプリで実行する場合に特に便利です。</span><span class="sxs-lookup"><span data-stu-id="63aa6-166">It's especially useful if your app is doing VoIP, VPN, or other tasks that involve moving a lot of data as efficiently as possible.</span></span>
+## <a name="batched-sends"></a><span data-ttu-id="a6e34-163">バッチ送信</span><span class="sxs-lookup"><span data-stu-id="a6e34-163">Batched sends</span></span>
+<span data-ttu-id="a6e34-164">ソケットに関連付けられているストリームを記述すると必ず、ユーザー モード (コード) からカーネル モード (ネットワーク スタックの存在する場所) への遷移が発生します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-164">Whenever you write to the stream associated with a socket, a transition happens from user mode (your code) to kernel mode (where the network stack is).</span></span> <span data-ttu-id="a6e34-165">一度に多くのバッファーを記述する場合、この遷移が繰り返されて大きいオーバーヘッドとなります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-165">If you're writing many buffers at a time then these repeated transitions compound into substantial overhead.</span></span> <span data-ttu-id="a6e34-166">1 つの方法として、送信をバッチ処理することにより、データの複数のバッファーを同時に送信してこのオーバーヘッドを回避できます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-166">Batching your sends is a way to send multiple buffers of data together, and avoid that overhead.</span></span> <span data-ttu-id="a6e34-167">これは、多くのデータをできるだけ効率的に移動させる必要がある VoIP、VPN、またはその他のタスクをアプリで実行する場合に特に便利です。</span><span class="sxs-lookup"><span data-stu-id="a6e34-167">It's especially useful if your app is doing VoIP, VPN, or other tasks that involve moving a lot of data as efficiently as possible.</span></span>
 
-<span data-ttu-id="63aa6-167">このセクションでは、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) または接続された [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) で使うことができるいくつかのバッチ送信手法を示します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-167">This section demonstrates a couple of batched sends techniques that you can use with a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) or a connected [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live).</span></span>
+<span data-ttu-id="a6e34-168">このセクションでは、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) または接続された [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) で使うことができるいくつかのバッチ送信手法を示します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-168">This section demonstrates a couple of batched sends techniques that you can use with a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) or a connected [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket).</span></span>
 
-<span data-ttu-id="63aa6-168">基本を理解できるように、非効率的な方法で多数のバッファーを送信する方法を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="63aa6-168">To get a baseline, let's see how to send a large number of buffers in an inefficient way.</span></span> <span data-ttu-id="63aa6-169">ここには、**StreamSocket** を使った最小限のデモがあります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-169">Here's a minimal demo, using a **StreamSocket**.</span></span>
+<span data-ttu-id="a6e34-169">基本を理解できるように、非効率的な方法で多数のバッファーを送信する方法を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="a6e34-169">To get a baseline, let's see how to send a large number of buffers in an inefficient way.</span></span> <span data-ttu-id="a6e34-170">ここには、**StreamSocket** を使った最小限のデモがあります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-170">Here's a minimal demo, using a **StreamSocket**.</span></span>
 
 ```csharp
 protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -777,19 +1053,78 @@ private async void SendMultipleBuffersInefficiently(Windows.Networking.Sockets.S
 }
 ```
 
-```cpp
-#include <ppltasks.h>
+```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Networking.Sockets.h>
+#include <winrt/Windows.Security.Cryptography.h>
+#include <winrt/Windows.Storage.Streams.h>
+#include <winrt/Windows.UI.Core.h>
+#include <winrt/Windows.UI.Xaml.Navigation.h>
 #include <sstream>
 
-    ...
-
+using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
 using namespace Windows::UI::Core;
 using namespace Windows::UI::Xaml::Navigation;
+...
+private:
+    Windows::Networking::Sockets::StreamSocketListener m_streamSocketListener;
+    Windows::Networking::Sockets::StreamSocket m_streamSocket;
 
-    ...
+public:
+    IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
+    {
+        m_streamSocketListener.ConnectionReceived({ this, &BatchedSendsPage::OnConnectionReceived });
+        co_await m_streamSocketListener.BindServiceNameAsync(L"1337");
 
+        co_await m_streamSocket.ConnectAsync(Windows::Networking::HostName{ L"localhost" }, L"1337");
+        SendMultipleBuffersInefficientlyAsync(L"Hello, World!");
+        //BatchedSendsAnyUWPLanguageAsync(L"Hello, World!");
+    }
+
+private:
+    IAsyncAction OnConnectionReceived(Windows::Networking::Sockets::StreamSocketListener const& /* sender */, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs const& args)
+    {
+        DataReader dataReader{ args.Socket().InputStream() };
+        dataReader.InputStreamOptions(Windows::Storage::Streams::InputStreamOptions::Partial);
+
+        while (true)
+        {
+            unsigned int bytesLoaded = co_await dataReader.LoadAsync(256);
+            if (bytesLoaded == 0) break;
+            winrt::hstring message{ dataReader.ReadString(bytesLoaded) };
+            ::OutputDebugString(message.c_str());
+        }
+    }
+
+    // This implementation incurs kernel transition overhead for each packet written.
+    IAsyncAction SendMultipleBuffersInefficientlyAsync(winrt::hstring message)
+    {
+        co_await winrt::resume_background();
+
+        std::vector< IBuffer > packetsToSend;
+        for (unsigned int count = 0; count < 5; ++count)
+        {
+            packetsToSend.push_back(Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(message, Windows::Security::Cryptography::BinaryStringEncoding::Utf8));
+        }
+
+        for (auto const& element : packetsToSend)
+        {
+            m_streamSocket.OutputStream().WriteAsync(element).get();
+        }
+    }
+```
+
+```cpp
+#include <ppltasks.h>
+#include <sstream>
+...
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml::Navigation;
+...
 private:
     Windows::Networking::Sockets::StreamSocketListener^ streamSocketListener;
     Windows::Networking::Sockets::StreamSocket^ streamSocket;
@@ -848,7 +1183,7 @@ private:
     }
 ```
 
-<span data-ttu-id="63aa6-170">効率的な手法の最初の例は、C# を使う場合にのみ当てはまります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-170">This first example of a more efficient technique is only appropriate if you're using C#.</span></span> <span data-ttu-id="63aa6-171">`SendMultipleBuffersInefficiently` ではなく `BatchedSendsCSharpOnly` を呼び出すように `OnNavigatedTo` を変更します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-171">Change `OnNavigatedTo` to call `BatchedSendsCSharpOnly` instead of `SendMultipleBuffersInefficiently`.</span></span>
+<span data-ttu-id="a6e34-171">効率的な手法の最初の例は、C# を使う場合にのみ当てはまります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-171">This first example of a more efficient technique is only appropriate if you're using C#.</span></span> <span data-ttu-id="a6e34-172">`SendMultipleBuffersInefficiently` または `SendMultipleBuffersInefficientlyAsync` ではなく、`BatchedSendsCSharpOnly` を呼び出すように `OnNavigatedTo` を変更します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-172">Change `OnNavigatedTo` to call `BatchedSendsCSharpOnly` instead of `SendMultipleBuffersInefficiently` or `SendMultipleBuffersInefficientlyAsync`.</span></span>
 
 ```csharp
 // A C#-only technique for batched sends.
@@ -871,7 +1206,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-<span data-ttu-id="63aa6-172">次の例は、C# の場合だけでなくあらゆる UWP 言語に当てはまります (ただし、ここでは C# で示しています)。</span><span class="sxs-lookup"><span data-stu-id="63aa6-172">This next example is appropriate for any UWP language, not just for C# (but demonstrated here in C#).</span></span> <span data-ttu-id="63aa6-173">送信をまとめてバッチ処理する [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) と [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) での動作に依存しています。</span><span class="sxs-lookup"><span data-stu-id="63aa6-173">It relies on the behavior in [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) and [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) that batches sends together.</span></span> <span data-ttu-id="63aa6-174">この手法は、出力ストリームでのすべての操作が完了した後にのみ返されることが保証される (Windows 10 の時点では) 出力ストリームで [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-174">The technique calls [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) on that output stream which, as of Windows 10, is guaranteed to return only after all operations on the output stream have completed.</span></span>
+<span data-ttu-id="a6e34-173">次の例は、C# の場合だけでなくあらゆる UWP 言語に当てはまります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-173">This next example is appropriate for any UWP language, not just for C#.</span></span> <span data-ttu-id="a6e34-174">送信をまとめてバッチ処理する [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) と [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) での動作に依存しています。</span><span class="sxs-lookup"><span data-stu-id="a6e34-174">It relies on the behavior in [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) and [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) that batches sends together.</span></span> <span data-ttu-id="a6e34-175">この手法は、出力ストリームでのすべての操作が完了した後にのみ返されることが保証される (Windows 10 の時点では) 出力ストリームで [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-175">The technique calls [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) on that output stream which, as of Windows 10, is guaranteed to return only after all operations on the output stream have completed.</span></span>
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -891,6 +1226,29 @@ private async void BatchedSendsAnyUWPLanguage(Windows.Networking.Sockets.StreamS
 
     // Wait for all of the pending writes to complete. This step enables batched sends on the output stream.
     await streamSocket.OutputStream.FlushAsync();
+}
+```
+
+```cppwinrt
+// An implementation of batched sends suitable for any UWP language.
+IAsyncAction BatchedSendsAnyUWPLanguageAsync(winrt::hstring message)
+{
+    std::vector< IBuffer > packetsToSend{};
+    std::vector< IAsyncOperationWithProgress< unsigned int, unsigned int > > pendingWrites{};
+    for (unsigned int count = 0; count < 5; ++count)
+    {
+        packetsToSend.push_back(Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(message, Windows::Security::Cryptography::BinaryStringEncoding::Utf8));
+    }
+
+    for (auto const& element : packetsToSend)
+    {
+        // track all pending writes as tasks, but don't wait on one before beginning the next.
+        pendingWrites.push_back(m_streamSocket.OutputStream().WriteAsync(element));
+        // Don't modify any buffer's contents until the pending writes are complete.
+    }
+
+    // Wait for all of the pending writes to complete. This step enables batched sends on the output stream.
+    co_await m_streamSocket.OutputStream().FlushAsync();
 }
 ```
 
@@ -918,20 +1276,23 @@ private:
     }
 ```
 
-<span data-ttu-id="63aa6-175">コードでバッチ処理される送信を使うことで課せられているいくつかの重要な制限があります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-175">There are some important limitations imposed by using batched sends in your code.</span></span>
+<span data-ttu-id="a6e34-176">コードでバッチ処理される送信を使うことで課せられているいくつかの重要な制限があります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-176">There are some important limitations imposed by using batched sends in your code.</span></span>
 
--   <span data-ttu-id="63aa6-176">書き込まれる **IBuffer** インスタンスの内容は、非同期書き込みが完了するまで変更できません。</span><span class="sxs-lookup"><span data-stu-id="63aa6-176">You cannot modify the contents of the **IBuffer** instances being written until the asynchronous write is complete.</span></span>
--   <span data-ttu-id="63aa6-177">**FlushAsync**パターンは、**StreamSocket.OutputStream** と **DatagramSocket.OutputStream** のみで機能します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-177">The **FlushAsync** pattern only works on **StreamSocket.OutputStream** and **DatagramSocket.OutputStream**.</span></span>
--   <span data-ttu-id="63aa6-178">**FlushAsync** パターンは、Windows10 以降でのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-178">The **FlushAsync** pattern only works in Windows 10 and onward.</span></span>
--   <span data-ttu-id="63aa6-179">状況によっては、**FlushAsync** パターンの代わりに [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) を使います。</span><span class="sxs-lookup"><span data-stu-id="63aa6-179">In other cases, use [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) instead of the **FlushAsync** pattern.</span></span>
+-   <span data-ttu-id="a6e34-177">書き込まれる **IBuffer** インスタンスの内容は、非同期書き込みが完了するまで変更できません。</span><span class="sxs-lookup"><span data-stu-id="a6e34-177">You cannot modify the contents of the **IBuffer** instances being written until the asynchronous write is complete.</span></span>
+-   <span data-ttu-id="a6e34-178">**FlushAsync**パターンは、**StreamSocket.OutputStream** と **DatagramSocket.OutputStream** のみで機能します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-178">The **FlushAsync** pattern only works on **StreamSocket.OutputStream** and **DatagramSocket.OutputStream**.</span></span>
+-   <span data-ttu-id="a6e34-179">**FlushAsync** パターンは、Windows10 以降でのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-179">The **FlushAsync** pattern only works in Windows 10 and onward.</span></span>
+-   <span data-ttu-id="a6e34-180">状況によっては、**FlushAsync** パターンの代わりに [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) を使います。</span><span class="sxs-lookup"><span data-stu-id="a6e34-180">In other cases, use [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) instead of the **FlushAsync** pattern.</span></span>
 
-## <a name="port-sharing-for-datagramsocket"></a><span data-ttu-id="63aa6-180">DatagramSocket でのポートの共有</span><span class="sxs-lookup"><span data-stu-id="63aa6-180">Port sharing for DatagramSocket</span></span>
-<span data-ttu-id="63aa6-181">同じアドレス/ポートにバインドされた他の Win32 または UWP マルチキャスト ソケットと共存するように [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) を構成することができます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-181">You can configure a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) to coexist with other Win32 or UWP multicast sockets bound to the same address/port.</span></span> <span data-ttu-id="63aa6-182">これを行うには、ソケットをバインドまたは接続する前に [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) を `true` に設定します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-182">You do this by setting the [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) to `true` before binding or connecting the socket.</span></span> <span data-ttu-id="63aa6-183">[**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) プロパティを通じて **DatagramSocket** オブジェクト自体から **DatagramSocketControl** のインスタンスにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="63aa6-183">You access an instance of **DatagramSocketControl** from the **DatagramSocket** object itself via its [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) property.</span></span>
+## <a name="port-sharing-for-datagramsocket"></a><span data-ttu-id="a6e34-181">DatagramSocket でのポートの共有</span><span class="sxs-lookup"><span data-stu-id="a6e34-181">Port sharing for DatagramSocket</span></span>
+<span data-ttu-id="a6e34-182">同じアドレス/ポートにバインドされた他の Win32 または UWP マルチキャスト ソケットと共存するように [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) を構成することができます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-182">You can configure a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) to coexist with other Win32 or UWP multicast sockets bound to the same address/port.</span></span> <span data-ttu-id="a6e34-183">これを行うには、ソケットをバインドまたは接続する前に [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) を `true` に設定します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-183">You do this by setting the [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) to `true` before binding or connecting the socket.</span></span> <span data-ttu-id="a6e34-184">[**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) プロパティを通じて **DatagramSocket** オブジェクト自体から **DatagramSocketControl** のインスタンスにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="a6e34-184">You access an instance of **DatagramSocketControl** from the **DatagramSocket** object itself via its [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) property.</span></span>
 
-## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a><span data-ttu-id="63aa6-184">StreamSocket クラスによるクライアント証明書の提供</span><span class="sxs-lookup"><span data-stu-id="63aa6-184">Providing a client certificate with the StreamSocket class</span></span>
-<span data-ttu-id="63aa6-185">[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) は、SSL/TLS を使ったクライアント アプリの接続先サーバーの認証をサポートします。</span><span class="sxs-lookup"><span data-stu-id="63aa6-185">[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) supports using SSL/TLS to authenticate the server that the client app is talking to.</span></span> <span data-ttu-id="63aa6-186">場合によっては、クライアント アプリは、SSL/TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="63aa6-186">In some cases, the client app needs to authenticate itself to the server using an SSL/TLS client certificate.</span></span> <span data-ttu-id="63aa6-187">ソケットをバインドまたは接続する前に (SSL/TLS ハンドシェイクが始まる前に設定する必要があります) [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) プロパティを使ってクライアント証明書を提供できます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-187">You can provide a client certificate with the [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) property before binding or connecting the socket (it must be set before the SSL/TLS handshake is started).</span></span> <span data-ttu-id="63aa6-188">[**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control) プロパティを通じて **StreamSocket** オブジェクト自体から **StreamSocketControl** のインスタンスにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="63aa6-188">You access an instance of **StreamSocketControl** from the **StreamSocket** object itself via its [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control) property.</span></span> <span data-ttu-id="63aa6-189">サーバーがクライアント証明書を要求した場合、Windows が提供されたクライアント証明書を使って応答します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-189">If the server requests the client certificate then Windows will respond with the client certificate that you provided.</span></span>
+## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a><span data-ttu-id="a6e34-185">StreamSocket クラスによるクライアント証明書の提供</span><span class="sxs-lookup"><span data-stu-id="a6e34-185">Providing a client certificate with the StreamSocket class</span></span>
+<span data-ttu-id="a6e34-186">[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) は、SSL/TLS を使ったクライアント アプリの接続先サーバーの認証をサポートします。</span><span class="sxs-lookup"><span data-stu-id="a6e34-186">[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) supports using SSL/TLS to authenticate the server that the client app is talking to.</span></span> <span data-ttu-id="a6e34-187">場合によっては、クライアント アプリは、SSL/TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-187">In some cases, the client app needs to authenticate itself to the server using an SSL/TLS client certificate.</span></span> <span data-ttu-id="a6e34-188">ソケットをバインドまたは接続する前に (SSL/TLS ハンドシェイクが始まる前に設定する必要があります) [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) プロパティを使ってクライアント証明書を提供できます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-188">You can provide a client certificate with the [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) property before binding or connecting the socket (it must be set before the SSL/TLS handshake is started).</span></span> <span data-ttu-id="a6e34-189">[**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control) プロパティを通じて **StreamSocket** オブジェクト自体から **StreamSocketControl** のインスタンスにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="a6e34-189">You access an instance of **StreamSocketControl** from the **StreamSocket** object itself via its [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control) property.</span></span> <span data-ttu-id="a6e34-190">サーバーがクライアント証明書を要求した場合、Windows が提供されたクライアント証明書を使って応答します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-190">If the server requests the client certificate then Windows will respond with the client certificate that you provided.</span></span>
 
-<span data-ttu-id="63aa6-190">この最小限のコード例に示すように、[**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel?branch=live) を使う [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync?branch=live) の上書きを使います。</span><span class="sxs-lookup"><span data-stu-id="63aa6-190">Use an override of [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync?branch=live) that takes a [**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel?branch=live), as shown in this minimal code example.</span></span>
+<span data-ttu-id="a6e34-191">この最小限のコード例に示すように、[**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel) を使う [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) の上書きを使います。</span><span class="sxs-lookup"><span data-stu-id="a6e34-191">Use an override of [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) that takes a [**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel), as shown in this minimal code example.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="a6e34-192">次のコード例のコメントで示すとおり、コードが機能するようにプロジェクトで sharedUserCertificates アプリ機能を宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6e34-192">As indicated by the comment in the code examples below, your project needs to declare the sharedUserCertificates app capability for this code to work.</span></span>
 
 ```csharp
 // For this code to work, you need at least one certificate to be present in the user MY certificate store.
@@ -944,6 +1305,22 @@ if (certificates.Count > 0)
 {
     streamSocket.Control.ClientCertificate = certificates[0];
     await streamSocket.ConnectAsync(hostName, "1337", Windows.Networking.Sockets.SocketProtectionLevel.Tls12);
+}
+```
+
+```cppwinrt
+// For this code to work, you need at least one certificate to be present in the user MY certificate store.
+// Plugging a smartcard into a smartcard reader connected to your PC will achieve that.
+// Also, your project needs to declare the sharedUserCertificates app capability.
+Windows::Security::Cryptography::Certificates::CertificateQuery certificateQuery;
+certificateQuery.StoreName(L"MY");
+IVectorView< Windows::Security::Cryptography::Certificates::Certificate > certificates = co_await Windows::Security::Cryptography::Certificates::CertificateStores::FindAllAsync(certificateQuery);
+
+if (certificates.Size() > 0)
+{
+    m_streamSocket.Control().ClientCertificate(certificates.GetAt(0));
+    co_await m_streamSocket.ConnectAsync(Windows::Networking::HostName{ L"localhost" }, L"1337", Windows::Networking::Sockets::SocketProtectionLevel::Tls12);
+    ...
 }
 ```
 
@@ -968,46 +1345,47 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 });
 ```
 
-## <a name="handling-exceptions"></a><span data-ttu-id="63aa6-191">例外処理</span><span class="sxs-lookup"><span data-stu-id="63aa6-191">Handling exceptions</span></span>
-<span data-ttu-id="63aa6-192">[**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live)、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live)、[**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) 操作で発生したエラーは、**HRESULT** 値として返されます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-192">An error encountered on a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live), [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live), or [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) operation is returned as an **HRESULT** value.</span></span> <span data-ttu-id="63aa6-193">その **HRESULT** 値を [**SocketError.GetStatus**](/uwp/api/windows.networking.sockets.socketerror.getstatus?branch=live) メソッドに渡し、[**SocketErrorStatus**](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus?branch=live) 列挙値に変換することができます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-193">You can pass that **HRESULT** value to the [**SocketError.GetStatus**](/uwp/api/windows.networking.sockets.socketerror.getstatus?branch=live) method to convert it into a [**SocketErrorStatus**](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus?branch=live) enumeration value.</span></span>
+## <a name="handling-exceptions"></a><span data-ttu-id="a6e34-193">例外処理</span><span class="sxs-lookup"><span data-stu-id="a6e34-193">Handling exceptions</span></span>
+<span data-ttu-id="a6e34-194">[**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket)、[**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 操作で発生したエラーは、**HRESULT** 値として返されます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-194">An error encountered on a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket), [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket), or [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) operation is returned as an **HRESULT** value.</span></span> <span data-ttu-id="a6e34-195">その **HRESULT** 値を [**SocketError.GetStatus**](/uwp/api/windows.networking.sockets.socketerror.getstatus) メソッドに渡し、[**SocketErrorStatus**](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus) 列挙値に変換することができます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-195">You can pass that **HRESULT** value to the [**SocketError.GetStatus**](/uwp/api/windows.networking.sockets.socketerror.getstatus) method to convert it into a [**SocketErrorStatus**](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus) enumeration value.</span></span>
 
-<span data-ttu-id="63aa6-194">ほとんどの **SocketErrorStatus** 列挙値は、ネイティブ Windows ソケット操作から返されるエラーに対応しています。</span><span class="sxs-lookup"><span data-stu-id="63aa6-194">Most **SocketErrorStatus** enumeration values correspond to an error returned by the native Windows sockets operation.</span></span> <span data-ttu-id="63aa6-195">アプリは **SocketErrorStatus** 列挙値をオンにし、例外の原因に応じてアプリの動作を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-195">Your app can switch on **SocketErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.</span></span>
+<span data-ttu-id="a6e34-196">ほとんどの **SocketErrorStatus** 列挙値は、ネイティブ Windows ソケット操作から返されるエラーに対応しています。</span><span class="sxs-lookup"><span data-stu-id="a6e34-196">Most **SocketErrorStatus** enumeration values correspond to an error returned by the native Windows sockets operation.</span></span> <span data-ttu-id="a6e34-197">アプリは **SocketErrorStatus** 列挙値をオンにし、例外の原因に応じてアプリの動作を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-197">Your app can switch on **SocketErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.</span></span>
 
-<span data-ttu-id="63aa6-196">パラメーター検証エラーの場合、例外からの **HRESULT** を使ってエラーの詳細情報を確認することもできます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-196">For parameter validation errors, you can use the **HRESULT** from the exception to learn more detailed information about the error.</span></span> <span data-ttu-id="63aa6-197">考えられる **HRESULT** 値は、SDK インストールに含まれる `Winerror.h` に一覧表示されています (たとえば、`C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared` フォルダーにあります)。</span><span class="sxs-lookup"><span data-stu-id="63aa6-197">Possible **HRESULT** values are listed in `Winerror.h`, which can be found in your SDK installation (for example, in the folder `C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared`).</span></span> <span data-ttu-id="63aa6-198">ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E_INVALIDARG** です。</span><span class="sxs-lookup"><span data-stu-id="63aa6-198">For most parameter validation errors, the **HRESULT** returned is **E_INVALIDARG**.</span></span>
+<span data-ttu-id="a6e34-198">パラメーター検証エラーの場合、例外からの **HRESULT** を使ってエラーの詳細情報を確認することもできます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-198">For parameter validation errors, you can use the **HRESULT** from the exception to learn more detailed information about the error.</span></span> <span data-ttu-id="a6e34-199">考えられる **HRESULT** 値は、SDK インストールに含まれる `Winerror.h` に一覧表示されています (たとえば、`C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared` フォルダーにあります)。</span><span class="sxs-lookup"><span data-stu-id="a6e34-199">Possible **HRESULT** values are listed in `Winerror.h`, which can be found in your SDK installation (for example, in the folder `C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared`).</span></span> <span data-ttu-id="a6e34-200">ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E_INVALIDARG** です。</span><span class="sxs-lookup"><span data-stu-id="a6e34-200">For most parameter validation errors, the **HRESULT** returned is **E_INVALIDARG**.</span></span>
 
-<span data-ttu-id="63aa6-199">[**HostName**](/uwp/api/Windows.Networking.HostName?branch=live) コンストラクターは、渡される文字列が有効なホスト名でない場合に例外をスローできます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-199">The [**HostName**](/uwp/api/Windows.Networking.HostName?branch=live) constructor can throw an exception if the string passed is not a valid host name.</span></span> <span data-ttu-id="63aa6-200">たとえば、ユーザーによってホスト名がアプリに入力される場合に使われる可能性が高い、許可されない文字が含まれています。</span><span class="sxs-lookup"><span data-stu-id="63aa6-200">For example, it contains characters that are not allowed, which is likely if the host name is typed in to your app by the user.</span></span> <span data-ttu-id="63aa6-201">try/catch ブロック内に **HostName** を構築します。</span><span class="sxs-lookup"><span data-stu-id="63aa6-201">Construct a **HostName** inside a try/catch block.</span></span> <span data-ttu-id="63aa6-202">そのようにして、例外がスローされた場合、アプリはユーザーに通知し、新しいホスト名を要求することができます。</span><span class="sxs-lookup"><span data-stu-id="63aa6-202">That way, if an exception is thrown, the app can notify the user and request a new host name.</span></span>
+<span data-ttu-id="a6e34-201">[**HostName**](/uwp/api/Windows.Networking.HostName) コンストラクターは、渡される文字列が有効なホスト名でない場合に例外をスローできます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-201">The [**HostName**](/uwp/api/Windows.Networking.HostName) constructor can throw an exception if the string passed is not a valid host name.</span></span> <span data-ttu-id="a6e34-202">たとえば、ユーザーによってホスト名がアプリに入力される場合に使われる可能性が高い、許可されない文字が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a6e34-202">For example, it contains characters that are not allowed, which is likely if the host name is typed in to your app by the user.</span></span> <span data-ttu-id="a6e34-203">try/catch ブロック内に **HostName** を構築します。</span><span class="sxs-lookup"><span data-stu-id="a6e34-203">Construct a **HostName** inside a try/catch block.</span></span> <span data-ttu-id="a6e34-204">そのようにして、例外がスローされた場合、アプリはユーザーに通知し、新しいホスト名を要求することができます。</span><span class="sxs-lookup"><span data-stu-id="a6e34-204">That way, if an exception is thrown, the app can notify the user and request a new host name.</span></span>
 
-## <a name="important-apis"></a><span data-ttu-id="63aa6-203">重要な API</span><span class="sxs-lookup"><span data-stu-id="63aa6-203">Important APIs</span></span>
-* [<span data-ttu-id="63aa6-204">CertificateQuery</span><span class="sxs-lookup"><span data-stu-id="63aa6-204">CertificateQuery</span></span>](/uwp/api/windows.security.cryptography.certificates.certificatequery?branch=live)
-* [<span data-ttu-id="63aa6-205">CertificateStores.FindAllAsync</span><span class="sxs-lookup"><span data-stu-id="63aa6-205">CertificateStores.FindAllAsync</span></span>](/uwp/api/windows.security.cryptography.certificates.certificatestores.findallasync?branch=live)
-* [<span data-ttu-id="63aa6-206">DatagramSocket</span><span class="sxs-lookup"><span data-stu-id="63aa6-206">DatagramSocket</span></span>](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live)
-* [<span data-ttu-id="63aa6-207">DatagramSocket.BindServiceNameAsync</span><span class="sxs-lookup"><span data-stu-id="63aa6-207">DatagramSocket.BindServiceNameAsync</span></span>](/uwp/api/windows.networking.sockets.datagramsocket.bindservicenameasync?branch=live)
-* [<span data-ttu-id="63aa6-208">DatagramSocket.Control</span><span class="sxs-lookup"><span data-stu-id="63aa6-208">DatagramSocket.Control</span></span>](/uwp/api/windows.networking.sockets.datagramsocket.Control)
-* [<span data-ttu-id="63aa6-209">DatagramSocket.GetOutputStreamAsync</span><span class="sxs-lookup"><span data-stu-id="63aa6-209">DatagramSocket.GetOutputStreamAsync</span></span>](/uwp/api/windows.networking.sockets.datagramsocket.getoutputstreamasync?branch=live)
-* [<span data-ttu-id="63aa6-210">DatagramSocket.MessageReceived</span><span class="sxs-lookup"><span data-stu-id="63aa6-210">DatagramSocket.MessageReceived</span></span>](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived)
-* [<span data-ttu-id="63aa6-211">DatagramSocketControl.MulticastOnly</span><span class="sxs-lookup"><span data-stu-id="63aa6-211">DatagramSocketControl.MulticastOnly</span></span>](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly)
-* [<span data-ttu-id="63aa6-212">DatagramSocketMessageReceivedEventArgs</span><span class="sxs-lookup"><span data-stu-id="63aa6-212">DatagramSocketMessageReceivedEventArgs</span></span>](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live)
-* [<span data-ttu-id="63aa6-213">DatagramSocketMessageReceivedEventArgs.GetDataReader</span><span class="sxs-lookup"><span data-stu-id="63aa6-213">DatagramSocketMessageReceivedEventArgs.GetDataReader</span></span>](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs.GetDataReader)
-* [<span data-ttu-id="63aa6-214">DataReader.LoadAsync</span><span class="sxs-lookup"><span data-stu-id="63aa6-214">DataReader.LoadAsync</span></span>](/uwp/api/windows.storage.streams.datareader.loadasync?branch=live)
-* [<span data-ttu-id="63aa6-215">IOutputStream.FlushAsync</span><span class="sxs-lookup"><span data-stu-id="63aa6-215">IOutputStream.FlushAsync</span></span>](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync)
-* [<span data-ttu-id="63aa6-216">SocketError.GetStatus</span><span class="sxs-lookup"><span data-stu-id="63aa6-216">SocketError.GetStatus</span></span>](/uwp/api/windows.networking.sockets.socketerror.getstatus?branch=live)
-* [<span data-ttu-id="63aa6-217">SocketErrorStatus</span><span class="sxs-lookup"><span data-stu-id="63aa6-217">SocketErrorStatus</span></span>](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus?branch=live)
-* [<span data-ttu-id="63aa6-218">SocketProtectionLevel</span><span class="sxs-lookup"><span data-stu-id="63aa6-218">SocketProtectionLevel</span></span>](/uwp/api/windows.networking.sockets.socketprotectionlevel?branch=live)
-* [<span data-ttu-id="63aa6-219">StreamSocket</span><span class="sxs-lookup"><span data-stu-id="63aa6-219">StreamSocket</span></span>](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live)
-* [<span data-ttu-id="63aa6-220">StreamSocketControl.ClientCertificate</span><span class="sxs-lookup"><span data-stu-id="63aa6-220">StreamSocketControl.ClientCertificate</span></span>](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate)
-* [<span data-ttu-id="63aa6-221">StreamSocket.ConnectAsync</span><span class="sxs-lookup"><span data-stu-id="63aa6-221">StreamSocket.ConnectAsync</span></span>](/uwp/api/windows.networking.sockets.streamsocket.connectasync?branch=live)
-* [<span data-ttu-id="63aa6-222">StreamSocket.InputStream</span><span class="sxs-lookup"><span data-stu-id="63aa6-222">StreamSocket.InputStream</span></span>](/uwp/api/windows.networking.sockets.streamsocket.InputStream)
-* [<span data-ttu-id="63aa6-223">StreamSocket.OutputStream</span><span class="sxs-lookup"><span data-stu-id="63aa6-223">StreamSocket.OutputStream</span></span>](/uwp/api/windows.networking.sockets.streamsocket.OutputStream)
-* [<span data-ttu-id="63aa6-224">StreamSocketListener</span><span class="sxs-lookup"><span data-stu-id="63aa6-224">StreamSocketListener</span></span>](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live)
-* [<span data-ttu-id="63aa6-225">StreamSocketListener.BindServiceNameAsync</span><span class="sxs-lookup"><span data-stu-id="63aa6-225">StreamSocketListener.BindServiceNameAsync</span></span>](/uwp/api/windows.networking.sockets.streamsocketlistener.bindservicenameasync?branch=live)
-* [<span data-ttu-id="63aa6-226">StreamSocketListener.ConnectionReceived</span><span class="sxs-lookup"><span data-stu-id="63aa6-226">StreamSocketListener.ConnectionReceived</span></span>](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)
-* [<span data-ttu-id="63aa6-227">StreamSocketListenerConnectionReceivedEventArgs</span><span class="sxs-lookup"><span data-stu-id="63aa6-227">StreamSocketListenerConnectionReceivedEventArgs</span></span>](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs?branch=live)
-* [<span data-ttu-id="63aa6-228">Windows.Networking.Sockets</span><span class="sxs-lookup"><span data-stu-id="63aa6-228">Windows.Networking.Sockets</span></span>](/uwp/api/Windows.Networking.Sockets?branch=live)
+## <a name="important-apis"></a><span data-ttu-id="a6e34-205">重要な API</span><span class="sxs-lookup"><span data-stu-id="a6e34-205">Important APIs</span></span>
+* [<span data-ttu-id="a6e34-206">CertificateQuery</span><span class="sxs-lookup"><span data-stu-id="a6e34-206">CertificateQuery</span></span>](/uwp/api/windows.security.cryptography.certificates.certificatequery)
+* [<span data-ttu-id="a6e34-207">CertificateStores.FindAllAsync</span><span class="sxs-lookup"><span data-stu-id="a6e34-207">CertificateStores.FindAllAsync</span></span>](/uwp/api/windows.security.cryptography.certificates.certificatestores.findallasync)
+* [<span data-ttu-id="a6e34-208">DatagramSocket</span><span class="sxs-lookup"><span data-stu-id="a6e34-208">DatagramSocket</span></span>](/uwp/api/Windows.Networking.Sockets.DatagramSocket)
+* [<span data-ttu-id="a6e34-209">DatagramSocket.BindServiceNameAsync</span><span class="sxs-lookup"><span data-stu-id="a6e34-209">DatagramSocket.BindServiceNameAsync</span></span>](/uwp/api/windows.networking.sockets.datagramsocket.bindservicenameasync)
+* [<span data-ttu-id="a6e34-210">DatagramSocket.Control</span><span class="sxs-lookup"><span data-stu-id="a6e34-210">DatagramSocket.Control</span></span>](/uwp/api/windows.networking.sockets.datagramsocket.Control)
+* [<span data-ttu-id="a6e34-211">DatagramSocket.GetOutputStreamAsync</span><span class="sxs-lookup"><span data-stu-id="a6e34-211">DatagramSocket.GetOutputStreamAsync</span></span>](/uwp/api/windows.networking.sockets.datagramsocket.getoutputstreamasync)
+* [<span data-ttu-id="a6e34-212">DatagramSocket.MessageReceived</span><span class="sxs-lookup"><span data-stu-id="a6e34-212">DatagramSocket.MessageReceived</span></span>](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived)
+* [<span data-ttu-id="a6e34-213">DatagramSocketControl.MulticastOnly</span><span class="sxs-lookup"><span data-stu-id="a6e34-213">DatagramSocketControl.MulticastOnly</span></span>](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly)
+* [<span data-ttu-id="a6e34-214">DatagramSocketMessageReceivedEventArgs</span><span class="sxs-lookup"><span data-stu-id="a6e34-214">DatagramSocketMessageReceivedEventArgs</span></span>](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs)
+* [<span data-ttu-id="a6e34-215">DatagramSocketMessageReceivedEventArgs.GetDataReader</span><span class="sxs-lookup"><span data-stu-id="a6e34-215">DatagramSocketMessageReceivedEventArgs.GetDataReader</span></span>](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs.GetDataReader)
+* [<span data-ttu-id="a6e34-216">DataReader.LoadAsync</span><span class="sxs-lookup"><span data-stu-id="a6e34-216">DataReader.LoadAsync</span></span>](/uwp/api/windows.storage.streams.datareader.loadasync)
+* [<span data-ttu-id="a6e34-217">IOutputStream.FlushAsync</span><span class="sxs-lookup"><span data-stu-id="a6e34-217">IOutputStream.FlushAsync</span></span>](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync)
+* [<span data-ttu-id="a6e34-218">SocketError.GetStatus</span><span class="sxs-lookup"><span data-stu-id="a6e34-218">SocketError.GetStatus</span></span>](/uwp/api/windows.networking.sockets.socketerror.getstatus)
+* [<span data-ttu-id="a6e34-219">SocketErrorStatus</span><span class="sxs-lookup"><span data-stu-id="a6e34-219">SocketErrorStatus</span></span>](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus)
+* [<span data-ttu-id="a6e34-220">SocketProtectionLevel</span><span class="sxs-lookup"><span data-stu-id="a6e34-220">SocketProtectionLevel</span></span>](/uwp/api/windows.networking.sockets.socketprotectionlevel)
+* [<span data-ttu-id="a6e34-221">StreamSocket</span><span class="sxs-lookup"><span data-stu-id="a6e34-221">StreamSocket</span></span>](/uwp/api/Windows.Networking.Sockets.StreamSocket)
+* [<span data-ttu-id="a6e34-222">StreamSocketControl.ClientCertificate</span><span class="sxs-lookup"><span data-stu-id="a6e34-222">StreamSocketControl.ClientCertificate</span></span>](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate)
+* [<span data-ttu-id="a6e34-223">StreamSocket.ConnectAsync</span><span class="sxs-lookup"><span data-stu-id="a6e34-223">StreamSocket.ConnectAsync</span></span>](/uwp/api/windows.networking.sockets.streamsocket.connectasync)
+* [<span data-ttu-id="a6e34-224">StreamSocket.InputStream</span><span class="sxs-lookup"><span data-stu-id="a6e34-224">StreamSocket.InputStream</span></span>](/uwp/api/windows.networking.sockets.streamsocket.InputStream)
+* [<span data-ttu-id="a6e34-225">StreamSocket.OutputStream</span><span class="sxs-lookup"><span data-stu-id="a6e34-225">StreamSocket.OutputStream</span></span>](/uwp/api/windows.networking.sockets.streamsocket.OutputStream)
+* [<span data-ttu-id="a6e34-226">StreamSocketListener</span><span class="sxs-lookup"><span data-stu-id="a6e34-226">StreamSocketListener</span></span>](/uwp/api/Windows.Networking.Sockets.StreamSocketListener)
+* [<span data-ttu-id="a6e34-227">StreamSocketListener.BindServiceNameAsync</span><span class="sxs-lookup"><span data-stu-id="a6e34-227">StreamSocketListener.BindServiceNameAsync</span></span>](/uwp/api/windows.networking.sockets.streamsocketlistener.bindservicenameasync)
+* [<span data-ttu-id="a6e34-228">StreamSocketListener.ConnectionReceived</span><span class="sxs-lookup"><span data-stu-id="a6e34-228">StreamSocketListener.ConnectionReceived</span></span>](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)
+* [<span data-ttu-id="a6e34-229">StreamSocketListenerConnectionReceivedEventArgs</span><span class="sxs-lookup"><span data-stu-id="a6e34-229">StreamSocketListenerConnectionReceivedEventArgs</span></span>](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs)
+* [<span data-ttu-id="a6e34-230">Windows.Networking.Sockets</span><span class="sxs-lookup"><span data-stu-id="a6e34-230">Windows.Networking.Sockets</span></span>](/uwp/api/Windows.Networking.Sockets)
 
-## <a name="related-topics"></a><span data-ttu-id="63aa6-229">関連トピック</span><span class="sxs-lookup"><span data-stu-id="63aa6-229">Related topics</span></span>
-* [<span data-ttu-id="63aa6-230">Windows ソケット 2 (Winsock)</span><span class="sxs-lookup"><span data-stu-id="63aa6-230">Windows Sockets 2 (Winsock)</span></span>](https://msdn.microsoft.com/library/windows/desktop/ms740673)
-* [<span data-ttu-id="63aa6-231">ネットワーク機能を設定する方法</span><span class="sxs-lookup"><span data-stu-id="63aa6-231">How to set network capabilities</span></span>](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
-* [<span data-ttu-id="63aa6-232">アプリ間通信</span><span class="sxs-lookup"><span data-stu-id="63aa6-232">App-to-app communication</span></span>](/windows/uwp/app-to-app/index?branch=live)
+## <a name="related-topics"></a><span data-ttu-id="a6e34-231">関連トピック</span><span class="sxs-lookup"><span data-stu-id="a6e34-231">Related topics</span></span>
+* [<span data-ttu-id="a6e34-232">アプリ間通信</span><span class="sxs-lookup"><span data-stu-id="a6e34-232">App-to-app communication</span></span>](/windows/uwp/app-to-app/index)
+* [<span data-ttu-id="a6e34-233">C++/WinRT を使用した同時実行操作と非同期操作</span><span class="sxs-lookup"><span data-stu-id="a6e34-233">Concurrency and asynchronous operations with C++/WinRT</span></span>](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [<span data-ttu-id="a6e34-234">ネットワーク機能を設定する方法</span><span class="sxs-lookup"><span data-stu-id="a6e34-234">How to set network capabilities</span></span>](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
+* [<span data-ttu-id="a6e34-235">Windows ソケット 2 (Winsock)</span><span class="sxs-lookup"><span data-stu-id="a6e34-235">Windows Sockets 2 (Winsock)</span></span>](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
-## <a name="samples"></a><span data-ttu-id="63aa6-233">サンプル</span><span class="sxs-lookup"><span data-stu-id="63aa6-233">Samples</span></span>
-* [<span data-ttu-id="63aa6-234">StreamSocket のサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="63aa6-234">StreamSocket sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=620609)
+## <a name="samples"></a><span data-ttu-id="a6e34-236">サンプル</span><span class="sxs-lookup"><span data-stu-id="a6e34-236">Samples</span></span>
+* [<span data-ttu-id="a6e34-237">StreamSocket のサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="a6e34-237">StreamSocket sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=620609)

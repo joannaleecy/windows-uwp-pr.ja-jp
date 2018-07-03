@@ -1,36 +1,34 @@
 ---
 author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
-description: "このセクションのチュートリアルでは、Microsoft Advertising ライブラリを使ってアプリにバナー広告やスポット広告を追加する方法について説明します。"
-title: "開発者向けチュートリアル"
+description: このセクションのチュートリアルでは、Microsoft Advertising SDK を使ってアプリにバナー広告、スポット広告、ネイティブ広告を追加する方法について説明します。
+title: アプリでの広告の実装
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, 広告, Advertising, チュートリアル"
-ms.openlocfilehash: 73f2c9b36d0b083a74f6b226a2eed95fe49b6f63
-ms.sourcegitcommit: 9d1ca16a7edcbbcae03fad50a4a10183a319c63a
+keywords: Windows 10, UWP, 広告, Advertising, チュートリアル
+ms.localizationpriority: medium
+ms.openlocfilehash: c7562dd63206326f6cd278195effffdd2afa7b7f
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2017
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1880833"
 ---
-# <a name="developer-walkthroughs"></a><span data-ttu-id="13baf-104">開発者向けチュートリアル</span><span class="sxs-lookup"><span data-stu-id="13baf-104">Developer walkthroughs</span></span>
+# <a name="implement-ads-in-your-app"></a><span data-ttu-id="b46c1-104">アプリでの広告の実装</span><span class="sxs-lookup"><span data-stu-id="b46c1-104">Implement ads in your app</span></span>
 
-<span data-ttu-id="13baf-105">このセクションのチュートリアルでは、Microsoft Advertising ライブラリを使ってアプリにバナー広告やスポット広告を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="13baf-105">The walkthroughs in this section show you how to add banner ads and interstitial ads to apps by using the Microsoft advertising libraries.</span></span>
+<span data-ttu-id="b46c1-105">このセクションの記事では、Microsoft Advertising SDK を使ってアプリにバナー広告、スポット広告、ネイティブ広告を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b46c1-105">The articles in this section show you how to add banner ads, interstitial ads, and native ads to apps by using the Microsoft Advertising SDK.</span></span> <span data-ttu-id="b46c1-106">完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b46c1-106">For complete sample projects, see the [advertising samples on GitHub](http://aka.ms/githubads).</span></span>
 
-<span data-ttu-id="13baf-106">C# と C++ を使って JavaScript/HTML アプリと XAML アプリにバナー広告やスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="13baf-106">For complete sample projects that demonstrate how to add banner and interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="b46c1-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="b46c1-107">In this section</span></span>
 
-## <a name="in-this-section"></a><span data-ttu-id="13baf-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="13baf-107">In this section</span></span>
-
-|  <span data-ttu-id="13baf-108">トピック</span><span class="sxs-lookup"><span data-stu-id="13baf-108">Topic</span></span>    | <span data-ttu-id="13baf-109">説明</span><span class="sxs-lookup"><span data-stu-id="13baf-109">Description</span></span> |               
+|  <span data-ttu-id="b46c1-108">トピック</span><span class="sxs-lookup"><span data-stu-id="b46c1-108">Topic</span></span>    | <span data-ttu-id="b46c1-109">説明</span><span class="sxs-lookup"><span data-stu-id="b46c1-109">Description</span></span> |               
 |----------|-------|
-| [<span data-ttu-id="13baf-110">スポット広告</span><span class="sxs-lookup"><span data-stu-id="13baf-110">Interstitial Ads</span></span>](interstitial-ads.md)    | <span data-ttu-id="13baf-111">アプリにスポット広告を追加します。</span><span class="sxs-lookup"><span data-stu-id="13baf-111">Add an interstitial ad to your app.</span></span>       |
-| [<span data-ttu-id="13baf-112">ネイティブ広告</span><span class="sxs-lookup"><span data-stu-id="13baf-112">Native ads</span></span>](native-ads.md)       | <span data-ttu-id="13baf-113">UWP アプリにネイティブ広告を追加します。</span><span class="sxs-lookup"><span data-stu-id="13baf-113">Add a native ad to your UWP app.</span></span>  |
-| [<span data-ttu-id="13baf-114">XAML および .NET の AdControl</span><span class="sxs-lookup"><span data-stu-id="13baf-114">AdControl in XAML and .NET</span></span>](adcontrol-in-xaml-and--net.md)     | <span data-ttu-id="13baf-115">XAML/.NET アプリにバナー広告を追加します。</span><span class="sxs-lookup"><span data-stu-id="13baf-115">Add a banner ad in your XAML/.NET app.</span></span>        |
-| [<span data-ttu-id="13baf-116">HTML 5 および Javascript の AdControl</span><span class="sxs-lookup"><span data-stu-id="13baf-116">AdControl in HTML 5 and Javascript</span></span>](adcontrol-in-html-5-and-javascript.md)     | <span data-ttu-id="13baf-117">HTML5/JavaScript アプリにバナー広告を追加します。</span><span class="sxs-lookup"><span data-stu-id="13baf-117">Add a banner ad in your HTML5/JavaScript app.</span></span>        |
-| [<span data-ttu-id="13baf-118">Windows Phone Silverlight の AdControl</span><span class="sxs-lookup"><span data-stu-id="13baf-118">AdControl in Windows Phone Silverlight</span></span>](adcontrol-in-windows-phone-silverlight.md)       | <span data-ttu-id="13baf-119">Windows Phone 8.x Silverlight アプリにバナー広告を追加します。</span><span class="sxs-lookup"><span data-stu-id="13baf-119">Add a banner ad in your Windows Phone 8.x Silverlight app.</span></span> |
-| [<span data-ttu-id="13baf-120">ビデオ コンテンツに広告を表示する</span><span class="sxs-lookup"><span data-stu-id="13baf-120">Show ads in video content</span></span>](add-advertisements-to-video-content.md)     |  <span data-ttu-id="13baf-121">JavaScript と HTML を使って記述されたユニバーサル Windows プラットフォーム (UWP) アプリで、ビデオ コンテンツに広告を表示します。</span><span class="sxs-lookup"><span data-stu-id="13baf-121">Show ads in video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.</span></span> |
+| [<span data-ttu-id="b46c1-110">バナー広告</span><span class="sxs-lookup"><span data-stu-id="b46c1-110">Banner ads</span></span>](banner-ads.md)     | <span data-ttu-id="b46c1-111">Microsoft Advertising SDK の [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスを使用して、UWP アプリにバナー広告を追加する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="b46c1-111">Provides instructions for adding a banner ad to your UWP app by using the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class in the Microsoft Advertising SDK.</span></span>        |
+| [<span data-ttu-id="b46c1-112">スポット広告</span><span class="sxs-lookup"><span data-stu-id="b46c1-112">Interstitial Ads</span></span>](interstitial-ads.md)    | <span data-ttu-id="b46c1-113">Microsoft Advertising SDK の [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスを使用して、UWP アプリにスポット広告を追加する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="b46c1-113">Provides instructions for adding an interstitial ad to your UWP app by using the [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) class in the Microsoft Advertising SDK.</span></span>       |
+| [<span data-ttu-id="b46c1-114">ネイティブ広告</span><span class="sxs-lookup"><span data-stu-id="b46c1-114">Native ads</span></span>](native-ads.md)       | <span data-ttu-id="b46c1-115">Microsoft Advertising SDK の **NativeAdsManagerV2** クラスと **NativeAdV2** クラスを使用して、UWP アプリにネイティブ広告を追加する手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="b46c1-115">Provides instructions for adding a native ad to your UWP app by using the **NativeAdsManagerV2** and **NativeAdV2** classes in the Microsoft Advertising SDK.</span></span>  |
+| [<span data-ttu-id="b46c1-116">ビデオ コンテンツに広告を表示する</span><span class="sxs-lookup"><span data-stu-id="b46c1-116">Show ads in video content</span></span>](add-advertisements-to-video-content.md)     |  <span data-ttu-id="b46c1-117">UWP アプリでビデオ コンテンツに広告を表示するための手順について説明します (この機能は現在、JavaScript と HTML を使って記述されているアプリについてのみサポートされています)。</span><span class="sxs-lookup"><span data-stu-id="b46c1-117">Provides instructions for showing ads during video content in your UWP app (this feature is currently supported only for apps that are written using JavaScript with HTML).</span></span> |
 
 
 

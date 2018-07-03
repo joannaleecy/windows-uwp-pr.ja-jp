@@ -1,56 +1,57 @@
 ---
 author: mtoepke
-title: "DDSTextureLoader のコード一式"
-description: "メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。"
+title: DDSTextureLoader のコード一式
+description: メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、ゲーム、DDSTextureLoader"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7daf10ad577b2b67c6ca5554f6555deb89f16229
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, uwp, ゲーム, DDSTextureLoader
+ms.localizationpriority: medium
+ms.openlocfilehash: a06e3624ba7caed8f51a5ff9fe0c5b6100d0f77c
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983302"
 ---
-
-# <a name="complete-code-for-ddstextureloader"></a>DDSTextureLoader のコード一式
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
-
-メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。
-
-このトピックは次のセクションで構成されます。
-
--   [テクノロジ](#technologies)
--   [必要条件](#requirements)
--   [コードの表示 (C++)](#view-the-code-c)
-
-
-## <a name="download-location"></a>ダウンロード場所
-
-
-このサンプルはダウンロードできません。
-
-## <a name="technologies"></a>テクノロジ
-
-**プログラミング言語** - C++    
-**プログラミング モデル** - Windows ランタイム
-
-## <a name="requirements"></a>要件
-
-**サポートされている最小のクライアント** - Windows 10                               
-**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview
+# <a name="complete-code-for-ddstextureloader"></a><span data-ttu-id="d507b-104">DDSTextureLoader のコード一式</span><span class="sxs-lookup"><span data-stu-id="d507b-104">Complete code for DDSTextureLoader</span></span>
 
 
 
-## <a name="view-the-code-c"></a>コードの表示 (C++)
+<span data-ttu-id="d507b-105">メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。</span><span class="sxs-lookup"><span data-stu-id="d507b-105">Complete code for a class and method that loads a DDS texture from memory.</span></span>
+<span data-ttu-id="d507b-106">テクスチャについて、およびこの例の使用方法については、「[DirectX ゲームでのリソースの読み込み](load-a-game-asset.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d507b-106">See [Load resources in your DirectX game](load-a-game-asset.md) for a discussion about textures and using this example.</span></span>
+
+<span data-ttu-id="d507b-107">このトピックは次のセクションで構成されます。</span><span class="sxs-lookup"><span data-stu-id="d507b-107">This topic contains these sections:</span></span>
+
+-   [<span data-ttu-id="d507b-108">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="d507b-108">Technologies</span></span>](#technologies)
+-   [<span data-ttu-id="d507b-109">必要条件</span><span class="sxs-lookup"><span data-stu-id="d507b-109">Requirements</span></span>](#requirements)
+-   [<span data-ttu-id="d507b-110">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="d507b-110">View the code (C++)</span></span>](#view-the-code-c)
 
 
-## <a name="ddstextureloaderh"></a>DDSTextureLoader.h
+## <a name="download-location"></a><span data-ttu-id="d507b-111">ダウンロード場所</span><span class="sxs-lookup"><span data-stu-id="d507b-111">Download location</span></span>
+
+
+<span data-ttu-id="d507b-112">このサンプルはダウンロードできません。</span><span class="sxs-lookup"><span data-stu-id="d507b-112">This sample is not available for download.</span></span>
+
+## <a name="technologies"></a><span data-ttu-id="d507b-113">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="d507b-113">Technologies</span></span>
+
+<span data-ttu-id="d507b-114">**プログラミング言語** - C++</span><span class="sxs-lookup"><span data-stu-id="d507b-114">**Programming languages** - C++</span></span>    
+<span data-ttu-id="d507b-115">**プログラミング モデル** - Windows ランタイム</span><span class="sxs-lookup"><span data-stu-id="d507b-115">**Programming models** - Windows Runtime</span></span>
+
+## <a name="requirements"></a><span data-ttu-id="d507b-116">要件</span><span class="sxs-lookup"><span data-stu-id="d507b-116">Requirements</span></span>
+
+<span data-ttu-id="d507b-117">**サポートされている最小のクライアント** - Windows 10</span><span class="sxs-lookup"><span data-stu-id="d507b-117">**Minimum supported client** - Windows 10</span></span>                               
+<span data-ttu-id="d507b-118">**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview</span><span class="sxs-lookup"><span data-stu-id="d507b-118">**Minimum supported server** - Windows Server 2016 Technical Preview</span></span>
+
+
+
+## <a name="view-the-code-c"></a><span data-ttu-id="d507b-119">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="d507b-119">View the code (C++)</span></span>
+
+
+## <a name="ddstextureloaderh"></a><span data-ttu-id="d507b-120">DDSTextureLoader.h</span><span class="sxs-lookup"><span data-stu-id="d507b-120">DDSTextureLoader.h</span></span>
 
 
 ```cpp
@@ -83,7 +84,7 @@ void CreateDDSTextureFromMemory(
     );
 ```
 
-## <a name="ddstextureloadercpp"></a>DDSTextureLoader.cpp
+## <a name="ddstextureloadercpp"></a><span data-ttu-id="d507b-121">DDSTextureLoader.cpp</span><span class="sxs-lookup"><span data-stu-id="d507b-121">DDSTextureLoader.cpp</span></span>
 
 
 ```cpp
@@ -1226,7 +1227,6 @@ void CreateDDSTextureFromMemory(
  
 
  
-
 
 
 

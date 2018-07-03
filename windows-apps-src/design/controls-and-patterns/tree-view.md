@@ -10,49 +10,49 @@ pm-contact: predavid
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
-ms.openlocfilehash: c92d0c6517456f180dcc84b60cbc6ca3a53ea282
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+dev_langs:
+- csharp
+- vb
+ms.openlocfilehash: 41e17d299e9bac34e58f3c8ffdffecff19ddac18
+ms.sourcegitcommit: e020e9a4d947368a68e4eeba1eea65e9b3a725af
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707147"
+ms.lasthandoff: 05/28/2018
+ms.locfileid: "1924395"
 ---
-# <a name="treeview"></a><span data-ttu-id="f8ea0-103">TreeView</span><span class="sxs-lookup"><span data-stu-id="f8ea0-103">TreeView</span></span>
+# <a name="treeview"></a><span data-ttu-id="964f0-103">TreeView</span><span class="sxs-lookup"><span data-stu-id="964f0-103">TreeView</span></span>
 
-> [!IMPORTANT]
-> <span data-ttu-id="f8ea0-104">この記事では、まだリリースされていない機能について説明しています。この機能は、正式版がリリースされるまでに大幅に変更される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-104">This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released.</span></span> <span data-ttu-id="f8ea0-105">本書に記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-105">Microsoft makes no warranties, express or implied, with respect to the information provided here.</span></span>
+<span data-ttu-id="964f0-104">XAML TreeView コントロールを使用すると、階層リストが有効になり、入れ子になった項目を含むノードを展開したり、折りたたんだりすることができるようになります。</span><span class="sxs-lookup"><span data-stu-id="964f0-104">The XAML TreeView control enables a hierarchical list with expanding and collapsing nodes that contain nested items.</span></span> <span data-ttu-id="964f0-105">フォルダー構造や入れ子になった関係を UI で視覚的に示すために使用できます。</span><span class="sxs-lookup"><span data-stu-id="964f0-105">It can be used to illustrate a folder structure or nested relationships in your UI.</span></span>
 
-<span data-ttu-id="f8ea0-106">XAML TreeView コントロールを使用すると、階層リストが有効になり、入れ子になった項目を含むノードを展開したり、折りたたんだりすることができるようになります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-106">The XAML TreeView control enables a hierarchical list with expanding and collapsing nodes that contain nested items.</span></span> <span data-ttu-id="f8ea0-107">フォルダー構造や入れ子になった関係を UI で視覚的に示すために使用できます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-107">It can be used to illustrate a folder structure or nested relationships in your UI.</span></span>
+> <span data-ttu-id="964f0-106">**重要な API**: [TreeView クラス](/uwp/api/windows.ui.xaml.controls.treeview)、[TreeViewNode クラス](/uwp/api/windows.ui.xaml.controls.treeviewnode)</span><span class="sxs-lookup"><span data-stu-id="964f0-106">**Important APIs**: [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/windows.ui.xaml.controls.treeviewnode)</span></span>
 
-> <span data-ttu-id="f8ea0-108">**重要な API**: [TreeView クラス](/uwp/api/windows.ui.xaml.controls.treeview)、[TreeViewNode クラス](/uwp/api/windows.ui.xaml.controls.treeviewnode)</span><span class="sxs-lookup"><span data-stu-id="f8ea0-108">**Important APIs**: [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/windows.ui.xaml.controls.treeviewnode)</span></span>
+<span data-ttu-id="964f0-107">TreeView API は、以下の機能をサポートします。</span><span class="sxs-lookup"><span data-stu-id="964f0-107">The TreeView APIs support the following features:</span></span>
 
-<span data-ttu-id="f8ea0-109">TreeView API は、以下の機能をサポートします。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-109">The TreeView APIs support the following features:</span></span>
+- <span data-ttu-id="964f0-108">N レベルの入れ子</span><span class="sxs-lookup"><span data-stu-id="964f0-108">N-level nesting</span></span>
+- <span data-ttu-id="964f0-109">ノードの展開/折りたたみ</span><span class="sxs-lookup"><span data-stu-id="964f0-109">Expanding/collapsing of nodes</span></span>
+- <span data-ttu-id="964f0-110">1 つまたは複数のノードの選択</span><span class="sxs-lookup"><span data-stu-id="964f0-110">Selection of single or multiple nodes</span></span>
 
-- <span data-ttu-id="f8ea0-110">N レベルの入れ子</span><span class="sxs-lookup"><span data-stu-id="f8ea0-110">N-level nesting</span></span>
-- <span data-ttu-id="f8ea0-111">ノードの展開/折りたたみ</span><span class="sxs-lookup"><span data-stu-id="f8ea0-111">Expanding/collapsing of nodes</span></span>
-- <span data-ttu-id="f8ea0-112">1 つまたは複数のノードの選択</span><span class="sxs-lookup"><span data-stu-id="f8ea0-112">Selection of single or multiple nodes</span></span>
+## <a name="is-this-the-right-control"></a><span data-ttu-id="964f0-111">適切なコントロールの選択</span><span class="sxs-lookup"><span data-stu-id="964f0-111">Is this the right control?</span></span>
 
-## <a name="is-this-the-right-control"></a><span data-ttu-id="f8ea0-113">適切なコントロールの選択</span><span class="sxs-lookup"><span data-stu-id="f8ea0-113">Is this the right control?</span></span>
+- <span data-ttu-id="964f0-112">項目に入れ子になった一覧項目が含まれているとき、それらの項目とピアやノードとの階層関係を視覚的に示すことが重要になる場合は、ツリー ビューを使用します。</span><span class="sxs-lookup"><span data-stu-id="964f0-112">Use a TreeView when items have nested list items, and if it is important to illustrate the hierarchical relationship of items to their peers and nodes.</span></span>
 
-- <span data-ttu-id="f8ea0-114">項目に入れ子になった一覧項目が含まれているとき、それらの項目とピアやノードとの階層関係を視覚的に示すことが重要になる場合は、ツリー ビューを使用します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-114">Use a TreeView when items have nested list items, and if it is important to illustrate the hierarchical relationship of items to their peers and nodes.</span></span>
+- <span data-ttu-id="964f0-113">項目の入れ子になった関係を強調表示することが優先的な処理ではない場合は、ツリー ビューを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="964f0-113">Avoid using TreeView if highlighting the nested relationship of an item is not a priority.</span></span> <span data-ttu-id="964f0-114">ほとんどの演習用シナリオでは、標準的なリスト ビューが適しています</span><span class="sxs-lookup"><span data-stu-id="964f0-114">For most drill-in scenarios, a regular list view is appropriate</span></span>
 
-- <span data-ttu-id="f8ea0-115">項目の入れ子になった関係を強調表示することが優先的な処理ではない場合は、ツリー ビューを使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-115">Avoid using TreeView if highlighting the nested relationship of an item is not a priority.</span></span> <span data-ttu-id="f8ea0-116">ほとんどの演習用シナリオでは、標準的なリスト ビューが適しています</span><span class="sxs-lookup"><span data-stu-id="f8ea0-116">For most drill-in scenarios, a regular list view is appropriate</span></span>
+## <a name="treeview-ui"></a><span data-ttu-id="964f0-115">TreeView UI</span><span class="sxs-lookup"><span data-stu-id="964f0-115">TreeView UI</span></span>
 
-## <a name="treeview-ui"></a><span data-ttu-id="f8ea0-117">TreeView UI</span><span class="sxs-lookup"><span data-stu-id="f8ea0-117">TreeView UI</span></span>
-
-<span data-ttu-id="f8ea0-118">ツリー ビューはインデントとアイコンを組み合わせて使用することで、フォルダー/親ノードとフォルダー以外の項目/子ノードとの間の入れ子になった関係を表します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-118">The tree view uses a combination of indentation and icons to represent the nested relationship between folder/parent nodes and non-folder/child nodes.</span></span> <span data-ttu-id="f8ea0-119">折りたたまれているノードでは右向きの山形記号を使用し、展開されているノードでは下向きの山形記号を使用します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-119">Collapsed nodes use a chevron pointing to the right, and expanded nodes use a chevron pointing down.</span></span>
+<span data-ttu-id="964f0-116">ツリー ビューはインデントとアイコンを組み合わせて使用することで、フォルダー/親ノードとフォルダー以外の項目/子ノードとの間の入れ子になった関係を表します。</span><span class="sxs-lookup"><span data-stu-id="964f0-116">The tree view uses a combination of indentation and icons to represent the nested relationship between folder/parent nodes and non-folder/child nodes.</span></span> <span data-ttu-id="964f0-117">折りたたまれているノードでは右向きの山形記号を使用し、展開されているノードでは下向きの山形記号を使用します。</span><span class="sxs-lookup"><span data-stu-id="964f0-117">Collapsed nodes use a chevron pointing to the right, and expanded nodes use a chevron pointing down.</span></span>
 
 ![TreeView での山形記号アイコン](images/treeview_chevron.png)
 
-<span data-ttu-id="f8ea0-121">ツリー ビュー項目データ テンプレートにアイコンを含めてノードを表すことができます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-121">You can include an icon in the tree view item data template to represent nodes.</span></span> <span data-ttu-id="f8ea0-122">この場合、ディスク上のフォルダー構造などのリテラル フォルダーを表すノードに対してのみ、フォルダー アイコンのみを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-122">If you do this, you should use a folder icon only for nodes that represent literal folders, such as the folder structure on a disk.</span></span>
+<span data-ttu-id="964f0-119">ツリー ビュー項目データ テンプレートにアイコンを含めてノードを表すことができます。</span><span class="sxs-lookup"><span data-stu-id="964f0-119">You can include an icon in the tree view item data template to represent nodes.</span></span> <span data-ttu-id="964f0-120">この場合、ディスク上のフォルダー構造などのリテラル フォルダーを表すノードに対してのみ、フォルダー アイコンのみを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="964f0-120">If you do this, you should use a folder icon only for nodes that represent literal folders, such as the folder structure on a disk.</span></span>
 
 ![TreeView で山形記号のアイコンとフォルダー アイコンの組み合わせ](images/treeview_chevron_folder.png)
 
-## <a name="create-a-tree-view"></a><span data-ttu-id="f8ea0-124">ツリー ビューの作成</span><span class="sxs-lookup"><span data-stu-id="f8ea0-124">Create a tree view</span></span>
+## <a name="create-a-tree-view"></a><span data-ttu-id="964f0-122">ツリー ビューの作成</span><span class="sxs-lookup"><span data-stu-id="964f0-122">Create a tree view</span></span>
 
-<span data-ttu-id="f8ea0-125">ツリー ビューを作成するには、[TreeView](/uwp/api/windows.ui.xaml.controls.treeview) コントロールと [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) オブジェクトの階層を使用します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-125">To create a tree view, you use a [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control and a hierarchy of [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) objects.</span></span> <span data-ttu-id="f8ea0-126">ノード階層を作成するには、TreeView コントロールの RootNodes コレクションに 1 つまたは複数のルート ノードを追加します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-126">You create the node hierarchy by adding one or more root nodes to the TreeView control’s RootNodes collection.</span></span> <span data-ttu-id="f8ea0-127">各 TreeViewNode では、より多くのノードをその Children コレクションに追加することができます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-127">Each TreeViewNode can then have more nodes added to its Children collection.</span></span> <span data-ttu-id="f8ea0-128">ツリー ビュー ノードは、必要な任意の深さまで入れ子にすることができます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-128">You can nest tree view nodes to whatever depth you require.</span></span>
+<span data-ttu-id="964f0-123">ツリー ビューを作成するには、[TreeView](/uwp/api/windows.ui.xaml.controls.treeview) コントロールと [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) オブジェクトの階層を使用します。</span><span class="sxs-lookup"><span data-stu-id="964f0-123">To create a tree view, you use a [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) control and a hierarchy of [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) objects.</span></span> <span data-ttu-id="964f0-124">ノード階層を作成するには、TreeView コントロールの RootNodes コレクションに 1 つまたは複数のルート ノードを追加します。</span><span class="sxs-lookup"><span data-stu-id="964f0-124">You create the node hierarchy by adding one or more root nodes to the TreeView control’s RootNodes collection.</span></span> <span data-ttu-id="964f0-125">各 TreeViewNode では、より多くのノードをその Children コレクションに追加することができます。</span><span class="sxs-lookup"><span data-stu-id="964f0-125">Each TreeViewNode can then have more nodes added to its Children collection.</span></span> <span data-ttu-id="964f0-126">ツリー ビュー ノードは、必要な任意の深さまで入れ子にすることができます。</span><span class="sxs-lookup"><span data-stu-id="964f0-126">You can nest tree view nodes to whatever depth you require.</span></span>
 
-<span data-ttu-id="f8ea0-129">XAML で宣言された単純なツリー ビューの例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-129">Here's an example of a simple tree view declared in XAML.</span></span> <span data-ttu-id="f8ea0-130">通常は、コードにノードを追加しますが、ノードの階層を作成する方法を視覚化するうえで役立つため、XAML の階層をここに示します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-130">You typically add the nodes in code, but we show the XAML hierarchy here because it can be helpful for visualizing how the hierarchy of nodes is created.</span></span>
+<span data-ttu-id="964f0-127">XAML で宣言された単純なツリー ビューの例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="964f0-127">Here's an example of a simple tree view declared in XAML.</span></span> <span data-ttu-id="964f0-128">通常は、コードにノードを追加しますが、ノードの階層を作成する方法を視覚化するうえで役立つため、XAML の階層をここに示します。</span><span class="sxs-lookup"><span data-stu-id="964f0-128">You typically add the nodes in code, but we show the XAML hierarchy here because it can be helpful for visualizing how the hierarchy of nodes is created.</span></span>
 
 ```xaml
 <TreeView>
@@ -68,9 +68,9 @@ ms.locfileid: "1707147"
 </TreeView>
 ```
 
-<span data-ttu-id="f8ea0-131">ほとんどの場合、ツリー ビューにはデータ ソースのデータが表示されるため、通常はルート TreeView コントロールを XAML で宣言しますが、TreeViewNode オブジェクトをコードに追加します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-131">In most cases, your tree view displays data from a data source, so you typically declare the root TreeView control in XAML, but add the TreeViewNode objects in code.</span></span>
+<span data-ttu-id="964f0-129">ほとんどの場合、ツリー ビューにはデータ ソースのデータが表示されるため、通常はルート TreeView コントロールを XAML で宣言しますが、TreeViewNode オブジェクトをコードに追加します。</span><span class="sxs-lookup"><span data-stu-id="964f0-129">In most cases, your tree view displays data from a data source, so you typically declare the root TreeView control in XAML, but add the TreeViewNode objects in code.</span></span>
 
-<span data-ttu-id="f8ea0-132">このツリー ビューは、XAML で作成されたものと同じですが、ノードはコードで作成されています。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-132">This tree view is the same as the one created previously in XAML, but the nodes are created in code instead.</span></span>
+<span data-ttu-id="964f0-130">このツリー ビューは、XAML で作成されたものと同じですが、ノードはコードで作成されています。</span><span class="sxs-lookup"><span data-stu-id="964f0-130">This tree view is the same as the one created previously in XAML, but the nodes are created in code instead.</span></span>
 
 ```xaml
 <TreeView x:Name="sampleTreeView"/>
@@ -89,27 +89,39 @@ private void InitializeTreeView()
 }
 ```
 
-<span data-ttu-id="f8ea0-133">これらの API は、ツリー ビューのデータの階層の管理に使用できます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-133">These APIs are available for managing the data hierarchy of your tree view.</span></span>
+```vb
+Private Sub InitializeTreeView()
+    Dim rootNode As New TreeViewNode With {.Content = "Flavors", .IsExpanded = True}
+    With rootNode.Children
+        .Add(New TreeViewNode With {.Content = "Vanilla"})
+        .Add(New TreeViewNode With {.Content = "Strawberry"})
+        .Add(New TreeViewNode With {.Content = "Chocolate"})
+    End With
+    sampleTreeView.RootNodes.Add(rootNode)
+End Sub
+```
 
-| **[<span data-ttu-id="f8ea0-134">TreeView</span><span class="sxs-lookup"><span data-stu-id="f8ea0-134">TreeView</span></span>](/uwp/api/windows.ui.xaml.controls.treeview)** | |
+<span data-ttu-id="964f0-131">これらの API は、ツリー ビューのデータの階層の管理に使用できます。</span><span class="sxs-lookup"><span data-stu-id="964f0-131">These APIs are available for managing the data hierarchy of your tree view.</span></span>
+
+| **[<span data-ttu-id="964f0-132">TreeView</span><span class="sxs-lookup"><span data-stu-id="964f0-132">TreeView</span></span>](/uwp/api/windows.ui.xaml.controls.treeview)** | |
 | - | - |
-| [<span data-ttu-id="f8ea0-135">RootNodes</span><span class="sxs-lookup"><span data-stu-id="f8ea0-135">RootNodes</span></span>](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) | <span data-ttu-id="f8ea0-136">ツリー ビューは、1 つまたは複数のルート ノードの場合があります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-136">A tree view can have one or more root nodes.</span></span> <span data-ttu-id="f8ea0-137">TreeViewNode オブジェクトを RootNodes コレクションに追加し、ルート ノードを作成します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-137">Add a TreeViewNode object to the RootNodes collection to create a root node.</span></span> <span data-ttu-id="f8ea0-138">ルート ノードの **Parent** は常に **null** です。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-138">The **Parent** of a root node is always **null**.</span></span> <span data-ttu-id="f8ea0-139">ルート ノードの**奥行き**は0です。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-139">The **Depth** of a root node is 0.</span></span> |
+| [<span data-ttu-id="964f0-133">RootNodes</span><span class="sxs-lookup"><span data-stu-id="964f0-133">RootNodes</span></span>](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) | <span data-ttu-id="964f0-134">ツリー ビューは、1 つまたは複数のルート ノードの場合があります。</span><span class="sxs-lookup"><span data-stu-id="964f0-134">A tree view can have one or more root nodes.</span></span> <span data-ttu-id="964f0-135">TreeViewNode オブジェクトを RootNodes コレクションに追加し、ルート ノードを作成します。</span><span class="sxs-lookup"><span data-stu-id="964f0-135">Add a TreeViewNode object to the RootNodes collection to create a root node.</span></span> <span data-ttu-id="964f0-136">ルート ノードの **Parent** は常に **null** です。</span><span class="sxs-lookup"><span data-stu-id="964f0-136">The **Parent** of a root node is always **null**.</span></span> <span data-ttu-id="964f0-137">ルート ノードの**奥行き**は0です。</span><span class="sxs-lookup"><span data-stu-id="964f0-137">The **Depth** of a root node is 0.</span></span> |
 
-| **[<span data-ttu-id="f8ea0-140">TreeViewNode</span><span class="sxs-lookup"><span data-stu-id="f8ea0-140">TreeViewNode</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
+| **[<span data-ttu-id="964f0-138">TreeViewNode</span><span class="sxs-lookup"><span data-stu-id="964f0-138">TreeViewNode</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
 | - | - |
-| [<span data-ttu-id="f8ea0-141">Children</span><span class="sxs-lookup"><span data-stu-id="f8ea0-141">Children</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | <span data-ttu-id="f8ea0-142">TreeViewNode オブジェクトを親ノードの Children コレクションに追加し、ノード階層を作成します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-142">Add TreeViewNode objects to the Children collection of a parent node to create your node hierarchy.</span></span> <span data-ttu-id="f8ea0-143">ノードは、その **Children** コレクションのすべてのノードの **Parent** です。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-143">A node is the **Parent** of all nodes in its **Children** collection.</span></span> |
-| [<span data-ttu-id="f8ea0-144">HasChildren</span><span class="sxs-lookup"><span data-stu-id="f8ea0-144">HasChildren</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | <span data-ttu-id="f8ea0-145">ノードが子を実体化した場合は **true**。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-145">**true** if the node has realized children.</span></span> <span data-ttu-id="f8ea0-146">**false** は空のフォルダーまたは項目を示します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-146">**false** indicates an empty folder or an item.</span></span> |
-| [<span data-ttu-id="f8ea0-147">HasUnrealizedChildren</span><span class="sxs-lookup"><span data-stu-id="f8ea0-147">HasUnrealizedChildren</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | <span data-ttu-id="f8ea0-148">ノードが展開されているときにノードに入力している場合は、このプロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-148">Use this property if you're filling nodes as they're expanded.</span></span> <span data-ttu-id="f8ea0-149">この記事の後半にある「_展開時にノードを入力する_」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-149">See _Fill a node when it's expanding_ later in this article.</span></span> |
-| [<span data-ttu-id="f8ea0-150">奥行き</span><span class="sxs-lookup"><span data-stu-id="f8ea0-150">Depth</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode.depth) | <span data-ttu-id="f8ea0-151">子ノードとルート ノードの距離を示します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-151">Indicates how far from the root node a child node is.</span></span> |
-| [<span data-ttu-id="f8ea0-152">Parent</span><span class="sxs-lookup"><span data-stu-id="f8ea0-152">Parent</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode.parent) | <span data-ttu-id="f8ea0-153">このノードが含まれている **Children** コレクションを所有する TreeViewNode を取得します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-153">Gets the TreeViewNode that owns the **Children** collection that this node is part of.</span></span> |
+| [<span data-ttu-id="964f0-139">Children</span><span class="sxs-lookup"><span data-stu-id="964f0-139">Children</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | <span data-ttu-id="964f0-140">TreeViewNode オブジェクトを親ノードの Children コレクションに追加し、ノード階層を作成します。</span><span class="sxs-lookup"><span data-stu-id="964f0-140">Add TreeViewNode objects to the Children collection of a parent node to create your node hierarchy.</span></span> <span data-ttu-id="964f0-141">ノードは、その **Children** コレクションのすべてのノードの **Parent** です。</span><span class="sxs-lookup"><span data-stu-id="964f0-141">A node is the **Parent** of all nodes in its **Children** collection.</span></span> |
+| [<span data-ttu-id="964f0-142">HasChildren</span><span class="sxs-lookup"><span data-stu-id="964f0-142">HasChildren</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | <span data-ttu-id="964f0-143">ノードが子を実体化した場合は **true**。</span><span class="sxs-lookup"><span data-stu-id="964f0-143">**true** if the node has realized children.</span></span> <span data-ttu-id="964f0-144">**false** は空のフォルダーまたは項目を示します。</span><span class="sxs-lookup"><span data-stu-id="964f0-144">**false** indicates an empty folder or an item.</span></span> |
+| [<span data-ttu-id="964f0-145">HasUnrealizedChildren</span><span class="sxs-lookup"><span data-stu-id="964f0-145">HasUnrealizedChildren</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | <span data-ttu-id="964f0-146">ノードが展開されているときにノードに入力している場合は、このプロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="964f0-146">Use this property if you're filling nodes as they're expanded.</span></span> <span data-ttu-id="964f0-147">この記事の後半にある「_展開時にノードを入力する_」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="964f0-147">See _Fill a node when it's expanding_ later in this article.</span></span> |
+| [<span data-ttu-id="964f0-148">奥行き</span><span class="sxs-lookup"><span data-stu-id="964f0-148">Depth</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode.depth) | <span data-ttu-id="964f0-149">子ノードとルート ノードの距離を示します。</span><span class="sxs-lookup"><span data-stu-id="964f0-149">Indicates how far from the root node a child node is.</span></span> |
+| [<span data-ttu-id="964f0-150">Parent</span><span class="sxs-lookup"><span data-stu-id="964f0-150">Parent</span></span>](/uwp/api/windows.ui.xaml.controls.treeviewnode.parent) | <span data-ttu-id="964f0-151">このノードが含まれている **Children** コレクションを所有する TreeViewNode を取得します。</span><span class="sxs-lookup"><span data-stu-id="964f0-151">Gets the TreeViewNode that owns the **Children** collection that this node is part of.</span></span> |
 
-<span data-ttu-id="f8ea0-154">ツリー ビューは、**HasChildren** プロパティと **HasUnrealizedChildren** プロパティを使用して、開く/閉じるアイコンを表示するかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-154">The tree view uses the **HasChildren** and **HasUnrealizedChildren** properties to determine whether the expand/collapse icon is shown.</span></span> <span data-ttu-id="f8ea0-155">いずれかのプロパティが **true** である場合、アイコンが表示されます。それ以外の場合は表示されません。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-155">If either property is **true**, the icon is shown; otherwise, it's not shown.</span></span>
+<span data-ttu-id="964f0-152">ツリー ビューは、**HasChildren** プロパティと **HasUnrealizedChildren** プロパティを使用して、開く/閉じるアイコンを表示するかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="964f0-152">The tree view uses the **HasChildren** and **HasUnrealizedChildren** properties to determine whether the expand/collapse icon is shown.</span></span> <span data-ttu-id="964f0-153">いずれかのプロパティが **true** である場合、アイコンが表示されます。それ以外の場合は表示されません。</span><span class="sxs-lookup"><span data-stu-id="964f0-153">If either property is **true**, the icon is shown; otherwise, it's not shown.</span></span>
 
-## <a name="tree-view-node-content"></a><span data-ttu-id="f8ea0-156">ツリー ビュー ノード コンテンツ</span><span class="sxs-lookup"><span data-stu-id="f8ea0-156">Tree view node content</span></span>
+## <a name="tree-view-node-content"></a><span data-ttu-id="964f0-154">ツリー ビュー ノード コンテンツ</span><span class="sxs-lookup"><span data-stu-id="964f0-154">Tree view node content</span></span>
 
-<span data-ttu-id="f8ea0-157">ツリー ビュー ノードが [Content](/uwp/api/windows.ui.xaml.controls.treeviewnode.content) プロパティで表すデータ項目を保存することができます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-157">You can store the data item that a tree view node represents in its [Content](/uwp/api/windows.ui.xaml.controls.treeviewnode.content) property.</span></span>
+<span data-ttu-id="964f0-155">ツリー ビュー ノードが [Content](/uwp/api/windows.ui.xaml.controls.treeviewnode.content) プロパティで表すデータ項目を保存することができます。</span><span class="sxs-lookup"><span data-stu-id="964f0-155">You can store the data item that a tree view node represents in its [Content](/uwp/api/windows.ui.xaml.controls.treeviewnode.content) property.</span></span>
 
-<span data-ttu-id="f8ea0-158">前の例では、コンテンツは単純な文字列値でした。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-158">In the previous examples, the content was a simple string value.</span></span> <span data-ttu-id="f8ea0-159">ここでは、ツリー ビュー ノードはユーザーのピクチャ フォルダーを表すため、ピクチャ ライブラリ [StorageFolder](/uwp/api/windows.storage.storagefolder) はノードの Content プロパティに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-159">Here, a tree view node represents the user's Pictures folder, so the pictures library [StorageFolder](/uwp/api/windows.storage.storagefolder) is assigned to the node's Content property.</span></span>
+<span data-ttu-id="964f0-156">前の例では、コンテンツは単純な文字列値でした。</span><span class="sxs-lookup"><span data-stu-id="964f0-156">In the previous examples, the content was a simple string value.</span></span> <span data-ttu-id="964f0-157">ここでは、ツリー ビュー ノードはユーザーのピクチャ フォルダーを表すため、ピクチャ ライブラリ [StorageFolder](/uwp/api/windows.storage.storagefolder) はノードの Content プロパティに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="964f0-157">Here, a tree view node represents the user's Pictures folder, so the pictures library [StorageFolder](/uwp/api/windows.storage.storagefolder) is assigned to the node's Content property.</span></span>
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -117,38 +129,43 @@ TreeViewNode pictureNode = new TreeViewNode();
 pictureNode.Content = picturesFolder;
 ```
 
-<span data-ttu-id="f8ea0-160">[DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) を指定して、ツリー ビューでのデータ項目の表示方法を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-160">You can provide a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) to specify how the data item is displayed in the tree view.</span></span>
+```vb
+Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
+Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
+```
+
+<span data-ttu-id="964f0-158">[DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) を指定して、ツリー ビューでのデータ項目の表示方法を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="964f0-158">You can provide a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) to specify how the data item is displayed in the tree view.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f8ea0-161">Windows 10 バージョン 1803 では、コンテンツが文字列ではない場合は、TreeView コントロールを再テンプレート化し、カスタム ItemTemplate を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-161">In Windows 10, version 1803, you have to retemplate the TreeView control and specify a custom ItemTemplate if your content is not a string.</span></span> <span data-ttu-id="f8ea0-162">詳細については、この記事の終わりにある完全な例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-162">For more info, see the full example at the end of this article.</span></span>
+> <span data-ttu-id="964f0-159">Windows 10 バージョン 1803 では、コンテンツが文字列ではない場合は、TreeView コントロールを再テンプレート化し、カスタム ItemTemplate を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="964f0-159">In Windows 10, version 1803, you have to retemplate the TreeView control and specify a custom ItemTemplate if your content is not a string.</span></span> <span data-ttu-id="964f0-160">詳細については、この記事の終わりにある完全な例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="964f0-160">For more info, see the full example at the end of this article.</span></span>
 
-## <a name="interacting-with-a-tree-view"></a><span data-ttu-id="f8ea0-163">ツリー ビューの操作</span><span class="sxs-lookup"><span data-stu-id="f8ea0-163">Interacting with a tree view</span></span>
+## <a name="interacting-with-a-tree-view"></a><span data-ttu-id="964f0-161">ツリー ビューの操作</span><span class="sxs-lookup"><span data-stu-id="964f0-161">Interacting with a tree view</span></span>
 
-<span data-ttu-id="f8ea0-164">ユーザーが操作できるようにツリー ビューを構成する方法はいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-164">You can configure a tree view to let a user interact with it in several different ways:</span></span>
+<span data-ttu-id="964f0-162">ユーザーが操作できるようにツリー ビューを構成する方法はいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="964f0-162">You can configure a tree view to let a user interact with it in several different ways:</span></span>
 
-- <span data-ttu-id="f8ea0-165">ノードの展開と折りたたみ</span><span class="sxs-lookup"><span data-stu-id="f8ea0-165">expand or collapse nodes</span></span>
-- <span data-ttu-id="f8ea0-166">項目の単一選択または複数選択</span><span class="sxs-lookup"><span data-stu-id="f8ea0-166">single- or multi-select items</span></span>
-- <span data-ttu-id="f8ea0-167">クリックして項目を呼び出す</span><span class="sxs-lookup"><span data-stu-id="f8ea0-167">click to invoke an item</span></span>
+- <span data-ttu-id="964f0-163">ノードの展開と折りたたみ</span><span class="sxs-lookup"><span data-stu-id="964f0-163">expand or collapse nodes</span></span>
+- <span data-ttu-id="964f0-164">項目の単一選択または複数選択</span><span class="sxs-lookup"><span data-stu-id="964f0-164">single- or multi-select items</span></span>
+- <span data-ttu-id="964f0-165">クリックして項目を呼び出す</span><span class="sxs-lookup"><span data-stu-id="964f0-165">click to invoke an item</span></span>
 
-### <a name="expandcollapse"></a><span data-ttu-id="f8ea0-168">展開/折りたたみ</span><span class="sxs-lookup"><span data-stu-id="f8ea0-168">Expand/collapse</span></span>
+### <a name="expandcollapse"></a><span data-ttu-id="964f0-166">展開/折りたたみ</span><span class="sxs-lookup"><span data-stu-id="964f0-166">Expand/collapse</span></span>
 
-<span data-ttu-id="f8ea0-169">子を持つ任意のツリー ビュー ノードは常に、展開/折りたたみグリフをクリックして展開または折りたたむことができます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-169">Any tree view node that has children can always be expanded or collapsed by clicking the expand/collapse glyph.</span></span> <span data-ttu-id="f8ea0-170">ノードをプログラムにより展開するか折りたたみ、ノードの状態が変化したときに対応することもできます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-170">You can also expand or collapse a node programmatically, and respond when a node changes state.</span></span>
+<span data-ttu-id="964f0-167">子を持つ任意のツリー ビュー ノードは常に、展開/折りたたみグリフをクリックして展開または折りたたむことができます。</span><span class="sxs-lookup"><span data-stu-id="964f0-167">Any tree view node that has children can always be expanded or collapsed by clicking the expand/collapse glyph.</span></span> <span data-ttu-id="964f0-168">ノードをプログラムにより展開するか折りたたみ、ノードの状態が変化したときに対応することもできます。</span><span class="sxs-lookup"><span data-stu-id="964f0-168">You can also expand or collapse a node programmatically, and respond when a node changes state.</span></span>
 
-#### <a name="expandcollapse-a-node-programmatically"></a><span data-ttu-id="f8ea0-171">ノードをプログラムにより展開/折りたたみ</span><span class="sxs-lookup"><span data-stu-id="f8ea0-171">Expand/collapse a node programmatically</span></span>
+#### <a name="expandcollapse-a-node-programmatically"></a><span data-ttu-id="964f0-169">ノードをプログラムにより展開/折りたたみ</span><span class="sxs-lookup"><span data-stu-id="964f0-169">Expand/collapse a node programmatically</span></span>
 
-<span data-ttu-id="f8ea0-172">コードでツリー ビュー ノードを展開したり、折りたたんだりする 2 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-172">There are 2 ways you can expand or collapse a tree view node in your code.</span></span>
+<span data-ttu-id="964f0-170">コードでツリー ビュー ノードを展開したり、折りたたんだりする 2 つの方法があります。</span><span class="sxs-lookup"><span data-stu-id="964f0-170">There are 2 ways you can expand or collapse a tree view node in your code.</span></span>
 
-- <span data-ttu-id="f8ea0-173">[TreeView](/uwp/api/windows.ui.xaml.controls.treeview) クラスには [Collapse](/uwp/api/windows.ui.xaml.controls.treeview.collapse) メソッドと [Expand](/uwp/api/windows.ui.xaml.controls.treeview.expand) メソッドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-173">The [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) class has the [Collapse](/uwp/api/windows.ui.xaml.controls.treeview.collapse) and [Expand](/uwp/api/windows.ui.xaml.controls.treeview.expand) methods.</span></span> <span data-ttu-id="f8ea0-174">これらのメソッドを呼び出すと、展開または折りたたむ TreeViewNode を渡します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-174">When you call these methods, you pass in the TreeViewNode that you want to expand or collapse.</span></span>
+- <span data-ttu-id="964f0-171">[TreeView](/uwp/api/windows.ui.xaml.controls.treeview) クラスには [Collapse](/uwp/api/windows.ui.xaml.controls.treeview.collapse) メソッドと [Expand](/uwp/api/windows.ui.xaml.controls.treeview.expand) メソッドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="964f0-171">The [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) class has the [Collapse](/uwp/api/windows.ui.xaml.controls.treeview.collapse) and [Expand](/uwp/api/windows.ui.xaml.controls.treeview.expand) methods.</span></span> <span data-ttu-id="964f0-172">これらのメソッドを呼び出すと、展開または折りたたむ TreeViewNode を渡します。</span><span class="sxs-lookup"><span data-stu-id="964f0-172">When you call these methods, you pass in the TreeViewNode that you want to expand or collapse.</span></span>
 
-- <span data-ttu-id="f8ea0-175">各 [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) には [IsExpanded](/uwp/api/windows.ui.xaml.controls.treeviewnode.isexpanded) プロパティが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-175">Each [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) has the [IsExpanded](/uwp/api/windows.ui.xaml.controls.treeviewnode.isexpanded) property.</span></span> <span data-ttu-id="f8ea0-176">このプロパティを使用して、ノードの状態を確認したり、状態を変更するように設定したりできます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-176">You can use this property to check the state of a node, or set it to change the state.</span></span> <span data-ttu-id="f8ea0-177">このプロパティを XAML で設定し、ノードの初期状態に設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-177">You can also set this property in XAML to set the initial state of a node.</span></span>
+- <span data-ttu-id="964f0-173">各 [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) には [IsExpanded](/uwp/api/windows.ui.xaml.controls.treeviewnode.isexpanded) プロパティが含まれています。</span><span class="sxs-lookup"><span data-stu-id="964f0-173">Each [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) has the [IsExpanded](/uwp/api/windows.ui.xaml.controls.treeviewnode.isexpanded) property.</span></span> <span data-ttu-id="964f0-174">このプロパティを使用して、ノードの状態を確認したり、状態を変更するように設定したりできます。</span><span class="sxs-lookup"><span data-stu-id="964f0-174">You can use this property to check the state of a node, or set it to change the state.</span></span> <span data-ttu-id="964f0-175">このプロパティを XAML で設定し、ノードの初期状態に設定することもできます。</span><span class="sxs-lookup"><span data-stu-id="964f0-175">You can also set this property in XAML to set the initial state of a node.</span></span>
 
-### <a name="fill-a-node-when-its-expanding"></a><span data-ttu-id="f8ea0-178">展開時にノードを入力する</span><span class="sxs-lookup"><span data-stu-id="f8ea0-178">Fill a node when it's expanding</span></span>
+### <a name="fill-a-node-when-its-expanding"></a><span data-ttu-id="964f0-176">展開時にノードを入力する</span><span class="sxs-lookup"><span data-stu-id="964f0-176">Fill a node when it's expanding</span></span>
 
-<span data-ttu-id="f8ea0-179">ツリー ビューで多数のノードを表示しなければならない場合があります。または含まれるノードの数が前もってわからない場合があります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-179">You might need to show a large number of nodes in your tree view, or you might not know ahead of time how many nodes it will have.</span></span> <span data-ttu-id="f8ea0-180">TreeView コントロールは仮想化されていないため、リソースを管理するには、展開時に各ノードを入力し、折りたたみ時に子ノードを削除します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-180">The TreeView control is not virtualized, so you can manage resources by filling each node as it's expanded, and removing the child nodes when it's collapsed.</span></span>
+<span data-ttu-id="964f0-177">ツリー ビューで多数のノードを表示しなければならない場合があります。または含まれるノードの数が前もってわからない場合があります。</span><span class="sxs-lookup"><span data-stu-id="964f0-177">You might need to show a large number of nodes in your tree view, or you might not know ahead of time how many nodes it will have.</span></span> <span data-ttu-id="964f0-178">TreeView コントロールは仮想化されていないため、リソースを管理するには、展開時に各ノードを入力し、折りたたみ時に子ノードを削除します。</span><span class="sxs-lookup"><span data-stu-id="964f0-178">The TreeView control is not virtualized, so you can manage resources by filling each node as it's expanded, and removing the child nodes when it's collapsed.</span></span>
 
-<span data-ttu-id="f8ea0-181">[展開](/uwp/api/windows.ui.xaml.controls.treeview.expand) イベントを処理し、[HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) プロパティを使用して展開時に子をノードに追加します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-181">Handle the [Expanding](/uwp/api/windows.ui.xaml.controls.treeview.expand) event and use the [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) property to add children to a node when it's being expanded.</span></span> <span data-ttu-id="f8ea0-182">HasUnrealizedChildren プロパティは、ノードを入力する必要があるか、その Children コレクションが既に設定されているかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-182">The HasUnrealizedChildren property indicates whether the node needs to be filled, or if its Children collection has already been populated.</span></span> <span data-ttu-id="f8ea0-183">TreeViewNode はこの値を設定しないことに留意することは重要です。この値はアプリ コードで管理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-183">It's important to remember that the TreeViewNode doesn't set this value, you need need to manage it in your app code.</span></span>
+<span data-ttu-id="964f0-179">[展開](/uwp/api/windows.ui.xaml.controls.treeview.expand) イベントを処理し、[HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) プロパティを使用して展開時に子をノードに追加します。</span><span class="sxs-lookup"><span data-stu-id="964f0-179">Handle the [Expanding](/uwp/api/windows.ui.xaml.controls.treeview.expand) event and use the [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) property to add children to a node when it's being expanded.</span></span> <span data-ttu-id="964f0-180">HasUnrealizedChildren プロパティは、ノードを入力する必要があるか、その Children コレクションが既に設定されているかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="964f0-180">The HasUnrealizedChildren property indicates whether the node needs to be filled, or if its Children collection has already been populated.</span></span> <span data-ttu-id="964f0-181">TreeViewNode はこの値を設定しないことに留意することは重要です。この値はアプリ コードで管理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="964f0-181">It's important to remember that the TreeViewNode doesn't set this value, you need need to manage it in your app code.</span></span>
 
-<span data-ttu-id="f8ea0-184">次の例は、使用中のこれらの API を示しています。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-184">Here's an example of these APIs in use.</span></span> <span data-ttu-id="f8ea0-185">'FillTreeNode' の実装を含むコンテキストについては、この記事の最後の完全なコード例をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-185">See the complete example code at the end of this article for context, including the implemetation of 'FillTreeNode'.</span></span>
+<span data-ttu-id="964f0-182">次の例は、使用中のこれらの API を示しています。</span><span class="sxs-lookup"><span data-stu-id="964f0-182">Here's an example of these APIs in use.</span></span> <span data-ttu-id="964f0-183">'FillTreeNode' の実装を含むコンテキストについては、この記事の最後の完全なコード例をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="964f0-183">See the complete example code at the end of this article for context, including the implemetation of 'FillTreeNode'.</span></span>
 
 ```csharp
 private void SampleTreeView_Expanding(TreeView sender, TreeViewExpandingEventArgs args)
@@ -160,9 +177,17 @@ private void SampleTreeView_Expanding(TreeView sender, TreeViewExpandingEventArg
 }
 ```
 
-<span data-ttu-id="f8ea0-186">これは必須ではありませんが、[Collapsed](/uwp/api/windows.ui.xaml.controls.treeview.collapsed) イベントを処理して、親ノードが閉じられたときに子ノードを削除することもできます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-186">It's not required, but you might want to also handle the [Collapsed](/uwp/api/windows.ui.xaml.controls.treeview.collapsed) event and remove the child nodes when the parent node is closed.</span></span> <span data-ttu-id="f8ea0-187">これは、ツリー ビューに多くのノードがある場合、またはノード データが大量のリソースを使用している場合に重要です。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-187">This can be important if your tree view has many nodes, or if the node data uses a lot of resources.</span></span> <span data-ttu-id="f8ea0-188">ノードを開くたびに入力することと、子をクローズド ノードにしたままにすることのパフォーマンスへの影響を考慮する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-188">You should consider the performance impact of filling a node each time it's opened versus leaving the children on a closed node.</span></span> <span data-ttu-id="f8ea0-189">最適な選択肢は、アプリによって異なります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-189">The best option will depend on your app.</span></span>
+```vb
+Private Sub SampleTreeView_Expanding(sender As TreeView, args As TreeViewExpandingEventArgs)
+    If args.Node.HasUnrealizedChildren Then
+        FillTreeNode(args.Node)
+    End If
+End Sub
+```
 
-<span data-ttu-id="f8ea0-190">この例では Collapsed イベントに対応するハンドラーを示します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-190">Here's an example of a handler for the Collapsed event.</span></span>
+<span data-ttu-id="964f0-184">これは必須ではありませんが、[Collapsed](/uwp/api/windows.ui.xaml.controls.treeview.collapsed) イベントを処理して、親ノードが閉じられたときに子ノードを削除することもできます。</span><span class="sxs-lookup"><span data-stu-id="964f0-184">It's not required, but you might want to also handle the [Collapsed](/uwp/api/windows.ui.xaml.controls.treeview.collapsed) event and remove the child nodes when the parent node is closed.</span></span> <span data-ttu-id="964f0-185">これは、ツリー ビューに多くのノードがある場合、またはノード データが大量のリソースを使用している場合に重要です。</span><span class="sxs-lookup"><span data-stu-id="964f0-185">This can be important if your tree view has many nodes, or if the node data uses a lot of resources.</span></span> <span data-ttu-id="964f0-186">ノードを開くたびに入力することと、子をクローズド ノードにしたままにすることのパフォーマンスへの影響を考慮する必要があります。</span><span class="sxs-lookup"><span data-stu-id="964f0-186">You should consider the performance impact of filling a node each time it's opened versus leaving the children on a closed node.</span></span> <span data-ttu-id="964f0-187">最適な選択肢は、アプリによって異なります。</span><span class="sxs-lookup"><span data-stu-id="964f0-187">The best option will depend on your app.</span></span>
+
+<span data-ttu-id="964f0-188">この例では Collapsed イベントに対応するハンドラーを示します。</span><span class="sxs-lookup"><span data-stu-id="964f0-188">Here's an example of a handler for the Collapsed event.</span></span>
 
 ```csharp
 private void SampleTreeView_Collapsed(TreeView sender, TreeViewCollapsedEventArgs args)
@@ -172,18 +197,25 @@ private void SampleTreeView_Collapsed(TreeView sender, TreeViewCollapsedEventArg
 }
 ```
 
-### <a name="invoking-an-item"></a><span data-ttu-id="f8ea0-191">項目の呼び出し</span><span class="sxs-lookup"><span data-stu-id="f8ea0-191">Invoking an item</span></span>
+```vb
+Private Sub SampleTreeView_Collapsed(sender As TreeView, args As TreeViewCollapsedEventArgs)
+    args.Node.Children.Clear()
+    args.Node.HasUnrealizedChildren = True
+End Sub
+```
 
-<span data-ttu-id="f8ea0-192">ユーザーは、項目を選択する代わりに操作 (ボタンのように項目を扱う) を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-192">A user can invoke an action (treating the item like a button) instead of selecting the item.</span></span> <span data-ttu-id="f8ea0-193">[ItemInvoked](/uwp/api/windows.ui.xaml.controls.treeview.iteminvoked) イベントを処理してこのユーザー操作に対応します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-193">You handle the [ItemInvoked](/uwp/api/windows.ui.xaml.controls.treeview.iteminvoked) event to respond to this user interaction.</span></span>
+### <a name="invoking-an-item"></a><span data-ttu-id="964f0-189">項目の呼び出し</span><span class="sxs-lookup"><span data-stu-id="964f0-189">Invoking an item</span></span>
+
+<span data-ttu-id="964f0-190">ユーザーは、項目を選択する代わりに操作 (ボタンのように項目を扱う) を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="964f0-190">A user can invoke an action (treating the item like a button) instead of selecting the item.</span></span> <span data-ttu-id="964f0-191">[ItemInvoked](/uwp/api/windows.ui.xaml.controls.treeview.iteminvoked) イベントを処理してこのユーザー操作に対応します。</span><span class="sxs-lookup"><span data-stu-id="964f0-191">You handle the [ItemInvoked](/uwp/api/windows.ui.xaml.controls.treeview.iteminvoked) event to respond to this user interaction.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f8ea0-194">[IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) プロパティが含まれる ListView とは異なり、アイテムの呼び出しとはツリー ビューで常に有効になっています。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-194">Unlike ListView, which has the [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) property, invoking an item is always enabled on the tree view.</span></span> <span data-ttu-id="f8ea0-195">イベントを処理するかどうか選択することができます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-195">You can still choose whether to handle the event or not.</span></span>
+> <span data-ttu-id="964f0-192">[IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) プロパティが含まれる ListView とは異なり、アイテムの呼び出しとはツリー ビューで常に有効になっています。</span><span class="sxs-lookup"><span data-stu-id="964f0-192">Unlike ListView, which has the [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) property, invoking an item is always enabled on the tree view.</span></span> <span data-ttu-id="964f0-193">イベントを処理するかどうか選択することができます。</span><span class="sxs-lookup"><span data-stu-id="964f0-193">You can still choose whether to handle the event or not.</span></span>
 
-**<span data-ttu-id="f8ea0-196">[TreeViewItemInvokedEventArgs](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs) クラス</span><span class="sxs-lookup"><span data-stu-id="f8ea0-196">[TreeViewItemInvokedEventArgs](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs) class</span></span>**
+**<span data-ttu-id="964f0-194">[TreeViewItemInvokedEventArgs](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs) クラス</span><span class="sxs-lookup"><span data-stu-id="964f0-194">[TreeViewItemInvokedEventArgs](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs) class</span></span>**
 
-<span data-ttu-id="f8ea0-197">ItemInvoked イベント引数により、呼び出された項目にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-197">The ItemInvoked event args give you acces to the invoked item.</span></span> <span data-ttu-id="f8ea0-198">[InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) プロパティには呼び出されたノードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-198">The [InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) property has the node that was invoked.</span></span> <span data-ttu-id="f8ea0-199">これを TreeViewNode にキャストし、データ項目を TreeViewNode.Content プロパティから取得できます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-199">You can cast it to TreeViewNode and get the data item from the TreeViewNode.Content property.</span></span>
+<span data-ttu-id="964f0-195">ItemInvoked イベント引数により、呼び出された項目にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="964f0-195">The ItemInvoked event args give you acces to the invoked item.</span></span> <span data-ttu-id="964f0-196">[InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) プロパティには呼び出されたノードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="964f0-196">The [InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) property has the node that was invoked.</span></span> <span data-ttu-id="964f0-197">これを TreeViewNode にキャストし、データ項目を TreeViewNode.Content プロパティから取得できます。</span><span class="sxs-lookup"><span data-stu-id="964f0-197">You can cast it to TreeViewNode and get the data item from the TreeViewNode.Content property.</span></span>
 
-<span data-ttu-id="f8ea0-200">ItemInvoked イベント ハンドラーの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-200">Here's an example of an ItemInvoked event handler.</span></span> <span data-ttu-id="f8ea0-201">データ項目は [IStorageItem](/uwp/api/windows.storage.istorageitem) です。この例では、ファイルおよびツリーについての情報だけが表示されます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-201">The data item is an [IStorageItem](/uwp/api/windows.storage.istorageitem), and this example just displays some info about the file and tree.</span></span> <span data-ttu-id="f8ea0-202">また、ノードがフォルダー ノードの場合は、ノードを同時に展開または折りたたみます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-202">Also, if the node is a folder node, it expands or collpases the node at the same time.</span></span> <span data-ttu-id="f8ea0-203">それ以外の場合、ノードは山形マークをクリックした場合にのみ展開または折りたたまれます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-203">Otherwise, the node expands or collapses only when the chevron is clicked.</span></span>
+<span data-ttu-id="964f0-198">ItemInvoked イベント ハンドラーの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="964f0-198">Here's an example of an ItemInvoked event handler.</span></span> <span data-ttu-id="964f0-199">データ項目は [IStorageItem](/uwp/api/windows.storage.istorageitem) です。この例では、ファイルおよびツリーについての情報だけが表示されます。</span><span class="sxs-lookup"><span data-stu-id="964f0-199">The data item is an [IStorageItem](/uwp/api/windows.storage.istorageitem), and this example just displays some info about the file and tree.</span></span> <span data-ttu-id="964f0-200">また、ノードがフォルダー ノードの場合は、ノードを同時に展開または折りたたみます。</span><span class="sxs-lookup"><span data-stu-id="964f0-200">Also, if the node is a folder node, it expands or collpases the node at the same time.</span></span> <span data-ttu-id="964f0-201">それ以外の場合、ノードは山形マークをクリックした場合にのみ展開または折りたたまれます。</span><span class="sxs-lookup"><span data-stu-id="964f0-201">Otherwise, the node expands or collapses only when the chevron is clicked.</span></span>
 
 ```csharp
 private void SampleTreeView_ItemInvoked(TreeView sender, TreeViewItemInvokedEventArgs args)
@@ -203,30 +235,45 @@ private void SampleTreeView_ItemInvoked(TreeView sender, TreeViewItemInvokedEven
 }
 ```
 
-### <a name="item-selection"></a><span data-ttu-id="f8ea0-204">項目の選択</span><span class="sxs-lookup"><span data-stu-id="f8ea0-204">Item selection</span></span>
+```vb
+Private Sub SampleTreeView_ItemInvoked(sender As TreeView, args As TreeViewItemInvokedEventArgs)
+    Dim node = TryCast(args.InvokedItem, TreeViewNode)
+    Dim item = TryCast(node.Content, IStorageItem)
+    If item IsNot Nothing Then
+        FileNameTextBlock.Text = item.Name
+        FilePathTextBlock.Text = item.Path
+        TreeDepthTextBlock.Text = node.Depth.ToString()
+        If TypeOf node.Content Is StorageFolder Then
+            node.IsExpanded = Not node.IsExpanded
+        End If
+    End If
+End Sub
+```
 
-<span data-ttu-id="f8ea0-205">TreeView コントロールでは、単一選択と複数選択の両方がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-205">The TreeView control supports both single-selection and multi-selection.</span></span> <span data-ttu-id="f8ea0-206">既定では、ノードの選択はオフになっていますが、[TreeView.SelectionMode](/uwp/api/windows.ui.xaml.controls.treeview.selectionmode) プロパティを設定してノードの選択を許可することができます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-206">By default, selection of nodes is turned off, but you can set the [TreeView.SelectionMode](/uwp/api/windows.ui.xaml.controls.treeview.selectionmode) property to allow selection of nodes.</span></span> <span data-ttu-id="f8ea0-207">[TreeViewSelectionMode](/uwp/api/windows.ui.xaml.controls.treeviewselectionmode) 値は **None**、**Single**、および **Multiple** です。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-207">The [TreeViewSelectionMode](/uwp/api/windows.ui.xaml.controls.treeviewselectionmode) values are **None**, **Single**, and **Multiple**.</span></span>
+### <a name="item-selection"></a><span data-ttu-id="964f0-202">項目の選択</span><span class="sxs-lookup"><span data-stu-id="964f0-202">Item selection</span></span>
 
-<span data-ttu-id="f8ea0-208">選択を有効にすると、各ツリー ビュー ノードの横にあるチェック ボックスが表示され、選択した項目が強調表示されます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-208">When selection is enabled, a checkbox is shown next to each tree view node, and selected items are highlighted.</span></span> <span data-ttu-id="f8ea0-209">ユーザーは、チェック ボックスを使用して項目を選択または選択解除できます。項目は引き続きクリックして呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-209">A user can select or de-select an item by using the checkbox; clicking the item still causes it to be invoked.</span></span>
+<span data-ttu-id="964f0-203">TreeView コントロールでは、単一選択と複数選択の両方がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="964f0-203">The TreeView control supports both single-selection and multi-selection.</span></span> <span data-ttu-id="964f0-204">既定では、ノードの選択はオフになっていますが、[TreeView.SelectionMode](/uwp/api/windows.ui.xaml.controls.treeview.selectionmode) プロパティを設定してノードの選択を許可することができます。</span><span class="sxs-lookup"><span data-stu-id="964f0-204">By default, selection of nodes is turned off, but you can set the [TreeView.SelectionMode](/uwp/api/windows.ui.xaml.controls.treeview.selectionmode) property to allow selection of nodes.</span></span> <span data-ttu-id="964f0-205">[TreeViewSelectionMode](/uwp/api/windows.ui.xaml.controls.treeviewselectionmode) 値は **None**、**Single**、および **Multiple** です。</span><span class="sxs-lookup"><span data-stu-id="964f0-205">The [TreeViewSelectionMode](/uwp/api/windows.ui.xaml.controls.treeviewselectionmode) values are **None**, **Single**, and **Multiple**.</span></span>
 
-<span data-ttu-id="f8ea0-210">選択したノードは、ツリー ビューの [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) コレクションに追加されます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-210">Selected nodes are added to the tree view's [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) collection.</span></span> <span data-ttu-id="f8ea0-211">[SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall) メソッドを呼び出して、ツリー ビューですべてのノードを選択できます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-211">You can call the [SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall) method to select all the nodes in a tree view.</span></span>
+<span data-ttu-id="964f0-206">選択を有効にすると、各ツリー ビュー ノードの横にあるチェック ボックスが表示され、選択した項目が強調表示されます。</span><span class="sxs-lookup"><span data-stu-id="964f0-206">When selection is enabled, a checkbox is shown next to each tree view node, and selected items are highlighted.</span></span> <span data-ttu-id="964f0-207">ユーザーは、チェック ボックスを使用して項目を選択または選択解除できます。項目は引き続きクリックして呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="964f0-207">A user can select or de-select an item by using the checkbox; clicking the item still causes it to be invoked.</span></span>
+
+<span data-ttu-id="964f0-208">選択したノードは、ツリー ビューの [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) コレクションに追加されます。</span><span class="sxs-lookup"><span data-stu-id="964f0-208">Selected nodes are added to the tree view's [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) collection.</span></span> <span data-ttu-id="964f0-209">[SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall) メソッドを呼び出して、ツリー ビューですべてのノードを選択できます。</span><span class="sxs-lookup"><span data-stu-id="964f0-209">You can call the [SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall) method to select all the nodes in a tree view.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f8ea0-212">**SelectAll** を呼び出した場合、SelectionMode にかかわらず、実体化されたすべてのノードが選択されます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-212">If you call **SelectAll**, all realized nodes are selected, regardless of the SelectionMode.</span></span> <span data-ttu-id="f8ea0-213">一貫したユーザー エクスペリエンスを提供するため、SelectionMode が **Multiple** である場合にのみ SelectAll を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-213">To provide a consistent user experience, you should only call SelectAll if SelectionMode is **Multiple**.</span></span>
+> <span data-ttu-id="964f0-210">**SelectAll** を呼び出した場合、SelectionMode にかかわらず、実体化されたすべてのノードが選択されます。</span><span class="sxs-lookup"><span data-stu-id="964f0-210">If you call **SelectAll**, all realized nodes are selected, regardless of the SelectionMode.</span></span> <span data-ttu-id="964f0-211">一貫したユーザー エクスペリエンスを提供するため、SelectionMode が **Multiple** である場合にのみ SelectAll を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="964f0-211">To provide a consistent user experience, you should only call SelectAll if SelectionMode is **Multiple**.</span></span>
 
-#### <a name="selection-and-realizedunrealized-nodes"></a><span data-ttu-id="f8ea0-214">選択と実体化された/実体化されていないノード</span><span class="sxs-lookup"><span data-stu-id="f8ea0-214">Selection and realized/unrealized nodes</span></span>
+#### <a name="selection-and-realizedunrealized-nodes"></a><span data-ttu-id="964f0-212">選択と実体化された/実体化されていないノード</span><span class="sxs-lookup"><span data-stu-id="964f0-212">Selection and realized/unrealized nodes</span></span>
 
-<span data-ttu-id="f8ea0-215">ツリー ビューに実体化されていないノードが含まれる場合、それらは選択肢として考慮されません。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-215">If your tree view has unrealized nodes, they are not taken into account for selection.</span></span> <span data-ttu-id="f8ea0-216">実体化されていないノードを選択する際に留意すべき点がいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-216">Here are some things you need to keep in mind regarding selection with unrealized nodes.</span></span>
+<span data-ttu-id="964f0-213">ツリー ビューに実体化されていないノードが含まれる場合、それらは選択肢として考慮されません。</span><span class="sxs-lookup"><span data-stu-id="964f0-213">If your tree view has unrealized nodes, they are not taken into account for selection.</span></span> <span data-ttu-id="964f0-214">実体化されていないノードを選択する際に留意すべき点がいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="964f0-214">Here are some things you need to keep in mind regarding selection with unrealized nodes.</span></span>
 
-- <span data-ttu-id="f8ea0-217">ユーザーが親ノードを選択すると、その親の下で実体化されたすべての子も選択されます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-217">If a user selects a parent node, all the realized children under that parent are also selected.</span></span> <span data-ttu-id="f8ea0-218">同様に、すべての子ノードが選択されている場合、親ノードも選択されます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-218">Similarly, if all the child nodes are selected, the parent node also becomes selected.</span></span>
-- <span data-ttu-id="f8ea0-219">SelectAll メソッドは、実体化されたノードのみを SelectedNodes コレクションに追加します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-219">The SelectAll method only adds realized nodes to the SelectedNodes collection.</span></span>
-- <span data-ttu-id="f8ea0-220">実体化されていない子を含む親ノードが選択された場合、子は実体化されたときに選択されます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-220">If a parent node with unrealized children is selected, the children will be selected as they are realized.</span></span>
+- <span data-ttu-id="964f0-215">ユーザーが親ノードを選択すると、その親の下で実体化されたすべての子も選択されます。</span><span class="sxs-lookup"><span data-stu-id="964f0-215">If a user selects a parent node, all the realized children under that parent are also selected.</span></span> <span data-ttu-id="964f0-216">同様に、すべての子ノードが選択されている場合、親ノードも選択されます。</span><span class="sxs-lookup"><span data-stu-id="964f0-216">Similarly, if all the child nodes are selected, the parent node also becomes selected.</span></span>
+- <span data-ttu-id="964f0-217">SelectAll メソッドは、実体化されたノードのみを SelectedNodes コレクションに追加します。</span><span class="sxs-lookup"><span data-stu-id="964f0-217">The SelectAll method only adds realized nodes to the SelectedNodes collection.</span></span>
+- <span data-ttu-id="964f0-218">実体化されていない子を含む親ノードが選択された場合、子は実体化されたときに選択されます。</span><span class="sxs-lookup"><span data-stu-id="964f0-218">If a parent node with unrealized children is selected, the children will be selected as they are realized.</span></span>
 
-## <a name="code-examples"></a><span data-ttu-id="f8ea0-221">コード例</span><span class="sxs-lookup"><span data-stu-id="f8ea0-221">Code examples</span></span>
+## <a name="code-examples"></a><span data-ttu-id="964f0-219">コード例</span><span class="sxs-lookup"><span data-stu-id="964f0-219">Code examples</span></span>
 
-### <a name="tree-view-with-selection-enabled"></a><span data-ttu-id="f8ea0-222">選択が有効になっているツリー ビュー</span><span class="sxs-lookup"><span data-stu-id="f8ea0-222">Tree view with selection enabled</span></span>
+### <a name="tree-view-with-selection-enabled"></a><span data-ttu-id="964f0-220">選択が有効になっているツリー ビュー</span><span class="sxs-lookup"><span data-stu-id="964f0-220">Tree view with selection enabled</span></span>
 
-<span data-ttu-id="f8ea0-223">次の例は、XAML で 1 つのツリー ビュー構造を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-223">This example shows how to create a simple tree view structure in XAML.</span></span> <span data-ttu-id="f8ea0-224">ツリー ビューは、カテゴリに配置されており、ユーザーが選択できるアイスクリームのフレーバーとトッピングを示しています。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-224">The tree view shows ice cream flavors and toppings that the user can choose from, arranged in categories.</span></span> <span data-ttu-id="f8ea0-225">複数選択が有効になっており、ユーザーがボタンをクリックすると、SelectedItems がメイン アプリ UI に表示されます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-225">Multi-selection is enabled, and when the user clicks a button, the SelectedItems are displayed in the main app UI.</span></span>
+<span data-ttu-id="964f0-221">次の例は、XAML で 1 つのツリー ビュー構造を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="964f0-221">This example shows how to create a simple tree view structure in XAML.</span></span> <span data-ttu-id="964f0-222">ツリー ビューは、カテゴリに配置されており、ユーザーが選択できるアイスクリームのフレーバーとトッピングを示しています。</span><span class="sxs-lookup"><span data-stu-id="964f0-222">The tree view shows ice cream flavors and toppings that the user can choose from, arranged in categories.</span></span> <span data-ttu-id="964f0-223">複数選択が有効になっており、ユーザーがボタンをクリックすると、SelectedItems がメイン アプリ UI に表示されます。</span><span class="sxs-lookup"><span data-stu-id="964f0-223">Multi-selection is enabled, and when the user clicks a button, the SelectedItems are displayed in the main app UI.</span></span>
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="100">
@@ -313,14 +360,34 @@ private void SelectAllButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### <a name="pictures-and-music-library-tree-view"></a><span data-ttu-id="f8ea0-226">画像やミュージック ライブラリのツリー ビュー</span><span class="sxs-lookup"><span data-stu-id="f8ea0-226">Pictures and Music Library tree view</span></span>
+```vb
+Private Sub OrderButton_Click(sender As Object, e As RoutedEventArgs)
+    FlavorList.Text = String.Empty
+    ToppingList.Text = String.Empty
+    For Each node As TreeViewNode In DessertTree.SelectedNodes
+        If node.Parent.Content?.ToString() = "Flavors" Then
+            FlavorList.Text += node.Content & "; "
+        ElseIf node.HasChildren = False Then
+            ToppingList.Text += node.Content & "; "
+        End If
+    Next
+End Sub
 
-<span data-ttu-id="f8ea0-227">この例では、ユーザーの画像やミュージック ライブラリのコンテンツや構造を表示するツリー ビューを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-227">This example shows how to create a tree view that shows the contents and structure of the users Pictures and Music libraries.</span></span> <span data-ttu-id="f8ea0-228">項目の数は事前に知ることができないため、各ノードは展開時に入力され、折りたたまれたときに空になります。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-228">The number of items can't be known ahead of time, so each node is filled when it's expanded, and emptied when it's collapsed.</span></span>
+Private Sub SelectAllButton_Click(sender As Object, e As RoutedEventArgs)
+    If DessertTree.SelectionMode = TreeViewSelectionMode.Multiple Then
+        DessertTree.SelectAll()
+    End If
+End Sub
+```
 
-<span data-ttu-id="f8ea0-229">カスタム項目テンプレートは、型が [IStorageItem](/uwp/api/windows.storage.istorageitem) であるデータ項目を表示するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-229">A custom item template is used to display the data items, which are of type [IStorageItem](/uwp/api/windows.storage.istorageitem).</span></span>
+### <a name="pictures-and-music-library-tree-view"></a><span data-ttu-id="964f0-224">画像やミュージック ライブラリのツリー ビュー</span><span class="sxs-lookup"><span data-stu-id="964f0-224">Pictures and Music Library tree view</span></span>
+
+<span data-ttu-id="964f0-225">この例では、ユーザーの画像やミュージック ライブラリのコンテンツや構造を表示するツリー ビューを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="964f0-225">This example shows how to create a tree view that shows the contents and structure of the users Pictures and Music libraries.</span></span> <span data-ttu-id="964f0-226">項目の数は事前に知ることができないため、各ノードは展開時に入力され、折りたたまれたときに空になります。</span><span class="sxs-lookup"><span data-stu-id="964f0-226">The number of items can't be known ahead of time, so each node is filled when it's expanded, and emptied when it's collapsed.</span></span>
+
+<span data-ttu-id="964f0-227">カスタム項目テンプレートは、型が [IStorageItem](/uwp/api/windows.storage.istorageitem) であるデータ項目を表示するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="964f0-227">A custom item template is used to display the data items, which are of type [IStorageItem](/uwp/api/windows.storage.istorageitem).</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="f8ea0-230">この例のコードでは、picturesLibrary 機能と musicLibrary 機能が必要です。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-230">The code in this example requires the picturesLibrary and musicLibrary capabilities.</span></span> <span data-ttu-id="f8ea0-231">ファイル アクセスの詳細については、[ファイル アクセス許可](../../files/file-access-permissions.md)、[ファイルとフォルダーの列挙と照会](../../files/quickstart-listing-files-and-folders.md)、および[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](../../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f8ea0-231">For more info about file access, see [File access permissions](../../files/file-access-permissions.md), [Enumerate and query files and folders](../../files/quickstart-listing-files-and-folders.md), and [Files and folders in the Music, Pictures, and Videos libraries](../../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).</span></span>
+> <span data-ttu-id="964f0-228">この例のコードでは、picturesLibrary 機能と musicLibrary 機能が必要です。</span><span class="sxs-lookup"><span data-stu-id="964f0-228">The code in this example requires the picturesLibrary and musicLibrary capabilities.</span></span> <span data-ttu-id="964f0-229">ファイル アクセスの詳細については、[ファイル アクセス許可](../../files/file-access-permissions.md)、[ファイルとフォルダーの列挙と照会](../../files/quickstart-listing-files-and-folders.md)、および[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](../../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="964f0-229">For more info about file access, see [File access permissions](../../files/file-access-permissions.md), [Enumerate and query files and folders](../../files/quickstart-listing-files-and-folders.md), and [Files and folders in the Music, Pictures, and Videos libraries](../../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).</span></span>
 
 ```xaml
 <Page
@@ -514,8 +581,106 @@ private void RefreshButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="related-articles"></a><span data-ttu-id="f8ea0-232">関連記事</span><span class="sxs-lookup"><span data-stu-id="f8ea0-232">Related articles</span></span>
+```vb
+Public Sub New()
+    InitializeComponent()
+    InitializeTreeView()
+End Sub
 
-- [<span data-ttu-id="f8ea0-233">TreeView クラス</span><span class="sxs-lookup"><span data-stu-id="f8ea0-233">TreeView class</span></span>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
-- [<span data-ttu-id="f8ea0-234">ListView クラス</span><span class="sxs-lookup"><span data-stu-id="f8ea0-234">ListView class</span></span>](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
-- [<span data-ttu-id="f8ea0-235">ListViewと GridView</span><span class="sxs-lookup"><span data-stu-id="f8ea0-235">ListView and GridView</span></span>](listview-and-gridview.md)
+Private Sub InitializeTreeView()
+    ' A TreeView can have more than 1 root node. The Pictures library
+    ' and the Music library will each be a root node in the tree.
+    ' Get Pictures library.
+    Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
+    Dim pictureNode As New TreeViewNode With {
+        .Content = picturesFolder,
+        .IsExpanded = True,
+        .HasUnrealizedChildren = True
+    }
+    sampleTreeView.RootNodes.Add(pictureNode)
+    FillTreeNode(pictureNode)
+
+    ' Get Music library.
+    Dim musicFolder As StorageFolder = KnownFolders.MusicLibrary
+    Dim musicNode As New TreeViewNode With {
+        .Content = musicFolder,
+        .IsExpanded = True,
+        .HasUnrealizedChildren = True
+    }
+    sampleTreeView.RootNodes.Add(musicNode)
+    FillTreeNode(musicNode)
+End Sub
+
+Private Async Sub FillTreeNode(node As TreeViewNode)
+    ' Get the contents of the folder represented by the current tree node.
+    ' Add each item as a new child node of the node that's being expanded.
+
+    ' Only process the node if it's a folder and has unrealized children.
+    Dim folder As StorageFolder = Nothing
+    If TypeOf node.Content Is StorageFolder AndAlso node.HasUnrealizedChildren Then
+        folder = TryCast(node.Content, StorageFolder)
+    Else
+        ' The node isn't a folder, or it's already been filled.
+        Return
+    End If
+
+    Dim itemsList As IReadOnlyList(Of IStorageItem) = Await folder.GetItemsAsync()
+    If itemsList.Count = 0 Then
+        ' The item is a folder, but it's empty. Leave HasUnrealizedChildren = true so
+        ' that the chevron appears, but don't try to process children that aren't there.
+        Return
+    End If
+
+    For Each item In itemsList
+        Dim newNode As New TreeViewNode With {
+            .Content = item
+        }
+        If TypeOf item Is StorageFolder Then
+            ' If the item is a folder, set HasUnrealizedChildren to True.
+            ' This makes the collapsed chevron show up.
+            newNode.HasUnrealizedChildren = True
+        Else
+            ' Item is StorageFile. No processing needed for this scenario.
+        End If
+        node.Children.Add(newNode)
+    Next
+
+    ' Children were just added to this node, so set HasUnrealizedChildren to False.
+    node.HasUnrealizedChildren = False
+End Sub
+
+Private Sub SampleTreeView_Expanding(sender As TreeView, args As TreeViewExpandingEventArgs)
+    If args.Node.HasUnrealizedChildren Then
+        FillTreeNode(args.Node)
+    End If
+End Sub
+
+Private Sub SampleTreeView_Collapsed(sender As TreeView, args As TreeViewCollapsedEventArgs)
+    args.Node.Children.Clear()
+    args.Node.HasUnrealizedChildren = True
+End Sub
+
+Private Sub SampleTreeView_ItemInvoked(sender As TreeView, args As TreeViewItemInvokedEventArgs)
+    Dim node = TryCast(args.InvokedItem, TreeViewNode)
+    Dim item = TryCast(node.Content, IStorageItem)
+    If item IsNot Nothing Then
+        FileNameTextBlock.Text = item.Name
+        FilePathTextBlock.Text = item.Path
+        TreeDepthTextBlock.Text = node.Depth.ToString()
+        If TypeOf node.Content Is StorageFolder Then
+            node.IsExpanded = Not node.IsExpanded
+        End If
+    End If
+End Sub
+
+Private Sub RefreshButton_Click(sender As Object, e As RoutedEventArgs)
+    sampleTreeView.RootNodes.Clear()
+    InitializeTreeView()
+End Sub
+```
+
+## <a name="related-articles"></a><span data-ttu-id="964f0-230">関連記事</span><span class="sxs-lookup"><span data-stu-id="964f0-230">Related articles</span></span>
+
+- [<span data-ttu-id="964f0-231">TreeView クラス</span><span class="sxs-lookup"><span data-stu-id="964f0-231">TreeView class</span></span>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
+- [<span data-ttu-id="964f0-232">ListView クラス</span><span class="sxs-lookup"><span data-stu-id="964f0-232">ListView class</span></span>](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
+- [<span data-ttu-id="964f0-233">ListViewと GridView</span><span class="sxs-lookup"><span data-stu-id="964f0-233">ListView and GridView</span></span>](listview-and-gridview.md)

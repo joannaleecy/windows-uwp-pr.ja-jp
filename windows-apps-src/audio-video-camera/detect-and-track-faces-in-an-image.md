@@ -1,110 +1,109 @@
 ---
 author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
-description: "このトピックでは、FaceDetector を使って画像内の顔を検出する方法について説明します。 FaceTracker は、ビデオ フレームのシーケンスで顔を経時的に追跡するように最適化されています。"
-title: "画像やビデオでの顔の検出"
+description: このトピックでは、FaceDetector を使って画像内の顔を検出する方法について説明します。 FaceTracker は、ビデオ フレームのシーケンスで顔を経時的に追跡するように最適化されています。
+title: 画像やビデオでの顔の検出
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 72e5804ea592dc2a9478cba766decaadf611e88e
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 906bf038fe235aa24aa0b6dd31bae463fc99d958
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843635"
 ---
-
-# <a name="detect-faces-in-images-or-videos"></a>画像やビデオでの顔の検出
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+# <a name="detect-faces-in-images-or-videos"></a><span data-ttu-id="06991-105">画像やビデオでの顔の検出</span><span class="sxs-lookup"><span data-stu-id="06991-105">Detect faces in images or videos</span></span>
 
 
-\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-このトピックでは、[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) を使って画像内の顔を検出する方法について説明します。 [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) は、ビデオ フレームのシーケンスで顔を経時的に追跡するように最適化されています。
+<span data-ttu-id="06991-106">\[一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="06991-106">\[Some information relates to pre-released product which may be substantially modified before it's commercially released.</span></span> <span data-ttu-id="06991-107">ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]</span><span class="sxs-lookup"><span data-stu-id="06991-107">Microsoft makes no warranties, express or implied, with respect to the information provided here.\]</span></span>
 
-[**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) を使った顔を追跡する別の方法については、「[メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)」をご覧ください。
+<span data-ttu-id="06991-108">このトピックでは、[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) を使って画像内の顔を検出する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="06991-108">This topic shows how to use the [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) to detect faces in an image.</span></span> <span data-ttu-id="06991-109">[**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) は、ビデオ フレームのシーケンスで顔を経時的に追跡するように最適化されています。</span><span class="sxs-lookup"><span data-stu-id="06991-109">The [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) is optimized for tracking faces over time in a sequence of video frames.</span></span>
 
-この記事のコードは、[基本的な顔検出](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)と[基本的な顔追跡](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)のサンプルを基にしています。 これらのサンプルをダウンロードし、該当するコンテキストで使われているコードを確認することも、サンプルを独自のアプリの開始点として使うこともできます。
+<span data-ttu-id="06991-110">[**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) を使った顔を追跡する別の方法については、「[メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="06991-110">For an alternative method of tracking faces using the [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776), see [Scene analysis for media capture](scene-analysis-for-media-capture.md).</span></span>
 
-## <a name="detect-faces-in-a-single-image"></a>1 つの画像内の顔を検出する
+<span data-ttu-id="06991-111">この記事のコードは、[基本的な顔検出](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)と[基本的な顔追跡](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)のサンプルを基にしています。</span><span class="sxs-lookup"><span data-stu-id="06991-111">The code in this article was adapted from the [Basic Face Detection](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) and [Basic Face Tracking](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409) samples.</span></span> <span data-ttu-id="06991-112">これらのサンプルをダウンロードし、該当するコンテキストで使われているコードを確認することも、サンプルを独自のアプリの開始点として使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="06991-112">You can download these samples to see the code used in context or to use the sample as a starting point for your own app.</span></span>
 
-[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) クラスを使うと、静止画像内の 1 つまたは複数の顔を検出できます。
+## <a name="detect-faces-in-a-single-image"></a><span data-ttu-id="06991-113">1 つの画像内の顔を検出する</span><span class="sxs-lookup"><span data-stu-id="06991-113">Detect faces in a single image</span></span>
 
-この例では、次の名前空間の API を使っています。
+<span data-ttu-id="06991-114">[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) クラスを使うと、静止画像内の 1 つまたは複数の顔を検出できます。</span><span class="sxs-lookup"><span data-stu-id="06991-114">The [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) class allows you to detect one or more faces in a still image.</span></span>
+
+<span data-ttu-id="06991-115">この例では、次の名前空間の API を使っています。</span><span class="sxs-lookup"><span data-stu-id="06991-115">This example uses APIs from the following namespaces.</span></span>
 
 [!code-cs[FaceDetectionUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceDetectionUsing)]
 
-[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) オブジェクト用と、画像から検出される [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧用に、クラス メンバー変数を宣言しています。
+<span data-ttu-id="06991-116">[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) オブジェクト用と、画像から検出される [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧用に、クラス メンバー変数を宣言しています。</span><span class="sxs-lookup"><span data-stu-id="06991-116">Declare a class member variable for the [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) object and for the list of [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) objects that will be detected in the image.</span></span>
 
 [!code-cs[ClassVariables1](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables1)]
 
-顔検出は、さまざまな方法で作成できる [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトに対して可能です。 この例では、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使って、顔が検出される画像ファイルをユーザーが選べるようにしています。 ソフトウェア ビットマップの操作について詳しくは、「[イメージング](imaging.md)」をご覧ください。
+<span data-ttu-id="06991-117">顔検出は、さまざまな方法で作成できる [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトに対して可能です。</span><span class="sxs-lookup"><span data-stu-id="06991-117">Face detection operates on a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) object which can be created in a variety of ways.</span></span> <span data-ttu-id="06991-118">この例では、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使って、顔が検出される画像ファイルをユーザーが選べるようにしています。</span><span class="sxs-lookup"><span data-stu-id="06991-118">In this example a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) is used to allow the user to pick an image file in which faces will be detected.</span></span> <span data-ttu-id="06991-119">ソフトウェア ビットマップの操作の詳細については、「[イメージング](imaging.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="06991-119">For more information about working with software bitmaps, see [Imaging](imaging.md).</span></span>
 
-[!code-cs[ピッカー](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
+[!code-cs[Picker](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
 
-[**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) クラスを使って、**SoftwareBitmap** に画像ファイルをデコードします。 顔検出処理は、画像が小さいほど高速になるため、ソース画像の縮小が必要になる場合があります。 デコード中にこれを行うには、[**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) オブジェクトを作成し、[**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) および [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) プロパティを設定して、そのオブジェクトを [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) の呼び出しに渡します。これにより、デコードされて縮小された **SoftwareBitmap** が返されます。
+<span data-ttu-id="06991-120">[**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) クラスを使って、**SoftwareBitmap** に画像ファイルをデコードします。</span><span class="sxs-lookup"><span data-stu-id="06991-120">Use the [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) class to decode the image file into a **SoftwareBitmap**.</span></span> <span data-ttu-id="06991-121">顔検出処理は、画像が小さいほど高速になるため、ソース画像の縮小が必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="06991-121">The face detection process is quicker with a smaller image and so you may want to scale the source image down to a smaller size.</span></span> <span data-ttu-id="06991-122">デコード中にこれを行うには、[**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) オブジェクトを作成し、[**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) および [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) プロパティを設定して、そのオブジェクトを [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) の呼び出しに渡します。これにより、デコードされて縮小された **SoftwareBitmap** が返されます。</span><span class="sxs-lookup"><span data-stu-id="06991-122">This can be performed during decoding by creating a [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) object, setting the [**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) and [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) properties and passing it into the call to [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332), which returns the decoded and scaled **SoftwareBitmap**.</span></span>
 
-[!code-cs[デコード](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
+[!code-cs[Decode](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
 
-現在のバージョンでは、**FaceDetector** クラスでのみ Gray8 または Nv12 の画像がサポートされています。 **SoftwareBitmap** クラスには、ビットマップの形式を変換する [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) メソッドが用意されています。 この例では、ソース画像を Gray8 ピクセル形式に変換しています (まだその形式になっていない場合)。 必要に応じて、[**GetSupportedBitmapPixelFormats**](https://msdn.microsoft.com/library/windows/apps/dn974140) および [**IsBitmapPixelFormatSupported**](https://msdn.microsoft.com/library/windows/apps/dn974142) メソッドを使って、ピクセル形式がサポートされているかどうかを実行時に調べることができます。これにより、サポートされている一連の形式が今後のバージョンで拡張される場合に備えることができます。
+<span data-ttu-id="06991-123">現在のバージョンでは、**FaceDetector** クラスでのみ Gray8 または Nv12 の画像がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="06991-123">In the current version, the **FaceDetector** class only supports images in Gray8 or Nv12.</span></span> <span data-ttu-id="06991-124">**SoftwareBitmap** クラスには、ビットマップの形式を変換する [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) メソッドが用意されています。</span><span class="sxs-lookup"><span data-stu-id="06991-124">The **SoftwareBitmap** class provides the [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) method, which converts a bitmap from one format to another.</span></span> <span data-ttu-id="06991-125">この例では、ソース画像を Gray8 ピクセル形式に変換しています (まだその形式になっていない場合)。</span><span class="sxs-lookup"><span data-stu-id="06991-125">This example converts the source image into the Gray8 pixel format if it is not already in that format.</span></span> <span data-ttu-id="06991-126">必要に応じて、[**GetSupportedBitmapPixelFormats**](https://msdn.microsoft.com/library/windows/apps/dn974140) および [**IsBitmapPixelFormatSupported**](https://msdn.microsoft.com/library/windows/apps/dn974142) メソッドを使って、ピクセル形式がサポートされているかどうかを実行時に調べることができます。これにより、サポートされている一連の形式が今後のバージョンで拡張される場合に備えることができます。</span><span class="sxs-lookup"><span data-stu-id="06991-126">If you want, you can use the [**GetSupportedBitmapPixelFormats**](https://msdn.microsoft.com/library/windows/apps/dn974140) and [**IsBitmapPixelFormatSupported**](https://msdn.microsoft.com/library/windows/apps/dn974142) methods to determine at runtime if a pixel format is supported, in case the set of supported formats is expanded in future versions.</span></span>
 
-[!code-cs[形式](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
+[!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-[**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) を呼び出すことで **FaceDetector** オブジェクトをインスタンス化したら、[**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134) を呼び出して、適切なサイズに拡大縮小済み、サポートされているピクセル形式に変換済みのビットマップを渡します。 このメソッドは [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧を返します。 **ShowDetectedFaces** はヘルパー メソッドであり、次に示しているように、画像内の顔の周りに四角形を描画します。
+<span data-ttu-id="06991-127">[**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) を呼び出すことで **FaceDetector** オブジェクトをインスタンス化したら、[**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134) を呼び出して、適切なサイズに拡大縮小済み、サポートされているピクセル形式に変換済みのビットマップを渡します。</span><span class="sxs-lookup"><span data-stu-id="06991-127">Instantiate the **FaceDetector** object by calling [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) and then calling [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), passing in the bitmap that has been scaled to a reasonable size and converted to a supported pixel format.</span></span> <span data-ttu-id="06991-128">このメソッドは [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧を返します。</span><span class="sxs-lookup"><span data-stu-id="06991-128">This method returns a list of [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) objects.</span></span> <span data-ttu-id="06991-129">**ShowDetectedFaces** はヘルパー メソッドであり、次に示しているように、画像内の顔の周りに四角形を描画します。</span><span class="sxs-lookup"><span data-stu-id="06991-129">**ShowDetectedFaces** is a helper method, shown below, that draws squares around the faces in the image.</span></span>
 
-[!code-cs[検出](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
+[!code-cs[Detect](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
-顔検出処理の実行中に作成されたオブジェクトは必ず破棄してください。
+<span data-ttu-id="06991-130">顔検出処理の実行中に作成されたオブジェクトは必ず破棄してください。</span><span class="sxs-lookup"><span data-stu-id="06991-130">Be sure to dispose of the objects that were created during the face detection process.</span></span>
 
-[!code-cs[破棄](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDispose)]
+[!code-cs[Dispose](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDispose)]
 
-画像を表示し、検出された顔の周りに四角形を描画するには、XAML ページに [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素を追加します。
+<span data-ttu-id="06991-131">画像を表示し、検出された顔の周りに四角形を描画するには、XAML ページに [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素を追加します。</span><span class="sxs-lookup"><span data-stu-id="06991-131">To display the image and draw boxes around the detected faces, add a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) element to your XAML page.</span></span>
 
-[!code-xml[キャンバス](./code/FaceDetection_Win10/cs/MainPage.xaml#SnippetCanvas)]
+[!code-xml[Canvas](./code/FaceDetection_Win10/cs/MainPage.xaml#SnippetCanvas)]
 
-描画される四角形のスタイルの設定用に、いくつかのメンバー変数を定義します。
+<span data-ttu-id="06991-132">描画される四角形のスタイルの設定用に、いくつかのメンバー変数を定義します。</span><span class="sxs-lookup"><span data-stu-id="06991-132">Define some member variables to style the squares that will be drawn.</span></span>
 
 [!code-cs[ClassVariables2](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables2)]
 
-**ShowDetectedFaces** ヘルパー メソッドでは、新しい [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) が作成され、ソースが、ソース画像を表す **SoftwareBitmap**  から作成された [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) に設定されます。 XAML **Canvas** コントロールの背景がイメージ ブラシに設定されます。
+<span data-ttu-id="06991-133">**ShowDetectedFaces** ヘルパー メソッドでは、新しい [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) が作成され、ソースが、ソース画像を表す **SoftwareBitmap**  から作成された [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) に設定されます。</span><span class="sxs-lookup"><span data-stu-id="06991-133">In the **ShowDetectedFaces** helper method, a new [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) is created and the source is set to a [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) created from the **SoftwareBitmap** representing the source image.</span></span> <span data-ttu-id="06991-134">XAML **Canvas** コントロールの背景がイメージ ブラシに設定されます。</span><span class="sxs-lookup"><span data-stu-id="06991-134">The background of the XAML **Canvas** control is set to the image brush.</span></span>
 
-ヘルパー メソッドに渡された顔の一覧が空でない場合は、一覧内の各顔をループし、[**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) クラスの [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) プロパティを使って、画像内で顔の周りの四角形の位置とサイズを調べます。 **Canvas** コントロールはほとんどの場合、ソース画像と異なるサイズであるため、**FaceBox** の X 座標と Y 座標にも、幅と高さにも、拡大縮小値 (ソース画像のサイズと **Canvas** コントロールの実際のサイズとの比率) を掛ける必要があります。
+<span data-ttu-id="06991-135">ヘルパー メソッドに渡された顔の一覧が空でない場合は、一覧内の各顔をループし、[**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) クラスの [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) プロパティを使って、画像内で顔の周りの四角形の位置とサイズを調べます。</span><span class="sxs-lookup"><span data-stu-id="06991-135">If the list of faces passed into the helper method isn't empty, loop through each face in the list and use the [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) property of the [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) class to determine the position and size of the rectangle within the image that contains the face.</span></span> <span data-ttu-id="06991-136">**Canvas** コントロールはほとんどの場合、ソース画像と異なるサイズであるため、**FaceBox** の X 座標と Y 座標にも、幅と高さにも、拡大縮小値 (ソース画像のサイズと **Canvas** コントロールの実際のサイズとの比率) を掛ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="06991-136">Because the **Canvas** control is very likely to be a different size than the source image, you should multiply both the X and Y coordinates and the width and height of the **FaceBox** by a scaling value that is the ratio of the source image size to the actual size of the **Canvas** control.</span></span>
 
 [!code-cs[ShowDetectedFaces](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetShowDetectedFaces)]
 
-## <a name="track-faces-in-a-sequence-of-frames"></a>フレームのシーケンスで顔を追跡する
+## <a name="track-faces-in-a-sequence-of-frames"></a><span data-ttu-id="06991-137">フレームのシーケンスで顔を追跡する</span><span class="sxs-lookup"><span data-stu-id="06991-137">Track faces in a sequence of frames</span></span>
 
-ビデオ内の顔を検出する場合は、[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) よりも [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) クラスを使う方が効率的です。実装手順はほとんど同じです。 **FaceTracker** では、前に処理したフレームに関する情報を使って検出処理を最適化します。
+<span data-ttu-id="06991-138">ビデオ内の顔を検出する場合は、[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) よりも [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) クラスを使う方が効率的です。実装手順はほとんど同じです。</span><span class="sxs-lookup"><span data-stu-id="06991-138">If you want to detect faces in video, it is more efficient to use the [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) class rather than the [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) class, although the implementation steps are very similar.</span></span> <span data-ttu-id="06991-139">**FaceTracker** では、前に処理したフレームに関する情報を使って検出処理を最適化します。</span><span class="sxs-lookup"><span data-stu-id="06991-139">The **FaceTracker** uses information about previously processed frames to optimize the detection process.</span></span>
 
 [!code-cs[FaceTrackingUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceTrackingUsing)]
 
-**FaceTracker** オブジェクトのクラス変数を宣言します。 この例では、[**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/br230587) を使って、定義した間隔で顔追跡を開始します。 [SemaphoreSlim](https://msdn.microsoft.com/library/system.threading.semaphoreslim.aspx) を使って、同時に 1 つの顔追跡処理のみが実行されるようにします。
+<span data-ttu-id="06991-140">**FaceTracker** オブジェクトのクラス変数を宣言します。</span><span class="sxs-lookup"><span data-stu-id="06991-140">Declare a class variable for the **FaceTracker** object.</span></span> <span data-ttu-id="06991-141">この例では、[**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/br230587) を使って、定義した間隔で顔追跡を開始します。</span><span class="sxs-lookup"><span data-stu-id="06991-141">This example uses a [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/br230587) to initiate face tracking on a defined interval.</span></span> <span data-ttu-id="06991-142">[SemaphoreSlim](https://msdn.microsoft.com/library/system.threading.semaphoreslim.aspx) を使って、同時に 1 つの顔追跡処理のみが実行されるようにします。</span><span class="sxs-lookup"><span data-stu-id="06991-142">A [SemaphoreSlim](https://msdn.microsoft.com/library/system.threading.semaphoreslim.aspx) is used to make sure that only one face tracking operation is running at a time.</span></span>
 
 [!code-cs[ClassVariables3](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables3)]
 
-顔追跡処理を初期化するには、[**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974151) を呼び出して新しい **FaceTracker** オブジェクトを作成します。 目的のタイマー間隔を初期化してから、タイマーを作成します。 指定した間隔が経過するたびに **ProcessCurrentVideoFrame** ヘルパー メソッドが呼び出されます。
+<span data-ttu-id="06991-143">顔追跡処理を初期化するには、[**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974151) を呼び出して新しい **FaceTracker** オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="06991-143">To initialize the face tracking operation, create a new **FaceTracker** object by calling [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974151).</span></span> <span data-ttu-id="06991-144">目的のタイマー間隔を初期化してから、タイマーを作成します。</span><span class="sxs-lookup"><span data-stu-id="06991-144">Initialize the desired timer interval and then create the timer.</span></span> <span data-ttu-id="06991-145">指定した間隔が経過するたびに **ProcessCurrentVideoFrame** ヘルパー メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="06991-145">The **ProcessCurrentVideoFrame** helper method will be called every time the specified interval elapses.</span></span>
 
 [!code-cs[TrackingInit](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetTrackingInit)]
 
-**ProcessCurrentVideoFrame** ヘルパー メソッドはタイマーによって非同期的に呼び出されるため、このメソッドはまず、セマフォの **Wait** メソッドを呼び出して、追跡処理が進行中であるかどうかを調べて、そうであれば、顔を検出しようとせずに戻ります。 このメソッドの最後で、セマフォの **Release** メソッドが呼び出され、後続の **ProcessCurrentVideoFrame** が呼び出されて、処理が続行されます。
+<span data-ttu-id="06991-146">**ProcessCurrentVideoFrame** ヘルパー メソッドはタイマーによって非同期的に呼び出されるため、このメソッドはまず、セマフォの **Wait** メソッドを呼び出して、追跡処理が進行中であるかどうかを調べて、そうであれば、顔を検出しようとせずに戻ります。</span><span class="sxs-lookup"><span data-stu-id="06991-146">The **ProcessCurrentVideoFrame** helper is called asynchronously by the timer, so the method first calls the semaphore's **Wait** method to see if a tracking operation is ongoing, and if it is the method returns without trying to detect faces.</span></span> <span data-ttu-id="06991-147">このメソッドの最後で、セマフォの **Release** メソッドが呼び出され、後続の **ProcessCurrentVideoFrame** が呼び出されて、処理が続行されます。</span><span class="sxs-lookup"><span data-stu-id="06991-147">At the end of this method, the semaphore's **Release** method is called, which allows the subsequent call to **ProcessCurrentVideoFrame** to continue.</span></span>
 
-[**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) クラスは [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) オブジェクトに対して使えます。 **VideoFrame** を取得するには、複数の方法があります。たとえば、実行中の [MediaCapture](capture-photos-and-video-with-mediacapture.md) オブジェクトからプレビュー フレームをキャプチャします。または、[**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) の [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) メソッドを実装します。 この例では、ビデオ フレームを返す未定義のヘルパー メソッド **GetLatestFrame** をこの処理のプレースホルダーとして使っています。 実行中のメディア キャプチャ デバイスのプレビュー ストリームからビデオ フレームを取得する方法について詳しくは、「[プレビュー フレームの取得](get-a-preview-frame.md)」をご覧ください。
+<span data-ttu-id="06991-148">[**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) クラスは [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) オブジェクトに対して使えます。</span><span class="sxs-lookup"><span data-stu-id="06991-148">The [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) class operates on [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) objects.</span></span> <span data-ttu-id="06991-149">**VideoFrame** を取得するには、複数の方法があります。たとえば、実行中の [MediaCapture](capture-photos-and-video-with-mediacapture.md) オブジェクトからプレビュー フレームをキャプチャします。または、[**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) の [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="06991-149">There are multiple ways you can obtain a **VideoFrame** including capturing a preview frame from a running [MediaCapture](capture-photos-and-video-with-mediacapture.md) object or by implementing the [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) method of the [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788).</span></span> <span data-ttu-id="06991-150">この例では、ビデオ フレームを返す未定義のヘルパー メソッド **GetLatestFrame** をこの処理のプレースホルダーとして使っています。</span><span class="sxs-lookup"><span data-stu-id="06991-150">This example uses an undefined helper method that returns a video frame, **GetLatestFrame**, as a placeholder for this operation.</span></span> <span data-ttu-id="06991-151">実行中のメディア キャプチャ デバイスのプレビュー ストリームからビデオ フレームを取得する方法について詳しくは、「[プレビュー フレームの取得](get-a-preview-frame.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="06991-151">For information about getting video frames from the preview stream of a running media capture device, see [Get a preview frame](get-a-preview-frame.md).</span></span>
 
-**FaceDetector** と同様、**FaceTracker** でも、サポートされていないピクセル形式があります。 この例では、渡されたフレームが Nv12 形式でない場合は顔検出を破棄します。
+<span data-ttu-id="06991-152">**FaceDetector** と同様、**FaceTracker** でも、サポートされていないピクセル形式があります。</span><span class="sxs-lookup"><span data-stu-id="06991-152">As with **FaceDetector**, the **FaceTracker** supports a limited set of pixel formats.</span></span> <span data-ttu-id="06991-153">この例では、渡されたフレームが Nv12 形式でない場合は顔検出を破棄します。</span><span class="sxs-lookup"><span data-stu-id="06991-153">This example abandons face detection if the supplied frame is not in the Nv12 format.</span></span>
 
-[**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) を呼び出して、フレーム内の顔を表す [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧を取得します。 顔の一覧を取得したら、顔検出について先ほど説明した同じ方法でそれらの顔を表示できます。 顔追跡ヘルパー メソッドは UI スレッドで呼び出されないため、[**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出し内で UI の更新をすべて行う必要があります。
+<span data-ttu-id="06991-154">[**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) を呼び出して、フレーム内の顔を表す [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="06991-154">Call [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) to retrieve a list of [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) objects representing the faces in the frame.</span></span> <span data-ttu-id="06991-155">顔の一覧を取得したら、顔検出について先ほど説明した同じ方法でそれらの顔を表示できます。</span><span class="sxs-lookup"><span data-stu-id="06991-155">After you have the list of faces, you can display them in the same manner described above for face detection.</span></span> <span data-ttu-id="06991-156">顔追跡ヘルパー メソッドは UI スレッドで呼び出されないため、[**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出し内で UI の更新をすべて行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="06991-156">Note that, because the face tracking helper method is not called on the UI thread, you must make any UI updates in within a call [**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).</span></span>
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="06991-157">関連トピック</span><span class="sxs-lookup"><span data-stu-id="06991-157">Related topics</span></span>
 
-* [メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)
-* [基本的な顔検出のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [基本的な顔追跡のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
-* [カメラ](camera.md)
-* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [メディア再生](media-playback.md)
-
+* [<span data-ttu-id="06991-158">メディア キャプチャのシーン分析</span><span class="sxs-lookup"><span data-stu-id="06991-158">Scene analysis for media capture</span></span>](scene-analysis-for-media-capture.md)
+* [<span data-ttu-id="06991-159">基本的な顔検出のサンプル</span><span class="sxs-lookup"><span data-stu-id="06991-159">Basic Face Detection sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [<span data-ttu-id="06991-160">基本的な顔追跡のサンプル</span><span class="sxs-lookup"><span data-stu-id="06991-160">Basic Face Tracking sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [<span data-ttu-id="06991-161">カメラ</span><span class="sxs-lookup"><span data-stu-id="06991-161">Camera</span></span>](camera.md)
+* [<span data-ttu-id="06991-162">MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ</span><span class="sxs-lookup"><span data-stu-id="06991-162">Basic photo, video, and audio capture with MediaCapture</span></span>](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [<span data-ttu-id="06991-163">メディア再生</span><span class="sxs-lookup"><span data-stu-id="06991-163">Media playback</span></span>](media-playback.md)
