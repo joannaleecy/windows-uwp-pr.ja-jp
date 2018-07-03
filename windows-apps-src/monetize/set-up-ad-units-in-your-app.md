@@ -4,26 +4,32 @@ ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: アプリをストアに提出する前に、Windows デベロッパー センター ダッシュ ボードからアプリケーション ID と広告ユニット ID の値をアプリに追加する方法について説明します。
 title: アプリの広告ユニットをセットアップする
 ms.author: mcleans
-ms.date: 10/04/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 広告, Advertising, 広告ユニット, テスト
 ms.localizationpriority: medium
-ms.openlocfilehash: 6473d571ed44f60f8001b8a565d70c58d43407d1
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 978f0599ec783b5dcfade82b97c92d1dec9fb541
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654661"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1880953"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>アプリの広告ユニットをセットアップする
 
-ユニバーサル Windows プラットフォーム (UWP) アプリ内の各広告コントロールには、対応する*広告ユニット*があります。広告ユニットは、コントロールに広告を提供するためにサービスで使用されます。 各広告ユニットは、*広告ユニット ID* と*アプリケーション ID* があり、これらをアプリ内で [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)、[NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) に割り当てる必要があります。
+ユニバーサル Windows プラットフォーム (UWP) アプリ内の各広告コントロールには、対応する*広告ユニット*があります。広告ユニットは、コントロールに広告を提供するためにサービスで使用されます。 各広告ユニットは、*広告ユニット ID* と*アプリケーション ID* があり、これらをアプリ内でコードに割り当てる必要があります。
 
 テスト中にテスト広告がアプリに表示されていることを確認するために使用できる[テスト広告ユニット値](#test-ad-units)が用意されています。 これらのテスト値は、テスト バージョンのアプリでのみ使用できます。 いったん公開したアプリでテスト用の値を使うと、ライブ アプリで広告は表示されません。
 
 UWP アプリのテストが終了し、Windows デベロッパー センターに提出する準備ができたら、Windows デベロッパー センター ダッシュボードの [[アプリ内広告]](../publish/in-app-ads.md) ページから[ライブ広告ユニットを作成](#live-ad-units)し、この広告ユニットのアプリケーション ID と広告ユニット ID の値を使うようにアプリ コードを更新する必要があります。
+
+アプリケーション ID と広告ユニット ID の値をアプリのコードに割り当てる方法の詳細については、次の記事を参照してください。
+* [XAML および .NET の AdControl](adcontrol-in-xaml-and--net.md)
+* [HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)
+* [スポット広告](../monetize/interstitial-ads.md)
+* [ネイティブ広告](../monetize/native-ads.md)
 
 <span id="test-ad-units" />
 
@@ -58,13 +64,11 @@ UWP アプリのテストが終了し、Windows デベロッパー センター�
     > [!NOTE]
     > テスト広告ユニットとライブ UWP 広告ユニットでは、アプリケーション ID の値の形式が異なります。 テスト アプリケーション ID の値は GUID です。 ダッシュボードでライブ UWP 広告ユニットを作成する場合、広告ユニットのアプリケーション ID の値は常にアプリの Store ID に一致します (Store ID 値は、たとえば 9NBLGGH4R315 のようになります)。
 
-3.  アプリのコードで、**アプリケーション ID** と**広告ユニット ID** の値を割り当てます。
-
-    * アプリにバナー広告を表示する場合は、これらの値を [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) オブジェクトの [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) プロパティと [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) プロパティに割り当てる必要があります。 詳しくは、「[XAML および .NET の AdControl](../monetize/adcontrol-in-xaml-and--net.md)」、または「[HTML5 および JavaScript の AdControl](../monetize/adcontrol-in-html-5-and-javascript.md)」をご覧ください。
-
-    * アプリでスポット広告を表示する場合は、[InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) オブジェクトの [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) メソッドにこれらの値を渡します。 詳しくは、「[スポット広告](../monetize/interstitial-ads.md)」をご覧ください。
-
-    * アプリにネイティブ広告が表示される場合、それらの値を [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) コンストラクターの *applicationId* パラメーターと *adUnitId* パラメーターに渡します。 詳しくは、「[ネイティブ広告](../monetize/native-ads.md)」をご覧ください。
+3.  アプリのコードで、アプリケーション ID と広告ユニット ID の値を割り当てます。 詳細については、次の記事を参照してください。
+    * [XAML および .NET の AdControl](adcontrol-in-xaml-and--net.md)
+    * [HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)
+    * [スポット広告](../monetize/interstitial-ads.md)
+    * [ネイティブ広告](../monetize/native-ads.md)
 
 <span id="manage" />
 

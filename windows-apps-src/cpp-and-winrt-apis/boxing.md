@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML、コントロール、ボックス化、スカラー、値
 ms.localizationpriority: medium
-ms.openlocfilehash: 61d5c7a35fb7a6ff9952f3fe768f4faa3f6c6347
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 9548776fe1be06c9b622870c4d3331b04a943789
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832007"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935790"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) を使用した IInspectable へのスカラー値のボックス化とボックス化解除 
 [**IInspectable インターフェイス**](https://msdn.microsoft.com/library/windows/desktop/br205821) は、Windows ランタイム (WinRT) のすべてのランタイム クラスのルート インターフェイスです。 これは、すべての COM インターフェイスとクラスのルートである [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) や、すべての [共通型システム](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system) クラスのルートである **System.Object** と似た概念です。
@@ -30,7 +30,7 @@ C++/WinRT では、スカラー値を取得してボックス化した値を **I
 void App::OnLaunched(LaunchActivatedEventArgs const& e)
 {
     ...
-    rootFrame.Navigate(xaml_typename<BlankApp1::MainPage>(), winrt::box_value(e.Arguments()));
+    rootFrame.Navigate(winrt::xaml_typename<BlankApp1::MainPage>(), winrt::box_value(e.Arguments()));
     ...
 }
 ```
@@ -41,13 +41,13 @@ XAML [**Button**](/uwp/api/windows.ui.xaml.controls.button) のコンテンツ �
 Button().Content(winrt::box_value(L"Clicked"));
 ```
 
-まず、**hstring** 変換コンストラクターが文字列リテラルを **hstring** に変換します。 次に **hstring** を受け取る **winrt::box_value** のオーバーロードが呼び出されます。
+まず、[**hstring**](/uwp/cpp-ref-for-winrt/hstring) 変換コンストラクターが文字列リテラルを **hstring** に変換します。 次に **hstring** を受け取る **winrt::box_value** のオーバーロードが呼び出されます。
 
 ## <a name="examples-of-unboxing-an-iinspectable"></a>IInspectable をボックス化解除する例
 **IInspectable** を想定する独自の関数では、[**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) を使用してボックス化解除することができます。また [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) を使用して既定値でボックス化解除することができます。
 
 ```cppwinrt
-void Unbox(Windows::Foundation::IInspectable const& object)
+void Unbox(winrt::Windows::Foundation::IInspectable const& object)
 {
     hstring hstringValue = unbox_value<hstring>(object); // Throws if object is not a boxed string.
     hstringValue = unbox_value_or<hstring>(object, L"Default"); // Returns L"Default" if object is not a boxed string.
@@ -55,8 +55,19 @@ void Unbox(Windows::Foundation::IInspectable const& object)
 }
 ```
 
+## <a name="determine-the-type-of-a-boxed-value"></a>ボックス化された値の型の判別
+ボックス化された値を受け取って、その値に含まれる型が不明な場合は (型はボックス化解除するために知っておく必要があります)、その [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue) でボックス化された値を照会し、そこで **Type** を呼び出すことができます。 次にコード例を示します。
+
+```cppwinrt
+float pi = 3.14f;
+auto piInspectable = winrt::box_value(pi);
+auto piPropertyValue = piInspectable.as<winrt::Windows::Foundation::IPropertyValue>();
+WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType::Single);
+```
+
 ## <a name="important-apis"></a>重要な API
 * [IInspectable インターフェイス](https://msdn.microsoft.com/library/windows/desktop/br205821)
 * [winrt::box_value 関数テンプレート](/uwp/cpp-ref-for-winrt/box-value)
+* [winrt::hstring 構造体](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt::unbox_value 関数テンプレート](/uwp/cpp-ref-for-winrt/unbox-value)
 * [winrt::unbox_value_or 関数テンプレート](/uwp/cpp-ref-for-winrt/unbox-value-or)

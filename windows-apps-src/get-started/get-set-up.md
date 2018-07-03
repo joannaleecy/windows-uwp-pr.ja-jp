@@ -1,21 +1,21 @@
 ---
-author: GrantMeStrength
+author: QuinnRadich
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 準備
 description: 準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。
-ms.author: jken
-ms.date: 03/06/2017
+ms.author: quradic
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: high
-ms.openlocfilehash: ac918fac5d2733a39f3f5d9a469105c61328a676
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 86603443aefe08ddf684e4dc8a2df8541074e0b4
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817673"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935662"
 ---
 # <a name="get-set-up"></a>準備
 
@@ -56,20 +56,22 @@ UWP アプリのテストは実際の PC と電話で行うことが重要です
 
 ## <a name="whats-next"></a>次の手順
 
-ツールをインストールしてデバイスで開発できるようにしたら、チュートリアルを使って最初のアプリを作成します。
+ツールをインストールして、デバイスを開発用に有効にしたら、Windows 10 アプリの作成を開始する方法に関するガイダンスを確認してください。
 
--   [初めてのアプリの作成](your-first-app.md)のチュートリアル
+-   [コーディングの開始](create-uwp-apps.md)
+
+## <a name="windows-development-setup-scripts"></a>Windows 開発セットアップ スクリプト
+
+デバイスをカスタマイズして、他の機能やパッケージをインストールする場合は、このプロジェクトでシステム セットアップのスクリプトを確認してください。
+
+- [開発者向けセットアップ スクリプト](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
 ## <a name="want-more-tools-and-downloads"></a>その他のツールとダウンロード
 
 ツールとダウンロードの一覧については、[ダウンロード ページ](http://go.microsoft.com/fwlink/p/?linkid=285935)をご覧ください。
 
-
 ## <a name="see-also"></a>関連項目
 
-* [UWP アプリの作成](create-uwp-apps.md)
-* [UWP アプリを公開する](https://developer.microsoft.com/store/publish-apps)
-* [UWP アプリの開発に関するハウツー記事](https://developer.microsoft.com/windows/apps/develop)
 * [UWP 開発者向けコード サンプル](https://developer.microsoft.com/windows/samples)
 * [UWP アプリとは](universal-application-platform-guide.md)
 * [Windows アカウントのサインアップ](sign-up.md)

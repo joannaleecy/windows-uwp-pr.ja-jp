@@ -4,18 +4,18 @@ ms.assetid: 2FBA0B73-17C6-4F25-A79D-63F2F262491A
 description: Windows 7 や Windows 8.x のドライバー エラーに関する詳細データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドは、IHV のみを対象としています。
 title: Windows 7 や Windows 8.x のドライバー エラーに関する詳細を取得する
 ms.author: mcleans
-ms.date: 01/18/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細
 ms.localizationpriority: medium
-ms.openlocfilehash: 84ea23f5989f9b8c6a28b9c355175e28cae7695c
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: aa3eaf0915ba7e26d2b27b4f21df95fae8a5c0e1
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663922"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989486"
 ---
 # <a name="get-details-for-a-windows-7-or-windows-8x-driver-error"></a>Windows 7 や Windows 8.x のドライバー エラーに関する詳細を取得する
 
@@ -84,7 +84,7 @@ Authorization: Bearer <your access token>
 |------------|---------|------------|
 | Value      | array   | 詳細なエラー データが含まれているオブジェクトの配列です。 各オブジェクトのデータの詳細については、以下の表を参照してください。          |
 | @nextLink  | string  | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターを 10 に設定した場合、クエリに適合するエラーが 10 行を超えると、この値が返されます。 |
-| TotalCount | inumber | クエリの結果データ内の行の総数です。        |
+| TotalCount | 整数 | クエリの結果データ内の行の総数です。        |
 
 
 *Value* 配列の要素には、次の値が含まれます。

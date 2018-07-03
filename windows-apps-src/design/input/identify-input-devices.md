@@ -12,12 +12,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c61de6dbeb8b1c455c1312cc993d0eee7b1bba7
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 40abeae4048784599deadd9a1a62a995447159be
+ms.sourcegitcommit: 03a3c02c7b3b0b0a3d1b14705cc1fd73788ac034
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653991"
+ms.lasthandoff: 05/19/2018
+ms.locfileid: "1903196"
 ---
 # <a name="identify-input-devices"></a>入力デバイスの識別
 
@@ -90,8 +90,6 @@ private void GetTouchProperties()
 検出されたデバイスがポインター入力 (タッチ、タッチパッド、マウス、ペン) をサポートしているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) クラスを使います。 新しい **PointerDevice** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
 **注**  ここで説明するプロパティによって返される値は、検出されたすべてのポインター デバイスに基づきます。ブール型プロパティは、少なくとも 1 つのデバイスが特定の機能をサポートする場合は 0 以外の値を返し、数値プロパティは、いずれか 1 つのポインター デバイスで公開されている最大値を返します。
-
- 
 
 次のコードでは、テーブルを使って、各ポインター デバイスのプロパティと値を表示しています。
 

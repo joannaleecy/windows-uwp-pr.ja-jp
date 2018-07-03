@@ -15,14 +15,16 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1737408386628ea7ecf1bb42256976c5fd28cb77
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 73b1c73fdd971eb4448aea62bc8c64ceac17a2b4
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707243"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843352"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>キーボード、ゲームパッド、リモコン、アクセシビリティ ツールのフォーカス ナビゲーション
+
+![キーボード、リモート、および方向パッド](images/dpad-remote/dpad-remote-keyboard.png)
 
 フォーカス ナビゲーションを使用すると、キーボードを使い慣れているパワー ユーザーや障碍およびその他のアクセシビリティ要件を持っているユーザーは、総合的で一貫性のあるエクスペリエンスを UWP アプリやカスタム コントロールで利用できるようになります。また、テレビ画面と Xbox One の 10 フィート エクスペリエンスも利用することができます。
 

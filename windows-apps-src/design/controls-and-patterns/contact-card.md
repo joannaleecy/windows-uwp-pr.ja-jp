@@ -13,12 +13,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 434229c7d66ccd4c1a16750750d592c5bc4a89e6
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: 9ed520c8ad71203a2f2f9888f775d7ca51d0089f
+ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673679"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1874340"
 ---
 # <a name="contact-card"></a>連絡先カード
 
@@ -70,7 +70,7 @@ ms.locfileid: "1673679"
 1. 通常、ユーザーが何らかのボタンや場合によって [ユーザー画像コントロール](person-picture.md) をクリックしたときに、連絡先カードが表示されます。 要素は非表示にされません。 非表示にされないようにするには、要素の位置情報やサイズについて記述した [Rect](/uwp/api/windows.foundation.rect) を作成する必要があります。 
 
     これを実行するユーティリティ関数を作成しましょう。このユーティリティ関数は後で使用します。
-    ``` C#
+    ```csharp
     // Gets the rectangle of the element 
     public static Rect GetElementRectHelper(FrameworkElement element) 
     { 
@@ -83,7 +83,7 @@ ms.locfileid: "1673679"
     ```
 
 2. [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported) メソッドを呼び出して連絡先カードを表示できるかどうかを確認します。 サポートされていない場合は、エラー メッセージが表示されます。 (この例では、クリック イベントに応じて連絡先カードが表示されることを前提としています)
-    ``` C#
+    ```csharp
     // Contact and Contact Managers are existing classes 
     private void OnUserClickShowContactCard(object sender, RoutedEventArgs e) 
     { 
@@ -94,13 +94,13 @@ ms.locfileid: "1673679"
 
 3. 手順 1 で作成したユーティリティ関数を使用して、イベントを発生させたコントロールの境界を取得します (連絡先カードで非表示にされません)。
 
-    ``` C#
+    ```csharp
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
     ```
 
 4. 表示する [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) オブジェクトを取得します。 この例では、単に連絡先を作成しますが、コードでは実際の連絡先を取得する必要があります。 
 
-    ``` C#
+    ```csharp
                 // Retrieve the contact to display
                 var contact = new Contact(); 
                 var email = new ContactEmail(); 
@@ -109,7 +109,7 @@ ms.locfileid: "1673679"
     ```
 5. 連絡先カードを表示するには [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowFullContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_Foundation_Rect_) メソッドを呼び出します。 
 
-    ``` C#
+    ```csharp
             ContactManager.ShowFullContactCard(
                 contact, selectionRect, Placement.Default); 
         } 
@@ -118,7 +118,7 @@ ms.locfileid: "1673679"
 
 コード例の全体を次に示します。
 
-``` C#
+```csharp
 // Gets the rectangle of the element 
 public static Rect GetElementRect(FrameworkElement element) 
 { 
@@ -152,7 +152,7 @@ private void OnUserClickShowContactCard(object sender, RoutedEventArgs e)
 
 完全な連絡先カードを表示するには、[ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowFullContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_Foundation_Rect_) メソッドではなく [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_) メソッドを呼び出します。
 
-``` C#
+```csharp
 private void onUserClickShowContactCard() 
 { 
    

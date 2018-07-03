@@ -4,19 +4,19 @@ Description: This article lists things you need to know before packaging your ap
 Search.Product: eADQiWindows 10XVcnh
 title: アプリのパッケージ化の準備 (デスクトップ ブリッジ)
 ms.author: normesta
-ms.date: 02/21/2018
+ms.date: 05/18/20188
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4836992675f65773e9b5c890aca243e2a9e172
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 46e71812acdad92a5d017cee44490e7d8cc0de32
+ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832546"
+ms.lasthandoff: 05/21/2018
+ms.locfileid: "1905393"
 ---
 # <a name="prepare-to-package-an-app-desktop-bridge"></a>アプリのパッケージ化の準備 (デスクトップ ブリッジ)
 
@@ -105,7 +105,7 @@ Microsoft Store からインストールするとき、アプリをインスト�
 
 + __タスクを実行するユーティリティがアプリによって起動される__。 PowerShell や Cmd.exe など、コマンド ユーティリティの起動は避けてください。 Windows 10 S を実行するシステムにユーザーが対象アプリをインストールした場合、アプリではこのようなユーティリティを一切起動できません。 Microsoft Store へのアプリの申請がブロックされる可能性があります。これは、Microsoft Store に申請されるすべてのアプリが Windows 10 S に対応している必要があるためです。
 
-ユーティリティの起動は、オペレーティング システムからの情報の取得、レジストリへのアクセス、システム機能へのアクセスなどを行うための手段として便利であることが少なくありません。 ただし、このような作業を実行するには、代わりに UWP API を使用することができます。 個別の実行可能ファイルを必要としないため、これらの API の方が高効率ですが、さらに重要な点は、この方法を使用するとパッケージ外でアプリにアクセスされないよう分離できることです。 アプリの設計が、デスクトップ ブリッジ アプリで提供される分離、信頼性、セキュリティに従った形に維持されるため、Windows 10 S で実行されるシステムで、アプリを正しく実行できます。
+ユーティリティの起動は、オペレーティング システムからの情報の取得、レジストリへのアクセス、システム機能へのアクセスなどを行うための手段として便利であることが少なくありません。 ただし、このような作業を実行するには、代わりに UWP API を使用することができます。 個別の実行可能ファイルを必要としないため、これらの API の方が高効率ですが、さらに重要な点は、この方法を使用するとパッケージ外でアプリにアクセスされないよう分離できることです。 アプリの設計が、デスクトップ ブリッジでパッケージ化したアプリで提供される分離、信頼性、セキュリティに従った形に維持されるため、Windows 10 S で実行されるシステムで、アプリを正しく実行できます。
 
 + __アプリで、アドイン、プラグイン、または拡張機能をホストしている__。   多くの場合、COM スタイルの拡張機能は、引き続き動作します。ただし、拡張機能がパッケージ化されておらず、完全信頼としてインストールされている場合に限られます。 これは、インストーラーによって、完全信頼機能を使用してレジストリを変更し、ホスト アプリで検出できる任意の場所に拡張機能を配置することが可能であるためです。
 

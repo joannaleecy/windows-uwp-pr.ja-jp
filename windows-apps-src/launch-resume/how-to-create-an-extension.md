@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e54af14d23b255718f5247605b9bdd611f172308
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 424ca52020bd5b9aeab745030dd6eef4cd4430b6
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663842"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862421"
 ---
 # <a name="create-and-host-an-app-extension"></a>アプリ拡張機能の作成とホスト
 
@@ -27,7 +27,7 @@ ms.locfileid: "1663842"
 
 ## <a name="introduction-to-app-extensions"></a>アプリ拡張機能の概要
 
-プラグイン、アドイン、アドオンとして知られているものは、ユニバーサル Windows プラットフォーム (UWP) でアプリ拡張機能と呼ばれるものの別名です。 Microsoft Edge 拡張機能は、UWP アプリ拡張機能です。 UWP アプリ拡張機能は、Windows 10 Anniversary エディション (Version 1607、ビルド 10.0.14393) で導入されました。
+ユニバーサル Windows プラットフォーム (UWP) では、アプリ拡張機能により、プラグイン、アドイン、アドオンが他のプラットフォームで実行する処理に類似した機能が提供されます。 たとえば、Microsoft Edge 拡張機能は、UWP アプリ拡張機能です。 UWP アプリ拡張機能は、Windows 10 Anniversary エディション (Version 1607、ビルド 10.0.14393) で導入されました。
 
 UWP アプリ拡張機能は、コンテンツと展開イベントをホスト アプリと共有するための拡張宣言を持つ UWP アプリです。 拡張アプリは、複数の拡張機能を提供できます。
 
@@ -423,6 +423,7 @@ _MathExtension プロジェクト内の Package.appxmanifest_
 
 ## <a name="related-topics"></a>関連トピック
 
+* [アプリ拡張機能の概要](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
 * [アプリ拡張機能に関する Build 2016 セッション](https://channel9.msdn.com/Events/Build/2016/B808)
 * [Build 2016 のアプリ拡張機能コード サンプル](https://github.com/Microsoft/App-Extensibility-Sample)
 * [バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)

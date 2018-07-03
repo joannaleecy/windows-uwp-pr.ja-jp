@@ -4,29 +4,29 @@ description: ソケットは、下位レベルのデータ転送テクノロジ�
 title: ソケット
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.author: stwhi
-ms.date: 11/27/2017
+ms.date: 06/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 70d51009fc2231900ad0eba8dfc0e706433e2338
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 31d05f57c674b7b882cf3494e8fb29611963f83c
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690988"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983483"
 ---
 # <a name="sockets"></a>ソケット
 ソケットは、下位レベルのデータ転送テクノロジであり、多くのネットワーク プロトコルがこの上に実装されています。 UWP は、接続が長期間維持されるか、確立された接続が必要あるかどうかに関係なく、クライアント/サーバー アプリケーションまたは ピア ツー ピア アプリケーションの TCP および UDP ソケット クラスを提供します。
 
-このトピックでは、[**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) 名前空間にあるユニバーサル Windows プラットフォーム (UWP) ソケット クラスを使う方法に焦点を当てます。 しかし、[Windows ソケット 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673) を UWP アプリで使うこともできます。
+このトピックでは、[**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) 名前空間にあるユニバーサル Windows プラットフォーム (UWP) ソケット クラスを使う方法に焦点を当てます。 しかし、[Windows ソケット 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673) を UWP アプリで使うこともできます。
 
 > [!NOTE]
-> [ネットワーク分離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)の結果として、Windows では、同じコンピューターで実行される 2 つの UWP アプリ間での、ローカル ループバック アドレス (127.0.0.0) 経由であるか明示的なローカル IP アドレスの指定によるかに関係なく、ソケット接続 (Sockets または WinSock) の確立を禁止しています。 UWP アプリが別の UWP アプリとの通信に使うメカニズムについて詳しくは、「[アプリ間通信](/windows/uwp/app-to-app/index?branch=live)」をご覧ください。
+> [ネットワーク分離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)の結果として、Windows では、同じコンピューターで実行される 2 つの UWP アプリ間での、ローカル ループバック アドレス (127.0.0.0) 経由であるか明示的なローカル IP アドレスの指定によるかに関係なく、ソケット接続 (Sockets または WinSock) の確立を禁止しています。 UWP アプリが別の UWP アプリとの通信に使うメカニズムについて詳しくは、「[アプリ間通信](/windows/uwp/app-to-app/index)」をご覧ください。
 
 ## <a name="build-a-basic-tcp-socket-client-and-server"></a>基本的な TCP ソケット クライアントおよびサーバーを構築する
-TCP (伝送制御プロトコル) ソケットは、有効期間が長い接続用にどちらの方向にも下位レベルのネットワーク データ転送機能を提供します。 TCP ソケットは、インターネットで使われるほとんどのネットワーク プロトコルのベースとなる機能です。 基本的な TCP 操作の方法を示すため、以下のコード例では、TCP 経由でデータを送受信してエコー クライアントおよびサーバーを形成する [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) と [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) を示しています。
+TCP (伝送制御プロトコル) ソケットは、有効期間が長い接続用にどちらの方向にも下位レベルのネットワーク データ転送機能を提供します。 TCP ソケットは、インターネットで使われるほとんどのネットワーク プロトコルのベースとなる機能です。 基本的な TCP 操作の方法を示すため、以下のコード例では、TCP 経由でデータを送受信してエコー クライアントおよびサーバーを形成する [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) と [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) を示しています。
 
 できる限り少ない可変要素から始めるため (さらに、今のところはネットワーク分離の問題を回避するため)、新しいプロジェクトを作成し、以下のクライアント コードとサーバー コードの両方を同じプロジェクトを配置します。
 
@@ -39,9 +39,9 @@ TCP (伝送制御プロトコル) ソケットは、有効期間が長い接続�
 インターネット経由で接続する場合は、`privateNetworkClientServer` の代わりに `internetClientServer` を宣言できます。 **StreamSocket** と **StreamSocketListener** のどちらでも 1 つ以上のアプリ機能を宣言する必要があります。
 
 ### <a name="an-echo-client-and-server-using-tcp-sockets"></a>TCP ソケットを使ったエコー クライアントおよびサーバー
-[**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) を構築し、受信 TCP 接続のリッスンを開始します。 [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) イベントは、クライアントが **StreamSocketListener** との接続を確立するたびに発生します。
+[**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) を構築し、受信 TCP 接続のリッスンを開始します。 [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) イベントは、クライアントが **StreamSocketListener** との接続を確立するたびに発生します。
 
-さらに、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) を構築してサーバーへの接続を確立し、要求を送信して応答を受信します。
+さらに、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) を構築してサーバーへの接続を確立し、要求を送信して応答を受信します。
 
 `StreamSocketAndListenerPage` という新しい **Page** を作成します。 `StreamSocketAndListenerPage.xaml` に XAML マークアップを置き、`StreamSocketAndListenerPage` クラス内に命令型コードを置きます。
 
@@ -185,19 +185,164 @@ private async void StartClient()
 }
 ```
 
-```cpp
-#include <ppltasks.h>
+```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Networking.Sockets.h>
+#include <winrt/Windows.Storage.Streams.h>
+#include <winrt/Windows.UI.Core.h>
+#include <winrt/Windows.UI.Xaml.Navigation.h>
 #include <sstream>
 
-    ...
-    
+using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
 using namespace Windows::UI::Core;
 using namespace Windows::UI::Xaml::Navigation;
+...
+private:
+    Windows::Networking::Sockets::StreamSocketListener m_streamSocketListener;
+    Windows::Networking::Sockets::StreamSocket m_streamSocket;
 
-    ...
+public:
+    void OnNavigatedTo(NavigationEventArgs const& /* e */)
+    {
+        StartServer();
+        StartClient();
+    }
 
+private:
+    IAsyncAction StartServer()
+    {
+        try
+        {
+            // The ConnectionReceived event is raised when connections are received.
+            m_streamSocketListener.ConnectionReceived({ this, &StreamSocketAndListenerPage::OnConnectionReceived });
+
+            // Start listening for incoming TCP connections on the specified port. You can specify any port that's not currently in use.
+            // Every protocol typically has a standard port number. For example, HTTP is typically 80, FTP is 20 and 21, etc.
+            // For this example, we'll choose an arbitrary port number.
+            co_await m_streamSocketListener.BindServiceNameAsync(L"1337");
+            serverListBox().Items().Append(winrt::box_value(L"server is listening..."));
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Networking::Sockets::SocketErrorStatus webErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(ex.to_abi()) };
+            serverListBox().Items().Append(webErrorStatus != Windows::Networking::Sockets::SocketErrorStatus::Unknown ? winrt::box_value(winrt::to_hstring((int32_t)webErrorStatus)) : winrt::box_value(winrt::to_hstring(ex.to_abi())));
+        }
+    }
+
+    IAsyncAction OnConnectionReceived(Windows::Networking::Sockets::StreamSocketListener /* sender */, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs args)
+    {
+        try
+        {
+            auto socket{ args.Socket() }; // Keep the socket referenced, and alive.
+            DataReader dataReader{ socket.InputStream() };
+
+            unsigned int bytesLoaded = co_await dataReader.LoadAsync(sizeof(unsigned int));
+
+            unsigned int stringLength = dataReader.ReadUInt32();
+            bytesLoaded = co_await dataReader.LoadAsync(stringLength);
+            winrt::hstring request = dataReader.ReadString(bytesLoaded);
+
+            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            {
+                std::wstringstream wstringstream;
+                wstringstream << L"server received the request: \"" << request.c_str() << L"\"";
+                serverListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+            });
+
+            // Echo the request back as the response.
+            DataWriter dataWriter{ socket.OutputStream() };
+            dataWriter.WriteUInt32(request.size());
+            dataWriter.WriteString(request);
+            co_await dataWriter.StoreAsync();
+            dataWriter.DetachStream();
+
+            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            {
+                std::wstringstream wstringstream;
+                wstringstream << L"server sent back the response: \"" << request.c_str() << L"\"";
+                serverListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+            });
+
+            m_streamSocketListener = nullptr;
+
+            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            {
+                serverListBox().Items().Append(winrt::box_value(L"server closed its socket"));
+            });
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Networking::Sockets::SocketErrorStatus webErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(ex.to_abi()) };
+            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            {
+                serverListBox().Items().Append(webErrorStatus != Windows::Networking::Sockets::SocketErrorStatus::Unknown ? winrt::box_value(winrt::to_hstring((int32_t)webErrorStatus)) : winrt::box_value(winrt::to_hstring(ex.to_abi())));
+            });
+        }
+    }
+
+    IAsyncAction StartClient()
+    {
+        try
+        {
+            // Establish a connection to the echo server.
+
+            // The server hostname that we will be establishing a connection to. In this example, the server and client are in the same process.
+            Windows::Networking::HostName hostName{ L"localhost" };
+
+            clientListBox().Items().Append(winrt::box_value(L"client is trying to connect..."));
+
+            co_await m_streamSocket.ConnectAsync(hostName, L"1337");
+            clientListBox().Items().Append(winrt::box_value(L"client connected"));
+
+            // Send a request to the echo server.
+            DataWriter dataWriter{ m_streamSocket.OutputStream() };
+            winrt::hstring request{ L"Hello, World!" };
+            dataWriter.WriteUInt32(request.size());
+            dataWriter.WriteString(request);
+
+            co_await dataWriter.StoreAsync();
+
+            std::wstringstream wstringstream;
+            wstringstream << L"client sent the request: \"" << request.c_str() << L"\"";
+            clientListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+
+            co_await dataWriter.FlushAsync();
+            dataWriter.DetachStream();
+
+            // Read data from the echo server.
+            DataReader dataReader{ m_streamSocket.InputStream() };
+            unsigned int bytesLoaded = co_await dataReader.LoadAsync(sizeof(unsigned int));
+            unsigned int stringLength = dataReader.ReadUInt32();
+            bytesLoaded = co_await dataReader.LoadAsync(stringLength);
+            winrt::hstring response{ dataReader.ReadString(bytesLoaded) };
+
+            wstringstream.str(L"");
+            wstringstream << L"client received the response: \"" << response.c_str() << L"\"";
+            clientListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+
+            m_streamSocket = nullptr;
+
+            clientListBox().Items().Append(winrt::box_value(L"client closed its socket"));
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Networking::Sockets::SocketErrorStatus webErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(ex.to_abi()) };
+            serverListBox().Items().Append(webErrorStatus != Windows::Networking::Sockets::SocketErrorStatus::Unknown ? winrt::box_value(winrt::to_hstring((int32_t)webErrorStatus)) : winrt::box_value(winrt::to_hstring(ex.to_abi())));
+        }
+    }
+```
+
+```cpp
+#include <ppltasks.h>
+#include <sstream>
+...
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml::Navigation;
+...
 private:
     Windows::Networking::Sockets::StreamSocketListener^ streamSocketListener;
     Windows::Networking::Sockets::StreamSocket^ streamSocket;
@@ -360,10 +505,13 @@ private:
     }
 ```
 
-## <a name="references-to-streamsockets-in-c-ppl-continuations"></a>C++ PPL 継続での StreamSockets の参照
-[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) は、その入出力ストリームにアクティブな読み取り/書き込みがある限り存続します (たとえば、[**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) イベント ハンドラー内でアクセス権を持つ [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) など)。 [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync?branch=live) (または `ReadAsync/WriteAsync/StoreAsync`) を呼び出すと、**LoadAsync** の完了ハンドラーが実行を完了するまでソケットへの参照を保持します (ソケットの入力ストリームを使用)。
+## <a name="references-to-streamsockets-in-c-ppl-continuations-applies-to-ccx-primarily"></a>C++ PPL 継続での StreamSockets の参照 (主に C++/CX に該当)
+> [!NOTE]
+> C++/WinRT コルーチンを使用し、値によるパラメーターを渡す場合は、この問題は該当しません。 パラメーターの引き渡しに関する推奨事項については、「[C++/WinRT を使用した同時実行と非同期操作](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)」を参照してください。
 
-ただし、並列パターン ライブラリ (PPL) は既定では継続タスクをインラインでスケジュールしません。 つまり、継続タスクを追加しても (`task::then()` を使用)、継続タスクが完了ハンドラーとしてインラインで実行されるとは限りません。
+[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) は、その入出力ストリームにアクティブな読み取り/書き込みがある限り存続します (たとえば、[**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) イベント ハンドラー内でアクセス権を持つ [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) など)。 [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (または `ReadAsync/WriteAsync/StoreAsync`) を呼び出す場合、**LoadAsync** の **Completed** イベント ハンドラー (ある場合) が実行を完了するまでソケットへの参照を保持します (ソケットの入力ストリームを使用)。
+
+並列パターン ライブラリ (PPL) は既定では継続タスクをインラインでスケジュールしません。 つまり、継続タスクを追加しても (`task::then()` を使用)、継続タスクが完了ハンドラーとしてインラインで実行されるとは限りません。
 
 ```cpp
 void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::StreamSocketListener^ sender, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^ args)
@@ -377,7 +525,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-**StreamSocket** の観点では、完了ハンドラーは継続本文が実行される前に実行を完了します (およびソケットは破棄の対象となります)。 したがって、ソケットをその継続内で使用する場合はソケットが破棄されないようにするには、ソケットを直接参照 (ラムダ キャプチャを使用) して使うか、間接的に参照 (継続内の `args->Socket` にアクセスし続けることにより) するか、継続タスクを強制的にインラインにする必要があります。 [StreamSocket のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620609)では、最初の手法 (ラムダ キャプチャ) が実行される様子を確認できます。 上記の「[基本的な TCP ソケット クライアントおよびサーバーを構築する](#build-a-basic-tcp-socket-client-and-server)」の C++ コードでは、2 番目の手法を使っています。要求を応答としてエコーし、最も内側にあるいずれかの継続内から `args->Socket` にアクセスします。
+**StreamSocket** の観点では、完了ハンドラーは継続本文が実行される前に実行を完了します (およびソケットは破棄の対象となります)。 したがって、ソケットをその継続内で使用する場合はソケットが破棄されないようにするには、ソケットを直接参照 (ラムダ キャプチャを使用) して使うか、間接的に参照 (継続内の `args->Socket` にアクセスし続けることにより) するか、継続タスクを強制的にインラインにする必要があります。 [StreamSocket のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620609)では、最初の手法 (ラムダ キャプチャ) が実行される様子を確認できます。 上記の「[基本的な TCP ソケット クライアントおよびサーバーを構築する](#build-a-basic-tcp-socket-client-and-server)」の C++/CX コードでは、2 番目の手法を使っています。要求を応答としてエコーし、最も内側にあるいずれかの継続内から `args->Socket` にアクセスします。
 
 3 番目の手法は、応答をエコーしない場合に適しています。 PPL が継続本文をインラインで実行すること強制するには、`task_continuation_context::use_synchronous_execution()` オプションを使います。 この方法を示すコード例を次に示します。
 
@@ -411,14 +559,12 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 ## <a name="build-a-basic-udp-socket-client-and-server"></a>基本的な UDP ソケット クライアントおよびサーバーを構築する
 UDP (ユーザー データグラム プロトコル) ソケットは、どちらの方向にも低レベルのネットワーク データ転送を提供する TCP ソケットに似ています。 ただし、TCP ソケットは有効期間が長い接続向けであり、UDP ソケットは確立された接続が必要ないアプリケーション向けです。 UDP ソケットはどちらのエンドポイントでも接続を保持しないため、リモート コンピューター間のネットワーク向けの高速でシンプルなソリューションです。 ただし、UDP ソケットは、ネットワーク パケットの整合性も、パケットがリモートの宛先に到達するかどうかもまったく保証しません。 したがって、アプリはそれを許容するように設計されている必要があります。 UDP ソケットを使うアプリケーションの例には、ローカル ネットワーク探索やローカル チャット クライアントなどがあります。
 
-基本的な UDP 操作の方法を示すため、以下のコード例では、UDP 経由でデータを送受信してエコー クライアントおよびサーバーを形成するために使用される [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) クラスを示しています。 新しいプロジェクトを作成し、以下のクライアント コードとサーバー コードの両方を同じプロジェクトに配置します。 TCP ソケットの場合と同様、**[プライベート ネットワーク (クライアントとサーバー)]** アプリ機能を宣言する必要があります。
+基本的な UDP 操作の方法を示すため、以下のコード例では、UDP 経由でデータを送受信してエコー クライアントおよびサーバーを形成するために使用される [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) クラスを示しています。 新しいプロジェクトを作成し、以下のクライアント コードとサーバー コードの両方を同じプロジェクトに配置します。 TCP ソケットの場合と同様、**[プライベート ネットワーク (クライアントとサーバー)]** アプリ機能を宣言する必要があります。
 
 ### <a name="an-echo-client-and-server-using-udp-sockets"></a>UDP ソケットを使ったエコー クライアントおよびサーバー
-エコー サーバーの役割を果たす [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) を構築して特定のポート番号にバインドし、受信 UDP メッセージをリッスンしてエコーし直します。 [**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived) イベントは、メッセージがソケットで受信されたときに発生します。
+エコー サーバーの役割を果たす [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) を構築して特定のポート番号にバインドし、受信 UDP メッセージをリッスンしてエコーし直します。 [**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived) イベントは、メッセージがソケットで受信されたときに発生します。
 
 エコー クライアントの役割を果たす別の **DatagramSocket** を構築して特定のポート番号にバインドし、UDP メッセージを送信して応答を受信します。
-
-`MainPage.xaml` に XAML マークアップを置き、`MainPage` クラス内に命令型コードを置きます。
 
 `DatagramSocketPage` という新しい **Page** を作成します。 `DatagramSocketPage.xaml` に XAML マークアップを置き、`DatagramSocketPage` クラス内に命令型コードを置きます。
 
@@ -570,19 +716,149 @@ private async void ClientDatagramSocket_MessageReceived(Windows.Networking.Socke
 }
 ```
 
-```cpp
-#include <ppltasks.h>
+```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Networking.Sockets.h>
+#include <winrt/Windows.Storage.Streams.h>
+#include <winrt/Windows.UI.Core.h>
+#include <winrt/Windows.UI.Xaml.Navigation.h>
 #include <sstream>
 
-    ...
-
+using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
 using namespace Windows::UI::Core;
 using namespace Windows::UI::Xaml::Navigation;
+...
+private:
+    Windows::Networking::Sockets::DatagramSocket m_clientDatagramSocket;
+    Windows::Networking::Sockets::DatagramSocket m_serverDatagramSocket;
 
-    ...
+public:
+    void OnNavigatedTo(NavigationEventArgs const& /* e */)
+    {
+        StartServer();
+        StartClient();
+    }
 
+private:
+    IAsyncAction StartServer()
+    {
+        try
+        {
+            // The ConnectionReceived event is raised when connections are received.
+            m_serverDatagramSocket.MessageReceived({ this, &DatagramSocketPage::ServerDatagramSocket_MessageReceived });
+
+            serverListBox().Items().Append(winrt::box_value(L"server is about to bind..."));
+
+            // Start listening for incoming TCP connections on the specified port. You can specify any port that's not currently in use.
+            co_await m_serverDatagramSocket.BindServiceNameAsync(L"1337");
+            serverListBox().Items().Append(winrt::box_value(L"server is bound to port number 1337"));
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Networking::Sockets::SocketErrorStatus webErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(ex.to_abi()) };
+            serverListBox().Items().Append(webErrorStatus != Windows::Networking::Sockets::SocketErrorStatus::Unknown ? winrt::box_value(winrt::to_hstring((int32_t)webErrorStatus)) : winrt::box_value(winrt::to_hstring(ex.to_abi())));
+        }
+    }
+
+    IAsyncAction ServerDatagramSocket_MessageReceived(Windows::Networking::Sockets::DatagramSocket sender, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs args)
+    {
+        DataReader dataReader{ args.GetDataReader() };
+        winrt::hstring request{ dataReader.ReadString(dataReader.UnconsumedBufferLength()) };
+
+        serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        {
+            std::wstringstream wstringstream;
+            wstringstream << L"server received the request: \"" << request.c_str() << L"\"";
+            serverListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+        });
+
+        // Echo the request back as the response.
+        IOutputStream outputStream = co_await sender.GetOutputStreamAsync(args.RemoteAddress(), L"1336");
+        DataWriter dataWriter{ outputStream };
+        dataWriter.WriteString(request);
+
+        co_await dataWriter.StoreAsync();
+        dataWriter.DetachStream();
+
+        serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        {
+            std::wstringstream wstringstream;
+            wstringstream << L"server sent back the response: \"" << request.c_str() << L"\"";
+            serverListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+
+            m_serverDatagramSocket = nullptr;
+
+            serverListBox().Items().Append(winrt::box_value(L"server closed its socket"));
+        });
+    }
+
+    IAsyncAction StartClient()
+    {
+        try
+        {
+            m_clientDatagramSocket.MessageReceived({ this, &DatagramSocketPage::ClientDatagramSocket_MessageReceived });
+
+            // Establish a connection to the echo server.
+            // The server hostname that we will be establishing a connection to. In this example, the server and client are in the same process.
+            Windows::Networking::HostName hostName{ L"localhost" };
+
+            clientListBox().Items().Append(winrt::box_value(L"client is about to bind..."));
+
+            co_await m_clientDatagramSocket.BindServiceNameAsync(L"1336");
+            clientListBox().Items().Append(winrt::box_value(L"client is bound to port number 1336"));
+
+            // Send a request to the echo server.
+            Windows::Networking::Sockets::DatagramSocket serverDatagramSocket;
+            IOutputStream outputStream = co_await m_serverDatagramSocket.GetOutputStreamAsync(hostName, L"1337");
+
+            winrt::hstring request{ L"Hello, World!" };
+            DataWriter dataWriter{ outputStream };
+            dataWriter.WriteString(request);
+            co_await dataWriter.StoreAsync();
+            dataWriter.DetachStream();
+
+            std::wstringstream wstringstream;
+            wstringstream << L"client sent the request: \"" << request.c_str() << L"\"";
+            clientListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Networking::Sockets::SocketErrorStatus webErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(ex.to_abi()) };
+            serverListBox().Items().Append(webErrorStatus != Windows::Networking::Sockets::SocketErrorStatus::Unknown ? winrt::box_value(winrt::to_hstring((int32_t)webErrorStatus)) : winrt::box_value(winrt::to_hstring(ex.to_abi())));
+        }
+    }
+
+    void ClientDatagramSocket_MessageReceived(Windows::Networking::Sockets::DatagramSocket const& /* sender */, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs const& args)
+    {
+        DataReader dataReader{ args.GetDataReader() };
+        winrt::hstring response{ dataReader.ReadString(dataReader.UnconsumedBufferLength()) };
+        clientListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        {
+            std::wstringstream wstringstream;
+            wstringstream << L"client received the response: \"" << response.c_str() << L"\"";
+            clientListBox().Items().Append(winrt::box_value(wstringstream.str().c_str()));
+        });
+
+        m_clientDatagramSocket = nullptr;
+
+        clientListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        {
+            clientListBox().Items().Append(winrt::box_value(L"client closed its socket"));
+        });
+    }
+```
+
+```cpp
+#include <ppltasks.h>
+#include <sstream>
+...
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml::Navigation;
+...
 private:
     Windows::Networking::Sockets::DatagramSocket^ clientDatagramSocket;
     Windows::Networking::Sockets::DatagramSocket^ serverDatagramSocket;
@@ -730,7 +1006,7 @@ private:
 ## <a name="batched-sends"></a>バッチ送信
 ソケットに関連付けられているストリームを記述すると必ず、ユーザー モード (コード) からカーネル モード (ネットワーク スタックの存在する場所) への遷移が発生します。 一度に多くのバッファーを記述する場合、この遷移が繰り返されて大きいオーバーヘッドとなります。 1 つの方法として、送信をバッチ処理することにより、データの複数のバッファーを同時に送信してこのオーバーヘッドを回避できます。 これは、多くのデータをできるだけ効率的に移動させる必要がある VoIP、VPN、またはその他のタスクをアプリで実行する場合に特に便利です。
 
-このセクションでは、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) または接続された [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) で使うことができるいくつかのバッチ送信手法を示します。
+このセクションでは、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) または接続された [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) で使うことができるいくつかのバッチ送信手法を示します。
 
 基本を理解できるように、非効率的な方法で多数のバッファーを送信する方法を見てみましょう。 ここには、**StreamSocket** を使った最小限のデモがあります。
 
@@ -777,19 +1053,78 @@ private async void SendMultipleBuffersInefficiently(Windows.Networking.Sockets.S
 }
 ```
 
-```cpp
-#include <ppltasks.h>
+```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Networking.Sockets.h>
+#include <winrt/Windows.Security.Cryptography.h>
+#include <winrt/Windows.Storage.Streams.h>
+#include <winrt/Windows.UI.Core.h>
+#include <winrt/Windows.UI.Xaml.Navigation.h>
 #include <sstream>
 
-    ...
-
+using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
 using namespace Windows::UI::Core;
 using namespace Windows::UI::Xaml::Navigation;
+...
+private:
+    Windows::Networking::Sockets::StreamSocketListener m_streamSocketListener;
+    Windows::Networking::Sockets::StreamSocket m_streamSocket;
 
-    ...
+public:
+    IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
+    {
+        m_streamSocketListener.ConnectionReceived({ this, &BatchedSendsPage::OnConnectionReceived });
+        co_await m_streamSocketListener.BindServiceNameAsync(L"1337");
 
+        co_await m_streamSocket.ConnectAsync(Windows::Networking::HostName{ L"localhost" }, L"1337");
+        SendMultipleBuffersInefficientlyAsync(L"Hello, World!");
+        //BatchedSendsAnyUWPLanguageAsync(L"Hello, World!");
+    }
+
+private:
+    IAsyncAction OnConnectionReceived(Windows::Networking::Sockets::StreamSocketListener const& /* sender */, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs const& args)
+    {
+        DataReader dataReader{ args.Socket().InputStream() };
+        dataReader.InputStreamOptions(Windows::Storage::Streams::InputStreamOptions::Partial);
+
+        while (true)
+        {
+            unsigned int bytesLoaded = co_await dataReader.LoadAsync(256);
+            if (bytesLoaded == 0) break;
+            winrt::hstring message{ dataReader.ReadString(bytesLoaded) };
+            ::OutputDebugString(message.c_str());
+        }
+    }
+
+    // This implementation incurs kernel transition overhead for each packet written.
+    IAsyncAction SendMultipleBuffersInefficientlyAsync(winrt::hstring message)
+    {
+        co_await winrt::resume_background();
+
+        std::vector< IBuffer > packetsToSend;
+        for (unsigned int count = 0; count < 5; ++count)
+        {
+            packetsToSend.push_back(Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(message, Windows::Security::Cryptography::BinaryStringEncoding::Utf8));
+        }
+
+        for (auto const& element : packetsToSend)
+        {
+            m_streamSocket.OutputStream().WriteAsync(element).get();
+        }
+    }
+```
+
+```cpp
+#include <ppltasks.h>
+#include <sstream>
+...
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml::Navigation;
+...
 private:
     Windows::Networking::Sockets::StreamSocketListener^ streamSocketListener;
     Windows::Networking::Sockets::StreamSocket^ streamSocket;
@@ -848,7 +1183,7 @@ private:
     }
 ```
 
-効率的な手法の最初の例は、C# を使う場合にのみ当てはまります。 `SendMultipleBuffersInefficiently` ではなく `BatchedSendsCSharpOnly` を呼び出すように `OnNavigatedTo` を変更します。
+効率的な手法の最初の例は、C# を使う場合にのみ当てはまります。 `SendMultipleBuffersInefficiently` または `SendMultipleBuffersInefficientlyAsync` ではなく、`BatchedSendsCSharpOnly` を呼び出すように `OnNavigatedTo` を変更します。
 
 ```csharp
 // A C#-only technique for batched sends.
@@ -871,7 +1206,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-次の例は、C# の場合だけでなくあらゆる UWP 言語に当てはまります (ただし、ここでは C# で示しています)。 送信をまとめてバッチ処理する [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) と [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) での動作に依存しています。 この手法は、出力ストリームでのすべての操作が完了した後にのみ返されることが保証される (Windows 10 の時点では) 出力ストリームで [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) を呼び出します。
+次の例は、C# の場合だけでなくあらゆる UWP 言語に当てはまります。 送信をまとめてバッチ処理する [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) と [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) での動作に依存しています。 この手法は、出力ストリームでのすべての操作が完了した後にのみ返されることが保証される (Windows 10 の時点では) 出力ストリームで [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) を呼び出します。
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -891,6 +1226,29 @@ private async void BatchedSendsAnyUWPLanguage(Windows.Networking.Sockets.StreamS
 
     // Wait for all of the pending writes to complete. This step enables batched sends on the output stream.
     await streamSocket.OutputStream.FlushAsync();
+}
+```
+
+```cppwinrt
+// An implementation of batched sends suitable for any UWP language.
+IAsyncAction BatchedSendsAnyUWPLanguageAsync(winrt::hstring message)
+{
+    std::vector< IBuffer > packetsToSend{};
+    std::vector< IAsyncOperationWithProgress< unsigned int, unsigned int > > pendingWrites{};
+    for (unsigned int count = 0; count < 5; ++count)
+    {
+        packetsToSend.push_back(Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(message, Windows::Security::Cryptography::BinaryStringEncoding::Utf8));
+    }
+
+    for (auto const& element : packetsToSend)
+    {
+        // track all pending writes as tasks, but don't wait on one before beginning the next.
+        pendingWrites.push_back(m_streamSocket.OutputStream().WriteAsync(element));
+        // Don't modify any buffer's contents until the pending writes are complete.
+    }
+
+    // Wait for all of the pending writes to complete. This step enables batched sends on the output stream.
+    co_await m_streamSocket.OutputStream().FlushAsync();
 }
 ```
 
@@ -926,12 +1284,15 @@ private:
 -   状況によっては、**FlushAsync** パターンの代わりに [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) を使います。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket でのポートの共有
-同じアドレス/ポートにバインドされた他の Win32 または UWP マルチキャスト ソケットと共存するように [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) を構成することができます。 これを行うには、ソケットをバインドまたは接続する前に [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) を `true` に設定します。 [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) プロパティを通じて **DatagramSocket** オブジェクト自体から **DatagramSocketControl** のインスタンスにアクセスします。
+同じアドレス/ポートにバインドされた他の Win32 または UWP マルチキャスト ソケットと共存するように [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) を構成することができます。 これを行うには、ソケットをバインドまたは接続する前に [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) を `true` に設定します。 [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) プロパティを通じて **DatagramSocket** オブジェクト自体から **DatagramSocketControl** のインスタンスにアクセスします。
 
 ## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>StreamSocket クラスによるクライアント証明書の提供
-[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) は、SSL/TLS を使ったクライアント アプリの接続先サーバーの認証をサポートします。 場合によっては、クライアント アプリは、SSL/TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 ソケットをバインドまたは接続する前に (SSL/TLS ハンドシェイクが始まる前に設定する必要があります) [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) プロパティを使ってクライアント証明書を提供できます。 [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control) プロパティを通じて **StreamSocket** オブジェクト自体から **StreamSocketControl** のインスタンスにアクセスします。 サーバーがクライアント証明書を要求した場合、Windows が提供されたクライアント証明書を使って応答します。
+[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) は、SSL/TLS を使ったクライアント アプリの接続先サーバーの認証をサポートします。 場合によっては、クライアント アプリは、SSL/TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 ソケットをバインドまたは接続する前に (SSL/TLS ハンドシェイクが始まる前に設定する必要があります) [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) プロパティを使ってクライアント証明書を提供できます。 [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control) プロパティを通じて **StreamSocket** オブジェクト自体から **StreamSocketControl** のインスタンスにアクセスします。 サーバーがクライアント証明書を要求した場合、Windows が提供されたクライアント証明書を使って応答します。
 
-この最小限のコード例に示すように、[**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel?branch=live) を使う [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync?branch=live) の上書きを使います。
+この最小限のコード例に示すように、[**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel) を使う [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) の上書きを使います。
+
+> [!IMPORTANT]
+> 次のコード例のコメントで示すとおり、コードが機能するようにプロジェクトで sharedUserCertificates アプリ機能を宣言する必要があります。
 
 ```csharp
 // For this code to work, you need at least one certificate to be present in the user MY certificate store.
@@ -944,6 +1305,22 @@ if (certificates.Count > 0)
 {
     streamSocket.Control.ClientCertificate = certificates[0];
     await streamSocket.ConnectAsync(hostName, "1337", Windows.Networking.Sockets.SocketProtectionLevel.Tls12);
+}
+```
+
+```cppwinrt
+// For this code to work, you need at least one certificate to be present in the user MY certificate store.
+// Plugging a smartcard into a smartcard reader connected to your PC will achieve that.
+// Also, your project needs to declare the sharedUserCertificates app capability.
+Windows::Security::Cryptography::Certificates::CertificateQuery certificateQuery;
+certificateQuery.StoreName(L"MY");
+IVectorView< Windows::Security::Cryptography::Certificates::Certificate > certificates = co_await Windows::Security::Cryptography::Certificates::CertificateStores::FindAllAsync(certificateQuery);
+
+if (certificates.Size() > 0)
+{
+    m_streamSocket.Control().ClientCertificate(certificates.GetAt(0));
+    co_await m_streamSocket.ConnectAsync(Windows::Networking::HostName{ L"localhost" }, L"1337", Windows::Networking::Sockets::SocketProtectionLevel::Tls12);
+    ...
 }
 ```
 
@@ -969,45 +1346,46 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 ```
 
 ## <a name="handling-exceptions"></a>例外処理
-[**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live)、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live)、[**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) 操作で発生したエラーは、**HRESULT** 値として返されます。 その **HRESULT** 値を [**SocketError.GetStatus**](/uwp/api/windows.networking.sockets.socketerror.getstatus?branch=live) メソッドに渡し、[**SocketErrorStatus**](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus?branch=live) 列挙値に変換することができます。
+[**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket)、[**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 操作で発生したエラーは、**HRESULT** 値として返されます。 その **HRESULT** 値を [**SocketError.GetStatus**](/uwp/api/windows.networking.sockets.socketerror.getstatus) メソッドに渡し、[**SocketErrorStatus**](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus) 列挙値に変換することができます。
 
 ほとんどの **SocketErrorStatus** 列挙値は、ネイティブ Windows ソケット操作から返されるエラーに対応しています。 アプリは **SocketErrorStatus** 列挙値をオンにし、例外の原因に応じてアプリの動作を変更することができます。
 
 パラメーター検証エラーの場合、例外からの **HRESULT** を使ってエラーの詳細情報を確認することもできます。 考えられる **HRESULT** 値は、SDK インストールに含まれる `Winerror.h` に一覧表示されています (たとえば、`C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared` フォルダーにあります)。 ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E_INVALIDARG** です。
 
-[**HostName**](/uwp/api/Windows.Networking.HostName?branch=live) コンストラクターは、渡される文字列が有効なホスト名でない場合に例外をスローできます。 たとえば、ユーザーによってホスト名がアプリに入力される場合に使われる可能性が高い、許可されない文字が含まれています。 try/catch ブロック内に **HostName** を構築します。 そのようにして、例外がスローされた場合、アプリはユーザーに通知し、新しいホスト名を要求することができます。
+[**HostName**](/uwp/api/Windows.Networking.HostName) コンストラクターは、渡される文字列が有効なホスト名でない場合に例外をスローできます。 たとえば、ユーザーによってホスト名がアプリに入力される場合に使われる可能性が高い、許可されない文字が含まれています。 try/catch ブロック内に **HostName** を構築します。 そのようにして、例外がスローされた場合、アプリはユーザーに通知し、新しいホスト名を要求することができます。
 
 ## <a name="important-apis"></a>重要な API
-* [CertificateQuery](/uwp/api/windows.security.cryptography.certificates.certificatequery?branch=live)
-* [CertificateStores.FindAllAsync](/uwp/api/windows.security.cryptography.certificates.certificatestores.findallasync?branch=live)
-* [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live)
-* [DatagramSocket.BindServiceNameAsync](/uwp/api/windows.networking.sockets.datagramsocket.bindservicenameasync?branch=live)
+* [CertificateQuery](/uwp/api/windows.security.cryptography.certificates.certificatequery)
+* [CertificateStores.FindAllAsync](/uwp/api/windows.security.cryptography.certificates.certificatestores.findallasync)
+* [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket)
+* [DatagramSocket.BindServiceNameAsync](/uwp/api/windows.networking.sockets.datagramsocket.bindservicenameasync)
 * [DatagramSocket.Control](/uwp/api/windows.networking.sockets.datagramsocket.Control)
-* [DatagramSocket.GetOutputStreamAsync](/uwp/api/windows.networking.sockets.datagramsocket.getoutputstreamasync?branch=live)
+* [DatagramSocket.GetOutputStreamAsync](/uwp/api/windows.networking.sockets.datagramsocket.getoutputstreamasync)
 * [DatagramSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived)
 * [DatagramSocketControl.MulticastOnly](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly)
-* [DatagramSocketMessageReceivedEventArgs](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live)
+* [DatagramSocketMessageReceivedEventArgs](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs)
 * [DatagramSocketMessageReceivedEventArgs.GetDataReader](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs.GetDataReader)
-* [DataReader.LoadAsync](/uwp/api/windows.storage.streams.datareader.loadasync?branch=live)
+* [DataReader.LoadAsync](/uwp/api/windows.storage.streams.datareader.loadasync)
 * [IOutputStream.FlushAsync](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync)
-* [SocketError.GetStatus](/uwp/api/windows.networking.sockets.socketerror.getstatus?branch=live)
-* [SocketErrorStatus](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus?branch=live)
-* [SocketProtectionLevel](/uwp/api/windows.networking.sockets.socketprotectionlevel?branch=live)
-* [StreamSocket](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live)
+* [SocketError.GetStatus](/uwp/api/windows.networking.sockets.socketerror.getstatus)
+* [SocketErrorStatus](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus)
+* [SocketProtectionLevel](/uwp/api/windows.networking.sockets.socketprotectionlevel)
+* [StreamSocket](/uwp/api/Windows.Networking.Sockets.StreamSocket)
 * [StreamSocketControl.ClientCertificate](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate)
-* [StreamSocket.ConnectAsync](/uwp/api/windows.networking.sockets.streamsocket.connectasync?branch=live)
+* [StreamSocket.ConnectAsync](/uwp/api/windows.networking.sockets.streamsocket.connectasync)
 * [StreamSocket.InputStream](/uwp/api/windows.networking.sockets.streamsocket.InputStream)
 * [StreamSocket.OutputStream](/uwp/api/windows.networking.sockets.streamsocket.OutputStream)
-* [StreamSocketListener](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live)
-* [StreamSocketListener.BindServiceNameAsync](/uwp/api/windows.networking.sockets.streamsocketlistener.bindservicenameasync?branch=live)
+* [StreamSocketListener](/uwp/api/Windows.Networking.Sockets.StreamSocketListener)
+* [StreamSocketListener.BindServiceNameAsync](/uwp/api/windows.networking.sockets.streamsocketlistener.bindservicenameasync)
 * [StreamSocketListener.ConnectionReceived](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)
-* [StreamSocketListenerConnectionReceivedEventArgs](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs?branch=live)
-* [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets?branch=live)
+* [StreamSocketListenerConnectionReceivedEventArgs](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs)
+* [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## <a name="related-topics"></a>関連トピック
-* [Windows ソケット 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+* [アプリ間通信](/windows/uwp/app-to-app/index)
+* [C++/WinRT を使用した同時実行操作と非同期操作](/windows/uwp/cpp-and-winrt-apis/concurrency)
 * [ネットワーク機能を設定する方法](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
-* [アプリ間通信](/windows/uwp/app-to-app/index?branch=live)
+* [Windows ソケット 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
 ## <a name="samples"></a>サンプル
 * [StreamSocket のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=620609)

@@ -4,18 +4,18 @@ ms.assetid: 2F30E68B-B643-4387-9430-793D08AAF0E7
 description: 日付範囲やその他のオプション フィルターを指定して、Windows 7 や Windows 8.x のドライバーに関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドは、IHV のみを対象としています。
 title: Windows 7 や Windows 8.x のドライバーに関するエラー報告データを取得する
 ms.author: mcleans
-ms.date: 01/18/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a816f9665cdaa5673adad1a4de5e976c0cd0c1
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 75a1b16e8882e961ccd0a10e99e94038948f59fd
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663372"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989596"
 ---
 # <a name="get-error-reporting-data-for-windows-7-and-windows-8x-drivers"></a>Windows 7 や Windows 8.x のドライバーに関するエラー報告データを取得する
 
@@ -83,7 +83,7 @@ Authorization: Bearer <your access token>
 |------------|---------|--------------|
 | Value      | array   | 集計エラー報告データが含まれるオブジェクトの配列です。 各オブジェクトのデータの詳細については、以下の表を参照してください。     |
 | @nextLink  | string  | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されたが、クエリの入手データに 10,000 を超えるエラー行が含まれている場合に、この値が返されます。 |
-| TotalCount | inumber | クエリの結果データ内の行の総数です。     |
+| TotalCount | 整数 | クエリの結果データ内の行の総数です。     |
 
 
 *Value* 配列の要素には、次の値が含まれます。
@@ -106,7 +106,7 @@ Authorization: Bearer <your access token>
 | oemName | string | エラーが発生したデバイスの OEM の名前です。 |
 | oemModel | string | エラーが発生したデバイス モデルの名前です。 |
 | flightRing | string | エラーが発生した OS フライトの名前です。 |
-| eventCount      | inumber | 指定した集計レベルでこのエラーに起因すると考えられるイベントの数です。      |
+| eventCount      | 整数 | 指定した集計レベルでこのエラーに起因すると考えられるイベントの数です。      |
 
 
 ### <a name="response-example"></a>応答の例

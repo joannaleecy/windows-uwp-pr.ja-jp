@@ -4,26 +4,26 @@ Description: Distribute a packaged desktop app (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
 title: パッケージ デスクトップ アプリは、Microsoft Store に公開することも、1 台以上のデバイスにサイドローディングで展開することもできます。
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aff2635094064c0758f9d0d2ca56b7aa73cfda1
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 682d7dfcef1ea8037b113499362f0664c388d987
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816837"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989626"
 ---
 # <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>パッケージ デスクトップ アプリの配布 (デスクトップ ブリッジ)
 
 パッケージ デスクトップ アプリは、Windows ストアに公開することも、1 台以上のデバイスにサイドローディングで展開することもできます。  
 
 > [!NOTE]
-> パッケージ アプリにユーザーを移行する方法について、計画はありますか?  アプリを配布する前に、このガイドの「[デスクトップ ブリッジ アプリにユーザーを移行する](#transition-users)」セクションを参照して、アイデアを得てください。
+> パッケージ アプリにユーザーを移行する方法について、計画はありますか?  アプリを配布する前に、このガイドの「[パッケージ アプリにユーザーを移行する](#transition-users)」セクションを参照して、アイデアを得てください。
 
 ## <a name="distribute-your-app-by-publishing-it-to-the-microsoft-store"></a>Microsoft Store に公開してアプリを配布する
 
@@ -31,7 +31,7 @@ ms.locfileid: "1816837"
 
 Microsoft Store では、幅広いお客様を対象にしてアプリを公開できます。 また、組織のお客様は[ビジネス向け Microsoft Store](https://www.microsoft.com/business-store) を通じてアプリを入手し、組織内で配布できます。
 
-Microsoft Store への公開を計画していて、まだマイクロソフトにご連絡いただいていない場合は、[このフォーム](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)にご記入ください。オンボード プロセスについて、マイクロソフトからご連絡させていただきます。
+Microsoft Store への公開を計画している場合は、申請プロセスの一部としていくつかの追加の質問をされます。 これは、パッケージ マニフェストが **runFullTrust** という名前の制限付き機能を宣言し、弊社でアプリケーションによるその機能の使用を承認する必要があるためです。 この要件の詳細については、「[制限付き機能](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#restricted-capabilities.html)」を参照してください。
 
 Microsoft Store に提出する前に、アプリに署名する必要はありません。
 
@@ -69,19 +69,19 @@ Windows 10 S を実行するデバイスへのアプリ配布を計画してい�
 
 <a id="transition-users" />
 
-## <a name="transition-users-to-your-desktop-bridge-app"></a>デスクトップ ブリッジ アプリにユーザーを移行する
+## <a name="transition-users-to-your-packaged-app"></a>パッケージ アプリへのユーザーの移行
 
-ユーザーによってデスクトップ ブリッジ アプリが使用されるようにするには、アプリを配布する前に、パッケージ マニフェストにいくつかの拡張機能を追加することを検討してください。 次のようなことができます。
+ユーザーによってパッケージ アプリが使用されるようにするには、アプリを配布する前に、パッケージ マニフェストにいくつかの拡張機能を追加することを検討してください。 次のようなことができます。
 
-* 既存のスタート タイルとタスク バー ボタンの参照先をデスクトップ ブリッジ アプリに設定します。
-* パッケージ アプリを一連のファイルの種類に関連付けます。
-* 特定の種類のファイルが既定でデスクトップ ブリッジ アプリによって開かれるように設定します。
+* 既存のスタート タイルとタスク バー ボタンの参照先をパッケージ アプリに設定する。
+* パッケージ アプリを一連のファイルの種類に関連付ける。
+* 特定の種類のファイルが既定でパッケージ アプリによって開かれるように設定する。
 
-拡張機能の完全な一覧と使用方法のガイダンスについては、「[アプリにユーザーを移行する](desktop-to-uwp-extensions.md#transition-users-to-your-app)」をご覧ください。
+拡張機能の完全な一覧と使用方法のガイダンスについては、「[アプリにユーザーを移行する](desktop-to-uwp-extensions.md#transition-users-to-your-app)」を参照してください。
 
-また、次のようなタスクを実行するコードをデスクトップ ブリッジ アプリに追加することも検討してください。
+また、次のようなタスクを実行するコードをパッケージ アプリに追加することも検討してください。
 
-* デスクトップ ブリッジ アプリの適切なフォルダーに、デスクトップ アプリに関連付けられているユーザー データを移行します。
+* パッケージ アプリの適切なフォルダーに、デスクトップ アプリに関連付けられているユーザー データを移行します。
 * アプリのデスクトップ バージョンをアンインストールするためのオプションをユーザーに示します。
 
 これらのタスクについて、それぞれ説明します。 ユーザー データの移行から開始します。
@@ -90,7 +90,7 @@ Windows 10 S を実行するデバイスへのアプリ配布を計画してい�
 
 ユーザー データを移行するためのコードを追加する場合、そのコードはアプリを初めて起動したときにのみ実行することをお勧めします。 ユーザー データを移行する前に、ユーザーに対してダイアログ ボックスを表示して、何が起こっているか、なぜ移行が推奨されるのか、既存のデータにどのような影響があるかを説明します。
 
-例として、.NET ベースのデスクトップ ブリッジ アプリでの方法を次に示します。
+例として、.NET ベースのパッケージ アプリでの方法を次に示します。
 
 ```csharp
 private void MigrateUserData()
@@ -100,11 +100,9 @@ private void MigrateUserData()
 
     if (sourceDir != null)
     {
-        String migrateMessage =
-            "Would you like to migrate your data from the previous version of this app?";
-
         DialogResult migrateResult = MessageBox.Show
-            (migrateMessage, "Data Migration", MessageBoxButtons.YesNo);
+            ("Would you like to migrate your data from the previous version of this app?",
+             "Data Migration", MessageBoxButtons.YesNo);
 
         if (migrateResult.Equals(DialogResult.Yes))
         {
@@ -131,9 +129,9 @@ private void MigrateUserData()
 
 先に許可を求めずにユーザーのデスクトップ アプリをアンインストールすることは、好ましくありません。 ユーザーに許可を求めるには、そのためのダイアログ ボックスを表示します。 ユーザーによって、アプリのデスクトップ バージョンをアンインストールしないように指定されることも考えられます。 その場合に、デスクトップ アプリの使用をブロックするか、両方のアプリのサイド バイ サイド使用をサポートするかを決定する必要があります。
 
-例として、.NET ベースのデスクトップ ブリッジ アプリでの方法を次に示します。
+例として、.NET ベースのパッケージ アプリでの方法を次に示します。
 
-このスニペットの完全なコンテキストを確認するには、「[WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)」というサンプルの**MainWindow.cs** ファイルをご覧ください。
+このスニペットの完全なコンテキストを確認するには、「[WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)」というサンプルの **MainWindow.cs** ファイルを参照してください。
 
 ```csharp
 private void RemoveDesktopApp()
@@ -146,11 +144,10 @@ private void RemoveDesktopApp()
     //Detect if the previous version of the Desktop App is installed.
     if (uninstallString != null)
     {
-        String uninstallMessage = "To have the best experience, consider uninstalling the "
-            +" previous version of this app. Would you like to do that now?";
-
         DialogResult uninstallResult = MessageBox.Show
-            (uninstallMessage, "Uninstall the previous version", MessageBoxButtons.YesNo);
+            ("To have the best experience, consider uninstalling the "
+              + " previous version of this app. Would you like to do that now?",
+              "Uninstall the previous version", MessageBoxButtons.YesNo);
 
         if (uninstallResult.Equals(DialogResult.Yes))
         {

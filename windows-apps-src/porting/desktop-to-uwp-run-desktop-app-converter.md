@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: f867861537ddfb7fe346011cd637156854e2f7d8
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 141d87bf48b5b4835055375320f1e4a79498a42f
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817187"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989676"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>Desktop App Converter を使用してアプリをパッケージ化する (デスクトップ ブリッジ)
 
@@ -60,10 +60,9 @@ Desktop App Converter (DAC) を使用すると、デスクトップ アプリを
 
 パッケージを作成する準備ができたら、始めましょう。
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>まず、アプリの配布方法を検討する
-アプリを [Microsoft Store](https://www.microsoft.com/store/apps) に公開する予定であれば、[このフォーム](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)への記入から開始します。 Microsoft から、オンボード プロセスを開始するための連絡があります。 このプロセスでは、Microsoft Store 内の名前を予約し、アプリをパッケージ化するための情報を取得します。
+## <a name="first-prepare-your-application"></a>まず、アプリケーションを準備します
 
-さらに、アプリケーションのパッケージの作成を開始する前に、必ず「[アプリのパッケージ化の準備 (デスクトップ ブリッジ)](desktop-to-uwp-prepare.md)」を確認してください。
+アプリケーションのパッケージの作成を開始する前に、必ず「[アプリのパッケージ化の準備 (デスクトップ ブリッジ)](desktop-to-uwp-prepare.md)」を確認してください。
 
 ## <a name="make-sure-that-your-system-can-run-the-converter"></a>システムで DCA を実行できることを確認する
 
@@ -74,7 +73,6 @@ Desktop App Converter (DAC) を使用すると、デスクトップ アプリを
 * ハードウェア支援による仮想化
 * Second Level Address Translation (SLAT)
 * [Windows 10 用 Windows ソフトウェア開発キット (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
-
 
 ## <a name="start-the-desktop-app-converter"></a>Desktop App Converter を起動する
 

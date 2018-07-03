@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: Test your app for Windows 10 S without having to install Windows 10 S.
+Description: Test your app for Windows 10 in S mode.
 Search.Product: eADQiWindows 10XVcnh
 title: Windows アプリの Windows 10 S 対応のテスト
 ms.author: normesta
@@ -8,18 +8,18 @@ ms.date: 05/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10 S, UWP
+keywords: windows 10 S, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5810789ab2457ed14964a61bf278c84e7deb416
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 69cceb86710cea0e9066454fba4ef4e1746633d1
+ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662712"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1874320"
 ---
-# <a name="test-your-windows-app-for-windows-10-s"></a>Windows アプリの Windows 10 S 対応のテスト
+# <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Windows アプリの S モードの Windows 10 をテストする
 
-Windows アプリをテストして、Windows 10 S を実行するデバイスでそのアプリが正しく動作することを確認できます。実際、Microsoft Store にアプリを公開する予定がある場合はこの作業を行わなければなりません。それが Microsoft Store 要件になっているためです。 アプリをテストするために、Windows 10 Pro を実行しているデバイスでは Device Guard コードの整合性ポリシーを適用できます。
+Windows アプリをテストして、S モードの Windows10 を実行するデバイスで正しく動作することを確認できます。 実際には、Microsoft Store にアプリを公開する場合、これはストア要件のため実行する必要があります。 アプリをテストするために、Windows 10 Pro を実行しているデバイスでは Device Guard コードの整合性ポリシーを適用できます。
 
 > [!NOTE]
 > Device Guard コードの整合性ポリシーを適用するデバイスでは、Windows 10 Creators Edition (10.0 ビルド 15063) 以降が実行されている必要があります。
@@ -80,7 +80,7 @@ Device Guard コード整合性ポリシーは、[こちら](https://go.microsof
 
 ローカル コンピューターにこれらのポリシーを適用する場合は、監査モード ポリシーから始めることをお勧めします。 このポリシーでは、適用されたポリシーで重要なコードがブロックされないことをコード整合性イベント ログで確認できます。
 
-ポリシーを適用する準備ができたら、選択したポリシーに対応する .P7B ファイルを見つけて、**SIPolicy.P7B** という名前に変更したうえで、このファイルをシステム上の **C:\Windows\System32\CodeIntegrity\** に保存します。
+ポリシーを適用する準備ができたら、選択したポリシーに対応する .P7B ファイルを見つけて、**SIPolicy.P7B** という名前に変更したうえで、このファイルをシステム上の **C:\Windows\System32\CodeIntegrity\\** に保存します。
 
 システムを再起動します。
 
@@ -99,8 +99,8 @@ Device Guard コード整合性ポリシーは、[こちら](https://go.microsof
 
 **App Consult Team が投稿した詳細なブログ記事を確認する**
 
-[Windows 10 S でのデスクトップ ブリッジを使用した従来のデスクトップ アプリケーションの移植とテストに関する記事](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/)をご覧ください。
+[Windows 10 S でのデスクトップ ブリッジを使用した従来のデスクトップ アプリケーションの移植とテストに関する記事](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/)を参照してください。
 
-**Windows S でのテストを容易にするツールについて理解する**
+**S モードの Windows10 でのテストを容易にするツールについて理解する**
 
-[APPX のアンパッケージ、変更、再パッケージ、署名に関する記事](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/)をご覧ください。
+[APPX のアンパッケージ、変更、再パッケージ、署名に関する記事](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/)を参照してください。

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アドオンの入手数
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f6da2ae68ab2b40f11d1a9d092eb8ff447f2844
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: b881d3bdaa9adec28b78a72e127dcebd49ee1df6
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664012"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976427"
 ---
 # <a name="get-add-on-acquisitions"></a>アドオンの入手数の取得
 
@@ -132,7 +132,7 @@ Authorization: Bearer <your access token>
 | gender              | string  | 入手を行ったユーザーの性別です。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                    |
 | ageGroup            | string  | 入手を行ったユーザーの年齢グループです。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                 |
 | acquisitionType     | string  | 入手の種類です (無料、有料など)。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                    |
-| acquisitionQuantity | inumber | 発生した入手の数です。                        |
+| acquisitionQuantity | 整数 | 発生した入手の数です。                        |
 
 
 ### <a name="response-example"></a>応答の例

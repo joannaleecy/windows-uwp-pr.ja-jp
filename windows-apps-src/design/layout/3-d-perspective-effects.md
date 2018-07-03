@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b906970480c7c8bb175e2d7c845dfd6e790b84d6
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: bd703f5ec3fa6a5bc231793f8d004e3941e27b61
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396501"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935650"
 ---
 # <a name="3-d-perspective-effects-for-xaml-ui"></a>XAML UI 用の 3-D 遠近効果
 
@@ -28,7 +28,7 @@ ms.locfileid: "1396501"
 
 ![オブジェクトを重ねて 3D 効果を作成](images/3dstacking.png)
 
-静的な 3D 効果の作成だけでなく、視点の変換のプロパティにアニメーションを適用すると、動く 3D 効果を作成できます。 [このサンプルを実行](http://go.microsoft.com/fwlink/p/?linkid=236111)すると、その例を見ることができます。
+静的な 3D 効果の作成だけでなく、視点の変換のプロパティにアニメーションを適用すると、動く 3D 効果を作成できます。
 
 ここまでは、視点の変換を画像に適用する例を見ましたが、これらの効果は、コントロールなどすべての [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) に適用できます。 たとえば、次のようなコントロールのコンテナー全体に 3D 効果を適用できます。
 
@@ -48,8 +48,6 @@ ms.locfileid: "1396501"
 ```
 
 ここでは、3D 空間でのオブジェクトの回転と移動に使われる [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) のプロパティに注目してください。 次のサンプルでは、これらのプロパティの動作を実際に試し、オブジェクトへの影響を調べることができます。
-
-[このサンプルを実行する](http://go.microsoft.com/fwlink/p/?linkid=236112)
 
 ## <a name="planeprojection-class"></a>PlaneProjection クラス
 
@@ -91,7 +89,7 @@ ms.locfileid: "1396501"
 
 ![-45°の Z 回転](images/3drotatezminus35.png)
 
-回転プロパティでは、正または負の値を指定することで、どちらの方向にも回転させることができます。 絶対値が 360 を超える値も指定でき、その場合、オブジェクトは 1 回転よりも大きく回転します。 [このサンプルを実行](http://go.microsoft.com/fwlink/p/?linkid=236112)すると、[**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx)、[**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy)、[**RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationz) の各プロパティに異なる値を試して、効果を確認することができます。
+回転プロパティでは、正または負の値を指定することで、どちらの方向にも回転させることができます。 絶対値が 360 を超える値も指定でき、その場合、オブジェクトは 1 回転よりも大きく回転します。
 
 [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx)、[**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy)、[**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) の各プロパティを使うと、回転の中心を移動できます。 既定では、各回転軸がオブジェクトの中心を通っているため、オブジェクトは中心の周りを回転します。 ただし、回転の中心をオブジェクトの外側の端に移動すると、オブジェクトはその端の周りを回転します。 **CenterOfRotationX** と **CenterOfRotationY** の既定値は 0.5 であり、**CenterOfRotationZ** の既定値は 0 です。 **CenterOfRotationX** と **CenterOfRotationY** では、0 ～ 1 の値を指定すると、回転の中心がオブジェクト内部の点に設定されます。 値 0 はオブジェクトの一方の端を示し、値 1 はもう一方の端を示します。 この範囲外の値も指定でき、回転の中心は対応する位置に移動します。 回転の中心の Z 軸はオブジェクトの平面と交差しているため、負の値を指定すると回転の中心をオブジェクトの後ろに移動でき、正の値を指定するとオブジェクトの手前へ移動できます。
 
@@ -147,8 +145,6 @@ ms.locfileid: "1396501"
 
 オブジェクトの平面よりも上側または下側に回転の中心を配置するには、[**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) を使用します。 これにより、恒星の周りを周回する惑星のように、その点を中心にオブジェクトを回転させることができます。
 
-[このスライダー サンプルを実行](http://go.microsoft.com/fwlink/p/?linkid=236112)すると、回転の中心の位置をさまざまに変えながらオブジェクトの回転を試すことができます。
-
 ## <a name="positioning-an-object"></a>オブジェクトの配置
 
 ここまで、空間内でオブジェクトを回転させる方法について説明しました。 以下のプロパティを使うと、空間内でこれらの回転したオブジェクトを互いに相対的に配置できます。
@@ -164,17 +160,11 @@ ms.locfileid: "1396501"
 
 [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx)、[**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety)、[**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) の各プロパティは、オブジェクトを回転させた後で、オブジェクトの平面の該当する軸に沿ってオブジェクトを移動します。 したがって、オブジェクトの回転によって、オブジェクトが移動する方向が決まります。 この考え方を示すために、次のサンプルでは、**LocalOffsetX** を 0 から 400 まで、[**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) を 0 から 65°まで変化させてアニメーションを表示します。
 
-[このサンプルを実行する](http://go.microsoft.com/fwlink/p/?linkid=236209)
-
 このサンプルでは、オブジェクトが自身の X 軸に沿って移動していることがわかります。 アニメーションの冒頭で [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) の値が 0 (画面に平行) に近いときには、オブジェクトは画面に沿って X 方向に移動しますが、オブジェクトが前方に回転するにつれて、オブジェクトは自身の平面の X 軸に沿って前方に移動するようになります。 一方、**RotationY** プロパティを -65°に設定した場合は、オブジェクトが後方に離れていきます。
 
 [**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) も [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx) と同様に機能しますが、オブジェクトは Y 軸に沿って移動します。[**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) を変更すると、**LocalOffsetY** でオブジェクトが移動する方向が変化します。 次のサンプルでは、**LocalOffsetY** を 0 から 400 まで、**RotationX** を 0 から 65°まで変化させてアニメーションを表示します。
 
-[このサンプルを実行する](http://go.microsoft.com/fwlink/p/?linkid=236210)
-
 [**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) は、オブジェクトの平面に垂直な方向にオブジェクトを移動し、これは、オブジェクトの後ろから直接中心を通って手前へ抜けるベクターを描画したような結果となります。 **LocalOffsetZ** の機能を示すために、次のサンプルでは、**LocalOffsetZ** を 0 から 400 まで、[**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) を 0 から 65°まで変化させてアニメーションを表示します。
-
-[このサンプルを実行する](http://go.microsoft.com/fwlink/p/?linkid=236211)
 
 アニメーションの冒頭で [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) の値が 0 (画面に平行) に近いときには、オブジェクトはまっすぐ手前へ向かって移動しますが、オブジェクトの平面が下側に回転するにつれて、オブジェクトは下に向かって移動するようになります。
 
@@ -183,8 +173,6 @@ ms.locfileid: "1396501"
 [**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx)、[**GlobalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsety)、[**GlobalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetz) の各プロパティは、画面を基準とした軸に沿ってオブジェクトを移動します。 つまり、ローカル オフセット プロパティとは異なり、オブジェクトが移動する軸は、オブジェクトに適用される回転に依存しません。 これらのプロパティは、オブジェクトに適用される回転に関係なく、単に画面の X 軸、Y 軸、Z 軸に沿ってオブジェクトを移動する場合に便利です。
 
 次のサンプルでは、[**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx) を 0 から 400 まで、[**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) を 0 から 65°まで変化させてアニメーションを表示します。
-
-[このサンプルを実行する](http://go.microsoft.com/fwlink/p/?linkid=236213)
 
 このサンプルでは、オブジェクトが回転しても移動方向が変わらないことがわかります。 これは、オブジェクトが回転に関係なく画面の X 軸に沿って移動しているためです。
 

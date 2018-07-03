@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ec676446562d5d97ff2a7020fc494f248323450b
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.openlocfilehash: e0931440977c33642a3154cfa1b0adca42032df0
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691941"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018628"
 ---
 # <a name="share-code-between-a-desktop-app-and-a-uwp-app"></a>デスクトップ アプリと UWP アプリでコードを共有する
 
@@ -26,8 +26,8 @@ ms.locfileid: "1691941"
 できる限り多くのコードを .NET Standard 2.0 クラス ライブラリに配置してください。  標準で定義されている API を使用しているコードは、UWP アプリで再利用できます。 .NET Standard 2.0 に含まれる API が大幅に増えたため、.NET Standard ライブラリでのコード共有は、従来よりずっと簡単になっています。
 
 詳しい解説は、こちらのビデオでご覧ください。
-<br><br>
-<iframe src="https://www.youtube.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/YI4MurjfMn8]
 
 ### <a name="add-net-standard-libraries"></a>.NET Standard ライブラリを追加する
 
@@ -56,10 +56,10 @@ ms.locfileid: "1691941"
 アプリケーションでこれらを使用する場合は、.NET Standard 2.0 と互換性があるかどうかを確認します。 そのためには、Visual Studio 拡張機能またはコマンド ライン ユーティリティを使用できます。
 
 これらの同じツールを使用して、コードを分析します。 ここでツール ([dotnet apiport](https://github.com/Microsoft/dotnet-apiport/releases)) をダウンロードし、使用方法に関するビデオをご覧ください。
-<br><br>
-<iframe src="https://www.youtube.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/rzs_FGPyAlY]
 
- コードに標準との互換性がない場合は、そのコードを実装するための他の方法を検討してください。 まず [.NET API ブラウザー](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)を開きます。 このブラウザーを使用して、.NET Standard 2.0 に含まれている API を確認します。 一覧の範囲として .NET Standard 2.0 を指定してください。
+コードに標準との互換性がない場合は、そのコードを実装するための他の方法を検討してください。 まず [.NET API ブラウザー](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)を開きます。 このブラウザーを使用して、.NET Standard 2.0 に含まれている API を確認します。 一覧の範囲として .NET Standard 2.0 を指定してください。
 
 ![.NET オプション](images/desktop-to-uwp/dot-net-option.png)
 
@@ -101,7 +101,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-[.NET API ブラウザー](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)には、代わりのクラスが表示されます。 .NET Standard 2.0 で利用可能な ``DbConnection`` クラス、``DbCommand`` クラス、``DbDataReader`` クラスを使用できます。  
+ただし、[.NET API ブラウザー](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)を使用して代わりのクラスを見つけることができます。 ``DbConnection``、``DbCommand``、``DbDataReader`` の各クラスはすべて .NET Standard 2.0 で利用可能であるため、それらを代わりに使用することができます。  
 
 この改訂バージョンではこれらのクラスを使用して顧客の一覧を取得しますが、``DbConnection`` クラスを作成するには、クライアント アプリケーションで作成するファクトリ オブジェクトを渡す必要があります。
 
@@ -158,9 +158,9 @@ public partial class Customers : Form
 ## <a name="reach-all-windows-devices"></a>すべての Windows デバイスにリーチ
 
 これで、ソリューションに UWP アプリを追加する準備ができました。
-<div style="float: left; padding: 10px">
-    ![Desktop to UWP Bridge のイメージ](images/desktop-to-uwp/adaptive-ui.png)
-</div>
+
+![Desktop to UWP Bridge のイメージ](images/desktop-to-uwp/adaptive-ui.png)
+
 UI ページは XAML で設計し、デバイス固有またはプラットフォーム固有のコードも記述する必要がありますが、完了すると、すべての Windows 10 デバイスをターゲットにすることができます。アプリ ページはさまざまな画面サイズや解像度に合わせて調整されるモダンな使用感になります。
 
 アプリはキーボードとマウスだけではなく、他の入力メカニズムにも応答し、さまざまなデバイスで直感的に機能や設定を使用できます。 つまり、ユーザーが操作方法を 1 回だけ学習すると、デバイスに関係なく慣れた方法で操作できます。
@@ -211,9 +211,8 @@ UWP を使い始めるには、「[UWP アプリとは](https://docs.microsoft.c
 ## <a name="reach-ios-and-android-devices"></a>iOS および Android デバイスへのリーチ
 
 Xamarin プロジェクトを追加することにより、Android デバイスと iOS デバイスをターゲットにすることができます。  
-<div style="float: left; padding: 10px">
-    ![Xamarin アプリ](images/desktop-to-uwp/xamarin-apps.png)
-</div>
+
+![Xamarin アプリ](images/desktop-to-uwp/xamarin-apps.png)
 
 これらのプロジェクトでは、C# でプラットフォーム固有およびデバイスに固有の API へのフル アクセスを使用して、Android アプリと iOS アプリを構築できます。 これらのアプリはプラットフォーム固有のハードウェア アクセラレーションを利用し、ネイティブ パフォーマンス用にコンパイルできます。
 

@@ -4,23 +4,20 @@ Description: In this scenario, we'll make a new app to represent our custom buil
 title: シナリオ 1 文字列リソースとアセット ファイルから PRI ファイルを生成する
 template: detail.hbs
 ms.author: stwhi
-ms.date: 02/20/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 7071c6e6eea3e4484f1ce416654d30d90d905325
-ms.sourcegitcommit: 12cc283e821cbf978debf24914490982f076b4b4
+ms.openlocfilehash: 22a648d9366a3abcedd9fd75328cf0f504a9f84c
+ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "1658191"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "1992078"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>シナリオ 1: 文字列リソースとアセット ファイルから PRI ファイルを生成する
-> [!NOTE]
-> **一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 本書に記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。**
-
 このシナリオでは、[パッケージ リソース インデックス (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) を使用してカスタム ビルド システムを表す新しいアプリを作成します。 このカスタム ビルド システムの目的は、対象の UWP アプリの PRI ファイルを作成することです。 そのため、このチュートリアルの一部として、その対象とする UWP アプリのリソースを表す、(文字列、およびその他の種類のリソースを含む) サンプルのリソース ファイルを作成します。
 
 ## <a name="new-project"></a>新しいプロジェクト
@@ -31,7 +28,7 @@ ms.locfileid: "1658191"
 ## <a name="headers-static-library-and-dll"></a>ヘッダー、静的ライブラリ、dll
 PRI API は、MrmResourceIndexer.h ヘッダー ファイル (`%ProgramFiles(x86)%\Windows Kits\10\Include\<WindowsTargetPlatformVersion>\um\` にインストールされます) で宣言されています。 ファイル `CBSConsoleApp.cpp` を開き、そのヘッダーと、その他の必要になるいくつかのヘッダーを含めます。
 
-```cpp
+```cppwinrt
 #include <string>
 #include <windows.h>
 #include <MrmResourceIndexer.h>
@@ -43,7 +40,7 @@ API は MrmSupport.dll に実装されています。MrmSupport.dll には、静
 
 次のヘルパー関数が必要になるため、`CBSConsoleApp.cpp` に追加します。
 
-```cpp
+```cppwinrt
 inline void ThrowIfFailed(HRESULT hr)
 {
     if (FAILED(hr))
@@ -56,7 +53,7 @@ inline void ThrowIfFailed(HRESULT hr)
 
 `main()` 関数で、呼び出しを追加し、COM の初期化と初期化解除を行います。
 
-```cpp
+```cppwinrt
 int main()
 {
     ::ThrowIfFailed(::CoInitializeEx(nullptr, COINIT_MULTITHREADED));
@@ -117,7 +114,7 @@ int main()
 ## <a name="index-the-resources-and-create-a-pri-file"></a>リソースにインデックスを付け、PRI ファイルを作成する
 `main()` 関数で、COM を初期化するための呼び出しの前に、必要となるいくつかの文字列を宣言します。また、PRI ファイルを生成する出力フォルダーも作成します。
 
-```cpp
+```cppwinrt
 std::wstring projectRootFolderUWPApp{ L"UWPAppProjectRootFolder" };
 std::wstring generatedPRIsFolder{ projectRootFolderUWPApp + L"\\Generated PRIs" };
 std::wstring filePathPRI{ generatedPRIsFolder + L"\\resources.pri" };
@@ -128,7 +125,7 @@ std::wstring filePathPRIDumpBasic{ generatedPRIsFolder + L"\\resources-pri-dump-
 
 COM を初期化するための呼び出しの直後に、リソース インデクサー ハンドルを宣言し、[**MrmCreateResourceIndexer**]() を呼び出してリソース インデクサーを作成します。
 
-```cpp
+```cppwinrt
 MrmResourceIndexerHandle indexer;
 ::ThrowIfFailed(::MrmCreateResourceIndexer(
     L"OurUWPApp",
@@ -148,7 +145,7 @@ MrmResourceIndexerHandle indexer;
 
 次の手順では、先ほど作成したリソース インデクサーにリソースを追加します。 `resources.resw`  は、対象の UWP アプリの中立的な文字列を含むリソース ファイル (.resw) です。 その内容を表示する場合は、(このトピック内で) 上方向にスクロールします。 `de-DE\resources.resw`  にはドイツ語の文字列、`en-US\resources.resw` には英語の文字列が含まれます。 リソース ファイル内の文字列リソースをリソース インデクサーに追加するには、[**MrmIndexResourceContainerAutoQualifiers**]() を呼び出します。 3 番目に、[**MrmIndexFile**]() 関数を呼び出して、中立的なイメージ リソースを含むファイルをリソース インデクサーに追加します。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"de-DE\\resources.resw"));
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"en-US\\resources.resw"));
@@ -159,19 +156,19 @@ MrmResourceIndexerHandle indexer;
 
 リソース ファイルに関するリソース インデクサーの概要を説明したので、[**MrmCreateResourceFile**]() 関数を呼び出してディスクに PRI ファイルを自動的に生成できるようにしましょう。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmCreateResourceFile(indexer, MrmPackagingModeStandaloneFile, MrmPackagingOptionsNone, generatedPRIsFolder.c_str()));
 ```
 
 この時点で、`resources.pri` という名前の PRI ファイルが `Generated PRIs` という名前のフォルダー内に作成されました。 これで、リソース インデクサーの作業が完了したので、[**MrmDestroyIndexerAndMessages**]() を呼び出して、そのハンドルを破棄し、割り当てられたマシン リソースをリリースします。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
 PRI ファイルはバイナリであるため、バイナリ PRI ファイルをそれに対応する XML にダンプすると、先ほど生成したものを表示するのが簡単になります。 [**MrmDumpPriFile**]() の呼び出しによりこれが行われます。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));
 ```
 

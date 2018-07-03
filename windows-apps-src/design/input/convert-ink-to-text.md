@@ -12,15 +12,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f33ec4df6661861bc9ee956393cf25cad1c2cb7
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 58c654c6b35b9e7e27cc201ac71e70a92a920b79
+ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707383"
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1895337"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>Windows Ink のストロークをテキストおよび図形として認識する
-
 
 Windows Ink に組み込まれている認識機能により、インク ストロークをテキストと図形に変換します。
 

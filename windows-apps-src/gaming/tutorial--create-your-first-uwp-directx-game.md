@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 564f59dfd7b27e3ece1aa6811ac667cd438aae68
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
+ms.openlocfilehash: c043b20cb00873bf115ff2d65306bc727d23a02a
+ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488976"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1877224"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>DirectX を使った単純なユニバーサル Windows プラットフォーム (UWP) ゲームの作成
 
@@ -55,10 +55,9 @@ UWP DirectX ゲームの基本的な概念とコンポーネントを使い、Di
 
 ![ゲーム サンプルの動作](images/simple-dx-game-overview.png)
 
-
 | トピック | 説明 |
-|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [ゲーム プロジェクトのセットアップ](tutorial--setting-up-the-games-infrastructure.md) | ゲームを作るための最初の手順は、必要なコード インフラストラクチャ作業の量を最小限に抑えるように Microsoft Visual Studio でプロジェクトを設定することです。 適切なテンプレートを使い、ゲーム開発用にプロジェクトを構成することで、時間や手間を大幅に節約できます。 シンプルなゲーム プロジェクトを設定および構成する手順を紹介します。 |
+|-------|-------------|
+|[ゲーム プロジェクトのセットアップ](tutorial--setting-up-the-games-infrastructure.md) | ゲームを作るための最初の手順は、必要なコード インフラストラクチャ作業の量を最小限に抑えるように Microsoft Visual Studio でプロジェクトを設定することです。 適切なテンプレートを使い、ゲーム開発用にプロジェクトを構成することで、時間や手間を大幅に節約できます。 シンプルなゲーム プロジェクトを設定および構成する手順を紹介します。 |
 | [ゲームの UWP アプリ フレームワークの定義](tutorial--building-the-games-uwp-app-framework.md) | UWP DirectX ゲーム オブジェクトで Windows と対話するためのフレームワークを構築します。 これには、中断/再開イベントの処理、ウィンドウのフォーカス、スナップなどの Windows ランタイム プロパティが含まれます。  |
 | [ゲームのフロー管理](tutorial-game-flow-management.md) | プレイヤーとシステムとの対話を有効にする高度なステート マシンを定義します。 UI で全体的なゲームのステート マシンを操作する方法および UWP ゲーム用のイベント ハンドラーを作成する方法について説明します。 |
 | [メイン ゲーム オブジェクトの定義](tutorial--defining-the-main-game-loop.md) | ルールを作成することでゲームをプレイする方法を定義します。 |
@@ -68,12 +67,3 @@ UWP DirectX ゲームの基本的な概念とコンポーネントを使い、Di
 | [コントロールの追加](tutorial--adding-controls.md) | ゲームにムーブ/ルック コントロール (基本的なタッチ、マウス、およびゲーム コントローラーのコントロール) を追加します。 |
 | [サウンドの追加](tutorial--adding-sound.md) | [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API を使用して、ゲームのサウンドを作成する方法について説明します。 |
 | [ゲーム サンプルの紹介](tutorial-resources.md) | XAML を使用したオーバーレイの作成など、DirectX ゲーム開発の知識をさらに深めるためのリソースです。 |
- 
-
- 
-
- 
-
-
-
-

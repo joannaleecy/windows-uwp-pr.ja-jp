@@ -3,18 +3,18 @@ author: laurenhughes
 title: アプリ インストーラーで UWP アプリをインストールする
 description: このセクションには、アプリ インストーラーに関する記事とアプリ インストーラーの機能を使用する方法に関する記事へのリンクが含まれています。
 ms.author: lahugh
-ms.date: 10/10/2017
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ccb50e3c1a97a69041ca2d3b4de59a550e3399
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 0f82c319ca812af9296895711f2b546a8b0332c5
+ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1831806"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "1992108"
 ---
 # <a name="install-uwp-apps-with-app-installer"></a>アプリ インストーラーで UWP アプリをインストールする
 
@@ -30,3 +30,14 @@ ms.locfileid: "1831806"
 | [アプリ インストーラー ファイルを使用して関連セットをインストールする](install-related-set.md) | このセクションでは、アプリ インストーラーで関連セットをインストールできるようにする方法を説明します。 関連セットを定義するアプリ インストーラー ファイルを作成する手順についても確認します。 |
 | [アプリ インストーラー ファイルを使ったインストールに関する問題のトラブルシューティング](troubleshoot-appinstaller-issues.md) | アプリ インストーラー ファイルを使ってアプリケーションをサイドローディングするときの一般的な問題と解決策。 |
 | [アプリ インストーラー ファイル (.appinstaller) リファレンス](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file) | アプリ インストーラー ファイルの完全な XML スキーマを確認できます。 |
+
+## <a name="tutorials"></a>チュートリアル 
+
+これらのチュートリアルに従って、さまざまな配布プラットフォームから UWP アプリをホストしてインストールする方法をご確認ください。 これらのチュートリアルは、アプリを Microsoft Store に公開する必要がないが、Windows 10 のパッケージおよび展開プラットフォームを活用したい企業や開発者にとって有用です。
+
+| チュートリアル | 説明 |
+|----------|-------------|
+| [Azure Web アプリからの UWP アプリのインストール](web-install-azure.md) | Azure Web アプリを作成し、それを使用して UWP アプリ パッケージをホストして配布します。 |
+| [IIS サーバーからの UWP アプリのインストール](web-install-IIS.md) | IIS サーバーをセットアップし、Web アプリがアプリ パッケージをホストできることを確認して、アプリ インストーラーを効果的に使用します。 |
+| [Web インストールのための UWP アプリ パッケージの AWS へのホスト](web-install-aws.md) | Web サイトから、UWP アプリ パッケージをホストする、Amazon Simple Storage Service をセットアップする方法について説明します。 |
+

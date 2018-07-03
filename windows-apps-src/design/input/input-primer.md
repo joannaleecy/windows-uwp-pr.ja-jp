@@ -12,15 +12,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 910920c1f5eb5bdc3e55b51d7886be1632559c14
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: f59675c3feaab47ee79eaf160c5592876b7564a2
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396611"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862101"
 ---
 # <a name="interaction-primer"></a>操作の基本情報
-
 
 ![Windows の入力の種類](images/input-interactions/icons-inputdevices03.png)
 
@@ -30,14 +29,34 @@ UWP では "スマート" な状況依存の対話式操作システムが採用
 
 特定のフォームファクターと組み合わせて使うときの各入力デバイスの種類とその動作、機能、制限事項を把握しておきましょう。 これにより、プラットフォームのコントロールとアフォーダンスがアプリに十分であるか、カスタマイズした操作エクスペリエンスの提供が必要であるかを判断しやすくなります。
 
-## <a name="surface-dial"></a>Surface Dial
+## <a name="gaze"></a>視線入力
 
-Windows 10 Anniversary Update では、Windows Wheel と呼ばれる新しいカテゴリの入力デバイスを導入しています。 Surface Dial は、このクラスのデバイスの中で最初のものです。 
+**Windows 10 April 2018 Update**で、目と頭の追跡入力デバイスを使用した視線入力のサポートを導入しました。 
+
+> [!NOTE]
+> 視線追跡ハードウェアのサポートは、**Windows 10 Fall Creators Update** で[視線制御](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)と共に導入されました。視線制御は、ユーザーが目を使用して画面上のポインターを制御し、スクリーン キーボードで入力し、音声合成を使用して人々とやり取りすることができる組み込み機能です。
 
 ### <a name="device-support"></a>デバイスのサポート
 
--   タブレット
--   PC とノート PC
+- タブレット
+- PC とノート PC
+
+### <a name="typical-usage"></a>一般的な使い方
+
+ユーザーの視線、注意、および場所とユーザーの目の動きに基づくプレゼンスを追跡します。 UWP アプリを使用して操作するためのこの新しい強力な手段は、ALS などの神経原性筋萎縮症や、筋肉や神経の機能障害を含むその他の障碍を持つユーザーの支援技術として特に役立ちます。 また、視線入力は、ゲーム (ターゲット把握や追跡を含む) や従来の生産性向上アプリケーション、キオスクだけでなく、従来の入力デバイス (キーボード、マウス、タッチ) が使用できないか、ユーザーの両手を他のタスク (買い袋を持つなど) のために開放することが便利である可能性のあるその他の対話型シナリオで、魅力的な機会をもたらします。
+
+### <a name="more-info"></a>詳細
+
+[視線の操作と視線追跡](gaze-interactions.md)
+
+## <a name="surface-dial"></a>Surface Dial
+
+**Windows 10 Anniversary Update** で、Windows Wheel カテゴリの入力デバイスを導入しました。 Surface Dial は、このクラスのデバイスの中で最初のものです。
+
+### <a name="device-support"></a>デバイスのサポート
+
+- タブレット
+- PC とノート PC
 
 ### <a name="typical-usage"></a>一般的な使い方
 
@@ -46,7 +65,6 @@ Windows 10 Anniversary Update では、Windows Wheel と呼ばれる新しいカ
 ### <a name="more-info"></a>詳細
 
 [Surface Dial の設計ガイドライン](windows-wheel-interactions.md)
-
 
 ## <a name="cortana"></a>Cortana
 

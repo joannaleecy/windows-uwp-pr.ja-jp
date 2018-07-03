@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d84530c1a7c3795c566495c1eae121691b0766a
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 0c61b4076ed2529fddfcec53264c95c8290297a0
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1688938"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843032"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>画面のサイズとブレークポイント
 
@@ -29,14 +29,14 @@ UWP アプリは、Windows 10 を実行している任意のデバイスで実�
 ## <a name="breakpoints"></a>ブレークポイント
 次の表で、さまざまなサイズ クラスとブレークポイントについて説明します。
 
-![レスポンシブ デザインのブレークポイント](images/rsp-design/rspd-breakpoints.png)
+![レスポンシブ デザインのブレークポイント](images/breakpoints/size-classes.svg)
 
 <table>
 <thead>
 <tr class="header">
 <th align="left">サイズ クラス</th>
 <th align="left">ブレークポイント</th>
-<th align="left">画面サイズ (対角線)</th>
+<th align="left">一般的な画面サイズ (対角線)</th>
 <th align="left">デバイス</th>
 <th align="left">ウィンドウ サイズ</th>
 </tr>
@@ -45,15 +45,15 @@ UWP アプリは、Windows 10 を実行している任意のデバイスで実�
 <tr class="even">
 <td style="vertical-align:top;">小</td>
 <td style="vertical-align:top;">640 ピクセル以下</td>
-<td style="vertical-align:top;">4&quot; ～ 6&quot;</td>
-<td style="vertical-align:top;">電話</td>
+<td style="vertical-align:top;">4&quot; ～ 6&quot;; 20&quot; ～ 65&quot;</td>
+<td style="vertical-align:top;">電話、テレビ</td>
 <td style="vertical-align:top;">320 x 569、360 x 640、480 x 854</td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;">中</td>
 <td style="vertical-align:top;">641 ピクセル～ 1007 ピクセル</td>
 <td style="vertical-align:top;">7&quot; ～ 12&quot;</td>
-<td style="vertical-align:top;">ファブレット、タブレット、テレビ</td>
+<td style="vertical-align:top;">ファブレット、タブレット</td>
 <td style="vertical-align:top;">960 x 540</td>
 </tr>
 <tr class="even">
@@ -65,6 +65,17 @@ UWP アプリは、Windows 10 を実行している任意のデバイスで実�
 </tr>
 </tbody>
 </table>
+
+## <a name="why-are-tvs-considered-small"></a>なぜテレビは「小さい」と見なされるのですか。 
+
+ほとんどのテレビは物理的に非常に大きく (40 から 65 インチが一般的)、高解像度 (HD または 4K) ですが、10 フィート (約 3 m) 離れた場所から表示する 1080P のテレビの設計は、机上の 1 フィート (約 30 cm) 離れた場所に置かれる 1080p のモニターの設計とは異なります。 距離を考慮するときに、テレビの 1080 ピクセルは 540 ピクセルのモニターにより近くなります。
+
+UWP の有効ピクセルのシステムでは、視聴距離を自動的に考慮します。 コントロールまたはブレークポイントの範囲のサイズを指定するときは、実際には "有効" ピクセルを使用しています。 たとえば、1080 ピクセル以上に対応するコードを作成する場合は、1080 モニターでそのコードを使用しますが、1080p のテレビでは使用しません。これは、1080p のテレビの物理ピクセルは 1080 ですが、有効ピクセルは 540 しかないためです。 このため、テレビの設計は、携帯電話の設計に似ています。
+
+## <a name="effective-pixels-and-scale-factor"></a>有効ピクセルと倍率
+
+UWP アプリは、すべての Windows 10 デバイスでアプリが判読可能であることを保証するために、UI を自動的に拡大縮小します。 Windows では、ディスプレイの DPI (1 インチあたりのドット数) と、デバイスの視聴距離に基づいて各ディスプレイが自動的に拡大縮小されます。 ユーザーは、**[設定]** > **[ディスプレイ]** > **[拡大縮小とレイアウト]** の設定ページに移動して既定値を上書きできます。 
+
 
 ## <a name="general-recommendations"></a>一般的な推奨事項
 
@@ -94,6 +105,4 @@ UWP アプリは、Windows 10 を実行している任意のデバイスで実�
 >[!TIP] 
 > [**電話用 Continuum**](http://go.microsoft.com/fwlink/p/?LinkID=699431) を利用すると、ユーザーは互換性のある Windows 10 Mobile デバイスをモニター、マウス、およびキーボードに接続して、その電話をノート PC のように使うことができます。 特定のブレークポイント向けに設計するときは、この新機能に注意してください。携帯電話が常にそのサイズ クラスで維持されるわけではありません。
 
-## <a name="effective-pixels-and-scale-factor"></a>有効ピクセルと倍率
 
-UWP アプリは、すべての Windows 10 デバイスでアプリが判読可能であることを保証するために、UI を自動的に拡大縮小します。 Windows では、ディスプレイの DPI (1 インチあたりのドット数) と、デバイスの視聴距離に基づいて各ディスプレイが自動的に拡大縮小されます。 ユーザーは、**[設定]** > **[ディスプレイ]** > **[拡大縮小とレイアウト]** の設定ページに移動して既定値を上書きできます。 

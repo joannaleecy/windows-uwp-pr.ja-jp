@@ -4,23 +4,23 @@ ms.assetid: FAD033C7-F887-4217-A385-089F09242827
 description: 日付範囲やその他のオプション フィルターを指定して、アプリケーションに関する集計インストール データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: アプリのインストール数の取得
 ms.author: mcleans
-ms.date: 03/17/2017
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アプリのインストール数
 ms.localizationpriority: medium
-ms.openlocfilehash: 162678fef3b431483a36d1de89c7adf2811b8d9f
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: fe2e9a012a094a5eeb5bc60510fc8fb115c57fb0
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663332"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1975974"
 ---
 # <a name="get-app-installs"></a>アプリのインストール数の取得
 
 
-日付範囲やその他のオプション フィルターを指定して、アプリケーションに関する集計インストール データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、Windows デベロッパー センター ダッシュボードの[インストール レポート](../publish/installs-report.md)でも確認することができます。
+日付範囲やその他のオプション フィルターを指定して、アプリケーションに関する集計インストール データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、Windows デベロッパー センター ダッシュボードの[取得レポート](../publish/acquisitions-report.md)でも確認することができます。
 
 ## <a name="prerequisites"></a>前提条件
 

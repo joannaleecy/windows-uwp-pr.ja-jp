@@ -6,7 +6,7 @@ label: Access keys design guidelines
 keywords: キーボード, アクセス キー, keytip, キーのヒント, アクセシビリティ, ナビゲーション, フォーカス, テキスト, 入力, ユーザーの操作
 template: detail.hbs
 ms.author: kbridge
-ms.date: 02/08/2017
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,12 +15,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b335068762dd3999e07526962b0d6629825ad68d
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: a336109e9464052a33f5a0d8548e13b260b387a3
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707057"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018516"
 ---
 # <a name="access-keys"></a>アクセス キー
 
@@ -77,12 +77,10 @@ UI に適切な場合は必ずアクセス キーを指定し、すべてのカ�
 次の図は、Word における 2 つのアクセス キー スコープを示しています。 最初の図は、ユーザーがタブとその他の最上位レベルのコマンドを選択できるようにするプライマリ アクセス キーを示しています。2 つ目の図は、[ホーム] タブのセカンダリ アクセス キーを示しています。
 
 ![Microsoft Word におけるプライマリ アクセス キー](images/accesskeys/primary-access-keys-word.png)
-
 _Microsoft Word におけるプライマリ アクセス キー_
 
 ![Microsoft Word におけるセカンダリ アクセス キー](images/accesskeys/secondary-access-keys-word.png)
-
-Microsoft Word におけるセカンダリ アクセス キー
+_Microsoft Word におけるセカンダリ アクセス キー_
 
 アクセス キーは、異なるスコープの要素用に複製することができます。 前の例では、"2" はプライマリ スコープにおける [元に戻す] のアクセス キーであり、セカンダリ スコープにおける "斜体" のアクセス キーでもあります。
 
@@ -122,10 +120,11 @@ _CommandBar のプライマリ スコープとサポートされているアク�
 
 _CommandBar のセカンダリ スコープとサポートされているアクセス キー_
 
-> [!NOTE]
-> Windows 10 Fall Creators Update より前のバージョンでは、CommandBar などの一部のコントロールは、組み込みのアクセス キーのスコープをサポートしていませんでした。 この場合、次の例のように、アクセス キーのスコープを実装する必要があります。   
->
-> 親コマンドが呼び出されると使用できるアクセス キー持つ CommandBar の SecondaryCommands をサポートする方法を次に示します (Word のリボンに類似しています)。
+### <a name="windows-10-creators-update-and-older"></a>Windows 10 Creators Update 以降
+
+Windows 10 Fall Creators Update より前のバージョンでは、CommandBar などの一部のコントロールは、組み込みのアクセス キーのスコープをサポートしていませんでした。
+
+次の例は、親コマンド (Word のリボンに似ています) が呼び出されると使用できるアクセス キー持つ CommandBar の SecondaryCommands をサポートする方法を示しています。
 
 ```xaml
 <local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
@@ -178,11 +177,10 @@ public class CommandBarHack : CommandBar
         secondaryItemsControl.AccessKeyScopeOwner = moreButton;
 
         overflowPopup = GetTemplateChild("OverflowPopup") as Popup;
-
     }
+
     private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
     {
-
         if (overflowPopup != null)
         {
             overflowPopup.Opened += SecondaryMenuOpened;

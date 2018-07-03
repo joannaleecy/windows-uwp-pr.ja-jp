@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、弱、参照
 ms.localizationpriority: medium
-ms.openlocfilehash: 63ffad19c0ae8a52737ae13a54e5657df875d0b5
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 69294115af93ec464abfe908df948c8ff5504efc
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832606"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842456"
 ---
 # <a name="weak-references-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) の弱参照
 循環参照や弱参照が必要とならないように独自の C++/WinRT API を設計することはできるはずですし、まったく行わないことはないはずです。 ただし、XAML ベースの UI フレームワークのネイティブ実装を考えると、フレームワークの歴史的設計が理由で、C++/WinRT の弱参照メカニズムは循環参照を処理するために必要になります。 XAML 以外では、弱参照を使用する必要性は考えにくいようです (ただし、理論上は弱参照に関して XAML に特有なことは存在しません)。

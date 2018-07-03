@@ -13,17 +13,25 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3713d74edd93f437726c04dd68b604cb8a22da8f
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: da1248937d8f7d1a5a1da27e376690cde2ac7ef6
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1392431"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842852"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>ゲームパッドとリモコンの操作
 
-ユニバーサル Windows プラットフォーム (UWP) アプリでは、ゲームパッドとリモコンの入力がサポートされます。 ゲームパッドとリモコンは、Xbox とテレビのエクスペリエンスのための主要な入力デバイスです。 UWP アプリはこれらの入力デバイスに最適化される必要があります。これは PC ではキーボードとマウスに最適化し、スマートフォンやタブレットではタッチ入力に最適化することと同様です。 Xbox とテレビに最適化する場合には、アプリがこれらの入力デバイスで十分に機能することを確認することが最も重要なステップです。
-PC 上の UWP アプリで、ゲームパッドをプラグインして使用できます。これにより検証が容易に行えます。
+![リモートと方向パッド](images/dpad-remote/dpad-remote.png)
+
+ユニバーサル Windows プラットフォーム (UWP) アプリでは、ゲームパッドとリモコンの入力がサポートされます。ゲームパッドとリモコンは、Xbox とテレビのエクスペリエンスのための主要な入力デバイスです。
+
+UWP アプリはこれらの入力デバイスに最適化される必要があります。これは PC ではキーボードとマウスに最適化し、スマートフォンやタブレットではタッチ入力に最適化することと同様です。
+
+Xbox とテレビに最適化する場合には、アプリがこれらの入力デバイスで十分に機能することを確認することが重要なステップです。
+
+> [!NOTE] 
+> PC 上の UWP アプリで、ゲームパッドをプラグインして使用できます。これにより検証が容易に行えます。
 
 UWP アプリでのゲームパッドやリモコンを使ったユーザー エクスペリエンスが十分に満足の行くものであることを確認するには、次のことを考慮します。
 

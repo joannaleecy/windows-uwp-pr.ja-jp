@@ -4,19 +4,19 @@ Description: Shows how to manually package a Windows desktop application (like W
 Search.Product: eADQiWindows 10XVcnh
 title: アプリを手動でパッケージ化する (デスクトップ ブリッジ)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 81d5b9b0b52ef0f7529b277215e7fe0b95683f0a
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: eeadd41debcfcf5cfde23948c52bdfe1ce32e9df
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689768"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989646"
 ---
 # <a name="package-an-app-manually-desktop-bridge"></a>アプリを手動でパッケージ化する (デスクトップ ブリッジ)
 
@@ -31,8 +31,9 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 >[!IMPORTANT]
 >デスクトップ ブリッジは、Windows 10 Version 1607 で導入されており、Windows 10 Anniversary Update (10.0、ビルド 14393) 以降のリリースをターゲットとする Visual Studio プロジェクトでのみ使用できます。
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>まず、アプリの配布方法を検討する
-アプリを [Microsoft Store](https://www.microsoft.com/store/apps) に公開する予定であれば、[このフォーム](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)への記入から開始します。 Microsoft から、オンボード プロセスを開始するための連絡があります。 このプロセスでは、ストア内の名前を予約し、アプリをパッケージ化するための情報を取得します。
+## <a name="first-prepare-your-application"></a>まず、アプリケーションを準備します
+
+アプリケーションのパッケージの作成を開始する前に、必ず「[アプリのパッケージ化の準備 (デスクトップ ブリッジ)](desktop-to-uwp-prepare.md)」を確認してください。
 
 ## <a name="create-a-package-manifest"></a>パッケージ マニフェストを作成する
 
@@ -109,9 +110,9 @@ xcopy コマンドを使用してアプリをインストールする場合や�
   <Resource Language="en-us" />
 </Resources>
 ```
-### <a name="dependencies"></a>Dependencies
+### <a name="dependencies"></a>依存関係
 
-デスクトップ ブリッジ アプリでは、``Name`` 属性は常に ``Windows.Desktop`` に設定します。
+デスクトップ ブリッジを使用してパッケージ化するデスクトップ アプリでは、常に ``Name`` 属性を ``Windows.Desktop`` に設定します。
 
 ```XML
 <Dependencies>
@@ -119,8 +120,8 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 </Dependencies>
 ```
 
-### <a name="capabilities"></a>Capabilities
-デスクトップ ブリッジ アプリには、``runFullTrust`` 機能を追加する必要があります。
+### <a name="capabilities"></a>機能
+デスクトップ ブリッジを使用してパッケージ化するデスクトップ アプリでは、``runFullTrust`` 機能を追加する必要があります。
 
 ```XML
 <Capabilities>
@@ -133,7 +134,7 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 
 ### <a name="application-element"></a>Application 要素
 
-デスクトップ ブリッジ アプリの場合、Application 要素の ``EntryPoint`` 属性は常に ``Windows.FullTrustApplication`` です。
+デスクトップ ブリッジを使用してパッケージ化するデスクトップ アプリでは、Application 要素の ``EntryPoint`` 属性は常に ``Windows.FullTrustApplication`` です。
 
 ```XML
 <Applications>
@@ -143,7 +144,7 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 </Applications>
 ```
 
-### <a name="visual-elements"></a>VisualElements
+### <a name="visual-elements"></a>視覚要素
 
 次に [VisualElements](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements) ノードの例を示します。
 

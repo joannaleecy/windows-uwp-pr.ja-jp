@@ -7,18 +7,18 @@ ms.date: 04/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd5e6f3dbddca2f6a944ee18e32463afe029f89
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 505167775b61908be7f47068dbf3221c293f6112
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816777"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843372"
 ---
 # <a name="typography"></a>文字体裁
 
-![文字体裁のヘッダー画像](images/type/header-typography.svg)
+![ヒーロー イメージ](images/header-typography.svg)
 
 言語の視覚的表現である文字体裁において、何よりも重要な役割は情報を伝達することです。 スタイルは、その目的を阻害するものであってはなりません。 この記事では、ユーザーが簡単かつ効率的にコンテンツを理解できるように、UWP アプリで文字体裁のスタイルを決定する方法について説明します。
 

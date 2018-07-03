@@ -9,17 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Windows Machine Learning, Visual Studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d8b50b6b8779b98de1d93f449aa560b5dcda893
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 1b54b0665a2483b8a0be710f505e928c852f4dba
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690218"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842669"
 ---
 # <a name="how-to-train-a-model-for-windows-ml-in-visual-studio"></a>Visual Studio で Windows ML のモデルをトレーニングする方法
+
 このチュートリアルでは、ディープ ラーニングおよび AI ソリューションを構築、テスト、展開するための開発者向け拡張機能である [Visual Studio Tools for AI](http://aka.ms/vstoolsforai) を使って、「[使ってみる](get-started.md)」で取り上げた MNIST サンプル アプリのモデルをトレーニングします。
 
-モデルのトレーニングには、[Microsoft Cognitive Toolkit (CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit) フレームワークと [MNIST データセット](http://yann.lecun.com/exdb/mnist/)を使います。データセットには、60,000 件の例から成るトレーニング セットと、10,000 件の手書きの数字の例から成るテスト セットが含まれています。 その後、モデルを [Open Neural Network Exchange (ONNX)](https://onnx.ai/) 形式で保存して、Windows ML で使用できるようにします。 
+モデルのトレーニングには、[Microsoft Cognitive Toolkit (CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit) フレームワークと [MNIST データセット](http://yann.lecun.com/exdb/mnist/)を使います。データセットには、60,000 件の例から成るトレーニング セットと、10,000 件の手書きの数字の例から成るテスト セットが含まれています。 その後、モデルを [Open Neural Network Exchange (ONNX)](https://onnx.ai/) 形式で保存して、Windows ML で使用できるようにします。
 
 ## <a name="prerequisites"></a>前提条件
 ### <a name="install-visual-studio-tools-for-ai"></a>Visual Studio Tools for AI のインストール
@@ -53,15 +54,11 @@ MNIST プロジェクトをスタートアップ プロジェクトとして設�
 
 ![ソリューションを開く](images/mnist-startup.png)
 
-次に、ConvNet_MNIST.py ファイルを開き、F5 キーまたは緑色の **[実行]** ボタンを押して、プロジェクトを実行します。
+次に、train_mnist_onnx.py ファイルを開き、F5 キーまたは緑色の **[実行]** ボタンを押して、プロジェクトを実行します。
 
 ## <a name="3-view-the-model-and-add-it-to-your-app"></a>3. モデルを表示してアプリに追加する
 
-Samples for AI のリポジトリで、**output/Models** フォルダーを開きます。 トレーニング実験のエポックごとに 1 つの DNN モデル ファイルが生成され、最後のステップで **MNIST.onnx** モデル ファイルが出力されます。 
-
-![ソリューションを開く](images/onnx-model-output.png)
-
-このトレーニング済みの **MNIST.onnx** モデル ファイルを使って、「[使ってみる](get-started.md)」の MNIST サンプル アプリをビルドできます。 
+ここで、トレーニング済みの **mnist.onnx** モデル ファイルが samples-for-ai/examples/cntk/python/MNIST フォルダーにあるはずです。 このトレーニング済みの **mnist.onnx** モデル ファイルを使って、「[使ってみる](get-started.md)」の MNIST サンプル アプリをビルドできます。 
 
 ## <a name="4-learn-more"></a>4. 詳細情報
 [Azure GPU Virtual Machines](https://docs.microsoft.com/en-us/visualstudio/ai/tensorflow-vm) などを使ってディープ ラーニング モデルのトレーニングを高速化する方法については、[Microsoft の人工知能](https://www.microsoft.com/ai)と [Microsoft Machine Learning テクノロジ](https://docs.microsoft.com/en-us/azure/machine-learning/#More-Microsoft-Machine-Learning-Technologies)に関するページをご覧ください。

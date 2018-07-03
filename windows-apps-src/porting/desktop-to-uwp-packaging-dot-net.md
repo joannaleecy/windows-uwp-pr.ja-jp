@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: d7ae77c499cb8398aa5557f0d422899fbe8b252d
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 5e3dce1950de907462b62967291d456fb062bd9c
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816257"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989272"
 ---
 # <a name="package-an-app-by-using-visual-studio-desktop-bridge"></a>Visual Studio を使ったアプリのパッケージ化 (デスクトップ ブリッジ)
 
@@ -27,11 +27,9 @@ Visual Studio を使用して、デスクトップ アプリのパッケージ�
 >[!IMPORTANT]
 >デスクトップ ブリッジは、Windows 10 Version 1607 で導入されており、Windows 10 Anniversary Update (10.0、ビルド 14393) 以降のリリースをターゲットとする Visual Studio プロジェクトでのみ使用できます。
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>まず、アプリの配布方法を検討する
+## <a name="first-prepare-your-application"></a>まず、アプリケーションを準備します
 
-アプリを [Microsoft Store](https://www.microsoft.com/store/apps) に公開する予定であれば、[このフォーム](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)への記入から開始します。 Microsoft から、オンボード プロセスを開始するための連絡があります。 このプロセスでは、Microsoft Store 内の名前を予約し、アプリをパッケージ化するための情報を取得します。
-
-さらに、アプリケーションのパッケージの作成を開始する前に、必ず「[アプリのパッケージ化の準備 (デスクトップ ブリッジ)](desktop-to-uwp-prepare.md)」を確認してください。
+アプリケーションのパッケージの作成を開始する前に、必ず「[アプリのパッケージ化の準備 (デスクトップ ブリッジ)](desktop-to-uwp-prepare.md)」を確認してください。
 
 <a id="new-packaging-project"/>
 
@@ -72,7 +70,8 @@ Visual Studio を使用して、デスクトップ アプリのパッケージ�
 
 **ビデオ**
 
-<iframe src="https://www.youtube.com/embed/fJkbYPyd08w" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/fJkbYPyd08w]
 
 ## <a name="next-steps"></a>次のステップ
 

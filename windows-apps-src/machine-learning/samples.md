@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Windows Machine Learning
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aea463503c53d7533354412e5840f94619fd056
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 49af45236d262f682c5f5f28e57120c0bb209e81
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689368"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842689"
 ---
 # <a name="windows-ml-samples"></a>Windows ML のサンプル
 
@@ -30,4 +30,4 @@ ms.locfileid: "1689368"
 
 ## <a name="windows-machine-learning-explorer"></a>Windows Machine Learning Explorer
 
-[このサンプル](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/WinMLExplorer)は、画像やリアルタイムのカメラ フィードから回路基板の不具合を検出できる ML モデルをブートストラップする、データ ドリブンの汎用アプリケーションです。 さらに詳しくは、[.NET 開発で 3 行のコードと Windows Machine Learning を使って Windows 10 デバイスでローカルに AI を実行する方法](https://aka.ms/winmlfordevsblog)に関するブログ記事が参考になります。 
+[このサンプル](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/WinMLExplorer)は、画像やリアルタイムのカメラ フィードから回路基板の不具合を検出できる ML モデルをブートストラップする、データ ドリブンの汎用アプリケーションです。 さらに詳しくは、[.NET 開発で 3 行のコードと Windows Machine Learning を使って Windows 10 デバイスでローカルに AI を実行する方法](https://aka.ms/winmlfordevsblog)に関するブログ記事が参考になります。

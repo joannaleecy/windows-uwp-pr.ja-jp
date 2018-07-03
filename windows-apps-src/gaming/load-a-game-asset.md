@@ -10,18 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX, リソースの読み込み
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cd2ca426f5a73a6cf8953ab599f8a7332be43a4
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 12dd2fd39ff0b39e747488952779cfeb180f06fa
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655614"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983555"
 ---
 # <a name="load-resources-in-your-directx-game"></a>DirectX ゲームでのリソースの読み込み
 
 
 
-ほとんどのゲームは、ある時点で、ローカル ストレージまたは他のデータ ストリームからリソースとアセット (シェーダー、テクスチャ、定義済みメッシュ、その他のグラフィックス データなど) を読み込みます。 ここでは、このようなファイルを読み込んでユニバーサル Windows プラットフォーム (UWP) ゲームで使う際に考慮すべきことについて、その概要を説明します。
+ほとんどのゲームは、ある時点で、ローカル ストレージまたは他のデータ ストリームからリソースとアセット (シェーダー、テクスチャ、定義済みメッシュ、その他のグラフィックス データなど) を読み込みます。 ここでは、このようなファイルを読み込んで DirectX C/C++ ユニバーサル Windows プラットフォーム (UWP) ゲームで使う際に考慮すべきことについて、その概要を説明します。
 
 たとえば、ゲームの多角形オブジェクトのメッシュは、別のツールで作成されて特定の形式にエクスポートされている場合があります。 テクスチャなどについても同じことが言えます。フラットな非圧縮ビットマップは、ほとんどのツールで普通に作成でき、ほとんどのグラフィックス API で理解されますが、ゲームで使うにはきわめて効率が悪い可能性があります。 ここでは、Direct3D で使うために 3 種類のグラフィック リソース (メッシュ (モデル)、テクスチャ (ビットマップ) と、コンパイル済みシェーダーの各オブジェクト) を読み込む基本的なステップについて説明します。
 

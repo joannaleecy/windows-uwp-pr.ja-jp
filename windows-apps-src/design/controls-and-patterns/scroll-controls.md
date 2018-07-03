@@ -16,12 +16,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ef2a578abd34f79b684cb1e0fe362fef7ee99297
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: daf21154832b46bdd2d9b046b39dadc88bb32d33
+ms.sourcegitcommit: e020e9a4d947368a68e4eeba1eea65e9b3a725af
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493969"
+ms.lasthandoff: 05/28/2018
+ms.locfileid: "1924385"
 ---
 # <a name="scroll-viewer-controls"></a>スクロール ビューアー コントロール
 

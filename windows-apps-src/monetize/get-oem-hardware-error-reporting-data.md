@@ -4,18 +4,18 @@ ms.assetid: AE3E003F-BDEC-438B-A80A-3CE1675B369C
 description: 日付範囲やその他のオプション フィルターを指定して、集計ハードウェア エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドは、OEM のみを対象としています。
 title: OEM ハードウェア エラー報告データを取得する
 ms.author: mcleans
-ms.date: 01/18/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1e7d83b8094a79cb87a6611e2e6d8b8f05159e
-ms.sourcegitcommit: b7032f083bcbb71f5a7dd1a200dcc81dba496a81
+ms.openlocfilehash: f8d7a85a37272eb7046ca1e7f64476f94d9556e2
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2018
-ms.locfileid: "1527340"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989456"
 ---
 # <a name="get-oem-hardware-error-reporting-data"></a>OEM ハードウェア エラー報告データを取得する
 
@@ -87,7 +87,7 @@ Authorization: Bearer <your access token>
 |------------|---------|--------------|
 | Value      | array   | 集計エラー報告データが含まれるオブジェクトの配列です。 各オブジェクトのデータの詳細については、以下の表を参照してください。     |
 | @nextLink  | string  | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されたが、クエリの入手データに 10,000 を超えるエラー行が含まれている場合に、この値が返されます。 |
-| TotalCount | inumber | クエリの結果データ内の行の総数です。     |
+| TotalCount | 整数 | クエリの結果データ内の行の総数です。     |
 
 <span/>
 
@@ -112,7 +112,7 @@ Authorization: Bearer <your access token>
 | modelFamily | string | エラーが発生したデバイス モデル ファミリの名前です。 |
 | flightRing | string | エラーが発生した OS フライトの名前です。 |
 | mode | string | この値は常に *kernel* です。 |
-| eventCount      | inumber | 指定した集計レベルでこのエラーに起因すると考えられるイベントの数です。      |
+| eventCount      | 整数 | 指定した集計レベルでこのエラーに起因すると考えられるイベントの数です。      |
 
 <span/> 
 

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Windows Machine Learning
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ef6ea1a4e1dab23f5ff6a09aec9b8c49c135f5e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: a2470cff6b5c7f07c720a38d0bff00486e4c6b27
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817663"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842872"
 ---
 # <a name="windows-ml-overview"></a>Windows ML の概要
 
@@ -54,7 +54,7 @@ Windows ML の特色のいくつかを次に示します。
 
 ### <a name="system-requirements"></a>システム要件
 
-Windows ML を使うアプリケーションをビルドするには、[Windows SDK ビルド 17110 以降](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)が必要です。
+Windows ML を使うアプリケーションをビルドするには、[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) - ビルド 17110 以降が必要です。
 
 ### <a name="onnx-models"></a>ONNX モデル
 
@@ -75,7 +75,9 @@ Visual Studio Tools for AI で ONNX モデルをトレーニングする方法�
 - XGBoost
 - LibSVM
 
-WinMLTools のインストール方法と使用方法については、「[モデルの変換](conversion-samples.md)」をご覧ください。
+WinMLTools のインストール方法と使用方法については、「[モデルの変換](conversion-samples.md)」を参照してください。
+
+Visual Studio Tools for AI 拡張機能を使用すると、Visual Studio IDE 内の WinMLTools も使用して、よりわかりやすいクリック スルー エクスペリエンスを通じてモデルを ONNX 形式に変換できます。 詳細については、「[VS Tools for AI](https://github.com/Microsoft/vs-tools-for-ai/)」を参照してください。
 
 ### <a name="onnx-operators"></a>ONNX 演算子
 
@@ -106,7 +108,7 @@ Windows ML は、ONNX v1.0 ドキュメントに定義されているすべて�
 
 Windows ML のコード ジェネレーターは、ONNX モデル ファイルを使って、アプリ内のモデルを操作するためのインターフェイスを作成します。 生成されたインターフェイスには、モデル、入力、出力を表すラッパー クラスが含まれます。 生成されたコードによって [Windows ML API](/uwp/api/windows.ai.machinelearning.preview) が自動的に呼び出され、プロジェクト内のモデルの読み込み、バインド、評価を簡単に行うことができます。 現在、コード ジェネレーターは C# と C++/CX の両方をサポートしています。
 
-UWP を開発する場合、Windows ML の自動コード ジェネレーターは [Visual Studio (Version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/) とネイティブに統合されます  (**注**: Visual Studio インストーラーで、オプションの Windows 10 Insider Preview SDK ビルド 17110 をオンにする必要があります)。Visual Studio プロジェクト内で ONNX ファイルを既存の項目として追加するだけで、VS によって Windows ML ラッパー クラスが新しいインターフェイス ファイルに生成されます。
+UWP を開発する場合、Windows ML の自動コード ジェネレーターは [Visual Studio](https://developer.microsoft.com/windows/downloads) とネイティブに統合されます。 Visual Studio プロジェクト内で、ONNX ファイルを既存の項目として追加するだけです。VS が新しいインターフェイス ファイルで Windows ML ラッパー クラスを生成します。
 
 また、Windows SDK に付属するコマンド ライン ツール `mlgen.exe` を使って Windows ML ラッパー クラスを作成することもできます。 このツールは `(SDK_root)\bin\<version>\x64` または `(SDK_root)\bin\<version>\x86` に格納されています。SDK_root は SDK のインストール ディレクトリです。 ツールを実行するには、次のコマンドを使います。
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム、ゲーム開発
 ms.localizationpriority: medium
-ms.openlocfilehash: de899d95e25489fa815f099d696752389cc3f94e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: b351b5072c6bba228d81a65b51656a81bd564daf
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817453"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862261"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 ゲーム開発ガイド
 
@@ -93,12 +93,12 @@ Windows または Xbox で初めてゲームを開発する場合は、最初に
         <td><a href="../xbox-live/index.md">Xbox Live 開発者向けガイド</a></td>
     </tr>
     <tr>
-        <td>Xbox One 開発者向けドキュメント (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/documentation/Pages/home.aspx">Xbox One XDK ドキュメント</a></td>
+        <td>Xbox One 開発に関するドキュメント (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-home">Xbox One 開発</a></td>
     </tr>
     <tr>
-        <td>Xbox One 開発者向けホワイト ペーパー (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx">ホワイト ペーパー</a></td>
+        <td>Xbox One 開発に関するホワイト ペーパー (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-whitepapers">ホワイト ペーパー</a></td>
     </tr>
     <tr>
         <td>Mixer の対話機能のドキュメント</td>
@@ -227,8 +227,8 @@ Windows 10 のゲーム機能を理解してゲーム開発をすぐに始める
         <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
     </tr>
     <tr>
-        <td>Xbox One ゲームのサンプル (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx">サンプル</a></td>
+        <td>Xbox One ゲームのサンプル (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-samples">サンプル</a></td>
     </tr>
     <tr>
         <td>Windows ゲームのサンプル (MSDN コード ギャラリー)</td>

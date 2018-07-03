@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cce355ab6f571f932d9dc10a1b185821118266c
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: a6442857f8d7914ab423c0981ae97598084f0068
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690318"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862844"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Xbox One 開発者モードのアクティブ化
 
@@ -59,11 +59,11 @@ Xbox One には、*リテール* モード (**1**) と*開発者*モード (**2*
     ![アクティブ化手順 12](images/activation-step-12.png)   
 
 ## <a name="switch-between-retail-and-developer-mode"></a>リテール モードと開発者モードを切り替える
-本体で開発者モードを有効にした後、リテール モードと開発者モードを切り替えるには、**Dev Home** を使います。 Dev Home の起動と使用について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。
+本体で開発者モードを有効にした後、リテール モードと開発者モードを切り替えるには、**Dev Home** を使います。 Dev Home の起動と使用の詳細については、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」を参照してください。
 
-* リテール モードに切り替えるには、**Dev Home** を開いて **[設定]** タブに移動します。**[コンソール設定]** で、**[開発者モードの終了]** を選びます。 コンソールがリテール モードで再起動します。    
+* リテール モードに切り替えるには、**Dev Home** を開きます。 **[クイック アクション]** で、**[開発者モードの終了]** を選択します。 コンソールがリテール モードで再起動します。    
 
-  ![アクティブ化手順 13](images/activation-step-13-rs2.png)  
+  ![アクティブ化手順 13](images/activation-step-13-rs4.png)  
   
 * 開発者モードに切り替えるには、開発者モードのアクティブ化用アプリを使います。 アプリを開き、**[Switch and restart]** (切り替えて再起動) を選びます。 これにより、本体が開発者モードで再起動します。  
 

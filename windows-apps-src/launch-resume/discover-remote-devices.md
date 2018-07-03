@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e5b30e9fe2fb4f3bfbec81366a920cd74a19dcec
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: 724e2ce05dc439ba440f46697b736faabb1e8df0
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673879"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018496"
 ---
 # <a name="discover-remote-devices"></a>リモート デバイスの検出
 アプリは、ワイヤレス ネットワーク、Bluetooth、およびクラウド接続を使って、検出側デバイスと同じ Microsoft アカウントでサインインしている Windows デバイスを検出できます。 リモート デバイスを検出するために特別なソフトウェアをインストールする必要はありません。
@@ -33,9 +33,12 @@ ms.locfileid: "1673879"
 
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
 
-> [!TIP]
+> [!NOTE]
 > "proximal" フィルター値は、物理的な近さの度合いを保証するものではありません。 確実に物理的に近いことが求められるシナリオでは、フィルターに [**RemoteSystemDiscoveryType.SpatiallyProximal**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) を使用します。 現時点では、このフィルターで許容されるデバイスは Bluetooth 経由で検出されたものに限られます。 物理的に隣接していることを保証する新しい検出メカニズムとプロトコルがサポートされたら、このフィルターにも組み込まれます。  
 また、検出したデバイスが実際に物理的に近い範囲内にあるかどうかを示す、[**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity) という、[**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) クラスのプロパティもあります。
+
+> [!NOTE]
+> ローカル ネットワーク経由でデバイスを検出する場合 (検出の種類のフィルターの選択で決定されます)、ネットワークで "プライベート" または "ドメイン" プロファイルを使用する必要があります。 デバイスでは、"パブリック" ネットワーク経由で他のデバイスを検出しません。
 
 [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) オブジェクトの一覧を作成すると、**RemoteSystemWatcher** のコンストラクターに渡すことができます。
 
@@ -65,9 +68,6 @@ bool isRemoteSystemLaunchUriCapable = remoteSystem.GetCapabilitySupportedAsync(K
 ```
 
 ## <a name="cross-user-discovery"></a>ユーザー間の検出
-
-> [!WARNING]
-> このセクションの機能は現在、開発者が利用することはできません。
 
 開発者は、同一ユーザーに登録されているデバイスだけでなく、クライアント デバイスの近くにある_すべての_デバイスを検出するように指定できます。 これは、特別な **IRemoteSystemFilter** である、[**RemoteSystemAuthorizationKindFilter**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemauthorizationkindfilter) を通じて実装されます。 その実装は、他の種類のフィルターと同じように行われます。
 

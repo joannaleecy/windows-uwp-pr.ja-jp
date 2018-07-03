@@ -10,28 +10,28 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd24bb951619e086a69a5bb0dd7752bfa3fe41dc
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: e08208b7086023654b0b2404cccc8664e123d9ec
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707117"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983617"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>チュートリアル: UWP アプリで Surface Dial (およびその他のホイール デバイス) をサポートする
 
 ![Surface Dial と Surface Studio の画像](images/radialcontroller/dial-pen-studio-600px.png)  
 *Surface Dial と Surface Studio、Surface ペン* ([Microsoft ストア](https://aka.ms/purchasesurfacedial)で購入できます)。
 
-このチュートリアルでは、Surface Dial などのホイール デバイスでサポートされている、ユーザー操作エクスペリエンスをカスタマイズする手順を示します。 使用するサンプル アプリは GitHub ([サンプル コード](#sample-code)) からダウンロードできます。このサンプル アプリのスニペットは、各手順でのさまざまな機能と関連する [**RadialController**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller) API の使い方を示します。
+このチュートリアルでは、Surface Dial などのホイール デバイスでサポートされている、ユーザー操作エクスペリエンスをカスタマイズする手順を示します。 使用するサンプル アプリは GitHub ([サンプル コード](#sample-code)) からダウンロードできます。このサンプル アプリのスニペットは、各手順でのさまざまな機能と関連する [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) API の使い方を示します。
 
 次の点を中心に説明します。
-* [**RadialController**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller) メニューに表示される組み込みのツールを指定する
+* [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) メニューに表示される組み込みのツールを指定する
 * メニューにカスタム ツールを追加する
 * 触覚フィードバックを制御する
 * クリック操作をカスタマイズする
 * 回転操作をカスタマイズする
 
-これらおよびその他の機能の実装について詳しくは、「[UWP アプリでの Surface Dial の操作](https://docs.microsoft.com/en-us/windows/uwp/input/windows-wheel-interactions)」をご覧ください。
+これらおよびその他の機能の実装について詳しくは、「[UWP アプリでの Surface Dial の操作](windows-wheel-interactions.md)」をご覧ください。
 
 ## <a name="introduction"></a>概要
 
@@ -46,11 +46,11 @@ Dial は、次の 3 つの基本的なジェスチャをサポートしていま
 
 * Windows 10 Creators Update またはそれ以降を実行しているコンピューター (または、仮想マシン)
 * [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * ホイール デバイス (現時点では [Surface Dial](https://aka.ms/purchasesurfacedial) のみ)
 * Visual Studio を使ってユニバーサル Windows プラットフォーム (UWP) アプリの開発を初めて行う場合は、このチュートリアルを開始する前に、次のトピックをご覧ください。  
-    * [準備](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)
-    * ["Hello, world" アプリを作成する (XAML)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [準備](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
+    * ["Hello, world" アプリを作成する (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## <a name="set-up-your-devices"></a>デバイスをセットアップする
 
@@ -67,7 +67,7 @@ Dial は、次の 3 つの基本的なジェスチャをサポートしていま
 > [!NOTE]
 > ホイール デバイスは [**ホイール**] 設定から構成できます。
 > 1. [**スタート**] メニューで [**設定**] を選びます。
-> [**デバイス**] > [**ホイール**] の順に選びます。    
+> 2. [**デバイス**] > [**ホイール**] の順に選びます。    
 > ![ホイール設定画面](images/radialcontroller/wheel-settings.png)
 
 これでチュートリアルを開始する準備ができました。 
@@ -177,7 +177,7 @@ RadialController サンプル アプリをダウンロードしたら、実行�
         using Windows.UI.Input;
         ```
 
-    - 次のグローバル オブジェクト ([RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller)、[RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration)、[RadialControllerMenuItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem)) はアプリ全体で使用されます。
+    - 次のグローバル オブジェクト ([RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller)、[RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration)、[RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem)) はアプリ全体で使用されます。
     
         ```csharp
         private RadialController radialController;
@@ -192,7 +192,7 @@ RadialController サンプル アプリをダウンロードしたら、実行�
         { InitializeSample(sender, args); };
         ``` 
 
-    - 次に、[RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) オブジェクトを初期化し、[RotationChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.RotationChanged) および [ButtonClicked](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) イベントのハンドラーを設定します。
+    - 次に、[RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) オブジェクトを初期化し、[RotationChanged](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationChanged) および [ButtonClicked](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) イベントのハンドラーを設定します。
 
         ```csharp
         // Set up the app UI and RadialController.
@@ -210,7 +210,7 @@ RadialController サンプル アプリをダウンロードしたら、実行�
         }
         ```
 
-    - ここでは、カスタムの RadialController メニュー項目を初期化します。 [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) を使って [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) オブジェクトへの参照を取得します。[RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) プロパティを使って、回転の感度を "1" に設定します。次に [CreateFromFontGlyph](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph) を使って [RadialControllerMenuItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem) を作成します。**RadialController** メニュー項目コレクションにメニュー項目を追加します。最後に、[SetDefaultMenuItems](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) を使って既定のメニュー項目をクリアして、カスタム ツールのみを残します。 
+    - ここでは、カスタムの RadialController メニュー項目を初期化します。 [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) を使って [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) オブジェクトへの参照を取得します。[RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) プロパティを使って、回転の感度を "1" に設定します。次に [CreateFromFontGlyph](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph) を使って [RadialControllerMenuItem](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem) を作成します。**RadialController** メニュー項目コレクションにメニュー項目を追加します。最後に、[SetDefaultMenuItems](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) を使って既定のメニュー項目をクリアして、カスタム ツールのみを残します。 
 
         ```csharp
         // Configure RadialController menu and custom tool.
@@ -444,14 +444,14 @@ Surface Dial およびその他のホイール デバイスは、現在の操作
         using Windows.Devices.Haptics;
         ```
 
-    - ここでは、[ControlAcquired](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) イベントのハンドラーを指定します。これはカスタムの **RadialController** メニュー項目が選択されたときにトリガーされます。
+    - ここでは、[ControlAcquired](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) イベントのハンドラーを指定します。これはカスタムの **RadialController** メニュー項目が選択されたときにトリガーされます。
 
         ```csharp
         radialController.ControlAcquired += (rc_sender, args) =>
         { RadialController_ControlAcquired(rc_sender, args); };
         ``` 
 
-    - 次に、[ControlAcquired](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) ハンドラーを定義します。ここでは、既定の触覚フィードバックを無効化して、ハプティクス UI を初期化します。
+    - 次に、[ControlAcquired](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) ハンドラーを定義します。ここでは、既定の触覚フィードバックを無効化して、ハプティクス UI を初期化します。
 
         ```csharp
         private void RadialController_ControlAcquired(
@@ -520,7 +520,7 @@ Surface Dial およびその他のホイール デバイスは、現在の操作
         }
         ```
 
-    - [RotationChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.RotationChanged) および [ButtonClicked](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) イベント ハンドラーで、対応するスライダーとトグル ボタン コントロールをカスタム ハプティクスに接続します。 
+    - [RotationChanged](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationChanged) および [ButtonClicked](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) イベント ハンドラーで、対応するスライダーとトグル ボタン コントロールをカスタム ハプティクスに接続します。 
 
         ```csharp
         // Connect wheel device rotation to slider control.

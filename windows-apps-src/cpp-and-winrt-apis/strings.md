@@ -3,26 +3,25 @@ author: stevewhims
 description: With C++/WinRT では、標準的な C++ ワイド文字列型を使用して Windows ランタイム API を呼び出すか、または winrt::hstring 型を使用することができます。
 title: C++/WinRT での文字列の処理
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 05/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、文字列
 ms.localizationpriority: medium
-ms.openlocfilehash: 433b3423c27910f1c680bba4ae2ede5a1e13f8ea
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 6e41abffdfa79847353af4de47bcbfa050c00627
+ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832056"
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1912940"
 ---
 # <a name="string-handling-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) での文字列の処理
 C++/WinRT では、C++ 標準ライブラリの **std::wstring** などのワイド文字列型 (注: **std::string** などのナロー文字列ではない) を使用して Windows ランタイム API を呼び出すことができます。 C++/WinRT には [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) というカスタム文字列型があります (C++/WinRT 基本ライブラリ、`%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` で定義)。 これは、Windows ランタイムのコンストラクター、関数、およびプロパティで実際に受け取られ、返される文字列型です。 ただし、多くの場合、**hstring** の変換コンストラクターと変換演算子のおかげで、クライアント コードで **hstring** を認識するかどうかを選択できます。 API を*作成している*場合は、**hstring** を理解しておく必要性が高くなると思われます。
 
-C++ には多くの文字列型があります。 C++ 標準ライブラリの **std::basic_string** に加えて、多くのライブラリにバリアントが存在します。 C++17 には、すべての文字列型間のギャップの橋渡しをする文字列変換ユーティリティと **std::basic_string_view** があります。 **hstring** は **std::wstring_view** と互換性があり、**std::basic_string_view** の設計目的である相互運用性が提供されます。
+C++ には多くの文字列型があります。 C++ 標準ライブラリの **std::basic_string** に加えて、多くのライブラリにバリアントが存在します。 C++17 には、すべての文字列型間のギャップの橋渡しをする文字列変換ユーティリティと **std::basic_string_view** があります。  [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) は **std::wstring_view** と互換性があり、**std::basic_string_view** の設計目的である相互運用性が提供されます。
 
 ## <a name="using-stdwstring-and-optionally-winrthstringuwpcpp-ref-for-winrthstring-with-uriuwpapiwindowsfoundationuri"></a>[**Uri**](/uwp/api/windows.foundation.uri) での **std::wstring** (および必要に応じて [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)) の使用
-
 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) は [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) から作成されます。
 
 ```cppwinrt
@@ -64,7 +63,7 @@ public:
     winrt::hstring Domain();
 ```
 
-ただし、この場合も、**hstring** の [**std::wstring_view への変換演算子**](/uwp/api/windows.foundation.uri#hstringoperator-stdwstringview)のおかげで、その詳細を認識するかどうかは任意です。
+ただし、この場合も、**hstring** の [**std::wstring_view への変換演算子**](/uwp/api/hstring#hstringoperator-stdwstringview)のおかげで、その詳細を認識するかどうかは任意です。
 
 ```cppwinrt
 // Access a property of type hstring, via a conversion operator to a standard type.
@@ -95,7 +94,7 @@ hstring tostringHstring{ contosoUri.ToString() }; // L"http://www.contoso.com/"
 tostringHstring = awUri.ToString(); // L"http://www.adventure-works.com/"
 ```
 
-[hstring::c_str 関数](/uwp/api/windows.foundation.uri#hstringcstr-function)を使用して、**hstring** から標準ワイド文字列を取得することができます (**std::wstring** から取得する場合と同様)。
+[**hstring::c_str 関数**](/uwp/api/windows.foundation.uri#hstringcstr-function)を使用して、**hstring** から標準ワイド文字列を取得することができます (**std::wstring** から取得する場合と同様)。
 
 ```cppwinrt
 #include <iostream>
@@ -135,21 +134,23 @@ void Print(winrt::hstring const& hstring)
 ```
 
 ## <a name="winrthstring-functions-and-operators"></a>**winrt::hstring** の関数と演算子
-コンストラクター、演算子、関数、および反復子のホストが **hstring** に対して実装されています。
+コンストラクター、演算子、関数、および反復子のホストが [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) に対して実装されています。
 
-**hstring** は範囲であるため、範囲ベースの `for`、または `std::for_each` で使用できます。 C++ 標準ライブラリ内の対応部分と自然かつ効率的に比較するための比較演算子も提供されます。 また、関連コンテナーのキーとして **hstring** を使用するために必要なものがすべて含まれています。 多くの C++ ライブラリが **std::basic_string** を使用し、UTF-8 テキストでのみ動作することは認識されています。 利便性を考慮して、双方向に変換するためのヘルパーが提供されています。
+**hstring** は範囲であるため、範囲ベースの `for`、または `std::for_each` で使用できます。 C++ 標準ライブラリ内の対応部分と自然かつ効率的に比較するための比較演算子も提供されます。 また、関連コンテナーのキーとして **hstring** を使用するために必要なものがすべて含まれています。
+
+多くの C++ ライブラリが **std::string** を使用し、UTF-8 テキストでのみ動作することは認識されています。 利便性を考慮して、双方向に変換するための [**winrt::to_string**](/uwp/cpp-ref-for-winrt/to-string) や [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) などのヘルパーが提供されています。
 
 ```cppwinrt
-hstring w{ L"hello world" };
- 
-std::string c = to_string(w);
-assert(c == "hello world");
- 
-w = to_hstring(c);
-assert(w == L"hello world");
+winrt::hstring w{ L"Hello, World!" };
+
+std::string c = winrt::to_string(w);
+WINRT_ASSERT(c == "Hello, World!");
+
+w = winrt::to_hstring(c);
+WINRT_ASSERT(w == L"Hello, World!");
 ```
 
-**hstring** の関数および演算子のその他の例および詳細については、[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) API リファレンス トピックをご覧ください。
+**hstring** の関数および演算子のその他の例および詳細については、[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) API リファレンス トピックを参照してください。
 
 ## <a name="the-rationale-for-winrthstring-and-winrtparamhstring"></a>**winrt::hstring** および **winrt::param::hstring** の原理
 Windows ランタイムは **wchar_t** 文字によって実装されていますが、Windows ランタイムのアプリケーション バイナリ インターフェイス (ABI) は **std::wstring** や **std::wstring_view** が提供するもののサブセットではありません。 これらを使用すると、効率が大幅に低下します。 代わりに、C++/WinRT は **winrt::hstring** を提供します。これは、基礎となる [HSTRING](https://msdn.microsoft.com/library/windows/desktop/br205775) と互換性がある不変文字列を表し、**std::wstring** の場合と同様にインターフェイスの背後に実装されています。 
@@ -175,3 +176,5 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 
 ## <a name="important-apis"></a>重要な API
 * [winrt::hstring 構造体](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::to_string](/uwp/cpp-ref-for-winrt/to-string)
+* [winrt::to_hstring](/uwp/cpp-ref-for-winrt/to-hstring)

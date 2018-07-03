@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp, タイトル バー
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 556234eb4047418b0798a432d917268fb3634996
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: d7c620d5e6a45d48442a2761285f8509db91961d
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691008"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1863168"
 ---
 # <a name="title-bar-customization"></a>タイトル バーのカスタマイズ
 
@@ -71,7 +71,7 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 > このコードは、アプリの [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) メソッド (_App.xaml.cs_) 内の [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) の呼び出しの後か、アプリの最初のページに配置できます。
 
 > [!TIP]
-> UWP コミュニティ ツールキットには、これらの色プロパティを XAML で設定するための拡張機能が用意されています。 詳しくは、[UWP コミュニティ ツールキットのドキュメント](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions)をご覧ください。
+> Windows コミュニティ ツールキットには、これらの色プロパティを XAML で設定するための拡張機能が用意されています。 詳細については、[Windows コミュニティ ツールキットのドキュメント](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions)を参照してください。
 
 タイトル バーの色を設定する際には注意する点がいくつかあります。
 
