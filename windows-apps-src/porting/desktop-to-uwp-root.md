@@ -4,19 +4,19 @@ Description: Create a modern Windows app package for your existing Windows Forms
 Search.Product: eADQiWindows 10XVcnh
 title: デスクトップ ブリッジ
 ms.author: normesta
-ms.date: 08/30/2017
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: 3c4285d6717c27e78c13ac6588fe634c566138d9
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 321fb71d44e1298b29b6119168f67207e6df4a8d
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832373"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989696"
 ---
 # <a name="desktop-bridge"></a>デスクトップ ブリッジ
 
@@ -54,9 +54,7 @@ Windows 10 エクスペリエンスを実現するために使用するコード
 
 ## <a name="prepare"></a>準備
 
-アプリを [Windows アプリ ストア](https://www.microsoft.com/store/apps)に公開する予定はありますか?  その場合は、まず[このフォーム](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)に必要事項を入力してください。 Microsoft から、オンボード プロセスを開始するための連絡があります。 このプロセスでは、ストア内の名前を予約し、Windows アプリ パッケージを作成するための情報を取得します。
-
-次に、「[アプリのパッケージ化の準備](desktop-to-uwp-prepare.md)」を読み、アプリに該当する点があれば、Windows アプリ パッケージを作成する前に対処してください。 パッケージを作成する前に、多くの変更を加える必要はないかもしれません。 ただし、状況によっては、パッケージを作成する前にアプリへの調整が必要になる場合があります。
+まず、「[アプリのパッケージ化の準備](desktop-to-uwp-prepare.md)」を読み、アプリに該当する点があれば、Windows アプリ パッケージを作成する前に対処することで、アプリケーションを準備します。 パッケージを作成する前に、多くの変更を加える必要はないかもしれません。 ただし、状況によっては、パッケージを作成する前にアプリへの調整が必要になる場合があります。
 
 <a id="convert" />
 
@@ -188,6 +186,30 @@ Windows アプリ パッケージの作成とは別に、Windows インストー
 
 [RAD Studio (提供元: Embarcadero)](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge) のページをご覧ください。
 
+#### <a name="raypack-studio"></a>RayPack Studio
+
+Raynet のパッケージ化ソリューション [RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio) では、効率的で構成しやすい変換および再パッケージ化フレームワークの結果の 1 つとして考えられるデスクトップ ブリッジがサポートされます。
+
+<img width="20%" src="images/desktop-to-uwp/RaynetLogo_v3.png">
+
+既存の仮想環境 (VMware Workstation、Hyper-V) を使って、時間がかかる環境のセットアップを行わなくても自動/一括変換を実行できます。 Studio のコンポーネント ([RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad)) は、事前変換スクリーニングおよび互換性テストを行って、変換の対象となるソフトウェアを確認できます。 さらに、ユーザーは、Anniversary Update や Creators Update などのさまざまな Windows 10 エディションを使って、包括的な競合および互換性チェックを実行できるようになりました。
+
+Windows 10 APPX/UWP 形式のソフトウェア パッケージの作成の次は、RayPack Studio を使って従来の Windows インストーラー パッケージ (MSI)、更新プログラム (MSP)、変換 (MST)、App-V パッケージを作成することもできます。 さらに、このソリューションには、一連のソフトウェア製品とプロフェッショナル向けエンタープライズ ソフトウェア パッケージ用のコンポーネントが付属しています。 ソフトウェアのパッケージ化と仮想化に加えて、RayPack Studio では、ソフトウェア アプリケーションとパッケージの競合および互換性チェック ([RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad))、ソフトウェア評価 ([RayEval](https://raynet.de/Raynet-Products/RayEval))、品質保証 ([RayQC](https://raynet.de/Raynet-Products/RayQC)) というすべてのパッケージ化関連タスクが考慮されます。
+
+Raynet のエンタープライズ ワークフロー システムである [RayFlow](https://raynet.de/Raynet-Products/RayFlow) と組み合わせると、ユーザーは、パッケージの注文から評価、分析、パッケージ化、品質保証、ユーザー受入テスト、展開まで、エンタープライズ アプリケーション ライフサイクル全体を通じてソフトウェアで効率的に作業することができます。 すべてのパッケージと形式は、SCCM や他のソリューションに直接保存して展開できます。 アプリケーション ライフ サイクル プロセス全体が RayFlow によって追跡および管理されます。 さらに、ServiceNow などのどの注文システムでも統合することができます。 Raynet では、自社のサービス プロバイダー向けツールを使って世界中でソフトウェア パッケージ ファクトリを作成しています。
+
+ぜひ、Raynet の RayPack Studio および RayFlow の[無料試用版ライセンス](https://raynet.de/contact?init=license)を入手してください。 詳しくは、[www.raynet.de](https://raynet.de/home) をご覧ください。
+
+**関連リンク**:
+
+* Raynet: [https://raynet.de/home](https://raynet.de/home)
+* RayPack Studio: [https://raynet.de/Raynet-Products/RayPackStudio](https://raynet.de/Raynet-Products/RayPackStudio)
+* RayFlow: [https://raynet.de/Raynet-Products/RayFlow](https://raynet.de/Raynet-Products/RayFlow)
+* RayEval: [https://raynet.de/Raynet-Products/RayEval](https://raynet.de/Raynet-Products/RayEval)
+* RayQC: [https://raynet.de/Raynet-Products/RayQC](https://raynet.de/Raynet-Products/RayQC)
+* RayQC Advanced: [https://raynet.de/Raynet-Products/RayQCad](https://raynet.de/Raynet-Products/RayQCad)
+* 無料試用版ライセンス: [https://raynet.de/contact?init=license](https://raynet.de/contact?init=license)
+
 ### <a name="manual-packaging"></a>手動でのパッケージ化
 
 最後のオプションとして、これらのツールを使わずにアプリを変換できます。 変換をきめ細かく制御する場合は、マニフェスト ファイルを作成し、**MakeAppx.exe** ツールを実行して Windows アプリ パッケージを作成します。
@@ -228,7 +250,7 @@ Windows アプリ パッケージの作成とは別に、Windows インストー
 配布用の準備の一環として現実的な設定でアプリをテストするには、アプリに署名し、インストールすることをお勧めします。 「[アプリのテスト](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app)」をご覧ください。
 
 >[!IMPORTANT]
-> Microsoft Store にアプリを公開する場合は、Windows 10 S を実行するデバイスでアプリが正しく動作することを確認してください。これは、Store 要件です。 「[Windows アプリの Windows 10 S 対応をテストする](desktop-to-uwp-test-windows-s.md)」をご覧ください。
+> Microsoft Store にアプリを公開する場合は、Windows 10 を S モードで実行するデバイスでアプリが正しく動作することを確認してください。 これは、Microsoft Store 要件です。 「[Windows アプリの S モードの Windows 10 をテストする](desktop-to-uwp-test-windows-s.md)」をご覧ください。
 
 ## <a name="validate"></a>検証
 
