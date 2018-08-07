@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 191bdaed5dafc66882ab44fcc0661216eaa7e51c
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
+ms.openlocfilehash: 2cdeb0b776385d9ba21ab4d8416c442757b0c78e
+ms.sourcegitcommit: d08cf045750617c2c5a91a8777c0a9c6c9b0e6a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842188"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "2225588"
 ---
 <div> 
 <h1>UWP アプリの開発</h1>
@@ -144,7 +144,7 @@ ms.locfileid: "1842188"
             <div style="display:block"  class="cardPadding">
                 <div style="display:block"  class="card">
                     <div style="display:block"  class="cardText">
-                        <h3>データ</h3>
+                        <h3>データとファイル</h3>
                         <p style="display:block"><a href="/windows/uwp/audio-video-camera/">オーディオ、ビデオ、カメラ</a></p>
                         <p><a href="/windows/uwp/data-access/" style="display:block" >データ アクセス</a></p>
                         <p><a href="/windows/uwp/data-binding/"style="display:block" >データ バインディング</a></p>
@@ -163,7 +163,7 @@ ms.locfileid: "1842188"
                         <h3>展開</h3>
                         <p style="display:block"><a href="/windows/uwp/updates-and-versions/choose-a-uwp-version">UWP バージョンの選択</a></p>
                         <p style="display:block"><a href="/windows/uwp/debug-test-perf/">デバッグ、テスト、パフォーマンス</a></p>
-                        <p style="display:block"><a href="/windows/uwp/monetize/">収益化、エンゲージメント、Store サービス</a></p>                        
+                        <p style="display:block"><a href="/windows/uwp/monetize/">収益化、エンゲージメント、Microsoft Store サービス</a></p>                        
                         <p style="display:block"><a href="/windows/uwp/packaging/">アプリのパッケージ化</a></p>
                     </div>
                 </div>
@@ -177,7 +177,9 @@ ms.locfileid: "1842188"
                     <div style="display:block" class="cardText">
                         <h3>プラットフォーム</h3>
                         <p style="display:block"><a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a></p>
+                        <p style="display:block"><a href="/windows/uwp/launch-resume/">起動、再開、およびバックグラウンド タスク</a></p>
                         <p style="display:block"><a href="/windows/uwp/security/">セキュリティ</a></p>
+                        <p style="display:block"><a href="/windows/uwp/threading-async/">スレッド化と非同期プログラミング</a></p>
                         <p style="display:block"><a href="/windows/uwp/composition/visual-layer">ビジュアル レイヤー</a></p>
                         <p style="display:block"><a href="/windows/uwp/updates-and-versions/application-development-for-windows-as-a-service">サービスとしての Windows</a></p>
                         <p style="display:block"><a href="/windows/uwp/winrt-components/">Windows ランタイム コンポーネント</a></p>                 
@@ -200,31 +202,59 @@ ms.locfileid: "1842188"
             </div>
         </div>        
     </li>      
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>プロセスとスレッド</h3>
-                        <p style="display:block"><a href="/windows/uwp/launch-resume/">起動、再開、およびバックグラウンド タスク</a></p>
-                        <p style="display:block"><a href="/windows/uwp/threading-async/">スレッド化と非同期プログラミング</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>                 
      <li>              
         <div style="display:block" class="cardSize">
             <div style="display:block" class="cardPadding">
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
-                        <h3>センサー</h3>
-                        <p style="display:block"><a href="/windows/uwp/devices-sensors/">デバイス、センサー、および電源</a></p>
+                        <h3>周辺機器、センサー、電源</h3>
+                        <p style="display:block"><a href="/windows/uwp/contacts-and-calendar/">概要</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/enable-device-capabilities">デバイス機能を有効にする</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/pair-devices">デバイスのペアリング</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/point-of-service">POS (店舗販売時点管理)</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/sensors">センサー</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/printing-and-scanning">印刷</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/3d-printing">3-D 印刷</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/nfc">NFC</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/get-battery-info">バッテリー情報</a></p>
                     </div>
                 </div>
             </div>
         </div>        
-    </li>         
+    </li> 
+     <li>              
+        <div style="display:block" class="cardSize">
+            <div style="display:block" class="cardPadding">
+                <div style="display:block" class="card">
+                    <div style="display:block" class="cardText">
+                        <h3>移植</h3>
+                        <p style="display:block"><a href="/windows/uwp/porting/">概要</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">Windows Phone Silverlight から UWP へ</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows ランタイム 8.x から UWP へ</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">デスクトップ ブリッジ</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-migrate">デスクトップと UWP でコードを共有する</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/android-ios-uwp-map">Android と iOS 開発者向けの概念マッピング</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/ios-to-uwp-root">iOS から UWP への移行</a></p>
+                        <p style="display:block"><a href="/microsoft-edge/progressive-web-apps">Web アプリを PWA に変換する</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/apps-on-arm">ARM 版 Windows 10</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </li>           
+    <!-- <li>              
+        <div style="display:block" class="cardSize">
+            <div style="display:block" class="cardPadding">
+                <div style="display:block" class="card">
+                    <div style="display:block" class="cardText">
+                        <h3>Processes and threading</h3>
+                        <p style="display:block"><a href="/windows/uwp/launch-resume/">Launching, resuming, and background tasks</a></p>
+                        <p style="display:block"><a href="/windows/uwp/threading-async/">Threading and async programming</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </li>                         -->
 </ul>
 
 
