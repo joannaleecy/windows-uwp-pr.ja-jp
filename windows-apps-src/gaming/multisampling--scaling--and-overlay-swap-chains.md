@@ -1,41 +1,40 @@
 ---
 author: mtoepke
-title: "スワップ チェーンのスケーリングとオーバーレイ"
-description: "モバイル デバイスでのレンダリングを高速化するためにスケーリングされたスワップ チェーンを作成し、オーバーレイ スワップ チェーン (使用できる場合) を使って画質を高める方法について説明します。"
+title: スワップ チェーンのスケーリングとオーバーレイ
+description: モバイル デバイスでのレンダリングを高速化するためにスケーリングされたスワップ チェーンを作成し、オーバーレイ スワップ チェーン (使用できる場合) を使って画質を高める方法について説明します。
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, スワップ チェーン スケーリング, オーバーレイ, DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows 10, UWP, ゲーム, スワップ チェーン スケーリング, オーバーレイ, DirectX
 ms.openlocfilehash: 02088fce03c88b4166d49cd36754ac956f254199
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243232"
 ---
-
-# <a name="swap-chain-scaling-and-overlays"></a>スワップ チェーンのスケーリングとオーバーレイ
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
-モバイル デバイスでのレンダリングを高速化するためにスケーリングされたスワップ チェーンを作成し、オーバーレイ スワップ チェーン (使用できる場合) を使って画質を高める方法について説明します。
-
-## <a name="swap-chains-in-directx-112"></a>DirectX 11.2 でのスワップ チェーン
+# <a name="swap-chain-scaling-and-overlays"></a><span data-ttu-id="7413c-104">スワップ チェーンのスケーリングとオーバーレイ</span><span class="sxs-lookup"><span data-stu-id="7413c-104">Swap chain scaling and overlays</span></span>
 
 
-Direct3D 11.2 では、ネイティブでない (より低い) 解像度から拡大されたスワップ チェーンを使ったユニバーサル Windows プラットフォーム (UWP) アプリを作成でき、フィル レートを高速化できます。 また、Direct3D 11.2 には、別のスワップ チェーンでネイティブの解像度で UI を表示できる、ハードウェア オーバーレイを使ったレンダリング用の API も含まれています。 これにより、ゲームで高いフレームレートを維持しながらネイティブのフル解像度で UI を描画できるため、モバイル デバイスと高 DPI ディスプレイ (3840 x 2160 など) の性能を最大限引き出すことができます。 この記事では、オーバーラップ スワップ チェーンを使う方法について説明します。
+<span data-ttu-id="7413c-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="7413c-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="7413c-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="7413c-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待機時間を短縮するための新しい機能も含まれています。 「[DXGI 1.3 スワップ チェーンによる遅延の減少](reduce-latency-with-dxgi-1-3-swap-chains.md)」をご覧ください。
+<span data-ttu-id="7413c-107">モバイル デバイスでのレンダリングを高速化するためにスケーリングされたスワップ チェーンを作成し、オーバーレイ スワップ チェーン (使用できる場合) を使って画質を高める方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7413c-107">Learn how to create scaled swap chains for faster rendering on mobile devices, and use overlay swap chains (when available) to increase the visual quality.</span></span>
 
-## <a name="use-swap-chain-scaling"></a>スワップ チェーンのスケーリングの使用
+## <a name="swap-chains-in-directx-112"></a><span data-ttu-id="7413c-108">DirectX 11.2 でのスワップ チェーン</span><span class="sxs-lookup"><span data-stu-id="7413c-108">Swap chains in DirectX 11.2</span></span>
 
 
-下位のハードウェアまたは電力消費を抑えるために最適化されたハードウェアでゲームを実行するときに、ディスプレイのネイティブの機能よりも低い解像度を使って、リアルタイムのゲーム コンテンツをレンダリングする方法が有効である場合があります。 そのためには、ゲーム コンテンツをレンダリングするために使うスワップ チェーンをネイティブの解像度よりも小さくするか、スワップ チェーンのサブ領域を使う必要があります。
+<span data-ttu-id="7413c-109">Direct3D 11.2 では、ネイティブでない (より低い) 解像度から拡大されたスワップ チェーンを使ったユニバーサル Windows プラットフォーム (UWP) アプリを作成でき、フィル レートを高速化できます。</span><span class="sxs-lookup"><span data-stu-id="7413c-109">Direct3D 11.2 allows you to create Universal Windows Platform (UWP) apps with swap chains that are scaled up from non-native (reduced) resolutions, enabling faster fill rates.</span></span> <span data-ttu-id="7413c-110">また、Direct3D 11.2 には、別のスワップ チェーンでネイティブの解像度で UI を表示できる、ハードウェア オーバーレイを使ったレンダリング用の API も含まれています。</span><span class="sxs-lookup"><span data-stu-id="7413c-110">Direct3D 11.2 also includes APIs for rendering with hardware overlays so that you can present a UI in another swap chain at native resolution.</span></span> <span data-ttu-id="7413c-111">これにより、ゲームで高いフレームレートを維持しながらネイティブのフル解像度で UI を描画できるため、モバイル デバイスと高 DPI ディスプレイ (3840 x 2160 など) の性能を最大限引き出すことができます。</span><span class="sxs-lookup"><span data-stu-id="7413c-111">This allows your game to draw UI at full native resolution while maintaining a high framerate, thereby making the best use of mobile devices and high DPI displays (such as 3840 by 2160).</span></span> <span data-ttu-id="7413c-112">この記事では、オーバーラップ スワップ チェーンを使う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7413c-112">This article explains how to use overlapping swap chains.</span></span>
 
-1.  最初に、ネイティブのフル解像度でスワップ チェーンを作成します。
+<span data-ttu-id="7413c-113">Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待機時間を短縮するための新しい機能も含まれています。</span><span class="sxs-lookup"><span data-stu-id="7413c-113">Direct3D 11.2 also introduces a new feature for reduced latency with flip model swap chains.</span></span> <span data-ttu-id="7413c-114">「[DXGI 1.3 スワップ チェーンによる遅延の減少](reduce-latency-with-dxgi-1-3-swap-chains.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7413c-114">See [Reduce latency with DXGI 1.3 swap chains](reduce-latency-with-dxgi-1-3-swap-chains.md).</span></span>
+
+## <a name="use-swap-chain-scaling"></a><span data-ttu-id="7413c-115">スワップ チェーンのスケーリングの使用</span><span class="sxs-lookup"><span data-stu-id="7413c-115">Use swap chain scaling</span></span>
+
+
+<span data-ttu-id="7413c-116">下位のハードウェアまたは電力消費を抑えるために最適化されたハードウェアでゲームを実行するときに、ディスプレイのネイティブの機能よりも低い解像度を使って、リアルタイムのゲーム コンテンツをレンダリングする方法が有効である場合があります。</span><span class="sxs-lookup"><span data-stu-id="7413c-116">When your game is running on downlevel hardware - or hardware optimized for power savings - it can be beneficial to render real-time game content at a lower resolution than the display is natively capable of.</span></span> <span data-ttu-id="7413c-117">そのためには、ゲーム コンテンツをレンダリングするために使うスワップ チェーンをネイティブの解像度よりも小さくするか、スワップ チェーンのサブ領域を使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="7413c-117">To do this, the swap chain that is used for rendering game content must be smaller than the native resolution, or a subregion of the swapchain must be used.</span></span>
+
+1.  <span data-ttu-id="7413c-118">最初に、ネイティブのフル解像度でスワップ チェーンを作成します。</span><span class="sxs-lookup"><span data-stu-id="7413c-118">First, create a swap chain at full native resolution.</span></span>
 
     ```cpp
     DXGI_SWAP_CHAIN_DESC1 swapChainDesc = {0};
@@ -84,9 +83,9 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
         );
     ```
 
-2.  次に、ソース サイズを低い解像度に設定して拡大するスワップ チェーンのサブ領域を選びます。
+2.  <span data-ttu-id="7413c-119">次に、ソース サイズを低い解像度に設定して拡大するスワップ チェーンのサブ領域を選びます。</span><span class="sxs-lookup"><span data-stu-id="7413c-119">Then, choose a subregion of the swap chain to scale up by setting the source size to a reduced resolution.</span></span>
 
-    DX 前景スワップ チェーンのサンプルでは、小さくした解像度をパーセントで計算しています。
+    <span data-ttu-id="7413c-120">DX 前景スワップ チェーンのサンプルでは、小さくした解像度をパーセントで計算しています。</span><span class="sxs-lookup"><span data-stu-id="7413c-120">The DX Foreground Swap Chains sample calculates a reduced size based on a percentage:</span></span>
 
     ```cpp
     m_d3dRenderSizePercentage = percentage;
@@ -103,7 +102,7 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
         );
     ```
 
-3.  スワップ チェーンのサブ領域に合わせてビューポートを作成します。
+3.  <span data-ttu-id="7413c-121">スワップ チェーンのサブ領域に合わせてビューポートを作成します。</span><span class="sxs-lookup"><span data-stu-id="7413c-121">Create a viewport to match the subregion of the swap chain.</span></span>
 
     ```cpp
     // In Direct3D, change the Viewport to match the region of the swap
@@ -118,16 +117,16 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-4.  Direct2D が使われている場合は、ソース領域に合わせて回転の変換を調整する必要があります。
+4.  <span data-ttu-id="7413c-122">Direct2D が使われている場合は、ソース領域に合わせて回転の変換を調整する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7413c-122">If Direct2D is being used, the rotation transform needs to be adjusted to compensate for the source region.</span></span>
 
-## <a name="create-a-hardware-overlay-swap-chain-for-ui-elements"></a>UI 要素のためのハードウェア オーバーレイ スワップ チェーンの作成
+## <a name="create-a-hardware-overlay-swap-chain-for-ui-elements"></a><span data-ttu-id="7413c-123">UI 要素のためのハードウェア オーバーレイ スワップ チェーンの作成</span><span class="sxs-lookup"><span data-stu-id="7413c-123">Create a hardware overlay swap chain for UI elements</span></span>
 
 
-スワップ チェーンのスケーリングを使った場合、この手法に固有の短所として、UI も縮小され、ぼやけて使いづらくなる可能性があります。 オーバーレイ スナップ チェーンがハードウェア サポートされているデバイスでは、この問題を解決するために、リアルタイムのゲーム コンテンツとは別のスワップ チェーンを使ってネイティブの解像度で UI をレンダリングします。 この手法は [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) スワップ チェーンにのみ適用される点に注意してください。XAML との相互運用には使用できません。
+<span data-ttu-id="7413c-124">スワップ チェーンのスケーリングを使った場合、この手法に固有の短所として、UI も縮小され、ぼやけて使いづらくなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="7413c-124">When using swap chain scaling, there is an inherent disadvantage in that the UI is also scaled down, potentially making it blurry and harder to use.</span></span> <span data-ttu-id="7413c-125">オーバーレイ スナップ チェーンがハードウェア サポートされているデバイスでは、この問題を解決するために、リアルタイムのゲーム コンテンツとは別のスワップ チェーンを使ってネイティブの解像度で UI をレンダリングします。</span><span class="sxs-lookup"><span data-stu-id="7413c-125">On devices with hardware support for overlay swap chains, this problem is alleviated entirely by rendering the UI at native resolution in a swap chain that's separate from the real-time game content.</span></span> <span data-ttu-id="7413c-126">この手法は [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) スワップ チェーンにのみ適用される点に注意してください。XAML との相互運用には使用できません。</span><span class="sxs-lookup"><span data-stu-id="7413c-126">Note that this technique applies only to [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) swap chains - it cannot be used with XAML interop.</span></span>
 
-ハードウェア オーバーレイ機能を使う前景スワップ チェーンを作成するには、次の手順を実行します。 この手順は、前に述べたように最初にリアルタイムのゲーム コンテンツ用のスワップ チェーンを作成した後で実行されます。
+<span data-ttu-id="7413c-127">ハードウェア オーバーレイ機能を使う前景スワップ チェーンを作成するには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="7413c-127">Use the following steps to create a foreground swap chain that uses hardware overlay capability.</span></span> <span data-ttu-id="7413c-128">この手順は、前に述べたように最初にリアルタイムのゲーム コンテンツ用のスワップ チェーンを作成した後で実行されます。</span><span class="sxs-lookup"><span data-stu-id="7413c-128">These steps are performed after first creating a swap chain for real-time game content as described above.</span></span>
 
-1.  まず、DXGI アダプターでオーバーレイがサポートされているかどうかを調べます。 スワップ チェーンから DXGI 出力アダプターを取得します。
+1.  <span data-ttu-id="7413c-129">まず、DXGI アダプターでオーバーレイがサポートされているかどうかを調べます。</span><span class="sxs-lookup"><span data-stu-id="7413c-129">First, determine whether the DXGI adapter supports overlays.</span></span> <span data-ttu-id="7413c-130">スワップ チェーンから DXGI 出力アダプターを取得します。</span><span class="sxs-lookup"><span data-stu-id="7413c-130">Get the DXGI output adapter from the swap chain:</span></span>
 
     ```cpp
     ComPtr<IDXGIAdapter> outputDxgiAdapter;
@@ -146,21 +145,21 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
         );
     ```
 
-    DXGI アダプターでは、出力アダプターが [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) に対して True を返す場合はオーバーレイがサポートされます。
+    <span data-ttu-id="7413c-131">DXGI アダプターでは、出力アダプターが [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) に対して True を返す場合はオーバーレイがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="7413c-131">The DXGI adapter supports overlays if the output adapter returns True for [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411).</span></span>
 
     ```cpp
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **注**   DXGI アダプターでオーバーレイがサポートされる場合は、次の手順に進みます。 デバイスがオーバーレイをサポートしない場合は、複数のスワップ チェーンを使ったレンダリングは効率的ではありません。 代わりに、リアルタイムのゲーム コンテンツと同じスワップ チェーンで解像度を下げて UI をレンダリングします。
+    > <span data-ttu-id="7413c-132">**注**   DXGI アダプターでオーバーレイがサポートされる場合は、次の手順に進みます。</span><span class="sxs-lookup"><span data-stu-id="7413c-132">**Note**   If the DXGI adapter supports overlays, continue to the next step.</span></span> <span data-ttu-id="7413c-133">デバイスがオーバーレイをサポートしない場合は、複数のスワップ チェーンを使ったレンダリングは効率的ではありません。</span><span class="sxs-lookup"><span data-stu-id="7413c-133">If the device does not support overlays, rendering with multiple swap chains will not be efficient.</span></span> <span data-ttu-id="7413c-134">代わりに、リアルタイムのゲーム コンテンツと同じスワップ チェーンで解像度を下げて UI をレンダリングします。</span><span class="sxs-lookup"><span data-stu-id="7413c-134">Instead, render the UI at reduced resolution in the same swap chain as real-time game content.</span></span>
 
      
 
-2.  [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) を使って前景スワップ チェーンを作成します。 次のオプションを [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) で設定し、*pDesc* パラメーターに提供する必要があります。
+2.  <span data-ttu-id="7413c-135">[**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) を使って前景スワップ チェーンを作成します。</span><span class="sxs-lookup"><span data-stu-id="7413c-135">Create the foreground swap chain with [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559).</span></span> <span data-ttu-id="7413c-136">次のオプションを [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) で設定し、*pDesc* パラメーターに提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7413c-136">The following options must be set in the [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) supplied to the *pDesc* parameter:</span></span>
 
-    -   前景スワップ チェーンを示す [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) スワップ チェーン フラグを指定します。
-    -   [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496) アルファ モード フラグを使います。 前景スワップ チェーンは常にプリマルチプライ済みです。
-    -   [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526) フラグを設定します。 前景スワップ チェーンは、常にネイティブの解像度で実行されます。
+    -   <span data-ttu-id="7413c-137">前景スワップ チェーンを示す [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) スワップ チェーン フラグを指定します。</span><span class="sxs-lookup"><span data-stu-id="7413c-137">Specify the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) swap chain flag to indicate a foreground swap chain.</span></span>
+    -   <span data-ttu-id="7413c-138">[**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496) アルファ モード フラグを使います。</span><span class="sxs-lookup"><span data-stu-id="7413c-138">Use the [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496) alpha mode flag.</span></span> <span data-ttu-id="7413c-139">前景スワップ チェーンは常にプリマルチプライ済みです。</span><span class="sxs-lookup"><span data-stu-id="7413c-139">Foreground swap chains are always premultiplied.</span></span>
+    -   <span data-ttu-id="7413c-140">[**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526) フラグを設定します。</span><span class="sxs-lookup"><span data-stu-id="7413c-140">Set the [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526) flag.</span></span> <span data-ttu-id="7413c-141">前景スワップ チェーンは、常にネイティブの解像度で実行されます。</span><span class="sxs-lookup"><span data-stu-id="7413c-141">Foreground swap chains always run at native resolution.</span></span>
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -168,7 +167,7 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **注**   スワップ チェーンのサイズが変更されるたびに、[**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) を設定し直します。
+    > <span data-ttu-id="7413c-142">**注**   スワップ チェーンのサイズが変更されるたびに、[**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) を設定し直します。</span><span class="sxs-lookup"><span data-stu-id="7413c-142">**Note**   Set the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) again every time the swap chain is resized.</span></span>
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -180,7 +179,7 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
         );
     ```
 
-3.  2 つのスワップ チェーンが使われている場合は、最大フレーム待機時間の値を増やして 2 に設定し、DXGI アダプターで両方のスワップ チェーンを同時に表示する時間を確保します (同じ VSync 間隔で)。
+3.  <span data-ttu-id="7413c-143">2 つのスワップ チェーンが使われている場合は、最大フレーム待機時間の値を増やして 2 に設定し、DXGI アダプターで両方のスワップ チェーンを同時に表示する時間を確保します (同じ VSync 間隔で)。</span><span class="sxs-lookup"><span data-stu-id="7413c-143">When two swap chains are being used, increase the maximum frame latency to 2 so that the DXGI adapter has time to present both swap chains simultaneously (within the same VSync interval).</span></span>
 
     ```cpp
     // Create a render target view of the foreground swap chain's back buffer.
@@ -201,15 +200,15 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
     }
     ```
 
-4.  前景スワップ チェーンでは、プリマルチプライ アルファ値が必ず使われます。 各ピクセルのカラー値は、フレームが表示される前にアルファ値が乗算されることが前提となります。 たとえば、アルファ値 50% の場合、100% 白の BGRA ピクセルは (0.5, 0.5, 0.5, 0.5) に設定されます。
+4.  <span data-ttu-id="7413c-144">前景スワップ チェーンでは、プリマルチプライ アルファ値が必ず使われます。</span><span class="sxs-lookup"><span data-stu-id="7413c-144">Foreground swap chains always use premultiplied alpha.</span></span> <span data-ttu-id="7413c-145">各ピクセルのカラー値は、フレームが表示される前にアルファ値が乗算されることが前提となります。</span><span class="sxs-lookup"><span data-stu-id="7413c-145">Each pixel's color values are expected to be already multiplied by the alpha value before the frame is presented.</span></span> <span data-ttu-id="7413c-146">たとえば、アルファ値 50% の場合、100% 白の BGRA ピクセルは (0.5, 0.5, 0.5, 0.5) に設定されます。</span><span class="sxs-lookup"><span data-stu-id="7413c-146">For example, a 100% white BGRA pixel at 50% alpha is set to (0.5, 0.5, 0.5, 0.5).</span></span>
 
-    アルファ値のプリマルチプライの手順は、アプリのブレンド状態を適用することにより、出力マージャー ステージで実行できます ([**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349) をご覧ください)。それには、[**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) 構造の **SrcBlend** フィールドを **D3D11\_SRC\_ALPHA** に設定します。 プリマルチプライ アルファ値を含むアセットを使うこともできます。
+    <span data-ttu-id="7413c-147">アルファ値のプリマルチプライの手順は、アプリのブレンド状態を適用することにより、出力マージャー ステージで実行できます ([**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349) をご覧ください)。それには、[**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) 構造の **SrcBlend** フィールドを **D3D11\_SRC\_ALPHA** に設定します。</span><span class="sxs-lookup"><span data-stu-id="7413c-147">The alpha premultiplication step can be done in the output-merger stage by applying an app blend state (see [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) with the [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) structure's **SrcBlend** field set to **D3D11\_SRC\_ALPHA**.</span></span> <span data-ttu-id="7413c-148">プリマルチプライ アルファ値を含むアセットを使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="7413c-148">Assets with pre-multiplied alpha values can also be used.</span></span>
 
-    アルファ値のプリマルチプライの手順が実行されていない場合、前景スワップ チェーンのカラーは想定よりも明るくなります。
+    <span data-ttu-id="7413c-149">アルファ値のプリマルチプライの手順が実行されていない場合、前景スワップ チェーンのカラーは想定よりも明るくなります。</span><span class="sxs-lookup"><span data-stu-id="7413c-149">If the alpha premultiplication step is not done, colors on the foreground swap chain will be brighter than expected.</span></span>
 
-5.  前景スワップ チェーンが作成されたかどうかに応じて、UI 要素の Direct2D 描画サーフェスを前景スワップ チェーンに関連付けることが必要になる場合があります。
+5.  <span data-ttu-id="7413c-150">前景スワップ チェーンが作成されたかどうかに応じて、UI 要素の Direct2D 描画サーフェスを前景スワップ チェーンに関連付けることが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="7413c-150">Depending on whether the foreground swap chain was created, the Direct2D drawing surface for UI elements might need be associated with the foreground swap chain.</span></span>
 
-    レンダー ターゲット ビューを作成します。
+    <span data-ttu-id="7413c-151">レンダー ターゲット ビューを作成します。</span><span class="sxs-lookup"><span data-stu-id="7413c-151">Creating render target views:</span></span>
 
     ```cpp
     // Create a render target view of the foreground swap chain's back buffer.
@@ -230,7 +229,7 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
     }
     ```
 
-    Direct2D 描画サーフェスを作成します。
+    <span data-ttu-id="7413c-152">Direct2D 描画サーフェスを作成します。</span><span class="sxs-lookup"><span data-stu-id="7413c-152">Creating the Direct2D drawing surface:</span></span>
 
     ```cpp
     if (m_foregroundSwapChain)
@@ -285,7 +284,7 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
         );
     ```
 
-6.  前景スワップ チェーンを、リアルタイムのゲーム コンテンツに使うスケーリングされたスワップ チェーンと共に表示します。 両方のスワップ チェーンに対してフレーム待機時間が 2 に設定されているため、DXGI は同じ VSync 間隔内で両方を表示できます。
+6.  <span data-ttu-id="7413c-153">前景スワップ チェーンを、リアルタイムのゲーム コンテンツに使うスケーリングされたスワップ チェーンと共に表示します。</span><span class="sxs-lookup"><span data-stu-id="7413c-153">Present the foreground swap chain together with the scaled swap chain used for real-time game content.</span></span> <span data-ttu-id="7413c-154">両方のスワップ チェーンに対してフレーム待機時間が 2 に設定されているため、DXGI は同じ VSync 間隔内で両方を表示できます。</span><span class="sxs-lookup"><span data-stu-id="7413c-154">Since frame latency was set to 2 for both swap chains, DXGI can present them both within the same VSync interval.</span></span>
 
     ```cpp
     // Present the contents of the swap chain to the screen.
@@ -329,7 +328,6 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
  
 
  
-
 
 
 
