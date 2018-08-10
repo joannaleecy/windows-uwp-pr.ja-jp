@@ -9,13 +9,13 @@ ms.date: 3/29/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: high
-ms.openlocfilehash: 2cdeb0b776385d9ba21ab4d8416c442757b0c78e
-ms.sourcegitcommit: d08cf045750617c2c5a91a8777c0a9c6c9b0e6a7
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: de821f436b1ca44d3626a1029aa0a288273f8b84
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "2225588"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "2736683"
 ---
 <div> 
 <h1>UWP アプリの開発</h1>

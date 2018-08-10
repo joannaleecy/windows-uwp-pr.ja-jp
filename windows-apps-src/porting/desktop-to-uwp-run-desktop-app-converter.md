@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 141d87bf48b5b4835055375320f1e4a79498a42f
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: 3d03ad8aa066a4d3b8f5aaaf2532f09d9ce0acbe
+ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989676"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "2411202"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>Desktop App Converter を使用してアプリをパッケージ化する (デスクトップ ブリッジ)
 
@@ -363,7 +363,7 @@ VFS フォルダーを確認し、インストーラーに必要ないファイ�
 DesktopAppConverter は 変換処理中に PEHeaderCertFixTool を自動的に実行し、破損している PEヘッダーを修正します。 ただし、UWP の Windows アプリ パッケージ、ルーズ ファイル、または特定のバイナリで、PEHeaderCertFixTool を実行することも可能です。 次に例を示します。
 
 ```CMD
-PEHeaderCertFixTool.exe <binary file>|<.appx package>|&lt;folder> [/c] [/v]
+PEHeaderCertFixTool.exe <binary file>|<.appx package>|<folder> [/c] [/v]
  /c   -- check for corrupted certificate but do not fix (optional)
  /v   -- verbose (optional)
 example1: PEHeaderCertFixTool app.exe

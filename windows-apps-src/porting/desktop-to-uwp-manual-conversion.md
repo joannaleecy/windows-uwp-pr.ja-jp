@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: eeadd41debcfcf5cfde23948c52bdfe1ce32e9df
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: 7a9c413b8f0b79f9e6a331145d086e3e563bd989
+ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989646"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "2410839"
 ---
 # <a name="package-an-app-manually-desktop-bridge"></a>アプリを手動でパッケージ化する (デスクトップ ブリッジ)
 
