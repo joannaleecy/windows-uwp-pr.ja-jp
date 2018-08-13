@@ -1,8 +1,8 @@
 ---
 author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
-description: "この記事では、光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、手動デバイス制御を使う方法について説明します。"
-title: "写真とビデオのキャプチャのための手動カメラ制御"
+description: この記事では、光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、手動デバイス制御を使う方法について説明します。
+title: 写真とビデオのキャプチャのための手動カメラ制御
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,9 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: d0d7a429cf702455d969e1ac1c62def6181e8dd0
 ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "247149"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>写真とビデオのキャプチャのための手動カメラ制御
 

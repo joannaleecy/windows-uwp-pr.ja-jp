@@ -1,8 +1,8 @@
 ---
 author: drewbatgit
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
-description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに、Microsoft PlayReady コンテンツ保護を使ったマルチメディア コンテンツのアダプティブ ストリーミングを追加する方法について説明します。"
-title: "PlayReady を使ったアダプティブ ストリーミング"
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに、Microsoft PlayReady コンテンツ保護を使ったマルチメディア コンテンツのアダプティブ ストリーミングを追加する方法について説明します。
+title: PlayReady を使ったアダプティブ ストリーミング
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: aebd2e2de0b1c4991b69b02f1f215ab58feef4a9
 ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/21/2017
+ms.locfileid: "907108"
 ---
 # <a name="adaptive-streaming-with-playready"></a>PlayReady を使ったアダプティブ ストリーミング
 

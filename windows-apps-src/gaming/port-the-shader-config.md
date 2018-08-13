@@ -14,7 +14,7 @@ ms.openlocfilehash: 09e8d6441ffc65095ac69d7388a2735821487539
 ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
+ms.lasthandoff: 08/13/2018
 ms.locfileid: "243310"
 ---
 # <a name="port-the-shader-objects"></a>シェーダー オブジェクトの移植
