@@ -1,8 +1,8 @@
 ---
 author: jwmsft
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
-title: "UI スレッドの応答性の確保"
-description: "ユーザーは、コンピューターの種類に関係なく、アプリが計算を実行しているときも引き続き応答性を保つことを期待します。"
+title: UI スレッドの応答性の確保
+description: ユーザーは、コンピューターの種類に関係なく、アプリが計算を実行しているときも引き続き応答性を保つことを期待します。
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: d5be2a8ea14f35d048b4402f2cfb1018d5998c3d
 ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/14/2017
+ms.locfileid: "894636"
 ---
 # <a name="keep-the-ui-thread-responsive"></a><span data-ttu-id="fe73f-104">UI スレッドの応答性の確保</span><span class="sxs-lookup"><span data-stu-id="fe73f-104">Keep the UI thread responsive</span></span>
 

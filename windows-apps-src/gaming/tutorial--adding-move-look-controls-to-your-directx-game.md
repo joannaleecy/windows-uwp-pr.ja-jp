@@ -1,55 +1,54 @@
 ---
 author: mtoepke
-title: "ゲームのムーブ/ルック コントロール"
-description: "ここでは、マウスとキーボードの従来のムーブ/ルック コントロール (マウスルック コントロールとも呼ばれます) を DirectX ゲームに追加する方法について説明します。"
+title: ゲームのムーブ/ルック コントロール
+description: ここでは、マウスとキーボードの従来のムーブ/ルック コントロール (マウスルック コントロールとも呼ばれます) を DirectX ゲームに追加する方法について説明します。
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, ムーブ/ルック, コントロール"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows 10, UWP, ゲーム, ムーブ/ルック, コントロール
 ms.openlocfilehash: 40af05538aa6a6fff6e159fe8aa8812090e8b44b
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "246721"
 ---
-
-# <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>ゲームのムーブ/ルック コントロール
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
-ここでは、マウスとキーボードの従来のムーブ/ルック コントロール (マウスルック コントロールとも呼ばれます) を DirectX ゲームに追加する方法について説明します。
-
-さらに、タッチ デバイスでのムーブ/ルックのサポートについても説明します。タッチ デバイスでは、ムーブ コントローラーは画面の左下の部分として定義され、方向入力と同じように動作します。ルック コントローラーは、画面の残りの部分に対して定義されます。カメラは、中心をプレイヤーがその領域内で最後にタッチした場所に合わせます。
-
-このコントロールの概念に詳しくない場合は、キーボード (またはタッチ ベースの方向入力ボックス) は、この 3D 空間内で足を制御し、足が前後または左右にしか動けないかのように機能するものと考えてください。 マウス (またはタッチ ポインター) は、頭を制御します。 頭を動かして、ある方向 (左、右、上、下、またはその平面のどこか) を見ます。 視界の中にターゲットがある場合、マウスを使ってカメラ ビューの中心をそのターゲットに合わせてから、前進キーを押してターゲットに向かって前進するか、後退キーを押してターゲットから後退します。 ターゲットの周りを旋回するには、カメラ ビューの中心をターゲットに合わせたまま、左右に動きます。 このように、この制御方法は 3D 環境のナビゲートに非常に有効です。
-
-これらのコントロールは、ゲームでは一般的に WASD コントロールと呼ばれます。WASD コントロールでは、x-z 平面に固定されたカメラを動かすのに W、A、S、D のキーを使用し、x 軸と y 軸を中心としたカメラの回転を制御するのにマウスを使用します。
-
-## <a name="objectives"></a>目標
+# <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span data-ttu-id="ebf6d-104"><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>ゲームのムーブ/ルック コントロール</span><span class="sxs-lookup"><span data-stu-id="ebf6d-104"><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Move-look controls for games</span></span>
 
 
--   マウス/キーボード用とタッチ スクリーン用の両方の基本的なムーブ/ルック コントロールを DirectX ゲームに追加する。
--   3D 環境のナビゲートに使う主観カメラを実装する。
+<span data-ttu-id="ebf6d-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="ebf6d-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="ebf6d-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-## <a name="a-note-on-touch-control-implementations"></a>タッチ コントロールの実装に関する注意
+<span data-ttu-id="ebf6d-107">ここでは、マウスとキーボードの従来のムーブ/ルック コントロール (マウスルック コントロールとも呼ばれます) を DirectX ゲームに追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-107">Learn how to add traditional mouse and keyboard move-look controls (also known as mouselook controls) to your DirectX game.</span></span>
+
+<span data-ttu-id="ebf6d-108">さらに、タッチ デバイスでのムーブ/ルックのサポートについても説明します。タッチ デバイスでは、ムーブ コントローラーは画面の左下の部分として定義され、方向入力と同じように動作します。ルック コントローラーは、画面の残りの部分に対して定義されます。カメラは、中心をプレイヤーがその領域内で最後にタッチした場所に合わせます。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-108">We also discuss move-look support for touch devices, with the move controller defined as the lower-left section of the screen that behaves like a directional input, and the look controller defined for the remainder of the screen, with the camera centering on the last place the player touched in that area.</span></span>
+
+<span data-ttu-id="ebf6d-109">このコントロールの概念に詳しくない場合は、キーボード (またはタッチ ベースの方向入力ボックス) は、この 3D 空間内で足を制御し、足が前後または左右にしか動けないかのように機能するものと考えてください。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-109">If this is an unfamiliar control concept to you, think of it this way: the keyboard (or the touch-based directional input box) controls your legs in this 3D space, and behaves as if your legs were only capable of moving forward or backward, or strafing left and right.</span></span> <span data-ttu-id="ebf6d-110">マウス (またはタッチ ポインター) は、頭を制御します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-110">The mouse (or touch pointer) controls your head.</span></span> <span data-ttu-id="ebf6d-111">頭を動かして、ある方向 (左、右、上、下、またはその平面のどこか) を見ます。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-111">You use your head to look in a direction -- left or right, up or down, or somewhere in that plane.</span></span> <span data-ttu-id="ebf6d-112">視界の中にターゲットがある場合、マウスを使ってカメラ ビューの中心をそのターゲットに合わせてから、前進キーを押してターゲットに向かって前進するか、後退キーを押してターゲットから後退します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-112">If there is a target in your view, you would use the mouse to center your camera view on that target, and then press the forward key to move towards it, or back to move away from it.</span></span> <span data-ttu-id="ebf6d-113">ターゲットの周りを旋回するには、カメラ ビューの中心をターゲットに合わせたまま、左右に動きます。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-113">To circle the target, you would keep the camera view centered on the target, and move left or right at the same time.</span></span> <span data-ttu-id="ebf6d-114">このように、この制御方法は 3D 環境のナビゲートに非常に有効です。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-114">You can see how this is a very effective control method for navigating 3D environments!</span></span>
+
+<span data-ttu-id="ebf6d-115">これらのコントロールは、ゲームでは一般的に WASD コントロールと呼ばれます。WASD コントロールでは、x-z 平面に固定されたカメラを動かすのに W、A、S、D のキーを使用し、x 軸と y 軸を中心としたカメラの回転を制御するのにマウスを使用します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-115">These controls are commonly known as WASD controls in gaming, where the W, A, S, and D keys are used for x-z plane fixed camera movement, and the mouse is used to control camera rotation around the x and y axes.</span></span>
+
+## <a name="objectives"></a><span data-ttu-id="ebf6d-116">目標</span><span class="sxs-lookup"><span data-stu-id="ebf6d-116">Objectives</span></span>
 
 
-タッチ コントロールには、2 つのコントローラーを実装します。1 つはカメラの視点に相対的な x-z 平面の動きを扱うムーブ コントローラー、もう 1 つはカメラの視点を合わせるためのルック コントローラーです。 ムーブ コントローラーはキーボードの WASD ボタンに相当し、ルック コントローラーはマウスに相当します。 ただし、タッチ コントロールでは、方向入力、または仮想的な WASD ボタンとして機能する画面の領域を定義する必要があります。画面の残りの部分は、ルック コントロール用の入力領域として機能します。
+-   <span data-ttu-id="ebf6d-117">マウス/キーボード用とタッチ スクリーン用の両方の基本的なムーブ/ルック コントロールを DirectX ゲームに追加する。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-117">Add basic move-look controls to your DirectX game for both mouse and keyboard, and touch screens.</span></span>
+-   <span data-ttu-id="ebf6d-118">3D 環境のナビゲートに使う主観カメラを実装する。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-118">Implement a first-person camera used to navigate a 3D environment.</span></span>
 
-画面は次のようになります。
+## <a name="a-note-on-touch-control-implementations"></a><span data-ttu-id="ebf6d-119">タッチ コントロールの実装に関する注意</span><span class="sxs-lookup"><span data-stu-id="ebf6d-119">A note on touch control implementations</span></span>
+
+
+<span data-ttu-id="ebf6d-120">タッチ コントロールには、2 つのコントローラーを実装します。1 つはカメラの視点に相対的な x-z 平面の動きを扱うムーブ コントローラー、もう 1 つはカメラの視点を合わせるためのルック コントローラーです。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-120">For touch controls, we implement two controllers: the move controller, which handles movement in the x-z plane relative to the camera's look point; and the look controller, which aims the camera's look point.</span></span> <span data-ttu-id="ebf6d-121">ムーブ コントローラーはキーボードの WASD ボタンに相当し、ルック コントローラーはマウスに相当します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-121">Our move controller maps to the keyboard WASD buttons, and the look controller maps to the mouse.</span></span> <span data-ttu-id="ebf6d-122">ただし、タッチ コントロールでは、方向入力、または仮想的な WASD ボタンとして機能する画面の領域を定義する必要があります。画面の残りの部分は、ルック コントロール用の入力領域として機能します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-122">But for touch controls, we need to define a region of the screen that serves as the directional inputs, or the virtual WASD buttons, with the remainder of the screen serving as the input space for the look controls.</span></span>
+
+<span data-ttu-id="ebf6d-123">画面は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-123">Our screen looks like this.</span></span>
 
 ![ムーブ/ルック コントローラーのレイアウト](images/movelook-touch.png)
 
-タッチ ポインター (マウスではなく) を画面の左下で動かす場合、上方向に動かすとカメラは前方に動きます。 下方向に動かすとカメラは後方に動きます。 ムーブ コントローラーのポインター領域内でポインターを左右に動かす場合にも同じことが当てはまります。 この領域外ではルック コントローラーになるため、カメラを単にタッチまたはドラッグして、希望の向きにします。
+<span data-ttu-id="ebf6d-125">タッチ ポインター (マウスではなく) を画面の左下で動かす場合、上方向に動かすとカメラは前方に動きます。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-125">When you move the touch pointer (not the mouse!) in the lower left of the screen, any movement upwards will make the camera move forward.</span></span> <span data-ttu-id="ebf6d-126">下方向に動かすとカメラは後方に動きます。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-126">Any movement downwards will make the camera move backwards.</span></span> <span data-ttu-id="ebf6d-127">ムーブ コントローラーのポインター領域内でポインターを左右に動かす場合にも同じことが当てはまります。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-127">The same holds for left and right movement inside the move controller's pointer space.</span></span> <span data-ttu-id="ebf6d-128">この領域外ではルック コントローラーになるため、カメラを単にタッチまたはドラッグして、希望の向きにします。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-128">Outside of that space, and it becomes a look controller -- you just touch or drag the camera to where you'd like it to face.</span></span>
 
-## <a name="set-up-the-basic-input-event-infrastructure"></a>基本的な入力イベントのインフラストラクチャのセットアップ
+## <a name="set-up-the-basic-input-event-infrastructure"></a><span data-ttu-id="ebf6d-129">基本的な入力イベントのインフラストラクチャのセットアップ</span><span class="sxs-lookup"><span data-stu-id="ebf6d-129">Set up the basic input event infrastructure</span></span>
 
 
-まず、マウスとキーボードからの入力イベントの処理と、その入力に基づいたカメラの視点の更新を行うコントロール クラスを作成する必要があります。 実装するのはムーブ/ルック コントロールであるため、**MoveLookController** という名前を付けます。
+<span data-ttu-id="ebf6d-130">まず、マウスとキーボードからの入力イベントの処理と、その入力に基づいたカメラの視点の更新を行うコントロール クラスを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-130">First, we must create our control class that we use to handle input events from the mouse and keyboard, and update the camera perspective based on that input.</span></span> <span data-ttu-id="ebf6d-131">実装するのはムーブ/ルック コントロールであるため、**MoveLookController** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-131">Because we're implementing move-look controls, we call it **MoveLookController**.</span></span>
 
 ```cpp
 using namespace Windows::UI::Core;
@@ -64,7 +63,7 @@ ref class MoveLookController
 };  // class MoveLookController
 ```
 
-次に、ムーブ/ルック コントローラーの状態とその主観カメラを定義するヘッダーと、コントロールを実装してカメラの状態を更新する基本的なメソッドとイベント ハンドラーを作成します。
+<span data-ttu-id="ebf6d-132">次に、ムーブ/ルック コントローラーの状態とその主観カメラを定義するヘッダーと、コントロールを実装してカメラの状態を更新する基本的なメソッドとイベント ハンドラーを作成します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-132">Now, let's create a header that defines the state of the move-look controller and its first-person camera, plus the basic methods and event handlers that implement the controls and that update the state of the camera.</span></span>
 
 ```cpp
 #define ROTATION_GAIN 0.004f    // Sensitivity adjustment for the look controller
@@ -145,70 +144,70 @@ internal:
 };  // class MoveLookController
 ```
 
-このコードには、プライベート フィールドのグループが 4 つ含まれています。 それぞれの目的を確認してみましょう。
+<span data-ttu-id="ebf6d-133">このコードには、プライベート フィールドのグループが 4 つ含まれています。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-133">Our code contains 4 groups of private fields.</span></span> <span data-ttu-id="ebf6d-134">それぞれの目的を確認してみましょう。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-134">Let's review the purpose of each one.</span></span>
 
-まず、カメラ ビューに関する更新情報を保持する、便利なフィールドをいくつか定義します。
+<span data-ttu-id="ebf6d-135">まず、カメラ ビューに関する更新情報を保持する、便利なフィールドをいくつか定義します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-135">First, we define some useful fields that hold our updated info about our camera view.</span></span>
 
--   **m\_position** は、3D シーン内のカメラ (とビュー平面) の位置であり、シーンの座標を使います。
--   **m\_pitch** は、カメラのピッチ (ビュー平面の x 軸を中心とする上下の回転) であり、単位はラジアンです。
--   **m\_yaw** は、カメラのヨー (ビュー平面の y 軸を中心とする左右の回転) であり、単位はラジアンです。
+-   <span data-ttu-id="ebf6d-136">**m\_position** は、3D シーン内のカメラ (とビュー平面) の位置であり、シーンの座標を使います。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-136">**m\_position** is the position of the camera (and therefore the viewplane) in the 3D scene, using scene coordinates.</span></span>
+-   <span data-ttu-id="ebf6d-137">**m\_pitch** は、カメラのピッチ (ビュー平面の x 軸を中心とする上下の回転) であり、単位はラジアンです。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-137">**m\_pitch** is the pitch of the camera, or its up-down rotation around the viewplane's x-axis, in radians.</span></span>
+-   <span data-ttu-id="ebf6d-138">**m\_yaw** は、カメラのヨー (ビュー平面の y 軸を中心とする左右の回転) であり、単位はラジアンです。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-138">**m\_yaw** is the yaw of the camera, or its left-right rotation around the viewplane's y-axis, in radians.</span></span>
 
-次に、コントローラーの状態と位置に関する情報を格納するフィールドを定義してみましょう。 まず、タッチ ベースのムーブ コントローラーに必要なフィールドを定義します。 (ムーブ コントローラーのキーボード実装に関して特別必要なことはありません。 キーボードのイベントと具体的なハンドラーについては先ほど説明しました。)
+<span data-ttu-id="ebf6d-139">次に、コントローラーの状態と位置に関する情報を格納するフィールドを定義してみましょう。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-139">Now, let's define the fields that we use to store info about the status and position of our controllers.</span></span> <span data-ttu-id="ebf6d-140">まず、タッチ ベースのムーブ コントローラーに必要なフィールドを定義します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-140">First, we'll define the fields we need for our touch-based move controller.</span></span> <span data-ttu-id="ebf6d-141">(ムーブ コントローラーのキーボード実装に関して特別必要なことはありません。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-141">(There's nothing special needed for the keyboard implementation of the move controller.</span></span> <span data-ttu-id="ebf6d-142">キーボードのイベントと具体的なハンドラーについては先ほど説明しました。)</span><span class="sxs-lookup"><span data-stu-id="ebf6d-142">We just read keyboard events with specific handlers.)</span></span>
 
--   **m\_moveInUse** は、ムーブ コントローラーが使用中かどうかを示します。
--   **m\_movePointerID** は、現在のムーブ ポインターの一意の ID です。 これは、ポインターの ID 値を確認するときにルック ポインターとムーブ ポインターを区別するために使います。
--   **m\_moveFirstDown** は、プレイヤーがムーブ コントローラーのポインター領域で最初にタッチした画面上の点です。 この値は、小さな動きによってビューが不安定にならないようデッド ゾーンを設定するために後で使います。
--   **m\_movePointerPosition** は、プレイヤーがポインターを現在動かしたばかりの画面上の点です。 これは、**m\_moveFirstDown** と比較して確認することで、プレイヤーが移動したい方向を判断するために使います。
--   **m\_moveCommand** は、ムーブ コントローラーに対して計算された最終的なコマンドであり、up (前進)、down (後退)、left (左)、または right (右) です。
+-   <span data-ttu-id="ebf6d-143">**m\_moveInUse** は、ムーブ コントローラーが使用中かどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-143">**m\_moveInUse** indicates whether the move controller is in use.</span></span>
+-   <span data-ttu-id="ebf6d-144">**m\_movePointerID** は、現在のムーブ ポインターの一意の ID です。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-144">**m\_movePointerID** is the unique ID for the current move pointer.</span></span> <span data-ttu-id="ebf6d-145">これは、ポインターの ID 値を確認するときにルック ポインターとムーブ ポインターを区別するために使います。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-145">We use it to differentiate between the look pointer and the move pointer when we check the pointer ID value.</span></span>
+-   <span data-ttu-id="ebf6d-146">**m\_moveFirstDown** は、プレイヤーがムーブ コントローラーのポインター領域で最初にタッチした画面上の点です。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-146">**m\_moveFirstDown** is the point on the screen where the player first touched the move controller pointer area.</span></span> <span data-ttu-id="ebf6d-147">この値は、小さな動きによってビューが不安定にならないようデッド ゾーンを設定するために後で使います。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-147">We use this value later to set a dead zone to keep tiny movements from jittering the view.</span></span>
+-   <span data-ttu-id="ebf6d-148">**m\_movePointerPosition** は、プレイヤーがポインターを現在動かしたばかりの画面上の点です。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-148">**m\_movePointerPosition** is the point on the screen the player has currently moved the pointer to.</span></span> <span data-ttu-id="ebf6d-149">これは、**m\_moveFirstDown** と比較して確認することで、プレイヤーが移動したい方向を判断するために使います。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-149">We use it to determine what direction the player wanted to move by examining it relative to **m\_moveFirstDown**.</span></span>
+-   <span data-ttu-id="ebf6d-150">**m\_moveCommand** は、ムーブ コントローラーに対して計算された最終的なコマンドであり、up (前進)、down (後退)、left (左)、または right (右) です。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-150">**m\_moveCommand** is the final computed command for the move controller: up (forward), down (back), left, or right.</span></span>
 
-次に、ルック コントローラーに使うフィールドを、マウス実装とタッチ実装の両方に対して定義します。
+<span data-ttu-id="ebf6d-151">次に、ルック コントローラーに使うフィールドを、マウス実装とタッチ実装の両方に対して定義します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-151">Now, we define the fields we use for our look controller, both the mouse and touch implementations.</span></span>
 
--   **m\_lookInUse** は、ルック コントロールが使用中かどうかを示します。
--   **m\_lookPointerID** は、現在のルック ポインターの一意の ID です。 これは、ポインターの ID 値を確認するときにルック ポインターとムーブ ポインターを区別するために使います。
--   **m\_lookLastPoint** は、シーンの座標内の、前のフレーム内でキャプチャされた最後の点です。
--   **m\_lookLastDelta** は、現在の **m\_position** と **m\_lookLastPoint** との違いを計算した値です。
+-   <span data-ttu-id="ebf6d-152">**m\_lookInUse** は、ルック コントロールが使用中かどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-152">**m\_lookInUse** indicates whether the look control is in use.</span></span>
+-   <span data-ttu-id="ebf6d-153">**m\_lookPointerID** は、現在のルック ポインターの一意の ID です。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-153">**m\_lookPointerID** is the unique ID for the current look pointer.</span></span> <span data-ttu-id="ebf6d-154">これは、ポインターの ID 値を確認するときにルック ポインターとムーブ ポインターを区別するために使います。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-154">We use it to differentiate between the look pointer and the move pointer when we check the pointer ID value.</span></span>
+-   <span data-ttu-id="ebf6d-155">**m\_lookLastPoint** は、シーンの座標内の、前のフレーム内でキャプチャされた最後の点です。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-155">**m\_lookLastPoint** is the last point, in scene coordinates, that was captured in the previous frame.</span></span>
+-   <span data-ttu-id="ebf6d-156">**m\_lookLastDelta** は、現在の **m\_position** と **m\_lookLastPoint** との違いを計算した値です。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-156">**m\_lookLastDelta** is the computed difference between the current **m\_position** and **m\_lookLastPoint**.</span></span>
 
-最後に、6 段階の動きに対して次の 6 つのブール値を定義します。これらの値は、それぞれの方向移動操作の現在の状態 (オンまたはオフ) を示すために使います。
+<span data-ttu-id="ebf6d-157">最後に、6 段階の動きに対して次の 6 つのブール値を定義します。これらの値は、それぞれの方向移動操作の現在の状態 (オンまたはオフ) を示すために使います。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-157">Finally, we define 6 Boolean values for the 6 degrees of movement, which we use to indicate the current state of each directional move action (on or off):</span></span>
 
--   **m\_forward**、**m\_back**、**m\_left**、**m\_right**、**m\_up**、**m\_down**。
+-   <span data-ttu-id="ebf6d-158">**m\_forward**、**m\_back**、**m\_left**、**m\_right**、**m\_up**、**m\_down**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-158">**m\_forward**, **m\_back**, **m\_left**, **m\_right**, **m\_up** and **m\_down**.</span></span>
 
-これら 6 つのイベント ハンドラーを使って、次のコントローラーの状態を更新するための入力データをキャプチャします。
+<span data-ttu-id="ebf6d-159">これら 6 つのイベント ハンドラーを使って、次のコントローラーの状態を更新するための入力データをキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-159">We use the 6 event handlers to capture the input data we use to update the state of our controllers:</span></span>
 
--   **OnPointerPressed**。 プレイヤーが、ポインターがゲーム画面にある状態でマウスの左ボタンを押したか、画面にタッチしました。
--   **OnPointerMoved**。 プレイヤーが、ポインターがゲーム画面にある状態でマウスを動かしたか、画面上でタッチ ポインターをドラッグしました。
--   **OnPointerReleased**。 プレイヤーが、ポインターがゲーム画面にある状態でマウスの左ボタンを離したか、画面から手を離しました。
--   **OnKeyDown**。 プレイヤーがキーを押しました。
--   **OnKeyUp**。 プレイヤーがキーを離しました。
+-   <span data-ttu-id="ebf6d-160">**OnPointerPressed**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-160">**OnPointerPressed**.</span></span> <span data-ttu-id="ebf6d-161">プレイヤーが、ポインターがゲーム画面にある状態でマウスの左ボタンを押したか、画面にタッチしました。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-161">The player pressed the left mouse button with the pointer in our game screen, or touched the screen.</span></span>
+-   <span data-ttu-id="ebf6d-162">**OnPointerMoved**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-162">**OnPointerMoved**.</span></span> <span data-ttu-id="ebf6d-163">プレイヤーが、ポインターがゲーム画面にある状態でマウスを動かしたか、画面上でタッチ ポインターをドラッグしました。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-163">The player moved the mouse with the pointer in our game screen, or dragged the touch pointer on the screen.</span></span>
+-   <span data-ttu-id="ebf6d-164">**OnPointerReleased**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-164">**OnPointerReleased**.</span></span> <span data-ttu-id="ebf6d-165">プレイヤーが、ポインターがゲーム画面にある状態でマウスの左ボタンを離したか、画面から手を離しました。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-165">The player released the left mouse button with the pointer in our game screen, or stopped touching the screen.</span></span>
+-   <span data-ttu-id="ebf6d-166">**OnKeyDown**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-166">**OnKeyDown**.</span></span> <span data-ttu-id="ebf6d-167">プレイヤーがキーを押しました。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-167">The player pressed a key.</span></span>
+-   <span data-ttu-id="ebf6d-168">**OnKeyUp**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-168">**OnKeyUp**.</span></span> <span data-ttu-id="ebf6d-169">プレイヤーがキーを離しました。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-169">The player released a key.</span></span>
 
-最後に、次のメソッドとプロパティを使って、コントローラーの状態情報の初期化、アクセス、更新を行います。
+<span data-ttu-id="ebf6d-170">最後に、次のメソッドとプロパティを使って、コントローラーの状態情報の初期化、アクセス、更新を行います。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-170">And finally, we use these methods and properties to initialize, access, and update the controllers' state info.</span></span>
 
--   **Initialize**。 Windows ストア アプリは、コントロールを初期化して、表示ウィンドウを定義する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトにそれらのコントロールを適用するときに、このイベント ハンドラーを呼び出します。
--   **SetPosition**。 Windows ストア アプリは、シーン空間内のコントロールの (x、y、z) 座標を設定するときに、このメソッドを呼び出します。
--   **SetOrientation**。 Windows ストア アプリは、カメラのピッチとヨーを設定するときに、このメソッドを呼び出します。
--   **get\_Position**。 Windows ストア アプリは、シーン空間内のカメラの現在の位置を取得するときに、このプロパティにアクセスします。 このプロパティは、カメラの現在の位置をアプリに伝える手段として使います。
--   **get\_LookPoint**。 Windows ストア アプリは、現在コントローラーのカメラが向いている点を取得するときに、このプロパティにアクセスします。
--   **Update**。 ムーブ コントローラーとルック コントローラーの状態を読み取り、カメラの位置を更新します。 このメソッドをアプリのメイン ループから継続的に呼び出して、カメラ コントローラーのデータとシーン空間内のカメラの位置を更新します。
+-   <span data-ttu-id="ebf6d-171">**Initialize**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-171">**Initialize**.</span></span> <span data-ttu-id="ebf6d-172">Windows ストア アプリは、コントロールを初期化して、表示ウィンドウを定義する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトにそれらのコントロールを適用するときに、このイベント ハンドラーを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-172">Our app calls this event handler to initialize the controls and attach them to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that describes our display window.</span></span>
+-   <span data-ttu-id="ebf6d-173">**SetPosition**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-173">**SetPosition**.</span></span> <span data-ttu-id="ebf6d-174">Windows ストア アプリは、シーン空間内のコントロールの (x、y、z) 座標を設定するときに、このメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-174">Our app calls this method to set the (x, y, and z) coordinates of our controls in the scene space.</span></span>
+-   <span data-ttu-id="ebf6d-175">**SetOrientation**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-175">**SetOrientation**.</span></span> <span data-ttu-id="ebf6d-176">Windows ストア アプリは、カメラのピッチとヨーを設定するときに、このメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-176">Our app calls this method to set the pitch and yaw of the camera.</span></span>
+-   <span data-ttu-id="ebf6d-177">**get\_Position**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-177">**get\_Position**.</span></span> <span data-ttu-id="ebf6d-178">Windows ストア アプリは、シーン空間内のカメラの現在の位置を取得するときに、このプロパティにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-178">Our app accesses this property to get the current position of the camera in the scene space.</span></span> <span data-ttu-id="ebf6d-179">このプロパティは、カメラの現在の位置をアプリに伝える手段として使います。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-179">You use this property as the method of communicating the current camera position to the app.</span></span>
+-   <span data-ttu-id="ebf6d-180">**get\_LookPoint**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-180">**get\_LookPoint**.</span></span> <span data-ttu-id="ebf6d-181">Windows ストア アプリは、現在コントローラーのカメラが向いている点を取得するときに、このプロパティにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-181">Our app accesses this property to get the current point toward which the controller camera is facing.</span></span>
+-   <span data-ttu-id="ebf6d-182">**Update**。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-182">**Update**.</span></span> <span data-ttu-id="ebf6d-183">ムーブ コントローラーとルック コントローラーの状態を読み取り、カメラの位置を更新します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-183">Reads the state of the move and look controllers and updates the camera position.</span></span> <span data-ttu-id="ebf6d-184">このメソッドをアプリのメイン ループから継続的に呼び出して、カメラ コントローラーのデータとシーン空間内のカメラの位置を更新します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-184">You continually call this method from the app's main loop to refresh the camera controller data and the camera position in the scene space.</span></span>
 
-これで、ムーブ/ルック コントロールの実装に必要なコンポーネントがすべて揃いました。 次は、これらのコンポーネントどうしを接続してみましょう。
+<span data-ttu-id="ebf6d-185">これで、ムーブ/ルック コントロールの実装に必要なコンポーネントがすべて揃いました。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-185">Now, you have here all the components you need to implement your move-look controls.</span></span> <span data-ttu-id="ebf6d-186">次は、これらのコンポーネントどうしを接続してみましょう。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-186">So, let's connect these pieces together.</span></span>
 
-## <a name="create-the-basic-input-events"></a>基本的な入力イベントを作成する
+## <a name="create-the-basic-input-events"></a><span data-ttu-id="ebf6d-187">基本的な入力イベントを作成する</span><span class="sxs-lookup"><span data-stu-id="ebf6d-187">Create the basic input events</span></span>
 
 
-Windows ランタイムのイベント ディスパッチャーは、**MoveLookController** クラスのインスタンスで処理するイベントを 5 つ提供します。
+<span data-ttu-id="ebf6d-188">Windows ランタイムのイベント ディスパッチャーは、**MoveLookController** クラスのインスタンスで処理するイベントを 5 つ提供します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-188">The Windows Runtime event dispatcher provides 5 events we want instances of the **MoveLookController** class to handle:</span></span>
 
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
--   [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271)
--   [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270)
+-   [**<span data-ttu-id="ebf6d-189">PointerPressed</span><span class="sxs-lookup"><span data-stu-id="ebf6d-189">PointerPressed</span></span>**](https://msdn.microsoft.com/library/windows/apps/br208278)
+-   [**<span data-ttu-id="ebf6d-190">PointerMoved</span><span class="sxs-lookup"><span data-stu-id="ebf6d-190">PointerMoved</span></span>**](https://msdn.microsoft.com/library/windows/apps/br208276)
+-   [**<span data-ttu-id="ebf6d-191">PointerReleased</span><span class="sxs-lookup"><span data-stu-id="ebf6d-191">PointerReleased</span></span>**](https://msdn.microsoft.com/library/windows/apps/br208279)
+-   [**<span data-ttu-id="ebf6d-192">KeyUp</span><span class="sxs-lookup"><span data-stu-id="ebf6d-192">KeyUp</span></span>**](https://msdn.microsoft.com/library/windows/apps/br208271)
+-   [**<span data-ttu-id="ebf6d-193">KeyDown</span><span class="sxs-lookup"><span data-stu-id="ebf6d-193">KeyDown</span></span>**](https://msdn.microsoft.com/library/windows/apps/br208270)
 
-これらのイベントは、[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 型に実装されています。 ここでは、操作する **CoreWindow** オブジェクトが既にあると想定しています。 取得方法が不明な場合は、「[ユニバーサル Windows プラットフォーム (UWP) C++ アプリで DirectX ビューを表示するための設定方法](https://msdn.microsoft.com/library/windows/apps/hh465077)」をご覧ください。
+<span data-ttu-id="ebf6d-194">これらのイベントは、[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 型に実装されています。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-194">These events are implemented on the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type.</span></span> <span data-ttu-id="ebf6d-195">ここでは、操作する **CoreWindow** オブジェクトが既にあると想定しています。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-195">We assume that you have a **CoreWindow** object to work with.</span></span> <span data-ttu-id="ebf6d-196">取得方法が不明な場合は、「[ユニバーサル Windows プラットフォーム (UWP) C++ アプリで DirectX ビューを表示するための設定方法](https://msdn.microsoft.com/library/windows/apps/hh465077)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-196">If you don't know how to obtain one, see [How to set up your Universal Windows Platform (UWP) C++ app to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).</span></span>
 
-これらのイベントは Windows ストア アプリの実行中に起動するため、ハンドラーはプライベート フィールドに定義されているコントローラーの状態情報を更新します。
+<span data-ttu-id="ebf6d-197">これらのイベントは Windows ストア アプリの実行中に起動するため、ハンドラーはプライベート フィールドに定義されているコントローラーの状態情報を更新します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-197">As these events fire while our app is running, the handlers update the controllers' state info defined in our private fields.</span></span>
 
-まず、マウス ポインターとタッチ ポインターのイベント ハンドラーを設定します。 最初のイベント ハンドラーである **OnPointerPressed()** では、ユーザーがルック コントローラー領域でマウスをクリックまたは画面をタッチすると、表示を管理する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) からポインターの x-y 座標を取得します。
+<span data-ttu-id="ebf6d-198">まず、マウス ポインターとタッチ ポインターのイベント ハンドラーを設定します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-198">First, let's populate the mouse and touch pointer event handlers.</span></span> <span data-ttu-id="ebf6d-199">最初のイベント ハンドラーである **OnPointerPressed()** では、ユーザーがルック コントローラー領域でマウスをクリックまたは画面をタッチすると、表示を管理する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) からポインターの x-y 座標を取得します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-199">In the first event handler, **OnPointerPressed()**, we get the x-y coordinates of the pointer from the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) that manages our display when the user clicks the mouse or touches the screen in the look controller region.</span></span>
 
-**OnPointerPressed**
+**<span data-ttu-id="ebf6d-200">OnPointerPressed</span><span class="sxs-lookup"><span data-stu-id="ebf6d-200">OnPointerPressed</span></span>**
 
 ```cpp
 void MoveLookController::OnPointerPressed(
@@ -255,11 +254,11 @@ _In_ PointerEventArgs^ args)
 }
 ```
 
-このイベント ハンドラーは、ポインターがマウスでないかどうか (このサンプルではマウスとタッチの両方をサポートするため) と、ムーブ コントローラー領域内にあるかどうかを確認します。 両方の条件が true の場合は、**m\_moveInUse** が false かどうかをテストして、ポインターが押されたばかりかどうか、具体的には、このクリックが前のムーブ入力またはルック入力に無関係かどうかを確認します。 無関係な場合、ハンドラーはムーブ コントローラー領域で押し操作が発生した点をキャプチャして **m\_moveInUse** を true に設定し、このハンドラーが再び呼び出されたときにムーブ コントローラーの入力操作の開始位置が上書きされないようにします。 さらに、ムーブ コントローラーのポインター ID を現在のポインターの ID に更新します。
+<span data-ttu-id="ebf6d-201">このイベント ハンドラーは、ポインターがマウスでないかどうか (このサンプルではマウスとタッチの両方をサポートするため) と、ムーブ コントローラー領域内にあるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-201">This event handler checks whether the pointer is not the mouse (for the purposes of this sample, which supports both mouse and touch) and if it is in the move controller area.</span></span> <span data-ttu-id="ebf6d-202">両方の条件が true の場合は、**m\_moveInUse** が false かどうかをテストして、ポインターが押されたばかりかどうか、具体的には、このクリックが前のムーブ入力またはルック入力に無関係かどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-202">If both criteria are true, it checks whether the pointer was just pressed, specifically, whether this click is unrelated to a previous move or look input, by testing if **m\_moveInUse** is false.</span></span> <span data-ttu-id="ebf6d-203">無関係な場合、ハンドラーはムーブ コントローラー領域で押し操作が発生した点をキャプチャして **m\_moveInUse** を true に設定し、このハンドラーが再び呼び出されたときにムーブ コントローラーの入力操作の開始位置が上書きされないようにします。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-203">If so, the handler captures the point in the move controller area where the press happened and sets **m\_moveInUse** to true, so that when this handler is called again, it won't overwrite the start position of the move controller input interaction.</span></span> <span data-ttu-id="ebf6d-204">さらに、ムーブ コントローラーのポインター ID を現在のポインターの ID に更新します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-204">It also updates the move controller pointer ID to the current pointer's ID.</span></span>
 
-ポインターがマウスの場合、またはタッチ ポインターがムーブ コントローラー領域内にない場合は、ルック コントローラー領域内にある必要があります。 このハンドラーは、ユーザーがマウスのボタンを押した、またはタッチして押した現在の場所に **m\_lookLastPoint** を設定し、差分をリセットして、ルック コントローラーのポインター ID を現在のポインターの ID に更新します。 また、ルック コントローラーの状態をアクティブに設定します。
+<span data-ttu-id="ebf6d-205">ポインターがマウスの場合、またはタッチ ポインターがムーブ コントローラー領域内にない場合は、ルック コントローラー領域内にある必要があります。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-205">If the pointer is the mouse or if the touch pointer isn't in the move controller area, it must be in the look controller area.</span></span> <span data-ttu-id="ebf6d-206">このハンドラーは、ユーザーがマウスのボタンを押した、またはタッチして押した現在の場所に **m\_lookLastPoint** を設定し、差分をリセットして、ルック コントローラーのポインター ID を現在のポインターの ID に更新します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-206">It sets **m\_lookLastPoint** to the current position where the user pressed the mouse button or touched and pressed, resets the delta, and updates the look controller's pointer ID to the current pointer ID.</span></span> <span data-ttu-id="ebf6d-207">また、ルック コントローラーの状態をアクティブに設定します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-207">It also sets the state of the look controller to active.</span></span>
 
-**OnPointerMoved**
+**<span data-ttu-id="ebf6d-208">OnPointerMoved</span><span class="sxs-lookup"><span data-stu-id="ebf6d-208">OnPointerMoved</span></span>**
 
 ```cpp
 void MoveLookController::OnPointerMoved(
@@ -301,15 +300,15 @@ void MoveLookController::OnPointerMoved(
 }
 ```
 
-**OnPointerMoved** イベント ハンドラーは、ポインターが動くたび起動します (この場合、タッチ スクリーンのポインターがドラッグされているとき、またはマウスの左ボタンを押しながらマウス ポインターが動かされているとき)。 ポインター ID がムーブ コントローラーのポインターの ID と同じ場合は、ムーブ ポインターになります。違う場合は、アクティブなポインターであるルック コントローラーかどうかを確認します。
+<span data-ttu-id="ebf6d-209">**OnPointerMoved** イベント ハンドラーは、ポインターが動くたび起動します (この場合、タッチ スクリーンのポインターがドラッグされているとき、またはマウスの左ボタンを押しながらマウス ポインターが動かされているとき)。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-209">The **OnPointerMoved** event handler fires whenever the pointer moves (in this case, if a touch screen pointer is being dragged, or if the mouse pointer is being moved while the left button is pressed).</span></span> <span data-ttu-id="ebf6d-210">ポインター ID がムーブ コントローラーのポインターの ID と同じ場合は、ムーブ ポインターになります。違う場合は、アクティブなポインターであるルック コントローラーかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-210">If the pointer ID is the same as the move controller pointer's ID, then it's the move pointer; otherwise, we check if it's the look controller that's the active pointer.</span></span>
 
-ムーブ コントローラーの場合は、単にポインターの位置を更新します。 **OnPointerPressed** イベント ハンドラーでキャプチャした最初の位置と最後の位置を比較するため、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) イベントが起動を続ける限りポインターの位置を更新し続けます。
+<span data-ttu-id="ebf6d-211">ムーブ コントローラーの場合は、単にポインターの位置を更新します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-211">If it's the move controller, we just update the pointer position.</span></span> <span data-ttu-id="ebf6d-212">**OnPointerPressed** イベント ハンドラーでキャプチャした最初の位置と最後の位置を比較するため、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) イベントが起動を続ける限りポインターの位置を更新し続けます。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-212">We keep updating it as long the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) event keeps firing, because we want to compare the final position with the first one we captured with the **OnPointerPressed** event handler.</span></span>
 
-ルック コントローラーの場合は、やや複雑になります。 新しい視点を計算してカメラの中心をそこに合わせ、前の視点と現在の画面の位置との差分を計算する必要があります。その後、倍率を乗算します。倍率を調整すると、画面移動の距離に比例して動きが小さくまたは大きく見えるようにすることができます。 その値を使って、ピッチとヨーを計算します。
+<span data-ttu-id="ebf6d-213">ルック コントローラーの場合は、やや複雑になります。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-213">If it's the look controller, things are a little more complicated.</span></span> <span data-ttu-id="ebf6d-214">新しい視点を計算してカメラの中心をそこに合わせ、前の視点と現在の画面の位置との差分を計算する必要があります。その後、倍率を乗算します。倍率を調整すると、画面移動の距離に比例して動きが小さくまたは大きく見えるようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-214">We need to calculate a new look point and center the camera on it, so we calculate the delta between the last look point and the current screen position, and then we multiply versus our scale factor, which we can tweak to make the look movements smaller or larger relative to the distance of the screen movement.</span></span> <span data-ttu-id="ebf6d-215">その値を使って、ピッチとヨーを計算します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-215">Using that value, we calculate the pitch and the yaw.</span></span>
 
-最後に、プレイヤーがマウスの移動を停止したとき、または画面から手を離したときに、ムーブ コントローラーまたはルック コントローラーの動作を非アクティブにする必要があります。 **m\_moveInUse** または **m\_lookInUse** を FALSE に設定してカメラのパン移動をオフにし、ポインター ID をゼロにするには、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) の起動時に呼び出す **OnPointerReleased** を使います。
+<span data-ttu-id="ebf6d-216">最後に、プレイヤーがマウスの移動を停止したとき、または画面から手を離したときに、ムーブ コントローラーまたはルック コントローラーの動作を非アクティブにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-216">Finally, we need to deactivate the move or look controller behaviors when the player stops moving the mouse or touching the screen.</span></span> <span data-ttu-id="ebf6d-217">**m\_moveInUse** または **m\_lookInUse** を FALSE に設定してカメラのパン移動をオフにし、ポインター ID をゼロにするには、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) の起動時に呼び出す **OnPointerReleased** を使います。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-217">We use **OnPointerReleased**, which we call when [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) is fired, to set **m\_moveInUse** or **m\_lookInUse** to FALSE and turn off the camera pan movement, and to zero out the pointer ID.</span></span>
 
-**OnPointerReleased**
+**<span data-ttu-id="ebf6d-218">OnPointerReleased</span><span class="sxs-lookup"><span data-stu-id="ebf6d-218">OnPointerReleased</span></span>**
 
 ```cpp
 void MoveLookController::OnPointerReleased(
@@ -333,9 +332,9 @@ _In_ PointerEventArgs ^args)
 }
 ```
 
-今まで処理したのは、すべてタッチ スクリーン イベントでした。 次は、キーボード ベースのムーブ コントローラー用のキー入力イベントを処理しましょう。
+<span data-ttu-id="ebf6d-219">今まで処理したのは、すべてタッチ スクリーン イベントでした。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-219">So far, we handled all the touch screen events.</span></span> <span data-ttu-id="ebf6d-220">次は、キーボード ベースのムーブ コントローラー用のキー入力イベントを処理しましょう。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-220">Now, let's handle the key input events for a keyboard-based move controller.</span></span>
 
-**OnKeyDown**
+**<span data-ttu-id="ebf6d-221">OnKeyDown</span><span class="sxs-lookup"><span data-stu-id="ebf6d-221">OnKeyDown</span></span>**
 
 ```cpp
 void MoveLookController::OnKeyDown(
@@ -357,9 +356,9 @@ void MoveLookController::OnKeyDown(
 }
 ```
 
-これらのキーのいずれかが押されている限り、このイベント ハンドラーは対応する方向移動状態を true に設定します。
+<span data-ttu-id="ebf6d-222">これらのキーのいずれかが押されている限り、このイベント ハンドラーは対応する方向移動状態を true に設定します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-222">As long as one of these keys is pressed, this event handler sets the corresponding directional move state to true.</span></span>
 
-**OnKeyUp**
+**<span data-ttu-id="ebf6d-223">OnKeyUp</span><span class="sxs-lookup"><span data-stu-id="ebf6d-223">OnKeyUp</span></span>**
 
 ```cpp
 void MoveLookController::OnKeyUp(
@@ -381,14 +380,14 @@ void MoveLookController::OnKeyUp(
 }
 ```
 
-キーが離されると、状態を false にリセットします。 **Update** を呼び出すと、これらの方向移動状態が確認され、それに従ってカメラが動きます。 これは、タッチ実装より少し簡単です。
+<span data-ttu-id="ebf6d-224">キーが離されると、状態を false にリセットします。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-224">And when the key is released, this event handler sets it back to false.</span></span> <span data-ttu-id="ebf6d-225">**Update** を呼び出すと、これらの方向移動状態が確認され、それに従ってカメラが動きます。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-225">When we call **Update**, it checks these directional move states, and move the camera accordingly.</span></span> <span data-ttu-id="ebf6d-226">これは、タッチ実装より少し簡単です。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-226">This is a bit simpler than the touch implementation!</span></span>
 
-## <a name="initialize-the-touch-controls-and-the-controller-state"></a>タッチ コントロールとコントローラーの状態の初期化
+## <a name="initialize-the-touch-controls-and-the-controller-state"></a><span data-ttu-id="ebf6d-227">タッチ コントロールとコントローラーの状態の初期化</span><span class="sxs-lookup"><span data-stu-id="ebf6d-227">Initialize the touch controls and the controller state</span></span>
 
 
-次は、イベントをフックして、コントローラー状態の全フィールドを初期化しましょう。
+<span data-ttu-id="ebf6d-228">次は、イベントをフックして、コントローラー状態の全フィールドを初期化しましょう。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-228">Let's hook up the events now, and initialize all the controller state fields.</span></span>
 
-**Initialize**
+**<span data-ttu-id="ebf6d-229">Initialize</span><span class="sxs-lookup"><span data-stu-id="ebf6d-229">Initialize</span></span>**
 
 ```cpp
 void MoveLookController::Initialize( _In_ CoreWindow^ window )
@@ -428,12 +427,12 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** は、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスへの参照をパラメーターとして使い、先ほど作成したイベント ハンドラーをその **CoreWindow** の適切なイベントに登録します。 このハンドラーは、ムーブ ポインターとルック ポインターの ID を初期化し、タッチ スクリーンのムーブ コントローラー実装用のコマンド ベクターをゼロに設定して、アプリの起動時にカメラが正面を向くように設定します。
+<span data-ttu-id="ebf6d-230">**Initialize** は、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスへの参照をパラメーターとして使い、先ほど作成したイベント ハンドラーをその **CoreWindow** の適切なイベントに登録します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-230">**Initialize** takes a reference to the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**.</span></span> <span data-ttu-id="ebf6d-231">このハンドラーは、ムーブ ポインターとルック ポインターの ID を初期化し、タッチ スクリーンのムーブ コントローラー実装用のコマンド ベクターをゼロに設定して、アプリの起動時にカメラが正面を向くように設定します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-231">It initializes the move and look pointer's IDs, sets the command vector for our touch screen move controller implementation to zero, and sets the camera looking straight ahead when the app starts.</span></span>
 
-## <a name="getting-and-setting-the-position-and-orientation-of-the-camera"></a>カメラの位置と向きの取得と設定
+## <a name="getting-and-setting-the-position-and-orientation-of-the-camera"></a><span data-ttu-id="ebf6d-232">カメラの位置と向きの取得と設定</span><span class="sxs-lookup"><span data-stu-id="ebf6d-232">Getting and setting the position and orientation of the camera</span></span>
 
 
-ビューポートに対してカメラの位置の取得と設定を行うメソッドをいくつか定義してみましょう。
+<span data-ttu-id="ebf6d-233">ビューポートに対してカメラの位置の取得と設定を行うメソッドをいくつか定義してみましょう。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-233">Let's define some methods to get and set the position of the camera with respect to the viewport.</span></span>
 
 ```cpp
 void MoveLookController::SetPosition( _In_ DirectX::XMFLOAT3 pos )
@@ -471,10 +470,10 @@ DirectX::XMFLOAT3 MoveLookController::get_LookPoint()
 }
 ```
 
-## <a name="updating-the-controller-state-info"></a>コントローラーの状態情報の更新
+## <a name="updating-the-controller-state-info"></a><span data-ttu-id="ebf6d-234">コントローラーの状態情報の更新</span><span class="sxs-lookup"><span data-stu-id="ebf6d-234">Updating the controller state info</span></span>
 
 
-次は、**m\_movePointerPosition** で追跡したポインターの座標情報を、ワールド座標系における新しい座標情報に変換する計算を実行します。 Windows ストア アプリは、アプリのメイン ループが更新されるたびに、このメソッドを呼び出します。 このため、ビュー マトリックスをビューポートへのプロジェクションの前に更新するためにアプリに渡す新しい視点位置情報は、ここで計算します。
+<span data-ttu-id="ebf6d-235">次は、**m\_movePointerPosition** で追跡したポインターの座標情報を、ワールド座標系における新しい座標情報に変換する計算を実行します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-235">Now, we perform our calculations that convert the pointer coordinate info tracked in **m\_movePointerPosition** into new coordinate information respective of our world coordinate system.</span></span> <span data-ttu-id="ebf6d-236">Windows ストア アプリは、アプリのメイン ループが更新されるたびに、このメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-236">Our app calls this method every time we refresh the main app loop.</span></span> <span data-ttu-id="ebf6d-237">このため、ビュー マトリックスをビューポートへのプロジェクションの前に更新するためにアプリに渡す新しい視点位置情報は、ここで計算します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-237">So, it is here that we compute the new look point position info we want to pass to the app for updating the view matrix before projection into the viewport.</span></span>
 
 ```cpp
 void MoveLookController::Update(CoreWindow ^window)
@@ -557,16 +556,16 @@ void MoveLookController::Update(CoreWindow ^window)
 }
 ```
 
-プレイヤーがタッチ ベースのムーブ コントローラーを使う場合に動きが不安定にならないように、ポインターの周りに直径 32 ピクセルの仮想デッド ゾーンを設定します。 また、コマンド値に移動ゲイン速度を加えた速度も追加します  (この動作は、ポインターがムーブ コントローラー領域内で動く距離に基づいて移動速度を低下または上昇させることができるように、任意に調整できます。)
+<span data-ttu-id="ebf6d-238">プレイヤーがタッチ ベースのムーブ コントローラーを使う場合に動きが不安定にならないように、ポインターの周りに直径 32 ピクセルの仮想デッド ゾーンを設定します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-238">Because we don't want jittery movement when the player uses our touch-based move controller, we set a virtual dead zone around the pointer with a diameter of 32 pixels.</span></span> <span data-ttu-id="ebf6d-239">また、コマンド値に移動ゲイン速度を加えた速度も追加します </span><span class="sxs-lookup"><span data-stu-id="ebf6d-239">We also add velocity, which is the command value plus a movement gain rate.</span></span> <span data-ttu-id="ebf6d-240">(この動作は、ポインターがムーブ コントローラー領域内で動く距離に基づいて移動速度を低下または上昇させることができるように、任意に調整できます。)</span><span class="sxs-lookup"><span data-stu-id="ebf6d-240">(You can adjust this behavior to your liking, to slow down or speed up the rate of movement based on the distance the pointer moves in the move controller area.)</span></span>
 
-速度を計算するときは、さらに、ムーブ コントローラーとルック コントローラーから受け取った座標を、シーンのビュー マトリックスを計算するメソッドに送信する実際の視点の動きに変換します。 まず、x 座標を反転します。これは、ルック コントローラーで、クリックしてから左または右方向への移動またはドラッグを行うと、カメラがその中心軸の周囲でスイングするように視点がシーン内で反対方向に回転するためです。 次に、y 軸と z 軸を入れ替えます。これは、ムーブ コントローラーで、上/下方向キーを押す、またはタッチ ドラッグ動作 (y 軸動作として読み取られます) を行うと、視点を画面 (z 軸) の中に、または外へ動かすカメラ操作が行われるためです。
+<span data-ttu-id="ebf6d-241">速度を計算するときは、さらに、ムーブ コントローラーとルック コントローラーから受け取った座標を、シーンのビュー マトリックスを計算するメソッドに送信する実際の視点の動きに変換します。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-241">When we compute the velocity, we also translate the coordinates received from the move and look controllers into the movement of the actual look point we send to the method that computes our view matrix for the scene.</span></span> <span data-ttu-id="ebf6d-242">まず、x 座標を反転します。これは、ルック コントローラーで、クリックしてから左または右方向への移動またはドラッグを行うと、カメラがその中心軸の周囲でスイングするように視点がシーン内で反対方向に回転するためです。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-242">First, we invert the x coordinate, because if we click-move or drag left or right with the look controller, the look point rotates in the opposite direction in the scene, as a camera might swing about its central axis.</span></span> <span data-ttu-id="ebf6d-243">次に、y 軸と z 軸を入れ替えます。これは、ムーブ コントローラーで、上/下方向キーを押す、またはタッチ ドラッグ動作 (y 軸動作として読み取られます) を行うと、視点を画面 (z 軸) の中に、または外へ動かすカメラ操作が行われるためです。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-243">Then, we swap the y and z axes, because an up/down key press or touch drag motion (read as a y-axis behavior) on the move controller should translate into a camera action that moves the look point into or out of the screen (the z-axis).</span></span>
 
-プレイヤーの視点の最後の位置は、計算された速度を最後の位置に加えたものであり、この位置は、レンダラーが **get\_Position** メソッドを呼び出すときにレンダラーが読み取ります (通常は各フレームのセットアップ中)。 その後、移動コマンドをゼロにリセットします。
+<span data-ttu-id="ebf6d-244">プレイヤーの視点の最後の位置は、計算された速度を最後の位置に加えたものであり、この位置は、レンダラーが **get\_Position** メソッドを呼び出すときにレンダラーが読み取ります (通常は各フレームのセットアップ中)。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-244">The final position of the look point for the player is the last position plus the calculated velocity, and this is what is read by the renderer when it calls the **get\_Position** method (most likely during the setup for each frame).</span></span> <span data-ttu-id="ebf6d-245">その後、移動コマンドをゼロにリセットします。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-245">After that, we reset the move command to zero.</span></span>
 
-## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>カメラの新しい位置によるビュー マトリックスの更新
+## <a name="updating-the-view-matrix-with-the-new-camera-position"></a><span data-ttu-id="ebf6d-246">カメラの新しい位置によるビュー マトリックスの更新</span><span class="sxs-lookup"><span data-stu-id="ebf6d-246">Updating the view matrix with the new camera position</span></span>
 
 
-カメラのフォーカスが合っているシーン空間の座標を取得できます。この座標は、アプリに指定した時間ごとに更新されます (たとえばアプリのメイン ループでは 60 秒ごと)。 次の疑似コードは、実装できる呼び出し動作を示しています。
+<span data-ttu-id="ebf6d-247">カメラのフォーカスが合っているシーン空間の座標を取得できます。この座標は、アプリに指定した時間ごとに更新されます (たとえばアプリのメイン ループでは 60 秒ごと)。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-247">We can obtain a scene space coordinate that our camera is focused on, and which is updated whenever you tell your app to do so (every 60 seconds in the main app loop, for example).</span></span> <span data-ttu-id="ebf6d-248">次の疑似コードは、実装できる呼び出し動作を示しています。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-248">This pseudocode suggests the calling behavior you can implement:</span></span>
 
 ```cpp
 myMoveLookController->Update( m_window );   
@@ -579,17 +578,16 @@ myFirstPersonCamera->SetViewParameters(
                  ); 
 ```
 
-これで、 タッチ スクリーン用とキーボード/マウス用の入力タッチ コントロールの両方の基本的なムーブ/ルック コントロールがゲームで実装されました。
+<span data-ttu-id="ebf6d-249">これで、</span><span class="sxs-lookup"><span data-stu-id="ebf6d-249">Congratulations!</span></span> <span data-ttu-id="ebf6d-250">タッチ スクリーン用とキーボード/マウス用の入力タッチ コントロールの両方の基本的なムーブ/ルック コントロールがゲームで実装されました。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-250">You've implemented basic move-look controls for both touch screens and keyboard/mouse input touch controls in your game!</span></span>
 
-> **注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
- 
+> **<span data-ttu-id="ebf6d-251">注</span><span class="sxs-lookup"><span data-stu-id="ebf6d-251">Note</span></span>**  
+<span data-ttu-id="ebf6d-252">この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-252">This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="ebf6d-253">Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ebf6d-253">If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).</span></span>
 
  
 
  
 
+ 
 
 
 

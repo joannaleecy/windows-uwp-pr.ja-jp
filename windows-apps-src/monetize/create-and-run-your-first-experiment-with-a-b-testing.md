@@ -1,113 +1,114 @@
 ---
 author: mcleanbyron
-Description: "このチュートリアルでは、A/B テストを使用して最初の実験を作成、実行、管理します。"
-title: "A/B テストを使用して最初の実験を作成および実行する"
+Description: In this walkthrough, you will create, run, and manage your first experiment with A/B testing.
+title: 最初の実験を作成して実行する
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fb9e93747fa77031fe906d9ab7463fc41b73cdeb
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
+ms.localizationpriority: medium
+ms.openlocfilehash: dfd19034a8bf775e9a317d1ddb4f54223eb4a5ed
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "476906"
 ---
+# <a name="create-and-run-your-first-experiment"></a><span data-ttu-id="320cd-103">最初の実験を作成して実行する</span><span class="sxs-lookup"><span data-stu-id="320cd-103">Create and run your first experiment</span></span>
 
-# <a name="create-and-run-your-first-experiment-with-ab-testing"></a>A/B テストを使用して最初の実験を作成および実行する
+<span data-ttu-id="320cd-104">このチュートリアルでは、次の作業を行います。</span><span class="sxs-lookup"><span data-stu-id="320cd-104">In this walkthrough, you will:</span></span>
+* <span data-ttu-id="320cd-105">デベロッパー センター ダッシュボードで実験[プロジェクト](run-app-experiments-with-a-b-testing.md#terms)を作成します。この実験では、アプリのボタンのテキストと色を表すリモート変数をいくつか定義します。</span><span class="sxs-lookup"><span data-stu-id="320cd-105">Create an experimentation [project](run-app-experiments-with-a-b-testing.md#terms) on the Dev Center dashboard that defines several remote variables that represent the text and color of an app button.</span></span>
+* <span data-ttu-id="320cd-106">リモート変数の値を取得し、そのデータを使用してボタンの背景色を変更し、デベロッパー センターでビュー イベントとコンバージョン イベントのデータをログに記録するアプリを作成します。</span><span class="sxs-lookup"><span data-stu-id="320cd-106">Create an app with code that retrieves the remote variable values, uses this data to change the background color of a button, and logs view and conversion event data back to Dev Center.</span></span>
+* <span data-ttu-id="320cd-107">アプリのボタンの背景色を変更するとボタンのクリック回数が正常に増えるかどうかをテストする実験をプロジェクトに作成します。</span><span class="sxs-lookup"><span data-stu-id="320cd-107">Create an experiment in the project to test whether changing the background color of the app button successfully increases the number of button clicks.</span></span>
+* <span data-ttu-id="320cd-108">アプリを実行して、実験データを収集します。</span><span class="sxs-lookup"><span data-stu-id="320cd-108">Run the app to gather experiment data.</span></span>
+* <span data-ttu-id="320cd-109">デベロッパー センター ダッシュボードで実験結果を確認し、アプリのすべてのユーザーに有効なバリエーションを選択して、実験を完了します。</span><span class="sxs-lookup"><span data-stu-id="320cd-109">Review the experiment results on the Dev Center dashboard, choose a variation to enable for all users of the app, and complete the experiment.</span></span>
 
-このチュートリアルでは、次の作業を行います。
-* デベロッパー センター ダッシュボードで、アプリのボタンのテキストと色を表すいくつかのリモート変数を定義する実験[プロジェクト](run-app-experiments-with-a-b-testing.md#terms)を作成します。
-* リモート変数の値を取得し、そのデータを使用してボタンの背景色を変更し、デベロッパー センターでビュー イベントとコンバージョン イベントのデータをログに記録するアプリを作成します。
-* アプリのボタンの背景色を変更するとボタンのクリック回数が正常に増えるかどうかをテストする実験をプロジェクトに作成します。
-* アプリを実行して、実験データを収集します。
-* デベロッパー センター ダッシュボードで実験結果を確認し、アプリのすべてのユーザーに有効なバリエーションを選択して、実験を完了します。
+<span data-ttu-id="320cd-110">デベロッパー センターでの A/B テストの概要については、「[A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="320cd-110">For an overview of A/B testing with Dev Center, see [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md).</span></span>
 
-デベロッパー センターでの A/B テストの概要については、「[A/B テストを使用してアプリの試験的機能を実行する](run-app-experiments-with-a-b-testing.md)」をご覧ください。
+## <a name="prerequisites"></a><span data-ttu-id="320cd-111">前提条件</span><span class="sxs-lookup"><span data-stu-id="320cd-111">Prerequisites</span></span>
 
-## <a name="prerequisites"></a>前提条件
+<span data-ttu-id="320cd-112">このチュートリアルを実行するには、Windows デベロッパー センターのアカウントが必要です。また、「[A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)」の説明に従って開発用コンピューターを構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="320cd-112">To follow this walkthrough, you must have a Windows Dev Center account and you must configure your development computer as described in [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md).</span></span>
 
-このチュートリアルを実行するには、Windows デベロッパー センターのアカウントが必要です。また、「[A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)」の説明に従って開発用コンピューターを構成する必要があります。
+## <a name="create-a-project-with-remote-variables-in-windows-dev-center"></a><span data-ttu-id="320cd-113">Windows デベロッパー センターでリモート変数を含むプロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="320cd-113">Create a project with remote variables in Windows Dev Center</span></span>
 
-## <a name="create-a-project-with-remote-variables-in-windows-dev-center"></a>Windows デベロッパー センターでリモート変数を含むプロジェクトを作成する
+1. <span data-ttu-id="320cd-114">[デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。</span><span class="sxs-lookup"><span data-stu-id="320cd-114">Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).</span></span>
+2. <span data-ttu-id="320cd-115">実験の作成に使用するアプリが既にデベロッパー センターにある場合は、ダッシュボードでそのアプリを選択します。</span><span class="sxs-lookup"><span data-stu-id="320cd-115">If you already have an app in Dev Center that you want to use to create an experiment, select that app in your dashboard.</span></span> <span data-ttu-id="320cd-116">ダッシュボードにまだアプリがない場合は、[名前を予約して新しいアプリを作成](../publish/create-your-app-by-reserving-a-name.md)し、ダッシュボードでそのアプリを選択します。</span><span class="sxs-lookup"><span data-stu-id="320cd-116">If you do not yet have an app in your dashboard, [create a new app by reserving a name](../publish/create-your-app-by-reserving-a-name.md) and then select that app in your dashboard.</span></span>
+3. <span data-ttu-id="320cd-117">ナビゲーション ウィンドウで、**[サービス]** をクリックし、**[実験]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-117">In the navigation pane, click **Services** and then click **Experimentation**.</span></span>
+4. <span data-ttu-id="320cd-118">次のページの **[プロジェクト]** セクションで、**[新しいプロジェクト]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-118">In the **Projects** section of the next page, click the **New project** button.</span></span>
+5. <span data-ttu-id="320cd-119">**[新しいプロジェクト]** ページで、新しいプロジェクトの名前として「**Button Click Experiments**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-119">In the **New project** page, enter the name **Button Click Experiments** for your new project.</span></span>
+6. <span data-ttu-id="320cd-120">**[リモート変数]** セクションを展開し、**[変数の追加]** を 4 回クリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-120">Expand the **Remote variables** section and click **Add variable** four times.</span></span> <span data-ttu-id="320cd-121">これで、空の変数行が 4 行追加されます。</span><span class="sxs-lookup"><span data-stu-id="320cd-121">You should now have four empty variable rows.</span></span>
+  * <span data-ttu-id="320cd-122">最初の行で、変数名として「**buttonText**」と入力し、**[既定値]** 列に「**Grey Button**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-122">In the first row, type **buttonText** for the variable name and type **Grey Button** in the **Default value** column.</span></span>
+  * <span data-ttu-id="320cd-123">2 番目の行で、変数名として「**r**」と入力し、**[既定値]** 列に「**128**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-123">In the second row, type **r** for the variable name and type **128** in the **Default value** column.</span></span>
+  * <span data-ttu-id="320cd-124">3 番目の行で、変数名として「**g**」と入力し、**[既定値]** 列に「**128**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-124">In the third row, type **g** for the variable name and type **128** in the **Default value** column.</span></span>
+  * <span data-ttu-id="320cd-125">4 番目の行で、変数名として「**b**」と入力し、**[既定値]** 列に「**128**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-125">In the fourth row, type **b** for the variable name and type **128** in the **Default value** column.</span></span>
+7. <span data-ttu-id="320cd-126">**[保存]** をクリックし、**[SDK 統合]** セクションに表示される[プロジェクト ID](run-app-experiments-with-a-b-testing.md#terms) 値を書き留めます。</span><span class="sxs-lookup"><span data-stu-id="320cd-126">Click **Save** and make note of the [project ID](run-app-experiments-with-a-b-testing.md#terms) value that appears in the **SDK integration** section.</span></span> <span data-ttu-id="320cd-127">次のセクションでは、アプリのコードを更新し、コードでこの値を参照します。</span><span class="sxs-lookup"><span data-stu-id="320cd-127">In the next section, you will update your app code and reference this value in your code.</span></span>
 
-1. [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。
-2. 実験の作成に使用するアプリが既にデベロッパー センターにある場合は、ダッシュボードでそのアプリを選択します。 ダッシュボードにまだアプリがない場合は、[名前を予約して新しいアプリを作成](../publish/create-your-app-by-reserving-a-name.md)し、ダッシュボードでそのアプリを選択します。
-3. ナビゲーション ウィンドウで、**[サービス]** をクリックし、**[実験]** をクリックします。
-4. 次のページの **[プロジェクト]** セクションで、**[新しいプロジェクト]** ボタンをクリックします。
-5. **[新しいプロジェクト]** ページで、新しいプロジェクトの名前として「**Button Click Experiments**」と入力します。
-6. **[リモート変数]** セクションを展開し、**[変数の追加]** を 4 回クリックします。 これで、空の変数行が 4 行追加されます。
-  * 最初の行で、変数名として「**buttonText**」と入力し、**[既定値]** 列に「**Grey Button**」と入力します。
-  * 2 番目の行で、変数名として「**r**」と入力し、**[既定値]** 列に「**128**」と入力します。
-  * 3 番目の行で、変数名として「**g**」と入力し、**[既定値]** 列に「**128**」と入力します。
-  * 4 番目の行で、変数名として「**b**」と入力し、**[既定値]** 列に「**128**」と入力します。
-7. **[保存]** をクリックし、**[SDK 統合]** セクションに表示される[プロジェクト ID](run-app-experiments-with-a-b-testing.md#terms) 値を書き留めます。 次のセクションでは、アプリのコードを更新し、コードでこの値を参照します。
+## <a name="code-the-experiment-in-your-app"></a><span data-ttu-id="320cd-128">アプリで実験のコードを記述する</span><span class="sxs-lookup"><span data-stu-id="320cd-128">Code the experiment in your app</span></span>
 
-## <a name="code-the-experiment-in-your-app"></a>アプリで実験のコードを記述する
+1. <span data-ttu-id="320cd-129">Visual Studio で Visual c# を使用して新しいどこからでも Windows プラットフォーム プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="320cd-129">In Visual Studio, create a new Universal Windows Platform project using Visual C#.</span></span> <span data-ttu-id="320cd-130">プロジェクトに「**SampleExperiment**」という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="320cd-130">Name the project **SampleExperiment**.</span></span>
+2. <span data-ttu-id="320cd-131">ソリューション エクスプローラーで、プロジェクト ノードを展開し、**[参照設定]** を右クリックして **[参照の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-131">In Solution Explorer, expand your project node, right-click **References**, and click **Add Reference**.</span></span>
+3. <span data-ttu-id="320cd-132">**[参照マネージャー]** で、**[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-132">In **Reference Manager**, expand **Universal Windows** and click **Extensions**.</span></span>
+4. <span data-ttu-id="320cd-133">SDK の一覧で、**[Microsoft Engagement Framework]** の横にあるチェック ボックスをオンにして、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-133">In the list of SDKs, select the check box next to **Microsoft Engagement Framework** and click **OK**.</span></span>
+5. <span data-ttu-id="320cd-134">**ソリューション エクスプローラー**で、MainPage.xaml をダブルクリックして、アプリでメイン ページのデザイナーを開きます。</span><span class="sxs-lookup"><span data-stu-id="320cd-134">In **Solution Explorer**, double-click MainPage.xaml to open the designer for the main page in the app.</span></span>
+6. <span data-ttu-id="320cd-135">**[ツールボックス]** からページに**ボタン**をドラッグします。</span><span class="sxs-lookup"><span data-stu-id="320cd-135">Drag a **Button** from **Toolbox** to the page.</span></span>
+7. <span data-ttu-id="320cd-136">デザイナーでボタンをダブルクリックしてコード ファイルを開き、**Click** イベントのイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="320cd-136">Double-click the button on the designer to open the code file and add an event handler for the **Click** event.</span></span>  
+8. <span data-ttu-id="320cd-137">コード ファイルのすべての内容を次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="320cd-137">Replace the entire contents of the code file with the following code.</span></span> <span data-ttu-id="320cd-138">```projectId``` 変数を、前のセクションでデベロッパー センター ダッシュボードから取得した[プロジェクト ID](run-app-experiments-with-a-b-testing.md#terms) 値に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="320cd-138">Assign the ```projectId``` variable to the [project ID](run-app-experiments-with-a-b-testing.md#terms) value that you obtained from the Dev Center dashboard in the previous section.</span></span>
+    [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
-1. Visual Studio 2015 で、Visual C# を使用して新しいユニバーサル Windows プラットフォーム プロジェクトを作成します。 プロジェクトに「**SampleExperiment**」という名前を付けます。
-2. ソリューション エクスプローラーで、プロジェクト ノードを展開し、**[参照設定]** を右クリックして **[参照の追加]** をクリックします。
-3. **[参照マネージャー]** で、**[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。
-4. SDK の一覧で、**[Microsoft Engagement Framework]** の横にあるチェック ボックスをオンにして、**[OK]** をクリックします。
-5. **ソリューション エクスプローラー**で、MainPage.xaml をダブルクリックして、アプリでメイン ページのデザイナーを開きます。
-6. **[ツールボックス]** からページに**ボタン**をドラッグします。
-7. デザイナーでボタンをダブルクリックしてコード ファイルを開き、**Click** イベントのイベント ハンドラーを追加します。  
-8. コード ファイルのすべての内容を次のコードで置き換えます。 ```projectId``` 変数を、前のセクションでデベロッパー センター ダッシュボードから取得した[プロジェクト ID](run-app-experiments-with-a-b-testing.md#terms) 値に割り当てます。
+9. <span data-ttu-id="320cd-139">コード ファイルを保存して、プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="320cd-139">Save the code file and build the project.</span></span>
 
-  > [!div class="tabbedCodeSnippets"]
-  [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
+## <a name="create-the-experiment-in-windows-dev-center"></a><span data-ttu-id="320cd-140">Windows デベロッパー センターで実験を作成する</span><span class="sxs-lookup"><span data-stu-id="320cd-140">Create the experiment in Windows Dev Center</span></span>
 
-10. コード ファイルを保存して、プロジェクトをビルドします。
+1. <span data-ttu-id="320cd-141">Windows デベロッパー センター ダッシュボードの **Button Click Experiments** プロジェクト ページに戻ります。</span><span class="sxs-lookup"><span data-stu-id="320cd-141">Return to the **Button Click Experiments** project page in the Windows Dev Center dashboard.</span></span>
+2. <span data-ttu-id="320cd-142">**[Experiments]** セクションで、**[新しい実験]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-142">In the **Experiments** section, click the **New experiment** button.</span></span>
+3. <span data-ttu-id="320cd-143">**[実験の詳細]** セクションで、**[実験名]** フィールドに「**Optimize Button Clicks**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-143">In the **Experiment details** section, type the name **Optimize Button Clicks** in the **Experiment name** field.</span></span>
+4. <span data-ttu-id="320cd-144">**[ビュー イベント]** セクションで、**[ビュー イベント名]** フィールドに「**userViewedButton**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-144">In the **View event** section, type **userViewedButton** in the **View event name** field.</span></span> <span data-ttu-id="320cd-145">この名前が、前のセクションで追加したコードで記録したビュー イベント文字列と一致することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="320cd-145">Note that this name matches the view event string that you logged in the code you added in the previous section.</span></span>
+5. <span data-ttu-id="320cd-146">**[ゴールとコンバージョン イベント]** セクションで、次の値を入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-146">In the **Goals and conversion events** section, enter the following values:</span></span>
+  * <span data-ttu-id="320cd-147">**[Goal name]** (目標名) フィールドに「**Increase Button Clicks**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-147">In the **Goal name** field, type **Increase Button Clicks**.</span></span>
+  * <span data-ttu-id="320cd-148">**[コンバージョン イベント名]** フィールドに「**userClickedButton**」という名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-148">In the **Conversion event name** field, type the name **userClickedButton**.</span></span> <span data-ttu-id="320cd-149">この名前が、前のセクションで追加したコードで記録したコンバージョン イベント文字列と一致することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="320cd-149">Note that this name matches the conversion event string that you logged in the code you added in the previous section.</span></span>
+  * <span data-ttu-id="320cd-150">**[目標]** フィールドで、**[最大化]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="320cd-150">In the **Objective** field, choose **Maximize**.</span></span>
+6. <span data-ttu-id="320cd-151">**[リモート変数とバリエーション]** セクションで、バリエーションがアプリに均等に配分されるように **[均等に配布する]** チェック ボックスがオンになっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="320cd-151">In the **Remote variables and variations** section, confirm that the **Distribute equally** check box is selected so that the variations will be distributed equally to your app.</span></span>
+7. <span data-ttu-id="320cd-152">変数を実験に追加します。</span><span class="sxs-lookup"><span data-stu-id="320cd-152">Add variables to your experiment:</span></span>
+    1. <span data-ttu-id="320cd-153">ドロップダウン コントロールをクリックし、**[buttonText]** を選択して、**[変数の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-153">Click the drop-down control, choose **buttonText**, and click **Add variable**.</span></span> <span data-ttu-id="320cd-154">文字列 **Grey Button** が **[バリエーション A]** 列に自動的に表示されます (この値はプロジェクトの設定から派生します)。</span><span class="sxs-lookup"><span data-stu-id="320cd-154">The string **Grey Button** should automatically appear in the **Variation A** column (this value is derived from the project settings).</span></span> <span data-ttu-id="320cd-155">**[バリエーション B]** 列で、「**Blue Button**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-155">In the **Variation B** column, type **Blue Button**.</span></span>
+    2. <span data-ttu-id="320cd-156">もう一度ドロップダウン コントロールをクリックし、**[r]** を選択して、**[変数の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-156">Click the drop-down control again, choose **r**, and click **Add variable**.</span></span> <span data-ttu-id="320cd-157">文字列 **128** が **[バリエーション A]** 列に自動的に表示されます。</span><span class="sxs-lookup"><span data-stu-id="320cd-157">The string **128** should automatically appear in the **Variation A** column.</span></span> <span data-ttu-id="320cd-158">**[バリエーション B]** 列で、「**1**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-158">In the **Variation B** column, type **1**.</span></span>
+    3. <span data-ttu-id="320cd-159">もう一度ドロップダウン コントロールをクリックし、**[g]** を選択して、**[変数の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-159">Click the drop-down control again, choose **g**, and click **Add variable**.</span></span> <span data-ttu-id="320cd-160">文字列 **128** が **[バリエーション A]** 列に自動的に表示されます。</span><span class="sxs-lookup"><span data-stu-id="320cd-160">The string **128** should automatically appear in the **Variation A** column.</span></span> <span data-ttu-id="320cd-161">**[バリエーション B]** 列で、「**1**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-161">In the **Variation B** column, type **1**.</span></span>  
+    4. <span data-ttu-id="320cd-162">もう一度ドロップダウン コントロールをクリックし、**[b]** を選択して、**[変数の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-162">Click the drop-down control again, choose **b**, and click **Add variable**.</span></span> <span data-ttu-id="320cd-163">文字列 **128** が **[バリエーション A]** 列に自動的に表示されます。</span><span class="sxs-lookup"><span data-stu-id="320cd-163">The string **128** should automatically appear in the **Variation A** column.</span></span> <span data-ttu-id="320cd-164">**[バリエーション B]** 列で、「**255**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="320cd-164">In the **Variation B** column, type **255**.</span></span>  
+8. <span data-ttu-id="320cd-165">**[保存]** をクリックし、**[アクティブ化]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-165">Click **Save** and then click **Activate**.</span></span>
 
-## <a name="create-the-experiment-in-windows-dev-center"></a>Windows デベロッパー センターで実験を作成する
+> [!IMPORTANT]
+> <span data-ttu-id="320cd-166">実験の作成時に **[編集可能な実験]** チェック ボックスをオンにしていないと、実験をアクティブ化した後で実験のパラメーターを変更できなくなります。</span><span class="sxs-lookup"><span data-stu-id="320cd-166">After you activate an experiment, you can no longer modify the experiment parameters unless it you clicked the **Editable experiment** check box when you created the experiment.</span></span> <span data-ttu-id="320cd-167">通常は、アプリで実験のコードを記述してから実験をアクティブ化することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="320cd-167">Typically, we recommend that you code the experiment in your app before activating your experiment.</span></span>
 
-1. Windows デベロッパー センター ダッシュボードの **Button Click Experiments** プロジェクト ページに戻ります。
-2. **[Experiments]** セクションで、**[新しい実験]** ボタンをクリックします。
-5. **[実験の詳細]** セクションで、**[実験名]** フィールドに「**Optimize Button Clicks**」と入力します。
-6. **[ビュー イベント]** セクションで、**[ビュー イベント名]** フィールドに「**userViewedButton**」と入力します。 この名前が、前のセクションで追加したコードで記録したビュー イベント文字列と一致することに注意してください。
-7. **[ゴールとコンバージョン イベント]** セクションで、次の値を入力します。
-  * **[Goal name]** (目標名) フィールドに「**Increase Button Clicks**」と入力します。
-  * **[コンバージョン イベント名]** フィールドに「**userClickedButton**」という名前を入力します。 この名前が、前のセクションで追加したコードで記録したコンバージョン イベント文字列と一致することに注意してください。
-  * **[目標]** フィールドで、**[最大化]** を選択します。
-8. **[リモート変数とバリエーション]** セクションで、バリエーションがアプリに均等に配分されるように **[均等に配布する]** チェック ボックスがオンになっていることを確認します。
-9. 変数を実験に追加します。
-  9. ドロップダウン コントロールをクリックし、**[buttonText]** を選択して、**[変数の追加]** をクリックします。 文字列 **Grey Button** が **[バリエーション A]** 列に自動的に表示されます (この値はプロジェクトの設定から派生します)。 **[バリエーション B]** 列で、「**Blue Button**」と入力します。
-  9. もう一度ドロップダウン コントロールをクリックし、**[r]** を選択して、**[変数の追加]** をクリックします。 文字列 **128** が **[バリエーション A]** 列に自動的に表示されます。 **[バリエーション B]** 列で、「**1**」と入力します。
-  9. もう一度ドロップダウン コントロールをクリックし、**[g]** を選択して、**[変数の追加]** をクリックします。 文字列 **128** が **[バリエーション A]** 列に自動的に表示されます。 **[バリエーション B]** 列で、「**1**」と入力します。  
-  9. もう一度ドロップダウン コントロールをクリックし、**[b]** を選択して、**[変数の追加]** をクリックします。 文字列 **128** が **[バリエーション A]** 列に自動的に表示されます。 **[バリエーション B]** 列で、「**255**」と入力します。  
-10. **[保存]** をクリックし、**[アクティブ化]** をクリックします。
+## <a name="run-the-app-to-gather-experiment-data"></a><span data-ttu-id="320cd-168">アプリを実行して実験データを収集する</span><span class="sxs-lookup"><span data-stu-id="320cd-168">Run the app to gather experiment data</span></span>
 
-> **重要**&nbsp;&nbsp;実験をアクティブ化した後は、実験の作成時に **[編集可能な実験]** チェック ボックスをオンにしなかった限り、実験のパラメーターを変更できなくなります。 通常は、アプリで実験のコードを記述してから実験をアクティブ化することをお勧めします。
+1. <span data-ttu-id="320cd-169">前の手順で作成した **SampleExperiment** アプリを実行します。</span><span class="sxs-lookup"><span data-stu-id="320cd-169">Run the **SampleExperiment** app you created earlier.</span></span>
+2. <span data-ttu-id="320cd-170">灰色または青色のボタンが表示されることを確認します。</span><span class="sxs-lookup"><span data-stu-id="320cd-170">Confirm that you see either a grey or blue button.</span></span> <span data-ttu-id="320cd-171">ボタンをクリックしてアプリを閉じます。</span><span class="sxs-lookup"><span data-stu-id="320cd-171">Click the button and then close the app.</span></span>
+3. <span data-ttu-id="320cd-172">同じコンピューターで上記の手順を複数回繰り返して、同じボタンの色がアプリに表示されることを確認します。</span><span class="sxs-lookup"><span data-stu-id="320cd-172">Repeat the above steps several times on the same computer to confirm that your app shows the same button color.</span></span>
 
-## <a name="run-the-app-to-gather-experiment-data"></a>アプリを実行して実験データを収集する
+## <a name="review-the-results-and-complete-the-experiment"></a><span data-ttu-id="320cd-173">結果を確認して実験の実行を完了する</span><span class="sxs-lookup"><span data-stu-id="320cd-173">Review the results and complete the experiment</span></span>
 
-1. 前の手順で作成した **SampleExperiment** アプリを実行します。
-2. 灰色または青色のボタンが表示されることを確認します。 ボタンをクリックしてアプリを閉じます。
-3. 同じコンピューターで上記の手順を複数回繰り返して、同じボタンの色がアプリに表示されることを確認します。
+<span data-ttu-id="320cd-174">前のセクションの手順を完了して少なくとも数時間経ってから、次の手順に従って実験の実行結果を確認し、実験の実行を完了します。</span><span class="sxs-lookup"><span data-stu-id="320cd-174">Wait at least several hours after completing the previous section, and then follow these steps to review the results of your experiment and complete the experiment.</span></span>
 
-## <a name="review-the-results-and-complete-the-experiment"></a>結果を確認して試験的機能の実行を完了する
+> [!NOTE]
+> <span data-ttu-id="320cd-175">実験をアクティブ化するとすぐに、デベロッパー センターでは、実験のデータをログに記録するようにインストルメント化されたアプリからデータの収集が開始されます。</span><span class="sxs-lookup"><span data-stu-id="320cd-175">As soon as you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment.</span></span> <span data-ttu-id="320cd-176">ただし、実験のデータがダッシュボードに表示されるまでに数時間かかることがあります。</span><span class="sxs-lookup"><span data-stu-id="320cd-176">However, it can take several hours for experiment data to appear in the dashboard.</span></span>
 
-前のセクションの手順を完了して少なくとも数時間経ってから、次の手順に従って試験的機能の実行結果を確認し、試験的機能の実行を完了します。
+1. <span data-ttu-id="320cd-177">デベロッパー センターで、アプリの **[実験]** ページに戻ります。</span><span class="sxs-lookup"><span data-stu-id="320cd-177">In Dev Center, return to the **Experimentation** page for your app.</span></span>
+2. <span data-ttu-id="320cd-178">**[アクティブな実験]** セクションで、**[Optimize Button Clicks]** (ボタンのクリックを最適化) をクリックしてこの実験のページに移動します。</span><span class="sxs-lookup"><span data-stu-id="320cd-178">In the **Active experiments** section, click **Optimize Button Clicks** to go to the page for this experiment.</span></span>
+3. <span data-ttu-id="320cd-179">**[Results summary]** (結果の要約) セクションと **[Results details]** (結果の詳細) セクションに表示される結果が想定した結果と一致していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="320cd-179">Confirm that the results shown in the **Results summary** and **Results details** sections matches what you expect to see.</span></span> <span data-ttu-id="320cd-180">これらのセクションについて詳しくは、「[デベロッパー センター ダッシュボードで実験を管理する](manage-your-experiment.md#review-the-results-of-your-experiment)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="320cd-180">For more details about these sections, see [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md#review-the-results-of-your-experiment).</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="320cd-181">デベロッパー センターで報告されるのは、24 時間以内に発生した、各ユーザーの最初のコンバージョン イベントのみです。</span><span class="sxs-lookup"><span data-stu-id="320cd-181">Dev Center reports only the first conversion event for each user in a 24-hour time period.</span></span> <span data-ttu-id="320cd-182">ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。</span><span class="sxs-lookup"><span data-stu-id="320cd-182">If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported.</span></span> <span data-ttu-id="320cd-183">これは、多数のコンバージョン イベントを使用する単一のユーザーによって、サンプルのユーザー グループの実験の実行結果が歪曲されないようにすることを目的としています。</span><span class="sxs-lookup"><span data-stu-id="320cd-183">This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.</span></span>
 
-> **注:**&nbsp;&nbsp;実験をアクティブ化するとすぐに、デベロッパー センターでは、実験のデータをログに記録するようにインストルメント化されたアプリからデータの収集を開始します。 ただし、試験的機能のデータがダッシュボードに表示されるまでに数時間かかることがあります。
+4. <span data-ttu-id="320cd-184">これで、実験の実行を終了できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="320cd-184">Now you are ready to end the experiment.</span></span> <span data-ttu-id="320cd-185">**[Results summary]** (結果の要約) セクションの **[Variation B]** (バリエーション B) 列で、**[切り替え]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="320cd-185">In the **Results summary** section, in the **Variation B** column, click **Switch**.</span></span> <span data-ttu-id="320cd-186">これで、アプリのすべてのユーザーが青色のボタンに切り替えられます。</span><span class="sxs-lookup"><span data-stu-id="320cd-186">This switches all users of your app to the blue button.</span></span>
+5. <span data-ttu-id="320cd-187">**[OK]** をクリックして、実験の実行を終了することを確認します。</span><span class="sxs-lookup"><span data-stu-id="320cd-187">Click **OK** to confirm that you want to end the experiment.</span></span>
+6. <span data-ttu-id="320cd-188">前のセクションで作成した **SampleExperiment** アプリを実行します。</span><span class="sxs-lookup"><span data-stu-id="320cd-188">Run the **SampleExperiment** app you created in the previous section.</span></span>
+7. <span data-ttu-id="320cd-189">青色のボタンが表示されることを確認します。</span><span class="sxs-lookup"><span data-stu-id="320cd-189">Confirm that you see a blue button.</span></span> <span data-ttu-id="320cd-190">更新されたバリエーションの割り当てをアプリが受信するまでに、最大で 2 分かかる場合があります。</span><span class="sxs-lookup"><span data-stu-id="320cd-190">Note that it may take up to two minutes for your app to receive an updated variation assignment.</span></span>
 
-1. デベロッパー センターで、アプリの **[実験]** ページに戻ります。
-2. **[アクティブな実験]** セクションで、**[Optimize Button Clicks]** (ボタンのクリックを最適化) をクリックしてこの実験のページに移動します。
-3. **[Results summary]** (結果の要約) セクションと **[Results details]** (結果の詳細) セクションに表示される結果が想定した結果と一致していることを確認します。 これらのセクションについて詳しくは、「[デベロッパー センター ダッシュボードで試験的機能を管理する](manage-your-experiment.md#review-the-results-of-your-experiment)」をご覧ください。
+## <a name="related-topics"></a><span data-ttu-id="320cd-191">関連トピック</span><span class="sxs-lookup"><span data-stu-id="320cd-191">Related topics</span></span>
 
-  >**注:**&nbsp;&nbsp;デベロッパー センターで報告されるのは、24 時間以内に発生した、各ユーザーの最初のコンバージョン イベントのみです。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、多数のコンバージョン イベントを使用する単一のユーザーによって、サンプルのユーザー グループの試験的機能の実行結果が歪曲されないようにすることを目的としています。
-4. これで、試験的機能の実行を終了できるようになりました。 **[Results summary]** (結果の要約) セクションの **[Variation B]** (バリエーション B) 列で、**[切り替え]** をクリックします。 これで、アプリのすべてのユーザーが青色のボタンに切り替えられます。
-5. **[OK]** をクリックして、試験的機能の実行を終了することを確認します。
-6. 前のセクションで作成した **SampleExperiment** アプリを実行します。
-7. 青色のボタンが表示されることを確認します。 更新されたバリエーションの割り当てをアプリが受信するまでに、最大で 2 分かかる場合があります。
-
-## <a name="related-topics"></a>関連トピック
-
-* [プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [アプリの実験用のコードを記述する](code-your-experiment-in-your-app.md)
-* [デベロッパー センター ダッシュボードで実験を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
-* [デベロッパー センター ダッシュボードで実験を管理する](manage-your-experiment.md)
-* [A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)
-
+* [<span data-ttu-id="320cd-192">プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する</span><span class="sxs-lookup"><span data-stu-id="320cd-192">Create a project and define remote variables in the Dev Center dashboard</span></span>](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [<span data-ttu-id="320cd-193">アプリの実験用のコードを記述する</span><span class="sxs-lookup"><span data-stu-id="320cd-193">Code your app for experimentation</span></span>](code-your-experiment-in-your-app.md)
+* [<span data-ttu-id="320cd-194">デベロッパー センター ダッシュボードで実験を定義する</span><span class="sxs-lookup"><span data-stu-id="320cd-194">Define your experiment in the Dev Center dashboard</span></span>](define-your-experiment-in-the-dev-center-dashboard.md)
+* [<span data-ttu-id="320cd-195">デベロッパー センター ダッシュボードで実験を管理する</span><span class="sxs-lookup"><span data-stu-id="320cd-195">Manage your experiment in the Dev Center dashboard</span></span>](manage-your-experiment.md)
+* [<span data-ttu-id="320cd-196">A/B テストを使用してアプリの実験を実行する</span><span class="sxs-lookup"><span data-stu-id="320cd-196">Run app experiments with A/B testing</span></span>](run-app-experiments-with-a-b-testing.md)

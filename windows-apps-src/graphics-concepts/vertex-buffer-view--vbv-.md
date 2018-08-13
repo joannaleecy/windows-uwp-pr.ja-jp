@@ -1,28 +1,29 @@
 ---
-title: "頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)"
-description: "頂点バッファーには、頂点のリストのデータが保持されます。"
+title: 頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)
+description: 頂点バッファーには、頂点のリストのデータが保持されます。
 ms.assetid: 695115D2-9DA0-41F2-9416-33BFAB698129
 keywords:
-- "頂点バッファー ビュー (VBV)"
-author: PeterTurcan
-ms.author: pettur
+- 頂点バッファー ビュー (VBV)
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f32684b167b7582a646a7cfd47c606a9f382a4c4
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: da0b8e8841e7c9df88ea22ba637d7236090e7ee5
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044281"
 ---
+# <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a><span data-ttu-id="c94bf-104">頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)</span><span class="sxs-lookup"><span data-stu-id="c94bf-104">Vertex buffer view (VBV) and Index buffer view (IBV)</span></span>
 
-# <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a>頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)
 
+<span data-ttu-id="c94bf-105">頂点バッファーには、頂点のリストのデータが保持されます。</span><span class="sxs-lookup"><span data-stu-id="c94bf-105">A vertex buffer holds data for a list of vertices.</span></span> <span data-ttu-id="c94bf-106">各頂点のデータには、位置、色、法線ベクトル、テクスチャ座標などを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="c94bf-106">The data for each vertex can include position, color, normal vector, texture co-ordinates, and so on.</span></span> <span data-ttu-id="c94bf-107">インデックス バッファーには、頂点バッファーへの整数インデックス (オフセット) が保持されます。インデックス バッファーは、頂点の完全なリストのサブセットから成るオブジェクトを定義してレンダリングするために使われます。</span><span class="sxs-lookup"><span data-stu-id="c94bf-107">An index buffer holds integer indexes (offsets) into a vertex buffer, and is used to define and render an object made up of a subset of the full list of vertices.</span></span>
 
-頂点バッファーには、頂点のリストのデータが保持されます。 各頂点のデータには、位置、色、法線ベクトル、テクスチャ座標などを含めることができます。 インデックス バッファーには、頂点バッファーへの整数インデックス (オフセット) が保持されます。インデックス バッファーは、頂点の完全なリストのサブセットから成るオブジェクトを定義してレンダリングするために使われます。
-
-多くの場合、単独の頂点の定義はアプリケーションが独自に決定できます。たとえば、次のように定義することができます。
+<span data-ttu-id="c94bf-108">多くの場合、単独の頂点の定義はアプリケーションが独自に決定できます。たとえば、次のように定義することができます。</span><span class="sxs-lookup"><span data-stu-id="c94bf-108">The definition of a single vertex is often up to the application to define, such as:</span></span>
 
 ``` syntax
 struct CUSTOMVERTEX { 
@@ -33,17 +34,16 @@ struct CUSTOMVERTEX {
 }; 
 ```
 
-その後、CUSTOMVERTEX の定義は、頂点バッファーの作成時にグラフィックス ドライバーに渡されます。
+<span data-ttu-id="c94bf-109">その後、CUSTOMVERTEX の定義は、頂点バッファーの作成時にグラフィックス ドライバーに渡されます。</span><span class="sxs-lookup"><span data-stu-id="c94bf-109">The definition of CUSTOMVERTEX would then be passed to the graphics driver when creating vertex buffers.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="c94bf-110"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="c94bf-110"><span id="related-topics"></span>Related topics</span></span>
 
 
-[ビュー](views.md)
-
- 
+[<span data-ttu-id="c94bf-111">ビュー</span><span class="sxs-lookup"><span data-stu-id="c94bf-111">Views</span></span>](views.md)
 
  
 
+ 
 
 
 

@@ -1,7 +1,7 @@
 ---
 author: WilliamsJason
-title: "UWP を開発するときに Xbox One で Fiddler を使用する方法"
-description: "フリーウェアの Fiddler ツールを使って、UWP Xbox One 開発機でのネットワーク トラフィックを確認する方法について説明します。"
+title: UWP を開発するときに Xbox One で Fiddler を使用する方法
+description: フリーウェアの Fiddler ツールを使って、UWP Xbox One 開発機でのネットワーク トラフィックを確認する方法について説明します。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,79 +9,79 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: c7ebd56205db2674df5da6d64ecc9332aa96230e
-ms.lasthandoff: 02/08/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 6fe326f589b9255ad5bac902901faef06be3ffce
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "246560"
 ---
+# <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a><span data-ttu-id="ca4fd-104">UWP を開発するときに Xbox One で Fiddler を使用する方法</span><span class="sxs-lookup"><span data-stu-id="ca4fd-104">How to use Fiddler with Xbox One when developing for UWP</span></span>
 
-# <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>UWP を開発するときに Xbox One で Fiddler を使用する方法
+<span data-ttu-id="ca4fd-105">Fiddler は、Xbox One 開発機とインターネットの間のすべての HTTP および HTTPS トラフィックをログに記録する Web デバッグ プロキシです。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-105">Fiddler is a web debugging proxy which logs all HTTP and HTTPS traffic between your Xbox One dev kit and the Internet.</span></span> <span data-ttu-id="ca4fd-106">Fiddler を使って、Xbox サービスと証明書利用者 Web サービスとの間のトラフィックをログに記録し、Web サービスの呼び出しを確認してデバッグします。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-106">You will use it to log and inspect traffic to and from the Xbox services and relying party web services, to understand and debug web service calls.</span></span> 
 
-Fiddler は、Xbox One 開発機とインターネットの間のすべての HTTP および HTTPS トラフィックをログに記録する Web デバッグ プロキシです。 Fiddler を使って、Xbox サービスと証明書利用者 Web サービスとの間のトラフィックをログに記録し、Web サービスの呼び出しを確認してデバッグします。 
+<span data-ttu-id="ca4fd-107">通常の操作では、プロキシ経由で通信するコンソールは、プロキシによって通信内容が変更されるリスクがあり、プレイヤーによる不適切な行為が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-107">In normal operation, a console that communicates through a proxy is at risk of having its communications modified by the proxy, possibly allowing players to cheat.</span></span> <span data-ttu-id="ca4fd-108">そのため、コンソールはプロキシ経由の通信を許可しないように設計されています。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-108">Thus, consoles are designed to not allow communication through a proxy.</span></span> <span data-ttu-id="ca4fd-109">Xbox One 開発機で Fiddler を使うには、Fiddler プロキシの使用を許可するように、開発機で特別な構成手順を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-109">Using Fiddler with your Xbox One dev kit requires that you perform some special configuration steps on the dev kit to allow it to use the Fiddler proxy.</span></span> 
 
-通常の操作では、プロキシ経由で通信するコンソールは、プロキシによって通信内容が変更されるリスクがあり、プレイヤーによる不適切な行為が発生する可能性があります。 そのため、コンソールはプロキシ経由の通信を許可しないように設計されています。 Xbox One 開発機で Fiddler を使うには、Fiddler プロキシの使用を許可するように、開発機で特別な構成手順を実行する必要があります。 
+<span data-ttu-id="ca4fd-110">Fiddler はフリーウェアであり、[Fiddler の Web サイト](http://www.fiddler2.com/fiddler2/)からダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-110">Fiddler is freeware, and can be downloaded from the [Fiddler website](http://www.fiddler2.com/fiddler2/).</span></span> 
 
-Fiddler はフリーウェアであり、[Fiddler の Web サイト](http://www.fiddler2.com/fiddler2/)からダウンロードできます。 
+<span data-ttu-id="ca4fd-111">Fiddler は、コンソールで報告されるネットワーク ステータスに影響を与える場合があります。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-111">Fiddler can impact the network status reported by the console.</span></span> <span data-ttu-id="ca4fd-112">Fiddler を実行しているコンピューターからのアップストリーム接続が無効になっている場合、コンソールの認証の有効期限が切れるまで、コンソールでこの切断が検出されない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-112">If an upstream connection is disabled from the machine running Fiddler, the console may not detect this disconnection until the authentication of the console has expired.</span></span> <span data-ttu-id="ca4fd-113">Fiddler を使っている場合、Fiddler を使って切断をシミュレートするのではなく、必ずコンソールと Fiddler を実行しているコンピューターとの接続を切断してください。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-113">If you are using Fiddler, be sure to disconnect the connection between the console and the computer running Fiddler, rather than using Fiddler to simulate a disconnect.</span></span>
 
-Fiddler は、コンソールで報告されるネットワーク ステータスに影響を与える場合があります。 Fiddler を実行しているコンピューターからのアップストリーム接続が無効になっている場合、コンソールの認証の有効期限が切れるまで、コンソールでこの切断が検出されない可能性があります。 Fiddler を使っている場合、Fiddler を使って切断をシミュレートするのではなく、必ずコンソールと Fiddler を実行しているコンピューターとの接続を切断してください。
+### <a name="to-install-and-enable-fiddler-on-your-development-pc"></a><span data-ttu-id="ca4fd-114">開発用 PC に Fiddler をインストールして有効にするには</span><span class="sxs-lookup"><span data-stu-id="ca4fd-114">To install and enable Fiddler on your development PC</span></span>
+<span data-ttu-id="ca4fd-115">次の手順に従って、Fiddler をインストールし、有効にして、開発機からのトラフィックを監視します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-115">Follow these steps to install and enable Fiddler to monitor traffic from your dev kit:</span></span>
 
-### <a name="to-install-and-enable-fiddler-on-your-development-pc"></a>開発用 PC に Fiddler をインストールして有効にするには
-次の手順に従って、Fiddler をインストールし、有効にして、開発機からのトラフィックを監視します。
-
-1. [Fiddler の Web サイト](http://www.fiddler2.com/fiddler2/)に示されている手順に従って、開発用 PC に Fiddler をインストールします。 
-2. Fiddler を起動し、**[Tools]** メニューの **[Fiddler Options]** を選択します。 
-3. **[Connections]** タブを選択し、**[Allow remote computers to connect]** がオンになっていることを確認します。 
-4. **[OK]** をクリックして設定の変更を確認します。 ダイアログ ボックスが表示され、変更を有効にするには Fiddler を再起動する必要があり、ファイアウォールを手動で構成することが必要になる可能性があるというメッセージが表示されます。 このダイアログ ボックスで **[OK]** をクリックしますが、*まだ Fiddler を再起動しないでください*。
-5. リモート コンピューターに接続を許可するために必要なファイアウォール規則を構成します。 Windows ファイアウォール コントロール パネル アプレットを起動します。 **[詳細設定]**、**[受信の規則]** の順にクリックします。 "FiddlerProxy" という名前の規則を探し、右へスクロールして、この規則の各設定が次の表の設定と一致していることを確認します。
+1. <span data-ttu-id="ca4fd-116">[Fiddler の Web サイト](http://www.fiddler2.com/fiddler2/)に示されている手順に従って、開発用 PC に Fiddler をインストールします。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-116">Install Fiddler on your development PC, following the directions on the [Fiddler website](http://www.fiddler2.com/fiddler2/).</span></span> 
+2. <span data-ttu-id="ca4fd-117">Fiddler を起動し、**[Tools]** メニューの **[Fiddler Options]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-117">Launch Fiddler and select **Fiddler Options** from the **Tools** menu.</span></span> 
+3. <span data-ttu-id="ca4fd-118">**[Connections]** タブを選択し、**[Allow remote computers to connect]** がオンになっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-118">Select the **Connections** tab and ensure that **Allow remote computers to connect** is selected.</span></span> 
+4. <span data-ttu-id="ca4fd-119">**[OK]** をクリックして設定の変更を確認します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-119">Click **OK** to accept your change to the settings.</span></span> <span data-ttu-id="ca4fd-120">ダイアログ ボックスが表示され、変更を有効にするには Fiddler を再起動する必要があり、ファイアウォールを手動で構成することが必要になる可能性があるというメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-120">You will see a dialog box saying that Fiddler must be restarted for the change to take effect, and that you may need to configure your firewall manually.</span></span> <span data-ttu-id="ca4fd-121">このダイアログ ボックスで **[OK]** をクリックしますが、*まだ Fiddler を再起動しないでください*。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-121">Click **OK** on this dialog, but *do not restart Fiddler yet*.</span></span>
+5. <span data-ttu-id="ca4fd-122">リモート コンピューターに接続を許可するために必要なファイアウォール規則を構成します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-122">Configure the necessary firewall rule to allow remote computers to connect.</span></span> <span data-ttu-id="ca4fd-123">Windows ファイアウォール コントロール パネル アプレットを起動します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-123">Start the Windows Firewall Control Panel applet.</span></span> <span data-ttu-id="ca4fd-124">**[詳細設定]**、**[受信の規則]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-124">Click **Advanced Settings**, and then **Inbound Rule**.</span></span> <span data-ttu-id="ca4fd-125">"FiddlerProxy" という名前の規則を探し、右へスクロールして、この規則の各設定が次の表の設定と一致していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-125">Find the rule named "FiddlerProxy" and scroll to the right, verifying that each of the settings in the following table appears for that rule.</span></span>
   
-  | 設定           | 推奨値                |
+  | <span data-ttu-id="ca4fd-126">設定</span><span class="sxs-lookup"><span data-stu-id="ca4fd-126">Setting</span></span>           | <span data-ttu-id="ca4fd-127">推奨値</span><span class="sxs-lookup"><span data-stu-id="ca4fd-127">Preferred Value</span></span>                |
   | ----              | ----                           |
-  | 名前              | FiddlerProxy                   |
-  | グループ             | *値なし* |
-  | プロファイル           | すべて                            |
-  | 有効           | はい                            |
-  | 操作            | 許可                          |
-  | 優先          | いいえ                             |
-  | プログラム           | *Fiddler.exe へのパス*          |
-  | ローカル アドレス      | 任意                            |
-  | リモート アドレス     | 任意                            |
-  | プロトコル          | TCP                            |
-  | ローカル ポート         | 任意                            |
-  | リモート ポート        | 任意                            |
-  | 承認されているユーザー      | 任意                            |
-  | 承認されているコンピューター  | 任意                            |
+  | <span data-ttu-id="ca4fd-128">名前</span><span class="sxs-lookup"><span data-stu-id="ca4fd-128">Name</span></span>              | <span data-ttu-id="ca4fd-129">FiddlerProxy</span><span class="sxs-lookup"><span data-stu-id="ca4fd-129">FiddlerProxy</span></span>                   |
+  | <span data-ttu-id="ca4fd-130">グループ</span><span class="sxs-lookup"><span data-stu-id="ca4fd-130">Group</span></span>             | *<span data-ttu-id="ca4fd-131">値なし</span><span class="sxs-lookup"><span data-stu-id="ca4fd-131">No value</span></span>* |
+  | <span data-ttu-id="ca4fd-132">プロファイル</span><span class="sxs-lookup"><span data-stu-id="ca4fd-132">Profile</span></span>           | <span data-ttu-id="ca4fd-133">すべて</span><span class="sxs-lookup"><span data-stu-id="ca4fd-133">All</span></span>                            |
+  | <span data-ttu-id="ca4fd-134">有効</span><span class="sxs-lookup"><span data-stu-id="ca4fd-134">Enabled</span></span>           | <span data-ttu-id="ca4fd-135">はい</span><span class="sxs-lookup"><span data-stu-id="ca4fd-135">Yes</span></span>                            |
+  | <span data-ttu-id="ca4fd-136">操作</span><span class="sxs-lookup"><span data-stu-id="ca4fd-136">Action</span></span>            | <span data-ttu-id="ca4fd-137">許可</span><span class="sxs-lookup"><span data-stu-id="ca4fd-137">Allow</span></span>                          |
+  | <span data-ttu-id="ca4fd-138">優先</span><span class="sxs-lookup"><span data-stu-id="ca4fd-138">Override</span></span>          | <span data-ttu-id="ca4fd-139">いいえ</span><span class="sxs-lookup"><span data-stu-id="ca4fd-139">No</span></span>                             |
+  | <span data-ttu-id="ca4fd-140">プログラム</span><span class="sxs-lookup"><span data-stu-id="ca4fd-140">Program</span></span>           | *<span data-ttu-id="ca4fd-141">Fiddler.exe へのパス</span><span class="sxs-lookup"><span data-stu-id="ca4fd-141">Path to fiddler.exe</span></span>*          |
+  | <span data-ttu-id="ca4fd-142">ローカル アドレス</span><span class="sxs-lookup"><span data-stu-id="ca4fd-142">LocalAddress</span></span>      | <span data-ttu-id="ca4fd-143">任意</span><span class="sxs-lookup"><span data-stu-id="ca4fd-143">Any</span></span>                            |
+  | <span data-ttu-id="ca4fd-144">リモート アドレス</span><span class="sxs-lookup"><span data-stu-id="ca4fd-144">RemoteAddress</span></span>     | <span data-ttu-id="ca4fd-145">任意</span><span class="sxs-lookup"><span data-stu-id="ca4fd-145">Any</span></span>                            |
+  | <span data-ttu-id="ca4fd-146">プロトコル</span><span class="sxs-lookup"><span data-stu-id="ca4fd-146">Protocol</span></span>          | <span data-ttu-id="ca4fd-147">TCP</span><span class="sxs-lookup"><span data-stu-id="ca4fd-147">TCP</span></span>                            |
+  | <span data-ttu-id="ca4fd-148">ローカル ポート</span><span class="sxs-lookup"><span data-stu-id="ca4fd-148">LocalPort</span></span>         | <span data-ttu-id="ca4fd-149">任意</span><span class="sxs-lookup"><span data-stu-id="ca4fd-149">Any</span></span>                            |
+  | <span data-ttu-id="ca4fd-150">リモート ポート</span><span class="sxs-lookup"><span data-stu-id="ca4fd-150">RemotePort</span></span>        | <span data-ttu-id="ca4fd-151">任意</span><span class="sxs-lookup"><span data-stu-id="ca4fd-151">Any</span></span>                            |
+  | <span data-ttu-id="ca4fd-152">承認されているユーザー</span><span class="sxs-lookup"><span data-stu-id="ca4fd-152">AllowedUsers</span></span>      | <span data-ttu-id="ca4fd-153">任意</span><span class="sxs-lookup"><span data-stu-id="ca4fd-153">Any</span></span>                            |
+  | <span data-ttu-id="ca4fd-154">承認されているコンピューター</span><span class="sxs-lookup"><span data-stu-id="ca4fd-154">AllowedComputers</span></span>  | <span data-ttu-id="ca4fd-155">任意</span><span class="sxs-lookup"><span data-stu-id="ca4fd-155">Any</span></span>                            |
 
 
-6. 次の手順に従って、HTTPS トラフィックのキャプチャして暗号化を解除するように Fiddler を構成します。
-  1. 最適なパフォーマンスを実現するために、ボタン バーの **[Stream]** ボタンをクリックして、ストリーミング モードを使用するように Fiddler を設定します。
-  2. Fiddler の **[Tools]** メニューで、**[Fiddler Options]** を選んで **[HTTPS]** をクリックします。
-  3. **[Decrypt HTTPS traffic]** チェック ボックスをオンにします。 Windows で CA 証明書を信頼するかどうかを確認するダイアログ ボックスが表示された場合は、**[No]** をクリックします。
-  4. **[Export Root Certificate to Desktop]** をクリックします。
-7. Fiddler を終了して再起動します。
+6. <span data-ttu-id="ca4fd-156">次の手順に従って、HTTPS トラフィックのキャプチャして暗号化を解除するように Fiddler を構成します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-156">Configure Fiddler to capture and decrypt HTTPS traffic by doing the following:</span></span>
+  1. <span data-ttu-id="ca4fd-157">最適なパフォーマンスを実現するために、ボタン バーの **[Stream]** ボタンをクリックして、ストリーミング モードを使用するように Fiddler を設定します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-157">To enable best performance, set Fiddler to use Streaming Mode by clicking the **Stream** button on the button bar.</span></span>
+  2. <span data-ttu-id="ca4fd-158">Fiddler の **[Tools]** メニューで、**[Fiddler Options]** を選んで **[HTTPS]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-158">In the Fiddler **Tools** menu, select **Fiddler Options**, and then click **HTTPS**.</span></span>
+  3. <span data-ttu-id="ca4fd-159">**[Decrypt HTTPS traffic]** チェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-159">Select the **Decrypt HTTPS traffic** check box.</span></span> <span data-ttu-id="ca4fd-160">Windows で CA 証明書を信頼するかどうかを確認するダイアログ ボックスが表示された場合は、**[No]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-160">If a dialog box asks whether to configure Windows to trust the CA certificate, click **No**.</span></span>
+  4. <span data-ttu-id="ca4fd-161">**[Export Root Certificate to Desktop]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-161">Click **Export Root Certificate to Desktop**.</span></span>
+7. <span data-ttu-id="ca4fd-162">Fiddler を終了して再起動します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-162">Exit and restart Fiddler.</span></span>
 
-### <a name="to-configure-a-dev-kit-to-use-fiddler-as-its-proxy-to-the-internet"></a>インターネットへのプロキシとして Fiddler を使用するように開発機を構成するには
+### <a name="to-configure-a-dev-kit-to-use-fiddler-as-its-proxy-to-the-internet"></a><span data-ttu-id="ca4fd-163">インターネットへのプロキシとして Fiddler を使用するように開発機を構成するには</span><span class="sxs-lookup"><span data-stu-id="ca4fd-163">To configure a dev kit to use Fiddler as its proxy to the Internet</span></span>
 
-1. Xbox Device Portal の UI で**ネットワーク** ツールに移動します。
-2. デスクトップにエクスポートした Fiddler のルート証明書を参照します。 
-3. Fiddler を実行している開発用 PC の IP アドレスまたはホスト名を入力します。
-4. Fiddler がリッスンしているポート番号 (既定では、Fiddler はポート 8888 を使用) を入力します。 
-5. **[Enable]** をクリックします。 これにより、開発キットが再起動します。
+1. <span data-ttu-id="ca4fd-164">Xbox Device Portal の UI で**ネットワーク** ツールに移動します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-164">Navigate to the **Network** tool in the Xbox Device Portal UI.</span></span>
+2. <span data-ttu-id="ca4fd-165">デスクトップにエクスポートした Fiddler のルート証明書を参照します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-165">Browse for the Fiddler root certificate that you exported to the desktop.</span></span> 
+3. <span data-ttu-id="ca4fd-166">Fiddler を実行している開発用 PC の IP アドレスまたはホスト名を入力します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-166">Type the IP address or hostname of the development PC running Fiddler.</span></span>
+4. <span data-ttu-id="ca4fd-167">Fiddler がリッスンしているポート番号 (既定では、Fiddler はポート 8888 を使用) を入力します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-167">Type the port number where Fiddler is listening (by default, Fiddler uses port 8888).</span></span> 
+5. <span data-ttu-id="ca4fd-168">**[Enable]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-168">Click **Enable**.</span></span> <span data-ttu-id="ca4fd-169">これにより、開発キットが再起動します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-169">This will restart your dev kit.</span></span>
 
-### <a name="to-stop-using-fiddler"></a>Fiddler の使用を停止するには
-インターネットへのプロキシとしての Fiddler の使用を停止 (し、Fiddler による開発機のすべてのネットワーク トラフィックのトレースを停止) するには、次の操作を行います。
+### <a name="to-stop-using-fiddler"></a><span data-ttu-id="ca4fd-170">Fiddler の使用を停止するには</span><span class="sxs-lookup"><span data-stu-id="ca4fd-170">To stop using Fiddler</span></span>
+<span data-ttu-id="ca4fd-171">インターネットへのプロキシとしての Fiddler の使用を停止 (し、Fiddler による開発機のすべてのネットワーク トラフィックのトレースを停止) するには、次の操作を行います。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-171">To stop using Fiddler as a proxy to the Internet (and stop Fiddler from tracing all of the dev kit's network traffic), do the following:</span></span>
 
-1. Xbox Device Portal の UI で**ネットワーク** ツールに移動します。
-2. **[無効]** をクリックします。
+1. <span data-ttu-id="ca4fd-172">Xbox Device Portal の UI で**ネットワーク** ツールに移動します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-172">Navigate to the **Network** tool in the Xbox Device Portal UI.</span></span>
+2. <span data-ttu-id="ca4fd-173">**[無効]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-173">Click **Disable**.</span></span>
 
 > [!NOTE]
-> Fiddler がインストールされている各 PC では、異なる Fiddler ルート証明書を使用します。 開発機に Fiddler プロキシを提供するために、複数の PC を使用する可能性がある場合は、PC を切り替えたときに新しいルート証明書を選択する必要があります。 1 台の PC のみを使用している場合は、最初に Fiddler を有効にするときにのみルート証明書を選択する必要があります。 この場合も、IP アドレスとポートを指定する必要があります。
+> <span data-ttu-id="ca4fd-174">Fiddler がインストールされている各 PC では、異なる Fiddler ルート証明書を使用します。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-174">Each PC with Fiddler installed uses a different Fiddler root certificate.</span></span> <span data-ttu-id="ca4fd-175">開発機に Fiddler プロキシを提供するために、複数の PC を使用する可能性がある場合は、PC を切り替えたときに新しいルート証明書を選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-175">If you have more than one PC that might be used to provide a Fiddler proxy for your dev kit, you will need to select the new root certificate when switching between them.</span></span> <span data-ttu-id="ca4fd-176">1 台の PC のみを使用している場合は、最初に Fiddler を有効にするときにのみルート証明書を選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-176">If you are using only one PC, you need to select the root certificate only the first time you enable Fiddler.</span></span> <span data-ttu-id="ca4fd-177">この場合も、IP アドレスとポートを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ca4fd-177">You must still specify the IP address and port.</span></span>
 
-## <a name="see-also"></a>関連項目
-- [Fiddler 設定 API のリファレンス](wdp-fiddler-api.md)
-- [よく寄せられる質問](frequently-asked-questions.md)
-- [Xbox One の UWP](index.md)
-
+## <a name="see-also"></a><span data-ttu-id="ca4fd-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="ca4fd-178">See also</span></span>
+- [<span data-ttu-id="ca4fd-179">Fiddler 設定 API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="ca4fd-179">Fiddler settings API reference</span></span>](wdp-fiddler-api.md)
+- [<span data-ttu-id="ca4fd-180">よく寄せられる質問</span><span class="sxs-lookup"><span data-stu-id="ca4fd-180">Frequently asked questions</span></span>](frequently-asked-questions.md)
+- [<span data-ttu-id="ca4fd-181">Xbox One の UWP</span><span class="sxs-lookup"><span data-stu-id="ca4fd-181">UWP on Xbox One</span></span>](index.md)
 
 
 

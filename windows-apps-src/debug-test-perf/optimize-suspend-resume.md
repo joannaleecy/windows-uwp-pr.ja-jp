@@ -1,8 +1,8 @@
 ---
 author: jwmsft
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
-title: "中断/再開の最適化"
-description: "プロセス継続時間システムの使用を合理化することで、中断または終了の後効率的に再開されるユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
+title: 中断/再開の最適化
+description: プロセス継続時間システムの使用を合理化することで、中断または終了の後効率的に再開されるユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: f9e045c381fc6c51a769be31403114ad15cf06bd
 ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/14/2017
+ms.locfileid: "894686"
 ---
 # <a name="optimize-suspendresume"></a><span data-ttu-id="7051e-104">中断/再開の最適化</span><span class="sxs-lookup"><span data-stu-id="7051e-104">Optimize suspend/resume</span></span>
 

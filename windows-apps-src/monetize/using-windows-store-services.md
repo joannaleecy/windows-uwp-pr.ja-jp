@@ -1,34 +1,35 @@
 ---
 author: mcleanbyron
 ms.assetid: 9FCBAF2E-5419-4169-A17C-9C4058DCF909
-description: "Windows ストアでは、REST API を経由して呼び出すことができるいくつかのサービスを公開しています。これらのサービスを利用すると、お客様やお客様の組織の Windows デベロッパー センター アカウントに登録されているアプリの特定の種類のデータに、プログラムを使ってアクセスすることができます。"
-title: "Windows ストア サービス"
+description: Microsoft ストアに公開する、または自分の組織に登録されているアプリのデータの特定の種類にアクセスする REST Api を使って呼び出すことができるいくつかのサービス ' s Windows デベロッパー センター アカウント。
+title: Microsoft Store サービス
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ストア サービス"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 987d52022489f3ad1eabef047ee6114de448d4ec
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10, UWP, ストア サービス
+ms.localizationpriority: medium
+ms.openlocfilehash: b42a968bd6aff3acfffda180a45c8bcc15a564dc
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "565553"
 ---
+# <a name="microsoft-store-services"></a><span data-ttu-id="b347c-104">Microsoft Store サービス</span><span class="sxs-lookup"><span data-stu-id="b347c-104">Microsoft Store services</span></span>
 
-# <a name="windows-store-services"></a>Windows ストア サービス
+<span data-ttu-id="b347c-105">Microsoft ストアは、特定の種類のまたは組織の Windows デベロッパー センターのアカウントに登録されているアプリのデータにアクセスする REST Api を使って呼び出すことができるいくつかのサービスを公開します。</span><span class="sxs-lookup"><span data-stu-id="b347c-105">The Microsoft Store exposes several services that you can call via REST APIs to programmatically access certain types of data for apps that are registered to your or your organization's Windows Dev Center account.</span></span>
 
-Windows ストアでは、REST API を経由して呼び出すことができるいくつかのサービスを公開しています。これらのサービスを利用すると、お客様やお客様の組織の Windows デベロッパー センター アカウントに登録されているアプリの特定の種類のデータに、プログラムを使ってアクセスすることができます。
-
-## <a name="in-this-section"></a>このセクションの内容
+## <a name="in-this-section"></a><span data-ttu-id="b347c-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="b347c-106">In this section</span></span>
 
 
-| トピック            | 説明                 |
+| <span data-ttu-id="b347c-107">トピック</span><span class="sxs-lookup"><span data-stu-id="b347c-107">Topic</span></span>            | <span data-ttu-id="b347c-108">説明</span><span class="sxs-lookup"><span data-stu-id="b347c-108">Description</span></span>                 |
 |------------------|-----------------------------|
-| [分析データへのアクセス](access-analytics-data-using-windows-store-services.md) | "Windows ストア分析 API"** を使うと、アプリの分析データをプログラムで取得できます。 この API では、アプリおよびアドオン (アプリ内製品または IAP とも呼ばれます) の入手数、アプリのエラー、アプリの評価とレビューに関するデータや、アプリ内広告とプロモーション用広告キャンペーンに関するパフォーマンス データを取得できます。 |
-| [レビューへの返信](respond-to-reviews-using-windows-store-services.md) | ストアのアプリのレビューにプログラムで返信するには、"Windows ストア レビュー API"** を使用します。 この API は、Windows デベロッパー センター ダッシュボードを使わずに、多数のレビューに対して開発者がまとめて返信する場合に特に便利です。  |
-| [広告キャンペーンの実行](run-ad-campaigns-using-windows-store-services.md) | "Windows ストア プロモーション API"** を使うと、アプリのプロモーション用広告キャンペーンをプログラムで管理できます。 この API では、キャンペーンとその他の関連アセット (ターゲット設定やクリエイティブなど) を作成、更新、監視できます。 この API は、大量のキャンペーンを作成する開発者や、Windows デベロッパー センター ダッシュボードを使わずにキャンペーンを作成する必要がある開発者に特に便利です。 |
-| [申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md) | "Windows ストア申請 API"** を使うと、自分または自分の組織の Windows デベロッパー センター アカウントに対して、アプリ、アドオン、パッケージ フライトの申請をプログラムで照会したり作成したりできます。 この API は、アカウントで多数のアプリやアドオンを管理していて、それらのアセットの申請プロセスを自動化して最適化する必要がある場合に役立ちます。 |
-| [サービスによる製品の権利の管理](view-and-grant-products-from-a-service.md)  | ストアに登録されているアプリとアドオンのカタログがある場合は、"Windows ストア コレクション API"** と "Windows ストア購入 API"** を使って、サービスからこれらの製品の所有権情報にアクセスしたり、コンシューマブルな製品をユーザーに対してフルフィルメント完了として報告したり、無料の製品の権利をユーザーに付与したりできます。  |
-| [広告ネットワーク用のアプリのメタデータ API](app-metadata-api-for-advertising-networks.md)  | 広告ネットワークでは、この API を使用してプログラムで Windows ストア内のアプリに関するメタデータを取得できます。これには、アプリのストア登録情報の説明とカテゴリ、アプリが 13 歳未満の子供を対象とするかどうかなどの詳細が含まれます。 この API へのアクセスは、現在、Microsoft によってアクセス許可が付与されている開発者に制限されています。  |
-
+| [<span data-ttu-id="b347c-109">分析データへのアクセス</span><span class="sxs-lookup"><span data-stu-id="b347c-109">Access analytics data</span></span>](access-analytics-data-using-windows-store-services.md) | <span data-ttu-id="b347c-110">プログラムを使用して、アプリのデータを分析を取得するのにには、 *Microsoft ストア分析 API*を使用します。</span><span class="sxs-lookup"><span data-stu-id="b347c-110">Use the *Microsoft Store analytics API* to programmatically retrieve analytics data for your apps.</span></span> <span data-ttu-id="b347c-111">この API では、アプリおよびアドオン (アプリ内製品または IAP とも呼ばれます) の入手数、アプリのエラー、アプリの評価とレビューに関するデータや、アプリ内広告とプロモーション用広告キャンペーンに関するパフォーマンス データを取得できます。</span><span class="sxs-lookup"><span data-stu-id="b347c-111">This API enables you to retrieve data for app and add-on (also known as in-app product or IAP) acquisitions, app failures, app ratings and reviews, and performance data for in-app ads and promotional ad campaigns.</span></span> |
+| [<span data-ttu-id="b347c-112">レビューへの返信</span><span class="sxs-lookup"><span data-stu-id="b347c-112">Respond to reviews</span></span>](respond-to-reviews-using-windows-store-services.md) | <span data-ttu-id="b347c-113">Store のアプリのレビューにプログラムで返信するには、*Microsoft Store レビュー API* を使います。</span><span class="sxs-lookup"><span data-stu-id="b347c-113">Use the *Microsoft Store reviews API* to programmatically respond to reviews of your app in the Store.</span></span> <span data-ttu-id="b347c-114">この API は、Windows デベロッパー センター ダッシュボードを使わずに、多数のレビューに対して開発者がまとめて返信する場合に特に便利です。</span><span class="sxs-lookup"><span data-stu-id="b347c-114">This API is especially useful for developers who want to bulk respond to many reviews without using the Windows Dev Center dashboard.</span></span>  |
+| [<span data-ttu-id="b347c-115">広告キャンペーンの実行</span><span class="sxs-lookup"><span data-stu-id="b347c-115">Run ad campaigns</span></span>](run-ad-campaigns-using-windows-store-services.md) | <span data-ttu-id="b347c-116">プログラムを使用してアプリの広告のプロモーション キャンペーンを管理するのにには、 *Microsoft ストア プロモーション API*を使用します。</span><span class="sxs-lookup"><span data-stu-id="b347c-116">Use the *Microsoft Store promotions API* to programmatically manage promotional ad campaigns for your apps.</span></span> <span data-ttu-id="b347c-117">この API では、キャンペーンとその他の関連アセット (ターゲット設定やクリエイティブなど) を作成、更新、監視できます。</span><span class="sxs-lookup"><span data-stu-id="b347c-117">This API enables you to create, update and monitor your campaigns and other related assets such as targeting and creatives.</span></span> <span data-ttu-id="b347c-118">この API は、大量のキャンペーンを作成する開発者や、Windows デベロッパー センター ダッシュボードを使わずにキャンペーンを作成する必要がある開発者に特に便利です。</span><span class="sxs-lookup"><span data-stu-id="b347c-118">This API is especially useful for developers who create large volumes of campaigns, and who want do so without using the Windows Dev Center dashboard.</span></span> |
+| [<span data-ttu-id="b347c-119">申請の作成と管理</span><span class="sxs-lookup"><span data-stu-id="b347c-119">Create and manage submissions</span></span>](create-and-manage-submissions-using-windows-store-services.md) | <span data-ttu-id="b347c-120">*Microsoft Store 申請 API* を使うと、自分または自分の組織の Windows デベロッパー センター アカウントに対して、アプリ、アドオン、パッケージ フライトの申請をプログラムで照会したり作成したりできます。</span><span class="sxs-lookup"><span data-stu-id="b347c-120">Use the *Microsoft Store submission API* to programmatically query and create submissions for apps, add-ons and package flights for your or your organization's Windows Dev Center account.</span></span> <span data-ttu-id="b347c-121">この API は、アカウントで多数のアプリやアドオンを管理しており、こうしたアセットの申請プロセスを自動化および最適化する場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="b347c-121">This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets.</span></span> |
+| [<span data-ttu-id="b347c-122">対象のプランを管理する</span><span class="sxs-lookup"><span data-stu-id="b347c-122">Manage targeted offers</span></span> ](manage-targeted-offers-using-windows-store-services.md) | <span data-ttu-id="b347c-123">プログラムを使用して、アプリのアドオンの購入の成功に関連付けられているプランを対象となるを要求の*対象となる Microsoft ストアは、API*を使用します。</span><span class="sxs-lookup"><span data-stu-id="b347c-123">Use the *Microsoft Store targeted offers API* to programmatically claim a targeted offer that is associated with the successful purchase of an add-on in your app.</span></span> |
+| [<span data-ttu-id="b347c-124">サービスから製品の権利を管理する</span><span class="sxs-lookup"><span data-stu-id="b347c-124">Manage product entitlements from a service</span></span>](view-and-grant-products-from-a-service.md)  | <span data-ttu-id="b347c-125">ストアのアプリとアドオンのカタログをした場合は、 *Microsoft ストア コレクション API*および使用*Microsoft ストア購入 API*所有権情報にアクセスしてこれらの製品、サービスから、満たさ消耗品のレポートユーザーと、利用資格の無料の製品をユーザーに許可を付与します。</span><span class="sxs-lookup"><span data-stu-id="b347c-125">If you have a catalog of apps and add-ons in the Store, you can use the *Microsoft Store collection API* and *Microsoft Store purchase API* to access ownership information for these products from your services, report a consumable product as fulfilled for a user, and grant an entitlement for a free product to a user.</span></span>  |
+| [<span data-ttu-id="b347c-126">広告ネットワーク用のアプリのメタデータ API</span><span class="sxs-lookup"><span data-stu-id="b347c-126">App metadata API for advertising networks</span></span>](app-metadata-api-for-advertising-networks.md)  | <span data-ttu-id="b347c-127">ネットワークの広告プログラムを使用して、説明と、ストア一覧については、アプリ、および [13 の子にアプリを対象とするかどうかのカテゴリなどの詳細を含む、Microsoft ストア内のアプリに関するメタデータを取得するのにこの API を使用できます。</span><span class="sxs-lookup"><span data-stu-id="b347c-127">Advertising networks can use this API to programmatically retrieve metadata about apps in the Microsoft Store, including details such as the description and category for the Store listing of the app and whether the app is targeted to children under 13.</span></span> <span data-ttu-id="b347c-128">この API へのアクセスは、現在、Microsoft によってアクセス許可が付与されている開発者に制限されています。</span><span class="sxs-lookup"><span data-stu-id="b347c-128">Access to this API is currently restricted to developers who are granted permission by Microsoft.</span></span>  |

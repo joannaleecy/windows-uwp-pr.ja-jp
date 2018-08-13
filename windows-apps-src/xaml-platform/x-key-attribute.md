@@ -1,7 +1,7 @@
 ---
 author: jwmsft
-description: "リソースとして作成されて参照される、ResourceDictionary 内に存在する要素を一意に識別します。"
-title: "xKey 属性"
+description: リソースとして作成されて参照される、ResourceDictionary 内に存在する要素を一意に識別します。
+title: xKey 属性
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ms.author: jimwalk
 ms.date: 02/08/2017
@@ -9,20 +9,19 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 67b2b3b60ab6faba5ca30bb585205aba007597ca
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4b76c16d276af295a1b2eed292ebeffc56b2e604
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "246498"
 ---
+# <a name="xkey-attribute"></a><span data-ttu-id="2f68a-104">x:Key 属性</span><span class="sxs-lookup"><span data-stu-id="2f68a-104">x:Key attribute</span></span>
 
-# <a name="xkey-attribute"></a>x:Key 属性
+<span data-ttu-id="2f68a-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="2f68a-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="2f68a-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]</span><span class="sxs-lookup"><span data-stu-id="2f68a-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="2f68a-107">リソースとして作成されて参照される、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内に存在する要素を一意に識別します。</span><span class="sxs-lookup"><span data-stu-id="2f68a-107">Uniquely identifies elements that are created and referenced as resources, and which exist within a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).</span></span>
 
-リソースとして作成されて参照される、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内に存在する要素を一意に識別します。
-
-## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a><span data-ttu-id="2f68a-108">XAML 属性の使用方法</span><span class="sxs-lookup"><span data-stu-id="2f68a-108">XAML attribute usage</span></span>
 
 ``` syntax
 <ResourceDictionary>
@@ -30,7 +29,7 @@ ms.lasthandoff: 02/07/2017
 </ResourceDictionary>
 ```
 
-## <a name="xaml-attribute-usage-implicit-resourcedictionary"></a>XAML 属性の使用方法 (暗黙的な **ResourceDictionary**)
+## <a name="xaml-attribute-usage-implicit-resourcedictionary"></a><span data-ttu-id="2f68a-109">XAML 属性の使用方法 (暗黙的な **ResourceDictionary**)</span><span class="sxs-lookup"><span data-stu-id="2f68a-109">XAML attribute usage (implicit **ResourceDictionary**)</span></span>
 
 ``` syntax
 <object.Resources>
@@ -38,16 +37,16 @@ ms.lasthandoff: 02/07/2017
 </object.Resources>
 ```
 
-## <a name="xaml-values"></a>XAML 値
+## <a name="xaml-values"></a><span data-ttu-id="2f68a-110">XAML 値</span><span class="sxs-lookup"><span data-stu-id="2f68a-110">XAML values</span></span>
 
-| 用語 | 説明 |
+| <span data-ttu-id="2f68a-111">用語</span><span class="sxs-lookup"><span data-stu-id="2f68a-111">Term</span></span> | <span data-ttu-id="2f68a-112">説明</span><span class="sxs-lookup"><span data-stu-id="2f68a-112">Description</span></span> |
 |------|-------------|
-| object | 共有可能な任意のオブジェクト。 「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。 |
-| stringKeyValue | _XamlName_> の文法に準拠する必要がある、キーとして使われる実際の文字列。 以下の「XamlName の文法」をご覧ください。 | 
+| <span data-ttu-id="2f68a-113">object</span><span class="sxs-lookup"><span data-stu-id="2f68a-113">object</span></span> | <span data-ttu-id="2f68a-114">共有可能な任意のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="2f68a-114">Any object that is shareable.</span></span> <span data-ttu-id="2f68a-115">「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2f68a-115">See [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).</span></span> |
+| <span data-ttu-id="2f68a-116">stringKeyValue</span><span class="sxs-lookup"><span data-stu-id="2f68a-116">stringKeyValue</span></span> | <span data-ttu-id="2f68a-117">_XamlName_> の文法に準拠する必要がある、キーとして使われる実際の文字列。</span><span class="sxs-lookup"><span data-stu-id="2f68a-117">A true string used as a key, which must conform to the _XamlName_> grammar.</span></span> <span data-ttu-id="2f68a-118">以下の「XamlName の文法」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2f68a-118">See "XamlName grammar" below.</span></span> | 
 
-##  <a name="xamlname-grammar"></a>XamlName の文法
+##  <a name="xamlname-grammar"></a><span data-ttu-id="2f68a-119">XamlName の文法</span><span class="sxs-lookup"><span data-stu-id="2f68a-119">XamlName grammar</span></span>
 
-ユニバーサル Windows プラットフォーム (UWP) の XAML 実装でキーとして使われる文字列の規範となる文法を次に示します。
+<span data-ttu-id="2f68a-120">ユニバーサル Windows プラットフォーム (UWP) の XAML 実装でキーとして使われる文字列の規範となる文法を次に示します。</span><span class="sxs-lookup"><span data-stu-id="2f68a-120">The following is the normative grammar for a string that is used as a key in the Universal Windows Platform (UWP) XAML implementation:</span></span>
 
 ``` syntax
 XamlName ::= NameStartChar (NameChar)*
@@ -58,20 +57,19 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   文字は下位の ASCII の範囲 (具体的には、英文字の大文字と小文字、数字、アンダースコア (\_) 文字) に制限されています。
--   Unicode 文字範囲はサポートされていません。
--   名前の先頭を数字にすることはできません。
+-   <span data-ttu-id="2f68a-121">文字は下位の ASCII の範囲 (具体的には、英文字の大文字と小文字、数字、アンダースコア (\_) 文字) に制限されています。</span><span class="sxs-lookup"><span data-stu-id="2f68a-121">Characters are restricted to the lower ASCII range, and more specifically to Roman alphabet uppercase and lowercase letters, digits, and the underscore (\_) character.</span></span>
+-   <span data-ttu-id="2f68a-122">Unicode 文字範囲はサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="2f68a-122">The Unicode character range is not supported.</span></span>
+-   <span data-ttu-id="2f68a-123">名前の先頭を数字にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="2f68a-123">A name cannot begin with a digit.</span></span>
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a><span data-ttu-id="2f68a-124">注釈</span><span class="sxs-lookup"><span data-stu-id="2f68a-124">Remarks</span></span>
 
-通常、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の子要素は、そのディクショナリ内の一意のキー値を指定する **x:Key** 属性を含みます。 キーは、読み込み時に XAML プロセッサによって一意であることが要求されます。 **x:Key** 値が一意でない場合は、XAML の解析で例外が発生します。 [{StaticResource} マークアップ拡張](staticresource-markup-extension.md)によって要求された場合、解決されていないキーも XAML の解析での例外の原因になります。
+<span data-ttu-id="2f68a-125">通常、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の子要素は、そのディクショナリ内の一意のキー値を指定する **x:Key** 属性を含みます。</span><span class="sxs-lookup"><span data-stu-id="2f68a-125">Child elements of a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) generally include an **x:Key** attribute that specifies a unique key value within that dictionary.</span></span> <span data-ttu-id="2f68a-126">キーは、読み込み時に XAML プロセッサによって一意であることが要求されます。</span><span class="sxs-lookup"><span data-stu-id="2f68a-126">Key uniqueness is enforced at load time by the XAML processor.</span></span> <span data-ttu-id="2f68a-127">**x:Key** 値が一意でない場合は、XAML の解析で例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="2f68a-127">Non-unique **x:Key** values will result in XAML parse exceptions.</span></span> <span data-ttu-id="2f68a-128">[{StaticResource} マークアップ拡張](staticresource-markup-extension.md)によって要求された場合、解決されていないキーも XAML の解析での例外の原因になります。</span><span class="sxs-lookup"><span data-stu-id="2f68a-128">If requested by [{StaticResource} markup extension](staticresource-markup-extension.md), a non-resolved key will also result in XAML parse exceptions.</span></span>
 
-**x:Key** と [x:Name](x-name-attribute.md) は同じ概念ではありません。 **x:Key** はリソース ディクショナリだけで使われます。 x:Name は、すべての XAML 領域で使われます。 キー値を使って [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した場合、キーを持つリソースは取得されません。 リソース ディクショナリで定義されているオブジェクトは、**x:Key** と **x:Name** のどちらか一方または両方を持つことができます。 キーと名前が一致する必要はありません。
+<span data-ttu-id="2f68a-129">**x:Key** と [x:Name](x-name-attribute.md) は同じ概念ではありません。</span><span class="sxs-lookup"><span data-stu-id="2f68a-129">**x:Key** and [x:Name](x-name-attribute.md) are not identical concepts.</span></span> <span data-ttu-id="2f68a-130">**x:Key** はリソース ディクショナリだけで使われます。</span><span class="sxs-lookup"><span data-stu-id="2f68a-130">**x:Key** is used exclusively in resource dictionaries.</span></span> <span data-ttu-id="2f68a-131">x:Name は、すべての XAML 領域で使われます。</span><span class="sxs-lookup"><span data-stu-id="2f68a-131">x:Name is used for all areas of XAML.</span></span> <span data-ttu-id="2f68a-132">キー値を使って [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した場合、キーを持つリソースは取得されません。</span><span class="sxs-lookup"><span data-stu-id="2f68a-132">A [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) call using a key value will not retrieve a keyed resource.</span></span> <span data-ttu-id="2f68a-133">リソース ディクショナリで定義されているオブジェクトは、**x:Key** と **x:Name** のどちらか一方または両方を持つことができます。</span><span class="sxs-lookup"><span data-stu-id="2f68a-133">Objects defined in a resource dictionary may have an **x:Key**, an **x:Name** or both.</span></span> <span data-ttu-id="2f68a-134">キーと名前が一致する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="2f68a-134">The key and name are not required to match.</span></span>
 
-ここに示す暗黙的な構文において、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) オブジェクトは XAML プロセッサが [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) コレクションを取得するための新しいオブジェクトを生成する方法を暗黙的に決定することに注意してください。
+<span data-ttu-id="2f68a-135">ここに示す暗黙的な構文において、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) オブジェクトは XAML プロセッサが [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) コレクションを取得するための新しいオブジェクトを生成する方法を暗黙的に決定することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="2f68a-135">Note that in the implicit syntax shown, the [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) object is implicit in how the XAML processor produces a new object to populate a [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) collection.</span></span>
 
-**x:Key** の指定に相当するコードは、基になる [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) でキーを使う任意の操作です。 たとえば、あるリソースのマークアップで適用される **x:Key** は、リソースを **ResourceDictionary** に追加するときの **Insert** の *key* パラメーターの値と同じです。
+<span data-ttu-id="2f68a-136">**x:Key** の指定に相当するコードは、基になる [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) でキーを使う任意の操作です。</span><span class="sxs-lookup"><span data-stu-id="2f68a-136">The code equivalent of specifying **x:Key** is any operation that uses a key with the underlying [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).</span></span> <span data-ttu-id="2f68a-137">たとえば、あるリソースのマークアップで適用される **x:Key** は、リソースを **ResourceDictionary** に追加するときの **Insert** の *key* パラメーターの値と同じです。</span><span class="sxs-lookup"><span data-stu-id="2f68a-137">For example, an **x:Key** applied in markup for a resource is equivalent to the value of the *key* parameter of **Insert** when you add the resource to a **ResourceDictionary**.</span></span>
 
-リソース ディクショナリ内の項目は、ターゲットとなる [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) または [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) である場合、**x:Key** の値を省略できます。どちらの場合も、リソース項目の暗黙的なキーは、文字列として解釈される **TargetType** 値です。 詳しくは、「[クイック スタート: コントロールのスタイル (JavaScript と HTML を使った Windows ストア アプリ)](https://msdn.microsoft.com/library/windows/apps/hh465498)」と「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。
-
+<span data-ttu-id="2f68a-138">リソース ディクショナリ内の項目は、ターゲットとなる [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) または [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) である場合、**x:Key** の値を省略できます。どちらの場合も、リソース項目の暗黙的なキーは、文字列として解釈される **TargetType** 値です。</span><span class="sxs-lookup"><span data-stu-id="2f68a-138">An item in a resource dictionary can omit a value for **x:Key** if it is a targeted [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) or [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391); in each of these cases the implicit key of the resource item is the **TargetType** value interpreted as a string.</span></span> <span data-ttu-id="2f68a-139">詳しくは、「[クイック スタート: コントロールのスタイル (JavaScript と HTML を使った Windows ストア アプリ)](https://msdn.microsoft.com/library/windows/apps/hh465498)」と「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2f68a-139">For more info, see [Quickstart: styling controls](https://msdn.microsoft.com/library/windows/apps/hh465498) and [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).</span></span>
 

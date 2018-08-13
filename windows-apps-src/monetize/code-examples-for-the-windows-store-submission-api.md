@@ -1,19 +1,20 @@
 ---
 author: mcleanbyron
 ms.assetid: 14C23FE6-3EAF-445E-85C1-DF188A7822CA
-description: "このセクションのコード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
-title: "申請 API 用のコード例"
+description: このセクションのコード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。
+title: 申請 API 用のコード例
 ms.author: mcleans
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows ストア申請 API, コード例"
+keywords: Windows 10, UWP, Windows ストア申請 API, コード例
 ms.openlocfilehash: c5344667922a7445ad7694f36a542b3ff35c4bdb
 ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/11/2017
+ms.locfileid: "772305"
 ---
 # <a name="code-examples-for-the-submission-api"></a><span data-ttu-id="253c8-104">申請 API 用のコード例</span><span class="sxs-lookup"><span data-stu-id="253c8-104">Code examples for the submission API</span></span>
 

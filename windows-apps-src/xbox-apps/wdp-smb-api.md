@@ -1,7 +1,7 @@
 ---
 author: payzer
-title: "Device Portal の SMB API のリファレンス"
-description: "SMB API にプログラムでアクセスする方法について説明します。"
+title: Device Portal の SMB API のリファレンス
+description: SMB API にプログラムでアクセスする方法について説明します。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,55 +9,53 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: fc52bd3d326a20d0b561ad06b9f4245e7b557f82
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1bc02780808d5b9fca09576165f428eca1cce715
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "244524"
 ---
+# <a name="developer-folder-api-reference"></a><span data-ttu-id="19eec-104">開発者向けフォルダー API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="19eec-104">Developer folder API reference</span></span>   
+<span data-ttu-id="19eec-105">標準的なエクスプローラーを使って、Xbox One の開発に関連するファイルにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="19eec-105">You can access development-related files on your Xbox One using a standard file explorer.</span></span> <span data-ttu-id="19eec-106">これにより、ファイルを簡単に表示したり、PC から本体に置き換えることができます。</span><span class="sxs-lookup"><span data-stu-id="19eec-106">This allows you to easily view and replace files from your PC to the console.</span></span>
 
-# <a name="developer-folder-api-reference"></a>開発者向けフォルダー API のリファレンス   
-標準的なエクスプローラーを使って、Xbox One の開発に関連するファイルにアクセスできます。 これにより、ファイルを簡単に表示したり、PC から本体に置き換えることができます。
+**<span data-ttu-id="19eec-107">要求</span><span class="sxs-lookup"><span data-stu-id="19eec-107">Request</span></span>**
 
-**要求**
+<span data-ttu-id="19eec-108">次の要求を使用して、開発者向けフォルダーにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="19eec-108">You can access the developer folder using the following request.</span></span> <span data-ttu-id="19eec-109">要求によって次の情報が返されます。</span><span class="sxs-lookup"><span data-stu-id="19eec-109">The request will return:</span></span>    
+* <span data-ttu-id="19eec-110">ファイル共有の場所。</span><span class="sxs-lookup"><span data-stu-id="19eec-110">The location of the file share.</span></span> <span data-ttu-id="19eec-111">この場所は、エクスプローラーのアドレス バーに入力できます。</span><span class="sxs-lookup"><span data-stu-id="19eec-111">This location can be entered into the address bar in a file explorer.</span></span>
+* <span data-ttu-id="19eec-112">ファイル共有へのアクセスで使うユーザー名。</span><span class="sxs-lookup"><span data-stu-id="19eec-112">The username to access the file share.</span></span>
+* <span data-ttu-id="19eec-113">ファイル共有へのアクセスで使うパスワード。</span><span class="sxs-lookup"><span data-stu-id="19eec-113">The password to access the file share.</span></span>
 
-次の要求を使用して、開発者向けフォルダーにアクセスできます。 要求によって次の情報が返されます。    
-* ファイル共有の場所。 この場所は、エクスプローラーのアドレス バーに入力できます。
-* ファイル共有へのアクセスで使うユーザー名。
-* ファイル共有へのアクセスで使うパスワード。
-
-メソッド      | 要求 URI
+<span data-ttu-id="19eec-114">メソッド</span><span class="sxs-lookup"><span data-stu-id="19eec-114">Method</span></span>      | <span data-ttu-id="19eec-115">要求 URI</span><span class="sxs-lookup"><span data-stu-id="19eec-115">Request URI</span></span>
 :------     | :-----
-GET | /ext/smb/developerfolder
+<span data-ttu-id="19eec-116">GET</span><span class="sxs-lookup"><span data-stu-id="19eec-116">GET</span></span> | <span data-ttu-id="19eec-117">/ext/smb/developerfolder</span><span class="sxs-lookup"><span data-stu-id="19eec-117">/ext/smb/developerfolder</span></span>
 <br />
-**URI パラメーター**
+**<span data-ttu-id="19eec-118">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="19eec-118">URI parameters</span></span>**
 
-- なし
+- <span data-ttu-id="19eec-119">なし</span><span class="sxs-lookup"><span data-stu-id="19eec-119">None</span></span>
 
-**要求ヘッダー**
+**<span data-ttu-id="19eec-120">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="19eec-120">Request headers</span></span>**
 
-- なし
+- <span data-ttu-id="19eec-121">なし</span><span class="sxs-lookup"><span data-stu-id="19eec-121">None</span></span>
 
-**要求本文**
+**<span data-ttu-id="19eec-122">要求本文</span><span class="sxs-lookup"><span data-stu-id="19eec-122">Request body</span></span>**
 
-- なし
+- <span data-ttu-id="19eec-123">なし</span><span class="sxs-lookup"><span data-stu-id="19eec-123">None</span></span>
 
-**応答**   
-Path: 開発者向けファイル共有にあるファイルのパス。   
-Username: 開発者向けファイル共有にアクセスするために必要なユーザー名。   
-Password: 開発者向けファイル共有にアクセスするために必要なパスワード。   
+**<span data-ttu-id="19eec-124">応答</span><span class="sxs-lookup"><span data-stu-id="19eec-124">Response</span></span>**   
+<span data-ttu-id="19eec-125">Path: 開発者向けファイル共有にあるファイルのパス。</span><span class="sxs-lookup"><span data-stu-id="19eec-125">Path - the path to the file developer files share.</span></span>   
+<span data-ttu-id="19eec-126">Username: 開発者向けファイル共有にアクセスするために必要なユーザー名。</span><span class="sxs-lookup"><span data-stu-id="19eec-126">Username - the username needed to access the developer files share.</span></span>   
+<span data-ttu-id="19eec-127">Password: 開発者向けファイル共有にアクセスするために必要なパスワード。</span><span class="sxs-lookup"><span data-stu-id="19eec-127">Password - the password needed to access the developer files share.</span></span>   
 
-**状態コード**
+**<span data-ttu-id="19eec-128">状態コード</span><span class="sxs-lookup"><span data-stu-id="19eec-128">Status code</span></span>**
 
-この API では次の状態コードが返される可能性があります。
+<span data-ttu-id="19eec-129">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="19eec-129">This API has the following expected status codes.</span></span>
 
-HTTP 状態コード      | 説明
+<span data-ttu-id="19eec-130">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="19eec-130">HTTP status code</span></span>      | <span data-ttu-id="19eec-131">説明</span><span class="sxs-lookup"><span data-stu-id="19eec-131">Description</span></span>
 :------     | :-----
-200 | ファイル共有の資格情報にアクセスする要求が許可されました。
-4XX | エラー コード
-5XX | エラー コード
+<span data-ttu-id="19eec-132">200</span><span class="sxs-lookup"><span data-stu-id="19eec-132">200</span></span> | <span data-ttu-id="19eec-133">ファイル共有の資格情報にアクセスする要求が許可されました。</span><span class="sxs-lookup"><span data-stu-id="19eec-133">The request to access the credentials for the file share was granted.</span></span>
+<span data-ttu-id="19eec-134">4XX</span><span class="sxs-lookup"><span data-stu-id="19eec-134">4XX</span></span> | <span data-ttu-id="19eec-135">エラー コード</span><span class="sxs-lookup"><span data-stu-id="19eec-135">Error codes</span></span>
+<span data-ttu-id="19eec-136">5XX</span><span class="sxs-lookup"><span data-stu-id="19eec-136">5XX</span></span> | <span data-ttu-id="19eec-137">エラー コード</span><span class="sxs-lookup"><span data-stu-id="19eec-137">Error codes</span></span>
 <br />
-**利用可能なデバイス ファミリ**
+**<span data-ttu-id="19eec-138">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="19eec-138">Available device families</span></span>**
 
-* Windows Xbox
-
+* <span data-ttu-id="19eec-139">Windows Xbox</span><span class="sxs-lookup"><span data-stu-id="19eec-139">Windows Xbox</span></span>

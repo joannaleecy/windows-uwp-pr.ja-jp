@@ -1,36 +1,36 @@
 ---
-title: "ストリーム出力ビュー (SOV)"
-description: "ストリーム出力ビューを使用すると、頂点、テッセレーション、およびジオメトリ シェーダーによって生成された頂点情報を、さらに利用できるようにアプリケーションに戻すことができます。"
+title: ストリーム出力ビュー (SOV)
+description: ストリーム出力ビューを使用すると、頂点、テッセレーション、およびジオメトリ シェーダーによって生成された頂点情報を、さらに利用できるようにアプリケーションに戻すことができます。
 ms.assetid: F528A920-0EAD-4634-BA5F-CB34A8FAEFFA
 keywords:
-- "ストリーム出力ビュー (SOV)"
-author: PeterTurcan
-ms.author: pettur
+- ストリーム出力ビュー (SOV)
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a69bafe725f333b105d207113e031e5be64a0176
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 8268a93eba804af1c16ffec5a9ef07a4c05e69ec
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044244"
 ---
-
-# <a name="stream-output-view-sov"></a>ストリーム出力ビュー (SOV)
-
-
-ストリーム出力ビューを使用すると、頂点、テッセレーション、およびジオメトリ シェーダーによって生成された頂点情報を、さらに利用できるようにアプリケーションに戻すことができます。 たとえば、これらのシェーダーによってゆがめられたオブジェクトをアプリケーションに書き戻して、より正確な入力を物理エンジンや他のエンジンに提供できます。 ただし、実際には、ストリーム出力ビューは、使用されることが少ない、グラフィックス パイプラインの機能です。
-
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+# <a name="stream-output-view-sov"></a><span data-ttu-id="90c65-104">ストリーム出力ビュー (SOV)</span><span class="sxs-lookup"><span data-stu-id="90c65-104">Stream output view (SOV)</span></span>
 
 
-[ビュー](views.md)
+<span data-ttu-id="90c65-105">ストリーム出力ビューを使うと、頂点、テセレーション、ジオメトリ シェーダーによって生成された頂点情報を、後で利用できるようにアプリケーションに戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="90c65-105">Stream output views enable the vertex information that the vertex, tessellation and geometry shaders have come up with to be streamed back out to the application for further use.</span></span> <span data-ttu-id="90c65-106">たとえば、これらのシェーダーによってゆがめられたオブジェクトをアプリケーションに書き戻して、より正確な入力を物理エンジンや他のエンジンに提供できます。</span><span class="sxs-lookup"><span data-stu-id="90c65-106">For example, an object that has been distorted by these shaders could be written back to the application to provide more accurate input to a physics or other engine.</span></span> <span data-ttu-id="90c65-107">ただし、実際には、ストリーム出力ビューは、使用されることが少ない、グラフィックス パイプラインの機能です。</span><span class="sxs-lookup"><span data-stu-id="90c65-107">In practice though, stream output views are an infrequently used feature of the graphics pipeline.</span></span>
 
- 
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="90c65-108"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="90c65-108"><span id="related-topics"></span>Related topics</span></span>
+
+
+[<span data-ttu-id="90c65-109">ビュー</span><span class="sxs-lookup"><span data-stu-id="90c65-109">Views</span></span>](views.md)
 
  
 
+ 
 
 
 

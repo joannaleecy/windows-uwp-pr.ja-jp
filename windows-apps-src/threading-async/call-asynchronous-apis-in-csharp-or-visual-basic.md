@@ -1,19 +1,20 @@
 ---
 author: normesta
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
-title: "C# または Visual Basic での非同期 API の呼び出し"
-description: "ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。"
+title: C# または Visual Basic での非同期 API の呼び出し
+description: ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、C#、Visual Basic、非同期"
+keywords: Windows 10、UWP、C#、Visual Basic、非同期
 ms.openlocfilehash: ad5d3432595761470a679bac690fe14711f9fdba
 ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2017
+ms.locfileid: "665716"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a><span data-ttu-id="46c10-104">C# または Visual Basic での非同期 API の呼び出し</span><span class="sxs-lookup"><span data-stu-id="46c10-104">Call asynchronous APIs in C# or Visual Basic</span></span>
 

@@ -1,8 +1,8 @@
 ---
 author: PatrickFarley
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
-title: "書式設定における Epson ESC/POS"
-description: "POS プリンターで、ESC/POS コマンド言語を使用して、太字、倍角文字など、テキストの書式を設定する方法について説明します。"
+title: 書式設定における Epson ESC/POS
+description: POS プリンターで、ESC/POS コマンド言語を使用して、太字、倍角文字など、テキストの書式を設定する方法について説明します。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: f482f9f44a5f4acb9c5213745da3b8edd3613b62
 ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/28/2017
+ms.locfileid: "696097"
 ---
 # <a name="epson-escpos-with-formatting"></a><span data-ttu-id="d8992-104">書式設定における Epson ESC/POS</span><span class="sxs-lookup"><span data-stu-id="d8992-104">Epson ESC/POS with formatting</span></span>
 

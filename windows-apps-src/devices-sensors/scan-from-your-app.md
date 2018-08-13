@@ -1,8 +1,8 @@
 ---
 author: PatrickFarley
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
-title: "アプリからスキャンする"
-description: "フラットベッド、フィーダー、自動構成の各スキャン ソースを使ってアプリからコンテンツをスキャンする方法について説明します。"
+title: アプリからスキャンする
+description: フラットベッド、フィーダー、自動構成の各スキャン ソースを使ってアプリからコンテンツをスキャンする方法について説明します。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: c1db020b242c43808d356076641e375cb1581ed3
 ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/28/2017
+ms.locfileid: "696157"
 ---
 # <a name="scan-from-your-app"></a><span data-ttu-id="7c075-104">アプリからスキャンする</span><span class="sxs-lookup"><span data-stu-id="7c075-104">Scan from your app</span></span>
 

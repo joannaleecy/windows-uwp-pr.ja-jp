@@ -1,105 +1,106 @@
 ---
-title: "アルファ チャネルを含むテクスチャ"
-description: "複雑な透明度を表現するテクスチャ マップには 2 つのエンコード方法があります。"
+title: アルファ チャネルを含むテクスチャ
+description: 複雑な透明度を表現するテクスチャ マップには 2 つのエンコード方法があります。
 ms.assetid: 768A774A-4F21-4DDE-B863-14211DA92926
 keywords:
-- "アルファ チャネルを含むテクスチャ"
-author: PeterTurcan
-ms.author: pettur
+- アルファ チャネルを含むテクスチャ
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 708f6a7903df2ead18cf40e01675c3d244c7f9b0
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 73a2a619c32e7d6a7f2fff768c9cec5b7986c3c1
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044711"
 ---
+# <a name="textures-with-alpha-channels"></a><span data-ttu-id="7831c-104">アルファ チャネルを含むテクスチャ</span><span class="sxs-lookup"><span data-stu-id="7831c-104">Textures with alpha channels</span></span>
 
-# <a name="textures-with-alpha-channels"></a>アルファ チャネルを含むテクスチャ
 
+<span data-ttu-id="7831c-105">複雑な透明度を表現するテクスチャ マップには 2 つのエンコード方法があります。</span><span class="sxs-lookup"><span data-stu-id="7831c-105">There are two ways to encode texture maps that exhibit more complex transparency.</span></span> <span data-ttu-id="7831c-106">いずれの場合も、既に説明した 64 ビットのブロックの前に、透明度を記述したブロックを配置します。</span><span class="sxs-lookup"><span data-stu-id="7831c-106">In each case, a block that describes the transparency precedes the 64-bit block already described.</span></span> <span data-ttu-id="7831c-107">透明度は、1 ピクセルあたり 4 ビットの 4 x 4 ビットマップ (明示的エンコード)、またはこれよりも少ないビット数およびカラー エンコードで使用されるものに類似した線形補間で表現されます。</span><span class="sxs-lookup"><span data-stu-id="7831c-107">The transparency is either represented as a 4x4 bitmap with 4 bits per pixel (explicit encoding), or with fewer bits and linear interpolation that is analogous to what is used for color encoding.</span></span>
 
-複雑な透明度を表現するテクスチャ マップには 2 つのエンコード方法があります。 いずれの場合も、既に説明した 64 ビットのブロックの前に、透明度を記述したブロックを配置します。 透明度は、1 ピクセルあたり 4 ビットの 4 x 4 ビットマップ (明示的エンコード)、またはこれよりも少ないビット数およびカラー エンコードで使用されるものに類似した線形補間で表現されます。
+<span data-ttu-id="7831c-108">透明度ブロックと色ブロックは、次の表に示すように配置されます。</span><span class="sxs-lookup"><span data-stu-id="7831c-108">The transparency block and the color block are arranged as shown in the following table.</span></span>
 
-透明度ブロックと色ブロックは、次の表に示すように配置されます。
-
-| ワード アドレス | 64 ビットのブロック                      |
+| <span data-ttu-id="7831c-109">ワード アドレス</span><span class="sxs-lookup"><span data-stu-id="7831c-109">Word address</span></span> | <span data-ttu-id="7831c-110">64 ビットのブロック</span><span class="sxs-lookup"><span data-stu-id="7831c-110">64-bit block</span></span>                      |
 |--------------|-----------------------------------|
-| 3:0          | 透明度ブロック                |
-| 7:4          | 既に説明した 64 ビットのブロック |
+| <span data-ttu-id="7831c-111">3:0</span><span class="sxs-lookup"><span data-stu-id="7831c-111">3:0</span></span>          | <span data-ttu-id="7831c-112">透明度ブロック</span><span class="sxs-lookup"><span data-stu-id="7831c-112">Transparency block</span></span>                |
+| <span data-ttu-id="7831c-113">7:4</span><span class="sxs-lookup"><span data-stu-id="7831c-113">7:4</span></span>          | <span data-ttu-id="7831c-114">既に説明した 64 ビットのブロック</span><span class="sxs-lookup"><span data-stu-id="7831c-114">Previously described 64-bit block</span></span> |
 
  
 
-## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>明示的なテクスチャ エンコード
+## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span data-ttu-id="7831c-115"><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>明示的なテクスチャ エンコード</span><span class="sxs-lookup"><span data-stu-id="7831c-115"><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>Explicit texture encoding</span></span>
 
 
-明示的なテクスチャ エンコード (BC2 形式) の場合、透明度を記述するテクセルのアルファ成分は、テクセルあたり 4 ビットの 4 x 4 のビットマップでエンコードされます。 これらの 4 ビットは、ディザリングなどのさまざまな手法によるか、アルファ データの 4 つの最上位ビットを使用して取得できます。 ただし、これらは生成されると、どのような補間もされずに、そのままの状態で使用されます。
+<span data-ttu-id="7831c-116">明示的なテクスチャ エンコード (BC2 形式) の場合、透明度を記述するテクセルのアルファ成分は、テクセルあたり 4 ビットの 4 x 4 のビットマップでエンコードされます。</span><span class="sxs-lookup"><span data-stu-id="7831c-116">For explicit texture encoding (BC2 format), the alpha components of the texels that describe transparency are encoded in a 4x4 bitmap with 4 bits per texel.</span></span> <span data-ttu-id="7831c-117">これらの 4 ビットは、ディザリングなどのさまざまな手法によるか、アルファ データの 4 つの最上位ビットを使用して取得できます。</span><span class="sxs-lookup"><span data-stu-id="7831c-117">These four bits can be achieved through a variety of means such as dithering or by using the four most significant bits of the alpha data.</span></span> <span data-ttu-id="7831c-118">ただし、これらは生成されると、どのような補間もされずに、そのままの状態で使用されます。</span><span class="sxs-lookup"><span data-stu-id="7831c-118">However they are produced, they are used just as they are, without any form of interpolation.</span></span>
 
-次の図に、64 ビットの透明度ブロックを示します。
+<span data-ttu-id="7831c-119">次の図に、64 ビットの透明度ブロックを示します。</span><span class="sxs-lookup"><span data-stu-id="7831c-119">The following diagram shows a 64-bit transparency block.</span></span>
 
 ![64 ビットの透明度ブロックの図](images/colors4.png)
 
-**注** Direct3D の圧縮方法では、4 つの最上位ビットを使用します。
+<span data-ttu-id="7831c-121">**注** Direct3D の圧縮方法では、4 つの最上位ビットを使用します。</span><span class="sxs-lookup"><span data-stu-id="7831c-121">**Note**   The compression method of Direct3D uses the four most significant bits.</span></span>
 
  
 
-次の表に、16 ビット ワードごとにメモリ内のアルファ情報のレイアウト方法を示します。
+<span data-ttu-id="7831c-122">次の表に、16 ビット ワードごとにメモリ内のアルファ情報のレイアウト方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7831c-122">The following tables illustrate how the alpha information is laid out in memory, for each 16-bit word.</span></span>
 
-ワード 0 のレイアウト:
+<span data-ttu-id="7831c-123">ワード 0 のレイアウト:</span><span class="sxs-lookup"><span data-stu-id="7831c-123">Layout for word 0:</span></span>
 
-| ビット          | アルファ      |
+| <span data-ttu-id="7831c-124">ビット</span><span class="sxs-lookup"><span data-stu-id="7831c-124">Bits</span></span>          | <span data-ttu-id="7831c-125">アルファ</span><span class="sxs-lookup"><span data-stu-id="7831c-125">Alpha</span></span>      |
 |---------------|------------|
-| 3:0 (LSB\*)   | \[0\]\[0\] |
-| 7:4           | \[0\]\[1\] |
-| 11:8          | \[0\]\[2\] |
-| 15:12 (MSB\*) | \[0\]\[3\] |
+| <span data-ttu-id="7831c-126">3:0 (LSB\*)</span><span class="sxs-lookup"><span data-stu-id="7831c-126">3:0 (LSB\*)</span></span>   | <span data-ttu-id="7831c-127">\[0\]\[0\]</span><span class="sxs-lookup"><span data-stu-id="7831c-127">\[0\]\[0\]</span></span> |
+| <span data-ttu-id="7831c-128">7:4</span><span class="sxs-lookup"><span data-stu-id="7831c-128">7:4</span></span>           | <span data-ttu-id="7831c-129">\[0\]\[1\]</span><span class="sxs-lookup"><span data-stu-id="7831c-129">\[0\]\[1\]</span></span> |
+| <span data-ttu-id="7831c-130">11:8</span><span class="sxs-lookup"><span data-stu-id="7831c-130">11:8</span></span>          | <span data-ttu-id="7831c-131">\[0\]\[2\]</span><span class="sxs-lookup"><span data-stu-id="7831c-131">\[0\]\[2\]</span></span> |
+| <span data-ttu-id="7831c-132">15:12 (MSB\*)</span><span class="sxs-lookup"><span data-stu-id="7831c-132">15:12 (MSB\*)</span></span> | <span data-ttu-id="7831c-133">\[0\]\[3\]</span><span class="sxs-lookup"><span data-stu-id="7831c-133">\[0\]\[3\]</span></span> |
 
  
 
-\*最下位ビット、最上位ビット (MSB)
+<span data-ttu-id="7831c-134">\*最下位ビット、最上位ビット (MSB)</span><span class="sxs-lookup"><span data-stu-id="7831c-134">\*least-significant bit, most significant bit (MSB)</span></span>
 
-ワード 1 のレイアウト:
+<span data-ttu-id="7831c-135">ワード 1 のレイアウト:</span><span class="sxs-lookup"><span data-stu-id="7831c-135">Layout for word 1:</span></span>
 
-| ビット        | アルファ      |
+| <span data-ttu-id="7831c-136">ビット</span><span class="sxs-lookup"><span data-stu-id="7831c-136">Bits</span></span>        | <span data-ttu-id="7831c-137">アルファ</span><span class="sxs-lookup"><span data-stu-id="7831c-137">Alpha</span></span>      |
 |-------------|------------|
-| 3:0 (LSB)   | \[1\]\[0\] |
-| 7:4         | \[1\]\[1\] |
-| 11:8        | \[1\]\[2\] |
-| 15:12 (MSB) | \[1\]\[3\] |
+| <span data-ttu-id="7831c-138">3:0 (LSB)</span><span class="sxs-lookup"><span data-stu-id="7831c-138">3:0 (LSB)</span></span>   | <span data-ttu-id="7831c-139">\[1\]\[0\]</span><span class="sxs-lookup"><span data-stu-id="7831c-139">\[1\]\[0\]</span></span> |
+| <span data-ttu-id="7831c-140">7:4</span><span class="sxs-lookup"><span data-stu-id="7831c-140">7:4</span></span>         | <span data-ttu-id="7831c-141">\[1\]\[1\]</span><span class="sxs-lookup"><span data-stu-id="7831c-141">\[1\]\[1\]</span></span> |
+| <span data-ttu-id="7831c-142">11:8</span><span class="sxs-lookup"><span data-stu-id="7831c-142">11:8</span></span>        | <span data-ttu-id="7831c-143">\[1\]\[2\]</span><span class="sxs-lookup"><span data-stu-id="7831c-143">\[1\]\[2\]</span></span> |
+| <span data-ttu-id="7831c-144">15:12 (MSB)</span><span class="sxs-lookup"><span data-stu-id="7831c-144">15:12 (MSB)</span></span> | <span data-ttu-id="7831c-145">\[1\]\[3\]</span><span class="sxs-lookup"><span data-stu-id="7831c-145">\[1\]\[3\]</span></span> |
 
  
 
-ワード 2 のレイアウト:
+<span data-ttu-id="7831c-146">ワード 2 のレイアウト:</span><span class="sxs-lookup"><span data-stu-id="7831c-146">Layout for word 2:</span></span>
 
-| ビット        | アルファ      |
+| <span data-ttu-id="7831c-147">ビット</span><span class="sxs-lookup"><span data-stu-id="7831c-147">Bits</span></span>        | <span data-ttu-id="7831c-148">アルファ</span><span class="sxs-lookup"><span data-stu-id="7831c-148">Alpha</span></span>      |
 |-------------|------------|
-| 3:0 (LSB)   | \[2\]\[0\] |
-| 7:4         | \[2\]\[1\] |
-| 11:8        | \[2\]\[2\] |
-| 15:12 (MSB) | \[2\]\[3\] |
+| <span data-ttu-id="7831c-149">3:0 (LSB)</span><span class="sxs-lookup"><span data-stu-id="7831c-149">3:0 (LSB)</span></span>   | <span data-ttu-id="7831c-150">\[2\]\[0\]</span><span class="sxs-lookup"><span data-stu-id="7831c-150">\[2\]\[0\]</span></span> |
+| <span data-ttu-id="7831c-151">7:4</span><span class="sxs-lookup"><span data-stu-id="7831c-151">7:4</span></span>         | <span data-ttu-id="7831c-152">\[2\]\[1\]</span><span class="sxs-lookup"><span data-stu-id="7831c-152">\[2\]\[1\]</span></span> |
+| <span data-ttu-id="7831c-153">11:8</span><span class="sxs-lookup"><span data-stu-id="7831c-153">11:8</span></span>        | <span data-ttu-id="7831c-154">\[2\]\[2\]</span><span class="sxs-lookup"><span data-stu-id="7831c-154">\[2\]\[2\]</span></span> |
+| <span data-ttu-id="7831c-155">15:12 (MSB)</span><span class="sxs-lookup"><span data-stu-id="7831c-155">15:12 (MSB)</span></span> | <span data-ttu-id="7831c-156">\[2\]\[3\]</span><span class="sxs-lookup"><span data-stu-id="7831c-156">\[2\]\[3\]</span></span> |
 
  
 
-ワード 3 のレイアウト:
+<span data-ttu-id="7831c-157">ワード 3 のレイアウト:</span><span class="sxs-lookup"><span data-stu-id="7831c-157">Layout for word 3:</span></span>
 
-| ビット        | アルファ      |
+| <span data-ttu-id="7831c-158">ビット</span><span class="sxs-lookup"><span data-stu-id="7831c-158">Bits</span></span>        | <span data-ttu-id="7831c-159">アルファ</span><span class="sxs-lookup"><span data-stu-id="7831c-159">Alpha</span></span>      |
 |-------------|------------|
-| 3:0 (LSB)   | \[3\]\[0\] |
-| 7:4         | \[3\]\[1\] |
-| 11:8        | \[3\]\[2\] |
-| 15:12 (MSB) | \[3\]\[3\] |
+| <span data-ttu-id="7831c-160">3:0 (LSB)</span><span class="sxs-lookup"><span data-stu-id="7831c-160">3:0 (LSB)</span></span>   | <span data-ttu-id="7831c-161">\[3\]\[0\]</span><span class="sxs-lookup"><span data-stu-id="7831c-161">\[3\]\[0\]</span></span> |
+| <span data-ttu-id="7831c-162">7:4</span><span class="sxs-lookup"><span data-stu-id="7831c-162">7:4</span></span>         | <span data-ttu-id="7831c-163">\[3\]\[1\]</span><span class="sxs-lookup"><span data-stu-id="7831c-163">\[3\]\[1\]</span></span> |
+| <span data-ttu-id="7831c-164">11:8</span><span class="sxs-lookup"><span data-stu-id="7831c-164">11:8</span></span>        | <span data-ttu-id="7831c-165">\[3\]\[2\]</span><span class="sxs-lookup"><span data-stu-id="7831c-165">\[3\]\[2\]</span></span> |
+| <span data-ttu-id="7831c-166">15:12 (MSB)</span><span class="sxs-lookup"><span data-stu-id="7831c-166">15:12 (MSB)</span></span> | <span data-ttu-id="7831c-167">\[3\]\[3\]</span><span class="sxs-lookup"><span data-stu-id="7831c-167">\[3\]\[3\]</span></span> |
 
  
 
-BC1 でテクセルが透明かどうかを判断するために使われる色比較は、この形式では使われません。 色比較を行わない場合、色データは常に 4 カラー モードであるものとして処理されると仮定されます。
+<span data-ttu-id="7831c-168">BC1 でテクセルが透明かどうかを判断するために使われる色比較は、この形式では使われません。</span><span class="sxs-lookup"><span data-stu-id="7831c-168">The color compare used in BC1 to determine if the texel is transparent is not used in this format.</span></span> <span data-ttu-id="7831c-169">色比較を行わない場合、色データは常に 4 カラー モードであるものとして処理されると仮定されます。</span><span class="sxs-lookup"><span data-stu-id="7831c-169">It is assumed that without the color compare the color data is always treated as if in 4-color mode.</span></span>
 
-## <a name="span-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanthree-bit-linear-alpha-interpolation"></a><span id="Three-Bit-Linear-Alpha-Interpolation"></span><span id="three-bit-linear-alpha-interpolation"></span><span id="THREE-BIT-LINEAR-ALPHA-INTERPOLATION"></span>3 ビット線形アルファ補間
+## <a name="span-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanthree-bit-linear-alpha-interpolation"></a><span data-ttu-id="7831c-170"><span id="Three-Bit-Linear-Alpha-Interpolation"></span><span id="three-bit-linear-alpha-interpolation"></span><span id="THREE-BIT-LINEAR-ALPHA-INTERPOLATION"></span>3 ビット線形アルファ補間</span><span class="sxs-lookup"><span data-stu-id="7831c-170"><span id="Three-Bit-Linear-Alpha-Interpolation"></span><span id="three-bit-linear-alpha-interpolation"></span><span id="THREE-BIT-LINEAR-ALPHA-INTERPOLATION"></span>Three-bit linear alpha interpolation</span></span>
 
 
-BC3 形式での透明度のエンコーディングは、色に使用される線形エンコーディングと同様の概念に基づいています。 2 つの 8 ビット アルファ値、およびピクセルあたり 3 ビットの 4 x 4 ビットマップが、ブロックの最初の 8 バイトに格納されます。 代表的なアルファ値を使用して、中間アルファ値が補間されます。 追加の情報は、2 つのアルファ値を格納する方法で利用できます。 alpha\_0 が alpha\_1 より大きい場合は、6 つの中間アルファ値が補間によって作成されます。 それ以外の場合、4 つの中間アルファ値が指定したアルファの極値の間で補間されます。 その他 2 つの暗黙のアルファ値は、0 (完全に透明) と 255 (完全に不透明) です。
+<span data-ttu-id="7831c-171">BC3 形式での透明度のエンコーディングは、色に使用される線形エンコーディングと同様の概念に基づいています。</span><span class="sxs-lookup"><span data-stu-id="7831c-171">The encoding of transparency for the BC3 format is based on a concept similar to the linear encoding used for color.</span></span> <span data-ttu-id="7831c-172">2 つの 8 ビット アルファ値、およびピクセルあたり 3 ビットの 4 x 4 ビットマップが、ブロックの最初の 8 バイトに格納されます。</span><span class="sxs-lookup"><span data-stu-id="7831c-172">Two 8-bit alpha values and a 4x4 bitmap with three bits per pixel are stored in the first eight bytes of the block.</span></span> <span data-ttu-id="7831c-173">代表的なアルファ値を使用して、中間アルファ値が補間されます。</span><span class="sxs-lookup"><span data-stu-id="7831c-173">The representative alpha values are used to interpolate intermediate alpha values.</span></span> <span data-ttu-id="7831c-174">追加の情報は、2 つのアルファ値を格納する方法で利用できます。</span><span class="sxs-lookup"><span data-stu-id="7831c-174">Additional information is available in the way the two alpha values are stored.</span></span> <span data-ttu-id="7831c-175">alpha\_0 が alpha\_1 より大きい場合は、6 つの中間アルファ値が補間によって作成されます。</span><span class="sxs-lookup"><span data-stu-id="7831c-175">If alpha\_0 is greater than alpha\_1, then six intermediate alpha values are created by the interpolation.</span></span> <span data-ttu-id="7831c-176">それ以外の場合、4 つの中間アルファ値が指定したアルファの極値の間で補間されます。</span><span class="sxs-lookup"><span data-stu-id="7831c-176">Otherwise, four intermediate alpha values are interpolated between the specified alpha extremes.</span></span> <span data-ttu-id="7831c-177">その他 2 つの暗黙のアルファ値は、0 (完全に透明) と 255 (完全に不透明) です。</span><span class="sxs-lookup"><span data-stu-id="7831c-177">The two additional implicit alpha values are 0 (fully transparent) and 255 (fully opaque).</span></span>
 
-次のコード例に、このアルゴリズムを示します。
+<span data-ttu-id="7831c-178">次のコード例に、このアルゴリズムを示します。</span><span class="sxs-lookup"><span data-stu-id="7831c-178">The following code example illustrates this algorithm.</span></span>
 
 ```
 // 8-alpha or 6-alpha block?    
@@ -125,32 +126,31 @@ else {
 }
 ```
 
-アルファ ブロックのメモリ レイアウトは次のとおりです。
+<span data-ttu-id="7831c-179">アルファ ブロックのメモリ レイアウトは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="7831c-179">The memory layout of the alpha block is as follows:</span></span>
 
-| バイト | アルファ                                                          |
+| <span data-ttu-id="7831c-180">バイト</span><span class="sxs-lookup"><span data-stu-id="7831c-180">Byte</span></span> | <span data-ttu-id="7831c-181">アルファ</span><span class="sxs-lookup"><span data-stu-id="7831c-181">Alpha</span></span>                                                          |
 |------|----------------------------------------------------------------|
-| 0    | Alpha\_0                                                       |
-| 1    | Alpha\_1                                                       |
-| 2    | \[0\]\[2\] (2 つの MSB)、\[0\]\[1\]、\[0\]\[0\]                    |
-| 3    | \[1\]\[1\] (1 つの MSB)、\[1\]\[0\]、\[0\]\[3\]、\[0\]\[2\] (1 つの LSB) |
-| 4    | \[1\]\[3\]、\[1\]\[2\]、\[1\]\[1\] (2 つの LSB)                    |
-| 5    | \[2\]\[2\] (2 つの MSB)、\[2\]\[1\]、\[2\]\[0\]                    |
-| 6    | \[3\]\[1\] (1 つの MSB)、\[3\]\[0\]、\[2\]\[3\]、\[2\]\[2\] (1 つの LSB) |
-| 7    | \[3\]\[3\]、\[3\]\[2\]、\[3\]\[1\] (2 つの LSB)                    |
+| <span data-ttu-id="7831c-182">0</span><span class="sxs-lookup"><span data-stu-id="7831c-182">0</span></span>    | <span data-ttu-id="7831c-183">Alpha\_0</span><span class="sxs-lookup"><span data-stu-id="7831c-183">Alpha\_0</span></span>                                                       |
+| <span data-ttu-id="7831c-184">1</span><span class="sxs-lookup"><span data-stu-id="7831c-184">1</span></span>    | <span data-ttu-id="7831c-185">Alpha\_1</span><span class="sxs-lookup"><span data-stu-id="7831c-185">Alpha\_1</span></span>                                                       |
+| <span data-ttu-id="7831c-186">2</span><span class="sxs-lookup"><span data-stu-id="7831c-186">2</span></span>    | <span data-ttu-id="7831c-187">\[0\]\[2\] (2 つの MSB)、\[0\]\[1\]、\[0\]\[0\]</span><span class="sxs-lookup"><span data-stu-id="7831c-187">\[0\]\[2\] (2 MSBs), \[0\]\[1\], \[0\]\[0\]</span></span>                    |
+| <span data-ttu-id="7831c-188">3</span><span class="sxs-lookup"><span data-stu-id="7831c-188">3</span></span>    | <span data-ttu-id="7831c-189">\[1\]\[1\] (1 つの MSB)、\[1\]\[0\]、\[0\]\[3\]、\[0\]\[2\] (1 つの LSB)</span><span class="sxs-lookup"><span data-stu-id="7831c-189">\[1\]\[1\] (1 MSB), \[1\]\[0\], \[0\]\[3\], \[0\]\[2\] (1 LSB)</span></span> |
+| <span data-ttu-id="7831c-190">4</span><span class="sxs-lookup"><span data-stu-id="7831c-190">4</span></span>    | <span data-ttu-id="7831c-191">\[1\]\[3\]、\[1\]\[2\]、\[1\]\[1\] (2 つの LSB)</span><span class="sxs-lookup"><span data-stu-id="7831c-191">\[1\]\[3\], \[1\]\[2\], \[1\]\[1\] (2 LSBs)</span></span>                    |
+| <span data-ttu-id="7831c-192">5</span><span class="sxs-lookup"><span data-stu-id="7831c-192">5</span></span>    | <span data-ttu-id="7831c-193">\[2\]\[2\] (2 つの MSB)、\[2\]\[1\]、\[2\]\[0\]</span><span class="sxs-lookup"><span data-stu-id="7831c-193">\[2\]\[2\] (2 MSBs), \[2\]\[1\], \[2\]\[0\]</span></span>                    |
+| <span data-ttu-id="7831c-194">6</span><span class="sxs-lookup"><span data-stu-id="7831c-194">6</span></span>    | <span data-ttu-id="7831c-195">\[3\]\[1\] (1 つの MSB)、\[3\]\[0\]、\[2\]\[3\]、\[2\]\[2\] (1 つの LSB)</span><span class="sxs-lookup"><span data-stu-id="7831c-195">\[3\]\[1\] (1 MSB), \[3\]\[0\], \[2\]\[3\], \[2\]\[2\] (1 LSB)</span></span> |
+| <span data-ttu-id="7831c-196">7</span><span class="sxs-lookup"><span data-stu-id="7831c-196">7</span></span>    | <span data-ttu-id="7831c-197">\[3\]\[3\]、\[3\]\[2\]、\[3\]\[1\] (2 つの LSB)</span><span class="sxs-lookup"><span data-stu-id="7831c-197">\[3\]\[3\], \[3\]\[2\], \[3\]\[1\] (2 LSBs)</span></span>                    |
 
  
 
-BC1 でテクセルが透明かどうかを判断するために使われる色比較は、これらの形式では使われません。 色比較を行わない場合、色データは常に 4 カラー モードであるものとして処理されると仮定されます。
+<span data-ttu-id="7831c-198">BC1 でテクセルが透明かどうかを判断するために使われる色比較は、これらの形式では使われません。</span><span class="sxs-lookup"><span data-stu-id="7831c-198">The color compare used in BC1 to determine if the texel is transparent is not used with these formats.</span></span> <span data-ttu-id="7831c-199">色比較を行わない場合、色データは常に 4 カラー モードであるものとして処理されると仮定されます。</span><span class="sxs-lookup"><span data-stu-id="7831c-199">It is assumed that without the color compare the color data is always treated as if in 4-color mode.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="7831c-200"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="7831c-200"><span id="related-topics"></span>Related topics</span></span>
 
 
-[圧縮テクスチャ リソース](compressed-texture-resources.md)
-
- 
+[<span data-ttu-id="7831c-201">圧縮テクスチャ リソース</span><span class="sxs-lookup"><span data-stu-id="7831c-201">Compressed texture resources</span></span>](compressed-texture-resources.md)
 
  
 
+ 
 
 
 

@@ -1,7 +1,7 @@
 ---
 author: jwmsft
-title: "アプリの分析"
-description: "アプリを分析してパフォーマンスの問題を調べます。"
+title: アプリの分析
+description: アプリを分析してパフォーマンスの問題を調べます。
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,9 +10,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: bedd4ce683622935488f9cc210d71f568a167f51
 ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/10/2017
+ms.locfileid: "887952"
 ---
 # <a name="app-analysis-overview"></a><span data-ttu-id="c40d5-104">アプリの分析の概要</span><span class="sxs-lookup"><span data-stu-id="c40d5-104">App Analysis overview</span></span>
 

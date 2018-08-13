@@ -1,7 +1,7 @@
 ---
 author: normesta
-Description: "この記事では、デスクトップ ブリッジの内部的な処理について詳しく説明します。"
-title: "デスクトップ ブリッジの内側"
+Description: この記事では、デスクトップ ブリッジの内部的な処理について詳しく説明します。
+title: デスクトップ ブリッジの内側
 ms.author: normesta
 ms.date: 05/25/2017
 ms.topic: article
@@ -11,9 +11,10 @@ keywords: Windows 10, UWP
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.openlocfilehash: 050499baaf383fc135d833ae1e4733c95f2b5fa1
 ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/26/2017
+ms.locfileid: "617355"
 ---
 # <a name="behind-the-scenes-of-the-desktop-bridge"></a><span data-ttu-id="134bf-104">デスクトップ ブリッジの内側</span><span class="sxs-lookup"><span data-stu-id="134bf-104">Behind the scenes of the Desktop Bridge</span></span>
 

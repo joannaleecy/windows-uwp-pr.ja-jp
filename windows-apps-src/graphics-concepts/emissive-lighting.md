@@ -1,65 +1,65 @@
 ---
-title: "放射光"
-description: "放射光は、白熱光などオブジェクトによって放射される光です。"
+title: 放射光
+description: 放射光は、白熱光などオブジェクトによって放射される光です。
 ms.assetid: 262EB9E2-DF96-401F-93D6-51A7BB60074B
 keywords:
-- "放射光"
-author: PeterTurcan
-ms.author: pettur
+- 放射光
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 50bc904e5810340846b3fd84ffca214d07d38750
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: b2717a482e0ea1ad80f0f13dc09bb6789863ef7e
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044271"
 ---
+# <a name="emissive-lighting"></a><span data-ttu-id="0826d-104">放射光</span><span class="sxs-lookup"><span data-stu-id="0826d-104">Emissive lighting</span></span>
 
-# <a name="emissive-lighting"></a>放射光
 
+<span data-ttu-id="0826d-105">*放射光*は、白熱光などオブジェクトによって放射される光です。</span><span class="sxs-lookup"><span data-stu-id="0826d-105">*Emissive lighting* is light that is emitted by an object; for example, a glow.</span></span> <span data-ttu-id="0826d-106">放射によって、レンダリングされるオブジェクトが自己発光しているように見えます。</span><span class="sxs-lookup"><span data-stu-id="0826d-106">Emission makes a rendered object appear to be self-luminous.</span></span> <span data-ttu-id="0826d-107">放射はオブジェクトの色に影響し、暗いマテリアルが明るくなったり、部分的に放射される光の色になったりする場合があります。</span><span class="sxs-lookup"><span data-stu-id="0826d-107">Emission affects an object's color and can, for example, make a dark material brighter and take on part of the emitted color.</span></span>
 
-*放射光*は、白熱光などオブジェクトによって放射される光です。 放射を使用すると、レンダリングされたオブジェクトは自己発光しているように見えます。 放射はオブジェクトの色に影響し、暗いマテリアルが明るくなったり、部分的に放射される光の色になったりする場合があります。
+<span data-ttu-id="0826d-108">放射光は単一の項で表されます。</span><span class="sxs-lookup"><span data-stu-id="0826d-108">Emissive lighting is described by a single term.</span></span>
 
-放射光は単一の項で表されます。
+<span data-ttu-id="0826d-109">放射光 = Cₑ</span><span class="sxs-lookup"><span data-stu-id="0826d-109">Emissive Lighting = Cₑ</span></span>
 
-放射光 = Cₑ
+<span data-ttu-id="0826d-110">この場合</span><span class="sxs-lookup"><span data-stu-id="0826d-110">where:</span></span>
 
-この場合
-
-| パラメーター | 既定値 | 型                                                                 | 説明     |
+| <span data-ttu-id="0826d-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="0826d-111">Parameter</span></span> | <span data-ttu-id="0826d-112">既定値</span><span class="sxs-lookup"><span data-stu-id="0826d-112">Default value</span></span> | <span data-ttu-id="0826d-113">種類</span><span class="sxs-lookup"><span data-stu-id="0826d-113">Type</span></span>                                                                 | <span data-ttu-id="0826d-114">説明</span><span class="sxs-lookup"><span data-stu-id="0826d-114">Description</span></span>     |
 |-----------|---------------|----------------------------------------------------------------------|-----------------|
-| Cₑ        | (0,0,0,0)     | 赤、緑、青、およびアルファ透明度 (すべての浮動小数点値) | 放射色。 |
+| <span data-ttu-id="0826d-115">Cₑ</span><span class="sxs-lookup"><span data-stu-id="0826d-115">Cₑ</span></span>        | <span data-ttu-id="0826d-116">(0,0,0,0)</span><span class="sxs-lookup"><span data-stu-id="0826d-116">(0,0,0,0)</span></span>     | <span data-ttu-id="0826d-117">赤、緑、青、およびアルファ透明度 (すべての浮動小数点値)</span><span class="sxs-lookup"><span data-stu-id="0826d-117">Red, green, blue, and alpha transparency (all floating-point values)</span></span> | <span data-ttu-id="0826d-118">放射色。</span><span class="sxs-lookup"><span data-stu-id="0826d-118">Emissive color.</span></span> |
 
  
 
-Cₑ の値は、color 1 または color 2 です。 頂点の色が指定されていない場合は、素材の放射色が使用されます。
+<span data-ttu-id="0826d-119">Cₑ の値は、color 1 または color 2 です。</span><span class="sxs-lookup"><span data-stu-id="0826d-119">The value for Cₑ is either color 1 or color 2.</span></span> <span data-ttu-id="0826d-120">頂点の色が指定されていない場合は、素材の放射色が使用されます。</span><span class="sxs-lookup"><span data-stu-id="0826d-120">If the vertex color is not provided, the material emissive color is used.</span></span>
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span data-ttu-id="0826d-121"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例</span><span class="sxs-lookup"><span data-stu-id="0826d-121"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example</span></span>
 
 
-この例では、オブジェクトの色は、シーンの環境光と素材のアンビエント色を使用しています。
+<span data-ttu-id="0826d-122">この例では、オブジェクトの色は、シーンの環境光と素材のアンビエント色を使用しています。</span><span class="sxs-lookup"><span data-stu-id="0826d-122">In this example, the object is colored using the scene ambient light and a material ambient color.</span></span>
 
-方程式に従って、生成されるオブジェクトの頂点の色は素材色です。
+<span data-ttu-id="0826d-123">方程式に従って、生成されるオブジェクトの頂点の色は素材色です。</span><span class="sxs-lookup"><span data-stu-id="0826d-123">According to the equation, the resulting color for the object vertices is the material color.</span></span>
 
-次の図は、素材色 (緑) を示しています。 放射光は、すべてのオブジェクトの頂点を同じ色で照らします。 頂点の法線やライトの方向には依存しません。 その結果、オブジェクトのサーフェスの周囲にシェーディングの差が生じないため、球体は 2D の円のように見えます。
+<span data-ttu-id="0826d-124">次の図は、素材色 (緑) を示しています。</span><span class="sxs-lookup"><span data-stu-id="0826d-124">The following illustration shows the material color, which is green.</span></span> <span data-ttu-id="0826d-125">放射光は、すべてのオブジェクトの頂点を同じ色で照らします。</span><span class="sxs-lookup"><span data-stu-id="0826d-125">Emissive light lights all object vertices with the same color.</span></span> <span data-ttu-id="0826d-126">頂点の法線やライトの方向には依存しません。</span><span class="sxs-lookup"><span data-stu-id="0826d-126">It is not dependent on the vertex normal or the light direction.</span></span> <span data-ttu-id="0826d-127">その結果、オブジェクトのサーフェスの周囲にシェーディングの差が生じないため、球体は 2D の円のように見えます。</span><span class="sxs-lookup"><span data-stu-id="0826d-127">As a result, the sphere looks like a 2D circle because there is no difference in shading around the surface of the object.</span></span>
 
 ![緑色の球体の図](images/lighte.jpg)
 
-次の図は、放射光を他の 3 種類のライトとブレンドする方法を示しています。 球体の右側では、緑色の放射光と赤色の環境光がブレンドされています。 球体の左側では、緑色の放射光が赤色の環境光および拡散光とブレンドされ、赤色のグラデーションが生成されています。 鏡面ハイライトの中央は白色ですが、環境光、拡散光、放射光の値のブレンドによって黄色が作成されている状態のまま、反射光の値が急激に低下するため、黄色の輪が作成されています。
+<span data-ttu-id="0826d-129">次の図は、放射光を他の 3 種類のライトとブレンドする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="0826d-129">The following illustration shows how the emissive light blends with the other three types of lights.</span></span> <span data-ttu-id="0826d-130">球体の右側では、緑色の放射光と赤色の環境光がブレンドされています。</span><span class="sxs-lookup"><span data-stu-id="0826d-130">On the right side of the sphere, there is a blend of the green emissive and the red ambient light.</span></span> <span data-ttu-id="0826d-131">球体の左側では、緑色の放射光が赤色の環境光および拡散光とブレンドされ、赤色のグラデーションが生成されています。</span><span class="sxs-lookup"><span data-stu-id="0826d-131">On the left side of the sphere, the green emissive light blends with red ambient and diffuse light producing a red gradient.</span></span> <span data-ttu-id="0826d-132">鏡面ハイライトの中央は白色ですが、環境光、拡散光、放射光の値のブレンドによって黄色が作成されている状態のまま、反射光の値が急激に低下するため、黄色の輪が作成されています。</span><span class="sxs-lookup"><span data-stu-id="0826d-132">The specular highlight is white in the center and creates a yellow ring as the specular light value falls off sharply leaving the ambient, diffuse and emissive light values which blend together to make yellow.</span></span>
 
 ![放射光による緑色の球体の図](images/lightadse.jpg)
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="0826d-134"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="0826d-134"><span id="related-topics"></span>Related topics</span></span>
 
 
-[光源の計算](mathematics-of-lighting.md)
-
- 
+[<span data-ttu-id="0826d-135">光源の計算</span><span class="sxs-lookup"><span data-stu-id="0826d-135">Mathematics of lighting</span></span>](mathematics-of-lighting.md)
 
  
 
+ 
 
 
 

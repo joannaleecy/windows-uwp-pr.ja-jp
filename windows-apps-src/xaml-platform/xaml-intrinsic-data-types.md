@@ -1,7 +1,7 @@
 ---
 author: jwmsft
-description: "Windows ランタイムの XAML について、共通言語ランタイム (CLR) や、C++ のような他のプログラミング言語での特定のデータ型に対する言語レベルのサポートの一覧を示します。"
-title: "XAML 固有のデータ型"
+description: Windows ランタイムの XAML について、共通言語ランタイム (CLR) や、C++ のような他のプログラミング言語での特定のデータ型に対する言語レベルのサポートの一覧を示します。
+title: XAML 固有のデータ型
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
 ms.author: jimwalk
 ms.date: 02/08/2017
@@ -9,45 +9,43 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f6a1ca4850ffbc19afc8defa6d2d373dbfbf2b2b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9f6c8ebe6285981e0af74448b88e0290de3a66ee
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "246501"
 ---
+# <a name="xaml-intrinsic-data-types"></a><span data-ttu-id="e53ad-104">XAML 固有のデータ型</span><span class="sxs-lookup"><span data-stu-id="e53ad-104">XAML intrinsic data types</span></span>
 
-# <a name="xaml-intrinsic-data-types"></a>XAML 固有のデータ型
+<span data-ttu-id="e53ad-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="e53ad-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="e53ad-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="e53ad-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+<span data-ttu-id="e53ad-107">Windows ランタイムの XAML は、共通言語ランタイム (CLR) や、C++ のような他のプログラミング言語で頻繁に使われるプリミティブである複数のデータ型に対して、言語レベルのサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="e53ad-107">XAML for the Windows Runtime provides language-level support for several data types that are frequently used primitives in the common language runtime (CLR) and in other programming languages such as C++.</span></span>
 
-Windows ランタイムの XAML は、共通言語ランタイム (CLR) や、C++ のような他のプログラミング言語で頻繁に使われるプリミティブである複数のデータ型に対して、言語レベルのサポートを提供します。
+<span data-ttu-id="e53ad-108">XAML 固有のデータ型が最も一般的に使われるのは、リソースが XAML リソース ディクショナリで定義されている場合です。</span><span class="sxs-lookup"><span data-stu-id="e53ad-108">The most common place you'll see XAML intrinsic data type usages is when resources are defined in a XAML resource dictionary.</span></span> <span data-ttu-id="e53ad-109">さまざまな値として使う数など、定数も定義できます。</span><span class="sxs-lookup"><span data-stu-id="e53ad-109">You might define constants there, for example numbers that you use for multiple values.</span></span> <span data-ttu-id="e53ad-110">文字列またはブール値によるストーリーボードに設定されたアニメーションも使えます。その場合は、[**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 定義のキーフレームを設定するための文字列またはブール値を表す XAML オブジェクト要素が必要です。</span><span class="sxs-lookup"><span data-stu-id="e53ad-110">Or you might use a storyboarded animation that animates using a string or Boolean value, and you'll then need a XAML object element representing the string or Boolean to fill the keyframe of your [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) definition.</span></span> <span data-ttu-id="e53ad-111">Windows ランタイムの既定の XAML テンプレートでは、この両方の手法が使われます。</span><span class="sxs-lookup"><span data-stu-id="e53ad-111">The Windows Runtime default XAML templates use both these techniques.</span></span>
 
-XAML 固有のデータ型が最も一般的に使われるのは、リソースが XAML リソース ディクショナリで定義されている場合です。 さまざまな値として使う数など、定数も定義できます。 文字列またはブール値によるストーリーボードに設定されたアニメーションも使えます。その場合は、[**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 定義のキーフレームを設定するための文字列またはブール値を表す XAML オブジェクト要素が必要です。 Windows ランタイムの既定の XAML テンプレートでは、この両方の手法が使われます。
+<span data-ttu-id="e53ad-112">Windows ランタイムの XAML は、次の型に対する言語レベルのサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="e53ad-112">XAML for the Windows Runtime provides language-level support for these types.</span></span>
 
-Windows ランタイムの XAML は、次の型に対する言語レベルのサポートを提供します。
-
-| XAML プリミティブ | 説明 |
+| <span data-ttu-id="e53ad-113">XAML プリミティブ</span><span class="sxs-lookup"><span data-stu-id="e53ad-113">XAML primitive</span></span> | <span data-ttu-id="e53ad-114">説明</span><span class="sxs-lookup"><span data-stu-id="e53ad-114">Description</span></span> |
 |-------|-------------|
-| **x:Boolean**  | CLR のサポートについては、[**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx) と同じです。 XAML は、**x:Boolean** の値の大文字と小文字を区別せずに解析します。 "x:Bool" は、承諾済みの代替プリミティブではありません。 |
-| **x:String**   | CLR のサポートについては、[**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) と同じです。 既定では、文字列型のエンコーディングは XML による全体的なエンコーディングです。 |
-| **x:Double**   | CLR のサポートについては、[**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) と同じです。 数値に加え、**x:Double** のテキスト構文は、"NaN" トークンも許可しています。これにより、レイアウト動作の "Auto" をリソース値として格納することができます。 トークンでは、大文字と小文字が区別されます。 `1,000,000` に "1+E06" のように、科学的記数法を使えます。 |
-| **x:Int32**    | CLR のサポートについては、[**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx) と同じです。 **x:Int32** は符号付きとして処理され、負の整数の場合は負の符号 ("-") を含めることができます。 XAML では、テキスト構文に符号がない場合、暗黙的に正符号付きの値を示します。 |
+| **<span data-ttu-id="e53ad-115">x:Boolean</span><span class="sxs-lookup"><span data-stu-id="e53ad-115">x:Boolean</span></span>**  | <span data-ttu-id="e53ad-116">CLR のサポートについては、[**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx) と同じです。</span><span class="sxs-lookup"><span data-stu-id="e53ad-116">For CLR support, corresponds to [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx).</span></span> <span data-ttu-id="e53ad-117">XAML は、**x:Boolean** の値の大文字と小文字を区別せずに解析します。</span><span class="sxs-lookup"><span data-stu-id="e53ad-117">XAML parses values for **x:Boolean** as case insensitive.</span></span> <span data-ttu-id="e53ad-118">"x:Bool" は、承諾済みの代替プリミティブではありません。</span><span class="sxs-lookup"><span data-stu-id="e53ad-118">Note that "x:Bool" is not an accepted alternative.</span></span> |
+| **<span data-ttu-id="e53ad-119">x:String</span><span class="sxs-lookup"><span data-stu-id="e53ad-119">x:String</span></span>**   | <span data-ttu-id="e53ad-120">CLR のサポートについては、[**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) と同じです。</span><span class="sxs-lookup"><span data-stu-id="e53ad-120">For CLR support, corresponds to [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx).</span></span> <span data-ttu-id="e53ad-121">既定では、文字列型のエンコーディングは XML による全体的なエンコーディングです。</span><span class="sxs-lookup"><span data-stu-id="e53ad-121">Encoding for the string defaults to the surrounding XML encoding.</span></span> |
+| **<span data-ttu-id="e53ad-122">x:Double</span><span class="sxs-lookup"><span data-stu-id="e53ad-122">x:Double</span></span>**   | <span data-ttu-id="e53ad-123">CLR のサポートについては、[**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) と同じです。</span><span class="sxs-lookup"><span data-stu-id="e53ad-123">For CLR support, corresponds to [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx).</span></span> <span data-ttu-id="e53ad-124">数値に加え、**x:Double** のテキスト構文は、"NaN" トークンも許可しています。これにより、レイアウト動作の "Auto" をリソース値として格納することができます。</span><span class="sxs-lookup"><span data-stu-id="e53ad-124">In addition to the numeric values, text syntax for **x:Double** permits the token "NaN", which is how "Auto" for layout behavior can be stored as a resource value.</span></span> <span data-ttu-id="e53ad-125">トークンでは、大文字と小文字が区別されます。</span><span class="sxs-lookup"><span data-stu-id="e53ad-125">The tokens are treated as case sensitive.</span></span> <span data-ttu-id="e53ad-126">`1,000,000` に "1+E06" のように、科学的記数法を使えます。</span><span class="sxs-lookup"><span data-stu-id="e53ad-126">You can use scientific notation, for example "1+E06" for `1,000,000`.</span></span> |
+| **<span data-ttu-id="e53ad-127">x:Int32</span><span class="sxs-lookup"><span data-stu-id="e53ad-127">x:Int32</span></span>**    | <span data-ttu-id="e53ad-128">CLR のサポートについては、[**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx) と同じです。</span><span class="sxs-lookup"><span data-stu-id="e53ad-128">For CLR support, corresponds to [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx).</span></span> <span data-ttu-id="e53ad-129">**x:Int32** は符号付きとして処理され、負の整数の場合は負の符号 ("-") を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="e53ad-129">**x:Int32** is treated as signed, and you can include the minus ("-") symbol for a negative integer.</span></span> <span data-ttu-id="e53ad-130">XAML では、テキスト構文に符号がない場合、暗黙的に正符号付きの値を示します。</span><span class="sxs-lookup"><span data-stu-id="e53ad-130">In XAML, the absence of a sign in text syntax implies a positive signed value.</span></span> |
 
-これらの XAML 言語プリミティブは、通常、XAML で **x:** プレフィックスを使うオブジェクト要素を定義する場合のみ使われます。 他のすべての XAML 言語機能は、一般に属性形式で、またはマークアップ拡張として使われます。
+<span data-ttu-id="e53ad-131">これらの XAML 言語プリミティブは、通常、XAML で **x:** プレフィックスを使うオブジェクト要素を定義する場合のみ使われます。</span><span class="sxs-lookup"><span data-stu-id="e53ad-131">These XAML language primitives are generally the only cases in which you define an object element that uses the **x:** prefix in your XAML.</span></span> <span data-ttu-id="e53ad-132">他のすべての XAML 言語機能は、一般に属性形式で、またはマークアップ拡張として使われます。</span><span class="sxs-lookup"><span data-stu-id="e53ad-132">All other XAML language features are typically used in attribute form, or as a markup extension.</span></span>
 
-**注:** 慣例により、"x:" プレフィックスを含む、XAML とその他すべての XAML 言語要素の言語プリミティブが表示されます。 これは、XAML 言語要素が実際のマークアップでいかによく使われているかを表しています。 この規則は、XAML の説明書や XAML の仕様に従っています。
+<span data-ttu-id="e53ad-133">**注:** 慣例により、"x:" プレフィックスを含む、XAML とその他すべての XAML 言語要素の言語プリミティブが表示されます。</span><span class="sxs-lookup"><span data-stu-id="e53ad-133">**Note**  By convention, the language primitives for XAML and all other XAML language elements are shown with the "x:" prefix.</span></span> <span data-ttu-id="e53ad-134">これは、XAML 言語要素が実際のマークアップでいかによく使われているかを表しています。</span><span class="sxs-lookup"><span data-stu-id="e53ad-134">This is how XAML language elements are typically used in real-world markup.</span></span> <span data-ttu-id="e53ad-135">この規則は、XAML の説明書や XAML の仕様に従っています。</span><span class="sxs-lookup"><span data-stu-id="e53ad-135">This convention is followed in the documentation for XAML and also in the XAML specification.</span></span>
 
-## <a name="other-xaml-primitives"></a>その他の XAML プリミティブ
+## <a name="other-xaml-primitives"></a><span data-ttu-id="e53ad-136">その他の XAML プリミティブ</span><span class="sxs-lookup"><span data-stu-id="e53ad-136">Other XAML primitives</span></span>
 
-XAML 2009 の仕様には、**x:Uri**、**x:Single** など、他の XAML 言語レベルのプリミティブに関する情報が記載されています。 このトピックの表に示されていない場合、他の XAML ボキャブラリまたは XAML 2009 の仕様で定義されている他の XAML 言語プリミティブは、現在 Windows ランタイムの XAML ではサポートされていません。
+<span data-ttu-id="e53ad-137">XAML 2009 の仕様には、**x:Uri**、**x:Single** など、他の XAML 言語レベルのプリミティブに関する情報が記載されています。</span><span class="sxs-lookup"><span data-stu-id="e53ad-137">The XAML 2009 specification notes other XAML language-level primitives such as **x:Uri** and **x:Single**.</span></span> <span data-ttu-id="e53ad-138">このトピックの表に示されていない場合、他の XAML ボキャブラリまたは XAML 2009 の仕様で定義されている他の XAML 言語プリミティブは、現在 Windows ランタイムの XAML ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="e53ad-138">Unless listed in the table in this topic, other XAML language primitives as defined by other XAML vocabularies or by the XAML 2009 specification are not currently supported in XAML for the Windows Runtime.</span></span>
 
-**注:** 日付と時刻 ([**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) または [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) または [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx) を使うプロパティ) は、XAML プリミティブでは設定できません。 これらのプロパティは一般に、XAML ではまったく設定できません。これは、Windows ランタイム XAML パーサーには、日付と時刻に対する既定の from 文字列変換の動作がないためです。 すべての日付と時刻のプロパティの初期化値には、ページまたは要素を読み込むときに実行されるコード ビハインドを使う必要があります。
+<span data-ttu-id="e53ad-139">**注:** 日付と時刻 ([**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) または [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) または [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx) を使うプロパティ) は、XAML プリミティブでは設定できません。</span><span class="sxs-lookup"><span data-stu-id="e53ad-139">**Note**  Dates and times (properties that use [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) or [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) or [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)) aren't settable with a XAML primitive.</span></span> <span data-ttu-id="e53ad-140">これらのプロパティは一般に、XAML ではまったく設定できません。これは、Windows ランタイム XAML パーサーには、日付と時刻に対する既定の from 文字列変換の動作がないためです。</span><span class="sxs-lookup"><span data-stu-id="e53ad-140">These properties generally aren't settable in XAML at all, because there's no default from-string conversion behavior in the Windows Runtime XAML parser for dates and times.</span></span> <span data-ttu-id="e53ad-141">すべての日付と時刻のプロパティの初期化値には、ページまたは要素を読み込むときに実行されるコード ビハインドを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="e53ad-141">For initialization values of any date and time properties, you'll have to use code-behind that runs when a page or element loads.</span></span>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="e53ad-142">関連トピック</span><span class="sxs-lookup"><span data-stu-id="e53ad-142">Related topics</span></span>
 
-* [XAML の概要](xaml-overview.md)
-* [XAML 構文のガイド](xaml-syntax-guide.md)
-* [ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [<span data-ttu-id="e53ad-143">XAML の概要</span><span class="sxs-lookup"><span data-stu-id="e53ad-143">XAML overview</span></span>](xaml-overview.md)
+* [<span data-ttu-id="e53ad-144">XAML 構文のガイド</span><span class="sxs-lookup"><span data-stu-id="e53ad-144">XAML syntax guide</span></span>](xaml-syntax-guide.md)
+* [<span data-ttu-id="e53ad-145">ストーリーボードに設定されたアニメーション</span><span class="sxs-lookup"><span data-stu-id="e53ad-145">Storyboarded animations</span></span>](https://msdn.microsoft.com/library/windows/apps/mt187354)
  
-
 

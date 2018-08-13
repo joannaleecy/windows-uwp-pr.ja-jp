@@ -1,8 +1,8 @@
 ---
 author: PatrickFarley
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
-title: "デバッグ、テスト、パフォーマンス"
-description: "Microsoft Visual Studio を使って、アプリのデバッグとテストを行います。 Windows ストアの認定プロセスに向けてアプリを準備するには、Windows アプリ認定キットを使います。"
+title: デバッグ、テスト、パフォーマンス
+description: Microsoft Visual Studio を使って、アプリのデバッグとテストを行います。 Windows ストアの認定プロセスに向けてアプリを準備するには、Windows アプリ認定キットを使います。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 2d358d96a59128e3d272456a0fcf9f8535407d4f
 ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/27/2017
+ms.locfileid: "852795"
 ---
 # <a name="debugging-testing-and-performance"></a><span data-ttu-id="bdbcf-105">デバッグ、テスト、パフォーマンス</span><span class="sxs-lookup"><span data-stu-id="bdbcf-105">Debugging, testing, and performance</span></span>
 

@@ -1,8 +1,8 @@
 ---
 author: PatrickFarley
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
-title: "Windows Device Portal の概要"
-description: "Windows Device Portal で、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行うための方法を説明します。"
+title: Windows Device Portal の概要
+description: Windows Device Portal で、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行うための方法を説明します。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: f22600f2bbd5dc43996550c853c6defd04565ad4
 ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/26/2017
+ms.locfileid: "693478"
 ---
 # <a name="windows-device-portal-overview"></a><span data-ttu-id="00610-104">Windows Device Portal の概要</span><span class="sxs-lookup"><span data-stu-id="00610-104">Windows Device Portal overview</span></span>
 
@@ -129,7 +130,7 @@ ms.lasthandoff: 06/26/2017
     2. <span data-ttu-id="00610-215">重大なエラー</span><span class="sxs-lookup"><span data-stu-id="00610-215">Severe errors</span></span>
     3. <span data-ttu-id="00610-216">警告</span><span class="sxs-lookup"><span data-stu-id="00610-216">Warnings</span></span>
     4. <span data-ttu-id="00610-217">エラーではない警告</span><span class="sxs-lookup"><span data-stu-id="00610-217">Non-error warnings</span></span>
-    5. <span data-ttu-id="00610-218">詳細なトレース (*)</span><span class="sxs-lookup"><span data-stu-id="00610-218">Detailed trace (*)</span></span>
+    5. <span data-ttu-id="00610-218">詳細なトレース (\*)</span><span class="sxs-lookup"><span data-stu-id="00610-218">Detailed trace (\*)</span></span>
 
 <span data-ttu-id="00610-219">トレースを開始するには、**[Enable]** (有効にする) をクリックまたはタップします。</span><span class="sxs-lookup"><span data-stu-id="00610-219">Click or tap **Enable** to start tracing.</span></span> <span data-ttu-id="00610-220">**[Enabled Providers]** (有効なプロバイダー) ドロップダウン リストにプロバイダーが追加されます。</span><span class="sxs-lookup"><span data-stu-id="00610-220">The provider is added to the **Enabled Providers** dropdown.</span></span>
 - <span data-ttu-id="00610-221">**[Custom providers]** (カスタム プロバイダー): カスタム ETW プロバイダーとトレース レベルを選択します。</span><span class="sxs-lookup"><span data-stu-id="00610-221">**Custom providers**: Select a custom ETW provider and the tracing level.</span></span> <span data-ttu-id="00610-222">GUID を使用してプロバイダーを識別します。</span><span class="sxs-lookup"><span data-stu-id="00610-222">Identify the provider by its GUID.</span></span> <span data-ttu-id="00610-223">GUID にはかっこを含めないでください。</span><span class="sxs-lookup"><span data-stu-id="00610-223">Don't include brackets in the GUID.</span></span>
@@ -181,7 +182,7 @@ ms.lasthandoff: 06/26/2017
 <span data-ttu-id="00610-265">キー</span><span class="sxs-lookup"><span data-stu-id="00610-265">Key</span></span> | <span data-ttu-id="00610-266">型</span><span class="sxs-lookup"><span data-stu-id="00610-266">Type</span></span> | <span data-ttu-id="00610-267">説明</span><span class="sxs-lookup"><span data-stu-id="00610-267">Description</span></span> 
 ----|------|-------------
 <span data-ttu-id="00610-268">S</span><span class="sxs-lookup"><span data-stu-id="00610-268">S</span></span> | <span data-ttu-id="00610-269">int</span><span class="sxs-lookup"><span data-stu-id="00610-269">int</span></span> | <span data-ttu-id="00610-270">Device Portal 用のセキュリティで保護されたポート。</span><span class="sxs-lookup"><span data-stu-id="00610-270">Secure port for Device Portal.</span></span>  <span data-ttu-id="00610-271">0 (ゼロ) の場合、Device Portal は HTTPS 接続をリッスンしていません。</span><span class="sxs-lookup"><span data-stu-id="00610-271">If 0 (zero), Device Portal is not listening for HTTPS connections.</span></span> 
-<span data-ttu-id="00610-272">D</span><span class="sxs-lookup"><span data-stu-id="00610-272">D</span></span> | <span data-ttu-id="00610-273">string</span><span class="sxs-lookup"><span data-stu-id="00610-273">string</span></span> | <span data-ttu-id="00610-274">デバイスの種類。</span><span class="sxs-lookup"><span data-stu-id="00610-274">Type of device.</span></span>  <span data-ttu-id="00610-275">"Windows.*" の形式 (Windows.Xbox、Windows.Desktop など) になります。</span><span class="sxs-lookup"><span data-stu-id="00610-275">This will be in the format "Windows.*", e.g. Windows.Xbox or Windows.Desktop</span></span>
+<span data-ttu-id="00610-272">D</span><span class="sxs-lookup"><span data-stu-id="00610-272">D</span></span> | <span data-ttu-id="00610-273">string</span><span class="sxs-lookup"><span data-stu-id="00610-273">string</span></span> | <span data-ttu-id="00610-274">デバイスの種類。</span><span class="sxs-lookup"><span data-stu-id="00610-274">Type of device.</span></span>  <span data-ttu-id="00610-275">"Windows.\*" の形式 (Windows.Xbox、Windows.Desktop など) になります。</span><span class="sxs-lookup"><span data-stu-id="00610-275">This will be in the format "Windows.\*", e.g. Windows.Xbox or Windows.Desktop</span></span>
 <span data-ttu-id="00610-276">A</span><span class="sxs-lookup"><span data-stu-id="00610-276">A</span></span> | <span data-ttu-id="00610-277">string</span><span class="sxs-lookup"><span data-stu-id="00610-277">string</span></span> | <span data-ttu-id="00610-278">デバイスのアーキテクチャ。</span><span class="sxs-lookup"><span data-stu-id="00610-278">Device architecture.</span></span>  <span data-ttu-id="00610-279">これは、ARM、x86、AMD64 のいずれかです。</span><span class="sxs-lookup"><span data-stu-id="00610-279">This will be ARM, x86, or AMD64.</span></span>  
 <span data-ttu-id="00610-280">T</span><span class="sxs-lookup"><span data-stu-id="00610-280">T</span></span> | <span data-ttu-id="00610-281">null 文字で区切られた string のリスト</span><span class="sxs-lookup"><span data-stu-id="00610-281">null-character delineated list of strings</span></span> | <span data-ttu-id="00610-282">ユーザーが適用したデバイスのタグ。</span><span class="sxs-lookup"><span data-stu-id="00610-282">User-applied tags for the device.</span></span> <span data-ttu-id="00610-283">使い方については、タグの REST API に関する説明をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="00610-283">See the Tags REST API for how to use this.</span></span> <span data-ttu-id="00610-284">リストは 2 つの null で終了します。</span><span class="sxs-lookup"><span data-stu-id="00610-284">List is double-null terminated.</span></span>  
 

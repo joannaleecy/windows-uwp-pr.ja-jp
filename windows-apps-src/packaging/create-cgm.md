@@ -1,19 +1,20 @@
 ---
 author: laurenhughes
 ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
-title: "ソース コンテンツ グループ マップの作成と変換"
-description: "ユニバーサル Windows プラットフォーム (UWP) アプリを UWP アプリ ストリーミング インストールに対応させるには、コンテンツ グループ マップを作成する必要があります。 この記事では、コンテンツ グループ マップの作成と変換に関する詳細情報と、それに伴うヒントやコツを示します。"
+title: ソース コンテンツ グループ マップの作成と変換
+description: ユニバーサル Windows プラットフォーム (UWP) アプリを UWP アプリ ストリーミング インストールに対応させるには、コンテンツ グループ マップを作成する必要があります。 この記事では、コンテンツ グループ マップの作成と変換に関する詳細情報と、それに伴うヒントやコツを示します。
 ms.author: lahugh
 ms.date: 4/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, コンテンツ グループ マップ, ストリーミング インストール, UWP アプリ ストリーミング インストール, ソース コンテンツ グループ マップ"
+keywords: Windows 10, UWP, コンテンツ グループ マップ, ストリーミング インストール, UWP アプリ ストリーミング インストール, ソース コンテンツ グループ マップ
 ms.openlocfilehash: d27869f349d7ee813c1418cd0d02f82ada05e155
 ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/26/2017
+ms.locfileid: "617265"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a><span data-ttu-id="3fe17-105">ソース コンテンツ グループ マップの作成と変換</span><span class="sxs-lookup"><span data-stu-id="3fe17-105">Create and convert a source content group map</span></span>
 

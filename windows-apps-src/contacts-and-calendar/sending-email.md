@@ -1,9 +1,9 @@
 ---
 author: normesta
-description: "メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。"
-title: "メールの送信"
+description: メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。
+title: メールの送信
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
-keywords: "連絡先, メール, 送信"
+keywords: 連絡先, メール, 送信
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 ms.openlocfilehash: bfeec341b0b4e63b4fe37118c1f7daac67929018
 ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2017
+ms.locfileid: "665386"
 ---
 # <a name="send-email"></a><span data-ttu-id="b9ee5-106">メールの送信</span><span class="sxs-lookup"><span data-stu-id="b9ee5-106">Send email</span></span>
 

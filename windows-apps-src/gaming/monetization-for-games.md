@@ -1,19 +1,20 @@
 ---
 author: joannaleecy
-title: "ゲームの収益化"
-description: "Windows 10 のユニバーサル Windows プラットフォーム (UWP) ゲームに、バナー広告、ビデオ スポット広告、アプリ内購入を実装します。"
+title: ゲームの収益化
+description: Windows 10 のユニバーサル Windows プラットフォーム (UWP) ゲームに、バナー広告、ビデオ スポット広告、アプリ内購入を実装します。
 ms.assetid: 79f4e177-d8e7-45d3-8a78-31d4c2fe298a
 ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, 収益化"
+keywords: Windows 10, UWP, ゲーム, 収益化
 ms.openlocfilehash: c2dde3a4f9796b02c969017533b0092b0deaa860
 ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/08/2017
+ms.locfileid: "877736"
 ---
 #  <a name="monetization-for-games"></a><span data-ttu-id="5b849-104">ゲームの収益化</span><span class="sxs-lookup"><span data-stu-id="5b849-104">Monetization for games</span></span>
 
@@ -95,7 +96,7 @@ ms.lasthandoff: 08/08/2017
 3. <span data-ttu-id="5b849-186">__[Windows ストアにアップロードするパッケージを作成しますか?]__ オプションで __[はい]__ を選びます。</span><span class="sxs-lookup"><span data-stu-id="5b849-186">For the __Do you want to build packages to upload to the Windows Store?__ option, select __Yes__.</span></span>
 4. <span data-ttu-id="5b849-187">デベロッパー センターの開発者アカウントにサインインします。</span><span class="sxs-lookup"><span data-stu-id="5b849-187">Sign in to your Dev Center developer account.</span></span> <span data-ttu-id="5b849-188">アカウントを持っていない場合は、開発者アカウントに[登録](https://developer.microsoft.com/store/register)できます。</span><span class="sxs-lookup"><span data-stu-id="5b849-188">Or [register](https://developer.microsoft.com/store/register) for a developer account if you don't have one.</span></span>
 5. <span data-ttu-id="5b849-189">アップロード パッケージを作成するアプリを選びます。</span><span class="sxs-lookup"><span data-stu-id="5b849-189">Select an app to create the upload package for.</span></span> <span data-ttu-id="5b849-190">アプリの申請をまだ作成していない場合は、新しいアプリ名を指定して新しい申請を作成します。</span><span class="sxs-lookup"><span data-stu-id="5b849-190">If you have not yet created an app submission, provide a new app name to create a new submission.</span></span> <span data-ttu-id="5b849-191">詳しくは、「[名前の予約によるアプリの作成](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5b849-191">For more info, see [Create your app by reserving a name](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name).</span></span>
-6. <span data-ttu-id="5b849-192">パッケージが正常に作成されたら、__[Windows アプリ認定キットを起動する]__をクリックしてテスト プロセスを開始します。</span><span class="sxs-lookup"><span data-stu-id="5b849-192">After the package has been created successfully, click __Launch Windows App Certification Kit__ to start the testing process.</span></span>
+6. <span data-ttu-id="5b849-192">パッケージが正常に作成されたら、__[Windows アプリ認定キットを起動する]__ をクリックしてテスト プロセスを開始します。</span><span class="sxs-lookup"><span data-stu-id="5b849-192">After the package has been created successfully, click __Launch Windows App Certification Kit__ to start the testing process.</span></span>
 7. <span data-ttu-id="5b849-193">エラーを修正してゲームパッケージを作成します。</span><span class="sxs-lookup"><span data-stu-id="5b849-193">Fix any errors to create a game package.</span></span>
 
 #### <a name="publish-the-game-as-hidden"></a><span data-ttu-id="5b849-194">非表示としてゲームを公開する</span><span class="sxs-lookup"><span data-stu-id="5b849-194">Publish the game as hidden</span></span>
@@ -132,7 +133,7 @@ ms.lasthandoff: 08/08/2017
 1. <span data-ttu-id="5b849-226">[デベロッパー センター](https://developer.microsoft.com/store)にアクセスしてサインインします。</span><span class="sxs-lookup"><span data-stu-id="5b849-226">Go to the [Dev Center](https://developer.microsoft.com/store) and sign in.</span></span>
 2. <span data-ttu-id="5b849-227">__[ダッシュボード概要]__ ページまたは __[すべてのアプリ]__ ページで、アドオンを作成するアプリをクリックします。</span><span class="sxs-lookup"><span data-stu-id="5b849-227">From the __Dashboard overview__ or __All apps__ page, click the app you want to create the add-on for.</span></span>
 3. <span data-ttu-id="5b849-228">__[アプリの概要]__ ページの __[アドオン]__ セクションで、__[新しいアドオンを作成する]__ をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5b849-228">On the __App Overview__ page, in the __Add-ons__ section, select __Create a new add-on__.</span></span>
-4. <span data-ttu-id="5b849-229">アドオンの製品の種類として、__[開発者により管理されるコンシューマブル]__、__[ストアで管理されるコンシューマブル]__、__[永続的]__のいずれかを選択します。</span><span class="sxs-lookup"><span data-stu-id="5b849-229">Select the product type for the add-on: __developer-managed consumable__, __store-managed consumable__, or __durable__.</span></span>
+4. <span data-ttu-id="5b849-229">アドオンの製品の種類として、__[開発者により管理されるコンシューマブル]__、__[ストアで管理されるコンシューマブル]__、__[永続的]__ のいずれかを選択します。</span><span class="sxs-lookup"><span data-stu-id="5b849-229">Select the product type for the add-on: __developer-managed consumable__, __store-managed consumable__, or __durable__.</span></span>
 5. <span data-ttu-id="5b849-230">一意の製品 ID を入力します。この製品 ID は、このアドオンをゲーム コードに統合する際に文字列変数として使われます。</span><span class="sxs-lookup"><span data-stu-id="5b849-230">Enter a unique product ID which will be used as a string variable when integrating this add-on into your game code.</span></span> <span data-ttu-id="5b849-231">この ID は、ユーザーには表示されません。</span><span class="sxs-lookup"><span data-stu-id="5b849-231">This ID will not be seen by consumers.</span></span> <span data-ttu-id="5b849-232">詳しくは、「[アドオンの製品の種類と製品 ID を設定する](https://msdn.microsoft.com/windows/uwp/publish/set-your-add-on-product-id)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5b849-232">For more info, see [Set your app product type and product ID](https://msdn.microsoft.com/windows/uwp/publish/set-your-add-on-product-id).</span></span>
 
 <span data-ttu-id="5b849-233">アドオンのその他の構成は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="5b849-233">Other configurations for add-ons include:</span></span>

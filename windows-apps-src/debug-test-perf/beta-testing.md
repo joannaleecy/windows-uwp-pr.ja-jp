@@ -1,8 +1,8 @@
 ---
 author: PatrickFarley
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
-title: "ベータ テスト"
-description: "ベータ テストを行うと、まだリリースされていないアプリをアプリ開発チームの外部の人に自分のデバイスで試してもらい、その人たちからのフィードバックに基づいてアプリを改善することができます。"
+title: ベータ テスト
+description: ベータ テストを行うと、まだリリースされていないアプリをアプリ開発チームの外部の人に自分のデバイスで試してもらい、その人たちからのフィードバックに基づいてアプリを改善することができます。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 6f5a4e7f2961143f44acb533f045783fb4e4b7c1
 ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/26/2017
+ms.locfileid: "692908"
 ---
 # <a name="beta-testing"></a><span data-ttu-id="16102-104">ベータ テスト</span><span class="sxs-lookup"><span data-stu-id="16102-104">Beta testing</span></span>
 

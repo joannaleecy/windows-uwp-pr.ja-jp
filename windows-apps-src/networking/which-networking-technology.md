@@ -1,144 +1,143 @@
 ---
-author: DelfCo
+author: stevewhims
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: "UWP 開発者が利用できるネットワーク テクノロジの概要と、アプリに適したテクノロジを選ぶヒントを説明します。"
-title: "アプリに適したネットワーク テクノロジ"
-ms.author: bobdel
+description: UWP 開発者が利用できるネットワーク テクノロジの概要と、アプリに適したテクノロジを選ぶヒントを説明します。
+title: アプリに適したネットワーク テクノロジ
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3ee88a22fe50fc3d782febafdc82c2a68c386dab
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 70ac6eb26c13d8fca3196fa64bfce2bb76f9d1b2
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "975604"
 ---
+# <a name="which-networking-technology"></a><span data-ttu-id="695be-104">アプリに適したネットワーク テクノロジ</span><span class="sxs-lookup"><span data-stu-id="695be-104">Which networking technology?</span></span>
 
-# <a name="which-networking-technology"></a>アプリに適したネットワーク テクノロジ
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+<span data-ttu-id="695be-105">UWP 開発者が利用できるネットワーク テクノロジの概要と、アプリに適したテクノロジを選ぶヒントを説明します。</span><span class="sxs-lookup"><span data-stu-id="695be-105">A quick overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.</span></span>
 
-UWP 開発者が利用できるネットワーク テクノロジの概要と、アプリに適したテクノロジを選ぶヒントを説明します。
+## <a name="sockets"></a><span data-ttu-id="695be-106">ソケット</span><span class="sxs-lookup"><span data-stu-id="695be-106">Sockets</span></span>
 
-## <a name="sockets"></a>ソケット
+<span data-ttu-id="695be-107">別のデバイスとの通信を独自のプロトコルで実行する場合は、[ソケット](sockets.md)を使います。</span><span class="sxs-lookup"><span data-stu-id="695be-107">Use [Sockets](sockets.md) when you are communicating with another device and want to use your own protocol.</span></span>
 
-別のデバイスとの通信を独自のプロトコルで実行する場合は、[ソケット](sockets.md)を使います。
+<span data-ttu-id="695be-108">ユニバーサル Windows プラットフォーム (UWP) 開発者は、[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) と [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) という 2 つのソケットの実装を利用できます。</span><span class="sxs-lookup"><span data-stu-id="695be-108">Two implementations of sockets are available for Universal Windows Platform (UWP) developers: [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960), and [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673).</span></span> <span data-ttu-id="695be-109">新しいコードを記述するなら、Windows.Networking.Sockets には、UWP 開発者向けに設計された最新の API であるという利点があります。</span><span class="sxs-lookup"><span data-stu-id="695be-109">If you are writing new code, then Windows.Networking.Sockets has the advantage of being a modern API, designed for use by UWP developers.</span></span> <span data-ttu-id="695be-110">クロスプラット フォームのネットワーク ライブラリや既存の Winsock コードを使う場合、または Winsock API の方が適している場合は、Winsock を使います。</span><span class="sxs-lookup"><span data-stu-id="695be-110">If you are using cross-platform networking libraries or other existing Winsock code, or prefer the Winsock API, then use that.</span></span>
 
-ユニバーサル Windows プラットフォーム (UWP) 開発者は、[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) と [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) という 2 つのソケットの実装を利用できます。 新しいコードを記述するなら、Windows.Networking.Sockets には、UWP 開発者向けに設計された最新の API であるという利点があります。 クロスプラット フォームのネットワーク ライブラリや既存の Winsock コードを使う場合、または Winsock API の方が適している場合は、Winsock を使います。
+### <a name="when-to-use-sockets"></a><span data-ttu-id="695be-111">ソケットを使う状況</span><span class="sxs-lookup"><span data-stu-id="695be-111">When to use sockets</span></span>
 
-### <a name="when-to-use-sockets"></a>ソケットを使う状況
+-   <span data-ttu-id="695be-112">どちらのソケットの実装でも、選択したプロトコル (TCP または UDP) を使って他のデバイスと通信できます。</span><span class="sxs-lookup"><span data-stu-id="695be-112">Both sockets implementations enable you to communicate with other devices using protocols of your own choice, using TCP or UDP.</span></span>
 
--   どちらのソケットの実装でも、選択したプロトコル (TCP または UDP) を使って他のデバイスと通信できます。
+-   <span data-ttu-id="695be-113">これまでの経験と使う可能性がある既存のコードに基づいて、ニーズに最も適したソケット API を選びます。</span><span class="sxs-lookup"><span data-stu-id="695be-113">Choose the sockets API that best meets your needs based on experience and any existing code you might be using.</span></span>
 
--   これまでの経験と使う可能性がある既存のコードに基づいて、ニーズに最も適したソケット API を選びます。
+### <a name="when-not-to-use-sockets"></a><span data-ttu-id="695be-114">ソケットを使わない状況</span><span class="sxs-lookup"><span data-stu-id="695be-114">When not to use sockets</span></span>
 
-### <a name="when-not-to-use-sockets"></a>ソケットを使わない状況
+-   <span data-ttu-id="695be-115">ソケットを使う独自の HTTP(S) スタックを実装しないでください。</span><span class="sxs-lookup"><span data-stu-id="695be-115">Don't implement your own HTTP(S) stack using sockets.</span></span> <span data-ttu-id="695be-116">別のデバイスとの通信を独自のプロトコルで実行する場合は、[**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) を使います。</span><span class="sxs-lookup"><span data-stu-id="695be-116">Use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) instead.</span></span>
+-   <span data-ttu-id="695be-117">WebSocket ([**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) クラスと [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) クラス) が通信ニーズ (Web サーバーに対する TCP) を満たす場合は、時間と開発リソースを費やしてソケットを使う同様の機能を実装する代わりに、これらのクラスを使うことを検討しましょう。</span><span class="sxs-lookup"><span data-stu-id="695be-117">If WebSockets (the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) classes) meet your communications needs (TCP to/from a web server), consider using them rather than spend your own time and development resources implementing similar functionality with sockets.</span></span>
 
--   ソケットを使う独自の HTTP(S) スタックを実装しないでください。 別のデバイスとの通信を独自のプロトコルで実行する場合は、[**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) を使います。
--   WebSocket ([**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) クラスと [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) クラス) が通信ニーズ (Web サーバーに対する TCP) を満たす場合は、時間と開発リソースを費やしてソケットを使う同様の機能を実装する代わりに、これらのクラスを使うことを検討しましょう。
+## <a name="websockets"></a><span data-ttu-id="695be-118">WebSocket</span><span class="sxs-lookup"><span data-stu-id="695be-118">Websockets</span></span>
 
-## <a name="websockets"></a>WebSocket
+<span data-ttu-id="695be-119">[WebSocket](websockets.md) プロトコルは、クライアントとサーバー間の高速でセキュリティ保護された双方向通信を Web 経由で行うためのメカニズムを定義します。</span><span class="sxs-lookup"><span data-stu-id="695be-119">The [WebSockets](websockets.md) protocol defines a mechanism for fast, secure two-way communication between a client and a server over the web.</span></span> <span data-ttu-id="695be-120">データはすぐに、全二重の 1 つのソケット接続によって転送され、両方のエンドポイントでメッセージの送受信をリアルタイムで実行できます。</span><span class="sxs-lookup"><span data-stu-id="695be-120">Data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time.</span></span> <span data-ttu-id="695be-121">WebSocket は、ソーシャル ネットワークでの即時の通知と最新情報 (ゲームの結果) の表示をセキュリティで保護すると同時に高速にデータ転送する必要があるリアルタイム ゲームでの使用に適しています。</span><span class="sxs-lookup"><span data-stu-id="695be-121">WebSockets are ideal for use in real-time gaming where instant social network notifications and up-to-date displays of information (like game statistics ) need to be secure and use fast data transfer.</span></span> <span data-ttu-id="695be-122">UWP 開発者は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) クラスと [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) クラスを使うことで Websocket プロトコルをサポートするサーバーに接続できます。</span><span class="sxs-lookup"><span data-stu-id="695be-122">UWP developers can use the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) classes to connect with servers that support the Websocket protocol.</span></span>
 
-[WebSocket](websockets.md) プロトコルは、クライアントとサーバー間の高速でセキュリティ保護された双方向通信を Web 経由で行うためのメカニズムを定義します。 データはすぐに、全二重の 1 つのソケット接続によって転送され、両方のエンドポイントでメッセージの送受信をリアルタイムで実行できます。 WebSocket は、ソーシャル ネットワークでの即時の通知と最新情報 (ゲームの結果) の表示をセキュリティで保護すると同時に高速にデータ転送する必要があるリアルタイム ゲームでの使用に適しています。 UWP 開発者は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) クラスと [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) クラスを使うことで Websocket プロトコルをサポートするサーバーに接続できます。
+### <a name="when-to-use-websockets"></a><span data-ttu-id="695be-123">Websocket を使う状況</span><span class="sxs-lookup"><span data-stu-id="695be-123">When to use Websockets</span></span>
 
-### <a name="when-to-use-websockets"></a>Websocket を使う状況
+-   <span data-ttu-id="695be-124">デバイスとサーバー間で継続的にデータを送受信する場合。</span><span class="sxs-lookup"><span data-stu-id="695be-124">When you want to send and receive data on an ongoing basis between a device and a server.</span></span>
 
--   デバイスとサーバー間で継続的にデータを送受信する場合。
+### <a name="when-not-to-use-websockets"></a><span data-ttu-id="695be-125">Websocket を使わない状況</span><span class="sxs-lookup"><span data-stu-id="695be-125">When not to use Websockets</span></span>
 
-### <a name="when-not-to-use-websockets"></a>Websocket を使わない状況
+-   <span data-ttu-id="695be-126">データを送受信する頻度が低い場合は、WebSocket 接続を確立して維持するよりも、個別の HTTP 要求をデバイスからサーバーに発行する方が単純である可能性があります。</span><span class="sxs-lookup"><span data-stu-id="695be-126">If you are sending or receiving data infrequently, you might find it simpler to make individual HTTP requests from the device to the server, rather than establish and maintain a WebSocket connection.</span></span>
+-   <span data-ttu-id="695be-127">WebSocket は、データ量が非常に大きい状況には適していない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="695be-127">WebSockets may not be suitable for very high-volume situations.</span></span> <span data-ttu-id="695be-128">WebSocket の採用を決定する前に、データ フローをモデル化し、WebSocket 経由のトラフィックをシミュレートすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="695be-128">Consider modeling your data flows and simulating your traffic through WebSockets before committing to using them in your design.</span></span>
 
--   データを送受信する頻度が低い場合は、WebSocket 接続を確立して維持するよりも、個別の HTTP 要求をデバイスからサーバーに発行する方が単純である可能性があります。
--   WebSocket は、データ量が非常に大きい状況には適していない可能性があります。 WebSocket の採用を決定する前に、データ フローをモデル化し、WebSocket 経由のトラフィックをシミュレートすることをお勧めします。
+## <a name="httpclient"></a><span data-ttu-id="695be-129">HttpClient</span><span class="sxs-lookup"><span data-stu-id="695be-129">HttpClient</span></span>
 
-## <a name="httpclient"></a>HttpClient
+<span data-ttu-id="695be-130">HTTP(S) を使って Web サービスまたは Web サーバーと通信する場合は、[HttpClient](httpclient.md) (とその他の [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間 API) を使います。</span><span class="sxs-lookup"><span data-stu-id="695be-130">Use [HttpClient](httpclient.md) (and the rest of the [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) namespace API) when you are using HTTP(S) to communicate with a web service or a web server.</span></span>
 
-HTTP(S) を使って Web サービスまたは Web サーバーと通信する場合は、[HttpClient](httpclient.md) (とその他の [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間 API) を使います。
+### <a name="when-to-use-httpclient"></a><span data-ttu-id="695be-131">HttpClient を使う状況</span><span class="sxs-lookup"><span data-stu-id="695be-131">When to use HttpClient</span></span>
 
-### <a name="when-to-use-httpclient"></a>HttpClient を使う状況
+-   <span data-ttu-id="695be-132">HTTP(S) を使って Web サービスと通信する場合。</span><span class="sxs-lookup"><span data-stu-id="695be-132">When using HTTP(S) to communicate with web services.</span></span>
+-   <span data-ttu-id="695be-133">少数の小さなファイルをアップロードまたはダウンロードする場合。</span><span class="sxs-lookup"><span data-stu-id="695be-133">When uploading or downloading a small number of smaller files.</span></span>
+-   <span data-ttu-id="695be-134">WebSocket ([**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) クラスと [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) クラス) が通信ニーズ (Web サーバーに対する TCP) を満たし、対象の Web サーバーが WebSocket をサポートする場合は、時間と開発リソースを費やして HttpClient を使う同様の機能を実装する代わりに、これらのクラスを使うことを検討しましょう。</span><span class="sxs-lookup"><span data-stu-id="695be-134">If WebSockets (the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) classes) meet your communications needs (TCP to/from a web server), and the web server in question supports WebSockets, consider using them rather than spend your own time and development resources implementing similar functionality with HttpClient.</span></span>
+-   <span data-ttu-id="695be-135">ネットワーク経由でコンテンツをストリーミングする場合。</span><span class="sxs-lookup"><span data-stu-id="695be-135">When you are streaming content over the network.</span></span>
 
--   HTTP(S) を使って Web サービスと通信する場合。
--   少数の小さなファイルをアップロードまたはダウンロードする場合。
--   WebSocket ([**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) クラスと [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) クラス) が通信ニーズ (Web サーバーに対する TCP) を満たし、対象の Web サーバーが WebSocket をサポートする場合は、時間と開発リソースを費やして HttpClient を使う同様の機能を実装する代わりに、これらのクラスを使うことを検討しましょう。
--   ネットワーク経由でコンテンツをストリーミングする場合。
+### <a name="when-not-to-use-httpclient"></a><span data-ttu-id="695be-136">HttpClient を使わない状況</span><span class="sxs-lookup"><span data-stu-id="695be-136">When not to use HttpClient</span></span>
 
-### <a name="when-not-to-use-httpclient"></a>HttpClient を使わない状況
+-   <span data-ttu-id="695be-137">大きなファイルまたは多数のファイルを転送する場合は、代わりにバック グラウンド転送を使うことを検討してください。</span><span class="sxs-lookup"><span data-stu-id="695be-137">If you are transferring large files, or large numbers of files, consider using background transfers instead.</span></span>
+-   <span data-ttu-id="695be-138">接続の種類に基づいてアップロードとダウンロードの制限を厳しくできるようにする場合や、進行状況を保存して中断後にアップロードとダウンロードを再開する場合は、バック グラウンド転送を使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="695be-138">If you want to be able to restrict upload/download limits based on connection type, or if you want to save progress and resume upload/download after an interruption, you must use background transfers.</span></span>
+-   <span data-ttu-id="695be-139">2 つのデバイス間で通信するときに、どちらかのデバイスが HTTP(S) サーバーとして機能するように設計されていない場合は、ソケットを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="695be-139">If you are communicating between two devices and neither one is designed to act as an HTTP(S) server, you should use sockets.</span></span> <span data-ttu-id="695be-140">独自の HTTP サーバーを実装し、そのサーバーと [HttpClient](httpclient.md) を使って通信しないでください。</span><span class="sxs-lookup"><span data-stu-id="695be-140">Do not attempt to implement your own HTTP server and use [HttpClient](httpclient.md) to communicate with it.</span></span>
 
--   大きなファイルまたは多数のファイルを転送する場合は、代わりにバック グラウンド転送を使うことを検討してください。
--   接続の種類に基づいてアップロードとダウンロードの制限を厳しくできるようにする場合や、進行状況を保存して中断後にアップロードとダウンロードを再開する場合は、バック グラウンド転送を使う必要があります。
--   2 つのデバイス間で通信するときに、どちらかのデバイスが HTTP(S) サーバーとして機能するように設計されていない場合は、ソケットを使用する必要があります。 独自の HTTP サーバーを実装し、そのサーバーと [HttpClient](httpclient.md) を使って通信しないでください。
+## <a name="background-transfers"></a><span data-ttu-id="695be-141">バックグラウンド転送</span><span class="sxs-lookup"><span data-stu-id="695be-141">Background transfers</span></span>
 
-## <a name="background-transfers"></a>バックグラウンド転送
+<span data-ttu-id="695be-142">ネットワーク経由でファイルを確実に転送する場合は、[バックグラウンド転送 API](background-transfers.md) を使います。</span><span class="sxs-lookup"><span data-stu-id="695be-142">Use the [background transfer API](background-transfers.md) when you want to reliably transfer files over the network.</span></span> <span data-ttu-id="695be-143">バックグラウンド転送 API には、アプリの一時停止中はバックグラウンドで実行され、アプリの終了後も実行が続行される高度なアップロード機能とダウンロード機能があります。</span><span class="sxs-lookup"><span data-stu-id="695be-143">The background transfer API provides advanced upload and download features that run in the background during app suspension and persist beyond app termination.</span></span> <span data-ttu-id="695be-144">この API は、ネットワークの状態を監視し、接続が失われたときに転送の中断と再開を自動的に実行します。転送ではデータ センサーとバッテリー セーバーにも対応し、ダウンロード アクティビティは現在の接続とデバイスのバッテリー状態に基づいて調整されます。</span><span class="sxs-lookup"><span data-stu-id="695be-144">The API monitors network status and automatically suspends and resumes transfers when connectivity is lost, and transfers are also Data Sense-aware and Battery Sense-aware, meaning that download activity adjusts based on your current connectivity and device battery status.</span></span> <span data-ttu-id="695be-145">アプリがモバイル デバイスやバッテリー駆動デバイスで実行されている場合、これらの機能は不可欠です。</span><span class="sxs-lookup"><span data-stu-id="695be-145">These capabilities are essential when your app is running on mobile or battery-powered devices.</span></span> <span data-ttu-id="695be-146">この API は、アップロード HTTP(S) を使った大きなファイルのアップロードとダウンロードに適しています。</span><span class="sxs-lookup"><span data-stu-id="695be-146">The API is ideal for uploading and downloading large files using HTTP(S).</span></span> <span data-ttu-id="695be-147">FTP もサポートされますが、その対象はダウンロードのみです。</span><span class="sxs-lookup"><span data-stu-id="695be-147">FTP is also supported, but only for downloads.</span></span>
 
-ネットワーク経由でファイルを確実に転送する場合は、[バックグラウンド転送 API](background-transfers.md) を使います。 バックグラウンド転送 API には、アプリの一時停止中はバックグラウンドで実行され、アプリの終了後も実行が続行される高度なアップロード機能とダウンロード機能があります。 この API は、ネットワークの状態を監視し、接続が失われたときに転送の中断と再開を自動的に実行します。転送ではデータ センサーとバッテリー セーバーにも対応し、ダウンロード アクティビティは現在の接続とデバイスのバッテリー状態に基づいて調整されます。 アプリがモバイル デバイスやバッテリー駆動デバイスで実行されている場合、これらの機能は不可欠です。 この API は、アップロード HTTP(S) を使った大きなファイルのアップロードとダウンロードに適しています。 FTP もサポートされますが、その対象はダウンロードのみです。
+<span data-ttu-id="695be-148">Windows10 の新しい機能であるバックグラウンド転送は、ファイル転送の完了時に後処理をトリガーして、ローカル カタログの更新や他のアプリのアクティブ化、ダウンロードの完了をユーザーに通知する機能です。</span><span class="sxs-lookup"><span data-stu-id="695be-148">A new background transfer feature in Windows 10 is the ability to trigger post-processing when a file transfer has completed, so that you can update local catalogs, activate other apps, or notify the user when a download is complete.</span></span>
 
-Windows 10 の新しい機能であるバックグラウンド転送は、ファイル転送の完了時に後処理をトリガーして、ローカル カタログの更新や他のアプリのアクティブ化、ダウンロードの完了をユーザーに通知する機能です。
+### <a name="when-to-use-background-transfers"></a><span data-ttu-id="695be-149">バックグラウンド転送を使う状況</span><span class="sxs-lookup"><span data-stu-id="695be-149">When to use background transfers</span></span>
 
-### <a name="when-to-use-background-transfers"></a>バックグラウンド転送を使う状況
+-   <span data-ttu-id="695be-150">大きなファイルまたは多数のファイルを確実に転送するには、バックグラウンド転送を使います。</span><span class="sxs-lookup"><span data-stu-id="695be-150">Use background transfers to reliably transfer large files, or large numbers of files.</span></span>
+-   <span data-ttu-id="695be-151">ファイル転送をバックグラウンド タスクで後処理する場合は、バックグラウンド転送とバックグラウンド転送完了グループを使います。</span><span class="sxs-lookup"><span data-stu-id="695be-151">Use background transfers with background transfer completion groups when you want to post-process file transfers with a background task.</span></span>
+-   <span data-ttu-id="695be-152">ネットワークの中断後に進行中の転送を再開できるようにする場合は、バックグラウンド転送を使います。</span><span class="sxs-lookup"><span data-stu-id="695be-152">Use background transfers if you want to be able to resume a transfer in progress after a network interruption.</span></span>
+-   <span data-ttu-id="695be-153">従量課金制のデータ プランを利用しているなど、ネットワークの状態に基づいて転送の動作を変更できるようにする場合は、バックグラウンド転送を使います。</span><span class="sxs-lookup"><span data-stu-id="695be-153">Use background transfers if you want to be able to change transfer behavior based on network conditions like being on a metered data plan.</span></span>
 
--   大きなファイルまたは多数のファイルを確実に転送するには、バックグラウンド転送を使います。
--   ファイル転送をバックグラウンド タスクで後処理する場合は、バックグラウンド転送とバックグラウンド転送完了グループを使います。
--   ネットワークの中断後に進行中の転送を再開できるようにする場合は、バックグラウンド転送を使います。
--   従量課金制のデータ プランを利用しているなど、ネットワークの状態に基づいて転送の動作を変更できるようにする場合は、バックグラウンド転送を使います。
+### <a name="when-not-to-use-background-transfers"></a><span data-ttu-id="695be-154">バックグラウンド転送を使わない状況</span><span class="sxs-lookup"><span data-stu-id="695be-154">When not to use background transfers</span></span>
 
-### <a name="when-not-to-use-background-transfers"></a>バックグラウンド転送を使わない状況
+-   <span data-ttu-id="695be-155">少数の小さなファイルを転送し、転送の完了時に後処理が必要ない場合は、[**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) の PUT メソッドまたは POST メソッドを使うことを検討しましょう。</span><span class="sxs-lookup"><span data-stu-id="695be-155">If you are transferring a small number of small files, and you don't need to do any post-processing when the transfer is complete, consider using [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) PUT or POST methods.</span></span>
+-   <span data-ttu-id="695be-156">データをストリーミングして、着信したらローカルで利用する場合は、[**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) を使います。</span><span class="sxs-lookup"><span data-stu-id="695be-156">If you want to stream data and use it locally as it arrives, use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639).</span></span>
 
--   少数の小さなファイルを転送し、転送の完了時に後処理が必要ない場合は、[**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) の PUT メソッドまたは POST メソッドを使うことを検討しましょう。
--   データをストリーミングして、着信したらローカルで利用する場合は、[**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) を使います。
+## <a name="additional-network-related-technologies"></a><span data-ttu-id="695be-157">その他のネットワークに関連するテクノロジ</span><span class="sxs-lookup"><span data-stu-id="695be-157">Additional network-related technologies</span></span>
 
-## <a name="additional-network-related-technologies"></a>その他のネットワークに関連するテクノロジ
+### <a name="connection-quality"></a><span data-ttu-id="695be-158">接続の品質</span><span class="sxs-lookup"><span data-stu-id="695be-158">Connection quality</span></span>
 
-### <a name="connection-quality"></a>接続の品質
+<span data-ttu-id="695be-159">[**Windows.Networking.Connectivity**](https://msdn.microsoft.com/library/windows/apps/br207308) API により、ネットワーク接続、コスト、使用状況の情報にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="695be-159">The [**Windows.Networking.Connectivity**](https://msdn.microsoft.com/library/windows/apps/br207308) API enables you to access network connectivity, cost, and usage information.</span></span> <span data-ttu-id="695be-160">この API の使い方について詳しくは、「[ネットワーク接続状態へのアクセスとネットワーク コストの管理](https://msdn.microsoft.com/library/windows/apps/hh452983)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="695be-160">For more information about using this API, see [Accessing network connection state and managing network costs](https://msdn.microsoft.com/library/windows/apps/hh452983)</span></span>
 
-[**Windows.Networking.Connectivity**](https://msdn.microsoft.com/library/windows/apps/br207308) API により、ネットワーク接続、コスト、使用状況の情報にアクセスできます。 この API の使い方について詳しくは、「[ネットワーク接続状態へのアクセスとネットワーク コストの管理](https://msdn.microsoft.com/library/windows/apps/hh452983)」をご覧ください。
+### <a name="dns-service-discovery"></a><span data-ttu-id="695be-161">DNS サービス検出</span><span class="sxs-lookup"><span data-stu-id="695be-161">DNS Service Discovery</span></span>
 
-### <a name="dns-service-discovery"></a>DNS サービス検出
+<span data-ttu-id="695be-162">[**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API により、IETF [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158) に記述された DNS-SD プロトコルを使うネットワーク上の他のデバイスにネットワーク サービスをアドバタイズできます。</span><span class="sxs-lookup"><span data-stu-id="695be-162">The [**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API enables you to advertise a network service to other devices on the network using the DNS-SD protocol described in IETF [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158).</span></span>
 
-[**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API により、IETF [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158) に記述された DNS-SD プロトコルを使うネットワーク上の他のデバイスにネットワーク サービスをアドバタイズできます。
+### <a name="communicating-over-bluetooth"></a><span data-ttu-id="695be-163">Bluetooth 通信</span><span class="sxs-lookup"><span data-stu-id="695be-163">Communicating over Bluetooth</span></span>
 
-### <a name="communicating-over-bluetooth"></a>Bluetooth 通信
+<span data-ttu-id="695be-164">[**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/dn263413) API により、他のデバイスに Bluetooth 接続でデータを転送できます。</span><span class="sxs-lookup"><span data-stu-id="695be-164">Among other things, the [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/dn263413) API enables you to use Bluetooth to connect to other devices and transfer data.</span></span> <span data-ttu-id="695be-165">詳しくは、「 [RFCOMM によるファイルの送受信](https://msdn.microsoft.com/library/windows/apps/mt270289)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="695be-165">For more information, see [Send or receive files with RFCOMM](https://msdn.microsoft.com/library/windows/apps/mt270289).</span></span>
 
-[**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/dn263413) API により、他のデバイスに Bluetooth 接続でデータを転送できます。 詳しくは、「 [RFCOMM によるファイルの送受信](https://msdn.microsoft.com/library/windows/apps/mt270289)」をご覧ください。
+### <a name="push-notifications-wns"></a><span data-ttu-id="695be-166">プッシュ通知 (WNS)</span><span class="sxs-lookup"><span data-stu-id="695be-166">Push notifications (WNS)</span></span>
 
-### <a name="push-notifications-wns"></a>プッシュ通知 (WNS)
+<span data-ttu-id="695be-167">[**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/windows/apps/br241307) API により、Windows プッシュ通知サービス (WNS) を使ってネットワーク経由のプッシュ通知が受信できます。</span><span class="sxs-lookup"><span data-stu-id="695be-167">The [**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/windows/apps/br241307) API enables you to use the Windows Notification Service (WNS) to receive push notifications over the network.</span></span> <span data-ttu-id="695be-168">この API の使い方について詳しくは、「[Windows プッシュ通知サービス (WNS) の概要](https://msdn.microsoft.com/library/windows/apps/mt187203)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="695be-168">For more information about using this API, see [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/library/windows/apps/mt187203)</span></span>
 
-[**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/windows/apps/br241307) API により、Windows プッシュ通知サービス (WNS) を使ってネットワーク経由のプッシュ通知が受信できます。 この API の使い方について詳しくは、「[Windows プッシュ通知サービス (WNS) の概要](https://msdn.microsoft.com/library/windows/apps/mt187203)」をご覧ください。
+### <a name="near-field-communications"></a><span data-ttu-id="695be-169">近距離無線通信</span><span class="sxs-lookup"><span data-stu-id="695be-169">Near field communications</span></span>
 
-### <a name="near-field-communications"></a>近距離無線通信
+<span data-ttu-id="695be-170">[**Windows.Networking.Proximity**](https://msdn.microsoft.com/library/windows/apps/br241250) API により、プロキシミティまたはデバイスのタップを使うアプリについては近距離無線通信でデータを簡単に転送できます。</span><span class="sxs-lookup"><span data-stu-id="695be-170">The [**Windows.Networking.Proximity**](https://msdn.microsoft.com/library/windows/apps/br241250) API enables you to use near-field communications for apps that use proximity or tap with devices to enable easy data transfer.</span></span> <span data-ttu-id="695be-171">この API の使い方について詳しくは、「[近接通信とタップのサポート](https://msdn.microsoft.com/library/windows/apps/hh465229)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="695be-171">For more information about using this API, see [Supporting proximity and tapping](https://msdn.microsoft.com/library/windows/apps/hh465229).</span></span>
 
-[**Windows.Networking.Proximity**](https://msdn.microsoft.com/library/windows/apps/br241250) API により、プロキシミティまたはデバイスのタップを使うアプリについては近距離無線通信でデータを簡単に転送できます。 この API の使い方について詳しくは、「[近接通信とタップのサポート](https://msdn.microsoft.com/library/windows/apps/hh465229)」をご覧ください。
+### <a name="rssatom-feeds"></a><span data-ttu-id="695be-172">RSS/Atom フィード</span><span class="sxs-lookup"><span data-stu-id="695be-172">RSS/Atom feeds</span></span>
 
-### <a name="rssatom-feeds"></a>RSS/Atom フィード
+<span data-ttu-id="695be-173">[**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) API により、RSS 形式と Atom 形式の配信フィードを管理できます。</span><span class="sxs-lookup"><span data-stu-id="695be-173">The [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) API enables you to manage syndication feeds using RSS and Atom formats.</span></span> <span data-ttu-id="695be-174">この API の使用について詳しくは、「[RSS/Atom フィード](web-feeds.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="695be-174">For more information about using this API, see [RSS/Atom feeds](web-feeds.md).</span></span>
 
-[**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) API により、RSS 形式と Atom 形式の配信フィードを管理できます。 この API の使用について詳しくは、「[RSS/Atom フィード](web-feeds.md)」をご覧ください。
+### <a name="wi-fi-enumeration-and-connection-control"></a><span data-ttu-id="695be-175">Wi-Fi の列挙と接続の制御</span><span class="sxs-lookup"><span data-stu-id="695be-175">Wi-Fi enumeration and connection control</span></span>
 
-### <a name="wi-fi-enumeration-and-connection-control"></a>Wi-Fi の列挙と接続の制御
+<span data-ttu-id="695be-176">[**Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/dn975224) API により、Wi-Fi アダプターを列挙し、利用可能な Wi-Fi ネットワークをスキャンして、アダプターをネットワークに接続できます。</span><span class="sxs-lookup"><span data-stu-id="695be-176">The [**Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/dn975224) API enables you to enumerate Wi-Fi adapters, scan for available Wi-Fi networks, and connect an adapter to a network.</span></span>
 
-[**Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/dn975224) API により、Wi-Fi アダプターを列挙し、利用可能な Wi-Fi ネットワークをスキャンして、アダプターをネットワークに接続できます。
+### <a name="radio-control"></a><span data-ttu-id="695be-177">無線制御</span><span class="sxs-lookup"><span data-stu-id="695be-177">Radio control</span></span>
 
-### <a name="radio-control"></a>無線制御
+<span data-ttu-id="695be-178">[**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/dn996447) API により、Wi-Fi と Bluetooth を含む無線をローカル デバイスで検出して制御できます。</span><span class="sxs-lookup"><span data-stu-id="695be-178">The [**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/dn996447) API allows you to find and control radios on the local device, including Wi-Fi and Bluetooth.</span></span>
 
-[**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/dn996447) API により、Wi-Fi と Bluetooth を含む無線をローカル デバイスで検出して制御できます。
+### <a name="wi-fi-direct"></a><span data-ttu-id="695be-179">Wi-Fi Direct</span><span class="sxs-lookup"><span data-stu-id="695be-179">Wi-Fi Direct</span></span>
 
-### <a name="wi-fi-direct"></a>Wi-Fi Direct
+<span data-ttu-id="695be-180">[**Windows.Devices.WiFiDirect**](https://msdn.microsoft.com/library/windows/apps/dn297687) API により、他のローカル デバイスに Wi-Fi Direct で接続して、アドホックのローカル無線ネットワークを作成できます。</span><span class="sxs-lookup"><span data-stu-id="695be-180">The [**Windows.Devices.WiFiDirect**](https://msdn.microsoft.com/library/windows/apps/dn297687) API allows you to connect and communicate with other local devices using Wi-Fi Direct to create ad-hoc local wireless networks.</span></span>
 
-[**Windows.Devices.WiFiDirect**](https://msdn.microsoft.com/library/windows/apps/dn297687) API により、他のローカル デバイスに Wi-Fi Direct で接続して、アドホックのローカル無線ネットワークを作成できます。
+### <a name="wi-fi-direct-services"></a><span data-ttu-id="695be-181">Wi-Fi Direct サービス</span><span class="sxs-lookup"><span data-stu-id="695be-181">Wi-Fi Direct services</span></span>
 
-### <a name="wi-fi-direct-services"></a>Wi-Fi Direct サービス
+<span data-ttu-id="695be-182">[**Windows.Devices.WiFiDirect.Services**](https://msdn.microsoft.com/library/windows/apps/dn996481) API により、Wi-Fi Direct サービスを用意し、それらのサービスに接続できます。</span><span class="sxs-lookup"><span data-stu-id="695be-182">The [**Windows.Devices.WiFiDirect.Services**](https://msdn.microsoft.com/library/windows/apps/dn996481) API enables you to provide Wi-Fi Direct services and connect to them.</span></span> <span data-ttu-id="695be-183">Wi-Fi Direct サービスは、Wi-Fi Direct アドホック ネットワーク上のあるデバイス (サービス公表者) が Wi-Fi Direct 接続経由で別のデバイス (サービス探求者) に機能を提供する方法です。</span><span class="sxs-lookup"><span data-stu-id="695be-183">Wi-Fi Direct Services are the way that one device on a Wi-Fi direct ad-hoc network (a Service Advertiser) offers capabilities to another device (a Service Seeker) over a Wi-Fi Direct connection.</span></span>
 
-[**Windows.Devices.WiFiDirect.Services**](https://msdn.microsoft.com/library/windows/apps/dn996481) API により、Wi-Fi Direct サービスを用意し、それらのサービスに接続できます。 Wi-Fi Direct サービスは、Wi-Fi Direct アドホック ネットワーク上のあるデバイス (サービス公表者) が Wi-Fi Direct 接続経由で別のデバイス (サービス探求者) に機能を提供する方法です。
+### <a name="mobile-operators"></a><span data-ttu-id="695be-184">携帯電話会社</span><span class="sxs-lookup"><span data-stu-id="695be-184">Mobile operators</span></span>
 
-### <a name="mobile-operators"></a>携帯電話会社
+<span data-ttu-id="695be-185">Windows 10 では、これまではデバイスの製造元と携帯電話会社に対してのみ公開されていた API が幅広い開発者を対象として公開されています。</span><span class="sxs-lookup"><span data-stu-id="695be-185">Windows 10 exposes to a wide developer audience some APIs that have previously only been exposed to device manufacturers and mobile operators.</span></span> <span data-ttu-id="695be-186">これらの API は公開されましたが、アプリを発行する前に Microsoft の承認を得る必要がある特定のアプリの機能による管理の対象でもあります。</span><span class="sxs-lookup"><span data-stu-id="695be-186">Note that while these APIs are exposed now, they are also gated by specific app capabilities that must be approved by Microsoft before an app can be published.</span></span> <span data-ttu-id="695be-187">これらの API の実際の使用は、引き続き、主にデバイスの製造元と携帯電話会社によって制限されます。</span><span class="sxs-lookup"><span data-stu-id="695be-187">Actual use of these APIs will still be limited primarily to device manufacturers and mobile operators.</span></span>
 
-Windows 10 では、これまではデバイスの製造元と携帯電話会社に対してのみ公開されていた API が幅広い開発者を対象として公開されています。 これらの API は公開されましたが、アプリを発行する前に Microsoft の承認を得る必要がある特定のアプリの機能による管理の対象でもあります。 これらの API の実際の使用は、引き続き、主にデバイスの製造元と携帯電話会社によって制限されます。
+### <a name="network-operations"></a><span data-ttu-id="695be-188">ネットワーク操作</span><span class="sxs-lookup"><span data-stu-id="695be-188">Network operations</span></span>
 
-### <a name="network-operations"></a>ネットワーク操作
+<span data-ttu-id="695be-189">[**Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/library/windows/apps/br241148) API は主に、電話の構成とプロビジョニングを処理します。</span><span class="sxs-lookup"><span data-stu-id="695be-189">The [**Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/library/windows/apps/br241148) API deals primarily with the configuration and provisioning of phones.</span></span> <span data-ttu-id="695be-190">このため、この API を制御する機能を使う権限は、デバイスの製造元と通信事業者に限られています。</span><span class="sxs-lookup"><span data-stu-id="695be-190">As such, permission to use the capabilities that control it are limited to device manufacturers and telecom providers.</span></span>
 
-[**Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/library/windows/apps/br241148) API は主に、電話の構成とプロビジョニングを処理します。 このため、この API を制御する機能を使う権限は、デバイスの製造元と通信事業者に限られています。
+### <a name="sms"></a><span data-ttu-id="695be-191">SMS</span><span class="sxs-lookup"><span data-stu-id="695be-191">SMS</span></span>
 
-### <a name="sms"></a>SMS
-
-[**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) 名前空間は、SMS と関連メッセージを低レベルのエンティティとして処理します。 これは、携帯電話会社がアプリ向けの SMS で使うために提供されるもので、ほとんどのアプリ開発者の使用が許可されることはない機能によって制御されます。 メッセージを処理するアプリを記述する場合は、代わりに [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) API を使います。この API は、SMS メッセージだけではなく、リアルタイム チャット アプリなどの他のソースからのメッセージも処理するように設計されているため、よりリッチなチャット/メッセージング エクスペリエンスを提供できます。
-
+<span data-ttu-id="695be-192">[**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) 名前空間は、SMS と関連メッセージを低レベルのエンティティとして処理します。</span><span class="sxs-lookup"><span data-stu-id="695be-192">The [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) namespace deals with SMS and related messages as low-level entities.</span></span> <span data-ttu-id="695be-193">これは、携帯電話会社がアプリ向けの SMS で使うために提供されるもので、ほとんどのアプリ開発者の使用が許可されることはない機能によって制御されます。</span><span class="sxs-lookup"><span data-stu-id="695be-193">It is provided for use by mobile operators for app-directed SMS use, and is controlled by a capability that will not be approved for use by most app developers.</span></span> <span data-ttu-id="695be-194">メッセージを処理するアプリを記述する場合は、代わりに [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) API を使います。この API は、SMS メッセージだけではなく、リアルタイム チャット アプリなどの他のソースからのメッセージも処理するように設計されているため、よりリッチなチャット/メッセージング エクスペリエンスを提供できます。</span><span class="sxs-lookup"><span data-stu-id="695be-194">If you are writing an app to deal with messages, you should use the [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) API instead, as it is designed to handle not just SMS messages, but also messages from other sources such as realtime chat apps, enabling a much richer chat/messaging experience.</span></span>
 

@@ -1,150 +1,148 @@
 ---
 author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
-description: "この記事では、MediaProcessingTrigger とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。"
-title: "バックグラウンドでのメディア ファイルの処理"
+description: この記事では、MediaProcessingTrigger とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。
+title: バックグラウンドでのメディア ファイルの処理
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c7f3262c30797c8ce447b3e97a5cb7dd6d2ea025
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8d3166b40120799818598300a049a4148a40d2cc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243364"
 ---
+# <a name="process-media-files-in-the-background"></a><span data-ttu-id="4cf91-104">バックグラウンドでのメディア ファイルの処理</span><span class="sxs-lookup"><span data-stu-id="4cf91-104">Process media files in the background</span></span>
 
-# <a name="process-media-files-in-the-background"></a>バックグラウンドでのメディア ファイルの処理
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+<span data-ttu-id="4cf91-105">\[ Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="4cf91-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="4cf91-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="4cf91-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
 
-この記事では、[**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。
+<span data-ttu-id="4cf91-107">この記事では、[**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-107">This article shows you how to use the [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) and a background task to process media files in the background.</span></span>
 
-この記事で説明するサンプル アプリを使うと、ユーザーは入力メディア ファイルを選んでコード変換し、コード変換結果の出力ファイルを指定できます。 次に、バックグラウンド タスクが起動してコード変換操作が実行されます。 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) は、コード変換だけでなくさまざまなメディア処理シナリオ (ディスクへのメディア コンポジションのレンダリング、処理の完了後の処理済みメディア ファイルのアップロードなど) をサポートすることを目的としています。
+<span data-ttu-id="4cf91-108">この記事で説明するサンプル アプリを使うと、ユーザーは入力メディア ファイルを選んでコード変換し、コード変換結果の出力ファイルを指定できます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-108">The example app described in this article allows the user to select an input media file to transcode and specify an output file for the transcoding result.</span></span> <span data-ttu-id="4cf91-109">次に、バックグラウンド タスクが起動してコード変換操作が実行されます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-109">Then, a background task is launched to perform the transcoding operation.</span></span> <span data-ttu-id="4cf91-110">[**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) は、コード変換だけでなくさまざまなメディア処理シナリオ (ディスクへのメディア コンポジションのレンダリング、処理の完了後の処理済みメディア ファイルのアップロードなど) をサポートすることを目的としています。</span><span class="sxs-lookup"><span data-stu-id="4cf91-110">The [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) is intended to support many different media processing scenarios besides transcoding, including rendering media compositions to disk and uploading processed media files after processing is complete.</span></span>
 
-このサンプルで利用されているさまざまなユニバーサル Windows アプリ機能について詳しくは、次をご覧ください。
+<span data-ttu-id="4cf91-111">このサンプルで利用されているさまざまなユニバーサル Windows アプリ機能について詳しくは、次をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4cf91-111">For more detailed information on the different Universal Windows app features utilized in this sample, see:</span></span>
 
--   [メディア ファイルのコード変換](transcode-media-files.md)
--   [起動、再開、バックグラウンド タスク](https://msdn.microsoft.com/library/windows/apps/mt227652)
--   [タイル、バッジ、および通知](https://msdn.microsoft.com/library/windows/apps/mt185606)
+-   [<span data-ttu-id="4cf91-112">メディア ファイルのコード変換</span><span class="sxs-lookup"><span data-stu-id="4cf91-112">Transcode media files</span></span>](transcode-media-files.md)
+-   [<span data-ttu-id="4cf91-113">起動、再開、バックグラウンド タスク</span><span class="sxs-lookup"><span data-stu-id="4cf91-113">Launching resuming and background tasks</span></span>](https://msdn.microsoft.com/library/windows/apps/mt227652)
+-   [<span data-ttu-id="4cf91-114">タイル、バッジ、および通知</span><span class="sxs-lookup"><span data-stu-id="4cf91-114">Tiles badges and notifications</span></span>](https://msdn.microsoft.com/library/windows/apps/mt185606)
 
-## <a name="create-a-media-processing-background-task"></a>メディア処理のバックグラウンド タスクの作成
+## <a name="create-a-media-processing-background-task"></a><span data-ttu-id="4cf91-115">メディア処理のバックグラウンド タスクの作成</span><span class="sxs-lookup"><span data-stu-id="4cf91-115">Create a media processing background task</span></span>
 
-Microsoft Visual Studio で既存のソリューションにバックグラウンド タスクを追加するには、コンポーネントの名前を入力します。
+<span data-ttu-id="4cf91-116">Microsoft Visual Studio で既存のソリューションにバックグラウンド タスクを追加するには、コンポーネントの名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-116">To add a background task to your existing solution in Microsoft Visual Studio, Enter a name for your comp</span></span>
 
-1.  **[ファイル]** メニューの **[追加]** をクリックし、**[新しいプロジェクト]** をクリックします。
-2.  プロジェクトの種類として **[Windows ランタイム コンポーネント (ユニバーサル アプリ)]** を選びます。
-3.  新しいコンポーネント プロジェクトの名前を入力します。 この例では、プロジェクト名として **MediaProcessingBackgroundTask** を使います。
-4.  [OK] をクリックします。
+1.  <span data-ttu-id="4cf91-117">**[ファイル]** メニューの **[追加]** をクリックし、**[新しいプロジェクト]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4cf91-117">From the **File** menu, select **Add** and then **New Project...**.</span></span>
+2.  <span data-ttu-id="4cf91-118">プロジェクトの種類として **[Windows ランタイム コンポーネント (ユニバーサル アプリ)]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-118">Select the project type **Windows Runtime Component (Universal Windows)**.</span></span>
+3.  <span data-ttu-id="4cf91-119">新しいコンポーネント プロジェクトの名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-119">Enter a name for your new component project.</span></span> <span data-ttu-id="4cf91-120">この例では、プロジェクト名として **MediaProcessingBackgroundTask** を使います。</span><span class="sxs-lookup"><span data-stu-id="4cf91-120">This example uses the project name **MediaProcessingBackgroundTask**.</span></span>
+4.  <span data-ttu-id="4cf91-121">[OK] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4cf91-121">Click OK.</span></span>
 
-**ソリューション エクスプ ローラー**で、既定で作成された "Class1.cs" ファイルのアイコンを右クリックし、**[名前の変更]** をクリックします。 ファイル名を "MediaProcessingTask.cs" に変更します。 Visual Studio に、このクラスへのすべての参照の名前を変更するかどうかを確認するメッセージが表示されたら、**[はい]** をクリックします。
+<span data-ttu-id="4cf91-122">**ソリューション エクスプ ローラー**で、既定で作成された "Class1.cs" ファイルのアイコンを右クリックし、**[名前の変更]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4cf91-122">In **Solution Explorer**, right-click the icon for the "Class1.cs" file that is created by default and select **Rename**.</span></span> <span data-ttu-id="4cf91-123">ファイル名を "MediaProcessingTask.cs" に変更します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-123">Rename the file to "MediaProcessingTask.cs".</span></span> <span data-ttu-id="4cf91-124">Visual Studio に、このクラスへのすべての参照の名前を変更するかどうかを確認するメッセージが表示されたら、**[はい]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4cf91-124">When Visual Studio asks if you want to rename all of the references to this class, click **Yes**.</span></span>
 
-名前が変更されたクラス ファイルで、次の **using** ディレクティブを追加してこれらの名前空間をプロジェクトに含めます。
+<span data-ttu-id="4cf91-125">名前が変更されたクラス ファイルで、次の **using** ディレクティブを追加してこれらの名前空間をプロジェクトに含めます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-125">In the renamed class file, add the following **using** directives to include these namespaces in your project.</span></span>
                                   
-[!code-cs[BackgroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundUsing)]
+[!code-cs[<span data-ttu-id="4cf91-126">BackgroundUsing</span><span class="sxs-lookup"><span data-stu-id="4cf91-126">BackgroundUsing</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundUsing)]
 
-クラスの宣言を更新して、クラスを [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) から継承します。
+<span data-ttu-id="4cf91-127">クラスの宣言を更新して、クラスを [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) から継承します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-127">Update your class declaration to make your class inherit from [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794).</span></span>
 
-[!code-cs[BackgroundClass](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
+[!code-cs[<span data-ttu-id="4cf91-128">BackgroundClass</span><span class="sxs-lookup"><span data-stu-id="4cf91-128">BackgroundClass</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
 
-次のメンバー変数をクラスに追加します。
+<span data-ttu-id="4cf91-129">次のメンバー変数をクラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-129">Add the following member variables to your class:</span></span>
 
--   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)。バックグラウンド タスクの進行状況によってフォアグラウンド アプリを更新するために使われます。
--   [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)。メディアのコード変換が非同期的に実行されている間も、システムがバックグラウンド タスクをシャットダウンしないようにします。
--   **CancellationTokenSource** オブジェクト。非同期コード変換操作を取り消すために使うことができます。
--   [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) オブジェクト。メディア ファイルのコード変換に使われます。
+-   <span data-ttu-id="4cf91-130">[**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)。バックグラウンド タスクの進行状況によってフォアグラウンド アプリを更新するために使われます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-130">An [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797) that will be used to update the foreground app with the progress of the background task.</span></span>
+-   <span data-ttu-id="4cf91-131">[**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)。メディアのコード変換が非同期的に実行されている間も、システムがバックグラウンド タスクをシャットダウンしないようにします。</span><span class="sxs-lookup"><span data-stu-id="4cf91-131">A [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) that keeps the system from shutting down your background task while media transcoding is being performed asynchronously.</span></span>
+-   <span data-ttu-id="4cf91-132">**CancellationTokenSource** オブジェクト。非同期コード変換操作を取り消すために使うことができます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-132">A **CancellationTokenSource** object that can be used to cancel the asynchronous transcoding operation.</span></span>
+-   <span data-ttu-id="4cf91-133">[**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) オブジェクト。メディア ファイルのコード変換に使われます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-133">The [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) object that will be used to transcode media files.</span></span>
 
-[!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
+[!code-cs[<span data-ttu-id="4cf91-134">BackgroundMembers</span><span class="sxs-lookup"><span data-stu-id="4cf91-134">BackgroundMembers</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 
-タスクが起動すると、システムはバックグラウンド タスクの [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドを呼び出します。 メソッドに渡される [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) オブジェクトを、対応するメンバー変数に設定します。 システムがバックグラウンド タスクをシャットダウンする必要がある場合に発生する [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) イベントのハンドラーを登録します。 次に、[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) プロパティを 0 に設定します。
+<span data-ttu-id="4cf91-135">タスクが起動すると、システムはバックグラウンド タスクの [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-135">The system calls [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method of a background task when the task is launched.</span></span> <span data-ttu-id="4cf91-136">メソッドに渡される [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) オブジェクトを、対応するメンバー変数に設定します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-136">Set the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) object passed into the method to the corresponding member variable.</span></span> <span data-ttu-id="4cf91-137">システムがバックグラウンド タスクをシャットダウンする必要がある場合に発生する [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) イベントのハンドラーを登録します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-137">Register a handler for the [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) event, which will be raised if the system needs to shut down the background task.</span></span> <span data-ttu-id="4cf91-138">次に、[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) プロパティを 0 に設定します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-138">Then, set the [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) property to zero.</span></span>
 
-次に、バックグラウンド タスク オブジェクトの [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700507) メソッドを呼び出して保留を取得します。 非同期操作の実行中のため、タスクをシャットダウンしないようにシステムに指示されます。
+<span data-ttu-id="4cf91-139">次に、バックグラウンド タスク オブジェクトの [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700507) メソッドを呼び出して保留を取得します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-139">Next, call the background task object's [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700507) method to obtain a deferral.</span></span> <span data-ttu-id="4cf91-140">非同期操作の実行中のため、タスクをシャットダウンしないようにシステムに指示されます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-140">This tells the system not to shut down your task because you are performing asynchronous operations.</span></span>
 
-次に、次のセクションで定義するヘルパー メソッド **TranscodeFileAsync** を呼び出します。 正常に完了した場合、ヘルパー メソッドが呼び出され、コード変換が完了したことをユーザーに通知するトースト通知が起動されます。
+<span data-ttu-id="4cf91-141">次に、次のセクションで定義するヘルパー メソッド **TranscodeFileAsync** を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-141">Next, call the helper method **TranscodeFileAsync**, which is defined in the next section.</span></span> <span data-ttu-id="4cf91-142">正常に完了した場合、ヘルパー メソッドが呼び出され、コード変換が完了したことをユーザーに通知するトースト通知が起動されます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-142">If that completes successfully, a helper method is called to launch a toast notification to alert the user that transcoding is complete.</span></span>
 
-**Run** メソッドの最後に、保留オブジェクトで [**Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) を呼び出して、バックグラウンド タスクが完了したため終了できることをシステムが認識できるようにします。
+<span data-ttu-id="4cf91-143">**Run** メソッドの最後に、保留オブジェクトで [**Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) を呼び出して、バックグラウンド タスクが完了したため終了できることをシステムが認識できるようにします。</span><span class="sxs-lookup"><span data-stu-id="4cf91-143">At the end of the **Run** method, call [**Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) on the deferral object to let the system know that your background task is complete and can be terminated.</span></span>
 
-[!code-cs[Run](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetRun)]
+[!code-cs[<span data-ttu-id="4cf91-144">Run</span><span class="sxs-lookup"><span data-stu-id="4cf91-144">Run</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetRun)]
 
-**TranscodeFileAsync** ヘルパー メソッドで、コード変換操作の入力ファイルと出力ファイルのファイル名がアプリの [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) から取得されます。 これらの値は、フォアグラウンド アプリによって設定されます。 入力ファイルと出力ファイルの [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを作成し、コード変換に使うエンコード プロファイルを作成します。
+<span data-ttu-id="4cf91-145">**TranscodeFileAsync** ヘルパー メソッドで、コード変換操作の入力ファイルと出力ファイルのファイル名がアプリの [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) から取得されます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-145">In the **TranscodeFileAsync** helper method, the file names for the input and output files for the transcoding operations are retrieved from the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) for your app.</span></span> <span data-ttu-id="4cf91-146">これらの値は、フォアグラウンド アプリによって設定されます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-146">These values will be set by your foreground app.</span></span> <span data-ttu-id="4cf91-147">入力ファイルと出力ファイルの [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを作成し、コード変換に使うエンコード プロファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-147">Create a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object for the input and output files and then create an encoding profile to use for transcoding.</span></span>
 
-入力ファイル、出力ファイル、エンコード プロファイルを渡して [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936) を呼び出します。 この呼び出しから返される [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) オブジェクトにより、コード変換を実行できるかどうかを把握できます。 [**CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) プロパティが true の場合、[**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) を呼び出してコード変換操作を実行します。
+<span data-ttu-id="4cf91-148">入力ファイル、出力ファイル、エンコード プロファイルを渡して [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-148">Call [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936), passing in the input file, output file, and encoding profile.</span></span> <span data-ttu-id="4cf91-149">この呼び出しから返される [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) オブジェクトにより、コード変換を実行できるかどうかを把握できます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-149">The [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) object returned from this call lets you know if transcoding can be performed.</span></span> <span data-ttu-id="4cf91-150">[**CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) プロパティが true の場合、[**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) を呼び出してコード変換操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-150">If the [**CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) property is true, call [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) to perform the transcoding operation.</span></span>
 
-**AsTask** メソッドを使うと、非同期操作の進行状況を追跡したり、取り消したりできます。 必要な進行状況の単位と、タスクの現在の進行状況について通知するために呼び出されるメソッドの名前を指定して、新しい **Progress** オブジェクトを作成します。 タスクの取り消しを可能にするキャンセル トークンと共に、**Progress** オブジェクトを **AsTask** メソッドに渡します。
+<span data-ttu-id="4cf91-151">**AsTask** メソッドを使うと、非同期操作の進行状況を追跡したり、取り消したりできます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-151">The **AsTask** method enables you to track the progress the asynchronous operation or cancel it.</span></span> <span data-ttu-id="4cf91-152">必要な進行状況の単位と、タスクの現在の進行状況について通知するために呼び出されるメソッドの名前を指定して、新しい **Progress** オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-152">Create a new **Progress** object, specifying the units of progress you desire and the name of the method that will be called to notify you of the current progress of the task.</span></span> <span data-ttu-id="4cf91-153">タスクの取り消しを可能にするキャンセル トークンと共に、**Progress** オブジェクトを **AsTask** メソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-153">Pass the **Progress** object into the **AsTask** method along with the cancellation token that allows you to cancel the task.</span></span>
 
-[!code-cs[TranscodeFileAsync](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetTranscodeFileAsync)]
+[!code-cs[<span data-ttu-id="4cf91-154">TranscodeFileAsync</span><span class="sxs-lookup"><span data-stu-id="4cf91-154">TranscodeFileAsync</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetTranscodeFileAsync)]
 
-前の手順で Progress オブジェクトを作成するために使ったメソッド **Progress** で、バックグラウンド タスク インスタンスの進行状況を設定します。 これにより、進行状況がフォアグラウンド アプリ (実行されている場合) に渡されます。
+<span data-ttu-id="4cf91-155">前の手順で Progress オブジェクトを作成するために使ったメソッド **Progress** で、バックグラウンド タスク インスタンスの進行状況を設定します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-155">In the method you used to create the Progress object in the previous step, **Progress**, set the progress of the background task instance.</span></span> <span data-ttu-id="4cf91-156">これにより、進行状況がフォアグラウンド アプリ (実行されている場合) に渡されます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-156">This will pass the progress to the foreground app, if it is running.</span></span>
 
-[!code-cs[進行状況](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
+[!code-cs[<span data-ttu-id="4cf91-157">進行状況</span><span class="sxs-lookup"><span data-stu-id="4cf91-157">Progress</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
 
-**SendToastNotification** ヘルパー メソッドは、テキスト コンテンツしかないトーストのテンプレート XML ドキュメントを取得することによって新しいトースト通知を作成します。 トースト XML のテキスト要素が設定された後、XML ドキュメントから新しい [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) オブジェクトが作成されます。 最後に、[**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659) を呼び出すことによってトーストがユーザーに表示されます。
+<span data-ttu-id="4cf91-158">**SendToastNotification** ヘルパー メソッドは、テキスト コンテンツしかないトーストのテンプレート XML ドキュメントを取得することによって新しいトースト通知を作成します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-158">The **SendToastNotification** helper method creates a new toast notification by getting a template XML document for a toast that only has text content.</span></span> <span data-ttu-id="4cf91-159">トースト XML のテキスト要素が設定された後、XML ドキュメントから新しい [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) オブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-159">The text element of the toast XML is set and then a new [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) object is created from the XML document.</span></span> <span data-ttu-id="4cf91-160">最後に、[**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659) を呼び出すことによってトーストがユーザーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-160">Finally, the toast is shown to the user by calling [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659).</span></span>
 
-[!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
+[!code-cs[<span data-ttu-id="4cf91-161">SendToastNotification</span><span class="sxs-lookup"><span data-stu-id="4cf91-161">SendToastNotification</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
 
-システムがバック グラウンド タスクをキャンセルしたときに呼び出される [**Canceled**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.IBackgroundTaskInstance.Canceled) イベントのハンドラーでは、利用統計情報を取集するためにログにエラーを記録することができます。
+<span data-ttu-id="4cf91-162">システムがバック グラウンド タスクをキャンセルしたときに呼び出される [**Canceled**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.IBackgroundTaskInstance.Canceled) イベントのハンドラーでは、利用統計情報を取集するためにログにエラーを記録することができます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-162">In the handler for the [**Canceled**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.IBackgroundTaskInstance.Canceled) event, which is called when the system cancels your background task, you can log the error for telemetry purposes.</span></span>
 
-[!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
+[!code-cs[<span data-ttu-id="4cf91-163">OnCanceled</span><span class="sxs-lookup"><span data-stu-id="4cf91-163">OnCanceled</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
 
-## <a name="register-and-launch-the-background-task"></a>バックグラウンド タスクの登録と起動
+## <a name="register-and-launch-the-background-task"></a><span data-ttu-id="4cf91-164">バックグラウンド タスクの登録と起動</span><span class="sxs-lookup"><span data-stu-id="4cf91-164">Register and launch the background task</span></span>
 
-フォアグラウンド アプリからバックグラウンド タスクを起動するには、フォアグラウンド アプリの Package.appmanifest ファイルを更新して、アプリがバックグラウンド タスクを使っていることをシステムに認識させる必要があります。
+<span data-ttu-id="4cf91-165">フォアグラウンド アプリからバックグラウンド タスクを起動するには、フォアグラウンド アプリの Package.appmanifest ファイルを更新して、アプリがバックグラウンド タスクを使っていることをシステムに認識させる必要があります。</span><span class="sxs-lookup"><span data-stu-id="4cf91-165">Before you can launch the background task from your foreground app, you must update your foreground app's Package.appmanifest file to let the system know that your app uses a background task.</span></span>
 
-1.  **ソリューション エクスプローラー**で、Package.appmanifest アイコンをダブルクリックしてマニフェスト エディターを開きます。
-2.  **[宣言]** タブをクリックします。
-3.  **[使用可能な宣言]** で、**[バックグラウンド タスク]** を選び、**[追加]** をクリックします。
-4.  **[サポートされる宣言]** で、**[バックグラウンド タスク]** 項目が選択されていることを確認します。 **[プロパティ]** で、**[Media processing]** (メディア処理) チェック ボックスをオンにします。
-5.  **[エントリ ポイント]** ボックスで、バックグラウンド テストの名前空間とクラス名を、ピリオドで区切って指定します。 この例では、エントリは次のとおりです。
+1.  <span data-ttu-id="4cf91-166">**ソリューション エクスプローラー**で、Package.appmanifest アイコンをダブルクリックしてマニフェスト エディターを開きます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-166">In **Solution Explorer**, double-click the Package.appmanifest file icon to open the manifest editor.</span></span>
+2.  <span data-ttu-id="4cf91-167">**[宣言]** タブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="4cf91-167">Select the **Declarations** tab.</span></span>
+3.  <span data-ttu-id="4cf91-168">**[使用可能な宣言]** で、**[バックグラウンド タスク]** を選び、**[追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4cf91-168">From **Available Declarations**, select **Background Tasks** and click **Add**.</span></span>
+4.  <span data-ttu-id="4cf91-169">**[サポートされる宣言]** で、**[バックグラウンド タスク]** 項目が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-169">Under **Supported Declarations** make sure that the **Background Tasks** item is selected.</span></span> <span data-ttu-id="4cf91-170">**[プロパティ]** で、**[Media processing]** (メディア処理) チェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="4cf91-170">Under **Properties**, select the checkbox for **Media processing**.</span></span>
+5.  <span data-ttu-id="4cf91-171">**[エントリ ポイント]** ボックスで、バックグラウンド テストの名前空間とクラス名を、ピリオドで区切って指定します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-171">In the **Entry Point** text box, specify the namespace and class name for your background test, separated by a period.</span></span> <span data-ttu-id="4cf91-172">この例では、エントリは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="4cf91-172">For this example, the entry is:</span></span>
    ```csharp
    MediaProcessingBackgroundTask.MediaProcessingTask
    ```
-次に、フォアグラウンド アプリにバックグラウンド タスクへの参照を追加する必要があります。
-1.  **ソリューション エクスプローラー**のフォアグラウンド アプリ プロジェクトで、**[参照]** フォルダーを右クリックし、**[参照の追加]** を選択します。
-2.  **[プロジェクト]** ノードを展開し、**[ソリューション]** を選択します。
-3.  バックグラウンド プロジェクトの横のボックスをオンにし、**[OK]** をクリックします。
+<span data-ttu-id="4cf91-173">次に、フォアグラウンド アプリにバックグラウンド タスクへの参照を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4cf91-173">Next, you need to add a reference to your background task to your foreground app.</span></span>
+1.  <span data-ttu-id="4cf91-174">**ソリューション エクスプローラー**のフォアグラウンド アプリ プロジェクトで、**[参照]** フォルダーを右クリックし、**[参照の追加]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-174">In **Solution Explorer**, under your foreground app project, right-click the **References** folder and select **Add Reference...**.</span></span>
+2.  <span data-ttu-id="4cf91-175">**[プロジェクト]** ノードを展開し、**[ソリューション]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-175">Expand the **Projects** node and select **Solution**.</span></span>
+3.  <span data-ttu-id="4cf91-176">バックグラウンド プロジェクトの横のボックスをオンにし、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="4cf91-176">Check the box next to your background task project and click **OK**.</span></span>
 
-この例のコードの残りの部分をフォアグラウンド アプリに追加する必要があります。 まず、次の名前空間をプロジェクトに追加する必要があります。
+<span data-ttu-id="4cf91-177">この例のコードの残りの部分をフォアグラウンド アプリに追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4cf91-177">The rest of the code in this example should be added to your foreground app.</span></span> <span data-ttu-id="4cf91-178">まず、次の名前空間をプロジェクトに追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4cf91-178">First, you will need to add the following namespaces to your project.</span></span>
 
-[!code-cs[ForegroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundUsing)]
+[!code-cs[<span data-ttu-id="4cf91-179">ForegroundUsing</span><span class="sxs-lookup"><span data-stu-id="4cf91-179">ForegroundUsing</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundUsing)]
 
-次に、バックグラウンド タスクの登録に必要な次のメンバー変数を追加します。
+<span data-ttu-id="4cf91-180">次に、バックグラウンド タスクの登録に必要な次のメンバー変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-180">Next, add the following member variables that are needed to register the background task.</span></span>
 
-[!code-cs[ForegroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundMembers)]
+[!code-cs[<span data-ttu-id="4cf91-181">ForegroundMembers</span><span class="sxs-lookup"><span data-stu-id="4cf91-181">ForegroundMembers</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundMembers)]
 
-**PickFilesToTranscode** ヘルパー メソッドは、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) と [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使ってコード変換用の入力ファイルと出力ファイルを開きます。 アプリがアクセスできない場所にあるファイルをユーザーが選ぶ可能性があります。 バックグラウンド タスクがファイルを開けるようにするには、ファイルをアプリの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) に追加します。
+<span data-ttu-id="4cf91-182">**PickFilesToTranscode** ヘルパー メソッドは、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) と [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使ってコード変換用の入力ファイルと出力ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-182">The **PickFilesToTranscode** helper method uses a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to open the input and output files for transcoding.</span></span> <span data-ttu-id="4cf91-183">アプリがアクセスできない場所にあるファイルをユーザーが選ぶ可能性があります。</span><span class="sxs-lookup"><span data-stu-id="4cf91-183">The user may select files in a location that your app does not have access to.</span></span> <span data-ttu-id="4cf91-184">バックグラウンド タスクがファイルを開けるようにするには、ファイルをアプリの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) に追加します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-184">To make sure your background task can open the files, add them to the [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) for your app.</span></span>
 
-最後に、アプリの [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) で入力ファイルと出力ファイルの名前のエントリを設定します。 バックグラウンド タスクは、この場所からファイル名を取得します。
+<span data-ttu-id="4cf91-185">最後に、アプリの [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) で入力ファイルと出力ファイルの名前のエントリを設定します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-185">Finally, set entries for the input and output file names in the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) for your app.</span></span> <span data-ttu-id="4cf91-186">バックグラウンド タスクは、この場所からファイル名を取得します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-186">The background task retrieves the file names from this location.</span></span>
 
-[!code-cs[PickFilesToTranscode](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetPickFilesToTranscode)]
+[!code-cs[<span data-ttu-id="4cf91-187">PickFilesToTranscode</span><span class="sxs-lookup"><span data-stu-id="4cf91-187">PickFilesToTranscode</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetPickFilesToTranscode)]
 
-バックグラウンド タスクを登録するには、新しい [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) と新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作成します。 後で識別できるようにバックグラウンド タスク ビルダーの名前を設定します。 [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) を、マニフェスト ファイルで使ったのと同じ名前空間とクラス名文字列に設定します。 [**Trigger**](https://msdn.microsoft.com/library/windows/apps/dn641725) プロパティを **MediaProcessingTrigger** インスタンスに設定します。
+<span data-ttu-id="4cf91-188">バックグラウンド タスクを登録するには、新しい [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) と新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作成します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-188">To register the background task, create a new [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) and a new [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768).</span></span> <span data-ttu-id="4cf91-189">後で識別できるようにバックグラウンド タスク ビルダーの名前を設定します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-189">Set the name of the background task builder so that you can identify it later.</span></span> <span data-ttu-id="4cf91-190">[**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) を、マニフェスト ファイルで使ったのと同じ名前空間とクラス名文字列に設定します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-190">Set the [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) to the same namespace and class name string you used in the manifest file.</span></span> <span data-ttu-id="4cf91-191">[**Trigger**](https://msdn.microsoft.com/library/windows/apps/dn641725) プロパティを **MediaProcessingTrigger** インスタンスに設定します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-191">Set the [**Trigger**](https://msdn.microsoft.com/library/windows/apps/dn641725) property to the **MediaProcessingTrigger** instance.</span></span>
 
-タスクを登録する前に、[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) コレクションをループ処理し、[**BackgroundTaskBuilder.Name**](https://msdn.microsoft.com/library/windows/apps/br224771) プロパティで指定した名前を持つすべてのタスクで [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229870) を呼び出すことにより、以前に登録したタスクを必ず登録解除してください。
+<span data-ttu-id="4cf91-192">タスクを登録する前に、[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) コレクションをループ処理し、[**BackgroundTaskBuilder.Name**](https://msdn.microsoft.com/library/windows/apps/br224771) プロパティで指定した名前を持つすべてのタスクで [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229870) を呼び出すことにより、以前に登録したタスクを必ず登録解除してください。</span><span class="sxs-lookup"><span data-stu-id="4cf91-192">Before registering the task, make sure you unregister any previously registered tasks by looping through the [**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) collection and calling [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229870) on any tasks that have the name you specified in the [**BackgroundTaskBuilder.Name**](https://msdn.microsoft.com/library/windows/apps/br224771) property.</span></span>
 
-[**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) を呼び出してバックグラウンド タスクを登録します。 [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) イベントと [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224808) イベントのハンドラーを登録します。
+<span data-ttu-id="4cf91-193">[**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) を呼び出してバックグラウンド タスクを登録します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-193">Register the background task by calling [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772).</span></span> <span data-ttu-id="4cf91-194">[**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) イベントと [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224808) イベントのハンドラーを登録します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-194">Register handlers for the [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) and [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224808) events.</span></span>
 
-[!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
+[!code-cs[<span data-ttu-id="4cf91-195">RegisterBackgroundTask</span><span class="sxs-lookup"><span data-stu-id="4cf91-195">RegisterBackgroundTask</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-**MediaProcessingTrigger** オブジェクトの [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) メソッドを呼び出してバックグラウンド タスクを起動します。 このメソッドによって返される [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) オブジェクトにより、バックグラウンド タスクが正常に起動されたかどうかを把握することができます。正常に起動されなかった場合は、バックグラウンド タスクが起動しなかった理由を把握できます。
+<span data-ttu-id="4cf91-196">**MediaProcessingTrigger** オブジェクトの [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) メソッドを呼び出してバックグラウンド タスクを起動します。</span><span class="sxs-lookup"><span data-stu-id="4cf91-196">Launch the background task by calling the **MediaProcessingTrigger** object's [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) method.</span></span> <span data-ttu-id="4cf91-197">このメソッドによって返される [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) オブジェクトにより、バックグラウンド タスクが正常に起動されたかどうかを把握することができます。正常に起動されなかった場合は、バックグラウンド タスクが起動しなかった理由を把握できます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-197">The [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) object returned by this method lets you know whether the background task was started successfully, and if not, lets you know why the background task wasn't launched.</span></span>
 
-[!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
+[!code-cs[<span data-ttu-id="4cf91-198">LaunchBackgroundTask</span><span class="sxs-lookup"><span data-stu-id="4cf91-198">LaunchBackgroundTask</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
 
-バックグラウンド タスクが操作の進行状況を更新すると、**OnProgress** イベント ハンドラーが呼び出されます。 この機会を使って、進行状況情報によって UI を更新することができます。
+<span data-ttu-id="4cf91-199">バックグラウンド タスクが操作の進行状況を更新すると、**OnProgress** イベント ハンドラーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-199">The **OnProgress** event handler is called when the background task updates the progress of the operation.</span></span> <span data-ttu-id="4cf91-200">この機会を使って、進行状況情報によって UI を更新することができます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-200">You can use this opportunity to update your UI with progress information.</span></span>
 
-[!code-cs[OnProgress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnProgress)]
+[!code-cs[<span data-ttu-id="4cf91-201">OnProgress</span><span class="sxs-lookup"><span data-stu-id="4cf91-201">OnProgress</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnProgress)]
 
-バックグラウンド タスクの実行が完了すると、**OnCompleted** イベント ハンドラーが呼び出されます。 ここでも、UI を更新してユーザーに状態情報を示すことができます。
+<span data-ttu-id="4cf91-202">バックグラウンド タスクの実行が完了すると、**OnCompleted** イベント ハンドラーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-202">The **OnCompleted** event handler is called when the background task has finished running.</span></span> <span data-ttu-id="4cf91-203">ここでも、UI を更新してユーザーに状態情報を示すことができます。</span><span class="sxs-lookup"><span data-stu-id="4cf91-203">This is another opportunity to update your UI to give status information to the user.</span></span>
 
-[!code-cs[OnCompleted](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnCompleted)]
+[!code-cs[<span data-ttu-id="4cf91-204">OnCompleted</span><span class="sxs-lookup"><span data-stu-id="4cf91-204">OnCompleted</span></span>](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnCompleted)]
 
-
- 
 
  
 
+ 
 
 
 

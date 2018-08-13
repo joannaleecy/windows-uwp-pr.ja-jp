@@ -1,8 +1,8 @@
 ---
 author: jwmsft
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
-title: "コンポジション効果"
-description: "効果 API を使用すると、開発者は UI のレンダリング方法をカスタマイズできます。"
+title: コンポジション効果
+description: 効果 API を使用すると、開発者は UI のレンダリング方法をカスタマイズできます。
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.openlocfilehash: 3ee0d4c66dedfb0309a8426c779af3d71c8d1afc
 ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/20/2017
+ms.locfileid: "839394"
 ---
 # <a name="composition-effects"></a><span data-ttu-id="9b36e-104">コンポジション効果</span><span class="sxs-lookup"><span data-stu-id="9b36e-104">Composition effects</span></span>
 

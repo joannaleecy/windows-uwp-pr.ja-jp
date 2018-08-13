@@ -1,19 +1,20 @@
 ---
 author: normesta
 ms.assetid: 76776b0f-3163-48c9-835b-3f4213968079
-title: "データ アクセス"
-description: "このセクションでは、デバイス上のデータをプライベート データベースに保存する方法と、ユニバーサル Windows プラットフォーム (UWP) アプリでオブジェクト リレーショナル マッピングを使う方法について説明します。"
+title: データ アクセス
+description: このセクションでは、デバイス上のデータをプライベート データベースに保存する方法と、ユニバーサル Windows プラットフォーム (UWP) アプリでオブジェクト リレーショナル マッピングを使う方法について説明します。
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, データ, データベース, リレーショナル, テーブル, sqlite"
+keywords: Windows 10, UWP, データ, データベース, リレーショナル, テーブル, sqlite
 ms.openlocfilehash: 19690b6877fb4304b7740e6098711ca0b097d567
 ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2017
+ms.locfileid: "665316"
 ---
 # <a name="data-access"></a><span data-ttu-id="345fe-104">データ アクセス</span><span class="sxs-lookup"><span data-stu-id="345fe-104">Data access</span></span>
 

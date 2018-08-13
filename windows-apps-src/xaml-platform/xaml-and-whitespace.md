@@ -1,7 +1,7 @@
 ---
 author: jwmsft
-description: "XAML で使われる空白処理規則について説明します。"
-title: "XAML と空白"
+description: XAML で使われる空白処理規則について説明します。
+title: XAML と空白
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ms.author: jimwalk
 ms.date: 02/08/2017
@@ -9,53 +9,51 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 260aa6c4bae2f7e9d051e172f83563f430e4e6c4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 88d4b155acb38a3ab11cc180d112fb3434af87a0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "244413"
 ---
+# <a name="xaml-and-whitespace"></a><span data-ttu-id="8f361-104">XAML と空白</span><span class="sxs-lookup"><span data-stu-id="8f361-104">XAML and whitespace</span></span>
 
-# <a name="xaml-and-whitespace"></a>XAML と空白
+<span data-ttu-id="8f361-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="8f361-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="8f361-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]</span><span class="sxs-lookup"><span data-stu-id="8f361-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="8f361-107">XAML で使われる空白処理規則について説明します。</span><span class="sxs-lookup"><span data-stu-id="8f361-107">Learn about the whitespace processing rules as used by XAML.</span></span>
 
-XAML で使われる空白処理規則について説明します。
+## <a name="whitespace-processing"></a><span data-ttu-id="8f361-108">空白処理</span><span class="sxs-lookup"><span data-stu-id="8f361-108">Whitespace processing</span></span>
 
-## <a name="whitespace-processing"></a>空白処理
+<span data-ttu-id="8f361-109">XML と同じように、XAML での空白文字には、スペース、改行、タブがあります。</span><span class="sxs-lookup"><span data-stu-id="8f361-109">Consistent with XML, whitespace characters in XAML are space, linefeed, and tab.</span></span> <span data-ttu-id="8f361-110">これらは、それぞれ Unicode 値 0020、000A、0009 に対応します。</span><span class="sxs-lookup"><span data-stu-id="8f361-110">These correspond to the Unicode values 0020, 000A, and 0009 respectively.</span></span> <span data-ttu-id="8f361-111">既定では、XAML プロセッサが XAML ファイル内の要素間にある内部テキストを検出すると、この空白の正規化が行われます。</span><span class="sxs-lookup"><span data-stu-id="8f361-111">By default this whitespace normalization occurs when a XAML processor encounters any inner text found between elements in a XAML file:</span></span>
 
-XML と同じように、XAML での空白文字には、スペース、改行、タブがあります。 これらは、それぞれ Unicode 値 0020、000A、0009 に対応します。 既定では、XAML プロセッサが XAML ファイル内の要素間にある内部テキストを検出すると、この空白の正規化が行われます。
+-   <span data-ttu-id="8f361-112">東アジアの文字間の改行文字は削除されます。</span><span class="sxs-lookup"><span data-stu-id="8f361-112">Linefeed characters between East Asian characters are removed.</span></span>
+-   <span data-ttu-id="8f361-113">すべての空白文字 (スペース、改行、タブ) はスペースに変換されます。</span><span class="sxs-lookup"><span data-stu-id="8f361-113">All whitespace characters (space, linefeed, tab) are converted into spaces.</span></span>
+-   <span data-ttu-id="8f361-114">連続した複数のスペースはすべて削除され、1 つのスペースに置換されます。</span><span class="sxs-lookup"><span data-stu-id="8f361-114">All consecutive spaces are deleted and replaced by one space.</span></span>
+-   <span data-ttu-id="8f361-115">開始タグの直後にあるスペースは削除されます。</span><span class="sxs-lookup"><span data-stu-id="8f361-115">A space immediately following the start tag is deleted.</span></span>
+-   <span data-ttu-id="8f361-116">終了タグの直前にあるスペースは削除されます。</span><span class="sxs-lookup"><span data-stu-id="8f361-116">A space immediately before the end tag is deleted.</span></span>
+-   <span data-ttu-id="8f361-117">*東アジアの文字*は、Unicode 文字範囲 U+20000 から U+2FFFD と U+30000 から U+3FFFD のセットとして定義されます。</span><span class="sxs-lookup"><span data-stu-id="8f361-117">*East Asian characters* is defined as a set of Unicode character ranges U+20000 to U+2FFFD and U+30000 to U+3FFFD.</span></span> <span data-ttu-id="8f361-118">このサブセットは *CJK 漢字*とも呼ばれることもあります。</span><span class="sxs-lookup"><span data-stu-id="8f361-118">This subset is also sometimes referred to as *CJK ideographs*.</span></span> <span data-ttu-id="8f361-119">詳しくは、http://www.unicode.org をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="8f361-119">For more information, see http://www.unicode.org.</span></span>
 
--   東アジアの文字間の改行文字は削除されます。
--   すべての空白文字 (スペース、改行、タブ) はスペースに変換されます。
--   連続した複数のスペースはすべて削除され、1 つのスペースに置換されます。
--   開始タグの直後にあるスペースは削除されます。
--   終了タグの直前にあるスペースは削除されます。
--   *東アジアの文字*は、Unicode 文字範囲 U+20000 から U+2FFFD と U+30000 から U+3FFFD のセットとして定義されます。 このサブセットは *CJK 漢字*とも呼ばれることもあります。 詳しくは、http://www.unicode.org をご覧ください。
+<span data-ttu-id="8f361-120">"既定" とは、**xml:space** 属性の既定値によって示される状態に相当します。</span><span class="sxs-lookup"><span data-stu-id="8f361-120">"Default" corresponds to the state denoted by the default value of the **xml:space** attribute.</span></span>
 
-"既定" とは、**xml:space** 属性の既定値によって示される状態に相当します。
+### <a name="whitespace-in-inner-text-and-string-primitives"></a><span data-ttu-id="8f361-121">内部テキスト内の空白と文字列のプリミティブ</span><span class="sxs-lookup"><span data-stu-id="8f361-121">Whitespace in inner text, and string primitives</span></span>
 
-### <a name="whitespace-in-inner-text-and-string-primitives"></a>内部テキスト内の空白と文字列のプリミティブ
+<span data-ttu-id="8f361-122">上で説明した正規化規則は、XAML 要素内の内部テキストに適用されます。</span><span class="sxs-lookup"><span data-stu-id="8f361-122">The above normalization rules apply to inner text within XAML elements.</span></span> <span data-ttu-id="8f361-123">正規化の後、XAML プロセッサが次のように内部テキストを適切な型に変換します。</span><span class="sxs-lookup"><span data-stu-id="8f361-123">After normalization, a XAML processor converts any inner text into an appropriate type like this:</span></span>
 
-上で説明した正規化規則は、XAML 要素内の内部テキストに適用されます。 正規化の後、XAML プロセッサが次のように内部テキストを適切な型に変換します。
+-   <span data-ttu-id="8f361-124">プロパティの型がコレクションではないが、直接的には **Object** 型ではない場合、XAML プロセッサは型コンバーターを使って型の変換を試みます。</span><span class="sxs-lookup"><span data-stu-id="8f361-124">If the type of the property is not a collection, but is not directly an **Object** type, the XAML processor tries to convert to that type using its type converter.</span></span> <span data-ttu-id="8f361-125">ここで変換が失敗すると、XAML 解析エラーになります。</span><span class="sxs-lookup"><span data-stu-id="8f361-125">A failed conversion here results in a XAML parse error.</span></span>
+-   <span data-ttu-id="8f361-126">プロパティの型がコレクションで、内部テキストが連続的である (介在する要素タグがない) 場合、内部テキストは単一の **String** として解析されます。</span><span class="sxs-lookup"><span data-stu-id="8f361-126">If the type of the property is a collection, and the inner text is contiguous (no intervening element tags), the inner text is parsed as a single **String**.</span></span> <span data-ttu-id="8f361-127">コレクションの型で **String** が許容されていない場合も、XAML 解析エラーになります。</span><span class="sxs-lookup"><span data-stu-id="8f361-127">If the collection type cannot accept **String**, this also results in a XAML parser error.</span></span>
+-   <span data-ttu-id="8f361-128">プロパティの型が **Object** である場合、内部テキストは単一の **String** として解析されます。</span><span class="sxs-lookup"><span data-stu-id="8f361-128">If the type of the property is **Object**, then the inner text is parsed as a single **String**.</span></span> <span data-ttu-id="8f361-129">介在する要素タグが存在する場合、XAML 解析エラーになります。これは、**Object** 型が単一のオブジェクト (**String** など) を前提としているためです。</span><span class="sxs-lookup"><span data-stu-id="8f361-129">If there are intervening element tags, this results in a XAML parser error, because the **Object** type implies a single object (**String** or otherwise).</span></span>
+-   <span data-ttu-id="8f361-130">プロパティの型がコレクションであり、内部テキストが連続していない場合、最初の部分文字列が **String** に変換され、コレクション項目として追加されます。介在する要素は、コレクション項目として追加されます。最後に終了の部分文字列 (ある場合) が 3 番目の **String** 項目としてコレクションに追加されます。</span><span class="sxs-lookup"><span data-stu-id="8f361-130">If the type of the property is a collection, and the inner text is not contiguous, then the first substring is converted into a **String** and added as a collection item, the intervening element is added as a collection item, and finally the trailing substring (if any) is added to the collection as a third **String** item.</span></span>
 
--   プロパティの型がコレクションではないが、直接的には **Object** 型ではない場合、XAML プロセッサは型コンバーターを使って型の変換を試みます。 ここで変換が失敗すると、XAML 解析エラーになります。
--   プロパティの型がコレクションで、内部テキストが連続的である (介在する要素タグがない) 場合、内部テキストは単一の **String** として解析されます。 コレクションの型で **String** が許容されていない場合も、XAML 解析エラーになります。
--   プロパティの型が **Object** である場合、内部テキストは単一の **String** として解析されます。 介在する要素タグが存在する場合、XAML 解析エラーになります。これは、**Object** 型が単一のオブジェクト (**String** など) を前提としているためです。
--   プロパティの型がコレクションであり、内部テキストが連続していない場合、最初の部分文字列が **String** に変換され、コレクション項目として追加されます。介在する要素は、コレクション項目として追加されます。最後に終了の部分文字列 (ある場合) が 3 番目の **String** 項目としてコレクションに追加されます。
+### <a name="whitespace-and-text-content-models"></a><span data-ttu-id="8f361-131">空白とテキスト コンテンツのモデル</span><span class="sxs-lookup"><span data-stu-id="8f361-131">Whitespace and text content models</span></span>
 
-### <a name="whitespace-and-text-content-models"></a>空白とテキスト コンテンツのモデル
+<span data-ttu-id="8f361-132">空白の保持は、実際には、考えられるすべてのコンテンツ モデルのサブセットに関してのみ関係するものです。</span><span class="sxs-lookup"><span data-stu-id="8f361-132">In practice, preserving whitespace is of concern only for a subset of all possible content models.</span></span> <span data-ttu-id="8f361-133">このサブセットは、特定の形式で単一の **String** 型を取ることができるコンテンツ モデルで構成されます。専用の **String** コレクション、**String** と一覧に記載されている他の型の混合、コレクション、または辞書で構成されます。</span><span class="sxs-lookup"><span data-stu-id="8f361-133">That subset is composed of content models that can take a singleton **String** type in some form, a dedicated **String** collection, or a mixture of **String** and other types in lists, collections, or dictionaries.</span></span>
 
-空白の保持は、実際には、考えられるすべてのコンテンツ モデルのサブセットに関してのみ関係するものです。 このサブセットは、特定の形式で単一の **String** 型を取ることができるコンテンツ モデルで構成されます。専用の **String** コレクション、**String** と一覧に記載されている他の型の混合、コレクション、または辞書で構成されます。
+<span data-ttu-id="8f361-134">文字列を使うことができるコンテンツ モデルの場合でも、これらのコンテンツ モデル内での既定の動作では、残される空白は重要なものとしては扱われません。</span><span class="sxs-lookup"><span data-stu-id="8f361-134">Even for content models that can take strings, the default behavior within these content models is that any whitespace that remains is not treated as significant.</span></span>
 
-文字列を使うことができるコンテンツ モデルの場合でも、これらのコンテンツ モデル内での既定の動作では、残される空白は重要なものとしては扱われません。
+### <a name="preserving-whitespace"></a><span data-ttu-id="8f361-135">空白の保持</span><span class="sxs-lookup"><span data-stu-id="8f361-135">Preserving whitespace</span></span>
 
-### <a name="preserving-whitespace"></a>空白の保持
+<span data-ttu-id="8f361-136">最終的な表示に関して、ソース XAML 内の空白を保持するためのいくつかの手法は XAML プロセッサによる空白の正規化の影響を受けません。</span><span class="sxs-lookup"><span data-stu-id="8f361-136">Several techniques for preserving whitespace in the source XAML for eventual presentation are not affected by XAML processor whitespace normalization.</span></span>
 
-最終的な表示に関して、ソース XAML 内の空白を保持するためのいくつかの手法は XAML プロセッサによる空白の正規化の影響を受けません。
+`xml:space="preserve"`<span data-ttu-id="8f361-137">: この属性は、空白を保持する必要がある要素のレベルで指定します。</span><span class="sxs-lookup"><span data-stu-id="8f361-137">: Specify this attribute at the level of the element where whitespace needs to be preserved.</span></span> <span data-ttu-id="8f361-138">これを指定すると、見た目に直感的な入れ子としてマークアップ要素を配置するためにコード エディターまたはデザイン サーフェイスによって追加される場合があるスペースも含め、すべての空白が保持されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="8f361-138">Note that this preserves all whitespace, including the spaces that might be added by code editors or design surfaces to align markup elements as a visually intuitive nesting.</span></span> <span data-ttu-id="8f361-139">これらのスペースのレンダリングは、包含要素のコンテンツ モデルの問題でもあります。</span><span class="sxs-lookup"><span data-stu-id="8f361-139">Whether those spaces render is again a matter of the content model for the containing element.</span></span> <span data-ttu-id="8f361-140">ルート レベルで `xml:space="preserve"` を指定することはお勧めしません。大半のオブジェクト モデルは、いずれにしても空白を重要なものと見なしていないためです。</span><span class="sxs-lookup"><span data-stu-id="8f361-140">We don't recommend that you specify `xml:space="preserve"` at the root level, because the majority of object models don't consider whitespace as significant one way or another.</span></span> <span data-ttu-id="8f361-141">文字列内で空白をレンダリングする要素、または空白が重要となるコレクションである要素のレベルに限定してこの属性を設定することが、より適切な方法です。</span><span class="sxs-lookup"><span data-stu-id="8f361-141">It is a better practice to only set the attribute specifically at the level of elements that render whitespace within strings, or are whitespace significant collections.</span></span>
 
-`xml:space="preserve"`: この属性は、空白を保持する必要がある要素のレベルで指定します。 これを指定すると、見た目に直感的な入れ子としてマークアップ要素を配置するためにコード エディターまたはデザイン サーフェイスによって追加される場合があるスペースも含め、すべての空白が保持されることに注意してください。 これらのスペースのレンダリングは、包含要素のコンテンツ モデルの問題でもあります。 ルート レベルで `xml:space="preserve"` を指定することはお勧めしません。大半のオブジェクト モデルは、いずれにしても空白を重要なものと見なしていないためです。 文字列内で空白をレンダリングする要素、または空白が重要となるコレクションである要素のレベルに限定してこの属性を設定することが、より適切な方法です。
-
-エンティティと改行なしスペース: XAML は、テキスト オブジェクト モデル内への任意の Unicode エンティティの配置をサポートしています。 (UTF-8 エンコードでの) 改行なしスペースなど、専用のエンティティを使うことができます。 また、改行なしスペース文字をサポートするリッチ テキスト コントロールも使うことができます。 インデントなどのレイアウト特性をシミュレートするのにエンティティを使っている場合は注意が必要です。その理由は、エンティティの実行時出力は、パネルや余白の適切な使用など、一般的なレイアウト機能よりも、数が多いほうの要因によって変わるためです。
-
+<span data-ttu-id="8f361-142">エンティティと改行なしスペース: XAML は、テキスト オブジェクト モデル内への任意の Unicode エンティティの配置をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="8f361-142">Entities and nonbreaking spaces: XAML supports placing any Unicode entity within a text object model.</span></span> <span data-ttu-id="8f361-143">(UTF-8 エンコードでの) 改行なしスペースなど、専用のエンティティを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="8f361-143">You can use dedicated entities such as nonbreaking space (in UTF-8 encoding).</span></span> <span data-ttu-id="8f361-144">また、改行なしスペース文字をサポートするリッチ テキスト コントロールも使うことができます。</span><span class="sxs-lookup"><span data-stu-id="8f361-144">You can also use rich text controls that support nonbreaking space characters.</span></span> <span data-ttu-id="8f361-145">インデントなどのレイアウト特性をシミュレートするのにエンティティを使っている場合は注意が必要です。その理由は、エンティティの実行時出力は、パネルや余白の適切な使用など、一般的なレイアウト機能よりも、数が多いほうの要因によって変わるためです。</span><span class="sxs-lookup"><span data-stu-id="8f361-145">Be cautious if you are using entities to simulate layout characteristics such as indents, because the run-time output of the entities vary based on a greater number of factors than would the general layout facilities, such as proper use of panels and margins.</span></span>
 

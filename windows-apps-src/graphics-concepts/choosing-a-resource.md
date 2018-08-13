@@ -1,103 +1,103 @@
 ---
-title: "リソースの選択"
-description: "リソースは、3D パイプラインで使用されるデータのコレクションです。"
+title: リソースの選択
+description: リソースは、3D パイプラインで使用されるデータのコレクションです。
 ms.assetid: 6BAD6287-2930-42F8-BF51-69A379D1D2C3
 keywords:
-- "リソースの選択"
-author: PeterTurcan
-ms.author: pettur
+- リソースの選択
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 73f2d2f6b6a925a425c94bcf1b5f957a82569236
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 2e616f5a04e50b400c4bd7a700981396570a6c1d
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044661"
 ---
-
-# <a name="choosing-a-resource"></a>リソースの選択
-
-
-リソースは、3D パイプラインで使用されるデータのコレクションです。 リソースを作成してその動作を定義することが、アプリケーションをプログラミングするための第一歩になります。 このガイドでは、アプリケーションで必要なリソースの選択に関する基本的なトピックについて説明します。
-
-## <a name="span-ididentifybindingspanspan-ididentifybindingspanspan-ididentifybindingspanidentify-pipeline-stages-that-need-resources"></a><span id="Identify_Binding"></span><span id="identify_binding"></span><span id="IDENTIFY_BINDING"></span>リソースを必要とするパイプラインのステージの特定
+# <a name="choosing-a-resource"></a><span data-ttu-id="a8b40-104">リソースの選択</span><span class="sxs-lookup"><span data-stu-id="a8b40-104">Choosing a resource</span></span>
 
 
-最初の手順は、リソースを使用する[グラフィックス パイプライン](graphics-pipeline.md)のステージの選択です。 このとき、リソースからデータを読み込むステージだけでなく、リソースにデータを書き込むステージも特定します。 リソースを使用するパイプラインのステージを把握できれば、リソースをステージにバインドするために呼び出す API を決定できます。
+<span data-ttu-id="a8b40-105">リソースは、3D パイプラインで使用されるデータのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="a8b40-105">A resource is a collection of data that is used by the 3D pipeline.</span></span> <span data-ttu-id="a8b40-106">リソースを作成してその動作を定義することが、アプリケーションをプログラミングするための第一歩になります。</span><span class="sxs-lookup"><span data-stu-id="a8b40-106">Creating resources and defining their behavior is the first step toward programming your application.</span></span> <span data-ttu-id="a8b40-107">このガイドでは、アプリケーションで必要なリソースの選択に関する基本的なトピックについて説明します。</span><span class="sxs-lookup"><span data-stu-id="a8b40-107">This guide covers basic topics for choosing the resources required by your application.</span></span>
 
-次の表は、各パイプラインのステージにバインドすることのできるリソースの種類を示しています。 リソースを入力または出力としてバインドできるかどうかを示しています。
+## <a name="span-ididentifybindingspanspan-ididentifybindingspanspan-ididentifybindingspanidentify-pipeline-stages-that-need-resources"></a><span data-ttu-id="a8b40-108"><span id="Identify_Binding"></span><span id="identify_binding"></span><span id="IDENTIFY_BINDING"></span>リソースを必要とするパイプラインのステージの特定</span><span class="sxs-lookup"><span data-stu-id="a8b40-108"><span id="Identify_Binding"></span><span id="identify_binding"></span><span id="IDENTIFY_BINDING"></span>Identify pipeline stages that need resources</span></span>
 
-| パイプラインのステージ  | 入力/出力 | リソース               | リソースの種類                           |
+
+<span data-ttu-id="a8b40-109">最初の手順は、リソースを使用する[グラフィックス パイプライン](graphics-pipeline.md)のステージの選択です。</span><span class="sxs-lookup"><span data-stu-id="a8b40-109">The first step is to choose the [graphics pipeline](graphics-pipeline.md) stage (or stages) that will use a resource.</span></span> <span data-ttu-id="a8b40-110">このとき、リソースからデータを読み込むステージだけでなく、リソースにデータを書き込むステージも特定します。</span><span class="sxs-lookup"><span data-stu-id="a8b40-110">That is, identify each stage that will read data from a resource as well as the stages that will write data out to a resource.</span></span> <span data-ttu-id="a8b40-111">リソースを使用するパイプラインのステージを把握できれば、リソースをステージにバインドするために呼び出す API を決定できます。</span><span class="sxs-lookup"><span data-stu-id="a8b40-111">Knowing the pipeline stages where the resources will be used determines the APIs that will be called to bind the resource to the stage.</span></span>
+
+<span data-ttu-id="a8b40-112">次の表は、各パイプラインのステージにバインドすることのできるリソースの種類を示しています。</span><span class="sxs-lookup"><span data-stu-id="a8b40-112">This table lists the types of resources that can be bound to each pipeline stage.</span></span> <span data-ttu-id="a8b40-113">リソースを入力または出力としてバインドできるかどうかを示しています。</span><span class="sxs-lookup"><span data-stu-id="a8b40-113">It includes whether the resource can be bound as an input or an output.</span></span>
+
+| <span data-ttu-id="a8b40-114">パイプラインのステージ</span><span class="sxs-lookup"><span data-stu-id="a8b40-114">Pipeline Stage</span></span>  | <span data-ttu-id="a8b40-115">入力/出力</span><span class="sxs-lookup"><span data-stu-id="a8b40-115">In/Out</span></span> | <span data-ttu-id="a8b40-116">リソース</span><span class="sxs-lookup"><span data-stu-id="a8b40-116">Resource</span></span>               | <span data-ttu-id="a8b40-117">リソースの種類</span><span class="sxs-lookup"><span data-stu-id="a8b40-117">Resource Type</span></span>                           |
 |-----------------|--------|------------------------|-----------------------------------------|
-| 入力アセンブラー | 入力     | 頂点バッファー          | バッファー                                  |
-| 入力アセンブラー | 入力     | インデックス バッファー           | バッファー                                  |
-| シェーダー ステージ   | 入力     | シェーダー リソース ビュー    | バッファー、Texture1D、Texture2D、Texture3D |
-| シェーダー ステージ   | 入力     | シェーダー定数バッファー | バッファー                                  |
-| ストリーム出力   | 出力    | バッファー                 | バッファー                                  |
-| 出力結合   | 出力    | レンダー ターゲット ビュー     | バッファー、Texture1D、Texture2D、Texture3D |
-| 出力結合   | 出力    | 深度/ステンシル ビュー     | Texture1D、Texture2D                    |
+| <span data-ttu-id="a8b40-118">入力アセンブラー</span><span class="sxs-lookup"><span data-stu-id="a8b40-118">Input Assembler</span></span> | <span data-ttu-id="a8b40-119">入力</span><span class="sxs-lookup"><span data-stu-id="a8b40-119">In</span></span>     | <span data-ttu-id="a8b40-120">頂点バッファー</span><span class="sxs-lookup"><span data-stu-id="a8b40-120">Vertex Buffer</span></span>          | <span data-ttu-id="a8b40-121">バッファー</span><span class="sxs-lookup"><span data-stu-id="a8b40-121">Buffer</span></span>                                  |
+| <span data-ttu-id="a8b40-122">入力アセンブラー</span><span class="sxs-lookup"><span data-stu-id="a8b40-122">Input Assembler</span></span> | <span data-ttu-id="a8b40-123">入力</span><span class="sxs-lookup"><span data-stu-id="a8b40-123">In</span></span>     | <span data-ttu-id="a8b40-124">インデックス バッファー</span><span class="sxs-lookup"><span data-stu-id="a8b40-124">Index Buffer</span></span>           | <span data-ttu-id="a8b40-125">バッファー</span><span class="sxs-lookup"><span data-stu-id="a8b40-125">Buffer</span></span>                                  |
+| <span data-ttu-id="a8b40-126">シェーダー ステージ</span><span class="sxs-lookup"><span data-stu-id="a8b40-126">Shader Stages</span></span>   | <span data-ttu-id="a8b40-127">入力</span><span class="sxs-lookup"><span data-stu-id="a8b40-127">In</span></span>     | <span data-ttu-id="a8b40-128">シェーダー リソース ビュー</span><span class="sxs-lookup"><span data-stu-id="a8b40-128">Shader-ResourceView</span></span>    | <span data-ttu-id="a8b40-129">バッファー、Texture1D、Texture2D、Texture3D</span><span class="sxs-lookup"><span data-stu-id="a8b40-129">Buffer, Texture1D, Texture2D, Texture3D</span></span> |
+| <span data-ttu-id="a8b40-130">シェーダー ステージ</span><span class="sxs-lookup"><span data-stu-id="a8b40-130">Shader Stages</span></span>   | <span data-ttu-id="a8b40-131">入力</span><span class="sxs-lookup"><span data-stu-id="a8b40-131">In</span></span>     | <span data-ttu-id="a8b40-132">シェーダー定数バッファー</span><span class="sxs-lookup"><span data-stu-id="a8b40-132">Shader-Constant Buffer</span></span> | <span data-ttu-id="a8b40-133">バッファー</span><span class="sxs-lookup"><span data-stu-id="a8b40-133">Buffer</span></span>                                  |
+| <span data-ttu-id="a8b40-134">ストリーム出力</span><span class="sxs-lookup"><span data-stu-id="a8b40-134">Stream Output</span></span>   | <span data-ttu-id="a8b40-135">出力</span><span class="sxs-lookup"><span data-stu-id="a8b40-135">Out</span></span>    | <span data-ttu-id="a8b40-136">バッファー</span><span class="sxs-lookup"><span data-stu-id="a8b40-136">Buffer</span></span>                 | <span data-ttu-id="a8b40-137">バッファー</span><span class="sxs-lookup"><span data-stu-id="a8b40-137">Buffer</span></span>                                  |
+| <span data-ttu-id="a8b40-138">出力結合</span><span class="sxs-lookup"><span data-stu-id="a8b40-138">Output Merger</span></span>   | <span data-ttu-id="a8b40-139">出力</span><span class="sxs-lookup"><span data-stu-id="a8b40-139">Out</span></span>    | <span data-ttu-id="a8b40-140">レンダー ターゲット ビュー</span><span class="sxs-lookup"><span data-stu-id="a8b40-140">Render-target View</span></span>     | <span data-ttu-id="a8b40-141">バッファー、Texture1D、Texture2D、Texture3D</span><span class="sxs-lookup"><span data-stu-id="a8b40-141">Buffer, Texture1D, Texture2D, Texture3D</span></span> |
+| <span data-ttu-id="a8b40-142">出力結合</span><span class="sxs-lookup"><span data-stu-id="a8b40-142">Output Merger</span></span>   | <span data-ttu-id="a8b40-143">出力</span><span class="sxs-lookup"><span data-stu-id="a8b40-143">Out</span></span>    | <span data-ttu-id="a8b40-144">深度/ステンシル ビュー</span><span class="sxs-lookup"><span data-stu-id="a8b40-144">Depth/Stencil View</span></span>     | <span data-ttu-id="a8b40-145">Texture1D、Texture2D</span><span class="sxs-lookup"><span data-stu-id="a8b40-145">Texture1D, Texture2D</span></span>                    |
 
  
 
-## <a name="span-ididentifyusagespanspan-ididentifyusagespanspan-ididentifyusagespanidentify-how-each-resource-will-be-used"></a><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>各リソースの使用方法の特定
+## <a name="span-ididentifyusagespanspan-ididentifyusagespanspan-ididentifyusagespanidentify-how-each-resource-will-be-used"></a><span data-ttu-id="a8b40-146"><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>各リソースの使用方法の特定</span><span class="sxs-lookup"><span data-stu-id="a8b40-146"><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>Identify how each resource will be used</span></span>
 
 
-アプリケーションが使用するパイプラインのステージ (および各ステージが必要とするリソース) を選択したら、各リソースの使用方法つまりリソースを CPU または GPU からアクセス可能にするかどうかを決定します。
+<span data-ttu-id="a8b40-147">アプリケーションが使用するパイプラインのステージ (および各ステージが必要とするリソース) を選択したら、各リソースの使用方法つまりリソースを CPU または GPU からアクセス可能にするかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="a8b40-147">Once you have chosen the pipeline stages that your application will use (and therefore the resources that each stage will require), the next step is to determine how each resource will be used, that is, whether a resource can be accessed by the CPU or the GPU.</span></span>
 
-アプリケーションを実行するハードウェアには、最低でも CPU と GPU が 1 つずつあります。 使用方法の値を選ぶ際には、リソースの読み取りまたは書き込みに必要なプロセッサの種類が次の選択肢のいずれになるかを検討します。
+<span data-ttu-id="a8b40-148">アプリケーションを実行するハードウェアには、最低でも CPU と GPU が 1 つずつあります。</span><span class="sxs-lookup"><span data-stu-id="a8b40-148">The hardware that your application is running on will have a minimum of at least one CPU and one GPU.</span></span> <span data-ttu-id="a8b40-149">使用方法の値を選ぶ際には、リソースの読み取りまたは書き込みに必要なプロセッサの種類が次の選択肢のいずれになるかを検討します。</span><span class="sxs-lookup"><span data-stu-id="a8b40-149">To pick a usage value, consider which type of processor needs to read or write to the resource from the following options.</span></span>
 
-| リソースの使用方法 | 更新の実行                    | 更新頻度 |
+| <span data-ttu-id="a8b40-150">リソースの使用方法</span><span class="sxs-lookup"><span data-stu-id="a8b40-150">Resource Usage</span></span> | <span data-ttu-id="a8b40-151">更新の実行</span><span class="sxs-lookup"><span data-stu-id="a8b40-151">Can be updated by</span></span>                    | <span data-ttu-id="a8b40-152">更新頻度</span><span class="sxs-lookup"><span data-stu-id="a8b40-152">Frequency of Update</span></span> |
 |----------------|--------------------------------------|---------------------|
-| 既定        | GPU                                  | 低頻度        |
-| 動的        | CPU                                  | 高頻度          |
-| ステージング        | GPU                                  | なし                 |
-| 固定      | CPU (リソースの作成時のみ) | なし                 |
+| <span data-ttu-id="a8b40-153">既定</span><span class="sxs-lookup"><span data-stu-id="a8b40-153">Default</span></span>        | <span data-ttu-id="a8b40-154">GPU</span><span class="sxs-lookup"><span data-stu-id="a8b40-154">GPU</span></span>                                  | <span data-ttu-id="a8b40-155">低頻度</span><span class="sxs-lookup"><span data-stu-id="a8b40-155">infrequently</span></span>        |
+| <span data-ttu-id="a8b40-156">動的</span><span class="sxs-lookup"><span data-stu-id="a8b40-156">Dynamic</span></span>        | <span data-ttu-id="a8b40-157">CPU</span><span class="sxs-lookup"><span data-stu-id="a8b40-157">CPU</span></span>                                  | <span data-ttu-id="a8b40-158">高頻度</span><span class="sxs-lookup"><span data-stu-id="a8b40-158">frequently</span></span>          |
+| <span data-ttu-id="a8b40-159">ステージング</span><span class="sxs-lookup"><span data-stu-id="a8b40-159">Staging</span></span>        | <span data-ttu-id="a8b40-160">GPU</span><span class="sxs-lookup"><span data-stu-id="a8b40-160">GPU</span></span>                                  | <span data-ttu-id="a8b40-161">なし</span><span class="sxs-lookup"><span data-stu-id="a8b40-161">n/a</span></span>                 |
+| <span data-ttu-id="a8b40-162">固定</span><span class="sxs-lookup"><span data-stu-id="a8b40-162">Immutable</span></span>      | <span data-ttu-id="a8b40-163">CPU (リソースの作成時のみ)</span><span class="sxs-lookup"><span data-stu-id="a8b40-163">CPU (only at resource creation time)</span></span> | <span data-ttu-id="a8b40-164">なし</span><span class="sxs-lookup"><span data-stu-id="a8b40-164">n/a</span></span>                 |
 
  
 
-CPU によるリソースの更新が低頻度 (フレームごとに 1 回未満) であると予想される場合は、既定の使用方法を選択します。 パフォーマンス低下を避けるため、既定の使用方法では CPU からリソースに直接書き込まないことが理想的です。
+<span data-ttu-id="a8b40-165">CPU によるリソースの更新が低頻度 (フレームごとに 1 回未満) であると予想される場合は、既定の使用方法を選択します。</span><span class="sxs-lookup"><span data-stu-id="a8b40-165">Default usage should be used for a resource that is expected to be updated by the CPU infrequently (less than once per frame).</span></span> <span data-ttu-id="a8b40-166">パフォーマンス低下を避けるため、既定の使用方法では CPU からリソースに直接書き込まないことが理想的です。</span><span class="sxs-lookup"><span data-stu-id="a8b40-166">Ideally, the CPU would never write directly to a resource with default usage so as to avoid potential performance penalties.</span></span>
 
-CPU によるリソースの更新が比較的高頻度 (フレームごとに 1 回以上) である場合は、動的の使用方法を選択します。 動的リソースの一般的なシナリオは、動的な頂点バッファーとインデックス バッファーを作成し、ユーザーの視点から見えるジオメトリのデータを使用して、実行時にフレームごとに描画することです。 これらのバッファーは、各フレームでユーザーから見えるジオメトリのみをレンダリングするために使用されます。
+<span data-ttu-id="a8b40-167">CPU によるリソースの更新が比較的高頻度 (フレームごとに 1 回以上) である場合は、動的の使用方法を選択します。</span><span class="sxs-lookup"><span data-stu-id="a8b40-167">Dynamic usage should be used for a resource that the CPU updates relatively frequently (once or more per frame).</span></span> <span data-ttu-id="a8b40-168">動的リソースの一般的なシナリオは、動的な頂点バッファーとインデックス バッファーを作成し、ユーザーの視点から見えるジオメトリのデータを使用して、実行時にフレームごとに描画することです。</span><span class="sxs-lookup"><span data-stu-id="a8b40-168">A typical scenario for a dynamic resource would be to create dynamic vertex and index buffers that would be filled at runtime with data about the geometry visible from the point of view of the user for each frame.</span></span> <span data-ttu-id="a8b40-169">これらのバッファーは、各フレームでユーザーから見えるジオメトリのみをレンダリングするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="a8b40-169">These buffers would be used to render only the geometry visible to the user for that frame.</span></span>
 
-ステージングの使用方法は、他のリソースとの間のコピーに使用します。 一般的なシナリオは、既定の使用方法おける (CPU がアクセスできない) リソースのデータをステージングの使用方法における (CPU がアクセス可能な) リソースにコピーすることです。
+<span data-ttu-id="a8b40-170">ステージングの使用方法は、他のリソースとの間のコピーに使用します。</span><span class="sxs-lookup"><span data-stu-id="a8b40-170">Staging usage should be used to copy data to and from other resources.</span></span> <span data-ttu-id="a8b40-171">一般的なシナリオは、既定の使用方法おける (CPU がアクセスできない) リソースのデータをステージングの使用方法における (CPU がアクセス可能な) リソースにコピーすることです。</span><span class="sxs-lookup"><span data-stu-id="a8b40-171">A typical scenario would be to copy data in a resource with default usage (which the CPU cannot access) to a resource with staging usage (which the CPU can access).</span></span>
 
-固定のリソースは、リソース内のデータが決して変更されない場合に使用します。
+<span data-ttu-id="a8b40-172">固定のリソースは、リソース内のデータが決して変更されない場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="a8b40-172">Immutable resources should be used when the data in the resource will never change.</span></span>
 
-この問題を別の視点から見ると、アプリケーションがリソースにどのような処理を実行するか考えることになります。
+<span data-ttu-id="a8b40-173">この問題を別の視点から見ると、アプリケーションがリソースにどのような処理を実行するか考えることになります。</span><span class="sxs-lookup"><span data-stu-id="a8b40-173">Another way of looking at the same idea is to think of what an application does with a resource.</span></span>
 
-| アプリケーションによるリソースの使用方法     | リソースの使用方法       |
+| <span data-ttu-id="a8b40-174">アプリケーションによるリソースの使用方法</span><span class="sxs-lookup"><span data-stu-id="a8b40-174">How Application uses the Resource</span></span>     | <span data-ttu-id="a8b40-175">リソースの使用方法</span><span class="sxs-lookup"><span data-stu-id="a8b40-175">Resource Usage</span></span>       |
 |---------------------------------------|----------------------|
-| 1 度だけロードし更新しない            | 固定または既定 |
-| アプリケーションが頻繁にリソースに格納する | 動的              |
-| テクスチャへのレンダリング                     | 既定              |
-| GPU データの CPU アクセス                | ステージング              |
+| <span data-ttu-id="a8b40-176">1 度だけロードし更新しない</span><span class="sxs-lookup"><span data-stu-id="a8b40-176">Load once and never update</span></span>            | <span data-ttu-id="a8b40-177">固定または既定</span><span class="sxs-lookup"><span data-stu-id="a8b40-177">Immutable or Default</span></span> |
+| <span data-ttu-id="a8b40-178">アプリケーションが頻繁にリソースに格納する</span><span class="sxs-lookup"><span data-stu-id="a8b40-178">Application fills resource repeatedly</span></span> | <span data-ttu-id="a8b40-179">動的</span><span class="sxs-lookup"><span data-stu-id="a8b40-179">Dynamic</span></span>              |
+| <span data-ttu-id="a8b40-180">テクスチャへのレンダリング</span><span class="sxs-lookup"><span data-stu-id="a8b40-180">Render to texture</span></span>                     | <span data-ttu-id="a8b40-181">既定</span><span class="sxs-lookup"><span data-stu-id="a8b40-181">Default</span></span>              |
+| <span data-ttu-id="a8b40-182">GPU データの CPU アクセス</span><span class="sxs-lookup"><span data-stu-id="a8b40-182">CPU access of GPU data</span></span>                | <span data-ttu-id="a8b40-183">ステージング</span><span class="sxs-lookup"><span data-stu-id="a8b40-183">Staging</span></span>              |
 
  
 
-どの使用法を選択すべきかよくわからない場合は、一般的なほとんどのケースに対応可能な既定の使用方法から始めてください。 シェーダー定数バッファーは、常に既定の使用方法にする必要のあるリソース タイプの 1 つです。
+<span data-ttu-id="a8b40-184">どの使用法を選択すべきかよくわからない場合は、一般的なほとんどのケースに対応可能な既定の使用方法から始めてください。</span><span class="sxs-lookup"><span data-stu-id="a8b40-184">If you are unsure what usage to choose, start with the default usage as it is expected to be the most common case.</span></span> <span data-ttu-id="a8b40-185">シェーダー定数バッファーは、常に既定の使用方法にする必要のあるリソース タイプの 1 つです。</span><span class="sxs-lookup"><span data-stu-id="a8b40-185">A Shader-Constant buffer is the one resource type that should always have default usage.</span></span>
 
-## <a name="span-idresourcetypesandpipelinestagesspanspan-idresourcetypesandpipelinestagesspanspan-idresourcetypesandpipelinestagesspanbinding-resources-to-pipeline-stages"></a><span id="Resource_Types_and_Pipeline_stages"></span><span id="resource_types_and_pipeline_stages"></span><span id="RESOURCE_TYPES_AND_PIPELINE_STAGES"></span>リソースからパイプラインのステージへのバインド
-
-
-リソースは、作成時に指定された制限を満たす限り、同時に複数のパイプラインのステージにバインドすることができます。 これらの制限は、利用フラグ、バインド フラグ、CPU アクセス フラグとして指定されます。 具体的には、リソースの読み取り部分と書き込み部分の同時発生がない場合には、リソースを入力と出力に同時にバインドすることができます。
-
-リソースをバインドするときは、CPU と GPU がリソースにどのようにアクセスするかを考えます。 多くの場合、単一の用途に設計された (複数の利用フラグ、バインド フラグ、および CPU アクセス フラグを持たない) リソースの方がより高いパフォーマンスを得られます。
-
-たとえば、テクスチャとして複数回使用されるレンダー ターゲットを考えてください。 この場合、リソースを 2 つにする方が速くなる可能性があります (1 つのシェーダー リソースとしてレンダー ターゲットとテクスチャを使用)。 各リソースは、バインド フラグを 1 つだけ使用して、「レンダー ターゲット」または「シェーダー リソース」を示します。 データはレンダー ターゲット テクスチャからシェーダー テクスチャにコピーされます。
-
-この例のように、シェーダー テクスチャの読み取りとレンダー ターゲットの書き込みを分離することで、パフォーマンスが向上する場合があります。 実際にどうなるかを確かめるには、アプリケーションに両方の方法を実装して、パフォーマンスの違いを測定する必要があります。
-
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idresourcetypesandpipelinestagesspanspan-idresourcetypesandpipelinestagesspanspan-idresourcetypesandpipelinestagesspanbinding-resources-to-pipeline-stages"></a><span data-ttu-id="a8b40-186"><span id="Resource_Types_and_Pipeline_stages"></span><span id="resource_types_and_pipeline_stages"></span><span id="RESOURCE_TYPES_AND_PIPELINE_STAGES"></span>リソースからパイプラインのステージへのバインド</span><span class="sxs-lookup"><span data-stu-id="a8b40-186"><span id="Resource_Types_and_Pipeline_stages"></span><span id="resource_types_and_pipeline_stages"></span><span id="RESOURCE_TYPES_AND_PIPELINE_STAGES"></span>Binding resources to pipeline stages</span></span>
 
 
-[リソース](resources.md)
+<span data-ttu-id="a8b40-187">リソースは、作成時に指定された制限を満たす限り、同時に複数のパイプラインのステージにバインドすることができます。</span><span class="sxs-lookup"><span data-stu-id="a8b40-187">A resource can be bound to more than one pipeline stage at the same time as long as the restrictions specified when the resource was created are met.</span></span> <span data-ttu-id="a8b40-188">これらの制限は、利用フラグ、バインド フラグ、CPU アクセス フラグとして指定されます。</span><span class="sxs-lookup"><span data-stu-id="a8b40-188">These restrictions are specified as usage flags, bind flags, or cpu access flags.</span></span> <span data-ttu-id="a8b40-189">具体的には、リソースの読み取り部分と書き込み部分の同時発生がない場合には、リソースを入力と出力に同時にバインドすることができます。</span><span class="sxs-lookup"><span data-stu-id="a8b40-189">More specifically, a resource can be bound as an input and an output simultaneously as long as reading and writing part of a resource cannot happen at the same time.</span></span>
 
- 
+<span data-ttu-id="a8b40-190">リソースをバインドするときは、CPU と GPU がリソースにどのようにアクセスするかを考えます。</span><span class="sxs-lookup"><span data-stu-id="a8b40-190">When binding a resource, think about how the GPU and the CPU will access the resource.</span></span> <span data-ttu-id="a8b40-191">多くの場合、単一の用途に設計された (複数の利用フラグ、バインド フラグ、および CPU アクセス フラグを持たない) リソースの方がより高いパフォーマンスを得られます。</span><span class="sxs-lookup"><span data-stu-id="a8b40-191">Resources that are designed for a single purpose (do not use multiple usage, bind, and cpu access flags) will more than likely result in better performance.</span></span>
+
+<span data-ttu-id="a8b40-192">たとえば、テクスチャとして複数回使用されるレンダー ターゲットを考えてください。</span><span class="sxs-lookup"><span data-stu-id="a8b40-192">For example, consider the case of a render target used as a texture multiple times.</span></span> <span data-ttu-id="a8b40-193">この場合、リソースを 2 つにする方が速くなる可能性があります (1 つのシェーダー リソースとしてレンダー ターゲットとテクスチャを使用)。</span><span class="sxs-lookup"><span data-stu-id="a8b40-193">It may be faster to have two resources: a render target and a texture used as a shader resource.</span></span> <span data-ttu-id="a8b40-194">各リソースは、バインド フラグを 1 つだけ使用して、「レンダー ターゲット」または「シェーダー リソース」を示します。</span><span class="sxs-lookup"><span data-stu-id="a8b40-194">Each resource would use only one bind flag, indicating "render target" or "shader resource".</span></span> <span data-ttu-id="a8b40-195">データはレンダー ターゲット テクスチャからシェーダー テクスチャにコピーされます。</span><span class="sxs-lookup"><span data-stu-id="a8b40-195">The data would be copied from the render-target texture to the shader texture.</span></span>
+
+<span data-ttu-id="a8b40-196">この例のように、シェーダー テクスチャの読み取りとレンダー ターゲットの書き込みを分離することで、パフォーマンスが向上する場合があります。</span><span class="sxs-lookup"><span data-stu-id="a8b40-196">This technique in this example may improve performance by isolating the render-target write from the shader-texture read.</span></span> <span data-ttu-id="a8b40-197">実際にどうなるかを確かめるには、アプリケーションに両方の方法を実装して、パフォーマンスの違いを測定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a8b40-197">The only way to be sure is to implement both approaches and measure the performance difference in your particular application.</span></span>
+
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="a8b40-198"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="a8b40-198"><span id="related-topics"></span>Related topics</span></span>
+
+
+[<span data-ttu-id="a8b40-199">リソース</span><span class="sxs-lookup"><span data-stu-id="a8b40-199">Resources</span></span>](resources.md)
 
  
 
+ 
 
 
 

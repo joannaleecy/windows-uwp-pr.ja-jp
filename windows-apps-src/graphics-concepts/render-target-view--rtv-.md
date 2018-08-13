@@ -1,36 +1,36 @@
 ---
-title: "レンダー ターゲット ビュー (RTV)"
-description: "レンダー ターゲットは、画面にレンダリングされるバック バッファーではなく、一時的な中間バッファーにシーンがレンダリングできるようにします。"
+title: レンダー ターゲット ビュー (RTV)
+description: レンダー ターゲットは、画面にレンダリングされるバック バッファーではなく、一時的な中間バッファーにシーンがレンダリングできるようにします。
 ms.assetid: 9BA8FC35-9A51-438D-BFEA-02E254D6C93E
 keywords:
-- "レンダー ターゲット ビュー (RTV)"
-author: PeterTurcan
-ms.author: pettur
+- レンダー ターゲット ビュー (RTV)
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d594b1849bba39bb3167b8015908714c1a23dcfc
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 1ee9f7eec5a76d2a4cbea1106570d82c273d2758
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044321"
 ---
-
-# <a name="render-target-view-rtv"></a>レンダー ターゲット ビュー (RTV)
-
-
-レンダー ターゲットは、画面にレンダリングされるバック バッファーではなく、一時的な中間バッファーにシーンがレンダリングできるようにします。 この機能により、複雑なシーンを使うことが可能になります。複雑なシーンとは、たとえば、グラフィックス パイプライン内の反射テクスチャなどの目的でレンダリングされるシーンや、レンダリング前にピクセル シェーダー効果をシーンに追加する目的でレンダリングされるシーンなどです。
-
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+# <a name="render-target-view-rtv"></a><span data-ttu-id="02b86-104">レンダー ターゲット ビュー (RTV)</span><span class="sxs-lookup"><span data-stu-id="02b86-104">Render target view (RTV)</span></span>
 
 
-[ビュー](views.md)
+<span data-ttu-id="02b86-105">レンダー ターゲットは、画面にレンダリングされるバック バッファーではなく、一時的な中間バッファーにシーンがレンダリングできるようにします。</span><span class="sxs-lookup"><span data-stu-id="02b86-105">Render targets enable a scene to be rendered to a temporary intermediate buffer, rather than to the back buffer to be rendered to the screen.</span></span> <span data-ttu-id="02b86-106">この機能により、複雑なシーンを使うことが可能になります。複雑なシーンとは、たとえば、グラフィックス パイプライン内の反射テクスチャなどの目的でレンダリングされるシーンや、レンダリング前にピクセル シェーダー効果をシーンに追加する目的でレンダリングされるシーンなどです。</span><span class="sxs-lookup"><span data-stu-id="02b86-106">This feature enables use of the complex scene that might be rendered, perhaps as a reflection texture or other purpose within the graphics pipeline, or perhaps to add additional pixel shader effects to the scene before rendering.</span></span>
 
- 
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="02b86-107"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="02b86-107"><span id="related-topics"></span>Related topics</span></span>
+
+
+[<span data-ttu-id="02b86-108">ビュー</span><span class="sxs-lookup"><span data-stu-id="02b86-108">Views</span></span>](views.md)
 
  
 
+ 
 
 
 

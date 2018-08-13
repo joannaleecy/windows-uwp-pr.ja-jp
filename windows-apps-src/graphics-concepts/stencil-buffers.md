@@ -1,118 +1,118 @@
 ---
-title: "ステンシル バッファー"
-description: "ステンシル バッファーは、イメージ内のピクセルをマスクし、特殊効果を生成するために使用されます。"
+title: ステンシル バッファー
+description: ステンシル バッファーは、イメージ内のピクセルをマスクし、特殊効果を生成するために使用されます。
 ms.assetid: 544B3B9E-31E3-41DA-8081-CC3477447E94
 keywords:
-- "ステンシル バッファー"
-author: PeterTurcan
-ms.author: pettur
+- ステンシル バッファー
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 981d9d25b860d1c168227c9f67537cf033165aac
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: bf4cd6ecb325bf0a3ce4a884361c0d098f9e1f05
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044881"
 ---
-
-# <a name="stencil-buffers"></a>ステンシル バッファー
-
-
-*ステンシル バッファー*は、イメージ内のピクセルをマスクし、特殊効果を生成するために使用されます。 このマスクは、ピクセルを描画するかどうかを制御します。 このような特殊効果には、合成、デカール、ディゾルブ、フェード、スワイプ、輪郭とシルエット、両面ステンシルなどがあります。 代表的な効果の一部を次に示します。
-
-ステンシル バッファーを使用すると、ピクセル単位でレンダー ターゲット サーフェスへの描画を有効にするか無効にするかを制御できます。 最も基本的なレベルでは、アプリケーションによってレンダリング対象のイメージのセクションをマスクして、表示されないようにすることができます。 アプリケーションでは、しばしば、ディゾルブ、デカール、輪郭などの特殊効果にステンシル バッファーを使用します。
-
-ステンシル バッファー情報は、z バッファー データに埋め込まれます。
-
-## <a name="span-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanhow-the-stencil-buffer-works"></a><span id="How_the_Stencil_Buffer_Works"></span><span id="how_the_stencil_buffer_works"></span><span id="HOW_THE_STENCIL_BUFFER_WORKS"></span>ステンシル バッファーのしくみ
+# <a name="stencil-buffers"></a><span data-ttu-id="88063-104">ステンシル バッファー</span><span class="sxs-lookup"><span data-stu-id="88063-104">Stencil buffers</span></span>
 
 
-Direct3D は、ステンシル バッファーのコンテンツをピクセル単位でテストします。 ターゲット サーフェスのピクセルごとに、ステンシル バッファー内の対応する値、ステンシル参照の値、ステンシル マスクの値を使用してテストを実行します。 テストに合格した場合は、Direct3D は操作を実行します。 テストは、次の手順に従って実行されます。
+<span data-ttu-id="88063-105">*ステンシル バッファー*は、画像内のピクセルをマスクし、特殊効果を生成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="88063-105">A *stencil buffer* is used to mask pixels in an image, to produce special effects.</span></span> <span data-ttu-id="88063-106">このマスクは、ピクセルを描画するかどうかを制御します。</span><span class="sxs-lookup"><span data-stu-id="88063-106">The mask controls whether the pixel is drawn or not.</span></span> <span data-ttu-id="88063-107">このような特殊効果には、合成、デカール、ディゾルブ、フェード、スワイプ、輪郭とシルエット、両面ステンシルなどがあります。</span><span class="sxs-lookup"><span data-stu-id="88063-107">These special effects include compositing; decaling; dissolves, fades, and swipes; outlines and silhouettes; and two-sided stencil.</span></span> <span data-ttu-id="88063-108">代表的な効果の一部を次に示します。</span><span class="sxs-lookup"><span data-stu-id="88063-108">Some of the more common effects are shown below.</span></span>
 
-1.  ステンシル マスクを使用してステンシル参照値のビット単位の AND 操作を実行します。
-2.  ステンシル マスクを使用して、現在のピクセルに対してステンシル バッファー値のビット単位の AND 操作を実行します。
-3.  比較関数を使用して、手順 1 の結果と手順 2 の結果を比較します。
+<span data-ttu-id="88063-109">ステンシル バッファーを使用すると、ピクセル単位でレンダー ターゲット サーフェスへの描画を有効にするか無効にするかを制御できます。</span><span class="sxs-lookup"><span data-stu-id="88063-109">The stencil buffer enables or disables drawing to the rendering target surface on a pixel-by-pixel basis.</span></span> <span data-ttu-id="88063-110">最も基本的なレベルでは、アプリケーションによってレンダリング対象のイメージのセクションをマスクして、表示されないようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="88063-110">At its most fundamental level, it enables applications to mask sections of the rendered image so that they are not displayed.</span></span> <span data-ttu-id="88063-111">アプリケーションでは、しばしば、ディゾルブ、デカール、輪郭などの特殊効果にステンシル バッファーを使用します。</span><span class="sxs-lookup"><span data-stu-id="88063-111">Applications often use stencil buffers for special effects such as dissolves, decaling, and outlining.</span></span>
 
-上記の手順は、次のコードで表されます。
+<span data-ttu-id="88063-112">ステンシル バッファー情報は、z バッファー データに埋め込まれます。</span><span class="sxs-lookup"><span data-stu-id="88063-112">Stencil buffer information is embedded in the z-buffer data.</span></span>
+
+## <a name="span-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanspan-idhowthestencilbufferworksspanhow-the-stencil-buffer-works"></a><span data-ttu-id="88063-113"><span id="How_the_Stencil_Buffer_Works"></span><span id="how_the_stencil_buffer_works"></span><span id="HOW_THE_STENCIL_BUFFER_WORKS"></span>ステンシル バッファーのしくみ</span><span class="sxs-lookup"><span data-stu-id="88063-113"><span id="How_the_Stencil_Buffer_Works"></span><span id="how_the_stencil_buffer_works"></span><span id="HOW_THE_STENCIL_BUFFER_WORKS"></span>How the stencil buffer works</span></span>
+
+
+<span data-ttu-id="88063-114">Direct3D は、ステンシル バッファーのコンテンツをピクセル単位でテストします。</span><span class="sxs-lookup"><span data-stu-id="88063-114">Direct3D performs a test on the contents of the stencil buffer on a pixel-by-pixel basis.</span></span> <span data-ttu-id="88063-115">ターゲット サーフェスのピクセルごとに、ステンシル バッファー内の対応する値、ステンシル参照の値、ステンシル マスクの値を使用してテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="88063-115">For each pixel in the target surface, it performs a test using the corresponding value in the stencil buffer, a stencil reference value, and a stencil mask value.</span></span> <span data-ttu-id="88063-116">テストに合格した場合は、Direct3D は操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="88063-116">If the test passes, Direct3D performs an action.</span></span> <span data-ttu-id="88063-117">テストは、次の手順に従って実行されます。</span><span class="sxs-lookup"><span data-stu-id="88063-117">The test is performed using the following steps.</span></span>
+
+1.  <span data-ttu-id="88063-118">ステンシル マスクを使用してステンシル参照値のビット単位の AND 操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="88063-118">Perform a bitwise AND operation of the stencil reference value with the stencil mask.</span></span>
+2.  <span data-ttu-id="88063-119">ステンシル マスクを使用して、現在のピクセルに対してステンシル バッファー値のビット単位の AND 操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="88063-119">Perform a bitwise AND operation of the stencil buffer value for the current pixel with the stencil mask.</span></span>
+3.  <span data-ttu-id="88063-120">比較関数を使用して、手順 1 の結果と手順 2 の結果を比較します。</span><span class="sxs-lookup"><span data-stu-id="88063-120">Compare the result of step 1 to the result of step 2, using the comparison function.</span></span>
+
+<span data-ttu-id="88063-121">上記の手順は、次のコードで表されます。</span><span class="sxs-lookup"><span data-stu-id="88063-121">The above steps are shown in the following line of code:</span></span>
 
 ```
-(StencilRef &amp; StencilMask) CompFunc (StencilBufferValue &amp; StencilMask)
+(StencilRef & StencilMask) CompFunc (StencilBufferValue & StencilMask)
 ```
 
--   StencilRef はステンシル参照値を表します。
--   StencilMask はステンシル マスクの値を表します。
--   CompFunc は、比較関数です。
--   StencilBufferValue は、現在のピクセルのステンシル バッファーのコンテンツです。
--   アンパサンド (&) 記号はビット単位の AND 演算を表します。
+-   <span data-ttu-id="88063-122">StencilRef はステンシル参照値を表します。</span><span class="sxs-lookup"><span data-stu-id="88063-122">StencilRef represents the stencil reference value.</span></span>
+-   <span data-ttu-id="88063-123">StencilMask はステンシル マスクの値を表します。</span><span class="sxs-lookup"><span data-stu-id="88063-123">StencilMask represents the value of the stencil mask.</span></span>
+-   <span data-ttu-id="88063-124">CompFunc は、比較関数です。</span><span class="sxs-lookup"><span data-stu-id="88063-124">CompFunc is the comparison function.</span></span>
+-   <span data-ttu-id="88063-125">StencilBufferValue は、現在のピクセルのステンシル バッファーのコンテンツです。</span><span class="sxs-lookup"><span data-stu-id="88063-125">StencilBufferValue is the contents of the stencil buffer for the current pixel.</span></span>
+-   <span data-ttu-id="88063-126">アンパサンド (&) 記号はビット単位の AND 演算を表します。</span><span class="sxs-lookup"><span data-stu-id="88063-126">The ampersand (&) symbol represents the bitwise AND operation.</span></span>
 
-ステンシルのテストに合格すると、現在のピクセルは、ターゲット サーフェスに書き込まれます。合格しない場合は、無視されます。 比較の既定の動作では、ビット単位の各演算がどのような結果になっても、ピクセルが書き込まれます。 この動作は、列挙型の値を変更して、目的の比較関数を指定することで、変更できます。
+<span data-ttu-id="88063-127">ステンシルのテストに合格すると、現在のピクセルは、ターゲット サーフェスに書き込まれます。合格しない場合は、無視されます。</span><span class="sxs-lookup"><span data-stu-id="88063-127">The current pixel is written to the target surface if the stencil test passes, and is ignored otherwise.</span></span> <span data-ttu-id="88063-128">既定の比較では、それぞれのビット単位の操作がわかりました方法に関係なく、ピクセルを作成します。この動作を変更するには、目的の比較関数を識別する列挙型の値を変更します。</span><span class="sxs-lookup"><span data-stu-id="88063-128">The default comparison behavior is to write the pixel, no matter how each bitwise operation turns out. You can change this behavior by changing the value of an enumerated type to identify the desired comparison function.</span></span>
 
-アプリケーションによって、ステンシル バッファーの操作をカスタマイズできます。 比較関数、ステンシル マスク、ステンシル参照値を設定できます。 また、ステンシル テストに合格または不合格になったときに、Direct3D が実行する操作を制御することもできます。
+<span data-ttu-id="88063-129">アプリケーションによって、ステンシル バッファーの操作をカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="88063-129">Your application can customize the operation of the stencil buffer.</span></span> <span data-ttu-id="88063-130">比較関数、ステンシル マスク、ステンシル参照値を設定できます。</span><span class="sxs-lookup"><span data-stu-id="88063-130">It can set the comparison function, the stencil mask, and the stencil reference value.</span></span> <span data-ttu-id="88063-131">また、ステンシル テストに合格または不合格になったときに、Direct3D が実行する操作を制御することもできます。</span><span class="sxs-lookup"><span data-stu-id="88063-131">It can also control the action that Direct3D takes when the stencil test passes or fails.</span></span>
 
-## <a name="span-idcompositingspanspan-idcompositingspanspan-idcompositingspancompositing"></a><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>合成
-
-
-ステンシル バッファーを使えば、アプリケーションは 2D または 3D イメージを 3D シーンに合成できます。 ステンシル バッファーのマスクを使って、レンダー ターゲット サーフェスの領域をオクルードします。 次に、テキストやビットマップなどの格納 2D 情報をオクルードされた領域に書き込むことができます。 別の方法として、アプリケーションでは追加 3D プリミティブをレンダー ターゲット サーフェスのステンシル マスクされた領域にレンダリングできます。 この場合、シーン全体をレンダリングすることもできます。
-
-ゲームでは、複数の 3D シーンを合成することがよくあります。 たとえば、ドライビング ゲームでは通常バックミラーを表示します。 バックミラーには、運転者の背後の 3D シーンの表示が含まれます。 したがって、バックミラーは、本質的には運転者の前方の風景と合成された 第 2 の 3D シーンと言えます。
-
-## <a name="span-iddecalingspanspan-iddecalingspanspan-iddecalingspandecaling"></a><span id="Decaling"></span><span id="decaling"></span><span id="DECALING"></span>デカール
+## <a name="span-idcompositingspanspan-idcompositingspanspan-idcompositingspancompositing"></a><span data-ttu-id="88063-132"><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>合成</span><span class="sxs-lookup"><span data-stu-id="88063-132"><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>Compositing</span></span>
 
 
-Direct3D アプリケーションでは、デカールを使用して、レンダー ターゲット サーフェスに描画される特定のプリミティブ イメージのピクセルを制御します。 アプリケーションはプリミティブのイメージにデカールを適用して、同一平面上のポリゴンを適切にレンダリングできるようにします。
+<span data-ttu-id="88063-133">ステンシル バッファーを使えば、アプリケーションは 2D または 3D 画像を 3D シーンに合成できます。</span><span class="sxs-lookup"><span data-stu-id="88063-133">Your application can use the stencil buffer to composite 2D or 3D images onto a 3D scene.</span></span> <span data-ttu-id="88063-134">ステンシル バッファーのマスクを使って、レンダー ターゲット サーフェスの領域をオクルードします。</span><span class="sxs-lookup"><span data-stu-id="88063-134">A mask in the stencil buffer is used to occlude an area of the rendering target surface.</span></span> <span data-ttu-id="88063-135">次に、テキストやビットマップなどの格納 2D 情報をオクルードされた領域に書き込むことができます。</span><span class="sxs-lookup"><span data-stu-id="88063-135">Stored 2D information, such as text or bitmaps, can then be written to the occluded area.</span></span> <span data-ttu-id="88063-136">別の方法として、アプリケーションでは追加 3D プリミティブをレンダー ターゲット サーフェスのステンシル マスクされた領域にレンダリングできます。</span><span class="sxs-lookup"><span data-stu-id="88063-136">Alternately, your application can render additional 3D primitives to the stencil-masked region of the rendering target surface.</span></span> <span data-ttu-id="88063-137">この場合、シーン全体をレンダリングすることもできます。</span><span class="sxs-lookup"><span data-stu-id="88063-137">It can even render an entire scene.</span></span>
 
-たとえば、道路にタイヤの跡と黄色い線を付ける場合、その跡は道路の上に直接表示する必要があります。 ただし、タイヤ跡と道路の z 値は同一です。 したがって、深度バッファーでは、これら 2 つを明確に分離できない場合があります。 背面のプリミティブの一部のピクセルが前面のプリミティブの手前にレンダリングされたり、その逆になったりする場合があります。 出力されるイメージは、フレームが変わるたびにちらついているように見えます。 この現象は、*z ファイティング*または*フリマリング*と呼ばれます。
+<span data-ttu-id="88063-138">ゲームでは、複数の 3D シーンを合成することがよくあります。</span><span class="sxs-lookup"><span data-stu-id="88063-138">Games often composite multiple 3D scenes together.</span></span> <span data-ttu-id="88063-139">たとえば、ドライビング ゲームでは通常バックミラーを表示します。</span><span class="sxs-lookup"><span data-stu-id="88063-139">For instance, driving games typically display a rear-view mirror.</span></span> <span data-ttu-id="88063-140">バックミラーには、運転者の背後の 3D シーンの表示が含まれます。</span><span class="sxs-lookup"><span data-stu-id="88063-140">The mirror contains the view of the 3D scene behind the driver.</span></span> <span data-ttu-id="88063-141">したがって、バックミラーは、本質的には運転者の前方の風景と合成された 第 2 の 3D シーンと言えます。</span><span class="sxs-lookup"><span data-stu-id="88063-141">It is essentially a second 3D scene composited with the driver's forward view.</span></span>
 
-この問題を解決するには、ステンシルを使用して、デカールが表示される背面プリミティブのセクションをマスクします。 z バッファリングをオフにし、レンダー ターゲット サーフェスのマスク オフされた領域に前面プリミティブのイメージをレンダリングします。
-
-複数のテクスチャのブレンドを使用することでこの問題を解決できますが、その場合、アプリケーションが生成するその他の特殊効果の数が制限されます。 ステンシル バッファーを使用してデカールを適用すると、他の効果のテクスチャ ブレンド ステージが不要になります。
-
-## <a name="span-iddissolvesfadesandswipesspanspan-iddissolvesfadesandswipesspanspan-iddissolvesfadesandswipesspandissolves-fades-and-swipes"></a><span id="Dissolves__fades__and_swipes"></span><span id="dissolves__fades__and_swipes"></span><span id="DISSOLVES__FADES__AND_SWIPES"></span>ディゾルブ、フェード、およびスワイプ
+## <a name="span-iddecalingspanspan-iddecalingspanspan-iddecalingspandecaling"></a><span data-ttu-id="88063-142"><span id="Decaling"></span><span id="decaling"></span><span id="DECALING"></span>デカール</span><span class="sxs-lookup"><span data-stu-id="88063-142"><span id="Decaling"></span><span id="decaling"></span><span id="DECALING"></span>Decaling</span></span>
 
 
-ディゾルブ、スワイプ、フェードなど、映画やビデオでよく使用される特殊効果が、ますますアプリケーションでも使用されるようになっています。
+<span data-ttu-id="88063-143">Direct3D アプリケーションでは、デカールを使用して、レンダー ターゲット サーフェスに描画される特定のプリミティブ イメージのピクセルを制御します。</span><span class="sxs-lookup"><span data-stu-id="88063-143">Direct3D applications use decaling to control which pixels from a particular primitive image are drawn to the rendering target surface.</span></span> <span data-ttu-id="88063-144">アプリケーションはプリミティブのイメージにデカールを適用して、同一平面上のポリゴンを適切にレンダリングできるようにします。</span><span class="sxs-lookup"><span data-stu-id="88063-144">Applications apply decals to the images of primitives to enable coplanar polygons to render correctly.</span></span>
 
-ディゾルブでは、スムーズなフレーム シーケンスで、1 つのイメージが徐々に別のイメージに置き換えられます。 Direct3D では複数のテクスチャのブレンドを使用して同じ効果を生む方法が提供していますが、ディゾルブにステンシル バッファーを使用するアプリケーションでは、ディゾルブを使用しながら、他の効果にテクスチャ ブレンド機能を使用できます。
+<span data-ttu-id="88063-145">たとえば、道路にタイヤの跡と黄色い線を付ける場合、その跡は道路の上に直接表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="88063-145">For instance, when applying tire marks and yellow lines to a roadway, the markings should appear directly on top of the road.</span></span> <span data-ttu-id="88063-146">ただし、タイヤ跡と道路の z 値は同一です。</span><span class="sxs-lookup"><span data-stu-id="88063-146">However, the z values of the markings and the road are the same.</span></span> <span data-ttu-id="88063-147">したがって、深度バッファーでは、これら 2 つを明確に分離できない場合があります。</span><span class="sxs-lookup"><span data-stu-id="88063-147">Therefore, the depth buffer might not produce a clean separation between the two.</span></span> <span data-ttu-id="88063-148">背面のプリミティブの一部のピクセルが前面のプリミティブの手前にレンダリングされたり、その逆になったりする場合があります。</span><span class="sxs-lookup"><span data-stu-id="88063-148">Some pixels in the back primitive may be rendered on top of the front primitive and vice versa.</span></span> <span data-ttu-id="88063-149">出力されるイメージは、フレームが変わるたびにちらついているように見えます。</span><span class="sxs-lookup"><span data-stu-id="88063-149">The resulting image appears to shimmer from frame to frame.</span></span> <span data-ttu-id="88063-150">この現象は、*z ファイティング*または*フリマリング*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="88063-150">This effect is called *z-fighting* or *flimmering*.</span></span>
 
-アプリケーションでディゾルブを行うときは、2 つの異なるイメージをレンダリングする必要があります。 ステンシル バッファーを使用して、レンダー ターゲット サーフェスに描画される各イメージのピクセルを制御します。 一連のステンシル マスクを定義し、後続のフレームのステンシル バッファーにコピーできます。 または、最初のフレームに基本のステンシル マスクを定義して、徐々にそれを変えていくこともできます。
+<span data-ttu-id="88063-151">この問題を解決するには、ステンシルを使用して、デカールが表示される背面プリミティブのセクションをマスクします。</span><span class="sxs-lookup"><span data-stu-id="88063-151">To solve this problem, use a stencil to mask the section of the back primitive where the decal will appear.</span></span> <span data-ttu-id="88063-152">z バッファリングをオフにし、レンダー ターゲット サーフェスのマスク オフされた領域に前面プリミティブのイメージをレンダリングします。</span><span class="sxs-lookup"><span data-stu-id="88063-152">Turn off z-buffering and render the image of the front primitive into the masked-off area of the render-target surface.</span></span>
 
-アプリケーションは、ディゾルブを開始するときに、最初のイメージのピクセルのほとんどが、ステンシル テストに合格するように、ステンシル機能とステンシル マスクを設定できます。 最後のイメージのピクセルの大半は、ステンシル テストに不合格になります。 後続のフレームでステンシル マスクは更新されて、テストに合格する最初のイメージのピクセルは徐々に少なくなります。 フレームが進むにつれて、テストに不合格になる最後のイメージのピクセルは徐々に少なくなります。 この方法では、アプリケーションは任意のディゾルブ パターンを使用して、ディゾルブを実行できます。
+<span data-ttu-id="88063-153">複数のテクスチャのブレンドを使用することでこの問題を解決できますが、その場合、アプリケーションが生成するその他の特殊効果の数が制限されます。</span><span class="sxs-lookup"><span data-stu-id="88063-153">Although multiple texture blending can be used to solve this problem, doing so limits the number of other special effects that your application can produce.</span></span> <span data-ttu-id="88063-154">ステンシル バッファーを使用してデカールを適用すると、他の効果のテクスチャ ブレンド ステージが不要になります。</span><span class="sxs-lookup"><span data-stu-id="88063-154">Using the stencil buffer to apply decals frees up texture blending stages for other effects.</span></span>
 
-フェード インやフェード アウトは、ディゾルブの特殊なケースです。 フェード インでは、ステンシル バッファーを使用して黒または白のイメージから 3D シーンのレンダリングへとディゾルブします。 フェード アウトは反対に、3D シーンのレンダリングから始めて、黒または白のイメージにディゾルブします。 フェードは、利用したい任意のパターンを使用して実現できます。
-
-Direct3D アプリケーションでは、スワイプに同様の手法を使用します。 たとえば、アプリケーションが左から右へのスワイプを実行する場合、最初のイメージの上に最後のイメージが左から右にスライドする形で表示されます。 ディゾルブと同様に、後続のフレームでステンシル バッファーに読み込まれる一連のステンシル マスクを定義するか、最初のステンシル マスクを順次変更します。 ステンシル マスクは、最初のイメージのピクセルの書き込みを無効にし、最後のイメージのピクセルの書き込みを有効にするために使用されます。
-
-スワイプは、ディゾルブよりもやや複雑で、アプリケーションがスワイプの逆の順序で最後のイメージのピクセルを読み取る必要があります。 つまり、スワイプが左から右に移動する場合、アプリケーションは最初のイメージのピクセルを右から左に読み取る必要があります。
-
-## <a name="span-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanoutlines-and-silhouettes"></a><span id="Outlines_and_silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span>輪郭とシルエット
+## <a name="span-iddissolvesfadesandswipesspanspan-iddissolvesfadesandswipesspanspan-iddissolvesfadesandswipesspandissolves-fades-and-swipes"></a><span data-ttu-id="88063-155"><span id="Dissolves__fades__and_swipes"></span><span id="dissolves__fades__and_swipes"></span><span id="DISSOLVES__FADES__AND_SWIPES"></span>ディゾルブ、フェード、およびスワイプ</span><span class="sxs-lookup"><span data-stu-id="88063-155"><span id="Dissolves__fades__and_swipes"></span><span id="dissolves__fades__and_swipes"></span><span id="DISSOLVES__FADES__AND_SWIPES"></span>Dissolves, fades, and swipes</span></span>
 
 
-輪郭処理やシルエット処理など、より抽象的なエフェクトにステンシル バッファーを使用することができます。
+<span data-ttu-id="88063-156">ディゾルブ、スワイプ、フェードなど、映画やビデオでよく使用される特殊効果が、ますますアプリケーションでも使用されるようになっています。</span><span class="sxs-lookup"><span data-stu-id="88063-156">Increasingly, applications employ special effects that are commonly used in movies and video, such as dissolves, swipes, and fades.</span></span>
 
-アプリケーションがステンシル マスクを形状は同じでもやや小さいプリミティブのイメージに適用する場合、結果のイメージにはプリミティブの輪郭しか含まれません。 その場合、ステンシルでマスクされたイメージの領域を単色で塗りつぶすことで、プリミティブが浮き上がって見えるようにすることができます。
+<span data-ttu-id="88063-157">ディゾルブでは、スムーズなフレーム シーケンスで、1 つのイメージが徐々に別のイメージに置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="88063-157">In a dissolve, one image is gradually replaced by another in a smooth sequence of frames.</span></span> <span data-ttu-id="88063-158">Direct3D では複数のテクスチャのブレンドを使用して同じ効果を生む方法が提供していますが、ディゾルブにステンシル バッファーを使用するアプリケーションでは、ディゾルブを使用しながら、他の効果にテクスチャ ブレンド機能を使用できます。</span><span class="sxs-lookup"><span data-stu-id="88063-158">Although Direct3D provides methods of using multiple texture blending to achieve the same effect, applications that use the stencil buffer for dissolves can use texture-blending capabilities for other effects while they do a dissolve.</span></span>
 
-ステンシル マスクが、レンダリングするプリミティブと同じサイズおよび形状の場合、出力されるイメージではプリミティブの位置が穴になります。 その場合、穴を黒で塗りつぶすことで、プリミティブのシルエットを作成できます。
+<span data-ttu-id="88063-159">アプリケーションでディゾルブを行うときは、2 つの異なるイメージをレンダリングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="88063-159">When your application performs a dissolve, it must render two different images.</span></span> <span data-ttu-id="88063-160">ステンシル バッファーを使用して、レンダー ターゲット サーフェスに描画される各イメージのピクセルを制御します。</span><span class="sxs-lookup"><span data-stu-id="88063-160">It uses the stencil buffer to control which pixels from each image are drawn to the rendering target surface.</span></span> <span data-ttu-id="88063-161">一連のステンシル マスクを定義し、後続のフレームのステンシル バッファーにコピーできます。</span><span class="sxs-lookup"><span data-stu-id="88063-161">You can define a series of stencil masks and copy them into the stencil buffer on successive frames.</span></span> <span data-ttu-id="88063-162">または、最初のフレームに基本のステンシル マスクを定義して、徐々にそれを変えていくこともできます。</span><span class="sxs-lookup"><span data-stu-id="88063-162">Alternately, you can define a base stencil mask for the first frame and alter it incrementally.</span></span>
 
-## <a name="span-idtwo-sidedstencilspanspan-idtwo-sidedstencilspanspan-idtwo-sidedstencilspantwo-sided-stencil"></a><span id="Two-sided_stencil"></span><span id="two-sided_stencil"></span><span id="TWO-SIDED_STENCIL"></span>2 面ステンシル
+<span data-ttu-id="88063-163">アプリケーションは、ディゾルブを開始するときに、最初のイメージのピクセルのほとんどが、ステンシル テストに合格するように、ステンシル機能とステンシル マスクを設定できます。</span><span class="sxs-lookup"><span data-stu-id="88063-163">At the beginning of the dissolve, your application sets the stencil function and stencil mask so that most of the pixels from the starting image pass the stencil test.</span></span> <span data-ttu-id="88063-164">最後のイメージのピクセルの大半は、ステンシル テストに不合格になります。</span><span class="sxs-lookup"><span data-stu-id="88063-164">Most of the pixels from the ending image should fail the stencil test.</span></span> <span data-ttu-id="88063-165">後続のフレームでステンシル マスクは更新されて、テストに合格する最初のイメージのピクセルは徐々に少なくなります。</span><span class="sxs-lookup"><span data-stu-id="88063-165">On successive frames, the stencil mask is updated so that fewer and fewer of the pixels in the starting image pass the test.</span></span> <span data-ttu-id="88063-166">フレームが進むにつれて、テストに不合格になる最後のイメージのピクセルは徐々に少なくなります。</span><span class="sxs-lookup"><span data-stu-id="88063-166">As the frames progress, fewer and fewer of the pixels in the ending image fail the test.</span></span> <span data-ttu-id="88063-167">この方法では、アプリケーションは任意のディゾルブ パターンを使用して、ディゾルブを実行できます。</span><span class="sxs-lookup"><span data-stu-id="88063-167">In this manner, your application can perform a dissolve using any arbitrary dissolve pattern.</span></span>
+
+<span data-ttu-id="88063-168">フェード インやフェード アウトは、ディゾルブの特殊なケースです。</span><span class="sxs-lookup"><span data-stu-id="88063-168">Fading in or fading out is a special case of dissolving.</span></span> <span data-ttu-id="88063-169">フェード インでは、ステンシル バッファーを使用して黒または白のイメージから 3D シーンのレンダリングへとディゾルブします。</span><span class="sxs-lookup"><span data-stu-id="88063-169">When fading in, the stencil buffer is used to dissolve from a black or white image to a rendering of a 3D scene.</span></span> <span data-ttu-id="88063-170">フェード アウトは反対に、3D シーンのレンダリングから始めて、黒または白のイメージにディゾルブします。</span><span class="sxs-lookup"><span data-stu-id="88063-170">Fading out is the opposite, your application starts with a rendering of a 3D scene and dissolves to black or white.</span></span> <span data-ttu-id="88063-171">フェードは、利用したい任意のパターンを使用して実現できます。</span><span class="sxs-lookup"><span data-stu-id="88063-171">The fade can be done using any arbitrary pattern you want to employ.</span></span>
+
+<span data-ttu-id="88063-172">Direct3D アプリケーションでは、スワイプに同様の手法を使用します。</span><span class="sxs-lookup"><span data-stu-id="88063-172">Direct3D applications use a similar technique for swipes.</span></span> <span data-ttu-id="88063-173">たとえば、アプリケーションが左から右へのスワイプを実行する場合、最初のイメージの上に最後のイメージが左から右にスライドする形で表示されます。</span><span class="sxs-lookup"><span data-stu-id="88063-173">For example, when an application performs a left-to-right swipe, the ending image appears to slide gradually on top of the starting image from left to right.</span></span> <span data-ttu-id="88063-174">ディゾルブと同様に、後続のフレームでステンシル バッファーに読み込まれる一連のステンシル マスクを定義するか、最初のステンシル マスクを順次変更します。</span><span class="sxs-lookup"><span data-stu-id="88063-174">As in a dissolve, you must define a series of stencil masks that are loaded into the stencil buffer on successive frames, or successively modify the starting stencil mask.</span></span> <span data-ttu-id="88063-175">ステンシル マスクは、最初のイメージのピクセルの書き込みを無効にし、最後のイメージのピクセルの書き込みを有効にするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="88063-175">The stencil masks are used to disable the writing of pixels from the starting image and to enable the writing of pixels from the ending image.</span></span>
+
+<span data-ttu-id="88063-176">スワイプは、ディゾルブよりもやや複雑で、アプリケーションがスワイプの逆の順序で最後のイメージのピクセルを読み取る必要があります。</span><span class="sxs-lookup"><span data-stu-id="88063-176">A swipe is somewhat more complex than a dissolve in that your application must read pixels from the ending image in the reverse order of the swipe.</span></span> <span data-ttu-id="88063-177">つまり、スワイプが左から右に移動する場合、アプリケーションは最初のイメージのピクセルを右から左に読み取る必要があります。</span><span class="sxs-lookup"><span data-stu-id="88063-177">That is, if the swipe is moving from left to right, your application must read pixels from the ending image from right to left.</span></span>
+
+## <a name="span-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanoutlines-and-silhouettes"></a><span data-ttu-id="88063-178"><span id="Outlines_and_silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span>輪郭とシルエット</span><span class="sxs-lookup"><span data-stu-id="88063-178"><span id="Outlines_and_silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span>Outlines and silhouettes</span></span>
 
 
-シャドウ ボリュームは、ステンシル バッファーで影を描画するために使用します。 オクルーディング ジオメトリによってキャストされたシャドウ ボリュームは、シルエットの縁を計算し、ライトと反対側の 3D ボリューム セットに押し出すことによって計算されます。 これらのボリュームはその後、ステンシル バッファーに 2 回レンダリングされます。
+<span data-ttu-id="88063-179">輪郭処理やシルエット処理など、より抽象的なエフェクトにステンシル バッファーを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="88063-179">You can use the stencil buffer for more abstract effects, such as outlining and silhouetting.</span></span>
 
-最初のレンダリングでは、前向きのポリゴンが描画され、ステンシル バッファーの値が増加します。 2 回目のレンダリングでは、シャドウ ボリュームの後ろ向きのポリゴンが描画され、ステンシル バッファーの値が減少します。 通常、増加したり減少したりする値はすべて、他方がない場合はキャンセルされます。 ただし、通常のジオメトリでシーンが既にレンダリングされているため、シャドウ ボリュームがレンダリングされるときに、ピクセルのいくつかが Z バッファー テストで不合格になります。 ステンシル バッファーに残された値は、シャドウのピクセルに対応します。 ステンシル バッファーの残りの内容は、すべてを覆う大きな黒のクワッドをシーンにアルファ ブレンディングするために、マスクとして使用されます。 マスクとして機能するステンシル バッファーを使用すると、シャドウ内のピクセルが暗くなります。
+<span data-ttu-id="88063-180">アプリケーションがステンシル マスクを形状は同じでもやや小さいプリミティブのイメージに適用する場合、結果のイメージにはプリミティブの輪郭しか含まれません。</span><span class="sxs-lookup"><span data-stu-id="88063-180">If your application applies a stencil mask to the image of a primitive that is the same shape but slightly smaller, the resulting image contains only the primitive's outline.</span></span> <span data-ttu-id="88063-181">その場合、ステンシルでマスクされたイメージの領域を単色で塗りつぶすことで、プリミティブが浮き上がって見えるようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="88063-181">The application can then fill the stencil-masked area of the image with a solid color, giving the primitive an embossed look.</span></span>
 
-これは、シャドウ ジオメトリが光源ごとに 2 回描画されることを意味するため、GPU の頂点処理のスループットに影響します。 2 面ステンシル機能は、この状況を軽減することを目的として設計されています。 この方法には、(次の) 2 組のステンシル ステートがあります。一方は前向きの三角形のそれぞれに設定され、もう一方は後ろ向きの三角形に設定されます。 このようにして、光源ごとにシャドウ ボリューム単位で 1 つのパスのみが描画されます。
+<span data-ttu-id="88063-182">ステンシル マスクが、レンダリングするプリミティブと同じサイズおよび形状の場合、出力されるイメージではプリミティブの位置が穴になります。</span><span class="sxs-lookup"><span data-stu-id="88063-182">If the stencil mask is the same size and shape as the primitive you are rendering, the resulting image contains a hole where the primitive should be.</span></span> <span data-ttu-id="88063-183">その場合、穴を黒で塗りつぶすことで、プリミティブのシルエットを作成できます。</span><span class="sxs-lookup"><span data-stu-id="88063-183">Your application can then fill the hole with black to produce a silhouette of the primitive.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+## <a name="span-idtwo-sidedstencilspanspan-idtwo-sidedstencilspanspan-idtwo-sidedstencilspantwo-sided-stencil"></a><span data-ttu-id="88063-184"><span id="Two-sided_stencil"></span><span id="two-sided_stencil"></span><span id="TWO-SIDED_STENCIL"></span>2 面ステンシル</span><span class="sxs-lookup"><span data-stu-id="88063-184"><span id="Two-sided_stencil"></span><span id="two-sided_stencil"></span><span id="TWO-SIDED_STENCIL"></span>Two-sided stencil</span></span>
 
 
-[深度バッファーとステンシル バッファー](depth-and-stencil-buffers.md)
+<span data-ttu-id="88063-185">シャドウ ボリュームは、ステンシル バッファーで影を描画するために使用します。</span><span class="sxs-lookup"><span data-stu-id="88063-185">Shadow Volumes are used for drawing shadows with the stencil buffer.</span></span> <span data-ttu-id="88063-186">オクルーディング ジオメトリによってキャストされたシャドウ ボリュームは、シルエットの縁を計算し、ライトと反対側の 3D ボリューム セットに押し出すことによって計算されます。</span><span class="sxs-lookup"><span data-stu-id="88063-186">The application computes the shadow volumes cast by occluding geometry, by computing the silhouette edges and extruding them away from the light into a set of 3D volumes.</span></span> <span data-ttu-id="88063-187">これらのボリュームはその後、ステンシル バッファーに 2 回レンダリングされます。</span><span class="sxs-lookup"><span data-stu-id="88063-187">These volumes are then rendered twice into the stencil buffer.</span></span>
+
+<span data-ttu-id="88063-188">最初のレンダリングでは、前向きのポリゴンが描画され、ステンシル バッファーの値が増加します。</span><span class="sxs-lookup"><span data-stu-id="88063-188">The first render draws forward-facing polygons, and increments the stencil-buffer values.</span></span> <span data-ttu-id="88063-189">2 回目のレンダリングでは、シャドウ ボリュームの後ろ向きのポリゴンが描画され、ステンシル バッファーの値が減少します。</span><span class="sxs-lookup"><span data-stu-id="88063-189">The second render draws the back-facing polygons of the shadow volume, and decrements the stencil buffer values.</span></span> <span data-ttu-id="88063-190">通常は、すべての加算と減算値互いを取り消します。ただし、シーンでは、一部のピクセル シャドウ ボリュームをレンダリング z バッファー テストが失敗する原因になっている通常のジオメトリ レンダリングされています。</span><span class="sxs-lookup"><span data-stu-id="88063-190">Normally, all incremented and decremented values cancel each other out. However, the scene was already rendered with normal geometry causing some pixels to fail the z-buffer test as the shadow volume is rendered.</span></span> <span data-ttu-id="88063-191">ステンシル バッファーに残された値は、シャドウのピクセルに対応します。</span><span class="sxs-lookup"><span data-stu-id="88063-191">Values left in the stencil buffer correspond to pixels that are in the shadow.</span></span> <span data-ttu-id="88063-192">ステンシル バッファーの残りの内容は、すべてを覆う大きな黒のクワッドをシーンにアルファ ブレンディングするために、マスクとして使用されます。</span><span class="sxs-lookup"><span data-stu-id="88063-192">These remaining stencil-buffer contents are used as a mask, to alpha-blend a large, all-encompassing black quad into the scene.</span></span> <span data-ttu-id="88063-193">マスクとして機能するステンシル バッファーを使用すると、シャドウ内のピクセルが暗くなります。</span><span class="sxs-lookup"><span data-stu-id="88063-193">With the stencil buffer acting as a mask, the result is to darken pixels that are in the shadows.</span></span>
+
+<span data-ttu-id="88063-194">これは、シャドウ ジオメトリが光源ごとに 2 回描画されることを意味するため、GPU の頂点処理のスループットに影響します。</span><span class="sxs-lookup"><span data-stu-id="88063-194">This means that the shadow geometry is drawn twice per light source, hence putting pressure on the vertex throughput of the GPU.</span></span> <span data-ttu-id="88063-195">2 面ステンシル機能は、この状況を軽減することを目的として設計されています。</span><span class="sxs-lookup"><span data-stu-id="88063-195">The two-sided stencil feature has been designed to mitigate this situation.</span></span> <span data-ttu-id="88063-196">この方法には、(次の) 2 組のステンシル ステートがあります。一方は前向きの三角形のそれぞれに設定され、もう一方は後ろ向きの三角形に設定されます。</span><span class="sxs-lookup"><span data-stu-id="88063-196">In this approach, there are two sets of stencil state (named below), one set each for the front-facing triangles and the other for the back-facing triangles.</span></span> <span data-ttu-id="88063-197">このようにして、光源ごとにシャドウ ボリューム単位で 1 つのパスのみが描画されます。</span><span class="sxs-lookup"><span data-stu-id="88063-197">This way, only a single pass is drawn per shadow volume, per light.</span></span>
+
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="88063-198"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="88063-198"><span id="related-topics"></span>Related topics</span></span>
+
+
+[<span data-ttu-id="88063-199">深度バッファーとステンシル バッファー</span><span class="sxs-lookup"><span data-stu-id="88063-199">Depth and stencil buffers</span></span>](depth-and-stencil-buffers.md)
 
  
 
  
-
 
 
 

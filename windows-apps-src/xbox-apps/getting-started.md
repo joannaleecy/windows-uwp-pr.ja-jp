@@ -1,7 +1,7 @@
 ---
 author: Mtoepke
-title: "Xbox One の UWP アプリ開発の概要"
-description: "UWP 開発のために PC と Xbox One を設定する方法。"
+title: Xbox One の UWP アプリ開発の概要
+description: UWP 開発のために PC と Xbox One を設定する方法。
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,9 +10,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: ea8262f0aad4112ce2ce6d661156f5692541a4ce
 ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/17/2017
+ms.locfileid: "900996"
 ---
 #<a name="getting-started-with-uwp-app-development-on-xbox-one"></a><span data-ttu-id="34e61-104">Xbox One の UWP アプリ開発の概要</span><span class="sxs-lookup"><span data-stu-id="34e61-104">Getting started with UWP app development on Xbox One</span></span>
 

@@ -1,55 +1,54 @@
 ---
 author: mtoepke
-title: "メイン ゲーム オブジェクトの定義"
-description: "ここでは、ゲーム サンプルのメイン オブジェクトの詳細と、実装するルールをゲーム ワールドとの対話式操作に変換する方法について説明します。"
+title: メイン ゲーム オブジェクトの定義
+description: ここでは、ゲーム サンプルのメイン オブジェクトの詳細と、実装するルールをゲーム ワールドとの対話式操作に変換する方法について説明します。
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, メイン オブジェクト"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows 10, UWP, ゲーム, メイン オブジェクト
 ms.openlocfilehash: f81b3eaa9b896295386232f99b789dc3857b3bad
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "247069"
 ---
-
-# <a name="define-the-main-game-object"></a>メイン ゲーム オブジェクトの定義
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
-この時点までに、サンプル ゲームの基本的なフレームワークを紹介し、高度なユーザーの操作とシステムの動作を処理するステート マシンを実装しました。 しかし、ルール、機構、実装方法など、ゲーム サンプルを実際のゲームにする要素についてはまだ検証していません。 ここでは、ゲーム サンプルのメイン オブジェクトの詳細と、実装するルールをゲーム ワールドとの対話式操作に変換する方法について説明します。
-
-## <a name="objective"></a>目標
+# <a name="define-the-main-game-object"></a><span data-ttu-id="7f875-104">メイン ゲーム オブジェクトの定義</span><span class="sxs-lookup"><span data-stu-id="7f875-104">Define the main game object</span></span>
 
 
--   DirectX を使ったシンプルなユニバーサル Windows プラットフォーム (UWP) ゲームのルールやしくみを実装する際に、基本的な開発手法を適用する。
+<span data-ttu-id="7f875-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="7f875-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="7f875-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="7f875-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-## <a name="considering-the-games-flow"></a>ゲーム フローの検討
+<span data-ttu-id="7f875-107">この時点までに、サンプル ゲームの基本的なフレームワークを紹介し、高度なユーザーの操作とシステムの動作を処理するステート マシンを実装しました。</span><span class="sxs-lookup"><span data-stu-id="7f875-107">At this point, we've laid out the basic framework of the sample game, and we implemented a state machine that handles the high-level user and system behaviors.</span></span> <span data-ttu-id="7f875-108">しかし、ルール、機構、実装方法など、ゲーム サンプルを実際のゲームにする要素についてはまだ検証していません。</span><span class="sxs-lookup"><span data-stu-id="7f875-108">But we haven't examined the part that makes the game sample an actual game: the rules and mechanics, and how they're implemented!</span></span> <span data-ttu-id="7f875-109">ここでは、ゲーム サンプルのメイン オブジェクトの詳細と、実装するルールをゲーム ワールドとの対話式操作に変換する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7f875-109">Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world.</span></span>
 
-
-ゲームの基本構造の大部分が次のファイルで定義されます。
-
--   **App.cpp**
--   **Simple3DGame.cpp**
-
-「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」では、**App.cpp** で定義されたゲームのフレームワークを確認しました。
-
-**Simple3DGame.cpp** には、ゲーム プレイ自体の実装を指定するクラス、**Simple3DGame** のコードが記載されています。 サンプル ゲームを UWP アプリとして扱う処理については前述しました。 ここでは、ゲームを構成するコードを詳しく見てみましょう。
-
-**Simple3DGame.h/.cpp** の完全なコードは、[このセクションのサンプル コード一式](#complete-code-sample-for-this-section)に示します。
-
-**Simple3DGame** クラスの定義を見てみましょう。
-
-## <a name="defining-the-core-game-object"></a>コア ゲーム オブジェクトの定義
+## <a name="objective"></a><span data-ttu-id="7f875-110">目標</span><span class="sxs-lookup"><span data-stu-id="7f875-110">Objective</span></span>
 
 
-アプリ シングルトンが開始すると、ビュー プロバイダーの **Initialize** メソッドにより、メイン ゲーム クラスのインスタンスである **Simple3DGame** オブジェクトが作成されます。 このオブジェクトには、ゲーム状態に生じた変更について、アプリ フレームワークで定義されたステート マシンに伝えたり、アプリからゲーム オブジェクト自体に伝えたりするためのメソッドが含まれています。 また、ゲームのオーバーレイ ビットマップとヘッダアップ ディスプレイの更新やアニメーションやゲーム中の物理学 (力学) の更新に対して情報を返すメソッドも含まれています。 ゲームで使うグラフィックス デバイス リソースを取得するコードは GameRenderer.cpp に含まれています。これについては、次の「[レンダリング フレームワークの作成](tutorial--assembling-the-rendering-pipeline.md)」で説明します。
+-   <span data-ttu-id="7f875-111">DirectX を使ったシンプルなユニバーサル Windows プラットフォーム (UWP) ゲームのルールやしくみを実装する際に、基本的な開発手法を適用する。</span><span class="sxs-lookup"><span data-stu-id="7f875-111">To apply the basic development techniques when implementing the rules and mechanics of a simple Universal Windows Platform (UWP) game using DirectX.</span></span>
 
-**Simple3DGame** のコードは次のようになります。
+## <a name="considering-the-games-flow"></a><span data-ttu-id="7f875-112">ゲーム フローの検討</span><span class="sxs-lookup"><span data-stu-id="7f875-112">Considering the game's flow</span></span>
+
+
+<span data-ttu-id="7f875-113">ゲームの基本構造の大部分が次のファイルで定義されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-113">The majority of the game's basic structure is defined in these files:</span></span>
+
+-   **<span data-ttu-id="7f875-114">App.cpp</span><span class="sxs-lookup"><span data-stu-id="7f875-114">App.cpp</span></span>**
+-   **<span data-ttu-id="7f875-115">Simple3DGame.cpp</span><span class="sxs-lookup"><span data-stu-id="7f875-115">Simple3DGame.cpp</span></span>**
+
+<span data-ttu-id="7f875-116">「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」では、**App.cpp** で定義されたゲームのフレームワークを確認しました。</span><span class="sxs-lookup"><span data-stu-id="7f875-116">In [Defining the game's UWP app framework](tutorial--building-the-games-metro-style-app-framework.md), we reviewed the game framework defined in **App.cpp**.</span></span>
+
+<span data-ttu-id="7f875-117">**Simple3DGame.cpp** には、ゲーム プレイ自体の実装を指定するクラス、**Simple3DGame** のコードが記載されています。</span><span class="sxs-lookup"><span data-stu-id="7f875-117">**Simple3DGame.cpp** provides the code for a class, **Simple3DGame**, which specifies the implementation of the game play itself.</span></span> <span data-ttu-id="7f875-118">サンプル ゲームを UWP アプリとして扱う処理については前述しました。</span><span class="sxs-lookup"><span data-stu-id="7f875-118">Earlier, we considered the treatment of the sample game as a UWP app.</span></span> <span data-ttu-id="7f875-119">ここでは、ゲームを構成するコードを詳しく見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="7f875-119">Now, we look at the code that makes it a game.</span></span>
+
+<span data-ttu-id="7f875-120">**Simple3DGame.h/.cpp** の完全なコードは、[このセクションのサンプル コード一式](#complete-code-sample-for-this-section)に示します。</span><span class="sxs-lookup"><span data-stu-id="7f875-120">The complete code for **Simple3DGame.h/.cpp** is provided in [Complete sample code for this section](#complete-code-sample-for-this-section).</span></span>
+
+<span data-ttu-id="7f875-121">**Simple3DGame** クラスの定義を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="7f875-121">Let's take a look at the definition of the **Simple3DGame** class.</span></span>
+
+## <a name="defining-the-core-game-object"></a><span data-ttu-id="7f875-122">コア ゲーム オブジェクトの定義</span><span class="sxs-lookup"><span data-stu-id="7f875-122">Defining the core game object</span></span>
+
+
+<span data-ttu-id="7f875-123">アプリ シングルトンが開始すると、ビュー プロバイダーの **Initialize** メソッドにより、メイン ゲーム クラスのインスタンスである **Simple3DGame** オブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-123">When the app singleton starts, the view provider's **Initialize** method creates an instance of the main game class, the **Simple3DGame** object.</span></span> <span data-ttu-id="7f875-124">このオブジェクトには、ゲーム状態に生じた変更について、アプリ フレームワークで定義されたステート マシンに伝えたり、アプリからゲーム オブジェクト自体に伝えたりするためのメソッドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="7f875-124">This object contains the methods that communicate changes in game state to the state machine defined in the app framework, or from the app to the game object itself.</span></span> <span data-ttu-id="7f875-125">また、ゲームのオーバーレイ ビットマップとヘッダアップ ディスプレイの更新やアニメーションやゲーム中の物理学 (力学) の更新に対して情報を返すメソッドも含まれています。</span><span class="sxs-lookup"><span data-stu-id="7f875-125">It also contains methods that return info for updating the game's overlay bitmap and heads-up display, and for updating the animations and physics (the dynamics) in the game.</span></span> <span data-ttu-id="7f875-126">ゲームで使うグラフィックス デバイス リソースを取得するコードは GameRenderer.cpp に含まれています。これについては、次の「[レンダリング フレームワークの作成](tutorial--assembling-the-rendering-pipeline.md)」で説明します。</span><span class="sxs-lookup"><span data-stu-id="7f875-126">The code for obtaining the graphics device resources used by the game is found in GameRenderer.cpp, which we discuss next in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md).</span></span>
+
+<span data-ttu-id="7f875-127">**Simple3DGame** のコードは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="7f875-127">The code for **Simple3DGame** looks like this:</span></span>
 
 ```cpp
 ref class GameRenderer;
@@ -91,32 +90,32 @@ private:
 };
 ```
 
-まず、**Simple3DGame** で定義した内部メソッドについて見てみましょう。
+<span data-ttu-id="7f875-128">まず、**Simple3DGame** で定義した内部メソッドについて見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="7f875-128">First, let's review the internal methods defined on **Simple3DGame**.</span></span>
 
--   **Initialize**。 グローバル変数の開始値を設定し、ゲーム オブジェクトを初期化します。
--   **LoadGame**。 新しいレベルを初期化し、読み込みを開始します。
--   **LoadLevelAsync**。 非同期タスク (詳しくは、[並列パターン ライブラリ](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)をご覧ください) を開始して、レベルを初期化してから、レンダラーでデバイス固有のレベル リソースを読み込む非同期タスクを呼び出します。 このメソッドは独立したスレッドで実行されます。そのため、このスレッドから呼び出すことができるのは [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) メソッドだけです ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) メソッドは呼び出されません)。 デバイス コンテキストのメソッドは、**FinalizeLoadLevel** メソッドで呼び出されます。
--   **FinalizeLoadLevel**。 メイン スレッドで実行する必要があるレベル読み込みの作業を完了します。 これには、Direct3D 11 のデバイス コンテキスト ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) のメソッドの呼び出しが含まれます。
--   **StartLevel**。 新しいレベルでゲーム プレイを開始します。
--   **PauseGame**。 ゲームを一時停止します。
--   **RunGame**。 ゲーム ループの反復を実行します。 ゲームの状態が **App::Update** の場合、ゲーム ループを反復するごとに **Active** から 1 回呼び出されます。
--   **OnSuspending** および **OnResuming**。 前者はゲームのオーディオを中断し、後者はこれを再開します。
+-   <span data-ttu-id="7f875-129">**Initialize**。</span><span class="sxs-lookup"><span data-stu-id="7f875-129">**Initialize**.</span></span> <span data-ttu-id="7f875-130">グローバル変数の開始値を設定し、ゲーム オブジェクトを初期化します。</span><span class="sxs-lookup"><span data-stu-id="7f875-130">Sets the starting values of the global variables and initializes the game objects.</span></span>
+-   <span data-ttu-id="7f875-131">**LoadGame**。</span><span class="sxs-lookup"><span data-stu-id="7f875-131">**LoadGame**.</span></span> <span data-ttu-id="7f875-132">新しいレベルを初期化し、読み込みを開始します。</span><span class="sxs-lookup"><span data-stu-id="7f875-132">Initializes a new level and starts loading it.</span></span>
+-   <span data-ttu-id="7f875-133">**LoadLevelAsync**。</span><span class="sxs-lookup"><span data-stu-id="7f875-133">**LoadLevelAsync**.</span></span> <span data-ttu-id="7f875-134">非同期タスク (詳しくは、[並列パターン ライブラリ](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)をご覧ください) を開始して、レベルを初期化してから、レンダラーでデバイス固有のレベル リソースを読み込む非同期タスクを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="7f875-134">Starts an async task (see the [Parallel Patterns Library](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx) for more details) to initialize the level and then invoke an async task on the renderer to load the device specific level resources.</span></span> <span data-ttu-id="7f875-135">このメソッドは独立したスレッドで実行されます。そのため、このスレッドから呼び出すことができるのは [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) メソッドだけです ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) メソッドは呼び出されません)。</span><span class="sxs-lookup"><span data-stu-id="7f875-135">This method runs in a separate thread; as a result, only [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) methods (as opposed to [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) methods) can be called from this thread.</span></span> <span data-ttu-id="7f875-136">デバイス コンテキストのメソッドは、**FinalizeLoadLevel** メソッドで呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-136">Any device context methods are called in the **FinalizeLoadLevel** method.</span></span>
+-   <span data-ttu-id="7f875-137">**FinalizeLoadLevel**。</span><span class="sxs-lookup"><span data-stu-id="7f875-137">**FinalizeLoadLevel**.</span></span> <span data-ttu-id="7f875-138">メイン スレッドで実行する必要があるレベル読み込みの作業を完了します。</span><span class="sxs-lookup"><span data-stu-id="7f875-138">Completes any work for level loading that needs to be done on the main thread.</span></span> <span data-ttu-id="7f875-139">これには、Direct3D 11 のデバイス コンテキスト ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) のメソッドの呼び出しが含まれます。</span><span class="sxs-lookup"><span data-stu-id="7f875-139">This includes any calls to Direct3D 11 device context ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) methods.</span></span>
+-   <span data-ttu-id="7f875-140">**StartLevel**。</span><span class="sxs-lookup"><span data-stu-id="7f875-140">**StartLevel**.</span></span> <span data-ttu-id="7f875-141">新しいレベルでゲーム プレイを開始します。</span><span class="sxs-lookup"><span data-stu-id="7f875-141">Starts the game play for a new level.</span></span>
+-   <span data-ttu-id="7f875-142">**PauseGame**。</span><span class="sxs-lookup"><span data-stu-id="7f875-142">**PauseGame**.</span></span> <span data-ttu-id="7f875-143">ゲームを一時停止します。</span><span class="sxs-lookup"><span data-stu-id="7f875-143">Pauses the game.</span></span>
+-   <span data-ttu-id="7f875-144">**RunGame**。</span><span class="sxs-lookup"><span data-stu-id="7f875-144">**RunGame**.</span></span> <span data-ttu-id="7f875-145">ゲーム ループの反復を実行します。</span><span class="sxs-lookup"><span data-stu-id="7f875-145">Runs an iteration of the game loop.</span></span> <span data-ttu-id="7f875-146">ゲームの状態が **App::Update** の場合、ゲーム ループを反復するごとに **Active** から 1 回呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-146">It's called from **App::Update** one time every iteration of the game loop if the game state is **Active**.</span></span>
+-   <span data-ttu-id="7f875-147">**OnSuspending** および **OnResuming**。</span><span class="sxs-lookup"><span data-stu-id="7f875-147">**OnSuspending** and **OnResuming**.</span></span> <span data-ttu-id="7f875-148">前者はゲームのオーディオを中断し、後者はこれを再開します。</span><span class="sxs-lookup"><span data-stu-id="7f875-148">Suspends and resumes the game's audio, respectively.</span></span>
 
-さらに、次のプライベート メソッドがあります。
+<span data-ttu-id="7f875-149">さらに、次のプライベート メソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="7f875-149">And the private methods:</span></span>
 
--   **LoadSavedState** および **SaveState**。 前者はゲームの現在の状態の読み込み、後者はこれを保存します。
--   **SaveHighScore** および **LoadHighScore**。 前者はゲーム全体のハイ スコアを読み込み、後者はこれを保存します。
--   **InitializeAmmo**。 弾として使われるそれぞれの球体の状態を各ラウンドの最初に元の状態に戻します。
--   **UpdateDynamics**。 これは、アニメーションのキャンド ルーチンをはじめ、物理学とコントロール入力に基づいてゲーム オブジェクトをすべて更新するため、重要なメソッドになります。 これが、ゲームを定義するインタラクティビティの中核部分に相当します。 これについては、「[ゲームの更新](#updating-the-game-world)」のセクションで詳しく説明します。
+-   <span data-ttu-id="7f875-150">**LoadSavedState** および **SaveState**。</span><span class="sxs-lookup"><span data-stu-id="7f875-150">**LoadSavedState** and **SaveState**.</span></span> <span data-ttu-id="7f875-151">前者はゲームの現在の状態の読み込み、後者はこれを保存します。</span><span class="sxs-lookup"><span data-stu-id="7f875-151">Loads and saves the current state of the game, respectively.</span></span>
+-   <span data-ttu-id="7f875-152">**SaveHighScore** および **LoadHighScore**。</span><span class="sxs-lookup"><span data-stu-id="7f875-152">**SaveHighScore** and **LoadHighScore**.</span></span> <span data-ttu-id="7f875-153">前者はゲーム全体のハイ スコアを読み込み、後者はこれを保存します。</span><span class="sxs-lookup"><span data-stu-id="7f875-153">Saves and loads the high score across games, respectively.</span></span>
+-   <span data-ttu-id="7f875-154">**InitializeAmmo**。</span><span class="sxs-lookup"><span data-stu-id="7f875-154">**InitializeAmmo**.</span></span> <span data-ttu-id="7f875-155">弾として使われるそれぞれの球体の状態を各ラウンドの最初に元の状態に戻します。</span><span class="sxs-lookup"><span data-stu-id="7f875-155">Resets the state of each sphere object used as ammunition back to its original state for the beginning of each round.</span></span>
+-   <span data-ttu-id="7f875-156">**UpdateDynamics**。</span><span class="sxs-lookup"><span data-stu-id="7f875-156">**UpdateDynamics**.</span></span> <span data-ttu-id="7f875-157">これは、アニメーションのキャンド ルーチンをはじめ、物理学とコントロール入力に基づいてゲーム オブジェクトをすべて更新するため、重要なメソッドになります。</span><span class="sxs-lookup"><span data-stu-id="7f875-157">This is an important method, because it updates all the game objects based on canned animation routines, physics, and control input.</span></span> <span data-ttu-id="7f875-158">これが、ゲームを定義するインタラクティビティの中核部分に相当します。</span><span class="sxs-lookup"><span data-stu-id="7f875-158">This is the heart of the interactivity that defines the game.</span></span> <span data-ttu-id="7f875-159">これについては、「[ゲームの更新](#updating-the-game-world)」のセクションで詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="7f875-159">We talk about it more in the [Updating the game](#updating-the-game-world) section.</span></span>
 
-これ以外のパブリック メソッドとして、表示用のアプリ フレームワークにゲーム プレイとオーバーレイ固有の情報を返すプロパティの getter があります。
+<span data-ttu-id="7f875-160">これ以外のパブリック メソッドとして、表示用のアプリ フレームワークにゲーム プレイとオーバーレイ固有の情報を返すプロパティの getter があります。</span><span class="sxs-lookup"><span data-stu-id="7f875-160">The other public methods are property getters that return game play and overlay specific information to the app framework for display.</span></span>
 
-## <a name="defining-the-game-state-variables"></a>ゲーム状態変数の定義
+## <a name="defining-the-game-state-variables"></a><span data-ttu-id="7f875-161">ゲーム状態変数の定義</span><span class="sxs-lookup"><span data-stu-id="7f875-161">Defining the game state variables</span></span>
 
 
-ゲーム オブジェクトの役割の 1 つは、上位レベルでゲームをどのように定義するかに応じてゲームのセッション、レベル、または有効期間を定義するデータのコンテナーとして利用することです。 この場合、ゲーム状態データは、ユーザーがゲームを開始した時点で一度初期化されるゲームの有効期限の間、適用されます。
+<span data-ttu-id="7f875-162">ゲーム オブジェクトの役割の 1 つは、上位レベルでゲームをどのように定義するかに応じてゲームのセッション、レベル、または有効期間を定義するデータのコンテナーとして利用することです。</span><span class="sxs-lookup"><span data-stu-id="7f875-162">One function of the game object is to serve as a container for the data that defines a game session, level, or lifetime, depending on how you define your game at a high level.</span></span> <span data-ttu-id="7f875-163">この場合、ゲーム状態データは、ユーザーがゲームを開始した時点で一度初期化されるゲームの有効期限の間、適用されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-163">In this case, the game state data is for the lifetime of the game, initialized one time when a user launches the game.</span></span>
 
-以下にゲーム オブジェクトの状態変数に対する定義一式を示します。
+<span data-ttu-id="7f875-164">以下にゲーム オブジェクトの状態変数に対する定義一式を示します。</span><span class="sxs-lookup"><span data-stu-id="7f875-164">Here's the complete set of definitions for the game object's state variables.</span></span>
 
 ```cpp
 private:
@@ -153,19 +152,19 @@ private:
     DirectX::XMFLOAT3                                   m_maxBound;
 ```
 
-コード例の冒頭には、ゲーム ループの実行時にインスタンスが更新される 4 つのオブジェクトがあります。
+<span data-ttu-id="7f875-165">コード例の冒頭には、ゲーム ループの実行時にインスタンスが更新される 4 つのオブジェクトがあります。</span><span class="sxs-lookup"><span data-stu-id="7f875-165">At the top of the code example, there are four objects whose instances are updated as the game loop runs.</span></span>
 
--   **MoveLookController** オブジェクト。 プレーヤーの入力を表すオブジェクトです (**MoveLookController** オブジェクトについて詳しくは、「[コントロールの追加](tutorial--adding-controls.md)」をご覧ください)。
--   **GameRenderer** オブジェクト。 Direct3D 11 のレンダラーを表すオブジェクトです。デバイス固有のオブジェクトとそのレンダリングをすべて処理する **DirectXBase** クラスから派生します  (詳しくは、「[レンダリング パイプラインのアセンブル](tutorial--assembling-the-rendering-pipeline.md)」をご覧ください)。
--   **Camera** オブジェクト。 ゲーム ワールドに対するプレーヤーの一人称視点を表すオブジェクトです (**Camera** オブジェクトについて詳しくは、「[レンダリング パイプラインのアセンブル](tutorial--assembling-the-rendering-pipeline.md)」をご覧ください)。
--   **Audio** オブジェクト。 ゲームのオーディオ再生をコントロールするオブジェクトです (**Audio** オブジェクトについて詳しくは、「[サウンドの追加](tutorial--adding-sound.md)」をご覧ください)。
+-   <span data-ttu-id="7f875-166">**MoveLookController** オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7f875-166">The **MoveLookController** object.</span></span> <span data-ttu-id="7f875-167">プレーヤーの入力を表すオブジェクトです</span><span class="sxs-lookup"><span data-stu-id="7f875-167">This object represents the player input.</span></span> <span data-ttu-id="7f875-168">(**MoveLookController** オブジェクトについて詳しくは、「[コントロールの追加](tutorial--adding-controls.md)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="7f875-168">(For more info about the **MoveLookController** object, see [Adding controls](tutorial--adding-controls.md).)</span></span>
+-   <span data-ttu-id="7f875-169">**GameRenderer** オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7f875-169">The **GameRenderer** object.</span></span> <span data-ttu-id="7f875-170">Direct3D 11 のレンダラーを表すオブジェクトです。デバイス固有のオブジェクトとそのレンダリングをすべて処理する **DirectXBase** クラスから派生します </span><span class="sxs-lookup"><span data-stu-id="7f875-170">This object represents the Direct3D 11 renderer derived from the **DirectXBase** class that handles all the device-specific objects and their rendering.</span></span> <span data-ttu-id="7f875-171">(詳しくは、「[レンダリング パイプラインのアセンブル](tutorial--assembling-the-rendering-pipeline.md)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="7f875-171">(For more info, see [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md)).</span></span>
+-   <span data-ttu-id="7f875-172">**Camera** オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7f875-172">The **Camera** object.</span></span> <span data-ttu-id="7f875-173">ゲーム ワールドに対するプレーヤーの一人称視点を表すオブジェクトです</span><span class="sxs-lookup"><span data-stu-id="7f875-173">This object represents the player's first-person view of the game world.</span></span> <span data-ttu-id="7f875-174">(**Camera** オブジェクトについて詳しくは、「[レンダリング パイプラインのアセンブル](tutorial--assembling-the-rendering-pipeline.md)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="7f875-174">(For more info about the **Camera** object, see [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md).)</span></span>
+-   <span data-ttu-id="7f875-175">**Audio** オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7f875-175">The **Audio** object.</span></span> <span data-ttu-id="7f875-176">ゲームのオーディオ再生をコントロールするオブジェクトです</span><span class="sxs-lookup"><span data-stu-id="7f875-176">This object controls the audio playback for the game.</span></span> <span data-ttu-id="7f875-177">(**Audio** オブジェクトについて詳しくは、「[サウンドの追加](tutorial--adding-sound.md)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="7f875-177">(For more info about the **Audio** object, see [Adding sound](tutorial--adding-sound.md).)</span></span>
 
-残りのゲーム変数には、プリミティブとゲーム内で対応するプリミティブの量を示すリストと、ゲーム プレイ固有のデータと制約が含まれます。 ゲームの初期化時にこれらの変数がどのように設定されるかを見てみましょう。
+<span data-ttu-id="7f875-178">残りのゲーム変数には、プリミティブとゲーム内で対応するプリミティブの量を示すリストと、ゲーム プレイ固有のデータと制約が含まれます。</span><span class="sxs-lookup"><span data-stu-id="7f875-178">The rest of the game variables contain the lists of the primitives and their respective in-game amounts, and game play specific data and constraints.</span></span> <span data-ttu-id="7f875-179">ゲームの初期化時にこれらの変数がどのように設定されるかを見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="7f875-179">Let's see how the sample configures these variables when the game is initialized.</span></span>
 
-## <a name="initializing-and-starting-the-game"></a>ゲームの初期化と開始
+## <a name="initializing-and-starting-the-game"></a><span data-ttu-id="7f875-180">ゲームの初期化と開始</span><span class="sxs-lookup"><span data-stu-id="7f875-180">Initializing and starting the game</span></span>
 
 
-プレーヤーがゲームを開始すると、ゲーム オブジェクトはその状態を初期化し、オーバーレイの作成と追加を行い、プレーヤーのパフォーマンスを追跡する変数を設定して、レベルの構築時に使うオブジェクトをインスタンス化する必要があります。
+<span data-ttu-id="7f875-181">プレーヤーがゲームを開始すると、ゲーム オブジェクトはその状態を初期化し、オーバーレイの作成と追加を行い、プレーヤーのパフォーマンスを追跡する変数を設定して、レベルの構築時に使うオブジェクトをインスタンス化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7f875-181">When a player starts the game, the game object must initialize its state, create and add the overlay, set the variables that track the player's performance, and instantiate the objects that it will use to build the levels.</span></span>
 
 ```cpp
 void Simple3DGame::Initialize(
@@ -366,52 +365,52 @@ void Simple3DGame::Initialize(
 }
 ```
 
-サンプル ゲームでは、次の順序に従ってゲーム オブジェクトのコンポーネントをセットアップします。
+<span data-ttu-id="7f875-182">サンプル ゲームでは、次の順序に従ってゲーム オブジェクトのコンポーネントをセットアップします。</span><span class="sxs-lookup"><span data-stu-id="7f875-182">The sample game sets up the components of the game object in this order:</span></span>
 
-1.  新規のオーディオ再生オブジェクトを作成します。
-2.  一連のレベル プリミティブ、弾薬、障害物を含む、ゲームのグラフィック プリミティブの配列を作成します。
-3.  ゲーム状態データを保存する場所を作成し、*Game* という名前を付け、[**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619) で指定するアプリ データ設定ストレージの場所に格納します。
-4.  ゲーム タイマーと初期ゲーム内オーバーレイ ビットマップを作成します。
-5.  具体的なビュー パラメーターとプロジェクション パラメーター セットを使って新規のカメラを作成します。
-6.  プレーヤーがコントロール開始位置とカメラ位置の 1 対 1 の対応を確保されるように、入力デバイス (コントローラー) をカメラと同じ位置に上下と左右の開始位置を設定します。
-7.  プレーヤー オブジェクトを作成し、アクティブに設定します。 球体を使って、壁や障害物に近接するプレーヤーを検出したり、没入感を阻害するような位置にカメラが入り込むのを阻止したりします。
-8.  ゲーム ワールド プリミティブを作成します。
-9.  円筒形の障害物を作成します。
-10. 標的 (**Face** オブジェクト) を作成し、番号を付けます。
-11. 弾薬の球体を作成します。
-12. レベルを作成します。
-13. ハイ スコアを読み込みます。
-14. 以前に保存されたゲーム状態を読み込みます。
+1.  <span data-ttu-id="7f875-183">新規のオーディオ再生オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="7f875-183">A new audio playback object is created.</span></span>
+2.  <span data-ttu-id="7f875-184">一連のレベル プリミティブ、弾薬、障害物を含む、ゲームのグラフィック プリミティブの配列を作成します。</span><span class="sxs-lookup"><span data-stu-id="7f875-184">Arrays for the game's graphic primitives are created, including arrays for the level primitives, ammo, and obstacles.</span></span>
+3.  <span data-ttu-id="7f875-185">ゲーム状態データを保存する場所を作成し、*Game* という名前を付け、[**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619) で指定するアプリ データ設定ストレージの場所に格納します。</span><span class="sxs-lookup"><span data-stu-id="7f875-185">A location for saving game state data is created, named *Game*, and placed in the app data settings storage location specified by [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).</span></span>
+4.  <span data-ttu-id="7f875-186">ゲーム タイマーと初期ゲーム内オーバーレイ ビットマップを作成します。</span><span class="sxs-lookup"><span data-stu-id="7f875-186">A game timer and the initial in-game overlay bitmap are created.</span></span>
+5.  <span data-ttu-id="7f875-187">具体的なビュー パラメーターとプロジェクション パラメーター セットを使って新規のカメラを作成します。</span><span class="sxs-lookup"><span data-stu-id="7f875-187">A new camera is created with a specific set of view and projection parameters.</span></span>
+6.  <span data-ttu-id="7f875-188">プレーヤーがコントロール開始位置とカメラ位置の 1 対 1 の対応を確保されるように、入力デバイス (コントローラー) をカメラと同じ位置に上下と左右の開始位置を設定します。</span><span class="sxs-lookup"><span data-stu-id="7f875-188">The input device (the controller) is set to the same starting pitch and yaw as the camera, so the player has a 1-to-1 correspondence between the starting control position and the camera position.</span></span>
+7.  <span data-ttu-id="7f875-189">プレーヤー オブジェクトを作成し、アクティブに設定します。</span><span class="sxs-lookup"><span data-stu-id="7f875-189">The player object is created and set to active.</span></span> <span data-ttu-id="7f875-190">球体を使って、壁や障害物に近接するプレーヤーを検出したり、没入感を阻害するような位置にカメラが入り込むのを阻止したりします。</span><span class="sxs-lookup"><span data-stu-id="7f875-190">We use a sphere object to detect the player's proximity to walls and obstacles and to keep the camera from getting put in a position that might break immersion.</span></span>
+8.  <span data-ttu-id="7f875-191">ゲーム ワールド プリミティブを作成します。</span><span class="sxs-lookup"><span data-stu-id="7f875-191">The game world primitive is created.</span></span>
+9.  <span data-ttu-id="7f875-192">円筒形の障害物を作成します。</span><span class="sxs-lookup"><span data-stu-id="7f875-192">The cylinder obstacles are created.</span></span>
+10. <span data-ttu-id="7f875-193">標的 (**Face** オブジェクト) を作成し、番号を付けます。</span><span class="sxs-lookup"><span data-stu-id="7f875-193">The targets (**Face** objects) are created and numbered.</span></span>
+11. <span data-ttu-id="7f875-194">弾薬の球体を作成します。</span><span class="sxs-lookup"><span data-stu-id="7f875-194">The ammo spheres are created.</span></span>
+12. <span data-ttu-id="7f875-195">レベルを作成します。</span><span class="sxs-lookup"><span data-stu-id="7f875-195">The levels are created.</span></span>
+13. <span data-ttu-id="7f875-196">ハイ スコアを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="7f875-196">The high score is loaded.</span></span>
+14. <span data-ttu-id="7f875-197">以前に保存されたゲーム状態を読み込みます。</span><span class="sxs-lookup"><span data-stu-id="7f875-197">Any prior saved game state is loaded.</span></span>
 
-ゲームには既に、ワールド、プレーヤー、障害物、標的、弾薬の球体の主要コンポーネントのインスタンスが存在します。 これらの全コンポーネントの設定と個々の固有レベルに対する動作を表すレベルのインスタンスもあります。 ゲームでどのようにレベルが構築されるのかを見てみます。
+<span data-ttu-id="7f875-198">ゲームには既に、ワールド、プレーヤー、障害物、標的、弾薬の球体の主要コンポーネントのインスタンスが存在します。</span><span class="sxs-lookup"><span data-stu-id="7f875-198">The game now has instances of all the key components: the world, the player, the obstacles, the targets, and the ammo spheres.</span></span> <span data-ttu-id="7f875-199">これらの全コンポーネントの設定と個々の固有レベルに対する動作を表すレベルのインスタンスもあります。</span><span class="sxs-lookup"><span data-stu-id="7f875-199">It also has instances of the levels, which represent configurations of all of the above components and their behaviors for each specific level.</span></span> <span data-ttu-id="7f875-200">ゲームでどのようにレベルが構築されるのかを見てみます。</span><span class="sxs-lookup"><span data-stu-id="7f875-200">Let's see how the game builds the levels.</span></span>
 
-## <a name="building-and-loading-the-games-levels"></a>ゲーム レベルの構築と読み込み
-
-
-レベル構築に伴う作業の大部分は **Level.h/.cpp** ファイルで行われます。これについては、きわめて専門的な実装を伴うため、ここでは詳しい説明は省略します。 重要な点は、各レベルのコードがそれぞれ個別の **LevelN** オブジェクトとして実行されるということです。 ゲームを拡張する場合は、割り当てられている数字をパラメーターとして解釈し、障害物と標的を無作為に配置していた **Level** オブジェクトを作成することができます。 または、リソース ファイルからレベルの設定データを読み込ませることもできます。インターネットからも入手可能です。
-
-**Level.h/.cpp** の完全なコードは、[このセクションのサンプル コード一式](#complete-code-sample-for-this-section)に示します。
-
-## <a name="defining-the-game-play"></a>ゲーム プレイの定義
+## <a name="building-and-loading-the-games-levels"></a><span data-ttu-id="7f875-201">ゲーム レベルの構築と読み込み</span><span class="sxs-lookup"><span data-stu-id="7f875-201">Building and loading the game's levels</span></span>
 
 
-この時点でゲームのアセンブルに必要なコンポーネントがすべて揃います。 レベルは、既にプリミティブに基づいてメモリ中に構築されており、プレーヤーが何かしらの形式でやり取りを開始する準備ができています。
+<span data-ttu-id="7f875-202">レベル構築に伴う作業の大部分は **Level.h/.cpp** ファイルで行われます。これについては、きわめて専門的な実装を伴うため、ここでは詳しい説明は省略します。</span><span class="sxs-lookup"><span data-stu-id="7f875-202">Most of the heavy lifting for the level construction is done in the **Level.h/.cpp** file, which we won't delve into, because it focuses on a very specific implementation.</span></span> <span data-ttu-id="7f875-203">重要な点は、各レベルのコードがそれぞれ個別の **LevelN** オブジェクトとして実行されるということです。</span><span class="sxs-lookup"><span data-stu-id="7f875-203">The important thing is that the code for each level is run as a separate **LevelN** object.</span></span> <span data-ttu-id="7f875-204">ゲームを拡張する場合は、割り当てられている数字をパラメーターとして解釈し、障害物と標的を無作為に配置していた **Level** オブジェクトを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="7f875-204">If you'd like to extend the game, you can create a **Level** object that took an assigned number as a parameter and randomly placed the obstacles and targets.</span></span> <span data-ttu-id="7f875-205">または、リソース ファイルからレベルの設定データを読み込ませることもできます。インターネットからも入手可能です。</span><span class="sxs-lookup"><span data-stu-id="7f875-205">Or, you can have it load level configuration data from a resource file, or even the Internet!</span></span>
 
-優れたゲームでは、プレーヤーからの入力に即座に反応し、瞬時のフィードバックを戻せることが条件となります。 これは、トゥイッチ アクションやリアルタイムのシューティング ゲームをはじめ、ターン制の思考型の戦略ゲームに至るまで、あらゆる種類のゲームに言えることです。
+<span data-ttu-id="7f875-206">**Level.h/.cpp** の完全なコードは、[このセクションのサンプル コード一式](#complete-code-sample-for-this-section)に示します。</span><span class="sxs-lookup"><span data-stu-id="7f875-206">The complete code for **Level.h/.cpp** is provided in [Complete sample code for this section](#complete-code-sample-for-this-section).</span></span>
 
-「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」では、ゲームのフローを制御する総合的なステート マシンについて説明してあります。 なお、サンプルではこのフローが **App** クラスの [**Run**](https://msdn.microsoft.com/library/windows/apps/hh702093) メソッド内部にあるループとして実装されており、これ自体が DirectX ビュー プロバイダーの実装として存在することに注意してください。 重要な状態の切り替えはプレーヤーがコントロールし、それに対して明確なフィードバックが戻される必要があります。 このフィードバックに遅れが生じると、プレーヤーはゲームに熱中できなくなります。
+## <a name="defining-the-game-play"></a><span data-ttu-id="7f875-207">ゲーム プレイの定義</span><span class="sxs-lookup"><span data-stu-id="7f875-207">Defining the game play</span></span>
 
-以下にゲームの基本フローと上位レベルの状態を表す図を示します。
+
+<span data-ttu-id="7f875-208">この時点でゲームのアセンブルに必要なコンポーネントがすべて揃います。</span><span class="sxs-lookup"><span data-stu-id="7f875-208">At this point, we have all the components we need to assemble the game.</span></span> <span data-ttu-id="7f875-209">レベルは、既にプリミティブに基づいてメモリ中に構築されており、プレーヤーが何かしらの形式でやり取りを開始する準備ができています。</span><span class="sxs-lookup"><span data-stu-id="7f875-209">The levels have been constructed in memory from the primitives, and are ready for the player to start interacting with them in some fashion.</span></span>
+
+<span data-ttu-id="7f875-210">優れたゲームでは、プレーヤーからの入力に即座に反応し、瞬時のフィードバックを戻せることが条件となります。</span><span class="sxs-lookup"><span data-stu-id="7f875-210">Now, the best games react instantly to player input, and provide immediate feedback.</span></span> <span data-ttu-id="7f875-211">これは、トゥイッチ アクションやリアルタイムのシューティング ゲームをはじめ、ターン制の思考型の戦略ゲームに至るまで、あらゆる種類のゲームに言えることです。</span><span class="sxs-lookup"><span data-stu-id="7f875-211">This is true for any type of a game, from twitch-action, real-time shoot-em-ups to thoughtful, turn-based strategy games.</span></span>
+
+<span data-ttu-id="7f875-212">「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」では、ゲームのフローを制御する総合的なステート マシンについて説明してあります。</span><span class="sxs-lookup"><span data-stu-id="7f875-212">In [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md), we looked at the overall state machine that governs the flow of the game.</span></span> <span data-ttu-id="7f875-213">なお、サンプルではこのフローが **App** クラスの [**Run**](https://msdn.microsoft.com/library/windows/apps/hh702093) メソッド内部にあるループとして実装されており、これ自体が DirectX ビュー プロバイダーの実装として存在することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="7f875-213">Remember, the sample implements this flow as a loop inside the [**Run**](https://msdn.microsoft.com/library/windows/apps/hh702093) method of the **App** class, which itself is an implementation of a DirectX view provider.</span></span> <span data-ttu-id="7f875-214">重要な状態の切り替えはプレーヤーがコントロールし、それに対して明確なフィードバックが戻される必要があります。</span><span class="sxs-lookup"><span data-stu-id="7f875-214">The important state transitions must be controlled by the player, and must provide clear feedback.</span></span> <span data-ttu-id="7f875-215">このフィードバックに遅れが生じると、プレーヤーはゲームに熱中できなくなります。</span><span class="sxs-lookup"><span data-stu-id="7f875-215">Any delay in this feedback breaks the sense of immersion.</span></span>
+
+<span data-ttu-id="7f875-216">以下にゲームの基本フローと上位レベルの状態を表す図を示します。</span><span class="sxs-lookup"><span data-stu-id="7f875-216">Here is a diagram representing the basic flow of the game and its high-level states.</span></span>
 
 ![ゲームのメイン ステート マシンを示す図](images/simple3dgame-mainstatemachine.png)
 
-サンプル ゲームのプレイが開始すると、ゲーム オブジェクトは次のいずれかの状態に置かれます。
+<span data-ttu-id="7f875-218">サンプル ゲームのプレイが開始すると、ゲーム オブジェクトは次のいずれかの状態に置かれます。</span><span class="sxs-lookup"><span data-stu-id="7f875-218">When the sample game starts play, the game object can be in one of three states:</span></span>
 
--   **Waiting for resources**。 この状態は、ゲーム オブジェクトが初期化された時点、またはレベルのコンポーネントが読み込まれた時点でアクティブになります。 この状態が、以前のゲームの読み込み要求によってトリガーされた場合は、ゲーム統計のオーバーレイが表示されます。レベルのプレイ要求によってトリガーされた場合は、レベル開始のオーバーレイが表示されます。 リソースの読み込みが完了すると、**Resources loaded** 状態を経て、**Waiting for press** 状態に移行します。
--   **Waiting for press**。 この状態は、プレーヤーまたはシステムによってゲームが一時停止されるとアクティブになります (たとえば、リソースの読み込み後など)。 プレーヤーがこの状態を終了する準備ができている場合、プレーヤーは、新たにゲーム状態を読み込む (LoadGame)、読み込まれたレベルを開始または再開する (StartLevel)、現在のレベルを続行する (ContinueGame) のいずれかを選ぶように要求されます。
--   **Dynamics**。 プレーヤーによる押下入力が終わり、レベルの開始または続行のアクションが選ばれた場合、ゲーム オブジェクトは *Dynamics* の状態に移ります。 ゲームはこの状態でプレイされ、ゲーム ワールドとプレーヤーの各オブジェクトが、アニメーション ルーチンとプレーヤー入力に従って更新されます。 この状態は、プレーヤーが P を押す、メイン ウィンドウを非アクティブにする、レベルをクリアする、ゲームを終了する、のいずれかの操作によって一時停止イベントがトリガーされると終了します。
+-   <span data-ttu-id="7f875-219">**Waiting for resources**。</span><span class="sxs-lookup"><span data-stu-id="7f875-219">**Waiting for resources**.</span></span> <span data-ttu-id="7f875-220">この状態は、ゲーム オブジェクトが初期化された時点、またはレベルのコンポーネントが読み込まれた時点でアクティブになります。</span><span class="sxs-lookup"><span data-stu-id="7f875-220">This state is activated when the game object is initialized or when the components of a level are being loaded.</span></span> <span data-ttu-id="7f875-221">この状態が、以前のゲームの読み込み要求によってトリガーされた場合は、ゲーム統計のオーバーレイが表示されます。レベルのプレイ要求によってトリガーされた場合は、レベル開始のオーバーレイが表示されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-221">If this state was triggered by a request to load a prior game, the game stats overlay is displayed; if it was triggered by a request to play a level, the level start overlay is displayed.</span></span> <span data-ttu-id="7f875-222">リソースの読み込みが完了すると、**Resources loaded** 状態を経て、**Waiting for press** 状態に移行します。</span><span class="sxs-lookup"><span data-stu-id="7f875-222">The completion of resource loading causes the game to pass through the **Resources loaded** state and then transition into the **Waiting for press** state.</span></span>
+-   <span data-ttu-id="7f875-223">**Waiting for press**。</span><span class="sxs-lookup"><span data-stu-id="7f875-223">**Waiting for press**.</span></span> <span data-ttu-id="7f875-224">この状態は、プレーヤーまたはシステムによってゲームが一時停止されるとアクティブになります (たとえば、リソースの読み込み後など)。</span><span class="sxs-lookup"><span data-stu-id="7f875-224">This state is activated when the game is paused, either by the player or by the system (after, say, loading resources).</span></span> <span data-ttu-id="7f875-225">プレーヤーがこの状態を終了する準備ができている場合、プレーヤーは、新たにゲーム状態を読み込む (LoadGame)、読み込まれたレベルを開始または再開する (StartLevel)、現在のレベルを続行する (ContinueGame) のいずれかを選ぶように要求されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-225">When the player is ready to exit this state, the player is prompted to load a new game state (LoadGame), start or restart the loaded level (StartLevel), or continue the current level (ContinueGame).</span></span>
+-   <span data-ttu-id="7f875-226">**Dynamics**。</span><span class="sxs-lookup"><span data-stu-id="7f875-226">**Dynamics**.</span></span> <span data-ttu-id="7f875-227">プレーヤーによる押下入力が終わり、レベルの開始または続行のアクションが選ばれた場合、ゲーム オブジェクトは *Dynamics* の状態に移ります。</span><span class="sxs-lookup"><span data-stu-id="7f875-227">If a player's press input is completed and the resulting action is to start or continue a level, the game object transitions into the *Dynamics* state.</span></span> <span data-ttu-id="7f875-228">ゲームはこの状態でプレイされ、ゲーム ワールドとプレーヤーの各オブジェクトが、アニメーション ルーチンとプレーヤー入力に従って更新されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-228">The game is played in this state, and the game world and player objects are updated here based on animation routines and player input.</span></span> <span data-ttu-id="7f875-229">この状態は、プレーヤーが P を押す、メイン ウィンドウを非アクティブにする、レベルをクリアする、ゲームを終了する、のいずれかの操作によって一時停止イベントがトリガーされると終了します。</span><span class="sxs-lookup"><span data-stu-id="7f875-229">This state is left when the player triggers a pause event, either by pressing P, by taking an action that deactivates the main window, or by completing a level or the game.</span></span>
 
-ここで、このステート マシンを実装する **Update** メソッドに対する **App** クラス (「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」をご覧ください) の具体的なコードを見てみましょう。
+<span data-ttu-id="7f875-230">ここで、このステート マシンを実装する **Update** メソッドに対する **App** クラス (「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」をご覧ください) の具体的なコードを見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="7f875-230">Now, let's look at specific code in the **App** class (see: [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md)) for the **Update** method that implements this state machine.</span></span>
 
 ```cpp
 void App::Update()
@@ -556,23 +555,23 @@ void App::Update()
 }
 ```
 
-このメソッドではまず、[MoveLookController](tutorial--adding-controls.md) インスタンスの固有の **Update** メソッドを呼び出し、コントローラーからのデータを更新します。 このデータには、プレーヤー ビュー (カメラ) が向いている方向やプレーヤーの動きの速度などが含まれます。
+<span data-ttu-id="7f875-231">このメソッドではまず、[MoveLookController](tutorial--adding-controls.md) インスタンスの固有の **Update** メソッドを呼び出し、コントローラーからのデータを更新します。</span><span class="sxs-lookup"><span data-stu-id="7f875-231">The first thing this method does is call the [MoveLookController](tutorial--adding-controls.md) instance's own **Update** method, which updates the data from the controller.</span></span> <span data-ttu-id="7f875-232">このデータには、プレーヤー ビュー (カメラ) が向いている方向やプレーヤーの動きの速度などが含まれます。</span><span class="sxs-lookup"><span data-stu-id="7f875-232">This data includes the direction the player's view (the camera) is facing and the velocity of the player's movement.</span></span>
 
-ゲームが Dynamics の状態にある場合、つまりプレーヤーがプレイ中の場合に、この呼び出しによって作業は **RunGame** メソッドの中で処理されます。
+<span data-ttu-id="7f875-233">ゲームが Dynamics の状態にある場合、つまりプレーヤーがプレイ中の場合に、この呼び出しによって作業は **RunGame** メソッドの中で処理されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-233">When the game is in the Dynamics state, that is, when the player is playing, the work is handled in the **RunGame** method, with this call:</span></span>
 
 `GameState runState = m_game->RunGame();`
 
-**RunGame** はゲーム ループの現在行われている反復に対するゲーム プレイの最新状態を定義する一連のデータを処理します。 次のようなフローになります。
+<span data-ttu-id="7f875-234">**RunGame** はゲーム ループの現在行われている反復に対するゲーム プレイの最新状態を定義する一連のデータを処理します。</span><span class="sxs-lookup"><span data-stu-id="7f875-234">**RunGame** handles the set of data that defines the current state of the game play for the current iteration of the game loop.</span></span> <span data-ttu-id="7f875-235">次のようなフローになります。</span><span class="sxs-lookup"><span data-stu-id="7f875-235">It flows like this:</span></span>
 
-1.  メソッドは、レベルが終了するまでの間、残り時間を秒数でカウント ダウンするタイマーを更新し、レベルの時間が過ぎていないかをテストします。 これは、ゲームのルールの 1 つです。標的を全部撃ち落とす前に時間切れになると、ゲーム オーバーになります。
-2.  時間切れになると、メソッドは **TimeExpired** ゲーム状態を設定し、前のコードの **Update** メソッドに戻ります。
-3.  時間が残っている場合は、ムーブ/ルック コントローラーがポーリングを行って、カメラ位置に更新がないかどうかを確認します。具体的には、カメラ平面 (プレーヤーが見ている面) の延長上にあるビュー法線の角度や、前回のコントローラーのポーリング時からの角度の移動距離が更新されていないかどうかを確認します。
-4.  カメラは、ムーブ/ルック コントローラーから送られる新しいデータに従って更新されます。
-5.  ダイナミクス、つまりプレーヤーのコントロールからは独立したゲーム ワールド中のオブジェクトのアニメーションや動作が更新されます。 ゲーム サンプルでは、発射された弾丸の動き、柱の障害物のアニメーション、標的の移動などのことです。
-6.  メソッドが、レベルの正常な完了に関する基準が満たされているかどうかをチェックします。 満たされていれば、レベルのスコアをファイナライズし、これが最後のレベル (全 6 レベル) であるかどうかを判断します。 最後のレベルであれば、**GameComplete** ゲーム状態を返します。そうでない場合は、**LevelComplete** ゲーム状態を返します。
-7.  レベルが完了していない場合は、ゲーム状態を **Active** に設定し、戻ります。
+1.  <span data-ttu-id="7f875-236">メソッドは、レベルが終了するまでの間、残り時間を秒数でカウント ダウンするタイマーを更新し、レベルの時間が過ぎていないかをテストします。</span><span class="sxs-lookup"><span data-stu-id="7f875-236">The method updates the timer that counts down the seconds until the level is completed, and tests to see if the level's time has expired.</span></span> <span data-ttu-id="7f875-237">これは、ゲームのルールの 1 つです。標的を全部撃ち落とす前に時間切れになると、ゲーム オーバーになります。</span><span class="sxs-lookup"><span data-stu-id="7f875-237">This is one of the rules of the game: when time runs out without all the targets getting shot, the game is over.</span></span>
+2.  <span data-ttu-id="7f875-238">時間切れになると、メソッドは **TimeExpired** ゲーム状態を設定し、前のコードの **Update** メソッドに戻ります。</span><span class="sxs-lookup"><span data-stu-id="7f875-238">If time has run out, the method sets the **TimeExpired** game state, and returns to the **Update** method in the previous code.</span></span>
+3.  <span data-ttu-id="7f875-239">時間が残っている場合は、ムーブ/ルック コントローラーがポーリングを行って、カメラ位置に更新がないかどうかを確認します。具体的には、カメラ平面 (プレーヤーが見ている面) の延長上にあるビュー法線の角度や、前回のコントローラーのポーリング時からの角度の移動距離が更新されていないかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="7f875-239">If time remains, the move-look controller is polled for an update to the camera position; specifically, an update to the angle of the view normal projecting from the camera plane (where the player is looking), and the distance that angle has moved from the previous time the controller was polled.</span></span>
+4.  <span data-ttu-id="7f875-240">カメラは、ムーブ/ルック コントローラーから送られる新しいデータに従って更新されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-240">The camera is updated based on the new data from the move-look controller.</span></span>
+5.  <span data-ttu-id="7f875-241">ダイナミクス、つまりプレーヤーのコントロールからは独立したゲーム ワールド中のオブジェクトのアニメーションや動作が更新されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-241">The dynamics, or the animations and behaviors of objects in the game world independent of player control, are updated.</span></span> <span data-ttu-id="7f875-242">ゲーム サンプルでは、発射された弾丸の動き、柱の障害物のアニメーション、標的の移動などのことです。</span><span class="sxs-lookup"><span data-stu-id="7f875-242">In the game sample, this is the motion of the ammo spheres that have been fired, the animation of the pillar obstacles and the movement of the targets.</span></span>
+6.  <span data-ttu-id="7f875-243">メソッドが、レベルの正常な完了に関する基準が満たされているかどうかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="7f875-243">The method checks to see if the criteria for the successful completion of a level have been met.</span></span> <span data-ttu-id="7f875-244">満たされていれば、レベルのスコアをファイナライズし、これが最後のレベル (全 6 レベル) であるかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="7f875-244">If so, it finalizes the score for the level and checks to see if this is the last level (of 6).</span></span> <span data-ttu-id="7f875-245">最後のレベルであれば、**GameComplete** ゲーム状態を返します。そうでない場合は、**LevelComplete** ゲーム状態を返します。</span><span class="sxs-lookup"><span data-stu-id="7f875-245">If it's the last level, the method returns the **GameComplete** game state; otherwise, it returns the **LevelComplete** game state.</span></span>
+7.  <span data-ttu-id="7f875-246">レベルが完了していない場合は、ゲーム状態を **Active** に設定し、戻ります。</span><span class="sxs-lookup"><span data-stu-id="7f875-246">If the level isn't complete, the method sets the game state to **Active** and returns.</span></span>
 
-**Simple3DGame.cpp** にある **RunGame** は次のようなコードです。
+<span data-ttu-id="7f875-247">**Simple3DGame.cpp** にある **RunGame** は次のようなコードです。</span><span class="sxs-lookup"><span data-stu-id="7f875-247">Here's what **RunGame**, found in **Simple3DGame.cpp**, looks like in code.</span></span>
 
 ```cpp
 GameState Simple3DGame::RunGame()
@@ -654,16 +653,16 @@ GameState Simple3DGame::RunGame()
 }}
 ```
 
-キー コールは次のとおりです。`UpdateDynamics()`。 ここがゲーム ワールドに命を吹き込む部分です。 その内容を確認してみましょう。
+<span data-ttu-id="7f875-248">キー コールは次のとおりです。`UpdateDynamics()`。</span><span class="sxs-lookup"><span data-stu-id="7f875-248">Here's the key call: `UpdateDynamics()`.</span></span> <span data-ttu-id="7f875-249">ここがゲーム ワールドに命を吹き込む部分です。</span><span class="sxs-lookup"><span data-stu-id="7f875-249">It's what brings the game world to life.</span></span> <span data-ttu-id="7f875-250">その内容を確認してみましょう。</span><span class="sxs-lookup"><span data-stu-id="7f875-250">Let's review it!</span></span>
 
-## <a name="updating-the-game-world"></a>ゲーム ワールドの更新
+## <a name="updating-the-game-world"></a><span data-ttu-id="7f875-251">ゲーム ワールドの更新</span><span class="sxs-lookup"><span data-stu-id="7f875-251">Updating the game world</span></span>
 
 
-迅速で流れるようなゲーム エクスペリエンスこそ、ゲーム自体がプレーヤーからの入力から独立した動きを見せる*生き生きとした*世界を再現するための鍵となります。 木々が風になびき、波が海岸に打ち上げ、機械が煙りを上げ、光を発し、異星の怪物が身を伸ばしてはよだれを垂らすなど、動きのある描写が行われます。 ゲームの背景がすべて静止していて、プレーヤーが入力したときにだけ画像が動くとしたら、どのような印象になるのでしょう。 動きが不自然で、あまり魅力的とは言えないでしょう。 プレーヤーは、息をのむような生き生きとした世界にいる感覚を得られてこそ夢中になります。
+<span data-ttu-id="7f875-252">迅速で流れるようなゲーム エクスペリエンスこそ、ゲーム自体がプレーヤーからの入力から独立した動きを見せる*生き生きとした*世界を再現するための鍵となります。</span><span class="sxs-lookup"><span data-stu-id="7f875-252">A fast and fluid game experience is one where the world feels *alive*, where the game itself is in motion independent of player input.</span></span> <span data-ttu-id="7f875-253">木々が風になびき、波が海岸に打ち上げ、機械が煙りを上げ、光を発し、異星の怪物が身を伸ばしてはよだれを垂らすなど、動きのある描写が行われます。</span><span class="sxs-lookup"><span data-stu-id="7f875-253">Trees wave in the wind, waves crest along shore lines, machinery smokes and shines, and alien monsters stretch and salivate.</span></span> <span data-ttu-id="7f875-254">ゲームの背景がすべて静止していて、プレーヤーが入力したときにだけ画像が動くとしたら、どのような印象になるのでしょう。</span><span class="sxs-lookup"><span data-stu-id="7f875-254">Imagine what a game would be like if everything was frozen, with the graphics only moving when the player provided input.</span></span> <span data-ttu-id="7f875-255">動きが不自然で、あまり魅力的とは言えないでしょう。</span><span class="sxs-lookup"><span data-stu-id="7f875-255">It'd be weird and not very, well, immersive.</span></span> <span data-ttu-id="7f875-256">プレーヤーは、息をのむような生き生きとした世界にいる感覚を得られてこそ夢中になります。</span><span class="sxs-lookup"><span data-stu-id="7f875-256">Immersion, for the player, comes from the feeling of being an agent in a living, breathing world.</span></span>
 
-ゲーム ループでは、一時停止が指定された場合を除き、常にゲーム ワールドを更新し、アニメーション ルーチンを実行していることが求められます。これがキャンド ルーチンであるか、物理アルゴリズムに従ったものであるか、また単に無作為な動きであるかは問いません。 ゲーム サンプルでは、この原理のことを*ダイナミクス*と呼んでいます。これにより、柱の障害物の上下の動き、発砲時に見られる弾薬の球体の動きや物理的動作が統合されます。 また、プレーヤーの球体とワールドの間、または弾薬、障害物、標的の間に生じる衝突を含め、物体どうしの相互作用も統合されます。
+<span data-ttu-id="7f875-257">ゲーム ループでは、一時停止が指定された場合を除き、常にゲーム ワールドを更新し、アニメーション ルーチンを実行していることが求められます。これがキャンド ルーチンであるか、物理アルゴリズムに従ったものであるか、また単に無作為な動きであるかは問いません。</span><span class="sxs-lookup"><span data-stu-id="7f875-257">The game loop should always keep updating the game world and running the animation routines, be they canned or based on physical algorithms or just plain random, except when the game is specifically paused.</span></span> <span data-ttu-id="7f875-258">ゲーム サンプルでは、この原理のことを*ダイナミクス*と呼んでいます。これにより、柱の障害物の上下の動き、発砲時に見られる弾薬の球体の動きや物理的動作が統合されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-258">In the game sample, this principle is called *dynamics*, and it encompasses the rise and fall of the pillar obstacles, and the motion and physical behaviors of the ammo spheres as they are fired.</span></span> <span data-ttu-id="7f875-259">また、プレーヤーの球体とワールドの間、または弾薬、障害物、標的の間に生じる衝突を含め、物体どうしの相互作用も統合されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-259">It also encompasses the interaction between objects, including collisions between the player sphere and the world, or between the ammo and the obstacles and targets.</span></span>
 
-こうしたダイナミクスを実装するコードは次のとおりです。
+<span data-ttu-id="7f875-260">こうしたダイナミクスを実装するコードは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="7f875-260">The code that implements these dynamics looks like this:</span></span>
 
 ```cpp
 void Simple3DGame::UpdateDynamics()
@@ -836,27 +835,27 @@ void Simple3DGame::UpdateDynamics()
 }
 ```
 
-(このコード例は、わかりやすいように省略したものです。 動作する完全なコードは、このトピックの末尾のコード サンプル一式に掲載しています)
+<span data-ttu-id="7f875-261">(このコード例は、わかりやすいように省略したものです。</span><span class="sxs-lookup"><span data-stu-id="7f875-261">(This code example has been abbreviated for readability.</span></span> <span data-ttu-id="7f875-262">動作する完全なコードは、このトピックの末尾のコード サンプル一式に掲載しています)</span><span class="sxs-lookup"><span data-stu-id="7f875-262">The full working code is found in the complete code sample at the bottom of this topic.)</span></span>
 
-このメソッドは、次の 4 種類の計算を行います。
+<span data-ttu-id="7f875-263">このメソッドは、次の 4 種類の計算を行います。</span><span class="sxs-lookup"><span data-stu-id="7f875-263">This method deals with four sets of computations:</span></span>
 
--   ワールドで発砲された弾薬の球体の位置
--   柱の障害物のアニメーション
--   プレーヤーとワールドの境界の交差部分
--   弾薬の球体と、障害物、標的、他の弾薬球体、ワールドとの衝突
+-   <span data-ttu-id="7f875-264">ワールドで発砲された弾薬の球体の位置</span><span class="sxs-lookup"><span data-stu-id="7f875-264">The positions of the fired ammo spheres in the world.</span></span>
+-   <span data-ttu-id="7f875-265">柱の障害物のアニメーション</span><span class="sxs-lookup"><span data-stu-id="7f875-265">The animation of the pillar obstacles.</span></span>
+-   <span data-ttu-id="7f875-266">プレーヤーとワールドの境界の交差部分</span><span class="sxs-lookup"><span data-stu-id="7f875-266">The intersection of the player and the world boundaries.</span></span>
+-   <span data-ttu-id="7f875-267">弾薬の球体と、障害物、標的、他の弾薬球体、ワールドとの衝突</span><span class="sxs-lookup"><span data-stu-id="7f875-267">The collisions of the ammo spheres with the obstacles, the targets, other ammo spheres, and the world.</span></span>
 
-障害物のアニメーションは、**Animate.h/.cpp** で定義されたループとして実行されます。 弾薬と衝突の動作は、簡略化した物理アルゴリズムで定義され、従来のコードから提供されます。また、重力や素材のプロパティも含め、ゲーム ワールドに対する一連のグローバル定数によってパラメーター化されます。 これはすべて、ゲーム ワールドの座標空間で計算されます。
+<span data-ttu-id="7f875-268">障害物のアニメーションは、**Animate.h/.cpp** で定義されたループとして実行されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-268">The animation of the obstacles is a loop defined in **Animate.h/.cpp**.</span></span> <span data-ttu-id="7f875-269">弾薬と衝突の動作は、簡略化した物理アルゴリズムで定義され、従来のコードから提供されます。また、重力や素材のプロパティも含め、ゲーム ワールドに対する一連のグローバル定数によってパラメーター化されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-269">The behavior of the ammo and any collisions are defined by simplified physics algorithms, supplied in the previous code and parameterized by a set of global constants for the game world, including gravity and material properties.</span></span> <span data-ttu-id="7f875-270">これはすべて、ゲーム ワールドの座標空間で計算されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-270">This is all computed in the game world coordinate space.</span></span>
 
-これでシーン中のオブジェクトがすべて更新され、すべての衝突が計算されたため、この情報を使って対応するビジュアルの変更を描画します。 サンプルでは、ゲーム ループの現在の反復中で更新が完了すると直ちに、**Render** を呼び出して更新されたオブジェクト データを使用して新しいシーンを生成し、プレーヤーに提示します。
+<span data-ttu-id="7f875-271">これでシーン中のオブジェクトがすべて更新され、すべての衝突が計算されたため、この情報を使って対応するビジュアルの変更を描画します。</span><span class="sxs-lookup"><span data-stu-id="7f875-271">Now that we've updated all the objects in the scene and calculated any collisions, we need to use that info to draw the corresponding visual changes.</span></span> <span data-ttu-id="7f875-272">サンプルでは、ゲーム ループの現在の反復中で更新が完了すると直ちに、**Render** を呼び出して更新されたオブジェクト データを使用して新しいシーンを生成し、プレーヤーに提示します。</span><span class="sxs-lookup"><span data-stu-id="7f875-272">After Update completes in the current iteration of the game loop, the sample immediately calls **Render** to take the updated object data and generate a new scene to present to the player.</span></span>
 
-ここでレンダリングのメソッドを見てみましょう。
+<span data-ttu-id="7f875-273">ここでレンダリングのメソッドを見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="7f875-273">Let's look at the render method now.</span></span>
 
-## <a name="rendering-the-game-worlds-graphics"></a>ゲーム ワールド グラフィックスのレンダリング
+## <a name="rendering-the-game-worlds-graphics"></a><span data-ttu-id="7f875-274">ゲーム ワールド グラフィックスのレンダリング</span><span class="sxs-lookup"><span data-stu-id="7f875-274">Rendering the game world's graphics</span></span>
 
 
-ゲーム中のグラフィックスはできるだけ頻繁 (最大ではメインのゲーム ループが反復するごと) に更新することをお勧めします。 ループが反復するごとに、プレーヤーからの入力の有無を問わず、ゲームを更新します。 これにより、計算するアニメーションと動作がスムーズに表示されるようになります。 たとえば、プレーヤーがボタンを押したときにのみ、水が流れるという単純なシーンを思い浮かべてください。 ひどくつまらないビジュアルになるでしょう。 優れたゲームは、流れるような自然の動きを伴うものです。
+<span data-ttu-id="7f875-275">ゲーム中のグラフィックスはできるだけ頻繁 (最大ではメインのゲーム ループが反復するごと) に更新することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="7f875-275">We recommend that the graphics in a game update as often as possible, which, at maximum, is every time the main game loop iterates.</span></span> <span data-ttu-id="7f875-276">ループが反復するごとに、プレーヤーからの入力の有無を問わず、ゲームを更新します。</span><span class="sxs-lookup"><span data-stu-id="7f875-276">As the loop iterates, the game is updated, with or without player input.</span></span> <span data-ttu-id="7f875-277">これにより、計算するアニメーションと動作がスムーズに表示されるようになります。</span><span class="sxs-lookup"><span data-stu-id="7f875-277">This allows the animations and behaviors that are calculated to be displayed smoothly.</span></span> <span data-ttu-id="7f875-278">たとえば、プレーヤーがボタンを押したときにのみ、水が流れるという単純なシーンを思い浮かべてください。</span><span class="sxs-lookup"><span data-stu-id="7f875-278">Imagine if we had a simple scene of water that only moved when the player pressed a button.</span></span> <span data-ttu-id="7f875-279">ひどくつまらないビジュアルになるでしょう。</span><span class="sxs-lookup"><span data-stu-id="7f875-279">That would make for terribly boring visuals.</span></span> <span data-ttu-id="7f875-280">優れたゲームは、流れるような自然の動きを伴うものです。</span><span class="sxs-lookup"><span data-stu-id="7f875-280">A good game looks smooth and fluid.</span></span>
 
-以下に示すような簡単なゲーム ループを例に取ります。 ゲームのメイン ウィンドウが表示されていて、スナップされたり、非アクティブにされたりしなければ、ゲームはそのまま、その更新結果の更新とレンダリングを続けます。
+<span data-ttu-id="7f875-281">以下に示すような簡単なゲーム ループを例に取ります。</span><span class="sxs-lookup"><span data-stu-id="7f875-281">Recall the sample game's loop, as shown here.</span></span> <span data-ttu-id="7f875-282">ゲームのメイン ウィンドウが表示されていて、スナップされたり、非アクティブにされたりしなければ、ゲームはそのまま、その更新結果の更新とレンダリングを続けます。</span><span class="sxs-lookup"><span data-stu-id="7f875-282">If the game's main window is visible, and isn't snapped or deactivated, the game continues to update and render the results of that update.</span></span>
 
 ```cpp
 void App::Run()
@@ -892,7 +891,7 @@ void App::Run()
 }
 ```
 
-ここで検証するメソッドでは、**Update** を呼び出した後、状態が **Run** によって更新された直後の状態を表すレンダリングが行われます。これについては、前のセクションで説明したとおりです。
+<span data-ttu-id="7f875-283">ここで検証するメソッドでは、**Update** を呼び出した後、状態が **Run** によって更新された直後の状態を表すレンダリングが行われます。これについては、前のセクションで説明したとおりです。</span><span class="sxs-lookup"><span data-stu-id="7f875-283">The method we examine now renders a representation of that state immediately after the state is updated in **Run** with a call to **Update**, which we discussed in the previous section.</span></span>
 
 ```cpp
 void GameRenderer::Render()
@@ -1042,21 +1041,21 @@ void GameRenderer::Render()
 }
 ```
 
-このメソッドの完全なコードは、「[レンダリング フレームワークの作成](tutorial--assembling-the-rendering-pipeline.md)」に示しています。
+<span data-ttu-id="7f875-284">このメソッドの完全なコードは、「[レンダリング フレームワークの作成](tutorial--assembling-the-rendering-pipeline.md)」に示しています。</span><span class="sxs-lookup"><span data-stu-id="7f875-284">The complete code for this method is in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md).</span></span>
 
-このメソッドではまず 3D ワールドのプロジェクションが描画され、続いてその上に Direct2D オーバーレイが描画されます。 描画が完了すると、表示用に結合されたバッファーとともに最終的なスワップ チェーンが表示されます。
+<span data-ttu-id="7f875-285">このメソッドではまず 3D ワールドのプロジェクションが描画され、続いてその上に Direct2D オーバーレイが描画されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-285">This method draws the projection of the 3D world, and then draws the Direct2D overlay on top of it.</span></span> <span data-ttu-id="7f875-286">描画が完了すると、表示用に結合されたバッファーとともに最終的なスワップ チェーンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-286">When completed, it presents the final swap chain with the combined buffers for display.</span></span>
 
-サンプル ゲームの Direct2D オーバーレイには 2 つの状態が存在します。1 つは一時停止メニューのビットマップを含むゲーム情報オーバーレイを表示する状態、もう 1 つはタッチスクリーンのムーブ/ルック コントローラーの長方形とクロスヘアを表示する状態です。 両方の状態でスコア テキストが描画されます。
+<span data-ttu-id="7f875-287">サンプル ゲームの Direct2D オーバーレイには 2 つの状態が存在します。1 つは一時停止メニューのビットマップを含むゲーム情報オーバーレイを表示する状態、もう 1 つはタッチスクリーンのムーブ/ルック コントローラーの長方形とクロスヘアを表示する状態です。</span><span class="sxs-lookup"><span data-stu-id="7f875-287">Be aware that there are two states for the sample game's Direct2D overlay: one where the game displays the game info overlay that contains the bitmap for the pause menu, and one where the game displays the cross hairs along with the rectangles for the touchscreen move-look controller.</span></span> <span data-ttu-id="7f875-288">両方の状態でスコア テキストが描画されます。</span><span class="sxs-lookup"><span data-stu-id="7f875-288">The score text is drawn in both states.</span></span>
 
-## <a name="next-steps"></a>次のステップ
-
-
-ここまでの説明で、実際のレンダリング エンジンについて、すなわち更新されたプリミティブで **Render** メソッドを呼び出した場合、これが画面上のピクセルでどのように表現されるのかについて関心を持たれていることでしょう。 これについては、「[レンダリング フレームワークのアセンブル](tutorial--assembling-the-rendering-pipeline.md)」で詳しく説明します。 またプレーヤー コントロールによってゲーム状態がどのように更新されるのかについては、「[コントロールの追加](tutorial--adding-controls.md)」をご覧ください。
-
-## <a name="complete-code-sample-for-this-section"></a>このセクションのコード サンプル一式
+## <a name="next-steps"></a><span data-ttu-id="7f875-289">次のステップ</span><span class="sxs-lookup"><span data-stu-id="7f875-289">Next steps</span></span>
 
 
-Simple3DGame.h
+<span data-ttu-id="7f875-290">ここまでの説明で、実際のレンダリング エンジンについて、すなわち更新されたプリミティブで **Render** メソッドを呼び出した場合、これが画面上のピクセルでどのように表現されるのかについて関心を持たれていることでしょう。</span><span class="sxs-lookup"><span data-stu-id="7f875-290">By now, you're probably curious about the actual rendering engine: how those calls to the **Render** methods on the updated primitives get turned into pixels on your screen.</span></span> <span data-ttu-id="7f875-291">これについては、「[レンダリング フレームワークのアセンブル](tutorial--assembling-the-rendering-pipeline.md)」で詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="7f875-291">We cover that in detail in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md).</span></span> <span data-ttu-id="7f875-292">またプレーヤー コントロールによってゲーム状態がどのように更新されるのかについては、「[コントロールの追加](tutorial--adding-controls.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7f875-292">If you're more interested in how the player controls update the game state, then check out [Adding controls](tutorial--adding-controls.md).</span></span>
+
+## <a name="complete-code-sample-for-this-section"></a><span data-ttu-id="7f875-293">このセクションのコード サンプル一式</span><span class="sxs-lookup"><span data-stu-id="7f875-293">Complete code sample for this section</span></span>
+
+
+<span data-ttu-id="7f875-294">Simple3DGame.h</span><span class="sxs-lookup"><span data-stu-id="7f875-294">Simple3DGame.h</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -1181,7 +1180,7 @@ private:
 };
 ```
 
-Simple3DGame.cpp
+<span data-ttu-id="7f875-295">Simple3DGame.cpp</span><span class="sxs-lookup"><span data-stu-id="7f875-295">Simple3DGame.cpp</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2254,7 +2253,7 @@ void Simple3DGame::InitializeAmmo()
 }
 ```
 
-Level.h
+<span data-ttu-id="7f875-296">Level.h</span><span class="sxs-lookup"><span data-stu-id="7f875-296">Level.h</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2313,7 +2312,7 @@ protected private:
             
 ```
 
-Level.cpp
+<span data-ttu-id="7f875-297">Level.cpp</span><span class="sxs-lookup"><span data-stu-id="7f875-297">Level.cpp</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2384,7 +2383,7 @@ float Level::TimeLimit()
             
 ```
 
-Level1.h
+<span data-ttu-id="7f875-298">Level1.h</span><span class="sxs-lookup"><span data-stu-id="7f875-298">Level1.h</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2411,7 +2410,7 @@ internal:
             
 ```
 
-Level1.cpp
+<span data-ttu-id="7f875-299">Level1.cpp</span><span class="sxs-lookup"><span data-stu-id="7f875-299">Level1.cpp</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2483,7 +2482,7 @@ void Level1::Initialize(std::vector<GameObject^> objects)
             
 ```
 
-Level2.h
+<span data-ttu-id="7f875-300">Level2.h</span><span class="sxs-lookup"><span data-stu-id="7f875-300">Level2.h</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2524,7 +2523,7 @@ private:
             
 ```
 
-Level2.cpp
+<span data-ttu-id="7f875-301">Level2.cpp</span><span class="sxs-lookup"><span data-stu-id="7f875-301">Level2.cpp</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2617,7 +2616,7 @@ void Level2::LoadState(PersistentState^ state)
             
 ```
 
-Level3.h
+<span data-ttu-id="7f875-302">Level3.h</span><span class="sxs-lookup"><span data-stu-id="7f875-302">Level3.h</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2646,7 +2645,7 @@ internal:
             
 ```
 
-Level3.cpp
+<span data-ttu-id="7f875-303">Level3.cpp</span><span class="sxs-lookup"><span data-stu-id="7f875-303">Level3.cpp</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2825,7 +2824,7 @@ void Level3::Initialize(std::vector<GameObject^> objects)
             
 ```
 
-Level4.h
+<span data-ttu-id="7f875-304">Level4.h</span><span class="sxs-lookup"><span data-stu-id="7f875-304">Level4.h</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2866,7 +2865,7 @@ private:
             
 ```
 
-Level4.cpp
+<span data-ttu-id="7f875-305">Level4.cpp</span><span class="sxs-lookup"><span data-stu-id="7f875-305">Level4.cpp</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2960,7 +2959,7 @@ void Level4::LoadState(PersistentState^ state)
             
 ```
 
-Level5.h
+<span data-ttu-id="7f875-306">Level5.h</span><span class="sxs-lookup"><span data-stu-id="7f875-306">Level5.h</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2989,7 +2988,7 @@ internal:
             
 ```
 
-Level5.cpp
+<span data-ttu-id="7f875-307">Level5.cpp</span><span class="sxs-lookup"><span data-stu-id="7f875-307">Level5.cpp</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3073,7 +3072,7 @@ void Level5::Initialize(std::vector<GameObject^> objects)
             
 ```
 
-Level6.h
+<span data-ttu-id="7f875-308">Level6.h</span><span class="sxs-lookup"><span data-stu-id="7f875-308">Level6.h</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3108,7 +3107,7 @@ internal:
             
 ```
 
-Level6.cpp
+<span data-ttu-id="7f875-309">Level6.cpp</span><span class="sxs-lookup"><span data-stu-id="7f875-309">Level6.cpp</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3155,7 +3154,7 @@ bool Level6::Update(
             
 ```
 
-Animate.h
+<span data-ttu-id="7f875-310">Animate.h</span><span class="sxs-lookup"><span data-stu-id="7f875-310">Animate.h</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3297,7 +3296,7 @@ private:
             
 ```
 
-Animate.cpp
+<span data-ttu-id="7f875-311">Animate.cpp</span><span class="sxs-lookup"><span data-stu-id="7f875-311">Animate.cpp</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3612,20 +3611,19 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
             
 ```
 
-> **注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> **<span data-ttu-id="7f875-312">注</span><span class="sxs-lookup"><span data-stu-id="7f875-312">Note</span></span>**  
+<span data-ttu-id="7f875-313">この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="7f875-313">This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="7f875-314">Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7f875-314">If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).</span></span>
 
  
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="7f875-315">関連トピック</span><span class="sxs-lookup"><span data-stu-id="7f875-315">Related topics</span></span>
 
 
-[DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)
-
- 
+[<span data-ttu-id="7f875-316">DirectX によるシンプルな UWP ゲームの作成</span><span class="sxs-lookup"><span data-stu-id="7f875-316">Create a simple UWP game with DirectX</span></span>](tutorial--create-your-first-metro-style-directx-game.md)
 
  
 
+ 
 
 
 

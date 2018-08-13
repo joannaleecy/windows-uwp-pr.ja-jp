@@ -1,87 +1,87 @@
 ---
-title: "ストリーミング リソース テクスチャ サンプリング機能"
-description: "ストリーミング リソース テクスチャ サンプリングの機能は複数あります。たとえば、マップの領域についてシェーダー状態のフィードバックを取得する機能、アクセスされている全データがリソース内にマップされたかどうか確認する機能、マップされていないことがわかっているミップマップ ストリーミング リソース内の領域をシェーダーが避けられるようにクランプする機能、テクスチャ フィルターのフットプリント全体に完全にマップされる最小の LOD を検出する機能などがあります。"
+title: ストリーミング リソース テクスチャ サンプリング機能
+description: ストリーミング リソース テクスチャ サンプリングの機能は複数あります。たとえば、マップの領域についてシェーダー状態のフィードバックを取得する機能、アクセスされている全データがリソース内にマップされたかどうか確認する機能、マップされていないことがわかっているミップマップ ストリーミング リソース内の領域をシェーダーが避けられるようにクランプする機能、テクスチャ フィルターのフットプリント全体に完全にマップされる最小の LOD を検出する機能などがあります。
 ms.assetid: C2B2DD69-8354-417A-894D-6235A8B48B53
 keywords:
-- "ストリーミング リソース テクスチャ サンプリング機能"
-author: PeterTurcan
-ms.author: pettur
+- ストリーミング リソース テクスチャ サンプリング機能
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8bcd4ec264dce2962b9057e1f04309d54f3bf3d6
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: ee5dc703fe52b0ac8b7163a8067e8b8b87ac8103
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044831"
 ---
-
-# <a name="streaming-resources-texture-sampling-features"></a>ストリーミング リソース テクスチャ サンプリング機能
-
-
-ストリーミング リソース テクスチャ サンプリングの機能は複数あります。たとえば、マップの領域についてシェーダー状態のフィードバックを取得する機能、アクセスされている全データがリソース内にマップされたかどうか確認する機能、マップされていないことがわかっているミップマップ ストリーミング リソース内の領域をシェーダーが避けられるようにクランプする機能、テクスチャ フィルターのフットプリント全体に完全にマップされる最小の LOD を検出する機能などがあります。
-
-## <a name="span-idrequirementsofstreamingresourcestexturesamplingfeaturesspanspan-idrequirementsofstreamingresourcestexturesamplingfeaturesspanspan-idrequirementsofstreamingresourcestexturesamplingfeaturesspanrequirements-of-streaming-resources-texture-sampling-features"></a><span id="Requirements_of_streaming_resources_texture_sampling_features"></span><span id="requirements_of_streaming_resources_texture_sampling_features"></span><span id="REQUIREMENTS_OF_STREAMING_RESOURCES_TEXTURE_SAMPLING_FEATURES"></span>ストリーミング リソース テクスチャ サンプリング機能の要件
+# <a name="streaming-resources-texture-sampling-features"></a><span data-ttu-id="36509-104">ストリーミング リソース テクスチャ サンプリング機能</span><span class="sxs-lookup"><span data-stu-id="36509-104">Streaming resources texture sampling features</span></span>
 
 
-ここで説明するテクスチャ サンプリング機能には、[階層 2](tier-2.md) レベルのストリーミング リソース サポートが必要です。
+<span data-ttu-id="36509-105">ストリーミング リソース テクスチャ サンプリングの機能は複数あります。たとえば、マップの領域についてシェーダー状態のフィードバックを取得する機能、アクセスされている全データがリソース内にマップされたかどうか確認する機能、マップされていないことがわかっているミップマップ ストリーミング リソース内の領域をシェーダーが避けられるようにクランプする機能、テクスチャ フィルターのフットプリント全体に完全にマップされる最小の LOD を検出する機能などがあります。</span><span class="sxs-lookup"><span data-stu-id="36509-105">Streaming resources texture sampling features include getting shader status feedback about mapped areas, checking whether all data being accessed was mapped in the resource, clamping to help shaders avoid areas in mipmapped streaming resources that are known to be non-mapped, and discovering what the minimum LOD that is fully mapped for an entire texture filter footprint will be.</span></span>
 
-## <a name="span-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanshader-status-feedback-about-mapped-areas"></a><span id="Shader_status_feedback_about_mapped_areas"></span><span id="shader_status_feedback_about_mapped_areas"></span><span id="SHADER_STATUS_FEEDBACK_ABOUT_MAPPED_AREAS"></span>マップ領域についてのシェーダー状態のフィードバック
-
-
-ストリーミング リソースの読み取りや書き込みをするシェーダー命令が発生すると、状態情報が記録されます。 この状態は、リソース アクセス命令が発生するたびに、省略可能な追加の戻り値として公開され、32 ビットの一時レジスタに保存されます。 この戻り値の内容は "不透明" です。 つまり、シェーダー プログラムによる直接の読み取りは認められていません。 ただし、[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 関数を使用して、状態情報を抽出できます。
-
-## <a name="span-idfullymappedcheckspanspan-idfullymappedcheckspanspan-idfullymappedcheckspanfully-mapped-check"></a><span id="Fully_mapped_check"></span><span id="fully_mapped_check"></span><span id="FULLY_MAPPED_CHECK"></span>完全なマップのチェック
+## <a name="span-idrequirementsofstreamingresourcestexturesamplingfeaturesspanspan-idrequirementsofstreamingresourcestexturesamplingfeaturesspanspan-idrequirementsofstreamingresourcestexturesamplingfeaturesspanrequirements-of-streaming-resources-texture-sampling-features"></a><span data-ttu-id="36509-106"><span id="Requirements_of_streaming_resources_texture_sampling_features"></span><span id="requirements_of_streaming_resources_texture_sampling_features"></span><span id="REQUIREMENTS_OF_STREAMING_RESOURCES_TEXTURE_SAMPLING_FEATURES"></span>ストリーミング リソース テクスチャ サンプリング機能の要件</span><span class="sxs-lookup"><span data-stu-id="36509-106"><span id="Requirements_of_streaming_resources_texture_sampling_features"></span><span id="requirements_of_streaming_resources_texture_sampling_features"></span><span id="REQUIREMENTS_OF_STREAMING_RESOURCES_TEXTURE_SAMPLING_FEATURES"></span>Requirements of streaming resources texture sampling features</span></span>
 
 
-[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 関数は、メモリ アクセスから返された状態を解釈し、アクセスされるすべてのデータがリソースにマップされていたかどうかを示します。 **CheckAccessFullyMapped** は、データがマップされている場合は true (0xFFFFFFFF) を、マップされていない場合は false (0x00000000) を返します。
+<span data-ttu-id="36509-107">ここで説明するテクスチャ サンプリング機能には、[階層 2](tier-2.md) レベルのストリーミング リソース サポートが必要です。</span><span class="sxs-lookup"><span data-stu-id="36509-107">The texture sampling features described here require [Tier 2](tier-2.md) level of streaming resources support.</span></span>
 
-フィルター操作中に、特定のテクセルの重み付けが 0.0 になることがあります。 例としては、テクセルの中央に直接置かれるテクスチャ座標を持つリニア サンプルです。3 つのその他のテクセル (どれが該当するかは、ハードウェアによって決まります) は、フィルターでは考慮されますが、重みは 0 です。 このような重みが 0 であるテクセルはフィルター結果にはまったく影響しないため、このようなテクセルが偶然 **NULL** タイルに適用された場合、マップされていないアクセスとしてカウントされません。 複数の mip レベルを含むテクスチャ フィルターにも、同じことが言えます。ミップマップの 1 つに適用されたテクセルがマップされていなくて、そのようなテクセルの重みが 0 の場合、それらのテクセルはマップされていないアクセスとしてカウントされません。
-
-コンポーネント数が 4 個未満の形式 (DXGI\_FORMAT\_R8\_UNORM など) からサンプリングをする場合、結果のどのコンポーネントをシェーダーが実際に参照するかは問わず、**NULL** タイルに適用されるテクセルは、**NULL** マップ アクセスとしてレポートされます。 たとえば、シェーダーで R8\_UNORM から読み取りを行い、.gba/.yzw を使用して読み取り結果をマスクした場合、テクスチャの読み取りはまったく必要ないような結果になります。 ただし、テクセル アドレスが **NULL** マップ タイルの場合、操作はやはり **NULL** マップ アクセスとしてカウントされます。
-
-シェーダーは状態を確認し、エラーが発生している場合は一連の対応策を実行できます。 たとえば、一連の対応策としては 'ミス' をログに記録すること (UAV 書き込みなど) であったり、より詳細度の低い、マップされていることがわかっている LOD にクランプした別の読み取りを発行することが該当します。 タイルのマップ済みセットのどの部分がアクセスされたかを把握するため、成功したアクセスもアプリケーションで追跡したい場合があります。
-
-ログで 1 つ厄介なのは、アクセスされたと思われる一連のタイルを正確にレポートできるメカニズムが存在しないことです。 アプリケーションは、アクセスに使用した座標の知識を基に控えめに推測を行うことも、LOD 命令を使用することもできます。たとえば、[**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680) はハードウェア LOD の計算を返します。
-
-また、同じタイルに対して大量のアクセスが発生するため、冗長なログも大量に発生し、メモリで競合が起きる可能性があります。 タイルのアクセスについて別の場所で既にレポートされている場合は、レポートを不要にするオプションがハードウェアに用意されると便利である可能性があります。 おそらく、そのような追跡の状態は、(おそらくフレーム境界において) API からリセットできるでしょう。
-
-## <a name="span-idper-sampleminlodclampspanspan-idper-sampleminlodclampspanspan-idper-sampleminlodclampspanper-sample-minlod-clamp"></a><span id="Per-sample_MinLOD_clamp"></span><span id="per-sample_minlod_clamp"></span><span id="PER-SAMPLE_MINLOD_CLAMP"></span>-サンプルごとの MinLOD クランプ
+## <a name="span-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanshader-status-feedback-about-mapped-areas"></a><span data-ttu-id="36509-108"><span id="Shader_status_feedback_about_mapped_areas"></span><span id="shader_status_feedback_about_mapped_areas"></span><span id="SHADER_STATUS_FEEDBACK_ABOUT_MAPPED_AREAS"></span>マップ領域についてのシェーダー状態のフィードバック</span><span class="sxs-lookup"><span data-stu-id="36509-108"><span id="Shader_status_feedback_about_mapped_areas"></span><span id="shader_status_feedback_about_mapped_areas"></span><span id="SHADER_STATUS_FEEDBACK_ABOUT_MAPPED_AREAS"></span>Shader status feedback about mapped areas</span></span>
 
 
-マップされていないことがわかっているミップマップ ストリーミング リソース内の領域をシェーダーが回避できるように、サンプラー (フィルタリング) の使用を伴うほとんどのシェーダー命令には、シェーダーが追加の float32 MinLOD クランプ パラメーターをテクスチャ サンプルに渡すことができるモードがあります。 基盤のリソースと異なり、この値はビューのミップマップ番号のスペースに保持されます。
+<span data-ttu-id="36509-109">ストリーミング リソースの読み取りや書き込みをするシェーダー命令が発生すると、状態情報が記録されます。</span><span class="sxs-lookup"><span data-stu-id="36509-109">Any shader instruction that reads and/or writes to a streaming resource causes status information to be recorded.</span></span> <span data-ttu-id="36509-110">この状態は、リソース アクセス命令が発生するたびに、省略可能な追加の戻り値として公開され、32 ビットの一時レジスタに保存されます。</span><span class="sxs-lookup"><span data-stu-id="36509-110">This status is exposed as an optional extra return value on every resource access instruction that goes into a 32-bit temp register.</span></span> <span data-ttu-id="36509-111">この戻り値の内容は "不透明" です。</span><span class="sxs-lookup"><span data-stu-id="36509-111">The contents of the return value are opaque.</span></span> <span data-ttu-id="36509-112">つまり、シェーダー プログラムによる直接の読み取りは認められていません。</span><span class="sxs-lookup"><span data-stu-id="36509-112">That is, direct reading by the shader program is disallowed.</span></span> <span data-ttu-id="36509-113">ただし、[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 関数を使用して、状態情報を抽出できます。</span><span class="sxs-lookup"><span data-stu-id="36509-113">But, you can use the [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) function to extract the status info.</span></span>
 
-ハードウェアは、リソースごとの MinLOD クランプが発生する LOD 計算において、同じ場所で ` max(fShaderMinLODClamp,fComputedLOD) ` を実行します。これは、[**max**](https://msdn.microsoft.com/library/windows/desktop/bb509624)() でもあります。
-
-サンプラーに定義されているサンプルごとの LOD クランプとその他の LOD クランプを適用した結果、空のセットが返された場合、結果は、リソースごとの minLOD クランプの結果と同様に境界外アクセスになり、サーフェス形式内に存在するコンポーネントに対しては 0、欠落しているコンポーネントに対しては既定値が使用されます。
-
-LOD 命令 ([**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680) など) は、ここで説明しているサンプルごとの minLOD クランプよりも古く、クランプ LOD とクランプなしの LOD の両方を返します。 この LOD 命令から返されたクランプありの LOD は、リソースごとのクランプも含め、すべてのクランプを反映しますが、サンプルごとのクランプは反映されません。 サンプルごとのクランプは、いずれにせよシェーダーによって制御および認識されているため、必要に応じて、シェーダーの作成者は手動でそのクランプを LOD 命令の戻り値に適用できます。
-
-## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大除去フィルタリング
+## <a name="span-idfullymappedcheckspanspan-idfullymappedcheckspanspan-idfullymappedcheckspanfully-mapped-check"></a><span data-ttu-id="36509-114"><span id="Fully_mapped_check"></span><span id="fully_mapped_check"></span><span id="FULLY_MAPPED_CHECK"></span>完全なマップのチェック</span><span class="sxs-lookup"><span data-stu-id="36509-114"><span id="Fully_mapped_check"></span><span id="fully_mapped_check"></span><span id="FULLY_MAPPED_CHECK"></span>Fully mapped check</span></span>
 
 
-アプリケーションは、ストリーミング リソースのマッピングの状態を通知する独自のデータ構造を管理することもできます。 例としては、ストリーミング リソースのすべてのタイルの情報を保持するテクセルを含むサーフェスがあります。 たとえば、任意のタイルの場所でマップされている最初の LOD を保存する必要があるとします。 ストリーミング リソースをサンプリングする場合と同様の方法でこのデータ構造を慎重にサンプリングすることで、テクスチャー フィルターのフットプリント全体を完全にマップする最小の LOD はどのようになるかを知ることができます。 このプロセスを簡単にするため、Direct3D 11.2 では、最小/最大フィルタリングという新しい汎用サンプラー モードが導入されています。
+<span data-ttu-id="36509-115">[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) 関数は、メモリ アクセスから返された状態を解釈し、アクセスされるすべてのデータがリソースにマップされていたかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="36509-115">The [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) function interprets the status returned from a memory access and indicates whether all data being accessed was mapped in the resource.</span></span> <span data-ttu-id="36509-116">**CheckAccessFullyMapped** は、データがマップされている場合は true (0xFFFFFFFF) を、マップされていない場合は false (0x00000000) を返します。</span><span class="sxs-lookup"><span data-stu-id="36509-116">**CheckAccessFullyMapped** returns true (0xFFFFFFFF) if data was mapped or false (0x00000000) if data was unmapped.</span></span>
 
-LOD 追跡用の最小/最大フィルタリングのユーティリティは、おそらく深度サーフェスのフィルタリングなど、他の用途にも便利であると思われます。
+<span data-ttu-id="36509-117">フィルター操作中に、特定のテクセルの重み付けが 0.0 になることがあります。</span><span class="sxs-lookup"><span data-stu-id="36509-117">During filter operations, sometimes the weight of a given texel ends up being 0.0.</span></span> <span data-ttu-id="36509-118">例としては、テクセルの中央に直接置かれるテクスチャ座標を持つリニア サンプルです。3 つのその他のテクセル (どれが該当するかは、ハードウェアによって決まります) は、フィルターでは考慮されますが、重みは 0 です。</span><span class="sxs-lookup"><span data-stu-id="36509-118">An example is a linear sample with texture coordinates that fall directly on a texel center: 3 other texels (which ones they are can vary by hardware) contribute to the filter but with 0 weight.</span></span> <span data-ttu-id="36509-119">このような重みが 0 であるテクセルはフィルター結果にはまったく影響しないため、このようなテクセルが偶然 **NULL** タイルに適用された場合、マップされていないアクセスとしてカウントされません。</span><span class="sxs-lookup"><span data-stu-id="36509-119">These 0 weight texels don't contribute to the filter result at all, so if they happen to fall on **NULL** tiles, they don't count as an unmapped access.</span></span> <span data-ttu-id="36509-120">複数の mip レベルを含むテクスチャ フィルターにも、同じことが言えます。ミップマップの 1 つに適用されたテクセルがマップされていなくて、そのようなテクセルの重みが 0 の場合、それらのテクセルはマップされていないアクセスとしてカウントされません。</span><span class="sxs-lookup"><span data-stu-id="36509-120">Note the same guarantee applies for texture filters that include multiple mip levels; if the texels on one of the mipmaps isn't mapped but the weight on those texels is 0, those texels don't count as an unmapped access.</span></span>
 
-最小/最大フィルタリングは、通常のテクスチャ フィルターがフェッチするのと同じテクセルのセットをフェッチするサンプラーのモードです。 ただし、値をブレンドして回答を出すのではなく、コンポーネントごとに、フェッチされたテクセルの min() または max() を返します (たとえば、すべての G 値の min とは別に、すべての R 値の min を返すなど)。
+<span data-ttu-id="36509-121">コンポーネント数が 4 個未満の形式 (DXGI\_FORMAT\_R8\_UNORM など) からサンプリングをする場合、結果のどのコンポーネントをシェーダーが実際に参照するかは問わず、**NULL** タイルに適用されるテクセルは、**NULL** マップ アクセスとしてレポートされます。</span><span class="sxs-lookup"><span data-stu-id="36509-121">When sampling from a format that has fewer than 4 components (such as DXGI\_FORMAT\_R8\_UNORM), any texels that fall on **NULL** tiles result in the a **NULL** mapped access being reported, regardless of which components the shader actually looks at in the result.</span></span> <span data-ttu-id="36509-122">たとえば、シェーダーで R8\_UNORM から読み取りを行い、.gba/.yzw を使用して読み取り結果をマスクした場合、テクスチャの読み取りはまったく必要ないような結果になります。</span><span class="sxs-lookup"><span data-stu-id="36509-122">For example, reading from R8\_UNORM and masking the read result in the shader with .gba/.yzw wouldn't appear to need to read the texture at all.</span></span> <span data-ttu-id="36509-123">ただし、テクセル アドレスが **NULL** マップ タイルの場合、操作はやはり **NULL** マップ アクセスとしてカウントされます。</span><span class="sxs-lookup"><span data-stu-id="36509-123">But if the texel address is a **NULL** mapped tile, the operation still counts as a **NULL** map access.</span></span>
 
-最小/最大操作は、Direct3D の演算精度のルールに従います。 比較の順序は問題になりません。
+<span data-ttu-id="36509-124">シェーダーは状態を確認し、エラーが発生している場合は一連の対応策を実行できます。</span><span class="sxs-lookup"><span data-stu-id="36509-124">The shader can check the status and pursue any desired course of action on failure.</span></span> <span data-ttu-id="36509-125">たとえば、一連の対応策としては 'ミス' をログに記録すること (UAV 書き込みなど) であったり、より詳細度の低い、マップされていることがわかっている LOD にクランプした別の読み取りを発行することが該当します。</span><span class="sxs-lookup"><span data-stu-id="36509-125">For example, a course of action can be logging 'misses' (say via UAV write) and/or issuing another read clamped to a coarser LOD known to be mapped.</span></span> <span data-ttu-id="36509-126">タイルのマップ済みセットのどの部分がアクセスされたかを把握するため、成功したアクセスもアプリケーションで追跡したい場合があります。</span><span class="sxs-lookup"><span data-stu-id="36509-126">An application might want to track successful accesses as well in order to get a sense of what portion of the mapped set of tiles got accessed.</span></span>
 
-最小/最大フィルタリングではないフィルター操作中に、特定のテクセルの重み付けが 0.0 になることがあります。 例としては、テクセルの中央に直接置かれるテクスチャ座標を持つリニア サンプルです。この場合、3 つのその他のテクセル (どれが該当するかは、ハードウェアによって決まります) は、フィルターでは考慮されますが、重みは 0 です。 最小/最大フィルター以外のフィルターで重みが 0 になるテクセルの場合、最小/最大のフィルターを使用しても、このようなテクセルは結果に影響を及ぼしません (重みも最小/最大操作に影響しません)。
+<span data-ttu-id="36509-127">ログで 1 つ厄介なのは、アクセスされたと思われる一連のタイルを正確にレポートできるメカニズムが存在しないことです。</span><span class="sxs-lookup"><span data-stu-id="36509-127">One complication for logging is no mechanism exists for reporting the exact set of tiles that would have been accessed.</span></span> <span data-ttu-id="36509-128">アプリケーションは、アクセスに使用した座標の知識を基に控えめに推測を行うことも、LOD 命令を使用することもできます。たとえば、[**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680) はハードウェア LOD の計算を返します。</span><span class="sxs-lookup"><span data-stu-id="36509-128">The application can make conservative guesses based on knowing the coordinates it used for access, as well as using the LOD instruction; for example, [**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680)) returns the hardware LOD calculation.</span></span>
 
-この機能のサポートは、ストリーミング リソースの[階層 2](tier-2.md) のサポートによって決まります。
+<span data-ttu-id="36509-129">また、同じタイルに対して大量のアクセスが発生するため、冗長なログも大量に発生し、メモリで競合が起きる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="36509-129">Another complication is that lots of accesses will be to the same tiles, so a lot of redundant logging will occur and possibly contention on memory.</span></span> <span data-ttu-id="36509-130">タイルのアクセスについて別の場所で既にレポートされている場合は、レポートを不要にするオプションがハードウェアに用意されると便利である可能性があります。</span><span class="sxs-lookup"><span data-stu-id="36509-130">It could be convenient if the hardware could be given the option to not bother to report tile accesses if they were reported elsewhere before.</span></span> <span data-ttu-id="36509-131">おそらく、そのような追跡の状態は、(おそらくフレーム境界において) API からリセットできるでしょう。</span><span class="sxs-lookup"><span data-stu-id="36509-131">Perhaps the state of such tracking could be reset from the API (likely at frame boundaries).</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+## <a name="span-idper-sampleminlodclampspanspan-idper-sampleminlodclampspanspan-idper-sampleminlodclampspanper-sample-minlod-clamp"></a><span data-ttu-id="36509-132"><span id="Per-sample_MinLOD_clamp"></span><span id="per-sample_minlod_clamp"></span><span id="PER-SAMPLE_MINLOD_CLAMP"></span>-サンプルごとの MinLOD クランプ</span><span class="sxs-lookup"><span data-stu-id="36509-132"><span id="Per-sample_MinLOD_clamp"></span><span id="per-sample_minlod_clamp"></span><span id="PER-SAMPLE_MINLOD_CLAMP"></span>Per-sample MinLOD clamp</span></span>
 
 
-[ストリーミング リソースへのパイプライン アクセス](pipeline-access-to-streaming-resources.md)
+<span data-ttu-id="36509-133">マップされていないことがわかっているミップマップ ストリーミング リソース内の領域をシェーダーが回避できるように、サンプラー (フィルタリング) の使用を伴うほとんどのシェーダー命令には、シェーダーが追加の float32 MinLOD クランプ パラメーターをテクスチャ サンプルに渡すことができるモードがあります。</span><span class="sxs-lookup"><span data-stu-id="36509-133">To help shaders avoid areas in mipmapped streaming resources that are known to be non-mapped, most shader instructions that involve using a sampler (filtering) have a mode that allows the shader to pass an additional float32 MinLOD clamp parameter to the texture sample.</span></span> <span data-ttu-id="36509-134">基盤のリソースと異なり、この値はビューのミップマップ番号のスペースに保持されます。</span><span class="sxs-lookup"><span data-stu-id="36509-134">This value is in the view's mipmap number space, as opposed to the underlying resource.</span></span>
 
- 
+<span data-ttu-id="36509-135">ハードウェアは、リソースごとの MinLOD クランプが発生する LOD 計算において、同じ場所で ` max(fShaderMinLODClamp,fComputedLOD) ` を実行します。これは、[**max**](https://msdn.microsoft.com/library/windows/desktop/bb509624)() でもあります。</span><span class="sxs-lookup"><span data-stu-id="36509-135">The hardware performs` max(fShaderMinLODClamp,fComputedLOD) `in the same place in the LOD calculation where the per-resource MinLOD clamp occurs, which is also a [**max**](https://msdn.microsoft.com/library/windows/desktop/bb509624)().</span></span>
+
+<span data-ttu-id="36509-136">サンプラーに定義されているサンプルごとの LOD クランプとその他の LOD クランプを適用した結果、空のセットが返された場合、結果は、リソースごとの minLOD クランプの結果と同様に境界外アクセスになり、サーフェス形式内に存在するコンポーネントに対しては 0、欠落しているコンポーネントに対しては既定値が使用されます。</span><span class="sxs-lookup"><span data-stu-id="36509-136">If the result of applying the per-sample LOD clamp and any other LOD clamps defined in the sampler is an empty set, the result is the same out of bounds access result as the per-resource minLOD clamp: 0 for components in the surface format and defaults for missing components.</span></span>
+
+<span data-ttu-id="36509-137">LOD 命令 ([**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680) など) は、ここで説明しているサンプルごとの minLOD クランプよりも古く、クランプ LOD とクランプなしの LOD の両方を返します。</span><span class="sxs-lookup"><span data-stu-id="36509-137">The the LOD instruction (for example, [**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680)), which predates the per-sample minLOD clamp described here, returns both a clamped and unclamped LOD.</span></span> <span data-ttu-id="36509-138">この LOD 命令から返されたクランプありの LOD は、リソースごとのクランプも含め、すべてのクランプを反映しますが、サンプルごとのクランプは反映されません。</span><span class="sxs-lookup"><span data-stu-id="36509-138">The clamped LOD returned from this LOD instruction reflects all clamping including the per-resource clamp, but not a per-sample clamp.</span></span> <span data-ttu-id="36509-139">サンプルごとのクランプは、いずれにせよシェーダーによって制御および認識されているため、必要に応じて、シェーダーの作成者は手動でそのクランプを LOD 命令の戻り値に適用できます。</span><span class="sxs-lookup"><span data-stu-id="36509-139">Per-sample clamp is controlled and known by the shader anyway, so the shader author can manually apply that clamp to the LOD instruction's return value if desired.</span></span>
+
+## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span data-ttu-id="36509-140"><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大除去フィルタリング</span><span class="sxs-lookup"><span data-stu-id="36509-140"><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>Min/Max reduction filtering</span></span>
+
+
+<span data-ttu-id="36509-141">アプリケーションは、ストリーミング リソースのマッピングの状態を通知する独自のデータ構造を管理することもできます。</span><span class="sxs-lookup"><span data-stu-id="36509-141">Applications can choose to manage their own data structures that inform them of what the mappings looks like for a streaming resource.</span></span> <span data-ttu-id="36509-142">例としては、ストリーミング リソースのすべてのタイルの情報を保持するテクセルを含むサーフェスがあります。</span><span class="sxs-lookup"><span data-stu-id="36509-142">An example would be a surface that contains a texel to hold information for every tile in a streaming resource.</span></span> <span data-ttu-id="36509-143">たとえば、任意のタイルの場所でマップされている最初の LOD を保存する必要があるとします。</span><span class="sxs-lookup"><span data-stu-id="36509-143">One might store the first LOD that is mapped at a given tile location.</span></span> <span data-ttu-id="36509-144">ストリーミング リソースをサンプリングする場合と同様の方法でこのデータ構造を慎重にサンプリングすることで、テクスチャー フィルターのフットプリント全体を完全にマップする最小の LOD はどのようになるかを知ることができます。</span><span class="sxs-lookup"><span data-stu-id="36509-144">By careful sampling of this data structure in a similar way that the streaming resource is intended to be sampled, one might discover what the minimum LOD that is fully mapped for an entire texture filter footprint will be.</span></span> <span data-ttu-id="36509-145">このプロセスを簡単にするため、Direct3D 11.2 では、最小/最大フィルタリングという新しい汎用サンプラー モードが導入されています。</span><span class="sxs-lookup"><span data-stu-id="36509-145">To help make this process easier, Direct3D 11.2 introduces a new general purpose sampler mode, min/max filtering.</span></span>
+
+<span data-ttu-id="36509-146">LOD 追跡用の最小/最大フィルタリングのユーティリティは、おそらく深度サーフェスのフィルタリングなど、他の用途にも便利であると思われます。</span><span class="sxs-lookup"><span data-stu-id="36509-146">The utility of min/max filtering for LOD tracking might be useful for other purposes, such as, perhaps the filtering of depth surfaces.</span></span>
+
+<span data-ttu-id="36509-147">最小/最大フィルタリングは、通常のテクスチャ フィルターがフェッチするのと同じテクセルのセットをフェッチするサンプラーのモードです。</span><span class="sxs-lookup"><span data-stu-id="36509-147">Min/max reduction filtering is a mode on samplers that fetches the same set of texels that a normal texture filter would fetch.</span></span> <span data-ttu-id="36509-148">ただし、値をブレンドして回答を出すのではなく、コンポーネントごとに、フェッチされたテクセルの min() または max() を返します (たとえば、すべての G 値の min とは別に、すべての R 値の min を返すなど)。</span><span class="sxs-lookup"><span data-stu-id="36509-148">But instead of blending the values to produce an answer, it returns the min() or max() of the texels fetched, on a per-component basis (for example, the min of all the R values, separately from the min of all the G values and so on).</span></span>
+
+<span data-ttu-id="36509-149">最小/最大操作は、Direct3D の演算精度のルールに従います。</span><span class="sxs-lookup"><span data-stu-id="36509-149">The min/max operations follow Direct3D arithmetic precision rules.</span></span> <span data-ttu-id="36509-150">比較の順序は問題になりません。</span><span class="sxs-lookup"><span data-stu-id="36509-150">The order of comparisons doesn't matter.</span></span>
+
+<span data-ttu-id="36509-151">最小/最大フィルタリングではないフィルター操作中に、特定のテクセルの重み付けが 0.0 になることがあります。</span><span class="sxs-lookup"><span data-stu-id="36509-151">During filter operations that aren't min/max, sometimes the weight of a given texel ends up being 0.0.</span></span> <span data-ttu-id="36509-152">例としては、テクセルの中央に直接置かれるテクスチャ座標を持つリニア サンプルです。この場合、3 つのその他のテクセル (どれが該当するかは、ハードウェアによって決まります) は、フィルターでは考慮されますが、重みは 0 です。</span><span class="sxs-lookup"><span data-stu-id="36509-152">An example is a linear sample with texture coordinates that fall directly on a texel center; in that case, 3 other texels (which ones they are may vary by hardware) contribute to the filter, but with 0 weight.</span></span> <span data-ttu-id="36509-153">最小/最大フィルター以外のフィルターで重みが 0 になるテクセルの場合、最小/最大のフィルターを使用しても、このようなテクセルは結果に影響を及ぼしません (重みも最小/最大操作に影響しません)。</span><span class="sxs-lookup"><span data-stu-id="36509-153">For any of these texels that would be 0 weight on a non-min/max filter, if the filter is min/max, these texels still do not contribute to the result (and the weights do not otherwise affect the min/max filter operation).</span></span>
+
+<span data-ttu-id="36509-154">この機能のサポートは、ストリーミング リソースの[階層 2](tier-2.md) のサポートによって決まります。</span><span class="sxs-lookup"><span data-stu-id="36509-154">Support for this feature depends on [Tier 2](tier-2.md) support for streaming resources.</span></span>
+
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="36509-155"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="36509-155"><span id="related-topics"></span>Related topics</span></span>
+
+
+[<span data-ttu-id="36509-156">ストリーミング リソースへのパイプライン アクセス</span><span class="sxs-lookup"><span data-stu-id="36509-156">Pipeline access to streaming resources</span></span>](pipeline-access-to-streaming-resources.md)
 
  
 
+ 
 
 
 

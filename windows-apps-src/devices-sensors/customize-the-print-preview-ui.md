@@ -1,8 +1,8 @@
 ---
 author: PatrickFarley
 ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
-title: "印刷プレビュー UI のカスタマイズ"
-description: "このセクションでは、印刷プレビュー UI の印刷オプションや設定をカスタマイズする方法について説明します。"
+title: 印刷プレビュー UI のカスタマイズ
+description: このセクションでは、印刷プレビュー UI の印刷オプションや設定をカスタマイズする方法について説明します。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 6a4088c24f801db3b25dc1d9740d261e12853d63
 ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/28/2017
+ms.locfileid: "696107"
 ---
 # <a name="customize-the-print-preview-ui"></a><span data-ttu-id="e2bc9-104">印刷プレビュー UI のカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="e2bc9-104">Customize the print preview UI</span></span>
 

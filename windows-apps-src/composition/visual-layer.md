@@ -1,8 +1,8 @@
 ---
 author: jwmsft
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
-title: "ビジュアル レイヤー"
-description: "Windows.UI.Composition API を使うと、フレーム ワーク層 (XAML) とグラフィック層 (DirectX) との間のコンポジション層にアクセスできます。"
+title: ビジュアル レイヤー
+description: Windows.UI.Composition API を使うと、フレーム ワーク層 (XAML) とグラフィック層 (DirectX) との間のコンポジション層にアクセスできます。
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: windows 10, UWP
 ms.openlocfilehash: b292be46ccddd4355f3bef13e37da6b6cec452fa
 ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/20/2017
+ms.locfileid: "839484"
 ---
 # <a name="visual-layer"></a><span data-ttu-id="aec32-104">ビジュアル レイヤー</span><span class="sxs-lookup"><span data-stu-id="aec32-104">Visual layer</span></span>
 

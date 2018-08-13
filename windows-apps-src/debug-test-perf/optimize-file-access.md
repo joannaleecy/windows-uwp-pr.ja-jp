@@ -1,8 +1,8 @@
 ---
 author: jwmsft
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
-title: "ファイル アクセスの最適化"
-description: "ファイル システムに効率的にアクセスすることで、ディスクの待ち時間とメモリ/CPU サイクルによるパフォーマンスの問題を回避するユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
+title: ファイル アクセスの最適化
+description: ファイル システムに効率的にアクセスすることで、ディスクの待ち時間とメモリ/CPU サイクルによるパフォーマンスの問題を回避するユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 00ad06179ed4a77cb3e5144df12d5490f79a5df2
 ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/14/2017
+ms.locfileid: "894616"
 ---
 # <a name="optimize-file-access"></a><span data-ttu-id="dac67-104">ファイル アクセスの最適化</span><span class="sxs-lookup"><span data-stu-id="dac67-104">Optimize file access</span></span>
 

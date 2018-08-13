@@ -1,19 +1,20 @@
 ---
 author: normesta
-title: "地図と位置情報の概要"
-description: "このセクションでは、アプリで地図の表示、マップ サービスの使用、位置情報の検索、ジオフェンスのセットアップを行う方法について説明します。 また、Windows マップ アプリを起動し、特定の地図やルート、ターン バイ ターン方式のルート案内を表示する方法についても説明します。"
+title: 地図と位置情報の概要
+description: このセクションでは、アプリで地図の表示、マップ サービスの使用、位置情報の検索、ジオフェンスのセットアップを行う方法について説明します。 また、Windows マップ アプリを起動し、特定の地図やルート、ターン バイ ターン方式のルート案内を表示する方法についても説明します。
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, 地図, 位置情報, マップ サービス"
+keywords: Windows 10, UWP, 地図, 位置情報, マップ サービス
 ms.openlocfilehash: 9f2c15c8d4bab5a764b8973c4eecb220ed6d8f38
 ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2017
+ms.locfileid: "665336"
 ---
 # <a name="maps-and-location-overview"></a><span data-ttu-id="1cfc6-105">地図と位置情報の概要</span><span class="sxs-lookup"><span data-stu-id="1cfc6-105">Maps and location overview</span></span>
 

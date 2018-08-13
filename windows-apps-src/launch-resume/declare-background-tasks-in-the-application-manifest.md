@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
-title: "アプリケーション マニフェストでのバックグラウンド タスクの宣言"
-description: "アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。"
+title: アプリケーション マニフェストでのバックグラウンド タスクの宣言
+description: アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ms.author: twhitney
 ms.date: 02/08/2017
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 65ee6cd32e1fdb6900c859725b8deb6b5031d297
 ms.sourcegitcommit: ba0d20f6fad75ce98c25ceead78aab6661250571
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/24/2017
+ms.locfileid: "848427"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a><span data-ttu-id="86e1a-104">アプリケーション マニフェストでのバックグラウンド タスクの宣言</span><span class="sxs-lookup"><span data-stu-id="86e1a-104">Declare background tasks in the application manifest</span></span>
 

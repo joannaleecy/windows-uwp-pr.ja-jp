@@ -1,35 +1,36 @@
 ---
-title: "ライン ストリップ"
-description: "ライン ストリップとは、接続された行セグメントから構成されるプリミティブを指します。 アプリケーションは、ライン ストリップを使用して、閉じられていない多角形を作成することができます。 閉じられた多角形とは、最後の頂点が行セグメントによって最初の頂点に接続されている多角形を指します。"
+title: ライン ストリップ
+description: ライン ストリップとは、接続された行セグメントから構成されるプリミティブを指します。 アプリケーションは、ライン ストリップを使用して、閉じられていない多角形を作成することができます。 閉じられた多角形とは、最後の頂点が行セグメントによって最初の頂点に接続されている多角形を指します。
 ms.assetid: 6E8C58E1-B463-44FD-A69F-81CCBF25D856
 keywords:
-- "ライン ストリップ"
-author: PeterTurcan
-ms.author: pettur
+- ライン ストリップ
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5fe51d8e07f064da6ef3ba1ad32060a014a31d97
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 7eec406faf1f695a473154dd23322bcdf9189049
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1043161"
 ---
-
-# <a name="line-strips"></a>ライン ストリップ
-
-
-ライン ストリップとは、接続された行セグメントから構成されるプリミティブを指します。 アプリケーションは、ライン ストリップを使用して、閉じられていない多角形を作成することができます。 閉じられた多角形とは、最後の頂点が行セグメントによって最初の頂点に接続されている多角形を指します。 アプリケーションがライン ストリップに基づいて多角形を作成する場合、頂点が同一平面上にあることは保証されません。
-
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例
+# <a name="line-strips"></a><span data-ttu-id="d8947-106">ライン ストリップ</span><span class="sxs-lookup"><span data-stu-id="d8947-106">Line strips</span></span>
 
 
-次の図は、レンダリングされたライン ストリップを示しています。
+<span data-ttu-id="d8947-107">ライン ストリップとは、接続された行セグメントから構成されるプリミティブを指します。</span><span class="sxs-lookup"><span data-stu-id="d8947-107">A line strip is a primitive that is composed of connected line segments.</span></span> <span data-ttu-id="d8947-108">アプリケーションは、ライン ストリップを使用して、閉じられていない多角形を作成することができます。</span><span class="sxs-lookup"><span data-stu-id="d8947-108">Your application can use line strips for creating polygons that are not closed.</span></span> <span data-ttu-id="d8947-109">閉じられた多角形とは、最後の頂点が行セグメントによって最初の頂点に接続されている多角形を指します。</span><span class="sxs-lookup"><span data-stu-id="d8947-109">A closed polygon is a polygon whose last vertex is connected to its first vertex by a line segment.</span></span> <span data-ttu-id="d8947-110">アプリケーションがライン ストリップに基づいて多角形を作成する場合、頂点が同一平面上にあることは保証されません。</span><span class="sxs-lookup"><span data-stu-id="d8947-110">If your application makes polygons based on line strips, the vertices are not guaranteed to be coplanar.</span></span>
+
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span data-ttu-id="d8947-111"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例</span><span class="sxs-lookup"><span data-stu-id="d8947-111"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example</span></span>
+
+
+<span data-ttu-id="d8947-112">次の図は、レンダリングされたライン ストリップを示しています。</span><span class="sxs-lookup"><span data-stu-id="d8947-112">The following illustration shows a rendered line strip.</span></span>
 
 ![ライン ストリップの図](images/linstrip.gif)
 
-次のコードは、このライン ストリップの頂点の作成方法を示しています。
+<span data-ttu-id="d8947-114">次のコードは、このライン ストリップの頂点の作成方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="d8947-114">The following code shows how to create vertices for this line strip.</span></span>
 
 ```
 struct CUSTOMVERTEX
@@ -48,7 +49,7 @@ CUSTOMVERTEX Vertices[] =
 };
 ```
 
-次のコード例は、ライン ストリップを Direct3D でレンダリングする方法を示しています。
+<span data-ttu-id="d8947-115">次のコード例は、ライン ストリップを Direct3D でレンダリングする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="d8947-115">The code example below shows how to render a line strip in Direct3D.</span></span>
 
 ```
 //
@@ -58,15 +59,14 @@ CUSTOMVERTEX Vertices[] =
 d3dDevice->DrawPrimitive( D3DPT_LINESTRIP, 0, 5 );
 ```
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="d8947-116"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="d8947-116"><span id="related-topics"></span>Related topics</span></span>
 
 
-[プリミティブ](primitives.md)
-
- 
+[<span data-ttu-id="d8947-117">プリミティブ</span><span class="sxs-lookup"><span data-stu-id="d8947-117">Primitives</span></span>](primitives.md)
 
  
 
+ 
 
 
 

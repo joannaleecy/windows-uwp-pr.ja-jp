@@ -1,7 +1,7 @@
 ---
 author: mcleblanc
-description: "iOS 開発者のための UWP の概要"
-title: "iOS 開発者のための UWP の概要"
+description: iOS 開発者のための UWP の概要
+title: iOS 開発者のための UWP の概要
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
 ms.author: markl
 ms.date: 02/08/2017
@@ -9,41 +9,39 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 8b1d7259d16ba963d19c7656ff2572fa659a1710
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243808"
 ---
+# <a name="getting-started-with-uwp-for-ios-developers"></a><span data-ttu-id="b570e-104">iOS 開発者のための UWP の概要</span><span class="sxs-lookup"><span data-stu-id="b570e-104">Getting started with UWP for iOS developers</span></span>
 
-# <a name="getting-started-with-uwp-for-ios-developers"></a>iOS 開発者のための UWP の概要
+<span data-ttu-id="b570e-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="b570e-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="b570e-106">Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="b570e-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
+<span data-ttu-id="b570e-107">この記事は、Windows 10 用の開発を検討している iOS 開発者向けに用意されています。</span><span class="sxs-lookup"><span data-stu-id="b570e-107">If you're an iOS developer considering developing for Windows 10, these docs are a great place to start.</span></span> <span data-ttu-id="b570e-108">また、アプリの作成を開始するうえで理解しておく必要がある概念を紹介し、作成したアプリを Windows ストアで公開する方法についても説明します。</span><span class="sxs-lookup"><span data-stu-id="b570e-108">They'll introduce you to some of the concepts you'll need to know as you get started writing apps, and they'll cover how you can publish your work on the Windows Store.</span></span>
 
-この記事は、Windows 10 用の開発を検討している iOS 開発者向けに用意されています。 また、アプリの作成を開始するうえで理解しておく必要がある概念を紹介し、作成したアプリを Windows ストアで公開する方法についても説明します。
+<span data-ttu-id="b570e-109">このセクションでは、Microsoft Visual Studio と C# プログラミング言語を使って簡単なアプリを作成する方法を少しずつ説明し、特にプロセスが現在お使いのツールとどのように違うかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="b570e-109">In this section, we'll start gradually, and examine how to use Microsoft Visual Studio and the C# programming language to create a trivial app, and in particular how the process might vary from the tools you currently use.</span></span> <span data-ttu-id="b570e-110">(C# が気に入りませんでしたか?</span><span class="sxs-lookup"><span data-stu-id="b570e-110">(Not a C# fan?</span></span> <span data-ttu-id="b570e-111">心配しないでください。その他のプログラミング言語やツールも使うことができます。これらについては、「[はじめに: プログラミング言語の選択](getting-started-choosing-a-programming-language.md)」で触れます)。</span><span class="sxs-lookup"><span data-stu-id="b570e-111">Don't worry, other programming languages and tools are available, and we'll touch on this in [Getting started: Choosing a programming language](getting-started-choosing-a-programming-language.md)).</span></span>
 
-このセクションでは、Microsoft Visual Studio と C# プログラミング言語を使って簡単なアプリを作成する方法を少しずつ説明し、特にプロセスが現在お使いのツールとどのように違うかについて説明します。 (C# が気に入りませんでしたか? 心配しないでください。その他のプログラミング言語やツールも使うことができます。これらについては、「[はじめに: プログラミング言語の選択](getting-started-choosing-a-programming-language.md)」で触れます)。
+<span data-ttu-id="b570e-112">Windows 10 では、デスクトップ、ノート PC、タブレット、電話の各デバイス、その他を対象とした魅力的なアプリを作成するための新しいプラットフォームが採用されています。</span><span class="sxs-lookup"><span data-stu-id="b570e-112">Windows 10 introduces a new platform for creating engaging apps on desktop, laptop, tablet, phone devices and more.</span></span> <span data-ttu-id="b570e-113">ユニバーサル Windows プラットフォーム (UWP) アプリには多くの独自の機能が用意されているため、iOS アプリを単純に移植するだけではこれらの機能を利用できなくなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b570e-113">As Universal Windows Platform (UWP) apps provide many unique capabilities, a straight port of your iOS app will miss out on these features.</span></span> <span data-ttu-id="b570e-114">このため、新しいコントロールと機能を試して、開発者の作業がどのくらい効率化されるか、どのように新しいアプリを作ることができるかについて調べることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b570e-114">We therefore encourage you to try out the new controls and abilities to see how they will make your life as a developer easier, and new apps possible.</span></span>
 
-Windows 10 では、デスクトップ、ノート PC、タブレット、電話の各デバイス、その他を対象とした魅力的なアプリを作成するための新しいプラットフォームが採用されています。 ユニバーサル Windows プラットフォーム (UWP) アプリには多くの独自の機能が用意されているため、iOS アプリを単純に移植するだけではこれらの機能を利用できなくなる可能性があります。 このため、新しいコントロールと機能を試して、開発者の作業がどのくらい効率化されるか、どのように新しいアプリを作ることができるかについて調べることをお勧めします。
+<span data-ttu-id="b570e-115">結論は、アプリを単に移植することは避けて、アプリの **(作り直し)** をして、新機能と新しいデバイスを利用することです。</span><span class="sxs-lookup"><span data-stu-id="b570e-115">The bottom line is this: don't just port your app, but **reimagine** your app, and take advantage of new features and new devices.</span></span> <span data-ttu-id="b570e-116">最大公約数で満足せずに、ライブ タイル、通知、Cortana の操作など、Windows 10 独自の機能を使うリッチなエクスペリエンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="b570e-116">Don't settle for the lowest common denominator, but create rich experiences that use unique Windows 10 features, such as live tiles, notifications, and interacting with Cortana.</span></span>
 
-結論は、アプリを単に移植することは避けて、アプリの **(作り直し)** をして、新機能と新しいデバイスを利用することです。 最大公約数で満足せずに、ライブ タイル、通知、Cortana の操作など、Windows 10 独自の機能を使うリッチなエクスペリエンスを作成します。
+<span data-ttu-id="b570e-117">これらのチュートリアルを行うには、Windows 10 と Microsoft Visual Studio の両方がインストールされたコンピューターが必要です。</span><span class="sxs-lookup"><span data-stu-id="b570e-117">To get started with these walkthroughs, you'll need a computer with both Windows 10 and Microsoft Visual Studio installed.</span></span> <span data-ttu-id="b570e-118">これらは、[Windows ストア アプリ プログラミングの開発者向けダウンロードに関するページ](https://developer.microsoft.com/en-us/windows/downloads)からダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="b570e-118">You can download these from the [Developer downloads for programming Windows Store apps](https://developer.microsoft.com/en-us/windows/downloads).</span></span> <span data-ttu-id="b570e-119">PC がなくても</span><span class="sxs-lookup"><span data-stu-id="b570e-119">Don't have a PC?</span></span> <span data-ttu-id="b570e-120">心配しないでください。Mac を使うことができます。詳しくは、「[Mac への Windows および開発者ツールのインストール](setting-up-your-mac-with-windows-10.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b570e-120">Don't worry, you can use your Mac: see [Installing Windows and the dev tools on your Mac](setting-up-your-mac-with-windows-10.md).</span></span>
 
-これらのチュートリアルを行うには、Windows 10 と Microsoft Visual Studio の両方がインストールされたコンピューターが必要です。 これらは、[Windows ストア アプリ プログラミングの開発者向けダウンロードに関するページ](https://developer.microsoft.com/en-us/windows/downloads)からダウンロードできます。 PC がなくても 心配しないでください。Mac を使うことができます。詳しくは、「[Mac への Windows および開発者ツールのインストール](setting-up-your-mac-with-windows-10.md)」をご覧ください。
-
-| トピック | 説明 |
+| <span data-ttu-id="b570e-121">トピック</span><span class="sxs-lookup"><span data-stu-id="b570e-121">Topic</span></span> | <span data-ttu-id="b570e-122">説明</span><span class="sxs-lookup"><span data-stu-id="b570e-122">Description</span></span> |
 |-------|-------------|
-| [はじめに: プロジェクトの作成](getting-started-creating-a-project.md) | Windows にとっての Visual Studio は、iOS や Mac OS にとっての Xcode に相当します。 このチュートリアルでは、Visual Studio の使い方に慣れる訓練を行います。 |
-| [はじめに: プログラミング言語の選択](getting-started-choosing-a-programming-language.md) | 先へ進む前に、UWP アプリを開発するときに選択できるプログラミング言語について理解している必要があります。 |
-| [はじめに: Visual Studio の操作方法](getting-started-getting-around-in-visual-studio.md) | ここでは、前の手順で作ったプロジェクトに戻り、Visual Studio 統合開発環境 (IDE) の操作方法について示します。 |
-| [はじめに: コモン コントロール](getting-started-common-controls.md) | ここでは、アプリやそれに対応する iOS アプリで使用するいくつかのコモン コントロールを紹介します。 |
-| [はじめに: ナビゲーション](getting-started-navigation.md) | Windows 10 アプリでこのナビゲーションを管理する方法の 1 つに、[Frame](https://msdn.microsoft.com/library/windows/apps/br242682) クラスを使う方法があります。 以下のチュートリアルでは実際に試す方法を示しています。 |
-| [はじめに: アニメーション](getting-started-animation.md) | Windows アプリでのアニメーションもプログラムで作成できますが、Extensible Application Markup Language (XAML) を使った宣言で定義することもできます。 |
-| [はじめに: 次の手順](getting-started-what-next.md) | この基本情報を使って、もっと興味深いユニバーサル Windows プラットフォーム (UWP) アプリの作成を今すぐ開始できます。 次の手順として、次のトピックを読んでから Visual Studio を起動し、コードの作成を始めます。 |
-| [Windows アプリの概念マッピング](https://msdn.microsoft.com//windows/uwp/porting/android-ios-uwp-map) | Windows (および Android) 機能の観点からの iOS の概念の考え方 |
+| [<span data-ttu-id="b570e-123">はじめに: プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="b570e-123">Getting started: Creating a project</span></span>](getting-started-creating-a-project.md) | <span data-ttu-id="b570e-124">Windows にとっての Visual Studio は、iOS や Mac OS にとっての Xcode に相当します。</span><span class="sxs-lookup"><span data-stu-id="b570e-124">Visual Studio is to Windows as Xcode is to iOS and Mac OS.</span></span> <span data-ttu-id="b570e-125">このチュートリアルでは、Visual Studio の使い方に慣れる訓練を行います。</span><span class="sxs-lookup"><span data-stu-id="b570e-125">In this walkthrough, we help you get comfortable using Visual Studio.</span></span> |
+| [<span data-ttu-id="b570e-126">はじめに: プログラミング言語の選択</span><span class="sxs-lookup"><span data-stu-id="b570e-126">Getting started: Choosing a programming language</span></span>](getting-started-choosing-a-programming-language.md) | <span data-ttu-id="b570e-127">先へ進む前に、UWP アプリを開発するときに選択できるプログラミング言語について理解している必要があります。</span><span class="sxs-lookup"><span data-stu-id="b570e-127">Before we go any further, you should know about the programming languages that you can choose from when you develop UWP apps.</span></span> |
+| [<span data-ttu-id="b570e-128">はじめに: Visual Studio の操作方法</span><span class="sxs-lookup"><span data-stu-id="b570e-128">Getting started: Getting around in Visual Studio</span></span>](getting-started-getting-around-in-visual-studio.md) | <span data-ttu-id="b570e-129">ここでは、前の手順で作ったプロジェクトに戻り、Visual Studio 統合開発環境 (IDE) の操作方法について示します。</span><span class="sxs-lookup"><span data-stu-id="b570e-129">Let's now get back to the project that we created earlier, and look at how you might find your way around the Visual Studio integrated development environment (IDE).</span></span> |
+| [<span data-ttu-id="b570e-130">はじめに: コモン コントロール</span><span class="sxs-lookup"><span data-stu-id="b570e-130">Getting started: Common Controls</span></span>](getting-started-common-controls.md) | <span data-ttu-id="b570e-131">ここでは、アプリやそれに対応する iOS アプリで使用するいくつかのコモン コントロールを紹介します。</span><span class="sxs-lookup"><span data-stu-id="b570e-131">Here are some common controls you'll be using in your apps, and their iOS equivalents.</span></span> |
+| [<span data-ttu-id="b570e-132">はじめに: ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="b570e-132">Getting started: Navigation</span></span>](getting-started-navigation.md) | <span data-ttu-id="b570e-133">Windows 10 アプリでこのナビゲーションを管理する方法の 1 つに、[Frame](https://msdn.microsoft.com/library/windows/apps/br242682) クラスを使う方法があります。</span><span class="sxs-lookup"><span data-stu-id="b570e-133">One of the ways to manage this navigation in a Windows 10 app is to use the [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) class.</span></span> <span data-ttu-id="b570e-134">以下のチュートリアルでは実際に試す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="b570e-134">The following walkthrough shows you how to try this out.</span></span> |
+| [<span data-ttu-id="b570e-135">はじめに: アニメーション</span><span class="sxs-lookup"><span data-stu-id="b570e-135">Getting started: Animation</span></span>](getting-started-animation.md) | <span data-ttu-id="b570e-136">Windows アプリでのアニメーションもプログラムで作成できますが、Extensible Application Markup Language (XAML) を使った宣言で定義することもできます。</span><span class="sxs-lookup"><span data-stu-id="b570e-136">Animations in Windows apps can be created programmatically, but they can also be defined declaratively with Extensible Application Markup Language (XAML).</span></span> |
+| [<span data-ttu-id="b570e-137">はじめに: 次の手順</span><span class="sxs-lookup"><span data-stu-id="b570e-137">Getting started: What next?</span></span>](getting-started-what-next.md) | <span data-ttu-id="b570e-138">この基本情報を使って、もっと興味深いユニバーサル Windows プラットフォーム (UWP) アプリの作成を今すぐ開始できます。</span><span class="sxs-lookup"><span data-stu-id="b570e-138">With this basic information, you can now start writing more interesting Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="b570e-139">次の手順として、次のトピックを読んでから Visual Studio を起動し、コードの作成を始めます。</span><span class="sxs-lookup"><span data-stu-id="b570e-139">For your next steps, have a read through the following topics, and then fire up Visual Studio and start writing some code!</span></span> |
+| [<span data-ttu-id="b570e-140">Windows アプリの概念マッピング</span><span class="sxs-lookup"><span data-stu-id="b570e-140">Windows app concept mapping</span></span>](https://msdn.microsoft.com//windows/uwp/porting/android-ios-uwp-map) | <span data-ttu-id="b570e-141">Windows (および Android) 機能の観点からの iOS の概念の考え方</span><span class="sxs-lookup"><span data-stu-id="b570e-141">How to think of iOS concepts in terms of Windows (and Android) features</span></span> |
 
  
 
  
 
  
-

@@ -1,8 +1,8 @@
 ---
 author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
-title: "Windows アプリ認定キット"
-description: "作成したアプリを Windows ストアに公開する、または、Windows 認定を受ける一番の方法は、認定のためアプリを提出する前に、ローカルでアプリの検証とテストを行うことです。 このトピックでは、Windows アプリ認定キットのインストール方法と実行方法について説明します。"
+title: Windows アプリ認定キット
+description: 作成したアプリを Windows ストアに公開する、または、Windows 認定を受ける一番の方法は、認定のためアプリを提出する前に、ローカルでアプリの検証とテストを行うことです。 このトピックでは、Windows アプリ認定キットのインストール方法と実行方法について説明します。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: fb5303898bfb0d7021ba4c0aa48afd5038bcad4d
 ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/27/2017
+ms.locfileid: "695464"
 ---
 # <a name="windows-app-certification-kit"></a><span data-ttu-id="46f8f-105">Windows アプリ認定キット</span><span class="sxs-lookup"><span data-stu-id="46f8f-105">Windows App Certification Kit</span></span>
 

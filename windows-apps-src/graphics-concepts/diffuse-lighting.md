@@ -1,81 +1,81 @@
 ---
-title: "拡散光"
-description: "拡散光は、ライトの方向とオブジェクトのサーフェス法線の両方に依存します。"
+title: 拡散光
+description: 拡散光は、ライトの方向とオブジェクトのサーフェス法線の両方に依存します。
 ms.assetid: 8AF78742-76B1-4BBB-86E3-94AE6F48B847
 keywords:
-- "拡散光"
-author: PeterTurcan
-ms.author: pettur
+- 拡散光
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 256d3ed1dd6236abe4ca93e362c52316eb548bda
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 84036edd2071d9545b3a492ea5cf0b397d9e722e
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044431"
 ---
+# <a name="diffuse-lighting"></a><span data-ttu-id="82852-104">拡散光</span><span class="sxs-lookup"><span data-stu-id="82852-104">Diffuse lighting</span></span>
 
-# <a name="diffuse-lighting"></a>拡散光
 
+<span data-ttu-id="82852-105">*拡散光*は、ライトの方向とオブジェクトのサーフェス法線の両方に依存します。</span><span class="sxs-lookup"><span data-stu-id="82852-105">*Diffuse lighting* depends on both the light direction and the object surface normal.</span></span> <span data-ttu-id="82852-106">光の方向を変更し、サーフェスの法線ベクトルを変更すると、拡散光がオブジェクトのサーフェス上で変化します。</span><span class="sxs-lookup"><span data-stu-id="82852-106">Diffuse lighting varies across the surface of an object as a result of the changing light direction and the changing surface numeral vector.</span></span> <span data-ttu-id="82852-107">拡散光は、オブジェクトの頂点ごとに変化するため、その計算には時間がかかりますが、オブジェクトにシェーディングが適用され、3 次元 (3D) の奥行を与えるという利点があります。</span><span class="sxs-lookup"><span data-stu-id="82852-107">It takes longer to calculate diffuse lighting because it changes for each object vertex, however the benefit of using it is that it shades objects and gives them three-dimensional (3D) depth.</span></span>
 
-*拡散光*は、ライトの方向とオブジェクトのサーフェス法線の両方に依存します。 拡散光は、変化するライトの方向と変化するサーフェス法線ベクトルの結果として、オブジェクトのサーフェス各所で異なります。 拡散光は、オブジェクトの頂点ごとに変化するため、その計算には時間がかかりますが、オブジェクトにシェーディングが適用され、3 次元 (3D) の奥行を与えるという利点があります。
+<span data-ttu-id="82852-108">任意の減衰効果について光の強さを調整した後、照明エンジンは、頂点法線の角度および入射光の方向から、頂点から反射する残りの光量を計算します。</span><span class="sxs-lookup"><span data-stu-id="82852-108">After adjusting the light intensity for any attenuation effects, the lighting engine computes how much of the remaining light reflects from a vertex, given the angle of the vertex normal and the direction of the incident light.</span></span> <span data-ttu-id="82852-109">照明エンジンは、指向性ライトについては、距離による減衰がないためこの手順をスキップします。</span><span class="sxs-lookup"><span data-stu-id="82852-109">The lighting engine skips to this step for directional lights because they do not attenuate over distance.</span></span> <span data-ttu-id="82852-110">システムでは、拡散と鏡面の 2 種類の反射を考慮し、異なる指揮を使用してそれぞれの反射する光量を決定します。</span><span class="sxs-lookup"><span data-stu-id="82852-110">The system considers two reflection types, diffuse and specular, and uses a different formula to determine how much light is reflected for each.</span></span>
 
-任意の減衰効果について光の強さを調整した後、照明エンジンは、頂点法線の角度および入射光の方向から、頂点から反射する残りの光量を計算します。 照明エンジンは、指向性ライトについては、距離による減衰がないためこの手順をスキップします。 システムでは、拡散と鏡面の 2 種類の反射を考慮し、異なる指揮を使用してそれぞれの反射する光量を決定します。
+<span data-ttu-id="82852-111">反射の光量を計算した後、Direct3D は、現在のマテリアルの拡散および鏡面反射率プロパティにこれらの新しい値を適用します。</span><span class="sxs-lookup"><span data-stu-id="82852-111">After calculating the amounts of light reflected, Direct3D applies these new values to the diffuse and specular reflectance properties of the current material.</span></span> <span data-ttu-id="82852-112">結果として得られる色の値は、ラスタライザーはグーロー シェーディングと鏡面ハイライトを生成するために使用する拡散および鏡面コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="82852-112">The resulting color values are the diffuse and specular components that the rasterizer uses to produce Gouraud shading and specular highlighting.</span></span>
 
-反射の光量を計算した後、Direct3D は、現在のマテリアルの拡散および鏡面反射率プロパティにこれらの新しい値を適用します。 結果として得られる色の値は、ラスタライザーはグーロー シェーディングと鏡面ハイライトを生成するために使用する拡散および鏡面コンポーネントです。
+<span data-ttu-id="82852-113">拡散光は次の方程式で表されます。</span><span class="sxs-lookup"><span data-stu-id="82852-113">Diffuse lighting is described by the following equation.</span></span>
 
-拡散光は次の方程式で表されます。
+<span data-ttu-id="82852-114">拡散光 = sum\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>.</sup>L<sub>dir</sub>)\*Atten\*Spot\]</span><span class="sxs-lookup"><span data-stu-id="82852-114">Diffuse Lighting = sum\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>.</sup>L<sub>dir</sub>)\*Atten\*Spot\]</span></span>
 
-拡散光 = sum\[C<sub>d</sub>\*L<sub>d</sub>\*(N<sup>.</sup>L<sub>dir</sub>)\*Atten\*Spot\]
-
-| パラメーター       | 既定値 | 型          | 説明                                                                                      |
+| <span data-ttu-id="82852-115">パラメーター</span><span class="sxs-lookup"><span data-stu-id="82852-115">Parameter</span></span>       | <span data-ttu-id="82852-116">既定値</span><span class="sxs-lookup"><span data-stu-id="82852-116">Default value</span></span> | <span data-ttu-id="82852-117">種類</span><span class="sxs-lookup"><span data-stu-id="82852-117">Type</span></span>          | <span data-ttu-id="82852-118">説明</span><span class="sxs-lookup"><span data-stu-id="82852-118">Description</span></span>                                                                                      |
 |-----------------|---------------|---------------|--------------------------------------------------------------------------------------------------|
-| sum             | なし           | なし           | 各ライトの拡散コンポーネントの総和。                                                     |
-| C<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 拡散色。                                                                                   |
-| L<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 明るい拡散色。                                                                             |
-| N               | なし           | D3DVECTOR     | 頂点法線                                                                                    |
-| L<sub>dir</sub> | なし           | D3DVECTOR     | オブジェクトの頂点からライトへの方向ベクトル。                                                |
-| Atten           | なし           | FLOAT         | 光の減衰。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。 |
-| Spot            | なし           | FLOAT         | スポットライト係数。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。  |
+| <span data-ttu-id="82852-119">sum</span><span class="sxs-lookup"><span data-stu-id="82852-119">sum</span></span>             | <span data-ttu-id="82852-120">該当なし</span><span class="sxs-lookup"><span data-stu-id="82852-120">N/A</span></span>           | <span data-ttu-id="82852-121">なし</span><span class="sxs-lookup"><span data-stu-id="82852-121">N/A</span></span>           | <span data-ttu-id="82852-122">各ライトの拡散コンポーネントの総和。</span><span class="sxs-lookup"><span data-stu-id="82852-122">Summation of each light's diffuse component.</span></span>                                                     |
+| <span data-ttu-id="82852-123">C<sub>d</sub></span><span class="sxs-lookup"><span data-stu-id="82852-123">C<sub>d</sub></span></span>   | <span data-ttu-id="82852-124">(0,0,0,0)</span><span class="sxs-lookup"><span data-stu-id="82852-124">(0,0,0,0)</span></span>     | <span data-ttu-id="82852-125">D3DCOLORVALUE</span><span class="sxs-lookup"><span data-stu-id="82852-125">D3DCOLORVALUE</span></span> | <span data-ttu-id="82852-126">拡散色。</span><span class="sxs-lookup"><span data-stu-id="82852-126">Diffuse color.</span></span>                                                                                   |
+| <span data-ttu-id="82852-127">L<sub>d</sub></span><span class="sxs-lookup"><span data-stu-id="82852-127">L<sub>d</sub></span></span>   | <span data-ttu-id="82852-128">(0,0,0,0)</span><span class="sxs-lookup"><span data-stu-id="82852-128">(0,0,0,0)</span></span>     | <span data-ttu-id="82852-129">D3DCOLORVALUE</span><span class="sxs-lookup"><span data-stu-id="82852-129">D3DCOLORVALUE</span></span> | <span data-ttu-id="82852-130">明るい拡散色。</span><span class="sxs-lookup"><span data-stu-id="82852-130">Light diffuse color.</span></span>                                                                             |
+| <span data-ttu-id="82852-131">N</span><span class="sxs-lookup"><span data-stu-id="82852-131">N</span></span>               | <span data-ttu-id="82852-132">なし</span><span class="sxs-lookup"><span data-stu-id="82852-132">N/A</span></span>           | <span data-ttu-id="82852-133">D3DVECTOR</span><span class="sxs-lookup"><span data-stu-id="82852-133">D3DVECTOR</span></span>     | <span data-ttu-id="82852-134">頂点法線</span><span class="sxs-lookup"><span data-stu-id="82852-134">Vertex normal</span></span>                                                                                    |
+| <span data-ttu-id="82852-135">L<sub>dir</sub></span><span class="sxs-lookup"><span data-stu-id="82852-135">L<sub>dir</sub></span></span> | <span data-ttu-id="82852-136">なし</span><span class="sxs-lookup"><span data-stu-id="82852-136">N/A</span></span>           | <span data-ttu-id="82852-137">D3DVECTOR</span><span class="sxs-lookup"><span data-stu-id="82852-137">D3DVECTOR</span></span>     | <span data-ttu-id="82852-138">オブジェクトの頂点からライトへの方向ベクトル。</span><span class="sxs-lookup"><span data-stu-id="82852-138">Direction vector from object vertex to the light.</span></span>                                                |
+| <span data-ttu-id="82852-139">Atten</span><span class="sxs-lookup"><span data-stu-id="82852-139">Atten</span></span>           | <span data-ttu-id="82852-140">なし</span><span class="sxs-lookup"><span data-stu-id="82852-140">N/A</span></span>           | <span data-ttu-id="82852-141">FLOAT</span><span class="sxs-lookup"><span data-stu-id="82852-141">FLOAT</span></span>         | <span data-ttu-id="82852-142">光の減衰。</span><span class="sxs-lookup"><span data-stu-id="82852-142">Light attenuation.</span></span> <span data-ttu-id="82852-143">「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="82852-143">See [Attenuation and spotlight factor](attenuation-and-spotlight-factor.md).</span></span> |
+| <span data-ttu-id="82852-144">Spot</span><span class="sxs-lookup"><span data-stu-id="82852-144">Spot</span></span>            | <span data-ttu-id="82852-145">なし</span><span class="sxs-lookup"><span data-stu-id="82852-145">N/A</span></span>           | <span data-ttu-id="82852-146">FLOAT</span><span class="sxs-lookup"><span data-stu-id="82852-146">FLOAT</span></span>         | <span data-ttu-id="82852-147">スポットライト係数。</span><span class="sxs-lookup"><span data-stu-id="82852-147">Spotlight factor.</span></span> <span data-ttu-id="82852-148">「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="82852-148">See [Attenuation and spotlight factor](attenuation-and-spotlight-factor.md).</span></span>  |
 
  
 
-減衰 (Atten) またはスポット ライトの特性 (Spot) を計算するには、「[減衰とスポット ライトの係数](attenuation-and-spotlight-factor.md)」を参照してください。
+<span data-ttu-id="82852-149">減衰 (Atten) またはスポット ライトの特性 (Spot) を計算するには、「[減衰とスポット ライトの係数](attenuation-and-spotlight-factor.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="82852-149">To calculate the attenuation (Atten) or the spotlight characteristics (Spot), see [Attenuation and spotlight factor](attenuation-and-spotlight-factor.md).</span></span>
 
-拡散コンポーネントは、すべての光が個別に処理されて補間されると、0 ～ 255 になるようにクランプされます。 生成された拡散照明値は、環境光、拡散光、放射光の値の組み合わせです。
+<span data-ttu-id="82852-150">拡散コンポーネントは、すべての光が個別に処理されて補間されると、0 ～ 255 になるようにクランプされます。</span><span class="sxs-lookup"><span data-stu-id="82852-150">Diffuse components are clamped to be from 0 to 255, after all lights are processed and interpolated separately.</span></span> <span data-ttu-id="82852-151">生成された拡散照明値は、環境光、拡散光、放射光の値の組み合わせです。</span><span class="sxs-lookup"><span data-stu-id="82852-151">The resulting diffuse lighting value is a combination of the ambient, diffuse and emissive light values.</span></span>
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span data-ttu-id="82852-152"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例</span><span class="sxs-lookup"><span data-stu-id="82852-152"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example</span></span>
 
 
-この例では、オブジェクトの色は、ライトの拡散色とマテリアルの拡散色を使用しています。
+<span data-ttu-id="82852-153">この例では、オブジェクトの色は、ライトの拡散色とマテリアルの拡散色を使用しています。</span><span class="sxs-lookup"><span data-stu-id="82852-153">In this example, the object is colored using the light diffuse color and a material diffuse color.</span></span>
 
-この方程式では、生成されるオブジェクトの頂点の色は、マテリアルの色と光の色の組み合わせになります。
+<span data-ttu-id="82852-154">この方程式では、生成されるオブジェクトの頂点の色は、マテリアルの色と光の色の組み合わせになります。</span><span class="sxs-lookup"><span data-stu-id="82852-154">According to the equation, the resulting color for the object vertices is a combination of the material color and the light color.</span></span>
 
-次の 2 つのイメージは、マテリアルの色がグレーで、ライトの色が明るい赤であることを示しています。
+<span data-ttu-id="82852-155">次の 2 つのイメージは、マテリアルの色がグレーで、ライトの色が明るい赤であることを示しています。</span><span class="sxs-lookup"><span data-stu-id="82852-155">The following two illustrations show the material color, which is gray, and the light color, which is bright red.</span></span>
 
 ![グレーの球体の図](images/amb1.jpg)![赤の球体の図](images/lightred.jpg)
 
-結果として作成されるシーンは、次のようになります。 シーン内の唯一のオブジェクトは球です。 拡散照明の計算では、マテリアルとライトの拡散色を取得した後、内積を使用して、ライトの方向と頂点法線の間の角度からその値を修正します。 その結果、球の背面は、球のサーフェスがカーブしながらライトから遠ざかるに従い暗くなります。
+<span data-ttu-id="82852-158">結果として作成されるシーンは、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="82852-158">The resulting scene is shown in the following illustration.</span></span> <span data-ttu-id="82852-159">シーン内の唯一のオブジェクトは球です。</span><span class="sxs-lookup"><span data-stu-id="82852-159">The only object in the scene is a sphere.</span></span> <span data-ttu-id="82852-160">拡散照明の計算では、マテリアルとライトの拡散色を取得した後、内積を使用して、ライトの方向と頂点法線の間の角度からその値を修正します。</span><span class="sxs-lookup"><span data-stu-id="82852-160">The diffuse lighting calculation takes the material and light diffuse color and modifies it by the angle between the light direction and the vertex normal using the dot product.</span></span> <span data-ttu-id="82852-161">その結果、球の背面は、球のサーフェスがカーブしながらライトから遠ざかるに従い暗くなります。</span><span class="sxs-lookup"><span data-stu-id="82852-161">As a result, the backside of the sphere gets darker as the surface of the sphere curves away from the light.</span></span>
 
 ![拡散光のある球体の図](images/lightd.jpg)
 
-拡散光と前の例の環境光を組み合わせると、オブジェクトのサーフェス全体に影が付けられます。 次の図に示すように、環境光はサーフェス全体に影を付け、拡散光はオブジェクトの 3D 形状を表現するのに役立ちます。
+<span data-ttu-id="82852-163">拡散光と前の例の環境光を組み合わせると、オブジェクトのサーフェス全体に影が付けられます。</span><span class="sxs-lookup"><span data-stu-id="82852-163">Combining the diffuse lighting with the ambient lighting from the previous example shades the entire surface of the object.</span></span> <span data-ttu-id="82852-164">次の図に示すように、環境光はサーフェス全体に影を付け、拡散光はオブジェクトの 3D 形状を表現するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="82852-164">The ambient light shades the entire surface and the diffuse light helps reveal the object's 3D shape, as shown in the following illustration.</span></span>
 
 ![拡散光と環境光のある球体の図](images/lightad.jpg)
 
-拡散光は、環境光よりも計算の負荷が高くなります。 頂点法線とライトの方向に依存しているため、オブジェクトのジオメトリを 3D 空間で表現でき、環境光よりリアルな照明を生成できます。 鏡面ハイライトを使用すると、さらにリアルな外観を表現できます。
+<span data-ttu-id="82852-166">拡散光は、環境光よりも計算の負荷が高くなります。</span><span class="sxs-lookup"><span data-stu-id="82852-166">Diffuse lighting is more intensive to calculate than ambient lighting.</span></span> <span data-ttu-id="82852-167">頂点法線とライトの方向に依存しているため、オブジェクトのジオメトリを 3D 空間で表現でき、環境光よりリアルな照明を生成できます。</span><span class="sxs-lookup"><span data-stu-id="82852-167">Because it depends on the vertex normals and light direction, you can see the objects geometry in 3D space, which produces a more realistic lighting than ambient lighting.</span></span> <span data-ttu-id="82852-168">鏡面ハイライトを使用すると、さらにリアルな外観を表現できます。</span><span class="sxs-lookup"><span data-stu-id="82852-168">You can use specular highlights to achieve a more realistic look.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="82852-169"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="82852-169"><span id="related-topics"></span>Related topics</span></span>
 
 
-[光源の計算](mathematics-of-lighting.md)
-
- 
+[<span data-ttu-id="82852-170">光源の計算</span><span class="sxs-lookup"><span data-stu-id="82852-170">Mathematics of lighting</span></span>](mathematics-of-lighting.md)
 
  
 
+ 
 
 
 

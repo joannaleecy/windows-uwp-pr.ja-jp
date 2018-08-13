@@ -1,8 +1,8 @@
 ---
 author: jwmsft
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
-title: "XAML レイアウトの最適化"
-description: "レイアウトは、CPU 使用率とメモリ オーバーヘッドの両方で、XAML アプリの負荷の高い部分です。 ここでは、XAML アプリのレイアウトのパフォーマンスを向上させるための簡単な手順を示します。"
+title: XAML レイアウトの最適化
+description: レイアウトは、CPU 使用率とメモリ オーバーヘッドの両方で、XAML アプリの負荷の高い部分です。 ここでは、XAML アプリのレイアウトのパフォーマンスを向上させるための簡単な手順を示します。
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 40afd15da7e225ea82814ab2fa680a3c95e00488
 ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/14/2017
+ms.locfileid: "894746"
 ---
 # <a name="optimize-your-xaml-layout"></a><span data-ttu-id="916f9-105">XAML レイアウトの最適化</span><span class="sxs-lookup"><span data-stu-id="916f9-105">Optimize your XAML layout</span></span>
 

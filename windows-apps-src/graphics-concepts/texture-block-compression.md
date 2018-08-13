@@ -1,109 +1,109 @@
 ---
-title: "テクスチャのブロック圧縮"
-description: "Direct3D 11 では、テクスチャのブロック圧縮 (BC) サポートが拡張され、BC6H および BC7 アルゴリズムが組み込まれています。"
+title: テクスチャのブロック圧縮
+description: Direct3D 11 では、テクスチャのブロック圧縮 (BC) サポートが拡張され、BC6H および BC7 アルゴリズムが組み込まれています。
 ms.assetid: 63506C46-BF14-464B-B20C-8B8F359E7AFE
 keywords:
-- "テクスチャのブロック圧縮"
-author: PeterTurcan
-ms.author: pettur
+- テクスチャのブロック圧縮
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3930d5d2350fcbb7878edec8a5a93dfd4c36caee
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 3f3dc2c29f30c32afda71406917afeec95bbd2ec
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044791"
 ---
-
-# <a name="texture-block-compression"></a>テクスチャのブロック圧縮
-
-
-Direct3D 11 では、テクスチャのブロック圧縮 (BC) サポートが拡張され、BC6H および BC7 アルゴリズムが組み込まれています。 BC6H はハイ ダイナミック レンジのカラー ソース データをサポートし、BC7 は標準 RGB ソース データのアーティファクトを低減して標準よりも優れた品質の圧縮を提供します。
-
-BC1 ～ BC5 形式のサポートなど、Direct3D 11 より前のブロック圧縮アルゴリズムのサポートに関する具体的な情報については、「[ブロック圧縮 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb694531)」をご覧ください。
-
-**ファイル形式に関する注意:  ** BC6H および BC7 テクスチャ圧縮形式では、圧縮されたテクスチャ データを保存するために DDS ファイル形式を使います。 詳しくは、「[DDS 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/bb943991)」をご覧ください。
-
-## <a name="span-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanblock-compression-formats-supported-in-direct3d-11"></a><span id="Block_Compression_Formats_Supported_in_Direct3D_11"></span><span id="block_compression_formats_supported_in_direct3d_11"></span><span id="BLOCK_COMPRESSION_FORMATS_SUPPORTED_IN_DIRECT3D_11"></span>Direct3D 11 でサポートされるブロック圧縮形式
+# <a name="texture-block-compression"></a><span data-ttu-id="8ae53-104">テクスチャのブロック圧縮</span><span class="sxs-lookup"><span data-stu-id="8ae53-104">Texture block compression</span></span>
 
 
-| ソース データ                                  | 最低限必要なデータ圧縮解像度                              | 推奨形式 | サポートされる最小機能レベル |
+<span data-ttu-id="8ae53-105">Direct3D 11 では、テクスチャのブロック圧縮 (BC) サポートが拡張され、BC6H および BC7 アルゴリズムが組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="8ae53-105">Block Compression (BC) support for textures has been extended in Direct3D 11 to include the BC6H and BC7 algorithms.</span></span> <span data-ttu-id="8ae53-106">BC6H はハイ ダイナミック レンジのカラー ソース データをサポートし、BC7 は標準 RGB ソース データのアーティファクトを低減して標準よりも優れた品質の圧縮を提供します。</span><span class="sxs-lookup"><span data-stu-id="8ae53-106">BC6H supports high-dynamic range color source data, and BC7 provides better-than-average quality compression with less artifacts for standard RGB source data.</span></span>
+
+<span data-ttu-id="8ae53-107">BC1 ～ BC5 形式のサポートなど、Direct3D 11 より前のブロック圧縮アルゴリズムのサポートに関する具体的な情報については、「[ブロック圧縮 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb694531)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="8ae53-107">For more specific information about block compression algorithm support prior to Direct3D 11, including support for the BC1 through BC5 formats, see [Block Compression (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb694531).</span></span>
+
+<span data-ttu-id="8ae53-108">* * ファイル形式に関する注意事項: * *、BC6H と BC7 テクスチャ圧縮の形式は、圧縮テクスチャ データを格納する DDS ファイル形式を使用します。</span><span class="sxs-lookup"><span data-stu-id="8ae53-108">**Note about File Formats:  ** The BC6H and BC7 texture compression formats use the DDS file format for storing the compressed texture data.</span></span> <span data-ttu-id="8ae53-109">詳しくは、「[DDS 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/bb943991)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="8ae53-109">For more information, see the [Programming Guide for DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991) for details.</span></span>
+
+## <a name="span-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanblock-compression-formats-supported-in-direct3d-11"></a><span data-ttu-id="8ae53-110"><span id="Block_Compression_Formats_Supported_in_Direct3D_11"></span><span id="block_compression_formats_supported_in_direct3d_11"></span><span id="BLOCK_COMPRESSION_FORMATS_SUPPORTED_IN_DIRECT3D_11"></span>Direct3D 11 でサポートされるブロック圧縮形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-110"><span id="Block_Compression_Formats_Supported_in_Direct3D_11"></span><span id="block_compression_formats_supported_in_direct3d_11"></span><span id="BLOCK_COMPRESSION_FORMATS_SUPPORTED_IN_DIRECT3D_11"></span>Block Compression Formats Supported in Direct3D 11</span></span>
+
+
+| <span data-ttu-id="8ae53-111">ソース データ</span><span class="sxs-lookup"><span data-stu-id="8ae53-111">Source data</span></span>                                  | <span data-ttu-id="8ae53-112">最低限必要なデータ圧縮解像度</span><span class="sxs-lookup"><span data-stu-id="8ae53-112">Minimum required data compression resolution</span></span>                              | <span data-ttu-id="8ae53-113">推奨形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-113">Recommended format</span></span> | <span data-ttu-id="8ae53-114">サポートされる最小機能レベル</span><span class="sxs-lookup"><span data-stu-id="8ae53-114">Minimum supported feature level</span></span> |
 |----------------------------------------------|---------------------------------------------------------------------------|--------------------|---------------------------------|
-| 3 チャネル カラーおよびアルファ チャネル       | 3 カラー チャネル (5 ビット:6 ビット:5 ビット)、および 0 または 1 ビットのアルファ  | BC1                | Direct3D 9.1                    |
-| 3 チャネル カラーおよびアルファ チャネル       | 3 カラー チャネル (5 ビット:6 ビット:5 ビット)、および 4 ビットのアルファ         | BC2                | Direct3D 9.1                    |
-| 3 チャネル カラーおよびアルファ チャネル       | 3 カラー チャネル (5 ビット:6 ビット:5 ビット)、および 8 ビットのアルファ          | BC3                | Direct3D 9.1                    |
-| 1 チャネル カラー                            | 1 カラー チャネル (8 ビット)                                                | BC4                | Direct3D 10                     |
-| 2 チャネル カラー                            | 2 カラー チャンネル (8 ビット:8 ビット)                                        | BC5                | Direct3D 10                     |
-| 3 チャネル ハイ ダイナミック レンジ (HDR) カラー | 「半」浮動小数点\*の 3 カラー チャネル (16 ビット:16 ビット:16 ビット) | BC6H               | Direct3D 11                     |
-| 3 チャネル カラー、アルファ チャネルはオプション  | 3 カラー チャネル (チャネルあたり 4 ～ 7 ビット)、および 0 ～ 8 ビットのアルファ  | BC7                | Direct3D 11                     |
+| <span data-ttu-id="8ae53-115">3 チャネル カラーおよびアルファ チャネル</span><span class="sxs-lookup"><span data-stu-id="8ae53-115">Three-channel color with alpha channel</span></span>       | <span data-ttu-id="8ae53-116">3 カラー チャネル (5 ビット:6 ビット:5 ビット)、および 0 または 1 ビットのアルファ</span><span class="sxs-lookup"><span data-stu-id="8ae53-116">Three color channels (5 bits:6 bits:5 bits), with 0 or 1 bit(s) of alpha</span></span>  | <span data-ttu-id="8ae53-117">BC1</span><span class="sxs-lookup"><span data-stu-id="8ae53-117">BC1</span></span>                | <span data-ttu-id="8ae53-118">Direct3D 9.1</span><span class="sxs-lookup"><span data-stu-id="8ae53-118">Direct3D 9.1</span></span>                    |
+| <span data-ttu-id="8ae53-119">3 チャネル カラーおよびアルファ チャネル</span><span class="sxs-lookup"><span data-stu-id="8ae53-119">Three-channel color with alpha channel</span></span>       | <span data-ttu-id="8ae53-120">3 カラー チャネル (5 ビット:6 ビット:5 ビット)、および 4 ビットのアルファ</span><span class="sxs-lookup"><span data-stu-id="8ae53-120">Three color channels (5 bits:6 bits:5 bits), with 4 bits of alpha</span></span>         | <span data-ttu-id="8ae53-121">BC2</span><span class="sxs-lookup"><span data-stu-id="8ae53-121">BC2</span></span>                | <span data-ttu-id="8ae53-122">Direct3D 9.1</span><span class="sxs-lookup"><span data-stu-id="8ae53-122">Direct3D 9.1</span></span>                    |
+| <span data-ttu-id="8ae53-123">3 チャネル カラーおよびアルファ チャネル</span><span class="sxs-lookup"><span data-stu-id="8ae53-123">Three-channel color with alpha channel</span></span>       | <span data-ttu-id="8ae53-124">3 カラー チャネル (5 ビット:6 ビット:5 ビット)、および 8 ビットのアルファ</span><span class="sxs-lookup"><span data-stu-id="8ae53-124">Three color channels (5 bits:6 bits:5 bits) with 8 bits of alpha</span></span>          | <span data-ttu-id="8ae53-125">BC3</span><span class="sxs-lookup"><span data-stu-id="8ae53-125">BC3</span></span>                | <span data-ttu-id="8ae53-126">Direct3D 9.1</span><span class="sxs-lookup"><span data-stu-id="8ae53-126">Direct3D 9.1</span></span>                    |
+| <span data-ttu-id="8ae53-127">1 チャネル カラー</span><span class="sxs-lookup"><span data-stu-id="8ae53-127">One-channel color</span></span>                            | <span data-ttu-id="8ae53-128">1 カラー チャネル (8 ビット)</span><span class="sxs-lookup"><span data-stu-id="8ae53-128">One color channel (8 bits)</span></span>                                                | <span data-ttu-id="8ae53-129">BC4</span><span class="sxs-lookup"><span data-stu-id="8ae53-129">BC4</span></span>                | <span data-ttu-id="8ae53-130">Direct3D 10</span><span class="sxs-lookup"><span data-stu-id="8ae53-130">Direct3D 10</span></span>                     |
+| <span data-ttu-id="8ae53-131">2 チャネル カラー</span><span class="sxs-lookup"><span data-stu-id="8ae53-131">Two-channel color</span></span>                            | <span data-ttu-id="8ae53-132">2 カラー チャンネル (8 ビット:8 ビット)</span><span class="sxs-lookup"><span data-stu-id="8ae53-132">Two color channels (8 bits:8 bits)</span></span>                                        | <span data-ttu-id="8ae53-133">BC5</span><span class="sxs-lookup"><span data-stu-id="8ae53-133">BC5</span></span>                | <span data-ttu-id="8ae53-134">Direct3D 10</span><span class="sxs-lookup"><span data-stu-id="8ae53-134">Direct3D 10</span></span>                     |
+| <span data-ttu-id="8ae53-135">3 チャネル ハイ ダイナミック レンジ (HDR) カラー</span><span class="sxs-lookup"><span data-stu-id="8ae53-135">Three-channel high dynamic range (HDR) color</span></span> | <span data-ttu-id="8ae53-136">「半」浮動小数点\*の 3 カラー チャネル (16 ビット:16 ビット:16 ビット)</span><span class="sxs-lookup"><span data-stu-id="8ae53-136">Three color channels (16 bits:16 bits:16 bits) in "half" floating point\*</span></span> | <span data-ttu-id="8ae53-137">BC6H</span><span class="sxs-lookup"><span data-stu-id="8ae53-137">BC6H</span></span>               | <span data-ttu-id="8ae53-138">Direct3D 11</span><span class="sxs-lookup"><span data-stu-id="8ae53-138">Direct3D 11</span></span>                     |
+| <span data-ttu-id="8ae53-139">3 チャネル カラー、アルファ チャネルはオプション</span><span class="sxs-lookup"><span data-stu-id="8ae53-139">Three-channel color, alpha channel optional</span></span>  | <span data-ttu-id="8ae53-140">3 カラー チャネル (チャネルあたり 4 ～ 7 ビット)、および 0 ～ 8 ビットのアルファ</span><span class="sxs-lookup"><span data-stu-id="8ae53-140">Three color channels (4 to 7 bits per channel) with 0 to 8 bits of alpha</span></span>  | <span data-ttu-id="8ae53-141">BC7</span><span class="sxs-lookup"><span data-stu-id="8ae53-141">BC7</span></span>                | <span data-ttu-id="8ae53-142">Direct3D 11</span><span class="sxs-lookup"><span data-stu-id="8ae53-142">Direct3D 11</span></span>                     |
 
  
 
-\*「半」浮動小数点は、オプションの符号ビット、5 ビットのバイアス付き指数部、および 10 または 11 ビットの仮数部からなる 16 ビット値。
-## <a name="span-idbc1bc2andb3formatsspanspan-idbc1bc2andb3formatsspanspan-idbc1bc2andb3formatsspanbc1-bc2-and-b3-formats"></a><span id="BC1__BC2__and_B3_Formats"></span><span id="bc1__bc2__and_b3_formats"></span><span id="BC1__BC2__AND_B3_FORMATS"></span>BC1、BC2、および B3 形式
+<span data-ttu-id="8ae53-143">\*「半」浮動小数点は、オプションの符号ビット、5 ビットのバイアス付き指数部、および 10 または 11 ビットの仮数部からなる 16 ビット値。</span><span class="sxs-lookup"><span data-stu-id="8ae53-143">\*"Half" floating point is a 16 bit value that consists of an optional sign bit, a 5 bit biased exponent, and a 10 or 11 bit mantissa.</span></span>
+## <a name="span-idbc1bc2andb3formatsspanspan-idbc1bc2andb3formatsspanspan-idbc1bc2andb3formatsspanbc1-bc2-and-b3-formats"></a><span data-ttu-id="8ae53-144"><span id="BC1__BC2__and_B3_Formats"></span><span id="bc1__bc2__and_b3_formats"></span><span id="BC1__BC2__AND_B3_FORMATS"></span>BC1、BC2、および B3 形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-144"><span id="BC1__BC2__and_B3_Formats"></span><span id="bc1__bc2__and_b3_formats"></span><span id="BC1__BC2__AND_B3_FORMATS"></span>BC1, BC2, and B3 Formats</span></span>
 
 
-BC1、BC2、および BC3 形式は Direct3D 9 DXTn テクスチャ圧縮形式と等価で、対応する Direct3D 10 BC1、BC2、および BC3 形式と同じです。 これら 3 つの形式のサポートは、すべての機能レベル (D3D\_FEATURE\_LEVEL\_9\_1、D3D\_FEATURE\_LEVEL\_9\_2、D3D\_FEATURE\_LEVEL\_9\_3、D3D\_FEATURE\_LEVEL\_10\_0、D3D\_FEATURE\_LEVEL\_10\_1、および D3D\_FEATURE\_LEVEL\_11\_0) で必要です。
+<span data-ttu-id="8ae53-145">BC1、BC2、および BC3 形式は Direct3D 9 DXTn テクスチャ圧縮形式と等価で、対応する Direct3D 10 BC1、BC2、および BC3 形式と同じです。</span><span class="sxs-lookup"><span data-stu-id="8ae53-145">The BC1, BC2, and BC3 formats are equivalent to the Direct3D 9 DXTn texture compression formats, and are the same as the corresponding Direct3D 10 BC1, BC2, and BC3 formats.</span></span> <span data-ttu-id="8ae53-146">これら 3 つの形式のサポートは、すべての機能レベル (D3D\_FEATURE\_LEVEL\_9\_1、D3D\_FEATURE\_LEVEL\_9\_2、D3D\_FEATURE\_LEVEL\_9\_3、D3D\_FEATURE\_LEVEL\_10\_0、D3D\_FEATURE\_LEVEL\_10\_1、および D3D\_FEATURE\_LEVEL\_11\_0) で必要です。</span><span class="sxs-lookup"><span data-stu-id="8ae53-146">Support for these three formats is required by all feature levels (D3D\_FEATURE\_LEVEL\_9\_1, D3D\_FEATURE\_LEVEL\_9\_2, D3D\_FEATURE\_LEVEL\_9\_3, D3D\_FEATURE\_LEVEL\_10\_0, D3D\_FEATURE\_LEVEL\_10\_1, and D3D\_FEATURE\_LEVEL\_11\_0).</span></span>
 
-| ブロック圧縮形式 | DXGI 形式                                                                           | 相当する Direct3D 9 の形式                               | 4 x 4 のピクセル ブロックあたりのバイト数 |
+| <span data-ttu-id="8ae53-147">ブロック圧縮形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-147">Block compression format</span></span> | <span data-ttu-id="8ae53-148">DXGI 形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-148">DXGI format</span></span>                                                                           | <span data-ttu-id="8ae53-149">相当する Direct3D 9 の形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-149">Direct3D 9 equivalent format</span></span>                               | <span data-ttu-id="8ae53-150">4 x 4 のピクセル ブロックあたりのバイト数</span><span class="sxs-lookup"><span data-stu-id="8ae53-150">Bytes per 4x4 pixel block</span></span> |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------------|---------------------------|
-| BC1                      | DXGI\_FORMAT\_BC1\_UNORM、DXGI\_FORMAT\_BC1\_UNORM\_SRGB、DXGI\_FORMAT\_BC1\_TYPELESS | D3DFMT\_DXT1、FourCC="DXT1"                                | 8                         |
-| BC2                      | DXGI\_FORMAT\_BC2\_UNORM、DXGI\_FORMAT\_BC2\_UNORM\_SRGB、DXGI\_FORMAT\_BC2\_TYPELESS | D3DFMT\_DXT2\*、FourCC="DXT2"、D3DFMT\_DXT3、FourCC="DXT3" | 16                        |
-| BC3                      | DXGI\_FORMAT\_BC3\_UNORM、DXGI\_FORMAT\_BC3\_UNORM\_SRGB、DXGI\_FORMAT\_BC3\_TYPELESS | D3DFMT\_DXT4\*、FourCC="DXT4"、D3DFMT\_DXT5、FourCC="DXT5" | 16                        |
+| <span data-ttu-id="8ae53-151">BC1</span><span class="sxs-lookup"><span data-stu-id="8ae53-151">BC1</span></span>                      | <span data-ttu-id="8ae53-152">DXGI\_FORMAT\_BC1\_UNORM、DXGI\_FORMAT\_BC1\_UNORM\_SRGB、DXGI\_FORMAT\_BC1\_TYPELESS</span><span class="sxs-lookup"><span data-stu-id="8ae53-152">DXGI\_FORMAT\_BC1\_UNORM, DXGI\_FORMAT\_BC1\_UNORM\_SRGB, DXGI\_FORMAT\_BC1\_TYPELESS</span></span> | <span data-ttu-id="8ae53-153">D3DFMT\_DXT1、FourCC="DXT1"</span><span class="sxs-lookup"><span data-stu-id="8ae53-153">D3DFMT\_DXT1, FourCC="DXT1"</span></span>                                | <span data-ttu-id="8ae53-154">8</span><span class="sxs-lookup"><span data-stu-id="8ae53-154">8</span></span>                         |
+| <span data-ttu-id="8ae53-155">BC2</span><span class="sxs-lookup"><span data-stu-id="8ae53-155">BC2</span></span>                      | <span data-ttu-id="8ae53-156">DXGI\_FORMAT\_BC2\_UNORM、DXGI\_FORMAT\_BC2\_UNORM\_SRGB、DXGI\_FORMAT\_BC2\_TYPELESS</span><span class="sxs-lookup"><span data-stu-id="8ae53-156">DXGI\_FORMAT\_BC2\_UNORM, DXGI\_FORMAT\_BC2\_UNORM\_SRGB, DXGI\_FORMAT\_BC2\_TYPELESS</span></span> | <span data-ttu-id="8ae53-157">D3DFMT\_DXT2\*、FourCC="DXT2"、D3DFMT\_DXT3、FourCC="DXT3"</span><span class="sxs-lookup"><span data-stu-id="8ae53-157">D3DFMT\_DXT2\*, FourCC="DXT2", D3DFMT\_DXT3, FourCC="DXT3"</span></span> | <span data-ttu-id="8ae53-158">16</span><span class="sxs-lookup"><span data-stu-id="8ae53-158">16</span></span>                        |
+| <span data-ttu-id="8ae53-159">BC3</span><span class="sxs-lookup"><span data-stu-id="8ae53-159">BC3</span></span>                      | <span data-ttu-id="8ae53-160">DXGI\_FORMAT\_BC3\_UNORM、DXGI\_FORMAT\_BC3\_UNORM\_SRGB、DXGI\_FORMAT\_BC3\_TYPELESS</span><span class="sxs-lookup"><span data-stu-id="8ae53-160">DXGI\_FORMAT\_BC3\_UNORM, DXGI\_FORMAT\_BC3\_UNORM\_SRGB, DXGI\_FORMAT\_BC3\_TYPELESS</span></span> | <span data-ttu-id="8ae53-161">D3DFMT\_DXT4\*、FourCC="DXT4"、D3DFMT\_DXT5、FourCC="DXT5"</span><span class="sxs-lookup"><span data-stu-id="8ae53-161">D3DFMT\_DXT4\*, FourCC="DXT4", D3DFMT\_DXT5, FourCC="DXT5"</span></span> | <span data-ttu-id="8ae53-162">16</span><span class="sxs-lookup"><span data-stu-id="8ae53-162">16</span></span>                        |
 
  
 
-\*これらの圧縮スキーム (DXT2 と DXT4) では、Direct3D 9 プリマルチプライ済みアルファ形式と標準のアルファ形式が区別されません。 これらの区別は、レンダリング時にプログラム可能なシェーダーで処理する必要があります。
+<span data-ttu-id="8ae53-163">\*これらの圧縮スキーム (DXT2 と DXT4) では、Direct3D 9 プリマルチプライ済みアルファ形式と標準のアルファ形式が区別されません。</span><span class="sxs-lookup"><span data-stu-id="8ae53-163">\*These compression schemes (DXT2 and DXT4) make no distinction between the Direct3D 9 pre-multiplied alpha formats and the standard alpha formats.</span></span> <span data-ttu-id="8ae53-164">これらの区別は、レンダリング時にプログラム可能なシェーダーで処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8ae53-164">This distinction must be handled by the programmable shaders at render time.</span></span>
 
-## <a name="span-idbc4andbc5formatsspanspan-idbc4andbc5formatsspanspan-idbc4andbc5formatsspanbc4-and-bc5-formats"></a><span id="BC4_and_BC5_Formats"></span><span id="bc4_and_bc5_formats"></span><span id="BC4_AND_BC5_FORMATS"></span>BC4 および BC5 形式
+## <a name="span-idbc4andbc5formatsspanspan-idbc4andbc5formatsspanspan-idbc4andbc5formatsspanbc4-and-bc5-formats"></a><span data-ttu-id="8ae53-165"><span id="BC4_and_BC5_Formats"></span><span id="bc4_and_bc5_formats"></span><span id="BC4_AND_BC5_FORMATS"></span>BC4 および BC5 形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-165"><span id="BC4_and_BC5_Formats"></span><span id="bc4_and_bc5_formats"></span><span id="BC4_AND_BC5_FORMATS"></span>BC4 and BC5 Formats</span></span>
 
 
-| ブロック圧縮形式 | DXGI 形式                                                                     | 相当する Direct3D 9 の形式 | 4 x 4 のピクセル ブロックあたりのバイト数 |
+| <span data-ttu-id="8ae53-166">ブロック圧縮形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-166">Block compression format</span></span> | <span data-ttu-id="8ae53-167">DXGI 形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-167">DXGI format</span></span>                                                                     | <span data-ttu-id="8ae53-168">相当する Direct3D 9 の形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-168">Direct3D 9 equivalent format</span></span> | <span data-ttu-id="8ae53-169">4 x 4 のピクセル ブロックあたりのバイト数</span><span class="sxs-lookup"><span data-stu-id="8ae53-169">Bytes per 4x4 pixel block</span></span> |
 |--------------------------|---------------------------------------------------------------------------------|------------------------------|---------------------------|
-| BC4                      | DXGI\_FORMAT\_BC4\_UNORM、DXGI\_FORMAT\_BC4\_SNORM、DXGI\_FORMAT\_BC4\_TYPELESS | FourCC="ATI1"                | 8                         |
-| BC5                      | DXGI\_FORMAT\_BC5\_UNORM、DXGI\_FORMAT\_BC5\_SNORM、DXGI\_FORMAT\_BC5\_TYPELESS | FourCC="ATI2"                | 16                        |
+| <span data-ttu-id="8ae53-170">BC4</span><span class="sxs-lookup"><span data-stu-id="8ae53-170">BC4</span></span>                      | <span data-ttu-id="8ae53-171">DXGI\_FORMAT\_BC4\_UNORM、DXGI\_FORMAT\_BC4\_SNORM、DXGI\_FORMAT\_BC4\_TYPELESS</span><span class="sxs-lookup"><span data-stu-id="8ae53-171">DXGI\_FORMAT\_BC4\_UNORM, DXGI\_FORMAT\_BC4\_SNORM, DXGI\_FORMAT\_BC4\_TYPELESS</span></span> | <span data-ttu-id="8ae53-172">FourCC="ATI1"</span><span class="sxs-lookup"><span data-stu-id="8ae53-172">FourCC="ATI1"</span></span>                | <span data-ttu-id="8ae53-173">8</span><span class="sxs-lookup"><span data-stu-id="8ae53-173">8</span></span>                         |
+| <span data-ttu-id="8ae53-174">BC5</span><span class="sxs-lookup"><span data-stu-id="8ae53-174">BC5</span></span>                      | <span data-ttu-id="8ae53-175">DXGI\_FORMAT\_BC5\_UNORM、DXGI\_FORMAT\_BC5\_SNORM、DXGI\_FORMAT\_BC5\_TYPELESS</span><span class="sxs-lookup"><span data-stu-id="8ae53-175">DXGI\_FORMAT\_BC5\_UNORM, DXGI\_FORMAT\_BC5\_SNORM, DXGI\_FORMAT\_BC5\_TYPELESS</span></span> | <span data-ttu-id="8ae53-176">FourCC="ATI2"</span><span class="sxs-lookup"><span data-stu-id="8ae53-176">FourCC="ATI2"</span></span>                | <span data-ttu-id="8ae53-177">16</span><span class="sxs-lookup"><span data-stu-id="8ae53-177">16</span></span>                        |
 
  
 
-## <a name="span-idbc6hformatspanspan-idbc6hformatspanspan-idbc6hformatspanbc6h-format"></a><span id="BC6H_Format"></span><span id="bc6h_format"></span><span id="BC6H_FORMAT"></span>BC6H 形式
+## <a name="span-idbc6hformatspanspan-idbc6hformatspanspan-idbc6hformatspanbc6h-format"></a><span data-ttu-id="8ae53-178"><span id="BC6H_Format"></span><span id="bc6h_format"></span><span id="BC6H_FORMAT"></span>BC6H 形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-178"><span id="BC6H_Format"></span><span id="bc6h_format"></span><span id="BC6H_FORMAT"></span>BC6H Format</span></span>
 
 
-この形式については詳しくは、「[BC6H 形式](https://msdn.microsoft.com/library/windows/desktop/hh308952)」をご覧ください。
+<span data-ttu-id="8ae53-179">この形式については詳しくは、「[BC6H 形式](https://msdn.microsoft.com/library/windows/desktop/hh308952)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="8ae53-179">For more detailed information about this format, see the [BC6H Format](https://msdn.microsoft.com/library/windows/desktop/hh308952) documentation.</span></span>
 
-| ブロック圧縮形式 | DXGI 形式                                                                      | 相当する Direct3D 9 の形式 | 4 x 4 のピクセル ブロックあたりのバイト数 |
+| <span data-ttu-id="8ae53-180">ブロック圧縮形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-180">Block compression format</span></span> | <span data-ttu-id="8ae53-181">DXGI 形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-181">DXGI format</span></span>                                                                      | <span data-ttu-id="8ae53-182">相当する Direct3D 9 の形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-182">Direct3D 9 equivalent format</span></span> | <span data-ttu-id="8ae53-183">4 x 4 のピクセル ブロックあたりのバイト数</span><span class="sxs-lookup"><span data-stu-id="8ae53-183">Bytes per 4x4 pixel block</span></span> |
 |--------------------------|----------------------------------------------------------------------------------|------------------------------|---------------------------|
-| BC6H                     | DXGI\_FORMAT\_BC6H\_UF16、DXGI\_FORMAT\_BC6H\_SF16、DXGI\_FORMAT\_BC6H\_TYPELESS | 該当なし                          | 16                        |
+| <span data-ttu-id="8ae53-184">BC6H</span><span class="sxs-lookup"><span data-stu-id="8ae53-184">BC6H</span></span>                     | <span data-ttu-id="8ae53-185">DXGI\_FORMAT\_BC6H\_UF16、DXGI\_FORMAT\_BC6H\_SF16、DXGI\_FORMAT\_BC6H\_TYPELESS</span><span class="sxs-lookup"><span data-stu-id="8ae53-185">DXGI\_FORMAT\_BC6H\_UF16, DXGI\_FORMAT\_BC6H\_SF16, DXGI\_FORMAT\_BC6H\_TYPELESS</span></span> | <span data-ttu-id="8ae53-186">該当なし</span><span class="sxs-lookup"><span data-stu-id="8ae53-186">N/A</span></span>                          | <span data-ttu-id="8ae53-187">16</span><span class="sxs-lookup"><span data-stu-id="8ae53-187">16</span></span>                        |
 
  
 
-BC6H 形式では、4 x 4 のピクセル ブロックごとに異なるエンコード モードを選択できます。 全部で 14 種類のエンコード モードを利用でき、それぞれのモードには、表示されるテクスチャの画質に少しずつ異なるトレードオフがあります。 モードの選択によって、ソース コンテンツに合わせて品質レベルを選択または適合させたハードウェアで高速デコードできますが、検索領域の複雑さも大幅に増加します。
+<span data-ttu-id="8ae53-188">BC6H 形式では、4 x 4 のピクセル ブロックごとに異なるエンコード モードを選択できます。</span><span class="sxs-lookup"><span data-stu-id="8ae53-188">The BC6H format can select different encoding modes for each 4x4 pixel block.</span></span> <span data-ttu-id="8ae53-189">全部で 14 種類のエンコード モードを利用でき、それぞれのモードには、表示されるテクスチャの画質に少しずつ異なるトレードオフがあります。</span><span class="sxs-lookup"><span data-stu-id="8ae53-189">A total of 14 different encoding modes are available, each with slightly different trade-offs in the resulting visual quality of the displayed texture.</span></span> <span data-ttu-id="8ae53-190">モードの選択によって、ソース コンテンツに合わせて品質レベルを選択または適合させたハードウェアで高速デコードできますが、検索領域の複雑さも大幅に増加します。</span><span class="sxs-lookup"><span data-stu-id="8ae53-190">The choice of modes allows for fast decoding by the hardware with the quality level selected or adapted according to the source content, but it also greatly increases the complexity of the search space.</span></span>
 
-## <a name="span-idbc7formatspanspan-idbc7formatspanspan-idbc7formatspanbc7-format"></a><span id="BC7_Format"></span><span id="bc7_format"></span><span id="BC7_FORMAT"></span>BC7 形式
+## <a name="span-idbc7formatspanspan-idbc7formatspanspan-idbc7formatspanbc7-format"></a><span data-ttu-id="8ae53-191"><span id="BC7_Format"></span><span id="bc7_format"></span><span id="BC7_FORMAT"></span>BC7 形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-191"><span id="BC7_Format"></span><span id="bc7_format"></span><span id="BC7_FORMAT"></span>BC7 Format</span></span>
 
 
-この形式については詳しくは、「[BC7 形式](https://msdn.microsoft.com/library/windows/desktop/hh308953)」をご覧ください。
+<span data-ttu-id="8ae53-192">この形式については詳しくは、「[BC7 形式](https://msdn.microsoft.com/library/windows/desktop/hh308953)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="8ae53-192">For more detailed information about this format, see the [BC7 Format](https://msdn.microsoft.com/library/windows/desktop/hh308953) documentation.</span></span>
 
-| ブロック圧縮形式 | DXGI 形式                                                                           | 相当する Direct3D 9 の形式 | 4 x 4 のピクセル ブロックあたりのバイト数 |
+| <span data-ttu-id="8ae53-193">ブロック圧縮形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-193">Block compression format</span></span> | <span data-ttu-id="8ae53-194">DXGI 形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-194">DXGI format</span></span>                                                                           | <span data-ttu-id="8ae53-195">相当する Direct3D 9 の形式</span><span class="sxs-lookup"><span data-stu-id="8ae53-195">Direct3D 9 equivalent format</span></span> | <span data-ttu-id="8ae53-196">4 x 4 のピクセル ブロックあたりのバイト数</span><span class="sxs-lookup"><span data-stu-id="8ae53-196">Bytes per 4x4 pixel block</span></span> |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------|---------------------------|
-| BC7                      | DXGI\_FORMAT\_BC7\_UNORM、DXGI\_FORMAT\_BC7\_UNORM\_SRGB、DXGI\_FORMAT\_BC7\_TYPELESS | 該当なし                          | 16                        |
+| <span data-ttu-id="8ae53-197">BC7</span><span class="sxs-lookup"><span data-stu-id="8ae53-197">BC7</span></span>                      | <span data-ttu-id="8ae53-198">DXGI\_FORMAT\_BC7\_UNORM、DXGI\_FORMAT\_BC7\_UNORM\_SRGB、DXGI\_FORMAT\_BC7\_TYPELESS</span><span class="sxs-lookup"><span data-stu-id="8ae53-198">DXGI\_FORMAT\_BC7\_UNORM, DXGI\_FORMAT\_BC7\_UNORM\_SRGB, DXGI\_FORMAT\_BC7\_TYPELESS</span></span> | <span data-ttu-id="8ae53-199">該当なし</span><span class="sxs-lookup"><span data-stu-id="8ae53-199">N/A</span></span>                          | <span data-ttu-id="8ae53-200">16</span><span class="sxs-lookup"><span data-stu-id="8ae53-200">16</span></span>                        |
 
  
 
-BC7 形式では、4 x 4 のピクセル ブロックごとに異なるエンコード モードを選択できます。 全部で 8 種類のエンコード モードを利用でき、それぞれのモードには、表示されるテクスチャの画質に少しずつ異なるトレードオフがあります。 モードの選択によって、ソース コンテンツに合わせて品質レベルを選択または適合させたハードウェアで高速デコードできますが、検索領域の複雑さも大幅に増加します。
+<span data-ttu-id="8ae53-201">BC7 形式では、4 x 4 のピクセル ブロックごとに異なるエンコード モードを選択できます。</span><span class="sxs-lookup"><span data-stu-id="8ae53-201">The BC7 format can select different encoding modes for each 4x4 pixel block.</span></span> <span data-ttu-id="8ae53-202">全部で 8 種類のエンコード モードを利用でき、それぞれのモードには、表示されるテクスチャの画質に少しずつ異なるトレードオフがあります。</span><span class="sxs-lookup"><span data-stu-id="8ae53-202">A total of 8 different encoding modes are available, each with slightly different trade-offs in the resulting visual quality of the displayed texture.</span></span> <span data-ttu-id="8ae53-203">モードの選択によって、ソース コンテンツに合わせて品質レベルを選択または適合させたハードウェアで高速デコードできますが、検索領域の複雑さも大幅に増加します。</span><span class="sxs-lookup"><span data-stu-id="8ae53-203">The choice of modes allows for fast decoding by the hardware with the quality level selected or adapted according to the source content, but it also greatly increases the complexity of the search space.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="8ae53-204"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="8ae53-204"><span id="related-topics"></span>Related topics</span></span>
 
 
-[付録](appendix.md)
+[<span data-ttu-id="8ae53-205">付録</span><span class="sxs-lookup"><span data-stu-id="8ae53-205">Appendices</span></span>](appendix.md)
 
-[テクスチャ](https://msdn.microsoft.com/library/windows/desktop/ff476902)
-
- 
+[<span data-ttu-id="8ae53-206">テクスチャ</span><span class="sxs-lookup"><span data-stu-id="8ae53-206">Textures</span></span>](https://msdn.microsoft.com/library/windows/desktop/ff476902)
 
  
 
+ 
 
 
 

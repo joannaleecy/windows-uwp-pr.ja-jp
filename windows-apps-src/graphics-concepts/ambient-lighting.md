@@ -1,66 +1,67 @@
 ---
-title: "環境光"
-description: "環境光は、シーンに一定のライティングを付加します。"
+title: 環境光
+description: 環境光は、シーンに一定のライティングを付加します。
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
 keywords:
-- "環境光"
-author: PeterTurcan
-ms.author: pettur
+- 環境光
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 77865a483f226fba912c03e2f9abe17eaa7fbee0
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 08b44ae8348e7b9d1d8dff0b98e5f1c553ec79b2
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044131"
 ---
+# <a name="ambient-lighting"></a><span data-ttu-id="836a3-104">環境光</span><span class="sxs-lookup"><span data-stu-id="836a3-104">Ambient lighting</span></span>
 
-# <a name="ambient-lighting"></a>環境光
 
+<span data-ttu-id="836a3-105">環境光は、シーンに一定のライティングを付加します。</span><span class="sxs-lookup"><span data-stu-id="836a3-105">Ambient lighting provides constant lighting for a scene.</span></span> <span data-ttu-id="836a3-106">頂点法線、光の方向、光の位置、減衰などの他の照明要素に依存していないため、すべてのオブジェクト頂点を同じように照らします。</span><span class="sxs-lookup"><span data-stu-id="836a3-106">It lights all object vertices the same because it is not dependent on any other lighting factors such as vertex normals, light direction, light position, range, or attenuation.</span></span> <span data-ttu-id="836a3-107">環境光は、すべての方向において一定であり、オブジェクトのすべてのピクセルが同じように色付けされます。</span><span class="sxs-lookup"><span data-stu-id="836a3-107">Ambient lighting is constant in all directions and it colors all pixels of an object the same.</span></span> <span data-ttu-id="836a3-108">計算は高速ですが、オブジェクトはフラットに見え、リアル感が劣ります。</span><span class="sxs-lookup"><span data-stu-id="836a3-108">It is fast to calculate but leaves objects looking flat and unrealistic.</span></span>
 
-環境光は、シーンに一定のライティングを付加します。 このライティングは、頂点法線、ライトの方向、ライトの位置、範囲、減衰などのライティング要因に依存しないため、すべてのオブジェクトの頂点を同じように照らします。 環境光はすべての方向で一定であり、オブジェクトのすべてのピクセルを同じ色にします。 計算は高速ですが、オブジェクトはフラットに見え、リアル感が劣ります。
+<span data-ttu-id="836a3-109">環境光は最も短時間で実現できるライティングですが、リアル感は最も劣ります。</span><span class="sxs-lookup"><span data-stu-id="836a3-109">Ambient lighting is the fastest type of lighting but it produces the least realistic results.</span></span> <span data-ttu-id="836a3-110">Direct3D には、ライトを作成せずに使用できる 1 つのグローバル環境光プロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="836a3-110">Direct3D contains a single global ambient light property that you can use without creating any light.</span></span> <span data-ttu-id="836a3-111">または、任意のライト オブジェクトを設定して、環境光を実現することもできます。</span><span class="sxs-lookup"><span data-stu-id="836a3-111">Alternatively, you can set any light object to provide ambient lighting.</span></span>
 
-環境光は最も短時間で実現できるライティングですが、リアル感は最も劣ります。 Direct3D には、ライトを作成せずに使用できる 1 つのグローバル環境光プロパティがあります。 または、任意のライト オブジェクトを設定して、環境光を実現することもできます。
+<span data-ttu-id="836a3-112">シーンの環境光は、次の式で表されます。</span><span class="sxs-lookup"><span data-stu-id="836a3-112">The ambient lighting for a scene is described by the following equation.</span></span>
 
-シーンの環境光は、次の式で表されます。
+<span data-ttu-id="836a3-113">Ambient Lighting = Cₐ\*\[Gₐ + sum(Atten<sub>i</sub>\*Spot<sub>i</sub>\*L<sub>ai</sub>)\]</span><span class="sxs-lookup"><span data-stu-id="836a3-113">Ambient Lighting = Cₐ\*\[Gₐ + sum(Atten<sub>i</sub>\*Spot<sub>i</sub>\*L<sub>ai</sub>)\]</span></span>
 
-Ambient Lighting = Cₐ\*\[Gₐ + sum(Atten<sub>i</sub>\*Spot<sub>i</sub>\*L<sub>ai</sub>)\]
+<span data-ttu-id="836a3-114">この場合</span><span class="sxs-lookup"><span data-stu-id="836a3-114">Where:</span></span>
 
-この場合
-
-| パラメーター         | 既定値 | 型          | 説明                                                                                                       |
+| <span data-ttu-id="836a3-115">パラメーター</span><span class="sxs-lookup"><span data-stu-id="836a3-115">Parameter</span></span>         | <span data-ttu-id="836a3-116">既定値</span><span class="sxs-lookup"><span data-stu-id="836a3-116">Default value</span></span> | <span data-ttu-id="836a3-117">種類</span><span class="sxs-lookup"><span data-stu-id="836a3-117">Type</span></span>          | <span data-ttu-id="836a3-118">説明</span><span class="sxs-lookup"><span data-stu-id="836a3-118">Description</span></span>                                                                                                       |
 |-------------------|---------------|---------------|-------------------------------------------------------------------------------------------------------------------|
-| Cₐ                | (0,0,0,0)     | D3DCOLORVALUE | マテリアルのアンビエント色                                                                                            |
-| Gₐ                | (0,0,0,0)     | D3DCOLORVALUE | グローバル アンビエント色                                                                                              |
-| Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | i 番目のライトの減衰。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」をご覧ください。 |
-| Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | i 番目のライトのスポットライト係数。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」をご覧ください。  |
-| sum               | なし           | なし           | 環境光の合計                                                                                          |
-| L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | i 番目のライトのアンビエント色                                                                              |
+| <span data-ttu-id="836a3-119">Cₐ</span><span class="sxs-lookup"><span data-stu-id="836a3-119">Cₐ</span></span>                | <span data-ttu-id="836a3-120">(0,0,0,0)</span><span class="sxs-lookup"><span data-stu-id="836a3-120">(0,0,0,0)</span></span>     | <span data-ttu-id="836a3-121">D3DCOLORVALUE</span><span class="sxs-lookup"><span data-stu-id="836a3-121">D3DCOLORVALUE</span></span> | <span data-ttu-id="836a3-122">マテリアルのアンビエント色</span><span class="sxs-lookup"><span data-stu-id="836a3-122">Material ambient color</span></span>                                                                                            |
+| <span data-ttu-id="836a3-123">Gₐ</span><span class="sxs-lookup"><span data-stu-id="836a3-123">Gₐ</span></span>                | <span data-ttu-id="836a3-124">(0,0,0,0)</span><span class="sxs-lookup"><span data-stu-id="836a3-124">(0,0,0,0)</span></span>     | <span data-ttu-id="836a3-125">D3DCOLORVALUE</span><span class="sxs-lookup"><span data-stu-id="836a3-125">D3DCOLORVALUE</span></span> | <span data-ttu-id="836a3-126">グローバル アンビエント色</span><span class="sxs-lookup"><span data-stu-id="836a3-126">Global ambient color</span></span>                                                                                              |
+| <span data-ttu-id="836a3-127">Atten<sub>i</sub></span><span class="sxs-lookup"><span data-stu-id="836a3-127">Atten<sub>i</sub></span></span> | <span data-ttu-id="836a3-128">(0,0,0,0)</span><span class="sxs-lookup"><span data-stu-id="836a3-128">(0,0,0,0)</span></span>     | <span data-ttu-id="836a3-129">D3DCOLORVALUE</span><span class="sxs-lookup"><span data-stu-id="836a3-129">D3DCOLORVALUE</span></span> | <span data-ttu-id="836a3-130">i 番目のライトの減衰。</span><span class="sxs-lookup"><span data-stu-id="836a3-130">Light attenuation of the ith light.</span></span> <span data-ttu-id="836a3-131">「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="836a3-131">See [Attenuation and spotlight factor](attenuation-and-spotlight-factor.md).</span></span> |
+| <span data-ttu-id="836a3-132">Spot<sub>i</sub></span><span class="sxs-lookup"><span data-stu-id="836a3-132">Spot<sub>i</sub></span></span>  | <span data-ttu-id="836a3-133">(0,0,0,0)</span><span class="sxs-lookup"><span data-stu-id="836a3-133">(0,0,0,0)</span></span>     | <span data-ttu-id="836a3-134">D3DVECTOR</span><span class="sxs-lookup"><span data-stu-id="836a3-134">D3DVECTOR</span></span>     | <span data-ttu-id="836a3-135">i 番目のライトのスポットライト係数。</span><span class="sxs-lookup"><span data-stu-id="836a3-135">Spotlight factor of the ith light.</span></span> <span data-ttu-id="836a3-136">「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="836a3-136">See [Attenuation and spotlight factor](attenuation-and-spotlight-factor.md).</span></span>  |
+| <span data-ttu-id="836a3-137">sum</span><span class="sxs-lookup"><span data-stu-id="836a3-137">sum</span></span>               | <span data-ttu-id="836a3-138">該当なし</span><span class="sxs-lookup"><span data-stu-id="836a3-138">N/A</span></span>           | <span data-ttu-id="836a3-139">なし</span><span class="sxs-lookup"><span data-stu-id="836a3-139">N/A</span></span>           | <span data-ttu-id="836a3-140">環境光の合計</span><span class="sxs-lookup"><span data-stu-id="836a3-140">Sum of the ambient light</span></span>                                                                                          |
+| <span data-ttu-id="836a3-141">L<sub>ai</sub></span><span class="sxs-lookup"><span data-stu-id="836a3-141">L<sub>ai</sub></span></span>    | <span data-ttu-id="836a3-142">(0,0,0,0)</span><span class="sxs-lookup"><span data-stu-id="836a3-142">(0,0,0,0)</span></span>     | <span data-ttu-id="836a3-143">D3DVECTOR</span><span class="sxs-lookup"><span data-stu-id="836a3-143">D3DVECTOR</span></span>     | <span data-ttu-id="836a3-144">i 番目のライトのアンビエント色</span><span class="sxs-lookup"><span data-stu-id="836a3-144">Light ambient color of the ith light</span></span>                                                                              |
 
  
 
-Cₐ の値は、次のいずれかになります。
+<span data-ttu-id="836a3-145">Cₐ の値は、次のいずれかになります。</span><span class="sxs-lookup"><span data-stu-id="836a3-145">The value for Cₐ is either:</span></span>
 
--   AMBIENTMATERIALSOURCE = D3DMCS\_COLOR1 で、1 つ目の頂点色が頂点の宣言で指定されている場合は、頂点色 1。
--   AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2 で、2 つ目の頂点色が頂点の宣言で指定されている場合は、頂点色 2。
--   マテリアルのアンビエント色。
+-   <span data-ttu-id="836a3-146">AMBIENTMATERIALSOURCE = D3DMCS\_COLOR1 で、1 つ目の頂点色が頂点の宣言で指定されている場合は、頂点色 1。</span><span class="sxs-lookup"><span data-stu-id="836a3-146">vertex color1, if AMBIENTMATERIALSOURCE = D3DMCS\_COLOR1, and the first vertex color is supplied in the vertex declaration.</span></span>
+-   <span data-ttu-id="836a3-147">AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2 で、2 つ目の頂点色が頂点の宣言で指定されている場合は、頂点色 2。</span><span class="sxs-lookup"><span data-stu-id="836a3-147">vertex color2, if AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2, and the second vertex color is supplied in vertex declaration.</span></span>
+-   <span data-ttu-id="836a3-148">マテリアルのアンビエント色。</span><span class="sxs-lookup"><span data-stu-id="836a3-148">material ambient color.</span></span>
 
-**注:** AMBIENTMATERIALSOURCE オプションが使用されていて、頂点色が指定されていない場合は、マテリアルのアンビエント色が使用されます。
+<span data-ttu-id="836a3-149">**注:** AMBIENTMATERIALSOURCE オプションが使用されていて、頂点色が指定されていない場合は、マテリアルのアンビエント色が使用されます。</span><span class="sxs-lookup"><span data-stu-id="836a3-149">**Note**   If either AMBIENTMATERIALSOURCE option is used, and the vertex color is not provided, then the material ambient color is used.</span></span>
 
  
 
-マテリアルのアンビエント色を使用するには、下記のコード例に示すように、SetMaterial を使用します。
+<span data-ttu-id="836a3-150">マテリアルのアンビエント色を使用するには、下記のコード例に示すように、SetMaterial を使用します。</span><span class="sxs-lookup"><span data-stu-id="836a3-150">To use the material ambient color, use SetMaterial as shown in the example code below.</span></span>
 
-Gₐ は、グローバル アンビエント色です。 これは SetRenderState(D3DRS\_AMBIENT) を使用して設定します。 Direct3D のシーンには、グローバル アンビエント色が 1 つあります。 このパラメーターは、Direct3D のライト オブジェクトには対応していません。
+<span data-ttu-id="836a3-151">Gₐ は、グローバル アンビエント色です。</span><span class="sxs-lookup"><span data-stu-id="836a3-151">Gₐ is the global ambient color.</span></span> <span data-ttu-id="836a3-152">これは SetRenderState(D3DRS\_AMBIENT) を使用して設定します。</span><span class="sxs-lookup"><span data-stu-id="836a3-152">It is set using SetRenderState(D3DRS\_AMBIENT).</span></span> <span data-ttu-id="836a3-153">Direct3D のシーンには、グローバル アンビエント色が 1 つあります。</span><span class="sxs-lookup"><span data-stu-id="836a3-153">There is one global ambient color in a Direct3D scene.</span></span> <span data-ttu-id="836a3-154">このパラメーターは、Direct3D のライト オブジェクトには対応していません。</span><span class="sxs-lookup"><span data-stu-id="836a3-154">This parameter is not associated with a Direct3D light object.</span></span>
 
-L<sub>ai</sub> は、シーンの i 番目のアンビエント色です。 各 Direct3D のライトには一連のプロパティがあり、その 1 つがアンビエント色です。 sum(L<sub>ai</sub>) の項は、シーン内のすべてのアンビエント色の合計です。
+<span data-ttu-id="836a3-155">L<sub>ai</sub> は、シーンの i 番目のアンビエント色です。</span><span class="sxs-lookup"><span data-stu-id="836a3-155">L<sub>ai</sub> is the ambient color of the ith light in the scene.</span></span> <span data-ttu-id="836a3-156">各 Direct3D のライトには一連のプロパティがあり、その 1 つがアンビエント色です。</span><span class="sxs-lookup"><span data-stu-id="836a3-156">Each Direct3D light has a set of properties, one of which is the ambient color.</span></span> <span data-ttu-id="836a3-157">sum(L<sub>ai</sub>) の項は、シーン内のすべてのアンビエント色の合計です。</span><span class="sxs-lookup"><span data-stu-id="836a3-157">The term, sum(L<sub>ai</sub>) is a sum of all the ambient colors in the scene.</span></span>
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span data-ttu-id="836a3-158"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例</span><span class="sxs-lookup"><span data-stu-id="836a3-158"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example</span></span>
 
 
-この例では、シーンの環境光とマテリアルのアンビエント色を使用してオブジェクトに色を付けています。
+<span data-ttu-id="836a3-159">この例では、シーンの環境光とマテリアルのアンビエント色を使用してオブジェクトに色を付けています。</span><span class="sxs-lookup"><span data-stu-id="836a3-159">In this example, the object is colored using the scene ambient light and a material ambient color.</span></span>
 
 ```
 #define GRAY_COLOR  0x00bfbfbf
@@ -71,27 +72,26 @@ Ambient.b = 0.0f;
 Ambient.a = 0.0f;
 ```
 
-この式では、生成されるオブジェクトの頂点の色は、マテリアルの色とライトの色の組み合わせになります。
+<span data-ttu-id="836a3-160">この式では、生成されるオブジェクトの頂点の色は、マテリアルの色とライトの色の組み合わせになります。</span><span class="sxs-lookup"><span data-stu-id="836a3-160">According to the equation, the resulting color for the object vertices is a combination of the material color and the light color.</span></span>
 
-次の 2 つのイメージは、マテリアルの色がグレーで、ライトの色が明るい赤であることを示しています。
+<span data-ttu-id="836a3-161">次の 2 つのイメージは、マテリアルの色がグレーで、ライトの色が明るい赤であることを示しています。</span><span class="sxs-lookup"><span data-stu-id="836a3-161">The following two illustrations show the material color, which is gray, and the light color, which is bright red.</span></span>
 
 ![グレーの球体の図](images/amb1.jpg)![赤の球体の図](images/lightred.jpg)
 
-結果として作成されるシーンは、次のようになります。 シーン内の唯一のオブジェクトは球です。 環境光は、すべてのオブジェクトの頂点を同じ色で照らします。 頂点の法線やライトの方向には依存しません。 その結果、オブジェクトのサーフェスの周囲にシェーディングの差が生じないため、球体は 2D の円のように見えます。
+<span data-ttu-id="836a3-164">結果として作成されるシーンは、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="836a3-164">The resulting scene is shown in the following illustration.</span></span> <span data-ttu-id="836a3-165">シーン内の唯一のオブジェクトは球です。</span><span class="sxs-lookup"><span data-stu-id="836a3-165">The only object in the scene is a sphere.</span></span> <span data-ttu-id="836a3-166">環境光は、すべてのオブジェクトの頂点を同じ色で照らします。</span><span class="sxs-lookup"><span data-stu-id="836a3-166">Ambient light lights all object vertices with the same color.</span></span> <span data-ttu-id="836a3-167">頂点の法線やライトの方向には依存しません。</span><span class="sxs-lookup"><span data-stu-id="836a3-167">It is not dependent on the vertex normal or the light direction.</span></span> <span data-ttu-id="836a3-168">その結果、オブジェクトのサーフェスの周囲にシェーディングの差が生じないため、球体は 2D の円のように見えます。</span><span class="sxs-lookup"><span data-stu-id="836a3-168">As a result, the sphere looks like a 2D circle because there is no difference in shading around the surface of the object.</span></span>
 
 ![環境光のある球体の図](images/lighta.jpg)
 
-オブジェクトをよりリアルに見せるには、環境光に加えて、ディフューズ ライティングやスペキュラ ライティングを適用します。
+<span data-ttu-id="836a3-170">オブジェクトをよりリアルに見せるには、環境光に加えて、ディフューズ ライティングやスペキュラ ライティングを適用します。</span><span class="sxs-lookup"><span data-stu-id="836a3-170">To give objects a more realistic look, apply diffuse or specular lighting in addition to ambient lighting.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="836a3-171"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="836a3-171"><span id="related-topics"></span>Related topics</span></span>
 
 
-[光源の計算](mathematics-of-lighting.md)
-
- 
+[<span data-ttu-id="836a3-172">光源の計算</span><span class="sxs-lookup"><span data-stu-id="836a3-172">Mathematics of lighting</span></span>](mathematics-of-lighting.md)
 
  
 
+ 
 
 
 

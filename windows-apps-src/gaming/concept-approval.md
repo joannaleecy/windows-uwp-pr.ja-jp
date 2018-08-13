@@ -1,19 +1,20 @@
 ---
 author: eliotcowley
-title: "概念の承認"
-description: "概念の承認を受けるために製品を提出する方法について説明します。概念の承認は、製品が Xbox で実行されるか、Xbox Live を使用する場合に必要になります。"
+title: 概念の承認
+description: 概念の承認を受けるために製品を提出する方法について説明します。概念の承認は、製品が Xbox で実行されるか、Xbox Live を使用する場合に必要になります。
 ms.assetid: 850ec988-761b-49d8-9508-da8a83108de3
 ms.author: elcowle
 ms.date: 06/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、概念の承認"
+keywords: Windows 10、UWP、概念の承認
 ms.openlocfilehash: f49e27ad5753a8f4074ca3b55bd7cde47a7e6600
 ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/26/2017
+ms.locfileid: "693028"
 ---
 # <a name="concept-approval"></a><span data-ttu-id="f0bcb-104">概念の承認</span><span class="sxs-lookup"><span data-stu-id="f0bcb-104">Concept approval</span></span>
 

@@ -1,93 +1,93 @@
 ---
-title: "光源の種類"
-description: "光源の種類プロパティは、使う光源の種類を定義します。 Direct3D には 3 種類の光源 (ポイント ライト、スポットライト、指向性ライト) があります。"
+title: 光源の種類
+description: 光源の種類プロパティは、使う光源の種類を定義します。 Direct3D には 3 種類の光源 (ポイント ライト、スポットライト、指向性ライト) があります。
 ms.assetid: 57748CAF-6F08-4D1D-9ED6-8FAA8C5FE314
 keywords:
-- "光源の種類"
-author: PeterTurcan
-ms.author: pettur
+- 光源の種類
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 52edfb04924dcb35f71c638c173c319430c5d97e
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: f3dd8397f92137bbd934b2f5835de703f05c2000
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1044681"
 ---
-
-# <a name="light-types"></a>光源の種類
-
-
-光源の種類プロパティは、使う光源の種類を定義します。 Direct3D には 3 種類の光源 (ポイント ライト、スポットライト、指向性ライト) があります。 シーン内のオブジェクトを照らす方法は種類ごとに異なっており、計算オーバーヘッドのレベルも異なります。
-
-## <a name="span-idpointlightspanspan-idpointlightspanspan-idpointlightspanpoint-light"></a><span id="Point_Light"></span><span id="point_light"></span><span id="POINT_LIGHT"></span>ポイント ライト
+# <a name="light-types"></a><span data-ttu-id="3c19d-105">光源の種類</span><span class="sxs-lookup"><span data-stu-id="3c19d-105">Light types</span></span>
 
 
-ポイント ライトには、シーン内の色と位置がありますが、単一の方向はありません。 次の図に示すように、あらゆる方向に光を均等に放射します。
+<span data-ttu-id="3c19d-106">光源の種類プロパティは、使う光源の種類を定義します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-106">The light type property defines which type of light source you're using.</span></span> <span data-ttu-id="3c19d-107">Direct3D には 3 種類の光源 (ポイント ライト、スポットライト、指向性ライト) があります。</span><span class="sxs-lookup"><span data-stu-id="3c19d-107">There are three types of lights in Direct3D - point lights, spotlights, and directional lights.</span></span> <span data-ttu-id="3c19d-108">シーン内のオブジェクトを照らす方法は種類ごとに異なっており、計算オーバーヘッドのレベルも異なります。</span><span class="sxs-lookup"><span data-stu-id="3c19d-108">Each type illuminates objects in a scene differently, with varying levels of computational overhead.</span></span>
+
+## <a name="span-idpointlightspanspan-idpointlightspanspan-idpointlightspanpoint-light"></a><span data-ttu-id="3c19d-109"><span id="Point_Light"></span><span id="point_light"></span><span id="POINT_LIGHT"></span>ポイント ライト</span><span class="sxs-lookup"><span data-stu-id="3c19d-109"><span id="Point_Light"></span><span id="point_light"></span><span id="POINT_LIGHT"></span>Point Light</span></span>
+
+
+<span data-ttu-id="3c19d-110">ポイント ライトには、シーン内の色と位置がありますが、単一の方向はありません。</span><span class="sxs-lookup"><span data-stu-id="3c19d-110">Point lights have color and position within a scene, but no single direction.</span></span> <span data-ttu-id="3c19d-111">次の図に示すように、あらゆる方向に光を均等に放射します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-111">They give off light equally in all directions, as shown in the following illustration.</span></span>
 
 ![ポイント ライトの図](images/ptlight.png)
 
-ライト バルブは、ポイント ライトの良い例です。 ポイント ライトは、減衰と範囲の影響を受け、頂点単位でメッシュを照らします。 照射時、Direct3D はワールド空間におけるポイント ライトの位置と照射する頂点の座標を使って、光の方向に関するベクトルと光が移動する距離を引き出します。 頂点法線と共に両方の値を使って、サーフェスの照射に対する光の貢献度を計算します。
+<span data-ttu-id="3c19d-113">ライト バルブは、ポイント ライトの良い例です。</span><span class="sxs-lookup"><span data-stu-id="3c19d-113">A light bulb is a good example of a point light.</span></span> <span data-ttu-id="3c19d-114">ポイント ライトは、減衰と範囲の影響を受け、頂点単位でメッシュを照らします。</span><span class="sxs-lookup"><span data-stu-id="3c19d-114">Point lights are affected by attenuation and range, and illuminate a mesh on a vertex-by-vertex basis.</span></span> <span data-ttu-id="3c19d-115">照射時、Direct3D はワールド空間におけるポイント ライトの位置と照射する頂点の座標を使って、光の方向に関するベクトルと光が移動する距離を引き出します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-115">During lighting, Direct3D uses the point light's position in world space and the coordinates of the vertex being lit to derive a vector for the direction of the light, and the distance that the light has traveled.</span></span> <span data-ttu-id="3c19d-116">頂点法線と共に両方の値を使って、サーフェスの照射に対する光の貢献度を計算します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-116">Both are used, along with the vertex normal, to calculate the contribution of the light to the illumination of the surface.</span></span>
 
-## <a name="span-iddirectionallightspanspan-iddirectionallightspanspan-iddirectionallightspandirectional-light"></a><span id="Directional_Light"></span><span id="directional_light"></span><span id="DIRECTIONAL_LIGHT"></span>指向性ライト
-
-
-指向性ライトには位置がなく、色と方向のみです。 平行光を放射します。 つまり指向性ライトにより生成されるすべての光は、シーン内を同じ方向に移動します。 指向性ライトがほぼ無限の距離にある光源 (太陽など) であるとします。 指向性ライトは、減衰または範囲の影響を受けないため、Direct3D が頂点の色を計算する際に考慮される要素は指定した方向と色だけです。 照明要素の数が少ないため、使用時に最も計算の少ないライトです。
-
-## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>スポットライト
+## <a name="span-iddirectionallightspanspan-iddirectionallightspanspan-iddirectionallightspandirectional-light"></a><span data-ttu-id="3c19d-117"><span id="Directional_Light"></span><span id="directional_light"></span><span id="DIRECTIONAL_LIGHT"></span>指向性ライト</span><span class="sxs-lookup"><span data-stu-id="3c19d-117"><span id="Directional_Light"></span><span id="directional_light"></span><span id="DIRECTIONAL_LIGHT"></span>Directional Light</span></span>
 
 
-スポットライトには、色、位置、光を放射する方向があります。 次の図に示すように、スポットライトから放射される光は明るい内部コーンと大きい外部コーンで構成されており、2 つのコーンの間で光の強さは弱くなっていきます。
+<span data-ttu-id="3c19d-118">指向性ライトには位置がなく、色と方向のみです。</span><span class="sxs-lookup"><span data-stu-id="3c19d-118">Directional lights have only color and direction, not position.</span></span> <span data-ttu-id="3c19d-119">平行光を放射します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-119">They emit parallel light.</span></span> <span data-ttu-id="3c19d-120">つまり指向性ライトにより生成されるすべての光は、シーン内を同じ方向に移動します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-120">This means that all light generated by directional lights travels through a scene in the same direction.</span></span> <span data-ttu-id="3c19d-121">指向性ライトがほぼ無限の距離にある光源 (太陽など) であるとします。</span><span class="sxs-lookup"><span data-stu-id="3c19d-121">Imagine a directional light as a light source at near infinite distance, such as the sun.</span></span> <span data-ttu-id="3c19d-122">指向性ライトは、減衰または範囲の影響を受けないため、Direct3D が頂点の色を計算する際に考慮される要素は指定した方向と色だけです。</span><span class="sxs-lookup"><span data-stu-id="3c19d-122">Directional lights are not affected by attenuation or range, so the direction and color you specify are the only factors considered when Direct3D calculates vertex colors.</span></span> <span data-ttu-id="3c19d-123">照明要素の数が少ないため、使用時に最も計算の少ないライトです。</span><span class="sxs-lookup"><span data-stu-id="3c19d-123">Because of the small number of illumination factors, these are the least computationally intensive lights to use.</span></span>
+
+## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span data-ttu-id="3c19d-124"><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>スポットライト</span><span class="sxs-lookup"><span data-stu-id="3c19d-124"><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>SpotLight</span></span>
+
+
+<span data-ttu-id="3c19d-125">スポットライトには、色、位置、光を放射する方向があります。</span><span class="sxs-lookup"><span data-stu-id="3c19d-125">Spotlights have color, position, and direction in which they emit light.</span></span> <span data-ttu-id="3c19d-126">次の図に示すように、スポットライトから放射される光は明るい内部コーンと大きい外部コーンで構成されており、2 つのコーンの間で光の強さは弱くなっていきます。</span><span class="sxs-lookup"><span data-stu-id="3c19d-126">Light emitted from a spotlight is made up of a bright inner cone and a larger outer cone, with the light intensity diminishing between the two, as shown in the following illustration.</span></span>
 
 ![内部コーンと外部コーンを持つスポットライトの図](images/spotlt.png)
 
-スポットライトは、フォールオフ、減衰、範囲の影響を受けます。 これらの要素と各頂点まで光が移動する距離は、シーン内のオブジェクトに対する照明効果を計算するときに計算されます。 各頂点に対するこれらの効果を計算するため、スポットライトは Direct3D におけるすべての光源の中で最も計算に時間がかかるライトです。
+<span data-ttu-id="3c19d-128">スポットライトは、フォールオフ、減衰、範囲の影響を受けます。</span><span class="sxs-lookup"><span data-stu-id="3c19d-128">Spotlights are affected by falloff, attenuation, and range.</span></span> <span data-ttu-id="3c19d-129">これらの要素と各頂点まで光が移動する距離は、シーン内のオブジェクトに対する照明効果を計算するときに計算されます。</span><span class="sxs-lookup"><span data-stu-id="3c19d-129">These factors, as well as the distance light travels to each vertex, are figured in when computing lighting effects for objects in a scene.</span></span> <span data-ttu-id="3c19d-130">各頂点に対するこれらの効果を計算するため、スポットライトは Direct3D におけるすべての光源の中で最も計算に時間がかかるライトです。</span><span class="sxs-lookup"><span data-stu-id="3c19d-130">Computing these effects for each vertex makes spotlights the most computationally time-consuming of all lights in Direct3D.</span></span>
 
-フォールオーフ、シータ、フィーの値は、スポットライトでのみ使われます。 これらの値は、スポットライト オブジェクトの内部コーンおよび外部コーンの大きさと、2 つのコーンの間で光がどのように弱くなるかを制御します。
+<span data-ttu-id="3c19d-131">フォールオーフ、シータ、フィーの値は、スポットライトでのみ使われます。</span><span class="sxs-lookup"><span data-stu-id="3c19d-131">Falloff, Theta, and Phi values are used only by spotlights.</span></span> <span data-ttu-id="3c19d-132">これらの値は、スポットライト オブジェクトの内部コーンおよび外部コーンの大きさと、2 つのコーンの間で光がどのように弱くなるかを制御します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-132">These values control how large or small a spotlight object's inner and outer cones are, and how light decreases between them.</span></span>
 
-シータは、スポットライトの内部コーンのラジアン角度であり、フィー値は光の外部コーンの角度です。 フォールオフは、内部コーンの外側の端から外部コーンの内側の端までに光の強さがどのように弱くなるかを制御します。 ほとんどのアプリケーションは、フォールオフを 1.0 に設定し、2 つのコーンの間で均等に発生するフォールオフを作り出しますが、必要に応じて他の値に設定できます。
+<span data-ttu-id="3c19d-133">シータは、スポットライトの内部コーンのラジアン角度であり、フィー値は光の外部コーンの角度です。</span><span class="sxs-lookup"><span data-stu-id="3c19d-133">Theta is the radian angle of the spotlight's inner cone, and the Phi value is the angle for the outer cone of light.</span></span> <span data-ttu-id="3c19d-134">フォールオフは、内部コーンの外側の端から外部コーンの内側の端までに光の強さがどのように弱くなるかを制御します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-134">Falloff controls how light intensity decreases between the outer edge of the inner cone and the inner edge of the outer cone.</span></span> <span data-ttu-id="3c19d-135">ほとんどのアプリケーションは、フォールオフを 1.0 に設定し、2 つのコーンの間で均等に発生するフォールオフを作り出しますが、必要に応じて他の値に設定できます。</span><span class="sxs-lookup"><span data-stu-id="3c19d-135">Most applications set Falloff to 1.0 to create falloff that occurs evenly between the two cones, but you can set other values as needed.</span></span>
 
-次の図は、これらの値の関係と、スポットライトの光の内部コーンおよび外部コーンに値が与える影響を示しています。
+<span data-ttu-id="3c19d-136">次の図は、これらの値の関係と、スポットライトの光の内部コーンおよび外部コーンに値が与える影響を示しています。</span><span class="sxs-lookup"><span data-stu-id="3c19d-136">The following illustration shows the relationship between these values and how they can affect a spotlight's inner and outer cones of light.</span></span>
 
 ![フィー値とシータ値のスポットライト コーンとの関連性を示す図](images/spotlt2.png)
 
-スポットライトは、明るい内部コーンと外部コーンの 2 つの部分を持つ光のコーンを放射します。 光は、内部コーンで最も明るく、外部コーンの外側には存在しません。光の強さは 2 つの領域間で減衰します。 この種類の減衰は一般的にフォールオフと呼ばれています。
+<span data-ttu-id="3c19d-138">スポットライトは、明るい内部コーンと外部コーンの 2 つの部分を持つ光のコーンを放射します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-138">Spotlights emit a cone of light that has two parts: a bright inner cone and an outer cone.</span></span> <span data-ttu-id="3c19d-139">光は、内部コーンで最も明るく、外部コーンの外側には存在しません。光の強さは 2 つの領域間で減衰します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-139">Light is brightest in the inner cone and isn't present outside the outer cone, with light intensity attenuating between the two areas.</span></span> <span data-ttu-id="3c19d-140">この種類の減衰は一般的にフォールオフと呼ばれています。</span><span class="sxs-lookup"><span data-stu-id="3c19d-140">This type of attenuation is commonly referred to as falloff.</span></span>
 
-頂点に届く光の量は、内部コーンまたは外部コーンにおける頂点の位置に基づいて決まります。 Direct3D は、スポットライトの方向ベクトル (L) と光源から頂点へのベクトル (D) のドット積を計算します。 この値は、2 つのベクトル間の角度のコサインに等しく、頂点の位置のインジケーターとして機能します。頂点の位置を光のコーン角度と比較することで、頂点が内部コーンまたは外部コーンのどこに位置するかを判断できます。 次の図は、これらの 2 つのベクトルの関連性を視覚的に表現しています。
+<span data-ttu-id="3c19d-141">頂点に届く光の量は、内部コーンまたは外部コーンにおける頂点の位置に基づいて決まります。</span><span class="sxs-lookup"><span data-stu-id="3c19d-141">The amount of light a vertex receives is based on the vertex's location in the inner or outer cones.</span></span> <span data-ttu-id="3c19d-142">Direct3D は、スポットライトの方向ベクトル (L) と光源から頂点へのベクトル (D) のドット積を計算します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-142">Direct3D computes the dot product of the spotlight's direction vector (L) and the vector from the light to the vertex (D).</span></span> <span data-ttu-id="3c19d-143">この値は、2 つのベクトル間の角度のコサインに等しく、頂点の位置のインジケーターとして機能します。頂点の位置を光のコーン角度と比較することで、頂点が内部コーンまたは外部コーンのどこに位置するかを判断できます。</span><span class="sxs-lookup"><span data-stu-id="3c19d-143">This value is equal to the cosine of the angle between the two vectors, and serves as an indicator of the vertex's position that can be compared to the light's cone angles to determine where the vertex might lie in the inner or outer cones.</span></span> <span data-ttu-id="3c19d-144">次の図は、これらの 2 つのベクトルの関連性を視覚的に表現しています。</span><span class="sxs-lookup"><span data-stu-id="3c19d-144">The following illustration provides a graphical representation of the association between these two vectors.</span></span>
 
 ![スポットライトの方向ベクトルと頂点からスポットライトへのベクトル](images/spotalg1.png)
 
-システムは、この値をスポットライトの内部コーン角度および外部コーン角度のコサインと比較します。 光のシータ値とフィー値は、内部コーンおよびガイブコーンの合計コーン角度を表します。 頂点が照明の中心から離れると (合計コーン角度を通過するのではなく) 減衰が発生するため、ランタイムはコサインの計算前にこれらのコーン角度を二等分します。
+<span data-ttu-id="3c19d-146">システムは、この値をスポットライトの内部コーン角度および外部コーン角度のコサインと比較します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-146">The system compares this value to the cosine of the spotlight's inner and outer cone angles.</span></span> <span data-ttu-id="3c19d-147">光のシータ値とフィー値は、内部コーンおよびガイブコーンの合計コーン角度を表します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-147">The light's Theta and Phi values represent the total cone angles for the inner and outer cones.</span></span> <span data-ttu-id="3c19d-148">頂点が照明の中心から離れると (合計コーン角度を通過するのではなく) 減衰が発生するため、ランタイムはコサインの計算前にこれらのコーン角度を二等分します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-148">Because the attenuation occurs as the vertex becomes more distant from the center of illumination (rather than across the total cone angle), the runtime divides these cone angles in half before calculating their cosines.</span></span>
 
-ベクトル L および D のドット積が外部コーン角度のコサイン以下の場合、頂点は外部コーンの外側に位置するため、光は届きません。 L および D のドット積が内部コーン角度のコサインより大きい場合、頂点は内部コーン内にあるため最大量の光が届きますが、この場合も距離に応じて減衰が考慮されます。 頂点が 2 つの領域間にある場合、次の等式を使ってフォールオフが計算されます。
+<span data-ttu-id="3c19d-149">ベクトル L および D のドット積が外部コーン角度のコサイン以下の場合、頂点は外部コーンの外側に位置するため、光は届きません。</span><span class="sxs-lookup"><span data-stu-id="3c19d-149">If the dot product of vectors L and D is less than or equal to the cosine of the outer cone angle, the vertex lies beyond the outer cone and receives no light.</span></span> <span data-ttu-id="3c19d-150">L および D のドット積が内部コーン角度のコサインより大きい場合、頂点は内部コーン内にあるため最大量の光が届きますが、この場合も距離に応じて減衰が考慮されます。</span><span class="sxs-lookup"><span data-stu-id="3c19d-150">If the dot product of L and D is greater than the cosine of the inner cone angle, then the vertex is within the inner cone and receives the maximum amount of light, still considering attenuation over distance.</span></span> <span data-ttu-id="3c19d-151">頂点が 2 つの領域間にある場合、次の等式を使ってフォールオフが計算されます。</span><span class="sxs-lookup"><span data-stu-id="3c19d-151">If the vertex is somewhere between the two regions, then falloff is calculated with the following equation.</span></span>
 
 ![頂点における光の強さの数式 (フォールオフ後)](images/falloff.png)
 
-この場合
+<span data-ttu-id="3c19d-153">この場合</span><span class="sxs-lookup"><span data-stu-id="3c19d-153">where:</span></span>
 
--   I<sub>f</sub> はフォールオフ後の光の強さ
--   アルファはベクトル L および D 間の角度
--   シータは内部コーン角度
--   フィーは外部コーン角度
--   p はフォールオフ
+-   <span data-ttu-id="3c19d-154">I<sub>f</sub> はフォールオフ後の光の強さ</span><span class="sxs-lookup"><span data-stu-id="3c19d-154">I<sub>f</sub> is light intensity after falloff</span></span>
+-   <span data-ttu-id="3c19d-155">アルファはベクトル L および D 間の角度</span><span class="sxs-lookup"><span data-stu-id="3c19d-155">Alpha is the angle between vectors L and D</span></span>
+-   <span data-ttu-id="3c19d-156">シータは内部コーン角度</span><span class="sxs-lookup"><span data-stu-id="3c19d-156">Theta is the inner cone angle</span></span>
+-   <span data-ttu-id="3c19d-157">フィーは外部コーン角度</span><span class="sxs-lookup"><span data-stu-id="3c19d-157">Phi is the outer cone angle</span></span>
+-   <span data-ttu-id="3c19d-158">p はフォールオフ</span><span class="sxs-lookup"><span data-stu-id="3c19d-158">p is the falloff</span></span>
 
-この数式は、フォールオフを計算するために頂点における光の強さをスケーリングする 0.0 ～ 1.0 の値を生成します。 光源からの頂点の距離の要素としての減衰も適用されます。 次のグラフは、フォールオフ値がフォールオフ曲線に与える影響の違いを示しています。
+<span data-ttu-id="3c19d-159">この数式は、フォールオフを計算するために頂点における光の強さをスケーリングする 0.0 ～ 1.0 の値を生成します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-159">This formula generates a value between 0.0 and 1.0 that scales the light's intensity at the vertex to account for falloff.</span></span> <span data-ttu-id="3c19d-160">光源からの頂点の距離の要素としての減衰も適用されます。</span><span class="sxs-lookup"><span data-stu-id="3c19d-160">Attenuation as a factor of the vertex's distance from the light is also applied.</span></span> <span data-ttu-id="3c19d-161">次のグラフは、フォールオフ値がフォールオフ曲線に与える影響の違いを示しています。</span><span class="sxs-lookup"><span data-stu-id="3c19d-161">The following graph shows how different falloff values can affect the falloff curve.</span></span>
 
 ![光の強さと光源からの頂点の距離のグラフ](images/fallgraf.png)
 
-実際の照明に対する各種フォールオフ値の影響はわずかであり、1.0 以外のフォールオフ値によってフォールオフ曲線を形成するとパフォーマンスが少し低下します。 そのため、この値は通常 1.0 に設定されます。
+<span data-ttu-id="3c19d-163">実際の照明に対する各種フォールオフ値の影響はわずかであり、1.0 以外のフォールオフ値によってフォールオフ曲線を形成するとパフォーマンスが少し低下します。</span><span class="sxs-lookup"><span data-stu-id="3c19d-163">The effect of various falloff values on the actual lighting is subtle, and a small performance penalty is incurred by shaping the falloff curve with falloff values other than 1.0.</span></span> <span data-ttu-id="3c19d-164">そのため、この値は通常 1.0 に設定されます。</span><span class="sxs-lookup"><span data-stu-id="3c19d-164">For these reasons, this value is typically set to 1.0.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="3c19d-165"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="3c19d-165"><span id="related-topics"></span>Related topics</span></span>
 
 
-[照明および素材](lights-and-materials.md)
-
- 
+[<span data-ttu-id="3c19d-166">照明および素材</span><span class="sxs-lookup"><span data-stu-id="3c19d-166">Lights and materials</span></span>](lights-and-materials.md)
 
  
 
+ 
 
 
 

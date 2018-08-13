@@ -1,8 +1,8 @@
 ---
 author: mcleblanc
 ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
-title: "デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ"
-description: "アプリで Microsoft Visual Studio や Blend for Visual Studio のデザイン サーフェイスにライブ データを表示できない場合や、プライバシーやパフォーマンスなどの理由で表示するのが望ましくない場合があります。"
+title: デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ
+description: アプリで Microsoft Visual Studio や Blend for Visual Studio のデザイン サーフェイスにライブ データを表示できない場合や、プライバシーやパフォーマンスなどの理由で表示するのが望ましくない場合があります。
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 00a6bbf06f918c0b86bcaed7ae7891b474baefe8
 ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/27/2017
+ms.locfileid: "852876"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a><span data-ttu-id="9c5b9-104">デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ</span><span class="sxs-lookup"><span data-stu-id="9c5b9-104">Sample data on the design surface, and for prototyping</span></span>
 =============================================================================================

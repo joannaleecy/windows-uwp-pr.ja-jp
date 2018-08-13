@@ -1,18 +1,19 @@
 ---
 author: laurenhughes
-title: "アプリ パッケージのアーキテクチャ"
-description: "UWP アプリ パッケージを構築するときにどのプロセッサ アーキテクチャを使用するべきかについて説明します。"
+title: アプリ パッケージのアーキテクチャ
+description: UWP アプリ パッケージを構築するときにどのプロセッサ アーキテクチャを使用するべきかについて説明します。
 ms.author: lahugh
 ms.date: 7/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, パッケージ化, アーキテクチャ, パッケージの構成"
+keywords: Windows 10, UWP, パッケージ化, アーキテクチャ, パッケージの構成
 ms.openlocfilehash: 70188734e7fc26f66b68d0c31921071c47e8b7a8
 ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/09/2017
+ms.locfileid: "884051"
 ---
 # <a name="app-package-architectures"></a><span data-ttu-id="7b1db-104">アプリ パッケージのアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="7b1db-104">App package architectures</span></span>
 

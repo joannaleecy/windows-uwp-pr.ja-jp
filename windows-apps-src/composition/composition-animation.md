@@ -1,8 +1,8 @@
 ---
 author: jwmsft
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
-title: "コンポジションのアニメーション"
-description: "コンポジション オブジェクトと効果の多くのプロパティは、キー フレーム アニメーションや数式アニメーションを使って、時間の経過や計算に基づいて UI 要素のプロパティを変更することによりアニメーション化できます。"
+title: コンポジションのアニメーション
+description: コンポジション オブジェクトと効果の多くのプロパティは、キー フレーム アニメーションや数式アニメーションを使って、時間の経過や計算に基づいて UI 要素のプロパティを変更することによりアニメーション化できます。
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.openlocfilehash: e7d0f5c3fc0d1414dc1b4f714683494fcffd4f51
 ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/20/2017
+ms.locfileid: "839534"
 ---
 # <a name="composition-animations"></a><span data-ttu-id="ab10c-104">コンポジションのアニメーション</span><span class="sxs-lookup"><span data-stu-id="ab10c-104">Composition animations</span></span>
 
@@ -68,8 +69,8 @@ ms.lasthandoff: 07/20/2017
 |<span data-ttu-id="ab10c-158">RotationAxis</span><span class="sxs-lookup"><span data-stu-id="ab10c-158">RotationAxis</span></span>|<span data-ttu-id="ab10c-159">Vector3</span><span class="sxs-lookup"><span data-stu-id="ab10c-159">Vector3</span></span>|
 |<span data-ttu-id="ab10c-160">Scale</span><span class="sxs-lookup"><span data-stu-id="ab10c-160">Scale</span></span>|<span data-ttu-id="ab10c-161">Vector3</span><span class="sxs-lookup"><span data-stu-id="ab10c-161">Vector3</span></span>|
 |<span data-ttu-id="ab10c-162">Size</span><span class="sxs-lookup"><span data-stu-id="ab10c-162">Size</span></span>|<span data-ttu-id="ab10c-163">Vector2</span><span class="sxs-lookup"><span data-stu-id="ab10c-163">Vector2</span></span>|
-|<span data-ttu-id="ab10c-164">TransformMatrix*</span><span class="sxs-lookup"><span data-stu-id="ab10c-164">TransformMatrix*</span></span>|<span data-ttu-id="ab10c-165">Matrix4x4</span><span class="sxs-lookup"><span data-stu-id="ab10c-165">Matrix4x4</span></span>|
-<span data-ttu-id="ab10c-166">*TransformMatrix プロパティ全体を Matrix4x4 としてアニメーション化する場合は、ExpressionAnimation を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ab10c-166">*If you want to animate the entire TransformMatrix property as a Matrix4x4, you need to use an ExpressionAnimation to do so.</span></span>
+|<span data-ttu-id="ab10c-164">TransformMatrix\*</span><span class="sxs-lookup"><span data-stu-id="ab10c-164">TransformMatrix\*</span></span>|<span data-ttu-id="ab10c-165">Matrix4x4</span><span class="sxs-lookup"><span data-stu-id="ab10c-165">Matrix4x4</span></span>|
+<span data-ttu-id="ab10c-166">\*TransformMatrix プロパティ全体を Matrix4x4 としてアニメーション化する場合は、ExpressionAnimation を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ab10c-166">\*If you want to animate the entire TransformMatrix property as a Matrix4x4, you need to use an ExpressionAnimation to do so.</span></span>
 <span data-ttu-id="ab10c-167">それ以外の場合は、マトリックスの個々のセルをターゲットにして、KeyFrame または ExpressionAnimation を使用できます。</span><span class="sxs-lookup"><span data-stu-id="ab10c-167">Otherwise, you can target individual cells of the matrix and can use either a KeyFrame or ExpressionAnimation there.</span></span>
 
 ### <a name="insetclip"></a><span data-ttu-id="ab10c-168">InsetClip</span><span class="sxs-lookup"><span data-stu-id="ab10c-168">InsetClip</span></span>
@@ -107,9 +108,9 @@ ms.lasthandoff: 07/20/2017
 |<span data-ttu-id="ab10c-213">TransformMatrix._11_12 ... TransformMatrix._NN_NN</span><span class="sxs-lookup"><span data-stu-id="ab10c-213">TransformMatrix._11_12 ... TransformMatrix._NN_NN</span></span>|<span data-ttu-id="ab10c-214">Vector2</span><span class="sxs-lookup"><span data-stu-id="ab10c-214">Vector2</span></span>|
 |<span data-ttu-id="ab10c-215">TransformMatrix._11_12_13 ... TransformMatrix._NN_NN_NN</span><span class="sxs-lookup"><span data-stu-id="ab10c-215">TransformMatrix._11_12_13 ... TransformMatrix._NN_NN_NN</span></span>|<span data-ttu-id="ab10c-216">Vector3</span><span class="sxs-lookup"><span data-stu-id="ab10c-216">Vector3</span></span>|
 |<span data-ttu-id="ab10c-217">TransformMatrix._11_12_13_14</span><span class="sxs-lookup"><span data-stu-id="ab10c-217">TransformMatrix._11_12_13_14</span></span>|<span data-ttu-id="ab10c-218">Vector4</span><span class="sxs-lookup"><span data-stu-id="ab10c-218">Vector4</span></span>|
-|<span data-ttu-id="ab10c-219">Color*</span><span class="sxs-lookup"><span data-stu-id="ab10c-219">Color*</span></span>|<span data-ttu-id="ab10c-220">Colors (Windows.UI)</span><span class="sxs-lookup"><span data-stu-id="ab10c-220">Colors (Windows.UI)</span></span>|
+|<span data-ttu-id="ab10c-219">Color\*</span><span class="sxs-lookup"><span data-stu-id="ab10c-219">Color\*</span></span>|<span data-ttu-id="ab10c-220">Colors (Windows.UI)</span><span class="sxs-lookup"><span data-stu-id="ab10c-220">Colors (Windows.UI)</span></span>|
 
-<span data-ttu-id="ab10c-221">*Brush プロパティの Color サブチャネルのアニメーション化は少し異なります。</span><span class="sxs-lookup"><span data-stu-id="ab10c-221">*Animating the Color subchannel of the Brush property is a bit different.</span></span> <span data-ttu-id="ab10c-222">StartAnimation() を Visual.Brush にアタッチし、アニメーション化するプロパティをパラメーターで "Color" として宣言します </span><span class="sxs-lookup"><span data-stu-id="ab10c-222">You attach StartAnimation() to the Visual.Brush, and declare the property to animate in the parameter as "Color".</span></span>
+<span data-ttu-id="ab10c-221">\*Brush プロパティの Color サブチャネルのアニメーション化は少し異なります。</span><span class="sxs-lookup"><span data-stu-id="ab10c-221">\*Animating the Color subchannel of the Brush property is a bit different.</span></span> <span data-ttu-id="ab10c-222">StartAnimation() を Visual.Brush にアタッチし、アニメーション化するプロパティをパラメーターで "Color" として宣言します </span><span class="sxs-lookup"><span data-stu-id="ab10c-222">You attach StartAnimation() to the Visual.Brush, and declare the property to animate in the parameter as "Color".</span></span>
 <span data-ttu-id="ab10c-223">(色のアニメーション化については後で詳しく説明します)</span><span class="sxs-lookup"><span data-stu-id="ab10c-223">(More details about animating color discussed later)</span></span>
 
 ## <a name="property-sets-and-effects"></a><span data-ttu-id="ab10c-224">プロパティ セットと効果</span><span class="sxs-lookup"><span data-stu-id="ab10c-224">Property Sets and Effects</span></span>
@@ -427,7 +428,7 @@ targetVisual.StartAnimation("Opacity", expression);
 |<span data-ttu-id="ab10c-379">カテゴリ</span><span class="sxs-lookup"><span data-stu-id="ab10c-379">Category</span></span>| <span data-ttu-id="ab10c-380">演算子</span><span class="sxs-lookup"><span data-stu-id="ab10c-380">Operators</span></span>|
 |--------|-----------|
 |<span data-ttu-id="ab10c-381">単項</span><span class="sxs-lookup"><span data-stu-id="ab10c-381">Unary</span></span>| -|
-|<span data-ttu-id="ab10c-382">乗算</span><span class="sxs-lookup"><span data-stu-id="ab10c-382">Multiplicative</span></span>|<span data-ttu-id="ab10c-383">* /</span><span class="sxs-lookup"><span data-stu-id="ab10c-383">* /</span></span>|
+|<span data-ttu-id="ab10c-382">乗算</span><span class="sxs-lookup"><span data-stu-id="ab10c-382">Multiplicative</span></span>|<span data-ttu-id="ab10c-383">\* /</span><span class="sxs-lookup"><span data-stu-id="ab10c-383">\* /</span></span>|
 |<span data-ttu-id="ab10c-384">加算</span><span class="sxs-lookup"><span data-stu-id="ab10c-384">Additive</span></span>|<span data-ttu-id="ab10c-385">+ -</span><span class="sxs-lookup"><span data-stu-id="ab10c-385">+ -</span></span>|
 |<span data-ttu-id="ab10c-386">剰余</span><span class="sxs-lookup"><span data-stu-id="ab10c-386">Mod</span></span>| %|
 
@@ -687,7 +688,7 @@ _target.StartAnimation(“Opacity”, exp);
 
 ### <a name="setting-up-your-implicitanimationcollection"></a><span data-ttu-id="ab10c-520">ImplicitAnimationCollection の設定</span><span class="sxs-lookup"><span data-stu-id="ab10c-520">Setting up your ImplicitAnimationCollection</span></span>
 
-<span data-ttu-id="ab10c-521">暗黙的なアニメーションは、その他の **CompositionAnimation** オブジェクト (**KeyFrameAnimation** または **ExpressionAnimation**) によって定義されます。</span><span class="sxs-lookup"><span data-stu-id="ab10c-521">Implicit animations are defined by other **CompositionAnimation** objects (**KeyFrameAnimation** or **ExpressionAnimation**).</span></span> <span data-ttu-id="ab10c-522">**ImplicitAnimationCollection** は、プロパティ変更*トリガー"*が満たされたときに開始される **CompositionAnimation** オブジェクトのセットを表します。</span><span class="sxs-lookup"><span data-stu-id="ab10c-522">The **ImplicitAnimationCollection** represents the  set of **CompositionAnimation** objects that will start when the property change *trigger* is met.</span></span> <span data-ttu-id="ab10c-523">アニメーションを定義するときは、必ず **Target** プロパティを設定してください。これにより、開始時にアニメーションのターゲットとなる [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) プロパティが定義されます。</span><span class="sxs-lookup"><span data-stu-id="ab10c-523">Note when defining animations, make sure to set the **Target** property, this defines the [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) property the animation will target when it is started.</span></span> <span data-ttu-id="ab10c-524">**Target** のプロパティとして使用できるのは、アニメーション化可能な [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) プロパティだけです。</span><span class="sxs-lookup"><span data-stu-id="ab10c-524">The property of **Target** can only be a [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) property that is animatable.</span></span>
+<span data-ttu-id="ab10c-521">暗黙的なアニメーションは、その他の **CompositionAnimation** オブジェクト (**KeyFrameAnimation** または **ExpressionAnimation**) によって定義されます。</span><span class="sxs-lookup"><span data-stu-id="ab10c-521">Implicit animations are defined by other **CompositionAnimation** objects (**KeyFrameAnimation** or **ExpressionAnimation**).</span></span> <span data-ttu-id="ab10c-522">**ImplicitAnimationCollection** は、プロパティ変更*トリガー"* が満たされたときに開始される **CompositionAnimation** オブジェクトのセットを表します。</span><span class="sxs-lookup"><span data-stu-id="ab10c-522">The **ImplicitAnimationCollection** represents the  set of **CompositionAnimation** objects that will start when the property change *trigger* is met.</span></span> <span data-ttu-id="ab10c-523">アニメーションを定義するときは、必ず **Target** プロパティを設定してください。これにより、開始時にアニメーションのターゲットとなる [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) プロパティが定義されます。</span><span class="sxs-lookup"><span data-stu-id="ab10c-523">Note when defining animations, make sure to set the **Target** property, this defines the [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) property the animation will target when it is started.</span></span> <span data-ttu-id="ab10c-524">**Target** のプロパティとして使用できるのは、アニメーション化可能な [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) プロパティだけです。</span><span class="sxs-lookup"><span data-stu-id="ab10c-524">The property of **Target** can only be a [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) property that is animatable.</span></span>
 <span data-ttu-id="ab10c-525">以下のコード スニペットでは、**Vector3KeyFrameAnimation** が 1 つ作成され、**ImplicitAnimationCollection** の一部として定義されます。</span><span class="sxs-lookup"><span data-stu-id="ab10c-525">In the code snippet below, a single **Vector3KeyFrameAnimation** is created and defined as part of the **ImplicitAnimationCollection**.</span></span> <span data-ttu-id="ab10c-526">その後、**ImplicitAnimationCollection** は、[Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) の **ImplicitAnimation** プロパティに接続されるため、トリガーが満たされると、アニメーションが開始されます。</span><span class="sxs-lookup"><span data-stu-id="ab10c-526">The **ImplicitAnimationCollection** is then attached to the **ImplicitAnimation** property of [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx), such that when the trigger is met, the animation will start.</span></span>
 
 ```csharp

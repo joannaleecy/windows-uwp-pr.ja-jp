@@ -14,7 +14,7 @@ ms.openlocfilehash: de821f436b1ca44d3626a1029aa0a288273f8b84
 ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
+ms.lasthandoff: 08/13/2018
 ms.locfileid: "2736683"
 ---
 <div> 

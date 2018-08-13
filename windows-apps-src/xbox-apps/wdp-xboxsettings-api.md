@@ -1,7 +1,7 @@
 ---
 author: m-stahl
-title: "Device Portal の Xbox 開発者向け設定 API のリファレンス"
-description: "Xbox 開発者向け設定にアクセスする方法について説明します。"
+title: Device Portal の Xbox 開発者向け設定 API のリファレンス
+description: Xbox 開発者向け設定にアクセスする方法について説明します。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ keywords: Windows 10, UWP
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.openlocfilehash: dfde4c45a4aa5a520e0aa98cd7f31f7d84854e08
 ms.sourcegitcommit: 0e44f197e7e649d542ec3f67cd790a61dbe1226f
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/07/2017
+ms.locfileid: "662502"
 ---
 # <a name="developer-settings-api-reference"></a><span data-ttu-id="8a56f-104">開発者向け設定 API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="8a56f-104">Developer settings API reference</span></span>   
 <span data-ttu-id="8a56f-105">この API を使用して、開発に役立つ Xbox One 設定にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="8a56f-105">You can access Xbox One settings that are useful for development using this API.</span></span>

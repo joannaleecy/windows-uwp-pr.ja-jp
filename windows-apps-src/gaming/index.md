@@ -1,19 +1,20 @@
 ---
 author: mtoepke
-title: "ゲーム プログラミング"
-description: "ユニバーサル Windows プラットフォーム (UWP) は、ゲームを作り、配布し、収益を得るための新たな機会を提供します。 新しいゲームの開始または既存のゲームの移植について説明します。"
+title: ゲーム プログラミング
+description: ユニバーサル Windows プラットフォーム (UWP) は、ゲームを作り、配布し、収益を得るための新たな機会を提供します。 新しいゲームの開始または既存のゲームの移植について説明します。
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ms.author: mtoepke
 ms.date: 06/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, DirectX"
+keywords: Windows 10, UWP, ゲーム, DirectX
 ms.openlocfilehash: 2f98c038c745615d16227334d7e87426394d5c79
 ms.sourcegitcommit: a61e9fc06f74dc54c36abf7acb85eeb606e475b8
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/15/2017
+ms.locfileid: "678221"
 ---
 # <a name="game-programming"></a><span data-ttu-id="808ec-105">ゲーム プログラミング</span><span class="sxs-lookup"><span data-stu-id="808ec-105">Game programming</span></span>
 

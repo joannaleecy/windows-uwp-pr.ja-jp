@@ -1,72 +1,73 @@
 ---
-title: "BC6H 形式"
-description: "BC6H 形式は、ソース データのハイ ダイナミック レンジ (HDR) 色空間をサポートするように設計されたテクスチャ圧縮形式です。"
+title: BC6H 形式
+description: BC6H 形式は、ソース データのハイ ダイナミック レンジ (HDR) 色空間をサポートするように設計されたテクスチャ圧縮形式です。
 ms.assetid: 6781D967-9262-4EE7-B354-7A6D0EA0498E
 keywords:
-- "BC6H 形式"
-author: PeterTurcan
-ms.author: pettur
+- BC6H 形式
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a1cc569adbf15876693e91ac92e6bd364a267cb7
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: abff26c7f2e874d4a5e8e964fe716fcf2f1592cb
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "1045095"
 ---
-
-# <a name="bc6h-format"></a>BC6H 形式
-
-
-BC6H 形式は、ソース データのハイ ダイナミック レンジ (HDR) 色空間をサポートするように設計されたテクスチャ圧縮形式です。
-
-## <a name="span-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanabout-bc6hdxgiformatbc6h"></a><span id="About-BC6H-DXGI-FORMAT-BC6H"></span><span id="about-bc6h-dxgi-format-bc6h"></span><span id="ABOUT-BC6H-DXGI-FORMAT-BC6H"></span>BC6H/DXGI\_FORMAT\_BC6H について
+# <a name="bc6h-format"></a><span data-ttu-id="7ca30-104">BC6H 形式</span><span class="sxs-lookup"><span data-stu-id="7ca30-104">BC6H format</span></span>
 
 
-BC6H 形式は、3 つの HDR カラー チャネルを使用した画像に、高品質の圧縮を提供します。各カラー チャネルに (16:16:16) の 16 ビット値を使用します。 アルファ チャネルはサポートされません。
+<span data-ttu-id="7ca30-105">BC6H 形式は、ソース データのハイ ダイナミック レンジ (HDR) 色空間をサポートするように設計されたテクスチャ圧縮形式です。</span><span class="sxs-lookup"><span data-stu-id="7ca30-105">The BC6H format is a texture compression format designed to support high-dynamic range (HDR) color spaces in source data.</span></span>
 
-BC6H は、次の DXGI \ _FORMAT 列挙値によって指定されます。
+## <a name="span-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanspan-idabout-bc6h-dxgi-format-bc6hspanabout-bc6hdxgiformatbc6h"></a><span data-ttu-id="7ca30-106"><span id="About-BC6H-DXGI-FORMAT-BC6H"></span><span id="about-bc6h-dxgi-format-bc6h"></span><span id="ABOUT-BC6H-DXGI-FORMAT-BC6H"></span>BC6H/DXGI\_FORMAT\_BC6H について</span><span class="sxs-lookup"><span data-stu-id="7ca30-106"><span id="About-BC6H-DXGI-FORMAT-BC6H"></span><span id="about-bc6h-dxgi-format-bc6h"></span><span id="ABOUT-BC6H-DXGI-FORMAT-BC6H"></span>About BC6H/DXGI\_FORMAT\_BC6H</span></span>
 
--   **DXGI\_FORMAT\_BC6H\_TYPELESS**。
--   **DXGI\_FORMAT\_BC6H\_UF16**。 この BC6H 形式は、16 ビット浮動小数点カラー チャネル値の符号ビットを使用しません。
--   **DXGI\_FORMAT\_BC6H\_SF16**。 この BC6H 形式は、16 ビット浮動小数点カラー チャネル値の符号ビットを使用します。
 
-**注:** カラー チャネルの 16 ビット浮動小数点形式は、「半」浮動小数点形式とも呼ばれます。 この形式には、次のビット レイアウトがあります。
+<span data-ttu-id="7ca30-107">BC6H 形式は、3 つの HDR カラー チャネルを使用した画像に、高品質の圧縮を提供します。各カラー チャネルに (16:16:16) の 16 ビット値を使用します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-107">The BC6H format provides high-quality compression for images that use three HDR color channels, with a 16-bit value for each color channel of the value (16:16:16).</span></span> <span data-ttu-id="7ca30-108">アルファ チャネルはサポートされません。</span><span class="sxs-lookup"><span data-stu-id="7ca30-108">There is no support for an alpha channel.</span></span>
+
+<span data-ttu-id="7ca30-109">BC6H は、次の DXGI \ _FORMAT 列挙値によって指定されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-109">BC6H is specified by the following DXGI\_FORMAT enumeration values:</span></span>
+
+-   <span data-ttu-id="7ca30-110">**DXGI\_FORMAT\_BC6H\_TYPELESS**。</span><span class="sxs-lookup"><span data-stu-id="7ca30-110">**DXGI\_FORMAT\_BC6H\_TYPELESS**.</span></span>
+-   <span data-ttu-id="7ca30-111">**DXGI\_FORMAT\_BC6H\_UF16**。</span><span class="sxs-lookup"><span data-stu-id="7ca30-111">**DXGI\_FORMAT\_BC6H\_UF16**.</span></span> <span data-ttu-id="7ca30-112">この BC6H 形式は、16 ビット浮動小数点カラー チャネル値の符号ビットを使用しません。</span><span class="sxs-lookup"><span data-stu-id="7ca30-112">This BC6H format does not use a sign bit in the 16-bit floating point color channel values.</span></span>
+-   <span data-ttu-id="7ca30-113">**DXGI\_FORMAT\_BC6H\_SF16**。</span><span class="sxs-lookup"><span data-stu-id="7ca30-113">**DXGI\_FORMAT\_BC6H\_SF16**.</span></span> <span data-ttu-id="7ca30-114">この BC6H 形式は、16 ビット浮動小数点カラー チャネル値の符号ビットを使用します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-114">This BC6H format uses a sign bit in the 16-bit floating point color channel values.</span></span>
+
+<span data-ttu-id="7ca30-115">**注:** カラー チャネルの 16 ビット浮動小数点形式は、「半」浮動小数点形式とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-115">**Note**   The 16 bit floating point format for color channels is often referred to as a "half" floating point format.</span></span> <span data-ttu-id="7ca30-116">この形式には、次のビット レイアウトがあります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-116">This format has the following bit layout:</span></span>
 |                       |                                                 |
 |-----------------------|-------------------------------------------------|
-| UF16 (符号なし浮動小数点) | 5 指数ビット + 11 仮数ビット              |
-| SF16 (符号付き浮動小数点)   | 1 符号ビット + 5 指数ビット + 10 仮数ビット |
+| <span data-ttu-id="7ca30-117">UF16 (符号なし浮動小数点)</span><span class="sxs-lookup"><span data-stu-id="7ca30-117">UF16 (unsigned float)</span></span> | <span data-ttu-id="7ca30-118">5 指数ビット + 11 仮数ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-118">5 exponent bits + 11 mantissa bits</span></span>              |
+| <span data-ttu-id="7ca30-119">SF16 (符号付き浮動小数点)</span><span class="sxs-lookup"><span data-stu-id="7ca30-119">SF16 (signed float)</span></span>   | <span data-ttu-id="7ca30-120">1 符号ビット + 5 指数ビット + 10 仮数ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-120">1 sign bit + 5 exponent bits + 10 mantissa bits</span></span> |
 
  
 
  
 
-BC6H 形式は、[Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (配列を含む)、Texture3D、または TextureCube (配列を含む) のテクスチャ リソースに使用できます。 同様に、この形式は、これらのリソースに関連付けられた任意のミップマップ サーフェスに適用されます。
+<span data-ttu-id="7ca30-121">BC6H 形式は、[Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (配列を含む)、Texture3D、または TextureCube (配列を含む) のテクスチャ リソースに使用できます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-121">The BC6H format can be used for [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (including arrays), Texture3D, or TextureCube (including arrays) texture resources.</span></span> <span data-ttu-id="7ca30-122">同様に、この形式は、これらのリソースに関連付けられた任意のミップマップ サーフェスに適用されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-122">Similarly, this format applies to any MIP-map surfaces associated with these resources.</span></span>
 
-BC6H は、16バイト (128 ビット) の固定ブロックサイズと 4 × 4 テクセルの固定タイル サイズを使用します。 以前の BC 形式と同様に、サポートされるタイル サイズ (4 x 4) よりも大きなテクスチャ画像は、複数のブロックを使用して圧縮されます。 このアドレス指定 ID は、3 次元画像とミップマップ、キューブマップ、テクスチャ配列にも適用されます。 すべての画像タイルは同じ形式でなければなりません。
+<span data-ttu-id="7ca30-123">BC6H は、16バイト (128 ビット) の固定ブロックサイズと 4 × 4 テクセルの固定タイル サイズを使用します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-123">BC6H uses a fixed block size of 16 bytes (128 bits) and a fixed tile size of 4x4 texels.</span></span> <span data-ttu-id="7ca30-124">以前の BC 形式と同様に、サポートされるタイル サイズ (4 x 4) よりも大きなテクスチャ画像は、複数のブロックを使用して圧縮されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-124">As with previous BC formats, texture images larger than the supported tile size (4x4) are compressed by using multiple blocks.</span></span> <span data-ttu-id="7ca30-125">このアドレス指定 ID は、3 次元画像とミップマップ、キューブマップ、テクスチャ配列にも適用されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-125">This addressing identity applies also to three-dimensional images, MIP-maps, cube maps, and texture arrays.</span></span> <span data-ttu-id="7ca30-126">すべての画像タイルは同じ形式でなければなりません。</span><span class="sxs-lookup"><span data-stu-id="7ca30-126">All image tiles must be of the same format.</span></span>
 
-BC6H 形式の注意事項:
+<span data-ttu-id="7ca30-127">BC6H 形式の注意事項:</span><span class="sxs-lookup"><span data-stu-id="7ca30-127">Caveats with the BC6H format:</span></span>
 
--   BC6H は浮動小数点非正規化数をサポートしていますが、INF (無限大) と NaN (非数) をサポートしていません。 ただし、BC6H の符号付きモード (DXGI \ _FORMAT \ _BC6H \ _SF16) は例外で、-INF (負の無限大) をサポートします。 この -INF のサポートは、形式そのものの結果に過ぎず、この形式のエンコーダーでは特にサポートされていません。 一般に、エンコーダーが INF (正または負) または NaN 入力データを検出する場合には、圧縮前にそのデータを最大許容非 INF 表現値に変換したり、NaN を 0 にマッピングする必要があります。
--   BC6H はアルファ チャネルをサポートしません。
--   BC6H デコーダーは、テクスチャ フィルタリングを実行する前に、圧縮解除を実行します。
--   BC6H の圧縮解除はビットアキュレートである必要があります。ハードウェアは、このドキュメントで説明されているデコーダーと同じ結果を返す必要があります。
+-   <span data-ttu-id="7ca30-128">BC6H は浮動小数点非正規化数をサポートしていますが、INF (無限大) と NaN (非数) をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="7ca30-128">BC6H supports floating point denormalization, but does not support INF (infinity) and NaN (not a number).</span></span> <span data-ttu-id="7ca30-129">ただし、BC6H の符号付きモード (DXGI \ _FORMAT \ _BC6H \ _SF16) は例外で、-INF (負の無限大) をサポートします。</span><span class="sxs-lookup"><span data-stu-id="7ca30-129">The exception is the signed mode of BC6H (DXGI\_FORMAT\_BC6H\_SF16), which supports -INF (negative infinity).</span></span> <span data-ttu-id="7ca30-130">この -INF のサポートは、形式そのものの結果に過ぎず、この形式のエンコーダーでは特にサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="7ca30-130">This support for -INF is merely an artifact of the format itself, and is not specifically supported by encoders for this format.</span></span> <span data-ttu-id="7ca30-131">一般に、エンコーダーが INF (正または負) または NaN 入力データを検出する場合には、圧縮前にそのデータを最大許容非 INF 表現値に変換したり、NaN を 0 にマッピングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-131">In general, when an encoder encounters INF (positive or negative) or NaN input data, the encoder should convert that data to the maximum allowable non-INF representation value, and map NaN to 0 prior to compression.</span></span>
+-   <span data-ttu-id="7ca30-132">BC6H はアルファ チャネルをサポートしません。</span><span class="sxs-lookup"><span data-stu-id="7ca30-132">BC6H does not support an alpha channel.</span></span>
+-   <span data-ttu-id="7ca30-133">BC6H デコーダーは、テクスチャ フィルタリングを実行する前に、圧縮解除を実行します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-133">The BC6H decoder performs decompression before it performs texture filtering.</span></span>
+-   <span data-ttu-id="7ca30-134">BC6H の圧縮解除はビットアキュレートである必要があります。ハードウェアは、このドキュメントで説明されているデコーダーと同じ結果を返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-134">BC6H decompression must be bit-accurate; that is, the hardware must return results that are identical to the decoder described in this documentation.</span></span>
 
-## <a name="span-idbc6h-implementationspanspan-idbc6h-implementationspanspan-idbc6h-implementationspanbc6h-implementation"></a><span id="BC6H-implementation"></span><span id="bc6h-implementation"></span><span id="BC6H-IMPLEMENTATION"></span>BC6H の実装
-
-
-BC6H ブロックは、モードビット、圧縮エンドポイント、圧縮インデックス、パーティション インデックス (オプション) で構成されています。 この形式は、14 の異なるモードを指定します。
-
-エンドポイント カラーは RGB トリプレットとして保存されます。 BC6H は、いくつかの定義されたカラー エンドポイントを横切る近似線上に色のパレットを定義します。 また、モードによっては、タイルを 2 つの領域に分割したり、1 つの領域として扱うこともできます。2 つの領域を持つタイルには、各領域にカラー エンドポイントが別々に設定されます。 BC6H はテクセルごとに 1 つのパレット インデックスを格納します。
-
-2 つの領域の場合、可能なパーティションは 32 です。
-
-## <a name="span-iddecoding-the-bc6h-formatspanspan-iddecoding-the-bc6h-formatspanspan-iddecoding-the-bc6h-formatspandecoding-the-bc6h-format"></a><span id="Decoding-the-BC6H-format"></span><span id="decoding-the-bc6h-format"></span><span id="DECODING-THE-BC6H-FORMAT"></span>BC6H 形式のデコード
+## <a name="span-idbc6h-implementationspanspan-idbc6h-implementationspanspan-idbc6h-implementationspanbc6h-implementation"></a><span data-ttu-id="7ca30-135"><span id="BC6H-implementation"></span><span id="bc6h-implementation"></span><span id="BC6H-IMPLEMENTATION"></span>BC6H の実装</span><span class="sxs-lookup"><span data-stu-id="7ca30-135"><span id="BC6H-implementation"></span><span id="bc6h-implementation"></span><span id="BC6H-IMPLEMENTATION"></span>BC6H implementation</span></span>
 
 
-次の擬似コードは、16 バイトの BC6H ブロックを指定して(x, y) のピクセルを圧縮解除する手順の概要を示しています。
+<span data-ttu-id="7ca30-136">BC6H ブロックは、モードビット、圧縮エンドポイント、圧縮インデックス、パーティション インデックス (オプション) で構成されています。</span><span class="sxs-lookup"><span data-stu-id="7ca30-136">A BC6H block consists of mode bits, compressed endpoints, compressed indices, and an optional partition index.</span></span> <span data-ttu-id="7ca30-137">この形式は、14 の異なるモードを指定します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-137">This format specifies 14 different modes.</span></span>
+
+<span data-ttu-id="7ca30-138">エンドポイント カラーは RGB トリプレットとして保存されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-138">An endpoint color is stored as an RGB triplet.</span></span> <span data-ttu-id="7ca30-139">BC6H は、いくつかの定義されたカラー エンドポイントを横切る近似線上に色のパレットを定義します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-139">BC6H defines a palette of colors on an approximate line across a number of defined color endpoints.</span></span> <span data-ttu-id="7ca30-140">また、モードによっては、タイルを 2 つの領域に分割したり、1 つの領域として扱うこともできます。2 つの領域を持つタイルには、各領域にカラー エンドポイントが別々に設定されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-140">Also, depending on the mode, a tile can be divided into two regions or treated as a single region, where a two-region tile has a separate set of color endpoints for each region.</span></span> <span data-ttu-id="7ca30-141">BC6H はテクセルごとに 1 つのパレット インデックスを格納します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-141">BC6H stores one palette index per texel.</span></span>
+
+<span data-ttu-id="7ca30-142">2 つの領域の場合、可能なパーティションは 32 です。</span><span class="sxs-lookup"><span data-stu-id="7ca30-142">In the two-region case, there are 32 possible partitions.</span></span>
+
+## <a name="span-iddecoding-the-bc6h-formatspanspan-iddecoding-the-bc6h-formatspanspan-iddecoding-the-bc6h-formatspandecoding-the-bc6h-format"></a><span data-ttu-id="7ca30-143"><span id="Decoding-the-BC6H-format"></span><span id="decoding-the-bc6h-format"></span><span id="DECODING-THE-BC6H-FORMAT"></span>BC6H 形式のデコード</span><span class="sxs-lookup"><span data-stu-id="7ca30-143"><span id="Decoding-the-BC6H-format"></span><span id="decoding-the-bc6h-format"></span><span id="DECODING-THE-BC6H-FORMAT"></span>Decoding the BC6H format</span></span>
+
+
+<span data-ttu-id="7ca30-144">次の擬似コードは、16 バイトの BC6H ブロックを指定して(x, y) のピクセルを圧縮解除する手順の概要を示しています。</span><span class="sxs-lookup"><span data-stu-id="7ca30-144">The pseudocode below shows the steps to decompress the pixel at (x,y) given the 16 byte BC6H block.</span></span>
 
 ``` syntax
 decompress_bc6h(x, y, block)
@@ -94,78 +95,78 @@ decompress_bc6h(x, y, block)
 }
 ```
 
-次の表に、BC6H ブロックで使用可能な 14 の形式のビット数と値を示します。
+<span data-ttu-id="7ca30-145">次の表に、BC6H ブロックで使用可能な 14 の形式のビット数と値を示します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-145">The following table contains the bit count and values for each of the 14 possible formats for BC6H blocks.</span></span>
 
-| モード | パーティション インデックス | パーティション | カラー エンドポイント                  | モード ビット      |
+| <span data-ttu-id="7ca30-146">モード</span><span class="sxs-lookup"><span data-stu-id="7ca30-146">Mode</span></span> | <span data-ttu-id="7ca30-147">パーティション インデックス</span><span class="sxs-lookup"><span data-stu-id="7ca30-147">Partition Indices</span></span> | <span data-ttu-id="7ca30-148">パーティション</span><span class="sxs-lookup"><span data-stu-id="7ca30-148">Partition</span></span> | <span data-ttu-id="7ca30-149">カラー エンドポイント</span><span class="sxs-lookup"><span data-stu-id="7ca30-149">Color Endpoints</span></span>                  | <span data-ttu-id="7ca30-150">モード ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-150">Mode Bits</span></span>      |
 |------|-------------------|-----------|----------------------------------|----------------|
-| 1    | 46 ビット           | 5 ビット    | 75 ビット (10.555, 10.555, 10.555) | 2 ビット (00)    |
-| 2    | 46 ビット           | 5 ビット    | 75 ビット (7666, 7666, 7666)       | 2 ビット (01)    |
-| 3    | 46 ビット           | 5 ビット    | 72 ビット (11.555, 11.444, 11.444) | 5 ビット (00010) |
-| 4    | 46 ビット           | 5 ビット    | 72 ビット (11.444, 11.555, 11.444) | 5 ビット (00110) |
-| 5    | 46 ビット           | 5 ビット    | 72 ビット (11.444, 11.444, 11.555) | 5 ビット (01010) |
-| 6    | 46 ビット           | 5 ビット    | 72 ビット (9555, 9555, 9555)       | 5 ビット (01110) |
-| 7    | 46 ビット           | 5 ビット    | 72 ビット (8666, 8555, 8555)       | 5 ビット (10010) |
-| 8    | 46 ビット           | 5 ビット    | 72 ビット (8555, 8666, 8555)       | 5 ビット (10110) |
-| 9    | 46 ビット           | 5 ビット    | 72 ビット (8555, 8555, 8666)       | 5 ビット (11010) |
-| 10   | 46 ビット           | 5 ビット    | 72 ビット (6666, 6666, 6666)       | 5 ビット (11110) |
-| 11   | 63 ビット           | 0 ビット    | 60 ビット (10.10, 10.10, 10.10)    | 5 ビット (00011) |
-| 12   | 63 ビット           | 0 ビット    | 60 ビット (11.9, 11.9, 11.9)       | 5 ビット (00111) |
-| 13   | 63 ビット           | 0 ビット    | 60 ビット (12.8, 12.8, 12.8)       | 5 ビット (01011) |
-| 14   | 63 ビット           | 0 ビット    | 60 ビット (16.4, 16.4, 16.4)       | 5 ビット (01111) |
+| <span data-ttu-id="7ca30-151">1</span><span class="sxs-lookup"><span data-stu-id="7ca30-151">1</span></span>    | <span data-ttu-id="7ca30-152">46 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-152">46 bits</span></span>           | <span data-ttu-id="7ca30-153">5 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-153">5 bits</span></span>    | <span data-ttu-id="7ca30-154">75 ビット (10.555, 10.555, 10.555)</span><span class="sxs-lookup"><span data-stu-id="7ca30-154">75 bits (10.555, 10.555, 10.555)</span></span> | <span data-ttu-id="7ca30-155">2 ビット (00)</span><span class="sxs-lookup"><span data-stu-id="7ca30-155">2 bits (00)</span></span>    |
+| <span data-ttu-id="7ca30-156">2</span><span class="sxs-lookup"><span data-stu-id="7ca30-156">2</span></span>    | <span data-ttu-id="7ca30-157">46 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-157">46 bits</span></span>           | <span data-ttu-id="7ca30-158">5 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-158">5 bits</span></span>    | <span data-ttu-id="7ca30-159">75 ビット (7666, 7666, 7666)</span><span class="sxs-lookup"><span data-stu-id="7ca30-159">75 bits (7666, 7666, 7666)</span></span>       | <span data-ttu-id="7ca30-160">2 ビット (01)</span><span class="sxs-lookup"><span data-stu-id="7ca30-160">2 bits (01)</span></span>    |
+| <span data-ttu-id="7ca30-161">3</span><span class="sxs-lookup"><span data-stu-id="7ca30-161">3</span></span>    | <span data-ttu-id="7ca30-162">46 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-162">46 bits</span></span>           | <span data-ttu-id="7ca30-163">5 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-163">5 bits</span></span>    | <span data-ttu-id="7ca30-164">72 ビット (11.555, 11.444, 11.444)</span><span class="sxs-lookup"><span data-stu-id="7ca30-164">72 bits (11.555, 11.444, 11.444)</span></span> | <span data-ttu-id="7ca30-165">5 ビット (00010)</span><span class="sxs-lookup"><span data-stu-id="7ca30-165">5 bits (00010)</span></span> |
+| <span data-ttu-id="7ca30-166">4</span><span class="sxs-lookup"><span data-stu-id="7ca30-166">4</span></span>    | <span data-ttu-id="7ca30-167">46 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-167">46 bits</span></span>           | <span data-ttu-id="7ca30-168">5 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-168">5 bits</span></span>    | <span data-ttu-id="7ca30-169">72 ビット (11.444, 11.555, 11.444)</span><span class="sxs-lookup"><span data-stu-id="7ca30-169">72 bits (11.444, 11.555, 11.444)</span></span> | <span data-ttu-id="7ca30-170">5 ビット (00110)</span><span class="sxs-lookup"><span data-stu-id="7ca30-170">5 bits (00110)</span></span> |
+| <span data-ttu-id="7ca30-171">5</span><span class="sxs-lookup"><span data-stu-id="7ca30-171">5</span></span>    | <span data-ttu-id="7ca30-172">46 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-172">46 bits</span></span>           | <span data-ttu-id="7ca30-173">5 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-173">5 bits</span></span>    | <span data-ttu-id="7ca30-174">72 ビット (11.444, 11.444, 11.555)</span><span class="sxs-lookup"><span data-stu-id="7ca30-174">72 bits (11.444, 11.444, 11.555)</span></span> | <span data-ttu-id="7ca30-175">5 ビット (01010)</span><span class="sxs-lookup"><span data-stu-id="7ca30-175">5 bits (01010)</span></span> |
+| <span data-ttu-id="7ca30-176">6</span><span class="sxs-lookup"><span data-stu-id="7ca30-176">6</span></span>    | <span data-ttu-id="7ca30-177">46 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-177">46 bits</span></span>           | <span data-ttu-id="7ca30-178">5 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-178">5 bits</span></span>    | <span data-ttu-id="7ca30-179">72 ビット (9555, 9555, 9555)</span><span class="sxs-lookup"><span data-stu-id="7ca30-179">72 bits (9555, 9555, 9555)</span></span>       | <span data-ttu-id="7ca30-180">5 ビット (01110)</span><span class="sxs-lookup"><span data-stu-id="7ca30-180">5 bits (01110)</span></span> |
+| <span data-ttu-id="7ca30-181">7</span><span class="sxs-lookup"><span data-stu-id="7ca30-181">7</span></span>    | <span data-ttu-id="7ca30-182">46 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-182">46 bits</span></span>           | <span data-ttu-id="7ca30-183">5 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-183">5 bits</span></span>    | <span data-ttu-id="7ca30-184">72 ビット (8666, 8555, 8555)</span><span class="sxs-lookup"><span data-stu-id="7ca30-184">72 bits (8666, 8555, 8555)</span></span>       | <span data-ttu-id="7ca30-185">5 ビット (10010)</span><span class="sxs-lookup"><span data-stu-id="7ca30-185">5 bits (10010)</span></span> |
+| <span data-ttu-id="7ca30-186">8</span><span class="sxs-lookup"><span data-stu-id="7ca30-186">8</span></span>    | <span data-ttu-id="7ca30-187">46 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-187">46 bits</span></span>           | <span data-ttu-id="7ca30-188">5 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-188">5 bits</span></span>    | <span data-ttu-id="7ca30-189">72 ビット (8555, 8666, 8555)</span><span class="sxs-lookup"><span data-stu-id="7ca30-189">72 bits (8555, 8666, 8555)</span></span>       | <span data-ttu-id="7ca30-190">5 ビット (10110)</span><span class="sxs-lookup"><span data-stu-id="7ca30-190">5 bits (10110)</span></span> |
+| <span data-ttu-id="7ca30-191">9</span><span class="sxs-lookup"><span data-stu-id="7ca30-191">9</span></span>    | <span data-ttu-id="7ca30-192">46 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-192">46 bits</span></span>           | <span data-ttu-id="7ca30-193">5 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-193">5 bits</span></span>    | <span data-ttu-id="7ca30-194">72 ビット (8555, 8555, 8666)</span><span class="sxs-lookup"><span data-stu-id="7ca30-194">72 bits (8555, 8555, 8666)</span></span>       | <span data-ttu-id="7ca30-195">5 ビット (11010)</span><span class="sxs-lookup"><span data-stu-id="7ca30-195">5 bits (11010)</span></span> |
+| <span data-ttu-id="7ca30-196">10</span><span class="sxs-lookup"><span data-stu-id="7ca30-196">10</span></span>   | <span data-ttu-id="7ca30-197">46 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-197">46 bits</span></span>           | <span data-ttu-id="7ca30-198">5 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-198">5 bits</span></span>    | <span data-ttu-id="7ca30-199">72 ビット (6666, 6666, 6666)</span><span class="sxs-lookup"><span data-stu-id="7ca30-199">72 bits (6666, 6666, 6666)</span></span>       | <span data-ttu-id="7ca30-200">5 ビット (11110)</span><span class="sxs-lookup"><span data-stu-id="7ca30-200">5 bits (11110)</span></span> |
+| <span data-ttu-id="7ca30-201">11</span><span class="sxs-lookup"><span data-stu-id="7ca30-201">11</span></span>   | <span data-ttu-id="7ca30-202">63 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-202">63 bits</span></span>           | <span data-ttu-id="7ca30-203">0 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-203">0 bits</span></span>    | <span data-ttu-id="7ca30-204">60 ビット (10.10, 10.10, 10.10)</span><span class="sxs-lookup"><span data-stu-id="7ca30-204">60 bits (10.10, 10.10, 10.10)</span></span>    | <span data-ttu-id="7ca30-205">5 ビット (00011)</span><span class="sxs-lookup"><span data-stu-id="7ca30-205">5 bits (00011)</span></span> |
+| <span data-ttu-id="7ca30-206">12</span><span class="sxs-lookup"><span data-stu-id="7ca30-206">12</span></span>   | <span data-ttu-id="7ca30-207">63 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-207">63 bits</span></span>           | <span data-ttu-id="7ca30-208">0 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-208">0 bits</span></span>    | <span data-ttu-id="7ca30-209">60 ビット (11.9, 11.9, 11.9)</span><span class="sxs-lookup"><span data-stu-id="7ca30-209">60 bits (11.9, 11.9, 11.9)</span></span>       | <span data-ttu-id="7ca30-210">5 ビット (00111)</span><span class="sxs-lookup"><span data-stu-id="7ca30-210">5 bits (00111)</span></span> |
+| <span data-ttu-id="7ca30-211">13</span><span class="sxs-lookup"><span data-stu-id="7ca30-211">13</span></span>   | <span data-ttu-id="7ca30-212">63 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-212">63 bits</span></span>           | <span data-ttu-id="7ca30-213">0 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-213">0 bits</span></span>    | <span data-ttu-id="7ca30-214">60 ビット (12.8, 12.8, 12.8)</span><span class="sxs-lookup"><span data-stu-id="7ca30-214">60 bits (12.8, 12.8, 12.8)</span></span>       | <span data-ttu-id="7ca30-215">5 ビット (01011)</span><span class="sxs-lookup"><span data-stu-id="7ca30-215">5 bits (01011)</span></span> |
+| <span data-ttu-id="7ca30-216">14</span><span class="sxs-lookup"><span data-stu-id="7ca30-216">14</span></span>   | <span data-ttu-id="7ca30-217">63 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-217">63 bits</span></span>           | <span data-ttu-id="7ca30-218">0 ビット</span><span class="sxs-lookup"><span data-stu-id="7ca30-218">0 bits</span></span>    | <span data-ttu-id="7ca30-219">60 ビット (16.4, 16.4, 16.4)</span><span class="sxs-lookup"><span data-stu-id="7ca30-219">60 bits (16.4, 16.4, 16.4)</span></span>       | <span data-ttu-id="7ca30-220">5 ビット (01111)</span><span class="sxs-lookup"><span data-stu-id="7ca30-220">5 bits (01111)</span></span> |
 
  
 
-この表の各形式は、モード ビットによって一意に識別できます。 最初の 10 個のモードは 2 領域のタイルに使用され、モード ビット フィールドは 2 または 5 ビット長とすることができます。 これらのブロックには、圧縮されたカラー エンドポイント (72 または 75 ビット)、パーティション (5ビット)、およびパーティション インデックス (46ビット) のフィールドもあります。
+<span data-ttu-id="7ca30-221">この表の各形式は、モード ビットによって一意に識別できます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-221">Each format in this table can be uniquely identified by the mode bits.</span></span> <span data-ttu-id="7ca30-222">最初の 10 個のモードは 2 領域のタイルに使用され、モード ビット フィールドは 2 または 5 ビット長とすることができます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-222">The first ten modes are used for two-region tiles, and the mode bit field can be either two or five bits long.</span></span> <span data-ttu-id="7ca30-223">これらのブロックには、圧縮されたカラー エンドポイント (72 または 75 ビット)、パーティション (5ビット)、およびパーティション インデックス (46ビット) のフィールドもあります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-223">These blocks also have fields for the compressed color endpoints (72 or 75 bits), the partition (5 bits), and the partition indices (46 bits).</span></span>
 
-圧縮されたカラー エンドポイントの場合、上記の表の値は、保存された RGB エンドポイントの精度と、各カラー値に使用されるビット数を示します。 たとえば、モード 3 では、カラー エンドポイントの精度レベル 11 と、赤、青、緑の色の変換されたエンドポイントのデルタ値を保存するために使用するビット数 (それぞれ 5、4、4) を指定します。 モード 10 はデルタ圧縮を使用せず、4 つのカラー エンドポイントをすべて明示的に保存します。
+<span data-ttu-id="7ca30-224">圧縮されたカラー エンドポイントの場合、上記の表の値は、保存された RGB エンドポイントの精度と、各カラー値に使用されるビット数を示します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-224">For the compressed color endpoints, the values in the preceding table note the precision of the stored RGB endpoints, and the number of bits used for each color value.</span></span> <span data-ttu-id="7ca30-225">たとえば、モード 3 では、カラー エンドポイントの精度レベル 11 と、赤、青、緑の色の変換されたエンドポイントのデルタ値を保存するために使用するビット数 (それぞれ 5、4、4) を指定します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-225">For example, mode 3 specifies a color endpoint precision level of 11, and the number of bits used to store the delta values of the transformed endpoints for the red, blue and green colors (5, 4, and 4 respectively).</span></span> <span data-ttu-id="7ca30-226">モード 10 はデルタ圧縮を使用せず、4 つのカラー エンドポイントをすべて明示的に保存します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-226">Mode 10 does not use delta compression, and instead stores all four color endpoints explicitly.</span></span>
 
-最後の 4 つのブロック モードは 1 領域タイルに使用され、モード フィールドは 5 ビットです。 これらのブロックには、エンドポイント (60 ビット) と圧縮インデックス (63 ビット) のフィールドがあります。 モード 11 ではモード 10 と同様にデルタ圧縮を使用せず、その代わりに両方のカラー エンドポイントを明示的に保存します。
+<span data-ttu-id="7ca30-227">最後の 4 つのブロック モードは 1 領域タイルに使用され、モード フィールドは 5 ビットです。</span><span class="sxs-lookup"><span data-stu-id="7ca30-227">The last four block modes are used for one-region tiles, where the mode field is 5 bits.</span></span> <span data-ttu-id="7ca30-228">これらのブロックには、エンドポイント (60 ビット) と圧縮インデックス (63 ビット) のフィールドがあります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-228">These blocks have fields for the endpoints (60 bits) and the compressed indices (63 bits).</span></span> <span data-ttu-id="7ca30-229">モード 11 ではモード 10 と同様にデルタ圧縮を使用せず、その代わりに両方のカラー エンドポイントを明示的に保存します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-229">Mode 11 (like Mode 10) does not use delta compression, and instead stores both color endpoints explicitly.</span></span>
 
-モード 10011、10111、11011、および11111 (示されていません) は予約されています。 これらをエンコーダーで使用しないでください。 これらのモードの1 つを指定してハードウェアにブロックが渡された場合、その結果の圧縮解除されたブロックは、アルファ チャネルを除くすべてのチャネルにゼロを含む必要があります。
+<span data-ttu-id="7ca30-230">モード 10011、10111、11011、および11111 (示されていません) は予約されています。</span><span class="sxs-lookup"><span data-stu-id="7ca30-230">Modes 10011, 10111, 11011, and 11111 (not shown) are reserved.</span></span> <span data-ttu-id="7ca30-231">これらをエンコーダーで使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="7ca30-231">Do not use these in your encoder.</span></span> <span data-ttu-id="7ca30-232">これらのモードの1 つを指定してハードウェアにブロックが渡された場合、その結果の圧縮解除されたブロックは、アルファ チャネルを除くすべてのチャネルにゼロを含む必要があります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-232">If the hardware is passed blocks with one of these modes specified, the resulting decompressed block must contain all zeroes in all channels except for the alpha channel.</span></span>
 
-BC6H では、アルファ チャネルはモードに関係なく常に 1.0 を返す必要があります。
+<span data-ttu-id="7ca30-233">BC6H では、アルファ チャネルはモードに関係なく常に 1.0 を返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-233">For BC6H, the alpha channel must always return 1.0 regardless of the mode.</span></span>
 
-### <a name="span-idbc6h-partition-setspanspan-idbc6h-partition-setspanspan-idbc6h-partition-setspanbc6h-partition-set"></a><span id="BC6H-partition-set"></span><span id="bc6h-partition-set"></span><span id="BC6H-PARTITION-SET"></span>BC6H パーティション セット
+### <a name="span-idbc6h-partition-setspanspan-idbc6h-partition-setspanspan-idbc6h-partition-setspanbc6h-partition-set"></a><span data-ttu-id="7ca30-234"><span id="BC6H-partition-set"></span><span id="bc6h-partition-set"></span><span id="BC6H-PARTITION-SET"></span>BC6H パーティション セット</span><span class="sxs-lookup"><span data-stu-id="7ca30-234"><span id="BC6H-partition-set"></span><span id="bc6h-partition-set"></span><span id="BC6H-PARTITION-SET"></span>BC6H partition set</span></span>
 
-2 領域のタイルでは 32 のパーティション セットが使用可能で、それらは下の表で定義されています。 各 4 x 4 ブロックは単一の形状を表しています。
+<span data-ttu-id="7ca30-235">2 領域のタイルでは 32 のパーティション セットが使用可能で、それらは下の表で定義されています。</span><span class="sxs-lookup"><span data-stu-id="7ca30-235">There are 32 possible partition sets for a two-region tile, and which are defined in the table below.</span></span> <span data-ttu-id="7ca30-236">各 4 x 4 ブロックは単一の形状を表しています。</span><span class="sxs-lookup"><span data-stu-id="7ca30-236">Each 4x4 block represents a single shape.</span></span>
 
 ![BC6H パーティション セットの表](images/bc6h-partition-sets.png)
 
-このパーティション・セットの表では、太字の下線付きの項目は、サブセット 1 の修正インデックスの位置です (1 つ少ないビットで指定されます)。 パーティションは常にインデックス 0 がサブセット 0 になるように配置されるため、サブセット 0 の修正インデックスは常にインデックス 0 です。 パーティションの順序は、左上から右下、つまり左から右へ、上から下へとなります。
+<span data-ttu-id="7ca30-238">このパーティション・セットの表では、太字の下線付きの項目は、サブセット 1 の修正インデックスの位置です (1 つ少ないビットで指定されます)。</span><span class="sxs-lookup"><span data-stu-id="7ca30-238">In this table of partition sets, the bolded and underlined entry is the location of the fix-up index for subset 1 (which is specified with one less bit).</span></span> <span data-ttu-id="7ca30-239">パーティションは常にインデックス 0 がサブセット 0 になるように配置されるため、サブセット 0 の修正インデックスは常にインデックス 0 です。</span><span class="sxs-lookup"><span data-stu-id="7ca30-239">The fix-up index for subset 0 is always index 0, as the partitioning is always arranged such that index 0 is always in subset 0.</span></span> <span data-ttu-id="7ca30-240">パーティションの順序は、左上から右下、つまり左から右へ、上から下へとなります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-240">Partition order goes from top-left to bottom-right, moving left to right and then top to bottom.</span></span>
 
-## <a name="span-idbc6h-compressed-endpoint-formatspanspan-idbc6h-compressed-endpoint-formatspanspan-idbc6h-compressed-endpoint-formatspanbc6h-compressed-endpoint-format"></a><span id="BC6H-compressed-endpoint-format"></span><span id="bc6h-compressed-endpoint-format"></span><span id="BC6H-COMPRESSED-ENDPOINT-FORMAT"></span>BC6H 圧縮エンドポイント形式
+## <a name="span-idbc6h-compressed-endpoint-formatspanspan-idbc6h-compressed-endpoint-formatspanspan-idbc6h-compressed-endpoint-formatspanbc6h-compressed-endpoint-format"></a><span data-ttu-id="7ca30-241"><span id="BC6H-compressed-endpoint-format"></span><span id="bc6h-compressed-endpoint-format"></span><span id="BC6H-COMPRESSED-ENDPOINT-FORMAT"></span>BC6H 圧縮エンドポイント形式</span><span class="sxs-lookup"><span data-stu-id="7ca30-241"><span id="BC6H-compressed-endpoint-format"></span><span id="bc6h-compressed-endpoint-format"></span><span id="BC6H-COMPRESSED-ENDPOINT-FORMAT"></span>BC6H compressed endpoint format</span></span>
 
 
 ![BC6H 圧縮エンドポイント形式のビット フィールド](images/bc6h-headers-med.png)
 
-この表は、圧縮エンドポイントのビット フィールドを、エンドポイント形式の関数として示しています。各列がエンコードを示し、各行がビット フィールドを示しています。 この方法では、2 領域タイルで 82 ビット、1 領域タイルで 65 ビットを使用します。 たとえば、上記で、1 領域 \[16 4\] のエンコーディング (特に右端の列) の最初の 5 ビットは m\[4:0\] となります。次の 10 ビットは rw\[9:0\] であり、同様に最後の 6 ビット は bw\[10:15\] です。
+<span data-ttu-id="7ca30-243">この表は、圧縮エンドポイントのビット フィールドを、エンドポイント形式の関数として示しています。各列がエンコードを示し、各行がビット フィールドを示しています。</span><span class="sxs-lookup"><span data-stu-id="7ca30-243">This table shows the bit fields for the compressed endpoints as a function of the endpoint format, with each column specifying an encoding and each row specifying a bit field.</span></span> <span data-ttu-id="7ca30-244">この方法では、2 領域タイルで 82 ビット、1 領域タイルで 65 ビットを使用します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-244">This approach takes up 82 bits for two-region tiles and 65 bits for one-region tiles.</span></span> <span data-ttu-id="7ca30-245">たとえば、上記で、1 領域 \[16 4\] のエンコーディング (特に右端の列) の最初の 5 ビットは m\[4:0\] となります。次の 10 ビットは rw\[9:0\] であり、同様に最後の 6 ビット は bw\[10:15\] です。</span><span class="sxs-lookup"><span data-stu-id="7ca30-245">As an example, the first 5 bits for the one-region \[16 4\] encoding above (specifically the right-most column) are bits m\[4:0\], the next 10 bits are bits rw\[9:0\], and so on with the last 6 bits containing bw\[10:15\].</span></span>
 
-上記の表のフィールド名は、次のように定義されています。
+<span data-ttu-id="7ca30-246">上記の表のフィールド名は、次のように定義されています。</span><span class="sxs-lookup"><span data-stu-id="7ca30-246">The field names in the table above are defined as follows:</span></span>
 
-| フィールド | 変数          |
+| <span data-ttu-id="7ca30-247">フィールド</span><span class="sxs-lookup"><span data-stu-id="7ca30-247">Field</span></span> | <span data-ttu-id="7ca30-248">変数</span><span class="sxs-lookup"><span data-stu-id="7ca30-248">Variable</span></span>          |
 |-------|-------------------|
-| m     | mode              |
-| d     | shape index       |
-| rw    | endpt\[0\].A\[0\] |
-| rx    | endpt\[0\].B\[0\] |
-| ry    | endpt\[1\].A\[0\] |
-| rz    | endpt\[1\].B\[0\] |
-| gw    | endpt\[0\].A\[1\] |
-| gx    | endpt\[0\].B\[1\] |
-| gy    | endpt\[1\].A\[1\] |
-| gz    | endpt\[1\].B\[1\] |
-| bw    | endpt\[0\].A\[2\] |
-| bx    | endpt\[0\].B\[2\] |
-| by    | endpt\[1\].A\[2\] |
-| bz    | endpt\[1\].B\[2\] |
+| <span data-ttu-id="7ca30-249">m</span><span class="sxs-lookup"><span data-stu-id="7ca30-249">m</span></span>     | <span data-ttu-id="7ca30-250">mode</span><span class="sxs-lookup"><span data-stu-id="7ca30-250">mode</span></span>              |
+| <span data-ttu-id="7ca30-251">d</span><span class="sxs-lookup"><span data-stu-id="7ca30-251">d</span></span>     | <span data-ttu-id="7ca30-252">shape index</span><span class="sxs-lookup"><span data-stu-id="7ca30-252">shape index</span></span>       |
+| <span data-ttu-id="7ca30-253">rw</span><span class="sxs-lookup"><span data-stu-id="7ca30-253">rw</span></span>    | <span data-ttu-id="7ca30-254">endpt\[0\].A\[0\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-254">endpt\[0\].A\[0\]</span></span> |
+| <span data-ttu-id="7ca30-255">rx</span><span class="sxs-lookup"><span data-stu-id="7ca30-255">rx</span></span>    | <span data-ttu-id="7ca30-256">endpt\[0\].B\[0\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-256">endpt\[0\].B\[0\]</span></span> |
+| <span data-ttu-id="7ca30-257">ry</span><span class="sxs-lookup"><span data-stu-id="7ca30-257">ry</span></span>    | <span data-ttu-id="7ca30-258">endpt\[1\].A\[0\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-258">endpt\[1\].A\[0\]</span></span> |
+| <span data-ttu-id="7ca30-259">rz</span><span class="sxs-lookup"><span data-stu-id="7ca30-259">rz</span></span>    | <span data-ttu-id="7ca30-260">endpt\[1\].B\[0\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-260">endpt\[1\].B\[0\]</span></span> |
+| <span data-ttu-id="7ca30-261">gw</span><span class="sxs-lookup"><span data-stu-id="7ca30-261">gw</span></span>    | <span data-ttu-id="7ca30-262">endpt\[0\].A\[1\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-262">endpt\[0\].A\[1\]</span></span> |
+| <span data-ttu-id="7ca30-263">gx</span><span class="sxs-lookup"><span data-stu-id="7ca30-263">gx</span></span>    | <span data-ttu-id="7ca30-264">endpt\[0\].B\[1\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-264">endpt\[0\].B\[1\]</span></span> |
+| <span data-ttu-id="7ca30-265">gy</span><span class="sxs-lookup"><span data-stu-id="7ca30-265">gy</span></span>    | <span data-ttu-id="7ca30-266">endpt\[1\].A\[1\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-266">endpt\[1\].A\[1\]</span></span> |
+| <span data-ttu-id="7ca30-267">gz</span><span class="sxs-lookup"><span data-stu-id="7ca30-267">gz</span></span>    | <span data-ttu-id="7ca30-268">endpt\[1\].B\[1\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-268">endpt\[1\].B\[1\]</span></span> |
+| <span data-ttu-id="7ca30-269">bw</span><span class="sxs-lookup"><span data-stu-id="7ca30-269">bw</span></span>    | <span data-ttu-id="7ca30-270">endpt\[0\].A\[2\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-270">endpt\[0\].A\[2\]</span></span> |
+| <span data-ttu-id="7ca30-271">bx</span><span class="sxs-lookup"><span data-stu-id="7ca30-271">bx</span></span>    | <span data-ttu-id="7ca30-272">endpt\[0\].B\[2\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-272">endpt\[0\].B\[2\]</span></span> |
+| <span data-ttu-id="7ca30-273">by</span><span class="sxs-lookup"><span data-stu-id="7ca30-273">by</span></span>    | <span data-ttu-id="7ca30-274">endpt\[1\].A\[2\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-274">endpt\[1\].A\[2\]</span></span> |
+| <span data-ttu-id="7ca30-275">bz</span><span class="sxs-lookup"><span data-stu-id="7ca30-275">bz</span></span>    | <span data-ttu-id="7ca30-276">endpt\[1\].B\[2\]</span><span class="sxs-lookup"><span data-stu-id="7ca30-276">endpt\[1\].B\[2\]</span></span> |
 
  
 
-Endpt\[i\] (i は 0 または 1) は、それぞれ 0 番目または 1 番目のエンドポイントを示します。
-## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>エンドポイント値の符号拡張
+<span data-ttu-id="7ca30-277">Endpt\[i\] (i は 0 または 1) は、それぞれ 0 番目または 1 番目のエンドポイントを示します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-277">Endpt\[i\], where i is either 0 or 1, refers to the 0th or 1st set of endpoints respectively.</span></span>
+## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span data-ttu-id="7ca30-278"><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>エンドポイント値の符号拡張</span><span class="sxs-lookup"><span data-stu-id="7ca30-278"><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>Sign extension for endpoint values</span></span>
 
 
-2 領域タイルでは、符号拡張が可能な 4 つのエンドポイント値があります。 Endpt\[0\].A は、形式が符号付き形式の場合にのみ符号付きとなります。他のエンドポイントは、エンドポイントが変換された場合、または形式が符号付き形式である場合にのみ、符号付きとなります。 以下のコードは、2 領域のエンドポイント値の符号を拡張するアルゴリズムを示しています。
+<span data-ttu-id="7ca30-279">2 領域タイルでは、符号拡張が可能な 4 つのエンドポイント値があります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-279">For two-region tiles, there are four endpoint values that can be sign extended.</span></span> <span data-ttu-id="7ca30-280">Endpt\[0\].A は、形式が符号付き形式の場合にのみ符号付きとなります。他のエンドポイントは、エンドポイントが変換された場合、または形式が符号付き形式である場合にのみ、符号付きとなります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-280">Endpt\[0\].A is signed only if the format is a signed format; the other endpoints are signed only if the endpoint was transformed, or if the format is a signed format.</span></span> <span data-ttu-id="7ca30-281">以下のコードは、2 領域のエンドポイント値の符号を拡張するアルゴリズムを示しています。</span><span class="sxs-lookup"><span data-stu-id="7ca30-281">The code below demonstrates the algorithm for extending the sign of two-region endpoint values.</span></span>
 
 ``` syntax
 static void sign_extend_two_region(Pattern &p, IntEndpts endpts[NREGIONS_TWO])
@@ -184,7 +185,7 @@ static void sign_extend_two_region(Pattern &p, IntEndpts endpts[NREGIONS_TWO])
 }
 ```
 
-1 領域のタイルでは、動作は同じですが、endpt\[1\] のみが削除されます。
+<span data-ttu-id="7ca30-282">1 領域のタイルでは、動作は同じですが、endpt\[1\] のみが削除されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-282">For one-region tiles, the behavior is the same, only with endpt\[1\] removed.</span></span>
 
 ``` syntax
 static void sign_extend_one_region(Pattern &p, IntEndpts endpts[NREGIONS_ONE])
@@ -199,33 +200,33 @@ static void sign_extend_one_region(Pattern &p, IntEndpts endpts[NREGIONS_ONE])
 }
 ```
 
-## <a name="span-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspantransform-inversion-for-endpoint-values"></a><span id="Transform-inversion-for-endpoint-values"></span><span id="transform-inversion-for-endpoint-values"></span><span id="TRANSFORM-INVERSION-FOR-ENDPOINT-VALUES"></span>エンドポイント値の変換の反転
+## <a name="span-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspanspan-idtransform-inversion-for-endpoint-valuesspantransform-inversion-for-endpoint-values"></a><span data-ttu-id="7ca30-283"><span id="Transform-inversion-for-endpoint-values"></span><span id="transform-inversion-for-endpoint-values"></span><span id="TRANSFORM-INVERSION-FOR-ENDPOINT-VALUES"></span>エンドポイント値の変換の反転</span><span class="sxs-lookup"><span data-stu-id="7ca30-283"><span id="Transform-inversion-for-endpoint-values"></span><span id="transform-inversion-for-endpoint-values"></span><span id="TRANSFORM-INVERSION-FOR-ENDPOINT-VALUES"></span>Transform inversion for endpoint values</span></span>
 
 
-2 領域タイルでは、変換は差分エンコーディングの逆数を適用し、endpt\[0\].A の基本値を他の 3 つのエントリに加算し、合計 9 回の加算演算を行います。 下の画像では、基本値は「A0」として表され、最も高い浮動小数点精度を持ちます。 「A1」「B0」「B1」は全てアンカー値から算出されたデルタであり、これらのデルタ値は、より低い精度で表されます。 (A0 は endpt\[0\].A に、B0 は endpt\[0\].Bに、A1 は endpt\[1\].A に、B1 は endpt\[1\].B に対応します。)
+<span data-ttu-id="7ca30-284">2 領域タイルでは、変換は差分エンコーディングの逆数を適用し、endpt\[0\].A の基本値を他の 3 つのエントリに加算し、合計 9 回の加算演算を行います。</span><span class="sxs-lookup"><span data-stu-id="7ca30-284">For two-region tiles, the transform applies the inverse of the difference encoding, adding the base value at endpt\[0\].A to the three other entries for a total of 9 add operations.</span></span> <span data-ttu-id="7ca30-285">下の画像では、基本値は「A0」として表され、最も高い浮動小数点精度を持ちます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-285">In the image below, the base value is represented as "A0" and has the highest floating point precision.</span></span> <span data-ttu-id="7ca30-286">「A1」「B0」「B1」は全てアンカー値から算出されたデルタであり、これらのデルタ値は、より低い精度で表されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-286">"A1," "B0," and "B1" are all deltas calculated from the anchor value, and these delta values are represented with lower precision.</span></span> <span data-ttu-id="7ca30-287">(A0 は endpt\[0\].A に、B0 は endpt\[0\].Bに、A1 は endpt\[1\].A に、B1 は endpt\[1\].B に対応します。)</span><span class="sxs-lookup"><span data-stu-id="7ca30-287">(A0 corresponds to endpt\[0\].A, B0 corresponds to endpt\[0\].B, A1 corresponds to endpt\[1\].A, and B1 corresponds to endpt\[1\].B.)</span></span>
 
 ![変換の反転のエンドポイント値の計算](images/bc6h-transform-inverse.png)
 
-1 領域のタイルでは、デルタ オフセットは 1 つだけであるため、3 つの加算演算のみとなります。
+<span data-ttu-id="7ca30-289">1 領域のタイルでは、デルタ オフセットは 1 つだけであるため、3 つの加算演算のみとなります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-289">For one-region tiles there is only one delta offset, and therefore only 3 add operations.</span></span>
 
-圧縮解除プログラムは、反転の結果が endpt\[0\].a の精度をオーバーフローしないようにする必要があります。 オーバーフローの場合には、反転から生じる値は、同じビット数内でラップする必要があります。 A0 の精度が「p」ビットの場合、変換アルゴリズムは次のようになります。
+<span data-ttu-id="7ca30-290">圧縮解除プログラムは、反転の結果が endpt\[0\].a の精度をオーバーフローしないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-290">The decompressor must ensure that that the results of the inverse transform will not overflow the precision of endpt\[0\].a.</span></span> <span data-ttu-id="7ca30-291">オーバーフローの場合には、反転から生じる値は、同じビット数内でラップする必要があります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-291">In the case of an overflow, the values resulting from the inverse transform must wrap within the same number of bits.</span></span> <span data-ttu-id="7ca30-292">A0 の精度が「p」ビットの場合、変換アルゴリズムは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-292">If the precision of A0 is "p" bits, then the transform algorithm is:</span></span>
 
 `B0 = (B0 + A0) & ((1 << p) - 1)`
 
-符号付き形式の場合、デルタ計算の結果も符号拡張される必要があります。 符号拡張演算が両方の符号を拡張することを考慮する場合には、0 が正、1 が負であり、0 の符号拡張がこのクランプの処理を行います。 同様に、このクランプ後に、値 1 (負) のみ符号拡張する必要があります。
+<span data-ttu-id="7ca30-293">符号付き形式の場合、デルタ計算の結果も符号拡張される必要があります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-293">For signed formats, the results of the delta calculation must be sign extended as well.</span></span> <span data-ttu-id="7ca30-294">符号拡張演算が両方の符号を拡張することを考慮する場合には、0 が正、1 が負であり、0 の符号拡張がこのクランプの処理を行います。</span><span class="sxs-lookup"><span data-stu-id="7ca30-294">If the sign extension operation considers extending both signs, where 0 is positive and 1 is negative, then the sign extension of 0 takes care of the clamp above.</span></span> <span data-ttu-id="7ca30-295">同様に、このクランプ後に、値 1 (負) のみ符号拡張する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-295">Equivalently, after the clamp above, only a value of 1 (negative) needs to be sign extended.</span></span>
 
-## <a name="span-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanunquantization-of-color-endpoints"></a><span id="Unquantization-of-color-endpoints"></span><span id="unquantization-of-color-endpoints"></span><span id="UNQUANTIZATION-OF-COLOR-ENDPOINTS"></span>カラー エンドポイントの非量子化
+## <a name="span-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanspan-idunquantization-of-color-endpointsspanunquantization-of-color-endpoints"></a><span data-ttu-id="7ca30-296"><span id="Unquantization-of-color-endpoints"></span><span id="unquantization-of-color-endpoints"></span><span id="UNQUANTIZATION-OF-COLOR-ENDPOINTS"></span>カラー エンドポイントの非量子化</span><span class="sxs-lookup"><span data-stu-id="7ca30-296"><span id="Unquantization-of-color-endpoints"></span><span id="unquantization-of-color-endpoints"></span><span id="UNQUANTIZATION-OF-COLOR-ENDPOINTS"></span>Unquantization of color endpoints</span></span>
 
 
-圧縮されていないエンドポイントでは、次のステップはカラー エンドポイントの最初の非量子化を実行することです。 これには次の 3 つのステップがあります。
+<span data-ttu-id="7ca30-297">圧縮されていないエンドポイントでは、次のステップはカラー エンドポイントの最初の非量子化を実行することです。</span><span class="sxs-lookup"><span data-stu-id="7ca30-297">Given the uncompressed endpoints, the next step is to perform an initial unquantization of the color endpoints.</span></span> <span data-ttu-id="7ca30-298">これには次の 3 つのステップがあります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-298">This involves three steps:</span></span>
 
--   カラー パレットの非量子化
--   パレットの補間
--   非量子化の最終化
+-   <span data-ttu-id="7ca30-299">カラー パレットの非量子化</span><span class="sxs-lookup"><span data-stu-id="7ca30-299">An unquantization of the color palettes</span></span>
+-   <span data-ttu-id="7ca30-300">パレットの補間</span><span class="sxs-lookup"><span data-stu-id="7ca30-300">Interpolation of the palettes</span></span>
+-   <span data-ttu-id="7ca30-301">非量子化の最終化</span><span class="sxs-lookup"><span data-stu-id="7ca30-301">Unquantization finalization</span></span>
 
-非量子化プロセスを 2 つの部分 (補間前のカラー パレットの非量子化と、補間後の最終の非量子化) に分離することにより、パレット補間前の完全非量子化プロセスと比較して必要な乗算演算の数が減少します。
+<span data-ttu-id="7ca30-302">非量子化プロセスを 2 つの部分 (補間前のカラー パレットの非量子化と、補間後の最終の非量子化) に分離することにより、パレット補間前の完全非量子化プロセスと比較して必要な乗算演算の数が減少します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-302">Separating the unquantization process into two parts (color palette unquantization before interpolation and final unquantization after interpolation) reduces the number of multiplication operations required when compared to a full unquantization process before palette interpolation.</span></span>
 
-下のコードは、元の 16 ビット カラー値の見積もりを取得し、提供されたウェイト値を使用して 6 つの追加のカラー値をパレットに追加するプロセスを示しています。 同じ操作が各チャネルで実行されます。
+<span data-ttu-id="7ca30-303">下のコードは、元の 16 ビット カラー値の見積もりを取得し、提供されたウェイト値を使用して 6 つの追加のカラー値をパレットに追加するプロセスを示しています。</span><span class="sxs-lookup"><span data-stu-id="7ca30-303">The code below illustrates the process for retrieving estimates of the original 16-bit color values, and then using the supplied weight values to add 6 additional color values to the palette.</span></span> <span data-ttu-id="7ca30-304">同じ操作が各チャネルで実行されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-304">The same operation is performed on each channel.</span></span>
 
 ``` syntax
 int aWeight3[] = {0, 9, 18, 27, 37, 46, 55, 64};
@@ -249,11 +250,11 @@ void generate_palette_unquantized(UINT8 uNumIndices, int c1, int c2, int prec, U
 }
 ```
 
-次のコード サンプルでは、補間のプロセスを示しています。次のようなことがわかります。
+<span data-ttu-id="7ca30-305">次のコード サンプルでは、補間のプロセスを示しています。次のようなことがわかります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-305">The next code sample demonstrates the interpolation process, with the following observations:</span></span>
 
--   **非量子化**関数 (下記) のカラー値の有効な範囲は -32768 〜 65535 であるため、インターポレーターは 17 ビット符号付き算術演算を使って実装されています。
--   補間後、値は **finish\_unquantize** 関数 (このセクションの 3 番目のサンプルで説明しています) に渡され、最終的なスケーリングが適用されます。
--   すべてのハードウェアの圧縮解除プログラムは、これらの関数でビットアキュレートの結果を返す必要があります。
+-   <span data-ttu-id="7ca30-306">**非量子化**関数 (下記) のカラー値の有効な範囲は -32768 〜 65535 であるため、インターポレーターは 17 ビット符号付き算術演算を使って実装されています。</span><span class="sxs-lookup"><span data-stu-id="7ca30-306">Since the full range of color values for the **unquantize** function (below) are from -32768 to 65535, the interpolator is implemented using 17-bit signed arithmetic.</span></span>
+-   <span data-ttu-id="7ca30-307">補間後、値は **finish\_unquantize** 関数 (このセクションの 3 番目のサンプルで説明しています) に渡され、最終的なスケーリングが適用されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-307">After interpolation, the values are passed to the **finish\_unquantize** function (described in the third sample in this section), which applies the final scaling.</span></span>
+-   <span data-ttu-id="7ca30-308">すべてのハードウェアの圧縮解除プログラムは、これらの関数でビットアキュレートの結果を返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="7ca30-308">All hardware decompressors are required to return bit-accurate results with these functions.</span></span>
 
 ``` syntax
 int unquantize(int comp, int uBitsPerComp)
@@ -299,7 +300,7 @@ int unquantize(int comp, int uBitsPerComp)
 }
 ```
 
-**finish\_unquantize** はパレット補間後に呼び出されます。 **Unquantize** 関数は、符号付きの場合は 31/32、符号なしの場合は 31/64 で、スケーリングを延期します。 この動作は、パレット補間の完了後の最終値を有効な半範囲 (-0x7BFF〜0x7BFF) にして、必要な乗算の数を減らすために必要です。 **finish\_unquantize**は最終的なスケーリングを適用して、**unsigned short** 値を返し、それが **half** に再解釈されます。
+<span data-ttu-id="7ca30-309">**finish\_unquantize** はパレット補間後に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-309">**finish\_unquantize** is called after palette interpolation.</span></span> <span data-ttu-id="7ca30-310">**Unquantize** 関数は、符号付きの場合は 31/32、符号なしの場合は 31/64 で、スケーリングを延期します。</span><span class="sxs-lookup"><span data-stu-id="7ca30-310">The **unquantize** function postpones the scaling by 31/32 for signed, 31/64 for unsigned.</span></span> <span data-ttu-id="7ca30-311">この動作は、パレット補間の完了後の最終値を有効な半範囲 (-0x7BFF〜0x7BFF) にして、必要な乗算の数を減らすために必要です。</span><span class="sxs-lookup"><span data-stu-id="7ca30-311">This behavior is required to get the final value into valid half range(-0x7BFF ~ 0x7BFF) after the palette interpolation is completed in order to reduce the number of necessary multiplications.</span></span> <span data-ttu-id="7ca30-312">**finish\_unquantize**は最終的なスケーリングを適用して、**unsigned short** 値を返し、それが **half** に再解釈されます。</span><span class="sxs-lookup"><span data-stu-id="7ca30-312">**finish\_unquantize** applies the final scaling and returns an **unsigned short** value that gets reinterpreted into **half**.</span></span>
 
 ``` syntax
 unsigned short finish_unquantize(int comp)
@@ -323,15 +324,14 @@ unsigned short finish_unquantize(int comp)
 }
 ```
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="7ca30-313"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="7ca30-313"><span id="related-topics"></span>Related topics</span></span>
 
 
-[テクスチャのブロック圧縮](texture-block-compression.md)
-
- 
+[<span data-ttu-id="7ca30-314">テクスチャのブロック圧縮</span><span class="sxs-lookup"><span data-stu-id="7ca30-314">Texture block compression</span></span>](texture-block-compression.md)
 
  
 
+ 
 
 
 

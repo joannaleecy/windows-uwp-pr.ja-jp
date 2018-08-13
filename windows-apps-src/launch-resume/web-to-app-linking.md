@@ -1,106 +1,110 @@
 ---
 author: TylerMSFT
-title: "アプリの URI ハンドラーを使用して Web とアプリのリンクをサポートする"
-description: "アプリの URI ハンドラーを使用して、ユーザーがアプリを利用するように促します。"
-keywords: "Windows でのディープ リンクの設定"
+title: アプリの URI ハンドラーを使用して web サイト用のアプリを有効にします。
+description: Web サイトの機能のアプリをサポートすることで、アプリでユーザーの活動をドライブします。
+keywords: Windows でのディープ リンクの設定
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 225f0d2bd5d8a2434c3e548064960f44f1df530e
-ms.lasthandoff: 02/08/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 8482c3b14a6845dc3bfd5912c8260b5cd3214249
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "958315"
 ---
+# <a name="enable-apps-for-websites-using-app-uri-handlers"></a><span data-ttu-id="d57b4-104">アプリの URI ハンドラーを使用して web サイト用のアプリを有効にします。</span><span class="sxs-lookup"><span data-stu-id="d57b4-104">Enable apps for websites using app URI handlers</span></span>
 
-# <a name="support-web-to-app-linking-with-app-uri-handlers"></a>アプリの URI ハンドラーを使用して Web とアプリのリンクをサポートする
+<span data-ttu-id="d57b4-105">Web サイト用のアプリは、アプリが起動の代わりに、ブラウザーを開いて、web サイトへのリンクを開いたときにできるように、web サイトでアプリを関連付けます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-105">Apps for Websites associates your app with a website so that when someone opens a link to your website, your app is launched instead of opening the browser.</span></span> <span data-ttu-id="d57b4-106">アプリがインストールされていない場合、web サイトを通常どおり、ブラウザーで開きます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-106">If your app is not installed, your website opens in the browser as usual.</span></span> <span data-ttu-id="d57b4-107">検証済みのコンテンツ所有者だけがリンクに登録できるため、ユーザーはこのエクスペリエンスを信頼することができます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-107">Users can trust this experience because only verified content owners can register for a link.</span></span> <span data-ttu-id="d57b4-108">ユーザーがすべてが登録されている web-に-アプリへのリンクの設定に移動してにチェックできる > アプリ > web サイト用のアプリです。</span><span class="sxs-lookup"><span data-stu-id="d57b4-108">Users will be able to check all of their registered web-to-app links by going to Settings > Apps > Apps for websites.</span></span>
 
-Web とアプリのリンクをサポートすることによって、アプリを利用するようにユーザーを導く方法について説明します。 Web とアプリのリンクを使用すると、アプリと Web サイトを関連付けることができます。 ユーザーが Web サイトへの http リンクや https リンクを開くと、ブラウザーが開くのではなく、アプリが起動されます。 アプリがインストールされていない場合は、ブラウザーで Web サイトを開くためのリンクが提供されます。 検証済みのコンテンツ所有者だけがリンクに登録できるため、ユーザーはこのエクスペリエンスを信頼することができます。
+<span data-ttu-id="d57b4-109">Web のアプリのリンクを有効にするのには必要があります。</span><span class="sxs-lookup"><span data-stu-id="d57b4-109">To enable web-to-app linking you will need to:</span></span>
+- <span data-ttu-id="d57b4-110">アプリが処理する URI をマニフェスト ファイル内に指定します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-110">Identify the URIs your app will handle in the manifest file</span></span>
+- <span data-ttu-id="d57b4-111">アプリと web サイト間の関係を定義する JSON ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-111">A JSON file that defines the association between your app and your website.</span></span> <span data-ttu-id="d57b4-112">アプリと同じホスト ルートで、アプリ パッケージ ファミリ名マニフェストの宣言を実行します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-112">with the app Package Family Name at the same host root as the app manifest declaration.</span></span>
+- <span data-ttu-id="d57b4-113">アプリでアクティブ化を処理します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-113">Handle the activation in the app.</span></span>
 
-Web とアプリのリンクを有効にするには、次を行う必要があります。
-- アプリが処理する URI をマニフェスト ファイル内に指定します。
-- アプリのマニフェスト宣言と同じホストのルートに配置されている JSON ファイルに、アプリのパッケージ ファミリ名を指定します。
-- アプリでアクティブ化を処理します。
+> [!Note]
+> <span data-ttu-id="d57b4-114">Windows 10 の作成者の更新プログラムを開始、サポートされているリンクをクリックしてで Microsoft Edge は、対応するアプリを起動します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-114">Starting with the Windows 10 Creators update, supported links clicked in Microsoft Edge will launch the corresponding app.</span></span> <span data-ttu-id="d57b4-115">サポートされているリンクを他のブラウザー (例: Internet Explorer など) をクリックしてでは、参照のエクスペリエンスで保持されます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-115">Supported links clicked in other browsers (e.g. Internet Explorer, etc.), will keep you in the browsing experience.</span></span>
 
-## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>http リンクや https リンクを処理できるようにアプリ マニフェストに登録する
+## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a><span data-ttu-id="d57b4-116">http リンクや https リンクを処理できるようにアプリ マニフェストに登録する</span><span class="sxs-lookup"><span data-stu-id="d57b4-116">Register to handle http and https links in the app manifest</span></span>
 
-アプリでは、処理する Web サイトの URI を指定する必要があります。 そのためには、**Windows.appUriHandler** 拡張機能登録をアプリのマニフェスト ファイル **Package.appxmanifest** に追加します。
+<span data-ttu-id="d57b4-117">アプリでは、処理する Web サイトの URI を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d57b4-117">Your app needs to identify the URIs for the websites it will handle.</span></span> <span data-ttu-id="d57b4-118">そのためには、**Windows.appUriHandler** 拡張機能登録をアプリのマニフェスト ファイル **Package.appxmanifest** に追加します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-118">To do so, add the **Windows.appUriHandler** extension registration to your app’s manifest file **Package.appxmanifest**.</span></span>
 
-たとえば、Web サイトのアドレスが “msn.com” である場合は、アプリのマニフェスト内に次のエントリを作成します。
+<span data-ttu-id="d57b4-119">たとえば、Web サイトのアドレスが “msn.com” である場合は、アプリのマニフェスト内に次のエントリを作成します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-119">For example, if your website’s address is “msn.com” you would make the following entry in your app’s manifest:</span></span>
 
 ```xml
 <Applications>
-    ...
-  <Extensions>
-     <uap3:Extension Category="windows.appUriHandler">
-      <uap3:AppUriHandler>
-        <uap3:Host Name="msn.com" />
-      </uap3:AppUriHandler>
-    </uap3:Extension>
-  </Extensions>
-    ...
+  <Application ... >
+      ...
+      <Extensions>
+         <uap3:Extension Category="windows.appUriHandler">
+          <uap3:AppUriHandler>
+            <uap3:Host Name="msn.com" />
+          </uap3:AppUriHandler>
+        </uap3:Extension>
+      </Extensions>
+  </Application>
 </Applications>
 ```
 
-上記の宣言によって、指定されたホストからのリンクを処理するようにアプリが登録されます。 Web サイトに複数のアドレス (m.example.com、www.example.com、example.com など) がある場合は、各アドレスに対応するように、`<uap3:AppUriHandler>` 内に個別の `<uap3:Host Name=... />` エントリを追加します。
+<span data-ttu-id="d57b4-120">上記の宣言によって、指定されたホストからのリンクを処理するようにアプリが登録されます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-120">The declaration above registers your app to handle links from the specified host.</span></span> <span data-ttu-id="d57b4-121">Web サイトに複数のアドレス (m.example.com、www.example.com、example.com など) がある場合は、各アドレスに対応するように、`<uap3:AppUriHandler>` 内に個別の `<uap3:Host Name=... />` エントリを追加します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-121">If your website has multiple addresses (for example: m.example.com, www.example.com, and example.com) then add a separate `<uap3:Host Name=... />` entry inside of the `<uap3:AppUriHandler>` for each address.</span></span>
 
-## <a name="associate-your-app-and-website-with-a-json-file"></a>アプリと Web サイトを JSON ファイルに関連付ける
+## <a name="associate-your-app-and-website-with-a-json-file"></a><span data-ttu-id="d57b4-122">アプリと Web サイトを JSON ファイルに関連付ける</span><span class="sxs-lookup"><span data-stu-id="d57b4-122">Associate your app and website with a JSON file</span></span>
 
-アプリで開くことができるのがお客様の Web サイトのコンテンツのみにする場合は、Web サーバーのルートまたはドメイン上の既知のディレクトリに配置されている JSON ファイル内に、アプリのパッケージ ファミリ名を指定します。 これにより、お客様の Web サイトは、指定されている一連のアプリがサイト上のコンテンツを開くことに同意したことになります。 パッケージ ファミリ名は、アプリケーション マニフェスト デザイナーの [パッケージ] セクションで確認できます。
+<span data-ttu-id="d57b4-123">アプリで開くことができるのがお客様の Web サイトのコンテンツのみにする場合は、Web サーバーのルートまたはドメイン上の既知のディレクトリに配置されている JSON ファイル内に、アプリのパッケージ ファミリ名を指定します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-123">To ensure that only your app can open content on your website, include your app's package family name in a JSON file located in the web server root, or at the well-known directory on the domain.</span></span> <span data-ttu-id="d57b4-124">これにより、お客様の Web サイトは、指定されている一連のアプリがサイト上のコンテンツを開くことに同意したことになります。</span><span class="sxs-lookup"><span data-stu-id="d57b4-124">This signifies that your website gives consent for the listed apps to open content on your site.</span></span> <span data-ttu-id="d57b4-125">パッケージ ファミリ名は、アプリケーション マニフェスト デザイナーの [パッケージ] セクションで確認できます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-125">You can find the package family name in the Packages section in the app manifest designer.</span></span>
 
 >[!Important]
-> JSON ファイルには、.json ファイル接尾辞を指定しないでください。
+> <span data-ttu-id="d57b4-126">JSON ファイルには、.json ファイル接尾辞を指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="d57b4-126">The JSON file should not have a .json file suffix.</span></span>
 
-**windows-app-web-link** という名前で JSON ファイルを作成し (.json ファイル拡張子は付加しない)、アプリのパッケージ ファミリ名を指定します。 次に例を示します。
+<span data-ttu-id="d57b4-127">**windows-app-web-link** という名前で JSON ファイルを作成し (.json ファイル拡張子は付加しない)、アプリのパッケージ ファミリ名を指定します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-127">Create a JSON file (without the .json file extension) named **windows-app-web-link** and provide your app’s package family name.</span></span> <span data-ttu-id="d57b4-128">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-128">For example:</span></span>
 
 ``` JSON
 [{
-  "packageFamilyName": "YourAppsPFN",
+  "packageFamilyName": "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
   "paths": [ "*" ],
   "excludePaths" : [ "/news/*", "/blog/*" ]
  }]
 ```
 
-Windows によって、Web サイトへの https 接続が行われ、Web サーバー上の対応する JSON ファイルが検索されます。
+<span data-ttu-id="d57b4-129">Windows によって、Web サイトへの https 接続が行われ、Web サーバー上の対応する JSON ファイルが検索されます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-129">Windows will make an https connection to your website and will look for the corresponding JSON file on your web server.</span></span>
 
-### <a name="wildcards"></a>ワイルドカード
+### <a name="wildcards"></a><span data-ttu-id="d57b4-130">ワイルドカード</span><span class="sxs-lookup"><span data-stu-id="d57b4-130">Wildcards</span></span>
 
-上記の JSON ファイルの例では、ワイルドカードの使用も示しています。 ワイルドカードを使用すると、数行のコードでさまざまなリンクをサポートすることができます。 Web とアプリのリンクでは、JSON ファイルで 2 種類のワイルドカードを使用できます。
+<span data-ttu-id="d57b4-131">上記の JSON ファイルの例では、ワイルドカードの使用も示しています。</span><span class="sxs-lookup"><span data-stu-id="d57b4-131">The JSON file example above demonstrates the use of wildcards.</span></span> <span data-ttu-id="d57b4-132">ワイルドカードを使用すると、数行のコードでさまざまなリンクをサポートすることができます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-132">Wildcards allow you to support a wide variety of links with fewer lines of code.</span></span> <span data-ttu-id="d57b4-133">Web とアプリのリンクでは、JSON ファイルで 2 種類のワイルドカードを使用できます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-133">Web-to-app linking supports two types of wildcards in the JSON file:</span></span>
 
-| **ワイルドカード** | **説明**               |
+| **<span data-ttu-id="d57b4-134">ワイルドカード</span><span class="sxs-lookup"><span data-stu-id="d57b4-134">Wildcard</span></span>** | **<span data-ttu-id="d57b4-135">説明</span><span class="sxs-lookup"><span data-stu-id="d57b4-135">Description</span></span>**               |
 |--------------|-------------------------------|
-| **\***       | 任意の部分文字列を表します      |
-| **?**        | 1 つの文字を表します |
+| **\***       | <span data-ttu-id="d57b4-136">任意の部分文字列を表します</span><span class="sxs-lookup"><span data-stu-id="d57b4-136">Represents any substring</span></span>      |
+| **<span data-ttu-id="d57b4-137">?</span><span class="sxs-lookup"><span data-stu-id="d57b4-137">?</span></span>**        | <span data-ttu-id="d57b4-138">1 つの文字を表します</span><span class="sxs-lookup"><span data-stu-id="d57b4-138">Represents a single character</span></span> |
 
-たとえば、上記の例のように `"excludePaths" : [ "/news/*", "/blog/*" ]` と指定すると、アプリでは、Web サイトのアドレス (上記の例では msn.com) で始まるすべてのパスがサポートされますが、`/news/` と `/blog/` の下にあるパスは**サポートされません**。 つまり、**msn.com/weather.html** はサポートされますが、****msn.com/news/topnews.html**** はサポートされません。
+<span data-ttu-id="d57b4-139">たとえば、 `"excludePaths" : [ "/news/*", "/blog/*" ]` 、上記の例では、アプリは、下にあるもの**を除く**web サイトのアドレス (例: msn.com) で始まるすべてのパスをサポート`/news/`と`/blog/`します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-139">For example, given `"excludePaths" : [ "/news/*", "/blog/*" ]` in the example above, your app will support all paths that start with your website’s address (e.g. msn.com), **except** those under `/news/` and `/blog/`.</span></span> <span data-ttu-id="d57b4-140">つまり、**msn.com/weather.html** はサポートされますが、****msn.com/news/topnews.html**** はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="d57b4-140">**msn.com/weather.html** will be supported, but not ****msn.com/news/topnews.html****.</span></span>
 
+### <a name="multiple-apps"></a><span data-ttu-id="d57b4-141">複数のアプリ</span><span class="sxs-lookup"><span data-stu-id="d57b4-141">Multiple apps</span></span>
 
-### <a name="multiple-apps"></a>複数のアプリ
-
-Web サイトにリンクするアプリが 2 つある場合、両方のアプリケーションのパッケージ ファミリ名を **windows-app-web-link** JSON ファイルに指定します。 これで、どちらのアプリもサポートされます。 両方のアプリがインストールされている場合、ユーザーに対して、どちらを既定のリンクとして選ぶかが示されます。 既定のリンクを後で変更する場合は、**[設定] > [Web サイト用のアプリ]** で変更できます。 また、開発者はいつでも JSON ファイルを変更できます。変更内容は、変更と同日内になるべく早く確認するか、更新後 8 日以内に確認してください。
+<span data-ttu-id="d57b4-142">Web サイトにリンクするアプリが 2 つある場合、両方のアプリケーションのパッケージ ファミリ名を **windows-app-web-link** JSON ファイルに指定します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-142">If you have two apps that you would like to link to your website, list both of the application package family names in your **windows-app-web-link** JSON file.</span></span> <span data-ttu-id="d57b4-143">これで、どちらのアプリもサポートされます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-143">Both apps can be supported.</span></span> <span data-ttu-id="d57b4-144">両方のアプリがインストールされている場合、ユーザーに対して、どちらを既定のリンクとして選ぶかが示されます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-144">The user will be presented with a choice of which is the default link if both are installed.</span></span> <span data-ttu-id="d57b4-145">既定のリンクを後で変更する場合は、**[設定] > [Web サイト用のアプリ]** で変更できます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-145">If they want to change the default link later, they can change it in **Settings > Apps for Websites**.</span></span> <span data-ttu-id="d57b4-146">また、開発者はいつでも JSON ファイルを変更できます。変更内容は、変更と同日内になるべく早く確認するか、更新後 8 日以内に確認してください。</span><span class="sxs-lookup"><span data-stu-id="d57b4-146">Developers can also change the JSON file at any time and see the change as early as the same day but no later than eight days after the update.</span></span>
 
 ``` JSON
 [{
-  "packageFamilyName": "YourAppsPFN",
+  "packageFamilyName": "Your apps's package family name, e.g MyApp_9jmtgj1pbbz6e",
   "paths": [ "*" ],
   "excludePaths" : [ "/news/*", "/blog/*" ]
  },
  {
-  "packageFamilyName": "Your2ndAppsPFN",
+  "packageFamilyName": "Your second app's package family name, e.g. MyApp2_8jmtgj2pbbz6e",
   "paths": [ "/example/*", "/links/*" ]
  }]
 ```
 
-ユーザーに最適なエクスペリエンスを提供するには、JSON ファイル内のサポート対象のパスからオンラインのみのコンテンツが除外されるように、除外パスを使用してください。
+<span data-ttu-id="d57b4-147">ユーザーに最適なエクスペリエンスを提供するには、JSON ファイル内のサポート対象のパスからオンラインのみのコンテンツが除外されるように、除外パスを使用してください。</span><span class="sxs-lookup"><span data-stu-id="d57b4-147">To provide the best experience for your users, use exclude paths to make sure that online-only content is excluded from the supported paths in your JSON file.</span></span>
 
-最初に除外パスが確認され、除外パスが一致すると、そのパスに対応するページは、指定されたアプリではなくブラウザーで開かれます。 上記の例では、‘/news/\*’ と指定すると、そのパスの下にあるすべてのページが対象となりますが、‘/news\*’ ('news' の後にスラッシュを付けない) と指定すると、‘news\*’ で始まるパス (‘newslocal/’、‘newsinternational/’ など) の下にあるすべてのパスが対象となります。
+<span data-ttu-id="d57b4-148">最初に除外パスが確認され、除外パスが一致すると、そのパスに対応するページは、指定されたアプリではなくブラウザーで開かれます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-148">Exclude paths are checked first and if there is a match the corresponding page will be opened with the browser instead of the designated app.</span></span> <span data-ttu-id="d57b4-149">上記の例では、‘/news/\*’ と指定すると、そのパスの下にあるすべてのページが対象となりますが、‘/news\*’ ('news' の後にスラッシュを付けない) と指定すると、‘news\*’ で始まるパス (‘newslocal/’、‘newsinternational/’ など) の下にあるすべてのパスが対象となります。</span><span class="sxs-lookup"><span data-stu-id="d57b4-149">In the example above, ‘/news/\*’ includes any pages under that path while ‘/news\*’ (no forward slash trails 'news') includes any paths under ‘news\*’ such as ‘newslocal/’, ‘newsinternational/’, and so on.</span></span>
 
-## <a name="handle-links-on-activation-to-link-to-content"></a>コンテンツにリンクするためのアクティブ化でリンクを処理する
+## <a name="handle-links-on-activation-to-link-to-content"></a><span data-ttu-id="d57b4-150">コンテンツにリンクするためのアクティブ化でリンクを処理する</span><span class="sxs-lookup"><span data-stu-id="d57b4-150">Handle links on Activation to link to content</span></span>
 
-アプリの Visual Studio ソリューションで **App.xaml.cs** に移動し、**OnActivated()** に、リンクされたコンテンツの処理を追加します。 次の例では、アプリで開かれるページは URI パスによって異なります。
+<span data-ttu-id="d57b4-151">アプリの Visual Studio ソリューションで **App.xaml.cs** に移動し、**OnActivated()** に、リンクされたコンテンツの処理を追加します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-151">Navigate to **App.xaml.cs** in your app’s Visual Studio solution and in **OnActivated()** add handling for linked content.</span></span> <span data-ttu-id="d57b4-152">次の例では、アプリで開かれるページは URI パスによって異なります。</span><span class="sxs-lookup"><span data-stu-id="d57b4-152">In the following example, the page that is opened in the app depends on the URI path:</span></span>
 
 ``` CS
 protected override void OnActivated(IActivatedEventArgs e)
@@ -148,55 +152,57 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-**重要** 上記の例で示したように、最後の `if (rootFrame.Content == null)` ロジックは `rootFrame.Navigate(deepLinkPageType, e);` に置き換えてください。
+<span data-ttu-id="d57b4-153">**重要** 上記の例で示したように、最後の `if (rootFrame.Content == null)` ロジックは `rootFrame.Navigate(deepLinkPageType, e);` に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="d57b4-153">**Important** Make sure to replace the final `if (rootFrame.Content == null)` logic with `rootFrame.Navigate(deepLinkPageType, e);` as shown in the example above.</span></span>
 
-## <a name="test-it-out-local-validation-tool"></a>テストの実行: ローカルの検証ツール
+## <a name="test-it-out-local-validation-tool"></a><span data-ttu-id="d57b4-154">テストの実行: ローカルの検証ツール</span><span class="sxs-lookup"><span data-stu-id="d57b4-154">Test it out: Local validation tool</span></span>
 
-アプリ ホスト登録検証ツールを実行して、アプリと Web サイトの構成をテストできます。このツールは次の場所にあります。
+<span data-ttu-id="d57b4-155">アプリ ホスト登録検証ツールを実行して、アプリと Web サイトの構成をテストできます。このツールは次の場所にあります。</span><span class="sxs-lookup"><span data-stu-id="d57b4-155">You can test the configuration of your app and website by running the App host registration verifier tool which is available in:</span></span>
 
-%windir%\\system32\\**AppHostRegistrationVerifier.exe**
+<span data-ttu-id="d57b4-156">%windir%\\system32\\**AppHostRegistrationVerifier.exe**</span><span class="sxs-lookup"><span data-stu-id="d57b4-156">%windir%\\system32\\**AppHostRegistrationVerifier.exe**</span></span>
 
-次のパラメーターを使用してこのツールを実行し、アプリと Web サイトの構成をテストしてください。
+<span data-ttu-id="d57b4-157">次のパラメーターを使用してこのツールを実行し、アプリと Web サイトの構成をテストしてください。</span><span class="sxs-lookup"><span data-stu-id="d57b4-157">Test the configuration of your app and website by running this tool with the following parameters:</span></span>
 
-**AppHostRegistrationVerifier.exe** *hostname packagefamilyname filepath*
+<span data-ttu-id="d57b4-158">**AppHostRegistrationVerifier.exe** *hostname packagefamilyname filepath*</span><span class="sxs-lookup"><span data-stu-id="d57b4-158">**AppHostRegistrationVerifier.exe** *hostname packagefamilyname filepath*</span></span>
 
--   ホスト名: Web サイト (microsoft.com など)
--   パッケージ ファミリ名 (PFN): アプリの PFN
--   ファイル パス: ローカルな検証のための JSON ファイル (C:\\SomeFolder\\windows-app-web-link など)
+-   <span data-ttu-id="d57b4-159">ホスト名: Web サイト (microsoft.com など)</span><span class="sxs-lookup"><span data-stu-id="d57b4-159">Hostname: Your website (e.g. microsoft.com)</span></span>
+-   <span data-ttu-id="d57b4-160">パッケージ ファミリ名 (PFN): アプリの PFN</span><span class="sxs-lookup"><span data-stu-id="d57b4-160">Package Family Name (PFN): Your app’s PFN</span></span>
+-   <span data-ttu-id="d57b4-161">ファイル パス: ローカルな検証のための JSON ファイル (C:\\SomeFolder\\windows-app-web-link など)</span><span class="sxs-lookup"><span data-stu-id="d57b4-161">File path: The JSON file for local validation (e.g. C:\\SomeFolder\\windows-app-web-link)</span></span>
 
-## <a name="test-it-web-validation"></a>テストの実行: Web 検証
+<span data-ttu-id="d57b4-162">場合は、ツールは何か、そのファイルをアップロードするときに入力規則が有効です。</span><span class="sxs-lookup"><span data-stu-id="d57b4-162">If the tool does not return anything, validation will work on that file when uploaded.</span></span> <span data-ttu-id="d57b4-163">エラー コードがある場合は使用できません。</span><span class="sxs-lookup"><span data-stu-id="d57b4-163">If there is an error code, it will not work.</span></span>
 
-リンクをクリックしたときにアプリがアクティブ化されるかどうか確認するには、アプリケーションを閉じておきます。 次に、Web サイトでサポートされるパスのいずれかのアドレスをコピーします。 たとえば、Web サイトのアドレスが “msn.com” であり、サポートされるパスの 1 つが “path1” である場合、アドレスは次のようになります。 `http://msn.com/path1`
+<span data-ttu-id="d57b4-164">パスのローカルの入力規則の一部として側にロードされているアプリの一致を強制する次のレジストリ キーを有効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-164">You can enable the following registry key to force path matching for side-loaded apps as part of local validation:</span></span>
 
-アプリが閉じていることを確認します。 **Windows キー + R** キーを押し、**[ファイル名を指定して実行]** ダイアログ ボックスを開き、ウィンドウにリンクを貼り付けます。 Web ブラウザーではなく、アプリが起動します。
+`HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
+AppModel\SystemAppData\YourApp\AppUriHandlers`
 
-また、[LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) API を使用し、他のアプリから目的のアプリを起動してテストすることもできます。 この API を使用して、電話でテストすることもできます。
+<span data-ttu-id="d57b4-165">キー名:`ForceValidation`値。</span><span class="sxs-lookup"><span data-stu-id="d57b4-165">Keyname: `ForceValidation` Value:</span></span> `1`
 
-プロトコルのアクティブ化ロジックを実行する場合は、**OnActivated** イベント ハンドラーにブレークポイントを設定します。
+## <a name="test-it-web-validation"></a><span data-ttu-id="d57b4-166">テストの実行: Web 検証</span><span class="sxs-lookup"><span data-stu-id="d57b4-166">Test it: Web validation</span></span>
 
-**注:** Microsoft Edge ブラウザーでリンクをクリックすると、アプリは起動されず、Web サイトに移動されます。
+<span data-ttu-id="d57b4-167">リンクをクリックしたときにアプリがアクティブ化されるかどうか確認するには、アプリケーションを閉じておきます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-167">Close your application to verify that the app is activated when you click a link.</span></span> <span data-ttu-id="d57b4-168">次に、Web サイトでサポートされるパスのいずれかのアドレスをコピーします。</span><span class="sxs-lookup"><span data-stu-id="d57b4-168">Then, copy the address of one of the supported paths in your website.</span></span> <span data-ttu-id="d57b4-169">たとえば、Web サイトのアドレスが “msn.com” であり、サポートされるパスの 1 つが “path1” である場合、アドレスは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="d57b4-169">For example, if your website’s address is “msn.com”, and one of the support paths is “path1”, you would use</span></span> `http://msn.com/path1`
 
-## <a name="appurihandlers-tips"></a>AppUriHandlers のヒント:
+<span data-ttu-id="d57b4-170">アプリが閉じていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-170">Verify that your app is closed.</span></span> <span data-ttu-id="d57b4-171">**Windows キー + R** キーを押し、**[ファイル名を指定して実行]** ダイアログ ボックスを開き、ウィンドウにリンクを貼り付けます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-171">Press **Windows Key + R** to open the **Run** dialog box and paste the link in the window.</span></span> <span data-ttu-id="d57b4-172">Web ブラウザーではなく、アプリが起動します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-172">Your app should launch instead of the web browser.</span></span>
 
-- アプリで処理できるリンクのみを必ず指定してください。
+<span data-ttu-id="d57b4-173">また、[LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) API を使用し、他のアプリから目的のアプリを起動してテストすることもできます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-173">Additionally, you can test your app by launching it from another app using the [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) API.</span></span> <span data-ttu-id="d57b4-174">この API を使用して、電話でテストすることもできます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-174">You can use this API to test on phones as well.</span></span>
 
-- サポートするすべてのホストの一覧を指定します。  www.example.com と example.com は、異なるホストになります。
+<span data-ttu-id="d57b4-175">プロトコルのアクティブ化ロジックを実行する場合は、**OnActivated** イベント ハンドラーにブレークポイントを設定します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-175">If you would like to follow the protocol activation logic, set a breakpoint in the **OnActivated** event handler.</span></span>
 
-- ユーザーは、Web サイトを処理する特定のアプリを [設定] で選ぶことができます。
+## <a name="appurihandlers-tips"></a><span data-ttu-id="d57b4-176">AppUriHandlers のヒント:</span><span class="sxs-lookup"><span data-stu-id="d57b4-176">AppUriHandlers tips:</span></span>
 
-- JSON ファイルは、https サーバーにアップロードする必要があります。
+- <span data-ttu-id="d57b4-177">アプリで処理できるリンクのみを必ず指定してください。</span><span class="sxs-lookup"><span data-stu-id="d57b4-177">Make sure to only specify links that your app can handle.</span></span>
+- <span data-ttu-id="d57b4-178">サポートするすべてのホストの一覧を指定します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-178">List all of the hosts that you will support.</span></span>  <span data-ttu-id="d57b4-179">www.example.com と example.com は、異なるホストになります。</span><span class="sxs-lookup"><span data-stu-id="d57b4-179">Note that www.example.com and example.com are different hosts.</span></span>
+- <span data-ttu-id="d57b4-180">ユーザーは、Web サイトを処理する特定のアプリを [設定] で選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-180">Users can choose which app they prefer to handle websites in Settings.</span></span>
+- <span data-ttu-id="d57b4-181">JSON ファイルは、https サーバーにアップロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d57b4-181">Your JSON file must be uploaded to an https server.</span></span>
+- <span data-ttu-id="d57b4-182">サポートするパスを変更する場合は、アプリを再公開しなくても、JSON ファイルを再公開することができます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-182">If you need to change the paths that you wish to support, you can republish your JSON file without republishing your app.</span></span> <span data-ttu-id="d57b4-183">ユーザーには、1 ~ 8 日の間、変更内容が表示されます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-183">Users will see the changes in 1-8 days.</span></span>
+- <span data-ttu-id="d57b4-184">AppUriHandlers と共にサイドロードされたすべてのアプリでは、インストール時にホストのリンクが検証されます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-184">All sideloaded apps with AppUriHandlers will have validated links for the host on install.</span></span> <span data-ttu-id="d57b4-185">機能をテストするために JSON ファイルをアップロードする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="d57b4-185">You do not need to have a JSON file uploaded to test the feature.</span></span>
+- <span data-ttu-id="d57b4-186">この機能は、アプリが [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) によって起動された UWP アプリである場合、または [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx) によって起動された Windows デスクトップ アプリである場合は、必ず動作します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-186">This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) or a Windows desktop app launched with  [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx).</span></span> <span data-ttu-id="d57b4-187">URL が、登録されているアプリの URI ハンドラーに対応している場合、ブラウザーではなくアプリが起動されます。</span><span class="sxs-lookup"><span data-stu-id="d57b4-187">If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.</span></span>
 
-- サポートするパスを変更する場合は、アプリを再公開しなくても、JSON ファイルを再公開することができます。 ユーザーには、1 ~ 8 日の間、変更内容が表示されます。
+## <a name="see-also"></a><span data-ttu-id="d57b4-188">関連項目</span><span class="sxs-lookup"><span data-stu-id="d57b4-188">See also</span></span>
 
-- AppUriHandlers と共にサイドロードされたすべてのアプリでは、インストール時にホストのリンクが検証されます。 機能をテストするために JSON ファイルをアップロードする必要はありません。
-
-- この機能は、アプリが [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) によって起動された UWP アプリである場合、または [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx) によって起動された Windows デスクトップ アプリである場合は、必ず動作します。 URL が、登録されているアプリの URI ハンドラーに対応している場合、ブラウザーではなくアプリが起動されます。
-
-## <a name="see-also"></a>関連項目
-
-[windows.protocol の登録](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
-
-[URI のアクティブ化の処理](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-
-[関連付けによる起動のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)では、LaunchUriAsync() API の使用方法を説明します。
-
+<span data-ttu-id="d57b4-189">[プロジェクトのアプリを web 例](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
+[windows.protocol 登録](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
+[URI のライセンス認証を処理](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+[サンプルの関連付けを起動する](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)LaunchUriAsync() API を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d57b4-189">[Web-to-App example project](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
+[windows.protocol registration](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
+[Handle URI Activation](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+[Association Launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) illustrates how to use the LaunchUriAsync() API.</span></span>

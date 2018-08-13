@@ -1,19 +1,20 @@
 ---
 author: normesta
-description: "Windows.ApplicationModel.Appointments 名前空間を使うと、ユーザーのカレンダー アプリで予定の作成と管理を行うことができます。"
-title: "予定の管理"
+description: Windows.ApplicationModel.Appointments 名前空間を使うと、ユーザーのカレンダー アプリで予定の作成と管理を行うことができます。
+title: 予定の管理
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, 予定, カレンダー"
+keywords: Windows 10, UWP, 予定, カレンダー
 ms.openlocfilehash: d4bc4832dd489508eabbddd486f782ac8b0191a3
 ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2017
+ms.locfileid: "665696"
 ---
 # <a name="manage-appointments"></a><span data-ttu-id="c59df-104">予定の管理</span><span class="sxs-lookup"><span data-stu-id="c59df-104">Manage appointments</span></span>
 

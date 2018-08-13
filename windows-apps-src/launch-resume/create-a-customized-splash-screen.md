@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
-title: "スプラッシュ画面の表示時間の延長"
-description: "アプリに追加スプラッシュ画面を作成すると、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。"
+title: スプラッシュ画面の表示時間の延長
+description: アプリに追加スプラッシュ画面を作成すると、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 ms.author: twhitney
 ms.date: 02/08/2017
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 83551438a629e39407c24cfd98d4a761ba3c039b
 ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/26/2017
+ms.locfileid: "693228"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a><span data-ttu-id="b9149-105">スプラッシュ スクリーンの表示時間の延長</span><span class="sxs-lookup"><span data-stu-id="b9149-105">Display a splash screen for more time</span></span>
 

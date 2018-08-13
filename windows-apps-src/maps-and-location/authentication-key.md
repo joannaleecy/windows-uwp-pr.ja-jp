@@ -1,19 +1,20 @@
 ---
 author: normesta
-title: "マップ認証キーの要求"
-description: "MapControl や Windows.Services.Maps 名前空間のマップ サービスをユニバーサル Windows アプリで使うには、そのアプリを認証する必要があります。"
+title: マップ認証キーの要求
+description: MapControl や Windows.Services.Maps 名前空間のマップ サービスをユニバーサル Windows アプリで使うには、そのアプリを認証する必要があります。
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、マップ認証キー、マップ コントロール"
+keywords: Windows 10、UWP、マップ認証キー、マップ コントロール
 ms.openlocfilehash: 7b964c19933db460b8f6b0cc7791165ad86adb6c
 ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2017
+ms.locfileid: "665596"
 ---
 # <a name="request-a-maps-authentication-key"></a><span data-ttu-id="57d1b-104">マップ認証キーの要求</span><span class="sxs-lookup"><span data-stu-id="57d1b-104">Request a maps authentication key</span></span>
 

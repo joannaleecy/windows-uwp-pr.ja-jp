@@ -1,19 +1,20 @@
 ---
 author: mithom
-title: "ゲームパッドと振動"
-description: "ゲームパッドの検出、読み取り、およびゲームパッドへの振動とリアル コマンドの送信には、Windows.Gaming.Input ゲームパッド API を使用します。"
+title: ゲームパッドと振動
+description: ゲームパッドの検出、読み取り、およびゲームパッドへの振動とリアル コマンドの送信には、Windows.Gaming.Input ゲームパッド API を使用します。
 ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, ゲームパッド, 振動"
+keywords: Windows 10, UWP, ゲーム, ゲームパッド, 振動
 ms.openlocfilehash: d09bfcd3dae004f07e07401f4e6ba65ac5027b32
 ms.sourcegitcommit: ae93435e1f9c010a054f55ed7d6bd2f268223957
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/10/2017
+ms.locfileid: "771543"
 ---
 # <a name="gamepad-and-vibration"></a><span data-ttu-id="af37e-104">ゲームパッドと振動</span><span class="sxs-lookup"><span data-stu-id="af37e-104">Gamepad and vibration</span></span>
 
@@ -55,7 +56,7 @@ ms.lasthandoff: 07/10/2017
 
 ### <a name="ui-navigation"></a><span data-ttu-id="af37e-132">UI のナビゲーション</span><span class="sxs-lookup"><span data-stu-id="af37e-132">UI navigation</span></span>
 
-<span data-ttu-id="af37e-133">ユーザー インターフェイスの操作に異なる入力デバイスをサポートする負担を軽くし、ゲームとデバイス間の整合性を高めるため、ほとんどの物理__入力デバイスは、[UI ナビゲーション コントローラー](ui-navigation-controller.md)と呼ばれる個別の論理__入力デバイスとして同時に機能します。</span><span class="sxs-lookup"><span data-stu-id="af37e-133">In order to ease the burden of supporting the different input devices for user interface navigation and to encourage consistency between games and devices, most _physical_ input devices simultaneously act as a separate _logical_ input device called a [UI navigation controller](ui-navigation-controller.md).</span></span> <span data-ttu-id="af37e-134">UI ナビゲーション コントローラーは、各種入力デバイスに共通の UI ナビゲーション コマンドのボキャブラリを提供します。</span><span class="sxs-lookup"><span data-stu-id="af37e-134">The UI navigation controller provides a common vocabulary for UI navigation commands across input devices.</span></span>
+<span data-ttu-id="af37e-133">ユーザー インターフェイスの操作に異なる入力デバイスをサポートする負担を軽くし、ゲームとデバイス間の整合性を高めるため、ほとんどの物理__ 入力デバイスは、[UI ナビゲーション コントローラー](ui-navigation-controller.md)と呼ばれる個別の論理__ 入力デバイスとして同時に機能します。</span><span class="sxs-lookup"><span data-stu-id="af37e-133">In order to ease the burden of supporting the different input devices for user interface navigation and to encourage consistency between games and devices, most _physical_ input devices simultaneously act as a separate _logical_ input device called a [UI navigation controller](ui-navigation-controller.md).</span></span> <span data-ttu-id="af37e-134">UI ナビゲーション コントローラーは、各種入力デバイスに共通の UI ナビゲーション コマンドのボキャブラリを提供します。</span><span class="sxs-lookup"><span data-stu-id="af37e-134">The UI navigation controller provides a common vocabulary for UI navigation commands across input devices.</span></span>
 
 <span data-ttu-id="af37e-135">UI ナビゲーション コントローラーとして、ゲームパッドは、ナビゲーション コマンドの[必須セット](ui-navigation-controller.md#required-set)を左のサムスティック、方向パッド、**ビュー** ボタン、**メニュー** ボタン、**A**  ボタン、および**B** ボタンにマップします。</span><span class="sxs-lookup"><span data-stu-id="af37e-135">As a UI navigation controller, gamepads map the [required set](ui-navigation-controller.md#required-set) of navigation commands to the left thumbstick, D-pad, **view**, **menu**, **A**, and **B** buttons.</span></span>
 

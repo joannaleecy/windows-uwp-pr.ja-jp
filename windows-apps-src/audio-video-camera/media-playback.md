@@ -1,8 +1,8 @@
 ---
 author: drewbatgit
 ms.assetid: 25553c4d-fa4f-4130-af9b-97f993fefd43
-description: "このセクションでは、オーディオとビデオを再生するユニバーサル Windows アプリの作成について説明します。"
-title: "メディア再生"
+description: このセクションでは、オーディオとビデオを再生するユニバーサル Windows アプリの作成について説明します。
+title: メディア再生
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 888131d37a86793d67ce71376b158bd7de734331
 ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/19/2017
+ms.locfileid: "837023"
 ---
 # <a name="media-playback"></a><span data-ttu-id="3b8fb-104">メディア再生</span><span class="sxs-lookup"><span data-stu-id="3b8fb-104">Media playback</span></span>
 

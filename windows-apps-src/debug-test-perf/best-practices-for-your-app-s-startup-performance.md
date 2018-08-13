@@ -1,8 +1,8 @@
 ---
 author: jwmsft
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-title: "アプリ起動時のパフォーマンスのベスト プラクティス"
-description: "起動とアクティブ化を処理する方法を向上させることによって、最適な起動時間のユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
+title: アプリ起動時のパフォーマンスのベスト プラクティス
+description: 起動とアクティブ化を処理する方法を向上させることによって、最適な起動時間のユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,10 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: e36103953ad3fb04ee5beef7e263fc326f817c0b
 ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/14/2017
+ms.locfileid: "894766"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a><span data-ttu-id="43580-104">アプリ起動時のパフォーマンスのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="43580-104">Best practices for your app's startup performance</span></span>
 

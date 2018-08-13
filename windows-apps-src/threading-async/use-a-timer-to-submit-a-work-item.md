@@ -1,19 +1,20 @@
 ---
 author: normesta
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
-title: "タイマーを使った作業項目の送信"
-description: "タイマーが終了した後に実行される作業項目の作成方法を説明します。"
+title: タイマーを使った作業項目の送信
+description: タイマーが終了した後に実行される作業項目の作成方法を説明します。
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, タイマー, スレッド"
+keywords: Windows 10, UWP, タイマー, スレッド
 ms.openlocfilehash: 214a3ad9d84ffb8bc26a4aa02d79d0b1c06f2bfe
 ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2017
+ms.locfileid: "665346"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a><span data-ttu-id="82ee6-104">タイマーを使った作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="82ee6-104">Use a timer to submit a work item</span></span>
 

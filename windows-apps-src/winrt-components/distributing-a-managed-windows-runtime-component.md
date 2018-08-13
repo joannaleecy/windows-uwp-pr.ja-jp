@@ -1,7 +1,7 @@
 ---
 author: msatranjr
-title: "マネージ Windows ランタイム コンポーネントの配布"
-description: "Windows ランタイム コンポーネントは、ファイルをコピーすることで配布できます。"
+title: マネージ Windows ランタイム コンポーネントの配布
+description: Windows ランタイム コンポーネントは、ファイルをコピーすることで配布できます。
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 ms.author: misatran
 ms.date: 02/08/2017
@@ -9,75 +9,72 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9ce20fbfc1289eb02faf8868415feda054d6f691
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 70ef1ab7bc31fde2f0d4744394c1ae69c8caf7fd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "244460"
 ---
+# <a name="distributing-a-managed-windows-runtime-component"></a><span data-ttu-id="1a1e8-104">マネージ Windows ランタイム コンポーネントの配布</span><span class="sxs-lookup"><span data-stu-id="1a1e8-104">Distributing a managed Windows Runtime Component</span></span>
 
 
-# <a name="distributing-a-managed-windows-runtime-component"></a>マネージ Windows ランタイム コンポーネントの配布
+<span data-ttu-id="1a1e8-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="1a1e8-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]</span><span class="sxs-lookup"><span data-stu-id="1a1e8-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
+<span data-ttu-id="1a1e8-107">Windows ランタイム コンポーネントは、ファイルをコピーすることで配布できます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-107">You can distribute your Windows Runtime Component by file copy.</span></span> <span data-ttu-id="1a1e8-108">ただし、コンポーネントが多数のファイルで構成されている場合、インストールがユーザーの負担になる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-108">However, if your component consists of many files, installation can be tedious for your users.</span></span> <span data-ttu-id="1a1e8-109">また、ファイルの配置の誤りや、参照設定のエラーが原因で問題が発生する可能性もあります。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-109">Also, errors in placing files or failure to set references might cause problems for them.</span></span> <span data-ttu-id="1a1e8-110">複雑なコンポーネントは、Visual Studio 拡張 SDK としてパッケージ化すると、簡単にインストールして使用することができます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-110">You can package a complex component as a Visual Studio extension SDK, to make it easy to install and use.</span></span> <span data-ttu-id="1a1e8-111">ユーザーは、パッケージ全体で参照を 1 つだけ設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-111">Users only need to set one reference for the entire package.</span></span> <span data-ttu-id="1a1e8-112">**[拡張機能と更新プログラム]** ダイアログ ボックスを使用すると、コンポーネントを簡単に配置してインストールできます。詳しくは、MSDN ライブラリの「[Visual Studio 拡張機能の検索と使用](https://msdn.microsoft.com/library/vstudio/dd293638.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-112">They can easily locate and install your component by using the **Extensions and Updates** dialog box, as described in [Finding and Using Visual Studio Extensions](https://msdn.microsoft.com/library/vstudio/dd293638.aspx), in the MSDN Library.</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+## <a name="planning-a-distributable-windows-runtime-component"></a><span data-ttu-id="1a1e8-113">配布可能な Windows ランタイム コンポーネントの計画</span><span class="sxs-lookup"><span data-stu-id="1a1e8-113">Planning a distributable Windows Runtime Component</span></span>
 
-Windows ランタイム コンポーネントは、ファイルをコピーすることで配布できます。 ただし、コンポーネントが多数のファイルで構成されている場合、インストールがユーザーの負担になる可能性があります。 また、ファイルの配置の誤りや、参照設定のエラーが原因で問題が発生する可能性もあります。 複雑なコンポーネントは、Visual Studio 拡張 SDK としてパッケージ化すると、簡単にインストールして使用することができます。 ユーザーは、パッケージ全体で参照を 1 つだけ設定する必要があります。 **[拡張機能と更新プログラム]** ダイアログ ボックスを使用すると、コンポーネントを簡単に配置してインストールできます。詳しくは、MSDN ライブラリの「[Visual Studio 拡張機能の検索と使用](https://msdn.microsoft.com/library/vstudio/dd293638.aspx)」をご覧ください。
-
-## <a name="planning-a-distributable-windows-runtime-component"></a>配布可能な Windows ランタイム コンポーネントの計画
-
-.winmd ファイルなどのバイナリ ファイルには、一意の名前を付けます。 次の形式を使用して、名前を一意にすることをお勧めします。
+<span data-ttu-id="1a1e8-114">.winmd ファイルなどのバイナリ ファイルには、一意の名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-114">Choose unique names for binary files, such as your .winmd files.</span></span> <span data-ttu-id="1a1e8-115">次の形式を使用して、名前を一意にすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-115">We recommend the following format to ensure uniqueness:</span></span>
 
 ``` syntax
 company.product.purpose.extension
 For example: Microsoft.Cpp.Build.dll
 ```
 
-バイナリ ファイルは、アプリ パッケージにインストールされます。場合によっては、他の開発者のバイナリ ファイルも一緒にインストールされます。 MSDN ライブラリの[ソフトウェア開発キットを作成する方法に関するページ](https://msdn.microsoft.com/library/hh768146.aspx)で、拡張 SDK に関する記述をご覧ください。
+<span data-ttu-id="1a1e8-116">バイナリ ファイルは、アプリ パッケージにインストールされます。場合によっては、他の開発者のバイナリ ファイルも一緒にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-116">Your binary files will be installed in app packages, possibly with binary files from other developers.</span></span> <span data-ttu-id="1a1e8-117">MSDN ライブラリの[ソフトウェア開発キットを作成する方法に関するページ](https://msdn.microsoft.com/library/hh768146.aspx)で、拡張 SDK に関する記述をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-117">See "Extension SDKs" in [How to: Create a Software Development Kit](https://msdn.microsoft.com/library/hh768146.aspx), in the MSDN Library.</span></span>
 
-コンポーネントを配布する方法を決定する際は、複雑さを考慮します。 次の場合、拡張 SDK、または同様のパッケージ マネージャーを使用することをお勧めします。
+<span data-ttu-id="1a1e8-118">コンポーネントを配布する方法を決定する際は、複雑さを考慮します。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-118">To decide how to distribute your component, consider how complex it is.</span></span> <span data-ttu-id="1a1e8-119">次の場合、拡張 SDK、または同様のパッケージ マネージャーを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-119">An extension SDK or similar package manager is recommended when:</span></span>
 
--   コンポーネントが複数のファイルで構成されている。
--   複数のプラットフォーム (たとえば、x86 と ARM) に対応するため、複数のバージョンのコンポーネントを提供する。
--   デバッグ バージョンと、リリース バージョンの両方のコンポーネントを提供する。
--   コンポーネントに、設計時にのみ使用されるファイルやアセンブリが含まれる。
+-   <span data-ttu-id="1a1e8-120">コンポーネントが複数のファイルで構成されている。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-120">Your component consists of multiple files.</span></span>
+-   <span data-ttu-id="1a1e8-121">複数のプラットフォーム (たとえば、x86 と ARM) に対応するため、複数のバージョンのコンポーネントを提供する。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-121">You provide versions of your component for multiple platforms (x86 and ARM, for example).</span></span>
+-   <span data-ttu-id="1a1e8-122">デバッグ バージョンと、リリース バージョンの両方のコンポーネントを提供する。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-122">You provide both debug and release versions of your component.</span></span>
+-   <span data-ttu-id="1a1e8-123">コンポーネントに、設計時にのみ使用されるファイルやアセンブリが含まれる。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-123">Your component has files and assemblies that are used only at design time.</span></span>
 
-拡張 SDK は上記の 1 つ以上の条件に当てはまる場合に特に便利です。
+<span data-ttu-id="1a1e8-124">拡張 SDK は上記の 1 つ以上の条件に当てはまる場合に特に便利です。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-124">An extension SDK is particularly useful if more than one of the above are true.</span></span>
 
-> **注:** NuGet パッケージ管理システムでは、複雑なコンポーネント用に、拡張 SDK の代わりとなるオープン ソースが用意されています。 NuGet を使用すると、拡張 SDK と同様にパッケージを作成できるため、複雑なコンポーネントのインストールが簡単にできます。 NuGet パッケージと Visual Studio 拡張 SDK を比較するには、MSDN ライブラリの[NuGet と拡張 SDK を使用して参照を追加する方法に関するページ](https://msdn.microsoft.com/library/jj161096.aspx)をご覧ください。
+> <span data-ttu-id="1a1e8-125">**注:** NuGet パッケージ管理システムでは、複雑なコンポーネント用に、拡張 SDK の代わりとなるオープン ソースが用意されています。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-125">**Note**  For complex components, the NuGet package management system offers an open source alternative to extension SDKs.</span></span> <span data-ttu-id="1a1e8-126">NuGet を使用すると、拡張 SDK と同様にパッケージを作成できるため、複雑なコンポーネントのインストールが簡単にできます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-126">Like extension SDKs, NuGet enables you to create packages that simplify the installation of complex components.</span></span> <span data-ttu-id="1a1e8-127">NuGet パッケージと Visual Studio 拡張 SDK を比較するには、MSDN ライブラリの[NuGet と拡張 SDK を使用して参照を追加する方法に関するページ](https://msdn.microsoft.com/library/jj161096.aspx)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-127">For a comparison of NuGet packages and Visual Studio extension SDKs, see [Adding References Using NuGet Versus an Extension SDK](https://msdn.microsoft.com/library/jj161096.aspx) in the MSDN Library.</span></span>
 
-## <a name="distribution-by-file-copy"></a>ファイルのコピーによる配布
+## <a name="distribution-by-file-copy"></a><span data-ttu-id="1a1e8-128">ファイルのコピーによる配布</span><span class="sxs-lookup"><span data-stu-id="1a1e8-128">Distribution by file copy</span></span>
 
-コンポーネントが 1 つの .winmd ファイル、または 1 つの .winmd ファイルと 1 つのリソース インデックス (.pri) ファイルで構成されている場合は、.winmd ファイルをユーザーがコピーできるように用意するだけです。 ユーザーは、プロジェクトの任意の場所にファイルを置き、**[既存項目の追加]** ダイアログ ボックスを使用して、.winmd ファイルをプロジェクトに追加してから、[参照マネージャー] ダイアログ ボックスを使用して参照を作成することができます。 .pri ファイルまたは .xml ファイルを含める場合は、.winmd ファイルと共に、それらのファイルを配置するようにユーザーに伝えます。
+<span data-ttu-id="1a1e8-129">コンポーネントが 1 つの .winmd ファイル、または 1 つの .winmd ファイルと 1 つのリソース インデックス (.pri) ファイルで構成されている場合は、.winmd ファイルをユーザーがコピーできるように用意するだけです。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-129">If your component consists of a single .winmd file, or a .winmd file and a resource index (.pri) file, you can simply make the .winmd file available for users to copy.</span></span> <span data-ttu-id="1a1e8-130">ユーザーは、プロジェクトの任意の場所にファイルを置き、**[既存項目の追加]** ダイアログ ボックスを使用して、.winmd ファイルをプロジェクトに追加してから、[参照マネージャー] ダイアログ ボックスを使用して参照を作成することができます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-130">Users can put the file wherever they want to in a project, use the **Add Existing Item** dialog box to add the .winmd file to the project, and then use the Reference Manager dialog box to create a reference.</span></span> <span data-ttu-id="1a1e8-131">.pri ファイルまたは .xml ファイルを含める場合は、.winmd ファイルと共に、それらのファイルを配置するようにユーザーに伝えます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-131">If you include a .pri file or an .xml file, instruct users to place those files with the .winmd file.</span></span>
 
-> **注:** プロジェクトにリソースが含まれていない場合でも、Windows ランタイム コンポーネントをビルドすると、常に Visual Studio によって .pri ファイルが生成されます。 コンポーネントにテスト アプリが含まれる場合、bin\\debug\\AppX フォルダーでアプリ パッケージの内容を調べると、.pri ファイルを使用するかどうかを確認できます。 コンポーネントの .pri ファイルがそこにない場合は、.pri ファイルを配布する必要はありません。 または、[MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) ツールを使用して、Windows ランタイム コンポーネント プロジェクトからリソース ファイルをダンプすることもできます。 たとえば、Visual Studio コマンド プロンプト ウィンドウで次のように入力します。makepri dump /if MyComponent.pri /of MyComponent.pri.xml .pri ファイルについて詳しくは、「[リソース管理システム (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)」をご覧ください。
+> <span data-ttu-id="1a1e8-132">**注:** プロジェクトにリソースが含まれていない場合でも、Windows ランタイム コンポーネントをビルドすると、常に Visual Studio によって .pri ファイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-132">**Note**  Visual Studio always produces a .pri file when you build your Windows Runtime Component, even if your project doesn't include any resources.</span></span> <span data-ttu-id="1a1e8-133">コンポーネントにテスト アプリが含まれる場合、bin\\debug\\AppX フォルダーでアプリ パッケージの内容を調べると、.pri ファイルを使用するかどうかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-133">If you have a test app for your component, you can determine whether the .pri file is used by examining the contents of the app package in the bin\\debug\\AppX folder.</span></span> <span data-ttu-id="1a1e8-134">コンポーネントの .pri ファイルがそこにない場合は、.pri ファイルを配布する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-134">If the .pri file from your component doesn't appear there, you don't need to distribute it.</span></span> <span data-ttu-id="1a1e8-135">または、[MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) ツールを使用して、Windows ランタイム コンポーネント プロジェクトからリソース ファイルをダンプすることもできます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-135">Alternatively, you can use the [MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) tool to dump the resource file from your Windows Runtime Component project.</span></span> <span data-ttu-id="1a1e8-136">たとえば、Visual Studio コマンド プロンプト ウィンドウで次のように入力します。makepri dump /if MyComponent.pri /of MyComponent.pri.xml .pri ファイルについて詳しくは、「[リソース管理システム (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-136">For example, in the Visual Studio Command Prompt window, type: makepri dump /if MyComponent.pri /of MyComponent.pri.xml You can read more about .pri files in [Resource Management System (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx).</span></span>
 
-## <a name="distribution-by-extension-sdk"></a>拡張 SDK による配布
+## <a name="distribution-by-extension-sdk"></a><span data-ttu-id="1a1e8-137">拡張 SDK による配布</span><span class="sxs-lookup"><span data-stu-id="1a1e8-137">Distribution by extension SDK</span></span>
 
-複雑なコンポーネントには通常、Windows のリソースが含まれていますが、空の .pri ファイルを検出する方法については、前のセクションの注をご覧ください。
+<span data-ttu-id="1a1e8-138">複雑なコンポーネントには通常、Windows のリソースが含まれていますが、空の .pri ファイルを検出する方法については、前のセクションの注をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-138">A complex component usually includes Windows resources, but see the note about detecting empty .pri files in the previous section.</span></span>
 
-**拡張 SDK を作成するには**
+**<span data-ttu-id="1a1e8-139">拡張 SDK を作成するには</span><span class="sxs-lookup"><span data-stu-id="1a1e8-139">To create an extension SDK</span></span>**
 
-1.  Visual Studio SDK がインストールされていることを確認します。 Visual Studio SDK は、[Visual Studio ダウンロード](https://www.visualstudio.com/downloads/download-visual-studio-vs) ページからダウンロードできます。
-2.  VSIX プロジェクト テンプレートを使用して、新しいプロジェクトを作成します。 [機能拡張] カテゴリの [Visual C#] または [Visual Basic] の下にテンプレートがあります。 このテンプレートは、Visual Studio SDK の一部としてインストールされます。 ([C# または Visual Basic を使用して SDK を作成する方法のチュートリアル](https://msdn.microsoft.com/library/jj127119.aspx)または [C++ を使用して SDK を作成する方法のチュートリアル](https://msdn.microsoft.com/library/jj127117.aspx)で、このテンプレートを非常に単純なシナリオで使用する方法を紹介しています。 )
-3.  SDK のフォルダー構造を決定します。 フォルダーの構造は、VSIX プロジェクトのルート レベルの、**References**、**Redist**、および **DesignTime** フォルダーで始まります。
+1.  <span data-ttu-id="1a1e8-140">Visual Studio SDK がインストールされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-140">Make sure you have the Visual Studio SDK installed.</span></span> <span data-ttu-id="1a1e8-141">Visual Studio SDK は、[Visual Studio ダウンロード](https://www.visualstudio.com/downloads/download-visual-studio-vs) ページからダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-141">You can download the Visual Studio SDK from the [Visual Studio Downloads](https://www.visualstudio.com/downloads/download-visual-studio-vs) page.</span></span>
+2.  <span data-ttu-id="1a1e8-142">VSIX プロジェクト テンプレートを使用して、新しいプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-142">Create a new project using the VSIX Project template.</span></span> <span data-ttu-id="1a1e8-143">[機能拡張] カテゴリの [Visual C#] または [Visual Basic] の下にテンプレートがあります。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-143">You can find the template under Visual C# or Visual Basic, in the Extensibility category.</span></span> <span data-ttu-id="1a1e8-144">このテンプレートは、Visual Studio SDK の一部としてインストールされます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-144">This template is installed as part of the Visual Studio SDK.</span></span> <span data-ttu-id="1a1e8-145">([C# または Visual Basic を使用して SDK を作成する方法のチュートリアル](https://msdn.microsoft.com/library/jj127119.aspx)または [C++ を使用して SDK を作成する方法のチュートリアル](https://msdn.microsoft.com/library/jj127117.aspx)で、このテンプレートを非常に単純なシナリオで使用する方法を紹介しています。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-145">([Walkthrough: Creating an SDK using C# or Visual Basic](https://msdn.microsoft.com/library/jj127119.aspx) or [Walkthrough: Creating an SDK using C++](https://msdn.microsoft.com/library/jj127117.aspx), demonstrates the use of this template in a very simple scenario.</span></span> <span data-ttu-id="1a1e8-146">)</span><span class="sxs-lookup"><span data-stu-id="1a1e8-146">)</span></span>
+3.  <span data-ttu-id="1a1e8-147">SDK のフォルダー構造を決定します。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-147">Determine the folder structure for your SDK.</span></span> <span data-ttu-id="1a1e8-148">フォルダーの構造は、VSIX プロジェクトのルート レベルの、**References**、**Redist**、および **DesignTime** フォルダーで始まります。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-148">The folder structure begins at the root level of your VSIX project, with the **References**, **Redist**, and **DesignTime** folders.</span></span>
 
-    -   **References** は、ユーザーがプログラミングできるバイナリ ファイルの場所です。 拡張 SDK は、ユーザーの Visual Studio プロジェクトで、これらのファイルへの参照を作成します。
-    -   **Redist** は、開発者独自のコンポーネントを使用して作成されたアプリの場合、バイナリ ファイルと共に配布する必要がある他のファイルの場所です。
-    -   **DesignTime** は、開発者により、独自のコンポーネントを使用するアプリの作成中のみ使用されるファイルの場所です。
+    -   <span data-ttu-id="1a1e8-149">**References** は、ユーザーがプログラミングできるバイナリ ファイルの場所です。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-149">**References** is the location for binary files that your users can program against.</span></span> <span data-ttu-id="1a1e8-150">拡張 SDK は、ユーザーの Visual Studio プロジェクトで、これらのファイルへの参照を作成します。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-150">The extension SDK creates references to these files in your users' Visual Studio projects.</span></span>
+    -   <span data-ttu-id="1a1e8-151">**Redist** は、開発者独自のコンポーネントを使用して作成されたアプリの場合、バイナリ ファイルと共に配布する必要がある他のファイルの場所です。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-151">**Redist** is the location for other files that must be distributed with your binary files, in apps that are created by using your component.</span></span>
+    -   <span data-ttu-id="1a1e8-152">**DesignTime** は、開発者により、独自のコンポーネントを使用するアプリの作成中のみ使用されるファイルの場所です。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-152">**DesignTime** is the location for files that are used only when developers are creating apps that use your component.</span></span>
 
-    これらの各フォルダーで、構成フォルダーを作成できます。 使用できる名前は、debug、retail、CommonConfiguration です。 CommonConfiguration フォルダーに格納されるファイルは、製品ビルドでも、デバッグ ビルドでも同じです。 製品ビルドのコンポーネントのみを配布する場合は、CommonConfiguration にすべてのファイルを置いて、他の 2 つのフォルダーを省略できます。
+    <span data-ttu-id="1a1e8-153">これらの各フォルダーで、構成フォルダーを作成できます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-153">In each of these folders, you can create configuration folders.</span></span> <span data-ttu-id="1a1e8-154">使用できる名前は、debug、retail、CommonConfiguration です。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-154">The permitted names are debug, retail, and CommonConfiguration.</span></span> <span data-ttu-id="1a1e8-155">CommonConfiguration フォルダーに格納されるファイルは、製品ビルドでも、デバッグ ビルドでも同じです。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-155">The CommonConfiguration folder is for files that are the same whether they're used by retail or debug builds.</span></span> <span data-ttu-id="1a1e8-156">製品ビルドのコンポーネントのみを配布する場合は、CommonConfiguration にすべてのファイルを置いて、他の 2 つのフォルダーを省略できます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-156">If you're only distributing retail builds of your component, you can put everything in CommonConfiguration and omit the other two folders.</span></span>
 
-    各構成フォルダーには、プラットフォーム固有のファイルを格納するアーキテクチャ フォルダーを作成できます。 すべてのプラットフォームで同じファイルを使用する場合は、neutral という名前のフォルダーを 1 つ作成します。 他のアーキテクチャ フォルダーの名前など、フォルダー構造について詳しくは、MSDN ライブラリの[ソフトウェア開発キットを作成する方法に関するページ](https://msdn.microsoft.com/library/hh768146.aspx)をご覧ください。 (この記事は、プラットフォーム SDK と拡張 SDK の両方について説明しています。 混乱を避けるため、プラットフォーム SDK に関するセクションを折りたたむとわかりやすくなります。 )
+    <span data-ttu-id="1a1e8-157">各構成フォルダーには、プラットフォーム固有のファイルを格納するアーキテクチャ フォルダーを作成できます。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-157">In each configuration folder, you can provide architecture folders for platform-specific files.</span></span> <span data-ttu-id="1a1e8-158">すべてのプラットフォームで同じファイルを使用する場合は、neutral という名前のフォルダーを 1 つ作成します。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-158">If you use the same files for all platforms, you can supply a single folder named neutral.</span></span> <span data-ttu-id="1a1e8-159">他のアーキテクチャ フォルダーの名前など、フォルダー構造について詳しくは、MSDN ライブラリの[ソフトウェア開発キットを作成する方法に関するページ](https://msdn.microsoft.com/library/hh768146.aspx)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-159">You can find details of the folder structure, including other architecture folder names, in [How to: Create a Software Development Kit](https://msdn.microsoft.com/library/hh768146.aspx), in the MSDN Library.</span></span> <span data-ttu-id="1a1e8-160">(この記事は、プラットフォーム SDK と拡張 SDK の両方について説明しています。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-160">(That article discusses both platform SDKs and extension SDKs.</span></span> <span data-ttu-id="1a1e8-161">混乱を避けるため、プラットフォーム SDK に関するセクションを折りたたむとわかりやすくなります。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-161">You may find it useful to collapse the section about platform SDKs, to avoid confusion.</span></span> <span data-ttu-id="1a1e8-162">)</span><span class="sxs-lookup"><span data-stu-id="1a1e8-162">)</span></span>
 
-4.  SDK マニフェスト ファイルを作成します。 マニフェストでは、名前とバージョン情報、SDK がサポートしているアーキテクチャ、.NET Framework のバージョン、および Visual Studio が SDK を使用する方法に関する他の情報を指定します。 詳細と例は、[ソフトウェア開発キットを作成する方法に関するページ](https://msdn.microsoft.com/library/hh768146.aspx)をご覧ください。
-5.  拡張 SDK をビルドして配布します。 VSIX パッケージのローカライズや、署名などの詳細は、MSDN ライブラリの「VSIX 配置」をご覧ください。
+4.  <span data-ttu-id="1a1e8-163">SDK マニフェスト ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-163">Create an SDK manifest file.</span></span> <span data-ttu-id="1a1e8-164">マニフェストでは、名前とバージョン情報、SDK がサポートしているアーキテクチャ、.NET Framework のバージョン、および Visual Studio が SDK を使用する方法に関する他の情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-164">The manifest specifies name and version information, the architectures your SDK supports, .NET Framework versions, and other information about the way Visual Studio uses your SDK.</span></span> <span data-ttu-id="1a1e8-165">詳細と例は、[ソフトウェア開発キットを作成する方法に関するページ](https://msdn.microsoft.com/library/hh768146.aspx)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-165">You can find details and an example in [How to: Create a Software Development Kit](https://msdn.microsoft.com/library/hh768146.aspx).</span></span>
+5.  <span data-ttu-id="1a1e8-166">拡張 SDK をビルドして配布します。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-166">Build and distribute the extension SDK.</span></span> <span data-ttu-id="1a1e8-167">VSIX パッケージのローカライズや、署名などの詳細は、MSDN ライブラリの「VSIX 配置」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1a1e8-167">For in-depth information, including localizing and signing the VSIX package, see VSIX Deployment in the MSDN Library.</span></span>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="1a1e8-168">関連トピック</span><span class="sxs-lookup"><span data-stu-id="1a1e8-168">Related topics</span></span>
 
-* [ソフトウェア開発キットを作成する方法](https://msdn.microsoft.com/library/hh768146.aspx)
-* [NuGet パッケージ管理システム](https://github.com/NuGet/Home)
-* [リソース管理システム (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)
-* [Visual Studio 拡張機能の検索と使用](https://msdn.microsoft.com/library/dd293638.aspx)
-* [MakePRI.exe のコマンド オプション](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx)
-
+* [<span data-ttu-id="1a1e8-169">ソフトウェア開発キットを作成する方法</span><span class="sxs-lookup"><span data-stu-id="1a1e8-169">Creating a Software Development Kit</span></span>](https://msdn.microsoft.com/library/hh768146.aspx)
+* [<span data-ttu-id="1a1e8-170">NuGet パッケージ管理システム</span><span class="sxs-lookup"><span data-stu-id="1a1e8-170">NuGet package management system</span></span>](https://github.com/NuGet/Home)
+* [<span data-ttu-id="1a1e8-171">リソース管理システム (Windows)</span><span class="sxs-lookup"><span data-stu-id="1a1e8-171">Resource Management System (Windows)</span></span>](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)
+* [<span data-ttu-id="1a1e8-172">Visual Studio 拡張機能の検索と使用</span><span class="sxs-lookup"><span data-stu-id="1a1e8-172">Finding and Using Visual Studio Extensions</span></span>](https://msdn.microsoft.com/library/dd293638.aspx)
+* [<span data-ttu-id="1a1e8-173">MakePRI.exe のコマンド オプション</span><span class="sxs-lookup"><span data-stu-id="1a1e8-173">MakePRI.exe command options</span></span>](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx)
