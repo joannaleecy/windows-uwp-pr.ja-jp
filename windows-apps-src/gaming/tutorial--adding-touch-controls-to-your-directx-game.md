@@ -1,45 +1,44 @@
 ---
 author: mtoepke
-title: "ゲームのタッチ コントロール"
-description: "ここでは、DirectX を使うユニバーサル Windows プラットフォーム (UWP) C++ ゲームに、基本的なタッチ コントロールを追加する方法について説明します。"
+title: ゲームのタッチ コントロール
+description: ここでは、DirectX を使うユニバーサル Windows プラットフォーム (UWP) C++ ゲームに、基本的なタッチ コントロールを追加する方法について説明します。
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, タッチ, コントロール, DirectX, 入力"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows 10, UWP, ゲーム, タッチ, コントロール, DirectX, 入力
 ms.openlocfilehash: 44d5071ee0cd695351c77630d699a1a060f477d6
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243354"
 ---
+# <a name="touch-controls-for-games"></a><span data-ttu-id="ba8e2-104">ゲームのタッチ コントロール</span><span class="sxs-lookup"><span data-stu-id="ba8e2-104">Touch controls for games</span></span>
 
-# <a name="touch-controls-for-games"></a>ゲームのタッチ コントロール
 
+<span data-ttu-id="ba8e2-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="ba8e2-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="ba8e2-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+<span data-ttu-id="ba8e2-107">ここでは、DirectX を使うユニバーサル Windows プラットフォーム (UWP) C++ ゲームに、基本的なタッチ コントロールを追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-107">Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX.</span></span> <span data-ttu-id="ba8e2-108">具体的には、平面に固定されたカメラを動かすタッチ ベースのコントロールを、指またはスタイラスでドラッグするとカメラの視点がシフトする Direct3D 環境に追加する方法を紹介します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-108">We show you how to add touch-based controls to move a fixed-plane camera in a Direct3D environment, where dragging with a finger or stylus shifts the camera perspective.</span></span>
 
-ここでは、DirectX を使うユニバーサル Windows プラットフォーム (UWP) C++ ゲームに、基本的なタッチ コントロールを追加する方法について説明します。 具体的には、平面に固定されたカメラを動かすタッチ ベースのコントロールを、指またはスタイラスでドラッグするとカメラの視点がシフトする Direct3D 環境に追加する方法を紹介します。
+<span data-ttu-id="ba8e2-109">これらのコントロールは、プレイヤーが地図やプレイフィールドなどの 3D 環境でドラッグしてスクロールまたはパンを行うゲームに組み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-109">You can incorporate these controls in games where you want the player to drag to scroll or pan over a 3D environment, such as a map or playfield.</span></span> <span data-ttu-id="ba8e2-110">たとえば、戦略ゲームやパズル ゲームでは、これらのコントロールを使って、プレイヤーが左右にパンすることで画面より大きいゲーム環境を確認できるようにすることが可能です。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-110">For example, in a strategy or puzzle game, you can use these controls to let the player view a game environment that is larger than the screen by panning left or right.</span></span>
 
-これらのコントロールは、プレイヤーが地図やプレイフィールドなどの 3D 環境でドラッグしてスクロールまたはパンを行うゲームに組み込むことができます。 たとえば、戦略ゲームやパズル ゲームでは、これらのコントロールを使って、プレイヤーが左右にパンすることで画面より大きいゲーム環境を確認できるようにすることが可能です。
-
-> **注**  ここで紹介するコードは、マウス ベースのパン コントロールにも利用できます。 ポインター関連のイベントは、Windows ランタイム API で抽象化されるため、タッチまたはマウス ベースのポインター イベントを処理できます。
+> <span data-ttu-id="ba8e2-111">**注**  ここで紹介するコードは、マウス ベースのパン コントロールにも利用できます。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-111">**Note**  Our code also works with mouse-based panning controls.</span></span> <span data-ttu-id="ba8e2-112">ポインター関連のイベントは、Windows ランタイム API で抽象化されるため、タッチまたはマウス ベースのポインター イベントを処理できます。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-112">The pointer related events are abstracted by the Windows Runtime APIs, so they can handle either touch- or mouse-based pointer events.</span></span>
 
  
 
-## <a name="objectives"></a>目標
+## <a name="objectives"></a><span data-ttu-id="ba8e2-113">目標</span><span class="sxs-lookup"><span data-stu-id="ba8e2-113">Objectives</span></span>
 
 
--   DirectX ゲームで平面に固定されたカメラをパンする簡単なタッチ ドラッグ コントロールを作成する。
+-   <span data-ttu-id="ba8e2-114">DirectX ゲームで平面に固定されたカメラをパンする簡単なタッチ ドラッグ コントロールを作成する。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-114">Create a simple touch drag control for panning a fixed-plane camera in a DirectX game.</span></span>
 
-## <a name="set-up-the-basic-touch-event-infrastructure"></a>基本的なタッチ イベントのインフラストラクチャのセットアップ
+## <a name="set-up-the-basic-touch-event-infrastructure"></a><span data-ttu-id="ba8e2-115">基本的なタッチ イベントのインフラストラクチャのセットアップ</span><span class="sxs-lookup"><span data-stu-id="ba8e2-115">Set up the basic touch event infrastructure</span></span>
 
 
-まず、この例ではコントローラーの基本型として、**CameraPanController** を定義します。 ここでは、コントローラーを抽象的な概念、つまりユーザーが実行できる動作のセットとして定義します。
+<span data-ttu-id="ba8e2-116">まず、この例ではコントローラーの基本型として、**CameraPanController** を定義します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-116">First, we define our basic controller type, the **CameraPanController**, in this case.</span></span> <span data-ttu-id="ba8e2-117">ここでは、コントローラーを抽象的な概念、つまりユーザーが実行できる動作のセットとして定義します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-117">Here, we define a controller as an abstract idea, the set of behaviors the user can perform.</span></span>
 
-**CameraPanController** クラスは、カメラ コントローラーの状態に関する情報を定期的に更新したコレクションであり、アプリが自身の更新ループからこの情報を取得できるようにします。
+<span data-ttu-id="ba8e2-118">**CameraPanController** クラスは、カメラ コントローラーの状態に関する情報を定期的に更新したコレクションであり、アプリが自身の更新ループからこの情報を取得できるようにします。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-118">The **CameraPanController** class is a regularly refreshed collection of information about the camera controller state, and provides a way for our app to obtain that information from its update loop.</span></span>
 
 ```cpp
 using namespace Windows::UI::Core;
@@ -54,7 +53,7 @@ ref class CameraPanController
 }
 ```
 
-次に、カメラ コントローラーの状態を定義するヘッダーと、カメラ コントローラーの操作を実装する基本的なメソッドとイベント ハンドラーを作ります。
+<span data-ttu-id="ba8e2-119">次に、カメラ コントローラーの状態を定義するヘッダーと、カメラ コントローラーの操作を実装する基本的なメソッドとイベント ハンドラーを作ります。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-119">Now, let's create a header that defines the state of the camera controller, and the basic methods and event handlers that implement the camera controller interactions.</span></span>
 
 ```cpp
 ref class CameraPanController
@@ -106,49 +105,49 @@ public:
 };  // Class CameraPanController
 ```
 
-プライベート フィールドには、カメラ コントローラーの現在の状態が含まれています。 ここでその内容を確認してみましょう。
+<span data-ttu-id="ba8e2-120">プライベート フィールドには、カメラ コントローラーの現在の状態が含まれています。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-120">The private fields contain the current state of the camera controller.</span></span> <span data-ttu-id="ba8e2-121">ここでその内容を確認してみましょう。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-121">Let's review them.</span></span>
 
--   **m\_position** は、シーン空間内のカメラの位置です。 この例では、z 座標値は 0 に固定されています。 DirectX::XMFLOAT2 を使ってこの値を表すこともできますが、このサンプルの目的と今後の拡張性を考慮して、ここでは DirectX::XMFLOAT3 を使います。 この値は、**get\_Position** プロパティを通じてアプリ自体に渡し、それに従ってアプリがビューポートを更新できるようにします。
--   **m\_panInUse** は、パン操作がアクティブかどうかを示すブール値です。より具体的には、プレイヤーが画面をタッチしてカメラを動かしているかどうかを示します。
--   **m\_panPointerID** は、ポインターの一意の ID です。 これはこのサンプルでは使いませんが、コントローラーの状態クラスと特定のポインターを関連付けることをお勧めします。
--   **m\_panFirstDown** は、カメラのパン操作中にプレイヤーが最初に画面をタッチまたはマウスをクリックした画面上の点です。 この値は、画面がタッチされているときや、マウスが少し揺れている場合に、ビューが不安定にならないようデッド ゾーンを設定するために後で使います。
--   **m\_panPointerPosition** は、プレイヤーがポインターを現在動かしたばかりの画面上の点です。 これは、**m\_panFirstDown** と比較して確認することで、プレイヤーが移動したい方向を判断するために使います。
--   **m\_panCommand** は、カメラ コントローラーに対して計算された最終的なコマンドであり、up、down、left、または right です。 x-y 平面に固定されたカメラを操作しているため、これは、DirectX::XMFLOAT2 にすることも可能です。
+-   <span data-ttu-id="ba8e2-122">**m\_position** は、シーン空間内のカメラの位置です。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-122">**m\_position** is the position of the camera in the scene space.</span></span> <span data-ttu-id="ba8e2-123">この例では、z 座標値は 0 に固定されています。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-123">In this example, the z-coordinate value is fixed at 0.</span></span> <span data-ttu-id="ba8e2-124">DirectX::XMFLOAT2 を使ってこの値を表すこともできますが、このサンプルの目的と今後の拡張性を考慮して、ここでは DirectX::XMFLOAT3 を使います。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-124">We could use a DirectX::XMFLOAT2 to represent this value, but for the purposes of this sample and future extensibility, we use a DirectX::XMFLOAT3.</span></span> <span data-ttu-id="ba8e2-125">この値は、**get\_Position** プロパティを通じてアプリ自体に渡し、それに従ってアプリがビューポートを更新できるようにします。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-125">We pass this value through the **get\_Position** property to the app itself so it can update the viewport accordingly.</span></span>
+-   <span data-ttu-id="ba8e2-126">**m\_panInUse** は、パン操作がアクティブかどうかを示すブール値です。より具体的には、プレイヤーが画面をタッチしてカメラを動かしているかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-126">**m\_panInUse** is a Boolean value that indicates whether a pan operation is active; or, more specifically, whether the player is touching the screen and moving the camera.</span></span>
+-   <span data-ttu-id="ba8e2-127">**m\_panPointerID** は、ポインターの一意の ID です。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-127">**m\_panPointerID** is a unique ID for the pointer.</span></span> <span data-ttu-id="ba8e2-128">これはこのサンプルでは使いませんが、コントローラーの状態クラスと特定のポインターを関連付けることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-128">We won't use this in the sample, but it's a good practice to associate your controller state class with a specific pointer.</span></span>
+-   <span data-ttu-id="ba8e2-129">**m\_panFirstDown** は、カメラのパン操作中にプレイヤーが最初に画面をタッチまたはマウスをクリックした画面上の点です。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-129">**m\_panFirstDown** is the point on the screen where the player first touched the screen or clicked the mouse during the camera pan action.</span></span> <span data-ttu-id="ba8e2-130">この値は、画面がタッチされているときや、マウスが少し揺れている場合に、ビューが不安定にならないようデッド ゾーンを設定するために後で使います。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-130">We use this value later to set a dead zone to prevent jitter when the screen is touched, or if the mouse shakes a little.</span></span>
+-   <span data-ttu-id="ba8e2-131">**m\_panPointerPosition** は、プレイヤーがポインターを現在動かしたばかりの画面上の点です。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-131">**m\_panPointerPosition** is the point on the screen where the player has currently moved the pointer.</span></span> <span data-ttu-id="ba8e2-132">これは、**m\_panFirstDown** と比較して確認することで、プレイヤーが移動したい方向を判断するために使います。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-132">We use it to determine what direction the player wanted to move by examining it relative to **m\_panFirstDown**.</span></span>
+-   <span data-ttu-id="ba8e2-133">**m\_panCommand** は、カメラ コントローラーに対して計算された最終的なコマンドであり、up、down、left、または right です。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-133">**m\_panCommand** is the final computed command for the camera controller: up, down, left, or right.</span></span> <span data-ttu-id="ba8e2-134">x-y 平面に固定されたカメラを操作しているため、これは、DirectX::XMFLOAT2 にすることも可能です。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-134">Because we are working with a camera fixed to the x-y plane, this could be a DirectX::XMFLOAT2 value instead.</span></span>
 
-次の 3 つのイベント ハンドラーを使って、カメラ コントローラーの状態情報を更新します。
+<span data-ttu-id="ba8e2-135">次の 3 つのイベント ハンドラーを使って、カメラ コントローラーの状態情報を更新します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-135">We use these 3 event handlers to update the camera controller state info.</span></span>
 
--   **OnPointerPressed** は、プレイヤーが指でタッチ画面を押し、その押された座標にポインターが動いたときに、アプリが呼び出すイベント ハンドラーです。
--   **OnPointerMoved** は、プレイヤーが指でタッチ画面をスワイプしたときに、アプリが呼び出すイベント ハンドラーです。 これは、ドラッグ パスの新しい座標で更新されます。
--   **OnPointerReleased** は、プレイヤーが指をタッチ画面から離したときに、アプリが呼び出すイベント ハンドラーです。
+-   <span data-ttu-id="ba8e2-136">**OnPointerPressed** は、プレイヤーが指でタッチ画面を押し、その押された座標にポインターが動いたときに、アプリが呼び出すイベント ハンドラーです。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-136">**OnPointerPressed** is an event handler that our app calls when the players presses a finger onto the touch surface and the pointer is moved to the coordinates of the press.</span></span>
+-   <span data-ttu-id="ba8e2-137">**OnPointerMoved** は、プレイヤーが指でタッチ画面をスワイプしたときに、アプリが呼び出すイベント ハンドラーです。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-137">**OnPointerMoved** is an event handler that our app calls when the player swipes a finger across the touch surface.</span></span> <span data-ttu-id="ba8e2-138">これは、ドラッグ パスの新しい座標で更新されます。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-138">It updates with the new coordinates of the drag path.</span></span>
+-   <span data-ttu-id="ba8e2-139">**OnPointerReleased** は、プレイヤーが指をタッチ画面から離したときに、アプリが呼び出すイベント ハンドラーです。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-139">**OnPointerReleased** is an event handler that our app calls when the player removes the pressing finger from the touch surface.</span></span>
 
-最後に、次のメソッドとプロパティを使って、カメラ コントローラーの状態情報の初期化、アクセス、更新を行います。
+<span data-ttu-id="ba8e2-140">最後に、次のメソッドとプロパティを使って、カメラ コントローラーの状態情報の初期化、アクセス、更新を行います。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-140">Finally, we use these methods and properties to initialize, access, and update the camera controller state information.</span></span>
 
--   **Initialize** は、アプリがコントロールを初期化して、表示ウィンドウを定義する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトにそれらのコントロールを適用するときに呼び出すイベント ハンドラーです。
--   **SetPosition** は、アプリがシーン空間内のコントロールの (x、y、z) 座標を設定するときに呼び出すメソッドです。 z 座標はこのチュートリアル全体で 0 であることに注意してください。
--   **get\_Position** は、アプリがシーン空間内のカメラの現在の位置を取得するときにアクセスするプロパティです。 このプロパティは、カメラの現在の位置をアプリに伝える手段として使います。
--   **get\_FixedLookPoint** は、アプリが現在コントローラーのカメラが向いている点を取得するときにアクセスするプロパティです。 この例では、x-y 平面に垂直にロックされています。
--   **Update** は、コントローラーの状態を読み取り、カメラの位置を更新するメソッドです。 このメソッドをアプリのメイン ループから継続的に呼び出して、カメラ コントローラーのデータとシーン空間内のカメラの位置を更新します。
+-   <span data-ttu-id="ba8e2-141">**Initialize** は、アプリがコントロールを初期化して、表示ウィンドウを定義する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトにそれらのコントロールを適用するときに呼び出すイベント ハンドラーです。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-141">**Initialize** is an event handler that our app calls to initialize the controls and attach them to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that describes your display window.</span></span>
+-   <span data-ttu-id="ba8e2-142">**SetPosition** は、アプリがシーン空間内のコントロールの (x、y、z) 座標を設定するときに呼び出すメソッドです。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-142">**SetPosition** is a method that our app calls to set the (x, y, and z) coordinates of your controls in the scene space.</span></span> <span data-ttu-id="ba8e2-143">z 座標はこのチュートリアル全体で 0 であることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-143">Note that our z-coordinate is 0 throughout this tutorial.</span></span>
+-   <span data-ttu-id="ba8e2-144">**get\_Position** は、アプリがシーン空間内のカメラの現在の位置を取得するときにアクセスするプロパティです。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-144">**get\_Position** is a property that our app accesses to get the current position of the camera in the scene space.</span></span> <span data-ttu-id="ba8e2-145">このプロパティは、カメラの現在の位置をアプリに伝える手段として使います。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-145">You use this property as the way of communicating the current camera position to the app.</span></span>
+-   <span data-ttu-id="ba8e2-146">**get\_FixedLookPoint** は、アプリが現在コントローラーのカメラが向いている点を取得するときにアクセスするプロパティです。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-146">**get\_FixedLookPoint** is a property that our app accesses to get the current point toward which the controller camera is facing.</span></span> <span data-ttu-id="ba8e2-147">この例では、x-y 平面に垂直にロックされています。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-147">In this example, it is locked normal to the x-y plane.</span></span>
+-   <span data-ttu-id="ba8e2-148">**Update** は、コントローラーの状態を読み取り、カメラの位置を更新するメソッドです。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-148">**Update** is a method that reads the controller state and updates the camera position.</span></span> <span data-ttu-id="ba8e2-149">このメソッドをアプリのメイン ループから継続的に呼び出して、カメラ コントローラーのデータとシーン空間内のカメラの位置を更新します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-149">You continually call this &lt;something&gt; from the app's main loop to refresh the camera controller data and the camera position in the scene space.</span></span>
 
-これで、タッチ コントロールの実装に必要なコンポーネントがすべて揃いました。 タッチ ポインターまたはマウス ポインターのイベントがいつどこで発生し、その操作が何かを検出できます。 また、カメラの位置と向きをシーン空間と相対的に設定し、変化を追跡できます。 さらに、カメラの新しい位置を呼び出し元アプリに伝えることができます。
+<span data-ttu-id="ba8e2-150">これで、タッチ コントロールの実装に必要なコンポーネントがすべて揃いました。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-150">Now, you have here all the components you need to implement touch controls.</span></span> <span data-ttu-id="ba8e2-151">タッチ ポインターまたはマウス ポインターのイベントがいつどこで発生し、その操作が何かを検出できます。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-151">You can detect when and where the touch or mouse pointer events have occurred, and what the action is.</span></span> <span data-ttu-id="ba8e2-152">また、カメラの位置と向きをシーン空間と相対的に設定し、変化を追跡できます。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-152">You can set the position and orientation of the camera relative to the scene space, and track the changes.</span></span> <span data-ttu-id="ba8e2-153">さらに、カメラの新しい位置を呼び出し元アプリに伝えることができます。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-153">Finally, you can communicate the new camera position to the calling app.</span></span>
 
-次は、これらのコンポーネントどうしを接続してみましょう。
+<span data-ttu-id="ba8e2-154">次は、これらのコンポーネントどうしを接続してみましょう。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-154">Now, let's connect these pieces together.</span></span>
 
-## <a name="create-the-basic-touch-events"></a>基本的なタッチ イベントの作成
+## <a name="create-the-basic-touch-events"></a><span data-ttu-id="ba8e2-155">基本的なタッチ イベントの作成</span><span class="sxs-lookup"><span data-stu-id="ba8e2-155">Create the basic touch events</span></span>
 
 
-Windows ランタイムのイベント ディスパッチャーは、アプリで処理するイベントを 3 つ提供します。
+<span data-ttu-id="ba8e2-156">Windows ランタイムのイベント ディスパッチャーは、アプリで処理するイベントを 3 つ提供します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-156">The Windows Runtime event dispatcher provides 3 events we want our app to handle:</span></span>
 
--   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
+-   [**<span data-ttu-id="ba8e2-157">PointerPressed</span><span class="sxs-lookup"><span data-stu-id="ba8e2-157">PointerPressed</span></span>**](https://msdn.microsoft.com/library/windows/apps/br208278)
+-   [**<span data-ttu-id="ba8e2-158">PointerMoved</span><span class="sxs-lookup"><span data-stu-id="ba8e2-158">PointerMoved</span></span>**](https://msdn.microsoft.com/library/windows/apps/br208276)
+-   [**<span data-ttu-id="ba8e2-159">PointerReleased</span><span class="sxs-lookup"><span data-stu-id="ba8e2-159">PointerReleased</span></span>**](https://msdn.microsoft.com/library/windows/apps/br208279)
 
-これらのイベントは、[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 型に実装されています。 ここでは、操作する **CoreWindow** オブジェクトが既にあると想定しています。 詳しくは、「[UWP C++ アプリで DirectX ビューを表示するための設定方法](https://msdn.microsoft.com/library/windows/apps/hh465077)」をご覧ください。
+<span data-ttu-id="ba8e2-160">これらのイベントは、[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 型に実装されています。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-160">These events are implemented on the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type.</span></span> <span data-ttu-id="ba8e2-161">ここでは、操作する **CoreWindow** オブジェクトが既にあると想定しています。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-161">We assume that you have a **CoreWindow** object to work with.</span></span> <span data-ttu-id="ba8e2-162">詳しくは、「[UWP C++ アプリで DirectX ビューを表示するための設定方法](https://msdn.microsoft.com/library/windows/apps/hh465077)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-162">For more info, see [How to set up your UWP C++ app to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).</span></span>
 
-これらのイベントは Windows ストア アプリの実行中に起動するため、ハンドラーはプライベート フィールドに定義されているカメラ コントローラーの状態情報を更新します。
+<span data-ttu-id="ba8e2-163">これらのイベントは Windows ストア アプリの実行中に起動するため、ハンドラーはプライベート フィールドに定義されているカメラ コントローラーの状態情報を更新します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-163">As these events fire while our app is running, the handlers update the camera controller state info defined in our private fields.</span></span>
 
-まず、タッチ ポインターのイベント ハンドラーを設定します。 最初のイベント ハンドラーである **OnPointerPressed** では、ユーザーが画面をタッチまたはマウスをクリックしたときに表示を管理する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) からポインターの x-y 座標を取得します。
+<span data-ttu-id="ba8e2-164">まず、タッチ ポインターのイベント ハンドラーを設定します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-164">First, let's populate the touch pointer event handlers.</span></span> <span data-ttu-id="ba8e2-165">最初のイベント ハンドラーである **OnPointerPressed** では、ユーザーが画面をタッチまたはマウスをクリックしたときに表示を管理する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) からポインターの x-y 座標を取得します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-165">In the first event handler, **OnPointerPressed**, we get the x-y coordinates of the pointer from the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) that manages our display when the user touches the screen or clicks the mouse.</span></span>
 
-**OnPointerPressed**
+**<span data-ttu-id="ba8e2-166">OnPointerPressed</span><span class="sxs-lookup"><span data-stu-id="ba8e2-166">OnPointerPressed</span></span>**
 
 ```cpp
 void CameraPanController::OnPointerPressed(
@@ -174,13 +173,13 @@ void CameraPanController::OnPointerPressed(
 }
 ```
 
-このハンドラーを使って、現在の **CameraPanController** インスタンスに、**m\_panInUse** を TRUE に設定してカメラ コントローラーをアクティブとして扱う必要があることを伝えます。 この方法により、アプリは **Update** を呼び出すときに、現在の位置データを使ってビューポートを更新します。
+<span data-ttu-id="ba8e2-167">このハンドラーを使って、現在の **CameraPanController** インスタンスに、**m\_panInUse** を TRUE に設定してカメラ コントローラーをアクティブとして扱う必要があることを伝えます。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-167">We use this handler to let the current **CameraPanController** instance know that camera controller should be treated as active by setting **m\_panInUse** to TRUE.</span></span> <span data-ttu-id="ba8e2-168">この方法により、アプリは **Update** を呼び出すときに、現在の位置データを使ってビューポートを更新します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-168">That way, when the app calls **Update** , it will use the current position data to update the viewport.</span></span>
 
-以上で、ユーザーが画面をタッチまたは表示ウィンドウをクリックしたときのカメラの動きを示す基本の値が設定されたので、次は、ユーザーが画面を押してドラッグまたはボタンを押してマウスを動かしたときに何をするかを決める必要があります。
+<span data-ttu-id="ba8e2-169">以上で、ユーザーが画面をタッチまたは表示ウィンドウをクリックしたときのカメラの動きを示す基本の値が設定されたので、次は、ユーザーが画面を押してドラッグまたはボタンを押してマウスを動かしたときに何をするかを決める必要があります。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-169">Now that we've established the base values for the camera movement when the user touches the screen or click-presses in the display window, we must determine what to do when the user either drags the screen press or moves the mouse with button pressed.</span></span>
 
-**OnPointerMoved** イベント ハンドラーは、ポインターが動くたびに、プレイヤーがポインターを画面上でドラッグするティックごとに起動します。 アプリにポインターの現在の位置を知らせ続ける必要があるため、次のように指定します。
+<span data-ttu-id="ba8e2-170">**OnPointerMoved** イベント ハンドラーは、ポインターが動くたびに、プレイヤーがポインターを画面上でドラッグするティックごとに起動します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-170">The **OnPointerMoved** event handler fires whenever the pointer moves, at every tick that the player drags it on the screen.</span></span> <span data-ttu-id="ba8e2-171">アプリにポインターの現在の位置を知らせ続ける必要があるため、次のように指定します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-171">We need to keep the app aware of the current location of the pointer, and this is how we do it.</span></span>
 
-**OnPointerMoved**
+**<span data-ttu-id="ba8e2-172">OnPointerMoved</span><span class="sxs-lookup"><span data-stu-id="ba8e2-172">OnPointerMoved</span></span>**
 
 ```cpp
 void CameraPanController::OnPointerMoved(
@@ -194,9 +193,9 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-最後に、プレイヤーが画面から手を離したときに、カメラのパン動作を非アクティブにする必要があります。 **m\_panInUse** を FALSE に設定してカメラのパン移動をオフにし、ポインター ID を 0 に設定するには、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) の起動時に呼び出される **OnPointerReleased** を使います。
+<span data-ttu-id="ba8e2-173">最後に、プレイヤーが画面から手を離したときに、カメラのパン動作を非アクティブにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-173">Finally, we need to deactivate the camera pan behavior when the player stops touching the screen.</span></span> <span data-ttu-id="ba8e2-174">**m\_panInUse** を FALSE に設定してカメラのパン移動をオフにし、ポインター ID を 0 に設定するには、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) の起動時に呼び出される **OnPointerReleased** を使います。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-174">We use **OnPointerReleased**, which is called when [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) is fired, to set **m\_panInUse** to FALSE and turn off the camera pan movement, and set the pointer ID to 0.</span></span>
 
-**OnPointerReleased**
+**<span data-ttu-id="ba8e2-175">OnPointerReleased</span><span class="sxs-lookup"><span data-stu-id="ba8e2-175">OnPointerReleased</span></span>**
 
 ```cpp
 void CameraPanController::OnPointerReleased(
@@ -211,12 +210,12 @@ void CameraPanController::OnPointerReleased(
 }
 ```
 
-## <a name="initialize-the-touch-controls-and-the-controller-state"></a>タッチ コントロールとコントローラーの状態の初期化
+## <a name="initialize-the-touch-controls-and-the-controller-state"></a><span data-ttu-id="ba8e2-176">タッチ コントロールとコントローラーの状態の初期化</span><span class="sxs-lookup"><span data-stu-id="ba8e2-176">Initialize the touch controls and the controller state</span></span>
 
 
-次は、イベントをフックして、カメラ コントローラーの状態の基本的なフィールドをすべて初期化しましょう。
+<span data-ttu-id="ba8e2-177">次は、イベントをフックして、カメラ コントローラーの状態の基本的なフィールドをすべて初期化しましょう。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-177">Let's hook the events and initialize all the basic state fields of the camera controller.</span></span>
 
-**Initialize**
+**<span data-ttu-id="ba8e2-178">Initialize</span><span class="sxs-lookup"><span data-stu-id="ba8e2-178">Initialize</span></span>**
 
 ```cpp
 void CameraPanController::Initialize( _In_ CoreWindow^ window )
@@ -243,12 +242,12 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** は、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスへの参照をパラメーターとして使い、先ほど作成したイベント ハンドラーをその **CoreWindow** の適切なイベントに登録します。
+<span data-ttu-id="ba8e2-179">**Initialize** は、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスへの参照をパラメーターとして使い、先ほど作成したイベント ハンドラーをその **CoreWindow** の適切なイベントに登録します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-179">**Initialize** takes a reference to the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**.</span></span>
 
-## <a name="getting-and-setting-the-position-of-the-camera-controller"></a>カメラ コントローラーの位置の取得と設定
+## <a name="getting-and-setting-the-position-of-the-camera-controller"></a><span data-ttu-id="ba8e2-180">カメラ コントローラーの位置の取得と設定</span><span class="sxs-lookup"><span data-stu-id="ba8e2-180">Getting and setting the position of the camera controller</span></span>
 
 
-シーン空間内のカメラ コントローラーの位置の取得と設定を行うメソッドをいくつか定義してみましょう。
+<span data-ttu-id="ba8e2-181">シーン空間内のカメラ コントローラーの位置の取得と設定を行うメソッドをいくつか定義してみましょう。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-181">Let's define some methods to get and set the position of the camera controller in the scene space.</span></span>
 
 ```cpp
 void CameraPanController::SetPosition( _In_ DirectX::XMFLOAT3 pos )
@@ -273,16 +272,16 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 }
 ```
 
-**SetPosition** は、カメラ コントローラーの位置を特定の点に設定する必要がある場合に、アプリから呼び出すことができるパブリック メソッドです。
+<span data-ttu-id="ba8e2-182">**SetPosition** は、カメラ コントローラーの位置を特定の点に設定する必要がある場合に、アプリから呼び出すことができるパブリック メソッドです。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-182">**SetPosition** is a public method that we can call from our app if we need to set the camera controller position to a specific point.</span></span>
 
-**get\_Position** は、最も重要なパブリック プロパティです。アプリはこのプロパティを使って、シーン空間内のカメラ コントローラーの現在の位置を取得し、その位置に応じてビューポートを更新できます。
+<span data-ttu-id="ba8e2-183">**get\_Position** は、最も重要なパブリック プロパティです。アプリはこのプロパティを使って、シーン空間内のカメラ コントローラーの現在の位置を取得し、その位置に応じてビューポートを更新できます。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-183">**get\_Position** is our most important public property: it's the way our app gets the current position of the camera controller in the scene space so it can update the viewport accordingly.</span></span>
 
-**get\_FixedLookPoint** は、この例では、x-y 平面に垂直な視点を取得するパブリック プロパティです。 固定カメラに対して斜めの角度を作る場合は、このメソッドを変更して、x、y、z 座標値の計算時に三角関数 sin と cos を使うことができます。
+<span data-ttu-id="ba8e2-184">**get\_FixedLookPoint** は、この例では、x-y 平面に垂直な視点を取得するパブリック プロパティです。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-184">**get\_FixedLookPoint** is a public property that, in this example, obtains a look point that is normal to the x-y plane.</span></span> <span data-ttu-id="ba8e2-185">固定カメラに対して斜めの角度を作る場合は、このメソッドを変更して、x、y、z 座標値の計算時に三角関数 sin と cos を使うことができます。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-185">You can change this method to use the trigonometric functions, sin and cos, when calculating the x, y, and z coordinate values if you want to create more oblique angles for the fixed camera.</span></span>
 
-## <a name="updating-the-camera-controller-state-information"></a>カメラ コントローラーの状態情報の更新
+## <a name="updating-the-camera-controller-state-information"></a><span data-ttu-id="ba8e2-186">カメラ コントローラーの状態情報の更新</span><span class="sxs-lookup"><span data-stu-id="ba8e2-186">Updating the camera controller state information</span></span>
 
 
-次は、**m\_panPointerPosition** で追跡したポインターの座標情報を、3D シーン空間における新しい座標情報に変換する計算を実行します。 Windows ストア アプリは、アプリのメイン ループが更新されるたびに、このメソッドを呼び出します。 ここで、ビューポートへのプロジェクションの前にビュー マトリックスを更新するためにアプリに渡す新しい位置情報を計算します。
+<span data-ttu-id="ba8e2-187">次は、**m\_panPointerPosition** で追跡したポインターの座標情報を、3D シーン空間における新しい座標情報に変換する計算を実行します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-187">Now, we perform our calculations that convert the pointer coordinate info tracked in **m\_panPointerPosition** into new coordinate info respective of our 3D scene space.</span></span> <span data-ttu-id="ba8e2-188">Windows ストア アプリは、アプリのメイン ループが更新されるたびに、このメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-188">Our app calls this method every time we refresh the main app loop.</span></span> <span data-ttu-id="ba8e2-189">ここで、ビューポートへのプロジェクションの前にビュー マトリックスを更新するためにアプリに渡す新しい位置情報を計算します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-189">In it we compute the new position information we want to pass to the app which is used to update the view matrix before projection into the viewport.</span></span>
 
 ```cpp
 
@@ -325,12 +324,12 @@ void CameraPanController::Update( CoreWindow ^window )
 }
 ```
 
-タッチまたはマウスの揺れでカメラのパンが不適切に動かないように、ポインターの周りに直径 32 ピクセルのデッド ゾーンを設定します。 また、速度値もあります。この例では、デッド ゾーンを超えるポインターのピクセル トラバーサルに対して 1:1 です。 この動作を調整し、移動速度を低下または上昇させることができます。
+<span data-ttu-id="ba8e2-190">タッチまたはマウスの揺れでカメラのパンが不適切に動かないように、ポインターの周りに直径 32 ピクセルのデッド ゾーンを設定します。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-190">Because we don't want touch or mouse jitter to make our camera panning jerky, we set a dead zone around the pointer with a diameter of 32 pixels.</span></span> <span data-ttu-id="ba8e2-191">また、速度値もあります。この例では、デッド ゾーンを超えるポインターのピクセル トラバーサルに対して 1:1 です。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-191">We also have a velocity value, which in this case is 1:1 with the pixel traversal of the pointer past the dead zone.</span></span> <span data-ttu-id="ba8e2-192">この動作を調整し、移動速度を低下または上昇させることができます。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-192">You can adjust this behavior to slow down or speed up the rate of movement.</span></span>
 
-## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>カメラの新しい位置によるビュー マトリックスの更新
+## <a name="updating-the-view-matrix-with-the-new-camera-position"></a><span data-ttu-id="ba8e2-193">カメラの新しい位置によるビュー マトリックスの更新</span><span class="sxs-lookup"><span data-stu-id="ba8e2-193">Updating the view matrix with the new camera position</span></span>
 
 
-これで、カメラのフォーカスが合っているシーン空間の座標の取得ができます。この座標は、アプリに指定した時間ごとに更新されます (たとえばアプリのメイン ループでは 60 秒ごと)。 次の疑似コードは、実装できる呼び出し動作を示しています。
+<span data-ttu-id="ba8e2-194">これで、カメラのフォーカスが合っているシーン空間の座標の取得ができます。この座標は、アプリに指定した時間ごとに更新されます (たとえばアプリのメイン ループでは 60 秒ごと)。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-194">We can now obtain a scene space coordinate that our camera is focused on, and which is updated whenever you tell your app to do so (every 60 seconds in the main app loop, for example).</span></span> <span data-ttu-id="ba8e2-195">次の疑似コードは、実装できる呼び出し動作を示しています。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-195">This pseudocode suggests the calling behavior you can implement:</span></span>
 
 ```cpp
  myCameraPanController->Update( m_window ); 
@@ -343,17 +342,16 @@ void CameraPanController::Update( CoreWindow ^window )
         );  
 ```
 
-これで、 一連の簡単なカメラ パンのタッチ コントロールがゲームに実装されました。
+<span data-ttu-id="ba8e2-196">これで、</span><span class="sxs-lookup"><span data-stu-id="ba8e2-196">Congratulations!</span></span> <span data-ttu-id="ba8e2-197">一連の簡単なカメラ パンのタッチ コントロールがゲームに実装されました。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-197">You've implemented a simple set of camera panning touch controls in your game.</span></span>
 
-> **注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
- 
+> **<span data-ttu-id="ba8e2-198">注</span><span class="sxs-lookup"><span data-stu-id="ba8e2-198">Note</span></span>**  
+<span data-ttu-id="ba8e2-199">この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-199">This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="ba8e2-200">Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ba8e2-200">If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).</span></span>
 
  
 
  
 
+ 
 
 
 
