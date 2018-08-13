@@ -1,32 +1,30 @@
 ---
 author: mcleblanc
 ms.assetid: 83b4be37-6613-4d00-a48a-0451a24a30fb
-title: "データ バインディング"
-description: "データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。"
+title: データ バインディング
+description: データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1680ceb9d9fdaf9cd2f9aa5d66f78b95e5da41e1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9af7c4a3bf5cfacf8fcdddc276c4cff127ae9ea8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243038"
 ---
+# <a name="data-binding"></a><span data-ttu-id="f6c73-104">データ バインディング</span><span class="sxs-lookup"><span data-stu-id="f6c73-104">Data binding</span></span>
 
-# <a name="data-binding"></a>データ バインディング
+<span data-ttu-id="f6c73-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="f6c73-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="f6c73-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]</span><span class="sxs-lookup"><span data-stu-id="f6c73-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="f6c73-107">データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。</span><span class="sxs-lookup"><span data-stu-id="f6c73-107">Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data.</span></span> <span data-ttu-id="f6c73-108">データ バインディングによって、UI の問題からデータの問題を切り離すことができるため、概念的なモデルが簡素化されると共に、アプリの読みやすさ、テストの容易性、保守容易性が向上します。</span><span class="sxs-lookup"><span data-stu-id="f6c73-108">Data binding allows you to separate the concern of data from the concern of UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app.</span></span> <span data-ttu-id="f6c73-109">マークアップでは、[{{x:Bind}} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)と [{{Binding}} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)のいずれを使うかを選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="f6c73-109">In markup, you can choose to use either the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783) or the [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782).</span></span> <span data-ttu-id="f6c73-110">また、同じアプリや同じ UI 要素で、この 2 つを組み合わせて使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="f6c73-110">And you can even use a mixture of the two in the same app—even on the same UI element.</span></span> <span data-ttu-id="f6c73-111">{x:Bind} は Windows 10 の新機能で、パフォーマンスが向上しています。</span><span class="sxs-lookup"><span data-stu-id="f6c73-111">{x:Bind} is new for Windows 10 and it has better performance.</span></span>
 
-データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。 データ バインディングによって、UI の問題からデータの問題を切り離すことができるため、概念的なモデルが簡素化されると共に、アプリの読みやすさ、テストの容易性、保守容易性が向上します。 マークアップでは、[{{x:Bind}} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)と [{{Binding}} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)のいずれを使うかを選ぶことができます。 また、同じアプリや同じ UI 要素で、この 2 つを組み合わせて使うこともできます。 {x:Bind} は Windows 10 の新機能で、パフォーマンスが向上しています。
-
-| トピック | 説明 |
+| <span data-ttu-id="f6c73-112">トピック</span><span class="sxs-lookup"><span data-stu-id="f6c73-112">Topic</span></span> | <span data-ttu-id="f6c73-113">説明</span><span class="sxs-lookup"><span data-stu-id="f6c73-113">Description</span></span> |
 |-------|-------------|
-| [データ バインディングの概要](data-binding-quickstart.md) | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。 また、項目のレンダリングを制御する方法、選択内容に基づいて詳細ビューを実装する方法、表示するデータを変換する方法も紹介します。 詳しくは、「[データ バインディングの詳細](data-binding-in-depth.md)」をご覧ください。 | 
-| [データ バインディングの詳細](data-binding-in-depth.md) | このトピックでは、データ バインディングの機能について詳しく説明します。 |
-| [デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ](displaying-data-in-the-designer.md) | (アプリのレイアウト、テンプレート、その他の視覚的なプロパティを操作するため) Visual Studio デザイナーでコントロールにデータを設定できるように、さまざまな方法で設計時のサンプル データを使うことができます。 サンプル データは、スケッチ (プロトタイプ) アプリを開発する場合にも便利で、時間の節約になります。 スケッチやプロトタイプで実行時にサンプル データを使うと、実際のライブ データに接続しなくてもアイデアを実証できます。 |
-| [階層データをバインドしてマスター/詳細ビューを作る方法](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md) | チェーン内でバインドされた [<strong>CollectionViewSource</strong>](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスに項目コントロールをバインドすることによって、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。 |
-
+| [<span data-ttu-id="f6c73-114">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="f6c73-114">Data binding overview</span></span>](data-binding-quickstart.md) | <span data-ttu-id="f6c73-115">このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="f6c73-115">This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app.</span></span> <span data-ttu-id="f6c73-116">また、項目のレンダリングを制御する方法、選択内容に基づいて詳細ビューを実装する方法、表示するデータを変換する方法も紹介します。</span><span class="sxs-lookup"><span data-stu-id="f6c73-116">In addition, we show how to control the rendering of items, implement a details view based on a selection, and convert data for display.</span></span> <span data-ttu-id="f6c73-117">詳しくは、「[データ バインディングの詳細](data-binding-in-depth.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f6c73-117">For more detailed info, see [Data binding in depth](data-binding-in-depth.md).</span></span> | 
+| [<span data-ttu-id="f6c73-118">データ バインディングの詳細</span><span class="sxs-lookup"><span data-stu-id="f6c73-118">Data binding in depth</span></span>](data-binding-in-depth.md) | <span data-ttu-id="f6c73-119">このトピックでは、データ バインディングの機能について詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="f6c73-119">This topic describes data binding features in detail.</span></span> |
+| [<span data-ttu-id="f6c73-120">デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ</span><span class="sxs-lookup"><span data-stu-id="f6c73-120">Sample data on the design surface, and for prototyping</span></span>](displaying-data-in-the-designer.md) | <span data-ttu-id="f6c73-121">(アプリのレイアウト、テンプレート、その他の視覚的なプロパティを操作するため) Visual Studio デザイナーでコントロールにデータを設定できるように、さまざまな方法で設計時のサンプル データを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="f6c73-121">In order to have your controls populated with data in the Visual Studio designer (so that you can work on your app's layout, templates, and other visual properties), there are various ways in which you can use design-time sample data.</span></span> <span data-ttu-id="f6c73-122">サンプル データは、スケッチ (プロトタイプ) アプリを開発する場合にも便利で、時間の節約になります。</span><span class="sxs-lookup"><span data-stu-id="f6c73-122">Sample data can also be really useful and time-saving if you're building a sketch (or prototype) app.</span></span> <span data-ttu-id="f6c73-123">スケッチやプロトタイプで実行時にサンプル データを使うと、実際のライブ データに接続しなくてもアイデアを実証できます。</span><span class="sxs-lookup"><span data-stu-id="f6c73-123">You can use sample data in your sketch or prototype at run-time to illustrate your ideas without going as far as connecting to real, live data.</span></span> |
+| [<span data-ttu-id="f6c73-124">階層データをバインドしてマスター/詳細ビューを作る方法</span><span class="sxs-lookup"><span data-stu-id="f6c73-124">Bind hierarchical data and create a master/details view</span></span>](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md) | <span data-ttu-id="f6c73-125">チェーン内でバインドされた [<strong>CollectionViewSource</strong>](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスに項目コントロールをバインドすることによって、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="f6c73-125">You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to [<strong>CollectionViewSource</strong>](https://msdn.microsoft.com/library/windows/apps/BR209833) instances that are bound together in a chain.</span></span> |
 
