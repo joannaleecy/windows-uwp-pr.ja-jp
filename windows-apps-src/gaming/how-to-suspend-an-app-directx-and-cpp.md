@@ -1,34 +1,33 @@
 ---
 author: mtoepke
-title: "アプリを一時停止する方法 (DirectX と C++)"
-description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。"
+title: アプリを一時停止する方法 (DirectX と C++)
+description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, 一時停止, DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows 10, UWP, ゲーム, 一時停止, DirectX
 ms.openlocfilehash: 028350f3e4bf6bda5a72663c009e8117c9311b3e
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243176"
 ---
-
-# <a name="how-to-suspend-an-app-directx-and-c"></a>アプリを一時停止する方法 (DirectX と C++)
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
-
-このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。
-
-## <a name="register-the-suspending-event-handler"></a>suspending イベント ハンドラーに登録する
+# <a name="how-to-suspend-an-app-directx-and-c"></a><span data-ttu-id="b3104-104">アプリを一時停止する方法 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="b3104-104">How to suspend an app (DirectX and C++)</span></span>
 
 
-まず、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理するための登録を行います。このイベントは、ユーザーまたはシステムの動作によってアプリが一時停止の状態に移ったときに発生します。
+<span data-ttu-id="b3104-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="b3104-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="b3104-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]</span><span class="sxs-lookup"><span data-stu-id="b3104-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-このコードをビュー プロバイダーの [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) メソッドの実装に追加します。
+<span data-ttu-id="b3104-107">このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b3104-107">This topic shows how to save important system state and app data when the system suspends your Universal Windows Platform (UWP) DirectX app.</span></span>
+
+## <a name="register-the-suspending-event-handler"></a><span data-ttu-id="b3104-108">suspending イベント ハンドラーに登録する</span><span class="sxs-lookup"><span data-stu-id="b3104-108">Register the suspending event handler</span></span>
+
+
+<span data-ttu-id="b3104-109">まず、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理するための登録を行います。このイベントは、ユーザーまたはシステムの動作によってアプリが一時停止の状態に移ったときに発生します。</span><span class="sxs-lookup"><span data-stu-id="b3104-109">First, register to handle the [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event, which is raised when your app is moved to a suspended state by a user or system action.</span></span>
+
+<span data-ttu-id="b3104-110">このコードをビュー プロバイダーの [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) メソッドの実装に追加します。</span><span class="sxs-lookup"><span data-stu-id="b3104-110">Add this code to your implementation of the [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method of your view provider:</span></span>
 
 ```cpp
 void App::Initialize(CoreApplicationView^ applicationView)
@@ -42,12 +41,12 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## <a name="save-any-app-data-before-suspending"></a>一時停止の前に任意のアプリ データを保存する
+## <a name="save-any-app-data-before-suspending"></a><span data-ttu-id="b3104-111">一時停止の前に任意のアプリ データを保存する</span><span class="sxs-lookup"><span data-stu-id="b3104-111">Save any app data before suspending</span></span>
 
 
-アプリでは、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理する時点で、ハンドラー関数で重要なアプリケーション データを保存できます。 アプリで [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) Storage API を使って、シンプルなアプリケーション データを同期的に保存する必要があります。 ゲームを開発している場合は、重要なゲームの状態の情報を保存します。 オーディオ処理の一時停止も忘れずに行います。
+<span data-ttu-id="b3104-112">アプリでは、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理する時点で、ハンドラー関数で重要なアプリケーション データを保存できます。</span><span class="sxs-lookup"><span data-stu-id="b3104-112">When your app handles the [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event, it has the opportunity to save its important application data in the handler function.</span></span> <span data-ttu-id="b3104-113">アプリで [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) Storage API を使って、シンプルなアプリケーション データを同期的に保存する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3104-113">The app should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) storage API to save simple application data synchronously.</span></span> <span data-ttu-id="b3104-114">ゲームを開発している場合は、重要なゲームの状態の情報を保存します。</span><span class="sxs-lookup"><span data-stu-id="b3104-114">If you are developing a game, save any critical game state information.</span></span> <span data-ttu-id="b3104-115">オーディオ処理の一時停止も忘れずに行います。</span><span class="sxs-lookup"><span data-stu-id="b3104-115">Don't forget to suspend the audio processing!</span></span>
 
-ここで、コールバックを実装します。 アプリのデータはこのメソッドで保存します。
+<span data-ttu-id="b3104-116">ここで、コールバックを実装します。</span><span class="sxs-lookup"><span data-stu-id="b3104-116">Now, implement the callback.</span></span> <span data-ttu-id="b3104-117">アプリのデータはこのメソッドで保存します。</span><span class="sxs-lookup"><span data-stu-id="b3104-117">Save the app data in this method.</span></span>
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -69,9 +68,9 @@ void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
 }
 ```
 
-コールバックは 5 秒で完了する必要があります。 このコールバック中に、[**SuspendingOperation::GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) を呼び出して、保留を要求します。これによって、カウントダウンが開始されます。 アプリが保存操作を完了したら、[**SuspendingDeferral::Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) を呼び出して、アプリを一時停止する準備ができたことをシステムに通知します。 保留を要求しないか、アプリがデータの保存に 5 秒より長くかかった場合、アプリは自動的に一時停止されます。
+<span data-ttu-id="b3104-118">コールバックは 5 秒で完了する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3104-118">This callback must complete with 5 seconds.</span></span> <span data-ttu-id="b3104-119">このコールバック中に、[**SuspendingOperation::GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) を呼び出して、保留を要求します。これによって、カウントダウンが開始されます。</span><span class="sxs-lookup"><span data-stu-id="b3104-119">During this callback, you must request a deferral by calling [**SuspendingOperation::GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690), which starts the countdown.</span></span> <span data-ttu-id="b3104-120">アプリが保存操作を完了したら、[**SuspendingDeferral::Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) を呼び出して、アプリを一時停止する準備ができたことをシステムに通知します。</span><span class="sxs-lookup"><span data-stu-id="b3104-120">When your app completes the save operation, call [**SuspendingDeferral::Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) to tell the system that your app is now ready to be suspended.</span></span> <span data-ttu-id="b3104-121">保留を要求しないか、アプリがデータの保存に 5 秒より長くかかった場合、アプリは自動的に一時停止されます。</span><span class="sxs-lookup"><span data-stu-id="b3104-121">If you do not request a deferral, or if your app takes longer than 5 seconds to save the data, your app is automatically suspended.</span></span>
 
-このコールバックは、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). の [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) によって処理されるイベント メッセージとして発生します。 このコールバックは、アプリのメイン ループ (ビュー プロバイダーの [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドで実装) から [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を呼び出さない場合は呼び出されません。
+<span data-ttu-id="b3104-122">このコールバックは、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). の [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) によって処理されるイベント メッセージとして発生します。</span><span class="sxs-lookup"><span data-stu-id="b3104-122">This callback occurs as an event message processed by the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) for the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225).</span></span> <span data-ttu-id="b3104-123">このコールバックは、アプリのメイン ループ (ビュー プロバイダーの [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドで実装) から [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を呼び出さない場合は呼び出されません。</span><span class="sxs-lookup"><span data-stu-id="b3104-123">This callback will not be invoked if you do not call [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) from your app's main loop (implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method of your view provider).</span></span>
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -98,10 +97,10 @@ void App::Run()
 }
 ```
 
-## <a name="call-trim"></a>Trim() を呼び出す
+## <a name="call-trim"></a><span data-ttu-id="b3104-124">Trim() を呼び出す</span><span class="sxs-lookup"><span data-stu-id="b3104-124">Call Trim()</span></span>
 
 
-Windows 8.1 以降では、DirectX を使った Windows ストア アプリはいずれも、中断時に [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) を呼び出す必要があります。 この呼び出しは、アプリに割り当てた一時バッファーをすべて解放するようにグラフィックス ドライバーに対して指示するものであり、アプリが中断状態にある間に終了してメモリ リソースが再利用される可能性を低く抑えることができます。 Windows 8.1 では、これが認定要件となっています。
+<span data-ttu-id="b3104-125">Windows 8.1 以降では、DirectX を使った Windows ストア アプリはいずれも、中断時に [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3104-125">Starting in Windows 8.1, all DirectX Windows Store apps must call [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) when suspending.</span></span> <span data-ttu-id="b3104-126">この呼び出しは、アプリに割り当てた一時バッファーをすべて解放するようにグラフィックス ドライバーに対して指示するものであり、アプリが中断状態にある間に終了してメモリ リソースが再利用される可能性を低く抑えることができます。</span><span class="sxs-lookup"><span data-stu-id="b3104-126">This call tells the graphics driver to release all temporary buffers allocated for the app, which reduces the chance that the app will be terminated to reclaim memory resources while in the suspend state.</span></span> <span data-ttu-id="b3104-127">Windows 8.1 では、これが認定要件となっています。</span><span class="sxs-lookup"><span data-stu-id="b3104-127">This is a certification requirement for Windows 8.1.</span></span>
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -133,29 +132,28 @@ void DX::DeviceResources::Trim()
 }
 ```
 
-## <a name="release-any-exclusive-resources-and-file-handles"></a>任意の排他リソースとファイル ハンドルを解放する
+## <a name="release-any-exclusive-resources-and-file-handles"></a><span data-ttu-id="b3104-128">任意の排他リソースとファイル ハンドルを解放する</span><span class="sxs-lookup"><span data-stu-id="b3104-128">Release any exclusive resources and file handles</span></span>
 
 
-アプリでは、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理する時点で、排他リソースとファイル ハンドルを解放することもできます。 排他リソースとファイル ハンドルを明示的に解放すると、自分のアプリが使っていないときに他のアプリが排他リソースとファイル ハンドルにアクセスできるようになります。 アプリが終了後にアクティブ化されるときに、排他リソースとファイル ハンドルを開く必要があります。
+<span data-ttu-id="b3104-129">アプリでは、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理する時点で、排他リソースとファイル ハンドルを解放することもできます。</span><span class="sxs-lookup"><span data-stu-id="b3104-129">When your app handles the [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event, it also has the opportunity to release exclusive resources and file handles.</span></span> <span data-ttu-id="b3104-130">排他リソースとファイル ハンドルを明示的に解放すると、自分のアプリが使っていないときに他のアプリが排他リソースとファイル ハンドルにアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="b3104-130">Explicitly releasing exclusive resources and file handles helps to ensure that other apps can access them while your app isn't using them.</span></span> <span data-ttu-id="b3104-131">アプリが終了後にアクティブ化されるときに、排他リソースとファイル ハンドルを開く必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3104-131">When the app is activated after termination, it should open its exclusive resources and file handles.</span></span>
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a><span data-ttu-id="b3104-132">注釈</span><span class="sxs-lookup"><span data-stu-id="b3104-132">Remarks</span></span>
 
 
-ユーザーが別のアプリまたはデスクトップに切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。
+<span data-ttu-id="b3104-133">ユーザーが別のアプリまたはデスクトップに切り替えると、システムはアプリを中断します。</span><span class="sxs-lookup"><span data-stu-id="b3104-133">The system suspends your app whenever the user switches to another app or to the desktop.</span></span> <span data-ttu-id="b3104-134">ユーザーが元のアプリに戻すと、システムはアプリを再開します。</span><span class="sxs-lookup"><span data-stu-id="b3104-134">The system resumes your app whenever the user switches back to it.</span></span> <span data-ttu-id="b3104-135">システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。</span><span class="sxs-lookup"><span data-stu-id="b3104-135">When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app.</span></span> <span data-ttu-id="b3104-136">システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。</span><span class="sxs-lookup"><span data-stu-id="b3104-136">The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background.</span></span>
 
-システムは、アプリの一時停止中、アプリとそのデータをメモリに保持するよう試みます。 ただし、アプリをメモリに保持するためのリソースがシステムにない場合、システムはアプリを終了します。 一時停止されてから終了されたアプリにユーザーが戻るときに、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送って、**CoreApplicationView::Activated** イベントのハンドラーでアプリケーション データを復元する必要があります。
+<span data-ttu-id="b3104-137">システムは、アプリの一時停止中、アプリとそのデータをメモリに保持するよう試みます。</span><span class="sxs-lookup"><span data-stu-id="b3104-137">The system attempts to keep your app and its data in memory while it's suspended.</span></span> <span data-ttu-id="b3104-138">ただし、アプリをメモリに保持するためのリソースがシステムにない場合、システムはアプリを終了します。</span><span class="sxs-lookup"><span data-stu-id="b3104-138">However, if the system does not have the resources to keep your app in memory, the system will terminate your app.</span></span> <span data-ttu-id="b3104-139">一時停止されてから終了されたアプリにユーザーが戻るときに、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送って、**CoreApplicationView::Activated** イベントのハンドラーでアプリケーション データを復元する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3104-139">When the user switches back to a suspended app that has been terminated, the system sends an [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event and should restore its application data in its handler for the **CoreApplicationView::Activated** event.</span></span>
 
-アプリが終了されるときは、システムはアプリに通知を送らないので、アプリは中断されたときにアプリケーション データを保存し、排他リソースとファイル ハンドルを解放して、アプリが終了後アクティブ化されるときにそれらを復元する必要があります。
+<span data-ttu-id="b3104-140">アプリが終了されるときは、システムはアプリに通知を送らないので、アプリは中断されたときにアプリケーション データを保存し、排他リソースとファイル ハンドルを解放して、アプリが終了後アクティブ化されるときにそれらを復元する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3104-140">The system doesn't notify an app when it's terminated, so your app must save its application data and release exclusive resources and file handles when it's suspended, and restore them when the app is activated after termination.</span></span>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="b3104-141">関連トピック</span><span class="sxs-lookup"><span data-stu-id="b3104-141">Related topics</span></span>
 
-* [アプリを再開する方法 (DirectX と C++)](how-to-resume-an-app-directx-and-cpp.md)
-* [アプリをアクティブ化する方法 (DirectX と C++)](how-to-activate-an-app-directx-and-cpp.md)
-
- 
+* [<span data-ttu-id="b3104-142">アプリを再開する方法 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="b3104-142">How to resume an app (DirectX and C++)</span></span>](how-to-resume-an-app-directx-and-cpp.md)
+* [<span data-ttu-id="b3104-143">アプリをアクティブ化する方法 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="b3104-143">How to activate an app (DirectX and C++)</span></span>](how-to-activate-an-app-directx-and-cpp.md)
 
  
 
+ 
 
 
 

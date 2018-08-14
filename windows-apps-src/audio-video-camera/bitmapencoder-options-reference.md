@@ -1,50 +1,48 @@
 ---
 author: laurenhughes
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
-description: "この記事では、BitmapEncoder で使用できるエンコーディング オプションを示します。"
-title: "BitmapEncoder オプションのリファレンス"
+description: この記事では、BitmapEncoder で使用できるエンコーディング オプションを示します。
+title: BitmapEncoder オプションのリファレンス
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c29c05e7397e87851ebb0fa5fa29df3b9b58907b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: adfd360c22fd6737d9e95e6e3153f4e2767a4c99
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243053"
 ---
+# <a name="bitmapencoder-options-reference"></a><span data-ttu-id="13e22-104">BitmapEncoder オプションのリファレンス</span><span class="sxs-lookup"><span data-stu-id="13e22-104">BitmapEncoder options reference</span></span>
 
-# <a name="bitmapencoder-options-reference"></a>BitmapEncoder オプションのリファレンス
+<span data-ttu-id="13e22-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="13e22-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="13e22-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="13e22-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+<span data-ttu-id="13e22-107">この記事では、[**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) で使用できるエンコーディング オプションを示します。</span><span class="sxs-lookup"><span data-stu-id="13e22-107">This article lists the encoding options that can be used with [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206).</span></span> <span data-ttu-id="13e22-108">エンコーディング オプションは、対応する名前の文字列と特定のデータ型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)) の値によって定義されます。</span><span class="sxs-lookup"><span data-stu-id="13e22-108">An encoding option is defined by its name, which is a string, and a value in a particular data type ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)).</span></span> <span data-ttu-id="13e22-109">画像の操作について詳しくは、「[ビットマップ画像の作成、編集、保存](imaging.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="13e22-109">For information about working with images, see [Create, edit, and save bitmap images](imaging.md).</span></span>
 
-この記事では、[**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) で使用できるエンコーディング オプションを示します。 エンコーディング オプションは、対応する名前の文字列と特定のデータ型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)) の値によって定義されます。 画像の操作について詳しくは、「[ビットマップ画像の作成、編集、保存](imaging.md)」をご覧ください。
-
-| 名前                    | PropertyType | 使用上の注意                                                                                        | 有効な形式 |
+| <span data-ttu-id="13e22-110">名前</span><span class="sxs-lookup"><span data-stu-id="13e22-110">Name</span></span>                    | <span data-ttu-id="13e22-111">PropertyType</span><span class="sxs-lookup"><span data-stu-id="13e22-111">PropertyType</span></span> | <span data-ttu-id="13e22-112">使用上の注意</span><span class="sxs-lookup"><span data-stu-id="13e22-112">Usage notes</span></span>                                                                                        | <span data-ttu-id="13e22-113">有効な形式</span><span class="sxs-lookup"><span data-stu-id="13e22-113">Valid formats</span></span> |
 |-------------------------|--------------|----------------------------------------------------------------------------------------------------|---------------|
-| ImageQuality            | single       | 有効な値は 0 ～ 1.0 です。 値が大きいほど、画質が高くなります。                                 | JPEG、JPEG-XR |
-| CompressionQuality      | single       | 有効な値は 0 ～ 1.0 です。 値が大きいほど、効率の高い (時間のかかる) 圧縮方式であることを示します。 | TIFF          |
-| Lossless                | boolean      | true に設定すると、ImageQuality オプションが無視されます。                                        | JPEG-XR       |
-| InterlaceOption         | boolean      | 画像をインターレースするかどうかを示します。                                                                    | PNG           |
-| FilterOption            | uint8        | [**PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389) 列挙値を使います。                                | PNG           |
-| TiffCompressionMethod   | uint8        | [**TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399) 列挙値を使います。                    | TIFF          |
-| Luminance               | uint32Array  | 輝度の量子化定数を格納する 64 要素の配列です。                               | JPEG          |
-| Chrominance             | uint32Array  | クロミナンスの量子化定数を格納する 64 要素の配列です。                             | JPEG          |
-| JpegYCrCbSubsampling    | uint8        | [**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386) 列挙値を使います。                    | JPEG          |
-| SuppressApp0            | boolean      | App0 メタデータ ブロックの作成を抑制するかどうかを示します。                                        | JPEG          |
-| EnableV5Header32bppBGRA | boolean      | アルファをサポートするバージョン 5 BMP にエンコードするかどうかを示します。                                         | BMP           |
+| <span data-ttu-id="13e22-114">ImageQuality</span><span class="sxs-lookup"><span data-stu-id="13e22-114">ImageQuality</span></span>            | <span data-ttu-id="13e22-115">single</span><span class="sxs-lookup"><span data-stu-id="13e22-115">single</span></span>       | <span data-ttu-id="13e22-116">有効な値は 0 ～ 1.0 です。</span><span class="sxs-lookup"><span data-stu-id="13e22-116">Valid values from 0 to 1.0.</span></span> <span data-ttu-id="13e22-117">値が大きいほど、画質が高くなります。</span><span class="sxs-lookup"><span data-stu-id="13e22-117">Higher values indicate higher quality</span></span>                                 | <span data-ttu-id="13e22-118">JPEG、JPEG-XR</span><span class="sxs-lookup"><span data-stu-id="13e22-118">JPEG, JPEG-XR</span></span> |
+| <span data-ttu-id="13e22-119">CompressionQuality</span><span class="sxs-lookup"><span data-stu-id="13e22-119">CompressionQuality</span></span>      | <span data-ttu-id="13e22-120">single</span><span class="sxs-lookup"><span data-stu-id="13e22-120">single</span></span>       | <span data-ttu-id="13e22-121">有効な値は 0 ～ 1.0 です。</span><span class="sxs-lookup"><span data-stu-id="13e22-121">Valid values from 0 to 1.0.</span></span> <span data-ttu-id="13e22-122">値が大きいほど、効率の高い (時間のかかる) 圧縮方式であることを示します。</span><span class="sxs-lookup"><span data-stu-id="13e22-122">Higher values indicate a more efficient and slower compression scheme</span></span> | <span data-ttu-id="13e22-123">TIFF</span><span class="sxs-lookup"><span data-stu-id="13e22-123">TIFF</span></span>          |
+| <span data-ttu-id="13e22-124">Lossless</span><span class="sxs-lookup"><span data-stu-id="13e22-124">Lossless</span></span>                | <span data-ttu-id="13e22-125">boolean</span><span class="sxs-lookup"><span data-stu-id="13e22-125">boolean</span></span>      | <span data-ttu-id="13e22-126">true に設定すると、ImageQuality オプションが無視されます。</span><span class="sxs-lookup"><span data-stu-id="13e22-126">If this is set to true, the ImageQuality option is ignored</span></span>                                        | <span data-ttu-id="13e22-127">JPEG-XR</span><span class="sxs-lookup"><span data-stu-id="13e22-127">JPEG-XR</span></span>       |
+| <span data-ttu-id="13e22-128">InterlaceOption</span><span class="sxs-lookup"><span data-stu-id="13e22-128">InterlaceOption</span></span>         | <span data-ttu-id="13e22-129">boolean</span><span class="sxs-lookup"><span data-stu-id="13e22-129">boolean</span></span>      | <span data-ttu-id="13e22-130">画像をインターレースするかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="13e22-130">Whether to interlace the image</span></span>                                                                    | <span data-ttu-id="13e22-131">PNG</span><span class="sxs-lookup"><span data-stu-id="13e22-131">PNG</span></span>           |
+| <span data-ttu-id="13e22-132">FilterOption</span><span class="sxs-lookup"><span data-stu-id="13e22-132">FilterOption</span></span>            | <span data-ttu-id="13e22-133">uint8</span><span class="sxs-lookup"><span data-stu-id="13e22-133">uint8</span></span>        | <span data-ttu-id="13e22-134">[**PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389) 列挙値を使います。</span><span class="sxs-lookup"><span data-stu-id="13e22-134">Use the [**PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389) enumeration</span></span>                                | <span data-ttu-id="13e22-135">PNG</span><span class="sxs-lookup"><span data-stu-id="13e22-135">PNG</span></span>           |
+| <span data-ttu-id="13e22-136">TiffCompressionMethod</span><span class="sxs-lookup"><span data-stu-id="13e22-136">TiffCompressionMethod</span></span>   | <span data-ttu-id="13e22-137">uint8</span><span class="sxs-lookup"><span data-stu-id="13e22-137">uint8</span></span>        | <span data-ttu-id="13e22-138">[**TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399) 列挙値を使います。</span><span class="sxs-lookup"><span data-stu-id="13e22-138">Use the [**TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399) enumeration</span></span>                    | <span data-ttu-id="13e22-139">TIFF</span><span class="sxs-lookup"><span data-stu-id="13e22-139">TIFF</span></span>          |
+| <span data-ttu-id="13e22-140">Luminance</span><span class="sxs-lookup"><span data-stu-id="13e22-140">Luminance</span></span>               | <span data-ttu-id="13e22-141">uint32Array</span><span class="sxs-lookup"><span data-stu-id="13e22-141">uint32Array</span></span>  | <span data-ttu-id="13e22-142">輝度の量子化定数を格納する 64 要素の配列です。</span><span class="sxs-lookup"><span data-stu-id="13e22-142">An array of 64 elements containing luminance quantization constants</span></span>                               | <span data-ttu-id="13e22-143">JPEG</span><span class="sxs-lookup"><span data-stu-id="13e22-143">JPEG</span></span>          |
+| <span data-ttu-id="13e22-144">Chrominance</span><span class="sxs-lookup"><span data-stu-id="13e22-144">Chrominance</span></span>             | <span data-ttu-id="13e22-145">uint32Array</span><span class="sxs-lookup"><span data-stu-id="13e22-145">uint32Array</span></span>  | <span data-ttu-id="13e22-146">クロミナンスの量子化定数を格納する 64 要素の配列です。</span><span class="sxs-lookup"><span data-stu-id="13e22-146">An array of 64 elements containing chrominance quantization constants</span></span>                             | <span data-ttu-id="13e22-147">JPEG</span><span class="sxs-lookup"><span data-stu-id="13e22-147">JPEG</span></span>          |
+| <span data-ttu-id="13e22-148">JpegYCrCbSubsampling</span><span class="sxs-lookup"><span data-stu-id="13e22-148">JpegYCrCbSubsampling</span></span>    | <span data-ttu-id="13e22-149">uint8</span><span class="sxs-lookup"><span data-stu-id="13e22-149">uint8</span></span>        | <span data-ttu-id="13e22-150">[**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386) 列挙値を使います。</span><span class="sxs-lookup"><span data-stu-id="13e22-150">Use the [**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386) enumeration</span></span>                    | <span data-ttu-id="13e22-151">JPEG</span><span class="sxs-lookup"><span data-stu-id="13e22-151">JPEG</span></span>          |
+| <span data-ttu-id="13e22-152">SuppressApp0</span><span class="sxs-lookup"><span data-stu-id="13e22-152">SuppressApp0</span></span>            | <span data-ttu-id="13e22-153">boolean</span><span class="sxs-lookup"><span data-stu-id="13e22-153">boolean</span></span>      | <span data-ttu-id="13e22-154">App0 メタデータ ブロックの作成を抑制するかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="13e22-154">Whether to suppress the creation of an App0 metadata block</span></span>                                        | <span data-ttu-id="13e22-155">JPEG</span><span class="sxs-lookup"><span data-stu-id="13e22-155">JPEG</span></span>          |
+| <span data-ttu-id="13e22-156">EnableV5Header32bppBGRA</span><span class="sxs-lookup"><span data-stu-id="13e22-156">EnableV5Header32bppBGRA</span></span> | <span data-ttu-id="13e22-157">boolean</span><span class="sxs-lookup"><span data-stu-id="13e22-157">boolean</span></span>      | <span data-ttu-id="13e22-158">アルファをサポートするバージョン 5 BMP にエンコードするかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="13e22-158">Whether to encode to a version 5 BMP which supports alpha</span></span>                                         | <span data-ttu-id="13e22-159">BMP</span><span class="sxs-lookup"><span data-stu-id="13e22-159">BMP</span></span>           |
 
  
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="13e22-160">関連トピック</span><span class="sxs-lookup"><span data-stu-id="13e22-160">Related topics</span></span>
 
-* [ビットマップ画像の作成、編集、保存](imaging.md)
-* [サポートされているコーデック](supported-codecs.md)
+* [<span data-ttu-id="13e22-161">ビットマップ画像の作成、編集、保存</span><span class="sxs-lookup"><span data-stu-id="13e22-161">Create, edit, and save bitmap images</span></span>](imaging.md)
+* [<span data-ttu-id="13e22-162">サポートされているコーデック</span><span class="sxs-lookup"><span data-stu-id="13e22-162">Supported codecs</span></span>](supported-codecs.md)
 
  
-
 
 
 

@@ -1,48 +1,47 @@
 ---
 author: mtoepke
-title: "シェーダーの作成とプリミティブの描画"
-description: "ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。"
+title: シェーダーの作成とプリミティブの描画
+description: ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、ゲーム、シェーダー、プリミティブ、DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows 10、UWP、ゲーム、シェーダー、プリミティブ、DirectX
 ms.openlocfilehash: 62f4b9b641a3c365659e44893a8a7801f2c1f6c0
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243292"
 ---
-
-# <a name="create-shaders-and-drawing-primitives"></a>シェーダーの作成とプリミティブの描画
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
-
-ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。
-
-頂点シェーダーとピクセル シェーダーを使って、黄色の三角形を作成し描画します。 Direct3D デバイス、スワップ チェーン、レンダー ターゲット ビューを作成した後、ディスク上のバイナリ シェーダー オブジェクト ファイルからデータを読み取ります。
-
-**目標:** シェーダーを作成し、プリミティブを描画する。
-
-## <a name="prerequisites"></a>前提条件
+# <a name="create-shaders-and-drawing-primitives"></a><span data-ttu-id="19e7b-104">シェーダーの作成とプリミティブの描画</span><span class="sxs-lookup"><span data-stu-id="19e7b-104">Create shaders and drawing primitives</span></span>
 
 
-C++ に習熟していることを前提としています。 また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。
+<span data-ttu-id="19e7b-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="19e7b-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="19e7b-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]</span><span class="sxs-lookup"><span data-stu-id="19e7b-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-また、「[クイック スタート: DirectX リソースの設定と画像の表示](setting-up-directx-resources.md)」にひととおり目を通しておく必要があります。
+<span data-ttu-id="19e7b-107">ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。</span><span class="sxs-lookup"><span data-stu-id="19e7b-107">Here, we show you how to use HLSL source files to compile and create shaders that you can then use to draw primitives on the display.</span></span>
 
-**完了までの時間:** 20 分。
+<span data-ttu-id="19e7b-108">頂点シェーダーとピクセル シェーダーを使って、黄色の三角形を作成し描画します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-108">We create and draw a yellow triangle by using vertex and pixel shaders.</span></span> <span data-ttu-id="19e7b-109">Direct3D デバイス、スワップ チェーン、レンダー ターゲット ビューを作成した後、ディスク上のバイナリ シェーダー オブジェクト ファイルからデータを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="19e7b-109">After we create the Direct3D device, the swap chain, and the render-target view, we read data from binary shader object files on the disk.</span></span>
 
-## <a name="instructions"></a>手順
+<span data-ttu-id="19e7b-110">**目標:** シェーダーを作成し、プリミティブを描画する。</span><span class="sxs-lookup"><span data-stu-id="19e7b-110">**Objective:** To create shaders and to draw primitives.</span></span>
 
-### <a name="1-compiling-hlsl-source-files"></a>1. HLSL ソース ファイルのコンパイル
+## <a name="prerequisites"></a><span data-ttu-id="19e7b-111">前提条件</span><span class="sxs-lookup"><span data-stu-id="19e7b-111">Prerequisites</span></span>
 
-Microsoft Visual Studio は [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) HLSL コード コンパイラを使って .hlsl ソース ファイル (SimpleVertexShader.hlsl と SimplePixelShader.hlsl) を .cso バイナリ シェーダー オブジェクト ファイル (SimpleVertexShader.cso と SimplePixelShader.cso) にコンパイルします。 HLSL コード コンパイラについて詳しくは、「エフェクト コンパイラ ツール」をご覧ください。 シェーダー コードのコンパイルについて詳しくは、「[シェーダーのコンパイル](https://msdn.microsoft.com/library/windows/desktop/bb509633)」をご覧ください。
 
-以下に示したのは、SimpleVertexShader.hlsl のコードです。
+<span data-ttu-id="19e7b-112">C++ に習熟していることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="19e7b-112">We assume that you are familiar with C++.</span></span> <span data-ttu-id="19e7b-113">また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。</span><span class="sxs-lookup"><span data-stu-id="19e7b-113">You also need basic experience with graphics programming concepts.</span></span>
+
+<span data-ttu-id="19e7b-114">また、「[クイック スタート: DirectX リソースの設定と画像の表示](setting-up-directx-resources.md)」にひととおり目を通しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="19e7b-114">We also assume that you went through [Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md).</span></span>
+
+<span data-ttu-id="19e7b-115">**完了までの時間:** 20 分。</span><span class="sxs-lookup"><span data-stu-id="19e7b-115">**Time to complete:** 20 minutes.</span></span>
+
+## <a name="instructions"></a><span data-ttu-id="19e7b-116">手順</span><span class="sxs-lookup"><span data-stu-id="19e7b-116">Instructions</span></span>
+
+### <a name="1-compiling-hlsl-source-files"></a><span data-ttu-id="19e7b-117">1. HLSL ソース ファイルのコンパイル</span><span class="sxs-lookup"><span data-stu-id="19e7b-117">1. Compiling HLSL source files</span></span>
+
+<span data-ttu-id="19e7b-118">Microsoft Visual Studio は [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) HLSL コード コンパイラを使って .hlsl ソース ファイル (SimpleVertexShader.hlsl と SimplePixelShader.hlsl) を .cso バイナリ シェーダー オブジェクト ファイル (SimpleVertexShader.cso と SimplePixelShader.cso) にコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="19e7b-118">Microsoft Visual Studio uses the [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) HLSL code compiler to compile the .hlsl source files (SimpleVertexShader.hlsl and SimplePixelShader.hlsl) into .cso binary shader object files (SimpleVertexShader.cso and SimplePixelShader.cso).</span></span> <span data-ttu-id="19e7b-119">HLSL コード コンパイラについて詳しくは、「エフェクト コンパイラ ツール」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="19e7b-119">For more info about the HLSL code compiler, see Effect-Compiler Tool.</span></span> <span data-ttu-id="19e7b-120">シェーダー コードのコンパイルについて詳しくは、「[シェーダーのコンパイル](https://msdn.microsoft.com/library/windows/desktop/bb509633)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="19e7b-120">For more info about compiling shader code, see [Compiling Shaders](https://msdn.microsoft.com/library/windows/desktop/bb509633).</span></span>
+
+<span data-ttu-id="19e7b-121">以下に示したのは、SimpleVertexShader.hlsl のコードです。</span><span class="sxs-lookup"><span data-stu-id="19e7b-121">Here is the code in SimpleVertexShader.hlsl:</span></span>
 
 ```hlsl
 struct VertexShaderInput
@@ -66,7 +65,7 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 }
 ```
 
-以下に示したのは、SimplePixelShader.hlsl のコードです。
+<span data-ttu-id="19e7b-122">以下に示したのは、SimplePixelShader.hlsl のコードです。</span><span class="sxs-lookup"><span data-stu-id="19e7b-122">Here is the code in SimplePixelShader.hlsl:</span></span>
 
 ```hlsl
 struct PixelShaderInput
@@ -81,15 +80,15 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-### <a name="2-reading-data-from-disk"></a>2. ディスクからのデータの読み取り
+### <a name="2-reading-data-from-disk"></a><span data-ttu-id="19e7b-123">2. ディスクからのデータの読み取り</span><span class="sxs-lookup"><span data-stu-id="19e7b-123">2. Reading data from disk</span></span>
 
-DirectX 11 アプリ (ユニバーサル Windows) テンプレート内の DirectXHelper.h から DX::ReadDataAsync 関数を使って、ディスク上のファイルからデータを非同期的に読み取ります。
+<span data-ttu-id="19e7b-124">DirectX 11 アプリ (ユニバーサル Windows) テンプレート内の DirectXHelper.h から DX::ReadDataAsync 関数を使って、ディスク上のファイルからデータを非同期的に読み取ります。</span><span class="sxs-lookup"><span data-stu-id="19e7b-124">We use the DX::ReadDataAsync function from DirectXHelper.h in the DirectX 11 App (Universal Windows) template to asynchronously read data from a file on the disk.</span></span>
 
-### <a name="3-creating-vertex-and-pixel-shaders"></a>3. 頂点シェーダーとピクセル シェーダーの作成
+### <a name="3-creating-vertex-and-pixel-shaders"></a><span data-ttu-id="19e7b-125">3. 頂点シェーダーとピクセル シェーダーの作成</span><span class="sxs-lookup"><span data-stu-id="19e7b-125">3. Creating vertex and pixel shaders</span></span>
 
-SimpleVertexShader.cso ファイルからデータを読み取り、そのデータを *vertexShaderBytecode* バイト配列に割り当てます。 このバイト配列を使って [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) を呼び出し、頂点シェーダー ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)) を作成します。 三角形が確実に描画されるように、SimpleVertexShader.hlsl ソースで頂点の深度値を 0.5 に設定します。 [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 構造体の配列に値を設定して頂点シェーダー コードのレイアウトを記述し、その後、[**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) を呼び出してレイアウトを作成します。 配列には頂点の位置を定義するレイアウト要素が 1 つあります。 SimplePixelShader.cso ファイルからデータを読み取り、そのデータを *pixelShaderBytecode* バイト配列に割り当てます。 このバイト配列を使って [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) を呼び出し、ピクセル シェーダー ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)) を作成します。 三角形を黄色にするために、SimplePixelShader.hlsl ソースでピクセル値を (1,1,1,1) に設定します。 この値を変更することで色を変えることができます。
+<span data-ttu-id="19e7b-126">SimpleVertexShader.cso ファイルからデータを読み取り、そのデータを *vertexShaderBytecode* バイト配列に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="19e7b-126">We read data from the SimpleVertexShader.cso file and assign the data to the *vertexShaderBytecode* byte array.</span></span> <span data-ttu-id="19e7b-127">このバイト配列を使って [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) を呼び出し、頂点シェーダー ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)) を作成します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-127">We call [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) with the byte array to create the vertex shader ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)).</span></span> <span data-ttu-id="19e7b-128">三角形が確実に描画されるように、SimpleVertexShader.hlsl ソースで頂点の深度値を 0.5 に設定します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-128">We set the vertex depth value to 0.5 in the SimpleVertexShader.hlsl source to guarantee that our triangle is drawn.</span></span> <span data-ttu-id="19e7b-129">[**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 構造体の配列に値を設定して頂点シェーダー コードのレイアウトを記述し、その後、[**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) を呼び出してレイアウトを作成します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-129">We populate an array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures to describe the layout of the vertex shader code and then call [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) to create the layout.</span></span> <span data-ttu-id="19e7b-130">配列には頂点の位置を定義するレイアウト要素が 1 つあります。</span><span class="sxs-lookup"><span data-stu-id="19e7b-130">The array has one layout element that defines the vertex position.</span></span> <span data-ttu-id="19e7b-131">SimplePixelShader.cso ファイルからデータを読み取り、そのデータを *pixelShaderBytecode* バイト配列に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="19e7b-131">We read data from the SimplePixelShader.cso file and assign the data to the *pixelShaderBytecode* byte array.</span></span> <span data-ttu-id="19e7b-132">このバイト配列を使って [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) を呼び出し、ピクセル シェーダー ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)) を作成します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-132">We call [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) with the byte array to create the pixel shader ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)).</span></span> <span data-ttu-id="19e7b-133">三角形を黄色にするために、SimplePixelShader.hlsl ソースでピクセル値を (1,1,1,1) に設定します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-133">We set the pixel value to (1,1,1,1) in the SimplePixelShader.hlsl source to make our triangle yellow.</span></span> <span data-ttu-id="19e7b-134">この値を変更することで色を変えることができます。</span><span class="sxs-lookup"><span data-stu-id="19e7b-134">You can change the color by changing this value.</span></span>
 
-単純な三角形を定義する頂点バッファーとインデックス バッファーを作成します。 そのためにまず三角形を定義し、次に三角形の定義を使って頂点バッファーとインデックス バッファー ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) と [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) を記述し、最後にバッファーごとに [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) を 1 回呼び出します。
+<span data-ttu-id="19e7b-135">単純な三角形を定義する頂点バッファーとインデックス バッファーを作成します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-135">We create vertex and index buffers that define a simple triangle.</span></span> <span data-ttu-id="19e7b-136">そのためにまず三角形を定義し、次に三角形の定義を使って頂点バッファーとインデックス バッファー ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) と [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) を記述し、最後にバッファーごとに [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) を 1 回呼び出します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-136">To do this, we first define the triangle, next describe the vertex and index buffers ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) using the triangle definition, and finally call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) once for each buffer.</span></span>
 
 ```cpp
         auto loadVSTask = DX::ReadDataAsync(L"SimpleVertexShader.cso");
@@ -202,23 +201,23 @@ SimpleVertexShader.cso ファイルからデータを読み取り、そのデー
         });
 ```
 
-頂点シェーダー、ピクセル シェーダー、頂点シェーダー レイアウト、頂点バッファー、インデックス バッファーを使って、黄色の三角形を描画します。
+<span data-ttu-id="19e7b-137">頂点シェーダー、ピクセル シェーダー、頂点シェーダー レイアウト、頂点バッファー、インデックス バッファーを使って、黄色の三角形を描画します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-137">We use the vertex and pixel shaders, the vertex shader layout, and the vertex and index buffers to draw a yellow triangle.</span></span>
 
-### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. 三角形の描画とレンダリングされた画像の表示
+### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a><span data-ttu-id="19e7b-138">4. 三角形の描画とレンダリングされた画像の表示</span><span class="sxs-lookup"><span data-stu-id="19e7b-138">4. Drawing the triangle and presenting the rendered image</span></span>
 
-シーンをレンダリングして表示し続けるために、無限ループを使います。 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) を呼び出して、レンダー ターゲットを出力ターゲットとして指定します。 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) の呼び出しに { 0.071f, 0.04f, 0.561f, 1.0f } を渡して、レンダー ターゲットを無地の青色にクリアします。
+<span data-ttu-id="19e7b-139">シーンをレンダリングして表示し続けるために、無限ループを使います。</span><span class="sxs-lookup"><span data-stu-id="19e7b-139">We enter an endless loop to continually render and display the scene.</span></span> <span data-ttu-id="19e7b-140">[**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) を呼び出して、レンダー ターゲットを出力ターゲットとして指定します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-140">We call [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) to specify the render target as the output target.</span></span> <span data-ttu-id="19e7b-141">[**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) の呼び出しに { 0.071f, 0.04f, 0.561f, 1.0f } を渡して、レンダー ターゲットを無地の青色にクリアします。</span><span class="sxs-lookup"><span data-stu-id="19e7b-141">We call [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) with { 0.071f, 0.04f, 0.561f, 1.0f } to clear the render target to a solid blue color.</span></span>
 
-無限ループで、黄色の三角形を青色のサーフェス上に描画します。
+<span data-ttu-id="19e7b-142">無限ループで、黄色の三角形を青色のサーフェス上に描画します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-142">In the endless loop, we draw a yellow triangle on the blue surface.</span></span>
 
-**黄色の三角形を描画するには**
+**<span data-ttu-id="19e7b-143">黄色の三角形を描画するには</span><span class="sxs-lookup"><span data-stu-id="19e7b-143">To draw a yellow triangle</span></span>**
 
-1.  まず、頂点バッファーから入力アセンブラー ステージへのデータの流れを定義するために、[**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) を呼び出します。
-2.  次に、[**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) と [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) を呼び出して、頂点バッファーとインデックス バッファーを入力アセンブラー ステージにバインドします。
-3.  次に、[**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) の呼び出しで [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) 値を渡し、頂点データを三角形ストリップとして解釈するよう入力アセンブラー ステージに指定します。
-4.  次に、[**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) を呼び出して頂点シェーダー ステージを頂点シェーダー コードで初期化し、さらに、[**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) を呼び出してピクセル シェーダー ステージをピクセル シェーダー コードで初期化します。
-5.  最後に、[**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) を呼び出して三角形を描画し、レンダリング パイプラインに送ります。
+1.  <span data-ttu-id="19e7b-144">まず、頂点バッファーから入力アセンブラー ステージへのデータの流れを定義するために、[**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-144">First, we call [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) to describe how vertex buffer data is streamed into the input-assembler stage.</span></span>
+2.  <span data-ttu-id="19e7b-145">次に、[**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) と [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) を呼び出して、頂点バッファーとインデックス バッファーを入力アセンブラー ステージにバインドします。</span><span class="sxs-lookup"><span data-stu-id="19e7b-145">Next, we call [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) and [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) to bind the vertex and index buffers to the input-assembler stage.</span></span>
+3.  <span data-ttu-id="19e7b-146">次に、[**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) の呼び出しで [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) 値を渡し、頂点データを三角形ストリップとして解釈するよう入力アセンブラー ステージに指定します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-146">Next, we call [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) with the [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) value to specify for the input-assembler stage to interpret the vertex data as a triangle strip.</span></span>
+4.  <span data-ttu-id="19e7b-147">次に、[**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) を呼び出して頂点シェーダー ステージを頂点シェーダー コードで初期化し、さらに、[**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) を呼び出してピクセル シェーダー ステージをピクセル シェーダー コードで初期化します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-147">Next, we call [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) to initialize the vertex shader stage with the vertex shader code and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to initialize the pixel shader stage with the pixel shader code.</span></span>
+5.  <span data-ttu-id="19e7b-148">最後に、[**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) を呼び出して三角形を描画し、レンダリング パイプラインに送ります。</span><span class="sxs-lookup"><span data-stu-id="19e7b-148">Finally, we call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) to draw the triangle and submit it to the rendering pipeline.</span></span>
 
-レンダリングされた画像をウィンドウに表示するために、[**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) を呼び出しています。
+<span data-ttu-id="19e7b-149">レンダリングされた画像をウィンドウに表示するために、[**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) を呼び出しています。</span><span class="sxs-lookup"><span data-stu-id="19e7b-149">We call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) to present the rendered image to the window.</span></span>
 
 ```cpp
             // Specify the render target we created as the output target.
@@ -284,19 +283,18 @@ SimpleVertexShader.cso ファイルからデータを読み取り、そのデー
                 );
 ```
 
-## <a name="summary-and-next-steps"></a>要約と次のステップ
+## <a name="summary-and-next-steps"></a><span data-ttu-id="19e7b-150">要約と次のステップ</span><span class="sxs-lookup"><span data-stu-id="19e7b-150">Summary and next steps</span></span>
 
 
-ここでは、頂点シェーダーとピクセル シェーダーを使って、黄色の三角形を作成し描画しました。
+<span data-ttu-id="19e7b-151">ここでは、頂点シェーダーとピクセル シェーダーを使って、黄色の三角形を作成し描画しました。</span><span class="sxs-lookup"><span data-stu-id="19e7b-151">We created and drew a yellow triangle by using vertex and pixel shaders.</span></span>
 
-次に、周回する 3D 立方体を作成し、そこに照明効果を適用します。
+<span data-ttu-id="19e7b-152">次に、周回する 3D 立方体を作成し、そこに照明効果を適用します。</span><span class="sxs-lookup"><span data-stu-id="19e7b-152">Next, we create an orbiting 3D cube and apply lighting effects to it.</span></span>
 
-[プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)
-
- 
+[<span data-ttu-id="19e7b-153">プリミティブに対する深度と各種効果の使用</span><span class="sxs-lookup"><span data-stu-id="19e7b-153">Using depth and effects on primitives</span></span>](using-depth-and-effects-on-primitives.md)
 
  
 
+ 
 
 
 

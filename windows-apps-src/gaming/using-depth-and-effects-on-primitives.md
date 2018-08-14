@@ -1,45 +1,44 @@
 ---
 author: mtoepke
-title: "プリミティブに対する深度と各種効果の使用"
-description: "ここでは、深度、視点、色、その他の効果をプリミティブに対して使う方法について説明します。"
+title: プリミティブに対する深度と各種効果の使用
+description: ここでは、深度、視点、色、その他の効果をプリミティブに対して使う方法について説明します。
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, 深度, 効果, プリミティブ, DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+keywords: Windows 10, UWP, ゲーム, 深度, 効果, プリミティブ, DirectX
 ms.openlocfilehash: 923bce3dd5f340b97fd6d4e7b31c4ed2e949ca94
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243340"
 ---
-
-# <a name="use-depth-and-effects-on-primitives"></a>プリミティブに対する深度と各種効果の使用
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
-ここでは、深度、視点、色、その他の効果をプリミティブに対して使う方法について説明します。
-
-**目標:** 3D オブジェクトを作成し、基本的な頂点の照明や色付けをオブジェクトに適用する。
-
-## <a name="prerequisites"></a>前提条件
+# <a name="use-depth-and-effects-on-primitives"></a><span data-ttu-id="059e4-104">プリミティブに対する深度と各種効果の使用</span><span class="sxs-lookup"><span data-stu-id="059e4-104">Use depth and effects on primitives</span></span>
 
 
-C++ に習熟していることを前提としています。 また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。
+<span data-ttu-id="059e4-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="059e4-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="059e4-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="059e4-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-加えて、「[クイック スタート: DirectX リソースの設定と画像の表示](setting-up-directx-resources.md)」と「[シェーダーの作成とプリミティブの描画](creating-shaders-and-drawing-primitives.md)」にひととおり目を通しておく必要があります。
+<span data-ttu-id="059e4-107">ここでは、深度、視点、色、その他の効果をプリミティブに対して使う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="059e4-107">Here, we show you how to use depth, perspective, color, and other effects on primitives.</span></span>
 
-**完了までの時間:** 20 分。
+<span data-ttu-id="059e4-108">**目標:** 3D オブジェクトを作成し、基本的な頂点の照明や色付けをオブジェクトに適用する。</span><span class="sxs-lookup"><span data-stu-id="059e4-108">**Objective:** To create a 3D object and apply basic vertex lighting and coloring to it.</span></span>
 
-<a name="instructions"></a>手順
+## <a name="prerequisites"></a><span data-ttu-id="059e4-109">前提条件</span><span class="sxs-lookup"><span data-stu-id="059e4-109">Prerequisites</span></span>
+
+
+<span data-ttu-id="059e4-110">C++ に習熟していることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="059e4-110">We assume that you are familiar with C++.</span></span> <span data-ttu-id="059e4-111">また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。</span><span class="sxs-lookup"><span data-stu-id="059e4-111">You also need basic experience with graphics programming concepts.</span></span>
+
+<span data-ttu-id="059e4-112">加えて、「[クイック スタート: DirectX リソースの設定と画像の表示](setting-up-directx-resources.md)」と「[シェーダーの作成とプリミティブの描画](creating-shaders-and-drawing-primitives.md)」にひととおり目を通しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="059e4-112">We also assume that you went through [Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md) and [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md).</span></span>
+
+<span data-ttu-id="059e4-113">**完了までの時間:** 20 分。</span><span class="sxs-lookup"><span data-stu-id="059e4-113">**Time to complete:** 20 minutes.</span></span>
+
+<a name="instructions"></a><span data-ttu-id="059e4-114">手順</span><span class="sxs-lookup"><span data-stu-id="059e4-114">Instructions</span></span>
 ------------
 
-### <a name="1-defining-cube-variables"></a>1. 立方体変数の定義
+### <a name="1-defining-cube-variables"></a><span data-ttu-id="059e4-115">1. 立方体変数の定義</span><span class="sxs-lookup"><span data-stu-id="059e4-115">1. Defining cube variables</span></span>
 
-まず、立方体の **SimpleCubeVertex** 構造体と **ConstantBuffer** 構造体を定義する必要があります。 立方体の頂点の位置と色に加え、その見え方が、これらの構造体によって指定されます。 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) と [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) を [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) で宣言し、**ConstantBuffer** のインスタンスを宣言します。
+<span data-ttu-id="059e4-116">まず、立方体の **SimpleCubeVertex** 構造体と **ConstantBuffer** 構造体を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="059e4-116">First, we need to define the **SimpleCubeVertex** and **ConstantBuffer** structures for the cube.</span></span> <span data-ttu-id="059e4-117">立方体の頂点の位置と色に加え、その見え方が、これらの構造体によって指定されます。</span><span class="sxs-lookup"><span data-stu-id="059e4-117">These structures specify the vertex positions and colors for the cube and how the cube will be viewed.</span></span> <span data-ttu-id="059e4-118">[**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) と [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) を [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) で宣言し、**ConstantBuffer** のインスタンスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="059e4-118">We declare [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) and [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) with [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) and declare an instance of **ConstantBuffer**.</span></span>
 
 ```cpp
 struct SimpleCubeVertex
@@ -69,9 +68,9 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### <a name="2-creating-a-depth-stencil-view"></a>2. 深度ステンシル ビューの作成
+### <a name="2-creating-a-depth-stencil-view"></a><span data-ttu-id="059e4-119">2. 深度ステンシル ビューの作成</span><span class="sxs-lookup"><span data-stu-id="059e4-119">2. Creating a depth stencil view</span></span>
 
-レンダー ターゲット ビューに加え、深度ステンシル ビューも作成します。 深度/ステンシル ビューによって、カメラに近いオブジェクトをカメラから遠いオブジェクトの前にレンダリングする Direct3D の処理を効率化できます。 深度ステンシル バッファーのビューを作成する前に、深度ステンシル バッファーを作成する必要があります。 [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) を設定して深度ステンシル バッファーを定義し、その後、[**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) を呼び出して深度ステンシル バッファーを作成します。 深度ステンシル ビューを作成するには、[**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) を設定して深度ステンシル ビューを定義し、その深度ステンシル ビューの定義と深度ステンシル バッファーを [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507) に渡します。
+<span data-ttu-id="059e4-120">レンダー ターゲット ビューに加え、深度ステンシル ビューも作成します。</span><span class="sxs-lookup"><span data-stu-id="059e4-120">In addition to creating the render-target view, we also create a depth-stencil view.</span></span> <span data-ttu-id="059e4-121">深度/ステンシル ビューによって、カメラに近いオブジェクトをカメラから遠いオブジェクトの前にレンダリングする Direct3D の処理を効率化できます。</span><span class="sxs-lookup"><span data-stu-id="059e4-121">The depth-stencil view enables Direct3D to efficiently render objects closer to the camera in front of objects further from the camera.</span></span> <span data-ttu-id="059e4-122">深度ステンシル バッファーのビューを作成する前に、深度ステンシル バッファーを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="059e4-122">Before we can create a view to a depth-stencil buffer, we must create the depth-stencil buffer.</span></span> <span data-ttu-id="059e4-123">[**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) を設定して深度ステンシル バッファーを定義し、その後、[**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) を呼び出して深度ステンシル バッファーを作成します。</span><span class="sxs-lookup"><span data-stu-id="059e4-123">We populate a [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) to describe the depth-stencil buffer and then call [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) to create the depth-stencil buffer.</span></span> <span data-ttu-id="059e4-124">深度ステンシル ビューを作成するには、[**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) を設定して深度ステンシル ビューを定義し、その深度ステンシル ビューの定義と深度ステンシル バッファーを [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507) に渡します。</span><span class="sxs-lookup"><span data-stu-id="059e4-124">To create the depth-stencil view, we populate a [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) to describe the depth-stencil view and pass the depth-stencil view description and the depth-stencil buffer to [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507).</span></span>
 
 ```cpp
         // Once the render target view is created, create a depth stencil view.  This
@@ -116,9 +115,9 @@ private:
             );
 ```
 
-### <a name="3-updating-perspective-with-the-window"></a>3. ウィンドウに基づく視点の更新
+### <a name="3-updating-perspective-with-the-window"></a><span data-ttu-id="059e4-125">3. ウィンドウに基づく視点の更新</span><span class="sxs-lookup"><span data-stu-id="059e4-125">3. Updating perspective with the window</span></span>
 
-ウィンドウのサイズに応じて定数バッファーの透視投影パラメーターを更新します。 パラメーターは、視野が 70°、深度の範囲が 0.01 ～ 100 に修正されています。
+<span data-ttu-id="059e4-126">ウィンドウのサイズに応じて定数バッファーの透視投影パラメーターを更新します。</span><span class="sxs-lookup"><span data-stu-id="059e4-126">We update the perspective projection parameters for the constant buffer depending on the window dimensions.</span></span> <span data-ttu-id="059e4-127">パラメーターは、視野が 70°、深度の範囲が 0.01 ～ 100 に修正されています。</span><span class="sxs-lookup"><span data-stu-id="059e4-127">We fix the parameters to a 70-degree field of view with a depth range of 0.01 to 100.</span></span>
 
 ```cpp
         // Finally, update the constant buffer perspective projection parameters
@@ -149,21 +148,21 @@ private:
             );
 ```
 
-### <a name="4-creating-vertex-and-pixel-shaders-with-color-elements"></a>4. 色要素を使った頂点シェーダーとピクセル シェーダーの作成
+### <a name="4-creating-vertex-and-pixel-shaders-with-color-elements"></a><span data-ttu-id="059e4-128">4. 色要素を使った頂点シェーダーとピクセル シェーダーの作成</span><span class="sxs-lookup"><span data-stu-id="059e4-128">4. Creating vertex and pixel shaders with color elements</span></span>
 
-このアプリでは、前のチュートリアル (「[シェーダーの作成とプリミティブの描画](creating-shaders-and-drawing-primitives.md)」) で説明したものよりも複雑な頂点シェーダーとピクセル シェーダーを作成します。 このアプリの頂点シェーダーは、個々の頂点の位置を投影空間に変換し、頂点の色をピクセル シェーダーに渡します。
+<span data-ttu-id="059e4-129">このアプリでは、前のチュートリアル (「[シェーダーの作成とプリミティブの描画](creating-shaders-and-drawing-primitives.md)」) で説明したものよりも複雑な頂点シェーダーとピクセル シェーダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="059e4-129">In this app, we create more complex vertex and pixel shaders than what we described in the previous tutorial, [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md).</span></span> <span data-ttu-id="059e4-130">このアプリの頂点シェーダーは、個々の頂点の位置を投影空間に変換し、頂点の色をピクセル シェーダーに渡します。</span><span class="sxs-lookup"><span data-stu-id="059e4-130">The app's vertex shader transforms each vertex position into projection space and passes the vertex color through to the pixel shader.</span></span>
 
-このアプリでは、[**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 構造体の配列を使って頂点シェーダー コードのレイアウトを記述しています。このレイアウトには、2 つのレイアウト要素があります。頂点位置を定義する要素と、色を定義する要素です。
+<span data-ttu-id="059e4-131">このアプリでは、[**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 構造体の配列を使って頂点シェーダー コードのレイアウトを記述しています。このレイアウトには、2 つのレイアウト要素があります。頂点位置を定義する要素と、色を定義する要素です。</span><span class="sxs-lookup"><span data-stu-id="059e4-131">The app's array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures that describe the layout of the vertex shader code has two layout elements: one element defines the vertex position and the other element defines the color.</span></span>
 
-周回する立方体を定義する頂点バッファー、インデックス バッファー、定数バッファーを作成します。
+<span data-ttu-id="059e4-132">周回する立方体を定義する頂点バッファー、インデックス バッファー、定数バッファーを作成します。</span><span class="sxs-lookup"><span data-stu-id="059e4-132">We create vertex, index, and constant buffers to define an orbiting cube.</span></span>
 
-**周回する立方体を定義するには**
+**<span data-ttu-id="059e4-133">周回する立方体を定義するには</span><span class="sxs-lookup"><span data-stu-id="059e4-133">To define an orbiting cube</span></span>**
 
-1.  まず立方体を定義します。 それぞれの頂点に、位置に加えて色を割り当てます。 これによってピクセル シェーダーが各表面に異なる色を適用できるようになり、表面が区別されます。
-2.  次に、立方体の定義を使い、頂点バッファーとインデックス バッファー ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) と [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) を記述します。 各バッファーについて、[**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) を 1 回呼び出します。
-3.  次に、モデル マトリックス、ビュー マトリックス、プロジェクション マトリックスを頂点シェーダーに渡すための定数バッファー ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) を作成します。 後でこの定数バッファーを使って、立方体を回転させたり、そこに透視投影を適用したりすることができます。 定数バッファーを作成するには、[**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) を呼び出します。
-4.  次に、カメラ位置 (X = 0、Y = 1、Z = 2) に対応するビュー変換を指定します。
-5.  最後に、*degree* 変数を宣言します。これは、立方体をフレームごとに回転させてアニメーション化する目的で使います。
+1.  <span data-ttu-id="059e4-134">まず立方体を定義します。</span><span class="sxs-lookup"><span data-stu-id="059e4-134">First, we define the cube.</span></span> <span data-ttu-id="059e4-135">それぞれの頂点に、位置に加えて色を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="059e4-135">We assign each vertex a color in addition to a position.</span></span> <span data-ttu-id="059e4-136">これによってピクセル シェーダーが各表面に異なる色を適用できるようになり、表面が区別されます。</span><span class="sxs-lookup"><span data-stu-id="059e4-136">This allows the pixel shader to color each face differently so the face can be distinguished.</span></span>
+2.  <span data-ttu-id="059e4-137">次に、立方体の定義を使い、頂点バッファーとインデックス バッファー ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) と [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) を記述します。</span><span class="sxs-lookup"><span data-stu-id="059e4-137">Next, we describe the vertex and index buffers ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) using the cube definition.</span></span> <span data-ttu-id="059e4-138">各バッファーについて、[**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) を 1 回呼び出します。</span><span class="sxs-lookup"><span data-stu-id="059e4-138">We call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) once for each buffer.</span></span>
+3.  <span data-ttu-id="059e4-139">次に、モデル マトリックス、ビュー マトリックス、プロジェクション マトリックスを頂点シェーダーに渡すための定数バッファー ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) を作成します。</span><span class="sxs-lookup"><span data-stu-id="059e4-139">Next, we create a constant buffer ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) for passing model, view, and projection matrices to the vertex shader.</span></span> <span data-ttu-id="059e4-140">後でこの定数バッファーを使って、立方体を回転させたり、そこに透視投影を適用したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="059e4-140">We can later use the constant buffer to rotate the cube and apply a perspective projection to it.</span></span> <span data-ttu-id="059e4-141">定数バッファーを作成するには、[**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="059e4-141">We call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) to create the constant buffer.</span></span>
+4.  <span data-ttu-id="059e4-142">次に、カメラ位置 (X = 0、Y = 1、Z = 2) に対応するビュー変換を指定します。</span><span class="sxs-lookup"><span data-stu-id="059e4-142">Next, we specify the view transform that corresponds to a camera position of X = 0, Y = 1, Z = 2.</span></span>
+5.  <span data-ttu-id="059e4-143">最後に、*degree* 変数を宣言します。これは、立方体をフレームごとに回転させてアニメーション化する目的で使います。</span><span class="sxs-lookup"><span data-stu-id="059e4-143">Finally, we declare a *degree* variable that we will use to animate the cube by rotating it every frame.</span></span>
 
 ```cpp
         
@@ -339,22 +338,22 @@ private:
         
 ```
 
-### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a>5. 立方体の回転と描画およびレンダリングされた画像の表示
+### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a><span data-ttu-id="059e4-144">5. 立方体の回転と描画およびレンダリングされた画像の表示</span><span class="sxs-lookup"><span data-stu-id="059e4-144">5. Rotating and drawing the cube and presenting the rendered image</span></span>
 
-シーンをレンダリングして表示し続けるために、無限ループを使います。 立方体のモデル マトリックスを Y 軸を中心に回転させるための値を設定するため、**rotationY** インライン関数 (BasicMath.h) に回転量を指定して呼び出します。 さらに、[**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) を呼び出して定数バッファーを更新し、立方体モデルを回転させます。 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) を呼び出して、レンダー ターゲットを出力ターゲットとして指定します。 この **OMSetRenderTargets** 呼び出しでは、深度ステンシル ビューを渡します。 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) を呼び出してレンダー ターゲットを無地の青色にクリアし、[**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) を呼び出して深度バッファーをクリアします。
+<span data-ttu-id="059e4-145">シーンをレンダリングして表示し続けるために、無限ループを使います。</span><span class="sxs-lookup"><span data-stu-id="059e4-145">We enter an endless loop to continually render and display the scene.</span></span> <span data-ttu-id="059e4-146">立方体のモデル マトリックスを Y 軸を中心に回転させるための値を設定するため、**rotationY** インライン関数 (BasicMath.h) に回転量を指定して呼び出します。</span><span class="sxs-lookup"><span data-stu-id="059e4-146">We call the **rotationY** inline function (BasicMath.h) with a rotation amount to set values that will rotate the cube’s model matrix around the Y axis.</span></span> <span data-ttu-id="059e4-147">さらに、[**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) を呼び出して定数バッファーを更新し、立方体モデルを回転させます。</span><span class="sxs-lookup"><span data-stu-id="059e4-147">We then call [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) to update the constant buffer and rotate the cube model.</span></span> <span data-ttu-id="059e4-148">[**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) を呼び出して、レンダー ターゲットを出力ターゲットとして指定します。</span><span class="sxs-lookup"><span data-stu-id="059e4-148">We call [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) to specify the render target as the output target.</span></span> <span data-ttu-id="059e4-149">この **OMSetRenderTargets** 呼び出しでは、深度ステンシル ビューを渡します。</span><span class="sxs-lookup"><span data-stu-id="059e4-149">In this **OMSetRenderTargets** call, we pass the depth-stencil view.</span></span> <span data-ttu-id="059e4-150">[**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) を呼び出してレンダー ターゲットを無地の青色にクリアし、[**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) を呼び出して深度バッファーをクリアします。</span><span class="sxs-lookup"><span data-stu-id="059e4-150">We call [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) to clear the render target to a solid blue color and call [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) to clear the depth buffer.</span></span>
 
-無限ループで、立方体を青色のサーフェス上に描画します。
+<span data-ttu-id="059e4-151">無限ループで、立方体を青色のサーフェス上に描画します。</span><span class="sxs-lookup"><span data-stu-id="059e4-151">In the endless loop, we also draw the cube on the blue surface.</span></span>
 
-**立方体を描画するには**
+**<span data-ttu-id="059e4-152">立方体を描画するには</span><span class="sxs-lookup"><span data-stu-id="059e4-152">To draw the cube</span></span>**
 
-1.  まず、頂点バッファーから入力アセンブラー ステージへのデータの流れを定義するために、[**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) を呼び出します。
-2.  次に、[**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) と [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) を呼び出して、頂点バッファーとインデックス バッファーを入力アセンブラー ステージにバインドします。
-3.  次に、[**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) の呼び出しで [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) 値を渡し、頂点データを三角形ストリップとして解釈するよう入力アセンブラー ステージに指定します。
-4.  次に、[**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) を呼び出して頂点シェーダー ステージを頂点シェーダー コードで初期化し、さらに、[**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) を呼び出してピクセル シェーダー ステージをピクセル シェーダー コードで初期化します。
-5.  次に、[**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) を呼び出し、頂点シェーダーのパイプライン ステージで使われる定数バッファーを設定します。
-6.  最後に、[**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) を呼び出して立方体を描画し、レンダリング パイプラインに送ります。
+1.  <span data-ttu-id="059e4-153">まず、頂点バッファーから入力アセンブラー ステージへのデータの流れを定義するために、[**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="059e4-153">First, we call [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) to describe how vertex buffer data is streamed into the input-assembler stage.</span></span>
+2.  <span data-ttu-id="059e4-154">次に、[**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) と [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) を呼び出して、頂点バッファーとインデックス バッファーを入力アセンブラー ステージにバインドします。</span><span class="sxs-lookup"><span data-stu-id="059e4-154">Next, we call [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) and [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) to bind the vertex and index buffers to the input-assembler stage.</span></span>
+3.  <span data-ttu-id="059e4-155">次に、[**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) の呼び出しで [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) 値を渡し、頂点データを三角形ストリップとして解釈するよう入力アセンブラー ステージに指定します。</span><span class="sxs-lookup"><span data-stu-id="059e4-155">Next, we call [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) with the [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) value to specify for the input-assembler stage to interpret the vertex data as a triangle strip.</span></span>
+4.  <span data-ttu-id="059e4-156">次に、[**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) を呼び出して頂点シェーダー ステージを頂点シェーダー コードで初期化し、さらに、[**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) を呼び出してピクセル シェーダー ステージをピクセル シェーダー コードで初期化します。</span><span class="sxs-lookup"><span data-stu-id="059e4-156">Next, we call [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) to initialize the vertex shader stage with the vertex shader code and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to initialize the pixel shader stage with the pixel shader code.</span></span>
+5.  <span data-ttu-id="059e4-157">次に、[**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) を呼び出し、頂点シェーダーのパイプライン ステージで使われる定数バッファーを設定します。</span><span class="sxs-lookup"><span data-stu-id="059e4-157">Next, we call [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) to set the constant buffer that is used by the vertex shader pipeline stage.</span></span>
+6.  <span data-ttu-id="059e4-158">最後に、[**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) を呼び出して立方体を描画し、レンダリング パイプラインに送ります。</span><span class="sxs-lookup"><span data-stu-id="059e4-158">Finally, we call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) to draw the cube and submit it to the rendering pipeline.</span></span>
 
-レンダリングされた画像をウィンドウに表示するために、[**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) を呼び出しています。
+<span data-ttu-id="059e4-159">レンダリングされた画像をウィンドウに表示するために、[**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) を呼び出しています。</span><span class="sxs-lookup"><span data-stu-id="059e4-159">We call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) to present the rendered image to the window.</span></span>
 
 ```cpp
             // Update the constant buffer to rotate the cube model.
@@ -446,19 +445,18 @@ private:
                 );
 ```
 
-## <a name="summary-and-next-steps"></a>要約と次のステップ
+## <a name="summary-and-next-steps"></a><span data-ttu-id="059e4-160">要約と次のステップ</span><span class="sxs-lookup"><span data-stu-id="059e4-160">Summary and next steps</span></span>
 
 
-深度、視点、色、その他の効果をプリミティブに対して使いました。
+<span data-ttu-id="059e4-161">深度、視点、色、その他の効果をプリミティブに対して使いました。</span><span class="sxs-lookup"><span data-stu-id="059e4-161">We used depth, perspective, color, and other effects on primitives.</span></span>
 
-次は、プリミティブにテクスチャを適用します。
+<span data-ttu-id="059e4-162">次は、プリミティブにテクスチャを適用します。</span><span class="sxs-lookup"><span data-stu-id="059e4-162">Next, we apply textures to primitives.</span></span>
 
-[プリミティブへのテクスチャの適用](applying-textures-to-primitives.md)
-
- 
+[<span data-ttu-id="059e4-163">プリミティブへのテクスチャの適用</span><span class="sxs-lookup"><span data-stu-id="059e4-163">Applying textures to primitives</span></span>](applying-textures-to-primitives.md)
 
  
 
+ 
 
 
 

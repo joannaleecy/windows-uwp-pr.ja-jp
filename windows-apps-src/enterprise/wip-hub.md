@@ -1,86 +1,85 @@
 ---
 author: normesta
-Description: "ここでは、Windows 情報保護 (WIP) と、ファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係について、開発者向けに全体像を説明します。"
+Description: ここでは、Windows 情報保護 (WIP) と、ファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係について、開発者向けに全体像を説明します。
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "Windows 情報保護 (WIP)"
+title: Windows 情報保護 (WIP)
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows 情報保護, 企業データ, エンタープライズ データ保護, EDP, 対応アプリ"
+keywords: Windows 10, UWP, Windows 情報保護, 企業データ, エンタープライズ データ保護, EDP, 対応アプリ
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b9bde047a70d31105680361d34cf71b33f708f93
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f624d20d33f560f151b40bd1a405711d697fd4cb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243233"
 ---
+# <a name="windows-information-protection-wip"></a><span data-ttu-id="a218e-104">Windows 情報保護 (WIP)</span><span class="sxs-lookup"><span data-stu-id="a218e-104">Windows Information Protection (WIP)</span></span>
 
-# <a name="windows-information-protection-wip"></a>Windows 情報保護 (WIP)
+<span data-ttu-id="a218e-105">__注__ Windows 情報保護 (WIP) ポリシーは、Windows 10 Version 1607 に適用することができます。</span><span class="sxs-lookup"><span data-stu-id="a218e-105">__Note__ Windows Information Protection (WIP) policy can be applied to Windows 10, version 1607.</span></span>
 
-__注__ Windows 情報保護 (WIP) ポリシーは、Windows 10 Version 1607 に適用することができます。
-
-WIP では、組織で定義されているポリシーを適用することによって、組織に属しているデータを保護します。 アプリがこれらのポリシーに含まれている場合、アプリによって生成されたすべてのデータにはポリシーの制限が適用されます。 このトピックは、ユーザーの個人データに影響を与えずに、これらのポリシーをより適切に適用するアプリを作成する際に役立ちます。
+<span data-ttu-id="a218e-106">WIP では、組織で定義されているポリシーを適用することによって、組織に属しているデータを保護します。</span><span class="sxs-lookup"><span data-stu-id="a218e-106">WIP protects data that belongs to an organization by enforcing policies that are defined by the organization.</span></span> <span data-ttu-id="a218e-107">アプリがこれらのポリシーに含まれている場合、アプリによって生成されたすべてのデータにはポリシーの制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="a218e-107">If your app is included in those polices, all data produced by your app is subject to policy restrictions.</span></span> <span data-ttu-id="a218e-108">このトピックは、ユーザーの個人データに影響を与えずに、これらのポリシーをより適切に適用するアプリを作成する際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="a218e-108">This topic helps you to build apps that more gracefully enforce these policies without having any impact on the user's personal data.</span></span>
 <iframe src="https://channel9.msdn.com/Blogs/Windows-Development-for-the-Enterprise/Securing-Enterprise-Data-with-Windows-Information-Protection/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
-## <a name="first-what-is-wip"></a>WIP とは
+## <a name="first-what-is-wip"></a><span data-ttu-id="a218e-109">WIP とは</span><span class="sxs-lookup"><span data-stu-id="a218e-109">First, what is WIP?</span></span>
 
-WIP とは、組織のモバイル デバイス管理 (MDM) およびモバイル アプリケーション管理 (MAM) システムをサポートするデスクトップ、ノート PC、タブレット、および電話で使用できる一連の機能です。
+<span data-ttu-id="a218e-110">WIP とは、組織のモバイル デバイス管理 (MDM) およびモバイル アプリケーション管理 (MAM) システムをサポートするデスクトップ、ノート PC、タブレット、および電話で使用できる一連の機能です。</span><span class="sxs-lookup"><span data-stu-id="a218e-110">WIP is a set of features on desktops, laptops, tablets, and phones that support the organization's Mobile Device Management (MDM) and Mobile Application Management (MAM) system.</span></span>
 
-WIP と MDM により、組織は、組織で管理しているデバイスでのデータの処理方法をより細かく制御できます。 ユーザーは、仕事で使用しているデバイスを組織の MDM に登録しないことがあります。  この場合、組織は MAM を利用することで、ユーザーのデバイスにインストールされた特定の基幹業務アプリ上でのデータの処理方法を詳細に制御できるようになります。
+<span data-ttu-id="a218e-111">WIP と MDM により、組織は、組織で管理しているデバイスでのデータの処理方法をより細かく制御できます。</span><span class="sxs-lookup"><span data-stu-id="a218e-111">WIP together with MDM gives the organization greater control over how its data is handled on devices that the organization manages.</span></span> <span data-ttu-id="a218e-112">ユーザーは、仕事で使用しているデバイスを組織の MDM に登録しないことがあります。</span><span class="sxs-lookup"><span data-stu-id="a218e-112">Sometimes users bring devices to work and do not enroll them in the organization's MDM.</span></span>  <span data-ttu-id="a218e-113">この場合、組織は MAM を利用することで、ユーザーのデバイスにインストールされた特定の基幹業務アプリ上でのデータの処理方法を詳細に制御できるようになります。</span><span class="sxs-lookup"><span data-stu-id="a218e-113">In those cases, organizations can use MAM to achieve greater control over how their data is handled on specific line of business apps that users install on their device.</span></span>
 
-MDM または MAM を利用すると、管理者は、組織に属しているファイルにアクセスできるアプリを特定したり、ユーザーがそれらのファイルからデータをコピーし、個人用のドキュメントに貼り付けることができるかどうかを指定したりすることができます。
+<span data-ttu-id="a218e-114">MDM または MAM を利用すると、管理者は、組織に属しているファイルにアクセスできるアプリを特定したり、ユーザーがそれらのファイルからデータをコピーし、個人用のドキュメントに貼り付けることができるかどうかを指定したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="a218e-114">using MDM or MAM, administrators can identify which apps are allowed to access files that belong to the organization and whether users can copy data from those files and then paste that data into personal documents.</span></span>
 
-しくみは次のとおりです。 ユーザーは、組織のモバイル デバイス管理 (MDM) システムにデバイスを登録します。 管理側の組織の管理者は、Microsoft Intune や System Center Configuration Manager (SCCM) を使用して、ポリシーを定義し、登録されているデバイスにポリシーを展開します。
+<span data-ttu-id="a218e-115">しくみは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a218e-115">Here's how it works.</span></span> <span data-ttu-id="a218e-116">ユーザーは、組織のモバイル デバイス管理 (MDM) システムにデバイスを登録します。</span><span class="sxs-lookup"><span data-stu-id="a218e-116">Users enroll their devices into the organization's mobile device management (MDM) system.</span></span> <span data-ttu-id="a218e-117">管理側の組織の管理者は、Microsoft Intune や System Center Configuration Manager (SCCM) を使用して、ポリシーを定義し、登録されているデバイスにポリシーを展開します。</span><span class="sxs-lookup"><span data-stu-id="a218e-117">An administrator in the managing organization uses Microsoft Intune or System Center Configuration Manager (SCCM) to define and then deploy a policy to the enrolled devices.</span></span>
 
-ユーザーがデバイスを登録する必要がない場合、管理者は MAM システムを使って特定のアプリに適用するポリシーを定義および展開することになります。 ユーザーは、MAM 対象のいずれかのアプリをインストールした際に、関連のあるポリシーを受け取ることになります。
+<span data-ttu-id="a218e-118">ユーザーがデバイスを登録する必要がない場合、管理者は MAM システムを使って特定のアプリに適用するポリシーを定義および展開することになります。</span><span class="sxs-lookup"><span data-stu-id="a218e-118">If users aren't required to enroll their devices, administrators will use their MAM system to define and deploy a policy that applies to specific apps.</span></span> <span data-ttu-id="a218e-119">ユーザーは、MAM 対象のいずれかのアプリをインストールした際に、関連のあるポリシーを受け取ることになります。</span><span class="sxs-lookup"><span data-stu-id="a218e-119">When users install any of those apps, they'll receive the associated policy.</span></span>
 
-そのポリシーでは、企業データにアクセスできるアプリを指定します (ポリシーの*許可リスト*と呼ばれます)。 これらのアプリは、企業の保護されたファイル、仮想プライベート ネットワーク (VPN)、クリップボードにある企業データにアクセスできます。また、共有コントラクトを使用して、企業データにアクセスすることもできます。 ポリシーでは、データを管理する規則も定義します。 たとえば、企業が所有するファイルからデータをコピーして、企業以外の者が所有するファイルに貼り付けることができるかどうかなどを制御します。
+<span data-ttu-id="a218e-120">そのポリシーでは、企業データにアクセスできるアプリを指定します (ポリシーの*許可リスト*と呼ばれます)。</span><span class="sxs-lookup"><span data-stu-id="a218e-120">That policy identifies the apps that can access enterprise data (called the policy's *allowed list*).</span></span> <span data-ttu-id="a218e-121">これらのアプリは、企業の保護されたファイル、仮想プライベート ネットワーク (VPN)、クリップボードにある企業データにアクセスできます。また、共有コントラクトを使用して、企業データにアクセスすることもできます。</span><span class="sxs-lookup"><span data-stu-id="a218e-121">These apps can access enterprise protected files, Virtual Private Networks (VPN) and enterprise data on the clipboard or through a share contract.</span></span> <span data-ttu-id="a218e-122">ポリシーでは、データを管理する規則も定義します。</span><span class="sxs-lookup"><span data-stu-id="a218e-122">The policy also defines the rules that govern the data.</span></span> <span data-ttu-id="a218e-123">たとえば、企業が所有するファイルからデータをコピーして、企業以外の者が所有するファイルに貼り付けることができるかどうかなどを制御します。</span><span class="sxs-lookup"><span data-stu-id="a218e-123">For example, whether data can be copied from enterprise-owned files and then pasted into non enterprise-owned files.</span></span>
 
-ユーザーが組織の MDM システムからデバイスを登録解除した場合や、組織の MAM システムで指定されているアプリをアンインストールした場合、管理者はそのデバイスの企業データをリモートでワイプできます。
+<span data-ttu-id="a218e-124">ユーザーが組織の MDM システムからデバイスを登録解除した場合や、組織の MAM システムで指定されているアプリをアンインストールした場合、管理者はそのデバイスの企業データをリモートでワイプできます。</span><span class="sxs-lookup"><span data-stu-id="a218e-124">If users unenroll their device from the organization's MDM system, or uninstall apps identified by the organizations MAM system, administrators can remotely wipe enterprise data from the device.</span></span>
 
 ![WIP のライフサイクル](images/wip-lifecycle.png)
 
-> **WIP について詳しくは、以下をご覧ください。** <br>
-* [Introducing Windows Information Protection (Windows 情報保護の概要)](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
-* [Windows 情報保護 (WIP) を使用した企業データの保護](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
+> **<span data-ttu-id="a218e-126">WIP について詳しくは、以下をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a218e-126">Read more about WIP</span></span>** <br>
+* [<span data-ttu-id="a218e-127">Introducing Windows Information Protection (Windows 情報保護の概要)</span><span class="sxs-lookup"><span data-stu-id="a218e-127">Introducing Windows Information Protection</span></span>](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
+* [<span data-ttu-id="a218e-128">Windows 情報保護 (WIP) を使用した企業データの保護</span><span class="sxs-lookup"><span data-stu-id="a218e-128">Protect your enterprise data using Windows Information Protection (WIP)</span></span>](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
 
-アプリが許可リストに登録されている場合、アプリによって生成されたすべてのデータにはポリシーの制限が適用されます。 つまり、管理者が企業データへのユーザー アクセスを無効にすると、それらのユーザーは、アプリによって生成されたすべてのデータへアクセスできなくなります。
+<span data-ttu-id="a218e-129">アプリが許可リストに登録されている場合、アプリによって生成されたすべてのデータにはポリシーの制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="a218e-129">If your app is on the allowed list, all data produced by your app is subject to policy restrictions.</span></span> <span data-ttu-id="a218e-130">つまり、管理者が企業データへのユーザー アクセスを無効にすると、それらのユーザーは、アプリによって生成されたすべてのデータへアクセスできなくなります。</span><span class="sxs-lookup"><span data-stu-id="a218e-130">That means that if administrators revoke the user's access to enterprise data, those users lose access to all of the data that your app produced.</span></span>
 
-これは、アプリが企業での使用のみを目的として設計されている場合は、問題ありません。 ただし、ユーザーが個人用のデータであると見なすことができるデータをアプリが生成する場合は、企業データと個人データをインテリジェントに区別するようにアプリを*対応させる*必要があります。 この種類のアプリは、"*エンタープライズ対応*" と呼ばれます。それは、ユーザーの個人データの整合性を維持したまま、企業のポリシーを適切に適用できるためです。
+<span data-ttu-id="a218e-131">これは、アプリが企業での使用のみを目的として設計されている場合は、問題ありません。</span><span class="sxs-lookup"><span data-stu-id="a218e-131">This is fine if your app is designed only for enterprise use.</span></span> <span data-ttu-id="a218e-132">ただし、ユーザーが個人用のデータであると見なすことができるデータをアプリが生成する場合は、企業データと個人データをインテリジェントに区別するようにアプリを*対応させる*必要があります。</span><span class="sxs-lookup"><span data-stu-id="a218e-132">But if your app creates data that users consider personal to them, you'll want to *enlighten* your app to intelligently discern between enterprise and personal data.</span></span> <span data-ttu-id="a218e-133">この種類のアプリは、"*エンタープライズ対応*" と呼ばれます。それは、ユーザーの個人データの整合性を維持したまま、企業のポリシーを適切に適用できるためです。</span><span class="sxs-lookup"><span data-stu-id="a218e-133">We call this type of an app *enterprise-enlightened* because it can gracefully enforce enterprise policy while preserving the integrity of the user's personal data.</span></span>
 
-## <a name="create-an-enterprise-enlightened-app"></a>エンタープライズ対応アプリの作成
+## <a name="create-an-enterprise-enlightened-app"></a><span data-ttu-id="a218e-134">エンタープライズ対応アプリの作成</span><span class="sxs-lookup"><span data-stu-id="a218e-134">Create an enterprise-enlightened app</span></span>
 
-WIP API を使用してアプリを対応させてから、アプリをエンタープライズ対応として宣言します。
+<span data-ttu-id="a218e-135">WIP API を使用してアプリを対応させてから、アプリをエンタープライズ対応として宣言します。</span><span class="sxs-lookup"><span data-stu-id="a218e-135">Use WIP APIs to enlighten your app, and then declare your app as enterprise-enlightened.</span></span>
 
-アプリを組織用と個人用の両方の目的で使用する場合に、アプリの対応を行ってください。
+<span data-ttu-id="a218e-136">アプリを組織用と個人用の両方の目的で使用する場合に、アプリの対応を行ってください。</span><span class="sxs-lookup"><span data-stu-id="a218e-136">Enlighten your app if it'll be used for both organizational and personal purposes.</span></span>
 
-また、ポリシー要素の適用を適切に処理する必要がある場合にも、アプリの対応を行ってください。
+<span data-ttu-id="a218e-137">また、ポリシー要素の適用を適切に処理する必要がある場合にも、アプリの対応を行ってください。</span><span class="sxs-lookup"><span data-stu-id="a218e-137">Enlighten your app if you want to gracefully handle the enforcement of policy elements.</span></span>
 
-たとえば、ポリシーで、ユーザーが企業データを個人ドキュメントに貼り付けることが許可されている場合、データを貼り付ける前に、ユーザーが同意ダイアログに応答する必要がないように設定できます。 同様に、このようなイベントへの応答で、カスタムの情報を示すダイアログ ボックスを表示することができます。
+<span data-ttu-id="a218e-138">たとえば、ポリシーで、ユーザーが企業データを個人ドキュメントに貼り付けることが許可されている場合、データを貼り付ける前に、ユーザーが同意ダイアログに応答する必要がないように設定できます。</span><span class="sxs-lookup"><span data-stu-id="a218e-138">For example, if policy allows users to paste enterprise data into a personal document, you can prevent users from having to respond to a consent dialog before they paste the data.</span></span> <span data-ttu-id="a218e-139">同様に、このようなイベントへの応答で、カスタムの情報を示すダイアログ ボックスを表示することができます。</span><span class="sxs-lookup"><span data-stu-id="a218e-139">Similarly, you can present custom informational dialog boxes in response to these sorts of events.</span></span>
 
-アプリを対応させる準備ができたら、以下のガイドのいずれかをご覧ください。
+<span data-ttu-id="a218e-140">アプリを対応させる準備ができたら、以下のガイドのいずれかをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a218e-140">If you're ready to enlighten your app, see one of these guides:</span></span>
 
-**C を使用して作成するユニバーサル Windows プラットフォーム (UWP) アプリの場合#**
+**<span data-ttu-id="a218e-141">C を使用して作成するユニバーサル Windows プラットフォーム (UWP) アプリの場合</span><span class="sxs-lookup"><span data-stu-id="a218e-141">For Universal Windows Platform (UWP) apps that you build by using C</span></span>#**
 
-[Build an enlightened app that consumes both enterprise and personal data (企業データと個人データの両方を使用する対応アプリの作成)](wip-dev-guide.md)。
+<span data-ttu-id="a218e-142">[Windows 情報保護 (WIP) 開発者向けガイド](wip-dev-guide.md)。</span><span class="sxs-lookup"><span data-stu-id="a218e-142">[Windows Information Protection (WIP) developer guide](wip-dev-guide.md).</span></span>
 
-**C++ を使用して作成するデスクトップ アプリの場合**
+**<span data-ttu-id="a218e-143">C++ を使用して作成するデスクトップ アプリの場合</span><span class="sxs-lookup"><span data-stu-id="a218e-143">For Desktop apps that you build by using C++</span></span>**
 
-[Build an enlightened app that consumes both enterprise and personal data (C++) (企業データと個人データの両方を使用する対応アプリの作成 (C++))](http://go.microsoft.com/fwlink/?LinkId=822192)。
+<span data-ttu-id="a218e-144">[Windows 情報保護 (WIP) 開発者向けガイド (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)。</span><span class="sxs-lookup"><span data-stu-id="a218e-144">[Windows Information Protection (WIP) developer guide (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).</span></span>
 
 
-## <a name="create-non-enlightened-enterprise-app"></a>エンタープライズ非対応アプリの作成
+## <a name="create-non-enlightened-enterprise-app"></a><span data-ttu-id="a218e-145">エンタープライズ非対応アプリの作成</span><span class="sxs-lookup"><span data-stu-id="a218e-145">Create non-enlightened enterprise app</span></span>
 
-個人用途向けではない基幹業務 (LOB) アプリを作成している場合は、それを対応アプリにする必要はない可能性があります。
+<span data-ttu-id="a218e-146">個人用途向けではない基幹業務 (LOB) アプリを作成している場合は、それを対応アプリにする必要はない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a218e-146">if you're creating an Line of Business (LOB) app that is not intended for personal use, you might not have to enlighten it.</span></span>
 
-### <a name="windows-desktop-apps"></a>Windows デスクトップ アプリ
-Windows デスクトップ アプリを対応させる必要はありません。ただし、ポリシー下でアプリが適切に動作することを確認するためにアプリをテストすることは必要になります。 たとえば、アプリを起動して使用した後に、MDM からデバイスを登録解除します。 その後、アプリが再び起動することを確認します。 アプリの動作に重要なファイルが暗号化されていると、アプリが起動しない可能性があります。 また、ユーザーの個人的なファイルがアプリにより誤って暗号化されないように、アプリでやり取りするファイル確認します。 これには、メタデータ ファイルや画像などの要素も含まれます。
+### <a name="windows-desktop-apps"></a><span data-ttu-id="a218e-147">Windows デスクトップ アプリ</span><span class="sxs-lookup"><span data-stu-id="a218e-147">Windows desktop apps</span></span>
+<span data-ttu-id="a218e-148">Windows デスクトップ アプリを対応させる必要はありません。ただし、ポリシー下でアプリが適切に動作することを確認するためにアプリをテストすることは必要になります。</span><span class="sxs-lookup"><span data-stu-id="a218e-148">You don't need to enlighten a Windows desktop app but you should test your app to ensure that it functions properly under policy.</span></span> <span data-ttu-id="a218e-149">たとえば、アプリを起動して使用した後に、MDM からデバイスを登録解除します。</span><span class="sxs-lookup"><span data-stu-id="a218e-149">For example, start your app, use it, then unenroll the device from MDM.</span></span> <span data-ttu-id="a218e-150">その後、アプリが再び起動することを確認します。</span><span class="sxs-lookup"><span data-stu-id="a218e-150">Then, make sure the app can start again.</span></span> <span data-ttu-id="a218e-151">アプリの動作に重要なファイルが暗号化されていると、アプリが起動しない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a218e-151">If files critical to the operation of the app are encrypted, the app might not start.</span></span> <span data-ttu-id="a218e-152">また、ユーザーの個人的なファイルがアプリにより誤って暗号化されないように、アプリでやり取りするファイル確認します。</span><span class="sxs-lookup"><span data-stu-id="a218e-152">Also, review the files that your app interacts with to ensure that your app won't inadvertently encrypt files that are personal to the user.</span></span> <span data-ttu-id="a218e-153">これには、メタデータ ファイルや画像などの要素も含まれます。</span><span class="sxs-lookup"><span data-stu-id="a218e-153">This might include metadata files, images and other things.</span></span>
 
-アプリをテストしたら、次のフラグをリソース ファイルまたはプロジェクトに追加し、アプリを再コンパイルします。
+<span data-ttu-id="a218e-154">アプリをテストしたら、次のフラグをリソース ファイルまたはプロジェクトに追加し、アプリを再コンパイルします。</span><span class="sxs-lookup"><span data-stu-id="a218e-154">After you've tested your app, add this flag to the resource file or your project, and then recompile the app.</span></span>
 
 ```cpp
 MICROSOFTEDPAUTOPROTECTIONALLOWEDAPPINFO EDPAUTOPROTECTIONALLOWEDAPPINFOID
@@ -88,11 +87,11 @@ BEGIN
     0x0001
 END
 ```
-MDM ポリシーではこのフラグは必要ありませんが、MAM ポリシーでは必要になります。
+<span data-ttu-id="a218e-155">MDM ポリシーではこのフラグは必要ありませんが、MAM ポリシーでは必要になります。</span><span class="sxs-lookup"><span data-stu-id="a218e-155">While MDM policies don't require the flag, MAM policies do.</span></span>
 
-### <a name="uwp-apps"></a>UWP アプリ
+### <a name="uwp-apps"></a><span data-ttu-id="a218e-156">UWP アプリ</span><span class="sxs-lookup"><span data-stu-id="a218e-156">UWP apps</span></span>
 
-アプリが MAM ポリシーの対象になることが予想される場合はアプリを対応させます。 MDM 対象のデバイスに展開するポリシーで対応化が必要になることはありませんが、アプリを組織のユーザーに配布する場合、どの種類のポリシー管理システムがアプリで使用されるか判別するのは、不可能ではないにしても困難です。 両方のポリシー管理システム (MDM および MAM) でアプリの動作を実現するには、アプリを対応させる必要があります。
+<span data-ttu-id="a218e-157">アプリが MAM ポリシーの対象になることが予想される場合はアプリを対応させます。</span><span class="sxs-lookup"><span data-stu-id="a218e-157">If you expect your app to be included in a MAM policy, you should enlighten it.</span></span> <span data-ttu-id="a218e-158">MDM 対象のデバイスに展開するポリシーで対応化が必要になることはありませんが、アプリを組織のユーザーに配布する場合、どの種類のポリシー管理システムがアプリで使用されるか判別するのは、不可能ではないにしても困難です。</span><span class="sxs-lookup"><span data-stu-id="a218e-158">Policies deployed to devices under MDM won't require it, but if you distribute your app to organizational consumers, it's difficult if not impossible to determine what type of policy management system they'll use.</span></span> <span data-ttu-id="a218e-159">両方のポリシー管理システム (MDM および MAM) でアプリの動作を実現するには、アプリを対応させる必要があります。</span><span class="sxs-lookup"><span data-stu-id="a218e-159">To ensure that your app will work in both types of policy management systems (MDM and MAM), you should enlighten your app.</span></span>
 
 
 
@@ -100,4 +99,3 @@ MDM ポリシーではこのフラグは必要ありませんが、MAM ポリシ
 
 
  
-

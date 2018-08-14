@@ -1,41 +1,41 @@
 ---
 author: mcleblanc
 ms.assetid: B48E21AB-0EA5-444B-8333-393DD8D1B76D
-title: "エンタープライズ共有記憶域"
-description: "エンタープライズ共有記憶域は、基幹業務アプリのデータ共有のための、ローカルのデータの場所を定義します。"
+title: エンタープライズ共有記憶域
+description: エンタープライズ共有記憶域は、基幹業務アプリのデータ共有のための、ローカルのデータの場所を定義します。
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6a6ad55a134a45bf3feb7092cdad78d9f6ee196b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3f04d00da3fce4674f344129910917e9585e8723
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243067"
 ---
-# <a name="enterprise-shared-storage"></a>エンタープライズ共有記憶域
+# <a name="enterprise-shared-storage"></a><span data-ttu-id="4a5a0-104">エンタープライズ共有記憶域</span><span class="sxs-lookup"><span data-stu-id="4a5a0-104">Enterprise Shared Storage</span></span>
 
-共有記憶域は、2 つの場所で構成されています。この場所では、制限された機能 **enterpriseDeviceLockdown** とエンタープライズ証明書を持つアプリは、完全な読み取り/書き込みアクセスがあります。 **enterpriseDeviceLockdown** を使うと、アプリは、デバイスのロック ダウン API を利用したり、企業で共有している保存フォルダーにアクセスしたりすることができます。 API について詳しくは、「[**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331) 名前空間」をご覧ください。  
+<span data-ttu-id="4a5a0-105">共有記憶域は、2 つの場所で構成されています。この場所では、制限された機能 **enterpriseDeviceLockdown** とエンタープライズ証明書を持つアプリは、完全な読み取り/書き込みアクセスがあります。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-105">The shared storage consists of two locations, where apps with the restricted capability  **enterpriseDeviceLockdown** and an Enterprise certificate have full read and write access.</span></span> <span data-ttu-id="4a5a0-106">**enterpriseDeviceLockdown** を使うと、アプリは、デバイスのロック ダウン API を利用したり、企業で共有している保存フォルダーにアクセスしたりすることができます。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-106">Note that the **enterpriseDeviceLockdown** capability allows apps to use the device lock down API and access the enterprise shared storage folders.</span></span> <span data-ttu-id="4a5a0-107">API について詳しくは、「[**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331) 名前空間」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-107">For more information about the API, see [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331) namespace.</span></span>  
 
-これらの場所は、次のローカル ドライブに設定されます。
-- \Data\SharedData\Enterprise\Persistent
-- \Data\SharedData\Enterprise\Non-Persistent
+<span data-ttu-id="4a5a0-108">これらの場所は、次のローカル ドライブに設定されます。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-108">These locations are set on the local drive:</span></span>
+- <span data-ttu-id="4a5a0-109">\Data\SharedData\Enterprise\Persistent</span><span class="sxs-lookup"><span data-stu-id="4a5a0-109">\Data\SharedData\Enterprise\Persistent</span></span>
+- <span data-ttu-id="4a5a0-110">\Data\SharedData\Enterprise\Non-Persistent</span><span class="sxs-lookup"><span data-stu-id="4a5a0-110">\Data\SharedData\Enterprise\Non-Persistent</span></span>
 
-## <a name="scenarios"></a>シナリオ
+## <a name="scenarios"></a><span data-ttu-id="4a5a0-111">シナリオ</span><span class="sxs-lookup"><span data-stu-id="4a5a0-111">Scenarios</span></span>
 
-エンタープライズ共有記憶域は、次のシナリオをサポートします。
+<span data-ttu-id="4a5a0-112">エンタープライズ共有記憶域は、次のシナリオをサポートします。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-112">Enterprise shared storage provides support for the following scenarios.</span></span>
 
-- 1 つのアプリの 1 つのインスタンス内、同じアプリの複数のインスタンス間、また適切な機能と証明書を持つ複数のアプリ間で、データを共有できます。
-- ローカルのハード ドライブの \Data\SharedData\Enterprise\Persistent フォルダーにデータを保存でき、これはデバイスのリセット後も保持されます。
-- モバイル デバイス管理 (MDM) サービスを使用して、デバイス上のファイルの読み取り、書き込み、削除などのファイル操作を行えます。 MDM サービスを使ったエンタープライズ共有記憶域の使用方法について詳しくは、「[EnterpriseExtFileSystem CSP](http://go.microsoft.com/fwlink/?LinkId=699333)」をご覧ください。
+- <span data-ttu-id="4a5a0-113">1 つのアプリの 1 つのインスタンス内、同じアプリの複数のインスタンス間、また適切な機能と証明書を持つ複数のアプリ間で、データを共有できます。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-113">You can share data within an instance of an app, between instances of the same app, or even between apps assuming they both have the appropriate capability and certificate.</span></span>
+- <span data-ttu-id="4a5a0-114">ローカルのハード ドライブの \Data\SharedData\Enterprise\Persistent フォルダーにデータを保存でき、これはデバイスのリセット後も保持されます。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-114">You can store data on the local hard drive in the \Data\SharedData\Enterprise\Persistent folder and it persists even after the device has been reset.</span></span>
+- <span data-ttu-id="4a5a0-115">モバイル デバイス管理 (MDM) サービスを使用して、デバイス上のファイルの読み取り、書き込み、削除などのファイル操作を行えます。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-115">Manipulate files, including read, write, and delete of files on a device via Mobile Device Management (MDM) service.</span></span> <span data-ttu-id="4a5a0-116">MDM サービスを使ったエンタープライズ共有記憶域の使用方法について詳しくは、「[EnterpriseExtFileSystem CSP](http://go.microsoft.com/fwlink/?LinkId=699333)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-116">For more information on how to use enterprise shared storage through the MDM service, see [EnterpriseExtFileSystem CSP](http://go.microsoft.com/fwlink/?LinkId=699333).</span></span>
 
-## <a name="access-enterprise-shared-storage"></a>エンタープライズ共有記憶域へのアクセス
+## <a name="access-enterprise-shared-storage"></a><span data-ttu-id="4a5a0-117">エンタープライズ共有記憶域へのアクセス</span><span class="sxs-lookup"><span data-stu-id="4a5a0-117">Access enterprise shared storage</span></span>
 
-次の例では、パッケージ マニフェストでエンタープライズ共有記憶域へのアクセス機能を宣言する方法、および Windows.Storage.StorageFolder クラスを使って共有保存フォルダーにアクセスする方法を示します。
+<span data-ttu-id="4a5a0-118">次の例では、パッケージ マニフェストでエンタープライズ共有記憶域へのアクセス機能を宣言する方法、および Windows.Storage.StorageFolder クラスを使って共有保存フォルダーにアクセスする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-118">The following example shows how to declare the capability to access enterprise shared storage in the package manifest, and how to access the shared storage folders by using the Windows.Storage.StorageFolder class.</span></span>
 
-アプリ パッケージ マニフェストに次の機能を含めます。
+<span data-ttu-id="4a5a0-119">アプリ パッケージ マニフェストに次の機能を含めます。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-119">In your app package manifest, include the following capability:</span></span>
 
 ```xml
 <Package
@@ -52,7 +52,7 @@ ms.lasthandoff: 02/07/2017
 </Capabilities>
 ```
 
-共有データの場所にアクセスするには、アプリで次のコードを使います。
+<span data-ttu-id="4a5a0-120">共有データの場所にアクセスするには、アプリで次のコードを使います。</span><span class="sxs-lookup"><span data-stu-id="4a5a0-120">To access the shared data location, your app would use the following code.</span></span>
 
 ```csharp
 using System;
@@ -77,5 +77,4 @@ IReadOnlyList<StorageFile> sortedItems =
 foreach (StorageFile file in sortedItems)
     Debug.WriteLine(file.Name + ", " + file.DateCreated);
 ```
-
 

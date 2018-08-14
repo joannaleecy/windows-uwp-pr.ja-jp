@@ -1,131 +1,129 @@
 ---
 author: drewbatgit
 ms.assetid: 3848cd72-eccd-400e-93ff-13649cd81b6c
-description: "この記事では、従来のバックグラウンドでのメディアの再生モデルを使用するアプリにサポートを提供したり、新しいモデルに移行するためのガイダンスを提供します。"
-title: "従来のバックグラウンドでのメディアの再生"
+description: この記事では、従来のバックグラウンドでのメディアの再生モデルを使用するアプリにサポートを提供したり、新しいモデルに移行するためのガイダンスを提供します。
+title: 従来のバックグラウンドでのメディアの再生
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 9c66df378534825d191740d5eea4beb0f560687e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 68695125c2056adca8186120db7875cb3a68baf8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243308"
 ---
+# <a name="legacy-background-media-playback"></a><span data-ttu-id="4a9d6-104">従来のバックグラウンドでのメディアの再生</span><span class="sxs-lookup"><span data-stu-id="4a9d6-104">Legacy background media playback</span></span>
 
-# <a name="legacy-background-media-playback"></a>従来のバックグラウンドでのメディアの再生
+<span data-ttu-id="4a9d6-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="4a9d6-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="4a9d6-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+<span data-ttu-id="4a9d6-107">この記事では、UWP アプリにバックグラウンド オーディオのサポートを追加できる従来の 2 プロセスのモデルについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-107">This article describes the legacy, two-process model for adding background audio support to your UWP app.</span></span> <span data-ttu-id="4a9d6-108">Windows 10 バージョン 1607 以降では、バックグラウンド オーディオ用に 1 プロセスのモデルが提供されているため、より簡単に実装できます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-108">Starting with Windows 10, version 1607, a single-process model for background audio that is much simpler to implement.</span></span> <span data-ttu-id="4a9d6-109">バックグラウンド オーディオに対する現在の推奨事項について詳しくは、「[バックグラウンドでのメディアの再生](background-audio.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-109">For more information on the current recommendations for background audio, see [Play media in the background](background-audio.md).</span></span> <span data-ttu-id="4a9d6-110">この記事は、従来の 2 プロセスのモデルを使用して既に開発されたアプリにサポートを提供することを目的としています。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-110">This article is intended to provide support for apps that are have already been developed using the legacy two-process model.</span></span>
 
-この記事では、UWP アプリにバックグラウンド オーディオのサポートを追加できる従来の 2 プロセスのモデルについて説明します。 Windows 10 バージョン 1607 以降では、バックグラウンド オーディオ用に 1 プロセスのモデルが提供されているため、より簡単に実装できます。 バックグラウンド オーディオに対する現在の推奨事項について詳しくは、「[バックグラウンドでのメディアの再生](background-audio.md)」をご覧ください。 この記事は、従来の 2 プロセスのモデルを使用して既に開発されたアプリにサポートを提供することを目的としています。
+## <a name="background-audio-architecture"></a><span data-ttu-id="4a9d6-111">バックグラウンド オーディオのアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="4a9d6-111">Background audio architecture</span></span>
 
-## <a name="background-audio-architecture"></a>バックグラウンド オーディオのアーキテクチャ
+<span data-ttu-id="4a9d6-112">バックグラウンド再生を実行するアプリは、2 つのプロセスで構成されています。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-112">An app performing background playback consists of two processes.</span></span> <span data-ttu-id="4a9d6-113">最初のプロセスはメイン アプリです。アプリ UI とクライアント ロジックを含んでおり、フォアグラウンドで実行されます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-113">The first process is the main app, which contains the app UI and client logic, running in the foreground.</span></span> <span data-ttu-id="4a9d6-114">2 番目のプロセスはバックグラウンド再生タスクです。すべての UWP アプリのバックグラウンド タスクと同様、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) を実装しています。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-114">The second process is the background playback task, which implements [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) like all UWP app background tasks.</span></span> <span data-ttu-id="4a9d6-115">バックグラウンド タスクには、オーディオ再生のロジックとバックグラウンド サービスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-115">The background task contains the audio playback logic and background services.</span></span> <span data-ttu-id="4a9d6-116">バックグラウンド タスクは、システム メディア トランスポート コントロールを通じてシステムと通信します。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-116">The background task communicates with the system through the System Media Transport Controls.</span></span>
 
-バックグラウンド再生を実行するアプリは、2 つのプロセスで構成されています。 最初のプロセスはメイン アプリです。アプリ UI とクライアント ロジックを含んでおり、フォアグラウンドで実行されます。 2 番目のプロセスはバックグラウンド再生タスクです。すべての UWP アプリのバックグラウンド タスクと同様、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) を実装しています。 バックグラウンド タスクには、オーディオ再生のロジックとバックグラウンド サービスが含まれています。 バックグラウンド タスクは、システム メディア トランスポート コントロールを通じてシステムと通信します。
-
-次の図は、システムの設計概要を簡単に示しています。
+<span data-ttu-id="4a9d6-117">次の図は、システムの設計概要を簡単に示しています。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-117">The following diagram is an overview of how the system is designed.</span></span>
 
 ![Windows 10 のバックグラウンド オーディオのアーキテクチャ](images/backround-audio-architecture-win10.png)
-## <a name="mediaplayer"></a>MediaPlayer
+## <a name="mediaplayer"></a><span data-ttu-id="4a9d6-119">MediaPlayer</span><span class="sxs-lookup"><span data-stu-id="4a9d6-119">MediaPlayer</span></span>
 
-[**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 名前空間には、バックグラウンドでオーディオを再生するために使用する API が含まれています。 再生が発生するアプリごとに、単一の [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) インスタンスが存在します。 バックグラウンド オーディオ アプリは、**MediaPlayer** クラスのメソッドを呼び出し、プロパティを設定することで、現在のトラックの設定、再生の開始、一時停止、早送り、巻き戻しなどのコマンドを行います。 MediaPlayer オブジェクトのインスタンスには、常に [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) プロパティを通じてアクセスします。
+<span data-ttu-id="4a9d6-120">[**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 名前空間には、バックグラウンドでオーディオを再生するために使用する API が含まれています。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-120">The [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) namespace contains APIs used to play audio in the background.</span></span> <span data-ttu-id="4a9d6-121">再生が発生するアプリごとに、単一の [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) インスタンスが存在します。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-121">There is a single instance of [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) per app through which playback occurs.</span></span> <span data-ttu-id="4a9d6-122">バックグラウンド オーディオ アプリは、**MediaPlayer** クラスのメソッドを呼び出し、プロパティを設定することで、現在のトラックの設定、再生の開始、一時停止、早送り、巻き戻しなどのコマンドを行います。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-122">Your background audio app calls methods and sets properties on the **MediaPlayer** class to set the current track, start playback, pause, fast forward, rewind, and so on.</span></span> <span data-ttu-id="4a9d6-123">MediaPlayer オブジェクトのインスタンスには、常に [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) プロパティを通じてアクセスします。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-123">The media player object instance is always accessed through the [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) property.</span></span>
 
-## <a name="mediaplayer-proxy-and-stub"></a>MediaPlayer プロキシとスタブ
+## <a name="mediaplayer-proxy-and-stub"></a><span data-ttu-id="4a9d6-124">MediaPlayer プロキシとスタブ</span><span class="sxs-lookup"><span data-stu-id="4a9d6-124">MediaPlayer Proxy and Stub</span></span>
 
-アプリのバックグラウンド プロセスから **BackgroundMediaPlayer.Current** にアクセスすると、**MediaPlayer** インスタンスがバックグラウンド タスク ホストでアクティブ化され、直接操作できるようになります。
+<span data-ttu-id="4a9d6-125">アプリのバックグラウンド プロセスから **BackgroundMediaPlayer.Current** にアクセスすると、**MediaPlayer** インスタンスがバックグラウンド タスク ホストでアクティブ化され、直接操作できるようになります。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-125">When **BackgroundMediaPlayer.Current** is accessed from your app's background process, the **MediaPlayer** instance is activated in the background task host and can be manipulated directly.</span></span>
 
-フォアグラウンド アプリケーションから **BackgroundMediaPlayer.Current** にアクセスした場合に返される **MediaPlayer** インスタンスは、実際には、バックグラウンド プロセスでスタブと通信するプロキシです。 このスタブは、実際の **MediaPlayer** インスタンスとやり取りしますが、このインスタンスもバックグラウンド プロセスでホストされています。
+<span data-ttu-id="4a9d6-126">フォアグラウンド アプリケーションから **BackgroundMediaPlayer.Current** にアクセスした場合に返される **MediaPlayer** インスタンスは、実際には、バックグラウンド プロセスでスタブと通信するプロキシです。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-126">When **BackgroundMediaPlayer.Current** is accessed from the foreground application, the **MediaPlayer** instance that is returned is actually a proxy that communicates with a stub in the background process.</span></span> <span data-ttu-id="4a9d6-127">このスタブは、実際の **MediaPlayer** インスタンスとやり取りしますが、このインスタンスもバックグラウンド プロセスでホストされています。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-127">This stub communicates with the actual **MediaPlayer** instance, which is also hosted in the background process.</span></span>
 
-フォアグラウンドとバックグラウンドの両方のプロセスで、**MediaPlayer** インスタンスのほとんどのプロパティにアクセスできます。ただし、[**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) と [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) は例外で、これらはバックグラウンド プロセスからのみアクセスできます。 フォアグラウンド アプリとバックグラウンド プロセスはいずれも、[**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609)、[**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603)、[**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606) など、メディア固有のイベントに関する通知を受け取ることができます。
+<span data-ttu-id="4a9d6-128">フォアグラウンドとバックグラウンドの両方のプロセスで、**MediaPlayer** インスタンスのほとんどのプロパティにアクセスできます。ただし、[**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) と [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) は例外で、これらはバックグラウンド プロセスからのみアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-128">Both the foreground and background process can access most of the properties of the **MediaPlayer** instance, with the exception of [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) and [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) which can only be accessed from the background process.</span></span> <span data-ttu-id="4a9d6-129">フォアグラウンド アプリとバックグラウンド プロセスはいずれも、[**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609)、[**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603)、[**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606) など、メディア固有のイベントに関する通知を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-129">The foreground app and the background process can both receive notifications of media-specific events like [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609), [**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603), and [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606).</span></span>
 
-## <a name="playback-lists"></a>プレイリスト
+## <a name="playback-lists"></a><span data-ttu-id="4a9d6-130">プレイリスト</span><span class="sxs-lookup"><span data-stu-id="4a9d6-130">Playback Lists</span></span>
 
-バックグラウンド オーディオ アプリケーションの一般的なシナリオでは、複数の項目が連続して再生されます。 これをバックグラウンド プロセスで最も簡単に実行するには、[**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) オブジェクトを使います。このオブジェクトは、[**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) プロパティに割り当てることで、**MediaPlayer** のソースとして設定できます。
+<span data-ttu-id="4a9d6-131">バックグラウンド オーディオ アプリケーションの一般的なシナリオでは、複数の項目が連続して再生されます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-131">A common scenario for background audio applications is to play multiple items in a row.</span></span> <span data-ttu-id="4a9d6-132">これをバックグラウンド プロセスで最も簡単に実行するには、[**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) オブジェクトを使います。このオブジェクトは、[**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) プロパティに割り当てることで、**MediaPlayer** のソースとして設定できます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-132">This is most easily accomplished in your background process by using a [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) object, which can be set as a source on the **MediaPlayer** by assigning it to the [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) property.</span></span>
 
-バックグラウンド プロセスに設定された **MediaPlaybackList** にフォアグラウンド プロセスからアクセスすることはできません。
+<span data-ttu-id="4a9d6-133">バックグラウンド プロセスに設定された **MediaPlaybackList** にフォアグラウンド プロセスからアクセスすることはできません。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-133">It is not possible to access a **MediaPlaybackList** from the foreground process that was set in the background process.</span></span>
 
-## <a name="system-media-transport-controls"></a>システム メディア トランスポート コントロール
+## <a name="system-media-transport-controls"></a><span data-ttu-id="4a9d6-134">システム メディア トランスポート コントロール</span><span class="sxs-lookup"><span data-stu-id="4a9d6-134">System Media Transport Controls</span></span>
 
-ユーザーは、アプリの UI を直接使用しなくても、Bluetooth デバイス、SmartGlass、システム メディア トランスポート コントロールなどの手段で、オーディオの再生を制御できます。 バックグラウンド タスクでは、[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) クラスを使って、ユーザーが開始するこれらのシステム イベントの受信登録を行います。
+<span data-ttu-id="4a9d6-135">ユーザーは、アプリの UI を直接使用しなくても、Bluetooth デバイス、SmartGlass、システム メディア トランスポート コントロールなどの手段で、オーディオの再生を制御できます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-135">A user may control audio playback without directly using your app's UI through means such as Bluetooth devices, SmartGlass, and the System Media Transport Controls.</span></span> <span data-ttu-id="4a9d6-136">バックグラウンド タスクでは、[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) クラスを使って、ユーザーが開始するこれらのシステム イベントの受信登録を行います。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-136">Your background task uses the [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) class to subscribe to these user-initiated system events.</span></span>
 
-バックグラウンド プロセスから **SystemMediaTransportControls** インスタンスを取得するには、[**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) プロパティを使います。 フォアグラウンド アプリは、[**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) を呼び出すことでクラスのインスタンスを取得しますが、返されるインスタンスはフォアグラウンドのみのインスタンスであり、バックグラウンド タスクとは関係ありません。
+<span data-ttu-id="4a9d6-137">バックグラウンド プロセスから **SystemMediaTransportControls** インスタンスを取得するには、[**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) プロパティを使います。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-137">To get a **SystemMediaTransportControls** instance from within the background process, use the [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) property.</span></span> <span data-ttu-id="4a9d6-138">フォアグラウンド アプリは、[**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) を呼び出すことでクラスのインスタンスを取得しますが、返されるインスタンスはフォアグラウンドのみのインスタンスであり、バックグラウンド タスクとは関係ありません。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-138">Foreground apps get an instance of the class by calling [**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708), but the instance returned is a foreground-only instance that does not relate to the background task.</span></span>
 
-## <a name="sending-messages-between-tasks"></a>タスク間のメッセージ送信
+## <a name="sending-messages-between-tasks"></a><span data-ttu-id="4a9d6-139">タスク間のメッセージ送信</span><span class="sxs-lookup"><span data-stu-id="4a9d6-139">Sending Messages Between Tasks</span></span>
 
-バックグラウンド オーディオ アプリの 2 つのプロセス間で通信することが必要になる場合があります。 たとえば、新しいトラックの再生が始まるときにバックグラウンド タスクからフォアグラウンド タスクに通知し、新しい曲のタイトルをフォアグラウンド タスクに送って画面に表示させることがあります。
+<span data-ttu-id="4a9d6-140">バックグラウンド オーディオ アプリの 2 つのプロセス間で通信することが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-140">There are times when you will want to communicate between the two processes of a background audio app.</span></span> <span data-ttu-id="4a9d6-141">たとえば、新しいトラックの再生が始まるときにバックグラウンド タスクからフォアグラウンド タスクに通知し、新しい曲のタイトルをフォアグラウンド タスクに送って画面に表示させることがあります。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-141">For example, you might want the background task to notify the foreground task when a new track starts playing, and then send the new song title to the foreground task to display on the screen.</span></span>
 
-単純な通信メカニズムにより、フォアグラウンド プロセスとバックグラウンド プロセスの両方でイベントを発生させることができます。 [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) メソッドと [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) メソッドは、それぞれ対応するプロセスでイベントを呼び出します。 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) イベントと [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) イベントの受信登録を行うことで、メッセージを受信することができます。
+<span data-ttu-id="4a9d6-142">単純な通信メカニズムにより、フォアグラウンド プロセスとバックグラウンド プロセスの両方でイベントを発生させることができます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-142">A simple communication mechanism raises events in both the foreground and background processes.</span></span> <span data-ttu-id="4a9d6-143">[**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) メソッドと [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) メソッドは、それぞれ対応するプロセスでイベントを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-143">The [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) and [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) methods each invoke events in the corresponding process.</span></span> <span data-ttu-id="4a9d6-144">[**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) イベントと [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) イベントの受信登録を行うことで、メッセージを受信することができます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-144">Messages can be received by subscribing to the [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) and [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) events.</span></span>
 
-データは引数としてメッセージ送信メソッドに渡され、次にメッセージ受信イベント ハンドラーに渡されます。 データを渡すには、[**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) クラスを使います。 このクラスは、文字列をキーとして格納し、その他の値の型を値として格納するディクショナリです。 渡すことができるのは、整数型、文字列型、ブール型など、単純型の値です。
+<span data-ttu-id="4a9d6-145">データは引数としてメッセージ送信メソッドに渡され、次にメッセージ受信イベント ハンドラーに渡されます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-145">Data can be passed as an argument to the send message methods that are then passed into the message received event handlers.</span></span> <span data-ttu-id="4a9d6-146">データを渡すには、[**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) クラスを使います。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-146">Pass data using the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) class.</span></span> <span data-ttu-id="4a9d6-147">このクラスは、文字列をキーとして格納し、その他の値の型を値として格納するディクショナリです。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-147">This class is a dictionary that contains a string as a key and other value types as values.</span></span> <span data-ttu-id="4a9d6-148">渡すことができるのは、整数型、文字列型、ブール型など、単純型の値です。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-148">You can pass simple value types such as integers, strings, and booleans.</span></span>
 
-## <a name="background-task-life-cycle"></a>バックグラウンド タスクの有効期間
+## <a name="background-task-life-cycle"></a><span data-ttu-id="4a9d6-149">バックグラウンド タスクの有効期間</span><span class="sxs-lookup"><span data-stu-id="4a9d6-149">Background Task Life Cycle</span></span>
 
-バックグラウンド タスクの有効期間は、アプリの現在の再生状態に密接に関係します。 たとえば、ユーザーがオーディオ再生を一時停止すると、システムは状況に応じてアプリを終了させたり、取り消したりします。 オーディオが再生されることなく一定の時間が経過すると、システムが自動的にバックグラウンド タスクをシャットダウンします。
+<span data-ttu-id="4a9d6-150">バックグラウンド タスクの有効期間は、アプリの現在の再生状態に密接に関係します。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-150">The lifetime of a background task is closely tied to your app's current playback status.</span></span> <span data-ttu-id="4a9d6-151">たとえば、ユーザーがオーディオ再生を一時停止すると、システムは状況に応じてアプリを終了させたり、取り消したりします。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-151">For example, when the user pauses audio playback, the system may terminate or cancel your app depending on the circumstances.</span></span> <span data-ttu-id="4a9d6-152">オーディオが再生されることなく一定の時間が経過すると、システムが自動的にバックグラウンド タスクをシャットダウンします。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-152">After a period of time without audio playback, the system may automatically shut down the background task.</span></span>
 
-[**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドが呼び出されるのは、初めてアプリがフォアグラウンド アプリで実行中のコードから [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) にアクセスしたときと、[**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) イベントに対するハンドラーを登録したときのうち、早い方です。 バックグラウンド プロセスから送信されたメッセージをフォアグラウンド アプリで逃すことのないよう、初めて **BackgroundMediaPlayer.Current** を呼び出す前にメッセージ受信ハンドラーに登録しておくことをお勧めします。
+<span data-ttu-id="4a9d6-153">[**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドが呼び出されるのは、初めてアプリがフォアグラウンド アプリで実行中のコードから [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) にアクセスしたときと、[**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) イベントに対するハンドラーを登録したときのうち、早い方です。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-153">The [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method is called the first time your app accesses either [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) from code running in the foreground app or when you register a handler for the [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) event, whichever occurs first.</span></span> <span data-ttu-id="4a9d6-154">バックグラウンド プロセスから送信されたメッセージをフォアグラウンド アプリで逃すことのないよう、初めて **BackgroundMediaPlayer.Current** を呼び出す前にメッセージ受信ハンドラーに登録しておくことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-154">It is recommended that you register for the message received handler before calling **BackgroundMediaPlayer.Current** for the first time so that the foreground app doesn't miss any messages sent from the background process.</span></span>
 
-バックグラウンド タスクを有効な状態に維持するために、アプリでは **Run** メソッドから [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) を要求し、タスク インスタンスが [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) イベントまたは [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) イベントを受け取るときに [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) を呼び出す必要があります。 **Run** メソッドではループ処理または待機を行わないでください。リソースが消費され、アプリのバックグラウンド タスクがシステムによって終了される原因になることがあります。
+<span data-ttu-id="4a9d6-155">バックグラウンド タスクを有効な状態に維持するために、アプリでは **Run** メソッドから [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) を要求し、タスク インスタンスが [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) イベントまたは [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) イベントを受け取るときに [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-155">To keep the background task alive, your app must request a [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) from within the **Run** method and call [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) when the task instance receives the [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) or [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) events.</span></span> <span data-ttu-id="4a9d6-156">**Run** メソッドではループ処理または待機を行わないでください。リソースが消費され、アプリのバックグラウンド タスクがシステムによって終了される原因になることがあります。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-156">Do not loop or wait in the **Run** method because this consumes resources and may cause your app's background task to be terminated by the system.</span></span>
 
-**Run** メソッドが完了し、遅延が要求されない場合、バックグラウンド タスクは **Completed** イベントを取得します。 場合によっては、アプリで **Canceled** イベントを取得したときに、その後に **Completed** イベントが続くことがあります。 タスクでは、**Run** の実行中に **Canceled** イベントを受け取ることがあるため、このような同時実行の可能性に必ず対処してください。
+<span data-ttu-id="4a9d6-157">**Run** メソッドが完了し、遅延が要求されない場合、バックグラウンド タスクは **Completed** イベントを取得します。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-157">Your background task gets the **Completed** event when the **Run** method is completed and deferral is not requested.</span></span> <span data-ttu-id="4a9d6-158">場合によっては、アプリで **Canceled** イベントを取得したときに、その後に **Completed** イベントが続くことがあります。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-158">In some cases, when your app gets the **Canceled** event, it can be also followed by the **Completed** event.</span></span> <span data-ttu-id="4a9d6-159">タスクでは、**Run** の実行中に **Canceled** イベントを受け取ることがあるため、このような同時実行の可能性に必ず対処してください。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-159">Your task may receive a **Canceled** event while **Run** is executing, so be sure to manage this potential concurrence.</span></span>
 
-バックグラウンド タスクが取り消される状況には、次のような場合があります。
+<span data-ttu-id="4a9d6-160">バックグラウンド タスクが取り消される状況には、次のような場合があります。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-160">Situations in which the background task can be cancelled include:</span></span>
 
--   専用サブポリシーが適用されるシステムで、オーディオ再生機能を備えた新しいアプリが起動した場合。 後の「[バックグラウンド オーディオ タスクの有効期間に関するシステム ポリシー](#system-policies-for-background-audio-task-lifetime)」をご覧ください。
+-   <span data-ttu-id="4a9d6-161">専用サブポリシーが適用されるシステムで、オーディオ再生機能を備えた新しいアプリが起動した場合。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-161">A new app with audio playback capabilities starts on systems that enforce the exclusivity sub-policy.</span></span> <span data-ttu-id="4a9d6-162">後の「[バックグラウンド オーディオ タスクの有効期間に関するシステム ポリシー](#system-policies-for-background-audio-task-lifetime)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-162">See the [System policies for background audio task lifetime](#system-policies-for-background-audio-task-lifetime) section below.</span></span>
 
--   バックグラウンド タスクが起動したが、音楽はまだ再生されず、フォアグラウンド アプリが中断された場合。
+-   <span data-ttu-id="4a9d6-163">バックグラウンド タスクが起動したが、音楽はまだ再生されず、フォアグラウンド アプリが中断された場合。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-163">A background task has been launched but music is not yet playing, and then the foreground app is suspended.</span></span>
 
--   他のメディアの割り込み (着信通話や VoIP 通話など)。
+-   <span data-ttu-id="4a9d6-164">他のメディアの割り込み (着信通話や VoIP 通話など)。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-164">Other media interruptions, such as incoming phone calls or VoIP calls.</span></span>
 
-バックグラウンド タスクが予告なしに終了される状況には、次のような場合があります。
+<span data-ttu-id="4a9d6-165">バックグラウンド タスクが予告なしに終了される状況には、次のような場合があります。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-165">Situations in which the background task can be terminated without notice include:</span></span>
 
--   VoIP 通話の着信があるが、バックグラウンド タスクを存続させるための十分なメモリがシステムにない場合。
+-   <span data-ttu-id="4a9d6-166">VoIP 通話の着信があるが、バックグラウンド タスクを存続させるための十分なメモリがシステムにない場合。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-166">A VoIP call comes in and there is not enough available memory on the system to keep the background task alive.</span></span>
 
--   リソース ポリシーの違反が発生した場合。
+-   <span data-ttu-id="4a9d6-167">リソース ポリシーの違反が発生した場合。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-167">A resource policy is violated.</span></span>
 
--   タスクの取り消しまたは完了が適切に終わらない場合。
+-   <span data-ttu-id="4a9d6-168">タスクの取り消しまたは完了が適切に終わらない場合。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-168">Task cancellation or completion does not end gracefully.</span></span>
 
-## <a name="system-policies-for-background-audio-task-lifetime"></a>バックグラウンド オーディオ タスクの有効期間に関するシステム ポリシー
+## <a name="system-policies-for-background-audio-task-lifetime"></a><span data-ttu-id="4a9d6-169">バックグラウンド オーディオ タスクの有効期間に関するシステム ポリシー</span><span class="sxs-lookup"><span data-stu-id="4a9d6-169">System policies for background audio task lifetime</span></span>
 
-バックグラウンド オーディオ タスクの有効期間をシステムでどのように管理するかを決定するには、次のポリシーが役立ちます。
+<span data-ttu-id="4a9d6-170">バックグラウンド オーディオ タスクの有効期間をシステムでどのように管理するかを決定するには、次のポリシーが役立ちます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-170">The following policies help determine how the system manages the lifetime of background audio tasks.</span></span>
 
-### <a name="exclusivity"></a>Exclusivity (排他)
+### <a name="exclusivity"></a><span data-ttu-id="4a9d6-171">Exclusivity (排他)</span><span class="sxs-lookup"><span data-stu-id="4a9d6-171">Exclusivity</span></span>
 
-このサブポリシーが有効であれば、バックグラウンド オーディオ タスクの数が常に 1 件以内に制限されます。 モバイルやその他の非デスクトップ SKU で有効に設定されます。
+<span data-ttu-id="4a9d6-172">このサブポリシーが有効であれば、バックグラウンド オーディオ タスクの数が常に 1 件以内に制限されます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-172">If enabled, this sub-policy limits the number of background audio tasks to be at most 1 at any given time.</span></span> <span data-ttu-id="4a9d6-173">モバイルやその他の非デスクトップ SKU で有効に設定されます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-173">It is enabled on Mobile and other non-Desktop SKUs.</span></span>
 
-### <a name="inactivity-timeout"></a>無通信タイムアウト
+### <a name="inactivity-timeout"></a><span data-ttu-id="4a9d6-174">無通信タイムアウト</span><span class="sxs-lookup"><span data-stu-id="4a9d6-174">Inactivity Timeout</span></span>
 
-リソースの制約により、システムは、非アクティブな状態が一定期間続いた後にバックグラウンド タスクを終了する可能性があります。
+<span data-ttu-id="4a9d6-175">リソースの制約により、システムは、非アクティブな状態が一定期間続いた後にバックグラウンド タスクを終了する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-175">Due to resource constraints, the system may terminate your background task after a period of inactivity.</span></span>
 
-バックグラウンド タスクは、以下の条件が満たされた場合に "非アクティブ" と見なされます。
+<span data-ttu-id="4a9d6-176">バックグラウンド タスクは、以下の条件が満たされた場合に "非アクティブ" と見なされます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-176">A background task is considered “inactive” if both of the following conditions are met:</span></span>
 
--   フォアグラウンド アプリが表示されていない (中断または終了済み)。
+-   <span data-ttu-id="4a9d6-177">フォアグラウンド アプリが表示されていない (中断または終了済み)。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-177">The foreground app is not visible (it is suspended or terminated).</span></span>
 
--   バックグラウンドのメディア プレーヤーが再生中の状態ではない。
+-   <span data-ttu-id="4a9d6-178">バックグラウンドのメディア プレーヤーが再生中の状態ではない。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-178">The background media player is not in the playing state.</span></span>
 
-両方の条件が満たされている場合、バックグラウンド メディアのシステム ポリシーは、タイマーを開始します。 タイマーの有効期限が切れたときにどちらの条件にも変化がない場合、バックグラウンド メディアのシステム ポリシーによってバックグラウンド タスクが終了されます。
+<span data-ttu-id="4a9d6-179">両方の条件が満たされている場合、バックグラウンド メディアのシステム ポリシーは、タイマーを開始します。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-179">If both of these conditions are satisfied, the background media system policy will start a timer.</span></span> <span data-ttu-id="4a9d6-180">タイマーの有効期限が切れたときにどちらの条件にも変化がない場合、バックグラウンド メディアのシステム ポリシーによってバックグラウンド タスクが終了されます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-180">If neither condition has changed when the timer expires, the background media system policy will terminate the background task.</span></span>
 
-### <a name="shared-lifetime"></a>Shared Lifetime (共有の有効期間)
+### <a name="shared-lifetime"></a><span data-ttu-id="4a9d6-181">Shared Lifetime (共有の有効期間)</span><span class="sxs-lookup"><span data-stu-id="4a9d6-181">Shared Lifetime</span></span>
 
-このサブポリシーが有効であれば、バックグラウンド タスクがフォアグラウンド タスクの有効期間に依存するように強制されます。 ユーザーまたはシステムによってフォアグラウンド タスクがシャットダウンされると、バックグラウンド タスクもシャットダウンされます。
+<span data-ttu-id="4a9d6-182">このサブポリシーが有効であれば、バックグラウンド タスクがフォアグラウンド タスクの有効期間に依存するように強制されます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-182">If enabled, this sub-policy forces the background task to be dependent on the lifetime of the foreground task.</span></span> <span data-ttu-id="4a9d6-183">ユーザーまたはシステムによってフォアグラウンド タスクがシャットダウンされると、バックグラウンド タスクもシャットダウンされます。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-183">If the foreground task is shut down, either by the user or the system, the background task will also shut down.</span></span>
 
-ただし、フォアグラウンドはバックグラウンドに依存しません。 バックグラウンド タスクがシャットダウンしても、これによってフォアグラウンド タスクがシャットダウンされるわけではありません。
+<span data-ttu-id="4a9d6-184">ただし、フォアグラウンドはバックグラウンドに依存しません。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-184">However, note that this does not mean that the foreground is dependent on the background.</span></span> <span data-ttu-id="4a9d6-185">バックグラウンド タスクがシャットダウンしても、これによってフォアグラウンド タスクがシャットダウンされるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-185">If the background task is shut down, this does not force the foreground task to shut down.</span></span>
 
-次の表は、デバイスの種類によって適用されるポリシーを示します。
+<span data-ttu-id="4a9d6-186">次の表は、デバイスの種類によって適用されるポリシーを示します。</span><span class="sxs-lookup"><span data-stu-id="4a9d6-186">The following table lists the which policies are enforced on which device types.</span></span>
 
-| サブポリシー             | デスクトップ  | モバイル   | その他    |
+| <span data-ttu-id="4a9d6-187">サブポリシー</span><span class="sxs-lookup"><span data-stu-id="4a9d6-187">Sub-policy</span></span>             | <span data-ttu-id="4a9d6-188">デスクトップ</span><span class="sxs-lookup"><span data-stu-id="4a9d6-188">Desktop</span></span>  | <span data-ttu-id="4a9d6-189">モバイル</span><span class="sxs-lookup"><span data-stu-id="4a9d6-189">Mobile</span></span>   | <span data-ttu-id="4a9d6-190">その他</span><span class="sxs-lookup"><span data-stu-id="4a9d6-190">Other</span></span>    |
 |------------------------|----------|----------|----------|
-| **Exclusivity (排他)**        | 無効 | 有効  | 有効  |
-| **無通信タイムアウト** | 無効 | 有効  | 無効 |
-| **Shared Lifetime (共有の有効期間)**    | 有効  | 無効 | 無効 |
+| **<span data-ttu-id="4a9d6-191">Exclusivity (排他)</span><span class="sxs-lookup"><span data-stu-id="4a9d6-191">Exclusivity</span></span>**        | <span data-ttu-id="4a9d6-192">無効</span><span class="sxs-lookup"><span data-stu-id="4a9d6-192">Disabled</span></span> | <span data-ttu-id="4a9d6-193">有効</span><span class="sxs-lookup"><span data-stu-id="4a9d6-193">Enabled</span></span>  | <span data-ttu-id="4a9d6-194">有効</span><span class="sxs-lookup"><span data-stu-id="4a9d6-194">Enabled</span></span>  |
+| **<span data-ttu-id="4a9d6-195">無通信タイムアウト</span><span class="sxs-lookup"><span data-stu-id="4a9d6-195">Inactivity Timeout</span></span>** | <span data-ttu-id="4a9d6-196">無効</span><span class="sxs-lookup"><span data-stu-id="4a9d6-196">Disabled</span></span> | <span data-ttu-id="4a9d6-197">有効</span><span class="sxs-lookup"><span data-stu-id="4a9d6-197">Enabled</span></span>  | <span data-ttu-id="4a9d6-198">無効</span><span class="sxs-lookup"><span data-stu-id="4a9d6-198">Disabled</span></span> |
+| **<span data-ttu-id="4a9d6-199">Shared Lifetime (共有の有効期間)</span><span class="sxs-lookup"><span data-stu-id="4a9d6-199">Shared Lifetime</span></span>**    | <span data-ttu-id="4a9d6-200">有効</span><span class="sxs-lookup"><span data-stu-id="4a9d6-200">Enabled</span></span>  | <span data-ttu-id="4a9d6-201">無効</span><span class="sxs-lookup"><span data-stu-id="4a9d6-201">Disabled</span></span> | <span data-ttu-id="4a9d6-202">無効</span><span class="sxs-lookup"><span data-stu-id="4a9d6-202">Disabled</span></span> |
 
 
  
 
  
-
 
 
 
