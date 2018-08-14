@@ -1,8 +1,8 @@
 ---
 author: drewbatgit
 ms.assetid: c43d4af3-9a1a-4eae-a137-1267c293c1b5
-description: "この記事では、モバイル デバイス上にのみある特殊カメラの UI 機能を活用する方法を示します。"
-title: "モバイル デバイスのカメラ UI の機能"
+description: この記事では、モバイル デバイス上にのみある特殊カメラの UI 機能を活用する方法を示します。
+title: モバイル デバイスのカメラ UI の機能
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,9 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 7b9db18d83c9d4811c446f90c40ff3e0044dccf2
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.locfileid: "243039"
 ---
 #<a name="camera-ui-features-for-mobile-devices"></a>モバイル デバイスのカメラ UI の機能
 
