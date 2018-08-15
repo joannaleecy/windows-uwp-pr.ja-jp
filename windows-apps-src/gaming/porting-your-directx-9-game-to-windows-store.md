@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: fefb50f508d2c211cf764f10f2f86216d9bf42c1
-ms.sourcegitcommit: 81c4c44c42c629a7ad5a82abdc2f4bbd6515f314
+ms.sourcegitcommit: be5b71a8ec7b686d5f93d56d10cb9a50c3c5bb4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/14/2018
