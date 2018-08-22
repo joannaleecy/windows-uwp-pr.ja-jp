@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、プロジェクション、処理、イベント、デリゲート
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cf3c87411bb6d8eb5886e7205f96c466d707220
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: a29c095e49b49baa63bd547c0bb928ad7f78aa86
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976490"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794643"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) でのデリゲートを使用したイベントの処理
 このトピックでは、C++/WinRT を使用したイベント処理デリゲートの登録方法と取り消し方法について説明します。 標準的な C++ 関数のようなオブジェクトを使用してイベントを処理できます。
@@ -122,7 +122,7 @@ private:
 
 上の例のような強参照の代わりに、弱参照をボタンに格納することができます (「[C++/WinRT の弱参照](weak-references.md)」を参照してください)。
 
-または、デリゲートを登録する場合、**winrt::auto_revoke** (型 [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t) の値) を指定して (**winrt::event_revoker** 型の) イベント リボーカーを要求できます。 イベント リボーカーにより、イベント ソース (イベントを発生させるオブジェクト) への弱参照が保持されます。 **event_revoker::revoke** メンバー関数を呼び出して手動で取り消すことができますが、イベント リボーカーは参照が範囲外になったときに自動的にその関数自体を呼び出します。 **revoke** 関数は、イベント ソースがまだ存在するかどうかを確認し、存在する場合は、デリケートを取り消します。 次の例では、イベント ソースを格納する必要がないため、デストラクターは必要ありません。
+または、代理人を登録すると、イベント revoker (の種類の[**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)) を要求する**winrt::auto_revoke** (これが型[**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)の値) を指定できます。 イベント revoker のイベントのソース (イベントを発生させるオブジェクト) に弱い参照を保持します。 **event_revoker::revoke** メンバー関数を呼び出して手動で取り消すことができますが、イベント リボーカーは参照が範囲外になったときに自動的にその関数自体を呼び出します。 **revoke** 関数は、イベント ソースがまだ存在するかどうかを確認し、存在する場合は、デリケートを取り消します。 次の例では、イベント ソースを格納する必要がないため、デストラクターは必要ありません。
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -188,7 +188,7 @@ void ProcessFeedAsync()
     });
     
     // or (but this function must then be a coroutine and return IAsyncAction)
-    // SyndicationFeed syndicationFeed = co_await async_op_with_progress;
+    // SyndicationFeed syndicationFeed{ co_await async_op_with_progress };
 }
 ```
 

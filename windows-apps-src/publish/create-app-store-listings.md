@@ -4,18 +4,18 @@ Description: The Store listings section of the app submission process is where y
 title: アプリの Microsoft Store 登録情報の作成
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 04/30/2018
+ms.date: 06/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 登録情報, 説明, Microsoft Store ページ, リリース ノート, タイトル
-ms.localizationpriority: high
-ms.openlocfilehash: 871eb3cd8b8bdfd0cf12859dcb401df2158bf5b7
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816947"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795812"
 ---
 # <a name="create-app-store-listings"></a>アプリの Microsoft Store 登録情報の作成
 
@@ -42,12 +42,22 @@ ms.locfileid: "1816947"
 
 選択が終了したら **[保存]** をクリックして、申請の概要ページに戻ります。
 
-> [!NOTE]
-> パッケージでサポートしていない言語のストア登録情報を作成するときは、そのストア登録情報に表示する予約済みのアプリ名を指定する必要があります。その言語のパッケージが関連付けられておらず、名前を取得できないためです。 ここで選んだ名前は、この言語のストア登録情報にのみ適用され、ユーザーがアプリをインストールするときに表示される名前には影響しません。
+## <a name="add-and-edit-store-listing-info"></a>追加または編集するストアの情報を一覧表示
 
-ストア登録情報を編集するには、申請の概要ページで言語名をクリックします。
+店舗リストを編集するには、[送信の概要] ページから言語の名前を選択します。
 
 **[ストア登録情報]** ページの上部には、選択した言語の既定のストア登録情報に関連付けられたフィールドがあります。 以前の OS バージョン (Windows 8.x 以前、Windows Phone 8.x 以前) を対象とするパッケージがあり、指定された OS バージョンのユーザーに表示する別のスクリーン ショットまたは情報を含むプラットフォームに固有のストア登録情報を作成している場合を除き、これらのフィールドはすべてのユーザーに表示されます。 詳しくは、「[プラットフォーム固有のストア登録情報の作成](create-platform-specific-store-listings.md)」をご覧ください。
+
+## <a name="product-name"></a>Product name (製品名)
+
+このドロップダウン ボックスでは、(アプリの 1 つ以上の名前を予約がある) 場合、ストアの一覧で使用する名前を指定することができます。
+
+作業しているストア一覧と同じ言語でパッケージをアップロードする場合は、これらのパッケージで使用する名前が選択されます。 既に発行された後[、アプリの名前を変更](manage-app-names.md#rename-an-app-that-has-already-been-published)する必要がある場合は、新しい名前を使用するパッケージで新しい提出パッケージを作成するときに、別の予約されている名前は、ここを選択できます。
+
+言語のパッケージをアップロードしていない場合、作業していると 1 つ以上の名前を予約した、名を抽出するには、その言語で、関連するパッケージがないため、予約されているアプリの名前のいずれかを選択する必要があります。
+
+> [!NOTE]
+> 対象の言語で作業しているストアにのみ] を選択して、**製品名**が適用されます。 顧客には、アプリがインストールされるときに表示される名前には影響しません名前は、インストール パッケージのマニフェストからできます。 混乱しないように、各言語のパッケージとストアの一覧が同じ名前を使用することをお勧めします。
 
 ## <a name="description"></a>説明
 
@@ -91,8 +101,9 @@ ms.locfileid: "1816947"
 
 詳しくは、「[追加のアート資産](app-screenshots-and-images.md#additional-art-assets)」をご覧ください。
 
+<a id="supplemental-information" />
 
-## <a name="supplemental-information"></a>補足情報
+## <a name="supplemental-fields"></a>補足的なフィールド
 
 このセクションのフィールドはすべてオプションです。 以下の情報を確認し、申請でこの情報を提供する意味があるかどうかを判断してください。 特に、ほとんどの申請では**簡単な説明**をお勧めします。 他のフィールドは、さまざまなシナリオで製品の最適なエクスペリエンスを実現するのに役立つ場合があります。
 
@@ -123,7 +134,7 @@ Kinect やヘッドセットを使うときに Xbox One のオーディオ エ�
 
 ゲームの場合、簡単な説明は Xbox One のゲーム ハブの [情報] セクションにも表示されることがあります。
 
-このフィールドには 500 文字の制限があります。
+最適な結果を得るには、[270 文字を簡潔に説明を保持します。 フィールドには、500 文字数の上限が一部のビューで 270 最初の文字だけを (簡単な説明の残りの部分を表示するリンク) が表示されます。
 
 
 ### <a name="additional-system-requirements"></a>追加のシステム要件
@@ -155,7 +166,7 @@ Kinect やヘッドセットを使うときに Xbox One のオーディオ エ�
 
 ### <a name="additional-license-terms"></a>追加のライセンス条項
 
-「**標準アプリケーション ライセンス条項**」(「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」からリンクされています) の条項に基づいて、アプリのライセンスをユーザーに付与する場合は、このフィールドを空白にします。
+「**標準アプリケーション ライセンス条項**」(「[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」からリンクされています) の条項に基づいて、アプリのライセンスをユーザーに付与する場合は、このフィールドを空白にします。
 
 アプリのライセンス条項が「**標準アプリケーション ライセンス条項**」と異なる場合は、ここに入力します。
 

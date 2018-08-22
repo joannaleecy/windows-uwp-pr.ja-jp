@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 38d5bddf2883667954f17b927ae328f70c7507b7
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 842d26a2bb257dd182813832c5e6480237a9f220
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690178"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794513"
 ---
 # <a name="export-restrictions-on-cryptography"></a>暗号化に関する輸出制限の順守
 

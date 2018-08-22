@@ -4,38 +4,39 @@ title: ユニバーサル Windows プラットフォームを使用してコン�
 description: このトピックでは、コンソールウィンドウで実行される UWP アプリを記述する方法について説明します。
 keywords: console uwp
 ms.author: twhitney
-ms.date: 03/30/2018
+ms.date: 08/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 413f4db427557460c267370f477e16d84c8af29c
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: e4c1b1df8ad29635f38ae5b373685d3504a4eb60
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815537"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792532"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>ユニバーサル Windows プラットフォームを使用してコンソール アプリを作成する
 
-このトピックでは、C++ /WinRT または /CX ユニバーサル Windows プラットフォーム (UWP) コンソール アプリを作成する方法について説明します。
+このトピックを作成する方法について説明する[C + +/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)または C + +/CX どこからでも Windows プラットフォーム (UWP) コンソール アプリです。
 
-Windows 10 バージョン 1803 以降では、C++ /WinRT または /CX の UWP コンソール アプリを作成して、DOS や PowerShell などのコンソール ウィンドウで実行できるようになりました。 コンソール アプリはコンソール ウィンドウを使用して入力と出力を行い、**printf** や **getchar** などの UWP アプリで使用可能な Win32 API を使用できます。 Microsoft Store には、UWP コンソール アプリを公開することができます。 それらのアプリは、アプリのリストにエントリがあり、スタート メニューに固定することができるプライマリ タイルがあります。 UWP コンソール アプリは、スタート メニューから起動することができますが、通常はコマンドラインから起動します。
+Windows 10 で、バージョン 1803、開始可能 C + +/WinRT または C + +/CX UWP コンソール アプリ コンソール ウィンドウで、DOS または PowerShell コンソール ウィンドウなどを実行しています。 コンソール アプリでは、コンソール ウィンドウを使用して入力し、出力用と、 **printf**と**getchar**など、[どこからでも C ランタイム](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)関数を使用できます。 Microsoft Store には、UWP コンソール アプリを公開することができます。 それらのアプリは、アプリのリストにエントリがあり、スタート メニューに固定することができるプライマリ タイルがあります。 コマンドラインから起動する、通常は、[スタート] メニューから UWP コンソール アプリを起動できます。
 
-実際の動作を確認するには、UWP コンソール アプリの作成に関するこのビデオをご覧ください。
+操作のいずれかを表示するには、UWP コンソールのアプリを作成するに関するビデオを示します。
+
 > [!VIDEO https://www.youtube.com/embed/bwvfrguY20s]
 
 ## <a name="use-a-uwp-console-app-template"></a>UWP コンソール アプリ テンプレートを使用する 
 
-UWP コンソール アプリを作成するには、まず [Visual Studio Marketplace](https://aka.ms/E2nzbv) から入手できる**コンソール アプリ (ユニバーサル) プロジェクト テンプレート**をインストールします。 インストールされているテンプレートは、**[新しいプロジェクト]** > **[インストール]** > **[他の言語]** > **[Visual C++]** > **[Windows ユニバーサル]** で、**コンソール アプリ C++/CX (ユニバーサル Windows)** および **コンソール アプリ C++/WinRT (ユニバーサル Windows)** として使用できます。
+UWP コンソール アプリを作成するには、まず [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) から入手できる**コンソール アプリ (ユニバーサル) プロジェクト テンプレート**をインストールします。 インストールされているテンプレートを利用し、**新しいプロジェクト**の下で > **インストールされている** > **他の言語** > **Visual C** > **Windows ユニバーサル****コンソール アプリ C+ として +/WinRT (ユニバーサル Windows)** と**コンソール アプリ C + +/(どこからでも Windows) CX**します。
 
 ## <a name="add-your-code-to-main"></a>Main() にコードを追加します。
 
 テンプレートは **Program.cpp** を追加します。これには `main()` 関数が含まれています。 これは、UWP コンソール アプリで実行が開始される場所です。 `__argc` および `__argv` パラメーターでコマンドライン引数にアクセスします。 制御が `main()` から返ってくると、UWP コンソール アプリは終了します。
 
-**Program.cpp** の次の例は、**Console App C++ /WinRT** テンプレートによって追加されています。
+**Program.cpp**の次の例はによって追加されますが、**コンソール アプリ C+ +/WinRT**テンプレート。
 
-```cpp
+```cppwinrt
 #include "pch.h"
 
 using namespace winrt;
@@ -102,9 +103,9 @@ UWP コンソール アプリは、実行されているディレクトリ、お
 
 ## <a name="additional-considerations-for-uwp-console-apps"></a>UWP コンソール アプリに関するその他の考慮事項
 
-- C++ /WinRT および C++ /CX UWP アプリのみがコンソール アプリです。
+- のみ C + +/WinRT と C + +/CX UWP アプリ コンソール アプリがあります。
 - UWP コンソール アプリはデスクトップまたは IoT プロジェクト タイプをターゲットにする必要があります。
-- UWP コンソール アプリンはウィンドウを作成しない場合があります。 たとえば、ウィンドウを作成するため、MessageBox() は使用できません。
+- UWP コンソール アプリは、ウィンドウを作成できません。 使用できない MessageBox()、または Location()、何らかの理由で、ウィンドウを作成することがありますが、その他の API のようなことに同意したユーザーが求められます。
 - UWP コンソール アプリは、バックグラウンド タスクを消費したり、バックグラウンド タスクとして機能したりしない場合があります。
 - [コマンド ラインのアクティブ化](https://blogs.windows.com/buildingapps/2017/07/05/command-line-activation-universal-windows-apps/#5YJUzjBoXCL4MhAe.97) を除き、UWP コンソール アプリは、ファイルの関連付け、プロトコルの関連付けなどのアクティブ化をサポートしていません。
 - UWP コンソール アプリは複数インスタンスをサポートしていますが、[複数インスタンスのリダイレクト](multi-instance-uwp.md) はサポートしていません

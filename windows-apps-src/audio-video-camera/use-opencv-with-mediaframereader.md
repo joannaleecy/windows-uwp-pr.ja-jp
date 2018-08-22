@@ -10,16 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, OpenCV
 ms.localizationpriority: medium
-ms.openlocfilehash: d9c2ac6ad4de6dc67cc4c661e055ad43ecb143ec
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 43545f2a8e1965124560479d399df79d247c5f05
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692803"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2789807"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Open Source Computer Vision Library (OpenCV) と MediaFrameReader の使用
 
-この記事では、さまざまな画像処理アルゴリズムを提供するネイティブ コード ライブラリである Open Source Computer Vision Library (OpenCV) を、複数のソースから同時にメディア フレームを読み取ることができる [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) クラスと共に使用する方法について説明します。 この記事のコード例では、カラー センサーからフレームを取得し、OpenCV ライブラリを使用して各フレームをぼかして、処理された画像を XAML の **Image** コントロールに表示する方法を示します。
+この記事では、さまざまな画像処理アルゴリズムを提供するネイティブ コード ライブラリである Open Source Computer Vision Library (OpenCV) を、複数のソースから同時にメディア フレームを読み取ることができる [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) クラスと共に使用する方法について説明します。 この記事のコード例では、カラー センサーからフレームを取得し、OpenCV ライブラリを使用して各フレームをぼかして、処理された画像を XAML の **Image** コントロールに表示する方法を示します。 
+
+>[!NOTE]
+>OpenCV.Win.Core と OpenCV.Win.ImgProc は定期的に更新されていませんが、このページの説明に従って OpenCVHelper を作成することをお勧めします。
 
 この記事は、他の 2 つの記事の内容に基づいています。
 
@@ -29,7 +32,8 @@ ms.locfileid: "1692803"
 
 これらの記事に加えて、この記事で説明したシナリオの完全でエンド ツー エンドの実用的なサンプルを表示およびダウンロードするには、Windows ユニバーサル サンプル GitHub リポジトリにある[カメラ フレームと OpenCV のサンプル](https://go.microsoft.com/fwlink/?linkid=854003)をご覧ください。
 
-NuGet パッケージを使用して、UWP アプリ プロジェクトに OpenCV ライブラリを含めます。 この記事の例では、NuGet パッケージの OpenCV.Win.Core と OpenCV.Win.ImgProc を使用します。 記事「[OpenCV でのソフトウェア ビットマップの処理](process-software-bitmaps-with-opencv.md)」には、ソリューションにこれらのパッケージを追加するための手順も含まれています。 OpenCV を使った開発に関する情報については、[http://opencv.org](http://opencv.org) をご覧ください。
+初めにすばやく開発ことができます含めること OpenCV ライブラリ UWP アプリ プロジェクト内で NuGet パッケージを使用してがこれらのパッケージ可能性がありますので、OpenCV をダウンロードすることをお勧めストアにアプリを送信すると、アプリの certficication プロセス渡すされません。ライブラリでは、ソース コードし、アプリを提出する前にバイナリを自分で作成します。 OpenCV を使った開発に関する情報については、[http://opencv.org](http://opencv.org) をご覧ください。
+
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>OpenCVHelper ネイティブ Windows ランタイム コンポーネントを実装する
 「[OpenCV によるソフトウェア ビットマップの処理](process-software-bitmaps-with-opencv.md)」の手順に従って、OpenCV ヘルパー Windows ランタイム コンポーネントを作成し、UWP アプリのソリューションにコンポーネント プロジェクトへの参照を追加します。

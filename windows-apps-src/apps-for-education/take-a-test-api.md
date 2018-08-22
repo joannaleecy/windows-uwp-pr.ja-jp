@@ -4,26 +4,24 @@ title: テスト JavaScript API。
 author: PatrickFarley
 ms.author: pafarley
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-ms.date: 10/06/2017
+ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、uwp、教育機関向け
 ms.localizationpriority: medium
-ms.openlocfilehash: 43edadfba169ddae85818f8ef1dbd1e7f4adba64
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 38596ad12ac309db5dc60e4a5183eee9bf8c7b7c
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691361"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792586"
 ---
 # <a name="take-a-test-javascript-api"></a>テスト JavaScript API
 
-[テスト](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)は、重大な影響をもたらすテストに対応した、厳正なオンライン評価を提供するブラウザー ベースのアプリです。これにより、教育者はセキュリティ保護されたテスト環境を提供する方法ではなく、コンテンツの評価に集中することができます。 これを実現するには、任意の Web アプリケーションで利用できる JavaScript API を使用します。 テスト API は、重要な共通学力テストの [SBAC ブラウザー API 標準](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)に対応しています。
+[テストの実行](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)は高無制限テスト、ロックされたオンラインの評価を表示するブラウザー ベースの UWP アプリ教師評価に焦点を安全なテスト環境を提供する方法ではなくコンテンツに許可します。 これを実現するには、任意の Web アプリケーションで利用できる JavaScript API を使用します。 テスト API は、重要な共通学力テストの [SBAC ブラウザー API 標準](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)に対応しています。
 
-アプリ自体の詳細については、「[テスト アプリ技術リファレンス](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)」を参照してください。
-
-トラブルシューティングについては、「[イベント ビューアーを使用して、Microsoft テストをトラブルシューティングする](troubleshooting.md)」を参照してください。
+アプリ自体の詳細については、「[テスト アプリ技術リファレンス](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)」を参照してください。 トラブルシューティングについては、「[イベント ビューアーを使用して、Microsoft テストをトラブルシューティングする](troubleshooting.md)」を参照してください。
 
 ## <a name="reference-documentation"></a>リファレンス ドキュメント
 テスト API は、次の名前空間に存在します。 すべての API は、グローバルな `SecureBrowser` オブジェクトに依存する点に注意してください。
@@ -32,14 +30,11 @@ ms.locfileid: "1691361"
 |-----------|-------------|
 |[セキュリティ名前空間](#security-namespace)|テストのためにデバイスをロックダウンし、テスト環境を強化できるようにする API が含まれます。 |
 
-> [!NOTE]
-> 音声合成 (TTS) 名前空間は、Windows 10 バージョン 1709 以降で削除されました。 [W3C Speech Api](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html) の実装である [Microsoft Edge 音声合成 API](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) は、現在、音声合成の実装のための推奨されるソリューションです。
-
 ### <a name="security-namespace"></a>セキュリティ名前空間
 
-セキュリティ名前空間を使用すると、デバイスのロックダウン、ユーザー プロセスとシステム プロセスの一覧の確認、MAC および IP アドレスの取得、キャッシュされている Web リソースのクリアを行うことができます。
+セキュリティの名前空間を使用すると、デバイスをロックする、ユーザーとシステムのプロセスのリストを確認、MAC と IP アドレスを取得、キャッシュの web リソースをオフにできます。
 
-| 方法 | 説明   |
+| メソッド | 説明   |
 |--------|---------------|
 |[lockDown](#lockDown) | テストのためにデバイスをロックダウンします。 |
 |[isEnvironmentSecure](#isEnvironmentSecure) | ロックダウン コンテキストがデバイスにまだ適用されるかどうかを確認します。 |

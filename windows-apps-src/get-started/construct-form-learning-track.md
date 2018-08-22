@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: 概要, uwp, windows 10, 学習トラック, レイアウト, フォーム
 ms.localizationpriority: medium
-ms.openlocfilehash: 20146c8a1bae92a46fc8cf878acd4d2dc5d2fb1e
-ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
-ms.translationtype: HT
+ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "1992098"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795454"
 ---
 # <a name="create-and-customize-a-form"></a>フォームを作成してカスタマイズする
 
@@ -48,9 +48,9 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 ## <a name="what-goes-in-a-form"></a>フォームに含めるもの
 
-各種の [XAML コントロール](../design/controls-and-patterns/controls-and-events-intro.md) を使用してフォームに入力する必要があります。 XAML コントロールは使い慣れているかもしれませんが、思い出す必要がある場合は、自由に目を通してください。 特に、ユーザーがテキストを入力するか、または値の一覧から選択できるようにするコントロールが必要になります。 これは追加することができる基本的なオプションの一覧です。オプションについてすべて読む必要はありません。オプションの外観やしくみを理解するために十分な情報が記載されています。
+各種の [XAML コントロール](../design/controls-and-patterns/controls-and-events-intro.md) を使用してフォームに入力する必要があります。 XAML コントロールは使い慣れているかもしれませんが、思い出す必要がある場合は、自由に目を通してください。 特に、ユーザーがテキストを入力するか、または値の一覧から選択できるようにするコントロールが必要になります。 これは、基本的なリストを追加するオプションの – については、すべてのアイテムだけで、外観し、動作を理解するために十分なを読む必要はありません。
 
-* [TextBox](../design/controls-and-patterns/text-box.md) では、ユーザーがアプリにテキストを入力できます。
+* [テキスト ボックス](../design/controls-and-patterns/text-box.md)には、アプリに入力した文字ことができます。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) では、ユーザーが 2 つのオプションから選択できます。
 * [DatePicker](../design/controls-and-patterns/date-picker.md) では、ユーザーが日付値を選択できます。
 * [TimePicker](../design/controls-and-patterns/time-picker.md) では、ユーザーが時刻値を選択できます。
@@ -71,18 +71,18 @@ UWP には、アプリに追加して構成することができる明示的な�
         <TextBox x:Name="Address" Header="Address" PlaceholderText="Address" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <TextBox x:Name="Address2" Margin="0,24,0,0" PlaceholderText="Address 2" HorizontalAlignment="Left" />
             <RelativePanel>
-                <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0"HorizontalAlignment="Left" />
+                <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0" HorizontalAlignment="Left" />
                 <ComboBox x:Name="State" PlaceholderText="State" Margin="24,24,0,0" RelativePanel.RightOf="City">
                     <!--List of valid states-->
                 </ComboBox>
             </RelativePanel>
     </StackPanel>
-    <StackPanel x:Name="Associate" Margin="20" RelativePanel.RightOf="Customer">
+    <StackPanel x:Name="Associate" Margin="20" RelativePanel.Below="Customer">
         <TextBox x:Name="AssociateName" Header= "Associate" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <DatePicker x:Name="TargetInstallDate" Header="Target install Date" HorizontalAlignment="Left" Margin="0,24,0,0"></DatePicker>
         <TimePicker x:Name="InstallTime" Header="Install Time" HorizontalAlignment="Left" Margin="0,24,0,0"></TimePicker>
     </StackPanel>
-    <StackPanel x:Name="Save" Orientation="Horizontal" RelativePanel.Below="Customer">
+    <StackPanel x:Name="Save" Orientation="Horizontal" RelativePanel.Below="Associate">
         <Button Content="Save" Margin="24" />
         <Button Content="Cancel" Margin="24" />
     </StackPanel>
@@ -110,9 +110,9 @@ UWP には、アプリに追加して構成することができる明示的な�
             </VisualState.StateTriggers>
 
             <VisualState.Setters>
-                <Setter Target="Associate.(RelativePanel.RightOf)" Value=""/>
-                <Setter Target="Associate.(RelativePanel.Below)" Value="Customer"/>
-                <Setter Target="Save.(RelativePanel.Below)" Value="Associate"/>
+                <Setter Target="Associate.(RelativePanel.RightOf)" Value="Customer"/>
+                <Setter Target="Associate.(RelativePanel.Below)" Value=""/>
+                <Setter Target="Save.(RelativePanel.Below)" Value="Customer"/>
             </VisualState.Setters>
         </VisualState>
     </VisualStateGroup>
@@ -136,7 +136,7 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 ## <a name="going-further"></a>追加情報
 
-ここではフォームを作成しましたが、レイアウトとコントロールの概念は、作成する可能性のあるすべての XAML UI で適用可能です。 リンクしたドキュメントに自由に戻って自分のフォームを試し、新しい UI 機能を追加して、さらにユーザー エクスペリエンスを改良してください。 より詳細なレイアウト機能の手順を説明したガイダンスが必要な場合は、「[アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)」を参照してください。
+ここではフォームを作成しましたが、レイアウトとコントロールの概念は、作成する可能性のあるすべての XAML UI で適用可能です。 自由にすると、リンクしたここでは、フォームがある場合は、新しい UI 機能を追加して、ユーザー エクスペリエンスを絞り込む試してみるとドキュメントに戻る。 詳細なレイアウト機能を通じてのステップ バイ ステップ ガイドを設定する場合、[適応レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)を参照してください。
 
 また、フォームは真空に存在する必要はありません。一歩進んで、自分のフォームを[マスター/詳細パターン](../design/controls-and-patterns/master-details.md)または[ピボット コントロール](../design/controls-and-patterns/tabs-pivot.md)に組み込むことができます。 または、自分のフォームで分離コードを使用する場合は、[イベントの概要](../xaml-platform/events-and-routed-events-overview.md)を参照して作業を開始することをお勧めします。
 

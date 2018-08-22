@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a175ad48255c0179335ce9204f51a0a62fd2b4f3
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: 0b45196a83edf45a69f6b79ab82542cef6817703
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707223"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795168"
 ---
 # <a name="responsive-layouts-with-xaml"></a>XAML でのレスポンシブ レイアウト
 
@@ -98,7 +98,8 @@ UI で自動サイズ変更を使用する場合でも、要素のサイズに�
 
 コードまたは表示状態で、要素の Visibility プロパティを変更できます。 要素の Visibility が変更されると、そのすべての子要素も変更されます。 1 つのパネルを表示して別のパネルを折りたたむことによって、UI のセクションを置き換えることができます。
 
-> **ヒント**&nbsp;&nbsp;UI に既定で **Collapsed** である要素がある場合、要素が表示されていなくても、オブジェクトは起動時に作成されます。 これらの要素の読み込みを表示されたときまで遅延するには、**x:DeferLoadStrategy 属性**を "Lazy" に設定します。 これにより起動時のパフォーマンスが向上することがあります。 詳しくは、「[x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)」をご覧ください。
+> [!Tip]
+> 既定で**折りたたむ**には、UI の要素がある場合は、これらが表示されない場合でもも、起動時に作成します。 これらの要素の読み込みを表示されたときまで遅延するには、**x:DeferLoadStrategy 属性**を "Lazy" に設定します。 これにより起動時のパフォーマンスが向上することがあります。 詳しくは、「[x:DeferLoadStrategy 属性](../../xaml-platform/x-deferloadstrategy-attribute.md)」をご覧ください。
 
 ### <a name="style-resources"></a>スタイル リソース
 
@@ -138,7 +139,7 @@ XAML フレームワークで提供されるパネル コントロールの主�
 ここでは、[**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstategroup.aspx) に 2 つの VisualState の定義が含まれています。 最初の `DefaultState` は空です。 これが適用される場合、XAML ページで定義されている値が適用されます。 2 番目の `WideState` は、[**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) の [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.displaymode.aspx) プロパティを **Inline** に変更し、ウィンドウを開きます。 この状態は、ウィンドウの幅が 640 有効ピクセルより大きい場合に、SizeChanged イベント ハンドラーで適用されます。
 
 > [!NOTE]
-先に進む前に知っておくべきですが、アプリが実行されている特定のデバイスをアプリが検出する手段は、Windows では提供されていません。 アプリが実行されているデバイス ファミリー (モバイル、デスクトップなど)、効果的な解像度、およびアプリが利用できる画面領域の量 (アプリのウィンドウのサイズ) は伝えることができます。 [画面のサイズとブレークポイント](screen-sizes-and-breakpoints-for-responsive-design.md)の表示状態を定義することをお勧めします。
+> 先に進む前に知っておくべきですが、アプリが実行されている特定のデバイスをアプリが検出する手段は、Windows では提供されていません。 アプリが実行されているデバイス ファミリー (モバイル、デスクトップなど)、効果的な解像度、およびアプリが利用できる画面領域の量 (アプリのウィンドウのサイズ) は伝えることができます。 [画面のサイズとブレークポイント](screen-sizes-and-breakpoints-for-responsive-design.md)の表示状態を定義することをお勧めします。
 
 
 ```xaml
@@ -234,7 +235,8 @@ Windows 10 以降では、ここで示す簡素化された [**Setter**](https:/
 </Page>
 ```
 
-> **重要**&nbsp;&nbsp;前の例では、**Grid** 要素に対して VisualStateManager.VisualStateGroups 添付プロパティが設定されています。 StateTriggers を使う場合は、トリガーを自動的に有効にするために、常にルートの最初の子に VisualStateGroups が添付されていることを確認します  (ここでは、**Grid** がルートの **Page** 要素の最初の子です)。
+> [!Important]
+> 前の例では、接続されている VisualStateManager.VisualStateGroups プロパティが**グリッド**要素で設定します。 StateTriggers を使う場合は、トリガーを自動的に有効にするために、常にルートの最初の子に VisualStateGroups が添付されていることを確認します  (ここでは、**Grid** がルートの **Page** 要素の最初の子です)。
 
 ### <a name="attached-property-syntax"></a>添付プロパティの構文
 

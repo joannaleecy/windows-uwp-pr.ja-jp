@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-description: ツリー ビューのコード例を使用して、展開可能なツリーを作成します。
+description: 拡大できるツリー ビューを作成するには、ItemsSource を階層的なデータ ソースにバインドするまたは作成して TreeViewNode オブジェクトを自分で管理します。
 title: ツリー ビュー
 label: Tree view
 template: detail.hbs
@@ -13,24 +13,36 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 41e17d299e9bac34e58f3c8ffdffecff19ddac18
-ms.sourcegitcommit: e020e9a4d947368a68e4eeba1eea65e9b3a725af
-ms.translationtype: HT
+ms.openlocfilehash: 20de58d13c4ace6b71ec952dc88cd59d1ab6114f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2018
-ms.locfileid: "1924395"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794860"
 ---
 # <a name="treeview"></a>TreeView
 
-XAML TreeView コントロールを使用すると、階層リストが有効になり、入れ子になった項目を含むノードを展開したり、折りたたんだりすることができるようになります。 フォルダー構造や入れ子になった関係を UI で視覚的に示すために使用できます。
+> [!IMPORTANT]
+> この記事では、まだリリースされていない機能について説明しています。この機能は、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。 プレビュー機能[最新の Windows 10 の内部のプレビュー ビルドと SDK](https://insider.windows.com/for-developers/) 」または「 [Windows UI ライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)必要があります。
 
-> **重要な API**: [TreeView クラス](/uwp/api/windows.ui.xaml.controls.treeview)、[TreeViewNode クラス](/uwp/api/windows.ui.xaml.controls.treeviewnode)
+XAML TreeView コントロールを使用すると、階層リストが有効になり、入れ子になった項目を含むノードを展開したり、折りたたんだりすることができるようになります。 フォルダー構造や入れ子になった関係を UI で視覚的に示すために使用できます。
 
 TreeView API は、以下の機能をサポートします。
 
 - N レベルの入れ子
-- ノードの展開/折りたたみ
 - 1 つまたは複数のノードの選択
+- (プレビュー版)ツリー ビューで TreeViewItem ItemsSource プロパティへのデータ バインド
+- (プレビュー版)ツリー ビューのアイテムのテンプレートのルートで、名前を付けて TreeViewItem
+- (プレビュー版)コンテンツを TreeViewItem 内の任意の型
+- (プレビュー版)ドラッグ アンド ドロップ ツリー ビューを
+
+| **Windows の UI ライブラリを取得します。** |
+| - |
+| このコントロールは、Windows UI ライブラリで、新しいコントロールと UWP アプリの UI の機能を含む NuGet パッケージの一部として含める。 インストール方法など、さらに詳しい情報は、 [Windows UI ライブラリの概要](https://docs.microsoft.com/uwp/toolkits/winui/)を参照してください。 |
+
+| **Platform Api** | **Windows UI ライブラリ Api** |
+| - | - |
+| [ツリー ビューのクラス](/uwp/api/windows.ui.xaml.controls.treeview)、 [TreeViewNode クラス](/uwp/api/windows.ui.xaml.controls.treeviewnode)、 [TreeView.ItemsSource プロパティ](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [ツリー ビューのクラス](/uwp/api/microsoft.ui.xaml.controls.treeview)、 [TreeViewNode クラス](/uwp/api/microsoft.ui.xaml.controls.treeviewnode)、 [TreeView.ItemsSource プロパティ](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
@@ -38,19 +50,42 @@ TreeView API は、以下の機能をサポートします。
 
 - 項目の入れ子になった関係を強調表示することが優先的な処理ではない場合は、ツリー ビューを使用しないでください。 ほとんどの演習用シナリオでは、標準的なリスト ビューが適しています
 
+## <a name="examples"></a>例
+
+<table>
+<th align="left">XAML コントロール ギャラリー<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリがインストールされている場合は、ここをクリックして<a href="xamlcontrolsgallery:/item/TreeView">アプリを開き、ツリー ビューの使用例を参照してください</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## <a name="treeview-ui"></a>TreeView UI
 
 ツリー ビューはインデントとアイコンを組み合わせて使用することで、フォルダー/親ノードとフォルダー以外の項目/子ノードとの間の入れ子になった関係を表します。 折りたたまれているノードでは右向きの山形記号を使用し、展開されているノードでは下向きの山形記号を使用します。
 
-![TreeView での山形記号アイコン](images/treeview_chevron.png)
+![TreeView での山形記号アイコン](images/treeview-simple.png)
 
 ツリー ビュー項目データ テンプレートにアイコンを含めてノードを表すことができます。 この場合、ディスク上のフォルダー構造などのリテラル フォルダーを表すノードに対してのみ、フォルダー アイコンのみを使用する必要があります。
 
-![TreeView で山形記号のアイコンとフォルダー アイコンの組み合わせ](images/treeview_chevron_folder.png)
+![TreeView で山形記号のアイコンとフォルダー アイコンの組み合わせ](images/treeview-icons.png)
 
 ## <a name="create-a-tree-view"></a>ツリー ビューの作成
 
-ツリー ビューを作成するには、[TreeView](/uwp/api/windows.ui.xaml.controls.treeview) コントロールと [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) オブジェクトの階層を使用します。 ノード階層を作成するには、TreeView コントロールの RootNodes コレクションに 1 つまたは複数のルート ノードを追加します。 各 TreeViewNode では、より多くのノードをその Children コレクションに追加することができます。 ツリー ビュー ノードは、必要な任意の深さまで入れ子にすることができます。
+ツリー ビューを作成するには、階層データ ソースに[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)を連結してまたはを作成して TreeViewNode オブジェクトを自分で管理します。
+
+ツリー ビューを作成するには、[TreeView](/uwp/api/windows.ui.xaml.controls.treeview) コントロールと [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) オブジェクトの階層を使用します。 ツリー ビューのコントロールの[RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes)コレクションに 1 つまたは複数のルート ノードを追加するには、ノードの階層を作成します。 各 TreeViewNode では、より多くのノードをその Children コレクションに追加することができます。 ツリー ビュー ノードは、必要な任意の深さまで入れ子にすることができます。
+
+Windows 内部プレビューから始めて、バインドできます階層データ ソースをツリー ビューのコンテンツを提供する[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)プロパティをリスト ビューの ItemsSource のと同様。 同様に、アイテムを表示するデータ テンプレートを提供する[ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (と省略可能な[ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) を使用します。
+
+> [!IMPORTANT]
+> ItemsSource は、TreeView.RootNodes をツリー ビューのコントロールにコンテンツを格納するための代替方法です。 同時に ItemsSource と RootNodes の両方を設定することはできません。 ItemsSource を使用して、ノードを作成した TreeView.RootNodes プロパティからアクセスできます。
 
 XAML で宣言された単純なツリー ビューの例を以下に示します。 通常は、コードにノードを追加しますが、ノードの階層を作成する方法を視覚化するうえで役立つため、XAML の階層をここに示します。
 
@@ -68,7 +103,40 @@ XAML で宣言された単純なツリー ビューの例を以下に示しま�
 </TreeView>
 ```
 
-ほとんどの場合、ツリー ビューにはデータ ソースのデータが表示されるため、通常はルート TreeView コントロールを XAML で宣言しますが、TreeViewNode オブジェクトをコードに追加します。
+ほとんどの場合、ツリー ビューでは、通常、ルート XAML では、ツリー ビューのコントロールの宣言は、コードまたはデータ バインドを使用して TreeViewNode オブジェクトを追加するために、データ ソースからデータが表示されます。
+
+### <a name="bind-to-a-hierarchical-data-source"></a>階層データ ソースにバインドします。
+
+データ バインドを使用して、ツリー ビューを作成するには、TreeView.ItemsSource プロパティを階層のコレクションを設定します。 [ItemTemplate] でプロパティを設定、子アイテムのコレクション TreeViewItem.ItemsSource します。
+
+```xaml
+<TreeView ItemsSource="{x:Bind DataSource}">
+    <TreeView.ItemTemplate>
+        <DataTemplate x:DataType="local:Item">
+            <TreeViewItem ItemsSource="{x:Bind Children}"
+                          Content="{x:Bind Name}"/>
+        </DataTemplate>
+    </TreeView.ItemTemplate>
+</TreeView>
+```
+
+_データ バインドを使用して、ツリー ビュー_の完全なコードの例」を参照してください。
+
+#### <a name="items-and-item-containers"></a>アイテムやアイテムのコンテナー
+
+これらの Api が、そのコンテナーからノードまたはデータのアイテムを取得できる TreeView.ItemsSource を使用している場合は、その逆します。
+
+| **[TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)** | |
+| - | - |
+| [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | 指定した TreeViewItem コンテナーには、データ アイテムを取得します。 |
+| [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | 指定されたデータ アイテムの TreeViewItem コンテナーを取得します。 |
+
+| **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
+| - | - |
+| [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | 指定した TreeViewItem コンテナー、TreeViewNode を取得します。 |
+| [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | 指定した TreeViewNode TreeViewItem コンテナーを取得します。 |
+
+### <a name="manage-tree-view-nodes"></a>ツリー ビュー ノードを管理します。
 
 このツリー ビューは、XAML で作成されたものと同じですが、ノードはコードで作成されています。
 
@@ -137,7 +205,67 @@ Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) を指定して、ツリー ビューでのデータ項目の表示方法を指定することができます。
 
 > [!NOTE]
-> Windows 10 バージョン 1803 では、コンテンツが文字列ではない場合は、TreeView コントロールを再テンプレート化し、カスタム ItemTemplate を指定する必要があります。 詳細については、この記事の終わりにある完全な例を参照してください。
+> Windows 10 バージョン 1803 では、コンテンツが文字列ではない場合は、TreeView コントロールを再テンプレート化し、カスタム ItemTemplate を指定する必要があります。 詳細については、この記事の終わりにある完全な例を参照してください。 以降のバージョンでは、 [TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)プロパティを設定します。
+
+### <a name="item-container-style"></a>項目コンテナー スタイル
+
+ItemsSource または RootNodes、各ノード – を表示するために使用する実際の要素を使用するかどうかは、「コンテナー」と呼ばれる – [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)オブジェクトします。 ツリー ビューを使用して、コンテナーのスタイルを設定する ItemContainerStyle または ItemContainerStyleSelector のプロパティ。
+
+### <a name="item-template-selectors"></a>アイテムのテンプレート セレクター
+
+項目の種類に基づいてツリー ビューのアイテムのデータをさまざまなテンプレートを設定することができます。 たとえば、ファイル エクスプ ローラー アプリケーションには、そのフォルダー、およびファイルを別の 1 つのデータのテンプレートを使用します。
+
+![フォルダーやファイルを別のデータのテンプレートを使用します。](images/treeview-icons.png)
+
+作成して、テンプレートのアイテム セレクターを使用する方法の例を示します。
+
+```xaml
+<Page.Resources>
+    <DataTemplate x:Key="FolderTemplate" x:DataType="local:ExplorerItem">
+        <TreeViewItem ItemsSource="{x:Bind Children}">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="20" Source="Assets/folder.png"/>
+                <TextBlock Text="{x:Bind Name}" />
+            </StackPanel>
+        </TreeViewItem>
+    </DataTemplate>
+
+    <DataTemplate x:Key="FileTemplate" x:DataType="local:ExplorerItem">
+        <TreeViewItem>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="20" Source="Assets/file.png"/>
+                <TextBlock Text="{Binding Name}"/>
+            </StackPanel>
+        </TreeViewItem>
+    </DataTemplate>
+
+    <local:ExplorerItemTemplateSelector
+            x:Key="ExplorerItemTemplateSelector"
+            FolderTemplate="{StaticResource FolderTemplate}"
+            FileTemplate="{StaticResource FileTemplate}" />
+</Page.Resources>
+
+<Grid>
+    <TreeView ItemsSource="{x:Bind DataSource}"
+              ItemTemplateSelector="{StaticResource ExplorerItemTemplateSelector}"/>
+</Grid>
+```
+
+```csharp
+public class ExplorerItemTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate FolderTemplate { get; set; }
+    public DataTemplate FileTemplate { get; set; }
+
+    protected override DataTemplate SelectTemplateCore(object item)
+    {
+        var explorerItem = (ExplorerItem)item;
+        if (explorerItem.Type == ExplorerItem.ExplorerItemType.Folder) return FolderTemplate;
+
+        return FileTemplate;
+    }
+}
+```
 
 ## <a name="interacting-with-a-tree-view"></a>ツリー ビューの操作
 
@@ -256,6 +384,10 @@ TreeView コントロールでは、単一選択と複数選択の両方がサ�
 
 選択を有効にすると、各ツリー ビュー ノードの横にあるチェック ボックスが表示され、選択した項目が強調表示されます。 ユーザーは、チェック ボックスを使用して項目を選択または選択解除できます。項目は引き続きクリックして呼び出すことができます。
 
+選択するか、親ノードの選択が解除されますが選択またはすべての子ノードの下の選択を解除します。 すべての場合は、いくつかが親ノードの下の子が選択されている、親ノードのチェック ボックスが表示される、中間 (黒い四角形で塗りつぶさ) します。
+
+![ツリー ビューで複数の選択](images/treeview-selection.png)
+
 選択したノードは、ツリー ビューの [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) コレクションに追加されます。 [SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall) メソッドを呼び出して、ツリー ビューですべてのノードを選択できます。
 
 > [!NOTE]
@@ -271,7 +403,7 @@ TreeView コントロールでは、単一選択と複数選択の両方がサ�
 
 ## <a name="code-examples"></a>コード例
 
-### <a name="tree-view-with-selection-enabled"></a>選択が有効になっているツリー ビュー
+### <a name="tree-view-using-xaml"></a>XAML を使用して、ツリー ビュー
 
 次の例は、XAML で 1 つのツリー ビュー構造を作成する方法を示しています。 ツリー ビューは、カテゴリに配置されており、ユーザーが選択できるアイスクリームのフレーバーとトッピングを示しています。 複数選択が有効になっており、ユーザーがボタンをクリックすると、SelectedItems がメイン アプリ UI に表示されます。
 
@@ -378,6 +510,122 @@ Private Sub SelectAllButton_Click(sender As Object, e As RoutedEventArgs)
         DessertTree.SelectAll()
     End If
 End Sub
+```
+
+### <a name="tree-view-using-data-binding"></a>データ バインドを使用して、ツリー ビュー
+
+この例では、前の例と同じツリー ビューを作成する方法を示します。 ただし、XAML でデータ階層の作成] ではなくデータがコードで作成した、ツリー ビューの ItemsSource プロパティにバインドされています。 (前の例に示すようにする] ボタンのイベント ハンドラー適用すると、このも)。
+
+```xaml
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="100">
+    <SplitView IsPaneOpen="True"
+               DisplayMode="Inline"
+               OpenPaneLength="296">
+        <SplitView.Pane>
+            <TreeView Name="DessertTree"
+                      SelectionMode="Multiple"
+                      ItemsSource="{x:Bind DataSource}">
+                <TreeView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Item">
+                        <TreeViewItem ItemsSource="{x:Bind Children}"
+                                      Content="{x:Bind Name}"/>
+                    </DataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </SplitView.Pane>
+
+        <StackPanel Grid.Column="1" Margin="12,0">
+            <Button Content="Select all" Click="SelectAllButton_Click"/>
+            <Button Content="Create order" Click="OrderButton_Click" Margin="0,12"/>
+            <TextBlock Text="Your flavor selections:" Style="{StaticResource CaptionTextBlockStyle}"/>
+            <TextBlock x:Name="FlavorList" Margin="0,0,0,12"/>
+            <TextBlock Text="Your topping selections:" Style="{StaticResource CaptionTextBlockStyle}"/>
+            <TextBlock x:Name="ToppingList"/>
+        </StackPanel>
+    </SplitView>
+</Grid>
+```
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    private ObservableCollection<Item> DataSource = new ObservableCollection<Item>();
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+        DataSource = GetDessertData();
+    }
+
+    private ObservableCollection<Item> GetDessertData()
+    {
+        var list = new ObservableCollection<Item>();
+        Item flavorsCategory = new Item()
+        {
+            Name = "Flavors",
+            Children =
+            {
+                new Item() { Name = "Vanilla" },
+                new Item() { Name = "Strawberry" },
+                new Item() { Name = "Chocolate" }
+            }
+        };
+        Item toppingsCategory = new Item()
+        {
+            Name = "Toppings",
+            Children =
+            {
+                new Item()
+                {
+                    Name = "Candy",
+                    Children =
+                    {
+                        new Item() { Name = "Chocolate" },
+                        new Item() { Name = "Mint" },
+                        new Item() { Name = "Sprinkles" }
+                    }
+                },
+                new Item()
+                {
+                    Name = "Fruits",
+                    Children =
+                    {
+                        new Item() { Name = "Mango" },
+                        new Item() { Name = "Peach" },
+                        new Item() { Name = "Kiwi" }
+                    }
+                },
+                new Item()
+                {
+                    Name = "Berries",
+                    Children =
+                    {
+                        new Item() { Name = "Strawberry" },
+                        new Item() { Name = "Blueberry" },
+                        new Item() { Name = "Blackberry" }
+                    }
+                }
+            }
+        };
+
+        list.Add(flavorsCategory);
+        list.Add(toppingsCategory);
+        return list;
+    }
+
+    // Button event handlers...
+}
+
+public class Item
+{
+    public string Name { get; set; }
+    public ObservableCollection<Item> Children { get; set; } = new ObservableCollection<Item>();
+
+    public override string ToString()
+    {
+        return Name;
+    }
+}
 ```
 
 ### <a name="pictures-and-music-library-tree-view"></a>画像やミュージック ライブラリのツリー ビュー

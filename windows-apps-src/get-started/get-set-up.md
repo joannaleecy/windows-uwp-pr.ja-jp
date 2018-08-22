@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.localizationpriority: high
-ms.openlocfilehash: 86603443aefe08ddf684e4dc8a2df8541074e0b4
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 378544282981c62d7a57f9abc3f666e8964b7117
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935662"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792643"
 ---
 # <a name="get-set-up"></a>準備
 

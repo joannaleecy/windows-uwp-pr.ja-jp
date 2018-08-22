@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
-ms.localizationpriority: high
-ms.openlocfilehash: daf18cb87360f6717c7ec33d95032343c8fa617e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 39b3ba05b06b6d484804999a935accc7223b5c60
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816787"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795516"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする
 
@@ -103,7 +103,7 @@ Windows 10 バージョン 1803 以降では、[TrySilentDownloadStorePackageUpd
 
 このコード例では、次のことを前提条件としています。
 * コード ファイルに **Windows.Services.Store** 名前空間と **System.Threading.Tasks** 名前空間を使うための **using** ステートメントがある。
-* アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。 [マルチ ユーザー アプリ](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) の場合は、[GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) メソッドの代わりに [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) メソッドを使用して、**StoreContext** オブジェクトを取得してください。
+* アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリである。 [マルチ ユーザー アプリ](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) の場合は、[GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) メソッドの代わりに [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) メソッドを使用して、**StoreContext** オブジェクトを取得してください。
 
 > [!NOTE]
 > この例のコードにより呼び出されている **IsNowAGoodTimeToRestartApp**、**RetryDownloadAndInstallLater**、**RetryInstallLater** の各メソッドは、アプリの設計の必要に応じて実装することを目的としたプレースホルダー メソッドです。

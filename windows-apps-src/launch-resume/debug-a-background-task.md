@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、uwp、タスクを背景します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 40b3893d7e661acedc004d1dfab8e4eedbcb0471
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "918642"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791273"
 ---
 # <a name="debug-a-background-task"></a>バックグラウンド タスクのデバッグ
 

@@ -7,15 +7,15 @@ ms.date: 12/6/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、uwp、セキュリティ
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 30a072ddc3489ca310875a6fc4a2d00902986277
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 2de5c969610aa6b4fa1a3af01af565d35854b5f2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674819"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792137"
 ---
 # <a name="web-account-manager"></a>Web アカウント マネージャー
 
@@ -73,7 +73,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-アプリを実行して "ログイン" ボタンをクリックすると、空のウィンドウが表示されます。 
+アプリを実行して「ログイン」ボタンをクリックすると、空のウィンドウが表示されます。 
 
 ![アカウント設定ウィンドウ](images/tb-1.png)
 
@@ -173,12 +173,13 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-この例では、_スコープ_ パラメーターに文字列 "wl.basic" を渡します。 スコープは、特定のユーザーの提供サービスから要求する情報の種類を表します。 スコープには、名前やメール アドレスなど、ユーザーの基本情報のみへのアクセス権を与えるものや、ユーザーの写真やメールの受信トレイなど、機密情報へのアクセス権を与えるものもあります。 一般的に、アプリではその機能を実行するために必要な最も制限の多いスコープが使われます。
-
-サービス プロバイダーからは、サービス プロバイダーのサービスで使うトークンを取得する場合に必要となるスコープについて示したドキュメントが提供されます。 
+この例では、_スコープ_ パラメーターに文字列 "wl.basic" を渡します。 スコープは、特定のユーザーの提供サービスから要求する情報の種類を表します。 スコープには、名前やメール アドレスなど、ユーザーの基本情報のみへのアクセス権を与えるものや、ユーザーの写真やメールの受信トレイなど、機密情報へのアクセス権を与えるものもあります。 一般的に、アプリではその機能を実行するために必要な最も制限の多いスコープが使われます。 サービス プロバイダーからは、サービス プロバイダーのサービスで使うトークンを取得する場合に必要となるスコープについて示したドキュメントが提供されます。 
 
 * Office 365 と Outlook.com のスコープについては、「[v2.0 認証エンドポイントを使用した Office 365 および Outlook.com の API の認証](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)」をご覧ください。 
 * OneDrive のスコープについては、「[OneDrive の認証とサインイン](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)」をご覧ください。 
+
+> [!TIP]
+> 必要に応じて、ログインのためのヒント (既定のメール アドレスを持つユーザー フィールドを挿入するには) またはサインイン エクスペリエンスに関連するその他の特殊なプロパティ、アプリを使用している場合は、 **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** プロパティのリストします。 システム キャッシュ内のアカウントの不一致が禁止されます web アカウントをキャッシュする場合に、プロパティを無視するようになります。
 
 企業向けのアプリを開発している場合は、Azure Active Directory (AAD) インスタンスに接続し、通常の MSA サービスではなく Microsoft Graph API を使用します。 このシナリオでは、次のコードを代わりに使います。 
 
@@ -248,7 +249,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 ## <a name="store-the-account-for-future-use"></a>将来の使用に備えてアカウントを保存する
 
-トークンはユーザーに関する情報を直ちに取得する場合に便利ですが、通常はさまざまな有効期限を持ちます。たとえば、MSA トークンは数時間のみ有効です。 ただし、トークンの有効期限が切れるたびに **AccountsSettingsPane** を再表示する必要はありません。 ユーザーが一度アプリを承認すると、将来使うためにユーザーのアカウント情報を保存できます。 
+トークンはユーザーに関する情報をすぐに取得するために便利ですが、通常はさまざまな有効期限を持ちます。たとえば、MSA トークンは数時間のみ有効です。 ただし、トークンの有効期限が切れるたびに **AccountsSettingsPane** を再表示する必要はありません。 ユーザーが一度アプリを承認すると、将来使うためにユーザーのアカウント情報を保存できます。 
 
 これを行うには、**[WebAccount](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount)** クラスを使います。 **WebAccount** は、トークンの要求で使ったメソッドと同じメソッドによって返されます。
 
@@ -331,7 +332,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-ウィンドウを表示せずにトークンを取得する方法は非常にシンプルです。トークンの有効期限切れに備えて、セッション間でトークンを更新する場合は、既存のトークンをキャッシュするのではなく、このプロセスを使ってください。
+通知なしでのトークンの取得は非常に単純なため、(トークンの有効期限がいつ切れても大丈夫なように) セッション間でのトークンの更新には、既存のトークンをキャッシュするのではなく、このプロセスを使います。
 
 > [!NOTE]
 > 上記の例は、基本的な成功と失敗のケースのみを扱っています。 アプリは特殊なシナリオ (ユーザーによってアプリのアクセス許可が無効にされた場合や、Windows からユーザーのアカウントが削除された場合など) も考慮し、適切に処理する必要があります。  

@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、uwp、3dprinting、3 d の印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: 3763f87bf41685d25fc2a332f7e0b735b879f999
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: ae573fe87e6821555509467336e9a425fb082811
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674659"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794693"
 ---
 # <a name="3d-printing-from-your-app"></a>アプリからの 3D 印刷
 
@@ -74,7 +74,8 @@ UI フィードバック用に **TextBlock** を追加します。
 [3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) アプリでは、一般的なほとんどの 3D 形式のファイルを開くことができ、それらを .3mf ファイル形式で保存することができます。 この例では、ファイルの種類が異なる場合に、簡単な解決策として、3D Builder アプリを開き、インポートしたデータを .3mf ファイルとして保存し再度読み込むようユーザーに求めます。
 
 > [!NOTE]  
-> 3D Builder には、ファイル形式の変換以外にも、モデルを編集したり色データを追加したりといった、印刷に固有の操作を行うための簡単なツールが用意されているため、多くの場合、3D 印刷を処理するアプリに統合するだけの価値があります。
+> 
+3D Builder には、ファイル形式の変換以外にも、モデルを編集したり色データを追加したりといった、印刷に固有の操作を行うための簡単なツールが用意されているため、多くの場合、3D 印刷を処理するアプリに統合するだけの価値があります。
 
 [!code-cs[FileCheck](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
 

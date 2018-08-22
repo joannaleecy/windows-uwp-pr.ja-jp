@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 76b216798347a50445e38b26dff04546ac1ae923
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: b9858be036732c2894ff3c009233e021b37da040
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689848"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794363"
 ---
 # <a name="security"></a>セキュリティ
 
@@ -42,8 +42,8 @@ Windows または UWP での開発が初めての場合は、最初に「[安全
 <tr><td><a href="smart-cards.md">スマート カード</a></td><td>このトピックでは、アプリでスマート カードを使ってユーザーをセキュリティで保護されたネットワーク サービスに接続する方法のほか、物理スマート カード リーダーにアクセスする方法、仮想スマート カードの作成方法、スマート カードとの通信方法、ユーザーの認証方法、ユーザーの PIN のリセット方法、スマート カードの取り外しや切断の方法などについて説明します。</td></tr>
 <tr><td><a href="share-certificates.md">アプリ間での証明書の共有</a></td><td>ユーザー ID とパスワードの組み合わせよりも安全な認証を必要とする UWP アプリでは、証明書を認証に使うことができます。 証明書認証は、ユーザーの認証時に高レベルの信頼性を提供します。 場合によっては、複数のアプリから複数のサービスのグループに対してユーザーを認証することがあります。 この記事では、1 つの証明書を使って複数のアプリを認証する方法と、セキュリティで保護された Web サービスにアクセスするための証明書をユーザーがインポートできる便利なコードを記述する方法について説明します。</td></tr>
 <tr><td><a href="companion-device-unlock.md">コンパニオン IoT デバイスを使った Windows のロック解除</a></td><td>コンパニオン デバイスは、ユーザー認証のエクスペリエンスを強化するために、Windows 10 のデスクトップと組み合わせて使用できるデバイスです。 コンパニオン デバイス フレームワークを使用すると、コンパニオン デバイスは、Windows Hello を利用できない場合 (たとえば、Windows 10 のデスクトップに顔認証のカメラまたは指紋リーダーのデバイスがない場合など) でも、Microsoft Passport のための優れたエクスペリエンスを提供できます。</td></tr>
-<tr><td><a href="web-account-manager.md">Web アカウント マネージャー</a></td><td>この記事では、Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を表示し、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft や Facebook など) に接続する方法について説明します。 ユーザーの Microsoft アカウントを使用するためにユーザーの許可を求める方法、アクセス トークンを取得する方法、アクセス トークンを使って基本的な操作 (プロファイル データの取得や OneDrive へのファイルのアップロードなど) を実行する方法を学習してください。 </td></tr>
-<tr><td><a href="web-authentication-broker.md">Web 認証ブローカー</a></td><td>この記事では、OpenID や OAuth などの認証プロトコルを使うオンライン ID プロバイダー (Facebook、Twitter、Flickr、Instagram など) にアプリを接続する方法について説明します。 <a href="https://msdn.microsoft.com/library/windows/apps/br212066">AuthenticateAsync</a> メソッドは、要求をオンライン ID プロバイダーに送信し、アプリがアクセスできるプロバイダー リソースを示すアクセス トークンを返します。</td></tr>
+<tr><td><a href="web-account-manager.md">Web アカウント マネージャー</a></td><td>この記事では、Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を表示し、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft や Facebook など) に接続する方法について説明します。 ユーザーの Microsoft アカウントを使用するためのユーザーの許可を求める方法、アクセス トークンを取得する方法、基本的な操作 (プロファイル データの取得や OneDrive へのファイルのアップロードなど) を実行する方法について説明します。 </td></tr>
+<tr><td><a href="web-authentication-broker.md">Web 認証ブローカー</a></td><td>この記事では、OpenID や OAuth などの認証プロトコルを使うオンライン ID プロバイダー (Facebook、Twitter、Flickr、Instagram など) にアプリを接続する方法について説明します。 <a href="https://msdn.microsoft.com/library/windows/apps/br212066">AuthenticateAsync</a> メソッドは、要求をオンライン ID プロバイダーに送信し、アプリがアクセスできるプロバイダー リソースを表すアクセス トークンを返します。</td></tr>
 </table>
 
 ## <a name="cryptography"></a>暗号化 

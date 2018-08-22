@@ -8,14 +8,14 @@ ms.date: 01/29/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、uwp、印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c69250b1bb6ab76e7e5ce18f6922f7bd1cbc8c9
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: cff96c0b8daf9f3ef32815437b510a5b94641527
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691511"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791657"
 ---
 # <a name="print-from-your-app"></a>アプリからの印刷
 

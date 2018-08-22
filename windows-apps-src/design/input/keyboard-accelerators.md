@@ -14,12 +14,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 051d3d5251a135dcb1a41e1cd005f462fb074c3b
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: ce84debc3422f923c7c88aae1fa216665ef1ef0f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983639"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792200"
 ---
 # <a name="keyboard-accelerators"></a>キーボード アクセラレータ
 
@@ -355,35 +355,98 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 通常、キーボード アクセラレータは UWP アプリケーションの UI で直接説明されるものではありません。ユーザーがフォーカスをコントロールに移動したり、コントロールを長押ししたり、マウス ポインターをコントロール上にホバーしたりするときに自動的に表示される、[ヒント](../controls-and-patterns/tooltips.md)を使用すると、キーボード アクセラレータが見つけやすくなります。 ヒントによって、コントロールにキーボード アクセラレータが関連付けられているかどうかを識別でき、関連付けられている場合は、アクセラレータ キーの組み合わせを識別することができます。
 
-Windows 10 バージョン 1803 以降では、KeyboardAccelerators が宣言されると、コントロールでは、対応するキーの組み合わせが既定でヒントに表示されます (コントロールが [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) オブジェクトや [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) オブジェクトに関連付けられていない場合。「[ラベル]()」をご覧ください)。 コントロールに対して複数のアクセラレータが定義されている場合は、最初のアクセラレータだけがヒントに表示されます。
+**Windows 10、バージョン 1803 (年 2018年 4 月更新) 以降**
+
+既定では、キーボード アクセラレータを宣言すると、( [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) を除くすべてのコントロール表示対応するキーの組み合わせツールヒントにします。
+
+> [!NOTE] 
+> コントロールに定義されている 1 つ以上のアクセスがある場合は、最初のレコードのみが表示されます。
 
 ![アクセラレータ キーのヒント](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
 *ヒントでのアクセラレータ キーの組み合わせ*
 
-[AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) オブジェクトと [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) オブジェクトでは、キーボード アクセラレータはラベルに追加されます。
+[ボタン](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)オブジェクトは、コントロールの既定のツールヒントに、アクセス キーが追加されます。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) オブジェクトをテキストをフライアウト アクセス キーが表示されます。
+
+> [!NOTE]
+> ヒントを指定する (次の例を参照 Button1) は、この動作を上書きします。
 
 ```xaml
-<AppBarButton Label="Save" Icon="Save">
-  <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
-  </Button.KeyboardAccelerators>
+<StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
+    <Button Content="Button1" Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto" 
+            ToolTipService.ToolTip="Tooltip">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="A" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+    <Button Content="Button2"  Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="B" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+    <Button Content="Button3"  Margin="20"
+            Click="OnSave" 
+            KeyboardAcceleratorPlacementMode="Auto">
+        <Button.KeyboardAccelerators>
+            <KeyboardAccelerator  Key="C" Modifiers="Windows"/>
+        </Button.KeyboardAccelerators>
+    </Button>
+</StackPanel>
+```
+
+![アクセラレータ キーのヒント](images/accelerators/accelerators-button-small.png)
+
+*ボタンの既定のツールヒントに追加のアクセス キーの組み合わせ*
+
+```xaml
+<AppBarButton Icon="Save" Label="Save">
+    <AppBarButton.KeyboardAccelerators>
+        <KeyboardAccelerator Key="S" Modifiers="Control"/>
+    </AppBarButton.KeyboardAccelerators>
 </AppBarButton>
 ```
 
 ![アクセラレータ キーのヒント](images/accelerators/accelerators-appbarbutton-small.png)
 
-*コントロール ラベルに追加されたアクセラレータ キーの組み合わせ*
+*アクセス キーの組み合わせ AppBarButton の既定のヒントを追加します。*
+
+```xaml
+<AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
+    <AppBarButton.Flyout>
+        <MenuFlyout>
+            <MenuFlyoutItem AccessKey="A" Icon="Refresh" Text="Refresh A">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="R" Modifiers="Control"/>
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </MenuFlyoutItem>
+            <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
+            <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
+            <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
+            <ToggleMenuFlyoutItem AccessKey="E" Icon="Globe" Text="ToggleMe">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="Q" Modifiers="Control"/>
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </ToggleMenuFlyoutItem>
+        </MenuFlyout>
+    </AppBarButton.Flyout>
+</AppBarButton>
+```
+
+![アクセラレータ キーのヒント](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
+
+*アクセス キーの組み合わせ MenuFlyoutItem のテキストを追加します。*
 
 表示の動作を制御するには、[KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) プロパティを使用します。このプロパティは 2 つの値、[Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) または [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) を受け入れます。    
 
 ```xaml
-<Button Content="Save" Click="OnSave">
-  <Button.KeyboardAccelerators> 
-    <KeyboardAccelerator 
-      Key="S" Modifiers="Control" 
-      KeyboardAcceleratorPlacementMode="Hidden" /> 
-  </Button.KeyboardAccelerators>  
+<Button Content="Save" Click="OnSave" KeyboardAcceleratorPlacementMode="Auto">
+    <Button.KeyboardAccelerators>
+        <KeyboardAccelerator Key="S" Modifiers="Control" />
+    </Button.KeyboardAccelerators>
 </Button>
 ```
 
@@ -393,10 +456,12 @@ Windows 10 バージョン 1803 以降では、KeyboardAccelerators が宣言さ
 
 ```xaml
 <Grid x:Name="Container" Padding="30">
-  <Button Content="Save" Click="OnSave">
+  <Button Content="Save"
+    Click="OnSave"
+    KeyboardAcceleratorPlacementMode="Auto"
+    KeyboardAcceleratorPlacementTarget="{x:Bind Container}">
     <Button.KeyboardAccelerators>
-      <KeyboardAccelerator  Key="S" Modifiers="Control" 
-        KeyboardAcceleratorPlacementTarget="{x:Bind Container}"/>
+      <KeyboardAccelerator  Key="S" Modifiers="Control" />
     </Button.KeyboardAccelerators>
   </Button>
 </Grid>
@@ -547,3 +612,15 @@ public class MyListView : ListView
   …
 }
 ```
+
+## <a name="related-articles"></a>関連記事
+
+* [キーボード操作](keyboard-interactions.md)
+* [アクセス キー](access-keys.md)
+
+**サンプル**
+* [XAML コントロール ギャラリー (別名 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+
+
+ 
+

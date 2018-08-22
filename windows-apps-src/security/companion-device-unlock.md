@@ -7,15 +7,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、uwp、セキュリティ
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d458f66034e61db97fcd281f7c8a6cec9b812cc
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: ac2e29d5219809058edee2d7a92c2e2475d9752e
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691058"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2790130"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Windows Hello コンパニオン (IoT) デバイスを使った Windows のロック解除
 
@@ -656,9 +656,9 @@ Windows Hello コンパニオン デバイス アプリは、ShowNotificationMes
 - "サインインするには、*デバイス名* の上に指を置いてください。"
 - "サインインするには、*デバイス名* を指でスワイプしてください。"
 - "*デバイス名* にサインインできませんでした。 別のサインイン オプションを使用してください。"
-- "問題が発生しました。 別のサインイン オプションを使用し、その後に*デバイス名*をもう一度セットアップしてください。"
+- "Something went wrong.  Use another sign-in option, and then set up *device name* again." (問題が発生しました。別のサインイン オプションを使用し、*デバイス名* をもう一度設定してください。)
 - "やり直してください。"
-- "*デバイス名*に向かって音声パスフレーズを言ってください。"
+- "Say your Spoken Passphrase into *device name*." (*デバイス名* に音声パスフレーズを言ってください。)
 - "*デバイス名* にサインインする準備ができています。"
 - "最初は別のサインイン オプションを使用してください。その後、*デバイス名*を使用してサインインできます。"
 

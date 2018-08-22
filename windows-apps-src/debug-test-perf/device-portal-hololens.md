@@ -8,14 +8,14 @@ ms.date: 09/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, UWP
+keywords: windows 10、uwp、デバイスのポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e73519f57d9b08e08a7400f322367b6634cf945
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: e70ab7c7fba8b8da9a0115a86a13f08e4ef3ebe2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817723"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792482"
 ---
 # <a name="device-portal-for-hololens"></a>HoloLens 用 Device Portal
 
@@ -23,8 +23,6 @@ ms.locfileid: "1817723"
 ## <a name="set-up-device-portal-on-hololens"></a>HoloLens で Device Portal をセットアップする
 
 ### <a name="enable-device-portal"></a>Device Portal を有効にする
-
-**Device Portal を有効にするには**
 
 1. HoloLens の電源を入れ、デバイスを装着します。
 2. [ブルーム](https://dev.windows.com/holographic/Gestures.html#Bloom) ジェスチャを実行して、メイン メニューを開きます。
@@ -37,7 +35,7 @@ ms.locfileid: "1817723"
 
 ### <a name="pair-your-device"></a>デバイスをペアリングする
 
-### <a name="connect-over-wi-fi"></a>Wi-Fi 経由で接続する 
+#### <a name="connect-over-wi-fi"></a>Wi-Fi 経由で接続する 
 
 1. HoloLens を Wi-Fi に接続します。
 2. デバイスの IP アドレスを調べます。デバイスで、[Settings] (設定)、[Network & Internet] (ネットワークとインターネット)、[Wi-Fi]、[Advanced Options] (詳細オプション) の順に移動して IP アドレスを確認します。
@@ -46,18 +44,21 @@ ms.locfileid: "1817723"
 3. PC 上の Web ブラウザーから、 にアクセスします。 `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - ブラウザーから、"この Web サイトのセキュリティ証明書に問題があります" というメッセージが表示されます。 これは、Device Portal に発行された証明書がテスト証明書であるためです。 ここでは、この証明書エラーを無視して続行できます。
 
-### <a name="connect-over-usb"></a>USB 経由で接続する 
+#### <a name="connect-over-usb"></a>USB 経由で接続する 
 
 1. PC に Visual Studio Update 1 と Windows 10 開発者ツールをインストールします。 これで USB 接続が有効になります。
 2. マイクロ USB ケーブルを使って HoloLens を PC に接続します。
 3. PC 上の Web ブラウザーから、`http://127.0.0.1:10080` にアクセスします。
 
-### <a name="connect-to-an-emulator"></a>エミュレーターに接続する 
+> [!IMPORTANT]
+> PC は、該当するデバイスにできない場合は、HoloLens デバイスの実際のネットワークの IP アドレスを使用してみてくださいなく`http://127.0.0.1:10080`します。
+
+#### <a name="connect-to-an-emulator"></a>エミュレーターに接続する 
 
 Device Portal はエミュレーターで使うこともできます。 Device Portal に接続するには、ツール バーを使います。 次のアイコンをクリックします。
 - [Open Device Portal] (Device Portal を開く): エミュレーターで HoloLens OS の Windows Device Portal を開きます。
 
-### <a name="create-a-username-and-password"></a>ユーザー名とパスワードを作成する 
+#### <a name="create-a-username-and-password"></a>ユーザー名とパスワードを作成する 
 
 HoloLens で初めて Device Portal に接続するときは、ユーザー名とパスワードを作成する必要があります。
 1. PC 上の Web ブラウザーで、HoloLens の IP アドレスを入力します。 [Set up access] (アクセスのセットアップ) ページが開きます。
@@ -69,7 +70,7 @@ HoloLens で初めて Device Portal に接続するときは、ユーザー名�
 
 このユーザー名またはパスワードは、デバイスのセキュリティ ページでこの手順を繰り返すことでいつでも変更できます。デバイスのセキュリティ ページを表示するには、右上にある [Security] (セキュリティ) リンクをクリックするか、`https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm` にアクセスします。
 
-### <a name="security-certificate"></a>セキュリティ証明書 
+#### <a name="security-certificate"></a>セキュリティ証明書 
 
 ブラウザーで "証明書エラー" が表示される場合は、デバイスとの信頼関係を作成することで修正できます。
 
@@ -126,9 +127,9 @@ Device Portal セッションは Home (ホーム) ページから始まります
 
 - [Surface reconstruction] (サーフェスの認識): [Update] (更新) をクリックまたはタップすると、デバイスから最新の空間マッピング メッシュを表示します。 全体の処理が完了するまでには、最大で数秒かかる可能性があります。 3D ビューではメッシュは自動的に更新されないため、デバイスから最新のメッシュを取得するには、手動で [Update] (更新) をクリックする必要があります。 [Save] (保存) をクリックすると、現在の空間マッピング メッシュを obj ファイルとして PC に保存します。
 
-### <a name="mixed-reality-capture"></a>Mixed Reality キャプチャ 
+### <a name="mixed-reality-capture"></a>Mixed Reality Capture (複合現実キャプチャ) 
 
-Mixed Reality キャプチャ ページを使うと、HoloLens からメディア ストリームを保存できます。
+[Mixed Reality Capture] (複合現実キャプチャ) ページを使うと、HoloLens からメディア ストリームを保存できます。
 - 設定: 次の設定をオンにして、キャプチャするメディア ストリームを制御します。- [Holograms] (ホログラム): ビデオ ストリームのホログラフィック コンテンツをキャプチャします。 ホログラムは、ステレオではなくモノラルでレンダリングされます。
 - **[PV camera]** (PV カメラ): 写真/ビデオ カメラからビデオ ストリームをキャプチャします。
 - **[Mic Audio]** (マイク オーディオ): マイク配列からオーディオをキャプチャします。
@@ -136,7 +137,7 @@ Mixed Reality キャプチャ ページを使うと、HoloLens からメディ�
 - **[Live preview quality]** (ライブ プレビューの品質): ライブ プレビューの画面解像度、フレーム レート、ストリーミング レートを選択します。
 
 - [Live preview] (ライブ プレビュー) ボタンをクリックまたはタップすると、キャプチャ ストリームを表示します。 [Stop live preview] (ライブ プレビューの停止) は、キャプチャ ストリームを停止します。
-- [Record] (記録) をクリックまたはタップすると、指定された設定を使って Mixed Reality ストリームのレコーディングを開始します。 [Stop recording] (記録の終了) は、レコーディングを終了して保存します。
+- [Record] (記録) をクリックまたはタップすると、指定された設定を使って複合現実ストリームのレコーディングを開始します。 [Stop recording] (記録の終了) は、レコーディングを終了して保存します。
 - [Take photo] (写真の撮影) をクリックまたはタップすると、キャプチャ ストリームから静止画像を取得します。
 - **[Videos and photos]** (ビデオと写真): デバイスで取得されたビデオと写真のキャプチャの一覧を表示します。
 

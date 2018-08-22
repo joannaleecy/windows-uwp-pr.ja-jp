@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 68c22c12ac5c5dbd90878e8828160e0f56831898
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: e38e9d61e8546d412cc30bad26680243f3a188e4
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638992"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792345"
 ---
 # <a name="menus-and-context-menus"></a>メニューとコンテキスト メニュー
 
@@ -78,7 +78,7 @@ ms.locfileid: "1638992"
 <ul>
 <li>常に表示される 1 つのエントリ ポイント (たとえば、画面上部の [ファイル] メニュー) があります。</li>
 <li>通常、ボタンまたは親のメニュー項目にアタッチされます。</li>
-<li>左クリック (または、指でタップするなどの同等の操作) によって呼び出されます。</li><li>[Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) プロパティまたは [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) プロパティを介して要素に関連付けられます。</li>
+<li>左クリック (または、指でタップするなどの同等の操作) によって呼び出されます。</li><li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx">Flyout</a> プロパティまたは <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx">FlyoutBase.AttachedFlyout</a> プロパティを介して要素に関連付けられます。</li>
 </ul>
 </div>
   <div class="side-by-side-content-right">
@@ -86,7 +86,7 @@ ms.locfileid: "1638992"
 
 <ul>
 <li>1 つの要素にアタッチされ、セカンダリ コマンドを表示します。</li>
-<li>右クリック (または、指で長押しするなどの同等の操作) によって呼び出されます。</li><li>[ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) プロパティを介して要素に関連付けられます。</li>
+<li>右クリック (または、指で長押しするなどの同等の操作) によって呼び出されます。</li><li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx">ContextFlyout</a> プロパティを介して要素に関連付けられます。</li>
 </ul>
   </div>
 </div>

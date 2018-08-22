@@ -10,13 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
-ms.localizationpriority: high
-ms.openlocfilehash: 321fb71d44e1298b29b6119168f67207e6df4a8d
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 0d6565f56f7105872d14b7b1ce768f4240e0b83b
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989696"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791887"
 ---
 # <a name="desktop-bridge"></a>デスクトップ ブリッジ
 

@@ -1,6 +1,6 @@
 ---
 title: 資格情報保管ボックス
-description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで資格情報保管ボックスを使ってユーザーの資格情報を安全に保管し取得する方法、およびユーザーの Microsoft アカウントを使ってデバイス間でこれらの資格情報をローミングする方法について説明します。
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで資格情報保管ボックスを使ってユーザーの資格情報を安全に保管し、ユーザーの Microsoft アカウントを使ってデバイス間をローミングする方法について説明します。
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: msatranjr
 ms.author: misatran
@@ -8,23 +8,23 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: f77d70be11f2a71bd4d6267d169eacc9a4d44ba7
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: c6412f28e60ed0401fb96098fd38128a37491c8d
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689418"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794533"
 ---
 # <a name="credential-locker"></a>資格情報保管ボックス
 
 
 
 
-この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで資格情報保管ボックスを使ってユーザーの資格情報を安全に保管し取得する方法、およびユーザーの Microsoft アカウントを使ってデバイス間でこれらの資格情報をローミングする方法について説明します。
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで資格情報保管ボックスを使ってユーザーの資格情報を安全に保管し、ユーザーの Microsoft アカウントを使ってデバイス間をローミングする方法について説明します。
 
-たとえば、メディア ファイルやソーシャル ネットワークなど、保護されたリソースにアクセスするサービスに接続するアプリがあるとします。 サービスには、ユーザーごとにログイン情報を渡す必要があります。 そこで、ユーザーのユーザー名とパスワードを取得するための UI をアプリに組み込み、サービスへのログインに使うことにしました。 資格情報保管ボックス API を使うと、ユーザーのデバイスに関係なく、ユーザー名とパスワードを格納し、次回のアプリの実行時にユーザー名とパスワードを取得して、ユーザーを自動的にログインさせることができます。
+たとえば、メディア ファイルやソーシャル ネットワークなど、保護されたリソースにアクセスするサービスに接続するアプリがあるとします。 サービスには、ユーザーごとにログイン情報を渡す必要があります。 そこで、ユーザーのユーザー名とパスワードを取得するための UI をアプリに組み込み、サービスへのログインに使うことにしました。 Credential Locker API を使うと、ユーザーのユーザー名とパスワードを格納し、次回のアプリの実行時に取得してデバイスを問わずユーザーを自動的にログインさせることができます。
 
 資格情報保管ボックスに格納されたユーザーの資格情報には有効期限は*ありません*。また、[**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) の影響を*受けず*、従来のデータのローミングのようなアイドル時間が発生しても消去*されません*。 ただし、資格情報保管ボックスに格納できる資格情報は、アプリごとに最大で 20 件までです。
 

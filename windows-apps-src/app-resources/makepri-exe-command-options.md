@@ -10,16 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: fbfb5f6626f799878c294b0a4e21efb673147a50
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: c0a3892348baff56bbef8d40dd9aade4e612c50d
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817543"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792627"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe のコマンド ライン オプション
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) には、`createconfig`、`dump`、`new`、`resourcepack`、`versioned` コマンドのセットが含まれます。 このトピックでは、コマンド ライン オプションの使用について説明します。
+
+> [!NOTE]
+> Windows ソフトウェア開発キットのインストール中に**Windows SDK** UWP 管理アプリのオプションをオンにすると、MakePri.exe がインストールされています。 パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびフォルダーの他のアーキテクチャの名前の)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
 
 ## <a name="makepri-commands"></a>MakePri のコマンド
 

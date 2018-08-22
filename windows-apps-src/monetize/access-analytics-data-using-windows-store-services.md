@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API
 ms.localizationpriority: medium
-ms.openlocfilehash: f7ca3c23179d97816fc54fdbacb951915aecf71f
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: f36facd8ba89fbaccb7c61ad937c2ce005922aa8
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976397"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791207"
 ---
 # <a name="access-analytics-data-using-store-services"></a>ストア サービスを使った分析データへのアクセス
 
@@ -86,6 +86,7 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 分析 AP
 |---------------|--------------------|
 | 入手、コンバージョン、およびインストール |  <ul><li>[アプリの入手数の取得](get-app-acquisitions.md)</li><li>[アプリの入手に関するファネル データの取得](get-acquisition-funnel-data.md)</li><li>[チャネルごとのアプリのコンバージョンの取得](get-app-conversions-by-channel.md)</li><li>[アドオンの入手数の取得](get-in-app-acquisitions.md)</li><li>[サブスクリプション アドオンの入手数の取得](get-subscription-acquisitions.md)</li><li>[チャネルごとのアドオンのコンバージョンの取得](get-add-on-conversions-by-channel.md)</li><li>[アプリのインストール数の取得](get-app-installs.md)</li></ul> |
 | アプリのエラー | <ul><li>[エラー報告データの取得](get-error-reporting-data.md)</li><li>[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)</li><li>[アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[アプリのエラーの CAB ファイルをダウンロードする](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
+| 分析結果 | <ul><li>[アプリのデータの分析結果を取得します。](get-insights-data-for-your-app.md)</li></ul>  |
 | 評価とレビュー | <ul><li>[アプリの評価の取得](get-app-ratings.md)</li><li>[アプリのレビューの取得](get-app-reviews.md)</li></ul> |
 | アプリ内広告と広告キャンペーン | <ul><li>[広告のパフォーマンス データの取得](get-ad-performance-data.md)</li><li>[広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)</li></ul> |
 
@@ -96,7 +97,9 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 分析 AP
 | シナリオ       | メソッド      |
 |---------------|--------------------|
 | インストール |  <ul><li>[デスクトップ アプリケーションのインストール数の取得](get-desktop-app-installs.md)</li></ul> |
+| ブロック |  <ul><li>[デスクトップ アプリケーションのアップグレード ブロックの取得](get-desktop-block-data.md)</li><li>[デスクトップ アプリケーションのアップグレード ブロックの詳細情報の取得](get-desktop-block-data-details.md)</li></ul> |
 | アプリケーション エラー |  <ul><li>[デスクトップ アプリケーションのエラー報告データの取得](get-desktop-application-error-reporting-data.md)</li><li>[デスクトップ アプリケーションのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-desktop-application.md)</li><li>[デスクトップ アプリケーションのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[デスクトップ アプリケーションのエラーの CAB ファイルをダウンロードする](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
+| 分析結果 | <ul><li>[デスクトップ アプリケーションのデータの分析結果を取得します。](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>Xbox Live サービス向けのメソッド
 
@@ -118,13 +121,7 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 分析 AP
 
 ### <a name="methods-for-hardware-and-drivers"></a>ハードウェアとドライバー向けのメソッド
 
-次の分析メソッドは、[Windows ハードウェア デベロッパー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントで利用できます。
-
-| シナリオ       | メソッド      |
-|---------------|--------------------|
-| Windows 10 ドライバーのエラー (IHV 向け) |  <ul><li>[Windows 10 のドライバーに関するエラー報告データを取得する](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[Windows 10 のドライバー エラーに関する詳細を取得する](get-details-for-a-windows-10-driver-error.md)</li><li>[Windows 10 のドライバー エラーに関する CAB ファイルをダウンロードする](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
-| Windows 7/Windows 8.x ドライバーのエラー (IHV 向け) |  <ul><li>[Windows 7 や Windows 8.x のドライバーに関するエラー報告データを取得する](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[Windows 7 や Windows 8.x のドライバー エラーに関する詳細を取得する](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[Windows 7 や Windows 8.x のドライバー エラーに関する CAB ファイルをダウンロードする](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
-| ハードウェア エラー (OEM 向け) |  <ul><li>[OEM ハードウェア エラー報告データを取得する](get-oem-hardware-error-reporting-data.md)</li><li>[OEM ハードウェア エラーの詳細を取得する](get-details-for-an-oem-hardware-error.md)</li><li>[OEM ハードウェア エラーの CAB ファイルをダウンロードする](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
+[Windows ハードウェア デベロッパー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に属している開発アカウントでは、追加のハードウェアおよびドライバーの分析などのデータを取得する方法のセットにアクセスします。 詳細については、[ダッシュ ボードのハードウェア API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)を参照してください。
 
 ## <a name="code-example"></a>コードの例
 

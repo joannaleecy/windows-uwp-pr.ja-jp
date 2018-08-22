@@ -9,23 +9,23 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, デスクトップ アプリケーション
 ms.localizationpriority: medium
-ms.openlocfilehash: 422a570635fd6788b8e8b5656060a309d628b7bf
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: 71c566ff375f36108d724f3c550570b3332f4c6b
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989396"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2797303"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>デスクトップ アプリケーションのエラー報告データの取得
 
-[Windows デスクトップ アプリケーション プログラム](https://msdn.microsoft.com/library/windows/desktop/mt826504)に追加したデスクトップ アプリケーションに関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、Windows デベロッパー センター ダッシュボードにあるデスクトップ アプリケーションの[正常性レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)でも確認できます。
+[Windows デスクトップ アプリケーション プログラム](https://msdn.microsoft.com/library/windows/desktop/mt826504)に追加したデスクトップ アプリケーションに関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この方法は、過去 30 日間で発生したエラーのみを取得できます。 この情報は、Windows デベロッパー センター ダッシュボードにあるデスクトップ アプリケーションの[正常性レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)でも確認できます。
 
 ## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -41,7 +41,7 @@ ms.locfileid: "1989396"
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 文字列 | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 
 ### <a name="request-parameters"></a>要求パラメーター
@@ -49,7 +49,7 @@ ms.locfileid: "1989396"
 | パラメーター        | 型   |  説明      |  必須かどうか  
 |---------------|--------|---------------|------|
 | applicationId | string | エラー報告データを取得するデスクトップ アプリケーションの製品 ID です。 デスクトップ アプリケーションの製品 ID を取得するには、[デベロッパー センターでデスクトップ アプリケーションの分析レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)のいずれか (**正常性レポート**など) を開き、URL から製品 ID を取得します。 |  必須  |
-| startDate | date | 取得するエラー報告データの日付範囲の開始日を ```mm/dd/yyyy``` の形式で指定します。 既定値は現在の日付です。  |  必須ではない  |
+| startDate | date | 取得するエラー報告データの日付範囲の開始日を ```mm/dd/yyyy``` の形式で指定します。 既定値は現在の日付です。<p/><p/>**メモ:**&nbsp;&nbsp;この方法は過去 30 日間で発生したエラーのみを取得できます。  |  必須ではない  |
 | endDate | date | 取得するエラー報告データの日付範囲の終了日を ```mm/dd/yyyy``` の形式で指定します。 既定値は現在の日付です。   |  必須ではない  |
 | top | int | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  必須ではない  |
 | skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  必須ではない  |

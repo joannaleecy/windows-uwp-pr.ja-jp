@@ -8,14 +8,14 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、uwp、接続されているデバイス、リモート システム、ローマ、プロジェクト ローマ
 ms.localizationpriority: medium
-ms.openlocfilehash: 0539c9b50196d98809fc01ea3f2a1950cbf27599
-ms.sourcegitcommit: 12cc283e821cbf978debf24914490982f076b4b4
-ms.translationtype: HT
+ms.openlocfilehash: 8e5226b23a454bf48add22d590a3ff247c629e4f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "1658088"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794885"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>リモート セッションでデバイスを接続する
 
@@ -124,7 +124,7 @@ RemoteSystemSessionController manager = new RemoteSystemSessionController("Bob's
 //...
 ```
 
-招待を送信するには、受信側のリモート システムへの参照 (通常のリモート システム検出を使用して取得) が必要です。 この参照をセッション オブジェクトの **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession#remotesystemsession_sendinvitationasync_1664759118)** メソッドに渡します。 すべてのセッション参加者がリモート セッションへの参照にアクセスできるため (次のセクションをご覧ください)、どの参加者も招待を送信することができます。
+招待を送信するには、受信側のリモート システムへの参照 (通常のリモート システム検出を使用して取得) が必要です。 この参照をセッション オブジェクトの **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** メソッドに渡します。 すべてのセッション参加者がリモート セッションへの参照にアクセスできるため (次のセクションをご覧ください)、どの参加者も招待を送信することができます。
 
 ```csharp
 // "currentSession" is a reference to a RemoteSystemSession.

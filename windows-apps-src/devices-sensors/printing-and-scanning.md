@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、uwp、印刷、3dprinting、3 d の印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f02d0c9dc006a77d6b532713f4678d4faa2af3e
-ms.sourcegitcommit: db57a716b1ba680391c167be8ffa42edc0104720
-ms.translationtype: HT
+ms.openlocfilehash: 6c4ada5d58743bf19ed27dfbdd2676f2a267129f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "1610941"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795684"
 ---
 # <a name="printing-and-scanning"></a>印刷とスキャン
 

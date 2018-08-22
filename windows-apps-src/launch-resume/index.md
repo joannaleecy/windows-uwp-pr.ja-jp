@@ -8,16 +8,16 @@ ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、uwp、バック グラウンド タスクでは、app サービスには、リモート システム、デバイスが接続されています。
 ms.localizationpriority: medium
-ms.openlocfilehash: d43600e4cb12aafb55a78173b7f81a15d1810fdb
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 142eba8eb919ed25632f44a6f185ae40e16dec6b
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816517"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2796059"
 ---
-# <a name="launching-resuming-and-background-tasks"></a>起動、再開、およびバックグラウンド タスク
+# <a name="launching-resuming-and-background-tasks"></a>起動、再開、バックグラウンド タスク
 
 
 ここでは、次の項目について説明します。
@@ -63,7 +63,7 @@ ms.locfileid: "1816517"
 | [Windows 設定アプリの起動](launch-settings-app.md) | アプリから Windows 設定アプリを起動する方法について説明します。 ここでは、ms-settings URI スキームについて説明します。 Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。 |
 | [Microsoft Store アプリの起動](launch-store-app.md) | このトピックでは、ms-windows-store URI スキームについて説明します。 アプリでこの URI スキームを使って、UWP アプリを起動し、Store 内の特定のページを表示できます。 |
 | [Windows マップ アプリの起動](launch-maps-app.md) | アプリから Windows マップ アプリを起動する方法について説明します。 |
-| [People アプリの起動](launch-people-apps.md) | このトピックでは、ms-people URI スキームについて説明します。 アプリでこの URI スキームを使って People アプリを起動し、特定のアクションを実行できます。 |
+| [People アプリの起動](launch-people-apps.md) | ここでは、ms-people URI スキームについて説明します。 アプリでこの URI スキームを使って People アプリを起動し、特定のアクションを実行できます。 |
 | [アプリの URI ハンドラーを使用して Web とアプリのリンクをサポートする](web-to-app-linking.md) | アプリの URI ハンドラーを使用して、ユーザーがアプリを利用するように促します。 |
 
 「[ファイルのアクティブ化によるアプリの起動](launch-app-from-file.md)」セクションでは、特定の種類のファイルを開くと、アプリが起動するように設定する方法について説明します。

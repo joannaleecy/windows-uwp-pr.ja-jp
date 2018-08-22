@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 23a4bd392689a71191e19ea245f984a6984839e3
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 284609399f167a7229d0c7bb5858d0f0eda451ce
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817330"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2796875"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Windows Hello ログイン アプリの作成
 
@@ -33,9 +33,9 @@ ms.locfileid: "1817330"
 ## <a name="get-started"></a>開始
 
 
-このプロジェクトを作成するには、C# と XAML の経験がいくらか必要です。 Windows 10 コンピューターで Visual Studio 2015 (Community Edition 以上) を使う必要もあります。
+このプロジェクトを作成するには、C# と XAML の経験がいくらか必要です。 Visual Studio 2015 を使用する必要もあります (コミュニティ Edition またはそれ以上)、または Windows 10 のコンピューターで、Visual Studio の今後のリリースします。 Visual Studio 2015 最低限必要なバージョンですが、最新の開発とセキュリティ更新プログラムは、Visual Studio の最新バージョンを使用することをお勧めします。
 
--   Visual Studio 2015 を開き、[ファイル]、[新規]、[プロジェクト] の順に選びます。
+-   Visual Studio を開き、ファイルを選択して > 新規 > プロジェクト。
 -   [新しいプロジェクト] ウィンドウが開きます。 [テンプレート]、[Visual C#] の順に移動します。
 -   [空白のアプリ (ユニバーサル Windows)] を選び、アプリケーションに "PassportLogin" という名前を付けます。
 -   新しいアプリケーションをビルドして実行すると (F5)、画面に空白のウィンドウが表示されます。 アプリケーションを閉じます。

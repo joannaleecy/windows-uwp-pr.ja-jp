@@ -7,18 +7,22 @@ label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
 ms.author: sezhen
-ms.date: 05/19/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a4081535cf8b9889a1f6864637c7fdefc982e9a5
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+dev_langs:
+- csharp
+- cppwinrt
+- cpp
+ms.openlocfilehash: 7372f296658f9213ccc50bd6388a4f25ad47a946
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1672739"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2796015"
 ---
 # <a name="implement-navigation-between-two-pages"></a>2 ページ間でのナビゲーションを実装する
 
@@ -80,8 +84,6 @@ ms.locfileid: "1672739"
 </tbody>
 </table>
 
- 
-
 Page1.xaml に次のコンテンツを追加します。
 
 -   `pageTitle` という名前を付けた [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として追加します。 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティを `Page 1` に変更します。
@@ -104,6 +106,14 @@ private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
     this.Frame.Navigate(typeof(Page2));
 }
 ```
+
+```cppwinrt
+void Page1::HyperlinkButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)
+{
+    Frame().Navigate(winrt::xaml_typename<NavApp1::Page2>());
+}
+```
+
 ```cpp
 void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 {
@@ -127,19 +137,27 @@ Page2.xaml に次のコンテンツを追加します。
 
 Page2.xaml 分離コード ファイルに、Page1.xaml に移動するための [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の `Click` イベントを処理する次のコードを追加します。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 {
     this.Frame.Navigate(typeof(Page1));
 }
 ```
+
+```cppwinrt
+void Page2::HyperlinkButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)
+{
+    Frame().Navigate(winrt::xaml_typename<NavApp1::Page1>());
+}
+```
+
 ```cpp
 void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 {
     this->Frame->Navigate(Windows::UI::Xaml::Interop::TypeName(Page1::typeid));
 }
 ```
+
 > [!NOTE]
 > C++ プロジェクトの場合は、別のページを参照する各ページのヘッダー ファイルに `#include` ディレクティブを追加する必要があります。 ここで示したページ間のナビゲーションの例では、page1.xaml.h ファイルに `#include "Page2.xaml.h"` が、page2.xaml.h に `#include "Page1.xaml.h"` が含まれています。
 
@@ -148,7 +166,6 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 App.xaml 分離コードファイルを開き、`OnLaunched` ハンドラーを変更します。
 
 次に、[**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) の呼び出しに、`MainPage` ではなく `Page1` を追加します。
-
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -183,6 +200,66 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
     Window.Current.Activate();
 }
 ```
+
+```cppwinrt
+void App::OnLaunched(LaunchActivatedEventArgs const& e)
+{
+    Frame rootFrame{ nullptr };
+    auto content = Window::Current().Content();
+    if (content)
+    {
+        rootFrame = content.try_as<Frame>();
+    }
+
+    // Do not repeat app initialization when the Window already has content,
+    // just ensure that the window is active
+    if (rootFrame == nullptr)
+    {
+        // Create a Frame to act as the navigation context and associate it with
+        // a SuspensionManager key
+        rootFrame = Frame();
+
+        rootFrame.NavigationFailed({ this, &App::OnNavigationFailed });
+
+        if (e.PreviousExecutionState() == ApplicationExecutionState::Terminated)
+        {
+            // Restore the saved session state only when appropriate, scheduling the
+            // final launch steps after the restore is complete
+        }
+
+        if (e.PrelaunchActivated() == false)
+        {
+            if (rootFrame.Content() == nullptr)
+            {
+                // When the navigation stack isn't restored navigate to the first page,
+                // configuring the new page by passing required information as a navigation
+                // parameter
+                rootFrame.Navigate(xaml_typename<NavApp1::Page1>(), box_value(e.Arguments()));
+            }
+            // Place the frame in the current Window
+            Window::Current().Content(rootFrame);
+            // Ensure the current window is active
+            Window::Current().Activate();
+        }
+    }
+    else
+    {
+        if (e.PrelaunchActivated() == false)
+        {
+            if (rootFrame.Content() == nullptr)
+            {
+                // When the navigation stack isn't restored navigate to the first page,
+                // configuring the new page by passing required information as a navigation
+                // parameter
+                rootFrame.Navigate(xaml_typename<NavApp1::Page1>(), box_value(e.Arguments()));
+            }
+            // Ensure the current window is active
+            Window::Current().Activate();
+        }
+    }
+}
+```
+
 ```cpp
 void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs^ e)
 {
@@ -222,7 +299,8 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 }
 ```
 
-**注**: このコードは、アプリの初期ウィンドウ フレームへのナビゲーションが失敗した場合に、[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) の戻り値を使ってアプリの例外をスローします。 **Navigate** が **true** を返す場合は、ナビゲーションが行われます。
+> [!NOTE]
+> コードをここでは、例外アプリのナビゲーションにアプリの最初の枠が失敗した場合に[**移動**](https://msdn.microsoft.com/library/windows/apps/br242694)の戻り値を使用します。 **Navigate** が **true** を返す場合は、ナビゲーションが行われます。
 
 次に、アプリをビルドして実行します。 "Click to go to page 2" と書かれているリンクをクリックします。 上部に "Page 2" と書かれた 2 番目のページが読み込まれ、フレームに表示される必要があります。
 
@@ -231,7 +309,6 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 アプリにさらに機能を加える前に、追加したページに用意されているアプリ内のナビゲーションについて見てみましょう。
 
 まず、App.xaml 分離コード ファイルの `App.OnLaunched` メソッドで、アプリの [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`) が作成されます。 **Frame** クラスは、[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)、[**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) などのさまざまなナビゲーション メソッドと、[**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543)、[**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547)、[**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995) などのプロパティをサポートしています。
-
  
 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) メソッドを使って、この **Frame** にコンテンツが表示されます。 既定では、このメソッドは MainPage.xaml を読み込みます。 この例では、`Page1` が **Navigate** メソッドに渡されるため、メソッドは **Frame** に `Page1` を読み込みます。 
 
@@ -259,13 +336,20 @@ Page1.xaml で、前に追加した **HyperlinkButton** を次の [**StackPanel*
 
 Page1.xaml 分離コード ファイルの `HyperlinkButton_Click` イベント ハンドラーで、`name` **TextBox** の `Text` プロパティを参照するパラメーターを `Navigate` メソッドに追加します。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 {
     this.Frame.Navigate(typeof(Page2), name.Text);
 }
 ```
+
+```cppwinrt
+void Page1::HyperlinkButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args)
+{
+    Frame().Navigate(winrt::xaml_typename<NavApp1::Page2>(), winrt::box_value(name().Text()));
+}
+```
+
 ```cpp
 void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 {
@@ -302,12 +386,29 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
     base.OnNavigatedTo(e);
 }
 ```
+
+```cppwinrt
+void Page2::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+{
+    auto propertyValue{ e.Parameter().as<Windows::Foundation::IPropertyValue>() };
+    if (propertyValue.Type() == Windows::Foundation::PropertyType::String)
+    {
+        greeting().Text(L"Hi, " + winrt::unbox_value<winrt::hstring>(e.Parameter()));
+    }
+    else
+    {
+        greeting().Text(L"Hi!");
+    }
+    __super::OnNavigatedTo(e);
+}
+```
+
 ```cpp
 void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 {
     if (dynamic_cast<Platform::String^>(e->Parameter) != nullptr)
     {
-        greeting->Text = "Hi," + e->Parameter->ToString();
+        greeting->Text = "Hi, " + e->Parameter->ToString();
     }
     else
     {
@@ -336,6 +437,15 @@ public Page1()
     this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
 }
 ```
+
+```cppwinrt
+Page1::Page1()
+{
+    InitializeComponent();
+    NavigationCacheMode(Windows::UI::Xaml::Navigation::NavigationCacheMode::Enabled);
+}
+```
+
 ```cpp
 Page1::Page1()
 {
@@ -348,10 +458,3 @@ Page1::Page1()
 * [UWP アプリのナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)
 * [タブとピボットのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn997788)
 * [ナビゲーション ウィンドウのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn997766)
- 
-
- 
-
-
-
-

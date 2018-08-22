@@ -4,23 +4,23 @@ Description: The Pricing and availability page of the app submission process let
 title: アプリの価格と使用可能状況の設定
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 価格, 使用可能状況, 見つけやすさ, 無料試用版, 試用版, トライアル, アプリ, リリース日
-ms.localizationpriority: high
-ms.openlocfilehash: 6c411572bbcf048b82ff27c284dc8f9343ef4fc4
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 20c52687b375f9bf33dd491eeb37d4142acace99
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1831996"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794811"
 ---
 # <a name="set-app-pricing-and-availability"></a>アプリの価格と使用可能状況の設定
 
 
-[アプリ申請プロセス](app-submissions.md)の **[価格と使用可能状況]** のページでは、アプリの料金、無料試用版を提供するかどうか、およびいつ、どこで、どのようにアプリをユーザーに提供するかを決定できます。 ここでは、このページのオプションと、この情報を入力するときに考慮する必要がある事項を順に説明します。
+[アプリ申請プロセス](app-submissions.md)の **[価格と使用可能状況]** のページでは、アプリの料金、無料の試用版を提供するかどうか、およびいつ、どこで、どのようにアプリをユーザーに提供するかを決定できます。 ここでは、このページのオプションと、この情報を入力するときに考慮する必要がある事項を順に説明します。
 
 
 ## <a name="markets"></a>市場
@@ -74,10 +74,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
 >[!NOTE]
 > これらの日付は、Windows 10 (Xbox を含む) のユーザーにのみ適用されます。 以前の OS バージョンのユーザーが利用できるアプリの場合、製品が利用可能である限りこれらのユーザーにも試用版が提供されます。 
 
-試用版を Windows 10 のユーザーに提供する期間を設定するには、**[開始]** ドロップダウンと **[終了]** ドロップダウン、またはそのどちらかを **[次の時点]** に変更し、日付と時刻を選択します。 このとき、**[UTC]** を選択して世界標準時 (UTC) の時刻を指定するか、または **[ローカル]** を選択して、市場に関連付けられている各タイム ゾーンの時刻を指定することができます  (複数のタイム ゾーンがある市場では、その市場のタイム ゾーンの 1 つだけが使われます。 米国の場合は東部標準時が使われます)。 
-
->[!NOTE]
-> [[スケジュール]](configure-precise-release-scheduling.md) セクションとは異なり、**[無料試用版]** の日付を特定の市場向けにカスタマイズすることはできません。 
+試用版を Windows 10 のユーザーに提供する期間を設定するには、**[開始]** ドロップダウンと **[終了]** ドロップダウン、またはそのどちらかを **[次の時点]** に変更し、日付と時刻を選択します。 このとき、**[UTC]** を選択して世界標準時 (UTC) の時刻を指定するか、または **[ローカル]** を選択して、市場に関連付けられている各タイム ゾーンの時刻を指定することができます  (複数のタイム ゾーンがある市場では、その市場のタイム ゾーンの 1 つだけが使われます。 米国の東部のタイム ゾーンが使用されます。)任意の market(s) の別の日を設定する場合は、**特定の市場のカスタマイズ**を選択します。
 
 
 ## <a name="sale-pricing"></a>セール価格

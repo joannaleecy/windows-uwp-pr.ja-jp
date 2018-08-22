@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション
 ms.localizationpriority: medium
-ms.openlocfilehash: 515ac1f9a079e3791be8835f1a33c16198e27362
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: c9aaca0194f57c244bca0d6cb8ccf08e5e4eafda
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935638"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788717"
 ---
 # [<a name="cwinrt"></a>C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。 C++/WinRT の場合、標準に準拠した C++17 のコンパイラを使用して Windows ランタイム API を作成および使用できます。 Windows SDK には C++/WinRT が含まれます。バージョン 10.0.17134.0 (Windows 10、バージョン 1803) で導入されました。
@@ -35,6 +35,8 @@ C++/WinRT を使用する場合は、標準的な C++ データ型、アルゴ�
 
 Windows ランタイムの他の言語オプションに比べて、C++/WinRT はパフォーマンスが向上し、小さなバイナリを生成します。 ABI インターフェイスを直接使用した手書きのコードよりも優れています。 このため、抽象化では、Visual C++ コンパイラが最適化するように設計されている最新の C++ イディオムを使用します。 これには、C++/WinRT のパフォーマンス向上に特化した最新の Visual C++ の多くの新しい最適化機能だけでなく、マジック static、空の基底クラス、**strlen** の省略も含まれます。
 
+### <a name="topics-about-cwinrt"></a>C + に関するトピック +/WinRT
+
 | トピック | 説明 |
 | - | - |
 | [C++/WinRT の概要](intro-to-using-cpp-with-winrt.md) | C++/WinRT の紹介 &mdash; Windows ランタイム API 用の標準的な C++ 言語プロジェクション。 |
@@ -53,12 +55,20 @@ Windows ランタイムの他の言語オプションに比べて、C++/WinRT �
 | [同時実行操作と非同期操作](concurrency.md) | このトピックでは、C++/WinRT を使用した Windows ランタイムの非同期オブジェクトの作成方法と利用方法について説明します。 |
 | [XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md) | XAML コントロールに効果的にバインドできるプロパティは、*監視可能な*プロパティと呼ばれます。 このトピックでは、監視可能なプロパティを実装および使用する方法と、XAML コントロールをバインドする方法を示します。 |
 | [XAML アイテム コントロール: C++/WinRT コレクションへのバインド](binding-collection.md) | XAML アイテム コントロールに効果的にバインドできるコレクションは、*監視可能な*コレクションと呼ばれます。 このトピックでは、監視可能なコレクションを実装および使用する方法と、それに XAML アイテム コントロールをバインドする方法を示します。 |
+| [C + を使用してカスタム (テンプレート) コントロールを XAML +/WinRT](xaml-cust-ctrl.md) | このトピックでは、単純な C キーを使用してカスタム コントロールを作成する手順を +/WinRT します。 独自の豊富な機能やカスタマイズ可能な UI コントロールを作成するのには次の情報で作成できます。 |
+| [DirectX と C + では、その他の COM Api を利用する +/WinRT](consume-com.md) | このトピックでは、完全な Direct2D コード例を使用して、C キーを使用する方法を示す +/WinRT COM クラスとインターフェイスを使用します。 |
 | [C++/WinRT と C++/CX 間の相互運用](interop-winrt-cx.md) | このトピックでは、[C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) と C++/WinRT オブジェクト間の変換に使用できる 2 つのヘルパー関数について説明します。 |
 | [C++/CX から C++/WinRT への移行](move-to-winrt-from-cx.md) | このトピックでは、C++/CX コードを C++/WinRT の同等のコードに移植する方法について説明します。 |
 | [C++/WinRT と ABI 間の相互運用](interop-winrt-abi.md) | このトピックでは、アプリケーション バイナリ インターフェイス (ABI) と C++/WinRT オブジェクト間の変換方法について説明します。 |
 | [WRL から C++/WinRT への移行](move-to-winrt-from-wrl.md) | このトピックでは、[Windows ランタイム C++ テンプレート ライブラリ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) のコードを C++/WinRT の同等のコードに移植する方法について説明します。 |
 | [弱参照](weak-references.md) | C++/WinRT の弱参照サポートは利用に応じた料金制度であるため、オブジェクトが [**IWeakReferenceSource**](https://msdn.microsoft.com/library/br224609) で照会されない限り、料金はかかりません。 |
 | [アジャイル オブジェクト](agile-objects.md) | アジャイル オブジェクトは、いずれかのスレッドからアクセスできます。 お使いの C++/WinRT 型は既定ではアジャイルですが、オプトアウトできます。 |
+
+### <a name="topics-about-the-c-language"></a>C 言語に関するトピック
+
+| トピック | 説明 |
+| - | - |
+| [値のカテゴリ、およびへの参照](cpp-value-categories.md) | このトピックでは、C で存在しない値のさまざまなカテゴリについて説明します。 Lvalue と rvalue 音がわかりは、他の種類をすぎる場合もあります。 |
 
 ## <a name="important-apis"></a>重要な API
 * [winrt 名前空間](/uwp/cpp-ref-for-winrt/winrt)

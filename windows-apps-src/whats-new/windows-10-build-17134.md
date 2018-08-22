@@ -8,13 +8,13 @@ ms.date: 4/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: high
-ms.openlocfilehash: 7652e45cd4c5fc416429248929889eeffc04dba3
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832576"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792079"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Windows 10 ビルド 17134 の開発者向け新着情報
 
@@ -38,7 +38,7 @@ Fluent Design の更新 | 多くの Fluent Design ページが新しい情報と
 ナビゲーション ビュー | [ナビゲーション ビュー](../design/controls-and-patterns/navigationview.md) コントロールでは、アプリ内でトップレベルのナビゲーションを行うための折りたたみ可能なナビゲーション メニューを提供します。 このコントロールは、ナビゲーション ウィンドウ (またはハンバーガー メニュー) パターンを実装し、ウィンドウの表示モードをさまざまなウィンドウ サイズに自動的に合わせます。
 表示フォーカス | 新しい[表示フォーカス](../design/style/reveal-focus.md)効果では、Xbox One やテレビ画面などのエクスペリエンスに発光効果を提供します。 ユーザーがゲームパッドやキーボードのフォーカスをボタンなどのフォーカス可能な要素に移動したときに、その要素の境界線がアニメーション化されます。
 サウンド | XAML では、**SpatialAudioMode** プロパティで 3D オーディオがサポートされるようになりました。 構成方法については、「[サウンド](../design/style/sound.md)」をご覧ください。
-タイル | [追跡可能なタイル通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)が JavaScript ベースの UWP アプリでサポートされるようになりました。
+タイル | [追跡可能なタイル通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)が JavaScript ベースの UWP アプリでサポートされるようになりました。<br><br>第 2 のタイルとバッジの通知は、[デスクトップ ブリッジ アプリから現在サポートされています](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications)。
 ツリー ビュー | [TreeView](../design/controls-and-patterns/tree-view.md) コントロールを使用すると、階層リストが有効になり、入れ子になった項目を含むノードを展開したり、折りたたんだりすることができるようになります。 フォルダー構造や入れ子になった関係を UI で視覚的に示すために使用できます。
 記述スタイル | 文体と語調に関する記事を更新および拡張し、[記述スタイルに関するガイダンス](../design/style/writing-style.md)を作成しました。 この新しいガイドでは、アプリ内に効果的なテキストを作成するための原則と、エラー メッセージやダイアログなどのコントロールに使用する記述スタイルのベスト プラクティスを示しています。
 
@@ -59,7 +59,7 @@ C++/WinRT | [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-api
 コンソール UWP アプリ | C++ /WinRT または /CX の UWP コンソール アプリを作成して、DOS や PowerShell などのコンソール ウィンドウで実行できるようになりました。 コンソール アプリでは、入出力にコンソール ウィンドウを使用します。 UWP コンソール アプリは、Microsoft Store に公開することも、アプリの一覧に追加することもできます。また、プライマリ タイルとしてスタート メニューにピン留めすることもできます。 詳しくは、「[ユニバーサル Windows プラットフォーム コンソール アプリの作成](../launch-resume/console-uwp.md)」をご覧ください。
 拡張されたアプリ マニフェスト機能 | アプリ パッケージ マニフェストのスキーマに、機能がいくつか追加されました。それらの機能には、ファイル システムへの広範なアクセス、店舗販売時点管理 (POS) デバイスでのバーコード スキャナーの有効化、UWP コンソール アプリの定義などがあります。 詳しくは、「[app manifest changes in Windows 10](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/what-s-changed-in-windows-10)」(Windows 10 でのアプリ マニフェストの変更) をご覧ください。
 アクセシビリティ対応技術 (AT) 用にサポートされているランドマークと見出し | ランドマークと見出しは、ユーザー インターフェイスのセクションを定義し、スクリーン リーダーなどのアクセシビリティ対応技術のユーザーの効率的なナビゲーションに役立ちます。 詳しくは、[ランドマークと見出し](../design/accessibility/landmarks-and-headings.md)に関するページをご覧ください。
-Machine Learning | Windows Machine Learning を使用すると、ローカルの事前学習済み機械学習モデルを Windows 10 デバイス上で評価するアプリを構築できます。 このプラットフォームについて詳しくは、「[Windows Machine Learning](../machine-learning/index.md)」をご覧ください。 </br> [MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.preview) 名前空間には、機械学習モデルを読み込み、データを入力としてバインドし、結果を評価するためのアプリを有効にするクラスが含まれています。
+Machine Learning | Windows Machine Learning を使用すると、ローカルの事前学習済み機械学習モデルを Windows 10 デバイス上で評価するアプリを構築できます。 このプラットフォームについて詳しくは、「[Windows Machine Learning](https://docs.microsoft.com/windows/ai/)」をご覧ください。 </br> [MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.preview) 名前空間には、機械学習モデルを読み込み、データを入力としてバインドし、結果を評価するためのアプリを有効にするクラスが含まれています。
 マップ コントロール | [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) クラスには、**Region** という名前の新しいプロパティが含まれています。これを使用すると、特定の地域 (州や県など) の言語に基づいてマップ コントロールにコンテンツを表示できます。
 マップ要素 | [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement) クラスには、**IsEnabled** という名前の新しいプロパティが含まれています。これを使用すると、ユーザーによる [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement) との対話が可能かどうかを指定できます。
 マップの場所の情報 | [PlaceInfo](https://docs.microsoft.com/uwp/api/windows.services.maps.placeinfo) クラスには、**CreateFromAddress** という新しいメソッドが含まれています。このメソッドでは、住所と表示名を使用して、[PlaceInfo](https://docs.microsoft.com/uwp/api/windows.services.maps.placeinfo) を作成できます。
@@ -73,7 +73,7 @@ PlayReady | Microsoft PlayReady は、デジタル コンテンツを保護し�
 システム トリガー | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) を使用すると、必要なシステム トリガーが OS から提供されない場合に、システム トリガーを定義できます。 ハードウェア ドライバーと UWP アプリの両方がサード パーティ製であり、ハードウェア ドライバーでカスタム イベントを生成し、アプリで処理する必要がある場合などに必要になります。 例として、オーディオ ジャックが接続されたときに、オーディオ カードからユーザーに通知する場合などが該当します。
 ユーザー アクティビティ | 新しい [UserActivity に関するドキュメント](../launch-resume/useractivities.md)では、前回ユーザーがアプリで実行していた状態から再開できるようにする方法 (複数のデバイス間で再開する場合にも対応) について説明します。</br>**UserActivitySessionHistoryItem** クラスには、最近のユーザー アクティビティを取得する新しいメソッドが含まれています。 詳しくは、[GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) およびそのオーバーロードの説明をご覧ください。
 Windows Mixed Reality API | 拡張中の Windows Mixed Reality プラットフォームをサポートするために、[Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) 名前空間と [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) 名前空間に新しい API が追加されました。
-Windows Mixed Reality に関するドキュメント | Windows Mixed Reality の開発者向けガイダンスは、[docs.microsoft.com でホストされるようになりました](https://docs.microsoft.com/windows/mixed-reality/)。UWP のドキュメントの場合と同様に、フィードバックを GitHub の問題に登録したり、プル要求を使用してユーザー独自の投稿を提出したりすることができます。
+Windows Mixed Reality に関するドキュメント | 実際には Windows 混在開発者ガイダンス[docs.microsoft.com でホストされるようになりました](https://docs.microsoft.com/windows/mixed-reality/)。 同じようでこれらの UWP ドキュメントでは、今すぐの GitHub の問題についてのフィードバックをファイルしたりを取得リクエストで独自の投稿を送信できます。
 
 ## <a name="publish--monetize-windows-apps"></a>Windows アプリを公開および収益化する
 

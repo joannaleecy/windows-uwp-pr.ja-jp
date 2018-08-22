@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、uwp、接続されているデバイス、リモート システム、ローマ、プロジェクト ローマ
 ms.localizationpriority: medium
-ms.openlocfilehash: 724e2ce05dc439ba440f46697b736faabb1e8df0
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 02d04074ece0033da8c3454a95bc35af201903f3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018496"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794663"
 ---
 # <a name="discover-remote-devices"></a>リモート デバイスの検出
 アプリは、ワイヤレス ネットワーク、Bluetooth、およびクラウド接続を使って、検出側デバイスと同じ Microsoft アカウントでサインインしている Windows デバイスを検出できます。 リモート デバイスを検出するために特別なソフトウェアをインストールする必要はありません。
@@ -60,7 +60,7 @@ ms.locfileid: "2018496"
 
 ## <a name="querying-a-capability-on-a-remote-system"></a>リモート システムの機能の照会
 
-検出フィルタリングからは分離されていますが、デバイスの機能を照会することが検出プロセスの重要な要素になることがあります。 [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem#Windows_System_RemoteSystems_RemoteSystem_GetCapabilitySupportedAsync_System_String_) メソッドを使うと、リモート セッション接続や空間エンティティ (ホログラフィック) 共有などの特定の機能が、検出されたリモートシステムでサポートされているかどうかを照会できます。 照会可能な機能の一覧については、[**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) クラスをご覧ください。
+検出フィルタリングからは分離されていますが、デバイスの機能を照会することが検出プロセスの重要な要素になることがあります。 [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem.GetCapabilitySupportedAsync) メソッドを使うと、リモート セッション接続や空間エンティティ (ホログラフィック) 共有などの特定の機能が、検出されたリモートシステムでサポートされているかどうかを照会できます。 照会可能な機能の一覧については、[**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) クラスをご覧ください。
 
 ```csharp
 // Check to see if the given remote system can accept LaunchUri requests

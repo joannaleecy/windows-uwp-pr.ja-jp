@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 682d7dfcef1ea8037b113499362f0664c388d987
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: fe36fec72645558c539dd8270fd15d35d92b66b5
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989626"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792681"
 ---
 # <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>パッケージ デスクトップ アプリの配布 (デスクトップ ブリッジ)
 
@@ -31,7 +31,7 @@ ms.locfileid: "1989626"
 
 Microsoft Store では、幅広いお客様を対象にしてアプリを公開できます。 また、組織のお客様は[ビジネス向け Microsoft Store](https://www.microsoft.com/business-store) を通じてアプリを入手し、組織内で配布できます。
 
-Microsoft Store への公開を計画している場合は、申請プロセスの一部としていくつかの追加の質問をされます。 これは、パッケージ マニフェストが **runFullTrust** という名前の制限付き機能を宣言し、弊社でアプリケーションによるその機能の使用を承認する必要があるためです。 この要件の詳細については、「[制限付き機能](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#restricted-capabilities.html)」を参照してください。
+Microsoft Store への公開を計画している場合は、申請プロセスの一部としていくつかの追加の質問をされます。 これは、パッケージ マニフェストが **runFullTrust** という名前の制限付き機能を宣言し、弊社でアプリケーションによるその機能の使用を承認する必要があるためです。 この要件の詳細については、「[制限付き機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)」を参照してください。
 
 Microsoft Store に提出する前に、アプリに署名する必要はありません。
 

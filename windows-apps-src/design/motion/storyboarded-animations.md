@@ -4,22 +4,20 @@ ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: ストーリーボードに設定されたアニメーション
 description: ストーリーボードに設定されたアニメーションは、単なる視覚なアニメーションではありません。
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10、UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e5fad5bdea602767484fa55e943d262e7a1798fa
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 8c03d99781114c4fefff04cc25930748ec16182f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675579"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2797866"
 ---
 # <a name="storyboarded-animations"></a>ストーリーボードに設定されたアニメーション
-
-
 
 ストーリーボードに設定されたアニメーションは、単なる視覚なアニメーションではありません。 ストーリーボードに設定されたアニメーションは、依存関係プロパティの値を時間の関数として変更する手段です。 アニメーション ライブラリからではないストーリーボードに設定されたアニメーションが必要になる主な理由として、コントロール テンプレートまたはページ定義の一部としてコントロールの表示状態を定義できることが挙げられます。
 
@@ -49,17 +47,23 @@ Microsoft Silverlight または Windows Presentation Foundation (WPF) に慣れ�
 シンプルな例を見てみましょう。 この XAML の例では、[**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) プロパティを特定の [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) オブジェクトでアニメーション化しています。
 
 ```xaml
-<!-- Animates the rectangle's opacity. -->
-<Storyboard x:Name="myStoryboard">
-  <DoubleAnimation
-    Storyboard.TargetName="MyAnimatedRectangle"
-    Storyboard.TargetProperty="Opacity"
-    From="1.0" To="0.0" Duration="0:0:1"/>
-</Storyboard>
+<Page ...>
+  <Page.Resources>
+    <!-- Storyboard resource: Animates a rectangle's opacity. -->
+    <Storyboard x:Name="myStoryboard">
+      <DoubleAnimation
+        Storyboard.TargetName="MyAnimatedRectangle"
+        Storyboard.TargetProperty="Opacity"
+        From="1.0" To="0.0" Duration="0:0:1"/>
+    </Storyboard>
+  </Page.Resources>
 
-<!-- A different area of the XAML. -->
-<Rectangle x:Name="MyAnimatedRectangle"
-  Width="300" Height="200" Fill="Blue"/>
+  <!--Page root element, UI definition-->
+  <Grid>
+    <Rectangle x:Name="MyAnimatedRectangle"
+      Width="300" Height="200" Fill="Blue"/>
+  </Grid>
+</Page>
 ```
 
 ### <a name="identifying-the-object-to-animate"></a>アニメーション化の対象となるオブジェクトの指定
@@ -213,10 +217,10 @@ Windows ランタイムのアニメーション システムには、ストー�
     </Storyboard>
   </Page.Resources>
   <!--Page root element, UI definition-->
-  <StackPanel>
+  <Grid>
     <Rectangle x:Name="MyAnimatedRectangle"
       Width="300" Height="200" Fill="Blue"/>
-  </StackPanel>
+  </Grid>
 </Page>
 ```
 
@@ -271,7 +275,7 @@ UI スレッドの処理を遅くする可能性があると判断された各�
 
 ここまでで説明した内容だけでは、実際にはアニメーションは動作せず、適用もされません。 アニメーションが開始および実行されるまでは、アニメーションが XAML で宣言している値の変更は行われません。 アプリの有効期間またはユーザー エクスペリエンスに関連する何らかの方法で、アニメーションを明示的に開始する必要があります。 最も単純なレベルでは、アニメーションの親である [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) で [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) メソッドを呼び出してアニメーションを開始します。 XAML からメソッドを直接呼び出すことはできないため、アニメーションを有効にする場合は、必ずコードから行うことになります。 アプリのページまたはコンポーネントのコード ビハインドか、コントロールのロジック (カスタム コントロール クラスを定義する場合) を使うことになります。
 
-通常は、[**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) を呼び出し、継続時間が過ぎるまで単純にアニメーションを実行します。 ただし、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx)、[**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop) メソッドを使って実行時に [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) を制御することも、高度なアニメーション コントロールのシナリオに使われるその他の API を制御することもできます。
+通常は、[**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) を呼び出し、継続時間が過ぎるまで単純にアニメーションを実行します。 ただし、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx)、[**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop) メソッドを使って実行時に [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) を制御することも、高度なアニメーション コントロールのシナリオに使われるその他の API を使うこともできます。
 
 無限に繰り返すアニメーション (`RepeatBehavior="Forever"`) を含むストーリーボードで [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) を呼び出すと、アニメーションは、それを含むページがアンロードされるか、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) または [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop) を明示的に呼び出すまで実行されます。
 
@@ -291,6 +295,10 @@ UI スレッドの処理を遅くする可能性があると判断された各�
 
 ```csharp
 myStoryboard.Begin();
+```
+
+```cppwinrt
+myStoryboard().Begin();
 ```
 
 ```cpp

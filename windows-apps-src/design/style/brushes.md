@@ -2,20 +2,20 @@
 author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: ブラシの使用
-description: Brush オブジェクトを使用すると、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶして、UI 上で見やすくすることができます。
+description: Brush オブジェクトは、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶして、その対象領域を UI 上で視覚的に認識できるようにするために使われます。
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 872e93d5714eb832b64efb047079be9dbfc3b617
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 0473ee984461bf46be4ebf866a564f0d51e0cfc5
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396521"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795959"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>ブラシを使用して背景、前景、輪郭を描画する
 
@@ -25,7 +25,7 @@ ms.locfileid: "1396521"
 
 ## <a name="introduction-to-brushes"></a>ブラシ入門
 
-[**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) や [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) の領域など、アプリ キャンバスに表示されるオブジェクトを塗りつぶすには、[**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) を使います。 たとえば、**Shape** や [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) プロパティ、または **Control** の [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) プロパティを **Brush** 値に設定すると、対象となる UI 要素の塗りつぶし方法や、その要素の UI でのレンダリング方法が、**Brush** によって決定されます。 
+[**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) や [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) の領域など、アプリ キャンバスに表示されるオブジェクトを塗りつぶすには、[**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) を使います。 たとえば、**Shape** や [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) プロパティ、または **Control** の [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) プロパティを **Brush** 値に設定すると、対象となる UI 要素をどのように塗りつぶすか、またその要素を UI でどのようにレンダリングするかが、**Brush** によって決定されます。 
 
 ブラシには、次のような種類があります。 
 -   [**AcrylicBrush**](/uwp/api/windows.ui.xaml.media.acrylicbrush)
@@ -181,6 +181,10 @@ SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
 
 ```vb
 Dim blueBrush as SolidColorBrush = New SolidColorBrush(Windows.UI.Colors.Blue)
+```
+
+```cppwinrt
+Windows::UI::Xaml::Media::SolidColorBrush blueBrush{ Windows::UI::Colors::Blue() };
 ```
 
 ```cpp

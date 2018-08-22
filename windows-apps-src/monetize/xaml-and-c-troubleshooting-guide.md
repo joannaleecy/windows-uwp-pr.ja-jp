@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, AdControl, トラブルシューティング, XAML, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: a971aa26ceab462fedc37ebb7cdba584c55efe93
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d20f816bc6e4010daf01ebad87c0138df0f1243d
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655634"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791347"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML と C# のトラブルシューティング ガイド
 
@@ -58,7 +58,7 @@ ms.locfileid: "1655634"
                   Width="728" Height="90" />
     ```
 
-4.  要素の配置を確認します。 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) は表示可能領域の内部にある必要があります。
+4.  要素の配置を確認します。 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) は表示可能領域の内部にある必要があります。
 
 5.  **Visibility** プロパティを確認します。 省略可能な **Visibility** プロパティは collapsed または hidden に設定しないでください。 (次のように) インラインで設定できるほか、外部スタイル シートで設定できます。
 
@@ -70,17 +70,7 @@ ms.locfileid: "1655634"
                   Width="728" Height="90" />
     ```
 
-6.  **IsEnabled** プロパティを確認します。 省略可能な `IsEnabled` プロパティを `True` に設定する必要があります。
-
-    > [!div class="tabbedCodeSnippets"]
-    ``` xml
-    <UI:AdControl AdUnitId="{AdUnitID}"
-                  ApplicationId="{ApplicationID}"
-                  IsEnabled="True"
-                  Width="728" Height="90" />
-    ```
-
-7.  **AdControl** の親を確認します。 **AdControl** 要素がある親要素の中にある場合、この親はアクティブで表示されている必要があります。
+6.  **AdControl** の親を確認します。 **AdControl** 要素がある親要素の中にある場合、この親はアクティブで表示されている必要があります。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -91,9 +81,9 @@ ms.locfileid: "1655634"
     </StackPanel>
     ```
 
-8.  **AdControl** がビューポートから隠れていないことを確認します。 **AdControl** は、広告が正常に表示されるように、見える必要があります。
+7.  **AdControl** がビューポートから隠れていないことを確認します。 **AdControl** は、広告が正常に表示されるように、見える必要があります。
 
-9.  **ApplicationId** と **AdUnitId** の実際の値は、エミュレーターでのテストに使わないようにしてください。 **AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても[テスト値](set-up-ad-units-in-your-app.md#test-ad-units)を使ってください。
+8.  **ApplicationId** と **AdUnitId** の実際の値は、エミュレーターでのテストに使わないようにしてください。 **AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても[テスト値](set-up-ad-units-in-your-app.md#test-ad-units)を使ってください。
 
 <span id="xaml-blackboxblinksdisappears"/>
 
@@ -127,7 +117,7 @@ ms.locfileid: "1655634"
 
     ブラック ボックスの原因となる最も一般的なエラーは、"No ad available" です。 このエラーは、要求から復帰する利用可能な広告がないことを意味します。
 
-3.  [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) は正常に動作しています。
+3.  [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) は正常に動作しています。
 
     既定では、**AdControl** は広告を表示できない場合に折りたたまれます。 他の要素が同じ親の子である場合、これらの他の要素は折りたたんだ **AdControl** の隙間を埋めるように移動し、次の要求がなされたときに展開することがあります。
 
@@ -135,7 +125,7 @@ ms.locfileid: "1655634"
 
 ### <a name="ads-not-refreshing"></a>広告が更新されない
 
-1.  [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) プロパティを確認します。 既定では、この省略可能なプロパティは **True** に設定されています。 **False** に設定すると、他の広告を取得するために [Refresh](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) メソッドを使う必要があります。
+1.  [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled) プロパティを確認します。 既定では、この省略可能なプロパティは **True** に設定されています。 **False** に設定すると、他の広告を取得するために [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh) メソッドを使う必要があります。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -228,21 +218,9 @@ ms.locfileid: "1655634"
     adControl.Visibility = System.Windows.Visibility.Visible;
     ```
 
-8.  **IsEnabled** プロパティを確認します。 省略可能な **IsEnabled** プロパティを **True** に設定する必要があります。
+8.  **AdControl** の親を確認します。 親はアクティブな状態で表示されている必要があります。
 
-    > [!div class="tabbedCodeSnippets"]
-    ``` cs
-    adControl = new AdControl();
-    adControl.ApplicationId = "{ApplicationID}";
-    adControl.AdUnitId = "{AdUnitID}";
-    adControl.Height = 90;
-    adControl.Width = 728;
-    adControl.IsEnabled = True;
-    ```
-
-9.  **AdControl** の親を確認します。 親はアクティブな状態で表示されている必要があります。
-
-10. **ApplicationId** と **AdUnitId** の実際の値は、エミュレーターでのテストに使わないようにしてください。 **AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても[テスト値](set-up-ad-units-in-your-app.md#test-ad-units)を使ってください。
+9. **ApplicationId** と **AdUnitId** の実際の値は、エミュレーターでのテストに使わないようにしてください。 **AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても[テスト値](set-up-ad-units-in-your-app.md#test-ad-units)を使ってください。
 
 <span id="csharp-blackboxblinksdisappears"/>
 
@@ -272,9 +250,9 @@ ms.locfileid: "1655634"
 
 ### <a name="ads-not-refreshing"></a>広告が更新されない
 
-1.  **AdControl** の [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) プロパティが false に設定されているかどうかを確認します。 既定では、この省略可能なプロパティは **true** に設定されています。 **false** に設定すると、他の広告を取得するために **Refresh** メソッドを使う必要があります。
+1.  **AdControl** の [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) プロパティが false に設定されているかどうかを確認します。 既定では、この省略可能なプロパティは **true** に設定されています。 **false** に設定すると、他の広告を取得するために **Refresh** メソッドを使う必要があります。
 
-2.  [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) メソッドの呼び出しを確認します。 自動更新 (**IsAutoRefreshEnabled** が **true**) の場合、他の広告を取得するために **Refresh** を使うことはできません。 手動更新 (**IsAutoRefreshEnabled** が **false**) の場合、デバイスの現在のデータ接続に応じて、少なくとも 30 秒から 60 秒経ってから **Refresh** を呼び出します。
+2.  [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) メソッドの呼び出しを確認します。 自動更新 (**IsAutoRefreshEnabled** が **true**) の場合、他の広告を取得するために **Refresh** を使うことはできません。 手動更新 (**IsAutoRefreshEnabled** が **false**) の場合、デバイスの現在のデータ接続に応じて、少なくとも 30 秒から 60 秒経ってから **Refresh** を呼び出します。
 
     次の例は、**Refresh** メソッドを呼び出す方法を示しています。
 

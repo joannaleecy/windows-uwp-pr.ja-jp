@@ -8,14 +8,14 @@ ms.date: 03/15/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、uwp、デバイスのポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f09a3cc7c107ff7f3f689ab88d3cce2b0c88d31
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 146cce82275047c112d70cfb3d022eab723f49e6
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816337"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792738"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows デスクトップ用 Device Portal
 
