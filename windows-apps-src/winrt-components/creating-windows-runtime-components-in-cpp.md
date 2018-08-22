@@ -1,58 +1,50 @@
 ---
 author: msatranjr
-title: "C++ での Windows ランタイム コンポーネントの作成"
-description: "この記事では、C++ を使って Windows ランタイム コンポーネントを作成する方法を示します。このコンポーネントは、JavaScript (または C#、Visual Basic、C++) を使って構築したユニバーサル Windows アプリから呼び出すことができる DLL です。"
+title: C++ での Windows ランタイム コンポーネントの作成
+description: このトピックは、C キーを使用する方法を示しています。 +/CX コンポーネント c#、Visual Basic、c または Javascript を使用して作成されたどこからでも Windows アプリから呼び出すことができるのは、Windows ランタイム コンポーネントを作成します。
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ms.author: misatran
-ms.date: 02/08/2017
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 28d03486f6fb2f7a249af82d2c3be6006c9d80ed
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: b5515d0ed5dc6e200c7c4fc9a7785c993d4cab59
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795339"
 ---
+# <a name="creating-windows-runtime-components-in-ccx"></a><span data-ttu-id="d27de-104">C++/CX での Windows ランタイム コンポーネントの作成</span><span class="sxs-lookup"><span data-stu-id="d27de-104">Creating Windows Runtime Components in C++/CX</span></span>
+> [!NOTE]
+> <span data-ttu-id="d27de-105">このトピックは、C++/CX アプリケーションの管理ができるようにすることを目的としています。</span><span class="sxs-lookup"><span data-stu-id="d27de-105">This topic exists to help you maintain your C++/CX application.</span></span> <span data-ttu-id="d27de-106">ただし、新しいアプリケーションには [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="d27de-106">But we recommend that you use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for new applications.</span></span> <span data-ttu-id="d27de-107">C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="d27de-107">C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.</span></span> <span data-ttu-id="d27de-108">C キーを使用して Windows ランタイム コンポーネントを作成する方法については、+/WinRT を参照してください[C + でイベントを作成/WinRT](../cpp-and-winrt-apis/author-events.md)します。</span><span class="sxs-lookup"><span data-stu-id="d27de-108">To learn how to create a Windows Runtime Component using C++/WinRT, see [Author events in C++/WinRT](../cpp-and-winrt-apis/author-events.md).</span></span>
 
+<span data-ttu-id="d27de-109">このトピックは、C キーを使用する方法を示しています。 +/CX コンポーネント c#、Visual Basic、c または Javascript を使用して作成されたどこからでも Windows アプリから呼び出すことができるのは、Windows ランタイム コンポーネントを作成します。</span><span class="sxs-lookup"><span data-stu-id="d27de-109">This topic shows how to use C++/CX to create a Windows Runtime component, which is a component that's callable from a Universal Windows app built using C#, Visual Basic, C++, or Javascript.</span></span>
 
-# <a name="creating-windows-runtime-components-in-c"></a>C++ での Windows ランタイム コンポーネントの作成
+<span data-ttu-id="d27de-110">Windows ランタイム コンポーネントを構築するためのいくつかの理由があります。</span><span class="sxs-lookup"><span data-stu-id="d27de-110">There are several reasons for building a Windows Runtime component.</span></span>
+- <span data-ttu-id="d27de-111">複雑な操作または負荷の高い操作で C++ のパフォーマンス上のメリットを得る。</span><span class="sxs-lookup"><span data-stu-id="d27de-111">To get the performance advantage of C++ in complex or computationally intensive operations.</span></span>
+- <span data-ttu-id="d27de-112">既に作成されテストされている既存のコードを再利用する。</span><span class="sxs-lookup"><span data-stu-id="d27de-112">To reuse code that's already written and tested.</span></span>
 
+<span data-ttu-id="d27de-113">JavaScript プロジェクトまたは .NET プロジェクト、および Windows ランタイム コンポーネント プロジェクトを含むソリューションを構築すると、JavaScript プロジェクト ファイルとコンパイル済みの DLL が 1 つのパッケージにマージされます。これを、シミュレーターを使ってローカルでデバッグしたり、テザリングされたデバイス上でリモートでデバッグしたりすることができます。</span><span class="sxs-lookup"><span data-stu-id="d27de-113">When you build a solution that contains a JavaScript or .NET project, and a Windows Runtime component project, the JavaScript project files and the compiled DLL are merged into one package, which you can debug locally in the simulator or remotely on a tethered device.</span></span> <span data-ttu-id="d27de-114">また、拡張 SDK としてコンポーネント プロジェクトだけを配布することもできます。</span><span class="sxs-lookup"><span data-stu-id="d27de-114">You can also distribute just the component project as an Extension SDK.</span></span> <span data-ttu-id="d27de-115">詳しくは、[ソフトウェア開発キットの作成に関するページ](https://msdn.microsoft.com/library/hh768146.aspx)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d27de-115">For more information, see [Creating a Software Development Kit](https://msdn.microsoft.com/library/hh768146.aspx).</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+<span data-ttu-id="d27de-116">一般に、コーディングするとき、C + +/CX コンポーネントを使用して、通常の C ライブラリと組み込みの種類] を除く抽象バイナリ インターフェイス (ABI) の境界で別の .winmd パッケージとコードのデータを渡しています。</span><span class="sxs-lookup"><span data-stu-id="d27de-116">In general, when you code your C++/CX component, use the regular C++ library and built-in types, except at the abstract binary interface (ABI) boundary where you are passing data to and from code in another .winmd package.</span></span> <span data-ttu-id="d27de-117">Windows の実行時の種類と特別な書式を使用して、C + +/を作成すると、これらの種類の操作を行う CX をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="d27de-117">There, use Windows Runtime types and the special syntax that C++/CX supports for creating and manipulating those types.</span></span> <span data-ttu-id="d27de-118">またで、C + +/CX コード、JavaScript、Visual Basic、C または c# では、コンポーネントから発生して処理できるイベントを実装するには、代理人とイベントなどの種類を使用します。</span><span class="sxs-lookup"><span data-stu-id="d27de-118">In addition, in your C++/CX code, use types such as delegate and event to implement events that can be raised from your component and handled in JavaScript, Visual Basic, C++, or C#.</span></span> <span data-ttu-id="d27de-119">詳細については、C + +/CX の書式を参照してください[Visual C 言語リファレンス 』 (C + +/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)します。</span><span class="sxs-lookup"><span data-stu-id="d27de-119">For more information about the C++/CX syntax, see [Visual C++ Language Reference (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).</span></span>
 
-この記事では、C++ を使って Windows ランタイム コンポーネントを作成する方法を示します。このコンポーネントは、JavaScript (または C#、Visual Basic、C++) を使って構築したユニバーサル Windows アプリから呼び出すことができる DLL です。
+## <a name="casing-and-naming-rules"></a><span data-ttu-id="d27de-120">大文字小文字の区別と名前付け規則</span><span class="sxs-lookup"><span data-stu-id="d27de-120">Casing and naming rules</span></span>
 
-そのようなコンポーネントを構築する理由には、次のようなものがあります。
+### <a name="javascript"></a><span data-ttu-id="d27de-121">JavaScript の場合</span><span class="sxs-lookup"><span data-stu-id="d27de-121">JavaScript</span></span>
+<span data-ttu-id="d27de-122">JavaScript では、大文字と小文字が区別されます。</span><span class="sxs-lookup"><span data-stu-id="d27de-122">JavaScript is case-sensitive.</span></span> <span data-ttu-id="d27de-123">したがって、次に示す大文字小文字の区別の規則に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="d27de-123">Therefore, you must follow these casing conventions:</span></span>
 
--   複雑な操作または負荷の高い操作で C++ のパフォーマンス上のメリットを得る。
+-   <span data-ttu-id="d27de-124">C++ の名前空間とクラスを参照する場合、C++ の側と同じ大文字小文字の区別を使います。</span><span class="sxs-lookup"><span data-stu-id="d27de-124">When you reference C++ namespaces and classes, use the same casing that's used on the C++ side.</span></span>
+-   <span data-ttu-id="d27de-125">メソッドを呼び出す場合、メソッド名が C++ の側で大文字になっていても、camel 規約に従った大文字小文字の区別を使います。</span><span class="sxs-lookup"><span data-stu-id="d27de-125">When you call methods, use camel casing even if the method name is capitalized on the C++ side.</span></span> <span data-ttu-id="d27de-126">たとえば、C++ のメソッド GetDate() は、JavaScript では getDate() として呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="d27de-126">For example, a C++ method GetDate() must be called from JavaScript as getDate().</span></span>
+-   <span data-ttu-id="d27de-127">アクティブ化可能なクラス名や名前空間名には、UNICODE 文字を含めることはできません。</span><span class="sxs-lookup"><span data-stu-id="d27de-127">An activatable class name and namespace name can't contain UNICODE characters.</span></span>
 
--   既に作成されテストされている既存のコードを再利用する。
+### <a name="net"></a><span data-ttu-id="d27de-128">.NET の場合</span><span class="sxs-lookup"><span data-stu-id="d27de-128">.NET</span></span>
+<span data-ttu-id="d27de-129">.NET 言語では、各言語の通常の大文字と小文字の規則が適用されます。</span><span class="sxs-lookup"><span data-stu-id="d27de-129">The .NET languages follow their normal casing rules.</span></span>
 
-JavaScript プロジェクトまたは .NET プロジェクト、および Windows ランタイム コンポーネント プロジェクトを含むソリューションを構築すると、JavaScript プロジェクト ファイルとコンパイル済みの DLL が 1 つのパッケージにマージされます。これを、シミュレーターを使ってローカルでデバッグしたり、テザリングされたデバイス上でリモートでデバッグしたりすることができます。 また、拡張 SDK としてコンポーネント プロジェクトだけを配布することもできます。 詳しくは、[ソフトウェア開発キットの作成に関するページ](https://msdn.microsoft.com/library/hh768146.aspx)をご覧ください。
-
-一般的に、C++ コンポーネントをコーディングする場合、他の .winmd パッケージのコードとの間でデータをやり取りする抽象バイナリ インターフェイス (ABI) の境界を除いて、標準の C++ ライブラリと組み込み型を使います。 境界では、Windows ランタイム型と、それらの型の作成と操作をサポートする Visual C++ の特別な構文を使います。 さらに、Visual C++ コードでは、コンポーネントから生成され、JavaScript、Visual Basic、C# で処理されるイベントの実装に delegate や event などの型を使います。 新しい Visual C++ 構文について詳しくは、「[Visual C++ の言語リファレンス (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)」をご覧ください。
-
-## <a name="casing-and-naming-rules"></a>大文字小文字の区別と名前付け規則
-
-
-### <a name="javascript"></a>JavaScript の場合
-
-JavaScript では、大文字と小文字が区別されます。 したがって、次に示す大文字小文字の区別の規則に従う必要があります。
-
--   C++ の名前空間とクラスを参照する場合、C++ の側と同じ大文字小文字の区別を使います。
--   メソッドを呼び出す場合、メソッド名が C++ の側で大文字になっていても、camel 規約に従った大文字小文字の区別を使います。 たとえば、C++ のメソッド GetDate() は、JavaScript では getDate() として呼び出す必要があります。
--   アクティブ化可能なクラス名や名前空間名には、UNICODE 文字を含めることはできません。
-
-### <a name="net"></a>.NET の場合
-
-.NET 言語では、各言語の通常の大文字と小文字の規則が適用されます。
-
-## <a name="instantiating-the-object"></a>オブジェクトのインスタンス化
-
-
-Windows ランタイム型のみ ABI の境界を越えて渡すことができます。 コンパイラは、コンポーネントのパブリック メソッドでの戻り値の型または戻り値パラメーターが std::wstring などの型である場合、エラーを発生させます。 Visual C++ コンポーネント拡張 (C++/CX) の組み込み型には、int や double などの通常のスカラーと、その typedef である int32、float64 などがあります。詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。
+## <a name="instantiating-the-object"></a><span data-ttu-id="d27de-130">オブジェクトのインスタンス化</span><span class="sxs-lookup"><span data-stu-id="d27de-130">Instantiating the object</span></span>
+<span data-ttu-id="d27de-131">Windows ランタイム型のみ ABI の境界を越えて渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="d27de-131">Only Windows Runtime types can be passed across the ABI boundary.</span></span> <span data-ttu-id="d27de-132">コンパイラは、コンポーネントのパブリック メソッドでの戻り値の型または戻り値パラメーターが std::wstring などの型である場合、エラーを発生させます。</span><span class="sxs-lookup"><span data-stu-id="d27de-132">The compiler will raise an error if the component has a type like std::wstring as a return type or parameter in a public method.</span></span> <span data-ttu-id="d27de-133">Visual C コンポーネントの拡張機能 (C + +/CX) 組み込み型 int、二重、およびその typedef 対応 int32 float64 などの一般的なスカラーを含めるしたりします。</span><span class="sxs-lookup"><span data-stu-id="d27de-133">The Visual C++ component extensions (C++/CX) built-in types include the usual scalars such as int and double, and also their typedef equivalents int32, float64, and so on.</span></span> <span data-ttu-id="d27de-134">詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d27de-134">For more information, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).</span></span>
 
 ```cpp
 // ref class definition in C++
@@ -82,23 +74,20 @@ var num = nativeObject.LogCalc(21.5);
 ResultText.Text = num.ToString();
 ```
 
-## <a name="c-built-in-types-library-types-and-windows-runtime-types"></a>C++ の組み込み型、ライブラリ型、および Windows ランタイム型
+## <a name="ccx-built-in-types-library-types-and-windows-runtime-types"></a><span data-ttu-id="d27de-135">C + +/CX 組み込み型、ライブラリの種類、および Windows ランタイム型</span><span class="sxs-lookup"><span data-stu-id="d27de-135">C++/CX built-in types, library types, and Windows Runtime types</span></span>
+<span data-ttu-id="d27de-136">アクティブ化可能なクラス (ref クラスとも呼ばれます) は、JavaScript、C#、Visual Basic などの他の言語からインスタンス化できるクラスです。</span><span class="sxs-lookup"><span data-stu-id="d27de-136">An activatable class (also known as a ref class) is one that can be instantiated from another language such as JavaScript, C# or Visual Basic.</span></span> <span data-ttu-id="d27de-137">他の言語から利用できるようにするには、コンポーネントに 1 個以上のアクティブ化可能なクラスを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="d27de-137">To be consumable from another language, a component must contain at least one activatable class.</span></span>
 
+<span data-ttu-id="d27de-138">Windows ランタイム コンポーネントには、複数のアクティブ化可能なパブリック クラスだけでなく、コンポーネント内部でのみ認識される他のクラスも含めることができます。</span><span class="sxs-lookup"><span data-stu-id="d27de-138">A Windows Runtime component can contain multiple public activatable classes as well as additional classes that are known only internally to the component.</span></span> <span data-ttu-id="d27de-139">C + [WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx)属性を適用する +/CX 型 JavaScript に表示されるものではありません。</span><span class="sxs-lookup"><span data-stu-id="d27de-139">Apply the [WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx) attribute to C++/CX types that are not intended to be visible to JavaScript.</span></span>
 
-アクティブ化可能なクラス (ref クラスとも呼ばれます) は、JavaScript、C#、Visual Basic などの他の言語からインスタンス化できるクラスです。 他の言語から利用できるようにするには、コンポーネントに 1 個以上のアクティブ化可能なクラスを含める必要があります。
+<span data-ttu-id="d27de-140">すべてのパブリック クラスが、コンポーネントのメタデータ ファイルと同じ名前を持つ同じルート名前空間に存在する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d27de-140">All public classes must reside in the same root namespace which has the same name as the component metadata file.</span></span> <span data-ttu-id="d27de-141">たとえば、A.B.C.MyClass という名前のクラスは、A.winmd、A.B.winmd、または A.B.C.winmd という名前のメタデータ ファイルで定義されている場合のみインスタンス化できます。</span><span class="sxs-lookup"><span data-stu-id="d27de-141">For example, a class that's named A.B.C.MyClass can be instantiated only if it's defined in a metadata file that's named A.winmd or A.B.winmd or A.B.C.winmd.</span></span> <span data-ttu-id="d27de-142">DLL の名前は .winmd ファイルの名前と一致する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="d27de-142">The name of the DLL is not required to match the .winmd file name.</span></span>
 
-Windows ランタイム コンポーネントには、複数のアクティブ化可能なパブリック クラスだけでなく、コンポーネント内部でのみ認識される他のクラスも含めることができます。 JavaScript に公開することを目的としていない C++ の型に [WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx) 属性を適用します。
+<span data-ttu-id="d27de-143">クライアント コードでは、他のクラスと同様に、**new** キーワード (Visual Basic の場合は **New**) を使って、コンポーネントのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="d27de-143">Client code creates an instance of the component by using the **new** (**New** in Visual Basic) keyword just as for any class.</span></span>
 
-すべてのパブリック クラスが、コンポーネントのメタデータ ファイルと同じ名前を持つ同じルート名前空間に存在する必要があります。 たとえば、A.B.C.MyClass という名前のクラスは、A.winmd、A.B.winmd、または A.B.C.winmd という名前のメタデータ ファイルで定義されている場合のみインスタンス化できます。 DLL の名前は .winmd ファイルの名前と一致する必要はありません。
+<span data-ttu-id="d27de-144">アクティブ化可能なクラスは **public ref class sealed** として宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d27de-144">An activatable class must be declared as **public ref class sealed**.</span></span> <span data-ttu-id="d27de-145">**ref class** キーワードは、Windows ランタイムと互換性のある型としてクラスを作成するようにコンパイラに指示し、sealed キーワードは、クラスが継承できないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="d27de-145">The **ref class** keyword tells the compiler to create the class as a Windows Runtime compatible type, and the sealed keyword specifies that the class cannot be inherited.</span></span> <span data-ttu-id="d27de-146">現在、Windows ランタイムは汎用の継承モデルをサポートしていません。限定的な継承モデルによって、カスタム XAML コントロールの作成をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="d27de-146">The Windows Runtime does not currently support a generalized inheritance model; a limited inheritance model supports creation of custom XAML controls.</span></span> <span data-ttu-id="d27de-147">詳しくは、「[Ref クラスと構造体 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d27de-147">For more information, see [Ref classes and structs (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx).</span></span>
 
-クライアント コードでは、他のクラスと同様に、**new** キーワード (Visual Basic の場合は **New**) を使って、コンポーネントのインスタンスを作成します。
+<span data-ttu-id="d27de-148">C + +/数値プリミティブが既定の名前空間で定義されているすべての cx シリーズします。</span><span class="sxs-lookup"><span data-stu-id="d27de-148">For C++/CX, all the numeric primitives are defined in the default namespace.</span></span> <span data-ttu-id="d27de-149">[プラットフォーム](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx)名前空間を含む C + +/は、Windows の実行時に固有の CX クラスがシステムを入力します。</span><span class="sxs-lookup"><span data-stu-id="d27de-149">The [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) namespace contains C++/CX classes that are specific to the Windows Runtime type system.</span></span> <span data-ttu-id="d27de-150">このようなクラスには、[Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) クラスと [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) クラスがあります。</span><span class="sxs-lookup"><span data-stu-id="d27de-150">These include [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) class and [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) class.</span></span> <span data-ttu-id="d27de-151">[Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) クラスや [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) クラスなどの具象コレクション型は、[Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) 名前空間で定義されます。</span><span class="sxs-lookup"><span data-stu-id="d27de-151">The concrete collection types such as [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) class and [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) class are defined in the [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) namespace.</span></span> <span data-ttu-id="d27de-152">これらの型によって実装されるパブリック インターフェイスは、[Windows::Foundation::Collections 名前空間 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx) で定義されます。</span><span class="sxs-lookup"><span data-stu-id="d27de-152">The public interfaces that these types implement are defined in [Windows::Foundation::Collections Namespace (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx).</span></span> <span data-ttu-id="d27de-153">JavaScript、C#、および Visual Basic で利用されるのは、この種類のインターフェイスです。</span><span class="sxs-lookup"><span data-stu-id="d27de-153">It is these interface types that are consumed by JavaScript, C# and Visual Basic.</span></span> <span data-ttu-id="d27de-154">詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d27de-154">For more information, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).</span></span>
 
-アクティブ化可能なクラスは **public ref class sealed** として宣言する必要があります。 **ref class** キーワードは、Windows ランタイムと互換性のある型としてクラスを作成するようにコンパイラに指示し、sealed キーワードは、クラスが継承できないことを指定します。 現在、Windows ランタイムは汎用の継承モデルをサポートしていません。限定的な継承モデルによって、カスタム XAML コントロールの作成をサポートしています。 詳しくは、「[Ref クラスと構造体 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx)」をご覧ください。
-
-C++ では、すべてのプリミティブ数値型が既定の名前空間で定義されます。 [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) 名前空間には、Windows ランタイム型システムに固有の C++ クラスが含まれます。 このようなクラスには、[Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) クラスと [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) クラスがあります。 [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) クラスや [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) クラスなどの具象コレクション型は、[Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) 名前空間で定義されます。 これらの型によって実装されるパブリック インターフェイスは、[Windows::Foundation::Collections 名前空間 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx) で定義されます。 JavaScript、C#、および Visual Basic で利用されるのは、この種類のインターフェイスです。 詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。
-
-## <a name="method-that-returns-a-value-of-built-in-type"></a>組み込み型の値を返すメソッド
-
+## <a name="method-that-returns-a-value-of-built-in-type"></a><span data-ttu-id="d27de-155">組み込み型の値を返すメソッド</span><span class="sxs-lookup"><span data-stu-id="d27de-155">Method that returns a value of built-in type</span></span>
 ```cpp
     // #include <valarray>
 public:
@@ -116,8 +105,7 @@ var num = nativeObject.logCalc(21.5);
 document.getElementById('P2').innerHTML = num;
 ```
 
-## <a name="method-that-returns-a-custom-value-struct"></a>カスタム値の構造体を返すメソッド
-
+## <a name="method-that-returns-a-custom-value-struct"></a><span data-ttu-id="d27de-156">カスタム値の構造体を返すメソッド</span><span class="sxs-lookup"><span data-stu-id="d27de-156">Method that returns a custom value struct</span></span>
 ```cpp
 namespace CppComponent
 {
@@ -143,7 +131,7 @@ namespace CppComponent
 }
 ```
 
-ユーザーが定義した値の構造体を ABI の境界を越えて渡すには、C++ で定義された値の構造体と同じメンバーを持つ JavaScript オブジェクトを定義します。 その後で、そのオブジェクトを C++ メソッドの引数として渡し、オブジェクトが C++ 型として暗黙的に変換されるようにします。
+<span data-ttu-id="d27de-157">ユーザー定義の値の構造体を渡す ABI にわたって、C + で定義されている値構造体と同じメンバーである JavaScript オブジェクトを定義します +/CX します。</span><span class="sxs-lookup"><span data-stu-id="d27de-157">To pass user-defined value structs across the ABI, define a JavaScript object that has the same members as the value struct that's defined in C++/CX.</span></span> <span data-ttu-id="d27de-158">ことができますし、そのオブジェクトを引数としてを C + +/CX メソッド オブジェクトは C + に暗黙的に変換できるように +/CX 入力します。</span><span class="sxs-lookup"><span data-stu-id="d27de-158">You can then pass that object as an argument to a C++/CX method so that the object is implicitly converted to the C++/CX type.</span></span>
 
 ```javascript
 // Get and set the value struct
@@ -160,9 +148,9 @@ function GetAndSetPlayerData() {
 }
 ```
 
-もう 1 つの方法は、IPropertySet を実装するクラスを定義することです (ここでは例は示されていません)。
+<span data-ttu-id="d27de-159">もう 1 つの方法は、IPropertySet を実装するクラスを定義することです (ここでは例は示されていません)。</span><span class="sxs-lookup"><span data-stu-id="d27de-159">Another approach is to define a class that implements IPropertySet (not shown).</span></span>
 
-.NET 言語の場合、C++ コンポーネントで定義されている型の変数を作成します。
+<span data-ttu-id="d27de-160">C + で定義されている型の変数の作成した .NET の言語で +/CX コンポーネントします。</span><span class="sxs-lookup"><span data-stu-id="d27de-160">In the .NET languages, you just create a variable of the type that's defined in the C++/CX component.</span></span>
 
 ```csharp
 private void GetAndSetPlayerData()
@@ -187,10 +175,8 @@ private void GetAndSetPlayerData()
 }
 ```
 
-## <a name="overloaded-methods"></a>オーバー ロードされたメソッド
-
-
-C++ のパブリック ref クラスにはオーバーロードされたメソッドを含めることができますが、JavaScript の場合はオーバーロードされたメソッドを区別する機能が限定されています。 たとえば、以下のシグネチャの相違を区別できます。
+## <a name="overloaded-methods"></a><span data-ttu-id="d27de-161">オーバー ロードされたメソッド</span><span class="sxs-lookup"><span data-stu-id="d27de-161">Overloaded Methods</span></span>
+<span data-ttu-id="d27de-162">C + +/CX パブリック ref クラス オーバー ロードのメソッドを含めることができますが、JavaScript にオーバー ロードされたメソッドを区別する機能が制限されています。</span><span class="sxs-lookup"><span data-stu-id="d27de-162">A C++/CX public ref class can contain overloaded methods, but JavaScript has limited ability to differentiate overloaded methods.</span></span> <span data-ttu-id="d27de-163">たとえば、以下のシグネチャの相違を区別できます。</span><span class="sxs-lookup"><span data-stu-id="d27de-163">For example, it can tell the difference between these signatures:</span></span>
 
 ```cpp
 public ref class NumberClass sealed
@@ -202,16 +188,16 @@ public:
 };
 ```
 
-ただし、以下のシグネチャの相違は区別できません。
+<span data-ttu-id="d27de-164">ただし、以下のシグネチャの相違は区別できません。</span><span class="sxs-lookup"><span data-stu-id="d27de-164">But it can’t tell the difference between these:</span></span>
 
 ```cpp
 int GetNumber(int i);
 double GetNumber(double d);
 ```
 
-あいまいな場合、JavaScript で特定のオーバーロードを常に呼び出すようにすることができます。そのためには、ヘッダー ファイルのメソッド シグネチャに [Windows::Foundation::Metadata::DefaultOverload](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) 属性を適用します。
+<span data-ttu-id="d27de-165">あいまいな場合、JavaScript で特定のオーバーロードを常に呼び出すようにすることができます。そのためには、ヘッダー ファイルのメソッド シグネチャに [Windows::Foundation::Metadata::DefaultOverload](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) 属性を適用します。</span><span class="sxs-lookup"><span data-stu-id="d27de-165">In ambiguous cases, you can ensure that JavaScript always calls a specific overload by applying the [Windows::Foundation::Metadata::DefaultOverload](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) attribute to the method signature in the header file.</span></span>
 
-次の JavaScript は、属性付きオーバーロードを常に呼び出します。
+<span data-ttu-id="d27de-166">次の JavaScript は、属性付きオーバーロードを常に呼び出します。</span><span class="sxs-lookup"><span data-stu-id="d27de-166">This JavaScript always calls the attributed overload:</span></span>
 
 ```javascript
 var nativeObject = new CppComponent.NumberClass();
@@ -219,14 +205,11 @@ var num = nativeObject.getNumber(9);
 document.getElementById('P4').innerHTML = num;
 ```
 
-## <a name="net"></a>.NET
+## <a name="net"></a><span data-ttu-id="d27de-167">.NET</span><span class="sxs-lookup"><span data-stu-id="d27de-167">.NET</span></span>
+<span data-ttu-id="d27de-168">.NET 言語認識オーバー ロード C + +/.NET Framework クラスと同様に、CX ref クラスします。</span><span class="sxs-lookup"><span data-stu-id="d27de-168">The .NET languages recognize overloads in a C++/CX ref class just as in any .NET Framework class.</span></span>
 
-
-.NET 言語では、.NET Framework クラスの場合と同様に、C ++ の ref クラスのオーバーロードが認識されます。
-
-## <a name="datetime"></a>DateTime
-
-Windows ランタイムでは、[Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) オブジェクトは 1601 年 1 月 1 日の前または後の時間の長さを 100 ナノ秒単位で表した単純な 64 ビットの符号付き整数です。 Windows:Foundation::DateTime オブジェクトには、メソッドはありません。 代わりに、各言語では DateTime をその言語独自の方法で算出します。JavaScript では Date オブジェクト、.NET Framework では System.DateTime 型および System.DateTimeOffset 型を利用します。
+## <a name="datetime"></a><span data-ttu-id="d27de-169">DateTime</span><span class="sxs-lookup"><span data-stu-id="d27de-169">DateTime</span></span>
+<span data-ttu-id="d27de-170">Windows ランタイムでは、[Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) オブジェクトは 1601 年 1 月 1 日の前または後の時間の長さを 100 ナノ秒単位で表した単純な 64 ビットの符号付き整数です。</span><span class="sxs-lookup"><span data-stu-id="d27de-170">In the Windows Runtime, a [Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) object is just a 64-bit signed integer that represents the number of 100-nanosecond intervals either before or after January 1, 1601.</span></span> <span data-ttu-id="d27de-171">Windows:Foundation::DateTime オブジェクトには、メソッドはありません。</span><span class="sxs-lookup"><span data-stu-id="d27de-171">There are no methods on a Windows:Foundation::DateTime object.</span></span> <span data-ttu-id="d27de-172">代わりに、各言語では DateTime をその言語独自の方法で算出します。JavaScript では Date オブジェクト、.NET Framework では System.DateTime 型および System.DateTimeOffset 型を利用します。</span><span class="sxs-lookup"><span data-stu-id="d27de-172">Instead, each language projects the DateTime in the way that is native to that language: the Date object in JavaScript and the System.DateTime and System.DateTimeOffset types in the .NET Framework.</span></span>
 
 ```cpp
 public  ref class MyDateClass sealed
@@ -242,7 +225,7 @@ public:
 };
 ```
 
-C++ から JavaScript に DateTime 値を渡すと、JavaScript はこの値を Date オブジェクトとして受け入れ、既定で長い形式の日付文字列として表示します。
+<span data-ttu-id="d27de-173">C + から DateTime 値を通過するときに +/javascript CX、JavaScript は日付オブジェクトとして受け入れることや、長い形式の日付を文字列として既定で表示されます。</span><span class="sxs-lookup"><span data-stu-id="d27de-173">When you pass a DateTime value from C++/CX to JavaScript, JavaScript accepts it as a Date object and displays it by default as a long-form date string.</span></span>
 
 ```javascript
 function SetAndGetDate() {
@@ -259,7 +242,7 @@ function SetAndGetDate() {
 }
 ```
 
-.NET 言語から C++ コンポーネントに System.DateTime を渡すと、メソッドはこの値を Windows::Foundation::DateTime として受け取ります。 コンポーネントが .NET Framework メソッドに Windows::Foundation::DateTime を渡すと、その .NET Framework メソッドはこの値を DateTimeOffset として受け取ります。
+<span data-ttu-id="d27de-174">.NET 言語が C + を System.DateTime を通過するときに +/CX コンポーネントの方法を受け入れることを Windows::Foundation::DateTime としてします。</span><span class="sxs-lookup"><span data-stu-id="d27de-174">When a .NET language passes a System.DateTime to a C++/CX component, the method accepts it as a Windows::Foundation::DateTime.</span></span> <span data-ttu-id="d27de-175">コンポーネントが .NET Framework メソッドに Windows::Foundation::DateTime を渡すと、その .NET Framework メソッドはこの値を DateTimeOffset として受け取ります。</span><span class="sxs-lookup"><span data-stu-id="d27de-175">When the component passes a Windows::Foundation::DateTime to a .NET Framework method, the Framework method accepts it as a DateTimeOffset.</span></span>
 
 ```csharp
 private void DateTimeExample()
@@ -279,14 +262,10 @@ private void DateTimeExample()
 }
 ```
 
-## <a name="collections-and-arrays"></a>コレクションと配列
+## <a name="collections-and-arrays"></a><span data-ttu-id="d27de-176">コレクションと配列</span><span class="sxs-lookup"><span data-stu-id="d27de-176">Collections and arrays</span></span>
+<span data-ttu-id="d27de-177">コレクションは、常に、Windows::Foundation::Collections::IVector^ や Windows::Foundation::Collections::IMap^ などの Windows ランタイム型へのハンドルとして ABI の境界を越えて渡されます。</span><span class="sxs-lookup"><span data-stu-id="d27de-177">Collections are always passed across the ABI boundary as handles to Windows Runtime types such as Windows::Foundation::Collections::IVector^ and Windows::Foundation::Collections::IMap^.</span></span> <span data-ttu-id="d27de-178">たとえば、Platform::Collections::Map にハンドルを返す場合、Windows::Foundation::Collections::IMap^ に暗黙的に変換されます。</span><span class="sxs-lookup"><span data-stu-id="d27de-178">For example, if you return a handle to a Platform::Collections::Map, it implicitly converts to a Windows::Foundation::Collections::IMap^.</span></span> <span data-ttu-id="d27de-179">コレクション インターフェイスが C + とは別の名前空間で定義されている +/CX クラス コンクリートの実装を提供します。</span><span class="sxs-lookup"><span data-stu-id="d27de-179">The collection interfaces are defined in a namespace that's separate from the C++/CX classes that provide the concrete implementations.</span></span> <span data-ttu-id="d27de-180">そのインターフェイスを JavaScript 言語と .NET 言語で利用します。</span><span class="sxs-lookup"><span data-stu-id="d27de-180">JavaScript and .NET languages consume the interfaces.</span></span> <span data-ttu-id="d27de-181">詳しくは、「[コレクション (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx)」と「[Array と WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d27de-181">For more information, see [Collections (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx) and [Array and WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx).</span></span>
 
-
-コレクションは、常に、Windows::Foundation::Collections::IVector^ や Windows::Foundation::Collections::IMap^ などの Windows ランタイム型へのハンドルとして ABI の境界を越えて渡されます。 たとえば、Platform::Collections::Map にハンドルを返す場合、Windows::Foundation::Collections::IMap^ に暗黙的に変換されます。 コレクション インターフェイスは、具体的な実装を提供する C++ クラスとは別の名前空間で定義されます。 そのインターフェイスを JavaScript 言語と .NET 言語で利用します。 詳しくは、「[コレクション (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx)」と「[Array と WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx)」をご覧ください。
-
-## <a name="passing-ivector"></a>IVector を渡す場合
-
-
+## <a name="passing-ivector"></a><span data-ttu-id="d27de-182">IVector を渡す場合</span><span class="sxs-lookup"><span data-stu-id="d27de-182">Passing IVector</span></span>
 ```cpp
 // Windows::Foundation::Collections::IVector across the ABI.
 //#include <algorithm>
@@ -312,7 +291,7 @@ for (var i = 0; i < outVector.length; i++)
 document.getElementById('P6').innerHTML = result;
 ```
 
-.NET 言語は IVector&lt;T&gt; を IList&lt;T&gt; として認識します。
+<span data-ttu-id="d27de-183">.NET 言語は IVector&lt;T&gt; を IList&lt;T&gt; として認識します。</span><span class="sxs-lookup"><span data-stu-id="d27de-183">The .NET languages see IVector&lt;T&gt; as IList&lt;T&gt;.</span></span>
 
 ```csharp
 private void SortListItems()
@@ -333,9 +312,7 @@ private void SortListItems()
 }
 ```
 
-## <a name="passing-imap"></a>IMap を渡す場合
-
-
+## <a name="passing-imap"></a><span data-ttu-id="d27de-184">IMap を渡す場合</span><span class="sxs-lookup"><span data-stu-id="d27de-184">Passing IMap</span></span>
 ```cpp
 // #include <map>
 //#include <collection.h>
@@ -360,7 +337,7 @@ var mStr = "Map result:" + outputMap.lookup(1) + outputMap.lookup(2)
 document.getElementById('P7').innerHTML = mStr;
 ```
 
-.NET 言語は IMap を IDictionary&lt;K, V&gt; として認識します。
+<span data-ttu-id="d27de-185">.NET 言語は IMap を IDictionary&lt;K, V&gt; として認識します。</span><span class="sxs-lookup"><span data-stu-id="d27de-185">The .NET languages see IMap and IDictionary&lt;K, V&gt;.</span></span>
 
 ```csharp
 private void GetDictionary()
@@ -371,10 +348,8 @@ private void GetDictionary()
 }
 ```
 
-## <a name="properties"></a>プロパティ
-
-
-Visual C++ コンポーネント拡張のパブリック ref クラスは、property キーワードを使って、パブリック データ メンバーをプロパティとして公開します。 この概念は .NET Framework のプロパティと同じです。 単純プロパティは機能が暗黙的であるため、データ メンバーに似ています。 非単純プロパティには、明示的な get アクセサーと set アクセサーがあり、値の "バッキング ストア" である名前付きのプライベート変数があります。 この例では、プライベート メンバー変数 \_propertyAValue は PropertyA のバッキング ストアです。 プロパティの値が変化するときにイベントを生成できます。またクライアント アプリは、そのイベントを受け取るように登録することができます。
+## <a name="properties"></a><span data-ttu-id="d27de-186">プロパティ</span><span class="sxs-lookup"><span data-stu-id="d27de-186">Properties</span></span>
+<span data-ttu-id="d27de-187">一般向けの ref クラス C + +/CX コンポーネントの拡張機能は、パブリック データにメンバーをプロパティとしてプロパティのキーワードを使用して公開します。</span><span class="sxs-lookup"><span data-stu-id="d27de-187">A public ref class in C++/CX component extensions exposes public data members as properties, by using the property keyword.</span></span> <span data-ttu-id="d27de-188">この概念は .NET Framework のプロパティと同じです。</span><span class="sxs-lookup"><span data-stu-id="d27de-188">The concept is identical to .NET Framework properties.</span></span> <span data-ttu-id="d27de-189">単純プロパティは機能が暗黙的であるため、データ メンバーに似ています。</span><span class="sxs-lookup"><span data-stu-id="d27de-189">A trivial property resembles a data member because its functionality is implicit.</span></span> <span data-ttu-id="d27de-190">非単純プロパティには、明示的な get アクセサーと set アクセサーがあり、値の "バッキング ストア" である名前付きのプライベート変数があります。</span><span class="sxs-lookup"><span data-stu-id="d27de-190">A non-trivial property has explicit get and set accessors and a named private variable that's the "backing store" for the value.</span></span> <span data-ttu-id="d27de-191">この例では、プライベート メンバー変数 \_propertyAValue は PropertyA のバッキング ストアです。</span><span class="sxs-lookup"><span data-stu-id="d27de-191">In this example, the private member variable \_propertyAValue is the backing store for PropertyA.</span></span> <span data-ttu-id="d27de-192">プロパティの値が変化するときにイベントを生成できます。またクライアント アプリは、そのイベントを受け取るように登録することができます。</span><span class="sxs-lookup"><span data-stu-id="d27de-192">A property can fire an event when its value changes, and a client app can register to receive that event.</span></span>
 
 ```cpp
 //Properties
@@ -421,7 +396,7 @@ nativeObject.propertyB = "What is the meaning of the universe?";
 document.getElementById('P9').innerHTML += nativeObject.propertyB;
 ```
 
-.NET 言語では、.NET Framework オブジェクトの場合と同様に、ネイティブ C++ オブジェクトのプロパティにアクセスします。
+<span data-ttu-id="d27de-193">.NET 言語のネイティブ C + プロパティにアクセス +/CX オブジェクトだけでは、.NET Framework オブジェクトと同じようにします。</span><span class="sxs-lookup"><span data-stu-id="d27de-193">The .NET languages access properties on a native C++/CX object just as they would on a .NET Framework object.</span></span>
 
 ```csharp
 private void GetAProperty()
@@ -441,22 +416,18 @@ private void GetAProperty()
 }
 ```
 
-## <a name="delegates-and-events"></a>デリゲートおよびイベント
+## <a name="delegates-and-events"></a><span data-ttu-id="d27de-194">デリゲートおよびイベント</span><span class="sxs-lookup"><span data-stu-id="d27de-194">Delegates and events</span></span>
+<span data-ttu-id="d27de-195">デリゲートは、関数オブジェクトを表す Windows ランタイム型です。</span><span class="sxs-lookup"><span data-stu-id="d27de-195">A delegate is a Windows Runtime type that represents a function object.</span></span> <span data-ttu-id="d27de-196">デリゲートは、後で実行するアクションを指定するために、イベント、コールバック、非同期メソッド呼び出しに関連して使います。</span><span class="sxs-lookup"><span data-stu-id="d27de-196">You can use delegates in connection with events, callbacks, and asynchronous method calls to specify an action to be performed later.</span></span> <span data-ttu-id="d27de-197">デリゲートは、関数オブジェクトのように、関数の戻り値の型とパラメーターの型を確認するためにコンパイラを有効にすることによってタイプ セーフを提供します。</span><span class="sxs-lookup"><span data-stu-id="d27de-197">Like a function object, the delegate provides type-safety by enabling the compiler to verify the return type and parameter types of the function.</span></span> <span data-ttu-id="d27de-198">デリゲートの宣言は関数のシグネチャに似ており、実装はクラス定義に、また呼び出しは関数の呼び出しに似ています。</span><span class="sxs-lookup"><span data-stu-id="d27de-198">The declaration of a delegate resembles a function signature, the implementation resembles a class definition, and the invocation resembles a function invocation.</span></span>
 
-
-デリゲートは、関数オブジェクトを表す Windows ランタイム型です。 デリゲートは、後で実行するアクションを指定するために、イベント、コールバック、非同期メソッド呼び出しに関連して使います。 デリゲートは、関数オブジェクトのように、関数の戻り値の型とパラメーターの型を確認するためにコンパイラを有効にすることによってタイプ セーフを提供します。 デリゲートの宣言は関数のシグネチャに似ており、実装はクラス定義に、また呼び出しは関数の呼び出しに似ています。
-
-## <a name="adding-an-event-listener"></a>イベント リスナーの追加
-
-
-指定されたデリゲート型のパブリック メンバーを宣言するために event キーワードを使うことができます。 クライアント コードは、特定の言語に用意されている標準機能を使ってイベントをサブスクライブします。
+## <a name="adding-an-event-listener"></a><span data-ttu-id="d27de-199">イベント リスナーの追加</span><span class="sxs-lookup"><span data-stu-id="d27de-199">Adding an event listener</span></span>
+<span data-ttu-id="d27de-200">指定されたデリゲート型のパブリック メンバーを宣言するために event キーワードを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="d27de-200">You can use the event keyword to declare a public member of a specified delegate type.</span></span> <span data-ttu-id="d27de-201">クライアント コードは、特定の言語に用意されている標準機能を使ってイベントをサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="d27de-201">Client code subscribes to the event by using the standard mechanisms that are provided in the particular language.</span></span>
 
 ```cpp
 public:
     event SomeHandler^ someEvent;
 ```
 
-この例では、前のプロパティに関するセクションと同じ C++ コードを使います。
+<span data-ttu-id="d27de-202">この例では、前のプロパティに関するセクションと同じ C++ コードを使います。</span><span class="sxs-lookup"><span data-stu-id="d27de-202">This example uses the same C++ code as for the previous properties section.</span></span>
 
 ```javascript
 function Button_Click() {
@@ -476,7 +447,7 @@ function Button_Click() {
 }
 ```
 
-.NET 言語の場合、C++ コンポーネントのイベントをサブスクライブすることは、.NET Framework クラスのイベントをサブスクライブすることと同じです。
+<span data-ttu-id="d27de-203">.NET 言語の場合、C++ コンポーネントのイベントをサブスクライブすることは、.NET Framework クラスのイベントをサブスクライブすることと同じです。</span><span class="sxs-lookup"><span data-stu-id="d27de-203">In the .NET languages, subscribing to an event in a C++ component is the same as subscribing to an event in a .NET Framework class:</span></span>
 
 ```csharp
 //Subscribe to event and call method that causes it to be fired.
@@ -496,10 +467,8 @@ private void objWithEvent_PropertyChangedEvent(object __param0, int __param1)
 }
 ```
 
-## <a name="adding-multiple-event-listeners-for-one-event"></a>1 つのイベントに複数のイベント リスナーを追加する
-
-
-JavaScript には、複数のハンドラーで単一のイベントをサブスクライブできるようにする addEventListener メソッドがあります。
+## <a name="adding-multiple-event-listeners-for-one-event"></a><span data-ttu-id="d27de-204">1 つのイベントに複数のイベント リスナーを追加する</span><span class="sxs-lookup"><span data-stu-id="d27de-204">Adding multiple event listeners for one event</span></span>
+<span data-ttu-id="d27de-205">JavaScript には、複数のハンドラーで単一のイベントをサブスクライブできるようにする addEventListener メソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="d27de-205">JavaScript has an addEventListener method that enables multiple handlers to subscribe to a single event.</span></span>
 
 ```cpp
 public delegate void SomeHandler(Platform::String^ str);
@@ -539,12 +508,10 @@ nativeObject.propertyA = "42";
 nativeObject.fireEvent("The answer is ");
 ```
 
-C# では、前の例で示したように += 演算子を使うことで、任意の数のイベント ハンドラーがイベントをサブスクライブできるようになります。
+<span data-ttu-id="d27de-206">C# では、前の例で示したように += 演算子を使うことで、任意の数のイベント ハンドラーがイベントをサブスクライブできるようになります。</span><span class="sxs-lookup"><span data-stu-id="d27de-206">In C#, any number of event handlers can subscribe to the event by using the += operator as shown in the previous example.</span></span>
 
-## <a name="enums"></a>列挙型
-
-
-C++ の Windows ランタイム列挙型は、public class enum を使って宣言されます。これは、標準 C++ のスコープ列挙型に似ています。
+## <a name="enums"></a><span data-ttu-id="d27de-207">列挙型</span><span class="sxs-lookup"><span data-stu-id="d27de-207">Enums</span></span>
+<span data-ttu-id="d27de-208">C + で Windows ランタイム列挙 +/CX パブリック クラス列挙; を使用して宣言標準的な C でスコープ列挙に似ています。</span><span class="sxs-lookup"><span data-stu-id="d27de-208">A Windows Runtime enum in C++/CX is declared by using public class enum; it resembles a scoped enum in standard C++.</span></span>
 
 ```cpp
 public enum class Direction {North, South, East, West};
@@ -562,7 +529,7 @@ private:
 };
 ```
 
-列挙値は、C++ と JavaScript の間で整数として渡されます。 C++ の列挙体と同じ名前付きの値を含む JavaScript オブジェクトを必要に応じて宣言し、次のように使うことができます。
+<span data-ttu-id="d27de-209">C + 間列挙の値は、+/CX および整数として JavaScript します。</span><span class="sxs-lookup"><span data-stu-id="d27de-209">Enum values are passed between C++/CX and JavaScript as integers.</span></span> <span data-ttu-id="d27de-210">C + と同じ名前付きの値を含む JavaScript オブジェクトを宣言することができます (オプション) +/続くとして CX 列挙と使用します。</span><span class="sxs-lookup"><span data-stu-id="d27de-210">You can optionally declare a JavaScript object that contains the same named values as the C++/CX enum and use it as follows.</span></span>
 
 ```javascript
 var Direction = { 0: "North", 1: "South", 2: "East", 3: "West" };
@@ -574,32 +541,24 @@ document.getElementById('P13').innerHTML =
 Direction[curDirection];
 ```
 
-C# と Visual Basic のどちらの言語でも列挙型がサポートされます。 この 2 つの言語では、.NET Framework の列挙型と同様に C ++ パブリック列挙型クラスを認識します。
+<span data-ttu-id="d27de-211">C# と Visual Basic のどちらの言語でも列挙型がサポートされます。</span><span class="sxs-lookup"><span data-stu-id="d27de-211">Both C# and Visual Basic have language support for enums.</span></span> <span data-ttu-id="d27de-212">この 2 つの言語では、.NET Framework の列挙型と同様に C ++ パブリック列挙型クラスを認識します。</span><span class="sxs-lookup"><span data-stu-id="d27de-212">These languages see a C++ public enum class just as they would see a .NET Framework enum.</span></span>
 
-## <a name="asynchronous-methods"></a>非同期メソッド
+## <a name="asynchronous-methods"></a><span data-ttu-id="d27de-213">非同期メソッド</span><span class="sxs-lookup"><span data-stu-id="d27de-213">Asynchronous methods</span></span>
+<span data-ttu-id="d27de-214">他の Windows ランタイム オブジェクトによって公開される非同期メソッドを利用するには、[task クラス (同時実行ランタイム)](https://msdn.microsoft.com/library/hh750113.aspx) を使います。</span><span class="sxs-lookup"><span data-stu-id="d27de-214">To consume asynchronous methods that are exposed by other Windows Runtime objects, use the [task Class (Concurrency Runtime)](https://msdn.microsoft.com/library/hh750113.aspx).</span></span> <span data-ttu-id="d27de-215">詳しくは、「[タスクの並列処理 (同時実行ランタイム)](https://msdn.microsoft.com/library/dd492427.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d27de-215">For more information, see and [Task Parallelism (Concurrency Runtime)](https://msdn.microsoft.com/library/dd492427.aspx).</span></span>
 
+<span data-ttu-id="d27de-216">C + 非同期メソッドを実装するために +/CX、ppltasks.h で定義されている[create\_async](https://msdn.microsoft.com/library/hh750102.aspx)関数を使用します。</span><span class="sxs-lookup"><span data-stu-id="d27de-216">To implement asynchronous methods in C++/CX, use the [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) function that's defined in ppltasks.h.</span></span> <span data-ttu-id="d27de-217">詳細については、次を参照してください。 [C + での非同期の操作を作成する +/UWP アプリの CX](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)します。</span><span class="sxs-lookup"><span data-stu-id="d27de-217">For more information, see [Creating Asynchronous Operations in C++/CX for UWP apps](https://msdn.microsoft.com/library/vstudio/hh750082.aspx).</span></span> <span data-ttu-id="d27de-218">例については、次を参照してください。[チュートリアル: C + で基本的な Windows ランタイム コンポーネントを作成する +/CX JavaScript または c# から呼び出すと](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)します。</span><span class="sxs-lookup"><span data-stu-id="d27de-218">For an example, see [Walkthrough: Creating a basic Windows Runtime component in C++/CX and calling it from JavaScript or C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md).</span></span> <span data-ttu-id="d27de-219">.NET 言語が使用 C + +/CX 非同期メソッドだけでは、.NET Framework で定義されている任意の非同期メソッドと同じようにします。</span><span class="sxs-lookup"><span data-stu-id="d27de-219">The .NET languages consume C++/CX asynchronous methods just as they would any asynchronous method that's defined in the .NET Framework.</span></span>
 
-他の Windows ランタイム オブジェクトによって公開される非同期メソッドを利用するには、[task クラス (同時実行ランタイム)](https://msdn.microsoft.com/library/hh750113.aspx) を使います。 詳しくは、「[タスクの並列処理 (同時実行ランタイム)](https://msdn.microsoft.com/library/dd492427.aspx)」をご覧ください。
+## <a name="exceptions"></a><span data-ttu-id="d27de-220">例外</span><span class="sxs-lookup"><span data-stu-id="d27de-220">Exceptions</span></span>
+<span data-ttu-id="d27de-221">Windows ランタイムによって定義された任意の例外の型をスローできます。</span><span class="sxs-lookup"><span data-stu-id="d27de-221">You can throw any exception type that's defined by the Windows Runtime.</span></span> <span data-ttu-id="d27de-222">Windows ランタイムのどの例外の型からもカスタム型は取得できません。</span><span class="sxs-lookup"><span data-stu-id="d27de-222">You cannot derive custom types from any Windows Runtime exception type.</span></span> <span data-ttu-id="d27de-223">ただし、COMException をスローし、例外をキャッチするコードがアクセスできるカスタム HRESULT を提供できます。</span><span class="sxs-lookup"><span data-stu-id="d27de-223">However, you can throw COMException and provide a custom HRESULT that can be accessed by the code that catches the exception.</span></span> <span data-ttu-id="d27de-224">COMException でカスタム メッセージを指定する方法はありません。</span><span class="sxs-lookup"><span data-stu-id="d27de-224">There's no way to specify a custom Message in a COMException.</span></span>
 
-C++ で非同期メソッドを実装するには、ppltasks.h で定義されている [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) 関数を使います。 詳しくは、「[C++ における Windows ストア アプリ用の非同期操作の作成](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)」をご覧ください。 例については、「[チュートリアル: C++ での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)」をご覧ください。 .NET 言語では、.NET Framework で定義される非同期メソッドと同様に C++ 非同期メソッドが利用されます。
+## <a name="debugging-tips"></a><span data-ttu-id="d27de-225">デバッグのヒント</span><span class="sxs-lookup"><span data-stu-id="d27de-225">Debugging tips</span></span>
+<span data-ttu-id="d27de-226">コンポーネント DLL を含む JavaScript ソリューションをデバッグするときは、コンポーネントでスクリプトのステップ実行またはネイティブ コードのステップ実行を有効にするようにデバッガーを設定できますが、この両方を同時に有効にすることはできません。</span><span class="sxs-lookup"><span data-stu-id="d27de-226">When you debug a JavaScript solution that has a component DLL, you can set the debugger to enable either stepping through script, or stepping through native code in the component, but not both at the same time.</span></span> <span data-ttu-id="d27de-227">設定を変更するには、ソリューション エクスプローラーで JavaScript プロジェクト ノードを選んでから、[プロパティ]、[デバッグ]、[デバッガーの種類] の順に選びます。</span><span class="sxs-lookup"><span data-stu-id="d27de-227">To change the setting, select the JavaScript project node in Solution Explorer and then choose Properties, Debugging, Debugger Type.</span></span>
 
-## <a name="exceptions"></a>例外
+<span data-ttu-id="d27de-228">パッケージ デザイナーで必ず適切な機能を選んでください。</span><span class="sxs-lookup"><span data-stu-id="d27de-228">Be sure to select appropriate capabilities in the package designer.</span></span> <span data-ttu-id="d27de-229">たとえば、Windows ランタイム API を使ってユーザーの画像ライブラリにある画像ファイルを開く場合は、マニフェスト デザイナーの [機能] ウィンドウの [画像ライブラリ] チェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="d27de-229">For example, if you are attempting to open an image file in the user's Pictures library by using the Windows Runtime APIs, be sure to select the Pictures Library check box in the Capabilities pane of the manifest designer.</span></span>
 
+<span data-ttu-id="d27de-230">JavaScript コードがコンポーネントのパブリック プロパティまたはパブリック メソッドを認識しないと考えられる場合は、JavaScript で camel 規約を使っていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="d27de-230">If your JavaScript code doesn't seem to be recognizing the public properties or methods in the component, make sure that in JavaScript you are using camel casing.</span></span> <span data-ttu-id="d27de-231">LogCalc C+ たとえば、+/javascript logCalc として CX 方法を参照する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d27de-231">For example, the LogCalc C++/CX method must be referenced as logCalc in JavaScript.</span></span>
 
-Windows ランタイムによって定義された任意の例外の型をスローできます。 Windows ランタイムのどの例外の型からもカスタム型は取得できません。 ただし、COMException をスローし、例外をキャッチするコードがアクセスできるカスタム HRESULT を提供できます。 COMException でカスタム メッセージを指定する方法はありません。
+<span data-ttu-id="d27de-232">C キーを削除する場合は、+/CX Windows ランタイム コンポーネント プロジェクト ソリューションをからは、JavaScript プロジェクトからプロジェクトへの参照も手動で削除する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d27de-232">If you remove a C++/CX Windows Runtime component project from a solution, you must also manually remove the project reference from the JavaScript project.</span></span> <span data-ttu-id="d27de-233">これを行わないと、後続のデバッグまたはビルド操作が妨げられます。</span><span class="sxs-lookup"><span data-stu-id="d27de-233">Failure to do so prevents subsequent debug or build operations.</span></span> <span data-ttu-id="d27de-234">その後、必要に応じてアセンブリ参照を DLL に追加できます。</span><span class="sxs-lookup"><span data-stu-id="d27de-234">If necessary, you can then add an assembly reference to the DLL.</span></span>
 
-## <a name="debugging-tips"></a>デバッグのヒント
-
-
-コンポーネント DLL を含む JavaScript ソリューションをデバッグするときは、コンポーネントでスクリプトのステップ実行またはネイティブ コードのステップ実行を有効にするようにデバッガーを設定できますが、この両方を同時に有効にすることはできません。 設定を変更するには、ソリューション エクスプローラーで JavaScript プロジェクト ノードを選んでから、[プロパティ]、[デバッグ]、[デバッガーの種類] の順に選びます。
-
-パッケージ デザイナーで必ず適切な機能を選んでください。 たとえば、Windows ランタイム API を使ってユーザーの画像ライブラリにある画像ファイルを開く場合は、マニフェスト デザイナーの [機能] ウィンドウの [画像ライブラリ] チェック ボックスをオンにします。
-
-JavaScript コードがコンポーネントのパブリック プロパティまたはパブリック メソッドを認識しないと考えられる場合は、JavaScript で camel 規約を使っていることを確認します。 たとえば、LogCalc C++ メソッドは、JavaScript では logCalc として参照する必要があります。
-
-C++ Windows ランタイム コンポーネント プロジェクトをソリューションから削除する場合、JavaScript プロジェクトからプロジェクト参照も手動で削除する必要があります。 これを行わないと、後続のデバッグまたはビルド操作が妨げられます。 その後、必要に応じてアセンブリ参照を DLL に追加できます。
-
-## <a name="related-topics"></a>関連トピック
-
-* [チュートリアル: C++ での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
-
+## <a name="related-topics"></a><span data-ttu-id="d27de-235">関連トピック</span><span class="sxs-lookup"><span data-stu-id="d27de-235">Related topics</span></span>
+* [<span data-ttu-id="d27de-236">チュートリアル: C++/CX での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し</span><span class="sxs-lookup"><span data-stu-id="d27de-236">Walkthrough: Creating a basic Windows Runtime component in C++/CX and calling it from JavaScript or C#</span></span>](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)

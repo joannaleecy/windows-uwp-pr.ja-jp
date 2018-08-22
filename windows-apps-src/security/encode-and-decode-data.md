@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c826edcd8f7ce625f3cb42df69136f500e93f4e
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: a9177061f70419e2a3b0e3b47f933af75a11ad68
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690358"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788827"
 ---
-# <a name="encode-and-decode-data"></a><span data-ttu-id="3f805-104">データのエンコードとデコード</span><span class="sxs-lookup"><span data-stu-id="3f805-104">Encode and decode data</span></span>
+# <a name="encode-and-decode-data"></a><span data-ttu-id="50b83-104">データのエンコードとデコード</span><span class="sxs-lookup"><span data-stu-id="50b83-104">Encode and decode data</span></span>
 
 
 
-<span data-ttu-id="3f805-105">次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="3f805-105">This example code shows how to encode and decode base64 and hexadecimal data in an Universal Windows Platform (UWP) app.</span></span>
+<span data-ttu-id="50b83-105">次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="50b83-105">This example code shows how to encode and decode base64 and hexadecimal data in an Universal Windows Platform (UWP) app.</span></span>
 
 ```cs
 public void EncodeDecodeBase64()

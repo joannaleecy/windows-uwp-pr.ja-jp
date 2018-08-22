@@ -7,28 +7,30 @@ label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
 ms.author: sezhen
-ms.date: 11/27/2017
+ms.date: 7/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0980f24394a075596b60e4a8005b303857b91304
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 464da3dd3a9a181555f7b4bfd1059e9834fe7338
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843072"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792793"
 ---
-# <a name="navigation-design-basics-for-uwp-apps"></a><span data-ttu-id="86598-103">UWP アプリのナビゲーション デザインの基本</span><span class="sxs-lookup"><span data-stu-id="86598-103">Navigation design basics for UWP apps</span></span>
+# <a name="navigation-design-basics-for-uwp-apps"></a><span data-ttu-id="17906-103">UWP アプリのナビゲーション デザインの基本</span><span class="sxs-lookup"><span data-stu-id="17906-103">Navigation design basics for UWP apps</span></span>
 
 ![ナビゲーションの基本のヘッダー](images/nav/navigation-basics-header.jpg)
 
-<span data-ttu-id="86598-105">アプリをページの集まりと考えると、*ナビゲーション*は、ページ間およびページ内を移動する動作を表します。</span><span class="sxs-lookup"><span data-stu-id="86598-105">If you think of an app as a collection of pages, *navigation* describes the act of moving between pages and within a page.</span></span> <span data-ttu-id="86598-106">これはユーザー エクスペリエンスの出発点です。これによって、ユーザーは利用するコンテンツと機能を見つけます。</span><span class="sxs-lookup"><span data-stu-id="86598-106">It's the starting point of the user experience, and it's how users find the content and features they're interested in.</span></span> <span data-ttu-id="86598-107">これは非常に重要ですが、適切な設計が難しい場合もあります。</span><span class="sxs-lookup"><span data-stu-id="86598-107">It's very important, and it can be difficult to get right.</span></span>
+<span data-ttu-id="17906-105">アプリをページの集まりと考えると、*ナビゲーション*は、ページ間およびページ内を移動する動作を表します。</span><span class="sxs-lookup"><span data-stu-id="17906-105">If you think of an app as a collection of pages, *navigation* describes the act of moving between pages and within a page.</span></span> <span data-ttu-id="17906-106">これはユーザー エクスペリエンスの出発点です。これによって、ユーザーは利用するコンテンツと機能を見つけます。</span><span class="sxs-lookup"><span data-stu-id="17906-106">It's the starting point of the user experience, and it's how users find the content and features they're interested in.</span></span> <span data-ttu-id="17906-107">これは非常に重要ですが、適切な設計が難しい場合もあります。</span><span class="sxs-lookup"><span data-stu-id="17906-107">It's very important, and it can be difficult to get right.</span></span>
 
-<span data-ttu-id="86598-108">ナビゲーションに関して行うことができる膨大な数の選択肢があります。</span><span class="sxs-lookup"><span data-stu-id="86598-108">We have a huge number of choices to make for navigation.</span></span> <span data-ttu-id="86598-109">以下を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="86598-109">We could:</span></span>
+<span data-ttu-id="17906-108">ナビゲーションに関して行うことができる膨大な数の選択肢があります。</span><span class="sxs-lookup"><span data-stu-id="17906-108">We have a huge number of choices to make for navigation.</span></span> <span data-ttu-id="17906-109">以下を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="17906-109">We could:</span></span>
 
-<span data-ttu-id="86598-110">:::row::: :::column::: ![ナビゲーション例 1</span><span class="sxs-lookup"><span data-stu-id="86598-110">:::row::: :::column::: ![navigation example 1</span></span>](images/nav/nav-1.svg)
+:::row:::
+    :::column:::
+        ![ナビゲーションの使用例 1](images/nav/nav-1.svg)
 
         Require users to go through a series of pages in order.
     :::column-end:::
@@ -42,31 +44,33 @@ ms.locfileid: "1843072"
 
         Place everything on a single page and provide filtering mechanisms for viewing content.
     :::column-end:::
-<span data-ttu-id="86598-111">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="86598-111">:::row-end:::</span></span>
+:::row-end:::
 
-<span data-ttu-id="86598-112">1 つのナビゲーション デザインですべてのアプリに対応することはできませんが、アプリの適切な設計を判断するための原則やガイドラインがあります。</span><span class="sxs-lookup"><span data-stu-id="86598-112">While there's no single navigation design that works for every app, there are principles and guidelines to help you decide the right design for your app.</span></span>
+<span data-ttu-id="17906-111">1 つのナビゲーション デザインですべてのアプリに対応することはできませんが、アプリの適切な設計を判断するための原則やガイドラインがあります。</span><span class="sxs-lookup"><span data-stu-id="17906-111">While there's no single navigation design that works for every app, there are principles and guidelines to help you decide the right design for your app.</span></span>
 
-## <a name="principles-of-good-navigation"></a><span data-ttu-id="86598-113">優れたナビゲーションの原則</span><span class="sxs-lookup"><span data-stu-id="86598-113">Principles of good navigation</span></span>
+## <a name="principles-of-good-navigation"></a><span data-ttu-id="17906-112">優れたナビゲーションの原則</span><span class="sxs-lookup"><span data-stu-id="17906-112">Principles of good navigation</span></span>
 
-<span data-ttu-id="86598-114">優れたナビゲーション デザインの基本原則から始めましょう。</span><span class="sxs-lookup"><span data-stu-id="86598-114">Let's start with the basic principles of good navigation design:</span></span>
+<span data-ttu-id="17906-113">優れたナビゲーション デザインの基本原則から始めましょう。</span><span class="sxs-lookup"><span data-stu-id="17906-113">Let's start with the basic principles of good navigation design:</span></span>
 
-- <span data-ttu-id="86598-115">**一貫性:** ユーザーの期待に応えます。</span><span class="sxs-lookup"><span data-stu-id="86598-115">**Consistency:** Meet user expectations.</span></span>
-- <span data-ttu-id="86598-116">**シンプルさ:** 必要以上のことをしないようにします。</span><span class="sxs-lookup"><span data-stu-id="86598-116">**Simplicity:** Don't do more than you need to.</span></span>
-- <span data-ttu-id="86598-117">**明確さ:** 明確なパスとオプションを提供します。</span><span class="sxs-lookup"><span data-stu-id="86598-117">**Clarity:** Provide clear paths and options.</span></span>
+- <span data-ttu-id="17906-114">**一貫性:** ユーザーの期待に応えます。</span><span class="sxs-lookup"><span data-stu-id="17906-114">**Consistency:** Meet user expectations.</span></span>
+- <span data-ttu-id="17906-115">**シンプルさ:** 必要以上のことをしないようにします。</span><span class="sxs-lookup"><span data-stu-id="17906-115">**Simplicity:** Don't do more than you need to.</span></span>
+- <span data-ttu-id="17906-116">**明確さ:** 明確なパスとオプションを提供します。</span><span class="sxs-lookup"><span data-stu-id="17906-116">**Clarity:** Provide clear paths and options.</span></span>
 
-### <a name="consistency"></a><span data-ttu-id="86598-118">一貫性</span><span class="sxs-lookup"><span data-stu-id="86598-118">Consistency</span></span>
+### <a name="consistency"></a><span data-ttu-id="17906-117">一貫性</span><span class="sxs-lookup"><span data-stu-id="17906-117">Consistency</span></span>
 
-<span data-ttu-id="86598-119">ナビゲーションは、ユーザーの期待に沿ったものである必要があります。</span><span class="sxs-lookup"><span data-stu-id="86598-119">Navigation should be consistent with user expectations.</span></span> <span data-ttu-id="86598-120">ユーザーが使い慣れた[標準コントロール](#use-the-right-controls)を使用し、アイコン、場所、スタイルの標準的な規則に従うことで、ナビゲーションがユーザーにとって直感的で予測可能なものになります。</span><span class="sxs-lookup"><span data-stu-id="86598-120">Using [standard controls](#use-the-right-controls) that users are familiar with and following standard conventions for icons, location, and styling will make navigation predictable and intuative for users.</span></span>
+<span data-ttu-id="17906-118">ナビゲーションは、ユーザーの期待に沿ったものである必要があります。</span><span class="sxs-lookup"><span data-stu-id="17906-118">Navigation should be consistent with user expectations.</span></span> <span data-ttu-id="17906-119">[標準コントロール](#use-the-right-controls)ユーザーに精通しているアイコンの次の規則を使用して、場所、およびスタイル、ナビゲーション予測可能かつ直感的なユーザーになります。</span><span class="sxs-lookup"><span data-stu-id="17906-119">Using [standard controls](#use-the-right-controls) that users are familiar with and following standard conventions for icons, location, and styling will make navigation predictable and intuitive for users.</span></span>
 
 ![ページ コンポーネントのイメージ](images/nav/page-components.svg)
 
-> <span data-ttu-id="86598-122">ユーザーは特定の UI 要素が標準の位置にあることを期待します。</span><span class="sxs-lookup"><span data-stu-id="86598-122">Users expect to find certain UI elements in standard locations.</span></span>
+> <span data-ttu-id="17906-121">ユーザーは特定の UI 要素が標準の位置にあることを期待します。</span><span class="sxs-lookup"><span data-stu-id="17906-121">Users expect to find certain UI elements in standard locations.</span></span>
 
-### <a name="simplicity"></a><span data-ttu-id="86598-123">シンプルさ</span><span class="sxs-lookup"><span data-stu-id="86598-123">Simplicity</span></span>
+### <a name="simplicity"></a><span data-ttu-id="17906-122">シンプルさ</span><span class="sxs-lookup"><span data-stu-id="17906-122">Simplicity</span></span>
 
-<span data-ttu-id="86598-124">ナビゲーション項目が少ないほど、ユーザーの意思決定がシンプルになります。</span><span class="sxs-lookup"><span data-stu-id="86598-124">Fewer navigation items simplify decision making for users.</span></span> <span data-ttu-id="86598-125">重要な移動先に簡単にアクセスできるようにして、重要度の低い項目を非表示にすることで、ユーザーは目的の場所にすばやく移動できるようになります。</span><span class="sxs-lookup"><span data-stu-id="86598-125">Providing easy access to important destinations and hiding less important items will help users get where they want, faster.</span></span>
+<span data-ttu-id="17906-123">ナビゲーション項目が少ないほど、ユーザーの意思決定がシンプルになります。</span><span class="sxs-lookup"><span data-stu-id="17906-123">Fewer navigation items simplify decision making for users.</span></span> <span data-ttu-id="17906-124">重要な移動先に簡単にアクセスできるようにして、重要度の低い項目を非表示にすることで、ユーザーは目的の場所にすばやく移動できるようになります。</span><span class="sxs-lookup"><span data-stu-id="17906-124">Providing easy access to important destinations and hiding less important items will help users get where they want, faster.</span></span>
 
-<span data-ttu-id="86598-126">:::row::: :::column::: ![実行例</span><span class="sxs-lookup"><span data-stu-id="86598-126">:::row::: :::column::: ![do example</span></span>](images/nav/do.svg)
+:::row:::
+    :::column:::
+        ![実行例](images/nav/do.svg)
 
         ![navview good](images/nav/navview-good.svg)
 
@@ -77,65 +81,76 @@ ms.locfileid: "1843072"
 
         ![navview bad](images/nav/navview-bad.svg)
 
-        Constantly provide many navigation options to overwhelm the user.
+        Overwhelm users with many navigation options.
     :::column-end:::
-<span data-ttu-id="86598-127">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="86598-127">:::row-end:::</span></span>
+:::row-end:::
 
-### <a name="clarity"></a><span data-ttu-id="86598-128">明確さ</span><span class="sxs-lookup"><span data-stu-id="86598-128">Clarity</span></span>
+### <a name="clarity"></a><span data-ttu-id="17906-126">明確さ</span><span class="sxs-lookup"><span data-stu-id="17906-126">Clarity</span></span>
 
-<span data-ttu-id="86598-129">明確なパスを示すと、ユーザーは論理的なナビゲーションを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="86598-129">Clear paths allow for logical navigation for users.</span></span> <span data-ttu-id="86598-130">ナビゲーション オプションをわかりやすくし、ページ間の関係を明確にすることで、ユーザーが自分の位置を見失うことを防止できます。</span><span class="sxs-lookup"><span data-stu-id="86598-130">Making navigation options obvious and clarifying relationships between pages should prevent users from getting lost.</span></span>
+<span data-ttu-id="17906-127">明確なパスを示すと、ユーザーは論理的なナビゲーションを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="17906-127">Clear paths allow for logical navigation for users.</span></span> <span data-ttu-id="17906-128">ナビゲーション オプションをわかりやすくし、ページ間の関係を明確にすることで、ユーザーが自分の位置を見失うことを防止できます。</span><span class="sxs-lookup"><span data-stu-id="17906-128">Making navigation options obvious and clarifying relationships between pages should prevent users from getting lost.</span></span>
 
 ![実行例](images/nav/clarity-image.svg)
 
-> <span data-ttu-id="86598-132">移動先にはわかりやすいラベルが付けられているため、ユーザーは自分の位置を知ることができます。</span><span class="sxs-lookup"><span data-stu-id="86598-132">Destinations are clearly labeled so users know where they are.</span></span>
+> <span data-ttu-id="17906-130">移動先にはわかりやすいラベルが付けられているため、ユーザーは自分の位置を知ることができます。</span><span class="sxs-lookup"><span data-stu-id="17906-130">Destinations are clearly labeled so users know where they are.</span></span>
 
-## <a name="general-recommendations"></a><span data-ttu-id="86598-133">一般的な推奨事項</span><span class="sxs-lookup"><span data-stu-id="86598-133">General recommendations</span></span>
+## <a name="general-recommendations"></a><span data-ttu-id="17906-131">一般的な推奨事項</span><span class="sxs-lookup"><span data-stu-id="17906-131">General recommendations</span></span>
 
-<span data-ttu-id="86598-134">一貫性、シンプルさ、明確さという設計原則を念頭に置いて、一般的な推奨事項を作成しましょう。</span><span class="sxs-lookup"><span data-stu-id="86598-134">Now, let's take our design principles--consistency, simplicity, and clarity--and use them to come up with some general recommendations.</span></span>
+<span data-ttu-id="17906-132">一貫性、シンプルさ、明確さという設計原則を念頭に置いて、一般的な推奨事項を作成しましょう。</span><span class="sxs-lookup"><span data-stu-id="17906-132">Now, let's take our design principles--consistency, simplicity, and clarity--and use them to come up with some general recommendations.</span></span>
 
-1. <span data-ttu-id="86598-135">ユーザーのことを考えてください。</span><span class="sxs-lookup"><span data-stu-id="86598-135">Think about your users.</span></span> <span data-ttu-id="86598-136">アプリ使用時のユーザーの一般的な移動パスを追跡し、ページごとに、ユーザーがそのページを表示している理由と、次にどこに移動しようとしているかを考えてください。</span><span class="sxs-lookup"><span data-stu-id="86598-136">Trace out typical paths they might take through your app, and for each page, think about why the user is there and where they might want to go.</span></span> 
+1. <span data-ttu-id="17906-133">ユーザーのことを考えてください。</span><span class="sxs-lookup"><span data-stu-id="17906-133">Think about your users.</span></span> <span data-ttu-id="17906-134">アプリ使用時のユーザーの一般的な移動パスを追跡し、ページごとに、ユーザーがそのページを表示している理由と、次にどこに移動しようとしているかを考えてください。</span><span class="sxs-lookup"><span data-stu-id="17906-134">Trace out typical paths they might take through your app, and for each page, think about why the user is there and where they might want to go.</span></span>
 
-2. <span data-ttu-id="86598-137">ナビゲーションの深い階層を避けます。</span><span class="sxs-lookup"><span data-stu-id="86598-137">Avoid deep navigational hierarchies.</span></span> <span data-ttu-id="86598-138">3 レベルを超えるナビゲーションでは、ユーザーは迷ってしまい、深い階層から抜け出せなくなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="86598-138">If you go beyond three levels of navigation, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.</span></span>
+2. <span data-ttu-id="17906-135">高度なナビゲーション階層をしないようにします。</span><span class="sxs-lookup"><span data-stu-id="17906-135">Avoid deep navigation hierarchies.</span></span> <span data-ttu-id="17906-136">3 レベルを超えるナビゲーションでは、ユーザーは迷ってしまい、深い階層から抜け出せなくなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="17906-136">If you go beyond three levels of navigation, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.</span></span>
 
-3. <span data-ttu-id="86598-139">「ホッピング」を避けます。</span><span class="sxs-lookup"><span data-stu-id="86598-139">Avoid "pogo-sticking."</span></span> <span data-ttu-id="86598-140">ホッピングとは、関連するコンテンツに移動するために、ユーザーが上のレベルに移動して、それから下のレベルに移動する必要があるナビゲーションを意味します。</span><span class="sxs-lookup"><span data-stu-id="86598-140">Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again.</span></span>
+3. <span data-ttu-id="17906-137">「ホッピング」を避けます。</span><span class="sxs-lookup"><span data-stu-id="17906-137">Avoid "pogo-sticking."</span></span> <span data-ttu-id="17906-138">ホッピングとは、関連するコンテンツに移動するために、ユーザーが上のレベルに移動して、それから下のレベルに移動する必要があるナビゲーションを意味します。</span><span class="sxs-lookup"><span data-stu-id="17906-138">Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again.</span></span>
 
-## <a name="use-the-right-structure"></a><span data-ttu-id="86598-141">適切な構造を使う</span><span class="sxs-lookup"><span data-stu-id="86598-141">Use the right structure</span></span>
+## <a name="use-the-right-structure"></a><span data-ttu-id="17906-139">適切な構造を使う</span><span class="sxs-lookup"><span data-stu-id="17906-139">Use the right structure</span></span>
 
-<span data-ttu-id="86598-142">ナビゲーションの一般的な原則について説明しました。次に、アプリの構造について考えます。</span><span class="sxs-lookup"><span data-stu-id="86598-142">Now that you're familiar with general navigation principles, how should you structure your app?</span></span> <span data-ttu-id="86598-143">2 種類の一般的な構造があります。フラット構造と階層構造です。</span><span class="sxs-lookup"><span data-stu-id="86598-143">There are two general structures: flat and hierarchal.</span></span>
+<span data-ttu-id="17906-140">ナビゲーションの一般的な原則について説明しました。次に、アプリの構造について考えます。</span><span class="sxs-lookup"><span data-stu-id="17906-140">Now that you're familiar with general navigation principles, how should you structure your app?</span></span> <span data-ttu-id="17906-141">2 種類の一般的な構造があります。フラット構造と階層構造です。</span><span class="sxs-lookup"><span data-stu-id="17906-141">There are two general structures: flat and hierarchal.</span></span>
 
-<span data-ttu-id="86598-144">:::row::: :::column::: ![フラット構造で配置されたページ](images/nav/flat-lateral-structure.svg) :::column-end::: :::column span="2":::</span><span class="sxs-lookup"><span data-stu-id="86598-144">:::row::: :::column::: ![Pages arranged in a flat structure](images/nav/flat-lateral-structure.svg) :::column-end::: :::column span="2":::</span></span>
+:::row:::
+    :::column:::
+        ![フラット構造で配置されたページ](images/nav/flat-lateral-structure.svg)
+    :::column-end:::
+    <span data-ttu-id="17906-143">::: 列 =「2」:::</span><span class="sxs-lookup"><span data-stu-id="17906-143">:::column span="2":::</span></span>
         ### Flat/lateral
 
-        In a flat/lateral structure, pages exist side-by-side. You can go from on page to another in any order. 
+        In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
 
         We recommend using a flat structure when:
-        <ul>
-        <li>The pages can be viewed in any order.</li>
-        <li>The pages are clearly distinct from each other and don't have an obvious parent/child relationship.</li>
-        <li>There are fewer than 8 pages in the group.<br/>
-        (When there are more pages, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups.)</li>
-        </ul>
+
+        - The pages can be viewed in any order.
+        - The pages are clearly distinct from each other and don't have an obvious parent/child relationship.
+        - There are less than 8 pages in the group. <br>
+        (When there are more pages, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups.)
 
     :::column-end:::
-<span data-ttu-id="86598-145">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="86598-145">:::row-end:::</span></span>
+:::row-end:::
 
-<span data-ttu-id="86598-146">:::row::: :::column::: ![階層構造で配置されたページ](images/nav/hierarchical-structure.svg) :::column-end::: :::column span="2":::</span><span class="sxs-lookup"><span data-stu-id="86598-146">:::row::: :::column::: ![Pages arranged in a hierarchy](images/nav/hierarchical-structure.svg) :::column-end::: :::column span="2":::</span></span>
+:::row:::
+    :::column:::
+        ![階層構造で配置されたページ](images/nav/hierarchical-structure.svg)
+    :::column-end:::
+    <span data-ttu-id="17906-145">::: 列 =「2」:::</span><span class="sxs-lookup"><span data-stu-id="17906-145">:::column span="2":::</span></span>
         ### Hierarchical
 
         In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
 
-        Hierarchical structures are good for organizing complex content that spans lots of pages. The downside is some navigation overhead: the deeper the structure, the more clicks it takes to get from page to page. 
+        Hierarchical structures are good for organizing complex content that spans lots of pages. The downside is some navigation overhead: the deeper the structure, the more clicks it takes to get from page to page.
 
-        We recommend a hiearchical structure when:
-        <ul>
-        <li>Pages should be traversed in a specific order.</li>
-        <li>There is a clear parent-child relationship between pages.</li>
-        <li>There are more than 7 pages in the group.</li>
-        </ul>
+        We recommend a hierarchical structure when:
+        
+        - Pages should be traversed in a specific order.
+        - There is a clear parent-child relationship between pages.
+        - There are more than 7 pages in the group.
+        
     :::column-end:::
-<span data-ttu-id="86598-147">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="86598-147">:::row-end:::</span></span>
+:::row-end:::
 
-<span data-ttu-id="86598-148">:::row::: :::column::: ![ハイブリッド構造のアプリ](images/nav/combining-structures.svg) :::column-end::: :::column span="2":::</span><span class="sxs-lookup"><span data-stu-id="86598-148">:::row::: :::column::: ![an app with a hybrid structure](images/nav/combining-structures.svg) :::column-end::: :::column span="2":::</span></span>
+:::row:::
+    :::column:::
+        ![ハイブリッド構造のアプリ](images/nav/combining-structures.svg)
+    :::column-end:::
+    <span data-ttu-id="17906-147">::: 列 =「2」:::</span><span class="sxs-lookup"><span data-stu-id="17906-147">:::column span="2":::</span></span>
         ### Combining structures
 
         You don't have choose to one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
@@ -143,56 +158,81 @@ ms.locfileid: "1843072"
         If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:
 
         - At level 1, the peer-to-peer navigation element should provide access to pages A, B, C, and D.
-        - At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree. 
+        - At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.
     :::column-end:::
-<span data-ttu-id="86598-149">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="86598-149">:::row-end:::</span></span>
+:::row-end:::
 
-## <a name="use-the-right-controls"></a><span data-ttu-id="86598-150">適切なコントロールを使用する</span><span class="sxs-lookup"><span data-stu-id="86598-150">Use the right controls</span></span>
+## <a name="use-the-right-controls"></a><span data-ttu-id="17906-148">適切なコントロールを使用する</span><span class="sxs-lookup"><span data-stu-id="17906-148">Use the right controls</span></span>
 
-<span data-ttu-id="86598-151">ページの構造を決定したら、ユーザーがページ間をどのように移動するかを決定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="86598-151">Once you've decided on a page structure, you need to decide how users navigate through those pages.</span></span> <span data-ttu-id="86598-152">UWP にはさまざまなナビゲーション コントロールが用意されていて、アプリで一貫性があり信頼性が高いナビゲーション エクスペリエンスを提供するために役立ちます。</span><span class="sxs-lookup"><span data-stu-id="86598-152">UWP provides a variety of navigation controls to help ensure a consistent, reliable navigation experience in your app.</span></span> 
+<span data-ttu-id="17906-149">ページの構造を決定したら、ユーザーがページ間をどのように移動するかを決定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="17906-149">Once you've decided on a page structure, you need to decide how users navigate through those pages.</span></span> <span data-ttu-id="17906-150">UWP にはさまざまなナビゲーション コントロールが用意されていて、アプリで一貫性があり信頼性が高いナビゲーション エクスペリエンスを提供するために役立ちます。</span><span class="sxs-lookup"><span data-stu-id="17906-150">UWP provides a variety of navigation controls to help ensure a consistent, reliable navigation experience in your app.</span></span>
 
-<span data-ttu-id="86598-153">アプリのナビゲーション要素の数に基づいてナビゲーション コントロールを選択することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="86598-153">We recommend selecting a navigation control based on the number of navigation elements in your app.</span></span> <span data-ttu-id="86598-154">ナビゲーション項目が 5 個以下の場合は、[タブとピボット](../controls-and-patterns/tabs-pivot.md)などのトップレベルのナビゲーションを使用します。</span><span class="sxs-lookup"><span data-stu-id="86598-154">If you have five or less navigation items, then use top-level navigation, like [tabs and pivot](../controls-and-patterns/tabs-pivot.md).</span></span> <span data-ttu-id="86598-155">ナビゲーション項目が 6 個以上ある場合は、[ナビゲーション ビュー](../controls-and-patterns/navigationview.md)や[マスター/詳細](../controls-and-patterns/master-details.md)などの左側のナビゲーションを使用します。</span><span class="sxs-lookup"><span data-stu-id="86598-155">If you have six or more navigation items, then use left navigation, like [navigation view](../controls-and-patterns/navigationview.md) or [master/details](../controls-and-patterns/master-details.md).</span></span>
-
-<span data-ttu-id="86598-156">:::row::: :::column::: ![フレーム画像](images/nav/thumbnail-frame.svg) :::column-end::: :::column span="2"::: <a href="https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Frame"><b>フレーム</b></a></span><span class="sxs-lookup"><span data-stu-id="86598-156">:::row::: :::column::: ![Frame image](images/nav/thumbnail-frame.svg) :::column-end::: :::column span="2"::: <a href="https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Frame"><b>Frame</b></a></span></span>
+:::row:::
+    :::column:::
+        ![フレームの画像](images/nav/thumbnail-frame.svg)
+    :::column-end:::
+    <span data-ttu-id="17906-152">::: 列 =「2」:::[**フレーム**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)</span><span class="sxs-lookup"><span data-stu-id="17906-152">:::column span="2"::: [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)</span></span>
 
         With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
-<span data-ttu-id="86598-157">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="86598-157">:::row-end:::</span></span>
+:::row-end:::
 
-<span data-ttu-id="86598-158">:::row::: :::column::: ![タブとピボットのイメージ](images/nav/thumbnail-tabs-pivot.svg) :::column-end::: :::column span="2"::: <a href="../controls-and-patterns/tabs-pivot.md"><b>タブとピボット</b></a></span><span class="sxs-lookup"><span data-stu-id="86598-158">:::row::: :::column::: ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg) :::column-end::: :::column span="2"::: <a href="../controls-and-patterns/tabs-pivot.md"><b>Tabs and pivot</b></a></span></span><br>
+:::row:::
+    :::column:::
+        ![タブとピボットの画像](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+    <span data-ttu-id="17906-154">::: 列 =「2」:::[**の上部ナビゲーションとタブ**](../controls-and-patterns/navigationview.md)</span><span class="sxs-lookup"><span data-stu-id="17906-154">:::column span="2"::: [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)</span></span>
 
-        Displays a horizontal list of links to pages at the same level. Use when:
-        <ul>
-        <li>There are 2-5 pages. (You can use tabs/pivots when there are more than 5 pages, but it might be difficult to fit all the tabs/pivots on the screen.)</li>
-        <li>You expect users to switch between pages frequently.</li>
-        </ul>
-<span data-ttu-id="86598-159">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="86598-159">:::row-end:::</span></span>
+        Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
+        
+        Use top navigation when:
 
-<span data-ttu-id="86598-160">:::row::: :::column::: ![タブとピボットのイメージ](images/nav/thumbnail-navview.svg) :::column-end::: :::column span="2"::: <a href="../controls-and-patterns/navigationview.md"><b>ナビゲーション ビュー</b></a></span><span class="sxs-lookup"><span data-stu-id="86598-160">:::row::: :::column::: ![tabs and pivot image](images/nav/thumbnail-navview.svg) :::column-end::: :::column span="2"::: <a href="../controls-and-patterns/navigationview.md"><b>Navigation view</b></a></span></span><br>
+        - You want to show all navigation options on the screen.
+        - You desire more space for your app's content.
+        - Icons cannot clearly describe your navigation categories.
+        
+        Use tabs when:
+
+        - You want to preserve navigation history and page state.
+        - You expect users to switch between tabs frequently.
+
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![navview の画像](images/nav/thumbnail-navview.svg)
+    :::column-end:::
+    <span data-ttu-id="17906-156">::: 列 =「2」:::[**左側のナビゲーション**](../controls-and-patterns/navigationview.md)</span><span class="sxs-lookup"><span data-stu-id="17906-156">:::column span="2"::: [**Left navigation**](../controls-and-patterns/navigationview.md)</span></span>
 
         Displays a vertical list of links to top-level pages. Use when:
-        <ul>
-        <li>The pages exist at the top level.</li>
-        <li>There are many navigational items (more than 5).</li>
-        <li>You don't expect users to switch between pages frequently.</li>
-        </ul>
-<span data-ttu-id="86598-161">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="86598-161">:::row-end:::</span></span>
+        
+        - The pages exist at the top level.
+        - There are many navigation items (more than 5)
+        - You don't expect users to switch between pages frequently.
+        
+:::row-end:::
 
-<span data-ttu-id="86598-162">:::row::: :::column::: ![マスター詳細のイメージ](images/nav/thumbnail-master-detail.svg) :::column-end::: :::column span="2"::: <a href="../controls-and-patterns/master-details.md"><b>マスター詳細</b></a></span><span class="sxs-lookup"><span data-stu-id="86598-162">:::row::: :::column::: ![Master details image](images/nav/thumbnail-master-detail.svg) :::column-end::: :::column span="2"::: <a href="../controls-and-patterns/master-details.md"><b>Master/details</b></a></span></span><br>
+:::row:::
+    :::column:::
+        ![詳細についてはマスター イメージ](images/nav/thumbnail-master-detail.svg)
+    :::column-end:::
+    <span data-ttu-id="17906-158">::: 列 =「2」:::[**マスター/詳細**](../controls-and-patterns/master-details.md)</span><span class="sxs-lookup"><span data-stu-id="17906-158">:::column span="2"::: [**Master/details**](../controls-and-patterns/master-details.md)</span></span>
 
         Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
-        <ul>
-        <li>You expect users to switch between child items frequently.</li>
-        <li>You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.</li>
-        </ul>
+        
+        - You expect users to switch between child items frequently.
+        - You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.
 
         Master/details is well suited for email inboxes, contact lists, and data entry.
-<span data-ttu-id="86598-163">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="86598-163">:::row-end:::</span></span>
+:::row-end:::
 
-<span data-ttu-id="86598-164">:::row::: :::column::: ![ハイパーリンクとボタンのイメージ](images/nav/thumbnail-hyperlinks-buttons.svg) :::column-end::: :::column span="2"::: <a href="../controls-and-patterns/hyperlinks.md"><b>ハイパーリンク</b></a>と<a href="../controls-and-patterns/buttons.md"><b>ボタン</b></a></span><span class="sxs-lookup"><span data-stu-id="86598-164">:::row::: :::column::: ![Hyperlinks and buttons image](images/nav/thumbnail-hyperlinks-buttons.svg) :::column-end::: :::column span="2"::: <a href="../controls-and-patterns/hyperlinks.md"><b>Hyperlinks</b></a> and <a href="../controls-and-patterns/buttons.md"><b>buttons</b></a></span></span><br>
+:::row:::
+    :::column:::
+        ![ハイパーリンクとボタンの画像](images/nav/thumbnail-hyperlinks-buttons.svg)
+    :::column-end:::
+    <span data-ttu-id="17906-160">::: 列 =「2」:::[**ハイパーリンク**](../controls-and-patterns/hyperlinks.md)</span><span class="sxs-lookup"><span data-stu-id="17906-160">:::column span="2"::: [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)</span></span>
 
         Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
-<span data-ttu-id="86598-165">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="86598-165">:::row-end:::</span></span>
+:::row-end:::
 
-## <a name="next-add-navigation-code-to-your-app"></a><span data-ttu-id="86598-166">次の手順: アプリにナビゲーションのコードを追加する</span><span class="sxs-lookup"><span data-stu-id="86598-166">Next: Add navigation code to your app</span></span>
+## <a name="next-add-navigation-code-to-your-app"></a><span data-ttu-id="17906-161">次の手順: アプリにナビゲーションのコードを追加する</span><span class="sxs-lookup"><span data-stu-id="17906-161">Next: Add navigation code to your app</span></span>
 
-<span data-ttu-id="86598-167">次の記事「[基本的なナビゲーションを実装する](navigate-between-two-pages.md)」では、アプリで 2 つのページ間で基本的なナビゲーションを行うための、Frame コントロールを使用するために必要なコードを示します。</span><span class="sxs-lookup"><span data-stu-id="86598-167">The next article, [Implement basic navigation](navigate-between-two-pages.md), shows the code required to use a Frame control to enable basic navigation between two pages in your app.</span></span> 
+<span data-ttu-id="17906-162">次の記事「[基本的なナビゲーションを実装する](navigate-between-two-pages.md)」では、アプリで 2 つのページ間で基本的なナビゲーションを行うための、Frame コントロールを使用するために必要なコードを示します。</span><span class="sxs-lookup"><span data-stu-id="17906-162">The next article, [Implement basic navigation](navigate-between-two-pages.md), shows the code required to use a Frame control to enable basic navigation between two pages in your app.</span></span>

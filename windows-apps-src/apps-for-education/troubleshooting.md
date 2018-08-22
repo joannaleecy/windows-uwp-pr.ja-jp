@@ -1,28 +1,31 @@
 ---
-author: TylerMSFT
-Description: "イベント ビューアーを使用して、Microsoft テストのイベントとエラーをトラブルシューティングします。"
-title: "イベント ビューアーを使用して、Microsoft テストをトラブルシューティングします。"
-translationtype: Human Translation
-ms.sourcegitcommit: f2838d95da66eda32d9cea725a33fc4084d32359
-ms.openlocfilehash: 1b99b959cfdde997f7995c1bdf40d51921b2f1d5
-
+Description: Troubleshoot Microsoft Take a Test events and errors with the event viewer.
+title: イベント ビューアーを使用して、Microsoft テストをトラブルシューティングします。
+author: PatrickFarley
+ms.author: pafarley
+ms.assetid: 9218e542-f520-4616-98fc-b113d5a08e0f
+ms.date: 10/06/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10、uwp、教育機関向け
+ms.localizationpriority: medium
+ms.openlocfilehash: 3193525316d085e56244d6f03da99e3e07c6539f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792420"
 ---
+# <a name="troubleshoot-microsoft-take-a-test-with-the-event-viewer"></a><span data-ttu-id="3ba35-103">イベント ビューアーを使用して、Microsoft テストをトラブルシューティングします</span><span class="sxs-lookup"><span data-stu-id="3ba35-103">Troubleshoot Microsoft Take a Test with the event viewer</span></span>
 
-# イベント ビューアーを使用して、Microsoft テストをトラブルシューティングします
+<span data-ttu-id="3ba35-104">イベント ビューアーを使用して、テストのイベントとエラーを表示することができます。</span><span class="sxs-lookup"><span data-stu-id="3ba35-104">You can use the Event Viewer to view Take a Test events and errors.</span></span> <span data-ttu-id="3ba35-105">テストでは、ロックダウン要求を受け取ったとき、デバイスの登録が成功したとき、ロックダウン ポリシーが正常に適用されたときなどに、イベントがログに記録されます。</span><span class="sxs-lookup"><span data-stu-id="3ba35-105">Take a Test logs events when a lockdown request has been received, device enrollment has succeeded, lockdown policies were successfully applied, and more.</span></span>
 
-イベント ビューアーを使用して、テストのイベントとエラーを表示することができます。 テストでは、ロックダウン要求を受け取ったとき、デバイスの登録が成功したとき、ロックダウン ポリシーが正常に適用されたときなどに、イベントがログに記録されます。
+<span data-ttu-id="3ba35-106">イベント ビューアーでイベントの表示を有効にするには:</span><span class="sxs-lookup"><span data-stu-id="3ba35-106">To enable viewing events in the Event Viewer:</span></span>
+1. <span data-ttu-id="3ba35-107">次を開きます: </span><span class="sxs-lookup"><span data-stu-id="3ba35-107">Open the</span></span> `Event Viewer`
+2. <span data-ttu-id="3ba35-108">次に移動します: </span><span class="sxs-lookup"><span data-stu-id="3ba35-108">Navigate to</span></span> `Applications and Services Logs > Microsoft > Windows > Management-SecureAssessment`
+3. <span data-ttu-id="3ba35-109">`Operational` を右クリックして、次を選びます: </span><span class="sxs-lookup"><span data-stu-id="3ba35-109">Right-click `Operational` and select</span></span> `Enable Log`
 
-イベント ビューアーでイベントの表示を有効にするには:
-1. 次を開きます:  `Event Viewer`
-2. 次に移動します:  `Applications and Services Logs > Microsoft > Windows > Management-SecureAssessment`
-3. `Operational` を右クリックして、次を選びます:  `Enable Log`
-
-イベント ログを保存するには:
-1. 次を右クリックします:  `Operational`
-2. 次をクリックします:  `Save All Events As…`
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-
+<span data-ttu-id="3ba35-110">イベント ログを保存するには:</span><span class="sxs-lookup"><span data-stu-id="3ba35-110">To save the event logs:</span></span>
+1. <span data-ttu-id="3ba35-111">次を右クリックします: </span><span class="sxs-lookup"><span data-stu-id="3ba35-111">Right-click</span></span> `Operational`
+2. <span data-ttu-id="3ba35-112">次をクリックします: </span><span class="sxs-lookup"><span data-stu-id="3ba35-112">Click</span></span> `Save All Events As…`
