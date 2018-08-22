@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f533ab00cd80838d630a78f6f877f65fc1d617ba
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: fb273b6a37cb2f6322b0c9e3842b69676f82c616
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691491"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788627"
 ---
 # <a name="background-transfers"></a>バックグラウンド転送
 ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。 バックグラウンド転送 API には、アプリの一時停止中はバックグラウンドで実行され、アプリの終了後も実行が続行される高度なアップロード機能とダウンロード機能があります。 この API は、ネットワークの状態を監視し、接続が失われたときに転送の中断と再開を自動的に実行します。転送ではデータ センサーとバッテリー セーバーにも対応し、ダウンロード アクティビティは現在の接続とデバイスのバッテリー状態に基づいて調整されます。 この API は、アップロード HTTP(S) を使った大きなファイルのアップロードとダウンロードに適しています。 FTP もサポートされますが、その対象はダウンロードのみです。
@@ -29,9 +29,10 @@ ms.locfileid: "1691491"
 ### <a name="how-does-the-background-transfer-feature-work"></a>バックグラウンド転送機能はどのように動作するか
 アプリがバックグラウンド転送を使って転送を開始するときは、[**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) または [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) クラス オブジェクトを使って要求が構成され初期化されます。 それぞれの転送操作は、呼び出し元アプリとは別にシステムによって個別に処理されます。 進行情報はアプリの UI でユーザーに状況を示す場合に利用することができ、アプリで一時停止、再開、キャンセルしたり、転送中にデータを読み取ったりすることができます。 システムによって転送が処理される方法により、スマートな電力消費が実現し、アプリの中断や終了、突然のネットワーク ステータス変化などのイベントが接続アプリで発生したときに起こる可能性のある問題を回避できます。
 
-さらに、バック グラウンド転送ではシステム イベント ブローカー イベントを使用します。 そのため、システムで利用可能なイベントの数によって、ダウンロード数が制限されます。 既定では利用可能なイベントの数は 500 ですが、これらのイベントはすべてのプロセス間で共有されます。 そのため、1 つのアプリケーションで、一度に 100 個を超えるバックグラウンド転送を作成しないようにする必要があります。
+> [!NOTE]
+> アプリごとのリソースの制約により、常にアプリに 200 を超える転送 (DownloadOperations および UploadOperations) を含めてはなりません。 この制限を超過すると、アプリの転送キューが回復不能な状態になる可能性があります。
 
-アプリケーションでバック グラウンド転送を開始すると、既存のすべての [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live) オブジェクトで[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) を呼び出す必要があります。 そうしなければ、これらのイベントのリークが発生する可能性があります。そのため、バック グラウンド転送機能は使用できなくなります。
+アプリケーションを起動すると、既存[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)と[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)オブジェクトのすべての[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)呼び出す必要があります。 これを行わない既に完了した転送のリークが発生しは最終的に無用バック グラウンド転送機能を使用します。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>バックグラウンド転送での認証されたファイル要求の実行
 バックグラウンド転送では、基本サーバーとプロキシの資格情報、Cookie をサポートするメソッドが用意されており、それぞれの転送操作で ([**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) を介して) カスタム HTTP ヘッダーを使うこともできます。
@@ -167,8 +168,6 @@ contentParts 配列には、アップロード用の各 [**IStorageFile**](https
 バックグラウンド転送を使う場合、各ダウンロードは [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) として存在し、操作の一時停止、再開、再起動、取り消しに使われる多くの制御メソッドを公開します。 アプリのイベント (一時停止、終了など) や接続の変更は、**DownloadOperation** を通じてシステムによって自動的に処理されます。ダウンロードは、アプリの一時停止中も続行し、アプリの終了以降は一時停止して保持されます。 モバイル ネットワーク シナリオの場合、[**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) プロパティを設定することで、従量制課金接続がインターネット接続のために使われている間もアプリがダウンロードを開始または続行するかどうかを指定します。
 
 すぐに完了する可能性がある小さいリソースをダウンロードする場合は、バックグラウンド転送ではなく [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) API を使ってください。
-
-アプリごとのリソースの制約により、常にアプリに 200 を超える転送 (DownloadOperations および UploadOperations) を含めてはなりません。 この制限を超過すると、アプリの転送キューが回復不能な状態になる可能性があります。
 
 以下に、基本的なダウンロードを作成および初期化する例と、前のアプリ セッションから続いている操作を列挙および再び取り込む例を示します。
 

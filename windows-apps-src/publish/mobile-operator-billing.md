@@ -4,18 +4,18 @@ Description: The Microsoft Store offers Mobile Operator Billing as a payment met
 title: 携帯電話会社による課金
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 04/30/2018
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 携帯電話会社, 携帯電話への課金, 携帯電話会社による課金
-ms.localizationpriority: high
-ms.openlocfilehash: 8e10f3d1cdee250e2d9ca140759a90cbdf0a8773
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 4bfb2fbbea42aaf1ed3c0ffc42f71dc38b2a1ede
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817513"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788117"
 ---
 # <a name="mobile-operator-billing"></a>携帯電話会社による課金
 
@@ -46,14 +46,13 @@ Microsoft Store では、Windows 10 を実行するデバイス、Windows 10 Mob
 | オランダ     | KPN                              |
 | ノルウェー          | Telenor、Telia                   |
 | ポーランド          | Orange                           |
-| ルーマニア         | Orange                           |
-| ロシア          | Beeline                          |
-| シンガポール       | M1 Limited                       |
+| シンガポール       | M1 制限があり、StarHub              |
 | スロバキア        | Slovak Telekom                   |
 | スペイン           | Orange                           |
 | スウェーデン          | Telenor、3                       |
 | スイス     | Swisscom、Sunrise                |
 | トルコ          | Turkcell                         |
+| アラブ首長国連邦 | Etisalat                    |
 | 米国   | Sprint、Verizon                  |
 | イギリス  | O2、3 UK、EE                     |
 

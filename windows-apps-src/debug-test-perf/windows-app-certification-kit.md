@@ -2,26 +2,26 @@
 author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows アプリ認定キット
-description: 作成したアプリを Windows ストアに公開する、または、Windows 認定を受ける一番の方法は、認定のためアプリを提出する前に、ローカルでアプリの検証とテストを行うことです。 このトピックでは、Windows アプリ認定キットのインストール方法と実行方法について説明します。
+description: Microsoft ストアに公開する最適な可能性のアプリを与えるまたは Windows が認定を検証し、証明書を送信する前にローカルにテストします。 このトピックでは、Windows アプリ認定キットのインストール方法と実行方法について説明します。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: fb5303898bfb0d7021ba4c0aa48afd5038bcad4d
-ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+keywords: windows 10、uwp、アプリ認定
+ms.localizationpriority: medium
+ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2017
-ms.locfileid: "695464"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788467"
 ---
 # <a name="windows-app-certification-kit"></a>Windows アプリ認定キット
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-作成したアプリを [Windows ストアに公開](https://msdn.microsoft.com/library/windows/apps/Hh694062)する、または [Windows 認定](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)を受ける最善の方法は、認定のためアプリを提出する前に、ローカルでアプリの検証とテストを行うことです。 このトピックでは、[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)のインストール方法と実行方法について説明します。
+[Windows が認められて](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)アプリを入手または[Microsoft ストアするパブリケーション](https://msdn.microsoft.com/library/windows/apps/Hh694062)の準備を検証し、テスト ローカルで最初にする必要があります。 このトピックでは、インストールして、アプリが安全かつ効率的に使用することを確認する[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)を実行する方法を説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -46,7 +46,7 @@ ms.locfileid: "695464"
 
 3.  テストするアプリを入力するか選択したら **[次へ]** をクリックします。
 
-4.  次の画面からは、テストするアプリの種類に合ったテスト ワークフローが表示されます。 一覧でテストが淡色されている場合、お使いの環境にはそのテストが適用されません。 たとえば、Windows 7 で Windows 10 アプリをテストする場合、静的テストのみがワークフローに適用されます。 Windows ストアにはこのワークフローのすべてのテストを適用できる点に注意してください。 実行するテストを選んで **[次へ]** をクリックします。
+4.  次の画面からは、テストするアプリの種類に合ったテスト ワークフローが表示されます。 一覧でテストが淡色されている場合、お使いの環境にはそのテストが適用されません。 たとえば、Windows 7 で Windows 10 アプリをテストする場合、静的テストのみがワークフローに適用されます。 メモは、Microsoft ストアがこのワークフローからすべてのテストを適用ことがあります。 実行するテストを選んで **[次へ]** をクリックします。
 
     Windows アプリ認定キットによってアプリの検証が開始されます。
 
@@ -90,14 +90,14 @@ ms.locfileid: "695464"
 
 Windows アプリ認定キットで使用するパフォーマンス テストのしきい値は、低電力コンピューターのパフォーマンスに基づいて設定します。
 
-テストを実行するコンピューターの特性がテスト結果に影響することがあります。 アプリのパフォーマンスが [Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を満たしているかどうかを判断するには、アプリを低電力コンピューター (たとえば画面の解像度が 1366x768 またはそれ以上で、ソリッド ステート ハード ドライブではなく回転式ハード ドライブを搭載した Intel Atom プロセッサ ベースのコンピューター) 上でテストすることをお勧めします。
+テストを実行するコンピューターの特性がテスト結果に影響することがあります。 調べるには、アプリのパフォーマンスが[Microsoft ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を満たしているかどうかは、ことをお勧め低電力コンピューターで、Intel Atom プロセッサ ベースのコンピューターの場合 (以上)、画面の解像度を回転ハードなどのアプリをテストします。(ソリッドステート ハード ドライブ) ではなくドライブします。
 
-低電力コンピューターの進化に伴い、パフォーマンスの特性が時間の経過と共に変化する可能性があります。 アプリが最新のパフォーマンス要件を満たすように、最新の [Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944) を参照し、最新版の Windows アプリ認定キットでアプリをテストしてください。
+低電力コンピューターの進化に伴い、パフォーマンスの特性が時間の経過と共に変化する可能性があります。 最新の[Microsoft ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を参照し、アプリでは、最新バージョンのアプリが最新のパフォーマンスの要件に準拠しているかどうかを確認するには、Windows アプリ認定キットをテストします。
 
 ## <a name="related-topics"></a>関連トピック
 
 * [Windows アプリ認定キットのテスト](windows-app-certification-kit-tests.md)
-* [Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  
 
  

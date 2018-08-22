@@ -4,17 +4,17 @@ title: 年 2018年 8 月で Windows ドキュメントの新機能 - UWP アプ�
 description: Windows 10 年 2018年 8 月開発ドキュメント、新機能、ビデオ、サンプル、および開発者向けのガイダンスが追加されました。
 keywords: 新機能、更新、機能、開発については、Windows 10、年 8 月
 ms.author: quradic
-ms.date: 8/9/2018
+ms.date: 08/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 06eef0c115675ba9673a81459c91e0f08f6fab71
-ms.sourcegitcommit: be5b71a8ec7b686d5f93d56d10cb9a50c3c5bb4a
+ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "2748872"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2787787"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>年 2018年 8 月では、Windows の開発ドキュメントの新機能します。
 
@@ -30,17 +30,17 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 * [Windows の UI ライブラリ](https://aka.ms/winui-docs)は、UWP アプリのコントロールとその他のユーザーの interfact 要素を提供する NuGet パッケージのセットです。 これらのパッケージも、以前のバージョンの Windows 10 の場合は、互換アプリには、ユーザーは、最新の OS のバージョンを持っていない場合でもようにします。
 
-* [DropDownButton、分割ボタンと ToggleSplitButton](../design/controls-and-patterns/buttons.md)ボタン コントロールのアプリのユーザー エクスペリエンスを強化するために特殊な機能を提供します。
-
-* 今すぐ、NavigationView は、アプリをナビゲーション オプションの数を減らして場合の[上部のナビゲーション](../design/controls-and-patterns/navigationview.md)をサポートしていて、アプリのコンテンツのスペースを要求します。
-
-* ツリー ビューがサポートする強化[データ バインド、項目テンプレート、およびドラゴンおよびドロップ](../design/controls-and-patterns/tree-view.md)。
+* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、 [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button)、および[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)ボタン コントロールのアプリのユーザー インターフェイスを強化するために特殊な機能を提供します。
 
 ![背景色を選ぶための分割] ボタン](../design/controls-and-patterns/images/split-button-rtb.png)
 
+* NavigationView には、アプリのナビゲーション オプションの番号が小さいとアプリのコンテンツに必要なその他の容量の場合は、[トップ ナビゲーション](../design/controls-and-patterns/navigationview.md)がサポートしています。
+
+* ツリー ビューがサポートする強化[データ バインド、項目テンプレート、およびドラッグ アンド ドロップします](../design/controls-and-patterns/tree-view.md)。
+
 ### <a name="package-support-framework"></a>パッケージのサポート フレームワーク
 
-パッケージのサポート フレームワークが、修正を適用、win32 アプリケーションいないときに、ソース コードへのアクセスを MSIX コンテナーで実行できるようにするために役立つ、ファイルを開くキットします。  
+パッケージのサポート フレームワークが、修正を適用、win32 アプリケーションいないときに、ソース コードへのアクセスを MSIX コンテナーで実行できるようにするために役立つ、オープン ソース キットします。
 
 詳細については、[適用ランタイム修正パッケージ サポート フレームワークを使用して MSIX パッケージを](../porting/package-support-framework.md)参照してください。
 
@@ -52,7 +52,7 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 ### <a name="cwinrt-code-examples"></a>C + +/WinRT コードの例
 
-250 が追加されました[C + +/WinRT](../cpp-and-winrt-apis/index.md)コード スニペットのトピックで、ドキュメント、記録されている既存の C + +/CX コードの例です。
+250 が追加されました[C + +/WinRT](../cpp-and-winrt-apis/index.md)コードの一覧で、ドキュメント、既存の C + に付属しているトピック +/CX コードの例です。
 
 ### <a name="project-rome"></a>Project Rome
 

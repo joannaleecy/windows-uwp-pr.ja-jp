@@ -1,6 +1,6 @@
 ---
 author: msatranjr
-Description: このトピックでは、ユーザーの位置にアクセスする必要があるアプリを構築する際のパフォーマンス ガイドラインを説明します。
+Description: This topic describes performance guidelines for apps that require access to a user's location.
 title: 位置認識アプリのガイドライン
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.author: misatran
@@ -9,16 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 位置, 地図, 位置情報
-ms.openlocfilehash: f2035762fe99e1692d8b8b5eea5260aeb39b8d2a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246862"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2786878"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置認識アプリのガイドライン
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
 **重要な API**
@@ -50,7 +51,7 @@ ms.locfileid: "246862"
 
     ユーザーが設定を使って位置情報へのアクセスをオフにした場合に、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを解放します。 すると、アプリは、あらゆる位置情報 API 呼び出しの結果として **ACCESS\_DENIED** を受け取ります。 アプリで位置データを保存またはキャッシュしている場合は、ユーザーが位置情報へのアクセスを無効にするときにすべてのキャッシュ データをクリアします。 位置情報サービス経由で位置データを利用できないときに位置情報を手動で入力するための代替手段を用意してください。
 
--   位置情報サービスを再び有効にするための UI を用意します。 たとえば、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを再インスタンス化して位置情報を取得し直す更新ボタンを提供します。
+-   位置情報サービスを再び有効にするための UI を用意します。 たとえば、reinstantiates [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)オブジェクトと、もう一度保存場所情報を取得しようとする更新] ボタンを提供します。
 
     位置情報サービスを再び有効にするための UI を提供する—
 
@@ -90,7 +91,7 @@ ms.locfileid: "246862"
         次に例を示します。
 
         -   アプリが広告の調整、天気、ニュースなどのための位置情報を取得している場合は、一般に 5000 m の精度で十分です。
-        -   アプリが地域内のごく近隣を表示する場合は、結果の表示には一般に 300 m の精度が適しています。
+        -   アプリは、コンピューターでの案件の近くに表示している場合は、300 メーターの精度は一般的に適切な結果を取得します。
         -   ユーザーがお勧めの近くのレストランを探している場合は、ブロック内の位置を取得する必要がありますので、100 m の精度で十分です。
         -   ユーザーが自身の位置を共有しようとしている場合は、アプリには約 10 m の精度が必要です。
     -   アプリに特定の精度の要件がある場合は [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) プロパティを使います。 たとえば、ナビゲーション アプリでは、**Geocoordinate.accuracy** プロパティを使って、利用可能な位置情報データがアプリの要件を満たしているかどうかを調べます。

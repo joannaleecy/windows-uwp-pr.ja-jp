@@ -12,22 +12,35 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 21539d625dc70ded7bec77b9916c7ea4bff72536
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396811"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788527"
 ---
 # <a name="controls-by-function"></a>機能別コントロール
 
- 
-
 Windows の XAML UI フレームワークには、UI 開発をサポートする多くのコントロールのライブラリが用意されています。 これらのコントロールの一部は視覚的に表示されますが、それ以外のコントロールは他のコントロールまたはコンテンツ (画像やメディアなど) のコンテナーとして機能します。 
 
-[XAML UI の基本のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619992)をダウンロードすると、Windows UI コントロールの多くを実際に見ることができます。 
+[XAML UI の基本のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619992)をダウンロードすると、Windows UI コントロールの多くを実際に見ることができます。
 
-アプリで使うことができる一般的な XAML コントロールの機能別の一覧を以下に示します。 
+<table>
+<th align="left">XAML コントロール ギャラリー<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリがインストールされている場合は、ここをクリックして<a href="xamlcontrolsgallery:/item/NavigationView">、アプリを開きアクションで NavigationView を参照してください。</a> </p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
+
+アプリで使うことができる一般的な XAML コントロールの機能別の一覧を以下に示します。
 
 ## <a name="appbars-and-commands"></a>アプリ バーとコマンド
 
@@ -257,7 +270,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 リファレンス: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-デザインと使い方: [ショートカット メニューとダイアログ](dialogs.md) 
+デザインと使い方:[フライアウト](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>メニュー ポップアップ
 ユーザーが現在行っている内容に関連するコマンドまたはオプションの一覧を一時的に表示します。
@@ -277,7 +290,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 リファレンス: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)、[MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-デザインと使い方: [ショートカット メニューとダイアログ](dialogs.md) 
+デザインと使い方:[メニューおよびコンテキスト メニュー](menus.md) 
 
 サンプル コード: [XAML ショートカット メニューのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
@@ -286,7 +299,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 リファレンス: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-デザインと使い方: [ショートカット メニューとダイアログ](dialogs.md) 
+デザインと使い方:[ダイアログ ボックス](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>ヒント
 要素についての情報を表示するポップアップ ウィンドウ。 
@@ -540,58 +553,16 @@ MediaElement の再生コントロールを提供するコントロール。
 
 ## <a name="navigation"></a>ナビゲーション
 
-### <a name="hub"></a>ハブ
-ユーザーが、コンテンツの異なるセクションの表示とナビゲートを実行できるようにするコンテナー コントロール。
+### <a name="navigationview"></a>NavigationView
 
-```xaml
-<Hub>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-</Hub>
-```
+な適応コンテナーと、左側のナビゲーション ウィンドウ上部のナビゲーション、タブ パターンを実装する柔軟なナビゲーション、モデルします。
 
-リファレンス: [Hub](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
+リファレンス: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-デザインと使い方: [ハブ コントロールのガイド](hub.md) 
-
-サンプル コード: [XAML ハブ コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=309828)
-
-### <a name="pivot"></a>ピボット
-通常は同じデータ セット内の異なるピボット (ビューまたはフィルター) 間で、迅速な移動手段を提供する全画面表示のコンテナーおよびナビゲーション モデルです。
-
-Pivot コントロールに、"タブ" レイアウトを含むスタイルを適用できます。
-
-リファレンス: [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
-
-デザインと使い方: [タブとピボットのコントロールのガイド](tabs-pivot.md) 
-
-サンプル コード: [Pivot のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
-
-### <a name="semantic-zoom"></a>セマンティック ズーム
-ユーザーが、項目のコレクションの 2 つの異なる表示の間でズームを実行できるようにするコンテナー コントロール。
-
-```xaml
-<SemanticZoom>
-    <ZoomedInView>
-        <GridView></GridView>
-    </ZoomedInView>
-    <ZoomedOutView>
-        <GridView></GridView>
-    </ZoomedOutView>
-</SemanticZoom>
-```
-
-リファレンス: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
-
-デザインと使い方: [セマンティック ズーム コントロールのガイド](semantic-zoom.md) 
-
-サンプル コード: [XAML GridView のグループ化と SemanticZoom のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226564)
+デザインと使い方: [NavigationView コントロール ガイド](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
+
 2 つのビューを持つコンテナー コントロール。1 つはメイン コンテンツ用で、もう 1 つは、通常、ナビゲーション メニューに使います。
 
 ![分割ビュー コントロール](images/controls/split-view.png) 
@@ -612,6 +583,7 @@ Pivot コントロールに、"タブ" レイアウトを含むスタイルを�
 デザインと使い方: [分割ビュー コントロールのガイド](split-view.md)
 
 ### <a name="web-view"></a>Web ビュー
+
 Web コンテンツをホストするコンテナー コントロール。
 
 ```xaml
@@ -624,6 +596,27 @@ Web コンテンツをホストするコンテナー コントロール。
 デザインと使い方: Web ビューのガイドライン 
 
 サンプル コード: [XAML WebView コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238582)
+
+### <a name="semantic-zoom"></a>セマンティック ズーム
+
+ユーザーが、項目のコレクションの 2 つの異なる表示の間でズームを実行できるようにするコンテナー コントロール。
+
+```xaml
+<SemanticZoom>
+    <ZoomedInView>
+        <GridView></GridView>
+    </ZoomedInView>
+    <ZoomedOutView>
+        <GridView></GridView>
+    </ZoomedOutView>
+</SemanticZoom>
+```
+
+リファレンス: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
+
+デザインと使い方: [セマンティック ズーム コントロールのガイド](semantic-zoom.md)
+
+サンプル コード: [XAML GridView のグループ化と SemanticZoom のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>プログレス コントロール
 

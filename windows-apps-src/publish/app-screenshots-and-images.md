@@ -4,18 +4,18 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: アプリのスクリーンショット、画像、トレーラー
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 4/30/2018
+ms.date: 8/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 予告編, ビデオ, スクリーン ショット, 画像, アイコン, Store 登録情報, Store 登録情報の画像
-ms.localizationpriority: high
-ms.openlocfilehash: e0ac8e01aab07e68e0a4f22160cb58e558b4dc42
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d787ac620f9d0114d67d85def758416afd9f5f15
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817783"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788437"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>アプリのスクリーンショット、画像、トレーラー
 
@@ -56,7 +56,7 @@ ms.locfileid: "1817783"
 > [!TIP]
 > スクリーンショットは、指定した順番に登録情報に表示されます。 スクリーンショットをアップロードした後で、ドラッグ アンド ドロップで並べ替えることができます。 
 
-ストア登録情報を[複数の言語](supported-languages.md)で用意する場合は、言語ごとに **[ストア登録情報]** ページがあります。 画像は言語ごとに個別にアップロードし (同じ画像を使う場合でも)、使用するキャプションも言語ごとに指定する必要があります。
+ストア登録情報を[複数の言語](supported-languages.md)で用意する場合は、言語ごとに **[ストア登録情報]** ページがあります。 言語ごとに別個に画像をアップロードして (同じ画像を使う場合でも)、使用する字幕を言語ごとに入力する必要があります。
 
 
 ## <a name="store-logos"></a>Microsoft Store ロゴ
@@ -85,11 +85,13 @@ Windows 10 デバイスと Xbox デバイスのユーザー向けのメイン �
 
 この画像は、Windows Phone 8.1 以前で適切に表示されるために必要です。 アプリで Windows Phone 8.1 以前がサポートされているが、この画像を用意しない場合、アプリの登録情報ページに空白のアイコンが表示されます。 (アプリに Windows Phone 8.1 以前をターゲットとするパッケージしかない場合、これは Windows 10 のユーザーにも適用されます)。申請に UWP パッケージ*しか*含まれない場合は、この画像を提供する必要はありません  (申請に Windows Phone 8.x パッケージと UWP パッケージの両方が含まれている場合、この画像を提供すると、Windows 10 の一部の Microsoft Store レイアウトで使われることがあります。 これを避けるには、アプリでサポートされている Windows Phone のバージョン用に[プラットフォーム固有の登録情報](create-platform-specific-store-listings.md)を作成し、その登録情報にのみアプリのタイル アイコンを含めるようにします)。
 
-また、Windows 10 (Xbox を含む) ユーザーに Microsoft Store 登録情報が表示されるときに、アプリのパッケージのロゴ画像ではなく、アップロードした画像のみが使用されるようにすることもできます。 これにより、Windows 10 (Xbox を含む) ユーザーについては、Microsoft Store のさまざまな画面でのアプリの魅せ方をさらに細かく制御できます。
+### <a name="display-only-uploaded-logo-images-in-the-store"></a>アップロードされたストアのロゴ画像のみを表示
 
-Windows 10 (Xbox を含む) の Microsoft Store ではアップロードした画像のみを使用するには、**[Windows 10 のユーザーに対しては、パッケージの画像ではなく、アップロードしたロゴ画像を表示します]** というチェック ボックスをオンにします。 (このボックスをオンにしない場合、アプリのパッケージの画像が使用されます)。
+ストアを防ぐ (Xbox を含む)、Windows 10 の顧客に、リストを表示する場合は、アプリのパッケージでロゴ画像を使用していて、代わりにストアにアップロードする画像のみを使用するオプションがあります。 これにより、Windows 10 (Xbox を含む) ユーザーについては、Microsoft Store のさまざまな画面でのアプリの魅せ方をさらに細かく制御できます。 (場合、製品は、OS の以前のバージョンをサポートするお客様も画像が表示パッケージからこのオプションを使用している場合でも。)
 
-このチェック ボックスをオンにすると、**[Uploaded Store logos] (アップロードされた Microsoft Store ロゴ)** という新しいセクションが表示されます。 ここで 3 つの画像をアップロードできます。これには 300 x 300 の "アプリ タイル アイコン" サイズも含まれます (このチェック ボックスをオンにすると、画像を指定するフィールドがこのセクションに移動します)。 このオプションを使う場合は、300 x 300 ピクセル、150 x 150 ピクセル、71 x 71 ピクセルの 3 つの画像をすべて指定することをお勧めします。 ただし、必須のサイズは 300 x 300 だけです。
+Windows 10 および Xbox での顧客のストア (得意先の Windows 10、Xbox など)、アップロードする画像のみを使用して、パッケージから画像を使用して、いない**というメッセージが表示されるボックスをオン、表示、パッケージからの画像ではなくロゴ画像のアップロード**.
+
+このチェック ボックスをオンにすると**画像を表示するストア**と呼ばれる、新しいセクションが表示されます。 ここでは、(ボックス、その画像は、このセクションに移動しますを提供するフィールドを確認するには) 場合は、 **1:1 アプリ タイル アイコン (300 x 300 ピクセル)** のサイズを含む、3 つの画像をアップロードすることができます。 このオプションを使う場合は、300 x 300 ピクセル、150 x 150 ピクセル、71 x 71 ピクセルの 3 つの画像をすべて指定することをお勧めします。 ただし、必須のサイズは 300 x 300 だけです。
 
 
 <span id="promotional-images" />
@@ -209,7 +211,7 @@ Store 登録情報には、最大 15 個のトレーラーを追加できます�
 - タイトルを 255 文字より長くすることはできません。 
 - トレーラーに年齢区分は含めないでください。
 
-Store 登録情報ページの他のフィールドと同様に、トレーラーを Microsoft Store に公開するには、その前に認定に合格する必要があります。 トレーラーが [Microsoft Storeポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)に準拠していることを確認してください。 
+Store 登録情報ページの他のフィールドと同様に、トレーラーを Microsoft Store に公開するには、その前に認定に合格する必要があります。 トレーラーが [Microsoft Storeポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies)に準拠していることを確認してください。 
 
 ファイルの種類に応じて追加の要件があります。
 

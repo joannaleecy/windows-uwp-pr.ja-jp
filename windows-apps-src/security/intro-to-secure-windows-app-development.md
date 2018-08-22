@@ -1,6 +1,6 @@
 ---
 title: 安全な Windows アプリの開発について
-description: この概要記事は、セキュリティで保護されたユニバーサル Windows プラットフォーム (UWP) アプリの作成を加速するさまざまな Windows 10 プラットフォーム機能を、アプリの設計者と開発者が深く理解する場合に役立ちます。
+description: この概要記事は、ユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとして作成する作業を加速するさまざまな Windows 10 プラットフォーム機能を、アプリの設計者と開発者が深く理解するのに役立ちます。
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: msatranjr
 ms.author: misatran
@@ -8,21 +8,21 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 75731d074be5f4f7fced3444b2d1508c733304c7
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 1e48d0b21d588ef7b4913e16b75f9d21c5d5209f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691281"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2789084"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>安全な Windows アプリの開発について
 
 
 
 
-この概要記事は、セキュリティで保護されたユニバーサル Windows プラットフォーム (UWP) アプリの作成を加速するさまざまな Windows 10 プラットフォーム機能を、アプリの設計者と開発者が深く理解する場合に役立ちます。 ここでは、認証、移動中データ、および保存データの各段階で利用可能な、Windows のセキュリティ機能に使用方法について詳しく説明します。 各章にあるその他のリソースを確認すれば、各トピックについてさらに詳しい情報を得ることができます。
+この概要記事は、ユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとして作成する作業を加速するさまざまな Windows 10 プラットフォーム機能を、アプリの設計者と開発者が深く理解するのに役立ちます。 ここでは、認証、移動中データ、および保存データの各段階で利用可能な、Windows のセキュリティ機能に使用方法について詳しく説明します。 各章にあるその他のリソースを確認すれば、各トピックについてさらに詳しい情報を得ることができます。
 
 ## <a name="1-introduction"></a>1 はじめに
 

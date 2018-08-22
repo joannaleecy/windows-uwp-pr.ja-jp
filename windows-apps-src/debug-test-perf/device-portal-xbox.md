@@ -8,14 +8,14 @@ ms.date: 02/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、uwp、デバイスのポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: fd196c76afe8f8cb1841ba7a7869de725177969a
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 404db3963d2f9508d7c81053abf96b0e742103f7
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816927"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788667"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 用 Device Portal
 
@@ -196,6 +196,12 @@ Xbox Device Portal の **[ネットワーク]** ページは Windows Device Port
 これは空のワークスペースで、自由にカスタマイズすることができます。 メニューを使用して (左上にあるメニュー ボタンをクリックします)、ツールを追加することができます (**[Add tools to workspace]** (ワークスペースにツールを追加する) を選択して、追加するツールを選択し、**[追加]** を選択します)。 このメニューを使用すると、任意のワークスペースにツールを追加すると共に、ワークスペース自体を管理することもできます。
 
 ![ワークスペースにツールを追加する](images/device-portal-xbox-13.png)
+
+### <a name="game-event-data"></a>ゲーム イベント データ
+
+**ゲーム イベント データ**] ページでできますグラフを表示するリアルタイムそのストリーム イベント トレースの Windows (ETW) ゲーム イベントが現在を登録している、Xbox 1 つの数でします。 ゲームのイベントがシステムを登録している場合は、表示することも (イベント名、イベントの発生、およびゲーム タイトル) の詳細データのグラフの下にあるデータ テーブル内の各イベントを説明します。 テーブルは記録されているイベントがある場合にのみ使用できます。
+
+![ゲーム イベント データ](images/device-portal-xbox-22.PNG)
 
 ## <a name="see-also"></a>関連項目
 
