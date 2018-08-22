@@ -1,53 +1,55 @@
 ---
 author: jnHs
-Description: "開発者アカウントに適切なアクセス許可が付与されている場合、OEM が OS イメージにアプリを組み込めるプレインストール パッケージを生成してダウンロードできます。"
-title: "OEM 向けのプレインストール パッケージの生成"
+Description: If your developer account has been granted the appropriate permissions, you can generate and download preinstall packages so that an OEM can include your app in their OS image.
+title: OEM 向けのプレインストール パッケージの生成
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 076223a8407468dd34d8b24fec44288f3be67456
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
-ms.translationtype: HT
+keywords: Windows 10, UWP
+ms.localizationpriority: medium
+ms.openlocfilehash: 598a73b291d5f8b3c004f1e9adeddf0b92b841ab
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2787947"
 ---
-# <a name="generate-preinstall-packages-for-oems"></a><span data-ttu-id="abcea-104">OEM 向けのプレインストール パッケージの生成</span><span class="sxs-lookup"><span data-stu-id="abcea-104">Generate preinstall packages for OEMs</span></span>
+# <a name="generate-preinstall-packages-for-oems"></a><span data-ttu-id="d2547-103">OEM 向けのプレインストール パッケージの生成</span><span class="sxs-lookup"><span data-stu-id="d2547-103">Generate preinstall packages for OEMs</span></span>
 
-<span data-ttu-id="abcea-105">開発者アカウントに適切なアクセス許可が付与されている場合、OEM が OS イメージにアプリを組み込めるプレインストール パッケージを生成してダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="abcea-105">If your developer account has been granted the appropriate permissions, you can generate and download preinstall packages so that an OEM can include your app in their OS image.</span></span> <span data-ttu-id="abcea-106">プレインストールのアクセス許可は、OEM がスポンサーである開発者アカウントでのみ有効です。</span><span class="sxs-lookup"><span data-stu-id="abcea-106">Preinstall permissions are only enabled on developer accounts that are sponsored by OEMs.</span></span>
-
-
-## <a name="important-preinstall-policy--limitations"></a><span data-ttu-id="abcea-107">重要なプレインストールに関するポリシーと制限事項</span><span class="sxs-lookup"><span data-stu-id="abcea-107">Important preinstall policy & limitations</span></span>
-
-<span data-ttu-id="abcea-108">プレインストール アプリは、最新のストア ライセンスが適用されるように、Windows デベロッパー センターを通じて認定を受ける必要があります。これにより、プレインストール アプリでストアに接続し、アプリの更新プログラムを受信できます。</span><span class="sxs-lookup"><span data-stu-id="abcea-108">Preinstall apps must be certified through Windows Dev Center to have the latest Store license so that they are able to connect to the Store and receive app updates.</span></span>
-
-<span data-ttu-id="abcea-109">プレインストールされているアプリは、すべての市場で、現在も将来も無料である必要があります。</span><span class="sxs-lookup"><span data-stu-id="abcea-109">Any app that is preinstalled must be and remain free in all markets.</span></span>
+<span data-ttu-id="d2547-104">開発者アカウントに適切なアクセス許可が付与されている場合、OEM が OS イメージにアプリを組み込めるプレインストール パッケージを生成してダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="d2547-104">If your developer account has been granted the appropriate permissions, you can generate and download preinstall packages so that an OEM can include your app in their OS image.</span></span> <span data-ttu-id="d2547-105">プレインストールのアクセス許可は、OEM がスポンサーである開発者アカウントでのみ有効です。</span><span class="sxs-lookup"><span data-stu-id="d2547-105">Preinstall permissions are only enabled on developer accounts that are sponsored by OEMs.</span></span>
 
 
-## <a name="generating-preinstall-packages"></a><span data-ttu-id="abcea-110">プレインストール パッケージの生成</span><span class="sxs-lookup"><span data-stu-id="abcea-110">Generating preinstall packages</span></span>
+## <a name="important-preinstall-policy--limitations"></a><span data-ttu-id="d2547-106">重要なプレインストールに関するポリシーと制限事項</span><span class="sxs-lookup"><span data-stu-id="d2547-106">Important preinstall policy & limitations</span></span>
 
-<span data-ttu-id="abcea-111">プレインストールのアクセス許可を持つアカウントが有効になったら、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="abcea-111">Once an account has been enabled with preinstall permissions, complete the following steps:</span></span>
+<span data-ttu-id="d2547-107">プレインストール アプリは、最新のストア ライセンスが適用されるように、Windows デベロッパー センターを通じて認定を受ける必要があります。これにより、プレインストール アプリでストアに接続し、アプリの更新プログラムを受信できます。</span><span class="sxs-lookup"><span data-stu-id="d2547-107">Preinstall apps must be certified through Windows Dev Center to have the latest Store license so that they are able to connect to the Store and receive app updates.</span></span>
 
-1.  <span data-ttu-id="abcea-112">ダッシュボードで、プレインストールするアプリに移動します。</span><span class="sxs-lookup"><span data-stu-id="abcea-112">In your dashboard, navigate to the app that is to be preinstalled.</span></span>
-2.  <span data-ttu-id="abcea-113">左側のナビゲーション メニューで、**[アプリ管理]** を展開し、**[現在のパッケージ]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="abcea-113">In the left navigation menu, expand **App management** and select **Current packages**.</span></span>
-3.  <span data-ttu-id="abcea-114">**[OS プレインストール用パッケージの要求]** で、**[ダウンロード可能なパッケージを有効にする]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="abcea-114">In the **Request packages for OS preinstallation** section, select **Enable downloadable packages**.</span></span>
-4.  <span data-ttu-id="abcea-115">確認のダイアログ ボックスで、**[有効化]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="abcea-115">In the confirmation dialog will, select **Enable**.</span></span>
-5.  <span data-ttu-id="abcea-116">ダウンロードするパッケージを検索し、適切な **[Generate package] (パッケージの生成)** リンクを選びます。</span><span class="sxs-lookup"><span data-stu-id="abcea-116">Find the package that you want to download and select the appropriate **Generate package** link.</span></span>
+<span data-ttu-id="d2547-108">プレインストールされているアプリは、すべての市場で、現在も将来も無料である必要があります。</span><span class="sxs-lookup"><span data-stu-id="d2547-108">Any app that is preinstalled must be and remain free in all markets.</span></span>
+
+
+## <a name="generating-preinstall-packages"></a><span data-ttu-id="d2547-109">プレインストール パッケージの生成</span><span class="sxs-lookup"><span data-stu-id="d2547-109">Generating preinstall packages</span></span>
+
+<span data-ttu-id="d2547-110">プレインストールのアクセス許可を持つアカウントが有効になったら、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="d2547-110">Once an account has been enabled with preinstall permissions, complete the following steps:</span></span>
+
+1.  <span data-ttu-id="d2547-111">ダッシュボードで、プレインストールするアプリに移動します。</span><span class="sxs-lookup"><span data-stu-id="d2547-111">In your dashboard, navigate to the app that is to be preinstalled.</span></span>
+2.  <span data-ttu-id="d2547-112">左側のナビゲーション メニューで、**[アプリ管理]** を展開し、**[現在のパッケージ]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="d2547-112">In the left navigation menu, expand **App management** and select **Current packages**.</span></span>
+3.  <span data-ttu-id="d2547-113">**[OS プレインストール用パッケージの要求]** で、**[ダウンロード可能なパッケージを有効にする]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="d2547-113">In the **Request packages for OS preinstallation** section, select **Enable downloadable packages**.</span></span>
+4.  <span data-ttu-id="d2547-114">確認のダイアログ ボックスで、**[有効化]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="d2547-114">In the confirmation dialog will, select **Enable**.</span></span>
+5.  <span data-ttu-id="d2547-115">ダウンロードするパッケージを検索し、適切な **[Generate package] (パッケージの生成)** リンクを選びます。</span><span class="sxs-lookup"><span data-stu-id="d2547-115">Find the package that you want to download and select the appropriate **Generate package** link.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="abcea-117">プレインストール パッケージの生成時間は、選んだパッケージのサイズによって異なります。</span><span class="sxs-lookup"><span data-stu-id="abcea-117">Generation time for preinstall packages will vary depending on the size of the package you have selected.</span></span> <span data-ttu-id="abcea-118">パッケージの生成中は、このページから離れて後で再び戻ってくることも、このページを開いたままにしておくこともできます。</span><span class="sxs-lookup"><span data-stu-id="abcea-118">You can leave this page and come back later, or you can leave the page open while your package is being generated.</span></span>
+    > <span data-ttu-id="d2547-116">プレインストール パッケージの生成時間は、選んだパッケージのサイズによって異なります。</span><span class="sxs-lookup"><span data-stu-id="d2547-116">Generation time for preinstall packages will vary depending on the size of the package you have selected.</span></span> <span data-ttu-id="d2547-117">パッケージの生成中は、このページから離れて後で再び戻ってくることも、このページを開いたままにしておくこともできます。</span><span class="sxs-lookup"><span data-stu-id="d2547-117">You can leave this page and come back later, or you can leave the page open while your package is being generated.</span></span>
 
-6.  <span data-ttu-id="abcea-119">パッケージが生成されると、**[パッケージのダウンロード]** リンクが表示されます。</span><span class="sxs-lookup"><span data-stu-id="abcea-119">After the package has been generated, a link to **Download package** will appear.</span></span> <span data-ttu-id="abcea-120">このリンクを選んで .zip ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="abcea-120">Select this link to download the .zip file.</span></span>
+6.  <span data-ttu-id="d2547-118">パッケージが生成されると、**[パッケージのダウンロード]** リンクが表示されます。</span><span class="sxs-lookup"><span data-stu-id="d2547-118">After the package has been generated, a link to **Download package** will appear.</span></span> <span data-ttu-id="d2547-119">このリンクを選んで .zip ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="d2547-119">Select this link to download the .zip file.</span></span>
 
-<span data-ttu-id="abcea-121">この .zip ファイルを OEM に提供すると、OEM はこのファイルを OS イメージに含めることができます。</span><span class="sxs-lookup"><span data-stu-id="abcea-121">You can then provide the .zip file to the OEM for inclusion in their OS image.</span></span>
+<span data-ttu-id="d2547-120">この .zip ファイルを OEM に提供すると、OEM はこのファイルを OS イメージに含めることができます。</span><span class="sxs-lookup"><span data-stu-id="d2547-120">You can then provide the .zip file to the OEM for inclusion in their OS image.</span></span>
 
 
-## <a name="support"></a><span data-ttu-id="abcea-122">サポート</span><span class="sxs-lookup"><span data-stu-id="abcea-122">Support</span></span>
+## <a name="support"></a><span data-ttu-id="d2547-121">サポート</span><span class="sxs-lookup"><span data-stu-id="d2547-121">Support</span></span>
 
-<span data-ttu-id="abcea-123">プレインストール パッケージの生成についてさらに不明な点がある場合は、<partnerops@microsoft.com> までメールでお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="abcea-123">If you have further questions about generating preinstall packages, please email <partnerops@microsoft.com>.</span></span>
+<span data-ttu-id="d2547-122">プレインストール パッケージの生成についてさらに不明な点がある場合は、<partnerops@microsoft.com> までメールでお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="d2547-122">If you have further questions about generating preinstall packages, please email <partnerops@microsoft.com>.</span></span>
 
  
 

@@ -1,7 +1,7 @@
 ---
 author: laurenhughes
-title: "パッケージ署名用の証明書を作成する"
-description: "PowerShell ツールを使用して、アプリ パッケージ署名用の証明書を作成してエクスポートします。"
+title: パッケージ署名用の証明書を作成する
+description: PowerShell ツールを使用して、アプリ パッケージ署名用の証明書を作成してエクスポートします。
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,80 +9,83 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 2332abe43732299dfb0f4bc265bf1b12877a17aa
-ms.lasthandoff: 02/08/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: db2c360a881071db14a1e65ffe2cd9a5bb16f0fe
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788077"
 ---
+# <a name="create-a-certificate-for-package-signing"></a><span data-ttu-id="41a83-104">パッケージ署名用の証明書を作成する</span><span class="sxs-lookup"><span data-stu-id="41a83-104">Create a certificate for package signing</span></span>
 
-# <a name="create-a-certificate-for-package-signing"></a>パッケージ署名用の証明書を作成する
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="41a83-105">この記事では、PowerShell ツールを使用して、アプリ パッケージ署名用の証明書を作成してエクスポートする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="41a83-105">This article explains how to create and export a certificate for app package signing using PowerShell tools.</span></span> <span data-ttu-id="41a83-106">Visual Studio を使用して [UWP アプリをパッケージ化する](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)ことをお勧めしますが、Visual Studio を使用してアプリを開発していない場合は、ストア対応アプリを手動でパッケージ化することができます。</span><span class="sxs-lookup"><span data-stu-id="41a83-106">It's recommended that you use Visual Studio for [Packaging UWP apps](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps), but you can still package a Store ready app manually if you did not use Visual Studio to develop your app.</span></span>
 
-この記事では、PowerShell ツールを使用して、アプリ パッケージ署名用の証明書を作成してエクスポートする方法について説明します。 Visual Studio を使用して [UWP アプリをパッケージ化する](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)ことをお勧めしますが、Visual Studio を使用してアプリを開発していない場合は、ストア対応アプリを手動でパッケージ化することができます。
+> [!IMPORTANT] 
+> <span data-ttu-id="41a83-107">Visual Studio を使用してアプリを開発する場合は、Visual Studio のウィザードを使って証明書をインポートし、アプリ パッケージに署名することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="41a83-107">If you used Visual Studio to develop your app, it's recommended that you use the Visual Studio wizard to import a certificate and sign your app package.</span></span> <span data-ttu-id="41a83-108">詳しくは、「[Visual Studio での UWP アプリのパッケージ化](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="41a83-108">For more information, see [Package a UWP app with Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).</span></span>
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a><span data-ttu-id="41a83-109">前提条件</span><span class="sxs-lookup"><span data-stu-id="41a83-109">Prerequisites</span></span>
 
-- **パッケージ化されている、またはパッケージ化されていないアプリ**  
-AppxManifest.xml ファイルを含むアプリ。 マニフェスト ファイルを参照して、最終的なアプリ パッケージの署名に使われる証明書を作成する必要があります。 手動でアプリをパッケージ化する方法について詳しくは、「[MakeAppx.exe ツールを使ってアプリ パッケージを作成する](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)」をご覧ください。
+- **<span data-ttu-id="41a83-110">パッケージ化されている、またはパッケージ化されていないアプリ</span><span class="sxs-lookup"><span data-stu-id="41a83-110">A packaged or unpackaged app</span></span>**  
+<span data-ttu-id="41a83-111">AppxManifest.xml ファイルを含むアプリ。</span><span class="sxs-lookup"><span data-stu-id="41a83-111">An app containing an AppxManifest.xml file.</span></span> <span data-ttu-id="41a83-112">マニフェスト ファイルを参照して、最終的なアプリ パッケージの署名に使われる証明書を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="41a83-112">You will need to reference the manifest file while creating the certificate that will be used to sign the final app package.</span></span> <span data-ttu-id="41a83-113">手動でアプリをパッケージ化する方法について詳しくは、「[MakeAppx.exe ツールを使ってアプリ パッケージを作成する](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="41a83-113">For details on how to manually package an app, see [Create an app package with the MakeAppx.exe tool](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).</span></span>
 
-- **公開キー基盤 (PKI) コマンドレット**  
-署名証明書を作成およびエクスポートするには、PKI コマンドレットが必要です。 詳しくは、「[公開キー基盤コマンドレット](https://technet.microsoft.com/library/hh848636.aspx)」をご覧ください。
+- **<span data-ttu-id="41a83-114">公開キー基盤 (PKI) コマンドレット</span><span class="sxs-lookup"><span data-stu-id="41a83-114">Public Key Infrastructure (PKI) Cmdlets</span></span>**  
+<span data-ttu-id="41a83-115">署名証明書を作成およびエクスポートするには、PKI コマンドレットが必要です。</span><span class="sxs-lookup"><span data-stu-id="41a83-115">You need PKI cmdlets to create and export your signing certificate.</span></span> <span data-ttu-id="41a83-116">詳しくは、「[公開キー基盤コマンドレット](https://docs.microsoft.com/powershell/module/pkiclient/)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="41a83-116">For more information, see [Public Key Infrastructure Cmdlets](https://docs.microsoft.com/powershell/module/pkiclient/).</span></span>
 
-## <a name="create-a-self-signed-certificate"></a>自己署名証明書を作成する
+## <a name="create-a-self-signed-certificate"></a><span data-ttu-id="41a83-117">自己署名証明書を作成する</span><span class="sxs-lookup"><span data-stu-id="41a83-117">Create a self signed certificate</span></span>
 
-自己署名証明書は、ストアに公開する準備が整う前に、アプリをテストするために便利です。 自己署名証明書を作成するには、このセクションで説明する手順に従います。
+<span data-ttu-id="41a83-118">自己署名証明書は、ストアに公開する準備が整う前に、アプリをテストするために便利です。</span><span class="sxs-lookup"><span data-stu-id="41a83-118">A self signed certificate is useful for testing your app before you're ready to publish it to the store.</span></span> <span data-ttu-id="41a83-119">自己署名証明書を作成するには、このセクションで説明する手順に従います。</span><span class="sxs-lookup"><span data-stu-id="41a83-119">Follow the steps outlined in this section to create a self signed certificate.</span></span>
 
-### <a name="determine-the-subject-of-your-packaged-app"></a>パッケージ アプリのサブジェクトを決定する  
+### <a name="determine-the-subject-of-your-packaged-app"></a><span data-ttu-id="41a83-120">パッケージ アプリのサブジェクトを決定する</span><span class="sxs-lookup"><span data-stu-id="41a83-120">Determine the subject of your packaged app</span></span>  
 
-証明書を使ってアプリ パッケージに署名するには、証明書の「サブジェクト」がアプリのマニフェストの [Publisher] セクションと**一致する必要**があります。
+<span data-ttu-id="41a83-121">証明書を使ってアプリ パッケージに署名するには、証明書の「サブジェクト」がアプリのマニフェストの [Publisher] セクションと**一致する必要**があります。</span><span class="sxs-lookup"><span data-stu-id="41a83-121">To use a certificate to sign your app package, the "Subject" in the certificate **must** match the "Publisher" section in your app's manifest.</span></span>
 
-たとえば、アプリの AppxManifest.xml ファイルの [Identity] セクションは、次のようになります。
+<span data-ttu-id="41a83-122">たとえば、アプリの AppxManifest.xml ファイルの [Identity] セクションは、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="41a83-122">For example, the "Identity" section in your app's AppxManifest.xml file should look something like this:</span></span>
 ```
   <Identity Name="Contoso.AssetTracker" 
     Version="1.0.0.0" 
     Publisher="CN=Contoso Software, O=Contoso Corporation, C=US"/>
 ```
 
-この例では [Publisher] は "CN=Contoso Software, O=Contoso Corporation, C=US" で、これを証明書の作成に使用する必要があります。 
+<span data-ttu-id="41a83-123">この例では [Publisher] は "CN=Contoso Software, O=Contoso Corporation, C=US" で、これを証明書の作成に使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="41a83-123">The "Publisher", in this case, is "CN=Contoso Software, O=Contoso Corporation, C=US" which needs to be used for creating your certificate.</span></span> 
 
-### <a name="use-new-selfsignedcertificate-to-create-a-certificate"></a>**New-SelfSignedCertificate** を使って証明書を作成する
-PowerShell コマンドレット **New-SelfSignedCertificate** を使用して自己署名証明書を作成します。 **New-SelfSignedCertificate** にはカスタマイズのためのいくつかのパラメーターがありますが、この記事では、**SignTool** で動作する簡単な証明書の作成を中心に説明します。 このコマンドレットの使用とその例について詳しくは、「[New-SelfSignedCertificate](https://technet.microsoft.com/library/hh848633.aspx)」をご覧ください。
+### <a name="use-new-selfsignedcertificate-to-create-a-certificate"></a><span data-ttu-id="41a83-124">**New-SelfSignedCertificate** を使って証明書を作成する</span><span class="sxs-lookup"><span data-stu-id="41a83-124">Use **New-SelfSignedCertificate** to create a certificate</span></span>
+<span data-ttu-id="41a83-125">PowerShell コマンドレット **New-SelfSignedCertificate** を使用して自己署名証明書を作成します。</span><span class="sxs-lookup"><span data-stu-id="41a83-125">Use the **New-SelfSignedCertificate** PowerShell cmdlet to create a self signed certificate.</span></span> <span data-ttu-id="41a83-126">**New-SelfSignedCertificate** にはカスタマイズのためのいくつかのパラメーターがありますが、この記事では、**SignTool** で動作する簡単な証明書の作成を中心に説明します。</span><span class="sxs-lookup"><span data-stu-id="41a83-126">**New-SelfSignedCertificate** has several parameters for customization, but for the purpose of this article, we'll focus on creating a simple certificate that will work with **SignTool**.</span></span> <span data-ttu-id="41a83-127">このコマンドレットの使用とその例について詳しくは、「[New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/New-SelfSignedCertificate)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="41a83-127">For more examples and uses of this cmdlet, see [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/New-SelfSignedCertificate).</span></span>
 
-前の例の AppxManifest.xml ファイルに基づいて、次の構文を使用して証明書を作成する必要があります。 管理者特権の PowerShell プロンプトで、次のコマンドを実行します。
+<span data-ttu-id="41a83-128">前の例の AppxManifest.xml ファイルに基づいて、次の構文を使用して証明書を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="41a83-128">Based on the AppxManifest.xml file from the previous example, you should use the following syntax to create a certificate.</span></span> <span data-ttu-id="41a83-129">管理者特権の PowerShell プロンプトで、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="41a83-129">In an elevated PowerShell prompt:</span></span>
 ```
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-このコマンドを実行すると、"-CertStoreLocation" パラメーターで指定されたローカル証明書ストアに証明書が追加されます。 コマンドによって、証明書のサムプリントも生成されます。  
+<span data-ttu-id="41a83-130">このコマンドを実行すると、"-CertStoreLocation" パラメーターで指定されたローカル証明書ストアに証明書が追加されます。</span><span class="sxs-lookup"><span data-stu-id="41a83-130">After running this command, the certificate will be added to the local certificate store, as specified in the "-CertStoreLocation" parameter.</span></span> <span data-ttu-id="41a83-131">コマンドの実行結果は、証明書の拇印もなります。</span><span class="sxs-lookup"><span data-stu-id="41a83-131">The result of the command will also produce the certificate's thumbprint.</span></span>  
 
-**注意**  
-次のコマンドを使って、PowerShell ウィンドウで証明書を表示できます。
+**<span data-ttu-id="41a83-132">注意</span><span class="sxs-lookup"><span data-stu-id="41a83-132">Note</span></span>**  
+<span data-ttu-id="41a83-133">次のコマンドを使って、PowerShell ウィンドウで証明書を表示できます。</span><span class="sxs-lookup"><span data-stu-id="41a83-133">You can view your certificate in a PowerShell window by using the following commands:</span></span>
 ```
 Set-Location Cert:\LocalMachine\My
 Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 ```
-これにより、ローカル ストア内のすべての証明書が表示されます。
+<span data-ttu-id="41a83-134">これにより、ローカル ストア内のすべての証明書が表示されます。</span><span class="sxs-lookup"><span data-stu-id="41a83-134">This will display all of the certificates in your local store.</span></span>
 
-## <a name="export-a-certificate"></a>証明書のエクスポート 
+## <a name="export-a-certificate"></a><span data-ttu-id="41a83-135">証明書のエクスポート</span><span class="sxs-lookup"><span data-stu-id="41a83-135">Export a certificate</span></span> 
 
-ローカル ストアの証明書を Personal Information Exchange (.pfx) ファイルにエクスポートするには、**Export-PfxCertificate** コマンドレットを使用します。
+<span data-ttu-id="41a83-136">ローカル ストアの証明書を Personal Information Exchange (.pfx) ファイルにエクスポートするには、**Export-PfxCertificate** コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="41a83-136">To export the certificate in the local store to a Personal Information Exchange (PFX) file, use the **Export-PfxCertificate** cmdlet.</span></span>
 
-**Export-PfxCertificate** コマンドレットを使用する場合は、パスワードを作成して使用するか、"-ProtectTo" パラメーターを使用して、パスワードなしでファイルにアクセスできるユーザーまたはグループを指定する必要があります。 "-Password" または "-ProtectTo" パラメーターのいずれかを使用しない場合、エラーが表示されます。
+<span data-ttu-id="41a83-137">**Export-PfxCertificate** コマンドレットを使用する場合は、パスワードを作成して使用するか、"-ProtectTo" パラメーターを使用して、パスワードなしでファイルにアクセスできるユーザーまたはグループを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="41a83-137">When using **Export-PfxCertificate**, you must either create and use a password or use the "-ProtectTo" parameter to specify which users or groups can access the file without a password.</span></span> <span data-ttu-id="41a83-138">"-Password" または "-ProtectTo" パラメーターのいずれかを使用しない場合、エラーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="41a83-138">Note that an error will be displayed if you don't use either the "-Password" or "-ProtectTo" parameter.</span></span>
 
-- **Password を使用**
+- **<span data-ttu-id="41a83-139">Password を使用</span><span class="sxs-lookup"><span data-stu-id="41a83-139">Password usage</span></span>**
 ```
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
-- **ProtectTo を使用**
+- **<span data-ttu-id="41a83-140">ProtectTo を使用</span><span class="sxs-lookup"><span data-stu-id="41a83-140">ProtectTo usage</span></span>**
 ```
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
-証明書を作成してエクスポートしたら、**SignTool** を使ってアプリ パッケージに署名する準備が整いました。 手動によるパッケージ化プロセスの次の手順については、「[SignTool を使ったアプリ パッケージの署名](https://msdn.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool)」をご覧ください。
+<span data-ttu-id="41a83-141">証明書を作成してエクスポートしたら、**SignTool** を使ってアプリ パッケージに署名する準備が整いました。</span><span class="sxs-lookup"><span data-stu-id="41a83-141">After you create and export your certificate, you're ready to sign your app package with **SignTool**.</span></span> <span data-ttu-id="41a83-142">手動によるパッケージ化プロセスの次の手順については、「[SignTool を使ったアプリ パッケージの署名](https://msdn.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="41a83-142">For the next step in the manual packaging process, see [Sign an app package using SignTool](https://msdn.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool).</span></span>
 
-## <a name="security-considerations"></a>セキュリティの考慮事項 
-[ローカル コンピューターの証明書ストア](https://msdn.microsoft.com/windows/hardware/drivers/install/local-machine-and-current-user-certificate-stores)に証明書を追加することによって、コンピューター上のすべてのユーザーの証明書の信頼に影響します。 システムの信頼性を損なうのを防ぐために、これらの証明書が不要になったときには、削除することをお勧めします。
+## <a name="security-considerations"></a><span data-ttu-id="41a83-143">セキュリティの考慮事項</span><span class="sxs-lookup"><span data-stu-id="41a83-143">Security Considerations</span></span> 
+<span data-ttu-id="41a83-144">[ローカル コンピューターの証明書ストア](https://msdn.microsoft.com/windows/hardware/drivers/install/local-machine-and-current-user-certificate-stores)に証明書を追加することによって、コンピューター上のすべてのユーザーの証明書の信頼に影響します。</span><span class="sxs-lookup"><span data-stu-id="41a83-144">By adding a certificate to [local machine certificate stores](https://msdn.microsoft.com/windows/hardware/drivers/install/local-machine-and-current-user-certificate-stores), you affect the certificate trust of all users on the computer.</span></span> <span data-ttu-id="41a83-145">システムの信頼性を損なうのを防ぐために、これらの証明書が不要になったときには、削除することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="41a83-145">It is recommended that you remove those certificates when they are no longer necessary to prevent them from being used to compromise system trust.</span></span>

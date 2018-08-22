@@ -1,6 +1,6 @@
 ---
 title: 一般的な暗号化タスク
-description: これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなどのユニバーサル Windows プラットフォーム (UWP) の一般的な暗号化タスクのコード例が示されています。
+description: これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなどのユニバーサル Windows プラットフォーム (UWP) の一般的な暗号化タスクのコード例を提供します。
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
 author: msatranjr
 ms.author: misatran
@@ -8,24 +8,24 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: b96aed65712ce6d5e11b83fb66bd40401ed497e0
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: a2c2acc8351e8b646353a05e8d408dee57e633b0
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1688848"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2789534"
 ---
-# <a name="common-cryptography-tasks"></a><span data-ttu-id="7bbc7-104">一般的な暗号化タスク</span><span class="sxs-lookup"><span data-stu-id="7bbc7-104">Common cryptography tasks</span></span>
+# <a name="common-cryptography-tasks"></a><span data-ttu-id="f101f-104">一般的な暗号化タスク</span><span class="sxs-lookup"><span data-stu-id="f101f-104">Common cryptography tasks</span></span>
 
-<span data-ttu-id="7bbc7-105">これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなどのユニバーサル Windows プラットフォーム (UWP) の一般的な暗号化タスクのコード例が示されています。</span><span class="sxs-lookup"><span data-stu-id="7bbc7-105">These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.</span></span>
+<span data-ttu-id="f101f-105">これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなどのユニバーサル Windows プラットフォーム (UWP) の一般的な暗号化タスクのコード例を提供します。</span><span class="sxs-lookup"><span data-stu-id="f101f-105">These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.</span></span>
 
-| <span data-ttu-id="7bbc7-106">トピック</span><span class="sxs-lookup"><span data-stu-id="7bbc7-106">Topic</span></span>                                                                                 | <span data-ttu-id="7bbc7-107">説明</span><span class="sxs-lookup"><span data-stu-id="7bbc7-107">Description</span></span>                                                                                            |
+| <span data-ttu-id="f101f-106">トピック</span><span class="sxs-lookup"><span data-stu-id="f101f-106">Topic</span></span>                                                                                 | <span data-ttu-id="f101f-107">説明</span><span class="sxs-lookup"><span data-stu-id="f101f-107">Description</span></span>                                                                                            |
 |---------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| [<span data-ttu-id="7bbc7-108">乱数の生成</span><span class="sxs-lookup"><span data-stu-id="7bbc7-108">Create random numbers</span></span>](create-random-numbers.md)                                     | <span data-ttu-id="7bbc7-109">次のコード例は、UWP アプリでの暗号化に使用する乱数やバッファーを作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="7bbc7-109">This example code shows how to create a random number or buffer for use in cryptography in an UWP app.</span></span> |
-| [<span data-ttu-id="7bbc7-110">バッファーの比較</span><span class="sxs-lookup"><span data-stu-id="7bbc7-110">Compare buffers</span></span>](compare-buffers.md)                                                 | <span data-ttu-id="7bbc7-111">次のコード例は、UWP アプリでバッファーを比較する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="7bbc7-111">This example code shows how to compare buffers in an UWP app.</span></span>                                          |
-| [<span data-ttu-id="7bbc7-112">文字列とバイナリ データの間の変換</span><span class="sxs-lookup"><span data-stu-id="7bbc7-112">Convert between strings and binary data</span></span>](convert-between-strings-and-binary-data.md) | <span data-ttu-id="7bbc7-113">次のコード例は、UWP アプリでの文字列とバイナリ データ間での変換方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="7bbc7-113">This example code shows how to convert between strings and binary data in an UWP app.</span></span>                  |
-| [<span data-ttu-id="7bbc7-114">バイト配列間のコピー</span><span class="sxs-lookup"><span data-stu-id="7bbc7-114">Copy to and from byte arrays</span></span>](copy-to-and-from-byte-arrays.md)                       | <span data-ttu-id="7bbc7-115">次のコード例は、UWP アプリでバイト配列をコピーする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="7bbc7-115">This example code shows how to copy to and from byte arrays in an UWP app.</span></span>                             |
-| [<span data-ttu-id="7bbc7-116">データのエンコードとデコード</span><span class="sxs-lookup"><span data-stu-id="7bbc7-116">Encode and decode data</span></span>](encode-and-decode-data.md)                                   | <span data-ttu-id="7bbc7-117">次のコード例は、UWP アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="7bbc7-117">This example code shows how to encode and decode base64 and hexadecimal data in an UWP app.</span></span>            |
+| [<span data-ttu-id="f101f-108">乱数の生成</span><span class="sxs-lookup"><span data-stu-id="f101f-108">Create random numbers</span></span>](create-random-numbers.md)                                     | <span data-ttu-id="f101f-109">次のコード例は、UWP アプリでの暗号化に使用する乱数やバッファーを作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="f101f-109">This example code shows how to create a random number or buffer for use in cryptography in an UWP app.</span></span> |
+| [<span data-ttu-id="f101f-110">バッファーの比較</span><span class="sxs-lookup"><span data-stu-id="f101f-110">Compare buffers</span></span>](compare-buffers.md)                                                 | <span data-ttu-id="f101f-111">次のコード例は、UWP アプリでバッファーを比較する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="f101f-111">This example code shows how to compare buffers in an UWP app.</span></span>                                          |
+| [<span data-ttu-id="f101f-112">文字列とバイナリ データの間の変換</span><span class="sxs-lookup"><span data-stu-id="f101f-112">Convert between strings and binary data</span></span>](convert-between-strings-and-binary-data.md) | <span data-ttu-id="f101f-113">次のコード例は、UWP アプリでの文字列とバイナリ データ間での変換方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="f101f-113">This example code shows how to convert between strings and binary data in an UWP app.</span></span>                  |
+| [<span data-ttu-id="f101f-114">バイト配列間のコピー</span><span class="sxs-lookup"><span data-stu-id="f101f-114">Copy to and from byte arrays</span></span>](copy-to-and-from-byte-arrays.md)                       | <span data-ttu-id="f101f-115">次のコード例は、UWP アプリでバイト配列をコピーする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="f101f-115">This example code shows how to copy to and from byte arrays in an UWP app.</span></span>                             |
+| [<span data-ttu-id="f101f-116">データのエンコードとデコード</span><span class="sxs-lookup"><span data-stu-id="f101f-116">Encode and decode data</span></span>](encode-and-decode-data.md)                                   | <span data-ttu-id="f101f-117">次のコード例は、UWP アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="f101f-117">This example code shows how to encode and decode base64 and hexadecimal data in an UWP app.</span></span>            |
 
