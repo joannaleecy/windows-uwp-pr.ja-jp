@@ -6,18 +6,18 @@ title: カスタム オートメーション ピア
 label: Custom automation peers
 template: detail.hbs
 ms.author: mhopkins
-ms.date: 09/25/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bab0ac8b89815a67be2c963979b3712f022248b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a2f9caf8519aa76ef9487e5318a238a6e1d53fe2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656567"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800538"
 ---
 # <a name="custom-automation-peers"></a>カスタム オートメーション ピア  
 
@@ -122,7 +122,6 @@ UWP アプリにアクセスする UI オートメーション クライアン�
 
 たとえば、次のコードでは、カスタム コントロール `NumericUpDown` により UI オートメーション用としてピア `NumericUpDownPeer` を使うことを宣言しています。
 
-C#
 ```csharp
 using Windows.UI.Xaml.Automation.Peers;
 ...
@@ -138,7 +137,6 @@ public class NumericUpDown : RangeBase {
 }
 ```
 
-Visual Basic
 ```vb
 Public Class NumericUpDown
     Inherits RangeBase
@@ -151,7 +149,29 @@ Public Class NumericUpDown
 End Class
 ```
 
-C++
+```cppwinrt
+// NumericUpDown.idl
+namespace MyNamespace
+{
+    runtimeclass NumericUpDown : Windows.UI.Xaml.Controls.Primitives.RangeBase
+    {
+        NumericUpDown();
+        Int32 MyProperty;
+    }
+}
+
+// NumericUpDown.h
+...
+struct NumericUpDown : NumericUpDownT<NumericUpDown>
+{
+    ...
+    Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer()
+    {
+        return winrt::make<MyNamespace::implementation::NumericUpDownAutomationPeer>(*this);
+    }
+};
+```
+
 ```cpp
 //.h
 public ref class NumericUpDown sealed : Windows::UI::Xaml::Controls::Primitives::RangeBase
@@ -160,7 +180,7 @@ public ref class NumericUpDown sealed : Windows::UI::Xaml::Controls::Primitives:
 protected:
     virtual AutomationPeer^ OnCreateAutomationPeer() override
     {
-         return ref new NumericUpDown(this);
+         return ref new NumericUpDownAutomationPeer(this);
     }
 };
 ```
@@ -193,20 +213,38 @@ protected:
 ## <a name="initialization-of-a-custom-peer-class"></a>カスタム ピア クラスの初期化  
 オートメーション ピアでは、基底クラスの初期化に所有者コントロールのインスタンスを使うタイプ セーフなコンストラクターを定義する必要があります。 次の例では、実装により *owner* の値が基本 [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) に渡されます。最終的に *owner* を使って [**FrameworkElementAutomationPeer.Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner) を設定するのは [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) です。
 
-C#
 ```csharp
 public NumericUpDownAutomationPeer(NumericUpDown owner): base(owner)
 {}
 ```
 
-Visual Basic
 ```vb
 Public Sub New(owner As NumericUpDown)
     MyBase.New(owner)
 End Sub
 ```
 
-C++
+```cppwinrt
+// NumericUpDownAutomationPeer.idl
+import "NumericUpDown.idl";
+namespace MyNamespace
+{
+    runtimeclass NumericUpDownAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer
+    {
+        NumericUpDownAutomationPeer(NumericUpDown owner);
+        Int32 MyProperty;
+    }
+}
+
+// NumericUpDownAutomationPeer.h
+...
+struct NumericUpDownAutomationPeer : NumericUpDownAutomationPeerT<NumericUpDownAutomationPeer>
+{
+    ...
+    NumericUpDownAutomationPeer(MyNamespace::NumericUpDown const& owner);
+};
+```
+
 ```cpp
 //.h
 public ref class NumericUpDownAutomationPeer sealed :  Windows::UI::Xaml::Automation::Peers::RangeBaseAutomationPeer
@@ -225,7 +263,6 @@ UWP のインフラストラクチャ上の理由から、オートメーショ�
 
 少なくとも、新規のピア クラスを定義するときは必ず、次の例に示すように、[**GetClassNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getclassnamecore) メソッドを実装します。
 
-C#
 ```csharp
 protected override string GetClassNameCore()
 {
@@ -244,7 +281,6 @@ protected override string GetClassNameCore()
 
 [**GetAutomationControlTypeCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) の実装で、[**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) 値を返すことにより、コントロールを記述します。 **AutomationControlType.Custom** を返すこともできますが、コントロールのメイン シナリオを正確に記述している場合は、より具体的なコントロール タイプのいずれかを返す必要があります。 次に例を示します。
 
-C#
 ```csharp
 protected override AutomationControlType GetAutomationControlTypeCore()
 {
@@ -268,7 +304,7 @@ protected override AutomationControlType GetAutomationControlTypeCore()
 
 次の例は、実際のコードそのものではありませんが、[**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) 中に既に存在している [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) の実装の概要を示しています。
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -288,7 +324,7 @@ UI オートメーションに対応した UWP 実装で利用可能なプロバ
 
 次にカスタム ピアに対する [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) の上書きの例を示します。 [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) と [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) の 2 つのパターンに対するサポートが報告されます。 このコントロールは、全画面表示として表示できるメディア表示コントロール (トグル モード) です。進行状況バーの表示位置は変更可能 (範囲コントロール) です。 このコードは、[XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)の抜粋です。
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -311,7 +347,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 ### <a name="forwarding-patterns-from-sub-elements"></a>子要素からのパターンの転送  
 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) メソッドの実装では、ホストのパターン プロバイダーとして子要素や一部分を指定できます。 この例は、[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) が内部の [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) コントロールのピアに向けてスクロール パターン処理を転送する方法を模したものです。 パターン処理の子要素を指定するために、このコードではまず子要素オブジェクトを取得して、[**FrameworkElementAutomationPeer.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.createpeerforelement) メソッドにより子要素のピアを作り、新しいピアを返します。
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -403,7 +439,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 
 典型的な実装として、まずプロバイダー API から実行時にコントロール インスタンスにアクセスするために [**Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner) を呼び出し、 次にこのオブジェクトに対して必要な動作メソッドを呼び出すという方法が考えられます。
 
-C#
+
 ```csharp
 public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCollapseProvider {
     private IndexCard ownerIndexCard;
@@ -447,7 +483,7 @@ UI オートメーション クライアントでは、オートメーション 
 
 次のコード例は、コントロール定義コードの内部からピア オブジェクトを取得し、そのピアからイベントを発生させるメソッドを呼び出す方法を示しています。 最適化のために、コードではこのイベント タイプのリスナーがいるかどうかを確認します。 リスナーがいるときにのみイベントを発生させてピア オブジェクトを作ることにより、不要なオーバーヘッドがなくなり、コントロールが応答性を維持できるようになります。
 
-C#
+
 ```csharp
 if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 {

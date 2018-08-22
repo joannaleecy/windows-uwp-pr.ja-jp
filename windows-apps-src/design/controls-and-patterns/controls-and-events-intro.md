@@ -12,29 +12,27 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2355d9f655e1eb4e38557b11797aff1784eb8ea6
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 6f8f86a6988e68e3ff8d2dfef32512633b3761fd
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393651"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800376"
 ---
 # <a name="intro-to-controls-and-patterns"></a>コントロールとパターンの概要
-
- 
 
 UWP アプリ開発では、*コントロール*は、コンテンツを表示したり、操作を有効にしたりする UI 要素です。 ボタン、テキスト ボックス、コンボ ボックスなどのコントロールを使って、データを表示し、ユーザー入力を取得するためのアプリの UI を作ります。
 
 > **重要な API**: [Windows.UI.Xaml.Controls 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
-*パターン*とは、コントロールを変更するか、いくつかのコントロールを組み合わせて、新しいものを作成するためのレシピです。 たとえば、[ナビゲーション ウィンドウ](navigationview.md) パターンは、アプリのナビゲーションに [SplitView](split-view.md) コントロールを使用する方法です。 同様に、[Pivot](tabs-pivot.md) コントロールのテンプレートをカスタマイズして、タブ パターンを実装することもできます。
+*パターン*とは、コントロールを変更するか、いくつかのコントロールを組み合わせて、新しいものを作成するためのレシピです。 たとえば、[マスター/詳細](master-details.md)パターンは、アプリのナビゲーションの[SplitView](split-view.md)コントロールを使用するには、方法です。 同様に、タブの [パターンを実装する[NavigationView](navigationview.md)コントロールのテンプレートをカスタマイズすることができます。
 
 多くの場合、コントロールはそのまま使用できます。 ただし、XAML コントロールでは、機能が構造や外観とは分離されているため、ニーズに合わせてさまざまなレベルで変更することができます。 [XAML スタイル](xaml-styles.md)と[コントロール テンプレート](control-templates.md)を使用してコントロールを変更する方法については、「[スタイル](../style/index.md)」セクションをご覧ください。
 
-このセクションでは、アプリ UI の構築に使用できる各 XAML コントロールに関するガイダンスを提供します。 まず、この記事では、アプリにコントロールを追加する方法について説明します。 アプリでコントロールを使用するには、次の 3 つの重要な手順があります。 
+このセクションでは、アプリ UI の構築に使用できる各 XAML コントロールに関するガイダンスを提供します。 まず、この記事では、アプリにコントロールを追加する方法について説明します。 アプリでコントロールを使用するには、次の 3 つの重要な手順があります。
 
-- アプリの UI にコントロールを追加します。 
-- 幅、高さ、前景色など、コントロールのプロパティを設定します。 
+- アプリの UI にコントロールを追加します。
+- 幅、高さ、前景色など、コントロールのプロパティを設定します。
 - 動作を行うためのコードをコントロールに追加します。 
 
 ## <a name="add-a-control"></a>コントロールの追加
@@ -54,9 +52,9 @@ Visual Studio の [ツールボックス] には、アプリで使用できる�
 
 また、コントロールを [ツールボックス] から XAML デザイナーにドラッグすることもできます。
 
-## <a name="set-the-name-of-a-control"></a>コントロールの名前の設定 
+## <a name="set-the-name-of-a-control"></a>コントロールの名前の設定
 
-コントロールをコードで操作する場合は、コントロールの [x:Name](../../xaml-platform/x-name-attribute.md) 属性を設定し、コードでは名前でコントロールを参照します。 名前は、Visual Studio の [プロパティ] ウィンドウまたは XAML で設定できます。 以下では、[プロパティ] ウィンドウの上部にある [名前] ボックスを使って、現在選択されているコントロールの名前を設定する方法を示しています。 
+コントロールをコードで操作する場合は、コントロールの [x:Name](../../xaml-platform/x-name-attribute.md) 属性を設定し、コードでは名前でコントロールを参照します。 名前は、Visual Studio の [プロパティ] ウィンドウまたは XAML で設定できます。 以下では、[プロパティ] ウィンドウの上部にある [名前] ボックスを使って、現在選択されているコントロールの名前を設定する方法を示しています。
 
 コントロールに名前を付けるには
 1. 名前を付ける要素を選びます。

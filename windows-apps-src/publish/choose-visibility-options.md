@@ -3,18 +3,18 @@ author: jnHs
 Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: 表示オプションを選択する
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 08/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 表示, プライベート対象ユーザー, 入手可能, 見つけやすさ
-ms.localizationpriority: high
-ms.openlocfilehash: 548b25d4e74945eadfcc8ebe8a5cb2f8d870d38f
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832086"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2801858"
 ---
 # <a name="choose-visibility-options"></a>表示オプションを選択する
 
@@ -75,7 +75,7 @@ ms.locfileid: "1832086"
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>この製品を Microsoft Store で提供し、検索可能にします
 
-これは既定のオプションです。 アプリが Microsoft Store でユーザーに表示され、アプリの直接リンクやその他の方法 (検索、参照、おすすめの一覧への追加など) で見つけられるようにするには、このオプションをオンのままにします。 
+これは既定のオプションです。 このオプションを選択する場合は、アプリをアプリの直接リンクを使って、またはによって選別されたリスト内を検索する、参照、および含まれないを含む、他の方法を見つけるには、お客様のストアに表示されるようにしておきます。 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>この製品を Microsoft Store で提供しますが、検索はできないようにします
 

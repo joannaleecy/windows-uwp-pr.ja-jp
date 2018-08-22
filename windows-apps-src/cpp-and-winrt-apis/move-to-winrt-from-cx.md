@@ -3,26 +3,29 @@ author: stevewhims
 description: このトピックでは、C++/CX コードを C++/WinRT の同等のコードに移植する方法について説明します。
 title: C++/CX から C++/WinRT への移行
 ms.author: stwhi
-ms.date: 05/30/2018
+ms.date: 07/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 移植, 移行, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: da6226158056cbbf0b51b46be0b17fe7e478dd01
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: 4aba8f559b7b6f0518a620d5127692d541953255
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935750"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800063"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>C++/CX から [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) への移行
 このトピックでは、[C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) コードを C++/WinRT の同等のコードに移植する方法について説明します。
 
+> [!IMPORTANT]
+> ポート徐々 にする場合、 [C + +/CX](/cpp/cppcx/visual-c-language-reference-c-cx)コード C + +/WinRT、してかまいません。 C + +/CX と C + +/XAML コンパイラのサポートと Windows ランタイム コンポーネントを除き、同じプロジェクトに WinRT コードを混在させることができます。 これらの例外処理] のいずれか C キーを対象とする必要があります +/CX または C + +/同じプロジェクト内の WinRT します。 ポートからとして XAML アプリからコードを分解 Windows ランタイム コンポーネントを使用することができます。 移動するか、できるだけ C + +/コンポーネントに C + XAML プロジェクトを変更すると [CX コード +/WinRT します。 C + として XAML プロジェクト別または +/CX、作成する新しい C + +/WinRT コンポーネント、移植 C キーを開始し、+/CX コード XAML プロジェクトからコンポーネントにします。 場合もあります C + +/CX コンポーネントのプロジェクトがある環境で C + +/WinRT コンポーネントのプロジェクトを同じソリューション内では、両方のアプリケーション プロジェクトから参照して、徐々 に他のいずれかからポートします。
+
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) と Windows SDK の両方で、ルート名前空間 **Windows** で型を宣言します。 C++/WinRT に投影された Windows 型は Windows 型と同じ完全修飾名を持ちますが、 C++ **winrt** 名前空間に配置されます。 これらの異なる名前空間では、独自のペースで C++/CX から C++/WinRT へ移植できます。
 
-C++/WinRT への移植の最初の手順は、C++/WinRT サポートをプロジェクトに手動で追加することです (「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照してください)。 これを行うには、`.vcxproj` ファイルを編集し、`<PropertyGroup Label="Globals">` を見つけ、そのプロパティ グループ内で、プロパティ `<CppWinRTEnabled>true</CppWinRTEnabled>` を設定します。 その変更による 1 つの効果は、C++/CX のサポートがプロジェクトで無効になることです。 C++/CX のすべての依存関係を見つけて移植できるように、サポートを無効にしたままにすることをお勧めします。または、サポートをもう一度有効にして (プロジェクトのプロパティで、**[C/C++]** \> **[全般]** \> **[Windows ランタイム拡張機能の使用]** \> **[はい (/ZW)]** の順に選択)、徐々に移行することができます。
+移植 C + プロジェクトで最初の手順は以上の例外を念頭ベアリング、+/WinRT C キーを手動で追加するのには、+/WinRT サポート (を参照してください[Visual Studio サポート C + +/WinRT、および VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 これを行うには、`.vcxproj` ファイルを編集し、`<PropertyGroup Label="Globals">` を見つけ、そのプロパティ グループ内で、プロパティ `<CppWinRTEnabled>true</CppWinRTEnabled>` を設定します。 その変更による 1 つの効果は、C++/CX のサポートがプロジェクトで無効になることです。 おきましょう C + すべて、依存関係のメッセージを作成する際に役立つ検索 (ポート) をオフになっているサポートのままに +/CX、またはできる状態に戻してサポートを有効にする ([プロジェクトのプロパティ、 **C/C++** \> **一般的な** \> **消費 Windows ランタイム拡張** \> **(/ZW) では [はい]**)、徐々 にポートとします。
 
 プロジェクトのプロパティ (**[全般]** \> **[ターゲット プラットフォーム バージョン]**) を 10.0.17134.0 (Windows 10 バージョン 1803) 以上に設定します。
 
@@ -201,7 +204,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 
 ラムダ関数の代わりに、デリゲートを自由関数として実装するか、またはメンバー関数へのポインターとして実装するかを選択できます。 詳細については、「[C++/WinRT でのデリゲートを使用したイベントの処理](handle-events.md)」を参照してください。
 
-イベントとデリゲートが内部的に使用される C++/CX コードベース (バイナリではなく) から移植する場合は、[**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) を使用すると、C++/WinRT でそのパターンを複製できます。 [winrt::delegate&lt;.T&gt;](author-events.md#winrtdelegate-t) も参照してください。
+イベントとデリゲートが内部的に使用される C++/CX コードベース (バイナリではなく) から移植する場合は、[**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) を使用すると、C++/WinRT でそのパターンを複製できます。 [パラメーター化された代理人、単純なシグナルとプロジェクト内でコールバック](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project)」も参照してください。
 
 ## <a name="revoking-a-delegate"></a>デリゲートの取り消し
 C++/CX では、`-=` 演算子を使用して前のイベント登録を取り消します。
@@ -223,52 +226,25 @@ C++/CX は **Platform** 名前空間でいくつかのデータ型を提供し�
 
 | C++/CX | C++/WinRT |
 | ---- | ---- |
-| **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
-| **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
+| **プラットフォーム: Agile\ ^** | [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
 | **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
 | **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
+| **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
+| **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
-### <a name="port-platformobject-to-winrtwindowsfoundationiinspectable"></a>**Platform::Object\^** の **winrt::Windows::Foundation::IInspectable** への移植
-すべての C++/WinRT 型と同様に、**winrt::Windows::Foundation::IInspectable** は値の型です。 その型の変数を null に初期化する方法は次のとおりです。
+### <a name="port-platformagile-to-winrtagileref"></a>ポート**プラットフォーム: Agile\ ^** **winrt::agile_ref**する
+**プラットフォーム: Agile\ ^** C キーを入力 +/CX は、任意のスレッドからアクセスできる Windows ランタイム クラスを表します。 C + +/は[**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)の WinRT に相当します。
 
-```cppwinrt
-winrt::Windows::Foundation::IInspectable var{ nullptr };
-```
-
-### <a name="port-platformstring-to-winrthstring"></a>**Platform::String\^** の **winrt::hstring** への移植
-**Platform::String\^** は Windows ランタイム HSTRING ABI 型と同等です。 C++/WinRT では、同等の型は [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) です。 ただし、C++/WinRT では、**std::wstring** などの C++ 標準ライブラリのワイド文字列型、およびワイド文字列リテラルを使用して Windows ランタイム API を呼び出すことができます。 詳細とコード例については、「[[C++/WinRT での文字列の処理](strings.md)」を参照してください。
-
-C++/CX では、[**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) プロパティにアクセスして、C スタイルの **const wchar_t\*** 配列 (たとえば、それを **std::wcout** に渡すために) として文字列を取得できます。
-
-```C++
-auto var = titleRecord->TitleName->Data();
-```
-
-C++/WinRT で同じ操作を行うには、[**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) 関数を使用して null で終了する C スタイルの文字列バージョンを取得します。これは **std::wstring** から取得する場合と同様です。
-
-```C++
-auto var = titleRecord.TitleName().c_str();
-```
-
-文字列を取るか、文字列を返す API の実装に関しては、通常、**Platform::String\^** を使用する C++/CX コードを変更して、代わりに **winrt::hstring** を使用します。
-
-文字列を取る C++/CX API の例を次に示します。
+C++/CX で、次の操作を行います。
 
 ```cpp
-void LogWrapLine(Platform::String^ str);
+Platform::Agile<Windows::UI::Core::CoreWindow> m_window;
 ```
 
-C++/WinRT では、次のようにその API を [MIDL 3.0](/uwp/midl-3) で宣言できます。
-
-```idl
-// LogType.idl
-void LogWrapLine(String str);
-```
-
-次に C++/WinRT ツール チェーンは次のようなソース コードを生成します。
+C++/WinRT で、次の操作を行います。
 
 ```cppwinrt
-void LogWrapLine(winrt::hstring const& str);
+winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 ```
 
 ### <a name="port-platformexception-to-winrthresulterror"></a>**Platform::Exception\^** の **winrt::hresult_error** への移植
@@ -318,6 +294,49 @@ throw ref new Platform::InvalidArgumentException(L"A valid User is required");
 
 ```cppwinrt
 throw winrt::hresult_invalid_argument{ L"A valid User is required" };
+```
+
+### <a name="port-platformobject-to-winrtwindowsfoundationiinspectable"></a>**Platform::Object\^** の **winrt::Windows::Foundation::IInspectable** への移植
+すべての C++/WinRT 型と同様に、**winrt::Windows::Foundation::IInspectable** は値の型です。 その型の変数を null に初期化する方法は次のとおりです。
+
+```cppwinrt
+winrt::Windows::Foundation::IInspectable var{ nullptr };
+```
+
+### <a name="port-platformstring-to-winrthstring"></a>**Platform::String\^** の **winrt::hstring** への移植
+**Platform::String\^** は Windows ランタイム HSTRING ABI 型と同等です。 C++/WinRT では、同等の型は [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) です。 ただし、C++/WinRT では、**std::wstring** などの C++ 標準ライブラリのワイド文字列型、およびワイド文字列リテラルを使用して Windows ランタイム API を呼び出すことができます。 詳細とコード例については、「[[C++/WinRT での文字列の処理](strings.md)」を参照してください。
+
+C++/CX では、[**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) プロパティにアクセスして、C スタイルの **const wchar_t\*** 配列 (たとえば、それを **std::wcout** に渡すために) として文字列を取得できます。
+
+```C++
+auto var = titleRecord->TitleName->Data();
+```
+
+C++/WinRT で同じ操作を行うには、[**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) 関数を使用して null で終了する C スタイルの文字列バージョンを取得します。これは **std::wstring** から取得する場合と同様です。
+
+```C++
+auto var = titleRecord.TitleName().c_str();
+```
+
+文字列を取るか、文字列を返す API の実装に関しては、通常、**Platform::String\^** を使用する C++/CX コードを変更して、代わりに **winrt::hstring** を使用します。
+
+文字列を取る C++/CX API の例を次に示します。
+
+```cpp
+void LogWrapLine(Platform::String^ str);
+```
+
+C++/WinRT では、次のようにその API を [MIDL 3.0](/uwp/midl-3) で宣言できます。
+
+```idl
+// LogType.idl
+void LogWrapLine(String str);
+```
+
+次に C++/WinRT ツール チェーンは次のようなソース コードを生成します。
+
+```cppwinrt
+void LogWrapLine(winrt::hstring const& str);
 ```
 
 ## <a name="important-apis"></a>重要な API

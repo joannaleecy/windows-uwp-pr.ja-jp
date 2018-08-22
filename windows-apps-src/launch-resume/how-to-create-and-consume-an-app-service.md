@@ -3,19 +3,19 @@ author: TylerMSFT
 title: アプリ サービスの作成と利用
 description: 他のユニバーサル Windows プラットフォーム (UWP) アプリにサービスを提供できる UWP アプリを作成する方法と、それらのサービスを利用する方法について説明します。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: アプリ間通信, プロセス間通信, IPC, バックグラウンド メッセージング, バックグラウンド通信, アプリ間
+keywords: アプリをアプリ通信、IPC、メッセージング、バック グラウンド コミュニケーション、アプリをアプリをアプリ サービス バック グラウンド プロセス間の通信
 ms.author: twhitney
 ms.date: 09/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6590b9bfa036211e8f5c771ef8a37ce59644786
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 7475ae8db964b23de89488d883c135158ea20e74
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862181"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2799986"
 ---
 # <a name="create-and-consume-an-app-service"></a>アプリ サービスの作成と利用
 

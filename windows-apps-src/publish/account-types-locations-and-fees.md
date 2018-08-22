@@ -4,18 +4,18 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: アカウントの種類、場所、料金
 description: 個人用、会社用の開発者アカウントを多数の国と地域に提供しています。
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 08/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 開発者アカウント, 個人, 会社, ビジネス
-ms.localizationpriority: high
-ms.openlocfilehash: e337c5fe18089bfd39981c04647ca1386c3a5b40
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832413"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2801090"
 ---
 # <a name="account-types-locations-and-fees"></a>アカウントの種類、場所、料金
 
@@ -37,11 +37,11 @@ ms.locfileid: "1832413"
 |--------------------|-----------------|
 | <ul><li>約 19 米ドルの費用がかかる (1 回限りの登録料。正確な金額は、国または地域によって異なる)</li><li>短いアカウント検証プロセス</li></ul> | <ul><li>約 99 米ドルの費用がかかる (1 回限りの登録料。正確な金額は、国または地域によって異なる)</li><li>より厳格なアカウントの確認が必要になる</li><li>所在地の国または地域で、その会社が会社として認識されている必要がある</li><li>機能が制限されたアプリを提出できる ([Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)の説明に従う)</li></ul> |
 
-会社のアカウントの方が費用が少し高くなる主な原因は、会社を代表してアカウントをセットアップする権限がユーザーにあることを確かめるために追加の手続きが必要になることにあります。 [Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)に従って、会社用アカウントは、財務アカウント情報にアクセスするアプリや、主な機能へのアクセスに認証 (セキュリティで保護された専用のサード パーティ認証プロバイダーを利用しない) が必要なアプリなど、特定の機能を持つアプリを公開する必要があります。
+会社のアカウントの方が費用が少し高くなる主な原因は、会社を代表してアカウントをセットアップする権限がユーザーにあることを確かめるために追加の手続きが必要になることにあります。 あたり[ストア ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)アプリケーションでは、一部の機能財務アカウントにアクセスするなどの情報を必要と認証 (セキュリティで保護された専用のサード パーティ製の認証プロバイダーを使用)、せずに主要な機能にアクセスするには会社のアカウントでのみ発行できます。
 
 ## <a name="account-verification"></a>アカウントの検証
 
-サインアップ プロセスが完了すると、アカウントに対して検証プロセスが開始されます。 個人アカウントの場合、別の会社が、発行者の表示名を既に使用していないかどうかを確認します。 会社のアカウントについては、Microsoft の確認パートナーの Dun & Bradstreet により、会社の代理でアカウントを作る権限をお持ちかどうかを確認します。 この処理には、数日から数週間かかることがあり、多くの場合は会社への電話連絡が行われます (そのため、登録フォームに入力するときにはすべて最新の連絡先を指定してください)。 検証が終わるまで会社のアカウントからアプリを送ることはできませんが、検証を待つ間にも、[アプリ名の予約](create-your-app-by-reserving-a-name.md)、Windows デベロッパー センター ダッシュボードへのアクセス、アプリの構築とテストを行うことができます。
+サインアップ プロセスが完了すると、アカウントに対して検証プロセスが開始されます。 個人アカウントの場合、別の会社が、発行者の表示名を既に使用していないかどうかを確認します。 会社のアカウントについては、Microsoft の確認パートナーの Dun & Bradstreet により、会社の代理でアカウントを作る権限をお持ちかどうかを確認します。 この処理には、数日から数週間かかることがあり、多くの場合は会社への電話連絡が行われます (そのため、登録フォームに入力するときにはすべて最新の連絡先を指定してください)。 それが検証されたが、待機しているときに[、アプリの名前を予約](create-your-app-by-reserving-a-name.md)することができます。 まで会社のアカウントからのアプリを送信することはできませんビルドと、アプリのテストを続行し、送信の準備ができてで作業します。
 
 **[アカウント設定]** ページで確認状態をチェックすることができます。 
 
@@ -166,7 +166,7 @@ ms.locfileid: "1832413"
 |  リトアニア | 14 EUR | 75 EUR | 銀行 (EUR) | × | 
 |  ルクセンブルク | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
 |  マカオ | 19 USD | 99 USD | 支払の受け取りなし | × | 
-|  マケドニア (旧ユーゴスラビア共和国) | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  マケドニア (FYROM) | 19 USD | 99 USD | 銀行 (USD) | × | 
 |  マダガスカル | 19 USD | 99 USD | 銀行 (USD) | × | 
 |  マラウイ | 19 USD | 99 USD | 銀行 (MWK) | × | 
 |  マレーシア | 62 MYR | 300 MYR | 銀行 (USD) | × | 

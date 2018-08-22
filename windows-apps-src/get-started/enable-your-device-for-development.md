@@ -9,13 +9,13 @@ ms.date: 05/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: high
-ms.openlocfilehash: cf8f0e0c7382d52eddb783b7fbbaa6ccc23a2a15
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: ad817bbae2fb8b28b95095880aa1a65c391720f3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935780"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800514"
 ---
 # <a name="enable-your-device-for-development"></a>デバイスを開発用に有効にする
 
@@ -56,7 +56,7 @@ ms.locfileid: "1935780"
 
  デバイスでは、開発者モードを有効にすることも、サイドローディングのみを有効にすることもできます。
 
--   *[UWP アプリ]* は既定の設定です。 アプリの開発中でない場合や、組織から配布された特殊な内部アプリを使っている場合は、この設定を有効にしておきます。
+-   *Microsoft ストア アプリ*は、既定の設定です。 アプリの開発中でない場合や、組織から配布された特殊な内部アプリを使っている場合は、この設定を有効にしておきます。
 -   *サイドローディング*では、Microsoft Store の認証を受けていないアプリをインストールし、実行やテストを行うことができます。 たとえば、社内のみで使うアプリなどがあります。
 -   *開発者モード*を使用すると、アプリをサイドロードし、Visual Studio からデバッグ モードでアプリを実行することもできます。 
 
@@ -149,6 +149,9 @@ Windows 10 PC から Windows 10 デバイスへのアプリの展開に使用で
 
 これらの問題に対する回避策を検索するには、[既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)フォーラムをご覧ください。 
 
+> [!NOTE]
+> 開発モードが正常にインストールされない場合、リクエストを提出するフィードバックをお勧めします。 **フィードバックのハブ**アプリで、**新しいフィードバックの追加**] をクリックし、**開発プラットフォーム**カテゴリおよびサブカテゴリ**開発モード**を選択します。 フィードバックを送信するには、Microsoft が発生した問題を解決する、役立ちます。
+
 ### <a name="failed-to-locate-the-package"></a>パッケージ検索エラー
 
 "Developer Mode package couldn’t be located in Windows Update. Error Code 0x80004005 Learn more"   
@@ -173,7 +176,7 @@ Windows 10 PC から Windows 10 デバイスへのアプリの展開に使用で
 
 この問題を解決するには:
 
-1. [設定] > [更新とセキュリティ] > [Windows Update] で Windows の更新プログラムをチェックします。
+1. [設定] > [更新プログラムとセキュリティ] > [Windows の更新プログラム] で Windows の更新プログラムをチェックします。
 2. すべての更新プログラムを確実に適用するために、コンピューターを再起動します。
 
 

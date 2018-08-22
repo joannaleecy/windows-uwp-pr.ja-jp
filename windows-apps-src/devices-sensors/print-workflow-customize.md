@@ -8,14 +8,14 @@ ms.date: 08/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、uwp、印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: 470984ce9f9a3304350a3479a01bc31a403bd8af
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 9e53c15b01a08c8c617529fe074929ce89a68ce9
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674979"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800316"
 ---
 # <a name="customize-the-print-workflow"></a>印刷ワークフローのカスタマイズ
 
@@ -220,7 +220,7 @@ internal async void OnXpsDataAvailable(PrintWorkflowForegroundSession sessionMan
 }
 ```
 
-また、イベント引数によって公開される **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** インスタンスでは、印刷ジョブを取り消したり、印刷ジョブは成功したが出力の印刷ジョブが必要ないことを指定したりするためのオプションが提供されます。 これは、**[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** 値を使用して **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation#Windows_Graphics_Printing_Workflow_PrintWorkflowSubmittedOperation_Complete_Windows_Graphics_Printing_Workflow_PrintWorkflowSubmittedStatus_)** メソッドを呼び出すことで実行されます。
+また、イベント引数によって公開される **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** インスタンスでは、印刷ジョブを取り消したり、印刷ジョブは成功したが出力の印刷ジョブが必要ないことを指定したりするためのオプションが提供されます。 これは、**[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** 値を使用して **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** メソッドを呼び出すことで実行されます。
 
 > [!NOTE]
 > ワークフロー アプリで印刷ジョブを取り消す場合は、ジョブが取り消された理由を示すトースト通知を提供することを強くお勧めします。 
@@ -244,9 +244,9 @@ UI で **PrintTaskXpsDataAvailable** イベントの遅延が完了した場合 
 
 ### <a name="set-the-workflow-apps-policy"></a>ワークフロー アプリのポリシーの設定
 ワークフロー アプリのポリシーは、ワークフロー アプリを実行するデバイス上で PowerShell コマンドによって設定されます。 Set-Printer、Add-Printer (既存のポート)、Add-Printer (新しい WSD ポート) の各コマンドを、ワークフロー ポリシーの設定を許可するように変更します。 
-* `Off`: ワークフロー アプリはアクティブ化されません。
-* `Optional`: ワークフロー アプリは、ワークフロー DCA がシステムにインストールされている場合にアクティブ化されます。 アプリがインストールされていない場合は、印刷が引き続き実行されます。 
-* `On`: ワークフロー コントラクトは、ワークフロー DCA がシステムにインストールされている場合にアクティブ化されます。 アプリがインストールされていない場合は、印刷は失敗します。 
+* `Disabled`: ワークフロー アプリはアクティブ化されません。
+* `Uninitialized`: ワークフロー アプリは、ワークフロー DCA がシステムにインストールされている場合にアクティブ化されます。 アプリがインストールされていない場合は、印刷が引き続き実行されます。 
+* `Enabled`: ワークフロー コントラクトは、ワークフロー DCA がシステムにインストールされている場合にアクティブ化されます。 アプリがインストールされていない場合は、印刷は失敗します。 
 
 次のコマンドは、指定されたプリンターでワークフロー アプリを必須のアプリにします。
 ```Powershell
