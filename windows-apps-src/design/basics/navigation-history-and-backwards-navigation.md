@@ -1,6 +1,6 @@
 ---
 author: serenaz
-Description: The Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
+Description: Learn how to implement backwards navigation for traversing the user's navigation history within an UWP app.
 title: ナビゲーション履歴と前に戻る移動 (Windows アプリ)
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
@@ -8,32 +8,32 @@ label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
 ms.author: sezhen
-ms.date: 11/22/2017
+ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 824f0e83408893bf95d856067282b1fea1313876
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: 0400e04a86675adccd1da14d8cb2652028fbfd30
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895409"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800967"
 ---
-#  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP アプリのナビゲーション履歴と前に戻る移動
+# <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP アプリのナビゲーション履歴と前に戻る移動
 
 > **重要な API**: [BackRequested イベント](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、[SystemNavigationManager クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)、[OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 ユニバーサル Windows プラットフォーム (UWP) では、アプリのユーザーのナビゲーションの履歴内の移動や、デバイスによってはアプリ間の移動について、一貫性のある "戻る" ナビゲーション システムを提供します。
 
-アプリに前に戻る移動を実装するには、アプリの UI の左上隅に[戻るボタン](#Back-button)を配置します。 アプリで [NavigationView](../controls-and-patterns/navigationview.md) コントロールを使用する場合は、[NavigationView の組み込みの戻るボタン](../controls-and-patterns/navigationview.md#backwards-navigation)を使用できます。 
+アプリに前に戻る移動を実装するには、アプリの UI の左上隅に[戻るボタン](#Back-button)を配置します。 アプリで [NavigationView](../controls-and-patterns/navigationview.md) コントロールを使用する場合は、[NavigationView の組み込みの戻るボタン](../controls-and-patterns/navigationview.md#backwards-navigation)を使用できます。
 
 ユーザーは、戻るボタンによって、アプリのナビゲーション履歴における前の場所に戻ることを想定しています。 ナビゲーション履歴に追加するナビゲーション操作の種類、および戻るボタンが押されたときの応答方法は、自由に決めることができます。
 
 ## <a name="back-button"></a>[戻る] ボタン
 
-戻るボタンを作成するには、`NavigationBackButtonNormalStyle` スタイルの [Button](../controls-and-patterns/buttons.md) コントロールを使用し、アプリの UI の左上隅にボタンを配置します。
+[戻る] ボタンを作成するには、[ボタン](../controls-and-patterns/buttons.md)コントロールを使用する`NavigationBackButtonNormalStyle`スタイル、およびアプリの UI の左上隅にあるボタンを配置 (詳細については、以下の XAML コードの例を参照してください)。
 
 ![アプリの UI の左上隅にある [戻る] ボタン](images/back-nav/BackEnabled.png)
 
@@ -59,6 +59,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 次のコード例は、戻るボタンで前に戻る移動の動作を実装する方法を示しています。 このコードでは、Button の [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) イベントに応答し、新しいページに移動したときに呼び出される [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_) でボタンの表示を無効/有効にします。 このコード例では、[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) イベントのリスナーを登録することで、ハードウェアおよびソフトウェア システムの戻るキーからの入力も処理しています。
 
 ```xaml
+<!-- MainPage.xaml -->
 <Page x:Class="AppName.MainPage">
 ...
 <Button x:Name="BackButton" Click="Back_Click" Style="{StaticResource NavigationBackButtonNormalStyle}"/>
@@ -69,6 +70,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 分離コード:
 
 ```csharp
+// MainPage.xaml.cs
 public MainPage()
 {
     KeyboardAccelerator GoBack = new KeyboardAccelerator();
@@ -111,11 +113,75 @@ private void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvoked
 }
 ```
 
-ここでは、`App.xaml` 分離コード ファイルで、[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) イベントのグローバル リスナーを登録しています。 "戻る" ナビゲーションから特定のページを除外する場合や、ページを表示する前にページ レベルのコードを実行する場合は、各ページでこのイベントについて登録できます。
+```cppwinrt
+// MainPage.cpp
+#include "pch.h"
+#include "MainPage.h"
+
+#include "winrt/Windows.System.h"
+#include "winrt/Windows.UI.Xaml.Controls.h"
+#include "winrt/Windows.UI.Xaml.Input.h"
+#include "winrt/Windows.UI.Xaml.Navigation.h"
+
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::UI::Xaml;
+
+namespace winrt::PageNavTest::implementation
+{
+    MainPage::MainPage()
+    {
+        InitializeComponent();
+
+        Windows::UI::Xaml::Input::KeyboardAccelerator goBack;
+        goBack.Key(Windows::System::VirtualKey::GoBack);
+        goBack.Invoked({ this, &MainPage::BackInvoked });
+        Windows::UI::Xaml::Input::KeyboardAccelerator altLeft;
+        altLeft.Key(Windows::System::VirtualKey::Left);
+        altLeft.Invoked({ this, &MainPage::BackInvoked });
+        KeyboardAccelerators().Append(goBack);
+        KeyboardAccelerators().Append(altLeft);
+        // ALT routes here.
+        altLeft.Modifiers(Windows::System::VirtualKeyModifiers::Menu);
+    }
+
+    void MainPage::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e)
+    {
+        BackButton().IsEnabled(Frame().CanGoBack());
+    }
+
+    void MainPage::Back_Click(IInspectable const&, RoutedEventArgs const&)
+    {
+        On_BackRequested();
+    }
+
+    // Handles system-level BackRequested events and page-level back button Click events.
+    bool MainPage::On_BackRequested()
+    {
+        if (Frame().CanGoBack())
+        {
+            Frame().GoBack();
+            return true;
+        }
+        return false;
+    }
+
+    void MainPage::BackInvoked(Windows::UI::Xaml::Input::KeyboardAccelerator const& sender,
+        Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args)
+    {
+        args.Handled(On_BackRequested());
+    }
+}
+```
+
+、上部にある処理下位 1 つのページに移動します。 各ページのナビゲーションを処理するには、ナビゲーションから特定のページを除外するか、ページを表示する前にページ レベルのコードを実行します。
+
+下位全体アプリのナビゲーションを処理するで[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)イベントをグローバルに聞き手べきを登録するが、`App.xaml`コードビハ ファイル。
 
 App.xaml 分離コード:
 
 ```csharp
+// App.xaml.cs
 Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
 Frame rootFrame = Window.Current.Content;
 rootFrame.PointerPressed += On_PointerPressed;
@@ -127,12 +193,74 @@ private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEvent
 
 private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 {
-    bool isXButton1Pressed = e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
+    bool isXButton1Pressed =
+        e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
 
     if (isXButton1Pressed)
     {
         e.Handled = On_BackRequested();
     }
+}
+
+private bool On_BackRequested()
+{
+    Frame rootFrame = Window.Current.Content as Frame;
+    if (rootFrame.CanGoBack)
+    {
+        rootFrame.GoBack();
+        return true;
+    }
+    return false;
+}
+```
+
+```cppwinrt
+// App.cpp
+#include <winrt/Windows.UI.Core.h>
+#include "winrt/Windows.UI.Input.h"
+#include "winrt/Windows.UI.Xaml.Input.h"
+
+#include "App.h"
+#include "MainPage.h"
+
+using namespace winrt;
+...
+
+    Windows::UI::Core::SystemNavigationManager::GetForCurrentView().BackRequested({ this, &App::App_BackRequested });
+    Frame rootFrame{ nullptr };
+    auto content = Window::Current().Content();
+    if (content)
+    {
+        rootFrame = content.try_as<Frame>();
+    }
+    rootFrame.PointerPressed({ this, &App::On_PointerPressed });
+...
+
+void App::App_BackRequested(IInspectable const& /* sender */, Windows::UI::Core::BackRequestedEventArgs const& e)
+{
+    e.Handled(On_BackRequested());
+}
+
+void App::On_PointerPressed(IInspectable const& sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs const& e)
+{
+    bool isXButton1Pressed =
+        e.GetCurrentPoint(sender.as<UIElement>()).Properties().PointerUpdateKind() == Windows::UI::Input::PointerUpdateKind::XButton1Pressed;
+
+    if (isXButton1Pressed)
+    {
+        e.Handled(On_BackRequested());
+    }
+}
+
+// Handles system-level BackRequested events.
+bool App::On_BackRequested()
+{
+    if (Frame().CanGoBack())
+    {
+        Frame().GoBack();
+        return true;
+    }
+    return false;
 }
 ```
 
@@ -165,7 +293,24 @@ private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 
 アプリで [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) の使用を続ける場合は、通常どおり、戻るボタンはタイトル バーの内部にレンダリングされます。
 
-![タイトル バーの戻るボタン](images/nav-back-pc.png)
+- アプリが**タブ表示されない**場合は、[タイトル バーの内部 [戻る] ボタンが表示されます。 視覚的な [戻る] ボタンの操作環境とユーザー対話機能は、以前のビルドから変更はできません。
+
+    ![タイトル バーの [戻る] ボタン](images/nav-back-pc.png)
+
+- アプリが**タブ表示**] のかどうか、新しいシステム戻る内に戻る] ボタンが表示されますバー。
+
+    ![システムを描画戻る] ボタンのバー](images/back-nav/tabs.png)
+
+### <a name="system-back-bar"></a>システムの背面バー
+
+> [!NOTE]
+> "システム戻るバー"公式名ではなく、説明のみです。
+
+システム背面バーがバンド] タブの [バンドとアプリのコンテンツ領域の間に挿入します。 バンドは、アプリの幅に沿って表示され、左端に戻るボタンが配置されます。 バンドでは、[戻る] ボタンの適切なタッチ対象のサイズを確認する 32 ピクセルの高さを持ちます。
+
+システムの戻るバーは、戻るボタンの可視性に基づいて動的に表示されます。 [戻る] ボタンが表示されている場合、システム背面バーを挿入すると、アプリのコンテンツを] タブの [バンドの下にある 32 ピクセルにシフトします。 [戻る] ボタンの非表示の場合、システム背面バー動的に削除されると、会議] タブの [バンド 32 ピクセル アプリのコンテンツ シフトします。 アプリの UI shift キーを上下が生じるを避けるためには、図面、[アプリの [戻る] ボタン](#back-button)をお勧めします。
+
+[タイトル バーのユーザー設定](../shell/title-bar.md)は、[アプリ] タブとシステムの両方に引き継がれますバー。 アプリ[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)色の背景と前景色のプロパティを指定し、[色] タブと [システムの背面に適用されるかどうかバー。
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>カスタムの "戻る" ナビゲーションの動作のガイドライン
 
@@ -190,16 +335,16 @@ private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>ページ間、同じピア グループ、ナビゲーション要素は画面上に表示されない</strong>
-<p>ユーザーは、同じピア グループでページ間を移動します。 両方のページを対象とした直接的なナビゲーションを実現するナビゲーション要素 (上部ナビゲーション ウィンドウや、ドッキングされた左側のナビゲーション ウィンドウなど) は画面に表示されません。</p></td>
-<td style="vertical-align:top;"><strong>○</strong>
-<p>次の図では、ユーザーは同じピア グループ内の 2 つのページ間を移動します。 ページでは、上部のナビゲーション バーやドッキングされた左側のナビゲーション ウィンドウは使われていません。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
+<p>ユーザーは、同じピア グループでページ間を移動します。 いいえ画面に表示されるが両方のページへの直接のナビゲーションを提供する ( [NavigationView](../controls-and-patterns/navigationview.md)) などの要素をナビゲーションします。</p></td>
+<td style="vertical-align:top;"><strong>はい</strong>
+<p>次の図で、ユーザーが同じピア] で、2 つのページ間を移動してナビゲーション履歴にナビゲーションを追加する必要があります。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>ページ間、同じピア グループ、画面上に表示されるナビゲーション要素を使う</strong>
-<p>ユーザーは、同じピア グループ内のページ間を移動します。 両方のページは同じナビゲーション要素に表示されます。 たとえば、両方のページで同じ上部のウィンドウの要素を使っていたり、両方のページがドッキングされた左側のナビゲーション ウィンドウに表示されるとします。</p></td>
+<p>ユーザーは、同じピア グループ内のページ間を移動します。 [NavigationView](../controls-and-patterns/navigationview.md)など、同じナビゲーション要素では、両方のページが表示されます。</p></td>
 <td style="vertical-align:top;"><strong>場合によって異なります。</strong>
-<p>はい、ナビゲーション履歴に追加しますが、2 つの注目すべき例外があります。 アプリのユーザーがピア グループ内でページ間を頻繁に切り替えることが予想される場合、またはピア グループのページ内でナビゲーションの状態/履歴を保持する場合は、ナビゲーション履歴に追加しないでください。 この場合、ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。 </p>
+<p>はい、履歴、2 つの例外を追加します。 多くの場合、ピア グループ内のページ間で切り替えるアプリのユーザーの予定がある場合、またはナビゲーション階層を維持したい場合は、[に追加しない履歴します。 この場合、ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
