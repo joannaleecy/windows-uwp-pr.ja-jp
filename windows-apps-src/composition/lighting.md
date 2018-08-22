@@ -4,63 +4,70 @@ ms.assetid: fb8ae71d-5c88-4c85-9257-a9607d5179b1
 title: 照明
 description: Light オブジェクトは、動的な照明と反射をシミュレートするために SceneLightingEffect と共に使用されます。
 ms.author: jimwalk
-ms.date: 03/29/2017
+ms.date: 06/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 316b79fa9fc9a700d606f0881a89a299523330b1
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+dev_langs:
+- csharp
+- vb
+- cpp
+- cppwinrt
+ms.openlocfilehash: d0da6b02ecfbe8f73cc6526b0850707d03bfc63f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673709"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2797495"
 ---
-# <a name="lighting"></a><span data-ttu-id="492fb-104">照明</span><span class="sxs-lookup"><span data-stu-id="492fb-104">Lighting</span></span>
+# <a name="lighting"></a><span data-ttu-id="0e713-104">照明</span><span class="sxs-lookup"><span data-stu-id="0e713-104">Lighting</span></span>
 
-<span data-ttu-id="492fb-105">[**CompositionLight**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) オブジェクトは、動的な照明と反射をシミュレートするために [**SceneLightingEffect**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) と共に使用されます。</span><span class="sxs-lookup"><span data-stu-id="492fb-105">[**CompositionLight**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) objects are used in conjunction with [**SceneLightingEffect**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) to simulate dynamic lighting and reflectivity.</span></span>
+<span data-ttu-id="0e713-105">[**CompositionLight**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) オブジェクトは、動的な照明と反射をシミュレートするために [**SceneLightingEffect**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) と共に使用されます。</span><span class="sxs-lookup"><span data-stu-id="0e713-105">[**CompositionLight**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) objects are used in conjunction with [**SceneLightingEffect**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) to simulate dynamic lighting and reflectivity.</span></span>
 
-<span data-ttu-id="492fb-106">[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) と XAML [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) にライトを適用できます。</span><span class="sxs-lookup"><span data-stu-id="492fb-106">You can apply lights to [**Visuals**](https://msdn.microsoft.com/library/windows/apps/Dn706858) and XAML [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement).</span></span>
+<span data-ttu-id="0e713-106">[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) と XAML [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) にライトを適用できます。</span><span class="sxs-lookup"><span data-stu-id="0e713-106">You can apply lights to [**Visuals**](https://msdn.microsoft.com/library/windows/apps/Dn706858) and XAML [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement).</span></span>
 
-## <a name="applying-lights-to-xaml-uielements"></a><span data-ttu-id="492fb-107">XAML UIElement へのライトの適用</span><span class="sxs-lookup"><span data-stu-id="492fb-107">Applying lights to XAML UIElements</span></span>
+## <a name="applying-lights-to-xaml-uielements"></a><span data-ttu-id="0e713-107">XAML UIElement へのライトの適用</span><span class="sxs-lookup"><span data-stu-id="0e713-107">Applying lights to XAML UIElements</span></span>
 
-<span data-ttu-id="492fb-108">XAML UIElement に動的なライトを適用するには、[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) オブジェクトを使用して [**CompositionLight**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) を適用します。</span><span class="sxs-lookup"><span data-stu-id="492fb-108">[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) objects are used to apply [**CompositionLights**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) to dynamically light XAML UIElements.</span></span> <span data-ttu-id="492fb-109">XamlLight には、ターゲットの UIElement やその他の XAML Brush を指定するメソッド、UIElement のツリーにライトを適用するメソッド、現在使用されているかどうかに基づいて CompositionLight リソースの有効期間を管理するためのメソッドが用意されています。</span><span class="sxs-lookup"><span data-stu-id="492fb-109">XamlLight provides methods for targeting UIElements or other XAML Brushes, applying lights to trees of UIElements, and helping manage the lifetime of CompositionLight resources based on whether they're currently in use.</span></span>
+<span data-ttu-id="0e713-108">XAML UIElement に動的なライトを適用するには、[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) オブジェクトを使用して [**CompositionLight**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) を適用します。</span><span class="sxs-lookup"><span data-stu-id="0e713-108">[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) objects are used to apply [**CompositionLights**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionLight) to dynamically light XAML UIElements.</span></span> <span data-ttu-id="0e713-109">XamlLight が Uielement または XAML ブラシ、Uielement のツリー ライトの適用対象とするための方法を紹介し、CompositionLight の有効期間を管理するのにも役立ちます現在いるかどうかに基づくリソースを使用します。</span><span class="sxs-lookup"><span data-stu-id="0e713-109">XamlLight provides methods for targeting UIElements or XAML Brushes, applying lights to trees of UIElements, and helping manage the lifetime of CompositionLight resources based on whether they're currently in use.</span></span>
 
-* <span data-ttu-id="492fb-110">XamlLight で **Brush** をターゲットにする場合、その Brush 使用している任意の UIElement の部分がライトによって照らされます。</span><span class="sxs-lookup"><span data-stu-id="492fb-110">If you target a **Brush** with a XamlLight then the portions of any UIElements using that Brush are lit by the light.</span></span>
-* <span data-ttu-id="492fb-111">XamlLight で **UIElement** をターゲットにする場合、UIElement 全体とその子 UIElement がライトによって照らされます。</span><span class="sxs-lookup"><span data-stu-id="492fb-111">If you target a **UIElement** with a XamlLight then the entire UIElement and its child UIElements are all lit by the light.</span></span>
+* <span data-ttu-id="0e713-110">XamlLight で **Brush** をターゲットにする場合、その Brush 使用している任意の UIElement の部分がライトによって照らされます。</span><span class="sxs-lookup"><span data-stu-id="0e713-110">If you target a **Brush** with a XamlLight then the portions of any UIElements using that Brush are lit by the light.</span></span>
+* <span data-ttu-id="0e713-111">XamlLight で **UIElement** をターゲットにする場合、UIElement 全体とその子 UIElement がライトによって照らされます。</span><span class="sxs-lookup"><span data-stu-id="0e713-111">If you target a **UIElement** with a XamlLight then the entire UIElement and its child UIElements are all lit by the light.</span></span>
 
-## <a name="creating-and-using-a-xamllight"></a><span data-ttu-id="492fb-112">XamlLight の作成と使用</span><span class="sxs-lookup"><span data-stu-id="492fb-112">Creating and using a XamlLight</span></span>
+## <a name="creating-and-using-a-xamllight"></a><span data-ttu-id="0e713-112">XamlLight の作成と使用</span><span class="sxs-lookup"><span data-stu-id="0e713-112">Creating and using a XamlLight</span></span>
 
-<span data-ttu-id="492fb-113">[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) は、カスタム ライトを作成するために使用できる基底クラスです。</span><span class="sxs-lookup"><span data-stu-id="492fb-113">[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) is a base class which can be used to create custom lights.</span></span>
+<span data-ttu-id="0e713-113">[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) は、カスタム ライトを作成するために使用できる基底クラスです。</span><span class="sxs-lookup"><span data-stu-id="0e713-113">[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) is a base class which can be used to create custom lights.</span></span>
 
-<span data-ttu-id="492fb-114">特定の要素を対象とする添付プロパティを使用するカスタム XamlLight の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="492fb-114">Here is an example of a custom XamlLight that uses an attached property to target specific elements:</span></span>
+<span data-ttu-id="0e713-114">この例では、対象となる Uielement とブラシにマルチカラー スポット ライトを適用するカスタム XamlLight の定義を示します。</span><span class="sxs-lookup"><span data-stu-id="0e713-114">This example shows the definition for a custom XamlLight that applies a multicolored spotlight to targeted UIElements and Brushes.</span></span>
 
 ```csharp
-public sealed class FancyOrangeSpotLight : XamlLight
+public sealed class OrangeSpotLight : XamlLight
 {
-    // Register an attached proeprty that enables apps to set a UIElement or Brush as a target for this light type in markup.
+    // Register an attached property that lets you set a UIElement
+    // or Brush as a target for this light type in markup.
     public static readonly DependencyProperty IsTargetProperty =
         DependencyProperty.RegisterAttached(
         "IsTarget",
-        typeof(Boolean),
-        typeof(FancyOrangeSpotLight),
+        typeof(bool),
+        typeof(OrangeSpotLight),
         new PropertyMetadata(null, OnIsTargetChanged)
     );
-    public static void SetIsTarget(DependencyObject target, Boolean value)
+
+    public static void SetIsTarget(DependencyObject target, bool value)
     {
         target.SetValue(IsTargetProperty, value);
     }
+
     public static Boolean GetIsTarget(DependencyObject target)
     {
-        return (Boolean) target.GetValue(IsTargetProperty);
+        return (bool)target.GetValue(IsTargetProperty);
     }
 
     // Handle attached property changed to automatically target and untarget UIElements and Brushes.
-    private static void OnIsTargetChanged(DependencyObject obj,
-                                            DependencyPropertyChangedEventArgs e)
+    private static void OnIsTargetChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
     {
-        var isAdding = (Boolean)e.NewValue;
+        var isAdding = (bool)e.NewValue;
 
         if (isAdding)
         {
@@ -88,20 +95,29 @@ public sealed class FancyOrangeSpotLight : XamlLight
 
     protected override void OnConnected(UIElement newElement)
     {
-        // OnConnected is called when the first target UIElement is shown on the screen. This enables delaying composition object creation until it's actually necessary.
-        var spotLight = Window.Current.Compositor.CreateSpotLight();
-        spotLight.InnerConeColor = Colors.Orange;
-        spotLight.OuterConeColor = Colors.Yellow;
-        spotLight.InnerConeAngleInDegrees = 30;
-        spotLight.OuterConeAngleInDegrees = 45;
-        CompositionLight = spotLight;
+        if (CompositionLight == null)
+        {
+            // OnConnected is called when the first target UIElement is shown on the screen.
+            // This lets you delay creation of the composition object until it's actually needed.
+            var spotLight = Window.Current.Compositor.CreateSpotLight();
+            spotLight.InnerConeColor = Colors.Orange;
+            spotLight.OuterConeColor = Colors.Yellow;
+            spotLight.InnerConeAngleInDegrees = 30;
+            spotLight.OuterConeAngleInDegrees = 45;
+            CompositionLight = spotLight;
+        }
     }
 
     protected override void OnDisconnected(UIElement oldElement)
     {
-        // OnDisconnected is called when there are no more target UIElements on the screen. The CompositionLight should be disposed when no longer required.
-        CompositionLight.Dispose();
-        CompositionLight = null;
+        // OnDisconnected is called when there are no more target UIElements on the screen.
+        // The CompositionLight should be disposed when no longer required.
+        // For SDK 15063, see Remarks in the XamlLight class documentation.
+        if (CompositionLight != null)
+        {
+            CompositionLight.Dispose();
+            CompositionLight = null;
+        }
     }
 
     protected override string GetId()
@@ -111,51 +127,379 @@ public sealed class FancyOrangeSpotLight : XamlLight
 
     private static string GetIdStatic()
     {
-        // This specifies the unique name of the light. In most cases you should use the type's FullName.
-        return typeof(FancyPointerTrackerLight).FullName;
+        // This specifies the unique name of the light.
+        // In most cases you should use the type's FullName.
+        return typeof(OrangeSpotLight).FullName;
     }
 }
 ```
 
-<span data-ttu-id="492fb-115">上で定義したカスタム ライトの考えられる別の使用例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="492fb-115">And here is an example showing different possible uses of the custom light defined above:</span></span>
+```vb
+Public NotInheritable Class OrangeSpotLight
+    Inherits XamlLight
 
-```xml
-<Page>
-    <Page.Lights>
-        <local:SimpleOrangeSpotLight />
-    </Page.Lights>
+    ' Register an attached property that lets you set a UIElement
+    ' or Brush as a target for this light type in markup.
+    Public Shared ReadOnly IsTargetProperty As DependencyProperty = DependencyProperty.RegisterAttached(
+            "IsTarget",
+            GetType(Boolean),
+            GetType(OrangeSpotLight),
+            New PropertyMetadata(Nothing, New PropertyChangedCallback(AddressOf OnIsTargetChanged)
+            )
+        )
 
-    <StackPanel>
-        <!-- this border will be lit by a FancyOrangeSpotLight, but not its children -->
-        <Border BorderThickness="1">
-            <Border.BorderBrush>
-                <SolidColorBrush Color="Orange" local:FancyOrangeSpotLight.IsTarget="true" />
-            </Border.BorderBrush>
-            <TextBlock Text="hello world" />
-        </Border>
+    Public Shared Sub SetIsTarget(target As DependencyObject, value As Boolean)
+        target.SetValue(IsTargetProperty, value)
+    End Sub
 
-        <!-- this border and its children will be lit by FancyOrangeSpotLight -->
-        <Border BorderThickness="2" local:FancyOrangeSpotLight.IsTarget="true">
-            <Border.BorderBrush>
-                <SolidColorBrush Color="Purple" />
-            </Border.BorderBrush>
-            <TextBlock Text="hello world" />
-        </Border>
+    Public Shared Function GetIsTarget(target As DependencyObject) As Boolean
+        Return DirectCast(target.GetValue(IsTargetProperty), Boolean)
+    End Function
 
-        <!-- this border will not be lit -->
-        <Border BorderThickness="2">
-            <Border.BorderBrush>
-                <SolidColorBrush Color="Green" />
-            </Border.BorderBrush>
-            <TextBlock Text="hello world" />
-        </Border>
-    </StackPanel>
-<Page>
+    ' Handle attached property changed to automatically target And untarget UIElements And Brushes.
+    Public Shared Sub OnIsTargetChanged(obj As DependencyObject, e As DependencyPropertyChangedEventArgs)
+        Dim isAdding = DirectCast(e.NewValue, Boolean)
+
+        If isAdding Then
+            If TypeOf obj Is UIElement Then
+                XamlLight.AddTargetElement(GetIdStatic(), TryCast(obj, UIElement))
+            ElseIf TypeOf obj Is Brush Then
+                XamlLight.AddTargetBrush(GetIdStatic(), TryCast(obj, Brush))
+            End If
+        Else
+            If TypeOf obj Is UIElement Then
+                XamlLight.RemoveTargetElement(GetIdStatic(), TryCast(obj, UIElement))
+            ElseIf TypeOf obj Is Brush Then
+                XamlLight.RemoveTargetBrush(GetIdStatic(), TryCast(obj, Brush))
+            End If
+        End If
+    End Sub
+
+    Protected Overrides Sub OnConnected(newElement As UIElement)
+        If CompositionLight Is Nothing Then
+            ' OnConnected Is called when the first target UIElement Is shown on the screen.
+            ' This lets you delay creation of the composition object until it's actually needed.
+            Dim spotLight = Window.Current.Compositor.CreateSpotLight()
+            spotLight.InnerConeColor = Colors.Orange
+            spotLight.OuterConeColor = Colors.Yellow
+            spotLight.InnerConeAngleInDegrees = 30
+            spotLight.OuterConeAngleInDegrees = 45
+            CompositionLight = spotLight
+        End If
+    End Sub
+
+    Protected Overrides Sub OnDisconnected(oldElement As UIElement)
+        ' OnDisconnected Is called when there are no more target UIElements on the screen.
+        ' The CompositionLight should be disposed when no longer required.
+        If CompositionLight IsNot Nothing Then
+            CompositionLight.Dispose()
+            CompositionLight = Nothing
+        End If
+    End Sub
+
+    Protected Overrides Function GetId() As String
+        Return GetIdStatic()
+    End Function
+
+    Private Shared Function GetIdStatic() As String
+        ' This specifies the unique name of the light.
+        ' In most cases you should use the type's FullName.
+        Return GetType(OrangeSpotLight).FullName
+    End Function
+End Class
 ```
 
+```cppwinrt
+// For the C++/WinRT code example, you'll need to add a Midl File (.idl) file to your project.
+// OrangeSpotLight.idl
+namespace MyApp
+{
+    [default_interface]
+    runtimeclass OrangeSpotLight : Windows.UI.Xaml.Media.XamlLight
+    {
+        OrangeSpotLight();
+        static Windows.UI.Xaml.DependencyProperty IsTargetProperty{ get; };
+        static Boolean GetIsTarget(Windows.UI.Xaml.DependencyObject target);
+        static void SetIsTarget(Windows.UI.Xaml.DependencyObject target, Boolean value);
+    }
+}
+
+// OrangeSpotLight.h
+struct OrangeSpotLight : OrangeSpotLightT<OrangeSpotLight>
+{
+    OrangeSpotLight() = default;
+
+    winrt::hstring GetId();
+
+    static Windows::UI::Xaml::DependencyProperty IsTargetProperty() { return m_isTargetProperty; }
+
+    static bool GetIsTarget(Windows::UI::Xaml::DependencyObject const& target)
+    {
+        return winrt::unbox_value<bool>(target.GetValue(m_isTargetProperty));
+    }
+
+    static void SetIsTarget(Windows::UI::Xaml::DependencyObject const& target, bool value)
+    {
+        target.SetValue(m_isTargetProperty, winrt::box_value(value));
+    }
+
+    void OnConnected(Windows::UI::Xaml::UIElement const& newElement);
+    void OnDisconnected(Windows::UI::Xaml::UIElement const& oldElement);
+
+    static void OnIsTargetChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e);
+
+    inline static winrt::hstring GetIdStatic()
+    {
+        // This specifies the unique name of the light. In most cases you should use the type's full name.
+        return winrt::xaml_typename<MyApp::OrangeSpotLight>().Name;
+    }
+
+private:
+    static Windows::UI::Xaml::DependencyProperty m_isTargetProperty;
+};
+
+// OrangeSpotLight.cpp
+Windows::UI::Xaml::DependencyProperty OrangeSpotLight::m_isTargetProperty =
+    Windows::UI::Xaml::DependencyProperty::RegisterAttached(
+        L"IsTarget",
+        winrt::xaml_typename<bool>(),
+        winrt::xaml_typename<MyApp::OrangeSpotLight>(),
+        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(false), Windows::UI::Xaml::PropertyChangedCallback{ &OrangeSpotLight::OnIsTargetChanged } }
+);
+
+void OrangeSpotLight::OnConnected(Windows::UI::Xaml::UIElement const& /* newElement */)
+{
+    if (!CompositionLight())
+    {
+        // OnConnected is called when the first target UIElement is shown on the screen. This enables delaying composition object creation until it's actually necessary.
+        auto spotLight{ Windows::UI::Xaml::Window::Current().Compositor().CreateSpotLight() };
+        spotLight.InnerConeColor(Windows::UI::Colors::Orange());
+        spotLight.OuterConeColor(Windows::UI::Colors::Yellow());
+        spotLight.InnerConeAngleInDegrees(30);
+        spotLight.OuterConeAngleInDegrees(45);
+        CompositionLight(spotLight);
+    }
+}
+
+void OrangeSpotLight::OnDisconnected(Windows::UI::Xaml::UIElement const& /* oldElement */)
+{
+    // OnDisconnected is called when there are no more target UIElements on the screen.
+    // Dispose of composition resources when no longer in use.
+    if (CompositionLight())
+    {
+        CompositionLight(nullptr);
+    }
+}
+
+winrt::hstring OrangeSpotLight::GetId()
+{
+    return OrangeSpotLight::GetIdStatic();
+}
+
+void OrangeSpotLight::OnIsTargetChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    auto uie{ d.try_as<Windows::UI::Xaml::UIElement>() };
+    auto brush{ d.try_as<Windows::UI::Xaml::Media::Brush>() };
+
+    auto isAdding = winrt::unbox_value<bool>(e.NewValue());
+    if (isAdding)
+    {
+
+        if (uie)
+        {
+            Windows::UI::Xaml::Media::XamlLight::AddTargetElement(OrangeSpotLight::GetIdStatic(), uie);
+        }
+        else if (brush)
+        {
+            Windows::UI::Xaml::Media::XamlLight::AddTargetBrush(OrangeSpotLight::GetIdStatic(), brush);
+        }
+    }
+    else
+    {
+        if (uie)
+        {
+            Windows::UI::Xaml::Media::XamlLight::RemoveTargetElement(OrangeSpotLight::GetIdStatic(), uie);
+        }
+        else if (brush)
+        {
+            Windows::UI::Xaml::Media::XamlLight::RemoveTargetBrush(OrangeSpotLight::GetIdStatic(), brush);
+        }
+    }
+}
+
+// MainPage.h
+...
+#include "OrangeSpotLight.h"
+...
+struct MainPage : MainPageT<MainPage>
+{
+    MainPage()
+    {
+        InitializeComponent();
+
+        OrangeSpotLight::SetIsTarget(spotlitBrush(), true);
+        OrangeSpotLight::SetIsTarget(spotlitUIElement(), true);
+    }
+...
+};
+```
+
+```cpp
+// OrangeSpotLight.h:
+public ref class OrangeSpotLight sealed :
+    public Windows::UI::Xaml::Media::XamlLight
+{
+public:
+    OrangeSpotLight();
+
+    static property Windows::UI::Xaml::DependencyProperty^ IsTargetProperty
+    {
+        Windows::UI::Xaml::DependencyProperty^ get() { return m_isTargetProperty; }
+    };
+    static void SetIsTarget(Windows::UI::Xaml::DependencyObject^ target, bool value);
+    static bool GetIsTarget(Windows::UI::Xaml::DependencyObject^ target);
+
+protected:
+    virtual void OnConnected(Windows::UI::Xaml::UIElement^ newElement) override;
+    virtual void OnDisconnected(Windows::UI::Xaml::UIElement^ oldElement) override;
+    virtual Platform::String^ GetId() override;
+
+private:
+    static Windows::UI::Xaml::DependencyProperty^ m_isTargetProperty;
+    static void OnIsTargetChanged(Windows::UI::Xaml::DependencyObject^ obj, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e);
+
+    inline static Platform::String^ GetIdStatic()
+    {
+        // This specifies the unique name of the light. In most cases you should use the type's FullName.
+        return OrangeSpotLight::typeid->FullName;
+    }
+};
+
+//OrangeSpotLight.cpp:
+
+// Register an attached property that lets you set a UIElement
+// or Brush as a target for this light type in markup.
+DependencyProperty^ OrangeSpotLight::m_isTargetProperty = DependencyProperty::RegisterAttached(
+    "IsTarget",
+    bool::typeid,
+    OrangeSpotLight::typeid,
+    ref new PropertyMetadata(0.0, ref new PropertyChangedCallback(OnIsTargetChanged))
+);
+
+OrangeSpotLight::OrangeSpotLight()
+{
+}
+
+void OrangeSpotLight::SetIsTarget(DependencyObject^ target, bool value)
+{
+    target->SetValue(IsTargetProperty, value);
+}
+
+bool OrangeSpotLight::GetIsTarget(DependencyObject^ target)
+{
+    return static_cast<bool>(target->GetValue(IsTargetProperty));
+}
+
+// Handle attached property changed to automatically target and untarget UIElements and Brushes.
+void OrangeSpotLight::OnIsTargetChanged(DependencyObject^ obj, DependencyPropertyChangedEventArgs^ e)
+{
+    auto isAdding = static_cast<bool>(e->NewValue);
+
+    if (isAdding)
+    {
+        if (dynamic_cast<UIElement^>(obj))
+        {
+            XamlLight::AddTargetElement(GetIdStatic(), static_cast<UIElement^>(obj));
+        }
+        else if (dynamic_cast<Brush^>(obj))
+        {
+            XamlLight::AddTargetBrush(GetIdStatic(), static_cast<Brush^>(obj));
+        }
+    }
+    else
+    {
+        if (dynamic_cast<UIElement^>(obj))
+        {
+            XamlLight::RemoveTargetElement(GetIdStatic(), static_cast<UIElement^>(obj));
+        }
+        else if (dynamic_cast<Brush^>(obj))
+        {
+            XamlLight::RemoveTargetBrush(GetIdStatic(), static_cast<Brush^>(obj));
+        }
+    }
+}
+void OrangeSpotLight::OnConnected(UIElement^ newElement)
+{
+    if (CompositionLight == nullptr)
+    {
+        // OnConnected is called when the first target UIElement is shown on the screen.
+        // This lets you delay creation of the composition object until it's actually needed.
+        auto spotLight = Window::Current->Compositor->CreateSpotLight();
+        spotLight->InnerConeColor = Colors::Orange;
+        spotLight->OuterConeColor = Colors::Yellow;
+        spotLight->InnerConeAngleInDegrees = 30;
+        spotLight->OuterConeAngleInDegrees = 45;
+        CompositionLight = spotLight;
+    }
+}
+
+void OrangeSpotLight::OnDisconnected(UIElement^ oldElement)
+{
+    // OnDisconnected is called when there are no more target UIElements on the screen.
+    // The CompositionLight should be disposed when no longer required.
+    // For SDK 15063, see Remarks in the XamlLight class documentation.
+    if (CompositionLight != nullptr)
+    {
+        delete CompositionLight;
+        CompositionLight = nullptr;
+    }
+}
+
+Platform::String^ OrangeSpotLight::GetId()
+{
+    return GetIdStatic();
+}
+```
+
+<span data-ttu-id="0e713-115">簡易にするには、XAML UIElement またはブラシにこの light を適用することができます。</span><span class="sxs-lookup"><span data-stu-id="0e713-115">You can then apply this light to any XAML UIElement or Brush to light them.</span></span> <span data-ttu-id="0e713-116">この例では、さまざまな潜在的な用法を検出を使用します。</span><span class="sxs-lookup"><span data-stu-id="0e713-116">This example shows different potential usages.</span></span>
+
 > [!Important]
-> <span data-ttu-id="492fb-116">上の例で示しているような、マークアップでの UIElement.Lights の設定は、最小バージョンが Windows 10 Creators Update 以降であるアプリでのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="492fb-116">Setting UIElement.Lights in markup as shown in the above example is only supported for apps with a Minimum Version equal to the Windows 10 Creators Update or later.</span></span> <span data-ttu-id="492fb-117">それ以前のバージョンをターゲットとするアプリでは、分離コードでライトを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="492fb-117">For apps that target earlier versions, lights must be created in code-behind.</span></span>
+> <span data-ttu-id="0e713-117">[C + +/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)] の 2 つのアイテムを削除する`local:OrangeSpotLight.IsTarget="True"`次の変更履歴とコメントからします。</span><span class="sxs-lookup"><span data-stu-id="0e713-117">For [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), remove the two occurrences of `local:OrangeSpotLight.IsTarget="True"` from the markup below.</span></span> <span data-ttu-id="0e713-118">接続されているプロパティは、分離コードで既に設定されています。</span><span class="sxs-lookup"><span data-stu-id="0e713-118">The attached properties are already set in code-behind.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="492fb-118">その他のリソース</span><span class="sxs-lookup"><span data-stu-id="492fb-118">Additional Resources</span></span>
+```xaml
+<StackPanel Width="100">
+    <StackPanel.Lights>
+        <local:OrangeSpotLight/>
+    </StackPanel.Lights>
 
-* <span data-ttu-id="492fb-119">[WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) にある高度な UI とコンポジションのサンプル</span><span class="sxs-lookup"><span data-stu-id="492fb-119">Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs).</span></span>
+    <!-- This border is lit by the OrangeSpotLight, but its content is not. -->
+    <Border BorderThickness="4" Margin="2">
+        <Border.BorderBrush>
+            <SolidColorBrush x:Name="spotlitBrush" Color="White" local:OrangeSpotLight.IsTarget="True"/>
+        </Border.BorderBrush>
+        <Rectangle Fill="LightGray" Height="20"/>
+    </Border>
+
+    <!-- This border and its content are lit by the OrangeSpotLight. -->
+    <Border x:Name="spotlitUIElement" BorderThickness="4" BorderBrush="PaleGreen" Margin="2"
+            local:OrangeSpotLight.IsTarget="True">
+        <Rectangle Fill="LightGray" Height="20"/>
+    </Border>
+
+    <!-- This border and its content are not lit by the OrangeSpotLight. -->
+    <Border BorderThickness="4" BorderBrush="PaleGreen" Margin="2">
+        <Rectangle Fill="LightGray" Height="20"/>
+    </Border>
+</StackPanel>
+```
+
+<span data-ttu-id="0e713-119">この XAML の結果は、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="0e713-119">The results of this XAML look like this.</span></span>
+
+![Xaml ライトが点灯している要素の例](images/orange-spot-light.png)
+
+> [!Important]
+> <span data-ttu-id="0e713-121">上の例で示しているような、マークアップでの UIElement.Lights の設定は、最小バージョンが Windows 10 Creators Update 以降であるアプリでのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="0e713-121">Setting UIElement.Lights in markup as shown in the above example is only supported for apps with a Minimum Version equal to the Windows 10 Creators Update or later.</span></span> <span data-ttu-id="0e713-122">それ以前のバージョンをターゲットとするアプリでは、分離コードでライトを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0e713-122">For apps that target earlier versions, lights must be created in code-behind.</span></span>
+
+## <a name="additional-resources"></a><span data-ttu-id="0e713-123">その他のリソース</span><span class="sxs-lookup"><span data-stu-id="0e713-123">Additional Resources</span></span>
+
+* <span data-ttu-id="0e713-124">[WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) にある高度な UI とコンポジションのサンプル</span><span class="sxs-lookup"><span data-stu-id="0e713-124">Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs).</span></span>

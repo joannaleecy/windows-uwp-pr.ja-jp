@@ -1,59 +1,61 @@
 ---
 author: jnHs
-Description: "Windows ストアでアプリやコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。"
-title: "Windows ストア アプリのマーケティング ガイドライン"
+Description: Learn how to promote your apps and content in the Microsoft Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
+title: Microsoft ストアのマーケティング用のアプリのガイドライン
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: e953bf1b7392a93ddb8323167ca1bf191e162076
-ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2017
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2797029"
 ---
-# <a name="windows-store-app-marketing-guidelines"></a><span data-ttu-id="3c5e1-105">Windows ストア アプリのマーケティング ガイドライン</span><span class="sxs-lookup"><span data-stu-id="3c5e1-105">Windows Store app marketing guidelines</span></span>
+# <a name="microsoft-store-marketing-guidelines-for-apps"></a><span data-ttu-id="3a667-103">Microsoft ストアのマーケティング用のアプリのガイドライン</span><span class="sxs-lookup"><span data-stu-id="3a667-103">Microsoft Store marketing guidelines for apps</span></span>
 
-<span data-ttu-id="3c5e1-106">Windows ストアでアプリやコンテンツの販売を促進する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-106">Learn how to promote your apps and content in the Windows Store.</span></span> <span data-ttu-id="3c5e1-107">これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-107">These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.</span></span>
+<span data-ttu-id="3a667-104">アプリと Microsoft ストア内のコンテンツを宣伝する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3a667-104">Learn how to promote your apps and content in the Microsoft Store.</span></span> <span data-ttu-id="3a667-105">これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。</span><span class="sxs-lookup"><span data-stu-id="3a667-105">These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.</span></span>
 
-## <a name="store-badges"></a><span data-ttu-id="3c5e1-108">ストア バッジ</span><span class="sxs-lookup"><span data-stu-id="3c5e1-108">Store badges</span></span>
+## <a name="store-badges"></a><span data-ttu-id="3a667-106">ストア バッジ</span><span class="sxs-lookup"><span data-stu-id="3a667-106">Store badges</span></span>
 
-<span data-ttu-id="3c5e1-109">さらに多くのお客様に、Windows ストアのアプリの登録情報を見ていただけるように、特別なプロモーション用のバッジをご用意しました。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-109">We’ve created special promotional badges to help you drive more customers to your app's listing in the Windows Store.</span></span> <span data-ttu-id="3c5e1-110">これらのバッジは 44 の言語で利用できます。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-110">These badges are available in 44 languages.</span></span> <span data-ttu-id="3c5e1-111">これらのイメージを使う場合、特定の要件に従う必要があることに注意してください。これらの要件は、使用例やガイドラインと共に、PDF ファイルでご確認いただけます。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-111">Keep in mind that there are certain requirements you need to follow when using these images; these requirements, along with usage examples and guidelines, are available in a PDF file.</span></span>
+<span data-ttu-id="3a667-107">ドライブより多くのお客様の Microsoft ストアのアプリの一覧にするための特別なプロモーション バッジを作成しました。</span><span class="sxs-lookup"><span data-stu-id="3a667-107">We’ve created special promotional badges to help you drive more customers to your app's listing in the Microsoft Store.</span></span> <span data-ttu-id="3a667-108">これらのバッジは 44 の言語で利用できます。</span><span class="sxs-lookup"><span data-stu-id="3a667-108">These badges are available in 44 languages.</span></span> <span data-ttu-id="3a667-109">これらのイメージを使う場合、特定の要件に従う必要があることに注意してください。これらの要件は、使用例やガイドラインと共に、PDF ファイルでご確認いただけます。</span><span class="sxs-lookup"><span data-stu-id="3a667-109">Keep in mind that there are certain requirements you need to follow when using these images; these requirements, along with usage examples and guidelines, are available in a PDF file.</span></span>
 
-<span data-ttu-id="3c5e1-112">[![ ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) **Windows ストアのマーケティング ガイドライン (PDF、英語)**</span><span class="sxs-lookup"><span data-stu-id="3c5e1-112">[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) **Windows Store Marketing Guidelines (PDF, English)**</span></span>
-
-
-## <a name="badge-generator-and-images"></a><span data-ttu-id="3c5e1-113">バッジ ジェネレーターと画像</span><span class="sxs-lookup"><span data-stu-id="3c5e1-113">Badge generator and images</span></span>
-
-<span data-ttu-id="3c5e1-114">[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) を使って、(好みの言語で) ストア バッジを表示しアプリのストア登録情報ページに直接リンクする HTML を生成できます。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-114">You can use our [badge generator](http://go.microsoft.com/fwlink/p/?LinkID=534236) to generate HTML that displays the Store badge (in the language of your choice) and links directly to your app's Store listing.</span></span>
-
-<span data-ttu-id="3c5e1-115">バッジ画像のセット一式を (PNG および PDF 形式で) 以下のリンクからダウンロードすることもできます。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-115">You can also download the complete set of badge images (in PNG and PDF format) from the link below.</span></span>
-
-<span data-ttu-id="3c5e1-116">[![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) **すべてのバッジ画像**</span><span class="sxs-lookup"><span data-stu-id="3c5e1-116">[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) **All badge images**</span></span>
+<span data-ttu-id="3a667-110">[![ダウンロード] ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769)**Microsoft ストア バッジ ガイドライン (PDF、英語)**</span><span class="sxs-lookup"><span data-stu-id="3a667-110">[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) **Microsoft Store Badge Guidelines (PDF, English)**</span></span>
 
 
-## <a name="device-images"></a><span data-ttu-id="3c5e1-117">デバイスの画像</span><span class="sxs-lookup"><span data-stu-id="3c5e1-117">Device images</span></span>
+## <a name="badge-generator-and-images"></a><span data-ttu-id="3a667-111">バッジ ジェネレーターと画像</span><span class="sxs-lookup"><span data-stu-id="3a667-111">Badge generator and images</span></span>
 
-<span data-ttu-id="3c5e1-118">アプリの販売を促進するために、Windows デバイスで実行中のアプリの画面を見せたい場合があります。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-118">To promote your app, you may want to show how it looks when running on a Windows device.</span></span> <span data-ttu-id="3c5e1-119">Microsoft では、電話、タブレット、ノート PC、PC など、さまざまなデバイス シャーシの画像を用意しており、その中から選んで使うことができます。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-119">We have a variety of device chassis images for you to select from, including phones, tablets, laptops and PCs.</span></span> <span data-ttu-id="3c5e1-120">これらの画像の使用方法に関するベスト プラクティスと技術仕様については、[Windows ストアのマーケティング ガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-120">Best practices and technical specifications for how to use these images can be found in the [Windows Store Marketing Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=529769).</span></span>
+<span data-ttu-id="3a667-112">[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) を使って、(好みの言語で) ストア バッジを表示しストアのアプリの内容ページに直接リンクする HTML を生成できます。</span><span class="sxs-lookup"><span data-stu-id="3a667-112">You can use our [badge generator](http://go.microsoft.com/fwlink/p/?LinkID=534236) to generate HTML that displays the Store badge (in the language of your choice) and links directly to your app's Store listing.</span></span>
 
-<span data-ttu-id="3c5e1-121">[![ダウンロード ボタン](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Windows デバイスの図**</span><span class="sxs-lookup"><span data-stu-id="3c5e1-121">[![Download button](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Windows device art**</span></span>
+<span data-ttu-id="3a667-113">バッジ画像のセット一式を (PNG および PDF 形式で) 以下のリンクからダウンロードすることもできます。</span><span class="sxs-lookup"><span data-stu-id="3a667-113">You can also download the complete set of badge images (in PNG and PDF format) from the link below.</span></span>
 
-## <a name="license-to-microsoft-marks"></a><span data-ttu-id="3c5e1-122">Microsoft マークのライセンス</span><span class="sxs-lookup"><span data-stu-id="3c5e1-122">License to Microsoft Marks</span></span>
+<span data-ttu-id="3a667-114">[![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) **すべてのバッジ画像**</span><span class="sxs-lookup"><span data-stu-id="3a667-114">[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) **All badge images**</span></span>
 
-<span data-ttu-id="3c5e1-123">*Microsoft マーク*とは、[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236)のページで説明するロゴ、*Microsoft バッジ*と *Windows ストア タイル*を意味します。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-123">*Microsoft Marks* means the *Microsoft badge* and the *Windows Store tile* described on the [badge generator](http://go.microsoft.com/fwlink/p/?LinkID=534236) page.</span></span> <span data-ttu-id="3c5e1-124">これらのバッジを使うには、以下の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-124">To use these badges, you must:</span></span>
 
--   <span data-ttu-id="3c5e1-125">アプリまたはその他のコンテンツを、Windows ストアで入手できるように設定するか、[Microsoft アフィリ エイト プログラム](http://go.microsoft.com/fwlink/p/?LinkId=624463) に登録する。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-125">Have your app or other content available in the Windows Store, or be part of the [Microsoft Affiliate Program](http://go.microsoft.com/fwlink/p/?LinkId=624463).</span></span>
+## <a name="device-images"></a><span data-ttu-id="3a667-115">デバイスの画像</span><span class="sxs-lookup"><span data-stu-id="3a667-115">Device images</span></span>
 
--   <span data-ttu-id="3c5e1-126">デベロッパー センターに登録している場合は、「アプリ開発者契約書」の「[Microsoft マークのライセンス](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx#license_to_mark)」セクションに準拠する。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-126">If you are registered with Dev Center, comply with the [“License to Microsoft Marks”](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx#license_to_mark) section of the App Developer Agreement.</span></span>
+<span data-ttu-id="3a667-116">アプリの販売を促進するために、Windows デバイスで実行中のアプリの画面を見せたい場合があります。</span><span class="sxs-lookup"><span data-stu-id="3a667-116">To promote your app, you may want to show how it looks when running on a Windows device.</span></span> <span data-ttu-id="3a667-117">Microsoft では、電話、タブレット、ノート PC、PC など、さまざまなデバイス シャーシの画像を用意しており、その中から選んで使うことができます。</span><span class="sxs-lookup"><span data-stu-id="3a667-117">We have a variety of device chassis images for you to select from, including phones, tablets, laptops and PCs.</span></span> <span data-ttu-id="3a667-118">ベスト プラクティスと仕様データ バインド画像を使用する方法については、 [Microsoft ストア マーケティング ガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769)に記載されてことができます。</span><span class="sxs-lookup"><span data-stu-id="3a667-118">Best practices and technical specifications for how to use these images can be found in the [Microsoft Store Marketing Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=529769).</span></span>
 
--   <span data-ttu-id="3c5e1-127">Windows デベロッパー センターに登録していない場合は、Windows ストアのマーケティング ガイドラインに記載されているように、バッジを使うための非独占的、譲渡不能、無償の全世界のライセンスがマイクロソフトから付与される。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-127">If you are not registered with Windows Dev Center, Microsoft grants you a worldwide, nonexclusive, nontransferable, royalty-free license to use the badges solely as described in the Windows Store Marketing Guidelines.</span></span> <span data-ttu-id="3c5e1-128">Microsoft は、これらのガイドラインを変更できるものとします。変更した場合、Microsoft は、これらの規定が投稿される新しい URL へ、適切な方法でお客様をリダイレクトします。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-128">Microsoft may change these guidelines, but if it does, Microsoft will use reasonable means to redirect you to any new URLs where these specifications are posted.</span></span> <span data-ttu-id="3c5e1-129">Microsoft は、本契約中明示的に付与されていない権利をすべて留保します。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-129">Microsoft reserves all rights not expressly granted herein.</span></span>
+<span data-ttu-id="3a667-119">[![ダウンロード ボタン](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Windows デバイスの図**</span><span class="sxs-lookup"><span data-stu-id="3a667-119">[![Download button](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Windows device art**</span></span>
 
--   <span data-ttu-id="3c5e1-130">「[Windows ストアのマーケティング ガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769)」で説明されているロゴの使用法に関する仕様に従う。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-130">Follow the logo usage specifications described in the [Windows Store Marketing Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=529769).</span></span>
+## <a name="license-to-microsoft-marks"></a><span data-ttu-id="3a667-120">Microsoft マークのライセンス</span><span class="sxs-lookup"><span data-stu-id="3a667-120">License to Microsoft Marks</span></span>
 
-<span data-ttu-id="3c5e1-131">Microsoft は、Microsoft マークおよび関連する営業権の唯一の所有者であり、お客様による Microsoft マークの使用に関する営業権の唯一の受益者です。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-131">Microsoft is the sole owner of the Microsoft Marks and associated goodwill, and the sole beneficiary of the goodwill associated with your use of the Microsoft Marks.</span></span> <span data-ttu-id="3c5e1-132">Microsoft は、その独自の裁量により、このライセンスをいつでも取り消すことができます。</span><span class="sxs-lookup"><span data-stu-id="3c5e1-132">Microsoft may revoke this license at any time and at its sole discretion.</span></span>
+<span data-ttu-id="3a667-121">*Microsoft マーク*は、[[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) ] ページで説明する*Microsoft バッジ*を意味します。</span><span class="sxs-lookup"><span data-stu-id="3a667-121">*Microsoft Marks* means the *Microsoft badge* described on the [badge generator](http://go.microsoft.com/fwlink/p/?LinkID=534236) page.</span></span> <span data-ttu-id="3a667-122">これらのバッジを使うには、以下の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="3a667-122">To use these badges, you must:</span></span>
+
+-   <span data-ttu-id="3a667-123">Microsoft ストアにアプリまたは他のコンテンツがあるまたは[関連企業の Microsoft プログラム](http://go.microsoft.com/fwlink/p/?LinkId=624463)の一部であります。</span><span class="sxs-lookup"><span data-stu-id="3a667-123">Have your app or other content available in the Microsoft Store, or be part of the [Microsoft Affiliate Program](http://go.microsoft.com/fwlink/p/?LinkId=624463).</span></span>
+
+-   <span data-ttu-id="3a667-124">デベロッパー センターに登録している場合は、「アプリ開発者契約書」の「[Microsoft マークのライセンス](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)」セクションに準拠する。</span><span class="sxs-lookup"><span data-stu-id="3a667-124">If you are registered with Dev Center, comply with the [“License to Microsoft Marks”](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark) section of the App Developer Agreement.</span></span>
+
+-   <span data-ttu-id="3a667-125">Windows デベロッパー センターに登録されていない場合は、Microsoft にバッジを Microsoft ストア バッジ ガイドラインで説明するようにのみ使用する世界中で、共有、譲渡、無料のライセンスが付与されます。</span><span class="sxs-lookup"><span data-stu-id="3a667-125">If you are not registered with Windows Dev Center, Microsoft grants you a worldwide, nonexclusive, nontransferable, royalty-free license to use the badges solely as described in the Microsoft Store Badge Guidelines.</span></span> <span data-ttu-id="3a667-126">Microsoft は、これらのガイドラインを変更できるものとします。変更した場合、Microsoft は、これらの規定が投稿される新しい URL へ、適切な方法でお客様をリダイレクトします。</span><span class="sxs-lookup"><span data-stu-id="3a667-126">Microsoft may change these guidelines, but if it does, Microsoft will use reasonable means to redirect you to any new URLs where these specifications are posted.</span></span> <span data-ttu-id="3a667-127">Microsoft は、本契約中明示的に付与されていない権利をすべて留保します。</span><span class="sxs-lookup"><span data-stu-id="3a667-127">Microsoft reserves all rights not expressly granted herein.</span></span>
+
+-   <span data-ttu-id="3a667-128">[Microsoft ストア バッジのガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769)にロゴの使用仕様に従います。</span><span class="sxs-lookup"><span data-stu-id="3a667-128">Follow the logo usage specifications described in the [Microsoft Store Badge Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=529769).</span></span>
+
+<span data-ttu-id="3a667-129">Microsoft は、Microsoft マークおよび関連する営業権の唯一の所有者であり、お客様による Microsoft マークの使用に関する営業権の唯一の受益者です。</span><span class="sxs-lookup"><span data-stu-id="3a667-129">Microsoft is the sole owner of the Microsoft Marks and associated goodwill, and the sole beneficiary of the goodwill associated with your use of the Microsoft Marks.</span></span> <span data-ttu-id="3a667-130">Microsoft は、その独自の裁量により、このライセンスをいつでも取り消すことができます。</span><span class="sxs-lookup"><span data-stu-id="3a667-130">Microsoft may revoke this license at any time and at its sole discretion.</span></span>
 
  
 

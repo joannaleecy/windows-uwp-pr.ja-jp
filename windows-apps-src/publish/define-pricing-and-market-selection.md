@@ -1,738 +1,741 @@
 ---
 author: jnHs
-Description: "Windows ストアは、世界中の 200 以上の国と地域のお客様が利用できます。"
-title: "市場の選択の定義"
+Description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
+title: 市場の選択の定義
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 06/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, 市場, 国, 地域"
-ms.openlocfilehash: 8cce339a57c60eadfb277893902c9e72afc1b4ae
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
-ms.translationtype: HT
+keywords: Windows 10, UWP, 市場, 国, 地域
+ms.localizationpriority: medium
+ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2801143"
 ---
-# <a name="define-market-selection"></a><span data-ttu-id="d7edb-104">市場の選択の定義</span><span class="sxs-lookup"><span data-stu-id="d7edb-104">Define market selection</span></span>
+# <a name="define-market-selection"></a><span data-ttu-id="72fca-103">市場の選択の定義</span><span class="sxs-lookup"><span data-stu-id="72fca-103">Define market selection</span></span>
 
 
-<span data-ttu-id="d7edb-105">Windows ストアは、世界中の 200 以上の国と地域のお客様が利用できます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-105">The Windows Store reaches customers in over 200 countries and regions around the world.</span></span> <span data-ttu-id="d7edb-106">アプリを提供する市場を選択して、市場ごとまたは市場のグループごとに、[価格と使用可能状況](set-app-pricing-and-availability.md)の多くの機能をカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-106">You can choose the markets in which you'd like to offer your app, with the option to customize many [pricing and availability](set-app-pricing-and-availability.md) features per market or per group of markets.</span></span>
+<span data-ttu-id="72fca-104">Microsoft Store は、世界中の 200 以上の国と地域のお客様が利用できます。</span><span class="sxs-lookup"><span data-stu-id="72fca-104">The Microsoft Store reaches customers in over 200 countries and regions around the world.</span></span> <span data-ttu-id="72fca-105">アプリを提供する市場を選択して、市場ごとまたは市場のグループごとに、[価格と使用可能状況](set-app-pricing-and-availability.md)の多くの機能をカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="72fca-105">You can choose the markets in which you'd like to offer your app, with the option to customize many [pricing and availability](set-app-pricing-and-availability.md) features per market or per group of markets.</span></span>
 
-<span data-ttu-id="d7edb-107">[アプリのグローバル化についてのガイドライン](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md)を必ず検討してください。</span><span class="sxs-lookup"><span data-stu-id="d7edb-107">Be sure to consider our [guidelines to help you globalize your app](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md).</span></span>
+<span data-ttu-id="72fca-106">世界中のお客様に適したアプリをするための情報] は、[グローバル化するためのガイドライン](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)と[ローカライズ可能なアプリをように](../design/globalizing/prepare-your-app-for-localization.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="72fca-106">For info to help make your app suitable for customers around the world, see [Guidelines for globalization](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) and [Make your app localizable](../design/globalizing/prepare-your-app-for-localization.md).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d7edb-108">このトピックはアプリについて説明していますが、アドオンの市場の選択にも同じプロセスを使います。</span><span class="sxs-lookup"><span data-stu-id="d7edb-108">Although this topic refers to apps, market selection for add-on submissions uses the same process.</span></span>
+> <span data-ttu-id="72fca-107">このトピックはアプリについて説明していますが、アドオンの市場の選択にも同じプロセスを使います。</span><span class="sxs-lookup"><span data-stu-id="72fca-107">Although this topic refers to apps, market selection for add-on submissions uses the same process.</span></span>
 
-## <a name="markets"></a><span data-ttu-id="d7edb-109">市場</span><span class="sxs-lookup"><span data-stu-id="d7edb-109">Markets</span></span>
+## <a name="markets"></a><span data-ttu-id="72fca-108">市場</span><span class="sxs-lookup"><span data-stu-id="72fca-108">Markets</span></span>
 
-<span data-ttu-id="d7edb-110">既定では、アプリは販売できるすべての市場 (今後追加される可能性のある市場も含む) にその基本価格で公開されます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-110">By default, we'll offer your app in all possible markets, including any future markets that we may add later, at its base price.</span></span>
+<span data-ttu-id="72fca-109">既定では、アプリは販売できるすべての市場 (今後追加される可能性のある市場も含む) にその基本価格で公開されます。</span><span class="sxs-lookup"><span data-stu-id="72fca-109">By default, we'll offer your app in all possible markets, including any future markets that we may add later, at its base price.</span></span>
 
-<span data-ttu-id="d7edb-111">必要に応じて、アプリを提供する特定の市場を定義することもできます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-111">If you prefer, you can define the specific markets in which you'd like to offer your app.</span></span> <span data-ttu-id="d7edb-112">これを行うには、**[価格と使用可能状況]** ページの **[市場]** セクションで **[オプションの表示]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="d7edb-112">To do so, select **Show options** in the **Markets** section on the **Pricing and availability** page.</span></span> <span data-ttu-id="d7edb-113">**[市場の選択]** ポップアップ ウィンドウが表示されます。ここで、アプリを提供する市場を選択できます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-113">This will display the **Market selection** popup window, where you can choose the markets in which to offer your app.</span></span>
+<span data-ttu-id="72fca-110">必要に応じて、アプリを提供する特定の市場を定義することもできます。</span><span class="sxs-lookup"><span data-stu-id="72fca-110">If you prefer, you can define the specific markets in which you'd like to offer your app.</span></span> <span data-ttu-id="72fca-111">これを行うには、**[価格と使用可能状況]** ページの **[市場]** セクションで **[オプションの表示]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="72fca-111">To do so, select **Show options** in the **Markets** section on the **Pricing and availability** page.</span></span> <span data-ttu-id="72fca-112">**[市場の選択]** ポップアップ ウィンドウが表示されます。ここで、アプリを提供する市場を選択できます。</span><span class="sxs-lookup"><span data-stu-id="72fca-112">This will display the **Market selection** popup window, where you can choose the markets in which to offer your app.</span></span>
 
-<span data-ttu-id="d7edb-114">既定では、すべての市場が選択されています。</span><span class="sxs-lookup"><span data-stu-id="d7edb-114">By default, all markets are selected.</span></span> <span data-ttu-id="d7edb-115">市場を 1 つずつ選択解除して除外するか、**[すべて選択解除]** をクリックしてから、必要な市場を 1 つずつ選んで追加できます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-115">You can unselect individual markets to exclude them, or you can click **Unselect all** and then add individual markets of your choice.</span></span> <span data-ttu-id="d7edb-116">検索バーで特定の市場を検索できます。また、ドロップダウンを **[すべての市場]** から **[Xbox の市場]** に変更すると、Xbox 向けの製品を販売できる市場だけを表示できます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-116">You can search for a particular market in the search bar, and you can also change the dropdown from **All markets** to **Xbox markets** if you only want to view the markets in which you can sell Xbox products.</span></span> <span data-ttu-id="d7edb-117">完了したら、**[OK]** をクリックして選択を保存します。</span><span class="sxs-lookup"><span data-stu-id="d7edb-117">Once you’ve finished, click **OK** to save your selections.</span></span>
+<span data-ttu-id="72fca-113">既定では、すべての市場が選択されています。</span><span class="sxs-lookup"><span data-stu-id="72fca-113">By default, all markets are selected.</span></span> <span data-ttu-id="72fca-114">市場を 1 つずつ選択解除して除外するか、**[すべて選択解除]** をクリックしてから、必要な市場を 1 つずつ選んで追加できます。</span><span class="sxs-lookup"><span data-stu-id="72fca-114">You can unselect individual markets to exclude them, or you can click **Unselect all** and then add individual markets of your choice.</span></span> <span data-ttu-id="72fca-115">検索バーで特定の市場を検索できます。また、ドロップダウンを **[すべての市場]** から **[Xbox の市場]** に変更すると、Xbox 向けの製品を販売できる市場だけを表示できます。</span><span class="sxs-lookup"><span data-stu-id="72fca-115">You can search for a particular market in the search bar, and you can also change the dropdown from **All markets** to **Xbox markets** if you only want to view the markets in which you can sell Xbox products.</span></span> <span data-ttu-id="72fca-116">完了したら、**[OK]** をクリックして選択を保存します。</span><span class="sxs-lookup"><span data-stu-id="72fca-116">Once you’ve finished, click **OK** to save your selections.</span></span>
 
-<span data-ttu-id="d7edb-118">ここで選択した設定は、新規にアプリを入手するユーザーにのみ適用されます。特定の市場でユーザーが既にアプリを入手している場合、後でその市場からアプリを削除しても、既にアプリを所有しているユーザーは引き続きアプリを使うことができます。ただし、今後提出される更新プログラムを受け取ることはできず、その市場で新規ユーザーがアプリを入手することもできません。</span><span class="sxs-lookup"><span data-stu-id="d7edb-118">Note that your selections here apply only to new acquisitions; if someone already has your app in a certain market, and you later remove that market, the people who already have the app in that market can continue to use it, but they won’t get the updates you submit, and no new customers in that market can get your app.</span></span>
+<span data-ttu-id="72fca-117">ここで選択した設定は、新規にアプリを入手するユーザーにのみ適用されます。特定の市場でユーザーが既にアプリを入手している場合、後でその市場からアプリを削除しても、既にアプリを所有しているユーザーは引き続きアプリを使うことができます。ただし、今後提出される更新プログラムを受け取ることはできず、その市場で新規ユーザーがアプリを入手することもできません。</span><span class="sxs-lookup"><span data-stu-id="72fca-117">Note that your selections here apply only to new acquisitions; if someone already has your app in a certain market, and you later remove that market, the people who already have the app in that market can continue to use it, but they won’t get the updates you submit, and no new customers in that market can get your app.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="d7edb-119">開発者には、それぞれの国または地域の法的要件をすべて満たす責任があります。これは、それらの要件がこのドキュメントや Windows デベロッパー センター ダッシュボードに記載されていなくても同様です。</span><span class="sxs-lookup"><span data-stu-id="d7edb-119">It is your responsibility to meet any local legal requirements, even if those requirements aren't listed here or in the Windows Dev Center dashboard.</span></span>
+> <span data-ttu-id="72fca-118">開発者には、それぞれの国または地域の法的要件をすべて満たす責任があります。これは、それらの要件がこのドキュメントや Windows デベロッパー センター ダッシュボードに記載されていなくても同様です。</span><span class="sxs-lookup"><span data-stu-id="72fca-118">It is your responsibility to meet any local legal requirements, even if those requirements aren't listed here or in the Windows Dev Center dashboard.</span></span>
 
-<span data-ttu-id="d7edb-120">すべての市場を選んだ場合でも、現地の法律、規制、またはその他の要因により、特定のアプリが一部の国と地域に公開されないことがあります。</span><span class="sxs-lookup"><span data-stu-id="d7edb-120">Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions.</span></span> <span data-ttu-id="d7edb-121">また、一部の市場には年齢区分に関する特定の要件が存在することがあります。</span><span class="sxs-lookup"><span data-stu-id="d7edb-121">Also, some markets may have specific requirements related to age ratings.</span></span> <span data-ttu-id="d7edb-122">アプリがこれらの要件を満たしていない場合、その市場でアプリを提供できなくなります。</span><span class="sxs-lookup"><span data-stu-id="d7edb-122">If your app doesn’t meet these requirements, we won't be able to offer your app in that market.</span></span> <span data-ttu-id="d7edb-123">詳しくは、「[年齢区分](age-ratings.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7edb-123">See [Age ratings](age-ratings.md) for more info.</span></span>
+<span data-ttu-id="72fca-119">すべての市場を選んだ場合でも、現地の法律、規制、またはその他の要因により、特定のアプリが一部の国と地域に公開されないことがあります。</span><span class="sxs-lookup"><span data-stu-id="72fca-119">Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions.</span></span> <span data-ttu-id="72fca-120">また、一部の市場には年齢区分に関する特定の要件が存在することがあります。</span><span class="sxs-lookup"><span data-stu-id="72fca-120">Also, some markets may have specific requirements related to age ratings.</span></span> <span data-ttu-id="72fca-121">アプリがこれらの要件を満たしていない場合、その市場でアプリを提供できなくなります。</span><span class="sxs-lookup"><span data-stu-id="72fca-121">If your app doesn’t meet these requirements, we won't be able to offer your app in that market.</span></span> <span data-ttu-id="72fca-122">詳しくは、「[年齢区分](age-ratings.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="72fca-122">See [Age ratings](age-ratings.md) for more info.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d7edb-124">Windows 8 または Windows 8.1 をターゲットとするアプリでは、いくつかの個別の市場が 1 つの "その他の国と地域" 市場として扱われます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-124">For apps targeting Windows 8 or Windows 8.1, some individual markets are treated as one single "Rest of World" market.</span></span> <span data-ttu-id="d7edb-125">詳しくは、「[Windows 8.x の "その他の国と地域" 市場](#rest-of-world-markets-for-windows-8x)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7edb-125">For more info, see ["Rest of World" markets for Windows 8.x](#rest-of-world-markets-for-windows-8x).</span></span>
+> <span data-ttu-id="72fca-123">Windows 8 または Windows 8.1 をターゲットとするアプリでは、いくつかの個別の市場が 1 つの "その他の国と地域" 市場として扱われます。</span><span class="sxs-lookup"><span data-stu-id="72fca-123">For apps targeting Windows 8 or Windows 8.1, some individual markets are treated as one single "Rest of World" market.</span></span> <span data-ttu-id="72fca-124">詳しくは、「[Windows 8.x の "その他の国と地域" 市場](#rest-of-world-markets-for-windows-8x)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="72fca-124">For more info, see ["Rest of World" markets for Windows 8.x](#rest-of-world-markets-for-windows-8x).</span></span>
 
-<span data-ttu-id="d7edb-126">また、今後ストアに追加される市場にアプリを提供するかどうかを指定するチェック ボックスも用意されています。</span><span class="sxs-lookup"><span data-stu-id="d7edb-126">You will also see a checkbox that lets you indicate whether to offer your app in any market that the Store may add in the future.</span></span> <span data-ttu-id="d7edb-127">このチェック ボックスをオンにしておくと、後で新しい市場が追加されたときに、申請時に指定したアプリの基本価格と一般公開日がそれらの市場で使われます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-127">If you leave this box checked, and we later add new markets, the base price and general availability date for your submission will be used for your app in those markets.</span></span> <span data-ttu-id="d7edb-128">これを避けるには、このチェック ボックスをオフにすると、今後追加される市場でアプリが公開されることはなくなります (後でいつでもアプリを追加できます)。</span><span class="sxs-lookup"><span data-stu-id="d7edb-128">If you don't want this to happen, you can uncheck this box, in which case we will not list your app in any future markets (though you can always add them later).</span></span>
+<span data-ttu-id="72fca-125">また、今後ストアに追加される市場にアプリを提供するかどうかを指定するチェック ボックスも用意されています。</span><span class="sxs-lookup"><span data-stu-id="72fca-125">You will also see a checkbox that lets you indicate whether to offer your app in any market that the Store may add in the future.</span></span> <span data-ttu-id="72fca-126">このチェック ボックスをオンにしておくと、後で新しい市場が追加されたときに、申請時に指定したアプリの基本価格と一般公開日がそれらの市場で使われます。</span><span class="sxs-lookup"><span data-stu-id="72fca-126">If you leave this box checked, and we later add new markets, the base price and general availability date for your submission will be used for your app in those markets.</span></span> <span data-ttu-id="72fca-127">これを避けるには、このチェック ボックスをオフにすると、今後追加される市場でアプリが公開されることはなくなります (後でいつでもアプリを追加できます)。</span><span class="sxs-lookup"><span data-stu-id="72fca-127">If you don't want this to happen, you can uncheck this box, in which case we will not list your app in any future markets (though you can always add them later).</span></span>
  
 
-## <a name="windows-store-consumer-markets"></a><span data-ttu-id="d7edb-129">Windows ストアのユーザー市場</span><span class="sxs-lookup"><span data-stu-id="d7edb-129">Windows Store consumer markets</span></span>
+## <a name="microsoft-store-consumer-markets"></a><span data-ttu-id="72fca-128">Microsoft ストア コンシューマー市場</span><span class="sxs-lookup"><span data-stu-id="72fca-128">Microsoft Store consumer markets</span></span>
 
+<span data-ttu-id="72fca-129">以下に挙げる市場の中から、アプリ (またはアドオン) を公開する市場を 1 つ以上選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="72fca-129">You can choose to list your app (or add-on) in one or more of the following markets.</span></span> <span data-ttu-id="72fca-130">アスタリスクのサポートは Xbox 1 つ上の Microsoft ストアとの市場**市場の選択**ポップアップ ウィンドウで、名前の横にある**Xbox**が表示されます。</span><span class="sxs-lookup"><span data-stu-id="72fca-130">The markets with an asterisk support the Microsoft Store on Xbox One; you'll see **Xbox** next to their names in the **Market selection** popup window.</span></span>
 
-<span data-ttu-id="d7edb-130">以下に挙げる市場の中から、アプリ (またはアドオン) を公開する市場を 1 つ以上選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-130">You can choose to list your app (or add-on) in one or more of the following markets.</span></span> <span data-ttu-id="d7edb-131">アスタリスクの付いている市場では Xbox のストアがサポートされ、**[市場の選択]** ポップアップ ウィンドウで、市場名の横に "**Xbox**" が表示されます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-131">The markets with an asterisk support the Store on Xbox; you'll see **Xbox** next to their names in the **Market selection** popup window.</span></span>
 
 <table>
+  
   <tr>
-    <td><span data-ttu-id="d7edb-132">アフガニスタン</span><span class="sxs-lookup"><span data-stu-id="d7edb-132">Afghanistan</span></span></td>
-    <td><span data-ttu-id="d7edb-133">アルバニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-133">Albania</span></span></td>
-    <td><span data-ttu-id="d7edb-134">アルジェリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-134">Algeria</span></span></td>
-    <td><span data-ttu-id="d7edb-135">米領サモア</span><span class="sxs-lookup"><span data-stu-id="d7edb-135">American Samoa</span></span></td>
+    <td><span data-ttu-id="72fca-131">アフガニスタン</span><span class="sxs-lookup"><span data-stu-id="72fca-131">Afghanistan</span></span></td>
+    <td><span data-ttu-id="72fca-132">オーランド諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-132">Åland Islands</span></span></td>
+    <td><span data-ttu-id="72fca-133">アルバニア</span><span class="sxs-lookup"><span data-stu-id="72fca-133">Albania</span></span></td>
+    <td><span data-ttu-id="72fca-134">アルジェリア</span><span class="sxs-lookup"><span data-stu-id="72fca-134">Algeria</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-136">アンドラ</span><span class="sxs-lookup"><span data-stu-id="d7edb-136">Andorra</span></span></td>
-    <td><span data-ttu-id="d7edb-137">アンゴラ</span><span class="sxs-lookup"><span data-stu-id="d7edb-137">Angola</span></span></td>
-    <td><span data-ttu-id="d7edb-138">アンギラ</span><span class="sxs-lookup"><span data-stu-id="d7edb-138">Anguilla</span></span></td>
-    <td><span data-ttu-id="d7edb-139">南極</span><span class="sxs-lookup"><span data-stu-id="d7edb-139">Antarctica</span></span></td>
+    <td><span data-ttu-id="72fca-135">米領サモア</span><span class="sxs-lookup"><span data-stu-id="72fca-135">American Samoa</span></span></td>
+    <td><span data-ttu-id="72fca-136">アンドラ</span><span class="sxs-lookup"><span data-stu-id="72fca-136">Andorra</span></span></td>
+    <td><span data-ttu-id="72fca-137">アンゴラ</span><span class="sxs-lookup"><span data-stu-id="72fca-137">Angola</span></span></td>
+    <td><span data-ttu-id="72fca-138">アンギラ</span><span class="sxs-lookup"><span data-stu-id="72fca-138">Anguilla</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-140">アンティグア・バーブーダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-140">Antigua and Barbuda</span></span></td>
-    <td><span data-ttu-id="d7edb-141">アルゼンチン</span><span class="sxs-lookup"><span data-stu-id="d7edb-141">Argentina</span></span></td>
-    <td><span data-ttu-id="d7edb-142">アルメニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-142">Armenia</span></span></td>
-    <td><span data-ttu-id="d7edb-143">アルバ</span><span class="sxs-lookup"><span data-stu-id="d7edb-143">Aruba</span></span></td>
+    <td><span data-ttu-id="72fca-139">南極</span><span class="sxs-lookup"><span data-stu-id="72fca-139">Antarctica</span></span></td>
+    <td><span data-ttu-id="72fca-140">アンティグア・バーブーダ</span><span class="sxs-lookup"><span data-stu-id="72fca-140">Antigua and Barbuda</span></span></td>
+    <td><span data-ttu-id="72fca-141">アルゼンチン</span><span class="sxs-lookup"><span data-stu-id="72fca-141">Argentina</span></span></td>
+    <td><span data-ttu-id="72fca-142">アルメニア</span><span class="sxs-lookup"><span data-stu-id="72fca-142">Armenia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-144">オーストラリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-144">Australia</span></span></td>
-    <td><span data-ttu-id="d7edb-145">オーストリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-145">Austria</span></span></td>
-    <td><span data-ttu-id="d7edb-146">アゼルバイジャン</span><span class="sxs-lookup"><span data-stu-id="d7edb-146">Azerbaijan</span></span></td>
-    <td><span data-ttu-id="d7edb-147">バハマ</span><span class="sxs-lookup"><span data-stu-id="d7edb-147">Bahamas</span></span></td>
+    <td><span data-ttu-id="72fca-143">アルバ</span><span class="sxs-lookup"><span data-stu-id="72fca-143">Aruba</span></span></td>
+    <td><span data-ttu-id="72fca-144">オーストラリア</span><span class="sxs-lookup"><span data-stu-id="72fca-144">Australia</span></span></td>
+    <td><span data-ttu-id="72fca-145">オーストリア</span><span class="sxs-lookup"><span data-stu-id="72fca-145">Austria</span></span></td>
+    <td><span data-ttu-id="72fca-146">アゼルバイジャン</span><span class="sxs-lookup"><span data-stu-id="72fca-146">Azerbaijan</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-148">バーレーン</span><span class="sxs-lookup"><span data-stu-id="d7edb-148">Bahrain</span></span></td>
-    <td><span data-ttu-id="d7edb-149">バングラデシュ</span><span class="sxs-lookup"><span data-stu-id="d7edb-149">Bangladesh</span></span></td>
-    <td><span data-ttu-id="d7edb-150">バルバドス</span><span class="sxs-lookup"><span data-stu-id="d7edb-150">Barbados</span></span></td>
-    <td><span data-ttu-id="d7edb-151">ベラルーシ</span><span class="sxs-lookup"><span data-stu-id="d7edb-151">Belarus</span></span></td>
+    <td><span data-ttu-id="72fca-147">バハマ</span><span class="sxs-lookup"><span data-stu-id="72fca-147">Bahamas</span></span></td>
+    <td><span data-ttu-id="72fca-148">バーレーン</span><span class="sxs-lookup"><span data-stu-id="72fca-148">Bahrain</span></span></td>
+    <td><span data-ttu-id="72fca-149">バングラデシュ</span><span class="sxs-lookup"><span data-stu-id="72fca-149">Bangladesh</span></span></td>
+    <td><span data-ttu-id="72fca-150">バルバドス</span><span class="sxs-lookup"><span data-stu-id="72fca-150">Barbados</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-152">ベルギー</span><span class="sxs-lookup"><span data-stu-id="d7edb-152">Belgium</span></span></td>
-    <td><span data-ttu-id="d7edb-153">ベリーズ</span><span class="sxs-lookup"><span data-stu-id="d7edb-153">Belize</span></span></td>
-    <td><span data-ttu-id="d7edb-154">ベナン</span><span class="sxs-lookup"><span data-stu-id="d7edb-154">Benin</span></span></td>
-    <td><span data-ttu-id="d7edb-155">バミューダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-155">Bermuda</span></span></td>
+    <td><span data-ttu-id="72fca-151">ベラルーシ</span><span class="sxs-lookup"><span data-stu-id="72fca-151">Belarus</span></span></td>
+    <td><span data-ttu-id="72fca-152">ベルギー</span><span class="sxs-lookup"><span data-stu-id="72fca-152">Belgium</span></span></td>
+    <td><span data-ttu-id="72fca-153">ベリーズ</span><span class="sxs-lookup"><span data-stu-id="72fca-153">Belize</span></span></td>
+    <td><span data-ttu-id="72fca-154">ベナン</span><span class="sxs-lookup"><span data-stu-id="72fca-154">Benin</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-156">ブータン</span><span class="sxs-lookup"><span data-stu-id="d7edb-156">Bhutan</span></span></td>
-    <td><span data-ttu-id="d7edb-157">ボリビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-157">Bolivia</span></span></td>
-    <td><span data-ttu-id="d7edb-158">ボネール島</span><span class="sxs-lookup"><span data-stu-id="d7edb-158">Bonaire</span></span></td>
-    <td><span data-ttu-id="d7edb-159">ボスニア・ヘルツェゴビナ</span><span class="sxs-lookup"><span data-stu-id="d7edb-159">Bosnia and Herzegovina</span></span></td>
+    <td><span data-ttu-id="72fca-155">バミューダ諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-155">Bermuda</span></span></td>
+    <td><span data-ttu-id="72fca-156">ブータン</span><span class="sxs-lookup"><span data-stu-id="72fca-156">Bhutan</span></span></td>
+    <td><span data-ttu-id="72fca-157">ボリビア</span><span class="sxs-lookup"><span data-stu-id="72fca-157">Bolivia</span></span></td>
+    <td><span data-ttu-id="72fca-158">ボネール島</span><span class="sxs-lookup"><span data-stu-id="72fca-158">Bonaire</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-160">ボツワナ</span><span class="sxs-lookup"><span data-stu-id="d7edb-160">Botswana</span></span></td>
-    <td><span data-ttu-id="d7edb-161">ブーベ島</span><span class="sxs-lookup"><span data-stu-id="d7edb-161">Bouvet Island</span></span></td>
-    <td><span data-ttu-id="d7edb-162">ブラジル</span><span class="sxs-lookup"><span data-stu-id="d7edb-162">Brazil</span></span></td>
-    <td><span data-ttu-id="d7edb-163">英領インド洋地域</span><span class="sxs-lookup"><span data-stu-id="d7edb-163">British Indian Ocean Territory</span></span></td>
+    <td><span data-ttu-id="72fca-159">ボスニア・ヘルツェゴビナ</span><span class="sxs-lookup"><span data-stu-id="72fca-159">Bosnia and Herzegovina</span></span></td>
+    <td><span data-ttu-id="72fca-160">ボツワナ</span><span class="sxs-lookup"><span data-stu-id="72fca-160">Botswana</span></span></td>
+    <td><span data-ttu-id="72fca-161">ブーベ島</span><span class="sxs-lookup"><span data-stu-id="72fca-161">Bouvet Island</span></span></td>
+    <td><span data-ttu-id="72fca-162">ブラジル</span><span class="sxs-lookup"><span data-stu-id="72fca-162">Brazil</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-164">英領バージン諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-164">British Virgin Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-165">ブルネイ</span><span class="sxs-lookup"><span data-stu-id="d7edb-165">Brunei</span></span></td>
-    <td><span data-ttu-id="d7edb-166">ブルガリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-166">Bulgaria</span></span></td>
-    <td><span data-ttu-id="d7edb-167">ブルキナファソ</span><span class="sxs-lookup"><span data-stu-id="d7edb-167">Burkina Faso</span></span></td>
+    <td><span data-ttu-id="72fca-163">英領インド洋地域</span><span class="sxs-lookup"><span data-stu-id="72fca-163">British Indian Ocean Territory</span></span></td>
+    <td><span data-ttu-id="72fca-164">英領バージン諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-164">British Virgin Islands</span></span></td>
+    <td><span data-ttu-id="72fca-165">ブルネイ</span><span class="sxs-lookup"><span data-stu-id="72fca-165">Brunei</span></span></td>
+    <td><span data-ttu-id="72fca-166">ブルガリア</span><span class="sxs-lookup"><span data-stu-id="72fca-166">Bulgaria</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-168">ブルンジ</span><span class="sxs-lookup"><span data-stu-id="d7edb-168">Burundi</span></span></td>
-    <td><span data-ttu-id="d7edb-169">カーボベルデ</span><span class="sxs-lookup"><span data-stu-id="d7edb-169">Cabo Verde</span></span></td>
-    <td><span data-ttu-id="d7edb-170">カンボジア</span><span class="sxs-lookup"><span data-stu-id="d7edb-170">Cambodia</span></span></td>
-    <td><span data-ttu-id="d7edb-171">カメルーン</span><span class="sxs-lookup"><span data-stu-id="d7edb-171">Cameroon</span></span></td>
+    <td><span data-ttu-id="72fca-167">ブルキナファソ</span><span class="sxs-lookup"><span data-stu-id="72fca-167">Burkina Faso</span></span></td>
+    <td><span data-ttu-id="72fca-168">ブルンジ</span><span class="sxs-lookup"><span data-stu-id="72fca-168">Burundi</span></span></td>
+    <td><span data-ttu-id="72fca-169">カーボベルデ</span><span class="sxs-lookup"><span data-stu-id="72fca-169">Cabo Verde</span></span></td>
+    <td><span data-ttu-id="72fca-170">カンボジア</span><span class="sxs-lookup"><span data-stu-id="72fca-170">Cambodia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-172">カナダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-172">Canada</span></span></td>
-    <td><span data-ttu-id="d7edb-173">ケイマン諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-173">Cayman Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-174">中央アフリカ共和国</span><span class="sxs-lookup"><span data-stu-id="d7edb-174">Central African Republic</span></span></td>
-    <td><span data-ttu-id="d7edb-175">チャド</span><span class="sxs-lookup"><span data-stu-id="d7edb-175">Chad</span></span></td>
+    <td><span data-ttu-id="72fca-171">カメルーン</span><span class="sxs-lookup"><span data-stu-id="72fca-171">Cameroon</span></span></td>
+    <td><span data-ttu-id="72fca-172">カナダ</span><span class="sxs-lookup"><span data-stu-id="72fca-172">Canada</span></span></td>
+    <td><span data-ttu-id="72fca-173">ケイマン諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-173">Cayman Islands</span></span></td>
+    <td><span data-ttu-id="72fca-174">中央アフリカ共和国</span><span class="sxs-lookup"><span data-stu-id="72fca-174">Central African Republic</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-176">チリ</span><span class="sxs-lookup"><span data-stu-id="d7edb-176">Chile</span></span></td>
-    <td><span data-ttu-id="d7edb-177">中国</span><span class="sxs-lookup"><span data-stu-id="d7edb-177">China</span></span></td>
-    <td><span data-ttu-id="d7edb-178">クリスマス島</span><span class="sxs-lookup"><span data-stu-id="d7edb-178">Christmas Island</span></span></td>
-    <td><span data-ttu-id="d7edb-179">ココス諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-179">Cocos (Keeling) Islands</span></span></td>
+    <td><span data-ttu-id="72fca-175">チャド</span><span class="sxs-lookup"><span data-stu-id="72fca-175">Chad</span></span></td>
+    <td><span data-ttu-id="72fca-176">チリ</span><span class="sxs-lookup"><span data-stu-id="72fca-176">Chile</span></span></td>
+    <td><span data-ttu-id="72fca-177">中国</span><span class="sxs-lookup"><span data-stu-id="72fca-177">China</span></span></td>
+    <td><span data-ttu-id="72fca-178">クリスマス島</span><span class="sxs-lookup"><span data-stu-id="72fca-178">Christmas Island</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-180">コロンビア *</span><span class="sxs-lookup"><span data-stu-id="d7edb-180">Colombia *</span></span></td>
-    <td><span data-ttu-id="d7edb-181">コモロ</span><span class="sxs-lookup"><span data-stu-id="d7edb-181">Comoros</span></span></td>
-    <td><span data-ttu-id="d7edb-182">コンゴ共和国</span><span class="sxs-lookup"><span data-stu-id="d7edb-182">Congo</span></span></td>
-    <td><span data-ttu-id="d7edb-183">コンゴ民主共和国</span><span class="sxs-lookup"><span data-stu-id="d7edb-183">Congo (DRC)</span></span></td>
+    <td><span data-ttu-id="72fca-179">ココス諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-179">Cocos (Keeling) Islands</span></span></td>
+    <td><span data-ttu-id="72fca-180">コロンビア \*</span><span class="sxs-lookup"><span data-stu-id="72fca-180">Colombia \*</span></span></td>
+    <td><span data-ttu-id="72fca-181">コモロ</span><span class="sxs-lookup"><span data-stu-id="72fca-181">Comoros</span></span></td>
+    <td><span data-ttu-id="72fca-182">コンゴ共和国</span><span class="sxs-lookup"><span data-stu-id="72fca-182">Congo</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-184">クック諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-184">Cook Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-185">コスタリカ</span><span class="sxs-lookup"><span data-stu-id="d7edb-185">Costa Rica</span></span></td>
-    <td><span data-ttu-id="d7edb-186">クロアチア</span><span class="sxs-lookup"><span data-stu-id="d7edb-186">Croatia</span></span></td>
-    <td><span data-ttu-id="d7edb-187">キュラソー島</span><span class="sxs-lookup"><span data-stu-id="d7edb-187">Curaçao</span></span></td>
+    <td><span data-ttu-id="72fca-183">コンゴ民主共和国</span><span class="sxs-lookup"><span data-stu-id="72fca-183">Congo (DRC)</span></span></td>
+    <td><span data-ttu-id="72fca-184">クック諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-184">Cook Islands</span></span></td>
+    <td><span data-ttu-id="72fca-185">コスタリカ</span><span class="sxs-lookup"><span data-stu-id="72fca-185">Costa Rica</span></span></td>
+    <td><span data-ttu-id="72fca-186">コートジボワール</span><span class="sxs-lookup"><span data-stu-id="72fca-186">Côte d’Ivoire</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-188">キプロス</span><span class="sxs-lookup"><span data-stu-id="d7edb-188">Cyprus</span></span></td>
-    <td><span data-ttu-id="d7edb-189">チェコ共和国 *</span><span class="sxs-lookup"><span data-stu-id="d7edb-189">Czech Republic *</span></span></td>
-    <td><span data-ttu-id="d7edb-190">コートジボワール</span><span class="sxs-lookup"><span data-stu-id="d7edb-190">Côte d’Ivoire</span></span></td>
-    <td><span data-ttu-id="d7edb-191">デンマーク *</span><span class="sxs-lookup"><span data-stu-id="d7edb-191">Denmark *</span></span></td>
+    <td><span data-ttu-id="72fca-187">クロアチア</span><span class="sxs-lookup"><span data-stu-id="72fca-187">Croatia</span></span></td>
+    <td><span data-ttu-id="72fca-188">キュラソー島</span><span class="sxs-lookup"><span data-stu-id="72fca-188">Curaçao</span></span></td>
+    <td><span data-ttu-id="72fca-189">キプロス</span><span class="sxs-lookup"><span data-stu-id="72fca-189">Cyprus</span></span></td>
+    <td><span data-ttu-id="72fca-190">チェコ共和国 \*</span><span class="sxs-lookup"><span data-stu-id="72fca-190">Czech Republic \*</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-192">ジブチ</span><span class="sxs-lookup"><span data-stu-id="d7edb-192">Djibouti</span></span></td>
-    <td><span data-ttu-id="d7edb-193">ドミニカ国</span><span class="sxs-lookup"><span data-stu-id="d7edb-193">Dominica</span></span></td>
-    <td><span data-ttu-id="d7edb-194">ドミニカ共和国</span><span class="sxs-lookup"><span data-stu-id="d7edb-194">Dominican Republic</span></span></td>
-    <td><span data-ttu-id="d7edb-195">エクアドル</span><span class="sxs-lookup"><span data-stu-id="d7edb-195">Ecuador</span></span></td>
+    <td><span data-ttu-id="72fca-191">デンマーク \*</span><span class="sxs-lookup"><span data-stu-id="72fca-191">Denmark \*</span></span></td>
+    <td><span data-ttu-id="72fca-192">ジブチ</span><span class="sxs-lookup"><span data-stu-id="72fca-192">Djibouti</span></span></td>
+    <td><span data-ttu-id="72fca-193">ドミニカ国</span><span class="sxs-lookup"><span data-stu-id="72fca-193">Dominica</span></span></td>
+    <td><span data-ttu-id="72fca-194">ドミニカ共和国</span><span class="sxs-lookup"><span data-stu-id="72fca-194">Dominican Republic</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-196">エジプト</span><span class="sxs-lookup"><span data-stu-id="d7edb-196">Egypt</span></span></td>
-    <td><span data-ttu-id="d7edb-197">エルサルバドル</span><span class="sxs-lookup"><span data-stu-id="d7edb-197">El Salvador</span></span></td>
-    <td><span data-ttu-id="d7edb-198">赤道ギニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-198">Equatorial Guinea</span></span></td>
-    <td><span data-ttu-id="d7edb-199">エリトリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-199">Eritrea</span></span></td>
+    <td><span data-ttu-id="72fca-195">エクアドル</span><span class="sxs-lookup"><span data-stu-id="72fca-195">Ecuador</span></span></td>
+    <td><span data-ttu-id="72fca-196">エジプト</span><span class="sxs-lookup"><span data-stu-id="72fca-196">Egypt</span></span></td>
+    <td><span data-ttu-id="72fca-197">エルサルバドル</span><span class="sxs-lookup"><span data-stu-id="72fca-197">El Salvador</span></span></td>
+    <td><span data-ttu-id="72fca-198">赤道ギニア</span><span class="sxs-lookup"><span data-stu-id="72fca-198">Equatorial Guinea</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-200">エストニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-200">Estonia</span></span></td>
-    <td><span data-ttu-id="d7edb-201">エチオピア</span><span class="sxs-lookup"><span data-stu-id="d7edb-201">Ethiopia</span></span></td>
-    <td><span data-ttu-id="d7edb-202">フォークランド諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-202">Falkland Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-203">フェロー諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-203">Faroe Islands</span></span></td>
+    <td><span data-ttu-id="72fca-199">エリトリア</span><span class="sxs-lookup"><span data-stu-id="72fca-199">Eritrea</span></span></td>
+    <td><span data-ttu-id="72fca-200">エストニア</span><span class="sxs-lookup"><span data-stu-id="72fca-200">Estonia</span></span></td>
+    <td><span data-ttu-id="72fca-201">エチオピア</span><span class="sxs-lookup"><span data-stu-id="72fca-201">Ethiopia</span></span></td>
+    <td><span data-ttu-id="72fca-202">フォークランド諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-202">Falkland Islands</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-204">フィジー</span><span class="sxs-lookup"><span data-stu-id="d7edb-204">Fiji</span></span></td>
-    <td><span data-ttu-id="d7edb-205">フィンランド *</span><span class="sxs-lookup"><span data-stu-id="d7edb-205">Finland *</span></span></td>
-    <td><span data-ttu-id="d7edb-206">フランス *</span><span class="sxs-lookup"><span data-stu-id="d7edb-206">France *</span></span></td>
-    <td><span data-ttu-id="d7edb-207">フランス領ギアナ</span><span class="sxs-lookup"><span data-stu-id="d7edb-207">French Guiana</span></span></td>
+    <td><span data-ttu-id="72fca-203">フェロー諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-203">Faroe Islands</span></span></td>
+    <td><span data-ttu-id="72fca-204">フィジー</span><span class="sxs-lookup"><span data-stu-id="72fca-204">Fiji</span></span></td>
+    <td><span data-ttu-id="72fca-205">フィンランド \*</span><span class="sxs-lookup"><span data-stu-id="72fca-205">Finland \*</span></span></td>
+    <td><span data-ttu-id="72fca-206">フランス \*</span><span class="sxs-lookup"><span data-stu-id="72fca-206">France \*</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-208">フランス領ポリネシア</span><span class="sxs-lookup"><span data-stu-id="d7edb-208">French Polynesia</span></span></td>
-    <td><span data-ttu-id="d7edb-209">フランス領南極地方</span><span class="sxs-lookup"><span data-stu-id="d7edb-209">French Southern and Antarctic Lands</span></span></td>
-    <td><span data-ttu-id="d7edb-210">ガボン</span><span class="sxs-lookup"><span data-stu-id="d7edb-210">Gabon</span></span></td>
-    <td><span data-ttu-id="d7edb-211">ガンビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-211">Gambia</span></span></td>
+    <td><span data-ttu-id="72fca-207">フランス領ギアナ</span><span class="sxs-lookup"><span data-stu-id="72fca-207">French Guiana</span></span></td>
+    <td><span data-ttu-id="72fca-208">フランス領ポリネシア</span><span class="sxs-lookup"><span data-stu-id="72fca-208">French Polynesia</span></span></td>
+    <td><span data-ttu-id="72fca-209">フランス領南極地方</span><span class="sxs-lookup"><span data-stu-id="72fca-209">French Southern and Antarctic Lands</span></span></td>
+    <td><span data-ttu-id="72fca-210">ガボン</span><span class="sxs-lookup"><span data-stu-id="72fca-210">Gabon</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-212">ジョージア</span><span class="sxs-lookup"><span data-stu-id="d7edb-212">Georgia</span></span></td>
-    <td><span data-ttu-id="d7edb-213">ドイツ *</span><span class="sxs-lookup"><span data-stu-id="d7edb-213">Germany *</span></span></td>
-    <td><span data-ttu-id="d7edb-214">ガーナ</span><span class="sxs-lookup"><span data-stu-id="d7edb-214">Ghana</span></span></td>
-    <td><span data-ttu-id="d7edb-215">ジブラルタル</span><span class="sxs-lookup"><span data-stu-id="d7edb-215">Gibraltar</span></span></td>
+    <td><span data-ttu-id="72fca-211">ガンビア</span><span class="sxs-lookup"><span data-stu-id="72fca-211">Gambia</span></span></td>
+    <td><span data-ttu-id="72fca-212">ジョージア</span><span class="sxs-lookup"><span data-stu-id="72fca-212">Georgia</span></span></td>
+    <td><span data-ttu-id="72fca-213">ドイツ \*</span><span class="sxs-lookup"><span data-stu-id="72fca-213">Germany \*</span></span></td>
+    <td><span data-ttu-id="72fca-214">ガーナ</span><span class="sxs-lookup"><span data-stu-id="72fca-214">Ghana</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-216">ギリシャ *</span><span class="sxs-lookup"><span data-stu-id="d7edb-216">Greece *</span></span></td>
-    <td><span data-ttu-id="d7edb-217">グリーンランド</span><span class="sxs-lookup"><span data-stu-id="d7edb-217">Greenland</span></span></td>
-    <td><span data-ttu-id="d7edb-218">グレナダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-218">Grenada</span></span></td>
-    <td><span data-ttu-id="d7edb-219">グアドループ</span><span class="sxs-lookup"><span data-stu-id="d7edb-219">Guadeloupe</span></span></td>
+    <td><span data-ttu-id="72fca-215">ジブラルタル</span><span class="sxs-lookup"><span data-stu-id="72fca-215">Gibraltar</span></span></td>
+    <td><span data-ttu-id="72fca-216">ギリシャ \*</span><span class="sxs-lookup"><span data-stu-id="72fca-216">Greece \*</span></span></td>
+    <td><span data-ttu-id="72fca-217">グリーンランド</span><span class="sxs-lookup"><span data-stu-id="72fca-217">Greenland</span></span></td>
+    <td><span data-ttu-id="72fca-218">グレナダ</span><span class="sxs-lookup"><span data-stu-id="72fca-218">Grenada</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-220">グアム</span><span class="sxs-lookup"><span data-stu-id="d7edb-220">Guam</span></span></td>
-    <td><span data-ttu-id="d7edb-221">グアテマラ</span><span class="sxs-lookup"><span data-stu-id="d7edb-221">Guatemala</span></span></td>
-    <td><span data-ttu-id="d7edb-222">ガーンジー島</span><span class="sxs-lookup"><span data-stu-id="d7edb-222">Guernsey</span></span></td>
-    <td><span data-ttu-id="d7edb-223">ギニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-223">Guinea</span></span></td>
+    <td><span data-ttu-id="72fca-219">グアドループ</span><span class="sxs-lookup"><span data-stu-id="72fca-219">Guadeloupe</span></span></td>
+    <td><span data-ttu-id="72fca-220">グアム</span><span class="sxs-lookup"><span data-stu-id="72fca-220">Guam</span></span></td>
+    <td><span data-ttu-id="72fca-221">グアテマラ</span><span class="sxs-lookup"><span data-stu-id="72fca-221">Guatemala</span></span></td>
+    <td><span data-ttu-id="72fca-222">ガーンジー島</span><span class="sxs-lookup"><span data-stu-id="72fca-222">Guernsey</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-224">ギニアビサウ</span><span class="sxs-lookup"><span data-stu-id="d7edb-224">Guinea-Bissau</span></span></td>
-    <td><span data-ttu-id="d7edb-225">ガイアナ</span><span class="sxs-lookup"><span data-stu-id="d7edb-225">Guyana</span></span></td>
-    <td><span data-ttu-id="d7edb-226">ハイチ</span><span class="sxs-lookup"><span data-stu-id="d7edb-226">Haiti</span></span></td>
-    <td><span data-ttu-id="d7edb-227">ハード・マクドナルド諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-227">Heard Island and McDonald Islands</span></span></td>
+    <td><span data-ttu-id="72fca-223">ギニア</span><span class="sxs-lookup"><span data-stu-id="72fca-223">Guinea</span></span></td>
+    <td><span data-ttu-id="72fca-224">ギニアビサウ</span><span class="sxs-lookup"><span data-stu-id="72fca-224">Guinea-Bissau</span></span></td>
+    <td><span data-ttu-id="72fca-225">ガイアナ</span><span class="sxs-lookup"><span data-stu-id="72fca-225">Guyana</span></span></td>
+    <td><span data-ttu-id="72fca-226">ハイチ</span><span class="sxs-lookup"><span data-stu-id="72fca-226">Haiti</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-228">ホンジュラス</span><span class="sxs-lookup"><span data-stu-id="d7edb-228">Honduras</span></span></td>
-    <td><span data-ttu-id="d7edb-229">香港特別行政区 *</span><span class="sxs-lookup"><span data-stu-id="d7edb-229">Hong Kong SAR *</span></span></td>
-    <td><span data-ttu-id="d7edb-230">ハンガリー *</span><span class="sxs-lookup"><span data-stu-id="d7edb-230">Hungary *</span></span></td>
-    <td><span data-ttu-id="d7edb-231">アイスランド</span><span class="sxs-lookup"><span data-stu-id="d7edb-231">Iceland</span></span></td>
+    <td><span data-ttu-id="72fca-227">ハード・マクドナルド諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-227">Heard Island and McDonald Islands</span></span></td>
+    <td><span data-ttu-id="72fca-228">ホンジュラス</span><span class="sxs-lookup"><span data-stu-id="72fca-228">Honduras</span></span></td>
+    <td><span data-ttu-id="72fca-229">香港特別行政区 \*</span><span class="sxs-lookup"><span data-stu-id="72fca-229">Hong Kong SAR \*</span></span></td>
+    <td><span data-ttu-id="72fca-230">ハンガリー \*</span><span class="sxs-lookup"><span data-stu-id="72fca-230">Hungary \*</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-232">インド *</span><span class="sxs-lookup"><span data-stu-id="d7edb-232">India *</span></span></td>
-    <td><span data-ttu-id="d7edb-233">インドネシア</span><span class="sxs-lookup"><span data-stu-id="d7edb-233">Indonesia</span></span></td>
-    <td><span data-ttu-id="d7edb-234">イラク</span><span class="sxs-lookup"><span data-stu-id="d7edb-234">Iraq</span></span></td>
-    <td><span data-ttu-id="d7edb-235">アイルランド *</span><span class="sxs-lookup"><span data-stu-id="d7edb-235">Ireland *</span></span></td>
+    <td><span data-ttu-id="72fca-231">アイスランド</span><span class="sxs-lookup"><span data-stu-id="72fca-231">Iceland</span></span></td>
+    <td><span data-ttu-id="72fca-232">インド \*</span><span class="sxs-lookup"><span data-stu-id="72fca-232">India \*</span></span></td>
+    <td><span data-ttu-id="72fca-233">インドネシア</span><span class="sxs-lookup"><span data-stu-id="72fca-233">Indonesia</span></span></td>
+    <td><span data-ttu-id="72fca-234">イラク</span><span class="sxs-lookup"><span data-stu-id="72fca-234">Iraq</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-236">マン島</span><span class="sxs-lookup"><span data-stu-id="d7edb-236">Isle of Man</span></span></td>
-    <td><span data-ttu-id="d7edb-237">イスラエル *</span><span class="sxs-lookup"><span data-stu-id="d7edb-237">Israel *</span></span></td>
-    <td><span data-ttu-id="d7edb-238">イタリア *</span><span class="sxs-lookup"><span data-stu-id="d7edb-238">Italy *</span></span></td>
-    <td><span data-ttu-id="d7edb-239">ジャマイカ</span><span class="sxs-lookup"><span data-stu-id="d7edb-239">Jamaica</span></span></td>
+    <td><span data-ttu-id="72fca-235">アイルランド \*</span><span class="sxs-lookup"><span data-stu-id="72fca-235">Ireland \*</span></span></td>
+    <td><span data-ttu-id="72fca-236">マン島</span><span class="sxs-lookup"><span data-stu-id="72fca-236">Isle of Man</span></span></td>
+    <td><span data-ttu-id="72fca-237">イスラエル \*</span><span class="sxs-lookup"><span data-stu-id="72fca-237">Israel \*</span></span></td>
+    <td><span data-ttu-id="72fca-238">イタリア \*</span><span class="sxs-lookup"><span data-stu-id="72fca-238">Italy \*</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-240">日本 *</span><span class="sxs-lookup"><span data-stu-id="d7edb-240">Japan *</span></span></td>
-    <td><span data-ttu-id="d7edb-241">ジャージー島</span><span class="sxs-lookup"><span data-stu-id="d7edb-241">Jersey</span></span></td>
-    <td><span data-ttu-id="d7edb-242">ヨルダン</span><span class="sxs-lookup"><span data-stu-id="d7edb-242">Jordan</span></span></td>
-    <td><span data-ttu-id="d7edb-243">カザフスタン</span><span class="sxs-lookup"><span data-stu-id="d7edb-243">Kazakhstan</span></span></td>
+    <td><span data-ttu-id="72fca-239">ジャマイカ</span><span class="sxs-lookup"><span data-stu-id="72fca-239">Jamaica</span></span></td>
+    <td><span data-ttu-id="72fca-240">日本 \*</span><span class="sxs-lookup"><span data-stu-id="72fca-240">Japan \*</span></span></td>
+    <td><span data-ttu-id="72fca-241">ジャージー島</span><span class="sxs-lookup"><span data-stu-id="72fca-241">Jersey</span></span></td>
+    <td><span data-ttu-id="72fca-242">ヨルダン</span><span class="sxs-lookup"><span data-stu-id="72fca-242">Jordan</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-244">ケニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-244">Kenya</span></span></td>
-    <td><span data-ttu-id="d7edb-245">キリバス</span><span class="sxs-lookup"><span data-stu-id="d7edb-245">Kiribati</span></span></td>
-    <td><span data-ttu-id="d7edb-246">韓国 *</span><span class="sxs-lookup"><span data-stu-id="d7edb-246">Korea *</span></span></td>
-    <td><span data-ttu-id="d7edb-247">キルギス</span><span class="sxs-lookup"><span data-stu-id="d7edb-247">Kyrgyzstan</span></span></td>
+    <td><span data-ttu-id="72fca-243">カザフスタン</span><span class="sxs-lookup"><span data-stu-id="72fca-243">Kazakhstan</span></span></td>
+    <td><span data-ttu-id="72fca-244">ケニア</span><span class="sxs-lookup"><span data-stu-id="72fca-244">Kenya</span></span></td>
+    <td><span data-ttu-id="72fca-245">キリバス</span><span class="sxs-lookup"><span data-stu-id="72fca-245">Kiribati</span></span></td>
+    <td><span data-ttu-id="72fca-246">韓国 \*</span><span class="sxs-lookup"><span data-stu-id="72fca-246">Korea \*</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-248">クウェート</span><span class="sxs-lookup"><span data-stu-id="d7edb-248">Kuwait</span></span></td>
-    <td><span data-ttu-id="d7edb-249">ラオス</span><span class="sxs-lookup"><span data-stu-id="d7edb-249">Laos</span></span></td>
-    <td><span data-ttu-id="d7edb-250">ラトビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-250">Latvia</span></span></td>
-    <td><span data-ttu-id="d7edb-251">レバノン</span><span class="sxs-lookup"><span data-stu-id="d7edb-251">Lebanon</span></span></td>
+    <td><span data-ttu-id="72fca-247">クウェート</span><span class="sxs-lookup"><span data-stu-id="72fca-247">Kuwait</span></span></td>
+    <td><span data-ttu-id="72fca-248">キルギス</span><span class="sxs-lookup"><span data-stu-id="72fca-248">Kyrgyzstan</span></span></td>
+    <td><span data-ttu-id="72fca-249">ラオス</span><span class="sxs-lookup"><span data-stu-id="72fca-249">Laos</span></span></td>
+    <td><span data-ttu-id="72fca-250">ラトビア</span><span class="sxs-lookup"><span data-stu-id="72fca-250">Latvia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-252">レソト</span><span class="sxs-lookup"><span data-stu-id="d7edb-252">Lesotho</span></span></td>
-    <td><span data-ttu-id="d7edb-253">リベリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-253">Liberia</span></span></td>
-    <td><span data-ttu-id="d7edb-254">リビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-254">Libya</span></span></td>
-    <td><span data-ttu-id="d7edb-255">リヒテンシュタイン</span><span class="sxs-lookup"><span data-stu-id="d7edb-255">Liechtenstein</span></span></td>
+    <td><span data-ttu-id="72fca-251">レバノン</span><span class="sxs-lookup"><span data-stu-id="72fca-251">Lebanon</span></span></td>
+    <td><span data-ttu-id="72fca-252">レソト</span><span class="sxs-lookup"><span data-stu-id="72fca-252">Lesotho</span></span></td>
+    <td><span data-ttu-id="72fca-253">リベリア</span><span class="sxs-lookup"><span data-stu-id="72fca-253">Liberia</span></span></td>
+    <td><span data-ttu-id="72fca-254">リビア</span><span class="sxs-lookup"><span data-stu-id="72fca-254">Libya</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-256">リトアニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-256">Lithuania</span></span></td>
-    <td><span data-ttu-id="d7edb-257">ルクセンブルク</span><span class="sxs-lookup"><span data-stu-id="d7edb-257">Luxembourg</span></span></td>
-    <td><span data-ttu-id="d7edb-258">マカオ</span><span class="sxs-lookup"><span data-stu-id="d7edb-258">Macao SAR</span></span></td>
-    <td><span data-ttu-id="d7edb-259">マケドニア (旧ユーゴスラビア共和国)</span><span class="sxs-lookup"><span data-stu-id="d7edb-259">Macedonia, FYRO</span></span></td>
+    <td><span data-ttu-id="72fca-255">リヒテンシュタイン</span><span class="sxs-lookup"><span data-stu-id="72fca-255">Liechtenstein</span></span></td>
+    <td><span data-ttu-id="72fca-256">リトアニア</span><span class="sxs-lookup"><span data-stu-id="72fca-256">Lithuania</span></span></td>
+    <td><span data-ttu-id="72fca-257">ルクセンブルク</span><span class="sxs-lookup"><span data-stu-id="72fca-257">Luxembourg</span></span></td>
+    <td><span data-ttu-id="72fca-258">マカオ</span><span class="sxs-lookup"><span data-stu-id="72fca-258">Macao SAR</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-260">マダガスカル</span><span class="sxs-lookup"><span data-stu-id="d7edb-260">Madagascar</span></span></td>
-    <td><span data-ttu-id="d7edb-261">マラウイ</span><span class="sxs-lookup"><span data-stu-id="d7edb-261">Malawi</span></span></td>
-    <td><span data-ttu-id="d7edb-262">マレーシア</span><span class="sxs-lookup"><span data-stu-id="d7edb-262">Malaysia</span></span></td>
-    <td><span data-ttu-id="d7edb-263">モルディブ</span><span class="sxs-lookup"><span data-stu-id="d7edb-263">Maldives</span></span></td>
+    <td><span data-ttu-id="72fca-259">マケドニア (旧ユーゴスラビア共和国)</span><span class="sxs-lookup"><span data-stu-id="72fca-259">Macedonia, FYRO</span></span></td>
+    <td><span data-ttu-id="72fca-260">マダガスカル</span><span class="sxs-lookup"><span data-stu-id="72fca-260">Madagascar</span></span></td>
+    <td><span data-ttu-id="72fca-261">マラウイ</span><span class="sxs-lookup"><span data-stu-id="72fca-261">Malawi</span></span></td>
+    <td><span data-ttu-id="72fca-262">マレーシア</span><span class="sxs-lookup"><span data-stu-id="72fca-262">Malaysia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-264">マリ</span><span class="sxs-lookup"><span data-stu-id="d7edb-264">Mali</span></span></td>
-    <td><span data-ttu-id="d7edb-265">マルタ</span><span class="sxs-lookup"><span data-stu-id="d7edb-265">Malta</span></span></td>
-    <td><span data-ttu-id="d7edb-266">マーシャル諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-266">Marshall Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-267">マルチニーク島</span><span class="sxs-lookup"><span data-stu-id="d7edb-267">Martinique</span></span></td>
+    <td><span data-ttu-id="72fca-263">モルディブ</span><span class="sxs-lookup"><span data-stu-id="72fca-263">Maldives</span></span></td>
+    <td><span data-ttu-id="72fca-264">マリ</span><span class="sxs-lookup"><span data-stu-id="72fca-264">Mali</span></span></td>
+    <td><span data-ttu-id="72fca-265">マルタ</span><span class="sxs-lookup"><span data-stu-id="72fca-265">Malta</span></span></td>
+    <td><span data-ttu-id="72fca-266">マーシャル諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-266">Marshall Islands</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-268">モーリタニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-268">Mauritania</span></span></td>
-    <td><span data-ttu-id="d7edb-269">モーリシャス</span><span class="sxs-lookup"><span data-stu-id="d7edb-269">Mauritius</span></span></td>
-    <td><span data-ttu-id="d7edb-270">マイヨット島</span><span class="sxs-lookup"><span data-stu-id="d7edb-270">Mayotte</span></span></td>
-    <td><span data-ttu-id="d7edb-271">メキシコ *</span><span class="sxs-lookup"><span data-stu-id="d7edb-271">Mexico *</span></span></td>
+    <td><span data-ttu-id="72fca-267">マルチニーク島</span><span class="sxs-lookup"><span data-stu-id="72fca-267">Martinique</span></span></td>
+    <td><span data-ttu-id="72fca-268">モーリタニア</span><span class="sxs-lookup"><span data-stu-id="72fca-268">Mauritania</span></span></td>
+    <td><span data-ttu-id="72fca-269">モーリシャス</span><span class="sxs-lookup"><span data-stu-id="72fca-269">Mauritius</span></span></td>
+    <td><span data-ttu-id="72fca-270">マイヨット島</span><span class="sxs-lookup"><span data-stu-id="72fca-270">Mayotte</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-272">ミクロネシア</span><span class="sxs-lookup"><span data-stu-id="d7edb-272">Micronesia</span></span></td>
-    <td><span data-ttu-id="d7edb-273">モルドバ</span><span class="sxs-lookup"><span data-stu-id="d7edb-273">Moldova</span></span></td>
-    <td><span data-ttu-id="d7edb-274">モナコ</span><span class="sxs-lookup"><span data-stu-id="d7edb-274">Monaco</span></span></td>
-    <td><span data-ttu-id="d7edb-275">モンゴル国</span><span class="sxs-lookup"><span data-stu-id="d7edb-275">Mongolia</span></span></td>
+    <td><span data-ttu-id="72fca-271">メキシコ \*</span><span class="sxs-lookup"><span data-stu-id="72fca-271">Mexico \*</span></span></td>
+    <td><span data-ttu-id="72fca-272">ミクロネシア</span><span class="sxs-lookup"><span data-stu-id="72fca-272">Micronesia</span></span></td>
+    <td><span data-ttu-id="72fca-273">モルドバ</span><span class="sxs-lookup"><span data-stu-id="72fca-273">Moldova</span></span></td>
+    <td><span data-ttu-id="72fca-274">モナコ</span><span class="sxs-lookup"><span data-stu-id="72fca-274">Monaco</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-276">モンテネグロ</span><span class="sxs-lookup"><span data-stu-id="d7edb-276">Montenegro</span></span></td>
-    <td><span data-ttu-id="d7edb-277">モンセラット</span><span class="sxs-lookup"><span data-stu-id="d7edb-277">Montserrat</span></span></td>
-    <td><span data-ttu-id="d7edb-278">モロッコ</span><span class="sxs-lookup"><span data-stu-id="d7edb-278">Morocco</span></span></td>
-    <td><span data-ttu-id="d7edb-279">モザンビーク</span><span class="sxs-lookup"><span data-stu-id="d7edb-279">Mozambique</span></span></td>
+    <td><span data-ttu-id="72fca-275">モンゴル</span><span class="sxs-lookup"><span data-stu-id="72fca-275">Mongolia</span></span></td>
+    <td><span data-ttu-id="72fca-276">モンテネグロ</span><span class="sxs-lookup"><span data-stu-id="72fca-276">Montenegro</span></span></td>
+    <td><span data-ttu-id="72fca-277">モンセラット</span><span class="sxs-lookup"><span data-stu-id="72fca-277">Montserrat</span></span></td>
+    <td><span data-ttu-id="72fca-278">モロッコ</span><span class="sxs-lookup"><span data-stu-id="72fca-278">Morocco</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-280">ミャンマー</span><span class="sxs-lookup"><span data-stu-id="d7edb-280">Myanmar</span></span></td>
-    <td><span data-ttu-id="d7edb-281">ナミビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-281">Namibia</span></span></td>
-    <td><span data-ttu-id="d7edb-282">ナウル</span><span class="sxs-lookup"><span data-stu-id="d7edb-282">Nauru</span></span></td>
-    <td><span data-ttu-id="d7edb-283">ネパール</span><span class="sxs-lookup"><span data-stu-id="d7edb-283">Nepal</span></span></td>
+    <td><span data-ttu-id="72fca-279">モザンビーク</span><span class="sxs-lookup"><span data-stu-id="72fca-279">Mozambique</span></span></td>
+    <td><span data-ttu-id="72fca-280">ミャンマー</span><span class="sxs-lookup"><span data-stu-id="72fca-280">Myanmar</span></span></td>
+    <td><span data-ttu-id="72fca-281">ナミビア</span><span class="sxs-lookup"><span data-stu-id="72fca-281">Namibia</span></span></td>
+    <td><span data-ttu-id="72fca-282">ナウル</span><span class="sxs-lookup"><span data-stu-id="72fca-282">Nauru</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-284">オランダ *</span><span class="sxs-lookup"><span data-stu-id="d7edb-284">Netherlands *</span></span></td>
-    <td><span data-ttu-id="d7edb-285">ニューカレドニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-285">New Caledonia</span></span></td>
-    <td><span data-ttu-id="d7edb-286">ニュージーランド *</span><span class="sxs-lookup"><span data-stu-id="d7edb-286">New Zealand *</span></span></td>
-    <td><span data-ttu-id="d7edb-287">ニカラグア</span><span class="sxs-lookup"><span data-stu-id="d7edb-287">Nicaragua</span></span></td>
+    <td><span data-ttu-id="72fca-283">ネパール</span><span class="sxs-lookup"><span data-stu-id="72fca-283">Nepal</span></span></td>
+    <td><span data-ttu-id="72fca-284">オランダ \*</span><span class="sxs-lookup"><span data-stu-id="72fca-284">Netherlands \*</span></span></td>
+    <td><span data-ttu-id="72fca-285">ニューカレドニア</span><span class="sxs-lookup"><span data-stu-id="72fca-285">New Caledonia</span></span></td>
+    <td><span data-ttu-id="72fca-286">ニュージーランド \*</span><span class="sxs-lookup"><span data-stu-id="72fca-286">New Zealand \*</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-288">ニジェール</span><span class="sxs-lookup"><span data-stu-id="d7edb-288">Niger</span></span></td>
-    <td><span data-ttu-id="d7edb-289">ナイジェリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-289">Nigeria</span></span></td>
-    <td><span data-ttu-id="d7edb-290">ニウエ</span><span class="sxs-lookup"><span data-stu-id="d7edb-290">Niue</span></span></td>
-    <td><span data-ttu-id="d7edb-291">ノーフォーク島</span><span class="sxs-lookup"><span data-stu-id="d7edb-291">Norfolk Island</span></span></td>
+    <td><span data-ttu-id="72fca-287">ニカラグア</span><span class="sxs-lookup"><span data-stu-id="72fca-287">Nicaragua</span></span></td>
+    <td><span data-ttu-id="72fca-288">ニジェール</span><span class="sxs-lookup"><span data-stu-id="72fca-288">Niger</span></span></td>
+    <td><span data-ttu-id="72fca-289">ナイジェリア</span><span class="sxs-lookup"><span data-stu-id="72fca-289">Nigeria</span></span></td>
+    <td><span data-ttu-id="72fca-290">ニウエ</span><span class="sxs-lookup"><span data-stu-id="72fca-290">Niue</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-292">北マリアナ諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-292">Northern Mariana Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-293">ノルウェー *</span><span class="sxs-lookup"><span data-stu-id="d7edb-293">Norway *</span></span></td>
-    <td><span data-ttu-id="d7edb-294">オマーン</span><span class="sxs-lookup"><span data-stu-id="d7edb-294">Oman</span></span></td>
-    <td><span data-ttu-id="d7edb-295">パキスタン</span><span class="sxs-lookup"><span data-stu-id="d7edb-295">Pakistan</span></span></td>
+    <td><span data-ttu-id="72fca-291">ノーフォーク島</span><span class="sxs-lookup"><span data-stu-id="72fca-291">Norfolk Island</span></span></td>
+    <td><span data-ttu-id="72fca-292">北マリアナ諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-292">Northern Mariana Islands</span></span></td>
+    <td><span data-ttu-id="72fca-293">ノルウェー \*</span><span class="sxs-lookup"><span data-stu-id="72fca-293">Norway \*</span></span></td>
+    <td><span data-ttu-id="72fca-294">オマーン</span><span class="sxs-lookup"><span data-stu-id="72fca-294">Oman</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-296">パラオ</span><span class="sxs-lookup"><span data-stu-id="d7edb-296">Palau</span></span></td>
-    <td><span data-ttu-id="d7edb-297">パレスチナ自治政府</span><span class="sxs-lookup"><span data-stu-id="d7edb-297">Palestinian Authority</span></span></td>
-    <td><span data-ttu-id="d7edb-298">パナマ</span><span class="sxs-lookup"><span data-stu-id="d7edb-298">Panama</span></span></td>
-    <td><span data-ttu-id="d7edb-299">パプアニューギニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-299">Papua New Guinea</span></span></td>
+    <td><span data-ttu-id="72fca-295">パキスタン</span><span class="sxs-lookup"><span data-stu-id="72fca-295">Pakistan</span></span></td>
+    <td><span data-ttu-id="72fca-296">パラオ</span><span class="sxs-lookup"><span data-stu-id="72fca-296">Palau</span></span></td>
+    <td><span data-ttu-id="72fca-297">パレスチナ自治政府</span><span class="sxs-lookup"><span data-stu-id="72fca-297">Palestinian Authority</span></span></td>
+    <td><span data-ttu-id="72fca-298">パナマ</span><span class="sxs-lookup"><span data-stu-id="72fca-298">Panama</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-300">パラグアイ</span><span class="sxs-lookup"><span data-stu-id="d7edb-300">Paraguay</span></span></td>
-    <td><span data-ttu-id="d7edb-301">ペルー</span><span class="sxs-lookup"><span data-stu-id="d7edb-301">Peru</span></span></td>
-    <td><span data-ttu-id="d7edb-302">フィリピン</span><span class="sxs-lookup"><span data-stu-id="d7edb-302">Philippines</span></span></td>
-    <td><span data-ttu-id="d7edb-303">ピトケアン島</span><span class="sxs-lookup"><span data-stu-id="d7edb-303">Pitcairn Islands</span></span></td>
+    <td><span data-ttu-id="72fca-299">パプアニューギニア</span><span class="sxs-lookup"><span data-stu-id="72fca-299">Papua New Guinea</span></span></td>
+    <td><span data-ttu-id="72fca-300">パラグアイ</span><span class="sxs-lookup"><span data-stu-id="72fca-300">Paraguay</span></span></td>
+    <td><span data-ttu-id="72fca-301">ペルー</span><span class="sxs-lookup"><span data-stu-id="72fca-301">Peru</span></span></td>
+    <td><span data-ttu-id="72fca-302">フィリピン</span><span class="sxs-lookup"><span data-stu-id="72fca-302">Philippines</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-304">ポーランド *</span><span class="sxs-lookup"><span data-stu-id="d7edb-304">Poland *</span></span></td>
-    <td><span data-ttu-id="d7edb-305">ポルトガル *</span><span class="sxs-lookup"><span data-stu-id="d7edb-305">Portugal *</span></span></td>
-    <td><span data-ttu-id="d7edb-306">カタール</span><span class="sxs-lookup"><span data-stu-id="d7edb-306">Qatar</span></span></td>
-    <td><span data-ttu-id="d7edb-307">ルーマニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-307">Romania</span></span></td>
+    <td><span data-ttu-id="72fca-303">ピトケアン島</span><span class="sxs-lookup"><span data-stu-id="72fca-303">Pitcairn Islands</span></span></td>
+    <td><span data-ttu-id="72fca-304">ポーランド \*</span><span class="sxs-lookup"><span data-stu-id="72fca-304">Poland \*</span></span></td>
+    <td><span data-ttu-id="72fca-305">ポルトガル \*</span><span class="sxs-lookup"><span data-stu-id="72fca-305">Portugal \*</span></span></td>
+    <td><span data-ttu-id="72fca-306">カタール</span><span class="sxs-lookup"><span data-stu-id="72fca-306">Qatar</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-308">ロシア *</span><span class="sxs-lookup"><span data-stu-id="d7edb-308">Russia *</span></span></td>
-    <td><span data-ttu-id="d7edb-309">ルワンダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-309">Rwanda</span></span></td>
-    <td><span data-ttu-id="d7edb-310">レユニオン</span><span class="sxs-lookup"><span data-stu-id="d7edb-310">Réunion</span></span></td>
-    <td><span data-ttu-id="d7edb-311">サン・バルテルミー</span><span class="sxs-lookup"><span data-stu-id="d7edb-311">Saint Barthélemy</span></span></td>
+    <td><span data-ttu-id="72fca-307">レユニオン</span><span class="sxs-lookup"><span data-stu-id="72fca-307">Réunion</span></span></td>
+    <td><span data-ttu-id="72fca-308">ルーマニア</span><span class="sxs-lookup"><span data-stu-id="72fca-308">Romania</span></span></td>
+    <td><span data-ttu-id="72fca-309">ロシア \*</span><span class="sxs-lookup"><span data-stu-id="72fca-309">Russia \*</span></span></td>
+    <td><span data-ttu-id="72fca-310">ルワンダ</span><span class="sxs-lookup"><span data-stu-id="72fca-310">Rwanda</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-312">セントヘレナ、アセンションおよびトリスタンダクーニャ</span><span class="sxs-lookup"><span data-stu-id="d7edb-312">Saint Helena, Ascension and Tristan da Cunha</span></span></td>
-    <td><span data-ttu-id="d7edb-313">セントクリストファー・ネイビス</span><span class="sxs-lookup"><span data-stu-id="d7edb-313">Saint Kitts and Nevis</span></span></td>
-    <td><span data-ttu-id="d7edb-314">セントルシア</span><span class="sxs-lookup"><span data-stu-id="d7edb-314">Saint Lucia</span></span></td>
-    <td><span data-ttu-id="d7edb-315">サンマルタン島 (フランス領)</span><span class="sxs-lookup"><span data-stu-id="d7edb-315">Saint Martin (French Part)</span></span></td>
+    <td><span data-ttu-id="72fca-311">サン・バルテルミー</span><span class="sxs-lookup"><span data-stu-id="72fca-311">Saint Barthélemy</span></span></td>
+    <td><span data-ttu-id="72fca-312">セントヘレナ、アセンションおよびトリスタンダクーニャ</span><span class="sxs-lookup"><span data-stu-id="72fca-312">Saint Helena, Ascension and Tristan da Cunha</span></span></td>
+    <td><span data-ttu-id="72fca-313">セントクリストファー・ネイビス</span><span class="sxs-lookup"><span data-stu-id="72fca-313">Saint Kitts and Nevis</span></span></td>
+    <td><span data-ttu-id="72fca-314">セントルシア</span><span class="sxs-lookup"><span data-stu-id="72fca-314">Saint Lucia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-316">サンピエール・ミクロン</span><span class="sxs-lookup"><span data-stu-id="d7edb-316">Saint Pierre and Miquelon</span></span></td>
-    <td><span data-ttu-id="d7edb-317">セントビンセントおよびグレナディーン諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-317">Saint Vincent and the Grenadines</span></span></td>
-    <td><span data-ttu-id="d7edb-318">サモア</span><span class="sxs-lookup"><span data-stu-id="d7edb-318">Samoa</span></span></td>
-    <td><span data-ttu-id="d7edb-319">サンマリノ</span><span class="sxs-lookup"><span data-stu-id="d7edb-319">San Marino</span></span></td>
+    <td><span data-ttu-id="72fca-315">サンマルタン島 (フランス領)</span><span class="sxs-lookup"><span data-stu-id="72fca-315">Saint Martin (French Part)</span></span></td>
+    <td><span data-ttu-id="72fca-316">サンピエール・ミクロン</span><span class="sxs-lookup"><span data-stu-id="72fca-316">Saint Pierre and Miquelon</span></span></td>
+    <td><span data-ttu-id="72fca-317">セントビンセントおよびグレナディーン諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-317">Saint Vincent and the Grenadines</span></span></td>
+    <td><span data-ttu-id="72fca-318">サモア独立国</span><span class="sxs-lookup"><span data-stu-id="72fca-318">Samoa</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-320">サウジアラビア *</span><span class="sxs-lookup"><span data-stu-id="d7edb-320">Saudi Arabia *</span></span></td>
-    <td><span data-ttu-id="d7edb-321">セネガル</span><span class="sxs-lookup"><span data-stu-id="d7edb-321">Senegal</span></span></td>
-    <td><span data-ttu-id="d7edb-322">セルビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-322">Serbia</span></span></td>
-    <td><span data-ttu-id="d7edb-323">セーシェル</span><span class="sxs-lookup"><span data-stu-id="d7edb-323">Seychelles</span></span></td>
+    <td><span data-ttu-id="72fca-319">サンマリノ</span><span class="sxs-lookup"><span data-stu-id="72fca-319">San Marino</span></span></td>
+    <td><span data-ttu-id="72fca-320">サントメ・プリンシペ</span><span class="sxs-lookup"><span data-stu-id="72fca-320">São Tomé and Príncipe</span></span></td>
+    <td><span data-ttu-id="72fca-321">サウジアラビア \*</span><span class="sxs-lookup"><span data-stu-id="72fca-321">Saudi Arabia \*</span></span></td>
+    <td><span data-ttu-id="72fca-322">セネガル</span><span class="sxs-lookup"><span data-stu-id="72fca-322">Senegal</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-324">シエラレオネ</span><span class="sxs-lookup"><span data-stu-id="d7edb-324">Sierra Leone</span></span></td>
-    <td><span data-ttu-id="d7edb-325">シンガポール *</span><span class="sxs-lookup"><span data-stu-id="d7edb-325">Singapore *</span></span></td>
-    <td><span data-ttu-id="d7edb-326">サンマルタン島 (オランダ領)</span><span class="sxs-lookup"><span data-stu-id="d7edb-326">Sint Maarten (Dutch Part)</span></span></td>
-    <td><span data-ttu-id="d7edb-327">スロバキア *</span><span class="sxs-lookup"><span data-stu-id="d7edb-327">Slovakia *</span></span></td>
+    <td><span data-ttu-id="72fca-323">セルビア</span><span class="sxs-lookup"><span data-stu-id="72fca-323">Serbia</span></span></td>
+    <td><span data-ttu-id="72fca-324">セーシェル</span><span class="sxs-lookup"><span data-stu-id="72fca-324">Seychelles</span></span></td>
+    <td><span data-ttu-id="72fca-325">シエラレオネ</span><span class="sxs-lookup"><span data-stu-id="72fca-325">Sierra Leone</span></span></td>
+    <td><span data-ttu-id="72fca-326">シンガポール \*</span><span class="sxs-lookup"><span data-stu-id="72fca-326">Singapore \*</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-328">スロベニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-328">Slovenia</span></span></td>
-    <td><span data-ttu-id="d7edb-329">ソロモン諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-329">Solomon Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-330">ソマリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-330">Somalia</span></span></td>
-    <td><span data-ttu-id="d7edb-331">南アフリカ *</span><span class="sxs-lookup"><span data-stu-id="d7edb-331">South Africa *</span></span></td>
+    <td><span data-ttu-id="72fca-327">サンマルタン島 (オランダ領)</span><span class="sxs-lookup"><span data-stu-id="72fca-327">Sint Maarten (Dutch Part)</span></span></td>
+    <td><span data-ttu-id="72fca-328">スロバキア \*</span><span class="sxs-lookup"><span data-stu-id="72fca-328">Slovakia \*</span></span></td>
+    <td><span data-ttu-id="72fca-329">スロベニア</span><span class="sxs-lookup"><span data-stu-id="72fca-329">Slovenia</span></span></td>
+    <td><span data-ttu-id="72fca-330">ソロモン諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-330">Solomon Islands</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-332">サウスジョージア・サウスサンドウィッチ諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-332">South Georgia and the South Sandwich Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-333">スペイン *</span><span class="sxs-lookup"><span data-stu-id="d7edb-333">Spain *</span></span></td>
-    <td><span data-ttu-id="d7edb-334">スリランカ</span><span class="sxs-lookup"><span data-stu-id="d7edb-334">Sri Lanka</span></span></td>
-    <td><span data-ttu-id="d7edb-335">スリナム</span><span class="sxs-lookup"><span data-stu-id="d7edb-335">Suriname</span></span></td>
+    <td><span data-ttu-id="72fca-331">ソマリア</span><span class="sxs-lookup"><span data-stu-id="72fca-331">Somalia</span></span></td>
+    <td><span data-ttu-id="72fca-332">南アフリカ \*</span><span class="sxs-lookup"><span data-stu-id="72fca-332">South Africa \*</span></span></td>
+    <td><span data-ttu-id="72fca-333">サウスジョージア・サウスサンドウィッチ諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-333">South Georgia and the South Sandwich Islands</span></span></td>
+    <td><span data-ttu-id="72fca-334">スペイン \*</span><span class="sxs-lookup"><span data-stu-id="72fca-334">Spain \*</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-336">スバールバル諸島・ヤンマイエン島</span><span class="sxs-lookup"><span data-stu-id="d7edb-336">Svalbard and Jan Mayen</span></span></td>
-    <td><span data-ttu-id="d7edb-337">スワジランド</span><span class="sxs-lookup"><span data-stu-id="d7edb-337">Swaziland</span></span></td>
-    <td><span data-ttu-id="d7edb-338">スウェーデン *</span><span class="sxs-lookup"><span data-stu-id="d7edb-338">Sweden *</span></span></td>
-    <td><span data-ttu-id="d7edb-339">スイス *</span><span class="sxs-lookup"><span data-stu-id="d7edb-339">Switzerland *</span></span></td>
+    <td><span data-ttu-id="72fca-335">スリランカ</span><span class="sxs-lookup"><span data-stu-id="72fca-335">Sri Lanka</span></span></td>
+    <td><span data-ttu-id="72fca-336">スリナム</span><span class="sxs-lookup"><span data-stu-id="72fca-336">Suriname</span></span></td>
+    <td><span data-ttu-id="72fca-337">スバールバル諸島、ヤンマイエン島</span><span class="sxs-lookup"><span data-stu-id="72fca-337">Svalbard and Jan Mayen</span></span></td>
+    <td><span data-ttu-id="72fca-338">スワジランド</span><span class="sxs-lookup"><span data-stu-id="72fca-338">Swaziland</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-340">サントメ・プリンシペ</span><span class="sxs-lookup"><span data-stu-id="d7edb-340">São Tomé and Príncipe</span></span></td>
-    <td><span data-ttu-id="d7edb-341">台湾 *</span><span class="sxs-lookup"><span data-stu-id="d7edb-341">Taiwan *</span></span></td>
-    <td><span data-ttu-id="d7edb-342">タジキスタン</span><span class="sxs-lookup"><span data-stu-id="d7edb-342">Tajikistan</span></span></td>
-    <td><span data-ttu-id="d7edb-343">タンザニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-343">Tanzania</span></span></td>
+    <td><span data-ttu-id="72fca-339">スウェーデン \*</span><span class="sxs-lookup"><span data-stu-id="72fca-339">Sweden \*</span></span></td>
+    <td><span data-ttu-id="72fca-340">スイス \*</span><span class="sxs-lookup"><span data-stu-id="72fca-340">Switzerland \*</span></span></td>
+    <td><span data-ttu-id="72fca-341">台湾 \*</span><span class="sxs-lookup"><span data-stu-id="72fca-341">Taiwan \*</span></span></td>
+    <td><span data-ttu-id="72fca-342">タジキスタン</span><span class="sxs-lookup"><span data-stu-id="72fca-342">Tajikistan</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-344">タイ</span><span class="sxs-lookup"><span data-stu-id="d7edb-344">Thailand</span></span></td>
-    <td><span data-ttu-id="d7edb-345">ティモール・レステ</span><span class="sxs-lookup"><span data-stu-id="d7edb-345">Timor-Leste</span></span></td>
-    <td><span data-ttu-id="d7edb-346">トーゴ</span><span class="sxs-lookup"><span data-stu-id="d7edb-346">Togo</span></span></td>
-    <td><span data-ttu-id="d7edb-347">トケラウ諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-347">Tokelau</span></span></td>
+    <td><span data-ttu-id="72fca-343">タンザニア</span><span class="sxs-lookup"><span data-stu-id="72fca-343">Tanzania</span></span></td>
+    <td><span data-ttu-id="72fca-344">タイ</span><span class="sxs-lookup"><span data-stu-id="72fca-344">Thailand</span></span></td>
+    <td><span data-ttu-id="72fca-345">ティモール・レステ</span><span class="sxs-lookup"><span data-stu-id="72fca-345">Timor-Leste</span></span></td>
+    <td><span data-ttu-id="72fca-346">トーゴ</span><span class="sxs-lookup"><span data-stu-id="72fca-346">Togo</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-348">トンガ</span><span class="sxs-lookup"><span data-stu-id="d7edb-348">Tonga</span></span></td>
-    <td><span data-ttu-id="d7edb-349">トリニダード・トバゴ</span><span class="sxs-lookup"><span data-stu-id="d7edb-349">Trinidad and Tobago</span></span></td>
-    <td><span data-ttu-id="d7edb-350">チュニジア</span><span class="sxs-lookup"><span data-stu-id="d7edb-350">Tunisia</span></span></td>
-    <td><span data-ttu-id="d7edb-351">トルコ *</span><span class="sxs-lookup"><span data-stu-id="d7edb-351">Turkey *</span></span></td>
+    <td><span data-ttu-id="72fca-347">トケラウ諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-347">Tokelau</span></span></td>
+    <td><span data-ttu-id="72fca-348">トンガ</span><span class="sxs-lookup"><span data-stu-id="72fca-348">Tonga</span></span></td>
+    <td><span data-ttu-id="72fca-349">トリニダード・トバゴ</span><span class="sxs-lookup"><span data-stu-id="72fca-349">Trinidad and Tobago</span></span></td>
+    <td><span data-ttu-id="72fca-350">チュニジア</span><span class="sxs-lookup"><span data-stu-id="72fca-350">Tunisia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-352">トルクメニスタン</span><span class="sxs-lookup"><span data-stu-id="d7edb-352">Turkmenistan</span></span></td>
-    <td><span data-ttu-id="d7edb-353">タークス・カイコス諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-353">Turks and Caicos Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-354">ツバル</span><span class="sxs-lookup"><span data-stu-id="d7edb-354">Tuvalu</span></span></td>
-    <td><span data-ttu-id="d7edb-355">その他の米領諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-355">U.S. Minor Outlying Islands</span></span></td>
+    <td><span data-ttu-id="72fca-351">トルコ \*</span><span class="sxs-lookup"><span data-stu-id="72fca-351">Turkey \*</span></span></td>
+    <td><span data-ttu-id="72fca-352">トルクメニスタン</span><span class="sxs-lookup"><span data-stu-id="72fca-352">Turkmenistan</span></span></td>
+    <td><span data-ttu-id="72fca-353">タークス・カイコス諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-353">Turks and Caicos Islands</span></span></td>
+    <td><span data-ttu-id="72fca-354">ツバル</span><span class="sxs-lookup"><span data-stu-id="72fca-354">Tuvalu</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-356">米領バージン諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-356">U.S. Virgin Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-357">ウガンダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-357">Uganda</span></span></td>
-    <td><span data-ttu-id="d7edb-358">ウクライナ</span><span class="sxs-lookup"><span data-stu-id="d7edb-358">Ukraine</span></span></td>
-    <td><span data-ttu-id="d7edb-359">アラブ首長国連邦 *</span><span class="sxs-lookup"><span data-stu-id="d7edb-359">United Arab Emirates *</span></span></td>
+    <td><span data-ttu-id="72fca-355">その他の米領諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-355">U.S. Minor Outlying Islands</span></span></td>
+    <td><span data-ttu-id="72fca-356">米領バージン諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-356">U.S. Virgin Islands</span></span></td>
+    <td><span data-ttu-id="72fca-357">ウガンダ</span><span class="sxs-lookup"><span data-stu-id="72fca-357">Uganda</span></span></td>
+    <td><span data-ttu-id="72fca-358">ウクライナ</span><span class="sxs-lookup"><span data-stu-id="72fca-358">Ukraine</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-360">英国 *</span><span class="sxs-lookup"><span data-stu-id="d7edb-360">United Kingdom *</span></span></td>
-    <td><span data-ttu-id="d7edb-361">米国 *</span><span class="sxs-lookup"><span data-stu-id="d7edb-361">United States *</span></span></td>
-    <td><span data-ttu-id="d7edb-362">ウルグアイ</span><span class="sxs-lookup"><span data-stu-id="d7edb-362">Uruguay</span></span></td>
-    <td><span data-ttu-id="d7edb-363">ウズベキスタン</span><span class="sxs-lookup"><span data-stu-id="d7edb-363">Uzbekistan</span></span></td>
+    <td><span data-ttu-id="72fca-359">アラブ首長国連邦 \*</span><span class="sxs-lookup"><span data-stu-id="72fca-359">United Arab Emirates \*</span></span></td>
+    <td><span data-ttu-id="72fca-360">英国 \*</span><span class="sxs-lookup"><span data-stu-id="72fca-360">United Kingdom \*</span></span></td>
+    <td><span data-ttu-id="72fca-361">米国 \*</span><span class="sxs-lookup"><span data-stu-id="72fca-361">United States \*</span></span></td>
+    <td><span data-ttu-id="72fca-362">ウルグアイ</span><span class="sxs-lookup"><span data-stu-id="72fca-362">Uruguay</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-364">バヌアツ</span><span class="sxs-lookup"><span data-stu-id="d7edb-364">Vanuatu</span></span></td>
-    <td><span data-ttu-id="d7edb-365">バチカン市国</span><span class="sxs-lookup"><span data-stu-id="d7edb-365">Vatican City</span></span></td>
-    <td><span data-ttu-id="d7edb-366">ベネズエラ</span><span class="sxs-lookup"><span data-stu-id="d7edb-366">Venezuela</span></span></td>
-    <td><span data-ttu-id="d7edb-367">ベトナム</span><span class="sxs-lookup"><span data-stu-id="d7edb-367">Vietnam</span></span></td>
+    <td><span data-ttu-id="72fca-363">ウズベキスタン</span><span class="sxs-lookup"><span data-stu-id="72fca-363">Uzbekistan</span></span></td>
+    <td><span data-ttu-id="72fca-364">バヌアツ</span><span class="sxs-lookup"><span data-stu-id="72fca-364">Vanuatu</span></span></td>
+    <td><span data-ttu-id="72fca-365">バチカン市国</span><span class="sxs-lookup"><span data-stu-id="72fca-365">Vatican City</span></span></td>
+    <td><span data-ttu-id="72fca-366">ベネズエラ</span><span class="sxs-lookup"><span data-stu-id="72fca-366">Venezuela</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-368">ワリス・フテュナ諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-368">Wallis and Futuna</span></span></td>
-    <td><span data-ttu-id="d7edb-369">西サハラ (紛争中)</span><span class="sxs-lookup"><span data-stu-id="d7edb-369">Western Sahara (Disputed)</span></span></td>
-    <td><span data-ttu-id="d7edb-370">イエメン</span><span class="sxs-lookup"><span data-stu-id="d7edb-370">Yemen</span></span></td>
-    <td><span data-ttu-id="d7edb-371">ザンビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-371">Zambia</span></span></td>
+    <td><span data-ttu-id="72fca-367">ベトナム</span><span class="sxs-lookup"><span data-stu-id="72fca-367">Vietnam</span></span></td>
+    <td><span data-ttu-id="72fca-368">ワリス・フテュナ諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-368">Wallis and Futuna</span></span></td>
+    <td><span data-ttu-id="72fca-369">西サハラ (紛争中)</span><span class="sxs-lookup"><span data-stu-id="72fca-369">Western Sahara (Disputed)</span></span></td>
+    <td><span data-ttu-id="72fca-370">イエメン</span><span class="sxs-lookup"><span data-stu-id="72fca-370">Yemen</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-372">ジンバブエ</span><span class="sxs-lookup"><span data-stu-id="d7edb-372">Zimbabwe</span></span></td>
-    <td><span data-ttu-id="d7edb-373">オーランド諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-373">Åland Islands</span></span></td>
+    <td><span data-ttu-id="72fca-371">ザンビア</span><span class="sxs-lookup"><span data-stu-id="72fca-371">Zambia</span></span></td>
+    <td><span data-ttu-id="72fca-372">ジンバブエ</span><span class="sxs-lookup"><span data-stu-id="72fca-372">Zimbabwe</span></span></td>
     <td></td>
     <td></td>
   </tr>
 </table>
 
 
-## <a name="price-considerations-for-specific-markets"></a><span data-ttu-id="d7edb-374">特定の市場の価格に関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="d7edb-374">Price considerations for specific markets</span></span>
+## <a name="price-considerations-for-specific-markets"></a><span data-ttu-id="72fca-373">特定の市場の価格に関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="72fca-373">Price considerations for specific markets</span></span>
 
-<span data-ttu-id="d7edb-375">ギフト カードや携帯電話会社による課金などの支払い方法は、有料アプリおよびアプリ内購入アイテムの販売の増加に役立つ可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d7edb-375">Payment methods such as gift cards and mobile operator billing can help increase sales of paid apps and in-app purchase items.</span></span> <span data-ttu-id="d7edb-376">このような支払い方法を可能にするためのコストは高額になるため、下の表に示す国/地域および支払い方法については、ストア手数料に Commerce Expansion Adjustment (商取引拡大調整) を加え、純収益から差し引いて、有料アプリやアプリ内購入トランザクションに対して支払われるアプリの収益を計算します。</span><span class="sxs-lookup"><span data-stu-id="d7edb-376">Due to the higher costs to enable such payment methods, a Commerce Expansion Adjustment is added to the Store Fee deducted from Net Receipts to calculate the App Proceeds payable for paid apps and in-app purchase transactions in the countries/regions and using the payment methods in the tables below.</span></span> <span data-ttu-id="d7edb-377">お客様のアプリが利用可能な国/地域で Commerce Expansion Adjustment (商取引拡大調整) が適用されるかどうかを考慮し、それを市場の価格設定戦略に組み込むことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="d7edb-377">You may want to consider if the Commerce Expansion Adjustment applies in a country/region where your app is available and factor that into your market pricing strategy.</span></span> <span data-ttu-id="d7edb-378">Commerce Expansion Adjustment について詳しくは、「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7edb-378">Details about the Commerce Expansion Adjustment can be found in the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).</span></span>
+<span data-ttu-id="72fca-374">ギフトカードや携帯電話会社による課金などの支払方法は、有料アプリおよびアプリ内購入アイテムの販売の増加に役立つ可能性があります。</span><span class="sxs-lookup"><span data-stu-id="72fca-374">Payment methods such as gift cards and mobile operator billing can help increase sales of paid apps and in-app purchase items.</span></span> <span data-ttu-id="72fca-375">このような支払い方法を可能にするためのコストは高額になるため、下の表に示す国/地域および支払い方法については、ストア手数料に Commerce Expansion Adjustment (商取引拡大調整) を加え、純収益から差し引いて、有料アプリやアプリ内購入トランザクションに対して支払われるアプリの収益を計算します。</span><span class="sxs-lookup"><span data-stu-id="72fca-375">Due to the higher costs to enable such payment methods, a Commerce Expansion Adjustment is added to the Store Fee deducted from Net Receipts to calculate the App Proceeds payable for paid apps and in-app purchase transactions in the countries/regions and using the payment methods in the tables below.</span></span> <span data-ttu-id="72fca-376">お客様のアプリが利用可能な国/地域で Commerce Expansion Adjustment (商取引拡大調整) が適用されるかどうかを考慮し、それを市場の価格設定戦略に組み込むことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="72fca-376">You may want to consider if the Commerce Expansion Adjustment applies in a country/region where your app is available and factor that into your market pricing strategy.</span></span> <span data-ttu-id="72fca-377">Commerce Expansion Adjustment について詳しくは、「[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="72fca-377">Details about the Commerce Expansion Adjustment can be found in the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).</span></span>
 
-<span data-ttu-id="d7edb-379">Commerce Expansion Adjustment は、有効日現在、指定された国/地域および支払い方法で処理されるすべての取引に適用されます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-379">The Commerce Expansion Adjustment will be applied to all transactions processed for the specified Country/Region and Payment Methods as of the Effective Date.</span></span> <span data-ttu-id="d7edb-380">この情報は毎月更新され、新しい国/地域および支払い方法で Commerce Expansion Adjustment が有効になると、その日から 30 日以内にその国/地域および支払い方法が一覧に追加されます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-380">This information will be updated monthly; new countries/regions and payment methods will be listed within thirty (30) days after the Commerce Expansion Adjustment takes effect for that country/region and payment method.</span></span>
+<span data-ttu-id="72fca-378">Commerce Expansion Adjustment は、有効日現在、指定された国/地域および支払い方法で処理されるすべての取引に適用されます。</span><span class="sxs-lookup"><span data-stu-id="72fca-378">The Commerce Expansion Adjustment will be applied to all transactions processed for the specified Country/Region and Payment Methods as of the Effective Date.</span></span> <span data-ttu-id="72fca-379">この情報は毎月更新され、新しい国/地域および支払方法で Commerce Expansion Adjustment が有効になった日から 30 日以内に、その国/地域および支払方法が一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="72fca-379">This information will be updated monthly; new countries/regions and payment methods will be listed within thirty (30) days after the Commerce Expansion Adjustment takes effect for that country/region and payment method.</span></span>
 
 &nbsp;
 
-| <span data-ttu-id="d7edb-381">国/地域</span><span class="sxs-lookup"><span data-stu-id="d7edb-381">Country/region</span></span>       | <span data-ttu-id="d7edb-382">支払い方法</span><span class="sxs-lookup"><span data-stu-id="d7edb-382">Payment method</span></span>          | <span data-ttu-id="d7edb-383">Commerce Expansion Adjustment (商取引拡大調整)</span><span class="sxs-lookup"><span data-stu-id="d7edb-383">Commerce Expansion Adjustment</span></span> | <span data-ttu-id="d7edb-384">有効日</span><span class="sxs-lookup"><span data-stu-id="d7edb-384">Effective date</span></span> |
-|----------------------|-------------------------|-------------------------------|----------------|
-| <span data-ttu-id="d7edb-385">南アフリカ</span><span class="sxs-lookup"><span data-stu-id="d7edb-385">South Africa</span></span>         | <span data-ttu-id="d7edb-386">通信事業者の請求</span><span class="sxs-lookup"><span data-stu-id="d7edb-386">Mobile operator billing</span></span> | <span data-ttu-id="d7edb-387">13.9%</span><span class="sxs-lookup"><span data-stu-id="d7edb-387">13.9%</span></span>                         | <span data-ttu-id="d7edb-388">2014 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-388">March 2014</span></span>     |
-| <span data-ttu-id="d7edb-389">アルゼンチン</span><span class="sxs-lookup"><span data-stu-id="d7edb-389">Argentina</span></span>            | <span data-ttu-id="d7edb-390">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-390">Gift card</span></span>       | <span data-ttu-id="d7edb-391">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-391">2.24%</span></span>                         | <span data-ttu-id="d7edb-392">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-392">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-393">オーストラリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-393">Australia</span></span>            | <span data-ttu-id="d7edb-394">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-394">Gift card</span></span>       | <span data-ttu-id="d7edb-395">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-395">2.24%</span></span>                         | <span data-ttu-id="d7edb-396">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-396">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-397">オーストリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-397">Austria</span></span>              | <span data-ttu-id="d7edb-398">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-398">Gift card</span></span>       | <span data-ttu-id="d7edb-399">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-399">2.24%</span></span>                         | <span data-ttu-id="d7edb-400">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-400">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-401">ベルギー</span><span class="sxs-lookup"><span data-stu-id="d7edb-401">Belgium</span></span>              | <span data-ttu-id="d7edb-402">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-402">Gift card</span></span>       | <span data-ttu-id="d7edb-403">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-403">2.24%</span></span>                         | <span data-ttu-id="d7edb-404">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-404">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-405">ブラジル</span><span class="sxs-lookup"><span data-stu-id="d7edb-405">Brazil</span></span>               | <span data-ttu-id="d7edb-406">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-406">Gift card</span></span>       | <span data-ttu-id="d7edb-407">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-407">2.24%</span></span>                         | <span data-ttu-id="d7edb-408">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-408">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-409">カナダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-409">Canada</span></span>               | <span data-ttu-id="d7edb-410">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-410">Gift card</span></span>       | <span data-ttu-id="d7edb-411">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-411">2.24%</span></span>                         | <span data-ttu-id="d7edb-412">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-412">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-413">チリ</span><span class="sxs-lookup"><span data-stu-id="d7edb-413">Chile</span></span>                | <span data-ttu-id="d7edb-414">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-414">Gift card</span></span>       | <span data-ttu-id="d7edb-415">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-415">2.24%</span></span>                         | <span data-ttu-id="d7edb-416">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-416">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-417">中国</span><span class="sxs-lookup"><span data-stu-id="d7edb-417">China</span></span>                | <span data-ttu-id="d7edb-418">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-418">Gift card</span></span>       | <span data-ttu-id="d7edb-419">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-419">2.24%</span></span>                         | <span data-ttu-id="d7edb-420">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-420">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-421">コロンビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-421">Colombia</span></span>             | <span data-ttu-id="d7edb-422">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-422">Gift card</span></span>       | <span data-ttu-id="d7edb-423">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-423">2.24%</span></span>                         | <span data-ttu-id="d7edb-424">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-424">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-425">チェコ共和国</span><span class="sxs-lookup"><span data-stu-id="d7edb-425">Czech Republic</span></span>       | <span data-ttu-id="d7edb-426">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-426">Gift card</span></span>       | <span data-ttu-id="d7edb-427">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-427">2.24%</span></span>                         | <span data-ttu-id="d7edb-428">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-428">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-429">デンマーク</span><span class="sxs-lookup"><span data-stu-id="d7edb-429">Denmark</span></span>              | <span data-ttu-id="d7edb-430">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-430">Gift card</span></span>       | <span data-ttu-id="d7edb-431">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-431">2.24%</span></span>                         | <span data-ttu-id="d7edb-432">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-432">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-433">フィンランド</span><span class="sxs-lookup"><span data-stu-id="d7edb-433">Finland</span></span>              | <span data-ttu-id="d7edb-434">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-434">Gift card</span></span>       | <span data-ttu-id="d7edb-435">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-435">2.24%</span></span>                         | <span data-ttu-id="d7edb-436">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-436">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-437">フランス</span><span class="sxs-lookup"><span data-stu-id="d7edb-437">France</span></span>               | <span data-ttu-id="d7edb-438">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-438">Gift card</span></span>       | <span data-ttu-id="d7edb-439">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-439">2.24%</span></span>                         | <span data-ttu-id="d7edb-440">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-440">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-441">ドイツ</span><span class="sxs-lookup"><span data-stu-id="d7edb-441">Germany</span></span>              | <span data-ttu-id="d7edb-442">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-442">Gift card</span></span>       | <span data-ttu-id="d7edb-443">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-443">2.24%</span></span>                         | <span data-ttu-id="d7edb-444">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-444">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-445">ギリシャ</span><span class="sxs-lookup"><span data-stu-id="d7edb-445">Greece</span></span>               | <span data-ttu-id="d7edb-446">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-446">Gift card</span></span>       | <span data-ttu-id="d7edb-447">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-447">2.24%</span></span>                         | <span data-ttu-id="d7edb-448">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-448">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-449">香港</span><span class="sxs-lookup"><span data-stu-id="d7edb-449">Hong Kong</span></span>            | <span data-ttu-id="d7edb-450">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-450">Gift card</span></span>       | <span data-ttu-id="d7edb-451">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-451">2.24%</span></span>                         | <span data-ttu-id="d7edb-452">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-452">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-453">ハンガリー</span><span class="sxs-lookup"><span data-stu-id="d7edb-453">Hungary</span></span>              | <span data-ttu-id="d7edb-454">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-454">Gift card</span></span>       | <span data-ttu-id="d7edb-455">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-455">2.24%</span></span>                         | <span data-ttu-id="d7edb-456">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-456">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-457">インド</span><span class="sxs-lookup"><span data-stu-id="d7edb-457">India</span></span>                | <span data-ttu-id="d7edb-458">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-458">Gift card</span></span>       | <span data-ttu-id="d7edb-459">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-459">2.24%</span></span>                         | <span data-ttu-id="d7edb-460">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-460">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-461">アイルランド</span><span class="sxs-lookup"><span data-stu-id="d7edb-461">Ireland</span></span>              | <span data-ttu-id="d7edb-462">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-462">Gift card</span></span>       | <span data-ttu-id="d7edb-463">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-463">2.24%</span></span>                         | <span data-ttu-id="d7edb-464">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-464">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-465">イスラエル</span><span class="sxs-lookup"><span data-stu-id="d7edb-465">Israel</span></span>               | <span data-ttu-id="d7edb-466">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-466">Gift card</span></span>       | <span data-ttu-id="d7edb-467">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-467">2.24%</span></span>                         | <span data-ttu-id="d7edb-468">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-468">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-469">イタリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-469">Italy</span></span>                | <span data-ttu-id="d7edb-470">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-470">Gift card</span></span>       | <span data-ttu-id="d7edb-471">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-471">2.24%</span></span>                         | <span data-ttu-id="d7edb-472">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-472">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-473">日本</span><span class="sxs-lookup"><span data-stu-id="d7edb-473">Japan</span></span>                | <span data-ttu-id="d7edb-474">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-474">Gift card</span></span>       | <span data-ttu-id="d7edb-475">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-475">2.24%</span></span>                         | <span data-ttu-id="d7edb-476">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-476">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-477">メキシコ</span><span class="sxs-lookup"><span data-stu-id="d7edb-477">Mexico</span></span>               | <span data-ttu-id="d7edb-478">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-478">Gift card</span></span>       | <span data-ttu-id="d7edb-479">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-479">2.24%</span></span>                         | <span data-ttu-id="d7edb-480">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-480">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-481">オランダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-481">Netherlands</span></span>          | <span data-ttu-id="d7edb-482">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-482">Gift card</span></span>       | <span data-ttu-id="d7edb-483">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-483">2.24%</span></span>                         | <span data-ttu-id="d7edb-484">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-484">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-485">ニュージーランド</span><span class="sxs-lookup"><span data-stu-id="d7edb-485">New Zealand</span></span>          | <span data-ttu-id="d7edb-486">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-486">Gift card</span></span>       | <span data-ttu-id="d7edb-487">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-487">2.24%</span></span>                         | <span data-ttu-id="d7edb-488">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-488">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-489">ポーランド</span><span class="sxs-lookup"><span data-stu-id="d7edb-489">Poland</span></span>               | <span data-ttu-id="d7edb-490">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-490">Gift card</span></span>       | <span data-ttu-id="d7edb-491">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-491">2.24%</span></span>                         | <span data-ttu-id="d7edb-492">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-492">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-493">ポルトガル</span><span class="sxs-lookup"><span data-stu-id="d7edb-493">Portugal</span></span>             | <span data-ttu-id="d7edb-494">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-494">Gift card</span></span>       | <span data-ttu-id="d7edb-495">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-495">2.24%</span></span>                         | <span data-ttu-id="d7edb-496">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-496">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-497">ロシア</span><span class="sxs-lookup"><span data-stu-id="d7edb-497">Russia</span></span>               | <span data-ttu-id="d7edb-498">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-498">Gift card</span></span>       | <span data-ttu-id="d7edb-499">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-499">2.24%</span></span>                         | <span data-ttu-id="d7edb-500">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-500">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-501">サウジアラビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-501">Saudi Arabia</span></span>         | <span data-ttu-id="d7edb-502">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-502">Gift card</span></span>       | <span data-ttu-id="d7edb-503">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-503">2.24%</span></span>                         | <span data-ttu-id="d7edb-504">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-504">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-505">シンガポール</span><span class="sxs-lookup"><span data-stu-id="d7edb-505">Singapore</span></span>            | <span data-ttu-id="d7edb-506">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-506">Gift card</span></span>       | <span data-ttu-id="d7edb-507">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-507">2.24%</span></span>                         | <span data-ttu-id="d7edb-508">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-508">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-509">スロバキア</span><span class="sxs-lookup"><span data-stu-id="d7edb-509">Slovakia</span></span>             | <span data-ttu-id="d7edb-510">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-510">Gift card</span></span>       | <span data-ttu-id="d7edb-511">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-511">2.24%</span></span>                         | <span data-ttu-id="d7edb-512">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-512">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-513">南アフリカ</span><span class="sxs-lookup"><span data-stu-id="d7edb-513">South Africa</span></span>         | <span data-ttu-id="d7edb-514">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-514">Gift card</span></span>       | <span data-ttu-id="d7edb-515">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-515">2.24%</span></span>                         | <span data-ttu-id="d7edb-516">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-516">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-517">韓国</span><span class="sxs-lookup"><span data-stu-id="d7edb-517">South Korea</span></span>          | <span data-ttu-id="d7edb-518">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-518">Gift card</span></span>       | <span data-ttu-id="d7edb-519">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-519">2.24%</span></span>                         | <span data-ttu-id="d7edb-520">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-520">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-521">スペイン</span><span class="sxs-lookup"><span data-stu-id="d7edb-521">Spain</span></span>                | <span data-ttu-id="d7edb-522">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-522">Gift card</span></span>       | <span data-ttu-id="d7edb-523">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-523">2.24%</span></span>                         | <span data-ttu-id="d7edb-524">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-524">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-525">スウェーデン</span><span class="sxs-lookup"><span data-stu-id="d7edb-525">Sweden</span></span>               | <span data-ttu-id="d7edb-526">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-526">Gift card</span></span>       | <span data-ttu-id="d7edb-527">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-527">2.24%</span></span>                         | <span data-ttu-id="d7edb-528">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-528">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-529">スイス</span><span class="sxs-lookup"><span data-stu-id="d7edb-529">Switzerland</span></span>          | <span data-ttu-id="d7edb-530">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-530">Gift card</span></span>       | <span data-ttu-id="d7edb-531">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-531">2.24%</span></span>                         | <span data-ttu-id="d7edb-532">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-532">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-533">台湾</span><span class="sxs-lookup"><span data-stu-id="d7edb-533">Taiwan</span></span>               | <span data-ttu-id="d7edb-534">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-534">Gift card</span></span>       | <span data-ttu-id="d7edb-535">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-535">2.24%</span></span>                         | <span data-ttu-id="d7edb-536">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-536">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-537">トルコ</span><span class="sxs-lookup"><span data-stu-id="d7edb-537">Turkey</span></span>               | <span data-ttu-id="d7edb-538">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-538">Gift card</span></span>       | <span data-ttu-id="d7edb-539">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-539">2.24%</span></span>                         | <span data-ttu-id="d7edb-540">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-540">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-541">アラブ首長国連邦</span><span class="sxs-lookup"><span data-stu-id="d7edb-541">United Arab Emirates</span></span> | <span data-ttu-id="d7edb-542">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-542">Gift card</span></span>       | <span data-ttu-id="d7edb-543">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-543">2.24%</span></span>                         | <span data-ttu-id="d7edb-544">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-544">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-545">英国</span><span class="sxs-lookup"><span data-stu-id="d7edb-545">United Kingdom</span></span>       | <span data-ttu-id="d7edb-546">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-546">Gift card</span></span>       | <span data-ttu-id="d7edb-547">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-547">2.24%</span></span>                         | <span data-ttu-id="d7edb-548">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-548">March 2016</span></span>     |
-| <span data-ttu-id="d7edb-549">米国</span><span class="sxs-lookup"><span data-stu-id="d7edb-549">United States</span></span>        | <span data-ttu-id="d7edb-550">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="d7edb-550">Gift card</span></span>       | <span data-ttu-id="d7edb-551">2.24%</span><span class="sxs-lookup"><span data-stu-id="d7edb-551">2.24%</span></span>                         | <span data-ttu-id="d7edb-552">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="d7edb-552">March 2016</span></span>     |
+| <span data-ttu-id="72fca-380">国/地域</span><span class="sxs-lookup"><span data-stu-id="72fca-380">Country/region</span></span>       | <span data-ttu-id="72fca-381">支払い方法</span><span class="sxs-lookup"><span data-stu-id="72fca-381">Payment method</span></span>  | <span data-ttu-id="72fca-382">Commerce Expansion Adjustment (商取引拡大調整)</span><span class="sxs-lookup"><span data-stu-id="72fca-382">Commerce Expansion Adjustment</span></span> | <span data-ttu-id="72fca-383">有効日</span><span class="sxs-lookup"><span data-stu-id="72fca-383">Effective date</span></span> |
+|----------------------|-----------------|-------------------------------|----------------|
+| <span data-ttu-id="72fca-384">アルゼンチン</span><span class="sxs-lookup"><span data-stu-id="72fca-384">Argentina</span></span>            | <span data-ttu-id="72fca-385">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-385">Gift card</span></span>       | <span data-ttu-id="72fca-386">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-386">2.24%</span></span>                         | <span data-ttu-id="72fca-387">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-387">March 2016</span></span>     |
+| <span data-ttu-id="72fca-388">オーストラリア</span><span class="sxs-lookup"><span data-stu-id="72fca-388">Australia</span></span>            | <span data-ttu-id="72fca-389">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-389">Gift card</span></span>       | <span data-ttu-id="72fca-390">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-390">2.24%</span></span>                         | <span data-ttu-id="72fca-391">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-391">March 2016</span></span>     |
+| <span data-ttu-id="72fca-392">オーストリア</span><span class="sxs-lookup"><span data-stu-id="72fca-392">Austria</span></span>              | <span data-ttu-id="72fca-393">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-393">Gift card</span></span>       | <span data-ttu-id="72fca-394">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-394">2.24%</span></span>                         | <span data-ttu-id="72fca-395">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-395">March 2016</span></span>     |
+| <span data-ttu-id="72fca-396">ベルギー</span><span class="sxs-lookup"><span data-stu-id="72fca-396">Belgium</span></span>              | <span data-ttu-id="72fca-397">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-397">Gift card</span></span>       | <span data-ttu-id="72fca-398">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-398">2.24%</span></span>                         | <span data-ttu-id="72fca-399">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-399">March 2016</span></span>     |
+| <span data-ttu-id="72fca-400">ブラジル</span><span class="sxs-lookup"><span data-stu-id="72fca-400">Brazil</span></span>               | <span data-ttu-id="72fca-401">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-401">Gift card</span></span>       | <span data-ttu-id="72fca-402">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-402">2.24%</span></span>                         | <span data-ttu-id="72fca-403">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-403">March 2016</span></span>     |
+| <span data-ttu-id="72fca-404">カナダ</span><span class="sxs-lookup"><span data-stu-id="72fca-404">Canada</span></span>               | <span data-ttu-id="72fca-405">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-405">Gift card</span></span>       | <span data-ttu-id="72fca-406">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-406">2.24%</span></span>                         | <span data-ttu-id="72fca-407">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-407">March 2016</span></span>     |
+| <span data-ttu-id="72fca-408">チリ</span><span class="sxs-lookup"><span data-stu-id="72fca-408">Chile</span></span>                | <span data-ttu-id="72fca-409">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-409">Gift card</span></span>       | <span data-ttu-id="72fca-410">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-410">2.24%</span></span>                         | <span data-ttu-id="72fca-411">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-411">March 2016</span></span>     |
+| <span data-ttu-id="72fca-412">中国</span><span class="sxs-lookup"><span data-stu-id="72fca-412">China</span></span>                | <span data-ttu-id="72fca-413">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-413">Gift card</span></span>       | <span data-ttu-id="72fca-414">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-414">2.24%</span></span>                         | <span data-ttu-id="72fca-415">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-415">March 2016</span></span>     |
+| <span data-ttu-id="72fca-416">コロンビア</span><span class="sxs-lookup"><span data-stu-id="72fca-416">Colombia</span></span>             | <span data-ttu-id="72fca-417">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-417">Gift card</span></span>       | <span data-ttu-id="72fca-418">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-418">2.24%</span></span>                         | <span data-ttu-id="72fca-419">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-419">March 2016</span></span>     |
+| <span data-ttu-id="72fca-420">チェコ共和国</span><span class="sxs-lookup"><span data-stu-id="72fca-420">Czech Republic</span></span>       | <span data-ttu-id="72fca-421">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-421">Gift card</span></span>       | <span data-ttu-id="72fca-422">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-422">2.24%</span></span>                         | <span data-ttu-id="72fca-423">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-423">March 2016</span></span>     |
+| <span data-ttu-id="72fca-424">デンマーク</span><span class="sxs-lookup"><span data-stu-id="72fca-424">Denmark</span></span>              | <span data-ttu-id="72fca-425">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-425">Gift card</span></span>       | <span data-ttu-id="72fca-426">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-426">2.24%</span></span>                         | <span data-ttu-id="72fca-427">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-427">March 2016</span></span>     |
+| <span data-ttu-id="72fca-428">フィンランド</span><span class="sxs-lookup"><span data-stu-id="72fca-428">Finland</span></span>              | <span data-ttu-id="72fca-429">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-429">Gift card</span></span>       | <span data-ttu-id="72fca-430">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-430">2.24%</span></span>                         | <span data-ttu-id="72fca-431">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-431">March 2016</span></span>     |
+| <span data-ttu-id="72fca-432">フランス</span><span class="sxs-lookup"><span data-stu-id="72fca-432">France</span></span>               | <span data-ttu-id="72fca-433">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-433">Gift card</span></span>       | <span data-ttu-id="72fca-434">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-434">2.24%</span></span>                         | <span data-ttu-id="72fca-435">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-435">March 2016</span></span>     |
+| <span data-ttu-id="72fca-436">ドイツ</span><span class="sxs-lookup"><span data-stu-id="72fca-436">Germany</span></span>              | <span data-ttu-id="72fca-437">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-437">Gift card</span></span>       | <span data-ttu-id="72fca-438">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-438">2.24%</span></span>                         | <span data-ttu-id="72fca-439">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-439">March 2016</span></span>     |
+| <span data-ttu-id="72fca-440">ギリシャ</span><span class="sxs-lookup"><span data-stu-id="72fca-440">Greece</span></span>               | <span data-ttu-id="72fca-441">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-441">Gift card</span></span>       | <span data-ttu-id="72fca-442">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-442">2.24%</span></span>                         | <span data-ttu-id="72fca-443">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-443">March 2016</span></span>     |
+| <span data-ttu-id="72fca-444">香港</span><span class="sxs-lookup"><span data-stu-id="72fca-444">Hong Kong</span></span>            | <span data-ttu-id="72fca-445">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-445">Gift card</span></span>       | <span data-ttu-id="72fca-446">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-446">2.24%</span></span>                         | <span data-ttu-id="72fca-447">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-447">March 2016</span></span>     |
+| <span data-ttu-id="72fca-448">ハンガリー</span><span class="sxs-lookup"><span data-stu-id="72fca-448">Hungary</span></span>              | <span data-ttu-id="72fca-449">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-449">Gift card</span></span>       | <span data-ttu-id="72fca-450">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-450">2.24%</span></span>                         | <span data-ttu-id="72fca-451">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-451">March 2016</span></span>     |
+| <span data-ttu-id="72fca-452">インド</span><span class="sxs-lookup"><span data-stu-id="72fca-452">India</span></span>                | <span data-ttu-id="72fca-453">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-453">Gift card</span></span>       | <span data-ttu-id="72fca-454">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-454">2.24%</span></span>                         | <span data-ttu-id="72fca-455">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-455">March 2016</span></span>     |
+| <span data-ttu-id="72fca-456">アイルランド</span><span class="sxs-lookup"><span data-stu-id="72fca-456">Ireland</span></span>              | <span data-ttu-id="72fca-457">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-457">Gift card</span></span>       | <span data-ttu-id="72fca-458">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-458">2.24%</span></span>                         | <span data-ttu-id="72fca-459">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-459">March 2016</span></span>     |
+| <span data-ttu-id="72fca-460">イスラエル</span><span class="sxs-lookup"><span data-stu-id="72fca-460">Israel</span></span>               | <span data-ttu-id="72fca-461">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-461">Gift card</span></span>       | <span data-ttu-id="72fca-462">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-462">2.24%</span></span>                         | <span data-ttu-id="72fca-463">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-463">March 2016</span></span>     |
+| <span data-ttu-id="72fca-464">イタリア</span><span class="sxs-lookup"><span data-stu-id="72fca-464">Italy</span></span>                | <span data-ttu-id="72fca-465">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-465">Gift card</span></span>       | <span data-ttu-id="72fca-466">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-466">2.24%</span></span>                         | <span data-ttu-id="72fca-467">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-467">March 2016</span></span>     |
+| <span data-ttu-id="72fca-468">日本</span><span class="sxs-lookup"><span data-stu-id="72fca-468">Japan</span></span>                | <span data-ttu-id="72fca-469">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-469">Gift card</span></span>       | <span data-ttu-id="72fca-470">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-470">2.24%</span></span>                         | <span data-ttu-id="72fca-471">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-471">March 2016</span></span>     |
+| <span data-ttu-id="72fca-472">メキシコ</span><span class="sxs-lookup"><span data-stu-id="72fca-472">Mexico</span></span>               | <span data-ttu-id="72fca-473">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-473">Gift card</span></span>       | <span data-ttu-id="72fca-474">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-474">2.24%</span></span>                         | <span data-ttu-id="72fca-475">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-475">March 2016</span></span>     |
+| <span data-ttu-id="72fca-476">オランダ</span><span class="sxs-lookup"><span data-stu-id="72fca-476">Netherlands</span></span>          | <span data-ttu-id="72fca-477">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-477">Gift card</span></span>       | <span data-ttu-id="72fca-478">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-478">2.24%</span></span>                         | <span data-ttu-id="72fca-479">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-479">March 2016</span></span>     |
+| <span data-ttu-id="72fca-480">ニュージーランド</span><span class="sxs-lookup"><span data-stu-id="72fca-480">New Zealand</span></span>          | <span data-ttu-id="72fca-481">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-481">Gift card</span></span>       | <span data-ttu-id="72fca-482">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-482">2.24%</span></span>                         | <span data-ttu-id="72fca-483">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-483">March 2016</span></span>     |
+| <span data-ttu-id="72fca-484">ポーランド</span><span class="sxs-lookup"><span data-stu-id="72fca-484">Poland</span></span>               | <span data-ttu-id="72fca-485">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-485">Gift card</span></span>       | <span data-ttu-id="72fca-486">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-486">2.24%</span></span>                         | <span data-ttu-id="72fca-487">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-487">March 2016</span></span>     |
+| <span data-ttu-id="72fca-488">ポルトガル</span><span class="sxs-lookup"><span data-stu-id="72fca-488">Portugal</span></span>             | <span data-ttu-id="72fca-489">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-489">Gift card</span></span>       | <span data-ttu-id="72fca-490">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-490">2.24%</span></span>                         | <span data-ttu-id="72fca-491">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-491">March 2016</span></span>     |
+| <span data-ttu-id="72fca-492">ロシア</span><span class="sxs-lookup"><span data-stu-id="72fca-492">Russia</span></span>               | <span data-ttu-id="72fca-493">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-493">Gift card</span></span>       | <span data-ttu-id="72fca-494">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-494">2.24%</span></span>                         | <span data-ttu-id="72fca-495">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-495">March 2016</span></span>     |
+| <span data-ttu-id="72fca-496">サウジアラビア</span><span class="sxs-lookup"><span data-stu-id="72fca-496">Saudi Arabia</span></span>         | <span data-ttu-id="72fca-497">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-497">Gift card</span></span>       | <span data-ttu-id="72fca-498">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-498">2.24%</span></span>                         | <span data-ttu-id="72fca-499">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-499">March 2016</span></span>     |
+| <span data-ttu-id="72fca-500">シンガポール</span><span class="sxs-lookup"><span data-stu-id="72fca-500">Singapore</span></span>            | <span data-ttu-id="72fca-501">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-501">Gift card</span></span>       | <span data-ttu-id="72fca-502">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-502">2.24%</span></span>                         | <span data-ttu-id="72fca-503">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-503">March 2016</span></span>     |
+| <span data-ttu-id="72fca-504">スロバキア</span><span class="sxs-lookup"><span data-stu-id="72fca-504">Slovakia</span></span>             | <span data-ttu-id="72fca-505">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-505">Gift card</span></span>       | <span data-ttu-id="72fca-506">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-506">2.24%</span></span>                         | <span data-ttu-id="72fca-507">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-507">March 2016</span></span>     |
+| <span data-ttu-id="72fca-508">南アフリカ</span><span class="sxs-lookup"><span data-stu-id="72fca-508">South Africa</span></span>         | <span data-ttu-id="72fca-509">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-509">Gift card</span></span>       | <span data-ttu-id="72fca-510">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-510">2.24%</span></span>                         | <span data-ttu-id="72fca-511">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-511">March 2016</span></span>     |
+| <span data-ttu-id="72fca-512">韓国</span><span class="sxs-lookup"><span data-stu-id="72fca-512">South Korea</span></span>          | <span data-ttu-id="72fca-513">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-513">Gift card</span></span>       | <span data-ttu-id="72fca-514">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-514">2.24%</span></span>                         | <span data-ttu-id="72fca-515">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-515">March 2016</span></span>     |
+| <span data-ttu-id="72fca-516">スペイン</span><span class="sxs-lookup"><span data-stu-id="72fca-516">Spain</span></span>                | <span data-ttu-id="72fca-517">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-517">Gift card</span></span>       | <span data-ttu-id="72fca-518">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-518">2.24%</span></span>                         | <span data-ttu-id="72fca-519">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-519">March 2016</span></span>     |
+| <span data-ttu-id="72fca-520">スウェーデン</span><span class="sxs-lookup"><span data-stu-id="72fca-520">Sweden</span></span>               | <span data-ttu-id="72fca-521">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-521">Gift card</span></span>       | <span data-ttu-id="72fca-522">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-522">2.24%</span></span>                         | <span data-ttu-id="72fca-523">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-523">March 2016</span></span>     |
+| <span data-ttu-id="72fca-524">スイス</span><span class="sxs-lookup"><span data-stu-id="72fca-524">Switzerland</span></span>          | <span data-ttu-id="72fca-525">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-525">Gift card</span></span>       | <span data-ttu-id="72fca-526">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-526">2.24%</span></span>                         | <span data-ttu-id="72fca-527">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-527">March 2016</span></span>     |
+| <span data-ttu-id="72fca-528">台湾</span><span class="sxs-lookup"><span data-stu-id="72fca-528">Taiwan</span></span>               | <span data-ttu-id="72fca-529">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-529">Gift card</span></span>       | <span data-ttu-id="72fca-530">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-530">2.24%</span></span>                         | <span data-ttu-id="72fca-531">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-531">March 2016</span></span>     |
+| <span data-ttu-id="72fca-532">トルコ</span><span class="sxs-lookup"><span data-stu-id="72fca-532">Turkey</span></span>               | <span data-ttu-id="72fca-533">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-533">Gift card</span></span>       | <span data-ttu-id="72fca-534">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-534">2.24%</span></span>                         | <span data-ttu-id="72fca-535">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-535">March 2016</span></span>     |
+| <span data-ttu-id="72fca-536">アラブ首長国連邦</span><span class="sxs-lookup"><span data-stu-id="72fca-536">United Arab Emirates</span></span> | <span data-ttu-id="72fca-537">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-537">Gift card</span></span>       | <span data-ttu-id="72fca-538">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-538">2.24%</span></span>                         | <span data-ttu-id="72fca-539">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-539">March 2016</span></span>     |
+| <span data-ttu-id="72fca-540">英国</span><span class="sxs-lookup"><span data-stu-id="72fca-540">United Kingdom</span></span>       | <span data-ttu-id="72fca-541">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-541">Gift card</span></span>       | <span data-ttu-id="72fca-542">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-542">2.24%</span></span>                         | <span data-ttu-id="72fca-543">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-543">March 2016</span></span>     |
+| <span data-ttu-id="72fca-544">米国</span><span class="sxs-lookup"><span data-stu-id="72fca-544">United States</span></span>        | <span data-ttu-id="72fca-545">ギフト カード</span><span class="sxs-lookup"><span data-stu-id="72fca-545">Gift card</span></span>       | <span data-ttu-id="72fca-546">2.24%</span><span class="sxs-lookup"><span data-stu-id="72fca-546">2.24%</span></span>                         | <span data-ttu-id="72fca-547">2016 年 3 月</span><span class="sxs-lookup"><span data-stu-id="72fca-547">March 2016</span></span>     |
 
  
 
-## <a name="rest-of-world-markets-for-windows-8x"></a><span data-ttu-id="d7edb-553">Windows 8.x の "その他の国と地域" 市場</span><span class="sxs-lookup"><span data-stu-id="d7edb-553">"Rest of World" markets for Windows 8.x</span></span>
+## <a name="rest-of-world-markets-for-windows-8x"></a><span data-ttu-id="72fca-548">Windows 8.x の "その他の国と地域" 市場</span><span class="sxs-lookup"><span data-stu-id="72fca-548">"Rest of World" markets for Windows 8.x</span></span>
 
-<span data-ttu-id="d7edb-554">アプリに Windows 8.x をターゲットとするパッケージが含まれている場合、Windows 8.x のストアを使うユーザーに対しては、多くの市場が 1 つの "その他の国と地域" 市場として扱われることに注意が必要です。ただし、これらの市場は、Windows デベロッパー センター ダッシュボードでは個別の市場として表示されます (以前の Windows ストア ダッシュボードでは、"その他の国と地域" という 1 つの市場オプションを選択できました)。</span><span class="sxs-lookup"><span data-stu-id="d7edb-554">If your app includes packages targeting Windows 8.x, it's important to be aware that a number of markets are treated as a single "Rest of World" market for customers using the Store on Windows 8.x, even though they are shown as individual markets in the Windows Dev Center dashboard (as opposed to the earlier Windows Store dashboard, where there was one selectable "Rest of World" market option).</span></span>
+<span data-ttu-id="72fca-549">アプリには、Windows を対象とするパッケージが含まれている場合、8.x が市場の数値が windows ストアを使用して顧客の 1 つ「残りの世界」market として扱われることに注意すべき重要な Windows デベロッパー センター内の個々 の市場として表示されている場合でも、8.xダッシュ ボード (以前のストア ダッシュ ボードではなく「残りの世界」市場オプションをすべてこのような市場のグループ化があった場合)。</span><span class="sxs-lookup"><span data-stu-id="72fca-549">If your app includes packages targeting Windows 8.x, it's important to be aware that a number of markets are treated as a single "Rest of World" market for customers using the Store on Windows 8.x, even though they are shown as individual markets in the Windows Dev Center dashboard (as opposed to the earlier Store dashboard, where there was one "Rest of World" market option to group all of these markets).</span></span>
 
-<span data-ttu-id="d7edb-555">アプリを申請するときに、既定の項目を選択したままにしている場合、この問題について心配する必要はありません。アプリは可能なすべての市場に公開されます。</span><span class="sxs-lookup"><span data-stu-id="d7edb-555">If you leave the default selection when submitting your app, you don't have to worry about this, and your app will be available to all possible markets.</span></span> <span data-ttu-id="d7edb-556">ただし、特定の市場を除外する場合、これらの "その他の国と地域" 市場のいずれかの市場を除外すると、Windows 8 または Windows 8.1 ユーザー向けの "その他の国と地域" 市場のどの市場にもアプリが公開されないことを意味することに留意してください。</span><span class="sxs-lookup"><span data-stu-id="d7edb-556">However, if you want to exclude certain markets, keep in mind that excluding even one of these "Rest of World" markets means that your app won't be available in any of the "Rest of World" markets for customers on Windows 8 or Windows 8.1.</span></span>
+<span data-ttu-id="72fca-550">アプリを申請するときに、既定の項目を選択したままにしている場合、この問題について心配する必要はありません。アプリは可能なすべての市場に公開されます。</span><span class="sxs-lookup"><span data-stu-id="72fca-550">If you leave the default selection when submitting your app, you don't have to worry about this, and your app will be available to all possible markets.</span></span> <span data-ttu-id="72fca-551">ただし、特定の市場を除外する場合、これらの "その他の国と地域" 市場のいずれかの市場を除外すると、Windows 8 または Windows 8.1 ユーザー向けの "その他の国と地域" 市場のどの市場にもアプリが公開されないことを意味することに留意してください。</span><span class="sxs-lookup"><span data-stu-id="72fca-551">However, if you want to exclude certain markets, keep in mind that excluding even one of these "Rest of World" markets means that your app won't be available in any of the "Rest of World" markets for customers on Windows 8 or Windows 8.1.</span></span>
 
-<span data-ttu-id="d7edb-557">Windows 8.x 向けの "その他の国と地域" に含まれている市場は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="d7edb-557">The markets that are included in "Rest of World" for Windows 8.x are the following:</span></span>
+<span data-ttu-id="72fca-552">Windows 8.x 向けの "その他の国と地域" に含まれている市場は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="72fca-552">The markets that are included in "Rest of World" for Windows 8.x are the following:</span></span>
+
 
 <table>
   <tr>
-    <td><span data-ttu-id="d7edb-558">アフガニスタン</span><span class="sxs-lookup"><span data-stu-id="d7edb-558">Afghanistan</span></span></td>
-    <td><span data-ttu-id="d7edb-559">オーランド諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-559">Åland Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-560">アルバニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-560">Albania</span></span></td>
-    <td><span data-ttu-id="d7edb-561">米領サモア</span><span class="sxs-lookup"><span data-stu-id="d7edb-561">American Samoa</span></span></td>
+    <td><span data-ttu-id="72fca-553">アフガニスタン</span><span class="sxs-lookup"><span data-stu-id="72fca-553">Afghanistan</span></span></td>
+    <td><span data-ttu-id="72fca-554">オーランド諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-554">Åland Islands</span></span></td>
+    <td><span data-ttu-id="72fca-555">アルバニア</span><span class="sxs-lookup"><span data-stu-id="72fca-555">Albania</span></span></td>
+    <td><span data-ttu-id="72fca-556">アメリカ領サモア</span><span class="sxs-lookup"><span data-stu-id="72fca-556">American Samoa</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-562">アンドラ</span><span class="sxs-lookup"><span data-stu-id="d7edb-562">Andorra</span></span></td>
-    <td><span data-ttu-id="d7edb-563">アンゴラ</span><span class="sxs-lookup"><span data-stu-id="d7edb-563">Angola</span></span></td>
-    <td><span data-ttu-id="d7edb-564">アンギラ</span><span class="sxs-lookup"><span data-stu-id="d7edb-564">Anguilla</span></span></td>
-    <td><span data-ttu-id="d7edb-565">南極</span><span class="sxs-lookup"><span data-stu-id="d7edb-565">Antarctica</span></span></td>
+    <td><span data-ttu-id="72fca-557">アンドラ</span><span class="sxs-lookup"><span data-stu-id="72fca-557">Andorra</span></span></td>
+    <td><span data-ttu-id="72fca-558">アンゴラ</span><span class="sxs-lookup"><span data-stu-id="72fca-558">Angola</span></span></td>
+    <td><span data-ttu-id="72fca-559">アンギラ</span><span class="sxs-lookup"><span data-stu-id="72fca-559">Anguilla</span></span></td>
+    <td><span data-ttu-id="72fca-560">南極</span><span class="sxs-lookup"><span data-stu-id="72fca-560">Antarctica</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-566">アンティグア・バーブーダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-566">Antigua and Barbuda</span></span></td>
-    <td><span data-ttu-id="d7edb-567">アルメニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-567">Armenia</span></span></td>
-    <td><span data-ttu-id="d7edb-568">アルバ</span><span class="sxs-lookup"><span data-stu-id="d7edb-568">Aruba</span></span></td>
-    <td><span data-ttu-id="d7edb-569">アゼルバイジャン</span><span class="sxs-lookup"><span data-stu-id="d7edb-569">Azerbaijan</span></span></td>
+    <td><span data-ttu-id="72fca-561">アンティグア・バーブーダ</span><span class="sxs-lookup"><span data-stu-id="72fca-561">Antigua and Barbuda</span></span></td>
+    <td><span data-ttu-id="72fca-562">アルメニア</span><span class="sxs-lookup"><span data-stu-id="72fca-562">Armenia</span></span></td>
+    <td><span data-ttu-id="72fca-563">アルバ</span><span class="sxs-lookup"><span data-stu-id="72fca-563">Aruba</span></span></td>
+    <td><span data-ttu-id="72fca-564">アゼルバイジャン</span><span class="sxs-lookup"><span data-stu-id="72fca-564">Azerbaijan</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-570">バハマ</span><span class="sxs-lookup"><span data-stu-id="d7edb-570">Bahamas</span></span></td>
-    <td><span data-ttu-id="d7edb-571">バングラデシュ</span><span class="sxs-lookup"><span data-stu-id="d7edb-571">Bangladesh</span></span></td>
-    <td><span data-ttu-id="d7edb-572">バルバドス</span><span class="sxs-lookup"><span data-stu-id="d7edb-572">Barbados</span></span></td>
-    <td><span data-ttu-id="d7edb-573">ベラルーシ</span><span class="sxs-lookup"><span data-stu-id="d7edb-573">Belarus</span></span></td>
+    <td><span data-ttu-id="72fca-565">バハマ</span><span class="sxs-lookup"><span data-stu-id="72fca-565">Bahamas</span></span></td>
+    <td><span data-ttu-id="72fca-566">バングラデシュ</span><span class="sxs-lookup"><span data-stu-id="72fca-566">Bangladesh</span></span></td>
+    <td><span data-ttu-id="72fca-567">バルバドス</span><span class="sxs-lookup"><span data-stu-id="72fca-567">Barbados</span></span></td>
+    <td><span data-ttu-id="72fca-568">ベラルーシ</span><span class="sxs-lookup"><span data-stu-id="72fca-568">Belarus</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-574">ベリーズ</span><span class="sxs-lookup"><span data-stu-id="d7edb-574">Belize</span></span></td>
-    <td><span data-ttu-id="d7edb-575">ベナン</span><span class="sxs-lookup"><span data-stu-id="d7edb-575">Benin</span></span></td>
-    <td><span data-ttu-id="d7edb-576">バミューダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-576">Bermuda</span></span></td>
-    <td><span data-ttu-id="d7edb-577">ブータン</span><span class="sxs-lookup"><span data-stu-id="d7edb-577">Bhutan</span></span></td>
+    <td><span data-ttu-id="72fca-569">ベリーズ</span><span class="sxs-lookup"><span data-stu-id="72fca-569">Belize</span></span></td>
+    <td><span data-ttu-id="72fca-570">ベナン</span><span class="sxs-lookup"><span data-stu-id="72fca-570">Benin</span></span></td>
+    <td><span data-ttu-id="72fca-571">バミューダ諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-571">Bermuda</span></span></td>
+    <td><span data-ttu-id="72fca-572">ブータン</span><span class="sxs-lookup"><span data-stu-id="72fca-572">Bhutan</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-578">ボリビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-578">Bolivia</span></span></td>
-    <td><span data-ttu-id="d7edb-579">ボネール島</span><span class="sxs-lookup"><span data-stu-id="d7edb-579">Bonaire</span></span></td>
-    <td><span data-ttu-id="d7edb-580">ボスニア・ヘルツェゴビナ</span><span class="sxs-lookup"><span data-stu-id="d7edb-580">Bosnia and Herzegovina</span></span></td>
-    <td><span data-ttu-id="d7edb-581">ボツワナ</span><span class="sxs-lookup"><span data-stu-id="d7edb-581">Botswana</span></span></td>
+    <td><span data-ttu-id="72fca-573">ボリビア</span><span class="sxs-lookup"><span data-stu-id="72fca-573">Bolivia</span></span></td>
+    <td><span data-ttu-id="72fca-574">ボネール島</span><span class="sxs-lookup"><span data-stu-id="72fca-574">Bonaire</span></span></td>
+    <td><span data-ttu-id="72fca-575">ボスニア・ヘルツェゴビナ</span><span class="sxs-lookup"><span data-stu-id="72fca-575">Bosnia and Herzegovina</span></span></td>
+    <td><span data-ttu-id="72fca-576">ボツワナ</span><span class="sxs-lookup"><span data-stu-id="72fca-576">Botswana</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-582">ブーベ島</span><span class="sxs-lookup"><span data-stu-id="d7edb-582">Bouvet Island</span></span></td>
-    <td><span data-ttu-id="d7edb-583">英領インド洋地域</span><span class="sxs-lookup"><span data-stu-id="d7edb-583">British Indian Ocean Territory</span></span></td>
-    <td><span data-ttu-id="d7edb-584">英領バージン諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-584">British Virgin Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-585">ブルネイ</span><span class="sxs-lookup"><span data-stu-id="d7edb-585">Brunei</span></span></td>
+    <td><span data-ttu-id="72fca-577">ブーベ島</span><span class="sxs-lookup"><span data-stu-id="72fca-577">Bouvet Island</span></span></td>
+    <td><span data-ttu-id="72fca-578">英領インド洋地域</span><span class="sxs-lookup"><span data-stu-id="72fca-578">British Indian Ocean Territory</span></span></td>
+    <td><span data-ttu-id="72fca-579">英領バージン諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-579">British Virgin Islands</span></span></td>
+    <td><span data-ttu-id="72fca-580">ブルネイ</span><span class="sxs-lookup"><span data-stu-id="72fca-580">Brunei</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-586">ブルキナファソ</span><span class="sxs-lookup"><span data-stu-id="d7edb-586">Burkina Faso</span></span></td>
-    <td><span data-ttu-id="d7edb-587">ブルンジ</span><span class="sxs-lookup"><span data-stu-id="d7edb-587">Burundi</span></span></td>
-    <td><span data-ttu-id="d7edb-588">カーボベルデ</span><span class="sxs-lookup"><span data-stu-id="d7edb-588">Cabo Verde</span></span></td>
-    <td><span data-ttu-id="d7edb-589">カンボジア</span><span class="sxs-lookup"><span data-stu-id="d7edb-589">Cambodia</span></span></td>
+    <td><span data-ttu-id="72fca-581">ブルキナファソ</span><span class="sxs-lookup"><span data-stu-id="72fca-581">Burkina Faso</span></span></td>
+    <td><span data-ttu-id="72fca-582">ブルンジ</span><span class="sxs-lookup"><span data-stu-id="72fca-582">Burundi</span></span></td>
+    <td><span data-ttu-id="72fca-583">カーボベルデ</span><span class="sxs-lookup"><span data-stu-id="72fca-583">Cabo Verde</span></span></td>
+    <td><span data-ttu-id="72fca-584">カンボジア</span><span class="sxs-lookup"><span data-stu-id="72fca-584">Cambodia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-590">カメルーン</span><span class="sxs-lookup"><span data-stu-id="d7edb-590">Cameroon</span></span></td>
-    <td><span data-ttu-id="d7edb-591">ケイマン諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-591">Cayman Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-592">中央アフリカ共和国</span><span class="sxs-lookup"><span data-stu-id="d7edb-592">Central African Republic</span></span></td>
-    <td><span data-ttu-id="d7edb-593">チャド</span><span class="sxs-lookup"><span data-stu-id="d7edb-593">Chad</span></span></td>
+    <td><span data-ttu-id="72fca-585">カメルーン</span><span class="sxs-lookup"><span data-stu-id="72fca-585">Cameroon</span></span></td>
+    <td><span data-ttu-id="72fca-586">ケイマン諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-586">Cayman Islands</span></span></td>
+    <td><span data-ttu-id="72fca-587">中央アフリカ共和国</span><span class="sxs-lookup"><span data-stu-id="72fca-587">Central African Republic</span></span></td>
+    <td><span data-ttu-id="72fca-588">チャド</span><span class="sxs-lookup"><span data-stu-id="72fca-588">Chad</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-594">クリスマス島</span><span class="sxs-lookup"><span data-stu-id="d7edb-594">Christmas Island</span></span></td>
-    <td><span data-ttu-id="d7edb-595">ココス諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-595">Cocos (Keeling) Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-596">コモロ</span><span class="sxs-lookup"><span data-stu-id="d7edb-596">Comoros</span></span></td>
-    <td><span data-ttu-id="d7edb-597">コンゴ共和国</span><span class="sxs-lookup"><span data-stu-id="d7edb-597">Congo</span></span></td>
+    <td><span data-ttu-id="72fca-589">クリスマス島</span><span class="sxs-lookup"><span data-stu-id="72fca-589">Christmas Island</span></span></td>
+    <td><span data-ttu-id="72fca-590">ココス諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-590">Cocos (Keeling) Islands</span></span></td>
+    <td><span data-ttu-id="72fca-591">コモロ</span><span class="sxs-lookup"><span data-stu-id="72fca-591">Comoros</span></span></td>
+    <td><span data-ttu-id="72fca-592">コンゴ共和国</span><span class="sxs-lookup"><span data-stu-id="72fca-592">Congo</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-598">コンゴ民主共和国</span><span class="sxs-lookup"><span data-stu-id="d7edb-598">Congo (DRC)</span></span></td>
-    <td><span data-ttu-id="d7edb-599">クック諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-599">Cook Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-600">コートジボワール</span><span class="sxs-lookup"><span data-stu-id="d7edb-600">Côte d’Ivoire</span></span></td>
-    <td><span data-ttu-id="d7edb-601">キュラソー島</span><span class="sxs-lookup"><span data-stu-id="d7edb-601">Curaçao</span></span></td>
+    <td><span data-ttu-id="72fca-593">コンゴ民主共和国</span><span class="sxs-lookup"><span data-stu-id="72fca-593">Congo (DRC)</span></span></td>
+    <td><span data-ttu-id="72fca-594">クック諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-594">Cook Islands</span></span></td>
+    <td><span data-ttu-id="72fca-595">コートジボワール</span><span class="sxs-lookup"><span data-stu-id="72fca-595">Côte d’Ivoire</span></span></td>
+    <td><span data-ttu-id="72fca-596">キュラソー島</span><span class="sxs-lookup"><span data-stu-id="72fca-596">Curaçao</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-602">ジブチ</span><span class="sxs-lookup"><span data-stu-id="d7edb-602">Djibouti</span></span></td>
-    <td><span data-ttu-id="d7edb-603">ドミニカ国</span><span class="sxs-lookup"><span data-stu-id="d7edb-603">Dominica</span></span></td>
-    <td><span data-ttu-id="d7edb-604">ドミニカ共和国</span><span class="sxs-lookup"><span data-stu-id="d7edb-604">Dominican Republic</span></span></td>
-    <td><span data-ttu-id="d7edb-605">エクアドル</span><span class="sxs-lookup"><span data-stu-id="d7edb-605">Ecuador</span></span></td>
+    <td><span data-ttu-id="72fca-597">ジブチ</span><span class="sxs-lookup"><span data-stu-id="72fca-597">Djibouti</span></span></td>
+    <td><span data-ttu-id="72fca-598">ドミニカ国</span><span class="sxs-lookup"><span data-stu-id="72fca-598">Dominica</span></span></td>
+    <td><span data-ttu-id="72fca-599">ドミニカ共和国</span><span class="sxs-lookup"><span data-stu-id="72fca-599">Dominican Republic</span></span></td>
+    <td><span data-ttu-id="72fca-600">エクアドル</span><span class="sxs-lookup"><span data-stu-id="72fca-600">Ecuador</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-606">エルサルバドル</span><span class="sxs-lookup"><span data-stu-id="d7edb-606">El Salvador</span></span></td>
-    <td><span data-ttu-id="d7edb-607">赤道ギニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-607">Equatorial Guinea</span></span></td>
-    <td><span data-ttu-id="d7edb-608">エリトリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-608">Eritrea</span></span></td>
-    <td><span data-ttu-id="d7edb-609">エチオピア</span><span class="sxs-lookup"><span data-stu-id="d7edb-609">Ethiopia</span></span></td>
+    <td><span data-ttu-id="72fca-601">エルサルバドル</span><span class="sxs-lookup"><span data-stu-id="72fca-601">El Salvador</span></span></td>
+    <td><span data-ttu-id="72fca-602">赤道ギニア</span><span class="sxs-lookup"><span data-stu-id="72fca-602">Equatorial Guinea</span></span></td>
+    <td><span data-ttu-id="72fca-603">エリトリア</span><span class="sxs-lookup"><span data-stu-id="72fca-603">Eritrea</span></span></td>
+    <td><span data-ttu-id="72fca-604">エチオピア</span><span class="sxs-lookup"><span data-stu-id="72fca-604">Ethiopia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-610">フォークランド諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-610">Falkland Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-611">フェロー諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-611">Faroe Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-612">フィジー</span><span class="sxs-lookup"><span data-stu-id="d7edb-612">Fiji</span></span></td>
-    <td><span data-ttu-id="d7edb-613">フランス領ギアナ</span><span class="sxs-lookup"><span data-stu-id="d7edb-613">French Guiana</span></span></td>
+    <td><span data-ttu-id="72fca-605">フォークランド諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-605">Falkland Islands</span></span></td>
+    <td><span data-ttu-id="72fca-606">フェロー諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-606">Faroe Islands</span></span></td>
+    <td><span data-ttu-id="72fca-607">フィジー</span><span class="sxs-lookup"><span data-stu-id="72fca-607">Fiji</span></span></td>
+    <td><span data-ttu-id="72fca-608">フランス領ギアナ</span><span class="sxs-lookup"><span data-stu-id="72fca-608">French Guiana</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-614">フランス領ポリネシア</span><span class="sxs-lookup"><span data-stu-id="d7edb-614">French Polynesia</span></span></td>
-    <td><span data-ttu-id="d7edb-615">フランス領南極地方</span><span class="sxs-lookup"><span data-stu-id="d7edb-615">French Southern and Antarctic Lands</span></span></td>
-    <td><span data-ttu-id="d7edb-616">ガボン</span><span class="sxs-lookup"><span data-stu-id="d7edb-616">Gabon</span></span></td>
-    <td><span data-ttu-id="d7edb-617">ガンビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-617">Gambia</span></span></td>
+    <td><span data-ttu-id="72fca-609">フランス領ポリネシア</span><span class="sxs-lookup"><span data-stu-id="72fca-609">French Polynesia</span></span></td>
+    <td><span data-ttu-id="72fca-610">フランス領南極地方</span><span class="sxs-lookup"><span data-stu-id="72fca-610">French Southern and Antarctic Lands</span></span></td>
+    <td><span data-ttu-id="72fca-611">ガボン</span><span class="sxs-lookup"><span data-stu-id="72fca-611">Gabon</span></span></td>
+    <td><span data-ttu-id="72fca-612">ガンビア</span><span class="sxs-lookup"><span data-stu-id="72fca-612">Gambia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-618">ジョージア</span><span class="sxs-lookup"><span data-stu-id="d7edb-618">Georgia</span></span></td>
-    <td><span data-ttu-id="d7edb-619">ガーナ</span><span class="sxs-lookup"><span data-stu-id="d7edb-619">Ghana</span></span></td>
-    <td><span data-ttu-id="d7edb-620">ジブラルタル</span><span class="sxs-lookup"><span data-stu-id="d7edb-620">Gibraltar</span></span></td>
-    <td><span data-ttu-id="d7edb-621">グリーンランド</span><span class="sxs-lookup"><span data-stu-id="d7edb-621">Greenland</span></span></td>
+    <td><span data-ttu-id="72fca-613">ジョージア</span><span class="sxs-lookup"><span data-stu-id="72fca-613">Georgia</span></span></td>
+    <td><span data-ttu-id="72fca-614">ガーナ</span><span class="sxs-lookup"><span data-stu-id="72fca-614">Ghana</span></span></td>
+    <td><span data-ttu-id="72fca-615">ジブラルタル</span><span class="sxs-lookup"><span data-stu-id="72fca-615">Gibraltar</span></span></td>
+    <td><span data-ttu-id="72fca-616">グリーンランド</span><span class="sxs-lookup"><span data-stu-id="72fca-616">Greenland</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-622">グレナダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-622">Grenada</span></span></td>
-    <td><span data-ttu-id="d7edb-623">グアドループ</span><span class="sxs-lookup"><span data-stu-id="d7edb-623">Guadeloupe</span></span></td>
-    <td><span data-ttu-id="d7edb-624">グアム</span><span class="sxs-lookup"><span data-stu-id="d7edb-624">Guam</span></span></td>
-    <td><span data-ttu-id="d7edb-625">グアテマラ</span><span class="sxs-lookup"><span data-stu-id="d7edb-625">Guatemala</span></span></td>
+    <td><span data-ttu-id="72fca-617">グレナダ</span><span class="sxs-lookup"><span data-stu-id="72fca-617">Grenada</span></span></td>
+    <td><span data-ttu-id="72fca-618">グアドループ</span><span class="sxs-lookup"><span data-stu-id="72fca-618">Guadeloupe</span></span></td>
+    <td><span data-ttu-id="72fca-619">グアム</span><span class="sxs-lookup"><span data-stu-id="72fca-619">Guam</span></span></td>
+    <td><span data-ttu-id="72fca-620">グアテマラ</span><span class="sxs-lookup"><span data-stu-id="72fca-620">Guatemala</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-626">ガーンジー島</span><span class="sxs-lookup"><span data-stu-id="d7edb-626">Guernsey</span></span></td>
-    <td><span data-ttu-id="d7edb-627">ギニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-627">Guinea</span></span></td>
-    <td><span data-ttu-id="d7edb-628">ギニアビサウ</span><span class="sxs-lookup"><span data-stu-id="d7edb-628">Guinea-Bissau</span></span></td>
-    <td><span data-ttu-id="d7edb-629">ガイアナ</span><span class="sxs-lookup"><span data-stu-id="d7edb-629">Guyana</span></span></td>
+    <td><span data-ttu-id="72fca-621">ガーンジー島</span><span class="sxs-lookup"><span data-stu-id="72fca-621">Guernsey</span></span></td>
+    <td><span data-ttu-id="72fca-622">ギニア</span><span class="sxs-lookup"><span data-stu-id="72fca-622">Guinea</span></span></td>
+    <td><span data-ttu-id="72fca-623">ギニアビサウ</span><span class="sxs-lookup"><span data-stu-id="72fca-623">Guinea-Bissau</span></span></td>
+    <td><span data-ttu-id="72fca-624">ガイアナ</span><span class="sxs-lookup"><span data-stu-id="72fca-624">Guyana</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-630">ハイチ</span><span class="sxs-lookup"><span data-stu-id="d7edb-630">Haiti</span></span></td>
-    <td><span data-ttu-id="d7edb-631">ハード・マクドナルド諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-631">Heard Island and McDonald Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-632">ホンジュラス</span><span class="sxs-lookup"><span data-stu-id="d7edb-632">Honduras</span></span></td>
-    <td><span data-ttu-id="d7edb-633">アイスランド</span><span class="sxs-lookup"><span data-stu-id="d7edb-633">Iceland</span></span></td>
+    <td><span data-ttu-id="72fca-625">ハイチ</span><span class="sxs-lookup"><span data-stu-id="72fca-625">Haiti</span></span></td>
+    <td><span data-ttu-id="72fca-626">ハード・マクドナルド諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-626">Heard Island and McDonald Islands</span></span></td>
+    <td><span data-ttu-id="72fca-627">ホンジュラス</span><span class="sxs-lookup"><span data-stu-id="72fca-627">Honduras</span></span></td>
+    <td><span data-ttu-id="72fca-628">アイスランド</span><span class="sxs-lookup"><span data-stu-id="72fca-628">Iceland</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-634">マン島</span><span class="sxs-lookup"><span data-stu-id="d7edb-634">Isle of Man</span></span></td>
-    <td><span data-ttu-id="d7edb-635">ジャマイカ</span><span class="sxs-lookup"><span data-stu-id="d7edb-635">Jamaica</span></span></td>
-    <td><span data-ttu-id="d7edb-636">ジャージー島</span><span class="sxs-lookup"><span data-stu-id="d7edb-636">Jersey</span></span></td>
-    <td><span data-ttu-id="d7edb-637">ケニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-637">Kenya</span></span></td>
+    <td><span data-ttu-id="72fca-629">マン島</span><span class="sxs-lookup"><span data-stu-id="72fca-629">Isle of Man</span></span></td>
+    <td><span data-ttu-id="72fca-630">ジャマイカ</span><span class="sxs-lookup"><span data-stu-id="72fca-630">Jamaica</span></span></td>
+    <td><span data-ttu-id="72fca-631">ジャージー島</span><span class="sxs-lookup"><span data-stu-id="72fca-631">Jersey</span></span></td>
+    <td><span data-ttu-id="72fca-632">ケニア</span><span class="sxs-lookup"><span data-stu-id="72fca-632">Kenya</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-638">キリバス</span><span class="sxs-lookup"><span data-stu-id="d7edb-638">Kiribati</span></span></td>
-    <td><span data-ttu-id="d7edb-639">キルギス</span><span class="sxs-lookup"><span data-stu-id="d7edb-639">Kyrgyzstan</span></span></td>
-    <td><span data-ttu-id="d7edb-640">ラオス</span><span class="sxs-lookup"><span data-stu-id="d7edb-640">Laos</span></span></td>
-    <td><span data-ttu-id="d7edb-641">レソト</span><span class="sxs-lookup"><span data-stu-id="d7edb-641">Lesotho</span></span></td>
+    <td><span data-ttu-id="72fca-633">キリバス</span><span class="sxs-lookup"><span data-stu-id="72fca-633">Kiribati</span></span></td>
+    <td><span data-ttu-id="72fca-634">キルギス</span><span class="sxs-lookup"><span data-stu-id="72fca-634">Kyrgyzstan</span></span></td>
+    <td><span data-ttu-id="72fca-635">ラオス</span><span class="sxs-lookup"><span data-stu-id="72fca-635">Laos</span></span></td>
+    <td><span data-ttu-id="72fca-636">レソト</span><span class="sxs-lookup"><span data-stu-id="72fca-636">Lesotho</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-642">リベリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-642">Liberia</span></span></td>
-    <td><span data-ttu-id="d7edb-643">リヒテンシュタイン</span><span class="sxs-lookup"><span data-stu-id="d7edb-643">Liechtenstein</span></span></td>
-    <td><span data-ttu-id="d7edb-644">マカオ</span><span class="sxs-lookup"><span data-stu-id="d7edb-644">Macao SAR</span></span></td>
-    <td><span data-ttu-id="d7edb-645">マケドニア (旧ユーゴスラビア共和国)</span><span class="sxs-lookup"><span data-stu-id="d7edb-645">Macedonia, FYRO</span></span></td>
+    <td><span data-ttu-id="72fca-637">リベリア</span><span class="sxs-lookup"><span data-stu-id="72fca-637">Liberia</span></span></td>
+    <td><span data-ttu-id="72fca-638">リヒテンシュタイン</span><span class="sxs-lookup"><span data-stu-id="72fca-638">Liechtenstein</span></span></td>
+    <td><span data-ttu-id="72fca-639">マカオ</span><span class="sxs-lookup"><span data-stu-id="72fca-639">Macao SAR</span></span></td>
+    <td><span data-ttu-id="72fca-640">マケドニア (旧ユーゴスラビア共和国)</span><span class="sxs-lookup"><span data-stu-id="72fca-640">Macedonia, FYRO</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-646">マダガスカル</span><span class="sxs-lookup"><span data-stu-id="d7edb-646">Madagascar</span></span></td>
-    <td><span data-ttu-id="d7edb-647">マラウイ</span><span class="sxs-lookup"><span data-stu-id="d7edb-647">Malawi</span></span></td>
-    <td><span data-ttu-id="d7edb-648">モルディブ</span><span class="sxs-lookup"><span data-stu-id="d7edb-648">Maldives</span></span></td>
-    <td><span data-ttu-id="d7edb-649">マリ</span><span class="sxs-lookup"><span data-stu-id="d7edb-649">Mali</span></span></td>
+    <td><span data-ttu-id="72fca-641">マダガスカル</span><span class="sxs-lookup"><span data-stu-id="72fca-641">Madagascar</span></span></td>
+    <td><span data-ttu-id="72fca-642">マラウイ</span><span class="sxs-lookup"><span data-stu-id="72fca-642">Malawi</span></span></td>
+    <td><span data-ttu-id="72fca-643">モルディブ</span><span class="sxs-lookup"><span data-stu-id="72fca-643">Maldives</span></span></td>
+    <td><span data-ttu-id="72fca-644">マリ</span><span class="sxs-lookup"><span data-stu-id="72fca-644">Mali</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-650">マーシャル諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-650">Marshall Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-651">マルチニーク島</span><span class="sxs-lookup"><span data-stu-id="d7edb-651">Martinique</span></span></td>
-    <td><span data-ttu-id="d7edb-652">モーリタニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-652">Mauritania</span></span></td>
-    <td><span data-ttu-id="d7edb-653">モーリシャス</span><span class="sxs-lookup"><span data-stu-id="d7edb-653">Mauritius</span></span></td>
+    <td><span data-ttu-id="72fca-645">マーシャル諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-645">Marshall Islands</span></span></td>
+    <td><span data-ttu-id="72fca-646">マルチニーク島</span><span class="sxs-lookup"><span data-stu-id="72fca-646">Martinique</span></span></td>
+    <td><span data-ttu-id="72fca-647">モーリタニア</span><span class="sxs-lookup"><span data-stu-id="72fca-647">Mauritania</span></span></td>
+    <td><span data-ttu-id="72fca-648">モーリシャス</span><span class="sxs-lookup"><span data-stu-id="72fca-648">Mauritius</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-654">マイヨット島</span><span class="sxs-lookup"><span data-stu-id="d7edb-654">Mayotte</span></span></td>
-    <td><span data-ttu-id="d7edb-655">ミクロネシア</span><span class="sxs-lookup"><span data-stu-id="d7edb-655">Micronesia</span></span></td>
-    <td><span data-ttu-id="d7edb-656">モルドバ</span><span class="sxs-lookup"><span data-stu-id="d7edb-656">Moldova</span></span></td>
-    <td><span data-ttu-id="d7edb-657">モナコ</span><span class="sxs-lookup"><span data-stu-id="d7edb-657">Monaco</span></span></td>
+    <td><span data-ttu-id="72fca-649">マイヨット島</span><span class="sxs-lookup"><span data-stu-id="72fca-649">Mayotte</span></span></td>
+    <td><span data-ttu-id="72fca-650">ミクロネシア</span><span class="sxs-lookup"><span data-stu-id="72fca-650">Micronesia</span></span></td>
+    <td><span data-ttu-id="72fca-651">モルドバ</span><span class="sxs-lookup"><span data-stu-id="72fca-651">Moldova</span></span></td>
+    <td><span data-ttu-id="72fca-652">モナコ</span><span class="sxs-lookup"><span data-stu-id="72fca-652">Monaco</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-658">モンゴル国</span><span class="sxs-lookup"><span data-stu-id="d7edb-658">Mongolia</span></span></td>
-    <td><span data-ttu-id="d7edb-659">モンテネグロ</span><span class="sxs-lookup"><span data-stu-id="d7edb-659">Montenegro</span></span></td>
-    <td><span data-ttu-id="d7edb-660">モンセラット</span><span class="sxs-lookup"><span data-stu-id="d7edb-660">Montserrat</span></span></td>
-    <td><span data-ttu-id="d7edb-661">モロッコ</span><span class="sxs-lookup"><span data-stu-id="d7edb-661">Morocco</span></span></td>
+    <td><span data-ttu-id="72fca-653">モンゴル</span><span class="sxs-lookup"><span data-stu-id="72fca-653">Mongolia</span></span></td>
+    <td><span data-ttu-id="72fca-654">モンテネグロ</span><span class="sxs-lookup"><span data-stu-id="72fca-654">Montenegro</span></span></td>
+    <td><span data-ttu-id="72fca-655">モンセラット</span><span class="sxs-lookup"><span data-stu-id="72fca-655">Montserrat</span></span></td>
+    <td><span data-ttu-id="72fca-656">モロッコ</span><span class="sxs-lookup"><span data-stu-id="72fca-656">Morocco</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-662">モザンビーク</span><span class="sxs-lookup"><span data-stu-id="d7edb-662">Mozambique</span></span></td>
-    <td><span data-ttu-id="d7edb-663">ミャンマー</span><span class="sxs-lookup"><span data-stu-id="d7edb-663">Myanmar</span></span></td>
-    <td><span data-ttu-id="d7edb-664">ナミビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-664">Namibia</span></span></td>
-    <td><span data-ttu-id="d7edb-665">ナウル</span><span class="sxs-lookup"><span data-stu-id="d7edb-665">Nauru</span></span></td>
+    <td><span data-ttu-id="72fca-657">モザンビーク</span><span class="sxs-lookup"><span data-stu-id="72fca-657">Mozambique</span></span></td>
+    <td><span data-ttu-id="72fca-658">ミャンマー</span><span class="sxs-lookup"><span data-stu-id="72fca-658">Myanmar</span></span></td>
+    <td><span data-ttu-id="72fca-659">ナミビア</span><span class="sxs-lookup"><span data-stu-id="72fca-659">Namibia</span></span></td>
+    <td><span data-ttu-id="72fca-660">ナウル</span><span class="sxs-lookup"><span data-stu-id="72fca-660">Nauru</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-666">ネパール</span><span class="sxs-lookup"><span data-stu-id="d7edb-666">Nepal</span></span></td>
-    <td><span data-ttu-id="d7edb-667">ニューカレドニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-667">New Caledonia</span></span></td>
-    <td><span data-ttu-id="d7edb-668">ニカラグア</span><span class="sxs-lookup"><span data-stu-id="d7edb-668">Nicaragua</span></span></td>
-    <td><span data-ttu-id="d7edb-669">ニジェール</span><span class="sxs-lookup"><span data-stu-id="d7edb-669">Niger</span></span></td>
+    <td><span data-ttu-id="72fca-661">ネパール</span><span class="sxs-lookup"><span data-stu-id="72fca-661">Nepal</span></span></td>
+    <td><span data-ttu-id="72fca-662">ニューカレドニア</span><span class="sxs-lookup"><span data-stu-id="72fca-662">New Caledonia</span></span></td>
+    <td><span data-ttu-id="72fca-663">ニカラグア</span><span class="sxs-lookup"><span data-stu-id="72fca-663">Nicaragua</span></span></td>
+    <td><span data-ttu-id="72fca-664">ニジェール</span><span class="sxs-lookup"><span data-stu-id="72fca-664">Niger</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-670">ナイジェリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-670">Nigeria</span></span></td>
-    <td><span data-ttu-id="d7edb-671">ニウエ</span><span class="sxs-lookup"><span data-stu-id="d7edb-671">Niue</span></span></td>
-    <td><span data-ttu-id="d7edb-672">ノーフォーク島</span><span class="sxs-lookup"><span data-stu-id="d7edb-672">Norfolk Island</span></span></td>
-    <td><span data-ttu-id="d7edb-673">北マリアナ諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-673">Northern Mariana Islands</span></span></td>
+    <td><span data-ttu-id="72fca-665">ナイジェリア</span><span class="sxs-lookup"><span data-stu-id="72fca-665">Nigeria</span></span></td>
+    <td><span data-ttu-id="72fca-666">ニウエ</span><span class="sxs-lookup"><span data-stu-id="72fca-666">Niue</span></span></td>
+    <td><span data-ttu-id="72fca-667">ノーフォーク島</span><span class="sxs-lookup"><span data-stu-id="72fca-667">Norfolk Island</span></span></td>
+    <td><span data-ttu-id="72fca-668">北マリアナ諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-668">Northern Mariana Islands</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-674">パラオ</span><span class="sxs-lookup"><span data-stu-id="d7edb-674">Palau</span></span></td>
-    <td><span data-ttu-id="d7edb-675">パレスチナ自治政府</span><span class="sxs-lookup"><span data-stu-id="d7edb-675">Palestinian Authority</span></span></td>
-    <td><span data-ttu-id="d7edb-676">パナマ</span><span class="sxs-lookup"><span data-stu-id="d7edb-676">Panama</span></span></td>
-    <td><span data-ttu-id="d7edb-677">パプアニューギニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-677">Papua New Guinea</span></span></td>
+    <td><span data-ttu-id="72fca-669">パラオ</span><span class="sxs-lookup"><span data-stu-id="72fca-669">Palau</span></span></td>
+    <td><span data-ttu-id="72fca-670">パレスチナ自治政府</span><span class="sxs-lookup"><span data-stu-id="72fca-670">Palestinian Authority</span></span></td>
+    <td><span data-ttu-id="72fca-671">パナマ</span><span class="sxs-lookup"><span data-stu-id="72fca-671">Panama</span></span></td>
+    <td><span data-ttu-id="72fca-672">パプアニューギニア</span><span class="sxs-lookup"><span data-stu-id="72fca-672">Papua New Guinea</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-678">パラグアイ</span><span class="sxs-lookup"><span data-stu-id="d7edb-678">Paraguay</span></span></td>
-    <td><span data-ttu-id="d7edb-679">ピトケアン島</span><span class="sxs-lookup"><span data-stu-id="d7edb-679">Pitcairn Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-680">レユニオン</span><span class="sxs-lookup"><span data-stu-id="d7edb-680">Réunion</span></span></td>
-    <td><span data-ttu-id="d7edb-681">ルワンダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-681">Rwanda</span></span></td>
+    <td><span data-ttu-id="72fca-673">パラグアイ</span><span class="sxs-lookup"><span data-stu-id="72fca-673">Paraguay</span></span></td>
+    <td><span data-ttu-id="72fca-674">ピトケアン島</span><span class="sxs-lookup"><span data-stu-id="72fca-674">Pitcairn Islands</span></span></td>
+    <td><span data-ttu-id="72fca-675">レユニオン</span><span class="sxs-lookup"><span data-stu-id="72fca-675">Réunion</span></span></td>
+    <td><span data-ttu-id="72fca-676">ルワンダ</span><span class="sxs-lookup"><span data-stu-id="72fca-676">Rwanda</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-682">サン・バルテルミー</span><span class="sxs-lookup"><span data-stu-id="d7edb-682">Saint Barthélemy</span></span></td>
-    <td><span data-ttu-id="d7edb-683">セントヘレナ、アセンションおよびトリスタンダクーニャ</span><span class="sxs-lookup"><span data-stu-id="d7edb-683">Saint Helena, Ascension and Tristan da Cunha</span></span></td>
-    <td><span data-ttu-id="d7edb-684">セントクリストファー・ネイビス</span><span class="sxs-lookup"><span data-stu-id="d7edb-684">Saint Kitts and Nevis</span></span></td>
-    <td><span data-ttu-id="d7edb-685">セントルシア</span><span class="sxs-lookup"><span data-stu-id="d7edb-685">Saint Lucia</span></span></td>
+    <td><span data-ttu-id="72fca-677">サン・バルテルミー</span><span class="sxs-lookup"><span data-stu-id="72fca-677">Saint Barthélemy</span></span></td>
+    <td><span data-ttu-id="72fca-678">セントヘレナ、アセンションおよびトリスタンダクーニャ</span><span class="sxs-lookup"><span data-stu-id="72fca-678">Saint Helena, Ascension and Tristan da Cunha</span></span></td>
+    <td><span data-ttu-id="72fca-679">セントクリストファー・ネイビス</span><span class="sxs-lookup"><span data-stu-id="72fca-679">Saint Kitts and Nevis</span></span></td>
+    <td><span data-ttu-id="72fca-680">セントルシア</span><span class="sxs-lookup"><span data-stu-id="72fca-680">Saint Lucia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-686">サンマルタン島 (フランス領)</span><span class="sxs-lookup"><span data-stu-id="d7edb-686">Saint Martin (French Part)</span></span></td>
-    <td><span data-ttu-id="d7edb-687">サンピエール・ミクロン</span><span class="sxs-lookup"><span data-stu-id="d7edb-687">Saint Pierre and Miquelon</span></span></td>
-    <td><span data-ttu-id="d7edb-688">セントビンセントおよびグレナディーン諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-688">Saint Vincent and the Grenadines</span></span></td>
-    <td><span data-ttu-id="d7edb-689">サモア</span><span class="sxs-lookup"><span data-stu-id="d7edb-689">Samoa</span></span></td>
+    <td><span data-ttu-id="72fca-681">サンマルタン島 (フランス領)</span><span class="sxs-lookup"><span data-stu-id="72fca-681">Saint Martin (French Part)</span></span></td>
+    <td><span data-ttu-id="72fca-682">サンピエール・ミクロン</span><span class="sxs-lookup"><span data-stu-id="72fca-682">Saint Pierre and Miquelon</span></span></td>
+    <td><span data-ttu-id="72fca-683">セントビンセントおよびグレナディーン諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-683">Saint Vincent and the Grenadines</span></span></td>
+    <td><span data-ttu-id="72fca-684">サモア独立国</span><span class="sxs-lookup"><span data-stu-id="72fca-684">Samoa</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-690">サンマリノ</span><span class="sxs-lookup"><span data-stu-id="d7edb-690">San Marino</span></span></td>
-    <td><span data-ttu-id="d7edb-691">サントメ・プリンシペ</span><span class="sxs-lookup"><span data-stu-id="d7edb-691">São Tomé and Príncipe</span></span></td>
-    <td><span data-ttu-id="d7edb-692">セネガル</span><span class="sxs-lookup"><span data-stu-id="d7edb-692">Senegal</span></span></td>
-    <td><span data-ttu-id="d7edb-693">セーシェル</span><span class="sxs-lookup"><span data-stu-id="d7edb-693">Seychelles</span></span></td>
+    <td><span data-ttu-id="72fca-685">サンマリノ</span><span class="sxs-lookup"><span data-stu-id="72fca-685">San Marino</span></span></td>
+    <td><span data-ttu-id="72fca-686">サントメ・プリンシペ</span><span class="sxs-lookup"><span data-stu-id="72fca-686">São Tomé and Príncipe</span></span></td>
+    <td><span data-ttu-id="72fca-687">セネガル</span><span class="sxs-lookup"><span data-stu-id="72fca-687">Senegal</span></span></td>
+    <td><span data-ttu-id="72fca-688">セーシェル</span><span class="sxs-lookup"><span data-stu-id="72fca-688">Seychelles</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-694">シエラレオネ</span><span class="sxs-lookup"><span data-stu-id="d7edb-694">Sierra Leone</span></span></td>
-    <td><span data-ttu-id="d7edb-695">サンマルタン島 (オランダ領)</span><span class="sxs-lookup"><span data-stu-id="d7edb-695">Sint Maarten (Dutch Part)</span></span></td>
-    <td><span data-ttu-id="d7edb-696">ソロモン諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-696">Solomon Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-697">ソマリア</span><span class="sxs-lookup"><span data-stu-id="d7edb-697">Somalia</span></span></td>
+    <td><span data-ttu-id="72fca-689">シエラレオネ</span><span class="sxs-lookup"><span data-stu-id="72fca-689">Sierra Leone</span></span></td>
+    <td><span data-ttu-id="72fca-690">サンマルタン島 (オランダ領)</span><span class="sxs-lookup"><span data-stu-id="72fca-690">Sint Maarten (Dutch Part)</span></span></td>
+    <td><span data-ttu-id="72fca-691">ソロモン諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-691">Solomon Islands</span></span></td>
+    <td><span data-ttu-id="72fca-692">ソマリア</span><span class="sxs-lookup"><span data-stu-id="72fca-692">Somalia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-698">サウスジョージア・サウスサンドウィッチ諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-698">South Georgia and the South Sandwich Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-699">スリナム</span><span class="sxs-lookup"><span data-stu-id="d7edb-699">Suriname</span></span></td>
-    <td><span data-ttu-id="d7edb-700">スバールバル諸島・ヤンマイエン島</span><span class="sxs-lookup"><span data-stu-id="d7edb-700">Svalbard and Jan Mayen</span></span></td>
-    <td><span data-ttu-id="d7edb-701">スワジランド</span><span class="sxs-lookup"><span data-stu-id="d7edb-701">Swaziland</span></span></td>
+    <td><span data-ttu-id="72fca-693">サウスジョージア・サウスサンドウィッチ諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-693">South Georgia and the South Sandwich Islands</span></span></td>
+    <td><span data-ttu-id="72fca-694">スリナム</span><span class="sxs-lookup"><span data-stu-id="72fca-694">Suriname</span></span></td>
+    <td><span data-ttu-id="72fca-695">スバールバル諸島、ヤンマイエン島</span><span class="sxs-lookup"><span data-stu-id="72fca-695">Svalbard and Jan Mayen</span></span></td>
+    <td><span data-ttu-id="72fca-696">スワジランド</span><span class="sxs-lookup"><span data-stu-id="72fca-696">Swaziland</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-702">タジキスタン</span><span class="sxs-lookup"><span data-stu-id="d7edb-702">Tajikistan</span></span></td>
-    <td><span data-ttu-id="d7edb-703">タンザニア</span><span class="sxs-lookup"><span data-stu-id="d7edb-703">Tanzania</span></span></td>
-    <td><span data-ttu-id="d7edb-704">ティモール・レステ</span><span class="sxs-lookup"><span data-stu-id="d7edb-704">Timor-Leste</span></span></td>
-    <td><span data-ttu-id="d7edb-705">トーゴ</span><span class="sxs-lookup"><span data-stu-id="d7edb-705">Togo</span></span></td>
+    <td><span data-ttu-id="72fca-697">タジキスタン</span><span class="sxs-lookup"><span data-stu-id="72fca-697">Tajikistan</span></span></td>
+    <td><span data-ttu-id="72fca-698">タンザニア</span><span class="sxs-lookup"><span data-stu-id="72fca-698">Tanzania</span></span></td>
+    <td><span data-ttu-id="72fca-699">ティモール・レステ</span><span class="sxs-lookup"><span data-stu-id="72fca-699">Timor-Leste</span></span></td>
+    <td><span data-ttu-id="72fca-700">トーゴ</span><span class="sxs-lookup"><span data-stu-id="72fca-700">Togo</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-706">トケラウ諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-706">Tokelau</span></span></td>
-    <td><span data-ttu-id="d7edb-707">トンガ</span><span class="sxs-lookup"><span data-stu-id="d7edb-707">Tonga</span></span></td>
-    <td><span data-ttu-id="d7edb-708">トルクメニスタン</span><span class="sxs-lookup"><span data-stu-id="d7edb-708">Turkmenistan</span></span></td>
-    <td><span data-ttu-id="d7edb-709">タークス・カイコス諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-709">Turks and Caicos Islands</span></span></td>
+    <td><span data-ttu-id="72fca-701">トケラウ諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-701">Tokelau</span></span></td>
+    <td><span data-ttu-id="72fca-702">トンガ</span><span class="sxs-lookup"><span data-stu-id="72fca-702">Tonga</span></span></td>
+    <td><span data-ttu-id="72fca-703">トルクメニスタン</span><span class="sxs-lookup"><span data-stu-id="72fca-703">Turkmenistan</span></span></td>
+    <td><span data-ttu-id="72fca-704">タークス・カイコス諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-704">Turks and Caicos Islands</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-710">ツバル</span><span class="sxs-lookup"><span data-stu-id="d7edb-710">Tuvalu</span></span></td>
-    <td><span data-ttu-id="d7edb-711">ウガンダ</span><span class="sxs-lookup"><span data-stu-id="d7edb-711">Uganda</span></span></td>
-    <td><span data-ttu-id="d7edb-712">その他の米領諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-712">U.S. Minor Outlying Islands</span></span></td>
-    <td><span data-ttu-id="d7edb-713">米領バージン諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-713">U.S. Virgin Islands</span></span></td>
+    <td><span data-ttu-id="72fca-705">ツバル</span><span class="sxs-lookup"><span data-stu-id="72fca-705">Tuvalu</span></span></td>
+    <td><span data-ttu-id="72fca-706">ウガンダ</span><span class="sxs-lookup"><span data-stu-id="72fca-706">Uganda</span></span></td>
+    <td><span data-ttu-id="72fca-707">その他の米領諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-707">U.S. Minor Outlying Islands</span></span></td>
+    <td><span data-ttu-id="72fca-708">米領バージン諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-708">U.S. Virgin Islands</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-714">ウズベキスタン</span><span class="sxs-lookup"><span data-stu-id="d7edb-714">Uzbekistan</span></span></td>
-    <td><span data-ttu-id="d7edb-715">バチカン市国</span><span class="sxs-lookup"><span data-stu-id="d7edb-715">Vatican City</span></span></td>
-    <td><span data-ttu-id="d7edb-716">ベネズエラ</span><span class="sxs-lookup"><span data-stu-id="d7edb-716">Venezuela</span></span></td>
-    <td><span data-ttu-id="d7edb-717">ベトナム</span><span class="sxs-lookup"><span data-stu-id="d7edb-717">Vietnam</span></span></td>
+    <td><span data-ttu-id="72fca-709">ウズベキスタン</span><span class="sxs-lookup"><span data-stu-id="72fca-709">Uzbekistan</span></span></td>
+    <td><span data-ttu-id="72fca-710">バチカン市国</span><span class="sxs-lookup"><span data-stu-id="72fca-710">Vatican City</span></span></td>
+    <td><span data-ttu-id="72fca-711">ベネズエラ</span><span class="sxs-lookup"><span data-stu-id="72fca-711">Venezuela</span></span></td>
+    <td><span data-ttu-id="72fca-712">ベトナム</span><span class="sxs-lookup"><span data-stu-id="72fca-712">Vietnam</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-718">バヌアツ</span><span class="sxs-lookup"><span data-stu-id="d7edb-718">Vanuatu</span></span></td>
-    <td><span data-ttu-id="d7edb-719">ワリス・フテュナ諸島</span><span class="sxs-lookup"><span data-stu-id="d7edb-719">Wallis and Futuna</span></span></td>
-    <td><span data-ttu-id="d7edb-720">イエメン</span><span class="sxs-lookup"><span data-stu-id="d7edb-720">Yemen</span></span></td>
-    <td><span data-ttu-id="d7edb-721">ザンビア</span><span class="sxs-lookup"><span data-stu-id="d7edb-721">Zambia</span></span></td>
+    <td><span data-ttu-id="72fca-713">バヌアツ</span><span class="sxs-lookup"><span data-stu-id="72fca-713">Vanuatu</span></span></td>
+    <td><span data-ttu-id="72fca-714">ワリス・フテュナ諸島</span><span class="sxs-lookup"><span data-stu-id="72fca-714">Wallis and Futuna</span></span></td>
+    <td><span data-ttu-id="72fca-715">イエメン</span><span class="sxs-lookup"><span data-stu-id="72fca-715">Yemen</span></span></td>
+    <td><span data-ttu-id="72fca-716">ザンビア</span><span class="sxs-lookup"><span data-stu-id="72fca-716">Zambia</span></span></td>
   </tr>
   <tr>
-    <td><span data-ttu-id="d7edb-722">ジンバブエ</span><span class="sxs-lookup"><span data-stu-id="d7edb-722">Zimbabwe</span></span></td>
+    <td><span data-ttu-id="72fca-717">ジンバブエ</span><span class="sxs-lookup"><span data-stu-id="72fca-717">Zimbabwe</span></span></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -740,4 +743,4 @@ ms.lasthandoff: 08/03/2017
 </table>
 
 > [!NOTE]
-> <span data-ttu-id="d7edb-723">開発者アカウントを登録できる国と地域の一覧については、「[アカウントの種類、場所、料金](account-types-locations-and-fees.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7edb-723">For a list of the countries and regions in which you can register for a developer account, see [Account types, locations, and fees](account-types-locations-and-fees.md).</span></span>
+> <span data-ttu-id="72fca-718">開発者アカウントを登録できる国と地域の一覧については、「[アカウントの種類、場所、料金](account-types-locations-and-fees.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="72fca-718">For a list of the countries and regions in which you can register for a developer account, see [Account types, locations, and fees](account-types-locations-and-fees.md).</span></span>

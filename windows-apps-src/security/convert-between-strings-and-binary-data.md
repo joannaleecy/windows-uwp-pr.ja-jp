@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 84ba6fab0ea58a5598fb60ce99c98e71825705f8
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: b3c3a3f6f831186302fc32b1f510919da40c57cc
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689098"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2799563"
 ---
-# <a name="convert-between-strings-and-binary-data"></a><span data-ttu-id="2a395-104">文字列とバイナリ データの間の変換</span><span class="sxs-lookup"><span data-stu-id="2a395-104">Convert between strings and binary data</span></span>
+# <a name="convert-between-strings-and-binary-data"></a><span data-ttu-id="c3be1-104">文字列とバイナリ データの間の変換</span><span class="sxs-lookup"><span data-stu-id="c3be1-104">Convert between strings and binary data</span></span>
 
 
 
-<span data-ttu-id="2a395-105">次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの文字列とバイナリ データ間での変換方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="2a395-105">This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.</span></span>
+<span data-ttu-id="c3be1-105">次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの文字列とバイナリ データ間での変換方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c3be1-105">This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.</span></span>
 
 ```cs
 public void ConvertData()
