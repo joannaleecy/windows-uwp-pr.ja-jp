@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、タスクを背景します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2795292"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2811069"
 ---
 # <a name="support-your-app-with-background-tasks"></a><span data-ttu-id="4fff5-104">バックグラウンド タスクによるアプリのサポート</span><span class="sxs-lookup"><span data-stu-id="4fff5-104">Support your app with background tasks</span></span>
 

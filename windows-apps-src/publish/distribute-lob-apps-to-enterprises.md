@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, LOB, 基幹業務, エンタープライズ アプリ, ビジネス向け Store, 教育機関向け Store, 企業
 ms.localizationpriority: medium
 ms.openlocfilehash: 9149533a12263e105356a1683257c4d9172eefb5
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2791397"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2823074"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a><span data-ttu-id="13f75-103">LOB アプリの企業への配布</span><span class="sxs-lookup"><span data-stu-id="13f75-103">Distribute LOB apps to enterprises</span></span>
 

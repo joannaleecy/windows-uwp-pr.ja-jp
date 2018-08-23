@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3690e294a3af29d1af261189310dca1a13ac5130
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2802053"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2813321"
 ---
 # <a name="engage-with-your-customers"></a><span data-ttu-id="fd990-103">ユーザーとの関係を深める</span><span class="sxs-lookup"><span data-stu-id="fd990-103">Engage with your customers</span></span>
 

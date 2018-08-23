@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 245fb2cfb3a62dc739abc7cfb2522da6495429ed
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2788657"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2814500"
 ---
 # <a name="web-authentication-broker"></a><span data-ttu-id="d5d84-104">Web 認証ブローカー</span><span class="sxs-lookup"><span data-stu-id="d5d84-104">Web authentication broker</span></span>
 

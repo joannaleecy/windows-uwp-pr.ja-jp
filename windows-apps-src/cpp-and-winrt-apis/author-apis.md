@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影された, プロジェクション, 実装, インプリメント, ランタイム クラス, ライセンス認証
 ms.localizationpriority: medium
 ms.openlocfilehash: d2f9b336d9a95efe28668991d66ab0a9e48e96e7
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2792024"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2815874"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a><span data-ttu-id="5e13e-104">[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) での API の作成</span><span class="sxs-lookup"><span data-stu-id="5e13e-104">Author APIs with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)</span></span>
 <span data-ttu-id="5e13e-105">このトピックでは、直接的または間接的に [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基本構造体を使用して、C++/WinRT API を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="5e13e-105">This topic shows how to author C++/WinRT APIs by using the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct, either directly or indirectly.</span></span> <span data-ttu-id="5e13e-106">このコンテキストで*作成者*の同義語は、*生成*、または*実装*です。</span><span class="sxs-lookup"><span data-stu-id="5e13e-106">Synonyms for *author* in this context are *produce*, or *implement*.</span></span> <span data-ttu-id="5e13e-107">このトピックでは、C++/WinRT で API を実装するために、次のシナリオをこの順序で説明します。</span><span class="sxs-lookup"><span data-stu-id="5e13e-107">This topic covers the following scenarios for implementing APIs on a C++/WinRT type, in this order.</span></span>
