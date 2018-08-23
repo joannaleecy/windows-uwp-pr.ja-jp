@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f41d25fd6757e5d3f80d00de341168de4f34e946
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2802063"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2822774"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a><span data-ttu-id="79b7f-104">年 2018年 7 月では、Windows の開発ドキュメントの新機能します。</span><span class="sxs-lookup"><span data-stu-id="79b7f-104">What's New in the Windows Developer Docs in July 2018</span></span>
 
