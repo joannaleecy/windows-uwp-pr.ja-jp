@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、+ + c、cpp、winrt、投影、移動、転送、値のカテゴリ、移動の形式、最適な転送、操作が起きる、右辺値、glvalue、prvalue、xvalue フラグ
 ms.localizationpriority: medium
 ms.openlocfilehash: cbccaf78b45d85d93619977d149431c4eec9e10a
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2796949"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2814674"
 ---
 # <a name="value-categories-and-references-to-them"></a>値のカテゴリ、およびへの参照
 このトピックでは、C で存在しているさまざまなカテゴリの値 (値への参照) について説明します。 *Lvalue*と*rvalue*音がわかりが、このトピックで説明する条件のうちいない考えです。 値の他の種類があります。

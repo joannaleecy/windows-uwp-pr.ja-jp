@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2787787"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2815971"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>年 2018年 8 月では、Windows の開発ドキュメントの新機能します。
 
@@ -38,7 +38,7 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 * ツリー ビューがサポートする強化[データ バインド、項目テンプレート、およびドラッグ アンド ドロップします](../design/controls-and-patterns/tree-view.md)。
 
-### <a name="package-support-framework"></a>パッケージのサポート フレームワーク
+### <a name="package-support-framework"></a>パッケージ サポート フレームワーク
 
 パッケージのサポート フレームワークが、修正を適用、win32 アプリケーションいないときに、ソース コードへのアクセスを MSIX コンテナーで実行できるようにするために役立つ、オープン ソース キットします。
 

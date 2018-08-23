@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: db2c360a881071db14a1e65ffe2cd9a5bb16f0fe
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2788077"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2814994"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>パッケージ署名用の証明書を作成する
 
@@ -58,7 +58,7 @@ PowerShell コマンドレット **New-SelfSignedCertificate** を使用して�
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-このコマンドを実行すると、"-CertStoreLocation" パラメーターで指定されたローカル証明書ストアに証明書が追加されます。 コマンドの実行結果は、証明書の拇印もなります。  
+このコマンドを実行すると、"-CertStoreLocation" パラメーターで指定されたローカル証明書ストアに証明書が追加されます。 コマンドの結果には、また証明書の拇印が生成されます。  
 
 **注意**  
 次のコマンドを使って、PowerShell ウィンドウで証明書を表示できます。

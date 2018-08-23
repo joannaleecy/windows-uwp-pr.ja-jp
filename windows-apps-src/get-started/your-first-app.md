@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 初めてのアプリ, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: e8e2272ab761e1fa0bc9514f226a73a66a10662b
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2796773"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2810555"
 ---
 # <a name="create-your-first-app"></a>初めてのアプリの作成
 
@@ -79,7 +79,7 @@ Web のスキルをブラッシュアップする必要がある場合は、以�
 * [文字どおりの初心者のための HTML5 と CSS3 の基本](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
 * [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 * [コーディングの開始](create-uwp-apps.md)
 * [UWP アプリとは](universal-application-platform-guide.md)

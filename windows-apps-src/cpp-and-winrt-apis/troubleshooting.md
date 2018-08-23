@@ -3,27 +3,26 @@ author: stevewhims
 description: このトピックにある現象のトラブルシューティングおよび対処法に関する表は、新しいコードを作成しているか既存のアプリを移植しているかにはかかわらず役立つ可能性があります。
 title: C++/WinRT に関する問題のトラブルシューティング
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、トラブルシューティング、HRESULT、エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: 21f5fc4773979b2d7940b85871264e27d56d29c4
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 4129c50a2273c8ac425f6ea972898aa09fe0fcf3
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832266"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2816317"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) に関する問題のトラブルシューティング
 > [!NOTE]
-> **一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 本書に記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。**
-
-> [!NOTE]
-> 現在利用可能な C++/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートおよび C++/WinRT MSBuild プロパティとターゲットを提供) の詳細については、「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照してください。
+> C++/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートおよび C++/WinRT MSBuild プロパティとターゲットを提供) のインストールと使用については、「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照してください。
 
 このトピックは、すぐに認識していただくための先行情報です。まだ必要としていない場合も同様です。 以下の症状のトラブルシューティングおよび対処法に関する表は、新しいコードを作成しているか既存のアプリを移植しているかにはかかわらず役立つ可能性があります。 移植中であり、進展させてプロジェクトのビルドおよび実行の段階に達することを急いでいる場合は、問題を引き起こしている重要でないコードにコメントアウトまたはスタブ挿入を適用して、一時的に進展させることができます。その後、元に戻ってその借りを解消することになります。
+
+よく寄せられる質問のリストは、[よく寄せられる質問](faq.md)を参照してください。
 
 ## <a name="tracking-down-xaml-issues"></a>XAML に関する問題の検出
 XAML 解析例外は診断が難しい場合があります。特に、わかりやすいエラー メッセージが例外に含まれていない場合は、診断が難しくなります。 デバッガーが初回例外をキャッチするように構成されていることを確してください (早い段階で解析例外のキャッチを試行するため)。 デバッガーで例外変数を調べて、HRESULT やメッセージ内に役立つ情報が含まれているかどうかを確認できます。 また、XAML パーサーを使って、Visual Studio の出力ウィンドウを調べ、エラー メッセージの出力を確認することもできます。
@@ -42,10 +41,16 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 | C++ コンパイラーが、"*'const std::vector&lt;std::wstring,std::allocator&lt;_Ty&gt;&gt;' から 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'* に変換できません" というエラーを生成します。|これは、コレクションを予期している Windows ランタイム API に std::wstring の std::vector を渡すときに発生する可能性があります。 詳細については、「[標準的な C++ のデータ型と C++/WinRT](std-cpp-data-types.md)」を参照してください。|
 | C++ コンパイラーが、"*'const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;' から 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'* に変換できません" というエラーを生成します。|これは、コレクションを予期している非同期 Windows ランタイム API に winrt::hstring の std::vector を渡すときに、非同期呼び出し先へのベクトルのコピーも移動も行っていない場合に発生する可能性があります。 詳細については、「[標準的な C++ のデータ型と C++/WinRT](std-cpp-data-types.md)」を参照してください。|
 | プロジェクトを開くときに、Visual Studio が "*プロジェクトのアプリケーションはインストールされていません*" というエラーを生成します。|まだ行っていない場合は、Visual Studio の **[新しいプロジェクト]** ダイアログから **C++ での開発用の Windows ユニバーサル ツール**をインストールする必要があります。 それでも問題が解決しない場合は、プロジェクトが C++/WinRT Visual Studio Extension (VSIX) に依存している可能性があります (「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照)。|
-| Windows アプリ認定キットのテストが、ランタイム クラスの 1 つについて、"*Windows 基底クラスから派生しません。すべての構成可能クラスは最終的に、Windows 名前空間内の型から派生する必要があります*" というエラーを生成します。|*アプリケーション内で宣言されている*各ランタイム クラスの最終的な基底クラスは、Windows.* 名前空間からの型である必要があります。 [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject) からビュー モデルを派生させることができます。 または、**DependencyObject** から派生したバインド可能な基底クラスを宣言し、それからビュー モデルを派生します。|
+| Windows アプリ認定キットのテストが、ランタイム クラスの 1 つについて、"*Windows 基底クラスから派生しません。すべての構成可能クラスは最終的に、Windows 名前空間内の型から派生する必要があります*" というエラーを生成します。|基本クラスから派生する (つまり、アプリケーションで宣言するには) ランタイム クラスという名称でしたが、*構成可能な*クラスします。 構成可能なクラスの最終的な基本クラスは元の Windows.* 名前空間の種類である必要があります。たとえば、 [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)です。 参照してください[XAML の制御; バインド C + +/WinRT プロパティ](binding-property.md)詳細します。|
 | C++ コンパイラーが、EventHandler または TypedEventHandler のデリゲート特殊化に関して "*WinRT 型である必要があります*" というエラーを生成します。|代わりに **winrt::delegate&lt;...T&gt;** を使用することを考慮してください。 「[C++/WinRT でのイベントの作成](author-events.md)」を参照してください。|
 | C++ コンパイラーが、Windows ランタイムの非同期操作の特殊化に関して "*WinRT 型である必要があります*" というエラーを生成します。|代わりに並列パターン ライブラリ (PPL) の [**task**](https://msdn.microsoft.com/library/hh750113) を返すことを考慮してください。 「[同時実行操作と非同期操作](concurrency.md)」を参照してください。|
 | C++ コンパイラーが、"*エラー C2220: 警告がエラーとして扱われました - 'オブジェクト' ファイルは生成されませんでした*" を生成します。|警告を解決するか、または **[C/C++]** > **[全般]** > **[警告をエラーとして扱う]** を **[いいえ (/WX-)]** に設定します。|
 | オブジェクトが破棄された後で C++/WinRT オブジェクトのイベント ハンドラーが呼び出されるため、アプリがクラッシュします。|「[イベント ハンドラーでの *this* オブジェクトの使用](handle-events.md#using-the-this-object-in-an-event-handler)」を参照してください。|
 | C++ コンパイラーが "*エラー C2338: これは弱参照サポート専用です*" を生成します。|**テンプレート引数として winrt::no_weak_ref** マーカー構造体を基底クラスに渡した型の、弱参照を要求しています。 「[弱参照サポートの除外](weak-references.md#opting-out-of-weak-reference-support)」を参照してください。|
-| C++ リンカーが、C++/WinRT プロジェクションの Windows 名前空間ヘッダーに関して "*エラー LNK2019: 外部シンボルは未解決です*" を生成します (winrt 名前空間内)。|API は含まれているヘッダー内で事前宣言されていますが、その定義は含まれていないヘッダー内にあります。 API の名前空間で付けられた名前のヘッダーを含めてから、リビルドしてください。|
+| C リンカーが生成されます"*エラー LNK2019: 外部シンボル*"|参照してください[理由は、リンク ビルダー入力すると、"LNK2019: 外部シンボル"エラーですか?](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)|
+| LLVM と Clang ツールは、C キーを使用すると、エラーを返す +/WinRT します。|LLVM と Clang ツールの C + サポートされていません +/WinRT の使用方法は、内部的をエミュレートする場合は、[する可能性のあるもうなど、いずれかのよう[C + コンパイル LLVM/Clang を使用できる +/WinRT よいですか?](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)します。|
+| C コンパイラでは、予測の種類の「*デフォルト コンストラクタなし*」が返されます。 | しようとしているランタイム クラス オブジェクトの初期化を遅らせるまたは利用して、同じプロジェクトでランタイム クラスを実装する場合、着信する必要があります、`nullptr_t`コンスします。 詳細については、「[C++/WinRT での API の使用](consume-apis.md)」を参照してください。 |
+| C コンパイラが生成されます"*エラー C3861: 'from_abi': 識別子が見つかりません*"などのエラーを*base.h*で発生します。 Visual Studio 2017 を使用している場合にこのエラーが表示することがあります (バージョン 15.8.0 以上)、Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803) を対象とします。 | いずれかの目標を後で (その他準拠) 版の Windows SDK、またはプロジェクトのプロパティを設定する**C/C++** > **言語** > **準拠モード: なし**(も場合、**緩く/-** **C/C++**  > **言語** > **コマンド ライン**[**その他のオプション**] で、[削除する)。 |
+
+> [!NOTE]
+> このトピックで質問の回答が得られない場合は、[Stack Overflow で `c++-winrt` タグ](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)を使用してヘルプ情報を見つけることができます。

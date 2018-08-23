@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ユーザー ロール, ユーザーのアクセス許可, カスタム ロール, ユーザー アクセス, アクセス許可のカスタマイズ, 標準ロール
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2788327"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2813994"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>アカウント ユーザーのロールまたはカスタムのアクセス許可の設定
 
@@ -171,11 +171,11 @@ ms.locfileid: "2788327"
     </thead>
     <tbody>
     <tr><td align="left">    <b>取得</b>     </td><td>    製品の<a href="acquisitions-report.md">取得</a>レポートと<a href="add-on-acquisitions-report.md">アドオンの取得</a>レポートを表示できます。        </td><td>    該当なし    </td><td>    該当なし (親製品の設定は、**アドオン買収**レポートを含む)        </td><td>    該当なし                         </td></tr>
-    <tr><td align="left">    <b>利用状況</b> </td><td>    製品の<a href="usage-report.md">利用状況レポート</a>を表示できます。     </td><td>    該当なし       </td><td>    該当なし     </td><td>    該当なし         </td></tr>
-    <tr><td align="left">    <b>正常性</b> </td><td>    製品の<a href="health-report.md">正常性レポート</a>を表示できます。    </td><td>    該当なし     </td><td>    該当なし     </td><td>    該当なし         </td></tr>
+    <tr><td align="left">    <b>利用状況</b> </td><td>    製品の<a href="usage-report.md">利用状況レポート</a>を表示できます。     </td><td>    該当なし       </td><td>    なし     </td><td>    該当なし         </td></tr>
+    <tr><td align="left">    <b>正常性</b> </td><td>    製品の<a href="health-report.md">正常性レポート</a>を表示できます。    </td><td>    該当なし     </td><td>    なし     </td><td>    該当なし         </td></tr>
     <tr><td align="left">    <b>カスタマー フィードバック</b>    </td><td>    製品の <a href="reviews-report.md">[レビュー]</a> レポートと <a href="feedback-report.md">[フィードバック]</a> レポートを表示できます。       </td><td>    該当なし (フィードバックやレビューに返信するには、<b>[顧客への連絡]</b> アクセス許可を付与する必要があります)   </td><td>    該当なし     </td><td>    該当なし         </td></tr>
-    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    製品の[Xbox 分析レポート](xbox-analytics-report.md)を表示することができます。    </td><td>    該当なし   </td><td>    該当なし       </td><td>    該当なし          </td></tr>
-    <tr><td align="left">    <b>リアルタイム</b>   </td><td>    製品のリアルタイム レポートを表示できます。 (注: このレポートは、現在、<a href="dev-center-insider-program.md">デベロッパー センター Insider Program</a> でのみ利用可能です。)      </td><td>    該当なし   </td><td>    該当なし     </td><td>    該当なし                 </td></tr>
+    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    製品の[Xbox 分析レポート](xbox-analytics-report.md)を表示することができます。    </td><td>    なし   </td><td>    なし       </td><td>    該当なし          </td></tr>
+    <tr><td align="left">    <b>リアルタイム</b>   </td><td>    製品のリアルタイム レポートを表示できます。 (注: このレポートは、現在、<a href="dev-center-insider-program.md">デベロッパー センター Insider Program</a> でのみ利用可能です。)      </td><td>    該当なし   </td><td>    なし     </td><td>    該当なし                 </td></tr>
     </tbody>
     </table>
 
