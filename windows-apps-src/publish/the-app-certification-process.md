@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、発行、前処理、証明書を離すと、保留中、送信、公開、状態、時間
 ms.localizationpriority: medium
 ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2811011"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2841166"
 ---
 # <a name="the-app-certification-process"></a><span data-ttu-id="75e3f-103">アプリの認定プロセス</span><span class="sxs-lookup"><span data-stu-id="75e3f-103">The app certification process</span></span>
 

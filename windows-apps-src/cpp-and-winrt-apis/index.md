@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション
 ms.localizationpriority: medium
 ms.openlocfilehash: 165800f76e78bc9de15e5294a81672d3968b241e
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2810607"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2843610"
 ---
 # [<a name="cwinrt"></a><span data-ttu-id="e43f0-104">C++/WinRT</span><span class="sxs-lookup"><span data-stu-id="e43f0-104">C++/WinRT</span></span>](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 <span data-ttu-id="e43f0-105">C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="e43f0-105">C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.</span></span> <span data-ttu-id="e43f0-106">C++/WinRT の場合、標準に準拠した C++17 のコンパイラを使用して Windows ランタイム API を作成および使用できます。</span><span class="sxs-lookup"><span data-stu-id="e43f0-106">With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler.</span></span> <span data-ttu-id="e43f0-107">Windows SDK には C++/WinRT が含まれます。バージョン 10.0.17134.0 (Windows 10、バージョン 1803) で導入されました。</span><span class="sxs-lookup"><span data-stu-id="e43f0-107">The Windows SDK includes C++/WinRT; it was introduced in version 10.0.17134.0 (Windows 10, version 1803).</span></span>
