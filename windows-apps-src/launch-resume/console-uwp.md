@@ -10,31 +10,31 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4c1b1df8ad29635f38ae5b373685d3504a4eb60
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2815494"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2842364"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>ユニバーサル Windows プラットフォームを使用してコンソール アプリを作成する
 
-このトピックを作成する方法について説明、 [C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)または C + + CX ユニバーサル Windows プラットフォーム (UWP) コンソール アプリケーションです。
+このトピックを作成する方法について説明する[C + +/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)または C + +/CX どこからでも Windows プラットフォーム (UWP) コンソール アプリです。
 
-Windows 10、1803 のバージョンで始まることを記述する C + + WinRT または C + + CX UWP コンソール アプリケーションなど、DOS または PowerShell コンソール ウィンドウのコンソール ウィンドウで実行されています。 コンソール アプリケーションでは、コンソール ウィンドウを使用して、入力と出力と、 **printf** 、 **getchar**などの[汎用の C ランタイム](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)関数を使用することができます。 Microsoft Store には、UWP コンソール アプリを公開することができます。 それらのアプリは、アプリのリストにエントリがあり、スタート メニューに固定することができるプライマリ タイルがあります。 UWP のコンソール アプリケーションは、起動すると、通常、コマンド ・ ラインからも、[スタート] メニューから起動できます。
+Windows 10 で、バージョン 1803、開始可能 C + +/WinRT または C + +/CX UWP コンソール アプリ コンソール ウィンドウで、DOS または PowerShell コンソール ウィンドウなどを実行しています。 コンソール アプリでは、コンソール ウィンドウを使用して入力し、出力用と、 **printf**と**getchar**など、[どこからでも C ランタイム](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)関数を使用できます。 Microsoft Store には、UWP コンソール アプリを公開することができます。 それらのアプリは、アプリのリストにエントリがあり、スタート メニューに固定することができるプライマリ タイルがあります。 コマンドラインから起動する、通常は、[スタート] メニューから UWP コンソール アプリを起動できます。
 
-アクションのいずれかを確認するには、ここで画像が表示、UWP のコンソール アプリケーションを作成する方法です。
+操作のいずれかを表示するには、UWP コンソールのアプリを作成するに関するビデオを示します。
 
 > [!VIDEO https://www.youtube.com/embed/bwvfrguY20s]
 
 ## <a name="use-a-uwp-console-app-template"></a>UWP コンソール アプリ テンプレートを使用する 
 
-UWP コンソール アプリを作成するには、まず [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) から入手できる**コンソール アプリ (ユニバーサル) プロジェクト テンプレート**をインストールします。 インストール済みのテンプレートを利用し、**新しいプロジェクト**の下で > **インストールされている** > **その他の言語** > **Visual C++** > **汎用の Windows**コンソール アプリケーションの C+ の**として + WinRT (汎用の Windows)** と**のコンソール アプリケーションの C + + CX (汎用の Windows)**。
+UWP コンソール アプリを作成するには、まず [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) から入手できる**コンソール アプリ (ユニバーサル) プロジェクト テンプレート**をインストールします。 インストールされているテンプレートを利用し、**新しいプロジェクト**の下で > **インストールされている** > **他の言語** > **Visual C** > **Windows ユニバーサル****コンソール アプリ C+ として +/WinRT (ユニバーサル Windows)** と**コンソール アプリ C + +/(どこからでも Windows) CX**します。
 
 ## <a name="add-your-code-to-main"></a>Main() にコードを追加します。
 
 テンプレートは **Program.cpp** を追加します。これには `main()` 関数が含まれています。 これは、UWP コンソール アプリで実行が開始される場所です。 `__argc` および `__argv` パラメーターでコマンドライン引数にアクセスします。 制御が `main()` から返ってくると、UWP コンソール アプリは終了します。
 
-**Program.cpp**の次の使用例は追加、**コンソール アプリケーションの C+/WinRT**テンプレート。
+**Program.cpp**の次の例はによって追加されますが、**コンソール アプリ C+ +/WinRT**テンプレート。
 
 ```cppwinrt
 #include "pch.h"
@@ -103,9 +103,9 @@ UWP コンソール アプリは、実行されているディレクトリ、お
 
 ## <a name="additional-considerations-for-uwp-console-apps"></a>UWP コンソール アプリに関するその他の考慮事項
 
-- のみ C + + WinRT と C + + CX UWP アプリケーションがコンソール アプリケーションをする可能性があります。
+- のみ C + +/WinRT と C + +/CX UWP アプリ コンソール アプリがあります。
 - UWP コンソール アプリはデスクトップまたは IoT プロジェクト タイプをターゲットにする必要があります。
-- UWP のコンソール アプリケーションは、ウィンドウを作成しない可能性があります。 使用できない MessageBox()、または Location()、または何らかの理由でウィンドウを作成することがありますが、他の API など、ユーザーの同意が求められます。
+- UWP コンソール アプリは、ウィンドウを作成できません。 使用できない MessageBox()、または Location()、何らかの理由で、ウィンドウを作成することがありますが、その他の API のようなことに同意したユーザーが求められます。
 - UWP コンソール アプリは、バックグラウンド タスクを消費したり、バックグラウンド タスクとして機能したりしない場合があります。
 - [コマンド ラインのアクティブ化](https://blogs.windows.com/buildingapps/2017/07/05/command-line-activation-universal-windows-apps/#5YJUzjBoXCL4MhAe.97) を除き、UWP コンソール アプリは、ファイルの関連付け、プロトコルの関連付けなどのアクティブ化をサポートしていません。
 - UWP コンソール アプリは複数インスタンスをサポートしていますが、[複数インスタンスのリダイレクト](multi-instance-uwp.md) はサポートしていません

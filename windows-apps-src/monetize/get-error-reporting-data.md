@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c03ea17e111f86ad390dafe5360db9d10864edc
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2815504"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2843042"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>アプリのエラー報告データの取得
 
-日付範囲やその他のオプション フィルターを指定して、アプリの集計エラー報告データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドは、過去 30 日間に発生したエラーのみを取得できます。 この情報は、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションでも確認できます。
+日付範囲やその他のオプション フィルターを指定して、アプリの集計エラー報告データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この方法は、過去 30 日間で発生したエラーのみを取得できます。 この情報は、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションでも確認できます。
 
 [エラーの詳細を取得する](get-details-for-an-error-in-your-app.md)、[スタック トレースを取得する](get-the-stack-trace-for-an-error-in-your-app.md)、および [CAB ファイルをダウンロードする](download-the-cab-file-for-an-error-in-your-app.md)メソッドを利用すれば、追加のエラー情報を取得することもできます。
 
@@ -53,7 +53,7 @@ ms.locfileid: "2815504"
 | パラメーター        | 型   |  説明      |  必須かどうか  
 |---------------|--------|---------------|------|
 | applicationId | string | エラー報告データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。 |  必須  |
-| startDate | date | 取得するエラー報告データの日付範囲の開始日です。 既定値は現在の日付です。 *aggregationLevel* が **day**、**week**、または **month** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定する必要があります。 *aggregationLevel* が **hour** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定するか、日付と時刻を ```yyyy-mm-dd hh:mm:ss``` の形式で指定できます。<p/><p/>**注:**&nbsp;&nbsp;このメソッドでは、過去 30 日間に発生したエラーを取得できるだけです。  |  必須ではない  |
+| startDate | date | 取得するエラー報告データの日付範囲の開始日です。 既定値は現在の日付です。 *aggregationLevel* が **day**、**week**、または **month** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定する必要があります。 *aggregationLevel* が **hour** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定するか、日付と時刻を ```yyyy-mm-dd hh:mm:ss``` の形式で指定できます。<p/><p/>**メモ:**&nbsp;&nbsp;この方法は過去 30 日間で発生したエラーのみを取得できます。  |  必須ではない  |
 | endDate | date | 取得するエラー報告データの日付範囲の終了日です。 既定値は現在の日付です。 *aggregationLevel* が **day**、**week**、または **month** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定する必要があります。 *aggregationLevel* が **hour** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定するか、日付と時刻を ```yyyy-mm-dd hh:mm:ss``` の形式で指定できます。 |  必須ではない  |
 | top | int | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  必須ではない  |
 | skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  必須ではない  |

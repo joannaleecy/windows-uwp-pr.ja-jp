@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 245fb2cfb3a62dc739abc7cfb2522da6495429ed
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.openlocfilehash: d354f0babec3ec2346c6e76fcae8666f40f3f6be
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2814500"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2840495"
 ---
 # <a name="web-authentication-broker"></a>Web 認証ブローカー
 
@@ -159,12 +159,15 @@ Web 認証ブローカー API のトラブルシューティングには、操�
 
 Fiddler Web デバッガーはアプリに対して使うことができます。
 
-1.  AuthHost はプライベート ネットワーク機能を実現するために専用のアプリ コンテナー内で実行されるため、Windows Registry Editor Version 5.00 というレジストリ キーを設定する必要があります。
+1.  アプリ コンテナーで、AuthHost を実行するためにプライベート ネットワーク機能を提供する必要がありますレジストリ キー: Windows レジストリ メモ
 
     **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
-                         Data type  
-                         DWORD
+    このレジストリ キーがない場合、は、管理者特権のコマンド プロンプトで作成できます。
+
+    ```cmd 
+    REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f
+    ```
 
 2.  送信トラフィックを生成するのは AuthHost であるため、AuthHost 用の規則を追加します。
     ```syntax

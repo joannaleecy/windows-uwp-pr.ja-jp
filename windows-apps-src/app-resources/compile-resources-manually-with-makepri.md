@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: d065fdffe2fcb32a9d574c90f59eb7115597167a
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2815932"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2839895"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>MakePri.exe を使用して手動でリソースをコンパイルする
 

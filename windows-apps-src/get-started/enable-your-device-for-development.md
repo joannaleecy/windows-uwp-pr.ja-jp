@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ad817bbae2fb8b28b95095880aa1a65c391720f3
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2816115"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2839835"
 ---
 # <a name="enable-your-device-for-development"></a>デバイスを開発用に有効にする
 
