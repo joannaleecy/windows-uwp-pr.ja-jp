@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a4bba1efb52dc3b25b12c3891d9472f44729c85
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 53aac2375d60df3cd9493f315b20431961378fe8
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1818462"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2831124"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>デバイス間でもユーザーのアクティビティを継続する
 
@@ -167,14 +167,13 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="key-apis"></a>キー API
 
-* [UserActivity 名前空間](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* [UserActivities 名前空間](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アダプティブ カード](https://docs.microsoft.com/en-us/adaptive-cards/)
+* [ユーザー アクティビティ (Project ローマ ドキュメント)](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [アダプティブ カード](https://docs.microsoft.com/adaptive-cards/)
 * [アダプティブ カード ビジュアライザー、サンプル](http://adaptivecards.io/)
 * [URI のアクティブ化の処理](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Microsoft Graph、アクティビティ フィード、およびアダプティブ カードを使用して、どのプラットフォームでも顧客の関心を惹きつける](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)
-* [Project Rome on Github](https://github.com/microsoft/project-rome)
-* [Windows デベロッパー センターの Project Rome](https://aka.ms/projectrome)

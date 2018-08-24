@@ -10,24 +10,24 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf1e647931b6e7680fb65ddcf200bf2a74be716a
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2815024"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2832028"
 ---
 # <a name="app-submissions"></a>アプリの申請
 
 
 [名前を予約してアプリを作成](create-your-app-by-reserving-a-name.md)したら、そのアプリを公開するための作業を開始できます。 まず、**申請**を作成します。
 
-申請は、アプリが完成して公開する準備ができたときに開始できます。または、1 行のコードを記述する前でも情報を入力し始めることができます。 戻って準備ができているときに作業できるように、お客様のご提案を行う更新プログラムが保存されます。
+申請は、アプリが完成して公開する準備ができたときに開始できます。または、1 行のコードを記述する前でも情報を入力し始めることができます。 お客様の送信に行った更新は、戻る準備が整ったら、常に作業できるように保存されます。
 
 > [!NOTE]
-> [Windows デベロッパー センター](https://partner.microsoft.com/dashboard)にアクセスし、マイクロソフトのストアにアプリケーションを送信するために、[開発者のアカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
+> [Windows デベロッパー センター](https://partner.microsoft.com/dashboard)にアクセスし、Microsoft ストアにアプリを送信するために、[開発アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
 
-アプリが公開された後は、ダッシュボードで別の申請を作成して更新バージョンを公開できます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されているアプリに対して新しい申請を作成するには、[アプリの概要] ページに表示されている前回の申請の横にある **[更新]** をクリックします。 ことも[、ストアからアプリを削除する](guidance-for-app-package-management.md#removing-an-app-from-the-store)ように (とし、利用できるように、後でもう一度希望の場合) する必要がある場合。
+アプリが公開された後は、ダッシュボードで別の申請を作成して更新バージョンを公開できます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されているアプリに対して新しい申請を作成するには、[アプリの概要] ページに表示されている前回の申請の横にある **[更新]** をクリックします。 ことも[、ストアからアプリを削除する](guidance-for-app-package-management.md#removing-an-app-from-the-store)(、[使用できるように、後でもう一度したい場合) が必要な場合です。
 
 > [!NOTE]
 > このセクションでは、デベロッパー センター ダッシュボードでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリ申請を自動化することもできます。
@@ -36,7 +36,7 @@ ms.locfileid: "2815024"
 
 ここで示しているのは、アプリの申請を作成するときに提供できる詳細情報と、詳細情報のリンクです。
 
-提供または指定する情報は必須のものと、 省略可能なものがあります。提供されている既定値は必要に応じて変更できます。 ここで記載されている順序でこれらのセクションで作業する必要はありません。
+提供または指定する情報は必須のものと、 省略可能なものがあります。提供されている既定値は必要に応じて変更できます。 ここで表示する順序でこれらのセクションを操作する必要はありません。
 
 ### <a name="pricing-and-availability-page"></a>[価格と使用可能状況] ページ
 | フィールド名                    | コメント                                       | 詳しい情報                                                             |
@@ -98,7 +98,7 @@ ms.locfileid: "2815024"
 | **Microsoft Store ロゴ**               | 推奨。一部の OS バージョンで必須 | [Microsoft Store ロゴ](app-screenshots-and-images.md#store-logos)             |
 | **追加のアート資産**     | 推奨 (特に一部の OS バージョンで推奨)         | [追加のアート資産](app-screenshots-and-images.md#additional-art-assets) |
 | **トレーラー**                  | 省略可能                                    | [トレーラー](app-screenshots-and-images.md#trailers)                | 
-| **補足のフィールド**  | オプション                                    | [補足情報](create-app-store-listings.md#supplemental-fields) 
+| **補足的なフィールド**  | オプション                                    | [補足情報](create-app-store-listings.md#supplemental-fields) 
 | **検索語句**              | 省略可能                                    | [検索語句](create-app-store-listings.md#search-terms)         |
 | **著作権と商標の情報** | 省略可能                                 | [著作権と商標の情報](create-app-store-listings.md#copyright-and-trademark-info) |
 | **追加のライセンス条項**  | 省略可能                                    | [追加のライセンス条項](create-app-store-listings.md#additional-license-terms) |
@@ -113,7 +113,7 @@ ms.locfileid: "2815024"
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **公開の保留オプション**     | 既定: この申請が認定されたら、すぐに申請を公開します (または [スケジュール] セクションで選択した各日付で公開します)      | [公開の保留オプション](manage-submission-options.md#publishing-hold-options)    
 | **認定の注意書き**     | 推奨          | [認定を求めるにあたってのコメント](notes-for-certification.md)             |
-| **制限付き機能**     | 製品が [制限付きの機能] を宣言するかどうかに必要な (../packaging/app-capability-declarations.md#restricted-capabilities    | [制限付き機能](manage-submission-options.md#publishing-hold-options)       
+| **制限付き機能**     | 製品の宣言、[制限付き機能](../packaging/app-capability-declarations.md#restricted-capabilities)が必要    | [制限付き機能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 

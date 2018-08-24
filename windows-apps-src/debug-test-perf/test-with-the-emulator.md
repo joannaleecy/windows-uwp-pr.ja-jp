@@ -10,15 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 98908855acbc341c14464881aeb058a331e7b2a3
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691211"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2831609"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Microsoft Emulator for Windows 10 Mobile を使ったテスト
-
 
 Microsoft Emulator for Windows 10 Mobile に用意されているツールを使って、デバイスでの実際の操作をシミュレートし、アプリの機能をテストします。 エミュレーターは、Windows 10 を実行するモバイル デバイスをエミュレートするデスクトップ アプリケーションです。 このアプリケーションを使用すると、仮想化された環境が提供されるため、物理デバイスを使用せずに Windows アプリのデバッグとテストを実行できます。 また、アプリケーションのプロトタイプのための隔離環境としても使用できます。
 
@@ -30,9 +29,9 @@ Microsoft Emulator for Windows 10 Mobile に用意されているツールを使
 
 コンピューターは次の要件を満たす必要があります。
 
-BIOS
+CPU (これらの設定を使用できる場合が有効にする BIOS で)
 
--   ハードウェア支援による仮想化機能。
+-   ハードウェアによる仮想化 ([互換性を確認する](https://www.microsoft.com/download/details.aspx?id=592))。
 -   Second Level Address Translation (SLAT)。
 -   ハードウェアベースのデータ実行防止 (DEP)。
 
@@ -50,23 +49,28 @@ BIOS 要件を確認するには、「[Windows Phone 8 のエミュレーター�
 
 RAM とオペレーティング システムの要件を確認するには、コントロール パネルで **[システムとセキュリティ]** を選び、**[システム]** を選びます。
 
-Microsoft Emulator for Windows 10 Mobile には Visual Studio 2015 が必要です。以前のバージョンの Visual Studio との下位互換性はありません。
+Windows 10 Mobile 版 Microsoft エミュレーター Visual Studio 2015 以降が必要です。Visual Studio の以前のバージョンとの下位互換性はありません。
 
 Microsoft Emulator for Windows 10 Mobile は、Windows Phone OS 7.1 より前の Windows Phone OS バージョンを対象とするアプリを読み込むことはできません。
 
-## <a name="installing-and-uninstalling"></a>インストールとアンインストール
+## <a name="installing-uninstalling-and-running-the-emulator"></a>インストール、アンインストール、およびエミュレーターを実行します。
 
--   **インストール**。
+### <a name="installing"></a>インストールします。
+Microsoft Emulator for Windows 10 Mobile は、Windows 10 SDK の一部としてリリースされています。 Windows 10 SDK とエミュレーターは、Visual Studio の一部としてインストールできます。 [Visual Studio のダウンロードに関するページ](https://go.microsoft.com/fwlink/p/?LinkId=534785)をご覧ください。
 
-    Microsoft Emulator for Windows 10 Mobile は、Windows 10 SDK の一部としてリリースされています。 Windows 10 SDK とエミュレーターは、Visual Studio の一部としてインストールできます。 [Visual Studio のダウンロードに関するページ](https://go.microsoft.com/fwlink/p/?LinkId=534785)をご覧ください。
+Microsoft Emulator for Windows 10 Mobile は、[Microsoft Emulator のセットアップ](https://go.microsoft.com/fwlink/p/?LinkID=615095)を使ってインストールすることもできます。
 
-    Microsoft Emulator for Windows 10 Mobile は、[Microsoft Emulator のセットアップ](https://go.microsoft.com/fwlink/p/?LinkID=615095)を使ってインストールすることもできます。
+### <a name="uninstalling"></a>アンインストールします。
 
--   **アンインストール**。
+Microsoft Emulator for Windows 10 Mobile は、Visual Studio のセットアップ/修復を使ってアンインストールできます。 または、**コントロール パネル**の [**プログラムと機能**] を使ってエミュレーターを削除することもできます。
 
-    Microsoft Emulator for Windows 10 Mobile は、Visual Studio のセットアップ/修復を使ってアンインストールできます。 または、**コントロール パネル**の [**プログラムと機能**] を使ってエミュレーターを削除することもできます。
+Microsoft Emulator for Windows 10 Mobile をアンインストールしても、使うエミュレーター用に作られた Hyper-V 仮想イーサネット アダプターは自動的に削除されません。 この仮想アダプターは、**コントロール パネル**の [**ネットワーク接続**] から手動で削除できます。
 
-    Microsoft Emulator for Windows 10 Mobile をアンインストールしても、使うエミュレーター用に作られた Hyper-V 仮想イーサネット アダプターは自動的に削除されません。 この仮想アダプターは、**コントロール パネル**の **[ネットワーク接続]** から手動で削除できます。
+### <a name="running"></a>Running
+
+エミュレーターでアプリを実行するには、だけで、Visual Studio で [**実行**] ドロップダウン メニューからエミュレートしたデバイスを選択します。
+
+![解像度、サイズ、メモリに使うことができるエミュレーター](images/em-list.png)
 
 ## <a name="whats-new-in-microsoft-emulator-for-windows-10-mobile"></a>Microsoft Emulator for Windows 10 Mobile に関する最新情報
 
@@ -82,7 +86,7 @@ Microsoft Emulator for Windows 10 Mobile は、Windows Phone OS 7.1 より前の
 
 -   **画面解像度、画面サイズ、メモリ**。 アプリをさまざまなエミュレーター イメージでテストし、さまざまな画面解像度、物理的なサイズ、メモリの制限をシミュレートすることで、幅広い市場にアプリを届けます。
 
-    ![解像度、サイズ、メモリに使うことができるエミュレーター](images/em-list.png)
+![解像度、サイズ、メモリに使うことができるエミュレーター](images/em-list.png)
 
 -   **画面構成**。 エミュレーターを縦モードから横モードに変更します。 デスクトップ画面に合うようにエミュレーターのズーム設定を変更します。
 

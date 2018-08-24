@@ -10,14 +10,14 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、データ、型
 ms.localizationpriority: medium
 ms.openlocfilehash: 729a3c30f84e20a89912b728db1efecc3e54ad9e
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2815194"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2830391"
 ---
 # <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>標準的な C++ のデータ型と [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-C++/WinRT では、標準的な C++ データ型 (いくつかの C++ 標準ライブラリのデータ型を含む) を使用して Windows ランタイム API を呼び出すことができます。 Api を標準の文字列を渡すことができます (を参照してください[文字列の処理では C + + WinRT](strings.md))、渡すことができます初期化子リストと標準のコンテナーと同じ意味のコレクションを必要とする Api とします。
+C++/WinRT では、標準的な C++ データ型 (いくつかの C++ 標準ライブラリのデータ型を含む) を使用して Windows ランタイム API を呼び出すことができます。 標準の文字列を Api に渡すことができます (を参照してください[文字列で処理 +/WinRT](strings.md))、初期化リストと標準的なコンテナーに渡すと同じ意味のコレクションを期待する Api とします。
 
 ## <a name="standard-initializer-lists"></a>標準的な初期化子リスト
 初期化子リスト (**std::initializer_list**) は、C++ 標準ライブラリのコンストラクトです。 Windows ランタイムの特定のコンストラクターやメソッドを呼び出すときに初期化子リストを使用することができます。 たとえば、[**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) を呼び出すことができます。
@@ -92,7 +92,7 @@ std::array<byte, 3> theArray{ 99, 98, 97 };
 dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
 ```
 
-C++/WinRT は、Windows ランタイムのコレクション パラメーターとして **std::vector** をバインドします。 したがって、**std::vector&lt;winrt::hstring&gt;** を渡すと、Windows ランタイムの適切な **winrt::hstring** のコレクションに変換されます。 呼び出しが非同期の場合を念頭に、追加の詳細があります。 そのケースの実装の詳細のためのベクトルの移動やコピーを提供する必要がありますので、右辺値を提供する必要があります。 次のコード例で移動ベクトルの所有権、非同期呼び出しで許可されるパラメーターの型のオブジェクト (し、私たちはアクセスしないように注意してください`vecH`移行した後にもう一度)。 Rvalue の詳細を把握したい場合は、[値のカテゴリ、およびそれらへの参照](cpp-value-categories.md)を参照してください。
+C++/WinRT は、Windows ランタイムのコレクション パラメーターとして **std::vector** をバインドします。 したがって、**std::vector&lt;winrt::hstring&gt;** を渡すと、Windows ランタイムの適切な **winrt::hstring** のコレクションに変換されます。 これは、追加の詳細を呼び出し、非同期場合に注意してください。 そのケースの実装の詳細が原因では、ベクトルの移動やコピーを提供する必要がありますので、右辺値を入力する必要があります。 次のコードの例では、ベクトルの所有権の対象に移動非同期呼び出し先で許可されるパラメーターの種類の (アクセスしないように注意していて [`vecH`移行した後、もう一度)。 詳細については、rvalue したい場合は、[値のカテゴリ、およびへの参照](cpp-value-categories.md)を参照してください。
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> vecH)
@@ -101,7 +101,7 @@ IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vecto
 }
 ```
 
-ただし、Windows ランタイムのコレクションが予期されているところに **std::vector&lt;std::wstring&gt;** を渡すことはできません。 これは、Windows ランタイムの適切な **std::wstring** のコレクションに変換されたため、C++ 言語がそのコレクションの型パラメーターを強制的に変換しないことが原因です。 その結果、次のコード例はコンパイルされません (ソリューションは、渡すことと、 **std::vector&lt;winrt::hstring&gt;** 代わりに、上記のように)。
+ただし、Windows ランタイムのコレクションが予期されているところに **std::vector&lt;std::wstring&gt;** を渡すことはできません。 これは、Windows ランタイムの適切な **std::wstring** のコレクションに変換されたため、C++ 言語がそのコレクションの型パラメーターを強制的に変換しないことが原因です。 したがって、次の例はコンパイルされません (ソリューションを渡すには、 **std::vector&lt;winrt::hstring&gt;** 代わりに、上記のように) します。
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
@@ -113,7 +113,7 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vect
 ## <a name="raw-arrays-and-pointer-ranges"></a>未処理配列、およびポインターの範囲
 将来の C++ 標準ライブラリで対応する型が存在する可能性があることに注意して、選択する場合、または必要に応じて、**array_view** を直接操作することもできます。
 
-**array_view**の範囲と、生の配列からの変換のコンス トラクターには**T&ast; ** (要素の型へのポインター)。
+**array_view**が変換コンス生配列の場合は、および範囲から**T&ast; ** (要素の種類にポインター)。
 
 ```cppwinrt
 using namespace winrt;
@@ -132,7 +132,7 @@ dataWriter.WriteBytes(fromRange); // the array_view is passed to WriteBytes.
 その他の例や詳細については、[**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API リファレンス トピックをご覧ください。
 
 ## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>**IVector&lt;T&gt;** と標準的な繰り返し構造
-型のコレクションを取得する Windows ランタイム API の例では[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) [**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (C + に投影/WinRT と**winrt::Windows::Foundation::Collections::IVector&lt;T&gt; **). 標準の繰り返しの構造を持つなど、このタイプを使用できる範囲に基づく`for`。
+型のコレクションを返す Windows ランタイム API の例は、 [**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) [**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (C + に投影 +/として WinRT **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; **). 次のような種類を標準的な繰り返しの構成要素で使用できる範囲に基づく`for`します。
 
 ```cppwinrt
 // main.cpp
@@ -152,8 +152,8 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 }
 ```
 
-## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>非同期 Windows ランタイム Api と C++ のコルーチン
-非同期 Windows ランタイム Api を呼び出す場合は、[並列パターン ライブラリ (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)を使用して続行することができます。 ただし、多くの場合、C++ コルーチンを提供、効率的でより簡単にコーディング手法非同期オブジェクトと対話するためです。 詳細な情報、およびコード例についてを参照してください[同時実行性と C + を使用して非同期の操作/WinRT](concurrency.md)。
+## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>非同期の Windows ランタイム api C++ コルーチン
+非同期の Windows ランタイム Api を呼び出すと[並列パターン ライブラリ (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)を使用する続行することができます。 ただし、多くの場合、C++ コルーチン、効率性とより簡単にコーディングの用法に提供非同期のオブジェクトを操作します。 その他の情報、およびコードの例では、次を参照してください。[同時実行および非同期の操作と C + +/WinRT](concurrency.md)します。
 
 ## <a name="important-apis"></a>重要な API
 * [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)
