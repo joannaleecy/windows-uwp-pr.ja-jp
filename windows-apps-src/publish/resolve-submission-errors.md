@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d027e35f8fe76a0d4139301f1a7dabc7798348a
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2820529"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2835317"
 ---
 # <a name="resolve-submission-errors"></a><span data-ttu-id="11808-103">申請エラーの解決</span><span class="sxs-lookup"><span data-stu-id="11808-103">Resolve submission errors</span></span>
 

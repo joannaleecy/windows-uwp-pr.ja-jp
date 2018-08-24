@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ce26242f1f5093afcbfb652a7d1736897975cb3a
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2823024"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2830804"
 ---
 # <a name="custom-attached-properties"></a><span data-ttu-id="c3529-104">カスタム添付プロパティ</span><span class="sxs-lookup"><span data-stu-id="c3529-104">Custom attached properties</span></span>
 

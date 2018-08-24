@@ -8,41 +8,41 @@ ms.date: 07/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、タスクを背景します。
+keywords: windows 10、uwp、タスクをバック グラウンドします。
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2819134"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2837182"
 ---
-# <a name="handle-a-cancelled-background-task"></a><span data-ttu-id="250c4-104">取り消されたバックグラウンド タスクの処理</span><span class="sxs-lookup"><span data-stu-id="250c4-104">Handle a cancelled background task</span></span>
+# <a name="handle-a-cancelled-background-task"></a><span data-ttu-id="f107f-104">取り消されたバックグラウンド タスクの処理</span><span class="sxs-lookup"><span data-stu-id="f107f-104">Handle a cancelled background task</span></span>
 
-**<span data-ttu-id="250c4-105">重要な API</span><span class="sxs-lookup"><span data-stu-id="250c4-105">Important APIs</span></span>**
+**<span data-ttu-id="f107f-105">重要な API</span><span class="sxs-lookup"><span data-stu-id="f107f-105">Important APIs</span></span>**
 
--   [**<span data-ttu-id="250c4-106">BackgroundTaskCanceledEventHandler</span><span class="sxs-lookup"><span data-stu-id="250c4-106">BackgroundTaskCanceledEventHandler</span></span>**](https://msdn.microsoft.com/library/windows/apps/br224775)
--   [**<span data-ttu-id="250c4-107">IBackgroundTaskInstance</span><span class="sxs-lookup"><span data-stu-id="250c4-107">IBackgroundTaskInstance</span></span>**](https://msdn.microsoft.com/library/windows/apps/br224797)
--   [**<span data-ttu-id="250c4-108">ApplicationData.Current</span><span class="sxs-lookup"><span data-stu-id="250c4-108">ApplicationData.Current</span></span>**](https://msdn.microsoft.com/library/windows/apps/br241619)
+-   [**<span data-ttu-id="f107f-106">BackgroundTaskCanceledEventHandler</span><span class="sxs-lookup"><span data-stu-id="f107f-106">BackgroundTaskCanceledEventHandler</span></span>**](https://msdn.microsoft.com/library/windows/apps/br224775)
+-   [**<span data-ttu-id="f107f-107">IBackgroundTaskInstance</span><span class="sxs-lookup"><span data-stu-id="f107f-107">IBackgroundTaskInstance</span></span>**](https://msdn.microsoft.com/library/windows/apps/br224797)
+-   [**<span data-ttu-id="f107f-108">ApplicationData.Current</span><span class="sxs-lookup"><span data-stu-id="f107f-108">ApplicationData.Current</span></span>**](https://msdn.microsoft.com/library/windows/apps/br241619)
 
-<span data-ttu-id="250c4-109">取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリに取り消しを報告するバックグラウンド タスクの作成方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="250c4-109">Learn how to make a background task that recognizes a cancellation request, stops work, and reports the cancellation to the app using persistent storage.</span></span>
+<span data-ttu-id="f107f-109">取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリに取り消しを報告するバックグラウンド タスクの作成方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f107f-109">Learn how to make a background task that recognizes a cancellation request, stops work, and reports the cancellation to the app using persistent storage.</span></span>
 
-<span data-ttu-id="250c4-110">このトピックでは、バック グラウンド タスク エントリ ポイントとして使用される**実行**方法を含め、バック グラウンド タスク クラスを既に作成しているものとします。</span><span class="sxs-lookup"><span data-stu-id="250c4-110">This topic assumes you have already created a background task class, including the **Run** method that is used as the background task entry point.</span></span> <span data-ttu-id="250c4-111">バックグラウンド タスクの作成方法の概要については、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」または「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="250c4-111">To get started quickly building a background task, see [Create and register an out-of-process background task](create-and-register-a-background-task.md) or [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).</span></span> <span data-ttu-id="250c4-112">条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="250c4-112">For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).</span></span>
+<span data-ttu-id="f107f-110">このトピックでは、バック グラウンド タスク エントリ ポイントとして使用される**実行**方法を含め、バック グラウンド タスク クラスを既に作成しているものとします。</span><span class="sxs-lookup"><span data-stu-id="f107f-110">This topic assumes you have already created a background task class, including the **Run** method that is used as the background task entry point.</span></span> <span data-ttu-id="f107f-111">バックグラウンド タスクの作成方法の概要については、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」または「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f107f-111">To get started quickly building a background task, see [Create and register an out-of-process background task](create-and-register-a-background-task.md) or [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).</span></span> <span data-ttu-id="f107f-112">条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f107f-112">For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).</span></span>
 
-<span data-ttu-id="250c4-113">このトピックは、インプロセス バックグラウンド タスクにも適用されます。</span><span class="sxs-lookup"><span data-stu-id="250c4-113">This topic is also applicable to in-process background tasks.</span></span> <span data-ttu-id="250c4-114">**実行**の方法ではなく**OnBackgroundActivated**を置き換えます。</span><span class="sxs-lookup"><span data-stu-id="250c4-114">But instead of the **Run** method, substitute **OnBackgroundActivated**.</span></span> <span data-ttu-id="250c4-115">インプロセス バックグラウンド タスクでは、バックグラウンド タスクがフォアグラウンド アプリと同じプロセスで実行されているため、取り消しを通知するために固定ストレージを使用する必要はありません。アプリの状態を使用して、取り消しを伝えることができます。</span><span class="sxs-lookup"><span data-stu-id="250c4-115">In-process background tasks do not require you to use persistent storage to signal the cancellation because you can communicate the cancellation using app state since the background task is running in the same process as your foreground app.</span></span>
+<span data-ttu-id="f107f-113">このトピックは、インプロセス バックグラウンド タスクにも適用されます。</span><span class="sxs-lookup"><span data-stu-id="f107f-113">This topic is also applicable to in-process background tasks.</span></span> <span data-ttu-id="f107f-114">**実行**の方法ではなく**OnBackgroundActivated**を置き換えます。</span><span class="sxs-lookup"><span data-stu-id="f107f-114">But instead of the **Run** method, substitute **OnBackgroundActivated**.</span></span> <span data-ttu-id="f107f-115">インプロセス バックグラウンド タスクでは、バックグラウンド タスクがフォアグラウンド アプリと同じプロセスで実行されているため、取り消しを通知するために固定ストレージを使用する必要はありません。アプリの状態を使用して、取り消しを伝えることができます。</span><span class="sxs-lookup"><span data-stu-id="f107f-115">In-process background tasks do not require you to use persistent storage to signal the cancellation because you can communicate the cancellation using app state since the background task is running in the same process as your foreground app.</span></span>
 
-## <a name="use-the-oncanceled-method-to-recognize-cancellation-requests"></a><span data-ttu-id="250c4-116">OnCanceled メソッドにより、取り消し要求を認識します。</span><span class="sxs-lookup"><span data-stu-id="250c4-116">Use the OnCanceled method to recognize cancellation requests</span></span>
+## <a name="use-the-oncanceled-method-to-recognize-cancellation-requests"></a><span data-ttu-id="f107f-116">OnCanceled メソッドにより、取り消し要求を認識します。</span><span class="sxs-lookup"><span data-stu-id="f107f-116">Use the OnCanceled method to recognize cancellation requests</span></span>
 
-<span data-ttu-id="250c4-117">取り消しイベントを処理するメソッドを作ります。</span><span class="sxs-lookup"><span data-stu-id="250c4-117">Write a method to handle the cancellation event.</span></span>
+<span data-ttu-id="f107f-117">取り消しイベントを処理するメソッドを作ります。</span><span class="sxs-lookup"><span data-stu-id="f107f-117">Write a method to handle the cancellation event.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="250c4-118">デスクトップ以外のすべてのデバイス ファミリでは、デバイスのメモリが少なくなった場合、バックグラウンド タスクが終了することがあります。</span><span class="sxs-lookup"><span data-stu-id="250c4-118">For all device families except desktop, if the device becomes low on memory, background tasks may be terminated.</span></span> <span data-ttu-id="250c4-119">メモリ不足の例外は表示されませんが、アプリの警告および OnCanceled イベントが発生することがなくバック グラウンド タスクを終了し、処理にしない場合。</span><span class="sxs-lookup"><span data-stu-id="250c4-119">If an out of memory exception is not surfaced, or the app doesn't handle it, then the background task will be terminated without warning and without raising the OnCanceled event.</span></span> <span data-ttu-id="250c4-120">こうすることで、フォアグラウンドのアプリのユーザー エクスペリエンスが保証されます。</span><span class="sxs-lookup"><span data-stu-id="250c4-120">This helps to ensure the user experience of the app in the foreground.</span></span> <span data-ttu-id="250c4-121">バックグラウンド タスクは、このシナリオを処理できるように設計する必要があります。</span><span class="sxs-lookup"><span data-stu-id="250c4-121">Your background task should be designed to handle this scenario.</span></span>
+> <span data-ttu-id="f107f-118">デスクトップ以外のすべてのデバイス ファミリでは、デバイスのメモリが少なくなった場合、バックグラウンド タスクが終了することがあります。</span><span class="sxs-lookup"><span data-stu-id="f107f-118">For all device families except desktop, if the device becomes low on memory, background tasks may be terminated.</span></span> <span data-ttu-id="f107f-119">メモリ不足の例外は表示されませんが、アプリの警告および OnCanceled イベントが発生することがなくバック グラウンド タスクを終了し、処理にしない場合。</span><span class="sxs-lookup"><span data-stu-id="f107f-119">If an out of memory exception is not surfaced, or the app doesn't handle it, then the background task will be terminated without warning and without raising the OnCanceled event.</span></span> <span data-ttu-id="f107f-120">こうすることで、フォアグラウンドのアプリのユーザー エクスペリエンスが保証されます。</span><span class="sxs-lookup"><span data-stu-id="f107f-120">This helps to ensure the user experience of the app in the foreground.</span></span> <span data-ttu-id="f107f-121">バックグラウンド タスクは、このシナリオを処理できるように設計する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f107f-121">Your background task should be designed to handle this scenario.</span></span>
 
-<span data-ttu-id="250c4-122">次のように **OnCanceled** という名前のメソッドを作成します。</span><span class="sxs-lookup"><span data-stu-id="250c4-122">Create a method named **OnCanceled** as follows.</span></span> <span data-ttu-id="250c4-123">このメソッドは、バックグラウンド タスクに対して取り消し要求が出されると、Windows ランタイムによって呼び出されるエントリ ポイントです。</span><span class="sxs-lookup"><span data-stu-id="250c4-123">This method is the entry point called by the Windows Runtime when a cancellation request is made against your background task.</span></span>
+<span data-ttu-id="f107f-122">次のように **OnCanceled** という名前のメソッドを作成します。</span><span class="sxs-lookup"><span data-stu-id="f107f-122">Create a method named **OnCanceled** as follows.</span></span> <span data-ttu-id="f107f-123">このメソッドは、バックグラウンド タスクに対して取り消し要求が出されると、Windows ランタイムによって呼び出されるエントリ ポイントです。</span><span class="sxs-lookup"><span data-stu-id="f107f-123">This method is the entry point called by the Windows Runtime when a cancellation request is made against your background task.</span></span>
 
 ```csharp
 private void OnCanceled(
@@ -71,7 +71,7 @@ void ExampleBackgroundTask::OnCanceled(
 }
 ```
 
-<span data-ttu-id="250c4-124">バックグラウンド タスク クラスに **\_CancelRequested** というフラグ変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="250c4-124">Add a flag variable called **\_CancelRequested** to the background task class.</span></span> <span data-ttu-id="250c4-125">この変数は、取り消し要求が出されたことを示すために使います。</span><span class="sxs-lookup"><span data-stu-id="250c4-125">This variable will be used to indicate when a cancellation request has been made.</span></span>
+<span data-ttu-id="f107f-124">バックグラウンド タスク クラスに **\_CancelRequested** というフラグ変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="f107f-124">Add a flag variable called **\_CancelRequested** to the background task class.</span></span> <span data-ttu-id="f107f-125">この変数は、取り消し要求が出されたことを示すために使います。</span><span class="sxs-lookup"><span data-stu-id="f107f-125">This variable will be used to indicate when a cancellation request has been made.</span></span>
 
 ```csharp
 volatile bool _CancelRequested = false;
@@ -87,9 +87,9 @@ private:
     volatile bool CancelRequested;
 ```
 
-<span data-ttu-id="250c4-126">手順 1 で作成した**OnCanceled**の方法でフラグ変数**\_CancelRequested**を**true**に設定します。</span><span class="sxs-lookup"><span data-stu-id="250c4-126">In the **OnCanceled** method you created in step 1, set the flag variable **\_CancelRequested** to **true**.</span></span>
+<span data-ttu-id="f107f-126">手順 1 で作成した**OnCanceled**の方法でフラグ変数**\_CancelRequested**を**true**に設定します。</span><span class="sxs-lookup"><span data-stu-id="f107f-126">In the **OnCanceled** method you created in step 1, set the flag variable **\_CancelRequested** to **true**.</span></span>
 
-<span data-ttu-id="250c4-127">完全な[バック グラウンド タスク サンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**メソッド**\_CancelRequested**を**true**に設定し、可能性のある有用なデバッグ出力です。</span><span class="sxs-lookup"><span data-stu-id="250c4-127">The full [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled** method sets **\_CancelRequested** to **true** and writes potentially useful debug output.</span></span>
+<span data-ttu-id="f107f-127">完全な[バック グラウンド タスク サンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**メソッド**\_CancelRequested**を**true**に設定し、可能性のある有用なデバッグ出力です。</span><span class="sxs-lookup"><span data-stu-id="f107f-127">The full [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled** method sets **\_CancelRequested** to **true** and writes potentially useful debug output.</span></span>
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -119,7 +119,7 @@ void ExampleBackgroundTask::OnCanceled(IBackgroundTaskInstance^ taskInstance, Ba
 }
 ```
 
-<span data-ttu-id="250c4-128">バック グラウンド タスクの**実行**方法では、作業を開始する前に**OnCanceled**イベント ハンドラー メソッドを登録します。</span><span class="sxs-lookup"><span data-stu-id="250c4-128">In the background task's **Run** method, register the **OnCanceled** event handler method before starting work.</span></span> <span data-ttu-id="250c4-129">インプロセス バックグラウンド タスクでは、アプリケーションの初期化の一部としてこの登録を実行できます。</span><span class="sxs-lookup"><span data-stu-id="250c4-129">In an in-process background task, you might do this registration as part of your application initialization.</span></span> <span data-ttu-id="250c4-130">たとえば、次のコード行を使用します。</span><span class="sxs-lookup"><span data-stu-id="250c4-130">For example, use the following line of code.</span></span>
+<span data-ttu-id="f107f-128">バック グラウンド タスクの**実行**方法では、作業を開始する前に**OnCanceled**イベント ハンドラー メソッドを登録します。</span><span class="sxs-lookup"><span data-stu-id="f107f-128">In the background task's **Run** method, register the **OnCanceled** event handler method before starting work.</span></span> <span data-ttu-id="f107f-129">インプロセス バックグラウンド タスクでは、アプリケーションの初期化の一部としてこの登録を実行できます。</span><span class="sxs-lookup"><span data-stu-id="f107f-129">In an in-process background task, you might do this registration as part of your application initialization.</span></span> <span data-ttu-id="f107f-130">たとえば、次のコード行を使用します。</span><span class="sxs-lookup"><span data-stu-id="f107f-130">For example, use the following line of code.</span></span>
 
 ```csharp
 taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
@@ -133,13 +133,13 @@ taskInstance.Canceled({ this, &ExampleBackgroundTask::OnCanceled });
 taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &ExampleBackgroundTask::OnCanceled);
 ```
 
-## <a name="handle-cancellation-by-exiting-your-background-task"></a><span data-ttu-id="250c4-131">バックグラウンド タスクを終了することによって、取り消しを処理します。</span><span class="sxs-lookup"><span data-stu-id="250c4-131">Handle cancellation by exiting your background task</span></span>
+## <a name="handle-cancellation-by-exiting-your-background-task"></a><span data-ttu-id="f107f-131">バックグラウンド タスクを終了することによって、取り消しを処理します。</span><span class="sxs-lookup"><span data-stu-id="f107f-131">Handle cancellation by exiting your background task</span></span>
 
-<span data-ttu-id="250c4-132">バックグラウンド処理を実行しているメソッドは、**\_cancelRequested** が **true** に設定されたタイミングを認識し、処理を停止して終了する必要があります。</span><span class="sxs-lookup"><span data-stu-id="250c4-132">When a cancellation request is received, your method that does background work needs to stop work and exit by recognizing when **\_cancelRequested** is set to **true**.</span></span> <span data-ttu-id="250c4-133">プロセスのバック グラウンド タスク**OnBackgroundActivated**メソッドからを返すことを意味します。</span><span class="sxs-lookup"><span data-stu-id="250c4-133">For in-process background tasks, this means returning from the **OnBackgroundActivated** method.</span></span> <span data-ttu-id="250c4-134">プロセスのバック グラウンド タスクの**実行**方法から取得することを意味します。</span><span class="sxs-lookup"><span data-stu-id="250c4-134">For out-of-process background tasks, this means returning from the **Run** method.</span></span>
+<span data-ttu-id="f107f-132">バックグラウンド処理を実行しているメソッドは、**\_cancelRequested** が **true** に設定されたタイミングを認識し、処理を停止して終了する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f107f-132">When a cancellation request is received, your method that does background work needs to stop work and exit by recognizing when **\_cancelRequested** is set to **true**.</span></span> <span data-ttu-id="f107f-133">プロセスのバック グラウンド タスク**OnBackgroundActivated**メソッドからを返すことを意味します。</span><span class="sxs-lookup"><span data-stu-id="f107f-133">For in-process background tasks, this means returning from the **OnBackgroundActivated** method.</span></span> <span data-ttu-id="f107f-134">プロセスのバック グラウンド タスクの**実行**方法から取得することを意味します。</span><span class="sxs-lookup"><span data-stu-id="f107f-134">For out-of-process background tasks, this means returning from the **Run** method.</span></span>
 
-<span data-ttu-id="250c4-135">バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。</span><span class="sxs-lookup"><span data-stu-id="250c4-135">Modify the code of your background task class to check the flag variable while it's working.</span></span> <span data-ttu-id="250c4-136">場合は**\_cancelRequested**は、続行の場合は true、停止作業に設定になります。</span><span class="sxs-lookup"><span data-stu-id="250c4-136">If **\_cancelRequested** becomes set to true, stop work from continuing.</span></span>
+<span data-ttu-id="f107f-135">バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。</span><span class="sxs-lookup"><span data-stu-id="f107f-135">Modify the code of your background task class to check the flag variable while it's working.</span></span> <span data-ttu-id="f107f-136">場合は**\_cancelRequested**は、続行の場合は true、停止作業に設定になります。</span><span class="sxs-lookup"><span data-stu-id="f107f-136">If **\_cancelRequested** becomes set to true, stop work from continuing.</span></span>
 
-<span data-ttu-id="250c4-137">[バック グラウンド タスクの例](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、バック グラウンド タスクが取り消された場合は、定期的なタイマー コールバックを停止するチェックが含まれています。</span><span class="sxs-lookup"><span data-stu-id="250c4-137">The [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) includes a check that stops the periodic timer callback if the background task is canceled.</span></span>
+<span data-ttu-id="f107f-137">[バック グラウンド タスクの例](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、バック グラウンド タスクが取り消された場合は、定期的なタイマー コールバックを停止するチェックが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f107f-137">The [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) includes a check that stops the periodic timer callback if the background task is canceled.</span></span>
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -181,11 +181,11 @@ else
 ```
 
 > [!NOTE]
-> <span data-ttu-id="250c4-138">上に示す例では、 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)を使用します。[**進捗状況**](https://msdn.microsoft.com/library/windows/apps/br224800)のプロパティがバック グラウンド タスクの進捗状況を記録するために使用されています。</span><span class="sxs-lookup"><span data-stu-id="250c4-138">The code sample shown above uses the [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) property being used to record background task progress.</span></span> <span data-ttu-id="250c4-139">進行状況は、[**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) クラスを使ってアプリに報告されます。</span><span class="sxs-lookup"><span data-stu-id="250c4-139">Progress is reported back to the app using the [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) class.</span></span>
+> <span data-ttu-id="f107f-138">上に示す例では、 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)を使用します。[**進捗状況**](https://msdn.microsoft.com/library/windows/apps/br224800)のプロパティがバック グラウンド タスクの進捗状況を記録するために使用されています。</span><span class="sxs-lookup"><span data-stu-id="f107f-138">The code sample shown above uses the [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) property being used to record background task progress.</span></span> <span data-ttu-id="f107f-139">進行状況は、[**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) クラスを使ってアプリに報告されます。</span><span class="sxs-lookup"><span data-stu-id="f107f-139">Progress is reported back to the app using the [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) class.</span></span>
 
-<span data-ttu-id="250c4-140">タスクが完了したかが、キャンセルされましたか作業が停止すると、記録の**実行**方法を変更します。</span><span class="sxs-lookup"><span data-stu-id="250c4-140">Modify the **Run** method so that after work has stopped, it records whether the task completed or was cancelled.</span></span> <span data-ttu-id="250c4-141">この手順は、バックグラウンド タスクが取り消されたときにプロセス間で通信する手段が必要となるため、別のプロセスで実行されるアウトプロセス バック グラウンド タスクに適用されます。</span><span class="sxs-lookup"><span data-stu-id="250c4-141">This step applies to out-of-process background tasks because you need a way to communicate between processes when the background task was cancelled.</span></span> <span data-ttu-id="250c4-142">インプロセス バックグラウンド タスクでは、タスクが取り消されたことを示すために、状態をアプリケーションと共有するだけで十分です。</span><span class="sxs-lookup"><span data-stu-id="250c4-142">For in-process background tasks, you can simply share state with the application to indicate the task was cancelled.</span></span>
+<span data-ttu-id="f107f-140">タスクが完了したかが、キャンセルされましたか作業が停止すると、記録の**実行**方法を変更します。</span><span class="sxs-lookup"><span data-stu-id="f107f-140">Modify the **Run** method so that after work has stopped, it records whether the task completed or was cancelled.</span></span> <span data-ttu-id="f107f-141">この手順は、バックグラウンド タスクが取り消されたときにプロセス間で通信する手段が必要となるため、別のプロセスで実行されるアウトプロセス バック グラウンド タスクに適用されます。</span><span class="sxs-lookup"><span data-stu-id="f107f-141">This step applies to out-of-process background tasks because you need a way to communicate between processes when the background task was cancelled.</span></span> <span data-ttu-id="f107f-142">インプロセス バックグラウンド タスクでは、タスクが取り消されたことを示すために、状態をアプリケーションと共有するだけで十分です。</span><span class="sxs-lookup"><span data-stu-id="f107f-142">For in-process background tasks, you can simply share state with the application to indicate the task was cancelled.</span></span>
 
-<span data-ttu-id="250c4-143">[バック グラウンド タスクの例](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、LocalSettings の状態が記録されます。</span><span class="sxs-lookup"><span data-stu-id="250c4-143">The [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) records status in LocalSettings.</span></span>
+<span data-ttu-id="f107f-143">[バック グラウンド タスクの例](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、LocalSettings の状態が記録されます。</span><span class="sxs-lookup"><span data-stu-id="f107f-143">The [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) records status in LocalSettings.</span></span>
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -257,15 +257,15 @@ else
 }
 ```
 
-## <a name="remarks"></a><span data-ttu-id="250c4-144">注釈</span><span class="sxs-lookup"><span data-stu-id="250c4-144">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="f107f-144">注釈</span><span class="sxs-lookup"><span data-stu-id="f107f-144">Remarks</span></span>
 
-<span data-ttu-id="250c4-145">[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)をダウンロードして、メソッドのコンテキストに従ってコード例を確認できます。</span><span class="sxs-lookup"><span data-stu-id="250c4-145">You can download the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) to see these code examples in the context of methods.</span></span>
+<span data-ttu-id="f107f-145">[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)をダウンロードして、メソッドのコンテキストに従ってコード例を確認できます。</span><span class="sxs-lookup"><span data-stu-id="f107f-145">You can download the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) to see these code examples in the context of methods.</span></span>
 
-<span data-ttu-id="250c4-146">例では、サンプル コードでは、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から**実行する**方法 (とコールバック タイマー) の一部だけを示します。</span><span class="sxs-lookup"><span data-stu-id="250c4-146">For illustrative purposes, the sample code shows only portions of the **Run** method (and callback timer) from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).</span></span>
+<span data-ttu-id="f107f-146">例では、サンプル コードでは、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から**実行する**方法 (とコールバック タイマー) の一部だけを示します。</span><span class="sxs-lookup"><span data-stu-id="f107f-146">For illustrative purposes, the sample code shows only portions of the **Run** method (and callback timer) from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).</span></span>
 
-## <a name="run-method-example"></a><span data-ttu-id="250c4-147">メソッド例を実行します。</span><span class="sxs-lookup"><span data-stu-id="250c4-147">Run method example</span></span>
+## <a name="run-method-example"></a><span data-ttu-id="f107f-147">メソッド例を実行します。</span><span class="sxs-lookup"><span data-stu-id="f107f-147">Run method example</span></span>
 
-<span data-ttu-id="250c4-148">[**実行する**方法、およびタイマー コールバック コードを完了すると、[バック グラウンド タスクの例](http://go.microsoft.com/fwlink/p/?LinkId=618666)は、以下に示すのコンテキスト。</span><span class="sxs-lookup"><span data-stu-id="250c4-148">The complete **Run** method, and timer callback code, from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) are shown below for context.</span></span>
+<span data-ttu-id="f107f-148">[**実行する**方法、およびタイマー コールバック コードを完了すると、[バック グラウンド タスクの例](http://go.microsoft.com/fwlink/p/?LinkId=618666)は、以下に示すのコンテキスト。</span><span class="sxs-lookup"><span data-stu-id="f107f-148">The complete **Run** method, and timer callback code, from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) are shown below for context.</span></span>
 
 ```csharp
 // The Run method is the entry point of a background task.
@@ -404,18 +404,18 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-## <a name="related-topics"></a><span data-ttu-id="250c4-149">関連トピック</span><span class="sxs-lookup"><span data-stu-id="250c4-149">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="f107f-149">関連トピック</span><span class="sxs-lookup"><span data-stu-id="f107f-149">Related topics</span></span>
 
-- <span data-ttu-id="250c4-150">[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)。</span><span class="sxs-lookup"><span data-stu-id="250c4-150">[Create and register an in-process background task](create-and-register-an-inproc-background-task.md).</span></span>
-- [<span data-ttu-id="250c4-151">アウトプロセス バックグラウンド タスクの作成と登録</span><span class="sxs-lookup"><span data-stu-id="250c4-151">Create and register an out-of-process background task</span></span>](create-and-register-a-background-task.md)
-- [<span data-ttu-id="250c4-152">アプリケーション マニフェストでのバックグラウンド タスクの宣言</span><span class="sxs-lookup"><span data-stu-id="250c4-152">Declare background tasks in the application manifest</span></span>](declare-background-tasks-in-the-application-manifest.md)
-- [<span data-ttu-id="250c4-153">バックグラウンド タスクのガイドライン</span><span class="sxs-lookup"><span data-stu-id="250c4-153">Guidelines for background tasks</span></span>](guidelines-for-background-tasks.md)
-- [<span data-ttu-id="250c4-154">バックグラウンド タスクの進捗状況と完了の監視</span><span class="sxs-lookup"><span data-stu-id="250c4-154">Monitor background task progress and completion</span></span>](monitor-background-task-progress-and-completion.md)
-- [<span data-ttu-id="250c4-155">バックグラウンド タスクの登録</span><span class="sxs-lookup"><span data-stu-id="250c4-155">Register a background task</span></span>](register-a-background-task.md)
-- [<span data-ttu-id="250c4-156">バックグラウンド タスクによるシステム イベントへの応答</span><span class="sxs-lookup"><span data-stu-id="250c4-156">Respond to system events with background tasks</span></span>](respond-to-system-events-with-background-tasks.md)
-- [<span data-ttu-id="250c4-157">タイマーでのバックグラウンド タスクの実行</span><span class="sxs-lookup"><span data-stu-id="250c4-157">Run a background task on a timer</span></span>](run-a-background-task-on-a-timer-.md)
-- [<span data-ttu-id="250c4-158">バックグラウンド タスクを実行するための条件の設定</span><span class="sxs-lookup"><span data-stu-id="250c4-158">Set conditions for running a background task</span></span>](set-conditions-for-running-a-background-task.md)
-- [<span data-ttu-id="250c4-159">バックグラウンド タスクのライブ タイルの更新</span><span class="sxs-lookup"><span data-stu-id="250c4-159">Update a live tile from a background task</span></span>](update-a-live-tile-from-a-background-task.md)
-- [<span data-ttu-id="250c4-160">メンテナンス トリガーの使用</span><span class="sxs-lookup"><span data-stu-id="250c4-160">Use a maintenance trigger</span></span>](use-a-maintenance-trigger.md)
-- [<span data-ttu-id="250c4-161">バックグラウンド タスクのデバッグ</span><span class="sxs-lookup"><span data-stu-id="250c4-161">Debug a background task</span></span>](debug-a-background-task.md)
-- [<span data-ttu-id="250c4-162">UWP アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)</span><span class="sxs-lookup"><span data-stu-id="250c4-162">How to trigger suspend, resume, and background events in UWP apps (when debugging)</span></span>](http://go.microsoft.com/fwlink/p/?linkid=254345)
+- <span data-ttu-id="f107f-150">[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)。</span><span class="sxs-lookup"><span data-stu-id="f107f-150">[Create and register an in-process background task](create-and-register-an-inproc-background-task.md).</span></span>
+- [<span data-ttu-id="f107f-151">アウトプロセス バックグラウンド タスクの作成と登録</span><span class="sxs-lookup"><span data-stu-id="f107f-151">Create and register an out-of-process background task</span></span>](create-and-register-a-background-task.md)
+- [<span data-ttu-id="f107f-152">アプリケーション マニフェストでのバックグラウンド タスクの宣言</span><span class="sxs-lookup"><span data-stu-id="f107f-152">Declare background tasks in the application manifest</span></span>](declare-background-tasks-in-the-application-manifest.md)
+- [<span data-ttu-id="f107f-153">バックグラウンド タスクのガイドライン</span><span class="sxs-lookup"><span data-stu-id="f107f-153">Guidelines for background tasks</span></span>](guidelines-for-background-tasks.md)
+- [<span data-ttu-id="f107f-154">バックグラウンド タスクの進捗状況と完了の監視</span><span class="sxs-lookup"><span data-stu-id="f107f-154">Monitor background task progress and completion</span></span>](monitor-background-task-progress-and-completion.md)
+- [<span data-ttu-id="f107f-155">バックグラウンド タスクの登録</span><span class="sxs-lookup"><span data-stu-id="f107f-155">Register a background task</span></span>](register-a-background-task.md)
+- [<span data-ttu-id="f107f-156">バックグラウンド タスクによるシステム イベントへの応答</span><span class="sxs-lookup"><span data-stu-id="f107f-156">Respond to system events with background tasks</span></span>](respond-to-system-events-with-background-tasks.md)
+- [<span data-ttu-id="f107f-157">タイマーでのバックグラウンド タスクの実行</span><span class="sxs-lookup"><span data-stu-id="f107f-157">Run a background task on a timer</span></span>](run-a-background-task-on-a-timer-.md)
+- [<span data-ttu-id="f107f-158">バックグラウンド タスクを実行するための条件の設定</span><span class="sxs-lookup"><span data-stu-id="f107f-158">Set conditions for running a background task</span></span>](set-conditions-for-running-a-background-task.md)
+- [<span data-ttu-id="f107f-159">バックグラウンド タスクのライブ タイルの更新</span><span class="sxs-lookup"><span data-stu-id="f107f-159">Update a live tile from a background task</span></span>](update-a-live-tile-from-a-background-task.md)
+- [<span data-ttu-id="f107f-160">メンテナンス トリガーの使用</span><span class="sxs-lookup"><span data-stu-id="f107f-160">Use a maintenance trigger</span></span>](use-a-maintenance-trigger.md)
+- [<span data-ttu-id="f107f-161">バックグラウンド タスクのデバッグ</span><span class="sxs-lookup"><span data-stu-id="f107f-161">Debug a background task</span></span>](debug-a-background-task.md)
+- [<span data-ttu-id="f107f-162">UWP アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)</span><span class="sxs-lookup"><span data-stu-id="f107f-162">How to trigger suspend, resume, and background events in UWP apps (when debugging)</span></span>](http://go.microsoft.com/fwlink/p/?linkid=254345)

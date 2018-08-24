@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、ストア サービス、Microsoft ストア分析 API、分析結果
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2820121"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2837942"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a><span data-ttu-id="51460-104">デスクトップ アプリケーションのデータの分析結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="51460-104">Get insights data for your desktop application</span></span>
 
