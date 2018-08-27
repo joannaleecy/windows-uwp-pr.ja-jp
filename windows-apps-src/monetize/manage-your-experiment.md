@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
 ms.localizationpriority: medium
 ms.openlocfilehash: 073d5ec67bb012cbfe21c279ee97ec3c50b8458f
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2842464"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2866028"
 ---
 # <a name="manage-your-experiment-in-the-dashboard"></a><span data-ttu-id="63d80-103">ダッシュボードで実験を管理する</span><span class="sxs-lookup"><span data-stu-id="63d80-103">Manage your experiment in the dashboard</span></span>
 

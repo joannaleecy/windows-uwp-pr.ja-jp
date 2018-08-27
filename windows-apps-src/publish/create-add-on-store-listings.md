@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d6132c2ede9f14cd1f4d29195916c8b484abfe9f
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2836354"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2865630"
 ---
 # <a name="create-add-on-store-listings"></a><span data-ttu-id="ca0c1-103">アドオンのストア登録情報の作成</span><span class="sxs-lookup"><span data-stu-id="ca0c1-103">Create add-on Store listings</span></span>
 
