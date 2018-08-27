@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 33091903ebf1a7ff1150dcaa9bd83a3e76417926
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2842504"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2867741"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a><span data-ttu-id="c7c20-104">Windows 開発者向けドキュメントの最新情報、2017 年 9 月</span><span class="sxs-lookup"><span data-stu-id="c7c20-104">What's New in the Windows Developer Docs in September 2017</span></span>
 

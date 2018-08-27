@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 53aac2375d60df3cd9493f315b20431961378fe8
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2831124"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2867871"
 ---
 # <a name="continue-user-activity-even-across-devices"></a><span data-ttu-id="902ad-104">デバイス間でもユーザーのアクティビティを継続する</span><span class="sxs-lookup"><span data-stu-id="902ad-104">Continue user activity, even across devices</span></span>
 
