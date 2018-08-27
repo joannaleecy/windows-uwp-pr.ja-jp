@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, XAML, コントロール, バインド, プロパティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 6343832801926254c64fcefc269ce7fda9ed6dfc
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.openlocfilehash: 31913ae162bfe541d04f304db87b4dff962a8af4
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2831454"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2862869"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-property"></a>XAML コントロール、[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) プロパティへのバインド
 XAML コントロールに効果的にバインドできるプロパティは、*監視可能な*プロパティと呼ばれます。 この概念は、*オブザーバー パターン*と呼ばれるソフトウェアの設計パターンに基づいています。 このトピックでは、C++/WinRT で監視可能なプロパティを実装する方法と、これらに XAML コントロールをバインドする方法を示します。
@@ -100,7 +100,7 @@ namespace winrt::Bookstore::implementation
     {
     }
 
-    hstring BookSku::Title()
+    winrt::hstring BookSku::Title()
     {
         return m_title;
     }
@@ -114,7 +114,7 @@ namespace winrt::Bookstore::implementation
         }
     }
 
-    event_token BookSku::PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
+    winrt::event_token BookSku::PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
     {
         return m_propertyChanged.add(handler);
     }
@@ -146,7 +146,7 @@ namespace Bookstore
 }
 ```
 
-保存してビルドします。 `Generated Files` フォルダーから `BookstoreViewModel.h` と `BookstoreViewModel.cpp` をプロジェクト フォルダーにコピーし、プロジェクトに追加します。 これらのファイルを開くし、次に示すように、ランタイム クラスを実装します。 メモ方法で、`BookstoreViewModel.h`を含めています`BookSku.h`、実装の種類 (**winrt::Bookstore::implementation::BookSku**) を宣言します。
+保存してビルドします。 `Generated Files` フォルダーから `BookstoreViewModel.h` と `BookstoreViewModel.cpp` をプロジェクト フォルダーにコピーし、プロジェクトに追加します。 これらのファイルを開くし、次に示すように、ランタイム クラスを実装します。 メモ方法で、`BookstoreViewModel.h`を含めています`BookSku.h`、実装の種類 (**winrt::Bookstore::implementation::BookSku**) を宣言します。 削除すると既定のコンスを復元している`= delete`します。
 
 ```cppwinrt
 // BookstoreViewModel.h
