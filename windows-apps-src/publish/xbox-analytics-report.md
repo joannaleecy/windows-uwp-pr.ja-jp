@@ -10,18 +10,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計情報
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e69c41ec2ae6dface93b9f3148e699e448faa18
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2857043"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2882661"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析レポート
 
 Windows デベロッパー センター ダッシュボードの **Xbox 分析レポート**には、ゲームの Xbox 機能に関するユーザーのエンゲージメント状況の統計情報が示されます。 また、クライアント エラーの解決に役立つ、サービスの正常性情報も提供されます。
 
 > [!IMPORTANT]
-> このレポートは、Xbox 用のゲームまたは Xbox Live サービスを使用するゲームを公開する場合にのみ表示されます。 これを行うには、[承認プロセスの概念](../gaming/concept-approval.md)、 [Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)によって発行されたゲームおよびゲームの提出が含まれて移動する必要があります、[ID@Xboxプログラム](../xbox-live/developer-program-overview.md#id)。 [Xbox Live の作成者のプログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)経由で発行されたゲームはこのレポートに表示されています。
+> このレポートは、Xbox 用のゲームまたは Xbox Live サービスを使用するゲームを公開する場合にのみ表示されます。 これを行う必要があります進めることの[概念の承認プロセス](../gaming/concept-approval.md)で送信されたゲーム[Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)が発行したゲームを含む、[ID@Xboxプログラム](../xbox-live/developer-program-overview.md#id)します。 [Xbox Live の作成者のプログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)から発行ゲームでは、このレポートに表示されているできません。
 
 **Xbox 分析**レポートは、ゲームに対する左側のナビゲーション メニューで、**[分析]** を展開して **[Xbox 分析]** を選択すると表示できます。  このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。
 

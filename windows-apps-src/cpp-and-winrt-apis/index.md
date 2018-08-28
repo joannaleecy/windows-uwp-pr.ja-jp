@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cded1be4bd7ca5044a2eee8832545a8d83ee3d4
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2855833"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2882595"
 ---
 # [<a name="cwinrt"></a>C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。 C++/WinRT の場合、標準に準拠した C++17 のコンパイラを使用して Windows ランタイム API を作成および使用できます。 Windows SDK には C++/WinRT が含まれます。バージョン 10.0.17134.0 (Windows 10、バージョン 1803) で導入されました。
@@ -56,8 +56,8 @@ Windows ランタイムの他の言語オプションに比べて、C++/WinRT �
 | [同時実行操作と非同期操作](concurrency.md) | このトピックでは、C++/WinRT を使用した Windows ランタイムの非同期オブジェクトの作成方法と利用方法について説明します。 |
 | [XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md) | XAML コントロールに効果的にバインドできるプロパティは、*監視可能な*プロパティと呼ばれます。 このトピックでは、監視可能なプロパティを実装および使用する方法と、XAML コントロールをバインドする方法を示します。 |
 | [XAML アイテム コントロール: C++/WinRT コレクションへのバインド](binding-collection.md) | XAML アイテム コントロールに効果的にバインドできるコレクションは、*監視可能な*コレクションと呼ばれます。 このトピックでは、監視可能なコレクションを実装および使用する方法と、それに XAML アイテム コントロールをバインドする方法を示します。 |
-| [C + を使用してカスタム (テンプレート) コントロールを XAML +/WinRT](xaml-cust-ctrl.md) | このトピックでは、単純な C キーを使用してカスタム コントロールを作成する手順を +/WinRT します。 独自の豊富な機能やカスタマイズ可能な UI コントロールを作成するのには次の情報で作成できます。 |
-| [DirectX と C + では、その他の COM Api を利用する +/WinRT](consume-com.md) | このトピックでは、完全な Direct2D コード例を使用して、C キーを使用する方法を示す +/WinRT COM クラスとインターフェイスを使用します。 |
+| [C++/WinRT による XAML カスタム (テンプレート化) コントロール](xaml-cust-ctrl.md) | このトピックでは、単純な C キーを使用してカスタム コントロールを作成する手順を +/WinRT します。 独自の豊富な機能やカスタマイズ可能な UI コントロールを作成するのには次の情報で作成できます。 |
+| [C++/WinRT での DirectX およびその他の COM API の使用](consume-com.md) | このトピックでは、完全な Direct2D コード例を使用して、C キーを使用する方法を示す +/WinRT COM クラスとインターフェイスを使用します。 |
 | [C++/WinRT と C++/CX 間の相互運用](interop-winrt-cx.md) | このトピックでは、[C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) と C++/WinRT オブジェクト間の変換に使用できる 2 つのヘルパー関数について説明します。 |
 | [C++/CX から C++/WinRT への移行](move-to-winrt-from-cx.md) | このトピックでは、C++/CX コードを C++/WinRT の同等のコードに移植する方法について説明します。 |
 | [C++/WinRT と ABI 間の相互運用](interop-winrt-abi.md) | このトピックでは、アプリケーション バイナリ インターフェイス (ABI) と C++/WinRT オブジェクト間の変換方法について説明します。 |

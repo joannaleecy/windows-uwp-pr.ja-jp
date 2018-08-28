@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、デバイスのポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2864841"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2881675"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>カスタムの SSL 証明書で Device Portal をプロビジョニングする
 Windows 10 の作成者 Update では、Windows デバイス ポータルは、HTTPS 通信で使用するカスタム証明書をインストールするデバイス管理者を追加します。 

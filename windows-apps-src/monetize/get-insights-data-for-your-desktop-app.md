@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: Microsoft ストア分析 API でこのメソッドを使用すると、デスクトップ アプリケーションのデータの分析結果を取得します。
-title: デスクトップ アプリケーションのデータの分析結果を取得します。
+title: デスクトップ アプリケーションのインサイト データの取得
 ms.author: mcleans
 ms.date: 07/31/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10、uwp、ストア サービス、Microsoft ストア分析 API、分析結果
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2857757"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2882988"
 ---
-# <a name="get-insights-data-for-your-desktop-application"></a>デスクトップ アプリケーションのデータの分析結果を取得します。
+# <a name="get-insights-data-for-your-desktop-application"></a>デスクトップ アプリケーションのインサイト データの取得
 
 [Windows デスクトップ アプリケーション](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)に追加したデスクトップ アプリケーションの正常性指標に関連するデータの分析結果を取得するには、Microsoft ストア分析 API このメソッドを使います。 このデータも Windows デベロッパー センターのダッシュ ボードでのデスクトップ アプリケーションの[正常性レポート](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)で使用できます。
 
