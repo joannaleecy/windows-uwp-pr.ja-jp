@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: このトピックでは、単純な C キーを使用してカスタム コントロールを作成する手順を +/WinRT します。 独自の豊富な機能やカスタマイズ可能な UI コントロールを作成するのには次の情報で作成できます。
-title: C + を使用してカスタム (テンプレート) コントロールを XAML +/WinRT
+title: C++/WinRT による XAML カスタム (テンプレート化) コントロール
 ms.author: stwhi
 ms.date: 08/01/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c、cpp、winrt、投影、XAML、独自のカスタム テンプレート] コントロール
 ms.localizationpriority: medium
 ms.openlocfilehash: c108175c66d27b2cdbd910a0f7653ca1befb68e9
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2856972"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2885566"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>カスタム (テンプレート) コントロールで XAML [C + +/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 

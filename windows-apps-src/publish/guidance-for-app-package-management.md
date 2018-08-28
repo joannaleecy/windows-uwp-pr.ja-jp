@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b0b6315b1177138c3ede7834e2dbc792ee106dd
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2856725"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2895261"
 ---
 # <a name="guidance-for-app-package-management"></a>アプリ パッケージ管理のガイダンス
 
@@ -32,7 +32,7 @@ ms.locfileid: "2856725"
 
 さまざまなオペレーティング システムで異なる種類のパッケージを実行できます。 ユーザーのデバイスで複数のパッケージを実行できる場合、Microsoft Store は使用可能な最適のパッケージを提供します。
 
-一般に、新しい OS バージョンでは、同じデバイス ファミリの以前の OS バージョンを対象にしたパッケージを実行できます。 ただし、アプリケーションには、現在の OS バージョンを対象とするパッケージが含まれていない場合、お客様はこれらのパッケージを手のみできます。
+一般に、新しい OS バージョンでは、同じデバイス ファミリの以前の OS バージョンを対象にしたパッケージを実行できます。 ただし、アプリには、現在の OS のバージョンを対象とするパッケージが含まれていない場合、お客様はこれらのパッケージを取得のみ。
 
 たとえば、Windows 10 デバイスでは、(デバイス ファミリごとに) サポートされている以前の OS のバージョンをすべて実行できます。 Windows 10 のデスクトップ デバイスでは Windows 8.1 または Windows 8 用に構築されたアプリを実行でき、Windows 10 のモバイル デバイスでは Windows Phone 8.1、Windows Phone 8、さらには Windows Phone 7.x 用に構築されたアプリまで実行できます。 
 
@@ -77,7 +77,7 @@ ms.locfileid: "2856725"
 |--------------------------------------|----------------------------------------------|
 | Windows 10 (ユニバーサル デバイス ファミリ) | Windows 10 (すべてのデバイス ファミリ)             |
 
-アプリ例 4 では、Windows 10 を実行しているデバイスではアプリを入手することができますが、以前の OS バージョンのユーザーは利用できません。 UWP パッケージでは、ユニバーサル ・ デバイス ・ ファミリをターゲットとするためは、任意の Windows 10 デバイス ([家族の可用性の選択したデバイス](device-family-availability.md)) ごとに使用可能ながあります。
+アプリ例 4 では、Windows 10 を実行しているデバイスではアプリを入手することができますが、以前の OS バージョンのユーザーは利用できません。 どこからでもデバイス家族 UWP パッケージいるため、任意の Windows 10 デバイス ([家族の空き時間情報の選択したデバイス](device-family-availability.md)) ごとに利用可能ななります。
 
 
 ## <a name="removing-an-app-from-the-store"></a>アプリをストアから削除する
@@ -99,9 +99,9 @@ ms.locfileid: "2856725"
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>これまでサポートされていたデバイス ファミリ用のパッケージを削除する
 
-場合は特定の[デバイス ファミリ](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)アプリ以前サポートされている必要がありますこれは意図 [**パッケージ**] ページで、変更内容を保存する前に確認することのすべてのパッケージを削除するとします。
+場合は、特定の[デバイスの家族](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)アプリ以前サポートするように求められます目的は、[**パッケージ**] ページで、変更内容を保存する前にこのことを確認するすべてのパッケージを削除します。
 
-すべてのアプリケーションが以前にサポートされているデバイス ファミリで実行できるパッケージを削除する提出書類を発行すると新規のお客様をそのデバイス ファミリのアプリケーションを取得することはできません。 そのデバイス ファミリ向けのパッケージを提供するための別の更新プログラムは、後でいつでも公開することができます。
+すべてのアプリは以前はサポートされているデバイス家族で実行できるパッケージを削除する送信を発行するときに新規顧客をそのデバイス ファミリ アプリを取得することはできません。 そのデバイス ファミリ向けのパッケージを提供するための別の更新プログラムは、後でいつでも公開することができます。
 
 特定のデバイス ファミリをサポートするパッケージをすべて削除した場合でも、該当する種類のデバイスにアプリを既にインストールしているユーザーは、そのアプリを使うことができますが、後で提供される更新プログラムを入手することになります。
 
@@ -110,7 +110,7 @@ ms.locfileid: "2856725"
 
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>以前に公開したアプリに Windows 10 用のパッケージを追加する
 
-ストアに Windows 8.x や Windows Phone 8.x を対象とするアプリがあり、Windows 10 用にアプリを更新する場合、「[パッケージ](upload-app-packages.md)」の手順で、新しい申請を作成し、UWP の .appxupload パッケージを追加します。 アプリが認定プロセスを通過した後既にアプリがあり Windows 10 になっているお客様は、UWP パッケージをストアから更新プログラムとして取得します。 この UWP パッケージは、Windows 10 のユーザーが新規の取得として利用することもできます。
+ストアに Windows 8.x や Windows Phone 8.x を対象とするアプリがあり、Windows 10 用にアプリを更新する場合、「[パッケージ](upload-app-packages.md)」の手順で、新しい申請を作成し、UWP の .appxupload パッケージを追加します。 アプリが承認プロセスを通過した後お客様が既にアプリが、Windows 10 では、UWP パッケージ更新としてストアから入手します。 この UWP パッケージは、Windows 10 のユーザーが新規の取得として利用することもできます。
 
 > [!NOTE]
 > Windows 10 のユーザーが UWP パッケージを入手した場合、以前の OS バージョン用のパッケージを使うようにそのユーザーをロールバックすることはできません。 
@@ -122,9 +122,9 @@ Microsoft Store 用の UWP アプリのパッケージ化について詳しく�
 > [!IMPORTANT]
 > ユニバーサル デバイス ファミリをターゲットとするパッケージを提供する場合は、以前のオペレーティング システム (Windows Phone 8、Windows 8.1 など) で既にアプリを入手していたユーザーが Windows 10 にアップグレードすると、そのユーザーは Windows 10 パッケージを使うように更新されることに注意してください。
 > 
-> 今度から[デバイス ファミリの可用性](device-family-availability.md)の手順でお客様の提出マテリアルの特定のデバイス ・ ファミリを除外した場合でもセクションは、新しい買収にのみ適用されます。 以前のすべてのユーザーに新しいユニバーサル Windows 10 パッケージを取得させることを避けたい場合は、サポート対象の特定のデバイス ファミリのみを含めるように appx マニフェストの [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 要素を更新する必要があります。
+> これは、問題が発生以降の送信物、[デバイスの家族の空き時間情報](device-family-availability.md)の手順で特定のデバイス家族を除外した場合でもセクションは、新しい買収にのみ適用されます。 以前のすべてのユーザーに新しいユニバーサル Windows 10 パッケージを取得させることを避けたい場合は、サポート対象の特定のデバイス ファミリのみを含めるように appx マニフェストの [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 要素を更新する必要があります。
 > 
-> たとえば、する、Windows 8 と Windows 8.1 のお客様は、新規の UWP のアプリを取得する 10 の Windows デスクトップ デバイスをアップグレードしますが、Windows Phone のお客様は、以前には、パッケージを保持する Windows の 10 のモバイル デバイスのようになりました available は (Windows Phone 8 または Windows Phone 8.1 を対象とする)。 これを行うには、する必要があります (デスクトップのデバイス ・ ファミリの)、 **Windows.Desktop**のみを含むように、appx のマニフェストで[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)を更新する (ユニバーサル ・ デバイス ・ ファミリ) の**Windows.Universal**の値のままではなくMicrosoft Visual Studio 既定では、マニフェストに含まれています。 ユニバーサル デバイス ファミリまたはモバイル デバイス ファミリ (**Windows.Universal** または **Windows.Universal**) のどちらかを対象にした UWP パッケージは申請しないでください。 この場合、Windows 10 Mobile のユーザーが UWP パッケージを取得することはなくなります。
+> たとえば、Windows 8 および Windows 8.1 のお客様は、新しい UWP アプリを取得するデスクトップ デバイスを Windows 10 にアップグレードするが、以前と同じパッケージを保持する Windows 10 のモバイル デバイスで行われて availabl Windows Phone のお客様の目的e を (Windows Phone 8 または Windows Phone 8.1 を対象とする)。 これを行う必要があります (デスクトップ デバイス ファミリにある) の**Windows.Desktop**のみを含める appx マニフェストで[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)を更新する (ユニバーサル デバイス家族) の**Windows.Universal**値のままではなくその Microsoft Visual Studio 既定では、マニフェストに含まれています。 ユニバーサル デバイス ファミリまたはモバイル デバイス ファミリ (**Windows.Universal** または **Windows.Universal**) のどちらかを対象にした UWP パッケージは申請しないでください。 この場合、Windows 10 Mobile のユーザーが UWP パッケージを取得することはなくなります。
 
 
 ## <a name="maintaining-package-compatibility-for-windows-phone-81"></a>Windows Phone 8.1 に対するパッケージの互換性を維持する

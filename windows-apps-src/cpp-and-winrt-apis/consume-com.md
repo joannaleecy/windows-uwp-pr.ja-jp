@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: このトピックでは、完全な Direct2D コード例を使用して、C キーを使用する方法を示す +/WinRT COM クラスとインターフェイスを使用します。
-title: DirectX と C + では、その他の COM Api を利用する +/WinRT
+title: C++/WinRT での DirectX およびその他の COM API の使用
 ms.author: stwhi
 ms.date: 07/23/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c、cpp、winrt、インターフェイス、COM、コンポーネント、クラス
 ms.localizationpriority: medium
 ms.openlocfilehash: b87eb90ed5ecf731cc851e81e81ad016956e5fea
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2862767"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2893760"
 ---
 # <a name="consume-directx-and-other-com-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>DirectX およびその他の COM Api を消費[C + +/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
