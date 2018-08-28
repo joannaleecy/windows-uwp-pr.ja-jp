@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: cff96c0b8daf9f3ef32815437b510a5b94641527
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2865792"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2894267"
 ---
 # <a name="print-from-your-app"></a><span data-ttu-id="c1881-105">アプリからの印刷</span><span class="sxs-lookup"><span data-stu-id="c1881-105">Print from your app</span></span>
 

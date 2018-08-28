@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 移植, 移行, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 4aba8f559b7b6f0518a620d5127692d541953255
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2858180"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2892403"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a><span data-ttu-id="a9093-104">C++/CX から [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) への移行</span><span class="sxs-lookup"><span data-stu-id="a9093-104">Move to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) from C++/CX</span></span>
 <span data-ttu-id="a9093-105">このトピックでは、[C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) コードを C++/WinRT の同等のコードに移植する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a9093-105">This topic shows how to port [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) code to its equivalent in C++/WinRT.</span></span>

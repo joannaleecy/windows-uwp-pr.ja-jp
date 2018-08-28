@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 287b2b0fedac112f57f0342420a7830db5aa13be
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2862586"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2889216"
 ---
 # <a name="fingerprint-biometrics"></a><span data-ttu-id="46467-104">指紋生体認証</span><span class="sxs-lookup"><span data-stu-id="46467-104">Fingerprint biometrics</span></span>
 

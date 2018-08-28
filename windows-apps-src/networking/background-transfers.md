@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fb273b6a37cb2f6322b0c9e3842b69676f82c616
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2867861"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2884261"
 ---
 # <a name="background-transfers"></a><span data-ttu-id="16406-104">バックグラウンド転送</span><span class="sxs-lookup"><span data-stu-id="16406-104">Background transfers</span></span>
 <span data-ttu-id="16406-105">ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。</span><span class="sxs-lookup"><span data-stu-id="16406-105">Use the background transfer API to copy files reliably over the network.</span></span> <span data-ttu-id="16406-106">バックグラウンド転送 API には、アプリの一時停止中はバックグラウンドで実行され、アプリの終了後も実行が続行される高度なアップロード機能とダウンロード機能があります。</span><span class="sxs-lookup"><span data-stu-id="16406-106">The background transfer API provides advanced upload and download features that run in the background during app suspension and persist beyond app termination.</span></span> <span data-ttu-id="16406-107">この API は、ネットワークの状態を監視し、接続が失われたときに転送の中断と再開を自動的に実行します。転送ではデータ センサーとバッテリー セーバーにも対応し、ダウンロード アクティビティは現在の接続とデバイスのバッテリー状態に基づいて調整されます。</span><span class="sxs-lookup"><span data-stu-id="16406-107">The API monitors network status and automatically suspends and resumes transfers when connectivity is lost, and transfers are also Data Sense-aware and Battery Sense-aware, meaning that download activity adjusts based on your current connectivity and device battery status.</span></span> <span data-ttu-id="16406-108">この API は、アップロード HTTP(S) を使った大きなファイルのアップロードとダウンロードに適しています。</span><span class="sxs-lookup"><span data-stu-id="16406-108">The API is ideal for uploading and downloading large files using HTTP(S).</span></span> <span data-ttu-id="16406-109">FTP もサポートされますが、その対象はダウンロードのみです。</span><span class="sxs-lookup"><span data-stu-id="16406-109">FTP is also supported, but only for downloads.</span></span>

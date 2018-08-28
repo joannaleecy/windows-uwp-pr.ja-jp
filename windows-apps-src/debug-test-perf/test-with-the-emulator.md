@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2861741"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2892010"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a><span data-ttu-id="87881-104">Microsoft Emulator for Windows 10 Mobile を使ったテスト</span><span class="sxs-lookup"><span data-stu-id="87881-104">Test with the Microsoft Emulator for Windows 10 Mobile</span></span>
 

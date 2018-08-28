@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、校閲、コメント、校閲者
 ms.localizationpriority: medium
 ms.openlocfilehash: 8891aecb904f69e3f77ec5892d9234f79db46ff0
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2860706"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2886591"
 ---
 # <a name="reviews-report"></a><span data-ttu-id="8862c-103">レビュー レポート</span><span class="sxs-lookup"><span data-stu-id="8862c-103">Reviews report</span></span>
 
