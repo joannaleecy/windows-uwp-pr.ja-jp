@@ -137,13 +137,7 @@
 ### [ファイル アクセス許可](../files/file-access-permissions.md)
 ### [UWP でファイルのプロパティにすばやくアクセスする](../files/fast-file-properties.md)
 
-## [Machine Learning](../machine-learning/index.md)
-### [概要](../machine-learning/overview.md)
-### [はじめに](../machine-learning/get-started.md)
-### [モデルのトレーニング](../machine-learning/train-ai-model.md)
-### [モデルの変換](../machine-learning/conversion-samples.md)
-### [モデルの統合](../machine-learning/integrate-model.md)
-### [サンプル アプリ](../machine-learning/samples.md)
+## [Machine Learning](https://docs.microsoft.com/windows/ai/)
 
 # 展開
 
@@ -250,6 +244,7 @@
 ####### [アドオンの入手数の取得](../monetize/get-in-app-acquisitions.md)
 ####### [サブスクリプション アドオンの入手数の取得](../monetize/get-subscription-acquisitions.md)
 ####### [チャネルごとのアドオンのコンバージョンの取得](../monetize/get-add-on-conversions-by-channel.md)
+###### [アプリのインサイト データの取得](../monetize/get-insights-data-for-your-app.md)
 ###### [アプリの評価の取得](../monetize/get-app-ratings.md)
 ###### [アプリのレビューの取得](../monetize/get-app-reviews.md)
 ###### [エラー報告データの取得](../monetize/get-error-reporting-data.md)
@@ -260,6 +255,7 @@
 ###### [広告キャンペーンのパフォーマンス データの取得](../monetize/get-ad-campaign-performance-data.md)
 ##### デスクトップ アプリ
 ###### [デスクトップ アプリケーションのインストール数の取得](../monetize/get-desktop-app-installs.md)
+###### [デスクトップ アプリケーションのインサイト データの取得](../monetize/get-insights-data-for-your-desktop-app.md)
 ###### [デスクトップ アプリケーションのアップグレード ブロックの取得](../monetize/get-desktop-block-data.md)
 ###### [デスクトップ アプリケーションのアップグレード ブロックの詳細情報の取得](../monetize/get-desktop-block-data-details.md)
 ###### [デスクトップ アプリケーションのエラー報告データの取得](../monetize/get-desktop-application-error-reporting-data.md)
@@ -275,16 +271,6 @@
 ####### [Xbox Live クラブのデータの取得](../monetize/get-xbox-live-club-data.md)
 ####### [Xbox Live のマルチプレイヤー データの取得](../monetize/get-xbox-live-multiplayer-data.md)
 ####### [Xbox Live の同時使用状況データの取得](../monetize/get-xbox-live-concurrent-usage-data.md)
-##### ドライバーとハードウェア
-###### [Windows 10 のドライバーに関するエラー報告データを取得する](../monetize/get-error-reporting-data-for-windows-10-drivers.md)
-####### [Windows 10 のドライバー エラーに関する詳細を取得する](../monetize/get-details-for-a-windows-10-driver-error.md)
-####### [Windows 10 のドライバー エラーに関する CAB ファイルをダウンロードする](../monetize/download-the-cab-file-for-a-windows-10-driver-error.md)
-###### [Windows 7 や Windows 8.x のドライバーに関するエラー報告データを取得する](../monetize/get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)
-####### [Windows 7 や Windows 8.x のドライバー エラーに関する詳細を取得する](../monetize/get-details-for-a-windows-7-or-windows-8.x-driver-error.md)
-####### [Windows 7 や Windows 8.x のドライバー エラーに関する CAB ファイルをダウンロードする](../monetize/download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)
-###### [OEM ハードウェア エラー報告データを取得する](../monetize/get-oem-hardware-error-reporting-data.md)
-####### [OEM ハードウェア エラーの詳細を取得する](../monetize/get-details-for-an-oem-hardware-error.md)
-####### [OEM ハードウェア エラーの CAB ファイルをダウンロードする](../monetize/download-the-cab-file-for-an-oem-hardware-error.md)
 #### [レビューへの返信](../monetize/respond-to-reviews-using-windows-store-services.md)
 ##### [レビューへの返信情報の取得](../monetize/get-response-info-for-app-reviews.md)
 ##### [レビューに対する返信の送信](../monetize/submit-responses-to-app-reviews.md)
@@ -405,12 +391,16 @@
 ### [同時実行操作と非同期操作](../cpp-and-winrt-apis/concurrency.md)
 ### [XAML コントロール: C++/WinRT プロパティへのバインド](../cpp-and-winrt-apis/binding-property.md)
 ### [XAML アイテム コントロール: C++/WinRT コレクションへのバインド](../cpp-and-winrt-apis/binding-collection.md)
+### [C++/WinRT による XAML カスタム (テンプレート化) コントロール](../cpp-and-winrt-apis/xaml-cust-ctrl.md)
+### [C++/WinRT での DirectX およびその他の COM API の使用](../cpp-and-winrt-apis/consume-com.md)
 ### [C++/WinRT と C++/CX 間の相互運用](../cpp-and-winrt-apis/interop-winrt-cx.md)
 ### [C++/CX から C++/WinRT への移行](../cpp-and-winrt-apis/move-to-winrt-from-cx.md)
 ### [C++/WinRT と ABI 間の相互運用](../cpp-and-winrt-apis/interop-winrt-abi.md)
 ### [WRL から C++/WinRT への移行](../cpp-and-winrt-apis/move-to-winrt-from-wrl.md)
 ### [弱参照](../cpp-and-winrt-apis/weak-references.md)
 ### [アジャイル オブジェクト](../cpp-and-winrt-apis/agile-objects.md)
+### C++ 言語
+#### [値のカテゴリと参照](../cpp-and-winrt-apis/cpp-value-categories.md)
 
 ## [セキュリティ](../security/index.md)
 ### [安全な Windows アプリの開発について](../security/intro-to-secure-windows-app-development.md)
@@ -619,8 +609,8 @@
 ### [手動でのパッケージ化](../porting/desktop-to-uwp-manual-conversion.md)
 ### [Windows 10 との統合](../porting/desktop-to-uwp-extensions.md)
 ### [Windows 10 のための拡張](../porting/desktop-to-uwp-enhance.md)
-#### [利用可能なUWP API](../porting/desktop-to-uwp-supported-api.md)
-#### [ネイティブ イメージを使ってアプリのバイナリを最適化する](../porting/desktop-to-uwp-r2r.md)
+#### [利用可能な UWP API](../porting/desktop-to-uwp-supported-api.md)
+#### [ネイティブ イメージを使ったアプリのバイナリの最適化](../porting/desktop-to-uwp-r2r.md)
 ### [UWP による拡張](../porting/desktop-to-uwp-extend.md)
 ### [実行、デバッグ、およびテスト](../porting/desktop-to-uwp-debug.md)
 #### [Windows 10 (S モード) 対応のテスト](../porting/desktop-to-uwp-test-windows-s.md)
@@ -724,62 +714,3 @@
 ### [スレッド プールへの作業項目の送信](../threading-async/submit-a-work-item-to-the-thread-pool.md)
 ### [タイマーを使った作業項目の送信](../threading-async/use-a-timer-to-submit-a-work-item.md)
 ### [マルチスレッド環境での Windows ランタイム オブジェクトの使用](../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
