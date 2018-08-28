@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f8f86a6988e68e3ff8d2dfef32512633b3761fd
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2865251"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2882575"
 ---
 # <a name="intro-to-controls-and-patterns"></a><span data-ttu-id="e83b3-103">コントロールとパターンの概要</span><span class="sxs-lookup"><span data-stu-id="e83b3-103">Intro to controls and patterns</span></span>
 

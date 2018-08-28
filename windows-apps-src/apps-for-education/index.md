@@ -11,11 +11,11 @@ keywords: windows 10、uwp、教育機関向け
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
 ms.openlocfilehash: da03a3c478ca45cc2d2b518988738e510a6c5ea9
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2867821"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2882678"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a><span data-ttu-id="d5515-104">教育機関向けのどこからでも Windows アプリを開発します。</span><span class="sxs-lookup"><span data-stu-id="d5515-104">Develop Universal Windows apps for education</span></span>
 ![テストを取るアプリのスクリーン ショット](images/take-a-test-screen-small.png)

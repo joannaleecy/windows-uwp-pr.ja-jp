@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 登録情報, 説明, Microsoft Store ページ, リリース ノート, タイトル
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2862286"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2882545"
 ---
 # <a name="create-app-store-listings"></a><span data-ttu-id="b9562-103">アプリの Microsoft Store 登録情報の作成</span><span class="sxs-lookup"><span data-stu-id="b9562-103">Create app Store listings</span></span>
 

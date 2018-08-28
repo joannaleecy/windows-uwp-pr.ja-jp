@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d322a22898f2f45a89b4cd30051149133bc3e2bf
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2863494"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2881453"
 ---
 # <a name="use-map-services"></a><span data-ttu-id="be369-103">マップ サービスの使用</span><span class="sxs-lookup"><span data-stu-id="be369-103">Use map services</span></span>
 
