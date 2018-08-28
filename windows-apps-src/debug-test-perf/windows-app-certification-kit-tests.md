@@ -2,25 +2,25 @@
 author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows アプリ認定キットのテスト
-description: Windows アプリ認定キットには、多数アプリがマイクロソフトのストアに公開する準備ができていることを確認できるテストにはが含まれています。
+description: Windows アプリの認定キットには、アプリが、Microsoft ストアに公開する準備ができていることを確認できるテストの数値が含まれています。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: 10、uwp、ダイアログ ボックスの windows アプリ認定
+keywords: windows 10、uwp、アプリ認定
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2857427"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2887651"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
 
 
-[Windows アプリ認定キット](windows-app-certification-kit.md)には、多くアプリは、Microsoft ストアに公開する準備ができていることを確認するテストにはが含まれています。 テストで、抽出条件の詳細については、次し、障害の発生時のアクションを提案します。
+[Windows アプリ認定キット](windows-app-certification-kit.md)には、アプリは、Microsoft ストアに公開する準備ができていることを確認するためのテストの数値が含まれています。 テストで、抽出条件の詳細については、次にして、アクションが失敗した場合を表示します。
 
 ## <a name="deployment-and-launch-tests"></a>展開と起動のテスト
 
@@ -60,7 +60,7 @@ Windows アプリを将来のバージョンの OS で実行できることを�
 
 ### <a name="background"></a>背景
 
-オペレーティング システムのバージョン情報は、Microsoft ストアの使用を制限されています。 これは、アプリが OS のバージョンに固有の機能をユーザーに提供できるように、アプリによって OS バージョンを確認する目的で誤って使用されることがよくありました。
+オペレーティング システムのバージョン情報] では、Microsoft ストアの使用量を制限されています。 これは、アプリが OS のバージョンに固有の機能をユーザーに提供できるように、アプリによって OS バージョンを確認する目的で誤って使用されることがよくありました。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -128,7 +128,7 @@ Windows 10 アプリの場合は、テストでは、バンドルのバージョ
 
 -   **プロセス間通信 (IPC) の確認**
 
-    UWP のアプリケーションがデスクトップのコンポーネントにアプリケーションのコンテナーの外部で通信しない要件をこのテストに適用されます。 プロセス間通信は、サイドローディングが行われたアプリのみを対象としています。 DesktopApplicationPath と同じ名前で [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) を指定しているアプリは、このテストに合格しません。
+    このテストには、デスクトップのコンポーネントにアプリ コンテナーの外部で通信しない UWP アプリの要件が適用されます。 プロセス間通信は、サイドローディングが行われたアプリのみを対象としています。 DesktopApplicationPath と同じ名前で [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) を指定しているアプリは、このテストに合格しません。
 
 ### <a name="corrective-action"></a>問題への対応
 
@@ -249,7 +249,7 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 ネイティブの実行可能ファイルでテストが不合格になった場合は、最新のコンパイラとリンカーを使ってファイルをビルドし、リンカーで */appcontainer* フラグを使います。
 
-マネージ実行可能ファイルには、テストが失敗した場合、UWP アプリケーションをビルドするのには、最新のコンパイラとリンカーは、Microsoft Visual Studio などを使用したことを確認します。
+マネージ実行可能ファイルには、テストが失敗した場合、最新コンパイラと Microsoft Visual Studio など、リンク ビルダーを使用した UWP アプリを作成することを確認します。
 
 **注釈**
 
@@ -309,22 +309,22 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 ### <a name="background"></a>背景
 
-アプリケーションでは、UWP のアプリケーション (Windows ランタイムまたは Win32 Api がサポートされている) Microsoft ストアで認定済みの Api を使用する必要があります。 このテストでは、管理されたバイナリが承認済みのプロファイル外部の機能に依存している状況も特定されます。
+アプリでは、UWP アプリ (Windows ランタイムまたはサポートされている Win32 Api) では、Microsoft ストア認定済みの Api を使用する必要があります。 このテストでは、管理されたバイナリが承認済みのプロファイル外部の機能に依存している状況も特定されます。
 
 ### <a name="test-details"></a>テストの詳細
 
--   アプリケーション パッケージ内の各バイナリがバイナリのインポート アドレス テーブルを確認することによって、UWP のアプリケーション開発のサポートされていない Win32 API の依存関係を持っていないことを確認します。
+-   アプリ パッケージ内には、各バイナリがバイナリのインポート アドレス テーブルをチェックして、UWP アプリ開発のサポートされていない Win32 API の依存関係がないことを確認します。
 -   アプリ パッケージ内の管理された各バイナリが承認済みのプロファイル外部の機能に依存していないことを確認します。
 
 ### <a name="corrective-actions"></a>問題への対応
 
 アプリが、デバッグ用のビルドではなくリリース用ビルドとしてコンパイルされていることを確認します。
 
-> **メモ** アプリ[UWP アプリケーション用の Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のみを使用する場合でも、アプリケーションのデバッグ ビルドではこのテストを失敗します。
+> **メモ** アプリのデバッグ ビルド アプリのみ[UWP アプリ用の Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)を使用している場合でも、このテストは失敗します。
 
-[UWP アプリケーション用の API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)ではないアプリケーションを使用して API を識別するエラー メッセージを確認します。
+アプリを使用して[UWP アプリ用の API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のない API を識別するエラー メッセージを確認します。
 
-> **メモ** デバッグ構成でビルドされた C++ アプリケーションでは、構成では、UWP のアプリケーションの Windows SDK の Api のみが使用している場合でも、このテストを失敗します。 参照してください、 [UWP のアプリケーションで Windows Api に代わる方法](http://go.microsoft.com/fwlink/p/?LinkID=244022)の詳細情報です。
+> **メモ** C++ アプリをデバッグ構成に組み込まれている構成では、UWP アプリの Windows SDK から Api のみが使用している場合でも、このテストは失敗します。 さらに詳しい情報の[UWP アプリで Windows api の選択肢](http://go.microsoft.com/fwlink/p/?LinkID=244022)を表示します。
 
 ## <a name="performance-tests"></a>パフォーマンスのテスト
 
@@ -434,7 +434,7 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 <tr><td>
 <p>The "resources.pri" file must not have AutoMerge enabled. ("resources.pri" ファイルは AutoMerge を有効にしないでください。)</p>
 </td><td>
-<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 マイクロソフト ストアを通じて配布するアプリケーションをお勧めしません。 Microsoft Store を通じて配布されるアプリケーションの resources.pri する必要がありますアプリケーションのパッケージのルートには、アプリケーションをサポートしている言語のすべての参照が含まれています。</p>
+<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft ストアを配布するアプリをお勧めしません。 Microsoft ストアで配布されるアプリの resources.pri する必要がありますアプリのパッケージのルートで、アプリをサポートしているすべての言語の参照が含まれています。</p>
 </td></tr>
 <tr><td>
 <p>The string {string} failed the max length restriction of {number} characters. (文字列 {string} が {number} 文字の最大文字数の制限を満たしていません。)</p>
@@ -486,7 +486,7 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 
 ### <a name="branding-validation"></a>ブランドの検証
 
-UWP のアプリケーションは、完全かつ完全に機能する必要があります。 既定の画像 (テンプレートまたは SDK サンプルの画像) を使ったアプリは、ユーザー エクスペリエンスが貧弱であることを示しているため、ストア カタログであまり識別されない可能性があります。
+UWP アプリは、完了と完全に機能する必要があります。 既定の画像 (テンプレートまたは SDK サンプルの画像) を使ったアプリは、ユーザー エクスペリエンスが貧弱であることを示しているため、ストア カタログであまり識別されない可能性があります。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -502,7 +502,7 @@ UWP のアプリケーションは、完全かつ完全に機能する必要が�
 
 ### <a name="background"></a>背景
 
-マイクロソフト ストアの認定を取得する、アプリケーション必要がありますコンパイルされないデバッグと実行可能ファイルのデバッグ バージョンを参照する必要がありますされません。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
+Microsoft ストアで認定済み] アプリする必要があるコンパイルされずデバッグ、実行可能ファイルのデバッグ バージョンが参照する必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -510,7 +510,7 @@ UWP のアプリケーションは、完全かつ完全に機能する必要が�
 
 ### <a name="corrective-actions"></a>問題への対応
 
--   マイクロソフト ストアに送信する前に、リリース ビルドとして、アプリケーションをビルドします。
+-   Microsoft ストアに送信する前にリリース ビルドとしてアプリを作成します。
 -   適切なバージョンの .NET フレームワークがインストールされていることを確認します。
 -   アプリがフレームワークのデバッグ バージョンにリンクされていないことと、リリース バージョンで構築されたことを確認します。 このアプリに .NET コンポーネントが含まれている場合は、適切なバージョンの .NET Framework がインストールされていることを確認します。
 
@@ -538,7 +538,7 @@ Microsoft Direct3D アプリをテストして、以前のグラフィックス 
 
 ### <a name="background"></a>背景
 
-マイクロソフトのストアには、Direct3D を使用して、正しく表示または機能のレベルの 9\ 1 のグラフィックス カードに安全に終了するすべてのアプリケーションが必要です。
+Microsoft ストアには、適切に表示したり、正常に機能のレベルの 9\ 1 グラフィック カードが失敗する Direct3D を使用してすべてのアプリケーションが必要です。
 
 アプリのインストール後にユーザーのデバイスのグラフィックス ハードウェアがユーザーによって変更されることもあるため、最小機能レベルを 9\-1 よりも高くする場合は、現在のハードウェアが最小要件を満たしているかどうかをアプリの起動時に検出するようにしなければなりません。 最小要件が満たされていない場合は、アプリでは Direct3D の要件に関する詳しいメッセージをユーザーに表示する必要があります。 また、アプリが互換性のないデバイスでダウンロードされた場合は、起動時にそれを検出し、要件について説明するメッセージをユーザーに表示する必要もあります。
 
@@ -552,7 +552,7 @@ Microsoft Direct3D アプリをテストして、以前のグラフィックス 
 
 ### <a name="direct3d-trim-after-suspend"></a>中断後の Direct3D トリミング
 
-> **メモ** このテストは、Windows 8.1 およびそれ以降に開発された UWP のアプリケーションにのみ適用されます。
+> **メモ** このテストは、Windows 8.1、後で開発 UWP アプリにのみ適用されます。
 
 ### <a name="background"></a>背景
 

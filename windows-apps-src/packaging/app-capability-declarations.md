@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c9ff43ac0a3aa4fb0dfdc3353029b60dbf442459
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.openlocfilehash: 30e4bb7b493e6fb839f300f4c446b7510f28fabb
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2865191"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2884338"
 ---
 # <a name="app-capability-declarations"></a>アプリ機能の宣言
 
@@ -92,7 +92,7 @@ ms.locfileid: "2865191"
 アプリは、制限付き機能を宣言する場合は、Microsoft ストアにアプリを発行を承認するために[アプリ送信プロセス](../publish/app-submissions.md)中に情報を指定する必要があります。 この情報は、アプリで宣言する各制限付き機能の使用方法を説明する、送信物の[送信オプション](../publish/manage-submission-options.md#restricted-capabilities)ページで提供します。
 
 > [!IMPORTANT]
-> 制限付き機能は非常に特定のシナリオを目的としています。 これらの機能は、用途が厳格に制限されており、ストアへの登録に際して追加のポリシーやレビューが適用されます。 制限付き機能を宣言するすべての承認を得ることがなく sideload アプリできることに注意してください。 承認は、これらのアプリを App Store に提出するときのみ必要です。 
+> 制限付き機能は非常に特定のシナリオを目的としています。 これらの機能は、用途が厳格に制限されており、ストアへの登録に際して追加のポリシーやレビューが適用されます。 制限付き機能を宣言するすべての承認を得ることがなく sideload アプリできることに注意してください。 承認は、これらのアプリを App Store に提出するときのみ必要です。
 
 これらは、アプリが本当に必要としない限り、機能を制限これらを宣言するのにはないことを確認します。 これらの機能が必要で適しているものとしては、身元を証明するデジタル証明書をスマート カードに含めるようにユーザーに求める 2 要素認証を使ったバンキング アプリなどがあります。 また、主に企業ユーザー向けに設計されたアプリや、ユーザーのドメイン資格情報がないとアクセスできな企業リソースへのアクセスを必要とするアプリもあります。
 
@@ -119,9 +119,9 @@ ms.locfileid: "2865191"
 
 以前は、機能を使う承認を得るためにサポートに問い合わせる必要がありました。 現在では、[申請プロセス](../publish/app-submissions.md)の一部としてデベロッパー センター ダッシュボードでこの情報を提供できるようになりました。
 
-送信物のパッケージをアップロードすると、制限付き機能を宣言するかどうかが検出されます。 検出された場合、製品で各機能が使用されているかどうかに関する詳しい情報を[申請オプション](../publish/manage-submission-options.md#restricted-capabilities)ページで提供する必要があります。 製品が機能を宣言する必要がある理由を理解できるように、必ずできる限り詳しく入力してください。 これにより、申請が認定プロセスを完了するまでの時間がいくらか長くなる可能性があります。 
+送信物のパッケージをアップロードすると、制限付き機能を宣言するかどうかが検出されます。 検出された場合、製品で各機能が使用されているかどうかに関する詳しい情報を[申請オプション](../publish/manage-submission-options.md#restricted-capabilities)ページで提供する必要があります。 製品が機能を宣言する必要がある理由を理解できるように、必ずできる限り詳しく入力してください。 これにより、申請が認定プロセスを完了するまでの時間がいくらか長くなる可能性があります。
 
-認定プロセス中、テスターが提供された情報を確認し、その申請で機能の使用を承認するかどうかを判断します。 これにより、申請が認定プロセスを完了するまでの時間がいくらか長くなる可能性があります。 機能の使用が承認された場合、アプリの認定プロセスの残りの部分が続行されます。 一般に、アプリの更新プログラムを申請するときに機能の承認プロセスを繰り返す必要はありません (追加の機能を宣言する場合を除く)。 
+認定プロセス中、テスターが提供された情報を確認し、その申請で機能の使用を承認するかどうかを判断します。 これにより、申請が認定プロセスを完了するまでの時間がいくらか長くなる可能性があります。 機能の使用が承認された場合、アプリの認定プロセスの残りの部分が続行されます。 一般に、アプリの更新プログラムを申請するときに機能の承認プロセスを繰り返す必要はありません (追加の機能を宣言する場合を除く)。
 
 機能の使用が承認されない場合、申請は認定に失敗し、認定レポートでフィードバックが提供されます。 その後、新しい申請を作成して機能を宣言しないパッケージをアップロードすることを選択できます。または、該当する場合は、機能の使用に関連する問題を解決し、新しい申請で承認をリクエストします。
 
@@ -134,14 +134,14 @@ ms.locfileid: "2865191"
 
 ### <a name="restricted-capability-list"></a>制限付き機能] リスト
 
-次の表は、制限付き機能を一覧表示します。 上記で説明したプロセスに従うことによって、Microsoft Store に提出するアプリでこれらの機能の承認をリクエストすることができます。 
+次の表は、制限付き機能を一覧表示します。 上記で説明したプロセスに従うことによって、Microsoft Store に提出するアプリでこれらの機能の承認をリクエストすることができます。
 
 > [!IMPORTANT]
-> かなり限定された状況を除き、一部の制限付き機能が Microsoft Store に提出されるアプリで承認されることはほとんどありません。 これらの機能は、次の表で言及されています。 Microsoft Store で配布する予定の場合、アプリでこれらの機能を宣言しないことをお勧めします。 
+> かなり限定された状況を除き、一部の制限付き機能が Microsoft Store に提出されるアプリで承認されることはほとんどありません。 これらの機能は、次の表で言及されています。 Microsoft Store で配布する予定の場合、アプリでこれらの機能を宣言しないことをお勧めします。
 
 | 機能のシナリオ | 機能の使用法 |
 |---------------------|------------------|
-| **エンタープライズ** | Windows ドメイン資格情報により、ユーザーはそれぞれの資格情報を使ってリモートのリソースにログインし、ユーザー名とパスワードを指定したかのように動作できます。 **EnterpriseAuthentication**機能は、通常、エンタープライズ内のサーバーに接続している基幹業務アプリケーションで使用します。 <br /><br />インターネット上での汎用通信にはこの機能は不要です。<br /><br />**EnterpriseAuthentication**機能は、一般的な業務のアプリをサポートするものです。 企業リソースにアクセスする必要がないアプリでは宣言しないでください。 [**ファイル ピッカー**](https://msdn.microsoft.com/library/windows/apps/BR207847) は、アプリで使うネットワーク共有上のファイルをユーザーが開くことができる強力な UI メカニズムを提供します。 アプリのシナリオには、プログラムによるアクセスが必要な**ファイルの選択**を使用して、それを実現することができない場合にのみ、 **enterpriseAuthentication**機能を宣言します。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**enterpriseAuthentication** 機能に **uap** 名前空間を含める必要があります。<br /><br />```<Capabilities><uap:Capability Name="enterpriseAuthentication"/></Capabilities>```<br /><br />**enterpriseDataPolicy** 機能を使うと、アプリはデバイス用に企業固有のポリシーを定義して使えます。 この機能は、次のクラスのすべてのメンバーを使うために必要です。<ul><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705151">FileProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn706017">DataProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705170">ProtectionPolicyManager</a></li></ul> |
+| **エンタープライズ** | Windows ドメイン資格情報により、ユーザーはそれぞれの資格情報を使ってリモートのリソースにログインし、ユーザー名とパスワードを指定したかのように動作できます。 **EnterpriseAuthentication**機能は、通常、エンタープライズ内のサーバーに接続している基幹業務アプリケーションで使用します。 <br /><br />インターネット上での汎用通信にはこの機能は不要です。<br /><br />**EnterpriseAuthentication**機能は、一般的な業務のアプリをサポートするものです。 企業リソースにアクセスする必要がないアプリでは宣言しないでください。 [**ファイル ピッカー**](https://msdn.microsoft.com/library/windows/apps/BR207847) は、アプリで使うネットワーク共有上のファイルをユーザーが開くことができる強力な UI メカニズムを提供します。 アプリのシナリオには、プログラムによるアクセスが必要な**ファイルの選択**を使用して、それを実現することができない場合にのみ、 **enterpriseAuthentication**機能を宣言します。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**enterpriseAuthentication** 機能に **uap** 名前空間を含める必要があります。<br /><br />```<Capabilities><uap:Capability Name="enterpriseAuthentication"/></Capabilities>```<br /><br />**EnterpriseDataPolicy**機能により、企業データを個別に処理するアプリと Windows 情報保護ポリシーを使用して、アプリが管理されるときに安全に利用できる (例: モバイル デバイス管理およびモバイル アプリケーションの管理システム)。  次に示すように、この制限付き機能を宣言します。 <br /><br />```<Capabilities><rescap:Capability Name="enterpriseDataPolicy"/></Capabilities>```<br /><br />この機能は、次のクラスのすべてのメンバーを使うために必要です。<ul><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705151">FileProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn706017">DataProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705170">ProtectionPolicyManager</a></li></ul> |
 | **ユーザー証明書の共有** | **SharedUserCertificates**機能を有効にするアプリを追加して、ソフトウェアにアクセスして、スマート カードに保存されている証明書など、共有ユーザーのハードウェア ベースの証明書を保存します。 通常、この機能は、認証にスマート カードを必要とする財務アプリまたはエンタープライズ アプリで使われます。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**sharedUserCertificates** 機能に **uap** 名前空間を含める必要があります。<br /><br />```<Capabilities><uap:Capability Name="sharedUserCertificates"/></Capabilities>``` |
 |**ドキュメント**\* | **DocumentsLibrary**機能は、ユーザーのドキュメントに、ファイルの種類の関連付けパッケージ マニフェストで宣言されている OneDrive へのオフライン アクセスをサポートするフィルター プログラムによるアクセスを提供します。 たとえば、DOC リーダー アプリで .doc ファイルの種類の関連付けを宣言すると、ドキュメント フォルダー内の .doc ファイルを開くことはできますが、他の種類のファイルを開くことはできません。 <br /><br />**DocumentsLibrary**機能を宣言するアプリは、ホーム グループ コンピューター上のドキュメントにアクセスできません。 [ファイル ピッカー](https://msdn.microsoft.com/library/windows/apps/Hh465174)は、アプリで使うファイルをユーザーが開くことができる強力な UI メカニズムを提供します。 ファイルの選択を使用することができない場合にのみ、 **documentsLibrary**機能を宣言します。<br /><br />**DocumentsLibrary**機能を使用して、アプリ必要があります。<ul><li>有効な OneDrive URL またはリソース ID を使った、特定の OneDrive コンテンツへのクロスプラットフォーム オフライン アクセスを容易にする</li><li>オフライン時に、開いているファイルをユーザーの OneDrive に自動的に保存する</li></ul>**DocumentsLibrary**機能を使用して、これら 2 つの目的のアプリは、別の文書内で埋め込みのコンテンツを開く機能を使用する可能性がありますもできます。 **DocumentsLibrary**機能の上の使用のみが承諾されます。<ul><li>アプリは、電話の内部ストレージにあるドキュメント ライブラリにはアクセスできません。 ただし、別のアプリによってオプションの SD カード上にドキュメント フォルダーが作られた場合は、アプリでそのフォルダーを表示できます。</li></ul>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**documentsLibrary** 機能に **uap** 名前空間を含める必要があります。<br /><br />```<Capabilities><uap:Capability Name="documentsLibrary"/></Capabilities>``` |
 | **ゲーム DVR 設定** | 制限された機能 **appCaptureSettings** を使うと、アプリはゲーム DVR のユーザー設定を制御できます。<br /><br />[**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738) 名前空間の一部の API を使う場合は、この機能が必要になります。 <br /><br />Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。  |
