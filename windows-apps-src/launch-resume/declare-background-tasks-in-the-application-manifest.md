@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、タスクを背景します。
+keywords: windows 10, uwp, バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882505"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910235"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>アプリケーション マニフェストでのバックグラウンド タスクの宣言
 
@@ -213,7 +213,7 @@ BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバ
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>SupportsMultipleInstances 属性を使用して、トリガーが発生するたびに新しいプロセスで実行
 
-この例では、新しいトリガーが発生するたびに独自のリソース制限 (メモリと CPU) を持つ新しいプロセスで実行される、バックグラウンド タスクを宣言します。 `SupportsMultipleInstances` を使っていることに注目してください。この属性がこの動作を実現します。 この属性を使用するために対象にする場合 SDK バージョン '10.0.15063' (Windows 10 の作成者の更新プログラム) またはそれ以降。
+この例では、新しいトリガーが発生するたびに独自のリソース制限 (メモリと CPU) を持つ新しいプロセスで実行される、バックグラウンド タスクを宣言します。 `SupportsMultipleInstances` を使っていることに注目してください。この属性がこの動作を実現します。 この属性を使用するためにはターゲット SDK バージョン '10.0.15063' (Windows 10 Creators Update) 以上。
 
 ```xml
 <Package

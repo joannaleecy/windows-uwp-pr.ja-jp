@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 464da3dd3a9a181555f7b4bfd1059e9834fe7338
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888261"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909890"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
 
@@ -30,7 +30,7 @@ ms.locfileid: "2888261"
 
 :::row:::
     :::column:::
-        ![ナビゲーションの使用例 1](images/nav/nav-1.svg)
+        ![ナビゲーション例 1](images/nav/nav-1.svg)
 
         Require users to go through a series of pages in order.
     :::column-end:::
@@ -58,7 +58,7 @@ ms.locfileid: "2888261"
 
 ### <a name="consistency"></a>一貫性
 
-ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準コントロール](#use-the-right-controls)ユーザーに精通しているアイコンの次の規則を使用して、場所、およびスタイル、ナビゲーション予測可能かつ直感的なユーザーになります。
+ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準的なコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、スタイルはことナビゲーション予測可能な直感的なユーザー向け。
 
 ![ページ コンポーネントのイメージ](images/nav/page-components.svg)
 
@@ -99,7 +99,7 @@ ms.locfileid: "2888261"
 
 1. ユーザーのことを考えてください。 アプリ使用時のユーザーの一般的な移動パスを追跡し、ページごとに、ユーザーがそのページを表示している理由と、次にどこに移動しようとしているかを考えてください。
 
-2. 高度なナビゲーション階層をしないようにします。 3 レベルを超えるナビゲーションでは、ユーザーは迷ってしまい、深い階層から抜け出せなくなる可能性があります。
+2. ナビゲーションの深い階層を避けます。 3 レベルを超えるナビゲーションでは、ユーザーは迷ってしまい、深い階層から抜け出せなくなる可能性があります。
 
 3. 「ホッピング」を避けます。 ホッピングとは、関連するコンテンツに移動するために、ユーザーが上のレベルに移動して、それから下のレベルに移動する必要があるナビゲーションを意味します。
 
@@ -111,7 +111,7 @@ ms.locfileid: "2888261"
     :::column:::
         ![フラット構造で配置されたページ](images/nav/flat-lateral-structure.svg)
     :::column-end:::
-    ::: 列 =「2」:::
+    :::column span =「2」::。
         ### Flat/lateral
 
         In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
@@ -130,7 +130,7 @@ ms.locfileid: "2888261"
     :::column:::
         ![階層構造で配置されたページ](images/nav/hierarchical-structure.svg)
     :::column-end:::
-    ::: 列 =「2」:::
+    :::column span =「2」::。
         ### Hierarchical
 
         In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
@@ -150,7 +150,7 @@ ms.locfileid: "2888261"
     :::column:::
         ![ハイブリッド構造のアプリ](images/nav/combining-structures.svg)
     :::column-end:::
-    ::: 列 =「2」:::
+    :::column span =「2」::。
         ### Combining structures
 
         You don't have choose to one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
@@ -168,18 +168,18 @@ ms.locfileid: "2888261"
 
 :::row:::
     :::column:::
-        ![フレームの画像](images/nav/thumbnail-frame.svg)
+        ![フレーム画像](images/nav/thumbnail-frame.svg)
     :::column-end:::
-    ::: 列 =「2」:::[**フレーム**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+    :::column span =「2」:::[**フレーム**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
         With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![タブとピボットの画像](images/nav/thumbnail-tabs-pivot.svg)
+        ![タブとピボットのイメージ](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-    ::: 列 =「2」:::[**の上部ナビゲーションとタブ**](../controls-and-patterns/navigationview.md)
+    :::column span =「2」:::[**上部のナビゲーションとタブ**](../controls-and-patterns/navigationview.md)
 
         Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
         
@@ -198,9 +198,9 @@ ms.locfileid: "2888261"
 
 :::row:::
     :::column:::
-        ![navview の画像](images/nav/thumbnail-navview.svg)
+        ![navview 画像](images/nav/thumbnail-navview.svg)
     :::column-end:::
-    ::: 列 =「2」:::[**左側のナビゲーション**](../controls-and-patterns/navigationview.md)
+    :::column span =「2」:::[**左側のナビゲーション**](../controls-and-patterns/navigationview.md)
 
         Displays a vertical list of links to top-level pages. Use when:
         
@@ -212,9 +212,9 @@ ms.locfileid: "2888261"
 
 :::row:::
     :::column:::
-        ![詳細についてはマスター イメージ](images/nav/thumbnail-master-detail.svg)
+        ![マスター/詳細の画像](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
-    ::: 列 =「2」:::[**マスター/詳細**](../controls-and-patterns/master-details.md)
+    :::column span =「2」:::[**マスター/詳細**](../controls-and-patterns/master-details.md)
 
         Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
         
@@ -228,7 +228,7 @@ ms.locfileid: "2888261"
     :::column:::
         ![ハイパーリンクとボタンの画像](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
-    ::: 列 =「2」:::[**ハイパーリンク**](../controls-and-patterns/hyperlinks.md)
+    :::column span =「2」:::[**ハイパーリンク**](../controls-and-patterns/hyperlinks.md)
 
         Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
 :::row-end:::

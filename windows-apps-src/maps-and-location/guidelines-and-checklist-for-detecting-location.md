@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 位置, 地図, 位置情報
 ms.localizationpriority: medium
 ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881735"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906519"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置認識アプリのガイドライン
 
@@ -51,7 +51,7 @@ ms.locfileid: "2881735"
 
     ユーザーが設定を使って位置情報へのアクセスをオフにした場合に、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを解放します。 すると、アプリは、あらゆる位置情報 API 呼び出しの結果として **ACCESS\_DENIED** を受け取ります。 アプリで位置データを保存またはキャッシュしている場合は、ユーザーが位置情報へのアクセスを無効にするときにすべてのキャッシュ データをクリアします。 位置情報サービス経由で位置データを利用できないときに位置情報を手動で入力するための代替手段を用意してください。
 
--   位置情報サービスを再び有効にするための UI を用意します。 たとえば、reinstantiates [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)オブジェクトと、もう一度保存場所情報を取得しようとする更新] ボタンを提供します。
+-   位置情報サービスを再び有効にするための UI を用意します。 たとえば、 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)オブジェクトを再をもう一度位置情報の取得を試みます更新ボタンを提供します。
 
     位置情報サービスを再び有効にするための UI を提供する—
 
@@ -91,7 +91,7 @@ ms.locfileid: "2881735"
         次に例を示します。
 
         -   アプリが広告の調整、天気、ニュースなどのための位置情報を取得している場合は、一般に 5000 m の精度で十分です。
-        -   アプリは、コンピューターでの案件の近くに表示している場合は、300 メーターの精度は一般的に適切な結果を取得します。
+        -   近隣の近くにあるアプリを表示している場合は、300 m の精度は一般に結果を提供します。
         -   ユーザーがお勧めの近くのレストランを探している場合は、ブロック内の位置を取得する必要がありますので、100 m の精度で十分です。
         -   ユーザーが自身の位置を共有しようとしている場合は、アプリには約 10 m の精度が必要です。
     -   アプリに特定の精度の要件がある場合は [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) プロパティを使います。 たとえば、ナビゲーション アプリでは、**Geocoordinate.accuracy** プロパティを使って、利用可能な位置情報データがアプリの要件を満たしているかどうかを調べます。

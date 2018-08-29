@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffe7de94e4a8564b4971fda0b64f6648d9b6088b
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892477"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918833"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Windows 10 ビルド 16299 の開発者向け新着情報
 

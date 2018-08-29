@@ -7,15 +7,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、バック グラウンド タスク、アプリのサービス
+keywords: windows 10、uwp、バック グラウンド タスク、アプリ サービス
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: 1144443f943f134991d050dea1457f252eaaf36d
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882766"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2912919"
 ---
 # <a name="convert-an-out-of-process-background-task-to-an-in-process-background-task"></a>アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクへ変換
 

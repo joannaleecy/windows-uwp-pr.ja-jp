@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: wwindows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 頻繁, 質問, 質問, faq
 ms.localizationpriority: medium
 ms.openlocfilehash: 80c27332c05e285fdad6b8ec8deddd82d24a6e4a
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889241"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906358"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) についてよく寄せられる質問
 C++/WinRT での Windows ランタイム API の作成と使用に関する質問への回答です。
@@ -85,11 +85,11 @@ C++/WinRT では C++17 標準の機能を使用するため、そのサポート
 
 Visual Studio は、マイクロソフトがサポートし、C++/WinRT 用に推奨する開発ツールです。 「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照してください。
 
-## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>読み取り専用プロパティの生成された関数がない理由、`const`限定子よいですか。
+## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>読み取り専用プロパティの実装が生成された関数がない理由、`const`修飾子かどうか。
 
-期待どおり[MIDL 3.0](/uwp/midl-3/)で読み取り専用プロパティを宣言するときに、`cppwinrt.exe`される、実装の機能を生成するツール`const`-修飾 (定数関数は、*この*ポインターを定数として処理)。
+期待どおり[MIDL 3.0](/uwp/midl-3/)で読み取り専用プロパティを宣言するとき、`cppwinrt.exe`の実装の機能を生成するツールを`const`-修飾 (const 関数は、定数として*この*ポインターを扱う)。
 
-確かに可能な限り、定数の使用をお勧めが`cppwinrt.exe`のどの実装に関する関数あるいは定数する可能性がある理由ツール自体は行われません。 この例のように、定数、実装関数のいずれかを選択できます。
+可能であれば、定数を使用してを確実にお勧めしますが、`cppwinrt.exe`自体ツールの実装について関数考え const する可能性がある理由はしようとします。 この例のように、const の実装関数のいずれかを選択できます。
 
 ```cppwinrt
 struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation::IStringable>
@@ -101,9 +101,9 @@ struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation
 };
 ```
 
-削除することができます`const` **ToString**の区切り記号をする必要があるいくつかの実装でオブジェクトの状態を変更する必要があることを決定します。 メンバーの両方ではなく関数、定数、または非定数を作成します。 つまり、しないオーバー ロードの実装の機能に`const`します。
+削除することができます`const` **ToString**で修飾子をする必要があります実装ではいくつかオブジェクトの状態を変更する必要があるかを決定します。 各メンバーの両方ではなく関数 const または非定数のいずれか。 つまり、しないオーバー ロードの実装の機能で`const`します。
 
-定数の場所に配置他の別の実装関数を除いてに画像が Windows ランタイム関数予測にします。 次のコードを検討してください。
+Const 場所に配置他別、実装関数を除くが使えるように、画像が Windows ランタイム関数のプロジェクション。 このコードを検討してください。
 
 ```cppwinrt
 int main()
@@ -113,19 +113,19 @@ int main()
 }
 ```
 
-**ToString**上の呼び出し、Visual Studio で**宣言へ移動**] コマンドが表示されますを Windows ランタイム**IStringable::ToString**の投影 C + +/WinRT は次のとおりです。
+**ToString**上記の呼び出し、Visual Studio で**宣言へ移動**コマンド示されている C++ への Windows ランタイム**istringable::tostring**のプロジェクション/WinRT は次のようになります。
 
 ```
 winrt::hstring ToString() const;
 ```
 
-投影に対して関数は、それらの実装の対象を選択する方法に関係なく定数です。 バック グラウンドで投影インターフェイスを呼び出し、アプリケーション バイナリ (ABI)、COM インターフェイス ポインターを使って、通話には、どの金額です。 予測**ToString**とのやり取り唯一の状態は、その COM インターフェイス ポインター確実がないので、関数、定数、ポインターを変更する必要があります。 これにより、 **IStringable**を参照する保証**IStringable**参照では、通話を発信していることを何も変わらない、これにより、定数を使用しても**ToString**を呼び出すことができます。
+プロジェクションでの関数は、資格を得ることの実装を選択する方法に関係なく const します。 バック グラウンドで、プロジェクションは、アプリケーション バイナリ インターフェイス (ABI)、COM インターフェイス ポインターを介して呼び出しにどの金額を呼び出します。 投影された**ToString**と対話する唯一の状態がその COM インターフェイスのポインターです。その確実に不要になったため、関数は const、そのポインターを変更します。 これにより、 **IStringable**を参照する保証**IStringable**参照では、呼び出し元をについて何もその変更されず、これにより、const しても**ToString**を呼び出すことができます。
 
-理解を次の例の`const`C + の実装の詳細については、+/WinRT 予測と実装します。プランのコード検疫が形成されます。 このようなものがない`const`COM もメンバー関数) (Windows ランタイム ABI にします。
+理解をこれらの例の`const`は、C++ の実装の詳細/WinRT プロジェクションおよび実装します。これらは、コードの検疫、特典を構成します。 このようなものがない`const`COM も (メンバー関数) 用の Windows ランタイム ABI にします。
 
-## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>C + コード サイズを小さくに関する推奨事項は +/WinRT バイナリですか?
+## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>C++ コードのサイズを小さくに関する推奨事項がある/WinRT バイナリかどうか。
 
-Windows ランタイム オブジェクトを使用する場合は、以上バイナリのコードを生成するために必要なを発生させることによって、アプリケーションに影響を及ぼすを持ってことができますので、次に示すコーディングのパターンをしないでください。
+Windows ランタイム オブジェクトを使用する際は、できますがある、否定的な影響をアプリケーションを生成するために必要なよりも多くのバイナリ コードが発生しているために、次に示すコーディング パターンを回避する必要があります。
 
 ```cppwinrt
 anobject.b().c().d();
@@ -133,7 +133,7 @@ anobject.b().c().e();
 anobject.b().c().f();
 ```
 
-Windows ランタイム世界では、コンパイラことはできませんの値をキャッシュ`c()`または、インターフェイスを介して、間接的と呼ばれる方法ごとに ('. ')。 調整すると、しない限り、その他の仮想呼び出しと参照オーバーヘッド カウントを結果に表示されます。 上記のパターンでは、倍のコードに厳密に必要なを簡単に作成可能性があります。 代わりに、場所に実行できます。 次に示すパターンを希望します。 少なくコードを生成し、実行時のパフォーマンスが向上も大幅にします。
+Windows ランタイムの世界で、コンパイラはできないの値をキャッシュする`c()`または間接参照から呼び出される各メソッドのインターフェイス ('.")。 、介入する場合を除き、複数の仮想呼び出しと参照カウント オーバーヘッドの結果します。 上記のパターンは、厳密に必要な 2 倍のコードを生成簡単に可能性があります。 代わりに、パターンをする場合は必ず次に示すことを希望します。 、ずっと短いコードを生成し、実行時のパフォーマンスを向上させることも大幅にします。
 
 ```cppwinrt
 auto a{ anobject.b().c() };
@@ -142,7 +142,7 @@ a.e();
 a.f();
 ```
 
-上記の推奨パターン対象だけでなく C + +/WinRT はすべての Windows ランタイム言語予測します。
+上記の推奨パターンが、C++ だけでなくに適用/WinRT にすべての Windows ランタイム言語プロジェクションがします。
 
 > [!NOTE]
 > このトピックで質問の回答が得られない場合は、[Stack Overflow で `c++-winrt` タグ](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)を使用してヘルプ情報を見つけることができます。

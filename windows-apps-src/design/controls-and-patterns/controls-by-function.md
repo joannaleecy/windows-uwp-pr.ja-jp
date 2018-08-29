@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887911"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2908793"
 ---
 # <a name="controls-by-function"></a>機能別コントロール
 
@@ -30,7 +30,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリがインストールされている場合は、ここをクリックして<a href="xamlcontrolsgallery:/item/NavigationView">、アプリを開きアクションで NavigationView を参照してください。</a> </p>
+    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/NavigationView">、アプリを開き NavigationView の動作をご覧ください。</a> </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
@@ -270,7 +270,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 リファレンス: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-デザインと使い方:[フライアウト](dialogs-and-flyouts/flyouts.md) 
+デザインと使い方:[ポップアップ](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>メニュー ポップアップ
 ユーザーが現在行っている内容に関連するコマンドまたはオプションの一覧を一時的に表示します。
@@ -290,7 +290,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 リファレンス: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)、[MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-デザインと使い方:[メニューおよびコンテキスト メニュー](menus.md) 
+デザインと使い方:[メニューとコンテキスト メニュー](menus.md) 
 
 サンプル コード: [XAML ショートカット メニューのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
@@ -555,11 +555,11 @@ MediaElement の再生コントロールを提供するコントロール。
 
 ### <a name="navigationview"></a>NavigationView
 
-な適応コンテナーと、左側のナビゲーション ウィンドウ上部のナビゲーション、タブ パターンを実装する柔軟なナビゲーション、モデルします。
+適応コンテナーと、左側のナビゲーション ウィンドウで、上部のナビゲーションとタブ パターンを実装する柔軟なナビゲーション モデルの場合。
 
 リファレンス: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-デザインと使い方: [NavigationView コントロール ガイド](navigationview.md)
+デザインと使い方: [NavigationView コントロールのガイド](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
 

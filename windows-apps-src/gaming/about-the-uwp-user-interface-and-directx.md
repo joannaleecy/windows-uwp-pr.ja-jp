@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP、DirectX、アプリ オブジェクト
 ms.localizationpriority: medium
 ms.openlocfilehash: fcbe68516e3ad8b2643faf68900e3305f18e8bbf
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881108"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913477"
 ---
 # <a name="the-app-object-and-directx"></a>アプリ オブジェクトと DirectX
 
@@ -23,7 +23,7 @@ ms.locfileid: "2881108"
 
 DirectX を使ったユニバーサル Windows プラットフォーム (UWP) ゲームでは、Windows UI ユーザー インターフェイスの要素とオブジェクトの多くが使われません。 逆に、それらのアプリは Windows ランタイム スタックの下位レベルで実行されることから、アプリ オブジェクトに直接アクセスして相互運用するという基本的な方法でユーザー インターフェイス フレームワークと相互運用する必要があります。 ここでは、この相互運用をいつどのように行うかと、DirectX 開発者が UWP アプリの開発でこのモデルを効果的に使う方法を説明します。
 
-理解できないグラフィック用語または閲覧時に発生する概念について[Direct3D グラフィック用語集](../graphics-concepts/index.md)を参照してください。
+[Direct3D グラフィックスの用語集](../graphics-concepts/index.md)なじみのないグラフィックス条項または読み取りときに発生する概念について参照してください。
 
 ## <a name="the-important-core-user-interface-namespaces"></a>重要なコア ユーザー インターフェイスの名前空間
 

@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 市場, 国, 地域
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882688"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906589"
 ---
 # <a name="define-market-selection"></a>市場の選択の定義
 
 
 Microsoft Store は、世界中の 200 以上の国と地域のお客様が利用できます。 アプリを提供する市場を選択して、市場ごとまたは市場のグループごとに、[価格と使用可能状況](set-app-pricing-and-availability.md)の多くの機能をカスタマイズできます。
 
-世界中のお客様に適したアプリをするための情報] は、[グローバル化するためのガイドライン](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)と[ローカライズ可能なアプリをように](../design/globalizing/prepare-your-app-for-localization.md)を参照してください。
+やすく、アプリのユーザーに適した、世界中には、[グローバリゼーションのガイドライン](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)と[アプリをローカライズ可能](../design/globalizing/prepare-your-app-for-localization.md)をご覧ください。
 
 > [!NOTE]
 > このトピックはアプリについて説明していますが、アドオンの市場の選択にも同じプロセスを使います。
@@ -48,9 +48,9 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
 また、今後ストアに追加される市場にアプリを提供するかどうかを指定するチェック ボックスも用意されています。 このチェック ボックスをオンにしておくと、後で新しい市場が追加されたときに、申請時に指定したアプリの基本価格と一般公開日がそれらの市場で使われます。 これを避けるには、このチェック ボックスをオフにすると、今後追加される市場でアプリが公開されることはなくなります (後でいつでもアプリを追加できます)。
  
 
-## <a name="microsoft-store-consumer-markets"></a>Microsoft ストア コンシューマー市場
+## <a name="microsoft-store-consumer-markets"></a>Microsoft ストアのユーザー市場
 
-以下に挙げる市場の中から、アプリ (またはアドオン) を公開する市場を 1 つ以上選ぶことができます。 アスタリスクのサポートは Xbox 1 つ上の Microsoft ストアとの市場**市場の選択**ポップアップ ウィンドウで、名前の横にある**Xbox**が表示されます。
+以下に挙げる市場の中から、アプリ (またはアドオン) を公開する市場を 1 つ以上選ぶことができます。 アスタリスク市場 Xbox one では、Microsoft Store をサポートします。**市場の選択**のポップアップ ウィンドウで、名前の横にある**Xbox**が表示されます。
 
 
 <table>
@@ -370,7 +370,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
   <tr>
     <td>スウェーデン *</td>
     <td>スイス *</td>
-    <td>Taiwan *</td>
+    <td>台湾 *</td>
     <td>タジキスタン</td>
   </tr>
   <tr>
@@ -412,7 +412,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
   <tr>
     <td>ベトナム</td>
     <td>ワリス・フテュナ諸島</td>
-    <td>Western Sahara (Disputed)</td>
+    <td>西サハラ (紛争中)</td>
     <td>イエメン</td>
   </tr>
   <tr>
@@ -480,7 +480,7 @@ Commerce Expansion Adjustment は、有効日現在、指定された国/地域�
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Windows 8.x の "その他の国と地域" 市場
 
-アプリには、Windows を対象とするパッケージが含まれている場合、8.x が市場の数値が windows ストアを使用して顧客の 1 つ「残りの世界」market として扱われることに注意すべき重要な Windows デベロッパー センター内の個々 の市場として表示されている場合でも、8.xダッシュ ボード (以前のストア ダッシュ ボードではなく「残りの世界」市場オプションをすべてこのような市場のグループ化があった場合)。
+アプリには、Windows をターゲットとするパッケージが含まれている場合はさまざまな市場が windows ストアを使っているユーザーの単一「残りの部分の国と地域」市場として扱われますことに注意する重要な 8.x、8.x、Windows デベロッパー センターでの個別の市場として表示されているでもダッシュ ボード (以前のストア ダッシュ ボードではなくすべての市場のグループ化する 1 つの「残りの部分の国と地域」市場オプションがあった場合)。
 
 アプリを申請するときに、既定の項目を選択したままにしている場合、この問題について心配する必要はありません。アプリは可能なすべての市場に公開されます。 ただし、特定の市場を除外する場合、これらの "その他の国と地域" 市場のいずれかの市場を除外すると、Windows 8 または Windows 8.1 ユーザー向けの "その他の国と地域" 市場のどの市場にもアプリが公開されないことを意味することに留意してください。
 

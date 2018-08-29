@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a25980c964e399931a088e281e959df3095ffe9a
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888001"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905515"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>アプリとアドオンの販売
 
 期間限定で特売することにより Microsoft Store でアプリやアドオンの販促活動をすることができます。 製品を低い価格帯で提供することも、割引率を適用することもできます。
 
 > [!NOTE]
-> 販売価格のアドオンのサブスクリプションはサポートされません。
+> セール価格のサブスクリプション アドオンはサポートされません。
 
 申請の **[価格と使用可能状況]** ページの **[セール価格]** セクションを使ってアプリまたはアドオンの価格を一時的に下げると、顧客が見るストア登録情報には取り消し線が引かれた価格が表示され、値下げされていることをアピールできます (一方、[スケジュールされた価格変更](set-and-schedule-app-pricing.md#schedule-price-changes)では、ストアに変更を表示せずに価格を下げたり上げたりできます)。 
 

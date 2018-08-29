@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 512880b7a7ea955a45697762cbbdb7f74ac70102
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2884221"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910548"
 ---
 # <a name="makepriexe-configuration-file"></a>MakePri.exe 構成ファイル
 
 ここでは、[MakePri.exe](compile-resources-manually-with-makepri.md) XML 構成ファイル (PRI 構成ファイルとも呼ばれる) のスキーマについて説明します。 MakePri.exe ツールには、新しい、初期化された PRI 構成ファイルを作成するために使用できる [createconfig コマンド](makepri-exe-command-options.md#createconfig-command)が含まれています。
 
 > [!NOTE]
-> Windows ソフトウェア開発キットのインストール中に**Windows SDK** UWP 管理アプリのオプションをオンにすると、MakePri.exe がインストールされています。 パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびフォルダーの他のアーキテクチャの名前の)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
+> Windows ソフトウェア開発キットをインストールするときに、 **Windows SDK for UWP アプリの管理**オプションをオンにすると、MakePri.exe がインストールされます。 パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャの名前のフォルダーの)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
 
 PRI 構成ファイルは、どのリソースをどのようにインデックス化するかを制御します。 構成 XML は、次のスキーマに準拠する必要があります。
 

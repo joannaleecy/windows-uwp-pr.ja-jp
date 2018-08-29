@@ -11,11 +11,11 @@ keywords: windows 10, uwp, insider, デベロッパー センター insider, プ
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
 ms.openlocfilehash: 430d8588b83dd605848bba63f46dc5a440c28cf3
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887961"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2912959"
 ---
 # <a name="dev-center-insider-program"></a>デベロッパー センター Insider Program
 

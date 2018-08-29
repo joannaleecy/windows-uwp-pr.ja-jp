@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 643a5abf22bfbeb9e7ace48bc430ab6e0d446ae1
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: d45881ace6be3b0af88f14692837e96ab9b58d18
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018578"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2914517"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>XAML でのビジュアル レイヤーの使用
 
@@ -43,7 +43,7 @@ XAML UI でのブラシの使い方について詳しくは、「[**ブラシ**]
 
 **XamlLight** は、**CompositionLight** で領域を動的に照らす XAML 照明効果の基底クラスを提供します。
 
-XAML UI 要素の照明など、ライトの使い方について詳しくは、「[**照明**](lighting.md)」セクションをご覧ください。
+XAML UI 要素の照明など、ライトの使い方について詳しくは、「[**照明**](xaml-lighting.md)」セクションをご覧ください。
 
 コードの例については、[**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) のリファレンス ページをご覧ください。
 

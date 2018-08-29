@@ -10,11 +10,11 @@ ms.prod: Microsoft Edge, Azure, Visual Studio Code
 ms.technology: web
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f11cbdd749a44c4ba0d8bc1a0397a4f2882257
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2891903"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2911328"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>REST API のバックエンドを使った単一ページの Web アプリを作成する
 
@@ -298,7 +298,7 @@ for (var i=0; i < board.length; i++){
 
  - [Azure DocumentDB ドキュメント](https://docs.microsoft.com/en-us/azure/documentdb/index)
 
-## <a name="part-ii-build-a-single-page-web-application"></a>手順 2: 1 ページの web アプリケーションを作成します。
+## <a name="part-ii-build-a-single-page-web-application"></a>パート 2: 単一ページの web アプリケーションを構築します。
 
 パート 1 では、[REST API バックエンド](#part-i-build-a-rest-api-backend)を構築 (または[ダウンロード](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) しました。次に、[Node](https://nodejs.org/en/)、[Express](http://expressjs.com/)、[Bootstrap](http://getbootstrap.com/) を使って、単一ページのメモリ ゲームのフロントエンドを作成します。
 

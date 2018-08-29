@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, パッケージ要件, パッケージ, パッケージ形式, サポートされているバージョン, 提出
 ms.localizationpriority: medium
 ms.openlocfilehash: d7d748f36dafd93066928f01f9aa42414f2ffc1f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888371"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905285"
 ---
 # <a name="app-package-requirements"></a>アプリ パッケージの要件
 
@@ -41,7 +41,7 @@ Visual Studio でパッケージを作るときは、必ず、開発者アカウ
 
 ### <a name="app-bundles"></a>アプリ バンドル
 
-Windows 10、Windows 8.1、Windows Phone 8.1 を対象とするアプリでは、Visual Studio のアプリをダウンロードするユーザーのサイズを小さくためにアプリ バンドル (.appxbundle) を生成できます。 その利便性が発揮されるのは、言語固有のアセットや多様な画像倍率のアセット、特定バージョンの Microsoft DirectX に適用されるリソースを定義した場合などです。
+Windows 10 や Windows 8.1、Windows Phone 8.1 をターゲットとするアプリでは、Visual Studio はユーザーがダウンロードするアプリのサイズを小さくアプリ バンドル (.appxbundle) を生成できます。 その利便性が発揮されるのは、言語固有のアセットや多様な画像倍率のアセット、特定バージョンの Microsoft DirectX に適用されるリソースを定義した場合などです。
 
 > [!NOTE]
 > 1 つのアプリ バンドルには、すべてのアーキテクチャ用のパッケージを含めることができます。 対象 OS ごとにバンドルを 1 つだけ申請する必要があります。
@@ -61,7 +61,7 @@ Windows 10、Windows 8.1、Windows Phone 8.1 を対象とするアプリでは�
 > マニフェスト内の値は、大文字と小文字が区別されます。 スペースや句読点なども一致する必要があります。 注意して入力し、間違いがないか確認してください。
 
 
-アプリのバンドル (.appxbundle) は、さまざまなマニフェストを使用します。 アプリ バンドル マニフェストの詳細や要件については、[バンドル マニフェスト](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) に関するドキュメントをご覧ください。 ノートで、.appxbundle では、それぞれの .appxmanifest が含まれているパッケージには、同じ要素と以外の[Id](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)要素**ProcessorArchitecture**属性の属性を使用する必要があります。
+アプリ バンドル (.appxbundle) は、特別なマニフェストを使用します。 アプリ バンドル マニフェストの詳細や要件については、[バンドル マニフェスト](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) に関するドキュメントをご覧ください。 注: .appxbundle、内の各 .appxmanifest 含まれているパッケージには、同じ要素と属性の[Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)要素の**ProcessorArchitecture**属性を除くを使う必要があります。
 
 > [!TIP]
 > 必ず、[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)を実行してから、パッケージを提出してください。 これによって、認定や提出の失敗の原因となる可能性がある問題がマニフェストに含まれているかどうかを判断できます。
@@ -88,7 +88,7 @@ UWP アプリの場合、すべてのパッケージは Microsoft Store によ�
 
 ## <a name="storemanifest-xml-file"></a>StoreManifest XML ファイル
 
-StoreManifest.xml は、必要に応じてアプリ パッケージに含めることのできる構成ファイルです。 その目的は、Microsoft Store デバイス アプリとしてアプリを宣言する機能や、パッケージ マニフェストの対象外となるデバイスに適用される要件を宣言する機能などを有効にすることです。 使用する場合、StoreManifest.xml はアプリ パッケージに送信され、アプリのメインのプロジェクトのルート フォルダーである必要があります。 詳しくは、「[StoreManifest スキーマ](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)」をご覧ください。
+StoreManifest.xml は、必要に応じてアプリ パッケージに含めることのできる構成ファイルです。 その目的は、Microsoft Store デバイス アプリとしてアプリを宣言する機能や、パッケージ マニフェストの対象外となるデバイスに適用される要件を宣言する機能などを有効にすることです。 使用する場合、StoreManifest.xml はアプリ パッケージを使ってが送られ、アプリのメイン プロジェクトのルート フォルダーにある必要があります。 詳しくは、「[StoreManifest スキーマ](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)」をご覧ください。
 
  
 

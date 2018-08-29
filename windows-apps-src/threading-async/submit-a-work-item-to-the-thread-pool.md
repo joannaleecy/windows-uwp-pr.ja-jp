@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, スレッド, スレッド プール
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d7fc361e446207c8e14f83ca3f663bd5072e6e
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888071"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905495"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>スレッド プールへの作業項目の送信
 
@@ -35,7 +35,7 @@ ms.locfileid: "2888071"
 3 つのバージョンの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) を使うことができるため、必要に応じて作業項目の優先度を指定し、他の作業項目と同時に実行するかどうかを制御できます。
 
 >[!NOTE]
->UI スレッドにアクセスして、作業項目の進行状況を表示するには、 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)を使用します。
+>UI スレッドにアクセスし、作業項目の進捗状況を表示するには、 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)を使用します。
 
 次の例では作業項目を作成し、作業を実行するラムダを指定します。
 

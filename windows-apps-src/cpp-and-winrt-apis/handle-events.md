@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、プロジェクション、処理、イベント、デリゲート
 ms.localizationpriority: medium
 ms.openlocfilehash: a29c095e49b49baa63bd547c0bb928ad7f78aa86
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886782"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906008"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) でのデリゲートを使用したイベントの処理
 このトピックでは、C++/WinRT を使用したイベント処理デリゲートの登録方法と取り消し方法について説明します。 標準的な C++ 関数のようなオブジェクトを使用してイベントを処理できます。
@@ -122,7 +122,7 @@ private:
 
 上の例のような強参照の代わりに、弱参照をボタンに格納することができます (「[C++/WinRT の弱参照](weak-references.md)」を参照してください)。
 
-または、代理人を登録すると、イベント revoker (の種類の[**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)) を要求する**winrt::auto_revoke** (これが型[**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)の値) を指定できます。 イベント revoker のイベントのソース (イベントを発生させるオブジェクト) に弱い参照を保持します。 **event_revoker::revoke** メンバー関数を呼び出して手動で取り消すことができますが、イベント リボーカーは参照が範囲外になったときに自動的にその関数自体を呼び出します。 **revoke** 関数は、イベント ソースがまだ存在するかどうかを確認し、存在する場合は、デリケートを取り消します。 次の例では、イベント ソースを格納する必要がないため、デストラクターは必要ありません。
+または、デリゲートを登録するときは、(の種類の[**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)) イベント リボーカーを要求する**winrt::auto_revoke** (つまり、値を型[**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) を指定できます。 イベント リボーカーのイベント ソース (イベントを発生させるオブジェクト) への弱参照を保持します。 **event_revoker::revoke** メンバー関数を呼び出して手動で取り消すことができますが、イベント リボーカーは参照が範囲外になったときに自動的にその関数自体を呼び出します。 **revoke** 関数は、イベント ソースがまだ存在するかどうかを確認し、存在する場合は、デリケートを取り消します。 次の例では、イベント ソースを格納する必要がないため、デストラクターは必要ありません。
 
 ```cppwinrt
 struct Example : ExampleT<Example>

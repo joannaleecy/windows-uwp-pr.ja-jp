@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影された, プロジェクション, 実装, インプリメント, ランタイム クラス, ライセンス認証
 ms.localizationpriority: medium
 ms.openlocfilehash: d2f9b336d9a95efe28668991d66ab0a9e48e96e7
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889291"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2912369"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) での API の作成
 このトピックでは、直接的または間接的に [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基本構造体を使用して、C++/WinRT API を作成する方法を示します。 このコンテキストで*作成者*の同義語は、*生成*、または*実装*です。 このトピックでは、C++/WinRT で API を実装するために、次のシナリオをこの順序で説明します。
@@ -252,14 +252,14 @@ namespace MyProject
 }
 ```
 
-**MyType** から、プロジェクションの一部として使用するまたは返すことができる **IStringable** または **IClosable** オブジェクトへ移動するには、[**winrt::make**](/uwp/cpp-ref-for-winrt/make) 関数テンプレートを呼び出すことができます。 **** 実装の種類の既定のインターフェイスが返されます。
+**MyType** から、プロジェクションの一部として使用するまたは返すことができる **IStringable** または **IClosable** オブジェクトへ移動するには、[**winrt::make**](/uwp/cpp-ref-for-winrt/make) 関数テンプレートを呼び出すことができます。 **** 実装型の既定のインターフェイスを返します。
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
 ```
 
 > [!NOTE]
-> ただし、XAML UI から型を参照している場合は、同じプロジェクト内に実装型と投影型の両方があります。 その場合は、**する**には、予測のタイプのインスタンスが返されます。 そのシナリオのコード例については、「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)」を参照してください。
+> ただし、XAML UI から型を参照している場合は、同じプロジェクト内に実装型と投影型の両方があります。 その場合は、**作成**投影された型のインスタンスを返します。 そのシナリオのコード例については、「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)」を参照してください。
 
 **IStringable** インターフェイスのメンバーを呼び出すには (上記のコード例の場合) `istringable` のみ使用できます。 ただし C++/WinRT インターフェイス (投影されたインターフェイス) は [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) から派生します。 したがって、その上で [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) を呼び出して他のインターフェイスのクエリを実行することができ、これを使用することも返すこともできます。
 

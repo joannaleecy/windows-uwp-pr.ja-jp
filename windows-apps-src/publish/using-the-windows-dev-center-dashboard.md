@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, ダッシュボード, デベロッパー センター, 開発センター
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885021"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910096"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>Windows デベロッパー センター ダッシュボードの使用
 
 
-[Windows デベロッパー センターのダッシュ ボード](https://partner.microsoft.com/dashboard)を管理して、すべての 1 つの場所の Windows デバイスにアプリを送信できます。
+[Windows デベロッパー センター ダッシュ ボード](https://partner.microsoft.com/dashboard)では、すべて 1 か所での Windows デバイス向けにアプリの管理し、申請することができます。
 
 > [!NOTE]
 > Windows デベロッパー センター ダッシュボードにアクセスするには、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
@@ -33,13 +33,13 @@ ms.locfileid: "2885021"
 - プロフィールやアカウントの詳細、支払い明細、サポート、通知を 1 か所でまとめて管理できます。各情報には右上隅からアクセスできます。
 - すべての開発者プログラムにすぐにアクセスできます。それぞれにサインインとサインアウトを行う必要はありません。 また、おすすめの新しいプログラムが利用可能になると提示されます。
 
-ときに[、アプリの提出を作成](app-submissions.md)する (1 回または更新として) は、[アプリ パッケージをアップロード](upload-app-packages.md)OS のバージョンでサポートされているし、ストアお客様は、自動的にパッケージ化するのに最適です。
+とき[、アプリの申請を作成](app-submissions.md)する (を初めて起動または更新プログラムとして) することができます[アプリ パッケージのアップロード](upload-app-packages.md)の OS バージョンでは、サポートされているし、ストアは自動的に顧客に提供最適に動作するパッケージ。
 
-アプリの送信とは独立させて[アドオン (アプリで製品)](add-on-submissions.md)が管理されます。 これにより、IAP をさらに柔軟に変更できるようになります。
+[アドオン (アプリ内製品)](add-on-submissions.md)は、アプリの申請とは別に管理されます。 これにより、IAP をさらに柔軟に変更できるようになります。
 
-Windows デベロッパー センターもの[複数のユーザーを追加して](manage-account-users.md)[アプリの管理とサービスを構成する](app-management-and-services.md)、[データの分析を確認](analytics.md)、[支払額レポート](payout-summary.md)[アプリを昇格する](attract-customers-and-promote-your-apps.md)[機能を提供します。顧客](engage-with-your-customers.md)、[ベータ テスト](beta-testing-and-targeted-distribution.md)、[企業に配布の LOB アプリ](distribute-lob-apps-to-enterprises.md)、および多くします。
+Windows デベロッパー センター機能も提供[複数のユーザーを追加して](manage-account-users.md)[アプリの管理とサービスの構成](app-management-and-services.md)、[分析データの確認](analytics.md)、[支払いレポート](payout-summary.md)[アプリの宣伝](attract-customers-and-promote-your-apps.md)、[エンゲージメントによる、顧客](engage-with-your-customers.md)、[ベータ テスト](beta-testing-and-targeted-distribution.md)、 [LOB アプリの企業への配布など](distribute-lob-apps-to-enterprises.md)、および獲得します。
 
-できる限り最高の機能とエクスペリエンスを開発するためには、皆様のフィードバックが重要です。 ダッシュ ボードを使用するようを使用してください**フィードバック**] リンクのダッシュ ボードの右上隅で、アイデアや提案を共有します。
+できる限り最高の機能とエクスペリエンスを開発するためには、皆様のフィードバックが重要です。 ダッシュ ボードでは、作業を使用してください**フィードバック**] リンク、ダッシュ ボードの右上隅にある感想やご提案します。
 
 
  

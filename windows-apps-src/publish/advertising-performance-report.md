@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a1a82c91aeafa253427d8e526b38b8ac304591a2
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881825"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905165"
 ---
 # <a name="advertising-performance-report"></a>[広告パフォーマンス] レポート
 
@@ -62,7 +62,7 @@ ms.locfileid: "2881825"
 | フィル レート  | アプリから送信された広告要求に対して広告が表示された割合。  |
 | クリック数  |  アプリ内の広告がクリックされた回数。 |
 | CTR  |  クリック スルー レート、つまり広告がクリックされた回数をインプレッション数で割った値。 |
-| 見やすさ | アプリで表示可能な印象を広告の割合。 この値を計算する方法の詳細については、[最適化 ad 単位の見やすさ](../monetize/optimize-ad-unit-viewability.md)を参照してください。 |
+| 視認性 | アプリで表示可能な広告インプレッションの割合を示します。 この値を計算する方法について詳しくは、[広告ユニットの視認性の最適化](../monetize/optimize-ad-unit-viewability.md)を参照してください。 |
 | 取得したクレジット  | [コミュニティ広告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)キャンペーンを実行している場合、このアプリ内にコミュニティ広告を表示することで獲得したプロモーション用広告スペースのクレジット数。  |
 | 使用したクレジット  | [コミュニティ広告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)キャンペーンを実行している場合、このアプリの広告のために消費したクレジット数。  |
 

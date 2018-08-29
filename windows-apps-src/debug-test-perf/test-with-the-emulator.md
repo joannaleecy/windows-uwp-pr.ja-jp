@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892010"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2904797"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Microsoft Emulator for Windows 10 Mobile を使ったテスト
 
@@ -29,9 +29,9 @@ Microsoft Emulator for Windows 10 Mobile に用意されているツールを使
 
 コンピューターは次の要件を満たす必要があります。
 
-CPU (これらの設定を使用できる場合が有効にする BIOS で)
+CPU (これらの設定、利用可能な場合で有効にできます BIOS)
 
--   ハードウェアによる仮想化 ([互換性を確認する](https://www.microsoft.com/download/details.aspx?id=592))。
+-   ハードウェア支援による仮想化 ([互換性を確認する](https://www.microsoft.com/download/details.aspx?id=592))。
 -   Second Level Address Translation (SLAT)。
 -   ハードウェアベースのデータ実行防止 (DEP)。
 
@@ -49,11 +49,11 @@ BIOS 要件を確認するには、「[Windows Phone 8 のエミュレーター�
 
 RAM とオペレーティング システムの要件を確認するには、コントロール パネルで **[システムとセキュリティ]** を選び、**[システム]** を選びます。
 
-Windows 10 Mobile 版 Microsoft エミュレーター Visual Studio 2015 以降が必要です。Visual Studio の以前のバージョンとの下位互換性はありません。
+Microsoft Emulator for Windows 10 Mobile には、Visual Studio 2015 以降が必要です。以前のバージョンの Visual Studio との下位互換性はありません。
 
 Microsoft Emulator for Windows 10 Mobile は、Windows Phone OS 7.1 より前の Windows Phone OS バージョンを対象とするアプリを読み込むことはできません。
 
-## <a name="installing-uninstalling-and-running-the-emulator"></a>インストール、アンインストール、およびエミュレーターを実行します。
+## <a name="installing-uninstalling-and-running-the-emulator"></a>インストール、アンインストール、およびエミュレーターを実行しています。
 
 ### <a name="installing"></a>インストールします。
 Microsoft Emulator for Windows 10 Mobile は、Windows 10 SDK の一部としてリリースされています。 Windows 10 SDK とエミュレーターは、Visual Studio の一部としてインストールできます。 [Visual Studio のダウンロードに関するページ](https://go.microsoft.com/fwlink/p/?LinkId=534785)をご覧ください。
@@ -68,7 +68,7 @@ Microsoft Emulator for Windows 10 Mobile をアンインストールしても、
 
 ### <a name="running"></a>Running
 
-エミュレーターでアプリを実行するには、だけで、Visual Studio で [**実行**] ドロップダウン メニューからエミュレートしたデバイスを選択します。
+エミュレーターでアプリを実行するには、だけで、Visual Studio の [**実行**] ドロップダウン メニューからエミュレートされたデバイスを選択します。
 
 ![解像度、サイズ、メモリに使うことができるエミュレーター](images/em-list.png)
 

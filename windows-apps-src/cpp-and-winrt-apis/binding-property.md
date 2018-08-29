@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, XAML, コントロール, バインド, プロパティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 31913ae162bfe541d04f304db87b4dff962a8af4
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2884188"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910634"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-property"></a>XAML コントロール、[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) プロパティへのバインド
 XAML コントロールに効果的にバインドできるプロパティは、*監視可能な*プロパティと呼ばれます。 この概念は、*オブザーバー パターン*と呼ばれるソフトウェアの設計パターンに基づいています。 このトピックでは、C++/WinRT で監視可能なプロパティを実装する方法と、これらに XAML コントロールをバインドする方法を示します。
@@ -49,18 +49,18 @@ namespace Bookstore
 ```
 
 > [!NOTE]
-> ビュー モデル クラス&mdash;実際には、アプリケーションで宣言する任意のランタイム クラス&mdash;基本クラスから派生する必要があります。 上にある宣言**BookSku**クラスは、その中の例を示します。 インターフェイスを実装するが、任意の基本クラスから派生しないことです。
+> ビュー モデル クラス&mdash;実際には、アプリケーションで宣言する任意のランタイム クラスで&mdash;基底クラスから派生しません。 必要があります。 上で宣言した**BookSku**クラスは、その例を示します。 、インターフェイスを実装することがそれは、基底クラスから派生したものです。
 >
-> すべてのアプリケーションで宣言するランタイム クラスが基本から派生*は*そのクラスと呼ばれる、*構成可能な*クラスします。 構成可能なクラスの周囲の制約があります。 [Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)テストの送信を検証するための Microsoft ストアおよび Visual Studio での使用にアプリケーション (とを Microsoft ストアに正常に取り込み、アプリケーションの)、構成可能なクラスである必要があります最終的には、Windows の基本クラスから派生します。 意味の継承階層の非常のルートで、クラスはに対して Windows.* 名前空間の種類である必要があります。 ランタイム クラスの基本クラスから派生する必要は場合&mdash; **BindableBase**から派生するにより、ビューのモデルのすべてのクラスを実装するなど、&mdash;、 [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)から派生することができます。
+> ベースから、アプリケーションで宣言する任意のランタイム クラスを派生*は*そのクラスと呼ばれる、*構成可能な*クラスです。 構成可能なクラスを中心に制約があります。 Visual Studio によって、Microsoft Store での提出を検証するために使用する[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)のテストに合格するアプリケーションの (とそのため、アプリケーションを Microsoft Store に正常に取り込まれるように)、構成可能なクラスにする必要があります最終的には、Windows の基底クラスから派生します。 つまり継承階層の非常にルート クラスは、Windows.* 名前空間から型である必要があります。 基底クラスからランタイム クラスを派生させる必要がある場合&mdash;から派生するビュー モデルのすべての**BindableBase**クラスを実装する場合など&mdash;し[**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)から派生することができます。
 >
-> モデルの表示は、ビューの抽象、ビュー (XAML マークアップ) に直接バインドされているため。 データ モデルは、データの抽象と、モデルの表示だけで処理されるは、直接 XAML にバインドされていません。 したがって、ランタイム クラス] としてではなく C++ 構造体やクラスとして、データ モデルを宣言することができます。 MIDL で宣言する必要はありませんが、自由に使いたい任意の継承の階層を使用していて、します。
+> ビュー モデルは、ビューのアブストラクションとビュー (XAML マークアップ) に直接バインドされているためです。 データ モデルは、データのアブストラクションとされたが、ビュー モデルでのみ使用して XAML に直接バインドされません。 そのため、ランタイム クラスは、としてではなく C++ 構造体またはクラスとして、データ モデルを宣言できます。 MIDL で宣言する必要のないし、する任意の継承階層を使って自由にことができます。
 
 ファイルを保存し、プロジェクトをビルドします。 ビルド プロセス中に、`midl.exe` ツールが実行されて、ランタイム クラスを記述する Windows ランタイム メタデータ ファイル (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`) が作成されます。 次に、`cppwinrt.exe` ツールが実行され、ランタイム クラスの作成と使用をサポートするソース コード ファイルが生成されます。 これらのファイルには、IDL で宣言した **BookSku** ランタイム クラスの実装を開始するためのスタブが含まれています。 これらのスタブは `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` と `BookSku.cpp` です。
 
 スタブ ファイル `BookSku.h` と `BookSku.cpp` を `\Bookstore\Bookstore\Generated Files\sources\` からプロジェクト フォルダー `\Bookstore\Bookstore\` にコピーします。 **ソリューション エクスプローラー**で、**[すべてのファイルを表示]** がオンであることを確認します。 コピーしたスタブ ファイルを右クリックし、**[プロジェクトに含める]** をクリックします。
 
 ## <a name="implement-booksku"></a>**BookSku** を実装する
-ここで、`\Bookstore\Bookstore\BookSku.h` と `BookSku.cpp` を開いてとランタイム クラスを実装してみましょう。 `BookSku.h` で、[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) を取るコンストラクター、タイトル文字列を格納するためのプライベート メンバー、およびタイトルが変更されたときに発生させるイベントのための別のプライベート メンバーを追加します。 これらの変更を加えた後、`BookSku.h`次のようになります。
+ここで、`\Bookstore\Bookstore\BookSku.h` と `BookSku.cpp` を開いてとランタイム クラスを実装してみましょう。 `BookSku.h` で、[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) を取るコンストラクター、タイトル文字列を格納するためのプライベート メンバー、およびタイトルが変更されたときに発生させるイベントのための別のプライベート メンバーを追加します。 これらの変更を行った後、`BookSku.h`次のようになります。
 
 ```cppwinrt
 // BookSku.h
@@ -126,7 +126,7 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-**タイトル**ミューテーター関数のかどうか、値の設定対象の現在の値とは異なる確認します。 タイトルを更新しても[**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)イベントが変更されたプロパティの名前と同じ引数を持つ場合は、します。 これにより、ユーザー インターフェイス (UI) はどのプロパティの値を再クエリするのか分かるようになります。
+**タイトル**ミューテーター関数であるかどうか、値が設定されて現在の値とは異なるを確認します。 その場合は、タイトルを更新も変更されたプロパティの名前に等しい引数で[**inotifypropertychanged::propertychanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)イベントが発生します。 これにより、ユーザー インターフェイス (UI) はどのプロパティの値を再クエリするのか分かるようになります。
 
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>**BookstoreViewModel** を宣言および実装する
 メイン XAML ページが、メイン ビュー モデルにバインドします。 またそのビュー モデルは、**BookSku** 型のいずれかを含む、いくつかのプロパティを持つようになります。 この手順では、メイン ビュー モデル ランタイム クラスを宣言および実装します。
@@ -146,7 +146,7 @@ namespace Bookstore
 }
 ```
 
-保存してビルドします。 `Generated Files` フォルダーから `BookstoreViewModel.h` と `BookstoreViewModel.cpp` をプロジェクト フォルダーにコピーし、プロジェクトに追加します。 これらのファイルを開くし、次に示すように、ランタイム クラスを実装します。 メモ方法で、`BookstoreViewModel.h`を含めています`BookSku.h`、実装の種類 (**winrt::Bookstore::implementation::BookSku**) を宣言します。 削除すると既定のコンスを復元している`= delete`します。
+保存してビルドします。 `Generated Files` フォルダーから `BookstoreViewModel.h` と `BookstoreViewModel.cpp` をプロジェクト フォルダーにコピーし、プロジェクトに追加します。 それらのファイルを開き、以下に示すように、ランタイム クラスを実装します。 注: 方法で、 `BookstoreViewModel.h`、ここに含まれている`BookSku.h`、実装型 (**::implementation::booksku**) を宣言しています。 削除することで、既定のコンス トラクターを復元しますいる`= delete`します。
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -192,7 +192,7 @@ namespace winrt::Bookstore::implementation
 > `m_bookSku` の型は投影型 (**winrt::Bookstore::BookSku**) であり、**make** で使用するテンプレート パラメーターは実装型 (**winrt::Bookstore::implementation::BookSku**) です。 この場合も、[**make**] は投影型のインスタンスを返します。
 
 ## <a name="add-a-property-of-type-bookstoreviewmodel-to-mainpage"></a>**BookstoreViewModel** 型のプロパティを **MainPage** に追加する
-`MainPage.idl` を開きます。ここでメインの UI ページを表すランタイム クラスを宣言しています。 インポート ステートメントを追加して `BookstoreViewModel.idl` をインポートし、**BookstoreViewModel** 型の MainViewModel という名前の読み取り専用プロパティを追加します。 また、**今度**プロパティを削除します。 また、`import`ディレクティブの一覧を下にします。
+`MainPage.idl` を開きます。ここでメインの UI ページを表すランタイム クラスを宣言しています。 インポート ステートメントを追加して `BookstoreViewModel.idl` をインポートし、**BookstoreViewModel** 型の MainViewModel という名前の読み取り専用プロパティを追加します。 また、**今度**プロパティを削除します。 また、`import`ディレクティブの一覧を以下にします。
 
 ```idl
 // MainPage.idl
@@ -208,13 +208,13 @@ namespace Bookstore
 }
 ```
 
-ファイルを保存します。 現時点で完了するプロジェクトを作成できませんが、今すぐ建てる**MainPage**ランタイム クラスを実装するソース コード ファイルを再生成するための便利なこと (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`と`MainPage.cpp`)。 ようにさあ、作成するようになりました。 この段階で表示するビルド エラー **'MainViewModel': 'winrt::Bookstore::implementation::MainPage' のメンバーではない**します。
+ファイルを保存します。 現時点で完了するまで、プロジェクトのビルドはありませんが、 **MainPage**ランタイム クラスを実装するソース コード ファイルを再生成されるために有用なことは、構築できるようになりました (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`と`MainPage.cpp`)。 したがってならないし、構築できるようになりました。 この段階で確認することが予想されることができますビルド エラーが **'MainViewModel': 'winrt::Bookstore::implementation::MainPage' のメンバーでない**します。
 
-含めるを省略すると`BookstoreViewModel.idl`(の一覧を参照してください`MainPage.idl`上にある)、エラーが表示される [**予期 \ < 付近に"MainViewModel"** します。 同じ名前空間のすべての種類のままにすることを確認するのには、別のヒント: [コードの一覧に表示される名前空間します。
+インクルードを省略すると`BookstoreViewModel.idl`(の登録情報を表示`MainPage.idl`上)、エラーを表示し、**想定 \ <"MainViewModel"の近く**します。 別のヒントは、同じ名前空間のすべての種類のままにするかどうかを確認する: コードの登録情報に表示される名前空間です。
 
-あることにエラーを解決するには、今すぐする必要がありますアクセサー スタブ**MainViewModel**プロパティ生成されたファイルからのコピー (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`と`MainPage.cpp`) に`\Bookstore\Bookstore\MainPage.h`と`MainPage.cpp`します。
+表示を行う必要がエラーを解決するには、今すぐ必要がありますに生成されたファイルから**MainViewModel**プロパティのアクセサー スタブをコピー (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`と`MainPage.cpp`) に`\Bookstore\Bookstore\MainPage.h`と`MainPage.cpp`します。
 
-`\Bookstore\Bookstore\MainPage.h`、含める`BookstoreViewModel.h`、実装の種類 (**winrt::Bookstore::implementation::BookstoreViewModel**) を宣言します。 ビュー モデルを保存するにはプライベート メンバーを追加します。 プロパティ アクセサー関数 (およびメンバー m_mainViewModel) は、投影型である **Bookstore::BookstoreViewModel** に関して実装されていることに注意してください。 M_mainViewModel コンス オーバー ロードを経由で使うアプリケーションと同じプロジェクト (コンパイル単位) の実装の種類が`nullptr_t`します。 また、**今度**プロパティを削除します。
+`\Bookstore\Bookstore\MainPage.h`、含める`BookstoreViewModel.h`、実装型 (**winrt::Bookstore::implementation::BookstoreViewModel**) を宣言しています。 ビュー モデルを格納するプライベート メンバーを追加します。 プロパティ アクセサー関数 (およびメンバー m_mainViewModel) は、投影型である **Bookstore::BookstoreViewModel** に関して実装されていることに注意してください。 コンス トラクターのオーバー ロードによって m_mainViewModel を作成しますので、アプリケーションと同じプロジェクト (コンパイル ユニット) に実装型は`nullptr_t`します。 また、**今度**プロパティを削除します。
 
 ```cppwinrt
 // MainPage.h
@@ -238,7 +238,7 @@ namespace winrt::Bookstore::implementation
 ...
 ```
 
-`\Bookstore\Bookstore\MainPage.cpp`、M_mainViewModel に見積もりの種類の新しいインスタンスを割り当てる (実装の種類) が[**winrt::make**](/uwp/cpp-ref-for-winrt/make)を呼び出します。 ブックのタイトルの初期値を割り当てます。 MainViewModel プロパティのアクセサーを実装します。 最後に、ボタンのイベント ハンドラーでブックのタイトルを更新します。 また、**今度**プロパティを削除します。
+`\Bookstore\Bookstore\MainPage.cpp`、 [**Winrt::make**](/uwp/cpp-ref-for-winrt/make)呼び出し (実装型) の投影型の新しいインスタンスを m_mainViewModel に割り当てます。 ブックのタイトルの初期値を割り当てます。 MainViewModel プロパティのアクセサーを実装します。 最後に、ボタンのイベント ハンドラーでブックのタイトルを更新します。 また、**今度**プロパティを削除します。
 
 ```cppwinrt
 // MainPage.cpp
@@ -269,7 +269,7 @@ namespace winrt::Bookstore::implementation
 ```
 
 ## <a name="bind-the-button-to-the-title-property"></a>**Title** プロパティにボタンをバインドする
-メイン UI ページの XAML マークアップが含まれている `MainPage.xaml` を開きます。 以下のリストのように、ボタンから名前を削除して、リテラルから、連結式に、**コンテンツ**のプロパティの値を変更します。 バインド式の `Mode=OneWay` プロパティをメモします (ビュー モデルから UI へ一方向)。 そのプロパティが無いと、UI はプロパティの変更イベントに応答しません。
+メイン UI ページの XAML マークアップが含まれている `MainPage.xaml` を開きます。 登録情報を以下に示すように、ボタンから名前を削除し、その**コンテンツ**プロパティの値をリテラルからバインド式に変更します。 バインド式の `Mode=OneWay` プロパティをメモします (ビュー モデルから UI へ一方向)。 そのプロパティが無いと、UI はプロパティの変更イベントに応答しません。
 
 ```xaml
 <Button Click="ClickHandler" Content="{x:Bind MainViewModel.BookSku.Title, Mode=OneWay}"/>
@@ -277,8 +277,8 @@ namespace winrt::Bookstore::implementation
 
 ここでプロジェクトをビルドして実行します。 ボタンをクリックして**クリック** イベント ハンドラーを実行します。 そのハンドラーがブックのタイトル ミューテーター関数を呼び出します。そのミューテーターがイベントを発生させるので、UI は **Title** プロパティが変更されたことがわかります。ボタンはそのプロパティの値を再クエリして、そのボタンの **Content** 値を更新します。
 
-## <a name="using-the-binding-markup-extension-with-cwinrt"></a>{バインド} マークアップ拡張子を使用して、C + +/WinRT
-C + の現在のリリース版の +/ [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)と[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)インターフェイスを実装する必要があります {バインド} 変更履歴とコメントの拡張機能を使用できるようにするために、WinRT します。
+## <a name="using-the-binding-markup-extension-with-cwinrt"></a>{Binding} マークアップ拡張機能を使用して、C++/WinRT
+現在リリースされているバージョンの C + + を[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)と[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)インターフェイスを実装する必要があります、{binding} マークアップ拡張を使用するために、WinRT します。
 
 ## <a name="important-apis"></a>重要な API
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)

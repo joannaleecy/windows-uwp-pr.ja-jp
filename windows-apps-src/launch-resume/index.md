@@ -8,14 +8,14 @@ ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、バック グラウンド タスクでは、app サービスには、リモート システム、デバイスが接続されています。
+keywords: windows 10, uwp, バック グラウンド タスクでは、アプリ サービスに接続されているデバイス、リモート システム
 ms.localizationpriority: medium
 ms.openlocfilehash: 142eba8eb919ed25632f44a6f185ae40e16dec6b
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886689"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910076"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>起動、再開、バックグラウンド タスク
 

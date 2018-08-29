@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ユーザー ロール, ユーザーのアクセス許可, カスタム ロール, ユーザー アクセス, アクセス許可のカスタマイズ, 標準ロール
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889401"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913510"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>アカウント ユーザーのロールまたはカスタムのアクセス許可の設定
 
@@ -48,7 +48,7 @@ ms.locfileid: "2889401"
 | 役割                 | 説明              |
 |----------------------|--------------------------|
 | マネージャー              | アカウントに完全にアクセスできます (税金と支払いの設定の変更を除く)。 これにはデベロッパー センターでのユーザーの管理が含まれますが、Azure AD テナントでのユーザーの作成および削除については、Azure AD でのアカウントのアクセス許可に依存することに注意してください。 つまり、ユーザーにマネージャーのロールが割り当てられていても、組織の Azure AD のグローバル管理者権限がなければ、そのユーザーは、新しいユーザーを作成したり、ディレクトリからユーザーを削除したりできません (ただし、ユーザーのデベロッパー センターのロールを変更することはできます)。 <p> デベロッパー センター アカウントが複数の Azure AD テナントに関連付けられている場合、そのテナントのグローバル管理者アクセス許可を持つアカウントでそのユーザーと同じテナントにサインインしている場合を除き、マネージャーにはユーザーの完全な詳細が表示されません (姓名、パスワードの回復メール、Azure AD グローバル管理者かどうかなど)。 ただし、デベロッパー センター アカウントに関連付けられているどのテナントでもユーザーの追加と削除を行うことができます。 |
-| 開発者            | パッケージをアップロードし、アプリおよびアドオンを申請できます。また、[使用状況レポート](usage-report.md)で統計情報の詳細を確認できます。 [デバイス間のエクスペリエンス](https://go.microsoft.com/fwlink/?linkid=874042)機能にアクセスできます。 財務情報やアカウントの設定を表示することはできません。   |
+| 開発者            | パッケージをアップロードし、アプリおよびアドオンを申請できます。また、[使用状況レポート](usage-report.md)で統計情報の詳細を確認できます。 [クロス デバイス エクスペリエンス](https://go.microsoft.com/fwlink/?linkid=874042)機能にアクセスできます。 財務情報やアカウントの設定を表示することはできません。   |
 | 経営担当者 | [状態](health-report.md)レポートと[利用状況](usage-report.md)レポートを表示できます。 製品の作成や申請、アカウント設定の変更、財務情報の表示はできません。   |
 | 財務担当者  | [支払いレポート](payout-summary.md)、財務情報、取得レポートを表示できます。 アプリ、アドオン、またはアカウント設定を変更することはできません。    |
 | マーケター             | [顧客のレビューに返信](respond-to-customer-reviews.md)したり、非財務[分析レポート](analytics.md)を表示したりできます。 アプリ、アドオン、またはアカウント設定を変更することはできません。      |
@@ -119,7 +119,7 @@ ms.locfileid: "2889401"
 <tr><td align="left">    <b>コミュニティ広告</b>                       </td><td align="left">  アカウント内のすべての製品の無料<a href="about-community-ads.md">コミュニティ広告</a>の利用状況を表示できます。          </td><td align="left">  アカウント内のすべての製品の無料<a href="about-community-ads.md">コミュニティ広告</a>の利用状況を作成、管理、および表示できます。               </td></tr>
 <tr><td align="left">    <b>連絡先情報</b>                        </td><td align="left">  [アカウント設定] セクションで<a href="managing-your-profile.md">連絡先情報</a>を表示できます。        </td><td align="left">  [アカウント設定] セクションで<a href="managing-your-profile.md">連絡先情報</a>の編集と表示ができます。            </td></tr>
 <tr><td align="left">    <b>COPPA 準拠</b>                    </td><td align="left">  アカウント内のすべての製品の <a href="in-app-ads.md#coppa-compliance">COPPA 準拠</a>の選択 (製品が13歳未満の子供を対象とするかどうかを示す) を表示できます。                                            </td><td align="left">  アカウント内のすべての製品の <a href="in-app-ads.md#coppa-compliance">COPPA 準拠</a>の選択 (製品が13歳未満の子供を対象とするかどうかを示す) の編集と表示ができます。         </td></tr>
-<tr><td align="left">    <b>顧客グループ</b>                     </td><td align="left">  <a href="create-customer-groups.md">顧客グループ</a>(セグメントと既知のユーザーのグループ) を表示できます。      </td><td align="left">  できますを作成、編集、および<a href="create-customer-groups.md">顧客グループ</a>(セグメントと既知のユーザーのグループ) を表示します。       </td></tr>
+<tr><td align="left">    <b>顧客グループ</b>                     </td><td align="left">  <a href="create-customer-groups.md">顧客グループ</a>(セグメントと既知のユーザー グループ) を表示できます。      </td><td align="left">  できます作成、編集、および<a href="create-customer-groups.md">ユーザー グループ</a>(セグメントと既知のユーザー グループ) を表示します。       </td></tr>
 <tr><td align="left">    <b>製品グループの管理</b>&nbsp;*                            </td><td align="left">  新しい製品グループの作成ページを表示できますが、実際に新しい製品グループを作成することはできません。    </td><td align="left">  製品グループを作成して編集できます。     </td></tr>
 <tr><td align="left">    <b>新しいアプリ</b>                            </td><td align="left">  新しいアプリの作成ページを表示できますが、実際にはアカウントに新しいアプリを作成することはできません。    </td><td align="left">  新しいアプリの名前を予約することで、アカウントで<a href="create-your-app-by-reserving-a-name.md">新しいアプリを作成</a>できます。また、申請を作成してアプリをストアに提出できます。     </td></tr>
 <tr><td align="left">    <b>新しいバンドル</b>&nbsp;*                       </td><td align="left">  新しいバンドルの作成ページを表示できますが、実際にはアカウントに新しいバンドルを作成することはできません。     </td><td align="left">  製品の新しいバンドルを作成できます。          </td></tr>
@@ -170,7 +170,7 @@ ms.locfileid: "2889401"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>取得</b>     </td><td>    製品の<a href="acquisitions-report.md">取得</a>レポートと<a href="add-on-acquisitions-report.md">アドオンの取得</a>レポートを表示できます。        </td><td>    該当なし    </td><td>    該当なし (親製品の設定は、**アドオン買収**レポートを含む)        </td><td>    該当なし                         </td></tr>
+    <tr><td align="left">    <b>取得</b>     </td><td>    製品の<a href="acquisitions-report.md">取得</a>レポートと<a href="add-on-acquisitions-report.md">アドオンの取得</a>レポートを表示できます。        </td><td>    該当なし    </td><td>    該当なし (親製品の設定は、**アドオン取得]** レポートを含む)        </td><td>    該当なし                         </td></tr>
     <tr><td align="left">    <b>利用状況</b> </td><td>    製品の<a href="usage-report.md">利用状況レポート</a>を表示できます。     </td><td>    該当なし       </td><td>    なし     </td><td>    該当なし         </td></tr>
     <tr><td align="left">    <b>正常性</b> </td><td>    製品の<a href="health-report.md">正常性レポート</a>を表示できます。    </td><td>    該当なし     </td><td>    なし     </td><td>    該当なし         </td></tr>
     <tr><td align="left">    <b>カスタマー フィードバック</b>    </td><td>    製品の <a href="reviews-report.md">[レビュー]</a> レポートと <a href="feedback-report.md">[フィードバック]</a> レポートを表示できます。       </td><td>    該当なし (フィードバックやレビューに返信するには、<b>[顧客への連絡]</b> アクセス許可を付与する必要があります)   </td><td>    該当なし     </td><td>    該当なし         </td></tr>
@@ -194,7 +194,7 @@ ms.locfileid: "2889401"
     <tbody>
     <tr><td align="left">    <b>プロモーション コード</b>     </td><td>    製品とそのアドオンの<a href="generate-promotional-codes.md">プロモーション コード</a>の注文と利用状況の情報、また利用状況情報を表示できます。         </td><td>    製品とそのアドオンの<a href="generate-promotional-codes.md">プロモーション コード</a>の注文の表示、管理、および作成、また利用状況情報の表示ができます。          </td><td>    該当なし (すべてのアドオンに親製品の設定が適用されます)     </td><td>    該当なし (すべてのアドオンに親製品の設定が適用されます)     </td></tr>
     <tr><td align="left">    <b>対象のプラン</b>     </td><td>    製品の<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">対象プラン</a>を表示できます。         </td><td>    製品の<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">対象プラン</a>を表示、管理、作成できます。          </td><td>    該当なし     </td><td>    該当なし      </td></tr>
-    <tr><td align="left">    <b>顧客への連絡</b>  </td><td>    <b>カスタマー フィードバック</b> アクセス許可も付与されている限り、<a href="respond-to-customer-feedback.md">カスタマー フィードバックへの返信</a>と<a href="respond-to-customer-reviews.md">カスタマー レビューへの返信</a>を表示できます。 製品に対して作成された<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知</a>も表示できます。    </td><td>    <a href="respond-to-customer-feedback.md">お客様のフィードバックに応答</a>し、<a href="respond-to-customer-reviews.md">お客様のレビューへの返信</a>が限り、<b>お客様のフィードバック</b>のアクセス許可が与えられてもすることができます。 製品に対する<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知の作成と送信</a>もできます。                   </td><td>    該当なし         </td><td>    該当なし                          </td></tr>
+    <tr><td align="left">    <b>顧客への連絡</b>  </td><td>    <b>カスタマー フィードバック</b> アクセス許可も付与されている限り、<a href="respond-to-customer-feedback.md">カスタマー フィードバックへの返信</a>と<a href="respond-to-customer-reviews.md">カスタマー レビューへの返信</a>を表示できます。 製品に対して作成された<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知</a>も表示できます。    </td><td>    <b>カスタマー フィードバック</b>のアクセス許可がも付与されている限り、<a href="respond-to-customer-feedback.md">顧客のフィードバックに返信して</a>、<a href="respond-to-customer-reviews.md">顧客のレビューに返信する</a>をことができます。 製品に対する<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知の作成と送信</a>もできます。                   </td><td>    該当なし         </td><td>    該当なし                          </td></tr>
     <tr><td align="left">    <b>実験</b></td><td>    製品の<a href="../monetize/run-app-experiments-with-a-b-testing.md">実験 (A/Bテスト)</a>と実験データを表示できます。   </td><td>    製品の<a href="../monetize/run-app-experiments-with-a-b-testing.md">実験 (A/B テスト)</a> の作成、管理、および表示と、実験データの表示ができます。     </td><td>    該当なし  </td><td>    該当なし                 </td></tr>
     <tr><td align="left">    <b>Microsoft Store セール イベント</b>&nbsp;*</td><td>    製品のセール イベントの状態を表示できます。   </td><td>    製品をセール イベントに追加して、割引を構成できます。      </td><td>    製品のセール イベントの状態を表示できます。   </td><td>    製品をセール イベントに追加して、割引を構成できます。      </td></tr>
     </tbody>

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1d808dd2991aa2ffd1e30967d329b3eced9f99
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018568"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2914100"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張
 
@@ -140,7 +140,7 @@ XAML UI を UWP プロジェクトに追加します。 基本的なマップの
 
 ### <a name="add-a-protocol-extension"></a>プロトコル拡張機能を追加する
 
-**ソリューション エクスプ ローラー**で、UWP プロジェクトの **package.appxmanifest** ファイルを開き、この拡張機能を追加します。
+**ソリューション エクスプ**ローラーでソリューションにパッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、この拡張機能を追加します。
 
 ```xml
 <Extensions>
@@ -311,9 +311,9 @@ public sealed class AppServiceTask : IBackgroundTask
 
 <a id="extension" />
 
-### <a name="add-an-app-service-extension-to-the-uwp-project"></a>UWP プロジェクトにアプリ サービスの拡張機能を追加する
+### <a name="add-an-app-service-extension-to-the-packaging-project"></a>アプリ サービスの拡張機能をパッケージ プロジェクトに追加します。
 
-UWP プロジェクトの **package.appxmanifest** ファイルを開き、アプリ サービスの拡張機能を ``<Application>`` 要素に追加します。
+パッケージ プロジェクトの**package.appxmanifest**ファイルを開き、アプリ サービスの拡張機能の追加、``<Application>``要素です。
 
 ```xml
 <Extensions>
@@ -398,7 +398,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>共有ターゲットの拡張機能を追加する
 
-**ソリューション エクスプ ローラー**で、UWP プロジェクトの **package.appxmanifest** ファイルを開き、拡張機能を追加します。
+**ソリューション エクスプ**ローラーで、ソリューションで、パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、拡張機能を追加します。
 
 ```xml
 <Extensions>
@@ -512,7 +512,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ### <a name="configure-the-background-task"></a>バックグラウンド タスクの構成
 
-マニフェスト デザイナーで、ソリューションの UWP プロジェクトの **package.appxmanifest** ファイルを開きます。
+マニフェスト デザイナーで、ソリューションにパッケージ プロジェクトの**package.appxmanifest**ファイルを開きます。
 
 **[宣言]** タブで、**[バックグラウンド タスク]** 宣言を追加します。
 

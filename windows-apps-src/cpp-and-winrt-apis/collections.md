@@ -1,38 +1,38 @@
 ---
 author: stevewhims
-description: C + +/WinRT 関数と多くの実装やコレクションを通過するときに時間と労力を節約する基本クラスを提供します。
-title: コレクション C + +/WinRT
+description: C++/WinRT 機能と、多くの時間と労力を実装やコレクションに合格するときに保存する基底クラスを提供します。
+title: コレクション、C++/WinRT
 ms.author: stwhi
 ms.date: 08/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、標準的な c、cpp、winrt、投影、コレクション
+keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、コレクション
 ms.localizationpriority: medium
 ms.openlocfilehash: dacfe4135402b85bac68b63c06f99f97001fa5b9
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889329"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2907706"
 ---
-# <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>コレクション[C + +/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>コレクションと[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
 > [!NOTE]
 > **一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。**
 
-内部では、Windows ランタイム コレクションには、大量の複雑な移動パーツがあります。 コレクション オブジェクトを Windows ランタイム関数に渡すか、独自のコレクションのプロパティとコレクション型を実装する場合は、関数と基本クラス C + +/WinRT をサポートします。 これらの機能は、自分の手の複雑さを解消し、時間と労力で多くの頭上を保存します。
+内部では、Windows ランタイムのコレクションでは、多くの複雑な移動部分があります。 コレクション オブジェクトを Windows ランタイム関数に渡すか、独自のコレクション プロパティとコレクション型を実装する場合は、関数と c++ の基底クラス/WinRT をサポートします。 これらの機能は、手の複雑さを解消し、時間と労力で、多くのオーバーヘッドを保存します。
 
 > [!IMPORTANT]
-> このトピックで説明する機能は、 [Windows 10 SDK Preview ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)では、インストールした場合、利用可能な以降できます。
+> このトピックで説明されている機能には、 [Windows 10 SDK プレビュー ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)をインストールした場合に利用可能な以降ができます。
 
-[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)は、Windows ランタイム インターフェイス要素のランダム アクセス コレクションによって実装です。 自分で**IVector**を実装する場合は、 [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)、 [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_)、および[**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_)を実装するために必要なもします。 場合でも、入力する*必要がある*ユーザー設定のコレクションには、多数の作業です。 Windows ランタイム API に渡すが目的に合ったしてすべての**std::vector** ( **std::map**では、または、 **std::unordered_map**) にデータがある場合、[はできますが可能な場合は、作業のレベルを避けるためです。 回避すること*が*可能なので、C + +/WinRT を使うと簡単かつ効率的にコレクションを作成するとします。
+[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)は、要素の任意のランダム アクセス コレクションによって実装された Windows ランタイム インターフェイスです。 **IVector**を自分で実装する場合は、 [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)、 [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_)、および[**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_)を実装する必要がありますがも。 を入力する*必要がある*カスタム コレクション場合でも、多くの作業です。 たい**std::vector** (または、 **::map**、または**std::unordered_map**) 内のデータがある場合は、Windows ランタイム API に渡すを行うためのすべてが可能であれば、作業のレベルを避けるため。 回避すること*は*できる限り、ためと、C++/WinRT では、わずかな労力で効率的にし、コレクションを作成するのに役立ちます。
 
-## <a name="helper-functions-for-collections"></a>コレクション ヘルパー関数
+## <a name="helper-functions-for-collections"></a>コレクションのヘルパー関数
 
-### <a name="general-purpose-collection-empty"></a>空の汎用コレクション
+### <a name="general-purpose-collection-empty"></a>空の汎用的なコレクション
 
-汎用のコレクションを実装する型の新しいオブジェクトを取得するには、 [**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector)関数のテンプレートを呼び出すことができます。 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)の場合、名前を付けてオブジェクトが返され、返されるオブジェクトの関数とプロパティと通話する際、インターフェイスです。
+汎用のコレクションを実装する型の新しいオブジェクトを取得するには、 [**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector)関数テンプレートを呼び出すことができます。 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)の場合、として、オブジェクトが返され、返されるオブジェクトの関数とプロパティを呼び出すことによってこれインターフェイスです。
 
 ```cppwinrt
 ...
@@ -58,11 +58,11 @@ int main()
 }
 ```
 
-上記の例でわかるコレクションを作成した後要素を追加、反復して通常 API から受信した任意の Windows ランタイム コレクション オブジェクトと同様に、オブジェクトを扱うできます。 コレクションを変更できないビューが必要な場合ように[IVector::GetView](/uwp/api/windows.foundation.collections.ivector-1.getview)を呼び出すことができます。 上記のパターン&mdash;のコレクションの作成と&mdash;、先に、データを渡したり、API からデータを取得する簡単なシナリオに適しています。
+上記のコード例で示すように、コレクションを作成した後要素を追加、それらを反復処理して通常 API から受信したすべての Windows ランタイム コレクション オブジェクトと同様に、オブジェクトを処理できます。 コレクションを固定のビューを必要がある場合に示すように[IVector::GetView](/uwp/api/windows.foundation.collections.ivector-1.getview)を呼び出すことができます。 前に示したパターン&mdash;のコレクションの作成と&mdash;が、データを渡すか、API からデータを取得する単純なシナリオに適しています。
 
-### <a name="general-purpose-collection-primed-from-data"></a>データから先読み汎用のコレクション
+### <a name="general-purpose-collection-primed-from-data"></a>データから先読み、汎用的なコレクション
 
-上記の例で表示できる**追加**の呼び出しの頭上も回避できます。 ソース データがあるまたは Windows ランタイム コレクション オブジェクトを作成する前に設定することができます。 その方法を示します。
+また、上記のコード例で表示される**追加**の呼び出しのオーバーヘッドを回避できます。 ソース データが既にまたは Windows ランタイムのコレクション オブジェクトを作成する前にデータを設定することができます。 その方法を以下に示します。
 
 ```cppwinrt
 auto coll1{ winrt::single_threaded_vector<int>({ 1,2,3 }) };
@@ -76,37 +76,37 @@ for (auto const& el : coll2)
 }
 ```
 
-**Winrt::single_threaded_vector**にデータを含む一時的なオブジェクトを通過すると同様に`coll1`上、します。 移動したりすることができます (されませんにアクセスする場合、もう一度を想定しています) **std::vector**関数にします。 両方のケースで、*右辺値*関数に渡します。 効率的に使用して、データをコピーしないようにするのには、コンパイラを有効にするとします。 詳細については、 *rvalue*したい場合は、[値のカテゴリ、およびへの参照](cpp-value-categories.md)を参照してください。
+**Winrt::single_threaded_vector**にデータを含む、一時的なオブジェクトを渡すことができますと同様に`coll1`額。 (されませんにアクセスして、もう一度していれば) **std::vector**を移動するか、関数にします。 どちらの場合も、関数に、*右辺値*を渡しています。 これにより、コンパイラ効率的にし、データのコピーを回避することができます。 を*rvalue*について詳しく知りたい場合は、[値のカテゴリとへの参照](cpp-value-categories.md)を参照してください。
 
-コレクションに XAML アイテム コントロールを連結する場合は、[することができます。 正しく[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)プロパティを設定する必要があること型**IVector** **IInspectable** (または[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)などの相互運用性の種類) の値に設定するに注意してください。 バインドとして、「適切な種類のコレクションを作成して、要素を追加するコード例を示します。
+XAML アイテム コントロールをコレクションにバインドする場合することができます。 ただし、 [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)プロパティを正しく設定する必要が**IVector** **IInspectable** (または、相互運用性の種類[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)など) の種類の値に設定することに注意してください。 以下に、バインディングの適切な種類のコレクションを作成し、それを要素に追加のコード例を示します。
 
 ```cppwinrt
 auto bookSkus{ winrt::single_threaded_vector<Windows::Foundation::IInspectable>() };
 bookSkus.Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 ```
 
-コレクション上にある*ことができます*が、XAML アイテム コントロールにバインドします。コレクションを見る。
+XAML アイテム コントロール; にバインド*できる*上のコレクションコレクションが監視可能なはありません。
 
-### <a name="observable-collection"></a>目に見えるコレクション
+### <a name="observable-collection"></a>監視可能なコレクション
 
-*見る*コレクションを実装する型の新しいオブジェクトを取得するには、するには、すべての要素の種類[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)関数のテンプレートを呼び出します。 要素の種類として**IInspectable**を使用するのには、目に見えるコレクション XAML アイテム コントロールにバインドするための適切な。
+*監視可能な*コレクションを実装する型の新しいオブジェクトを取得するには、任意の要素型を[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)関数テンプレートを呼び出します。 監視可能なコレクションを XAML アイテム コントロールをバインドに適したさせるには、要素の種類として**IInspectable**を使用します。
 
-[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_)の場合、名前を付けてオブジェクトが返され、インターフェイスを使用して (またはバインドされているコントロール) を呼び出す、返されるオブジェクトの関数とプロパティです。
+[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_)の場合、として、オブジェクトが返され、インターフェイスを経由する (またはバインドされているコントロール) を呼び出して、返されるオブジェクトの関数とプロパティです。
 
 ```cppwinrt
 auto bookSkus{ winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>() };
 ```
 
-その他の詳細については、およびコードの例では、ユーザーのバインドについてインターフェイス (UI) コントロール、目に見えるコレクションを参照してください[XAML アイテム; バインド C + +/WinRT コレクション](binding-collection.md)します。
+詳細についてとコード例は、ユーザーのバインディングについてインターフェイス (UI) コントロールを監視可能なコレクションは、「 [c++ へのバインド XAML アイテム コントロール/WinRT コレクション](binding-collection.md)します。
 
-### <a name="associative-collection-map"></a>結合のコレクション (表)
+### <a name="associative-collection-map"></a>また、関連のコレクション (マップ)
 
-説明したように 2 つの関数の結合コレクションのバージョンがあります。
+説明した 2 つの関数のバージョンを連想コレクションがあります。
 
-- [**Winrt::single_threaded_map**](/uwp/cpp-ref-for-winrt/single-threaded-map)関数テンプレートは、 [**IMap**](/uwp/api/windows.foundation.collections.imap_k_v_)名前を付けて以外を見る結合コレクションを返します。
-- [**Winrt::single_threaded_observable_map**](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)関数テンプレートは、として、 [**IObservableMap**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_)観測可能な結合コレクションを返します。
+- [**Winrt::single_threaded_map**](/uwp/cpp-ref-for-winrt/single-threaded-map)関数テンプレートでは、 [**IMap**](/uwp/api/windows.foundation.collections.imap_k_v_)として連想監視可能ではないコレクションを返します。
+- [**Winrt::single_threaded_observable_map**](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)関数テンプレートでは、監視可能な[**IObservableMap**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_)として連想コレクションを返します。
 
-データを含む、これらのコレクションを準備の種類**std::map**または**std::unordered_map**を*右辺値*を関数に渡すことができます (省略可能)。
+種類 **::map**または**std::unordered_map**の*右辺値*関数に渡すことによってこれらのコレクションにデータを必要に応じて素数ことができます。
 
 ```cppwinrt
 auto coll1{
@@ -121,13 +121,13 @@ std::map<winrt::hstring, int> values{
 auto coll2{ winrt::single_threaded_map<winrt::hstring, int>(std::move(values)) };
 ```
 
-### <a name="single-threaded"></a>1 つのスレッド
+### <a name="single-threaded"></a>シングル スレッド
 
-「シングル スレッド」これらの関数の名前の同時実行制御を提供しないことを示します&mdash;つまりとは違うスレッド セーフします。 これらの関数から返されるオブジェクトがすべてアジャイルであるために、スレッドの説明をアパートメントに関連することはありません (を参照してください[アジャイル オブジェクト C + +/WinRT](agile-objects.md))。 1 つのスレッドを対象としてがだけです。 する方が適切な方法の 1 つのデータまたはその他のアプリケーションのバイナリ インターフェイス (ABI) に通過する場合。
+すべての同時実行を用意しないことを示す、「シングル スレッド」これらの関数の名前に&mdash;スレッド セーフが不明、つまり、します。 スレッドの説明はこれらの関数から返されたオブジェクトはすべてアジャイルであるため、アパートメント無関係 (を参照してください[アジャイル オブジェクトの c++/WinRT](agile-objects.md))。 オブジェクトは、シングル スレッドですだけです。 する方が適切な方法の 1 つのデータまたはその他のアプリケーション バイナリ インターフェイス (ABI) に通過する場合。
 
-## <a name="base-classes-for-collections"></a>基本のクラスのコレクション
+## <a name="base-classes-for-collections"></a>コレクションの基底クラス
 
-場合は、完全な柔軟性を独自のユーザー設定のコレクションを実装する、したい苦労を実行しないようにします。 たとえば、これはカスタム ベクトル ビューはどのように*C + の支援なし +/WinRT の基本クラス*します。
+、完全な柔軟性を、独自のカスタム コレクションを実装する場合、するされる場合は、ハード方法は、これを行うようにします。 たとえば、これは、ベクトルのカスタム ビューは次のよう *、C++ のサポートなし/WinRT の基底クラス*します。
 
 ```cppwinrt
 ...
@@ -150,7 +150,7 @@ struct MyVectorView :
 IVectorView<float> view{ winrt::make<MyVectorView>() };
 ```
 
-代わりに、カスタム ベクトル ビュー、 [**winrt::vector_view_base**](/uwp/cpp-ref-for-winrt/vector-view-base)構造体のテンプレートから取得、および実装するだけでデータを格納しているコンテナーを公開する**get_container**関数ずっと簡単です。
+代わりに、大幅に容易[**winrt::vector_view_base**](/uwp/cpp-ref-for-winrt/vector-view-base)構造体のテンプレートから、ベクトルのカスタム ビューを派生し、データを保持するコンテナーを公開する**get_container**関数を実装するのにです。
 
 ```cppwinrt
 struct MyVectorView2 :
@@ -167,7 +167,7 @@ private:
 };
 ```
 
-**Get_container**によって返されるコンテナーするその**winrt::vector_view_base** **開始**位置と**終了**インターフェイスを提供する必要がありますが必要です。 上記の例のように、 **std::vector**を提供します。 独自のカスタム コンテナーなど、同じ契約を満たす任意のコンテナーに戻ることができます。
+**Get_container**によって返されるコンテナーするその**winrt::vector_view_base** **開始**と**終了**のインターフェイスを提供する必要がありますが想定されます。 上記の例のようにを**std::vector**を提供します。 ただし、独自のカスタム コンテナーを含む、同じコントラクトを満たすすべてのコンテナーを返すことができます。
 
 ```cppwinrt
 struct MyVectorView3 :
@@ -200,11 +200,11 @@ private:
 };
 ```
 
-これらは、基本クラス C + +/WinRT は、ユーザー設定のコレクションを実装するために用意されています。
+これらは、基本クラス C + + WinRT を提供して、カスタムのコレクションを実装できます。
 
 ### [<a name="winrtvectorviewbase"></a>winrt::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
 
-上記の例を参照してください。
+上記のコード例を参照してください。
 
 ### [<a name="winrtvectorbase"></a>winrt::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
 
@@ -333,5 +333,5 @@ private:
 * [winrt::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## <a name="related-topics"></a>関連トピック
-* [値のカテゴリ、およびへの参照](cpp-value-categories.md)
+* [値のカテゴリとへの参照](cpp-value-categories.md)
 * [XAML アイテム コントロール: C++/WinRT コレクションへのバインド](binding-collection.md)

@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 description: 表示は発光効果の 1 つで、アプリの対話型要素に奥行きを与え、焦点を当てるために役立ちます。
-title: 強調表示を表示します。
+title: 表示ハイライト
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
@@ -15,22 +15,22 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888901"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2915316"
 ---
-# <a name="reveal-highlight"></a>強調表示を表示します。
+# <a name="reveal-highlight"></a>表示ハイライト
 
 ![ヒーロー イメージ](images/header-reveal-highlight.svg)
 
-強調表示は、それらの近くにポインターを置いたときに、コマンド バーなどの対話型の要素を強調表示する光の効果を表示します。 
+表示ハイライトは、ユーザーがポインターを近付けたときに、コマンド バーなどの対話型要素を強調表示する発光効果。 
 
 > **重要な API**: [RevealBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、[VisualState クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>動作の仕組み
-対話型の要素を強調表示通話対応をして要素のコンテナー、ポインターがこの図に示すように、近くに表示されます。
+対話型要素にハイライト注意を表示しますするには、ポインターが近くにある、次の図に示すように、要素のコンテナーを表示します。
 
 ![表示のビジュアル効果](images/Nav_Reveal_Animation.gif)
 
@@ -58,7 +58,7 @@ ms.locfileid: "2888901"
 
 ## <a name="how-to-use-it"></a>使用方法
 
-表示効果は、一部のコントロールでは自動的に動作します。 この記事の[他のコントロール表示を有効にして](#enabling-reveal-on-other-controls)、[カスタム コントロールの表示を有効にする](#enabling-reveal-on-custom-controls)セクションで説明するよう他のコントロールには、コントロールに特別なスタイルを割り当てることによって表示を有効にできます。
+表示効果は、一部のコントロールでは自動的に動作します。 他のコントロールでは、この記事の[他のコントロールで表示効果を有効にして](#enabling-reveal-on-other-controls)、[カスタム コントロールで表示効果を有効にする](#enabling-reveal-on-custom-controls)セクションで説明したように、コントロールに特別なスタイルを割り当てることにより表示効果を有効にできます。
 
 ## <a name="controls-that-automatically-use-reveal"></a>表示効果が自動的に使用されるコントロール
 
@@ -69,7 +69,7 @@ ms.locfileid: "2888901"
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-強調表示を表示するいくつかのさまざまなコントロールに次の図。
+強調表示効果を表示するいくつかの異なるコントロールで次の図。
 
 ![表示効果の例](images/RevealExamples_Collage.png)
 
@@ -134,8 +134,8 @@ ms.locfileid: "2888901"
 
 
 これらの効果は、次の 2 つのブラシによって定義されます。 
-* **RevealBorderBrush**で定義枠線の表示
-* Hover の表示が**RevealBackgroundBrush**で定義されています。
+* 境界線による表示は、 **RevealBorderBrush**によって定義します。
+* ホバーによる表示は**RevealBackgroundBrush**によって定義されます。
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -259,7 +259,7 @@ ms.locfileid: "2888901"
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>カスタム コントロールに対する表示効果を微調整する 
 
-カスタムまたは再テンプレートのコントロールまたはユーザー設定のコマンド実行等高線グラフで表示を有効にすると以下のヒント、効果を最適化できます。
+カスタムまたは再テンプレート化されたコントロールまたはカスタムのコマンド実行サーフェスで表示効果を有効にすると次のヒント、効果を最適化できます。
  
 * 隣接する項目の高さまたは幅が一致しない場合 (特に、リスト内): 境界線のアプローチ動作を削除し、ホバー時のみ境界線を表示しておきます。
 * 無効状態への移行と解除が頻繁に発生するコマンド実行項目の場合: 境界線アプローチのブラシを要素のバックプレートとバックプレートの境界線に配置して、状態を強調します。

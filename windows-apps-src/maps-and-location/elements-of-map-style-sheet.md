@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, マップ, マップ スタイル シート
 ms.localizationpriority: medium
 ms.openlocfilehash: 984741de5be585f7d6d726ec4c736e6ebce78830
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892305"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905745"
 ---
 # <a name="map-style-sheet-reference"></a>マップ スタイル シート リファレンス
 
-Microsoft マッピング テクノロジの使用は、マップの外観を定義するスタイル シートをマッピングします。  マップのスタイル シートは、JavaScript オブジェクト表記法 (JSON) を使用して定義されのさまざまな方法では、Windows ストア アプリケーションの[MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) [MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_)メソッドを使用することができます。
+Microsoft のマッピングのテクノロジの使用は、地図の外観を定義するスタイル シートをマップします。  マップ スタイル シートでは、JavaScript Object Notation (JSON) を使用して定義され、さまざまな方法を含む、Windows ストア アプリケーションの[MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol)で[MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_)メソッドを通じてで使用できます。
 
 たとえば、次の JSON を使用して、水域を赤で、水域のラベルを緑で、陸地領域を青で表示できます。
 
@@ -51,9 +51,9 @@ JSON を使用して地図からすべてのラベルとポイントを削除す
 <a id="entries" />
 
 ## <a name="entries"></a>エントリ
-この表では、文字 ">" を使用してエントリ階層内のレベルを表しています。  Windows のバージョンをサポートして項目ごとに、無視することも表示されます。
+この表では、文字 ">" を使用してエントリ階層内のレベルを表しています。  どのバージョンの Windows の各エントリをサポートして、これは無視することも表示されます。
 
-| ビルド | Windows 版のリリース名 |
+| ビルド | Windows のリリースの名前 |
 |-------|----------------------|
 | 1506  | Creators Update      |
 | 1629  | Fall Creators Update |
@@ -65,47 +65,47 @@ JSON を使用して地図からすべてのラベルとポイントを削除す
 | settings                     | [設定](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   | スタイル シート全体に適用される設定。 |
 | mapElement                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 地図のすべてのエントリの親エントリ。 |
 | > baseMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | すべての非ユーザー エントリの親エントリ。 |
-| >> area                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Land を説明する領域を使用します。  これらは、構造エントリの下にある物理建物と混同しないようにする必要があります。 |
-| >>> airport                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含空港の領域です。 |
+| >> area                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 土地を記述する領域を使用します。  これらは、構造体のエントリは物理建物を混同しないようにする必要があります。 |
+| >>> airport                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 空港を領域。 |
 | >>> areaOfInterest           | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 企業や興味深いポイントが高度に集中しているエリアです。 |
-| >>> cemetery                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含 cemeteries の領域です。 |
-| >>> continent                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 大陸領域ラベル。 |
-| >>> education                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 学校やその他の教育機能が含まれる領域です。 |
-| >>> indigenousPeoplesReserve | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 先住民族の人が含まれる領域を確保します。 |
-| >>> industrial               | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 産業用のために使用するための領域です。 |
-| >>> island                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 島領域ラベル。 |
-| >>> medical                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 医療のために使用する領域 (例: 病院キャンパス)。 |
-| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Military 関数を使用して、広義 military ベースまたは領域です。 |
-| >>> nautical                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Nautical の関連するために使用するための領域です。 |
-| >>> neighborhood             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | コンピューターの領域のラベル。 |
-| >>> runway                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 機体を滑走として使用される領域です。 |
+| >>> cemetery                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 取り巻く墓地の領域です。 |
+| >>> continent                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 大陸領域のラベル。 |
+| >>> education                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 学校およびその他の教育の機能を包含する領域。 |
+| >>> indigenousPeoplesReserve | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 先住民人々 を取り巻く領域を予約します。 |
+| >>> industrial               | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 工業目的に使用される領域。 |
+| >>> island                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 島領域のラベル。 |
+| >>> medical                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 医療用に使用される領域 (例: 病院の構内)。 |
+| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 軍事を取り巻くまたは軍事使用される領域。 |
+| >>> nautical                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 海事関連する目的に使用される領域。 |
+| >>> neighborhood             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Neighborhood 領域のラベル。 |
+| >>> runway                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 機内の滑走路として使われる領域。 |
 | >>> sand                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 海辺のような砂地の領域。 |
 | >>> shoppingCenter           | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | モールやその他のショッピング センター用に割り当てられた土地の領域。 |
-| >>> stadium                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含場の領域です。 |
+| >>> stadium                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 取り巻くスタジアムの領域です。 |
 | >>> underground              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 地下のエリア (例: 地下鉄の駅の専有面積)。 |
 | >>> vegetation               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 森林、草原領域など。 |
 | >>>> forest                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 森林の領域。 |
-| >>>> golfCourse              | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 3 四半期のゴルフ コースに含まれる領域です。 |
-| >>>> park                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 領域きましたが含まれます。 |
+| >>>> golfCourse              | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 取り巻くゴルフコース領域。 |
+| >>>> park                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 取り巻く公園の領域です。 |
 | >>>> playingField            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 野球場やテニス コートなどの競技場。 |
-| >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 種類が含まれる領域を確保します。 |
-| >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 何らかのアイコンで描画されたされているすべてのポイント機能します。 |
-| >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | 番号のラベルに対応します。 |
-| >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 自然の特徴を表すアイコン。 |
+| >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 特性を取り巻く領域を予約します。 |
+| >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 何らかのアイコンで描画されるすべてのポイント機能。 |
+| >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | アドレスは、ラベルを番号します。 |
+| >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 自然な機能を表すアイコン。 |
 | >>>> peak                    | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 山頂を表すアイコン。 |
 | >>>>> volcanicPeak           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 火山の山頂を表すアイコン。 |
 | >>>> waterPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 滝などの水に関連する場所を表すアイコン。 |
-| >>> pointOfInterest          | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 興味のある場所を表すアイコン。 |
-| >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | すべてのビジネスの場所を表すアイコン。 |
-| >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 博物館、動物園などなど観光アトラクションを表すアイコン。 |
-| >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | コミュニティへの一般的な用途を表すアイコン。 |
-| >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 学校やその他の教育を表すアイコンは、上の場所に関連します。 |
-| >>>>> entertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | エンターテイメントの場所など、劇場、cinemas などを表すアイコン。 |
-| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 駐車、銀行、ガソリンなどの重要なサービスを表すアイコン。 |
-| >>>>> foodPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | レストラン、喫茶店などを表すアイコン。 |
-| >>>>> lodgingPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | ホテルやその他の宿泊費企業を表すアイコン。 |
+| >>> pointOfInterest          | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 興味深いの任意の場所を表すアイコン。 |
+| >>>> business                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 任意のビジネスの場所を表すアイコン。 |
+| >>>>> attractionPoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 博物館、zoos など観光名所を表すアイコン。 |
+| >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | コミュニティに一般的な用途の場所を表すアイコン。 |
+| >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 学校およびその他の教育機関を表すアイコンは関連の場所です。 |
+| >>>>> entertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 劇場、cinemas などのエンターテインメントつながりますを表すアイコン。 |
+| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 駐車、銀行、ガスなどの重要なサービスを表すアイコン。 |
+| >>>>> foodPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | レストラン、カフェなどを表すアイコン。 |
+| >>>>> lodgingPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | ホテルやその他の宿泊企業を表すアイコン。 |
 | >>>>> realEstatePoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 不動産企業を表すアイコン。 |
-| >>>>> shoppingPoint          | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | ホテルやその他の宿泊費企業を表すアイコン。 |
+| >>>>> shoppingPoint          | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | ホテルやその他の宿泊企業を表すアイコン。 |
 | >>> populatedPlace           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 住民のいる場所のサイズを表すアイコン (例: 市区町村)。 |
 | >>>> capital                 | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 住民のいる場所の首都を表すアイコン。 |
 | >>>>> adminDistrictCapital   | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 州の州都や都道府県の県庁所在地を表すアイコン。 |
@@ -114,37 +114,37 @@ JSON を使用して地図からすべてのラベルとポイントを削除す
 | >>> roadExit                 | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 通常、通行が管理された高速道路の出口を表すアイコン。 |
 | >>> transit                  | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | バスの停留所、鉄道の駅、空港などを表すアイコン。 |
 | >> political                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 国、地域、州などの政治的な区域。 |
-| >>> countryRegion            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 国地域の枠線やラベル。 |
-| >>> adminDistrict            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin1、状態、都道府県など、枠線し、ラベルを付けます。 |
-| >>> district                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin2 に対して、郡など、枠線し、ラベルを付けます。 |
+| >>> countryRegion            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 国地域の境界線とラベル。 |
+| >>> adminDistrict            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin1、状態、都道府県など、境界線し、ラベルを付けます。 |
+| >>> district                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin2、郡などの境界線し、ラベルを付けます。 |
 | >> structure                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建物やその他の建物のような構造体。 |
 | >>> building                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建物します。 |
 | >>>> educationBuilding       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建物の教育機関向けに使用します。 |
-| >>>> medicalBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建物のために、医療病院などに使用します。 |
-| >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建物の空港などの送信に使用します。 |
+| >>>> medicalBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建物など、病院医療目的に使用します。 |
+| >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建物空港などの転送時に使用します。 |
 | >> transportation            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 交通輸送網の一部である線 (例: 道路、鉄道、フェリー航路)。 |
 | >>> road                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | すべての道路を表す線。 |
-| >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 線を表す、大きく高速道路を制御します。 |
-| >>>>> highSpeedRamp          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 行を高速傾斜通常に接続するには、高速道路が制御されます。 |
-| >>>> highway                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 高速道路を表す行です。 |
-| >>>> majorRoad               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 幹線道路を表す行です。 |
-| >>>> arterialRoad            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Arterial 道路を表す行です。 |
-| >>>> street                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 道路を表す行です。 |
-| >>>>> ramp                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 高速道路に接続する通常のグラデーションを表す行です。 |
-| >>>>> unpavedStreet          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 装備されて道路を表す行です。 |
-| >>>> tollRoad                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 使用するコスト道路を表す行です。 |
+| >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | アクセスの制御された、大規模な高速道路を表す線。 |
+| >>>>> highSpeedRamp          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 通常に接続する高速ランプを表す線は、高速道路を制御します。 |
+| >>>> highway                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 高速道路を表す線。 |
+| >>>> majorRoad               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 主要な道路を表す線。 |
+| >>>> arterialRoad            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Arterial 道路を表す線。 |
+| >>>> street                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 道路を表す線。 |
+| >>>>> ramp                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 通常は高速道路を接続ランプを表す線。 |
+| >>>>> unpavedStreet          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 装備されて道路を表す線。 |
+| >>>> tollRoad                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 使用する有料道路を表す線。 |
 | >>> railway                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 鉄道の路線。 |
 | >>> trail                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 公園内の遊歩道やハイキング コース。 |
-| >>> walkway                  | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 管理者特権 walkway します。 |
+| >>> walkway                  | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 管理者特権の walkway します。 |
 | >>> waterRoute               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | フェリー航路の線。 |
 | >> water                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 水のように見えるものすべて。 これには海や河川が含まれます。 |
 | >>> river                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 河川、小川、その他の水路。  これは線の場合も、多角形の場合もあり、線があり、河川以外の水域に接続している場合があることに注意してください。 |
-| > routeMapElement            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | すべてのルーティング関連エントリします。 |
+| > routeMapElement            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | すべてのルーティング関連するエントリ。 |
 | >> routeLine                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 行のルーティング エントリに関連します。 |
-| >>> drivingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 段落のルートを表す行です。 |
-| >>> scenicRoute              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 景色駆動ルートを表す行です。 |
-| >>> walkingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 線を表すルートを説明します。 |
-| > userMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | すべてのユーザーのエントリです。 |
+| >>> drivingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 自動車ルートを表す線。 |
+| >>> scenicRoute              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 景色の良い道自動車ルートを表す線。 |
+| >>> walkingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 線を表す walking ルートです。 |
+| > userMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | すべてのユーザー エントリ。 |
 | >> userBillboard             | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 既定の [MapBillboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) インスタンスのスタイル。 |
 | >> userLine                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 既定の [MapPolyline](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mappolyline) インスタンスのスタイル。 |
 | >> userModel3D               | [MapElement3D](#mapelement3d) |      |  ✔   |  ✔   |  ✔   | 既定の [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) インスタンスのスタイル。  これは、主に renderAsSurface を設定するためのものです。 |
@@ -178,13 +178,13 @@ JSON を使用して地図からすべてのラベルとポイントを削除す
 | landColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 陸地に何かを描画する前の陸地の ARGB カラー値。 |
 | logosVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | **Organization** プロパティを持つ項目に適切なロゴを描画するか、汎用のアイコンを使用するかを示すフラグ。 |
 | officialColorVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 公式の色のプロパティを持っている項目 (中国での乗り換え線など) をその色を描画する必要があるかどうかを示すフラグ。 たとえば、白黒の地図ではこの値をオフにします。 |
-| rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | ラスター領域があるため、ベクトル (日本および韓国) より良い表現を描画するかどうかを示すフラグ。 |
+| rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | ラスター領域があるため、ベクトル (日本、韓国) よりも優れた表現を描画するかどうかを示すフラグ。 |
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 地図上の高度シェーディングを描画するかどうかを示すフラグ。 |
-| shadedReliefDarkColor        | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 影付き起伏の暗い側の色。  アルファ チャネルでは、最大アルファ値を表します。 |
-| shadedReliefLightColor       | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 影付き起伏の明るい側の色。  アルファ チャネルでは、最大アルファ値を表します。 |
-| shadowColor                  | Color   |      |      |      |  ✔   | 影を使用してアイコンの影の色です。 |
+| shadedReliefDarkColor        | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 影付き起伏の暗い側の色。  アルファ チャネルは最大アルファ値を表します。 |
+| shadedReliefLightColor       | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 影付き起伏の明るい側の色。  アルファ チャネルは最大アルファ値を表します。 |
+| shadowColor                  | Color   |      |      |      |  ✔   | シャドウを使用しているアイコンの影の色。 |
 | spaceColor                   | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 地図の周囲の領域の ARGB カラー値。 |
-| useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | [SVG の元の色が画像の色のパレット エントリを検索するのではなく、使用するかどうかを示すフラグです。 |
+| useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | SVG の元の色が画像の色のパレット エントリを検索するのではなく、使用するかどうかを示すフラグ。 |
 
 <a id="mapelement" />
 
@@ -218,7 +218,7 @@ JSON を使用して地図からすべてのラベルとポイントを削除す
 | borderOutlineColor           | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 塗りつぶされた多角形の境界線のセカンダリまたはケーシング線の色。 |
 | borderStrokeColor            | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 塗りつぶされた多角形の境界線のプライマリ線の色。 |
 | borderVisible                | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| borderWidthScale             | Float   |  ✔   |  ✔   |  ✔   |  ✔   | 罫線の線が拡大/縮小する金額です。 たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
+| borderWidthScale             | Float   |  ✔   |  ✔   |  ✔   |  ✔   | 境界線の太さが拡大縮小される量。 たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
 
 <a id="pointstyle" />
 
@@ -228,7 +228,7 @@ JSON を使用して地図からすべてのラベルとポイントを削除す
 
 | プロパティ                     | 型    | 1506 | 1629 | 1713 | Next | 説明 |
 |------------------------------|---------|------|------|------|------|-------------|
-| 図形、背景             | Float   |      |      |      |  ✔   | 存在する任意の図形を置き換える--アイコンの背景として使用する図形です。 |
+| 図形のバック グラウンド             | Float   |      |      |      |  ✔   | -が存在する任意の図形を置き換えて、アイコンの背景として使用する図形です。 |
 | stemAnchorRadiusScale        | Float   |      |      |  ✔   |  ✔   | アイコン ステムのアンカー ポイントを拡大縮小する量。  たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
 | stemColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 3D モードでアイコンの下部から出ている幹の色。 |
 | stemHeightScale              | Float   |      |      |  ✔   |  ✔   | アイコンのステムの長さを拡大縮小する量。  たとえば、既定の場合は *1* を、2 倍の長さの場合は *2* を使用します。 |

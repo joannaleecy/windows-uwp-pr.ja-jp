@@ -2,7 +2,7 @@
 author: normesta
 Description: Fix issues that prevent your desktop application from running in an MSIX container
 Search.Product: eADQiWindows 10XVcnh
-title: デスクトップ アプリケーションを MSIX コンテナーで実行できるようにする問題を修正します。
+title: デスクトップ アプリケーション、MSIX コンテナーでの実行を妨げている問題を修正します。
 ms.author: normesta
 ms.date: 07/02/2018
 ms.topic: article
@@ -11,102 +11,102 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 46d5705233af9e8254b9ac89a2d6e9891e90701f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888221"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2916439"
 ---
-# <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>パッケージのサポート フレームワークを使用して MSIX パッケージにランタイムの修正プログラムを適用します。
+# <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>パッケージのサポートのフレームワークを使用して MSIX パッケージにランタイムの修正プログラムを適用します。
 
-パッケージのサポート フレームワークは MSIX コンテナーに実行できるように、ソース コードへのアクセスをしていない場合、既存の win32 アプリケーションに修正を適用することができるファイルを開くキットです。 パッケージのサポート フレームワークでは、アプリケーション モダンなランタイム環境のベスト プラクティスに従うことができます。
+パッケージのサポートのフレームワークでは、修正プログラムの適用、既存の win32 アプリケーションをソース コードにアクセスできない場合、MSIX コンテナーで実行できるようにするために役立つ、オープン ソースのキットです。 パッケージのサポートのフレームワークには、最新のランタイム環境のベスト プラクティスに従って、アプリケーションが役立ちます。
 
-パッケージのサポート フレームワークを作成するには、Microsoft Research (MSR) が開発したファイルを開くフレームワーク API リダイレクションと接続でき[は](https://www.microsoft.com/en-us/research/project/detours)テクノロジを活用できます。
+パッケージのサポートのフレームワークを作成するには、Microsoft Research (MSR) によって開発された、オープン ソースのフレームワークは、API のリダイレクトおよびフックを際に役立つテクノロジ[は](https://www.microsoft.com/en-us/research/project/detours)可能です。
 
-このフレームワークがファイルを開く、軽量、アプリケーションの問題を解決する簡単に使用できます。 他のユーザーの投資の一番上に作成して、世界のコミュニティに相談するには、営業案件も提供します。
+このフレームワークは、オープン ソース、軽量で、アプリケーションの問題を解決する迅速に使用できます。 世界では、コミュニティに相談して、他のユーザーへの投資の最上位に構築する機会もできます。
 
-## <a name="a-quick-look-inside-of-the-package-support-framework"></a>概要パッケージのサポート フレームワーク内
+## <a name="a-quick-look-inside-of-the-package-support-framework"></a>パッケージのサポート フレームワーク内での確認
 
-パッケージのサポート フレームワークには、実行可能ファイル、ランタイム マネージャー DLL、一連の実行時の修正プログラムが含まれています。
+パッケージのサポートのフレームワークには、実行可能ファイル、ランタイム マネージャー、DLL とランタイムの修正プログラムのセットが含まれています。
 
 ![パッケージのサポート フレームワーク](images/desktop-to-uwp/package-support-framework.png)
 
-しくみは次のとおりです。 アプリに適用する fix(s) を指定する構成ファイルを作成します。 次に、shim 起動ツールの実行可能ファイルを指すように、パッケージを変更してみましょう。
+しくみは次のとおりです。 アプリケーションに適用する fix(s) を指定するための構成ファイルを作成します。 次に、shim ランチャーの実行可能ファイルをポイントするパッケージを変更します。
 
-ユーザーは、アプリケーションを起動、shim 起動ツールを実行している最初の実行可能ファイルです。 構成ファイルを読み取り、アプリケーションのプロセスにランタイム fix(s) とランタイム マネージャー DLL を挿入します。
+ユーザーは、アプリケーションを起動、shim ランチャーが実行される最初の実行可能ファイルです。 これは、構成ファイルの読み取りし、ランタイム fix(s) とランタイム manager DLL をアプリケーションのプロセスに挿入します。
 
-![パッケージのサポート Framework DLL の挿入](images/desktop-to-uwp/package-support-framework-2.png)
+![パッケージのサポート フレームワーク DLL インジェクション](images/desktop-to-uwp/package-support-framework-2.png)
 
-ランタイム マネージャーでは、アプリケーションを実行する MSIX コンテナー内では、必要に応じて、修正プログラムが適用されます。
+ランタイム マネージャーでは、MSIX コンテナー内で実行するアプリケーションでは、必要に応じて、修正プログラムが適用されます。
 
-このガイドには、アプリケーションの互換性の問題を識別するため、検索、適用、および runtime を拡張するには、それらを解決するを修正する.
+このガイドには、アプリケーションの互換性の問題を識別するため、それらに対処する修正プログラムを検索して、適用すると、ランタイムを拡張します。
 
 <a id="identify" />
 
-## <a name="identify-packaged-application-compatibility-issues"></a>パッケージ アプリケーションの互換性の問題を特定します。
+## <a name="identify-packaged-application-compatibility-issues"></a>パッケージ化されたアプリケーションの互換性の問題を特定します。
 
-最初に、アプリケーションのパッケージを作成します。 次に、インストール、実行し、その動作を確認します。 互換性の問題を特定するのに役立つエラー メッセージがあります。 問題を識別するのに[プロセス モニター](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)を使用することもできます。  一般的な問題は、作業ディレクトリおよびプログラム パスのアクセス許可に関するアプリケーションの前提条件に関連しています。
+まず、アプリケーションのパッケージを作成します。 次に、インストールを実行し、その動作を確認します。 互換性の問題を特定する際に役立つエラー メッセージを受け取る可能性があります。 問題を特定するのに[プロセスのモニター](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)を使用することもできます。  一般的な問題に関連する作業ディレクトリとプログラムのパスのアクセス許可に関するアプリケーションの前提条件です。
 
-### <a name="using-process-monitor-to-identify-an-issue"></a>プロセスのモニターを使用して、問題を識別するには
+### <a name="using-process-monitor-to-identify-an-issue"></a>プロセスのモニターを使用して、問題を特定するには
 
-[モニターのプロセス](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)は、アプリのファイルと、レジストリ操作とその結果を調べるの強力なユーティリティです。  アプリケーションの互換性の問題を理解することができます。  プロセス モニターを開いた後、フィルターを追加する (フィルター > フィルター]) から実行可能なアプリケーションのイベントのみを含めます。
+[プロセスのモニター](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)は、アプリのファイルとレジストリの操作、およびその結果を監視するための強力なユーティリティです。  アプリケーションの互換性の問題について理解することができます。  プロセスのモニターを開いたら、フィルターを追加します (フィルター > フィルター] をクリックします) をアプリケーションの実行可能ファイルからのイベントのみが含まれます。
 
-![ProcMon アプリのフィルター](images/desktop-to-uwp/procmon_app_filter.png)
+![ProcMon アプリ フィルター](images/desktop-to-uwp/procmon_app_filter.png)
 
-イベントの一覧が表示されます。 これらのイベントの多くの単語**成功**を**結果**列に表示してされます。
+イベントの一覧が表示されます。 これらのイベントの多くに、単語**成功**を**結果**の列に表示してされます。
 
 ![ProcMon イベント](images/desktop-to-uwp/procmon_events.png)
 
-必要に応じて、のみエラーだけを表示するイベントをフィルター処理できます。
+必要に応じて、のみエラーのみを表示するイベントをフィルター処理することができます。
 
-![成功の ProcMon を除外します。](images/desktop-to-uwp/procmon_exclude_success.png)
+![ProcMon 除外の成功](images/desktop-to-uwp/procmon_exclude_success.png)
 
-ファイル システムのアクセス エラーが疑われる場合は、System32/SysWOW64 またはパッケージ ファイル パスのいずれかの下にある失敗のイベントを検索します。 フィルターも役立ちますここでは、すぎます。 このリストの一番下にある起動し、上方向にスクロールします。 このリストの下部に表示されるエラーが発生した最近します。 「パスと名前は見つかりませんでした」、「アクセス拒否されると、」などの文字列を含むエラーをほとんど注意し、不審な外観がないことを無視します。 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)には、次の 2 つの問題があります。 次の図に表示される一覧でこれらの問題が発生したことができます。
+ファイルシステムへアクセスの失敗が疑われる場合は、[System32/SysWOW64 またはパッケージのファイル パスの下である障害が発生したイベントを検索します。 フィルターを使っても役立つここでは、すぎます。 この一覧の下部に開始し、上方向にスクロールします。 この一覧の下部に表示されるエラーは、最近発生しています。 「アクセス拒否」などの文字列が含まれるエラーと「パスと名前見つからない」にほとんどの注意を払うし、疑わしい外観がないことを無視します。 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)では、2 つの問題があります。 次の図で表示された一覧でそれらの問題を確認できます。
 
 ![ProcMon Config.txt](images/desktop-to-uwp/procmon_config_txt.png)
 
-このイメージに表示される最初の問題、アプリケーションは"C:\Windows\SysWOW64"パスに配置されている"Config.txt"ファイル内の参照に失敗します。 アプリケーションがパスを直接参照しようとしている可能性が高いことはできません。 ほとんどの場合、パス、相対参照を使用して、そのファイルから読み取るしようとして"System32/SysWOW64"では既定では、アプリケーションの作業ディレクトリします。 これは、アプリケーションがパッケージのどこかに設定する作業の現在のディレクトリを待っていることを示しています。 [Appx 内を検索、ファイルが実行可能ファイルと同じディレクトリ内に存在することを確認できます。
+この画像に表示される最初の問題、アプリケーションは、"C:\Windows\SysWOW64"パスにある"Config.txt"ファイルから読み取るに失敗しています。 アプリケーションがそのパスを直接参照しようとしている可能性が高いことはできません。 相対パスを使用して、そのファイルから読み取るしようとして、"System32/SysWOW64"は、アプリケーションの作業ディレクトリを既定では、ほとんどの場合、します。 これは、アプリケーションでは、パッケージにどこか設定されている現在の作業ディレクトリを想定を示しています。 Appx 内で見ると、実行可能ファイルと同じディレクトリで、ファイルが存在することを確認できます。
 
-![アプリ Config.txt](images/desktop-to-uwp/psfsampleapp_config_txt.png)
+![アプリの Config.txt](images/desktop-to-uwp/psfsampleapp_config_txt.png)
 
-2 番目の問題は、次の図に表示されます。
+2 番目の問題は、次の図が表示されます。
 
 ![ProcMon ログ ファイル](images/desktop-to-uwp/procmon_logfile.png)
 
-この問題は、[パッケージ パス. log ファイルを作成するアプリケーションが失敗しています。 これにより、ファイルのリダイレクト shim が役立つ場合がありますがお勧めします。
+この問題は、アプリケーションは、そのパッケージのパスに .log ファイルを書き込むに失敗しています。 これにより、ファイルのリダイレクト shim が役立つ場合がありますがお勧めします。
 
 <a id="find" />
 
-## <a name="find-a-runtime-fix"></a>実行時の修正プログラムを検索します。
+## <a name="find-a-runtime-fix"></a>ランタイムの修正プログラムを見つける
 
-[PSF には、ファイルのリダイレクト shim など、使用できるランタイム修正が含まれています。
+PSF には、ファイルのリダイレクト shim など、今すぐに使用できるランタイムの修正プログラムが含まれています。
 
 ### <a name="file-redirection-shim"></a>ファイルのリダイレクト Shim
 
-書き込みまたは MSIX コンテナーで実行しているアプリケーションからアクセスすることのないディレクトリ内のデータを読み取る試みをリダイレクトするのには、[ファイルのリダイレクト Shim](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)を使用できます。
+[ファイル リダイレクト Shim](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)を使用して、リダイレクト書き込みまたはディレクトリにない、MSIX コンテナーで実行されるアプリケーションからアクセス可能なデータを読み取るしようとすることができます。
 
-たとえば場合は、アプリケーションは、実行可能アプリケーションと同じディレクトリ内にあるログ ファイルに書き込み、ローカルのアプリのデータ ストアなどの別の場所でそのログ ファイルを作成するのには[ファイル リダイレクション Shim](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)を使用ことができます。
+たとえば、アプリケーションが、アプリケーションの実行可能ファイルと同じディレクトリにあるログ ファイルに書き込む場合、は、ローカル アプリ データ ストアなどの別の場所にそのログ ファイルを作成する[ファイルのリダイレクト Shim](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)を使用できます。
 
-### <a name="runtime-fixes-from-the-community"></a>コミュニティからの実行時の修正
+### <a name="runtime-fixes-from-the-community"></a>コミュニティからランタイムの修正プログラム
 
-[GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop)ページにコミュニティ投稿を参照してください。 他の開発者がにもかかわらず、自分のような問題が解決し、実行時の修正プログラムを共有している考えられます。
+当社の[GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop)ページをコミュニティの投稿を確認します。 他の開発者が自分のような問題が解決され、ランタイムの修正プログラムと共有できます。
 
-## <a name="apply-a-runtime-fix"></a>実行時の修正プログラムを適用します。
+## <a name="apply-a-runtime-fix"></a>ランタイムの修正プログラムを適用します。
 
-Windows SDK し、次の手順では、いくつかの簡単なツールを使用して既存の実行時の修正を適用できます。
+Windows SDK にし、次の手順では、いくつかの簡単なツールを使用して既存のランタイムの修正を適用できます。
 
 > [!div class="checklist"]
-> * パッケージのレイアウトのフォルダーを作成します。
-> * パッケージのサポート フレームワーク ファイルを取得します。
-> * パッケージの追加します。
+> * パッケージ レイアウト フォルダーを作成します。
+> * サポート フレームワークのパッケージ ファイルを取得します。
+> * パッケージに追加します。
 > * パッケージ マニフェストの変更
 > * 構成ファイルを作成します。
 
-各タスクしてみましょう。
+各タスクを見ていきましょう。
 
-### <a name="create-the-package-layout-folder"></a>パッケージのレイアウトのフォルダーを作成します。
+### <a name="create-the-package-layout-folder"></a>パッケージ レイアウトのフォルダーを作成します。
 
-既に .appx ファイルがある場合、その内容をパッケージ備中として使用するレイアウト フォルダーに展開ことができます。  これから行うことができます、 **x64 VS 2017 のネイティブのツール コマンド プロンプト**、または手動で実行可能ファイルの検索パスに SDK ビン パス。
+.Appx ファイルが既にがある場合の内容をパッケージのステージング領域として使用されるレイアウト フォルダーに展開できます。  これを行う、 **x64 ツールのネイティブのコマンド プロンプト for VS 2017**、または手動で検索が実行可能ファイルのパスで SDK bin パス。
 
 ```
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.appx /d PackageContents
@@ -117,41 +117,41 @@ makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.appx /d PackageContent
 
 ![パッケージのレイアウト](images/desktop-to-uwp/package_contents.png)
 
-を持っていない .appx ファイルで起動する場合は、最初からパッケージ フォルダーやファイルを作成できます。
+.Appx ファイルは、開始時があるない、ゼロから、パッケージのフォルダーとファイルを作成できます。
 
-### <a name="get-the-package-support-framework-files"></a>パッケージのサポート フレームワーク ファイルを取得します。
+### <a name="get-the-package-support-framework-files"></a>サポート フレームワークのパッケージ ファイルを取得します。
 
-Visual Studio を使用して、PSF Nuget パッケージを取得できます。 スタンドアロン Nuget のコマンド ライン ツールを使用して取得できます。
+Visual Studio を使って、PSF Nuget パッケージを取得できます。 スタンドアロン Nuget コマンド ライン ツールを使って取得できます。
 
-#### <a name="get-the-package-by-using-visual-studio"></a>Visual Studio を使用して、パッケージを入手します。
+#### <a name="get-the-package-by-using-visual-studio"></a>Visual Studio を使って、パッケージを取得します。
 
-Visual Studio では、ソリューションまたはプロジェクト ノードを右クリックし、Nuget パッケージの管理のコマンドのいずれかを選びます。  検索**Microsoft.PackageSupportFramework**または**PSF** Nuget.org のパッケージを検索します。次に、インストールします。
+Visual Studio のソリューションやプロジェクト ノードを右クリックし、Nuget パッケージの管理コマンドのいずれかを選択します。  検索**Microsoft.PackageSupportFramework** **PSF** Nuget.org 上、パッケージを検索します。次に、インストールします。
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>コマンド ライン ツールを使用して、パッケージを取得します。
 
-次の場所から Nuget コマンド ライン ツールのインストール:https://www.nuget.org/downloadsします。 次に、Nuget のコマンドラインでは、このコマンドを実行します。
+この場所から Nuget コマンド ライン ツールのインストール:https://www.nuget.org/downloadsします。 次に、Nuget コマンドラインからは、次のコマンドを実行します。
 
 ```
 nuget install Microsoft.PackageSupportFramework
 ```
 
-### <a name="add-the-package-support-framework-files-to-your-package"></a>パッケージのサポート フレームワーク ファイルをパッケージに追加します。
+### <a name="add-the-package-support-framework-files-to-your-package"></a>サポート フレームワークのパッケージ ファイルをパッケージに追加します。
 
-パッケージのディレクトリに必要な 32 ビットと 64 ビット PSF Dll と実行可能ファイルを追加します。 次の表をガイドとして使用してください。 する必要があるどのようなランタイム修正を挿入するされます。 ここでは、ファイルのリダイレクト ランタイム修正が必要です。
+パッケージのディレクトリに、必要な 32 ビットと 64 ビット PSF Dll と実行可能ファイルを追加します。 次の表をガイドとして使用してください。 必要な任意のランタイム修正が含まれてすることもあります。 この例でファイルのリダイレクトのランタイムの修正が必要です。
 
-| アプリケーションの実行可能ファイルが x64 | アプリケーションの実行可能ファイルが x86 |
+| アプリケーションの実行可能ファイルは x64 | アプリケーションの実行可能ファイルは x86 |
 |-------------------------------|-----------|
 | [ShimLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |  [ShimLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |
 | [ShimRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) | [ShimRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) |
 | [ShimRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) | [ShimRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) |
 
-パッケージ コンテンツは次のようになります。
+パッケージの内容は次のようになります。
 
 ![パッケージのバイナリ](images/desktop-to-uwp/package_binaries.png)
 
 ### <a name="modify-the-package-manifest"></a>パッケージ マニフェストの変更
 
-テキスト エディターで、パッケージ マニフェストを開き、[設定、`Executable`の属性、 `Application` shim 起動ツールの実行可能ファイルの名前を要素。  ターゲット アプリケーションのアーキテクチャがわかっている場合は、ShimLauncher32.exe または ShimLauncher64.exe、適切なバージョンを選択します。  有効でない場合は、ShimLauncher32.exe は常に機能します。  次に例を示します。
+テキスト エディターで、パッケージ マニフェストを開き、設定、`Executable`の属性、`Application`要素 shim ランチャーの実行可能ファイルの名前にします。  ターゲット アプリケーションのアーキテクチャがわかっている場合は、ShimLauncher32.exe または ShimLauncher64.exe は、適切なバージョンを選択します。  ない場合は、ShimLauncher32.exe はどのようなケースで動作します。  次に例を示します。
 
 ```xml
 <Package ...>
@@ -168,7 +168,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="create-a-configuration-file"></a>構成ファイルを作成します。
 
-ファイル名を作成する``config.json``、および、パッケージのルート フォルダーにそのファイルを保存します。 交換した実行可能ファイルを指すように、config.json ファイルの宣言されたアプリ ID を変更します。 プロセスのモニターを使用してから取得した情報を使用すると、できますも作業ディレクトリの設定などを行うことパッケージの相対"PSFSampleApp"ディレクトリ. log ファイルへの読み取り/書き込みをリダイレクトするのにはファイルのリダイレクト shim を使用します。
+ファイル名を作成``config.json``、パッケージのルート フォルダーにそのファイルを保存します。 交換した実行可能ファイルをポイントする config.json ファイルの宣言されているアプリの ID を変更します。 プロセス モニターの使用権を取得するサポート技術情報を使用して、したりすることできますも作業ディレクトリを設定しファイル リダイレクト shim を使用して、パッケージと相対的な"PSFSampleApp"ディレクトリ .log ファイルの読み取り/書き込みをリダイレクトします。
 
 ```json
 {
@@ -203,21 +203,21 @@ nuget install Microsoft.PackageSupportFramework
     ]
 }
 ```
-以下は、config.json スキーマ向けのガイドです。
+次に示します。 config.json スキーマのためのガイド
 
 | 配列 | key | 値 |
 |-------|-----------|-------|
-| applications | id |  値を使用して、`Id`の属性、`Application`パッケージ マニフェストの要素。 |
-| applications | 実行可能ファイル | 開始する実行可能ファイルへのパッケージの相対パス。 ほとんどの場合、それを変更する前にパッケージ マニフェスト ファイルからこの値を得るができます。 値は、`Executable`の属性、`Application`要素。 |
-| applications | 作業ディレクトリ | (オプション)作業を開始するディレクトリとして使用するパッケージの相対パス。 オペレーティング システムを使用して、この値を設定しない場合、`System32`ディレクトリをアプリケーションの作業のディレクトリです。 |
-| プロセス | 実行可能ファイル | ほとんどの場合の名前になります、`executable`上にある削除パスとファイル拡張子のように構成されています。 |
-| shim | dll | 読み込む shim .appx パッケージの相対パス。 |
-| shim | 構成 | (オプション)Shim dl の動作を制御します。 この値の正確な形式は、各 shim できる解釈"blob"必要があると shim-によって-shim ごとに異なります。 |
+| applications | id |  値を使用して、`Id`の属性、 `Application` 、パッケージ マニフェスト内の要素です。 |
+| applications | 実行可能 | 起動する実行可能ファイルのパッケージ相対パス。 ほとんどの場合、変更する前に、パッケージ マニフェスト ファイルからこの値を取得できます。 値であること、`Executable`の属性、`Application`要素です。 |
+| applications | 作業ディレクトリ | (省略可能)起動するアプリケーションの作業ディレクトリとして使用するパッケージの相対パス。 この値を設定しない場合、オペレーティング システムを使用して、 `System32` 、アプリケーションの作業ディレクトリとしてディレクトリ。 |
+| プロセス | 実行可能 | ほとんどの場合の名前になります、`executable`削除パスとファイルの拡張子を持つ上に構成されています。 |
+| shim | dll | 読み込む shim .appx パッケージ相対パス。 |
+| shim | 構成 | (省略可能)Shim 配布リストがどのように動作するかを制御します。 この値の正確な形式は、各 shim はこの"blob"を解釈できる必要があるように shim-shim によってごとに異なります。 |
 
-`applications`、 `processes`、および`shims`キーは、配列します。 つまり、1 つ以上のアプリケーション、プロセス、および shim DLL を指定する config.json ファイルを使用することができます。
+`applications`、 `processes`、および`shims`キーは、配列です。 つまり、1 つ以上のアプリケーション、プロセス、および shim DLL を指定する config.json ファイルを使用することができます。
 
 
-### <a name="package-and-test-the-app"></a>パッケージ化して、アプリのテスト
+### <a name="package-and-test-the-app"></a>パッケージと、アプリのテスト
 
 次に、パッケージを作成します。
 
@@ -231,22 +231,22 @@ makeappx pack /d PackageContents /p PSFSamplePackageFixup.appx
 signtool sign /a /v /fd sha256 /f ExportedSigningCertificate.pfx PSFSamplePackageFixup.appx
 ```
 
-詳細については、「 [signtool を使用して、パッケージ署名する方法](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/how-to-sign-a-package-using-signtool)と[署名証明書パッケージを作成する方法](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate)の使用」を参照してください。
+詳しくは、 [signtool を使ってパッケージに署名する方法](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/how-to-sign-a-package-using-signtool)と[、パッケージの署名証明書を作成する方法](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate)をご覧ください。
 
 PowerShell を使用して、パッケージをインストールします。
 
 >[!NOTE]
-> 最初に、パッケージをアンインストールしてください。
+> 最初に、パッケージをアンインストールするには、この注意してください。
 
 ```
 powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 ```
 
-アプリケーションを実行し、ランタイムの修正プログラムが適用されると、動作を確認します。  診断および必要に応じてパッケージの手順を繰り返します。
+アプリケーションを実行し、ランタイムの修正プログラムが適用されると、動作を確認します。  診断と必要に応じて、パッケージの手順を繰り返します。
 
 ### <a name="use-the-trace-shim"></a>トレース Shim を使用します。
 
-パッケージ アプリケーションの互換性の問題を診断する以外の方法では、トレース Shim を使用します。 この DLL であり、PSF に含まれて、プロセスのモニターのようなアプリの動作の詳細な診断ビューを提供します。  アプリケーションの互換性の問題を表示するように設計します。  トレース Shim DLL パッケージを追加、config.json に次の例を追加し、[パッケージ化するし、アプリケーションをインストールします。
+パッケージ化されたアプリケーションの互換性の問題を診断するために別の手法では、トレース Shim を使用します。 この DLL は、PSF 付属であり、プロセスの監視と同様、アプリの動作の詳細な診断ビューを提供します。  アプリケーションの互換性の問題を表示するように設計します。  トレース Shim を使用して、DLL、パッケージを追加、config.json に次のフラグメントを追加し、パッケージ化し、およびインストールするアプリケーション。
 
 ```json
 {
@@ -259,25 +259,25 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 }
 ```
 
-既定では、トレース Shim「予想」と考えられる失敗が除外されます。  たとえば、アプリケーション無条件に既に存在するかどうか、結果を無視して確認せずにファイルを削除することがありますしてみてください。 ファイル システム関数からすべてのエラーが表示される選択の上の例で、いくつかの予期しないエラーが取得フィルターで除外した、残念ながら上の結果があります。 前に、その Config.txt ファイル内の参照に失敗すると、メッセージ「ファイルは見つかりませんでした」とからわかっているので操作します。 これは、エラーが頻繁に確認しは、一般に予期しないがあると見なされます。 演習では、のみに予期しないエラーは、フィルター処理して、[比較がすべての失敗も識別できない問題がある場合は、最初に可能性が高いベストはできます。
+既定では、トレース Shim「期待」と考えられるエラーが除外されます。  たとえば、アプリケーションは無条件に既に存在するかどうか、結果を無視を確認することがなく、ファイルを削除しよう可能性があります。 ようにおファイルシステム関数からすべてのエラーを受信することを選択では、上記の例では、サインアウトして、いくつかの予期しないエラーをフィルター処理を取得する可能性があります残念ながら上の結果があります。 これは Config.txt ファイルから読み取る試行失敗のメッセージ「ファイルが見つかりません」前に、そのからわかっているためです。 これは、頻繁に確認されたでは、一般に予想するものと想定したエラーです。 実際には、のみに予期しないエラーをフィルタ リングとそのにフォールバックするすべてのエラーも識別できない問題がある場合を開始する可能性の最適なを勧めします。
 
-既定では、トレース Shim からの出力が接続されているデバッガーに送らを取得します。 この例では、おデバッガーに接続するには、代わりにプログラムを使用して[デバッグ表示](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview)SysInternals から出力を表示します。 アプリを実行すると、わかります同じ失敗前とに、同じランタイム修正に向かってポイントへのご協力します。
+既定では、トレース Shim からの出力を取得、アタッチされたデバッガーに送信されます。 この例では、お、デバッガーをアタッチすることはないが代わりにプログラムを使用して[デバッグ表示](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview)SysInternals から出力を表示します。 アプリを実行すると、することができますエラーが表示される、同じ前とに、同じランタイムの修正プログラムの方向にポイントがマイクロソフトはします。
 
-![TraceShim ファイルが見つからない](images/desktop-to-uwp/traceshim_filenotfound.png)
+![TraceShim ファイルが見つかりません](images/desktop-to-uwp/traceshim_filenotfound.png)
 
-![TraceShim アクセス拒否](images/desktop-to-uwp/traceshim_accessdenied.png)
+![TraceShim アクセスが拒否されました](images/desktop-to-uwp/traceshim_accessdenied.png)
 
-## <a name="debug-extend-or-create-a-runtime-fix"></a>デバッグ、拡張または実行時の修正プログラムを作成します。
+## <a name="debug-extend-or-create-a-runtime-fix"></a>デバッグ、延長、またはランタイムの修正プログラムの作成
 
-ランタイムの修正プログラムをデバッグする、拡張ランタイム修正、一から作成するのには、Visual Studio を使用できます。 成功する点を実行する必要があります。
+ランタイムの修正プログラムのデバッグ、拡張ランタイムの修正プログラムを最初から作成に Visual Studio を使用することができます。 成功するには以下の操作を行う必要があります。
 
 > [!div class="checklist"]
-> * パッケージのプロジェクトを追加します。
-> * ランタイム fix のプロジェクトを追加します。
-> * 実行可能 Shim の起動ツールを起動するプロジェクトを追加します。
-> * パッケージの project を構成します。
+> * パッケージ プロジェクトを追加します。
+> * ランタイムの修正プログラムのプロジェクトを追加します。
+> * Shim ランチャーの実行可能ファイルを起動するプロジェクトを追加します。
+> * パッケージ プロジェクトを構成します。
 
-完了したら、次のようなものをソリューションになります。
+完了したら、ソリューションにはこれのようになります。
 
 ![完成したソリューション](images/desktop-to-uwp/runtime-fix-project-structure.png)
 
@@ -285,33 +285,33 @@ powershell Add-AppxPackage .\PSFSamplePackageFixup.appx
 
 | プロジェクト | 目的 |
 |-------|-----------|
-| DesktopApplicationPackage | このプロジェクトは、 [Windows アプリケーション パッケージのプロジェクト](desktop-to-uwp-packaging-dot-net.md)に基づいており、出力、パッケージ化する MSIX します。 |
-| Runtimefix | ランタイム fix として機能する 1 つまたは複数の置換関数を含む C Dynamic-Linked ライブラリ プロジェクトであります。 |
-| ShimLauncher | これは、C の空のプロジェクトです。 このプロジェクトには、パッケージ サポート Framework のランタイム配布可能なファイルを収集します。 実行可能ファイルを出力します。 その実行可能ファイルは、ソリューションを起動するときに実行される最初に注意します。 |
+| DesktopApplicationPackage | このプロジェクトは、 [Windows アプリケーション パッケージ プロジェクト](desktop-to-uwp-packaging-dot-net.md)に基づいており、出力、MSIX パッケージ。 |
+| Runtimefix | これは、ランタイムの修正プログラムとして機能する 1 つまたは複数の代替機能が含まれている C++ Dynamic-Linked ライブラリ プロジェクトです。 |
+| ShimLauncher | これは、C 空のプロジェクトです。 このプロジェクトは、パッケージのサポート フレームワークのランタイム配布可能なファイルを収集する場所です。 実行可能ファイルを出力します。 その実行可能ファイルは、ソリューションを起動するときに実行される最初のものです。 |
 | WinFormsDesktopApplication | このプロジェクトには、デスクトップ アプリケーションのソース コードが含まれています。 |
 
 これらの種類のプロジェクトのすべてを含む完全なサンプルを見ると、 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)を参照してください。
 
-作成およびソリューションでは、これらのプロジェクトの各を構成する手順を見てみましょう。
+作成して、ソリューション内の各プロジェクトを構成する手順を見てみましょう。
 
 
-### <a name="create-a-package-solution"></a>ソリューションをパッケージを作成します。
+### <a name="create-a-package-solution"></a>パッケージのソリューションを作成します。
 
-デスクトップ アプリケーションのソリューションがいない場合は、Visual Studio で新しい**空のソリューション**を作成します。
+デスクトップ アプリケーションのソリューションがない場合は、Visual Studio で新しい**空のソリューション**を作成します。
 
 ![空のソリューション](images/desktop-to-uwp/blank-solution.png)
 
-あるアプリケーション プロジェクトを追加することもできます。
+あるすべてのアプリケーション プロジェクトに追加することもできます。
 
-### <a name="add-a-packaging-project"></a>パッケージのプロジェクトを追加します。
+### <a name="add-a-packaging-project"></a>パッケージ プロジェクトを追加します。
 
-**Windows アプリケーション パッケージのプロジェクト**を持っていない場合は、1 つを作成し、ソリューションに追加します。
+**Windows アプリケーション パッケージ プロジェクト**がまだしていない場合は、いずれかを作成し、ソリューションに追加します。
 
-![パッケージのプロジェクトのテンプレート](images/desktop-to-uwp/package-project-template.png)
+![パッケージ プロジェクト テンプレート](images/desktop-to-uwp/package-project-template.png)
 
-Windows アプリケーション パッケージのプロジェクトの詳細については、 [Visual Studio を使用して、アプリ パッケージ](desktop-to-uwp-packaging-dot-net.md)を参照してください。
+Windows アプリケーション パッケージ プロジェクトについて詳しくは、 [Visual Studio を使って、アプリケーションのパッケージ](desktop-to-uwp-packaging-dot-net.md)を参照してください。
 
-**ソリューション エクスプ ローラー**でパッケージ プロジェクトを右クリックし、[**編集**] を選択し、これをプロジェクト ファイルの下に追加。
+**ソリューション エクスプ**ローラーで、パッケージ プロジェクトを右クリックして、**編集**、選びし、プロジェクト ファイルの末尾に追加します。
 
 ```
 <Target Name="PSFRemoveSourceProject" AfterTargets="ExpandProjectReferences" BeforeTargets="_ConvertItems">
@@ -325,74 +325,74 @@ Windows アプリケーション パッケージのプロジェクトの詳細�
 </Target>
 ```
 
-### <a name="add-project-for-the-runtime-fix"></a>ランタイム fix のプロジェクトを追加します。
+### <a name="add-project-for-the-runtime-fix"></a>ランタイムの修正プログラムのプロジェクトを追加します。
 
-ソリューション C++**ダイナミック リンク ライブラリ (DLL)** プロジェクトに追加します。
+**ダイナミック リンク ライブラリ (DLL)** の C++ プロジェクトをソリューションに追加します。
 
-![ランタイム fix ライブラリ](images/desktop-to-uwp/runtime-fix-library.png)
+![ランタイム ライブラリの修正](images/desktop-to-uwp/runtime-fix-library.png)
 
 [プロジェクト]、[**プロパティ**を右クリックします。
 
-プロパティ ページ] で、[ **C++ 言語標準的な**フィールドを検索し、そのフィールドの横にあるドロップダウン リストで次のように選択します。 [ **ISO c 17 標準 (/std:c + + 17)** オプション。
+プロパティ ページで、**標準的な C++ 言語**のフィールドを見つけるし、そのフィールドの横にあるドロップダウン リストで、[、 **ISO C 17 標準 (//std:c では 17)** オプション。
 
 ![ISO 17 オプション](images/desktop-to-uwp/iso-option.png)
 
-プロジェクトを右クリックし、[のコンテキスト メニューで、[ **Nuget パッケージの管理**] のオプション] を選びます。 [**パッケージのソース**] オプションが**すべて**または**nuget.org**に設定されていることを確認します。
+そのプロジェクトを右クリックし、コンテキスト メニューで、 **Nuget パッケージの管理**オプションを選択しています。 **すべて**のまたは**nuget.org****パッケージ ソース**オプションが設定されていることを確認します。
 
-次にそのフィールドの設定] をクリックします。
+次にそのフィールドの設定アイコンをクリックします。
 
-検索*PSF** Nuget パッケージ化し、次のプロジェクトのインストールします。
+*PSF*の検索 * Nuget パッケージ化し、このプロジェクトにインストールします。
 
 ![nuget パッケージ](images/desktop-to-uwp/psf-package.png)
 
-デバッグまたは既存の実行時の修正プログラムを拡張する場合は、このガイドの[実行時の修正プログラムを検索](#find)] セクションで説明するガイダンスを使用して取得したランタイム修正ファイルを追加します。
+デバッグや、既存のランタイム修正プログラムを拡張する場合は、このガイドの[ランタイムの修正プログラムを検索](#find)のセクションで説明したガイダンスを使用して、取得したランタイムの修正プログラム ファイルを追加します。
 
-新しい修正を作成する場合は、追加しない何もこのプロジェクトにまだします。 このガイドの後に、このプロジェクトにファイルを追加するのに役立ちます。 ここでは、ソリューションの設定がいくされます。
+新しい修正プログラムを作成する場合は、追加しないでください何もこのプロジェクトにまだだけです。 お手伝いしますこのガイドの後半では、このプロジェクトに適切なファイルを追加します。 ここでは、ソリューションの設定は引き続きされます。
 
-### <a name="add-a-project-that-starts-the-shim-launcher-executable"></a>実行可能 Shim の起動ツールを起動するプロジェクトを追加します。
+### <a name="add-a-project-that-starts-the-shim-launcher-executable"></a>Shim ランチャーの実行可能ファイルを起動するプロジェクトを追加します。
 
-ソリューション C**空のプロジェクト**のプロジェクトに追加します。
+C**空のプロジェクト**のプロジェクトをソリューションに追加します。
 
 ![空のプロジェクト](images/desktop-to-uwp/blank-app.png)
 
-このプロジェクトに**PSF** Nuget パッケージを追加するには、同じ、前のセクションで説明するガイダンスを使用します。
+このプロジェクトを前のセクションで説明されている同じガイダンスを使用して、 **PSF** Nuget パッケージを追加します。
 
-開いているプロジェクトの**全般**設定] ページのプロパティ ページ**Target Name**プロパティを設定します``ShimLauncher32``または``ShimLauncher64``によっては、アプリケーションのアーキテクチャは、します。
+開くと、**全般**設定] ページで、プロジェクトのプロパティ ページ、**ターゲット名**プロパティを設定``ShimLauncher32``または``ShimLauncher64``によっては、アプリケーションのアーキテクチャ。
 
-![shim 起動ツールの参照](images/desktop-to-uwp/shim-exe-reference.png)
+![shim ランチャー リファレンス](images/desktop-to-uwp/shim-exe-reference.png)
 
-ソリューションのランタイム fix プロジェクトにプロジェクトの参照を追加します。
+ランタイムの修正プロジェクトへの参照をプロジェクトをソリューションに追加します。
 
-![ランタイム fix リファレンス](images/desktop-to-uwp/reference-fix.png)
+![ランタイムの修正プログラムのリファレンス](images/desktop-to-uwp/reference-fix.png)
 
-参照を右クリックし、[**プロパティ**] ウィンドウで以下の値を適用します。
+参照を右クリックし、[**プロパティ**] ウィンドウでこれらの値を適用します。
 
 | プロパティ | 値 |
 |-------|-----------|-------|
 | ローカル コピーします。 | True |
-| ローカルのサテライト アセンブリをコピーします。 | True |
+| ローカル サテライト アセンブリをコピーします。 | True |
 | 参照アセンブリの出力 | True |
-| ライブラリの依存関係のリンク | False |
+| リンク ライブラリの依存関係 | False |
 | リンク ライブラリの依存関係の入力 | False |
 
-### <a name="configure-the-packaging-project"></a>パッケージの project を構成します。
+### <a name="configure-the-packaging-project"></a>パッケージ プロジェクトを構成します。
 
 パッケージ プロジェクトで、**[アプリケーション]** フォルダーを右クリックして **[参照の追加]** を選びます。
 
 ![プロジェクト参照の追加](images/desktop-to-uwp/add-reference-packaging-project.png)
 
-Shim 起動ツールのプロジェクトと、デスクトップ アプリケーションのプロジェクトを選択し、 **[OK** ] をクリックします。
+Shim ランチャー プロジェクトと、デスクトップ アプリケーション プロジェクトを選択し、 **[ok]** ボタンをクリックします。
 
 ![デスクトップ プロジェクト](images/desktop-to-uwp/package-project-references.png)
 
 >[!NOTE]
-> ソース コード アプリケーションをお持ちでない場合だけ shim 起動ツールのプロジェクトを選択します。 構成ファイルを作成するときに、実行可能ファイルを参照する方法を紹介します。
+> アプリケーションに、ソース コードしない場合は、shim ランチャー プロジェクトを選ぶだけです。 構成ファイルを作成するときに、実行可能ファイルを参照する方法について説明します。
 
-[**アプリケーション**] ノードでは、shim 起動ツール、アプリケーションを右クリックし、[**エントリ ポイントとして設定**] を選びます。
+**Applications** ] ノードでは、shim ランチャー アプリケーションを右クリックし、**エントリ ポイントとして設定**を選択し。
 
 ![エントリ ポイントの設定](images/desktop-to-uwp/set-startup-project.png)
 
-という名前のファイルを追加する``config.json``パッケージ プロジェクトにコピーし、ファイルに次の json テキストを貼り付けます。 **コンテンツ**を**パッケージのアクション**のプロパティを設定します。
+という名前のファイルを追加``config.json``、パッケージ プロジェクトにコピーし、ファイルに次の json テキストを貼り付けます。 **コンテンツ**には、**パッケージ**のプロパティを設定します。
 
 ```json
 {
@@ -417,18 +417,18 @@ Shim 起動ツールのプロジェクトと、デスクトップ アプリケ�
     ]
 }
 ```
-各キーの値を指定します。 ガイドとしては、次の表を使用します。
+各キーの値を提供します。 次の表をガイドとして使用します。
 
 | 配列 | key | 値 |
 |-------|-----------|-------|
-| applications | id |  値を使用して、`Id`の属性、`Application`パッケージ マニフェストの要素。 |
-| applications | 実行可能ファイル | 開始する実行可能ファイルへのパッケージの相対パス。 ほとんどの場合、それを変更する前にパッケージ マニフェスト ファイルからこの値を得るができます。 値は、`Executable`の属性、`Application`要素。 |
-| applications | 作業ディレクトリ | (オプション)作業を開始するディレクトリとして使用するパッケージの相対パス。 オペレーティング システムを使用して、この値を設定しない場合、`System32`ディレクトリをアプリケーションの作業のディレクトリです。 |
-| プロセス | 実行可能ファイル | ほとんどの場合の名前になります、`executable`上にある削除パスとファイル拡張子のように構成されています。 |
-| shim | dll | Shim 読み込む DLL パッケージの相対パス。 |
-| shim | 構成 | (オプション)Shim dl の動作を制御します。 この値の正確な形式は、各 shim できる解釈"blob"必要があると shim-によって-shim ごとに異なります。 |
+| applications | id |  値を使用して、`Id`の属性、 `Application` 、パッケージ マニフェスト内の要素です。 |
+| applications | 実行可能 | 起動する実行可能ファイルのパッケージ相対パス。 ほとんどの場合、変更する前に、パッケージ マニフェスト ファイルからこの値を取得できます。 値であること、`Executable`の属性、`Application`要素です。 |
+| applications | 作業ディレクトリ | (省略可能)起動するアプリケーションの作業ディレクトリとして使用するパッケージの相対パス。 この値を設定しない場合、オペレーティング システムを使用して、 `System32` 、アプリケーションの作業ディレクトリとしてディレクトリ。 |
+| プロセス | 実行可能 | ほとんどの場合の名前になります、`executable`削除パスとファイルの拡張子を持つ上に構成されています。 |
+| shim | dll | Shim を読み込む DLL のパッケージ相対パス。 |
+| shim | 構成 | (省略可能)Shim 配布リストがどのように動作するかを制御します。 この値の正確な形式は、各 shim はこの"blob"を解釈できる必要があるように shim-shim によってごとに異なります。 |
 
-完了したら、ときに、``config.json``ファイルは次のようになります。
+完了したら、``config.json``ファイルは次のようになります。
 
 ```json
 {
@@ -450,37 +450,37 @@ Shim 起動ツールのプロジェクトと、デスクトップ アプリケ�
 ```
 
 >[!NOTE]
-> `applications`、 `processes`、および`shims`キーは、配列します。 つまり、1 つ以上のアプリケーション、プロセス、および shim DLL を指定する config.json ファイルを使用することができます。
+> `applications`、 `processes`、および`shims`キーは、配列です。 つまり、1 つ以上のアプリケーション、プロセス、および shim DLL を指定する config.json ファイルを使用することができます。
 
-### <a name="debug-a-runtime-fix"></a>実行時の修正プログラムをデバッグします。
+### <a name="debug-a-runtime-fix"></a>ランタイムの修正プログラムをデバッグします。
 
-Visual Studio では、[デバッガーを開始する F5 キーを押します。  最初を起動するをターゲット デスクトップ アプリケーションを起動でき、shim 起動ツールのアプリケーションします。  対象のデスクトップ アプリケーションをデバッグするには、**デバッグ**を選択して、手動でデスクトップ アプリケーションのプロセスにアタッチする必要があります->**プロセスにアタッチ**、およびアプリケーションの処理] をクリックします。 ネイティブ ランタイム修正 DLL .NET アプリケーションのデバッグ時に、(混在モード デバッグ) の管理とネイティブ コードの種類を選択します。  
+Visual Studio で f5 キーを押してデバッガーを起動します。  最初に起動することは、次に、ターゲット デスクトップ アプリケーションを開始する shim ランチャー アプリケーションです。  ターゲットのデスクトップ アプリケーションをデバッグするには、手動で**デバッグ**を選択してデスクトップ アプリケーションのプロセスにアタッチする必要があります->**プロセスにアタッチ**し、アプリケーションのプロセスを選択します。 ネイティブのランタイム修正 DLL を持つ .NET アプリケーションのデバッグを許可するには、マネージ コードとネイティブ コードの種類 (混在モード デバッグ) を選択します。  
 
-これ設定したら、デスクトップ アプリケーションのコードとランタイム fix プロジェクトでのコード行の横にある破断点を設定できます。 ソース コード アプリケーションを持っていない場合は、ランタイム fix プロジェクト内のコード行の横にある破断点を設定することができます。
+これ設定して、デスクトップ アプリケーション コードとランタイムの修正プロジェクトで数行のコードの横にあるブレークポイントを設定できます。 アプリケーションに、ソース コードしない場合は、ランタイム修正プロジェクトで、数行のコードの横にあるのみにブレークポイントを設定することができます。
 
 >[!NOTE]
-> Visual Studio を使用する最も簡単な開発おりエクスペリエンスをデバッグするには、いくつかの制限がありますが、このガイドの後でについて説明します適用できるその他のデバッグ手法。
+> Visual Studio を使用する最も簡単な開発エクスペリエンスをデバッグするには、いくつかの制限があるときは、後でこのガイドでは、について説明します他のデバッグの手法を適用することができます。
 
-## <a name="create-a-runtime-fix"></a>実行時の修正プログラムを作成します。
+## <a name="create-a-runtime-fix"></a>ランタイムの修正プログラムを作成します。
 
-ランタイム修正問題を解決することは、代わりの機能を作成し、構成データを含む新しいランタイム修正を作成することができますがまだ存在しない場合は合理的です。 各部分を見てみましょう。
+ない場合、ランタイムを解決する場合、代替関数を作成し、構成データを含む新しいランタイムの修正プログラムを作成すること、問題の修正を意味します。 各部分を見てみましょう。
 
-### <a name="replacement-functions"></a>代わりの機能
+### <a name="replacement-functions"></a>代替機能
 
-最初に、MSIX コンテナーにアプリケーションの実行時に呼び出しが失敗する関数を特定します。 次に、代わりにランタイム マネージャーを置換関数を作成できます。 これではモダンなランタイム環境のルールに準拠する動作を関数の実装を置き換えることができます。
+最初に、どの関数の呼び出しは失敗 MSIX コンテナー内で、アプリケーションが実行されている場合を特定します。 次に、代替関数を呼び出す代わりに、ランタイム マネージャーを作成できます。 これにより、関数の実装を最新のランタイム環境の規則に準拠している動作に置き換えることです。
 
-Visual Studio では、このガイドの以前のバージョンで作成したランタイム fix プロジェクトを開きます。
+Visual Studio では、このガイドで既に作成したランタイム修正プロジェクトを開きます。
 
-宣言、``SHIM_DEFINE_EXPORTS``マクロ用に含める文を追加して、`shim_framework.h`それぞれの上部にあります。CPP ファイルが、実行時の修正プログラムの機能を追加します。
+宣言、``SHIM_DEFINE_EXPORTS``マクロの include ステートメントを追加し、`shim_framework.h`それぞれの上部にあります。CPP ファイルは、ランタイムの修正プログラムの機能を追加します。
 
 ```c++
 #define SHIM_DEFINE_EXPORTS
 #include <shim_framework.h>
 ```
 >[!IMPORTANT]
->確認、`SHIM_DEFINE_EXPORTS`含めるステートメントの前にマクロが表示されます。
+>確認して、`SHIM_DEFINE_EXPORTS`マクロが含めるステートメントの前に表示されます。
 
-関数は、関数の同じ署名を作成できるユーザーは動作を変更します。 ここを置き換える関数の例では、`MessageBoxW`関数。
+同じ関数のシグネチャを持つ関数を作成しているが動作を変更します。 置換する関数の例を以下に示します、`MessageBoxW`関数。
 
 ```c++
 auto MessageBoxWImpl = &::MessageBoxW;
@@ -496,19 +496,19 @@ int WINAPI MessageBoxWShim(
 DECLARE_SHIM(MessageBoxWImpl, MessageBoxWShim);
 ```
 
-通話を`DECLARE_SHIM`マップ、`MessageBoxW`関数は、新しい置換関数にします。 アプリケーションが通話しようとしたときに、`MessageBoxW`関数、関数を代わりに発信ことはできます。
+呼び出し`DECLARE_SHIM`マップ、`MessageBoxW`関数は、新しい代替関数にします。 アプリが呼び出すしようとしたとき、`MessageBoxW`関数を置き換え関数を代わりに呼び出すことができます。
 
-#### <a name="protect-against-recursive-calls-to-functions-in-runtime-fixes"></a>再帰ランタイム修正における関数呼び出しから保護します。
+#### <a name="protect-against-recursive-calls-to-functions-in-runtime-fixes"></a>再帰的なランタイムの修正プログラムの関数の呼び出しからの保護します。
 
-適用することができます (オプション)、`reentrancy_guard`再帰ランタイム修正における関数呼び出しを保護する関数を入力します。
+適用することが必要に応じて、`reentrancy_guard`を再帰的なランタイムの修正プログラムの関数の呼び出しを保護する関数の種類。
 
-関数の値を置換を作成するなど、`CreateFile`関数。 実装を呼び出す、`CopyFile`の実装、`CopyFile`関数を呼び出す、`CreateFile`関数します。 呼び出しを無限再帰サイクルに生じる、`CreateFile`関数。
+代替の関数を作成するなど、`CreateFile`関数。 実装を呼び出すことがあります、`CopyFile`関数がの実装、`CopyFile`関数を呼び出すことがあります、`CreateFile`関数。 これは、無限再帰サイクルへの呼び出しのする可能性があります、`CreateFile`関数。
 
 ついて詳しくは`reentrancy_guard` [authoring.md](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/Authoring.md)を参照してください。
 
 ### <a name="configuration-data"></a>データの構成
 
-ランタイム修正に構成のデータを追加する場合に追加することを検討してください、``config.json``します。 使用するようにすると、`ShimQueryCurrentDllConfig`を簡単にそのデータを分析します。 この例では、その構成ファイルからブール値、文字列値を解析します。
+ランタイムの修正プログラムへの構成データを追加する場合は、追加することを検討してください、``config.json``します。 これにより、使える、`ShimQueryCurrentDllConfig`を簡単にそのデータを解析します。 この例では、その構成ファイルから、ブール値と文字列の値を解析します。
 
 ```c++
 if (auto configRoot = ::ShimQueryCurrentDllConfig())
@@ -527,17 +527,17 @@ if (auto configRoot = ::ShimQueryCurrentDllConfig())
 }
 ```
 
-## <a name="other-debugging-techniques"></a>その他の手法をデバッグ
+## <a name="other-debugging-techniques"></a>その他のデバッグの手法
 
-Visual Studio を使用すると、最も簡単な開発およびデバッグ時のエクスペリエンス、中にいくつかの制限があります。
+Visual Studio を使用すると、最も簡単な開発およびデバッグ エクスペリエンスは制限があります。
 
-最初に、f5 キーを押してデバッグと、.appx パッケージからインストールするのではなく、パッケージ レイアウト フォルダーのパスから柔軟なファイルを展開するアプリケーションを実行します。  [レイアウト] フォルダー通常がない同じセキュリティ制限インストール パッケージのフォルダーとします。 その結果、してできないことがありますランタイムの修正プログラムを適用するよりも前のパッケージ パス アクセス拒否エラーを再現します。
+まず、F5 デバッグと、.appx パッケージからインストールするのではなく、パッケージ レイアウト フォルダー パスからルーズ ファイルを展開することによって、アプリケーションが実行されます。  レイアウト フォルダー通常はありません同じセキュリティの制限はインストールされているパッケージのフォルダーとして。 その結果、にくいかもしれませんランタイムの修正プログラムを適用する前にパッケージのパス アクセス拒否エラーを再現することもできます。
 
-この問題に対処するには、f5 キーを押して柔軟なファイルの展開ではなく、.appx パッケージの展開を使用します。  .Appx パッケージ ファイルを作成するには、上記のように Windows SDK から[MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)ユーティリティを使用します。 またはから、Visual Studio 内アプリケーション プロジェクト ノードを右クリックして**ストア**を選択して->**アプリ パッケージを作成**します。
+この問題に対処するためには、f5 キーを押してルーズ ファイルの展開ではなく、.appx パッケージの展開を使用します。  .Appx パッケージ ファイルを作成するには、上記で説明したように、Windows SDK から[MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)ユーティリティを使用します。 またはから、Visual Studio 内、アプリケーションのプロジェクト ノードを右クリックし、**ストア**を選択->**アプリ パッケージの作成します**。
 
-Visual Studio の別の問題は、デバッガーが起動されるすべての子プロセスにアタッチするための組み込みのサポートがないことができます。   関連付ける必要があります手動で Visual Studio で起動した後、ターゲット アプリケーションの起動パスのロジックをデバッグする困難になります。
+Visual Studio の別の問題は、デバッガーを起動するすべての子プロセスにアタッチするための組み込みサポートがないことができます。   Visual Studio での起動後が手動で接続され、ターゲット アプリケーションのスタートアップ パス内のロジックをデバッグが困難になります。
 
-この問題を解決するには、使用子プロセスをサポートしているデバッガーを添付します。  一般的に対象のアプリケーションにだけの時間 (JIT) デバッガーを添付することに注意してください。  これは、ほとんど JIT 技法 ImageFileExecutionOptions のレジストリ キーを使用して、ターゲット アプリケーションの代わりにデバッガーを起動するためです。  ターゲット アプリケーションに ShimRuntime.dll を挿入する ShimLauncher.exe で使用される detouring メカニズムこの無効になります。  サポート子プロセスを添付する WinDbg、 [Windows 用デバッグ ツール](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)に含まれているし、 [Windows SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)から取得します。  また、サポート直接[を起動して UWP のアプリをデバッグ](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app)します。
+この問題に対処するため、使用子プロセスをサポートしているデバッガーがアタッチします。  注は通常、ターゲット アプリケーションをジャスト イン タイム (JIT) デバッガーをアタッチすることもできます。  これは、ほとんど JIT 技法 ImageFileExecutionOptions のレジストリ キーを使用して、対象のアプリの代わりにデバッガーを起動するためです。  ターゲット アプリに ShimRuntime.dll を挿入するために使用 ShimLauncher.exe detouring メカニズムが損なわれるためです。  WinDbg、 [Debugging Tools for Windows](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)に含まれているし、 [Windows SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)から取得したサポート子プロセスのアタッチします。  サポート直接[起動して UWP アプリをデバッグ](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app)します。
 
 子プロセスとしてターゲット アプリケーションの起動をデバッグするには、開始``WinDbg``します。
 
@@ -545,26 +545,26 @@ Visual Studio の別の問題は、デバッガーが起動されるすべての
 windbg.exe -plmPackage PSFSampleWithFixup_1.0.59.0_x86__7s220nvg1hg3m -plmApp PSFSample
 ```
 
-``WinDbg``メッセージを表示する、子デバッグを有効化および適切なブレークポイントを設定します。
+``WinDbg``プロンプト、子のデバッグを有効にして適切なブレークポイントを設定します。
 
 ```
 .childdbg 1
 g
 ```
-(実行ターゲット アプリケーションを起動して、改ページになるまで)
+(ターゲット アプリケーションが開始され、デバッガーを中断するまで実行)
 
 ```
 sxe ld fixup.dll
 g
 ```
-(実行が読み込ま修正まで)
+(修正の DLL が読み込まれるまで実行されません)
 
 ```
 bp ...
 ```
 
 >[!NOTE]
-> [PLMDebug](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/plmdebug)がデバッガー起動時には、アプリにも使用でき、 [Windows 用デバッグ ツール](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)にも含まれています。  ただしは、WinDbg によって提供されるようになりました直接サポートよりも複雑です。
+> [PLMDebug](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/plmdebug)は起動時には、アプリにデバッガーをアタッチにも使用でき、 [Debugging Tools for Windows](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)にも含まれています。  ただし、WinDbg によって提供されるようになりました直接サポートよりも複雑です。
 
 ## <a name="support-and-feedback"></a>サポートとフィードバック
 

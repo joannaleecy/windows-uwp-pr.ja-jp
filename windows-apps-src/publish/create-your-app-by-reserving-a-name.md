@@ -11,22 +11,22 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83f2ab8a27810635b569d44961ff532ce3240e28
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888171"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913109"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>名前の予約によるアプリの作成
 
-アプリの名前を[Windows デベロッパー センターのダッシュ ボード](https://partner.microsoft.com/dashboard)での新しいアプリを作成するには、まずを受け取ります。 各予約名 (アプリの*タイトル*と呼ばれることもあります) は、Microsoft Store 全体で一意でなければなりません。
+アプリ名の予約は最初の手順は、 [Windows デベロッパー センター ダッシュ ボード](https://partner.microsoft.com/dashboard)で新しいアプリを作成します。 各予約名 (アプリの*タイトル*と呼ばれることもあります) は、Microsoft Store 全体で一意でなければなりません。
 
 アプリの構築をまだ開始していない場合でも、アプリの名前を予約することができます。 アプリの名前は、他の開発者に使われないように、できる限り早く予約することをお勧めします。 その名前の予約を維持sるには、3 か月以内にアプリを申請する必要がある点に注意してください。
 
 [アプリのパッケージをアップロード](upload-app-packages.md)するには、アプリに予約した名前と [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) の値が一致している必要があります。 アプリのパッケージを作成するために Microsoft Visual Studio を使う場合は、この属性が自動的に入力されます。
 
 > [!IMPORTANT]
-> 、アプリの他の名前を予約して、ダッシュ ボードで、アプリを初めて作成するときに予約する 1 つではなく、アプリの発行済みバージョンのいずれかを使用することもできます。 ただし、アプリの[ユーザーの詳細](view-app-identity-details.md)、**パッケージ ファミリ名 (PFN)** などの一部では、ここに入力する最初の名前が使用されることもあります。 これらの値が、一部のユーザーに表示される場合がありすることはできません変更すると、したがってことを予約する名前がこの使用するための適切なことを確認します。
+> アプリは、追加の名前を予約して、まずダッシュ ボードでアプリを作成するときに予約したものではなく、アプリの公開されているバージョンでは、それらのいずれかを使用することもできます。 ただし、アプリの[id の詳細](view-app-identity-details.md)、**パッケージ ファミリ名 (PFN)** などの一部、ここで入力した名が使われることに注意します。 これらの値は、一部のユーザーに表示される場合がありすることはできませんを予約する名前が、このような使用に適していることを確認ように変更します。
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>新しい名前の予約によるアプリの作成

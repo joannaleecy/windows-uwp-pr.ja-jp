@@ -15,11 +15,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2894068"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2916960"
 ---
 # <a name="attached-properties-overview"></a>添付プロパティの概要
 
@@ -40,7 +40,7 @@ XAML では、_AttachedPropertyProvider.PropertyName_ 構文を使って添付�
 ```
 
 > [!NOTE]
-> 完全にそれを使用する理由を説明するせずに、接続されている例プロパティとして[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771)おしか使っていません。 **Canvas.Left** の用途や、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) がそのレイアウトの子を処理する方法について詳しくは、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) のリファレンス トピックまたは「[XAML を使ったレイアウトの定義](https://msdn.microsoft.com/library/windows/apps/mt228350)」をご覧ください。
+> だけを使用します[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771)例添付プロパティとしてせず、完全にそれを使用する理由を説明します。 **Canvas.Left** の用途や、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) がそのレイアウトの子を処理する方法について詳しくは、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) のリファレンス トピックまたは「[XAML を使ったレイアウトの定義](https://msdn.microsoft.com/library/windows/apps/mt228350)」をご覧ください。
 
 ## <a name="why-use-attached-properties"></a>添付プロパティを使う理由
 
@@ -76,7 +76,7 @@ Windows ランタイムの添付プロパティは依存関係プロパティと
 
 ### <a name="using-the-xaml-accessor-pattern"></a>XAML アクセサー パターンを使う場合
 
-XAML をオブジェクト ツリーに解析するときは、XAML プロセッサが添付プロパティの値を設定できる必要があります。 接続されているプロパティの所有者の種類がという名前の形式で専用のアクセス用メソッドを実装する必要が **取得します。 プロパティ名*と **設定。 プロパティ名*します。 この専用のアクセサー メソッドは、コードで添付プロパティを取得または設定する方法の 1 つでもあります。 コードの観点からすると、添付プロパティは、プロパティ アクセサーではなくメソッド アクセサーを持つバッキング フィールドに似ています。このバッキング フィールドは、どのオブジェクトにも存在する可能性があり、具体的に定義する必要はありません。
+XAML をオブジェクト ツリーに解析するときは、XAML プロセッサが添付プロパティの値を設定できる必要があります。 添付プロパティの所有者型は、形式で名前を付けた専用のアクセサー メソッドを実装する必要があります **を取得する。 PropertyName*と **設定。 PropertyName*します。 この専用のアクセサー メソッドは、コードで添付プロパティを取得または設定する方法の 1 つでもあります。 コードの観点からすると、添付プロパティは、プロパティ アクセサーではなくメソッド アクセサーを持つバッキング フィールドに似ています。このバッキング フィールドは、どのオブジェクトにも存在する可能性があり、具体的に定義する必要はありません。
 
 次の例は、コードで XAML アクセサー API を使って添付プロパティを設定する方法を示しています。 この例の `myCheckBox` は、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) クラスのインスタンスです。 実際に値を設定するコードは最後の行です。それまでの行では、インスタンスとその親子関係を設定しています。 コメント解除された最後の行は、プロパティ システムを使う場合の構文です。 コメント アウトされた最後の行は、XAML アクセサー パターンを使う場合の構文です。
 
@@ -127,9 +127,9 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 - 添付プロパティをアニメーション用ターゲット パスの一部として指定する場合は、添付プロパティ名をかっこ "()" で囲みます。たとえば、"(Canvas.Left)" のようにします。 詳しくは、「[Property-path 構文](property-path-syntax.md)」をご覧ください。
 
 > [!WARNING]
-> Windows ランタイム XAML 実装の既存の制限は、接続のプロパティをユーザー設定のアニメーションを設定できないことができます。
+> Windows ランタイム XAML 実装の既存の制限は、カスタム添付プロパティをアニメーション化することはできません。
 
-- 添付プロパティをリソース ファイルから **x:Uid** へのリソース参照のターゲット プロパティとして指定するには、コードスタイルの完全に修飾された **using:** 宣言を角かっこ ("\[\]") で囲む特別な構文を使って、故意にスコープ ブレークを作成します。 たとえば、要素が存在する場合を想定しています`<TextBlock x:Uid="Title" />`、そのインスタンスの**Canvas.Top**値を対象とするリソース ファイル内のリソース キーは、"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"します。 リソース ファイルと XAML について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
+- 添付プロパティをリソース ファイルから **x:Uid** へのリソース参照のターゲット プロパティとして指定するには、コードスタイルの完全に修飾された **using:** 宣言を角かっこ ("\[\]") で囲む特別な構文を使って、故意にスコープ ブレークを作成します。 たとえば、要素が存在すると想定して`<TextBlock x:Uid="Title" />`、そのインスタンス**Canvas.Top**値をターゲットとするリソース ファイル内のリソース キーは"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top します。 リソース ファイルと XAML について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 

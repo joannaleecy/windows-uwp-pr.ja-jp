@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ec6b2a31f4f577de30dac1c96a411c6aee6e9dc
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892608"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905795"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>MakePri.exe の形式に固有のインデクサー
 
 このトピックでは、リソースのインデックスを生成するために [MakePri.exe](compile-resources-manually-with-makepri.md) ツールによって使われる形式に固有のインデクサーについて説明します。
 
 > [!NOTE]
-> Windows ソフトウェア開発キットのインストール中に**Windows SDK** UWP 管理アプリのオプションをオンにすると、MakePri.exe がインストールされています。 パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびフォルダーの他のアーキテクチャの名前の)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
+> Windows ソフトウェア開発キットをインストールするときに、 **Windows SDK for UWP アプリの管理**オプションをオンにすると、MakePri.exe がインストールされます。 パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャの名前のフォルダーの)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
 
 MakePri.exe は、通常、`new`、`versioned`、`resourcepack` コマンドと共に使用されます。 「[MakePri.exe のコマンド ライン オプション](makepri-exe-command-options.md)」をご覧ください。 これらのオプションを使うと、ソース ファイルがインデックス化され、リソースのインデックスが生成されます。 MakePri.exe は、さまざまな別個のインデクサーを使って異なるソース リソース ファイルまたはリソースのコンテナーを読み取ります。 最も単純なインデクサーは、`.jpg` 画像 や `.png` 画像などのフォルダーの内容をインデックス化するフォルダー インデクサーです。
 

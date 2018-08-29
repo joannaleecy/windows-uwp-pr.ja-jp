@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2884291"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906202"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Windows 10 ビルド 17134 の開発者向け新着情報
 
@@ -38,7 +38,7 @@ Fluent Design の更新 | 多くの Fluent Design ページが新しい情報と
 ナビゲーション ビュー | [ナビゲーション ビュー](../design/controls-and-patterns/navigationview.md) コントロールでは、アプリ内でトップレベルのナビゲーションを行うための折りたたみ可能なナビゲーション メニューを提供します。 このコントロールは、ナビゲーション ウィンドウ (またはハンバーガー メニュー) パターンを実装し、ウィンドウの表示モードをさまざまなウィンドウ サイズに自動的に合わせます。
 表示フォーカス | 新しい[表示フォーカス](../design/style/reveal-focus.md)効果では、Xbox One やテレビ画面などのエクスペリエンスに発光効果を提供します。 ユーザーがゲームパッドやキーボードのフォーカスをボタンなどのフォーカス可能な要素に移動したときに、その要素の境界線がアニメーション化されます。
 サウンド | XAML では、**SpatialAudioMode** プロパティで 3D オーディオがサポートされるようになりました。 構成方法については、「[サウンド](../design/style/sound.md)」をご覧ください。
-タイル | [追跡可能なタイル通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)が JavaScript ベースの UWP アプリでサポートされるようになりました。<br><br>第 2 のタイルとバッジの通知は、[デスクトップ ブリッジ アプリから現在サポートされています](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications)。
+タイル | [追跡可能なタイル通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)が JavaScript ベースの UWP アプリでサポートされるようになりました。<br><br>セカンダリ タイルとバッジ通知は、[デスクトップ ブリッジ アプリからサポートされるようになりました](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications)。
 ツリー ビュー | [TreeView](../design/controls-and-patterns/tree-view.md) コントロールを使用すると、階層リストが有効になり、入れ子になった項目を含むノードを展開したり、折りたたんだりすることができるようになります。 フォルダー構造や入れ子になった関係を UI で視覚的に示すために使用できます。
 記述スタイル | 文体と語調に関する記事を更新および拡張し、[記述スタイルに関するガイダンス](../design/style/writing-style.md)を作成しました。 この新しいガイドでは、アプリ内に効果的なテキストを作成するための原則と、エラー メッセージやダイアログなどのコントロールに使用する記述スタイルのベスト プラクティスを示しています。
 
@@ -73,7 +73,7 @@ PlayReady | Microsoft PlayReady は、デジタル コンテンツを保護し�
 システム トリガー | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) を使用すると、必要なシステム トリガーが OS から提供されない場合に、システム トリガーを定義できます。 ハードウェア ドライバーと UWP アプリの両方がサード パーティ製であり、ハードウェア ドライバーでカスタム イベントを生成し、アプリで処理する必要がある場合などに必要になります。 例として、オーディオ ジャックが接続されたときに、オーディオ カードからユーザーに通知する場合などが該当します。
 ユーザー アクティビティ | 新しい [UserActivity に関するドキュメント](../launch-resume/useractivities.md)では、前回ユーザーがアプリで実行していた状態から再開できるようにする方法 (複数のデバイス間で再開する場合にも対応) について説明します。</br>**UserActivitySessionHistoryItem** クラスには、最近のユーザー アクティビティを取得する新しいメソッドが含まれています。 詳しくは、[GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) およびそのオーバーロードの説明をご覧ください。
 Windows Mixed Reality API | 拡張中の Windows Mixed Reality プラットフォームをサポートするために、[Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) 名前空間と [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) 名前空間に新しい API が追加されました。
-Windows Mixed Reality に関するドキュメント | 実際には Windows 混在開発者ガイダンス[docs.microsoft.com でホストされるようになりました](https://docs.microsoft.com/windows/mixed-reality/)。 同じようでこれらの UWP ドキュメントでは、今すぐの GitHub の問題についてのフィードバックをファイルしたりを取得リクエストで独自の投稿を送信できます。
+Windows Mixed Reality に関するドキュメント | Windows Mixed Reality の開発者向けガイダンスが[docs.microsoft.com でホストされるようになりました](https://docs.microsoft.com/windows/mixed-reality/)。 同様の UWP ドキュメント、できるようになりましたフィードバックを GitHub の問題したり、プル要求を介して、独自の投稿を提出できます。
 
 ## <a name="publish--monetize-windows-apps"></a>Windows アプリを公開および収益化する
 

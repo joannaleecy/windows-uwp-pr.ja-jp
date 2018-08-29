@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 購入 API, サブスクリプション
 ms.localizationpriority: medium
 ms.openlocfilehash: d8734c1fe25cf6c22d88d2d50b323b7d3ee86710
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882968"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905875"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>ユーザーのサブスクリプションに関する請求の状態を変更する
 
@@ -57,7 +57,7 @@ ms.locfileid: "2882968"
 
 | 名前         | 種類  | 説明   |  必須かどうか  |
 |----------------|--------|-------------|-----------|
-| recurrenceId | string | 変更するサブスクリプションの ID。 この ID を取得するにはするには、[ユーザー用のサブスクリプションを取得する](get-subscriptions-for-a-user.md)方法を変更するサブスクリプション アドオンを表す応答本文エントリを特定をエントリの**id**フィールドの値を使用します。     | はい      |
+| recurrenceId | string | 変更するサブスクリプションの ID。 この ID を取得するには、[ユーザーのサブスクリプションを取得する](get-subscriptions-for-a-user.md)メソッドを呼び出してを変更するサブスクリプション アドオンを表す応答本文エントリを識別およびエントリの**id**フィールドの値を使用します。     | はい      |
 
 
 ### <a name="request-body"></a>要求本文
@@ -120,7 +120,7 @@ Host: https://purchase.mp.microsoft.com
 | autoRenew | ブール値 |  現在のサブスクリプション期間の終了時にサブスクリプションが自動的に更新されるように構成されているかどうかを示します。   |
 | beneficiary | string |  このサブスクリプションに関連付けられている権利の受益者 ID。   |
 | expirationTime | string | サブスクリプションの有効期限が切れる日時 (ISO 8601形式)。 このフィールドは、サブスクリプションが特定の状態のときのみ利用可能です。 有効期限は通常、現在の状態の有効期限がいつ切れるかを示します。 たとえば、アクティブなサブスクリプションの場合、有効期限日は次の自動更新がいつ行われるかを示します。    |
-| expirationTimeWithGrace | string | 日付と時刻を含む ISO 8601 猶予期間、サブスクリプションの有効期限は次の書式を設定します。 この値と、ユーザーはアクセスできなくなりますサブスクリプションに自動的に更新するのには、サブスクリプションが失敗した後に示します。    |
+| expirationTimeWithGrace | string | 日付と時刻 ISO 8601 形式で、猶予期間を含む、サブスクリプションは期限切れします。 この値は、とき、ユーザーが失われますサブスクリプションへのアクセス、サブスクリプションが自動的に更新に失敗した後を示します。    |
 | id | string |  サブスクリプションの ID。 [ユーザーのサブスクリプションの請求状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)メソッドを呼び出すときに変更するサブスクリプションを指定するには、この値を使います。    |
 | isTrial | ブール値 |  サブスクリプションが試用版であるかどうかを示します。     |
 | lastModified | string |  サブスクリプションが前回変更された日時 (ISO 8601形式)。      |

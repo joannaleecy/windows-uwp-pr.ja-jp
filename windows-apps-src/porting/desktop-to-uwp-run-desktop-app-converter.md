@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: 8748b68bf4efbcc79d0bba475db32f3a2d7cc933
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2884830"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905978"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>Desktop App Converter を使用してアプリをパッケージ化する (デスクトップ ブリッジ)
 
@@ -271,7 +271,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-InstallerArguments &lt;String&gt; |省略可能 |インストーラーに無人/サイレント モードでの実行を強制する引数の文字列、またはコンマ区切り一覧。 インストーラーが msi の場合は、このパラメーターは省略可能です。 インストーラーからログを取得するには、ここで、インストーラーのログ記録の引数を指定し、パス &lt;log_folder&gt; (コンバーターが適切なパスに置換するトークン) を使います。 <br><br>**注**: 無人/サイレント フラグとログの引数は、インストーラー テクノロジごとに異なります。 <br><br>このパラメーターの使用例: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log"。ログ ファイルを生成しない別の例: ```-InstallerArguments "/quiet", "/norestart"```。コンバーターでログをキャプチャし、最終的なログ フォルダーに格納する場合は、文字どおりすべてのログにトークン パス &lt;log_folder&gt; を指定する必要があります。|
 |-InstallerValidExitCodes &lt;Int32&gt; |省略可能 |インストーラーの正常な実行を示す、コンマで区切った終了コードの一覧 (例: 0, 1234, 5678)。  既定では、非 msi は 0、msi は 0, 1641, 3010 です。|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |省略可能 |このスクリプトに出力で MakeAppx を呼び出すように指示するスイッチ (存在する場合)。 |
-|MakeMSIX-[&lt;SwitchParameter&gt;]  |オプション |存在する場合は、MSIX パッケージとして出力をパッケージ化するには、このスクリプトを通知するスイッチです。 |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |オプション |存在する場合、出力を MSIX パッケージとしてパッケージ化するには、このスクリプトに指示するスイッチ。 |
 |<a id="identity-params" /><strong>パッケージ ID パラメーター</strong>||
 |-PackageName &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの名前。 デベロッパー センターが数値で始まる ID をパッケージに割り当てる場合、必ず <i>-AppId</i> パラメーターも渡し、そのパラメーターの値として文字列サフィックスのみを使ってください (ピリオドの区切り記号の後)。 |
 |-Publisher &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの発行元 |

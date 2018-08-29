@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 概要
 ms.localizationpriority: medium
 ms.openlocfilehash: 03abe68fd19573d7b2deba9937c515a8641e8fca
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885907"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913099"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT の概要
 &nbsp;
@@ -22,7 +22,7 @@ ms.locfileid: "2885907"
 
 C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。 C++/WinRT の場合、標準に準拠した C++17 のコンパイラを使用して Windows ランタイム API を作成および使用できます。 Windows SDK には C++/WinRT が含まれます。バージョン 10.0.17134.0 (Windows 10、バージョン 1803) で導入されました。
 
-C + +/WinRT が Microsoft の推奨される代替、 [C + +/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)言語投影、および[Windows ランタイム C++ テンプレート ライブラリ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。 完全な一覧[C + に関するトピック +/WinRT](index.md#topics-about-cwinrt)については、相互運用性とから移植、C + の両方を含む +/CX および WRL します。
+C++/WinRT はマイクロソフトの推奨される代替、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)言語プロジェクションで、および[Windows ランタイム C++ テンプレート ライブラリ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。 完全な一覧[トピックについては、C++/WinRT](index.md#topics-about-cwinrt)との相互運用の両方から、C++ の移植に関する情報を紹介/CX および WRL します。
 
 > [!IMPORTANT]
 > C++/WinRT の知っておくべき 2 つの最も重要な部分は、「[C++/WinRT の SDK サポート](#sdk-support-for-cwinrt)」と「[C++/WinRT の Visual Studio サポートと VSIX](#visual-studio-support-for-cwinrt-and-the-vsix)」のセクションで説明されています。
@@ -42,9 +42,9 @@ C++/WinRT では、COM スタイルのプログラミングを使用せずに、
 Visual Studio の C++/WinRT プロジェクト テンプレート、および C++/WinRT MSBuild プロジェクト テンプレートの
 プロパティとターゲットでは、[Visual Studio Marketplace](https://marketplace.visualstudio.com/) から [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) をダウンロードし、インストールします。
 
-Visual Studio 2017 (バージョン 15.6 以上、15.7 以上を推奨)、および Windows SDK バージョン 10.0.17134.0 (Windows 10 バージョン 1803) が必要になります。 既にインストールしていない場合、は、Visual Studio インストーラー内から**C++ どこからでも Windows プラットフォーム ツール**] オプションをインストールする必要があります。 Windows の**設定**に > **更新 \ & セキュリティ** > **開発者向け**、 **Sideload アプリ**オプションではなく、**開発モード**のオプションを選択します。
+Visual Studio 2017 (バージョン 15.6 以上、15.7 以上を推奨)、および Windows SDK バージョン 10.0.17134.0 (Windows 10 バージョン 1803) が必要になります。 まだインストールして、Visual Studio インストーラー内から**C++ ユニバーサル Windows プラットフォーム ツール**のオプションをインストールする必要があります。 Windows の**設定**で > **Update \ & セキュリティ** > **開発者のため**、**アプリのサイドローディング**オプションではなく、**開発者モード**のオプションを選択します。
 
-開くには、C キーを作成し、構築、または [なります +/WinRT Visual Studio でプロジェクトし、それを配置します。 または、既存のプロジェクトを変換を追加して、`<CppWinRTEnabled>true</CppWinRTEnabled>`プロパティを`.vcxproj`ファイル。
+そのことができますを作成し、ビルド、または開くには、c++/WinRT Visual Studio でプロジェクトを作成し展開します。 追加することで、既存のプロジェクトを変換する代わりに、`<CppWinRTEnabled>true</CppWinRTEnabled>`プロパティをその`.vcxproj`ファイル。
 
 ```xml
 <Project ...>

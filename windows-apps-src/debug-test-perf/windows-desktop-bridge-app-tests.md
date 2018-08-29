@@ -2,27 +2,27 @@
 author: PatrickFarley
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Windows デスクトップ ブリッジ アプリのテスト
-description: デスクトップ アプリが、UWP アプリへの変換をその用に最適化されたことを確認するのにには、デスクトップ ブリッジの組み込みのテストを使用します。
+description: UWP アプリには、その変換するために、デスクトップ アプリを最適化することを確認するのにには、デスクトップ ブリッジの組み込みのテストを使用します。
 ms.author: pafarley
 ms.date: 12/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、アプリ認定
+keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2895230"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909759"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows デスクトップ ブリッジ アプリのテスト
 
-[デスクトップ ブリッジ アプリ](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)は、Windows デスクトップ アプリケーションを[デスクトップ ブリッジ](https://developer.microsoft.com/en-us/windows/bridges/desktop)を使用して、どこからでも Windows プラットフォーム (UWP) アプリに変換されます。 Windows デスクトップ アプリケーションは、変換後、Windows 10 デスクトップをターゲットとする UWP アプリ パッケージ (.appx または .appxbundle) の形式でパッケージ化され、処理と展開が行われます。
+[デスクトップ ブリッジ アプリ](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)は、[デスクトップ ブリッジ](https://developer.microsoft.com/en-us/windows/bridges/desktop)を使用して、ユニバーサル Windows プラットフォーム (UWP) アプリに変換された Windows デスクトップ アプリケーションです。 Windows デスクトップ アプリケーションは、変換後、Windows 10 デスクトップをターゲットとする UWP アプリ パッケージ (.appx または .appxbundle) の形式でパッケージ化され、処理と展開が行われます。
 
 ## <a name="required-versus-optional-tests"></a>必須のテストとオプションのテスト
-Windows デスクトップ ブリッジ アプリの省略可能なテスト情報のみは、Microsoft ストア オンボーディング中にアプリを評価するには使用されません。 調査をお勧めします。 これらのテスト結果を品質の改善のアプリを作成します。 ストアの配布準備の全体的な合格/不合格の基準は、これらのオプションのテストではなく、必須のテストで決定されます。
+Windows デスクトップ ブリッジ アプリのオプションのテストは、情報提供のみと Microsoft ストアのオンボード処理中にアプリの評価には使用されません。 調査をお勧めします。 これらのテストの結果をアプリの品質を向上します。 ストアの配布準備の全体的な合格/不合格の基準は、これらのオプションのテストではなく、必須のテストで決定されます。
 
 ## <a name="current-optional-tests"></a>現在のオプションのテスト
 
@@ -50,13 +50,13 @@ Windows デスクトップ ブリッジ アプリの省略可能なテスト情�
 このテストでは、appx がデバッグ ビルドではないことを確認します。
  
 **Background**  
-Microsoft ストアで認定済み] アプリする必要があるコンパイルされずデバッグ、実行可能ファイルのデバッグ バージョンが参照する必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
+Microsoft Store の認定を受けるアプリにコンパイルせずデバッグ用とデバッグ版の実行可能ファイルを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
  
 **テストの詳細**  
 アプリをテストして、デバッグ用のビルドでないことと、どのデバッグ用のフレームワークにもリンクされていないことを確認します。
  
 **問題への対応**  
-* Microsoft ストアに送信する前にリリース ビルドとしてアプリを作成します。
+* Microsoft Store に提出する前に、リリース用ビルドとして、アプリをビルドします。
 * 適切なバージョンの .NET フレームワークがインストールされていることを確認します。
 * アプリがフレームワークのデバッグ バージョンにリンクされていないことと、リリース バージョンで構築されたことを確認します。 このアプリに .NET コンポーネントが含まれている場合は、適切なバージョンの .NET Framework がインストールされていることを確認します。
 
@@ -125,7 +125,7 @@ The image “BadgeLogo” has an ABGR value {value} at position (x, y) that is n
 The image must define at least one variant without a TargetSize qualifier. (画像では、TargetSize 修飾子がないバージョンが少なくとも 1 つ定義されている必要があります。) It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100. (Scale 修飾子が定義されているか、または Scale と TargetSize が指定されていないままである必要があり、既定では Scale-100 です。)  | 詳しくは、[レスポンシブ デザイン](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx)と[アプリ リソース](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)に関するガイドをご覧ください。 
 The package is missing a "resources.pri" file. (パッケージに "resources.pri" ファイルがありません。)  | アプリ マニフェストにローカライズ可能なコンテンツがある場合は、アプリのパッケージに有効な resources.pri ファイルが含まれていることを確認します。 
 The "resources.pri" file must contain a resource map with a name that matches the package name {package full name} ("resources.pri" ファイルには、パッケージ名 {package full name} と名前が一致するリソース マップが含まれている必要があります。)  | このエラーが表示される場合は、マニフェストが変更され、resources.pri 内のリソース マップの名前がマニフェストのパッケージ名と一致しなくなった可能性があります。 実際のメッセージでは、{package full name} には resources.pri に含まれている必要があるパッケージ名が入ります。 この問題を解決するには、resources.pri をリビルドする必要があります。その場合は、アプリのパッケージをリビルドするのが最も簡単です。 
-The "resources.pri" file must not have AutoMerge enabled. ("resources.pri" ファイルは AutoMerge を有効にしないでください。)  | MakePRI.exe では、AutoMerge というオプションがサポートされています。 AutoMerge の規定値は "off" です。 オンにすると、AutoMerge が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft ストアを配布するアプリをお勧めしません。 Microsoft ストアで配布されるアプリの resources.pri する必要がありますアプリのパッケージのルートで、アプリをサポートしているすべての言語の参照が含まれています。 
+The "resources.pri" file must not have AutoMerge enabled. ("resources.pri" ファイルは AutoMerge を有効にしないでください。)  | MakePRI.exe では、AutoMerge というオプションがサポートされています。 AutoMerge の規定値は "off" です。 オンにすると、AutoMerge が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft Store を通じて配布する予定のアプリの推奨されません。 Microsoft Store で配布するアプリの resources.pri は、アプリのパッケージのルートし、アプリがサポートする言語のリファレンスをすべて含める必要があります。 
 The string {string} failed the max length restriction of {number} characters. (文字列 {string} が {number} 文字の最大文字数の制限を満たしていません。)  | 「[アプリ パッケージの要件](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)」をご覧ください。 実際のメッセージでは、{string} が問題の文字列に置き換わり、{number} に最大文字数が入ります。 
 The string {string} must not have leading/trailing whitespace. (文字列 {string} の先頭または末尾を空白にすることはできません。)  | アプリ マニフェストの要素のスキーマでは、先頭および末尾の空白は許可されていません。 実際のメッセージでは、{string} が問題の文字列に置き換わります。 resources.pri のマニフェスト フィールドのローカライズされた値において、先頭または末尾にスペースが挿入されていないことを確認します。 
 The string must be non-empty (greater than zero in length) (文字列を空にすることはできません (文字数が 0 より大きい必要があります)。)  | 詳しくは、「[アプリ パッケージの要件](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)」をご覧ください。 
@@ -214,17 +214,17 @@ The {filename} file must not contain a reverse map section. ({filename} ファ�
  
 **テストの詳細**  
 このテストでは、アプリ内のすべての UWP コンポーネントを確認します。
-* アプリ パッケージ内の各マネージ バイナリがバイナリのインポート アドレス テーブルをチェックして、UWP アプリ開発のサポートされていない Win32 API の依存関係がないことを確認します。
+* アプリ パッケージ内の各マネージ バイナリがバイナリのインポート アドレス テーブルをチェックして、UWP アプリの開発のサポートされていない Win32 API に依存関係がないことを確認します。
 * アプリ パッケージ内の管理された各バイナリが承認済みのプロファイル外部の機能に依存していないことを確認します。 
 
 **問題への対応**  
 この問題を修正するには、アプリが、デバッグ用ビルドとしてではなく、リリース用ビルドとしてコンパイルされていることを確認します。 
 
 > [!NOTE]
-> アプリのデバッグ ビルド アプリのみ[UWP アプリ用の Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)を使用している場合でも、このテストは失敗します。 許可されている API UWP アプリではない発表 API を識別するエラー メッセージを確認します。 
+> アプリが[UWP アプリ用の Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のみを使っている場合でも、デバッグ用ビルドのアプリにはこのテストは失敗します。 UWP アプリの許可されている API ではない API の存在を特定のエラー メッセージを確認します。 
 
 > [!NOTE]
-> C++ アプリをデバッグ構成に組み込まれている構成では、UWP アプリの Windows SDK から Api のみが使用している場合でも、このテストは失敗します。 詳細については、 [UWP アプリで Windows Api 方法](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)を参照してください。
+> 構成が UWP アプリの場合のみ、Windows SDK の Api を使っている場合でも、デバッグ構成で構築された C++ アプリにはこのテストは失敗します。 詳細については、 [UWP アプリでの Windows api の代替手段](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)を参照してください。
 
 ### <a name="6-user-account-control-uac-test"></a>6. ユーザー アカウント制御 (UAC) のテスト  
 
@@ -232,7 +232,7 @@ The {filename} file must not contain a reverse map section. ({filename} ファ�
 アプリが実行時のユーザー アカウント制御を要求しないことを確認します。
 
 **テストの詳細**  
-アプリでは、1 つの Microsoft ストア ポリシー管理者特権が昇格されるまたは UIAccess を要求できません。 管理者特権のセキュリティ アクセス許可はサポートされていません。 
+アプリでは、Microsoft ストアのポリシーに従って管理者の昇格や UIAccess を要求できません。 管理者特権のセキュリティ アクセス許可はサポートされていません。 
 
 **問題への対応**  
 アプリは、対話ユーザーとして実行する必要があります。 詳しくは、「[UI オートメーション セキュリティの概要](https://go.microsoft.com/fwlink/?linkid=839440)」をご覧ください。
@@ -273,7 +273,7 @@ Windows 既定のセキュリティ保護を変更すると、ユーザーが危
 このチェックは、通常、アプリでファイルの最新の公式リリースではなく、"Release Preview" バージョンが使われていると失敗します。 
 
 **問題への対応**  
-この問題を解決するには、UWP アプリの[Bing マップ SDK](http://go.microsoft.com/fwlink/p/?linkid=614880)の最新バージョンを使用します。
+これを解決するには、UWP アプリ用[Bing Maps SDK](http://go.microsoft.com/fwlink/p/?linkid=614880)の最新バージョンを使います。
 
 #### <a name="82-private-code-signing"></a>8.2 プライベート コードの署名
 アプリ パッケージ内にプライベート コードの署名バイナリが存在するかテストします。 

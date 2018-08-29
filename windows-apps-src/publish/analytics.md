@@ -8,14 +8,14 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、分析、レポート、ダッシュ ボード、アプリケーション、データ、測定値
+keywords: windows 10、uwp、分析, レポート, ダッシュ ボード、アプリ、データ、メトリック
 ms.localizationpriority: medium
 ms.openlocfilehash: 090ddfdfbed1ae49e87f4dc419765e006913764f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892463"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2907895"
 ---
 # <a name="analyze-app-performance"></a>アプリのパフォーマンスの分析
 
@@ -39,7 +39,7 @@ ms.locfileid: "2892463"
 -   [レビュー レポート](reviews-report.md)
 -   [フィードバック レポート](feedback-report.md)
 -   [Xbox 分析レポート](xbox-analytics-report.md)
--   [分析レポート](insights-report.md)
+-   [インサイト レポート](insights-report.md)
 -   [広告パフォーマンス レポート](advertising-performance-report.md)
 -   [[広告キャンペーン] レポート](promote-your-app-report.md)
 

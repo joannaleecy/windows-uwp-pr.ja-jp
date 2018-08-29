@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2891939"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905445"
 ---
 # <a name="app-management-and-services"></a>アプリの管理とサービス
 
@@ -29,9 +29,9 @@ Windows デベロッパー センター ダッシュボードで各アプリに�
 
 ## <a name="xbox-live"></a>Xbox Live
 
-ゲームを発行する場合は、このページで、 [Xbox Live の作成者のプログラム](http://xbox.com/developers/creators-program)を有効にすることができます。 これにより、構成すると、テスト、Xbox Live 機能を起動し、最終的に、Xbox Live の作成者プログラム ゲームを公開することができます。
+ゲームを公開する場合は、このページで、 [Xbox Live クリエーターズ プログラム](http://xbox.com/developers/creators-program)を有効にすることができます。 これにより、構成すると、テスト、Xbox Live 機能を起動し、最終的に、Xbox Live クリエーターズ プログラム ゲームを公開することができます。
 
-詳しくは、 [Xbox Live の作成者プログラムの使用を開始して](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)、 [Xbox Live の作成者のプログラムの新しいタイトルを作成しテスト環境に発行する](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)を参照してください。
+詳しくは、 [Xbox Live クリエーターズ プログラムの概要](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)と、[新しい Xbox Live クリエーターズ プログラム タイトルを作成しテスト環境に公開](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)をご覧ください。
 
 ## <a name="experimentation"></a>Experimentation
 
@@ -50,15 +50,15 @@ Windows Phone 8.1 以前を対象としたアプリでマップ サービスを�
 
 ## <a name="product-collections-and-purchases"></a>製品のコレクションと購入
 
-Microsoft ストア コレクション API や Microsoft ストア購入 API を使用すると、アプリとアドオンの所有者情報にアクセスして、関連するを入力する必要があります。 Azure AD クライアント Id を次のとおりです。 これらの変更が有効になるまで最大で 16 時間かかることに注意してください。
+Microsoft Store コレクション API と、Microsoft Store 購入 API を使用すると、アプリとアドオンの所有権情報にアクセスして、関連付けられているを入力する必要があります。 ここでの Azure AD クライアント Id。 これらの変更が有効になるまで最大で 16 時間かかることに注意してください。
 
 詳しくは、「[サービスから製品の権利を管理する](../monetize/view-and-grant-products-from-a-service.md)」をご覧ください。
 
 ## <a name="administrator-consent"></a>管理者の承認
 
-f、製品、Azure AD と統合管理者の承認が必要な[アプリケーションのアクセス許可または代理アクセス権](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)を要求する Api を呼び出して Azure AD クライアント ID を入力します。 これにより、その組織許可を付与することに同意したテナント内のすべてのユーザーの代理として機能するように、その製品の用のアプリを入手するには管理者です。
+Azure AD と統合し、管理者の同意を必要とする[アプリケーションのアクセス権やアクセス許可を委任](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)を要求している Api を呼び出す、製品の f では、ここでは、Azure AD クライアント ID を入力します。 これにより、組織付与同意を得て、テナントのすべてのユーザーの代理として行為する製品のためにアプリを取得した管理者です。
 
-詳しくは、[テナントが全体の承認を要求する](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)を参照してください。
+詳しくは、[全体のテナントの同意を要求する](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)を参照してください。
 
 ## <a name="app-management"></a>アプリ管理
 
@@ -89,18 +89,18 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
 
 ## <a name="wnsmpns"></a>WNS/MPNS
 
-[ **WNS/MPNS** ] セクションを作成し、アプリのユーザーに通知を送信するためのオプションを提供します。 
+**WNS/MPNS** ] セクションでは、作成し、アプリのユーザーに通知を送信するためのオプションが提供されます。 
 
 > [!TIP]
-> UWP アプリでは、[**通知**] オプションを使用して、ダッシュ ボードをお勧めします。 この機能では、すべてのアプリの顧客に通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たしている、Windows 10 顧客の対象となるサブセットをします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
+> UWP アプリの場合は、ダッシュ ボードで、**通知**のオプションを使用してお勧めします。 この機能では、すべてのアプリのユーザーに通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 ユーザーのターゲットのサブセットにします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
 
-アプリのパッケージの種類と、特定の要件に応じて、次のいずれかを使用することも。 
+アプリのパッケージの種類とその具体的な要件に応じて、次のオプションのいずれかを使用することができますも。 
 
 -   **Windows プッシュ通知サービス (WNS)** を使うと、独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 詳しくは、「[Windows プッシュ通知サービス (WNS) の概要](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)」をご覧ください。
 
 -   **Microsoft Azure Mobile Apps** を使うと、プッシュ通知の送信や、アプリ ユーザーの認証や管理、クラウドでのアプリ データの保存をすることができます。 詳しくは、[モバイル アプリに関するドキュメント](http://go.microsoft.com/fwlink/p/?LinkId=221116)をご覧ください。
 
--   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone の .xap パッケージと一緒に使うことができます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使用している場合は、 **WNS/MPNS**ページに表示されているフィールドに証明書をアップロードする必要があります。 詳しくは、「[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](http://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
+-   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone の .xap パッケージと一緒に使うことができます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使用している場合は、[ **WNS/MPNS** ] ページで提供されるフィールドに証明書をアップロードする必要があります。 詳しくは、「[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](http://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
  
 
  

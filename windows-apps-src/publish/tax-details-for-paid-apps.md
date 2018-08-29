@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 税金, アプリの税, 税の要件, コマース拡張, 税率
 ms.localizationpriority: medium
 ms.openlocfilehash: 461c9303bbb26e5c4739ca60c03343008377df6c
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882978"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905955"
 ---
 # <a name="tax-details-for-paid-apps"></a>有料アプリの税の詳細
 
