@@ -8,26 +8,26 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、接続されているデバイス、リモート システム、ローマ、プロジェクト ローマ
+keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e5226b23a454bf48add22d590a3ff247c629e4f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888181"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913089"
 ---
-# <a name="connect-devices-through-remote-sessions"></a><span data-ttu-id="e1595-104">リモート セッションでデバイスを接続する</span><span class="sxs-lookup"><span data-stu-id="e1595-104">Connect devices through remote sessions</span></span>
+# <a name="connect-devices-through-remote-sessions"></a><span data-ttu-id="82b6d-104">リモート セッションでデバイスを接続する</span><span class="sxs-lookup"><span data-stu-id="82b6d-104">Connect devices through remote sessions</span></span>
 
-<span data-ttu-id="e1595-105">リモート セッション機能を使用すると、セッションを介してアプリを他のデバイスに接続できます。これは明示的なアプリ メッセージングや、ブローカーによるシステム管理データ (Windows Holographic デバイス間のホログラフィック共有に使用する **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** など) の交換を目的としています。</span><span class="sxs-lookup"><span data-stu-id="e1595-105">The Remote Sessions feature allows an app to connect to other devices through a session, either for explicit app messaging or for brokered exchange of system-managed data, such as the **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** for holographic sharing between Windows Holographic devices.</span></span>
+<span data-ttu-id="82b6d-105">リモート セッション機能を使用すると、セッションを介してアプリを他のデバイスに接続できます。これは明示的なアプリ メッセージングや、ブローカーによるシステム管理データ (Windows Holographic デバイス間のホログラフィック共有に使用する **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** など) の交換を目的としています。</span><span class="sxs-lookup"><span data-stu-id="82b6d-105">The Remote Sessions feature allows an app to connect to other devices through a session, either for explicit app messaging or for brokered exchange of system-managed data, such as the **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** for holographic sharing between Windows Holographic devices.</span></span>
 
-<span data-ttu-id="e1595-106">リモート セッションはどの Windows デバイスでも作成でき、(他のユーザーがサインインしているデバイスを含めて) どの Windows デバイスでも参加を要求できます (セッションによっては招待のみの可視性が適用されることがあります)。</span><span class="sxs-lookup"><span data-stu-id="e1595-106">Remote sessions can be created by any Windows device, and any Windows device can request to join (although sessions can have invite-only visibility), including devices signed in by other users.</span></span> <span data-ttu-id="e1595-107">このガイドには、リモート セッションを利用するあらゆる主要なシナリオの基本的なサンプル コードを記載しています。</span><span class="sxs-lookup"><span data-stu-id="e1595-107">This guide provides basic sample code for all of the major scenarios that make use of remote sessions.</span></span> <span data-ttu-id="e1595-108">このコードは、既存のアプリ プロジェクトに組み込み、必要に応じて変更できます。</span><span class="sxs-lookup"><span data-stu-id="e1595-108">This code can be incorporated into an existing app project and modified as necessary.</span></span> <span data-ttu-id="e1595-109">エンド ツー エンド実装については、[クイズ ゲームのサンプル アプリ](https://github.com/microsoft/Windows-appsample-remote-system-sessions)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e1595-109">For an end-to-end implementation, see the [Quiz Game sample app](https://github.com/microsoft/Windows-appsample-remote-system-sessions)).</span></span>
+<span data-ttu-id="82b6d-106">リモート セッションはどの Windows デバイスでも作成でき、(他のユーザーがサインインしているデバイスを含めて) どの Windows デバイスでも参加を要求できます (セッションによっては招待のみの可視性が適用されることがあります)。</span><span class="sxs-lookup"><span data-stu-id="82b6d-106">Remote sessions can be created by any Windows device, and any Windows device can request to join (although sessions can have invite-only visibility), including devices signed in by other users.</span></span> <span data-ttu-id="82b6d-107">このガイドには、リモート セッションを利用するあらゆる主要なシナリオの基本的なサンプル コードを記載しています。</span><span class="sxs-lookup"><span data-stu-id="82b6d-107">This guide provides basic sample code for all of the major scenarios that make use of remote sessions.</span></span> <span data-ttu-id="82b6d-108">このコードは、既存のアプリ プロジェクトに組み込み、必要に応じて変更できます。</span><span class="sxs-lookup"><span data-stu-id="82b6d-108">This code can be incorporated into an existing app project and modified as necessary.</span></span> <span data-ttu-id="82b6d-109">エンド ツー エンド実装については、[クイズ ゲームのサンプル アプリ](https://github.com/microsoft/Windows-appsample-remote-system-sessions)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="82b6d-109">For an end-to-end implementation, see the [Quiz Game sample app](https://github.com/microsoft/Windows-appsample-remote-system-sessions)).</span></span>
 
-## <a name="preliminary-setup"></a><span data-ttu-id="e1595-110">準備段階のセットアップ</span><span class="sxs-lookup"><span data-stu-id="e1595-110">Preliminary setup</span></span>
+## <a name="preliminary-setup"></a><span data-ttu-id="82b6d-110">準備段階のセットアップ</span><span class="sxs-lookup"><span data-stu-id="82b6d-110">Preliminary setup</span></span>
 
-### <a name="add-the-remotesystem-capability"></a><span data-ttu-id="e1595-111">remoteSystem 機能を追加する</span><span class="sxs-lookup"><span data-stu-id="e1595-111">Add the remoteSystem capability</span></span>
+### <a name="add-the-remotesystem-capability"></a><span data-ttu-id="82b6d-111">remoteSystem 機能を追加する</span><span class="sxs-lookup"><span data-stu-id="82b6d-111">Add the remoteSystem capability</span></span>
 
-<span data-ttu-id="e1595-112">アプリでリモート デバイスのアプリを起動するには、`remoteSystem` 機能をアプリ パッケージ マニフェストに追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1595-112">In order for your app to launch an app on a remote device, you must add the `remoteSystem` capability to your app package manifest.</span></span> <span data-ttu-id="e1595-113">これには、マニフェスト デザイナーで  **[機能]** タブの **[リモート システム]** を選んで追加するか、プロジェクトの _Package.appxmanifest_ ファイルに以下のコードを手動で追加します。</span><span class="sxs-lookup"><span data-stu-id="e1595-113">You can use the package manifest designer to add it by selecting **Remote System** on the **Capabilities** tab, or you can manually add the following line to your project's _Package.appxmanifest_ file.</span></span>
+<span data-ttu-id="82b6d-112">アプリでリモート デバイスのアプリを起動するには、`remoteSystem` 機能をアプリ パッケージ マニフェストに追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="82b6d-112">In order for your app to launch an app on a remote device, you must add the `remoteSystem` capability to your app package manifest.</span></span> <span data-ttu-id="82b6d-113">これには、マニフェスト デザイナーで  **[機能]** タブの **[リモート システム]** を選んで追加するか、プロジェクトの _Package.appxmanifest_ ファイルに以下のコードを手動で追加します。</span><span class="sxs-lookup"><span data-stu-id="82b6d-113">You can use the package manifest designer to add it by selecting **Remote System** on the **Capabilities** tab, or you can manually add the following line to your project's _Package.appxmanifest_ file.</span></span>
 
 ``` xml
 <Capabilities>
@@ -35,8 +35,8 @@ ms.locfileid: "2888181"
 </Capabilities>
 ```
 
-### <a name="enable-cross-user-discovering-on-the-device"></a><span data-ttu-id="e1595-114">デバイスでユーザー間の検出を有効にする</span><span class="sxs-lookup"><span data-stu-id="e1595-114">Enable cross-user discovering on the device</span></span>
-<span data-ttu-id="e1595-115">リモート セッションには、複数の異なるユーザーどうしの接続を目的とした機能が備えられているため、各デバイスでユーザー間の共有を有効にしておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1595-115">Remote Sessions is geared toward connecting multiple different users, so the devices involved will need to have Cross-User Sharing enabled.</span></span> <span data-ttu-id="e1595-116">このシステム設定は、次のように **RemoteSystem** クラスで静的メソッドを使用することで照会できます。</span><span class="sxs-lookup"><span data-stu-id="e1595-116">This is a system setting that can be queried with a static method in the **RemoteSystem** class:</span></span>
+### <a name="enable-cross-user-discovering-on-the-device"></a><span data-ttu-id="82b6d-114">デバイスでユーザー間の検出を有効にする</span><span class="sxs-lookup"><span data-stu-id="82b6d-114">Enable cross-user discovering on the device</span></span>
+<span data-ttu-id="82b6d-115">リモート セッションには、複数の異なるユーザーどうしの接続を目的とした機能が備えられているため、各デバイスでユーザー間の共有を有効にしておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="82b6d-115">Remote Sessions is geared toward connecting multiple different users, so the devices involved will need to have Cross-User Sharing enabled.</span></span> <span data-ttu-id="82b6d-116">このシステム設定は、次のように **RemoteSystem** クラスで静的メソッドを使用することで照会できます。</span><span class="sxs-lookup"><span data-stu-id="82b6d-116">This is a system setting that can be queried with a static method in the **RemoteSystem** class:</span></span>
 
 ```csharp
 if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anonymous)) {
@@ -46,12 +46,12 @@ if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anony
 }
 ```
 
-<span data-ttu-id="e1595-117">この設定を変更するには、ユーザーが**設定**アプリを開く必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1595-117">To change this setting, the user must open the **Settings** app.</span></span> <span data-ttu-id="e1595-118">**[システム]** > **[共有エクスペリエンス]** > **[デバイス間で共有します]** メニューの順に移動すると、システムで共有可能なデバイスをユーザーが指定できるドロップダウン ボックスがあります。</span><span class="sxs-lookup"><span data-stu-id="e1595-118">In the **System** > **Shared experiences** > **Share across devices** menu, there is a drop-down box where the user can specify which devices their system can share with.</span></span>
+<span data-ttu-id="82b6d-117">この設定を変更するには、ユーザーが**設定**アプリを開く必要があります。</span><span class="sxs-lookup"><span data-stu-id="82b6d-117">To change this setting, the user must open the **Settings** app.</span></span> <span data-ttu-id="82b6d-118">**[システム]** > **[共有エクスペリエンス]** > **[デバイス間で共有します]** メニューの順に移動すると、システムで共有可能なデバイスをユーザーが指定できるドロップダウン ボックスがあります。</span><span class="sxs-lookup"><span data-stu-id="82b6d-118">In the **System** > **Shared experiences** > **Share across devices** menu, there is a drop-down box where the user can specify which devices their system can share with.</span></span>
 
 ![[共有エクスペリエンス] 設定ページ](images/shared-experiences-settings.png)
 
-### <a name="include-the-necessary-namespaces"></a><span data-ttu-id="e1595-120">必要な名前空間を含める</span><span class="sxs-lookup"><span data-stu-id="e1595-120">Include the necessary namespaces</span></span>
-<span data-ttu-id="e1595-121">このガイドに含まれているコード スニペットを使用するには、クラス ファイルに以下の `using` ステートメントを記述する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1595-121">In order to use all of the code snippets in this guide, you will need the following `using` statements in your class file(s).</span></span>
+### <a name="include-the-necessary-namespaces"></a><span data-ttu-id="82b6d-120">必要な名前空間を含める</span><span class="sxs-lookup"><span data-stu-id="82b6d-120">Include the necessary namespaces</span></span>
+<span data-ttu-id="82b6d-121">このガイドに含まれているコード スニペットを使用するには、クラス ファイルに以下の `using` ステートメントを記述する必要があります。</span><span class="sxs-lookup"><span data-stu-id="82b6d-121">In order to use all of the code snippets in this guide, you will need the following `using` statements in your class file(s).</span></span>
 
 ```csharp
 using System.Runtime.Serialization.Json;
@@ -59,9 +59,9 @@ using Windows.Foundation.Collections;
 using Windows.System.RemoteSystems;
 ```
 
-## <a name="create-a-remote-session"></a><span data-ttu-id="e1595-122">リモート セッション作成する</span><span class="sxs-lookup"><span data-stu-id="e1595-122">Create a remote session</span></span>
+## <a name="create-a-remote-session"></a><span data-ttu-id="82b6d-122">リモート セッション作成する</span><span class="sxs-lookup"><span data-stu-id="82b6d-122">Create a remote session</span></span>
 
-<span data-ttu-id="e1595-123">リモート セッション インスタンスを作成するには、**[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** オブジェクトから開始する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1595-123">To create a remote session instance, you must start with a **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** object.</span></span> <span data-ttu-id="e1595-124">新しいセッションを作成し、他のデバイスからの参加要求を処理するには、以下のフレームワークを使用します。</span><span class="sxs-lookup"><span data-stu-id="e1595-124">Use the following framework to create a new session and handle join requests from other devices.</span></span>
+<span data-ttu-id="82b6d-123">リモート セッション インスタンスを作成するには、**[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** オブジェクトから開始する必要があります。</span><span class="sxs-lookup"><span data-stu-id="82b6d-123">To create a remote session instance, you must start with a **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** object.</span></span> <span data-ttu-id="82b6d-124">新しいセッションを作成し、他のデバイスからの参加要求を処理するには、以下のフレームワークを使用します。</span><span class="sxs-lookup"><span data-stu-id="82b6d-124">Use the following framework to create a new session and handle join requests from other devices.</span></span>
 
 ```csharp
 public async void CreateSession() {
@@ -107,11 +107,11 @@ public async void CreateSession() {
 }
 ```
 
-### <a name="make-a-remote-session-invite-only"></a><span data-ttu-id="e1595-125">リモート セッションを招待のみに設定する</span><span class="sxs-lookup"><span data-stu-id="e1595-125">Make a remote session invite-only</span></span>
+### <a name="make-a-remote-session-invite-only"></a><span data-ttu-id="82b6d-125">リモート セッションを招待のみに設定する</span><span class="sxs-lookup"><span data-stu-id="82b6d-125">Make a remote session invite-only</span></span>
 
-<span data-ttu-id="e1595-126">リモート セッションを一般に公開しない場合は、招待のみに設定することができます。</span><span class="sxs-lookup"><span data-stu-id="e1595-126">If you wish to keep your remote session from being publicly discoverable, you can make it invite-only.</span></span> <span data-ttu-id="e1595-127">招待を受け取ったデバイスのみが参加要求を送信できます。</span><span class="sxs-lookup"><span data-stu-id="e1595-127">Only the devices that receive an invitation will be able to send join requests.</span></span> 
+<span data-ttu-id="82b6d-126">リモート セッションを一般に公開しない場合は、招待のみに設定することができます。</span><span class="sxs-lookup"><span data-stu-id="82b6d-126">If you wish to keep your remote session from being publicly discoverable, you can make it invite-only.</span></span> <span data-ttu-id="82b6d-127">招待を受け取ったデバイスのみが参加要求を送信できます。</span><span class="sxs-lookup"><span data-stu-id="82b6d-127">Only the devices that receive an invitation will be able to send join requests.</span></span> 
 
-<span data-ttu-id="e1595-128">手順は上記とほとんど同じですが、**[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** インスタンスを作成する際には、構成済みの **[RemoteSystemSessionOptions](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)** オブジェクトを渡します。</span><span class="sxs-lookup"><span data-stu-id="e1595-128">The procedure is mostly the same as above, but when constructing the **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** instance, you will pass in a configured **[RemoteSystemSessionOptions](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)** object.</span></span>
+<span data-ttu-id="82b6d-128">手順は上記とほとんど同じですが、**[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** インスタンスを作成する際には、構成済みの **[RemoteSystemSessionOptions](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)** オブジェクトを渡します。</span><span class="sxs-lookup"><span data-stu-id="82b6d-128">The procedure is mostly the same as above, but when constructing the **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** instance, you will pass in a configured **[RemoteSystemSessionOptions](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)** object.</span></span>
 
 ```csharp
 // define the session options with the invite-only designation
@@ -124,7 +124,7 @@ RemoteSystemSessionController manager = new RemoteSystemSessionController("Bob's
 //...
 ```
 
-<span data-ttu-id="e1595-129">招待を送信するには、受信側のリモート システムへの参照 (通常のリモート システム検出を使用して取得) が必要です。</span><span class="sxs-lookup"><span data-stu-id="e1595-129">To send an invitation, you must have a reference to the receiving remote system (acquired through normal remote system discovery).</span></span> <span data-ttu-id="e1595-130">この参照をセッション オブジェクトの **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** メソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="e1595-130">Simply pass this reference into the session object's **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** method.</span></span> <span data-ttu-id="e1595-131">すべてのセッション参加者がリモート セッションへの参照にアクセスできるため (次のセクションをご覧ください)、どの参加者も招待を送信することができます。</span><span class="sxs-lookup"><span data-stu-id="e1595-131">All of the participants in a session have a reference to the remote session (see next section), so any participant can send an invitation.</span></span>
+<span data-ttu-id="82b6d-129">招待を送信するには、受信側のリモート システムへの参照 (通常のリモート システム検出を使用して取得) が必要です。</span><span class="sxs-lookup"><span data-stu-id="82b6d-129">To send an invitation, you must have a reference to the receiving remote system (acquired through normal remote system discovery).</span></span> <span data-ttu-id="82b6d-130">この参照をセッション オブジェクトの **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** メソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="82b6d-130">Simply pass this reference into the session object's **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** method.</span></span> <span data-ttu-id="82b6d-131">すべてのセッション参加者がリモート セッションへの参照にアクセスできるため (次のセクションをご覧ください)、どの参加者も招待を送信することができます。</span><span class="sxs-lookup"><span data-stu-id="82b6d-131">All of the participants in a session have a reference to the remote session (see next section), so any participant can send an invitation.</span></span>
 
 ```csharp
 // "currentSession" is a reference to a RemoteSystemSession.
@@ -132,9 +132,9 @@ RemoteSystemSessionController manager = new RemoteSystemSessionController("Bob's
 currentSession.SendInvitationAsync(guestSystem); 
 ```
 
-## <a name="discover-and-join-a-remote-session"></a><span data-ttu-id="e1595-132">リモート セッションを検出して参加する</span><span class="sxs-lookup"><span data-stu-id="e1595-132">Discover and join a remote session</span></span>
+## <a name="discover-and-join-a-remote-session"></a><span data-ttu-id="82b6d-132">リモート セッションを検出して参加する</span><span class="sxs-lookup"><span data-stu-id="82b6d-132">Discover and join a remote session</span></span>
 
-<span data-ttu-id="e1595-133">リモート セッションを検出するプロセスは、個々のリモート システムの検出に似ており、**[RemoteSystemSessionWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionwatcher)** クラスによって処理されます。</span><span class="sxs-lookup"><span data-stu-id="e1595-133">The process of discovering remote sessions is handled by the **[RemoteSystemSessionWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionwatcher)** class and is similar to discovering individual remote systems.</span></span>
+<span data-ttu-id="82b6d-133">リモート セッションを検出するプロセスは、個々のリモート システムの検出に似ており、**[RemoteSystemSessionWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionwatcher)** クラスによって処理されます。</span><span class="sxs-lookup"><span data-stu-id="82b6d-133">The process of discovering remote sessions is handled by the **[RemoteSystemSessionWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionwatcher)** class and is similar to discovering individual remote systems.</span></span>
 
 ```csharp
 public void DiscoverSessions() {
@@ -160,7 +160,7 @@ public void DiscoverSessions() {
 }
 ```
 
-<span data-ttu-id="e1595-134">取得した **[RemoteSystemSessionInfo](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioninfo)** インスタンスは、対応するセッションを制御するデバイスへの参加要求を発行するために使用します。</span><span class="sxs-lookup"><span data-stu-id="e1595-134">When a **[RemoteSystemSessionInfo](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioninfo)** instance is obtained, it can be used to issue a join request to the device that controls the corresponding session.</span></span> <span data-ttu-id="e1595-135">参加要求が受け入れられると、参加するセッションへの参照が含まれた **[RemoteSystemSessionJoinResult](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionjoinresult)** オブジェクトが返されます。</span><span class="sxs-lookup"><span data-stu-id="e1595-135">An accepted join request will asynchronously return a **[RemoteSystemSessionJoinResult](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionjoinresult)** object that contains a reference to the joined session.</span></span>
+<span data-ttu-id="82b6d-134">取得した **[RemoteSystemSessionInfo](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioninfo)** インスタンスは、対応するセッションを制御するデバイスへの参加要求を発行するために使用します。</span><span class="sxs-lookup"><span data-stu-id="82b6d-134">When a **[RemoteSystemSessionInfo](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioninfo)** instance is obtained, it can be used to issue a join request to the device that controls the corresponding session.</span></span> <span data-ttu-id="82b6d-135">参加要求が受け入れられると、参加するセッションへの参照が含まれた **[RemoteSystemSessionJoinResult](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionjoinresult)** オブジェクトが返されます。</span><span class="sxs-lookup"><span data-stu-id="82b6d-135">An accepted join request will asynchronously return a **[RemoteSystemSessionJoinResult](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionjoinresult)** object that contains a reference to the joined session.</span></span>
 
 ```csharp
 public async void JoinSession(RemoteSystemSessionInfo sessionInfo) {
@@ -193,16 +193,16 @@ public async void JoinSession(RemoteSystemSessionInfo sessionInfo) {
 }
 ```
 
-<span data-ttu-id="e1595-136">同じデバイスが同時に複数のセッションに参加することもできます。</span><span class="sxs-lookup"><span data-stu-id="e1595-136">A device can be joined to multiple sessions at the same time.</span></span> <span data-ttu-id="e1595-137">このため、参加のための機能は、各セッションと実際のやり取りから分離する方が望ましい場合があります。</span><span class="sxs-lookup"><span data-stu-id="e1595-137">For this reason, it may be desirable to separate the joining functionality from the actual interaction with each session.</span></span> <span data-ttu-id="e1595-138">アプリ内で **[RemoteSystemSession](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession)** インスタンスへの参照が維持されている限り、そのセッションでの通信を試行できます。</span><span class="sxs-lookup"><span data-stu-id="e1595-138">As long as a reference to the **[RemoteSystemSession](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession)** instance is maintained in the app, communication can be attempted over that session.</span></span>
+<span data-ttu-id="82b6d-136">同じデバイスが同時に複数のセッションに参加することもできます。</span><span class="sxs-lookup"><span data-stu-id="82b6d-136">A device can be joined to multiple sessions at the same time.</span></span> <span data-ttu-id="82b6d-137">このため、参加のための機能は、各セッションと実際のやり取りから分離する方が望ましい場合があります。</span><span class="sxs-lookup"><span data-stu-id="82b6d-137">For this reason, it may be desirable to separate the joining functionality from the actual interaction with each session.</span></span> <span data-ttu-id="82b6d-138">アプリ内で **[RemoteSystemSession](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession)** インスタンスへの参照が維持されている限り、そのセッションでの通信を試行できます。</span><span class="sxs-lookup"><span data-stu-id="82b6d-138">As long as a reference to the **[RemoteSystemSession](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession)** instance is maintained in the app, communication can be attempted over that session.</span></span>
 
-## <a name="share-messages-and-data-through-a-remote-session"></a><span data-ttu-id="e1595-139">リモート セッションを介してメッセージとデータを共有する</span><span class="sxs-lookup"><span data-stu-id="e1595-139">Share messages and data through a remote session</span></span>
+## <a name="share-messages-and-data-through-a-remote-session"></a><span data-ttu-id="82b6d-139">リモート セッションを介してメッセージとデータを共有する</span><span class="sxs-lookup"><span data-stu-id="82b6d-139">Share messages and data through a remote session</span></span>
 
-### <a name="receive-messages"></a><span data-ttu-id="e1595-140">メッセージを受信する</span><span class="sxs-lookup"><span data-stu-id="e1595-140">Receive messages</span></span>
+### <a name="receive-messages"></a><span data-ttu-id="82b6d-140">メッセージを受信する</span><span class="sxs-lookup"><span data-stu-id="82b6d-140">Receive messages</span></span>
 
-<span data-ttu-id="e1595-141">セッション内では、他の参加デバイスとメッセージやデータを交換できます。これには、セッション全体の単一通信チャネルを表す **[RemoteSystemSessionMessageChannel](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)** インスタンスを使用します。</span><span class="sxs-lookup"><span data-stu-id="e1595-141">You can exchange messages and data with other participant devices in the session by using a **[RemoteSystemSessionMessageChannel](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)** instance, which represents a single session-wide communication channel.</span></span> <span data-ttu-id="e1595-142">このインスタンスは、初期化されるとすぐに受信メッセージのリッスンを開始します。</span><span class="sxs-lookup"><span data-stu-id="e1595-142">As soon as it's initialized, it begins listening for incoming messages.</span></span>
+<span data-ttu-id="82b6d-141">セッション内では、他の参加デバイスとメッセージやデータを交換できます。これには、セッション全体の単一通信チャネルを表す **[RemoteSystemSessionMessageChannel](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)** インスタンスを使用します。</span><span class="sxs-lookup"><span data-stu-id="82b6d-141">You can exchange messages and data with other participant devices in the session by using a **[RemoteSystemSessionMessageChannel](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)** instance, which represents a single session-wide communication channel.</span></span> <span data-ttu-id="82b6d-142">このインスタンスは、初期化されるとすぐに受信メッセージのリッスンを開始します。</span><span class="sxs-lookup"><span data-stu-id="82b6d-142">As soon as it's initialized, it begins listening for incoming messages.</span></span>
 
 >[!NOTE]
-><span data-ttu-id="e1595-143">メッセージの送受信時には、バイト配列からのシリアル化および逆シリアル化を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1595-143">Messages must be serialized and deserialized from byte arrays upon sending and receiving.</span></span> <span data-ttu-id="e1595-144">次の例にはこの機能が含まれていますが、コードのモジュール性を高めるために、別途実装することもできます。</span><span class="sxs-lookup"><span data-stu-id="e1595-144">This functionality is included in the following examples, but it can be implemented separately for better code modularity.</span></span> <span data-ttu-id="e1595-145">その例については、[サンプル アプリ](https://github.com/microsoft/Windows-appsample-remote-system-sessions)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e1595-145">See the [sample app](https://github.com/microsoft/Windows-appsample-remote-system-sessions)) for an example of this.</span></span>
+><span data-ttu-id="82b6d-143">メッセージの送受信時には、バイト配列からのシリアル化および逆シリアル化を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="82b6d-143">Messages must be serialized and deserialized from byte arrays upon sending and receiving.</span></span> <span data-ttu-id="82b6d-144">次の例にはこの機能が含まれていますが、コードのモジュール性を高めるために、別途実装することもできます。</span><span class="sxs-lookup"><span data-stu-id="82b6d-144">This functionality is included in the following examples, but it can be implemented separately for better code modularity.</span></span> <span data-ttu-id="82b6d-145">その例については、[サンプル アプリ](https://github.com/microsoft/Windows-appsample-remote-system-sessions)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="82b6d-145">See the [sample app](https://github.com/microsoft/Windows-appsample-remote-system-sessions)) for an example of this.</span></span>
 
 ```csharp
 public async void StartReceivingMessages() {
@@ -234,9 +234,9 @@ public async void StartReceivingMessages() {
 }
 ```
 
-### <a name="send-messages"></a><span data-ttu-id="e1595-146">メッセージを送信する</span><span class="sxs-lookup"><span data-stu-id="e1595-146">Send messages</span></span>
+### <a name="send-messages"></a><span data-ttu-id="82b6d-146">メッセージを送信する</span><span class="sxs-lookup"><span data-stu-id="82b6d-146">Send messages</span></span>
 
-<span data-ttu-id="e1595-147">チャネルが確立されると、すべてのセッション参加者へのメッセージ送信は簡単です。</span><span class="sxs-lookup"><span data-stu-id="e1595-147">When the channel is established, sending a message to all of the session participants is straightforward.</span></span>
+<span data-ttu-id="82b6d-147">チャネルが確立されると、すべてのセッション参加者へのメッセージ送信は簡単です。</span><span class="sxs-lookup"><span data-stu-id="82b6d-147">When the channel is established, sending a message to all of the session participants is straightforward.</span></span>
 
 ```csharp
 public async void SendMessageToAllParticipantsAsync(RemoteSystemSessionMessageChannel messageChannel, object value){
@@ -256,7 +256,7 @@ public async void SendMessageToAllParticipantsAsync(RemoteSystemSessionMessageCh
 }
 ```
 
-<span data-ttu-id="e1595-148">特定の参加者だけにメッセージを送信するには、まずセッションに参加しているリモート システムへの参照を取得する検出プロセスを開始する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e1595-148">In order to send a message to only certain participant(s), you must first initiate a discovery process to acquire references to the remote systems participating in the session.</span></span> <span data-ttu-id="e1595-149">これは、セッションの外部でリモート システムを検出するプロセスと似ています。</span><span class="sxs-lookup"><span data-stu-id="e1595-149">This is similar to the process of discovering remote systems outside of a session.</span></span> <span data-ttu-id="e1595-150">セッションに参加しているデバイスを検出するには、**[RemoteSystemSessionParticipantWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionparticipantwatcher)** インスタンスを使用します。</span><span class="sxs-lookup"><span data-stu-id="e1595-150">Use a **[RemoteSystemSessionParticipantWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionparticipantwatcher)** instance to find a session's participant devices.</span></span>
+<span data-ttu-id="82b6d-148">特定の参加者だけにメッセージを送信するには、まずセッションに参加しているリモート システムへの参照を取得する検出プロセスを開始する必要があります。</span><span class="sxs-lookup"><span data-stu-id="82b6d-148">In order to send a message to only certain participant(s), you must first initiate a discovery process to acquire references to the remote systems participating in the session.</span></span> <span data-ttu-id="82b6d-149">これは、セッションの外部でリモート システムを検出するプロセスと似ています。</span><span class="sxs-lookup"><span data-stu-id="82b6d-149">This is similar to the process of discovering remote systems outside of a session.</span></span> <span data-ttu-id="82b6d-150">セッションに参加しているデバイスを検出するには、**[RemoteSystemSessionParticipantWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionparticipantwatcher)** インスタンスを使用します。</span><span class="sxs-lookup"><span data-stu-id="82b6d-150">Use a **[RemoteSystemSessionParticipantWatcher](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionparticipantwatcher)** instance to find a session's participant devices.</span></span>
 
 ```csharp
 public void WatchForParticipants() {
@@ -282,9 +282,9 @@ public void WatchForParticipants() {
 }
 ```
 
-<span data-ttu-id="e1595-151">セッション参加者への参照の一覧を取得した場合は、参加者のすべてまたは一部にメッセージを送信できます。</span><span class="sxs-lookup"><span data-stu-id="e1595-151">When a list of references to session participants is obtained you can send a message to any set of them.</span></span>
+<span data-ttu-id="82b6d-151">セッション参加者への参照の一覧を取得した場合は、参加者のすべてまたは一部にメッセージを送信できます。</span><span class="sxs-lookup"><span data-stu-id="82b6d-151">When a list of references to session participants is obtained you can send a message to any set of them.</span></span>
 
-<span data-ttu-id="e1595-152">単一参加者 (画面でのユーザーによる選択が望ましい) のみにメッセージを送信するには、次のようなメソッドに参照を渡します。</span><span class="sxs-lookup"><span data-stu-id="e1595-152">To send a message to a single participant (ideally selected on-screen by the user), simply pass the reference into a method like the following.</span></span>
+<span data-ttu-id="82b6d-152">単一参加者 (画面でのユーザーによる選択が望ましい) のみにメッセージを送信するには、次のようなメソッドに参照を渡します。</span><span class="sxs-lookup"><span data-stu-id="82b6d-152">To send a message to a single participant (ideally selected on-screen by the user), simply pass the reference into a method like the following.</span></span>
 
 ```csharp
 public async void SendMessageToParticipantAsync(RemoteSystemSessionMessageChannel messageChannel, RemoteSystemSessionParticipant participant, object value) {
@@ -304,7 +304,7 @@ public async void SendMessageToParticipantAsync(RemoteSystemSessionMessageChanne
 }
 ```
 
-<span data-ttu-id="e1595-153">複数の参加者 (画面でのユーザーによる選択が望ましい) にメッセージを送信するには、対象をリスト オブジェクトに追加し、そのリストを次のようなメソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="e1595-153">To send a message to multiple participants (ideally selected on-screen by the user), add them to a list object and pass the list into a method like the following.</span></span>
+<span data-ttu-id="82b6d-153">複数の参加者 (画面でのユーザーによる選択が望ましい) にメッセージを送信するには、対象をリスト オブジェクトに追加し、そのリストを次のようなメソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="82b6d-153">To send a message to multiple participants (ideally selected on-screen by the user), add them to a list object and pass the list into a method like the following.</span></span>
 
 ```csharp
 public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messageChannel, IReadOnlyList<RemoteSystemSessionParticipant> myTeam, object value){
@@ -324,6 +324,6 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 }
 ```
 
-## <a name="related-topics"></a><span data-ttu-id="e1595-154">関連トピック</span><span class="sxs-lookup"><span data-stu-id="e1595-154">Related topics</span></span>
-* [<span data-ttu-id="e1595-155">接続されるアプリやデバイス ("Rome" プロジェクト)</span><span class="sxs-lookup"><span data-stu-id="e1595-155">Connected apps and devices (Project Rome)</span></span>](connected-apps-and-devices.md)
-* [<span data-ttu-id="e1595-156">リモート システムの API リファレンス</span><span class="sxs-lookup"><span data-stu-id="e1595-156">Remote Systems API reference</span></span>](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+## <a name="related-topics"></a><span data-ttu-id="82b6d-154">関連トピック</span><span class="sxs-lookup"><span data-stu-id="82b6d-154">Related topics</span></span>
+* [<span data-ttu-id="82b6d-155">接続されるアプリやデバイス ("Rome" プロジェクト)</span><span class="sxs-lookup"><span data-stu-id="82b6d-155">Connected apps and devices (Project Rome)</span></span>](connected-apps-and-devices.md)
+* [<span data-ttu-id="82b6d-156">リモート システムの API リファレンス</span><span class="sxs-lookup"><span data-stu-id="82b6d-156">Remote Systems API reference</span></span>](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)

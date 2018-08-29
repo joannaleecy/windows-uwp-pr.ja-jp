@@ -8,26 +8,26 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、セキュリティ
+keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 287b2b0fedac112f57f0342420a7830db5aa13be
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889216"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2907916"
 ---
-# <a name="fingerprint-biometrics"></a><span data-ttu-id="46467-104">指紋生体認証</span><span class="sxs-lookup"><span data-stu-id="46467-104">Fingerprint biometrics</span></span>
+# <a name="fingerprint-biometrics"></a><span data-ttu-id="88a51-104">指紋生体認証</span><span class="sxs-lookup"><span data-stu-id="88a51-104">Fingerprint biometrics</span></span>
 
 
 
 
-<span data-ttu-id="46467-105">この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに指紋生体認証を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="46467-105">This article explains how to add fingerprint biometrics to your Universal Windows Platform (UWP) app.</span></span> <span data-ttu-id="46467-106">特定の操作に対してユーザーの同意を得る必要がある場合は、指紋認証の要求を含めると、アプリのセキュリティを高めることができます。</span><span class="sxs-lookup"><span data-stu-id="46467-106">Including a request for fingerprint authentication when the user must consent to a particular action increases the security of your app.</span></span> <span data-ttu-id="46467-107">たとえば、アプリ内購入を承認する前や制限されたリソースにアクセスする前に指紋認証を要求できます。</span><span class="sxs-lookup"><span data-stu-id="46467-107">For example, you could require fingerprint authentication before authorizing an in-app purchase, or access to restricted resources.</span></span> <span data-ttu-id="46467-108">指紋認証は、[**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) 名前空間の [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) クラスを使って管理されます。</span><span class="sxs-lookup"><span data-stu-id="46467-108">Fingerprint authentication is managed using the [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) class in the [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) namespace.</span></span>
+<span data-ttu-id="88a51-105">この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに指紋生体認証を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="88a51-105">This article explains how to add fingerprint biometrics to your Universal Windows Platform (UWP) app.</span></span> <span data-ttu-id="88a51-106">特定の操作に対してユーザーの同意を得る必要がある場合は、指紋認証の要求を含めると、アプリのセキュリティを高めることができます。</span><span class="sxs-lookup"><span data-stu-id="88a51-106">Including a request for fingerprint authentication when the user must consent to a particular action increases the security of your app.</span></span> <span data-ttu-id="88a51-107">たとえば、アプリ内購入を承認する前や制限されたリソースにアクセスする前に指紋認証を要求できます。</span><span class="sxs-lookup"><span data-stu-id="88a51-107">For example, you could require fingerprint authentication before authorizing an in-app purchase, or access to restricted resources.</span></span> <span data-ttu-id="88a51-108">指紋認証は、[**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) 名前空間の [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) クラスを使って管理されます。</span><span class="sxs-lookup"><span data-stu-id="88a51-108">Fingerprint authentication is managed using the [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) class in the [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) namespace.</span></span>
 
-## <a name="check-the-device-for-a-fingerprint-reader"></a><span data-ttu-id="46467-109">デバイスに指紋リーダーがあるかどうかをチェックする</span><span class="sxs-lookup"><span data-stu-id="46467-109">Check the device for a fingerprint reader</span></span>
+## <a name="check-the-device-for-a-fingerprint-reader"></a><span data-ttu-id="88a51-109">デバイスに指紋リーダーがあるかどうかをチェックする</span><span class="sxs-lookup"><span data-stu-id="88a51-109">Check the device for a fingerprint reader</span></span>
 
 
-<span data-ttu-id="46467-110">デバイスに指紋リーダーがあるかどうかを調べるには、[**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="46467-110">To find out whether the device has a fingerprint reader, call [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138).</span></span> <span data-ttu-id="46467-111">デバイスで指紋認証がサポートされている場合も、アプリでは、指紋認証を有効または無効にする設定オプションをユーザーに提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="46467-111">Even if a device supports fingerprint authentication, your app should still provide users with an option in Settings to enable or disable it.</span></span>
+<span data-ttu-id="88a51-110">デバイスに指紋リーダーがあるかどうかを調べるには、[**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="88a51-110">To find out whether the device has a fingerprint reader, call [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138).</span></span> <span data-ttu-id="88a51-111">デバイスで指紋認証がサポートされている場合も、アプリでは、指紋認証を有効または無効にする設定オプションをユーザーに提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="88a51-111">Even if a device supports fingerprint authentication, your app should still provide users with an option in Settings to enable or disable it.</span></span>
 
 ```cs
 public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
@@ -71,12 +71,12 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 }
 ```
 
-## <a name="request-consent-and-return-results"></a><span data-ttu-id="46467-112">同意を求めて、結果を返す</span><span class="sxs-lookup"><span data-stu-id="46467-112">Request consent and return results</span></span>
+## <a name="request-consent-and-return-results"></a><span data-ttu-id="88a51-112">同意を求めて、結果を返す</span><span class="sxs-lookup"><span data-stu-id="88a51-112">Request consent and return results</span></span>
 
 
-<span data-ttu-id="46467-113">指紋のスキャンによってユーザーの同意を求めるには、[**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="46467-113">To request user consent from a fingerprint scan, call the [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) method.</span></span> <span data-ttu-id="46467-114">指紋認証を行うには、あらかじめユーザーが指紋データベースに指紋の "署名" を追加している必要があります。</span><span class="sxs-lookup"><span data-stu-id="46467-114">For fingerprint authentication to work, the user must have previously added a fingerprint "signature" to the fingerprint database.</span></span>
+<span data-ttu-id="88a51-113">指紋のスキャンによってユーザーの同意を求めるには、[**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="88a51-113">To request user consent from a fingerprint scan, call the [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) method.</span></span> <span data-ttu-id="88a51-114">指紋認証を行うには、あらかじめユーザーが指紋データベースに指紋の "署名" を追加している必要があります。</span><span class="sxs-lookup"><span data-stu-id="88a51-114">For fingerprint authentication to work, the user must have previously added a fingerprint "signature" to the fingerprint database.</span></span>
 
-<span data-ttu-id="46467-115">[**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) を呼び出すと、ユーザーに指紋のスキャンを求めるモーダル ダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="46467-115">When you call the [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139), the user is presented with a modal dialog requesting a fingerprint scan.</span></span> <span data-ttu-id="46467-116">**UserConsentVerifier.RequestVerificationAsync** メソッドには、次の図に示すように、モーダル ダイアログの一部として表示されるメッセージを指定できます。</span><span class="sxs-lookup"><span data-stu-id="46467-116">You can supply a message to the **UserConsentVerifier.RequestVerificationAsync** method that will be displayed to the user as part of the modal dialog, as shown in the following image.</span></span>
+<span data-ttu-id="88a51-115">[**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) を呼び出すと、ユーザーに指紋のスキャンを求めるモーダル ダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="88a51-115">When you call the [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139), the user is presented with a modal dialog requesting a fingerprint scan.</span></span> <span data-ttu-id="88a51-116">**UserConsentVerifier.RequestVerificationAsync** メソッドには、次の図に示すように、モーダル ダイアログの一部として表示されるメッセージを指定できます。</span><span class="sxs-lookup"><span data-stu-id="88a51-116">You can supply a message to the **UserConsentVerifier.RequestVerificationAsync** method that will be displayed to the user as part of the modal dialog, as shown in the following image.</span></span>
 
 ```cs
 private async System.Threading.Tasks.Task<string> RequestConsent(string userMessage)
