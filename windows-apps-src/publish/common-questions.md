@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 89745d0bb93b76e4497d6cb5c57f4e6c091c8bd7
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881835"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917170"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>広告キャンペーンに関してよく寄せられる質問
 
@@ -41,11 +41,11 @@ ms.locfileid: "2881835"
 
 ### <a name="where-will-my-ad-appear"></a>自分の広告はどこに表示されますか。
 
-広告は、アプリの年齢区分と OS のバージョンを共有するアプリに表示されます。 Microsoft ストアにアプリを発行するときは、これらのプロパティを設定します。 「ユニバーサル」キャンペーンでは、広告は MSN.com、Outlook.com、Skype など、Microsoft の豪華なラインナップでも表示されます。
+広告は、アプリの年齢区分と OS のバージョンを共有するアプリに表示されます。 マイクロソフト ストアでアプリケーションを発行するときは、これらのプロパティを設定します。 「ユニバーサル」キャンペーンでは、広告は MSN.com、Outlook.com、Skype など、Microsoft の豪華なラインナップでも表示されます。
 
 広告キャンペーンは、以下の国または地域で現在サポートされています。
 
-Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.
+アルジェリア、アルゼンチン、オーストラリア、オーストリア、バハマ、バーレーン、バルバドス、ベルギー、ベリーズ、ボリビア、ブラジル、カナダ、チリ、中国、コロンビア、デンマーク、ドミニカ共和国、エクアドル、エジプト、エルサルバドル、フィンランド、フランス、ドイツ、グアテマラ、ハイチ、ホンジュラス、香港特別行政区、インド、インドネシア、イラク、アイルランド、イタリア、ジャマイカ、ヨルダン、クウェート、レバノン、マレーシア、メキシコ、モロッコ、ニュージーランド、オランダ、ニカラグア、ノルウェー、オマーン、パナマ、パラグアイ、ペルー、フィリピン、プエルトリコ、カタール、サウジアラビア、シンガポール、スペイン、南アフリカ、スウェーデン、スイス、台湾、タイ、トリニダード・トバゴ、チュニジア、アラブ首長国連邦、英国、米国、ウルグアイ、ベネズエラ、ベトナム。
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>広告キャンペーンではどの言語がサポートされていますか。
 
@@ -63,7 +63,7 @@ Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Bel
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>クレジット カードを削除したり、クレジット カードの詳細を編集したりするにはどうすればよいですか。
 
-<http://commerce.microsoft.com>ために必要な変更を加え、Microsoft アカウント資格情報でログインします。
+<http://commerce.microsoft.com>、Microsoft アカウント資格情報でログインし、必要な変更を加えます。
 
 ### <a name="related-topics"></a>関連トピック
 

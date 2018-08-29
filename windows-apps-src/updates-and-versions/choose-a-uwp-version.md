@@ -11,18 +11,18 @@ keywords: windows 10, uwp, バージョン, 作成, バージョン, windows, �
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bb9aad1fa9da79708b3c785da80811006153767
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882254"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918933"
 ---
 # <a name="choose-a-uwp-version"></a>UWP バージョンの選択
 
 Windows 10 の各バージョンでは、新機能や強化された機能が UWP プラットフォームに提供されます。 Microsoft Visual Studio で UWP アプリを作成するときは、ターゲットのバージョンを選択できます。 [.NET Standard 2.0](https://docs.microsoft.com/dotnet/standard/net-standard) を使うプロジェクトには、ビルド 16299 以降の**最小バージョン**が必要です。
 
 > [!WARNING]
-> Visual Studio 2015 では、Visual Studio の現在のバージョンで作成された UWP プロジェクトを開くことができません。
+> UWP プロジェクトを Visual Studio の現在のバージョンで作成された 2015 を Visual Studio で開くことができません。
 
 次の表に、Windows 10 で利用できるバージョンを示します。 この表は、Windows 10 でのみサポートされる UWP アプリを作成する場合にだけ適用されることに注意してください。 以前のバージョンの Windows 向けに UWP アプリを開発することはできません。また、目的のバージョンをターゲットにするには、[SDK の適切なビルドをインストール](http://go.microsoft.com/fwlink/?LinkId=821431)する必要があります。 
 
@@ -43,13 +43,13 @@ Windows 10 の各バージョンでは、新機能や強化された機能が UW
 
 すべてのデバイス ファミリとそのバージョン、およびすべての API コントラクトとそのバージョンを列挙したリファレンス トピックについては、「[デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx)」と「[APIコントラクト](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx)」をご覧ください。
 
-## <a name="net-api-availability-in-uwp-versions"></a>UWP バージョンで .NET API の空き時間情報
+## <a name="net-api-availability-in-uwp-versions"></a>UWP のバージョンの .NET API の可用性
 
-UWP には、**対象のバージョン**またはプロジェクトの**最小バージョン**に関係なく使用可能な .NET Api の一部のサブセットがサポートしています。 [利用可能な種類の詳細を説明](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)します。
+UWP では、**ターゲットのバージョン**や、プロジェクトの**最低限のバージョン**に関係なく使用可能な .NET Api の一部のサブセットをサポートします。 [このページが使用可能な型の詳細についてを提供](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)します。
 
-再利用可能なプラットフォーム間でライブラリを作成する場合は、.NET 標準でサポートされて UWP。 [.NET 標準ドキュメント](https://docs.microsoft.com/dotnet/standard/net-standard)を .NET の標準バージョンでサポートされている UWP 情報を提供します。
+再利用可能なクロスプラット フォームのライブラリを作成する場合は、.NET の標準ではサポートされて UWP です。 [.NET の標準のドキュメント](https://docs.microsoft.com/dotnet/standard/net-standard)を標準の .NET バージョンでサポートされている UWP の情報を提供します。
 
-デスクトップ アプリを開発している場合は、代わりに表示[.NET Framework バージョンと依存関係](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies).NET framework の空き時間情報の詳細についてはします。
+デスクトップ アプリケーションを開発する場合を参照してください代わりに[.NET Framework のバージョンとの依存関係](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies).NET framework の可用性の詳細については。
 
 ## <a name="choose-which-version-to-use-for-your-app"></a>アプリで使用するバージョンの選択
 

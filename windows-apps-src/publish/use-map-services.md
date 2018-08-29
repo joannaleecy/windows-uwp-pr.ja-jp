@@ -11,22 +11,22 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d322a22898f2f45a89b4cd30051149133bc3e2bf
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881453"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918963"
 ---
 # <a name="use-map-services"></a>マップ サービスの使用
 
-Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 Bing マップのデベロッパー センターからマップの認証キーを要求し、アプリに追加する方法については、さらに詳しい情報を[要求するマップ認証キー](../maps-and-location/authentication-key.md)を参照してください。 
+Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 Bing Maps Developer Center から、マップ認証キーを要求し、アプリに追加する方法について詳しくは、詳しくは[、マップ認証キーの要求](../maps-and-location/authentication-key.md)を参照してください。 
 
-Windows Phone 8.1 とそれ以前のバージョンのアプリで地図サービスを使用するには、デベロッパー センターのダッシュ ボードのアプリのコードに含めるには、地図サービス アプリケーションの ID とトークンを要求する必要があります。
+Windows Phone 8.1 と以前のアプリでマップ サービスを使用するには、デベロッパー センター ダッシュ ボードで、アプリのコードに含めるマップ サービス アプリケーション ID とトークンを要求する必要があります。
 
-[アプリの名前を予約](create-your-app-by-reserving-a-name.md)したりした後、いつでも、ダッシュ ボードでそのアプリに移動、**サービス**] セクションで、左側のナビゲーション メニューを展開して**マップ**を選択します。 **トークンを取得する**] をクリックするときに地図サービス アプリケーションの ID (**付きアプリケーション Id**) を生成し、アプリのための認証トークン (**AuthenticationToken**) サービスをマップします。 これらの値は、このページに保存されるので、それらを表示するのには、いつでも戻ることができます。
+[アプリの名前を予約](create-your-app-by-reserving-a-name.md)した後にいつでもダッシュ ボードでそのアプリに移動、左側のナビゲーション メニューで [**サービス**] セクションを展開でき**マップ**を選択できます。 **トークンを取得する**をクリックすると、マップ サービス アプリケーション ID (**ApplicationID**) を生成し、アプリの認証トークン (**AuthenticationToken**) サービスをマップしますされます。 表示するには、いつでも戻れるようにこのページでは、これらの値は保存されます。
 
 > [!IMPORTANT]
-> 必ずをパッケージ化する前に、コードに**付きアプリケーション Id**および**AuthenticationToken**を追加し、アプリを送信してください。 詳細については、「[Windows Phone 8 でマップ コントロールをページに追加する方法](http://go.microsoft.com/fwlink/p/?LinkId=614882)」を参照してください。
+> 必ず**ApplicationID**と**AuthenticationToken**をパッケージ化する前に、コードを追加し、アプリを提出してください。 詳細については、「[Windows Phone 8 でマップ コントロールをページに追加する方法](http://go.microsoft.com/fwlink/p/?LinkId=614882)」を参照してください。
 
  
 

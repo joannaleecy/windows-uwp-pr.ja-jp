@@ -15,11 +15,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0400e04a86675adccd1da14d8cb2652028fbfd30
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888101"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918973"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP アプリのナビゲーション履歴と前に戻る移動
 
@@ -33,7 +33,7 @@ ms.locfileid: "2888101"
 
 ## <a name="back-button"></a>[戻る] ボタン
 
-[戻る] ボタンを作成するには、[ボタン](../controls-and-patterns/buttons.md)コントロールを使用する`NavigationBackButtonNormalStyle`スタイル、およびアプリの UI の左上隅にあるボタンを配置 (詳細については、以下の XAML コードの例を参照してください)。
+"戻る"ボタンを作成する[ボタン](../controls-and-patterns/buttons.md)コントロールを使用して、`NavigationBackButtonNormalStyle`スタイルを指定し、アプリの UI の左上隅にボタンが配置 (詳細については、次の XAML コード例を参照してください)。
 
 ![アプリの UI の左上隅にある [戻る] ボタン](images/back-nav/BackEnabled.png)
 
@@ -174,9 +174,9 @@ namespace winrt::PageNavTest::implementation
 }
 ```
 
-、上部にある処理下位 1 つのページに移動します。 各ページのナビゲーションを処理するには、ナビゲーションから特定のページを除外するか、ページを表示する前にページ レベルのコードを実行します。
+上記を処理します前に戻る単一ページのナビゲーション。 "戻る"ナビゲーションから特定のページを除外するか、ページを表示する前に、ページ レベルのコードを実行する場合は、各ページでのナビゲーションを処理できます。
 
-下位全体アプリのナビゲーションを処理するで[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)イベントをグローバルに聞き手べきを登録するが、`App.xaml`コードビハ ファイル。
+前に戻るナビゲーションをアプリ全体を処理するで[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)イベントのグローバル リスナーを登録するが、`App.xaml`コード ビハインド ファイル。
 
 App.xaml 分離コード:
 
@@ -293,24 +293,24 @@ bool App::On_BackRequested()
 
 アプリで [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) の使用を続ける場合は、通常どおり、戻るボタンはタイトル バーの内部にレンダリングされます。
 
-- アプリが**タブ表示されない**場合は、[タイトル バーの内部 [戻る] ボタンが表示されます。 視覚的な [戻る] ボタンの操作環境とユーザー対話機能は、以前のビルドから変更はできません。
+- アプリが**タブがない**場合は、タイトル バーの内部、戻るボタンがレンダリングされます。 "戻る"ボタンの視覚エクスペリエンスとユーザーの操作では、以前のビルドから変更されません。
 
-    ![タイトル バーの [戻る] ボタン](images/nav-back-pc.png)
+    ![タイトル バーの戻るボタン](images/nav-back-pc.png)
 
-- アプリが**タブ表示**] のかどうか、新しいシステム戻る内に戻る] ボタンが表示されますバー。
+- アプリが**タブ**のかどうか、戻るボタンは、新しいシステムの戻る内部にレンダリング バー。
 
-    ![システムを描画戻る] ボタンのバー](images/back-nav/tabs.png)
+    ![戻るボタンのバーに描画されるシステム](images/back-nav/tabs.png)
 
-### <a name="system-back-bar"></a>システムの背面バー
+### <a name="system-back-bar"></a>システムの戻るバー
 
 > [!NOTE]
-> "システム戻るバー"公式名ではなく、説明のみです。
+> "システムの戻るバー"は、公式の名前ではなく説明のみです。
 
-システム背面バーがバンド] タブの [バンドとアプリのコンテンツ領域の間に挿入します。 バンドは、アプリの幅に沿って表示され、左端に戻るボタンが配置されます。 バンドでは、[戻る] ボタンの適切なタッチ対象のサイズを確認する 32 ピクセルの高さを持ちます。
+システムの戻るバーは、タブ バンドとアプリのコンテンツ領域の間に挿入されているバンドします。 バンドは、アプリの幅に沿って表示され、左端に戻るボタンが配置されます。 バンドは、戻るボタンの適切なタッチ ターゲットのサイズを確認する 32 ピクセルの高さがあります。
 
-システムの戻るバーは、戻るボタンの可視性に基づいて動的に表示されます。 [戻る] ボタンが表示されている場合、システム背面バーを挿入すると、アプリのコンテンツを] タブの [バンドの下にある 32 ピクセルにシフトします。 [戻る] ボタンの非表示の場合、システム背面バー動的に削除されると、会議] タブの [バンド 32 ピクセル アプリのコンテンツ シフトします。 アプリの UI shift キーを上下が生じるを避けるためには、図面、[アプリの [戻る] ボタン](#back-button)をお勧めします。
+システムの戻るバーは、戻るボタンの可視性に基づいて動的に表示されます。 [戻る] ボタンが表示される場合、システムの戻るバーが挿入され、アプリのコンテンツのタブ バンド 32 ピクセル下に移動します。 [戻る] ボタンを非表示するとき、システムの戻るバーは動的に削除され、アプリのコンテンツ シフトをタブ バンドを満たすために 32 ピクセルです。 上または下に、アプリの UI shift キーを持つを避けるため、[アプリ内の戻るボタン](#back-button)を描画をお勧めします。
 
-[タイトル バーのユーザー設定](../shell/title-bar.md)は、[アプリ] タブとシステムの両方に引き継がれますバー。 アプリ[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)色の背景と前景色のプロパティを指定し、[色] タブと [システムの背面に適用されるかどうかバー。
+[タイトル バーのカスタマイズ](../shell/title-bar.md)は、アプリのタブとシステムの戻るの両方に引き継がバー。 アプリで[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、バック グラウンドとフォア グラウンドの色のプロパティを指定するかどうかは、色がタブとシステムの戻るに適用されますバー。
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>カスタムの "戻る" ナビゲーションの動作のガイドライン
 
@@ -335,16 +335,16 @@ bool App::On_BackRequested()
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>ページ間、同じピア グループ、ナビゲーション要素は画面上に表示されない</strong>
-<p>ユーザーは、同じピア グループでページ間を移動します。 いいえ画面に表示されるが両方のページへの直接のナビゲーションを提供する ( [NavigationView](../controls-and-patterns/navigationview.md)) などの要素をナビゲーションします。</p></td>
+<p>ユーザーは、同じピア グループでページ間を移動します。 画面に表示されるありませんが ( [NavigationView](../controls-and-patterns/navigationview.md)) などの両方のページに直接的なナビゲーションを提供するナビゲーション要素です。</p></td>
 <td style="vertical-align:top;"><strong>はい</strong>
-<p>次の図で、ユーザーが同じピア] で、2 つのページ間を移動してナビゲーション履歴にナビゲーションを追加する必要があります。</p>
+<p>次の図で、ユーザーが、同じピア グループ内の 2 つのページ間を移動し、このナビゲーションはナビゲーション履歴に追加する必要があります。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>ページ間、同じピア グループ、画面上に表示されるナビゲーション要素を使う</strong>
-<p>ユーザーは、同じピア グループ内のページ間を移動します。 [NavigationView](../controls-and-patterns/navigationview.md)など、同じナビゲーション要素では、両方のページが表示されます。</p></td>
+<p>ユーザーは、同じピア グループ内のページ間を移動します。 [NavigationView](../controls-and-patterns/navigationview.md)など、同じナビゲーション要素は、両方のページが表示されます。</p></td>
 <td style="vertical-align:top;"><strong>場合によって異なります。</strong>
-<p>はい、履歴、2 つの例外を追加します。 多くの場合、ピア グループ内のページ間で切り替えるアプリのユーザーの予定がある場合、またはナビゲーション階層を維持したい場合は、[に追加しない履歴します。 この場合、ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。 </p>
+<p>はい、2 つの例外、ナビゲーション履歴に追加します。 多くの場合、ピア グループ内のページ間を切り替える、アプリのユーザーが予想される場合、またはナビゲーション階層を保持する場合は、次を追加しないでくださいナビゲーション履歴にします。 この場合、ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
