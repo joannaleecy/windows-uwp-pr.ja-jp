@@ -1,29 +1,35 @@
 ---
 author: stevewhims
-description: このトピックによって C + を使用して簡単なカスタム コントロールを作成する手順を追って説明/WinRT。 独自の豊富な機能とカスタマイズ可能な UI コントロールを作成するのには、ここの情報を構築できます。
+description: このトピックでは、C++ を使用して、単純なカスタム コントロールを作成する手順について/WinRT します。 ここでは、独自の機能が豊富でカスタマイズ可能な UI コントロールを作成する情報に基づいてビルドすることができます。
 title: C++/WinRT による XAML カスタム (テンプレート化) コントロール
 ms.author: stwhi
 ms.date: 08/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: ウィンドウ 10、uwp、標準、c では、cpp、winrt、投影、XAML では、カスタムのテンプレート、コントロール
+keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML で、テンプレート化された、カスタム コントロール
 ms.localizationpriority: medium
-ms.openlocfilehash: c108175c66d27b2cdbd910a0f7653ca1befb68e9
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 81eb7f29e511f76d1126c1e4a43a2b96f1fa6f9f
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2917311"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3119104"
 ---
-# <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>カスタム (テンプレート) コントロールの XAML [C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>されたカスタム (テンプレート化された) コントロールを XAML [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
-ユニバーサル Windows プラットフォーム (UWP) の最も強力な機能の 1 つは、XAML[コントロール](/uwp/api/windows.ui.xaml.controls.control)の種類に基づいて、カスタム コントロールを作成するユーザー インターフェイス (UI) のスタックを提供する柔軟性です。 XAML UI フレームワークは、[カスタム依存関係プロパティ](/windows/uwp/xaml-platform/custom-dependency-properties)と添付プロパティ、および[コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)では、豊富な機能とカスタマイズ可能なコントロールを作成しやすくなるなどの機能を提供します。 このトピックによって C + を使用して (テンプレート) のカスタム コントロールを作成する手順を追って説明/WinRT。
+> [!NOTE]
+> **一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。**
 
-## <a name="create-a-blank-app-bglabelcontrolapp"></a>空白のアプリケーション (BgLabelControlApp) を作成します。
-まず、Microsoft Visual Studio で、新しいプロジェクトを作ります。 作成、 **Visual C++ の空白のアプリケーション (C + + WinRT)** プロジェクト、および*BgLabelControlApp*という名前を付けます。
+> [!IMPORTANT]
+> C++/WinRT でランタイム クラスを使用および作成する方法についての理解をサポートするために重要な概念と用語については、「[C++/WinRT での API の使用](consume-apis.md)」と「[C++/WinRT での作成者 API](author-apis.md)」を参照してください。
 
-カスタム (テンプレート) を表すための新しいクラスを作成するつもりです。 同じコンパイル ユニット内のクラスを作成および使用しています。 ですが、このクラス、XAML マークアップからとのランタイム クラスになることを理由にインスタンスを作成したいです。 また、この作成と使用のどちらにも C++/WinRT を使用します。
+最も強力な機能をユニバーサル Windows プラットフォーム (UWP) の 1 つは、柔軟性、XAML[**コントロール**](/uwp/api/windows.ui.xaml.controls.control)の種類に基づいてカスタム コントロールを作成するユーザー インターフェイス (UI) スタックを提供します。 XAML UI フレームワークでは、[カスタム依存関係プロパティ](/windows/uwp/xaml-platform/custom-dependency-properties)と添付プロパティは、および[コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)では、機能が豊富でカスタマイズ可能なコントロールを作成しやすくなどの機能を提供します。 このトピックでは、C++ (テンプレート) カスタム コントロールを作成する手順について/WinRT します。
+
+## <a name="create-a-blank-app-bglabelcontrolapp"></a>空のアプリ (BgLabelControlApp) の作成します。
+まず、Microsoft Visual Studio で、新しいプロジェクトを作ります。 作成、 **Visual C 空のアプリ (、C++/WinRT)** プロジェクト、および*BgLabelControlApp*という名前を付けます。
+
+カスタム (テンプレート化された) コントロールを表すための新しいクラスを作成する行いましょう。 同じコンパイル ユニット内のクラスを作成および使用しています。 ただし、このクラス、XAML マークアップからしたいため、ランタイム クラスをインスタンス化できるします。 また、この作成と使用のどちらにも C++/WinRT を使用します。
 
 新しいランタイム クラスの作成の最初の手順では、新しい **Midl ファイル (.idl)** 項目をプロジェクトに追加します。 これに `BgLabelControl.idl` という名前をつけます。 `BgLabelControl.idl` の既定のコンテンツを削除し、このランタイム クラスの宣言に貼り付けます。
 
@@ -40,21 +46,19 @@ namespace BgLabelControlApp
 }
 ```
 
-上の一覧は、依存関係プロパティ (DP) を宣言するときにフォローしているパターンを示します。 各 DP を 2 つの部分があります。 最初に、[報告](/uwp/api/windows.ui.xaml.dependencyproperty)の種類の読み取り専用の静的プロパティを宣言します。 DP と*プロパティ*の名前があります。 実装では、この静的プロパティを使用します。 第 2 に、読み取り/書き込みインスタンス プロパティを宣言するには、DP の名前と型を持つ。
+上記の登録情報は、依存関係プロパティ (DP) を宣言するときとパターンを示しています。 各 DP に 2 つがあります。 まず、 [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty)型の読み取り専用の静的プロパティを宣言します。 名前、DP と*プロパティ*があります。 実装では、この静的プロパティを使用します。 次に、入力、DP の名前とインスタンスの読み取り/書き込みプロパティを宣言します。
 
 > [!NOTE]
-> 浮動小数点型で、DP をする場合、 `double` (`Double` [MIDL 3.0](/uwp/midl-3/)で)。 宣言して、DP の型を実装する`float`(`Single` MIDL で)、エラーの結果、XAML マークアップでその DP の値を設定し、 *、テキストからの 'Windows.Foundation.Single' の作成に失敗しました '<NUMBER>'*。
+> する場合は、DP 浮動小数点型と、しやすく`double`(`Double` [MIDL](/uwp/midl-3/)3.0)。 宣言と実装の種類の DP `float` (`Single` MIDL で)、エラーが発生し、値を設定するには、XAML マークアップで、その DP と*テキストから 'Windows.Foundation.Single' を作成できませんでした"<NUMBER>'*。
 
-ファイルを保存し、プロジェクトをビルドします。 ビルド プロセス中に、`midl.exe` ツールが実行されて、ランタイム クラスを記述する Windows ランタイム メタデータ ファイル (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`) が作成されます。 次に、`cppwinrt.exe` ツールが実行され、ランタイム クラスの作成と使用をサポートするソース コード ファイルが生成されます。 これらのファイルには、IDL 内で宣言した**BgLabelControl**のランタイム クラスの実装を開始するためのスタブが含まれます。 これらのスタブは `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` と `BgLabelControl.cpp` です。
+ファイルを保存し、プロジェクトをビルドします。 ビルド プロセス中に、`midl.exe` ツールが実行されて、ランタイム クラスを記述する Windows ランタイム メタデータ ファイル (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`) が作成されます。 次に、`cppwinrt.exe` ツールが実行され、ランタイム クラスの作成と使用をサポートするソース コード ファイルが生成されます。 これらのファイルには、IDL で宣言した**BgLabelControl**ランタイム クラスの実装を開始するためのスタブが含まれます。 これらのスタブは `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` と `BgLabelControl.cpp` です。
 
 スタブ ファイル `BgLabelControl.h` と `BgLabelControl.cpp` を `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` からプロジェクト フォルダー `\BgLabelControlApp\BgLabelControlApp\` にコピーします。 **ソリューション エクスプローラー**で、**[すべてのファイルを表示]** がオンであることを確認します。 コピーしたスタブ ファイルを右クリックし、**[プロジェクトに含める]** をクリックします。
 
-## <a name="implement-the-bglabelcontrol-custom-control-class"></a>**BgLabelControl**のカスタム コントロール クラスを実装します。
-ここで、`\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` と `BgLabelControl.cpp` を開いてランタイム クラスを実装してみましょう。 `BgLabelControl.h`、既定のスタイル キーを設定し、**ラベル**と**LabelProperty**を実装するコンス トラクターを変更、依存関係プロパティの値に変更を処理する**OnLabelChanged**という名前の静的なイベント ハンドラーを追加、プライベート メンバーの追加**LabelProperty**のバッキング フィールドを格納します。
+## <a name="implement-the-bglabelcontrol-custom-control-class"></a>**BgLabelControl**カスタム コントロール クラスを実装します。
+ここで、`\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` と `BgLabelControl.cpp` を開いてランタイム クラスを実装してみましょう。 `BgLabelControl.h`、既定のスタイル キーを設定し、**ラベル**と**LabelProperty**実装コンス トラクターの変更、 **OnLabelChanged**依存関係プロパティの値に変更を処理するという名前の静的イベント ハンドラーを追加およびプライベート メンバーを追加します。**LabelProperty**のバッキング フィールドを保存します。
 
-このチュートリアルでは、私たちも使用している**OnLabelChanged**を。 ある依存関係プロパティをプロパティ変更コールバックを登録する方法を確認できるようにします。
-
-、それらを追加した後、`BgLabelControl.h`次のように見えます。
+これらを追加した後、`BgLabelControl.h`次のように見えます。
 
 ```cppwinrt
 // BgLabelControl.h
@@ -75,7 +79,7 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 
     static Windows::UI::Xaml::DependencyProperty LabelProperty() { return m_labelProperty; }
 
-    static void OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e);
+    static void OnLabelChanged(Windows::UI::Xaml::DependencyObject const&, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const&);
 
 private:
     static Windows::UI::Xaml::DependencyProperty m_labelProperty;
@@ -83,7 +87,7 @@ private:
 ...
 ```
 
-`BgLabelControl.cpp`、次のような静的メンバーを定義します。
+`BgLabelControl.cpp`、次のように静的メンバーを定義します。
 
 ```cppwinrt
 // BgLabelControl.cpp
@@ -96,15 +100,29 @@ Windows::UI::Xaml::DependencyProperty BgLabelControl::m_labelProperty =
         Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &BgLabelControl::OnLabelChanged } }
 );
 
-void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e) {}
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e */)
+{
+    if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
+    {
+        // Call members of the projected type via theControl.
+
+        BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::from_abi<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
+        // Call members of the implementation type via ptr.
+    }
+}
 ...
 ```
 
-## <a name="design-the-default-style-for-bglabelcontrol"></a>**BgLabelControl**の既定のスタイルをデザインします。
+このチュートリアルで使用しない**OnLabelChanged**をします。 ありますが、プロパティ変更コールバックに依存関係プロパティを登録する方法を確認できるようにできます。 **OnLabelChanged**の実装には、(基本の投影された型は、 **DependencyObject**をここでは) 基本投影された型から派生投影された型を取得する方法も示しています。 投影された型を実装する型へのポインターを取得する方法を示しています。 その 2 つ目の操作は自然のみ可能で投影された型 (ランタイム クラスを実装するプロジェクト) を実装するプロジェクトです。
 
-コンス トラクターでは、 **BgLabelControl**は、自身の既定のスタイル キーを設定します。 どのようなの*です*が、既定のスタイルですか。 カスタム (テンプレート) コントロールを既定のスタイルがある必要があります&mdash;既定のコントロール テンプレートを含む&mdash;コントロールのコンシューマーは、スタイルまたはテンプレートを設定しない場合に、レンダリングに使用できることです。 このセクションで、既定のスタイルを含むプロジェクトをマークアップ ファイルを追加します。
+> [!NOTE]
+> [Windows 10 SDK プレビュー ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)をインストールした後で、し、呼び出すことができます[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi)ではなく、上記の依存関係プロパティ変更されたイベント ハンドラーで場合。
 
-[プロジェクト] ノードの下は、新しいフォルダーを作成し、「テーマ」という名前を付けます。 `Themes`、 **Visual C++** の型の新しい項目を追加 > **XAML** > **XAML ビュー**では、し、「Generic.xaml」という名前を付けます。 フォルダーとファイル名にする必要が次のようなカスタム コントロールの既定のスタイルを検索するため、XAML フレームワークのために。 デフォルトの内容を削除する`Generic.xaml`、次のマークアップに貼り付けます。
+## <a name="design-the-default-style-for-bglabelcontrol"></a>既定のスタイルを**BgLabelControl**を設計します。
+
+そのコンス トラクターでは、 **BgLabelControl**は、自身の既定のスタイル キーを設定します。 どのような*は*既定のスタイルかどうか。 カスタム (テンプレート) コントロールは、既定のスタイルが必要です&mdash;既定のコントロール テンプレートを含む&mdash;自体で、コントロールのコンシューマーは、スタイルやテンプレートを設定しない場合のレンダリングに使用できること。 このセクションで、既定のスタイルを含むプロジェクトに、マークアップ ファイルを追加しますがあります。
+
+プロジェクト ノードを新しいフォルダーを作成し、"Themes"という名前を付けます。 `Themes`、 **Visual C**の種類の新しい項目の追加 > **XAML** > **XAML ビュー**、し、"Generic.xaml"という名前を付けます。 カスタム コントロールの既定のスタイルを検索する、XAML フレームワークの順序で次のようにする必要は、フォルダーとファイル名。 既定のコンテンツを削除`Generic.xaml`、次のマークアップに貼り付けます。
 
 ```xaml
 <!-- \Themes\Generic.xaml -->
@@ -127,17 +145,17 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 </ResourceDictionary>
 ```
 
-この例では、既定のスタイルを設定する唯一のプロパティは、コントロール テンプレートです。 テンプレートは、正方形 (背景は XAML の[コントロール](/uwp/api/windows.ui.xaml.controls.control)の種類のすべてのインスタンスが**バック グラウンド**プロパティにバインドされている)、およびテキストの要素 (テキストが、 **BgLabelControl::Label**の依存関係プロパティにバインドされている) で構成されます。
+この例では、既定のスタイルを設定する唯一のプロパティは、コントロール テンプレートです。 テンプレートは、(そのバック グラウンドは、XAML[**コントロール**](/uwp/api/windows.ui.xaml.controls.control)の種類のすべてのインスタンスが**バック グラウンド**プロパティにバインドされている)、正方形とテキスト要素 (テキストは**BgLabelControl::Label**の依存関係プロパティにバインドされている) で構成されます。
 
 ## <a name="add-an-instance-of-bglabelcontrol-to-the-main-ui-page"></a>UI のメイン ページに**BgLabelControl**のインスタンスを追加します。
 
-メイン UI ページの XAML マークアップが含まれている `MainPage.xaml` を開きます。 ( **StackPanel**) 内の**Button**要素の直後後には、次のマークアップを追加します。
+メイン UI ページの XAML マークアップが含まれている `MainPage.xaml` を開きます。 ( **StackPanel**) 内の**ボタン**要素の後すぐには、次のマークアップを追加します。
 
 ```xaml
 <local:BgLabelControl Background="Red" Label="Hello, World!"/>
 ```
 
-ディレクティブを組み込むと、次の追加も、 `MainPage.h` 、 **MainPage**の型 (XAML のマークアップと命令型コードをコンパイルするの組み合わせ) が**BgLabelControl**のカスタム コントロールの種類を認識できるようにします。
+また、追加、次のディレクティブを含める`MainPage.h` **MainPage**型 (XAML マークアップと命令型コードのコンパイルの組み合わせ) が、 **BgLabelControl**カスタム コントロールの種類を認識できるようにします。
 
 ```cppwinrt
 // MainPage.h
@@ -146,13 +164,38 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 ...
 ```
 
-ここでプロジェクトをビルドして実行します。 既定のコントロール テンプレートは、バインドしている背景ブラシ、およびマークアップの**BgLabelControl**インスタンスのラベルに表示されます。
+ここでプロジェクトをビルドして実行します。 既定のコントロール テンプレートのバインドは、背景ブラシをし、ラベルの場合、マークアップで**BgLabelControl**インスタンスのことが表示されます。
 
-このチュートリアルでは、(テンプレート) のカスタム コントロールの簡単な例を示しました C + で + WinRT。 任意に豊富な機能を備えた独自のカスタム コントロールを行うことができます。 たとえば、カスタム コントロールは、何か複雑な作業は編集可能なデータ グリッド、ビデオ プレーヤー、または 3D ジオメトリのビジュアライザーのフォームを実行できます。
+このチュートリアルでは、カスタム (テンプレート) コントロールの単純な例を示した c++/WinRT します。 任意機能豊富でフル機能を備えた、独自のカスタム コントロールを行うことができます。 たとえば、カスタム コントロールを編集可能なデータ グリッドやビデオ プレーヤーでは、3 D ジオメトリのビジュアライザーとしてと複雑なものの形式になります。 ことができます。
+
+## <a name="implementing-overridable-functions-such-as-measureoverride-and-onapplytemplate"></a>実装する*オーバーライド* **MeasureOverride** **OnApplyTemplate**などの機能
+
+カスタム コントロールを派生する基本のランタイム クラスから派生自体もさらに、[**コントロール**](/uwp/api/windows.ui.xaml.controls.control)のランタイム クラスからです。 **コントロール**、 [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement)、派生クラスで上書きできる[**UIElement**](/uwp/api/windows.ui.xaml.uielement)のオーバーライドの方法があります。 その方法を示すコード例を以下に示します。
+
+```cppwinrt
+struct BgLabelControl : BgLabelControlT<BgLabelControl>
+{
+...
+    // Control overrides.
+    void OnPointerPressed(Windows::UI::Xaml::Input::PointerRoutedEventArgs const& /* e */) const { ... };
+
+    // FrameworkElement overrides.
+    Windows::Foundation::Size MeasureOverride(Windows::Foundation::Size const& /* availableSize */) const { ... };
+    void OnApplyTemplate() const { ... };
+
+    // UIElement overrides.
+    Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() const { ... };
+...
+};
+```
+
+*オーバーライド可能*関数で表示、自体をさまざまな言語プロジェクションで異なります。 C# では、たとえば、関数通常として表示されます保護されている仮想関数。 C++/WinRT では、これら仮想も、保護されたが引き続きそれらを上書きし、上記のように、独自の実装を提供できます。
 
 ## <a name="important-apis"></a>重要な API
 * [コントロール](/uwp/api/windows.ui.xaml.controls.control)
 * [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty)
+* [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)
+* [UIElement](/uwp/api/windows.ui.xaml.uielement)
 
 ## <a name="related-topics"></a>関連トピック
 * [コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)

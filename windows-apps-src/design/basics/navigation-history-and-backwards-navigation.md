@@ -1,5 +1,5 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Learn how to implement backwards navigation for traversing the user's navigation history within an UWP app.
 title: ナビゲーション履歴と前に戻る移動 (Windows アプリ)
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
@@ -7,19 +7,19 @@ isNew: true
 label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
-ms.author: sezhen
+ms.author: quradic
 ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0400e04a86675adccd1da14d8cb2652028fbfd30
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 714a1af932dfb8d5b0aab5c84437f92d5c2bd90e
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2918973"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3118560"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP アプリのナビゲーション履歴と前に戻る移動
 

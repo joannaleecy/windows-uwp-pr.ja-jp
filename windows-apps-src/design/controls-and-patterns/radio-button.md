@@ -1,11 +1,11 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Radio buttons let users select one option from two or more choices.
 title: ラジオ ボタンのガイドライン
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c58f0485d0c553f85b502cc4d9addb4e498e2f6
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 48d830b388fee8a0007447a66aa58e3794cfaae0
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673719"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3115498"
 ---
 # <a name="radio-buttons"></a>ラジオ ボタン
 

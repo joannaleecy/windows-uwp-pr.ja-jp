@@ -1,10 +1,10 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: A button gives the user a way to trigger an immediate action.
 title: ボタン
 label: Buttons
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f0bf7731a8480fb4f6d81368227ad6259780381b
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 2b52f61a4bb54c3432c3e1544bb690df08c3b891
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2911216"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3129125"
 ---
 # <a name="buttons"></a>ボタン
 

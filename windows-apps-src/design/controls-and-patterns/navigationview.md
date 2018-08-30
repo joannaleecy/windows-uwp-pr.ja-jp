@@ -1,10 +1,10 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
 title: ナビゲーション ビュー
 template: detail.hbs
-ms.author: sezhen
-ms.date: 08/06/2018
+ms.author: quradic
+ms.date: 06/25/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,12 +14,12 @@ design-contact: kimsea
 dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c0857005d584b1fde0eb52a6ab0ef5ec29eaf44
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 6c75169f118e2c8ef575fa251a7badc8cfe44247
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2906142"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3124577"
 ---
 # <a name="navigation-view-preview-version"></a>ナビゲーション ビュー (プレビュー版)
 

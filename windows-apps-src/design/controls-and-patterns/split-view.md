@@ -1,11 +1,11 @@
 ---
-author: serenaz
+author: QuinnRadich
 title: 分割ビュー
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
 description: 分割ビュー コントロールには、展開/折りたたみ可能なウィンドウとコンテンツ領域があります。
 label: Split view
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f1e845b6041a6c3fc09178bb677d273304a35b4
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.openlocfilehash: cde4b5d95a0c978faa647fcc108d74874ff52c40
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
-ms.locfileid: "1615807"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3117789"
 ---
 # <a name="split-view-control"></a>分割ビュー コントロール
 

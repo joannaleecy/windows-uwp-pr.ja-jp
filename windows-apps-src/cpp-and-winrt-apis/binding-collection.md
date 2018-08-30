@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML、コントロール、バインド、コレクション
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ba935b1a5316c2d7af9c7681705595efea7ca08
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2918352"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3112366"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>XAML アイテム コントロール: [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) コレクションへのバインド
 > [!NOTE]
@@ -37,7 +37,7 @@ XAML アイテム コントロールに効果的にバインドできるコレ�
 [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_) の便利で汎用的な実装として機能するように、監視可能なベクター テンプレートを持つことは役に立ちます。 次に **single_threaded_observable_vector\<T\>** と呼ばれるクラスの一覧を示します。
 
 > [!NOTE]
-> [Windows 10 SDK プレビュー ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)では、インストールされているか、後ですることができますだけ直接関数を使用して**winrt::single_threaded_observable_vector\ < T\ >** 工場出荷時の下に一覧表示するコードの代わりに (説明の正確なコード後でこのトピックで)。 わからない場合既にそのバージョンの SDK で、ことができたら、 **winrt**関数にコードの一覧のバージョンを使用してから切り替えるときに簡単です。
+> [Windows 10 SDK プレビュー ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)をインストールした後で、直接使用できます**winrt::single_threaded_observable_vector \ < t \ >** ファクトリ関数以下に示すコードではなく場合 (については、正確なコード後述このトピックで)。 ない場合既にそのバージョンの SDK で、それはことが簡単への切り替えが、 **winrt**関数に、コード バージョンを使用しています。
 
 ```cppwinrt
 // single_threaded_observable_vector.h
@@ -305,7 +305,7 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!IMPORTANT]
-> 上記 MIDL 3.0 の一覧では、 **BookSkus**プロパティの型が[**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821)の[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)を注意してください。 このトピックの次のセクションでは**BookSkus**に[**リスト ボックス**](/uwp/api/windows.ui.xaml.controls.listbox)の項目のソースはバインドすること。 項目コントロールは、リスト ボックスと、 [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)プロパティを正しく設定するには、 **IInspectable**、または[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)などの相互運用性の種類の**IVector**の型の値に設定する必要があります。
+> 上記の MIDL 3.0 一覧で [ **BookSkus**プロパティの型が[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821)の注意してください。 このトピックの次のセクションでは**BookSkus**に[**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox)項目ソース バインドするされます。 リスト ボックスは、項目コントロールと[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)プロパティを正しく設定するには、型**IVector** **IInspectable**、または[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)など、相互運用性の種類の値に設定する必要があります。
 
 保存してビルドします。 `Generated Files` フォルダーの `BookstoreViewModel.h` と `BookstoreViewModel.cpp` からアクセサー スタブをコピーし、それらを実装します。
 
@@ -352,7 +352,7 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Boo
 ```
 
 ## <a name="if-you-have-a-windows-10-sdk-preview-build"></a>Windows 10 SDK プレビュー ビルドがある場合
-[Windows 10 SDK プレビュー ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)では、インストールした場合は、以降では、次のコード行を置換し、または
+[Windows 10 SDK プレビュー ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)をインストールした場合または後で、次のコード行を置換
 
 ```cppwinrt
 m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::IInspectable>>();
@@ -364,7 +364,7 @@ m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::
 m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
 ```
 
-[**Winrt::make**](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/make)を呼び出すには、代わりに**winrt::single_threaded_observable_vector\ < T\ >** 工場出荷時の関数を呼び出すことによって、適切なコレクション オブジェクトを作成します。
+[**Winrt::make**](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/make)を呼び出すのではなく、 **winrt::single_threaded_observable_vector \ < t \ >** ファクトリ関数を呼び出すことによって、適切なコレクション オブジェクトを作成します。
 
 ## <a name="bind-a-listbox-to-the-bookskus-property"></a>**BookSkus** プロパティに ListBox をバインドします。
 メイン UI ページの XAML マークアップが含まれている `MainPage.xaml` を開きます。 **Button** と同じ **StackPanel** 内に次のマークアップを追加します。

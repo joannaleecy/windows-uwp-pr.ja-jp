@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: The Pivot control enables touch-swiping between a small set of content sections.
 title: ピボット
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 06/19/2018
 ms.topic: article
 ms.prod: windows
@@ -14,12 +14,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f0fbbfacc3fa4edb602f7505ea1e88f211a81a
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2913019"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3116117"
 ---
 # <a name="pivot"></a>ピボット
 

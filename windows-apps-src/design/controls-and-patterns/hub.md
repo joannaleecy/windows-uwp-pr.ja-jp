@@ -1,26 +1,26 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: The hub control uses a hierarchical navigation pattern to support apps with a relational information architecture.
 title: ハブ コントロール
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: yulikl
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8c67270018df51e8466086511b1af0414b8c1c
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 4fecff4fdd836f271b9fb066c58f159111c37772
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493669"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3127279"
 ---
 # <a name="hub-controlpattern"></a>ハブ コントロール/パターン
 

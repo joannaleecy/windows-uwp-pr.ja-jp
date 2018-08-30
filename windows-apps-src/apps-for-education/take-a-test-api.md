@@ -8,18 +8,18 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、教育
+keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
 ms.openlocfilehash: 38596ad12ac309db5dc60e4a5183eee9bf8c7b7c
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2917618"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3121895"
 ---
 # <a name="take-a-test-javascript-api"></a>テスト JavaScript API
 
-[テストの実行](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)は、一か八かのテスト、オンライン評価をロック ダウン状態を表示するブラウザ ・ ベースの UWP アプリケーション教師の評価に焦点をセキュリティで保護されたテスト環境を提供する方法ではなくコンテンツを許可します。 これを実現するには、任意の Web アプリケーションで利用できる JavaScript API を使用します。 テスト API は、重要な共通学力テストの [SBAC ブラウザー API 標準](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)に対応しています。
+[テスト](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)は、厳正なテスト用のロックダウンされたオンライン評価を表示するブラウザー ベースの UWP アプリ評価に集中する教育者はセキュリティで保護されたテスト環境を提供する方法ではなくコンテンツを許可します。 これを実現するには、任意の Web アプリケーションで利用できる JavaScript API を使用します。 テスト API は、重要な共通学力テストの [SBAC ブラウザー API 標準](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)に対応しています。
 
 アプリ自体の詳細については、「[テスト アプリ技術リファレンス](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)」を参照してください。 トラブルシューティングについては、「[イベント ビューアーを使用して、Microsoft テストをトラブルシューティングする](troubleshooting.md)」を参照してください。
 
@@ -32,7 +32,7 @@ ms.locfileid: "2917618"
 
 ### <a name="security-namespace"></a>セキュリティ名前空間
 
-セキュリティの名前空間を使用すると、デバイスをロックする、ユーザーおよびシステム プロセスの一覧を確認して、MAC および IP アドレスを取得およびキャッシュされた web リソースをオフにできます。
+セキュリティ名前空間を使用すると、デバイスをロックダウン、ユーザーとシステム プロセスの一覧の確認、MAC および IP アドレスの取得およびキャッシュされている web リソースをクリアできます。
 
 | メソッド | 説明   |
 |--------|---------------|

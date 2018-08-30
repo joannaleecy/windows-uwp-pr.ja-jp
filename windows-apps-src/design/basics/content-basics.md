@@ -1,24 +1,24 @@
 ---
-author: serenaz
+author: mijacobs
 Description: An overview of common page patterns and UI elements for displaying content in your UWP app.
 title: ユニバーサル Windows プラットフォーム (UWP) アプリのコンテンツ デザインの基本
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 op-migration-status: ready
-ms.author: sezhen
+ms.author: mijacobs
 ms.date: 12/1/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6479d8ed5a0a0f98556f49bf12a30408de052f8a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 91187b176d32fcc53b51faa7e8c42a10fd4908b8
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654331"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3122025"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP アプリのコンテンツ デザインの基本
 

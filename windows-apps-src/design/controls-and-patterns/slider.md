@@ -1,11 +1,11 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Lets the user set a value in a given range.
 title: スライダー
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
@@ -16,12 +16,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1b1ea072a24c65ac9f8acafa5217cecec99c9c
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: a284625bdfa76fd1fe41948f01e64e1bea3d2644
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493529"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3114969"
 ---
 # <a name="sliders"></a>スライダー
 

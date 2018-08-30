@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ce26242f1f5093afcbfb652a7d1736897975cb3a
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2917125"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3113013"
 ---
 # <a name="custom-attached-properties"></a>カスタム添付プロパティ
 
@@ -35,7 +35,7 @@ ms.locfileid: "2917125"
 定義クラス以外のクラスで利用できるプロパティ設定メカニズムが必要な場合は、添付プロパティを作成できます。 その最も一般的なシナリオは、レイアウトとサービス サポートです。 既にあるレイアウト プロパティの例として、[**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) と [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) があります。 レイアウトのシナリオでは、レイアウト制御要素の子要素として存在する要素は親要素に対するレイアウト要件を個別に表現でき、それぞれ、親が添付プロパティとして定義するプロパティ値を設定します。 Windows ランタイム API のサービス サポートのシナリオの例は、[**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561) など、[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) の添付プロパティのセットです。
 
 > [!WARNING]
-> Windows ランタイムの XAML の実装の既存の制限では、カスタム添付プロパティをアニメーション化することはできません。
+> Windows ランタイム XAML 実装の既存の制限は、カスタム添付プロパティをアニメーション化することはできません。
 
 ## <a name="registering-a-custom-attached-property"></a>カスタム添付プロパティの登録
 
@@ -43,10 +43,10 @@ ms.locfileid: "2917125"
 
 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public** **static** **readonly** プロパティを宣言することで、添付プロパティを依存関係プロパティとして定義します。 このプロパティは、[**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) メソッドの戻り値を使って定義します。 プロパティ名は、**RegisterAttached** *name* パラメーターとして指定した添付プロパティ名の終わりに "Property" という文字列を追加した名前と一致する必要があります。 これは、依存関係プロパティが表すプロパティとの関連で依存関係プロパティの識別子に名前を付ける場合の確立された規則です。
 
-カスタム添付プロパティを定義する主要領域は、アクセサーまたはラッパーを定義する方法の点でカスタム依存関係プロパティとは異なります。 使用して[カスタム依存関係プロパティ](custom-dependency-properties.md)で説明されているラッパーの手法ではなく、静的なを提供する必要がありますも **を取得します。 PropertyName*および **を設定。 PropertyName*添付プロパティのアクセサー メソッド。 アクセサーは主に XAML パーサーで使われますが、XAML 以外のシナリオでは他の任意の呼び出し元もこれらを使って値を設定できます。
+カスタム添付プロパティを定義する主要領域は、アクセサーまたはラッパーを定義する方法の点でカスタム依存関係プロパティとは異なります。 使って[カスタム依存関係プロパティ](custom-dependency-properties.md)で説明されているラッパー手法ではなく、静的を提供する必要がありますも **を取得する。 PropertyName*と **設定。 PropertyName*メソッドを添付プロパティのアクセサーとして。 アクセサーは主に XAML パーサーで使われますが、XAML 以外のシナリオでは他の任意の呼び出し元もこれらを使って値を設定できます。
 
 > [!IMPORTANT]
-> アクセサーを正しく定義していない場合は、XAML プロセッサは添付プロパティにアクセスできない可能性がありますがそれを使用しようとするすべてのユーザーは、XAML パーサー エラーを取得します。 また、デザイン ツールとコーディング ツールは、参照されるアセンブリでカスタム依存関係プロパティを検出した場合に、"\*Property" という識別子の命名規則に依存することがよくあります。
+> XAML プロセッサは添付プロパティにアクセスできない、それを使用しようとするすべてのユーザーにはおそらくアクセサーを正しく定義しない場合は、XAML のパーサー エラーを取得します。 また、デザイン ツールとコーディング ツールは、参照されるアセンブリでカスタム依存関係プロパティを検出した場合に、"\*Property" という識別子の命名規則に依存することがよくあります。
 
 ## <a name="accessors"></a>アクセサー
 
@@ -60,7 +60,7 @@ Microsoft Visual Basic の場合は、次のようになります。
 
 *target* オブジェクトは実装でより具体的な型にすることができますが、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生する必要があります。 *valueType* 戻り値も、実装でより具体的な型にすることができます。 基本的な **Object** 型が受け入れられますが、多くの場合、添付プロパティにタイプ セーフを適用します。 タイプ セーフ手法として、getter シグネチャと setter シグネチャで型指定を使うことをお勧めします。
 
-署名、**を設定。 PropertyName*アクセサーは、これをする必要があります。
+署名、**設定。 PropertyName*アクセサーはこれである必要があります。
 
 `public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
 
@@ -71,13 +71,13 @@ Visual Basic の場合は、次のようになります。
 *target* オブジェクトは実装でより具体的な型にすることができますが、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生する必要があります。 *value* オブジェクトとその *valueType* は、実装でより具体的な型にすることができます。 添付プロパティがマークアップに検出された場合、このメソッドの値は XAML プロセッサからの入力であることに注意してください。 属性値 (最終的には単なる文字列) から適切な型を作成できるように、使う型の型変換または既存のマークアップ拡張サポートが必要です。 基本的な **Object** 型が受け入れられますが、多くの場合、さらにタイプ セーフにします。 これを実現するには、アクセサーに型を適用します。
 
 > [!NOTE]
-> プロパティ要素構文で使用法がある添付プロパティを定義することもできます。 その場合、値の型変換は必要ではありませんが、意図した値を XAML で確実に作成できるようにする必要があります。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) は、プロパティ要素の使用だけをサポートする既存の添付プロパティの例です。
+> プロパティ要素構文を使うことを意図が添付プロパティを定義することもできます。 その場合、値の型変換は必要ではありませんが、意図した値を XAML で確実に作成できるようにする必要があります。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) は、プロパティ要素の使用だけをサポートする既存の添付プロパティの例です。
 
 ## <a name="code-example"></a>コードの例
 
 この例は、([**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) メソッドを使った) 依存関係プロパティの登録と、カスタム添付プロパティの **Get** アクセサーと **Set** アクセサーを示しています。 この例では、添付プロパティ名は `IsMovable` です。 したがって、アクセサーの名前は `GetIsMovable` と `SetIsMovable` にする必要があります。 添付プロパティの所有者は `GameService` という名前の独自の UI を持たないサービス クラスです。その目的は **GameService.IsMovable** 添付プロパティを使うときに、添付プロパティ サービスを提供することだけです。
 
-C + では、添付プロパティを定義する/CX は、少し複雑です。 ヘッダーとコード ファイル間の関連性を決定する必要があります。 また、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で説明している理由から、識別子を **get** アクセサーのみ持つプロパティとして公開する必要があります。 C + + CX がこのプロパティのフィールドの関係を定義する必要があります単純なプロパティの .NET の**読み取り専用**の keywording で、暗黙の型に依存するのではなくをバックアップするか明示的にします。 また、アプリが最初に開始されたとき、添付プロパティを必要とする XAML ページが読み込まれる前に、1 回だけ実行されるヘルパー関数内で、添付プロパティの登録を実行する必要があります。 依存関係プロパティまたは添付プロパティのプロパティ登録ヘルパー関数を呼び出す一般的な場所は、app.xaml ファイルのコードの **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) コンストラクターの内部からです。
+添付プロパティを定義する c++ +/CX は、少し複雑です。 ヘッダーとコード ファイル間の関連性を決定する必要があります。 また、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で説明している理由から、識別子を **get** アクセサーのみ持つプロパティとして公開する必要があります。 C++/cli CX このプロパティとフィールドの関係を定義する必要があります単純なプロパティのバッキング .NET**読み取り専用**のキーワードを暗黙的に依存するのではなく明示的にします。 また、アプリが最初に開始されたとき、添付プロパティを必要とする XAML ページが読み込まれる前に、1 回だけ実行されるヘルパー関数内で、添付プロパティの登録を実行する必要があります。 依存関係プロパティまたは添付プロパティのプロパティ登録ヘルパー関数を呼び出す一般的な場所は、app.xaml ファイルのコードの **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) コンストラクターの内部からです。
 
 ```csharp
 public class GameService : DependencyObject
@@ -234,7 +234,7 @@ XAML の XML 名前空間マッピングは、通常は XAML ページのルー�
 ```
 
 > [!NOTE]
-> C++ と XAML の UI を作成している場合は、XAML ページがその型を使用する、いつでも、添付プロパティを定義するカスタムの型のヘッダーを含める必要があります。 各 XAML ページには、.xaml.h コード ビハインド ヘッダーが関連付けられています。 ここに、添付プロパティの所有者型の定義のヘッダーを (**\#include** を使って) 含める必要があります。
+> C++ を使った XAML UI を作成する場合、XAML ページが、その型を使用して、いつでも、添付プロパティを定義するカスタム型のヘッダーを含める必要があります。 各 XAML ページには、.xaml.h コード ビハインド ヘッダーが関連付けられています。 ここに、添付プロパティの所有者型の定義のヘッダーを (**\#include** を使って) 含める必要があります。
 
 ## <a name="value-type-of-a-custom-attached-property"></a>カスタム添付プロパティの値型
 
@@ -253,7 +253,7 @@ XAML の XML 名前空間マッピングは、通常は XAML ページのルー�
 
 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) にはパネルを実用的にするため、フレームワーク レベルの [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) と [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) メソッドを上書きするという動作があります。 **Canvas** が子について実際に添付プロパティを確認するのはここです。 **Measure** と **Arrange** の両パターンの一部は、コンテンツを反復処理するループです。また、パネルには、パネルの子とされるものを明確にする [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) プロパティがあります。 このため、**Canvas** レイアウトの動作は、子を反復処理したうえで、子のそれぞれについて [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) と [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) の静的呼び出しを実行し、その添付プロパティに既定以外の値 (既定値は 0) が含まれているかどうかを確認するというものになります。 確認された値はその後、**Canvas** の利用可能なレイアウト スペースで子のそれぞれが提供する値に応じて、子の絶対位置を設定するのに使われた後、**Arrange** を使ってコミットされます。
 
-コードは、次の擬似コードのようになります。
+コードは次の擬似コードのようになります。
 
 ```syntax
 protected override Size ArrangeOverride(Size finalSize)
@@ -270,7 +270,7 @@ protected override Size ArrangeOverride(Size finalSize)
 ```
 
 > [!NOTE]
-> パネルのしくみの詳細については、 [XAML のカスタム パネルの概要](https://msdn.microsoft.com/library/windows/apps/mt228351)を参照してください。
+> パネルの動作について詳しくは、 [XAML カスタム パネルの概要](https://msdn.microsoft.com/library/windows/apps/mt228351)をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 

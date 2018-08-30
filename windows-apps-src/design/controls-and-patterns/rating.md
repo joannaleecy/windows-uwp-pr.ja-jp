@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 description: ユーザーが評価の確認と設定を行うことができます。評価には、コンテンツやサービスに関する満足度が反映されます。
 title: 評価コントロール
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows
@@ -14,12 +14,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6afd4df6ef6720e426d7513ad0b511c77b5155b7
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+ms.openlocfilehash: 242ecdaf128e1e01b1bdeac4cce649504b8efc74
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1672799"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3112083"
 ---
 # <a name="rating-control"></a>評価コントロール
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、同時実行、非同期、非同期、非同期操作
 ms.localizationpriority: medium
 ms.openlocfilehash: fe43eaa233d3384eecb5e8755190efc1a109bbb9
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2918292"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3121284"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) を使用した同時実行と非同期操作
 > [!NOTE]
@@ -69,7 +69,7 @@ int main()
 C++/WinRT は C++ コルーチンをプログラミング モデルに統合し、結果を連携して待機するための自然な方法を提供します。 コルーチンを作成すると、独自の Windows ランタイム非同期操作を作成することができます。 次のコード例で、**ProcessFeedAsync** はコルーチンします。
 
 > [!NOTE]
-> **取得**関数は、C + に存在する/すべて C + 内から関数を呼び出すことができますので、WinRT の投影が**winrt::Windows::Foundation::IAsyncAction**を入力/WinRT プロジェクトです。 **取得**できないため、実際の Windows ランタイム型**IAsyncAction**のアプリケーション アプリケーションバイナリインタ フェース (ABI) 表面の一部は、 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)インターフェイスのメンバーとして記載されている関数は検索されません。
+> C++ で**取得する**関数が存在する/WinRT プロジェクション入力**winrt::Windows::Foundation::IAsyncAction**、c++ 内から関数を呼び出すことができます/WinRT プロジェクト。 **取得**できないため、実際の Windows ランタイム型**IAsyncAction**のアプリケーション バイナリ インターフェイス (ABI) のサーフェスの一部は、 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)インターフェイスのメンバーとして記載されている関数は検索されません。
 
 ```cppwinrt
 // main.cpp
