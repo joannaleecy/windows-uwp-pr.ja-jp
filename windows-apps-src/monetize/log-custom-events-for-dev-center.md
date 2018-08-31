@@ -11,11 +11,11 @@ keywords: Windows 10, UWP, Microsoft Store Services SDK, イベントをログ�
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b9cd4d7c527001bb382596c9c805be4ad5e7b08
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3126837"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3244288"
 ---
 # <a name="log-custom-events-for-dev-center"></a>デベロッパー センターのカスタム イベントをログに記録する
 
