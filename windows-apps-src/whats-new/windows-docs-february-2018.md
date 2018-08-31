@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b55649b5a4fb0927b03d3fcaf55545a7852d6526
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3112406"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3238927"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Windows 開発者向けドキュメントの最新情報、2018 年 2 月
 

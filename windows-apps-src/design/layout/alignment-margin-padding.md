@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a45e89c63ec12cb7b77997eac741ebedc415c54
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3117709"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3231114"
 ---
 # <a name="alignment-margin-padding"></a>配置、余白、パディング
 

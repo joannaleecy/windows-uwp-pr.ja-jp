@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: 8748b68bf4efbcc79d0bba475db32f3a2d7cc933
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3113484"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3229368"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>Desktop App Converter を使用してアプリをパッケージ化する (デスクトップ ブリッジ)
 

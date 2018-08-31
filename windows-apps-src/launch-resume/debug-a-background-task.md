@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3117931"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3232827"
 ---
 # <a name="debug-a-background-task"></a>バックグラウンド タスクのデバッグ
 

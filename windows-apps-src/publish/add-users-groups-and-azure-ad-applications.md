@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、azure ad アプリケーション, aad, ユーザー、グループ、複数のユーザー、マルチ ユーザー
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3122237"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3229714"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>デベロッパー センター アカウントへのユーザー、グループ、Azure AD アプリケーションの追加
 
