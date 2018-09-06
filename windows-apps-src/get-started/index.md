@@ -9,13 +9,13 @@ ms.prod: windows
 ms.topic: article
 keywords: 概要, windows 10, uwp, xaml, c#
 ms.technology: uwp
-ms.localizationpriority: high
-ms.openlocfilehash: 9e2cd95cfc74273f4c9f6c949a5a618542b99acf
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 8d7ad7835e56b874c37b9376eb00278fea055dd1
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815747"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3398484"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 アプリの概要 
  
@@ -75,7 +75,7 @@ ms.locfileid: "1815747"
                         <h3>コーディングの開始</h3>
                         <p>経験豊富な開発者でも初めてアプリを作成する方でも、Windows 10 のプラットフォームとドキュメントを実際に試してみることができます。</p>
                         <ul>
-                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Windows のアプリの作成</a></li>
+                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">コーディングの開始</a></li>
                         </ul>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ ms.locfileid: "1815747"
                     <br>
                     <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">UI の基本</a></p>
                     <p><a href="//docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding">データ バインディング</a></p>
-                    <p><a href="//docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style">カスタム スタイル</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-style">カスタム スタイル</a></p>
                 </div>
             </div>
         </div>
@@ -219,7 +219,7 @@ ms.locfileid: "1815747"
                 <div class="card">
                     <div class="cardText">
                         <h3>開発者ツール</h3>
-                        <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">UWP コミュニティ ツールキット</a></p>
+                        <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows  コミュニティ ツールキット</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">バーチャル マシン</a></p>
                         <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu on Windows</a></p>
                         </div>
