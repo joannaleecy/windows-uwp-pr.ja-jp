@@ -3,18 +3,18 @@ author: mcleanbyron
 description: 日付範囲やその他のオプション フィルターを指定して、デスクトップ アプリケーションに関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: デスクトップ アプリケーションのエラー報告データの取得
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, デスクトップ アプリケーション
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c566ff375f36108d724f3c550570b3332f4c6b
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.openlocfilehash: 66594fd6f59281011fccab21ad5618827db322dd
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3382358"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3402045"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>デスクトップ アプリケーションのエラー報告データの取得
 
@@ -104,7 +104,7 @@ Authorization: Bearer <your access token>
 | market          | string  | デバイスの市場の ISO 3166 国コードです。   |
 | deviceType      | string  | エラーが発生したデバイスの種類を指定する、以下のいずれかの文字列です。<p/><ul><li><strong>PC</strong></li><li><strong>Server</strong></li><li><strong>Tablet</strong></li><li><strong>Unknown</strong></li></ul>    |
 | applicationVersion     | string  |   エラーが発生したアプリケーションの実行可能ファイルのバージョンです。    |
-| eventCount      | 整数 | 指定した集計レベルでこのエラーに起因すると考えられるイベントの数です。      |
+| eventCount      | number | 指定した集計レベルでこのエラーに起因すると考えられるイベントの数です。      |
 
 
 ### <a name="response-example"></a>応答の例

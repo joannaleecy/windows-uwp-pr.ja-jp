@@ -4,18 +4,18 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: 日付範囲やその他のオプション フィルターを指定して集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: アプリのエラー報告データの取得
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c03ea17e111f86ad390dafe5360db9d10864edc
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.openlocfilehash: 15dd4d5febe0b57e164f0aadeeb8d7b816dcdd66
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3381848"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3399250"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>アプリのエラー報告データの取得
 
@@ -106,8 +106,8 @@ Authorization: Bearer <your access token>
 | deviceType      | string  | エラーが発生したデバイスの種類を示す、以下のいずれかの文字列です。<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**IoT**</li><li>**Holographic**</li><li>**Unknown**</li></ul>    |
 | packageName     | string  | このエラーに関連付けられているアプリ パッケージの一意の名前です。      |
 | packageVersion  | string  | このエラーに関連付けられているアプリ パッケージのバージョンです。   |
-| deviceCount     | 整数 | 指定した集計レベルでこのエラーに対応する一意のデバイスの数です。  |
-| eventCount      | 整数 | 指定した集計レベルでこのエラーに起因すると考えられるイベントの数です。      |
+| deviceCount     | number | 指定した集計レベルでこのエラーに対応する一意のデバイスの数です。  |
+| eventCount      | number | 指定した集計レベルでこのエラーに起因すると考えられるイベントの数です。      |
 
 
 ### <a name="response-example"></a>応答の例
