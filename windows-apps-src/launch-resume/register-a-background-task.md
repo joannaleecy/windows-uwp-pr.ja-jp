@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bd0361886181d3c5a3395112c728db3bf57d58f
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3394978"
+ms.locfileid: "3409203"
 ---
 # <a name="register-a-background-task"></a><span data-ttu-id="d0506-104">バックグラウンド タスクの登録</span><span class="sxs-lookup"><span data-stu-id="d0506-104">Register a background task</span></span>
 

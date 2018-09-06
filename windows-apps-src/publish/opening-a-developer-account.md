@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b707479d11cc7aef62385b476720bff8477ed401
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3392928"
+ms.locfileid: "3413794"
 ---
 # <a name="opening-a-developer-account"></a><span data-ttu-id="7a6ce-104">開発者アカウントを開く</span><span class="sxs-lookup"><span data-stu-id="7a6ce-104">Opening a developer account</span></span>
 

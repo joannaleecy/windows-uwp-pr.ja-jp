@@ -17,11 +17,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e38e9d61e8546d412cc30bad26680243f3a188e4
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3405074"
+ms.locfileid: "3416613"
 ---
 # <a name="menus-and-context-menus"></a><span data-ttu-id="35082-103">メニューとコンテキスト メニュー</span><span class="sxs-lookup"><span data-stu-id="35082-103">Menus and context menus</span></span>
 

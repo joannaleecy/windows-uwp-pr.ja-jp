@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 595b4ab47e3c6c833a4b8f2e692a0cc0c8ffcaa4
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3394044"
+ms.locfileid: "3407944"
 ---
 # <a name="create-random-numbers"></a><span data-ttu-id="b0d9e-104">乱数の生成</span><span class="sxs-lookup"><span data-stu-id="b0d9e-104">Create random numbers</span></span>
 

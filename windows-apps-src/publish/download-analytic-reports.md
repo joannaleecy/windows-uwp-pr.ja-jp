@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b32ebcff59e89046c45d1a0f23d3bca1c268a6b9
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3396158"
+ms.locfileid: "3413960"
 ---
 # <a name="download-analytics-reports"></a><span data-ttu-id="d3894-103">分析レポートのダウンロード</span><span class="sxs-lookup"><span data-stu-id="d3894-103">Download analytics reports</span></span>
 
