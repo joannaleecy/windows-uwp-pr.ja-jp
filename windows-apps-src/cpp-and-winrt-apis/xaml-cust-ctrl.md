@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML で、テンプレート化された、カスタム コントロール
 ms.localizationpriority: medium
-ms.openlocfilehash: 25e17888c3292cbaf7b84c8a4bdd7c411530b558
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 4354f3371807a7000160976b6f8af5b87e1ad3f8
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3422197"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3664859"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>されたカスタム (テンプレート化された) コントロールを XAML [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -27,7 +27,7 @@ ms.locfileid: "3422197"
 最も強力な機能をユニバーサル Windows プラットフォーム (UWP) の 1 つは、柔軟性、XAML[**コントロール**](/uwp/api/windows.ui.xaml.controls.control)の種類に基づいてカスタム コントロールを作成するユーザー インターフェイス (UI) スタックを提供します。 XAML UI フレームワークでは、[カスタム依存関係プロパティ](/windows/uwp/xaml-platform/custom-dependency-properties)と添付プロパティは、および[コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)では、機能が豊富でカスタマイズ可能なコントロールを作成しやすくなどの機能を提供します。 このトピックでは、C++ (テンプレート) カスタム コントロールを作成する手順について/WinRT します。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>空のアプリ (BgLabelControlApp) の作成します。
-まず、Microsoft Visual Studio で、新しいプロジェクトを作ります。 作成、 **Visual C 空のアプリ (、C++/WinRT)** プロジェクト、および*BgLabelControlApp*という名前を付けます。
+まず、Microsoft Visual Studio で、新しいプロジェクトを作ります。 **Visual C**を作成 > **Windows ユニバーサル** > **空白のアプリ (、C++/WinRT)** プロジェクト、および*BgLabelControlApp*という名前を付けます。
 
 カスタム (テンプレート化された) コントロールを表すための新しいクラスを作成する行いましょう。 同じコンパイル ユニット内のクラスを作成および使用しています。 ただし、このクラス、XAML マークアップからしたいため、ランタイム クラスをインスタンス化できるします。 また、この作成と使用のどちらにも C++/WinRT を使用します。
 
