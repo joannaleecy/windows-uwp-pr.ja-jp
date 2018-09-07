@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ユーザー ロール, ユーザーのアクセス許可, カスタム ロール, ユーザー アクセス, アクセス許可のカスタマイズ, 標準ロール
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3392868"
+ms.locfileid: "3418705"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a><span data-ttu-id="4ad96-103">アカウント ユーザーのロールまたはカスタムのアクセス許可の設定</span><span class="sxs-lookup"><span data-stu-id="4ad96-103">Set roles or custom permissions for account users</span></span>
 

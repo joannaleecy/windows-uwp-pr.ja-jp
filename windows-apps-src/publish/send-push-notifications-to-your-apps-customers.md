@@ -11,11 +11,11 @@ keywords: windows 10, uwp, ターゲット通知, プッシュ通知, トース�
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d62f46ad1b55fbad3ab7c21a593625a2538b68f
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3396939"
+ms.locfileid: "3414347"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a><span data-ttu-id="7c930-103">アプリのユーザーに通知を送信する</span><span class="sxs-lookup"><span data-stu-id="7c930-103">Send notifications to your app's customers</span></span>
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
 ms.localizationpriority: medium
 ms.openlocfilehash: b0931d712ca99b429e2aaa7dec4b855f41ce55ef
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3401904"
+ms.locfileid: "3422373"
 ---
 # <a name="code-your-app-for-experimentation"></a><span data-ttu-id="0a80c-103">アプリの実験用のコードを記述する</span><span class="sxs-lookup"><span data-stu-id="0a80c-103">Code your app for experimentation</span></span>
 

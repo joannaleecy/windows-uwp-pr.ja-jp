@@ -15,11 +15,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 242ecdaf128e1e01b1bdeac4cce649504b8efc74
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3388650"
+ms.locfileid: "3421775"
 ---
 # <a name="rating-control"></a><span data-ttu-id="f1af6-104">評価コントロール</span><span class="sxs-lookup"><span data-stu-id="f1af6-104">Rating control</span></span>
 
