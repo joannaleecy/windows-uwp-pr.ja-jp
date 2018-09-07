@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、コレクション
 ms.localizationpriority: medium
-ms.openlocfilehash: 5495649a6b7fad633e24e244aa3f6efbcc05e441
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: dc52274c80f3689d2cb10b98bda38788e3400b4e
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3421100"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3661577"
 ---
 # <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>コレクションと[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -58,7 +58,7 @@ int main()
 }
 ```
 
-上記のコード例で示すように、コレクションを作成した後要素を追加、それらを反復処理して通常 API から受信したすべての Windows ランタイム コレクション オブジェクトと同様に、オブジェクトを処理できます。 コレクションを固定のビューを必要がある場合に示すように[**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)を呼び出すことができます。 前に示したパターン&mdash;のコレクションの作成と&mdash;が、データを渡すか、API からデータを取得する単純なシナリオに適しています。
+上記のコード例で示すように、コレクションを作成した後要素を追加、それらを反復処理して通常 API から受信したすべての Windows ランタイム コレクション オブジェクトと同様に、オブジェクトを処理できます。 コレクションを固定のビューを必要がある場合に示すように[**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)を呼び出すことができます。 前に示したパターン&mdash;のコレクションの作成と&mdash;が、データを渡すか、API からデータを取得する単純なシナリオに適しています。 [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)が予想される任意の場所は、 **IVector**の場合、または、 **IVectorView**に渡すことができます。
 
 ### <a name="general-purpose-collection-primed-from-data"></a>データから先読み、汎用的なコレクション
 
@@ -85,7 +85,14 @@ auto bookSkus{ winrt::single_threaded_vector<Windows::Foundation::IInspectable>(
 bookSkus.Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 ```
 
-XAML アイテム コントロール; にバインド*できる*上のコレクションコレクションが監視可能なはありません。
+データから、Windows ランタイムのコレクションを作成し、何かをコピーすることがなくすべての API に渡すことで、ビューを準備できます。
+
+```cppwinrt
+std::vector<float> values{ 0.1f, 0.2f, 0.3f };
+IVectorView<float> view{ winrt::single_threaded_vector(std::move(values)).GetView() };
+```
+
+上記の例では、コレクション*を*作成しますが XAML アイテム コントロールにバインドします。コレクションが監視可能なはありません。
 
 ### <a name="observable-collection"></a>監視可能なコレクション
 

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 概要
 ms.localizationpriority: medium
-ms.openlocfilehash: 03abe68fd19573d7b2deba9937c515a8641e8fca
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 220c5c7395ed9388b02b74e0cbed5b913971bbba
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3409588"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3660917"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT の概要
 &nbsp;
@@ -55,7 +55,7 @@ Visual Studio 2017 (バージョン 15.6 以上、15.7 以上を推奨)、およ
 
 そのプロパティを追加すると、`cppwinrt.exe` ツールの呼び出しが含まれる、プロジェクトの C++/WinRT MSBuild サポートを取得できます。
 
-C++/WinRT では C++17 標準から機能するので、プロジェクト プロパティ **[C/C++]** > **[言語]** > **[ISO C++17 標準 (/std:c++17)]** が必要です。 **Conformance mode: Yes (/permissive-)** を設定することもあるかもしれません。これはコードを標準に準拠するようにさらに制限します。
+C++/WinRT の c++ 17 標準から機能を使用して、プロジェクトのプロパティ**C/C++** 必要な > **言語** > **標準的な C++ 言語** > **ISO C 17 標準 (//std:c では 17)** します。 **Conformance mode: Yes (/permissive-)** を設定することもあるかもしれません。これはコードを標準に準拠するようにさらに制限します。
 
 注意すべきもう 1 つのプロジェクト プロパティは、**[C/C++]** > **[全般]** > **[警告をエラーとして扱う]** です。 これをユーザーの好みに合わせて **[はい (/WX)]** または **[いいえ (/WX-)]** に設定します。 場合によっては、`cppwinrt.exe` ツールによって生成されたソース ファイルは、それらに実装を追加するまで警告を生成します。
 

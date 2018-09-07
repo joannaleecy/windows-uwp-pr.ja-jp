@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影された, プロジェクション, 実装, インプリメント, ランタイム クラス, ライセンス認証
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8e9cab3ce3bcdb390b527efc5ec65c5f92dd9f
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 9829144a23d96f9bb53332b12181b67ba6a58565
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3420450"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3658841"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) での API の作成
 
@@ -37,7 +37,7 @@ ms.locfileid: "3420450"
 > [!NOTE]
 > C++/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートおよび C++/WinRT MSBuild プロパティとターゲットを提供) のインストールと使用については、「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照してください。
 
-Visual Studio では、**Visual C++ Core App (C++/WinRT)** プロジェクト テンプレートで **CoreApplication** パターンを示しています。 パターンは、[**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) の実装を [**coreapplication::run**](/uwp/api/windows.applicationmodel.core.coreapplication.run) に渡して開始します。
+Visual Studio、 **Visual C**で > **Windows ユニバーサル** > **コア アプリ (、C++/WinRT)** プロジェクト テンプレート**CoreApplication**パターンを示しています。 パターンは、[**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) の実装を [**coreapplication::run**](/uwp/api/windows.applicationmodel.core.coreapplication.run) に渡して開始します。
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;

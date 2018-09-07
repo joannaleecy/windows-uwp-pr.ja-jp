@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: このトピックでは、Direct2D の完全なコード例を使用して、C++ を使用する方法を示して/WinRT COM クラスとインターフェイスを利用します。
-title: C++/WinRT での DirectX およびその他の COM API の使用
+title: C++ に COM コンポーネントを使用/WinRT
 ms.author: stwhi
 ms.date: 07/23/2018
 ms.topic: article
@@ -9,14 +9,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、COM、コンポーネント、クラス、インターフェイス
 ms.localizationpriority: medium
-ms.openlocfilehash: b87eb90ed5ecf731cc851e81e81ad016956e5fea
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: eba4922240983f76a1f83770e2797063ba30b8b7
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3422533"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3662308"
 ---
-# <a name="consume-directx-and-other-com-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>DirectX での他の COM Api を利用[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="consume-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>COM コンポーネントを使用[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
 C++ の機能を使用することができます/WinRT ライブラリは、DirectX Api の高パフォーマンスの 2-d および 3-D グラフィックスなどの COM コンポーネントを使用します。 C++/cli/winrt はパフォーマンスを損なうことがなく、DirectX を使用する最も簡単な方法です。 このトピックでは、Direct2D のコード例を使用して、C++ を使用する方法を示して/WinRT COM クラスとインターフェイスを利用します。 もちろん、内で、同じ、C++ の COM と Windows ランタイムのプログラミングを混在させることはできます/WinRT プロジェクト。
 

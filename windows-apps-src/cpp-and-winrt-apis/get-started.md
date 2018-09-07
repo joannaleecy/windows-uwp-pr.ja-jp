@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: 13aa1e61a2d81cfa7faed0236551dad41bd00057
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: ebb71b91af7e1490099898084f42ce04e698ef20
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3418821"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3658795"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) の概要
 C++/WinRT の使用をすぐに開始できるように、このトピックでは、単純なコード例について説明します。
@@ -23,7 +23,13 @@ C++/WinRT の使用をすぐに開始できるように、このトピックで�
 > [!NOTE]
 > C++/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートおよび C++/WinRT MSBuild プロパティとターゲットを提供) のインストールと使用については、「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照してください。
 
-新しい **Windows コンソール アプリケーション (C++/WinRT)** プロジェクトを作成します。 `pch.h` と `main.cpp` を次のように編集します。
+新しい **Windows コンソール アプリケーション (C++/WinRT)** プロジェクトを作成します。
+
+> [!IMPORTANT]
+> Visual Studio 2017 を使用している場合 (バージョン 15.8.0 以降) をターゲットとする Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803) し、新しく作成した、C++/WinRT プロジェクトをコンパイル エラーで失敗する可能性が"*エラー C3861: 'from_abi': 識別子しません。見つかった*"、および*base.h*でその他のエラー。 そのソリューションは、ターゲットを以降 (詳しく準拠) のバージョンの Windows SDK、またはプロジェクトのプロパティを設定する**C/C++** > **言語** > **への準拠モード: いいえ**(も場合、 **/制限解除-** プロジェクト プロパティ**に表示されますC/C++** > **言語** > **追加のオプション**] の下に**コマンド ライン**削除します)。
+
+
+`pch.h` と `main.cpp` を次のように編集します。
 
 ```cppwinrt
 // pch.h

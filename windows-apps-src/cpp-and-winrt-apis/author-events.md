@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 作成者, イベント
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b52bf8e33bbf111dd02c695d8c3baf77e1338ac
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 1b0aa1a53ce69369c442cef7f3b5912631593242
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3413595"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3660654"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) でのイベントの作成
 
@@ -28,7 +28,7 @@ ms.locfileid: "3413595"
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>Windows ランタイム コンポーネントの作成 (BankAccountWRC)
 
-まず、Microsoft Visual Studio で、新しいプロジェクトを作成します。 **Visual C++ Windows ランタイム コンポーネント (C++/WinRT)** プロジェクトを作成し、(「銀行口座 Windows ランタイム コンポーネント」用に) *BankAccountWRC* と名前を付けます。
+まず、Microsoft Visual Studio で、新しいプロジェクトを作成します。 **Visual C**を作成 > **Windows ユニバーサル** > **Windows ランタイム コンポーネント (、C++/WinRT)** プロジェクト、および名前を付けます*BankAccountWRC* (「銀行口座 Windows ランタイム コンポーネント")。
 
 新しく作成したプロジェクトには、`Class.idl` という名前のファイルが含まれています。 そのファイルの名前を変更`BankAccount.idl`(名前を変更する、`.idl`ファイル、依存の名前を自動的に変更する`.h`と`.cpp`ファイル、すぎます)。 内容を置き換えます`BankAccount.idl`で以下のリスト。
 
@@ -101,7 +101,7 @@ namespace winrt::BankAccountWRC::implementation
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>コア アプリ (BankAccountCoreApp) を作成して Windows ランタイム コンポーネントをテストします。
 
-ここで (`BankAccountWRC` ソリューション、または新しいソリューションのいずれかに) 新しいプロジェクトを作成します。 **Visual C++ コア アプリ (C++/WinRT)** プロジェクトを作成し、*BankAccountCoreApp* と名前を付けます。
+ここで (`BankAccountWRC` ソリューション、または新しいソリューションのいずれかに) 新しいプロジェクトを作成します。 **Visual C**を作成 > **Windows ユニバーサル** > **コア アプリ (、C++/WinRT)** プロジェクト、および*BankAccountCoreApp*という名前を付けます。
 
 参照を追加しを参照`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`(または 2 つのプロジェクトが同じソリューションに属している場合は、プロジェクト間の参照を追加)。 **[追加]** をクリックして **[OK]** をクリックします。 ここで BankAccountCoreApp をビルドします。 エラーが表示される万が一のイベントをペイロード ファイル`readme.txt`しない存在、Windows ランタイム コンポーネント プロジェクトからそのファイルを除外するしてから、BankAccountCoreApp を再構築します。
 

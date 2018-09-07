@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3418783"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3660835"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>UWP アプリ用の設計ツールキットとサンプル
  
