@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7475ae8db964b23de89488d883c135158ea20e74
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3409839"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3659417"
 ---
 # <a name="create-and-consume-an-app-service"></a><span data-ttu-id="ef381-104">アプリ サービスの作成と利用</span><span class="sxs-lookup"><span data-stu-id="ef381-104">Create and consume an app service</span></span>
 
