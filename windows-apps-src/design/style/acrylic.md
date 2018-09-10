@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8589a450b53a5ea028f8af2cee2aef7dc0816b52
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3666194"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3822116"
 ---
 # <a name="acrylic-material"></a><span data-ttu-id="6dca7-104">アクリル素材</span><span class="sxs-lookup"><span data-stu-id="6dca7-104">Acrylic material</span></span>
 
