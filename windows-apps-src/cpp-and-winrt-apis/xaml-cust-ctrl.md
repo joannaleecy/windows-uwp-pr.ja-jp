@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML で、テンプレート化された、カスタム コントロール
 ms.localizationpriority: medium
-ms.openlocfilehash: 4354f3371807a7000160976b6f8af5b87e1ad3f8
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: fd1843afc58bc758db1c6e575f3733bdc4f47b4e
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3664859"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821036"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>されたカスタム (テンプレート化された) コントロールを XAML [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -192,10 +192,10 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 *オーバーライド可能*関数で表示、自体を別の言語プロジェクションで異なります。 C# では、たとえば、オーバーライド関数通常として表示されます保護されている仮想関数。 C++/WinRT では、これら仮想も、保護されたが引き続きそれらを上書きし、上記のように、独自の実装を提供できます。
 
 ## <a name="important-apis"></a>重要な API
-* [コントロール](/uwp/api/windows.ui.xaml.controls.control)
-* [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty)
-* [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)
-* [UIElement](/uwp/api/windows.ui.xaml.uielement)
+* [コントロール クラス](/uwp/api/windows.ui.xaml.controls.control)
+* [DependencyProperty クラス](/uwp/api/windows.ui.xaml.dependencyproperty)
+* [FrameworkElement クラス](/uwp/api/windows.ui.xaml.frameworkelement)
+* [UIElement クラス](/uwp/api/windows.ui.xaml.uielement)
 
 ## <a name="related-topics"></a>関連トピック
 * [コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)

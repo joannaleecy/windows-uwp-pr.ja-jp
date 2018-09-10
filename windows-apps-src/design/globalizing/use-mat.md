@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: 39e002247cabb6389ddf23860499ebf1f166b03a
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3663134"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3826022"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>多言語アプリ ツールキット 4.0 の使用
 

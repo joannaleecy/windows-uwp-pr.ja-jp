@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: ebb71b91af7e1490099898084f42ce04e698ef20
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 1e1bd5f23f40c5d0238f8089c91ee69c6a52313f
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3658795"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3820976"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) の概要
 C++/WinRT の使用をすぐに開始できるように、このトピックでは、単純なコード例について説明します。
@@ -120,10 +120,10 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 HRESULT リターン コードを処理する必要もありません。 C++/WinRT では、エラーの HRESULT を [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) のような自然かつ最新のプログラミング スタイルの例外に変換します。 エラー処理の詳細とコード例の詳細については、「[C++/WinRT でのエラー処理](error-handling.md)」を参照してください。
 
 ## <a name="important-apis"></a>重要な API
-* [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
-* [SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
+* [Syndicationclient::retrievefeedasync メソッド](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
+* [SyndicationFeed.Items プロパティ](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [winrt::hstring 構造体](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::hresul エラー](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [winrt::hresult エラー構造体](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>関連トピック
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

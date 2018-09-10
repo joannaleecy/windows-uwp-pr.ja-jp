@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、作成者、COM、コンポーネント
 ms.localizationpriority: medium
-ms.openlocfilehash: 428e1e963c89b7f9061d6b579b3bd5368a3a0ad1
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 729cfae39f302ae6b5bae275d9e28a39f3d9503b
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3659043"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3825229"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>COM コンポーネントを作成[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -22,8 +22,6 @@ C++/WinRT は、Windows ランタイム クラスを作成することもでき�
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
-//
-
 #include "pch.h"
 
 using namespace winrt;
@@ -47,6 +45,8 @@ int main()
 }
 ```
 
+表示[コンポーネントを利用し、c++/WinRT](consume-com.md)します。
+
 ## <a name="a-more-realistic-and-interesting-example"></a>現実的で興味深い例
 
 このトピックの残りの部分で、C++ を使用する最小限に抑えながらコンソール アプリケーション プロジェクトの作成について説明します/WinRT 基本的なコクラスとクラスのファクトリを実装します。 アプリケーションの例は、コールバック ボタンでトースト通知を配信する方法を示しています、( **INotificationActivationCallback** COM インターフェイスを実装) するコクラスにより、アプリケーションを起動しと呼ばれるタイミング ユーザートーストでそのボタンをクリックします。
@@ -60,8 +60,6 @@ int main()
 開いている`main.cpp`、および削除を使用して、ディレクティブ プロジェクト テンプレートを生成します。 自分の場所で (ライブラリ、ヘッダー、および必要な型名が得) 次のコードを貼り付けます。
 
 ```cppwinrt
-#pragma comment(lib, "onecore")
-#pragma comment(lib, "propsys")
 #pragma comment(lib, "shell32")
 
 #include <iomanip>
@@ -80,7 +78,7 @@ using namespace Windows::UI::Notifications;
 
 ## <a name="implement-the-coclass-and-class-factory"></a>コクラスとクラスのファクトリを実装します。
 
-C++/WinRT を実装するコクラス、およびクラスのファクトリを[**winrt::implements**](/uwp/cpp-ref-for-winrt/implements)の基本構造体から直接派生させることです。 すぐにディレクティブの後、次の 3 つを使用して前に、示した (前に`main`)、トースト アクティベーター COM コンポーネントを実装するには、このコードを貼り付けます。
+C++/WinRT を実装するコクラス、およびクラスのファクトリ、 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements)の基本構造体から派生します。 すぐにディレクティブの後、次の 3 つを使用して前に、示した (前に`main`)、トースト通知 COM アクティベーター コンポーネントを実装するには、このコードを貼り付けます。
 
 ```cppwinrt
 static constexpr GUID callback_guid // BAF2FA85-E121-4CC9-A942-CE335B6F917F
@@ -93,15 +91,22 @@ std::wstring const this_app_name{ L"ToastAndCallback" };
 struct callback : winrt::implements<callback, INotificationActivationCallback>
 {
     HRESULT __stdcall Activate(
-        [[maybe_unused]] LPCWSTR app,
-        [[maybe_unused]] LPCWSTR args,
+        LPCWSTR app,
+        LPCWSTR args,
         [[maybe_unused]] NOTIFICATION_USER_INPUT_DATA const* data,
         [[maybe_unused]] ULONG count) noexcept final
     {
-        std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
-        std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
-        std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
-        return S_OK;
+        try
+        {
+            std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
+            std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
+            std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
+            return S_OK;
+        }
+        catch (...)
+        {
+            return winrt::to_hresult();
+        }
     }
 };
 
@@ -133,13 +138,13 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 
 上記のコードでは、コクラスでは、これは、ユーザーがトースト通知のコールバック ボタンをクリックしたときに呼び出される関数**INotificationActivationCallback::Activate**メソッドを実装します。 コクラスのインスタンスを作成する必要があります、 **IClassFactory::CreateInstance**関数のジョブはの前に、この関数を呼び出すことができます。
 
-コクラス実装されている通知の場合、 *COM アクティベーター*と呼ばれ、そのクラス id (CLSID) の形式では、`callback_guid`種類の識別子 ( **GUID**) 上に表示されます。 We'll be using that identifier later, in the form of a Start menu shortcut and a Windows Registry entry. COM アクティベーター CLSID とその関連 COM サーバー (ここでは開発中の実行可能ファイルへのパス) へのパスは、トースト通知がそのコールバック ボタンがクリックされたときのインスタンスを作成するクラスを認識するためのメカニズム (かどうか、通知がクリックされたアクション センター内かどうか)。
+コクラス実装されている通知の場合、 *COM アクティベーター*と呼ばれ、そのクラス id (CLSID) の形式では、`callback_guid`種類の識別子 ( **GUID**) 上に表示されます。 使用しますその識別子後で、スタート メニューのショートカットと Windows レジストリ エントリの形式でします。 COM アクティベーター CLSID とその関連 COM サーバー (ここでは開発中の実行可能ファイルへのパス) へのパスは、トースト通知がそのコールバック ボタンがクリックされたときのインスタンスを作成するクラスを認識するためのメカニズム (かどうか、通知がクリックされたアクション センター内かどうか)。
 
 ## <a name="best-practices-for-implementing-com-methods"></a>COM メソッドを実装するためのベスト プラクティス
 
-エラー処理とリソース管理のための手法では、手の手でを移動できます。 便利でエラー コードよりも例外を使用するは実用的です。 リソースの取得を使用するかどうかは、初期化 (RAII) イディオムを回避することができます: エラー コードを明示的にチェックリソースを明示的に解放します。 必要に応じてより複雑なコードは、これを行うと、多くの場所を非表示にバグができます。 代わりに、RAII を使用し、例外をキャッチします。 これにより、リソースの割り当ては例外安全なと、コードは簡単です。
+エラー処理とリソース管理のための手法では、手の手でを移動できます。 便利でエラー コードよりも例外を使用するは実用的です。 リソースの取得-は-初期化 (RAII) の手法を使用する場合するを回避するエラー コードを明示的に確認して、リソースを明示的に解放します。 このような明示的なチェックは必要に応じてより複雑なコードを行い、非表示にする場所はたくさんのバグができます。 代わりに、RAII を使用し、例外のキャッチとスローします。 これにより、リソースの割り当ては例外安全なと、コードは簡単です。
 
-ただし、COM メソッドの実装をエスケープする例外を許可する照準します。 使用して行うことができます、 `noexcept` 、COM メソッドで指定子。 メソッドが終了する前に処理する限り、例外をスローを任意の場所、メソッドの呼び出しグラフ内の ok です。
+ただし、COM メソッドの実装をエスケープする例外を許可する照準します。 使用して行うことができます、 `noexcept` 、COM メソッドで指定子。 メソッドが終了する前に処理する限り、例外をスローを任意の場所、メソッドの呼び出しグラフ内の ok です。 使用する場合`noexcept`、メソッドでは、エスケープする例外を許可する場合は、アプリケーションを終了します。
 
 ## <a name="add-helper-types-and-functions"></a>ヘルパー型と関数を追加します。
 
@@ -376,3 +381,13 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 ## <a name="how-to-test-the-example-application"></a>サンプル アプリケーションをテストする方法
 
 アプリケーションをビルドし、少なくとも 1 回、登録され、その他のセットアップでは、コードを実行するには管理者として実行します。 管理者は、それを実行しているし、T キーを押してするかどうか ' がトーストを表示します。 か、または、アクション センターと、アプリケーションからポップが起動されること、トースト通知、インスタンス化、コクラス**INotificationActivationCallback から直接**呼び出す ToastAndCallback**ボタンがクリックことができます。: アクティブ化**メソッドを実行します。
+
+## <a name="important-apis"></a>重要な API
+* [IInspectable インターフェイス](https://msdn.microsoft.com/library/br205821)
+* [IUnknown インターフェイス](https://msdn.microsoft.com/library/windows/desktop/ms680509)
+* [winrt::implements 構造体テンプレート](/uwp/cpp-ref-for-winrt/implements)
+
+## <a name="related-topics"></a>関連トピック
+* [C++/WinRT での API の作成](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [C++ に COM コンポーネントを使用/WinRT](consume-com.md)
+* [ローカル トースト通知の送信](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

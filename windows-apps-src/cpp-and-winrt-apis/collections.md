@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、コレクション
 ms.localizationpriority: medium
-ms.openlocfilehash: dc52274c80f3689d2cb10b98bda38788e3400b4e
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 1ef6fbfab45197c868296186363c168a6c443247
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3661577"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3822626"
 ---
 # <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>コレクションと[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -325,19 +325,19 @@ private:
 ```
 
 ## <a name="important-apis"></a>重要な API
-* [ItemsControl.ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
-* [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)
-* [IVector](/uwp/api/windows.foundation.collections.ivector_t_)
-* [winrt::map_base](/uwp/cpp-ref-for-winrt/map-base)
-* [winrt::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
-* [winrt::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
-* [winrt::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
-* [winrt::single_threaded_observable_map](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
-* [winrt::single_threaded_map](/uwp/cpp-ref-for-winrt/single-threaded-map)
-* [winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
-* [winrt::single_threaded_vector](/uwp/cpp-ref-for-winrt/single-threaded-vector)
-* [winrt::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
-* [winrt::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
+* [ItemsControl.ItemsSource プロパティ](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
+* [IObservableVector インターフェイス](/uwp/api/windows.foundation.collections.iobservablevector_t_)
+* [IVector インターフェイス](/uwp/api/windows.foundation.collections.ivector_t_)
+* [winrt::map_base 構造体テンプレート](/uwp/cpp-ref-for-winrt/map-base)
+* [winrt::map_view_base 構造体テンプレート](/uwp/cpp-ref-for-winrt/map-view-base)
+* [winrt::observable_map_base 構造体テンプレート](/uwp/cpp-ref-for-winrt/observable-map-base)
+* [winrt::observable_vector_base 構造体テンプレート](/uwp/cpp-ref-for-winrt/observable-vector-base)
+* [winrt::single_threaded_observable_map 関数テンプレート](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
+* [winrt::single_threaded_map 関数テンプレート](/uwp/cpp-ref-for-winrt/single-threaded-map)
+* [winrt::single_threaded_observable_vector 関数テンプレート](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
+* [winrt::single_threaded_vector 関数テンプレート](/uwp/cpp-ref-for-winrt/single-threaded-vector)
+* [winrt::vector_base 構造体テンプレート](/uwp/cpp-ref-for-winrt/vector-base)
+* [winrt::vector_view_base 構造体テンプレート](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## <a name="related-topics"></a>関連トピック
 * [値のカテゴリとへの参照](cpp-value-categories.md)

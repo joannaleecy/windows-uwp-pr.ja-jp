@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、文字列
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e41abffdfa79847353af4de47bcbfa050c00627
-ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
-ms.translationtype: HT
+ms.openlocfilehash: 332edcf17f2b6bbf595def67c9df7043f21828c7
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "1912940"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821126"
 ---
 # <a name="string-handling-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) での文字列の処理
 C++/WinRT では、C++ 標準ライブラリの **std::wstring** などのワイド文字列型 (注: **std::string** などのナロー文字列ではない) を使用して Windows ランタイム API を呼び出すことができます。 C++/WinRT には [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) というカスタム文字列型があります (C++/WinRT 基本ライブラリ、`%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` で定義)。 これは、Windows ランタイムのコンストラクター、関数、およびプロパティで実際に受け取られ、返される文字列型です。 ただし、多くの場合、**hstring** の変換コンストラクターと変換演算子のおかげで、クライアント コードで **hstring** を認識するかどうかを選択できます。 API を*作成している*場合は、**hstring** を理解しておく必要性が高くなると思われます。
@@ -176,5 +176,5 @@ void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 
 ## <a name="important-apis"></a>重要な API
 * [winrt::hstring 構造体](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::to_string](/uwp/cpp-ref-for-winrt/to-string)
-* [winrt::to_hstring](/uwp/cpp-ref-for-winrt/to-hstring)
+* [winrt::to_hstring 関数](/uwp/cpp-ref-for-winrt/to-hstring)
+* [winrt::to_string 関数](/uwp/cpp-ref-for-winrt/to-string)

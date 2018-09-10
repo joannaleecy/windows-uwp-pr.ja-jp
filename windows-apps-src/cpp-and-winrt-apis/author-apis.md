@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影された, プロジェクション, 実装, インプリメント, ランタイム クラス, ライセンス認証
 ms.localizationpriority: medium
-ms.openlocfilehash: 9829144a23d96f9bb53332b12181b67ba6a58565
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 051c24e0acc645150f4ca7ff74480f7de3ce456b
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3658841"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3825332"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) での API の作成
 
@@ -380,13 +380,13 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 
 ## <a name="important-apis"></a>重要な API
 * [winrt::com_ptr 構造体テンプレート](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
+* [winrt::com_ptr::copy_from 関数](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
 * [winrt::from_abi 関数テンプレート](/uwp/cpp-ref-for-winrt/from-abi)
 * [winrt::get_self 関数テンプレート](/uwp/cpp-ref-for-winrt/get-self)
 * [winrt::implements 構造体テンプレート](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make 関数テンプレート](/uwp/cpp-ref-for-winrt/make)
 * [winrt::make_self 関数テンプレート](/uwp/cpp-ref-for-winrt/make-self)
-* [winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::Windows::Foundation::IUnknown::as 関数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>関連トピック
 * [C++/WinRT での API の使用](consume-apis.md)

@@ -4,44 +4,39 @@ ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: データ バインディングの概要
 description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目のコントロールを項目のコレクションにバインドする方法を説明します。
 ms.author: markl
-ms.date: 02/08/2017
+ms.date: 07/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9b9b4f1c6ddd48db8801d714568ccb011ea7e5
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 0e070acdfcc6dded12ae48cc34fe46f099da6401
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494049"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821066"
 ---
-<a name="data-binding-overview"></a>データ バインディングの概要
-=====================
-
-
+# <a name="data-binding-overview"></a>データ バインディングの概要
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。 また、項目のレンダリングを制御する方法、選択内容に基づいて詳細ビューを実装する方法、表示するデータを変換する方法も紹介します。 詳しくは、「[データ バインディングの詳細](data-binding-in-depth.md)」をご覧ください。
 
-<a name="prerequisites"></a>前提条件
--------------------------------------------------------------------------------------------------------------
+## <a name="prerequisites"></a>前提条件
 
 このトピックでは、基本的な UWP アプリを作成できることを前提としています。 初めての UWP アプリを作成する方法について、詳しくは「[Windows アプリの概要](https://developer.microsoft.com/windows/getstarted)」をご覧ください。
 
-<a name="create-the-project"></a>プロジェクトの作成
----------------------------------------------------------------------------------------------------------------------------------
+## <a name="create-the-project"></a>プロジェクトの作成
 
 最初に、**"新しいアプリケーション (Windows ユニバーサル)"** プロジェクトを新規作成します。 プロジェクトに "Quickstart" という名前を付けます。
 
-<a name="binding-to-a-single-item"></a>単一の項目へのバインド
----------------------------------------------------------------------------------------------------------------------------------------------------------
+## <a name="binding-to-a-single-item"></a>単一の項目へのバインド
 
 すべてのバインディングにはバインディング ターゲットとバインディング ソースがあります。 通常、ターゲットはコントロールまたは他の UI 要素のプロパティであり、ソースはクラス インスタンス (データ モデルやビュー モデル) のプロパティです。 コントロールを単一の項目にバインドする例を次に示します。 ターゲットは **TextBlock** の **Text** プロパティです。 ソースは、オーディオの録音を表す **Recording** という名前の単純なクラスのインスタンスです。 まずクラスを見てみましょう。
 
-プロジェクトに新しいクラスを追加して Recording.cs (C#、または下記の C++ スニペットを使用している場合) という名前を付け、次のコードを追加します。
+C# を使用している場合、プロジェクトに新しいクラスを追加し、名前を付けます`Recording.cs`します。
 
-> [!div class="tabbedCodeSnippets"]
+使っている場合[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、という名前の c++ で示すように、プロジェクトに新しい**Midl ファイル (.idl)** 項目を追加/以下の WinRT のコード例をリストします。 これらの新しいファイルの内容を登録情報に表示される[MIDL 3.0](/uwp/midl-3/intro)コードに置き換えます、生成するプロジェクトをビルド`Recording.h`と`.cpp`と`RecordingViewModel.h`と`.cpp`、し、登録情報に一致するように、生成されたファイルにコードを追加します。 それらの生成されたファイルについて詳しくは、プロジェクトにコピーする方法は、以下を参照してください。 [XAML コントロール、バインドを C++/WinRT プロパティ](/windows/uwp/cpp-and-winrt-apis/binding-property)します。
+
 ```csharp
 namespace Quickstart
 {
@@ -72,190 +67,315 @@ namespace Quickstart
     }
 }
 ```
-```cpp
-    #include <sstream>
-    namespace Quickstart
+
+```cppwinrt
+// Recording.idl
+namespace Quickstart
+{
+    runtimeclass Recording : Windows.UI.Xaml.DependencyObject
     {
-        public ref class Recording sealed
-        {
-        private:
-            Platform::String^ artistName;
-            Platform::String^ compositionName;
-            Windows::Globalization::Calendar^ releaseDateTime;
-        public:
-            Recording(Platform::String^ artistName, Platform::String^ compositionName,
-                Windows::Globalization::Calendar^ releaseDateTime) :
-                artistName{ artistName },
-                compositionName{ compositionName },
-                releaseDateTime{ releaseDateTime } {}
-            property Platform::String^ ArtistName
-            {
-                Platform::String^ get() { return this->artistName; }
-            }
-            property Platform::String^ CompositionName
-            {
-                Platform::String^ get() { return this->compositionName; }
-            }
-            property Windows::Globalization::Calendar^ ReleaseDateTime
-            {
-                Windows::Globalization::Calendar^ get() { return this->releaseDateTime; }
-            }
-            property Platform::String^ OneLineSummary
-            {
-                Platform::String^ get()
-                {
-                    std::wstringstream wstringstream;
-                    wstringstream << this->CompositionName->Data();
-                    wstringstream << L" by " << this->ArtistName->Data();
-                    wstringstream << L", released: " << this->ReleaseDateTime->MonthAsNumericString()->Data();
-                    wstringstream << L"/" << this->ReleaseDateTime->DayAsString()->Data();
-                    wstringstream << L"/" << this->ReleaseDateTime->YearAsString()->Data();
-                    return ref new Platform::String(wstringstream.str().c_str());
-                }
-            }
-        };
-        public ref class RecordingViewModel sealed
-        {
-        private:
-            Recording^ defaultRecording;
-        public:
-            RecordingViewModel()
-            {
-                Windows::Globalization::Calendar^ releaseDateTime = ref new Windows::Globalization::Calendar();
-                releaseDateTime->Month = 1;
-                releaseDateTime->Day = 1;
-                releaseDateTime->Year = 1761;
-                this->defaultRecording = ref new Recording{ L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime };
-            }
-            property Recording^ DefaultRecording
-            {
-                Recording^ get() { return this->defaultRecording; };
-            }
-        };
+        Recording(String artistName, String compositionName, Windows.Globalization.Calendar releaseDateTime);
+        String ArtistName{ get; };
+        String CompositionName{ get; };
+        Windows.Globalization.Calendar ReleaseDateTime{ get; };
+        String OneLineSummary{ get; };
     }
+}
+
+// RecordingViewModel.idl
+import "Recording.idl";
+
+namespace Quickstart
+{
+    runtimeclass RecordingViewModel : Windows.UI.Xaml.DependencyObject
+    {
+        RecordingViewModel();
+        Quickstart.Recording DefaultRecording{ get; };
+    }
+}
+
+// Recording.h
+// Add these fields:
+...
+#include <sstream>
+...
+private:
+    std::wstring m_artistName;
+    std::wstring m_compositionName;
+    Windows::Globalization::Calendar m_releaseDateTime;
+...
+
+// Recording.cpp
+// Implement like this:
+...
+Recording::Recording(hstring const& artistName, hstring const& compositionName, Windows::Globalization::Calendar const& releaseDateTime) :
+    m_artistName{ artistName.c_str() },
+    m_compositionName{ compositionName.c_str() },
+    m_releaseDateTime{ releaseDateTime } {}
+
+hstring Recording::ArtistName(){ return hstring{ m_artistName }; }
+hstring Recording::CompositionName(){ return hstring{ m_compositionName }; }
+Windows::Globalization::Calendar Recording::ReleaseDateTime(){ return m_releaseDateTime; }
+
+hstring Recording::OneLineSummary()
+{
+    std::wstringstream wstringstream;
+    wstringstream << m_compositionName.c_str();
+    wstringstream << L" by " << m_artistName.c_str();
+    wstringstream << L", released: " << m_releaseDateTime.MonthAsNumericString().c_str();
+    wstringstream << L"/" << m_releaseDateTime.DayAsString().c_str();
+    wstringstream << L"/" << m_releaseDateTime.YearAsString().c_str();
+    return hstring{ wstringstream.str().c_str() };
+}
+...
+
+// RecordingViewModel.h
+// Add this field:
+...
+#include "Recording.h"
+...
+private:
+    Quickstart::Recording m_defaultRecording{ nullptr };
+...
+
+// RecordingViewModel.cpp
+// Implement like this:
+...
+Quickstart::Recording RecordingViewModel::DefaultRecording()
+{
+    Windows::Globalization::Calendar releaseDateTime;
+    releaseDateTime.Month(1);
+    releaseDateTime.Day(1);
+    releaseDateTime.Year(1761);
+    m_defaultRecording = winrt::make<Recording>(L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime);
+    return m_defaultRecording;
+}
+...
+```
+
+```cpp
+#include <sstream>
+namespace Quickstart
+{
+    public ref class Recording sealed
+    {
+    private:
+        Platform::String^ artistName;
+        Platform::String^ compositionName;
+        Windows::Globalization::Calendar^ releaseDateTime;
+    public:
+        Recording(Platform::String^ artistName, Platform::String^ compositionName,
+            Windows::Globalization::Calendar^ releaseDateTime) :
+            artistName{ artistName },
+            compositionName{ compositionName },
+            releaseDateTime{ releaseDateTime } {}
+        property Platform::String^ ArtistName
+        {
+            Platform::String^ get() { return this->artistName; }
+        }
+        property Platform::String^ CompositionName
+        {
+            Platform::String^ get() { return this->compositionName; }
+        }
+        property Windows::Globalization::Calendar^ ReleaseDateTime
+        {
+            Windows::Globalization::Calendar^ get() { return this->releaseDateTime; }
+        }
+        property Platform::String^ OneLineSummary
+        {
+            Platform::String^ get()
+            {
+                std::wstringstream wstringstream;
+                wstringstream << this->CompositionName->Data();
+                wstringstream << L" by " << this->ArtistName->Data();
+                wstringstream << L", released: " << this->ReleaseDateTime->MonthAsNumericString()->Data();
+                wstringstream << L"/" << this->ReleaseDateTime->DayAsString()->Data();
+                wstringstream << L"/" << this->ReleaseDateTime->YearAsString()->Data();
+                return ref new Platform::String(wstringstream.str().c_str());
+            }
+        }
+    };
+    public ref class RecordingViewModel sealed
+    {
+    private:
+        Recording ^ defaultRecording;
+    public:
+        RecordingViewModel()
+        {
+            Windows::Globalization::Calendar^ releaseDateTime = ref new Windows::Globalization::Calendar();
+            releaseDateTime->Month = 1;
+            releaseDateTime->Day = 1;
+            releaseDateTime->Year = 1761;
+            this->defaultRecording = ref new Recording{ L"Wolfgang Amadeus Mozart", L"Andante in C for Piano", releaseDateTime };
+        }
+        property Recording^ DefaultRecording
+        {
+            Recording^ get() { return this->defaultRecording; };
+        }
+    };
+}
 ```
 
 次に、マークアップのページを表すクラスからバインディング ソース クラスを公開します。 これを行うには、**RecordingViewModel** 型のプロパティを **MainPage** に追加します。
 
-> [!div class="tabbedCodeSnippets"]
+使っている場合[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、最初の更新し、`MainPage.idl`します。 プロジェクトをビルドして再生成`MainPage.h`と`.cpp`、それらの生成されたファイルの変更をプロジェクトにあるものにマージします。
+
 ```csharp
-    namespace Quickstart
+namespace Quickstart
+{
+    public sealed partial class MainPage : Page
     {
-        public sealed partial class MainPage : Page
+        public MainPage()
         {
-            public MainPage()
-            {
-                this.InitializeComponent();
-                this.ViewModel = new RecordingViewModel();
-            }
-            public RecordingViewModel ViewModel { get; set; }
+            this.InitializeComponent();
+            this.ViewModel = new RecordingViewModel();
         }
+        public RecordingViewModel ViewModel{ get; set; }
     }
+}
 ```
+
+```cppwinrt
+// MainPage.idl
+// Add this property:
+import "RecordingViewModel.idl";
+...
+RecordingViewModel ViewModel{ get; };
+...
+
+// MainPage.h
+// Add this property and this field:
+...
+#include "RecordingViewModel.h"
+...
+    Quickstart::RecordingViewModel ViewModel();
+
+private:
+    Quickstart::RecordingViewModel m_viewModel{ nullptr };
+...
+
+// MainPage.cpp
+// Implement like this:
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+    m_viewModel = winrt::make<RecordingViewModel>();
+}
+Quickstart::RecordingViewModel MainPage::ViewModel()
+{
+    return m_viewModel;
+}
+...
+```
+
 ```cpp
-    namespace Quickstart
+namespace Quickstart
+{
+    public ref class MainPage sealed
     {
-        public ref class MainPage sealed
+    private:
+        RecordingViewModel ^ viewModel;
+    public:
+        MainPage()
         {
-        private:
-            RecordingViewModel^ viewModel;
-        public:
-            MainPage()
-            {
-                InitializeComponent();
-                this->viewModel = ref new RecordingViewModel();
-            }
-            property RecordingViewModel^ ViewModel
-            {
-                RecordingViewModel^ get() { return this->viewModel; };
-            }
-        };
-    }
+            InitializeComponent();
+            this->viewModel = ref new RecordingViewModel();
+        }
+        property RecordingViewModel^ ViewModel
+        {
+            RecordingViewModel^ get() { return this->viewModel; };
+        }
+    };
+}
 ```
 
 最後の部分では、**TextBlock** を **ViewModel.DefaultRecording.OneLiner** プロパティにバインドします。
 
 ```xml
-    <Page x:Class="Quickstart.MainPage" ... >
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <TextBlock Text="{x:Bind ViewModel.DefaultRecording.OneLineSummary}"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"/>
-        </Grid>
-    </Page>
+<Page x:Class="Quickstart.MainPage" ... >
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Text="{x:Bind ViewModel.DefaultRecording.OneLineSummary}"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"/>
+    </Grid>
+</Page>
 ```
+
+使用する場合は[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、プロジェクトをビルドするための順序で**MainPage::ClickHandler**関数を削除する必要があります。
 
 結果は次のようになります。
 
 ![テキストブロックのバインド](images/xaml-databinding0.png)
 
-<a name="binding-to-a-collection-of-items"></a>項目のコレクションへのバインド
-------------------------------------------------------------------------------------------------------------------
+## <a name="binding-to-a-collection-of-items"></a>項目のコレクションへのバインド
 
 一般的なシナリオでは、ビジネス オブジェクトのコレクションにバインドします。 C# と Visual Basic では、データ バインディングのコレクションには汎用の [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) クラスが適しています。このクラスは [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) インターフェイスと [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) インターフェイスを実装するためです。 これらのインターフェイスは、項目が追加または変更された場合や一覧自体のプロパティが変更された場合に、バインディングに変更を通知します。 コレクション内のオブジェクトのプロパティの変更をバインドされたコントロールに反映する場合は、ビジネス オブジェクトでも **INotifyPropertyChanged** を実装します。 詳しくは、「[データ バインディングの詳細](data-binding-in-depth.md)」をご覧ください。
 
+使っている場合[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)後で、監視可能なコレクションにバインドする方法をご覧ください[c++ へのバインド XAML アイテム コントロール/WinRT コレクション](/windows/uwp/cpp-and-winrt-apis/binding-collection)します。
+
 次の例では、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を `Recording` オブジェクトのコレクションにバインドしています。 最初に、ビュー モデルにコレクションを追加します。 これらの新しいメンバーを **RecordingViewModel** クラスに追加します。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
-    public class RecordingViewModel
-    {
-        ...
+public class RecordingViewModel
+{
+    ...
         private ObservableCollection<Recording> recordings = new ObservableCollection<Recording>();
-        public ObservableCollection<Recording> Recordings { get { return this.recordings; } }
+    public ObservableCollection<Recording> Recordings{ get{ return this.recordings; } }
         public RecordingViewModel()
-        {
-            this.recordings.Add(new Recording() { ArtistName = "Johann Sebastian Bach",
-            CompositionName = "Mass in B minor", ReleaseDateTime = new DateTime(1748, 7, 8) });
-            this.recordings.Add(new Recording() { ArtistName = "Ludwig van Beethoven",
-            CompositionName = "Third Symphony", ReleaseDateTime = new DateTime(1805, 2, 11) });
-            this.recordings.Add(new Recording() { ArtistName = "George Frideric Handel",
-            CompositionName = "Serse", ReleaseDateTime = new DateTime(1737, 12, 3) });
-        }
-    }
-```
-```cpp
-    public ref class RecordingViewModel sealed
     {
-    private:
+        this.recordings.Add(new Recording(){ ArtistName = "Johann Sebastian Bach",
+            CompositionName = "Mass in B minor", ReleaseDateTime = new DateTime(1748, 7, 8) });
+        this.recordings.Add(new Recording(){ ArtistName = "Ludwig van Beethoven",
+            CompositionName = "Third Symphony", ReleaseDateTime = new DateTime(1805, 2, 11) });
+        this.recordings.Add(new Recording(){ ArtistName = "George Frideric Handel",
+            CompositionName = "Serse", ReleaseDateTime = new DateTime(1737, 12, 3) });
+    }
+}
+```
+
+```cpp
+public ref class RecordingViewModel sealed
+{
+private:
+    ...
+    Windows::Foundation::Collections::IVector<Recording^>^ recordings;
+public:
+    RecordingViewModel()
+    {
         ...
-        Windows::Foundation::Collections::IVector<Recording^>^ recordings;
-    public:
-        RecordingViewModel()
+        releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Month = 7;
+        releaseDateTime->Day = 8;
+        releaseDateTime->Year = 1748;
+        Recording^ recording = ref new Recording{ L"Johann Sebastian Bach", L"Mass in B minor", releaseDateTime };
+        this->Recordings->Append(recording);
+        releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Month = 2;
+        releaseDateTime->Day = 11;
+        releaseDateTime->Year = 1805;
+        recording = ref new Recording{ L"Ludwig van Beethoven", L"Third Symphony", releaseDateTime };
+        this->Recordings->Append(recording);
+        releaseDateTime = ref new Windows::Globalization::Calendar();
+        releaseDateTime->Month = 12;
+        releaseDateTime->Day = 3;
+        releaseDateTime->Year = 1737;
+        recording = ref new Recording{ L"George Frideric Handel", L"Serse", releaseDateTime };
+        this->Recordings->Append(recording);
+    }
+    ...
+    property Windows::Foundation::Collections::IVector<Recording^>^ Recordings
+    {
+        Windows::Foundation::Collections::IVector<Recording^>^ get()
         {
-            ...
-            releaseDateTime = ref new Windows::Globalization::Calendar();
-            releaseDateTime->Month = 7;
-            releaseDateTime->Day = 8;
-            releaseDateTime->Year = 1748;
-            Recording^ recording = ref new Recording{ L"Johann Sebastian Bach", L"Mass in B minor", releaseDateTime };
-            this->Recordings->Append(recording);
-            releaseDateTime = ref new Windows::Globalization::Calendar();
-            releaseDateTime->Month = 2;
-            releaseDateTime->Day = 11;
-            releaseDateTime->Year = 1805;
-            recording = ref new Recording{ L"Ludwig van Beethoven", L"Third Symphony", releaseDateTime };
-            this->Recordings->Append(recording);
-            releaseDateTime = ref new Windows::Globalization::Calendar();
-            releaseDateTime->Month = 12;
-            releaseDateTime->Day = 3;
-            releaseDateTime->Year = 1737;
-            recording = ref new Recording{ L"George Frideric Handel", L"Serse", releaseDateTime };
-            this->Recordings->Append(recording);
-        }
-        ...
-        property Windows::Foundation::Collections::IVector<Recording^>^ Recordings
-        {
-            Windows::Foundation::Collections::IVector<Recording^>^ get()
+            if (this->recordings == nullptr)
             {
-                if (this->recordings == nullptr)
-                {
-                    this->recordings = ref new Platform::Collections::Vector<Recording^>();
-                }
-                return this->recordings;
-            };
-        }
-    };
+                this->recordings = ref new Platform::Collections::Vector<Recording^>();
+            }
+            return this->recordings;
+        };
+    }
+};
 ```
 
 次に、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を **ViewModel.Recordings** プロパティにバインドします。
@@ -276,41 +396,40 @@ namespace Quickstart
 これを修正するには、**OneLineSummary** の値を返すように [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) をオーバーライドするか、データ テンプレートを用意します。 データ テンプレートを使う方法は、より一般的であり、間違いなくより柔軟です。 データ テンプレートを指定するには、コンテンツ コントロールの [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) プロパティか、項目コントロールの [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) プロパティを使います。 **Recording** のデータ テンプレートをデザインするための 2 つの方法と結果の図を以下に示します。
 
 ```xml
-    <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
-        HorizontalAlignment="Center" VerticalAlignment="Center">
-        <ListView.ItemTemplate>
-            <DataTemplate x:DataType="local:Recording">
-                <TextBlock Text="{x:Bind OneLineSummary}"/>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+<ListView ItemsSource="{x:Bind ViewModel.Recordings}"
+HorizontalAlignment="Center" VerticalAlignment="Center">
+    <ListView.ItemTemplate>
+        <DataTemplate x:DataType="local:Recording">
+            <TextBlock Text="{x:Bind OneLineSummary}"/>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
 ```
 
 ![一覧ビューのバインド](images/xaml-databinding2.png)
 
 ```xml
-    <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
-    HorizontalAlignment="Center" VerticalAlignment="Center">
-        <ListView.ItemTemplate>
-            <DataTemplate x:DataType="local:Recording">
-                <StackPanel Orientation="Horizontal" Margin="6">
-                    <SymbolIcon Symbol="Audio" Margin="0,0,12,0"/>
-                    <StackPanel>
-                        <TextBlock Text="{x:Bind ArtistName}" FontWeight="Bold"/>
-                        <TextBlock Text="{x:Bind CompositionName}"/>
-                    </StackPanel>
+<ListView ItemsSource="{x:Bind ViewModel.Recordings}"
+HorizontalAlignment="Center" VerticalAlignment="Center">
+    <ListView.ItemTemplate>
+        <DataTemplate x:DataType="local:Recording">
+            <StackPanel Orientation="Horizontal" Margin="6">
+                <SymbolIcon Symbol="Audio" Margin="0,0,12,0"/>
+                <StackPanel>
+                    <TextBlock Text="{x:Bind ArtistName}" FontWeight="Bold"/>
+                    <TextBlock Text="{x:Bind CompositionName}"/>
                 </StackPanel>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+            </StackPanel>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
 ```
 
 ![一覧ビューのバインド](images/xaml-databinding3.png)
 
 XAML 構文について詳しくは、「[XAML を使った UI の作成](https://msdn.microsoft.com/library/windows/apps/Mt228349)」をご覧ください。 コントロール レイアウトについて詳しくは、「[XAML を使ったレイアウトの定義](https://msdn.microsoft.com/library/windows/apps/Mt228350)」をご覧ください。
 
-<a name="adding-a-details-view"></a>詳細ビューの追加
------------------------------------------------------------------------------------------------------
+## <a name="adding-a-details-view"></a>詳細ビューの追加
 
 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 項目内の **Recording** オブジェクトの詳細をすべて表示することを選択できます。 ただし、多くの領域が占有されます。 代わりに、項目を識別するのに十分な項目内のデータのみを表示し、ユーザーが選択を行ったら、選択された項目のすべての詳細を、詳細ビューと呼ばれる独立した UI に表示できます。 この配置は、マスター/詳細ビューまたはリスト/詳細ビューとも呼ばれます。
 
@@ -319,14 +438,18 @@ XAML 構文について詳しくは、「[XAML を使った UI の作成](https:
 > [!NOTE]
 > このトピックでは、これまで [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)のみを使ってきましたが、以下に示す 2 つの手法ではより柔軟な (ただし効率は低下する) [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)が必要です。
 
-まず、[**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) の手法を示します。 Visual C++ コンポーネント拡張機能 (C++/CX) を使用している場合、ここでは [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) を使用するため、[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 属性を **Recording** クラスに追加する必要があります。
 
+使用する場合は[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、 [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)を実装する必要がありますおよび[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)のインターフェイスを {binding} マークアップ拡張を使用するためにします。
+
+Visual C++ コンポーネント拡張機能 (C++/CX) を使用している場合、ここでは [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) を使用するため、[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 属性を **Recording** クラスに追加する必要があります。
+
+まず、[**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) の手法を示します。
 ```cpp
-    [Windows::UI::Xaml::Data::Bindable]
-    public ref class Recording sealed
-    {
-        ...
-    };
+[Windows::UI::Xaml::Data::Bindable]
+public ref class Recording sealed
+{
+    ...
+};
 ```
 
 必要なもう 1 つの変更はマークアップに対する変更のみです。
@@ -361,30 +484,29 @@ XAML 構文について詳しくは、「[XAML を使った UI の作成](https:
 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) の手法では、最初にページ リソースとして **CollectionViewSource** を追加します。
 
 ```xml
-    <Page.Resources>
-        <CollectionViewSource x:Name="RecordingsCollection" Source="{x:Bind ViewModel.Recordings}"/>
-    </Page.Resources>
+<Page.Resources>
+    <CollectionViewSource x:Name="RecordingsCollection" Source="{x:Bind ViewModel.Recordings}"/>
+</Page.Resources>
 ```
 
 次に、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) (名前を付ける必要はない) と詳細ビューで、[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) を使うようにバインディングを調整します。 詳細ビューを **CollectionViewSource** に直接バインドすることによって、コレクション自体ではパスが見つからない、バインディング内の現在の項目にバインドすることを意味します。 バインディングのパスとして **CurrentItem** プロパティを指定する必要はありませんが、あいまいさがある場合は指定することもできます。
 
 ```xml
-    ...
+...
 
-    <ListView ItemsSource="{Binding Source={StaticResource RecordingsCollection}}">
+<ListView ItemsSource="{Binding Source={StaticResource RecordingsCollection}}">
 
-    ...
+...
 
-    <StackPanel DataContext="{Binding Source={StaticResource RecordingsCollection}}" ...>
-    ...
+<StackPanel DataContext="{Binding Source={StaticResource RecordingsCollection}}" ...>
+...
 ```
 
 次のように、いずれの場合も結果は同じです。
 
 ![一覧ビューのバインド](images/xaml-databinding4.png)
 
-<a name="formatting-or-converting-data-values-for-display"></a>表示のためのデータ値の書式設定と変換
---------------------------------------------------------------------------------------------------------------------------------------------
+## <a name="formatting-or-converting-data-values-for-display"></a>表示のためのデータ値の書式設定と変換
 
 前のレンダリングには、小さな問題が 1 つあります。 **ReleaseDateTime** プロパティは日付だけではなく、[**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) であるため、必要以上の精度で表示されています。 解決策の 1 つは、`this.ReleaseDateTime.ToString("d")` を返す **Recording** クラスに文字列プロパティを追加することです。 プロパティに **ReleaseDate** という名前を付けると、日付と時刻ではなく、日付が返されることを示します。 **ReleaseDateAsString** という名前を付けると、さらに文字列が返されることを示します。
 
@@ -422,16 +544,16 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 これで、**StringFormatter** のインスタンスをページ リソースとして追加し、バインドで使うことができます。 最終的な書式設定の柔軟性のために、マークアップからコンバーターに書式設定文字列を渡します。
 
 ```xml
-    <Page.Resources>
-        <local:StringFormatter x:Key="StringFormatterValueConverter"/>
-    </Page.Resources>
-    ...
+<Page.Resources>
+    <local:StringFormatter x:Key="StringFormatterValueConverter"/>
+</Page.Resources>
+...
 
-    <TextBlock Text="{Binding ReleaseDateTime,
-        Converter={StaticResource StringFormatterValueConverter},
-        ConverterParameter=Released: \{0:d\}}"/>
+<TextBlock Text="{Binding ReleaseDateTime,
+    Converter={StaticResource StringFormatterValueConverter},
+    ConverterParameter=Released: \{0:d\}}"/>
 
-    ...
+...
 ```
 
 結果は次のようになります。

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、データ、型
 ms.localizationpriority: medium
-ms.openlocfilehash: 729a3c30f84e20a89912b728db1efecc3e54ad9e
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 0b004b5dfbeaa1d123398db780582382857eec25
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3663969"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3823626"
 ---
 # <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>標準的な C++ のデータ型と [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 C++/WinRT では、標準的な C++ データ型 (いくつかの C++ 標準ライブラリのデータ型を含む) を使用して Windows ランタイム API を呼び出すことができます。 標準的な文字列を Api に渡すことができます (を参照してください[、C++ での文字列処理/WinRT](strings.md)) を渡すことで初期化子リストと標準のコンテナーと同じ意味コレクションで想定されている Api とします。
@@ -156,7 +156,7 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 Windows ランタイムの非同期 Api を呼び出すときに、[並列パターン ライブラリ (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)を使用する続行することができます。 ただし、多くの場合、C++ コルーチンを提供効率的かつより簡単にコーディング イディオム非同期のオブジェクトを操作します。 詳しくとコード例については、次を参照してください。[同時実行操作と非同期の操作において、C++/WinRT](concurrency.md)します。
 
 ## <a name="important-apis"></a>重要な API
-* [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)
+* [IVector&lt;T&gt;インターフェイス](/uwp/api/windows.foundation.collections.ivector_t_)
 * [winrt::array_view 構造体テンプレート](/uwp/cpp-ref-for-winrt/array-view)
 
 ## <a name="related-topics"></a>関連トピック

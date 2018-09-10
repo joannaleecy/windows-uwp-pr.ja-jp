@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、投影、プロジェクション、実装、ランタイム クラス、ライセンス認証
 ms.localizationpriority: medium
-ms.openlocfilehash: 50fde5d3683960ab384d823ace70f910fc1045d8
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: 136abd5e3312b7a387ccc3b7c993d4e70d8ef0d4
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935740"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3823586"
 ---
 # <a name="consume-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) での API の使用
 このトピックでは、C++/WinRT API が Windows に含まれるかどうか、サード パーティ コンポーネント ベンダーで実装するかどうか、またはユーザー自身が実装するかどうかに応じて、その使用方法について説明します。
@@ -245,12 +245,12 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ```
 
 ## <a name="important-apis"></a>重要な API
-* [QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [RoActivateInstance](https://msdn.microsoft.com/library/br224646)
-* [Windows::Foundation::Uri](/uwp/api/windows.foundation.uri)
+* [QueryInterface インターフェイス](https://msdn.microsoft.com/library/windows/desktop/ms682521)
+* [RoActivateInstance 関数](https://msdn.microsoft.com/library/br224646)
+* [:Foundation::uri クラス](/uwp/api/windows.foundation.uri)
 * [winrt::get_activation_factory 関数テンプレート](/uwp/cpp-ref-for-winrt/get-activation-factory)
 * [winrt::make 関数テンプレート](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [winrt::Windows::Foundation::IUnknown 構造体](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>関連トピック
 * [C++/WinRT でのイベントの作成](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
