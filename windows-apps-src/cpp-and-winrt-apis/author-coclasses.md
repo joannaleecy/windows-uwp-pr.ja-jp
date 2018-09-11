@@ -138,7 +138,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 
 上記のコードでは、コクラスでは、これは、ユーザーがトースト通知のコールバック ボタンをクリックしたときに呼び出される関数**INotificationActivationCallback::Activate**メソッドを実装します。 コクラスのインスタンスを作成する必要があります、 **IClassFactory::CreateInstance**関数のジョブはの前に、この関数を呼び出すことができます。
 
-コクラス実装されている通知の場合、 *COM アクティベーター*と呼ばれ、そのクラス id (CLSID) の形式では、`callback_guid`種類の識別子 ( **GUID**) 上に表示されます。 使用しますその識別子後で、スタート メニューのショートカットと Windows レジストリ エントリの形式でします。 COM アクティベーター CLSID とその関連 COM サーバー (ここでは開発中の実行可能ファイルへのパス) へのパスは、トースト通知がそのコールバック ボタンがクリックされたときのインスタンスを作成するクラスを認識するためのメカニズム (かどうか、通知がクリックされたアクション センター内かどうか)。
+コクラス実装されている通知の場合、 *COM アクティベーター*と呼ばれ、そのクラス id (CLSID) の形式では、`callback_guid`種類の識別子 ( **GUID**) 上に表示されます。 We'll be using that identifier later, in the form of a Start menu shortcut and a Windows Registry entry. COM アクティベーター CLSID とその関連 COM サーバー (ここでは開発中の実行可能ファイルへのパス) へのパスは、トースト通知がそのコールバック ボタンがクリックされたときのインスタンスを作成するクラスを認識するためのメカニズム (かどうか、通知がクリックされたアクション センター内かどうか)。
 
 ## <a name="best-practices-for-implementing-com-methods"></a>COM メソッドを実装するためのベスト プラクティス
 
