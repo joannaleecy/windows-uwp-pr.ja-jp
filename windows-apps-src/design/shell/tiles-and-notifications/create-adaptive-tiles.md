@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities.
 title: アダプティブ タイルの作成
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bc2fc6d1e101d9bf002a0c851fa10886cff239e
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: 761d87654ef340f4b539dbefa0950c58f627d310
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1522921"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3848106"
 ---
 # <a name="create-adaptive-tiles"></a>アダプティブ タイルの作成
 

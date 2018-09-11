@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use Notification Listener to access all of the user's notifications.
 title: 通知リスナー
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 通知リスナー, usernotificationlistener, ドキュメント, 通知へのアクセス
 ms.localizationpriority: medium
-ms.openlocfilehash: 00774817574c209826050a084bba77084d404ace
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674619"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3850586"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知リスナー: すべての通知にアクセスする
 
@@ -281,19 +281,17 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>追加/無視される通知のフォアグラウンド イベント
 
 > [!IMPORTANT] 
-> 既知の問題: フォアグラウンド イベントは機能しません (弊社ではこの問題を直ちに解決する計画はありません)。 
+> 既知の問題: フォア グラウンド イベントで最新バージョンの Windows では、CPU ループが発生し、以前、その前に機能しませんでした。 フォア グラウンド イベントを使わないでください。 Windows に予定されている更新プログラムでこれを解決しますがします。
 
-フォアグラウンド イベントが必要となるシナリオがある場合は、弊社までお知らせください。 ただし、シナリオの (すべてではなく) ほとんどで実際にはバックグラウンド タスクが使用されます。これは、アプリでは多くの場合、通知イベントに対してバックグラウンドでウェイクアップする必要があるためです。 たとえば、ウェアラブル アクセサリ用アプリはフォアグラウンドで実行されることはほとんどありませんが、バックグラウンドで新しい通知を認識する必要はあります。
-
-また、[シングル プロセス モデル](../../../launch-resume/create-and-register-an-inproc-background-task.md)を利用できるため、バックグラウンド タスク トリガーはフォアグラウンド アプリから簡単に使用することができます。 そのため、フォアグラウンド イベントを受け取る必要がある場合は、シングル プロセス モデルでバックグラウンド トリガーを使用するだけで十分です。
+フォア グラウンド イベントを使用するのではなく、[シングル プロセス モデル](../../../launch-resume/create-and-register-an-inproc-background-task.md)のバック グラウンド タスクの前に示したコードを使用します。 バック グラウンド タスクでは、アプリが終了または実行中の両方の変更イベント通知を受け取るもできます。
 
 ```csharp
-// Subscribe to foreground event
+// Subscribe to foreground event (DON'T USE THIS)
 listener.NotificationChanged += Listener_NotificationChanged;
  
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // NOTE: This event DOES NOT WORK. Use the background task instead.
+    // NOTE: This event WILL CAUSE CPU LOOPS, DO NOT USE. Use the background task instead.
 }
 ```
 

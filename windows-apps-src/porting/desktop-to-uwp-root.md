@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d6565f56f7105872d14b7b1ce768f4240e0b83b
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.openlocfilehash: 9ded8fb8a9d391ec48b46b0795b901dc403e1f30
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3821306"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3848796"
 ---
 # <a name="desktop-bridge"></a>デスクトップ ブリッジ
 
@@ -74,7 +74,7 @@ Desktop App Converter は、インストーラーの操作を、アプリのパ�
 
 :heavy_check_mark: 公開 COM サーバーを登録する。
 
-:heavy_check_mark: アプリの実行に使用できる証明書を生成する。
+::heavy_check_mark: アプリの実行に使用できる証明書を生成します。
 
 :heavy_check_mark: デスクトップ ブリッジと Microsoft Store の要件に照らしてアプリを検証する。
 

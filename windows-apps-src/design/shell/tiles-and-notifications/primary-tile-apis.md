@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: You can programmatically pin your own app's primary tile to Start, just like you can pin secondary tiles. And you can check whether it's currently pinned.
 title: プライマリ タイル API
 label: Primary tile API's
@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, StartScreenManager, プライマリ タイルをピン留めする, プライマリ タイル API, タイルのピン留めの確認, ライブ タイル
 ms.localizationpriority: medium
-ms.openlocfilehash: 18362abec88960237ccc23b3f343ab07ad338be8
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 42b4c014dfd49c42497b8846e37e37af53cc3885
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653431"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3851192"
 ---
 # <a name="primary-tile-apis"></a>プライマリ タイル API
  
