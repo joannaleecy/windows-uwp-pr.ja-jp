@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e48d0b21d588ef7b4913e16b75f9d21c5d5209f
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825562"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3848146"
 ---
 # <a name="intro-to-secure-windows-app-development"></a><span data-ttu-id="697ec-104">安全な Windows アプリの開発について</span><span class="sxs-lookup"><span data-stu-id="697ec-104">Intro to secure Windows app development</span></span>
 

@@ -18,11 +18,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: ce64e6002bd71bd0806fb5574dc404ac4df856a9
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825352"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3848096"
 ---
 # <a name="command-bar"></a><span data-ttu-id="74cb6-103">コマンド バー</span><span class="sxs-lookup"><span data-stu-id="74cb6-103">Command bar</span></span>
 

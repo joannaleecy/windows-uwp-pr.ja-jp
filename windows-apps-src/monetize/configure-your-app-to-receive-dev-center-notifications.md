@@ -11,11 +11,11 @@ keywords: Windows 10, UWP, Microsoft Store Services SDK, ターゲット プッ�
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
 ms.openlocfilehash: d44d4491d8f5f0a7cde65adbe8241a74e36e1506
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3821006"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847916"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a><span data-ttu-id="994e8-103">ターゲット プッシュ通知用のアプリの構成</span><span class="sxs-lookup"><span data-stu-id="994e8-103">Configure your app for targeted push notifications</span></span>
 

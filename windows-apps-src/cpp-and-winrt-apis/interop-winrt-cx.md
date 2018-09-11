@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: d265189c338d95a8c8f206fd196e99d5b0a1e068
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3823646"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3850256"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-ccx"></a><span data-ttu-id="fec85-104">[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) と C++/CX 間の相互運用</span><span class="sxs-lookup"><span data-stu-id="fec85-104">Interop between [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) and C++/CX</span></span>
 <span data-ttu-id="fec85-105">このトピックでは、[C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) と C++/WinRT オブジェクト間の変換に使用できる 2 つのヘルパー関数について説明します。</span><span class="sxs-lookup"><span data-stu-id="fec85-105">This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and C++/WinRT objects.</span></span> <span data-ttu-id="fec85-106">それらを使用するには、2 つの言語プロジェクションを使用するコード間で相互運用機能またはから、C++ コードを徐々 に移動するには、関数を使用できます/CX を C++/WinRT (を参照してください[C への移行 + C + から WinRT/CX](move-to-winrt-from-cx.md))。</span><span class="sxs-lookup"><span data-stu-id="fec85-106">You can use them to interop between code that uses the two language projections, or you can use the functions as you gradually move your code from C++/CX to C++/WinRT (see [Move to C++/WinRT from C++/CX](move-to-winrt-from-cx.md)).</span></span>
