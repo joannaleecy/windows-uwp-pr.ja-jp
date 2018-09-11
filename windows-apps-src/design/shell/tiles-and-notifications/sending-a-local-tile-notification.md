@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
 title: ローカル タイル通知の送信
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 257a7cf1a8af0c6e481d5d16a9a145d620d86b21
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: 7e91d4bd481188f4d29af68af2c4572b26d446ae
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1522691"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847196"
 ---
 # <a name="send-a-local-tile-notification"></a>ローカル タイル通知の送信
  

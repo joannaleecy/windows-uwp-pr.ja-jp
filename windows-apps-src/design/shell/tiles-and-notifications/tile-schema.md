@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: The following article describes all of the properties and elements within tile content.
 title: タイルのコンテンツのスキーマ
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, タイル, タイル通知, タイルのコンテンツ, スキーマ, タイルのペイロード
 ms.localizationpriority: medium
-ms.openlocfilehash: 3211871526015c83e18237a561ed846ccbfb494d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d2baa2e2d7b8d68505159eb480ea3be78750f507
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656417"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3845856"
 ---
 # <a name="tile-content-schema"></a>タイルのコンテンツのスキーマ
 
@@ -40,7 +40,7 @@ ms.locfileid: "1656417"
 ## <a name="tilecontent"></a>TileContent
 TileContent は、視覚効果などのタイル通知のコンテンツを説明する最上位のオブジェクトです。
 
-| プロパティ | 型 | Required | 説明 |
+| プロパティ | 型 | 必須かどうか | 説明 |
 |---|---|---|---|
 | **Visual** | [ToastVisual](#tilevisual) | true | タイル通知の視覚的な部分について説明します。 |
 
@@ -48,7 +48,7 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 ## <a name="tilevisual"></a>TileVisual
 タイルの視覚的な部分には、すべてのタイルのサイズを対象とした視覚的な仕様、および視覚に関連するプロパティが含まれています。
 
-| プロパティ | 型 | Required | 説明 |
+| プロパティ | 型 | 必須かどうか | 説明 |
 |---|---|---|---|
 | **TileSmall** | [TileBinding](#tilebinding) | false | 小さいタイルのサイズに対応したコンテンツを指定するための、小さいバインディングが提供されます (オプション)。 |
 | **TileMedium** | [TileBinding](#tilebinding) | false | 中型のタイルのサイズに対応したコンテンツを指定するための、中型のバインディングが提供されます (オプション)。 |
@@ -68,7 +68,7 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 ## <a name="tilebinding"></a>TileBinding
 バインディング オブジェクトには、特定のタイルのサイズに対応した視覚的なコンテンツが含まれています。
 
-| プロパティ | 型 | Required | 説明 |
+| プロパティ | 型 | 必須かどうか | 説明 |
 |---|---|---|---|
 | **Content** | [ITileBindingContent](#itilebindingcontent) | false | タイルに表示される視覚的なコンテンツです。 [TileBindingContentAdaptive](#tilebindingcontentadaptive)、[TileBindingContentIconic](#TileBindingContentIconic)、[TileBindingContentContact](#TileBindingContentContact)、[TileBindingContentPeople](#TileBindingContentPeople)、または [TileBindingContentPhotos](#TileBindingContentPhotos) のいずれかです。 |
 | **Branding** | [TileBranding](#tilebranding) | false | アプリのブランドを表示するためにタイルで使用されるフォームです。 既定では、既定のタイルからブランド化を継承します。 |
@@ -94,7 +94,7 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 ## <a name="tilebindingcontentadaptive"></a>TileBindingContentAdaptive
 すべてのサイズでサポートされます。 タイルのコンテンツを指定する場合に推奨される方法です。 アダプティブ タイル テンプレートは Windows 10 の新機能で、アダプティブなプロパティを利用してさまざまなカスタム タイルを作成できます。
 
-| プロパティ | 型 | Required | 説明 |
+| プロパティ | 型 | 必須かどうか | 説明 |
 |---|---|---|---|
 | **Children** | IList<[ITileBindingContentAdaptiveChild](#ITileBindingContentAdaptiveChild)> | false | インラインの視覚要素です。 [AdaptiveText](#adaptivetext)、[AdaptiveImage](#adaptiveimage)、および [AdaptiveGroup](#adaptivegroup) の各オブジェクトを追加することができます。 子は、垂直方向の StackPanel 形式で表示されます。 |
 | **BackgroundImage** | [TileBackgroundImage](#tilebackgroundimage) | false | すべてのタイルのコンテンツの後ろに表示される背景画像です (オプション)。フルブリードで表示されます。 |
@@ -105,7 +105,7 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 ## <a name="adaptivetext"></a>AdaptiveText
 アダプティブなテキスト要素です。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Text** | string | false | 表示するテキストです。 |
 | **HintStyle** | [AdaptiveTextStyle](#adaptivetextstyle) | false | このスタイルは、テキストのフォント サイズ、太さ、および不透明度を制御します。 |
@@ -156,7 +156,7 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 ## <a name="adaptiveimage"></a>AdaptiveImage
 インライン画像です。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Source** | string | true | 画像への URL です。 ms-appx、ms-appdata、および http がサポートされます。 Fall Creators Update の時点で、Web 画像の上限は通常の接続で 3 MB、従量制課金接続で 1 MB です。 まだ Fall Creators Update を実行していないデバイスでは、Web イメージは 200 KB を上限とします。 |
 | **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | 必要な画像トリミングを制御します。 |
@@ -191,7 +191,7 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 ## <a name="adaptivegroup"></a>AdaptiveGroup
 グループは、グループ内のコンテンツについて、全体を表示すべきか、収まりきらない場合は全体を表示すべきでないかを意味的に識別します。 複数の列を作成することも可能にします。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Children** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | サブグループが垂直方向の列として表示されます。 AdaptiveGroup 内の任意のコンテンツを提供するにはサブグループを使用する必要があります。 |
 
@@ -199,7 +199,7 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 ## <a name="adaptivesubgroup"></a>AdaptiveSubgroup
 サブグループは垂直方向の列で、テキストと画像を含めることができます。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Children** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) と [AdaptiveImage](#adaptiveimage) は、サブグループの有効な子です。 |
 | **HintWeight** | int? | false | 別のサブグループを基準として太さを指定することで、このサブグループの列の幅を制御します。 |
@@ -229,7 +229,7 @@ TextStacking は、コンテンツの垂直方向の配置を指定します。
 ## <a name="tilebackgroundimage"></a>TileBackgroundImage
 タイルにフルブリードで表示される背景画像です。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Source** | string | true | 画像への URL です。 ms-appx、ms-appdata、および http(s) がサポートされます。 http の画像は、サイズを 200 KB 以下にする必要があります。 |
 | **HintOverlay** | int? | false | 背景画像での黒のオーバーレイです。 この値は、黒のオーバーレイの不透明度を制御します。0 ではオーバーレイなし、100 は完全な黒を表します。 既定値は 20 です。 |
@@ -251,7 +251,7 @@ TextStacking は、コンテンツの垂直方向の配置を指定します。
 ## <a name="tilepeekimage"></a>TilePeekImage
 タイルでアニメーション化されるプレビュー画像です。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Source** | string | true | 画像への URL です。 ms-appx、ms-appdata、および http(s) がサポートされます。 http の画像は、サイズを 200 KB 以下にする必要があります。 |
 | **HintOverlay** | int? | false | 1511 の新機能: プレビュー画像上に設定される黒のオーバーレイです。 この値は、黒のオーバーレイの不透明度を制御します。0 ではオーバーレイなし、100 は完全な黒を表します。 既定値は 20 です。 以前のバージョンでは、このプロパティは無視され、プレビュー画像は値 0 (オーバーレイなし) で表示されます。 |
@@ -284,7 +284,7 @@ TextStacking は、コンテンツの垂直方向の配置を指定します。
 ## <a name="tilebindingcontenticonic"></a>TileBindingContentIconic
 小さいサイズおよび中型のサイズでサポートされます。 アイコン タイル テンプレートを有効にします。このテンプレートを利用すると、Windows Phone のクラシック スタイルのように、タイル上でアイコンとバッジを並べて表示することができます。 アイコンの横に示される番号の設定は、個別のバッジ通知に基づいて行われます。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Icon** | [TileBasicImage](#tilebasicimage) | true | 少なくとも、デスクトップとモバイル、および小さいタイルと中型のタイルの両方をサポートするために、縦横比が正方形となる画像を、解像度 200 x 200、PNG 形式で指定します。また、不透明度と色 (白のみ) も指定します。 詳しくは、「[特別なタイル テンプレート](../tiles-and-notifications/special-tile-templates-catalog.md)」をご覧ください。 |
 
@@ -292,7 +292,7 @@ TextStacking は、コンテンツの垂直方向の配置を指定します。
 ## <a name="tilebindingcontentcontact"></a>TileBindingContentContact
 モバイルのみに使用できます。 小さいサイズ、中型のサイズ、ワイド サイズでサポートされます。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Image** | [TileBasicImage](#tilebasicimage) | true | 表示する画像です。 |
 | **Text** | [TileBasicText](#tilebasictext) | false | 表示されるテキストの行です。 小さいタイルには表示されません。 |
@@ -301,7 +301,7 @@ TextStacking は、コンテンツの垂直方向の配置を指定します。
 ## <a name="tilebindingcontentpeople"></a>TileBindingContentPeople
 1511 の新機能: 中型のサイズ、ワイド サイズ、大きいサイズでサポートされます (デスクトップおよびモバイル)。 以前、このプロパティはモバイルのみに対応しており、中型のサイズとワイド サイズでサポートされていました。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Images** | IList<[TileBasicImage](#tilebasicimage)> | true | 円形に表示される画像です。 |
 
@@ -309,7 +309,7 @@ TextStacking は、コンテンツの垂直方向の配置を指定します。
 ## <a name="tilebindingcontentphotos"></a>TileBindingContentPhotos
 写真のスライドショーを使用してアニメーション化します。 すべてのサイズでサポートされます。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Images** | IList<[TileBasicImage](#tilebasicimage)> | true | 最大で 12 枚の画像を指定できます (モバイルの場合は 9 枚まで表示できます)。これらの画像はスライドショーに使用されます。 12 枚を超える画像を指定すると、例外がスローされます。 |
 
@@ -317,7 +317,7 @@ TextStacking は、コンテンツの垂直方向の配置を指定します。
 ### <a name="tilebasicimage"></a>TileBasicImage
 さまざまな特別なテンプレートで使用される画像です。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Source** | string | true | 画像への URL です。 ms-appx、ms-appdata、および http(s) がサポートされます。 http の画像は、サイズを 200 KB 以下にする必要があります。 |
 | **AlternateText** | string | false | アクセシビリティ対応目的で使用される、画像を説明する代替テキストです。 |
@@ -327,7 +327,7 @@ TextStacking は、コンテンツの垂直方向の配置を指定します。
 ### <a name="tilebasictext"></a>TileBasicText
 さまざまな特別なテンプレートで使用される基本的なテキスト要素です。
 
-| プロパティ | 型 | Required |説明 |
+| プロパティ | 型 | 必須かどうか |説明 |
 |---|---|---|---|
 | **Text** | string | false | 表示するテキストです。 |
 | **Language** | string | false | XML ペイロードの対象ロケールです。"en-US" や "fr-FR" のように BCP-47 言語タグとして指定されます。 ここで指定されたロケールは、バインディングか視覚的な要素で指定されたその他のあらゆるロケールを上書きします。 この値がリテラル文字列の場合、この属性の既定値はユーザーの UI 言語になります。 この値が文字列リファレンスの場合、この属性の既定値は、文字列を解決する際に Windows ランタイムで選択されたロケールになります。 |

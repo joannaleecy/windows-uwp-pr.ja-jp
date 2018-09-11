@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Use chaseable tile notifications to find out what your app displayed on its Live Tile when the user clicked it.
 title: 追跡可能なタイル通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 追跡可能なタイル, ライブ タイル, 追跡可能なタイル通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e74827dd4d18885ad28f680ebc3f33d5287b4fd
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: b6d86d8881e0027a28f0f2a737e5f3fcb46a6ab5
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815567"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3845696"
 ---
 # <a name="chaseable-tile-notifications"></a>追跡可能なタイル通知
 

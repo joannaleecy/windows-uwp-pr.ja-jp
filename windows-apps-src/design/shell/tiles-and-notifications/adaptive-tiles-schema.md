@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Here are the elements and attributes you use to create adaptive tiles.
 title: アダプティブ タイル スキーマとテンプレート
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c452d434ddb691069951a960211e526d2e5a88be
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: 30a0e3056f8b7be2ed9d033e2da57795aec6946f
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1523031"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847136"
 ---
 # <a name="adaptive-tile-templates-schema-and-guidance"></a>アダプティブ タイル テンプレート: スキーマとガイダンス
 
