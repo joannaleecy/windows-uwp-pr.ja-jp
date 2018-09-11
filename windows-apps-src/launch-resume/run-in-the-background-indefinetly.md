@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: af0f7670f2b131671ce82708d2b0a826db0fcfb1
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3823636"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3846476"
 ---
 # <a name="run-in-the-background-indefinitely"></a><span data-ttu-id="d2edc-104">バックグラウンドで無期限に実行する</span><span class="sxs-lookup"><span data-stu-id="d2edc-104">Run in the background indefinitely</span></span>
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 対象グループ, ユーザー, フライト グループ, ユーザー グループ, 既知のユーザー
 ms.localizationpriority: medium
 ms.openlocfilehash: e15b5a4a2f76cbfc33db593c3110ac6f2d054b5b
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3825552"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3845266"
 ---
 # <a name="create-known-user-groups"></a><span data-ttu-id="a5d64-103">既知のユーザー グループを作成する</span><span class="sxs-lookup"><span data-stu-id="a5d64-103">Create known user groups</span></span>
 
