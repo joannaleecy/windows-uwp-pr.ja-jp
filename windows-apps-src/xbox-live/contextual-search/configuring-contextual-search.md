@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成, コンテキスト検索, ゲーム クリップ, 配信
-ms.localizationpriority: low
-ms.openlocfilehash: 049e094c1a63bfaa80b0e11c2afd9431d0dd2d91
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 79197dc7db3f15aba5fc9d494a5e8408878f0dba
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881960"
 ---
 # <a name="configuring-contextual-search"></a>コンテキスト検索の構成
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 02/24/2018
 たとえば、SinglePlayerMap や MultiplayerMap のような統計を使用してコンテンツをフィルター処理する場合、プレイヤーは一度に 1 つのマップにしか存在できません。  ただし、どちらの値もサービスからいつでもクエリすることができます。  また、一方を設定したら、もう一方をクリアすることが重要です。  文字列ベースの統計については、空の文字列が適しています (UI 構成でオプションとしてその文字列を含めないでください)。
 
 ### <a name="configuring-a-stat-for-contextual-search"></a>コンテキスト検索のための統計の構成
-タグ付けに使用するイベントや統計の設定が済んでいれば、コンテキスト検索のためにタイトルを構成する作業は簡単です。  まだ理解が十分でない場合は、この設定に関する他の既存の XDP ドキュメントを参照してください。
+タグ付けに使用するイベントや統計の設定が済んでいれば、コンテキスト検索のためにタイトルを構成する作業は簡単です。  既によくご存知ない場合は、コンテキスト検索を設定するのには、その他の既存の XDP または Windows デベロッパー センターのドキュメントをご覧ください。
 
 ![](../images/contextual_search/config02.png)
 
@@ -59,7 +60,7 @@ ms.lasthandoff: 02/24/2018
 
   ![](../images/contextual_search/config03.png)
 
-  統計インスタンスのみがサポートされていることに注意してください。統計テンプレートは使用できません。  統計インスタンスに対して設定した可視性 (XDP の [統計] 部分で構成する) にも注意する必要があります。  **[開く]** とマークされた統計のみがサード パーティー エクスペリエンスに表示されます。
+  統計インスタンスのみがサポートされていることに注意してください。統計テンプレートは使用できません。  可視性 (XDP または Windows デベロッパー センターの [統計] 部分で構成する)、統計インスタンスに対して設定した注意する必要があります。  **[開く]** とマークされた統計のみがサード パーティー エクスペリエンスに表示されます。
 
 2. 統計の優先度 ([Priority]) を選択します。 これは、検索エクスペリエンス/アルゴリズムにおけるこの統計の重要性を、他の統計との相対値で示すための方法です。  許容値は 1 ～ 10 です (1 が最高)。  この値を 0 または空白のままにすると無視されます。
 3. 表示名 ([Display Name]) を追加します。  これはローカライズ可能な文字列で、エンド ユーザーに対して表示されます。

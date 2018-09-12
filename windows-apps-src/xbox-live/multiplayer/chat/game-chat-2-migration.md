@@ -8,13 +8,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
-ms.localizationpriority: low
-ms.openlocfilehash: 7517054aa2e715b5eef2672c4f5bbe4b17237888
-ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 7695fda4502f8359491e5fb822e59bc91a20e0c7
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1893819"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882325"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>ゲーム チャットからゲーム チャット 2 への移行
 
@@ -77,7 +77,7 @@ ms.locfileid: "1893819"
 
 元のゲーム チャットとの対話は、`ChatManager` クラスを通じて実行されます。 次の例では、既定のパラメーターを使用して `ChatManager` インスタンスを作成する方法を示します。
 
-```cppwinrt
+```cpp
 auto chatManager = ref new ChatManager();
 ```
 
@@ -97,16 +97,16 @@ chat_manager::singleton_instance().initialize(4);
 
 元のゲーム チャット API へのローカル ユーザーの追加は、`ChatManager::AddLocalUserToChatChannelAsync()` を通じて実行されます。 複数のチャット チャンネルにユーザーを追加するには、それぞれ別のチャンネルを指定する、複数の呼び出しが必要です。 次の例では、チャンネル 0 に xuid が "myXuid" であるユーザーを追加する方法を示します。
 
-```cppwinrt
+```cpp
 auto asyncOperation = chatManager->AddLocalUserToChatChannelAsync(0, L"myXuid");
-``` 
+```
 
 リモート ユーザーは、直接、インスタンスには追加されません。 タイトルのネットワークにリモート デバイスが表示されると、タイトルはリモート デバイスを表すオブジェクトを作成し、`ChatManager::HandleNewRemoteConsole()` を通じてゲーム チャットに新しいデバイスを通知します。 タイトルは、`CompareUniqueConsoleIdentifiersHandler` を実装することによって、リモート デバイスを表すオブジェクトをゲーム チャットと比較するメソッドを提供する必要もあります。 次の例では、このデリゲートをゲーム チャットに提供する方法を示します。`Platform::String` オブジェクトを使用してリモート デバイスを表しており、`L"1"` で表される新しいデバイスがタイトルのネットワークに参加したと仮定しています。
 
-```cppwinrt
-auto token = chatManager->OnCompareUniqueConsoleIdentifiers += 
-    ref new CompareUniqueConsoleIdentifiersHandler( 
-        [this](Platform::Object^ obj1, Platform::Object^ obj2) 
+```cpp
+auto token = chatManager->OnCompareUniqueConsoleIdentifiers +=
+    ref new CompareUniqueConsoleIdentifiersHandler(
+        [this](Platform::Object^ obj1, Platform::Object^ obj2)
     {
         return (static_cast<Platform::String^>(obj1)->Equals(static_cast<Platform::String^>(obj2)));
     });
@@ -129,7 +129,7 @@ chatManager->HandleNewRemoteConsole(newDeviceIdentifier);
 chat_user* chatUserA = chat_manager::singleton_instance().add_local_user(L"myLocalXboxUserId");
 ```
 
-ユーザーは特定のチャンネルには追加されないことに注意してください。ゲーム チャット 2 では、チャンネルではなく「コミュニケーション関係」の概念を使用して、ユーザーが互いに話したり、聞いたりできるかどうかを管理します。 コミュニケーション関係を構成する方法は、このセクションで後で説明します。 
+ユーザーは特定のチャンネルには追加されないことに注意してください。ゲーム チャット 2 では、チャンネルではなく「コミュニケーション関係」の概念を使用して、ユーザーが互いに話したり、聞いたりできるかどうかを管理します。 コミュニケーション関係を構成する方法は、このセクションで後で説明します。
 
 ローカル ユーザーと同様に、リモート ユーザーは同期的にローカルのゲーム チャット 2 インスタンスに追加されます。 これと同時に、リモート ユーザーは、リモート デバイスを表すために使用される識別子に関連付けられる必要があります。 ゲーム チャット 2 では、リモート デバイスで実行されているアプリのインスタンスを "エンドポイント" と呼びます。 この例では、ユーザー B は、整数 `1` で表されるエンドポイントで Xbox ユーザー ID `L"remoteXboxUserId"` を持つユーザーです。
 
@@ -154,10 +154,10 @@ chat_manager::singleton_instance().remove_user(chatUserD);
 ## <a name="processing-data"></a>データの処理
 
 ### <a name="game-chat"></a>ゲーム チャット
- 
+
 ゲーム チャットには独自のトランスポート層はありません。トランスポート層はアプリで提供する必要があります。 送信パケットは、`OnOutgoingChatPacketReady` イベントをサブスクライブし、パケットの送信先とトランスポートの要件を決定する引数を検査することによって処理されます。 次の例は、イベントをサブスクライブし、タイトルで実装されている `HandleOutgoingPacket()` メソッドに引数を転送する方法を示しています。
 
-```cppwinrt
+```cpp
 auto token = chatManager->OnOutgoingChatPacketReady +=
     ref new Windows::Foundation::EventHandler<Microsoft::Xbox::GameChat::ChatPacketEventArgs^>(
         [this](Platform::Object^, Microsoft::Xbox::GameChat::ChatPacketEventArgs^ args)
@@ -168,7 +168,7 @@ auto token = chatManager->OnOutgoingChatPacketReady +=
 
 受信パケットは、`ChatManager::ProcessingIncomingChatMessage()` を通じてゲーム チャットに送信されます。 未処理のパケット バッファーとリモート デバイス識別子を指定する必要があります。 次の例は、ローカルの `packetBuffer` に保存されているパケットと、ローカル変数 `remoteIdentifier` に保存されているリモート デバイス識別子を送信する方法を示しています。
 
-```cppwinrt
+```cpp
 Platform::String^ remoteIdentifier = /* The identifier associated with the device that generated this packet */
 Windows::Storage::Streams::IBuffer^ packetBuffer = /* The incoming chat packet */
 
@@ -217,7 +217,7 @@ chatManager::singleton_instance().process_incoming_data(remoteEndpointIdentifier
 
 ゲーム チャットでは、イベント生成モデルを使用して、関心のあるできごとが発生したことをアプリに通知します。たとえば、テキスト メッセージの受信や、ユーザーのアクセシビリティの基本設定の変更です。 アプリは、関心のある各イベントをサブスクライブし、イベントのハンドラーを実装する必要があります。 次の例は、`OnTextMessageReceived` イベントをサブスクライブし、アプリで実装されている `OnTextChatReceived()` または `OnTranscribedChatReceived()` メソッドに引数を転送する方法を示しています。
 
-```cppwinrt
+```cpp
 auto token = chatManager->OnTextMessageReceived +=
     ref new Windows::Foundation::EventHandler<Microsoft::Xbox::GameChat::TextMessageReceivedEventArgs^>(
         [this](Platform::Object^, Microsoft::Xbox::GameChat::TextMessageReceivedEventArgs^ args)
@@ -270,11 +270,11 @@ chat_manager::singleton_instance().finish_processing_state_changes(gameChatState
 
 ## <a name="text-chat"></a>テキスト チャット
 
-### <a name="game-chat"></a>ゲーム チャット 
+### <a name="game-chat"></a>ゲーム チャット
 
 ゲーム チャットでテキスト チャットを送信するには、`GameChatUser::GenerateTextMessage()` を使用できます。 次の例は、`chatUser` 変数によって表されるローカル チャット ユーザーにチャット テキスト メッセージを送信する方法を示しています。
 
-```cppwinrt
+```cpp
 chatUser->GenerateTextMessage(L"Hello", false);
 ```
 
@@ -300,7 +300,7 @@ chatUser->local()->send_chat_text(L"Hello");
 
 ユーザーが音声合成を有効にしていると、`GameChatUser::HasRequestedSynthesizedAudio()` は true を返します。 この状態が検出されると、`GameChatUser::GenerateTextMessage()` は、ローカルのユーザーに関連付けられているオーディオ ストリームに挿入されている音声合成のオーディオを生成します。 次の例は、`chatUser` 変数によって表されるローカル ユーザーにチャット テキスト メッセージを送信する方法を示しています。
 
-```cppwinrt
+```cpp
 chatUser->GenerateTextMessage(L"Hello", true);
 ```
 
@@ -336,7 +336,7 @@ chat_userA->local()->synthesize_text_to_speech(L"Hello");
 
 `GameChatUser` には、適切な UI 要素を判断するときに一般的に検査される 3 つのプロパティ `GameChatUser::TalkingMode`、`GameChatUser::IsMuted`、`GameChatUser::RestrictionMode` があります。 次の例では、'chatUser' 変数によって指定される `GameChatUser` オブジェクトから `iconToShow` 変数に割り当てる特定のアイコンの定数値を決定するためのヒューリスティックを示します。
 
-```cppwinrt
+```cpp
 if (chatUser->RestrictionMode != None)
 {
     if (!chatUser->IsMuted)

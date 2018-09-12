@@ -8,13 +8,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム,
-ms.localizationpriority: low
-ms.openlocfilehash: 46e3a178763a29fd0d5d89414e128b2d281f6fa4
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 50d747128dcd85a16c5250997e9431b279203ae0
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983317"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882426"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI フラット C レイヤーの非同期呼び出しの呼び出しパターン
 
@@ -28,8 +28,8 @@ XSAPI C API が公開する新しい非同期 C API では、開発者は、**Xb
 
 ```cpp
 AsyncBlock* asyncBlock = new AsyncBlock {};
-asyncBlock->queue = queue;
-asyncBlock->context = this;
+asyncBlock->queue = asyncQueue;
+asyncBlock->context = customDataForCallback;
 asyncBlock->callback = [](AsyncBlock* asyncBlock)
 {
     XblUserProfile profile;
@@ -57,7 +57,6 @@ typedef struct AsyncBlock
 {
     AsyncCompletionRoutine* callback;
     void* context;
-    HANDLE waitEvent;
     async_queue_handle_t queue;
 } AsyncBlock;
 ```
@@ -66,8 +65,9 @@ typedef struct AsyncBlock
 
 * *callback* - 非同期処理が完了した後に呼び出される、オプションのコールバック関数。  コールバックを指定しない場合、**GetAsyncStatus** を使用して **AsyncBlock** が完了するまで待機し、結果を取得します。
 * *context* - データをコールバック関数に渡すことができるようにします。
-* *waitEvent* - 待機するオプションのイベントを指定するハンドル。 これは、非同期操作が完了して、完了コールバックが実行された後に通知されます。
 * *queue* - **AsyncQueue** を指定するハンドルである async_queue_handle_t。 これが設定されていない場合、既定のキューが使用されます。
+
+各非同期 API を呼び出すのヒープで新しい AsyncBlock を作成する必要があります。  AsyncBlock はまで、AsyncBlock の完了コールバックが呼び出され、削除、live する必要があります。
 
 > [!IMPORTANT]
 > **AsyncBlock** は、**非同期タスク**が完了するまでメモリ内に存在している必要があります。 動的に割り当てられる場合、AsyncBlock の**完了コールバック**内で削除できます。
@@ -150,7 +150,7 @@ STDAPI CreateSharedAsyncQueue(
 > この ID を持つ、ディスパッチ モードのキューが既にある場合は、そのキューが参照されます。  それ以外の場合は、新しいキューが作成されます。
 
 **AsyncQueue** を作成したら、単にそれを **AsyncBlock** に追加し、作業と完了関数のスレッド処理を制御します。
-キューの処理が終了したら、**CloseAsyncQueue** を使用して必ずキューを閉じてください。
+**AsyncQueue**を使用してが完了したら、通常、ゲームが終了すると、閉じることができますが**closeasyncqueue**:
 
 ```cpp
 STDAPI_(void) CloseAsyncQueue(
@@ -233,64 +233,63 @@ void CALLBACK HandleAsyncQueueCallback(
     switch (type)
     {
     case AsyncQueueCallbackType::AsyncQueueCallbackType_Work:
-        SetEvent(g_workReadyHandle);
-        break;
-
-    case AsyncQueueCallbackType::AsyncQueueCallbackType_Completion:
-        SetEvent(g_completionReadyHandle);
+        ReleaseSemaphore(g_workReadyHandle, 1, nullptr);
         break;
     }
 }
 ```
 
-1 つのスレッドで両側をディスパッチする場合、関数は次のようになります。
+バック グラウンド スレッドでは、このセマフォをスリープ解除し、 **DispatchAsyncQueue**を呼び出すをリッスンすることができます。
 
 ```cpp
-DWORD WINAPI background_thread_proc(LPVOID lpParam)
+DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
 {
-    HANDLE hEvents[3] =
+    HANDLE hEvents[2] =
     {
         g_workReadyHandle.get(),
-        g_completionReadyHandle.get(),
         g_stopRequestedHandle.get()
     };
+
+    async_queue_handle_t queue = static_cast<async_queue_handle_t>(lpParam);
 
     bool stop = false;
     while (!stop)
     {
-        DWORD dwResult = WaitForMultipleObjectsEx(3, hEvents, false, INFINITE, false);
+        DWORD dwResult = WaitForMultipleObjectsEx(2, hEvents, false, INFINITE, false);
         switch (dwResult)
         {
-        case WAIT_OBJECT_0:
-            // AsyncQueueCallbackType_Work is ready
-            DispatchAsyncQueue(g_queue, AsyncQueueCallbackType_Work, 0);
-
-            if (!IsAsyncQueueEmpty(g_queue, AsyncQueueCallbackType_Work))
-            {
-                // If there's more pending work, then set the event to process them
-                SetEvent(g_workReadyHandle.get());
-            }
+        case WAIT_OBJECT_0: 
+            // Background work is ready to be dispatched
+            DispatchAsyncQueue(queue, AsyncQueueCallbackType_Work, 0);
             break;
 
         case WAIT_OBJECT_0 + 1:
-            // AsyncQueueCallbackType_Completion is ready
-            // Note: Typically completions should be dispatched on the game thread, but
-            // for this simple example, we're doing it here
-            DispatchAsyncQueue(g_queue, AsyncQueueCallbackType_Completion, 0);
-
-            if (!IsAsyncQueueEmpty(g_queue, AsyncQueueCallbackType_Completion))
-            {
-                // If there's more pending completions, then set the event to process them
-                SetEvent(g_completionReadyHandle.get());
-            }
-            break;
-
         default:
             stop = true;
             break;
         }
     }
 
+    CloseAsyncQueue(queue);
     return 0;
 }
 ```
+
+お勧め Win32 セマフォ オブジェクトを使用して使用することを実装します。  代わりに実装する場合、Win32 イベント オブジェクトを使用することを確認する必要があります忘れないコードで、イベントなど。
+
+```cpp
+    case WAIT_OBJECT_0: 
+        // Background work is ready to be dispatched
+        DispatchAsyncQueue(queue, AsyncQueueCallbackType_Work, 0);        
+        
+        if (!IsAsyncQueueEmpty(queue, AsyncQueueCallbackType_Work))
+        {
+            // If there's more pending work, then set the event to process them
+            SetEvent(g_workReadyHandle.get());
+        }
+        break;
+```
+
+
+[ソーシャル C サンプル AsyncIntegration.cpp](https://github.com/Microsoft/xbox-live-api/blob/master/InProgressSamples/Social/Xbox/C/AsyncIntegration.cpp)に非同期の統合のためのベスト プラクティスの例を表示することができます。
+

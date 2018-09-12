@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: 561ba3a6d66f8e09c3fc9ffd3e7e379b49d14fec
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 892b04e780d25b07ac9ed12ff62f0f101761ce20
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882483"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---august-2016"></a>Xbox Live SDK の新規事項 - August 2016
 
@@ -82,7 +83,7 @@ Xbox Integrated Multiplayer (XIM) API のドキュメントが追加されまし
 
 XIM は、Xbox Live サービスの機能を使用してマルチプレイヤー リアルタイム ネットワークおよびチャット コミュニケーションをゲームに簡単に追加できる自己完結型のインターフェイスです。
 
-ユーザーのフィードバックと問い合わせを促進するため、この API のプレビュー ドキュメントが提供されています。 この API については先の Xfest 2016 の講演「Turn-Key Multiplayer Networking and Chat」で解説しました。[Xbox デベロッパー ポータルのプレゼンテーション資料](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx)でご覧いただけます。 このプレビュー ドキュメントは C++ API 用だけであることに注意してください。 C# と同等の WinRT および他の言語については今年後半にリリースされます。
+ユーザーのフィードバックと問い合わせを促進するため、この API のプレビュー ドキュメントが提供されています。 Xfest 2016 の場合は、前の手順では、この API を話しし、アーカイブ[対象パートナー開発者向けのサイトのプレゼンテーション資料](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx)「有効にするキー Multiplayer Networking and Chat」の説明を確認できます。 このプレビュー ドキュメントは C++ API 用だけであることに注意してください。 C# と同等の WinRT および他の言語については今年後半にリリースされます。
 
 XIM の機能に関心がある場合、およびこのプロジェクトについてフィードバックまたは質問がある場合は、[Xbox デベロッパー フォーラム](https://forums.xboxlive.com/)に投稿するか、デベロッパー アカウント マネージャーにお問い合わせください。
 

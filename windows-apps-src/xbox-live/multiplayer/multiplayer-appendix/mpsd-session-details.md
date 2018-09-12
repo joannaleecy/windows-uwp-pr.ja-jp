@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015, セッション テンプレート, MPSD
-ms.localizationpriority: low
-ms.openlocfilehash: 6518afc16b693952761a5669ae6f5fce8194f883
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: a6a9e88582b0d9c411cf4cd32aaf94beb0c5d0d0
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882014"
 ---
 # <a name="mpsd-session-details"></a>MPSD セッションの詳細
 
@@ -32,7 +33,7 @@ ms.lasthandoff: 02/24/2018
 
 ## <a name="session-overview"></a>セッションの概要
 
-MPSD セッションはセッション名を持ち、セッション テンプレートのインスタンスとして識別されます。セッション テンプレートは、セッションの既定の設定を提供する JSON ドキュメントです。 テンプレートはサービス構成 ID (SCID) を持つ [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com) サービス構成の一部です。これは GUID です。 サービス構成は、デベロッパー向けのリソースであり、XDP での取り込み、管理、およびセキュリティ ポリシーに使用されます。 MPSD を介してセッションにアクセスすると、XDP を通じてデベロッパーが設定したアクセス ポリシーに従って、サービス構成に対し主要な承認が実行されます。 サービス構成へのアクセスが承認された後にセッションが読み込まれると、セッションのメンバーシップ検証などのセカンダリー アクセス チェックがセッション レベルで実行されます。
+マルチプレイヤー セッション ディレクトリ (MPSD) セッションは、セッション名を持ちが、セッションの既定の設定を提供する JSON ドキュメントでは、セッション テンプレートのインスタンスとして識別されます。 テンプレートは、サービス構成 id (SCID) でサービス構成の一部をこれは GUID です。 このテンプレート[Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)であり、 [Windows デベロッパー センター](https://partner.microsoft.com/dashboard/windows/overview)サービス構成は、開発者向けのリソースの取り込み、管理、およびセキュリティ ポリシーを使用します。 セッションを MPSD を介してアクセスすると、プリンシパルの承認は XDP または Windows デベロッパー センターを通じてデベロッパーが設定したアクセス ポリシーに従って、サービス構成に対して実行されます。 サービス構成へのアクセスが承認された後にセッションが読み込まれると、セッションのメンバーシップ検証などのセカンダリー アクセス チェックがセッション レベルで実行されます。
 
 ここでは、テンプレートでコントラクト バージョン 107 を使用していると仮定します。このコントラクト バージョンは、Xbox One の現在の MPSD で使用されているバージョンです。 コントラクト バージョン 105 (104 と同じ) に基づいてテンプレートを定義した場合は、バージョン 107 をサポートするためにこれらを変更してください。 手順については、「[マルチプレイヤー 2015 での移行における一般的な問題](common-issues-when-adapting-multiplayer.md)」を参照してください。
 
@@ -194,7 +195,7 @@ https://{authority}/serviceconfigs/{service-config-id}/sessiontemplates/{session
 
 ## <a name="session-capabilities"></a>セッション機能
 
-機能は、MPSD がそのセッションに適用する動作を構成する、MPSD セッション内の定数です。 最もよく使用されるのは、セッション テンプレートの機能を設定する XDP です。 /constants/system/capabilities オブジェクトに設定されます。 機能が必要ない場合は、空の capabilities オブジェクトを使用します。
+機能は、MPSD がそのセッションに適用する動作を構成する、MPSD セッション内の定数です。 最もよく使用される XDP と Windows デベロッパー センターの機能、セッション テンプレートで設定します。 /constants/system/capabilities オブジェクトに設定されます。 機能が必要ない場合は、空の capabilities オブジェクトを使用します。
 
 | 注意                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------|

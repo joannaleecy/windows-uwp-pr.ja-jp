@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
-ms.localizationpriority: low
-ms.openlocfilehash: 9452956e85c5156503ae15fb2c0880fa06642cfd
-ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 190d54fb53192a1cc798b46a0a4b76d7bdd3e074
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2018
-ms.locfileid: "1917644"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882514"
 ---
 # <a name="leaderboards"></a>ランキング
 
@@ -23,7 +23,7 @@ ms.locfileid: "1917644"
 
 「[データ プラットフォームの概要](../data-platform/data-platform.md)」で説明されているように、ランキングは、プレイヤー間の競争を促し、プレイヤー自身やフレンドが持つベスト スコアの更新に関心を持たせる場合に有効な方法です。
 
-[注目の統計](player-stats.md#what-needs-to-be-configured)のランキングは、ゲーム ハブに表示されます。  ただし、注目の統計と通常の統計の両方のランキングの作成は、タイトルから直接実行できます。
+[注目の統計](stats2017.md#configured-stats-and-featured-leaderboards)のランキングは常に、タイトルのゲーム ハブに表示され、ホーム ページにピン留めされている場合、タイトルの UI の一部として表示される場合があります。 タイトル内でランキングを作成するのに、構成済みの注目の統計を使用することもできます。
 
 ## <a name="choosing-good-leaderboards"></a>適切なランキングの選択
 

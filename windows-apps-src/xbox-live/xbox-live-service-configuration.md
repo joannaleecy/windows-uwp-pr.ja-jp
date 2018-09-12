@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成
-ms.localizationpriority: low
-ms.openlocfilehash: c3d0314ba8d78c7c1c8b4307033bf014331c439a
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: e36e37802855747426184aa9d8cec0e6db77acd7
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882317"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live サービス構成
 
@@ -38,10 +39,12 @@ ID@Xbox の開発者である場合、または Microsoft パートナーのパ�
 
 今後のすべてのタイトルでは Windows デベロッパー センターが推奨されますが、機能によっては引き続き XDP を使用することもできます。 このセクションでは、どこでタイトルを構成したらよいかを説明します。
 
-既にタイトルを構成済みの場合は、「[ID を取得する](#get_ids)」まで下にスクロールして、タイトルの設定に必要なさまざまな ID を取得する方法をご覧いただけます。
+選んだポータルに応じて特定のサービス構成ページの情報をご覧ください。
 
-### <a name="xbox-one-xdk-only"></a>Xbox One XDK 専用
-Xbox One XDK を使用してゲームを開発している場合、XDP を使用してゲームを取り込み、構成し、公開する必要があります。 Windows デベロッパー センターで XDK タイトルを構成するためのサポートは、近日中に提供されます。
+* [Windows デベロッパー センターの構成](configure-xbl/windows-dev-center.md)
+* [Xbox デベロッパー ポータルの構成](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/atoc-service-configuration)で、このリンクにアクセスすると、Microsoft アカウント (MSA) Xbox Live のフル アクセスが有効になっている必要があります。
+
+既にタイトルを構成済みの場合は、「[ID を取得する](#get_ids)」まで下にスクロールして、タイトルの設定に必要なさまざまな ID を取得する方法をご覧いただけます。
 
 ### <a name="pcmobile-uwp-game-only"></a>PC/Mobile UWP ゲーム専用
 Windows 10 PC と Windows 10 モバイル デバイスの一方または両方でのみ動作する UWP ゲームを構成および管理する場合は、Windows デベロッパー センターをお勧めします。

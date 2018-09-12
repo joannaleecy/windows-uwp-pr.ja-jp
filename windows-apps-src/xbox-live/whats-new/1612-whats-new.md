@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
-ms.localizationpriority: low
-ms.openlocfilehash: eb2e6bf9f3f7b03f5d693ff5a4221df58d61c23b
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 9622774de85c3bac91a70f75829cbe3769b600b1
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882279"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---december-2016"></a>Xbox Live SDK の新規事項 - December 2016
 
@@ -24,7 +25,7 @@ November 2016 リリースで追加された内容については、「[新規�
 
 ### <a name="gamechat"></a>GameChat
 
-* [GameChat](../multiplayer/chat/gamechat-overview.md) に、テキストから音声および音声からテキストへのシナリオをサポートする新しい[ユーザー補助機能](../multiplayer/chat/chat-accessibility-overview.md)が追加されました。
+* GameChat に、テキストから音声および音声からテキストへのシナリオをサポートする新しいユーザー補助機能が追加されました。
 
 ### <a name="multiplayer"></a>マルチプレイヤー
 
@@ -32,4 +33,7 @@ November 2016 リリースで追加された内容については、「[新規�
 
 ## <a name="documentation"></a>ドキュメント
 * [XIM](../multiplayer/xbox-integrated-multiplayer.md) 用に更新されたドキュメントがあります。
-* [GameChat](../multiplayer/chat/gamechat-overview.md) 用のドキュメントが追加されました
+* GameChat 用のドキュメントが追加されました
+
+> [!IMPORTANT]
+> GameChat は、GameChat 2 に置き換えられました。 GameChat 1 はサポートされなくなったと[GameChat 2 のドキュメント](../multiplayer/chat/game-chat-2-overview.md)をご覧ください。

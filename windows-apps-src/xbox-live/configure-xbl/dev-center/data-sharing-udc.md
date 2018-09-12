@@ -8,13 +8,14 @@ ms.date: 02/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: low
+ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: 46ad77cd5e966e4e48ec13d64684580df82a52e9
-ms.sourcegitcommit: 0ee9c6848cb9d624f15cdab1d0c5991ca7245e70
-ms.translationtype: HT
+ms.openlocfilehash: 2b56a4d3fa857222e2b93cd0f9e39133c16c2ebc
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882477"
 ---
 # <a name="configure-data-sharing-on-dev-center"></a>デベロッパー センターでのデータ共有の構成
 

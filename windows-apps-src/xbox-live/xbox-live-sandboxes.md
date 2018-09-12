@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
-ms.localizationpriority: low
-ms.openlocfilehash: 90240c0344e5757e44e4100f31c41b3e40151235
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 63447a9423ab65f79f034877a1c74c1eea75c78c
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881926"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live のサンドボックスの概要
 
@@ -34,7 +35,7 @@ ms.lasthandoff: 02/24/2018
 1. 現在利用可能なバージョンに影響を与えずに、タイトルの更新への変更を反復処理できます。
 2. 一部のツールは、セキュリティ上の理由から開発サンドボックス内でのみ動作します。
 3. チーム内の一部の開発者は、開発中の主要なサービス構成に影響を与えずに、サービス構成の変更を「分岐」させてテストできます。
-4. 他のパブリッシャーは、サンドボックスへのアクセス権が付与されない限り、その内部での作業内容を閲覧できません。
+4. 他の公開元は、サンドボックスへのアクセス権が付与されない限り、その内部での作業内容を閲覧できません。
 
 **必要に応じて**テスト アカウントを作成することもできます。  タイトルのテストに通常の Xbox Live アカウントを使用したくない場合や、ソーシャルな交流 (例: 友人の統計情報の表示) やマルチプレイヤーなどのシナリオをテストするために複数のアカウントが必要である場合に、テスト アカウントを使用できます。
 
@@ -94,21 +95,21 @@ RETAIL に戻るには、ここで「RETAIL」と入力します。
     2. 次のコマンドを実行して使用を開始します。 `Import-Module XboxlivePSModule`
     3. コマンドレット Set-XblSandbox XDKS.1 または Get-XblSandbox を実行します。
 
-* [https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) にある zip ファイルから使うには、PowerShell ウィンドウを開き、
-    1. 次のコマンドを実行します。 `Import-Module <path to unzipped folder>\XboxLivePsModule\XboxLivePsModule.psd1`
+* ある zip ファイルから使用する[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)、PowerShell ウィンドウを開きます
+    1. 実行 `Import-Module <path to unzipped folder>\XboxLivePsModule\XboxLivePsModule.psd1`
     2. コマンドレット Set-XblSandbox XDKS.1 または Get-XblSandbox を実行します。
 
 ### <a name="command-prompt-script"></a>コマンド プロンプト スクリプト
 
-[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) で Xbox Live Tools パッケージをダウンロードし、解凍します。  中には SwitchSandbox.cmd バッチ ファイルがあります。
+[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) で Xbox Live ツール パッケージをダウンロードし、解凍します。  中には SwitchSandbox.cmd バッチ ファイルがあります。
 
-サンドボックスを切り替えるには、管理者モードでこのファイルを実行します。  最初の引数がサンドボックスです。  たとえば、XDKS.1 サンドボックスに切り替える場合は、次のコマンドを実行します。
+サンドボックスを切り替えるには、管理者モードでこのバッチ ファイルを実行します。  最初の引数がサンドボックスです。  たとえば、XDKS.1 サンドボックスに切り替える場合は、次のコマンドを実行します。
 
 ```
 SwitchSandbox.cmd XDKS.1
 ```
 
-RETAIL に戻るには、単に 2 番目の引数として RETAIL を指定します。
+RETAIL に戻るには、2 番目の引数として RETAIL を指定するだけです。
 
 ```
 SwitchSandbox.cmd RETAIL

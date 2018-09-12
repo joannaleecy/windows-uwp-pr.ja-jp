@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, マッチメイキング, SmartMatch
-ms.localizationpriority: low
-ms.openlocfilehash: 5214b85ca7a0e4f8460044b34279895027d0b8d4
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 8fe8ad244b9b7a650af4fc77c4adbb1805023ecf
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882276"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch マッチメイキング
 
@@ -106,7 +107,7 @@ SmartMatch マッチメイキングは、プレイヤーをユーザー情報お
 
 タイトルは、マッチ チケット セッション内の各メンバーでメンバーごとの属性を指定します。 これらは、MultiplayerSession.SetCurrentUserMemberCustomPropertyJson メソッドを呼び出し、プロパティ名 "matchAttrs" を使用して設定されます。 この呼び出しは、属性をチケット セッション内の各プレイヤーの /members/{index}/properties/custom/matchAttrs フィールドに配置します。
 
-マッチメイキング プロセスは、メンバーごとの各属性を、ホッパーの XDP 構成 UI でその属性に対して指定した均一化メソッドに基づいて、単一のチケット レベルの属性に均一化します。
+マッチメイ キング プロセス均一メンバーごとの各ホッパーの Xbox Live 構成 UI でその属性に対して指定した均一化メソッドに基づいて、単一のチケット レベル属性です。 これは、 [XDP](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で構成できます。
 
 
 ### <a name="making-the-match"></a>マッチの実行
@@ -176,12 +177,12 @@ SmartMatch マッチメイキングは、プレイヤーをユーザー情報お
 
 ### <a name="configuration-of-smartmatch-matchmaking-runtime-operations"></a>SmartMatch マッチメイキング ランタイム操作の構成
 
-SmartMatch マッチメイキングの構成はすべて、[Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com) を通じて行われます。 構成にはタイトルの [ServiceConfiguration] -&gt; [Multiplayer & Matchmaking] セクションを使用します。
+SmartMatch マッチメイ キングのすべての構成は、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)を通じて行われます。 構成にはタイトルの [ServiceConfiguration] -&gt; [Multiplayer & Matchmaking] セクションを使用します。
 
 
 #### <a name="matchmaking-session-template-configuration"></a>マッチメイキング セッション テンプレートの構成
 
-「[SmartMatch マッチメイキング]()」で説明したように、マッチメイキングに関連するセッションには、マッチ チケット セッションとマッチ ターゲット セッションの 2 種類があります。 基本的には、チケット セッションはマッチメイキング サービスへの入力で、ターゲット セッションは出力です。 XDP でセッション テンプレートを構成するときは、セッションの種類ごとにテンプレートを作成する必要があります。
+「[SmartMatch マッチメイキング]()」で説明したように、マッチメイキングに関連するセッションには、マッチ チケット セッションとマッチ ターゲット セッションの 2 種類があります。 基本的には、チケット セッションはマッチメイキング サービスへの入力で、ターゲット セッションは出力です。 セッション テンプレートを構成するときは、各セッションの種類のテンプレートを作成する必要があります。
 
 チケット セッションでは、専用テンプレートを使用できます。 または、ゲーム プレイへの使用を意図していないロビー セッションまたは他のセッション用にテンプレートを再利用できます。
 
@@ -191,7 +192,7 @@ SmartMatch マッチメイキングの構成はすべて、[Xbox デベロッパ
 
 ターゲット セッションでは、マッチメイキングされるゲーム プレイ向けのテンプレートを使用する必要があります。 ゲーム プレイの開始前にピア間の QoS チェックを有効にする設定が含まれている必要があり、"ゲームプレイ" 機能でマークされている必要があります。
 
-XDP UI で、各セッションを 1 つ以上のホッパーにマップできます。各ホッパーには、そのホッパーでセッションがどのようにマッチされるかを決定するルールが含まれます。 詳細については、「マッチメイキングの基本的なホッパー構成」を参照してください。
+XDP またはデベロッパー センターの UI の構成で各セッションを 1 つまたは複数のホッパー、各セッションがまとめてそのホッパーでマッチングされたは方法を決定するルールが含まれますにマップすることができます。 詳細については、「マッチメイキングの基本的なホッパー構成」を参照してください。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>マッチメイキングの基本的なホッパー構成
@@ -258,7 +259,7 @@ Should Rule Explansion Cycles 設定の値を増加させると、SHOULD ルー�
 
 ###### <a name="data-type-specific-rule-fields"></a>データ型に固有のルール フィールド
 
-このセクションでは、一部のデータ型に適用されるが、その他のデータ型には適用されないルールを定義するために使用するフィールドを定義します。 XDP UI は、どのデータ型が特定のルールに適用されるかを明確に示すことができます。
+このセクションでは、一部のデータ型に適用されるが、その他のデータ型には適用されないルールを定義するために使用するフィールドを定義します。 UI は、明確にするデータの種類を特定のルールに適用できる必要があります。
 
 **Allow Wildcards**
 
@@ -427,7 +428,7 @@ Collection Role Preferences データ型のみ。 すべての利用可能な役
 
 ### <a name="configuring-team-rules"></a>チーム ルールの構成
 
-チーム ルールを設定するには、まず XDP でチーム ルールを作成します。 ゲームがこのホッパーでマッチングされたチケットから作成するチーム サイズを入力します。 たとえば、4 対 4 を想定しているゲームでは、それぞれの最大サイズが 4 で、名前が異なる 2 つのエントリを作成する必要があります。 最小チーム サイズもあります。これは、チームのプレイヤー数が最大数より少なくてもゲームをプレイできるようにする場合に使用します。 それ以外の場合は、最大サイズと最小サイズを同じ値にします。
+チーム ルールを設定するには、1 つで、選んだ構成のプラットフォーム (XDP またはデベロッパー センター) を作成して開始します。 ゲームがこのホッパーでマッチングされたチケットから作成するチーム サイズを入力します。 たとえば、4 対 4 を想定しているゲームでは、それぞれの最大サイズが 4 で、名前が異なる 2 つのエントリを作成する必要があります。 最小チーム サイズもあります。これは、チームのプレイヤー数が最大数より少なくてもゲームをプレイできるようにする場合に使用します。 それ以外の場合は、最大サイズと最小サイズを同じ値にします。
 
 
 #### <a name="using-team-rules"></a>チーム ルールの使用

@@ -1,0 +1,63 @@
+---
+title: RichPresenceRequest (JSON)
+assetID: 599266be-f747-0be1-fadf-f8e0262dc27f
+permalink: en-us/docs/xboxlive/rest/json-richpresencerequest.html
+author: KevinAsgari
+description: " RichPresenceRequest (JSON)"
+ms.author: kevinasg
+ms.date: 20-12-2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
+ms.localizationpriority: medium
+ms.openlocfilehash: 9d1158832623b88efb0a614680f0c0fb579f79d4
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882158"
+---
+# <a name="richpresencerequest-json"></a>RichPresenceRequest (JSON)
+リッチ プレゼンス情報の使用に関する情報を要求します。 
+<a id="ID4EN"></a>
+
+ 
+## <a name="richpresencerequest"></a>RichPresenceRequest
+ 
+RichPresenceRequest オブジェクトには、次の仕様があります。
+ 
+| メンバー| 種類| 説明| 
+| --- | --- | --- | 
+| id| string| 使用するリッチ プレゼンス文字列の<b>フレンドリ名</b>。| 
+| scid| string| リッチ プレゼンス文字列が定義されているを示す Scid です。| 
+| パラメーター| 文字列の配列| リッチ プレゼンス文字列を完了するための<b>フレンドリ名</b>の文字列の配列です。 のみ列挙フレンドリ名を指定する必要があります、統計ではありません。この空のまま、以前の値が削除されます。| 
+  
+<a id="ID4EDC"></a>
+
+ 
+## <a name="sample-json-syntax"></a>JSON 構文の例
+ 
+
+```json
+{
+      id:"playingMapWeapon",
+      scid:"abba0123-08ba-48ca-9f1a-21627b189b0f",
+    }
+    
+```
+
+  
+<a id="ID4EMC"></a>
+
+ 
+## <a name="see-also"></a>関連項目
+ 
+<a id="ID4EOC"></a>
+
+ 
+##### <a name="parent"></a>Parent 
+
+[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+
+   

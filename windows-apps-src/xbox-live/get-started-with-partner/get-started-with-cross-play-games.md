@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クロスプレイ, Play Anywhere
-ms.localizationpriority: low
-ms.openlocfilehash: 7ea0f8984c605c10fe91d085a31e8d9e0f04dab3
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 14f6e895ed98804fa965ee6d9ef6cadcde6f220f
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882273"
 ---
 # <a name="get-started-with-cross-play-games"></a>クロスプレイ ゲームの概要
 
@@ -108,7 +109,7 @@ UWP 製品を作成したので、XDP で XDK 製品をセットアップする�
 
 ### <a name="create-your-xdp-product"></a>XDP 製品を作成する
 
-担当のアカウント マネージャーと協力し、XDP ([https://xdp.xboxlive.com/](https://xdp.xboxlive.com/User/Publisher)) で、公開元として新しい製品を作成します。
+XDP で、公開元の新しい製品を作成する、アカウント マネージャーと協力し ([https://xdp.xboxlive.com/](https://xdp.xboxlive.com/User/Publisher))。
 
 XDP で製品を作成するときは、UI の左側のセクションを一番下までスクロールしてプラットフォームを選択します。 Xbox Live クロスプレイを統合してゲームをリリースすることが**予定されている**プラットフォームをすべてオンにしてください。
 

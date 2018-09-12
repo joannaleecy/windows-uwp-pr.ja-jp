@@ -4,22 +4,25 @@ author: StaceyHaffner
 description: Xbox Live 対応タイトルを開発およびテストするために用意されているツールについて説明します。
 ms.assetid: 380a29bf-41a7-4817-9c57-f48f2b824b52
 ms.author: kevinasg
-ms.date: 2/7/2018
+ms.date: 6/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, ツール, プレイヤーのリセット, live trace analyzer, LTA, xbox live アカウント ツール,
-ms.localizationpriority: low
-ms.openlocfilehash: b64a555c1e99f06d54dc3f2b54462a771fa16b9a
-ms.sourcegitcommit: e020e9a4d947368a68e4eeba1eea65e9b3a725af
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 98b21eda55c6122104c9ec79cda10708e362f3a4
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2018
-ms.locfileid: "1924348"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881776"
 ---
 # <a name="development-tools-for-xbox-live"></a>Xbox Live の開発ツール
 
 ここでは、Xbox Live で開発するときに便利な、さまざまなツールについて説明します。 ツールの多くは、[Xbox Live 開発者ツール GitHub](https://github.com/Microsoft/xbox-live-developer-tools) リポジトリで使用できます。 [デベロッパー ツール ライブラリ](https://www.nuget.org/packages/Microsoft.Xbox.Services.DevTools)を使って独自のカスタム ツールを作成することもできます。 すべてのスタンドアロン開発者ツールは、[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) でダウンロードできます。
+
+> [!NOTE]
+> ダウンロードに含まれている MatchSim と XboxLiveCompute ツールは、対象のパートナーのみが使用できますかに登録されているパートナー、[ID@Xbox](http://www.xbox.com/Developers/id)プログラム。 利用可能な開発者プログラムについて詳しくは、[開発者プログラムの概要](https://docs.microsoft.com/windows/uwp/xbox-live/developer-program-overview)をご覧ください。 
 
 ## <a name="global-storage"></a>グローバル ストレージ
 グローバル タイトル ストレージは、ロスター、マップ、チャレンジ、アート リソースなど、だれでも読み取ることができるデータの保存に使用されます。 これは、[タイトル ストレージ](../storage-platform/xbox-live-title-storage/xbox-live-title-storage.md)の一種です。 グローバル ストレージ ツールを使って、テスト サンドボックス内でグローバル タイトル ストレージを管理します。 この場合も、データは Windows デベロッパー センターまたは Xbox デベロッパー ポータル (XDP) 経由で RETAIL に公開する必要があります。 このツールは、[開発ツール](https://aka.ms/xboxliveuwptools) zip の一部としてコマンド ラインを通じて使うことができます。 カスタム ツールは、[デベロッパー ツール ライブラリ](https://www.nuget.org/packages/Microsoft.Xbox.Services.DevTools)を使って作成できます。

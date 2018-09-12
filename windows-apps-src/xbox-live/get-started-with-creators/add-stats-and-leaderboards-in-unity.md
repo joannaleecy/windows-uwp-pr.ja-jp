@@ -9,26 +9,26 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, クリエーター
-ms.localizationpriority: low
-ms.openlocfilehash: 65e6c45c509217389e2bb3d10a264d7922c3dba3
-ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: b23d2964e541ea9102a704caa187041a2ce57891
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "1905354"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881905"
 ---
 # <a name="add-player-stats-and-leaderboards-to-your-unity-project"></a>Unity プロジェクトにプレイヤーの統計とランキングを追加する
 
 > [!IMPORTANT]
 > Xbox Live Unity プラグインでは、実績とオンライン マルチプレイヤーがサポートされていないため、[Xbox Live クリエーターズ プログラム](../developer-program-overview.md)のメンバーに対してのみお勧めしています。
 
-[Xbox Live サインイン](sign-in-to-xbox-live-in-unity.md)を Unity プロジェクトに追加したら、次の手順として、プレイヤーの統計とその統計に基づくランキングを追加します。
+[Xbox Live サインイン](unity-prefabs-and-sign-in.md)を Unity プロジェクトに追加したら、次の手順として、プレイヤーの統計とその統計に基づくランキングを追加します。
 
 [Xbox Live Unity プラグイン](https://github.com/Microsoft/xbox-live-unity-plugin)を使用すると、プレイヤーの統計とランキングを Unity プロジェクトに簡単に追加できます。 サインイン手順と同様、付属のプレハブを使用したり、付属のスクリプトを独自のカスタム ゲーム オブジェクトにアタッチしたりすることができます。
 
 ## <a name="prerequisites"></a>前提条件
 1. [Unity で Xbox Live を構成する](configure-xbox-live-in-unity.md)
-2. [Unity で Xbox Live にサインインする](sign-in-to-xbox-live-in-unity.md)
+2. [Unity で Xbox Live にサインインする](unity-prefabs-and-sign-in.md)
 
 ## <a name="player-stats"></a>プレイヤーの統計
 
@@ -105,7 +105,7 @@ Unity エディターでは、インスペクターの設定に関係なく、�
 
 ## <a name="see-also"></a>関連項目
 
-* [Unity で Xbox Live にサインインする](sign-in-to-xbox-live-in-unity.md)
+* [Unity で Xbox Live にサインインする](unity-prefabs-and-sign-in.md)
 * [Unity で Xbox Live を構成する](configure-xbox-live-in-unity.md)
 * [ランキングのサンプル シーン](setup-leaderboard-example-scene.md)
 * [ランキング データを取得する](unity-leaderboard-from-scratch.md)

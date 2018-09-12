@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, マッチメイキング, SmartMatch
-ms.localizationpriority: low
-ms.openlocfilehash: 91700782dadc75693a7d7e61c24b7cf9553eb119
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 4594bd70c28729f38e0c0eaea7ea8ef7a905bbfe
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882271"
 ---
 # <a name="using-smartmatch-matchmaking"></a>SmartMatch マッチメイキングの使用
 
@@ -45,7 +46,7 @@ ms.lasthandoff: 02/24/2018
 
 タイトルは、マッチ チケット セッション内の各メンバーでメンバーごとの属性を指定します。 これらは、**MultiplayerSession.SetCurrentUserMemberCustomPropertyJson メソッド**を呼び出し、プロパティ名 "matchAttrs" を使用して設定されます。 この呼び出しは、属性をチケット セッション内の各プレイヤーの /members/{index}/properties/custom/matchAttrs フィールドに配置します。
 
-マッチメイキング プロセスは、メンバーごとの各属性を、ホッパーの XDP 構成 UI でその属性に対して指定した均一化メソッドに基づいて、単一のチケット レベルの属性に均一化します。
+マッチメイ キング プロセス均一メンバーごとの各ホッパーの Xbox Live 構成でその属性に対して指定した均一化メソッドに基づいて、単一のチケット レベル属性です。 これは、 [XDP](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で構成できます。
 
 
 ## <a name="making-the-match"></a>マッチの実行

@@ -4,18 +4,18 @@ author: KevinAsgari
 description: 統計 2017 を使用して Xbox Live のプレイヤーの統計を更新する方法について説明します。
 ms.assetid: 019723e9-4c36-4059-9377-4a191c8b8775
 ms.author: kevinasg
-ms.date: 04/04/2017
+ms.date: 08/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, プレイヤーの統計, 統計 2017
-ms.localizationpriority: low
-ms.openlocfilehash: ebe10ba743cba6c26b9d2c4d0531296314c04e95
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 57d52b102d46efa1a2e6d35dedd46e6aba577977
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862991"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882265"
 ---
 # <a name="updating-stats-2017"></a>統計の更新 2017
 
@@ -23,7 +23,8 @@ ms.locfileid: "1862991"
 
 プレイヤーの統計を追跡するかどうかは、タイトルに応じて決めることができます。また、統計を必要に応じて更新するには `StatsManager` を呼び出します。  `StatsManager` は、あらゆる変更をバッファリングして、定期的にサービスにフラッシュします。  タイトルでは、手動でフラッシュすることもできます。
 
-> **注**: 統計を頻繁にフラッシュすることは避けてください。  頻繁にフラッシュすると、タイトルのレートが制限されます。  多くても 5 分に 1 回フラッシュすることが、ベスト プラクティスです。
+> [!NOTE]
+> 統計を頻繁にフラッシュ避けてください。  頻繁にフラッシュすると、タイトルのレートが制限されます。  多くても 5 分に 1 回フラッシュすることが、ベスト プラクティスです。
 
 ### <a name="multiple-devices"></a>複数のデバイス
 
@@ -76,6 +77,12 @@ statsManager->add_local_user(user);
 statsManager->do_work();  // returns stat_event_type::local_user_added
 ```
 
+```csharp
+Microsoft.Xbox.Services.Statistics.Manager.StatisticManager statManager = StatisticManager.SingletonInstance;
+statManager.AddLocalUser(user);
+statEvent = statManager.DoWork();
+```
+
 ### <a name="writing-stats"></a>統計の書き込み
 
 統計は、関数の `stats_manager::set_stat` ファミリを使用して書き込みます。  この関数には、データ型に応じて次の 3 つのバリエーションがあります。
@@ -88,12 +95,16 @@ statsManager->do_work();  // returns stat_event_type::local_user_added
 
 `stats_manager::request_flush_to_service` API を使用して、統計を手動でフラッシュすることもできます。  この関数を頻繁に呼び出すとレートが制限されるので注意してください。  頻繁に呼び出した場合でも、統計が更新されなくなるのではなく、  タイムアウト時間が経過してから更新が行われるようになるだけです。
 
-*SUM* 型の統計については、増分的に更新を送信することができます。  たとえば、"*全体の時間における撃墜数*" という統計があり、サーバー上の値が 100 であるとします。  引数 5 を指定して `set_stat_integer` を呼び出すと、  サーバー上の新しい値は 105 になります。
-
 ```cpp
 statsManager->set_stat_integer(user, L"numHeadshots", 20);
 statsManager->request_flush_to_service(user); // requests flush to service, performs a do_work
 statsManager->do_work();  // applies the stat changes, returns stat_update_complete after flush to service
+```
+
+```csharp
+statManager.SetStatisticIntegerData(user, statName, (long)statValue);
+statManager.RequestFlushToService(user);
+statManager.DoWork();
 ```
 
 #### <a name="example"></a>例
@@ -130,4 +141,9 @@ statsManager->do_work();  // applies the stat changes, returns stat_update_compl
 ```cpp
 statsManager->remove_local_user(user);
 statsManager->do_work();  // applies the stat changes, returns local_user_removed after flush to service
+```
+
+```csharp
+statManager.RemoveLocalUser(user);
+statManager.DoWork();
 ```
