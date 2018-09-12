@@ -1,0 +1,60 @@
+---
+title: /{uri}
+assetID: 40b256c3-197d-66c9-5680-15ddddde82ee
+permalink: en-us/docs/xboxlive/rest/uri-uri.html
+author: KevinAsgari
+description: " /{uri}"
+ms.author: kevinasg
+ms.date: 20-12-2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
+ms.localizationpriority: medium
+ms.openlocfilehash: b70d027146a5aba0495692e2f2bef1e2a7d2bd52
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882478"
+---
+# <a name="uri"></a><span data-ttu-id="bfed9-104">/{uri}</span><span class="sxs-lookup"><span data-stu-id="bfed9-104">/{uri}</span></span>
+<span data-ttu-id="bfed9-105">ゲーム クリップ データにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="bfed9-105">Access game clip data.</span></span> <span data-ttu-id="bfed9-106">これらの Uri のドメイン`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`対象の URI の機能に応じて、します。</span><span class="sxs-lookup"><span data-stu-id="bfed9-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>
+ 
+  * [<span data-ttu-id="bfed9-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="bfed9-107">URI parameters</span></span>](#ID4EX)
+ 
+<a id="ID4EX"></a>
+
+ 
+## <a name="uri-parameters"></a><span data-ttu-id="bfed9-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="bfed9-108">URI parameters</span></span>
+ 
+| <span data-ttu-id="bfed9-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="bfed9-109">Parameter</span></span>| <span data-ttu-id="bfed9-110">型</span><span class="sxs-lookup"><span data-stu-id="bfed9-110">Type</span></span>| <span data-ttu-id="bfed9-111">説明</span><span class="sxs-lookup"><span data-stu-id="bfed9-111">Description</span></span>| 
+| --- | --- | --- | 
+| <b><span data-ttu-id="bfed9-112">uri</span><span class="sxs-lookup"><span data-stu-id="bfed9-112">uri</span></span></b>| <span data-ttu-id="bfed9-113">string</span><span class="sxs-lookup"><span data-stu-id="bfed9-113">string</span></span>| <span data-ttu-id="bfed9-114">使用する URI です。</span><span class="sxs-lookup"><span data-stu-id="bfed9-114">The URI to use.</span></span> <span data-ttu-id="bfed9-115">詳しくは、メソッド ページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bfed9-115">See method pages for more information.</span></span>| 
+  
+<a id="ID4ETB"></a>
+
+ 
+## <a name="valid-methods"></a><span data-ttu-id="bfed9-116">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="bfed9-116">Valid methods</span></span>
+
+[<span data-ttu-id="bfed9-117">取得する (/{uri})</span><span class="sxs-lookup"><span data-stu-id="bfed9-117">GET (/{uri})</span></span>](uri-uriget.md)
+
+<span data-ttu-id="bfed9-118">&nbsp;&nbsp;ゲーム クリップをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="bfed9-118">&nbsp;&nbsp;Download game clip.</span></span>
+
+[<span data-ttu-id="bfed9-119">配置 (/{uri})</span><span class="sxs-lookup"><span data-stu-id="bfed9-119">PUT (/{uri})</span></span>](uri-uriput.md)
+
+<span data-ttu-id="bfed9-120">&nbsp;&nbsp;ゲーム クリップのデータをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="bfed9-120">&nbsp;&nbsp;Upload game clip data.</span></span>
+ 
+<a id="ID4EAC"></a>
+
+ 
+## <a name="see-also"></a><span data-ttu-id="bfed9-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="bfed9-121">See also</span></span>
+ 
+<a id="ID4ECC"></a>
+
+ 
+##### <a name="parent"></a><span data-ttu-id="bfed9-122">Parent</span><span class="sxs-lookup"><span data-stu-id="bfed9-122">Parent</span></span> 
+
+[<span data-ttu-id="bfed9-123">ゲーム DVR Uri</span><span class="sxs-lookup"><span data-stu-id="bfed9-123">Game DVR URIs</span></span>](atoc-reference-dvr.md)
+
+   

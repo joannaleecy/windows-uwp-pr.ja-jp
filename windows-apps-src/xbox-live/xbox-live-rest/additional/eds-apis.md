@@ -1,0 +1,110 @@
+---
+title: 補助 EDS Api
+assetID: 5729ab80-e88d-0190-fb61-bd0cc4f134f6
+permalink: en-us/docs/xboxlive/rest/eds-apis.html
+author: KevinAsgari
+description: " 補助 EDS Api"
+ms.author: kevinasg
+ms.date: 20-12-2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
+ms.localizationpriority: medium
+ms.openlocfilehash: ecdf3d885a518f622dae00b4b4a98979c3bdefe9
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881780"
+---
+# <a name="auxiliary-eds-apis"></a><span data-ttu-id="a8e1a-104">補助 EDS Api</span><span class="sxs-lookup"><span data-stu-id="a8e1a-104">Auxiliary EDS APIs</span></span>
+
+<span data-ttu-id="a8e1a-105">これにはいくつかのエンターテインメント探索サービス (EDS) については、コンテンツを直接指定しないが、サービスを使用またはドライブの一般的な UI のモデルを支援する方法に関する一般的な情報を提供する Api があります。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-105">There are several Entertainment Discovery Services (EDS) APIs that don't directly provide information about content, but give general information about how to use the service or help drive common UI models.</span></span>
+
+<a id="ID4EQ"></a>
+
+
+## <a name="auxiliary-apis"></a><span data-ttu-id="a8e1a-106">補助的な Api</span><span class="sxs-lookup"><span data-stu-id="a8e1a-106">Auxiliary APIs</span></span>
+
+| <span data-ttu-id="a8e1a-107">API</span><span class="sxs-lookup"><span data-stu-id="a8e1a-107">API</span></span>| <span data-ttu-id="a8e1a-108">URI</span><span class="sxs-lookup"><span data-stu-id="a8e1a-108">URI</span></span>| <span data-ttu-id="a8e1a-109">説明</span><span class="sxs-lookup"><span data-stu-id="a8e1a-109">Description</span></span>|
+| --- | --- | --- |
+| <span data-ttu-id="a8e1a-110">API のパラメーター値</span><span class="sxs-lookup"><span data-stu-id="a8e1a-110">API Parameter Values</span></span>| <span data-ttu-id="a8e1a-111">/{ロケール}/メタデータ</span><span class="sxs-lookup"><span data-stu-id="a8e1a-111">/{locale}/metadata</span></span>| <span data-ttu-id="a8e1a-112">サービスの呼び出しで使用できるパラメーターの値の列挙</span><span class="sxs-lookup"><span data-stu-id="a8e1a-112">Enumeration of possible values of parameters that can be used in calls to the service</span></span>|
+| <span data-ttu-id="a8e1a-113">コンテンツの規制ジェネレーターを組み合わせる</span><span class="sxs-lookup"><span data-stu-id="a8e1a-113">Combined Content Rating Generator</span></span>| <span data-ttu-id="a8e1a-114">/{ロケール}/contentRating</span><span class="sxs-lookup"><span data-stu-id="a8e1a-114">/{locale}/contentRating</span></span>| <span data-ttu-id="a8e1a-115">可能性のある好ましくないまたは明示的なコンテンツをフィルター処理用には、その他の Api で使用できる値を作成します。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-115">Creates a value that can be used in other APIs for filtering out potentially objectionable or explicit content.</span></span> <span data-ttu-id="a8e1a-116">詳細については以下をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-116">See below for more information.</span></span>|
+| <span data-ttu-id="a8e1a-117">結合されたフィールド名ジェネレーター</span><span class="sxs-lookup"><span data-stu-id="a8e1a-117">Combined Field Name Generator</span></span>| <span data-ttu-id="a8e1a-118">/{ロケール}/フィールド</span><span class="sxs-lookup"><span data-stu-id="a8e1a-118">/{locale}/fields</span></span>| <span data-ttu-id="a8e1a-119">フィールドが返されるコントロールに詳細 Api で使用できる値を作成します。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-119">Creates a value that can be used in the detail APIs to control which fields are returned.</span></span> <span data-ttu-id="a8e1a-120">詳細については以下をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-120">See below for more information.</span></span>|
+
+<a id="ID4EBC"></a>
+
+
+### <a name="api-parameter-values"></a><span data-ttu-id="a8e1a-121">API のパラメーター値</span><span class="sxs-lookup"><span data-stu-id="a8e1a-121">API Parameter Values</span></span>
+
+<span data-ttu-id="a8e1a-122">この API では、サービスで使用できるパラメーターについて説明します。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-122">This API describes parameters that can be used with the service.</span></span> <span data-ttu-id="a8e1a-123">返された情報は、ローカライズされたテキストには、各パラメーターが付属してために、クライアントの UI で使用可能です。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-123">The returned information is usable by the client UI because localized text accompanies each parameter.</span></span>
+
+<span data-ttu-id="a8e1a-124">Api の以下のクエリ パラメーターに同意します。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-124">None of the APIs below accept any query parameters.</span></span>
+
+| <span data-ttu-id="a8e1a-125">API</span><span class="sxs-lookup"><span data-stu-id="a8e1a-125">API</span></span>| <span data-ttu-id="a8e1a-126">URI</span><span class="sxs-lookup"><span data-stu-id="a8e1a-126">URI</span></span>| <span data-ttu-id="a8e1a-127">説明</span><span class="sxs-lookup"><span data-stu-id="a8e1a-127">Description</span></span>|
+| --- | --- | --- | --- | --- | --- |
+| <span data-ttu-id="a8e1a-128">型</span><span class="sxs-lookup"><span data-stu-id="a8e1a-128">Types</span></span>| <span data-ttu-id="a8e1a-129">/{ロケール}/メタデータ/mediaGroups</span><span class="sxs-lookup"><span data-stu-id="a8e1a-129">/{locale}/metadata/mediaGroups</span></span>| <span data-ttu-id="a8e1a-130">メディアのグループの完全な一覧</span><span class="sxs-lookup"><span data-stu-id="a8e1a-130">The full list of media groups</span></span>|
+| <span data-ttu-id="a8e1a-131">メディア項目のメディアのグループごとの種類</span><span class="sxs-lookup"><span data-stu-id="a8e1a-131">Media item types per Media group</span></span>| <span data-ttu-id="a8e1a-132">/{ロケール}/メタデータ/mediaGroups/{mediaItemTypeGroup}/mediaItemTypes</span><span class="sxs-lookup"><span data-stu-id="a8e1a-132">/{locale}/metadata/mediaGroups/{mediaItemTypeGroup}/mediaItemTypes</span></span>| <span data-ttu-id="a8e1a-133">メディアの一覧は、型指定されたメディアのグループに含まれている項目します。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-133">The list of media item types contained within the given media group.</span></span>|
+| <span data-ttu-id="a8e1a-134">すべてのメディア項目の種類</span><span class="sxs-lookup"><span data-stu-id="a8e1a-134">All Media item types</span></span>| <span data-ttu-id="a8e1a-135">/{ロケール}/メタデータ/mediaItemTypes</span><span class="sxs-lookup"><span data-stu-id="a8e1a-135">/{locale}/metadata/mediaItemTypes</span></span>| <span data-ttu-id="a8e1a-136">メディア項目の種類の完全な一覧</span><span class="sxs-lookup"><span data-stu-id="a8e1a-136">The full list of media item types</span></span>|
+| <span data-ttu-id="a8e1a-137">メディア項目の種類ごとのフィールド</span><span class="sxs-lookup"><span data-stu-id="a8e1a-137">Fields per Media item type</span></span>| <span data-ttu-id="a8e1a-138">/{ロケール}/メタデータ/mediaItemTypes/{mediaItemType}/フィールド</span><span class="sxs-lookup"><span data-stu-id="a8e1a-138">/{locale}/metadata/mediaItemTypes/{mediaItemType}/fields</span></span>| <span data-ttu-id="a8e1a-139">1 つのメディア項目の種類のフィールドの一覧</span><span class="sxs-lookup"><span data-stu-id="a8e1a-139">The list of fields in a single media item type</span></span>|
+| <span data-ttu-id="a8e1a-140">クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="a8e1a-140">Query Refiners</span></span>| <span data-ttu-id="a8e1a-141">/{ロケール}/メタデータ/mediaItemTypes/{mediaItemType}/queryRefiners</span><span class="sxs-lookup"><span data-stu-id="a8e1a-141">/{locale}/metadata/mediaItemTypes/{mediaItemType}/queryRefiners</span></span>| <span data-ttu-id="a8e1a-142">指定したメディア項目の種類のサポートされているクエリ絞り込み条件の一覧</span><span class="sxs-lookup"><span data-stu-id="a8e1a-142">The list of query refiners supported for the given media item type</span></span>|
+| <span data-ttu-id="a8e1a-143">調整の値を照会すべて</span><span class="sxs-lookup"><span data-stu-id="a8e1a-143">All Query Refiner Values</span></span>| <span data-ttu-id="a8e1a-144">/{ロケール}/メタデータ/mediaItemTypes/{mediaItemType}/queryRefiners/{queryRefiner}</span><span class="sxs-lookup"><span data-stu-id="a8e1a-144">/{locale}/metadata/mediaItemTypes/{mediaItemType}/queryRefiners/{queryRefiner}</span></span>| <span data-ttu-id="a8e1a-145">項目の種類を指定したメディアの指定されたクエリの調整の値</span><span class="sxs-lookup"><span data-stu-id="a8e1a-145">The values for the specified query refiner for the given media item type</span></span>|
+| <span data-ttu-id="a8e1a-146">調整のサブ値を照会すべて</span><span class="sxs-lookup"><span data-stu-id="a8e1a-146">All Query Refiner Sub-Values</span></span>| <span data-ttu-id="a8e1a-147">/{ロケール}/メタデータ/mediaItemTypes/{mediaItemType}/queryRefiners/{queryRefiner}/subQueryRefinerValues</span><span class="sxs-lookup"><span data-stu-id="a8e1a-147">/{locale}/metadata/mediaItemTypes/{mediaItemType}/queryRefiners/{queryRefiner}/subQueryRefinerValues</span></span>| <span data-ttu-id="a8e1a-148">指定されたクエリの調整値 ("subgenres には、指定されたジャンル"など) のサブ値の一覧。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-148">The list of sub-values for a given query refiner value (e.g. "subgenres in a given genre").</span></span> <span data-ttu-id="a8e1a-149">クエリの調整値で"queryRefinerValue"は、渡される URI 語幹で禁止文字で調整の値のクエリを許可するにをという名前のクエリ文字列パラメーターとして渡されます。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-149">The query refiner value is passed in as a query string parameter named "queryRefinerValue", which is done to allow query refiner values with characters forbidden in URI stems to be passed.</span></span>|
+| <span data-ttu-id="a8e1a-150">順に並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-150">Sorts</span></span>| <span data-ttu-id="a8e1a-151">/{ロケール}/メタデータ/mediaItemTypes/{mediaItemType}/sortOrders</span><span class="sxs-lookup"><span data-stu-id="a8e1a-151">/{locale}/metadata/mediaItemTypes/{mediaItemType}/sortOrders</span></span>| <span data-ttu-id="a8e1a-152">指定したメディア項目の種類の並べ替え順序の一覧</span><span class="sxs-lookup"><span data-stu-id="a8e1a-152">The list of sort orders for the given media item type</span></span>|
+
+<a id="ID4EEF"></a>
+
+
+### <a name="combined-content-rating-generator"></a><span data-ttu-id="a8e1a-153">コンテンツの規制ジェネレーターを組み合わせる</span><span class="sxs-lookup"><span data-stu-id="a8e1a-153">Combined Content Rating Generator</span></span>
+
+<span data-ttu-id="a8e1a-154">複雑なタスクは、保護者 over 子が表示できるコンテンツを適用します。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-154">Enforcing parental controls over the content children are allowed to see is a complicated task.</span></span> <span data-ttu-id="a8e1a-155">だけでなく各メディア項目の種類は、独自の評価システムがそれらの評価システムは国によって異なることができます。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-155">Not only does each media item type have its own rating system, but those rating systems can vary from country to country.</span></span> <span data-ttu-id="a8e1a-156">これは、すべての項目を適切にフィルターを指定する必要があるデータの複数の異なる部分ことを意味します。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-156">This means that there are several different pieces of data that need to be specified to properly filter all items.</span></span>
+
+<span data-ttu-id="a8e1a-157">すべてのパラメーターを指定する、すべての API 呼び出しで、代わりは、この API は、値をその他の Api で combinedContentRating パラメーターに渡すし、でも同じ情報を伝えるを生成します。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-157">Instead of specifying all of the parameters in all API calls, this API generates a value to pass into combinedContentRating parameters in other APIs and still communicate the same information.</span></span> <span data-ttu-id="a8e1a-158">これは、この API に渡されるいくつかのパラメーターは、その他の Api の 1 つ、再利用可能な値に折りたたまれたとき、Api を使用し、保守、やすくするために設計されています。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-158">This is designed to make the APIs easier to use and maintain, as the several parameters passed into this API are collapsed into a single, reusable value for the other APIs.</span></span>
+
+<span data-ttu-id="a8e1a-159">頻繁に変更する必要がありますが、この API によって返される正確な値は変更が最終的に、(間のリリースの EDS など) と、そのため、長期間のキャッシュされる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-159">Although the exact values returned by this API may eventually change, they should change very infrequently (such as between releases of EDS) and thus could be cached for long periods of time.</span></span> <span data-ttu-id="a8e1a-160">CombinedContentRating パラメーターは、これにはわかりやすいエラー メッセージで渡した値が有効である場合、呼び出し元だけを受け入れ、いずれかの API は、更新された値を取得するには、もう一度この API を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-160">Any API accepting a combinedContentRating parameter will give a meaningful error message if the value passed in is invalid, which is an indication the caller merely needs to call this API again to get an updated value.</span></span> <span data-ttu-id="a8e1a-161">API が combinedContentRating パラメーターでは、いずれかを指定しない場合は、コンテンツのフィルター処理は行われません保護者に基づいて</span><span class="sxs-lookup"><span data-stu-id="a8e1a-161">If an API accepts a combinedContentRating parameter, but one isn't provided, no filtering of content will take place based on parental controls</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="a8e1a-162">これは、コンテンツの「安全」のみが返されること - すべてのコンテンツが返されること、明示的な可能性のあるコンテンツを含むことを意味を意味しません)。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-162">This doesn't mean that only "safe" content is returned--it means that all content is returned, including potentially explicit content).</span></span>
+
+
+
+<a id="ID4EWF"></a>
+
+
+### <a name="combined-field-name"></a><span data-ttu-id="a8e1a-163">結合されたフィールド名</span><span class="sxs-lookup"><span data-stu-id="a8e1a-163">Combined Field Name</span></span>
+
+<span data-ttu-id="a8e1a-164">EDS Api では、既定では、各項目のフィールドの場合は、非常に小さい最小セットを返します。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-164">The EDS APIs, by default, return a very small minimum set of fields for each item:</span></span>
+
+   * <span data-ttu-id="a8e1a-165">メディア項目の種類</span><span class="sxs-lookup"><span data-stu-id="a8e1a-165">Media item type</span></span>
+   * <span data-ttu-id="a8e1a-166">メディアのグループ</span><span class="sxs-lookup"><span data-stu-id="a8e1a-166">Media group</span></span>
+   * <span data-ttu-id="a8e1a-167">ID</span><span class="sxs-lookup"><span data-stu-id="a8e1a-167">Id</span></span>
+   * <span data-ttu-id="a8e1a-168">名前</span><span class="sxs-lookup"><span data-stu-id="a8e1a-168">Name</span></span>
+
+<span data-ttu-id="a8e1a-169">詳細を取得するのには、Api は、返されるデータや追加コンポーネントを指定する「フィールド」パラメーターを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-169">To get more information, the APIs accept a "fields" parameter that specifies which additional pieces of data should be returned.</span></span> <span data-ttu-id="a8e1a-170">多くの使用可能なフィールドがあるため、API 呼び出しごとに完全に名前を指定することが大幅に膨張要求します。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-170">Because there are many possible fields, specifying their name in full for each API call would greatly bloat the request.</span></span> <span data-ttu-id="a8e1a-171">代わりに、名前は、他の Api に渡すことができるより小さい値を生成するこの API に渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-171">Instead, the names can be passed into this API which will generate a much smaller value that can be passed into the other APIs.</span></span>
+
+<span data-ttu-id="a8e1a-172">このパラメーターを受け取るいずれかの API、指定された値がすべて指定したメディア項目の種類のすべてのフィールドのスーパー セットである必要があります。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-172">For any API that accepts this parameter, the provided value must be the superset of all fields in all specified media item types.</span></span> <span data-ttu-id="a8e1a-173">別のメディア項目の種類のフィールドのセットを指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-173">It's not possible to specify different sets of fields for different media item types.</span></span> <span data-ttu-id="a8e1a-174">ただし、フィールドは、1 つのメディア項目の種類がない別、それに適用する場合はでのみ表示、メディア項目の種類のデータが存在する (例: AvatarItems のみにフィールドが含まれてフィールド名の結合 API の呼び出しで"AvatarBodyType"が含まれている場合、)。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-174">However, if a field applies to one media item type but not another, it will only appear in the media item types where data exists (e.g. if "AvatarBodyType" is included in the call to the Combined Field Name API, only AvatarItems will contain the field).</span></span>
+
+<span data-ttu-id="a8e1a-175">この API から返される値は実際に強くキャッシュ-、それらは変更されません以外 EDS の展開の間でします。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-175">The values returned from this API are highly cacheable--in fact, they should not change except between deployments of EDS.</span></span> <span data-ttu-id="a8e1a-176">キャッシュが必要な場合、キャッシュ最後のユーザーのセッションよりもしなくなったことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-176">It's recommended that, if caching is desired, the cache last no longer than the session of the user.</span></span>
+
+<span data-ttu-id="a8e1a-177">実際のフィールド名を受け入れ、だけでなくこの API は、"all"を有効な値として受け取ります。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-177">In addition to accepting the actual field names, this API accepts "all" as a valid value.</span></span> <span data-ttu-id="a8e1a-178">これにより、指定することは、各フィールドが含まれている値が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-178">This will generate a value that contains each field it's possible to specify.</span></span> <span data-ttu-id="a8e1a-179">"All"の値は、開発、デバッグ、テスト目的にのみ使用する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a8e1a-179">The "all" value is likely to only be used for development, debugging, and testing purposes.</span></span>
+
+<a id="ID4ERG"></a>
+
+
+## <a name="see-also"></a><span data-ttu-id="a8e1a-180">関連項目</span><span class="sxs-lookup"><span data-stu-id="a8e1a-180">See also</span></span>
+
+<a id="ID4ETG"></a>
+
+
+##### <a name="parent"></a><span data-ttu-id="a8e1a-181">Parent</span><span class="sxs-lookup"><span data-stu-id="a8e1a-181">Parent</span></span>  
+
+[<span data-ttu-id="a8e1a-182">その他の参照</span><span class="sxs-lookup"><span data-stu-id="a8e1a-182">Additional Reference</span></span>](atoc-xboxlivews-reference-additional.md)
+
+
+<a id="ID4E6G"></a>
+
+
+##### <a name="further-information"></a><span data-ttu-id="a8e1a-183">詳細情報</span><span class="sxs-lookup"><span data-stu-id="a8e1a-183">Further Information</span></span>
+
+[<span data-ttu-id="a8e1a-184">Marketplace Uri</span><span class="sxs-lookup"><span data-stu-id="a8e1a-184">Marketplace URIs</span></span>](../uri/marketplace/atoc-reference-marketplace.md)

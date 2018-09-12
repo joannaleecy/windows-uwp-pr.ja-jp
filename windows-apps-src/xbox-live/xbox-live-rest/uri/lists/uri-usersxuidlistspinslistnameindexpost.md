@@ -1,0 +1,159 @@
+---
+title: ユーザー/xuid (xuid) を投稿//ピン/{リスト} の一覧を示します (/members) のインデックス/かどうか insertIndex = {insertIndex}。
+assetID: df61be42-c229-7408-5e4c-dbf4ae95b52b
+permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameindexpost.html
+author: KevinAsgari
+description: " ユーザー/xuid (xuid) を投稿//ピン/{リスト} の一覧を示します (/members) のインデックス/かどうか insertIndex = {insertIndex}。"
+ms.author: kevinasg
+ms.date: 20-12-2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
+ms.localizationpriority: medium
+ms.openlocfilehash: 1aecb7f73a49e7628b076fe943774ccf89aa71bc
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881962"
+---
+# <a name="post-usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a><span data-ttu-id="df870-104">ユーザー/xuid (xuid) を投稿//ピン/{リスト} の一覧を示します (/members) のインデックス/かどうか insertIndex = {insertIndex}。</span><span class="sxs-lookup"><span data-stu-id="df870-104">POST /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}</span></span>
+<span data-ttu-id="df870-105">リスト内の異なる位置に一覧で項目を移動します。</span><span class="sxs-lookup"><span data-stu-id="df870-105">Moves an item in a list to a different position within the list.</span></span> <span data-ttu-id="df870-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="df870-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>
+ 
+  * [<span data-ttu-id="df870-107">注釈</span><span class="sxs-lookup"><span data-stu-id="df870-107">Remarks</span></span>](#ID4EV)
+  * [<span data-ttu-id="df870-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="df870-108">URI parameters</span></span>](#ID4EEB)
+  * [<span data-ttu-id="df870-109">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="df870-109">Query string parameters</span></span>](#ID4EWC)
+  * [<span data-ttu-id="df870-110">要求本文</span><span class="sxs-lookup"><span data-stu-id="df870-110">Request body</span></span>](#ID4EVD)
+  * [<span data-ttu-id="df870-111">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="df870-111">HTTP status codes</span></span>](#ID4EEE)
+  * [<span data-ttu-id="df870-112">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="df870-112">Required Request Headers</span></span>](#ID4E1BAC)
+  * [<span data-ttu-id="df870-113">応答本文</span><span class="sxs-lookup"><span data-stu-id="df870-113">Response body</span></span>](#ID4EQDAC)
+ 
+<a id="ID4EV"></a>
+
+ 
+## <a name="remarks"></a><span data-ttu-id="df870-114">注釈</span><span class="sxs-lookup"><span data-stu-id="df870-114">Remarks</span></span> 
+ 
+<span data-ttu-id="df870-115">この呼び出しは、簡単に 1 回の操作でリスト内のさまざまなインデックスに項目を移動するクライアントを許可する提供されます。</span><span class="sxs-lookup"><span data-stu-id="df870-115">This call is provided to allow the client to easily move an item to a different index within the list in a single operation.</span></span> <span data-ttu-id="df870-116">一度に 1 つの項目を移動する場合があります。</span><span class="sxs-lookup"><span data-stu-id="df870-116">Only one item may be moved at a time.</span></span> <span data-ttu-id="df870-117">移動する項目のインデックスが存在しない場合は、HTTP、400 が返されます。</span><span class="sxs-lookup"><span data-stu-id="df870-117">If the index of the item to be moved does not exist then an HTTP 400 will be returned.</span></span> <span data-ttu-id="df870-118">挿入ポイントのインデックスは、標準的な挿入と同じ規則に従います。</span><span class="sxs-lookup"><span data-stu-id="df870-118">The index for the insertion point follows the same rules as a standard insert.</span></span> <span data-ttu-id="df870-119">既定値は 0 ~ リストの先頭と、リスト内の項目の数を超える数字は、一覧の最後の項目を挿入して再します。</span><span class="sxs-lookup"><span data-stu-id="df870-119">It will default to 0 – the beginning of the list and any number greater than the number of items in the list will re-insert the item at the end of the list.</span></span> <span data-ttu-id="df870-120">同様に insertIndex の「終了」を渡すことによって、リストの終了を示すことができます。</span><span class="sxs-lookup"><span data-stu-id="df870-120">Similarly the end of the list can be indicated by passing "end" for insertIndex.</span></span> 
+ 
+<span data-ttu-id="df870-121">この呼び出しでは、itemId (またはプロバイダー/providerId コンボ) によって移動する項目を識別することもできます。</span><span class="sxs-lookup"><span data-stu-id="df870-121">This call also allows you to identify the item to be moved by the itemId (or provider/providerId combo).</span></span> <span data-ttu-id="df870-122">この例では、要求の本文で、itemId を渡す必要があります、リスト内の既存の項目に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df870-122">In this case, the itemId must be passed in the body of the request and it must match an existing item in the list.</span></span> <span data-ttu-id="df870-123">その場合は、説明で IndexOutOfRange でエラーが返されます、HTTP 400この特別なバージョンの呼び出しを移動する項目のインデックスとして「-1」を使用します。</span><span class="sxs-lookup"><span data-stu-id="df870-123">If it does not, an HTTP 400 error will be returned with IndexOutOfRange in the description; for this special version of the call, use "-1" as the index of the item to be moved.</span></span> 
+ 
+<span data-ttu-id="df870-124">この呼び出しに必要な"場合のマッチ: versionNumber"ヘッダーに含まれる要求で、項目を指定する場合は、インデックスをします。</span><span class="sxs-lookup"><span data-stu-id="df870-124">This call requires an "If-Match:versionNumber" header to be included in the request if specifying the item by index.</span></span> <span data-ttu-id="df870-125">ItemId を移動するには、どの項目を示すを使う場合、"If-match"ヘッダーは省略可能です。</span><span class="sxs-lookup"><span data-stu-id="df870-125">If using itemId to indicate which item to move, then the "If-Match" header is optional.</span></span> <span data-ttu-id="df870-126">存在する場合、"If-match"ヘッダーが常に検証されます。</span><span class="sxs-lookup"><span data-stu-id="df870-126">If present, the "If-Match" header will always be validated.</span></span> <span data-ttu-id="df870-127">"If-match"ヘッダーで、次のメッセージはリストの現在のバージョン番号です。</span><span class="sxs-lookup"><span data-stu-id="df870-127">In the "if-Match" header, the versionNumber is the current version number of the list.</span></span> <span data-ttu-id="df870-128">かどうかにはいない含まれている (、必要な)、または現在も一致しない一覧のバージョン番号、http/412 – の前提条件が失敗の状態コードが返され、応答の本文には、現在のバージョン番号が含まれている一覧の最新のメタデータにが含まれます.</span><span class="sxs-lookup"><span data-stu-id="df870-128">If it is not included (and required), or does not match the current list version number, then an HTTP 412 – precondition failed status code will be returned and the body of the response will contain the latest metadata of the list which includes the current version number.</span></span> <span data-ttu-id="df870-129">これは互いに踏み潰すさまざまなクライアントからの更新プログラムを防ぐためです。</span><span class="sxs-lookup"><span data-stu-id="df870-129">This is done to guard against updates from different clients trampling on each other.</span></span> 
+  
+<a id="ID4EEB"></a>
+
+ 
+## <a name="uri-parameters"></a><span data-ttu-id="df870-130">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="df870-130">URI parameters</span></span> 
+ 
+| <span data-ttu-id="df870-131">パラメーター</span><span class="sxs-lookup"><span data-stu-id="df870-131">Parameter</span></span>| <span data-ttu-id="df870-132">型</span><span class="sxs-lookup"><span data-stu-id="df870-132">Type</span></span>| <span data-ttu-id="df870-133">説明</span><span class="sxs-lookup"><span data-stu-id="df870-133">Description</span></span>| 
+| --- | --- | --- | 
+| <span data-ttu-id="df870-134">XUID</span><span class="sxs-lookup"><span data-stu-id="df870-134">XUID</span></span>| <span data-ttu-id="df870-135">string</span><span class="sxs-lookup"><span data-stu-id="df870-135">string</span></span>| <span data-ttu-id="df870-136">ユーザーの XUID です。</span><span class="sxs-lookup"><span data-stu-id="df870-136">XUID of the user.</span></span>| 
+| <span data-ttu-id="df870-137">リスト</span><span class="sxs-lookup"><span data-stu-id="df870-137">listname</span></span>| <span data-ttu-id="df870-138">string</span><span class="sxs-lookup"><span data-stu-id="df870-138">string</span></span>| <span data-ttu-id="df870-139">操作の一覧の名前です。</span><span class="sxs-lookup"><span data-stu-id="df870-139">Name of the list to manipulate.</span></span>| 
+| <span data-ttu-id="df870-140">インデックス</span><span class="sxs-lookup"><span data-stu-id="df870-140">index</span></span>| <span data-ttu-id="df870-141">string</span><span class="sxs-lookup"><span data-stu-id="df870-141">string</span></span>| <span data-ttu-id="df870-142">移動する項目の現在のインデックスを指定します。</span><span class="sxs-lookup"><span data-stu-id="df870-142">Specifies the current index of the item to be moved.</span></span> <span data-ttu-id="df870-143">インデックス値が 0 または正の整数の場合は、これは、項目の現在のインデックスを参照し、呼び出しの要求本文は空にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="df870-143">If the index value is zero or a positive integer, this refers to the current index of the item, and the request body of the call should be empty.</span></span> <span data-ttu-id="df870-144">ただし、インデックス値が「-1」の場合は、ItemId または呼び出しの要求本文には、プロバイダー/ProviderID によって移動する項目を指定してください。</span><span class="sxs-lookup"><span data-stu-id="df870-144">However, if the index value is "-1", the item to be moved must be specified by ItemId or Provider/ProviderID in the request body of the call.</span></span>| 
+  
+<a id="ID4EWC"></a>
+
+ 
+## <a name="query-string-parameters"></a><span data-ttu-id="df870-145">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="df870-145">Query string parameters</span></span> 
+ 
+| <span data-ttu-id="df870-146">パラメーター</span><span class="sxs-lookup"><span data-stu-id="df870-146">Parameter</span></span>| <span data-ttu-id="df870-147">型</span><span class="sxs-lookup"><span data-stu-id="df870-147">Type</span></span>| <span data-ttu-id="df870-148">説明</span><span class="sxs-lookup"><span data-stu-id="df870-148">Description</span></span>| 
+| --- | --- | --- | --- | --- | --- | 
+| <span data-ttu-id="df870-149">insertIndex</span><span class="sxs-lookup"><span data-stu-id="df870-149">insertIndex</span></span>| <span data-ttu-id="df870-150">string</span><span class="sxs-lookup"><span data-stu-id="df870-150">string</span></span>| <span data-ttu-id="df870-151">項目を挿入する一覧の場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="df870-151">Specifies the list location to insert the item.</span></span> <span data-ttu-id="df870-152">許可された値は 0、正の整数、および「終了」です。</span><span class="sxs-lookup"><span data-stu-id="df870-152">Allowed values are zero, positive integers, and "end".</span></span> <span data-ttu-id="df870-153">「終了」は、現在の一覧の最後に、項目を配置します。</span><span class="sxs-lookup"><span data-stu-id="df870-153">"end" places the item at the end of the current list.</span></span> <span data-ttu-id="df870-154">指定された値は、一覧の終了後は、一覧の最後に、項目が挿入されます。</span><span class="sxs-lookup"><span data-stu-id="df870-154">If the specified value is beyond the end of the list, the item is inserted at the end of the list.</span></span> | 
+  
+<a id="ID4EVD"></a>
+
+ 
+## <a name="request-body"></a><span data-ttu-id="df870-155">要求本文</span><span class="sxs-lookup"><span data-stu-id="df870-155">Request body</span></span> 
+ 
+<span data-ttu-id="df870-156">要求本文はプロバイダー/ProviderId や itemId によって移動する項目を指定するときにのみ送信されます。</span><span class="sxs-lookup"><span data-stu-id="df870-156">A request body is sent only when specifying the item to move by itemId or by Provider/ProviderId.</span></span>
+ 
+<a id="ID4E6D"></a>
+
+  
+<span data-ttu-id="df870-157">要求の例</span><span class="sxs-lookup"><span data-stu-id="df870-157">Sample Request</span></span> 
+
+```cpp
+{
+  "Item":
+  {
+    "ItemId":  "ed591a0c-dde3-563f-99af-530278a3c402",
+    "ProviderId":  null,
+    "Provider": null
+  }
+}
+    
+```
+
+  
+<a id="ID4EEE"></a>
+
+ 
+## <a name="http-status-codes"></a><span data-ttu-id="df870-158">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="df870-158">HTTP status codes</span></span> 
+ 
+<span data-ttu-id="df870-159">サービスは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションでステータス コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="df870-159">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="df870-160">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df870-160">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
+ 
+| <span data-ttu-id="df870-161">コード</span><span class="sxs-lookup"><span data-stu-id="df870-161">Code</span></span>| <span data-ttu-id="df870-162">理由フレーズ</span><span class="sxs-lookup"><span data-stu-id="df870-162">Reason phrase</span></span>| <span data-ttu-id="df870-163">説明</span><span class="sxs-lookup"><span data-stu-id="df870-163">Description</span></span>| 
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | 
+| <span data-ttu-id="df870-164">200</span><span class="sxs-lookup"><span data-stu-id="df870-164">200</span></span>| <span data-ttu-id="df870-165">OK</span><span class="sxs-lookup"><span data-stu-id="df870-165">OK</span></span> | <span data-ttu-id="df870-166">要求は正常に完了しました。</span><span class="sxs-lookup"><span data-stu-id="df870-166">The request completed successfully.</span></span> <span data-ttu-id="df870-167">応答本文では、(GET) 用、要求されたリソースを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="df870-167">The response body should contain the requested resource (for a GET).</span></span> <span data-ttu-id="df870-168">POST、PUT 要求は、最新の状態の一覧のメタデータ (一覧のバージョン、数など) に表示されます。</span><span class="sxs-lookup"><span data-stu-id="df870-168">POST and PUT requests will receive up-to-date list metadata (list version, count, etc.).</span></span>| 
+| <span data-ttu-id="df870-169">201</span><span class="sxs-lookup"><span data-stu-id="df870-169">201</span></span>| <span data-ttu-id="df870-170">Created</span><span class="sxs-lookup"><span data-stu-id="df870-170">Created</span></span> | <span data-ttu-id="df870-171">新しい一覧が作成されました。</span><span class="sxs-lookup"><span data-stu-id="df870-171">A new list has been created.</span></span> <span data-ttu-id="df870-172">これは、最初の挿入の一覧に返されます。</span><span class="sxs-lookup"><span data-stu-id="df870-172">This is returned on the initial insert to a list.</span></span> <span data-ttu-id="df870-173">応答には、一覧の最新の状態のメタデータが含まれています。 と場所ヘッダーには、リストの URI が含まれています。</span><span class="sxs-lookup"><span data-stu-id="df870-173">The response includes up-to-date metadata on the list and the location header contains the URI for the list.</span></span>| 
+| <span data-ttu-id="df870-174">304</span><span class="sxs-lookup"><span data-stu-id="df870-174">304</span></span>| <span data-ttu-id="df870-175">Not Modified</span><span class="sxs-lookup"><span data-stu-id="df870-175">Not Modified</span></span>| <span data-ttu-id="df870-176">取得で返されます。</span><span class="sxs-lookup"><span data-stu-id="df870-176">Returned on GETs.</span></span> <span data-ttu-id="df870-177">クライアントに一覧の最新バージョンがあることを示します。</span><span class="sxs-lookup"><span data-stu-id="df870-177">Indicates that the client has the latest version of the list.</span></span> <span data-ttu-id="df870-178">サービスは、一覧のバージョンを<b>If-match</b>ヘッダーで値を比較します。</span><span class="sxs-lookup"><span data-stu-id="df870-178">The service compares the value in the <b>If-Match</b> header to the list version.</span></span> <span data-ttu-id="df870-179">これらが等しい場合、304 取得データなしで返されます。</span><span class="sxs-lookup"><span data-stu-id="df870-179">If they are equal, then a 304 gets returned with no data.</span></span> | 
+| <span data-ttu-id="df870-180">400</span><span class="sxs-lookup"><span data-stu-id="df870-180">400</span></span>| <span data-ttu-id="df870-181">Bad Request</span><span class="sxs-lookup"><span data-stu-id="df870-181">Bad Request</span></span> | <span data-ttu-id="df870-182">要求が正しくありません。</span><span class="sxs-lookup"><span data-stu-id="df870-182">The request was malformed.</span></span> <span data-ttu-id="df870-183">無効な値、または URI またはクエリ文字列パラメーターの型にすることができます。</span><span class="sxs-lookup"><span data-stu-id="df870-183">Could be an invalid value or type for a URI or query string parameter.</span></span> <span data-ttu-id="df870-184">不足している必要なパラメーターの結果ことができます。 またはデータの値、または要求に存在しないか、無効なバージョンの API が示されます。</span><span class="sxs-lookup"><span data-stu-id="df870-184">Can also be the result of a missing required parameter or data value, or the request indicated a missing or invalid version of the API.</span></span> <span data-ttu-id="df870-185"><b>X XBL コントラクト バージョン</b>ヘッダーを参照してください。</span><span class="sxs-lookup"><span data-stu-id="df870-185">See the <b>X-XBL-Contract-Version</b> header.</span></span> | 
+| <span data-ttu-id="df870-186">401</span><span class="sxs-lookup"><span data-stu-id="df870-186">401</span></span>| <span data-ttu-id="df870-187">権限がありません</span><span class="sxs-lookup"><span data-stu-id="df870-187">Unauthorized</span></span> | <span data-ttu-id="df870-188">要求には、ユーザー認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="df870-188">The request requires user authentication.</span></span>| 
+| <span data-ttu-id="df870-189">403</span><span class="sxs-lookup"><span data-stu-id="df870-189">403</span></span>| <span data-ttu-id="df870-190">Forbidden</span><span class="sxs-lookup"><span data-stu-id="df870-190">Forbidden</span></span> | <span data-ttu-id="df870-191">要求は、ユーザーまたはサービスは許可されません。</span><span class="sxs-lookup"><span data-stu-id="df870-191">The request is not allowed for the user or service.</span></span>| 
+| <span data-ttu-id="df870-192">404</span><span class="sxs-lookup"><span data-stu-id="df870-192">404</span></span>| <span data-ttu-id="df870-193">Not Found します。</span><span class="sxs-lookup"><span data-stu-id="df870-193">Not Found</span></span> | <span data-ttu-id="df870-194">呼び出し元では、リソースへのアクセスはありません。</span><span class="sxs-lookup"><span data-stu-id="df870-194">The caller does not have access to the resource.</span></span> <span data-ttu-id="df870-195">これは、このような一覧が作成されていないことを示します。</span><span class="sxs-lookup"><span data-stu-id="df870-195">This indicates that no such list has been created.</span></span>| 
+| <span data-ttu-id="df870-196">412</span><span class="sxs-lookup"><span data-stu-id="df870-196">412</span></span>| <span data-ttu-id="df870-197">Precondition Failed</span><span class="sxs-lookup"><span data-stu-id="df870-197">Precondition Failed</span></span> | <span data-ttu-id="df870-198">一覧のバージョンが変更されていて、変更要求が失敗したことを示します。</span><span class="sxs-lookup"><span data-stu-id="df870-198">Indicates that the version of the list has changed and a modify request has failed.</span></span> <span data-ttu-id="df870-199">変更要求は、挿入、更新、または削除します。</span><span class="sxs-lookup"><span data-stu-id="df870-199">A modify request is an insert, update, or remove.</span></span> <span data-ttu-id="df870-200">サービスは、一覧のバージョンの<b>If-match</b>ヘッダーを確認します。</span><span class="sxs-lookup"><span data-stu-id="df870-200">The service checks the <b>If-Match</b> header for the list version.</span></span> <span data-ttu-id="df870-201">一覧の現在のバージョンが一致しない場合、操作は失敗し、これは、現在の一覧メタデータ (を現在のバージョンを含む) と共に返されます。</span><span class="sxs-lookup"><span data-stu-id="df870-201">If it does not match the current version of the list, then the operation fails and this is returned along with the current list metadata (which includes the current version).</span></span> | 
+| <span data-ttu-id="df870-202">500</span><span class="sxs-lookup"><span data-stu-id="df870-202">500</span></span>| <span data-ttu-id="df870-203">内部サーバー エラー</span><span class="sxs-lookup"><span data-stu-id="df870-203">Internal Server Error</span></span> | <span data-ttu-id="df870-204">サービスはサーバー側のエラーのための要求を拒否しています。</span><span class="sxs-lookup"><span data-stu-id="df870-204">The service is refusing the request due to a server-side error.</span></span>| 
+| <span data-ttu-id="df870-205">501</span><span class="sxs-lookup"><span data-stu-id="df870-205">501</span></span>| <span data-ttu-id="df870-206">実装されていません。</span><span class="sxs-lookup"><span data-stu-id="df870-206">Not Implemented</span></span> | <span data-ttu-id="df870-207">呼び出し元では、サーバーで実装されていない URI を要求します。</span><span class="sxs-lookup"><span data-stu-id="df870-207">The caller requested a URI that has not been implemented on the server.</span></span> <span data-ttu-id="df870-208">(現在だけの場合、要求の対象となるがホワイト リスト名。)</span><span class="sxs-lookup"><span data-stu-id="df870-208">(Currently only used when a request is made for a list name that is not whitelisted.)</span></span>| 
+| <span data-ttu-id="df870-209">503</span><span class="sxs-lookup"><span data-stu-id="df870-209">503</span></span>| <span data-ttu-id="df870-210">Service Unavailable</span><span class="sxs-lookup"><span data-stu-id="df870-210">Service Unavailable</span></span> | <span data-ttu-id="df870-211">サーバーは通常負荷が高くなり、要求を拒否します。</span><span class="sxs-lookup"><span data-stu-id="df870-211">The server is refusing the request, usually due to excessive load.</span></span> <span data-ttu-id="df870-212">遅延の後 (表示、 <b>retry-after 後</b>ヘッダー)、要求を再試行することができます。</span><span class="sxs-lookup"><span data-stu-id="df870-212">After a delay (see the <b>Retry-after</b> header), the request can be retried.</span></span> | 
+  
+<a id="ID4E1BAC"></a>
+
+ 
+## <a name="required-request-headers"></a><span data-ttu-id="df870-213">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="df870-213">Required Request Headers</span></span>
+ 
+| <span data-ttu-id="df870-214">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="df870-214">Header</span></span>| <span data-ttu-id="df870-215">説明</span><span class="sxs-lookup"><span data-stu-id="df870-215">Description</span></span>| 
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
+| <span data-ttu-id="df870-216">Authorization</span><span class="sxs-lookup"><span data-stu-id="df870-216">Authorization</span></span>| <span data-ttu-id="df870-217">認証し、要求を承認するために使用 STS トークンが含まれています。</span><span class="sxs-lookup"><span data-stu-id="df870-217">Contains the STS token used to authenticate and authorize the request.</span></span> <span data-ttu-id="df870-218">トークンが XSTS サービスからと、要求の 1 つとして、XUID を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="df870-218">Must be a token from XSTS service and include the XUID as one of the claims.</span></span> | 
+| <span data-ttu-id="df870-219">X XBL コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="df870-219">X-XBL-Contract-Version</span></span>| <span data-ttu-id="df870-220">要求された (正の整数) をされている API バージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="df870-220">Specifies which API version is being requested (positive integers).</span></span> <span data-ttu-id="df870-221">バージョン 2 でピンをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="df870-221">Pins supports version 2.</span></span> <span data-ttu-id="df870-222">このヘッダーが存在しないか、サービスは、400-を返します、値がサポートされていない状態の説明に「サポートされていないか、不足しているコントラクト バージョン ヘッダー」を含む要求が正しくありません。</span><span class="sxs-lookup"><span data-stu-id="df870-222">If this header is missing or the value is not supported then the service will return a 400 – Bad request with "Unsupported or missing contract version header" in the status description.</span></span>| 
+| <span data-ttu-id="df870-223">Content-Type</span><span class="sxs-lookup"><span data-stu-id="df870-223">Content-Type</span></span>| <span data-ttu-id="df870-224">要求/応答の本文のコンテンツは json または xml であるかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="df870-224">Specifies whether the content of request/response bodies will be in json or xml.</span></span> <span data-ttu-id="df870-225">サポートされる値は"アプリケーション/json"と"アプリケーション/xml"</span><span class="sxs-lookup"><span data-stu-id="df870-225">Supported values are "application/json" and "application/xml"</span></span>| 
+| <span data-ttu-id="df870-226">If-Match</span><span class="sxs-lookup"><span data-stu-id="df870-226">If-Match</span></span>| <span data-ttu-id="df870-227">このヘッダーは、変更要求を行うときに、リストの現在のバージョン番号を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="df870-227">This header must contain the current version number of a list when making modify requests.</span></span> <span data-ttu-id="df870-228">変更要求の使用 PUT、POST、または動詞を削除します。</span><span class="sxs-lookup"><span data-stu-id="df870-228">Modify requests use PUT, POST, or DELETE verbs.</span></span> <span data-ttu-id="df870-229">現在のバージョン一覧の"If-match"ヘッダー内のバージョンが一致しない場合、http/412 で、要求は拒否されます: precondition failed リターン コード。</span><span class="sxs-lookup"><span data-stu-id="df870-229">If the version in the "If-Match" header does not match the current version of the list, the request will be rejected with an HTTP 412 – precondition failed return code.</span></span> <span data-ttu-id="df870-230">(省略可能)使用できますの取得、現在の一覧のバージョンし一覧データがないと、HTTP 304 存在と渡されたバージョンに一致する場合は変更されませんコードが返されます。</span><span class="sxs-lookup"><span data-stu-id="df870-230">(optional) Can also be used for GETs, if present and the passed in version matches the current list version then no list data and an HTTP 304 – Not Modified code will be returned.</span></span> | 
+  
+<a id="ID4EQDAC"></a>
+
+ 
+## <a name="response-body"></a><span data-ttu-id="df870-231">応答本文</span><span class="sxs-lookup"><span data-stu-id="df870-231">Response body</span></span> 
+ 
+<span data-ttu-id="df870-232">呼び出しが成功した場合、サービスは、一覧の最新のメタデータを返します。</span><span class="sxs-lookup"><span data-stu-id="df870-232">If the call is successful, the service returns the latest metadata for the list.</span></span> 
+ 
+<a id="ID4E1DAC"></a>
+
+ 
+### <a name="sample-response"></a><span data-ttu-id="df870-233">応答の例</span><span class="sxs-lookup"><span data-stu-id="df870-233">Sample response</span></span> 
+ 
+
+```cpp
+{ 
+  "ListVersion":  1,
+  "ListCount":  1,
+  "MaxListSize": 200,
+  "AllowDuplicates": "true",
+  "AccessSetting":  "OwnerOnly"
+}
+
+      
+```
+
+   
+<a id="ID4EIEAC"></a>
+
+ 
+## <a name="see-also"></a><span data-ttu-id="df870-234">関連項目</span><span class="sxs-lookup"><span data-stu-id="df870-234">See also</span></span>
+ 
+<a id="ID4EKEAC"></a>
+
+ 
+##### <a name="parent"></a><span data-ttu-id="df870-235">Parent</span><span class="sxs-lookup"><span data-stu-id="df870-235">Parent</span></span> 
+
+[<span data-ttu-id="df870-236">ユーザー/xuid (xuid)//ピン/{リスト} の一覧を示します (/members) のインデックス/かどうか insertIndex = {insertIndex}。</span><span class="sxs-lookup"><span data-stu-id="df870-236">/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}</span></span>](uri-usersxuidlistspinslistnameindex.md)
+
+   

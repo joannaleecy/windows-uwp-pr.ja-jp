@@ -9,26 +9,27 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, エラー処理
-ms.localizationpriority: low
-ms.openlocfilehash: 30657270e3e6e0d52ca409dabac18f747630a27d
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 9863ac224e04d48265a05fe56ed484db5dcc3cd8
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3882508"
 ---
-# <a name="c-api-error-handling"></a><span data-ttu-id="48e03-104">C++ API のエラー処理</span><span class="sxs-lookup"><span data-stu-id="48e03-104">C++ API error handling</span></span>
+# <a name="c-api-error-handling"></a><span data-ttu-id="275f5-104">C++ API のエラー処理</span><span class="sxs-lookup"><span data-stu-id="275f5-104">C++ API error handling</span></span>
 
-<span data-ttu-id="48e03-105">C++ API のほとんどの呼び出しは、例外をスローするのではなく、必要に応じて xbox_live_result<payload_type> を返します。</span><span class="sxs-lookup"><span data-stu-id="48e03-105">In the C++ API, rather than throwing exceptions, most calls will return xbox_live_result<payload_type> as appropriate.</span></span>
+<span data-ttu-id="275f5-105">C++ API のほとんどの呼び出しは、例外をスローするのではなく、必要に応じて xbox_live_result<payload_type> を返します。</span><span class="sxs-lookup"><span data-stu-id="275f5-105">In the C++ API, rather than throwing exceptions, most calls will return xbox_live_result<payload_type> as appropriate.</span></span>
 
-## <a name="xboxliveresult-structure"></a><span data-ttu-id="48e03-106">xbox_live_result structure</span><span class="sxs-lookup"><span data-stu-id="48e03-106">xbox_live_result structure</span></span>
-<span data-ttu-id="48e03-107">xbox_live_result には 3 つの項目があります。</span><span class="sxs-lookup"><span data-stu-id="48e03-107">xbox_live_result has 3 items:</span></span>
-1. <span data-ttu-id="48e03-108">操作によって返されるエラー</span><span class="sxs-lookup"><span data-stu-id="48e03-108">The error returned by the operation,</span></span>
-2. <span data-ttu-id="48e03-109">デバッグに使用する具体的なエラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="48e03-109">Specific error message used for debugging purposes and</span></span>
-3. <span data-ttu-id="48e03-110">結果のペイロード (エラーがあった場合、空の可能性があります)</span><span class="sxs-lookup"><span data-stu-id="48e03-110">The payload of the result (can be empty if there was an error)"</span></span>
+## <a name="xboxliveresult-structure"></a><span data-ttu-id="275f5-106">xbox_live_result structure</span><span class="sxs-lookup"><span data-stu-id="275f5-106">xbox_live_result structure</span></span>
+<span data-ttu-id="275f5-107">xbox_live_result には 3 つの項目があります。</span><span class="sxs-lookup"><span data-stu-id="275f5-107">xbox_live_result has 3 items:</span></span>
+1. <span data-ttu-id="275f5-108">操作によって返されるエラー</span><span class="sxs-lookup"><span data-stu-id="275f5-108">The error returned by the operation,</span></span>
+2. <span data-ttu-id="275f5-109">デバッグに使用する具体的なエラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="275f5-109">Specific error message used for debugging purposes and</span></span>
+3. <span data-ttu-id="275f5-110">結果のペイロード (エラーがあった場合、空の可能性があります)</span><span class="sxs-lookup"><span data-stu-id="275f5-110">The payload of the result (can be empty if there was an error)"</span></span>
 
-<span data-ttu-id="48e03-111">xbox_live_result およびエラー コードの詳細については、Xbox Live のドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="48e03-111">You can get more information on xbox_live_result as well as what the error codes are in Xbox Live documentation.</span></span>
+<span data-ttu-id="275f5-111">xbox_live_result およびエラー コードの詳細については、Xbox Live のドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="275f5-111">You can get more information on xbox_live_result as well as what the error codes are in Xbox Live documentation.</span></span>
 
-<span data-ttu-id="48e03-112">その構造は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="48e03-112">The structure is as follows:</span></span>
+<span data-ttu-id="275f5-112">その構造は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="275f5-112">The structure is as follows:</span></span>
 
 ```cpp
 template<typename T>
@@ -40,13 +41,13 @@ class xbox_live_result
 };
 ```
 
-<span data-ttu-id="48e03-113">**err** - エラーを返します。</span><span class="sxs-lookup"><span data-stu-id="48e03-113">**err** - Returns the error.</span></span>  <span data-ttu-id="48e03-114">エラーがない場合は NULL 参照です。</span><span class="sxs-lookup"><span data-stu-id="48e03-114">Will be a NULL reference with no error.</span></span>  <span data-ttu-id="48e03-115">これは C++ STL エラーと同様に動作し、value() を呼び出すことによってプリミティブ値を取得できます。</span><span class="sxs-lookup"><span data-stu-id="48e03-115">This behaves as the C++ STL error does in that you can get the primitive value by calling value().</span></span>  <span data-ttu-id="48e03-116">message() を呼び出すと文字列表現を取得できます。</span><span class="sxs-lookup"><span data-stu-id="48e03-116">Calling message() will get you a string representation.</span></span>  <span data-ttu-id="48e03-117">したがって、エラー コードが "Invalid Argument" という意味の場合、```err().message()``` は "Invalid Argument" というテキストになります。</span><span class="sxs-lookup"><span data-stu-id="48e03-117">So if the error code means "Invalid Argument", then ```err().message()``` would be the text "Invalid Argument".</span></span>
+<span data-ttu-id="275f5-113">**err** - エラーを返します。</span><span class="sxs-lookup"><span data-stu-id="275f5-113">**err** - Returns the error.</span></span>  <span data-ttu-id="275f5-114">エラーがない場合は NULL 参照です。</span><span class="sxs-lookup"><span data-stu-id="275f5-114">Will be a NULL reference with no error.</span></span>  <span data-ttu-id="275f5-115">これは C++ STL エラーと同様に動作し、value() を呼び出すことによってプリミティブ値を取得できます。</span><span class="sxs-lookup"><span data-stu-id="275f5-115">This behaves as the C++ STL error does in that you can get the primitive value by calling value().</span></span>  <span data-ttu-id="275f5-116">message() を呼び出すと文字列表現を取得できます。</span><span class="sxs-lookup"><span data-stu-id="275f5-116">Calling message() will get you a string representation.</span></span>  <span data-ttu-id="275f5-117">したがって、エラー コードが "Invalid Argument" という意味の場合、```err().message()``` は "Invalid Argument" というテキストになります。</span><span class="sxs-lookup"><span data-stu-id="275f5-117">So if the error code means "Invalid Argument", then ```err().message()``` would be the text "Invalid Argument".</span></span>
 
-<span data-ttu-id="48e03-118">**err_message** - エラーの詳細です。</span><span class="sxs-lookup"><span data-stu-id="48e03-118">**err_message** - Elaborates on the error.</span></span>  <span data-ttu-id="48e03-119">たとえば、**err** が "Invalid Argument" の場合、**err_message** では無効な引数が詳しく示されます。</span><span class="sxs-lookup"><span data-stu-id="48e03-119">For example if **err** is "Invalid Argument", then **err_message** would elaborate on which argument is invalid.</span></span>
+<span data-ttu-id="275f5-118">**err_message** - エラーの詳細です。</span><span class="sxs-lookup"><span data-stu-id="275f5-118">**err_message** - Elaborates on the error.</span></span>  <span data-ttu-id="275f5-119">たとえば、**err** が "Invalid Argument" の場合、**err_message** では無効な引数が詳しく示されます。</span><span class="sxs-lookup"><span data-stu-id="275f5-119">For example if **err** is "Invalid Argument", then **err_message** would elaborate on which argument is invalid.</span></span>
 
-<span data-ttu-id="48e03-120">**payload** - 対象の項目を返します。</span><span class="sxs-lookup"><span data-stu-id="48e03-120">**payload** - Return the item of interest.</span></span>  <span data-ttu-id="48e03-121">たとえば、get_achievement の呼び出しから取得する ```xbox_live_result<achievement>``` について考えます。</span><span class="sxs-lookup"><span data-stu-id="48e03-121">For example consider ```xbox_live_result<achievement>``` which you might get from calling get_achievement.</span></span>  <span data-ttu-id="48e03-122">この例では、ペイロードは実績自体になります (エラーがない場合)。</span><span class="sxs-lookup"><span data-stu-id="48e03-122">In this example, the payload would be the achievement itself (if no error is present).</span></span>
+<span data-ttu-id="275f5-120">**payload** - 対象の項目を返します。</span><span class="sxs-lookup"><span data-stu-id="275f5-120">**payload** - Return the item of interest.</span></span>  <span data-ttu-id="275f5-121">たとえば、get_achievement の呼び出しから取得する ```xbox_live_result<achievement>``` について考えます。</span><span class="sxs-lookup"><span data-stu-id="275f5-121">For example consider ```xbox_live_result<achievement>``` which you might get from calling get_achievement.</span></span>  <span data-ttu-id="275f5-122">この例では、ペイロードは実績自体になります (エラーがない場合)。</span><span class="sxs-lookup"><span data-stu-id="275f5-122">In this example, the payload would be the achievement itself (if no error is present).</span></span>
 
-## <a name="example"></a><span data-ttu-id="48e03-123">例</span><span class="sxs-lookup"><span data-stu-id="48e03-123">Example</span></span>
+## <a name="example"></a><span data-ttu-id="275f5-123">例</span><span class="sxs-lookup"><span data-stu-id="275f5-123">Example</span></span>
 
 ```cpp
 // Function which returns an xbox_live_result
@@ -80,16 +81,16 @@ else if (achievementResult.err() == xbox_live_error_condition::auth)
 
 ```
 
-## <a name="using-xboxliveerrorcondition-to-test-against-broad-error-categories"></a><span data-ttu-id="48e03-124">広範なエラー カテゴリーテストするための xbox_live_error_condition の使用</span><span class="sxs-lookup"><span data-stu-id="48e03-124">Using xbox_live_error_condition to test against broad error categories</span></span>
-<span data-ttu-id="48e03-125">上の例では、403 エラーおよび ```xbox_live_error_condition::auth``` などについてのエラー コードをテストしています。</span><span class="sxs-lookup"><span data-stu-id="48e03-125">In the above example, we test the error code against 403 errors, as well as something called ```xbox_live_error_condition::auth```.</span></span>
+## <a name="using-xboxliveerrorcondition-to-test-against-broad-error-categories"></a><span data-ttu-id="275f5-124">広範なエラー カテゴリーテストするための xbox_live_error_condition の使用</span><span class="sxs-lookup"><span data-stu-id="275f5-124">Using xbox_live_error_condition to test against broad error categories</span></span>
+<span data-ttu-id="275f5-125">上の例では、403 エラーおよび ```xbox_live_error_condition::auth``` などについてのエラー コードをテストしています。</span><span class="sxs-lookup"><span data-stu-id="275f5-125">In the above example, we test the error code against 403 errors, as well as something called ```xbox_live_error_condition::auth```.</span></span>
 
- <span data-ttu-id="48e03-126">xbox_live_result err() 関数を使用すると、エラー コードを個別にテストできます。</span><span class="sxs-lookup"><span data-stu-id="48e03-126">When using xbox_live_result err() function, one can test against error codes individually.</span></span>  <span data-ttu-id="48e03-127">たとえば、400 クラスのエラーの場合、以下に対する個別のテストと制御フローがあります。</span><span class="sxs-lookup"><span data-stu-id="48e03-127">For example, for 400 class errors you could have individual testing and control flow for:</span></span>
+ <span data-ttu-id="275f5-126">xbox_live_result err() 関数を使用すると、エラー コードを個別にテストできます。</span><span class="sxs-lookup"><span data-stu-id="275f5-126">When using xbox_live_result err() function, one can test against error codes individually.</span></span>  <span data-ttu-id="275f5-127">たとえば、400 クラスのエラーの場合、以下に対する個別のテストと制御フローがあります。</span><span class="sxs-lookup"><span data-stu-id="275f5-127">For example, for 400 class errors you could have individual testing and control flow for:</span></span>
 
-* <span data-ttu-id="48e03-128">xbox_live_error_code::http_status_400_bad_request</span><span class="sxs-lookup"><span data-stu-id="48e03-128">xbox_live_error_code::http_status_400_bad_request</span></span>
-* <span data-ttu-id="48e03-129">xbox_live_error_code::http_status_401_unauthorized</span><span class="sxs-lookup"><span data-stu-id="48e03-129">xbox_live_error_code::http_status_401_unauthorized</span></span>
-* <span data-ttu-id="48e03-130">xbox_live_error_code::http_status_403_forbidden</span><span class="sxs-lookup"><span data-stu-id="48e03-130">xbox_live_error_code::http_status_403_forbidden</span></span>
-* <span data-ttu-id="48e03-131">など</span><span class="sxs-lookup"><span data-stu-id="48e03-131">etc</span></span>
+* <span data-ttu-id="275f5-128">xbox_live_error_code::http_status_400_bad_request</span><span class="sxs-lookup"><span data-stu-id="275f5-128">xbox_live_error_code::http_status_400_bad_request</span></span>
+* <span data-ttu-id="275f5-129">xbox_live_error_code::http_status_401_unauthorized</span><span class="sxs-lookup"><span data-stu-id="275f5-129">xbox_live_error_code::http_status_401_unauthorized</span></span>
+* <span data-ttu-id="275f5-130">xbox_live_error_code::http_status_403_forbidden</span><span class="sxs-lookup"><span data-stu-id="275f5-130">xbox_live_error_code::http_status_403_forbidden</span></span>
+* <span data-ttu-id="275f5-131">など</span><span class="sxs-lookup"><span data-stu-id="275f5-131">etc</span></span>
 
-<span data-ttu-id="48e03-132">ただし、このような方法ではなく、エラーのクラス全体に対してテストする方が効率的です。</span><span class="sxs-lookup"><span data-stu-id="48e03-132">But typically this is not what you want to do and you want to test against a class of errors as one.</span></span>  <span data-ttu-id="48e03-133">そこで、```xbox_live_error_condition``` クラスで使用できる列挙値を使用してエラーのクラスに対してテストします。</span><span class="sxs-lookup"><span data-stu-id="48e03-133">So you can test against a class of errors using the enums available in the ```xbox_live_error_condition``` class.</span></span>  <span data-ttu-id="48e03-134">多数のエラー コードに対するテストを自動化する等値演算子のオーバーロードが実装されています。</span><span class="sxs-lookup"><span data-stu-id="48e03-134">We implement an overload for the equality operator which will automate testing against many error codes.</span></span>  <span data-ttu-id="48e03-135">```auth``` に加えて、```rta``` and ```http``` などのカテゴリーがあります。</span><span class="sxs-lookup"><span data-stu-id="48e03-135">In addition to ```auth```, there are categories like ```rta``` and ```http```.</span></span>  <span data-ttu-id="48e03-136">完全なリストは、*errors.h* または *xblsdk_cpp.chm* で確認できます。</span><span class="sxs-lookup"><span data-stu-id="48e03-136">The full list can be found in *errors.h* or in *xblsdk_cpp.chm*.</span></span>
+<span data-ttu-id="275f5-132">ただし、このような方法ではなく、エラーのクラス全体に対してテストする方が効率的です。</span><span class="sxs-lookup"><span data-stu-id="275f5-132">But typically this is not what you want to do and you want to test against a class of errors as one.</span></span>  <span data-ttu-id="275f5-133">そこで、```xbox_live_error_condition``` クラスで使用できる列挙値を使用してエラーのクラスに対してテストします。</span><span class="sxs-lookup"><span data-stu-id="275f5-133">So you can test against a class of errors using the enums available in the ```xbox_live_error_condition``` class.</span></span>  <span data-ttu-id="275f5-134">多数のエラー コードに対するテストを自動化する等値演算子のオーバーロードが実装されています。</span><span class="sxs-lookup"><span data-stu-id="275f5-134">We implement an overload for the equality operator which will automate testing against many error codes.</span></span>  <span data-ttu-id="275f5-135">```auth``` に加えて、```rta``` and ```http``` などのカテゴリーがあります。</span><span class="sxs-lookup"><span data-stu-id="275f5-135">In addition to ```auth```, there are categories like ```rta``` and ```http```.</span></span>  <span data-ttu-id="275f5-136">完全なリストは、*errors.h* または *xblsdk_cpp.chm* で確認できます。</span><span class="sxs-lookup"><span data-stu-id="275f5-136">The full list can be found in *errors.h* or in *xblsdk_cpp.chm*.</span></span>
 
-<span data-ttu-id="48e03-137">これに関して説明している動画、および C++ Xbox Service API のその他の機能については、[Xfest 2015 のビデオ](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx)の「*XSAPI:C++, No Exceptions!*」にある Xfest の講演をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="48e03-137">For a video that covers this, and some other features of the C++ Xbox Service API, please check out our XFest talk in [Xfest 2015 Videos](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx) under *XSAPI: C++, No Exceptions!*</span></span>
+<span data-ttu-id="275f5-137">これに関して説明している動画、および C++ Xbox Service API のその他の機能については、[Xfest 2015 のビデオ](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx)の「*XSAPI:C++, No Exceptions!*」にある Xfest の講演をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="275f5-137">For a video that covers this, and some other features of the C++ Xbox Service API, please check out our XFest talk in [Xfest 2015 Videos](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx) under *XSAPI: C++, No Exceptions!*</span></span>
