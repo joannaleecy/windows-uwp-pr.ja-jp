@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, アドオン, プロパティ, サブスクリプション期間, 製品の有効期間, コンテンツの種類, iap, アプリ内購入, アプリ内製品
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a494ea1899f3a764a668ae61c1235808eff1a7
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849796"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3931563"
 ---
 # <a name="enter-add-on-properties"></a>アドオン プロパティの入力
 
@@ -44,7 +44,7 @@ ms.locfileid: "3849796"
 
 ## <a name="subscription-period"></a>サブスクリプション期間
 
-製品の種類として **[サブスクリプション]** を選んだ場合、**[サブスクリプション期間]** がここに表示されます。 サブスクリプション料を課金する頻度を指定するオプションを選びす。 既定のオプションが**毎月**には、 **3 か月**、 **6 か月**、**年**、または**24 か月間**を選択することもできます。
+製品の種類として **[サブスクリプション]** を選んだ場合、**[サブスクリプション期間]** がここに表示されます。 サブスクリプション料を課金する頻度を指定するオプションを選びす。 既定のオプションでは、**毎月**が、 **3 か月**、 **6 か月**、**年**、または**24 か月**を選択することもできます。
 
 > [!IMPORTANT]
 > アドオンが公開されると、**[サブスクリプション期間]** の指定は変更できません。

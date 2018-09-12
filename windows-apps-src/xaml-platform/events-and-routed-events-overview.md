@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ca58613a5874cde10d2bb5322c3f930e1fbce44
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849236"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933763"
 ---
 # <a name="events-and-routed-events-overview"></a>イベントとルーティング イベントの概要
 
@@ -153,7 +153,7 @@ End Sub
 
 **注** Visual Studio とその XAML デザイン サーフェイスでは、一般に、**Handles** キーワードの代わりにインスタンス処理の手法が推奨されます。 その理由は、XAML でのイベント ハンドラーの関連付けがデザイナーと開発者が対処する一般的なワークフローに含まれるだけでなく、**Handles** キーワードを使う手法に XAML でのイベント ハンドラーの関連付けとの互換性がないためです。
 
-C++ +/CX では、使用することも、**+=** 構文が c# の基本的な形式からの違いがあります。
+C++/cli CX、使用することも、**+=** 構文では c# の基本的な形式からの違いがありますが。
 
 -   デリゲートの推論は行われないため、**ref new** でデリゲート インスタンスを作成する必要があります。
 -   デリゲート コンストラクターにパラメーターが 2 つあり、最初のパラメーターでターゲット オブジェクトを指定する必要があります。 通常は **this** を指定します。

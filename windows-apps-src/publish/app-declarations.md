@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3847646"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933583"
 ---
 # <a name="product-declarations"></a>製品の宣言
 
-[申請プロセス](app-submissions.md)の [[プロパティ](enter-app-properties.md)] ページの**製品の宣言**のセクションは、アプリが適切に表示され、ユーザーとアプリの使用方法をわかりやすくの適切なセットに提供されるかどうかを確認に役立ちます。
+[申請プロセス](app-submissions.md)の [[プロパティ](enter-app-properties.md)] ページの**製品の宣言**」セクションでは、アプリが適切に表示され、顧客、およびアプリを使用する方法をわかりやすくの適切なセットに提供されることを確認するのに役立ちます。
 
-次のセクションでは、いくつかの宣言と、各宣言をアプリに適用するかどうかを決定する際に考慮する必要がありますについて説明します。 2 つのこれらの宣言が選ばれて既定 (以下のとおりです。) に注意してください。によって、製品のカテゴリでは、その他の宣言を確認することも可能性があります。 必ずをすべての宣言を確認し、申請が正確に反映されることを確認してください。
+次のセクションでは、いくつかの宣言と、各宣言をアプリに適用するかどうかを決定するときに考慮する必要があるについて説明します。 これらの宣言の 2 つが選ばれて既定では (以下のとおりです。) に注意してください。製品のカテゴリによって、追加の宣言を確認することも可能性があります。 必ずすべての宣言を確認し、申請が正確に反映されることを確認してください。
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>このアプリは、購入を行うことができますが、Microsoft Store コマース システムを使用できません。
 
-ほぼすべての申請では、このチェック ボックスをオフのままにする必要があります、以降を購入できるアプリはまたは消費またはアプリ内で使用できる項目は、作成して、アドオンを提出する Microsoft Store アプリ内購入 API を使う必要があります。 購入機能は、[に準拠している限り、Microsoft のコマース エンジンを使用せず、アプリ内購入機能を提供する続けることが作成され、2015 年 6 月 29 日より前に提出されたアプリごと、[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)します。 アプリがこれに該当する場合、このチェック ボックスをオンにする必要があります。 それ以外の場合は、オフのままにします。
+ほぼすべての申請では、このチェック ボックスをオフのままにする必要があります、アプリを購入する機会を提供するためはまたは消費またはアプリ内で使用できる項目は、アドオンの申請を作成して Microsoft Store アプリ内購入 API を使う必要があります。 購入機能、[に準拠している限り、Microsoft のコマース エンジンを使用せず、アプリ内購入機能を提供する続けることが作成され、2015 年 6 月 29 日より前に提出されたアプリごと、[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)します。 アプリがこれに該当する場合、このチェック ボックスをオンにする必要があります。 それ以外の場合は、オフのままにします。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>このアプリは、アクセシビリティ ガイドラインを満していることがテストされました。
 
@@ -41,16 +41,16 @@ ms.locfileid: "3847646"
 
 アプリをアクセシビリティ対応として宣言すると、障碍を持つユーザーも含めてすべてのユーザーがアプリにアクセスできることに同意したことになります。 たとえば、アプリをハイ コントラスト モードやスクリーン リーダーでテストしたことを意味します。 ユーザー インターフェイスがキーボード、拡大鏡、その他のアクセシビリティ ツールで適切に機能することも検証しておく必要があります。
 
-詳しくは、[アクセシビリティ](../design/accessibility/accessibility.md)、[アクセシビリティのテスト](../design/accessibility/accessibility-testing.md)、および[ストア内のアクセシビリティ](../design/accessibility/accessibility-in-the-store.md)をご覧ください。
+詳しくは、[アクセシビリティ](../design/accessibility/accessibility.md)、[アクセシビリティのテスト](../design/accessibility/accessibility-testing.md)、および[ストア内のアクセシビリティ](../design/accessibility/accessibility-in-the-store.md)を参照してください。
 
 > [!IMPORTANT]
-> 具体的な設計し、その目的をテストする場合を除き、アプリがアクセシビリティ対応の一覧をしないでください。 アプリをアクセシビリティ対応と宣言しているのにアクセシビリティを実際にサポートしていないと、コミュニティから否定的なフィードバックを受けるおそれがあります。
+> 具体的にはエンジニア リングし、その目的のためにテストがない限り、アプリがアクセシビリティ対応の一覧をしないでください。 アプリをアクセシビリティ対応と宣言しているのにアクセシビリティを実際にサポートしていないと、コミュニティから否定的なフィードバックを受けるおそれがあります。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。
 
-このチェック ボックスはユーザーを外部またはリムーバブル ストレージの外部ドライブなどのメディアや、SD カードなど、非システム ボリュームにドライブにアプリをインストールできるように、既定でオンです。 (Windows Phone 8.1 では、これが以前指定して StoreManifest.xml。)
+このチェック ボックスはユーザーを外部ドライブなどのメディアが SD カードなど、または非システム ボリュームにドライブまたは外部のリムーバブル ストレージにアプリをインストールできるように、既定でオンです。 (Windows Phone 8.1 では、これが以前指定して StoreManifest.xml。)
 
-アプリが代替ドライブやリムーバブル記憶域にインストールされているようにおよびのみがデバイスに内部ハード ドライブにインストールできるようにするには、このチェック ボックスをオフにします。
+アプリが代替ドライブやリムーバブル記憶域にインストールされていることを防ぐし、のみがデバイスに内部ハード ドライブへのインストールを許可する場合は、このチェック ボックスをオフにします。
 
 注アプリ*だけ*が参照できるように、インストールを制限するオプションはありませんが、リムーバブル記憶域メディアにインストールされます。
 
@@ -62,9 +62,9 @@ ms.locfileid: "3847646"
 アプリのデータが自動バックアップに含まれないようにする場合は、このボックスをオフにします。
 
 
-## <a name="this-app-sends-kinect-data-to-external-services"></a>このアプリでは、外部サービスに Kinect データを送信します。 
+## <a name="this-app-sends-kinect-data-to-external-services"></a>このアプリは、外部サービスに Kinect データを送信します。 
 
-アプリが Kinect データを使用して、任意の外部サービスに送信する場合は、このチェック ボックスを確認する必要があります。
+アプリが Kinect データを使用して、でも外部サービスに送信された場合は、このボックスをオンする必要があります。
 
 
 

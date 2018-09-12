@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a16339e0918f8291f7b1cc7a3a6dfef3ccf375d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3847216"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3932037"
 ---
 # <a name="package-version-numbering"></a>パッケージ バージョンの番号付け
 
@@ -28,16 +28,16 @@ ms.locfileid: "3847216"
 ## <a name="version-numbering-for-windows-10-packages"></a>Windows 10 パッケージのバージョン番号付け
 
 > [!IMPORTANT]
-> Windows 10 パッケージ バージョン番号の最後 (4 番目) のセクションはストア用に予約されておりと (ただし、ストアでは、このセクションの値を変更可能性があります)、パッケージをビルドする際まま 0 にする必要があります。
+> Windows 10 パッケージのバージョン番号の最後 (4 番目) のセクションはストア用に予約されておりままにしてする必要があります 0 (ただし、ストアでは、このセクションの値を変更可能性があります)、パッケージをビルドするとします。
 
 公開された申請から Windows 10 パッケージを選択すると、Microsoft Store は常にユーザーのデバイスに適用可能で最も高いバージョンのパッケージを使用します。 これにより高い柔軟性が与えられ、特定のデバイスの種類のユーザーにどのパッケージを提供するかを管理することができます。 重要なことに、これらのパッケージは任意の順序で申請することができます。後続の各申請でより高いバージョンのパッケージを提供する必要はありません。
 
 > [!TIP]
-> アプリでは、Windows 8 や Windows 8.1、Windows Phone 8.1 のパッケージもに、Windows 10 パッケージのバージョン番号は、それらのパッケージのバージョン番号のいずれかのよりも高いある常に必要があります。 詳しくは、「[以前に公開したアプリに Windows 10 用のパッケージを追加する](https://docs.microsoft.com/en-us/windows/uwp/publish/guidance-for-app-package-management#adding-packages-for-windows-10-to-a-previously-published-app)」をご覧ください。
+> アプリでは、Windows 8、Windows 8.1、または Windows Phone 8.1 のパッケージもに、Windows 10 パッケージのバージョン番号はそれらのパッケージのバージョン番号のいずれかのよりも高い常になる必要があります。 詳しくは、「[以前に公開したアプリに Windows 10 用のパッケージを追加する](https://docs.microsoft.com/en-us/windows/uwp/publish/guidance-for-app-package-management#adding-packages-for-windows-10-to-a-previously-published-app)」をご覧ください。
 
-同じバージョン番号には、複数の Windows 10 パッケージを提供できます。 ただし、バージョン番号を共有するパッケージが同じアーキテクチャを持つことはできません。ストアで各パッケージに使用する完全な ID は一意である必要があるためです。 詳しくは、「[**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)」をご覧ください。
+同じバージョン番号を持つ複数の Windows 10 パッケージを提供できます。 ただし、バージョン番号を共有するパッケージが同じアーキテクチャを持つことはできません。ストアで各パッケージに使用する完全な ID は一意である必要があるためです。 詳しくは、「[**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)」をご覧ください。
 
-同じバージョン番号を使用する複数の Windows 10 パッケージを提供する場合はアーキテクチャ (x64、x86、ARM、ニュートラルの順番) を使用してどのランクがより高い場合、ストアは、ユーザーのデバイスに提供するには、どのパッケージを決定します) を決定します。 バージョン番号が同じアプリ バンドルにランクを付けるときは、x64 パッケージが含まれているアプリ バンドルが x86 パッケージしか含まれていないアプリ バンドルより高いランクとなるようにバンドル内で最高のアーキテクチャのランクを考慮します。
+同じバージョン番号を使用する複数の Windows 10 パッケージを提供する場合は、どのランクがより高い場合、ストアは、ユーザーのデバイスに提供するには、どのパッケージを決定します) を決定するアーキテクチャ (x64、x86、ARM、ニュートラルの順番) が使用されます。 バージョン番号が同じアプリ バンドルにランクを付けるときは、x64 パッケージが含まれているアプリ バンドルが x86 パッケージしか含まれていないアプリ バンドルより高いランクとなるようにバンドル内で最高のアーキテクチャのランクを考慮します。
 
 これにより、アプリを時間をかけて進化させる大きな柔軟性が与えられます。 小さいバージョン番号を使って新しいパッケージをアップロードして申請し、以前サポートしていなかった手頃なデバイスのサポートを追加したり、より厳密な依存関係を持つより高いバージョンのパッケージを追加してハードウェアまたは OS の機能を利用したり、既存のユーザー ベースの一部または全部に更新となるより高いバージョンのパッケージを追加したりすることができます。
 
@@ -61,7 +61,7 @@ Windows 10 では、すべての場所で実行される単一のコードベー
 
 ### <a name="using-version-numbering-to-roll-back-to-a-previously-shipped-package-for-new-acquisitions"></a>新規の取得のためにバージョン番号を使用して以前配布したパッケージにロールバックする
 
-コピーを維持する場合にロールバックするアプリのパッケージ、ストアで以前の Windows 10 パッケージに、リリースに関する問題を検出する場合は、ことができます。 これは、問題を修正する間のユーザーの中断を限定するための一時的な方法です。
+コピーを維持する場合にロールバックするアプリのパッケージ、ストアで以前の Windows 10 パッケージのリリースに関する問題が見つかった場合ことができます。 これは、問題を修正する間のユーザーの中断を限定するための一時的な方法です。
 
 これを行うには、新しい[申請](app-submissions.md)を作成します。 問題があるパッケージを削除して、ストアで提供する以前のパッケージをアップロードします。 ロールバックするパッケージを既に受け取っているユーザーは問題のあるパッケージを持ったままになります (以前のパッケージのバージョン番号がより小さいため)。 しかし、これにより、ストアでアプリを利用できるようにした間にその他のユーザーが問題のあるパッケージを取得することができなくなります。
 
@@ -77,7 +77,7 @@ Windows 8 と Windows 8.1 を対象とする .appx パッケージでは、ア�
 さらに、Windows 8.1 用パッケージのバージョン番号は、同じアプリのどの Windows 8 用パッケージのバージョン番号よりも常に大きい必要があります。 言い換えれば、申請する Windows 8 用パッケージのバージョン番号は、同じアプリについて申請したすべての Windows 8.1 用パッケージのバージョン番号よりも小さい必要があります。
 
 > [!NOTE]
-> アプリでは、Windows 10 パッケージもに場合、Windows 10 パッケージのバージョン番号は、Windows 8 や Windows 8.1、Windows Phone 8.1 パッケージのいずれかより大きいである必要があります。 詳しくは、「[以前に公開したアプリに Windows 10 用のパッケージを追加する](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)」をご覧ください。
+> アプリでは、Windows 10 パッケージもに、Windows 10 パッケージのバージョン番号、Windows 8、Windows 8.1、または Windows Phone 8.1 パッケージのいずれかより大きい場合があります。 詳しくは、「[以前に公開したアプリに Windows 10 用のパッケージを追加する](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)」をご覧ください。
 
 ここでは、Windows 8 と Windows 8.1 のさまざまなバージョン番号の更新シナリオで何が起きるかの例を示します。
 

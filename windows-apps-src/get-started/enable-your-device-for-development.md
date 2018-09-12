@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ad817bbae2fb8b28b95095880aa1a65c391720f3
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846846"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934757"
 ---
 # <a name="enable-your-device-for-development"></a>デバイスを開発用に有効にする
 
@@ -150,7 +150,7 @@ Windows 10 PC から Windows 10 デバイスへのアプリの展開に使用で
 これらの問題に対する回避策を検索するには、[既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)フォーラムをご覧ください。 
 
 > [!NOTE]
-> 開発者モードが正しくインストールしない場合、要求をフィードバックをお勧めします。 **フィードバック Hub**アプリでは、**新しいフィードバックの追加**を選択し、**開発者向けプラットフォーム**カテゴリと**開発者モード**のサブカテゴリを選択します。 フィードバックの送信は Microsoft が発生した問題解決に役立ちます。
+> 開発者モードが正しくインストールしない場合、要求をフィードバックをお勧めします。 **フィードバック Hub**アプリで**新しいフィードバックの追加**、し、**開発者向けプラットフォーム**カテゴリとサブカテゴリ**開発者モード**を選択します。 フィードバックの送信は、Microsoft が発生した問題を解決するに役立ちます。
 
 ### <a name="failed-to-locate-the-package"></a>パッケージ検索エラー
 

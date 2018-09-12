@@ -11,18 +11,18 @@ keywords: windows 10, uwp, バージョン, 作成, バージョン, windows, �
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: c7951098e576047b5c82da72b7c4e9118ffb7569
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848706"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934005"
 ---
 # <a name="choose-a-uwp-version"></a>UWP バージョンの選択
 
 Windows 10 の各バージョンでは、新機能や強化された機能が UWP プラットフォームに提供されます。 Microsoft Visual Studio で UWP アプリを作成するときは、ターゲットのバージョンを選択できます。 [.NET Standard 2.0](https://docs.microsoft.com/dotnet/standard/net-standard) を使うプロジェクトには、ビルド 16299 以降の**最小バージョン**が必要です。
 
 > [!WARNING]
-> Visual Studio 2015 では、現在のバージョンの Visual Studio で作成された UWP プロジェクトを開くことができません。
+> Visual Studio 2015 では、現在のバージョンの Visual Studio で作成した UWP プロジェクトを開くことができません。
 
 次の表に、Windows 10 で利用できるバージョンを示します。 この表は、Windows 10 でのみサポートされる UWP アプリを作成する場合にだけ適用されることに注意してください。 以前のバージョンの Windows 向けに UWP アプリを開発することはできません。また、目的のバージョンをターゲットにするには、[SDK の適切なビルドをインストール](http://go.microsoft.com/fwlink/?LinkId=821431)する必要があります。 
 
@@ -35,7 +35,7 @@ Windows 10 の各バージョンでは、新機能や強化された機能が UW
 | ビルド 10586 (November Update バージョン 1511) | このバージョンの Windows 10 は、2015 年 11 月にリリースされました。 このリリースでは主な新機能として、Microsoft Edge のビデオ通信用 ORTC (オブジェクト リアルタイム通信) APIと、アプリで Windows Hello 顔認証を使うためのプロバイダー API が導入されました。 [このビルドで導入された機能について詳しくはこちらをご覧ください。](../whats-new/windows-10-build-10586.md) |
 | ビルド 10240 (Windows 10 バージョン 1507) | 2015 年 7 月にリリースされた Windows 10 の初期リリース バージョンです。 [このビルドで導入された機能について詳しくはこちらをご覧ください。](../whats-new/windows-10-build-10240.md) |
 
-新しいを常に、一般のユーザーのコードを新しく開発するが、最新のビルドの Windows (17134) を使用することを強くお勧めします。 エンタープライズ アプリを開発する場合は、**最小バージョン**で古いバージョンをサポートすることを検討してください。
+新しい開発者と常に、一般的なユーザーを対象にコードを記述する開発者が最新ビルドの Windows (17134) を使用することを強くお勧めします。 エンタープライズ アプリを開発する場合は、**最小バージョン**で古いバージョンをサポートすることを検討してください。
 
 ## <a name="whats-different-in-each-uwp-version"></a>UWP バージョンの比較
 
@@ -43,11 +43,11 @@ Windows 10 の各バージョンでは、新機能や強化された機能が UW
 
 すべてのデバイス ファミリとそのバージョン、およびすべての API コントラクトとそのバージョンを列挙したリファレンス トピックについては、「[デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx)」と「[APIコントラクト](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx)」をご覧ください。
 
-## <a name="net-api-availability-in-uwp-versions"></a>UWP バージョンの .NET API の使用可能状況]
+## <a name="net-api-availability-in-uwp-versions"></a>UWP バージョンの .NET API の使用可能状況
 
-UWP は、**ターゲット バージョン**や、プロジェクトの**最小バージョン**に関係なく利用できる .NET Api の一部のサブセットをサポートしています。 [このページは利用可能な種類の詳細を提供します](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
+UWP では、**ターゲット バージョン**や、プロジェクトの**最小バージョン**に関係なく利用できる .NET Api の一部のサブセットをサポートします。 [このページは利用可能な種類の詳細を提供します](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
 
-クロス プラットフォームの再利用可能なライブラリを作成する場合は、.NET Standard でサポートされて UWP。 [.NET Standard のドキュメント](https://docs.microsoft.com/dotnet/standard/net-standard)を .NET Standard ではサポートされている UWP バージョン情報を提供します。
+クロス プラットフォームの再利用可能なライブラリを作成する場合は、.NET Standard ではサポート UWP。 [.NET Standard のドキュメント](https://docs.microsoft.com/dotnet/standard/net-standard)を .NET Standard ではサポートされている UWP バージョン情報を提供します。
 
 デスクトップ アプリを開発する場合について代わりに[.NET Framework のバージョンと依存関係](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies).NET framework の可用性について詳しくは、
 

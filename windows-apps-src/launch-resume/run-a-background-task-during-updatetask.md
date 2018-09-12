@@ -7,35 +7,35 @@ ms.date: 04/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, 更新, バック グラウンド タスク、updatetask, バック グラウンド タスク
+keywords: windows 10、uwp、更新、バック グラウンド タスク、updatetask、バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: fcba2cb736f86cebc6d2664e2ec3b557d47c86d7
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850406"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3931284"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>UWP アプリが更新された際のバックグラウンド タスクの実行
 
-ユニバーサル Windows プラットフォーム (UWP) アプリが更新された後に実行されるバック グラウンド タスクを作成する方法について説明します。
+ユニバーサル Windows プラットフォーム (UWP) ストアのアプリが更新された後に実行するバック グラウンド タスクを記述する方法について説明します。
 
-ユーザーがデバイスにインストールされているアプリに更新プログラムをインストールした後、オペレーティング システムによって更新タスクのバック グラウンド タスクが呼び出されます。 これにより、ユーザーが更新されたアプリを起動する前に、データベース スキーマの更新、新しいプッシュ通知チャネルを初期化などの初期化タスクを実行するアプリです。
+タスクの更新のバック グラウンド タスクは、ユーザーがデバイスにインストールされているアプリケーションに更新プログラムをインストールした後、オペレーティング システムによって呼び出されます。 これにより、ユーザーが更新されたアプリを起動する前に、データベース スキーマというようの更新、新しいプッシュ通知チャネルを初期化する初期化タスクを実行するアプリケーションです。
 
-更新プログラムのタスクとは異なります[ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)トリガーを使用して、その場合は、アプリする必要があります実行するために少なくとも 1 回、**がアクティブ化をバック グラウンド タスクを登録するために更新される前に、バック グラウンド タスクを起動します。ServicingComplete**トリガーします。  更新タスクが登録されていないし、ためが実行されていないがをアップグレードすると、アプリがまだその更新タスクをトリガーします。
+更新タスク場合アプリに少なくとも 1 回前に実行する、**を有効にするバック グラウンド タスクを登録するために更新されますので、 [ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)のトリガーを使用してバック グラウンド タスクを起動するとは異なるServicingComplete**トリガーします。  更新タスクが登録されていません、アプリケーションが実行されていないが、アップグレードするがまだ更新タスクがトリガーされるのです。
 
-## <a name="step-1-create-the-background-task-class"></a>手順 1: バック グラウンド タスク クラスを作成します。
+## <a name="step-1-create-the-background-task-class"></a>ステップ 1: バック グラウンド タスク クラスを作成します。
 
-として他の種類のバック グラウンド タスクを実装する更新タスクのバック グラウンド タスクとしての Windows ランタイム コンポーネント。 このコンポーネントを作成するには、[作成と登録、アウト プロセス バック グラウンド タスク](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)の**バック グラウンド タスク クラスの作成**」セクションの手順に従います。 手順は次のとおりです。
+として他の種類のバック グラウンド タスクを実装するタスクの更新プログラムのバック グラウンド タスク Windows ランタイム コンポーネントとして。 このコンポーネントを作成するのには、**バック グラウンド タスク クラスを作成する**のセクション[を作成してプロセス外のバック グラウンド タスクの登録](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)で、手順を実行します。 手順は次のとおりです。
 
 - Windows ランタイム コンポーネント プロジェクトをソリューションに追加します。
-- アプリからコンポーネントへの参照を作成します。
-- [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)を実装するコンポーネントのパブリック、シール クラスを作成します。
-- 更新プログラムのタスクの実行時に呼び出される必須のエントリ ポイントは、 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811)メソッドを実装します。 バック グラウンド タスクからの非同期呼び出しを行う場合は[の作成と登録、アウト プロセス バック グラウンド タスク](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)の**Run**メソッドで、延期を使用する方法について説明します。
+- アプリからコンポーネントへの参照を作成しています。
+- コンポーネントで公開、シール クラスを作成するには、 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)が実装されています。
+- 更新タスクの実行時に呼び出される必要なエントリ ポイントは、 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811)メソッドを実装します。 バック グラウンド タスクからの非同期の呼び出しを行う場合は、[レジスタ、アウト プロセスのバック グラウンド タスクを作成および](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)**実行**メソッドで、遅延を使用する方法を説明します。
 
-更新プログラムのタスクを使用してこのバック グラウンド タスク (**の作成と登録、アウト プロセス バック グラウンド タスク**のトピックで「を実行するバック グラウンド タスクの登録」セクション) を登録する必要はありません。 これは、タスクを登録するアプリにコードを追加する必要はなく、アプリがバック グラウンド タスクを登録するように更新される前に 1 回以上実行するがないため、更新プログラムのタスクを使用する主な理由です。
+更新タスクを使用して、このバック グラウンド タスク ("を実行するバック グラウンド タスクを登録する] のセクション**を作成および登録、アウト プロセスのバック グラウンド タスク**のトピックで) を登録する必要はありません。 これは、タスクを登録するのにはアプリケーションにコードを追加する必要はありませんし、バック グラウンド タスクを登録するのには更新される前に 1 回以上実行するアプリケーションがないため、更新タスクを使用する主な理由です。
 
-次のサンプル コードでは、c# で更新タスクのバック グラウンド タスク クラスの基本的な開始点を示します。 バック グラウンド タスク クラス自体と他のすべてのクラス、バック グラウンド タスク プロジェクトでは、**公開**して**シール**する必要があります。 バック グラウンド タスク クラスは、 **IBackgroundTask**から派生し、パブリック**Run()** メソッドを次に示すシグネチャを持つがある必要があります。
+次のサンプル コードは、C# でタスクの更新プログラムのバック グラウンド タスク クラスの基本的な開始点を示しています。 バック グラウンド タスク クラス自体とバック グラウンド タスク プロジェクト内の他のすべてのクラスは、**パブリック**と**シール**する必要があります。 バック グラウンド タスク クラスは、 **IBackgroundTask**から派生し、次に示すシグネチャを持つパブリック**Run()** メソッドがある必要があります。
 
 ```cs
 using Windows.ApplicationModel.Background;
@@ -54,7 +54,7 @@ namespace BackgroundTasks
 
 ## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>手順 2: パッケージ マニフェストでバック グラウンド タスクを宣言します。
 
-Visual Studio ソリューション エクスプ ローラーでは、 **Package.appxmanifest**を右クリックし、パッケージ マニフェストを表示する**コードの表示**] をクリックします。 次の追加`<Extensions>`、更新プログラムのタスクを宣言する XML:
+Visual Studio のソリューション エクスプ ローラーで**Package.appxmanifest**を右クリックし、パッケージ マニフェストを表示するのには**コードの表示**] をクリックします。 次の追加`<Extensions>`の更新タスクを宣言する XML。
 
 ```XML
 <Package ...>
@@ -72,30 +72,30 @@ Visual Studio ソリューション エクスプ ローラーでは、 **Package
 </Package>
 ```
 
-上記の XML で、`EntryPoint`属性が namespace.class update タスク クラスの名前に設定します。 名前は区別されます。
+上記の xml では、確実に、 `EntryPoint` namespace.class クラスの名前、更新作業に属性を設定します。 名前は、大文字小文字を区別します。
 
-## <a name="step-3-debugtest-your-update-task"></a>手順 3: デバッグ/テスト、更新プログラムのタスク
+## <a name="step-3-debugtest-your-update-task"></a>手順 3: デバッグとテストの更新タスク
 
-展開したアプリをコンピューターに更新する必要があるようにを確認します。
+配布したアプリのコンピューターに更新するのには何かを使用する必要があるようにすることを確認します。
 
 バック グラウンド タスクの Run() メソッドにブレークポイントを設定します。
 
-![一連のブレークポイント](images/run-func-breakpoint.png)
+![セット ブレークポイント](images/run-func-breakpoint.png)
 
-次に、ソリューション エクスプ ローラーでは、アプリのプロジェクト (バック グラウンド タスク プロジェクトではない) を右クリックし、[**プロパティ**] をクリックします。 アプリケーションのプロパティ] ウィンドウでは、左側で、[**デバッグ**] をクリックし、**起動しないが開始時にマイ コードをデバッグ**を選びます。
+次に、ソリューション エクスプ ローラーでは、アプリのプロジェクト (バック グラウンド タスク プロジェクトではない) を右クリックし、[**プロパティ**] をクリックします。 アプリケーションのプロパティ] ウィンドウで、左側の [**デバッグ**] をクリックし **、起動しないが、起動時にコードをデバッグする**を選択します。
 
-![デバッグの設定](images/do-not-launch-but-debug.png)
+![デバッグを設定します。](images/do-not-launch-but-debug.png)
 
-次に、UpdateTask がトリガーされることを確認するには、パッケージのバージョン番号を大ききます。 ソリューション エクスプ ローラーでパッケージ デザイナーを開き、アプリの**Package.appxmanifest**ファイルをダブルクリックして、更新し、**ビルド**番号。
+次に、UpdateTask を発生させることを確認するには、パッケージのバージョン番号を増加します。 ソリューション エクスプ ローラーで、パッケージ デザイナーを開き、アプリの**Package.appxmanifest**ファイルをダブルクリックして、**ビルド**番号を更新し。
 
 ![バージョンを更新します。](images/bump-version.png)
 
-これで、Visual Studio 2017 で F5 キーを押して、アプリを更新し、システムがバック グラウンドで UpdateTask コンポーネントをアクティブ化します。 デバッガーは、自動的にバック グラウンド プロセスにアタッチします。 ブレークポイントにヒットを取得して、更新コード ロジックをステップ実行することができます。
+2017 を Visual Studio で f5 キーを押すと、アプリ更新され、システムがバック グラウンドで UpdateTask コンポーネントをアクティブにします。 デバッガーはバック グラウンド プロセスに自動的にアタッチします。 ブレークポイントはヒットを取得し、更新プログラムのコードのロジックをステップ実行することができます。
 
-バック グラウンド タスクが完了したら、同じデバッグ セッションで Windows のスタート メニューからフォア グラウンド アプリを起動することができます。 デバッガーはもう一度自動的にアタッチ、今回は、フォア グラウンド プロセスと、アプリのロジックをステップ実行することができます。
+バック グラウンド タスクが完了すると、同じデバッグ セッション内で Windows の [スタート] メニューから、フォア グラウンド アプリケーションを起動できます。 デバッガーが自動的に再試行を添付する、フォア グラウンドのプロセスには、この時間と、アプリケーションのロジックをステップ実行することができます。
 
 > [!NOTE]
-> Visual Studio 2015 のユーザー: Visual Studio 2017 を上記の手順が適用されます。 Visual Studio 2015 を使っている場合は、トリガーとそれに Visual Studio を除く、UpdateTask を添付しませんテストを同じ手法を使用できます。 VS 2015 での手順のエントリ ポイントとして、UpdateTask を設定する[ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)をセットアップし、フォア グラウンド アプリから直接実行をトリガーすることです。
+> 2015年の Visual Studio のユーザー: 上記の手順は、Visual Studio の 2017 に適用します。 2015 の Visual Studio を使用する場合は、トリガーをテストは、Visual Studio 以外の UpdateTask を添付しませんと同じ手法を使用できます。 VS 2015 で別のプロシージャでは、そのエントリ ポイントとして、UpdateTask を設定する[ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)をセットアップし、フォア グラウンド アプリケーションから直接実行をトリガーします。
 
 ## <a name="see-also"></a>関連項目
 

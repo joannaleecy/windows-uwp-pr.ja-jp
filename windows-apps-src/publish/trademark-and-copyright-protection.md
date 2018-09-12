@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f99396b117efcf7c3bed3cb64f24b519734cc858
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846896"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934435"
 ---
 # <a name="trademark-and-copyright-protection"></a>商標と著作権の保護
 
@@ -25,7 +25,7 @@ ms.locfileid: "3846896"
 ### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. Windows アプリ内の知的財産権が侵害されていることを報告するにはどうすればよいですか。
 
 
-次の[フォーム](http://go.microsoft.com/fwlink/p/?LinkId=273879)を使用して、Windows アプリに関する著作権、商標、パブリシティー権の侵害申し立てを送信してください。 複数のアプリに関する著作権、商標権、または肖像権の侵害については、mktlegal@microsoft.com に申し立てを送信してください。 Microsoft の DMCA ポリシーに関する追加情報を必要がある場合にアクセスしてください:[https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976)します。
+次の[フォーム](http://go.microsoft.com/fwlink/p/?LinkId=273879)を使用して、Windows アプリに関する著作権、商標、パブリシティー権の侵害申し立てを送信してください。 複数のアプリに関する著作権、商標権、または肖像権の侵害については、mktlegal@microsoft.com に申し立てを送信してください。 Microsoft の DMCA ポリシーに関する追加情報を必要がある場合を参照してください:[https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976)します。
 
 ### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. Microsoft 製品/サービスと連携するアプリを作成しました。 アプリの名前に Microsoft 製品/サービスの名前を使用できますか。
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 携帯電話会社, 携帯電話への課金, 携帯電話会社による課金
 ms.localizationpriority: medium
 ms.openlocfilehash: c8d0e3093a6a44f748ca78ff3fad977f2cc94d77
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851462"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3930706"
 ---
 # <a name="mobile-operator-billing"></a>携帯電話会社による課金
 
@@ -46,7 +46,7 @@ Microsoft Store では、Windows 10 を実行するデバイス、Windows 10 Mob
 | オランダ     | KPN                              |
 | ノルウェー          | Telenor、Telia                   |
 | ポーランド          | Orange                           |
-| シンガポール       | M1 Limited、StarHub              |
+| シンガポール       | StarHub M1 限定的で、              |
 | スロバキア        | Slovak Telekom                   |
 | スペイン           | Orange                           |
 | スウェーデン          | Telenor、3                       |

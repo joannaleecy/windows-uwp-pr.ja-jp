@@ -15,17 +15,17 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8589a450b53a5ea028f8af2cee2aef7dc0816b52
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851262"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933539"
 ---
 # <a name="acrylic-material"></a>アクリル素材
 
 ![ヒーロー イメージ](images/header-acrylic.svg)
 
-アクリルは、半透明のテクスチャを作成する[ブラシ](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)の一種です。 アクリルをアプリ サーフェスに適用すると、奥行きを加えたり、視覚的な階層を確立したりすることができます。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+アクリルは、半透明のテクスチャを作成する[ブラシ](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)の種類です。 アクリルをアプリ サーフェスに適用すると、奥行きを加えたり、視覚的な階層を確立したりすることができます。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
 > **重要な API**: [AcrylicBrush クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)、[Background プロパティ](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
 
@@ -49,10 +49,10 @@ ms.locfileid: "3851262"
 ## <a name="examples"></a>例
 
 :::row:::
-    :::column span:::![いくつかの画像](images/XAML-controls-gallery-app-icon.png)
+    :::column span:::![一部の画像](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     :::column span =「2」::: **XAML コントロール ギャラリー**<br>
-        クリックしての XAML コントロール ギャラリー アプリがインストールされている場合は、<a href="xamlcontrolsgallery:/item/Acrylic">ここで</a>は、アプリを開き、アクリルの動作をご覧ください。
+        XAML コントロール ギャラリー アプリをインストールした場合は、クリックして<a href="xamlcontrolsgallery:/item/Acrylic">ここで</a>アプリを開き、アクリルの動作を参照してください。
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
@@ -77,7 +77,7 @@ ms.locfileid: "3851262"
 
 [NavigationView](../controls-and-patterns/navigationview.md) は、ナビゲーションをアプリに追加し、そのビジュアル デザインにアクリルを取り込むための新しいコモン コントロール です。 NavigationView のウィンドウでは、ウィンドウが主要なコンテンツと並んで開かれるとき、背景アクリルが表示されます。また、ウィンドウがオーバーレイとして開くと、自動的にアプリ内アクリルに切り替わります。
 
-NavigationView を利用できるように、アプリは、独自にアクリルを追加する場合は、比較的透明なアクリルを使用して、60% の濃淡の不透明度をお勧めします。
+アプリは、NavigationView を活用することはできません、独自にアクリルを追加する場合は、60% の濃淡の不透明度で比較的透明なアクリルの使用をお勧めします。
  - ウィンドウが他のアプリ コンテンツ上でオーバーレイとして開くときは、[60% のアプリ内アクリル](#acrylic-theme-resources)にする必要があります
  - ウィンドウがメイン アプリ コンテンツと並んで開かれるときは、[60% の背景アクリル](#acrylic-theme-resources)にする必要があります
 
@@ -106,7 +106,7 @@ NavigationView を利用できるように、アプリは、独自にアクリ�
 ![アクリルを背景全体として使用した電卓ユーティリティ アプリ](images/acrylic_app-pattern_full.png)
 
 > [!Note]
-> アクリル サーフェスのレンダリングでは GPU を多用すると、デバイスの電力消費を増やすし、バッテリーの駆動時間を短縮することができます。 アクリルの効果は自動的に無効にデバイスが、バッテリー節約機能モードを入力し、ユーザーは、すべてのアプリでアクリルの効果を無効にできますを選択した場合。
+> アクリル サーフェスのレンダリングでは GPU を多用するデバイスの電力消費量を増やすし、バッテリーの寿命を短くことができます。 アクリルの効果は自動的に無効にデバイスが、バッテリー節約機能モードを入力し、ユーザーは、すべてのアプリでアクリルの効果を無効にできます選択した場合。
 
 
 ## <a name="acrylic-blend-types"></a>アクリル ブレンドの種類
@@ -126,10 +126,10 @@ NavigationView を利用できるように、アプリは、独自にアクリ�
 
 ハイ コントラスト モードでは、ユーザーが選んだ見慣れた背景色が、アクリルの代わりに引き続き表示されます。 さらに、背景アクリルとアプリ内アクリルのどちらも、単色として表示されます。
  - ユーザーが設定で透明度をオフにすると > [パーソナル設定] > 色
- - バッテリー節約機能モードが有効な場合
+ - バッテリー節約機能モードがアクティブ化されます。
  - アプリがローエンド ハードウェアで実行されている場合
 
-さらに、背景アクリルのみがその透明度とテクスチャを置き換える単色。
+さらに、背景アクリルのみ、その透明度とテクスチャを置き換える単色。
  - アプリ ウィンドウがデスクトップで非アクティブ化されている場合
  - UWP アプリが、電話、Xbox、HoloLens、またはタブレット モードで実行されている場合
 
@@ -163,7 +163,7 @@ NavigationView を利用できるように、アプリは、独自にアクリ�
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>使用量をお勧めします</b>。アプリでは、テキストのサイズが 18 ピクセル以上で AltMedium 色のセカンダリ テキストを使用している場合は、これら以上半透明 70% のテキストの背景アクリル リソースを配置できます。 これらのリソースは、アプリの最上部にある水平方向のナビゲーション領域やコマンド実行領域で使用することをお勧めします。  </td>
+        <td> <b>推奨する使用方法:</b>アプリでは、テキストのサイズが 18 ピクセル以上に AltMedium 色のセカンダリ テキストを使用している場合は、これら以上半透明 70% のテキストの背景アクリル リソースを配置できます。 これらのリソースは、アプリの最上部にある水平方向のナビゲーション領域やコマンド実行領域で使用することをお勧めします。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -211,7 +211,7 @@ NavigationView を利用できるように、アプリは、独自にアクリ�
  - **TintColor**: 色/濃淡のオーバーレイ レイヤーです。 RGB の色の値とアルファ チャネルの不透明度の両方を指定することを検討してください。
  - **TintOpacity**: 濃淡レイヤーの不透明度です。 別の色がより魅力的に他の translucencies を表示することがありますが、開始点として 80% の不透明度お勧めします。
  - **BackgroundSource**: 背景アクリルまたはアプリ内アクリルのどちらを使用するかを指定するフラグです。
- - **FallbackColor**: バッテリー節約機能のアクリルを置換する単色です。 背景アクリルでは、フォールバックの色は、アプリが作業中のデスクトップ ウィンドウにない場合、またはアプリが電話や Xbox 上で実行されている場合にもアクリルと置き換わります。
+ - **FallbackColor**: 単色のバッテリー節約機能のアクリルに置き換えられます。 背景アクリルでは、フォールバックの色は、アプリが作業中のデスクトップ ウィンドウにない場合、またはアプリが電話や Xbox 上で実行されている場合にもアクリルと置き換わります。
 
 
 ![淡色テーマのアクリルの見本](images/CustomAcrylic_Swatches_LightTheme.png)
