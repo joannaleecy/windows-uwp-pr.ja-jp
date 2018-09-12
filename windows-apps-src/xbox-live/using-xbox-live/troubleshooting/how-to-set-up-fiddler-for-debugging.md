@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, fiddler, サービス呼び出し, トラブルシューティング
-ms.localizationpriority: low
-ms.openlocfilehash: f453de2aac908998f47602027bb979da397dc506
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 9eaa21ca792ab3071cb06a9e564f7ad1826782b4
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881739"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a>Fiddler を使用した Xbox Live のトラブルシューティング
 
@@ -23,7 +24,7 @@ Fiddler は、デバイスとインターネットの間のすべての HTTP お
 ## <a name="for-windows-uwp-pc-apps"></a>Windows UWP PC アプリの場合
 
 1. 現在のユーザーが、PC の Administrator グループのメンバーであることを確認します
-1. Fiddler を [http://www.telerik.com/fiddler](http://www.telerik.com/fiddler) からダウンロードします
+1. Fiddler からのダウンロードします。[http://www.telerik.com/fiddler](http://www.telerik.com/fiddler)
 1. "Built for .NET 4" のバージョンを選択します
 1. インストールが済んだら、[Tools] の [Fiddler Options] で、[Capture HTTPS CONNECTs] と [Decrypt HTTPS traffic] を有効にします。  ランタイムと Xbox Live サービスの間の通信はすべて、SSL で暗号化されます。  このオプションを指定しないと、役に立つ情報は何も得られません。  Fiddler のすべてのポップアップ ダイアログを受け入れます (UAC を含めて 5 個のダイアログが表示されるはずです)。
 1. [WinConfig]、[Exempt All]、[Save Changes] の順に移動します。  このようにしないと、Fiddler はストア アプリで動作しません。
@@ -42,7 +43,7 @@ Fiddler は、デバイスとインターネットの間のすべての HTTP お
 
 ## <a name="for-xbox-one-uwp-based-projects"></a>Xbox One UWP ベースのプロジェクトの場合
 
-[https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler) の手順に従います。
+次の手順に従います[https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler)
 
 ## <a name="for-xbox-one-xdk-based-projects"></a>Xbox One XDK ベースのプロジェクトの場合
 
@@ -64,16 +65,16 @@ Fiddler をインストールして有効化し、開発キットからのトラ
 
 | 設定          | 推奨値                |
 |------------------|--------------------------------|
-| Name             | FiddlerProxy                   |
+| 名前             | FiddlerProxy                   |
 | Group            | (グループの値は設定しない) |
 | Profile          | すべて                            |
-| Enabled          | 〇                            |
-| Action           | 許可                          |
-| 優先         | X                             |
+| 有効          | はい                            |
+| 操作           | 許可                          |
+| 優先         | いいえ                             |
 | プログラム          | fiddler.exe のパス            |
 | ローカル アドレス     | 任意                            |
 | リモート アドレス    | 任意                            |
-| Protocol         | TCP                            |
+| プロトコル         | TCP                            |
 | ローカル ポート        | 任意                            |
 | リモート ポート       | 任意                            |
 | 承認されているユーザー     | 任意                            |

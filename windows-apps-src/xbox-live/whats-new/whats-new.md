@@ -8,19 +8,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
-ms.localizationpriority: low
-ms.openlocfilehash: 02c0acdb252ce9e86b2635fa4845427c92ef8964
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f0d4038441f347a961f4acf57b4712995bf1f75d
+ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935655"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "3881476"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live の新機能
 [Xbox Live API GitHub コミット履歴](https://github.com/Microsoft/xbox-live-api/commits/master)に関するページで、Xbox Live API に最近加えられたすべてのコード変更について確認することもできます。
 
 #### <a name="in-this-article"></a>この記事の内容
 
+* [6 月 2018](#june-2018)
 * [2017 年 8 月](#august-2017)
 * [2017 年 7 月](#july-2017)
 * [2017 年 6 月](#june-2017)
@@ -29,11 +30,21 @@ ms.locfileid: "1935655"
 * [2017 年 3 月](#march-2017)
 * [アーカイブされた記事](#archived)
 
-##<a name="august-2017"></a>2017 年 8 月
+## <a name="june-2018"></a>6 月 2018
 
-###<a name="xbox-live-features"></a>Xbox Live の機能
+### <a name="xbox-live-features"></a>Xbox Live の機能
 
-####<a name="in-game-clubs"></a>ゲーム内クラブ
+#### <a name="c-api-layer-for-xsapi"></a>Xsapi C API レイヤー
+
+一部の Xbox Live 機能の C++ Api が利用できるようになりました。 新しい API レイヤーでは、カスタムのメモリの管理、非同期タスクの場合、手動のスレッド管理新しい HTTP ライブラリなど、サポートされている機能の多くのメリットを提供します。
+
+詳しくは、 [Xbox Live の C++ Api](../xsapi-flat-c.md)を参照してください。
+
+## <a name="august-2017"></a>2017 年 8 月
+
+### <a name="xbox-live-features"></a>Xbox Live の機能
+
+#### <a name="in-game-clubs"></a>ゲーム内クラブ
 
 開発者は、"ゲーム内クラブ" を作成できるようになりました。 ゲーム内クラブは、開発者が完全にカスタマイズ可能であり、ゲームの内部と外部の両方で使うことができる点で標準の Xbox クラブとは異なります、 ゲーム開発者は、これらを使って、チーム、仲間、スクワッドなど、独自の要件を満たすあらゆる種類の永続グループ シナリオをゲーム内にすばやく構築することができます。
 

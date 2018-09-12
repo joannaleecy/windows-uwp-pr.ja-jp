@@ -1,5 +1,5 @@
 ---
-title: XDK の入手先
+title: XDK の入手方法
 author: KevinAsgari
 description: 対象パートナーとしてアクセスし、Xbox 開発キット (XDK) を入手する方法について説明します。
 ms.assetid: 5e7abfb7-5d68-4e77-a941-13dd081268ac
@@ -9,16 +9,25 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
-ms.localizationpriority: low
-ms.openlocfilehash: 631eb7d7c91af4ae4ea17e8840a95367fbdc59da
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 604fcf1e77a1ca4666c14216be5c690362c9048b
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881493"
 ---
-# <a name="where-to-get-the-xbox-development-kit-xdk"></a>Xbox 開発キット (XDK) の入手先
+# <a name="how-to-get-the-xbox-development-kit-xdk"></a>Xbox 開発キット (XDK) を取得する方法
+
+Xbox 開発キット (XDK) は一般に公開されません。 2 つのグループでは、対象パートナーとID@Xbox、開発者は、XDK へのアクセスを許可し、ドキュメントとミドルウェア ツールなどの開発に関するリソースが関連付けられています。 XDK は、[ソフトウェアのダウンロード ページ](https://developer.microsoft.com/en-us/games/xbox/partner/resources-softwaredownloads)developer.microsoft.com サイトからダウンロードできます。
+
+サイトにアクセスできない場合をダウンロードまたは XDK を使用できません。 お持ちでないでない場合、アクセスには、担当のアカウント マネージャーがお問い合わせください。
+
+条件を満たすことができます XDK アクセスするために[申し込む、ID@Xbox開発者](https://www.xbox.com/en-us/Developers/id)します。
+[ここをクリックして](../developer-program-overview.md)について詳しくはして、ID@Xboxプログラムおよびその他の開発者層します。
 
 ## <a name="software-requirements"></a>ソフトウェア要件
+
 - Windows オペレーティング システム
     - Windows 7 (64 ビット) Service Pack 1、Windows 修正プログラム 2533623、2588507、および 2769790
     - Windows 8 (64 ビット)
@@ -28,10 +37,14 @@ ms.lasthandoff: 02/24/2018
 - Xbox One 開発キット
 - Xbox One XDK
 - Visual Studio
-    - Visual Studio 2012、Visual Studio 2015、または Visual Studio 2017
+    - Visual Studio 2012 の場合、Visual Studio 2015、Visual Studio 2017 または Visual Studio の最新リリースします。 最新バージョンの Visual Studio により、アクセスするには、最新の更新プログラムとセキュリティの開発します。
 
-## <a name="permissions"></a>アクセス許可
-XDK をダウンロードして、アプリ用の Xbox Live サービスを構成し、Developer サポート フォーラムにアクセスするには、担当のアカウント マネージャーと協力して作業してください。
+## <a name="use"></a>使用
+
+XDK へのアクセスはの指示に従って、その使用されているリソースへのアクセスを与えます。 これらのリソースが公開されないし、のみが利用 XDK と同様にID@Xboxおよび対象パートナー開発者。
+
+- Xbox Live 開発キットを使用して、 [XDK ドキュメント](https://developer.microsoft.com/en-us/games/xbox/partner/development-documentation)の最新情報の詳細を表示します。
+- 追加のヘルプのコミュニティの詳細については、[開発者フォーラム](https://forums.xboxlive.com/index.html)を参照するか、担当のアカウント マネージャーにお問い合わせくださいすることができます。
 
 ## <a name="install-the-xdk"></a>XDK のインストール
 

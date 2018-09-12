@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クリエーター, テスト
-ms.localizationpriority: low
-ms.openlocfilehash: d624020e396262f4be171427d318f2809faa1b17
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 94b22b2d369f74da73cfeb6a5f42508c703211ea
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881614"
 ---
 # <a name="create-a-new-xbox-live-creators-program-title-and-publish-to-the-test-environment"></a>新しい Xbox Live クリエーターズ プログラム向けのタイトルを作成し、テスト環境に公開する
 
@@ -26,7 +27,7 @@ Xbox Live コードを記述する前に、サービス構成ポータルで、�
 
 1. Xbox Live クリエーターズ プログラムを使用している。
 2. ユニバーサル Windows プラットフォーム (UWP) のタイトルを開発している。  UWPのタイトルは、Xbox One、Windows 10 デスクトップ PC、およびモバイルで実行できるタイトルです。
-3. タイトルを、[http://dev.windows.com/](http://dev.windows.com) の Windows デベロッパー センターで構成している。  判断がつかない場合は、Windows デベロッパー センターをご利用ください。
+3. Windows デベロッパー センターでタイトルを構成する[http://dev.windows.com/](http://dev.windows.com)します。  判断がつかない場合は、Windows デベロッパー センターをご利用ください。
 4. 開発用コンピュータが Windows 10 を実行している。
 
 > [!NOTE]

@@ -9,13 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クリエーター
-ms.localizationpriority: low
-ms.openlocfilehash: 962a808198f9682d819b20abb4965f446074de68
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 28f9da245d3fae23241058d7a83fe8c397a415d2
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018479"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881591"
 ---
 # <a name="get-started-developing-an-xbox-live-creators-program-title-with-the-unity-game-engine"></a>Unity ゲーム エンジンを使用して、Xbox Live クリエーターズ プログラムのタイトルの開発を開始する
 
@@ -29,7 +29,7 @@ ms.locfileid: "2018479"
 
 [Xbox Live アカウントを承認する](authorize-xbox-live-accounts.md)
 
-[Unity で Xbox Live にサインインする](sign-in-to-xbox-live-in-unity.md) 1804 以前の Unity プラグイン リリース
+[Unity で Xbox Live にサインインする](unity-prefabs-and-sign-in.md) 1804 以前の Unity プラグイン リリース
 
 [PlayerAuthentication プレハブを使用してサインインする](playerauthentication-prefab-sign-in.md) 1804 以降の Unity プラグイン リリース
 

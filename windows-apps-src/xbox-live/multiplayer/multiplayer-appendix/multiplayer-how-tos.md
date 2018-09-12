@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015
-ms.localizationpriority: low
-ms.openlocfilehash: d16e5d6894fb2a33b851e9792f33c64d16c2b2fa
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f800afb70f4f32586f5e7db38665a77719792c1a
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881714"
 ---
 # <a name="multiplayer-how-tos"></a>マルチプレイヤーの実行方法
 
@@ -96,7 +97,7 @@ MPSD セッション変更通知を受信するには、タイトルは次の手
     {
       XboxLiveContext^ xboxLiveContext = ref new Microsoft::Xbox::Services::XboxLiveContext(User::Users->GetAt(0));
 
-      // These from XDP web portal
+      // Values found in Xbox Developer Portal(XDP) or Windows Dev Center configuration
       MultiplayerSessionReference^ multiplayerSessionReference = ref new MultiplayerSessionReference(
         "c83c597b-7377-4886-99e3-2b5818fa5e4f", // serviceConfigurationId
         "team-deathmatch", // sessionTemplateName

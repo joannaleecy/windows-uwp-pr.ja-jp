@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
-ms.localizationpriority: low
-ms.openlocfilehash: 1ac295a403a905578052985528418d873764147a
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 04d2fab9aa836d36a0dba202b2292c311b6d4979
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881686"
 ---
 # <a name="achievements-2017"></a>Achievements 2017
 
@@ -63,7 +64,7 @@ Achievements 2017 システムを使用するタイトルの要件を次に示�
 
 ## <a name="updateachievement-api"></a>Update_Achievement API
 
-[XDP](../configure-xbl/xdp/achievements-in-xdp.md) または [UDC](../configure-xbl/dev-center/achievements-in-udc.md) を介して実績を構成し、開発サンドボックスに公開したら、タイトルで Update_Achievement API を呼び出して実績のロックを解除できます。
+XDP または [UDC](../configure-xbl/dev-center/achievements-in-udc.md) を介して実績を構成し、開発サンドボックスに公開したら、タイトルで Update_Achievement API を呼び出して実績のロックを解除できます。
 
 この API は XDK と Xbox Live SDK の両方で使用できます。
 

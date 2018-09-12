@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リアルタイム アクティビティ
-ms.localizationpriority: low
-ms.openlocfilehash: 77b2be18fdda6dbf173814787bde151f088086c2
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: eeb30b5ad83c44ac4a6feb1471dc31a2e33730a1
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881487"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>C++ API を使用したリアルタイム アクティビティ サービスのプログラミング
 
@@ -59,7 +60,10 @@ XDP で統計を作成する方法については、[XDP のドキュメント](
 
 #### <a name="uwp-developers"></a>UWP の開発者
 
-クロスプレイ タイトルではない Windows 10 上の UWP を開発している場合は、デベロッパー センターで統計を定義します。  これを行う方法についてのドキュメントは間もなく公開されます。  それまで、質問については担当の DAM にお問い合わせください。
+クロスプレイ タイトルではない Windows 10 での UWP を開発している場合は、 [Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で統計を定義します。 デベロッパー センターで統計を構成する方法については、[デベロッパー センターの統計の構成」](../leaderboards-and-stats-2017/player-stats-configure-2017.md)をご覧ください。
+
+> [!NOTE]
+> 統計 2013年の開発者は、デベロッパー センターで統計 2013年構成については、担当の DAM にお問い合わせくださいする必要があります。
 
 ### <a name="disconnecting-from-the-real-time-activity-service"></a>リアルタイム アクティビティ サービスからの切断
 
@@ -76,7 +80,7 @@ void Example_RealTimeActivity_Disconnect()
 
 ## <a name="subscribing-to-a-statistic-from-the-real-time-activity"></a>リアルタイム アクティビティからの統計へのサブスクライブ
 
-アプリケーションはリアルタイム アクティビティ (RTA) にサブスクライブして、Xbox デベロッパー ポータル (XDP) で構成した統計が変化したときに最新情報を取得します。
+アプリケーションをリアルタイム アクティビティ (RTA) Xbox デベロッパー ポータル (XDP) または Windows デベロッパー センターで構成された統計情報が変化したときに、更新プログラムを取得するをサブスクライブします。
 
 ### <a name="subscribing-to-a-statistic-from-the-real-time-activity-service"></a>リアルタイム アクティビティ サービスからの統計へのサブスクライブ
 
@@ -95,7 +99,7 @@ void Example_RealTimeActivity_SubscribeToStatisticChangeAsync()
     // Call to subscribe to an individual statistic.  Once the subscription is complete, the handler will be called with the initial value of the statistic.
     auto statisticResults = xboxLiveContext->user_statistics_service().subscribe_to_statistic_change(
         User::Users->GetAt(0)->XboxUserId->Data(),
-        L"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",    // Get SCID from "Product Details" page in XDP
+        L"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",    // Get SCID from "Product Details" page in XDP or the Xbox Live Setup page in Dev Center
          L"YourStat"
         );
 
