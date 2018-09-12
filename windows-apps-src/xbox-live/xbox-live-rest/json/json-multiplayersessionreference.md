@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dfa27115e1c7ebc9be657ff4fb3f6946406dd8b
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882474"
+ms.locfileid: "3931421"
 ---
 # <a name="multiplayersessionreference-json"></a>MultiplayerSessionReference (JSON)
 **MultiplayerSessionReference**を表す JSON オブジェクト。 
@@ -30,7 +30,7 @@ MultiplayerSessionReference JSON オブジェクトには、次の仕様があ�
 | --- | --- | --- | 
 | scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。| 
 | templateName | string | セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。 | 
-| name | string | セッションの名前。 セッション識別子のパート 3 です。 | 
+| name | string | セッションの名前です。 セッション識別子のパート 3 です。 | 
   
 <a id="ID4EZ"></a>
 

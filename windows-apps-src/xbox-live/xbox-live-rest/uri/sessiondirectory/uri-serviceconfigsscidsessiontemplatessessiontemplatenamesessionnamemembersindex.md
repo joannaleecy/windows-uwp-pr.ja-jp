@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}/members
+title: /serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/members/{インデックス}
 assetID: ae6c6a25-2251-6ffd-ec58-e6c0576a34db
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.html
 author: KevinAsgari
-description: " /serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}/members"
+description: " /serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/members/{インデックス}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e8d56b9d7079e26973595de093b581ef39bd41c0
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881912"
+ms.locfileid: "3929111"
 ---
-# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersindex"></a>/serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}/members
+# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersindex"></a>/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/members/{インデックス}
 指定されたセッション メンバーを削除する削除操作をサポートしています。
 <a id="ID4EO"></a>
 
@@ -41,9 +41,9 @@ sessiondirectory.xboxlive.com
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(/Serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}/members) を削除します。](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindexdelete.md)
+[(/Serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/members/{インデックス}) を削除します。](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindexdelete.md)
 
-&nbsp;&nbsp;指定されたメンバーをセッションから削除します。
+&nbsp;&nbsp;指定したメンバーをセッションから削除します。
 
 <a id="ID4ENC"></a>
 

@@ -1,9 +1,9 @@
 ---
-title: (/Serviceconfigs/sessiontemplates/{sessionTemplateName}) を取得します。
+title: (/Serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}) を取得します。
 assetID: 81139619-dc27-1601-30ba-08f6c45aaaca
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.html
 author: KevinAsgari
-description: " (/Serviceconfigs/sessiontemplates/{sessionTemplateName}) を取得します。"
+description: " (/Serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}) を取得します。"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: eaa7314b2cb2c8459f4bd2aae78794685c277c70
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881689"
+ms.locfileid: "3931490"
 ---
-# <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a>(/Serviceconfigs/sessiontemplates/{sessionTemplateName}) を取得します。
-一連のセッション テンプレート名を取得します。
+# <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a>(/Serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}) を取得します。
+セッション テンプレートの名前のセットを取得します。
 
 > [!IMPORTANT]
-> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 104/105 または後ですべての要求します。
+> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
 
   * [URI パラメーター](#ID4ET)
   * [HTTP ステータス コード](#ID4E5)
@@ -43,7 +43,7 @@ ms.locfileid: "3881689"
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4EFB"></a>
 
 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 161c7e96faf3ec217aeb188ccb3b5b1e354d217e
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882302"
+ms.locfileid: "3928719"
 ---
 # <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>ユーザー/xuid ({xuid})/scids/{scid}/stats/{statname) そして {すべて | お気に入り}
-(ランク付け) のソーシャル ランキングにアクセスします。
+ソーシャル (ランク付け) ランキングにアクセスします。
 これらの Uri のドメインが`leaderboards.xboxlive.com`します。
 
   * [URI パラメーター](#ID4EV)
@@ -31,10 +31,10 @@ ms.locfileid: "3882302"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| xuid| string| ユーザーの識別子。|
-| scid| string| アクセス対象のリソースが含まれているサービス構成の識別子。|
-| statname| string| アクセスしているユーザーの統計リソースの一意の識別子。|
-| all\ | お気に入り| 列挙| 現在のユーザーの既知のすべての連絡先や、そのユーザーのお気に入りユーザーとして指定された連絡先のみの値、統計をランク付けするかどうか (スコア) ください。|
+| xuid| string| ユーザーの識別子です。|
+| scid| string| アクセス対象のリソースが含まれているサービス構成の識別子です。|
+| statname| string| アクセス対象のユーザー統計リソースの一意の識別子。|
+| all\ | お気に入り| 列挙値| 現在のユーザーの既知のすべての連絡先や、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア) の値、統計をランク付けするかどうか。|
 
 <a id="ID4EOC"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "3882302"
 
 [GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})](uri-usersxuidscidstatnamepeopleget.md)
 
-&nbsp;&nbsp;ランキング、統計値は、すべての既知の連絡先の現在のユーザーや、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア) によって、ソーシャル ランキングを返します。
+&nbsp;&nbsp;ランキング、統計の現在のユーザーのいずれかのすべての既知連絡先や、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア) の値によって、ソーシャル ランキングを返します。
 
 <a id="ID4EYC"></a>
 

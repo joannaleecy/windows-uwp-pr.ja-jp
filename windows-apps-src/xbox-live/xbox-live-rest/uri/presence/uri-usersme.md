@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aff98e5322a7d2da78b7411f8f213ffac53333d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881484"
+ms.locfileid: "3927891"
 ---
 # <a name="usersme"></a>ユーザー/me
 現在のユーザーのプレゼンスにアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
@@ -28,7 +28,7 @@ ms.locfileid: "3881484"
 
 [取得する (ユーザー/me)](uri-usersmeget.md)
 
-&nbsp;&nbsp;ユーザーの XUID を確認することがなく、現在のユーザーの[presencerecord を要求して](../../json/json-presencerecord.md)を取得します。
+&nbsp;&nbsp;ユーザーの XUID を把握することがなく、現在のユーザーの[presencerecord を要求して](../../json/json-presencerecord.md)を取得します。
  
 <a id="ID4E6"></a>
 

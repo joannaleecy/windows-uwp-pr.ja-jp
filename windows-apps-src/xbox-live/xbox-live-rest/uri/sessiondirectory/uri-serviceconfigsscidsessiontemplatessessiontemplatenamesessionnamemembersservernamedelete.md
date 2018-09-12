@@ -1,9 +1,9 @@
 ---
-title: (/Serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}/servers/{サーバー名}) を削除します。
+title: (/Serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/servers/{サーバー名}) を削除します。
 assetID: 39c921d1-a166-74b9-fcbc-ea3c0c58cc40
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservernamedelete.html
 author: KevinAsgari
-description: " (/Serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}/servers/{サーバー名}) を削除します。"
+description: " (/Serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/servers/{サーバー名}) を削除します。"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 12feca7761faa441023f2f242903d4fec2f0284d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881482"
+ms.locfileid: "3929517"
 ---
-# <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameserversserver-name"></a>(/Serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}/servers/{サーバー名}) を削除します。
+# <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameserversserver-name"></a>(/Serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/servers/{サーバー名}) を削除します。
 指定されたサーバーは、セッションから削除します。
 
 > [!IMPORTANT]
-> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 104/105 または後ですべての要求します。
+> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
 
   * [URI パラメーター](#ID4ET)
   * [HTTP ステータス コード](#ID4E5)
@@ -44,17 +44,17 @@ ms.locfileid: "3881482"
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4EFB"></a>
 
 
 ## <a name="request-body"></a>要求本文
-[MultiplayerSessionRequest (](../../json/json-multiplayersessionrequest.md)json) の要求の構造を参照してください。  
+[MultiplayerSessionRequest (JSON)](../../json/json-multiplayersessionrequest.md)の要求の構造を参照してください。  
 <a id="ID4EOB"></a>
 
 
 ## <a name="response-body"></a>応答本文
-[MultiplayerSession (](../../json/json-multiplayersession.md)json) 応答構造を参照してください。  
+[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)の応答構造を参照してください。  
 <a id="ID4E1B"></a>
 
 
@@ -65,4 +65,4 @@ ms.locfileid: "3881482"
 
 ##### <a name="parent"></a>Parent
 
-[/serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}/servers/{サーバー名}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.md)
+[/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/servers/{サーバー名}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.md)

@@ -1,9 +1,9 @@
 ---
-title: 取得する (/users/{requestorId}/アクセス許可/検証)
+title: 取得する (アクセス許可が/users/{requestorId}/検証)
 assetID: 8d22c668-af9a-1d24-8d65-830c2ce913d7
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidateget.html
 author: KevinAsgari
-description: " 取得する (/users/{requestorId}/アクセス許可/検証)"
+description: " 取得する (アクセス許可が/users/{requestorId}/検証)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c75a0975179b599201fac91141f8c85ace11790
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882152"
+ms.locfileid: "3930957"
 ---
-# <a name="get-usersrequestoridpermissionvalidate"></a>取得する (/users/{requestorId}/アクセス許可/検証)
-ユーザーをターゲット ユーザーで指定された操作を実行できるかどうかに関するはいまたは no 応答を取得します。
+# <a name="get-usersrequestoridpermissionvalidate"></a>取得する (アクセス許可が/users/{requestorId}/検証)
+ユーザーをターゲット ユーザーと指定した操作を実行できるかどうかに関するはいまたは no 応答を取得します。
 
   * [URI パラメーター](#ID4EQ)
   * [クエリ文字列パラメーター](#ID4E2)
@@ -37,7 +37,7 @@ ms.locfileid: "3882152"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| requestorId| string| 必須。 アクションを実行するユーザーの識別子。 指定できる値は<code>xuid({xuid})</code>と<code>me</code>します。 これには、ログインしているユーザーがあります。 値の例:<code>xuid(0987654321)</code>します。|
+| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
 
 <a id="ID4E2"></a>
 
@@ -46,8 +46,8 @@ ms.locfileid: "3882152"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- | --- | --- |
-| 設定| 文字列の列挙| 照らしてチェックする PermissionId 値。 値の例:"CommunicateUsingText"。|
-| ターゲット| string| 実行するユーザーの操作では、ユーザーの識別子。 指定できる値は<code>xuid({xuid})</code>します。 値の例: <code>xuid(0987654321)</code>|
+| 設定| 文字列の列挙| 照らしてチェックする PermissionId 値。 値の例:"CommunicateUsingText"です。|
+| ターゲット| string| 実行するユーザーの操作では、ユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>します。 値の例: <code>xuid(0987654321)</code>|
 
 <a id="ID4EDC"></a>
 
@@ -80,12 +80,12 @@ ms.locfileid: "3882152"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションでステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| OK| セッションが正常に取得されます。|
-| 400| 要求が無効です。| 例: が正しく設定 Id、不適切な Uri など。|
+| 200| OK| セッションが正常に取得されました。|
+| 400| 要求が無効です。| 例: が正しく設定 Id、不適切な Uri などです。|
 | 404| URI で指定されたユーザーが存在しません。| 指定されたリソースは見つかりませんでした。|
 
 <a id="ID4ETG"></a>
@@ -97,7 +97,7 @@ ms.locfileid: "3882152"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| string| 要求の本文の MIME タイプ。 値の例: <code>application/json</code>|
 | Content-Length| string| 応答に送信されるバイト数。 値の例: 34|
-| キャッシュ コントロール| string| キャッシュ動作を指定する、サーバーからていねい要求します。 例: <code>no-cache, no-store</code>|
+| キャッシュ コントロール| string| キャッシュ動作を指定するサーバーからていねい要求します。 例: <code>no-cache, no-store</code>|
 
 <a id="ID4EKAAC"></a>
 
@@ -135,6 +135,6 @@ ms.locfileid: "3882152"
 
 ##### <a name="parent"></a>Parent
 
-[/users/{requestorId}/アクセス許可/検証します。](uri-privacyusersrequestoridpermissionvalidate.md)
+[アクセス許可が/users/{requestorId}/検証します。](uri-privacyusersrequestoridpermissionvalidate.md)
 
  [PermissionId 列挙](../../enums/privacy-enum-permissionid.md)

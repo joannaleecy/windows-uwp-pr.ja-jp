@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d727171b079bc05851e1c7ab4de6f01587ce460d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881642"
+ms.locfileid: "3928605"
 ---
 # <a name="get-started-using-visual-studio-for-uwp-games"></a>UWP ゲーム用 Visual Studio の使用に関する概要
 
@@ -23,7 +23,7 @@ ms.locfileid: "3881642"
 
 1. **[デベロッパー センターの開発者プログラム](https://developer.microsoft.com/store/register)** に登録します。
 2. **[Windows 10](https://microsoft.com/windows)**。
-3. **[Visual Studio](https://www.visualstudio.com/)** の**ユニバーサル Windows アプリ開発ツール**を使用します。 UWP アプリのバージョンは、Visual Studio 2015 Update 3 を最低限に必要です。 開発者とセキュリティ更新プログラムは、Visual Studio の最新リリースを使用することをお勧めします。 
+3. **[Visual Studio](https://www.visualstudio.com/)** の**ユニバーサル Windows アプリ開発ツール**を使用します。 UWP アプリのバージョンは、Visual Studio 2015 Update 3 を最低限に必要です。 開発者とセキュリティ更新プログラムの最新リリースの Visual Studio を使用することをお勧めします。 
 4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** 以降。
 
 > [!IMPORTANT]

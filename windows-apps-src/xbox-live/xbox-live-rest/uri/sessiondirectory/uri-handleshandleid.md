@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 47dda291a9a86ccbee69e1e51ca71be373f5dc1d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882533"
+ms.locfileid: "3929673"
 ---
 # <a name="handleshandleid"></a>/handles/{ハンドル id を使用}
-識別子により指定されたセッション ハンドルの削除を取得する操作をサポートしています。 
+識別子により指定されたセッション ハンドルを削除または取得の操作をサポートしています。 
 
 > [!NOTE] 
-> この URI は、2015年マルチプレイヤーでは使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用して設計されています。  
+> この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用する概念があることです。  
 
  
 <a id="ID4EQ"></a>
@@ -37,14 +37,14 @@ sessiondirectory.xboxlive.com
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | 
-| ハンドル id を使用| GUID| セッションのハンドルを一意の ID。| 
+| ハンドル id を使用| GUID| セッション ハンドルの一意の ID。| 
   
 <a id="ID4ERB"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(/Handles/{ハンドル id を使用}) を削除します。](uri-handleshandleiddelete.md)
+[削除 (/handles/{ハンドル id を使用しました)](uri-handleshandleiddelete.md)
 
 &nbsp;&nbsp;ハンドル ID で指定されたハンドルを削除します。
 

@@ -12,23 +12,23 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b8dcea7c0987a2bc783adae0398c9579ded2fe8
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881502"
+ms.locfileid: "3929761"
 ---
 # <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/詳細
-返しますの詳細とメタデータを提供する方法の 1 つまたは複数の項目。 これらの Uri のドメインが`eds.xboxlive.com`します。
+返します提供の詳細とメタデータについての 1 つまたは複数の項目です。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
-API は、関連する API と参照 API によって異なります詳細 (とき、ID で passin) は、詳細 API には、追加の情報が返されます。 一方、それらの Api が、暗黙的または明示的に fiven ID に関連付けられているその他の項目に関する情報を返す。同じ項目。
+API は、関連する API と参照 API によって異なります詳細 (とき、ID で passin) 詳細 API には、追加の情報が返されますが、それらの Api が、暗黙的または明示的に fiven ID に関連付けられているその他の項目に関する情報を返す。同じ項目。
  
-別のメディア項目の種類の複数の Id は、1 つに渡すことができます (限り ProviderContentID - 以下を参照型の不明) を呼び出してが同じメディア グループに属するすべてする必要があります。 ただし、これには、呼び出し元がメディアのグループを認識しないクライアントのシナリオのいくつかがあります。 API では、これを使用して、次のような状況でのメディアのグループには、"Unknown"の特殊値のことを許可します。
+別のメディア項目の種類の複数の Id は、1 つに渡すことができます (限り ProviderContentID - 以下を参照型のわからない)、呼び出しが同じメディア グループに属するすべてする必要があります。 ただし、これには、呼び出し元がメディアのグループを認識しないクライアントのシナリオのいくつかがあります。 API では、これを使用して、次のような状況でのメディアのグループには、"Unknown"の特殊値のことを許可します。
  
-   * idType = AppType またはゲームの種類のいずれかの項目が生成される XboxHexTitle
-   * idType = MovieType または TVType 項目が生成される ProviderContentId
+   * idType = XboxHexTitle で、AppType またはゲームの種類のいずれかの項目が生成されます
+   * idType = ProviderContentId で、MovieType または TVType 項目が生成されます
   
-次の図は、どのメディア グループと ID の種類を提供できます全体のマッピングをまとめたものです。
+次の図は、どのメディア グループと ID の種類を指定できます全体のマッピングをまとめたものです。
  
 | ID の種類| AppType| ゲームの種類| MovieType| MusicArtistType| MusicType| TVType| WebVideoType| Unknown| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -54,9 +54,9 @@ API は、関連する API と参照 API によって異なります詳細 (と�
  
 ### <a name="providercontentid"></a>ProviderContentId
  
-これ検索プロバイダーを使用して、特定の id など。 Netflix Id または Hulu id。
+これは、検索プロバイダーを使用特定 id。 例。 Netflix Id または Hulu id。
  
-IdType ProviderContentId がある場合は、1 つの値のみが受け入れられます。 これは、ProviderContentIds は種類の ID が含まれるだけであるため、'.' 文字です。 '.' 文字がする Id 間の区切り文字でも、新機能、delimieter Id 間の間にあいまいさがおよび ID 自体の一部はします。 API の残りの部分、一括検索機能を除く、ProviderContentIds の同じように動作します。
+IdType ProviderContentId がある場合は、単一の値のみが受け入れられます。 これは、ProviderContentIds は種類の ID が含まれるだけであるため、'.' 文字です。 '.' 文字がする Id 間の区切り文字でも、新機能、delimieter Id 間の間にあいまいさがおよび ID 自体の一部は何です。 API の残りの部分一括検索機能を除く、ProviderContentIds の同じように動作します。
    
 <a id="ID4EUH"></a>
 
@@ -65,7 +65,7 @@ IdType ProviderContentId がある場合は、1 つの値のみが受け入れ�
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
   
 <a id="ID4EWAAC"></a>
 
@@ -74,7 +74,7 @@ IdType ProviderContentId がある場合は、1 つの値のみが受け入れ�
 
 [取得する (/media/{marketplaceId}/詳細)](uri-medialocaledetailsget.md)
 
-&nbsp;&nbsp;返しますの詳細とメタデータを提供する方法の 1 つまたは複数の項目。 
+&nbsp;&nbsp;返します提供の詳細とメタデータについての 1 つまたは複数の項目です。 
  
 <a id="ID4EABAC"></a>
 

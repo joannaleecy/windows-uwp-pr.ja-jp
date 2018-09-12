@@ -1,9 +1,9 @@
 ---
-title: /scids/{scid}/leaderboards/{leaderboardname}
+title: '{scid}/scids//leaderboards/{leaderboardname}'
 assetID: 16345a17-6025-5453-5694-eaf97f0e83e9
 permalink: en-us/docs/xboxlive/rest/uri-scidsscidleaderboardsleaderboardname.html
 author: KevinAsgari
-description: " /scids/{scid}/leaderboards/{leaderboardname}"
+description: " {scid}/scids//leaderboards/{leaderboardname}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 797a557b4bb7d443ecfdce1f136f5db2079b1990
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881665"
+ms.locfileid: "3930899"
 ---
-# <a name="scidsscidleaderboardsleaderboardname"></a>/scids/{scid}/leaderboards/{leaderboardname}
+# <a name="scidsscidleaderboardsleaderboardname"></a>{scid}/scids//leaderboards/{leaderboardname}
 定義済みグローバル ランキングにアクセスします。 これらの Uri のドメインが`leaderboards.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -30,7 +30,7 @@ ms.locfileid: "3881665"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| scid| GUID| アクセス対象のリソースが含まれているサービス構成の識別子。| 
+| scid| GUID| アクセス対象のリソースが含まれているサービス構成の識別子です。| 
 | leaderboardname| string| アクセス対象の定義済みのランキング リソースの一意の識別子。| 
   
 <a id="ID4E3B"></a>

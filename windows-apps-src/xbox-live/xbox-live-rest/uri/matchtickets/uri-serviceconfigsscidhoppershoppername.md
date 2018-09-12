@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs//hoppers/{呼び出します}
+title: /serviceconfigs/{scid}/hoppers/{hoppername}
 assetID: ba1e129d-b4c4-6535-46ce-fd184465c85f
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppername.html
 author: KevinAsgari
-description: " /serviceconfigs//hoppers/{呼び出します}"
+description: " /serviceconfigs/{scid}/hoppers/{hoppername}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e02a4ea5ba9c21337032daad44579f6001360cd
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882411"
+ms.locfileid: "3929067"
 ---
-# <a name="serviceconfigsscidhoppershoppername"></a>/serviceconfigs//hoppers/{呼び出します}
+# <a name="serviceconfigsscidhoppershoppername"></a>/serviceconfigs/{scid}/hoppers/{hoppername}
 
 マッチ チケットを作成する POST 操作をサポートしています。
 
@@ -38,14 +38,14 @@ momatch.xboxlive.com
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
 | scid| GUID| セッションのサービス構成 id (SCID)。|
-| 呼び出します | string | ホッパーの名前です。 |
+| hoppername | string | ホッパーの名前です。 |
 
 <a id="ID4E2B"></a>
 
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST (/serviceconfigs//hoppers/{呼び出します})](uri-serviceconfigsscidhoppershoppernamepost.md)
+[POST (/serviceconfigs/{scid}/hoppers/{hoppername})](uri-serviceconfigsscidhoppershoppernamepost.md)
 
 &nbsp;&nbsp;指定したマッチ チケットを作成します。
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dd75899bfe94ab7a9dc0a23df0ea40c0431d809
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881849"
+ms.locfileid: "3930461"
 ---
 # <a name="usersmeresetreputation"></a>/users/me/resetreputation
 現在のユーザーの評判スコアにアクセスするに執行チームを使用できます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
@@ -26,9 +26,9 @@ ms.locfileid: "3881849"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST (/ユーザー/me/resetreputation)](uri-usersmeresetreputationpost.md)
+[POST (/ユーザー me//resetreputation)](uri-usersmeresetreputationpost.md)
 
-&nbsp;&nbsp;により、実施チームは、アカウント ハイジャック (たとえば) した後、いくつかの任意の値を現在のユーザーの評判スコアを設定します。
+&nbsp;&nbsp;により、実施チームは、アカウント ハイジャック (たとえば) の後、いくつかの任意の値を現在のユーザーの評判スコアを設定します。
  
 <a id="ID4E6"></a>
 

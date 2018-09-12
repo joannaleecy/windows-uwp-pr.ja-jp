@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 9278ee433852bf3ef1eec2570340ef9cb7d64c92
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881645"
+ms.locfileid: "3931113"
 ---
 # <a name="porting-xbox-live-code-from-the-xbox-developer-kit-xdk-to-universal-windows-platform-uwp"></a>Xbox 開発キット (XDK) からユニバーサル Windows プラットフォーム (UWP) への Xbox Live コード移植
 
@@ -31,7 +31,7 @@ ms.locfileid: "3881645"
 
 ## <a name="setting-up-and-configuring-your-project-in-dev-center-and-xdp"></a>デベロッパー センターおよび XDP でのプロジェクトの設定と構成
 
-Xbox Live サービスを使用する UWP タイトルでは、 [Windows デベロッパー センター](https://dev.windows.com/en-us)または[Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com/)で構成する必要があります。 最新の情報については、[Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) に含まれる『Xbox Live プログラミング ガイド』の「[新規または既存の UWP プロジェクトに Xbox Live を追加する方法](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」を参照してください。
+Xbox Live サービスを使用する UWP タイトルは、 [Windows デベロッパー センター](https://dev.windows.com/en-us)または[Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com/)で構成する必要があります。 最新の情報については、[Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) に含まれる『Xbox Live プログラミング ガイド』の「[新規または既存の UWP プロジェクトに Xbox Live を追加する方法](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」を参照してください。
 
 そのページのトピックには、タイトルで Xbox Live サービスを使用するための、以下の手順が含まれています。
 
@@ -59,7 +59,7 @@ XDP でクロス プレイとその構成要件をサポートにすることに
 
 2.  UWP 用にセキュア ソケット API や Game Save API (別名接続ストレージ API) が必要な場合は、[**Xbox Live Platform Extensions SDK** をインストール](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx)します。
 
-3.  Visual Studio で、ユニバーサル Windows アプリ プロジェクトに Xbox Live サポートを追加します。 完全なソースを追加したり、Visual Studio プロジェクトに NuGet パッケージをインストールしてバイナリを参照することができます。 C++ と WinRT の両方にパッケージが提供されています。 詳細については、「[新規または既存の UWP プロジェクトに Xbox Live を追加する方法](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」を参照してください
+3.  Visual Studio で、ユニバーサル Windows アプリ プロジェクトに Xbox Live サポートを追加します。 完全なソースを追加したり、Visual Studio のプロジェクトに NuGet パッケージをインストールしてバイナリを参照することができます。 C++ と WinRT の両方にパッケージが提供されています。 詳細については、「[新規または既存の UWP プロジェクトに Xbox Live を追加する方法](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」を参照してください
 
 4.  開発用コンピューターを、サンドボックスを使用するように構成します。 Xbox Live SDK の Tools ディレクトリに、管理者のコマンド プロンプトから使用できるコマンド ライン スクリプト (例: SwitchSandbox.cmd XDKS.1) があります。
 

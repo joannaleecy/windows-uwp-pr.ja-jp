@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d1bf7735fabbc08f723dbaf77a020b205f66584d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881952"
+ms.locfileid: "3928715"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatename"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}
-一連のセッション テンプレート名を取得する GET 操作をサポートしています。 
+セッション テンプレート名のセットを取得する GET 操作をサポートしています。 
 <a id="ID4EO"></a>
 
  
@@ -40,9 +40,9 @@ sessiondirectory.xboxlive.com
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(/Serviceconfigs/sessiontemplates/{sessionTemplateName}) を取得します。](uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.md)
+[(/Serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}) を取得します。](uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.md)
 
-&nbsp;&nbsp;一連のセッション テンプレート名を取得します。
+&nbsp;&nbsp;セッション テンプレートの名前のセットを取得します。
  
 <a id="ID4ECC"></a>
 

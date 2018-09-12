@@ -12,19 +12,19 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4be83e2d4301a708a705a8bec0a1d975b6435bc5
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882194"
+ms.locfileid: "3930223"
 ---
 # <a name="marketplace-uris"></a>Marketplace Uri
 
-このセクションでは、*市場*のサービスとも呼ばれるエンターテイメント探索サービス (EDS) 用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*市場*サービスとも呼ばれますエンターテイメント探索サービス (EDS) 用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
 
-Xbox 360、Windows Phone デバイスの場合、または Xbox.com を実行しているゲームのみでは、このサービスを使用できます。
+Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームだけでは、このサービスを使用できます。
 
-これらの Uri のドメイン eds.xboxlive.com、inventory.xboxlive.com です。
+これらの Uri ドメインは eds.xboxlive.com inventory.xboxlive.com です。
 
 <a id="ID4EPB"></a>
 
@@ -45,7 +45,7 @@ Xbox 360、Windows Phone デバイスの場合、または Xbox.com を実行し
 
 [/media/{marketplaceId}/crossMediaGroupSearch](uri-localecrossmediagroupsearch.md)
 
-&nbsp;&nbsp;いくつかの異なるメディア グループからアクセス項目。
+&nbsp;&nbsp;いくつかの異なるメディア グループからの項目にアクセスします。
 
 [/media/{marketplaceId} 参照/](uri-medialocalebrowse.md)
 
@@ -57,47 +57,47 @@ Xbox 360、Windows Phone デバイスの場合、または Xbox.com を実行し
 
 [/media/{marketplaceId}/詳細](uri-medialocaledetails.md)
 
-&nbsp;&nbsp;返しますの詳細とメタデータを提供する方法の 1 つまたは複数の項目。
+&nbsp;&nbsp;返します提供の詳細とメタデータについての 1 つまたは複数の項目です。
 
-[/media/{marketplaceId}/フィールド](uri-medialocalefields.md)
+[/media/{marketplaceId} フィールド/](uri-medialocalefields.md)
 
 &nbsp;&nbsp;フィールド トークンにアクセスします。
 
-[/media/{marketplaceId}/メタデータ/mediaGroups](uri-medialocalemetadatamediagroups.md)
+[メタデータ/mediaGroups/media/{marketplaceId}](uri-medialocalemetadatamediagroups.md)
 
-&nbsp;&nbsp;すべてのサポートされている mediaGroups EDS の特定のバージョンの一覧を示します。
+&nbsp;&nbsp;指定した EDS バージョンのサポートされているすべての mediaGroups の一覧を示します。
 
-[/media/{marketplaceId}/メタデータ/mediaGroups/{mediagroup}/mediaItemTypes](uri-medialocalemetadatamediagroupsmediaitemtypes.md)
+[/media/{marketplaceId}/メタデータ mediaGroups/{mediagroup}/mediaItemTypes](uri-medialocalemetadatamediagroupsmediaitemtypes.md)
 
 &nbsp;&nbsp;指定されたバージョン EDS のメディアのグループごとの利用可能な mediaItemTypes にアクセスします。
 
-[/media/{marketplaceId}/メタデータ/mediaItemTypes/{mediaItemType}/フィールド](uri-medialocalemetadatamediaitemtypefields.md)
+[/media/{marketplaceId}/メタデータ mediaItemTypes/{mediaItemType} フィールド/](uri-medialocalemetadatamediaitemtypefields.md)
 
-&nbsp;&nbsp;いずれか、特定の mediaitemtype と EDS の特定のバージョンのデータとアクセス フィールド。
+&nbsp;&nbsp;指定された mediaitemtype と EDS の特定のバージョンのデータを期待いずれかからアクセス フィールド。
 
-[/media/{marketplaceId}/メタデータ/mediaItemTypes/{mediaitemtype}/queryrefiners](uri-medialocalemetadatamediaitemtypequeryrefiners.md)
+[/media/{marketplaceId}/メタデータ mediaItemTypes/{mediaitemtype}/queryrefiners](uri-medialocalemetadatamediaitemtypequeryrefiners.md)
 
-&nbsp;&nbsp;特定のメディア項目の種類のクエリ絞り込み条件にアクセスします。
+&nbsp;&nbsp;指定したメディア項目の種類のクエリ絞り込み条件にアクセスします。
 
 [/media/{marketplaceId}/メタデータ/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}](uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinername.md)
 
-&nbsp;&nbsp;指定されたクエリの調整名と、特定のメディア項目の種類で許容される値にアクセスします。
+&nbsp;&nbsp;メディア項目の種類が与えられると、指定されたクエリの絞り込み条件名は、利用可能な値にアクセスします。
 
 [/media/{marketplaceId}/メタデータ/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues](uri-medialocalemediaitemtypequeryrefinersubqueryrefinervalues.md)
 
-&nbsp;&nbsp;指定されたクエリの調整値 ("subgenres には、指定されたジャンル"など) のサブ値の一覧にアクセスします。
+&nbsp;&nbsp;指定されたクエリ調整値 ("subgenres には、指定されたジャンル"など) のサブ値の一覧にアクセスします。
 
-[/media/{marketplaceId}/メタデータ/mediaItemTypes](uri-medialocalemetadatamediaitemtypes.md)
+[メタデータ/mediaItemTypes/media/{marketplaceId}](uri-medialocalemetadatamediaitemtypes.md)
 
-&nbsp;&nbsp;特定の EDS バージョンのサポートされているすべての mediaItemTypes にアクセスします。
+&nbsp;&nbsp;指定した EDS バージョンのサポートされているすべての mediaItemTypes にアクセスします。
 
-[/media/{marketplaceId}/メタデータ/mediaItemTypes/{mediaitemtype}/sortorders](uri-medialocalemetadatamediaitemtypesortorders.md)
+[/media/{marketplaceId}/メタデータ mediaItemTypes/{mediaitemtype}/sortorders](uri-medialocalemetadatamediaitemtypesortorders.md)
 
-&nbsp;&nbsp;利用可能なアクセス mediaitem の特定の種類と EDS の特定のバージョンの注文を並べ替えます。
+&nbsp;&nbsp;利用可能なアクセスは、特定 mediaitem 型と EDS の特定のバージョン向けの注文を並べ替えます。
 
 [/media/{marketplaceId}/singleMediaGroupSearch](uri-medialocalesinglemediagroupsearch.md)
 
-&nbsp;&nbsp;1 つのメディア グループ内の項目を検索をできます。
+&nbsp;&nbsp;1 つのメディア グループ内の項目の検索を許可します。
 
 <a id="ID4EFD"></a>
 
@@ -109,7 +109,7 @@ Xbox 360、Windows Phone デバイスの場合、または Xbox.com を実行し
 
 ##### <a name="parent"></a>Parent
 
-[ユニバーサル リソース識別子 (URI) の参照](../atoc-xboxlivews-reference-uris.md)
+[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
 
 
 <a id="ID4ERD"></a>

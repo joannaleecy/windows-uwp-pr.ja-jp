@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f8137980bddbf494c989f4f8a39c2f6edaf3d30a
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882085"
+ms.locfileid: "3928919"
 ---
 # <a name="titlestitleidsessionssessionidallocationstatus"></a>/titles/{titleId}/sessions/{sessionId}/allocationStatus
-特定のタイトル id とセッション id、チケットの要求の状態を取得します。 これらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+特定のタイトル id とセッション id、チケットの要求の状態を取得します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EU)
   * [ホスト名](#ID4EPB)
@@ -32,8 +32,8 @@ ms.locfileid: "3882085"
  
 | パラメーター| 説明| 
 | --- | --- | 
-| titleId| 要求の操作をタイトルの ID です。| 
-| sessionId| 検索するセッションの ID です。| 
+| titleId| 要求の操作のタイトルの ID です。| 
+| sessionId| 検索するセッションの ID。| 
   
 <a id="ID4EPB"></a>
 
@@ -49,5 +49,5 @@ gameserverms.xboxlive.com
   
 [GET](uri-titlestitleidsessionssessionidallocationstatus-get.md)
  
-&nbsp;&nbsp;その sessionId によって識別 sessionhost の割り当てを取得します。
+&nbsp;&nbsp;その sessionId で識別される sessionhost の割り当ての状態を返します。
    

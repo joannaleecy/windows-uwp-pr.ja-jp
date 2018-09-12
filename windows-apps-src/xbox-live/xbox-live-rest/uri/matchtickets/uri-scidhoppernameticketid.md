@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs//hoppers/{呼び出します}/tickets/{ticketid}
+title: /serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}
 assetID: 25deb7fe-859c-01d2-d14f-455a36c08a7c
 permalink: en-us/docs/xboxlive/rest/uri-scidhoppernameticketid.html
 author: KevinAsgari
-description: " /serviceconfigs//hoppers/{呼び出します}/tickets/{ticketid}"
+description: " /serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: dd7ed139fffb8bdb10ac5074d5e9725753678f1c
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881791"
+ms.locfileid: "3930301"
 ---
-# <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a>/serviceconfigs//hoppers/{呼び出します}/tickets/{ticketid}
+# <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a>/serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}
 
 マッチ チケットの削除操作をサポートしています。
 
@@ -34,7 +34,7 @@ momatch.xboxlive.com
 
 
 ## <a name="remarks"></a>注釈
-この URI には、対象ユーザーの構成で所有者識別子の値の xuid、gt、および me がサポートしています。  
+この URI は、対象ユーザーの構成では所有者識別子の値の xuid、gt、および me をサポートしています。  
 <a id="ID4E2"></a>
 
 
@@ -51,7 +51,7 @@ momatch.xboxlive.com
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(/Serviceconfigs//hoppers/{呼び出します}/tickets/{ticketid}) を削除します。](uri-scidhoppernameticketiddelete.md)
+[(/Serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}) を削除します。](uri-scidhoppernameticketiddelete.md)
 
 &nbsp;&nbsp;マッチ チケットを削除します。
 

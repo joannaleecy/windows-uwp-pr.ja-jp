@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 25d9262ac16eab3d1c2f35960445321fa3872c30
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882134"
+ms.locfileid: "3928765"
 ---
 # <a name="player-json"></a>プレイヤー (JSON)
 ゲーム セッションにプレイヤーのデータが含まれています。 
@@ -31,9 +31,9 @@ ms.locfileid: "3882134"
 | --- | --- | --- | 
 | customData| 8 ビットの符号なし整数の配列| Base64 1024 バイトは、ゲーム固有のプレイヤーのデータをエンコードします。 この値は、サーバーに不透明です。| 
 | ゲーマータグ| string| ゲーマータグ-は最大 15 文字、プレイヤーのします。 クライアントは、プレイヤーを識別するため、UI でこの値を使用する必要があります。 | 
-| isCurrentlyInSession| ブール値| プレイヤーは、セッション内で現在またはセッションを示します。| 
-| seatIndex| 32 ビットの符号付き整数| セッションにプレイヤーのインデックス。| 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、プレイヤーのします。| 
+| isCurrentlyInSession| ブール値| プレイヤーがセッションで現在使用されてか、セッションを抜けたかどうかを示します。| 
+| seatIndex| 32 ビット符号付き整数| セッションにプレイヤーのインデックス。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) プレイヤーのします。| 
   
 <a id="ID4E3C"></a>
 

@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/sessiontemplates/{sessionTemplateName} バッチ処理/
+title: /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName} バッチ/
 assetID: 4f8e1ece-2ba8-9ea4-e551-2a69c499d7b9
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.html
 author: KevinAsgari
-description: " /serviceconfigs/sessiontemplates/{sessionTemplateName} バッチ処理/"
+description: " /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName} バッチ/"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cc0850d1fda69eae1c0f3774a3146de33c7b4c8
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882215"
+ms.locfileid: "3929557"
 ---
-# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamebatch"></a>/serviceconfigs/sessiontemplates/{sessionTemplateName} バッチ処理/
+# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamebatch"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName} バッチ/
 セッション テンプレート レベルでバッチ クエリを作成する POST 操作をサポートしています。
 
 > [!IMPORTANT]
-> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 104/105 または後ですべての要求します。
+> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
 
 <a id="ID4ER"></a>
 
@@ -44,7 +44,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST (/serviceconfigs/sessiontemplates/{sessionTemplateName} バッチ処理/)](uri-serviceconfigscidsessiontemplatessessiontemplatenamebatchpost.md)
+[POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName} バッチ/)](uri-serviceconfigscidsessiontemplatessessiontemplatenamebatchpost.md)
 
 &nbsp;&nbsp;複数の Xbox ユーザー Id には、バッチ クエリを作成します。
 

@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a188c3406ad0ca3bfca78d6b45c548c72bf791e
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882083"
+ms.locfileid: "3931295"
 ---
 # <a name="title-storage-uris"></a>タイトル ストレージ Uri
  
-このセクションでは、*タイトル ストレージ*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細情報を提供します。
+このセクションでは、*タイトル ストレージ*用の Xbox Live サービスからの詳細については、ユニバーサル Resource Identifier (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドを提供します。
  
 どのプラットフォームで実行されるゲームでも、このサービスを使用できます。
  
@@ -31,11 +31,11 @@ ms.locfileid: "3882083"
  
 ## <a name="in-this-section"></a>このセクションの内容
 
-[グローバル///}](uri-globalscidsscid.md)
+[グローバル//global/scids/{scid}](uri-globalscidsscid.md)
 
-&nbsp;&nbsp;このストレージの種類でクォータ情報を取得します。
+&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。
 
-[グローバル///}/data/{path}](uri-globalscidssciddatapath.md)
+[グローバル//global/scids/{scid}/data/{パス}](uri-globalscidssciddatapath.md)
 
 &nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。 
 
@@ -43,43 +43,43 @@ ms.locfileid: "3882083"
 
 &nbsp;&nbsp;ファイルをダウンロードします。
 
-[ユーザー/json//{scid}/{scid}/data}、json をバッチ処理/](uri-jsonusersbatchscidssciddatapathandfilenametype.md)
+[json/ユーザー//global/scids/{scid}/data/{pathAndFileName} json をバッチ処理](uri-jsonusersbatchscidssciddatapathandfilenametype.md)
 
 &nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。
 
 [/json/users/xuid({xuid})/scids/{scid}](uri-jsonusersxuidscidsscid.md)
 
-&nbsp;&nbsp;このストレージの種類でクォータ情報を取得します。
+&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。
 
-[/json/users/xuid({xuid})/scids/{scid}/data/{path}](uri-jsonusersxuidscidssciddatapath.md)
+[/json/users/xuid({xuid})/scids/{scid}/data/{パス}](uri-jsonusersxuidscidssciddatapath.md)
 
 &nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。 
 
-[/json/users/xuid({xuid})/scids/{scid} {scid}/data}、json](uri-jsonusersxuidscidssciddatapathandfilenametype.md)
+[/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName} json](uri-jsonusersxuidscidssciddatapathandfilenametype.md)
 
 &nbsp;&nbsp;ダウンロード、アップロード、またはファイルを削除します。
 
 [/sessions/{sessionId}/scids/{scid}](uri-sessionssessionidscidsscid.md)
 
-&nbsp;&nbsp;このストレージの種類でクォータ情報を取得します。
+&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。
 
-[/sessions/{sessionId}/scids/{scid}/data/{path}](uri-sessionssessionidscidssciddatapath.md)
+[/sessions/{sessionId} {scid}/scids//data/{パス}](uri-sessionssessionidscidssciddatapath.md)
 
 &nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。 
 
-[/sessions/{sessionId}/scids/{scid}/data {{pathandfilename}, {type}](uri-sessionssessionidscidssciddatapathandfilenametype.md)
+[/sessions/{sessionId} {scid}/scids//data/{pathAndFileName} {型}](uri-sessionssessionidscidssciddatapathandfilenametype.md)
 
 &nbsp;&nbsp;ファイルをダウンロードします。
 
-[ユーザー/trustedplatform//{scid}/{scid}/data}, {type} をバッチ処理/](uri-trustedplatformusersbatchscidssciddatapathandfilenametype.md)
+[ユーザー/trustedplatform//global/scids/{scid}/data/{pathAndFileName} {の種類} をバッチ処理/](uri-trustedplatformusersbatchscidssciddatapathandfilenametype.md)
 
 &nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}](uri-trustedplatformusersxuidscidsscid.md)
 
-&nbsp;&nbsp;このストレージの種類でクォータ情報を取得します。
+&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。
 
-[/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}](uri-trustedplatformusersxuidscidssciddatapath.md)
+[/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{パス}](uri-trustedplatformusersxuidscidssciddatapath.md)
 
 &nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。 
 
@@ -87,19 +87,19 @@ ms.locfileid: "3882083"
 
 &nbsp;&nbsp;ダウンロード、アップロード、またはファイルを削除します。
 
-[ユーザー/untrustedplatform//{scid}/{scid}/data}, {type} をバッチ処理/](uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.md)
+[ユーザー/untrustedplatform//global/scids/{scid}/data/{pathAndFileName} {の種類} をバッチ処理/](uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.md)
 
 &nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。
 
 [/untrustedplatform/users/xuid({xuid})/scids/{scid}](uri-untrustedplatformusersxuidscidsscid.md)
 
-&nbsp;&nbsp;このストレージの種類でクォータ情報を取得します。
+&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。
 
-[/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}](uri-untrustedplatformusersxuidscidssciddatapath.md)
+[/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{パス}](uri-untrustedplatformusersxuidscidssciddatapath.md)
 
 &nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。 
 
-[/untrustedplatform/users/xuid({xuid})/scids/{scid}/data {{pathandfilename}, {type}](uri-untrustedplatformusersxuidscidssciddatapathandfilenametype.md)
+[/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName} {型}](uri-untrustedplatformusersxuidscidssciddatapathandfilenametype.md)
 
 &nbsp;&nbsp;ダウンロード、アップロード、またはファイルを削除します。
  
@@ -113,6 +113,6 @@ ms.locfileid: "3882083"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) の参照](../atoc-xboxlivews-reference-uris.md)
+[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

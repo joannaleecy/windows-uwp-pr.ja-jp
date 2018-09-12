@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e65936d20923ecbdc2d9cfb0a0ec52bb7504b885
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881949"
+ms.locfileid: "3930413"
 ---
 # <a name="javascript-object-notation-json-object-reference"></a>JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス
  
-JavaScript Object Notation (JSON) では、web 上のデータをカプセル化するための軽量な標準ベース、オブジェクト指向に沿った表記です。
+JavaScript Object Notation (JSON) では、web 上のデータをカプセル化するための軽量な標準ベース、オブジェクト指向の表記です。
  
-Xbox Live サービスは、要求と、サービスからの応答で使用される JSON オブジェクトを定義します。 このセクションでは、Xbox Live サービスで使う各 JSON オブジェクトに関するリファレンス情報を提供します。
+Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。 このセクションでは、Xbox Live サービスで使用される各 JSON オブジェクトについての参照を説明します。
  
 <a id="ID4EHB"></a>
 
@@ -43,7 +43,7 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [AggregateSessionsResponse (JSON)](json-aggregatesessionsresponse.md)
 
-&nbsp;&nbsp;ユーザーの適合性のセッションは、集計されたデータが含まれています。
+&nbsp;&nbsp;ユーザーの適合性のセッションは、集計データが含まれています。
 
 [BatchRequest (JSON)](json-batchrequest.md)
 
@@ -53,7 +53,7 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [DeviceRecord (JSON)](json-devicerecord.md)
 
-&nbsp;&nbsp;、その種類と、タイトルでアクティブななど、デバイスに関する情報。
+&nbsp;&nbsp;、その種類とそれに対するアクティブなタイトルなど、デバイスに関する情報。
 
 [フィードバック (JSON)](json-feedback.md)
 
@@ -63,7 +63,7 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [GameClipsServiceErrorResponse (JSON)](json-gameclipsserviceerrorresponse.md)
 
-&nbsp;&nbsp;/Users/{ownerId}/scids/{scid}/clips/{gameClipId} への応答の省略可能な部分/uri 形式/{gameClipUriType} API。
+&nbsp;&nbsp;/Users/{ownerId} {scid}/scids//clips/{gameClipId} への応答の省略可能な部分/uri 形式/{gameClipUriType} API です。
 
 [GameClipThumbnail (JSON)](json-gameclipthumbnail.md)
 
@@ -73,7 +73,7 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [GameMessage (JSON)](json-gamemessage.md)
 
-&nbsp;&nbsp;ゲーム セッションのメッセージ キューにメッセージのデータを定義する JSON オブジェクトを返します。
+&nbsp;&nbsp;ゲーム セッションのメッセージ キューにメッセージのデータを定義する JSON オブジェクト。
 
 [GameResult (JSON)](json-gameresult.md)
 
@@ -103,11 +103,11 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [inventoryItem (JSON)](json-inventoryitem.md)
 
-&nbsp;&nbsp;コアのインベントリ項目の権利を付与できる標準の項目を表します。
+&nbsp;&nbsp;コアのインベントリ項目の権利を付与できる標準的な項目を表します。
 
 [LastSeenRecord (JSON)](json-lastseenrecord.md)
 
-&nbsp;&nbsp;利用できるは、ユーザーには、有効な DeviceRecord があるないと、ユーザーが前回、システムに表示されていた場合について説明します。
+&nbsp;&nbsp;利用できるは、ユーザーには、有効な DeviceRecord があるないと、ユーザーが最後システムに表示されていた場合について説明します。
 
 [MatchTicket (JSON)](json-matchticket.md)
 
@@ -131,7 +131,7 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [MultiplayerSessionRequest (JSON)](json-multiplayersessionrequest.md)
 
-&nbsp;&nbsp;**MultiplayerSession**オブジェクトで操作の要求の JSON オブジェクトが渡されます。
+&nbsp;&nbsp;**MultiplayerSession**オブジェクト上の操作に対して要求の JSON オブジェクトが渡されます。
 
 [MultiplayerSession (JSON)](json-multiplayersession.md)
 
@@ -143,7 +143,7 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [PeopleList (JSON)](json-peoplelist.md)
 
-&nbsp;&nbsp;[ユーザー](json-person.md)オブジェクトのコレクションです。
+&nbsp;&nbsp;[Person](json-person.md)オブジェクトのコレクションです。
 
 [PermissionCheckBatchRequest (JSON)](json-permissioncheckbatchrequest.md)
 
@@ -155,15 +155,15 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [PermissionCheckBatchUserResponse (JSON)](json-permissioncheckbatchuserresponse.md)
 
-&nbsp;&nbsp;バッチのアクセス許可の理由は、1 つのターゲット ユーザーのアクセス許可の値の一覧を確認します。
+&nbsp;&nbsp;バッチのアクセス許可の理由は、単一のターゲット ユーザーのアクセス許可の値の一覧を確認します。
 
 [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)
 
-&nbsp;&nbsp;1 つのターゲットのユーザーからの 1 つのアクセス許可の設定の 1 人のユーザーからのチェックの結果。
+&nbsp;&nbsp;1 つの対象ユーザーに対して 1 つのアクセス許可の設定を 1 人のユーザーからのチェックの結果。
 
 [PermissionCheckResult (JSON)](json-permissioncheckresult.md)
 
-&nbsp;&nbsp;1 つのターゲットのユーザーからの 1 つのアクセス許可の設定の 1 人のユーザーからのチェックの結果。
+&nbsp;&nbsp;1 つの対象ユーザーに対して 1 つのアクセス許可の設定を 1 人のユーザーからのチェックの結果。
 
 [ユーザー (JSON)](json-person.md)
 
@@ -179,7 +179,7 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [Presencerecord を要求して (JSON)](json-presencerecord.md)
 
-&nbsp;&nbsp;1 人のユーザーのオンライン プレゼンスに関するデータ。
+&nbsp;&nbsp;1 人のユーザーのオンライン プレゼンスに関するデータです。
 
 [プロファイル (JSON)](json-profile.md)
 
@@ -199,11 +199,11 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [quotaInfo (JSON)](json-quota.md)
 
-&nbsp;&nbsp;クォータのタイトル グループについてを説明します。
+&nbsp;&nbsp;クォータ タイトル グループについてを説明します。
 
 [要件 (JSON)](json-requirement.md)
 
-&nbsp;&nbsp;実績とそれらに対応するための距離、ユーザーがロック解除の条件。
+&nbsp;&nbsp;実績とそれらに対応するため、ユーザーは、どのくらいのロック解除条件。
 
 [ResetReputation (JSON)](json-resetreputation.md)
 
@@ -211,7 +211,7 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [リワード (JSON)](json-reward.md)
 
-&nbsp;&nbsp;実績に関連付けられたリワードです。
+&nbsp;&nbsp;実績に関連付けられているリワードです。
 
 [RichPresenceRequest (JSON)](json-richpresencerequest.md)
 
@@ -223,11 +223,11 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [ServiceErrorResponse (JSON)](json-serviceerrorresponse.md)
 
-&nbsp;&nbsp;サービスのエラーが発生したとき、適切な HTTP エラー コードに戻ります。 必要に応じて、以下に定義されている、サービスは ServiceErrorResponse オブジェクトを含めるも可能性があります。 運用環境での低いデータが含まれているあります。
+&nbsp;&nbsp;サービスのエラーが発生したときは、適切な HTTP エラー コードが返されます。 必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下で定義されています。 運用環境での低いデータを含めることができます。
 
 [SessionEntry (JSON)](json-sessionentry.md)
 
-&nbsp;&nbsp;フィットネス セッションは、データが含まれています。
+&nbsp;&nbsp;フィットネス セッションのデータが含まれています。
 
 [TitleAssociation (JSON)](json-titleassociation.md)
 
@@ -235,7 +235,7 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [TitleBlob (JSON)](json-titleblob.md)
 
-&nbsp;&nbsp;記憶域からのタイトルに関する情報が含まれています。
+&nbsp;&nbsp;記憶域のタイトルに関する情報が含まれています。
 
 [TitleRecord (JSON)](json-titlerecord.md)
 
@@ -267,15 +267,15 @@ Xbox Live サービスは、要求と、サービスからの応答で使用さ�
 
 [ユーザーのタイトル (JSON)](json-usertitlev2.md)
 
-&nbsp;&nbsp;ユーザーのタイトル データが含まれています。
+&nbsp;&nbsp;タイトルのユーザー データが含まれています。
 
 [VerifyStringResult (JSON)](json-verifystringresult.md)
 
-&nbsp;&nbsp;各文字列に[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)提出に対応する結果コード。
+&nbsp;&nbsp;[/System/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)に送信された各文字列に対応する結果コード。
 
 [XuidList (JSON)](json-xuidlist.md)
 
-&nbsp;&nbsp;操作を実行するに Xuid のリスト。
+&nbsp;&nbsp;操作を実行する Xuid のリスト。
  
 <a id="ID4ENH"></a>
 

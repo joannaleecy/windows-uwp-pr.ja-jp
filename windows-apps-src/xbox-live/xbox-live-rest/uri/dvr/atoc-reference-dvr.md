@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c9be3254d9264c1d06dd0a327c36b473a457a35
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881651"
+ms.locfileid: "3930409"
 ---
 # <a name="game-dvr-uris"></a>ゲーム DVR Uri
  
@@ -24,7 +24,7 @@ ms.locfileid: "3881651"
  
 本体のみが、ゲーム クリップを記録できますにアクセスできる任意のデバイスにクリップを表示できます。
  
-対象の URI の関数をに応じてにはこれらの Uri のドメインです。
+によっては、対象の URI の関数は、これらの Uri のドメインは。
  
    *  gameclipsmetadata.xboxlive.com 
    *  gameclipstransfer.xboxlive.com 
@@ -34,27 +34,27 @@ ms.locfileid: "3881651"
  
 ## <a name="in-this-section"></a>このセクションの内容
 
-[パブリック///} クリップ/](uri-publicscidclips.md)
+[パブリック//global/scids/{scid} クリップ/](uri-publicscidclips.md)
 
-&nbsp;&nbsp;クリップのパブリック アクセスします。 この URI に実際にで指定できる 2 つのフォーム`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。 詳しくは、後のセクションをご覧ください。
+&nbsp;&nbsp;クリップをパブリックにアクセスします。 この URI に実際にで指定できる 2 つのフォーム`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。 詳しくは、後のセクションをご覧ください。
 
 [/{uri}](uri-uri.md)
 
 &nbsp;&nbsp;ゲーム クリップ データにアクセスします。
 
-[ユーザー/me//} クリップ/](uri-usersmescidclips.md)
+[ユーザー/me/global/scids/{scid} クリップ/](uri-usersmescidclips.md)
 
 &nbsp;&nbsp;最初のアクセスは、要求をアップロードします。
 
-[ユーザー/me//}/clips/{gameClipId}](uri-usersmescidclipsgameclipid.md)
+[ユーザー/me/clips//global/scids/{scid} {gameClipId}](uri-usersmescidclipsgameclipid.md)
 
 &nbsp;&nbsp;ゲーム クリップ データへのアクセスとメタデータ。
 
 [/users/{ownerId} クリップ/](uri-usersowneridclips.md)
 
-&nbsp;&nbsp;アクセスするユーザーのクリップの一覧。
+&nbsp;&nbsp;ユーザーのクリップのアクセスの一覧です。
 
-[/users/{ownerId}/scids/{scid}/clips/{gameClipId}](uri-usersowneridscidclipsgameclipid.md)
+[/users/{ownerId} {scid}/scids//clips/{gameClipId}](uri-usersowneridscidclipsgameclipid.md)
 
 &nbsp;&nbsp;すべての Id を見つけることがわかっている場合はシステムから 1 つのゲーム クリップにアクセスします。
  
@@ -68,6 +68,6 @@ ms.locfileid: "3881651"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) の参照](../atoc-xboxlivews-reference-uris.md)
+[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

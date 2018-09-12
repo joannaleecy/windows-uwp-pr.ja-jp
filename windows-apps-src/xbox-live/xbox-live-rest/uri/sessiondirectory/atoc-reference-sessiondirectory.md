@@ -12,19 +12,19 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b03c55b827b083c050451c12c1fe48834d7ae186
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882486"
+ms.locfileid: "3927923"
 ---
 # <a name="session-directory-uris"></a>セッション ディレクトリ Uri
 
-このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) から、ユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) からユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
 
 
 > [!NOTE] 
-> Xbox 360、Windows Phone デバイスの場合、または Xbox.com を実行しているゲーム用のタイトルのみには、セッション ディレクトリ Uri を使用できます。  
+> Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームのタイトルのみには、セッション ディレクトリ Uri を使用できます。  
 
 
   * [ドメイン](#ID4EUB)
@@ -42,14 +42,14 @@ sessiondirectory.xboxlive.com
 
 ## <a name="service-version"></a>サービスのバージョン
 
-これらの残りの部分の Uri の呼び出し元渡す必要があります、値 104/105 以降 X-Xbl-コントラクトのバージョン、サービスのバージョンのエンターテインメント探索サービス (EDS) を指定する HTTP ヘッダー。
+これらの残りの部分の Uri の呼び出し元する必要があります値を渡す 104/105 以降 X-Xbl-コントラクトのバージョン、サービスのバージョンのエンターテインメント探索サービス (EDS) を指定する HTTP ヘッダー。
 
 <a id="ID4EAC"></a>
 
 
 ## <a name="system-objects-and-properties"></a>システム オブジェクトとプロパティ
 
-そのセッションとテンプレートを構成する、MPSD は、ディレクトリを適用し、解釈される固定のスキーマをさまざまな準拠しているセッションの JSON オブジェクトを使用します。 これらのオブジェクトが検証は、さまざまなセッション ディレクトリ Uri でサポートされているメソッドを呼び出し中に、は、マージとサポートされているスキーマに基づいています。 マルチプレイヤーの構成に関連付けられている主な JSON オブジェクトは次のとおりです。
+セッションとテンプレートを構成する、MPSD は、ディレクトリを適用および解釈される固定のスキーマを多数の準拠しているセッションの JSON オブジェクトを使用します。 さまざまなセッション ディレクトリ Uri でサポートされているメソッドの呼び出し時にこれらのオブジェクトは検証およびマージに基づいて、サポートされているスキーマ。 マルチプレイヤーの構成に関連付けられている主な JSON オブジェクトは次のとおりです。
 
    *  [MultiplayerActivityDetails (JSON)](../../json/json-multiplayeractivitydetails.md)
    *  [MultiplayerSession (JSON)](../../json/json-multiplayersession.md)
@@ -57,7 +57,7 @@ sessiondirectory.xboxlive.com
    *  [MultiplayerSessionRequest (JSON)](../../json/json-multiplayersessionrequest.md)
 
 
-ゲームに具体的には関係が関連付けられている JSON オブジェクトは次のとおりです。
+ゲームで具体的には関係している関連付けられている JSON オブジェクトは次のとおりです。
 
    *  [GameMessage (JSON)](../../json/json-gamemessage.md)
    *  [GameResult (JSON)](../../json/json-gameresult.md)
@@ -70,7 +70,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="handles"></a>ハンドル
 
-2015 マルチプレイヤーの場合のみ、セッションはセッション ハンドルを通じてアクセスできます。 ハンドルをサポートする機能を提供するのには、いくつかの Uri が追加されました。  
+2015 マルチプレイヤーの場合のみ、セッションはセッション ハンドルを通じてアクセスできます。 ハンドルをサポートする機能を提供するいくつかの Uri が追加されました。  
 <a id="ID4EFE"></a>
 
 
@@ -78,21 +78,21 @@ sessiondirectory.xboxlive.com
 
 [/handles](uri-handles.md)
 
-&nbsp;&nbsp;ユーザーの現在のアクティビティを Xbox One ダッシュ ボードのユーザー エクスペリエンスを表示し、必要な場合は、セッション メンバーを招待するセッションを設定する POST 操作をサポートしています。
+&nbsp;&nbsp;Xbox One ダッシュ ボードのユーザー エクスペリエンスに表示されると、必要な場合は、セッション メンバーを招待するユーザーの現在のアクティビティのセッションを設定する POST 操作をサポートしています。
 
 [/handles/{ハンドル id を使用}](uri-handleshandleid.md)
 
-&nbsp;&nbsp;識別子により指定されたセッション ハンドルの削除を取得する操作をサポートしています。
+&nbsp;&nbsp;識別子により指定されたセッション ハンドルを削除または取得の操作をサポートしています。
 
 [/handles/{ハンドル id を使用}/セッション](uri-handleshandleidsession.md)
 
-&nbsp;&nbsp;PUT を取得する操作セッションでは、ハンドルを逆参照を使用してをサポートしています。
+&nbsp;&nbsp;PUT および GET 操作セッションでは、ハンドルを逆参照を使用してをサポートしています。
 
-[/ハンドル/クエリ](uri-handlesquery.md)
+[ハンドル/クエリ](uri-handlesquery.md)
 
 &nbsp;&nbsp;セッション ハンドルのクエリを作成する POST 操作をサポートしています。
 
-[/serviceconfigs/バッチ処理](uri-serviceconfigsscidbatch.md)
+[/serviceconfigs/{scid} バッチ/](uri-serviceconfigsscidbatch.md)
 
 &nbsp;&nbsp;サービス構成の識別子レベルでバッチ クエリの POST 操作をサポートしています。
 
@@ -106,9 +106,9 @@ sessiondirectory.xboxlive.com
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}](uri-serviceconfigsscidsessiontemplatessessiontemplatename.md)
 
-&nbsp;&nbsp;一連のセッション テンプレート名を取得する GET 操作をサポートしています。
+&nbsp;&nbsp;セッション テンプレート名のセットを取得する GET 操作をサポートしています。
 
-[/serviceconfigs/sessiontemplates/{sessionTemplateName} バッチ処理/](uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.md)
+[/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName} バッチ/](uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.md)
 
 &nbsp;&nbsp;セッション テンプレート レベルでバッチ クエリを作成する POST 操作をサポートしています。
 
@@ -116,19 +116,19 @@ sessiondirectory.xboxlive.com
 
 &nbsp;&nbsp;指定したテンプレート名を持つセッション テンプレートのセットを取得する GET 操作をサポートしています。
 
-[/serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md)
+[/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md)
 
-&nbsp;&nbsp;作成してセッションを取得する PUT を取得する操作をサポートしています。
+&nbsp;&nbsp;作成してセッションを取得する PUT と取得の操作をサポートしています。
 
-[/serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}/members](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md)
+[/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/members/{インデックス}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md)
 
 &nbsp;&nbsp;指定されたセッション メンバーを削除する削除操作をサポートしています。
 
-[/serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}/メンバー/me](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme.md)
+[/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション} メンバー/me](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme.md)
 
 &nbsp;&nbsp;セッション メンバーを削除する削除操作をサポートしています。
 
-[/serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}/servers/{サーバー名}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.md)
+[/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/servers/{サーバー名}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.md)
 
 &nbsp;&nbsp;セッションの指定されたサーバーを削除する削除操作をサポートしています。
 
@@ -147,4 +147,4 @@ sessiondirectory.xboxlive.com
 
 ##### <a name="parent"></a>Parent
 
-[ユニバーサル リソース識別子 (URI) の参照](../atoc-xboxlivews-reference-uris.md)
+[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
