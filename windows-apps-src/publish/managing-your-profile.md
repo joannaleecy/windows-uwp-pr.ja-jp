@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, デベロッパー センター, アカウント設定, プロファイル, アカウント プロファイル, 開発者アカウント, 開発者アカウントの設定
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850326"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935247"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>アカウントの設定とプロファイル情報の管理
 
@@ -26,9 +26,9 @@ ms.locfileid: "3850326"
 
 ## <a name="account-settings"></a>アカウント 設定
 
-[アカウント設定] を表示するには、ダッシュ ボードの右上隅のギア アイコンをクリックし、[**開発者向け設定**します。 ここで、アカウントと情報を表示してさまざまなアカウント関連タスクを実行できるその他のページへのリンクの詳細を見つけることがあります。
+アカウントの設定を表示するには、ダッシュ ボードの右上隅のギア アイコンをクリックし、[**開発者向け設定**します。 ここでの詳細については、自分のアカウントと情報を表示してさまざまなアカウント関連タスクを実行できるその他のページへのリンクを見つけることがあります。
 
-**[アカウントの詳細]** セクションでは、アカウントの状態と種類を確認できます。 販売者 ID、ここでその他の発行元 ID 情報を確認することもできます。 これらの値は、開発者アカウントを一意に識別に Microsoft によって割り当てられているし、編集することはできません。
+**[アカウントの詳細]** セクションでは、アカウントの状態と種類を確認できます。 販売者 ID、ここでその他の発行元 ID 情報を確認することもできます。 これらの値は、開発者アカウントを一意に識別する、Microsoft によって割り当てられて、編集できません。
 
 > [!NOTE]
 > 個々のアプリの ID に関する詳細は、各アプリの [[アプリ ID]](view-app-identity-details.md) ページで確認できます。
@@ -48,14 +48,14 @@ ms.locfileid: "3850326"
 
 **[アカウント設定]** セクションに表示されるその他の項目の一部を以下に示します。
 
-- **確認状態**: アカウントの進行中 (最初のサインアップ時や、連絡先情報を大幅に更新した後など)、検証の処理、ここでは、確認状態を確認することができます。
-- **デベロッパー センター Insider Program**: することでオプトインまたはオプトアウト メインから、[デベロッパー センター Insider Program](dev-center-insider-program.md) **アカウント設定]** ページ。
+- **確認状態**: アカウントが進行中 (最初にサインアップすると、たとえば、または、連絡先情報を大幅に更新した後など) に検証がプロセスは、ここでは、確認状態を確認することができます。
+- **デベロッパー センター Insider Program**: することでオプトインまたはオプトアウト[デベロッパー センター Insider Program](dev-center-insider-program.md)のメインの**アカウント設定**] ページ。
 - **[受取りアカウント]** と **[税務プロファイル]**: ここでは、[受取りアカウントと税関連の書類を設定](setting-up-your-payout-account-and-tax-forms.md)します。 これらの準備は、アプリやアドオンの代金を請求する前に行う必要があります。
 - **[企業団体]**: 専用アプリの公開を求めている企業からの招待を承認します。 詳しくは、「[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)」をご覧ください。
 - **[ユーザー]**: ユーザーをデベロッパー センター アカウントに追加し、役割やアクセス許可を割り当てます。 詳しくは、「[アカウント ユーザーの管理](manage-account-users.md)」をご覧ください。
-- **テナント**: Azure AD テナントの関連付けを管理します。 詳しくは、 [Azure AD とデベロッパー センター アカウントに関連付け](associate-azure-ad-with-dev-center.md)を参照してください。
+- **テナント**: Azure AD テナントの関連付けを管理します。 詳しくは、 [Azure AD とデベロッパー センター アカウントの関連付け](associate-azure-ad-with-dev-center.md)を参照してください。
 - **[プログラム]**: 参加しているプログラムについての詳細を確認したり、関心のあるその他のプログラムについて情報を得ることができます。
 - **[契約]**: お使いのアカウントで承認している契約を表示します。
-- **デベロッパー デバイス**: 表示と管理[をテストするためにロック解除した Windows Phone 8.x デバイス](http://go.microsoft.com/fwlink/p/?LinkId=533897)と[Xbox One 本体](../xbox-apps/devkit-activation.md)が開発に対して有効にします。 
+- **デベロッパー デバイス**: 表示と管理[をテストするためのロックを解除した Windows Phone 8.x デバイス](http://go.microsoft.com/fwlink/p/?LinkId=533897)と[Xbox One 本体](../xbox-apps/devkit-activation.md)が開発用に有効にします。 
 
 

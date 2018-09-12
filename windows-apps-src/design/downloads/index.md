@@ -11,16 +11,16 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3845326"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935467"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>UWP アプリ用の設計ツールキットとサンプル
  
 
-デザインと Fluent Design/UWP アプリ用の UI に関連するダウンロードします。 Visual Studio など、その他のツールについては、<a href="https://developer.microsoft.com/downloads">メインのダウンロード ページ</a>をご覧ください。 
+デザインと Fluent Design/UWP アプリの UI に関連するダウンロードします。 Visual Studio など、その他のツールについては、<a href="https://developer.microsoft.com/downloads">メインのダウンロード ページ</a>をご覧ください。 
 
 
 ## <a name="design-toolkits"></a>設計ツールキット
@@ -70,7 +70,7 @@ ms.locfileid: "3845326"
     :::column-end:::
     :::column:::
         ![Windows コミュニティ サムネイル](images/Windows-community-toolkit.png) <b>Windows コミュニティ ツールキット</b><br>
-        ヘルパー関数、カスタム コントロール、およびアプリ サービス。<br />
+        ヘルパー関数、カスタム コントロール、およびアプリ サービスです。<br />
         <a href="/windows/uwpcommunitytoolkit/getting-started">インストール手順</a>
     :::column-end:::
     :::column:::
