@@ -9,40 +9,41 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
-ms.localizationpriority: low
-ms.openlocfilehash: 1792283a9a763875743d96588f5fef84562d4269
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 5563966c6f877bf02b5e58751173e6c425b25bfa
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881728"
 ---
-# <a name="add-xbox-live-to-a-new-or-existing-xdk-project"></a><span data-ttu-id="d07d3-104">新規または既存の XDK プロジェクトに Xbox Live を追加する</span><span class="sxs-lookup"><span data-stu-id="d07d3-104">Add Xbox Live to a new or existing XDK project</span></span>
+# <a name="add-xbox-live-to-a-new-or-existing-xdk-project"></a><span data-ttu-id="4a7c9-104">新規または既存の XDK プロジェクトに Xbox Live を追加する</span><span class="sxs-lookup"><span data-stu-id="4a7c9-104">Add Xbox Live to a new or existing XDK project</span></span>
 
-<span data-ttu-id="d07d3-105">このトピックでは、新規または既存の XDK プロジェクトに Xbox Live を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d07d3-105">This topic outlines how to add Xbox Live to a new or existing XDK project.</span></span>
+<span data-ttu-id="4a7c9-105">このトピックでは、新規または既存の XDK プロジェクトに Xbox Live を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-105">This topic outlines how to add Xbox Live to a new or existing XDK project.</span></span>
 
-<span data-ttu-id="d07d3-106">手順は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="d07d3-106">The process is:</span></span>
+<span data-ttu-id="4a7c9-106">手順は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-106">The process is:</span></span>
 
-- <span data-ttu-id="d07d3-107">Xbox One 開発環境をセットアップする</span><span class="sxs-lookup"><span data-stu-id="d07d3-107">Setup Up Your Xbox One Development Environment</span></span>
-- <span data-ttu-id="d07d3-108">ID を取得する</span><span class="sxs-lookup"><span data-stu-id="d07d3-108">Get your IDs</span></span>
-- <span data-ttu-id="d07d3-109">開発機本体を構成する</span><span class="sxs-lookup"><span data-stu-id="d07d3-109">Configure your development console</span></span>
-- <span data-ttu-id="d07d3-110">タイトル ID と SCID をバイナリに追加する</span><span class="sxs-lookup"><span data-stu-id="d07d3-110">Add the TitleID and SCID to your binary</span></span>
+- <span data-ttu-id="4a7c9-107">Xbox One 開発環境をセットアップする</span><span class="sxs-lookup"><span data-stu-id="4a7c9-107">Setup Up Your Xbox One Development Environment</span></span>
+- <span data-ttu-id="4a7c9-108">ID を取得する</span><span class="sxs-lookup"><span data-stu-id="4a7c9-108">Get your IDs</span></span>
+- <span data-ttu-id="4a7c9-109">開発機本体を構成する</span><span class="sxs-lookup"><span data-stu-id="4a7c9-109">Configure your development console</span></span>
+- <span data-ttu-id="4a7c9-110">タイトル ID と SCID をバイナリに追加する</span><span class="sxs-lookup"><span data-stu-id="4a7c9-110">Add the TitleID and SCID to your binary</span></span>
 
 
-## <a name="setup-up-your-xbox-one-development-environment"></a><span data-ttu-id="d07d3-111">Xbox One 開発環境をセットアップする</span><span class="sxs-lookup"><span data-stu-id="d07d3-111">Setup Up Your Xbox One Development Environment</span></span>
-<span data-ttu-id="d07d3-112">最初に、XDK ドキュメントの「Xbox One 開発環境のセットアップ」セクションに従って本体をセットアップします。</span><span class="sxs-lookup"><span data-stu-id="d07d3-112">First, setup the console by following "Setting Up Your Xbox One Development Environment" section in the XDK documentation</span></span>
+## <a name="setup-up-your-xbox-one-development-environment"></a><span data-ttu-id="4a7c9-111">Xbox One 開発環境をセットアップする</span><span class="sxs-lookup"><span data-stu-id="4a7c9-111">Setup Up Your Xbox One Development Environment</span></span>
+<span data-ttu-id="4a7c9-112">最初に、XDK ドキュメントの「Xbox One 開発環境のセットアップ」セクションに従って本体をセットアップします。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-112">First, setup the console by following "Setting Up Your Xbox One Development Environment" section in the XDK documentation</span></span>
 
-## <a name="get-your-ids"></a><span data-ttu-id="d07d3-113">ID を取得する</span><span class="sxs-lookup"><span data-stu-id="d07d3-113">Get your IDs</span></span>
+## <a name="get-your-ids"></a><span data-ttu-id="4a7c9-113">ID を取得する</span><span class="sxs-lookup"><span data-stu-id="4a7c9-113">Get your IDs</span></span>
 
-<span data-ttu-id="d07d3-114">Xbox Live サービスを有効にするには、開発キットとタイトルを構成するためのいくつかの ID を取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d07d3-114">To enable Xbox Live services, you will need to obtain several IDs to configure your development kit and your title.</span></span> <span data-ttu-id="d07d3-115">これらは同じプロセスで行うことができます。</span><span class="sxs-lookup"><span data-stu-id="d07d3-115">These can be done with the same process.</span></span>
+<span data-ttu-id="4a7c9-114">Xbox Live サービスを有効にするには、開発キットとタイトルを構成するためのいくつかの ID を取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-114">To enable Xbox Live services, you will need to obtain several IDs to configure your development kit and your title.</span></span> <span data-ttu-id="4a7c9-115">これらは同じプロセスで行うことができます。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-115">These can be done with the same process.</span></span>
 
-<span data-ttu-id="d07d3-116">ID を取得するには、「[Xbox Live サービス構成](../xbox-live-service-configuration.md)」の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="d07d3-116">You will obtain your IDs by doing the process of [Xbox Live service configuration](../xbox-live-service-configuration.md)</span></span>
+<span data-ttu-id="4a7c9-116">ID を取得するには、「[Xbox Live サービス構成](../xbox-live-service-configuration.md)」の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-116">You will obtain your IDs by doing the process of [Xbox Live service configuration](../xbox-live-service-configuration.md)</span></span>
 
-## <a name="configure-your-development-console"></a><span data-ttu-id="d07d3-117">開発機本体を構成する</span><span class="sxs-lookup"><span data-stu-id="d07d3-117">Configure your development console</span></span>
+## <a name="configure-your-development-console"></a><span data-ttu-id="4a7c9-117">開発機本体を構成する</span><span class="sxs-lookup"><span data-stu-id="4a7c9-117">Configure your development console</span></span>
 
-<span data-ttu-id="d07d3-118">ID を取得した後、「[開発本体を構成する](configure-your-development-console.md)」のガイドに従って開発本体をセットアップします。</span><span class="sxs-lookup"><span data-stu-id="d07d3-118">Once you have your IDs, follow the [Configure your development console](configure-your-development-console.md) guide to setup your development console.</span></span>
+<span data-ttu-id="4a7c9-118">ID を取得した後、「[開発本体を構成する](configure-your-development-console.md)」のガイドに従って開発本体をセットアップします。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-118">Once you have your IDs, follow the [Configure your development console](configure-your-development-console.md) guide to setup your development console.</span></span>
 
-## <a name="add-the-titleid-and-scid-to-your-binary"></a><span data-ttu-id="d07d3-119">タイトル ID と SCID をバイナリに追加する</span><span class="sxs-lookup"><span data-stu-id="d07d3-119">Add the TitleID and SCID to your binary</span></span>
-<span data-ttu-id="d07d3-120">サンドボックスは開発キットごとにプラットフォーム レベルで構成されますが、タイトル ID と SCID は特定のバイナリにバインドされます。</span><span class="sxs-lookup"><span data-stu-id="d07d3-120">While the Sandbox is configured on a platform level for each Development Kit, the TitleID and SCID are bound to a specific binary.</span></span> <span data-ttu-id="d07d3-121">タイトル ID と SCID をバイナリに追加するには、次のように、<Extensions> ノードに新しいノードを追加して、そのバイナリの Package.appxmanifest を修正します。</span><span class="sxs-lookup"><span data-stu-id="d07d3-121">To add a TitleID and SCID to your binary, modify the Package.appxmanifest for that binary by adding a new node in the <Extensions> node as follows:</span></span>
+## <a name="add-the-titleid-and-scid-to-your-binary"></a><span data-ttu-id="4a7c9-119">タイトル ID と SCID をバイナリに追加する</span><span class="sxs-lookup"><span data-stu-id="4a7c9-119">Add the TitleID and SCID to your binary</span></span>
+<span data-ttu-id="4a7c9-120">サンドボックスは開発キットごとにプラットフォーム レベルで構成されますが、タイトル ID と SCID は特定のバイナリにバインドされます。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-120">While the Sandbox is configured on a platform level for each Development Kit, the TitleID and SCID are bound to a specific binary.</span></span> <span data-ttu-id="4a7c9-121">タイトル ID と SCID をバイナリに追加するには、次のように、<Extensions> ノードに新しいノードを追加して、そのバイナリの Package.appxmanifest を修正します。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-121">To add a TitleID and SCID to your binary, modify the Package.appxmanifest for that binary by adding a new node in the <Extensions> node as follows:</span></span>
 
 ```
 <Applications>
@@ -58,10 +59,10 @@ ms.lasthandoff: 02/24/2018
 </Applications>
 ```
 
-<span data-ttu-id="d07d3-122">AppxManifest.xml ファイルについて詳しくは、Visual Studio で Xbox One 開発用のプロジェクト テンプレートを参照してください。</span><span class="sxs-lookup"><span data-stu-id="d07d3-122">For more information on the AppxManifest.xml file, refer to Project Templates in Visual Studio for Xbox One Development.</span></span>
+<span data-ttu-id="4a7c9-122">AppxManifest.xml ファイルについて詳しくは、Visual Studio で Xbox One 開発用のプロジェクト テンプレートを参照してください。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-122">For more information on the AppxManifest.xml file, refer to Project Templates in Visual Studio for Xbox One Development.</span></span>
 
-<span data-ttu-id="d07d3-123">アプリケーション マニフェスト スキーマについては、「アプリケーション マニフェスト スキーマ」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d07d3-123">See Application Manifest Schema for a description of the application manifest schema.</span></span>
+<span data-ttu-id="4a7c9-123">アプリケーション マニフェスト スキーマについては、「アプリケーション マニフェスト スキーマ」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-123">See Application Manifest Schema for a description of the application manifest schema.</span></span>
 
-<span data-ttu-id="d07d3-124">**RequireXboxLive フラグ** RequireXboxLive フラグが true に設定されている場合は、Windows.Networking.Connectivity 接続レベルが XboxLiveAccess として返され、タイトルが Xbox Live の認証に合格しない限り、タイトルは起動しません。</span><span class="sxs-lookup"><span data-stu-id="d07d3-124">**The RequireXboxLive Flag** If the RequireXboxLive flag is set to true, the title will not launch unless the Windows.Networking.Connectivity Connection Level returns as XboxLiveAccess and the title clears authentication with Xbox Live.</span></span> <span data-ttu-id="d07d3-125">この認証により、タイトルが最新のコンテンツ アップデートを取得したことが保証されます。</span><span class="sxs-lookup"><span data-stu-id="d07d3-125">This insures the title has taken the latest content updates.</span></span> <span data-ttu-id="d07d3-126">タイトルの実行中に接続が失われた場合、タイトルは一時停止されます。</span><span class="sxs-lookup"><span data-stu-id="d07d3-126">If connectivity is lost while the title is running, the title is suspended.</span></span>
+<span data-ttu-id="4a7c9-124">**RequireXboxLive フラグ** RequireXboxLive フラグが true に設定されている場合は、Windows.Networking.Connectivity 接続レベルが XboxLiveAccess として返され、タイトルが Xbox Live の認証に合格しない限り、タイトルは起動しません。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-124">**The RequireXboxLive Flag** If the RequireXboxLive flag is set to true, the title will not launch unless the Windows.Networking.Connectivity Connection Level returns as XboxLiveAccess and the title clears authentication with Xbox Live.</span></span> <span data-ttu-id="4a7c9-125">この認証により、タイトルが最新のコンテンツ アップデートを取得したことが保証されます。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-125">This insures the title has taken the latest content updates.</span></span> <span data-ttu-id="4a7c9-126">タイトルの実行中に接続が失われた場合、タイトルは一時停止されます。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-126">If connectivity is lost while the title is running, the title is suspended.</span></span>
 
-<span data-ttu-id="d07d3-127">"インターネットが必要" なタイトルのみが RequireXboxLive を true としてマークする必要があります。ただし、この方法でタイトルをマークしても、タイトルに必要なサービスが起動して稼働中であることは保証されないので、ご注意ください。</span><span class="sxs-lookup"><span data-stu-id="d07d3-127">Only "Internet Required" titles should mark RequireXboxLive as true, and note that marking your title in this way does not guarantee the required services for the title are up and running.</span></span>
+<span data-ttu-id="4a7c9-127">"インターネットが必要" なタイトルのみが RequireXboxLive を true としてマークする必要があります。ただし、この方法でタイトルをマークしても、タイトルに必要なサービスが起動して稼働中であることは保証されないので、ご注意ください。</span><span class="sxs-lookup"><span data-stu-id="4a7c9-127">Only "Internet Required" titles should mark RequireXboxLive as true, and note that marking your title in this way does not guarantee the required services for the title are up and running.</span></span>

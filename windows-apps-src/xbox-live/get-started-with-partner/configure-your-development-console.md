@@ -9,36 +9,37 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
-ms.localizationpriority: low
-ms.openlocfilehash: 03f5dd0608fedda26ccea644f47734f0101080f9
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 53126e185b9d94c911abab8999e3ca1da8691c7c
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881707"
 ---
-# <a name="configure-your-xbox-development-console"></a><span data-ttu-id="bed7b-104">Xbox 開発機本体を構成する</span><span class="sxs-lookup"><span data-stu-id="bed7b-104">Configure your Xbox development console</span></span>
+# <a name="configure-your-xbox-development-console"></a><span data-ttu-id="b8394-104">Xbox 開発機本体を構成する</span><span class="sxs-lookup"><span data-stu-id="b8394-104">Configure your Xbox development console</span></span>
 
-<span data-ttu-id="bed7b-105">開発機本体を構成するには:</span><span class="sxs-lookup"><span data-stu-id="bed7b-105">To configuring your development console:</span></span>
-- <span data-ttu-id="bed7b-106">ID を取得する</span><span class="sxs-lookup"><span data-stu-id="bed7b-106">Get your IDs</span></span>
-- <span data-ttu-id="bed7b-107">開発キットにサンドボックスを設定する</span><span class="sxs-lookup"><span data-stu-id="bed7b-107">Set your sandbox on your development kits</span></span>
-- <span data-ttu-id="bed7b-108">開発アカウントでサインインする</span><span class="sxs-lookup"><span data-stu-id="bed7b-108">Sign in with a development account</span></span>
+<span data-ttu-id="b8394-105">開発機本体を構成するには:</span><span class="sxs-lookup"><span data-stu-id="b8394-105">To configuring your development console:</span></span>
+- <span data-ttu-id="b8394-106">ID を取得する</span><span class="sxs-lookup"><span data-stu-id="b8394-106">Get your IDs</span></span>
+- <span data-ttu-id="b8394-107">開発キットにサンドボックスを設定する</span><span class="sxs-lookup"><span data-stu-id="b8394-107">Set your sandbox on your development kits</span></span>
+- <span data-ttu-id="b8394-108">開発アカウントでサインインする</span><span class="sxs-lookup"><span data-stu-id="b8394-108">Sign in with a development account</span></span>
 
-## <a name="get-your-ids"></a><span data-ttu-id="bed7b-109">ID を取得する</span><span class="sxs-lookup"><span data-stu-id="bed7b-109">Get your IDs</span></span>
-<span data-ttu-id="bed7b-110">サンドボックスと Xbox Live サービスを有効にするには、開発キットとタイトルを構成するためのいくつかの ID を取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bed7b-110">To enable sandboxes and Xbox Live services, you will need to obtain several IDs to configure your development kit and your title.</span></span> <span data-ttu-id="bed7b-111">これらは同じプロセスで行うことができます。</span><span class="sxs-lookup"><span data-stu-id="bed7b-111">These can be done with the same process.</span></span>
+## <a name="get-your-ids"></a><span data-ttu-id="b8394-109">ID を取得する</span><span class="sxs-lookup"><span data-stu-id="b8394-109">Get your IDs</span></span>
+<span data-ttu-id="b8394-110">サンドボックスと Xbox Live サービスを有効にするには、開発キットとタイトルを構成するためのいくつかの ID を取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b8394-110">To enable sandboxes and Xbox Live services, you will need to obtain several IDs to configure your development kit and your title.</span></span> <span data-ttu-id="b8394-111">これらは同じプロセスで行うことができます。</span><span class="sxs-lookup"><span data-stu-id="b8394-111">These can be done with the same process.</span></span>
 
-<span data-ttu-id="bed7b-112">「[Xbox Live サービス構成](../xbox-live-service-configuration.md)」に従って ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="bed7b-112">Follow [Xbox Live service configuration](../xbox-live-service-configuration.md) to get your IDs</span></span>
+<span data-ttu-id="b8394-112">「[Xbox Live サービス構成](../xbox-live-service-configuration.md)」に従って ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="b8394-112">Follow [Xbox Live service configuration](../xbox-live-service-configuration.md) to get your IDs</span></span>
 
-## <a name="set-your-sandbox-on-your-development-kits"></a><span data-ttu-id="bed7b-113">開発キットにサンドボックスを設定する</span><span class="sxs-lookup"><span data-stu-id="bed7b-113">Set your sandbox on your development kits</span></span>
-<span data-ttu-id="bed7b-114">開発キットを起動するには、サンドボックス ID を設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bed7b-114">You will not be able to boot your development kit without setting your Sandbox ID.</span></span> <span data-ttu-id="bed7b-115">これを行うには、XDK で PC にインストールした "Xbox One Manager" を使用することも、XDK コマンド ウィンドウを開き、次のように構成コマンド (xbconfig.exe) を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="bed7b-115">To do this, you can use the "Xbox One Manager" that's installed on your PC by the XDK, or you can open an XDK command window and use the Configuration (xbconfig.exe) command as follows:</span></span>
+## <a name="set-your-sandbox-on-your-development-kits"></a><span data-ttu-id="b8394-113">開発キットにサンドボックスを設定する</span><span class="sxs-lookup"><span data-stu-id="b8394-113">Set your sandbox on your development kits</span></span>
+<span data-ttu-id="b8394-114">開発キットを起動するには、サンドボックス ID を設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b8394-114">You will not be able to boot your development kit without setting your Sandbox ID.</span></span> <span data-ttu-id="b8394-115">これを行うには、XDK で PC にインストールした "Xbox One Manager" を使用することも、XDK コマンド ウィンドウを開き、次のように構成コマンド (xbconfig.exe) を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="b8394-115">To do this, you can use the "Xbox One Manager" that's installed on your PC by the XDK, or you can open an XDK command window and use the Configuration (xbconfig.exe) command as follows:</span></span>
 
-<span data-ttu-id="bed7b-116">現在のサンドボックスを確認します。</span><span class="sxs-lookup"><span data-stu-id="bed7b-116">Check your current sandbox.</span></span> <span data-ttu-id="bed7b-117">コマンド プロンプトで「xbconfig sandboxid」と入力します。</span><span class="sxs-lookup"><span data-stu-id="bed7b-117">Type xbconfig sandboxid at the command prompt.</span></span>
+<span data-ttu-id="b8394-116">現在のサンドボックスを確認します。</span><span class="sxs-lookup"><span data-stu-id="b8394-116">Check your current sandbox.</span></span> <span data-ttu-id="b8394-117">コマンド プロンプトで「xbconfig sandboxid」と入力します。</span><span class="sxs-lookup"><span data-stu-id="b8394-117">Type xbconfig sandboxid at the command prompt.</span></span>
 
-<span data-ttu-id="bed7b-118">想定していたサンドボックスでない場合は、サンドボックス ID を変更します。コマンド プロンプトで、「xbconfig sandboxid=<your sandbox id>」と入力します。</span><span class="sxs-lookup"><span data-stu-id="bed7b-118">If it’s not what you expect, change your sandbox id. Type xbconfig sandboxid=<your sandbox id> at the command prompt.</span></span>
+<span data-ttu-id="b8394-118">想定していたサンドボックスでない場合は、サンドボックス ID を変更します。コマンド プロンプトで、「xbconfig sandboxid=<your sandbox id>」と入力します。</span><span class="sxs-lookup"><span data-stu-id="b8394-118">If it’s not what you expect, change your sandbox id. Type xbconfig sandboxid=<your sandbox id> at the command prompt.</span></span>
 
-<span data-ttu-id="bed7b-119">コマンド プロンプトで Reboot (xbreboot.exe) を使用してコンソールを再起動します。</span><span class="sxs-lookup"><span data-stu-id="bed7b-119">Reboot your console using Reboot (xbreboot.exe) at the command prompt.</span></span>
+<span data-ttu-id="b8394-119">コマンド プロンプトで Reboot (xbreboot.exe) を使用してコンソールを再起動します。</span><span class="sxs-lookup"><span data-stu-id="b8394-119">Reboot your console using Reboot (xbreboot.exe) at the command prompt.</span></span>
 
-<span data-ttu-id="bed7b-120">サンドボックスが正しくリセットされたことを確認します。</span><span class="sxs-lookup"><span data-stu-id="bed7b-120">Verify your sandbox has been correctly reset.</span></span> <span data-ttu-id="bed7b-121">コマンド プロンプトで「xbconfig sandboxid」と入力します。</span><span class="sxs-lookup"><span data-stu-id="bed7b-121">Type xbconfig sandboxid at the command prompt.</span></span>
+<span data-ttu-id="b8394-120">サンドボックスが正しくリセットされたことを確認します。</span><span class="sxs-lookup"><span data-stu-id="b8394-120">Verify your sandbox has been correctly reset.</span></span> <span data-ttu-id="b8394-121">コマンド プロンプトで「xbconfig sandboxid」と入力します。</span><span class="sxs-lookup"><span data-stu-id="b8394-121">Type xbconfig sandboxid at the command prompt.</span></span>
 
-## <a name="sign-in-with-a-development-account"></a><span data-ttu-id="bed7b-122">開発アカウントでサインインする</span><span class="sxs-lookup"><span data-stu-id="bed7b-122">Sign in with a development account</span></span>
+## <a name="sign-in-with-a-development-account"></a><span data-ttu-id="b8394-122">開発アカウントでサインインする</span><span class="sxs-lookup"><span data-stu-id="b8394-122">Sign in with a development account</span></span>
 
-<span data-ttu-id="bed7b-123">サインインに使用する開発アカウントは、[Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) または [Windows デベロッパー センター](https://developer.microsoft.com/en-us/windows)で作成できます。</span><span class="sxs-lookup"><span data-stu-id="bed7b-123">You can create development accounts used to sign-in on [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) or [Windows Dev Center](https://developer.microsoft.com/en-us/windows)</span></span>
+<span data-ttu-id="b8394-123">サインインに使用する開発アカウントは、[Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) または [Windows デベロッパー センター](https://developer.microsoft.com/en-us/windows)で作成できます。</span><span class="sxs-lookup"><span data-stu-id="b8394-123">You can create development accounts used to sign-in on [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) or [Windows Dev Center](https://developer.microsoft.com/en-us/windows)</span></span>

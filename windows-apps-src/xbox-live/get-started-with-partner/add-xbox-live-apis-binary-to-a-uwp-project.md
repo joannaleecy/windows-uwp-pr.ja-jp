@@ -9,47 +9,47 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, NuGet
-ms.localizationpriority: low
-ms.openlocfilehash: 9f274e26638ca2b37bdca778c50e6bf787b949f2
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 84d3ce8b56e5d1bf921eef48499d54b1d3fc4c22
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935847"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3881490"
 ---
-# <a name="add-xbox-live-apis-binary-package-to-your-uwp-project"></a><span data-ttu-id="89168-104">Xbox Live API のバイナリ パッケージを UWP プロジェクトに追加する</span><span class="sxs-lookup"><span data-stu-id="89168-104">Add Xbox Live APIs binary package to your UWP project</span></span>
+# <a name="add-xbox-live-apis-binary-package-to-your-uwp-project"></a><span data-ttu-id="89b61-104">Xbox Live API のバイナリ パッケージを UWP プロジェクトに追加する</span><span class="sxs-lookup"><span data-stu-id="89b61-104">Add Xbox Live APIs binary package to your UWP project</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="89168-105">要件</span><span class="sxs-lookup"><span data-stu-id="89168-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="89b61-105">要件</span><span class="sxs-lookup"><span data-stu-id="89b61-105">Requirements</span></span>
 
-2. <span data-ttu-id="89168-106">**[Windows 10](https://microsoft.com/windows)**。</span><span class="sxs-lookup"><span data-stu-id="89168-106">**[Windows 10](https://microsoft.com/windows)**.</span></span>
-3. <span data-ttu-id="89168-107">**[Visual Studio 2015](https://www.visualstudio.com/)**。</span><span class="sxs-lookup"><span data-stu-id="89168-107">**[Visual Studio 2015](https://www.visualstudio.com/)**.</span></span>
-4. <span data-ttu-id="89168-108">**[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** 以降。</span><span class="sxs-lookup"><span data-stu-id="89168-108">**[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** or later.</span></span>
+2. <span data-ttu-id="89b61-106">**[Windows 10](https://microsoft.com/windows)**。</span><span class="sxs-lookup"><span data-stu-id="89b61-106">**[Windows 10](https://microsoft.com/windows)**.</span></span>
+3. <span data-ttu-id="89b61-107">**[Visual Studio](https://www.visualstudio.com/)**。</span><span class="sxs-lookup"><span data-stu-id="89b61-107">**[Visual Studio](https://www.visualstudio.com/)**.</span></span> <span data-ttu-id="89b61-108">Visual Studio 2015 Update 3 以降、UWP アプリをビルドできます。</span><span class="sxs-lookup"><span data-stu-id="89b61-108">UWP apps can be built with Visual Studio 2015 Update 3 or later.</span></span> <span data-ttu-id="89b61-109">開発者とセキュリティ更新プログラムは、Visual Studio の最新リリースを使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="89b61-109">We recommend that you use the latest release of Visual Studio for developer and security updates.</span></span>
+4. <span data-ttu-id="89b61-110">**[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** 以降。</span><span class="sxs-lookup"><span data-stu-id="89b61-110">**[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** or later.</span></span>
 
-## <a name="add-the-binary-package-via-nuget"></a><span data-ttu-id="89168-109">NuGet を使ったバイナリ パッケージの追加</span><span class="sxs-lookup"><span data-stu-id="89168-109">Add the binary package via NuGet</span></span>
+## <a name="add-the-binary-package-via-nuget"></a><span data-ttu-id="89b61-111">NuGet を使ったバイナリ パッケージの追加</span><span class="sxs-lookup"><span data-stu-id="89b61-111">Add the binary package via NuGet</span></span>
 
-<span data-ttu-id="89168-110">プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使うか API ソースを追加してバイナリへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="89168-110">To use the Xbox Live API from your project, you can either add references to the binaries by using NuGet packages or adding the API source.</span></span> <span data-ttu-id="89168-111">NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。</span><span class="sxs-lookup"><span data-stu-id="89168-111">Adding NuGet packages makes compilation quicker while adding the source makes debugging easier.</span></span> <span data-ttu-id="89168-112">この記事では、NuGet パッケージを使う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="89168-112">This article will walk through using NuGet packages.</span></span> <span data-ttu-id="89168-113">ソースを使用する場合は、「[UWP プロジェクトでの Xbox Live API ソースのコンパイル](add-xbox-live-apis-source-to-a-uwp-project.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="89168-113">If you want to use source, then please see [Compiling the Xbox Live APIs Source In Your UWP Project](add-xbox-live-apis-source-to-a-uwp-project.md).</span></span>
+<span data-ttu-id="89b61-112">プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使うか API ソースを追加してバイナリへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="89b61-112">To use the Xbox Live API from your project, you can either add references to the binaries by using NuGet packages or adding the API source.</span></span> <span data-ttu-id="89b61-113">NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。</span><span class="sxs-lookup"><span data-stu-id="89b61-113">Adding NuGet packages makes compilation quicker while adding the source makes debugging easier.</span></span> <span data-ttu-id="89b61-114">この記事では、NuGet パッケージを使う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="89b61-114">This article will walk through using NuGet packages.</span></span> <span data-ttu-id="89b61-115">ソースを使用する場合は、「[UWP プロジェクトでの Xbox Live API ソースのコンパイル](add-xbox-live-apis-source-to-a-uwp-project.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="89b61-115">If you want to use source, then please see [Compiling the Xbox Live APIs Source In Your UWP Project](add-xbox-live-apis-source-to-a-uwp-project.md).</span></span>
 
-<span data-ttu-id="89168-114">Xbox Services API には、UWP と XDK の両方で使用できるものと、C++ で使用できるもの、WinRT で使用できるものがあり名前空間の構造は **Microsoft.Xbox.Live.SDK.*.UWP** と **Microsoft.Xbox.Live.SDK.*.XboxOneXDK** です。</span><span class="sxs-lookup"><span data-stu-id="89168-114">The Xbox Services API comes in flavors for both UWP and XDK, and for C++ and WinRT and have their namespace structured as **Microsoft.Xbox.Live.SDK.*.UWP** and **Microsoft.Xbox.Live.SDK.*.XboxOneXDK**.</span></span>
+<span data-ttu-id="89b61-116">Xbox Services API には、UWP と XDK の両方で使用できるものと、C++ で使用できるもの、WinRT で使用できるものがあり名前空間の構造は **Microsoft.Xbox.Live.SDK.\*.UWP** と **Microsoft.Xbox.Live.SDK.\*.XboxOneXDK** です。</span><span class="sxs-lookup"><span data-stu-id="89b61-116">The Xbox Services API comes in flavors for both UWP and XDK, and for C++ and WinRT and have their namespace structured as **Microsoft.Xbox.Live.SDK.\*.UWP** and **Microsoft.Xbox.Live.SDK.\*.XboxOneXDK**.</span></span>
 
-1. <span data-ttu-id="89168-115">**UWP** は、PC、Xbox One、Windows Phone で実行できる UWP ゲームをビルドしている開発者向けのものです。</span><span class="sxs-lookup"><span data-stu-id="89168-115">**UWP** is for developers who are building a UWP game, which can run on either PC, the Xbox One, or Windows Phone.</span></span>
-2. <span data-ttu-id="89168-116">**XboxOneXDK** は、ID@Xbox 用のものであり、Xbox One XDK を使用している管理対象の開発者が利用します。</span><span class="sxs-lookup"><span data-stu-id="89168-116">**XboxOneXDK** is for ID@Xbox and managed developers who are using the Xbox One XDK.</span></span>
-3. <span data-ttu-id="89168-117">C++ SDK は C++ ゲーム エンジンに使用できます。 WinRT SDK は、C++、C#、JavaScript を使って記述されたゲーム エンジン用です。</span><span class="sxs-lookup"><span data-stu-id="89168-117">The C++ SDK can be used for C++ game engines, where as the  WinRT SDK is for game engines written with C++, C#, or JavaScript.</span></span>
-4. <span data-ttu-id="89168-118">C++ エンジンで WinRT を使用する場合は、ハット (^) を使う C++/CX を使用してください。</span><span class="sxs-lookup"><span data-stu-id="89168-118">When using WinRT with a C++ engine, you should use C++/CX which uses hats (^).</span></span> <span data-ttu-id="89168-119">C++ は、C++ ゲーム エンジンで使用する際に推奨される API です。</span><span class="sxs-lookup"><span data-stu-id="89168-119">C++ is the recommended API to use for C++ game engines.</span></span>  
+1. <span data-ttu-id="89b61-117">**UWP** は、PC、Xbox One、Windows Phone で実行できる UWP ゲームをビルドしている開発者向けのものです。</span><span class="sxs-lookup"><span data-stu-id="89b61-117">**UWP** is for developers who are building a UWP game, which can run on either PC, the Xbox One, or Windows Phone.</span></span>
+2. <span data-ttu-id="89b61-118">**XboxOneXDK** は、ID@Xbox 用のものであり、Xbox One XDK を使用している管理対象の開発者が利用します。</span><span class="sxs-lookup"><span data-stu-id="89b61-118">**XboxOneXDK** is for ID@Xbox and managed developers who are using the Xbox One XDK.</span></span>
+3. <span data-ttu-id="89b61-119">C++ SDK は C++ ゲーム エンジンに使用できます。 WinRT SDK は、C++、C#、JavaScript を使って記述されたゲーム エンジン用です。</span><span class="sxs-lookup"><span data-stu-id="89b61-119">The C++ SDK can be used for C++ game engines, where as the  WinRT SDK is for game engines written with C++, C#, or JavaScript.</span></span>
+4. <span data-ttu-id="89b61-120">C++ エンジンで WinRT を使用する場合は、ハット (^) を使う C++/CX を使用してください。</span><span class="sxs-lookup"><span data-stu-id="89b61-120">When using WinRT with a C++ engine, you should use C++/CX which uses hats (^).</span></span> <span data-ttu-id="89b61-121">C++ は、C++ ゲーム エンジンで使用する際に推奨される API です。</span><span class="sxs-lookup"><span data-stu-id="89b61-121">C++ is the recommended API to use for C++ game engines.</span></span>  
 
 > [!TIP]
-> <span data-ttu-id="89168-120">Xbox One での UWP の実行について詳しくは、「[Xbox One の UWP アプリ開発の概要](https://docs.microsoft.com/windows/uwp/xbox-apps/getting-started)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="89168-120">You can read more about running UWP on Xbox One at [Getting started with UWP app development on Xbox One](https://docs.microsoft.com/windows/uwp/xbox-apps/getting-started).</span></span>
+> <span data-ttu-id="89b61-122">Xbox One での UWP の実行について詳しくは、「[Xbox One の UWP アプリ開発の概要](https://docs.microsoft.com/windows/uwp/xbox-apps/getting-started)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="89b61-122">You can read more about running UWP on Xbox One at [Getting started with UWP app development on Xbox One](https://docs.microsoft.com/windows/uwp/xbox-apps/getting-started).</span></span>
 
-<span data-ttu-id="89168-121">Xbox Live SDK NuGet パッケージは次の方法で追加できます。</span><span class="sxs-lookup"><span data-stu-id="89168-121">You can add the Xbox Live SDK NuGet package by:</span></span>
+<span data-ttu-id="89b61-123">Xbox Live SDK NuGet パッケージは次の方法で追加できます。</span><span class="sxs-lookup"><span data-stu-id="89b61-123">You can add the Xbox Live SDK NuGet package by:</span></span>
 
-1. <span data-ttu-id="89168-122">Visual Studio では、**[ツール]** > **[NuGet パッケージ マネージャー]** > **[ソリューションの NuGet パッケージの管理...]** の順に移動します。</span><span class="sxs-lookup"><span data-stu-id="89168-122">In Visual Studio go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.</span></span>
-2. <span data-ttu-id="89168-123">NuGet パッケージ マネージャーで、**[参照]** をクリックして検索ボックスに「**Xbox.Live.SDK**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="89168-123">In the NuGet package manager, click on **Browse** and enter **Xbox.Live.SDK** in the search box.</span></span>
-3. <span data-ttu-id="89168-124">左側の一覧から使う Xbox Live SDK のバージョンを選びます。</span><span class="sxs-lookup"><span data-stu-id="89168-124">Select the version of the Xbox Live SDK that you want to use from the list on the left.</span></span>
-3. <span data-ttu-id="89168-125">ウィンドウの右側にある、プロジェクトの横にあるチェック ボックスをオンにして **[インストール]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="89168-125">On the right side of the window, check the box next to your project and click **Install**.</span></span>
+1. <span data-ttu-id="89b61-124">Visual Studio では、**[ツール]** > **[NuGet パッケージ マネージャー]** > **[ソリューションの NuGet パッケージの管理...]** の順に移動します。</span><span class="sxs-lookup"><span data-stu-id="89b61-124">In Visual Studio go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.</span></span>
+2. <span data-ttu-id="89b61-125">NuGet パッケージ マネージャーで、**[参照]** をクリックして検索ボックスに「**Xbox.Live.SDK**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="89b61-125">In the NuGet package manager, click on **Browse** and enter **Xbox.Live.SDK** in the search box.</span></span>
+3. <span data-ttu-id="89b61-126">左側の一覧から使う Xbox Live SDK のバージョンを選びます。</span><span class="sxs-lookup"><span data-stu-id="89b61-126">Select the version of the Xbox Live SDK that you want to use from the list on the left.</span></span>
+3. <span data-ttu-id="89b61-127">ウィンドウの右側にある、プロジェクトの横にあるチェック ボックスをオンにして **[インストール]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="89b61-127">On the right side of the window, check the box next to your project and click **Install**.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="89168-126">Xbox Live クリエーターズ プログラムの開発者は、XDK がサポートされていないため、UWP バージョンの Xbox Live SDK を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89168-126">Xbox Live Creators Program developers must use one of the UWP versions of the Xbox Live SDK, as XDK is not supported.</span></span>
+> <span data-ttu-id="89b61-128">Xbox Live クリエーターズ プログラムの開発者は、XDK がサポートされていないため、UWP バージョンの Xbox Live SDK を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="89b61-128">Xbox Live Creators Program developers must use one of the UWP versions of the Xbox Live SDK, as XDK is not supported.</span></span>
 
 ![NuGet による XBL の追加](../images/getting_started/vs-add-nuget-xbl.gif)
 
 > [!IMPORTANT]
-> <span data-ttu-id="89168-128">`Microsoft.Xbox.Live.SDK.Cpp.*` ベースのプロジェクトの場合、必ずプロジェクトのソースにヘッダー `#include <xsapi\services.h>` を含めてください。</span><span class="sxs-lookup"><span data-stu-id="89168-128">For `Microsoft.Xbox.Live.SDK.Cpp.*` based projects, make sure to include the header `#include <xsapi\services.h>` in your project's source.</span></span>
+> <span data-ttu-id="89b61-130">`Microsoft.Xbox.Live.SDK.Cpp.*` ベースのプロジェクトの場合、必ずプロジェクトのソースにヘッダー `#include <xsapi\services.h>` を含めてください。</span><span class="sxs-lookup"><span data-stu-id="89b61-130">For `Microsoft.Xbox.Live.SDK.Cpp.*` based projects, make sure to include the header `#include <xsapi\services.h>` in your project's source.</span></span>
