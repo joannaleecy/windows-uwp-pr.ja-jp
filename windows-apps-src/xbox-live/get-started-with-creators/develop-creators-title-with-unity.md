@@ -11,36 +11,36 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クリエーター
 ms.localizationpriority: medium
 ms.openlocfilehash: 28f9da245d3fae23241058d7a83fe8c397a415d2
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881591"
+ms.locfileid: "3936044"
 ---
-# <a name="get-started-developing-an-xbox-live-creators-program-title-with-the-unity-game-engine"></a><span data-ttu-id="51b02-104">Unity ゲーム エンジンを使用して、Xbox Live クリエーターズ プログラムのタイトルの開発を開始する</span><span class="sxs-lookup"><span data-stu-id="51b02-104">Get started developing an Xbox Live Creators Program title with the Unity game engine</span></span>
+# <a name="get-started-developing-an-xbox-live-creators-program-title-with-the-unity-game-engine"></a><span data-ttu-id="ab9af-104">Unity ゲーム エンジンを使用して、Xbox Live クリエーターズ プログラムのタイトルの開発を開始する</span><span class="sxs-lookup"><span data-stu-id="ab9af-104">Get started developing an Xbox Live Creators Program title with the Unity game engine</span></span>
 
-<span data-ttu-id="51b02-105">このセクションでは、Unity ゲーム エンジンを使用して開発されたゲームに Xbox Live を統合する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="51b02-105">This section covers how to integrate Xbox Live into games developed with the Unity game engine.</span></span> <span data-ttu-id="51b02-106">Xbox Live Unity プラグインは、[Xbox Live クリエーターズ プログラム](../developer-program-overview.md#xbox-live-creators-program)のタイトル用に使用することを目的としています。</span><span class="sxs-lookup"><span data-stu-id="51b02-106">The Xbox Live Unity Plugin is intended to be used for [Xbox Live Creators Program](../developer-program-overview.md#xbox-live-creators-program) Titles.</span></span> <span data-ttu-id="51b02-107">以下の記事に従って、Unity プロジェクトへの Xbox Live の統合を開始してください。</span><span class="sxs-lookup"><span data-stu-id="51b02-107">Following along with these articles to start integrating Xbox Live into a Unity project.</span></span>
+<span data-ttu-id="ab9af-105">このセクションでは、Unity ゲーム エンジンを使用して開発されたゲームに Xbox Live を統合する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ab9af-105">This section covers how to integrate Xbox Live into games developed with the Unity game engine.</span></span> <span data-ttu-id="ab9af-106">Xbox Live Unity プラグインは、[Xbox Live クリエーターズ プログラム](../developer-program-overview.md#xbox-live-creators-program)のタイトル用に使用することを目的としています。</span><span class="sxs-lookup"><span data-stu-id="ab9af-106">The Xbox Live Unity Plugin is intended to be used for [Xbox Live Creators Program](../developer-program-overview.md#xbox-live-creators-program) Titles.</span></span> <span data-ttu-id="ab9af-107">以下の記事に従って、Unity プロジェクトへの Xbox Live の統合を開始してください。</span><span class="sxs-lookup"><span data-stu-id="ab9af-107">Following along with these articles to start integrating Xbox Live into a Unity project.</span></span>
 
-## <a name="knowledge"></a><span data-ttu-id="51b02-108">ナレッジ</span><span class="sxs-lookup"><span data-stu-id="51b02-108">Knowledge</span></span>
+## <a name="knowledge"></a><span data-ttu-id="ab9af-108">ナレッジ</span><span class="sxs-lookup"><span data-stu-id="ab9af-108">Knowledge</span></span>
 
-[<span data-ttu-id="51b02-109">Xbox Live クリエーターズ プログラム向けのタイトルを作成し、テスト用に公開する</span><span class="sxs-lookup"><span data-stu-id="51b02-109">Create and test publish an Xbox Live Creators Program Title</span></span>](create-and-test-a-new-creators-title.md)
+[<span data-ttu-id="ab9af-109">Xbox Live クリエーターズ プログラム向けのタイトルを作成し、テスト用に公開する</span><span class="sxs-lookup"><span data-stu-id="ab9af-109">Create and test publish an Xbox Live Creators Program Title</span></span>](create-and-test-a-new-creators-title.md)
 
-[<span data-ttu-id="51b02-110">Unity で Xbox Live を構成する</span><span class="sxs-lookup"><span data-stu-id="51b02-110">Configure Xbox Live In Unity</span></span>](configure-xbox-live-in-unity.md)
+[<span data-ttu-id="ab9af-110">Unity で Xbox Live を構成する</span><span class="sxs-lookup"><span data-stu-id="ab9af-110">Configure Xbox Live In Unity</span></span>](configure-xbox-live-in-unity.md)
 
-[<span data-ttu-id="51b02-111">Xbox Live アカウントを承認する</span><span class="sxs-lookup"><span data-stu-id="51b02-111">Authorize Xbox Live Accounts</span></span>](authorize-xbox-live-accounts.md)
+[<span data-ttu-id="ab9af-111">Xbox Live アカウントを承認する</span><span class="sxs-lookup"><span data-stu-id="ab9af-111">Authorize Xbox Live Accounts</span></span>](authorize-xbox-live-accounts.md)
 
-<span data-ttu-id="51b02-112">[Unity で Xbox Live にサインインする](unity-prefabs-and-sign-in.md) 1804 以前の Unity プラグイン リリース</span><span class="sxs-lookup"><span data-stu-id="51b02-112">[Sign-in to Xbox Live In Unity](unity-prefabs-and-sign-in.md) Pre 1804 Unity Plugin Release</span></span>
+<span data-ttu-id="ab9af-112">[Unity で Xbox Live にサインインする](unity-prefabs-and-sign-in.md) 1804 以前の Unity プラグイン リリース</span><span class="sxs-lookup"><span data-stu-id="ab9af-112">[Sign-in to Xbox Live In Unity](unity-prefabs-and-sign-in.md) Pre 1804 Unity Plugin Release</span></span>
 
-<span data-ttu-id="51b02-113">[PlayerAuthentication プレハブを使用してサインインする](playerauthentication-prefab-sign-in.md) 1804 以降の Unity プラグイン リリース</span><span class="sxs-lookup"><span data-stu-id="51b02-113">[Sign in with the PlayerAuthentication prefab](playerauthentication-prefab-sign-in.md)  Post 1804 Unity Plugin Release</span></span>
+<span data-ttu-id="ab9af-113">[PlayerAuthentication プレハブを使用してサインインする](playerauthentication-prefab-sign-in.md) 1804 以降の Unity プラグイン リリース</span><span class="sxs-lookup"><span data-stu-id="ab9af-113">[Sign in with the PlayerAuthentication prefab](playerauthentication-prefab-sign-in.md)  Post 1804 Unity Plugin Release</span></span>
 
-[<span data-ttu-id="51b02-114">SignInManager を使用してサインインする</span><span class="sxs-lookup"><span data-stu-id="51b02-114">Sign in with the SignInManager</span></span>](sign-in-manager.md)
+[<span data-ttu-id="ab9af-114">SignInManager を使用してサインインする</span><span class="sxs-lookup"><span data-stu-id="ab9af-114">Sign in with the SignInManager</span></span>](sign-in-manager.md)
 
-[<span data-ttu-id="51b02-115">Unity プロジェクトにプレイヤーの統計とランキングを追加する</span><span class="sxs-lookup"><span data-stu-id="51b02-115">Add player stats and leaderboards to your Unity project</span></span>](add-stats-and-leaderboards-in-unity.md)
+[<span data-ttu-id="ab9af-115">Unity プロジェクトにプレイヤーの統計とランキングを追加する</span><span class="sxs-lookup"><span data-stu-id="ab9af-115">Add player stats and leaderboards to your Unity project</span></span>](add-stats-and-leaderboards-in-unity.md)
 
-[<span data-ttu-id="51b02-116">ランキングのサンプル シーン</span><span class="sxs-lookup"><span data-stu-id="51b02-116">The Leaderboard Example Scene</span></span>](setup-leaderboard-example-scene.md)
+[<span data-ttu-id="ab9af-116">ランキングのサンプル シーン</span><span class="sxs-lookup"><span data-stu-id="ab9af-116">The Leaderboard Example Scene</span></span>](setup-leaderboard-example-scene.md)
 
-[<span data-ttu-id="51b02-117">ランキングのスクリプト作成</span><span class="sxs-lookup"><span data-stu-id="51b02-117">Scripting a Leaderboard</span></span>](unity-leaderboard-from-scratch.md)
+[<span data-ttu-id="ab9af-117">ランキングのスクリプト作成</span><span class="sxs-lookup"><span data-stu-id="ab9af-117">Scripting a Leaderboard</span></span>](unity-leaderboard-from-scratch.md)
 
-[<span data-ttu-id="51b02-118">マルチユーザー サポートを Unity プロジェクトに追加する</span><span class="sxs-lookup"><span data-stu-id="51b02-118">Add Multi-User Support to your Unity Project</span></span>](add-multi-user-support.md)
+[<span data-ttu-id="ab9af-118">マルチユーザー サポートを Unity プロジェクトに追加する</span><span class="sxs-lookup"><span data-stu-id="ab9af-118">Add Multi-User Support to your Unity Project</span></span>](add-multi-user-support.md)
 
-[<span data-ttu-id="51b02-119">コントローラー サポートを Xbox Live プレハブに追加する</span><span class="sxs-lookup"><span data-stu-id="51b02-119">Add Controller Support to Xbox Live Prefabs</span></span>](add-controller-support-to-xbox-live-prefabs.md)
+[<span data-ttu-id="ab9af-119">コントローラー サポートを Xbox Live プレハブに追加する</span><span class="sxs-lookup"><span data-stu-id="ab9af-119">Add Controller Support to Xbox Live Prefabs</span></span>](add-controller-support-to-xbox-live-prefabs.md)

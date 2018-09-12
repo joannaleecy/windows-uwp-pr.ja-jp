@@ -12,53 +12,53 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d612f2fe9cb327b792ed3ab73ad17421f394a030
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881506"
+ms.locfileid: "3933598"
 ---
-# <a name="gamerpic-uris"></a><span data-ttu-id="1f78f-104">ゲーマー アイコン Uri</span><span class="sxs-lookup"><span data-stu-id="1f78f-104">Gamerpic URIs</span></span>
+# <a name="gamerpic-uris"></a><span data-ttu-id="46286-104">ゲーマー アイコン Uri</span><span class="sxs-lookup"><span data-stu-id="46286-104">Gamerpic URIs</span></span>
  
-<span data-ttu-id="1f78f-105">このセクションでは、*人々*用の Xbox Live サービスから、ゲーマー アイコン ユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="1f78f-105">This section provides detail about the Gamerpic Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *gamerpics*.</span></span>
+<span data-ttu-id="46286-105">このセクションでは、*人々*用の Xbox Live サービスから、ゲーマー アイコン ユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="46286-105">This section provides detail about the Gamerpic Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *gamerpics*.</span></span>
  
-<span data-ttu-id="1f78f-106">これらの Uri のドメインが`gamerpics.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="1f78f-106">The domain for these URIs is `gamerpics.xboxlive.com`.</span></span>
+<span data-ttu-id="46286-106">これらの Uri のドメインが`gamerpics.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="46286-106">The domain for these URIs is `gamerpics.xboxlive.com`.</span></span>
  
-<span data-ttu-id="1f78f-107">ゲーマー アイコン サービスは、ユーザーが、ゲーム キャラクターのゲーマー アイコンを生成できるようにする機能をタイトルに付与することによって、その他の [パーソナル設定] オプションをユーザーに提供する設計されています (このシナリオでゲームの文字は、ゲーム内の主役は、ユーザーがある可能性があります、自動車、宇宙船、またはタイトルでユーザーを制御するその他のエンティティ)。</span><span class="sxs-lookup"><span data-stu-id="1f78f-107">The Gamerpic Service has been designed to give users more personalization options, by granting a title the ability to allow the user to generate a gamerpic of their game character (a game character in this scenario refers to an in-game protagonist; it could be a person, a car, a spaceship, or any other entity that the user controls in the title).</span></span>
+<span data-ttu-id="46286-107">ゲーマー アイコン サービスは、ユーザーが、ゲーム キャラクターのゲーマー アイコンを生成できるようにする機能をタイトルに付与することによってその他の [パーソナル設定] オプションをユーザーに提供する設計されています (このシナリオではゲームの文字は、ゲームで主役は、ユーザーがある可能性があります、自動車、宇宙船、またはタイトルでユーザーを制御するその他のエンティティ)。</span><span class="sxs-lookup"><span data-stu-id="46286-107">The Gamerpic Service has been designed to give users more personalization options, by granting a title the ability to allow the user to generate a gamerpic of their game character (a game character in this scenario refers to an in-game protagonist; it could be a person, a car, a spaceship, or any other entity that the user controls in the title).</span></span>
  
-<span data-ttu-id="1f78f-108">タイトルのゲーマー アイコンを生成する基本的なフローは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="1f78f-108">The basic flow of generating a title gamerpic is as follows:</span></span>
+<span data-ttu-id="46286-108">ゲーマー アイコンがタイトルを生成する基本的なフローは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="46286-108">The basic flow of generating a title gamerpic is as follows:</span></span>
  
-   * <span data-ttu-id="1f78f-109">タイトルは、ゲーム内の文字のイメージを作成することで、ユーザーを提供します。</span><span class="sxs-lookup"><span data-stu-id="1f78f-109">The title provides the user with the ability to create an image of their in-game character.</span></span> 
-     * <span data-ttu-id="1f78f-110">必要でない場合は、タイトルでは適切な特権がないユーザーがメッセージし、ことができます。</span><span class="sxs-lookup"><span data-stu-id="1f78f-110">If not, the title can then message the user that they do not have the appropriate privilege.</span></span>
-     * <span data-ttu-id="1f78f-111">ユーザー特権がある場合、は、ユーザーがその文字ゲーマー アイコンを作成する続けることができます。</span><span class="sxs-lookup"><span data-stu-id="1f78f-111">If the user does have the privilege, the user can continue to create their character gamerpic.</span></span>
+   * <span data-ttu-id="46286-109">タイトルは、ゲーム内で文字のイメージを作成することで、ユーザーを提供します。</span><span class="sxs-lookup"><span data-stu-id="46286-109">The title provides the user with the ability to create an image of their in-game character.</span></span> 
+     * <span data-ttu-id="46286-110">必要でない場合は、タイトルでは適切な特権がないユーザーがメッセージしことができます。</span><span class="sxs-lookup"><span data-stu-id="46286-110">If not, the title can then message the user that they do not have the appropriate privilege.</span></span>
+     * <span data-ttu-id="46286-111">ユーザー特権がある場合、は、ユーザーがその文字ゲーマー アイコンを作成する続けることができます。</span><span class="sxs-lookup"><span data-stu-id="46286-111">If the user does have the privilege, the user can continue to create their character gamerpic.</span></span>
   
-   * <span data-ttu-id="1f78f-112">ユーザーは、イメージを作成し、タイトルは、ゲーマー アイコン サービスに 1080 x 1080 の .png ファイルを送信します。</span><span class="sxs-lookup"><span data-stu-id="1f78f-112">The user creates the image and the title sends the 1080x1080 .png file to the gamerpic service.</span></span>
-   * <span data-ttu-id="1f78f-113">サービスは、画像を保存し、ユーザーの新しいゲーマー アイコンとして、画像を設定します。</span><span class="sxs-lookup"><span data-stu-id="1f78f-113">The service stores the image and sets the image as the user's new gamerpic.</span></span>
-   * <span data-ttu-id="1f78f-114">ユーザーのゲーマー アイコンの呼び出しのエクスペリエンスでは、更新後の画像を取得します。</span><span class="sxs-lookup"><span data-stu-id="1f78f-114">Any experiences calling for the user's gamerpic will get the updated image.</span></span>
+   * <span data-ttu-id="46286-112">ユーザーは、イメージを作成し、タイトルは、ゲーマー アイコン サービスに 1080 x 1080 の .png ファイルを送信します。</span><span class="sxs-lookup"><span data-stu-id="46286-112">The user creates the image and the title sends the 1080x1080 .png file to the gamerpic service.</span></span>
+   * <span data-ttu-id="46286-113">サービスは、画像を保存し、ユーザーの新しいゲーマー アイコンとして、画像を設定します。</span><span class="sxs-lookup"><span data-stu-id="46286-113">The service stores the image and sets the image as the user's new gamerpic.</span></span>
+   * <span data-ttu-id="46286-114">ユーザーのゲーマー アイコンの呼び出し、エクスペリエンスでは、更新後の画像を取得します。</span><span class="sxs-lookup"><span data-stu-id="46286-114">Any experiences calling for the user's gamerpic will get the updated image.</span></span>
   
-<span data-ttu-id="1f78f-115">タイトルのゲーマー アイコンを設定する機能は、実施専用特権 (211) によって制御されます。</span><span class="sxs-lookup"><span data-stu-id="1f78f-115">The ability to set a title gamerpic is controlled by an enforcement-only privilege (211).</span></span> <span data-ttu-id="1f78f-116">強制では、特権を取り消します、ユーザーはタイトルのゲーマー アイコンを保存できませんし、サービスには、403 が返されます。</span><span class="sxs-lookup"><span data-stu-id="1f78f-116">If enforcement revokes the privilege, the user will be prevented from saving a title gamerpic, and the service will return 403.</span></span> <span data-ttu-id="1f78f-117">タイトルでは、ユーザーがコンテンツ (priv 211) 共有を許可されていることを確認する CheckPrivilege を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="1f78f-117">Titles should call CheckPrivilege to verify that users are permitted to share content (priv 211).</span></span>
+<span data-ttu-id="46286-115">ゲーマー アイコンがタイトルを設定する機能は、実施専用特権 (211) によって制御されます。</span><span class="sxs-lookup"><span data-stu-id="46286-115">The ability to set a title gamerpic is controlled by an enforcement-only privilege (211).</span></span> <span data-ttu-id="46286-116">強制では、特権を取り消します、ユーザーされなくなりますタイトルのゲーマー アイコンを保存し、サービスには、403 が返されます。</span><span class="sxs-lookup"><span data-stu-id="46286-116">If enforcement revokes the privilege, the user will be prevented from saving a title gamerpic, and the service will return 403.</span></span> <span data-ttu-id="46286-117">タイトルは、コンテンツ (priv 211) を共有するユーザーが許可されていることを確認する CheckPrivilege を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="46286-117">Titles should call CheckPrivilege to verify that users are permitted to share content (priv 211).</span></span>
  
-<span data-ttu-id="1f78f-118">現在、このサービスを使用するために、タイトルではホワイト リスト化される必要があります。</span><span class="sxs-lookup"><span data-stu-id="1f78f-118">Presently, in order to use this service, your title must be whitelisted.</span></span> <span data-ttu-id="1f78f-119">承認を要求するメール`slsgamerpics@microsoft.com`します。</span><span class="sxs-lookup"><span data-stu-id="1f78f-119">To request approval, email `slsgamerpics@microsoft.com`.</span></span>
+<span data-ttu-id="46286-118">現在、このサービスを使用するために、タイトルではホワイト リスト化される必要があります。</span><span class="sxs-lookup"><span data-stu-id="46286-118">Presently, in order to use this service, your title must be whitelisted.</span></span> <span data-ttu-id="46286-119">承認を要求するには、メール`slsgamerpics@microsoft.com`します。</span><span class="sxs-lookup"><span data-stu-id="46286-119">To request approval, email `slsgamerpics@microsoft.com`.</span></span>
  
 <a id="ID4EGC"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="1f78f-120">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="1f78f-120">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="46286-120">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="46286-120">In this section</span></span>
 
-[<span data-ttu-id="1f78f-121">/users/me/gamerpic</span><span class="sxs-lookup"><span data-stu-id="1f78f-121">/users/me/gamerpic</span></span>](uri-usersmegamerpic.md)
+[<span data-ttu-id="46286-121">/users/me/gamerpic</span><span class="sxs-lookup"><span data-stu-id="46286-121">/users/me/gamerpic</span></span>](uri-usersmegamerpic.md)
 
-<span data-ttu-id="1f78f-122">&nbsp;&nbsp;1080 x 1080 ゲーマー アイコンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="1f78f-122">&nbsp;&nbsp;Accesses a 1080x1080 gamerpic.</span></span>
+<span data-ttu-id="46286-122">&nbsp;&nbsp;1080 x 1080 ゲーマー アイコンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="46286-122">&nbsp;&nbsp;Accesses a 1080x1080 gamerpic.</span></span>
  
 <a id="ID4EMC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="1f78f-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="1f78f-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="46286-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="46286-123">See also</span></span>
  
 <a id="ID4EOC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="1f78f-124">Parent</span><span class="sxs-lookup"><span data-stu-id="1f78f-124">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="46286-124">Parent</span><span class="sxs-lookup"><span data-stu-id="46286-124">Parent</span></span> 
 
-[<span data-ttu-id="1f78f-125">ユニバーサル リソース識別子 (URI) の参照</span><span class="sxs-lookup"><span data-stu-id="1f78f-125">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="46286-125">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="46286-125">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

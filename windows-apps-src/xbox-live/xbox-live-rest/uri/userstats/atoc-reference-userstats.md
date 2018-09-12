@@ -12,41 +12,41 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dbfe2cf1e25662f9645649594521bd23193d09d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881595"
+ms.locfileid: "3932422"
 ---
-# <a name="user-statistics-uris"></a><span data-ttu-id="40368-104">ユーザーの統計情報の Uri</span><span class="sxs-lookup"><span data-stu-id="40368-104">User Statistics URIs</span></span>
+# <a name="user-statistics-uris"></a><span data-ttu-id="18489-104">ユーザーの統計情報の Uri</span><span class="sxs-lookup"><span data-stu-id="18489-104">User Statistics URIs</span></span>
  
-<span data-ttu-id="40368-105">このセクションでは、*ユーザー統計情報*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="40368-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *user statistics*.</span></span>
+<span data-ttu-id="18489-105">このセクションでは、*ユーザー統計情報*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="18489-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *user statistics*.</span></span>
  
-<span data-ttu-id="40368-106">これらの Uri のドメインは、userstats.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="40368-106">The domain for these URIs is userstats.xboxlive.com.</span></span>
+<span data-ttu-id="18489-106">これらの Uri のドメインは、userstats.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="18489-106">The domain for these URIs is userstats.xboxlive.com.</span></span>
  
 <a id="ID4EDB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="40368-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="40368-107">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="18489-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="18489-107">In this section</span></span>
 
-[<span data-ttu-id="40368-108">/batch</span><span class="sxs-lookup"><span data-stu-id="40368-108">/batch</span></span>](uri-batch.md)
+[<span data-ttu-id="18489-108">/batch</span><span class="sxs-lookup"><span data-stu-id="18489-108">/batch</span></span>](uri-batch.md)
 
-<span data-ttu-id="40368-109">&nbsp;&nbsp;複数のプレイヤーの統計情報の複雑なバッチ要求は、複数のタイトルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="40368-109">&nbsp;&nbsp;Accesses complex batch requests for multiple player statistics across multiple titles.</span></span>
+<span data-ttu-id="18489-109">&nbsp;&nbsp;複数のプレイヤーの統計情報の複雑なバッチ要求は、複数のタイトルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="18489-109">&nbsp;&nbsp;Accesses complex batch requests for multiple player statistics across multiple titles.</span></span>
 
-[<span data-ttu-id="40368-110">ユーザー/xuid ({xuid})/scids/{scid}/統計</span><span class="sxs-lookup"><span data-stu-id="40368-110">/users/xuid({xuid})/scids/{scid}/stats</span></span>](uri-usersxuidscidsscidstats.md)
+[<span data-ttu-id="18489-110">ユーザー/xuid ({xuid})/scids/{scid}/統計</span><span class="sxs-lookup"><span data-stu-id="18489-110">/users/xuid({xuid})/scids/{scid}/stats</span></span>](uri-usersxuidscidsscidstats.md)
 
-<span data-ttu-id="40368-111">&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストで、サービス構成にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="40368-111">&nbsp;&nbsp;Accesses a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.</span></span>
+<span data-ttu-id="18489-111">&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストでサービス構成にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="18489-111">&nbsp;&nbsp;Accesses a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.</span></span>
  
 <a id="ID4EMB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="40368-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="40368-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="18489-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="18489-112">See also</span></span>
  
 <a id="ID4EOB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="40368-113">Parent</span><span class="sxs-lookup"><span data-stu-id="40368-113">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="18489-113">Parent</span><span class="sxs-lookup"><span data-stu-id="18489-113">Parent</span></span> 
 
-[<span data-ttu-id="40368-114">ユニバーサル リソース識別子 (URI) の参照</span><span class="sxs-lookup"><span data-stu-id="40368-114">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="18489-114">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="18489-114">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

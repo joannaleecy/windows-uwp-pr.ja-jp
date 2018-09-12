@@ -11,41 +11,41 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, Multiplayer Manager, フローチャート, SmartMatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bc23c73df1bdd8a030165ae623fc59c036104bd
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881950"
+ms.locfileid: "3935777"
 ---
-# <a name="find-a-multiplayer-game-by-using-smartmatch"></a><span data-ttu-id="a812f-104">SmartMatch を使用してマルチプレイヤー ゲームを検索する</span><span class="sxs-lookup"><span data-stu-id="a812f-104">Find a multiplayer game by using SmartMatch</span></span>
+# <a name="find-a-multiplayer-game-by-using-smartmatch"></a><span data-ttu-id="a5aa2-104">SmartMatch を使用してマルチプレイヤー ゲームを検索する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-104">Find a multiplayer game by using SmartMatch</span></span>
 
-<span data-ttu-id="a812f-105">ゲームをプレイしたいがオンラインのフレンドの人数が足りない場合や、ゲーマーが単にランダムなプレイヤーを相手にオンラインでプレイしたい場合があります。</span><span class="sxs-lookup"><span data-stu-id="a812f-105">Sometimes, a gamer may not have enough friends online when they want to play a game, or they just want to play against random people online.</span></span> <span data-ttu-id="a812f-106">Xbox Live SmartMatch サービスを使用して、他の Xbox Live プレイヤーを探すことができます。</span><span class="sxs-lookup"><span data-stu-id="a812f-106">You can use the Xbox Live SmartMatch service to find other Xbox Live players</span></span>
+<span data-ttu-id="a5aa2-105">ゲームをプレイしたいがオンラインのフレンドの人数が足りない場合や、ゲーマーが単にランダムなプレイヤーを相手にオンラインでプレイしたい場合があります。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-105">Sometimes, a gamer may not have enough friends online when they want to play a game, or they just want to play against random people online.</span></span> <span data-ttu-id="a5aa2-106">Xbox Live SmartMatch サービスを使用して、他の Xbox Live プレイヤーを探すことができます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-106">You can use the Xbox Live SmartMatch service to find other Xbox Live players</span></span>
 
-<span data-ttu-id="a812f-107">このページでは、Multiplayer Manager を使用して SmartMatch マッチメイキングを実装するために必要な基本手順を説明します。</span><span class="sxs-lookup"><span data-stu-id="a812f-107">This page covers the basic steps you need to implement SmartMatch matchmaking by using Multiplayer Manager.</span></span>
+<span data-ttu-id="a5aa2-107">このページでは、Multiplayer Manager を使用して SmartMatch マッチメイキングを実装するために必要な基本手順を説明します。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-107">This page covers the basic steps you need to implement SmartMatch matchmaking by using Multiplayer Manager.</span></span>
 
-## <a name="find-a-match"></a><span data-ttu-id="a812f-108">マッチを探す</span><span class="sxs-lookup"><span data-stu-id="a812f-108">Find a match</span></span>
+## <a name="find-a-match"></a><span data-ttu-id="a5aa2-108">マッチを探す</span><span class="sxs-lookup"><span data-stu-id="a5aa2-108">Find a match</span></span>
 
-<span data-ttu-id="a812f-109">Multiplayer Manager を使用してユーザーのフレンドに招待を送信し、そのフレンドがゲームに途中参加するときの処理は 4 つのステップからなります。</span><span class="sxs-lookup"><span data-stu-id="a812f-109">There are four steps involved when using the Multiplayer Manager to send an invite to a user's friend, and then for that friend to join the game in progress:</span></span>
+<span data-ttu-id="a5aa2-109">Multiplayer Manager を使用してユーザーのフレンドに招待を送信し、そのフレンドがゲームに途中参加するときの処理は 4 つのステップからなります。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-109">There are four steps involved when using the Multiplayer Manager to send an invite to a user's friend, and then for that friend to join the game in progress:</span></span>
 
-1. [<span data-ttu-id="a812f-110">Multiplayer Manager を初期化する</span><span class="sxs-lookup"><span data-stu-id="a812f-110">Initialize Multiplayer Manager</span></span>](#initialize-multiplayer-manager)
-2. [<span data-ttu-id="a812f-111">ローカル ユーザーを追加することでロビー セッションを作成する</span><span class="sxs-lookup"><span data-stu-id="a812f-111">Create the lobby session by adding local users</span></span>](#create-lobby)
-3. [<span data-ttu-id="a812f-112">フレンドに招待を送信する</span><span class="sxs-lookup"><span data-stu-id="a812f-112">Send invites to friends</span></span>](#send-invites)
-4. [<span data-ttu-id="a812f-113">招待を受け入れる</span><span class="sxs-lookup"><span data-stu-id="a812f-113">Accept invites</span></span>](#accept-invites)
-5. [<span data-ttu-id="a812f-114">マッチを探す</span><span class="sxs-lookup"><span data-stu-id="a812f-114">Find a match</span></span>](#find-match)
+1. [<span data-ttu-id="a5aa2-110">Multiplayer Manager を初期化する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-110">Initialize Multiplayer Manager</span></span>](#initialize-multiplayer-manager)
+2. [<span data-ttu-id="a5aa2-111">ローカル ユーザーを追加することでロビー セッションを作成する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-111">Create the lobby session by adding local users</span></span>](#create-lobby)
+3. [<span data-ttu-id="a5aa2-112">フレンドに招待を送信する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-112">Send invites to friends</span></span>](#send-invites)
+4. [<span data-ttu-id="a5aa2-113">招待を受け入れる</span><span class="sxs-lookup"><span data-stu-id="a5aa2-113">Accept invites</span></span>](#accept-invites)
+5. [<span data-ttu-id="a5aa2-114">マッチを探す</span><span class="sxs-lookup"><span data-stu-id="a5aa2-114">Find a match</span></span>](#find-match)
 
-<span data-ttu-id="a812f-115">手順 1、2、3、5 は、招待を実行したデバイス上で行います。</span><span class="sxs-lookup"><span data-stu-id="a812f-115">Steps 1, 2, 3, and 5 are done on the device performing the invite.</span></span>  <span data-ttu-id="a812f-116">手順 4 は通常、プロトコルのアクティブ化によるアプリ起動の後、招待されたユーザーのマシンで開始されます。</span><span class="sxs-lookup"><span data-stu-id="a812f-116">Step 4 would typically be initiated on the invitee's machine following app launch via protocol activation.</span></span>
+<span data-ttu-id="a5aa2-115">手順 1、2、3、5 は、招待を実行したデバイス上で行います。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-115">Steps 1, 2, 3, and 5 are done on the device performing the invite.</span></span>  <span data-ttu-id="a5aa2-116">手順 4 は通常、プロトコルのアクティブ化によるアプリ起動の後、招待されたユーザーのマシンで開始されます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-116">Step 4 would typically be initiated on the invitee's machine following app launch via protocol activation.</span></span>
 
-<span data-ttu-id="a812f-117">プロセスのフローチャートについては、「[フローチャート - SmartMatch マッチメイキングを使用してマルチプレイヤー ゲームをプレイする](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a812f-117">You can see a flowchart of the process here: [Flowchart - Play a multiplayer game by using SmartMatch matchmaking](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md).</span></span>
+<span data-ttu-id="a5aa2-117">プロセスのフローチャートについては、「[フローチャート - SmartMatch マッチメイキングを使用してマルチプレイヤー ゲームをプレイする](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-117">You can see a flowchart of the process here: [Flowchart - Play a multiplayer game by using SmartMatch matchmaking](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md).</span></span>
 
-### <a name="1-initialize-multiplayer-manager-a-nameinitialize-multiplayer-manager"></a><span data-ttu-id="a812f-118">1) Multiplayer Manager を初期化する <a name="initialize-multiplayer-manager"></span><span class="sxs-lookup"><span data-stu-id="a812f-118">1) Initialize Multiplayer Manager <a name="initialize-multiplayer-manager"></span></span>
+### <a name="1-initialize-multiplayer-manager-a-nameinitialize-multiplayer-manager"></a><span data-ttu-id="a5aa2-118">1) Multiplayer Manager を初期化する <a name="initialize-multiplayer-manager"></span><span class="sxs-lookup"><span data-stu-id="a5aa2-118">1) Initialize Multiplayer Manager <a name="initialize-multiplayer-manager"></span></span>
 
-| <span data-ttu-id="a812f-119">呼び出し</span><span class="sxs-lookup"><span data-stu-id="a812f-119">Call</span></span> | <span data-ttu-id="a812f-120">トリガーされるイベント</span><span class="sxs-lookup"><span data-stu-id="a812f-120">Event triggered</span></span> |
+| <span data-ttu-id="a5aa2-119">呼び出し</span><span class="sxs-lookup"><span data-stu-id="a5aa2-119">Call</span></span> | <span data-ttu-id="a5aa2-120">トリガーされるイベント</span><span class="sxs-lookup"><span data-stu-id="a5aa2-120">Event triggered</span></span> |
 |-----|----------------|
-| `multiplayer_manager::initialize(lobbySessionTemplateName)` | <span data-ttu-id="a812f-121">該当なし</span><span class="sxs-lookup"><span data-stu-id="a812f-121">N/A</span></span> |
+| `multiplayer_manager::initialize(lobbySessionTemplateName)` | <span data-ttu-id="a5aa2-121">該当なし</span><span class="sxs-lookup"><span data-stu-id="a5aa2-121">N/A</span></span> |
 
-<span data-ttu-id="a812f-122">(サービス構成で構成される) 有効なセッション テンプレート名が指定されていることを前提に、Multiplayer Manager の初期化時にロビー セッション オブジェクトが自動的に作成されます。</span><span class="sxs-lookup"><span data-stu-id="a812f-122">The lobby session object is automatically created upon initializing the Multiplayer Manager, assuming that a valid session template name (configured in the service configuration) is specified.</span></span> <span data-ttu-id="a812f-123">このとき、サービスでロビー セッション インスタンスが作成されるわけではないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="a812f-123">Note that this does not create the lobby session instance on the service.</span></span>
+<span data-ttu-id="a5aa2-122">(サービス構成で構成される) 有効なセッション テンプレート名が指定されていることを前提に、Multiplayer Manager の初期化時にロビー セッション オブジェクトが自動的に作成されます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-122">The lobby session object is automatically created upon initializing the Multiplayer Manager, assuming that a valid session template name (configured in the service configuration) is specified.</span></span> <span data-ttu-id="a5aa2-123">このとき、サービスでロビー セッション インスタンスが作成されるわけではないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-123">Note that this does not create the lobby session instance on the service.</span></span>
 
-**<span data-ttu-id="a812f-124">例:</span><span class="sxs-lookup"><span data-stu-id="a812f-124">Example:</span></span>**
+**<span data-ttu-id="a5aa2-124">例:</span><span class="sxs-lookup"><span data-stu-id="a5aa2-124">Example:</span></span>**
 
 ```cpp
 auto mpInstance = multiplayer_manager::get_singleton_instance();
@@ -54,21 +54,21 @@ mpInstance->initialize(lobbySessionTemplateName);
 ```
 
 
-### <a name="2-create-the-lobby-session-by-adding-local-usersa-namecreate-lobby"></a><span data-ttu-id="a812f-125">2) ローカル ユーザーを追加することでロビー セッションを作成する<a name="create-lobby"></span><span class="sxs-lookup"><span data-stu-id="a812f-125">2) Create the lobby session by adding local users<a name="create-lobby"></span></span>
+### <a name="2-create-the-lobby-session-by-adding-local-usersa-namecreate-lobby"></a><span data-ttu-id="a5aa2-125">2) ローカル ユーザーを追加することでロビー セッションを作成する<a name="create-lobby"></span><span class="sxs-lookup"><span data-stu-id="a5aa2-125">2) Create the lobby session by adding local users<a name="create-lobby"></span></span>
 
-| <span data-ttu-id="a812f-126">メソッド</span><span class="sxs-lookup"><span data-stu-id="a812f-126">Method</span></span> | <span data-ttu-id="a812f-127">トリガーされるイベント</span><span class="sxs-lookup"><span data-stu-id="a812f-127">Event triggered</span></span> |
+| <span data-ttu-id="a5aa2-126">メソッド</span><span class="sxs-lookup"><span data-stu-id="a5aa2-126">Method</span></span> | <span data-ttu-id="a5aa2-127">トリガーされるイベント</span><span class="sxs-lookup"><span data-stu-id="a5aa2-127">Event triggered</span></span> |
 |-----|----------------|
 | `multiplayer_lobby_session::add_local_user()` | `user_added_event` |
 | `multiplayer_lobby_session::set_local_member_connection_address()` | `local_member_connection_address_write_completed ` |
 | `multiplayer_lobby_session::set_local_member_properties()` | `member_property_changed` |
 
-<span data-ttu-id="a812f-128">ここでは、ローカルでサインインしている Xbox Live ユーザーをロビー セッションに追加します。</span><span class="sxs-lookup"><span data-stu-id="a812f-128">Here, you add the locally signed in Xbox Live users to the lobby session.</span></span> <span data-ttu-id="a812f-129">最初のユーザーが追加されたときに新しいロビーをホストします。</span><span class="sxs-lookup"><span data-stu-id="a812f-129">This hosts a new lobby when the first user is added.</span></span> <span data-ttu-id="a812f-130">他のすべてのユーザーについては、セカンダリー ユーザーとして既存のロビーに追加されます。</span><span class="sxs-lookup"><span data-stu-id="a812f-130">For all other users, they will be added to the existing lobby as secondary users.</span></span> <span data-ttu-id="a812f-131">この API は、フレンドが参加するシェルのロビーも公開します。</span><span class="sxs-lookup"><span data-stu-id="a812f-131">This API will also advertise the lobby in the shell for friends to join.</span></span> <span data-ttu-id="a812f-132">招待の送信、ロビーのプロパティの設定、および lobby() を介したロビー メンバーへのアクセスは、ローカル ユーザーの追加後にのみ可能です。</span><span class="sxs-lookup"><span data-stu-id="a812f-132">You can send invites, set lobby properties, access lobby members via lobby() only once you've added the local user.</span></span>
+<span data-ttu-id="a5aa2-128">ここでは、ローカルでサインインしている Xbox Live ユーザーをロビー セッションに追加します。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-128">Here, you add the locally signed in Xbox Live users to the lobby session.</span></span> <span data-ttu-id="a5aa2-129">最初のユーザーが追加されたときに新しいロビーをホストします。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-129">This hosts a new lobby when the first user is added.</span></span> <span data-ttu-id="a5aa2-130">他のすべてのユーザーについては、セカンダリー ユーザーとして既存のロビーに追加されます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-130">For all other users, they will be added to the existing lobby as secondary users.</span></span> <span data-ttu-id="a5aa2-131">この API は、フレンドが参加するシェルのロビーも公開します。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-131">This API will also advertise the lobby in the shell for friends to join.</span></span> <span data-ttu-id="a5aa2-132">招待の送信、ロビーのプロパティの設定、および lobby() を介したロビー メンバーへのアクセスは、ローカル ユーザーの追加後にのみ可能です。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-132">You can send invites, set lobby properties, access lobby members via lobby() only once you've added the local user.</span></span>
 
-<span data-ttu-id="a812f-133">ロビーに参加した後は、ローカル メンバーの接続アドレスに加えて、メンバーのカスタム プロパティを設定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a812f-133">After joining the lobby, Microsoft recommends setting the local member's connection address, as well as any custom properties for the member.</span></span>
+<span data-ttu-id="a5aa2-133">ロビーに参加した後は、ローカル メンバーの接続アドレスに加えて、メンバーのカスタム プロパティを設定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-133">After joining the lobby, Microsoft recommends setting the local member's connection address, as well as any custom properties for the member.</span></span>
 
-<span data-ttu-id="a812f-134">ローカルにサインインしたすべてのユーザーに対して、このプロセスを繰り返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="a812f-134">You must repeat this process for all locally signed in users.</span></span>
+<span data-ttu-id="a5aa2-134">ローカルにサインインしたすべてのユーザーに対して、このプロセスを繰り返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-134">You must repeat this process for all locally signed in users.</span></span>
 
-**<span data-ttu-id="a812f-135">例: (1 人のローカル ユーザー)</span><span class="sxs-lookup"><span data-stu-id="a812f-135">Example: (single local user)</span></span>**
+**<span data-ttu-id="a5aa2-135">例: (1 人のローカル ユーザー)</span><span class="sxs-lookup"><span data-stu-id="a5aa2-135">Example: (single local user)</span></span>**
 
 ```cpp
 auto mpInstance = multiplayer_manager::get_singleton_instance();
@@ -88,7 +88,7 @@ mpInstance->lobby_session()->set_local_member_connection_address(
 mpInstance->lobby_session()->set_local_member_properties(xboxLivecontext->user(), ..., ...)
 ```
 
-**<span data-ttu-id="a812f-136">例: (複数のローカル ユーザー)</span><span class="sxs-lookup"><span data-stu-id="a812f-136">Example: (multiple local users)</span></span>**
+**<span data-ttu-id="a5aa2-136">例: (複数のローカル ユーザー)</span><span class="sxs-lookup"><span data-stu-id="a5aa2-136">Example: (multiple local users)</span></span>**
 
 ```cpp
 auto mpInstance = multiplayer_manager::get_singleton_instance();
@@ -116,31 +116,31 @@ for (User^ user : User::Users)
 ```
 
 
-<span data-ttu-id="a812f-137">変更は次回の `do_work()` 呼び出しでバッチ処理されます。</span><span class="sxs-lookup"><span data-stu-id="a812f-137">The changes are batched on the next `do_work()` call.</span></span>  
-<span data-ttu-id="a812f-138">Multiplayer Manager は、ユーザーがロビー セッションに追加されるたびに `user_added` イベントを生成します。</span><span class="sxs-lookup"><span data-stu-id="a812f-138">Multiplayer manager fires a `user_added` event each time a user is added to the lobby session.</span></span> <span data-ttu-id="a812f-139">イベントのエラー コードを調べて、そのユーザーが正常に追加されたかどうかを確認することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a812f-139">Its recommended that you inspect the error code of the event to see if that user was successfully added.</span></span> <span data-ttu-id="a812f-140">障害が発生した場合は、障害の詳細な理由がエラー メッセージで提供されます。</span><span class="sxs-lookup"><span data-stu-id="a812f-140">In case of a failure, an error message will be provided detailing the reasons of the failure.</span></span>
+<span data-ttu-id="a5aa2-137">変更は次回の `do_work()` 呼び出しでバッチ処理されます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-137">The changes are batched on the next `do_work()` call.</span></span>  
+<span data-ttu-id="a5aa2-138">Multiplayer Manager は、ユーザーがロビー セッションに追加されるたびに `user_added` イベントを生成します。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-138">Multiplayer manager fires a `user_added` event each time a user is added to the lobby session.</span></span> <span data-ttu-id="a5aa2-139">イベントのエラー コードを調べて、そのユーザーが正常に追加されたかどうかを確認することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-139">Its recommended that you inspect the error code of the event to see if that user was successfully added.</span></span> <span data-ttu-id="a5aa2-140">障害が発生した場合は、障害の詳細な理由がエラー メッセージで提供されます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-140">In case of a failure, an error message will be provided detailing the reasons of the failure.</span></span>
 
-**<span data-ttu-id="a812f-141">Multiplayer Manager によって実行される機能</span><span class="sxs-lookup"><span data-stu-id="a812f-141">Functions performed by Multiplayer Manager</span></span>**
+**<span data-ttu-id="a5aa2-141">Multiplayer Manager によって実行される機能</span><span class="sxs-lookup"><span data-stu-id="a5aa2-141">Functions performed by Multiplayer Manager</span></span>**
 
-* <span data-ttu-id="a812f-142">リアルタイム アクティビティおよびマルチプレイヤーのサブスクリプションを Xbox Live マルチプレイヤー サービスに登録する</span><span class="sxs-lookup"><span data-stu-id="a812f-142">Register Real Time Activity & Multiplayer Subscriptions with the Xbox Live multiplayer service</span></span>
-* <span data-ttu-id="a812f-143">ロビー セッションを作成する</span><span class="sxs-lookup"><span data-stu-id="a812f-143">Create Lobby Session</span></span>
-* <span data-ttu-id="a812f-144">すべてのローカル プレイヤーをアクティブとして参加させる</span><span class="sxs-lookup"><span data-stu-id="a812f-144">Join all local players as active</span></span>
-* <span data-ttu-id="a812f-145">SDA をアップロードする</span><span class="sxs-lookup"><span data-stu-id="a812f-145">Upload SDA</span></span>
-* <span data-ttu-id="a812f-146">メンバーのプロパティを設定する</span><span class="sxs-lookup"><span data-stu-id="a812f-146">Set member properties</span></span>
-* <span data-ttu-id="a812f-147">セッション変更イベントに登録する</span><span class="sxs-lookup"><span data-stu-id="a812f-147">Register for Session Change Events</span></span>
-* <span data-ttu-id="a812f-148">ロビー セッションをアクティブ セッションとして設定する</span><span class="sxs-lookup"><span data-stu-id="a812f-148">Set Lobby Session as Active Session</span></span>
+* <span data-ttu-id="a5aa2-142">リアルタイム アクティビティおよびマルチプレイヤーのサブスクリプションを Xbox Live マルチプレイヤー サービスに登録する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-142">Register Real Time Activity & Multiplayer Subscriptions with the Xbox Live multiplayer service</span></span>
+* <span data-ttu-id="a5aa2-143">ロビー セッションを作成する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-143">Create Lobby Session</span></span>
+* <span data-ttu-id="a5aa2-144">すべてのローカル プレイヤーをアクティブとして参加させる</span><span class="sxs-lookup"><span data-stu-id="a5aa2-144">Join all local players as active</span></span>
+* <span data-ttu-id="a5aa2-145">SDA をアップロードする</span><span class="sxs-lookup"><span data-stu-id="a5aa2-145">Upload SDA</span></span>
+* <span data-ttu-id="a5aa2-146">メンバーのプロパティを設定する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-146">Set member properties</span></span>
+* <span data-ttu-id="a5aa2-147">セッション変更イベントに登録する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-147">Register for Session Change Events</span></span>
+* <span data-ttu-id="a5aa2-148">ロビー セッションをアクティブ セッションとして設定する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-148">Set Lobby Session as Active Session</span></span>
 
-### <a name="3-send-invites-to-friends-optional-a-namesend-invites"></a><span data-ttu-id="a812f-149">3) フレンドに招待を送信する (オプション) <a name="send-invites"></span><span class="sxs-lookup"><span data-stu-id="a812f-149">3) Send invites to friends (optional) <a name="send-invites"></span></span>
+### <a name="3-send-invites-to-friends-optional-a-namesend-invites"></a><span data-ttu-id="a5aa2-149">3) フレンドに招待を送信する (オプション) <a name="send-invites"></span><span class="sxs-lookup"><span data-stu-id="a5aa2-149">3) Send invites to friends (optional) <a name="send-invites"></span></span>
 
-| <span data-ttu-id="a812f-150">メソッド</span><span class="sxs-lookup"><span data-stu-id="a812f-150">Method</span></span> | <span data-ttu-id="a812f-151">トリガーされるイベント</span><span class="sxs-lookup"><span data-stu-id="a812f-151">Event triggered</span></span> |
+| <span data-ttu-id="a5aa2-150">メソッド</span><span class="sxs-lookup"><span data-stu-id="a5aa2-150">Method</span></span> | <span data-ttu-id="a5aa2-151">トリガーされるイベント</span><span class="sxs-lookup"><span data-stu-id="a5aa2-151">Event triggered</span></span> |
 | -----|----------------|
 | `multiplayer_lobby_session::invite_friends()` | `invite_sent` |
 | `multiplayer_lobby_session::invite_users()` | `invite_sent` |
 
-<span data-ttu-id="a812f-152">次に、フレンド招待用の標準 Xbox UI を表示します。</span><span class="sxs-lookup"><span data-stu-id="a812f-152">Next, you'll want to bring up the standard Xbox UI for inviting friends.</span></span> <span data-ttu-id="a812f-153">表示される UI を使用することでプレイヤーは、フレンドまたは最近のプレイヤーを選択し、ゲームに招待できます。</span><span class="sxs-lookup"><span data-stu-id="a812f-153">This displays a UI that allows the player to select friends  or recent players to invite to the game.</span></span> <span data-ttu-id="a812f-154">プレイヤーの確認が得られたら、Multiplayer Manager は選択されたプレイヤーに招待を送信します。</span><span class="sxs-lookup"><span data-stu-id="a812f-154">Once the player hits confirm, Multiplayer Manager sends the invites to the selected players.</span></span>
+<span data-ttu-id="a5aa2-152">次に、フレンド招待用の標準 Xbox UI を表示します。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-152">Next, you'll want to bring up the standard Xbox UI for inviting friends.</span></span> <span data-ttu-id="a5aa2-153">表示される UI を使用することでプレイヤーは、フレンドまたは最近のプレイヤーを選択し、ゲームに招待できます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-153">This displays a UI that allows the player to select friends  or recent players to invite to the game.</span></span> <span data-ttu-id="a5aa2-154">プレイヤーの確認が得られたら、Multiplayer Manager は選択されたプレイヤーに招待を送信します。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-154">Once the player hits confirm, Multiplayer Manager sends the invites to the selected players.</span></span>
 
-<span data-ttu-id="a812f-155">ゲームでは、`invite_users()` メソッドを使用し、Xbox Live ユーザー ID によって定義された一連のユーザーに招待を送信することもできます。</span><span class="sxs-lookup"><span data-stu-id="a812f-155">Games can also use the `invite_users()` method to send invites to a set of people defined by their Xbox Live User Ids.</span></span> <span data-ttu-id="a812f-156">これは、ストック Xbox UI の代わりに独自のゲーム内 UI を使用する場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="a812f-156">This is useful if you prefer to use your own in-game UI instead of the stock Xbox UI.</span></span>
+<span data-ttu-id="a5aa2-155">ゲームでは、`invite_users()` メソッドを使用し、Xbox Live ユーザー ID によって定義された一連のユーザーに招待を送信することもできます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-155">Games can also use the `invite_users()` method to send invites to a set of people defined by their Xbox Live User Ids.</span></span> <span data-ttu-id="a5aa2-156">これは、ストック Xbox UI の代わりに独自のゲーム内 UI を使用する場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-156">This is useful if you prefer to use your own in-game UI instead of the stock Xbox UI.</span></span>
 
-**<span data-ttu-id="a812f-157">例:</span><span class="sxs-lookup"><span data-stu-id="a812f-157">Example:</span></span>**
+**<span data-ttu-id="a5aa2-157">例:</span><span class="sxs-lookup"><span data-stu-id="a5aa2-157">Example:</span></span>**
 
 ```cpp
 auto result = mpInstance->lobby_session()->invite_friends(xboxLiveContext);
@@ -150,26 +150,26 @@ if (result.err())
 }
 ```
 
-**<span data-ttu-id="a812f-158">Multiplayer Manager によって実行される機能</span><span class="sxs-lookup"><span data-stu-id="a812f-158">Functions performed by Multiplayer Manager</span></span>**
+**<span data-ttu-id="a5aa2-158">Multiplayer Manager によって実行される機能</span><span class="sxs-lookup"><span data-stu-id="a5aa2-158">Functions performed by Multiplayer Manager</span></span>**
 
-* <span data-ttu-id="a812f-159">Xbox ストックのタイトルが呼び出せる UI (TCUI) を表示する</span><span class="sxs-lookup"><span data-stu-id="a812f-159">Brings up the Xbox stock title callable UI (TCUI)</span></span>
-* <span data-ttu-id="a812f-160">選択されたプレイヤーに直接、招待を送信する</span><span class="sxs-lookup"><span data-stu-id="a812f-160">Sends invite directly to the selected players</span></span>
+* <span data-ttu-id="a5aa2-159">Xbox ストックのタイトルが呼び出せる UI (TCUI) を表示する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-159">Brings up the Xbox stock title callable UI (TCUI)</span></span>
+* <span data-ttu-id="a5aa2-160">選択されたプレイヤーに直接、招待を送信する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-160">Sends invite directly to the selected players</span></span>
 
-### <a name="4-accept-invites-optional-a-nameaccept-invites"></a><span data-ttu-id="a812f-161">4) 招待を受け入れる (オプション) <a name="accept-invites"></span><span class="sxs-lookup"><span data-stu-id="a812f-161">4) Accept invites (optional) <a name="accept-invites"></span></span>
+### <a name="4-accept-invites-optional-a-nameaccept-invites"></a><span data-ttu-id="a5aa2-161">4) 招待を受け入れる (オプション) <a name="accept-invites"></span><span class="sxs-lookup"><span data-stu-id="a5aa2-161">4) Accept invites (optional) <a name="accept-invites"></span></span>
 
-| <span data-ttu-id="a812f-162">メソッド</span><span class="sxs-lookup"><span data-stu-id="a812f-162">Method</span></span> | <span data-ttu-id="a812f-163">トリガーされるイベント</span><span class="sxs-lookup"><span data-stu-id="a812f-163">Event triggered</span></span> |
+| <span data-ttu-id="a5aa2-162">メソッド</span><span class="sxs-lookup"><span data-stu-id="a5aa2-162">Method</span></span> | <span data-ttu-id="a5aa2-163">トリガーされるイベント</span><span class="sxs-lookup"><span data-stu-id="a5aa2-163">Event triggered</span></span> |
 | -----|----------------|
 | `multiplayer_manager::join_lobby(Windows::ApplicationModel::Activation::IProtocolActivatedEventArgs^ args)` | `join_lobby_completed_event` |
 | `multiplayer_lobby_session::set_local_member_connection_address()` | `local_member_connection_address_write_completed ` |
 | `multiplayer_lobby_session::set_local_member_properties()` | `member_property_changed` |
 
-<span data-ttu-id="a812f-164">招待されたプレイヤーがゲームの招待を受け入れると、またはシェル UI でフレンドのゲームに参加すると、プロトコルのアクティブ化を使用してデバイスでゲームが起動されます。</span><span class="sxs-lookup"><span data-stu-id="a812f-164">When an invited player accepts a game invite or joined a friends game via a shell UI, the game is launched on their device by using protocol activation.</span></span> <span data-ttu-id="a812f-165">ゲームが開始したら、Multiplayer Manager はプロトコルがアクティブ化されたイベント引数を使用してロビーに参加できます。</span><span class="sxs-lookup"><span data-stu-id="a812f-165">Once the game starts, Multiplayer Manager can use the protocol activated event arguments to join the lobby.</span></span> <span data-ttu-id="a812f-166">lobby_session()::add_local_user() を通してローカル ユーザーを追加していない場合は、必要に応じて、join_lobby() API によってユーザーのリストに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="a812f-166">Optionally, if you haven't added the local users through lobby_session()::add_local_user(), you can pass in the list of users via the join_lobby() API.</span></span> <span data-ttu-id="a812f-167">招待されたユーザーが lobby_session()::add_local_user() または join_lobby() によって追加されない場合、join_lobby() は失敗し、join_lobby_completed_event_args() の一部として招待が送信された invited_xbox_user_id が提供されます。</span><span class="sxs-lookup"><span data-stu-id="a812f-167">If the invited user is not added either via lobby_session()::add_local_user() or through join_lobby(), then join_lobby() will fail and provide the invited_xbox_user_id() that the invite was sent for as part of the join_lobby_completed_event_args().</span></span>
+<span data-ttu-id="a5aa2-164">招待されたプレイヤーがゲームの招待を受け入れると、またはシェル UI でフレンドのゲームに参加すると、プロトコルのアクティブ化を使用してデバイスでゲームが起動されます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-164">When an invited player accepts a game invite or joined a friends game via a shell UI, the game is launched on their device by using protocol activation.</span></span> <span data-ttu-id="a5aa2-165">ゲームが開始したら、Multiplayer Manager はプロトコルがアクティブ化されたイベント引数を使用してロビーに参加できます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-165">Once the game starts, Multiplayer Manager can use the protocol activated event arguments to join the lobby.</span></span> <span data-ttu-id="a5aa2-166">lobby_session()::add_local_user() を通してローカル ユーザーを追加していない場合は、必要に応じて、join_lobby() API によってユーザーのリストに渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-166">Optionally, if you haven't added the local users through lobby_session()::add_local_user(), you can pass in the list of users via the join_lobby() API.</span></span> <span data-ttu-id="a5aa2-167">招待されたユーザーが lobby_session()::add_local_user() または join_lobby() によって追加されない場合、join_lobby() は失敗し、join_lobby_completed_event_args() の一部として招待が送信された invited_xbox_user_id が提供されます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-167">If the invited user is not added either via lobby_session()::add_local_user() or through join_lobby(), then join_lobby() will fail and provide the invited_xbox_user_id() that the invite was sent for as part of the join_lobby_completed_event_args().</span></span>
 
-<span data-ttu-id="a812f-168">ロビーに参加した後は、ローカル メンバーの接続アドレスに加えて、メンバーのカスタム プロパティを設定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a812f-168">After joining the lobby, Microsoft recommends setting the local member's connection address, as well as any custom properties for the member.</span></span> <span data-ttu-id="a812f-169">また、set_synchronized_host を使用してホストを設定することもできます (存在しない場合)。</span><span class="sxs-lookup"><span data-stu-id="a812f-169">You can also set the host via set_synchronized_host if one doesn't exist.</span></span>
+<span data-ttu-id="a5aa2-168">ロビーに参加した後は、ローカル メンバーの接続アドレスに加えて、メンバーのカスタム プロパティを設定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-168">After joining the lobby, Microsoft recommends setting the local member's connection address, as well as any custom properties for the member.</span></span> <span data-ttu-id="a5aa2-169">また、set_synchronized_host を使用してホストを設定することもできます (存在しない場合)。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-169">You can also set the host via set_synchronized_host if one doesn't exist.</span></span>
 
-<span data-ttu-id="a812f-170">最後に、ゲームが既に進行中であり、招待されたユーザーを受け入れる余裕がある場合、Multiplayer Manager はユーザーをゲーム セッションに自動的に参加させます。</span><span class="sxs-lookup"><span data-stu-id="a812f-170">Finally, the Multiplayer Manager will auto join the user into the game session if a game is already in progress and has room for the invitee.</span></span> <span data-ttu-id="a812f-171">タイトルには、適切なエラー コードとメッセージを提供する join_game_completed イベントによって通知されます。</span><span class="sxs-lookup"><span data-stu-id="a812f-171">The title will be notified through the join_game_completed event providing an appropriate error code and message.</span></span>
+<span data-ttu-id="a5aa2-170">最後に、ゲームが既に進行中であり、招待されたユーザーを受け入れる余裕がある場合、Multiplayer Manager はユーザーをゲーム セッションに自動的に参加させます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-170">Finally, the Multiplayer Manager will auto join the user into the game session if a game is already in progress and has room for the invitee.</span></span> <span data-ttu-id="a5aa2-171">タイトルには、適切なエラー コードとメッセージを提供する join_game_completed イベントによって通知されます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-171">The title will be notified through the join_game_completed event providing an appropriate error code and message.</span></span>
 
-**<span data-ttu-id="a812f-172">例:</span><span class="sxs-lookup"><span data-stu-id="a812f-172">Example:</span></span>**
+**<span data-ttu-id="a5aa2-172">例:</span><span class="sxs-lookup"><span data-stu-id="a5aa2-172">Example:</span></span>**
 
 ```cpp
 auto result = mpInstance().join_lobby(IProtocolActivatedEventArgs^ args);
@@ -184,33 +184,33 @@ mpInstance->lobby_session()->set_local_member_connection_address(
 
 ```
 
-<span data-ttu-id="a812f-173">エラー/成功は `join_lobby_completed` イベントを介して処理されます。</span><span class="sxs-lookup"><span data-stu-id="a812f-173">Error/success is handled via the `join_lobby_completed` event</span></span>
+<span data-ttu-id="a5aa2-173">エラー/成功は `join_lobby_completed` イベントを介して処理されます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-173">Error/success is handled via the `join_lobby_completed` event</span></span>
 
-**<span data-ttu-id="a812f-174">Multiplayer Manager によって実行される機能</span><span class="sxs-lookup"><span data-stu-id="a812f-174">Functions performed by Multiplayer Manager</span></span>**
+**<span data-ttu-id="a5aa2-174">Multiplayer Manager によって実行される機能</span><span class="sxs-lookup"><span data-stu-id="a5aa2-174">Functions performed by Multiplayer Manager</span></span>**
 
-* <span data-ttu-id="a812f-175">RTA およびマルチプレイヤーのサブスクリプションを登録する</span><span class="sxs-lookup"><span data-stu-id="a812f-175">Register RTA & Multiplayer Subscriptions</span></span>
-* <span data-ttu-id="a812f-176">ロビー セッションに参加する</span><span class="sxs-lookup"><span data-stu-id="a812f-176">Join Lobby session</span></span>
- * <span data-ttu-id="a812f-177">既存のロビー状態のクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="a812f-177">Existing Lobby state cleanup</span></span>
- * <span data-ttu-id="a812f-178">すべてのローカル プレイヤーをアクティブとして参加させる</span><span class="sxs-lookup"><span data-stu-id="a812f-178">Join all local players as active</span></span>
- * <span data-ttu-id="a812f-179">SDA をアップロードする</span><span class="sxs-lookup"><span data-stu-id="a812f-179">Upload SDA</span></span>
- * <span data-ttu-id="a812f-180">メンバーのプロパティを設定する</span><span class="sxs-lookup"><span data-stu-id="a812f-180">Set member properties</span></span>
-* <span data-ttu-id="a812f-181">セッション変更イベントに登録する</span><span class="sxs-lookup"><span data-stu-id="a812f-181">Register for Session Change Events</span></span>
-* <span data-ttu-id="a812f-182">ロビー セッションをアクティブ セッションとして設定する</span><span class="sxs-lookup"><span data-stu-id="a812f-182">Set Lobby Session as Active Session</span></span>
-* <span data-ttu-id="a812f-183">ゲーム セッションに参加する (存在する場合)</span><span class="sxs-lookup"><span data-stu-id="a812f-183">Join Game Session (if exists)</span></span>
- * <span data-ttu-id="a812f-184">転送ハンドルを使用する</span><span class="sxs-lookup"><span data-stu-id="a812f-184">Uses transfer handle</span></span>
+* <span data-ttu-id="a5aa2-175">RTA およびマルチプレイヤーのサブスクリプションを登録する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-175">Register RTA & Multiplayer Subscriptions</span></span>
+* <span data-ttu-id="a5aa2-176">ロビー セッションに参加する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-176">Join Lobby session</span></span>
+ * <span data-ttu-id="a5aa2-177">既存のロビー状態のクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="a5aa2-177">Existing Lobby state cleanup</span></span>
+ * <span data-ttu-id="a5aa2-178">すべてのローカル プレイヤーをアクティブとして参加させる</span><span class="sxs-lookup"><span data-stu-id="a5aa2-178">Join all local players as active</span></span>
+ * <span data-ttu-id="a5aa2-179">SDA をアップロードする</span><span class="sxs-lookup"><span data-stu-id="a5aa2-179">Upload SDA</span></span>
+ * <span data-ttu-id="a5aa2-180">メンバーのプロパティを設定する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-180">Set member properties</span></span>
+* <span data-ttu-id="a5aa2-181">セッション変更イベントに登録する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-181">Register for Session Change Events</span></span>
+* <span data-ttu-id="a5aa2-182">ロビー セッションをアクティブ セッションとして設定する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-182">Set Lobby Session as Active Session</span></span>
+* <span data-ttu-id="a5aa2-183">ゲーム セッションに参加する (存在する場合)</span><span class="sxs-lookup"><span data-stu-id="a5aa2-183">Join Game Session (if exists)</span></span>
+ * <span data-ttu-id="a5aa2-184">転送ハンドルを使用する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-184">Uses transfer handle</span></span>
 
 
-### <a name="5-find-match-a-namefind-match"></a><span data-ttu-id="a812f-185">5) マッチを探す <a name="find-match"></span><span class="sxs-lookup"><span data-stu-id="a812f-185">5) Find match <a name="find-match"></span></span>
+### <a name="5-find-match-a-namefind-match"></a><span data-ttu-id="a5aa2-185">5) マッチを探す <a name="find-match"></span><span class="sxs-lookup"><span data-stu-id="a5aa2-185">5) Find match <a name="find-match"></span></span>
 
-| <span data-ttu-id="a812f-186">呼び出し</span><span class="sxs-lookup"><span data-stu-id="a812f-186">Call</span></span> | <span data-ttu-id="a812f-187">トリガーされるイベント</span><span class="sxs-lookup"><span data-stu-id="a812f-187">Event triggered</span></span> |
+| <span data-ttu-id="a5aa2-186">呼び出し</span><span class="sxs-lookup"><span data-stu-id="a5aa2-186">Call</span></span> | <span data-ttu-id="a5aa2-187">トリガーされるイベント</span><span class="sxs-lookup"><span data-stu-id="a5aa2-187">Event triggered</span></span> |
 |-----|----------------|
-| `multiplayer_manager::find_match()` | <span data-ttu-id="a812f-188">```match_status``` に記述されている多数のイベント (```searching```、```found```、```measuring``` など)</span><span class="sxs-lookup"><span data-stu-id="a812f-188">Many events, as described in ```match_status``` (eg: ```searching```, ```found```, ```measuring```, etc)</span></span> |
+| `multiplayer_manager::find_match()` | <span data-ttu-id="a5aa2-188">```match_status``` に記述されている多数のイベント (```searching```、```found```、```measuring``` など)</span><span class="sxs-lookup"><span data-stu-id="a5aa2-188">Many events, as described in ```match_status``` (eg: ```searching```, ```found```, ```measuring```, etc)</span></span> |
 
-<span data-ttu-id="a812f-189">招待 (ある場合) が受け入れられ、ホストでゲームのプレイを開始する準備が整った後、SmartMatch を使用すると、`find_match()` を呼び出すことにより、ロビー セッションにいるメンバー全員が参加するために十分な数の空きプレイヤー スロットがある既存のゲームを探すことも、`join_game_from_lobby()` に続いて `set_auto_fill_members_during_matchmaking()` を呼び出すことにより、ロビー セッションのメンバー全員を含む新しいゲーム セッションを作成して、同じゲーム タイプのマッチを探している他のプレイヤーで空きスロットを埋めることもできます。</span><span class="sxs-lookup"><span data-stu-id="a812f-189">After invites, if any, have been accepted, and the host is ready to start playing the game, you can use SmartMatch to either find an existing game that has enough open player slots for all of the members in the lobby session by calling `find_match()`, or create a new game session that includes all of the members from the lobby session and fill up open spots with other people looking for a match of the same game type, by calling `join_game_from_lobby()` followed with `set_auto_fill_members_during_matchmaking()`.</span></span>
+<span data-ttu-id="a5aa2-189">招待 (ある場合) が受け入れられ、ホストでゲームのプレイを開始する準備が整った後、SmartMatch を使用すると、`find_match()` を呼び出すことにより、ロビー セッションにいるメンバー全員が参加するために十分な数の空きプレイヤー スロットがある既存のゲームを探すことも、`join_game_from_lobby()` に続いて `set_auto_fill_members_during_matchmaking()` を呼び出すことにより、ロビー セッションのメンバー全員を含む新しいゲーム セッションを作成して、同じゲーム タイプのマッチを探している他のプレイヤーで空きスロットを埋めることもできます。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-189">After invites, if any, have been accepted, and the host is ready to start playing the game, you can use SmartMatch to either find an existing game that has enough open player slots for all of the members in the lobby session by calling `find_match()`, or create a new game session that includes all of the members from the lobby session and fill up open spots with other people looking for a match of the same game type, by calling `join_game_from_lobby()` followed with `set_auto_fill_members_during_matchmaking()`.</span></span>
 
-<span data-ttu-id="a812f-190">`find_match()` を呼び出す前には、まずサービス構成でホッパーを構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a812f-190">Before you can call `find_match()`, you must first configure hoppers in your service configuration.</span></span> <span data-ttu-id="a812f-191">ホッパーは、SmartMatch がプレイヤーのマッチングに使用する規則を定義します。</span><span class="sxs-lookup"><span data-stu-id="a812f-191">A hopper defines the rules that SmartMatch uses to match players.</span></span>
+<span data-ttu-id="a5aa2-190">`find_match()` を呼び出す前には、まずサービス構成でホッパーを構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-190">Before you can call `find_match()`, you must first configure hoppers in your service configuration.</span></span> <span data-ttu-id="a5aa2-191">ホッパーは、SmartMatch がプレイヤーのマッチングに使用する規則を定義します。</span><span class="sxs-lookup"><span data-stu-id="a5aa2-191">A hopper defines the rules that SmartMatch uses to match players.</span></span>
 
-**<span data-ttu-id="a812f-192">例:</span><span class="sxs-lookup"><span data-stu-id="a812f-192">Example:</span></span>**
+**<span data-ttu-id="a5aa2-192">例:</span><span class="sxs-lookup"><span data-stu-id="a5aa2-192">Example:</span></span>**
 
 ```cpp
 auto result = mpInstance.find_match(HOPPER_NAME);
@@ -220,11 +220,11 @@ if (result.err())
 }
 ```
 
-**<span data-ttu-id="a812f-193">Multiplayer Manager によって実行される機能</span><span class="sxs-lookup"><span data-stu-id="a812f-193">Functions performed by Multiplayer Manager</span></span>**
+**<span data-ttu-id="a5aa2-193">Multiplayer Manager によって実行される機能</span><span class="sxs-lookup"><span data-stu-id="a5aa2-193">Functions performed by Multiplayer Manager</span></span>**
 
-* <span data-ttu-id="a812f-194">マッチ チケットを作成する</span><span class="sxs-lookup"><span data-stu-id="a812f-194">Create a match ticket</span></span>
-* <span data-ttu-id="a812f-195">すべての QoS ステージを処理する</span><span class="sxs-lookup"><span data-stu-id="a812f-195">Handle all of the QoS stages</span></span>
-* <span data-ttu-id="a812f-196">参加者一覧の変更を処理する</span><span class="sxs-lookup"><span data-stu-id="a812f-196">Handle roster changes</span></span>
- * <span data-ttu-id="a812f-197">再送信する (必要な場合)</span><span class="sxs-lookup"><span data-stu-id="a812f-197">Resubmit (if needed)</span></span>
-* <span data-ttu-id="a812f-198">ターゲット ゲーム セッションに参加する</span><span class="sxs-lookup"><span data-stu-id="a812f-198">Joins target Game session</span></span>
-* <span data-ttu-id="a812f-199">ロビー セッションを介してゲームを公開する</span><span class="sxs-lookup"><span data-stu-id="a812f-199">Advertise Game via Lobby Session</span></span>
+* <span data-ttu-id="a5aa2-194">マッチ チケットを作成する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-194">Create a match ticket</span></span>
+* <span data-ttu-id="a5aa2-195">すべての QoS ステージを処理する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-195">Handle all of the QoS stages</span></span>
+* <span data-ttu-id="a5aa2-196">参加者一覧の変更を処理する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-196">Handle roster changes</span></span>
+ * <span data-ttu-id="a5aa2-197">再送信する (必要な場合)</span><span class="sxs-lookup"><span data-stu-id="a5aa2-197">Resubmit (if needed)</span></span>
+* <span data-ttu-id="a5aa2-198">ターゲット ゲーム セッションに参加する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-198">Joins target Game session</span></span>
+* <span data-ttu-id="a5aa2-199">ロビー セッションを介してゲームを公開する</span><span class="sxs-lookup"><span data-stu-id="a5aa2-199">Advertise Game via Lobby Session</span></span>

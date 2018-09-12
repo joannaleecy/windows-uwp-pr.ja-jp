@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: d8d9ef17872fd40f8a0fcf0f67020a38c33075cd
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881907"
+ms.locfileid: "3935620"
 ---
-# <a name="flowchart---send-an-invitation-to-another-player"></a><span data-ttu-id="8a569-104">フローチャート - 別のプレイヤーに招待を送信する</span><span class="sxs-lookup"><span data-stu-id="8a569-104">Flowchart - Send an invitation to another player</span></span>
+# <a name="flowchart---send-an-invitation-to-another-player"></a><span data-ttu-id="63374-104">フローチャート - 別のプレイヤーに招待を送信する</span><span class="sxs-lookup"><span data-stu-id="63374-104">Flowchart - Send an invitation to another player</span></span>
 
-<span data-ttu-id="8a569-105">次のフローチャートでは、ゲームに参加するよう別のプレイヤーを招待するフローを示します。</span><span class="sxs-lookup"><span data-stu-id="8a569-105">The following flowcharts show the flow of inviting another player to join your game.</span></span>
+<span data-ttu-id="63374-105">次のフローチャートでは、ゲームに参加するよう別のプレイヤーを招待するフローを示します。</span><span class="sxs-lookup"><span data-stu-id="63374-105">The following flowcharts show the flow of inviting another player to join your game.</span></span>
 
-## <a name="send-invites"></a><span data-ttu-id="8a569-106">招待を送信する</span><span class="sxs-lookup"><span data-stu-id="8a569-106">Send invites</span></span>
+## <a name="send-invites"></a><span data-ttu-id="63374-106">招待を送信する</span><span class="sxs-lookup"><span data-stu-id="63374-106">Send invites</span></span>
 
-<span data-ttu-id="8a569-107">次のフローチャートで、TCUI (Title Callable User Interface) は、招待するフレンドの選択など、よく使用される UI 要素を表します。</span><span class="sxs-lookup"><span data-stu-id="8a569-107">In the flowchart below, TCUI stands for Title Callable User Interface, which represents commonly used UI elements, such as a friend picker for invites.</span></span> <span data-ttu-id="8a569-108">システムで提供されている TCUI は、Xbox One と Windows 10 の両方で使用できます。または、オンラインのフレンドを表示して招待するためのカスタム TCUI を実装することもできます。</span><span class="sxs-lookup"><span data-stu-id="8a569-108">A system provided TCUI is available on both Xbox One and Windows 10, or your title can implement a custom TCUI for viewing online friends and inviting them.</span></span>
+<span data-ttu-id="63374-107">次のフローチャートで、TCUI (Title Callable User Interface) は、招待するフレンドの選択など、よく使用される UI 要素を表します。</span><span class="sxs-lookup"><span data-stu-id="63374-107">In the flowchart below, TCUI stands for Title Callable User Interface, which represents commonly used UI elements, such as a friend picker for invites.</span></span> <span data-ttu-id="63374-108">システムで提供されている TCUI は、Xbox One と Windows 10 の両方で使用できます。または、オンラインのフレンドを表示して招待するためのカスタム TCUI を実装することもできます。</span><span class="sxs-lookup"><span data-stu-id="63374-108">A system provided TCUI is available on both Xbox One and Windows 10, or your title can implement a custom TCUI for viewing online friends and inviting them.</span></span>
 
 ![SmartMatch マッチメイキング](../../../images/multiplayer/mpm-send-invites.png)

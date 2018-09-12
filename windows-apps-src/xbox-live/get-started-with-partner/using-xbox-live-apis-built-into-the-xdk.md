@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 527a62af7ca31a401da47eb10e59c1593f62e433
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882328"
+ms.locfileid: "3935064"
 ---
-# <a name="using-xbox-live-apis-built-into-the-xdk"></a><span data-ttu-id="9671a-104">XDK に組み込まれている Xbox Live API を使用する</span><span class="sxs-lookup"><span data-stu-id="9671a-104">Using Xbox Live APIs built into the XDK</span></span>
+# <a name="using-xbox-live-apis-built-into-the-xdk"></a><span data-ttu-id="b3dec-104">XDK に組み込まれている Xbox Live API を使用する</span><span class="sxs-lookup"><span data-stu-id="b3dec-104">Using Xbox Live APIs built into the XDK</span></span>
 
-1. <span data-ttu-id="9671a-105">Visual Studio でプロジェクトを右クリックし、[参照] を選択します。</span><span class="sxs-lookup"><span data-stu-id="9671a-105">Right click on your project in Visual Studio, and choose "References".</span></span>
-1. <span data-ttu-id="9671a-106">[新しい参照の追加] を選択します。</span><span class="sxs-lookup"><span data-stu-id="9671a-106">Choose "Add New Reference"</span></span>
-1. <span data-ttu-id="9671a-107">左側のパネルで [Durango.<build number>]</span><span class="sxs-lookup"><span data-stu-id="9671a-107">Click on "Durango.<build number>"</span></span> <span data-ttu-id="9671a-108"> と [拡張機能] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9671a-108">and "Extensions" on the left panel</span></span>
-1. <span data-ttu-id="9671a-109">中央のパネルで、次のいずれかを選択します。</span><span class="sxs-lookup"><span data-stu-id="9671a-109">In the middle, choose either:</span></span>
-- <span data-ttu-id="9671a-110">WinRT XSAPI API を使用する場合は、[Xbox Services API] を選択します。</span><span class="sxs-lookup"><span data-stu-id="9671a-110">If you want to use the WinRT XSAPI API, choose "Xbox Services API"</span></span>
-- <span data-ttu-id="9671a-111">C++ XSAPI API を使用する場合は、[Xbox Services API Cpp] を選択します。</span><span class="sxs-lookup"><span data-stu-id="9671a-111">If you want to use the C++ XSAPI API, choose "Xbox Services API Cpp"</span></span>
-1. <span data-ttu-id="9671a-112">[OK] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9671a-112">Click OK</span></span>
+1. <span data-ttu-id="b3dec-105">Visual Studio でプロジェクトを右クリックし、[参照] を選択します。</span><span class="sxs-lookup"><span data-stu-id="b3dec-105">Right click on your project in Visual Studio, and choose "References".</span></span>
+1. <span data-ttu-id="b3dec-106">[新しい参照の追加] を選択します。</span><span class="sxs-lookup"><span data-stu-id="b3dec-106">Choose "Add New Reference"</span></span>
+1. <span data-ttu-id="b3dec-107">左側のパネルで [Durango.<build number>]</span><span class="sxs-lookup"><span data-stu-id="b3dec-107">Click on "Durango.<build number>"</span></span> <span data-ttu-id="b3dec-108"> と [拡張機能] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b3dec-108">and "Extensions" on the left panel</span></span>
+1. <span data-ttu-id="b3dec-109">中央のパネルで、次のいずれかを選択します。</span><span class="sxs-lookup"><span data-stu-id="b3dec-109">In the middle, choose either:</span></span>
+- <span data-ttu-id="b3dec-110">WinRT XSAPI API を使用する場合は、[Xbox Services API] を選択します。</span><span class="sxs-lookup"><span data-stu-id="b3dec-110">If you want to use the WinRT XSAPI API, choose "Xbox Services API"</span></span>
+- <span data-ttu-id="b3dec-111">C++ XSAPI API を使用する場合は、[Xbox Services API Cpp] を選択します。</span><span class="sxs-lookup"><span data-stu-id="b3dec-111">If you want to use the C++ XSAPI API, choose "Xbox Services API Cpp"</span></span>
+1. <span data-ttu-id="b3dec-112">[OK] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b3dec-112">Click OK</span></span>
 
-<span data-ttu-id="9671a-113">注: ビルド システムが props ファイルをサポートしていない場合は、次に示すように、プリプロセッサの定義とライブラリを手動で追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9671a-113">Note: If your build system doesn't support props files, you must manually add the preprocessor definitions and libraries as seen in</span></span>
+<span data-ttu-id="b3dec-113">注: ビルド システムが props ファイルをサポートしていない場合は、次に示すように、プリプロセッサの定義とライブラリを手動で追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3dec-113">Note: If your build system doesn't support props files, you must manually add the preprocessor definitions and libraries as seen in</span></span>
 `%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox.Services.API.Cpp\8.0\DesignTime\CommonConfiguration\Neutral\Xbox.Services.API.Cpp.props`

@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, MPM, マルチプレイヤー, サービス品質, QoS, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fad7f1da832a63c93e249f25420ad8e8ab8c2da
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881588"
+ms.locfileid: "3933970"
 ---
-# <a name="flowchart---use-matchmaking-and-manage-quality-of-service"></a><span data-ttu-id="6f66f-104">フローチャート - マッチメイキングを使用し、サービス品質を管理する</span><span class="sxs-lookup"><span data-stu-id="6f66f-104">Flowchart - Use matchmaking and manage Quality of Service</span></span>
+# <a name="flowchart---use-matchmaking-and-manage-quality-of-service"></a><span data-ttu-id="73618-104">フローチャート - マッチメイキングを使用し、サービス品質を管理する</span><span class="sxs-lookup"><span data-stu-id="73618-104">Flowchart - Use matchmaking and manage Quality of Service</span></span>
 
-<span data-ttu-id="6f66f-105">次のフローチャートでは、マッチメイキングのワーク フローでサービス品質 (QoS) のチェックを実行する場合を示します。</span><span class="sxs-lookup"><span data-stu-id="6f66f-105">The following flowcharts show when to perform Quality of Service (QoS) checks in a matchmaking work flow.</span></span>
+<span data-ttu-id="73618-105">次のフローチャートでは、マッチメイキングのワーク フローでサービス品質 (QoS) のチェックを実行する場合を示します。</span><span class="sxs-lookup"><span data-stu-id="73618-105">The following flowcharts show when to perform Quality of Service (QoS) checks in a matchmaking work flow.</span></span>
 
-## <a name="matchmaking-with-quality-of-service"></a><span data-ttu-id="6f66f-106">サービス品質を確認するマッチメイキング</span><span class="sxs-lookup"><span data-stu-id="6f66f-106">Matchmaking with Quality of Service</span></span>
+## <a name="matchmaking-with-quality-of-service"></a><span data-ttu-id="73618-106">サービス品質を確認するマッチメイキング</span><span class="sxs-lookup"><span data-stu-id="73618-106">Matchmaking with Quality of Service</span></span>
 
 ![SmartMatch マッチメイキング](../../../images/multiplayer/mpm-matchmaking-with-qos.png)
