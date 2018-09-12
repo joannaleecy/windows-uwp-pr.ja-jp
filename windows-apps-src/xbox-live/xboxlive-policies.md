@@ -11,11 +11,11 @@ layout: LandingPage
 keywords: Windows 10, UWP, ゲーム, Xbox, Xbox Live, ポリシー
 ms.localizationpriority: medium
 ms.openlocfilehash: 505cc229e8b0c12ddadaa9775dff5de140b1ae86
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881564"
+ms.locfileid: "3930225"
 ---
 ## <a name="xbox-live-policies"></a>Xbox Live ポリシー
 

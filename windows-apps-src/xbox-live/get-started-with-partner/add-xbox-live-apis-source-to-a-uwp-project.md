@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 71d8701e5efa4df719ddc3bda66b5c6cdbece435
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881507"
+ms.locfileid: "3927781"
 ---
-# <a name="add-and-compile-the-xbox-live-apis-source-in-your-uwp-project"></a><span data-ttu-id="38a90-104">UWP プロジェクトで Xbox Live API のソースを追加し、コンパイルする</span><span class="sxs-lookup"><span data-stu-id="38a90-104">Add and compile the Xbox Live APIs source in your UWP project</span></span>
+# <a name="add-and-compile-the-xbox-live-apis-source-in-your-uwp-project"></a><span data-ttu-id="c6abb-104">UWP プロジェクトで Xbox Live API のソースを追加し、コンパイルする</span><span class="sxs-lookup"><span data-stu-id="c6abb-104">Add and compile the Xbox Live APIs source in your UWP project</span></span>
 
-<span data-ttu-id="38a90-105">Xbox Live API (XSAPI) ソースは GitHub で利用できるようになりました[https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api)します。</span><span class="sxs-lookup"><span data-stu-id="38a90-105">The Xbox Live API (XSAPI) source is now available on GitHub at [https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api).</span></span> <span data-ttu-id="38a90-106">開発者は、次の手順を使用して、ローカル ビルドを使用するようにプロジェクトを更新できます。</span><span class="sxs-lookup"><span data-stu-id="38a90-106">Developers can follow these instructions to update their projects to use a local build.</span></span>
+<span data-ttu-id="c6abb-105">Xbox Live API (XSAPI) のソースが GitHub で利用できるようになりました[https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api)します。</span><span class="sxs-lookup"><span data-stu-id="c6abb-105">The Xbox Live API (XSAPI) source is now available on GitHub at [https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api).</span></span> <span data-ttu-id="c6abb-106">開発者は、次の手順を使用して、ローカル ビルドを使用するようにプロジェクトを更新できます。</span><span class="sxs-lookup"><span data-stu-id="c6abb-106">Developers can follow these instructions to update their projects to use a local build.</span></span>
 
-<span data-ttu-id="38a90-107">次のような場合、XSAPI を自分でビルドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="38a90-107">You might want to build XSAPI yourself if:</span></span>
-1. <span data-ttu-id="38a90-108">問題をデバッグしてエラーのあるコードの場所を特定する場合。</span><span class="sxs-lookup"><span data-stu-id="38a90-108">If you want to debug an issue to understand where an error code is coming from.</span></span>
-1. <span data-ttu-id="38a90-109">QFE が配布されるまでに、問題を解決するためのソース コード パッチを提供する場合。</span><span class="sxs-lookup"><span data-stu-id="38a90-109">If we provide a source code patch to fix an issue for you, before we can distribute a QFE.</span></span>
+<span data-ttu-id="c6abb-107">次のような場合、XSAPI を自分でビルドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6abb-107">You might want to build XSAPI yourself if:</span></span>
+1. <span data-ttu-id="c6abb-108">問題をデバッグしてエラーのあるコードの場所を特定する場合。</span><span class="sxs-lookup"><span data-stu-id="c6abb-108">If you want to debug an issue to understand where an error code is coming from.</span></span>
+1. <span data-ttu-id="c6abb-109">QFE が配布されるまでに、問題を解決するためのソース コード パッチを提供する場合。</span><span class="sxs-lookup"><span data-stu-id="c6abb-109">If we provide a source code patch to fix an issue for you, before we can distribute a QFE.</span></span>
 
-<span data-ttu-id="38a90-110">XSAPI プロジェクトを自分でコンパイルするには、GitHub プロジェクト サイトの指示に従ってください。</span><span class="sxs-lookup"><span data-stu-id="38a90-110">To compile the XSAPI project yourself, follow the instructions on the GitHub project site.</span></span>
+<span data-ttu-id="c6abb-110">XSAPI プロジェクトを自分でコンパイルするには、GitHub プロジェクト サイトの指示に従ってください。</span><span class="sxs-lookup"><span data-stu-id="c6abb-110">To compile the XSAPI project yourself, follow the instructions on the GitHub project site.</span></span>

@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs//hoppers/name {/統計
+title: /serviceconfigs/{scid}/hoppers/{name}/統計
 assetID: 56bb4398-445b-e8c5-a4ce-1651576ee7e7
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppernamestats.html
 author: KevinAsgari
-description: " /serviceconfigs//hoppers/name {/統計"
+description: " /serviceconfigs/{scid}/hoppers/{name}/統計"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,56 +12,56 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0742ad87e68f7d0c6ed6346873aa3dd6c56edee0
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882369"
+ms.locfileid: "3930337"
 ---
-# <a name="serviceconfigsscidhoppersnamestats"></a><span data-ttu-id="0bb3c-104">/serviceconfigs//hoppers/name {/統計</span><span class="sxs-lookup"><span data-stu-id="0bb3c-104">/serviceconfigs/{scid}/hoppers/{name}/stats</span></span>
+# <a name="serviceconfigsscidhoppersnamestats"></a><span data-ttu-id="ec694-104">/serviceconfigs/{scid}/hoppers/{name}/統計</span><span class="sxs-lookup"><span data-stu-id="ec694-104">/serviceconfigs/{scid}/hoppers/{name}/stats</span></span>
 
-<span data-ttu-id="0bb3c-105">ホッパーの統計情報を取得する GET 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="0bb3c-105">Supports a GET operation for retrieving statistics for a hopper.</span></span>
+<span data-ttu-id="ec694-105">ホッパーの統計情報を取得するための取得操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="ec694-105">Supports a GET operation for retrieving statistics for a hopper.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="0bb3c-106">この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="0bb3c-106">This URI is intended for use with contract 103 or later, and requires a header element of X-Xbl-Contract-Version: 103 or later on every request.</span></span>
+> <span data-ttu-id="ec694-106">この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="ec694-106">This URI is intended for use with contract 103 or later, and requires a header element of X-Xbl-Contract-Version: 103 or later on every request.</span></span>
 
 <a id="ID4ER"></a>
 
 
-## <a name="domain"></a><span data-ttu-id="0bb3c-107">ドメイン</span><span class="sxs-lookup"><span data-stu-id="0bb3c-107">Domain</span></span>
-<span data-ttu-id="0bb3c-108">momatch.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="0bb3c-108">momatch.xboxlive.com</span></span>  
+## <a name="domain"></a><span data-ttu-id="ec694-107">ドメイン</span><span class="sxs-lookup"><span data-stu-id="ec694-107">Domain</span></span>
+<span data-ttu-id="ec694-108">momatch.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="ec694-108">momatch.xboxlive.com</span></span>  
 <a id="ID4EW"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="0bb3c-109">注釈</span><span class="sxs-lookup"><span data-stu-id="0bb3c-109">Remarks</span></span>
-<span data-ttu-id="0bb3c-110">この URI には、対象ユーザーの構成で所有者識別子の値の xuid、gt、および me がサポートしています。</span><span class="sxs-lookup"><span data-stu-id="0bb3c-110">This URI supports the values xuid, gt, and me for the owner identifier in configuration of the target user.</span></span> <span data-ttu-id="0bb3c-111">チケットの作成者のみでは、チケットを削除したり、URI の状態を取得することができます。</span><span class="sxs-lookup"><span data-stu-id="0bb3c-111">Only a ticket's creator can delete the ticket or retrieve the status of the URI.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ec694-109">注釈</span><span class="sxs-lookup"><span data-stu-id="ec694-109">Remarks</span></span>
+<span data-ttu-id="ec694-110">この URI は、対象ユーザーの構成では所有者識別子の値の xuid、gt、および me をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="ec694-110">This URI supports the values xuid, gt, and me for the owner identifier in configuration of the target user.</span></span> <span data-ttu-id="ec694-111">チケットの作成者だけでは、チケットを削除したり、URI の状態を取得することができます。</span><span class="sxs-lookup"><span data-stu-id="ec694-111">Only a ticket's creator can delete the ticket or retrieve the status of the URI.</span></span>  
 <a id="ID4E6"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="0bb3c-112">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="0bb3c-112">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="ec694-112">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ec694-112">URI parameters</span></span>
 
-| <span data-ttu-id="0bb3c-113">パラメーター</span><span class="sxs-lookup"><span data-stu-id="0bb3c-113">Parameter</span></span>| <span data-ttu-id="0bb3c-114">型</span><span class="sxs-lookup"><span data-stu-id="0bb3c-114">Type</span></span>| <span data-ttu-id="0bb3c-115">説明</span><span class="sxs-lookup"><span data-stu-id="0bb3c-115">Description</span></span>|
+| <span data-ttu-id="ec694-113">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ec694-113">Parameter</span></span>| <span data-ttu-id="ec694-114">型</span><span class="sxs-lookup"><span data-stu-id="ec694-114">Type</span></span>| <span data-ttu-id="ec694-115">説明</span><span class="sxs-lookup"><span data-stu-id="ec694-115">Description</span></span>|
 | --- | --- | --- | --- |
-| <span data-ttu-id="0bb3c-116">scid</span><span class="sxs-lookup"><span data-stu-id="0bb3c-116">scid</span></span>| <span data-ttu-id="0bb3c-117">GUID</span><span class="sxs-lookup"><span data-stu-id="0bb3c-117">GUID</span></span>| <span data-ttu-id="0bb3c-118">セッションのサービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="0bb3c-118">The service configuration identifier (SCID) for the session.</span></span>|
-| <span data-ttu-id="0bb3c-119">name</span><span class="sxs-lookup"><span data-stu-id="0bb3c-119">name</span></span>| <span data-ttu-id="0bb3c-120">string</span><span class="sxs-lookup"><span data-stu-id="0bb3c-120">string</span></span>| <span data-ttu-id="0bb3c-121">ホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="0bb3c-121">The name of the hopper.</span></span>|
+| <span data-ttu-id="ec694-116">scid</span><span class="sxs-lookup"><span data-stu-id="ec694-116">scid</span></span>| <span data-ttu-id="ec694-117">GUID</span><span class="sxs-lookup"><span data-stu-id="ec694-117">GUID</span></span>| <span data-ttu-id="ec694-118">セッションのサービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="ec694-118">The service configuration identifier (SCID) for the session.</span></span>|
+| <span data-ttu-id="ec694-119">name</span><span class="sxs-lookup"><span data-stu-id="ec694-119">name</span></span>| <span data-ttu-id="ec694-120">string</span><span class="sxs-lookup"><span data-stu-id="ec694-120">string</span></span>| <span data-ttu-id="ec694-121">ホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="ec694-121">The name of the hopper.</span></span>|
 
 <a id="ID4EEC"></a>
 
 
-## <a name="valid-methods"></a><span data-ttu-id="0bb3c-122">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="0bb3c-122">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="ec694-122">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="ec694-122">Valid methods</span></span>
 
-[<span data-ttu-id="0bb3c-123">取得する (/serviceconfigs//hoppers/name {/統計)</span><span class="sxs-lookup"><span data-stu-id="0bb3c-123">GET (/serviceconfigs/{scid}/hoppers/{name}/stats)</span></span>](uri-serviceconfigsscidhoppershoppernamestatsget.md)
+[<span data-ttu-id="ec694-123">取得する (/serviceconfigs/{scid}/hoppers/{name}/統計情報)</span><span class="sxs-lookup"><span data-stu-id="ec694-123">GET (/serviceconfigs/{scid}/hoppers/{name}/stats)</span></span>](uri-serviceconfigsscidhoppershoppernamestatsget.md)
 
-<span data-ttu-id="0bb3c-124">&nbsp;&nbsp;ホッパーの統計情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="0bb3c-124">&nbsp;&nbsp;Gets the statistics for a hopper.</span></span>
+<span data-ttu-id="ec694-124">&nbsp;&nbsp;ホッパーの統計情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="ec694-124">&nbsp;&nbsp;Gets the statistics for a hopper.</span></span>
 
 <a id="ID4EQC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="0bb3c-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="0bb3c-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ec694-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="ec694-125">See also</span></span>
 
 <a id="ID4ESC"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="0bb3c-126">Parent</span><span class="sxs-lookup"><span data-stu-id="0bb3c-126">Parent</span></span>  
+##### <a name="parent"></a><span data-ttu-id="ec694-126">Parent</span><span class="sxs-lookup"><span data-stu-id="ec694-126">Parent</span></span>  
 
-[<span data-ttu-id="0bb3c-127">マッチメイ キング Uri</span><span class="sxs-lookup"><span data-stu-id="0bb3c-127">Matchmaking URIs</span></span>](atoc-reference-matchtickets.md)
+[<span data-ttu-id="ec694-127">マッチメイ キング Uri</span><span class="sxs-lookup"><span data-stu-id="ec694-127">Matchmaking URIs</span></span>](atoc-reference-matchtickets.md)

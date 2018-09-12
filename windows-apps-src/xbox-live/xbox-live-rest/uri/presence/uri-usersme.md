@@ -12,34 +12,34 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aff98e5322a7d2da78b7411f8f213ffac53333d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881484"
+ms.locfileid: "3927891"
 ---
-# <a name="usersme"></a><span data-ttu-id="5f400-104">ユーザー/me</span><span class="sxs-lookup"><span data-stu-id="5f400-104">/users/me</span></span>
-<span data-ttu-id="5f400-105">現在のユーザーのプレゼンスにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="5f400-105">Access the current user's presence.</span></span> <span data-ttu-id="5f400-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5f400-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
+# <a name="usersme"></a><span data-ttu-id="8aacd-104">ユーザー/me</span><span class="sxs-lookup"><span data-stu-id="8aacd-104">/users/me</span></span>
+<span data-ttu-id="8aacd-105">現在のユーザーのプレゼンスにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="8aacd-105">Access the current user's presence.</span></span> <span data-ttu-id="8aacd-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="8aacd-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
   
 <a id="ID4EV"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="5f400-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="5f400-107">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="8aacd-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="8aacd-107">Valid methods</span></span>
 
-[<span data-ttu-id="5f400-108">取得する (ユーザー/me)</span><span class="sxs-lookup"><span data-stu-id="5f400-108">GET (/users/me)</span></span>](uri-usersmeget.md)
+[<span data-ttu-id="8aacd-108">取得する (ユーザー/me)</span><span class="sxs-lookup"><span data-stu-id="8aacd-108">GET (/users/me)</span></span>](uri-usersmeget.md)
 
-<span data-ttu-id="5f400-109">&nbsp;&nbsp;ユーザーの XUID を確認することがなく、現在のユーザーの[presencerecord を要求して](../../json/json-presencerecord.md)を取得します。</span><span class="sxs-lookup"><span data-stu-id="5f400-109">&nbsp;&nbsp;Obtain the current user's [PresenceRecord](../../json/json-presencerecord.md) without having to know the user's XUID.</span></span>
+<span data-ttu-id="8aacd-109">&nbsp;&nbsp;ユーザーの XUID を把握することがなく、現在のユーザーの[presencerecord を要求して](../../json/json-presencerecord.md)を取得します。</span><span class="sxs-lookup"><span data-stu-id="8aacd-109">&nbsp;&nbsp;Obtain the current user's [PresenceRecord](../../json/json-presencerecord.md) without having to know the user's XUID.</span></span>
  
 <a id="ID4E6"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="5f400-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="5f400-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8aacd-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="8aacd-110">See also</span></span>
  
 <a id="ID4EBB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="5f400-111">Parent</span><span class="sxs-lookup"><span data-stu-id="5f400-111">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="8aacd-111">Parent</span><span class="sxs-lookup"><span data-stu-id="8aacd-111">Parent</span></span> 
 
-[<span data-ttu-id="5f400-112">プレゼンス Uri</span><span class="sxs-lookup"><span data-stu-id="5f400-112">Presence URIs</span></span>](atoc-reference-presence.md)
+[<span data-ttu-id="8aacd-112">プレゼンス Uri</span><span class="sxs-lookup"><span data-stu-id="8aacd-112">Presence URIs</span></span>](atoc-reference-presence.md)
 
    

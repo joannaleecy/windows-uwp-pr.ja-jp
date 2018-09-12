@@ -12,34 +12,34 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dd75899bfe94ab7a9dc0a23df0ea40c0431d809
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881849"
+ms.locfileid: "3930461"
 ---
-# <a name="usersmeresetreputation"></a><span data-ttu-id="a68da-104">/users/me/resetreputation</span><span class="sxs-lookup"><span data-stu-id="a68da-104">/users/me/resetreputation</span></span>
-<span data-ttu-id="a68da-105">現在のユーザーの評判スコアにアクセスするに執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="a68da-105">Enables the Enforcement team to access the current user's Reputation scores.</span></span> <span data-ttu-id="a68da-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a68da-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>
+# <a name="usersmeresetreputation"></a><span data-ttu-id="ebc5c-104">/users/me/resetreputation</span><span class="sxs-lookup"><span data-stu-id="ebc5c-104">/users/me/resetreputation</span></span>
+<span data-ttu-id="ebc5c-105">現在のユーザーの評判スコアにアクセスするに執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="ebc5c-105">Enables the Enforcement team to access the current user's Reputation scores.</span></span> <span data-ttu-id="ebc5c-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="ebc5c-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>
   
 <a id="ID4EV"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="a68da-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="a68da-107">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="ebc5c-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="ebc5c-107">Valid methods</span></span>
 
-[<span data-ttu-id="a68da-108">POST (/ユーザー/me/resetreputation)</span><span class="sxs-lookup"><span data-stu-id="a68da-108">POST (/users/me/resetreputation)</span></span>](uri-usersmeresetreputationpost.md)
+[<span data-ttu-id="ebc5c-108">POST (/ユーザー me//resetreputation)</span><span class="sxs-lookup"><span data-stu-id="ebc5c-108">POST (/users/me/resetreputation)</span></span>](uri-usersmeresetreputationpost.md)
 
-<span data-ttu-id="a68da-109">&nbsp;&nbsp;により、実施チームは、アカウント ハイジャック (たとえば) した後、いくつかの任意の値を現在のユーザーの評判スコアを設定します。</span><span class="sxs-lookup"><span data-stu-id="a68da-109">&nbsp;&nbsp;Enables the Enforcement team to set the current user's Reputation Scores to some arbitrary values after (for example) an account hijacking.</span></span>
+<span data-ttu-id="ebc5c-109">&nbsp;&nbsp;により、実施チームは、アカウント ハイジャック (たとえば) の後、いくつかの任意の値を現在のユーザーの評判スコアを設定します。</span><span class="sxs-lookup"><span data-stu-id="ebc5c-109">&nbsp;&nbsp;Enables the Enforcement team to set the current user's Reputation Scores to some arbitrary values after (for example) an account hijacking.</span></span>
  
 <a id="ID4E6"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="a68da-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="a68da-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ebc5c-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="ebc5c-110">See also</span></span>
  
 <a id="ID4EBB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="a68da-111">Parent</span><span class="sxs-lookup"><span data-stu-id="a68da-111">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="ebc5c-111">Parent</span><span class="sxs-lookup"><span data-stu-id="ebc5c-111">Parent</span></span> 
 
-[<span data-ttu-id="a68da-112">評判 Uri</span><span class="sxs-lookup"><span data-stu-id="a68da-112">Reputation URIs</span></span>](atoc-reference-reputation.md)
+[<span data-ttu-id="ebc5c-112">評判 Uri</span><span class="sxs-lookup"><span data-stu-id="ebc5c-112">Reputation URIs</span></span>](atoc-reference-reputation.md)
 
    
