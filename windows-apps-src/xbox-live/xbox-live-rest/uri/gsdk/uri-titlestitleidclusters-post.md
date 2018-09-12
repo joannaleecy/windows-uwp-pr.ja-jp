@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 459624ea487c158f3fc92b9c6024b086d49c204e
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882309"
+ms.locfileid: "3932388"
 ---
 # <a name="post-titlestitleidclusters"></a>POST (/titles/{titleId} クラスター/)
-Xbox Live Compute server インスタンスを作成するクライアントをできる URI。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
+Xbox Live Compute サーバー インスタンスを作成するクライアントをできる URI。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
   * [必要な要求ヘッダー](#ID4EGB)
@@ -35,7 +35,7 @@ Xbox Live Compute server インスタンスを作成するクライアントを�
  
 | パラメーター| 説明| 
 | --- | --- | 
-| titleId| 要求の操作をタイトルの ID です。| 
+| titleId| 要求の操作のタイトルの ID です。| 
   
 <a id="ID5EG"></a>
 
@@ -49,23 +49,23 @@ gameserverms.xboxlive.com
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-要求を作成する場合、次の表に示すように、ヘッダーは必要です。
+要求を行う場合、次の表に示すようにヘッダーは必要です。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | 
 | ユーザー エージェント|  | 要求を行っているユーザー エージェントについて説明します。| 
-| Content-Type| application/json| 提出されたデータの種類です。| 
+| Content-Type| application/json| 送信されたデータの種類です。| 
 | Host| gameserverms.xboxlive.com|  | 
 | Content-Length|  | 要求のオブジェクトの長さ。| 
-| x xbl コントラクト バージョン| 1| API コントラクト バージョン。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークン。| 
+| x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
+| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークンです。| 
   
 <a id="ID4ELD"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは応答で 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
+要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
   
 <a id="ID4EWD"></a>
 
@@ -76,8 +76,8 @@ gameserverms.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| sessionId| MPSD からセッション識別子です。| 
-| abortIfQueued| 省略可能なパラメーターは、いるときにどのように指示場合、すぐにフルフィルメントしないことができますが、リソースのこのセッションをキューに入れいない GSMS を true に設定します。 応答オブジェクトは含まれている場合、この値が true であるため、要求が中止されると、<code>"fulfillmentState" : "Aborted"</code>します。 | 
+| sessionId| MPSD からセッション識別子。| 
+| abortIfQueued| 省略可能なパラメーターは、どの場合に true に設定する場合はすぐにフルフィルメントしないことができますが、リソースのこのセッションをキューに入れいない GSMS に指示します。 この値が true であるため、要求が中止されると、応答オブジェクトを含むは<code>"fulfillmentState" : "Aborted"</code>します。 | 
  
 <a id="ID4ERE"></a>
 
@@ -100,11 +100,11 @@ gameserverms.xboxlive.com
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答には常に、次の表に示すように、ヘッダーが含まれます。
+応答には常に、次の表に示すようにヘッダーが含まれます。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| キャッシュ コントロール|  | ディレクティブ要求/応答のチェーンに沿ったのすべてのキャッシュ メカニズムによって obeyed する必要があります。| 
+| キャッシュ コントロール|  | ディレクティブ要求/応答のチェーンに沿ったすべてのキャッシュ メカニズムによって obeyed する必要があります。| 
 | Content-Type| application/json| 応答には、データの種類です。| 
 | Content-Length|  | 応答本文の長さ。| 
 | X コンテンツの種類オプション|  |  | 
@@ -116,12 +116,12 @@ gameserverms.xboxlive.com
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| pollIntervalMilliseconds| 完了のポーリングをミリ秒の間隔をお勧めします。 ただし、これはないの推定場合、クラスターは、準備ですがのサブスクリプションと要求とフルフィルメントのレートの現在のプールを指定した状態に更新頻度、呼び出し元のポーリングを行うための推奨事項ではなく。| 
-| fulfillmentState| 示します、提供されているセッションは、リソースをすぐに割り当てられたかどうか「フルフィルメント、」リソースの今後の可用性のキューに追加される「キューに入れ」、または中止され、「中止」、要求を処理することができない原因とすぐに、要求"true"と指定した abortIfQueued します。 | 
+| pollIntervalMilliseconds| 完了するためのポーリングをミリ秒の間隔をお勧めします。 注意がこれには、クラスターが準備ができたらときの推定値ではありませんが、サブスクリプションとレートを要求し、フルフィルメントの現在のプールを指定された状態を更新する頻度、呼び出し元のポーリングを行うための推奨事項ではなく。| 
+| fulfillmentState| 提供されているセッションは、リソースをすぐに割り当てられたかどうか「フルフィルメント、」リソースの今後の可用性のキューに追加される「キューに入れ」を示すまたは中止され、「中止」、要求を処理することができない原因とすぐに要求"true"と指定した abortIfQueued します。 | 
  
 <a id="ID4EWH"></a>
 
@@ -143,13 +143,13 @@ gameserverms.xboxlive.com
  
 ## <a name="remarks"></a>注釈
  
-次の応答コードを受信すると、タイトルはサービスに呼び出しを再試行のみする必要があります。
+次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
  
    * 408-サーバー タイムアウト
    * 429: too Many Requests
    * 500-サーバー エラー
    * 502-無効なゲートウェイ
-   * 503-Service Unavailable
+   * 503-サービスを利用できません
    * 504-ゲートウェイ タイムアウト
    
 <a id="ID4EFBAC"></a>

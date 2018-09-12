@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: bcae059476cd5e55d95cbbbc7c4b479c359e46fe
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882392"
+ms.locfileid: "3935626"
 ---
 # <a name="profiles-uris"></a>プロファイルの Uri
  
-このセクションでは、*プロファイル*用の Xbox Live サービスから、プロファイル ユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*プロファイル*用の Xbox Live サービスからプロファイル ユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
  
 のみ Windows 8 で実行されるゲームでは、Xbox 360、または Windows Phone デバイスこのサービスを使用します。
  
@@ -35,7 +35,7 @@ ms.locfileid: "3882392"
 
 &nbsp;&nbsp;ユーザーまたはユーザーのプロファイルにアクセスします。
 
-[/users/{userId}/プロファイルの設定/ユーザー/{userList} かどうか設定 = {設定}。](uri-usersuseridprofilesettingspeopleuserlist.md)
+[/users/{userId}/プロファイルの設定/ユーザー/{userList}? 設定 = {設定}](uri-usersuseridprofilesettingspeopleuserlist.md)
 
 &nbsp;&nbsp;People モニカー サポートでのユーザーのプロファイルにアクセスします。
  
@@ -49,6 +49,6 @@ ms.locfileid: "3882392"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) の参照](../atoc-xboxlivews-reference-uris.md)
+[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

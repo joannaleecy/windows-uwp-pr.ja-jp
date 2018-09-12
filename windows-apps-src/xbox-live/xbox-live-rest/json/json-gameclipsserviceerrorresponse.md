@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6356000e1a554c948748abf725804a0d9024e40e
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881622"
+ms.locfileid: "3933640"
 ---
 # <a name="gameclipsserviceerrorresponse-json"></a>GameClipsServiceErrorResponse (JSON)
-/Users/{ownerId}/scids/{scid}/clips/{gameClipId} への応答の省略可能な部分/uri 形式/{gameClipUriType} API。 
+/Users/{ownerId} {scid}/scids//clips/{gameClipId} への応答の省略可能な部分/uri 形式/{gameClipUriType} API です。 
 <a id="ID4EN"></a>
 
  
@@ -30,7 +30,7 @@ GameClipsServiceErrorResponse オブジェクトには、次の仕様があり�
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | <b>errorSource</b>| string| エラーの発生元です。| 
-| <b>errorResponseCode</b>| 32 ビットの符号付き整数| (Null にすることができます)、エラーに関連付けられているコード。| 
+| <b>errorResponseCode</b>| 32 ビット符号付き整数| (Null にすることができます) エラーに関連付けられたコードです。| 
 | <b>エラー メッセージ</b>| string| エラーの詳細を追加します。| 
   
 <a id="ID4ECC"></a>

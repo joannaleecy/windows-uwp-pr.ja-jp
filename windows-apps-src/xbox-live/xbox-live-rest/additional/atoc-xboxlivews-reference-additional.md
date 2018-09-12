@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8203420b0eed584a0d8b4131b419bf667a4b56a0
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881953"
+ms.locfileid: "3932318"
 ---
 # <a name="additional-reference"></a>その他の参照
 
@@ -29,7 +29,7 @@ ms.locfileid: "3881953"
 
 [認証の種類](authorizationtypes.md)
 
-&nbsp;&nbsp;Xbox Live サービスで使用される標準的な認証の種類について説明します。
+&nbsp;&nbsp;Xbox Live サービスで使用される標準の承認の種類について説明します。
 
 [データの種類の概要](datatypeoverview.md)
 
@@ -67,11 +67,11 @@ ms.locfileid: "3881953"
 
 [標準の HTTP 要求と応答ヘッダー](httpstandardheaders.md)
 
-&nbsp;&nbsp;Xbox Live サービス要求を行うときに使用する標準的な HTTP ヘッダーをについて説明します。
+&nbsp;&nbsp;Xbox Live サービス要求を行ったときに使用する標準的な HTTP ヘッダーを説明します。
 
 [標準の HTTP ステータス コード](httpstatuscodes.md)
 
-&nbsp;&nbsp;サービスによって返される標準の HTTP ステータス コードをについて説明します。
+&nbsp;&nbsp;標準的なサービスによって返される HTTP 状態コードをについて説明します。
 
 <a id="ID4ECC"></a>
 

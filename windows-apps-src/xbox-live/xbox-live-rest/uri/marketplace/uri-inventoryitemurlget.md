@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a94493243178a503ae846608b172af598bf97dd
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882376"
+ms.locfileid: "3933462"
 ---
 # <a name="get-inventoryitemid"></a>(/Inventory/{itemID}) を取得します。
 特定のインベントリ項目の詳細の完全なセットを提供します。 これらの Uri のドメインが`inventory.xboxlive.com`します。
@@ -30,7 +30,7 @@ ms.locfileid: "3882376"
  
 ## <a name="remarks"></a>注釈
  
-ポリシー チェックを行わない、実施、またはこの呼び出しの一部としてフィルタ リングが発生します。
+ポリシー チェックなし、実施、またはフィルタ リングがこの呼び出しの一部として行われます。
   
 <a id="ID4EAB"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "3882376"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| itemID| string| 単一のインベントリ項目の各ユーザーに一意の ID| 
+| itemID| string| 単数形インベントリ項目の各ユーザーに一意の ID| 
   
 <a id="ID4ELB"></a>
 

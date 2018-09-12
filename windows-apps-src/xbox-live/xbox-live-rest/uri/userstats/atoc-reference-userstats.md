@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dbfe2cf1e25662f9645649594521bd23193d09d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881595"
+ms.locfileid: "3932422"
 ---
 # <a name="user-statistics-uris"></a>ユーザーの統計情報の Uri
  
@@ -35,7 +35,7 @@ ms.locfileid: "3881595"
 
 [ユーザー/xuid ({xuid})/scids/{scid}/統計](uri-usersxuidscidsscidstats.md)
 
-&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストで、サービス構成にアクセスします。
+&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストでサービス構成にアクセスします。
  
 <a id="ID4EMB"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "3881595"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) の参照](../atoc-xboxlivews-reference-uris.md)
+[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

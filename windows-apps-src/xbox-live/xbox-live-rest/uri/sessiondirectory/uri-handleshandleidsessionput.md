@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 89572da87f4975aeeaa1ae7506a34f2b9cb4e72a
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882241"
+ms.locfileid: "3935518"
 ---
 # <a name="put-handleshandle-idsession"></a>配置 (/handles/{ハンドル id}/セッション)
-作成またはハンドルを逆参照によって、セッションを更新します。
+作成またはハンドルを逆参照により、セッションを更新します。
 
 > [!IMPORTANT]
-> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 104/105 または後ですべての要求します。
+> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4ECB)
@@ -35,7 +35,7 @@ ms.locfileid: "3882241"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドが提供されているセッション ハンドル ID を使用してマルチプレイヤー サービスに新規または更新されたセッションを書き込みます 結果は、サーバーから返される新規または更新されたセッションを表すオブジェクトです。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionByHandleAsync**でラップすることができます。
+この HTTP/REST メソッドは、提供されているセッション ハンドル ID を使用して、マルチプレイヤー サービスに新規または更新されたセッションを書き込みます 結果は、サーバーから返されるものは、新規または更新されたセッションを表すオブジェクトです。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionByHandleAsync**でラップすることができます。
 
 このメソッドの呼び出し元では、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
 
@@ -46,13 +46,13 @@ ms.locfileid: "3882241"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
-| ハンドル id を使用| GUID| セッションのハンドルを一意の ID。|
+| ハンドル id を使用| GUID| セッション ハンドルの一意の ID。|
 
 <a id="ID4ENB"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4EUB"></a>
 
 

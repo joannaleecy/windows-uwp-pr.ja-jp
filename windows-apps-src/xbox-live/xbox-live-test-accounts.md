@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, テスト アカウント
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ba24c02d59a992ecacf0be89197511c5e133c59
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882482"
+ms.locfileid: "3935506"
 ---
 # <a name="xbox-live-test-accounts"></a>Xbox Live テスト アカウント
 
@@ -37,7 +37,7 @@ Xbox Live クリエーターズ プログラムでタイトルを開発してい
 
 既存の Xbox Live アカウントがある場合、それを開発サンドボックスで使用できるようにプロビジョニングするのがお勧めです。
 
-既存の Xbox Live アカウントを持っているしたり、追加の Msa を必要としない場合に、いくつか作成できます[https://account.microsoft.com/account](https://account.microsoft.com/account)します。
+いくつか作成できる場合は、既存の Xbox Live アカウントを持っているまたは追加の Msa を必要としない、[https://account.microsoft.com/account](https://account.microsoft.com/account)します。
 
 ## <a name="creating-test-accounts"></a>テスト アカウントの作成
 

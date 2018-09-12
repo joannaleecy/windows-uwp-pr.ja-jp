@@ -12,22 +12,22 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: eb7ca17500f571ed72cf0bcd6ececbcde17ce717
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881835"
+ms.locfileid: "3935266"
 ---
 # <a name="handleshandleidsession"></a>/handles/{ハンドル id を使用}/セッション
-PUT を取得する操作セッションでは、ハンドルを逆参照を使用してをサポートしています。 
+PUT および GET 操作セッションでは、ハンドルを逆参照を使用してをサポートしています。 
 
 > [!NOTE] 
-> この URI は、2015年マルチプレイヤーでは使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用して設計されています。  
+> この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用する概念があることです。  
 
  
 
 > [!NOTE] 
-> この URI は、現在 Xbox One 本体とサーバーのサービスの識別子を使用してアクセスできる外部のみです。  
+> この URI は、現在 Xbox One 本体とサービスの識別子を使用してサーバーによって外部的にもアクセスのみです。  
 
  
 <a id="ID4ES"></a>
@@ -42,7 +42,7 @@ sessiondirectory.xboxlive.com
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | --- | 
-| ハンドル id を使用| GUID| セッションのハンドルを一意の ID。| 
+| ハンドル id を使用| GUID| セッション ハンドルの一意の ID。| 
   
 <a id="ID4ESB"></a>
 
@@ -55,7 +55,7 @@ sessiondirectory.xboxlive.com
 
 [配置 (/handles/{ハンドル id}/セッション)](uri-handleshandleidsessionput.md)
 
-&nbsp;&nbsp;作成またはハンドルを逆参照によって、セッションを更新します。
+&nbsp;&nbsp;作成またはハンドルを逆参照により、セッションを更新します。
  
 <a id="ID4E6B"></a>
 

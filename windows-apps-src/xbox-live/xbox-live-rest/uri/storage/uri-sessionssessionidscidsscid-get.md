@@ -1,9 +1,9 @@
 ---
-title: (/Sessions/{sessionId}/scids/{scid}) を取得します。
+title: (/Scids/{scid} {sessionId}/sessions/) を取得します。
 assetID: 1feaceed-ba0d-0b0c-e809-44ba41f2e4ea
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidsscid-get.html
 author: KevinAsgari
-description: " (/Sessions/{sessionId}/scids/{scid}) を取得します。"
+description: " (/Scids/{scid} {sessionId}/sessions/) を取得します。"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 19e15f2376349011e49cfc91465e759e92c881b0
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882288"
+ms.locfileid: "3932234"
 ---
-# <a name="get-sessionssessionidscidsscid"></a>(/Sessions/{sessionId}/scids/{scid}) を取得します。
-このストレージの種類でクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
+# <a name="get-sessionssessionidscidsscid"></a>(/Scids/{scid} {sessionId}/sessions/) を取得します。
+このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
   * [Authorization](#ID4ECB)
@@ -35,7 +35,7 @@ ms.locfileid: "3882288"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| sessionId| string| 検索するセッションの ID です。| 
+| sessionId| string| 検索するセッションの ID。| 
 | scid| guid| ルックアップ サービス構成の ID です。| 
   
 <a id="ID4ECB"></a>
@@ -52,8 +52,8 @@ ms.locfileid: "3882288"
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| x xbl コントラクト バージョン| 1| API コントラクト バージョン。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークン。 STSTokenString は、認証要求によって返されるトークンに置き換えられます。 STS トークンを取得して、承認ヘッダーの作成について詳しくは、用いた認証と Xbox LIVE サービス要求の承認を参照してください。| 
+| x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
+| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は認証要求によって返されるトークンで置き換えられます。 STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証し、Xbox LIVE サービス要求の承認を参照してください。| 
   
 <a id="ID4EWC"></a>
 
@@ -67,7 +67,7 @@ ms.locfileid: "3882288"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションでステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -75,19 +75,19 @@ ms.locfileid: "3882288"
 | 201| Created| エンティティが作成されました。| 
 | 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
-| 403| Forbidden| 要求は、ユーザーまたはサービスは許可されません。| 
-| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
+| 403| Forbidden| ユーザーまたはサービスの要求は許可されていません。| 
+| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。| 
 | 406| 許容できません。| リソースのバージョンがサポートされていません。| 
 | 408| 要求のタイムアウト| 要求にかかった時間が長すぎます。| 
 | 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable| 要求がスロット リングされた、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度要求を行ってください。| 
+| 503| Service Unavailable| 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行の値の後にもう一度やり直してください。| 
   
 <a id="ID4E2H"></a>
 
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合、サービスは[quotaInfo (JSON)](../../json/json-quota.md)オブジェクトを返します。 
+呼び出しが成功した場合は、サービスは[quotaInfo (JSON)](../../json/json-quota.md)オブジェクトを返します。 
  
 <a id="ID4EKAAC"></a>
 

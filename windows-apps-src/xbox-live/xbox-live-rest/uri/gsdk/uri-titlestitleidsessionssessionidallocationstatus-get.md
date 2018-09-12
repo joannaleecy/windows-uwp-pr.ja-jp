@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882107"
+ms.locfileid: "3934348"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>取得する (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
-その sessionId によって識別 sessionhost の割り当てを取得します。 これらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+その sessionId で識別される sessionhost の割り当ての状態を返します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [必要な要求ヘッダー](#ID4E4)
   * [必要な応答ヘッダー](#ID4EEB)
@@ -44,20 +44,20 @@ ms.locfileid: "3882107"
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | 
-| description| 返します空の文字列 (左での下位互換性)。| 
-| clusterId| 返します空の文字列 (左での下位互換性)。| 
-| ホスト名| セッション ホストの URL。| 
-| status| キューに入れ、フルフィルメントの完了、または中止いずれかを示します。| 
+| description| 空の文字列 (左での下位互換性) を返します。| 
+| clusterId| 空の文字列 (左での下位互換性) を返します。| 
+| ホスト名| セッションのホストの URL。| 
+| status| キューに入れ、満たされると、または中止を示します。| 
 | sessionHostId| セッション ホストの id。| 
 | sessionId| (割り当て時) に提供されるクライアント セッション id。| 
-| secureContext| セキュア デバイス アドレス。| 
+| secureContext| セキュア デバイス アドレスです。| 
 | portMappings| インスタンスのポート マッピングします。| 
-| 地域| インスタンスの場所。| 
-| ticketId| 現在のセッション ID (左での下位互換性) です。| 
+| 地域| インスタンスの場所です。| 
+| ticketId| 現在のセッション ID です (左での下位互換性)。| 
 | gameHostId| (左での下位互換性) 現在 sessionHostId します。| 
  
 <a id="ID4EGD"></a>
@@ -104,7 +104,7 @@ ms.locfileid: "3882107"
  
 ### <a name="remarks"></a>注釈
  
-次の応答コードを受信すると、タイトルはサービスに呼び出しを再試行のみする必要があります。
+次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
  
    * 200-成功 
    * 400-要求が無効なパラメーターが含まれています 

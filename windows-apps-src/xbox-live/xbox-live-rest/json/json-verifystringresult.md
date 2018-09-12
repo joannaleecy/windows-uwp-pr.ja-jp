@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f774f603d89e29f5233fb0866303bab4577ca3d2
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882212"
+ms.locfileid: "3935614"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
-各文字列に[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)提出に対応する結果コード。
+[/System/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)に送信された各文字列に対応する結果コード。
 <a id="ID4ER"></a>
 
 
@@ -29,7 +29,7 @@ VerifyStringResult オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
-| resultCode| 32 ビットの符号なし整数| 必須。 HResult コードに対応する文字列を送信します。|
+| resultCode| 32 ビット符号なし整数| 必須。 HResult コードに対応する文字列を送信します。|
 | offendingString| string| 必須。 拒否する文字列の原因となった文字列値。|
 
 <a id="ID4EXB"></a>
@@ -58,7 +58,7 @@ VerifyStringResult オブジェクトには、次の仕様があります。
 | --- | --- | --- | --- | --- |
 | 0| 成功|
 | 1| 不快感を与える文字列|
-| 2| 長い文字列|
+| 2| 文字列が長すぎます|
 | 3| 不明なエラー|
 
 <a id="ID4ELD"></a>

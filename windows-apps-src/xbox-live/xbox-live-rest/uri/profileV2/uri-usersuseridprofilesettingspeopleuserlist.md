@@ -1,9 +1,9 @@
 ---
-title: /users/{userId}/プロファイルの設定/ユーザー/{userList} かどうか設定 = {設定}。
+title: /users/{userId}/プロファイルの設定/ユーザー/{userList}? 設定 = {設定}
 assetID: 0ba20eba-f0ab-28ab-61d3-b4f9e4c07bc5
 permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlist.html
 author: KevinAsgari
-description: " /users/{userId}/プロファイルの設定/ユーザー/{userList} かどうか設定 = {設定}。"
+description: " /users/{userId}/プロファイルの設定/ユーザー/{userList}? 設定 = {設定}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 44341b5fc8f831e3a500f47a51b94978f587cb8c
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881726"
+ms.locfileid: "3935546"
 ---
-# <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/プロファイルの設定/ユーザー/{userList} かどうか設定 = {設定}。
+# <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/プロファイルの設定/ユーザー/{userList}? 設定 = {設定}
 People モニカー サポートでのユーザーのプロファイルにアクセスします。 これらの Uri のドメインが`profile.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)

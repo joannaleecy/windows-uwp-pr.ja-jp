@@ -1,9 +1,9 @@
 ---
-title: (/Handles/{ハンドル id を使用}) を削除します。
+title: 削除 (/handles/{ハンドル id を使用しました)
 assetID: 71cceff4-3a74-dc05-12db-cfe3f20a8aea
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleiddelete.html
 author: KevinAsgari
-description: " (/Handles/{ハンドル id を使用}) を削除します。"
+description: " 削除 (/handles/{ハンドル id を使用しました)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 15300451495c198a1f15997bae38cb862a9b8186
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881825"
+ms.locfileid: "3935587"
 ---
-# <a name="delete-handleshandleid"></a>(/Handles/{ハンドル id を使用}) を削除します。
+# <a name="delete-handleshandleid"></a>削除 (/handles/{ハンドル id を使用しました)
 ハンドル ID で指定されたハンドルを削除します。
 
 > [!IMPORTANT]
-> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 104/105 または後ですべての要求します。
+> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4EAB)
@@ -42,13 +42,13 @@ ms.locfileid: "3881825"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
-| ハンドル id を使用| GUID| セッションのハンドルを一意の ID。|
+| ハンドル id を使用| GUID| セッション ハンドルの一意の ID。|
 
 <a id="ID4ELB"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4ESB"></a>
 
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b259ae20bd07c6869bc6646fc44a70f994a261b7
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882512"
+ms.locfileid: "3933016"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>ビデオの逆引き参照を EDS
  
@@ -27,11 +27,11 @@ ms.locfileid: "3882512"
  
 ## <a name="reverse-lookup-steps"></a>逆の検索手順
  
-すべてのビデオ メディアの種類 (**MediaItemType.Movie**、 **MediaItemType.TVSeries**、 **MediaItemType.TVEpisode**、 **MediaItemType.TVSeason**、および**エンターテイメント探索サービス (EDS) の逆引き参照はサポートされていますMediaItemType.TVShow**)、 **MediaItemType.Unknown**とします。
+すべてのビデオ メディアの種類 (**MediaItemType.Movie**、 **MediaItemType.TVSeries**、 **MediaItemType.TVEpisode**、 **MediaItemType.TVSeason**、および**エンターテイメント探索サービス (EDS) の逆引き参照がサポートされています。MediaItemType.TVShow**)、および**MediaItemType.Unknown**します。
  
 逆引き参照では、4 つのパラメーターを渡すことが必要です。 
    * `idType=ScopedMediaId`
-   * `ids=` プロバイダーのメディアの ID
+   * `ids=` プロバイダーのメディア ID
    * `ScopeIdType=Title`
    * `ScopeId=` プロバイダーのタイトル ID
  
@@ -53,7 +53,7 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
   
  
-**ProviderMediaId**フィールドが EDS から取得されていない場合、フィールドは、EDS に正しく渡す URL エンコードである必要があります。
+**ProviderMediaId**フィールドが EDS から取得されていない場合、フィールドは、EDS に正しくを渡される URL エンコードである必要があります。
   
 <a id="ID4EOC"></a>
 

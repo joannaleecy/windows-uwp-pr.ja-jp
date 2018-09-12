@@ -1,9 +1,9 @@
 ---
-title: (/Serviceconfigs//hoppers/{呼び出します}/tickets/{ticketid}) を削除します。
+title: (/Serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}) を削除します。
 assetID: d9ff3f21-aa70-af41-afa1-9a9244fcdb95
 permalink: en-us/docs/xboxlive/rest/uri-scidhoppernameticketiddelete.html
 author: KevinAsgari
-description: " (/Serviceconfigs//hoppers/{呼び出します}/tickets/{ticketid}) を削除します。"
+description: " (/Serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}) を削除します。"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3780fb9f69a97d4e2522aa17a806b1fb4917a9f7
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882499"
+ms.locfileid: "3932682"
 ---
-# <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>(/Serviceconfigs//hoppers/{呼び出します}/tickets/{ticketid}) を削除します。
+# <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>(/Serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}) を削除します。
 
 マッチ チケットを削除します。
 
@@ -56,15 +56,15 @@ ms.locfileid: "3882499"
 
 | 型| 必須かどうか| 説明| 不足している場合、応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (ユーザーの ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。| 403|
-| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されているとき、マッチメイ キング サービスへの呼び出しには、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。| 403|
+| XUID (ユーザー ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。| 403|
+| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには主張のマルチプレイヤー権限を持つユーザーのみが許可されています。| 403|
 
 <a id="ID4EOC"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4EXC"></a>
 
 
@@ -89,4 +89,4 @@ ms.locfileid: "3882499"
 
 ##### <a name="parent"></a>Parent  
 
-[/serviceconfigs//hoppers/{呼び出します}/tickets/{ticketid}](uri-scidhoppernameticketid.md)
+[/serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}](uri-scidhoppernameticketid.md)

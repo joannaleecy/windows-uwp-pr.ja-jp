@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb56b51e2d558b2a4ef05d117244d464756e6ec
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881779"
+ms.locfileid: "3932898"
 ---
 # <a name="post-usersxuidxuidfeedback"></a>POST (/users/xuid({xuid})/feedback)
-シェルを使用してではなく、ゲームでフィードバック オプションを追加したい場合に、タイトルから使われます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
+シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合に、タイトルから使われます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EZ)
   * [必要な要求ヘッダー](#ID4EEB)
@@ -45,8 +45,8 @@ ms.locfileid: "3881779"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークンを要求ヘッダーの妥当性を確認した後。 既定値: 101 します。| 
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
+| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
   
 <a id="ID4ENC"></a>
 
@@ -65,7 +65,7 @@ ms.locfileid: "3881779"
  
 ### <a name="prohibited-members"></a>禁止されているメンバー 
  
-要求では、他のすべてのメンバーが禁止されています。
+要求では、その他のすべてのメンバーが禁止されています。
   
 <a id="ID4ETD"></a>
 
@@ -100,11 +100,11 @@ ms.locfileid: "3881779"
  
 | <b>ヘッダー</b>| <b>値</b>| <b>Deacription</b>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| x xbl コントラクト バージョン| 101| API コントラクト バージョン。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークン。 STSTokenString は、認証要求によって返されるトークンに置き換えられます。| 
+| x xbl コントラクト バージョン| 101| API コントラクト バージョンです。| 
+| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は認証要求によって返されるトークンで置き換えられます。| 
 Content-Type| 
 application/json| 
-提出されたデータの種類です。| 
+送信されたデータの種類です。| 
   
 <a id="ID4EXF"></a>
 
@@ -118,13 +118,13 @@ application/json|
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションでステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 204| No Content| 要求が完了したらが、コンテンツを返すにはありません。| 
+| 204| No Content| 要求が完了したらが、返されるコンテンツはありません。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
-| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
+| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。| 
 | 406| 許容できません。| リソースのバージョンがサポートされていません。| 
 | 408| 要求のタイムアウト| 要求にかかった時間が長すぎます。| 
 | 409| Conflict| 継続トークンが無効になった。| 

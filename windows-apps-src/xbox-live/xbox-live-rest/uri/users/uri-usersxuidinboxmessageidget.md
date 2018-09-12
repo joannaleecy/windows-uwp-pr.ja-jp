@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882089"
+ms.locfileid: "3935006"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
 サービスの読み取りとしてマークすること、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。
@@ -37,9 +37,9 @@ ms.locfileid: "3882089"
 
 Get 操作は、ユーザー、システム、および FriendRequest メッセージの種類でのみ実行できます。
 
-この URI には、Xbox.com に更新が必要です。 現時点では、まで、ユーザーがサインアウトしたとに戻り、Xbox 360 は読み取り/未読メ状態を更新されません。
+この URI には、Xbox.com に更新が必要です。 現時点では、まで、ユーザーがサインアウトしたとでもう一度、Xbox 360 は読み取り/未読メ状態を更新されません。
 
-この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、各呼び出しの HTTP ヘッダーのために必要です。
+この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
 
 <a id="ID4EEB"></a>
 
@@ -56,7 +56,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 ## <a name="authorization"></a>Authorization
 
-ユーザーのメッセージを取得する要求、独自のユーザーが必要です。
+独自のユーザーがユーザーのメッセージを取得する要求が必要です。
 
 <a id="ID4E3B"></a>
 
@@ -70,14 +70,14 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果
 
-のみ、独自のユーザーのメッセージを取得することができます。
+のみ、独自のユーザーのメッセージを取得できます。
 
 <a id="ID4EUC"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションでステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 説明|
 | --- | --- | --- | --- | --- |
@@ -109,9 +109,9 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 | 有効期限| DateTime|  | 日付と時刻のメッセージの有効期限が切れます。 (すべてのメッセージによって、将来的に決定する最長有効期間がある)。|
 | メッセージの種類| string| 13| メッセージの種類: ユーザー、システム、FriendRequest します。|
 | senderXuid| ulong|  | 送信者の XUID です。|
-| 送信者| string| 15| 送信者のゲーマータグします。|
-| hasAudio| bool|  | かどうか、メッセージには、オーディオ (声) 添付ファイルがあります。|
-| hasPhoto| bool|  | メッセージに写真の添付ファイルがあるかどうか。|
+| 送信者| string| 15| 送信者のゲーマータグです。|
+| hasAudio| bool|  | かどうか、メッセージは、オーディオ (声) の添付ファイルがあります。|
+| hasPhoto| bool|  | かどうか、メッセージは、写真の添付ファイルがあります。|
 | hasText| bool|  | かどうか、メッセージには、テキストが含まれています。|
 
 #### <a name="sample-response"></a>応答の例
@@ -136,7 +136,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 #### <a name="error-response"></a>エラー応答
 
-エラー発生時、サービスは、サービスの環境から値を含めることができますが、全て、errorResponse オブジェクトを返すことがあります。
+エラーの場合、サービスはサービスの環境からの値が含まれている全て、errorResponse オブジェクトを返す可能性があります。
 
 | プロパティ| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

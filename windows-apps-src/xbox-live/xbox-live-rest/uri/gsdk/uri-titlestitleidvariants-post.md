@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 246427b772403ca07adac2a4b1b07ec159142049
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882214"
+ms.locfileid: "3934642"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/バリアント)
-指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URIこれらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+URI に指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出されますこれらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EZ)
   * [必要な要求ヘッダー](#ID4EIB)
@@ -37,7 +37,7 @@ ms.locfileid: "3882214"
  
 | パラメーター| 説明| 
 | --- | --- | 
-| タイトル id| 要求の操作をタイトルの ID です。| 
+| タイトル id| 要求の操作のタイトルの ID です。| 
   
 <a id="ID5EG"></a>
 
@@ -51,22 +51,22 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-要求を作成する場合、次の表に示すように、ヘッダーは必要です。
+要求を行う場合、次の表に示すようにヘッダーは必要です。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | 
-| Content-Type| application/json| 提出されたデータの種類です。| 
+| Content-Type| application/json| 送信されたデータの種類です。| 
 | Host| gameserverds.xboxlive.com|  | 
 | Content-Length|  | 要求のオブジェクトの長さ。| 
-| x xbl コントラクト バージョン| 1| API コントラクト バージョン。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークン。| 
+| x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
+| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークンです。| 
   
 <a id="ID4EED"></a>
 
  
 ## <a name="optional-request-headers"></a>オプションの要求ヘッダー
  
-要求を作成する場合は、次の表に示すように、ヘッダーはオプションです。
+要求を行う場合は、次の表に示すようにヘッダーはオプションです。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -77,7 +77,7 @@ gameserverds.xboxlive.com
  
 ## <a name="authorization"></a>Authorization
 
-要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは応答で 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
+要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
  
 <a id="ID4EEE"></a>
 
@@ -88,8 +88,8 @@ gameserverds.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| locale| ローカルのバリアントを返します。| 
-| maxVariants| バリエーションを返すの最大数。| 
+| locale| 返されるバリエーションのローカルです。| 
+| maxVariants| 返されるバリアントの最大数。| 
 | publisherOnly|  | 
 | 制限|  | 
  
@@ -115,7 +115,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答には常に、次の表に示すように、ヘッダーが含まれます。
+応答には常に、次の表に示すようにヘッダーが含まれます。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -127,7 +127,7 @@ gameserverds.xboxlive.com
  
 ## <a name="optional-response-headers"></a>省略可能な応答ヘッダー
  
-応答には、次に示すように、ヘッダーの各自が可能性があります。
+応答には、次に示すようにヘッダー各自が可能性があります。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -138,7 +138,7 @@ gameserverds.xboxlive.com
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 17b6bf856dd87abc72a000cb92724baf91452d73
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881883"
+ms.locfileid: "3935618"
 ---
 # <a name="hopperstatsresults-json"></a>HopperStatsResults (JSON)
 ホッパーの統計情報を表す JSON オブジェクト。 
@@ -28,9 +28,9 @@ HopperStatsResults JSON オブジェクトには、次の仕様があります�
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| 呼び出します| string| 選択したホッパーの名前です。| 
-| 待機時間| 32 ビットの符号付き整数| 照合時間 (秒の整数)、ホッパーの平均です。 | 
-| 高コスト| 32 ビットの符号付き整数| ホッパーでマッチを待っているユーザーの数。| 
+| hopperName| string| 選択したホッパーの名前です。| 
+| 待機時間| 32 ビット符号付き整数| 照合時間 (秒の整数)、ホッパーの平均です。 | 
+| カタログの作成| 32 ビット符号付き整数| 一致するものをホッパーで待機しているユーザーの数です。| 
   
 <a id="ID4EW"></a>
 
@@ -67,6 +67,6 @@ HopperStatsResults JSON オブジェクトには、次の仕様があります�
  
 ##### <a name="reference"></a>リファレンス 
 
-[取得する (/serviceconfigs//hoppers/name {/統計)](../uri/matchtickets/uri-serviceconfigsscidhoppershoppernamestatsget.md)
+[取得する (/serviceconfigs/{scid}/hoppers/{name}/統計情報)](../uri/matchtickets/uri-serviceconfigsscidhoppershoppernamestatsget.md)
 
    

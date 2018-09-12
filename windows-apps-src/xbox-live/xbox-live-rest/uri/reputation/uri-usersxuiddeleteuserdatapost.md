@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bcb7b1c6c23f39846084ba4e6583553e2ff04a1
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882023"
+ms.locfileid: "3935142"
 ---
 # <a name="post-usersxuidxuiddeleteuserdata"></a>POST (/users/xuid({xuid})/deleteuserdata)
 テスト ユーザーの評判のデータを完全にリセットします。 テストのみです。
@@ -33,7 +33,7 @@ ms.locfileid: "3882023"
 
 ## <a name="remarks"></a>注釈
 
-この API を呼び出すと、ユーザーからすべてのフィードバック項目と評判のデータが削除されます。 パートナーは、Retail を除くすべてのサンド ボックスに対してこの API を呼び出す場合があります。 執行チームは、すべてのサンド ボックス ID を持つには、この API を呼び出すことがあります。
+この API を呼び出すと、ユーザーからすべてのフィードバック項目と評判のデータが削除されます。 パートナーは Retail を除くすべてのサンド ボックスに対してこの API を呼び出す場合があります。 執行チームは、サンド ボックス ID を持つには、この API を呼び出すことがあります。
 
 これらの Uri のドメインが`reputation.xboxlive.com`します。 この URI は、常にポート 10443 で呼び出されます。
 
@@ -53,7 +53,7 @@ ms.locfileid: "3882023"
 
 Retail サンド ボックスで、執行チームから**PartnerClaim**します。
 
-すべてのサンド ボックスに対して、 **PartnerClaim**と**SandboxIdClaim**。
+すべての他のサンド ボックスに対して、 **PartnerClaim**と**SandboxIdClaim**します。
 
 <a id="ID4E3B"></a>
 
@@ -67,16 +67,16 @@ Retail サンド ボックスで、執行チームから**PartnerClaim**しま�
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションでステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- |
-| 200| OK| セッションが正常に取得されます。|
+| 200| OK| セッションが正常に取得されました。|
 | 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。|
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。|
-| 404| Not Found します。| 指定されたリソースは見つかりませんでした。|
+| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。|
 | 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。|
-| 503| Service Unavailable| 要求がスロット リングされた、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度要求を行ってください。|
+| 503| Service Unavailable| 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行の値の後にもう一度やり直してください。|
 
 <a id="ID4EJF"></a>
 

@@ -1,9 +1,9 @@
 ---
-title: ユーザー/xuid ({xuid})/groups/{モニカー}/ブロードキャスト/数
+title: ユーザー/xuid ({xuid})/groups/{モニカー} ブロードキャスト/カウント
 assetID: 535c8d46-7001-c31e-3e9d-82ad275095ae
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmonikerbroadcastingcount.html
 author: KevinAsgari
-description: " ユーザー/xuid ({xuid})/groups/{モニカー}/ブロードキャスト/数"
+description: " ユーザー/xuid ({xuid})/groups/{モニカー} ブロードキャスト/カウント"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d563fde1f5c7aa430547e16771fa920786cd739
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882170"
+ms.locfileid: "3933746"
 ---
-# <a name="usersxuidxuidgroupsmonikerbroadcastingcount"></a>ユーザー/xuid ({xuid})/groups/{モニカー}/ブロードキャスト/数
-アクセス グループ モニカーで指定されているブロードキャスト ユーザーの数は、URI に表示される XUID に関連します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
+# <a name="usersxuidxuidgroupsmonikerbroadcastingcount"></a>ユーザー/xuid ({xuid})/groups/{モニカー} ブロードキャスト/カウント
+アクセス グループ モニカーで指定されているブロードキャスト ユーザーの数は、URI 内に表示される XUID に関連します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -38,7 +38,7 @@ ms.locfileid: "3882170"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(ユーザー/xuid ({xuid})/groups/{モニカー}/ブロードキャスト/数) を取得します。](uri-usersxuidgroupsmonikerbroadcastingcountget.md)
+[(ユーザー/xuid ({xuid})/groups/{モニカー} ブロードキャスト/数) を取得します。](uri-usersxuidgroupsmonikerbroadcastingcountget.md)
 
 &nbsp;&nbsp;URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーの数を取得します。
  

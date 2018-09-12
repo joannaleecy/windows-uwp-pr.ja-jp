@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab3214ca9b2cb2ff8ace11706ceda22885598e1
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882487"
+ms.locfileid: "3936024"
 ---
 # <a name="get-handleshandleidsession"></a>取得する (/handles/{ハンドル id を使用}/セッション)
 指定したハンドル識別子セッション オブジェクトを取得します。
 
 > [!IMPORTANT]
-> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 104/105 または後ですべての要求します。
+> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4EDB)
@@ -35,7 +35,7 @@ ms.locfileid: "3882487"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドでは、セッション (ハンドル) に指定されたサービス側のポインターを使用して、サーバーからセッション オブジェクトを取得します。 すべての属性を使用して、セッション オブジェクトを返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**でラップすることができます。
+この HTTP/REST メソッドは、セッション (ハンドル) に指定されたサービス側ポインターを使用して、サーバーからセッション オブジェクトを取得します。 すべての属性を使用して、セッション オブジェクトを返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**でラップすることができます。
 
 このメソッドの呼び出し元では、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
 
@@ -46,13 +46,13 @@ ms.locfileid: "3882487"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
-| ハンドル id を使用| GUID| セッションのハンドルを一意の ID。|
+| ハンドル id を使用| GUID| セッション ハンドルの一意の ID。|
 
 <a id="ID4EOB"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4EVB"></a>
 
 
@@ -64,7 +64,7 @@ ms.locfileid: "3882487"
 
 
 ## <a name="response-body"></a>応答本文
-[MultiplayerSession (](../../json/json-multiplayersession.md)json) 応答構造を参照してください。  
+[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)の応答構造を参照してください。  
 <a id="ID4EIC"></a>
 
 

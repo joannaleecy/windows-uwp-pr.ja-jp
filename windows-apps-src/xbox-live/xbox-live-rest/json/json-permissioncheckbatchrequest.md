@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a3b7f63e7a991420ee594cf45acf2f9952bcf74
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881754"
+ms.locfileid: "3931618"
 ---
 # <a name="permissioncheckbatchrequest-json"></a>PermissionCheckBatchRequest (JSON)
 PermissionCheckBatchRequest オブジェクトのコレクションです。 
@@ -29,8 +29,8 @@ PermissionCheckBatchRequest オブジェクトには、次の仕様がありま�
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| Users| ユーザーの配列| 必須。 に対するアクセス許可を確認する対象の配列です。 この配列内の各エントリには、Xbox ユーザー ID (XUID) またはクロス ネットワーク シナリオの匿名のネットワークに接続してユーザー (「匿名」:"allUsers")。 | 
-| アクセス許可| [PermissionId 列挙体](../enums/privacy-enum-permissionid.md)の配列| 必須。 各ユーザーに照らしてチェックする権限が付与されます。| 
+| Users| ユーザーの配列| 必須。 に対するアクセス許可を確認する対象の配列です。 この配列内の各エントリは、Xbox ユーザー ID (XUID) またはクロス ネットワークのシナリオの匿名のネットワークに接続してユーザーのいずれか (「匿名」:"allUsers")。 | 
+| アクセス許可| [PermissionId 列挙体](../enums/privacy-enum-permissionid.md)の配列| 必須。 各ユーザーに照らしてチェックするアクセス許可します。| 
   
 <a id="ID4E3B"></a>
 

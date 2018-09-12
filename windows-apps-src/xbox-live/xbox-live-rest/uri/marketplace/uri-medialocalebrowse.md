@@ -12,27 +12,27 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 776db1cf795ae964621d751d6b4b72d22ba82c2d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882306"
+ms.locfileid: "3935210"
 ---
 # <a name="mediamarketplaceidbrowse"></a>/media/{marketplaceId} 参照/
-1 つのメディア グループ内の項目を参照できます。 参照 API により、クライアントから 1 つのメディア グループ内の項目を参照できます。 非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してデータのページにアクセスできます。
+1 つのメディア グループ内の項目を参照できます。 参照 API は、クライアントから 1 つのメディア グループ内の項目を参照できます。 非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してデータのページにアクセスできます。
  
-この API では、特定の項目の子内で参照できます。 たとえば、Xbox 360 ゲームの ID および MediaItemType パラメーターに渡して、これにより閲覧と diltering アバター項目や、ゲームの DLC など、その項目の子にします。
+この API では、指定した項目の子内で参照できます。 たとえば、Xbox 360 ゲームの ID と MediaItemType パラメーターに渡して、これにより、閲覧、diltering アバター項目や、ゲームの DLC など、その項目の子にします。
  
 この API は、絞り込み条件のクエリを受け取ります。
  
 子を取得するためのいくつかのシナリオは次のとおりです。
  
    * アルバムのトラックに
-   * シリーズ時期を
+   * 時期にシリーズ
    * エピソードする時期
-   * 音楽のビデオへの追跡します。
-   * アルバムにアーティスト
-   * ゲームのアドオン (DLC、アバター、テーマなど) にゲーム
+   * 音楽ビデオへの追跡します。
+   * アルバムのアーティスト
+   * ゲームのアドオン (DLC、アバター、テーマなど) へのゲーム
   
 これらの Uri のドメインが`eds.xboxlive.com`します。
  
@@ -45,7 +45,7 @@ ms.locfileid: "3882306"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
   
 <a id="ID4ENC"></a>
 

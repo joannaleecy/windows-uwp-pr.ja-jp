@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 891d1d03ab5b7b60dd25c58d9f2f40083bde6e7c
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3882408"
+ms.locfileid: "3936072"
 ---
 # <a name="achievements-uris"></a>実績 Uri
 
@@ -35,11 +35,11 @@ ms.locfileid: "3882408"
 
 [ユーザー/xuid ({xuid})/achievements/{scid}/{achievementid}](uri-usersxuidachievementsscidachievementid.md)
 
-&nbsp;&nbsp;ユーザーに固有のデータ、設定されたメタデータを含む、実績の詳細を返します。
+&nbsp;&nbsp;構成済みのメタデータとユーザー固有のデータを含む、実績を詳しく説明を返します。
 
 
 > [!NOTE] 
-> プラットフォームののみサポートされます。
+> プラットフォームでのみサポートされます。
 
 
 
@@ -53,4 +53,4 @@ ms.locfileid: "3882408"
 
 ##### <a name="parent"></a>Parent
 
-[ユニバーサル リソース識別子 (URI) の参照](../atoc-xboxlivews-reference-uris.md)
+[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)

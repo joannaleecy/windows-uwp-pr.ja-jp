@@ -1,9 +1,9 @@
 ---
-title: (/Media/{marketplaceId}/メタデータ/mediaItemTypes) を取得します。
+title: (/Media/{marketplaceId} メタデータ/mediaItemTypes) を取得します。
 assetID: ca2825fa-1988-8464-0a69-d965e38844bb
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypesget.html
 author: KevinAsgari
-description: " (/Media/{marketplaceId}/メタデータ/mediaItemTypes) を取得します。"
+description: " (/Media/{marketplaceId} メタデータ/mediaItemTypes) を取得します。"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eb16d6052d07ed90d99c327b4955b5d8bedabff
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881570"
+ms.locfileid: "3933626"
 ---
-# <a name="get-mediamarketplaceidmetadatamediaitemtypes"></a>(/Media/{marketplaceId}/メタデータ/mediaItemTypes) を取得します。
-すべてのサポートされている mediaItemTypes EDS の特定のバージョンの一覧を示します。 これらの Uri のドメインが`eds.xboxlive.com`します。
+# <a name="get-mediamarketplaceidmetadatamediaitemtypes"></a>(/Media/{marketplaceId} メタデータ/mediaItemTypes) を取得します。
+指定した EDS バージョンのサポートされているすべての mediaItemTypes の一覧を示します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -30,7 +30,7 @@ ms.locfileid: "3881570"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
   
 <a id="ID4EAB"></a>
 
@@ -42,7 +42,7 @@ ms.locfileid: "3881570"
  
 ##### <a name="parent"></a>Parent 
 
-[/media/{marketplaceId}/メタデータ/mediaItemTypes](uri-medialocalemetadatamediaitemtypes.md)
+[メタデータ/mediaItemTypes/media/{marketplaceId}](uri-medialocalemetadatamediaitemtypes.md)
 
   
 <a id="ID4EMB"></a>

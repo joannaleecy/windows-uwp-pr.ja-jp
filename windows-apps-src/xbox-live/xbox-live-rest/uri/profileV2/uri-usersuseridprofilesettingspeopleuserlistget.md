@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d57a6620115d5f009c054210a50548c3da7e47d5
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881924"
+ms.locfileid: "3931822"
 ---
 # <a name="get-usersuseridprofilesettingspeopleuserlist"></a>(/Users/{userId}/プロファイルの設定/ユーザー/{userList}) を取得します。
 ユーザーのプロファイルを取得またはユーザー, People モニカーをサポートします。 これらの Uri のドメインが`profile.xboxlive.com`します。
@@ -32,7 +32,7 @@ ms.locfileid: "3881924"
  
 ## <a name="remarks"></a>注釈
  
-**userList**と**ユーザー Id**は、相互に排他的なパラメーターです。 両方またはいずれかを指定する場合は、 **BadRequest**をもう一度表示されます。 **userList**は、複数の名前付きリストが要求に有用な場所のシナリオで将来の配列です。 **ユーザー Id**が Xuid の 10 進数の文字列の構成 - JSON は 64 ビットの符号なし整数のシリアル化に悪いです。 最後に、Xbox One での設定の名前は、設定、64 ビットの符号なし整数または**XONLINE_PROFILE_ASDF**などあいまいな定数ではなく、通常のわかりやすい名前になります。
+**userList**と**ユーザー Id**は、相互に排他的なパラメーターです。 いずれかまたは両方が指定されている場合は、 **BadRequest**をもう一度表示されます。 **userList**は、複数の名前付きリストが要求に便利なシナリオで将来の配列です。 **ユーザー Id**は Xuid の 10 進数の文字列の構成 - JSON は 64 ビットの符号なし整数をシリアル化するのには不適切です。 最後に、Xbox One での設定の名前は、通常のわかりやすい名前ではなく 64 ビットの符号なし整数またはあいまいな定数**XONLINE_PROFILE_ASDF**などの設定になります。
   
 <a id="ID4EKB"></a>
 
@@ -60,7 +60,7 @@ ms.locfileid: "3881924"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| x xbl コントラクト バージョン| 32 ビットの符号付き整数| 値 = 2| 
+| x xbl コントラクト バージョン| 32 ビット符号付き整数| 値 = 2| 
 | コンテンツの種類| string| 値 = <code>application/json</code>| 
   
 <a id="ID4E2D"></a>
@@ -88,7 +88,7 @@ GET /users/me/profile/settings/people/people?settings=GameDisplayName,GameDispla
 
  
 ##### <a name="response-body"></a>応答本文 
-応答には、 **ReadMultiSettingsResponseV2**オブジェクトです。 呼び出し元のユーザーと想定すると、1 つだけのフレンドがあります。
+応答は、 **ReadMultiSettingsResponseV2**オブジェクトです。 呼び出し元のユーザーと仮定すると、1 つだけのフレンドがあります。
   
 
 ```cpp
@@ -131,7 +131,7 @@ GET /users/me/profile/settings/people/people?settings=GameDisplayName,GameDispla
  
 ##### <a name="parent"></a>Parent 
 
-[/users/{userId}/プロファイルの設定/ユーザー/{userList} かどうか設定 = {設定}。](uri-usersuseridprofilesettingspeopleuserlist.md)
+[/users/{userId}/プロファイルの設定/ユーザー/{userList}? 設定 = {設定}](uri-usersuseridprofilesettingspeopleuserlist.md)
 
  [プロファイル (JSON)](../../json/json-profile.md)
 

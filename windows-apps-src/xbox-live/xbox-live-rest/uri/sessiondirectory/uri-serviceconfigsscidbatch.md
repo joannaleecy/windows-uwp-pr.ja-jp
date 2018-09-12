@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/バッチ処理
+title: /serviceconfigs/{scid} バッチ/
 assetID: eb1b510f-d92e-ae9b-a3e6-0edf58b4f075
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidbatch.html
 author: KevinAsgari
-description: " /serviceconfigs/バッチ処理"
+description: " /serviceconfigs/{scid} バッチ/"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a48bf9c30370238adc83376a524e9c61abb4af13
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881843"
+ms.locfileid: "3932940"
 ---
-# <a name="serviceconfigsscidbatch"></a>/serviceconfigs/バッチ処理
+# <a name="serviceconfigsscidbatch"></a>/serviceconfigs/{scid} バッチ/
 サービス構成の識別子レベルでバッチ クエリの POST 操作をサポートしています。
 
 > [!IMPORTANT]
-> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 104/105 または後ですべての要求します。
+> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
 
 <a id="ID4ER"></a>
 
@@ -43,7 +43,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST (/serviceconfigs/バッチ処理)](uri-serviceconfigsscidbatchpost.md)
+[POST (/serviceconfigs/{scid} バッチ/)](uri-serviceconfigsscidbatchpost.md)
 
 &nbsp;&nbsp;サービス構成の複数の Xbox ユーザー Id には、バッチ クエリを作成します。
 

@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}
+title: /serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}
 assetID: 55ce6459-1714-49bc-6231-b547ddf04143
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.html
 author: KevinAsgari
-description: " /serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}"
+description: " /serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 43054e909ce6e4a3d472a6a6480cd0812afa5ad4
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "3881545"
+ms.locfileid: "3931928"
 ---
-# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>/serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}
-作成してセッションを取得する PUT を取得する操作をサポートしています。
+# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}
+作成してセッションを取得する PUT と取得の操作をサポートしています。
 <a id="ID4EO"></a>
 
 
@@ -41,11 +41,11 @@ sessiondirectory.xboxlive.com
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(/Serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション}) を取得します。](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameget.md)
+[(/Serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}) を取得します。](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameget.md)
 
 &nbsp;&nbsp;セッション オブジェクトを取得します。
 
-[PUT (/serviceconfigs/sessiontemplates/{sessionTemplateName}/sessions/{セッション})](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameput.md)
+[PUT (/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション})](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameput.md)
 
 &nbsp;&nbsp;作成、更新、またはセッションに参加します。
 
