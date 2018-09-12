@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 595b4ab47e3c6c833a4b8f2e692a0cc0c8ffcaa4
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3847126"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3930768"
 ---
-# <a name="create-random-numbers"></a><span data-ttu-id="b0d9e-104">乱数の生成</span><span class="sxs-lookup"><span data-stu-id="b0d9e-104">Create random numbers</span></span>
+# <a name="create-random-numbers"></a><span data-ttu-id="d47cf-104">乱数の生成</span><span class="sxs-lookup"><span data-stu-id="d47cf-104">Create random numbers</span></span>
 
 
 
-<span data-ttu-id="b0d9e-105">次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの暗号化に使用する乱数やバッファーを作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="b0d9e-105">This example code shows how to create a random number or buffer for use in cryptography in an Universal Windows Platform (UWP) app.</span></span>
+<span data-ttu-id="d47cf-105">次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの暗号化に使用する乱数やバッファーを作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="d47cf-105">This example code shows how to create a random number or buffer for use in cryptography in an Universal Windows Platform (UWP) app.</span></span>
 
 ```cs
 public string GenerateRandomData()

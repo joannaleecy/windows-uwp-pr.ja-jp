@@ -10,33 +10,33 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、COM、コンポーネント、クラス、インターフェイス
 ms.localizationpriority: medium
 ms.openlocfilehash: 598d0e7b4a374c18ece48f52947cec64a0f79dab
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848296"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935649"
 ---
-# <a name="consume-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a><span data-ttu-id="bf8d8-104">COM コンポーネントを使用[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)</span><span class="sxs-lookup"><span data-stu-id="bf8d8-104">Consume COM components with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)</span></span>
+# <a name="consume-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a><span data-ttu-id="9a89e-104">COM コンポーネントを使用[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)</span><span class="sxs-lookup"><span data-stu-id="9a89e-104">Consume COM components with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)</span></span>
 
-<span data-ttu-id="bf8d8-105">C++ の機能を使用することができます/WinRT ライブラリは、DirectX Api の高パフォーマンスの 2-d および 3-D グラフィックスなどの COM コンポーネントを使用します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-105">You can use the facilities of the C++/WinRT library to consume COM components, such as the high-performance 2-D and 3-D graphics of the DirectX APIs.</span></span> <span data-ttu-id="bf8d8-106">C++/cli/winrt はパフォーマンスを損なうことがなく、DirectX を使用する最も簡単な方法です。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-106">C++/WinRT is the simplest way to use DirectX without compromising performance.</span></span> <span data-ttu-id="bf8d8-107">このトピックでは、Direct2D のコード例を使用して、C++ を使用する方法を示して/WinRT COM クラスとインターフェイスを利用します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-107">This topic uses a Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces.</span></span> <span data-ttu-id="bf8d8-108">もちろん、内で、同じ、C++ の COM と Windows ランタイムのプログラミングを混在させることはできます/WinRT プロジェクト。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-108">You can, of course, mix COM and Windows Runtime programming within the same C++/WinRT project.</span></span>
+<span data-ttu-id="9a89e-105">C++ の機能を使用することができます/WinRT ライブラリは、DirectX Api の高パフォーマンスの 2-d および 3-D グラフィックスなどの COM コンポーネントを使用します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-105">You can use the facilities of the C++/WinRT library to consume COM components, such as the high-performance 2-D and 3-D graphics of the DirectX APIs.</span></span> <span data-ttu-id="9a89e-106">C++/cli/winrt はパフォーマンスを損なうことがなく、DirectX を使用する最も簡単な方法です。</span><span class="sxs-lookup"><span data-stu-id="9a89e-106">C++/WinRT is the simplest way to use DirectX without compromising performance.</span></span> <span data-ttu-id="9a89e-107">このトピックでは、Direct2D のコード例を使用して、C++ を使用する方法を示して/WinRT COM クラスとインターフェイスを利用します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-107">This topic uses a Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces.</span></span> <span data-ttu-id="9a89e-108">内で、同じ C + COM と Windows ランタイムのプログラミングを混在させることが、もちろん、/WinRT プロジェクトです。</span><span class="sxs-lookup"><span data-stu-id="9a89e-108">You can, of course, mix COM and Windows Runtime programming within the same C++/WinRT project.</span></span>
 
-<span data-ttu-id="bf8d8-109">このトピックの最後に、最小限の Direct2D アプリケーションの完全なソース コードの登録情報が表示されます。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-109">At the end of this topic, you'll find a full source code listing of a minimal Direct2D application.</span></span> <span data-ttu-id="bf8d8-110">そのコードからの抜粋を放したします。 これらを使って、C++ を使用して、COM コンポーネントを使用する方法を説明して/c++ のさまざまな機能を使用して WinRT/WinRT ライブラリ。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-110">We'll lift excerpts from that code and use them to illustrate how to consume COM components using C++/WinRT using various facilities of the C++/WinRT library.</span></span>
+<span data-ttu-id="9a89e-109">このトピックの最後に、最小限の Direct2D アプリケーションの完全なソース コードがわかります。</span><span class="sxs-lookup"><span data-stu-id="9a89e-109">At the end of this topic, you'll find a full source code listing of a minimal Direct2D application.</span></span> <span data-ttu-id="9a89e-110">します。 そのコードからの抜粋を放したしてそれらを使用すると、COM コンポーネントを使用して、C++ を使用する方法を示して/c++ のさまざまな機能を使用して WinRT/WinRT ライブラリ。</span><span class="sxs-lookup"><span data-stu-id="9a89e-110">We'll lift excerpts from that code and use them to illustrate how to consume COM components using C++/WinRT using various facilities of the C++/WinRT library.</span></span>
 
-## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a><span data-ttu-id="bf8d8-111">COM スマート ポインター ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))</span><span class="sxs-lookup"><span data-stu-id="bf8d8-111">COM smart pointers ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))</span></span>
+## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a><span data-ttu-id="9a89e-111">COM のスマート ポインター ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))</span><span class="sxs-lookup"><span data-stu-id="9a89e-111">COM smart pointers ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))</span></span>
 
-<span data-ttu-id="bf8d8-112">Com プログラミングするオブジェクト (にもバック グラウンドでの Windows ランタイム Api では、COM の進化したものである場合は true) ではなく、インターフェイスを直接操作します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-112">When you program with COM, you work directly with interfaces rather than with objects (that's also true behind the scenes for Windows Runtime APIs, which are an evolution of COM).</span></span> <span data-ttu-id="bf8d8-113">COM クラスで関数を呼び出す、たとえば、アクティブ化する、クラス、インターフェイスを取得して、そのインターフェイスの関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-113">To call a function on a COM class, for example, you activate the class, get an interface back, and then you call functions on that interface.</span></span> <span data-ttu-id="bf8d8-114">オブジェクトの状態にアクセスしないそのデータ メンバーに直接アクセスします。代わりに、インターフェイスのアクセサーとミューテーター関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-114">To access the state of an object, you don't access its data members directly; instead, you call accessor and mutator functions on an interface.</span></span>
+<span data-ttu-id="9a89e-112">Com プログラミングする (のバック グラウンドでの Windows ランタイム Api では、COM の進化したものである場合は true も) オブジェクトではなく、インターフェイスを直接操作します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-112">When you program with COM, you work directly with interfaces rather than with objects (that's also true behind the scenes for Windows Runtime APIs, which are an evolution of COM).</span></span> <span data-ttu-id="9a89e-113">COM クラスで関数を呼び出す、たとえば、アクティブ化するクラス、インターフェイスを取得し、そのインターフェイスの関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-113">To call a function on a COM class, for example, you activate the class, get an interface back, and then you call functions on that interface.</span></span> <span data-ttu-id="9a89e-114">オブジェクトの状態にアクセスするにしない直接アクセスする、データ メンバーです。代わりに、インターフェイスのアクセサー メソッドとミューテーター関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-114">To access the state of an object, you don't access its data members directly; instead, you call accessor and mutator functions on an interface.</span></span>
 
-<span data-ttu-id="bf8d8-115">具体的には、話のインターフェイス*ポインター*を操作します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-115">To be more specific, we're talking about interacting with interface *pointers*.</span></span> <span data-ttu-id="bf8d8-116">して、そのため c++ COM スマート ポインター入力の有無/WinRT&mdash; [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)の種類。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-116">And for that, we benefit from the existence of the COM smart pointer type in C++/WinRT&mdash;the [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) type.</span></span>
+<span data-ttu-id="9a89e-115">具体的には、インターフェイス*ポインター*を操作について説明しています。</span><span class="sxs-lookup"><span data-stu-id="9a89e-115">To be more specific, we're talking about interacting with interface *pointers*.</span></span> <span data-ttu-id="9a89e-116">C++ の COM スマート ポインター入力の有無から特典します、/WinRT&mdash; [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)型です。</span><span class="sxs-lookup"><span data-stu-id="9a89e-116">And for that, we benefit from the existence of the COM smart pointer type in C++/WinRT&mdash;the [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) type.</span></span>
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-<span data-ttu-id="bf8d8-117">上記のコードは、 [**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) COM インターフェイスへの初期化されていないスマート ポインターを宣言する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-117">The code above shows how to declare an uninitialized smart pointer to a [**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) COM interface.</span></span> <span data-ttu-id="bf8d8-118">(いないポイント インターフェイスにまったく)、実際のオブジェクトに属する**ID2D1Factory1**インターフェイスをポイントされていないために、スマート ポインターは、初期化でされていません。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-118">The smart pointer is uninitialized, so it's not yet pointing to a **ID2D1Factory1** interface belonging to any actual object (it's not pointing to an interface at all).</span></span> <span data-ttu-id="bf8d8-119">これを行う可能性があります。あり (されているスマート ポインター) を介して COM 参照カウントをポイントするインターフェイスの所有するオブジェクトの有効期間を管理して、そのインターフェイスの関数を呼び出す中にすることができます。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-119">But it has the potential to do so; and (being a smart pointer) it has the ability via COM reference counting to manage the lifetime of the owning object of the interface that it points to, and to be the medium by which you call functions on that interface.</span></span>
+<span data-ttu-id="9a89e-117">上記のコードは、 [**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) COM インターフェイスへの初期化されていないスマート ポインターを宣言する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="9a89e-117">The code above shows how to declare an uninitialized smart pointer to a [**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) COM interface.</span></span> <span data-ttu-id="9a89e-118">(いないポイント インターフェイスにまったく)、実際のオブジェクトに属する**ID2D1Factory1**インターフェイスをポイントされていないため、スマート ポインターは初期化されていません。</span><span class="sxs-lookup"><span data-stu-id="9a89e-118">The smart pointer is uninitialized, so it's not yet pointing to a **ID2D1Factory1** interface belonging to any actual object (it's not pointing to an interface at all).</span></span> <span data-ttu-id="9a89e-119">これを行う可能性があります。あり (のスマート ポインターにされている) を介して COM 参照カウントを指すインターフェイスの所有するオブジェクトの有効期間を管理して、そのインターフェイスの関数を呼び出す中にすることができます。</span><span class="sxs-lookup"><span data-stu-id="9a89e-119">But it has the potential to do so; and (being a smart pointer) it has the ability via COM reference counting to manage the lifetime of the owning object of the interface that it points to, and to be the medium by which you call functions on that interface.</span></span>
 
-## <a name="com-functions-that-return-an-interface-pointer-as-void"></a><span data-ttu-id="bf8d8-120">としてインターフェイス ポインターを返す COM 関数\*\*void\ \* \ \*\*\*</span><span class="sxs-lookup"><span data-stu-id="bf8d8-120">COM functions that return an interface pointer as **void\*\***</span></span>
+## <a name="com-functions-that-return-an-interface-pointer-as-void"></a><span data-ttu-id="9a89e-120">としてインターフェイス ポインターを返す COM 関数\*\*void\ \* \ \*\*\*</span><span class="sxs-lookup"><span data-stu-id="9a89e-120">COM functions that return an interface pointer as **void\*\***</span></span>
 
-<span data-ttu-id="bf8d8-121">初期化されていないのスマート ポインターの基になる生のポインターを記述する[**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)関数を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-121">You can call the [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) function to write to an uninitialized smart pointer's underlying raw pointer.</span></span>
+<span data-ttu-id="9a89e-121">初期化されていないのスマート ポインターの生のポインターを基になるに書き込む[**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)関数を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="9a89e-121">You can call the [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) function to write to an uninitialized smart pointer's underlying raw pointer.</span></span>
 
 ```cppwinrt
 D2D1CreateFactory(
@@ -47,11 +47,11 @@ D2D1CreateFactory(
 );
 ```
 
-<span data-ttu-id="bf8d8-122">上記のコードは、最後のパラメーターを介して**ID2D1Factory1**インターフェイス ポインターを返す[**D2D1CreateFactory**](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory)関数を呼び出し、 \*\*void\ \* \ \*\*\* の種類。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-122">The code above calls the [**D2D1CreateFactory**](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory) function, which returns an **ID2D1Factory1** interface pointer via its last parameter, which has **void\*\*** type.</span></span> <span data-ttu-id="bf8d8-123">COM 関数の多くを返す、 \*\*void\ \* \ \*\*\* します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-123">Many COM functions return a **void\*\***.</span></span> <span data-ttu-id="bf8d8-124">このような関数に示すように[**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)を使用します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-124">For such functions, use [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) as shown.</span></span>
+<span data-ttu-id="9a89e-122">上記のコードは、最後のパラメーターを介して**ID2D1Factory1**インターフェイス ポインターを返す[**D2D1CreateFactory**](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory)関数を呼び出し、 \*\*void\ \* \ \*\*\* の種類。</span><span class="sxs-lookup"><span data-stu-id="9a89e-122">The code above calls the [**D2D1CreateFactory**](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory) function, which returns an **ID2D1Factory1** interface pointer via its last parameter, which has **void\*\*** type.</span></span> <span data-ttu-id="9a89e-123">COM 関数の多くを返す、 \*\*void\ \* \ \*\*\* します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-123">Many COM functions return a **void\*\***.</span></span> <span data-ttu-id="9a89e-124">このような関数では、示す[**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)を使用します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-124">For such functions, use [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) as shown.</span></span>
 
-## <a name="com-functions-that-return-a-specific-interface-pointer"></a><span data-ttu-id="bf8d8-125">COM を特定のインターフェイス ポインターを返す関数</span><span class="sxs-lookup"><span data-stu-id="bf8d8-125">COM functions that return a specific interface pointer</span></span>
+## <a name="com-functions-that-return-a-specific-interface-pointer"></a><span data-ttu-id="9a89e-125">特定のインターフェイス ポインターを返す COM 関数</span><span class="sxs-lookup"><span data-stu-id="9a89e-125">COM functions that return a specific interface pointer</span></span>
 
-<span data-ttu-id="bf8d8-126">[**D3D11CreateDevice**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)関数がその antepenultimate パラメーターを介して、 [**ID3D11Device**](https://msdn.microsoft.com/library/Hh404596)インターフェイス ポインターを返します。 \*\*ID3D11Device\ \* \ \*\*\* の種類。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-126">The [**D3D11CreateDevice**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) function returns an [**ID3D11Device**](https://msdn.microsoft.com/library/Hh404596) interface pointer via its antepenultimate parameter, which has **ID3D11Device\*\*** type.</span></span> <span data-ttu-id="bf8d8-127">そのような特定のインターフェイス ポインターを返す関数、 [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)を使用します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-127">For functions that return a specific interface pointer like that, use [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function).</span></span>
+<span data-ttu-id="9a89e-126">[**D3D11CreateDevice**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)関数がその antepenultimate パラメーターを介して[**ID3D11Device**](https://msdn.microsoft.com/library/Hh404596)インターフェイス ポインターを返します。 \*\*ID3D11Device\ \* \ \*\*\* の種類。</span><span class="sxs-lookup"><span data-stu-id="9a89e-126">The [**D3D11CreateDevice**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) function returns an [**ID3D11Device**](https://msdn.microsoft.com/library/Hh404596) interface pointer via its antepenultimate parameter, which has **ID3D11Device\*\*** type.</span></span> <span data-ttu-id="9a89e-127">そのような特定のインターフェイス ポインターを返す関数では、 [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)を使用します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-127">For functions that return a specific interface pointer like that, use [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function).</span></span>
 
 ```cppwinrt
 winrt::com_ptr<ID3D11Device> device;
@@ -61,7 +61,7 @@ D3D11CreateDevice(
     ...);
 ```
 
-<span data-ttu-id="bf8d8-128">前にこのセクションのコード例では、直接**D2D1CreateFactory**関数を呼び出す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-128">The code example in the section before this one shows how to call the raw **D2D1CreateFactory** function.</span></span> <span data-ttu-id="bf8d8-129">ただし、実際には、このトピックのコード例を呼び出すと**D2D1CreateFactory**、生の API をラップするヘルパー関数テンプレートを使って、そのため、コード例実際にでは[**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-129">But in fact, when the code example for this topic calls **D2D1CreateFactory**, it uses a helper function template that wraps the raw API, and so the code example actually uses [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function).</span></span>
+<span data-ttu-id="9a89e-128">前に、のセクションのコード例では、生の**D2D1CreateFactory**関数を呼び出す方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-128">The code example in the section before this one shows how to call the raw **D2D1CreateFactory** function.</span></span> <span data-ttu-id="9a89e-129">実際には、このトピックのコード例では、 **D2D1CreateFactory**を呼び出して、生の API をラップするヘルパー関数テンプレートを使用し、ためのコード例は、 [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)実際を使用します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-129">But in fact, when the code example for this topic calls **D2D1CreateFactory**, it uses a helper function template that wraps the raw API, and so the code example actually uses [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function).</span></span>
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> factory;
@@ -71,9 +71,9 @@ D2D1CreateFactory(
     factory.put());
 ```
 
-## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a><span data-ttu-id="bf8d8-130">としてインターフェイス ポインターを返す COM 関数\*\*IUnknown\ \* \ \*\*\*</span><span class="sxs-lookup"><span data-stu-id="bf8d8-130">COM functions that return an interface pointer as **IUnknown\*\***</span></span>
+## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a><span data-ttu-id="9a89e-130">としてインターフェイス ポインターを返す COM 関数\*\*IUnknown\ \* \ \*\*\*</span><span class="sxs-lookup"><span data-stu-id="9a89e-130">COM functions that return an interface pointer as **IUnknown\*\***</span></span>
 
-<span data-ttu-id="bf8d8-131">[**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)関数が、最後のパラメーターを介して、DirectWrite ファクトリ インターフェイス ポインターを返します。 \*\*IUnknown\ \* \ \*\*\* の種類。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-131">The [**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) function returns a DirectWrite factory interface pointer via its last parameter, which has **IUnknown\*\*** type.</span></span> <span data-ttu-id="bf8d8-132">このような関数は、使用[**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)が解釈をキャストする\*\*IUnknown\ \* \ \*\*\* します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-132">For such a function, use [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function), but reinterpret cast that to **IUnknown\*\***.</span></span>
+<span data-ttu-id="9a89e-131">[**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)関数が、最後のパラメーターを介して DirectWrite ファクトリのインターフェイス ポインターを返します。 \*\*IUnknown\ \* \ \*\*\* の種類。</span><span class="sxs-lookup"><span data-stu-id="9a89e-131">The [**DWriteCreateFactory**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) function returns a DirectWrite factory interface pointer via its last parameter, which has **IUnknown\*\*** type.</span></span> <span data-ttu-id="9a89e-132">このような関数を使用[**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)が解釈にキャストする\*\*IUnknown\ \* \ \*\*\* します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-132">For such a function, use [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function), but reinterpret cast that to **IUnknown\*\***.</span></span>
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -82,10 +82,10 @@ DWriteCreateFactory(
     reinterpret_cast<IUnknown**>(dwriteFactory2.put()));
 ```
 
-## <a name="re-seat-a-winrtcomptr"></a><span data-ttu-id="bf8d8-133">**Winrt::com_ptr**を再シートします。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-133">Re-seat a **winrt::com_ptr**</span></span>
+## <a name="re-seat-a-winrtcomptr"></a><span data-ttu-id="9a89e-133">**Winrt::com_ptr**を再シートします。</span><span class="sxs-lookup"><span data-stu-id="9a89e-133">Re-seat a **winrt::com_ptr**</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="bf8d8-134">既に取り付けられている[**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)があるかどうか (その内部の生のポインターは、ターゲットを既に持って) し、再シートさまざまなオブジェクトの場合は、ポイントされるようにする、まずを割り当てる必要があります`nullptr`を&mdash;に次のコード例で示すようにします。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-134">If you have a [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) that's already seated (its internal raw pointer already has a target) and you want to re-seat it to point to a different object, then you first need to assign `nullptr` to it&mdash;as shown in the code example below.</span></span> <span data-ttu-id="bf8d8-135">ない場合は、し、既に取り付けられている**com_ptr**描画問題に (または呼び出すときに[**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function))、注目によって、内部のポインターが null でないことをアサートします。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-135">If you don't, then an already-seated **com_ptr** will draw the issue to your attention (when you call [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) or [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) by asserting that its internal pointer is not null.</span></span>
+> <span data-ttu-id="9a89e-134">既に取り付けられている[**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)があるかどうか (その内部の生のポインターが既にターゲット) し、再シートを別のオブジェクトを指す場合、まずを割り当てる必要があります`nullptr`に&mdash;次のコード例に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="9a89e-134">If you have a [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) that's already seated (its internal raw pointer already has a target) and you want to re-seat it to point to a different object, then you first need to assign `nullptr` to it&mdash;as shown in the code example below.</span></span> <span data-ttu-id="9a89e-135">ない場合は、し、既に取り付けられている**com_ptr**描画問題 ( [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)または[**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)呼び出す) と、注意をによって、内部のポインターが null でないことをアサートします。</span><span class="sxs-lookup"><span data-stu-id="9a89e-135">If you don't, then an already-seated **com_ptr** will draw the issue to your attention (when you call [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) or [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)) by asserting that its internal pointer is not null.</span></span>
 
 ```cppwinrt
 winrt::com_ptr<ID2D1SolidColorBrush> brush;
@@ -99,9 +99,9 @@ target->CreateSolidColorBrush(
     brush.put()));
 ```
 
-## <a name="handle-hresult-error-codes"></a><span data-ttu-id="bf8d8-136">HRESULT エラー コードを処理します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-136">Handle HRESULT error codes</span></span>
+## <a name="handle-hresult-error-codes"></a><span data-ttu-id="9a89e-136">HRESULT エラー コードを処理します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-136">Handle HRESULT error codes</span></span>
 
-<span data-ttu-id="bf8d8-137">COM 関数から返される HRESULT の値を確認し、エラー コードを表す場合は、例外をスロー、 [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-137">To check the value of a HRESULT returned from a COM function, and throw an exception in the event that it represents an error code, call [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult).</span></span>
+<span data-ttu-id="9a89e-137">COM 関数から返された HRESULT の値をチェックして、エラー コードを表す場合は、例外をスロー、 [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-137">To check the value of a HRESULT returned from a COM function, and throw an exception in the event that it represents an error code, call [**winrt::check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult).</span></span>
 
 ```cppwinrt
 winrt::check_hresult(D2D1CreateFactory(
@@ -111,9 +111,9 @@ winrt::check_hresult(D2D1CreateFactory(
     factory.put_void()));
 ```
 
-## <a name="com-functions-that-take-a-specific-interface-pointer"></a><span data-ttu-id="bf8d8-138">特定のインターフェイス ポインターを受け取る COM 関数</span><span class="sxs-lookup"><span data-stu-id="bf8d8-138">COM functions that take a specific interface pointer</span></span>
+## <a name="com-functions-that-take-a-specific-interface-pointer"></a><span data-ttu-id="9a89e-138">特定のインターフェイス ポインターを受け取る COM 関数</span><span class="sxs-lookup"><span data-stu-id="9a89e-138">COM functions that take a specific interface pointer</span></span>
 
-<span data-ttu-id="bf8d8-139">同じ種類の特定のインターフェイス ポインターを受け取る関数に渡すと、 **com_ptr**に[**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#comptrget-function)関数を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-139">You can call the [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#comptrget-function) function to pass your **com_ptr** to a function that takes a specific interface pointer of the same type.</span></span>
+<span data-ttu-id="9a89e-139">同じ種類の特定のインターフェイス ポインターを受け取る関数に渡すと、 **com_ptr**に[**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#comptrget-function)関数を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="9a89e-139">You can call the [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#comptrget-function) function to pass your **com_ptr** to a function that takes a specific interface pointer of the same type.</span></span>
 
 ```cppwinrt
 ... ExampleFunction(
@@ -126,9 +126,9 @@ winrt::check_hresult(D2D1CreateFactory(
 }
 ```
 
-## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a><span data-ttu-id="bf8d8-140">**IUnknown**インターフェイス ポインターを受け取る COM 関数</span><span class="sxs-lookup"><span data-stu-id="bf8d8-140">COM functions that take an **IUnknown** interface pointer</span></span>
+## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a><span data-ttu-id="9a89e-140">**IUnknown**インターフェイス ポインターを受け取る COM 関数</span><span class="sxs-lookup"><span data-stu-id="9a89e-140">COM functions that take an **IUnknown** interface pointer</span></span>
 
-<span data-ttu-id="bf8d8-141">**IUnknown**インターフェイス ポインターを受け取る関数に渡すと、 **com_ptr**を[**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function)自由関数を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-141">You can call the [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) free function to pass your **com_ptr** to a function that takes an **IUnknown** interface pointer.</span></span>
+<span data-ttu-id="9a89e-141">**IUnknown**インターフェイス ポインターを受け取る関数に渡すと、 **com_ptr**に[**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function)自由関数を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="9a89e-141">You can call the [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function) free function to pass your **com_ptr** to a function that takes an **IUnknown** interface pointer.</span></span>
 
 ```cppwinrt
 winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
@@ -137,9 +137,9 @@ winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
     ...));
 ```
 
-## <a name="passing-and-returning-com-smart-pointers"></a><span data-ttu-id="bf8d8-142">スマート ポインターを渡すと、COM を返す</span><span class="sxs-lookup"><span data-stu-id="bf8d8-142">Passing and returning COM smart pointers</span></span>
+## <a name="passing-and-returning-com-smart-pointers"></a><span data-ttu-id="9a89e-142">スマート ポインターを渡すことと、COM を返す</span><span class="sxs-lookup"><span data-stu-id="9a89e-142">Passing and returning COM smart pointers</span></span>
 
-<span data-ttu-id="bf8d8-143">**Winrt::com_ptr**の形式で COM スマート ポインターを受ける関数な定数の参照によってや参照によって。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-143">A function taking a COM smart pointer in the form of a **winrt::com_ptr** should do so by constant reference, or by reference.</span></span>
+<span data-ttu-id="9a89e-143">**Winrt::com_ptr**の形式で COM スマート ポインターを取り込む関数な定数参照、または参照。</span><span class="sxs-lookup"><span data-stu-id="9a89e-143">A function taking a COM smart pointer in the form of a **winrt::com_ptr** should do so by constant reference, or by reference.</span></span>
 
 ```cppwinrt
 ... GetDxgiFactory(winrt::com_ptr<ID3D11Device> const& device) ...
@@ -147,15 +147,15 @@ winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
 ... CreateDevice(..., winrt::com_ptr<ID3D11Device>& device) ...
 ```
 
-<span data-ttu-id="bf8d8-144">**Winrt::com_ptr**を返す関数を値で行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-144">A function that returns a **winrt::com_ptr** should do so by value.</span></span>
+<span data-ttu-id="9a89e-144">**Winrt::com_ptr**を返す関数で行ってください値。</span><span class="sxs-lookup"><span data-stu-id="9a89e-144">A function that returns a **winrt::com_ptr** should do so by value.</span></span>
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> CreateFactory() ...
 ```
 
-## <a name="query-a-com-smart-pointer-for-a-different-interface"></a><span data-ttu-id="bf8d8-145">COM のスマート ポインターに異なるインターフェイスの照会します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-145">Query a COM smart pointer for a different interface</span></span>
+## <a name="query-a-com-smart-pointer-for-a-different-interface"></a><span data-ttu-id="9a89e-145">COM のスマート ポインターに異なるインターフェイスの照会します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-145">Query a COM smart pointer for a different interface</span></span>
 
-<span data-ttu-id="bf8d8-146">[**Com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function)関数を使用すると、さまざまなインターフェイスの COM スマート ポインターを照会するのにことができます。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-146">You can use the [**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function) function to query a COM smart pointer for a different interface.</span></span> <span data-ttu-id="bf8d8-147">関数は、クエリが成功しない場合は、例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-147">The function throws an exception if the query doesn't succeed.</span></span>
+<span data-ttu-id="9a89e-146">さまざまなインターフェイスの COM スマート ポインターを照会するのに[**com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function)関数を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="9a89e-146">You can use the [**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function) function to query a COM smart pointer for a different interface.</span></span> <span data-ttu-id="9a89e-147">関数は、クエリが成功しない場合は、例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="9a89e-147">The function throws an exception if the query doesn't succeed.</span></span>
 
 ```cppwinrt
 void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
@@ -166,11 +166,11 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 }
 ```
 
-<span data-ttu-id="bf8d8-148">または、 [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#comptrtryas-function)、に対してチェックできる数値を返します。 これを使って`nullptr`クエリが成功したかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-148">Alternatively, use [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#comptrtryas-function), which returns a value that you can check against `nullptr` to see whether the query succeeded.</span></span>
+<span data-ttu-id="9a89e-148">また、 [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#comptrtryas-function)、に基づいてチェックする数値を返します。 これを使用して`nullptr`クエリが成功したかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-148">Alternatively, use [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#comptrtryas-function), which returns a value that you can check against `nullptr` to see whether the query succeeded.</span></span>
 
-## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a><span data-ttu-id="bf8d8-149">Direct2D アプリケーションを最小限の完全なソース コードの一覧</span><span class="sxs-lookup"><span data-stu-id="bf8d8-149">Full source code listing of a minimal Direct2D application</span></span>
+## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a><span data-ttu-id="9a89e-149">Direct2D アプリケーションを最小限に抑えながらの完全なソース コードの一覧</span><span class="sxs-lookup"><span data-stu-id="9a89e-149">Full source code listing of a minimal Direct2D application</span></span>
 
-<span data-ttu-id="bf8d8-150">ビルドして Visual Studio で、このソース コードのサンプルを最初を実行する場合は、作成、新しい**コア アプリ (、C++/WinRT)** します。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-150">If you want to build and run this source code example then first, in Visual Studio, create a new **Core App (C++/WinRT)**.</span></span> `Direct2D` <span data-ttu-id="bf8d8-151">プロジェクトの適切な名前はどのようなという名前ことができます。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-151">is a reasonable name for the project, but you can name it anything you like.</span></span> <span data-ttu-id="bf8d8-152">開いている`App.cpp`、その内容全体を削除し、以下のリストを貼り付けます。</span><span class="sxs-lookup"><span data-stu-id="bf8d8-152">Open `App.cpp`, delete its entire contents, and paste in the listing below.</span></span>
+<span data-ttu-id="9a89e-150">ビルドして Visual Studio でソース コード例、最初に、このを実行する場合は、作成、新しい**コア アプリ (、C++/WinRT)** します。</span><span class="sxs-lookup"><span data-stu-id="9a89e-150">If you want to build and run this source code example then first, in Visual Studio, create a new **Core App (C++/WinRT)**.</span></span> `Direct2D` <span data-ttu-id="9a89e-151">が、プロジェクトの適切な名前がどのようなという名前ことができます。</span><span class="sxs-lookup"><span data-stu-id="9a89e-151">is a reasonable name for the project, but you can name it anything you like.</span></span> <span data-ttu-id="9a89e-152">開いている`App.cpp`、その内容全体を削除し、以下のリストを貼り付けます。</span><span class="sxs-lookup"><span data-stu-id="9a89e-152">Open `App.cpp`, delete its entire contents, and paste in the listing below.</span></span>
 
 ```cppwinrt
 #include "pch.h"
@@ -476,7 +476,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 }
 ```
 
-## <a name="important-apis"></a><span data-ttu-id="bf8d8-153">重要な API</span><span class="sxs-lookup"><span data-stu-id="bf8d8-153">Important APIs</span></span>
-* [<span data-ttu-id="bf8d8-154">winrt::check_hresult 関数</span><span class="sxs-lookup"><span data-stu-id="bf8d8-154">winrt::check_hresult function</span></span>](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
-* [<span data-ttu-id="bf8d8-155">winrt::com_ptr 構造体テンプレート</span><span class="sxs-lookup"><span data-stu-id="bf8d8-155">winrt::com_ptr struct template</span></span>](/uwp/cpp-ref-for-winrt/com-ptr)
-* [<span data-ttu-id="bf8d8-156">winrt::Windows::Foundation::IUnknown 構造体</span><span class="sxs-lookup"><span data-stu-id="bf8d8-156">winrt::Windows::Foundation::IUnknown struct</span></span>](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+## <a name="important-apis"></a><span data-ttu-id="9a89e-153">重要な API</span><span class="sxs-lookup"><span data-stu-id="9a89e-153">Important APIs</span></span>
+* [<span data-ttu-id="9a89e-154">winrt::check_hresult 関数</span><span class="sxs-lookup"><span data-stu-id="9a89e-154">winrt::check_hresult function</span></span>](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
+* [<span data-ttu-id="9a89e-155">winrt::com_ptr 構造体テンプレート</span><span class="sxs-lookup"><span data-stu-id="9a89e-155">winrt::com_ptr struct template</span></span>](/uwp/cpp-ref-for-winrt/com-ptr)
+* [<span data-ttu-id="9a89e-156">winrt::Windows::Foundation::IUnknown 構造体</span><span class="sxs-lookup"><span data-stu-id="9a89e-156">winrt::Windows::Foundation::IUnknown struct</span></span>](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
