@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 341baca193d9ac8bf3a2599cd9ad77312729a89d
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933320"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961163"
 ---
 # <a name="usersxuidxuidlistspinslistnameremoveitems"></a>ユーザー/xuid (xuid) リスト/ピン/{リスト}//RemoveItems
 一覧から項目を削除します。 これらの Uri のドメインが`eplists.xboxlive.com`します。
@@ -31,7 +31,7 @@ ms.locfileid: "3933320"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | XUID| string| ユーザーの XUID です。| 
-| リスト| string| 操作の一覧の名前です。| 
+| リスト| string| 操作をするリストの名前。| 
   
 <a id="ID4E5B"></a>
 
@@ -44,7 +44,7 @@ ms.locfileid: "3933320"
 
 [POST](uri-usersxuidlistspinslistnameremoveitemspost.md)
 
-&nbsp;&nbsp;ItemId によって、一覧から項目を削除します。
+&nbsp;&nbsp;ItemId によって一覧から項目を削除します。
  
 <a id="ID4ELC"></a>
 
@@ -56,6 +56,6 @@ ms.locfileid: "3933320"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) の参照](../atoc-xboxlivews-reference-uris.md)
+[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

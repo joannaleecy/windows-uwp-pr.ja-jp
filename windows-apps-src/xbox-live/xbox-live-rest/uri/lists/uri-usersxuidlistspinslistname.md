@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 052a83f47dc2d5b692c811850e41381c4745815c
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3934198"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961853"
 ---
 # <a name="usersxuidxuidlistspinslistname"></a>ユーザー/xuid (xuid)//ピン/{リスト} の一覧を示します
 リストの項目にアクセスします。 これらの Uri のドメインが`eplists.xboxlive.com`します。

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 13b96b0d2f1f674533dd2c070bd1a10884bb7370
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928083"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961405"
 ---
 # <a name="get-usersowneridscidsscidclipsgameclipid"></a>(/Users/{ownerId} {scid}/scids//clips/{gameClipId}) を取得します。
 すべての Id を見つけることがわかっている場合は、システムから 1 つのゲーム クリップを取得します。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`対象の URI の機能に応じて、します。

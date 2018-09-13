@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム,
 ms.localizationpriority: medium
 ms.openlocfilehash: 50d747128dcd85a16c5250997e9431b279203ae0
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936202"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962161"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI フラット C レイヤーの非同期呼び出しの呼び出しパターン
 
@@ -67,7 +67,7 @@ typedef struct AsyncBlock
 * *context* - データをコールバック関数に渡すことができるようにします。
 * *queue* - **AsyncQueue** を指定するハンドルである async_queue_handle_t。 これが設定されていない場合、既定のキューが使用されます。
 
-各非同期 API を呼び出すのヒープで新しい AsyncBlock を作成する必要があります。  AsyncBlock はまで、AsyncBlock の完了コールバックが呼び出され、削除、live する必要があります。
+各非同期 API を呼び出すのヒープで新しい AsyncBlock を作成する必要があります。  まで、AsyncBlock の完了コールバックが呼び出され、削除し、AsyncBlock はライブする必要があります。
 
 > [!IMPORTANT]
 > **AsyncBlock** は、**非同期タスク**が完了するまでメモリ内に存在している必要があります。 動的に割り当てられる場合、AsyncBlock の**完了コールバック**内で削除できます。
@@ -150,7 +150,7 @@ STDAPI CreateSharedAsyncQueue(
 > この ID を持つ、ディスパッチ モードのキューが既にある場合は、そのキューが参照されます。  それ以外の場合は、新しいキューが作成されます。
 
 **AsyncQueue** を作成したら、単にそれを **AsyncBlock** に追加し、作業と完了関数のスレッド処理を制御します。
-**AsyncQueue**を使用してが完了したら、通常、ゲームが終了すると、閉じることができますが**closeasyncqueue**:
+**AsyncQueue**を使用してが完了したら、通常、ゲームを終了すると、閉じることができますが**CloseAsyncQueue**と。
 
 ```cpp
 STDAPI_(void) CloseAsyncQueue(
@@ -239,7 +239,7 @@ void CALLBACK HandleAsyncQueueCallback(
 }
 ```
 
-バック グラウンド スレッドでは、このセマフォをスリープ解除し、 **DispatchAsyncQueue**を呼び出すをリッスンすることができます。
+バック グラウンド スレッドでをスリープ解除し、 **DispatchAsyncQueue**を呼び出すには、このセマフォをリッスンすることができます。
 
 ```cpp
 DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
@@ -275,7 +275,7 @@ DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
 }
 ```
 
-お勧め Win32 セマフォ オブジェクトを使用して使用することを実装します。  代わりに実装する場合、Win32 イベント オブジェクトを使用することを確認する必要があります忘れないコードで、イベントなど。
+お勧め Win32 セマフォ オブジェクトを使用して実装を使用することをお勧めします。  代わりに実装する場合、Win32 イベント オブジェクトを使用することを確認する必要があります忘れないコードで、イベントなど。
 
 ```cpp
     case WAIT_OBJECT_0: 

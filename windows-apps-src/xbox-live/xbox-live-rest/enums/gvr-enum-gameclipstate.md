@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9865d626fe3c07645c8cb51f9bd5fe2274bf23f3
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3935366"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964483"
 ---
 # <a name="gameclipstate-enumeration"></a>GameClipState 列挙
 GameClipState 列挙をについて説明します。 

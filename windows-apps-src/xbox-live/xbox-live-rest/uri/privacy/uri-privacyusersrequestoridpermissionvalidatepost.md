@@ -1,9 +1,9 @@
 ---
-title: POST (/users/{requestorId}/アクセス許可/検証)
+title: POST (アクセス許可が/users/{requestorId}/検証)
 assetID: 7a5ea583-ffca-5da7-a02a-535c52535928
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidatepost.html
 author: KevinAsgari
-description: " POST (/users/{requestorId}/アクセス許可/検証)"
+description: " POST (アクセス許可が/users/{requestorId}/検証)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: edffbbff7fb9cd5fc4e471a6af1f494f4a35ea57
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936140"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3960891"
 ---
-# <a name="post-usersrequestoridpermissionvalidate"></a>POST (/users/{requestorId}/アクセス許可/検証)
-一連のユーザーをターゲット ユーザーのセットを指定した操作を実行できるかどうかに関するはいまたは no 回答を取得します。
+# <a name="post-usersrequestoridpermissionvalidate"></a>POST (アクセス許可が/users/{requestorId}/検証)
+一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no に対する回答を取得します。
 
   * [注釈](#ID4EQ)
   * [URI パラメーター](#ID4ECB)
@@ -37,7 +37,7 @@ ms.locfileid: "3936140"
 
 要求本文には、ユーザーの一覧と、設定の一覧と、各ユーザーの設定/ペアの許可/ブロックの結果になります。
 
-クロス ネットワーク マルチプレイヤー シナリオ (場所プライバシー通信チェックを Xbox ユーザー ID (XUID) を持つユーザーとそうでないネットワークに接続してユーザーの間で実行する必要があります) でユーザーの種類の[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md)を参照してください。
+クロス ネットワーク マルチプレイヤー シナリオ (場所プライバシー通信チェックを Xbox ユーザー ID (XUID) のユーザーとそうでないネットワークに接続してユーザーの間で実行する必要があります) でユーザーの種類の[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md)を参照してください。
 
 <a id="ID4ECB"></a>
 
@@ -46,7 +46,7 @@ ms.locfileid: "3936140"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| requestorId| string| 必須。 アクションを実行するユーザーの識別子。 指定できる値は<code>xuid({xuid})</code>と<code>me</code>します。 これには、ログインしているユーザーがあります。 値の例:<code>xuid(0987654321)</code>します。|
+| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
 
 <a id="ID4ENB"></a>
 
@@ -102,12 +102,12 @@ ms.locfileid: "3936140"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションでステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| OK| セッションが正常に取得されます。|
-| 400| 要求が無効です。| 例: が正しく設定 Id、不適切な Uri など。|
+| 200| OK| セッションが正常に取得されました。|
+| 400| 要求が無効です。| 例: が正しく設定 Id、不適切な Uri などです。|
 | 404| URI で指定されたユーザーが存在しません。| 指定されたリソースは見つかりませんでした。|
 
 <a id="ID4EIG"></a>
@@ -119,7 +119,7 @@ ms.locfileid: "3936140"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| string| 要求の本文の MIME タイプ。 値の例: <code>application/json</code>|
 | Content-Length| string| 応答に送信されるバイト数。 値の例: 34|
-| キャッシュ コントロール| string| キャッシュ動作を指定する、サーバーからていねい要求します。 例: <code>no-cache, no-store</code>|
+| キャッシュ コントロール| string| キャッシュ動作を指定するサーバーからていねい要求します。 例: <code>no-cache, no-store</code>|
 
 <a id="ID4E5H"></a>
 
@@ -186,6 +186,6 @@ ms.locfileid: "3936140"
 
 ##### <a name="parent"></a>Parent
 
-[/users/{requestorId}/アクセス許可/検証します。](uri-privacyusersrequestoridpermissionvalidate.md)
+[アクセス許可が/users/{requestorId}/検証します。](uri-privacyusersrequestoridpermissionvalidate.md)
 
  [PermissionId 列挙](../../enums/privacy-enum-permissionid.md)

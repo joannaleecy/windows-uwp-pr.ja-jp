@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c8c8f4297bb671f8e90c233ccf98dc2cf0730ad
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3935060"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964299"
 ---
 # <a name="put-usersmegamerpic"></a>PUT (/ユーザー/me/ゲーマー アイコン)
 1080 x 1080 ゲーマー アイコンをアップロードします。 
