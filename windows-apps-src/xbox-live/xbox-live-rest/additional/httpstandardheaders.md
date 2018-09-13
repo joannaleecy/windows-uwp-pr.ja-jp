@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 31499f8d6fa41d888afd84bea64f7f9de0585b96
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3934460"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3955935"
 ---
 # <a name="standard-http-request-and-response-headers"></a>標準の HTTP 要求と応答ヘッダー
  

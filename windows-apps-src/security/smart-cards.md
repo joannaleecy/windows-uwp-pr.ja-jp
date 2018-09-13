@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: dda2b580a82c72ad2e31c771a9c76f8d770049ec
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928668"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3956694"
 ---
 # <a name="smart-cards"></a>スマート カード
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, social manager, 例
 ms.localizationpriority: medium
 ms.openlocfilehash: e20550e812cbd5d67c57381cde9c7910b20000e5
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930041"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959401"
 ---
 # <a name="programming-social-services"></a>ソーシャル サービスのプログラミング
 

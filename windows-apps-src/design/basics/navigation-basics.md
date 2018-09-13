@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929282"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958782"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
 
@@ -58,7 +58,7 @@ ms.locfileid: "3929282"
 
 ### <a name="consistency"></a>一貫性
 
-ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準的なコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、スタイルはことナビゲーション予測可能な直感的なユーザー向け。
+ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準のコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、およびスタイルができるナビゲーション予測可能な直感的なユーザー向け。
 
 ![ページ コンポーネントのイメージ](images/nav/page-components.svg)
 
@@ -198,7 +198,7 @@ ms.locfileid: "3929282"
 
 :::row:::
     :::column:::
-        ![navview 画像](images/nav/thumbnail-navview.svg)
+        ![navview イメージ](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span =「2」:::[**左側のナビゲーション**](../controls-and-patterns/navigationview.md)
 

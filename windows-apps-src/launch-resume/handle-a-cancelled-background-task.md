@@ -8,18 +8,18 @@ ms.date: 07/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, バック グラウンド タスク
+keywords: windows 10、uwp、タスクをバック グラウンドします。
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930446"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959502"
 ---
 # <a name="handle-a-cancelled-background-task"></a>取り消されたバックグラウンド タスクの処理
 
@@ -31,7 +31,7 @@ ms.locfileid: "3930446"
 
 取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリに取り消しを報告するバックグラウンド タスクの作成方法について説明します。
 
-このトピックでは、既にバック グラウンド タスクのエントリ ポイントとして使われる**実行**メソッドも含めて、バック グラウンド タスク クラスを作成するいると想定しています。 バックグラウンド タスクの作成方法の概要については、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」または「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
+このトピックでは、既にバック グラウンド タスクのエントリ ポイントとして使用される**実行**メソッドも含めて、バック グラウンド タスク クラスを作成するいると想定します。 バックグラウンド タスクの作成方法の概要については、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」または「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
 このトピックは、インプロセス バックグラウンド タスクにも適用されます。 ただし、 **Run**メソッドではなく**OnBackgroundActivated**。 インプロセス バックグラウンド タスクでは、バックグラウンド タスクがフォアグラウンド アプリと同じプロセスで実行されているため、取り消しを通知するために固定ストレージを使用する必要はありません。アプリの状態を使用して、取り消しを伝えることができます。
 
@@ -40,7 +40,7 @@ ms.locfileid: "3930446"
 取り消しイベントを処理するメソッドを作ります。
 
 > [!NOTE]
-> デスクトップ以外のすべてのデバイス ファミリでは、デバイスのメモリが少なくなった場合、バックグラウンド タスクが終了することがあります。 場合は、メモリ不足の例外はされないか、アプリが処理されない、後に警告や OnCanceled イベントを発生させることがなく、バック グラウンド タスクが終了されます。 こうすることで、フォアグラウンドのアプリのユーザー エクスペリエンスが保証されます。 バックグラウンド タスクは、このシナリオを処理できるように設計する必要があります。
+> デスクトップ以外のすべてのデバイス ファミリでは、デバイスのメモリが少なくなった場合、バックグラウンド タスクが終了することがあります。 場合は、メモリ不足の例外はされないか、アプリが処理されない、後に警告と OnCanceled イベントの発生せず、バック グラウンド タスクが終了されます。 こうすることで、フォアグラウンドのアプリのユーザー エクスペリエンスが保証されます。 バックグラウンド タスクは、このシナリオを処理できるように設計する必要があります。
 
 次のように **OnCanceled** という名前のメソッドを作成します。 このメソッドは、バックグラウンド タスクに対して取り消し要求が出されると、Windows ランタイムによって呼び出されるエントリ ポイントです。
 
@@ -87,9 +87,9 @@ private:
     volatile bool CancelRequested;
 ```
 
-手順 1 で作成した**OnCanceled**メソッドで、フラグ変数**\_CancelRequested**を**true**に設定します。
+手順 1 で作成した**OnCanceled**メソッドでフラグ変数**\_CancelRequested**を**true**に設定します。
 
-完全な[バック グラウンド タスクのサンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**メソッドでは、 **\_CancelRequested**を**true**に設定し、可能性のある役立つデバッグ出力に書き込みます。
+完全な[バック グラウンド タスクのサンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**メソッドでは、 **\_CancelRequested**を**true**に設定し、可能性のある有用なデバッグ出力に書き込みます。
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -119,7 +119,7 @@ void ExampleBackgroundTask::OnCanceled(IBackgroundTaskInstance^ taskInstance, Ba
 }
 ```
 
-バック グラウンド タスクの**Run**メソッドでは、作業を開始する前に**OnCanceled**イベントのハンドラー メソッドを登録します。 インプロセス バックグラウンド タスクでは、アプリケーションの初期化の一部としてこの登録を実行できます。 たとえば、次のコード行を使用します。
+バック グラウンド タスクの**Run**メソッドでは、作業を開始する前に**OnCanceled**イベント ハンドラー メソッドを登録します。 インプロセス バックグラウンド タスクでは、アプリケーションの初期化の一部としてこの登録を実行できます。 たとえば、次のコード行を使用します。
 
 ```csharp
 taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
@@ -137,9 +137,9 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 バックグラウンド処理を実行しているメソッドは、**\_cancelRequested** が **true** に設定されたタイミングを認識し、処理を停止して終了する必要があります。 インプロセス バック グラウンド タスクの場合、 **OnBackgroundActivated**メソッドから戻ることを意味します。 アウト プロセス バック グラウンド タスクの場合、 **Run**メソッドから戻ることを意味します。
 
-バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。 **\_CancelRequested**になる設定されている場合に true アクセスが中断されます。
+バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。 **\_CancelRequested**になる続行 true に設定場合します。
 
-[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、バック グラウンド タスクが取り消された場合、定期タイマーのコールバックを停止するチェックが含まれています。
+[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、バック グラウンド タスクが取り消された場合、定期タイマーのコールバックを停止することを確認するが含まれています。
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -181,7 +181,7 @@ else
 ```
 
 > [!NOTE]
-> 上に示したコード サンプルでは、 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)を使用します。[**進行状況**](https://msdn.microsoft.com/library/windows/apps/br224800)のプロパティをバック グラウンド タスクの進捗状況を記録します。 進行状況は、[**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) クラスを使ってアプリに報告されます。
+> 上記のコード サンプルでは、 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)を使用します。[**進行状況**](https://msdn.microsoft.com/library/windows/apps/br224800)のプロパティがバック グラウンド タスクの進捗状況を記録するために使用されています。 進行状況は、[**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) クラスを使ってアプリに報告されます。
 
 処理が停止した後、タスクが完了したか、取り消されたかどうか記録するように、 **Run**メソッドを変更します。 この手順は、バックグラウンド タスクが取り消されたときにプロセス間で通信する手段が必要となるため、別のプロセスで実行されるアウトプロセス バック グラウンド タスクに適用されます。 インプロセス バックグラウンド タスクでは、タスクが取り消されたことを示すために、状態をアプリケーションと共有するだけで十分です。
 
@@ -261,11 +261,11 @@ else
 
 [バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)をダウンロードして、メソッドのコンテキストに従ってコード例を確認できます。
 
-例としては、サンプル コードは、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)からに**Run**メソッド (およびコールバック タイマー) の部分だけを示しています。
+説明のためのサンプル コードは、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)からの**Run**メソッド (およびコールバック タイマー) の部分だけを示しています。
 
 ## <a name="run-method-example"></a>メソッド例を実行します。
 
-**Run**メソッドとタイマーのコールバック コードを完了すると、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)からは以下のコンテキストにします。
+**Run**メソッドとタイマーのコールバック コード一式、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から次のとおりのコンテキストにします。
 
 ```csharp
 // The Run method is the entry point of a background task.

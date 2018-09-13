@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 430dbce8b3ac2a79709c5f0761124aa7a78cab5e
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928867"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958821"
 ---
 # <a name="get-mediamarketplaceidcrossmediagroupsearch"></a>取得する (/media/{marketplaceId}/crossMediaGroupSearch)
 いくつかの異なるメディア グループから項目を取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。

@@ -11,11 +11,11 @@ keywords: windows 10, uwp, アプリ サービス
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: a77ea3cefcc423e710ab0afebb3fa064e61507ec
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929892"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957272"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する
 
@@ -42,11 +42,11 @@ ms.locfileid: "3929892"
 >   </Applications>
 > ```
 
-削除、`EntryPoint`から属性、`<Extension>`要素[OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)は、エントリ ポイント、アプリ サービスが呼び出されたときに使用されるためです。
+削除、`EntryPoint`から属性、`<Extension>`要素[OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)アプリ サービスが呼び出されたときに使用されるエントリ ポイントは、ここであるためです。
 
 2 つ目の変更として、サービス ロジックを別個のバックグラウンド タスク プロジェクトから、**OnBackgroundActivated()** によって呼び出すことができるメソッドに移動します。
 
-これで、アプリケーションがアプリ サービスを直接実行できるようになります。 たとえば、App.xaml.cs: で
+これで、アプリケーションがアプリ サービスを直接実行できるようになります。 たとえば、App.xaml.cs: 内
 
 ``` cs
 using Windows.ApplicationModel.AppService;

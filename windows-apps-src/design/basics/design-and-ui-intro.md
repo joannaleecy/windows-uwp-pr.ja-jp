@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936379"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962056"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP アプリ設計の概要
 
@@ -66,7 +66,7 @@ UWP アプリは、すべてのデバイスに合わせて自動的に拡大縮�
 
 :::row:::
     :::column:::
-        UWP アプリを起動すると、任意の Windows 10 デバイスで、[フレーム](/uwp/api/Windows.UI.Xaml.Controls.Frame)、[ページ](/uwp/api/Windows.UI.Xaml.Controls.Page)のインスタンス間を移動できる[ウィンドウ](/uwp/api/Windows.UI.Xaml.Controls.Window)で起動します。
+        UWP アプリを起動すると、任意の Windows 10 デバイスでは、[フレーム](/uwp/api/Windows.UI.Xaml.Controls.Frame)、[ページ](/uwp/api/Windows.UI.Xaml.Controls.Page)のインスタンス間を移動できる[ウィンドウ](/uwp/api/Windows.UI.Xaml.Controls.Window)で起動します。
     :::column-end:::
     :::column:::
         ![フレーム](images/frame.svg)
@@ -118,7 +118,7 @@ UWP コントロールとコントロールに基づいて作成できるパタ�
 
 :::row:::
     :::column:::
-        UWP アプリでは、Windows[シェル](../shell/tiles-and-notifications/creating-tiles.md)でタイルや通知した幅広い Windows エクスペリエンスを操作します。
+        UWP アプリが、使用した幅広い Windows エクスペリエンス Windows[シェル](../shell/tiles-and-notifications/creating-tiles.md)でタイルや通知を操作します。
 
         Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
 

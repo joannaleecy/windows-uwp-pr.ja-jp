@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cf2c10fd8fa581e29fe20c5bdcb2683c5246af1d
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932935"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3963994"
 ---
 # <a name="view-app-identity-details"></a>アプリ ID の詳細の表示
 

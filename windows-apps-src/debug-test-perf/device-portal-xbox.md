@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 404db3963d2f9508d7c81053abf96b0e742103f7
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936193"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3956788"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 用 Device Portal
 
@@ -199,7 +199,7 @@ Xbox Device Portal の **[ネットワーク]** ページは Windows Device Port
 
 ### <a name="game-event-data"></a>ゲーム イベント データ
 
-**ゲーム イベントのデータ**ページで、できますグラフを表示するリアルタイムそのストリームでは現在、Xbox One で記録されているイベント Windows トレーシング (ETW) ゲームのイベントの数。 (イベント名、イベントの発生、およびゲーム タイトル) の詳細を表示できますも、システムで記録されているゲームのイベントがある場合は、データ グラフの下のデータ テーブル内の各イベントを説明します。 テーブルには、記録されたイベントがある場合は、できるだけです。
+**ゲーム イベントのデータ**] ページで、できますグラフを表示するリアルタイムそのストリーム現在、Xbox One で記録されているイベント Windows トレーシング (ETW) ゲームのイベントの数。 システムに記録されたゲームのイベントがある場合は、表示することも (イベント名、イベントの発生、およびゲーム タイトル) の詳細データ グラフの下のデータ テーブル内の各イベントを記述しています。 表には、記録されたイベントがある場合は、できるだけです。
 
 ![ゲーム イベント データ](images/device-portal-xbox-22.PNG)
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ローカライズされた文字列, Windows デベロッパー センター
 ms.openlocfilehash: fac642adad099bf930a4ddabba151384a83db17c
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933530"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3955895"
 ---
 # <a name="configuring-localized-strings-on-windows-dev-center"></a>Windows デベロッパー センターでのローカライズされた文字列の構成
 
@@ -28,7 +28,7 @@ ms.locfileid: "3933530"
 
 ![デベロッパー センターのローカライズされた文字列構成ページのスクリーンショット](../../images/dev-center/localized-strings/localized-strings-1.png)
 
-3. ローカライズされた文字列を追加するには、<Value locale="en-US">Mazes Played</Value> タグを複製し、ロケールの値を選択した言語とローカライズされた文字列の値に変更します。 エラーを回避するには、開発者表示ロケール内に少なくとも 1 つの値タグが必要です。
+3. ローカライズされた文字列を追加するには複製することにより、 <Value locale="en-US">迷路の再生</Value> タグとロケールの値を好みの言語とローカライズされた文字列の値に変更します。 エラーを回避するには、開発者表示ロケール内に少なくとも 1 つの値タグが必要です。
 
 ![ローカライズされた文字列の編集](../../images/dev-center/localized-strings/localized-strings.gif)
 
@@ -42,4 +42,4 @@ localization.xml ファイルをアップロードするときに、次のエラ
 |---------------------------|-------------|
 | XSD 検証の失敗: 名前空間 'http://config.mgt.xboxlive.com/schema/localization/1' の要素 'LocalizedString' にテキストを含めることはできません。 指定できる要素の一覧: 名前空間 'http://config.mgt.xboxlive.com/schema/localization/1' の 'Value' | これは、XML ドキュメントの形式が正しくない場合に発生します。 |
 | ローカライズ文字列に開発者表示ロケールのエントリがない | これは、ローカライズされた文字列に、ロケールが開発者表示ロケールと一致しないエントリがない場合に発生します。 |
-| XSD 検証の失敗: 'locale' 属性が無効 - データ型 'http://config.mgt.xboxlive.com/schema/localization/1:NonEmptyString' によると 値 ' ' が無効です - パターン制約に失敗しました。 | これは、ローカライズされた文字列に <Value> タグのロケール値がない場合に発生します。|
+| XSD 検証の失敗: 'locale' 属性が無効 - データ型 'http://config.mgt.xboxlive.com/schema/localization/1:NonEmptyString' によると 値 ' ' が無効です - パターン制約に失敗しました。 | これは、ローカライズされた文字列のロケールの値がない場合に発生します <Value> tag|

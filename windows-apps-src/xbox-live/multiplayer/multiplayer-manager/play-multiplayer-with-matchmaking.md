@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, Multiplayer Manager, フローチャート, SmartMatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bc23c73df1bdd8a030165ae623fc59c036104bd
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3935777"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964563"
 ---
 # <a name="find-a-multiplayer-game-by-using-smartmatch"></a>SmartMatch を使用してマルチプレイヤー ゲームを検索する
 

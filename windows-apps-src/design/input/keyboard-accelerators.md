@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: ce84debc3422f923c7c88aae1fa216665ef1ef0f
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932867"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962942"
 ---
 # <a name="keyboard-accelerators"></a>キーボード アクセラレータ
 
@@ -357,7 +357,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 **Windows 10、バージョン 1803 (April 2018 Update) 以降**
 
-既定では、キーボード アクセラレータが宣言されると、( [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) を除くすべてのコントロール ヒントに表示、対応するキーの組み合わせです。
+既定では、キーボード アクセラレータを宣言すると、( [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) を除くすべてのコントロールを表示、対応するキーの組み合わせヒントに表示します。
 
 > [!NOTE] 
 > コントロールには、複数のアクセラレータが定義されている場合、最初のものだけが表示されます。
@@ -366,10 +366,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 *ヒントでのアクセラレータ キーの組み合わせ*
 
-[ボタン](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)オブジェクトは、キーボード アクセラレータは、コントロールの既定のヒントに追加されます。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) オブジェクト、キーボード アクセラレータがポップアップのテキストで表示されます。
+[ボタン](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)オブジェクトは、キーボード アクセラレータは、コントロールの既定のヒントに追加されます。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) オブジェクト、キーボード アクセラレータがポップアップ テキストで表示されます。
 
 > [!NOTE]
-> ヒントを指定する (次の例で Button1 を参照) は、この動作を上書きします。
+> ヒントを指定する (次の例では Button1 を参照) は、この動作を上書きします。
 
 ```xaml
 <StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, パッケージ要件, パッケージ, パッケージ形式, サポートされているバージョン, 提出
 ms.localizationpriority: medium
 ms.openlocfilehash: d7d748f36dafd93066928f01f9aa42414f2ffc1f
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933399"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961290"
 ---
 # <a name="app-package-requirements"></a>アプリ パッケージの要件
 
@@ -61,7 +61,7 @@ Windows 10 や Windows 8.1、Windows Phone 8.1 をターゲットとするアプ
 > マニフェスト内の値は、大文字と小文字が区別されます。 スペースや句読点なども一致する必要があります。 注意して入力し、間違いがないか確認してください。
 
 
-アプリ バンドル (.appxbundle) は、特別なマニフェストを使用します。 アプリ バンドル マニフェストの詳細や要件については、[バンドル マニフェスト](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) に関するドキュメントをご覧ください。 注: .appxbundle、内の各 .appxmanifest 含まれているパッケージには、同じ要素と属性の[Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)要素の**ProcessorArchitecture**属性を除くを使う必要があります。
+アプリ バンドル (.appxbundle) は、さまざまなマニフェストを使用します。 アプリ バンドル マニフェストの詳細や要件については、[バンドル マニフェスト](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) に関するドキュメントをご覧ください。 注 .appxbundle、内の各 .appxmanifest 含まれているパッケージには、同じ[Id](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)要素の**ProcessorArchitecture**属性を除くの属性と要素を使う必要があります。
 
 > [!TIP]
 > 必ず、[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)を実行してから、パッケージを提出してください。 これによって、認定や提出の失敗の原因となる可能性がある問題がマニフェストに含まれているかどうかを判断できます。
@@ -88,7 +88,7 @@ UWP アプリの場合、すべてのパッケージは Microsoft Store によ�
 
 ## <a name="storemanifest-xml-file"></a>StoreManifest XML ファイル
 
-StoreManifest.xml は、必要に応じてアプリ パッケージに含めることのできる構成ファイルです。 その目的は、Microsoft Store デバイス アプリとしてアプリを宣言する機能や、パッケージ マニフェストの対象外となるデバイスに適用される要件を宣言する機能などを有効にすることです。 使用する場合、StoreManifest.xml はアプリ パッケージを使ってが送られ、アプリのメイン プロジェクトのルート フォルダーにある必要があります。 詳しくは、「[StoreManifest スキーマ](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)」をご覧ください。
+StoreManifest.xml は、必要に応じてアプリ パッケージに含めることのできる構成ファイルです。 その目的は、Microsoft Store デバイス アプリとしてアプリを宣言する機能や、パッケージ マニフェストの対象外となるデバイスに適用される要件を宣言する機能などを有効にすることです。 使用する場合、StoreManifest.xml はアプリ パッケージを使って送信され、アプリのメイン プロジェクトのルート フォルダーにある必要があります。 詳しくは、「[StoreManifest スキーマ](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)」をご覧ください。
 
  
 

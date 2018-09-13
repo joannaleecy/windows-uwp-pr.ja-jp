@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b620144bbeee783835f5bf9181381a4c9b38a66
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929561"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958861"
 ---
 # <a name="jsonusersbatchscidssciddatapathandfilenamejson"></a>json/ユーザー//global/scids/{scid}/data/{pathAndFileName} json をバッチ処理
 同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

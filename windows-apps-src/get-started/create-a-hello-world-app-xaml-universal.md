@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 初めてのアプリ, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 950b2f3fac44c8350a51fd5c1b7071f05c92d746
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930646"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957514"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>"Hello, world" アプリを作成する (XAML)
 
@@ -50,9 +50,9 @@ ms.locfileid: "3930646"
 
 2.  **[ファイル**] メニューから選択**新規 > プロジェクト**を*新しいプロジェクト*] ダイアログを開きます。
 
-3.  左側のテンプレートの一覧から選択**インストール済み > Visual C#] > Windows ユニバーサル**UWP プロジェクト テンプレートの一覧を表示します。
+3.  、左側のテンプレートの一覧から選択**インストール済み > Visual C#] > Windows ユニバーサル**UWP プロジェクト テンプレートの一覧を表示します。
 
-    ユニバーサル テンプレートが表示されない場合は、UWP アプリを作成するためのコンポーネントがない可能性があります。 インストール プロセスを繰り返して UWP サポートを追加することもできます (*[新しいプロジェクト]* ダイアログで **[Visual Studio インストーラーを開く]** をクリック)。 参照[準備](get-set-up.md))。
+    ユニバーサル テンプレートが表示されない場合は、UWP アプリを作成するためのコンポーネントがない可能性があります。 インストール プロセスを繰り返して UWP サポートを追加することもできます (*[新しいプロジェクト]* ダイアログで **[Visual Studio インストーラーを開く]** をクリック)。 参照[を取得する設定](get-set-up.md))。
 
     ![インストール プロセスを繰り返す方法](images/win10-cs-install.png)
 

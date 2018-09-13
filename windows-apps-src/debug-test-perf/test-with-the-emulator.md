@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931222"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957950"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Microsoft Emulator for Windows 10 Mobile を使ったテスト
 
@@ -29,9 +29,9 @@ Microsoft Emulator for Windows 10 Mobile に用意されているツールを使
 
 コンピューターは次の要件を満たす必要があります。
 
-CPU が (これらの設定では、可能な場合、可能で有効にする BIOS)
+CPU (これらの設定、利用可能な場合で有効にできます BIOS)
 
--   ハードウェア補助による仮想化 ([互換性を確認する](https://www.microsoft.com/download/details.aspx?id=592))。
+-   ハードウェア支援による仮想化 ([互換性を確認](https://www.microsoft.com/download/details.aspx?id=592)します)。
 -   Second Level Address Translation (SLAT)。
 -   ハードウェアベースのデータ実行防止 (DEP)。
 
@@ -49,7 +49,7 @@ BIOS 要件を確認するには、「[Windows Phone 8 のエミュレーター�
 
 RAM とオペレーティング システムの要件を確認するには、コントロール パネルで **[システムとセキュリティ]** を選び、**[システム]** を選びます。
 
-10 モバイルの Windows 用の Microsoft のエミュレーターには、2015 以降の Visual Studio が必要です。Visual Studio の以前のバージョンとの下位互換性はありません。
+Microsoft Emulator for Windows 10 Mobile には、Visual Studio 2015 以降が必要です。以前のバージョンの Visual Studio との下位互換性はありません。
 
 Microsoft Emulator for Windows 10 Mobile は、Windows Phone OS 7.1 より前の Windows Phone OS バージョンを対象とするアプリを読み込むことはできません。
 
@@ -68,7 +68,7 @@ Microsoft Emulator for Windows 10 Mobile をアンインストールしても、
 
 ### <a name="running"></a>Running
 
-エミュレーターでアプリケーションを実行するには、Visual Studio の [**実行**] ドロップダウン メニューから、エミュレートされたデバイスを選択します。
+エミュレーターでアプリを実行するには、だけで、Visual Studio の [**実行**] ドロップダウン メニューからエミュレートされたデバイスを選択します。
 
 ![解像度、サイズ、メモリに使うことができるエミュレーター](images/em-list.png)
 

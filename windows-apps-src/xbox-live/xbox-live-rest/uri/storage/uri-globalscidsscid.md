@@ -1,9 +1,9 @@
 ---
-title: グローバル///}
+title: グローバル//global/scids/{scid}
 assetID: 721e8be9-a50a-ae14-91c1-e103add0abab
 permalink: en-us/docs/xboxlive/rest/uri-globalscidsscid.html
 author: KevinAsgari
-description: " グローバル///}"
+description: " グローバル//global/scids/{scid}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f914d3994f99b743fc596420eef76aed7f4df79
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933322"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959841"
 ---
-# <a name="globalscidsscid"></a>グローバル///}
-このストレージの種類でクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
+# <a name="globalscidsscid"></a>グローバル//global/scids/{scid}
+このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -39,7 +39,7 @@ ms.locfileid: "3933322"
 
 [GET](uri-globalscidsscid-get.md)
 
-&nbsp;&nbsp;このストレージの種類でクォータ情報を取得します。 
+&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。 
  
 <a id="ID4E4B"></a>
 

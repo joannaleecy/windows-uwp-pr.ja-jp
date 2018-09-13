@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929770"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3956834"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張
 
@@ -140,7 +140,7 @@ XAML UI を UWP プロジェクトに追加します。 基本的なマップの
 
 ### <a name="add-a-protocol-extension"></a>プロトコル拡張機能を追加する
 
-**ソリューション エクスプ**ローラーでソリューションにパッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、この拡張機能を追加します。
+**ソリューション エクスプ ローラー**で、ソリューションにパッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、この拡張機能を追加します。
 
 ```xml
 <Extensions>
@@ -313,7 +313,7 @@ public sealed class AppServiceTask : IBackgroundTask
 
 ### <a name="add-an-app-service-extension-to-the-packaging-project"></a>アプリ サービスの拡張機能をパッケージ プロジェクトに追加します。
 
-パッケージ プロジェクトの**package.appxmanifest**ファイルを開き、アプリ サービスの拡張機能の追加、``<Application>``要素です。
+パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、アプリ サービスの拡張機能を追加、``<Application>``要素です。
 
 ```xml
 <Extensions>
@@ -398,7 +398,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>共有ターゲットの拡張機能を追加する
 
-**ソリューション エクスプ**ローラーで、ソリューションで、パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、拡張機能を追加します。
+**ソリューション エクスプ ローラー**で、ソリューションで、パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、拡張機能を追加します。
 
 ```xml
 <Extensions>

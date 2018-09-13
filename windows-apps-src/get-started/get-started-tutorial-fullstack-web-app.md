@@ -10,11 +10,11 @@ ms.prod: Microsoft Edge, Azure, Visual Studio Code
 ms.technology: web
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f11cbdd749a44c4ba0d8bc1a0397a4f2882257
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928904"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957756"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>REST API のバックエンドを使った単一ページの Web アプリを作成する
 

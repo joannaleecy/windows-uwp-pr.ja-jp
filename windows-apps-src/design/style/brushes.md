@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0473ee984461bf46be4ebf866a564f0d51e0cfc5
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3935031"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3963932"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>ブラシを使用して背景、前景、輪郭を描画する
 

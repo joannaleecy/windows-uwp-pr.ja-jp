@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d027e35f8fe76a0d4139301f1a7dabc7798348a
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928574"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964362"
 ---
 # <a name="resolve-submission-errors"></a>申請エラーの解決
 
@@ -23,13 +23,13 @@ ms.locfileid: "3928574"
 
 ## <a name="uwp-apps"></a>UWP アプリ
 
-UWP アプリを提出する場合は、パッケージ ファイルがストア向けに Visual Studio によって生成された .appxupload ファイルでない場合に、前処理の間にエラーが表示されることがあります。 [Visual Studio で UWP アプリのパッケージ](../packaging/packaging-uwp-apps.md)アプリのパッケージのファイルを作成するときの手順し、申請、しない、appx や .appxbundle の [[パッケージ](upload-app-packages.md)] ページで .appxupload ファイルだけをアップロードことを確認します。
+UWP アプリを提出する場合は、パッケージ ファイルがストア向けに Visual Studio によって生成された .appxupload ファイルでない場合に、前処理の間にエラーが表示されることがあります。 [Visual Studio で UWP アプリのパッケージ](../packaging/packaging-uwp-apps.md)アプリのパッケージのファイルを作成するときの手順し、申請、しない、appx や .appxbundle の [[パッケージ](upload-app-packages.md)] ページで、.appxupload ファイルをアップロードのみことを確認します。
 
 コンパイル エラーが表示される場合は、リリース モードでアプリケーションを正常にビルドできることを確認します。 詳しくは、[.NET ネイティブ内部コンパイラ エラーに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=613098)をご覧ください。
 
 ## <a name="desktop-application"></a>デスクトップ アプリケーション
 
-Win32 と UWP の両方のバイナリが含まれているパッケージを提出する場合は、Visual Studio 2017 Update 4 で利用可能な Windows パッケージ プロジェクトを使ってそのパッケージを作成することを確認します。 UWP プロジェクト テンプレートを使用して、パッケージを作成する場合は、提出するパッケージ ストアまたはサイドローディングに、他の Pc にできない可能性があります。 パッケージが正常に発行、した場合でもは、ユーザーの PC で予期しない方法で動作可能性があります。 詳しくは、 [Visual Studio (デスクトップ ブリッジ) を使用して、アプリのパッケージ]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)を参照してください。
+Win32 と UWP の両方のバイナリが含まれているパッケージを提出する場合は、Visual Studio 2017 Update 4 で利用可能な Windows パッケージ プロジェクトを使用して、そのパッケージを作成することを確認します。 UWP プロジェクト テンプレートを使用して、パッケージを作成する場合は、提出するパッケージをストアまたはサイドローディング化上の他の Pc にできない可能性があります。 場合でも、パッケージが正常に公開、ユーザーの PC で予期しない方法で動作する可能性があります。 詳しくは、 [Visual Studio (デスクトップ ブリッジ) を使ってアプリ パッケージ]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)を参照してください。
 
 ## <a name="windows-phone-apps"></a>Windows Phone アプリ
 

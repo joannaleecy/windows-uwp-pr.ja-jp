@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ded8fb8a9d391ec48b46b0795b901dc403e1f30
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3934387"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962926"
 ---
 # <a name="desktop-bridge"></a>デスクトップ ブリッジ
 

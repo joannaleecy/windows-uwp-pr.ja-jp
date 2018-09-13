@@ -8,18 +8,18 @@ ms.date: 07/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, バック グラウンド タスク
+keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 45f6e10bc355e3a2dc054d54fef35fbeb1095dc7
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928112"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3960270"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>バックグラウンド タスクによるシステム イベントへの応答
 

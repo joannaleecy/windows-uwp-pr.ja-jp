@@ -8,28 +8,28 @@ ms.date: 07/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, バック グラウンド タスク
+keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e3c76ae09ed6835f89f0d98c308f11c7a99624
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930346"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958190"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>タイマーでのバックグラウンド タスクの実行
 
-[**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)を使用して、1 回限りのバック グラウンド タスクをスケジュールまたは定期的なバック グラウンド タスクを実行する方法について説明します。
+[**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)を使用して、1 回限りのバック グラウンド タスクのスケジュールを設定または定期的なバック グラウンド タスクを実行する方法について説明します。
 
-このトピックでトリガーのバック グラウンド タスク説明されている時間を実装する方法の例を確認するための[バック グラウンドのアクティブ化のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation)で**Scenario4**を参照してください。
+このトピックでトリガーされたバック グラウンド タスクが説明されている時間を実装する方法の例を参照する[バック グラウンドのアクティブ化のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation)で**Scenario4**を参照してください。
 
-このトピックでは、定期的に、または特定の時点で実行する必要があるバック グラウンド タスクがあることを前提としています。 バック グラウンド タスクがまだしていない場合、サンプルのバック グラウンド タスクでは[BackgroundActivity.cs です](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)。 または[の作成と登録、インプロセスのバック グラウンド タスク](create-and-register-an-inproc-background-task.md)か[の作成と登録、アウト プロセス バック グラウンド タスク](create-and-register-a-background-task.md)を作成する 1 つの手順に従います。
+このトピックでは、定期的に、または特定の時点で実行する必要があるバック グラウンド タスクがあることを前提としています。 バック グラウンド タスクがまだしていない場合は、バック グラウンド タスクのサンプルでは[BackgroundActivity.cs です](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)。 または[の作成と登録、インプロセス バック グラウンド タスク](create-and-register-an-inproc-background-task.md)または[の作成と登録、アウト プロセス バック グラウンド タスク](create-and-register-a-background-task.md)を作成する 1 つの手順に従います。
 
 ## <a name="create-a-time-trigger"></a>時刻のトリガーを作る
 
 新しい [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) を作ります。 2 つ目のパラメーター (*OneShot*) では、バックグラウンド タスクを一度だけ実行するか、または定期的に実行を続けるかを指定します。 *OneShot* を true に設定する場合は、1 つ目のパラメーター (*FreshnessTime*) に、バックグラウンド タスクをスケジュールするまで待機する時間 (分単位) を指定します。 *OneShot* を false に設定する場合は、*FreshnessTime* に、バックグラウンド タスクを実行する間隔を指定します。
 
-デスクトップかモバイル デバイス ファミリを対象とするユニバーサル Windows プラットフォーム (UWP) アプリの組み込みタイマーは、15 分間隔でバックグラウンド タスクを実行します。 (、タイマー実行 15 分間隔で、システムがのみ 15 分ごとに 1 回をスリープ解除電力を節約する - TimerTriggers を要求したアプリをスリープ解除する必要があるようにします。)
+デスクトップかモバイル デバイス ファミリを対象とするユニバーサル Windows プラットフォーム (UWP) アプリの組み込みタイマーは、15 分間隔でバックグラウンド タスクを実行します。 (、タイマーが実行される 15 分間隔でできるように、システムがのみ電力を節約する - TimerTriggers を要求したアプリをスリープ解除する 15 分ごとに 1 回だけをスリープ解除する必要があります。)
 
 - *FreshnessTime* が 15 分に設定され、*OneShot* が true の場合、タスクは登録された時点から 15 ～ 30 分の間に一度実行されるようにスケジュールされます。 これが 25 分に設定され、*OneShot* が true の場合、タスクは登録された時点から 25 ～ 40 分の間に一度実行されるようにスケジュールされます。
 
@@ -54,7 +54,7 @@ TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
 
 ## <a name="optional-add-a-condition"></a>(省略可能) 条件の追加
 
-タスクが実行されている場合は、コントロールにバック グラウンド タスクの条件を作成できます。 条件によって、バック グラウンド タスクは、条件が満たされるまでを実行できなくなります。 詳しくは、[バック グラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)を参照してください。
+タスクが実行されている場合は、コントロールにバック グラウンド タスクの条件を作成できます。 条件を指定すると、バック グラウンド タスクが、条件が満たされるまで実行できなくなります。 詳細については、[バック グラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)を参照してください。
 
 この例では、条件が **UserPresent** に設定されているため、トリガー後、ユーザーがアクティブになった場合にタスクが 1 回だけ実行されます。 指定できる条件の一覧については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
 
@@ -75,7 +75,7 @@ SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::U
 
 ##  <a name="call-requestaccessasync"></a>RequestAccessAsync() の呼び出し
 
-**ApplicationTrigger**バック グラウンド タスクを登録する前に、ユーザーは、ユーザーがアプリのバック グラウンド アクティビティを無効にいるため、バック グラウンド アクティビティのレベルを判定[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)を呼び出します。 表示方法のユーザーの詳細については、[バック グラウンド アクティビティの最適化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)は、バック グラウンド アクティビティの設定を制御できます。
+**ApplicationTrigger**バック グラウンド タスクを登録する前に、ユーザーにより、ユーザーがアプリのバック グラウンド アクティビティを無効にしたため、バック グラウンド アクティビティのレベルを決定する[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)を呼び出します。 表示方法のユーザーの詳細については、[バック グラウンド アクティビティの最適化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)は、バック グラウンド アクティビティの設定を制御できます。
 
 ```cs
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -88,10 +88,10 @@ if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
 
 ## <a name="register-the-background-task"></a>バックグラウンド タスクの登録
 
-バックグラウンド タスクの登録関数を呼び出してバックグラウンド タスクを登録します。 次のサンプル コードで**RegisterBackgroundTask()** メソッドの定義を参照して、バック グラウンド タスクの登録の詳細については、[バック グラウンド タスクの登録](register-a-background-task.md)をご覧ください。
+バックグラウンド タスクの登録関数を呼び出してバックグラウンド タスクを登録します。 詳細については、バック グラウンド タスクの登録にし、次のサンプル コードで**RegisterBackgroundTask()** メソッドの定義を参照する、[バック グラウンド タスクの登録](register-a-background-task.md)を参照してください。
 
 > [!IMPORTANT]
-> バック グラウンド タスクは、アプリと同じプロセスで実行されるを設定しない`entryPoint`します。 バック グラウンド タスクをアプリから別のプロセスで実行される、設定`entryPoint`、名前空間 '.' とバック グラウンド タスクの実装を含んだクラスの名前。
+> バック グラウンド タスクは、アプリと同じプロセスで実行されるを設定しない`entryPoint`します。 バック グラウンド タスクをアプリから別のプロセスで実行される、設定`entryPoint`を名前空間 '.'、およびバック グラウンド タスクの実装を含んだクラスの名前。
 
 ```cs
 string entryPoint = "Tasks.ExampleBackgroundTaskClass";
@@ -121,14 +121,14 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) を使用して、アプリのバックグラウンド アクティビティを制限するようにユーザーが設定しているかどうかを確認します。 バッテリー使用量を注意し、ユーザーが望む操作を完了するために必要な場合にのみ、バックグラウンドで実行するようにしてください。 表示方法のユーザーの詳細については、[バック グラウンド アクティビティの最適化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)は、バック グラウンド アクティビティの設定を制御できます。
 
-- メモリ: アプリのメモリや電力使用を調整、オペレーティング システムで実行するバック グラウンド タスクを許可することを保証するキーです。 [メモリ管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)を使用すると、バック グラウンド タスクを使用してメモリの量を参照してください。 多くのメモリ、バック グラウンド タスクを使用して、実行中に別のアプリがフォア グラウンドでに保つために、OS がは難しくなります。 アプリが実行できるすべてのバックグラウンド アクティビティについて、最終的に管理できるのはユーザーです。また、ユーザーは、アプリがどの程度バッテリー消費に影響しているかを確認できます。  
+- メモリ: アプリのメモリや電力使用を調整、オペレーティング システムで実行するバック グラウンド タスクを許可することを保証するキーです。 [メモリ管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)を使用すると、バック グラウンド タスクを使用してメモリの量を参照してください。 多くのメモリ、バック グラウンド タスクを使用して、状態を維持が、別のアプリをフォア グラウンドで実行されている OS がは難しくなります。 アプリが実行できるすべてのバックグラウンド アクティビティについて、最終的に管理できるのはユーザーです。また、ユーザーは、アプリがどの程度バッテリー消費に影響しているかを確認できます。  
 - CPU 時間: バック グラウンド タスクがトリガーの種類に基づいて取得するウォールク ロック時間の使用状況の時間の長さによって制限されます。
 
 バックグラウンド タスクに適用されるリソースの制約については、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
 ## <a name="remarks"></a>注釈
 
-Windows 10 以降、場合は、ユーザーはロック画面にバック グラウンド タスクを利用するために、アプリを追加する必要なくなりました。
+Windows 10 以降、場合は、バック グラウンド タスクを利用するために、ロック画面にアプリを追加するユーザーのために必要なしなくなった。
 
 バック グラウンド タスクでは、まず[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)を呼び出した場合、 **TimeTrigger**を使用してのみ実行されます。
 

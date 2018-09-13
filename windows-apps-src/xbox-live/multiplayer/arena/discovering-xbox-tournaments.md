@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: 3417304a1033084ef7543b602b80901a38a5b0b1
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933964"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3956757"
 ---
 # <a name="discovering-xbox-tournaments"></a>Xbox のトーナメント情報の提供
 

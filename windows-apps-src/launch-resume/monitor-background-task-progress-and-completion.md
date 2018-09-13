@@ -8,18 +8,18 @@ ms.date: 07/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、タスクをバック グラウンドします。
+keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: ef57c6293b37f91653b5f825881b1446e38a824b
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930856"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964440"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>バックグラウンド タスクの進捗状況と完了の監視
 
@@ -38,9 +38,9 @@ ms.locfileid: "3930856"
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>完了したバックグラウンド タスクを処理するイベント ハンドラーの作成
 
 ### <a name="step-1"></a>手順 1.
-完了したバックグラウンド タスクを処理するイベント ハンドラー関数を作ります。 このコードは、 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803)オブジェクトと[**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)オブジェクトを受け取る特定の設置面積に従う必要があります。
+完了したバックグラウンド タスクを処理するイベント ハンドラー関数を作ります。 このコードは、 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803)オブジェクトと[**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)オブジェクトを受け取る特定のフット プリントに従って必要があります。
 
-**OnCompleted**バック グラウンド タスク イベント ハンドラー メソッドの次のフット プリントを使用します。
+**OnCompleted**バック グラウンド タスク イベント ハンドラー メソッドには、次のフット プリントを使います。
 
 ```csharp
 private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)

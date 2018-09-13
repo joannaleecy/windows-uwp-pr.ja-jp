@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ef854d2ed803b82197bee740ceb284c6f789c883
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931486"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958503"
 ---
 # <a name="get-jsonusersxuidxuidscidssciddatapathandfilenamejson"></a>GET (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)
 ファイルをダウンロードします。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

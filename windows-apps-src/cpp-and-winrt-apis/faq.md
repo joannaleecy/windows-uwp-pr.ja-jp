@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: wwindows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 頻繁, 質問, 質問, faq
 ms.localizationpriority: medium
 ms.openlocfilehash: 9316a29a50970bdaa288a4744f3aab7d873cbe4e
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933219"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962906"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) についてよく寄せられる質問
 C++/WinRT での Windows ランタイム API の作成と使用に関する質問への回答です。
@@ -24,7 +24,7 @@ C++/WinRT での Windows ランタイム API の作成と使用に関する質�
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>新しいプロジェクトがコンパイルされません。 Visual Studio 2017 を使用している (バージョン 15.8.0 以上)、および SDK バージョン 17134
 
-Visual Studio 2017 を使用している場合 (バージョン 15.8.0 以降) をターゲットとする Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803) し、新しく作成した、C++/WinRT プロジェクトをコンパイル エラーで失敗する可能性が"*エラー C3861: 'from_abi': 識別子しません。見つかった*"、および*base.h*でその他のエラー。 そのソリューションは、ターゲットを以降 (詳しく準拠) のバージョンの Windows SDK、またはプロジェクトのプロパティを設定する**C/C++** > **言語** > **への準拠モード: いいえ**(も場合、 **/制限解除-** プロジェクト プロパティ**に表示されますC/C++** > **言語** > **追加のオプション**] の下に**コマンド ライン**削除します)。
+Visual Studio 2017 を使用している場合 (バージョン 15.8.0 以降) をターゲットとする Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803) し、新しく作成した、C++/WinRT プロジェクトをコンパイル エラーで失敗する可能性が"*エラー C3861: 'from_abi': 識別子されません見つかった*"、および*base.h*でその他のエラー。 解決策は、いずれかのターゲット以降 (詳しく準拠) のバージョンの Windows SDK、またはプロジェクトのプロパティを設定する**C/C++** > **言語** > **Conformance mode: いいえ**(も場合、 **/制限解除-** **プロジェクトのプロパティに表示されますC/C++** > **言語** > **コマンド ライン**[**その他のオプション**を削除します)。
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a> [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) の要件
 [VSIX](https://aka.ms/cppwinrt/vsix) の最小要件は、Windows SDK ターゲット バージョン 10.0.17134.0 (Windows 10、バージョン 1803) です。 Visual Studio 2017 (バージョン 15.6 以上、15.7 以上を推奨) も必要になります 。 `.vcxproj` ファイルの `<PropertyGroup Label="Globals">` に `<CppWinRTEnabled>true</CppWinRTEnabled>` があるかどうかによって、VSIX を使用するプロジェクトを特定できます。 詳しくは、「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」をご覧ください。
@@ -91,9 +91,9 @@ Visual Studio は、マイクロソフトがサポートし、C++/WinRT 用に�
 
 ## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>読み取り専用プロパティの実装が生成された関数がない理由、`const`修飾子かどうか。
 
-期待どおり[MIDL 3.0](/uwp/midl-3/)で読み取り専用プロパティを宣言するとき、`cppwinrt.exe`の実装の機能を生成するツールを`const`-修飾 (const 関数は、定数として*この*ポインターを扱う)。
+期待どおり[MIDL 3.0](/uwp/midl-3/)で読み取り専用プロパティを宣言するとき、`cppwinrt.exe`されるツールの実装の機能を生成する`const`-修飾 (const 関数は、定数として*この*ポインターを扱う)。
 
-可能であれば、定数を使用してを確実にお勧めしますが、`cppwinrt.exe`自体ツールの実装について関数考え const する可能性がある理由はしようとします。 この例のように、const の実装関数のいずれかを選択できます。
+可能であれば、定数を使用してを確実にお勧めしますが`cppwinrt.exe`のどの実装について関数が考え const、ありする可能性がある理由ツール自体は行われません。 この例のように、const させるを実装する関数のいずれかを選択できます。
 
 ```cppwinrt
 struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation::IStringable>
@@ -105,9 +105,9 @@ struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation
 };
 ```
 
-削除することができます`const` **ToString**で修飾子をする必要があります実装ではいくつかオブジェクトの状態を変更する必要があるかを決定します。 各メンバーの両方ではなく関数 const または非定数のいずれか。 つまり、しないオーバー ロードの実装の機能で`const`します。
+削除することができます`const` **ToString**の修飾子すべき実装ではいくつかオブジェクトの状態を変更する必要があるかを決定します。 各メンバーの両方ではなく関数 const または非定数のいずれか。 つまり、しないオーバー ロードの実装の機能で`const`します。
 
-Const 場所に配置他別、実装関数を除くが使えるように、画像が Windows ランタイム関数のプロジェクション。 このコードを検討してください。
+Const 場所に配置別の他、実装関数を除くが使えるように画像は、Windows ランタイム関数のプロジェクションにします。 このコードを検討してください。
 
 ```cppwinrt
 int main()
@@ -117,19 +117,19 @@ int main()
 }
 ```
 
-**ToString**上記の呼び出し、Visual Studio で**宣言へ移動**コマンド示されている C++ への Windows ランタイム**istringable::tostring**のプロジェクション/WinRT は次のようになります。
+**ToString**上記の呼び出し、Visual Studio で**宣言へ移動**コマンド示されている C++ に**istringable::tostring** Windows ランタイムのプロジェクション/WinRT は次のようです。
 
 ```
 winrt::hstring ToString() const;
 ```
 
-プロジェクションでの関数は、資格を得ることの実装を選択する方法に関係なく const します。 バック グラウンドで、プロジェクションは、アプリケーション バイナリ インターフェイス (ABI)、COM インターフェイス ポインターを介して呼び出しにどの金額を呼び出します。 投影された**ToString**と対話する唯一の状態がその COM インターフェイスのポインターです。その確実に不要になったため、関数は const、そのポインターを変更します。 これにより、 **IStringable**を参照する保証**IStringable**参照では、呼び出し元をについて何もその変更されず、これにより、const しても**ToString**を呼び出すことができます。
+プロジェクションの関数は、資格を得ることの実装を選択する方法に関係なく const。 バック グラウンドで、プロジェクションは、アプリケーション バイナリ インターフェイス (ABI)、COM インターフェイス ポインターを使用して、呼び出しにどの金額を呼び出します。 投影された**ToString**と対話する唯一の状態は、その COM インターフェイスのポインターです。その確実に不要になったため、関数は const、そのポインターを変更します。 これにより、 **IStringable**を参照する保証**IStringable**参照では、呼び出し元をについて何もその変更されず、これにより、const しても**ToString**を呼び出すことができます。
 
-理解をこれらの例の`const`は、C++ の実装の詳細/WinRT プロジェクションおよび実装します。これらは、コードの検疫、特典を構成します。 このようなものがない`const`COM も (メンバー関数) 用の Windows ランタイム ABI にします。
+理解するこれらの例の`const`は、C++ の実装の詳細/WinRT プロジェクションおよび実装します。これらは、しやすくするコードに対する予防措置を構成します。 このようなものはありません`const`COM も (メンバー関数) 用の Windows ランタイム ABI のします。
 
 ## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>C++ コードのサイズを小さくに関する推奨事項がある/WinRT バイナリかどうか。
 
-Windows ランタイム オブジェクトを使用する際は、できますがある、否定的な影響をアプリケーションを生成するために必要なよりも多くのバイナリ コードが発生しているために、次に示すコーディング パターンを回避する必要があります。
+Windows ランタイム オブジェクトを使用する際は、指定できるので否定的な影響をアプリケーションで以上バイナリのコードを生成するために必要なことで、次に示すコーディング パターンを避ける必要があります。
 
 ```cppwinrt
 anobject.b().c().d();
@@ -137,7 +137,7 @@ anobject.b().c().e();
 anobject.b().c().f();
 ```
 
-Windows ランタイムの世界で、コンパイラはできないの値をキャッシュする`c()`または間接参照から呼び出される各メソッドのインターフェイス ('.")。 、介入する場合を除き、複数の仮想呼び出しと参照カウント オーバーヘッドの結果します。 上記のパターンは、厳密に必要な 2 倍のコードを生成簡単に可能性があります。 代わりに、パターンをする場合は必ず次に示すことを希望します。 、ずっと短いコードを生成し、実行時のパフォーマンスを向上させることも大幅にします。
+Windows ランタイムの世界でコンパイラことができないの値をキャッシュ`c()`または間接参照から呼び出されるメソッドでは各インターフェイス ('.")。 介入する場合を除き、複数の仮想呼び出しと参照カウントのオーバーヘッドで結果します。 上記のパターンでは、として厳密に必要な 2 回の多くのコードを簡単に作成可能性があります。 代わりに、以下を参照することができる場合は必ず、パターンを好みます。 、ずっと短いコードを生成し、実行時のパフォーマンスを向上させることも大幅にします。
 
 ```cppwinrt
 auto a{ anobject.b().c() };
@@ -146,7 +146,7 @@ a.e();
 a.f();
 ```
 
-上記の推奨パターンが、C++ だけでなくに適用/WinRT にすべての Windows ランタイム言語プロジェクションがします。
+上記の推奨パターンの対象だけでなく、C++/WinRT が、すべての Windows ランタイム言語プロジェクションです。
 
 > [!NOTE]
 > このトピックで質問の回答が得られない場合は、[Stack Overflow で `c++-winrt` タグ](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)を使用してヘルプ情報を見つけることができます。

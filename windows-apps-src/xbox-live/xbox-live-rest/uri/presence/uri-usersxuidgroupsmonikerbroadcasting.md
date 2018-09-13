@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a3d2e5c0bcbb0c59eabdffdd148e4b7f013c3f40
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929447"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959953"
 ---
 # <a name="usersxuidxuidgroupsmonikerbroadcasting"></a>ユーザー/xuid ({xuid})/groups/{モニカー} ブロードキャスト/
 URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードにアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。

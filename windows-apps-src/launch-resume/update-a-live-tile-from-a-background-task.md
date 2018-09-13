@@ -9,14 +9,14 @@ ms.date: 01/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、タスクをバック グラウンドします。
+keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933411"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958422"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>バックグラウンド タスクによるライブ タイルの更新
 

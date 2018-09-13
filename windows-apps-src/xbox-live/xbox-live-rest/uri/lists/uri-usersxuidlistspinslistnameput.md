@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fe69fe9e59fd3c7e523f9823438ff9d9b0b7916a
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3935912"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957171"
 ---
 # <a name="put-usersxuidxuidlistspinslistname"></a>PUT (/users/xuid(xuid)/lists/PINS/{listname})
 要求の本文内の各項目に指定されたインデックスに従ってリスト内の項目を更新します。 これらの Uri のドメインが`eplists.xboxlive.com`します。

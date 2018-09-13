@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: b641591e7be23226edc354e02513d723fbe8afba
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933023"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957042"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-the-abi"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) と ABI 間の相互運用
 このトピックでは、SDK アプリケーション バイナリ インターフェイス (ABI) と C++/WinRT オブジェクト間の変換方法について説明します。 これらの手法を使用すると、Windows ランタイムでこれら 2 つの手法によるプログラミングを使用するコード間を相互運用するか、ABI から C++/WinRT にコードを徐々に移動することができます。
@@ -236,7 +236,7 @@ int main()
 ## <a name="important-apis"></a>重要な API
 * [AddRef 関数](https://msdn.microsoft.com/library/windows/desktop/ms691379)
 * [QueryInterface 関数](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::attach_abi 関数](/uwp/cpp-ref-for-winrt/attach-abi)
+* [:attach_abi 関数](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr 構造体テンプレート](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::copy_from_abi 関数](/uwp/cpp-ref-for-winrt/copy-from-abi)
 * [winrt::copy_to_abi 関数](/uwp/cpp-ref-for-winrt/copy-to-abi)

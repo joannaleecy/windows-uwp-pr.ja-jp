@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント
 ms.localizationpriority: medium
 ms.openlocfilehash: 12654a89cc43c323c4fa516c4d78f15553441671
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3936214"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957411"
 ---
 # <a name="arena-title-integration-guide"></a>アリーナ タイトル統合ガイド
 
@@ -343,9 +343,9 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 * **[Arena Platforms]** (アリーナ プラットフォーム): タイトルのトーナメントをプレイできるプラットフォームを選択できます。
 * **[Tournament Assets]** (トーナメントのアセット): (従来、[Multiplayer and Matchmaking] (マルチプレイヤーとマッチメイキング) のセクションにあった項目)。これらはタイトルのトーナメント イメージです。
 
-アリーナは、Xbox Live サービスの下で、**トーナメント**のメニューで、Windows デベロッパー センターでも有効にすることができます。
+アリーナは、Xbox Live サービスの**トーナメント**のメニューで、Windows デベロッパー センターでも有効にすることができます。
 
-![Windows デベロッパー センターでのアリーナのメニュー](../../images/arena/Arena_On_WDC.JPG)
+![Windows デベロッパー センターでのアリーナ メニュー](../../images/arena/Arena_On_WDC.JPG)
 
 変更を有効にするには、サービス構成を公開する必要があります。 現在、UDC を介したセルフ サービスのアリーナの構成はサポートされていません。 サービス構成に UDC を使用している場合は、アリーナの導入についてデベロッパー アカウント マネージャにご相談ください。
 

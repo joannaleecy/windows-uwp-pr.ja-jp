@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b1be4ab591a5bea8d7bc70fb7f7dcb29e4f548
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931411"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959999"
 ---
 # <a name="usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a>ユーザー/xuid (xuid) リスト/ピン/{リスト}/インデックス ({インデックス})/かどうか insertIndex = {insertIndex}。
 一覧内の項目を移動します。 これらの Uri のドメインが`eplists.xboxlive.com`します。

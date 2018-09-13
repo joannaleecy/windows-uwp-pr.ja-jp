@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、COM、コンポーネント、クラス、インターフェイス
 ms.localizationpriority: medium
 ms.openlocfilehash: 598d0e7b4a374c18ece48f52947cec64a0f79dab
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3935649"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959226"
 ---
 # <a name="consume-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>COM コンポーネントを使用[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -85,7 +85,7 @@ DWriteCreateFactory(
 ## <a name="re-seat-a-winrtcomptr"></a>**Winrt::com_ptr**を再シートします。
 
 > [!IMPORTANT]
-> 既に取り付けられている[**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)があるかどうか (その内部の生のポインターが既にターゲット) し、再シートを別のオブジェクトを指す場合、まずを割り当てる必要があります`nullptr`に&mdash;次のコード例に示すようにします。 ない場合は、し、既に取り付けられている**com_ptr**描画問題 ( [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)または[**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)呼び出す) と、注意をによって、内部のポインターが null でないことをアサートします。
+> 既に取り付けられている[**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)があるかどうか (その内部の生のポインターは既にターゲット) し、再び取り付けるには、別のオブジェクトを指すようにする、最初に割り当てる必要があります`nullptr`を&mdash;コード例を次に示すようにします。 ない場合は、既に取り付けられている**com_ptr**は描画問題 ( [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)または[**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)を呼び出す) 場合は、注意する、内部ポインターが null でないことをアサートすることによって。
 
 ```cppwinrt
 winrt::com_ptr<ID2D1SolidColorBrush> brush;

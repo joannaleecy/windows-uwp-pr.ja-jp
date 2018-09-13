@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 概要, uwp, windows 10, 学習トラック, レイアウト, フォーム
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929814"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962876"
 ---
 # <a name="create-and-customize-a-form"></a>フォームを作成してカスタマイズする
 
@@ -48,7 +48,7 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 ## <a name="what-goes-in-a-form"></a>フォームに含めるもの
 
-各種の [XAML コントロール](../design/controls-and-patterns/controls-and-events-intro.md) を使用してフォームに入力する必要があります。 XAML コントロールは使い慣れているかもしれませんが、思い出す必要がある場合は、自由に目を通してください。 特に、ユーザーがテキストを入力するか、または値の一覧から選択できるようにするコントロールが必要になります。 これは、基本的なリストのオプションを追加することができます: 外観やしくみを理解するために十分なに関するすべての情報を読み取る必要はありません。
+各種の [XAML コントロール](../design/controls-and-patterns/controls-and-events-intro.md) を使用してフォームに入力する必要があります。 XAML コントロールは使い慣れているかもしれませんが、思い出す必要がある場合は、自由に目を通してください。 特に、ユーザーがテキストを入力するか、または値の一覧から選択できるようにするコントロールが必要になります。 これは、オプションを追加することも基本的な一覧は – 外観やしくみを理解するために十分なに関するすべての情報を読み取る必要はありません。
 
 * [TextBox](../design/controls-and-patterns/text-box.md)では、アプリにユーザーがテキストを入力できます。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) では、ユーザーが 2 つのオプションから選択できます。
@@ -136,7 +136,7 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 ## <a name="going-further"></a>追加情報
 
-ここではフォームを作成しましたが、レイアウトとコントロールの概念は、作成する可能性のあるすべての XAML UI で適用可能です。 自由に戻ってフォームが新しい UI 機能を追加して、ユーザー エクスペリエンスを絞り込む実験し、リンクしたドキュメントです。 詳細なレイアウト機能を使ってステップ バイ ステップのガイダンスをする場合、[アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)をご覧ください。
+ここではフォームを作成しましたが、レイアウトとコントロールの概念は、作成する可能性のあるすべての XAML UI で適用可能です。 自由に戻ってがある場合、新しい UI 機能を追加して、ユーザー エクスペリエンスを絞り込むフォームの実験し、リンクしたドキュメントです。 詳細なレイアウト機能を使ってステップ バイ ステップのガイダンスを設定する場合、[アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)をご覧ください。
 
 また、フォームは真空に存在する必要はありません。一歩進んで、自分のフォームを[マスター/詳細パターン](../design/controls-and-patterns/master-details.md)または[ピボット コントロール](../design/controls-and-patterns/tabs-pivot.md)に組み込むことができます。 または、自分のフォームで分離コードを使用する場合は、[イベントの概要](../xaml-platform/events-and-routed-events-overview.md)を参照して作業を開始することをお勧めします。
 

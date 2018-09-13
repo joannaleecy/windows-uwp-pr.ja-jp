@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, アカウント ユーザー, ユーザー、azure ad, マルチ ユーザー、複数のユーザーを管理します。
 ms.localizationpriority: medium
 ms.openlocfilehash: bef703958f8f04cd55d887dfa8840d1ed3fbeba5
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3934557"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958710"
 ---
 # <a name="manage-account-users"></a>アカウント ユーザーの管理
 

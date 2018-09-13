@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb56b51e2d558b2a4ef05d117244d464756e6ec
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932898"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957551"
 ---
 # <a name="post-usersxuidxuidfeedback"></a>POST (/users/xuid({xuid})/feedback)
 シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合に、タイトルから使われます。 これらの Uri のドメインが`reputation.xboxlive.com`します。

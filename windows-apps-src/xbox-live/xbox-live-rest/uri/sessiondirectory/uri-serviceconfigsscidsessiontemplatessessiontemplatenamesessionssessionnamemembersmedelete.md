@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 273819165e5dcf6b6398cd5b62e99be358e5ae9b
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3927821"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959025"
 ---
 # <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>削除 (/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション} メンバー/me)
 メンバーをセッションから削除します。

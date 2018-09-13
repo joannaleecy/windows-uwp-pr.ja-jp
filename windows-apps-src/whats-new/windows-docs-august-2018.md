@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
-title: 8 月 2018 年に Windows ドキュメントの新しい - UWP アプリの開発
-description: 2018年 8 月向けの Windows 10 開発者向けドキュメントには、新しい機能、ビデオ、サンプル、および開発者向けガイダンスが追加されました。
+title: Windows ドキュメントの年 8 月 2018 年月 - UWP アプリの開発
+description: Windows 10 開発者向けドキュメントには 2018年 8 月、新機能、ビデオ、サンプル、および開発者向けガイダンスが追加されました。
 keywords: 新機能, 更新, 機能, 開発者向けガイダンス, Windows 10, 8 月
 ms.author: quradic
 ms.date: 08/14/2018
@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928772"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959416"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>8 月 2018 年に、Windows 開発者向けドキュメントの新しい新機能
+# <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>新機能、Windows 開発者向けドキュメントの年 2018年 8 月
 
-Windows 開発者向けドキュメントは、Windows プラットフォームで開発者に提供される新機能の情報を反映して継続的に更新されています。 次の機能の概要、開発者向けガイダンス、およびビデオには 8 月で利用可能ななりました。
+Windows 開発者向けドキュメントは、Windows プラットフォームで開発者に提供される新機能の情報を反映して継続的に更新されています。 次の機能概要、開発者向けガイダンス、およびビデオには 8 月で利用可能ななりました。
 
 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)がどのように使えるかを試したりすることができます。
 
@@ -26,15 +26,15 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 ### <a name="design"></a>設計
 
-次の機能が Insider Preview ビルドで[Windows Insider](https://insider.windows.com/) program で利用できる、Windows に追加されました。
+次の機能が Insider Preview ビルドの[Windows Insider](https://insider.windows.com/) program で利用できる、Windows に追加されました。
 
-* [Windows UI のライブラリ](https://aka.ms/winui-docs)は、UWP アプリのコントロールとその他のユーザー interfact 要素を提供する NuGet パッケージのセットです。 これらのパッケージも、以前のバージョンの Windows 10 互換、ユーザーは、最新の OS バージョンがあるない場合でも、アプリが機能するようにします。
+* [Windows UI のライブラリ](https://aka.ms/winui-docs)とは、UWP アプリのコントロールとその他のユーザーの interfact 要素を提供する NuGet パッケージのセットです。 これらのパッケージも以前のバージョンの Windows 10 互換、ユーザーが最新の OS バージョンに存在しない場合でも、アプリが動作するようにします。
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、 [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button)、および[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)は、アプリのユーザー インターフェイスを強化するために特殊な機能を備えたボタン コントロールを提供します。
 
-![フォア グラウンドの色を選択するための分割ボタン](../design/controls-and-patterns/images/split-button-rtb.png)
+![前景色を選択するための分割ボタン](../design/controls-and-patterns/images/split-button-rtb.png)
 
-* NavigationView がアプリのナビゲーション オプションの数を減らしてがあり、アプリのコンテンツの空き領域が必要な場合[上部のナビゲーション](../design/controls-and-patterns/navigationview.md)をサポートします。
+* NavigationView が、アプリのナビゲーション オプションの数を減らしてがあり、アプリのコンテンツの空き領域が必要な場合、[上部のナビゲーション](../design/controls-and-patterns/navigationview.md)をサポートします。
 
 * ツリー ビューがサポートするために拡張されて[データ バインディング、項目テンプレート、ドラッグ アンド ドロップします](../design/controls-and-patterns/tree-view.md)。
 
@@ -42,17 +42,17 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 パッケージのサポートのフレームワークでは、修正プログラムの適用、win32 アプリケーションをソース コードにアクセスできない場合、MSIX コンテナーで実行できるようにするために役立つ、オープン ソースのキットです。
 
-詳しくは、[パッケージのサポートのフレームワークを使用して、MSIX パッケージを適用ランタイムの修正プログラム](../porting/package-support-framework.md)をご覧ください。
+詳細については、[パッケージのサポートのフレームワークを使用して、MSIX パッケージを適用ランタイムの修正プログラム](../porting/package-support-framework.md)を参照してください。
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
 ### <a name="web-api-extensions"></a>Web API の拡張機能
 
-複数のブラウザー間の web 開発向け Mozilla Developer Network ドキュメントには、[従来の Microsoft の API の拡張機能](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)の一覧が追加されました。 これらの API の拡張機能は、Internet Explorer または Microsoft Edge に固有のもの MDN web ドキュメント互換性とブラウザーのサポートに関する既存の情報を補足します。従来の Microsoft [CSS 拡張機能](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)と[JavaScript の拡張機能](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)は、利用可能なもとリッチ web MDN から API 情報の表示で直接見つかります[Visual Studio Code](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn) 。
+Mozilla Developer Network ドキュメントに複数のブラウザー間の web 開発は、[従来の Microsoft API の拡張機能](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)の一覧が追加されました。 これらの API の拡張機能は、Internet Explorer または Microsoft Edge に固有のもの MDN web ドキュメント互換性とブラウザーのサポートに関する既存の情報を補足します。従来の Microsoft [CSS 拡張機能](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)と[JavaScript の拡張機能](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)は、利用可能なもとで直接リッチ web MDN から API の情報が表示されるかを確認できます[Visual Studio Code](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn) 。
 
 ### <a name="cwinrt-code-examples"></a>C++/WinRT のコード例
 
-250 が追加されました[、C++/WinRT](../cpp-and-winrt-apis/index.md)コードで、ドキュメントは、既存の C + に付属するトピックへの登録情報/CX コード例を示します。
+250 が追加されました[、C++/WinRT](../cpp-and-winrt-apis/index.md)コードで、ドキュメントは、既存の C + に付属するトピックへの登録情報/CX コード例を紹介します。
 
 ### <a name="project-rome"></a>Project Rome
 
@@ -62,15 +62,15 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 ### <a name="xbox-live-unity-plugin"></a>Xbox Live Unity プラグイン
 
-Unity の Xbox Live プラグインには、Xbox Live への署名、統計情報、フレンド リスト、クラウド ストレージ、およびランキングをタイトルに追加するためのサポートが含まれています。 詳しくは、[ビデオを見る](https://youtu.be/fVQZ-YgwNpY)をし、 [GitHub のパッケージをダウンロード](https://aka.ms/UnityPlugin)を開始するします。
+Unity の Xbox Live プラグインには、タイトルに Xbox Live への署名、統計情報、フレンド リスト、クラウド ストレージ、およびランキングを追加するためのサポートが含まれています。 について[は、ビデオ](https://youtu.be/fVQZ-YgwNpY)をし、 [GitHub パッケージをダウンロード](https://aka.ms/UnityPlugin)を開始します。
 
 ### <a name="one-dev-question"></a>1 つのデベロッパー質問
 
-デベロッパー質問の 1 つのビデオ シリーズ長い Microsoft 開発者は一連の Windows の開発、チームのカルチャと履歴に関する質問について説明します。 お答えした最新の質問を以下に示します。
+デベロッパー質問の 1 つのビデオ シリーズの長い Microsoft 開発者は一連の Windows の開発、チームのカルチャと履歴に関する質問について説明します。 お答えした最新の質問を以下に示します。
 
 Raymond Chen:
 
-* [カーネルか確認する方法、ビデオ ドライバーを再起動するタイミング](https://youtu.be/3SNAdyO1l5c)
+* [カーネルを知るビデオ ドライバーを再起動するかどうか。](https://youtu.be/3SNAdyO1l5c)
 
 Larry Osterman:
 
