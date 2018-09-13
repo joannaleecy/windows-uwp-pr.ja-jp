@@ -13,33 +13,33 @@ ms.technology: uwp
 keywords: windows 10, uwp, win32, デスクトップ, トースト通知, トーストの送信, ローカル トーストの送信, デスクトップ ブリッジ, C#, c シャープ
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bda3e85fd89ef7a8b819fcd809acea4fd9a276b
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932003"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964866"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a><span data-ttu-id="87fe3-103">デスクトップ C# アプリからのローカル トースト通知の送信</span><span class="sxs-lookup"><span data-stu-id="87fe3-103">Send a local toast notification from desktop C# apps</span></span>
+# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a><span data-ttu-id="6fc6c-103">デスクトップ C# アプリからのローカル トースト通知の送信</span><span class="sxs-lookup"><span data-stu-id="6fc6c-103">Send a local toast notification from desktop C# apps</span></span>
 
-<span data-ttu-id="87fe3-104">デスクトップ アプリ (デスクトップ ブリッジと従来の Win32) は、ユニバーサル Windows プラットフォーム (UWP) アプリと同様の対話型トースト通知を送信できます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-104">Desktop apps (both Desktop Bridge and classic Win32) can send interactive toast notifications just like Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="87fe3-105">ただし、デスクトップ アプリの場合は、いくつかの特別な手順があります。これは、アクティブ化スキームが異なるためであり、またデスクトップ ブリッジを使用していない場合には、パッケージ ID が存在しない可能性があるためです。</span><span class="sxs-lookup"><span data-stu-id="87fe3-105">However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using the Desktop Bridge.</span></span>
+<span data-ttu-id="6fc6c-104">デスクトップ アプリ (デスクトップ ブリッジと従来の Win32) は、ユニバーサル Windows プラットフォーム (UWP) アプリと同様の対話型トースト通知を送信できます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-104">Desktop apps (both Desktop Bridge and classic Win32) can send interactive toast notifications just like Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="6fc6c-105">ただし、デスクトップ アプリの場合は、いくつかの特別な手順があります。これは、アクティブ化スキームが異なるためであり、またデスクトップ ブリッジを使用していない場合には、パッケージ ID が存在しない可能性があるためです。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-105">However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using the Desktop Bridge.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="87fe3-106">UWP アプリを作成している場合は、[UWP のドキュメント](send-local-toast.md) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="87fe3-106">If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md).</span></span> <span data-ttu-id="87fe3-107">その他のデスクトップ言語については、[デスクトップ C++ WRLに関するページ](send-local-toast-desktop-cpp-wrl.md) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="87fe3-107">For other desktop languages, please see [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).</span></span>
+> <span data-ttu-id="6fc6c-106">UWP アプリを作成している場合は、[UWP のドキュメント](send-local-toast.md) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-106">If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md).</span></span> <span data-ttu-id="6fc6c-107">その他のデスクトップ言語については、[デスクトップ C++ WRLに関するページ](send-local-toast-desktop-cpp-wrl.md) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-107">For other desktop languages, please see [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).</span></span>
 
 
-## <a name="step-1-enable-the-windows-10-sdk"></a><span data-ttu-id="87fe3-108">手順 1: Windows 10 SDK を有効にする</span><span class="sxs-lookup"><span data-stu-id="87fe3-108">Step 1: Enable the Windows 10 SDK</span></span>
+## <a name="step-1-enable-the-windows-10-sdk"></a><span data-ttu-id="6fc6c-108">手順 1: Windows 10 SDK を有効にする</span><span class="sxs-lookup"><span data-stu-id="6fc6c-108">Step 1: Enable the Windows 10 SDK</span></span>
 
-<span data-ttu-id="87fe3-109">Win32 アプリ向けの Windows 10 SDK がまだ有効でない場合は、まず有効にします。</span><span class="sxs-lookup"><span data-stu-id="87fe3-109">If you haven't enabled the Windows 10 SDK for your Win32 app, you must do that first.</span></span>
+<span data-ttu-id="6fc6c-109">Win32 アプリ向けの Windows 10 SDK がまだ有効でない場合は、まず有効にします。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-109">If you haven't enabled the Windows 10 SDK for your Win32 app, you must do that first.</span></span>
 
-<span data-ttu-id="87fe3-110">プロジェクトを右クリックし、**[プロジェクトのアンロード]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="87fe3-110">Right click your project and select **Unload Project**.</span></span>
+<span data-ttu-id="6fc6c-110">プロジェクトを右クリックし、**[プロジェクトのアンロード]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-110">Right click your project and select **Unload Project**.</span></span>
 
 ![プロジェクトのアンロード](images/win32-unload-project.png)
 
-<span data-ttu-id="87fe3-112">プロジェクトをもう一度右クリックし、**[[プロジェクト名].csproj の編集]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="87fe3-112">Then right click your project again, and select **Edit [projectname].csproj**</span></span>
+<span data-ttu-id="6fc6c-112">プロジェクトをもう一度右クリックし、**[[プロジェクト名].csproj の編集]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-112">Then right click your project again, and select **Edit [projectname].csproj**</span></span>
 
 ![プロジェクトの編集](images/win32-edit-project.png)
 
-<span data-ttu-id="87fe3-114">既存の `<TargetFrameworkVersion>` ノードの下に、サポートされる Windows 10 の最小バージョンを指定して、新しい `<TargetPlatformVersion>` ノードを追加します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-114">Below the existing `<TargetFrameworkVersion>` node, add a new `<TargetPlatformVersion>` node specifying your min version of Windows 10 supported.</span></span> <span data-ttu-id="87fe3-115">使用される実際の SDK は、開発用マシンにインストールされている最新の SDK です。</span><span class="sxs-lookup"><span data-stu-id="87fe3-115">The actual SDK used will be the latest SDK that you have installed on your dev machine.</span></span> <span data-ttu-id="87fe3-116">これだけで、サポートされる最小バージョンが指定されます (また Windows SDK を参照できるようになります)。</span><span class="sxs-lookup"><span data-stu-id="87fe3-116">This simply specifies your min allowed version (and allows you to reference the Windows SDK).</span></span>
+<span data-ttu-id="6fc6c-114">既存の `<TargetFrameworkVersion>` ノードの下に、サポートされる Windows 10 の最小バージョンを指定して、新しい `<TargetPlatformVersion>` ノードを追加します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-114">Below the existing `<TargetFrameworkVersion>` node, add a new `<TargetPlatformVersion>` node specifying your min version of Windows 10 supported.</span></span> <span data-ttu-id="6fc6c-115">使用される実際の SDK は、開発用マシンにインストールされている最新の SDK です。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-115">The actual SDK used will be the latest SDK that you have installed on your dev machine.</span></span> <span data-ttu-id="6fc6c-116">これだけで、サポートされる最小バージョンが指定されます (また Windows SDK を参照できるようになります)。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-116">This simply specifies your min allowed version (and allows you to reference the Windows SDK).</span></span>
 
 ```xml
 ...
@@ -48,31 +48,31 @@ ms.locfileid: "3932003"
 ...
 ```
 
-<span data-ttu-id="87fe3-117">変更を保存し、プロジェクトを再度読み込みます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-117">Save your changes and then reload your project.</span></span>
+<span data-ttu-id="6fc6c-117">変更を保存し、プロジェクトを再度読み込みます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-117">Save your changes and then reload your project.</span></span>
 
 ![プロジェクトの再読み込み](images/win32-reload-project.png)
 
 
-## <a name="step-2-reference-the-apis"></a><span data-ttu-id="87fe3-119">手順 2: API を参照する</span><span class="sxs-lookup"><span data-stu-id="87fe3-119">Step 2: Reference the APIs</span></span>
+## <a name="step-2-reference-the-apis"></a><span data-ttu-id="6fc6c-119">手順 2: API を参照する</span><span class="sxs-lookup"><span data-stu-id="6fc6c-119">Step 2: Reference the APIs</span></span>
 
-<span data-ttu-id="87fe3-120">参照マネージャーを開きます (プロジェクトを右クリックして、**[追加] -> [参照]** を選択)。**[Windows] -> [コア]** を選択し、以下の参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-120">Open the Reference Manager (right click project, select **Add -> Reference**), and select **Windows -> Core** and include the following references:</span></span>
+<span data-ttu-id="6fc6c-120">参照マネージャーを開きます (プロジェクトを右クリックして、**[追加] -> [参照]** を選択)。**[Windows] -> [コア]** を選択し、以下の参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-120">Open the Reference Manager (right click project, select **Add -> Reference**), and select **Windows -> Core** and include the following references:</span></span>
 
-* <span data-ttu-id="87fe3-121">Windows.Data</span><span class="sxs-lookup"><span data-stu-id="87fe3-121">Windows.Data</span></span>
-* <span data-ttu-id="87fe3-122">Windows.UI</span><span class="sxs-lookup"><span data-stu-id="87fe3-122">Windows.UI</span></span>
+* <span data-ttu-id="6fc6c-121">Windows.Data</span><span class="sxs-lookup"><span data-stu-id="6fc6c-121">Windows.Data</span></span>
+* <span data-ttu-id="6fc6c-122">Windows.UI</span><span class="sxs-lookup"><span data-stu-id="6fc6c-122">Windows.UI</span></span>
 
 ![参照マネージャー](images/win32-add-windows-reference.png)
 
 
-## <a name="step-3-copy-compat-library-code"></a><span data-ttu-id="87fe3-124">手順 3: compat ライブラリのコードをコピーする</span><span class="sxs-lookup"><span data-stu-id="87fe3-124">Step 3: Copy compat library code</span></span>
+## <a name="step-3-copy-compat-library-code"></a><span data-ttu-id="6fc6c-124">手順 3: compat ライブラリのコードをコピーする</span><span class="sxs-lookup"><span data-stu-id="6fc6c-124">Step 3: Copy compat library code</span></span>
 
-<span data-ttu-id="87fe3-125">[DesktopNotificationManagerCompat.cs file from GitHub](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs) をプロジェクトにコピーします。</span><span class="sxs-lookup"><span data-stu-id="87fe3-125">Copy the [DesktopNotificationManagerCompat.cs file from GitHub](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs) into your project.</span></span> <span data-ttu-id="87fe3-126">compat ライブラリを使用することで、デスクトップ通知の複雑な部分の多くが抽象化されます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-126">The compat library abstracts much of the complexity of desktop notifications.</span></span> <span data-ttu-id="87fe3-127">次の手順では、compat ライブラリが必要です。</span><span class="sxs-lookup"><span data-stu-id="87fe3-127">The following instructions require the compat library.</span></span>
+<span data-ttu-id="6fc6c-125">[DesktopNotificationManagerCompat.cs file from GitHub](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs) をプロジェクトにコピーします。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-125">Copy the [DesktopNotificationManagerCompat.cs file from GitHub](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs) into your project.</span></span> <span data-ttu-id="6fc6c-126">compat ライブラリを使用することで、デスクトップ通知の複雑な部分の多くが抽象化されます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-126">The compat library abstracts much of the complexity of desktop notifications.</span></span> <span data-ttu-id="6fc6c-127">次の手順では、compat ライブラリが必要です。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-127">The following instructions require the compat library.</span></span>
 
 
-## <a name="step-4-implement-the-activator"></a><span data-ttu-id="87fe3-128">手順 4: アクティベーターを実装する</span><span class="sxs-lookup"><span data-stu-id="87fe3-128">Step 4: Implement the activator</span></span>
+## <a name="step-4-implement-the-activator"></a><span data-ttu-id="6fc6c-128">手順 4: アクティベーターを実装する</span><span class="sxs-lookup"><span data-stu-id="6fc6c-128">Step 4: Implement the activator</span></span>
 
-<span data-ttu-id="87fe3-129">ユーザーがトーストをクリックすると、アプリが動作できるトーストのアクティブ化ハンドラーを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-129">You must implement a handler for toast activation, so that when the user clicks on your toast, your app can do something.</span></span> <span data-ttu-id="87fe3-130">これは、アクション センターにトーストを継続的に表示するために必要です (トーストは、数日後、アプリが閉じているときにクリックされる可能性があります)。</span><span class="sxs-lookup"><span data-stu-id="87fe3-130">This is required for your toast to persist in Action Center (since the toast could be clicked days later when your app is closed).</span></span> <span data-ttu-id="87fe3-131">このクラスは、プロジェクトの任意の位置に指定できます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-131">This class can be placed anywhere in your project.</span></span>
+<span data-ttu-id="6fc6c-129">ユーザーがトーストをクリックすると、アプリが動作できるトーストのアクティブ化ハンドラーを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-129">You must implement a handler for toast activation, so that when the user clicks on your toast, your app can do something.</span></span> <span data-ttu-id="6fc6c-130">これは、アクション センターにトーストを継続的に表示するために必要です (トーストは、数日後、アプリが閉じているときにクリックされる可能性があります)。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-130">This is required for your toast to persist in Action Center (since the toast could be clicked days later when your app is closed).</span></span> <span data-ttu-id="6fc6c-131">このクラスは、プロジェクトの任意の位置に指定できます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-131">This class can be placed anywhere in your project.</span></span>
 
-<span data-ttu-id="87fe3-132">**NotificationActivator** クラスを展開し、以下の 3 つの属性を追加します。任意のオンライン GUID ジェネレーターを使用して、アプリ用に一意の GUID CLSID を作成します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-132">Extend the **NotificationActivator** class and then add the three attributes listed below, and create a unique GUID CLSID for your app using one of the many online GUID generators.</span></span> <span data-ttu-id="87fe3-133">アクション センターは、この CLSID (クラス識別子) に基づいて、COM アクティブ化するクラスを認識します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-133">This CLSID (class identifier) is how Action Center knows what class to COM activate.</span></span>
+<span data-ttu-id="6fc6c-132">**NotificationActivator** クラスを展開し、以下の 3 つの属性を追加します。任意のオンライン GUID ジェネレーターを使用して、アプリ用に一意の GUID CLSID を作成します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-132">Extend the **NotificationActivator** class and then add the three attributes listed below, and create a unique GUID CLSID for your app using one of the many online GUID generators.</span></span> <span data-ttu-id="6fc6c-133">アクション センターは、この CLSID (クラス識別子) に基づいて、COM アクティブ化するクラスを認識します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-133">This CLSID (class identifier) is how Action Center knows what class to COM activate.</span></span>
 
 ```csharp
 // The GUID CLSID must be unique to your app. Create a new GUID if copying this code.
@@ -89,22 +89,22 @@ public class MyNotificationActivator : NotificationActivator
 ```
 
 
-## <a name="step-5-register-with-notification-platform"></a><span data-ttu-id="87fe3-134">手順 5: 通知プラットフォームに登録する</span><span class="sxs-lookup"><span data-stu-id="87fe3-134">Step 5: Register with notification platform</span></span>
+## <a name="step-5-register-with-notification-platform"></a><span data-ttu-id="6fc6c-134">手順 5: 通知プラットフォームに登録する</span><span class="sxs-lookup"><span data-stu-id="6fc6c-134">Step 5: Register with notification platform</span></span>
 
-<span data-ttu-id="87fe3-135">次に、通知プラットフォームに登録します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-135">Then, you must register with the notification platform.</span></span> <span data-ttu-id="87fe3-136">デスクトップ ブリッジと従来の Win32 のどちらを使用するかによって、手順が異なります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-136">There are different steps depending on whether you are using the Desktop Bridge or classic Win32.</span></span> <span data-ttu-id="87fe3-137">両方をサポートする場合は、両方の手順を行う必要があります (コードをフォークする必要はありません。ライブラリがすべて自動的に処理します)。</span><span class="sxs-lookup"><span data-stu-id="87fe3-137">If you support both, you must do both steps (however, no need to fork your code, our library handles that for you!).</span></span>
+<span data-ttu-id="6fc6c-135">次に、通知プラットフォームに登録します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-135">Then, you must register with the notification platform.</span></span> <span data-ttu-id="6fc6c-136">デスクトップ ブリッジと従来の Win32 のどちらを使用するかによって、手順が異なります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-136">There are different steps depending on whether you are using the Desktop Bridge or classic Win32.</span></span> <span data-ttu-id="6fc6c-137">両方をサポートする場合は、両方の手順を行う必要があります (コードをフォークする必要はありません。ライブラリがすべて自動的に処理します)。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-137">If you support both, you must do both steps (however, no need to fork your code, our library handles that for you!).</span></span>
 
 
-### <a name="desktop-bridge"></a><span data-ttu-id="87fe3-138">デスクトップ ブリッジ</span><span class="sxs-lookup"><span data-stu-id="87fe3-138">Desktop Bridge</span></span>
+### <a name="desktop-bridge"></a><span data-ttu-id="6fc6c-138">デスクトップ ブリッジ</span><span class="sxs-lookup"><span data-stu-id="6fc6c-138">Desktop Bridge</span></span>
 
-<span data-ttu-id="87fe3-139">デスクトップ ブリッジを使用する場合 (または両方をサポートする場合) は、**Package.appxmanifest** に以下を追加します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-139">If you're using Desktop Bridge (or if you support both), in your **Package.appxmanifest**, add:</span></span>
+<span data-ttu-id="6fc6c-139">デスクトップ ブリッジを使用する場合 (または両方をサポートする場合) は、**Package.appxmanifest** に以下を追加します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-139">If you're using Desktop Bridge (or if you support both), in your **Package.appxmanifest**, add:</span></span>
 
-1. <span data-ttu-id="87fe3-140">**xmlns:com** のための宣言</span><span class="sxs-lookup"><span data-stu-id="87fe3-140">Declaration for **xmlns:com**</span></span>
-2. <span data-ttu-id="87fe3-141">**xmlns:desktop** のための宣言</span><span class="sxs-lookup"><span data-stu-id="87fe3-141">Declaration for **xmlns:desktop**</span></span>
-3. <span data-ttu-id="87fe3-142">**IgnorableNamespaces** 属性に **com** と **desktop** を追加</span><span class="sxs-lookup"><span data-stu-id="87fe3-142">In the **IgnorableNamespaces** attribute, **com** and **desktop**</span></span>
-4. <span data-ttu-id="87fe3-143">手順 4 で取得した GUID を使用して、COM アクティベーターの **com:Extension** を追加</span><span class="sxs-lookup"><span data-stu-id="87fe3-143">**com:Extension** for the COM activator using the GUID from step #4.</span></span> <span data-ttu-id="87fe3-144">トーストから起動されたことがわかるように、必ず、`Arguments="-ToastActivated"` を指定します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-144">Be sure to include the `Arguments="-ToastActivated"` so that you know your launch was from a toast</span></span>
-5. <span data-ttu-id="87fe3-145">**windows.toastNotificationActivation** の **desktop:Extension** を追加して、トースト アクティベーター  CLSID (手順 4 の GUID) を宣言します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-145">**desktop:Extension** for **windows.toastNotificationActivation** to declare your toast activator CLSID (the GUID from step #4).</span></span>
+1. <span data-ttu-id="6fc6c-140">**xmlns:com** のための宣言</span><span class="sxs-lookup"><span data-stu-id="6fc6c-140">Declaration for **xmlns:com**</span></span>
+2. <span data-ttu-id="6fc6c-141">**xmlns:desktop** のための宣言</span><span class="sxs-lookup"><span data-stu-id="6fc6c-141">Declaration for **xmlns:desktop**</span></span>
+3. <span data-ttu-id="6fc6c-142">**IgnorableNamespaces** 属性に **com** と **desktop** を追加</span><span class="sxs-lookup"><span data-stu-id="6fc6c-142">In the **IgnorableNamespaces** attribute, **com** and **desktop**</span></span>
+4. <span data-ttu-id="6fc6c-143">手順 4 で取得した GUID を使用して、COM アクティベーターの **com:Extension** を追加</span><span class="sxs-lookup"><span data-stu-id="6fc6c-143">**com:Extension** for the COM activator using the GUID from step #4.</span></span> <span data-ttu-id="6fc6c-144">トーストから起動されたことがわかるように、必ず、`Arguments="-ToastActivated"` を指定します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-144">Be sure to include the `Arguments="-ToastActivated"` so that you know your launch was from a toast</span></span>
+5. <span data-ttu-id="6fc6c-145">**windows.toastNotificationActivation** の **desktop:Extension** を追加して、トースト アクティベーター  CLSID (手順 4 の GUID) を宣言します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-145">**desktop:Extension** for **windows.toastNotificationActivation** to declare your toast activator CLSID (the GUID from step #4).</span></span>
 
-**<span data-ttu-id="87fe3-146">Package.appxmanifest</span><span class="sxs-lookup"><span data-stu-id="87fe3-146">Package.appxmanifest</span></span>**
+**<span data-ttu-id="6fc6c-146">Package.appxmanifest</span><span class="sxs-lookup"><span data-stu-id="6fc6c-146">Package.appxmanifest</span></span>**
 
 ```xml
 <Package
@@ -139,17 +139,17 @@ public class MyNotificationActivator : NotificationActivator
 ```
 
 
-### <a name="classic-win32"></a><span data-ttu-id="87fe3-147">従来の Win32</span><span class="sxs-lookup"><span data-stu-id="87fe3-147">Classic Win32</span></span>
+### <a name="classic-win32"></a><span data-ttu-id="6fc6c-147">従来の Win32</span><span class="sxs-lookup"><span data-stu-id="6fc6c-147">Classic Win32</span></span>
 
-<span data-ttu-id="87fe3-148">従来の Win32 を使用する場合 (または両方をサポートする場合) は、スタート メニューのアプリのショートカットで、アプリケーション ユーザー モデル ID (AUMID) とトースト アクティベーター CLSID (手順 4 の GUID) を宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-148">If you're using classic Win32 (or if you support both), you have to declare your Application User Model ID (AUMID) and toast activator CLSID (the GUID from step #4) on your app's shortcut in Start.</span></span>
+<span data-ttu-id="6fc6c-148">従来の Win32 を使用する場合 (または両方をサポートする場合) は、スタート メニューのアプリのショートカットで、アプリケーション ユーザー モデル ID (AUMID) とトースト アクティベーター CLSID (手順 4 の GUID) を宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-148">If you're using classic Win32 (or if you support both), you have to declare your Application User Model ID (AUMID) and toast activator CLSID (the GUID from step #4) on your app's shortcut in Start.</span></span>
 
-<span data-ttu-id="87fe3-149">対象の Win32 アプリを識別する一意の AUMID を選択します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-149">Pick a unique AUMID that will identify your Win32 app.</span></span> <span data-ttu-id="87fe3-150">これは通常、[CompanyName].[AppName] の形式です。すべてのアプリを通じて、一意である必要があります (任意の数字を自由に追加できます)。</span><span class="sxs-lookup"><span data-stu-id="87fe3-150">This is typically in the form of [CompanyName].[AppName], but you want to ensure this is unique across all apps (feel free to add some digits at the end).</span></span>
+<span data-ttu-id="6fc6c-149">対象の Win32 アプリを識別する一意の AUMID を選択します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-149">Pick a unique AUMID that will identify your Win32 app.</span></span> <span data-ttu-id="6fc6c-150">これは通常、[CompanyName].[AppName] の形式です。すべてのアプリを通じて、一意である必要があります (任意の数字を自由に追加できます)。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-150">This is typically in the form of [CompanyName].[AppName], but you want to ensure this is unique across all apps (feel free to add some digits at the end).</span></span>
 
-#### <a name="step-51-wix-installer"></a><span data-ttu-id="87fe3-151">手順 5.1: WiX インストーラー</span><span class="sxs-lookup"><span data-stu-id="87fe3-151">Step 5.1: WiX Installer</span></span>
+#### <a name="step-51-wix-installer"></a><span data-ttu-id="6fc6c-151">手順 5.1: WiX インストーラー</span><span class="sxs-lookup"><span data-stu-id="6fc6c-151">Step 5.1: WiX Installer</span></span>
 
-<span data-ttu-id="87fe3-152">インストーラーに WiX を使用している場合は、以下に示すように **Product.wxs** ファイルを編集して、スタート メニューのショートカットに 2 つのショートカット プロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-152">If you're using WiX for your installer, edit the **Product.wxs** file to add the two shortcut properties to your Start menu shortcut as seen below.</span></span> <span data-ttu-id="87fe3-153">下のように、手順 4 の GUID を必ず `{}` で囲みます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-153">Be sure that your GUID from step #4 is enclosed in `{}` as seen below.</span></span>
+<span data-ttu-id="6fc6c-152">インストーラーに WiX を使用している場合は、以下に示すように **Product.wxs** ファイルを編集して、スタート メニューのショートカットに 2 つのショートカット プロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-152">If you're using WiX for your installer, edit the **Product.wxs** file to add the two shortcut properties to your Start menu shortcut as seen below.</span></span> <span data-ttu-id="6fc6c-153">下のように、手順 4 の GUID を必ず `{}` で囲みます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-153">Be sure that your GUID from step #4 is enclosed in `{}` as seen below.</span></span>
 
-**<span data-ttu-id="87fe3-154">Product.wxs</span><span class="sxs-lookup"><span data-stu-id="87fe3-154">Product.wxs</span></span>**
+**<span data-ttu-id="6fc6c-154">Product.wxs</span><span class="sxs-lookup"><span data-stu-id="6fc6c-154">Product.wxs</span></span>**
 
 ```xml
 <Shortcut Id="ApplicationStartMenuShortcut" Name="Wix Sample" Description="Wix Sample" Target="[INSTALLFOLDER]WixSample.exe" WorkingDirectory="INSTALLFOLDER">
@@ -164,28 +164,28 @@ public class MyNotificationActivator : NotificationActivator
 ```
 
 > [!IMPORTANT]
-> <span data-ttu-id="87fe3-155">実際に通知を使用するためには、通常のデバッグ前に、アプリをインストーラー経由でインストールして、AUMID と CLSID を使用したスタート ショートカットを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-155">In order to actually use notifications, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present.</span></span> <span data-ttu-id="87fe3-156">スタート ショートカットが表示された後は、Visual Studio で F5 キーを使用してデバッグできます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-156">After the Start shortcut is present, you can debug using F5 from Visual Studio.</span></span>
+> <span data-ttu-id="6fc6c-155">実際に通知を使用するためには、通常のデバッグ前に、アプリをインストーラー経由でインストールして、AUMID と CLSID を使用したスタート ショートカットを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-155">In order to actually use notifications, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present.</span></span> <span data-ttu-id="6fc6c-156">スタート ショートカットが表示された後は、Visual Studio で F5 キーを使用してデバッグできます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-156">After the Start shortcut is present, you can debug using F5 from Visual Studio.</span></span>
 
 
-#### <a name="step-52-register-aumid-and-com-server"></a><span data-ttu-id="87fe3-157">手順 5.2: AUMID と COM サーバーを登録する</span><span class="sxs-lookup"><span data-stu-id="87fe3-157">Step 5.2: Register AUMID and COM server</span></span>
+#### <a name="step-52-register-aumid-and-com-server"></a><span data-ttu-id="6fc6c-157">手順 5.2: AUMID と COM サーバーを登録する</span><span class="sxs-lookup"><span data-stu-id="6fc6c-157">Step 5.2: Register AUMID and COM server</span></span>
 
-<span data-ttu-id="87fe3-158">次に、どちらのインストーラーを使用する場合も、(通知 API を呼び出す前に) アプリのスタートアップ コード内で、**RegisterAumidAndComServer** メソッドを呼び出して、上記の手順 4 の通知アクティベーター クラスと AUMID を指定します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-158">Then, regardless of your installer, in your app's startup code (before calling any notification APIs), call the **RegisterAumidAndComServer** method, specifying your notification activator class from step #4 and your AUMID used above.</span></span>
+<span data-ttu-id="6fc6c-158">次に、どちらのインストーラーを使用する場合も、(通知 API を呼び出す前に) アプリのスタートアップ コード内で、**RegisterAumidAndComServer** メソッドを呼び出して、上記の手順 4 の通知アクティベーター クラスと AUMID を指定します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-158">Then, regardless of your installer, in your app's startup code (before calling any notification APIs), call the **RegisterAumidAndComServer** method, specifying your notification activator class from step #4 and your AUMID used above.</span></span>
 
 ```csharp
 // Register AUMID and COM server (for Desktop Bridge apps, this no-ops)
 DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivator>("YourCompany.YourApp");
 ```
 
-<span data-ttu-id="87fe3-159">デスクトップ ブリッジと従来の Win32 の両方をサポートする場合も、問題なくこのメソッドを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-159">If you support both Desktop Bridge and classic Win32, feel free to call this method regardless.</span></span> <span data-ttu-id="87fe3-160">デスクトップ ブリッジで実行する場合、このメソッドは即座に戻ります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-160">If you're running under Desktop Bridge, this method will simply return immediately.</span></span> <span data-ttu-id="87fe3-161">コードをフォークする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="87fe3-161">There's no need to fork your code.</span></span>
+<span data-ttu-id="6fc6c-159">デスクトップ ブリッジと従来の Win32 の両方をサポートする場合も、問題なくこのメソッドを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-159">If you support both Desktop Bridge and classic Win32, feel free to call this method regardless.</span></span> <span data-ttu-id="6fc6c-160">デスクトップ ブリッジで実行する場合、このメソッドは即座に戻ります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-160">If you're running under Desktop Bridge, this method will simply return immediately.</span></span> <span data-ttu-id="6fc6c-161">コードをフォークする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-161">There's no need to fork your code.</span></span>
 
-<span data-ttu-id="87fe3-162">このメソッドを使用することで、AUMID を常に提供する必要なしに、compat API を呼び出して通知を送信および管理できます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-162">This method allows you to call the compat APIs to send and manage notifications without having to constantly provide your AUMID.</span></span> <span data-ttu-id="87fe3-163">またこのメソッドによって、COM サーバーの LocalServer32 レジストリ キーが挿入されます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-163">And it inserts the LocalServer32 registry key for the COM server.</span></span>
+<span data-ttu-id="6fc6c-162">このメソッドを使用することで、AUMID を常に提供する必要なしに、compat API を呼び出して通知を送信および管理できます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-162">This method allows you to call the compat APIs to send and manage notifications without having to constantly provide your AUMID.</span></span> <span data-ttu-id="6fc6c-163">またこのメソッドによって、COM サーバーの LocalServer32 レジストリ キーが挿入されます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-163">And it inserts the LocalServer32 registry key for the COM server.</span></span>
 
 
-## <a name="step-6-register-com-activator"></a><span data-ttu-id="87fe3-164">手順 6: COM サーバーを登録する</span><span class="sxs-lookup"><span data-stu-id="87fe3-164">Step 6: Register COM activator</span></span>
+## <a name="step-6-register-com-activator"></a><span data-ttu-id="6fc6c-164">手順 6: COM サーバーを登録する</span><span class="sxs-lookup"><span data-stu-id="6fc6c-164">Step 6: Register COM activator</span></span>
 
-<span data-ttu-id="87fe3-165">デスクトップ ブリッジと従来の Win32 アプリのいずれを使用する場合も、トーストのアクティブ化を処理するためには、通知アクティベーター タイプを登録する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-165">For both Desktop Bridge and classic Win32 apps, you must register your notification activator type, so that you can handle toast activations.</span></span>
+<span data-ttu-id="6fc6c-165">デスクトップ ブリッジと従来の Win32 アプリのいずれを使用する場合も、トーストのアクティブ化を処理するためには、通知アクティベーター タイプを登録する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-165">For both Desktop Bridge and classic Win32 apps, you must register your notification activator type, so that you can handle toast activations.</span></span>
 
-<span data-ttu-id="87fe3-166">アプリのスタートアップ コードで、手順 4 で作成した **NotificationActivator** クラスを次の **RegisterActivator** メソッドに渡して呼び出します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-166">In your app's startup code, call the following **RegisterActivator** method, passing in your implementation of the **NotificationActivator** class you created in step #4.</span></span> <span data-ttu-id="87fe3-167">これにより、トーストのアクティブ化を受信できるようになります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-167">This must be called in order for you to receive any toast activations.</span></span>
+<span data-ttu-id="6fc6c-166">アプリのスタートアップ コードで、手順 4 で作成した **NotificationActivator** クラスを次の **RegisterActivator** メソッドに渡して呼び出します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-166">In your app's startup code, call the following **RegisterActivator** method, passing in your implementation of the **NotificationActivator** class you created in step #4.</span></span> <span data-ttu-id="6fc6c-167">これにより、トーストのアクティブ化を受信できるようになります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-167">This must be called in order for you to receive any toast activations.</span></span>
 
 ```csharp
 // Register COM server and activator type
@@ -193,17 +193,17 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 ```
 
 
-## <a name="step-7-send-a-notification"></a><span data-ttu-id="87fe3-168">手順 7: 通知を送信する</span><span class="sxs-lookup"><span data-stu-id="87fe3-168">Step 7: Send a notification</span></span>
+## <a name="step-7-send-a-notification"></a><span data-ttu-id="6fc6c-168">手順 7: 通知を送信する</span><span class="sxs-lookup"><span data-stu-id="6fc6c-168">Step 7: Send a notification</span></span>
 
-<span data-ttu-id="87fe3-169">通知を送信する手順は、**DesktopNotificationManagerCompat** クラスを使用して **ToastNotifier** を作成することを除き、UWP アプリとまったく同じです。</span><span class="sxs-lookup"><span data-stu-id="87fe3-169">Sending a notification is identical to UWP apps, except that you will use the **DesktopNotificationManagerCompat** class to create a **ToastNotifier**.</span></span> <span data-ttu-id="87fe3-170">デスクトップ ブリッジと従来の Win32 の間で異なる部分は、compat ライブラリによって自動的に処理されるため、コードをフォークする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="87fe3-170">The compat library automatically handles the difference between Desktop Bridge and classic Win32 so you do not have to fork your code.</span></span> <span data-ttu-id="87fe3-171">従来の Win32 では、**RegisterAumidAndComServer** の呼び出し時に、指定した AUMID が compat ライブラリによってキャッシュされるため、AUMID を指定するタイミングや指定するかどうかを検討する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="87fe3-171">For classic Win32, the compat library caches your AUMID you provided when calling **RegisterAumidAndComServer** so that you don't need to worry about when to provide or not provide the AUMID.</span></span>
+<span data-ttu-id="6fc6c-169">通知を送信する手順は、**DesktopNotificationManagerCompat** クラスを使用して **ToastNotifier** を作成することを除き、UWP アプリとまったく同じです。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-169">Sending a notification is identical to UWP apps, except that you will use the **DesktopNotificationManagerCompat** class to create a **ToastNotifier**.</span></span> <span data-ttu-id="6fc6c-170">デスクトップ ブリッジと従来の Win32 の間で異なる部分は、compat ライブラリによって自動的に処理されるため、コードをフォークする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-170">The compat library automatically handles the difference between Desktop Bridge and classic Win32 so you do not have to fork your code.</span></span> <span data-ttu-id="6fc6c-171">従来の Win32 では、**RegisterAumidAndComServer** の呼び出し時に、指定した AUMID が compat ライブラリによってキャッシュされるため、AUMID を指定するタイミングや指定するかどうかを検討する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-171">For classic Win32, the compat library caches your AUMID you provided when calling **RegisterAumidAndComServer** so that you don't need to worry about when to provide or not provide the AUMID.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="87fe3-172">[Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) をインストールすると、以下に示すように、生の XML ではなく、C# を使って通知を作成できます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-172">Install the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) so that you can construct notifications using C# as seen below, instead of using raw XML.</span></span>
+> <span data-ttu-id="6fc6c-172">[Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) をインストールすると、以下に示すように、生の XML ではなく、C# を使って通知を作成できます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-172">Install the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) so that you can construct notifications using C# as seen below, instead of using raw XML.</span></span>
 
-<span data-ttu-id="87fe3-173">レガシの Windows 8.1 のトースト通知テンプレートでは、手順 4 で作成した COM 通知アクティベーターがアクティブ化されないため、以下に示すように、**ToastContent** (または XML を手作業で作成している場合は、ToastGeneric テンプレート) を必ず使用します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-173">Make sure you use the **ToastContent** seen below (or the ToastGeneric template if you're hand-crafting XML) since the legacy Windows 8.1 toast notification templates will not activate your COM notification activator you created in step #4.</span></span>
+<span data-ttu-id="6fc6c-173">レガシの Windows 8.1 のトースト通知テンプレートでは、手順 4 で作成した COM 通知アクティベーターがアクティブ化されないため、以下に示すように、**ToastContent** (または XML を手作業で作成している場合は、ToastGeneric テンプレート) を必ず使用します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-173">Make sure you use the **ToastContent** seen below (or the ToastGeneric template if you're hand-crafting XML) since the legacy Windows 8.1 toast notification templates will not activate your COM notification activator you created in step #4.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="87fe3-174">http イメージは、マニフェストにインターネット機能を持つデスクトップ ブリッジ アプリでのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-174">Http images are only supported in Desktop Bridge apps that have the internet capability in their manifest.</span></span> <span data-ttu-id="87fe3-175">従来の Win32 アプリは http イメージをサポートしていないため、ローカル アプリ データにイメージをダウンロードし、それをローカルに参照する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-175">Classic Win32 apps do not support http images; you must download the image to your local app data and reference it locally.</span></span>
+> <span data-ttu-id="6fc6c-174">http イメージは、マニフェストにインターネット機能を持つデスクトップ ブリッジ アプリでのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-174">Http images are only supported in Desktop Bridge apps that have the internet capability in their manifest.</span></span> <span data-ttu-id="6fc6c-175">従来の Win32 アプリは http イメージをサポートしていないため、ローカル アプリ データにイメージをダウンロードし、それをローカルに参照する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-175">Classic Win32 apps do not support http images; you must download the image to your local app data and reference it locally.</span></span>
 
 ```csharp
 // Construct the visuals of the toast (using Notifications library)
@@ -239,17 +239,17 @@ DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
 ```
 
 > [!IMPORTANT]
-> <span data-ttu-id="87fe3-176">従来の Win32 アプリでは、レガシ トースト テンプレート (ToastText02 など) を使用できません。</span><span class="sxs-lookup"><span data-stu-id="87fe3-176">Classic Win32 apps cannot use legacy toast templates (like ToastText02).</span></span> <span data-ttu-id="87fe3-177">COM CLSID を指定すると、レガシ テンプレートのアクティブ化は失敗します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-177">Activation of the legacy templates will fail when the COM CLSID is specified.</span></span> <span data-ttu-id="87fe3-178">上記のように Windows 10 ToastGeneric テンプレートを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-178">You must use the Windows 10 ToastGeneric templates as seen above.</span></span>
+> <span data-ttu-id="6fc6c-176">従来の Win32 アプリでは、レガシ トースト テンプレート (ToastText02 など) を使用できません。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-176">Classic Win32 apps cannot use legacy toast templates (like ToastText02).</span></span> <span data-ttu-id="6fc6c-177">COM CLSID を指定すると、レガシ テンプレートのアクティブ化は失敗します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-177">Activation of the legacy templates will fail when the COM CLSID is specified.</span></span> <span data-ttu-id="6fc6c-178">上記のように Windows 10 ToastGeneric テンプレートを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-178">You must use the Windows 10 ToastGeneric templates as seen above.</span></span>
 
 
-## <a name="step-8-handling-activation"></a><span data-ttu-id="87fe3-179">手順 8: アクティブ化を処理する</span><span class="sxs-lookup"><span data-stu-id="87fe3-179">Step 8: Handling activation</span></span>
+## <a name="step-8-handling-activation"></a><span data-ttu-id="6fc6c-179">手順 8: アクティブ化を処理する</span><span class="sxs-lookup"><span data-stu-id="6fc6c-179">Step 8: Handling activation</span></span>
 
-<span data-ttu-id="87fe3-180">ユーザーがトーストをクリックすると、**NotificationActivator** クラスの **OnActivated** メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-180">When the user clicks on your toast, the **OnActivated** method of your **NotificationActivator** class is invoked.</span></span>
+<span data-ttu-id="6fc6c-180">ユーザーがトーストをクリックすると、**NotificationActivator** クラスの **OnActivated** メソッドが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-180">When the user clicks on your toast, the **OnActivated** method of your **NotificationActivator** class is invoked.</span></span>
 
-<span data-ttu-id="87fe3-181">OnActivated メソッド内では、トーストで指定した引数を解析し、ユーザーが入力または選択したユーザー入力を取得したうえで、それに応じてアプリをアクティブ化できます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-181">Inside the OnActivated method, you can parse the args that you specified in the toast and obtain the user input that the user typed or selected, and then activate your app accordingly.</span></span>
+<span data-ttu-id="6fc6c-181">OnActivated メソッド内では、トーストで指定した引数を解析し、ユーザーが入力または選択したユーザー入力を取得したうえで、それに応じてアプリをアクティブ化できます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-181">Inside the OnActivated method, you can parse the args that you specified in the toast and obtain the user input that the user typed or selected, and then activate your app accordingly.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="87fe3-182">**OnActivated** メソッドは UI スレッドでは呼び出されません。</span><span class="sxs-lookup"><span data-stu-id="87fe3-182">The **OnActivated** method is not called on the UI thread.</span></span> <span data-ttu-id="87fe3-183">UI スレッド操作を実行する場合は、`Application.Current.Dispatcher.Invoke(callback)` を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-183">If you'd like to perform UI thread operations, you must call `Application.Current.Dispatcher.Invoke(callback)`.</span></span>
+> <span data-ttu-id="6fc6c-182">**OnActivated** メソッドは UI スレッドでは呼び出されません。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-182">The **OnActivated** method is not called on the UI thread.</span></span> <span data-ttu-id="6fc6c-183">UI スレッド操作を実行する場合は、`Application.Current.Dispatcher.Invoke(callback)` を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-183">If you'd like to perform UI thread operations, you must call `Application.Current.Dispatcher.Invoke(callback)`.</span></span>
 
 ```csharp
 // The GUID must be unique to your app. Create a new GUID if copying this code.
@@ -327,7 +327,7 @@ public class MyNotificationActivator : NotificationActivator
 }
 ```
 
-<span data-ttu-id="87fe3-184">アプリが閉じている間の起動を適切にサポートするため、`App.xaml.cs` ファイル内で **OnStartup** メソッド (WPF アプリ用) を上書きして、トーストから起動しているかどうかを判定することができます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-184">To properly support being launched while your app is closed, in your `App.xaml.cs` file, you'll want to override **OnStartup** method (for WPF apps) to determine whether you're being launched from a toast or not.</span></span> <span data-ttu-id="87fe3-185">トーストから起動している場合は、起動引数が "-ToastActivated" に指定されています。</span><span class="sxs-lookup"><span data-stu-id="87fe3-185">If launched from a toast, there will be a launch arg of "-ToastActivated".</span></span> <span data-ttu-id="87fe3-186">この引数が指定されている場合、通常の起動アクティブ化コードの実行をすべて停止して、**OnActivated** コードによる起動処理が完了するのを待つ必要があります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-186">When you see this, you should stop performing any normal launch activation code, and allow your **OnActivated** code handle launching.</span></span>
+<span data-ttu-id="6fc6c-184">アプリが閉じている間の起動を適切にサポートするため、`App.xaml.cs` ファイル内で **OnStartup** メソッド (WPF アプリ用) を上書きして、トーストから起動しているかどうかを判定することができます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-184">To properly support being launched while your app is closed, in your `App.xaml.cs` file, you'll want to override **OnStartup** method (for WPF apps) to determine whether you're being launched from a toast or not.</span></span> <span data-ttu-id="6fc6c-185">トーストから起動している場合は、起動引数が "-ToastActivated" に指定されています。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-185">If launched from a toast, there will be a launch arg of "-ToastActivated".</span></span> <span data-ttu-id="6fc6c-186">この引数が指定されている場合、通常の起動アクティブ化コードの実行をすべて停止して、**OnActivated** コードによる起動処理が完了するのを待つ必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-186">When you see this, you should stop performing any normal launch activation code, and allow your **OnActivated** code handle launching.</span></span>
 
 ```csharp
 protected override async void OnStartup(StartupEventArgs e)
@@ -357,27 +357,27 @@ protected override async void OnStartup(StartupEventArgs e)
 ```
 
 
-### <a name="activation-sequence-of-events"></a><span data-ttu-id="87fe3-187">イベントのアクティブ化シーケンス</span><span class="sxs-lookup"><span data-stu-id="87fe3-187">Activation sequence of events</span></span>
+### <a name="activation-sequence-of-events"></a><span data-ttu-id="6fc6c-187">イベントのアクティブ化シーケンス</span><span class="sxs-lookup"><span data-stu-id="6fc6c-187">Activation sequence of events</span></span>
 
-<span data-ttu-id="87fe3-188">WPF の場合、アクティブ化シーケンスは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="87fe3-188">For WPF, the activation sequence is the following...</span></span>
+<span data-ttu-id="6fc6c-188">WPF の場合、アクティブ化シーケンスは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-188">For WPF, the activation sequence is the following...</span></span>
 
-<span data-ttu-id="87fe3-189">アプリが既に実行されている場合:</span><span class="sxs-lookup"><span data-stu-id="87fe3-189">If your app is already running:</span></span>
+<span data-ttu-id="6fc6c-189">アプリが既に実行されている場合:</span><span class="sxs-lookup"><span data-stu-id="6fc6c-189">If your app is already running:</span></span>
 
-1. <span data-ttu-id="87fe3-190">**NotificationActivator** で **OnActivated** が呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-190">**OnActivated** in your **NotificationActivator** is called</span></span>
+1. <span data-ttu-id="6fc6c-190">**NotificationActivator** で **OnActivated** が呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-190">**OnActivated** in your **NotificationActivator** is called</span></span>
 
-<span data-ttu-id="87fe3-191">アプリが実行されていない場合:</span><span class="sxs-lookup"><span data-stu-id="87fe3-191">If your app is not running:</span></span>
+<span data-ttu-id="6fc6c-191">アプリが実行されていない場合:</span><span class="sxs-lookup"><span data-stu-id="6fc6c-191">If your app is not running:</span></span>
 
-1. <span data-ttu-id="87fe3-192">`App.xaml.cs` で、**Args** に "-ToastActivated" を指定して **OnStartup** が呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-192">**OnStartup** in `App.xaml.cs` is called with **Args** of "-ToastActivated"</span></span>
-2. <span data-ttu-id="87fe3-193">**NotificationActivator** で **OnActivated** が呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-193">**OnActivated** in your **NotificationActivator** is called</span></span>
-
-
-### <a name="foreground-vs-background-activation"></a><span data-ttu-id="87fe3-194">フォアグラウンドとバックグラウンドのアクティブ化</span><span class="sxs-lookup"><span data-stu-id="87fe3-194">Foreground vs background activation</span></span>
-<span data-ttu-id="87fe3-195">デスクトップ アプリでは、フォア グラウンドとバック グラウンドのアクティブ化はいずれも、COM アクティベーターの呼び出しという同じ手順で処理されます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-195">For desktop apps, foreground and background activation is handled identically - your COM activator is called.</span></span> <span data-ttu-id="87fe3-196">ウィンドウを表示するか、ウィンドウを表示せずに作業を行うだけで終了するかは、アプリのコードによって決定されます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-196">It's up to your app's code to decide whether to show a window or to simply perform some work and then exit.</span></span> <span data-ttu-id="87fe3-197">したがって、トーストのコンテンツで **ActivationType** に **Background** を指定しても、動作は変わりません。</span><span class="sxs-lookup"><span data-stu-id="87fe3-197">Therefore, specifying an **ActivationType** of **Background** in your toast content doesn't change the behavior.</span></span>
+1. <span data-ttu-id="6fc6c-192">`App.xaml.cs` で、**Args** に "-ToastActivated" を指定して **OnStartup** が呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-192">**OnStartup** in `App.xaml.cs` is called with **Args** of "-ToastActivated"</span></span>
+2. <span data-ttu-id="6fc6c-193">**NotificationActivator** で **OnActivated** が呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-193">**OnActivated** in your **NotificationActivator** is called</span></span>
 
 
-## <a name="step-9-remove-and-manage-notifications"></a><span data-ttu-id="87fe3-198">手順 9: 通知を削除および管理する</span><span class="sxs-lookup"><span data-stu-id="87fe3-198">Step 9: Remove and manage notifications</span></span>
+### <a name="foreground-vs-background-activation"></a><span data-ttu-id="6fc6c-194">フォアグラウンドとバックグラウンドのアクティブ化</span><span class="sxs-lookup"><span data-stu-id="6fc6c-194">Foreground vs background activation</span></span>
+<span data-ttu-id="6fc6c-195">デスクトップ アプリでは、フォア グラウンドとバック グラウンドのアクティブ化はいずれも、COM アクティベーターの呼び出しという同じ手順で処理されます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-195">For desktop apps, foreground and background activation is handled identically - your COM activator is called.</span></span> <span data-ttu-id="6fc6c-196">ウィンドウを表示するか、ウィンドウを表示せずに作業を行うだけで終了するかは、アプリのコードによって決定されます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-196">It's up to your app's code to decide whether to show a window or to simply perform some work and then exit.</span></span> <span data-ttu-id="6fc6c-197">したがって、トーストのコンテンツで **ActivationType** に **Background** を指定しても、動作は変わりません。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-197">Therefore, specifying an **ActivationType** of **Background** in your toast content doesn't change the behavior.</span></span>
 
-<span data-ttu-id="87fe3-199">通知を削除および管理する手順は、UWP アプリと同じです。</span><span class="sxs-lookup"><span data-stu-id="87fe3-199">Removing and managing notifications is identical to UWP apps.</span></span> <span data-ttu-id="87fe3-200">ただし、compat ライブラリを使用して **DesktopNotificationHistoryCompat** を取得することをお勧めします。これにより、従来の Win32 を使用している場合も、AUMID を提供する必要がなくなります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-200">However, we recommend you use our compat library to obtain a **DesktopNotificationHistoryCompat** so you don't have to worry about providing the AUMID if you're using classic Win32.</span></span>
+
+## <a name="step-9-remove-and-manage-notifications"></a><span data-ttu-id="6fc6c-198">手順 9: 通知を削除および管理する</span><span class="sxs-lookup"><span data-stu-id="6fc6c-198">Step 9: Remove and manage notifications</span></span>
+
+<span data-ttu-id="6fc6c-199">通知を削除および管理する手順は、UWP アプリと同じです。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-199">Removing and managing notifications is identical to UWP apps.</span></span> <span data-ttu-id="6fc6c-200">ただし、compat ライブラリを使用して **DesktopNotificationHistoryCompat** を取得することをお勧めします。これにより、従来の Win32 を使用している場合も、AUMID を提供する必要がなくなります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-200">However, we recommend you use our compat library to obtain a **DesktopNotificationHistoryCompat** so you don't have to worry about providing the AUMID if you're using classic Win32.</span></span>
 
 ```csharp
 // Remove the toast with tag "Message2"
@@ -388,27 +388,27 @@ DesktopNotificationManagerCompat.History.Clear();
 ```
 
 
-## <a name="step-10-deploying-and-debugging"></a><span data-ttu-id="87fe3-201">手順 10: 展開とデバッグ</span><span class="sxs-lookup"><span data-stu-id="87fe3-201">Step 10: Deploying and debugging</span></span>
+## <a name="step-10-deploying-and-debugging"></a><span data-ttu-id="6fc6c-201">手順 10: 展開とデバッグ</span><span class="sxs-lookup"><span data-stu-id="6fc6c-201">Step 10: Deploying and debugging</span></span>
 
-<span data-ttu-id="87fe3-202">デスクトップ ブリッジ アプリの展開とデバッグについては、「[パッケージ デスクトップ アプリの実行、デバッグ、テスト](/porting/desktop-to-uwp-debug.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="87fe3-202">To deploy and debug your Desktop Bridge app, see [Run, debug, and test a packaged desktop app](/porting/desktop-to-uwp-debug.md).</span></span>
+<span data-ttu-id="6fc6c-202">デスクトップ ブリッジ アプリの展開とデバッグについては、「[パッケージ デスクトップ アプリの実行、デバッグ、テスト](/porting/desktop-to-uwp-debug.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-202">To deploy and debug your Desktop Bridge app, see [Run, debug, and test a packaged desktop app](/porting/desktop-to-uwp-debug.md).</span></span>
 
-<span data-ttu-id="87fe3-203">従来の Win32 アプリを展開およびデバッグするには、通常のデバッグ前に、アプリをインストーラー経由でインストールして、AUMID と CLSID を使用したスタート ショートカットを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87fe3-203">To deploy and debug your classic Win32 app, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present.</span></span> <span data-ttu-id="87fe3-204">スタート ショートカットが表示された後は、Visual Studio で F5 キーを使用してデバッグできます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-204">After the Start shortcut is present, you can debug using F5 from Visual Studio.</span></span>
+<span data-ttu-id="6fc6c-203">従来の Win32 アプリを展開およびデバッグするには、通常のデバッグ前に、アプリをインストーラー経由でインストールして、AUMID と CLSID を使用したスタート ショートカットを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-203">To deploy and debug your classic Win32 app, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present.</span></span> <span data-ttu-id="6fc6c-204">スタート ショートカットが表示された後は、Visual Studio で F5 キーを使用してデバッグできます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-204">After the Start shortcut is present, you can debug using F5 from Visual Studio.</span></span>
 
-<span data-ttu-id="87fe3-205">従来の Win32 アプリに通知がまったく表示されない場合 (かつ例外がスローされない場合)、原因として、スタート ショートカットが存在しないか (インストーラー経由でアプリをインストールしてください)、コード内で使用されている AUMID とスタート ショートカットの AUMID が一致していないことが考えられます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-205">If your notifications simply fail to appear in your classic Win32 app (and no exceptions are thrown), that likely means the Start shortcut isn't present (install your app via the installer), or the AUMID you used in code doesn't match the AUMID in your Start shortcut.</span></span>
+<span data-ttu-id="6fc6c-205">従来の Win32 アプリに通知がまったく表示されない場合 (かつ例外がスローされない場合)、原因として、スタート ショートカットが存在しないか (インストーラー経由でアプリをインストールしてください)、コード内で使用されている AUMID とスタート ショートカットの AUMID が一致していないことが考えられます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-205">If your notifications simply fail to appear in your classic Win32 app (and no exceptions are thrown), that likely means the Start shortcut isn't present (install your app via the installer), or the AUMID you used in code doesn't match the AUMID in your Start shortcut.</span></span>
 
-<span data-ttu-id="87fe3-206">通知は表示されるが、アクション センターに表示されたままにならない (ポップアップを無視すると表示されなくなる) 場合は、COM アクティベーターが正しく実装されていません。</span><span class="sxs-lookup"><span data-stu-id="87fe3-206">If your notifications appear but aren't persisted in Action Center (disappearing after the popup is dismissed), that means you haven't implemented the COM activator correctly.</span></span>
+<span data-ttu-id="6fc6c-206">通知は表示されるが、アクション センターに表示されたままにならない (ポップアップを無視すると表示されなくなる) 場合は、COM アクティベーターが正しく実装されていません。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-206">If your notifications appear but aren't persisted in Action Center (disappearing after the popup is dismissed), that means you haven't implemented the COM activator correctly.</span></span>
 
-<span data-ttu-id="87fe3-207">デスクトップ ブリッジ アプリと従来の Win32 アプリの両方をインストールした場合、トーストのアクティブ化を処理するときに、デスクトップ ブリッジ アプリが従来の Win32 アプリに優先することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="87fe3-207">If you've installed both your Desktop Bridge and classic Win32 app, note that the Desktop Bridge app will supersede the classic Win32 app when handling toast activations.</span></span> <span data-ttu-id="87fe3-208">そのため、従来の Win32 アプリから表示されたトーストをクリックしても、デスクトップ ブリッジ アプリが起動します。</span><span class="sxs-lookup"><span data-stu-id="87fe3-208">That means that toasts from the classic Win32 app will still launch the Desktop Bridge app when clicked.</span></span> <span data-ttu-id="87fe3-209">デスクトップ ブリッジ アプリをアンインストールすると、従来の Win32 アプリがアクティブ化されます。</span><span class="sxs-lookup"><span data-stu-id="87fe3-209">Uninstalling the Desktop Bridge app will revert activations back to the classic Win32 app.</span></span>
-
-
-## <a name="known-issues"></a><span data-ttu-id="87fe3-210">既知の問題</span><span class="sxs-lookup"><span data-stu-id="87fe3-210">Known issues</span></span>
-
-<span data-ttu-id="87fe3-211">**修正済み: トーストのクリック後、アプリがフォーカスされない**: ビルド 15063 以前では、COM サーバーをアクティブ化したときに、フォアグラウンドの権利がアプリケーションに移転されませんでした。</span><span class="sxs-lookup"><span data-stu-id="87fe3-211">**FIXED: App doesn't become focused after clicking toast**: In builds 15063 and earlier, foreground rights weren't being transferred to your application when we activated the COM server.</span></span> <span data-ttu-id="87fe3-212">そのため、アプリをフォアグラウンドに移動しようとしても、点滅するのみで移動できませんでした。</span><span class="sxs-lookup"><span data-stu-id="87fe3-212">Therefore, your app would simply flash when you tried to move it to the foreground.</span></span> <span data-ttu-id="87fe3-213">この問題を解決する方法はありませんでした。</span><span class="sxs-lookup"><span data-stu-id="87fe3-213">There was no workaround for this issue.</span></span> <span data-ttu-id="87fe3-214">この問題は、16299 以降のビルドでは解決済みです。</span><span class="sxs-lookup"><span data-stu-id="87fe3-214">We fixed this in builds 16299 and higher.</span></span>
+<span data-ttu-id="6fc6c-207">デスクトップ ブリッジ アプリと従来の Win32 アプリの両方をインストールした場合、トーストのアクティブ化を処理するときに、デスクトップ ブリッジ アプリが従来の Win32 アプリに優先することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-207">If you've installed both your Desktop Bridge and classic Win32 app, note that the Desktop Bridge app will supersede the classic Win32 app when handling toast activations.</span></span> <span data-ttu-id="6fc6c-208">そのため、従来の Win32 アプリから表示されたトーストをクリックしても、デスクトップ ブリッジ アプリが起動します。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-208">That means that toasts from the classic Win32 app will still launch the Desktop Bridge app when clicked.</span></span> <span data-ttu-id="6fc6c-209">デスクトップ ブリッジ アプリをアンインストールすると、従来の Win32 アプリがアクティブ化されます。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-209">Uninstalling the Desktop Bridge app will revert activations back to the classic Win32 app.</span></span>
 
 
-## <a name="resources"></a><span data-ttu-id="87fe3-215">リソース</span><span class="sxs-lookup"><span data-stu-id="87fe3-215">Resources</span></span>
+## <a name="known-issues"></a><span data-ttu-id="6fc6c-210">既知の問題</span><span class="sxs-lookup"><span data-stu-id="6fc6c-210">Known issues</span></span>
 
-* [<span data-ttu-id="87fe3-216">GitHub での完全なコード サンプル</span><span class="sxs-lookup"><span data-stu-id="87fe3-216">Full code sample on GitHub</span></span>](https://github.com/WindowsNotifications/desktop-toasts)
-* [<span data-ttu-id="87fe3-217">デスクトップ アプリからのトースト通知</span><span class="sxs-lookup"><span data-stu-id="87fe3-217">Toast notifications from desktop apps</span></span>](toast-desktop-apps.md)
-* [<span data-ttu-id="87fe3-218">トースト コンテンツのドキュメント</span><span class="sxs-lookup"><span data-stu-id="87fe3-218">Toast content documentation</span></span>](adaptive-interactive-toasts.md)
+<span data-ttu-id="6fc6c-211">**修正済み: トーストのクリック後、アプリがフォーカスされない**: ビルド 15063 以前では、COM サーバーをアクティブ化したときに、フォアグラウンドの権利がアプリケーションに移転されませんでした。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-211">**FIXED: App doesn't become focused after clicking toast**: In builds 15063 and earlier, foreground rights weren't being transferred to your application when we activated the COM server.</span></span> <span data-ttu-id="6fc6c-212">そのため、アプリをフォアグラウンドに移動しようとしても、点滅するのみで移動できませんでした。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-212">Therefore, your app would simply flash when you tried to move it to the foreground.</span></span> <span data-ttu-id="6fc6c-213">この問題を解決する方法はありませんでした。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-213">There was no workaround for this issue.</span></span> <span data-ttu-id="6fc6c-214">この問題は、16299 以降のビルドでは解決済みです。</span><span class="sxs-lookup"><span data-stu-id="6fc6c-214">We fixed this in builds 16299 and higher.</span></span>
+
+
+## <a name="resources"></a><span data-ttu-id="6fc6c-215">リソース</span><span class="sxs-lookup"><span data-stu-id="6fc6c-215">Resources</span></span>
+
+* [<span data-ttu-id="6fc6c-216">GitHub での完全なコード サンプル</span><span class="sxs-lookup"><span data-stu-id="6fc6c-216">Full code sample on GitHub</span></span>](https://github.com/WindowsNotifications/desktop-toasts)
+* [<span data-ttu-id="6fc6c-217">デスクトップ アプリからのトースト通知</span><span class="sxs-lookup"><span data-stu-id="6fc6c-217">Toast notifications from desktop apps</span></span>](toast-desktop-apps.md)
+* [<span data-ttu-id="6fc6c-218">トースト コンテンツのドキュメント</span><span class="sxs-lookup"><span data-stu-id="6fc6c-218">Toast content documentation</span></span>](adaptive-interactive-toasts.md)
 

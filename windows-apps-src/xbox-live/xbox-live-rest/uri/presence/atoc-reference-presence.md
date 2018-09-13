@@ -12,69 +12,69 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f4c2a34d47f894e2ac9aeaf6228c8ebd41348306
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930981"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957687"
 ---
-# <a name="presence-uris"></a><span data-ttu-id="9d45a-104">プレゼンス Uri</span><span class="sxs-lookup"><span data-stu-id="9d45a-104">Presence URIs</span></span>
+# <a name="presence-uris"></a><span data-ttu-id="add24-104">プレゼンス Uri</span><span class="sxs-lookup"><span data-stu-id="add24-104">Presence URIs</span></span>
  
-<span data-ttu-id="9d45a-105">このセクションでは、*プレゼンス*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="9d45a-105">This section provides detail about the Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *presence*.</span></span>
+<span data-ttu-id="add24-105">このセクションでは、*プレゼンス*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="add24-105">This section provides detail about the Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *presence*.</span></span>
  
-<span data-ttu-id="9d45a-106">Xbox 360、Windows Phone デバイス、または Windows を実行しているゲームだけでは、このサービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="9d45a-106">Only games running on an Xbox 360, on a Windows Phone device, or on Windows can use this service.</span></span>
+<span data-ttu-id="add24-106">Xbox 360、Windows Phone デバイス、または Windows を実行しているゲームだけでは、このサービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="add24-106">Only games running on an Xbox 360, on a Windows Phone device, or on Windows can use this service.</span></span>
  
-<span data-ttu-id="9d45a-107">これらの Uri のドメインは、userpresence.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="9d45a-107">The domain for these URIs is userpresence.xboxlive.com.</span></span>
+<span data-ttu-id="add24-107">これらの Uri のドメインは、userpresence.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="add24-107">The domain for these URIs is userpresence.xboxlive.com.</span></span>
  
-<span data-ttu-id="9d45a-108">リアルタイム アクティビティ (RTA) サービスを使用して、ユーザーのプレゼンスの変更をサブスクライブすることができます。</span><span class="sxs-lookup"><span data-stu-id="9d45a-108">You can subscribe to a user's presence changes by using the Real Time Activity (RTA) service.</span></span>
+<span data-ttu-id="add24-108">リアルタイム アクティビティ (RTA) サービスを使用して、ユーザーのプレゼンスの変更をサブスクライブすることができます。</span><span class="sxs-lookup"><span data-stu-id="add24-108">You can subscribe to a user's presence changes by using the Real Time Activity (RTA) service.</span></span>
  
 <a id="ID4ERB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="9d45a-109">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="9d45a-109">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="add24-109">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="add24-109">In this section</span></span>
 
-[<span data-ttu-id="9d45a-110">ユーザー/バッチ</span><span class="sxs-lookup"><span data-stu-id="9d45a-110">/users/batch</span></span>](uri-usersbatch.md)
+[<span data-ttu-id="add24-110">ユーザー/バッチ</span><span class="sxs-lookup"><span data-stu-id="add24-110">/users/batch</span></span>](uri-usersbatch.md)
 
-<span data-ttu-id="9d45a-111">&nbsp;&nbsp;ユーザーのバッチのプレゼンスをアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9d45a-111">&nbsp;&nbsp;Access presence for a batch of users.</span></span>
+<span data-ttu-id="add24-111">&nbsp;&nbsp;ユーザーのバッチのプレゼンスをアクセスします。</span><span class="sxs-lookup"><span data-stu-id="add24-111">&nbsp;&nbsp;Access presence for a batch of users.</span></span>
 
-[<span data-ttu-id="9d45a-112">ユーザー/me</span><span class="sxs-lookup"><span data-stu-id="9d45a-112">/users/me</span></span>](uri-usersme.md)
+[<span data-ttu-id="add24-112">ユーザー/me</span><span class="sxs-lookup"><span data-stu-id="add24-112">/users/me</span></span>](uri-usersme.md)
 
-<span data-ttu-id="9d45a-113">&nbsp;&nbsp;現在のユーザーのプレゼンスにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9d45a-113">&nbsp;&nbsp;Access the current user's presence.</span></span>
+<span data-ttu-id="add24-113">&nbsp;&nbsp;現在のユーザーのプレゼンスにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="add24-113">&nbsp;&nbsp;Access the current user's presence.</span></span>
 
-[<span data-ttu-id="9d45a-114">ユーザー/me/グループ/{モニカー}</span><span class="sxs-lookup"><span data-stu-id="9d45a-114">/users/me/groups/{moniker}</span></span>](uri-usersmegroupsmoniker.md)
+[<span data-ttu-id="add24-114">ユーザー/me/グループ/{モニカー}</span><span class="sxs-lookup"><span data-stu-id="add24-114">/users/me/groups/{moniker}</span></span>](uri-usersmegroupsmoniker.md)
 
-<span data-ttu-id="9d45a-115">&nbsp;&nbsp;[グループの presencerecord を要求してにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9d45a-115">&nbsp;&nbsp;Accesses the PresenceRecord for my group.</span></span>
+<span data-ttu-id="add24-115">&nbsp;&nbsp;[グループの presencerecord を要求してにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="add24-115">&nbsp;&nbsp;Accesses the PresenceRecord for my group.</span></span>
 
-[<span data-ttu-id="9d45a-116">/users/xuid({xuid})</span><span class="sxs-lookup"><span data-stu-id="9d45a-116">/users/xuid({xuid})</span></span>](uri-usersxuid.md)
+[<span data-ttu-id="add24-116">/users/xuid({xuid})</span><span class="sxs-lookup"><span data-stu-id="add24-116">/users/xuid({xuid})</span></span>](uri-usersxuid.md)
 
-<span data-ttu-id="9d45a-117">&nbsp;&nbsp;別のユーザーまたはクライアントの有無にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9d45a-117">&nbsp;&nbsp;Access the presence of another user or client.</span></span>
+<span data-ttu-id="add24-117">&nbsp;&nbsp;別のユーザーまたはクライアントの有無にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="add24-117">&nbsp;&nbsp;Access the presence of another user or client.</span></span>
 
-[<span data-ttu-id="9d45a-118">/users/xuid({xuid})/devices/current/titles/current</span><span class="sxs-lookup"><span data-stu-id="9d45a-118">/users/xuid({xuid})/devices/current/titles/current</span></span>](uri-usersxuiddevicescurrenttitlescurrent.md)
+[<span data-ttu-id="add24-118">/users/xuid({xuid})/devices/current/titles/current</span><span class="sxs-lookup"><span data-stu-id="add24-118">/users/xuid({xuid})/devices/current/titles/current</span></span>](uri-usersxuiddevicescurrenttitlescurrent.md)
 
-<span data-ttu-id="9d45a-119">&nbsp;&nbsp;タイトルまたはタイトルのユーザーの有無にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9d45a-119">&nbsp;&nbsp;Access the presence of a title or a title's user.</span></span>
+<span data-ttu-id="add24-119">&nbsp;&nbsp;タイトルまたはタイトルのユーザーの有無にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="add24-119">&nbsp;&nbsp;Access the presence of a title or a title's user.</span></span>
 
-[<span data-ttu-id="9d45a-120">ユーザー/xuid ({xuid})/groups/{モニカー}</span><span class="sxs-lookup"><span data-stu-id="9d45a-120">/users/xuid({xuid})/groups/{moniker}</span></span>](uri-usersxuidgroupsmoniker.md)
+[<span data-ttu-id="add24-120">ユーザー/xuid ({xuid})/groups/{モニカー}</span><span class="sxs-lookup"><span data-stu-id="add24-120">/users/xuid({xuid})/groups/{moniker}</span></span>](uri-usersxuidgroupsmoniker.md)
 
-<span data-ttu-id="9d45a-121">&nbsp;&nbsp;グループの presencerecord を要求してにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9d45a-121">&nbsp;&nbsp;Accesses the PresenceRecord for a group.</span></span>
+<span data-ttu-id="add24-121">&nbsp;&nbsp;グループの presencerecord を要求してにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="add24-121">&nbsp;&nbsp;Accesses the PresenceRecord for a group.</span></span>
 
-[<span data-ttu-id="9d45a-122">ユーザー/xuid ({xuid})/groups/{モニカー} ブロードキャスト/</span><span class="sxs-lookup"><span data-stu-id="9d45a-122">/users/xuid({xuid})/groups/{moniker}/broadcasting</span></span>](uri-usersxuidgroupsmonikerbroadcasting.md)
+[<span data-ttu-id="add24-122">ユーザー/xuid ({xuid})/groups/{モニカー} ブロードキャスト/</span><span class="sxs-lookup"><span data-stu-id="add24-122">/users/xuid({xuid})/groups/{moniker}/broadcasting</span></span>](uri-usersxuidgroupsmonikerbroadcasting.md)
 
-<span data-ttu-id="9d45a-123">&nbsp;&nbsp;URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9d45a-123">&nbsp;&nbsp;Accesses the presence record of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI.</span></span>
+<span data-ttu-id="add24-123">&nbsp;&nbsp;URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="add24-123">&nbsp;&nbsp;Accesses the presence record of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI.</span></span>
 
-[<span data-ttu-id="9d45a-124">ユーザー/xuid ({xuid})/groups/{モニカー} ブロードキャスト/カウント</span><span class="sxs-lookup"><span data-stu-id="9d45a-124">/users/xuid({xuid})/groups/{moniker}/broadcasting/count</span></span>](uri-usersxuidgroupsmonikerbroadcastingcount.md)
+[<span data-ttu-id="add24-124">ユーザー/xuid ({xuid})/groups/{モニカー} ブロードキャスト/カウント</span><span class="sxs-lookup"><span data-stu-id="add24-124">/users/xuid({xuid})/groups/{moniker}/broadcasting/count</span></span>](uri-usersxuidgroupsmonikerbroadcastingcount.md)
 
-<span data-ttu-id="9d45a-125">&nbsp;&nbsp;アクセス グループ モニカーで指定されているブロードキャスト ユーザーの数は、URI 内に表示される XUID に関連します。</span><span class="sxs-lookup"><span data-stu-id="9d45a-125">&nbsp;&nbsp;Accesses the count of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI.</span></span>
+<span data-ttu-id="add24-125">&nbsp;&nbsp;アクセス グループ モニカーで指定されているブロードキャスト ユーザーの数は、URI 内に表示される XUID に関連します。</span><span class="sxs-lookup"><span data-stu-id="add24-125">&nbsp;&nbsp;Accesses the count of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI.</span></span>
  
 <a id="ID4EMC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="9d45a-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="9d45a-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="add24-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="add24-126">See also</span></span>
  
 <a id="ID4EOC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="9d45a-127">Parent</span><span class="sxs-lookup"><span data-stu-id="9d45a-127">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="add24-127">Parent</span><span class="sxs-lookup"><span data-stu-id="add24-127">Parent</span></span> 
 
-[<span data-ttu-id="9d45a-128">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="9d45a-128">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="add24-128">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="add24-128">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

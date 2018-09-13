@@ -12,42 +12,42 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e8989e05ce4874b3783e9cf130124be3f2129f3
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932202"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959617"
 ---
-# <a name="usersbatchfeedback"></a><span data-ttu-id="9c858-104">ユーザー/batchfeedback</span><span class="sxs-lookup"><span data-stu-id="9c858-104">/users/batchfeedback</span></span>
+# <a name="usersbatchfeedback"></a><span data-ttu-id="0583b-104">ユーザー/batchfeedback</span><span class="sxs-lookup"><span data-stu-id="0583b-104">/users/batchfeedback</span></span>
  
-<span data-ttu-id="9c858-105">これらの Uri のドメインとポート番号を`reputation.xboxlive.com:10443`します。</span><span class="sxs-lookup"><span data-stu-id="9c858-105">The domain and port number for these URIs is `reputation.xboxlive.com:10443`.</span></span>
+<span data-ttu-id="0583b-105">これらの Uri のドメインとポート番号を`reputation.xboxlive.com:10443`します。</span><span class="sxs-lookup"><span data-stu-id="0583b-105">The domain and port number for these URIs is `reputation.xboxlive.com:10443`.</span></span>
  
 <a id="ID4EW"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="9c858-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9c858-106">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="0583b-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="0583b-106">URI parameters</span></span>
  
-<span data-ttu-id="9c858-107">この要求の URI パラメーターはありません。</span><span class="sxs-lookup"><span data-stu-id="9c858-107">There are no URI parameters for this request.</span></span>
+<span data-ttu-id="0583b-107">この要求の URI パラメーターはありません。</span><span class="sxs-lookup"><span data-stu-id="0583b-107">There are no URI parameters for this request.</span></span>
   
 <a id="ID4E6"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="9c858-108">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="9c858-108">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="0583b-108">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="0583b-108">Valid methods</span></span>
 
-[<span data-ttu-id="9c858-109">POST</span><span class="sxs-lookup"><span data-stu-id="9c858-109">POST</span></span>](uri-reputationusersbatchfeedbackpost.md)
+[<span data-ttu-id="0583b-109">POST</span><span class="sxs-lookup"><span data-stu-id="0583b-109">POST</span></span>](uri-reputationusersbatchfeedbackpost.md)
 
-<span data-ttu-id="9c858-110">&nbsp;&nbsp;タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="9c858-110">&nbsp;&nbsp;Used by your title's service to send feedback in batch form outside of your title's interface.</span></span>
+<span data-ttu-id="0583b-110">&nbsp;&nbsp;タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="0583b-110">&nbsp;&nbsp;Used by your title's service to send feedback in batch form outside of your title's interface.</span></span>
  
 <a id="ID4EJB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="9c858-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="9c858-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0583b-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="0583b-111">See also</span></span>
  
 <a id="ID4ELB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="9c858-112">Parent</span><span class="sxs-lookup"><span data-stu-id="9c858-112">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="0583b-112">Parent</span><span class="sxs-lookup"><span data-stu-id="0583b-112">Parent</span></span> 
 
-[<span data-ttu-id="9c858-113">評判 Uri</span><span class="sxs-lookup"><span data-stu-id="9c858-113">Reputation URIs</span></span>](atoc-reference-reputation.md)
+[<span data-ttu-id="0583b-113">評判 Uri</span><span class="sxs-lookup"><span data-stu-id="0583b-113">Reputation URIs</span></span>](atoc-reference-reputation.md)
 
    
