@@ -12,58 +12,58 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed278542fa538a1297069b0f7d67d413e180f30
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3927727"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3963431"
 ---
-# <a name="usersmeconsumablesitemid"></a><span data-ttu-id="50517-104">ユーザー/me/コンシューマブル/{itemID}</span><span class="sxs-lookup"><span data-stu-id="50517-104">/users/me/consumables/{itemID}</span></span>
-<span data-ttu-id="50517-105">特定のコンシューマブルなインベントリ項目の詳細情報の完全なセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="50517-105">Accesses the full set of details for a specific consumable inventory item.</span></span>
-<span data-ttu-id="50517-106">これらの Uri のドメインが`inventory.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="50517-106">The domain for these URIs is `inventory.xboxlive.com`.</span></span>
+# <a name="usersmeconsumablesitemid"></a><span data-ttu-id="0644b-104">ユーザー/me/コンシューマブル/{itemID}</span><span class="sxs-lookup"><span data-stu-id="0644b-104">/users/me/consumables/{itemID}</span></span>
+<span data-ttu-id="0644b-105">特定のコンシューマブルなインベントリ項目の詳細情報の完全なセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="0644b-105">Accesses the full set of details for a specific consumable inventory item.</span></span>
+<span data-ttu-id="0644b-106">これらの Uri のドメインが`inventory.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="0644b-106">The domain for these URIs is `inventory.xboxlive.com`.</span></span>
 
-  * [<span data-ttu-id="50517-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="50517-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="0644b-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="0644b-107">URI parameters</span></span>](#ID4EV)
 
 <a id="ID4EV"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="50517-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="50517-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="0644b-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="0644b-108">URI parameters</span></span>
 
-| <span data-ttu-id="50517-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="50517-109">Parameter</span></span>| <span data-ttu-id="50517-110">型</span><span class="sxs-lookup"><span data-stu-id="50517-110">Type</span></span>| <span data-ttu-id="50517-111">説明</span><span class="sxs-lookup"><span data-stu-id="50517-111">Description</span></span>|
+| <span data-ttu-id="0644b-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="0644b-109">Parameter</span></span>| <span data-ttu-id="0644b-110">型</span><span class="sxs-lookup"><span data-stu-id="0644b-110">Type</span></span>| <span data-ttu-id="0644b-111">説明</span><span class="sxs-lookup"><span data-stu-id="0644b-111">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="50517-112">itemID</span><span class="sxs-lookup"><span data-stu-id="50517-112">itemID</span></span>| <span data-ttu-id="50517-113">string</span><span class="sxs-lookup"><span data-stu-id="50517-113">string</span></span>| <span data-ttu-id="50517-114">単数形インベントリ項目の各ユーザーに一意の ID</span><span class="sxs-lookup"><span data-stu-id="50517-114">the ID unique to each user for a singular inventory item</span></span>|
+| <span data-ttu-id="0644b-112">itemID</span><span class="sxs-lookup"><span data-stu-id="0644b-112">itemID</span></span>| <span data-ttu-id="0644b-113">string</span><span class="sxs-lookup"><span data-stu-id="0644b-113">string</span></span>| <span data-ttu-id="0644b-114">単数形インベントリ項目の各ユーザーに一意の ID</span><span class="sxs-lookup"><span data-stu-id="0644b-114">the ID unique to each user for a singular inventory item</span></span>|
 
 <a id="ID4ERB"></a>
 
 
-## <a name="valid-methods"></a><span data-ttu-id="50517-115">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="50517-115">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="0644b-115">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="0644b-115">Valid methods</span></span>
 
-[<span data-ttu-id="50517-116">POST ({itemID})</span><span class="sxs-lookup"><span data-stu-id="50517-116">POST ({itemID})</span></span>](uri-inventoryconsumablesitemurlpost.md)
+[<span data-ttu-id="0644b-116">POST ({itemID})</span><span class="sxs-lookup"><span data-stu-id="0644b-116">POST ({itemID})</span></span>](uri-inventoryconsumablesitemurlpost.md)
 
-<span data-ttu-id="50517-117">&nbsp;&nbsp;または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント コンシューマブルを要求した量の数量。</span><span class="sxs-lookup"><span data-stu-id="50517-117">&nbsp;&nbsp;Indicates that all or a portion of a consumable inventory item has been used and decrements the quantity of the consumable by the requested amount.</span></span>
+<span data-ttu-id="0644b-117">&nbsp;&nbsp;または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント コンシューマブルを要求した量の数量。</span><span class="sxs-lookup"><span data-stu-id="0644b-117">&nbsp;&nbsp;Indicates that all or a portion of a consumable inventory item has been used and decrements the quantity of the consumable by the requested amount.</span></span>
 
 <a id="ID4E4B"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="50517-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="50517-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0644b-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="0644b-118">See also</span></span>
 
 <a id="ID4E6B"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="50517-119">Parent</span><span class="sxs-lookup"><span data-stu-id="50517-119">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="0644b-119">Parent</span><span class="sxs-lookup"><span data-stu-id="0644b-119">Parent</span></span>
 
-[<span data-ttu-id="50517-120">Marketplace Uri</span><span class="sxs-lookup"><span data-stu-id="50517-120">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
+[<span data-ttu-id="0644b-120">Marketplace Uri</span><span class="sxs-lookup"><span data-stu-id="0644b-120">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
 
 
 <a id="ID4EJC"></a>
 
 
-##### <a name="further-information"></a><span data-ttu-id="50517-121">詳細情報</span><span class="sxs-lookup"><span data-stu-id="50517-121">Further Information</span></span>
+##### <a name="further-information"></a><span data-ttu-id="0644b-121">詳細情報</span><span class="sxs-lookup"><span data-stu-id="0644b-121">Further Information</span></span>
 
-[<span data-ttu-id="50517-122">EDS 一般的なヘッダー</span><span class="sxs-lookup"><span data-stu-id="50517-122">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
+[<span data-ttu-id="0644b-122">EDS 一般的なヘッダー</span><span class="sxs-lookup"><span data-stu-id="0644b-122">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
 
- [<span data-ttu-id="50517-123">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="50517-123">EDS Parameters</span></span>](../../additional/edsparameters.md)
+ [<span data-ttu-id="0644b-123">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="0644b-123">EDS Parameters</span></span>](../../additional/edsparameters.md)
 
- [<span data-ttu-id="50517-124">EDS は、絞り込み条件をクエリします。</span><span class="sxs-lookup"><span data-stu-id="50517-124">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
+ [<span data-ttu-id="0644b-124">EDS は、絞り込み条件をクエリします。</span><span class="sxs-lookup"><span data-stu-id="0644b-124">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
 
- [<span data-ttu-id="50517-125">その他の参照</span><span class="sxs-lookup"><span data-stu-id="50517-125">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)
+ [<span data-ttu-id="0644b-125">その他の参照</span><span class="sxs-lookup"><span data-stu-id="0644b-125">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)

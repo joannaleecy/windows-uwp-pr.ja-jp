@@ -12,79 +12,79 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 242a3bd3a2e6112436ec3f7aa3dad60c05619314
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3927921"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961377"
 ---
-# <a name="get-serviceconfigsscidhoppersnamestats"></a><span data-ttu-id="c35a1-104">取得する (/serviceconfigs/{scid}/hoppers/{name}/統計情報)</span><span class="sxs-lookup"><span data-stu-id="c35a1-104">GET (/serviceconfigs/{scid}/hoppers/{name}/stats)</span></span>
+# <a name="get-serviceconfigsscidhoppersnamestats"></a><span data-ttu-id="d2e11-104">取得する (/serviceconfigs/{scid}/hoppers/{name}/統計情報)</span><span class="sxs-lookup"><span data-stu-id="d2e11-104">GET (/serviceconfigs/{scid}/hoppers/{name}/stats)</span></span>
 
-<span data-ttu-id="c35a1-105">ホッパーの統計情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="c35a1-105">Gets the statistics for a hopper.</span></span>
+<span data-ttu-id="d2e11-105">ホッパーの統計情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="d2e11-105">Gets the statistics for a hopper.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="c35a1-106">このメソッドは、コントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="c35a1-106">This method is intended for use with contract 103 or later, and requires a header element of X-Xbl-Contract-Version: 103 or later on every request.</span></span>
+> <span data-ttu-id="d2e11-106">このメソッドは、コントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="d2e11-106">This method is intended for use with contract 103 or later, and requires a header element of X-Xbl-Contract-Version: 103 or later on every request.</span></span>
 
-  * [<span data-ttu-id="c35a1-107">注釈</span><span class="sxs-lookup"><span data-stu-id="c35a1-107">Remarks</span></span>](#ID4ET)
-  * [<span data-ttu-id="c35a1-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="c35a1-108">URI parameters</span></span>](#ID4E5)
-  * [<span data-ttu-id="c35a1-109">Authorization</span><span class="sxs-lookup"><span data-stu-id="c35a1-109">Authorization</span></span>](#ID4EJB)
-  * [<span data-ttu-id="c35a1-110">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="c35a1-110">HTTP status codes</span></span>](#ID4E3C)
-  * [<span data-ttu-id="c35a1-111">要求本文</span><span class="sxs-lookup"><span data-stu-id="c35a1-111">Request body</span></span>](#ID4EFD)
-  * [<span data-ttu-id="c35a1-112">応答本文</span><span class="sxs-lookup"><span data-stu-id="c35a1-112">Response body</span></span>](#ID4EQD)
+  * [<span data-ttu-id="d2e11-107">注釈</span><span class="sxs-lookup"><span data-stu-id="d2e11-107">Remarks</span></span>](#ID4ET)
+  * [<span data-ttu-id="d2e11-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="d2e11-108">URI parameters</span></span>](#ID4E5)
+  * [<span data-ttu-id="d2e11-109">Authorization</span><span class="sxs-lookup"><span data-stu-id="d2e11-109">Authorization</span></span>](#ID4EJB)
+  * [<span data-ttu-id="d2e11-110">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="d2e11-110">HTTP status codes</span></span>](#ID4E3C)
+  * [<span data-ttu-id="d2e11-111">要求本文</span><span class="sxs-lookup"><span data-stu-id="d2e11-111">Request body</span></span>](#ID4EFD)
+  * [<span data-ttu-id="d2e11-112">応答本文</span><span class="sxs-lookup"><span data-stu-id="d2e11-112">Response body</span></span>](#ID4EQD)
 
 <a id="ID4ET"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="c35a1-113">注釈</span><span class="sxs-lookup"><span data-stu-id="c35a1-113">Remarks</span></span>
-<span data-ttu-id="c35a1-114">この HTTP/REST メソッドは、サービス構成 ID (SCID) レベルで名前付きのホッパーからの統計情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="c35a1-114">This HTTP/REST method gets statistics from the named hopper at the service configuration ID (SCID) level.</span></span> <span data-ttu-id="c35a1-115">このメソッドは、 **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="c35a1-115">This method can be wrapped by the **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d2e11-113">注釈</span><span class="sxs-lookup"><span data-stu-id="d2e11-113">Remarks</span></span>
+<span data-ttu-id="d2e11-114">この HTTP/REST メソッドは、サービス構成 ID (SCID) レベルで名前付きのホッパーからの統計情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="d2e11-114">This HTTP/REST method gets statistics from the named hopper at the service configuration ID (SCID) level.</span></span> <span data-ttu-id="d2e11-115">このメソッドは、 **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="d2e11-115">This method can be wrapped by the **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API.</span></span>  
 <a id="ID4E5"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="c35a1-116">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="c35a1-116">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="d2e11-116">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="d2e11-116">URI parameters</span></span>
 
-| <span data-ttu-id="c35a1-117">パラメーター</span><span class="sxs-lookup"><span data-stu-id="c35a1-117">Parameter</span></span>| <span data-ttu-id="c35a1-118">型</span><span class="sxs-lookup"><span data-stu-id="c35a1-118">Type</span></span>| <span data-ttu-id="c35a1-119">説明</span><span class="sxs-lookup"><span data-stu-id="c35a1-119">Description</span></span>|
+| <span data-ttu-id="d2e11-117">パラメーター</span><span class="sxs-lookup"><span data-stu-id="d2e11-117">Parameter</span></span>| <span data-ttu-id="d2e11-118">型</span><span class="sxs-lookup"><span data-stu-id="d2e11-118">Type</span></span>| <span data-ttu-id="d2e11-119">説明</span><span class="sxs-lookup"><span data-stu-id="d2e11-119">Description</span></span>|
 | --- | --- | --- | --- |
-| <span data-ttu-id="c35a1-120">scid</span><span class="sxs-lookup"><span data-stu-id="c35a1-120">scid</span></span>| <span data-ttu-id="c35a1-121">GUID</span><span class="sxs-lookup"><span data-stu-id="c35a1-121">GUID</span></span>| <span data-ttu-id="c35a1-122">セッションのサービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="c35a1-122">The service configuration identifier (SCID) for the session.</span></span>|
-| <span data-ttu-id="c35a1-123">name</span><span class="sxs-lookup"><span data-stu-id="c35a1-123">name</span></span>| <span data-ttu-id="c35a1-124">string</span><span class="sxs-lookup"><span data-stu-id="c35a1-124">string</span></span>| <span data-ttu-id="c35a1-125">ホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="c35a1-125">The name of the hopper.</span></span>|
+| <span data-ttu-id="d2e11-120">scid</span><span class="sxs-lookup"><span data-stu-id="d2e11-120">scid</span></span>| <span data-ttu-id="d2e11-121">GUID</span><span class="sxs-lookup"><span data-stu-id="d2e11-121">GUID</span></span>| <span data-ttu-id="d2e11-122">セッションのサービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="d2e11-122">The service configuration identifier (SCID) for the session.</span></span>|
+| <span data-ttu-id="d2e11-123">name</span><span class="sxs-lookup"><span data-stu-id="d2e11-123">name</span></span>| <span data-ttu-id="d2e11-124">string</span><span class="sxs-lookup"><span data-stu-id="d2e11-124">string</span></span>| <span data-ttu-id="d2e11-125">ホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="d2e11-125">The name of the hopper.</span></span>|
 
 <a id="ID4EJB"></a>
 
 
-## <a name="authorization"></a><span data-ttu-id="c35a1-126">Authorization</span><span class="sxs-lookup"><span data-stu-id="c35a1-126">Authorization</span></span>
+## <a name="authorization"></a><span data-ttu-id="d2e11-126">Authorization</span><span class="sxs-lookup"><span data-stu-id="d2e11-126">Authorization</span></span>
 
-| <span data-ttu-id="c35a1-127">型</span><span class="sxs-lookup"><span data-stu-id="c35a1-127">Type</span></span>| <span data-ttu-id="c35a1-128">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="c35a1-128">Required</span></span>| <span data-ttu-id="c35a1-129">説明</span><span class="sxs-lookup"><span data-stu-id="c35a1-129">Description</span></span>| <span data-ttu-id="c35a1-130">不足している場合、応答</span><span class="sxs-lookup"><span data-stu-id="c35a1-130">Response if missing</span></span>|
+| <span data-ttu-id="d2e11-127">型</span><span class="sxs-lookup"><span data-stu-id="d2e11-127">Type</span></span>| <span data-ttu-id="d2e11-128">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="d2e11-128">Required</span></span>| <span data-ttu-id="d2e11-129">説明</span><span class="sxs-lookup"><span data-stu-id="d2e11-129">Description</span></span>| <span data-ttu-id="d2e11-130">不足している場合、応答</span><span class="sxs-lookup"><span data-stu-id="d2e11-130">Response if missing</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="c35a1-131">XUID (ユーザー ID)</span><span class="sxs-lookup"><span data-stu-id="c35a1-131">XUID (user ID)</span></span>| <span data-ttu-id="c35a1-132">必須</span><span class="sxs-lookup"><span data-stu-id="c35a1-132">yes</span></span>| <span data-ttu-id="c35a1-133">要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。</span><span class="sxs-lookup"><span data-stu-id="c35a1-133">The user making the request must be a member of the ticket session referred to by the ticket.</span></span> | <span data-ttu-id="c35a1-134">403</span><span class="sxs-lookup"><span data-stu-id="c35a1-134">403</span></span>|
-| <span data-ttu-id="c35a1-135">特権とデバイスの種類</span><span class="sxs-lookup"><span data-stu-id="c35a1-135">Privileges and Device Type</span></span>| <span data-ttu-id="c35a1-136">必須</span><span class="sxs-lookup"><span data-stu-id="c35a1-136">yes</span></span>| <span data-ttu-id="c35a1-137">ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには主張のマルチプレイヤー権限を持つユーザーのみが許可されています。</span><span class="sxs-lookup"><span data-stu-id="c35a1-137">When the user's deviceType is set to console, only users with the multiplayer privilege in their claims are allowed to make calls to the matchmaking service.</span></span> | <span data-ttu-id="c35a1-138">403</span><span class="sxs-lookup"><span data-stu-id="c35a1-138">403</span></span>|
-| <span data-ttu-id="c35a1-139">タイトル ID/実証購入/デバイスの種類</span><span class="sxs-lookup"><span data-stu-id="c35a1-139">Title ID/Proof of Purchase/Device Type</span></span>| <span data-ttu-id="c35a1-140">必須</span><span class="sxs-lookup"><span data-stu-id="c35a1-140">yes</span></span>| <span data-ttu-id="c35a1-141">タイトルに一致するには、指定されたタイトルの要求、デバイスの種類の組み合わせのマッチメイ キングを許可する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c35a1-141">The title that is being matched into must allow matchmaking for the specified title claim, device type combination.</span></span> | <span data-ttu-id="c35a1-142">403</span><span class="sxs-lookup"><span data-stu-id="c35a1-142">403</span></span>|
+| <span data-ttu-id="d2e11-131">XUID (ユーザー ID)</span><span class="sxs-lookup"><span data-stu-id="d2e11-131">XUID (user ID)</span></span>| <span data-ttu-id="d2e11-132">必須</span><span class="sxs-lookup"><span data-stu-id="d2e11-132">yes</span></span>| <span data-ttu-id="d2e11-133">要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。</span><span class="sxs-lookup"><span data-stu-id="d2e11-133">The user making the request must be a member of the ticket session referred to by the ticket.</span></span> | <span data-ttu-id="d2e11-134">403</span><span class="sxs-lookup"><span data-stu-id="d2e11-134">403</span></span>|
+| <span data-ttu-id="d2e11-135">特権とデバイスの種類</span><span class="sxs-lookup"><span data-stu-id="d2e11-135">Privileges and Device Type</span></span>| <span data-ttu-id="d2e11-136">必須</span><span class="sxs-lookup"><span data-stu-id="d2e11-136">yes</span></span>| <span data-ttu-id="d2e11-137">ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには主張のマルチプレイヤー権限を持つユーザーのみが許可されています。</span><span class="sxs-lookup"><span data-stu-id="d2e11-137">When the user's deviceType is set to console, only users with the multiplayer privilege in their claims are allowed to make calls to the matchmaking service.</span></span> | <span data-ttu-id="d2e11-138">403</span><span class="sxs-lookup"><span data-stu-id="d2e11-138">403</span></span>|
+| <span data-ttu-id="d2e11-139">タイトル ID/実証購入/デバイスの種類</span><span class="sxs-lookup"><span data-stu-id="d2e11-139">Title ID/Proof of Purchase/Device Type</span></span>| <span data-ttu-id="d2e11-140">必須</span><span class="sxs-lookup"><span data-stu-id="d2e11-140">yes</span></span>| <span data-ttu-id="d2e11-141">タイトルに一致するには、指定されたタイトルの要求、デバイスの種類の組み合わせのマッチメイ キングを許可する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d2e11-141">The title that is being matched into must allow matchmaking for the specified title claim, device type combination.</span></span> | <span data-ttu-id="d2e11-142">403</span><span class="sxs-lookup"><span data-stu-id="d2e11-142">403</span></span>|
 
 <a id="ID4E3C"></a>
 
 
-## <a name="http-status-codes"></a><span data-ttu-id="c35a1-143">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="c35a1-143">HTTP status codes</span></span>
-<span data-ttu-id="c35a1-144">サービスは、MPSD に適用される HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="c35a1-144">The service returns an HTTP status code as it applies to MPSD.</span></span>  
+## <a name="http-status-codes"></a><span data-ttu-id="d2e11-143">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="d2e11-143">HTTP status codes</span></span>
+<span data-ttu-id="d2e11-144">サービスは、MPSD に適用される HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="d2e11-144">The service returns an HTTP status code as it applies to MPSD.</span></span>  
 <a id="ID4EFD"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="c35a1-145">要求本文</span><span class="sxs-lookup"><span data-stu-id="c35a1-145">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="d2e11-145">要求本文</span><span class="sxs-lookup"><span data-stu-id="d2e11-145">Request body</span></span>
 
-<span data-ttu-id="c35a1-146">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="c35a1-146">No objects are sent in the body of this request.</span></span>
+<span data-ttu-id="d2e11-146">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="d2e11-146">No objects are sent in the body of this request.</span></span>
 
 <a id="ID4EQD"></a>
 
 
-## <a name="response-body"></a><span data-ttu-id="c35a1-147">応答本文</span><span class="sxs-lookup"><span data-stu-id="c35a1-147">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="d2e11-147">応答本文</span><span class="sxs-lookup"><span data-stu-id="d2e11-147">Response body</span></span>
 
-| <span data-ttu-id="c35a1-148">メンバー</span><span class="sxs-lookup"><span data-stu-id="c35a1-148">Member</span></span>| <span data-ttu-id="c35a1-149">種類</span><span class="sxs-lookup"><span data-stu-id="c35a1-149">Type</span></span>| <span data-ttu-id="c35a1-150">説明</span><span class="sxs-lookup"><span data-stu-id="c35a1-150">Description</span></span>|
+| <span data-ttu-id="d2e11-148">メンバー</span><span class="sxs-lookup"><span data-stu-id="d2e11-148">Member</span></span>| <span data-ttu-id="d2e11-149">種類</span><span class="sxs-lookup"><span data-stu-id="d2e11-149">Type</span></span>| <span data-ttu-id="d2e11-150">説明</span><span class="sxs-lookup"><span data-stu-id="d2e11-150">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="c35a1-151">hopperName</span><span class="sxs-lookup"><span data-stu-id="c35a1-151">hopperName</span></span>| <span data-ttu-id="c35a1-152">string</span><span class="sxs-lookup"><span data-stu-id="c35a1-152">string</span></span>| <span data-ttu-id="c35a1-153">選択したホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="c35a1-153">The name of the selected hopper.</span></span>|
-| <span data-ttu-id="c35a1-154">待機時間</span><span class="sxs-lookup"><span data-stu-id="c35a1-154">waitTime</span></span>| <span data-ttu-id="c35a1-155">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="c35a1-155">32-bit signed integer</span></span>| <span data-ttu-id="c35a1-156">照合時間 (秒の整数)、ホッパーの平均です。</span><span class="sxs-lookup"><span data-stu-id="c35a1-156">Average matching time for the hopper (an integral number of seconds).</span></span> |
-| <span data-ttu-id="c35a1-157">カタログの作成</span><span class="sxs-lookup"><span data-stu-id="c35a1-157">population</span></span>| <span data-ttu-id="c35a1-158">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="c35a1-158">32-bit signed integer</span></span>| <span data-ttu-id="c35a1-159">一致するものをホッパーで待機しているユーザーの数です。</span><span class="sxs-lookup"><span data-stu-id="c35a1-159">The number of people waiting for matches in the hopper.</span></span>|
+| <span data-ttu-id="d2e11-151">hopperName</span><span class="sxs-lookup"><span data-stu-id="d2e11-151">hopperName</span></span>| <span data-ttu-id="d2e11-152">string</span><span class="sxs-lookup"><span data-stu-id="d2e11-152">string</span></span>| <span data-ttu-id="d2e11-153">選択したホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="d2e11-153">The name of the selected hopper.</span></span>|
+| <span data-ttu-id="d2e11-154">待機時間</span><span class="sxs-lookup"><span data-stu-id="d2e11-154">waitTime</span></span>| <span data-ttu-id="d2e11-155">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="d2e11-155">32-bit signed integer</span></span>| <span data-ttu-id="d2e11-156">照合時間 (秒の整数)、ホッパーの平均です。</span><span class="sxs-lookup"><span data-stu-id="d2e11-156">Average matching time for the hopper (an integral number of seconds).</span></span> |
+| <span data-ttu-id="d2e11-157">カタログの作成</span><span class="sxs-lookup"><span data-stu-id="d2e11-157">population</span></span>| <span data-ttu-id="d2e11-158">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="d2e11-158">32-bit signed integer</span></span>| <span data-ttu-id="d2e11-159">一致するものをホッパーで待機しているユーザーの数です。</span><span class="sxs-lookup"><span data-stu-id="d2e11-159">The number of people waiting for matches in the hopper.</span></span>|
 
 <a id="ID4E1D"></a>
 
 
-### <a name="sample-response"></a><span data-ttu-id="c35a1-160">応答の例</span><span class="sxs-lookup"><span data-stu-id="c35a1-160">Sample response</span></span>
+### <a name="sample-response"></a><span data-ttu-id="d2e11-160">応答の例</span><span class="sxs-lookup"><span data-stu-id="d2e11-160">Sample response</span></span>
 
 
 ```cpp
@@ -101,11 +101,11 @@ ms.locfileid: "3927921"
 <a id="ID4EJE"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="c35a1-161">関連項目</span><span class="sxs-lookup"><span data-stu-id="c35a1-161">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d2e11-161">関連項目</span><span class="sxs-lookup"><span data-stu-id="d2e11-161">See also</span></span>
 
 <a id="ID4ELE"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="c35a1-162">Parent</span><span class="sxs-lookup"><span data-stu-id="c35a1-162">Parent</span></span>  
+##### <a name="parent"></a><span data-ttu-id="d2e11-162">Parent</span><span class="sxs-lookup"><span data-stu-id="d2e11-162">Parent</span></span>  
 
-[<span data-ttu-id="c35a1-163">/serviceconfigs/{scid}/hoppers/{name}/統計</span><span class="sxs-lookup"><span data-stu-id="c35a1-163">/serviceconfigs/{scid}/hoppers/{name}/stats</span></span>](uri-serviceconfigsscidhoppershoppernamestats.md)
+[<span data-ttu-id="d2e11-163">/serviceconfigs/{scid}/hoppers/{name}/統計</span><span class="sxs-lookup"><span data-stu-id="d2e11-163">/serviceconfigs/{scid}/hoppers/{name}/stats</span></span>](uri-serviceconfigsscidhoppershoppernamestats.md)

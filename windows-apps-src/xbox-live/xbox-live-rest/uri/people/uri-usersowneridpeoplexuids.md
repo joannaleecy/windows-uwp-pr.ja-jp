@@ -12,45 +12,45 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 715659b8bb001697fc9386be6ec587b3682793c5
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931433"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964241"
 ---
-# <a name="usersowneridpeoplexuids"></a><span data-ttu-id="c9964-104">ユーザー/xuid/users/{ownerId}</span><span class="sxs-lookup"><span data-stu-id="c9964-104">/users/{ownerId}/people/xuids</span></span>
-<span data-ttu-id="c9964-105">XUID によって people を呼び出し元のユーザーのコレクションからアクセスします。</span><span class="sxs-lookup"><span data-stu-id="c9964-105">Accesses people by XUID from caller's people collection.</span></span> <span data-ttu-id="c9964-106">これらの Uri のドメインが`social.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="c9964-106">The domain for these URIs is `social.xboxlive.com`.</span></span>
+# <a name="usersowneridpeoplexuids"></a><span data-ttu-id="a38a5-104">ユーザー/xuid/users/{ownerId}</span><span class="sxs-lookup"><span data-stu-id="a38a5-104">/users/{ownerId}/people/xuids</span></span>
+<span data-ttu-id="a38a5-105">XUID によって people を呼び出し元のユーザーのコレクションからアクセスします。</span><span class="sxs-lookup"><span data-stu-id="a38a5-105">Accesses people by XUID from caller's people collection.</span></span> <span data-ttu-id="a38a5-106">これらの Uri のドメインが`social.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a38a5-106">The domain for these URIs is `social.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="c9964-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="c9964-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="a38a5-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a38a5-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="c9964-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="c9964-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="a38a5-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a38a5-108">URI parameters</span></span>
  
-| <span data-ttu-id="c9964-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="c9964-109">Parameter</span></span>| <span data-ttu-id="c9964-110">型</span><span class="sxs-lookup"><span data-stu-id="c9964-110">Type</span></span>| <span data-ttu-id="c9964-111">説明</span><span class="sxs-lookup"><span data-stu-id="c9964-111">Description</span></span>| 
+| <span data-ttu-id="a38a5-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a38a5-109">Parameter</span></span>| <span data-ttu-id="a38a5-110">型</span><span class="sxs-lookup"><span data-stu-id="a38a5-110">Type</span></span>| <span data-ttu-id="a38a5-111">説明</span><span class="sxs-lookup"><span data-stu-id="a38a5-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="c9964-112">ownerId</span><span class="sxs-lookup"><span data-stu-id="c9964-112">ownerId</span></span>| <span data-ttu-id="c9964-113">string</span><span class="sxs-lookup"><span data-stu-id="c9964-113">string</span></span>| <span data-ttu-id="c9964-114">そのリソースにアクセスしているユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="c9964-114">Identifier of the user whose resource is being accessed.</span></span> <span data-ttu-id="c9964-115">認証されたユーザーに一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c9964-115">Must match the authenticated user.</span></span> <span data-ttu-id="c9964-116">可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。</span><span class="sxs-lookup"><span data-stu-id="c9964-116">The possible values are "me", xuid({xuid}), or gt({gamertag}).</span></span>| 
+| <span data-ttu-id="a38a5-112">ownerId</span><span class="sxs-lookup"><span data-stu-id="a38a5-112">ownerId</span></span>| <span data-ttu-id="a38a5-113">string</span><span class="sxs-lookup"><span data-stu-id="a38a5-113">string</span></span>| <span data-ttu-id="a38a5-114">そのリソースにアクセスしているユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="a38a5-114">Identifier of the user whose resource is being accessed.</span></span> <span data-ttu-id="a38a5-115">認証されたユーザーに一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a38a5-115">Must match the authenticated user.</span></span> <span data-ttu-id="a38a5-116">可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。</span><span class="sxs-lookup"><span data-stu-id="a38a5-116">The possible values are "me", xuid({xuid}), or gt({gamertag}).</span></span>| 
   
 <a id="ID4EOB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="c9964-117">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="c9964-117">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="a38a5-117">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="a38a5-117">Valid methods</span></span>
 
-[<span data-ttu-id="c9964-118">POST</span><span class="sxs-lookup"><span data-stu-id="c9964-118">POST</span></span>](uri-usersowneridpeoplexuidspost.md)
+[<span data-ttu-id="a38a5-118">POST</span><span class="sxs-lookup"><span data-stu-id="a38a5-118">POST</span></span>](uri-usersowneridpeoplexuidspost.md)
 
-<span data-ttu-id="c9964-119">&nbsp;&nbsp;呼び出し元のユーザーからコレクションの XUID によってユーザーを取得します。</span><span class="sxs-lookup"><span data-stu-id="c9964-119">&nbsp;&nbsp;Gets people by XUID from caller's people collection.</span></span>
+<span data-ttu-id="a38a5-119">&nbsp;&nbsp;呼び出し元のユーザーからコレクションの XUID によってユーザーを取得します。</span><span class="sxs-lookup"><span data-stu-id="a38a5-119">&nbsp;&nbsp;Gets people by XUID from caller's people collection.</span></span>
  
 <a id="ID4EYB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="c9964-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="c9964-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a38a5-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="a38a5-120">See also</span></span>
  
 <a id="ID4E1B"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="c9964-121">Parent</span><span class="sxs-lookup"><span data-stu-id="c9964-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="a38a5-121">Parent</span><span class="sxs-lookup"><span data-stu-id="a38a5-121">Parent</span></span> 
 
-[<span data-ttu-id="c9964-122">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="c9964-122">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="a38a5-122">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="a38a5-122">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

@@ -12,36 +12,36 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e7fb10a0f81e24215ebc24d2545f1197d4520bc
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932332"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961765"
 ---
-# <a name="titlerecord-json"></a><span data-ttu-id="76d71-104">TitleRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="76d71-104">TitleRecord (JSON)</span></span>
-<span data-ttu-id="76d71-105">最終更新タイムスタンプとその名前を含む、タイトルに関する情報。</span><span class="sxs-lookup"><span data-stu-id="76d71-105">Information about a title, including its name and a last-modified timestamp.</span></span> 
+# <a name="titlerecord-json"></a><span data-ttu-id="cd712-104">TitleRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="cd712-104">TitleRecord (JSON)</span></span>
+<span data-ttu-id="cd712-105">最終更新タイムスタンプとその名前を含む、タイトルに関する情報。</span><span class="sxs-lookup"><span data-stu-id="cd712-105">Information about a title, including its name and a last-modified timestamp.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="titlerecord"></a><span data-ttu-id="76d71-106">TitleRecord</span><span class="sxs-lookup"><span data-stu-id="76d71-106">TitleRecord</span></span>
+## <a name="titlerecord"></a><span data-ttu-id="cd712-106">TitleRecord</span><span class="sxs-lookup"><span data-stu-id="cd712-106">TitleRecord</span></span>
  
-<span data-ttu-id="76d71-107">TitleRecord、DeviceRecord や、LastSeenRecord を含める必要がありますが、両方を含めない場合があります。</span><span class="sxs-lookup"><span data-stu-id="76d71-107">A TitleRecord must contain a DeviceRecord or a LastSeenRecord, but may not contain both.</span></span>
+<span data-ttu-id="cd712-107">TitleRecord、DeviceRecord や、LastSeenRecord を含める必要がありますが、両方を含めない場合があります。</span><span class="sxs-lookup"><span data-stu-id="cd712-107">A TitleRecord must contain a DeviceRecord or a LastSeenRecord, but may not contain both.</span></span>
  
-<span data-ttu-id="76d71-108">TitleRecord オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="76d71-108">The TitleRecord object has the following specification.</span></span>
+<span data-ttu-id="cd712-108">TitleRecord オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="cd712-108">The TitleRecord object has the following specification.</span></span>
  
-| <span data-ttu-id="76d71-109">メンバー</span><span class="sxs-lookup"><span data-stu-id="76d71-109">Member</span></span>| <span data-ttu-id="76d71-110">種類</span><span class="sxs-lookup"><span data-stu-id="76d71-110">Type</span></span>| <span data-ttu-id="76d71-111">説明</span><span class="sxs-lookup"><span data-stu-id="76d71-111">Description</span></span>| 
+| <span data-ttu-id="cd712-109">メンバー</span><span class="sxs-lookup"><span data-stu-id="cd712-109">Member</span></span>| <span data-ttu-id="cd712-110">種類</span><span class="sxs-lookup"><span data-stu-id="cd712-110">Type</span></span>| <span data-ttu-id="cd712-111">説明</span><span class="sxs-lookup"><span data-stu-id="cd712-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="76d71-112">id</span><span class="sxs-lookup"><span data-stu-id="76d71-112">id</span></span>| <span data-ttu-id="76d71-113">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="76d71-113">32-bit unsigned integer</span></span>| <span data-ttu-id="76d71-114">レコードのタイトル Id。</span><span class="sxs-lookup"><span data-stu-id="76d71-114">TitleId of the record.</span></span>| 
-| <span data-ttu-id="76d71-115">name</span><span class="sxs-lookup"><span data-stu-id="76d71-115">name</span></span>| <span data-ttu-id="76d71-116">string</span><span class="sxs-lookup"><span data-stu-id="76d71-116">string</span></span>| <span data-ttu-id="76d71-117">タイトルのローカライズされた名前です。</span><span class="sxs-lookup"><span data-stu-id="76d71-117">Localized name of the title.</span></span>| 
-| <span data-ttu-id="76d71-118">activity (アクティビティ)</span><span class="sxs-lookup"><span data-stu-id="76d71-118">activity</span></span>| [<span data-ttu-id="76d71-119">ActivityRecord</span><span class="sxs-lookup"><span data-stu-id="76d71-119">ActivityRecord</span></span>](json-activityrecord.md)| <span data-ttu-id="76d71-120">タイトルでのユーザーのアクティビティ。</span><span class="sxs-lookup"><span data-stu-id="76d71-120">The activity of the user in the title.</span></span> <span data-ttu-id="76d71-121">のみ深度"all"が返されます。</span><span class="sxs-lookup"><span data-stu-id="76d71-121">Only returned if depth is "all".</span></span>| 
-| <span data-ttu-id="76d71-122">lastModified</span><span class="sxs-lookup"><span data-stu-id="76d71-122">lastModified</span></span>| <span data-ttu-id="76d71-123">DateTime</span><span class="sxs-lookup"><span data-stu-id="76d71-123">DateTime</span></span>| <span data-ttu-id="76d71-124">レコードが最後に更新されたときにタイムスタンプを UTC です。</span><span class="sxs-lookup"><span data-stu-id="76d71-124">UTC timestamp when the record was last updated.</span></span>| 
-| <span data-ttu-id="76d71-125">配置</span><span class="sxs-lookup"><span data-stu-id="76d71-125">placement</span></span>| <span data-ttu-id="76d71-126">string</span><span class="sxs-lookup"><span data-stu-id="76d71-126">string</span></span>| <span data-ttu-id="76d71-127">ユーザー インターフェイス内でアプリの場所です。</span><span class="sxs-lookup"><span data-stu-id="76d71-127">The location of the app within the user interface.</span></span> <span data-ttu-id="76d71-128">可能性には、"fill"、「完全」、「スナップ」または"background"が含まれます。</span><span class="sxs-lookup"><span data-stu-id="76d71-128">Possibilities include "fill", "full", "snapped", or "background".</span></span> <span data-ttu-id="76d71-129">既定では、「完全」のアプリを配置することができないデバイスです。</span><span class="sxs-lookup"><span data-stu-id="76d71-129">The default is "full" for devices without the ability to place apps.</span></span>| 
-| <span data-ttu-id="76d71-130">状態</span><span class="sxs-lookup"><span data-stu-id="76d71-130">state</span></span>| <span data-ttu-id="76d71-131">string</span><span class="sxs-lookup"><span data-stu-id="76d71-131">string</span></span>| <span data-ttu-id="76d71-132">タイトルの状態。</span><span class="sxs-lookup"><span data-stu-id="76d71-132">The state of the title.</span></span> <span data-ttu-id="76d71-133">「アクティブ」や「非アクティブ」にすることができます (既定)。</span><span class="sxs-lookup"><span data-stu-id="76d71-133">Can be "active" or "inactive" (the default).</span></span> <span data-ttu-id="76d71-134">タイトルでは、アクティビティおよび非アクティブの独自の基準に基づいて状態を設定します。</span><span class="sxs-lookup"><span data-stu-id="76d71-134">The title sets the state based on its own criteria for activity and inactivity.</span></span>| 
+| <span data-ttu-id="cd712-112">id</span><span class="sxs-lookup"><span data-stu-id="cd712-112">id</span></span>| <span data-ttu-id="cd712-113">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="cd712-113">32-bit unsigned integer</span></span>| <span data-ttu-id="cd712-114">レコードのタイトル Id。</span><span class="sxs-lookup"><span data-stu-id="cd712-114">TitleId of the record.</span></span>| 
+| <span data-ttu-id="cd712-115">name</span><span class="sxs-lookup"><span data-stu-id="cd712-115">name</span></span>| <span data-ttu-id="cd712-116">string</span><span class="sxs-lookup"><span data-stu-id="cd712-116">string</span></span>| <span data-ttu-id="cd712-117">タイトルのローカライズされた名前です。</span><span class="sxs-lookup"><span data-stu-id="cd712-117">Localized name of the title.</span></span>| 
+| <span data-ttu-id="cd712-118">activity (アクティビティ)</span><span class="sxs-lookup"><span data-stu-id="cd712-118">activity</span></span>| [<span data-ttu-id="cd712-119">ActivityRecord</span><span class="sxs-lookup"><span data-stu-id="cd712-119">ActivityRecord</span></span>](json-activityrecord.md)| <span data-ttu-id="cd712-120">タイトルでのユーザーのアクティビティ。</span><span class="sxs-lookup"><span data-stu-id="cd712-120">The activity of the user in the title.</span></span> <span data-ttu-id="cd712-121">のみ深度"all"が返されます。</span><span class="sxs-lookup"><span data-stu-id="cd712-121">Only returned if depth is "all".</span></span>| 
+| <span data-ttu-id="cd712-122">lastModified</span><span class="sxs-lookup"><span data-stu-id="cd712-122">lastModified</span></span>| <span data-ttu-id="cd712-123">DateTime</span><span class="sxs-lookup"><span data-stu-id="cd712-123">DateTime</span></span>| <span data-ttu-id="cd712-124">レコードが最後に更新されたときにタイムスタンプを UTC です。</span><span class="sxs-lookup"><span data-stu-id="cd712-124">UTC timestamp when the record was last updated.</span></span>| 
+| <span data-ttu-id="cd712-125">配置</span><span class="sxs-lookup"><span data-stu-id="cd712-125">placement</span></span>| <span data-ttu-id="cd712-126">string</span><span class="sxs-lookup"><span data-stu-id="cd712-126">string</span></span>| <span data-ttu-id="cd712-127">ユーザー インターフェイス内でアプリの場所です。</span><span class="sxs-lookup"><span data-stu-id="cd712-127">The location of the app within the user interface.</span></span> <span data-ttu-id="cd712-128">可能性には、"fill"、「完全」、「スナップ」または"background"が含まれます。</span><span class="sxs-lookup"><span data-stu-id="cd712-128">Possibilities include "fill", "full", "snapped", or "background".</span></span> <span data-ttu-id="cd712-129">既定では、「完全」のアプリを配置することができないデバイスです。</span><span class="sxs-lookup"><span data-stu-id="cd712-129">The default is "full" for devices without the ability to place apps.</span></span>| 
+| <span data-ttu-id="cd712-130">状態</span><span class="sxs-lookup"><span data-stu-id="cd712-130">state</span></span>| <span data-ttu-id="cd712-131">string</span><span class="sxs-lookup"><span data-stu-id="cd712-131">string</span></span>| <span data-ttu-id="cd712-132">タイトルの状態。</span><span class="sxs-lookup"><span data-stu-id="cd712-132">The state of the title.</span></span> <span data-ttu-id="cd712-133">「アクティブ」や「非アクティブ」にすることができます (既定)。</span><span class="sxs-lookup"><span data-stu-id="cd712-133">Can be "active" or "inactive" (the default).</span></span> <span data-ttu-id="cd712-134">タイトルでは、アクティビティおよび非アクティブの独自の基準に基づいて状態を設定します。</span><span class="sxs-lookup"><span data-stu-id="cd712-134">The title sets the state based on its own criteria for activity and inactivity.</span></span>| 
   
 <a id="ID4E6C"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="76d71-135">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="76d71-135">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="cd712-135">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="cd712-135">Sample JSON syntax</span></span>
  
 
 ```json
@@ -63,21 +63,21 @@ ms.locfileid: "3932332"
 <a id="ID4EID"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="76d71-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="76d71-136">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cd712-136">関連項目</span><span class="sxs-lookup"><span data-stu-id="cd712-136">See also</span></span>
  
 <a id="ID4EKD"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="76d71-137">Parent</span><span class="sxs-lookup"><span data-stu-id="76d71-137">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="cd712-137">Parent</span><span class="sxs-lookup"><span data-stu-id="cd712-137">Parent</span></span> 
 
-[<span data-ttu-id="76d71-138">JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="76d71-138">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="cd712-138">JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="cd712-138">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EUD"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="76d71-139">リファレンス</span><span class="sxs-lookup"><span data-stu-id="76d71-139">Reference</span></span> 
+##### <a name="reference"></a><span data-ttu-id="cd712-139">リファレンス</span><span class="sxs-lookup"><span data-stu-id="cd712-139">Reference</span></span> 
 
-[<span data-ttu-id="76d71-140">POST (/users/xuid({xuid})/devices/current/titles/current)</span><span class="sxs-lookup"><span data-stu-id="76d71-140">POST (/users/xuid({xuid})/devices/current/titles/current)</span></span>](../uri/presence/uri-usersxuiddevicescurrenttitlescurrentpost.md)
+[<span data-ttu-id="cd712-140">POST (/users/xuid({xuid})/devices/current/titles/current)</span><span class="sxs-lookup"><span data-stu-id="cd712-140">POST (/users/xuid({xuid})/devices/current/titles/current)</span></span>](../uri/presence/uri-usersxuiddevicescurrenttitlescurrentpost.md)
 
    

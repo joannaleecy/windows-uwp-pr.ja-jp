@@ -12,43 +12,43 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e1ed654e4dc1c0f1233ecdedf5d4af66da868bff
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930925"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962783"
 ---
-# <a name="paging-parameters"></a><span data-ttu-id="23510-104">ページング パラメーター</span><span class="sxs-lookup"><span data-stu-id="23510-104">Paging Parameters</span></span>
+# <a name="paging-parameters"></a><span data-ttu-id="c82a2-104">ページング パラメーター</span><span class="sxs-lookup"><span data-stu-id="c82a2-104">Paging Parameters</span></span>
  
-<span data-ttu-id="23510-105">一部の Xbox Live サービス Uri では、JavaScript Object Notation (JSON) オブジェクトのコレクションを返します。</span><span class="sxs-lookup"><span data-stu-id="23510-105">Some Xbox Live Services URIs return collections of JavaScript Object Notation (JSON) objects.</span></span> <span data-ttu-id="23510-106">これらのコレクションは、URI に接続されているクエリ文字列の一部としてページングのパラメーターを指定することによって、を通じてページことができます。</span><span class="sxs-lookup"><span data-stu-id="23510-106">These collections can be paged through by specifying paging parameters as part of the query string attached to the URI.</span></span> <span data-ttu-id="23510-107">ページング パラメーターの完全な一覧に従います。</span><span class="sxs-lookup"><span data-stu-id="23510-107">A complete list of the paging parameters follows.</span></span> <span data-ttu-id="23510-108">ページングのパラメーターを許可するすべての Uri は、このページの下部にリンクされます。</span><span class="sxs-lookup"><span data-stu-id="23510-108">All URIs that allow paging parameters are linked to at the bottom of this page.</span></span>
+<span data-ttu-id="c82a2-105">一部の Xbox Live サービス Uri では、JavaScript Object Notation (JSON) オブジェクトのコレクションを返します。</span><span class="sxs-lookup"><span data-stu-id="c82a2-105">Some Xbox Live Services URIs return collections of JavaScript Object Notation (JSON) objects.</span></span> <span data-ttu-id="c82a2-106">これらのコレクションは、URI に接続されているクエリ文字列の一部としてページングのパラメーターを指定することによって、を通じてページことができます。</span><span class="sxs-lookup"><span data-stu-id="c82a2-106">These collections can be paged through by specifying paging parameters as part of the query string attached to the URI.</span></span> <span data-ttu-id="c82a2-107">ページング パラメーターの完全な一覧に従います。</span><span class="sxs-lookup"><span data-stu-id="c82a2-107">A complete list of the paging parameters follows.</span></span> <span data-ttu-id="c82a2-108">ページングのパラメーターを許可するすべての Uri は、このページの下部にリンクされます。</span><span class="sxs-lookup"><span data-stu-id="c82a2-108">All URIs that allow paging parameters are linked to at the bottom of this page.</span></span>
  
 <a id="ID4E2"></a>
 
  
-## <a name="query-string-parameters"></a><span data-ttu-id="23510-109">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="23510-109">Query string parameters</span></span> 
+## <a name="query-string-parameters"></a><span data-ttu-id="c82a2-109">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="c82a2-109">Query string parameters</span></span> 
  
-| <span data-ttu-id="23510-110">パラメーター</span><span class="sxs-lookup"><span data-stu-id="23510-110">Parameter</span></span>| <span data-ttu-id="23510-111">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="23510-111">Required</span></span>| <span data-ttu-id="23510-112">種類</span><span class="sxs-lookup"><span data-stu-id="23510-112">Type</span></span>| <span data-ttu-id="23510-113">説明</span><span class="sxs-lookup"><span data-stu-id="23510-113">Description</span></span>| 
+| <span data-ttu-id="c82a2-110">パラメーター</span><span class="sxs-lookup"><span data-stu-id="c82a2-110">Parameter</span></span>| <span data-ttu-id="c82a2-111">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="c82a2-111">Required</span></span>| <span data-ttu-id="c82a2-112">種類</span><span class="sxs-lookup"><span data-stu-id="c82a2-112">Type</span></span>| <span data-ttu-id="c82a2-113">説明</span><span class="sxs-lookup"><span data-stu-id="c82a2-113">Description</span></span>| 
 | --- | --- | --- | --- | 
-| <span data-ttu-id="23510-114">continuationToken</span><span class="sxs-lookup"><span data-stu-id="23510-114">continuationToken</span></span>| <span data-ttu-id="23510-115">いいえ</span><span class="sxs-lookup"><span data-stu-id="23510-115">No</span></span>| <span data-ttu-id="23510-116">string</span><span class="sxs-lookup"><span data-stu-id="23510-116">string</span></span>| <span data-ttu-id="23510-117">特定の継続トークンで始まる項目を返します。</span><span class="sxs-lookup"><span data-stu-id="23510-117">Return the items starting at the given continuation token.</span></span> | 
-| <span data-ttu-id="23510-118">maxItems</span><span class="sxs-lookup"><span data-stu-id="23510-118">maxItems</span></span>| <span data-ttu-id="23510-119">いいえ</span><span class="sxs-lookup"><span data-stu-id="23510-119">No</span></span>| <span data-ttu-id="23510-120">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="23510-120">32-bit signed integer</span></span>| <span data-ttu-id="23510-121"><b>SkipItems</b>と項目の範囲を返す<b>continuationToken</b>と組み合わせることができるコレクションから返される項目の最大数。</span><span class="sxs-lookup"><span data-stu-id="23510-121">Maximum number of items to return from the collection, which can be combined with <b>skipItems</b> and <b>continuationToken</b> to return a range of items.</span></span> <span data-ttu-id="23510-122">サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。</span><span class="sxs-lookup"><span data-stu-id="23510-122">The service may provide a default value if <b>maxItems</b> is not present, and may return fewer than <b>maxItems</b>, even if the last page of results has not yet been returned.</span></span> | 
-| <span data-ttu-id="23510-123">skipItems</span><span class="sxs-lookup"><span data-stu-id="23510-123">skipItems</span></span>| <span data-ttu-id="23510-124">いいえ</span><span class="sxs-lookup"><span data-stu-id="23510-124">No</span></span>| <span data-ttu-id="23510-125">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="23510-125">32-bit signed integer</span></span>| <span data-ttu-id="23510-126">特定の項目数後以降の項目を返します。</span><span class="sxs-lookup"><span data-stu-id="23510-126">Return items beginning after the given number of items.</span></span> <span data-ttu-id="23510-127">たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。</span><span class="sxs-lookup"><span data-stu-id="23510-127">For example, <b>skipItems="3"</b> will retrieve items beginning with the fourth item retrieved.</span></span> | 
+| <span data-ttu-id="c82a2-114">continuationToken</span><span class="sxs-lookup"><span data-stu-id="c82a2-114">continuationToken</span></span>| <span data-ttu-id="c82a2-115">いいえ</span><span class="sxs-lookup"><span data-stu-id="c82a2-115">No</span></span>| <span data-ttu-id="c82a2-116">string</span><span class="sxs-lookup"><span data-stu-id="c82a2-116">string</span></span>| <span data-ttu-id="c82a2-117">特定の継続トークンで始まる項目を返します。</span><span class="sxs-lookup"><span data-stu-id="c82a2-117">Return the items starting at the given continuation token.</span></span> | 
+| <span data-ttu-id="c82a2-118">maxItems</span><span class="sxs-lookup"><span data-stu-id="c82a2-118">maxItems</span></span>| <span data-ttu-id="c82a2-119">いいえ</span><span class="sxs-lookup"><span data-stu-id="c82a2-119">No</span></span>| <span data-ttu-id="c82a2-120">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="c82a2-120">32-bit signed integer</span></span>| <span data-ttu-id="c82a2-121"><b>SkipItems</b>と項目の範囲を返す<b>continuationToken</b>と組み合わせることができるコレクションから返される項目の最大数。</span><span class="sxs-lookup"><span data-stu-id="c82a2-121">Maximum number of items to return from the collection, which can be combined with <b>skipItems</b> and <b>continuationToken</b> to return a range of items.</span></span> <span data-ttu-id="c82a2-122">サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c82a2-122">The service may provide a default value if <b>maxItems</b> is not present, and may return fewer than <b>maxItems</b>, even if the last page of results has not yet been returned.</span></span> | 
+| <span data-ttu-id="c82a2-123">skipItems</span><span class="sxs-lookup"><span data-stu-id="c82a2-123">skipItems</span></span>| <span data-ttu-id="c82a2-124">いいえ</span><span class="sxs-lookup"><span data-stu-id="c82a2-124">No</span></span>| <span data-ttu-id="c82a2-125">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="c82a2-125">32-bit signed integer</span></span>| <span data-ttu-id="c82a2-126">特定の項目数後以降の項目を返します。</span><span class="sxs-lookup"><span data-stu-id="c82a2-126">Return items beginning after the given number of items.</span></span> <span data-ttu-id="c82a2-127">たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。</span><span class="sxs-lookup"><span data-stu-id="c82a2-127">For example, <b>skipItems="3"</b> will retrieve items beginning with the fourth item retrieved.</span></span> | 
   
 <a id="ID4EDD"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="23510-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="23510-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c82a2-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="c82a2-128">See also</span></span>
  
 <a id="ID4EFD"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="23510-129">Parent</span><span class="sxs-lookup"><span data-stu-id="23510-129">Parent</span></span>  
+##### <a name="parent"></a><span data-ttu-id="c82a2-129">Parent</span><span class="sxs-lookup"><span data-stu-id="c82a2-129">Parent</span></span>  
 
-[<span data-ttu-id="23510-130">その他の参照</span><span class="sxs-lookup"><span data-stu-id="23510-130">Additional Reference</span></span>](atoc-xboxlivews-reference-additional.md)
+[<span data-ttu-id="c82a2-130">その他の参照</span><span class="sxs-lookup"><span data-stu-id="c82a2-130">Additional Reference</span></span>](atoc-xboxlivews-reference-additional.md)
 
   
 <a id="ID4ERD"></a>
 
  
-##### <a name="reference--get-usersxuidxuidachievementsuriachievementsuri-achievementsusersxuidachievementsgetv2md"></a><span data-ttu-id="23510-131">参照[を取得する (/users/xuid({xuid})/achievements)](../uri/achievements/uri-achievementsusersxuidachievementsgetv2.md)</span><span class="sxs-lookup"><span data-stu-id="23510-131">Reference  [GET (/users/xuid({xuid})/achievements)](../uri/achievements/uri-achievementsusersxuidachievementsgetv2.md)</span></span>
+##### <a name="reference--get-usersxuidxuidachievementsuriachievementsuri-achievementsusersxuidachievementsgetv2md"></a><span data-ttu-id="c82a2-131">参照[を取得する (/users/xuid({xuid})/achievements)](../uri/achievements/uri-achievementsusersxuidachievementsgetv2.md)</span><span class="sxs-lookup"><span data-stu-id="c82a2-131">Reference  [GET (/users/xuid({xuid})/achievements)](../uri/achievements/uri-achievementsusersxuidachievementsgetv2.md)</span></span>
 
    
