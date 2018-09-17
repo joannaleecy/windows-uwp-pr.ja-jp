@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, デスクトップ アプリケーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 66594fd6f59281011fccab21ad5618827db322dd
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964572"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989125"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>デスクトップ アプリケーションのエラー報告データの取得
 
@@ -49,7 +49,7 @@ ms.locfileid: "3964572"
 | パラメーター        | 型   |  説明      |  必須かどうか  
 |---------------|--------|---------------|------|
 | applicationId | string | エラー報告データを取得するデスクトップ アプリケーションの製品 ID です。 デスクトップ アプリケーションの製品 ID を取得するには、[デベロッパー センターでデスクトップ アプリケーションの分析レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)のいずれか (**正常性レポート**など) を開き、URL から製品 ID を取得します。 |  必須  |
-| startDate | date | 取得するエラー報告データの日付範囲の開始日を ```mm/dd/yyyy``` の形式で指定します。 既定値は現在の日付です。<p/><p/>**注:**&nbsp;&nbsp;以下のメソッドは、過去 30 日以内に発生したエラーのみを取得できます。  |  必須ではない  |
+| startDate | date | 取得するエラー報告データの日付範囲の開始日を ```mm/dd/yyyy``` の形式で指定します。 既定値は現在の日付です。<p/><p/>**注:**&nbsp;&nbsp;このメソッドは、過去 30 日以内に発生したエラーのみを取得できます。  |  必須ではない  |
 | endDate | date | 取得するエラー報告データの日付範囲の終了日を ```mm/dd/yyyy``` の形式で指定します。 既定値は現在の日付です。   |  必須ではない  |
 | top | int | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  必須ではない  |
 | skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  必須ではない  |

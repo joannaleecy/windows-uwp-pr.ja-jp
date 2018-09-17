@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958062"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987899"
 ---
 # <a name="windows-app-certification-kit"></a>Windows アプリ認定キット
 
 
 
-[Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)認定を取得または[Microsoft Store に公開](https://msdn.microsoft.com/library/windows/apps/Hh694062)のための準備、する必要がありますの検証し、テスト ローカルで最初にします。 このトピックでは、インストールして、アプリを安全かつ効率的には、 [Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)を実行する方法を示します。
+[Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)認定を取得または[Microsoft Store に公開](https://msdn.microsoft.com/library/windows/apps/Hh694062)のための準備、する必要がありますの検証し、テスト ローカルで最初にします。 このトピックでは、インストールして、アプリを安全かつ効率的に[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)を実行する方法を示します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -46,7 +46,7 @@ ms.locfileid: "3958062"
 
 3.  テストするアプリを入力するか選択したら **[次へ]** をクリックします。
 
-4.  次の画面からは、テストするアプリの種類に合ったテスト ワークフローが表示されます。 一覧でテストが淡色されている場合、お使いの環境にはそのテストが適用されません。 たとえば、Windows 7 で Windows 10 アプリをテストする場合、静的テストのみがワークフローに適用されます。 Microsoft Store がこのワークフローをすべてのテストを適用できることに注意してください。 実行するテストを選んで **[次へ]** をクリックします。
+4.  次の画面からは、テストするアプリの種類に合ったテスト ワークフローが表示されます。 一覧でテストが淡色されている場合、お使いの環境にはそのテストが適用されません。 たとえば、Windows 7 で Windows 10 アプリをテストする場合、静的テストのみがワークフローに適用されます。 Microsoft Store 可能性がありますすべてのテストをこのワークフローから適用されることに注意してください。 実行するテストを選んで **[次へ]** をクリックします。
 
     Windows アプリ認定キットによってアプリの検証が開始されます。
 
@@ -90,7 +90,7 @@ ms.locfileid: "3958062"
 
 Windows アプリ認定キットで使用するパフォーマンス テストのしきい値は、低電力コンピューターのパフォーマンスに基づいて設定します。
 
-テストを実行するコンピューターの特性がテスト結果に影響することがあります。 調べるには、アプリのパフォーマンスが[Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を満たしているかどうか、お勧めします Intel Atom プロセッサ ベースのコンピューターと 1366 x 768 以上) の画面の解像度、回転式ハードなどの低電力コンピューターでアプリをテストします。(、ソリッド ステート ハード ドライブ) ではなくドライブです。
+テストを実行するコンピューターの特性がテスト結果に影響することがあります。 調べるには、アプリのパフォーマンスが[Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を満たしているかどうか、お勧めします Intel Atom プロセッサ ベースのコンピューターと 1366 x 768 以上) の画面解像度、回転式ハードなどの低電力コンピューターでアプリをテストします。(ソリッド ステート ハード ドライブ) ではなくドライブです。
 
 低電力コンピューターの進化に伴い、パフォーマンスの特性が時間の経過と共に変化する可能性があります。 最新の[Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を参照し、アプリが最新のパフォーマンス要件に準拠しているかどうかを確認するには、Windows アプリ認定キットの最新バージョンでアプリをテストします。
 

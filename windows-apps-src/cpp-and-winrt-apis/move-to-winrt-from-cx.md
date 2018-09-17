@@ -10,22 +10,22 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 移植, 移行, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: ac7affb044c6b60a249b154cc62379c7517161b0
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961694"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988415"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>C++/CX から [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) への移行
 このトピックでは、[C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) コードを C++/WinRT の同等のコードに移植する方法について説明します。
 
 > [!IMPORTANT]
-> 段階的に移植する場合、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx)コードを C + +/winrt では、そのことができます。 C++/cli/CX と C++/WinRT コードに XAML コンパイラ サポート、および Windows ランタイム コンポーネントを除いて、同じプロジェクトに共存することができます。 C + いずれかをターゲットにする必要があります、それらの例外の +/CX または/同じプロジェクト内で WinRT します。 移植するには、XAML アプリから係数のコードを Windows ランタイム コンポーネントを使用できます。 移動するか、できるだけ多く C + + CX コードのコンポーネントを作成して c++ XAML プロジェクトを変更する/WinRT します。 またはそれ以外の場合、C++ と XAML プロジェクトのままに/CX、作成新しい C + + WinRT コンポーネントを C++ の移植を開始し、+/CX コード、XAML プロジェクトからコンポーネントにします。 場合もあります C + + と共に c++ コンポーネント プロジェクトを CX/WinRT コンポーネントのプロジェクトで、同じソリューション内でアプリケーション プロジェクトからその両方を参照し、段階的に、他のいずれかから移植します。
+> 段階的に移植する場合、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx)コードを C + +/winrt では、そのことができます。 C++/cli/CX と C++/WinRT コードに XAML コンパイラ サポートと Windows ランタイム コンポーネントを除いて、同じプロジェクトに共存することができます。 C + いずれかをターゲットにする必要があります、それらの例外の +/CX または + 同じプロジェクト内の WinRT します。 移植するには、XAML アプリ外係数のコードを Windows ランタイム コンポーネントを使用できます。 移動するか、できるだけ多く C + + CX コードをコンポーネントには c++ XAML プロジェクトを変更すると/WinRT します。 またはそれ以外の場合、C++ と XAML プロジェクトのままに/CX、作成新しい C + + WinRT コンポーネントを C++ の移植を開始し、+/CX コード、XAML プロジェクトからコンポーネントにします。 場合もあります C + + と共に c++ コンポーネント プロジェクトを CX/WinRT コンポーネントのプロジェクトで、同じソリューション内でアプリケーション プロジェクトからそれらの両方を参照し、段階的に、他のいずれかから移植します。
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) と Windows SDK の両方で、ルート名前空間 **Windows** で型を宣言します。 C++/WinRT に投影された Windows 型は Windows 型と同じ完全修飾名を持ちますが、 C++ **winrt** 名前空間に配置されます。 これらの異なる名前空間では、独自のペースで C++/CX から C++/WinRT へ移植できます。
 
-C++ プロジェクトの移植の最初の手順は上で説明した例外に注意してください方位、+ を手動で追加すると、C++/winrt は +/winrt サポート (を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 これを行うには、`.vcxproj` ファイルを編集し、`<PropertyGroup Label="Globals">` を見つけ、そのプロパティ グループ内で、プロパティ `<CppWinRTEnabled>true</CppWinRTEnabled>` を設定します。 その変更による 1 つの効果は、C++/CX のサポートがプロジェクトで無効になることです。 C++ でのすべての依存関係オフになりメッセージをビルドする際に役立つ検索 (ポート) のサポートを残すことをお勧め/CX、またはすることが再びオンにサポート (プロジェクトのプロパティで**C/C++** \> **一般的な** \> **消費 Windows ランタイム拡張** \> **[はい (/ZW)**)、徐々 にポートとします。
+最初の手順を C++ プロジェクトを移植することに留意する上で説明した例外の方位を/WinRT は手動で追加すると、C++ を//winrt サポート (を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 これを行うには、`.vcxproj` ファイルを編集し、`<PropertyGroup Label="Globals">` を見つけ、そのプロパティ グループ内で、プロパティ `<CppWinRTEnabled>true</CppWinRTEnabled>` を設定します。 その変更による 1 つの効果は、C++/CX のサポートがプロジェクトで無効になることです。 C++ でのすべての依存関係オフになりメッセージをビルドする際に役立つ検索 (ポート) のサポートを残すことをお勧め +/CX、またはすることができますサポートを有効に戻す (プロジェクトのプロパティで**C/C++** \> **一般的な** \> **消費 Windows ランタイム拡張** \> **[はい (/ZW)**)、徐々 にポートとします。
 
 プロジェクトのプロパティ (**[全般]** \> **[ターゲット プラットフォーム バージョン]**) を 10.0.17134.0 (Windows 10 バージョン 1803) 以上に設定します。
 
@@ -183,8 +183,8 @@ private:
 };
 ```
 
-## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>基本のランタイム クラスから派生した 1 つに変換します。
-参照から基本派生型のオブジェクトを参照することがわかっているが一般的です。 C + +/CX を使用する`dynamic_cast`に*キャスト*ベースに参照を参照する-派生にします。 `dynamic_cast` [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)するために非表示の呼び出しにすぎません。 典型的な例を以下に示します&mdash;、依存関係プロパティの変更イベントを処理して、依存関係プロパティを所有している実際の型に**DependencyObject**からキャストします。
+## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>基本のランタイム クラスから派生したものに変換します。
+参照から基本派生型のオブジェクトを参照することがわかっているが一般的です。 C + +/CX を使用する`dynamic_cast`に*キャスト*ベースに参照を参照する-派生にします。 `dynamic_cast` [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)するために非表示の呼び出しにすぎません。 一般的な例を示します&mdash;、依存関係プロパティの変更イベントを処理して、 **DependencyObject**から依存関係プロパティを所有している実際の型にキャストします。
 
 ```cpp
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
@@ -241,7 +241,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 
 ラムダ関数の代わりに、デリゲートを自由関数として実装するか、またはメンバー関数へのポインターとして実装するかを選択できます。 詳細については、「[C++/WinRT でのデリゲートを使用したイベントの処理](handle-events.md)」を参照してください。
 
-イベントとデリゲートが内部的に使用される C++/CX コードベース (バイナリではなく) から移植する場合は、[**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) を使用すると、C++/WinRT でそのパターンを複製できます。 [パラメーター化されたデリゲート、単純な信号は、プロジェクト内でコールバック](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project)」も参照してください。
+イベントとデリゲートが内部的に使用される C++/CX コードベース (バイナリではなく) から移植する場合は、[**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) を使用すると、C++/WinRT でそのパターンを複製できます。 [パラメーター化されたデリゲート、シンプルな信号は、プロジェクト内でコールバック](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project)」も参照してください。
 
 ## <a name="revoking-a-delegate"></a>デリゲートの取り消し
 C++/CX では、`-=` 演算子を使用して前のイベント登録を取り消します。
@@ -270,7 +270,7 @@ C++/CX は **Platform** 名前空間でいくつかのデータ型を提供し�
 | **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
 ### <a name="port-platformagile-to-winrtagileref"></a>ポート**プラットフォーム: Agile\ ^** **winrt::agile_ref**する
-**プラットフォーム: Agile\ ^** c++ の型/CX が任意のスレッドからアクセスできる Windows ランタイム クラスを表します。 C++/WinRT 相当する[**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)します。
+**プラットフォーム: Agile\ ^** c++ の型/CX は任意のスレッドからアクセスできる Windows ランタイム クラスを表します。 C++/ [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)は WinRT に相当します。
 
 C++/CX で、次の操作を行います。
 

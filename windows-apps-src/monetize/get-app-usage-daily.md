@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 99DB5622-3700-4FB2-803B-DA447A1FD7B7
-description: 特定の日付範囲やその他のオプション フィルターを日単位のアプリの使用状況データを取得するのに、Microsoft Store 分析 API の以下のメソッドを使用します。
+description: 特定の日付範囲やその他のオプション フィルターを毎日のアプリの使用状況データを取得するのに Microsoft Store 分析 API の以下のメソッドを使用します。
 title: 毎日のアプリの使用量を取得します。
 ms.author: mhopkins
 ms.date: 08/15/2018
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, 使用状況
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957874"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987053"
 ---
 # <a name="get-daily-app-usage"></a>毎日のアプリの使用量を取得します。
 
@@ -93,13 +93,13 @@ Authorization: Bearer <your access token>
 | packageVersion            | string  | 使用状況が発生したパッケージのバージョン。                          |
 | market                    | string  | お客様がアプリを使用する市場の ISO 3166 国コードです。 |
 | subscriptionName          | string  | Xbox Game Pass を通じて使用量があったかどうかを示します。                            |
-| dailySessionCount         | long    | その日のユーザー セッションの数です。                                  |
-| engagementDurationMinutes | double  | ユーザーがアクティブに個別のアプリを起動したときに始まり期間によって測定アプリ (プロセスが開始) を使用して終了 (プロセスの終了) または後に一定の期間の終了場所分。             |
-| dailyActiveUsers          | long    | その日にアプリを使用しているユーザーの数です。                           |
+| dailySessionCount         | long    | その日にユーザー セッションの数。                                  |
+| engagementDurationMinutes | double  | ユーザーが積極的に個別のアプリを起動したときに始まり、時間の期間で測定されたアプリ (プロセスが開始) を使用して終了 (プロセスの終了) または後に一定の期間の終了位置分です。             |
+| dailyActiveUsers          | long    | その日にアプリを使用しているユーザーの数。                           |
 | dailyActiveDevices        | long    | すべてのユーザーがアプリを操作するために使用 1 日あたりのデバイスの数。  |
 | dailyNewUsers             | long    | 最初にその日にアプリを使用したユーザーの数。    |
-| monthlyActiveUsers        | long    | アプリをその月を使っているユーザーの数です。                         |
-| monthlyActiveDevices      | long    | または一定の期間後にデバイスを個別の期間、アプリを起動したときに始まり (プロセスが開始) のアプリを実行していると、終了 (プロセスの終了) したときに終了の数です。                                      |
+| monthlyActiveUsers        | long    | アプリをその月を使っているユーザーの数。                         |
+| monthlyActiveDevices      | long    | 一定の期間後または時間、アプリを起動したときに始まり (プロセスが開始) の個別の期間のアプリを実行していると、終了 (プロセスの終了) を終了するデバイスの数。                                      |
 | monthlyNewUsers           | long    | その月の初めてのアプリを使用したユーザーの数。  |
 
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960194"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987589"
 ---
 # <a name="data-binding-overview"></a>データ バインディングの概要
 
@@ -221,7 +221,7 @@ namespace Quickstart
 
 次に、マークアップのページを表すクラスからバインディング ソース クラスを公開します。 これを行うには、**RecordingViewModel** 型のプロパティを **MainPage** に追加します。
 
-使用する場合は[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、最初の更新し、`MainPage.idl`します。 プロジェクトをビルドして再生成`MainPage.h`と`.cpp`、それらの生成されたファイルの変更をプロジェクトにあるものにマージします。
+使用する場合は[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、最初の更新し、`MainPage.idl`します。 再生成するプロジェクトをビルド`MainPage.h`と`.cpp`、それらの生成されたファイルの変更をプロジェクトにあるものにマージします。
 
 ```csharp
 namespace Quickstart
@@ -315,7 +315,7 @@ namespace Quickstart
 
 一般的なシナリオでは、ビジネス オブジェクトのコレクションにバインドします。 C# と Visual Basic では、データ バインディングのコレクションには汎用の [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) クラスが適しています。このクラスは [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) インターフェイスと [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) インターフェイスを実装するためです。 これらのインターフェイスは、項目が追加または変更された場合や一覧自体のプロパティが変更された場合に、バインディングに変更を通知します。 コレクション内のオブジェクトのプロパティの変更をバインドされたコントロールに反映する場合は、ビジネス オブジェクトでも **INotifyPropertyChanged** を実装します。 詳しくは、「[データ バインディングの詳細](data-binding-in-depth.md)」をご覧ください。
 
-使っている場合[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、監視可能なコレクションにバインドする方法の詳細については、その[XAML アイテム コントロール: c++ へのバインド//winrt コレクション](/windows/uwp/cpp-and-winrt-apis/binding-collection)します。 かどうかするトピックを読むと、最初に、し、c++ の意図/WinRT コードの一覧を次にはより明確になります。
+使用する場合[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、監視可能なコレクションにバインドする方法の詳細については、その[XAML アイテム コントロール: c++ へのバインド/WinRT コレクション](/windows/uwp/cpp-and-winrt-apis/binding-collection)します。 かどうかするトピックを読むと、最初に、し、c++ の意図/の下に表示される WinRT コードの一覧をより明確になります。
 
 次の例では、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を `Recording` オブジェクトのコレクションにバインドしています。 最初に、ビュー モデルにコレクションを追加します。 これらの新しいメンバーを **RecordingViewModel** クラスに追加します。
 
@@ -439,7 +439,7 @@ public:
 
 ![一覧ビューのバインド](images/xaml-databinding1.png)
 
-この問題を解決するには、 **OneLineSummary**の値を返す[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)を無効にできますか、またはデータ テンプレートを用意します。 一般的なソリューションでは、されより柔軟なデータ テンプレートのオプションとなります。 データ テンプレートを指定するには、コンテンツ コントロールの [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) プロパティか、項目コントロールの [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) プロパティを使います。 **Recording** のデータ テンプレートをデザインするための 2 つの方法と結果の図を以下に示します。
+この問題を解決するには、 **OneLineSummary**の値を返す[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)を無効にできますか、またはデータ テンプレートを提供します。 一般的なソリューションでは、されより柔軟なデータ テンプレートのオプションとなります。 データ テンプレートを指定するには、コンテンツ コントロールの [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) プロパティか、項目コントロールの [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) プロパティを使います。 **Recording** のデータ テンプレートをデザインするための 2 つの方法と結果の図を以下に示します。
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -485,9 +485,9 @@ XAML 構文について詳しくは、「[XAML を使った UI の作成](https:
 > このトピックでは、これまで [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)のみを使ってきましたが、以下に示す 2 つの手法ではより柔軟な (ただし効率は低下する) [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)が必要です。
 
 > [!IMPORTANT]
-> 使用する場合は[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、(後述) [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性は、 [Windows 10 SDK プレビュー ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)、インストールした場合にのみ利用可能な以降、します。 その属性がない[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)マークアップ拡張機能を使用できるようにするために[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)と[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)インターフェイスを実装する必要があります。
+> 使用する場合は[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、(後述) [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性は、 [Windows 10 SDK プレビュー ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)をインストールした場合にのみ利用可能な以降、します。 その属性がない場合は、 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)マークアップ拡張機能を使用できるようにするために[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)と[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)インターフェイスを実装する必要があります。
 
-使用する場合、C++/WinRT または Visual C コンポーネント拡張機能 (、C++/CX) し、 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)マークアップ拡張機能を使用してありますが、ために必要があります**記録**クラスを[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性を追加します。
+使用する場合、C++/WinRT または Visual C コンポーネント拡張機能 (、C++/cli CX) し、 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)マークアップ拡張機能を使用してありますが、ために必要があります**記録**クラスを[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)属性を追加します。
 
 まず、[**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) の手法を示します。
 
@@ -616,7 +616,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 ![カスタム形式での日付の表示](images/xaml-databinding5.png)
 
 > [!NOTE]
-> Windows 10、バージョン 1607 では、以降では、XAML フレームワークは、組み込みの表示をブール値のコンバーターを提供します。 コンバーターにマップ**true** **Visibility.Visible**列挙値と**false** **Visibility.Collapsed**をコンバーターを作成することがなく、Visibility プロパティをブール値にバインドできるようにします。 組み込みのコンバーターを使用するには、アプリの最小のターゲット SDK バージョンが 14393 以降である必要があります。 アプリがそれよりも前のバージョンの Windows 10 をターゲットとしている場合は使うことができません。 ターゲット バージョンについて詳しくは、[バージョン アダプティブ コード](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)を参照してください。
+> Windows 10、バージョン 1607 では、以降では、XAML フレームワークは、組み込みの表示のブール値コンバーターを提供します。 コンバーターにマップ**true** **Visibility.Visible**列挙値と**false** **Visibility.Collapsed**をコンバーターを作成することがなく Visibility プロパティをブール値にバインドできるようにします。 組み込みのコンバーターを使用するには、アプリの最小のターゲット SDK バージョンが 14393 以降である必要があります。 アプリがそれよりも前のバージョンの Windows 10 をターゲットとしている場合は使うことができません。 ターゲット バージョンについて詳しくは、[バージョン アダプティブ コード](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 * [データ バインディング](index.md)

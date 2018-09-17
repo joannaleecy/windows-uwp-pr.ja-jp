@@ -1,5 +1,5 @@
 ---
-title: ユーザー/me/コンシューマブル/{itemID}
+title: /users/me/consumables/{itemID}
 assetID: 45724827-5e35-326f-3f17-f49e606d9e08
 permalink: en-us/docs/xboxlive/rest/uri-inventoryconsumablesitemurl.html
 author: KevinAsgari
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed278542fa538a1297069b0f7d67d413e180f30
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963431"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990268"
 ---
-# <a name="usersmeconsumablesitemid"></a>ユーザー/me/コンシューマブル/{itemID}
+# <a name="usersmeconsumablesitemid"></a>/users/me/consumables/{itemID}
 特定のコンシューマブルなインベントリ項目の詳細情報の完全なセットにアクセスします。
 これらの Uri のドメインが`inventory.xboxlive.com`します。
 
@@ -52,7 +52,7 @@ ms.locfileid: "3963431"
 
 ##### <a name="parent"></a>Parent
 
-[Marketplace Uri](atoc-reference-marketplace.md)
+[マーケットプレース URI](atoc-reference-marketplace.md)
 
 
 <a id="ID4EJC"></a>
@@ -60,10 +60,10 @@ ms.locfileid: "3963431"
 
 ##### <a name="further-information"></a>詳細情報
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)

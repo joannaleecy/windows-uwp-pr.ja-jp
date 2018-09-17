@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, OpenCV
 ms.localizationpriority: medium
 ms.openlocfilehash: 43545f2a8e1965124560479d399df79d247c5f05
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961972"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986961"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Open Source Computer Vision Library (OpenCV) と MediaFrameReader の使用
 
@@ -32,7 +32,7 @@ ms.locfileid: "3961972"
 
 これらの記事に加えて、この記事で説明したシナリオの完全でエンド ツー エンドの実用的なサンプルを表示およびダウンロードするには、Windows ユニバーサル サンプル GitHub リポジトリにある[カメラ フレームと OpenCV のサンプル](https://go.microsoft.com/fwlink/?linkid=854003)をご覧ください。
 
-最初にすばやく開発、含めることができます、OpenCV ライブラリ、UWP アプリ プロジェクトで、NuGet パッケージを使用して、ので、OpenCV をダウンロードすることをお勧めしますが、ストアにアプリを提出するときに、これらのパッケージはアプリの certficication プロセスを通過しない可能性があります。ライブラリは、ソース コードと、アプリを提出する前に自分でバイナリをビルドします。 OpenCV を使った開発に関する情報については、[http://opencv.org](http://opencv.org) をご覧ください。
+簡単に開発を開始するに含めることができます、OpenCV ライブラリ UWP アプリ プロジェクトで、NuGet パッケージを使用してがので、OpenCV をダウンロードすることをお勧めしますが、ストアにアプリを提出するときに、これらのパッケージはアプリ certficication プロセスを通過しない可能性があります。ライブラリは、ソース コードと、アプリを提出する前に自分でバイナリをビルドします。 OpenCV を使った開発に関する情報については、[http://opencv.org](http://opencv.org) をご覧ください。
 
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>OpenCVHelper ネイティブ Windows ランタイム コンポーネントを実装する
