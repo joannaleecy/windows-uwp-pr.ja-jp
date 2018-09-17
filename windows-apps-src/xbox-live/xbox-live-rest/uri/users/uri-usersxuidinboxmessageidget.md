@@ -12,109 +12,109 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961651"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983540"
 ---
-# <a name="get-usersxuidxuidinboxmessageid"></a><span data-ttu-id="eff0c-104">GET (/users/xuid({xuid})/inbox/{messageId})</span><span class="sxs-lookup"><span data-stu-id="eff0c-104">GET (/users/xuid({xuid})/inbox/{messageId})</span></span>
-<span data-ttu-id="eff0c-105">サービスの読み取りとしてマークすること、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。</span><span class="sxs-lookup"><span data-stu-id="eff0c-105">Retrieves the detailed message text for a particular user message, marking it as read on the service.</span></span>
-<span data-ttu-id="eff0c-106">これらの Uri のドメインが`msg.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="eff0c-106">The domain for these URIs is `msg.xboxlive.com`.</span></span>
+# <a name="get-usersxuidxuidinboxmessageid"></a><span data-ttu-id="35b17-104">GET (/users/xuid({xuid})/inbox/{messageId})</span><span class="sxs-lookup"><span data-stu-id="35b17-104">GET (/users/xuid({xuid})/inbox/{messageId})</span></span>
+<span data-ttu-id="35b17-105">サービスの読み取りとしてマーク、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。</span><span class="sxs-lookup"><span data-stu-id="35b17-105">Retrieves the detailed message text for a particular user message, marking it as read on the service.</span></span>
+<span data-ttu-id="35b17-106">これらの Uri のドメインが`msg.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="35b17-106">The domain for these URIs is `msg.xboxlive.com`.</span></span>
 
-  * [<span data-ttu-id="eff0c-107">注釈</span><span class="sxs-lookup"><span data-stu-id="eff0c-107">Remarks</span></span>](#ID4EV)
-  * [<span data-ttu-id="eff0c-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="eff0c-108">URI parameters</span></span>](#ID4EEB)
-  * [<span data-ttu-id="eff0c-109">Authorization</span><span class="sxs-lookup"><span data-stu-id="eff0c-109">Authorization</span></span>](#ID4ERB)
-  * [<span data-ttu-id="eff0c-110">要求本文</span><span class="sxs-lookup"><span data-stu-id="eff0c-110">Request body</span></span>](#ID4E3B)
-  * [<span data-ttu-id="eff0c-111">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="eff0c-111">Effect of privacy settings on resource</span></span>](#ID4EJC)
-  * [<span data-ttu-id="eff0c-112">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="eff0c-112">HTTP status codes</span></span>](#ID4EUC)
-  * [<span data-ttu-id="eff0c-113">JavaScript オブジェクト Notation (JSON) の応答</span><span class="sxs-lookup"><span data-stu-id="eff0c-113">JavaScript Object Notation (JSON) Response</span></span>](#ID4EUE)
+  * [<span data-ttu-id="35b17-107">注釈</span><span class="sxs-lookup"><span data-stu-id="35b17-107">Remarks</span></span>](#ID4EV)
+  * [<span data-ttu-id="35b17-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="35b17-108">URI parameters</span></span>](#ID4EEB)
+  * [<span data-ttu-id="35b17-109">Authorization</span><span class="sxs-lookup"><span data-stu-id="35b17-109">Authorization</span></span>](#ID4ERB)
+  * [<span data-ttu-id="35b17-110">要求本文</span><span class="sxs-lookup"><span data-stu-id="35b17-110">Request body</span></span>](#ID4E3B)
+  * [<span data-ttu-id="35b17-111">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="35b17-111">Effect of privacy settings on resource</span></span>](#ID4EJC)
+  * [<span data-ttu-id="35b17-112">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="35b17-112">HTTP status codes</span></span>](#ID4EUC)
+  * [<span data-ttu-id="35b17-113">JavaScript オブジェクト Notation (JSON) の応答</span><span class="sxs-lookup"><span data-stu-id="35b17-113">JavaScript Object Notation (JSON) Response</span></span>](#ID4EUE)
 
 <a id="ID4EV"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="eff0c-114">注釈</span><span class="sxs-lookup"><span data-stu-id="eff0c-114">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="35b17-114">注釈</span><span class="sxs-lookup"><span data-stu-id="35b17-114">Remarks</span></span>
 
-<span data-ttu-id="eff0c-115">Get 操作は、ユーザー、システム、および FriendRequest メッセージの種類でのみ実行できます。</span><span class="sxs-lookup"><span data-stu-id="eff0c-115">The get operation can only be performed on the User, System, and FriendRequest message types.</span></span>
+<span data-ttu-id="35b17-115">Get 操作は、ユーザー、システム、および FriendRequest メッセージの種類でのみ実行できます。</span><span class="sxs-lookup"><span data-stu-id="35b17-115">The get operation can only be performed on the User, System, and FriendRequest message types.</span></span>
 
-<span data-ttu-id="eff0c-116">この URI には、Xbox.com に更新が必要です。</span><span class="sxs-lookup"><span data-stu-id="eff0c-116">This URI requires a refresh on Xbox.com.</span></span> <span data-ttu-id="eff0c-117">現時点では、まで、ユーザーがサインアウトしたとでもう一度、Xbox 360 は読み取り/未読メ状態を更新されません。</span><span class="sxs-lookup"><span data-stu-id="eff0c-117">Currently, the Xbox 360 will not update the read/unread state until a user signs out and back in.</span></span>
+<span data-ttu-id="35b17-116">この URI には、Xbox.com に更新が必要です。</span><span class="sxs-lookup"><span data-stu-id="35b17-116">This URI requires a refresh on Xbox.com.</span></span> <span data-ttu-id="35b17-117">現時点では、まで、ユーザーがサインアウトしたとに戻り、Xbox 360 は読み取り/未読メ状態を更新されません。</span><span class="sxs-lookup"><span data-stu-id="35b17-117">Currently, the Xbox 360 will not update the read/unread state until a user signs out and back in.</span></span>
 
-<span data-ttu-id="eff0c-118">この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。</span><span class="sxs-lookup"><span data-stu-id="eff0c-118">The only content type this API supports is "application/json", which is required in the HTTP headers of each call.</span></span>
+<span data-ttu-id="35b17-118">この API は、サポートのみコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。</span><span class="sxs-lookup"><span data-stu-id="35b17-118">The only content type this API supports is "application/json", which is required in the HTTP headers of each call.</span></span>
 
 <a id="ID4EEB"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="eff0c-119">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="eff0c-119">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="35b17-119">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="35b17-119">URI parameters</span></span>
 
-| <span data-ttu-id="eff0c-120">パラメーター</span><span class="sxs-lookup"><span data-stu-id="eff0c-120">Parameter</span></span>| <span data-ttu-id="eff0c-121">型</span><span class="sxs-lookup"><span data-stu-id="eff0c-121">Type</span></span>| <span data-ttu-id="eff0c-122">説明</span><span class="sxs-lookup"><span data-stu-id="eff0c-122">Description</span></span>|
+| <span data-ttu-id="35b17-120">パラメーター</span><span class="sxs-lookup"><span data-stu-id="35b17-120">Parameter</span></span>| <span data-ttu-id="35b17-121">型</span><span class="sxs-lookup"><span data-stu-id="35b17-121">Type</span></span>| <span data-ttu-id="35b17-122">説明</span><span class="sxs-lookup"><span data-stu-id="35b17-122">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="eff0c-123">xuid</span><span class="sxs-lookup"><span data-stu-id="eff0c-123">xuid</span></span> | <span data-ttu-id="eff0c-124">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="eff0c-124">unsigned 64-bit integer</span></span> | <span data-ttu-id="eff0c-125">Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。</span><span class="sxs-lookup"><span data-stu-id="eff0c-125">The Xbox User ID (XUID) of the player who is making the request.</span></span> |
-| <span data-ttu-id="eff0c-126">メッセージ Id</span><span class="sxs-lookup"><span data-stu-id="eff0c-126">messageId</span></span> | <span data-ttu-id="eff0c-127">文字列 [50]</span><span class="sxs-lookup"><span data-stu-id="eff0c-127">string[50]</span></span> | <span data-ttu-id="eff0c-128">取得または削除されるメッセージの ID です。</span><span class="sxs-lookup"><span data-stu-id="eff0c-128">ID of the message being retrieved or deleted.</span></span> |
+| <span data-ttu-id="35b17-123">xuid</span><span class="sxs-lookup"><span data-stu-id="35b17-123">xuid</span></span> | <span data-ttu-id="35b17-124">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="35b17-124">unsigned 64-bit integer</span></span> | <span data-ttu-id="35b17-125">Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。</span><span class="sxs-lookup"><span data-stu-id="35b17-125">The Xbox User ID (XUID) of the player who is making the request.</span></span> |
+| <span data-ttu-id="35b17-126">メッセージ Id</span><span class="sxs-lookup"><span data-stu-id="35b17-126">messageId</span></span> | <span data-ttu-id="35b17-127">文字列 [50]</span><span class="sxs-lookup"><span data-stu-id="35b17-127">string[50]</span></span> | <span data-ttu-id="35b17-128">取得または削除されるメッセージの ID です。</span><span class="sxs-lookup"><span data-stu-id="35b17-128">ID of the message being retrieved or deleted.</span></span> |
 
 <a id="ID4ERB"></a>
 
 
-## <a name="authorization"></a><span data-ttu-id="eff0c-129">Authorization</span><span class="sxs-lookup"><span data-stu-id="eff0c-129">Authorization</span></span>
+## <a name="authorization"></a><span data-ttu-id="35b17-129">Authorization</span><span class="sxs-lookup"><span data-stu-id="35b17-129">Authorization</span></span>
 
-<span data-ttu-id="eff0c-130">独自のユーザーがユーザーのメッセージを取得する要求が必要です。</span><span class="sxs-lookup"><span data-stu-id="eff0c-130">You must have your own user claim to retrieve a user message.</span></span>
+<span data-ttu-id="35b17-130">独自のユーザーがユーザーのメッセージを取得する要求が必要です。</span><span class="sxs-lookup"><span data-stu-id="35b17-130">You must have your own user claim to retrieve a user message.</span></span>
 
 <a id="ID4E3B"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="eff0c-131">要求本文</span><span class="sxs-lookup"><span data-stu-id="eff0c-131">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="35b17-131">要求本文</span><span class="sxs-lookup"><span data-stu-id="35b17-131">Request body</span></span>
 
-<span data-ttu-id="eff0c-132">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="eff0c-132">No objects are sent in the body of this request.</span></span>
+<span data-ttu-id="35b17-132">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="35b17-132">No objects are sent in the body of this request.</span></span>
 
 <a id="ID4EJC"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a><span data-ttu-id="eff0c-133">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="eff0c-133">Effect of privacy settings on resource</span></span>
+## <a name="effect-of-privacy-settings-on-resource"></a><span data-ttu-id="35b17-133">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="35b17-133">Effect of privacy settings on resource</span></span>
 
-<span data-ttu-id="eff0c-134">のみ、独自のユーザーのメッセージを取得できます。</span><span class="sxs-lookup"><span data-stu-id="eff0c-134">Only you can retrieve your own user messages.</span></span>
+<span data-ttu-id="35b17-134">だけユーザー メッセージを取得できます。</span><span class="sxs-lookup"><span data-stu-id="35b17-134">Only you can retrieve your own user messages.</span></span>
 
 <a id="ID4EUC"></a>
 
 
-## <a name="http-status-codes"></a><span data-ttu-id="eff0c-135">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="eff0c-135">HTTP status codes</span></span>
+## <a name="http-status-codes"></a><span data-ttu-id="35b17-135">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="35b17-135">HTTP status codes</span></span>
 
-<span data-ttu-id="eff0c-136">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="eff0c-136">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="eff0c-137">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="eff0c-137">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
+<span data-ttu-id="35b17-136">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="35b17-136">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="35b17-137">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="35b17-137">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
 
-| <span data-ttu-id="eff0c-138">コード</span><span class="sxs-lookup"><span data-stu-id="eff0c-138">Code</span></span>| <span data-ttu-id="eff0c-139">説明</span><span class="sxs-lookup"><span data-stu-id="eff0c-139">Description</span></span>|
+| <span data-ttu-id="35b17-138">コード</span><span class="sxs-lookup"><span data-stu-id="35b17-138">Code</span></span>| <span data-ttu-id="35b17-139">説明</span><span class="sxs-lookup"><span data-stu-id="35b17-139">Description</span></span>|
 | --- | --- | --- | --- | --- |
-| <span data-ttu-id="eff0c-140">200</span><span class="sxs-lookup"><span data-stu-id="eff0c-140">200</span></span>| <span data-ttu-id="eff0c-141">成功します。</span><span class="sxs-lookup"><span data-stu-id="eff0c-141">Success.</span></span>|
-| <span data-ttu-id="eff0c-142">400</span><span class="sxs-lookup"><span data-stu-id="eff0c-142">400</span></span>| <span data-ttu-id="eff0c-143">XUID を適切に変換することはできません。</span><span class="sxs-lookup"><span data-stu-id="eff0c-143">The XUID cannot be converted properly.</span></span>|
-| <span data-ttu-id="eff0c-144">403</span><span class="sxs-lookup"><span data-stu-id="eff0c-144">403</span></span>| <span data-ttu-id="eff0c-145">XUID に変換することはできませんか、有効な XUID クレームが見つかったことはできません。</span><span class="sxs-lookup"><span data-stu-id="eff0c-145">The XUID cannot be converted or a valid XUID claim cannot be found.</span></span>|
-| <span data-ttu-id="eff0c-146">404</span><span class="sxs-lookup"><span data-stu-id="eff0c-146">404</span></span>| <span data-ttu-id="eff0c-147">有効な XUID が見つからないか、またはメッセージ ID が見つからないか、解析されます。</span><span class="sxs-lookup"><span data-stu-id="eff0c-147">A valid XUID is missing, or the message ID cannot be found or is parsed incorrectly.</span></span>|
-| <span data-ttu-id="eff0c-148">500</span><span class="sxs-lookup"><span data-stu-id="eff0c-148">500</span></span>| <span data-ttu-id="eff0c-149">サーバー側の一般的なエラーやメッセージの種類は、GET に対して有効ではありません。</span><span class="sxs-lookup"><span data-stu-id="eff0c-149">General server-side error, or the message type is not valid for GET.</span></span>|
+| <span data-ttu-id="35b17-140">200</span><span class="sxs-lookup"><span data-stu-id="35b17-140">200</span></span>| <span data-ttu-id="35b17-141">成功します。</span><span class="sxs-lookup"><span data-stu-id="35b17-141">Success.</span></span>|
+| <span data-ttu-id="35b17-142">400</span><span class="sxs-lookup"><span data-stu-id="35b17-142">400</span></span>| <span data-ttu-id="35b17-143">XUID を適切に変換することはできません。</span><span class="sxs-lookup"><span data-stu-id="35b17-143">The XUID cannot be converted properly.</span></span>|
+| <span data-ttu-id="35b17-144">403</span><span class="sxs-lookup"><span data-stu-id="35b17-144">403</span></span>| <span data-ttu-id="35b17-145">XUID に変換することはできませんか、有効な XUID クレームが見つかったことはできません。</span><span class="sxs-lookup"><span data-stu-id="35b17-145">The XUID cannot be converted or a valid XUID claim cannot be found.</span></span>|
+| <span data-ttu-id="35b17-146">404</span><span class="sxs-lookup"><span data-stu-id="35b17-146">404</span></span>| <span data-ttu-id="35b17-147">有効な XUID が見つからないか、またはメッセージ ID が見つからないか、解析されます。</span><span class="sxs-lookup"><span data-stu-id="35b17-147">A valid XUID is missing, or the message ID cannot be found or is parsed incorrectly.</span></span>|
+| <span data-ttu-id="35b17-148">500</span><span class="sxs-lookup"><span data-stu-id="35b17-148">500</span></span>| <span data-ttu-id="35b17-149">サーバー側の一般的なエラー、またはメッセージの種類は、GET に対して有効ではありません。</span><span class="sxs-lookup"><span data-stu-id="35b17-149">General server-side error, or the message type is not valid for GET.</span></span>|
 
 <a id="ID4EUE"></a>
 
 
-## <a name="javascript-object-notation-json-response"></a><span data-ttu-id="eff0c-150">JavaScript オブジェクト Notation (JSON) の応答</span><span class="sxs-lookup"><span data-stu-id="eff0c-150">JavaScript Object Notation (JSON) Response</span></span>
+## <a name="javascript-object-notation-json-response"></a><span data-ttu-id="35b17-150">JavaScript オブジェクト Notation (JSON) の応答</span><span class="sxs-lookup"><span data-stu-id="35b17-150">JavaScript Object Notation (JSON) Response</span></span>
 
-<span data-ttu-id="eff0c-151">正常に呼び出されると、サービスは結果データを JSON 形式で返します。</span><span class="sxs-lookup"><span data-stu-id="eff0c-151">If called successfully, the service returns the results data in a JSON format.</span></span> <span data-ttu-id="eff0c-152">ルート オブジェクトは、UserMessageHeader オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="eff0c-152">The root object is a UserMessageHeader object.</span></span>
+<span data-ttu-id="35b17-151">正常に呼び出されると、サービスは結果データを JSON 形式で返します。</span><span class="sxs-lookup"><span data-stu-id="35b17-151">If called successfully, the service returns the results data in a JSON format.</span></span> <span data-ttu-id="35b17-152">ルート オブジェクトは、UserMessageHeader オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="35b17-152">The root object is a UserMessageHeader object.</span></span>
 
-#### <a name="usermessageheader"></a><span data-ttu-id="eff0c-153">UserMessageHeader</span><span class="sxs-lookup"><span data-stu-id="eff0c-153">UserMessageHeader</span></span>
+#### <a name="usermessageheader"></a><span data-ttu-id="35b17-153">UserMessageHeader</span><span class="sxs-lookup"><span data-stu-id="35b17-153">UserMessageHeader</span></span>
 
-| <span data-ttu-id="eff0c-154">プロパティ</span><span class="sxs-lookup"><span data-stu-id="eff0c-154">Property</span></span>| <span data-ttu-id="eff0c-155">型</span><span class="sxs-lookup"><span data-stu-id="eff0c-155">Type</span></span>| <span data-ttu-id="eff0c-156">最大長</span><span class="sxs-lookup"><span data-stu-id="eff0c-156">Maximum Length</span></span>| <span data-ttu-id="eff0c-157">注釈</span><span class="sxs-lookup"><span data-stu-id="eff0c-157">Remarks</span></span>|
+| <span data-ttu-id="35b17-154">プロパティ</span><span class="sxs-lookup"><span data-stu-id="35b17-154">Property</span></span>| <span data-ttu-id="35b17-155">型</span><span class="sxs-lookup"><span data-stu-id="35b17-155">Type</span></span>| <span data-ttu-id="35b17-156">最大長</span><span class="sxs-lookup"><span data-stu-id="35b17-156">Maximum Length</span></span>| <span data-ttu-id="35b17-157">注釈</span><span class="sxs-lookup"><span data-stu-id="35b17-157">Remarks</span></span>|
 | --- | --- | --- | --- |
-| <span data-ttu-id="eff0c-158">header</span><span class="sxs-lookup"><span data-stu-id="eff0c-158">header</span></span>| <span data-ttu-id="eff0c-159">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="eff0c-159">Header</span></span>|  | <span data-ttu-id="eff0c-160">JSON オブジェクト</span><span class="sxs-lookup"><span data-stu-id="eff0c-160">JSON object</span></span>|
-| <span data-ttu-id="eff0c-161">メッセージ テキスト</span><span class="sxs-lookup"><span data-stu-id="eff0c-161">messageText</span></span>| <span data-ttu-id="eff0c-162">string</span><span class="sxs-lookup"><span data-stu-id="eff0c-162">string</span></span>| <span data-ttu-id="eff0c-163">256</span><span class="sxs-lookup"><span data-stu-id="eff0c-163">256</span></span>| <span data-ttu-id="eff0c-164">UTF-8</span><span class="sxs-lookup"><span data-stu-id="eff0c-164">UTF-8</span></span>|
+| <span data-ttu-id="35b17-158">header</span><span class="sxs-lookup"><span data-stu-id="35b17-158">header</span></span>| <span data-ttu-id="35b17-159">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="35b17-159">Header</span></span>|  | <span data-ttu-id="35b17-160">JSON オブジェクト</span><span class="sxs-lookup"><span data-stu-id="35b17-160">JSON object</span></span>|
+| <span data-ttu-id="35b17-161">メッセージ テキスト</span><span class="sxs-lookup"><span data-stu-id="35b17-161">messageText</span></span>| <span data-ttu-id="35b17-162">string</span><span class="sxs-lookup"><span data-stu-id="35b17-162">string</span></span>| <span data-ttu-id="35b17-163">256</span><span class="sxs-lookup"><span data-stu-id="35b17-163">256</span></span>| <span data-ttu-id="35b17-164">UTF-8</span><span class="sxs-lookup"><span data-stu-id="35b17-164">UTF-8</span></span>|
 
-#### <a name="header"></a><span data-ttu-id="eff0c-165">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="eff0c-165">Header</span></span>
+#### <a name="header"></a><span data-ttu-id="35b17-165">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="35b17-165">Header</span></span>
 
-| <span data-ttu-id="eff0c-166">プロパティ</span><span class="sxs-lookup"><span data-stu-id="eff0c-166">Property</span></span>| <span data-ttu-id="eff0c-167">型</span><span class="sxs-lookup"><span data-stu-id="eff0c-167">Type</span></span>| <span data-ttu-id="eff0c-168">最大長</span><span class="sxs-lookup"><span data-stu-id="eff0c-168">Maximum Length</span></span>| <span data-ttu-id="eff0c-169">注釈</span><span class="sxs-lookup"><span data-stu-id="eff0c-169">Remarks</span></span>|
+| <span data-ttu-id="35b17-166">プロパティ</span><span class="sxs-lookup"><span data-stu-id="35b17-166">Property</span></span>| <span data-ttu-id="35b17-167">型</span><span class="sxs-lookup"><span data-stu-id="35b17-167">Type</span></span>| <span data-ttu-id="35b17-168">最大長</span><span class="sxs-lookup"><span data-stu-id="35b17-168">Maximum Length</span></span>| <span data-ttu-id="35b17-169">注釈</span><span class="sxs-lookup"><span data-stu-id="35b17-169">Remarks</span></span>|
 | --- | --- | --- | --- |
-| <span data-ttu-id="eff0c-170">送信</span><span class="sxs-lookup"><span data-stu-id="eff0c-170">sent</span></span>| <span data-ttu-id="eff0c-171">DateTime</span><span class="sxs-lookup"><span data-stu-id="eff0c-171">DateTime</span></span>|  | <span data-ttu-id="eff0c-172">メッセージが送信された日付と時刻。</span><span class="sxs-lookup"><span data-stu-id="eff0c-172">Date and time the message was sent.</span></span> <span data-ttu-id="eff0c-173">(サービスによって提供されます)。</span><span class="sxs-lookup"><span data-stu-id="eff0c-173">(Provided by the service.)</span></span>|
-| <span data-ttu-id="eff0c-174">有効期限</span><span class="sxs-lookup"><span data-stu-id="eff0c-174">expiration</span></span>| <span data-ttu-id="eff0c-175">DateTime</span><span class="sxs-lookup"><span data-stu-id="eff0c-175">DateTime</span></span>|  | <span data-ttu-id="eff0c-176">日付と時刻のメッセージの有効期限が切れます。</span><span class="sxs-lookup"><span data-stu-id="eff0c-176">Date and time the message expires.</span></span> <span data-ttu-id="eff0c-177">(すべてのメッセージによって、将来的に決定する最長有効期間がある)。</span><span class="sxs-lookup"><span data-stu-id="eff0c-177">(All messages have a maximum lifetime, to be determined in the future.)</span></span>|
-| <span data-ttu-id="eff0c-178">メッセージの種類</span><span class="sxs-lookup"><span data-stu-id="eff0c-178">messageType</span></span>| <span data-ttu-id="eff0c-179">string</span><span class="sxs-lookup"><span data-stu-id="eff0c-179">string</span></span>| <span data-ttu-id="eff0c-180">13</span><span class="sxs-lookup"><span data-stu-id="eff0c-180">13</span></span>| <span data-ttu-id="eff0c-181">メッセージの種類: ユーザー、システム、FriendRequest します。</span><span class="sxs-lookup"><span data-stu-id="eff0c-181">Message types: User, System, FriendRequest.</span></span>|
-| <span data-ttu-id="eff0c-182">senderXuid</span><span class="sxs-lookup"><span data-stu-id="eff0c-182">senderXuid</span></span>| <span data-ttu-id="eff0c-183">ulong</span><span class="sxs-lookup"><span data-stu-id="eff0c-183">ulong</span></span>|  | <span data-ttu-id="eff0c-184">送信者の XUID です。</span><span class="sxs-lookup"><span data-stu-id="eff0c-184">XUID of sender.</span></span>|
-| <span data-ttu-id="eff0c-185">送信者</span><span class="sxs-lookup"><span data-stu-id="eff0c-185">sender</span></span>| <span data-ttu-id="eff0c-186">string</span><span class="sxs-lookup"><span data-stu-id="eff0c-186">string</span></span>| <span data-ttu-id="eff0c-187">15</span><span class="sxs-lookup"><span data-stu-id="eff0c-187">15</span></span>| <span data-ttu-id="eff0c-188">送信者のゲーマータグです。</span><span class="sxs-lookup"><span data-stu-id="eff0c-188">Gamertag of sender.</span></span>|
-| <span data-ttu-id="eff0c-189">hasAudio</span><span class="sxs-lookup"><span data-stu-id="eff0c-189">hasAudio</span></span>| <span data-ttu-id="eff0c-190">bool</span><span class="sxs-lookup"><span data-stu-id="eff0c-190">bool</span></span>|  | <span data-ttu-id="eff0c-191">かどうか、メッセージは、オーディオ (声) の添付ファイルがあります。</span><span class="sxs-lookup"><span data-stu-id="eff0c-191">Whether the message has an audio (voice) attachment.</span></span>|
-| <span data-ttu-id="eff0c-192">hasPhoto</span><span class="sxs-lookup"><span data-stu-id="eff0c-192">hasPhoto</span></span>| <span data-ttu-id="eff0c-193">bool</span><span class="sxs-lookup"><span data-stu-id="eff0c-193">bool</span></span>|  | <span data-ttu-id="eff0c-194">かどうか、メッセージは、写真の添付ファイルがあります。</span><span class="sxs-lookup"><span data-stu-id="eff0c-194">Whether the message has a photo attachment.</span></span>|
-| <span data-ttu-id="eff0c-195">hasText</span><span class="sxs-lookup"><span data-stu-id="eff0c-195">hasText</span></span>| <span data-ttu-id="eff0c-196">bool</span><span class="sxs-lookup"><span data-stu-id="eff0c-196">bool</span></span>|  | <span data-ttu-id="eff0c-197">かどうか、メッセージには、テキストが含まれています。</span><span class="sxs-lookup"><span data-stu-id="eff0c-197">Whether the message contains text.</span></span>|
+| <span data-ttu-id="35b17-170">送信</span><span class="sxs-lookup"><span data-stu-id="35b17-170">sent</span></span>| <span data-ttu-id="35b17-171">DateTime</span><span class="sxs-lookup"><span data-stu-id="35b17-171">DateTime</span></span>|  | <span data-ttu-id="35b17-172">メッセージが送信された日付と時刻。</span><span class="sxs-lookup"><span data-stu-id="35b17-172">Date and time the message was sent.</span></span> <span data-ttu-id="35b17-173">(サービスによって提供されます)。</span><span class="sxs-lookup"><span data-stu-id="35b17-173">(Provided by the service.)</span></span>|
+| <span data-ttu-id="35b17-174">有効期限</span><span class="sxs-lookup"><span data-stu-id="35b17-174">expiration</span></span>| <span data-ttu-id="35b17-175">DateTime</span><span class="sxs-lookup"><span data-stu-id="35b17-175">DateTime</span></span>|  | <span data-ttu-id="35b17-176">日付と時刻のメッセージの有効期限が切れます。</span><span class="sxs-lookup"><span data-stu-id="35b17-176">Date and time the message expires.</span></span> <span data-ttu-id="35b17-177">(すべてのメッセージによって、決定する、今後の最長有効期間がある)。</span><span class="sxs-lookup"><span data-stu-id="35b17-177">(All messages have a maximum lifetime, to be determined in the future.)</span></span>|
+| <span data-ttu-id="35b17-178">メッセージの種類</span><span class="sxs-lookup"><span data-stu-id="35b17-178">messageType</span></span>| <span data-ttu-id="35b17-179">string</span><span class="sxs-lookup"><span data-stu-id="35b17-179">string</span></span>| <span data-ttu-id="35b17-180">13</span><span class="sxs-lookup"><span data-stu-id="35b17-180">13</span></span>| <span data-ttu-id="35b17-181">メッセージの種類: ユーザー、システム、FriendRequest します。</span><span class="sxs-lookup"><span data-stu-id="35b17-181">Message types: User, System, FriendRequest.</span></span>|
+| <span data-ttu-id="35b17-182">senderXuid</span><span class="sxs-lookup"><span data-stu-id="35b17-182">senderXuid</span></span>| <span data-ttu-id="35b17-183">ulong</span><span class="sxs-lookup"><span data-stu-id="35b17-183">ulong</span></span>|  | <span data-ttu-id="35b17-184">送信者の XUID です。</span><span class="sxs-lookup"><span data-stu-id="35b17-184">XUID of sender.</span></span>|
+| <span data-ttu-id="35b17-185">送信者</span><span class="sxs-lookup"><span data-stu-id="35b17-185">sender</span></span>| <span data-ttu-id="35b17-186">string</span><span class="sxs-lookup"><span data-stu-id="35b17-186">string</span></span>| <span data-ttu-id="35b17-187">15</span><span class="sxs-lookup"><span data-stu-id="35b17-187">15</span></span>| <span data-ttu-id="35b17-188">送信者のゲーマータグです。</span><span class="sxs-lookup"><span data-stu-id="35b17-188">Gamertag of sender.</span></span>|
+| <span data-ttu-id="35b17-189">hasAudio</span><span class="sxs-lookup"><span data-stu-id="35b17-189">hasAudio</span></span>| <span data-ttu-id="35b17-190">bool</span><span class="sxs-lookup"><span data-stu-id="35b17-190">bool</span></span>|  | <span data-ttu-id="35b17-191">かどうか、メッセージは、オーディオ (声) の添付ファイルがあります。</span><span class="sxs-lookup"><span data-stu-id="35b17-191">Whether the message has an audio (voice) attachment.</span></span>|
+| <span data-ttu-id="35b17-192">hasPhoto</span><span class="sxs-lookup"><span data-stu-id="35b17-192">hasPhoto</span></span>| <span data-ttu-id="35b17-193">bool</span><span class="sxs-lookup"><span data-stu-id="35b17-193">bool</span></span>|  | <span data-ttu-id="35b17-194">かどうか、メッセージは、写真の添付ファイルがあります。</span><span class="sxs-lookup"><span data-stu-id="35b17-194">Whether the message has a photo attachment.</span></span>|
+| <span data-ttu-id="35b17-195">hasText</span><span class="sxs-lookup"><span data-stu-id="35b17-195">hasText</span></span>| <span data-ttu-id="35b17-196">bool</span><span class="sxs-lookup"><span data-stu-id="35b17-196">bool</span></span>|  | <span data-ttu-id="35b17-197">かどうか、メッセージには、テキストが含まれています。</span><span class="sxs-lookup"><span data-stu-id="35b17-197">Whether the message contains text.</span></span>|
 
-#### <a name="sample-response"></a><span data-ttu-id="eff0c-198">応答の例</span><span class="sxs-lookup"><span data-stu-id="eff0c-198">Sample response</span></span>
+#### <a name="sample-response"></a><span data-ttu-id="35b17-198">応答の例</span><span class="sxs-lookup"><span data-stu-id="35b17-198">Sample response</span></span>
 
 ```cpp
 {
@@ -134,30 +134,30 @@ ms.locfileid: "3961651"
 
 ```
 
-#### <a name="error-response"></a><span data-ttu-id="eff0c-199">エラー応答</span><span class="sxs-lookup"><span data-stu-id="eff0c-199">Error Response</span></span>
+#### <a name="error-response"></a><span data-ttu-id="35b17-199">エラー応答</span><span class="sxs-lookup"><span data-stu-id="35b17-199">Error Response</span></span>
 
-<span data-ttu-id="eff0c-200">エラーの場合、サービスはサービスの環境からの値が含まれている全て、errorResponse オブジェクトを返す可能性があります。</span><span class="sxs-lookup"><span data-stu-id="eff0c-200">In case of error, the service may return an errorResponse object, which may contain values from the environment of the service.</span></span>
+<span data-ttu-id="35b17-200">エラーの場合、サービスはサービスの環境からの値が含まれている全て、errorResponse オブジェクトを返す可能性があります。</span><span class="sxs-lookup"><span data-stu-id="35b17-200">In case of error, the service may return an errorResponse object, which may contain values from the environment of the service.</span></span>
 
-| <span data-ttu-id="eff0c-201">プロパティ</span><span class="sxs-lookup"><span data-stu-id="eff0c-201">Property</span></span>| <span data-ttu-id="eff0c-202">型</span><span class="sxs-lookup"><span data-stu-id="eff0c-202">Type</span></span>| <span data-ttu-id="eff0c-203">説明</span><span class="sxs-lookup"><span data-stu-id="eff0c-203">Description</span></span>|
+| <span data-ttu-id="35b17-201">プロパティ</span><span class="sxs-lookup"><span data-stu-id="35b17-201">Property</span></span>| <span data-ttu-id="35b17-202">型</span><span class="sxs-lookup"><span data-stu-id="35b17-202">Type</span></span>| <span data-ttu-id="35b17-203">説明</span><span class="sxs-lookup"><span data-stu-id="35b17-203">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="eff0c-204">errorSource</span><span class="sxs-lookup"><span data-stu-id="eff0c-204">errorSource</span></span>| <span data-ttu-id="eff0c-205">string</span><span class="sxs-lookup"><span data-stu-id="eff0c-205">string</span></span>| <span data-ttu-id="eff0c-206">エラーが発生した場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="eff0c-206">An indication of where the error originated.</span></span>|
-| <span data-ttu-id="eff0c-207">errorCode</span><span class="sxs-lookup"><span data-stu-id="eff0c-207">errorCode</span></span>| <span data-ttu-id="eff0c-208">int</span><span class="sxs-lookup"><span data-stu-id="eff0c-208">int</span></span>| <span data-ttu-id="eff0c-209">(Null にすることができます)、エラーに関連付けられている数値コードです。</span><span class="sxs-lookup"><span data-stu-id="eff0c-209">Numeric code associated with the error (can be null).</span></span>|
-| <span data-ttu-id="eff0c-210">エラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="eff0c-210">errorMessage</span></span>| <span data-ttu-id="eff0c-211">string</span><span class="sxs-lookup"><span data-stu-id="eff0c-211">string</span></span>| <span data-ttu-id="eff0c-212">詳細を表示するように構成する場合のエラーの説明します。</span><span class="sxs-lookup"><span data-stu-id="eff0c-212">Details of the error if configured to show details.</span></span>|
+| <span data-ttu-id="35b17-204">errorSource</span><span class="sxs-lookup"><span data-stu-id="35b17-204">errorSource</span></span>| <span data-ttu-id="35b17-205">string</span><span class="sxs-lookup"><span data-stu-id="35b17-205">string</span></span>| <span data-ttu-id="35b17-206">エラーの発生元の項目を示します。</span><span class="sxs-lookup"><span data-stu-id="35b17-206">An indication of where the error originated.</span></span>|
+| <span data-ttu-id="35b17-207">errorCode</span><span class="sxs-lookup"><span data-stu-id="35b17-207">errorCode</span></span>| <span data-ttu-id="35b17-208">int</span><span class="sxs-lookup"><span data-stu-id="35b17-208">int</span></span>| <span data-ttu-id="35b17-209">(Null にすることができます) エラーに関連付けられている数値コードです。</span><span class="sxs-lookup"><span data-stu-id="35b17-209">Numeric code associated with the error (can be null).</span></span>|
+| <span data-ttu-id="35b17-210">エラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="35b17-210">errorMessage</span></span>| <span data-ttu-id="35b17-211">string</span><span class="sxs-lookup"><span data-stu-id="35b17-211">string</span></span>| <span data-ttu-id="35b17-212">詳細を表示するように構成する場合のエラーの説明します。</span><span class="sxs-lookup"><span data-stu-id="35b17-212">Details of the error if configured to show details.</span></span>|
 
 <a id="ID4E3DAC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="eff0c-213">関連項目</span><span class="sxs-lookup"><span data-stu-id="eff0c-213">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="35b17-213">関連項目</span><span class="sxs-lookup"><span data-stu-id="35b17-213">See also</span></span>
 
 <a id="ID4E5DAC"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="eff0c-214">Parent</span><span class="sxs-lookup"><span data-stu-id="eff0c-214">Parent</span></span>  
+##### <a name="parent"></a><span data-ttu-id="35b17-214">Parent</span><span class="sxs-lookup"><span data-stu-id="35b17-214">Parent</span></span>  
 
-[<span data-ttu-id="eff0c-215">/users/xuid({xuid})/inbox</span><span class="sxs-lookup"><span data-stu-id="eff0c-215">/users/xuid({xuid})/inbox</span></span>](uri-usersxuidinbox.md)
+[<span data-ttu-id="35b17-215">/users/xuid({xuid})/inbox</span><span class="sxs-lookup"><span data-stu-id="35b17-215">/users/xuid({xuid})/inbox</span></span>](uri-usersxuidinbox.md)
 
 
 <a id="ID4EMEAC"></a>
 
 
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a><span data-ttu-id="eff0c-216">参照[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)</span><span class="sxs-lookup"><span data-stu-id="eff0c-216">Reference  [Standard HTTP status codes](../../additional/httpstatuscodes.md)</span></span>
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a><span data-ttu-id="35b17-216">参照[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)</span><span class="sxs-lookup"><span data-stu-id="35b17-216">Reference  [Standard HTTP status codes](../../additional/httpstatuscodes.md)</span></span>

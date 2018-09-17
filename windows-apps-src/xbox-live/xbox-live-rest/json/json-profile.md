@@ -1,9 +1,9 @@
 ---
-title: プロファイル (JSON)
+title: Profile (JSON)
 assetID: b92b1750-c2df-39b6-6c5c-f9e8068c8097
 permalink: en-us/docs/xboxlive/rest/json-profile.html
 author: KevinAsgari
-description: " プロファイル (JSON)"
+description: " Profile (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,55 +12,55 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5e95befc6611c5905e6efe2bb01a396167626
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958329"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986556"
 ---
-# <a name="profile-json"></a><span data-ttu-id="b0e37-104">プロファイル (JSON)</span><span class="sxs-lookup"><span data-stu-id="b0e37-104">Profile (JSON)</span></span>
-<span data-ttu-id="b0e37-105">ユーザーの個人用プロファイル設定します。</span><span class="sxs-lookup"><span data-stu-id="b0e37-105">The personal profile settings for a user.</span></span> 
+# <a name="profile-json"></a><span data-ttu-id="53a17-104">Profile (JSON)</span><span class="sxs-lookup"><span data-stu-id="53a17-104">Profile (JSON)</span></span>
+<span data-ttu-id="53a17-105">ユーザーの個人用プロファイル設定します。</span><span class="sxs-lookup"><span data-stu-id="53a17-105">The personal profile settings for a user.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="profile"></a><span data-ttu-id="b0e37-106">プロファイル</span><span class="sxs-lookup"><span data-stu-id="b0e37-106">Profile</span></span>
+## <a name="profile"></a><span data-ttu-id="53a17-106">プロファイル</span><span class="sxs-lookup"><span data-stu-id="53a17-106">Profile</span></span>
  
-<span data-ttu-id="b0e37-107">プロファイル オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="b0e37-107">The Profile object has the following specification.</span></span>
+<span data-ttu-id="53a17-107">プロファイル オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="53a17-107">The Profile object has the following specification.</span></span>
  
-| <span data-ttu-id="b0e37-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="b0e37-108">Member</span></span>| <span data-ttu-id="b0e37-109">種類</span><span class="sxs-lookup"><span data-stu-id="b0e37-109">Type</span></span>| <span data-ttu-id="b0e37-110">説明</span><span class="sxs-lookup"><span data-stu-id="b0e37-110">Description</span></span>| 
+| <span data-ttu-id="53a17-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="53a17-108">Member</span></span>| <span data-ttu-id="53a17-109">種類</span><span class="sxs-lookup"><span data-stu-id="53a17-109">Type</span></span>| <span data-ttu-id="53a17-110">説明</span><span class="sxs-lookup"><span data-stu-id="53a17-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="b0e37-111">AppDisplayName</span><span class="sxs-lookup"><span data-stu-id="b0e37-111">AppDisplayName</span></span>| <span data-ttu-id="b0e37-112">string</span><span class="sxs-lookup"><span data-stu-id="b0e37-112">string</span></span>| <span data-ttu-id="b0e37-113">アプリで表示するための名前です。</span><span class="sxs-lookup"><span data-stu-id="b0e37-113">Name for displaying in apps.</span></span> <span data-ttu-id="b0e37-114">これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b0e37-114">This could be the user's "real name" or their gamertag, depending on privacy.</span></span> <span data-ttu-id="b0e37-115">この設定は、アプリに表示するために使用するユーザーの id 文字列を表します。</span><span class="sxs-lookup"><span data-stu-id="b0e37-115">This setting represents the user's identity string that should be used for display in apps.</span></span>| 
-| <span data-ttu-id="b0e37-116">GameDisplayName</span><span class="sxs-lookup"><span data-stu-id="b0e37-116">GameDisplayName</span></span>| <span data-ttu-id="b0e37-117">string</span><span class="sxs-lookup"><span data-stu-id="b0e37-117">string</span></span>| <span data-ttu-id="b0e37-118">ゲームで表示するための名前です。</span><span class="sxs-lookup"><span data-stu-id="b0e37-118">Name for displaying in games.</span></span> <span data-ttu-id="b0e37-119">これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b0e37-119">This could be the user's "real name" or their gamertag, depending on privacy.</span></span> <span data-ttu-id="b0e37-120">この設定は、ゲームで表示するために使用するユーザーの id 文字列を表します。</span><span class="sxs-lookup"><span data-stu-id="b0e37-120">This setting represents the user's identity string that should be used for display in games.</span></span>| 
-| <span data-ttu-id="b0e37-121">Gamertag</span><span class="sxs-lookup"><span data-stu-id="b0e37-121">Gamertag</span></span>| <span data-ttu-id="b0e37-122">string</span><span class="sxs-lookup"><span data-stu-id="b0e37-122">string</span></span>| <span data-ttu-id="b0e37-123">ユーザーのゲーマータグです。</span><span class="sxs-lookup"><span data-stu-id="b0e37-123">The user's gamertag.</span></span>| 
-| <span data-ttu-id="b0e37-124">AppDisplayPicRaw</span><span class="sxs-lookup"><span data-stu-id="b0e37-124">AppDisplayPicRaw</span></span>| <span data-ttu-id="b0e37-125">string</span><span class="sxs-lookup"><span data-stu-id="b0e37-125">string</span></span>| <span data-ttu-id="b0e37-126">アプリを直接表示 pic URL (下記参照)。</span><span class="sxs-lookup"><span data-stu-id="b0e37-126">Raw app display pic URL (see below).</span></span>| 
-| <span data-ttu-id="b0e37-127">GameDisplayPicRaw</span><span class="sxs-lookup"><span data-stu-id="b0e37-127">GameDisplayPicRaw</span></span>| <span data-ttu-id="b0e37-128">string</span><span class="sxs-lookup"><span data-stu-id="b0e37-128">string</span></span>| <span data-ttu-id="b0e37-129">未加工のゲーム表示 pic URL (下記参照)。</span><span class="sxs-lookup"><span data-stu-id="b0e37-129">Raw game display pic URL (see below).</span></span>| 
-| <span data-ttu-id="b0e37-130">AccountTier</span><span class="sxs-lookup"><span data-stu-id="b0e37-130">AccountTier</span></span>| <span data-ttu-id="b0e37-131">string</span><span class="sxs-lookup"><span data-stu-id="b0e37-131">string</span></span>| <span data-ttu-id="b0e37-132">ユーザーには、アカウントの種類はありますか。</span><span class="sxs-lookup"><span data-stu-id="b0e37-132">What type of account does the user have?</span></span> <span data-ttu-id="b0e37-133">ゴールド、シルバー、または FamilyGold かどうか。</span><span class="sxs-lookup"><span data-stu-id="b0e37-133">Gold, Silver, or FamilyGold?</span></span>| 
-| <span data-ttu-id="b0e37-134">TenureLevel</span><span class="sxs-lookup"><span data-stu-id="b0e37-134">TenureLevel</span></span>| <span data-ttu-id="b0e37-135">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="b0e37-135">32-bit unsigned integer</span></span>| <span data-ttu-id="b0e37-136">数年間ユーザーされた Xbox Live を使用しますか。</span><span class="sxs-lookup"><span data-stu-id="b0e37-136">How many years has the user been with Xbox Live?</span></span>| 
-| <span data-ttu-id="b0e37-137">ゲーマースコア</span><span class="sxs-lookup"><span data-stu-id="b0e37-137">Gamerscore</span></span>| <span data-ttu-id="b0e37-138">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="b0e37-138">32-bit unsigned integer</span></span>| <span data-ttu-id="b0e37-139">ユーザーのゲーマー スコア。</span><span class="sxs-lookup"><span data-stu-id="b0e37-139">Gamerscore of the user.</span></span>| 
+| <span data-ttu-id="53a17-111">AppDisplayName</span><span class="sxs-lookup"><span data-stu-id="53a17-111">AppDisplayName</span></span>| <span data-ttu-id="53a17-112">string</span><span class="sxs-lookup"><span data-stu-id="53a17-112">string</span></span>| <span data-ttu-id="53a17-113">アプリで表示するための名前です。</span><span class="sxs-lookup"><span data-stu-id="53a17-113">Name for displaying in apps.</span></span> <span data-ttu-id="53a17-114">これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。</span><span class="sxs-lookup"><span data-stu-id="53a17-114">This could be the user's "real name" or their gamertag, depending on privacy.</span></span> <span data-ttu-id="53a17-115">この設定は、アプリに表示するために使用するユーザーの id 文字列を表します。</span><span class="sxs-lookup"><span data-stu-id="53a17-115">This setting represents the user's identity string that should be used for display in apps.</span></span>| 
+| <span data-ttu-id="53a17-116">GameDisplayName</span><span class="sxs-lookup"><span data-stu-id="53a17-116">GameDisplayName</span></span>| <span data-ttu-id="53a17-117">string</span><span class="sxs-lookup"><span data-stu-id="53a17-117">string</span></span>| <span data-ttu-id="53a17-118">ゲームで表示するための名前です。</span><span class="sxs-lookup"><span data-stu-id="53a17-118">Name for displaying in games.</span></span> <span data-ttu-id="53a17-119">これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。</span><span class="sxs-lookup"><span data-stu-id="53a17-119">This could be the user's "real name" or their gamertag, depending on privacy.</span></span> <span data-ttu-id="53a17-120">この設定は、ゲームで表示するために使用するユーザーの id 文字列を表します。</span><span class="sxs-lookup"><span data-stu-id="53a17-120">This setting represents the user's identity string that should be used for display in games.</span></span>| 
+| <span data-ttu-id="53a17-121">Gamertag</span><span class="sxs-lookup"><span data-stu-id="53a17-121">Gamertag</span></span>| <span data-ttu-id="53a17-122">string</span><span class="sxs-lookup"><span data-stu-id="53a17-122">string</span></span>| <span data-ttu-id="53a17-123">ユーザーのゲーマータグです。</span><span class="sxs-lookup"><span data-stu-id="53a17-123">The user's gamertag.</span></span>| 
+| <span data-ttu-id="53a17-124">AppDisplayPicRaw</span><span class="sxs-lookup"><span data-stu-id="53a17-124">AppDisplayPicRaw</span></span>| <span data-ttu-id="53a17-125">string</span><span class="sxs-lookup"><span data-stu-id="53a17-125">string</span></span>| <span data-ttu-id="53a17-126">アプリを直接表示 pic URL (下記参照)。</span><span class="sxs-lookup"><span data-stu-id="53a17-126">Raw app display pic URL (see below).</span></span>| 
+| <span data-ttu-id="53a17-127">GameDisplayPicRaw</span><span class="sxs-lookup"><span data-stu-id="53a17-127">GameDisplayPicRaw</span></span>| <span data-ttu-id="53a17-128">string</span><span class="sxs-lookup"><span data-stu-id="53a17-128">string</span></span>| <span data-ttu-id="53a17-129">未加工のゲーム表示 pic URL (下記参照)。</span><span class="sxs-lookup"><span data-stu-id="53a17-129">Raw game display pic URL (see below).</span></span>| 
+| <span data-ttu-id="53a17-130">AccountTier</span><span class="sxs-lookup"><span data-stu-id="53a17-130">AccountTier</span></span>| <span data-ttu-id="53a17-131">string</span><span class="sxs-lookup"><span data-stu-id="53a17-131">string</span></span>| <span data-ttu-id="53a17-132">ユーザーには、アカウントの種類はありますか。</span><span class="sxs-lookup"><span data-stu-id="53a17-132">What type of account does the user have?</span></span> <span data-ttu-id="53a17-133">ゴールド、シルバー、または FamilyGold かどうか。</span><span class="sxs-lookup"><span data-stu-id="53a17-133">Gold, Silver, or FamilyGold?</span></span>| 
+| <span data-ttu-id="53a17-134">TenureLevel</span><span class="sxs-lookup"><span data-stu-id="53a17-134">TenureLevel</span></span>| <span data-ttu-id="53a17-135">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="53a17-135">32-bit unsigned integer</span></span>| <span data-ttu-id="53a17-136">数年間ユーザーされた Xbox Live を使用しますか。</span><span class="sxs-lookup"><span data-stu-id="53a17-136">How many years has the user been with Xbox Live?</span></span>| 
+| <span data-ttu-id="53a17-137">ゲーマースコア</span><span class="sxs-lookup"><span data-stu-id="53a17-137">Gamerscore</span></span>| <span data-ttu-id="53a17-138">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="53a17-138">32-bit unsigned integer</span></span>| <span data-ttu-id="53a17-139">ユーザーのゲーマー スコア。</span><span class="sxs-lookup"><span data-stu-id="53a17-139">Gamerscore of the user.</span></span>| 
   
 
 
 > [!NOTE] 
-> <span data-ttu-id="b0e37-140">画像は、ユーザーの '実際の画像' またはプライバシーに応じて、XboxOne ゲーマー アイコンを指定できます。</span><span class="sxs-lookup"><span data-stu-id="b0e37-140">Pictures can be the user's 'real picture' or their XboxOne gamerpic, depending on privacy.</span></span> <span data-ttu-id="b0e37-141">これらの設定は、クライアント上に表示するために使用するユーザーの画像の url を表します。</span><span class="sxs-lookup"><span data-stu-id="b0e37-141">These settings represent the user's picture url that should be used for display on the client.</span></span> <span data-ttu-id="b0e37-142">この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする場合があります。</span><span class="sxs-lookup"><span data-stu-id="b0e37-142">This image may be empty (indicating that the user hasn't set any picture).</span></span> 
+> <span data-ttu-id="53a17-140">画像は、ユーザーの '実際の画像' またはプライバシーに応じて、XboxOne ゲーマー アイコンを指定できます。</span><span class="sxs-lookup"><span data-stu-id="53a17-140">Pictures can be the user's 'real picture' or their XboxOne gamerpic, depending on privacy.</span></span> <span data-ttu-id="53a17-141">これらの設定は、クライアント上に表示するために使用するユーザーの画像の url を表します。</span><span class="sxs-lookup"><span data-stu-id="53a17-141">These settings represent the user's picture url that should be used for display on the client.</span></span> <span data-ttu-id="53a17-142">この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする場合があります。</span><span class="sxs-lookup"><span data-stu-id="53a17-142">This image may be empty (indicating that the user hasn't set any picture).</span></span> 
 
 
  
-<span data-ttu-id="b0e37-143">生の URL は、サイズ変更できる URL です。</span><span class="sxs-lookup"><span data-stu-id="b0e37-143">The Raw URL is a resizable URL.</span></span> <span data-ttu-id="b0e37-144">サイズし、形式を追加して、次のいずれかを指定するために使用できる`&format={format}&w={width}&h={height}`をその URI:</span><span class="sxs-lookup"><span data-stu-id="b0e37-144">It can be used to specify one of the following sizes and formats using by appending `&format={format}&w={width}&h={height}` to the URI:</span></span>
+<span data-ttu-id="53a17-143">生の URL は、サイズ変更できる URL です。</span><span class="sxs-lookup"><span data-stu-id="53a17-143">The Raw URL is a resizable URL.</span></span> <span data-ttu-id="53a17-144">サイズし、形式を追加して、次のいずれかを指定するために使用できる`&format={format}&w={width}&h={height}`をその URI:</span><span class="sxs-lookup"><span data-stu-id="53a17-144">It can be used to specify one of the following sizes and formats using by appending `&format={format}&w={width}&h={height}` to the URI:</span></span>
  
-<span data-ttu-id="b0e37-145">形式: ピクセルの .png ファイル</span><span class="sxs-lookup"><span data-stu-id="b0e37-145">Format: png</span></span>
+<span data-ttu-id="53a17-145">形式: png</span><span class="sxs-lookup"><span data-stu-id="53a17-145">Format: png</span></span>
  
-<span data-ttu-id="b0e37-146">サイズ: 64 x 64、208 x 208、424 x 424</span><span class="sxs-lookup"><span data-stu-id="b0e37-146">Sizes: 64x64, 208x208, 424x424</span></span>
+<span data-ttu-id="53a17-146">サイズ: 64 x 64、208 x 208、424 x 424</span><span class="sxs-lookup"><span data-stu-id="53a17-146">Sizes: 64x64, 208x208, 424x424</span></span>
  
 <a id="ID4E2D"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="b0e37-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="b0e37-147">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="53a17-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="53a17-147">See also</span></span>
  
 <a id="ID4E4D"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="b0e37-148">Parent</span><span class="sxs-lookup"><span data-stu-id="b0e37-148">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="53a17-148">Parent</span><span class="sxs-lookup"><span data-stu-id="53a17-148">Parent</span></span> 
 
-[<span data-ttu-id="b0e37-149">JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="b0e37-149">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="53a17-149">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="53a17-149">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
 ms.openlocfilehash: 07c3094b5308bb0062d046440f83b45b842eb820
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960097"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983734"
 ---
-# <a name="xbox-integrated-multiplayer-release-notes"></a><span data-ttu-id="3dcda-104">Xbox Integrated Multiplayer リリース ノート</span><span class="sxs-lookup"><span data-stu-id="3dcda-104">Xbox Integrated Multiplayer Release Notes</span></span>
+# <a name="xbox-integrated-multiplayer-release-notes"></a><span data-ttu-id="f9e1e-104">Xbox Integrated Multiplayer リリース ノート</span><span class="sxs-lookup"><span data-stu-id="f9e1e-104">Xbox Integrated Multiplayer Release Notes</span></span>
 
-<span data-ttu-id="3dcda-105">更新日: 2016 年 12 月 14 日</span><span class="sxs-lookup"><span data-stu-id="3dcda-105">Updated December 14, 2016</span></span>
+<span data-ttu-id="f9e1e-105">更新日: 2016 年 12 月 14 日</span><span class="sxs-lookup"><span data-stu-id="f9e1e-105">Updated December 14, 2016</span></span>
 
-<span data-ttu-id="3dcda-106">以下のメソッドは、このリリースの Xbox Integrated Multiplayer (XIM) では使用できません。</span><span class="sxs-lookup"><span data-stu-id="3dcda-106">The following methods are not available in this release of Xbox Integrated Multiplayer (XIM):</span></span>
+<span data-ttu-id="f9e1e-106">以下のメソッドは、このリリースの Xbox Integrated Multiplayer (XIM) では使用できません。</span><span class="sxs-lookup"><span data-stu-id="f9e1e-106">The following methods are not available in this release of Xbox Integrated Multiplayer (XIM):</span></span>
 
 -   `xim_authority::set_authority_reconciled_data()`
 -   `xim_authority::set_authority_reconciliation_data()`
@@ -29,7 +29,7 @@ ms.locfileid: "3960097"
 -   `xim_authority::network_path_information()`
 -   `xim_player::xim_local::send_data_to_authority()`
 
-<span data-ttu-id="3dcda-107">以下の状態変化は、このリリースの XIM では提供されません。</span><span class="sxs-lookup"><span data-stu-id="3dcda-107">The following state changes are not provided in this release of XIM:</span></span>
+<span data-ttu-id="f9e1e-107">以下の状態変化は、このリリースの XIM では提供されません。</span><span class="sxs-lookup"><span data-stu-id="f9e1e-107">The following state changes are not provided in this release of XIM:</span></span>
 
 -   `xim_state_change_type::player_to_authority_data_received`
 -   `xim_state_change_type::authority_to_player_data_received`

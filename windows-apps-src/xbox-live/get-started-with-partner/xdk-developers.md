@@ -11,26 +11,26 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
 ms.openlocfilehash: bb2d435bf11cb4c06527090abb4b78f31a339142
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959933"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982126"
 ---
-# <a name="get-started-with-using-visual-studio-for-xdk-based-games"></a><span data-ttu-id="3177a-104">XDK ベースのゲームで Visual Studio を使用する際の概要</span><span class="sxs-lookup"><span data-stu-id="3177a-104">Get started with using Visual Studio for XDK based games</span></span>
+# <a name="get-started-with-using-visual-studio-for-xdk-based-games"></a><span data-ttu-id="51749-104">XDK ベースのゲームで Visual Studio を使用する際の概要</span><span class="sxs-lookup"><span data-stu-id="51749-104">Get started with using Visual Studio for XDK based games</span></span>
 
-<span data-ttu-id="3177a-105">ここでは、XDK ベースのプロジェクトで Xbox Live の開発を始める方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3177a-105">This section covers getting started with Xbox Live with a XDK based project</span></span>
+<span data-ttu-id="51749-105">ここでは、XDK ベースのプロジェクトで Xbox Live の開発を始める方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="51749-105">This section covers getting started with Xbox Live with a XDK based project</span></span>
 
-## <a name="in-this-section"></a><span data-ttu-id="3177a-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="3177a-106">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="51749-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="51749-106">In this section</span></span>
 
-[<span data-ttu-id="3177a-107">XDK の入手先</span><span class="sxs-lookup"><span data-stu-id="3177a-107">Where to get the XDK</span></span>](where-to-get-xdk.md)
+[<span data-ttu-id="51749-107">XDK の入手先</span><span class="sxs-lookup"><span data-stu-id="51749-107">Where to get the XDK</span></span>](where-to-get-xdk.md)
 
-[<span data-ttu-id="3177a-108">開発機本体を構成する</span><span class="sxs-lookup"><span data-stu-id="3177a-108">Configure your development console</span></span>](configure-your-development-console.md)
+[<span data-ttu-id="51749-108">開発機本体を構成する</span><span class="sxs-lookup"><span data-stu-id="51749-108">Configure your development console</span></span>](configure-your-development-console.md)
 
-[<span data-ttu-id="3177a-109">新規または既存の XDK プロジェクトに Xbox Live を追加する</span><span class="sxs-lookup"><span data-stu-id="3177a-109">Add Xbox Live to a new or existing XDK project</span></span>](add-xbox-live-to-an-xdk-project.md)
+[<span data-ttu-id="51749-109">新規または既存の XDK プロジェクトに Xbox Live を追加する</span><span class="sxs-lookup"><span data-stu-id="51749-109">Add Xbox Live to a new or existing XDK project</span></span>](add-xbox-live-to-an-xdk-project.md)
 
-[<span data-ttu-id="3177a-110">Xbox 開発キット (XDK) に付属している Xbox Live API を使用する</span><span class="sxs-lookup"><span data-stu-id="3177a-110">Use the Xbox Live APIs that are shipped with the Xbox Development Kit (XDK)</span></span>](using-xbox-live-apis-built-into-the-xdk.md)
+[<span data-ttu-id="51749-110">Xbox 開発キット (XDK) に付属している Xbox Live API を使用する</span><span class="sxs-lookup"><span data-stu-id="51749-110">Use the Xbox Live APIs that are shipped with the Xbox Development Kit (XDK)</span></span>](using-xbox-live-apis-built-into-the-xdk.md)
 
-[<span data-ttu-id="3177a-111">Xbox Live API NuGet パッケージを使用して XDK タイトルを開発する</span><span class="sxs-lookup"><span data-stu-id="3177a-111">Use the Xbox Live API NuGet package to develop XDK titles</span></span>](use-xbox-live-nuget-with-xdk.md)
+[<span data-ttu-id="51749-111">Xbox Live API NuGet パッケージを使用して XDK タイトルを開発する</span><span class="sxs-lookup"><span data-stu-id="51749-111">Use the Xbox Live API NuGet package to develop XDK titles</span></span>](use-xbox-live-nuget-with-xdk.md)
 
-[<span data-ttu-id="3177a-112">XDK に付属している Xbox Live のソースをコンパイルする</span><span class="sxs-lookup"><span data-stu-id="3177a-112">Compile the Xbox Live source that ships with the XDK</span></span>](compile-the-xdk-xbox-live-api-source.md)
+[<span data-ttu-id="51749-112">XDK に付属している Xbox Live のソースをコンパイルする</span><span class="sxs-lookup"><span data-stu-id="51749-112">Compile the Xbox Live source that ships with the XDK</span></span>](compile-the-xdk-xbox-live-api-source.md)

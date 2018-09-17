@@ -12,32 +12,32 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f5af1639f5348fe20c36c56c1301f723d832f7
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958899"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986390"
 ---
-# <a name="gameresult-json"></a><span data-ttu-id="1216c-104">GameResult (JSON)</span><span class="sxs-lookup"><span data-stu-id="1216c-104">GameResult (JSON)</span></span>
-<span data-ttu-id="1216c-105">ゲーム セッションの結果を示すデータを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="1216c-105">A JSON object representing data that describes the results of a game session.</span></span> 
+# <a name="gameresult-json"></a><span data-ttu-id="7a718-104">GameResult (JSON)</span><span class="sxs-lookup"><span data-stu-id="7a718-104">GameResult (JSON)</span></span>
+<span data-ttu-id="7a718-105">ゲーム セッションの結果を示すデータを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7a718-105">A JSON object representing data that describes the results of a game session.</span></span> 
 <a id="ID4EN"></a>
 
   
  
-<span data-ttu-id="1216c-106">GameResult JSON オブジェクトには、次のメンバーがあります。</span><span class="sxs-lookup"><span data-stu-id="1216c-106">The GameResult JSON object has the following members.</span></span>
+<span data-ttu-id="7a718-106">GameResult JSON オブジェクトには、次のメンバーがあります。</span><span class="sxs-lookup"><span data-stu-id="7a718-106">The GameResult JSON object has the following members.</span></span>
  
-| <span data-ttu-id="1216c-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="1216c-107">Member</span></span>| <span data-ttu-id="1216c-108">種類</span><span class="sxs-lookup"><span data-stu-id="1216c-108">Type</span></span>| <span data-ttu-id="1216c-109">説明</span><span class="sxs-lookup"><span data-stu-id="1216c-109">Description</span></span>| 
+| <span data-ttu-id="7a718-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="7a718-107">Member</span></span>| <span data-ttu-id="7a718-108">種類</span><span class="sxs-lookup"><span data-stu-id="7a718-108">Type</span></span>| <span data-ttu-id="7a718-109">説明</span><span class="sxs-lookup"><span data-stu-id="7a718-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="1216c-110">blob</span><span class="sxs-lookup"><span data-stu-id="1216c-110">blob</span></span>| <span data-ttu-id="1216c-111">8 ビットの符号なし整数の配列</span><span class="sxs-lookup"><span data-stu-id="1216c-111">array of 8-bit unsigned integers</span></span>| <span data-ttu-id="1216c-112">タイトルに固有のカスタムの結果データです。</span><span class="sxs-lookup"><span data-stu-id="1216c-112">Custom title-specific result data.</span></span>| 
-| <span data-ttu-id="1216c-113">結果</span><span class="sxs-lookup"><span data-stu-id="1216c-113">outcome</span></span>| <span data-ttu-id="1216c-114">string</span><span class="sxs-lookup"><span data-stu-id="1216c-114">string</span></span>| <span data-ttu-id="1216c-115">ゲーム セッションにプレイヤーの参加の結果。</span><span class="sxs-lookup"><span data-stu-id="1216c-115">The outcome of the player's participation in the game session.</span></span> <span data-ttu-id="1216c-116">有効な値は、"Win"、"Loss"または「結び付けられて」はします。</span><span class="sxs-lookup"><span data-stu-id="1216c-116">Valid values are "Win", "Loss", or "Tie".</span></span> | 
-| <span data-ttu-id="1216c-117">スコア</span><span class="sxs-lookup"><span data-stu-id="1216c-117">score</span></span>| <span data-ttu-id="1216c-118">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="1216c-118">64-bit signed integer</span></span>| <span data-ttu-id="1216c-119">プレイヤーがゲーム セッションで受信スコアです。</span><span class="sxs-lookup"><span data-stu-id="1216c-119">The score that the player received in the game session.</span></span>| 
-| <span data-ttu-id="1216c-120">時間</span><span class="sxs-lookup"><span data-stu-id="1216c-120">time</span></span>| <span data-ttu-id="1216c-121">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="1216c-121">64-bit signed integer</span></span>| <span data-ttu-id="1216c-122">ゲーム セッションのプレイヤーの時間。</span><span class="sxs-lookup"><span data-stu-id="1216c-122">The player's time for the game session.</span></span>| 
-| <span data-ttu-id="1216c-123">xuid</span><span class="sxs-lookup"><span data-stu-id="1216c-123">xuid</span></span>| <span data-ttu-id="1216c-124">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="1216c-124">64-bit unsigned integer</span></span>| <span data-ttu-id="1216c-125">結果の適用先のプレイヤーの Xbox ユーザー ID です。</span><span class="sxs-lookup"><span data-stu-id="1216c-125">The Xbox user ID of the player to whom the results apply.</span></span>| 
+| <span data-ttu-id="7a718-110">blob</span><span class="sxs-lookup"><span data-stu-id="7a718-110">blob</span></span>| <span data-ttu-id="7a718-111">8 ビットの符号なし整数の配列</span><span class="sxs-lookup"><span data-stu-id="7a718-111">array of 8-bit unsigned integers</span></span>| <span data-ttu-id="7a718-112">タイトルに固有のカスタムの結果データです。</span><span class="sxs-lookup"><span data-stu-id="7a718-112">Custom title-specific result data.</span></span>| 
+| <span data-ttu-id="7a718-113">結果</span><span class="sxs-lookup"><span data-stu-id="7a718-113">outcome</span></span>| <span data-ttu-id="7a718-114">string</span><span class="sxs-lookup"><span data-stu-id="7a718-114">string</span></span>| <span data-ttu-id="7a718-115">ゲーム セッションにプレイヤーの参加の結果。</span><span class="sxs-lookup"><span data-stu-id="7a718-115">The outcome of the player's participation in the game session.</span></span> <span data-ttu-id="7a718-116">有効な値は、"Win"、"Loss"または「結び付けられて」はします。</span><span class="sxs-lookup"><span data-stu-id="7a718-116">Valid values are "Win", "Loss", or "Tie".</span></span> | 
+| <span data-ttu-id="7a718-117">スコア</span><span class="sxs-lookup"><span data-stu-id="7a718-117">score</span></span>| <span data-ttu-id="7a718-118">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="7a718-118">64-bit signed integer</span></span>| <span data-ttu-id="7a718-119">プレイヤーがゲーム セッションで受信スコアです。</span><span class="sxs-lookup"><span data-stu-id="7a718-119">The score that the player received in the game session.</span></span>| 
+| <span data-ttu-id="7a718-120">時間</span><span class="sxs-lookup"><span data-stu-id="7a718-120">time</span></span>| <span data-ttu-id="7a718-121">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="7a718-121">64-bit signed integer</span></span>| <span data-ttu-id="7a718-122">ゲーム セッションのプレイヤーの時間。</span><span class="sxs-lookup"><span data-stu-id="7a718-122">The player's time for the game session.</span></span>| 
+| <span data-ttu-id="7a718-123">xuid</span><span class="sxs-lookup"><span data-stu-id="7a718-123">xuid</span></span>| <span data-ttu-id="7a718-124">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="7a718-124">64-bit unsigned integer</span></span>| <span data-ttu-id="7a718-125">結果の適用先のプレイヤーの Xbox ユーザー ID。</span><span class="sxs-lookup"><span data-stu-id="7a718-125">The Xbox user ID of the player to whom the results apply.</span></span>| 
   
 <a id="ID4EPC"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="1216c-126">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="1216c-126">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="7a718-126">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="7a718-126">Sample JSON syntax</span></span>
  
 
 ```json
@@ -53,13 +53,13 @@ ms.locfileid: "3958899"
 <a id="ID4EYC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="1216c-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="1216c-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7a718-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="7a718-127">See also</span></span>
  
 <a id="ID4E1C"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="1216c-128">Parent</span><span class="sxs-lookup"><span data-stu-id="1216c-128">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="7a718-128">Parent</span><span class="sxs-lookup"><span data-stu-id="7a718-128">Parent</span></span> 
 
-[<span data-ttu-id="1216c-129">JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="1216c-129">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="7a718-129">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="7a718-129">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

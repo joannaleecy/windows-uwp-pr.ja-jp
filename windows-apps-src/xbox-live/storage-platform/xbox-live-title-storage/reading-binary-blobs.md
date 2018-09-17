@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, タイトル ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: f6f6165dafdff76c7a0e605a62b5bc89cb5f7558
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955909"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981860"
 ---
-# <a name="reading-a-binary-blob-in-xbox-live-title-storage"></a><span data-ttu-id="a4357-104">Xbox Live タイトル ストレージ内のバイナリ BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="a4357-104">Reading a binary blob in Xbox Live Title Storage</span></span>
+# <a name="reading-a-binary-blob-in-xbox-live-title-storage"></a><span data-ttu-id="26217-104">Xbox Live タイトル ストレージ内のバイナリ BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="26217-104">Reading a binary blob in Xbox Live Title Storage</span></span>
 
-1.  <span data-ttu-id="a4357-105">タイトル ストレージからデータを読み取るには、*GET* メソッドを使用して要求を送信します。</span><span class="sxs-lookup"><span data-stu-id="a4357-105">Send a request using the *GET* method to read the data from title storage.</span></span> <span data-ttu-id="a4357-106">次の例ではグローバル タイトル ストレージを使用します。</span><span class="sxs-lookup"><span data-stu-id="a4357-106">This example uses global title storage.</span></span>
+1.  <span data-ttu-id="26217-105">タイトル ストレージからデータを読み取るには、*GET* メソッドを使用して要求を送信します。</span><span class="sxs-lookup"><span data-stu-id="26217-105">Send a request using the *GET* method to read the data from title storage.</span></span> <span data-ttu-id="26217-106">次の例ではグローバル タイトル ストレージを使用します。</span><span class="sxs-lookup"><span data-stu-id="26217-106">This example uses global title storage.</span></span>
 
         GET https://titlestorage.xboxlive.com/global/scids/{scid}/data/userinfo.bin,binary
         Content-Type: application/octet-stream
@@ -29,10 +29,10 @@ ms.locfileid: "3955909"
 
 
 
--   <span data-ttu-id="a4357-107">更新するには、ユーザーはそのセッション内にいなければなりません。</span><span class="sxs-lookup"><span data-stu-id="a4357-107">The user must be in the session to update it.</span></span>
+-   <span data-ttu-id="26217-107">更新するには、ユーザーはそのセッション内にいなければなりません。</span><span class="sxs-lookup"><span data-stu-id="26217-107">The user must be in the session to update it.</span></span>
 
--   <span data-ttu-id="a4357-108">STSTokenString は、簡潔にするためのプレースホルダーであり、認証要求から返されるトークンで置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="a4357-108">STSTokenString is a placeholder for brevity and should be replaced with the token returned by the authentication request.</span></span>
+-   <span data-ttu-id="26217-108">STSTokenString は、簡潔にするためのプレースホルダーであり、認証要求から返されるトークンで置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="26217-108">STSTokenString is a placeholder for brevity and should be replaced with the token returned by the authentication request.</span></span>
 
-#### <a name="reference"></a><span data-ttu-id="a4357-109">参照先</span><span class="sxs-lookup"><span data-stu-id="a4357-109">Reference</span></span>
+#### <a name="reference"></a><span data-ttu-id="26217-109">参照先</span><span class="sxs-lookup"><span data-stu-id="26217-109">Reference</span></span>
 
-**<span data-ttu-id="a4357-110">/global/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="a4357-110">/global/scids/{scid}/data/{pathAndFileName},{type}</span></span>**
+**<span data-ttu-id="26217-110">/global/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="26217-110">/global/scids/{scid}/data/{pathAndFileName},{type}</span></span>**

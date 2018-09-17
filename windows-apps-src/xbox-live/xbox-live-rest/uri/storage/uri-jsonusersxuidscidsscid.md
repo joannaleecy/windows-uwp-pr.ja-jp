@@ -12,46 +12,46 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b1d43a9c1ed9f0bb1d68a3f1995c759e96a6bc64
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956121"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3980984"
 ---
-# <a name="jsonusersxuidxuidscidsscid"></a><span data-ttu-id="6e95e-104">/json/users/xuid({xuid})/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="6e95e-104">/json/users/xuid({xuid})/scids/{scid}</span></span>
-<span data-ttu-id="6e95e-105">このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="6e95e-105">Retrieves quota information for this storage type.</span></span> <span data-ttu-id="6e95e-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="6e95e-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
+# <a name="jsonusersxuidxuidscidsscid"></a><span data-ttu-id="95ac6-104">/json/users/xuid({xuid})/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="95ac6-104">/json/users/xuid({xuid})/scids/{scid}</span></span>
+<span data-ttu-id="95ac6-105">このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="95ac6-105">Retrieves quota information for this storage type.</span></span> <span data-ttu-id="95ac6-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="95ac6-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="6e95e-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="6e95e-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="95ac6-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="95ac6-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="6e95e-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="6e95e-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="95ac6-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="95ac6-108">URI parameters</span></span>
  
-| <span data-ttu-id="6e95e-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="6e95e-109">Parameter</span></span>| <span data-ttu-id="6e95e-110">型</span><span class="sxs-lookup"><span data-stu-id="6e95e-110">Type</span></span>| <span data-ttu-id="6e95e-111">説明</span><span class="sxs-lookup"><span data-stu-id="6e95e-111">Description</span></span>| 
+| <span data-ttu-id="95ac6-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="95ac6-109">Parameter</span></span>| <span data-ttu-id="95ac6-110">型</span><span class="sxs-lookup"><span data-stu-id="95ac6-110">Type</span></span>| <span data-ttu-id="95ac6-111">説明</span><span class="sxs-lookup"><span data-stu-id="95ac6-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="6e95e-112">xuid</span><span class="sxs-lookup"><span data-stu-id="6e95e-112">xuid</span></span>| <span data-ttu-id="6e95e-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="6e95e-113">unsigned 64-bit integer</span></span>| <span data-ttu-id="6e95e-114">Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。</span><span class="sxs-lookup"><span data-stu-id="6e95e-114">The Xbox User ID (XUID) of the player who making the request.</span></span>| 
-| <span data-ttu-id="6e95e-115">scid</span><span class="sxs-lookup"><span data-stu-id="6e95e-115">scid</span></span>| <span data-ttu-id="6e95e-116">guid</span><span class="sxs-lookup"><span data-stu-id="6e95e-116">guid</span></span>| <span data-ttu-id="6e95e-117">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="6e95e-117">the ID of the service config to look up.</span></span>| 
+| <span data-ttu-id="95ac6-112">xuid</span><span class="sxs-lookup"><span data-stu-id="95ac6-112">xuid</span></span>| <span data-ttu-id="95ac6-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="95ac6-113">unsigned 64-bit integer</span></span>| <span data-ttu-id="95ac6-114">Xbox ユーザー ID を (XUID)、プレイヤーの要求を行っているユーザー。</span><span class="sxs-lookup"><span data-stu-id="95ac6-114">The Xbox User ID (XUID) of the player who making the request.</span></span>| 
+| <span data-ttu-id="95ac6-115">scid</span><span class="sxs-lookup"><span data-stu-id="95ac6-115">scid</span></span>| <span data-ttu-id="95ac6-116">guid</span><span class="sxs-lookup"><span data-stu-id="95ac6-116">guid</span></span>| <span data-ttu-id="95ac6-117">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="95ac6-117">the ID of the service config to look up.</span></span>| 
   
 <a id="ID4E3B"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="6e95e-118">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="6e95e-118">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="95ac6-118">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="95ac6-118">Valid methods</span></span>
 
-[<span data-ttu-id="6e95e-119">GET</span><span class="sxs-lookup"><span data-stu-id="6e95e-119">GET</span></span>](uri-jsonusersxuidscidsscid-get.md)
+[<span data-ttu-id="95ac6-119">GET</span><span class="sxs-lookup"><span data-stu-id="95ac6-119">GET</span></span>](uri-jsonusersxuidscidsscid-get.md)
 
-<span data-ttu-id="6e95e-120">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="6e95e-120">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span> 
+<span data-ttu-id="95ac6-120">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="95ac6-120">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span> 
  
 <a id="ID4EGC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="6e95e-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="6e95e-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="95ac6-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="95ac6-121">See also</span></span>
  
 <a id="ID4EIC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="6e95e-122">Parent</span><span class="sxs-lookup"><span data-stu-id="6e95e-122">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="95ac6-122">Parent</span><span class="sxs-lookup"><span data-stu-id="95ac6-122">Parent</span></span> 
 
-[<span data-ttu-id="6e95e-123">タイトル ストレージ Uri</span><span class="sxs-lookup"><span data-stu-id="6e95e-123">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
+[<span data-ttu-id="95ac6-123">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="95ac6-123">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
 
    

@@ -12,57 +12,57 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d7e7918156694a8ef73e7f436ef8c3d37e9e3708
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956771"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986602"
 ---
-# <a name="inventoryitemid"></a><span data-ttu-id="c8aad-104">/inventory/{itemID}</span><span class="sxs-lookup"><span data-stu-id="c8aad-104">/inventory/{itemID}</span></span>
-<span data-ttu-id="c8aad-105">特定のインベントリ項目の詳細情報の完全なセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="c8aad-105">Accesses the full set of details for a specific inventory item.</span></span> <span data-ttu-id="c8aad-106">これらの Uri のドメインが`inventory.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="c8aad-106">The domain for these URIs is `inventory.xboxlive.com`.</span></span>
+# <a name="inventoryitemid"></a><span data-ttu-id="4b832-104">/inventory/{itemID}</span><span class="sxs-lookup"><span data-stu-id="4b832-104">/inventory/{itemID}</span></span>
+<span data-ttu-id="4b832-105">特定のインベントリ項目の詳細情報の完全なセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="4b832-105">Accesses the full set of details for a specific inventory item.</span></span> <span data-ttu-id="4b832-106">これらの Uri のドメインが`inventory.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="4b832-106">The domain for these URIs is `inventory.xboxlive.com`.</span></span>
  
 <a id="ID4ET"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="c8aad-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="c8aad-107">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="4b832-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="4b832-107">URI parameters</span></span>
  
-| <span data-ttu-id="c8aad-108">パラメーター</span><span class="sxs-lookup"><span data-stu-id="c8aad-108">Parameter</span></span>| <span data-ttu-id="c8aad-109">型</span><span class="sxs-lookup"><span data-stu-id="c8aad-109">Type</span></span>| <span data-ttu-id="c8aad-110">説明</span><span class="sxs-lookup"><span data-stu-id="c8aad-110">Description</span></span>| 
+| <span data-ttu-id="4b832-108">パラメーター</span><span class="sxs-lookup"><span data-stu-id="4b832-108">Parameter</span></span>| <span data-ttu-id="4b832-109">型</span><span class="sxs-lookup"><span data-stu-id="4b832-109">Type</span></span>| <span data-ttu-id="4b832-110">説明</span><span class="sxs-lookup"><span data-stu-id="4b832-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="c8aad-111">itemID</span><span class="sxs-lookup"><span data-stu-id="c8aad-111">itemID</span></span>| <span data-ttu-id="c8aad-112">string</span><span class="sxs-lookup"><span data-stu-id="c8aad-112">string</span></span>| <span data-ttu-id="c8aad-113">単数形インベントリ項目の各ユーザーに一意の ID</span><span class="sxs-lookup"><span data-stu-id="c8aad-113">the ID unique to each user for a singular inventory item</span></span>| 
+| <span data-ttu-id="4b832-111">itemID</span><span class="sxs-lookup"><span data-stu-id="4b832-111">itemID</span></span>| <span data-ttu-id="4b832-112">string</span><span class="sxs-lookup"><span data-stu-id="4b832-112">string</span></span>| <span data-ttu-id="4b832-113">単数形インベントリ項目の各ユーザーに一意の ID</span><span class="sxs-lookup"><span data-stu-id="4b832-113">the ID unique to each user for a singular inventory item</span></span>| 
   
 <a id="ID4EPB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="c8aad-114">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="c8aad-114">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="4b832-114">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="4b832-114">Valid methods</span></span>
 
-[<span data-ttu-id="c8aad-115">(/Inventory/{itemID}) を取得します。</span><span class="sxs-lookup"><span data-stu-id="c8aad-115">GET (/inventory/{itemID})</span></span>](uri-inventoryitemurlget.md)
+[<span data-ttu-id="4b832-115">GET (/inventory/{itemID})</span><span class="sxs-lookup"><span data-stu-id="4b832-115">GET (/inventory/{itemID})</span></span>](uri-inventoryitemurlget.md)
 
-<span data-ttu-id="c8aad-116">&nbsp;&nbsp;特定のインベントリ項目の詳細の完全なセットを提供します。</span><span class="sxs-lookup"><span data-stu-id="c8aad-116">&nbsp;&nbsp;Provides the full set of details for a specific inventory item.</span></span>
+<span data-ttu-id="4b832-116">&nbsp;&nbsp;特定のインベントリ項目の詳細の完全なセットを提供します。</span><span class="sxs-lookup"><span data-stu-id="4b832-116">&nbsp;&nbsp;Provides the full set of details for a specific inventory item.</span></span>
  
 <a id="ID4EZB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="c8aad-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="c8aad-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4b832-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="4b832-117">See also</span></span>
  
 <a id="ID4E2B"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="c8aad-118">Parent</span><span class="sxs-lookup"><span data-stu-id="c8aad-118">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="4b832-118">Parent</span><span class="sxs-lookup"><span data-stu-id="4b832-118">Parent</span></span> 
 
-[<span data-ttu-id="c8aad-119">Marketplace Uri</span><span class="sxs-lookup"><span data-stu-id="c8aad-119">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
+[<span data-ttu-id="4b832-119">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="4b832-119">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
 
   
 <a id="ID4EFC"></a>
 
  
-##### <a name="further-information"></a><span data-ttu-id="c8aad-120">詳細情報</span><span class="sxs-lookup"><span data-stu-id="c8aad-120">Further Information</span></span> 
+##### <a name="further-information"></a><span data-ttu-id="4b832-120">詳細情報</span><span class="sxs-lookup"><span data-stu-id="4b832-120">Further Information</span></span> 
 
-[<span data-ttu-id="c8aad-121">EDS 一般的なヘッダー</span><span class="sxs-lookup"><span data-stu-id="c8aad-121">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
+[<span data-ttu-id="4b832-121">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="4b832-121">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
 
- [<span data-ttu-id="c8aad-122">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="c8aad-122">EDS Parameters</span></span>](../../additional/edsparameters.md)
+ [<span data-ttu-id="4b832-122">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="4b832-122">EDS Parameters</span></span>](../../additional/edsparameters.md)
 
- [<span data-ttu-id="c8aad-123">EDS は、絞り込み条件をクエリします。</span><span class="sxs-lookup"><span data-stu-id="c8aad-123">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
+ [<span data-ttu-id="4b832-123">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="4b832-123">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
 
- [<span data-ttu-id="c8aad-124">その他の参照</span><span class="sxs-lookup"><span data-stu-id="c8aad-124">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)
+ [<span data-ttu-id="4b832-124">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="4b832-124">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)
 
    
