@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/{scid}/hoppers/{name}/統計
+title: /serviceconfigs/{scid}/hoppers/{name}/stats
 assetID: 56bb4398-445b-e8c5-a4ce-1651576ee7e7
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppernamestats.html
 author: KevinAsgari
-description: " /serviceconfigs/{scid}/hoppers/{name}/統計"
+description: " /serviceconfigs/{scid}/hoppers/{name}/stats"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0742ad87e68f7d0c6ed6346873aa3dd6c56edee0
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961881"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986500"
 ---
-# <a name="serviceconfigsscidhoppersnamestats"></a>/serviceconfigs/{scid}/hoppers/{name}/統計
+# <a name="serviceconfigsscidhoppersnamestats"></a>/serviceconfigs/{scid}/hoppers/{name}/stats
 
-ホッパーの統計情報を取得するための取得操作をサポートしています。
+ホッパーの統計情報を取得する GET 操作をサポートしています。
 
 > [!IMPORTANT]
-> この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 103 または後ですべての要求します。
 
 <a id="ID4ER"></a>
 
@@ -50,7 +50,7 @@ momatch.xboxlive.com
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[取得する (/serviceconfigs/{scid}/hoppers/{name}/統計情報)](uri-serviceconfigsscidhoppershoppernamestatsget.md)
+[GET (/serviceconfigs/{scid}/hoppers/{name}/stats)](uri-serviceconfigsscidhoppershoppernamestatsget.md)
 
 &nbsp;&nbsp;ホッパーの統計情報を取得します。
 
@@ -64,4 +64,4 @@ momatch.xboxlive.com
 
 ##### <a name="parent"></a>Parent  
 
-[マッチメイ キング Uri](atoc-reference-matchtickets.md)
+[マッチメイキング URI](atoc-reference-matchtickets.md)

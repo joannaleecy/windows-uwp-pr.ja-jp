@@ -1,9 +1,9 @@
 ---
-title: ThumbnailSource 列挙
+title: ThumbnailSource 列挙型
 assetID: 82c42460-ba6d-fa50-4796-60188595a4f5
 permalink: en-us/docs/xboxlive/rest/gvr-enum-thumbnailsource.html
 author: KevinAsgari
-description: " ThumbnailSource 列挙"
+description: " ThumbnailSource 列挙型"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d14304f38d84894ef999003e86f92beeca526ef
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956239"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987786"
 ---
-# <a name="thumbnailsource-enumeration"></a>ThumbnailSource 列挙
+# <a name="thumbnailsource-enumeration"></a>ThumbnailSource 列挙型
 ThumbnailSource 列挙をについて説明します。 
 <a id="ID4ER"></a>
 
@@ -28,6 +28,6 @@ ThumbnailSource 列挙をについて説明します。
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
 | 既定値| クリップの 3 つの 2 つ目の点から、大とサイズの小さなサムネイルが生成されます。| 
-| Offset| クリップの InitialUploadRequest に指定された値から、大とサイズの小さなサムネイルが生成されます。| 
+| Offset| クリップの InitialUploadRequest で指定された値から、大とサイズの小さなサムネイルが生成されます。| 
 | Upload| 縮小表示が生成され、GameClips サービスから独立してアップロードします。| 
   

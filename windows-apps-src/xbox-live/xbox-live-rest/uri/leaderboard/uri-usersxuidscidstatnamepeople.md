@@ -1,9 +1,9 @@
 ---
-title: ユーザー/xuid ({xuid})/scids/{scid}/stats/{statname) そして {すべて | お気に入り}
+title: /users/xuid({xuid})/scids/{scid}/stats/{statname}/people/{all|favorite}
 assetID: 0983dad0-59b7-45b7-505d-603e341fe0cc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidstatnamepeople.html
 author: KevinAsgari
-description: " ユーザー/xuid ({xuid})/scids/{scid}/stats/{statname) そして {すべて | お気に入り}"
+description: " /users/xuid({xuid})/scids/{scid}/stats/{statname}/people/{all|favorite}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 161c7e96faf3ec217aeb188ccb3b5b1e354d217e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964313"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989506"
 ---
-# <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>ユーザー/xuid ({xuid})/scids/{scid}/stats/{statname) そして {すべて | お気に入り}
+# <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>/users/xuid({xuid})/scids/{scid}/stats/{statname}/people/{all|favorite}
 ソーシャル (ランク付け) ランキングにアクセスします。
 これらの Uri のドメインが`leaderboards.xboxlive.com`します。
 
@@ -43,7 +43,7 @@ ms.locfileid: "3964313"
 
 [GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})](uri-usersxuidscidstatnamepeopleget.md)
 
-&nbsp;&nbsp;ランキング、統計の現在のユーザーのいずれかのすべての既知連絡先や、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア) の値によって、ソーシャル ランキングを返します。
+&nbsp;&nbsp;ランキング、統計値のいずれかすべての既知の連絡先の現在のユーザーや、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア)、ソーシャル ランキングを返します。
 
 <a id="ID4EYC"></a>
 
@@ -55,4 +55,4 @@ ms.locfileid: "3964313"
 
 ##### <a name="parent"></a>Parent
 
-[ランキングの Uri](atoc-reference-leaderboard.md)
+[ランキング URI](atoc-reference-leaderboard.md)

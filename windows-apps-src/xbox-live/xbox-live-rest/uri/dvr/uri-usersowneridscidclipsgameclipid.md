@@ -1,9 +1,9 @@
 ---
-title: /users/{ownerId} {scid}/scids//clips/{gameClipId}
+title: /users/{ownerId}/scids/{scid}/clips/{gameClipId}
 assetID: 49b68418-71f1-c5a2-3a9b-869fd1fa663c
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridscidclipsgameclipid.html
 author: KevinAsgari
-description: " /users/{ownerId} {scid}/scids//clips/{gameClipId}"
+description: " /users/{ownerId}/scids/{scid}/clips/{gameClipId}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d12f9e530ee6d703aa324cb6380591aab31facfd
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961331"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989486"
 ---
-# <a name="usersowneridscidsscidclipsgameclipid"></a>/users/{ownerId} {scid}/scids//clips/{gameClipId}
-すべての Id を見つけることがわかっている場合はシステムから 1 つのゲーム クリップにアクセスします。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`対象の URI の機能に応じて、します。
+# <a name="usersowneridscidsscidclipsgameclipid"></a>/users/{ownerId}/scids/{scid}/clips/{gameClipId}
+すべての Id を見つけることがわかっている場合はシステムから 1 つのゲーム クリップにアクセスします。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。
  
   * [URI パラメーター](#ID4EX)
  
@@ -30,7 +30,7 @@ ms.locfileid: "3961331"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| ownerId| string| リソースにアクセスしているユーザーのユーザー id。 サポートされる形式:"me"または"xuid(123456789)"です。 最大長: 16 します。| 
+| ownerId| string| そのリソースにアクセスしているユーザーのユーザー id。 サポートされる形式:"me"または"xuid(123456789)"です。 最大長: 16 です。| 
 | scid| string| アクセスされているリソースのサービス構成 ID。 認証されたユーザーの SCID に一致する必要があります。| 
 | gameClipId| string| ゲーム クリップだったにアクセスしているリソースの ID です。| 
   
@@ -39,7 +39,7 @@ ms.locfileid: "3961331"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(/Users/{ownerId} {scid}/scids//clips/{gameClipId}) を取得します。](uri-usersowneridscidclipsgameclipidget.md)
+[GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})](uri-usersowneridscidclipsgameclipidget.md)
 
 &nbsp;&nbsp;すべての Id を見つけることがわかっている場合は、システムから 1 つのゲーム クリップを取得します。
  
@@ -53,6 +53,6 @@ ms.locfileid: "3961331"
  
 ##### <a name="parent"></a>Parent 
 
-[ゲーム DVR Uri](atoc-reference-dvr.md)
+[ゲーム DVR URI](atoc-reference-dvr.md)
 
    

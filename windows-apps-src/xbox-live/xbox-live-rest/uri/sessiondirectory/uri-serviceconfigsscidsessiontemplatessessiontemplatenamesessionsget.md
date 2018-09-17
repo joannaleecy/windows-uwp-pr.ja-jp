@@ -1,9 +1,9 @@
 ---
-title: 取得する (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions)
+title: GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions)
 assetID: 9daac964-0b25-3430-fcfd-0f8658aceee1
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionsget.html
 author: KevinAsgari
-description: " 取得する (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions)"
+description: " GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d0ad33d258962c4f2ad9f48da7425ab462e473
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956037"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987616"
 ---
-# <a name="get-serviceconfigsscidsessiontemplatessessiontemplatenamesessions"></a>取得する (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions)
+# <a name="get-serviceconfigsscidsessiontemplatessessiontemplatenamesessions"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions)
 セッション テンプレートのドキュメントを取得します。
 
 > [!IMPORTANT]
-> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
+> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4EKB)
@@ -59,10 +59,10 @@ ms.locfileid: "3956037"
 | xuid| GUID| セッションを取得する対象のユーザーの Xbox ユーザー Id。 ユーザーは、セッション内でアクティブである必要があります。 |
 | 予約| string| 示す値をユーザーが持っていないセッションのリストが含まれている場合は受け入れ。 このパラメーターを設定することのみを true に設定します。 この設定は、呼び出し元が、セッションにサーバー レベルのアクセスを必要と、または Xbox ユーザー ID フィルターに一致するように、呼び出し元の XUID を要求します。 |
 | 非アクティブです| string| セッションの一覧を含むをユーザーが受け入れられますがアクティブにプレイしていないかどうかを示す値。 このパラメーターを設定することのみを true に設定します。 |
-| プライベート| string| プライベート セッション、セッションの一覧を示す値。 このパラメーターを設定することのみを true に設定します。 自分のセッションをクエリするときにのみ、またはサーバーからサーバーを照会すると、無効です。 セッションへのサーバー レベルのアクセスが呼び出し元を true にこのパラメーターを設定する必要があります、または Xbox ユーザー ID フィルターに一致するように、呼び出し元の XUID を要求します。 |
+| プライベート| string| プライベート セッション、セッションの一覧を示す値。 このパラメーターを設定することのみを true に設定します。 独自のセッションをクエリするときにのみ、またはサーバー間を照会すると、無効です。 このパラメーターを true に設定、呼び出し元が、セッションにサーバー レベルのアクセスを必要とまたは Xbox ユーザー ID フィルターに一致するように、呼び出し元の XUID を要求します。 |
 | visibility| string| 結果のフィルタ リングで使われる表示状態を示す列挙値。 現在このパラメーターのみに設定できます開くを開いているセッションを含めます。 <b>MultiplayerSessionVisibility</b>を参照してください。 |
 | version| string| 正の整数セッションのメジャー バージョンまたはセッションの低下を示すが含まれます。 値は 100 モジュロ要求のコントラクト バージョン以下である必要があります。 |
-| アプリでは| string| 正の整数のセッションの最大数を示すを取得します。|
+| アプリでは| string| 正の整数セッションの最大数を示すを取得します。|
 
 <a id="ID4EXB"></a>
 

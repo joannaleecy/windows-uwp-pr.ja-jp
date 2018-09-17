@@ -1,9 +1,9 @@
 ---
-title: 実績 Uri
+title: 実績 URI
 assetID: 568bbc2c-9746-37ef-3514-99ffc96e3c15
 permalink: en-us/docs/xboxlive/rest/atoc-reference-achievementsv2.html
 author: KevinAsgari
-description: " 実績 Uri"
+description: " 実績 URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 891d1d03ab5b7b60dd25c58d9f2f40083bde6e7c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958267"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989042"
 ---
-# <a name="achievements-uris"></a>実績 Uri
+# <a name="achievements-uris"></a>実績 URI
 
-このセクションでは、*実績*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*実績*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
 
 これらの Uri のドメインは、achievements.xboxlive.com です。
 
@@ -33,7 +33,7 @@ ms.locfileid: "3958267"
 
 &nbsp;&nbsp;ユーザーの実績へのアクセスを提供します。
 
-[ユーザー/xuid ({xuid})/achievements/{scid}/{achievementid}](uri-usersxuidachievementsscidachievementid.md)
+[/users/xuid({xuid})/achievements/{scid}/{achievementid}](uri-usersxuidachievementsscidachievementid.md)
 
 &nbsp;&nbsp;構成済みのメタデータとユーザー固有のデータを含む、実績を詳しく説明を返します。
 

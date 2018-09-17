@@ -1,9 +1,9 @@
 ---
-title: (/Inventory/{itemID}) を取得します。
+title: GET (/inventory/{itemID})
 assetID: d3ca14a5-0214-ef42-091e-3f05f2a3482d
 permalink: en-us/docs/xboxlive/rest/uri-inventoryitemurlget.html
 author: KevinAsgari
-description: " (/Inventory/{itemID}) を取得します。"
+description: " GET (/inventory/{itemID})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a94493243178a503ae846608b172af598bf97dd
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960681"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988818"
 ---
-# <a name="get-inventoryitemid"></a>(/Inventory/{itemID}) を取得します。
+# <a name="get-inventoryitemid"></a>GET (/inventory/{itemID})
 特定のインベントリ項目の詳細の完全なセットを提供します。 これらの Uri のドメインが`inventory.xboxlive.com`します。
  
   * [注釈](#ID4EX)
@@ -51,7 +51,7 @@ ms.locfileid: "3960681"
  
 ### <a name="sample-response"></a>応答の例
  
-認証に合格して、適切な承認コンテキストが割り当てられていると想定すると、GET 要求に応答は、項目のプロパティの完全なセットを 1 つのインベントリ項目です。
+認証に合格して、適切な承認コンテキストが割り当てられていると仮定すると、GET 要求に応答は、項目のプロパティの完全なセットを 1 つのインベントリ項目です。
  
 
 ```cpp
@@ -70,7 +70,7 @@ ms.locfileid: "3960681"
  
 ##### <a name="parent"></a>Parent 
 
-[(/Inventory/{itemID}) を取得します。]()
+[GET (/inventory/{itemID})]()
 
   
 <a id="ID4EJC"></a>
@@ -78,14 +78,14 @@ ms.locfileid: "3960681"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [Marketplace Uri](atoc-reference-marketplace.md)
+ [マーケットプレース URI](atoc-reference-marketplace.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

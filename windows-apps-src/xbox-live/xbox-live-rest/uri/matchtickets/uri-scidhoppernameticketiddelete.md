@@ -1,9 +1,9 @@
 ---
-title: (/Serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}) を削除します。
+title: DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})
 assetID: d9ff3f21-aa70-af41-afa1-9a9244fcdb95
 permalink: en-us/docs/xboxlive/rest/uri-scidhoppernameticketiddelete.html
 author: KevinAsgari
-description: " (/Serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}) を削除します。"
+description: " DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3780fb9f69a97d4e2522aa17a806b1fb4917a9f7
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956031"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986534"
 ---
-# <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>(/Serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}) を削除します。
+# <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})
 
 マッチ チケットを削除します。
 
 > [!IMPORTANT]
-> このメソッドは、コントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> このメソッドは、コントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 103 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4E2)
@@ -47,7 +47,7 @@ ms.locfileid: "3956031"
 | --- | --- | --- | --- |
 | scid| GUID| セッションのサービス構成 id (SCID)。|
 | name| string| ホッパーの名前です。|
-| ticketId| GUID| チケットの id。|
+| ticketId| GUID| チケット id。|
 
 <a id="ID4EGB"></a>
 
@@ -57,7 +57,7 @@ ms.locfileid: "3956031"
 | 型| 必須かどうか| 説明| 不足している場合、応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | XUID (ユーザー ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。| 403|
-| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには主張のマルチプレイヤー権限を持つユーザーのみが許可されています。| 403|
+| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには主張でマルチプレイヤー権限を持つユーザーのみが許可されています。| 403|
 
 <a id="ID4EOC"></a>
 
@@ -89,4 +89,4 @@ ms.locfileid: "3956031"
 
 ##### <a name="parent"></a>Parent  
 
-[/serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}](uri-scidhoppernameticketid.md)
+[/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}](uri-scidhoppernameticketid.md)

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d027e35f8fe76a0d4139301f1a7dabc7798348a
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964362"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990217"
 ---
 # <a name="resolve-submission-errors"></a>申請エラーの解決
 
@@ -23,13 +23,13 @@ ms.locfileid: "3964362"
 
 ## <a name="uwp-apps"></a>UWP アプリ
 
-UWP アプリを提出する場合は、パッケージ ファイルがストア向けに Visual Studio によって生成された .appxupload ファイルでない場合に、前処理の間にエラーが表示されることがあります。 [Visual Studio で UWP アプリのパッケージ](../packaging/packaging-uwp-apps.md)アプリのパッケージのファイルを作成するときの手順し、申請、しない、appx や .appxbundle の [[パッケージ](upload-app-packages.md)] ページで、.appxupload ファイルをアップロードのみことを確認します。
+UWP アプリを提出する場合は、パッケージ ファイルがストア向けに Visual Studio によって生成された .appxupload ファイルでない場合に、前処理の間にエラーが表示されることがあります。 [Visual Studio で UWP アプリのパッケージ](../packaging/packaging-uwp-apps.md)アプリのパッケージ ファイルを作成するときの手順し、申請、しない、appx や .appxbundle の[パッケージ](upload-app-packages.md)] ページで、.appxupload ファイルをアップロードのみことを確認します。
 
 コンパイル エラーが表示される場合は、リリース モードでアプリケーションを正常にビルドできることを確認します。 詳しくは、[.NET ネイティブ内部コンパイラ エラーに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=613098)をご覧ください。
 
 ## <a name="desktop-application"></a>デスクトップ アプリケーション
 
-Win32 と UWP の両方のバイナリが含まれているパッケージを提出する場合は、Visual Studio 2017 Update 4 で利用可能な Windows パッケージ プロジェクトを使用して、そのパッケージを作成することを確認します。 UWP プロジェクト テンプレートを使用して、パッケージを作成する場合は、提出するパッケージをストアまたはサイドローディング化上の他の Pc にできない可能性があります。 場合でも、パッケージが正常に公開、ユーザーの PC で予期しない方法で動作する可能性があります。 詳しくは、 [Visual Studio (デスクトップ ブリッジ) を使ってアプリ パッケージ]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)を参照してください。
+Win32 と UWP の両方のバイナリが含まれているパッケージを提出する場合は、Visual Studio 2017 Update 4 で利用可能な Windows パッケージ プロジェクトを使用して、そのパッケージを作成することを確認します。 UWP プロジェクト テンプレートを使用して、パッケージを作成する場合は、提出するパッケージをストアまたはサイドローディング化上の他の Pc にできない可能性があります。 パッケージが正常に発行、した場合でもユーザーの PC で予期しない方法で動作する可能性があります。 詳しくは、 [Visual Studio (デスクトップ ブリッジ) を使用して、アプリのパッケージ]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)を参照してください。
 
 ## <a name="windows-phone-apps"></a>Windows Phone アプリ
 
@@ -53,7 +53,7 @@ Win32 と UWP の両方のバイナリが含まれているパッケージを提
 - アプリに ID が既に割り当てられているときでも、場合によっては、パッケージで使用する名前を予約する必要があります。 **[アプリ管理]** で、[[アプリ名の管理]](manage-app-names.md) をクリックします。 使用する名前を入力し、**[アプリ名を予約]** をクリックします。
 
 > [!IMPORTANT]
->  使用する名前が利用できない場合別のアプリが既に予約済みであるその名前。 アプリがその名前には、既に公開されている場合、または、[サポートにお問い合わせ](https://go.microsoft.com/fwlink/p/?LinkId=331509)を使用する権利があると考えられる場合。  
+>  使用する名前が利用できない場合別のアプリが既に予約済みであるその名前。 アプリがその名前で既に公開されている場合、または、[サポートにお問い合わせ](https://go.microsoft.com/fwlink/p/?LinkId=331509)を使用する権利があると考えられる場合。  
 
  
 

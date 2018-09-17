@@ -1,9 +1,9 @@
 ---
-title: 取得する (パブリック//global/scids/{scid} クリップ/)
+title: GET (/public/scids/{scid}/clips)
 assetID: 15b3e873-1f96-b1da-2f79-6dac1369a4c0
 permalink: en-us/docs/xboxlive/rest/uri-publicscidclipsget.html
 author: KevinAsgari
-description: " 取得する (パブリック//global/scids/{scid} クリップ/)"
+description: " GET (/public/scids/{scid}/clips)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b945427118122e3b6d52210efc5e1de84a8c8d68
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960159"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987752"
 ---
-# <a name="get-publicscidsscidclips"></a>取得する (パブリック//global/scids/{scid} クリップ/)
+# <a name="get-publicscidsscidclips"></a>GET (/public/scids/{scid}/clips)
 パブリック クリップを一覧表示します。 この URI のドメインが`gameclipsmetadata.xboxlive.com`します。
  
   * [注釈](#ID4EV)
@@ -53,8 +53,8 @@ ms.locfileid: "3960159"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| <b>? achievementId = {achievementId}</b>| 最新のクリップが指定した<b>achievementId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
-| <b>? greatestMomentId = {greatestMomentId}</b>| 最新のクリップが指定した<b>greatestMomentId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
+| <b>? achievementId = {achievementId}</b>| 最新のクリップが指定した<b>achievementId</b>に一致します。| その他の並べ替え/フィルタ リングはサポートされていません。| 
+| <b>? greatestMomentId = {greatestMomentId}</b>| 最新のクリップが指定した<b>greatestMomentId</b>に一致します。| その他の並べ替え/フィルタ リングはサポートされていません。| 
 | <b>? 修飾子 = 作成 </b>| Most Recent| 必須。| 
   
 <a id="ID4EDD"></a>
@@ -67,6 +67,6 @@ ms.locfileid: "3960159"
  
 ##### <a name="parent"></a>Parent 
 
-[パブリック//global/scids/{scid} クリップ/](uri-publicscidclips.md)
+[/public/scids/{scid}/clips](uri-publicscidclips.md)
 
    

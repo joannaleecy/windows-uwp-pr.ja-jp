@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb56b51e2d558b2a4ef05d117244d464756e6ec
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957551"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985946"
 ---
 # <a name="post-usersxuidxuidfeedback"></a>POST (/users/xuid({xuid})/feedback)
 シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合に、タイトルから使われます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
@@ -45,8 +45,8 @@ ms.locfileid: "3957551"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
+| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
   
 <a id="ID4ENC"></a>
 
@@ -96,7 +96,7 @@ ms.locfileid: "3957551"
  
 ## <a name="required-headers"></a>必要なヘッダー
  
-次のヘッダーは、Xbox Live サービス要求を行ったとき必要があります。
+次のヘッダーは、Xbox Live サービス要求を行ったときに必要があります。
  
 | <b>ヘッダー</b>| <b>値</b>| <b>Deacription</b>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -111,7 +111,7 @@ application/json|
  
 ## <a name="authorization"></a>Authorization
  
-要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは、403 Forbidden コードを返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていないコードを返します。
+要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは、403 Forbidden コードを返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていないコードを返します。
   
 <a id="ID4EEG"></a>
 
@@ -122,9 +122,9 @@ application/json|
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 204| No Content| 要求が完了したらが、返されるコンテンツはありません。| 
+| 204| No Content| 要求では、完了しましたが、コンテンツに戻すことはありません。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
-| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。| 
+| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
 | 406| 許容できません。| リソースのバージョンがサポートされていません。| 
 | 408| 要求のタイムアウト| 要求にかかった時間が長すぎます。| 
 | 409| Conflict| 継続トークンが無効になった。| 
@@ -154,7 +154,7 @@ application/json|
  
 ##### <a name="reference"></a>リファレンス 
 
-[フィードバック (JSON)](../../json/json-feedback.md)
+[Feedback (JSON)](../../json/json-feedback.md)
 
  [ServiceError (JSON)](../../json/json-serviceerror.md)
 

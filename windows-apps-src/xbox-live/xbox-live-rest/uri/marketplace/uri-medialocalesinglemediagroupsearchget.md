@@ -1,9 +1,9 @@
 ---
-title: 取得する (メディア/{marketplaceId}/singleMediaGroupSearch)
+title: GET (media/{marketplaceId}/singleMediaGroupSearch)
 assetID: 52096f6d-e670-dc07-b191-039ea80c6291
 permalink: en-us/docs/xboxlive/rest/uri-medialocalesinglemediagroupsearchget.html
 author: KevinAsgari
-description: " 取得する (メディア/{marketplaceId}/singleMediaGroupSearch)"
+description: " GET (media/{marketplaceId}/singleMediaGroupSearch)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a66f5b505114eb63f9b62c985c108af6d752334
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959219"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989800"
 ---
-# <a name="get-mediamarketplaceidsinglemediagroupsearch"></a>取得する (メディア/{marketplaceId}/singleMediaGroupSearch)
-1 つのメディア グループ内の項目の検索を許可します。 これらの Uri のドメインが`eds.xboxlive.com`します。
+# <a name="get-mediamarketplaceidsinglemediagroupsearch"></a>GET (media/{marketplaceId}/singleMediaGroupSearch)
+1 つのメディア グループ内の項目を検索をできます。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EEB)
@@ -33,7 +33,7 @@ ms.locfileid: "3959219"
  
 非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してこの検索から返されるデータのページにアクセスできます。 この API は、絞り込み条件のクエリを受け取ります。 
  
-**SandboxId**は今すぐ、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合のエンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
+**SandboxId**は今すぐ、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は 400 Bad request エラーをスローします。
   
 <a id="ID4EEB"></a>
 
@@ -63,7 +63,7 @@ ms.locfileid: "3959219"
  
 ### <a name="sample-response"></a>応答の例
  
-次の JSON コードは、呼び出しへの応答で、`/media/en-us/singleMediaGroupSearch?q=vector&desiredMediaItemTypes=DGame&fields=all`します。
+次の JSON コードは、呼び出しへの応答で`/media/en-us/singleMediaGroupSearch?q=vector&desiredMediaItemTypes=DGame&fields=all`します。
  
 
 ```cpp
@@ -183,14 +183,14 @@ ms.locfileid: "3959219"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [Marketplace Uri](atoc-reference-marketplace.md)
+ [マーケットプレース URI](atoc-reference-marketplace.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

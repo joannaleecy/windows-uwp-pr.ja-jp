@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}
+title: /serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 assetID: 25deb7fe-859c-01d2-d14f-455a36c08a7c
 permalink: en-us/docs/xboxlive/rest/uri-scidhoppernameticketid.html
 author: KevinAsgari
-description: " /serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}"
+description: " /serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: dd7ed139fffb8bdb10ac5074d5e9725753678f1c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959691"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988794"
 ---
-# <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a>/serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}
+# <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a>/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 
 マッチ チケットの削除操作をサポートしています。
 
 > [!IMPORTANT]
-> この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 103 または後ですべての要求します。
 
 <a id="ID4ER"></a>
 
@@ -44,14 +44,14 @@ momatch.xboxlive.com
 | --- | --- | --- | --- |
 | scid| GUID| セッションのサービス構成 id (SCID)。|
 | name| string| ホッパーの名前です。|
-| ticketId| GUID| チケットの id。|
+| ticketId| GUID| チケット id。|
 
 <a id="ID4EJC"></a>
 
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(/Serviceconfigs/{scid} {hoppername}/hoppers//tickets/{ticketid}) を削除します。](uri-scidhoppernameticketiddelete.md)
+[DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})](uri-scidhoppernameticketiddelete.md)
 
 &nbsp;&nbsp;マッチ チケットを削除します。
 
@@ -65,4 +65,4 @@ momatch.xboxlive.com
 
 ##### <a name="parent"></a>Parent  
 
-[マッチメイ キング Uri](atoc-reference-matchtickets.md)
+[マッチメイキング URI](atoc-reference-matchtickets.md)

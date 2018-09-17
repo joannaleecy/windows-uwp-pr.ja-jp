@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d64dc9fbae0e53880578ebff7576b028d6ecdf49
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963115"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987780"
 ---
 # <a name="get-usersxuidxuidachievementsscidachievementid"></a>GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})
 実績の詳細を取得します。 これらの Uri のドメインが`achievements.xboxlive.com`します。
@@ -25,7 +25,7 @@ ms.locfileid: "3963115"
   * [Authorization](#ID4EAB)
   * [リソースのプライバシーの設定の効果](#ID4E4C)
   * [必要な要求ヘッダー](#ID4EPG)
-  * [オプションの要求ヘッダー](#ID4EPH)
+  * [省略可能な要求ヘッダー](#ID4EPH)
   * [要求本文](#ID4ECBAC)
   * [HTTP ステータス コード](#ID4ENBAC)
   * [応答本文](#ID4EBGAC)
@@ -50,7 +50,7 @@ ms.locfileid: "3963115"
 | --- | --- | --- | --- | --- | --- | --- | 
 | ユーザー| はい| Xbox live、要求が作成されている対象の有効なユーザーです。| 403 Forbidden| 
 | Title (タイトル)| いいえ| 呼び出し元のタイトルです。| AuthZ によって異なります。 2013 月 1 日の時点で AuthZ は不足するいると、パブリックとしてマークされていないすべての Scid にアクセスが拒否されるための要求を提供しません。| 
-| サンド ボックス| いいえ| サンド ボックスが、結果を取得する必要があります。| AuthZ によって異なります。 2013 月 1 日の時点で AuthZ は既定の要求を提供しません不足している場合。| 
+| サンド ボックス| いいえ| サンド ボックスが結果を取得する必要があります。| AuthZ によって異なります。 2013 月 1 日の時点で AuthZ は既定の要求を提供しません不足している場合。| 
   
 <a id="ID4E4C"></a>
 
@@ -77,18 +77,18 @@ ms.locfileid: "3963115"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
   
 <a id="ID4EPH"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
 | x xbl コントラクト バージョン| string| V1 既定値です。| 
-| 同意言語| string| 目的のロケールとフォールバック (FR-FR, fr, EN-GB、en 世界、EN-US など) の一覧です。 ローカライズされた文字列の一致が見つかるまで、実績サービスは、一覧で動作します。 見つからない場合は、ユーザーの IP アドレスに由来するユーザーのトークンで定義されている場所と一致しようとします。 一致しないローカライズされた文字列でもが見つかった場合、タイトル開発者/発行元によって提供される既定の文字列を使用します。 | 
+| 言語を受け入れる| string| 目的のロケールとフォールバック (FR-FR, fr, EN-GB、en 世界、EN-US など) の一覧です。 ローカライズされた文字列の一致が見つかるまで、実績サービスは、一覧で動作します。 見つからない場合は、ユーザーの IP アドレスに由来するユーザー トークンで定義されている場所と一致しようとします。 一致しないローカライズされた文字列でもが見つかった場合、タイトル開発者/発行元によって提供される既定の文字列を使用します。 | 
   
 <a id="ID4ECBAC"></a>
 
@@ -112,10 +112,10 @@ ms.locfileid: "3963115"
 | 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden| ユーザーまたはサービスの要求は許可されていません。| 
-| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。| 
-| 406| 許容できません。| リソースのバージョンはサポートされていません。MVC レイヤーによって拒否する必要があります。| 
+| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
+| 406| 許容できません。| リソースのバージョンがサポートされていません。MVC レイヤーによって拒否する必要があります。| 
 | 408| 要求のタイムアウト| 要求にかかった時間が長すぎます。| 
-| 410| なった| 要求されたリソースが利用可能ではなくなりました。| 
+| 410| なった| 要求されたリソースが利用可能ではありません。| 
   
 <a id="ID4EBGAC"></a>
 
@@ -199,6 +199,6 @@ ms.locfileid: "3963115"
  
 ##### <a name="parent"></a>Parent 
 
-[ユーザー/xuid ({xuid})/achievements/{scid}/{achievementid}](uri-usersxuidachievementsscidachievementid.md)
+[/users/xuid({xuid})/achievements/{scid}/{achievementid}](uri-usersxuidachievementsscidachievementid.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: JavaScript Object Notation (JSON) オブジェクトに使用される列挙型
+title: JavaScript Object Notation (JSON) オブジェクトで使用される列挙型
 assetID: 8aa53782-05fa-9980-87cd-0cac8346756e
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-enums.html
 author: KevinAsgari
-description: " JavaScript Object Notation (JSON) オブジェクトに使用される列挙型"
+description: " JavaScript Object Notation (JSON) オブジェクトで使用される列挙型"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e5490ec5b940f70180d2830e7caaed9a9926f50
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959179"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989692"
 ---
-# <a name="enumerations-used-in-javascript-object-notation-json-objects"></a>JavaScript Object Notation (JSON) オブジェクトに使用される列挙型
+# <a name="enumerations-used-in-javascript-object-notation-json-objects"></a>JavaScript Object Notation (JSON) オブジェクトで使用される列挙型
  
 Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。 サービスによって使われる多くの JavaScript Object Notation (JSON) オブジェクトには、JavaScript Object Notation (JSON) オブジェクトに表示されるフィールドの有効な値を指定する列挙体が関連付けられています。 このセクションでは、JavaScript Object Notation (JSON) オブジェクトで使用する列挙体で示します。 
  
@@ -27,35 +27,35 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
  
 ## <a name="in-this-section"></a>このセクションの内容
 
-[GameClipSource 列挙](gvr-enum-gameclipsource.md)
+[GameClipSource 列挙型](gvr-enum-gameclipsource.md)
 
 &nbsp;&nbsp;GameClipSource 列挙をについて説明します。 
 
-[GameClipState 列挙](gvr-enum-gameclipstate.md)
+[GameClipState 列挙型](gvr-enum-gameclipstate.md)
 
 &nbsp;&nbsp;GameClipState 列挙をについて説明します。 
 
-[GameClipType 列挙](gvr-enum-gamecliptypes.md)
+[GameClipType 列挙型](gvr-enum-gamecliptypes.md)
 
 &nbsp;&nbsp;GameClipTypes 列挙をについて説明します。 
 
-[GameClipUriType 列挙](gvr-enum-gameclipuritype.md)
+[GameClipUriType 列挙型](gvr-enum-gameclipuritype.md)
 
 &nbsp;&nbsp;GameClipUriType 列挙をについて説明します。 
 
-[GameClipVisibility 列挙](gvr-enum-gameclipvisibility.md)
+[GameClipVisibility 列挙型](gvr-enum-gameclipvisibility.md)
 
 &nbsp;&nbsp;GameClipVisibility 列挙をについて説明します。 
 
-[ThumbnailSource 列挙](gvr-enum-thumbnailsource.md)
+[ThumbnailSource 列挙型](gvr-enum-thumbnailsource.md)
 
 &nbsp;&nbsp;ThumbnailSource 列挙をについて説明します。 
 
-[ThumbnailType 列挙](gvr-enum-thumbnailtype.md)
+[ThumbnailType 列挙型](gvr-enum-thumbnailtype.md)
 
 &nbsp;&nbsp;ThumbnailType 列挙をについて説明します。 
 
-[PermissionId 列挙](privacy-enum-permissionid.md)
+[PermissionId 列挙型](privacy-enum-permissionid.md)
 
 &nbsp;&nbsp;PermissionId 列挙をについて説明します。 
  

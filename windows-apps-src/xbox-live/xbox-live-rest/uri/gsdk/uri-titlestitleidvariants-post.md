@@ -1,9 +1,9 @@
 ---
-title: POST (/titles/{titleId}/バリアント)
+title: POST (/titles/{titleId}/variants)
 assetID: 84303448-5a11-d96f-907d-77f57f859741
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidvariants-post.html
 author: KevinAsgari
-description: " POST (/titles/{titleId}/バリアント)"
+description: " POST (/titles/{titleId}/variants)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 246427b772403ca07adac2a4b1b07ec159142049
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959629"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986896"
 ---
-# <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/バリアント)
-URI に指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出されますこれらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+# <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
+指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URIこれらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EZ)
   * [必要な要求ヘッダー](#ID4EIB)
-  * [オプションの要求ヘッダー](#ID4EED)
+  * [省略可能な要求ヘッダー](#ID4EED)
   * [Authorization](#ID4E3D)
   * [要求本文](#ID4EEE)
   * [必要な応答ヘッダー](#ID4ELF)
@@ -57,14 +57,14 @@ gameserverds.xboxlive.com
 | --- | --- | --- | --- | --- | 
 | Content-Type| application/json| 送信されたデータの種類です。| 
 | Host| gameserverds.xboxlive.com|  | 
-| Content-Length|  | 要求のオブジェクトの長さ。| 
+| Content-Length|  | 要求オブジェクトの長さ。| 
 | x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
 | Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークンです。| 
   
 <a id="ID4EED"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
 要求を行う場合は、次の表に示すようにヘッダーはオプションです。
  
@@ -77,7 +77,7 @@ gameserverds.xboxlive.com
  
 ## <a name="authorization"></a>Authorization
 
-要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
+要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
  
 <a id="ID4EEE"></a>
 
@@ -115,7 +115,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答には常に、次の表に示すようにヘッダーが含まれます。
+応答は常に、次の表に示すようにヘッダーを含めます。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -202,6 +202,6 @@ gameserverds.xboxlive.com
 
  
 ## <a name="see-also"></a>関連項目
- [/titles/{titleId}/バリエーション](uri-titlestitleidvariants.md)
+ [/titles/{titleId}/variants](uri-titlestitleidvariants.md)
 
   

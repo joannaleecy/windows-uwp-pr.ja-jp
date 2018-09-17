@@ -1,9 +1,9 @@
 ---
-title: プロファイルの Uri
+title: プロフィール URI
 assetID: 457f2cb2-9113-e537-c8cc-51f743e30afa
 permalink: en-us/docs/xboxlive/rest/atoc-reference-profiles.html
 author: KevinAsgari
-description: " プロファイルの Uri"
+description: " プロフィール URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: bcae059476cd5e55d95cbbbc7c4b479c359e46fe
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960457"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987384"
 ---
-# <a name="profiles-uris"></a>プロファイルの Uri
+# <a name="profiles-uris"></a>プロフィール URI
  
-このセクションでは、*プロファイル*用の Xbox Live サービスからプロファイル ユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
+このセクションでは、*プロファイル*用の Xbox Live サービスからプロファイル ユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
  
-のみ Windows 8 で実行されるゲームでは、Xbox 360、または Windows Phone デバイスこのサービスを使用します。
+のみ Windows 8 で実行されるゲームでも、Xbox 360、または Windows Phone デバイスこのサービスを使用します。
  
 これらの Uri のドメインは、profile.xboxlive.com です。
  
@@ -35,7 +35,7 @@ ms.locfileid: "3960457"
 
 &nbsp;&nbsp;ユーザーまたはユーザーのプロファイルにアクセスします。
 
-[/users/{userId}/プロファイルの設定/ユーザー/{userList}? 設定 = {設定}](uri-usersuseridprofilesettingspeopleuserlist.md)
+[/users/{userId}/profile/settings/people/{userList}?settings={settings}](uri-usersuseridprofilesettingspeopleuserlist.md)
 
 &nbsp;&nbsp;People モニカー サポートでのユーザーのプロファイルにアクセスします。
  

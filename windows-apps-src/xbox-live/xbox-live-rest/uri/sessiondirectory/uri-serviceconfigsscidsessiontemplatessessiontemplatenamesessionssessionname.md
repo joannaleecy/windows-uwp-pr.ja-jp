@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}
+title: /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}
 assetID: 55ce6459-1714-49bc-6231-b547ddf04143
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.html
 author: KevinAsgari
-description: " /serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}"
+description: " /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 43054e909ce6e4a3d472a6a6480cd0812afa5ad4
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964335"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989990"
 ---
-# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}
+# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}
 作成してセッションを取得する PUT と取得の操作をサポートしています。
 <a id="ID4EO"></a>
 
@@ -41,11 +41,11 @@ sessiondirectory.xboxlive.com
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(/Serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}) を取得します。](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameget.md)
+[GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameget.md)
 
 &nbsp;&nbsp;セッション オブジェクトを取得します。
 
-[PUT (/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション})](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameput.md)
+[PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameput.md)
 
 &nbsp;&nbsp;作成、更新、またはセッションに参加します。
 
@@ -59,4 +59,4 @@ sessiondirectory.xboxlive.com
 
 ##### <a name="parent"></a>Parent
 
-[セッション ディレクトリ Uri](atoc-reference-sessiondirectory.md)
+[セッション ディレクトリ URI](atoc-reference-sessiondirectory.md)

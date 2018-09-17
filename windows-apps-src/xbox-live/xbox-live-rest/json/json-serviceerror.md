@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f9f5cb3f4dc0565cafc073cea35e3e6e00d273f
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959679"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989492"
 ---
 # <a name="serviceerror-json"></a>ServiceError (JSON)
-サービスに呼び出しが失敗したときに返されるエラーに関する情報が含まれています。 
+サービスへの呼び出しが失敗したときに返されるエラーに関する情報が含まれています。 
 <a id="ID4EN"></a>
 
  
 ## <a name="serviceerror"></a>ServiceError
  
-ServiceError オブジェクトには、次の仕様があります。
+ServiceError オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -42,9 +42,9 @@ ServiceError オブジェクトには、次の仕様があります。
 | --- | --- | --- | --- | --- | 
 | 0| 成功エラーなし| 
 | 4000| POST 要求に失敗しました検証で送信される要求本文 JSON ドキュメントが無効です。 詳細については説明フィールドを参照してください。 | 
-| 4100| ユーザーはない存在、XUID 要求 URI に含まれているは XBOX Live で有効なユーザーにはありません。| 
+| 4100| ユーザーがいない存在、XUID 要求 URI に含まれているは XBOX Live で有効なユーザーにはありません。| 
 | 4500| 承認エラー、呼び出し元は、要求された操作を実行する権限がありません。| 
-| 5000| サービスのエラーがあった、サービスの内部エラー| 
+| 5000| サービスのエラーがあったサービスの内部エラー| 
 | 5300| サービス提供を停止、サービスは利用できません。| 
    
 <a id="ID4EQE"></a>
@@ -73,6 +73,6 @@ ServiceError オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

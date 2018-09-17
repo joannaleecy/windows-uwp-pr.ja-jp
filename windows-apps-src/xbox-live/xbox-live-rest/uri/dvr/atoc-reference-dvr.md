@@ -1,9 +1,9 @@
 ---
-title: ゲーム DVR Uri
+title: ゲーム DVR URI
 assetID: 472f705e-bf28-7894-b1ba-80933d8746a6
 permalink: en-us/docs/xboxlive/rest/atoc-reference-dvr.html
 author: KevinAsgari
-description: " ゲーム DVR Uri"
+description: " ゲーム DVR URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,19 +12,19 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c9be3254d9264c1d06dd0a327c36b473a457a35
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961859"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988912"
 ---
-# <a name="game-dvr-uris"></a>ゲーム DVR Uri
+# <a name="game-dvr-uris"></a>ゲーム DVR URI
  
-このセクションでは、*ゲーム DVR*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
+このセクションでは、*ゲーム DVR*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
  
 本体のみが、ゲーム クリップを記録できますにアクセスできる任意のデバイスにクリップを表示できます。
  
-によっては、対象の URI の関数は、これらの Uri のドメインは。
+問題の URI の関数によってこれらの Uri のドメインは。
  
    *  gameclipsmetadata.xboxlive.com 
    *  gameclipstransfer.xboxlive.com 
@@ -34,7 +34,7 @@ ms.locfileid: "3961859"
  
 ## <a name="in-this-section"></a>このセクションの内容
 
-[パブリック//global/scids/{scid} クリップ/](uri-publicscidclips.md)
+[/public/scids/{scid}/clips](uri-publicscidclips.md)
 
 &nbsp;&nbsp;クリップをパブリックにアクセスします。 この URI に実際にで指定できる 2 つのフォーム`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。 詳しくは、後のセクションをご覧ください。
 
@@ -42,19 +42,19 @@ ms.locfileid: "3961859"
 
 &nbsp;&nbsp;ゲーム クリップ データにアクセスします。
 
-[ユーザー/me/global/scids/{scid} クリップ/](uri-usersmescidclips.md)
+[/users/me/scids/{scid}/clips](uri-usersmescidclips.md)
 
 &nbsp;&nbsp;最初のアクセスは、要求をアップロードします。
 
-[ユーザー/me/clips//global/scids/{scid} {gameClipId}](uri-usersmescidclipsgameclipid.md)
+[/users/me/scids/{scid}/clips/{gameClipId}](uri-usersmescidclipsgameclipid.md)
 
 &nbsp;&nbsp;ゲーム クリップ データへのアクセスとメタデータ。
 
-[/users/{ownerId} クリップ/](uri-usersowneridclips.md)
+[/users/{ownerId}/clips](uri-usersowneridclips.md)
 
 &nbsp;&nbsp;ユーザーのクリップのアクセスの一覧です。
 
-[/users/{ownerId} {scid}/scids//clips/{gameClipId}](uri-usersowneridscidclipsgameclipid.md)
+[/users/{ownerId}/scids/{scid}/clips/{gameClipId}](uri-usersowneridscidclipsgameclipid.md)
 
 &nbsp;&nbsp;すべての Id を見つけることがわかっている場合はシステムから 1 つのゲーム クリップにアクセスします。
  

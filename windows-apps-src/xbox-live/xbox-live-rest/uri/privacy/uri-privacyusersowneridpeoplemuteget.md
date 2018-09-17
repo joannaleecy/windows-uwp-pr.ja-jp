@@ -1,9 +1,9 @@
 ---
-title: GET (/users/{ownerId}/ユーザー/ミュート)
+title: GET (/users/{ownerId}/people/mute)
 assetID: 49b6c830-95f7-3200-0e46-0a1af573971c
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemuteget.html
 author: KevinAsgari
-description: " GET (/users/{ownerId}/ユーザー/ミュート)"
+description: " GET (/users/{ownerId}/people/mute)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: af9f52e04a163e0839017e1d051653d968df816d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958143"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988992"
 ---
-# <a name="get-usersowneridpeoplemute"></a>GET (/users/{ownerId}/ユーザー/ミュート)
+# <a name="get-usersowneridpeoplemute"></a>GET (/users/{ownerId}/people/mute)
 ユーザーのミュートの一覧を取得します。
 
   * [注釈](#ID4EQ)
@@ -36,7 +36,7 @@ ms.locfileid: "3958143"
 
 ## <a name="remarks"></a>注釈
 
-ターゲットを指定すると場合、この URI は、ユーザーがない場合、ユーザーがミュートの一覧に、空の場合、そのユーザーのみを返します。
+この URI にターゲットを指定すると、ユーザーがない場合、ユーザーがミュートの一覧で、空の場合のみ、そのユーザーを返します。
 
 <a id="ID4EZ"></a>
 
@@ -70,7 +70,7 @@ ms.locfileid: "3958143"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization | string| HTTP の認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
+| Authorization | string| HTTP 認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
 | X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: <code>1</code>、<code>vnext</code>します。 最大サイズ: なし。|
 | Accept| string| コンテンツの種類の受け入れられるします。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
 
@@ -93,7 +93,7 @@ ms.locfileid: "3958143"
 | 200| OK| ミュート リストの要求が成功した場合。|
 | 400| Bad Request| URI で指定されたターゲット ID が正しくありません。|
 | 403| Forbidden| URI で指定された所有者は、認証されたユーザーではありません。|
-| 404| 見つかりません。| URI で指定された所有者は存在しません。|
+| 404| Not Found します。| URI で指定された所有者は存在しません。|
 
 <a id="ID4E3G"></a>
 
@@ -141,4 +141,4 @@ ms.locfileid: "3958143"
 
 ##### <a name="parent"></a>Parent
 
-[ユーザー/ミュート/users/{ownerId}](uri-privacyusersowneridpeoplemute.md)
+[/users/{ownerId}/people/mute](uri-privacyusersowneridpeoplemute.md)

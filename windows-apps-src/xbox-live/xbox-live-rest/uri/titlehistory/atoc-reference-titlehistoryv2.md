@@ -1,9 +1,9 @@
 ---
-title: 実績タイトル履歴 Uri
+title: 実績タイトル履歴 URI
 assetID: a7499a25-d957-2ab9-fe47-f2615e5f2ea5
 permalink: en-us/docs/xboxlive/rest/atoc-reference-titlehistoryv2.html
 author: KevinAsgari
-description: " 実績タイトル履歴 Uri"
+description: " 実績タイトル履歴 URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 82d6dc051911ea04b685ffaeb21f821241bec77d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956267"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988932"
 ---
-# <a name="achievement-title-history-uris"></a>実績タイトル履歴 Uri
+# <a name="achievement-title-history-uris"></a>実績タイトル履歴 URI
  
-このセクションでは、実績に関連する*タイトル履歴*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。 すべてのプラットフォームで実行されるゲームには、この履歴情報を読み取ることができます。
+このセクションでは、実績に関連する*タイトル履歴*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。 すべてのプラットフォームで実行されるゲームには、この履歴情報を読み取ることができます。
  
 これらの Uri のドメインは、achievements.xboxlive.com です。
  

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a5a56b524dbf88d96a34f769f7a25bed7bca8a1d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962677"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986554"
 ---
 # <a name="mediaasset-json"></a>MediaAsset (JSON)
 実績やそのリワードに関連付けられているメディア アセット。
@@ -25,13 +25,13 @@ ms.locfileid: "3962677"
 
 ## <a name="mediaasset"></a>MediaAsset
 
-MediaAsset オブジェクトには、次の仕様があります。
+MediaAsset オブジェクトでは、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
 | name| string| "Tile01"など、MediaAsset の名前です。|
 | type| MediaAssetType 列挙| メディア アセットの種類。 <ul><li>アイコン (0): 実績アイコンです。</li><li>アート (1): デジタル アート アセット。</li></ul> | 
-| url| string| MediaAsset の URL。|
+| url| string| MediaAsset の URL です。|
 
 <a id="ID4EFC"></a>
 
@@ -59,4 +59,4 @@ MediaAsset オブジェクトには、次の仕様があります。
 
 ##### <a name="parent"></a>Parent
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)

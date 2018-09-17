@@ -1,9 +1,9 @@
 ---
-title: グローバル//global/scids/{scid}
+title: /global/scids/{scid}
 assetID: 721e8be9-a50a-ae14-91c1-e103add0abab
 permalink: en-us/docs/xboxlive/rest/uri-globalscidsscid.html
 author: KevinAsgari
-description: " グローバル//global/scids/{scid}"
+description: " /global/scids/{scid}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f914d3994f99b743fc596420eef76aed7f4df79
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959841"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987622"
 ---
-# <a name="globalscidsscid"></a>グローバル//global/scids/{scid}
+# <a name="globalscidsscid"></a>/global/scids/{scid}
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -51,6 +51,6 @@ ms.locfileid: "3959841"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ Uri](atoc-reference-storagev2.md)
+[タイトル ストレージ URI](atoc-reference-storagev2.md)
 
    

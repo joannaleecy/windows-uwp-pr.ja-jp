@@ -1,9 +1,9 @@
 ---
-title: 取得する (/users/{ownerId}/概要)
+title: GET (/users/{ownerId}/summary)
 assetID: 754190c9-b15d-f34b-1dca-5c92f6f67d12
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridsummaryget.html
 author: KevinAsgari
-description: " 取得する (/users/{ownerId}/概要)"
+description: " GET (/users/{ownerId}/summary)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,19 +12,19 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ba0cd060b3432de1cbb641a8991283974da192
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960279"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986898"
 ---
-# <a name="get-usersowneridsummary"></a>取得する (/users/{ownerId}/概要)
+# <a name="get-usersowneridsummary"></a>GET (/users/{ownerId}/summary)
 呼び出し元の観点から所有者に関する集計データを取得します。
 
   * [URI パラメーター](#ID4EQ)
   * [Authorization](#ID4E2)
   * [必要な要求ヘッダー](#ID4EBC)
-  * [オプションの要求ヘッダー](#ID4EHD)
+  * [省略可能な要求ヘッダー](#ID4EHD)
   * [要求本文](#ID4EXE)
   * [HTTP ステータス コード](#ID4ECF)
   * [必要な応答ヘッダー](#ID4EZG)
@@ -37,7 +37,7 @@ ms.locfileid: "3960279"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
 
 <a id="ID4E2"></a>
 
@@ -60,11 +60,11 @@ ms.locfileid: "3960279"
 <a id="ID4EHD"></a>
 
 
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| x xbl コントラクト バージョン| string| この要求を送信する必要があります、サービスの名前/番号をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。値の例: 1|
+| x xbl コントラクト バージョン| string| この要求を送信する必要があります、サービスの名前/番号をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1|
 | Accept| string| コンテンツの種類の受け入れられるします。 すべての返信はされます<code>application/json</code>します。|
 
 <a id="ID4EXE"></a>
@@ -136,4 +136,4 @@ ms.locfileid: "3960279"
 
 ##### <a name="parent"></a>Parent
 
-[/users/{ownerId}/概要](uri-usersowneridsummary.md)
+[/users/{ownerId}/summary](uri-usersowneridsummary.md)

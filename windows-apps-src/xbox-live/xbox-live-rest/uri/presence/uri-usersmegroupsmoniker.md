@@ -1,9 +1,9 @@
 ---
-title: ユーザー/me/グループ/{モニカー}
+title: /users/me/groups/{moniker}
 assetID: 3d319a19-da5e-a485-985d-46dcff4bb521
 permalink: en-us/docs/xboxlive/rest/uri-usersmegroupsmoniker.html
 author: KevinAsgari
-description: " ユーザー/me/グループ/{モニカー}"
+description: " /users/me/groups/{moniker}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ce98786b9ef3702ae0aa1208cb04a9bd530a938
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962033"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989930"
 ---
-# <a name="usersmegroupsmoniker"></a>ユーザー/me/グループ/{モニカー}
+# <a name="usersmegroupsmoniker"></a>/users/me/groups/{moniker}
 [グループの presencerecord を要求してにアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -37,9 +37,9 @@ ms.locfileid: "3962033"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[取得する (ユーザー/me/グループ/{モニカー})](uri-usersmegroupsmonikerget.md)
+[GET (/users/me/groups/{moniker} )](uri-usersmegroupsmonikerget.md)
 
-&nbsp;&nbsp;[グループの presencerecord を要求してを取得します。
+&nbsp;&nbsp;自分のグループの presencerecord を要求してを取得します。
  
 <a id="ID4E2B"></a>
 
@@ -51,6 +51,6 @@ ms.locfileid: "3962033"
  
 ##### <a name="parent"></a>Parent 
 
-[プレゼンス Uri](atoc-reference-presence.md)
+[プレゼンス URI](atoc-reference-presence.md)
 
    

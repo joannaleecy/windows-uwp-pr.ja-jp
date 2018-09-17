@@ -1,9 +1,9 @@
 ---
-title: ユーザーの Uri
+title: People URI
 assetID: e4e6e3c9-7051-a90b-be1c-931816a22b36
 permalink: en-us/docs/xboxlive/rest/atoc-reference-people.html
 author: KevinAsgari
-description: " ユーザーの Uri"
+description: " People URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 03a96c69415a8ad13bdafaa821df66a919296f61
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964283"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987628"
 ---
-# <a name="people-uris"></a>ユーザーの Uri
+# <a name="people-uris"></a>People URI
  
-このセクションでは、 *people*システム用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
+このセクションでは、 *people*システム用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
  
 Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームだけでは、このサービスを使用できます。
  
@@ -31,21 +31,21 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
  
 ## <a name="in-this-section"></a>このセクションの内容
 
-[/users/{ownerId}/ユーザー](uri-usersowneridpeople.md)
+[/users/{ownerId}/people](uri-usersowneridpeople.md)
 
 &nbsp;&nbsp;呼び出し元のユーザーのコレクションにアクセスします。
 
-[/users/{ownerId} そして {targetid}](uri-usersowneridpeopletargetid.md)
+[/users/{ownerId}/people/{targetid}](uri-usersowneridpeopletargetid.md)
 
-&nbsp;&nbsp;呼び出し元のユーザーのコレクションからターゲット ID でユーザーにアクセスします。
+&nbsp;&nbsp;呼び出し元のユーザーのコレクションからターゲット ID によってユーザーにアクセスします。
 
-[ユーザー/xuid/users/{ownerId}](uri-usersowneridpeoplexuids.md)
+[/users/{ownerId}/people/xuids](uri-usersowneridpeoplexuids.md)
 
 &nbsp;&nbsp;XUID によって people を呼び出し元のユーザーのコレクションからアクセスします。
 
-[/users/{ownerId}/概要](uri-usersowneridsummary.md)
+[/users/{ownerId}/summary](uri-usersowneridsummary.md)
 
-&nbsp;&nbsp;呼び出し元の観点から所有者に関する集計データにアクセスします。
+&nbsp;&nbsp;呼び出し元の観点から所有者に関する集計データをアクセスします。
  
 <a id="ID4E5B"></a>
 

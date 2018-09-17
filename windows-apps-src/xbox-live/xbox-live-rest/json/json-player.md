@@ -1,9 +1,9 @@
 ---
-title: プレイヤー (JSON)
+title: Player (JSON)
 assetID: eaf6d082-869b-d2d3-d548-5cef65e54541
 permalink: en-us/docs/xboxlive/rest/json-player.html
 author: KevinAsgari
-description: " プレイヤー (JSON)"
+description: " Player (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 25d9262ac16eab3d1c2f35960445321fa3872c30
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962177"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989668"
 ---
-# <a name="player-json"></a>プレイヤー (JSON)
+# <a name="player-json"></a>Player (JSON)
 ゲーム セッションにプレイヤーのデータが含まれています。 
 <a id="ID4EN"></a>
 
@@ -30,10 +30,10 @@ ms.locfileid: "3962177"
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | customData| 8 ビットの符号なし整数の配列| Base64 1024 バイトは、ゲーム固有のプレイヤーのデータをエンコードします。 この値は、サーバーに不透明です。| 
-| ゲーマータグ| string| ゲーマータグ-は最大 15 文字、プレイヤーのします。 クライアントは、プレイヤーを識別するため、UI でこの値を使用する必要があります。 | 
-| isCurrentlyInSession| ブール値| プレイヤーがセッションで現在使用されてか、セッションを抜けたかどうかを示します。| 
-| seatIndex| 32 ビット符号付き整数| セッションにプレイヤーのインデックス。| 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) プレイヤーのします。| 
+| ゲーマータグ| string| ゲーマータグ-15 文字の最大値: プレイヤーのします。 クライアントは、プレイヤーを識別するため、UI でこの値を使用する必要があります。 | 
+| isCurrentlyInSession| ブール値| プレイヤーがセッションで現在使用されてまたはセッションを抜けたかどうかを示します。| 
+| seatIndex| 32 ビット符号付き整数| セッション内のプレイヤーのインデックス。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、プレイヤーのします。| 
   
 <a id="ID4E3C"></a>
 
@@ -63,7 +63,7 @@ ms.locfileid: "3962177"
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4ERD"></a>

@@ -1,9 +1,9 @@
 ---
-title: ユーザー/xuid (xuid) リスト/ピン/{リスト}//ContainsItems
+title: /users/xuid(xuid)/lists/PINS/{listname}/ContainsItems
 assetID: 9c6c950e-6b48-0999-39f9-174f598f69b2
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnamecontainsitems.html
 author: KevinAsgari
-description: " ユーザー/xuid (xuid) リスト/ピン/{リスト}//ContainsItems"
+description: " /users/xuid(xuid)/lists/PINS/{listname}/ContainsItems"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e775e5e7033b5ddf53ed4f05c9965731c5d70a3
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955937"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989524"
 ---
-# <a name="usersxuidxuidlistspinslistnamecontainsitems"></a>ユーザー/xuid (xuid) リスト/ピン/{リスト}//ContainsItems
-完全な一覧を取得することがなく一連項目 (itemId により指定) にはが一覧に含まれているかどうかを決定します。 これらの Uri のドメインが`eplists.xboxlive.com`します。
+# <a name="usersxuidxuidlistspinslistnamecontainsitems"></a>/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems
+全体の一覧を取得することがなく一連項目 (itemId により指定) にはが一覧に含まれているかどうかを決定します。 これらの Uri のドメインが`eplists.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -40,7 +40,7 @@ ms.locfileid: "3955937"
 
 [POST](uri-usersxuidlistspinslistnamecontainsitemspost.md)
 
-&nbsp;&nbsp;完全な一覧を取得することがなく一連項目 (itemId により指定) にはが一覧に含まれて かどうかを決定します。
+&nbsp;&nbsp;全体の一覧を取得することがなく、一覧に一連項目 (itemId により指定) にはが含まれているかどうかを決定します。
  
 <a id="ID4EIC"></a>
 

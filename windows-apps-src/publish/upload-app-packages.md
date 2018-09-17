@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, パッケージ, アップロード, パッケージのアップロード
 ms.localizationpriority: medium
 ms.openlocfilehash: 6013a238cff8db3b85dd98af58cccaf344a72f51
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963278"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990177"
 ---
 # <a name="upload-app-packages"></a>アプリ パッケージのアップロード
 
@@ -32,7 +32,7 @@ ms.locfileid: "3963278"
 
 アプリの[パッケージ フライト](package-flights.md)を作成すると、いずれかのパッケージ フライトからパッケージをコピーするオプションがドロップダウンに表示されます。 必要なパッケージが含まれているパッケージ フライトを選びます。 その後で、いずれかまたはすべてのパッケージを選んで、この申請に含めることができます。
 
-検証中にパッケージを使用してエラーを検出した場合問題がある内容を理解できるようにするためのメッセージを表示します。 パッケージを削除して、問題を修正してから、もう一度アップロードする必要があります。 また、問題を引き起こす可能性はあるが、申請の続行は妨げない事柄について通知する警告が表示されることもあります。
+検証中にパッケージを使用してエラーを検出した場合は問題を把握できるようにするためのメッセージを表示します。 パッケージを削除して、問題を修正してから、もう一度アップロードする必要があります。 また、問題を引き起こす可能性はあるが、申請の続行は妨げない事柄について通知する警告が表示されることもあります。
 
 
 ## <a name="device-family-availability"></a>デバイス ファミリの利用可否

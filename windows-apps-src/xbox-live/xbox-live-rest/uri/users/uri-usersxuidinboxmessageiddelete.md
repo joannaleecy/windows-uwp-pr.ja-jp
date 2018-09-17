@@ -1,9 +1,9 @@
 ---
-title: 削除 (/users/xuid({xuid})/inbox/{messageId})
+title: DELETE (/users/xuid({xuid})/inbox/{messageId})
 assetID: c54eede3-3e3b-2cbe-1be9-8bf3a48171bc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxmessageiddelete.html
 author: KevinAsgari
-description: " 削除 (/users/xuid({xuid})/inbox/{messageId})"
+description: " DELETE (/users/xuid({xuid})/inbox/{messageId})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957153"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989928"
 ---
-# <a name="delete-usersxuidxuidinboxmessageid"></a>削除 (/users/xuid({xuid})/inbox/{messageId})
+# <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 ユーザーの受信トレイでユーザーのメッセージを削除します。 これらの Uri のドメインが`msg.xboxlive.com`します。
  
   * [注釈](#ID4EV)
@@ -36,7 +36,7 @@ ms.locfileid: "3957153"
  
 削除操作では、等です。
  
-この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
+この API は、サポートのみコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
   
 <a id="ID4ECB"></a>
 
@@ -73,7 +73,7 @@ ms.locfileid: "3957153"
 | --- | --- | --- | --- | --- | 
 | 204| 成功します。| 
 | 403| XUID に変換することはできませんか、有効な XUID クレームが見つかったことはできません。| 
-| 404| URI のメッセージ ID を解析できませんまたは、XUID が URI ではありません。| 
+| 404| URI のメッセージ ID を解析できませんか、XUID が URI にありません。| 
 | 500| サーバー側の一般的なエラーです。| 
   
 <a id="ID4EAE"></a>
@@ -85,8 +85,8 @@ ms.locfileid: "3957153"
  
 | プロパティ| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| errorSource| string| エラーが発生した場所を指定します。| 
-| errorCode| int| (Null にすることができます)、エラーに関連付けられている数値コードです。| 
+| errorSource| string| エラーの発生元の項目を示します。| 
+| errorCode| int| (Null にすることができます) エラーに関連付けられている数値コードです。| 
 | エラー メッセージ| string| 詳細を表示するように構成する場合のエラーの説明します。| 
   
 <a id="ID4EYF"></a>
@@ -94,7 +94,7 @@ ms.locfileid: "3957153"
  
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果 
  
-のみ、独自のユーザー メッセージを削除することができます。 
+のみユーザー メッセージを削除することができます。 
   
 <a id="ID4EDG"></a>
 

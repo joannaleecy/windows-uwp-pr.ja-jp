@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 190d54fb53192a1cc798b46a0a4b76d7bdd3e074
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962623"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987216"
 ---
 # <a name="leaderboards"></a>ランキング
 
@@ -23,7 +23,7 @@ ms.locfileid: "3962623"
 
 「[データ プラットフォームの概要](../data-platform/data-platform.md)」で説明されているように、ランキングは、プレイヤー間の競争を促し、プレイヤー自身やフレンドが持つベスト スコアの更新に関心を持たせる場合に有効な方法です。
 
-[注目の統計](stats2017.md#configured-stats-and-featured-leaderboards)のランキングはタイトルのゲーム ハブに常に表示され、ホーム ページにピン留めされているとき、タイトルの UI の一部として表示される場合があります。 タイトル内でランキングを作成するのに、構成済みの注目の統計を使用することもできます。
+[注目の統計](stats2017.md#configured-stats-and-featured-leaderboards)のランキングは常に、タイトルのゲーム ハブに表示され、ホームページにピン留めされているとき、タイトルの UI の一部として表示される場合があります。 タイトル内でランキングを作成するのに、構成済みの注目の統計を使用することもできます。
 
 ## <a name="choosing-good-leaderboards"></a>適切なランキングの選択
 

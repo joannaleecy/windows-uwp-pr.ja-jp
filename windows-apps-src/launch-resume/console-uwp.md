@@ -10,17 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4c1b1df8ad29635f38ae5b373685d3504a4eb60
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963824"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990157"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>ユニバーサル Windows プラットフォームを使用してコンソール アプリを作成する
 
 作成する方法について説明、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)または、C++/cli CX ユニバーサル Windows プラットフォーム (UWP) コンソール アプリです。
 
-Windows 10、バージョン 1803 以降では次のことに書き込み、C++/WinRT または C + +/CX の UWP コンソール アプリ コンソール ウィンドウ DOS や PowerShell などのコンソール ウィンドウで実行できます。 コンソール アプリは、入力と出力、コンソール ウィンドウを使用し、 **printf**と**getchar**などの[ユニバーサル C ランタイム](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)の機能を使用できます。 Microsoft Store には、UWP コンソール アプリを公開することができます。 それらのアプリは、アプリのリストにエントリがあり、スタート メニューに固定することができるプライマリ タイルがあります。 UWP コンソール アプリは、コマンドラインから起動するは通常、スタート メニューから起動できます。
+Windows 10、バージョン 1803 以降では次のことに書き込み C + + WinRT または C + +/CX の UWP コンソール アプリ DOS や PowerShell コンソール ウィンドウなどのコンソール ウィンドウで実行できます。 コンソール アプリは、入力と出力、コンソール ウィンドウを使用し、 **printf**と**getchar**などの[ユニバーサル C ランタイム](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)の機能を使用できます。 Microsoft Store には、UWP コンソール アプリを公開することができます。 それらのアプリは、アプリのリストにエントリがあり、スタート メニューに固定することができるプライマリ タイルがあります。 UWP コンソール アプリは、コマンドラインから起動するは通常、スタート メニューから起動できます。
 
 いずれかの動作を確認するには、UWP コンソール アプリの作成に関するビデオを以下に示します。
 
@@ -34,7 +34,7 @@ UWP コンソール アプリを作成するには、まず [Visual Studio Marke
 
 テンプレートは **Program.cpp** を追加します。これには `main()` 関数が含まれています。 これは、UWP コンソール アプリで実行が開始される場所です。 `__argc` および `__argv` パラメーターでコマンドライン引数にアクセスします。 制御が `main()` から返ってくると、UWP コンソール アプリは終了します。
 
-**Program.cpp**の次の例がによって追加された、**コンソール アプリの内容/WinRT**テンプレート。
+**Program.cpp**の次の例は追加、**コンソール アプリの内容/WinRT**テンプレート。
 
 ```cppwinrt
 #include "pch.h"

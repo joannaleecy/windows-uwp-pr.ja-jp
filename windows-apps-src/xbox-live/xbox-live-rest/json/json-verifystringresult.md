@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f774f603d89e29f5233fb0866303bab4577ca3d2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961073"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987482"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
 [/System/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)に送信された各文字列に対応する結果コード。
@@ -25,12 +25,12 @@ ms.locfileid: "3961073"
 
 ## <a name="verifystringresult"></a>VerifyStringResult
 
-VerifyStringResult オブジェクトには、次の仕様があります。
+VerifyStringResult オブジェクトでは、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
 | resultCode| 32 ビット符号なし整数| 必須。 HResult コードに対応する文字列を送信します。|
-| offendingString| string| 必須。 拒否する文字列の原因となった文字列値。|
+| offendingString| string| 必須。 拒否される文字列の原因となった文字列値。|
 
 <a id="ID4EXB"></a>
 
@@ -71,7 +71,7 @@ VerifyStringResult オブジェクトには、次の仕様があります。
 
 ##### <a name="parent"></a>Parent
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
 
 <a id="ID4EXD"></a>
@@ -79,4 +79,4 @@ VerifyStringResult オブジェクトには、次の仕様があります。
 
 ##### <a name="reference"></a>リファレンス
 
-[POST (/システム/文字列/検証)](../uri/stringserver/uri-systemstringsvalidatepost.md)
+[POST (/system/strings/validate)](../uri/stringserver/uri-systemstringsvalidatepost.md)

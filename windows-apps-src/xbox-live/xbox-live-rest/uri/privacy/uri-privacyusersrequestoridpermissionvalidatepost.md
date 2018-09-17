@@ -1,9 +1,9 @@
 ---
-title: POST (アクセス許可が/users/{requestorId}/検証)
+title: POST (/users/{requestorId}/permission/validate)
 assetID: 7a5ea583-ffca-5da7-a02a-535c52535928
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidatepost.html
 author: KevinAsgari
-description: " POST (アクセス許可が/users/{requestorId}/検証)"
+description: " POST (/users/{requestorId}/permission/validate)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: edffbbff7fb9cd5fc4e471a6af1f494f4a35ea57
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960891"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987440"
 ---
-# <a name="post-usersrequestoridpermissionvalidate"></a>POST (アクセス許可が/users/{requestorId}/検証)
+# <a name="post-usersrequestoridpermissionvalidate"></a>POST (/users/{requestorId}/permission/validate)
 一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no に対する回答を取得します。
 
   * [注釈](#ID4EQ)
@@ -46,7 +46,7 @@ ms.locfileid: "3960891"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
+| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
 
 <a id="ID4ENB"></a>
 
@@ -64,8 +64,8 @@ ms.locfileid: "3960891"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。値の例: 1 です。|
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例: <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1 です。|
 
 <a id="ID4E4D"></a>
 
@@ -186,6 +186,6 @@ ms.locfileid: "3960891"
 
 ##### <a name="parent"></a>Parent
 
-[アクセス許可が/users/{requestorId}/検証します。](uri-privacyusersrequestoridpermissionvalidate.md)
+[/users/{requestorId}/permission/validate](uri-privacyusersrequestoridpermissionvalidate.md)
 
- [PermissionId 列挙](../../enums/privacy-enum-permissionid.md)
+ [PermissionId 列挙型](../../enums/privacy-enum-permissionid.md)

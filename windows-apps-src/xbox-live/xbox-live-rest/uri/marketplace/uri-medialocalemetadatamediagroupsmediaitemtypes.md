@@ -1,9 +1,9 @@
 ---
-title: /media/{marketplaceId}/メタデータ mediaGroups/{mediagroup}/mediaItemTypes
+title: /media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes
 assetID: fc096def-ac64-76c6-09f8-8f33a6bb47a0
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediagroupsmediaitemtypes.html
 author: KevinAsgari
-description: " /media/{marketplaceId}/メタデータ mediaGroups/{mediagroup}/mediaItemTypes"
+description: " /media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a5f7e0808f6d9392ea738440779e477b7c999b1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961173"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988936"
 ---
-# <a name="mediamarketplaceidmetadatamediagroupsmediagroupmediaitemtypes"></a>/media/{marketplaceId}/メタデータ mediaGroups/{mediagroup}/mediaItemTypes
+# <a name="mediamarketplaceidmetadatamediagroupsmediagroupmediaitemtypes"></a>/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes
 指定されたバージョン EDS のメディアのグループごとの利用可能な mediaItemTypes にアクセスします。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -38,7 +38,7 @@ ms.locfileid: "3961173"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[取得する (/media/{marketplaceId}/メタデータ mediaGroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)
+[GET (/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)
 
 &nbsp;&nbsp;指定されたバージョン EDS のメディアのグループごとの利用可能な mediaItemTypes の一覧を示します。
  
@@ -52,7 +52,7 @@ ms.locfileid: "3961173"
  
 ##### <a name="parent"></a>Parent 
 
-[Marketplace Uri](atoc-reference-marketplace.md)
+[マーケットプレース URI](atoc-reference-marketplace.md)
 
   
 <a id="ID4EXC"></a>
@@ -60,12 +60,12 @@ ms.locfileid: "3961173"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

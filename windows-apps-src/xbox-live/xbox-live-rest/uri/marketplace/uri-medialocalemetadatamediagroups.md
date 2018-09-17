@@ -1,9 +1,9 @@
 ---
-title: メタデータ/mediaGroups/media/{marketplaceId}
+title: /media/{marketplaceId}/metadata/mediaGroups
 assetID: 8d8491f1-3577-b247-63b3-b8f1431195db
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediagroups.html
 author: KevinAsgari
-description: " メタデータ/mediaGroups/media/{marketplaceId}"
+description: " /media/{marketplaceId}/metadata/mediaGroups"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 27fbe951063397841e46c9b808f9b89825da05f5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960683"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987852"
 ---
-# <a name="mediamarketplaceidmetadatamediagroups"></a>メタデータ/mediaGroups/media/{marketplaceId}
+# <a name="mediamarketplaceidmetadatamediagroups"></a>/media/{marketplaceId}/metadata/mediaGroups
 指定した EDS バージョンのサポートされているすべての mediaGroups の一覧を示します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -37,7 +37,7 @@ ms.locfileid: "3960683"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(/Media/{marketplaceId} メタデータ/mediaGroups) を取得します。](uri-medialocalemetadatamediagroupsget.md)
+[GET (/media/{marketplaceId}/metadata/mediaGroups)](uri-medialocalemetadatamediagroupsget.md)
 
 &nbsp;&nbsp;指定した EDS バージョンのサポートされているすべての mediaGroups の一覧を示します。
  
@@ -51,7 +51,7 @@ ms.locfileid: "3960683"
  
 ##### <a name="parent"></a>Parent 
 
-[Marketplace Uri](atoc-reference-marketplace.md)
+[マーケットプレース URI](atoc-reference-marketplace.md)
 
   
 <a id="ID4EKC"></a>
@@ -59,12 +59,12 @@ ms.locfileid: "3960683"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

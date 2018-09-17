@@ -7,14 +7,14 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one、c, xsapi
+keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one, c, xsapi
 ms.localizationpriority: medium
 ms.openlocfilehash: ac47d3877c44cfa9891753c49be8a5749fba9185
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964369"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989488"
 ---
 # <a name="introduction-to-the-xbox-live-c-apis"></a>Xbox Live の C++ Api の概要
 
@@ -37,11 +37,11 @@ C++ API は、XSAPI のすべての機能をまだ対応していませんが、
 
 ## <a name="benefits-of-the-c-api-for-xsapi"></a>Xsapi C API のメリット
 
-- タイトルを XSAPI を呼び出すと、メモリ割り当てを制御できます。
-- タイトル XSAPI を呼び出すときの処理スレッドの完全な制御を取得できます。
+- タイトルを XSAPI を呼び出すときにメモリ割り当てを制御できます。
+- により、タイトルを XSAPI を呼び出すときの処理スレッドの完全な制御を取得します。
 - 新しい HTTP ライブラリ、libHttpClient、ゲーム開発者向けに設計されたを使用します。
 
-と共に C++ XSAPI C Api を使用することができますが、C++ Api を使って上記のメリットを得ることするができません。
+と共に C++ XSAPI C Api を使用することができますが、C++ Api を使って上記のメリットを獲得はできません。
 
 ### <a name="managing-memory-allocations"></a>メモリ割り当てを管理します。
 
@@ -66,7 +66,7 @@ C++ API には、呼び出しパターンにより、開発者はスレッド �
 
 XSAPI C Api は、一度に 1 つの機能を移行することをお勧めしますプロジェクトでは、XSAPI の C++ Api と共に使用できます。
 
-C++ Api と C++ Api 同様に、さまざまなエントリ ポイントの一般的なコアの単なるシン ラッパーはであるため、機能が変更する必要があります。 ただし、C Api のみを利用スレッド、カスタムのメモリの管理機能ができます。
+C++ Api と C++ Api 同様に、さまざまなエントリ ポイントの一般的なコアの単なるシン ラッパーはであるため、機能が変更する必要があります。 ただし、C Api のみを利用カスタム メモリとスレッドの管理機能ができます。
 
 > [!IMPORTANT]
 > C++ Api と XSAPI WinRT Api を混在させることはできません。
