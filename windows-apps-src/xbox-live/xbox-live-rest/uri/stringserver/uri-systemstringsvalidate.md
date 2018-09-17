@@ -12,34 +12,34 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 136a5563690bba4f8cbea80fb066a887a6a11fa7
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963883"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988820"
 ---
-# <a name="systemstringsvalidate"></a><span data-ttu-id="c8f11-104">/system/strings/validate</span><span class="sxs-lookup"><span data-stu-id="c8f11-104">/system/strings/validate</span></span>
-<span data-ttu-id="c8f11-105">検証のための文字列の配列にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="c8f11-105">Accesses an array of strings for validation.</span></span> <span data-ttu-id="c8f11-106">これらの Uri のドメインが`client-strings.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="c8f11-106">The domain for these URIs is `client-strings.xboxlive.com`.</span></span>
+# <a name="systemstringsvalidate"></a><span data-ttu-id="deb15-104">/system/strings/validate</span><span class="sxs-lookup"><span data-stu-id="deb15-104">/system/strings/validate</span></span>
+<span data-ttu-id="deb15-105">検証のための文字列の配列にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="deb15-105">Accesses an array of strings for validation.</span></span> <span data-ttu-id="deb15-106">これらの Uri のドメインが`client-strings.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="deb15-106">The domain for these URIs is `client-strings.xboxlive.com`.</span></span>
   
 <a id="ID4EV"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="c8f11-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="c8f11-107">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="deb15-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="deb15-107">Valid methods</span></span>
 
-[<span data-ttu-id="c8f11-108">POST (/システム/文字列/検証)</span><span class="sxs-lookup"><span data-stu-id="c8f11-108">POST (/system/strings/validate)</span></span>](uri-systemstringsvalidatepost.md)
+[<span data-ttu-id="deb15-108">POST (/system/strings/validate)</span><span class="sxs-lookup"><span data-stu-id="deb15-108">POST (/system/strings/validate)</span></span>](uri-systemstringsvalidatepost.md)
 
-<span data-ttu-id="c8f11-109">&nbsp;&nbsp;検証のための文字列の配列を受け取り、同じサイズの結果の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="c8f11-109">&nbsp;&nbsp;Accepts an array of strings for validation and returns an array of results of equal size.</span></span>
+<span data-ttu-id="deb15-109">&nbsp;&nbsp;検証のための文字列の配列を受け取り、同じサイズの結果の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="deb15-109">&nbsp;&nbsp;Accepts an array of strings for validation and returns an array of results of equal size.</span></span>
  
 <a id="ID4E6"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="c8f11-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="c8f11-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="deb15-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="deb15-110">See also</span></span>
  
 <a id="ID4EBB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="c8f11-111">Parent</span><span class="sxs-lookup"><span data-stu-id="c8f11-111">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="deb15-111">Parent</span><span class="sxs-lookup"><span data-stu-id="deb15-111">Parent</span></span> 
 
-[<span data-ttu-id="c8f11-112">システムが Validatation Uri を示す文字列します。</span><span class="sxs-lookup"><span data-stu-id="c8f11-112">System Strings Validatation URIs</span></span>](atoc-reference-systemstringsvalidate.md)
+[<span data-ttu-id="deb15-112">システム文字列の検証 URI</span><span class="sxs-lookup"><span data-stu-id="deb15-112">System Strings Validatation URIs</span></span>](atoc-reference-systemstringsvalidate.md)
 
    

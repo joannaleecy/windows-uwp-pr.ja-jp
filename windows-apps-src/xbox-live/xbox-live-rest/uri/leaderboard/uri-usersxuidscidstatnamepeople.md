@@ -1,9 +1,9 @@
 ---
-title: ユーザー/xuid ({xuid})/scids/{scid}/stats/{statname) そして {すべて | お気に入り}
+title: /users/xuid({xuid})/scids/{scid}/stats/{statname}/people/{all|favorite}
 assetID: 0983dad0-59b7-45b7-505d-603e341fe0cc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidstatnamepeople.html
 author: KevinAsgari
-description: " ユーザー/xuid ({xuid})/scids/{scid}/stats/{statname) そして {すべて | お気に入り}"
+description: " /users/xuid({xuid})/scids/{scid}/stats/{statname}/people/{all|favorite}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,47 +12,47 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 161c7e96faf3ec217aeb188ccb3b5b1e354d217e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964313"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989506"
 ---
-# <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a><span data-ttu-id="9e7a1-104">ユーザー/xuid ({xuid})/scids/{scid}/stats/{statname) そして {すべて | お気に入り}</span><span class="sxs-lookup"><span data-stu-id="9e7a1-104">/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}</span></span>
-<span data-ttu-id="9e7a1-105">ソーシャル (ランク付け) ランキングにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9e7a1-105">Accesses a social (ranked) leaderboard.</span></span>
-<span data-ttu-id="9e7a1-106">これらの Uri のドメインが`leaderboards.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="9e7a1-106">The domain for these URIs is `leaderboards.xboxlive.com`.</span></span>
+# <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a><span data-ttu-id="29475-104">/users/xuid({xuid})/scids/{scid}/stats/{statname}/people/{all|favorite}</span><span class="sxs-lookup"><span data-stu-id="29475-104">/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all|favorite}</span></span>
+<span data-ttu-id="29475-105">ソーシャル (ランク付け) ランキングにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="29475-105">Accesses a social (ranked) leaderboard.</span></span>
+<span data-ttu-id="29475-106">これらの Uri のドメインが`leaderboards.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="29475-106">The domain for these URIs is `leaderboards.xboxlive.com`.</span></span>
 
-  * [<span data-ttu-id="9e7a1-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9e7a1-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="29475-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="29475-107">URI parameters</span></span>](#ID4EV)
 
 <a id="ID4EV"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="9e7a1-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9e7a1-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="29475-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="29475-108">URI parameters</span></span>
 
-| <span data-ttu-id="9e7a1-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="9e7a1-109">Parameter</span></span>| <span data-ttu-id="9e7a1-110">型</span><span class="sxs-lookup"><span data-stu-id="9e7a1-110">Type</span></span>| <span data-ttu-id="9e7a1-111">説明</span><span class="sxs-lookup"><span data-stu-id="9e7a1-111">Description</span></span>|
+| <span data-ttu-id="29475-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="29475-109">Parameter</span></span>| <span data-ttu-id="29475-110">型</span><span class="sxs-lookup"><span data-stu-id="29475-110">Type</span></span>| <span data-ttu-id="29475-111">説明</span><span class="sxs-lookup"><span data-stu-id="29475-111">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="9e7a1-112">xuid</span><span class="sxs-lookup"><span data-stu-id="9e7a1-112">xuid</span></span>| <span data-ttu-id="9e7a1-113">string</span><span class="sxs-lookup"><span data-stu-id="9e7a1-113">string</span></span>| <span data-ttu-id="9e7a1-114">ユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="9e7a1-114">Identifier of the user.</span></span>|
-| <span data-ttu-id="9e7a1-115">scid</span><span class="sxs-lookup"><span data-stu-id="9e7a1-115">scid</span></span>| <span data-ttu-id="9e7a1-116">string</span><span class="sxs-lookup"><span data-stu-id="9e7a1-116">string</span></span>| <span data-ttu-id="9e7a1-117">アクセス対象のリソースが含まれているサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="9e7a1-117">Identifier of the service configuration that contains the resource being accessed.</span></span>|
-| <span data-ttu-id="9e7a1-118">statname</span><span class="sxs-lookup"><span data-stu-id="9e7a1-118">statname</span></span>| <span data-ttu-id="9e7a1-119">string</span><span class="sxs-lookup"><span data-stu-id="9e7a1-119">string</span></span>| <span data-ttu-id="9e7a1-120">アクセス対象のユーザー統計リソースの一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="9e7a1-120">Unique identifier of the user stat resource being accessed.</span></span>|
-| <span data-ttu-id="9e7a1-121">all\ | お気に入り</span><span class="sxs-lookup"><span data-stu-id="9e7a1-121">all\|favorite</span></span>| <span data-ttu-id="9e7a1-122">列挙値</span><span class="sxs-lookup"><span data-stu-id="9e7a1-122">enumeration</span></span>| <span data-ttu-id="9e7a1-123">現在のユーザーの既知のすべての連絡先や、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア) の値、統計をランク付けするかどうか。</span><span class="sxs-lookup"><span data-stu-id="9e7a1-123">Whether to rank the stat values (scores) for all known contacts of the current user or only those contacts designated as favorite people by that user.</span></span>|
+| <span data-ttu-id="29475-112">xuid</span><span class="sxs-lookup"><span data-stu-id="29475-112">xuid</span></span>| <span data-ttu-id="29475-113">string</span><span class="sxs-lookup"><span data-stu-id="29475-113">string</span></span>| <span data-ttu-id="29475-114">ユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="29475-114">Identifier of the user.</span></span>|
+| <span data-ttu-id="29475-115">scid</span><span class="sxs-lookup"><span data-stu-id="29475-115">scid</span></span>| <span data-ttu-id="29475-116">string</span><span class="sxs-lookup"><span data-stu-id="29475-116">string</span></span>| <span data-ttu-id="29475-117">アクセス対象のリソースが含まれているサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="29475-117">Identifier of the service configuration that contains the resource being accessed.</span></span>|
+| <span data-ttu-id="29475-118">statname</span><span class="sxs-lookup"><span data-stu-id="29475-118">statname</span></span>| <span data-ttu-id="29475-119">string</span><span class="sxs-lookup"><span data-stu-id="29475-119">string</span></span>| <span data-ttu-id="29475-120">アクセス対象のユーザー統計リソースの一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="29475-120">Unique identifier of the user stat resource being accessed.</span></span>|
+| <span data-ttu-id="29475-121">all\ | お気に入り</span><span class="sxs-lookup"><span data-stu-id="29475-121">all\|favorite</span></span>| <span data-ttu-id="29475-122">列挙値</span><span class="sxs-lookup"><span data-stu-id="29475-122">enumeration</span></span>| <span data-ttu-id="29475-123">現在のユーザーの既知のすべての連絡先や、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア) の値、統計をランク付けするかどうか。</span><span class="sxs-lookup"><span data-stu-id="29475-123">Whether to rank the stat values (scores) for all known contacts of the current user or only those contacts designated as favorite people by that user.</span></span>|
 
 <a id="ID4EOC"></a>
 
 
-## <a name="valid-methods"></a><span data-ttu-id="9e7a1-124">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="9e7a1-124">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="29475-124">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="29475-124">Valid methods</span></span>
 
-[<span data-ttu-id="9e7a1-125">GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})</span><span class="sxs-lookup"><span data-stu-id="9e7a1-125">GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})</span></span>](uri-usersxuidscidstatnamepeopleget.md)
+[<span data-ttu-id="29475-125">GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})</span><span class="sxs-lookup"><span data-stu-id="29475-125">GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})</span></span>](uri-usersxuidscidstatnamepeopleget.md)
 
-<span data-ttu-id="9e7a1-126">&nbsp;&nbsp;ランキング、統計の現在のユーザーのいずれかのすべての既知連絡先や、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア) の値によって、ソーシャル ランキングを返します。</span><span class="sxs-lookup"><span data-stu-id="9e7a1-126">&nbsp;&nbsp;Returns a social leaderboard by ranking the stat values (scores) for either all known contacts of the current user or only those contacts designated as favorite people by that user.</span></span>
+<span data-ttu-id="29475-126">&nbsp;&nbsp;ランキング、統計値のいずれかすべての既知の連絡先の現在のユーザーや、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア)、ソーシャル ランキングを返します。</span><span class="sxs-lookup"><span data-stu-id="29475-126">&nbsp;&nbsp;Returns a social leaderboard by ranking the stat values (scores) for either all known contacts of the current user or only those contacts designated as favorite people by that user.</span></span>
 
 <a id="ID4EYC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="9e7a1-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="9e7a1-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="29475-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="29475-127">See also</span></span>
 
 <a id="ID4E1C"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="9e7a1-128">Parent</span><span class="sxs-lookup"><span data-stu-id="9e7a1-128">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="29475-128">Parent</span><span class="sxs-lookup"><span data-stu-id="29475-128">Parent</span></span>
 
-[<span data-ttu-id="9e7a1-129">ランキングの Uri</span><span class="sxs-lookup"><span data-stu-id="9e7a1-129">Leaderboards URIs</span></span>](atoc-reference-leaderboard.md)
+[<span data-ttu-id="29475-129">ランキング URI</span><span class="sxs-lookup"><span data-stu-id="29475-129">Leaderboards URIs</span></span>](atoc-reference-leaderboard.md)

@@ -11,33 +11,33 @@ ms.technology: uwp
 keywords: Windows 10, UWP, スレッド, スレッド プール
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d7fc361e446207c8e14f83ca3f663bd5072e6e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963454"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990013"
 ---
-# <a name="submit-a-work-item-to-the-thread-pool"></a><span data-ttu-id="278eb-104">スレッド プールへの作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="278eb-104">Submit a work item to the thread pool</span></span>
+# <a name="submit-a-work-item-to-the-thread-pool"></a><span data-ttu-id="ecae0-104">スレッド プールへの作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="ecae0-104">Submit a work item to the thread pool</span></span>
 
-<span data-ttu-id="278eb-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="278eb-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="278eb-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="278eb-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
+<span data-ttu-id="ecae0-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="ecae0-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="ecae0-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="ecae0-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-<span data-ttu-id="278eb-107">\*\* 重要な API \*\*</span><span class="sxs-lookup"><span data-stu-id="278eb-107">\*\* Important APIs \*\*</span></span>
+<span data-ttu-id="ecae0-107">\*\* 重要な API \*\*</span><span class="sxs-lookup"><span data-stu-id="ecae0-107">\*\* Important APIs \*\*</span></span>
 
--   [**<span data-ttu-id="278eb-108">RunAsync</span><span class="sxs-lookup"><span data-stu-id="278eb-108">RunAsync</span></span>**](https://msdn.microsoft.com/library/windows/apps/BR230593)
--   [**<span data-ttu-id="278eb-109">IAsyncAction</span><span class="sxs-lookup"><span data-stu-id="278eb-109">IAsyncAction</span></span>**](https://msdn.microsoft.com/library/windows/apps/BR206580)
+-   [**<span data-ttu-id="ecae0-108">RunAsync</span><span class="sxs-lookup"><span data-stu-id="ecae0-108">RunAsync</span></span>**](https://msdn.microsoft.com/library/windows/apps/BR230593)
+-   [**<span data-ttu-id="ecae0-109">IAsyncAction</span><span class="sxs-lookup"><span data-stu-id="ecae0-109">IAsyncAction</span></span>**](https://msdn.microsoft.com/library/windows/apps/BR206580)
 
-<span data-ttu-id="278eb-110">スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="278eb-110">Learn how to do work in a separate thread by submitting a work item to the thread pool.</span></span> <span data-ttu-id="278eb-111">これによって、非常に時間のかかる作業を実行しながら UI の応答性を確保でき、また複数のタスクを並行して実行することができます。</span><span class="sxs-lookup"><span data-stu-id="278eb-111">Use this to maintain a responsive UI while still completing work that takes a noticeable amount of time, and use it to complete multiple tasks in parallel.</span></span>
+<span data-ttu-id="ecae0-110">スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ecae0-110">Learn how to do work in a separate thread by submitting a work item to the thread pool.</span></span> <span data-ttu-id="ecae0-111">これによって、非常に時間のかかる作業を実行しながら UI の応答性を確保でき、また複数のタスクを並行して実行することができます。</span><span class="sxs-lookup"><span data-stu-id="ecae0-111">Use this to maintain a responsive UI while still completing work that takes a noticeable amount of time, and use it to complete multiple tasks in parallel.</span></span>
 
-## <a name="create-and-submit-the-work-item"></a><span data-ttu-id="278eb-112">作業項目の作成と送信</span><span class="sxs-lookup"><span data-stu-id="278eb-112">Create and submit the work item</span></span>
+## <a name="create-and-submit-the-work-item"></a><span data-ttu-id="ecae0-112">作業項目の作成と送信</span><span class="sxs-lookup"><span data-stu-id="ecae0-112">Create and submit the work item</span></span>
 
-<span data-ttu-id="278eb-113">[**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) を呼び出して作業項目を作成します。</span><span class="sxs-lookup"><span data-stu-id="278eb-113">Create a work item by calling [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593).</span></span> <span data-ttu-id="278eb-114">作業を実行するデリゲートを指定します (ラムダやデリゲート関数を使うことができます)。</span><span class="sxs-lookup"><span data-stu-id="278eb-114">Supply a delegate to do the work (you can use a lambda, or a delegate function).</span></span> <span data-ttu-id="278eb-115">**RunAsync** が [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) オブジェクトを返すことに注意してください。このオブジェクトは次の手順で使うために格納しておきます。</span><span class="sxs-lookup"><span data-stu-id="278eb-115">Note that **RunAsync** returns an [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) object; store this object for use in the next step.</span></span>
+<span data-ttu-id="ecae0-113">[**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) を呼び出して作業項目を作成します。</span><span class="sxs-lookup"><span data-stu-id="ecae0-113">Create a work item by calling [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593).</span></span> <span data-ttu-id="ecae0-114">作業を実行するデリゲートを指定します (ラムダやデリゲート関数を使うことができます)。</span><span class="sxs-lookup"><span data-stu-id="ecae0-114">Supply a delegate to do the work (you can use a lambda, or a delegate function).</span></span> <span data-ttu-id="ecae0-115">**RunAsync** が [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) オブジェクトを返すことに注意してください。このオブジェクトは次の手順で使うために格納しておきます。</span><span class="sxs-lookup"><span data-stu-id="ecae0-115">Note that **RunAsync** returns an [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) object; store this object for use in the next step.</span></span>
 
-<span data-ttu-id="278eb-116">3 つのバージョンの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) を使うことができるため、必要に応じて作業項目の優先度を指定し、他の作業項目と同時に実行するかどうかを制御できます。</span><span class="sxs-lookup"><span data-stu-id="278eb-116">Three versions of [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) are available so that you can optionally specify the priority of the work item, and control whether it runs concurrently with other work items.</span></span>
+<span data-ttu-id="ecae0-116">3 つのバージョンの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) を使うことができるため、必要に応じて作業項目の優先度を指定し、他の作業項目と同時に実行するかどうかを制御できます。</span><span class="sxs-lookup"><span data-stu-id="ecae0-116">Three versions of [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) are available so that you can optionally specify the priority of the work item, and control whether it runs concurrently with other work items.</span></span>
 
 >[!NOTE]
-><span data-ttu-id="278eb-117">[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)を使用して、UI スレッドにアクセスし、作業項目の進捗状況を表示します。</span><span class="sxs-lookup"><span data-stu-id="278eb-117">Use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show progress from the work item.</span></span>
+><span data-ttu-id="ecae0-117">[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)を使用して、UI スレッドにアクセスし、作業項目の進捗状況を表示します。</span><span class="sxs-lookup"><span data-stu-id="ecae0-117">Use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show progress from the work item.</span></span>
 
-<span data-ttu-id="278eb-118">次の例では作業項目を作成し、作業を実行するラムダを指定します。</span><span class="sxs-lookup"><span data-stu-id="278eb-118">The following example creates a work item and supplies a lambda to do the work:</span></span>
+<span data-ttu-id="ecae0-118">次の例では作業項目を作成し、作業を実行するラムダを指定します。</span><span class="sxs-lookup"><span data-stu-id="ecae0-118">The following example creates a work item and supplies a lambda to do the work:</span></span>
 
 ```csharp
 // The nth prime number to find.
@@ -273,15 +273,15 @@ auto asyncAction = ThreadPool::RunAsync(workItem);
 m_workItem = asyncAction;
 ```
 
-<span data-ttu-id="278eb-119">[**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) が呼び出された後に、スレッド プールで作業項目がキューに入れられ、スレッドが使用可能になったときに実行されます。</span><span class="sxs-lookup"><span data-stu-id="278eb-119">Following the call to [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), the work item is queued by the thread pool and runs when a thread becomes available.</span></span> <span data-ttu-id="278eb-120">スレッド プールの作業項目は非同期に実行されます。任意の順番で実行されることがあるため、作業項目は単独で機能するようにしてください。</span><span class="sxs-lookup"><span data-stu-id="278eb-120">Thread pool work items run asynchronously and they can run in any order, so make sure your work items function independently.</span></span>
+<span data-ttu-id="ecae0-119">[**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) が呼び出された後に、スレッド プールで作業項目がキューに入れられ、スレッドが使用可能になったときに実行されます。</span><span class="sxs-lookup"><span data-stu-id="ecae0-119">Following the call to [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), the work item is queued by the thread pool and runs when a thread becomes available.</span></span> <span data-ttu-id="ecae0-120">スレッド プールの作業項目は非同期に実行されます。任意の順番で実行されることがあるため、作業項目は単独で機能するようにしてください。</span><span class="sxs-lookup"><span data-stu-id="ecae0-120">Thread pool work items run asynchronously and they can run in any order, so make sure your work items function independently.</span></span>
 
-<span data-ttu-id="278eb-121">作業項目は [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) プロパティをチェックし、作業項目が取り消されている場合は終了することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="278eb-121">Note that the work item checks the [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) property, and exits if the work item is cancelled.</span></span>
+<span data-ttu-id="ecae0-121">作業項目は [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) プロパティをチェックし、作業項目が取り消されている場合は終了することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="ecae0-121">Note that the work item checks the [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) property, and exits if the work item is cancelled.</span></span>
 
-## <a name="handle-work-item-completion"></a><span data-ttu-id="278eb-122">作業項目の完了の処理</span><span class="sxs-lookup"><span data-stu-id="278eb-122">Handle work item completion</span></span>
+## <a name="handle-work-item-completion"></a><span data-ttu-id="ecae0-122">作業項目の完了の処理</span><span class="sxs-lookup"><span data-stu-id="ecae0-122">Handle work item completion</span></span>
 
-<span data-ttu-id="278eb-123">作業項目の [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) プロパティを設定することで、完了ハンドラーを指定します。</span><span class="sxs-lookup"><span data-stu-id="278eb-123">Provide a completion handler by setting the [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) property of the work item.</span></span> <span data-ttu-id="278eb-124">作業項目の完了を処理するデリゲートを指定します (ラムダやデリゲート関数を使うことができます)。</span><span class="sxs-lookup"><span data-stu-id="278eb-124">Supply a delegate (you can use a lambda or a delegate function) to handle work item completion.</span></span> <span data-ttu-id="278eb-125">たとえば、UI スレッドにアクセスしたり、結果を表示したりするには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使います。</span><span class="sxs-lookup"><span data-stu-id="278eb-125">For example, use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show the result.</span></span>
+<span data-ttu-id="ecae0-123">作業項目の [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) プロパティを設定することで、完了ハンドラーを指定します。</span><span class="sxs-lookup"><span data-stu-id="ecae0-123">Provide a completion handler by setting the [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) property of the work item.</span></span> <span data-ttu-id="ecae0-124">作業項目の完了を処理するデリゲートを指定します (ラムダやデリゲート関数を使うことができます)。</span><span class="sxs-lookup"><span data-stu-id="ecae0-124">Supply a delegate (you can use a lambda or a delegate function) to handle work item completion.</span></span> <span data-ttu-id="ecae0-125">たとえば、UI スレッドにアクセスしたり、結果を表示したりするには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使います。</span><span class="sxs-lookup"><span data-stu-id="ecae0-125">For example, use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show the result.</span></span>
 
-<span data-ttu-id="278eb-126">次の例では、手順 1. で送信した作業項目の結果を使って UI を更新します。</span><span class="sxs-lookup"><span data-stu-id="278eb-126">The following example updates the UI with the result of the work item submitted in step 1:</span></span>
+<span data-ttu-id="ecae0-126">次の例では、手順 1. で送信した作業項目の結果を使って UI を更新します。</span><span class="sxs-lookup"><span data-stu-id="ecae0-126">The following example updates the UI with the result of the work item submitted in step 1:</span></span>
 
 ```cpp
 asyncAction->Completed = ref new AsyncActionCompletedHandler(
@@ -350,15 +350,15 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 });
 ```
 
-<span data-ttu-id="278eb-127">完了ハンドラーは、UI 更新をディスパッチする前に作業項目が取り消されたかどうかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="278eb-127">Note that the completion handler checks whether the work item was cancelled before dispatching a UI update.</span></span>
+<span data-ttu-id="ecae0-127">完了ハンドラーは、UI 更新をディスパッチする前に作業項目が取り消されたかどうかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="ecae0-127">Note that the completion handler checks whether the work item was cancelled before dispatching a UI update.</span></span>
 
-## <a name="summary-and-next-steps"></a><span data-ttu-id="278eb-128">要約と次の手順</span><span class="sxs-lookup"><span data-stu-id="278eb-128">Summary and next steps</span></span>
+## <a name="summary-and-next-steps"></a><span data-ttu-id="ecae0-128">要約と次の手順</span><span class="sxs-lookup"><span data-stu-id="ecae0-128">Summary and next steps</span></span>
 
-<span data-ttu-id="278eb-129">詳しくは、Windows 8.1 用に記述された[スレッド プール作業項目のサンプルの作成に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=328569)でこのクイックスタートのコードをダウンロードし、win\_unap Windows 10 アプリでソース コードを再利用してください。</span><span class="sxs-lookup"><span data-stu-id="278eb-129">You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](http://go.microsoft.com/fwlink/p/?LinkID=328569) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.</span></span>
+<span data-ttu-id="ecae0-129">詳しくは、Windows 8.1 用に記述された[スレッド プール作業項目のサンプルの作成に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=328569)でこのクイックスタートのコードをダウンロードし、win\_unap Windows 10 アプリでソース コードを再利用してください。</span><span class="sxs-lookup"><span data-stu-id="ecae0-129">You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](http://go.microsoft.com/fwlink/p/?LinkID=328569) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.</span></span>
 
-## <a name="related-topics"></a><span data-ttu-id="278eb-130">関連トピック</span><span class="sxs-lookup"><span data-stu-id="278eb-130">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="ecae0-130">関連トピック</span><span class="sxs-lookup"><span data-stu-id="ecae0-130">Related topics</span></span>
 
-* [<span data-ttu-id="278eb-131">スレッド プールへの作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="278eb-131">Submit a work item to the thread pool</span></span>](submit-a-work-item-to-the-thread-pool.md)
-* [<span data-ttu-id="278eb-132">スレッド プールを使うためのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="278eb-132">Best practices for using the thread pool</span></span>](best-practices-for-using-the-thread-pool.md)
-* [<span data-ttu-id="278eb-133">タイマーを使った作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="278eb-133">Use a timer to submit a work item</span></span>](use-a-timer-to-submit-a-work-item.md)
+* [<span data-ttu-id="ecae0-131">スレッド プールへの作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="ecae0-131">Submit a work item to the thread pool</span></span>](submit-a-work-item-to-the-thread-pool.md)
+* [<span data-ttu-id="ecae0-132">スレッド プールを使うためのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="ecae0-132">Best practices for using the thread pool</span></span>](best-practices-for-using-the-thread-pool.md)
+* [<span data-ttu-id="ecae0-133">タイマーを使った作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="ecae0-133">Use a timer to submit a work item</span></span>](use-a-timer-to-submit-a-work-item.md)
  

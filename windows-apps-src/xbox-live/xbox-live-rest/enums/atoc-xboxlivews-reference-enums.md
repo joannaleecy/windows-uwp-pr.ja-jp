@@ -1,9 +1,9 @@
 ---
-title: JavaScript Object Notation (JSON) オブジェクトに使用される列挙型
+title: JavaScript Object Notation (JSON) オブジェクトで使用される列挙型
 assetID: 8aa53782-05fa-9980-87cd-0cac8346756e
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-enums.html
 author: KevinAsgari
-description: " JavaScript Object Notation (JSON) オブジェクトに使用される列挙型"
+description: " JavaScript Object Notation (JSON) オブジェクトで使用される列挙型"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,63 +12,63 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e5490ec5b940f70180d2830e7caaed9a9926f50
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959179"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989692"
 ---
-# <a name="enumerations-used-in-javascript-object-notation-json-objects"></a><span data-ttu-id="18a16-104">JavaScript Object Notation (JSON) オブジェクトに使用される列挙型</span><span class="sxs-lookup"><span data-stu-id="18a16-104">Enumerations Used In JavaScript Object Notation (JSON) Objects</span></span>
+# <a name="enumerations-used-in-javascript-object-notation-json-objects"></a><span data-ttu-id="4efb2-104">JavaScript Object Notation (JSON) オブジェクトで使用される列挙型</span><span class="sxs-lookup"><span data-stu-id="4efb2-104">Enumerations Used In JavaScript Object Notation (JSON) Objects</span></span>
  
-<span data-ttu-id="18a16-105">Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。</span><span class="sxs-lookup"><span data-stu-id="18a16-105">Xbox Live Services defines JSON objects that are used in requests to, and responses from, the service.</span></span> <span data-ttu-id="18a16-106">サービスによって使われる多くの JavaScript Object Notation (JSON) オブジェクトには、JavaScript Object Notation (JSON) オブジェクトに表示されるフィールドの有効な値を指定する列挙体が関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="18a16-106">Many JavaScript Object Notation (JSON) objects used by the service have associated enumerations that specify allowed values for fields appearing in the JavaScript Object Notation (JSON) objects.</span></span> <span data-ttu-id="18a16-107">このセクションでは、JavaScript Object Notation (JSON) オブジェクトで使用する列挙体で示します。</span><span class="sxs-lookup"><span data-stu-id="18a16-107">This section lists the enumerations used in the JavaScript Object Notation (JSON) objects.</span></span> 
+<span data-ttu-id="4efb2-105">Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。</span><span class="sxs-lookup"><span data-stu-id="4efb2-105">Xbox Live Services defines JSON objects that are used in requests to, and responses from, the service.</span></span> <span data-ttu-id="4efb2-106">サービスによって使われる多くの JavaScript Object Notation (JSON) オブジェクトには、JavaScript Object Notation (JSON) オブジェクトに表示されるフィールドの有効な値を指定する列挙体が関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="4efb2-106">Many JavaScript Object Notation (JSON) objects used by the service have associated enumerations that specify allowed values for fields appearing in the JavaScript Object Notation (JSON) objects.</span></span> <span data-ttu-id="4efb2-107">このセクションでは、JavaScript Object Notation (JSON) オブジェクトで使用する列挙体で示します。</span><span class="sxs-lookup"><span data-stu-id="4efb2-107">This section lists the enumerations used in the JavaScript Object Notation (JSON) objects.</span></span> 
  
 <a id="ID4EJB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="18a16-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="18a16-108">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="4efb2-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="4efb2-108">In this section</span></span>
 
-[<span data-ttu-id="18a16-109">GameClipSource 列挙</span><span class="sxs-lookup"><span data-stu-id="18a16-109">GameClipSource Enumeration</span></span>](gvr-enum-gameclipsource.md)
+[<span data-ttu-id="4efb2-109">GameClipSource 列挙型</span><span class="sxs-lookup"><span data-stu-id="4efb2-109">GameClipSource Enumeration</span></span>](gvr-enum-gameclipsource.md)
 
-<span data-ttu-id="18a16-110">&nbsp;&nbsp;GameClipSource 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="18a16-110">&nbsp;&nbsp;Details the GameClipSource enumeration.</span></span> 
+<span data-ttu-id="4efb2-110">&nbsp;&nbsp;GameClipSource 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4efb2-110">&nbsp;&nbsp;Details the GameClipSource enumeration.</span></span> 
 
-[<span data-ttu-id="18a16-111">GameClipState 列挙</span><span class="sxs-lookup"><span data-stu-id="18a16-111">GameClipState Enumeration</span></span>](gvr-enum-gameclipstate.md)
+[<span data-ttu-id="4efb2-111">GameClipState 列挙型</span><span class="sxs-lookup"><span data-stu-id="4efb2-111">GameClipState Enumeration</span></span>](gvr-enum-gameclipstate.md)
 
-<span data-ttu-id="18a16-112">&nbsp;&nbsp;GameClipState 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="18a16-112">&nbsp;&nbsp;Details the GameClipState enumeration.</span></span> 
+<span data-ttu-id="4efb2-112">&nbsp;&nbsp;GameClipState 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4efb2-112">&nbsp;&nbsp;Details the GameClipState enumeration.</span></span> 
 
-[<span data-ttu-id="18a16-113">GameClipType 列挙</span><span class="sxs-lookup"><span data-stu-id="18a16-113">GameClipType Enumeration</span></span>](gvr-enum-gamecliptypes.md)
+[<span data-ttu-id="4efb2-113">GameClipType 列挙型</span><span class="sxs-lookup"><span data-stu-id="4efb2-113">GameClipType Enumeration</span></span>](gvr-enum-gamecliptypes.md)
 
-<span data-ttu-id="18a16-114">&nbsp;&nbsp;GameClipTypes 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="18a16-114">&nbsp;&nbsp;Details the GameClipTypes enumeration.</span></span> 
+<span data-ttu-id="4efb2-114">&nbsp;&nbsp;GameClipTypes 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4efb2-114">&nbsp;&nbsp;Details the GameClipTypes enumeration.</span></span> 
 
-[<span data-ttu-id="18a16-115">GameClipUriType 列挙</span><span class="sxs-lookup"><span data-stu-id="18a16-115">GameClipUriType Enumeration</span></span>](gvr-enum-gameclipuritype.md)
+[<span data-ttu-id="4efb2-115">GameClipUriType 列挙型</span><span class="sxs-lookup"><span data-stu-id="4efb2-115">GameClipUriType Enumeration</span></span>](gvr-enum-gameclipuritype.md)
 
-<span data-ttu-id="18a16-116">&nbsp;&nbsp;GameClipUriType 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="18a16-116">&nbsp;&nbsp;Details the GameClipUriType enumeration.</span></span> 
+<span data-ttu-id="4efb2-116">&nbsp;&nbsp;GameClipUriType 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4efb2-116">&nbsp;&nbsp;Details the GameClipUriType enumeration.</span></span> 
 
-[<span data-ttu-id="18a16-117">GameClipVisibility 列挙</span><span class="sxs-lookup"><span data-stu-id="18a16-117">GameClipVisibility Enumeration</span></span>](gvr-enum-gameclipvisibility.md)
+[<span data-ttu-id="4efb2-117">GameClipVisibility 列挙型</span><span class="sxs-lookup"><span data-stu-id="4efb2-117">GameClipVisibility Enumeration</span></span>](gvr-enum-gameclipvisibility.md)
 
-<span data-ttu-id="18a16-118">&nbsp;&nbsp;GameClipVisibility 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="18a16-118">&nbsp;&nbsp;Details the GameClipVisibility enumeration.</span></span> 
+<span data-ttu-id="4efb2-118">&nbsp;&nbsp;GameClipVisibility 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4efb2-118">&nbsp;&nbsp;Details the GameClipVisibility enumeration.</span></span> 
 
-[<span data-ttu-id="18a16-119">ThumbnailSource 列挙</span><span class="sxs-lookup"><span data-stu-id="18a16-119">ThumbnailSource Enumeration</span></span>](gvr-enum-thumbnailsource.md)
+[<span data-ttu-id="4efb2-119">ThumbnailSource 列挙型</span><span class="sxs-lookup"><span data-stu-id="4efb2-119">ThumbnailSource Enumeration</span></span>](gvr-enum-thumbnailsource.md)
 
-<span data-ttu-id="18a16-120">&nbsp;&nbsp;ThumbnailSource 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="18a16-120">&nbsp;&nbsp;Details the ThumbnailSource enumeration.</span></span> 
+<span data-ttu-id="4efb2-120">&nbsp;&nbsp;ThumbnailSource 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4efb2-120">&nbsp;&nbsp;Details the ThumbnailSource enumeration.</span></span> 
 
-[<span data-ttu-id="18a16-121">ThumbnailType 列挙</span><span class="sxs-lookup"><span data-stu-id="18a16-121">ThumbnailType Enumeration</span></span>](gvr-enum-thumbnailtype.md)
+[<span data-ttu-id="4efb2-121">ThumbnailType 列挙型</span><span class="sxs-lookup"><span data-stu-id="4efb2-121">ThumbnailType Enumeration</span></span>](gvr-enum-thumbnailtype.md)
 
-<span data-ttu-id="18a16-122">&nbsp;&nbsp;ThumbnailType 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="18a16-122">&nbsp;&nbsp;Details the ThumbnailType enumeration.</span></span> 
+<span data-ttu-id="4efb2-122">&nbsp;&nbsp;ThumbnailType 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4efb2-122">&nbsp;&nbsp;Details the ThumbnailType enumeration.</span></span> 
 
-[<span data-ttu-id="18a16-123">PermissionId 列挙</span><span class="sxs-lookup"><span data-stu-id="18a16-123">PermissionId Enumeration</span></span>](privacy-enum-permissionid.md)
+[<span data-ttu-id="4efb2-123">PermissionId 列挙型</span><span class="sxs-lookup"><span data-stu-id="4efb2-123">PermissionId Enumeration</span></span>](privacy-enum-permissionid.md)
 
-<span data-ttu-id="18a16-124">&nbsp;&nbsp;PermissionId 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="18a16-124">&nbsp;&nbsp;Details the PermissionId enumeration.</span></span> 
+<span data-ttu-id="4efb2-124">&nbsp;&nbsp;PermissionId 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4efb2-124">&nbsp;&nbsp;Details the PermissionId enumeration.</span></span> 
  
 <a id="ID4EGC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="18a16-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="18a16-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4efb2-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="4efb2-125">See also</span></span>
  
 <a id="ID4EIC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="18a16-126">Parent</span><span class="sxs-lookup"><span data-stu-id="18a16-126">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="4efb2-126">Parent</span><span class="sxs-lookup"><span data-stu-id="4efb2-126">Parent</span></span> 
 
-[<span data-ttu-id="18a16-127">Xbox Live サービス RESTful リファレンス</span><span class="sxs-lookup"><span data-stu-id="18a16-127">Xbox Live Services RESTful Reference</span></span>](../atoc-xboxlivews-reference.md)
+[<span data-ttu-id="4efb2-127">Xbox Live サービス RESTful リファレンス</span><span class="sxs-lookup"><span data-stu-id="4efb2-127">Xbox Live Services RESTful Reference</span></span>](../atoc-xboxlivews-reference.md)
 
    

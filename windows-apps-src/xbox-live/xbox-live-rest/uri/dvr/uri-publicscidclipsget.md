@@ -1,9 +1,9 @@
 ---
-title: 取得する (パブリック//global/scids/{scid} クリップ/)
+title: GET (/public/scids/{scid}/clips)
 assetID: 15b3e873-1f96-b1da-2f79-6dac1369a4c0
 permalink: en-us/docs/xboxlive/rest/uri-publicscidclipsget.html
 author: KevinAsgari
-description: " 取得する (パブリック//global/scids/{scid} クリップ/)"
+description: " GET (/public/scids/{scid}/clips)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,61 +12,61 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b945427118122e3b6d52210efc5e1de84a8c8d68
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960159"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987752"
 ---
-# <a name="get-publicscidsscidclips"></a><span data-ttu-id="134ab-104">取得する (パブリック//global/scids/{scid} クリップ/)</span><span class="sxs-lookup"><span data-stu-id="134ab-104">GET (/public/scids/{scid}/clips)</span></span>
-<span data-ttu-id="134ab-105">パブリック クリップを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="134ab-105">List public clips.</span></span> <span data-ttu-id="134ab-106">この URI のドメインが`gameclipsmetadata.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="134ab-106">The domain for this URI is `gameclipsmetadata.xboxlive.com`.</span></span>
+# <a name="get-publicscidsscidclips"></a><span data-ttu-id="44465-104">GET (/public/scids/{scid}/clips)</span><span class="sxs-lookup"><span data-stu-id="44465-104">GET (/public/scids/{scid}/clips)</span></span>
+<span data-ttu-id="44465-105">パブリック クリップを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="44465-105">List public clips.</span></span> <span data-ttu-id="44465-106">この URI のドメインが`gameclipsmetadata.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="44465-106">The domain for this URI is `gameclipsmetadata.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="134ab-107">注釈</span><span class="sxs-lookup"><span data-stu-id="134ab-107">Remarks</span></span>](#ID4EV)
-  * [<span data-ttu-id="134ab-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="134ab-108">URI parameters</span></span>](#ID4ECB)
-  * [<span data-ttu-id="134ab-109">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="134ab-109">Query string parameters</span></span>](#ID4ENB)
+  * [<span data-ttu-id="44465-107">注釈</span><span class="sxs-lookup"><span data-stu-id="44465-107">Remarks</span></span>](#ID4EV)
+  * [<span data-ttu-id="44465-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="44465-108">URI parameters</span></span>](#ID4ECB)
+  * [<span data-ttu-id="44465-109">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="44465-109">Query string parameters</span></span>](#ID4ENB)
  
 <a id="ID4EV"></a>
 
  
-## <a name="remarks"></a><span data-ttu-id="134ab-110">注釈</span><span class="sxs-lookup"><span data-stu-id="134ab-110">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="44465-110">注釈</span><span class="sxs-lookup"><span data-stu-id="44465-110">Remarks</span></span>
  
-<span data-ttu-id="134ab-111">この API は、さまざまな方法は、パブリック一覧クリップにできます。</span><span class="sxs-lookup"><span data-stu-id="134ab-111">This API allows for various ways to list clips that are public.</span></span> <span data-ttu-id="134ab-112">クリップの一覧に基づいて返されたプライバシー チェックと要求元の XUID に対してコンテンツの分離チェックします。</span><span class="sxs-lookup"><span data-stu-id="134ab-112">The list of clips is returned based on privacy checks and content isolation checks against the requesting XUID.</span></span>
+<span data-ttu-id="44465-111">この API は、さまざまな方法は、パブリック一覧クリップにできます。</span><span class="sxs-lookup"><span data-stu-id="44465-111">This API allows for various ways to list clips that are public.</span></span> <span data-ttu-id="44465-112">クリップの一覧に基づいて返されたプライバシー チェックと要求元の XUID に対してコンテンツの分離チェックします。</span><span class="sxs-lookup"><span data-stu-id="44465-112">The list of clips is returned based on privacy checks and content isolation checks against the requesting XUID.</span></span>
  
-<span data-ttu-id="134ab-113">クエリは、サービス構成 id (SCID) ごとに最適化されます。</span><span class="sxs-lookup"><span data-stu-id="134ab-113">Queries are optimized per service configuration identifier (SCID).</span></span> <span data-ttu-id="134ab-114">さらにフィルターを使ってまたは以下に示す既定値以外の並べ替え順序を指定するいくつかの状況で長い時間がかかるに戻ります。</span><span class="sxs-lookup"><span data-stu-id="134ab-114">Specifying further filters or sort orders other than the defaults listed below can in some circumstances take longer to return.</span></span> <span data-ttu-id="134ab-115">これは、ビデオのセットの大規模なより明確です。</span><span class="sxs-lookup"><span data-stu-id="134ab-115">This is more evident for larger sets of videos.</span></span> <span data-ttu-id="134ab-116">クエリは昇順の並べ替え順序を指定できません。</span><span class="sxs-lookup"><span data-stu-id="134ab-116">Queries cannot specify an ascending sort order.</span></span>
+<span data-ttu-id="44465-113">クエリは、サービス構成 id (SCID) ごとに最適化されます。</span><span class="sxs-lookup"><span data-stu-id="44465-113">Queries are optimized per service configuration identifier (SCID).</span></span> <span data-ttu-id="44465-114">さらにフィルターを使ってまたは以下に示す既定値以外の並べ替え順序を指定するいくつかの状況で長い時間がかかるに戻ります。</span><span class="sxs-lookup"><span data-stu-id="44465-114">Specifying further filters or sort orders other than the defaults listed below can in some circumstances take longer to return.</span></span> <span data-ttu-id="44465-115">これは、ビデオのセットの大規模なより明確です。</span><span class="sxs-lookup"><span data-stu-id="44465-115">This is more evident for larger sets of videos.</span></span> <span data-ttu-id="44465-116">クエリは昇順の並べ替え順序を指定できません。</span><span class="sxs-lookup"><span data-stu-id="44465-116">Queries cannot specify an ascending sort order.</span></span>
  
-<span data-ttu-id="134ab-117">修飾子は、公開クリップを特定のコレクションを取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="134ab-117">The qualifier is required to get to the specific collection ofpublic clips.</span></span> <span data-ttu-id="134ab-118">要求元のユーザーに要求された SCID にアクセスする必要があります、そうしないと http/403 が返されます。</span><span class="sxs-lookup"><span data-stu-id="134ab-118">The requesting user must have access to the requested SCID, otherwise HTTP 403 will be returned.</span></span>
+<span data-ttu-id="44465-117">修飾子は、公開クリップを特定のコレクションを取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="44465-117">The qualifier is required to get to the specific collection ofpublic clips.</span></span> <span data-ttu-id="44465-118">要求元のユーザーに要求された SCID にアクセスする必要があります、そうしないと http/403 が返されます。</span><span class="sxs-lookup"><span data-stu-id="44465-118">The requesting user must have access to the requested SCID, otherwise HTTP 403 will be returned.</span></span>
   
 <a id="ID4ECB"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="134ab-119">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="134ab-119">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="44465-119">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="44465-119">URI parameters</span></span>
  
-| <span data-ttu-id="134ab-120">パラメーター</span><span class="sxs-lookup"><span data-stu-id="134ab-120">Parameter</span></span>| <span data-ttu-id="134ab-121">型</span><span class="sxs-lookup"><span data-stu-id="134ab-121">Type</span></span>| <span data-ttu-id="134ab-122">説明</span><span class="sxs-lookup"><span data-stu-id="134ab-122">Description</span></span>| 
+| <span data-ttu-id="44465-120">パラメーター</span><span class="sxs-lookup"><span data-stu-id="44465-120">Parameter</span></span>| <span data-ttu-id="44465-121">型</span><span class="sxs-lookup"><span data-stu-id="44465-121">Type</span></span>| <span data-ttu-id="44465-122">説明</span><span class="sxs-lookup"><span data-stu-id="44465-122">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="134ab-123">scid</span><span class="sxs-lookup"><span data-stu-id="134ab-123">scid</span></span>| <span data-ttu-id="134ab-124">string</span><span class="sxs-lookup"><span data-stu-id="134ab-124">string</span></span>| <span data-ttu-id="134ab-125">パブリック クリップの主要なサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="134ab-125">The primary service configuration identifier of the public clips.</span></span>| 
-| <span data-ttu-id="134ab-126">タイトル id</span><span class="sxs-lookup"><span data-stu-id="134ab-126">titleid</span></span>| <span data-ttu-id="134ab-127">string</span><span class="sxs-lookup"><span data-stu-id="134ab-127">string</span></span>| <span data-ttu-id="134ab-128">パブリック クリップのタイトル Id。</span><span class="sxs-lookup"><span data-stu-id="134ab-128">The titleId of the public clips.</span></span> <span data-ttu-id="134ab-129">SCID と同じ URI で指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="134ab-129">Cannot be specified in the same URI as the SCID.</span></span> <span data-ttu-id="134ab-130">指定した場合はプライマリー SCID を検索するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="134ab-130">If specified, will be used to look up the primary SCID.</span></span>| 
+| <span data-ttu-id="44465-123">scid</span><span class="sxs-lookup"><span data-stu-id="44465-123">scid</span></span>| <span data-ttu-id="44465-124">string</span><span class="sxs-lookup"><span data-stu-id="44465-124">string</span></span>| <span data-ttu-id="44465-125">パブリック クリップの主要なサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="44465-125">The primary service configuration identifier of the public clips.</span></span>| 
+| <span data-ttu-id="44465-126">タイトル id</span><span class="sxs-lookup"><span data-stu-id="44465-126">titleid</span></span>| <span data-ttu-id="44465-127">string</span><span class="sxs-lookup"><span data-stu-id="44465-127">string</span></span>| <span data-ttu-id="44465-128">パブリック クリップのタイトル Id。</span><span class="sxs-lookup"><span data-stu-id="44465-128">The titleId of the public clips.</span></span> <span data-ttu-id="44465-129">SCID と同じ URI で指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="44465-129">Cannot be specified in the same URI as the SCID.</span></span> <span data-ttu-id="44465-130">指定した場合はプライマリー SCID を検索するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="44465-130">If specified, will be used to look up the primary SCID.</span></span>| 
   
 <a id="ID4ENB"></a>
 
  
-## <a name="query-string-parameters"></a><span data-ttu-id="134ab-131">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="134ab-131">Query string parameters</span></span>
+## <a name="query-string-parameters"></a><span data-ttu-id="44465-131">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="44465-131">Query string parameters</span></span>
  
-| <span data-ttu-id="134ab-132">パラメーター</span><span class="sxs-lookup"><span data-stu-id="134ab-132">Parameter</span></span>| <span data-ttu-id="134ab-133">型</span><span class="sxs-lookup"><span data-stu-id="134ab-133">Type</span></span>| <span data-ttu-id="134ab-134">説明</span><span class="sxs-lookup"><span data-stu-id="134ab-134">Description</span></span>| 
+| <span data-ttu-id="44465-132">パラメーター</span><span class="sxs-lookup"><span data-stu-id="44465-132">Parameter</span></span>| <span data-ttu-id="44465-133">型</span><span class="sxs-lookup"><span data-stu-id="44465-133">Type</span></span>| <span data-ttu-id="44465-134">説明</span><span class="sxs-lookup"><span data-stu-id="44465-134">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | 
-| <b><span data-ttu-id="134ab-135">? achievementId = {achievementId}</span><span class="sxs-lookup"><span data-stu-id="134ab-135">?achievementId={achievementId}</span></span></b>| <span data-ttu-id="134ab-136">最新のクリップが指定した<b>achievementId</b>に一致します。</span><span class="sxs-lookup"><span data-stu-id="134ab-136">Most recent clips matching the specified <b>achievementId</b>.</span></span>| <span data-ttu-id="134ab-137">追加の並べ替え/フィルタ リングはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="134ab-137">Additional sorting/filtering is not supported.</span></span>| 
-| <b><span data-ttu-id="134ab-138">? greatestMomentId = {greatestMomentId}</span><span class="sxs-lookup"><span data-stu-id="134ab-138">?greatestMomentId={greatestMomentId}</span></span></b>| <span data-ttu-id="134ab-139">最新のクリップが指定した<b>greatestMomentId</b>に一致します。</span><span class="sxs-lookup"><span data-stu-id="134ab-139">Most recent clips matching the specified <b>greatestMomentId</b>.</span></span>| <span data-ttu-id="134ab-140">追加の並べ替え/フィルタ リングはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="134ab-140">Additional sorting/filtering is not supported.</span></span>| 
-| <b><span data-ttu-id="134ab-141">? 修飾子 = 作成</span><span class="sxs-lookup"><span data-stu-id="134ab-141">?qualifier=created</span></span> </b>| <span data-ttu-id="134ab-142">Most Recent</span><span class="sxs-lookup"><span data-stu-id="134ab-142">Most Recent</span></span>| <span data-ttu-id="134ab-143">必須。</span><span class="sxs-lookup"><span data-stu-id="134ab-143">Required.</span></span>| 
+| <b><span data-ttu-id="44465-135">? achievementId = {achievementId}</span><span class="sxs-lookup"><span data-stu-id="44465-135">?achievementId={achievementId}</span></span></b>| <span data-ttu-id="44465-136">最新のクリップが指定した<b>achievementId</b>に一致します。</span><span class="sxs-lookup"><span data-stu-id="44465-136">Most recent clips matching the specified <b>achievementId</b>.</span></span>| <span data-ttu-id="44465-137">その他の並べ替え/フィルタ リングはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="44465-137">Additional sorting/filtering is not supported.</span></span>| 
+| <b><span data-ttu-id="44465-138">? greatestMomentId = {greatestMomentId}</span><span class="sxs-lookup"><span data-stu-id="44465-138">?greatestMomentId={greatestMomentId}</span></span></b>| <span data-ttu-id="44465-139">最新のクリップが指定した<b>greatestMomentId</b>に一致します。</span><span class="sxs-lookup"><span data-stu-id="44465-139">Most recent clips matching the specified <b>greatestMomentId</b>.</span></span>| <span data-ttu-id="44465-140">その他の並べ替え/フィルタ リングはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="44465-140">Additional sorting/filtering is not supported.</span></span>| 
+| <b><span data-ttu-id="44465-141">? 修飾子 = 作成</span><span class="sxs-lookup"><span data-stu-id="44465-141">?qualifier=created</span></span> </b>| <span data-ttu-id="44465-142">Most Recent</span><span class="sxs-lookup"><span data-stu-id="44465-142">Most Recent</span></span>| <span data-ttu-id="44465-143">必須。</span><span class="sxs-lookup"><span data-stu-id="44465-143">Required.</span></span>| 
   
 <a id="ID4EDD"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="134ab-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="134ab-144">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="44465-144">関連項目</span><span class="sxs-lookup"><span data-stu-id="44465-144">See also</span></span>
  
 <a id="ID4EFD"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="134ab-145">Parent</span><span class="sxs-lookup"><span data-stu-id="134ab-145">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="44465-145">Parent</span><span class="sxs-lookup"><span data-stu-id="44465-145">Parent</span></span> 
 
-[<span data-ttu-id="134ab-146">パブリック//global/scids/{scid} クリップ/</span><span class="sxs-lookup"><span data-stu-id="134ab-146">/public/scids/{scid}/clips</span></span>](uri-publicscidclips.md)
+[<span data-ttu-id="44465-146">/public/scids/{scid}/clips</span><span class="sxs-lookup"><span data-stu-id="44465-146">/public/scids/{scid}/clips</span></span>](uri-publicscidclips.md)
 
    

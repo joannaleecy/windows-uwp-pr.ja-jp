@@ -12,29 +12,29 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3853140ce5e7c3f7710f489709945fc70b6703b4
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959709"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984144"
 ---
-# <a name="xuidlist-json"></a><span data-ttu-id="81e5f-104">XuidList (JSON)</span><span class="sxs-lookup"><span data-stu-id="81e5f-104">XuidList (JSON)</span></span>
-<span data-ttu-id="81e5f-105">操作を実行する Xuid のリスト。</span><span class="sxs-lookup"><span data-stu-id="81e5f-105">List of XUIDs on which to perform an operation.</span></span> 
+# <a name="xuidlist-json"></a><span data-ttu-id="f284c-104">XuidList (JSON)</span><span class="sxs-lookup"><span data-stu-id="f284c-104">XuidList (JSON)</span></span>
+<span data-ttu-id="f284c-105">操作を実行する Xuid のリスト。</span><span class="sxs-lookup"><span data-stu-id="f284c-105">List of XUIDs on which to perform an operation.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="xuidlist"></a><span data-ttu-id="81e5f-106">XuidList</span><span class="sxs-lookup"><span data-stu-id="81e5f-106">XuidList</span></span>
+## <a name="xuidlist"></a><span data-ttu-id="f284c-106">XuidList</span><span class="sxs-lookup"><span data-stu-id="f284c-106">XuidList</span></span>
  
-<span data-ttu-id="81e5f-107">XuidList オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="81e5f-107">The XuidList object has the following specification.</span></span>
+<span data-ttu-id="f284c-107">XuidList オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="f284c-107">The XuidList object has the following specification.</span></span>
  
-| <span data-ttu-id="81e5f-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="81e5f-108">Member</span></span>| <span data-ttu-id="81e5f-109">種類</span><span class="sxs-lookup"><span data-stu-id="81e5f-109">Type</span></span>| <span data-ttu-id="81e5f-110">説明</span><span class="sxs-lookup"><span data-stu-id="81e5f-110">Description</span></span>| 
+| <span data-ttu-id="f284c-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="f284c-108">Member</span></span>| <span data-ttu-id="f284c-109">種類</span><span class="sxs-lookup"><span data-stu-id="f284c-109">Type</span></span>| <span data-ttu-id="f284c-110">説明</span><span class="sxs-lookup"><span data-stu-id="f284c-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="81e5f-111">xuid</span><span class="sxs-lookup"><span data-stu-id="81e5f-111">xuids</span></span>| <span data-ttu-id="81e5f-112">文字列の配列</span><span class="sxs-lookup"><span data-stu-id="81e5f-112">array of string</span></span>| <span data-ttu-id="81e5f-113">操作を実行する必要がありますまたは返されるデータの Xbox ユーザー ID (XUID) 値の一覧です。</span><span class="sxs-lookup"><span data-stu-id="81e5f-113">List of Xbox User ID (XUID) values on which an operation should be performed or data should be returned.</span></span>| 
+| <span data-ttu-id="f284c-111">xuid</span><span class="sxs-lookup"><span data-stu-id="f284c-111">xuids</span></span>| <span data-ttu-id="f284c-112">文字列の配列</span><span class="sxs-lookup"><span data-stu-id="f284c-112">array of string</span></span>| <span data-ttu-id="f284c-113">操作を実行する必要がありますまたは返されるデータの Xbox ユーザー ID (XUID) 値の一覧です。</span><span class="sxs-lookup"><span data-stu-id="f284c-113">List of Xbox User ID (XUID) values on which an operation should be performed or data should be returned.</span></span>| 
   
 <a id="ID4EMB"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="81e5f-114">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="81e5f-114">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="f284c-114">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="f284c-114">Sample JSON syntax</span></span>
  
 
 ```json
@@ -52,21 +52,21 @@ ms.locfileid: "3959709"
 <a id="ID4EVB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="81e5f-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="81e5f-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f284c-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="f284c-115">See also</span></span>
  
 <a id="ID4EXB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="81e5f-116">Parent</span><span class="sxs-lookup"><span data-stu-id="81e5f-116">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="f284c-116">Parent</span><span class="sxs-lookup"><span data-stu-id="f284c-116">Parent</span></span> 
 
-[<span data-ttu-id="81e5f-117">JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="81e5f-117">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="f284c-117">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="f284c-117">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EBC"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="81e5f-118">リファレンス</span><span class="sxs-lookup"><span data-stu-id="81e5f-118">Reference</span></span> 
+##### <a name="reference"></a><span data-ttu-id="f284c-118">リファレンス</span><span class="sxs-lookup"><span data-stu-id="f284c-118">Reference</span></span> 
 
-[<span data-ttu-id="81e5f-119">POST (/users/{ownerId}/ユーザー/xuid)</span><span class="sxs-lookup"><span data-stu-id="81e5f-119">POST (/users/{ownerId}/people/xuids)</span></span>](../uri/people/uri-usersowneridpeoplexuidspost.md)
+[<span data-ttu-id="f284c-119">POST (/users/{ownerId}/people/xuids)</span><span class="sxs-lookup"><span data-stu-id="f284c-119">POST (/users/{ownerId}/people/xuids)</span></span>](../uri/people/uri-usersowneridpeoplexuidspost.md)
 
    
