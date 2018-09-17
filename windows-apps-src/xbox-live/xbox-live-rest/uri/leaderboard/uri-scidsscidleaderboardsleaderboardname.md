@@ -1,9 +1,9 @@
 ---
-title: '{scid}/scids//leaderboards/{leaderboardname}'
+title: /scids/{scid}/leaderboards/{leaderboardname}
 assetID: 16345a17-6025-5453-5694-eaf97f0e83e9
 permalink: en-us/docs/xboxlive/rest/uri-scidsscidleaderboardsleaderboardname.html
 author: KevinAsgari
-description: " {scid}/scids//leaderboards/{leaderboardname}"
+description: " /scids/{scid}/leaderboards/{leaderboardname}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 797a557b4bb7d443ecfdce1f136f5db2079b1990
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960337"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983926"
 ---
-# <a name="scidsscidleaderboardsleaderboardname"></a>{scid}/scids//leaderboards/{leaderboardname}
+# <a name="scidsscidleaderboardsleaderboardname"></a>/scids/{scid}/leaderboards/{leaderboardname}
 定義済みグローバル ランキングにアクセスします。 これらの Uri のドメインが`leaderboards.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -45,7 +45,7 @@ ms.locfileid: "3960337"
 
 [値のメタデータを取得します。](uri-scidsscidleaderboardsleaderboardnamegetvaluemetadata.md)
 
-&nbsp;&nbsp;&nbsp;&nbsp;ランキングの値に関連付けられたメタデータと共に定義済みグローバル ランキングを取得します。
+&nbsp;&nbsp;&nbsp;&nbsp;ランキングの値に関連付けられたメタデータと共に、定義済みグローバル ランキングを取得します。
 
  
 <a id="ID4EJC"></a>
@@ -58,6 +58,6 @@ ms.locfileid: "3960337"
  
 ##### <a name="parent"></a>Parent 
 
-[ランキングの Uri](atoc-reference-leaderboard.md)
+[ランキング URI](atoc-reference-leaderboard.md)
 
    

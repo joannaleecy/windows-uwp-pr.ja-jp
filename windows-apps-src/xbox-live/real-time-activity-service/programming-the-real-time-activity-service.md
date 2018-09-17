@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リアルタイム アクティビティ
 ms.localizationpriority: medium
 ms.openlocfilehash: eeb30b5ad83c44ac4a6feb1471dc31a2e33730a1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957557"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981036"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>C++ API を使用したリアルタイム アクティビティ サービスのプログラミング
 
@@ -60,7 +60,7 @@ XDP で統計を作成する方法については、[XDP のドキュメント](
 
 #### <a name="uwp-developers"></a>UWP の開発者
 
-クロスプレイ タイトルではない Windows 10 上の UWP を開発している場合は、 [Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で統計を定義します。 デベロッパー センターで統計を構成する方法については、[デベロッパー センターの統計の構成の資料](../leaderboards-and-stats-2017/player-stats-configure-2017.md)を読み取ります。
+クロスプレイ タイトルではない Windows 10 で UWP を開発している場合は、 [Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で統計を定義します。 デベロッパー センターで統計を構成する方法については、[デベロッパー センターの統計の構成の資料](../leaderboards-and-stats-2017/player-stats-configure-2017.md)を読みます。
 
 > [!NOTE]
 > 統計 2013年の開発者は、デベロッパー センターで統計 2013年構成については、担当の DAM に問い合わせてくださいする必要があります。

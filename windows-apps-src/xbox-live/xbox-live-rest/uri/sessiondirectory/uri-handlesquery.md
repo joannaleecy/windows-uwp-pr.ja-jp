@@ -1,9 +1,9 @@
 ---
-title: ハンドル/クエリ
+title: /handles/query
 assetID: e00d31ad-b9ba-8e52-1333-83192eab0446
 permalink: en-us/docs/xboxlive/rest/uri-handlesquery.html
 author: KevinAsgari
-description: " ハンドル/クエリ"
+description: " /handles/query"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fbb8a823581f357e42cd13bb1331808584301f5e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956437"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983289"
 ---
-# <a name="handlesquery"></a>ハンドル/クエリ
+# <a name="handlesquery"></a>/handles/query
 セッション ハンドルのクエリを作成する POST 操作をサポートしています。 
 
 > [!NOTE] 
-> この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用する概念があることです。  
+> この URI は、2015年マルチプレイヤーで使用し、そのマルチプレイヤーのバージョンにのみとを適用します。 テンプレート コントラクト 104/105 以降で使用されます。  
 
  
 <a id="ID4EQ"></a>
@@ -34,7 +34,7 @@ sessiondirectory.xboxlive.com
 
  
 ## <a name="remarks"></a>注釈
-この URI は、ハンドルのクエリをサポートします。 クエリ文字列とバッチであり、セッション クエリとは異なり、ハンドルのクエリはクエリ プロセッサ スタイルを使用します。 最大 100 ハンドルがサポートされています。  
+この URI は、ハンドルのクエリをサポートしています。 セッションのクエリ文字列とバッチのクエリであるとは異なり、ハンドルのクエリはクエリ プロセッサ スタイルを使用します。 最大 100 ハンドルがサポートされています。  
 <a id="ID4E2"></a>
 
  
@@ -46,11 +46,11 @@ sessiondirectory.xboxlive.com
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST (ハンドル/クエリ)](uri-handlesquerypost.md)
+[POST (/handles/query)](uri-handlesquerypost.md)
 
 &nbsp;&nbsp;セッション ハンドルに対するクエリを作成します。
 
-[POST (ハンドル/クエリかどうか含める relatedInfo =)。](uri-handlesqueryincludepost.md)
+[POST (/handles/query?include=relatedInfo)](uri-handlesqueryincludepost.md)
 
 &nbsp;&nbsp;関連するセッションの情報が含まれるセッション ハンドルに対するクエリを作成します。
  
@@ -64,6 +64,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 
 
-[セッション ディレクトリ Uri](atoc-reference-sessiondirectory.md)
+[セッション ディレクトリ URI](atoc-reference-sessiondirectory.md)
 
    

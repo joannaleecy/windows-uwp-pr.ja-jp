@@ -1,9 +1,9 @@
 ---
-title: POST (ユーザー/me/global/scids/{scid} クリップ/)
+title: POST (/users/me/scids/{scid}/clips)
 assetID: 44535926-9fb8-5498-b1c8-514c0763e6c9
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipspost.html
 author: KevinAsgari
-description: " POST (ユーザー/me/global/scids/{scid} クリップ/)"
+description: " POST (/users/me/scids/{scid}/clips)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e6cee1adbe9e9401bec2ce578ab0d04da921170
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956513"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987848"
 ---
-# <a name="post-usersmescidsscidclips"></a>POST (ユーザー/me/global/scids/{scid} クリップ/)
-初期のアップロード要求を実行します。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`対象の URI の機能に応じて、します。
+# <a name="post-usersmescidsscidclips"></a>POST (/users/me/scids/{scid}/clips)
+初期のアップロード要求を行います。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。
  
   * [注釈](#ID4EX)
   * [URI パラメーター](#ID4EFB)
   * [Authorization](#ID4EQB)
   * [必要な要求ヘッダー](#ID4EKC)
-  * [オプションの要求ヘッダー](#ID4ENE)
+  * [省略可能な要求ヘッダー](#ID4ENE)
   * [要求本文](#ID4ENF)
   * [要求の例](#ID4E1F)
   * [HTTP ステータス コード](#ID4EDG)
@@ -37,9 +37,9 @@ ms.locfileid: "3956513"
  
 ## <a name="remarks"></a>注釈
  
-これは、ゲーム クリップだったアップロード プロセスの最初の部分です。 ビデオのキャプチャ時にサービスを呼び出して、GameClips のビット、アップロードの ID と URI を取得するには、すぐをすぐに開始アップロードがスケジュールされていない場合でも、お勧めします。 この呼び出しは、ユーザー クォータ チェックやその他のチェックにして、ビデオがする必要があります、クライアントによってアップロードでもスケジュールするかどうかは、プライバシー、コンテンツの分離を通じて実行されます。 この呼び出しから正の応答では、サービスが許容アップロード用のビデオ クリップを示します。 アップロードされたすべてのクリップは、システムでは受け入れを (SCID) を通じて、特定のタイトルに関連付けする必要があります。
+これは、ゲーム クリップだったアップロード プロセスの最初の部分です。 ビデオのキャプチャ時にサービスを呼び出して、GameClips のビット、アップロードの ID と URI を取得するには、すぐをすぐに開始アップロードがスケジュールされていない場合でも、お勧めします。 この呼び出しは、ユーザー クォータ チェックやその他のチェックにして、ビデオがする必要があります、クライアントによってアップロードもスケジュールするかどうか、プライバシー、コンテンツの分離を通じて実行されます。 この呼び出しから正の応答では、サービスが許容アップロード用のビデオ クリップを示します。 アップロードされたすべてのクリップは、システムでは受け入れを (SCID) を通じて、特定のタイトルに関連付けする必要があります。
  
-この呼び出しでない等です。後続の呼び出しと、別の Id と Uri が発行されます。 エラー発生時における再試行は、標準的なクライアント側バックオフ動作に従う必要があります。
+この呼び出しでない等です。後続の呼び出しと、別の Id と Uri が発行されます。 エラー発生時における再試行は、標準的なクライアント側バックオフ動作に従ってください。
   
 <a id="ID4EFB"></a>
 
@@ -70,19 +70,19 @@ ms.locfileid: "3956513"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。| 
 | Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
-| Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
+| Accept| string| コンテンツの種類の許容値です。 例:<b>アプリケーション/json</b>します。| 
   
 <a id="ID4ENE"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、身元を圧縮します。| 
+| Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、圧縮を識別します。| 
   
 <a id="ID4ENF"></a>
 
@@ -132,7 +132,7 @@ ms.locfileid: "3956513"
 | 400| Bad Request| 要求の本文でエラーが発生しましたまたはユーザーがそのクォータを超えています。| 
 | 401| 権限がありません| 要求の認証トークンの形式で問題があります。| 
 | 403| Forbidden| 一部の必須の要求がないか、または DeviceType はありません。| 
-| 503| 許容できません。| サービスまたは一部ダウン ストリームの依存関係ダウンしています。 標準のバックオフ動作を指定して再試行します。| 
+| 503| 許容できません。| サービスまたはダウン ストリームの依存関係はいくつかダウンしています。 標準のバックオフ動作を指定して再試行します。| 
   
 <a id="ID4EVAAC"></a>
 
@@ -170,6 +170,6 @@ ms.locfileid: "3956513"
  
 ##### <a name="parent"></a>Parent 
 
-[ユーザー/me/global/scids/{scid} クリップ/](uri-usersmescidclips.md)
+[/users/me/scids/{scid}/clips](uri-usersmescidclips.md)
 
    

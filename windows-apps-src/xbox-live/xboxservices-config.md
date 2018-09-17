@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成, xboxservices.config
 ms.localizationpriority: medium
 ms.openlocfilehash: db4e1dca1bf3968dc62b2ba60eac1033ad759663
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963637"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988098"
 ---
 # <a name="xboxservicesconfig-file-description"></a>XboxServices.config ファイルの説明
 

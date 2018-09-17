@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c795dbd2b6193798b472e51526bdd9e2f6b4622
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962739"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982612"
 ---
 # <a name="get-usersxuidxuidscidsscidstatsincludevaluemetadata"></a>GET (/users/xuid({xuid})/scids/{scid}/stats?include=valuemetadata)
-指定されたサービス構成でのユーザーに対して、統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。
+指定されたサービス構成内のユーザーの統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。
 これらの Uri のドメインが`userstats.xboxlive.com`します。
 
   * [注釈](#ID4EV)
@@ -27,7 +27,7 @@ ms.locfileid: "3962739"
   * [クエリ文字列パラメーター](#ID4ELB)
   * [Authorization](#ID4EWC)
   * [必要な要求ヘッダー](#ID4ERD)
-  * [オプションの要求ヘッダー](#ID4EDF)
+  * [省略可能な要求ヘッダー](#ID4EDF)
   * [要求本文](#ID4EHG)
   * [HTTP ステータス コード](#ID4ESG)
   * [応答本文](#ID4EJCAC)
@@ -37,7 +37,7 @@ ms.locfileid: "3962739"
 
 ## <a name="remarks"></a>注釈
 
-かどうか。 含める = valuemetadata クエリ パラメーターは、モデルとレース トラックの時間を実現するために使用される車の色など、ユーザーの統計値に関連付けられたメタデータを含めるへの応答をことができます。
+かどうか。 含める = valuemetadata クエリ パラメーターは、モデルとレース トラックで時間を実現するために使用された車の色など、ユーザーの統計値に関連付けられたメタデータを含めるへの応答をことができます。
 
 応答には、値のメタデータを含める、要求の呼び出しが 3 のヘッダー値 X Xbl コントラクト バージョンを設定することもあります。
 
@@ -58,18 +58,18 @@ ms.locfileid: "3962739"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- | --- | --- |
-| statNames| string| コンマ区切りの統計情報のユーザー名のリスト。たとえば、次の URI は、通知サービス URI で指定されたユーザー id の代理として 4 つの統計情報を要求します。{: nomakrdown}<br/><br/>`https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots?include=valuemetadata`| 
-| 含める = valuemetadata| string| 応答には、uset 統計の値に関連付けられた値メタデータが含まれていることを示します。|
+| statNames| string| コンマ区切りの統計情報のユーザー名のリスト。たとえば、次の URI 通知サービス URI で指定されたユーザー id の代理として 4 つの統計情報を要求します。{: nomakrdown}<br/><br/>`https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots?include=valuemetadata`| 
+| 含める = valuemetadata| string| 応答には、uset 統計の値に関連付けられている任意の値のメタデータが含まれていることを示します。|
 
 <a id="ID4EWC"></a>
 
 
 ## <a name="authorization"></a>Authorization
 
-コンテンツ分離とアクセス制御のシナリオ向けに実装承認ロジックがあります。
+承認ロジック コンテンツ分離とアクセス制御のシナリオの実装があります。
 
    * ランキング、およびユーザーの両方の統計情報は、呼び出し元が有効な XSTS トークンの要求で送信するに任意のプラットフォーム上のクライアントから読み取ることができます。 書き込みは、データ プラットフォームでサポートされているクライアントに制限されます。
-   * タイトル デベロッパーは、open または XDP またはデベロッパー センターで制限付きの統計情報をマークできます。 ランキングは、統計を開くです。 開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。 サンド ボックスへのユーザーの承認は XDP またはデベロッパー センターで管理されます。
+   * タイトル デベロッパーは、open または XDP またはデベロッパー センターで制限付き統計をマークできます。 ランキングは、統計を開くです。 開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。 サンド ボックスへのユーザーの承認は XDP またはデベロッパー センターで管理されます。
 
 チェックの擬似コードは、次のようになります。
 
@@ -92,17 +92,17 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。|
-| X Xbl コントラクト バージョン| string| 使用する API のバージョンを示します。 この値は、応答に値のメタデータを含めるために、「3」に設定する必要があります。|
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。|
+| X Xbl コントラクト バージョン| string| 使用する API のバージョンを示します。 この値は、応答に値のメタデータを含めるために「3」に設定する必要があります。|
 
 <a id="ID4EDF"></a>
 
 
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | この要求を送信する必要があります、サービスの名前/番号をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。|
+| X RequestedServiceVersion|  | この要求を送信する必要があります、サービスの名前/番号をビルドします。 要求はのみにルーティングされ、サービスの認証トークン内の要求ヘッダーの有効性を確認した後です。 既定値: 1 です。|
 
 <a id="ID4EHG"></a>
 
@@ -125,9 +125,9 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 | 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。|
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。|
 | 403| Forbidden| ユーザーまたはサービスの要求は許可されていません。|
-| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。|
+| 404| Not Found します。| 指定されたリソースは見つかりませんでした。|
 | 406| 許容できません。| リソースのバージョンがサポートされていません。|
-| 408| 要求のタイムアウト| リソースのバージョンはサポートされていません。MVC レイヤーによって拒否する必要があります。|
+| 408| 要求のタイムアウト| リソースのバージョンがサポートされていません。MVC レイヤーによって拒否する必要があります。|
 
 <a id="ID4EJCAC"></a>
 
@@ -187,4 +187,4 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 ##### <a name="parent"></a>Parent
 
-[ユーザー/xuid ({xuid})/scids/{scid}/統計](uri-usersxuidscidsscidstats.md)
+[/users/xuid({xuid})/scids/{scid}/stats](uri-usersxuidscidsscidstats.md)

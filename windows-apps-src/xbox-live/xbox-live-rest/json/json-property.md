@@ -1,9 +1,9 @@
 ---
-title: プロパティ (JSON)
+title: Property (JSON)
 assetID: 93de547e-d936-6fcc-92cb-e4dd284dd609
 permalink: en-us/docs/xboxlive/rest/json-property.html
 author: KevinAsgari
-description: " プロパティ (JSON)"
+description: " Property (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,25 +12,25 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 033a87580680b054f5eefec7c543215e4351ace3
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957997"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983860"
 ---
-# <a name="property-json"></a>プロパティ (JSON)
+# <a name="property-json"></a>Property (JSON)
 マッチメイ キング要求条件のクライアントによって提供されるプロパティのデータが含まれています。
 <a id="ID4EN"></a>
 
 
 ## <a name="property"></a>プロパティ
 
-プロパティ オブジェクトには、次の仕様があります。
+プロパティのオブジェクトでは、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
 | id| string| このプロパティの id です。|
-| type| 32 ビット符号付き整数 | プロパティの型です。 サポートされる値は次のとおりです。 <ul><li>0 = 整数</li><li>1 = 文字列</li></ul>| 
+| type| 32 ビット符号付き整数 | プロパティの種類です。 サポートされる値は次のとおりです。 <ul><li>0 = 整数</li><li>1 = 文字列</li></ul>| 
 | value| string| このプロパティの値。|
 
 <a id="ID4EGC"></a>
@@ -59,4 +59,4 @@ ms.locfileid: "3957997"
 
 ##### <a name="parent"></a>Parent
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)

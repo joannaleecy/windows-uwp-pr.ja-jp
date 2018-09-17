@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a3b7f63e7a991420ee594cf45acf2f9952bcf74
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961535"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987582"
 ---
 # <a name="permissioncheckbatchrequest-json"></a>PermissionCheckBatchRequest (JSON)
 PermissionCheckBatchRequest オブジェクトのコレクションです。 
@@ -25,7 +25,7 @@ PermissionCheckBatchRequest オブジェクトのコレクションです。
  
 ## <a name="permissioncheckbatchrequest"></a>PermissionCheckBatchRequest
  
-PermissionCheckBatchRequest オブジェクトには、次の仕様があります。
+PermissionCheckBatchRequest オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -65,6 +65,6 @@ PermissionCheckBatchRequest オブジェクトには、次の仕様がありま�
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

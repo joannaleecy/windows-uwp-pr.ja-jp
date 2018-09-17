@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fe1129db6154d842cbadf0e7918d2fe460166ba1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961979"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982640"
 ---
 # <a name="usersxuidxuiddeleteuserdata"></a>/users/xuid({xuid})/deleteuserdata
 テスト ユーザーの評判のデータを完全にリセットします。 テストのみです。 これらの Uri のドメインが`reputation.xboxlive.com`します。 この URI は、常にポート 10443 で呼び出されます。
@@ -30,7 +30,7 @@ ms.locfileid: "3961979"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーがデータが削除されているのです。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーがデータが削除されるのです。| 
   
 <a id="ID4EYB"></a>
 
@@ -51,6 +51,6 @@ ms.locfileid: "3961979"
  
 ##### <a name="parent"></a>Parent 
 
-[評判 Uri](atoc-reference-reputation.md)
+[評判 URI](atoc-reference-reputation.md)
 
    

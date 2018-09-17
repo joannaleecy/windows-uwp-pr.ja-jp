@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 912c3febd0a29a9aca326761ae63e61a0bdfada0
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959155"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984248"
 ---
 # <a name="game-server-universal-resource-identifier-uri-reference"></a>ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス
-Uri のクライアントが、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+Uri のクライアントで、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
 <a id="ID4EY"></a>
 
@@ -28,19 +28,19 @@ Uri のクライアントが、タイトルのゲーム サーバー開発キッ
 
 [/qosservers](uri-qosservers.md)
 
-&nbsp;&nbsp;URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するために、クライアントによって呼び出されます。
+&nbsp;&nbsp;URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。
 
-[/titles/{titleId} クラスター/](uri-titlestitleidclusters.md)
+[/titles/{titleId}/clusters](uri-titlestitleidclusters.md)
 
 &nbsp;&nbsp;により、クライアントは、タイトルの Xbox Live Compute サーバー インスタンスを作成する URI。
 
-[/titles/{titleId}/バリエーション](uri-titlestitleidvariants.md)
+[/titles/{titleId}/variants](uri-titlestitleidvariants.md)
 
 &nbsp;&nbsp;URI は、タイトルの利用可能な言語バリアントを取得するクライアントによって呼び出されます。
 
 [/titles/{titleId}/sessionhosts](uri-titlestitleidsessionhosts.md)
 
-&nbsp;&nbsp;指定されたタイトル id に割り当てられる Xbox Live Compute sessionhost を要求します。
+&nbsp;&nbsp;特定のタイトル id に割り当てられる Xbox Live Compute sessionhost を要求します。
 
 [/titles/{titleId}/sessions/{sessionId}/allocationStatus](uri-titlestitleidsessionssessionidallocationstatus.md)
 

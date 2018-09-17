@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 17b6bf856dd87abc72a000cb92724baf91452d73
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963011"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982790"
 ---
 # <a name="hopperstatsresults-json"></a>HopperStatsResults (JSON)
 ホッパーの統計情報を表す JSON オブジェクト。 
@@ -24,13 +24,13 @@ ms.locfileid: "3963011"
 
   
  
-HopperStatsResults JSON オブジェクトには、次の仕様があります。
+HopperStatsResults JSON オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | hopperName| string| 選択したホッパーの名前です。| 
 | 待機時間| 32 ビット符号付き整数| 照合時間 (秒の整数)、ホッパーの平均です。 | 
-| カタログの作成| 32 ビット符号付き整数| 一致するものをホッパーで待機しているユーザーの数です。| 
+| カタログの作成| 32 ビット符号付き整数| 一致するものをホッパーで待機しているユーザーの数。| 
   
 <a id="ID4EW"></a>
 
@@ -59,7 +59,7 @@ HopperStatsResults JSON オブジェクトには、次の仕様があります�
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EUB"></a>
@@ -67,6 +67,6 @@ HopperStatsResults JSON オブジェクトには、次の仕様があります�
  
 ##### <a name="reference"></a>リファレンス 
 
-[取得する (/serviceconfigs/{scid}/hoppers/{name}/統計情報)](../uri/matchtickets/uri-serviceconfigsscidhoppershoppernamestatsget.md)
+[GET (/serviceconfigs/{scid}/hoppers/{name}/stats)](../uri/matchtickets/uri-serviceconfigsscidhoppershoppernamestatsget.md)
 
    

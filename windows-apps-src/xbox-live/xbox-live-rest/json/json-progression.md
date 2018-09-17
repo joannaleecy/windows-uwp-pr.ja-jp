@@ -1,9 +1,9 @@
 ---
-title: 進行状況 (JSON)
+title: Progression (JSON)
 assetID: cdff6415-f12b-0a45-61f2-26dbf47b1b56
 permalink: en-us/docs/xboxlive/rest/json-progression.html
 author: KevinAsgari
-description: " 進行状況 (JSON)"
+description: " Progression (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a0e534d92e4bcb77565f59de5252afcbbe3eef5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961841"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983286"
 ---
-# <a name="progression-json"></a>進行状況 (JSON)
+# <a name="progression-json"></a>Progression (JSON)
 実績をロック解除に向けたユーザーの進行します。 
 <a id="ID4EN"></a>
 
  
 ## <a name="progression"></a>進行状況
  
-進行状況オブジェクトには、次の仕様があります。
+進行状況のオブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -62,6 +62,6 @@ ms.locfileid: "3961841"
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

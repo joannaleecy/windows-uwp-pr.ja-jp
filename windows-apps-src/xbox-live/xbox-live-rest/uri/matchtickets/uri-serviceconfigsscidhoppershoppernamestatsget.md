@@ -1,9 +1,9 @@
 ---
-title: 取得する (/serviceconfigs/{scid}/hoppers/{name}/統計情報)
+title: GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 assetID: 4de5b07d-93e1-8ff0-05dd-1d3bb1802088
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppernamestatsget.html
 author: KevinAsgari
-description: " 取得する (/serviceconfigs/{scid}/hoppers/{name}/統計情報)"
+description: " GET (/serviceconfigs/{scid}/hoppers/{name}/stats)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 242a3bd3a2e6112436ec3f7aa3dad60c05619314
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961377"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986978"
 ---
-# <a name="get-serviceconfigsscidhoppersnamestats"></a>取得する (/serviceconfigs/{scid}/hoppers/{name}/統計情報)
+# <a name="get-serviceconfigsscidhoppersnamestats"></a>GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 
 ホッパーの統計情報を取得します。
 
 > [!IMPORTANT]
-> このメソッドは、コントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> このメソッドは、コントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 103 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4E5)
@@ -55,7 +55,7 @@ ms.locfileid: "3961377"
 | 型| 必須かどうか| 説明| 不足している場合、応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | XUID (ユーザー ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。 | 403|
-| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには主張のマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
+| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには主張でマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
 | タイトル ID/実証購入/デバイスの種類| 必須| タイトルに一致するには、指定されたタイトルの要求、デバイスの種類の組み合わせのマッチメイ キングを許可する必要があります。 | 403|
 
 <a id="ID4E3C"></a>
@@ -79,7 +79,7 @@ ms.locfileid: "3961377"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | hopperName| string| 選択したホッパーの名前です。|
 | 待機時間| 32 ビット符号付き整数| 照合時間 (秒の整数)、ホッパーの平均です。 |
-| カタログの作成| 32 ビット符号付き整数| 一致するものをホッパーで待機しているユーザーの数です。|
+| カタログの作成| 32 ビット符号付き整数| 一致するものをホッパーで待機しているユーザーの数。|
 
 <a id="ID4E1D"></a>
 
@@ -108,4 +108,4 @@ ms.locfileid: "3961377"
 
 ##### <a name="parent"></a>Parent  
 
-[/serviceconfigs/{scid}/hoppers/{name}/統計](uri-serviceconfigsscidhoppershoppernamestats.md)
+[/serviceconfigs/{scid}/hoppers/{name}/stats](uri-serviceconfigsscidhoppershoppernamestats.md)

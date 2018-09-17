@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cd4323f8d4f929a46f0636facbc52e451b7a582e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961779"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983244"
 ---
 # <a name="globalscidssciddatapathandfilenametype"></a>/global/scids/{scid}/data/{pathAndFileName},{type}
 ファイルをダウンロードします。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
@@ -31,7 +31,7 @@ ms.locfileid: "3961779"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | scid| guid| ルックアップ サービス構成の ID です。| 
-| pathAndFileName| string| アクセスできる項目のパスとファイル名。 (となどを含む最終的なスラッシュ) のパス部分に有効な文字は大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名可能性がありますいないを空にする、期間の終了または 2 つの連続するピリオドが含まれています。| 
+| pathAndFileName| string| アクセスできる項目のパスとファイル名。 パス部分 (となどを含む最終的なスラッシュ) の有効な文字が大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名可能性がありますいないを空にする、期間の終了または 2 つの連続するピリオドが含まれています。| 
 | type| 文字列| データの形式です。 使用可能な値: バイナリ、config または json します。| 
   
 <a id="ID4EFC"></a>
@@ -53,6 +53,6 @@ ms.locfileid: "3961779"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ Uri](atoc-reference-storagev2.md)
+[タイトル ストレージ URI](atoc-reference-storagev2.md)
 
    

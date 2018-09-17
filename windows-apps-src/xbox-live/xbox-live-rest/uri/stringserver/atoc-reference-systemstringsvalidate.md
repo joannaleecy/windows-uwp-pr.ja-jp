@@ -1,9 +1,9 @@
 ---
-title: システムが Validatation Uri を示す文字列します。
+title: システム文字列の検証 URI
 assetID: b9a54456-7b4a-f6d8-16b9-5b6c3bd9813e
 permalink: en-us/docs/xboxlive/rest/atoc-reference-systemstringsvalidate.html
 author: KevinAsgari
-description: " システムが Validatation Uri を示す文字列します。"
+description: " システム文字列の検証 URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 47b487a4708e42ee66f293bfa020ba51cfad82a9
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955960"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983276"
 ---
-# <a name="system-strings-validatation-uris"></a>システムが Validatation Uri を示す文字列します。
+# <a name="system-strings-validatation-uris"></a>システム文字列の検証 URI
  
-このセクションでは、*システムの文字列の検証*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*システムの文字列の検証*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
  
-永続的な文字列データをアップロードする前に、倫理規定またはの使用条件に違反していないことを確認する検証する必要があります。 この REST リソースは、文字列の配列を取得し、それぞれには、許容できるかどうかと、問題のある語句を含む文字列を示す結果コードを返します。
+永続的な文字列データをアップロードする前に、倫理規定や使用条件に違反していないことを確認する検証する必要があります。 この REST リソースは、文字列の配列を受け取り、それぞれには、許容できるかどうかと、問題のある語句を含む文字列を示す結果コードを返します。
  
 これらの Uri のドメインは、クライアント strings.xboxlive.com です。
  

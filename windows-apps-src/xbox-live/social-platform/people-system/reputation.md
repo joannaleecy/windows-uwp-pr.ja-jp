@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 評判, ソーシャル プラットフォーム
 ms.localizationpriority: medium
 ms.openlocfilehash: cc296892a8d3134dd44ff4bad43603fd164ed5fd
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956237"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983242"
 ---
 # <a name="reputation"></a>評判
 

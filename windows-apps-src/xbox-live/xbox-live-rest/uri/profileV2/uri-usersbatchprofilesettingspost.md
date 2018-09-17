@@ -1,9 +1,9 @@
 ---
-title: POST (/ユーザー、バッチ、プロファイル/設定)
+title: POST (/users/batch/profile/settings)
 assetID: 2a619148-a626-f413-bda1-a2790063075d
 permalink: en-us/docs/xboxlive/rest/uri-usersbatchprofilesettingspost.html
 author: KevinAsgari
-description: " POST (/ユーザー、バッチ、プロファイル/設定)"
+description: " POST (/users/batch/profile/settings)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 66d32e448f7db8558ea6ef02714b6112e230e711
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957675"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986142"
 ---
-# <a name="post-usersbatchprofilesettings"></a>POST (/ユーザー、バッチ、プロファイル/設定)
+# <a name="post-usersbatchprofilesettings"></a>POST (/users/batch/profile/settings)
 ユーザーまたはユーザーのプロファイルを取得します。 これらの Uri のドメインが`profile.xboxlive.com`します。
  
   * [注釈](#ID4EV)
@@ -32,7 +32,7 @@ ms.locfileid: "3957675"
  
 ## <a name="remarks"></a>注釈
  
-これで許可されているのみ完全修飾プロファイル URL です。 クライアントからその他のすべてのプロファイル Api がブロックされます。
+これは、URL では、のみ完全に修飾されたプロファイルで許可されています。 クライアントからその他のすべてのプロファイル Api がブロックされます。
   
 <a id="ID4EFB"></a>
 
@@ -48,7 +48,7 @@ ms.locfileid: "3957675"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | 
-| x xbl コントラクト バージョン| 32 ビット符号なし整数| コントラクト バージョンは、Xbox 360 の API 呼び出しは、このを区別するために 2 に設定する必要があります。| 
+| x xbl コントラクト バージョン| 32 ビット符号なし整数| コントラクト バージョンは、Xbox 360 API 呼び出しは、このを区別するために 2 に設定する必要があります。| 
 | コンテンツの種類| string| 値 = <code>application/json</code>| 
   
 <a id="ID4EZC"></a>
@@ -138,6 +138,6 @@ POST /users/batch/profile/settings
  
 ##### <a name="reference"></a>リファレンス 
 
-[プロファイル (JSON)](../../json/json-profile.md)
+[Profile (JSON)](../../json/json-profile.md)
 
    

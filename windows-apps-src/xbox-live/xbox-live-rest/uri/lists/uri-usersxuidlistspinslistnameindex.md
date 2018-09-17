@@ -1,9 +1,9 @@
 ---
-title: ユーザー/xuid (xuid) リスト/ピン/{リスト}/インデックス ({インデックス})/かどうか insertIndex = {insertIndex}。
+title: /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
 assetID: edcb19bd-87a5-732b-0c45-6f7355fc2dd1
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameindex.html
 author: KevinAsgari
-description: " ユーザー/xuid (xuid) リスト/ピン/{リスト}/インデックス ({インデックス})/かどうか insertIndex = {insertIndex}。"
+description: " /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b1be4ab591a5bea8d7bc70fb7f7dcb29e4f548
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959999"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985048"
 ---
-# <a name="usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a>ユーザー/xuid (xuid) リスト/ピン/{リスト}/インデックス ({インデックス})/かどうか insertIndex = {insertIndex}。
+# <a name="usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a>/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
 一覧内の項目を移動します。 これらの Uri のドメインが`eplists.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)

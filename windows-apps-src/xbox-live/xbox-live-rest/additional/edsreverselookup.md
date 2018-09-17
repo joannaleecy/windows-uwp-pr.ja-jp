@@ -1,9 +1,9 @@
 ---
-title: ビデオの逆引き参照を EDS
+title: ビデオの EDS 逆引き参照
 assetID: 773f7a8e-7571-3aec-96d6-478437696ea6
 permalink: en-us/docs/xboxlive/rest/edsreverselookup.html
 author: KevinAsgari
-description: " ビデオの逆引き参照を EDS"
+description: " ビデオの EDS 逆引き参照"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b259ae20bd07c6869bc6646fc44a70f994a261b7
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956467"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988740"
 ---
-# <a name="eds-reverse-lookup-for-video"></a>ビデオの逆引き参照を EDS
+# <a name="eds-reverse-lookup-for-video"></a>ビデオの EDS 逆引き参照
  
   * [逆の検索手順](#ID4EQ)
  
@@ -37,14 +37,14 @@ ms.locfileid: "3956467"
  
  
 通常の逆引き参照では、2 つの手順が必要です。 
-   * 利用できない場合 (たとえば、詳細呼び出し) からプロバイダー メディアの id を取得します。 
+   * 利用できない場合 (たとえば、詳細呼び出し) からプロバイダー メディア id を取得します。 
 
 ```cpp
 GET /media/en-us/details?ids=4eeaf5b4-9af2-56e4-a738-68b48e954494&desiredMediaItemTypes=Movie&desired=Providers
 ```
 
  
-   * 応答には、以前から**ProviderMediaId**フィールドを使用して逆の検索のための呼び出しを発行します。 
+   * 応答には、以前から**ProviderMediaId**フィールドを使用して逆引き参照の呼び出しを発行します。 
 
 ```cpp
 GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedMediaId&desiredMediaItemTypes=Movie&fields=all&ScopeIdType=Title&ScopeId=0x5848085B
@@ -65,7 +65,7 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
 ##### <a name="parent"></a>Parent  
 
-[その他の参照](atoc-xboxlivews-reference-additional.md)
+[その他の参照情報](atoc-xboxlivews-reference-additional.md)
 
   
 <a id="ID4E3C"></a>
@@ -73,6 +73,6 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
 ##### <a name="further-information"></a>詳細情報 
 
-[Marketplace Uri](../uri/marketplace/atoc-reference-marketplace.md)
+[マーケットプレース URI](../uri/marketplace/atoc-reference-marketplace.md)
 
    

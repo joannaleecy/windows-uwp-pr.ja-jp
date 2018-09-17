@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4772620a79eed3c66886d5adde716b56f5c7bb9e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960281"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983284"
 ---
 # <a name="usersxuidxuidfeedback"></a>/users/xuid({xuid})/feedback
  
@@ -50,6 +50,6 @@ ms.locfileid: "3960281"
  
 ##### <a name="parent"></a>Parent 
 
-[評判 Uri](atoc-reference-reputation.md)
+[評判 URI](atoc-reference-reputation.md)
 
    

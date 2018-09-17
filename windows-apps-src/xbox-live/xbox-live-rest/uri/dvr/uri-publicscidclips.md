@@ -1,9 +1,9 @@
 ---
-title: パブリック//global/scids/{scid} クリップ/
+title: /public/scids/{scid}/clips
 assetID: 55a1f0ae-08bb-6d1e-a1da-cbeb481c42ee
 permalink: en-us/docs/xboxlive/rest/uri-publicscidclips.html
 author: KevinAsgari
-description: " パブリック//global/scids/{scid} クリップ/"
+description: " /public/scids/{scid}/clips"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b7c0c664b7fdff7eae607acdc4dd7ef78aeb3caf
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962759"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989470"
 ---
-# <a name="publicscidsscidclips"></a>パブリック//global/scids/{scid} クリップ/
+# <a name="publicscidsscidclips"></a>/public/scids/{scid}/clips
 クリップをパブリックにアクセスします。 この URI に実際にで指定できる 2 つのフォーム`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。 詳しくは、後のセクションをご覧ください。 この URI のドメインが`gameclipsmetadata.xboxlive.com`します。
  
   * [URI パラメーター](#ID4E1)
@@ -38,7 +38,7 @@ ms.locfileid: "3962759"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[取得する (パブリック//global/scids/{scid} クリップ/)](uri-publicscidclipsget.md)
+[GET (/public/scids/{scid}/clips)](uri-publicscidclipsget.md)
 
 &nbsp;&nbsp;パブリック クリップを一覧表示します。
  
@@ -52,6 +52,6 @@ ms.locfileid: "3962759"
  
 ##### <a name="parent"></a>Parent 
 
-[Marketplace Uri](../marketplace/atoc-reference-marketplace.md)
+[マーケットプレース URI](../marketplace/atoc-reference-marketplace.md)
 
    

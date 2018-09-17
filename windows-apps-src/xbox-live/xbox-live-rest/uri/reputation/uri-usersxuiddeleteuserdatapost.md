@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bcb7b1c6c23f39846084ba4e6583553e2ff04a1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963707"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983318"
 ---
 # <a name="post-usersxuidxuiddeleteuserdata"></a>POST (/users/xuid({xuid})/deleteuserdata)
 テスト ユーザーの評判のデータを完全にリセットします。 テストのみです。
@@ -33,7 +33,7 @@ ms.locfileid: "3963707"
 
 ## <a name="remarks"></a>注釈
 
-この API を呼び出すと、ユーザーからすべてのフィードバック項目と評判のデータが削除されます。 パートナーは Retail を除くすべてのサンド ボックスに対してこの API を呼び出す場合があります。 執行チームは、サンド ボックス ID を持つには、この API を呼び出すことがあります。
+この API を呼び出すと、ユーザーからすべてのフィードバック項目と評判のデータが削除されます。 パートナーは、Retail を除くすべてのサンド ボックスに対してこの API を呼び出すことがあります。 執行チームは、サンド ボックス ID を持つには、この API を呼び出すことがあります。
 
 これらの Uri のドメインが`reputation.xboxlive.com`します。 この URI は、常にポート 10443 で呼び出されます。
 
@@ -44,7 +44,7 @@ ms.locfileid: "3963707"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーがデータが削除されているのです。|
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーがデータが削除されるのです。|
 
 <a id="ID4EJB"></a>
 
@@ -74,9 +74,9 @@ Retail サンド ボックスで、執行チームから**PartnerClaim**しま�
 | 200| OK| セッションが正常に取得されました。|
 | 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。|
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。|
-| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。|
+| 404| Not Found します。| 指定されたリソースは見つかりませんでした。|
 | 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。|
-| 503| Service Unavailable| 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行の値の後にもう一度やり直してください。|
+| 503| Service Unavailable| 要求が調整された、クライアント再試行値 (例: 5 秒後) を秒単位で後にもう一度やり直してください。|
 
 <a id="ID4EJF"></a>
 

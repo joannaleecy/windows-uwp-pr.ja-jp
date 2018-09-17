@@ -1,9 +1,9 @@
 ---
-title: 取得する (メディア/{marketplaceId} 参照/)
+title: GET (media/{marketplaceId}/browse)
 assetID: 024447a0-c615-e08b-f867-3b6c4c0db5dc
 permalink: en-us/docs/xboxlive/rest/uri-medialocalebrowseget.html
 author: KevinAsgari
-description: " 取得する (メディア/{marketplaceId} 参照/)"
+description: " GET (media/{marketplaceId}/browse)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b747ea8e576ecbd3723282ffa3a59113b8187428
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964507"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982328"
 ---
-# <a name="get-mediamarketplaceidbrowse"></a>取得する (メディア/{marketplaceId} 参照/)
+# <a name="get-mediamarketplaceidbrowse"></a>GET (media/{marketplaceId}/browse)
 1 つのメディア グループ内の項目を参照できます。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
@@ -33,7 +33,7 @@ ms.locfileid: "3964507"
  
 非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してこの検索から返されるデータのページにアクセスできます。 この API は、絞り込み条件のクエリを受け取ります。 
  
- **SandboxId**は今すぐ、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合のエンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。 
+ **SandboxId**は今すぐ、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は 400 Bad request エラーをスローします。 
   
 <a id="ID4EFB"></a>
 
@@ -63,7 +63,7 @@ ms.locfileid: "3964507"
  
 ### <a name="sample-response"></a>応答の例
  
-次の JSON コードは、呼び出しへの応答で、`/media/en-us/browse?orderBy=releaseDate&desiredMediaItemTypes=DGame&fields=all`します。
+次の JSON コードは、呼び出しへの応答で`/media/en-us/browse?orderBy=releaseDate&desiredMediaItemTypes=DGame&fields=all`します。
  
 
 ```cpp
@@ -222,7 +222,7 @@ ms.locfileid: "3964507"
  
 ##### <a name="parent"></a>Parent 
 
-[/media/{marketplaceId} 参照/](uri-medialocalebrowse.md)
+[/media/{marketplaceId}/browse](uri-medialocalebrowse.md)
 
   
 <a id="ID4EAD"></a>
@@ -230,14 +230,14 @@ ms.locfileid: "3964507"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [Marketplace Uri](atoc-reference-marketplace.md)
+ [マーケットプレース URI](atoc-reference-marketplace.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

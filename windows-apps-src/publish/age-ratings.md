@@ -42,7 +42,7 @@ ms.locfileid: "3984645"
 > 韓国の法律により、韓国で入手可能なゲームは韓国の [Game Rating Board](http://go.microsoft.com/fwlink/p/?LinkId=228256) の評価を受ける必要があります。 韓国で提供する可能性のあるゲームを提出する場合は、この追加セクションに入力し、評価証明書をアップロードする必要があります。 アプリがゲームではない場合や、そのアプリを韓国で提供しない場合は、このセクションは空白のままでかまいません。
 
 > [!NOTE]
-> 台湾での利用が可能になるゲームを提出する場合は、提供された CSRR レーティングを[こちらのフォーム](https://go.microsoft.com/fwlink/?linkid=867281)で登録することが法律で義務付けられています。 
+> If you are submitting a game that will be available in Taiwan, you are required by law to register the provided CSRR rating using [this form](https://go.microsoft.com/fwlink/?linkid=867281). 
 
 <span id="appeal" />
 

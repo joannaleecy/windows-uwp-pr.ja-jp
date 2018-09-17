@@ -12,22 +12,22 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e7fb10a0f81e24215ebc24d2545f1197d4520bc
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961765"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988776"
 ---
 # <a name="titlerecord-json"></a>TitleRecord (JSON)
-最終更新タイムスタンプとその名前を含む、タイトルに関する情報。 
+その名前と最終変更日のタイムスタンプを含む、タイトルに関する情報。 
 <a id="ID4EN"></a>
 
  
 ## <a name="titlerecord"></a>TitleRecord
  
-TitleRecord、DeviceRecord や、LastSeenRecord を含める必要がありますが、両方を含めない場合があります。
+TitleRecord、DeviceRecord または、LastSeenRecord を含める必要がありますが、両方を含めない場合があります。
  
-TitleRecord オブジェクトには、次の仕様があります。
+TitleRecord オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -35,8 +35,8 @@ TitleRecord オブジェクトには、次の仕様があります。
 | name| string| タイトルのローカライズされた名前です。| 
 | activity (アクティビティ)| [ActivityRecord](json-activityrecord.md)| タイトルでのユーザーのアクティビティ。 のみ深度"all"が返されます。| 
 | lastModified| DateTime| レコードが最後に更新されたときにタイムスタンプを UTC です。| 
-| 配置| string| ユーザー インターフェイス内でアプリの場所です。 可能性には、"fill"、「完全」、「スナップ」または"background"が含まれます。 既定では、「完全」のアプリを配置することができないデバイスです。| 
-| 状態| string| タイトルの状態。 「アクティブ」や「非アクティブ」にすることができます (既定)。 タイトルでは、アクティビティおよび非アクティブの独自の基準に基づいて状態を設定します。| 
+| 配置| string| ユーザー インターフェイス内でアプリの場所です。 可能性には、"fill"、「完全」、「スナップ」または"background"が含まれます。 既定値は、アプリを配置することができないデバイスの「完全」です。| 
+| 状態| string| タイトルの状態。 「アクティブ」や「非アクティブ」にすることができます (既定)。 タイトルは、アクティビティおよび非アクティブの独自の基準に基づいて状態を設定します。| 
   
 <a id="ID4E6C"></a>
 
@@ -70,7 +70,7 @@ TitleRecord オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EUD"></a>

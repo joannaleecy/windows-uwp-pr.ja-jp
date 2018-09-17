@@ -1,9 +1,9 @@
 ---
-title: グローバル//global/scids/{scid}/data/{パス}
+title: /global/scids/{scid}/data/{path}
 assetID: d6353cd3-9127-98d4-bb99-5df690e07022
 permalink: en-us/docs/xboxlive/rest/uri-globalscidssciddatapath.html
 author: KevinAsgari
-description: " グローバル//global/scids/{scid}/data/{パス}"
+description: " /global/scids/{scid}/data/{path}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b091f3bbb5e03808d04a255b204c13eee93f7fdb
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956755"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983754"
 ---
-# <a name="globalscidssciddatapath"></a>グローバル//global/scids/{scid}/data/{パス}
+# <a name="globalscidssciddatapath"></a>/global/scids/{scid}/data/{path}
 指定されたパスのファイル情報の一覧を示します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -52,6 +52,6 @@ ms.locfileid: "3956755"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ Uri](atoc-reference-storagev2.md)
+[タイトル ストレージ URI](atoc-reference-storagev2.md)
 
    

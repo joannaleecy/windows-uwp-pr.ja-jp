@@ -1,9 +1,9 @@
 ---
-title: /handles/{ハンドル id を使用}/セッション
+title: /handles/{handleId}/session
 assetID: 4ed2dcf5-5d1f-91ce-4a3f-eb3ba68727bf
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsession.html
 author: KevinAsgari
-description: " /handles/{ハンドル id を使用}/セッション"
+description: " /handles/{handleId}/session"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: eb7ca17500f571ed72cf0bcd6ececbcde17ce717
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963497"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990114"
 ---
-# <a name="handleshandleidsession"></a>/handles/{ハンドル id を使用}/セッション
+# <a name="handleshandleidsession"></a>/handles/{handleId}/session
 PUT および GET 操作セッションでは、ハンドルを逆参照を使用してをサポートしています。 
 
 > [!NOTE] 
-> この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用する概念があることです。  
+> この URI は、2015年マルチプレイヤーで使用し、そのマルチプレイヤーのバージョンにのみとを適用します。 テンプレート コントラクト 104/105 以降で使用されます。  
 
  
 
@@ -49,11 +49,11 @@ sessiondirectory.xboxlive.com
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[取得する (/handles/{ハンドル id を使用}/セッション)](uri-handleshandleidsessionget.md)
+[GET (/handles/{handleId}/session)](uri-handleshandleidsessionget.md)
 
-&nbsp;&nbsp;指定したハンドル識別子セッション オブジェクトを取得します。 
+&nbsp;&nbsp;指定したハンドル識別子のセッション オブジェクトを取得します。 
 
-[配置 (/handles/{ハンドル id}/セッション)](uri-handleshandleidsessionput.md)
+[PUT (/handles/{handle-id}/session)](uri-handleshandleidsessionput.md)
 
 &nbsp;&nbsp;作成またはハンドルを逆参照により、セッションを更新します。
  
@@ -67,6 +67,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 
 
-[セッション ディレクトリ Uri](atoc-reference-sessiondirectory.md)
+[セッション ディレクトリ URI](atoc-reference-sessiondirectory.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: /users/{ownerId} クリップ/
+title: /users/{ownerId}/clips
 assetID: cc200b89-dc63-9ab5-b037-7a910f46dae9
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridclips.html
 author: KevinAsgari
-description: " /users/{ownerId} クリップ/"
+description: " /users/{ownerId}/clips"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b0819ab8f0014b945a2340ebf7252bbe9d8d8726
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955907"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984666"
 ---
-# <a name="usersowneridclips"></a>/users/{ownerId} クリップ/
-ユーザーのクリップのアクセスの一覧です。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`対象の URI の機能に応じて、します。
+# <a name="usersowneridclips"></a>/users/{ownerId}/clips
+ユーザーのクリップのアクセスの一覧です。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。
  
   * [URI パラメーター](#ID4EX)
  
@@ -30,14 +30,14 @@ ms.locfileid: "3955907"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| ownerId| string| リソースにアクセスしているユーザーのユーザー id。 サポートされる形式:"me"または"xuid(123456789)"です。 最大長: 16 します。| 
+| ownerId| string| そのリソースにアクセスしているユーザーのユーザー id。 サポートされる形式:"me"または"xuid(123456789)"です。 最大長: 16 です。| 
   
 <a id="ID4EVB"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[取得する (/users/{ownerId} クリップ/)](uri-usersowneridclipsget.md)
+[GET (/users/{ownerId}/clips)](uri-usersowneridclipsget.md)
 
 &nbsp;&nbsp;ユーザーのクリップの一覧を取得します。
  
@@ -51,6 +51,6 @@ ms.locfileid: "3955907"
  
 ##### <a name="parent"></a>Parent 
 
-[ゲーム DVR Uri](atoc-reference-dvr.md)
+[ゲーム DVR URI](atoc-reference-dvr.md)
 
    

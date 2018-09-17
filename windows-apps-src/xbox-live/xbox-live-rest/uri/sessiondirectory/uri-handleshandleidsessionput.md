@@ -1,9 +1,9 @@
 ---
-title: 配置 (/handles/{ハンドル id}/セッション)
+title: PUT (/handles/{handle-id}/session)
 assetID: d8a3d473-1192-ec0c-3935-c301f4f61e03
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsessionput.html
 author: KevinAsgari
-description: " 配置 (/handles/{ハンドル id}/セッション)"
+description: " PUT (/handles/{handle-id}/session)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 89572da87f4975aeeaa1ae7506a34f2b9cb4e72a
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957207"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984996"
 ---
-# <a name="put-handleshandle-idsession"></a>配置 (/handles/{ハンドル id}/セッション)
+# <a name="put-handleshandle-idsession"></a>PUT (/handles/{handle-id}/session)
 作成またはハンドルを逆参照により、セッションを更新します。
 
 > [!IMPORTANT]
@@ -37,7 +37,7 @@ ms.locfileid: "3957207"
 
 この HTTP/REST メソッドは、提供されているセッション ハンドル ID を使用して、マルチプレイヤー サービスに新規または更新されたセッションを書き込みます 結果は、サーバーから返されるものは、新規または更新されたセッションを表すオブジェクトです。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionByHandleAsync**でラップすることができます。
 
-このメソッドの呼び出し元では、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
+このメソッドの呼び出し元は、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
 
 <a id="ID4ECB"></a>
 
@@ -77,4 +77,4 @@ ms.locfileid: "3957207"
 
 ##### <a name="parent"></a>Parent
 
-[/handles/{ハンドル id を使用}/セッション](uri-handleshandleidsession.md)
+[/handles/{handleId}/session](uri-handleshandleidsession.md)

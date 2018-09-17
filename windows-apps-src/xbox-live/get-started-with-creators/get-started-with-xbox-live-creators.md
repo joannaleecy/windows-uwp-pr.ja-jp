@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e79846ecb0fce63d371b9ade7efa01ca0561b952
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955883"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986502"
 ---
 # <a name="get-started-with-the-xbox-live-creators-program"></a>Xbox Live クリエーターズ プログラムの概要
  
@@ -32,12 +32,12 @@ Xbox Live クリエーターズ プログラムのゲームは、ユニバーサ
 * 「[Visual Studio を使用してクリエーターズ タイトルを開発する](develop-creators-title-with-visual-studio.md)」では、デベロッパー センターで Visual Studio プロジェクトを Xbox Live 構成にリンクする方法について説明します。
 * 「[Unity を使用してクリエーターズ タイトルを開発する](develop-creators-title-with-unity.md)」では、Xbox Live 対応の新しい Unity ゲームを作成する方法、単一ユーザーとマルチユーザーのサインインを処理する方法、ランキングや統計などの機能を追加する方法、ネイティブの Visual Studio プロジェクトを生成する方法について説明します。
 
-[(2 & 3) を構築](https://www.scirra.com/construct2)および[Game Maker Studio](https://www.yoyogames.com/gamemaker)ゲーム エンジンにも Construct または Game Maker Studio ゲームに Xbox Live を統合するためのドキュメントがある Unity には、ドキュメントが提供する唯一のサード パーティ製ゲーム エンジンが、それぞれします。
+ゲーム エンジン[(2 & 3) を構築](https://www.scirra.com/construct2)および[Game Maker Studio](https://www.yoyogames.com/gamemaker)も Construct または Game Maker Studio ゲームに Xbox Live を統合するためのドキュメントがある Unity はのみサード パーティ製ゲーム エンジンのドキュメントを提供しますが、それぞれします。
 
-* [ゲーム Maker Studio 2 UWP ここでは、Xbox Live クリエーターズ プログラムをサポートしています](https://www.yoyogames.com/gamemaker/xblc)がする方法について説明では、Xbox One と Windows 10 PC をプレイする Game Maker Studio プロジェクトをエクスポートします。
-* [UWP アプリ: で Xbox Live を使用して構築](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)は方法を説明する Construct 2 と 3 つのゲームで Xbox Live を使用します。
+* [ゲーム Maker Studio 2 UWP ここでは、Xbox Live クリエーターズ プログラムをサポートしています](https://www.yoyogames.com/gamemaker/xblc)が説明エクスポート Game Maker Studio プロジェクトで Xbox One と Windows 10 PC を再生する方法について説明します。
+* [UWP アプリ: で Xbox Live を使用して構築](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)が説明、Construct 2 と 3 つのゲームで Xbox Live を使用する方法について説明します。
 
-Xbox Live の統合を文書化することがなく他のゲーム開発エン引き続き Xbox Live をタイトルに追加するのに、Xbox Live Api を使用することができます。 プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使ってバイナリへの参照を追加するか、API ソースを追加します。 NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。
+Xbox Live の統合を文書化することがなく他のゲーム開発エン引き続き Xbox Live をタイトルに追加するのに Xbox Live Api を使用することができます。 プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使ってバイナリへの参照を追加するか、API ソースを追加します。 NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。
 
 Unity ではないサード パーティ製のゲーム エンジンで Xbox Live サービスを使用して、サポート、質問に回答する適切なゲーム エンジン スタッフと連携します。
 

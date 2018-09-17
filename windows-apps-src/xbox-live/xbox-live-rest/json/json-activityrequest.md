@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a3d1560c7bb8c6a6eb4fe9e4786f0378d74aeca2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956863"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983484"
 ---
 # <a name="activityrequest-json"></a>ActivityRequest (JSON)
 1 つまたは複数のユーザーのリッチ プレゼンスに関する情報を要求します。 
@@ -25,7 +25,7 @@ ms.locfileid: "3956863"
  
 ## <a name="activityrequest"></a>ActivityRequest
  
-ActivityRequest オブジェクトには、次の仕様があります。
+ActivityRequest オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -60,6 +60,6 @@ ActivityRequest オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

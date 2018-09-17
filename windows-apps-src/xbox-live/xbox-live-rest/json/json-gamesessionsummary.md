@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 610f771641352447f9d38fc4217231ba3230e6fb
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963081"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986460"
 ---
 # <a name="gamesessionsummary-json"></a>GameSessionSummary (JSON)
 ゲーム セッションの集計データを表す JSON オブジェクト。 
@@ -24,13 +24,13 @@ ms.locfileid: "3963081"
 
   
  
-GameSessionSummary JSON オブジェクトには、次の仕様があります。
+GameSessionSummary JSON オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| creationTime| DateTime| 日付と、セッションが作成された、UTC で。 | 
+| creationTime| DateTime| 日付と、セッションが作成された、UTC でします。 | 
 | customData| 8 ビットの符号なし整数の配列| ゲーム固有のセッション データの 1024 バイトです。 この値は、サーバーに不透明です。 | 
-| displayName| string| 表示名ゲームのセッション 128 文字の最大長。 この値は、サーバーに不透明です。 | 
+| displayName| string| 表示名ゲームのセッション 128 文字の最大長を持つ。 この値は、サーバーに不透明です。 | 
 | hasEnded| ブール値| セッションが終了した場合は true、それ以外の場合。 さらにデータがセッションに送信されているように true マーク読み取り専用とゲーム セッションにこのフィールドを設定します。 | 
 | sessionId| 文字列セッション id。 | 
 | titleId| 32 ビット符号なし整数| ゲーム セッションの作成、タイトルの ID です。| 
@@ -66,7 +66,7 @@ GameSessionSummary JSON オブジェクトには、次の仕様があります�
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E4D"></a>

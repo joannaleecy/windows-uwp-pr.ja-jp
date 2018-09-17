@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e8f71a565b253a9601a61488948920f75d0444f
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963565"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981183"
 ---
 # <a name="usersmegamerpic"></a>/users/me/gamerpic
 1080 x 1080 ゲーマー アイコンにアクセスします。  
@@ -25,7 +25,7 @@ ms.locfileid: "3963565"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[PUT (/ユーザー/me/ゲーマー アイコン)](uri-usersmegamerpicput.md)
+[PUT (/users/me/gamerpic)](uri-usersmegamerpicput.md)
 
 &nbsp;&nbsp;1080 x 1080 ゲーマー アイコンをアップロードします。
  
@@ -39,6 +39,6 @@ ms.locfileid: "3963565"
  
 ##### <a name="parent"></a>Parent 
 
-[ゲーマー アイコン Uri](atoc-reference-gamerpic.md)
+[ゲーマーアイコン URI](atoc-reference-gamerpic.md)
 
    

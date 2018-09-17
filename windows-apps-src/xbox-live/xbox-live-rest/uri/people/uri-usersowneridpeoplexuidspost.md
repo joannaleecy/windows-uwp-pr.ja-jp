@@ -1,9 +1,9 @@
 ---
-title: POST (/users/{ownerId}/ユーザー/xuid)
+title: POST (/users/{ownerId}/people/xuids)
 assetID: e20bfb58-9c3b-14ed-6462-85d42fa6fe1a
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeoplexuidspost.html
 author: KevinAsgari
-description: " POST (/users/{ownerId}/ユーザー/xuid)"
+description: " POST (/users/{ownerId}/people/xuids)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 27fbc0e209439fca01cf1e7d8c7c3bf98c4b9053
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961763"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987860"
 ---
-# <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/ユーザー/xuid)
+# <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/people/xuids)
 呼び出し元のユーザーからコレクションの XUID によってユーザーを取得します。 これらの Uri のドメインが`social.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4E5)
   * [Authorization](#ID4EJB)
   * [必要な要求ヘッダー](#ID4ERC)
-  * [オプションの要求ヘッダー](#ID4EBE)
+  * [省略可能な要求ヘッダー](#ID4EBE)
   * [要求本文](#ID4EHF)
   * [HTTP ステータス コード](#ID4EKH)
   * [必要な応答ヘッダー](#ID4ENBAC)
@@ -45,7 +45,7 @@ POST ので、これと同じ結果に 1 回または複数回実行する場合
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。| 
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。| 
   
 <a id="ID4EJB"></a>
 
@@ -64,18 +64,18 @@ POST ので、これと同じ結果に 1 回または複数回実行する場合
 | ヘッダー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Authorization| [String]。 Xbox LIVE のデータを承認します。 これは、通常、暗号化された XSTS トークンです。 値の例: <b>XBL3.0 x =&lt;userhash >;&lt;トークン ></b>します。| 
-| Content-Length| 32 ビットの符号なし整数。 バイト単位の長さ、要求本文。 値の例: 22 します。| 
+| Content-Length| 32 ビット符号なし整数。 バイト単位の長さ、要求本文。 値の例: 22 します。| 
 | Content-Type| [String]。 要求本文の MIME タイプ。 これは、<b>アプリケーション/json</b>でなければなりません。| 
   
 <a id="ID4EBE"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
 | ヘッダー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。| 
-| Accept| [String]。 コンテンツの種類の応答で、呼び出し元を受け入れるです。 すべての応答は、<b>アプリケーション/json</b>です。| 
+| X RequestedServiceVersion| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。| 
+| Accept| [String]。 コンテンツ タイプを呼び出し元が応答で受け取る。 すべての応答は、<b>アプリケーション/json</b>です。| 
   
 <a id="ID4EHF"></a>
 
@@ -154,7 +154,7 @@ POST ので、これと同じ結果に 1 回または複数回実行する場合
  
 応答本文は要求メソッドは、「取得」するときにのみ送信されます。 「追加」または「削除」の応答の本文はありません。
  
-「取得」メソッドの呼び出しが成功した場合は、サービスはコレクション、および呼び出し元のユーザーのコレクションが含まれた配列で呼び出し元のユーザーのユーザーの合計数を返します。 「追加」と「削除」メソッドの応答は返されません。 [PeopleList (JSON)](../../json/json-peoplelist.md)を参照してください。
+「取得」メソッドの呼び出しが成功した場合は、サービスはコレクション、および呼び出し元のユーザーのコレクションが含まれた配列で呼び出し元のユーザーのユーザーの合計数を返します。 「追加」と「を削除する」メソッドの応答は返されません。 [PeopleList (JSON)](../../json/json-peoplelist.md)を参照してください。
  
 <a id="ID4EHDAC"></a>
 
@@ -199,6 +199,6 @@ POST ので、これと同じ結果に 1 回または複数回実行する場合
  
 ##### <a name="parent"></a>Parent 
 
-[ユーザー/xuid/users/{ownerId}](uri-usersowneridpeoplexuids.md)
+[/users/{ownerId}/people/xuids](uri-usersowneridpeoplexuids.md)
 
    

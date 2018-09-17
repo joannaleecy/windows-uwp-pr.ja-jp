@@ -1,9 +1,9 @@
 ---
-title: ユーザー/バッチ
+title: /users/batch
 assetID: db4c796a-8660-85ff-b92d-085245523f5c
 permalink: en-us/docs/xboxlive/rest/uri-usersbatch.html
 author: KevinAsgari
-description: " ユーザー/バッチ"
+description: " /users/batch"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a4c7f178d729e1e35a7e9bec922a7f969324322
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963567"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985034"
 ---
-# <a name="usersbatch"></a>ユーザー/バッチ
+# <a name="usersbatch"></a>/users/batch
 ユーザーのバッチのプレゼンスをアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
   
 <a id="ID4EV"></a>
@@ -26,7 +26,7 @@ ms.locfileid: "3963567"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST (ユーザー/バッチ)](uri-usersbatchpost.md)
+[POST (/users/batch)](uri-usersbatchpost.md)
 
 &nbsp;&nbsp;ユーザーのバッチのプレゼンスを取得します。
  
@@ -40,6 +40,6 @@ ms.locfileid: "3963567"
  
 ##### <a name="parent"></a>Parent 
 
-[プレゼンス Uri](atoc-reference-presence.md)
+[プレゼンス URI](atoc-reference-presence.md)
 
    

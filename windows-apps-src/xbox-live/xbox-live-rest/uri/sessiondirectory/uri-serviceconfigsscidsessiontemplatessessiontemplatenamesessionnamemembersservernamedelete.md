@@ -1,9 +1,9 @@
 ---
-title: (/Serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/servers/{サーバー名}) を削除します。
+title: DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})
 assetID: 39c921d1-a166-74b9-fcbc-ea3c0c58cc40
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservernamedelete.html
 author: KevinAsgari
-description: " (/Serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/servers/{サーバー名}) を削除します。"
+description: " DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 12feca7761faa441023f2f242903d4fec2f0284d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963377"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982434"
 ---
-# <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameserversserver-name"></a>(/Serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/servers/{サーバー名}) を削除します。
+# <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameserversserver-name"></a>DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})
 指定されたサーバーは、セッションから削除します。
 
 > [!IMPORTANT]
-> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
+> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
 
   * [URI パラメーター](#ID4ET)
   * [HTTP ステータス コード](#ID4E5)
@@ -65,4 +65,4 @@ ms.locfileid: "3963377"
 
 ##### <a name="parent"></a>Parent
 
-[/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/servers/{サーバー名}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.md)
+[/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.md)

@@ -1,9 +1,9 @@
 ---
-title: 取得する (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
+title: GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
 assetID: 613ba53f-03cb-5ed3-a5ba-be59e5a146d1
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionssessionidallocationstatus-get.html
 author: KevinAsgari
-description: " 取得する (/titles/{titleId}/sessions/{sessionId}/allocationStatus)"
+description: " GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956225"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983446"
 ---
-# <a name="get-titlestitleidsessionssessionidallocationstatus"></a>取得する (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
+# <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
 その sessionId で識別される sessionhost の割り当ての状態を返します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [必要な要求ヘッダー](#ID4E4)
@@ -50,14 +50,14 @@ ms.locfileid: "3956225"
 | --- | --- | 
 | description| 空の文字列 (左での下位互換性) を返します。| 
 | clusterId| 空の文字列 (左での下位互換性) を返します。| 
-| ホスト名| セッションのホストの URL。| 
-| status| キューに入れ、満たされると、または中止を示します。| 
+| ホスト名| セッション ホストの URL です。| 
+| status| キューに入れ、満たされると、または中止いずれかを示します。| 
 | sessionHostId| セッション ホストの id。| 
 | sessionId| (割り当て時) に提供されるクライアント セッション id。| 
 | secureContext| セキュア デバイス アドレスです。| 
 | portMappings| インスタンスのポート マッピングします。| 
 | 地域| インスタンスの場所です。| 
-| ticketId| 現在のセッション ID です (左での下位互換性)。| 
+| ticketId| 現在のセッション ID (左での下位互換性) です。| 
 | gameHostId| (左での下位互換性) 現在 sessionHostId します。| 
  
 <a id="ID4EGD"></a>
@@ -104,11 +104,11 @@ ms.locfileid: "3956225"
  
 ### <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
+次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しをのみ再試行する必要があります。
  
    * 200-成功 
    * 400-要求が無効なパラメーターが含まれています 
    * 401: Unauthorized 
    * 404-チケット ID、タイトル ID が無効であるか、または見つかりません。 
-   * 500-サーバーの予期しないエラー。 
+   * 500-予期しないサーバー エラー。 
     

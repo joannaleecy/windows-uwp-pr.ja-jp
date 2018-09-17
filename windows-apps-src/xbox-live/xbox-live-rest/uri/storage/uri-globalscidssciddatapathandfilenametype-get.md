@@ -1,9 +1,9 @@
 ---
-title: 取得する (グローバル//global/scids/{scid}/data/{pathAndFileName} {の種類})
+title: GET (/global/scids/{scid}/data/{pathAndFileName},{type})
 assetID: 5ca8e0dd-3c45-1b7b-022e-d5d61414fd7d
 permalink: en-us/docs/xboxlive/rest/uri-globalscidssciddatapathandfilenametype-get.html
 author: KevinAsgari
-description: " 取得する (グローバル//global/scids/{scid}/data/{pathAndFileName} {の種類})"
+description: " GET (/global/scids/{scid}/data/{pathAndFileName},{type})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 03da8b482dcfb8a4972fee69c0e3995d792cb87a
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964565"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986076"
 ---
-# <a name="get-globalscidssciddatapathandfilenametype"></a>取得する (グローバル//global/scids/{scid}/data/{pathAndFileName} {の種類})
+# <a name="get-globalscidssciddatapathandfilenametype"></a>GET (/global/scids/{scid}/data/{pathAndFileName},{type})
 ファイルをダウンロードします。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
   * [Authorization](#ID4ECB)
   * [オプションのクエリ文字列パラメーター](#ID4EPB)
   * [必要な要求ヘッダー](#ID4EZC)
-  * [オプションの要求ヘッダー](#ID4ECE)
+  * [省略可能な要求ヘッダー](#ID4ECE)
   * [要求本文](#ID4EMF)
   * [HTTP ステータス コード](#ID4EZF)
   * [応答ヘッダー](#ID4EMDAC)
@@ -39,7 +39,7 @@ ms.locfileid: "3964565"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | scid| guid| ルックアップ サービス構成の ID です。| 
-| pathAndFileName| string| アクセスできる項目のパスとファイル名。 (となどを含む最終的なスラッシュ) のパス部分に有効な文字は大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名可能性がありますいないを空にする、期間の終了または 2 つの連続するピリオドが含まれています。| 
+| pathAndFileName| string| アクセスできる項目のパスとファイル名。 パス部分 (となどを含む最終的なスラッシュ) の有効な文字が大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名可能性がありますいないを空にする、期間の終了または 2 つの連続するピリオドが含まれています。| 
 | type| 文字列| データの形式です。 使用可能な値: バイナリ、config または json します。| 
   
 <a id="ID4ECB"></a>
@@ -47,7 +47,7 @@ ms.locfileid: "3964565"
  
 ## <a name="authorization"></a>Authorization 
  
-要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは、403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていない応答を返します。 
+要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは 403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 不正な応答を返します。 
   
 <a id="ID4EPB"></a>
 
@@ -58,7 +58,7 @@ Blob の種類によって異なります。 バイナリ blob には、クエ�
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| 選択| string| 型は json ときにのみ使用します。 応答する必要がありますのみを含む特定プロパティ/値、JSON のこのパラメーターによって決定されるを指定します。 サブプロパティと角かっこを指定する「ドット」(.) を使用して ('[' と ']') を配列のインデックスを指定します。 たとえば、"配列 1 [4] .prop2"配列「1」配列のインデックス 4 の"prop2"プロパティを指定します。| 
+| 選択| string| 型は json ときにのみ使用します。 応答する必要がありますのみを含む特定プロパティ/値、JSON のこのパラメーターによって決定されるを指定します。 「ドット」(.) を使用して、サブプロパティ、角かっこを指定 ('['、']') 配列のインデックスを指定します。 たとえば、"配列 1 [4] .prop2"配列「1」配列のインデックス 4 の"prop2"プロパティを指定します。| 
 | customSelector| string| タイプのファイルを構成します。 どのようなカスタムの仮想ノードを含めることを示します。 Config タイプのファイルについて詳しくは、タイトル ストレージを参照してください。| 
   
 <a id="ID4EZC"></a>
@@ -69,16 +69,16 @@ Blob の種類によって異なります。 バイナリ blob には、クエ�
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は認証要求によって返されるトークンで置き換えられます。 STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証し、Xbox LIVE サービス要求の承認を参照してください。| 
+| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は認証要求によって返されるトークンで置き換えられます。 STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証と Xbox LIVE サービス要求の承認を参照してください。| 
   
 <a id="ID4ECE"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
 | ヘッダー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| If-Match| 操作を完了するにより既存項目に一致する必要があります ETag を指定します。| 
+| If-Match| 操作を完了するにより既存項目と一致する ETag を指定します。| 
 | If-None-Match| 操作を完了するにより既存項目に一致する必要があります ETag を指定します。| 
 | 範囲| ダウンロードするバイトの範囲を指定します。 標準の範囲の HTTP ヘッダーの形式に従います。| 
   
@@ -103,11 +103,11 @@ Blob の種類によって異なります。 バイナリ blob には、クエ�
 | 400| Bad Request | サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません | 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden | ユーザーまたはサービスの要求は許可されていません。| 
-| 404| 見つかりません。 | 指定されたリソースは見つかりませんでした。| 
+| 404| Not Found します。 | 指定されたリソースは見つかりませんでした。| 
 | 406| 許容できません。 | リソースのバージョンがサポートされていません。| 
 | 408| 要求のタイムアウト | 要求にかかった時間が長すぎます。| 
 | 500| 内部サーバー エラー | サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable | 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行の値の後にもう一度やり直してください。| 
+| 503| Service Unavailable | 要求が調整された、クライアント再試行値 (例: 5 秒後) を秒単位で後にもう一度やり直してください。| 
   
 <a id="ID4EMDAC"></a>
 

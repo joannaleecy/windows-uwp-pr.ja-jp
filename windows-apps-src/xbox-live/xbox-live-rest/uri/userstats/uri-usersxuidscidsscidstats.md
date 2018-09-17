@@ -1,9 +1,9 @@
 ---
-title: ユーザー/xuid ({xuid})/scids/{scid}/統計
+title: /users/xuid({xuid})/scids/{scid}/stats
 assetID: 3cf9ffd4-9a8b-2658-402b-2e933f7f6f1b
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidsscidstats.html
 author: KevinAsgari
-description: " ユーザー/xuid ({xuid})/scids/{scid}/統計"
+description: " /users/xuid({xuid})/scids/{scid}/stats"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fa886078d429719eb50aa8567bfe238768ba2e3
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960835"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985598"
 ---
-# <a name="usersxuidxuidscidsscidstats"></a>ユーザー/xuid ({xuid})/scids/{scid}/統計
-スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストでサービス構成にアクセスします。 これらの Uri のドメインが`userstats.xboxlive.com`します。
+# <a name="usersxuidxuidscidsscidstats"></a>/users/xuid({xuid})/scids/{scid}/stats
+スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成にアクセスします。 これらの Uri のドメインが`userstats.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -40,11 +40,11 @@ ms.locfileid: "3960835"
 
 [GET](uri-usersxuidscidsscidstatsget.md)
 
-&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストでサービス構成を取得します。
+&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成を取得します。
 
 [値のメタデータを取得します。](uri-usersxuidscidsscidstatsgetvaluemetadata.md)
 
-&nbsp;&nbsp;指定されたサービス構成でのユーザーに対して、統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。
+&nbsp;&nbsp;指定されたサービス構成内のユーザーの統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。
  
 <a id="ID4EKC"></a>
 
@@ -56,6 +56,6 @@ ms.locfileid: "3960835"
  
 ##### <a name="parent"></a>Parent 
 
-[ユーザーの統計情報の Uri](atoc-reference-userstats.md)
+[ユーザー統計 URI](atoc-reference-userstats.md)
 
    

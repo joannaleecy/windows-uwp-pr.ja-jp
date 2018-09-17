@@ -1,9 +1,9 @@
 ---
-title: /sessions/{sessionId} {scid}/scids//data/{パス}
+title: /sessions/{sessionId}/scids/{scid}/data/{path}
 assetID: 932459b4-24b4-5b09-8146-ed214de0083a
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapath.html
 author: KevinAsgari
-description: " /sessions/{sessionId} {scid}/scids//data/{パス}"
+description: " /sessions/{sessionId}/scids/{scid}/data/{path}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d6089bd7d758dffb75759ca2f079ee944dcb692
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958917"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983338"
 ---
-# <a name="sessionssessionidscidssciddatapath"></a>/sessions/{sessionId} {scid}/scids//data/{パス}
+# <a name="sessionssessionidscidssciddatapath"></a>/sessions/{sessionId}/scids/{scid}/data/{path}
 指定されたパスのファイル情報の一覧を示します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -53,6 +53,6 @@ ms.locfileid: "3958917"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ Uri](atoc-reference-storagev2.md)
+[タイトル ストレージ URI](atoc-reference-storagev2.md)
 
    

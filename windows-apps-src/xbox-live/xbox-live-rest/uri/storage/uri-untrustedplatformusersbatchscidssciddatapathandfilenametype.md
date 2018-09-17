@@ -1,9 +1,9 @@
 ---
-title: ユーザー/untrustedplatform//global/scids/{scid}/data/{pathAndFileName} {の種類} をバッチ処理/
+title: /untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}
 assetID: c2909e75-e108-3555-c157-f2d552f10e9f
 permalink: en-us/docs/xboxlive/rest/uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.html
 author: KevinAsgari
-description: " ユーザー/untrustedplatform//global/scids/{scid}/data/{pathAndFileName} {の種類} をバッチ処理/"
+description: " /untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 04952a183a2903a5c296a6b27af35766bccbddc1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961863"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982232"
 ---
-# <a name="untrustedplatformusersbatchscidssciddatapathandfilenametype"></a>ユーザー/untrustedplatform//global/scids/{scid}/data/{pathAndFileName} {の種類} をバッチ処理/
-同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
+# <a name="untrustedplatformusersbatchscidssciddatapathandfilenametype"></a>/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}
+同じファイル名を持つ複数のユーザーから複数のファイルをダウンロードします。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -31,7 +31,7 @@ ms.locfileid: "3961863"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | scid| guid| ルックアップ サービス構成の ID です。| 
-| pathAndFileName| string| アクセスできる項目のパスとファイル名。 (となどを含む最終的なスラッシュ) のパス部分に有効な文字は大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名可能性がありますいないを空にする、期間の終了または 2 つの連続するピリオドが含まれています。| 
+| pathAndFileName| string| アクセスできる項目のパスとファイル名。 パス部分 (となどを含む最終的なスラッシュ) の有効な文字が大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名可能性がありますいないを空にする、期間の終了または 2 つの連続するピリオドが含まれています。| 
 | type| 文字列| データの形式です。 設定可能な値は、バイナリ json です。| 
   
 <a id="ID4EFC"></a>
@@ -41,7 +41,7 @@ ms.locfileid: "3961863"
 
 [POST](uri-untrustedplatformusersbatchscidssciddatapathandfilenametype-post.md)
 
-&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。
+&nbsp;&nbsp;同じファイル名を持つ複数のユーザーから複数のファイルをダウンロードします。
  
 <a id="ID4EPC"></a>
 
@@ -53,6 +53,6 @@ ms.locfileid: "3961863"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ Uri](atoc-reference-storagev2.md)
+[タイトル ストレージ URI](atoc-reference-storagev2.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/{scid} バッチ/
+title: /serviceconfigs/{scid}/batch
 assetID: eb1b510f-d92e-ae9b-a3e6-0edf58b4f075
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidbatch.html
 author: KevinAsgari
-description: " /serviceconfigs/{scid} バッチ/"
+description: " /serviceconfigs/{scid}/batch"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a48bf9c30370238adc83376a524e9c61abb4af13
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960309"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988036"
 ---
-# <a name="serviceconfigsscidbatch"></a>/serviceconfigs/{scid} バッチ/
+# <a name="serviceconfigsscidbatch"></a>/serviceconfigs/{scid}/batch
 サービス構成の識別子レベルでバッチ クエリの POST 操作をサポートしています。
 
 > [!IMPORTANT]
@@ -43,7 +43,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST (/serviceconfigs/{scid} バッチ/)](uri-serviceconfigsscidbatchpost.md)
+[POST (/serviceconfigs/{scid}/batch)](uri-serviceconfigsscidbatchpost.md)
 
 &nbsp;&nbsp;サービス構成の複数の Xbox ユーザー Id には、バッチ クエリを作成します。
 
@@ -57,4 +57,4 @@ sessiondirectory.xboxlive.com
 
 ##### <a name="parent"></a>Parent
 
-[セッション ディレクトリ Uri](atoc-reference-sessiondirectory.md)
+[セッション ディレクトリ URI](atoc-reference-sessiondirectory.md)

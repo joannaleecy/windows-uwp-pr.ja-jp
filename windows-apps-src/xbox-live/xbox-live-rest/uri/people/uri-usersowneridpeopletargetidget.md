@@ -1,9 +1,9 @@
 ---
-title: (/Users/{ownerId} そして {targetid}) を取得します。
+title: GET (/users/{ownerId}/people/{targetid})
 assetID: 2fd37b8e-b886-14f2-3399-59f530d85e4e
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeopletargetidget.html
 author: KevinAsgari
-description: " (/Users/{ownerId} そして {targetid}) を取得します。"
+description: " GET (/users/{ownerId}/people/{targetid})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a0735a65afe8b5748efefce5dec9ad1989a77b4d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957289"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983950"
 ---
-# <a name="get-usersowneridpeopletargetid"></a>(/Users/{ownerId} そして {targetid}) を取得します。
-呼び出し元のユーザーのコレクションからターゲット ID でユーザーを取得します。 これらの Uri のドメインが`social.xboxlive.com`します。
+# <a name="get-usersowneridpeopletargetid"></a>GET (/users/{ownerId}/people/{targetid})
+呼び出し元のユーザーのコレクションからターゲット ID によってユーザーを取得します。 これらの Uri のドメインが`social.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4E5)
   * [Authorization](#ID4EJB)
   * [必要な要求ヘッダー](#ID4ERC)
-  * [オプションの要求ヘッダー](#ID4EQD)
+  * [省略可能な要求ヘッダー](#ID4EQD)
   * [要求本文](#ID4EWE)
   * [HTTP ステータス コード](#ID4EBF)
   * [必要な応答ヘッダー](#ID4EDH)
@@ -45,8 +45,8 @@ ms.locfileid: "3957289"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。| 
-| targetid| string| 所有者のユーザー リスト、Xbox ユーザー ID (XUID) またはゲーマータグのいずれかからのデータを取得するユーザーの識別子です。 値の例: xuid(2603643534573581)、gt(SomeGamertag) します。| 
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。| 
+| targetid| string| 所有者の People リストで、Xbox ユーザー ID (XUID) か、ゲーマータグがデータを取得するユーザーの識別子です。 値の例: xuid(2603643534573581)、gt(SomeGamertag) します。| 
   
 <a id="ID4EJB"></a>
 
@@ -69,12 +69,12 @@ ms.locfileid: "3957289"
 <a id="ID4EQD"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
 | ヘッダー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。| 
-| Accept| [String]。 コンテンツの種類の応答で、呼び出し元を受け入れるです。 すべての応答は、<b>アプリケーション/json</b>です。| 
+| X RequestedServiceVersion| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。| 
+| Accept| [String]。 コンテンツ タイプを呼び出し元が応答で受け取る。 すべての応答は、<b>アプリケーション/json</b>です。| 
   
 <a id="ID4EWE"></a>
 
@@ -95,7 +95,7 @@ ms.locfileid: "3957289"
 | 200| OK| 成功します。| 
 | 400| Bad Request| ユーザー Id が正しくありませんでした。| 
 | 403| Forbidden| 承認ヘッダーから XUID クレームを解析できませんでした。| 
-| 404| 見つかりません。| 対象ユーザーが所有者の People リストに見つかりませんでした。| 
+| 404| Not Found します。| 対象ユーザーが所有者の People リストに見つかりませんでした。| 
   
 <a id="ID4EDH"></a>
 
@@ -141,6 +141,6 @@ ms.locfileid: "3957289"
  
 ##### <a name="parent"></a>Parent 
 
-[/users/{ownerId} そして {targetid}](uri-usersowneridpeopletargetid.md)
+[/users/{ownerId}/people/{targetid}](uri-usersowneridpeopletargetid.md)
 
    

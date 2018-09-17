@@ -1,9 +1,9 @@
 ---
-title: /users/{userId}/プロファイルの設定/ユーザー/{userList}? 設定 = {設定}
+title: /users/{userId}/profile/settings/people/{userList}?settings={settings}
 assetID: 0ba20eba-f0ab-28ab-61d3-b4f9e4c07bc5
 permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlist.html
 author: KevinAsgari
-description: " /users/{userId}/プロファイルの設定/ユーザー/{userList}? 設定 = {設定}"
+description: " /users/{userId}/profile/settings/people/{userList}?settings={settings}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 44341b5fc8f831e3a500f47a51b94978f587cb8c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960343"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981016"
 ---
-# <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/プロファイルの設定/ユーザー/{userList}? 設定 = {設定}
+# <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/profile/settings/people/{userList}?settings={settings}
 People モニカー サポートでのユーザーのプロファイルにアクセスします。 これらの Uri のドメインが`profile.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -38,7 +38,7 @@ People モニカー サポートでのユーザーのプロファイルにアク
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(/Users/{userId}/プロファイルの設定/ユーザー/{userList}) を取得します。](uri-usersuseridprofilesettingspeopleuserlistget.md)
+[GET (/users/{userId}/profile/settings/people/{userList})](uri-usersuseridprofilesettingspeopleuserlistget.md)
 
 &nbsp;&nbsp;ユーザーのプロファイルを取得またはユーザー, People モニカーをサポートします。
  
@@ -52,8 +52,8 @@ People モニカー サポートでのユーザーのプロファイルにアク
  
 ##### <a name="parent"></a>Parent 
 
-[プロファイルの Uri](atoc-reference-profiles.md)
+[プロフィール URI](atoc-reference-profiles.md)
 
- [プロファイル (JSON)](../../json/json-profile.md)
+ [Profile (JSON)](../../json/json-profile.md)
 
    

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, サインイン, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c5b1d346bf7e2673b4bca0d1d04075c03fdd6e5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963877"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981540"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live サインインのトラブルシューティング
 
@@ -33,7 +33,7 @@ ms.locfileid: "3963877"
 
 #### <a name="developer-account-doesnt-have-access-to-the-right-sandbox-for-run-time-access"></a>開発者アカウントでは実行時アクセス用の正しいサンドボックスにアクセスできない
 
-* テスト アカウント (開発アカウントとも呼ばれます)、または承認された開発者アカウントは、開発中のタイトルにサインインで使用する必要があります。  1 つを使用してサインインしようとしている、またはその他のテスト アカウントは XDP 上に作成してください[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)します。 Windows デベロッパー センターでの xbox live の関連付けられている開発者アカウントを承認します。[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
+* テスト アカウント (開発アカウントとも呼ばれます) または承認された開発者アカウントは、開発中のタイトルにサインインに使用する必要があります。  1 つを使用してサインインしようとしているか、他のテスト アカウントが XDP で作成されたことを確認[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)します。 Windows デベロッパー センターでの xbox live の関連付けられている開発者アカウントを承認します。[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
 * アカウントには、タイトルが公開サンド ボックスへのアクセスを持っていることを確認します。  XDP で作成したテスト アカウントは、それを作成した XDP アカウントのアクセス許可を継承します。
 
 #### <a name="your-device-is-not-on-the-correct-sandbox"></a>デバイスが正しいサンドボックス上にない
@@ -51,7 +51,7 @@ ms.locfileid: "3963877"
 いくつか注意すべきことがあります。
 
 * アプリの ID が XDP またはデベロッパー センターに正しく入力ことを確認します。
-* PFN が XDP またはデベロッパー センターに正しく入力ことを確認します。
+* PFN が XDP またはデベロッパー センターに正しく入力されたことを確認します。
 * 「[新規または既存の UWP プロジェクトに Xbox Live を追加する](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」ガイドで説明されているように、Visual Studio プロジェクトと同じディレクトリに xboxservices.config を 作成してあることを再確認します。
 * appxmanifest で "Package Identity" が正しいことを確認します。  これは Windows デベロッパー センターの [App Identity] セクションで "Package/Identity/Name" として示されます。
 

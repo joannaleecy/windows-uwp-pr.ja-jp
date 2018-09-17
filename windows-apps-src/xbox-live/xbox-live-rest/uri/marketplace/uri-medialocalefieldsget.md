@@ -1,9 +1,9 @@
 ---
-title: 取得する (/media/{marketplaceId}/フィールド)
+title: GET (/media/{marketplaceId}/fields)
 assetID: 1d535344-8522-0fd1-4daa-cd0f0a0f1121
 permalink: en-us/docs/xboxlive/rest/uri-medialocalefieldsget.html
 author: KevinAsgari
-description: " 取得する (/media/{marketplaceId}/フィールド)"
+description: " GET (/media/{marketplaceId}/fields)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c46981121393ce80228d857c32a01784d58af96
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961857"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983258"
 ---
-# <a name="get-mediamarketplaceidfields"></a>取得する (/media/{marketplaceId}/フィールド)
+# <a name="get-mediamarketplaceidfields"></a>GET (/media/{marketplaceId}/fields)
 フィールド トークンを取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
@@ -30,7 +30,7 @@ ms.locfileid: "3961857"
  
 ## <a name="remarks"></a>注釈
  
-エンターテイメント探索サービス (EDS) Api は、既定では、各項目のフィールドの非常に小さい最小セットを返します。
+エンターテイメント探索サービス (EDS) 既定では、Api は、各項目のフィールドの非常に小さい最小セットを返します。
  
    * メディア項目の種類
    * メディア グループ
@@ -39,11 +39,11 @@ ms.locfileid: "3961857"
   
 詳細を取得するのには、Api は、するその他のデータの一部を返すように指定する**フィールド**パラメーターを受け入れます。 多くの使用可能なフィールドがあるため、API 呼び出しごとに完全に自分の名前を指定することが大幅に膨張要求します。 代わりに、名前は、その他の Api に渡すことができるより小さい値を生成するこの API に渡すことができます。
  
-このパラメーターを受け取るいずれかの API、指定された値がすべて指定したメディア項目の種類のすべてのフィールドのスーパー セットである必要があります。 別のメディア項目の種類のフィールドの異なるセットを指定することはできません。 ただし、フィールドは、1 つのメディア項目の種類がない別、それに適用する場合にのみ表示、メディア項目の種類のデータが存在する (への呼び出しで"AvatarBodyType"が含まれている場合に、[を取得する (/media/{marketplaceId} フィールド/)]()、AvatarItems のみがフィールドを含む)。
+このパラメーターを受け取る API, 指定された値はすべて指定したメディア項目の種類のすべてのフィールドのスーパー セットである必要があります。 別のメディア項目の種類のフィールドの異なるセットを指定することはできません。 ただし、フィールドは、1 つのメディア項目の種類がない別、それに適用する場合にのみ表示、メディア項目の種類のデータが存在する (への呼び出しで"AvatarBodyType"が含まれている場合に、[を取得する (/media/{marketplaceId} フィールド/)]()、AvatarItems のみがフィールドを含む)。
  
-この API から返される値は、実際に強くキャッシュ--、それらは変更されませんを除く EDS の展開の間でします。 キャッシュが必要な場合、キャッシュ最後のユーザーのセッションしなくなったことをお勧めします。
+この API から返される値は、実際に強くキャッシュ--、それらは変更されません除く EDS の展開の間でします。 キャッシュが必要な場合、キャッシュ最後のユーザーのセッションしなくなったことをお勧めします。
  
-実際のフィールド名を受け入れ、だけでなくこの API は、"all"を有効な値として受け取ります。 これにより、指定することは、各フィールドが含まれている値が生成されます。 "All"の値の使用は、開発、デバッグ、テスト目的でに対してのみお勧めします。
+実際のフィールド名を受け付けるだけでなくこの API は、"all"を有効な値として受け取ります。 これにより、指定することは、各フィールドが含まれている値が生成されます。 "All"の値の使用は、開発、デバッグ、テスト目的でに対してのみお勧めします。
  
 送信する代わりに、 `desired={list of fields separated by a '.'}` **フィールド**トークンを受け取るいずれかの API にします。
  
@@ -77,7 +77,7 @@ ms.locfileid: "3961857"
  
 ##### <a name="parent"></a>Parent 
 
-[/media/{marketplaceId} フィールド/](uri-medialocalefields.md)
+[/media/{marketplaceId}/fields](uri-medialocalefields.md)
 
   
 <a id="ID4EYD"></a>
@@ -85,14 +85,14 @@ ms.locfileid: "3961857"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [Marketplace Uri](atoc-reference-marketplace.md)
+ [マーケットプレース URI](atoc-reference-marketplace.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

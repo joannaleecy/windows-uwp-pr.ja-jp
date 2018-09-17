@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e1ed654e4dc1c0f1233ecdedf5d4af66da868bff
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962783"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987650"
 ---
 # <a name="paging-parameters"></a>ページング パラメーター
  
-一部の Xbox Live サービス Uri では、JavaScript Object Notation (JSON) オブジェクトのコレクションを返します。 これらのコレクションは、URI に接続されているクエリ文字列の一部としてページングのパラメーターを指定することによって、を通じてページことができます。 ページング パラメーターの完全な一覧に従います。 ページングのパラメーターを許可するすべての Uri は、このページの下部にリンクされます。
+一部の Xbox Live サービス Uri では、JavaScript Object Notation (JSON) オブジェクトのコレクションを返します。 これらのコレクションは、URI に接続されているクエリ文字列の一部としてページングのパラメーターを指定することによって、を通じてページングことができます。 ページング パラメーターの完全な一覧に従います。 ページングのパラメーターを許可するすべての Uri は、このページの下部にリンクされます。
  
 <a id="ID4E2"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "3962783"
  
 ##### <a name="parent"></a>Parent  
 
-[その他の参照](atoc-xboxlivews-reference-additional.md)
+[その他の参照情報](atoc-xboxlivews-reference-additional.md)
 
   
 <a id="ID4ERD"></a>

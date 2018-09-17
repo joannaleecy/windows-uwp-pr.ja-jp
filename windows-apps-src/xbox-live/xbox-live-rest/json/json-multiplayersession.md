@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 520861dfa512ae301cce9d75e1c314feacf7d6b9
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960679"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981040"
 ---
 # <a name="multiplayersession-json"></a>MultiplayerSession (JSON)
 **MultiplayerSession**を表す JSON オブジェクト。 
@@ -24,14 +24,14 @@ ms.locfileid: "3960679"
 
   
  
-MultiplayerSession JSON オブジェクトには、次の仕様があります。
+MultiplayerSession JSON オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| 定数| object| セッションの定数を生成するセッション テンプレートと結合された読み取り専用の設定。 | 
+| 定数| object| セッションの定数を生成するセッション テンプレートを使用して結合読み取り専用の設定。 | 
 | プロパティ | object | セッションのプロパティへの結合を変更します。| 
-| members.me | object| 定数および機能もプロパティなどのトップレベルの対応します。 PUT メソッドでは、セッションのメンバーであることをユーザーに要求し、必要な場合、ユーザーを追加します。 "Me"が null として指定されている場合は、要求を行っているメンバーがセッションから削除されます。 | 
-| メンバー | object| 0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクトです。 既にセッションには、メンバーが含まれている場合でも、要求のメンバーの数は常に 0 で始まります。 要求で表示される順序でセッションにメンバーが追加されます。 メンバーのプロパティは、先に属しているユーザーでのみ設定できます。 | 
+| members.me | object| 定数および機能もプロパティなどのトップレベルの対応します。 PUT メソッドでは、ユーザーには、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。 "Me"が null として指定されている場合は、要求を行っているメンバーがセッションから削除されます。 | 
+| メンバー | object| 0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクトです。 要求のメンバー数常に 0 から始まり、場合でも、既にセッションにはメンバーが含まれています。 要求で表示される順序でセッションにメンバーが追加されます。 メンバーのプロパティは、先に属しているユーザーでのみ設定できます。 | 
 | サーバー | object| 関連付けられているサーバーの参加者のセットに更新プログラムと、セッションに追加されたことを示す値。 サーバーが null として指定されている場合、そのサーバーのエントリは、セッションから削除されます。 | 
   
 <a id="ID4EZ"></a>
@@ -202,6 +202,6 @@ MultiplayerSession JSON オブジェクトには、次の仕様があります�
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: POST (ユーザー/batchfeedback)
+title: POST (/users/batchfeedback)
 assetID: f94dcf19-a4e3-5bd0-5276-23e43bdcae52
 permalink: en-us/docs/xboxlive/rest/uri-reputationusersbatchfeedbackpost.html
 author: KevinAsgari
-description: " POST (ユーザー/batchfeedback)"
+description: " POST (/users/batchfeedback)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d62e4f7106f7f0f2c324ca2c68ea8fe476bc7bfb
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956537"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984998"
 ---
-# <a name="post-usersbatchfeedback"></a>POST (ユーザー/batchfeedback)
+# <a name="post-usersbatchfeedback"></a>POST (/users/batchfeedback)
 タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
  
   * [要求本文](#ID4EX)
@@ -31,7 +31,7 @@ ms.locfileid: "3956537"
  
 ## <a name="request-body"></a>要求本文 
  
-呼び出し元では、その web 要求オブジェクトの [ClientCertificates] セクションで、要求の証明書を含める必要があります。
+呼び出し元は、その web 要求オブジェクトの [ClientCertificates] セクションで、要求の証明書を含める必要があります。
  
 <a id="ID4EBB"></a>
 
@@ -97,7 +97,7 @@ ms.locfileid: "3956537"
 | titleId| string| このフィードバックから送信されたタイトルまたは NULL。| 
 | sessionRef| object| MPSD セッションを表すオブジェクトです。 このフィードバックが関連する、または NULL。| 
 | feedbackType| string| FeedbackType 列挙体の値の文字列バージョン。| 
-| textReason| string| 送信者が送信されたフィードバックに関する詳細を提供する追加されるパートナーが指定したテキストです。| 
+| textReason| string| 送信者に送信されたフィードバックに関する詳細を提供する追加されるパートナーが指定したテキストです。| 
 | evidenceId| string| 送信されたフィードバックの証拠として使用できるリソースの ID です。 例: ビデオ ファイルの ID です。| 
    
 <a id="ID4E3E"></a>
@@ -105,7 +105,7 @@ ms.locfileid: "3956537"
  
 ## <a name="required-headers"></a>必要なヘッダー
  
-次のヘッダーは、Xbox Live サービス要求を行ったとき必要があります。 
+次のヘッダーは、Xbox Live サービス要求を行ったときに必要があります。 
 
 > [!NOTE] 
 > パートナーの要求の証明書は、バッチ フィードバックを送信するために要求送信する必要があります。 
@@ -116,8 +116,8 @@ ms.locfileid: "3956537"
 | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl コントラクト バージョン| 101| API コントラクト バージョンです。| 
 | Content-Type| application/json| 送信されたデータの種類です。| 
-| Authorization| "XBL3.0 x =&lt;userhash > です。&lt;トークン >"| HTTP の認証の資格情報を認証します。| 
-| X RequestedServiceVersion| 101| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。| 
+| Authorization| "XBL3.0 x =&lt;userhash > です。&lt;トークン >"| HTTP 認証の資格情報を認証します。| 
+| X RequestedServiceVersion| 101| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。| 
   
 <a id="ID4EWG"></a>
 
@@ -130,9 +130,9 @@ ms.locfileid: "3956537"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
-| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。| 
+| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
 | 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable| 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行の値の後にもう一度やり直してください。| 
+| 503| Service Unavailable| 要求が調整された、クライアント再試行値 (例: 5 秒後) を秒単位で後にもう一度やり直してください。| 
   
 <a id="ID4EDAAC"></a>
 
@@ -151,7 +151,7 @@ ms.locfileid: "3956537"
  
 ##### <a name="parent"></a>Parent 
 
-[ユーザー/batchfeedback](uri-reputationusersbatchfeedback.md)
+[/users/batchfeedback](uri-reputationusersbatchfeedback.md)
 
   
 <a id="ID4EFBAC"></a>
@@ -159,7 +159,7 @@ ms.locfileid: "3956537"
  
 ##### <a name="reference"></a>リファレンス 
 
-[フィードバック (JSON)](../../json/json-feedback.md)
+[Feedback (JSON)](../../json/json-feedback.md)
 
  [ServiceError (JSON)](../../json/json-serviceerror.md)
 

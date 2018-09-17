@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a7521de7da4ebd31f0a1d8c59bb7c0134eddc08
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956241"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985174"
 ---
 # <a name="inventoryitem-json"></a>inventoryItem (JSON)
-コアのインベントリ項目の権利を付与できる標準的な項目を表します。
+コア インベントリ項目の権利を付与できる標準的な項目を表します。
 <a id="ID4EN"></a>
 
 
 ## <a name="inventoryitem"></a>inventoryItem
 
-InventoryItem オブジェクトには、次の仕様があります。
+InventoryItem オブジェクトでは、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
@@ -35,10 +35,10 @@ InventoryItem オブジェクトには、次の仕様があります。
   | 取得 | DateTime | 日付と時刻の項目は、ユーザーのインベントリに追加されました。 |
   | startDate | DateTime | 日付と時刻になった、または使用可能になります。 |
   | endDate | DateTime | 日付と時刻になった、または使用できなくなります。 |
-  | 状態 | string | 項目の状態。 値は、**有効になっている**、**中断**、**有効期限が切れて**、**キャンセル**、**更新**を許可します。  |
-  | trial | ブール値 | 必須。 この権利が; 試用版である場合は true。それ以外の場合は false です。 権利の試用版を購入し、通常版を購入する場合は、両方が表示されます。 |
+  | 状態 | string | 項目の状態。 値は、**有効になっている**、**中断**、**有効期限切れ**、**キャンセル**、**更新**を許可します。  |
+  | trial | ブール値 | 必須。 この権利が; 試用版である場合は true。それ以外の場合は false です。 権利の試用版を購入して、通常版を購入すると、両方が表示されます。 |
   | trialTimeRemaining | TimeSpan | Null 許容されます。 どのくらいの時間は、分単位で、試用版に残っています。 |
-  | コンシューマブル | array | 項目がコンシューマブルの場合は、その現在の数量と同様に、コンシューマブルなインベントリ項目の一意の識別子 (リンク) をインラインで表したが含まれます。 |
+  | コンシューマブル | array | 項目がコンシューマブルの場合は、その現在の数量できるだけでなく、コンシューマブルなインベントリ項目用の一意の識別子 (リンク) をインラインで表したが含まれます。 |
 
 <a id="ID4EMAAC"></a>
 
@@ -94,7 +94,7 @@ consumableInventoryItem {
 
 ##### <a name="parent"></a>Parent
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
 
 <a id="ID4EJCAC"></a>

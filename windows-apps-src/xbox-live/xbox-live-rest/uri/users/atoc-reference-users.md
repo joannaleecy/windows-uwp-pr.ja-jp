@@ -1,9 +1,9 @@
 ---
-title: ユーザーの Uri
+title: ユーザー URI
 assetID: 46faeb85-4256-b892-674b-e0d523b3926c
 permalink: en-us/docs/xboxlive/rest/atoc-reference-users.html
 author: KevinAsgari
-description: " ユーザーの Uri"
+description: " ユーザー URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e9b51bd6bbaa707f72a83036cfd5a5c43be6dc50
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955887"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982490"
 ---
-# <a name="users-uris"></a>ユーザーの Uri
+# <a name="users-uris"></a>ユーザー URI
  
-このセクションでは、*ユーザー*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*ユーザー*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
  
 これらの Uri のドメインは、msg.xboxlive.com です。
  

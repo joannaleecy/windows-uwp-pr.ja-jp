@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964806"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990133"
 ---
 # <a name="app-submissions"></a>アプリの申請
 
@@ -25,9 +25,9 @@ ms.locfileid: "3964806"
 申請は、アプリが完成して公開する準備ができたときに開始できます。または、1 行のコードを記述する前でも情報を入力し始めることができます。 戻るできたらいつでも作業できるように、申請を更新プログラムが保存されます。
 
 > [!NOTE]
-> [Windows デベロッパー センター](https://partner.microsoft.com/dashboard)にアクセスして、Microsoft Store にアプリを提出するのには、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
+> [Windows デベロッパー センター](https://partner.microsoft.com/dashboard)にアクセスし、Microsoft Store にアプリを提出するために、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
 
-アプリが公開された後は、ダッシュボードで別の申請を作成して更新バージョンを公開できます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されているアプリに対して新しい申請を作成するには、[アプリの概要] ページに表示されている前回の申請の横にある **[更新]** をクリックします。 ことも[、ストアからアプリを削除する](guidance-for-app-package-management.md#removing-an-app-from-the-store)ように (とし、利用できるように、後でもう一度する場合) する必要がある場合。
+アプリが公開された後は、ダッシュボードで別の申請を作成して更新バージョンを公開できます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されているアプリに対して新しい申請を作成するには、[アプリの概要] ページに表示されている前回の申請の横にある **[更新]** をクリックします。 こともできます[ストアからアプリを削除](guidance-for-app-package-management.md#removing-an-app-from-the-store)する必要がある場合は (し、利用できるように、後でもう一度たい場合)。
 
 > [!NOTE]
 > このセクションでは、デベロッパー センター ダッシュボードでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリ申請を自動化することもできます。
@@ -112,7 +112,7 @@ ms.locfileid: "3964806"
 | フィールド名                    | コメント                                       | 詳しい情報                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **公開の保留オプション**     | 既定: この申請が認定されたら、すぐに申請を公開します (または [スケジュール] セクションで選択した各日付で公開します)      | [公開の保留オプション](manage-submission-options.md#publishing-hold-options)    
-| **認定の注意書き**     | 推奨          | [認定を求めるにあたってのコメント](notes-for-certification.md)             |
+| **認定の注意書き**     | 推奨          | [認定の注意書き](notes-for-certification.md)             |
 | **制限付き機能**     | 製品が、[制限付き機能](../packaging/app-capability-declarations.md#restricted-capabilities)を宣言するかどうかに必要な    | [制限付き機能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>

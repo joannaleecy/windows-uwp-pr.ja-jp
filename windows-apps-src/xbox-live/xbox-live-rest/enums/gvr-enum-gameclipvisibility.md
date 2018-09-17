@@ -1,9 +1,9 @@
 ---
-title: GameClipVisibility 列挙
+title: GameClipVisibility 列挙型
 assetID: fc0295e6-c594-c3a4-4982-6fe08e45ba5d
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gameclipvisibility.html
 author: KevinAsgari
-description: " GameClipVisibility 列挙"
+description: " GameClipVisibility 列挙型"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 85d7390f16d2cc8f61d76f51713c2903a6fd2c9c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959321"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989276"
 ---
-# <a name="gameclipvisibility-enumeration"></a>GameClipVisibility 列挙
+# <a name="gameclipvisibility-enumeration"></a>GameClipVisibility 列挙型
 GameClipVisibility 列挙をについて説明します。 
 <a id="ID4ER"></a>
 
@@ -29,7 +29,7 @@ GameClipVisibility 列挙をについて説明します。
 | --- | --- | 
 | None| 可視性が指定されていません。 これは、ほとんどの場合、無効な値です。| 
 | 既定値| ゲーム クリップの可視性が Xbox LIVE プライバシー設定によって決まります。| 
-| オーナー| ゲーム クリップはそれを作成した元の XUID をできるだけです。| 
-| Title (タイトル)| それを作成した元のタイトルがゲーム クリップにのみです。| 
-| Public| ゲーム クリップは、だれでも Xbox LIVE で利用できます。| 
+| オーナー| ゲーム クリップを作成した元の XUID をできるだけです。| 
+| Title (タイトル)| 作成した元のタイトルがゲーム クリップにのみです。| 
+| Public| ゲーム クリップはだれでも Xbox LIVE で利用できます。| 
   

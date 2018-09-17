@@ -1,9 +1,9 @@
 ---
-title: 削除 (/handles/{ハンドル id を使用しました)
+title: DELETE (/handles/{handleId})
 assetID: 71cceff4-3a74-dc05-12db-cfe3f20a8aea
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleiddelete.html
 author: KevinAsgari
-description: " 削除 (/handles/{ハンドル id を使用しました)"
+description: " DELETE (/handles/{handleId})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 15300451495c198a1f15997bae38cb862a9b8186
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964175"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988002"
 ---
-# <a name="delete-handleshandleid"></a>削除 (/handles/{ハンドル id を使用しました)
+# <a name="delete-handleshandleid"></a>DELETE (/handles/{handleId})
 ハンドル ID で指定されたハンドルを削除します。
 
 > [!IMPORTANT]
@@ -73,4 +73,4 @@ ms.locfileid: "3964175"
 
 ##### <a name="parent"></a>Parent
 
-[/handles/{ハンドル id を使用}](uri-handleshandleid.md)
+[/handles/{handleId}](uri-handleshandleid.md)

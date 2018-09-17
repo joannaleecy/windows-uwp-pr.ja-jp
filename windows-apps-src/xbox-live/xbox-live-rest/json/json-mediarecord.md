@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f43dfe64f515772509c5c304b728a896a58f5076
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964447"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981150"
 ---
 # <a name="mediarecord-json"></a>MediaRecord (JSON)
  
@@ -25,12 +25,12 @@ ms.locfileid: "3964447"
  
 ## <a name="mediarecord"></a>MediaRecord
  
-MediaRecord オブジェクトには、次の仕様があります。
+MediaRecord オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | id| string| Bing カタログまたはプロバイダー カタログで使われるメディアの識別子です。| 
-| idType| string| メディアの識別子を解釈する方法について説明します。 設定可能な値には、"bing"および「プロバイダー」が含まれます。| 
+| idType| string| メディアの識別子を解釈する方法について説明します。 設定可能な値には、"bing"と「プロバイダー」が含まれます。| 
 | name| string| メディア コンテンツのローカライズされた名前です。| 
   
 <a id="ID4ECC"></a>
@@ -43,7 +43,7 @@ MediaRecord オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EQC"></a>

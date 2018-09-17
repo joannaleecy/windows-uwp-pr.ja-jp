@@ -1,9 +1,9 @@
 ---
-title: 取得する (/media/{marketplaceId}/メタデータ/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues)
+title: GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues)
 assetID: 0fcbef77-4607-765e-72e1-d2e7620e2c61
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemediaitemtypequeryrefinersubqueryrefinervaluesget.html
 author: KevinAsgari
-description: " 取得する (/media/{marketplaceId}/メタデータ/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues)"
+description: " GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 036a64f893ab1581d42f1601204b383968c607e3
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960645"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984172"
 ---
-# <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefinersqueryrefinersubqueryrefinervalues"></a>取得する (/media/{marketplaceId}/メタデータ/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues)
-指定されたクエリの調整値 ("subgenres には、指定されたジャンル"など) のサブ値の一覧を取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
+# <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefinersqueryrefinersubqueryrefinervalues"></a>GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues)
+指定されたクエリの調整値 ("subgenres には、指定したジャンル"など) のサブ値の一覧を取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EDB)
@@ -29,7 +29,7 @@ ms.locfileid: "3960645"
  
 ## <a name="remarks"></a>注釈
  
-クエリの調整値で**queryRefinerValue**クエリに渡される URI 語幹で禁止されている文字の調整値を許可する動作を行うという名前のクエリ文字列パラメーターとして渡されます。
+クエリの調整値はで**queryRefinerValue**クエリに渡される URI 語幹で禁止されている文字の調整値を許可する動作を行うという名前のクエリ文字列パラメーターとして渡されます。
  
 この API は、音楽ののみサポートされます。
   
@@ -52,7 +52,7 @@ ms.locfileid: "3960645"
  
 ##### <a name="parent"></a>Parent 
 
-[/media/{marketplaceId}/メタデータ/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues](uri-medialocalemediaitemtypequeryrefinersubqueryrefinervalues.md)
+[/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues](uri-medialocalemediaitemtypequeryrefinersubqueryrefinervalues.md)
 
   
 <a id="ID4E1B"></a>
@@ -60,14 +60,14 @@ ms.locfileid: "3960645"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [Marketplace Uri](atoc-reference-marketplace.md)
+ [マーケットプレース URI](atoc-reference-marketplace.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

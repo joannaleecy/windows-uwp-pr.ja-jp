@@ -1,9 +1,9 @@
 ---
-title: ユーザー/xuid (xuid)//ピン/{リスト} の一覧を示します
+title: /users/xuid(xuid)/lists/PINS/{listname}
 assetID: b6421b11-fcd1-cfdb-c1fa-6cab3dab89d9
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistname.html
 author: KevinAsgari
-description: " ユーザー/xuid (xuid)//ピン/{リスト} の一覧を示します"
+description: " /users/xuid(xuid)/lists/PINS/{listname}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 052a83f47dc2d5b692c811850e41381c4745815c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961853"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985160"
 ---
-# <a name="usersxuidxuidlistspinslistname"></a>ユーザー/xuid (xuid)//ピン/{リスト} の一覧を示します
+# <a name="usersxuidxuidlistspinslistname"></a>/users/xuid(xuid)/lists/PINS/{listname}
 リストの項目にアクセスします。 これらの Uri のドメインが`eplists.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -30,7 +30,7 @@ ms.locfileid: "3961853"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| string| Xbox ユーザー ID (XUID) です。| 
+| xuid| string| Xbox ユーザー ID (XUID)。| 
 | listtype| string| (その使用方法と動作) の一覧の種類です。 常に「ピン」これらのメソッドに関連します。| 
 | リスト| string| リストの名前 (際に指定された listtype の一覧がどの)。 常に"XBLPins"の項目のピン留めします。| 
   
@@ -53,7 +53,7 @@ ms.locfileid: "3961853"
 
 [PUT](uri-usersxuidlistspinslistnameput.md)
 
-&nbsp;&nbsp;要求の本文内の各項目に指定されたインデックスに従ってリスト内の項目を更新します。
+&nbsp;&nbsp;要求本文内の各項目に指定されたインデックスに従ってリスト内の項目を更新します。
  
 <a id="ID4EZC"></a>
 

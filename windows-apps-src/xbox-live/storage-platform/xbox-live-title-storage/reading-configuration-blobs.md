@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f4ceed1c1258f2a53d1c5cb6306f27c7e8818a5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955977"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982082"
 ---
 # <a name="reading-a-configuration-blob-in-xbox-live-title-storage"></a>Xbox Live タイトル ストレージ内の構成 BLOB の読み取り
 

@@ -12,27 +12,27 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 42bf1a09144bec9cddda1ae2fd9656dc6dc8c51d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958363"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985172"
 ---
 # <a name="aggregatesessionsresponse-json"></a>AggregateSessionsResponse (JSON)
-ユーザーの適合性のセッションは、集計データが含まれています。 
+ユーザーの適合性のセッションの集計データが含まれています。 
 <a id="ID4EN"></a>
 
  
 ## <a name="aggregatesessionsresponse"></a>AggregateSessionsResponse
  
-AggregateSessionsResponse オブジェクトには、次の仕様があります。
+AggregateSessionsResponse オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | totalDurationInSeconds| 64 ビットの符号付き整数| 集計期間を秒単位でセッションの合計期間です。| 
 | totalJoules| 64 ビットの符号付き整数| エネルギー書き込みの合計-コンセントで-集計期間中です。 | 
 | totalSessions| 64 ビットの符号付き整数| 集計期間中のセッションの合計数。| 
-| weightedAverageMets| 単精度浮動小数点数 | 加重平均代謝と同等の結果、集計期間中のタスク (MET) の値。 MET 値は、アクティビティを残りの部分で個人の代謝レートを基準とした時に、個々 の代謝レートの比率です。 静止の代謝レートは、個々 の太さに関係なく 1.0 MET 値は、個人の静止代謝レートを基準としたためは、さまざまな重みの人の従業員が実行しているアクティビティの強さを比較する使用できます。| 
+| weightedAverageMets| 単精度浮動小数点数 | 加重平均代謝と同等の集計期間中のタスク (MET) の値。 MET 値は、アクティビティを残りの部分で個々 の代謝レートを基準とした時に、個々 の代謝レートの比率です。 静止の代謝レートは、個々 の太さに関係なく 1.0 MET 値は、個々 の静止代謝レートを基準としたためは、さまざまな重みの人の従業員が実行しているアクティビティの強さを比較する使用できます。| 
   
 <a id="ID4ESC"></a>
 
@@ -62,6 +62,6 @@ AggregateSessionsResponse オブジェクトには、次の仕様があります
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

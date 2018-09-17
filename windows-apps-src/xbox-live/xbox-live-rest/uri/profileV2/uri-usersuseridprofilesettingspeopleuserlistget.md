@@ -1,9 +1,9 @@
 ---
-title: (/Users/{userId}/プロファイルの設定/ユーザー/{userList}) を取得します。
+title: GET (/users/{userId}/profile/settings/people/{userList})
 assetID: f6553499-89e2-f21b-a00f-7e5437c045ff
 permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlistget.html
 author: KevinAsgari
-description: " (/Users/{userId}/プロファイルの設定/ユーザー/{userList}) を取得します。"
+description: " GET (/users/{userId}/profile/settings/people/{userList})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d57a6620115d5f009c054210a50548c3da7e47d5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958823"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985164"
 ---
-# <a name="get-usersuseridprofilesettingspeopleuserlist"></a>(/Users/{userId}/プロファイルの設定/ユーザー/{userList}) を取得します。
+# <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
 ユーザーのプロファイルを取得またはユーザー, People モニカーをサポートします。 これらの Uri のドメインが`profile.xboxlive.com`します。
  
   * [注釈](#ID4EV)
@@ -131,8 +131,8 @@ GET /users/me/profile/settings/people/people?settings=GameDisplayName,GameDispla
  
 ##### <a name="parent"></a>Parent 
 
-[/users/{userId}/プロファイルの設定/ユーザー/{userList}? 設定 = {設定}](uri-usersuseridprofilesettingspeopleuserlist.md)
+[/users/{userId}/profile/settings/people/{userList}?settings={settings}](uri-usersuseridprofilesettingspeopleuserlist.md)
 
- [プロファイル (JSON)](../../json/json-profile.md)
+ [Profile (JSON)](../../json/json-profile.md)
 
    

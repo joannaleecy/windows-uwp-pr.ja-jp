@@ -1,9 +1,9 @@
 ---
-title: /serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション} メンバー/me
+title: /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me
 assetID: a6c2fa17-8bed-d0df-d7ff-db1aa60f44b3
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme.html
 author: KevinAsgari
-description: " /serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション} メンバー/me"
+description: " /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d7e61fe76fc0f322c93d55448d53ee6444ffec5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956877"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982656"
 ---
-# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション} メンバー/me
+# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me
 セッション メンバーを削除する削除操作をサポートしています。
 <a id="ID4EO"></a>
 
@@ -30,7 +30,7 @@ sessiondirectory.xboxlive.com
  
 ## <a name="remarks"></a>注釈
 
-セッション メンバーのリソースのすべての操作は、Xbox ユーザー ID (XUID) ユーザーの承認を要求する必要があります。
+セッション メンバーのリソースのすべての操作では、Xbox ユーザー ID (XUID) ユーザーの要求の承認が必要です。
 
 <a id="ID4EAB"></a>
 
@@ -48,7 +48,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[削除 (/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション} メンバー/me)](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.md)
+[DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.md)
 
 &nbsp;&nbsp;メンバーをセッションから削除します。
 
@@ -62,4 +62,4 @@ sessiondirectory.xboxlive.com
 
 ##### <a name="parent"></a>Parent
 
-[セッション ディレクトリ Uri](atoc-reference-sessiondirectory.md)
+[セッション ディレクトリ URI](atoc-reference-sessiondirectory.md)

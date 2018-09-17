@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b1d43a9c1ed9f0bb1d68a3f1995c759e96a6bc64
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956121"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3980984"
 ---
 # <a name="jsonusersxuidxuidscidsscid"></a>/json/users/xuid({xuid})/scids/{scid}
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
@@ -30,7 +30,7 @@ ms.locfileid: "3956121"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID)、プレイヤーの要求を行っているユーザー。| 
 | scid| guid| ルックアップ サービス構成の ID です。| 
   
 <a id="ID4E3B"></a>
@@ -52,6 +52,6 @@ ms.locfileid: "3956121"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ Uri](atoc-reference-storagev2.md)
+[タイトル ストレージ URI](atoc-reference-storagev2.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: /media/{marketplaceId}/詳細
+title: /media/{marketplaceId}/details
 assetID: bc8758ed-2f90-b501-5c3f-6f253f02d754
 permalink: en-us/docs/xboxlive/rest/uri-medialocaledetails.html
 author: KevinAsgari
-description: " /media/{marketplaceId}/詳細"
+description: " /media/{marketplaceId}/details"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,16 +12,16 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b8dcea7c0987a2bc783adae0398c9579ded2fe8
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956097"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984750"
 ---
-# <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/詳細
-返します提供の詳細とメタデータについての 1 つまたは複数の項目です。 これらの Uri のドメインが`eds.xboxlive.com`します。
+# <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/details
+返しますプランの詳細とメタデータについての 1 つまたは複数の項目です。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
-API は、関連する API と参照 API によって異なります詳細 (とき、ID で passin) 詳細 API には、追加の情報が返されますが、それらの Api が、暗黙的または明示的に fiven ID に関連付けられているその他の項目に関する情報を返す。同じ項目。
+API は、関連する API と参照 API によって異なります詳細 (とき、ID で passin) 詳細 API には、追加の情報が返されますが、それらの Api は、暗黙的または明示的に fiven ID に関連付けられているその他の項目に関する情報を返すよう。同じ項目。
  
 別のメディア項目の種類の複数の Id は、1 つに渡すことができます (限り ProviderContentID - 以下を参照型のわからない)、呼び出しが同じメディア グループに属するすべてする必要があります。 ただし、これには、呼び出し元がメディアのグループを認識しないクライアントのシナリオのいくつかがあります。 API では、これを使用して、次のような状況でのメディアのグループには、"Unknown"の特殊値のことを許可します。
  
@@ -56,7 +56,7 @@ API は、関連する API と参照 API によって異なります詳細 (と�
  
 これは、検索プロバイダーを使用特定 id。 例。 Netflix Id または Hulu id。
  
-IdType ProviderContentId がある場合は、単一の値のみが受け入れられます。 これは、ProviderContentIds は種類の ID が含まれるだけであるため、'.' 文字です。 '.' 文字がする Id 間の区切り文字でも、新機能、delimieter Id 間の間にあいまいさがおよび ID 自体の一部は何です。 API の残りの部分一括検索機能を除く、ProviderContentIds の同じように動作します。
+IdType ProviderContentId がある場合は、1 つの値のみが受け入れられます。 これは、ProviderContentIds は種類の ID が含まれるだけであるため、'.' 文字です。 '.' 文字は使用 Id 間の区切り文字でも、新機能の Id の間で delimieter の間にあいまいさがおよび ID 自体の一部は何です。 API の残りの部分一括検索機能を除く、ProviderContentIds の同じように動作します。
    
 <a id="ID4EUH"></a>
 
@@ -72,9 +72,9 @@ IdType ProviderContentId がある場合は、単一の値のみが受け入れ�
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[取得する (/media/{marketplaceId}/詳細)](uri-medialocaledetailsget.md)
+[GET (/media/{marketplaceId}/details)](uri-medialocaledetailsget.md)
 
-&nbsp;&nbsp;返します提供の詳細とメタデータについての 1 つまたは複数の項目です。 
+&nbsp;&nbsp;返しますプランの詳細とメタデータについての 1 つまたは複数の項目です。 
  
 <a id="ID4EABAC"></a>
 
@@ -86,7 +86,7 @@ IdType ProviderContentId がある場合は、単一の値のみが受け入れ�
  
 ##### <a name="parent"></a>Parent 
 
-[Marketplace Uri](atoc-reference-marketplace.md)
+[マーケットプレース URI](atoc-reference-marketplace.md)
 
   
 <a id="ID4EMBAC"></a>
@@ -94,12 +94,12 @@ IdType ProviderContentId がある場合は、単一の値のみが受け入れ�
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

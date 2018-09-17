@@ -1,9 +1,9 @@
 ---
-title: プライバシー Uri
+title: プライバシー URI
 assetID: 5eff3264-ef2a-5ec4-2e68-e5f4be2c0a47
 permalink: en-us/docs/xboxlive/rest/atoc-reference-privacyv2.html
 author: KevinAsgari
-description: " プライバシー Uri"
+description: " プライバシー URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: bed703722b6c2d03cbc7b5e9f1b8be08ef38c7f0
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961365"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984932"
 ---
-# <a name="privacy-uris"></a>プライバシー Uri
+# <a name="privacy-uris"></a>プライバシー URI
  
-このセクションでは、*プライバシー*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
+このセクションでは、*プライバシー*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
  
-のみ Windows 8 で実行されるゲームでは、Xbox 360、または Windows Phone デバイスこのサービスを使用します。
+のみ Windows 8 で実行されるゲームでも、Xbox 360、または Windows Phone デバイスこのサービスを使用します。
  
 これらの Uri のドメインは、privacy.xboxlive.com です。
  
@@ -31,15 +31,15 @@ ms.locfileid: "3961365"
  
 ## <a name="in-this-section"></a>このセクションの内容
 
-[ユーザー/ミュート/users/{ownerId}](uri-privacyusersowneridpeoplemute.md)
+[/users/{ownerId}/people/mute](uri-privacyusersowneridpeoplemute.md)
 
 &nbsp;&nbsp;ユーザーのミュート リストにアクセスします。
 
-[アクセス許可が/users/{requestorId}/検証します。](uri-privacyusersrequestoridpermissionvalidate.md)
+[/users/{requestorId}/permission/validate](uri-privacyusersrequestoridpermissionvalidate.md)
 
-[ユーザーが/users/{ownerId}/回避します。](uri-privacyusersxuidpeopleavoid.md)
+[/users/{ownerId}/people/avoid](uri-privacyusersxuidpeopleavoid.md)
 
-&nbsp;&nbsp;ユーザーの回避一覧にアクセスします。
+&nbsp;&nbsp;ユーザーの避ける一覧にアクセスします。
  
 <a id="ID4E2B"></a>
 

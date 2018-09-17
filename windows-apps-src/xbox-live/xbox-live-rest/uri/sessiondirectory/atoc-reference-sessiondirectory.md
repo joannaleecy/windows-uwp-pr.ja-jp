@@ -1,9 +1,9 @@
 ---
-title: セッション ディレクトリ Uri
+title: セッション ディレクトリ URI
 assetID: e3ba951d-b21f-0014-c358-2603d549d118
 permalink: en-us/docs/xboxlive/rest/atoc-reference-sessiondirectory.html
 author: KevinAsgari
-description: " セッション ディレクトリ Uri"
+description: " セッション ディレクトリ URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b03c55b827b083c050451c12c1fe48834d7ae186
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958901"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984216"
 ---
-# <a name="session-directory-uris"></a>セッション ディレクトリ Uri
+# <a name="session-directory-uris"></a>セッション ディレクトリ URI
 
-このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) からユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
+このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) からユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
 
 
 > [!NOTE] 
@@ -42,14 +42,14 @@ sessiondirectory.xboxlive.com
 
 ## <a name="service-version"></a>サービスのバージョン
 
-これらの残りの部分の Uri の呼び出し元する必要があります値を渡す 104/105 以降 X-Xbl-コントラクトのバージョン、サービスのバージョンのエンターテインメント探索サービス (EDS) を指定する HTTP ヘッダー。
+これらの Uri の残りの部分の呼び出し元渡す必要があります値 104/105 以降 X-Xbl-コントラクトのバージョン、サービス バージョン エンターテイメント探索サービス (EDS) を指定する HTTP ヘッダー。
 
 <a id="ID4EAC"></a>
 
 
 ## <a name="system-objects-and-properties"></a>システム オブジェクトとプロパティ
 
-セッションとテンプレートを構成する、MPSD は、ディレクトリを適用および解釈される固定のスキーマを多数の準拠しているセッションの JSON オブジェクトを使用します。 さまざまなセッション ディレクトリ Uri でサポートされているメソッドの呼び出し時にこれらのオブジェクトは検証およびマージに基づいて、サポートされているスキーマ。 マルチプレイヤーの構成に関連付けられている主な JSON オブジェクトは次のとおりです。
+セッションとテンプレートを構成する、MPSD は、ディレクトリを適用および解釈される固定のスキーマに準拠しているセッションの JSON オブジェクトの数を使用します。 さまざまなセッション ディレクトリ Uri でサポートされているメソッドの呼び出し時にこれらのオブジェクトは検証およびマージに基づいて、サポートされているスキーマ。 マルチプレイヤーの構成に関連付けられている主な JSON オブジェクトは次のとおりです。
 
    *  [MultiplayerActivityDetails (JSON)](../../json/json-multiplayeractivitydetails.md)
    *  [MultiplayerSession (JSON)](../../json/json-multiplayersession.md)
@@ -57,7 +57,7 @@ sessiondirectory.xboxlive.com
    *  [MultiplayerSessionRequest (JSON)](../../json/json-multiplayersessionrequest.md)
 
 
-ゲームで具体的には関係している関連付けられている JSON オブジェクトは次のとおりです。
+ゲームに具体的には関係が関連付けられている JSON オブジェクトは次のとおりです。
 
    *  [GameMessage (JSON)](../../json/json-gamemessage.md)
    *  [GameResult (JSON)](../../json/json-gameresult.md)
@@ -80,19 +80,19 @@ sessiondirectory.xboxlive.com
 
 &nbsp;&nbsp;Xbox One ダッシュ ボードのユーザー エクスペリエンスに表示されると、必要な場合は、セッション メンバーを招待するユーザーの現在のアクティビティのセッションを設定する POST 操作をサポートしています。
 
-[/handles/{ハンドル id を使用}](uri-handleshandleid.md)
+[/handles/{handleId}](uri-handleshandleid.md)
 
 &nbsp;&nbsp;識別子により指定されたセッション ハンドルを削除または取得の操作をサポートしています。
 
-[/handles/{ハンドル id を使用}/セッション](uri-handleshandleidsession.md)
+[/handles/{handleId}/session](uri-handleshandleidsession.md)
 
 &nbsp;&nbsp;PUT および GET 操作セッションでは、ハンドルを逆参照を使用してをサポートしています。
 
-[ハンドル/クエリ](uri-handlesquery.md)
+[/handles/query](uri-handlesquery.md)
 
 &nbsp;&nbsp;セッション ハンドルのクエリを作成する POST 操作をサポートしています。
 
-[/serviceconfigs/{scid} バッチ/](uri-serviceconfigsscidbatch.md)
+[/serviceconfigs/{scid}/batch](uri-serviceconfigsscidbatch.md)
 
 &nbsp;&nbsp;サービス構成の識別子レベルでバッチ クエリの POST 操作をサポートしています。
 
@@ -108,7 +108,7 @@ sessiondirectory.xboxlive.com
 
 &nbsp;&nbsp;セッション テンプレート名のセットを取得する GET 操作をサポートしています。
 
-[/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName} バッチ/](uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.md)
+[/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch](uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.md)
 
 &nbsp;&nbsp;セッション テンプレート レベルでバッチ クエリを作成する POST 操作をサポートしています。
 
@@ -116,19 +116,19 @@ sessiondirectory.xboxlive.com
 
 &nbsp;&nbsp;指定したテンプレート名を持つセッション テンプレートのセットを取得する GET 操作をサポートしています。
 
-[/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md)
+[/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md)
 
 &nbsp;&nbsp;作成してセッションを取得する PUT と取得の操作をサポートしています。
 
-[/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/members/{インデックス}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md)
+[/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md)
 
 &nbsp;&nbsp;指定されたセッション メンバーを削除する削除操作をサポートしています。
 
-[/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション} メンバー/me](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme.md)
+[/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme.md)
 
 &nbsp;&nbsp;セッション メンバーを削除する削除操作をサポートしています。
 
-[/serviceconfigs/{scid} {sessionTemplateName}/sessiontemplates//sessions/{セッション}/servers/{サーバー名}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.md)
+[/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservername.md)
 
 &nbsp;&nbsp;セッションの指定されたサーバーを削除する削除操作をサポートしています。
 
@@ -139,7 +139,7 @@ sessiondirectory.xboxlive.com
 
 <a id="ID4EUF"></a>
 
-   [マッチメイ キング Uri](../matchtickets/atoc-reference-matchtickets.md)
+   [マッチメイキング URI](../matchtickets/atoc-reference-matchtickets.md)
 
 
 <a id="ID4E1F"></a>

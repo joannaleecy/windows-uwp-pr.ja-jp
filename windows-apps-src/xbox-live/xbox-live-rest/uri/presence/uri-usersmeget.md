@@ -1,9 +1,9 @@
 ---
-title: 取得する (ユーザー/me)
+title: GET (/users/me)
 assetID: 726c279b-73fb-02ea-cbff-700ff2dc31af
 permalink: en-us/docs/xboxlive/rest/uri-usersmeget.html
 author: KevinAsgari
-description: " 取得する (ユーザー/me)"
+description: " GET (/users/me)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a10b8704de47ef62a283c1b634b4a5212623e5c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960545"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984258"
 ---
-# <a name="get-usersme"></a>取得する (ユーザー/me)
+# <a name="get-usersme"></a>GET (/users/me)
 ユーザーの XUID を把握することがなく、現在のユーザーの[presencerecord を要求して](../../json/json-presencerecord.md)を取得します。
 これらの Uri のドメインが`userpresence.xboxlive.com`します。
 
   * [クエリ文字列パラメーター](#ID4EZ)
   * [Authorization](#ID4EIC)
   * [必要な要求ヘッダー](#ID4ELD)
-  * [オプションの要求ヘッダー](#ID4EPF)
+  * [省略可能な要求ヘッダー](#ID4EPF)
   * [要求本文](#ID4EPG)
   * [応答本文](#ID4E1G)
 
@@ -36,7 +36,7 @@ ms.locfileid: "3960545"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| level| string| 省略可能。 <ul><li><b>ユーザー</b>: ユーザーのノードのみを返します。</li><li><b>デバイス</b>: ユーザーのノードとデバイス ノードを返します。</li><li><b>タイトル</b>: 既定値です。 アクティビティを除くツリー全体を返します。</li><li><b>すべて</b>: アクティビティ レベルのプレゼンスを含むツリー全体を返します。</li></ul> | 
+| level| string| 省略可能。 <ul><li><b>ユーザー</b>: ユーザー ノードのみを返します。</li><li><b>デバイス</b>: ユーザーのノードとデバイス ノードを返します。</li><li><b>タイトル</b>: 既定値です。 アクティビティを除くツリー全体を返します。</li><li><b>すべて</b>: アクティビティ レベルのプレゼンスを含むツリー全体を返します。</li></ul> | 
 
 <a id="ID4EIC"></a>
 
@@ -54,20 +54,20 @@ ms.locfileid: "3960545"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。|
-| x xbl コントラクト バージョン| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3, vnext します。|
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。|
+| x xbl コントラクト バージョン| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3, vnext します。|
 | Accept| string| コンテンツの種類の受け入れられるします。 プレゼンスでサポートされている 1 つのみがアプリケーション/json がヘッダーで指定する必要があります。|
-| 同意言語| string| 応答で文字列を許容できるロケールです。 値の例: EN-US にします。|
+| 言語を受け入れる| string| 応答で文字列を許容できるロケールです。 値の例: EN-US にします。|
 | Host| string| サーバーのドメイン名。 値の例: presencebeta.xboxlive.com します。|
 
 <a id="ID4EPF"></a>
 
 
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。|
+| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。|
 
 <a id="ID4EPG"></a>
 
@@ -150,4 +150,4 @@ ms.locfileid: "3960545"
 
 ##### <a name="parent"></a>Parent
 
-[ユーザー/me](uri-usersme.md)
+[/users/me](uri-usersme.md)

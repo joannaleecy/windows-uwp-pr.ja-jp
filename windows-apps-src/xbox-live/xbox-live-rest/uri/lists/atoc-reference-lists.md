@@ -1,9 +1,9 @@
 ---
-title: Uri の一覧を示します
+title: リスト URI
 assetID: 84dcbd11-86a0-8a1e-7db9-bcecf9b7f853
 permalink: en-us/docs/xboxlive/rest/atoc-reference-lists.html
 author: KevinAsgari
-description: " Uri の一覧を示します"
+description: " リスト URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d09d5b1246e5a5d77a2d9bb9dec7b87f7847c8
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962181"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982412"
 ---
-# <a name="lists-uris"></a>Uri の一覧を示します
+# <a name="lists-uris"></a>リスト URI
  
-このセクションでは、*ピン*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*ピン*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
  
 ゲームと Xbox 360、Windows Phone デバイスで、SmartGlass、または Xbox.com で実行されているアプリケーションのみが、このサービスを使用できます。
  
@@ -31,19 +31,19 @@ ms.locfileid: "3962181"
  
 ## <a name="in-this-section"></a>このセクションの内容
 
-[ユーザー/xuid (xuid)//ピン/{リスト} の一覧を示します](uri-usersxuidlistspinslistname.md)
+[/users/xuid(xuid)/lists/PINS/{listname}](uri-usersxuidlistspinslistname.md)
 
 &nbsp;&nbsp;リストの項目にアクセスします。
 
-[ユーザー/xuid (xuid) リスト/ピン/{リスト}//ContainsItems](uri-usersxuidlistspinslistnamecontainsitems.md)
+[/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems](uri-usersxuidlistspinslistnamecontainsitems.md)
 
-&nbsp;&nbsp;完全な一覧を取得することがなく一連項目 (itemId により指定) にはが一覧に含まれているかどうかを決定します。
+&nbsp;&nbsp;全体の一覧を取得することがなく一連項目 (itemId により指定) にはが一覧に含まれているかどうかを決定します。
 
-[ユーザー/xuid (xuid) リスト/ピン/{リスト}/インデックス ({インデックス})/かどうか insertIndex = {insertIndex}。](uri-usersxuidlistspinslistnameindex.md)
+[/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}](uri-usersxuidlistspinslistnameindex.md)
 
 &nbsp;&nbsp;一覧内の項目を移動します。
 
-[ユーザー/xuid (xuid) リスト/ピン/{リスト}//RemoveItems](uri-usersxuidlistspinslistnameremoveitems.md)
+[/users/xuid(xuid)/lists/PINS/{listname}/RemoveItems](uri-usersxuidlistspinslistnameremoveitems.md)
 
 &nbsp;&nbsp;一覧から項目を削除します。
  

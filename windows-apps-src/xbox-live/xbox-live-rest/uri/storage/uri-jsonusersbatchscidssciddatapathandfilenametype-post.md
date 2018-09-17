@@ -1,9 +1,9 @@
 ---
-title: POST (json/ユーザー//global/scids/{scid}/data/{pathAndFileName} json をバッチ処理)
+title: POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)
 assetID: fb4cff17-2721-89c5-6646-5ab76952b411
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersbatchscidssciddatapathandfilenametype-post.html
 author: KevinAsgari
-description: " POST (json/ユーザー//global/scids/{scid}/data/{pathAndFileName} json をバッチ処理)"
+description: " POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 492b2ff62927812337f1b94f487a2649c0446f00
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958141"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982000"
 ---
-# <a name="post-jsonusersbatchscidssciddatapathandfilenamejson"></a>POST (json/ユーザー//global/scids/{scid}/data/{pathAndFileName} json をバッチ処理)
-同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。 ダウンロードするファイルは、要求の URI によって決定されます。 要求の本文には、ダウンロードするファイル持つにはユーザーの Xuid のリストが含まれています。 応答の本文は、各部分を独自のヘッダーのセットを特定のユーザーのファイルを表すと、マルチパート MIME メッセージになります。 成功と失敗の混在する応答の部分のことができます。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
+# <a name="post-jsonusersbatchscidssciddatapathandfilenamejson"></a>POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)
+同じファイル名を持つ複数のユーザーから複数のファイルをダウンロードします。 ファイルのダウンロードについては、要求の URI によって決まります。 要求の本文には、ダウンロードするファイル持つにはユーザーの Xuid のリストが含まれています。 応答の本文が含まれるマルチパート MIME メッセージ、独自のヘッダーのセットを特定のユーザーのファイルを表す各部分になります。 成功と失敗のミックスする応答の部分のことができます。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
   * [Authorization](#ID4ECB)
@@ -37,14 +37,14 @@ ms.locfileid: "3958141"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | scid| guid| ルックアップ サービス構成の ID です。| 
-| pathAndFileName| string| アクセスできる項目のパスとファイル名。 (となどを含む最終的なスラッシュ) のパス部分に有効な文字は大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名可能性がありますいないを空にする、期間の終了または 2 つの連続するピリオドが含まれています。| 
+| pathAndFileName| string| アクセスできる項目のパスとファイル名。 パス部分 (となどを含む最終的なスラッシュ) の有効な文字が大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名可能性がありますいないを空にする、期間の終了または 2 つの連続するピリオドが含まれています。| 
   
 <a id="ID4ECB"></a>
 
  
 ## <a name="authorization"></a>Authorization 
  
-要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは、403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていない応答を返します。 
+要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは 403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 不正な応答を返します。 
   
 <a id="ID4EPB"></a>
 
@@ -88,11 +88,11 @@ ms.locfileid: "3958141"
 | 400| Bad Request | サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません | 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden | ユーザーまたはサービスの要求は許可されていません。| 
-| 404| 見つかりません。 | 指定されたリソースは見つかりませんでした。| 
+| 404| Not Found します。 | 指定されたリソースは見つかりませんでした。| 
 | 406| 許容できません。 | リソースのバージョンがサポートされていません。| 
 | 408| 要求のタイムアウト | 要求にかかった時間が長すぎます。| 
 | 500| 内部サーバー エラー | サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable | 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行の値の後にもう一度やり直してください。| 
+| 503| Service Unavailable | 要求が調整された、クライアント再試行値 (例: 5 秒後) を秒単位で後にもう一度やり直してください。| 
   
 <a id="ID4EPAAC"></a>
 
@@ -101,7 +101,7 @@ ms.locfileid: "3958141"
  
 | ヘッダー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| コンテンツ廃棄| 一部の内容について説明します。 ヘッダーの"name"と"filename"部分は、このファイルに属していることをユーザーの XUID です。| 
+| コンテンツ廃棄| 部分の内容について説明します。 ヘッダーの"name"と"filename"部分は、このファイルに属しているユーザーの XUID です。| 
 | HttpStatusCode| この特定のファイルの取得に関連する HTTP ステータス コード。| 
   
 <a id="ID4ESBAC"></a>
@@ -120,7 +120,7 @@ ms.locfileid: "3958141"
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、複数の応答で要求されたファイルの内容を返します。
+呼び出しが成功した場合は、サービスは、マルチパート応答で要求されたファイルの内容を返します。
  
 <a id="ID4EGDAC"></a>
 
@@ -170,6 +170,6 @@ HttpStatusCode: 404
  
 ##### <a name="parent"></a>Parent 
 
-[json/ユーザー//global/scids/{scid}/data/{pathAndFileName} json をバッチ処理](uri-jsonusersbatchscidssciddatapathandfilenametype.md)
+[/json/users/batch/scids/{scid}/data/{pathAndFileName},json](uri-jsonusersbatchscidssciddatapathandfilenametype.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: 取得する (ユーザーが/users/{ownerId}/回避)
+title: GET (/users/{ownerId}/people/avoid)
 assetID: e3420658-4738-8e80-44da-8281726fce01
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersxuidpeopleavoidget.html
 author: KevinAsgari
-description: " 取得する (ユーザーが/users/{ownerId}/回避)"
+description: " GET (/users/{ownerId}/people/avoid)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ef50154e1620f7f888db9969929d195b32960134
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963653"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981204"
 ---
-# <a name="get-usersowneridpeopleavoid"></a>取得する (ユーザーが/users/{ownerId}/回避)
-ユーザーの回避一覧を取得します。
+# <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
+ユーザーの避ける一覧を取得します。
 
   * [注釈](#ID4EQ)
   * [URI パラメーター](#ID4EZ)
@@ -34,7 +34,7 @@ ms.locfileid: "3963653"
 
 ## <a name="remarks"></a>注釈
 
-ターゲットを指定するはしている場合、ブロックの一覧に、空いないいるかどうかにのみそのユーザーを返します。
+ターゲットを指定するはしている場合、ブロック一覧で、空いないいるかどうかにのみそのユーザーを返します。
 
 <a id="ID4EZ"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "3963653"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>します。 認証されたユーザーである必要があります。 値の例:<code>xuid(2603643534573581)</code>します。 最大サイズ: なし。 |
+| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>します。 認証されたユーザーである必要があります。 値の例:<code>xuid(2603643534573581)</code>します。 最大サイズ: なし。 |
 
 <a id="ID4EEB"></a>
 
@@ -61,7 +61,7 @@ ms.locfileid: "3963653"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization | string| HTTP の認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
+| Authorization | string| HTTP 認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
 | Accept| string| コンテンツの種類の受け入れられるします。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
 
 <a id="ID4EYD"></a>
@@ -76,7 +76,7 @@ ms.locfileid: "3963653"
 | 200| OK| セッションが正常に取得されました。|
 | 400| Bad Request| URI で指定されたターゲット ID が正しくありません。|
 | 403| Forbidden| URI で指定された所有者は、認証されたユーザーではありません。|
-| 404| 見つかりません。| URI で指定された所有者は存在しません。|
+| 404| Not Found します。| URI で指定された所有者は存在しません。|
 
 <a id="ID4E1F"></a>
 
@@ -122,4 +122,4 @@ ms.locfileid: "3963653"
 
 ##### <a name="parent"></a>Parent
 
-[ユーザーが/users/{ownerId}/回避します。](uri-privacyusersxuidpeopleavoid.md)
+[/users/{ownerId}/people/avoid](uri-privacyusersxuidpeopleavoid.md)

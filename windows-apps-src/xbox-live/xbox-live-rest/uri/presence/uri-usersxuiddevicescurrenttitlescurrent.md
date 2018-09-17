@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fe5e366c48dc5cc7586604584adb6af00207b85
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958077"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982534"
 ---
 # <a name="usersxuidxuiddevicescurrenttitlescurrent"></a>/users/xuid({xuid})/devices/current/titles/current
-タイトルまたはタイトルのユーザーの有無にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
+タイトルまたはタイトルのユーザーのプレゼンスにアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -37,13 +37,13 @@ ms.locfileid: "3958077"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[削除 (/users/xuid({xuid})/devices/current/titles/current)](uri-usersxuiddevicescurrenttitlescurrentdelete.md)
+[DELETE (/users/xuid({xuid})/devices/current/titles/current)](uri-usersxuiddevicescurrenttitlescurrentdelete.md)
 
-&nbsp;&nbsp;[Presencerecord を要求して](../../json/json-presencerecord.md)有効期限が切れるのを待っているではなく、終了のタイトルのプレゼンスを削除します。
+&nbsp;&nbsp;[Presencerecord を要求して](../../json/json-presencerecord.md)有効期限が切れるまで待つの終了タイトルのプレゼンスを削除します。
 
 [POST (/users/xuid({xuid})/devices/current/titles/current)](uri-usersxuiddevicescurrenttitlescurrentpost.md)
 
-&nbsp;&nbsp;ユーザーのプレゼンスでは、タイトルを更新します。
+&nbsp;&nbsp;ユーザーのプレゼンスでタイトルを更新します。
  
 <a id="ID4EBC"></a>
 
@@ -55,6 +55,6 @@ ms.locfileid: "3958077"
  
 ##### <a name="parent"></a>Parent 
 
-[プレゼンス Uri](atoc-reference-presence.md)
+[プレゼンス URI](atoc-reference-presence.md)
 
    

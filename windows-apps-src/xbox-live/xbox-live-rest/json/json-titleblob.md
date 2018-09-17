@@ -12,26 +12,26 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 91423df8367c275f40cd7f856a60070e1a46ad40
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956095"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981854"
 ---
 # <a name="titleblob-json"></a>TitleBlob (JSON)
-記憶域のタイトルに関する情報が含まれています。 
+記憶域からタイトルに関する情報が含まれています。 
 <a id="ID4EP"></a>
 
  
 ## <a name="titleblob"></a>TitleBlob
  
-TitleBlob オブジェクトには、次の仕様があります。
+TitleBlob オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | clientFileTime| DateTime| [オプション]ファイルの最後のアップロードの日時。| 
 | displayName| string| [オプション]ユーザーに表示されているファイルの名前。| 
-| etag| string| タグで使用されるファイルをダウンロードして要求をアップロードします。| 
+| etag| string| タグで使用されるファイルをダウンロードし、要求をアップロードします。| 
 | fileName| string| ファイルの名前です。| 
 | size| 64 ビットの符号付き整数| ファイルのバイトのサイズ。| 
 | smartBlobType| string| [オプション]データの種類です。 使用可能な値: config、json、バイナリ。| 
@@ -65,6 +65,6 @@ TitleBlob オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

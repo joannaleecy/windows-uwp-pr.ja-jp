@@ -1,9 +1,9 @@
 ---
-title: ユーザー/me/clips//global/scids/{scid} {gameClipId}
+title: /users/me/scids/{scid}/clips/{gameClipId}
 assetID: f5bead69-4fc9-f551-39cb-c8754645ac88
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipsgameclipid.html
 author: KevinAsgari
-description: " ユーザー/me/clips//global/scids/{scid} {gameClipId}"
+description: " /users/me/scids/{scid}/clips/{gameClipId}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b5d33a8bb8b0f21ea05ac22a7d15ccb4b160b9a
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956475"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985194"
 ---
-# <a name="usersmescidsscidclipsgameclipid"></a>ユーザー/me/clips//global/scids/{scid} {gameClipId}
-ゲーム クリップ データへのアクセスとメタデータ。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`対象の URI の機能に応じて、します。
+# <a name="usersmescidsscidclipsgameclipid"></a>/users/me/scids/{scid}/clips/{gameClipId}
+ゲーム クリップ データへのアクセスとメタデータ。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。
  
   * [URI パラメーター](#ID4EX)
  
@@ -38,11 +38,11 @@ ms.locfileid: "3956475"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[削除 (ユーザー/me/clips//global/scids/{scid} {gameClipId})](uri-usersmescidclipsgameclipiddelete.md)
+[DELETE (/users/me/scids/{scid}/clips/{gameClipId})](uri-usersmescidclipsgameclipiddelete.md)
 
 &nbsp;&nbsp;ゲーム クリップを削除します。
 
-[POST (ユーザー/me/clips//global/scids/{scid} {gameClipId})](uri-usersmescidclipsgameclipidpost.md)
+[POST (/users/me/scids/{scid}/clips/{gameClipId})](uri-usersmescidclipsgameclipidpost.md)
 
 &nbsp;&nbsp;ユーザーのデータのゲーム クリップ メタデータを更新します。
  
@@ -56,6 +56,6 @@ ms.locfileid: "3956475"
  
 ##### <a name="parent"></a>Parent 
 
-[ゲーム DVR Uri](atoc-reference-dvr.md)
+[ゲーム DVR URI](atoc-reference-dvr.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: 取得する (アクセス許可が/users/{requestorId}/検証)
+title: GET (/users/{requestorId}/permission/validate)
 assetID: 8d22c668-af9a-1d24-8d65-830c2ce913d7
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidateget.html
 author: KevinAsgari
-description: " 取得する (アクセス許可が/users/{requestorId}/検証)"
+description: " GET (/users/{requestorId}/permission/validate)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c75a0975179b599201fac91141f8c85ace11790
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957377"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983510"
 ---
-# <a name="get-usersrequestoridpermissionvalidate"></a>取得する (アクセス許可が/users/{requestorId}/検証)
-ユーザーをターゲット ユーザーと指定した操作を実行できるかどうかに関するはいまたは no 応答を取得します。
+# <a name="get-usersrequestoridpermissionvalidate"></a>GET (/users/{requestorId}/permission/validate)
+対象ユーザーを指定したアクションを実行するユーザーを許可するかどうかに関するはいまたは no 応答を取得します。
 
   * [URI パラメーター](#ID4EQ)
   * [クエリ文字列パラメーター](#ID4E2)
@@ -37,7 +37,7 @@ ms.locfileid: "3957377"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
+| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
 
 <a id="ID4E2"></a>
 
@@ -47,7 +47,7 @@ ms.locfileid: "3957377"
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- | --- | --- |
 | 設定| 文字列の列挙| 照らしてチェックする PermissionId 値。 値の例:"CommunicateUsingText"です。|
-| ターゲット| string| 実行するユーザーの操作では、ユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>します。 値の例: <code>xuid(0987654321)</code>|
+| ターゲット| string| 実行するユーザーの操作では、ユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>します。 値の例: <code>xuid(0987654321)</code>|
 
 <a id="ID4EDC"></a>
 
@@ -65,8 +65,8 @@ ms.locfileid: "3957377"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。値の例: 1 です。|
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例: <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1 です。|
 
 <a id="ID4ETE"></a>
 
@@ -135,6 +135,6 @@ ms.locfileid: "3957377"
 
 ##### <a name="parent"></a>Parent
 
-[アクセス許可が/users/{requestorId}/検証します。](uri-privacyusersrequestoridpermissionvalidate.md)
+[/users/{requestorId}/permission/validate](uri-privacyusersrequestoridpermissionvalidate.md)
 
- [PermissionId 列挙](../../enums/privacy-enum-permissionid.md)
+ [PermissionId 列挙型](../../enums/privacy-enum-permissionid.md)

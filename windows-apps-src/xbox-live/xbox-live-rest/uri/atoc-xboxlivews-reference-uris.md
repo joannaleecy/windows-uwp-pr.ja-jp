@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ff8e5444ec65de3665d593168e430a64f4d250e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963663"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986504"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>ユニバーサル リソース識別子 (URI) リファレンス
 
@@ -27,81 +27,81 @@ ms.locfileid: "3963663"
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[実績 Uri](achievements/atoc-reference-achievementsv2.md)
+[実績 URI](achievements/atoc-reference-achievementsv2.md)
 
 &nbsp;&nbsp;Uri との実績に関連付けられている HTTP メソッドです。
 
 [ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス](gsdk/atoc-gsdk-uri-reference.md)
 
-&nbsp;&nbsp;Uri のクライアントが、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。
+&nbsp;&nbsp;Uri のクライアントで、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。
 
-[ゲーム DVR Uri](dvr/atoc-reference-dvr.md)
+[ゲーム DVR URI](dvr/atoc-reference-dvr.md)
 
 &nbsp;&nbsp;Uri とゲーム DVR の HTTP メソッドが関連付けられています。
 
-[ゲーマー アイコン Uri](gamerpic/atoc-reference-gamerpic.md)
+[ゲーマーアイコン URI](gamerpic/atoc-reference-gamerpic.md)
 
 &nbsp;&nbsp;Uri とタイトルによって生成された人々 に関連付けられている HTTP メソッドです。
 
-[ランキングの Uri](leaderboard/atoc-reference-leaderboard.md)
+[ランキング URI](leaderboard/atoc-reference-leaderboard.md)
 
 &nbsp;&nbsp;Uri とランキングの HTTP メソッドが関連付けられています。
 
-[Uri の一覧を示します](lists/atoc-reference-lists.md)
+[リスト URI](lists/atoc-reference-lists.md)
 
 &nbsp;&nbsp;Uri とピンの HTTP メソッドが関連付けられています。
 
-[Marketplace Uri](marketplace/atoc-reference-marketplace.md)
+[マーケットプレース URI](marketplace/atoc-reference-marketplace.md)
 
 &nbsp;&nbsp;Uri と Xbox の市場のサービスの HTTP メソッドが関連付けられています。
 
-[マッチメイ キング Uri](matchtickets/atoc-reference-matchtickets.md)
+[マッチメイキング URI](matchtickets/atoc-reference-matchtickets.md)
 
 &nbsp;&nbsp;Uri とマッチメイ キングに関連付けられている HTTP/REST メソッドです。
 
-[ユーザーの Uri](people/atoc-reference-people.md)
+[People URI](people/atoc-reference-people.md)
 
 &nbsp;&nbsp;Uri と関連付けられている HTTP メソッド people システムです。
 
-[プレゼンス Uri](presence/atoc-reference-presence.md)
+[プレゼンス URI](presence/atoc-reference-presence.md)
 
 &nbsp;&nbsp;Uri とプレゼンスに関連する HTTP メソッドです。
 
-[プライバシー Uri](privacy/atoc-reference-privacyv2.md)
+[プライバシー URI](privacy/atoc-reference-privacyv2.md)
 
 &nbsp;&nbsp;Uri とプライバシーの HTTP メソッドが関連付けられています。
 
-[プロファイルの Uri](profileV2/atoc-reference-profiles.md)
+[プロフィール URI](profileV2/atoc-reference-profiles.md)
 
 &nbsp;&nbsp;Uri とプロファイルの関連付けの HTTP メソッドです。
 
-[評判 Uri](reputation/atoc-reference-reputation.md)
+[評判 URI](reputation/atoc-reference-reputation.md)
 
 &nbsp;&nbsp;Uri と評判サービスの HTTP メソッドが関連付けられています。
 
-[セッション ディレクトリ Uri](sessiondirectory/atoc-reference-sessiondirectory.md)
+[セッション ディレクトリ URI](sessiondirectory/atoc-reference-sessiondirectory.md)
 
 &nbsp;&nbsp;Uri と関連付けられている HTTP メソッドのマルチプレイヤー セッション ディレクトリ (MPSD)。
 
-[実績タイトル履歴 Uri](titlehistory/atoc-reference-titlehistoryv2.md)
+[実績タイトル履歴 URI](titlehistory/atoc-reference-titlehistoryv2.md)
 
 &nbsp;&nbsp;Uri と*タイトルの履歴*の HTTP メソッドが関連付けられています。
 
-[タイトル ストレージ Uri](storage/atoc-reference-storagev2.md)
+[タイトル ストレージ URI](storage/atoc-reference-storagev2.md)
 
 &nbsp;&nbsp;Uri とタイトル ストレージの HTTP メソッドが関連付けられています。
 
-[システムが Validatation Uri を示す文字列します。](stringserver/atoc-reference-systemstringsvalidate.md)
+[システム文字列の検証 URI](stringserver/atoc-reference-systemstringsvalidate.md)
 
 &nbsp;&nbsp;システム リソースの文字列の受け入れを検証します。
 
-[ユーザーの Uri](users/atoc-reference-users.md)
+[ユーザー URI](users/atoc-reference-users.md)
 
 &nbsp;&nbsp;Uri とユーザーの関連付けの HTTP メソッドです。
 
-[ユーザーの統計情報の Uri](userstats/atoc-reference-userstats.md)
+[ユーザー統計 URI](userstats/atoc-reference-userstats.md)
 
-&nbsp;&nbsp;Uri とユーザーの統計情報の関連付けの HTTP メソッドです。
+&nbsp;&nbsp;Uri とユーザーの統計情報の HTTP メソッドが関連付けられています。
 
 <a id="ID4E5C"></a>
 

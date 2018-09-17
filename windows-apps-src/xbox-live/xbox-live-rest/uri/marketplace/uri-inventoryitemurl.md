@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d7e7918156694a8ef73e7f436ef8c3d37e9e3708
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956771"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986602"
 ---
 # <a name="inventoryitemid"></a>/inventory/{itemID}
 特定のインベントリ項目の詳細情報の完全なセットにアクセスします。 これらの Uri のドメインが`inventory.xboxlive.com`します。
@@ -35,7 +35,7 @@ ms.locfileid: "3956771"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(/Inventory/{itemID}) を取得します。](uri-inventoryitemurlget.md)
+[GET (/inventory/{itemID})](uri-inventoryitemurlget.md)
 
 &nbsp;&nbsp;特定のインベントリ項目の詳細の完全なセットを提供します。
  
@@ -49,7 +49,7 @@ ms.locfileid: "3956771"
  
 ##### <a name="parent"></a>Parent 
 
-[Marketplace Uri](atoc-reference-marketplace.md)
+[マーケットプレース URI](atoc-reference-marketplace.md)
 
   
 <a id="ID4EFC"></a>
@@ -57,12 +57,12 @@ ms.locfileid: "3956771"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

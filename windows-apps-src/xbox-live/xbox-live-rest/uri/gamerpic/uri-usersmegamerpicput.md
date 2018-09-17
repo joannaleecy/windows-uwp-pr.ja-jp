@@ -1,9 +1,9 @@
 ---
-title: PUT (/ユーザー/me/ゲーマー アイコン)
+title: PUT (/users/me/gamerpic)
 assetID: ddf71c62-197d-a81d-35a7-47c6dc9e1b0c
 permalink: en-us/docs/xboxlive/rest/uri-usersmegamerpicput.html
 author: KevinAsgari
-description: " PUT (/ユーザー/me/ゲーマー アイコン)"
+description: " PUT (/users/me/gamerpic)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c8c8f4297bb671f8e90c233ccf98dc2cf0730ad
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964299"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984170"
 ---
-# <a name="put-usersmegamerpic"></a>PUT (/ユーザー/me/ゲーマー アイコン)
+# <a name="put-usersmegamerpic"></a>PUT (/users/me/gamerpic)
 1080 x 1080 ゲーマー アイコンをアップロードします。 
   * [要求本文](#ID4EQ)
   * [HTTP ステータス コード](#ID4EZ)

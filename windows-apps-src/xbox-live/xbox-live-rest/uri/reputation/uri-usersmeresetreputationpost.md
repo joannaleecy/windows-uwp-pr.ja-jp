@@ -1,9 +1,9 @@
 ---
-title: POST (/ユーザー me//resetreputation)
+title: POST (/users/me/resetreputation)
 assetID: 1a4fed45-f608-dac2-3384-2ee493112f7b
 permalink: en-us/docs/xboxlive/rest/uri-usersmeresetreputationpost.html
 author: KevinAsgari
-description: " POST (/ユーザー me//resetreputation)"
+description: " POST (/users/me/resetreputation)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a8bfe8a76b83c78886c48f7e15de274fe89a52a
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959905"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983246"
 ---
-# <a name="post-usersmeresetreputation"></a>POST (/ユーザー me//resetreputation)
-により、実施チームは、アカウント ハイジャック (たとえば) の後、いくつかの任意の値を現在のユーザーの評判スコアを設定します。 これらの Uri のドメインが`reputation.xboxlive.com`します。
+# <a name="post-usersmeresetreputation"></a>POST (/users/me/resetreputation)
+アカウント ハイジャックでは (たとえば) 後、現在のユーザーの評判スコアをいくつかの任意の値に設定する執行チームを使用できます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [Authorization](#ID4E5)
@@ -51,14 +51,14 @@ ms.locfileid: "3959905"
  
 すべてから:**コンテンツの種類: アプリケーション/json**します。
  
-パートナーから: **X Xbl コントラクト バージョン**(現在のバージョンは 101)、 **X-Xbl のサンド ボックス**です。
+パートナーから: **X Xbl コントラクト バージョン**(現在のバージョンは 101)、 **X-Xbl-サンド ボックス**です。
  
 ユーザーから: **X Xbl コントラクト バージョン**(現在のバージョンは 101)。
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
+| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
   
 <a id="ID4END"></a>
 
@@ -95,9 +95,9 @@ ms.locfileid: "3959905"
 | 200| OK| OK。| 
 | 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
-| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。| 
+| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
 | 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable| 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行の値の後にもう一度やり直してください。| 
+| 503| Service Unavailable| 要求が調整された、クライアント再試行値 (例: 5 秒後) を秒単位で後にもう一度やり直してください。| 
   
 <a id="ID4EFH"></a>
 

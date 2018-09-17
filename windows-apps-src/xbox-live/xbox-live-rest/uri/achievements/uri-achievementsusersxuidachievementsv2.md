@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ece582e46601fd63ba16a99a071ae40ecaff2d4
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962325"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981200"
 ---
 # <a name="usersxuidxuidachievements"></a>/users/xuid({xuid})/achievements
  
@@ -31,7 +31,7 @@ ms.locfileid: "3962325"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーが (リソース) にアクセスしているのです。 認証されたユーザーの XUID に一致する必要があります。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) が (リソース) にアクセスしているユーザーのです。 認証されたユーザーの XUID に一致する必要があります。| 
   
 <a id="ID4EAC"></a>
 
@@ -52,6 +52,6 @@ ms.locfileid: "3962325"
  
 ##### <a name="parent"></a>Parent 
 
-[実績 Uri](atoc-reference-achievementsv2.md)
+[実績 URI](atoc-reference-achievementsv2.md)
 
    

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cb093f624d27f28cace771896cf52146059bc332
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959751"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986882"
 ---
 # <a name="personsummary-json"></a>PersonSummary (JSON)
 [ユーザー (JSON)](json-person.md)オブジェクトのコレクションです。 
@@ -25,7 +25,7 @@ ms.locfileid: "3959751"
  
 ## <a name="personsummary"></a>PersonSummary
  
-PersonSummary オブジェクトには、次の仕様があります。
+PersonSummary オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -37,7 +37,7 @@ PersonSummary オブジェクトには、次の仕様があります。
 | recentChangeCount| 32 ビット符号なし整数| 省略可能。 ターゲットのソーシャル グラフの最新の変更の数です。 この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
 | targetFollowerCount| > 32 ビット符号なし整数| 次のターゲットはユーザーの数です。 値の例: 1308| 
 | targetFollowingCount| 32 ビット符号なし整数| ターゲットが次のユーザーの数です。 値の例: 112| 
-| 透かし| string| 省略可能。 ターゲットの最新の変更透かしします。 この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
+| 透かし| string| 省略可能。 ターゲットの最新の変更透かし この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
   
 <a id="ID4E4D"></a>
 
@@ -71,6 +71,6 @@ PersonSummary オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

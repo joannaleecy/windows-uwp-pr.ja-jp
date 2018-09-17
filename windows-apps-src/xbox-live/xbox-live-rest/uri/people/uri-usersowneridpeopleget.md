@@ -1,9 +1,9 @@
 ---
-title: 取得する (/users/{ownerId} 人/)
+title: GET (/users/{ownerId}/people)
 assetID: c948d031-ec19-7571-31ef-23cb9c5ebfaf
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeopleget.html
 author: KevinAsgari
-description: " 取得する (/users/{ownerId} 人/)"
+description: " GET (/users/{ownerId}/people)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d08a8ff9e04b255944128ffc1cd1c0b101180d8f
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955943"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981038"
 ---
-# <a name="get-usersowneridpeople"></a>取得する (/users/{ownerId} 人/)
+# <a name="get-usersowneridpeople"></a>GET (/users/{ownerId}/people)
 呼び出し元のユーザーのコレクションを取得します。
 これらの Uri のドメインが`social.xboxlive.com`します。
 
@@ -27,7 +27,7 @@ ms.locfileid: "3955943"
   * [クエリ文字列パラメーター](#ID4EJB)
   * [Authorization](#ID4ERD)
   * [必要な要求ヘッダー](#ID4EZE)
-  * [オプションの要求ヘッダー](#ID4EYF)
+  * [省略可能な要求ヘッダー](#ID4EYF)
   * [要求本文](#ID4E5G)
   * [HTTP ステータス コード](#ID4EJH)
   * [必要な応答ヘッダー](#ID4EBBAC)
@@ -47,7 +47,7 @@ ms.locfileid: "3955943"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。|
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。|
 
 <a id="ID4EJB"></a>
 
@@ -56,7 +56,7 @@ ms.locfileid: "3955943"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- | --- | --- |
-| 表示| string| ビューに関連付けられているユーザーを返します。 既定値は"all"します。 設定できる値は次のとおりです。 <ul><li><b>すべて</b>のユーザーの People リスト上のすべてのユーザーを返します。 これは既定値です。</li><li><b>お気に入り</b>お気に入りの属性を持っているユーザーの People リストにすべてのユーザーを返します。</li><li><b>LegacyXboxLiveFriends</b> - は、従来の Xbox LIVE のフレンドではまた、ユーザーの People リスト上のすべてのユーザーを返します。</li></br>**注:** 呼び出し元のユーザーが所有するユーザーと異なる場合、**すべて**の値のみがサポートされています。|
+| 表示| string| ビューに関連付けられているユーザーを返します。 既定値は、"all"です。 設定できる値は次のとおりです。 <ul><li><b>すべて</b>のユーザーの People リスト上のすべてのユーザーを返します。 これは既定値です。</li><li><b>お気に入り</b>お気に入り属性を持っているユーザーの People リスト上のすべてのユーザーを返します。</li><li><b>LegacyXboxLiveFriends</b> - を持っている従来の Xbox LIVE のフレンドでも、ユーザーの People リスト上のすべてのユーザーを返します。</li></br>**注:** 呼び出し元のユーザーが所有するユーザーと異なる場合、**すべて**の値のみがサポートされています。|
 | startIndex| 32 ビット符号なし整数| 特定のインデックスを開始する項目を返します。  
 | maxItems| 32 ビット符号なし整数| スタート画面のインデックスから始まるコレクションから返されるユーザーの最大数。 <b>MaxItems</b>が存在しないと、(結果の最後のページが返されていない) 場合でも同様に返す<b>maxItems</b>よりも少ない可能性がある場合、サービスは既定値を提供可能性があります。|
 
@@ -81,12 +81,12 @@ ms.locfileid: "3955943"
 <a id="ID4EYF"></a>
 
 
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
 
 | ヘッダー| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。|
-| Accept| [String]。 コンテンツの種類の応答で、呼び出し元を受け入れるです。 すべての応答は、<b>アプリケーション/json</b>です。|
+| X RequestedServiceVersion| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。|
+| Accept| [String]。 コンテンツ タイプを呼び出し元が応答で受け取る。 すべての応答は、<b>アプリケーション/json</b>です。|
 
 <a id="ID4E5G"></a>
 
@@ -168,4 +168,4 @@ ms.locfileid: "3955943"
 
 ##### <a name="parent"></a>Parent
 
-[/users/{ownerId}/ユーザー](uri-usersowneridpeople.md)
+[/users/{ownerId}/people](uri-usersowneridpeople.md)

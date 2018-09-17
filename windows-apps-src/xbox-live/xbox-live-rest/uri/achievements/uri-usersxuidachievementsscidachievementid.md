@@ -1,9 +1,9 @@
 ---
-title: ユーザー/xuid ({xuid})/achievements/{scid}/{achievementid}
+title: /users/xuid({xuid})/achievements/{scid}/{achievementid}
 assetID: 656a6d63-1a11-b0a5-63d2-2b010abd62e7
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidachievementsscidachievementid.html
 author: KevinAsgari
-description: " ユーザー/xuid ({xuid})/achievements/{scid}/{achievementid}"
+description: " /users/xuid({xuid})/achievements/{scid}/{achievementid}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f58b4b5f8cf135aaaad5e23095c4c00278dcec83
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956215"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982058"
 ---
-# <a name="usersxuidxuidachievementsscidachievementid"></a>ユーザー/xuid ({xuid})/achievements/{scid}/{achievementid}
+# <a name="usersxuidxuidachievementsscidachievementid"></a>/users/xuid({xuid})/achievements/{scid}/{achievementid}
 構成済みのメタデータとユーザー固有のデータを含む、実績を詳しく説明を返します。 
 
 > [!NOTE] 
@@ -59,6 +59,6 @@ ms.locfileid: "3956215"
  
 ##### <a name="parent"></a>Parent 
 
-[実績 Uri](atoc-reference-achievementsv2.md)
+[実績 URI](atoc-reference-achievementsv2.md)
 
    

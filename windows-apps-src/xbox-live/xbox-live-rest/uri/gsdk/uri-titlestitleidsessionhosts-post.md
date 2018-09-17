@@ -1,9 +1,9 @@
 ---
-title: POST (/titles/{タイトル Id}/sessionhosts)
+title: POST (/titles/{Title Id}/sessionhosts)
 assetID: 8558b336-1af9-8143-9752-477ceb3a8e4e
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionhosts-post.html
 author: KevinAsgari
-description: " POST (/titles/{タイトル Id}/sessionhosts)"
+description: " POST (/titles/{Title Id}/sessionhosts)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 147df5a3032aa950b7b301f7990c5456db200d2c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962773"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983452"
 ---
-# <a name="post-titlestitle-idsessionhosts"></a>POST (/titles/{タイトル Id}/sessionhosts)
+# <a name="post-titlestitle-idsessionhosts"></a>POST (/titles/{Title Id}/sessionhosts)
 新しいクラスターの要求を作成します。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
@@ -63,11 +63,11 @@ gameserverms.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| sessionId| これは、指定した呼び出し元の識別子。 割り当てられ、返されるセッション ホストに割り当てられます。 後でこの識別子を特定 sessionhost を参照できます。 グローバルに一意である必要があります (つまり GUID)。| 
-| SandboxId| サンド ボックスで割り当てられるセッションのホストが必要です。| 
+| sessionId| これは、指定した呼び出し元の識別子。 割り当てられ、返されるセッション ホストに割り当てられます。 後でこの識別子によって特定 sessionhost を参照できます。 グローバルに一意である必要があります (つまり GUID)。| 
+| SandboxId| サンド ボックスで割り当てられるセッション ホストをします。| 
 | cloudGameId| クラウド ゲームの識別子です。| 
-| 場所| 優先する場所の順序付きリストから割り当てられるセッションたいです。| 
-| sessionCookie| 指定した呼び出し元は、この不透明な文字列です。 これは、sessionhost に関連付けられてし、ゲームのコードで参照できます。 このメンバーを使用して、クライアントから少量の情報を (最大サイズは 4 KB) サーバーに渡します。| 
+| 場所| 優先する場所の順序指定された一覧から割り当てられるセッションたいです。| 
+| sessionCookie| これは、呼び出し元が指定されている不透明な文字列です。 Sessionhost に関連付けられたし、ゲームのコードで参照できます。 このメンバーを使用して、クライアントから少量の情報を (最大サイズは 4 KB) サーバーに渡します。| 
 | gameModelId| ゲーム モードの識別子です。| 
  
 <a id="ID4EDD"></a>
@@ -151,15 +151,15 @@ gameserverms.xboxlive.com
  
 ## <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
+次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しをのみ再試行する必要があります。
  
-   * 200、成功の応答が返されます。
+   * 200-成功の応答が返されます。
    * 400-無効なパラメーターまたは形式が正しくない要求本文。
    * 401: Unauthorized
    * 404-タイトル id を割り当てられているすべてのサブスクリプションはありません。
-   * 409-この応答が可能な場合、同じ要求が同時にほぼで (同じ sessionId) に加えられたします。 セッションのホストが既に指定した sessionId しアクティブになって、割り当て要求が行われた場合はその sessionhost に関する詳しい情報が返されます。 セッション ホストただしがない場合アクティブなは、まだ、競合が表示されます。
-   * 500-サーバーの予期しないエラー。
-   * 503-sessionhosts StandingBy しません。 これらのリソースの一部は無料ときは、要求を再試行します。
+   * 409-この応答が可能な場合、同じ要求が同時にほぼで (同じ sessionId) に加えられたします。 セッションのホストが既に指定した sessionId しアクティブになって割り当て要求が行われた場合はその sessionhost に関する詳しい情報が返されます。 セッション ホストただしがない場合アクティブなは、まだ、競合が表示されます。
+   * 500-予期しないサーバー エラー。
+   * 503-なし sessionhosts StandingBy します。 これらのリソースの一部は無料ときは、要求を再試行します。
    
 <a id="ID4EFG"></a>
 

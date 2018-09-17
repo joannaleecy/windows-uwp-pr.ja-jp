@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d6f1da02f7a5020a7e6bd9d71e7473ed64dd1fa4
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958827"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986810"
 ---
 # <a name="get-trustedplatformusersxuidxuidscidssciddatapath"></a>GET (/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path})
 指定されたパスのファイル情報の一覧を示します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
@@ -36,7 +36,7 @@ ms.locfileid: "3958827"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID)、プレイヤーの要求を行っているユーザー。| 
 | scid| guid| ルックアップ サービス構成の ID です。| 
 | path| string| 返されるデータ項目へのパス。 一致するすべてのディレクトリとサブディレクトリを取得する返されます。 有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、およびスラッシュ (/) が含まれます。 空にすることがあります。 256 の最大の長さ。| 
   
@@ -56,7 +56,7 @@ ms.locfileid: "3958827"
  
 ## <a name="authorization"></a>Authorization 
  
-要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは、403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていない応答を返します。 
+要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは 403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 不正な応答を返します。 
   
 <a id="ID4EDD"></a>
 
@@ -66,7 +66,7 @@ ms.locfileid: "3958827"
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は認証要求によって返されるトークンで置き換えられます。 STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証し、Xbox LIVE サービス要求の承認を参照してください。| 
+| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は認証要求によって返されるトークンで置き換えられます。 STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証と Xbox LIVE サービス要求の承認を参照してください。| 
   
 <a id="ID4EME"></a>
 
@@ -89,11 +89,11 @@ ms.locfileid: "3958827"
 | 400| Bad Request | サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません | 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden | ユーザーまたはサービスの要求は許可されていません。| 
-| 404| 見つかりません。 | 指定されたリソースは見つかりませんでした。| 
+| 404| Not Found します。 | 指定されたリソースは見つかりませんでした。| 
 | 406| 許容できません。 | リソースのバージョンがサポートされていません。| 
 | 408| 要求のタイムアウト | 要求にかかった時間が長すぎます。| 
 | 500| 内部サーバー エラー | サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable | 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行の値の後にもう一度やり直してください。| 
+| 503| Service Unavailable | 要求が調整された、クライアント再試行値 (例: 5 秒後) を秒単位で後にもう一度やり直してください。| 
   
 <a id="ID4EMCAC"></a>
 
@@ -150,7 +150,7 @@ ms.locfileid: "3958827"
  
 ##### <a name="parent"></a>Parent  
 
-[/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{パス}](uri-trustedplatformusersxuidscidssciddatapath.md)
+[/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}](uri-trustedplatformusersxuidscidssciddatapath.md)
 
   
 <a id="ID4EUDAC"></a>

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 966ff94004d6fd6bfc404800c5ea6561ae3a3864
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958957"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981066"
 ---
 # <a name="get-usersxuidxuidhistorytitles"></a>GET (/users/xuid({xuid})/history/titles)
 タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。 この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。 これらの Uri のドメインが`achievements.xboxlive.com`します。
@@ -24,7 +24,7 @@ ms.locfileid: "3958957"
   * [URI パラメーター](#ID4EY)
   * [クエリ文字列パラメーター](#ID4EDB)
   * [Authorization](#ID4EFD)
-  * [オプションの要求ヘッダー](#ID4EGE)
+  * [省略可能な要求ヘッダー](#ID4EGE)
   * [要求本文](#ID4ERF)
  
 <a id="ID4EY"></a>
@@ -59,12 +59,12 @@ ms.locfileid: "3958957"
 <a id="ID4EGE"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <b>X RequestedServiceVersion</b>| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。| 
-| <b>x xbl コントラクト バージョン</b>| 32 ビット符号なし整数| 設定されている場合、2 に設定すると、この API の V2 バージョンが使用されます。 それ以外の場合、V1 します。| 
+| <b>X RequestedServiceVersion</b>| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。| 
+| <b>x xbl コントラクト バージョン</b>| 32 ビット符号なし整数| 存在する場合、2 に設定すると、この API の V2 バージョンが使用されます。 それ以外の場合、V1 します。| 
   
 <a id="ID4ERF"></a>
 
@@ -91,7 +91,7 @@ ms.locfileid: "3958957"
  
 ##### <a name="reference"></a>リファレンス 
 
-[ユーザーのタイトル (JSON)](../../json/json-usertitlev2.md)
+[UserTitle (JSON)](../../json/json-usertitlev2.md)
 
  [PagingInfo (JSON)](../../json/json-paginginfo.md)
 

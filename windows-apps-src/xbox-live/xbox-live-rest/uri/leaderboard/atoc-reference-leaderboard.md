@@ -1,9 +1,9 @@
 ---
-title: ランキングの Uri
+title: ランキング URI
 assetID: f0a0fb49-ef10-3e6e-e989-2f3f30fca954
 permalink: en-us/docs/xboxlive/rest/atoc-reference-leaderboard.html
 author: KevinAsgari
-description: " ランキングの Uri"
+description: " ランキング URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a2c8ca1cdac0b6a2ad2f981d2a57d926cf4e1f5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959373"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984550"
 ---
-# <a name="leaderboards-uris"></a>ランキングの Uri
+# <a name="leaderboards-uris"></a>ランキング URI
 
-このセクションでは、*ランキング*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*ランキング*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
 
 これらの Uri のドメインは、leaderboards.xboxlive.com です。
 
@@ -29,7 +29,7 @@ ms.locfileid: "3959373"
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[{scid}/scids//leaderboards/{leaderboardname}](uri-scidsscidleaderboardsleaderboardname.md)
+[/scids/{scid}/leaderboards/{leaderboardname}](uri-scidsscidleaderboardsleaderboardname.md)
 
 &nbsp;&nbsp;定義済みグローバル ランキングにアクセスします。
 

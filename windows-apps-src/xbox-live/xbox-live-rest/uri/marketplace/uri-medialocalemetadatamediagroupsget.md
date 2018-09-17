@@ -1,9 +1,9 @@
 ---
-title: (/Media/{marketplaceId} メタデータ/mediaGroups) を取得します。
+title: GET (/media/{marketplaceId}/metadata/mediaGroups)
 assetID: 68dcebed-99c8-c4a9-dbb4-be6a153837c2
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediagroupsget.html
 author: KevinAsgari
-description: " (/Media/{marketplaceId} メタデータ/mediaGroups) を取得します。"
+description: " GET (/media/{marketplaceId}/metadata/mediaGroups)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f09bacacc3fdf19b32d07b1db8070a702d4cbe2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959839"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985000"
 ---
-# <a name="get-mediamarketplaceidmetadatamediagroups"></a>(/Media/{marketplaceId} メタデータ/mediaGroups) を取得します。
+# <a name="get-mediamarketplaceidmetadatamediagroups"></a>GET (/media/{marketplaceId}/metadata/mediaGroups)
 指定した EDS バージョンのサポートされているすべての mediaGroups の一覧を示します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -42,7 +42,7 @@ ms.locfileid: "3959839"
  
 ##### <a name="parent"></a>Parent 
 
-[メタデータ/mediaGroups/media/{marketplaceId}](uri-medialocalemetadatamediagroups.md)
+[/media/{marketplaceId}/metadata/mediaGroups](uri-medialocalemetadatamediagroups.md)
 
   
 <a id="ID4EMB"></a>
@@ -50,14 +50,14 @@ ms.locfileid: "3959839"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [Marketplace Uri](atoc-reference-marketplace.md)
+ [マーケットプレース URI](atoc-reference-marketplace.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

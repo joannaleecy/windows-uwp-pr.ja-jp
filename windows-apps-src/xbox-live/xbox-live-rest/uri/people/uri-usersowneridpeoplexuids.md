@@ -1,9 +1,9 @@
 ---
-title: ユーザー/xuid/users/{ownerId}
+title: /users/{ownerId}/people/xuids
 assetID: db2faec7-9f6c-f240-586a-45d6ed596e88
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeoplexuids.html
 author: KevinAsgari
-description: " ユーザー/xuid/users/{ownerId}"
+description: " /users/{ownerId}/people/xuids"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 715659b8bb001697fc9386be6ec587b3682793c5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964241"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989144"
 ---
-# <a name="usersowneridpeoplexuids"></a>ユーザー/xuid/users/{ownerId}
+# <a name="usersowneridpeoplexuids"></a>/users/{ownerId}/people/xuids
 XUID によって people を呼び出し元のユーザーのコレクションからアクセスします。 これらの Uri のドメインが`social.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -30,7 +30,7 @@ XUID によって people を呼び出し元のユーザーのコレクション�
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。| 
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。| 
   
 <a id="ID4EOB"></a>
 

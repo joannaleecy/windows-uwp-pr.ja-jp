@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 260d55104a2083270b1f5c2d2892826cc7b3d6ed
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956861"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985178"
 ---
 # <a name="post-usersxuidxuidoutbox"></a>POST (/users/xuid({xuid})/outbox)
-受信者の一覧を指定されたメッセージを送信します。
+受信者の一覧に指定されたメッセージを送信します。
 これらの Uri のドメインが`msg.xboxlive.com`します。
 
   * [注釈](#ID4EV)
@@ -35,7 +35,7 @@ ms.locfileid: "3956861"
 
 ## <a name="remarks"></a>注釈
 
-この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
+この API は、サポートのみコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
 
 <a id="ID4EAB"></a>
 
@@ -58,7 +58,7 @@ ms.locfileid: "3956861"
 
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果
 
-正常にメッセージを送信するユーザー、プレイヤーにかどうかプレイヤーの友人、結果 200 の結果コード。 ただし、ブロックされている他の人物にメッセージを送信する場合、受信側では、メッセージは表示されませんが、メッセージが成功したことを示すは表示されません。
+正常にメッセージを送信するユーザー、プレイヤーにかどうかプレイヤーの友人、結果 200 の結果コード。 ただし、によりブロックされている他の人物にメッセージを送信する場合、受信側では、メッセージは表示されませんが、メッセージが成功したことを示すは表示されません。
 
 メッセージ数に送信できると 1 日あたり数のフレンドとフレンド以外の場合、次のようにはも制限があります。
 

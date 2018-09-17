@@ -1,9 +1,9 @@
 ---
-title: GameClipType 列挙
+title: GameClipType 列挙型
 assetID: 08fbae38-d96e-8a11-14ab-abb4f1fe99f5
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gamecliptypes.html
 author: KevinAsgari
-description: " GameClipType 列挙"
+description: " GameClipType 列挙型"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 99ae66a68eb6dede1d82ef3e071246ccacd33199
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959619"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984650"
 ---
-# <a name="gamecliptype-enumeration"></a>GameClipType 列挙
+# <a name="gamecliptype-enumeration"></a>GameClipType 列挙型
 GameClipTypes 列挙をについて説明します。 
 <a id="ID4ET"></a>
 
@@ -29,7 +29,7 @@ GameClipTypes 列挙をについて説明します。
  
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
-| None| ゲーム クリップの種類は、不明なまたは設定されていないです。 (アップロードは無効)| 
+| None| ゲーム クリップの種類は、不明なまたは設定されていないです。 (アップロードでは無効です)| 
 | MetadataOnly| ゲーム クリップには、アセット データ – メタデータのみ含まれません。 (の将来の使用)| 
 | DeveloperInitiated| ゲーム クリップは、開発者/タイトルによって開始されます。| 
   

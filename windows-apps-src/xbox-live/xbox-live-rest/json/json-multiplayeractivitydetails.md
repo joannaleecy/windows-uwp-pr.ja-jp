@@ -12,33 +12,33 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4de72a24c34af1a5f145c44b2acfa11a7bd07f95
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960379"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988910"
 ---
 # <a name="multiplayeractivitydetails-json"></a>MultiplayerActivityDetails (JSON)
 **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**を表す JSON オブジェクト。 
 
 > [!NOTE] 
-> このオブジェクトは、2015年マルチプレイヤーで実装され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用する概念があることです。  
+> このオブジェクトは、2015年マルチプレイヤーで実装され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用されます。  
 
  
 <a id="ID4ES"></a>
 
   
  
-MultiplayerActivityDetails JSON オブジェクトには、次の仕様があります。
+MultiplayerActivityDetails JSON オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | --- | 
 | SessionReference| MultiplayerSessionReference| セッションの識別情報を表す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b>オブジェクト。| 
-| ハンドル id を使用| 64 ビットの符号なし整数| アクティビティに対応するハンドル ID です。| 
+| ハンドル id を使用| 64 ビットの符号なし整数| アクティビティに対応するハンドル ID。| 
 | TitleId| 32 ビット符号なし整数| タイトル ID は、アクティビティに参加するために起動する必要があります。| 
 | 表示| MultiplayerSessionVisibility| セッションの可視性の状態を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>値。| 
 | による| MultiplayerSessionJoinRestriction| セッションの参加制限を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b>値。 表示のフィールドが「開く」に設定されている場合、この制限が適用されます。| 
-| 終了| ブール値| セッションが一時的に閉じている場合、参加するため、false それ以外の場合は true。| 
+| 終了| ブール値| セッションが一時的に閉じている場合、参加するため、false そうでない場合は true。| 
 | OwnerXboxUserId| 64 ビットの符号なし整数| アクティビティを所有しているメンバーの Xbox ユーザー ID。| 
 | MaxMembersCount| 32 ビット符号なし整数| スロットの合計数。| 
 | MembersCount| 32 ビット符号なし整数| スロットを占有の数。| 
@@ -108,6 +108,6 @@ MultiplayerActivityDetails JSON オブジェクトには、次の仕様があり
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

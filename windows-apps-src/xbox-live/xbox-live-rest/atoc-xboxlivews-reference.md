@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a6d5460d4021de8daa6af344e2da920e55dbba5
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958849"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988004"
 ---
 # <a name="xbox-live-services-restful-reference"></a>Xbox Live サービス RESTful リファレンス
 
-Xbox Live サービスでは、一連のゲームとプレイヤーの情報を管理するためのサービスです。 これらのサービスは、 **Xbox.Services**可能な限り使用する API をサポートします。 まだ**Xbox.Services**に追加していない新しい方法は、このセクションで説明されている RESTful インターフェイスを使用します。
+Xbox Live サービスでは、一連のゲームとプレイヤーの情報を管理するためのサービスです。 これらのサービスをサポートして**Xbox.Services** API 可能であればために使用する必要があります。 まだ**Xbox.Services**に追加していない新しい方法は、このセクションで説明されている RESTful インターフェイスを使用します。
 
 <a id="ID4E5"></a>
 
@@ -31,14 +31,14 @@ Xbox Live サービスでは、一連のゲームとプレイヤーの情報を�
 
 &nbsp;&nbsp;リソースと Xbox Live サービスで使用できるメソッドのリファレンスを提供します。
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](json/atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](json/atoc-xboxlivews-reference-json.md)
 
 &nbsp;&nbsp;Xbox Live サービスで使われる JavaScript Object Notation (JSON) オブジェクトのリファレンスを提供します。
 
-[JavaScript Object Notation (JSON) オブジェクトに使用される列挙型](enums/atoc-xboxlivews-reference-enums.md)
+[JavaScript Object Notation (JSON) オブジェクトで使用される列挙型](enums/atoc-xboxlivews-reference-enums.md)
 
 &nbsp;&nbsp;Xbox Live サービスで使われる JavaScript Object Notation (JSON) オブジェクトで使用する列挙体に関するリファレンス情報を提供します。
 
-[その他の参照](additional/atoc-xboxlivews-reference-additional.md)
+[その他の参照情報](additional/atoc-xboxlivews-reference-additional.md)
 
-&nbsp;&nbsp;Xbox Live サービスの補助リファレンスです。 これには、認証の種類、データ型、標準の HTTP ステータス コードとヘッダー、ページング パラメーターには、およびエンターテイメント探索サービス (EDS) に関する情報が含まれます。
+&nbsp;&nbsp;Xbox Live サービスの補助リファレンスです。 これには、認証の種類、データ型、標準の HTTP ステータス コードとヘッダー、ページング パラメーターには、エンターテインメント探索サービス (EDS) に関する情報が含まれます。

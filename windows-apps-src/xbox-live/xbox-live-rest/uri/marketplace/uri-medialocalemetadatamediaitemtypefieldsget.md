@@ -1,9 +1,9 @@
 ---
-title: 取得する (/media/{marketplaceId}/メタデータ mediaItemTypes/{mediaItemType}/フィールド)
+title: GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields)
 assetID: 0ecf27d8-905d-af52-4060-43353d7a3e29
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypefieldsget.html
 author: KevinAsgari
-description: " 取得する (/media/{marketplaceId}/メタデータ mediaItemTypes/{mediaItemType}/フィールド)"
+description: " GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 56dc6067cfe559b5684fa93878e771257ecc8bc0
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962671"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981152"
 ---
-# <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypefields"></a>取得する (/media/{marketplaceId}/メタデータ mediaItemTypes/{mediaItemType}/フィールド)
-指定された mediaitemtype と EDS の特定のバージョンのデータを期待いずれかからフィールドを示します。 これらの Uri のドメインが`eds.xboxlive.com`します。
+# <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypefields"></a>GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields)
+指定された mediaitemtype と EDS の特定のバージョンのデータを想定いずれかからフィールドを示します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -43,7 +43,7 @@ ms.locfileid: "3962671"
  
 ##### <a name="parent"></a>Parent 
 
-[/media/{marketplaceId}/メタデータ mediaItemTypes/{mediaItemType} フィールド/](uri-medialocalemetadatamediaitemtypefields.md)
+[/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields](uri-medialocalemetadatamediaitemtypefields.md)
 
   
 <a id="ID4EMB"></a>
@@ -51,14 +51,14 @@ ms.locfileid: "3962671"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [Marketplace Uri](atoc-reference-marketplace.md)
+ [マーケットプレース URI](atoc-reference-marketplace.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

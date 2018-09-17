@@ -1,9 +1,9 @@
 ---
-title: ユーザー/ミュート/users/{ownerId}
+title: /users/{ownerId}/people/mute
 assetID: efb929d8-79a7-83f0-c348-c92ced42bc05
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemute.html
 author: KevinAsgari
-description: " ユーザー/ミュート/users/{ownerId}"
+description: " /users/{ownerId}/people/mute"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a5de74be5e82fde007d6680eaf4c9e5a543afc64
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957243"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985176"
 ---
-# <a name="usersowneridpeoplemute"></a>ユーザー/ミュート/users/{ownerId}
+# <a name="usersowneridpeoplemute"></a>/users/{ownerId}/people/mute
 ユーザーのミュート リストにアクセスします。
 
   * [URI パラメーター](#ID4EQ)
@@ -37,7 +37,7 @@ ms.locfileid: "3957243"
 
 ## <a name="valid-methods"></a>有効なメソッド
 
-[GET (/users/{ownerId}/ユーザー/ミュート)](uri-privacyusersowneridpeoplemuteget.md)
+[GET (/users/{ownerId}/people/mute)](uri-privacyusersowneridpeoplemuteget.md)
 
 &nbsp;&nbsp;ユーザーのミュートの一覧を取得します。
 
@@ -51,4 +51,4 @@ ms.locfileid: "3957243"
 
 ##### <a name="parent"></a>Parent
 
-[プライバシー Uri](atoc-reference-privacyv2.md)
+[プライバシー URI](atoc-reference-privacyv2.md)

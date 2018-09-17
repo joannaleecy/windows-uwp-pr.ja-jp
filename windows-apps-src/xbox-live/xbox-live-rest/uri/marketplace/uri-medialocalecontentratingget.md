@@ -1,9 +1,9 @@
 ---
-title: 取得する (/media/{marketplaceId}/contentRating)
+title: GET (/media/{marketplaceId}/contentRating)
 assetID: e677acdb-d905-3bea-b0ca-6d8becd663c0
 permalink: en-us/docs/xboxlive/rest/uri-medialocalecontentratingget.html
 author: KevinAsgari
-description: " 取得する (/media/{marketplaceId}/contentRating)"
+description: " GET (/media/{marketplaceId}/contentRating)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 456ae44dcffeede64011719c02dbeb3806792405
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3956271"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985952"
 ---
-# <a name="get-mediamarketplaceidcontentrating"></a>取得する (/media/{marketplaceId}/contentRating)
+# <a name="get-mediamarketplaceidcontentrating"></a>GET (/media/{marketplaceId}/contentRating)
 コンテンツの規制のトークンを取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
@@ -30,11 +30,11 @@ ms.locfileid: "3956271"
  
 ## <a name="remarks"></a>注釈
  
-保護者子が表示できるコンテンツを適用することは、複雑な作業です。 だけでなく各メディア項目の種類は、独自の評価システムがそれらの評価システムは国によって異なることができます。 これはするすべての項目を適切にフィルターを指定する必要があるデータの複数の異なる部分があることを意味します。
+保護者子が表示できるコンテンツを適用することは、複雑な作業です。 だけでなく各メディア項目の種類は、独自の評価システムがそれらの評価システムは国によって異なることができます。 これはすべての項目を正しくフィルターを指定する必要があるデータの複数の異なる部分があることを意味します。
  
-すべてのパラメーターを指定する、すべての API 呼び出しで、代わりは、この API は、値をその他の Api で**combinedContentRating**パラメーターに渡すし、でも同じ情報を伝えるを生成します。 これは、この API に渡されるいくつかのパラメーターは、その他の api、単一の再利用可能な値に折りたたまれたとき、Api を使用し、保守、やすくするために設計されています。
+すべてのパラメーターを指定する、すべての API 呼び出しで、代わりは、この API は、その他の Api で**combinedContentRating**パラメーターに渡すとでも同じ情報を伝える値を生成します。 これは、この API に渡されるいくつかのパラメーターは、その他の Api の 1 つの再利用可能な値に折りたたまれたとき、Api を使用し、保守、やすくするために設計されています。
  
-頻繁に変更する必要がありますが、この API によって返される正確な値は変更が最終的に、(リリース エンターテイメント探索サービス (EDS) の間など)、したがって、長期間のキャッシュ可能性があります。 **CombinedContentRating**パラメーターにより、わかりやすいエラー メッセージで渡した値が有効である場合を受け入れることを意味する API 呼び出し元だけ必要があります、更新された値を取得するには、もう一度この API を呼び出します。 API は、 **combinedContentRating**パラメーターを受け入れるいずれかが提供されない場合は、コンテンツのフィルター処理は行われません保護者に基づいています。 
+頻繁に変更する必要がありますが、この API によって返される正確な値は変更が最終的に、(リリース エンターテイメント探索サービス (EDS) の間など)、したがって、長期間のキャッシュ可能性があります。 **CombinedContentRating**パラメーターにより、わかりやすいエラー メッセージで渡した値が有効である場合を受け入れることを意味する API 呼び出し元だけ必要があります、更新された値を取得するには、もう一度この API を呼び出します。 API が**combinedContentRating**パラメーターを受け入れるいずれかが提供されない場合は、コンテンツのフィルター処理は行われません保護者に基づいています。 
 
 > [!NOTE] 
 > これとは限りません。 のみ"安全"コンテンツが返されること - すべてのコンテンツが返されること、明示的な可能性のあるコンテンツを含むことを意味します。 
@@ -59,7 +59,7 @@ ms.locfileid: "3956271"
 | --- | --- | --- | --- | --- | --- | --- | 
 | filterExplicit| ブール値| 省略可能。 明示的な音楽をフィルター処理します。| 
 | filterFamilyOnlyApps| ブール値| 省略可能。 わかりやすいファミリとしてマークいないアプリをフィルター処理します。| 
-| filterUnrated| ブール値| 省略可能。 応答に評価されるコンテンツを含めることがあるかどうかどうかを決定します。| 
+| filterUnrated| ブール値| 省略可能。 か、評価されるコンテンツを応答に含める必要があるかどうかを決定します。| 
 | maxGameRating| 32 ビット符号付き整数| 省略可能。 ゲームをフィルター処理します。| 
 | maxMovieRating| 32 ビット符号付き整数| 省略可能。 特定のレベルよりも映画をフィルター処理します。| 
 | maxTVRating| 32 ビット符号付き整数| 省略可能。 テレビをフィルター処理します。| 
@@ -82,14 +82,14 @@ ms.locfileid: "3956271"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [Marketplace Uri](atoc-reference-marketplace.md)
+ [マーケットプレース URI](atoc-reference-marketplace.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

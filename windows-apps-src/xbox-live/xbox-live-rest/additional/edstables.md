@@ -1,9 +1,9 @@
 ---
-title: EDS テーブル
+title: EDS の表
 assetID: 7fc0e498-9a45-61b9-a9b2-b7ceb8994e25
 permalink: en-us/docs/xboxlive/rest/edstables.html
 author: KevinAsgari
-description: " EDS テーブル"
+description: " EDS の表"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ae8c61d8afae6788f2f99e4e2beff262c011fc60
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3955975"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3988850"
 ---
-# <a name="eds-tables"></a>EDS テーブル
+# <a name="eds-tables"></a>EDS の表
 
   * [メディア項目のマップにメディア グループ](#ID4EQ)
   * [有効なクライアントの種類の一覧](#ID4EFD)
@@ -108,7 +108,7 @@ ms.locfileid: "3955975"
 
 ##### <a name="parent"></a>Parent  
 
-[その他の参照](atoc-xboxlivews-reference-additional.md)
+[その他の参照情報](atoc-xboxlivews-reference-additional.md)
 
 
 <a id="ID4EXG"></a>
@@ -116,4 +116,4 @@ ms.locfileid: "3955975"
 
 ##### <a name="further-information"></a>詳細情報
 
-[Marketplace Uri](../uri/marketplace/atoc-reference-marketplace.md)
+[マーケットプレース URI](../uri/marketplace/atoc-reference-marketplace.md)

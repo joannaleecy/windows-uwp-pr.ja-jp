@@ -1,9 +1,9 @@
 ---
-title: ユーザー/batchfeedback
+title: /users/batchfeedback
 assetID: da244ed6-05b3-08b5-901b-e4720da1d7de
 permalink: en-us/docs/xboxlive/rest/uri-reputationusersbatchfeedback.html
 author: KevinAsgari
-description: " ユーザー/batchfeedback"
+description: " /users/batchfeedback"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e8989e05ce4874b3783e9cf130124be3f2129f3
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3959617"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986516"
 ---
-# <a name="usersbatchfeedback"></a>ユーザー/batchfeedback
+# <a name="usersbatchfeedback"></a>/users/batchfeedback
  
 これらの Uri のドメインとポート番号を`reputation.xboxlive.com:10443`します。
  
@@ -48,6 +48,6 @@ ms.locfileid: "3959617"
  
 ##### <a name="parent"></a>Parent 
 
-[評判 Uri](atoc-reference-reputation.md)
+[評判 URI](atoc-reference-reputation.md)
 
    

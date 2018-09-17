@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 494f4a8977a298265c264b050d6a222bd2bdd7d2
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961869"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983270"
 ---
 # <a name="resetreputation-json"></a>ResetReputation (JSON)
 ユーザーの既存のスコアを変更する必要があります新しい基本評判スコアが含まれています。 
@@ -25,11 +25,11 @@ ms.locfileid: "3961869"
  
 ## <a name="resetreputation"></a>ResetReputation
  
-ResetReputation オブジェクトには、次の仕様があります。
+ResetReputation オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| fairplayReputation| number| 目的の基本 (有効な範囲 0 ~ 75) のユーザーのフェアプレイ評判スコア。| 
+| fairplayReputation| number| 必要な基本フェアプレイ評判スコアのユーザー (有効な範囲 0 ~ 75)。| 
 | commsReputation| number| 目的の基本 (有効な範囲 0 ~ 75) のユーザーの通信の評判スコア。| 
 | userContentReputation| number| 必要な基本 UserContent 評判スコアのユーザー (有効な範囲 0 ~ 75)。| 
   
@@ -59,6 +59,6 @@ ResetReputation オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

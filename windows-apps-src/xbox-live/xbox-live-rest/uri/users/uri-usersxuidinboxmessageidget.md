@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961651"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983540"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
-サービスの読み取りとしてマークすること、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。
+サービスの読み取りとしてマーク、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。
 これらの Uri のドメインが`msg.xboxlive.com`します。
 
   * [注釈](#ID4EV)
@@ -37,9 +37,9 @@ ms.locfileid: "3961651"
 
 Get 操作は、ユーザー、システム、および FriendRequest メッセージの種類でのみ実行できます。
 
-この URI には、Xbox.com に更新が必要です。 現時点では、まで、ユーザーがサインアウトしたとでもう一度、Xbox 360 は読み取り/未読メ状態を更新されません。
+この URI には、Xbox.com に更新が必要です。 現時点では、まで、ユーザーがサインアウトしたとに戻り、Xbox 360 は読み取り/未読メ状態を更新されません。
 
-この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
+この API は、サポートのみコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
 
 <a id="ID4EEB"></a>
 
@@ -70,7 +70,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果
 
-のみ、独自のユーザーのメッセージを取得できます。
+だけユーザー メッセージを取得できます。
 
 <a id="ID4EUC"></a>
 
@@ -85,7 +85,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 | 400| XUID を適切に変換することはできません。|
 | 403| XUID に変換することはできませんか、有効な XUID クレームが見つかったことはできません。|
 | 404| 有効な XUID が見つからないか、またはメッセージ ID が見つからないか、解析されます。|
-| 500| サーバー側の一般的なエラーやメッセージの種類は、GET に対して有効ではありません。|
+| 500| サーバー側の一般的なエラー、またはメッセージの種類は、GET に対して有効ではありません。|
 
 <a id="ID4EUE"></a>
 
@@ -106,7 +106,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- |
 | 送信| DateTime|  | メッセージが送信された日付と時刻。 (サービスによって提供されます)。|
-| 有効期限| DateTime|  | 日付と時刻のメッセージの有効期限が切れます。 (すべてのメッセージによって、将来的に決定する最長有効期間がある)。|
+| 有効期限| DateTime|  | 日付と時刻のメッセージの有効期限が切れます。 (すべてのメッセージによって、決定する、今後の最長有効期間がある)。|
 | メッセージの種類| string| 13| メッセージの種類: ユーザー、システム、FriendRequest します。|
 | senderXuid| ulong|  | 送信者の XUID です。|
 | 送信者| string| 15| 送信者のゲーマータグです。|
@@ -140,8 +140,8 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 | プロパティ| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| errorSource| string| エラーが発生した場所を指定します。|
-| errorCode| int| (Null にすることができます)、エラーに関連付けられている数値コードです。|
+| errorSource| string| エラーの発生元の項目を示します。|
+| errorCode| int| (Null にすることができます) エラーに関連付けられている数値コードです。|
 | エラー メッセージ| string| 詳細を表示するように構成する場合のエラーの説明します。|
 
 <a id="ID4E3DAC"></a>

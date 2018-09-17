@@ -1,9 +1,9 @@
 ---
-title: POST (ハンドル/クエリかどうか含める relatedInfo =)。
+title: POST (/handles/query?include=relatedInfo)
 assetID: 66ecd1fe-24d4-4cd5-256d-8950ac658529
 permalink: en-us/docs/xboxlive/rest/uri-handlesqueryincludepost.html
 author: KevinAsgari
-description: " POST (ハンドル/クエリかどうか含める relatedInfo =)。"
+description: " POST (/handles/query?include=relatedInfo)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dab1ce8b995862470114a389cb6d4bf2ea7904a
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964245"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985510"
 ---
-# <a name="post-handlesqueryincluderelatedinfo"></a>POST (ハンドル/クエリかどうか含める relatedInfo =)。
+# <a name="post-handlesqueryincluderelatedinfo"></a>POST (/handles/query?include=relatedInfo)
 関連するセッションの情報が含まれるセッション ハンドルに対するクエリを作成します。
 
 > [!IMPORTANT]
@@ -36,9 +36,9 @@ ms.locfileid: "3964245"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドは、「含める」クエリ文字列で指定されたセッション情報を使って、データのハンドルに対するクエリを作成します。 クエリ文字列値はコンマで区切られたリストなどのサポート、今後のクエリ オプションをサポートするために拡張できるように設計されています"? 含める = relatedInfo、セッション"します。 POST メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetActivitiesForUsersAsync**でラップすることができます。
+この HTTP/REST メソッドは、「含める」のクエリ文字列で指定されたセッション情報を使って、データのハンドルに対するクエリを作成します。 クエリ文字列値は、コンマ区切りリスト、たとえば、サポート、今後のクエリ オプションをサポートする拡張できるように設計されています"? 含める = relatedInfo、セッション"します。 POST メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetActivitiesForUsersAsync**でラップすることができます。
 
-このメソッドの要求本文で型フィールドは、「アクティビティ」に設定する必要があります。 応答本文内の項目は、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**のプロパティに直接マップされます。
+このメソッドの要求本文の型フィールドは、「アクティビティ」に設定する必要があります。 応答本文内の項目は、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**のプロパティに直接マップされます。
 
 <a id="ID4ECB"></a>
 
@@ -54,17 +54,17 @@ ms.locfileid: "3964245"
 
 | <b>パラメーター</b>| <b>型</b>| <b>説明</b>|
 | --- | --- | --- | --- |
-| キーワード| string| キーワード、たとえば、"foo"を取得する場合は、セッションまたはテンプレートに含まれてする必要があります。 |
+| キーワード| string| キーワード、たとえば、"foo"a を取得する場合は、セッションまたはテンプレートに含まれてする必要があります。 |
 | xuid| 64 ビットの符号なし整数| Xbox ユーザー ID で、たとえば、「123」、セッションをクエリに含めます。 既定では、ユーザーに含まれているため、セッション内でアクティブにある必要があります。 |
-| 予約| boolean| セッションが含まれる場合は true、ユーザーは、予約済みプレイヤーとして設定されますが、アクティブなプレイヤーが参加していません。 自分のセッションをクエリするとき、または特定のユーザーのセッションのサーバーを照会すると、このパラメーターは使用のみ。 |
-| 非アクティブです| boolean| True に、ユーザーが受け入れたがアクティブに再生されていないセッションを含めます。 セッションのユーザーが「準備完了」ですが「アクティブ」では、非アクティブとしてカウントされます。 |
+| 予約| boolean| セッションを含める場合は、ユーザーは、予約済みプレイヤーとして設定されますがしておらずアクティブ プレイヤーに参加していません。 自分のセッションをクエリするとき、または特定のユーザーのセッションのサーバーを照会すると、このパラメーターは使用のみ。 |
+| 非アクティブです| boolean| ユーザーが受け入れたがアクティブに再生されていないセッションを 場合は true。 セッションのユーザーが「準備完了」ですが「アクティブ」では、非アクティブとしてカウントされます。 |
 | プライベート| boolean| プライベート セッションを含める場合は true。 自分のセッションをクエリするとき、または特定のユーザーのセッションのサーバーを照会すると、このパラメーターは使用のみ。 |
 | visibility| string| セッションの可視性の状態。 設定可能な値は、 <b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>によって定義されます。 このパラメーターは、「開く」に設定されている場合、クエリは開いている唯一のセッションを含める必要があります。 <i>プライベート</i>のパラメーターを設定する必要があります「プライベート」に設定されている場合を true に設定します。 |
-| version| 32 ビット符号付き整数| セッションの最大バージョンが含まれている場合があります。 たとえば、小さい必要があるにまたは 2 の値が 2 の主なセッションのバージョンでのみそのセッションを指定します。 バージョン番号は、要求のコントラクト バージョン mod 100 以内である必要があります。 |
-| アプリでは| 32 ビット符号付き整数| 取得するセッションの最大数。 この数は 0 ~ 100 の間にある必要があります。 |
+| version| 32 ビット符号付き整数| セッションの最大バージョンが含まれている場合があります。 たとえば、以下を含めるようにまたは 2 の値が 2 の主なセッションのバージョンでのみそのセッションを指定します。 バージョン番号は、要求のコントラクト バージョン mod 100 以下である必要があります。 |
+| アプリでは| 32 ビット符号付き整数| 取得するセッションの最大数。 この数は、0 ~ 100 の間にある必要があります。 |
 
 
-*プライベート*または*予約*のいずれかを true に設定するには、セッションにサーバー レベルのアクセスが必要です。 また、これらの設定では、呼び出し元の XUID を要求 URI の XUID フィルターに一致する必要があります。 それ以外の場合、/403 HTTP ステータス コードが返されます、そのようなセッションが実際に存在するかどうか。
+*プライベート*または*予約*のいずれかを true に設定するには、セッションへのサーバー レベルのアクセスが必要です。 また、これらの設定では、呼び出し元の XUID を要求 URI の XUID フィルターに一致する必要があります。 それ以外の場合、/403 HTTP ステータス コードが返されます、そのようなセッションが実際に存在するかどうか。
 
 <a id="ID4EAF"></a>
 
@@ -81,7 +81,7 @@ ms.locfileid: "3964245"
 
 ### <a name="sample-request"></a>要求の例
 
-ユーザーの「お気に入り」のソーシャル グラフをすべてのアクティビティを取得するのに次のようなポスト本文。
+ユーザーの「お気に入り」のソーシャル グラフのすべてのアクティビティを取得するには、次のようなポスト本文。
 
 
 ```cpp
@@ -104,7 +104,7 @@ ms.locfileid: "3964245"
 
 ## <a name="response-body"></a>応答本文
 
-結果は、各ハンドルに埋め込まれている一意の id、ハンドルの構造体の配列として返されます。 **RelatedInfo**オブジェクトでは、特定のセッションの情報が返されます。 この情報は返されません正規の POST メソッドでこの URI に注意してください。
+結果は、各ハンドルに埋め込まれた一意の ID を持つハンドル構造体の配列として返されます。 **RelatedInfo**オブジェクトでは、特定のセッションの情報が返されます。 この情報は返されません正規の POST メソッドでこの URI に注意してください。
 
 <a id="ID4EDG"></a>
 
@@ -172,4 +172,4 @@ ms.locfileid: "3964245"
 
 ##### <a name="parent"></a>Parent
 
-[ハンドル/クエリ](uri-handlesquery.md)
+[/handles/query](uri-handlesquery.md)

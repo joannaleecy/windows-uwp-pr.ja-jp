@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e99fc70db836c36d8f92a4b4c4b12ec8e75c47e1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960709"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981928"
 ---
 # <a name="mediamarketplaceidsinglemediagroupsearch"></a>/media/{marketplaceId}/singleMediaGroupSearch
-1 つのメディア グループ内の項目の検索を許可します。 非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してこの検索から返されるデータのページにアクセスできることに注意してください。 この API は、絞り込み条件のクエリを受け取ります。
+1 つのメディア グループ内の項目を検索をできます。 非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してこの検索から返されるデータのページにアクセスできることに注意してください。 この API は、絞り込み条件のクエリを受け取ります。
  
 これらの Uri のドメインが`eds.xboxlive.com`します。
  
@@ -39,9 +39,9 @@ ms.locfileid: "3960709"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[取得する (メディア/{marketplaceId}/singleMediaGroupSearch)](uri-medialocalesinglemediagroupsearchget.md)
+[GET (media/{marketplaceId}/singleMediaGroupSearch)](uri-medialocalesinglemediagroupsearchget.md)
 
-&nbsp;&nbsp;1 つのメディア グループ内の項目の検索を許可します。 
+&nbsp;&nbsp;1 つのメディア グループ内の項目を検索をできます。 
  
 <a id="ID4ECC"></a>
 
@@ -53,7 +53,7 @@ ms.locfileid: "3960709"
  
 ##### <a name="parent"></a>Parent 
 
-[Marketplace Uri](atoc-reference-marketplace.md)
+[マーケットプレース URI](atoc-reference-marketplace.md)
 
   
 <a id="ID4EOC"></a>
@@ -61,12 +61,12 @@ ms.locfileid: "3960709"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

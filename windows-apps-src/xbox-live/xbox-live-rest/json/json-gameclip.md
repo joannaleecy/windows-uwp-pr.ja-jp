@@ -1,9 +1,9 @@
 ---
-title: ゲーム クリップだった (JSON)
+title: GameClip (JSON)
 assetID: 204cb702-4ce4-85a8-f231-3b4fb243405f
 permalink: en-us/docs/xboxlive/rest/json-gameclip.html
 author: KevinAsgari
-description: " ゲーム クリップだった (JSON)"
+description: " GameClip (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,41 +12,41 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 047f7287578f52591c48ee059e72efb559b41c87
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957203"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984934"
 ---
-# <a name="gameclip-json"></a>ゲーム クリップだった (JSON)
+# <a name="gameclip-json"></a>GameClip (JSON)
  
 <a id="ID4EO"></a>
 
  
 ## <a name="gameclip"></a>ゲーム クリップだった
  
-ゲーム クリップだったオブジェクトには、次の仕様があります。
+ゲーム クリップだったオブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | <b>gameClipId</b>| string| ゲーム クリップに割り当てられている ID。| 
-| <b>状態</b>| GameClipState| システムのゲーム クリップの状態。| 
+| <b>状態</b>| GameClipState| システムでゲーム クリップの状態。| 
 | <b>dateRecorded</b>| DateTime| 日付と UTC (ISO 8601 形式) での記録が開始された時刻。| 
 | <b>lastModified</b>| DateTime| 最終ゲーム クリップまたは UTC (ISO 8601 形式) で、メタデータの時間を変更します。| 
 | <b>userCaption</b>| string| ユーザーが入力したローカライズ文字列ゲーム クリップ。| 
 | <b>type</b>| GameClipTypes| クリップの種類です。 そうである場合をコンマで区切られたことが、複数の値ができます。| 
-| <b>ソース</b>| GameClipSource| クリップが作成された方法です。| 
+| <b>ソース</b>| GameClipSource| どのクリップは供給されました。| 
 | <b>visibility</b>| GameClipVisibility| システムでの公開後に、ゲーム クリップの可視性です。| 
 | <b>durationInSeconds</b>| 32 ビット符号なし整数| 秒単位でゲーム クリップの期間です。| 
-| <b>scid</b>| string| ゲームのクリップが関連付けられている SCID です。| 
-| <b>rating</b>| 倍精度浮動小数点数| ゲームのクリップ, 0.0 に 5.0 の範囲内に関連付けられている区分します。| 
+| <b>scid</b>| string| ゲーム クリップが関連付けられている SCID です。| 
+| <b>rating</b>| 倍精度浮動小数点数| ゲーム クリップ, 0.0 に 5.0 の範囲内に関連付けられている区分します。| 
 | <b>ratingCount</b>| 32 ビット符号なし整数| このクリップが評価された回数。| 
-| <b>表示モード</b>| 32 ビット符号なし整数| ゲーム クリップに関連付けられたビューの数です。| 
+| <b>表示モード</b>| 32 ビット符号なし整数| ゲーム クリップに関連付けられているビューの数。| 
 | <b>titleData</b>| string| タイトルに固有のプロパティ バッグです。| 
 | <b>titleData</b>| string| コンソールに固有のプロパティ バッグです。| 
 | <b>縮小表示</b>| GameClipThumbnail の配列| GameClipThumbnail オブジェクトの配列です。| 
 | <b>gameClipUris</b>| GameClipUri の配列| GameClipUri オブジェクトの配列です。| 
-| <b>xuid</b>| string| 文字列としてマーシャ リング、ゲーム クリップの所有者の XUID です。| 
+| <b>xuid</b>| string| ゲーム クリップ, 文字列としてマーシャ リングの所有者の XUID です。| 
 | <b>clipName</b>| string| タイトルの管理システムから検索要求の入力のロケールに基づいて、クリップの名前のローカライズされたバージョンです。| 
   
 <a id="ID4ERH"></a>
@@ -102,6 +102,6 @@ ms.locfileid: "3957203"
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

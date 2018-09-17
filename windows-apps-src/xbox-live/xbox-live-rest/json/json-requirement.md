@@ -1,9 +1,9 @@
 ---
-title: 要件 (JSON)
+title: Requirement (JSON)
 assetID: 74faee8d-42e3-cfcf-22b3-9dcd9227de6b
 permalink: en-us/docs/xboxlive/rest/json-requirement.html
 author: KevinAsgari
-description: " 要件 (JSON)"
+description: " Requirement (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f13edfbe5858a5fc3c4f24d22b31eb25f8386e25
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962761"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983692"
 ---
-# <a name="requirement-json"></a>要件 (JSON)
+# <a name="requirement-json"></a>Requirement (JSON)
 実績とそれらに対応するため、ユーザーは、どのくらいのロック解除条件。 
 <a id="ID4EN"></a>
 
  
 ## <a name="requirement"></a>要件
  
-要件オブジェクトには、次の仕様があります。
+要件のオブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -45,6 +45,6 @@ ms.locfileid: "3962761"
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript オブジェクト Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: POST (/titles/{titleId} クラスター/)
+title: POST (/titles/{titleId}/clusters)
 assetID: 0977b0b0-872d-f7ad-9ba0-30d56cff4912
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidclusters-post.html
 author: KevinAsgari
-description: " POST (/titles/{titleId} クラスター/)"
+description: " POST (/titles/{titleId}/clusters)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 459624ea487c158f3fc92b9c6024b086d49c204e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958911"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985046"
 ---
-# <a name="post-titlestitleidclusters"></a>POST (/titles/{titleId} クラスター/)
+# <a name="post-titlestitleidclusters"></a>POST (/titles/{titleId}/clusters)
 Xbox Live Compute サーバー インスタンスを作成するクライアントをできる URI。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
@@ -56,7 +56,7 @@ gameserverms.xboxlive.com
 | ユーザー エージェント|  | 要求を行っているユーザー エージェントについて説明します。| 
 | Content-Type| application/json| 送信されたデータの種類です。| 
 | Host| gameserverms.xboxlive.com|  | 
-| Content-Length|  | 要求のオブジェクトの長さ。| 
+| Content-Length|  | 要求オブジェクトの長さ。| 
 | x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
 | Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークンです。| 
   
@@ -65,7 +65,7 @@ gameserverms.xboxlive.com
  
 ## <a name="authorization"></a>Authorization
  
-要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
+要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
   
 <a id="ID4EWD"></a>
 
@@ -77,7 +77,7 @@ gameserverms.xboxlive.com
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
 | sessionId| MPSD からセッション識別子。| 
-| abortIfQueued| 省略可能なパラメーターは、どの場合に true に設定する場合はすぐにフルフィルメントしないことができますが、リソースのこのセッションをキューに入れいない GSMS に指示します。 この値が true であるため、要求が中止されると、応答オブジェクトを含むは<code>"fulfillmentState" : "Aborted"</code>します。 | 
+| abortIfQueued| 省略可能なパラメーターは、どの場合に true に設定する場合はすぐにフルフィルメントしないことができますが、リソースのこのセッションをキューに入れいない GSMS に指示します。 この値が true であるため、要求が中止されると、応答オブジェクトに含まは<code>"fulfillmentState" : "Aborted"</code>します。 | 
  
 <a id="ID4ERE"></a>
 
@@ -100,7 +100,7 @@ gameserverms.xboxlive.com
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答には常に、次の表に示すようにヘッダーが含まれます。
+応答は常に、次の表に示すようにヘッダーを含めます。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -120,7 +120,7 @@ gameserverms.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| pollIntervalMilliseconds| 完了するためのポーリングをミリ秒の間隔をお勧めします。 注意がこれには、クラスターが準備ができたらときの推定値ではありませんが、サブスクリプションとレートを要求し、フルフィルメントの現在のプールを指定された状態を更新する頻度、呼び出し元のポーリングを行うための推奨事項ではなく。| 
+| pollIntervalMilliseconds| (ミリ秒) の完了をポーリング間隔をお勧めします。 注意がこれには、クラスターが準備ができたら、するときの推定値ではありませんが、サブスクリプションとレートを要求し、フルフィルメントの現在のプールを指定された状態を更新する頻度、呼び出し元のポーリングを行うための推奨事項ではなく。| 
 | fulfillmentState| 提供されているセッションは、リソースをすぐに割り当てられたかどうか「フルフィルメント、」リソースの今後の可用性のキューに追加される「キューに入れ」を示すまたは中止され、「中止」、要求を処理することができない原因とすぐに要求"true"と指定した abortIfQueued します。 | 
  
 <a id="ID4EWH"></a>
@@ -143,19 +143,19 @@ gameserverms.xboxlive.com
  
 ## <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
+次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しをのみ再試行する必要があります。
  
    * 408-サーバー タイムアウト
    * 429: too Many Requests
    * 500-サーバー エラー
    * 502-無効なゲートウェイ
-   * 503-サービスを利用できません
+   * 503-Service Unavailable
    * 504-ゲートウェイ タイムアウト
    
 <a id="ID4EFBAC"></a>
 
  
 ## <a name="see-also"></a>関連項目
- [/titles/{titleId} クラスター/](uri-titlestitleidclusters.md)
+ [/titles/{titleId}/clusters](uri-titlestitleidclusters.md)
 
   

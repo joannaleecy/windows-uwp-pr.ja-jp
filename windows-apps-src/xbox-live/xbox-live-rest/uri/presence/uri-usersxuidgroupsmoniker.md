@@ -1,9 +1,9 @@
 ---
-title: ユーザー/xuid ({xuid})/groups/{モニカー}
+title: /users/xuid({xuid})/groups/{moniker}
 assetID: 7c73236b-95ee-723b-e5e0-68252c953e14
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmoniker.html
 author: KevinAsgari
-description: " ユーザー/xuid ({xuid})/groups/{モニカー}"
+description: " /users/xuid({xuid})/groups/{moniker}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 356afd69483968a3edd836eb9e031bc8fcfafd4c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964537"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984992"
 ---
-# <a name="usersxuidxuidgroupsmoniker"></a>ユーザー/xuid ({xuid})/groups/{モニカー}
+# <a name="usersxuidxuidgroupsmoniker"></a>/users/xuid({xuid})/groups/{moniker}
 グループの presencerecord を要求してにアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
@@ -38,7 +38,7 @@ ms.locfileid: "3964537"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[(ユーザー/xuid ({xuid})/groups/{モニカー}) を取得します。](uri-usersxuidgroupsmonikerget.md)
+[GET (/users/xuid({xuid})/groups/{moniker} )](uri-usersxuidgroupsmonikerget.md)
 
 &nbsp;&nbsp;グループの presencerecord を要求してを取得します。
  
@@ -52,6 +52,6 @@ ms.locfileid: "3964537"
  
 ##### <a name="parent"></a>Parent 
 
-[プレゼンス Uri](atoc-reference-presence.md)
+[プレゼンス URI](atoc-reference-presence.md)
 
    

@@ -1,9 +1,9 @@
 ---
-title: /media/{marketplaceId} 参照/
+title: /media/{marketplaceId}/browse
 assetID: 4fedc780-b3c2-c83b-e7af-9e18666a4771
 permalink: en-us/docs/xboxlive/rest/uri-medialocalebrowse.html
 author: KevinAsgari
-description: " /media/{marketplaceId} 参照/"
+description: " /media/{marketplaceId}/browse"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 776db1cf795ae964621d751d6b4b72d22ba82c2d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964677"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987372"
 ---
-# <a name="mediamarketplaceidbrowse"></a>/media/{marketplaceId} 参照/
+# <a name="mediamarketplaceidbrowse"></a>/media/{marketplaceId}/browse
 1 つのメディア グループ内の項目を参照できます。 参照 API は、クライアントから 1 つのメディア グループ内の項目を参照できます。 非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してデータのページにアクセスできます。
  
 この API では、指定した項目の子内で参照できます。 たとえば、Xbox 360 ゲームの ID と MediaItemType パラメーターに渡して、これにより、閲覧、diltering アバター項目や、ゲームの DLC など、その項目の子にします。
@@ -27,7 +27,7 @@ ms.locfileid: "3964677"
  
 子を取得するためのいくつかのシナリオは次のとおりです。
  
-   * アルバムのトラックに
+   * アルバムのトラック
    * 時期にシリーズ
    * エピソードする時期
    * 音楽ビデオへの追跡します。
@@ -52,7 +52,7 @@ ms.locfileid: "3964677"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[取得する (メディア/{marketplaceId} 参照/)](uri-medialocalebrowseget.md)
+[GET (media/{marketplaceId}/browse)](uri-medialocalebrowseget.md)
 
 &nbsp;&nbsp;1 つのメディア グループ内の項目を参照できます。 
  
@@ -66,7 +66,7 @@ ms.locfileid: "3964677"
  
 ##### <a name="parent"></a>Parent 
 
-[Marketplace Uri](atoc-reference-marketplace.md)
+[マーケットプレース URI](atoc-reference-marketplace.md)
 
   
 <a id="ID4EDD"></a>
@@ -74,12 +74,12 @@ ms.locfileid: "3964677"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

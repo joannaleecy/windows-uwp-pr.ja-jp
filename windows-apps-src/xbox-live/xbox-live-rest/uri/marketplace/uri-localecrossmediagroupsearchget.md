@@ -1,9 +1,9 @@
 ---
-title: 取得する (/media/{marketplaceId}/crossMediaGroupSearch)
+title: GET (/media/{marketplaceId}/crossMediaGroupSearch)
 assetID: 7c509af1-8dce-f419-c4de-2fad54fd1edb
 permalink: en-us/docs/xboxlive/rest/uri-localecrossmediagroupsearchget.html
 author: KevinAsgari
-description: " 取得する (/media/{marketplaceId}/crossMediaGroupSearch)"
+description: " GET (/media/{marketplaceId}/crossMediaGroupSearch)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,13 +12,13 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 430dbce8b3ac2a79709c5f0761124aa7a78cab5e
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958821"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981020"
 ---
-# <a name="get-mediamarketplaceidcrossmediagroupsearch"></a>取得する (/media/{marketplaceId}/crossMediaGroupSearch)
+# <a name="get-mediamarketplaceidcrossmediagroupsearch"></a>GET (/media/{marketplaceId}/crossMediaGroupSearch)
 いくつかの異なるメディア グループから項目を取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
@@ -33,7 +33,7 @@ ms.locfileid: "3958821"
  
 グループ間の API は、いくつかの異なるメディア グループから項目を検索するクライアントを許可します。 この API では、結果のページングの前方の継続トークンの使用が必要です。 この API は、絞り込み条件のクエリを受け取ります。
  
-**SandboxId**は今すぐ、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合のエンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
+**SandboxId**は今すぐ、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は 400 Bad request エラーをスローします。
   
 <a id="ID4EEB"></a>
 
@@ -64,7 +64,7 @@ ms.locfileid: "3958821"
  
 ### <a name="sample-response"></a>応答の例
  
-次の JSON コードは、呼び出しへの応答で、`/media/en-us/crossMediaGroupSearch?q=vector&maxItems=25&fields=all`します。
+次の JSON コードは、呼び出しへの応答で`/media/en-us/crossMediaGroupSearch?q=vector&maxItems=25&fields=all`します。
  
 
 ```cpp
@@ -222,14 +222,14 @@ ms.locfileid: "3958821"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 一般的なヘッダー](../../additional/edscommonheaders.md)
+[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
+ [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
 
- [Marketplace Uri](atoc-reference-marketplace.md)
+ [マーケットプレース URI](atoc-reference-marketplace.md)
 
- [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

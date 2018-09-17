@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 584acb4b74fa74dd91e9f8044b59647d8e5d8787
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964243"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986548"
 ---
 # <a name="usersxuidxuidoutbox"></a>/users/xuid({xuid})/outbox
 ユーザーに送信専用アクセスが許可のメッセージは、Xbox LIVE サービスに送信トレイします。 これらの Uri のドメインが`msg.xboxlive.com`します。
@@ -39,7 +39,7 @@ ms.locfileid: "3964243"
 
 [POST (/users/xuid({xuid})/outbox)](uri-usersxuidoutboxpost.md)
 
-&nbsp;&nbsp;受信者の一覧を指定されたメッセージを送信します。 
+&nbsp;&nbsp;受信者の一覧に指定されたメッセージを送信します。 
  
 <a id="ID4EFC"></a>
 
@@ -51,6 +51,6 @@ ms.locfileid: "3964243"
  
 ##### <a name="parent"></a>Parent  
 
-[ユーザーの Uri](atoc-reference-users.md)
+[ユーザー URI](atoc-reference-users.md)
 
    

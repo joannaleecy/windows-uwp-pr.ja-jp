@@ -1,9 +1,9 @@
 ---
-title: EDS は、絞り込み条件をクエリします。
+title: EDS クエリの絞り込み条件
 assetID: ab5c066a-a48b-3042-351d-d0a15f663276
 permalink: en-us/docs/xboxlive/rest/edsqueryrefiners.html
 author: KevinAsgari
-description: " EDS は、絞り込み条件をクエリします。"
+description: " EDS クエリの絞り込み条件"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
@@ -12,28 +12,28 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b049965d619a7c25108e2b6308b18f1e402fecab
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961451"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981202"
 ---
-# <a name="eds-query-refiners"></a>EDS は、絞り込み条件をクエリします。
+# <a name="eds-query-refiners"></a>EDS クエリの絞り込み条件
  
 <a id="ID4EO"></a>
 
   
  
-対象を絞り込む一連の項目をエンターテイメント探索サービス (EDS) クエリを絞り込むは、次のパラメーターを使用できます。 いずれかの API に none これらのパラメーターが必要ですが、クエリの絞り込み条件を受け入れるいずれかの API でこれらを使用しています。
+複数の対象となる一連の項目をエンターテイメント探索サービス (EDS) クエリを絞り込むは以下のパラメーターを使用できます。 いずれかの API に none これらのパラメーターが必要ですが、クエリの絞り込み条件を受け入れるいずれかの API でこれらを使用しています。
  
-パラメーターの名前は、その値として"queryRefiners"パラメーターにで渡すことができます。 このは、戻り値、要求されたクエリの調整を繰り返し発生する場合に返される項目の数が適用されると、クエリの調整の各値ごとに分類します。
+パラメーター名は"queryRefiners"パラメーターに値としてで渡すことができます。 このその後、戻り値のクエリの調整の各値ごとに分けて、要求されたクエリの調整を繰り返し発生する場合に返される項目の数が適用されます。
  
 この作業の実践方法を次に示します。
  
-   * 参照 API への呼び出しが行われたなど、パラメーターは、"queryRefiners ジャンルを ="します。
-   * この API は、8 ゲームを返します。 だけでなく、項目の項目が各ジャンルの一覧が返されます、と共にそのジャンルに属している項目の数。 ゲームの場合があります"一人称視点のシューティング: 3、パズル: 5"します。
-   * 2 番目のクエリが行われます。 最初のと同じことを除けば"ジャンル一人称視点のシューティング ="が追加されます。
-   * 応答には、「一人称視点のシューティング」カテゴリに属するすべての 3 つのゲームにはできるようになりましたが含まれます。
+   * 参照 API への呼び出しが行われた、パラメーターを含む"queryRefiners ジャンル ="します。
+   * この API は、8 ゲームを返します。 だけでなく、項目の項目を持つ各ジャンルの一覧が返されます、と共にそのジャンルに属している項目の数。 ゲームの場合があります"一人称視点のシューティング: 3、パズル: 5"します。
+   * 2 番目のクエリが行われます。 最初のと同じされる点を除けば"ジャンル一人称視点のシューティング ="が追加されます。
+   * 応答には、「一人称視点のシューティング」カテゴリに属するすべての 3 つのゲームにはできるようになりましたが含まれています。
   
 | パラメーター| データ型| 説明| 
 | --- | --- | --- | 
@@ -44,10 +44,10 @@ ms.locfileid: "3961451"
 | <b>studio</b>| 文字列の配列| 項目の作成、studio します。| 
 | <b>xboxAppCategories</b>| 文字列の配列| すべての Xbox アプリに必要なカテゴリの一覧。| 
 | <b>xboxAvatarClothes</b>| 文字列の配列| 洋服の種類の一覧にすべての Xbox アバター項目が必要です。| 
-| <b>xboxAvatarStores</b>| 文字列の配列| アバター品目所属するすべての Xbox にストアの一覧。| 
+| <b>xboxAvatarStores</b>| 文字列の配列| アバター項目所属するすべての Xbox にストアの一覧。| 
 | <b>xboxGamePublisherBits</b>| 文字列の配列| すべてのゲームの種類の項目や AppType 項目に対して設定する必要がありますゲーム パブリッシャー ビットの一覧。| 
-| <b>xboxIsBrowsable</b>| ブール値| <b>True</b>を返す場合は、実践的なコンテンツだけでなく、直接操作できる完全なゲームです。 既定値は<b>false</b>。| 
-| <b>xboxHasChildMediaItemTypes</b>| 文字列の配列| ゲームのメディアのグループで返されたすべての項目には、子のメディア項目の種類は、指定された値のいずれかが必要です。| 
+| <b>xboxIsBrowsable</b>| ブール値| <b>True</b>を返す場合は、実践的なコンテンツだけでなく、直接実践的な完全なゲームです。 既定値は<b>false</b>。| 
+| <b>xboxHasChildMediaItemTypes</b>| 文字列の配列| ゲームのメディアのグループで返されたすべての項目がメディア項目の種類は、指定された値のいずれかの子が必要です。| 
   
 <a id="ID4EEF"></a>
 
@@ -59,7 +59,7 @@ ms.locfileid: "3961451"
  
 ##### <a name="parent"></a>Parent  
 
-[その他の参照](atoc-xboxlivews-reference-additional.md)
+[その他の参照情報](atoc-xboxlivews-reference-additional.md)
 
   
 <a id="ID4ESF"></a>
@@ -67,6 +67,6 @@ ms.locfileid: "3961451"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[Marketplace Uri](../uri/marketplace/atoc-reference-marketplace.md)
+[マーケットプレース URI](../uri/marketplace/atoc-reference-marketplace.md)
 
    
