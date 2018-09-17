@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963900"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985551"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 5 月
 
@@ -40,7 +40,7 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 次の Fluent Design ページ visual の更新プログラムと小規模な変更が追加されました。
 
 * [パディング、余白の配置](../design/layout/alignment-margin-padding.md)
-* [Color](../design/style/color.md)
+* [色](../design/style/color.md)
 * [コマンドの基本](../design/basics/commanding-basics.md)
 * [Windows アプリ用の fluent Design](../design/fluent-design-system/index.md)
 * [アプリの設計の概要](../design/basics/design-and-ui-intro.md)
@@ -109,7 +109,7 @@ Sets 機能は、Windows Insider preview ビルドで利用できます。 Sets 
 
 * [フォームの作成](../get-started/construct-form-learning-track.md)
 * [一覧での顧客の表示](../get-started/display-customers-in-list-learning-track.md)
-* [保存と読み込みの設定](../get-started/settings-learning-track.md)
+* [設定の保存と読み込み](../get-started/settings-learning-track.md)
 * [ファイルの操作](../get-started/fileio-learning-track.md)
 
 ![開始された画像を取得します。](../get-started/images/build-your-app.png)

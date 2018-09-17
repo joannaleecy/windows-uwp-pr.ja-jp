@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 開発者アカウント, 個人, 会社, ビジネス
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962618"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3984619"
 ---
 # <a name="account-types-locations-and-fees"></a>アカウントの種類、場所、料金
 

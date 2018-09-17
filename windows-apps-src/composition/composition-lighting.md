@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e634b18fffc4f601f6512d6ceeed51efbe9c1886
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960768"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981739"
 ---
 # <a name="using-lights-in-windows-ui"></a>Windows UI でのライトの使用
 
@@ -87,7 +87,7 @@ CompositionLight によって照らさ コンテンツを決定するときに�
 
 プロパティ | 説明
 --- | ---
-**Color** | 光の[色](/uwp/api/windows.ui.color)。 値が[D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties)拡散、アンビエント、放射される色を定義するスペキュラによって定義される color 照明の適用します。 照明がライトの RGBA 値を使用します。アルファ色コンポーネントは使われません。
+**色** | 光の[色](/uwp/api/windows.ui.color)。 値が[D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties)拡散、アンビエント、放射される色を定義するスペキュラによって定義される color 照明の適用します。 照明がライトの RGBA 値を使用します。アルファ色コンポーネントは使われません。
 **Direction** | 光の方向です。 その[CoordinateSpace](/uwp/api/windows.ui.composition.distantlight.coordinatespace) Visual を基準としたライトが指している方向を指定します。
 **座標空間** | すべての Visual では、暗黙的な 3D の座標空間があります。 X 方向は、左から右です。 Y 方向は、上から下です。 Z 方向は、平面外ポイントです。 この座標の元のポイントは、ビジュアルの左上隅と、単位は、デバイス依存しないピクセル (DIP)。 光のオフセットがこの座標で定義されています。
 **内部コーンおよび外部コーン** | スポットライトは、明るい内部コーンと外部コーンの 2 つの部分を持つ光のコーンを放射します。 コンポジションにより、内部および外部コーン角度と色を制御できます。

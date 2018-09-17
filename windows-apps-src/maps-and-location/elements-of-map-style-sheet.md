@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, マップ, マップ スタイル シート
 ms.localizationpriority: medium
 ms.openlocfilehash: 11360f9d76fc07d7a6b24bd1e0bfb78df4f1d22d
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3957960"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981681"
 ---
 # <a name="map-style-sheet-reference"></a>マップ スタイル シート リファレンス
 
@@ -175,18 +175,18 @@ ms.locfileid: "3957960"
 |------------------------------|---------|------|------|------|------|-------------|
 | atmosphereVisible            | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 大気が 3D コントロールに表示されるかどうかを示すフラグ。 |
 | buildingTexturesVisible      | Bool    |      |      |  ✔   |  ✔   | テクスチャのあるシンボル 3D 施設にテクスチャを表示するかどうかを示すフラグ。 |
-| fogColor                     | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 3D コントロールに表示されるディスタンス フォグの ARGB カラー値。 |
-| glowColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   | ラベルのグローやアイコンのグローに適用される可能性がある ARGB カラー値。 |
+| fogColor                     | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 3D コントロールに表示されるディスタンス フォグの ARGB カラー値。 |
+| glowColor                    | 色   |  ✔   |  ✔   |  ✔   |  ✔   | ラベルのグローやアイコンのグローに適用される可能性がある ARGB カラー値。 |
 | imageFamily                  | String  |  ✔   |  ✔   |  ✔   |  ✔   | このスタイルに使用するよう設定されたイメージの名前。 実際の記号に基づいて固定色を使用する記号の場合は、この値を *Default* に設定します。 パレットで構成可能な色を使用する記号の場合は、この値を *Palette* に設定します。 |
-| landColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 陸地に何かを描画する前の陸地の ARGB カラー値。 |
+| landColor                    | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 陸地に何かを描画する前の陸地の ARGB カラー値。 |
 | logosVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | **Organization** プロパティを持つ項目に適切なロゴを描画するか、汎用のアイコンを使用するかを示すフラグ。 |
 | officialColorVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 公式の色のプロパティを持っている項目 (中国での乗り換え線など) をその色を描画する必要があるかどうかを示すフラグ。 たとえば、白黒の地図ではこの値をオフにします。 |
 | rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | ラスター領域があるため、ベクトル (日本、韓国) よりも優れた表現を描画するかどうかを示すフラグ。 |
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 地図上の高度シェーディングを描画するかどうかを示すフラグ。 |
-| shadedReliefDarkColor        | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 影付き起伏の暗い側の色。  アルファ チャネルは最大アルファ値を表します。 |
-| shadedReliefLightColor       | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 影付き起伏の明るい側の色。  アルファ チャネルは最大アルファ値を表します。 |
-| shadowColor                  | Color   |      |      |      |  ✔   | シャドウを使用しているアイコンの影の色。 |
-| spaceColor                   | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 地図の周囲の領域の ARGB カラー値。 |
+| shadedReliefDarkColor        | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 影付き起伏の暗い側の色。  アルファ チャネルは最大アルファ値を表します。 |
+| shadedReliefLightColor       | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 影付き起伏の明るい側の色。  アルファ チャネルは最大アルファ値を表します。 |
+| shadowColor                  | 色   |      |      |      |  ✔   | シャドウを使用しているアイコンの影の色。 |
+| spaceColor                   | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 地図の周囲の領域の ARGB カラー値。 |
 | useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | SVG の元の色が画像の色のパレット エントリを検索するのではなく、使用するかどうかを示すフラグ。 |
 
 <a id="mapelement" />
@@ -196,17 +196,17 @@ ms.locfileid: "3957960"
 | プロパティ                     | 型    | 1506 | 1629 | 1713 | Next | 説明 |
 |------------------------------|---------|------|------|------|------|-------------|
 | backgroundScale              | Float   |  ✔   |  ✔   |  ✔   |  ✔   | アイコンの背景要素を拡大縮小する量。  たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
-| fillColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 多角形の塗りつぶし、ポイント アイコンの背景、分割した場合の線の中心に使用される色。 |
+| fillColor                    | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 多角形の塗りつぶし、ポイント アイコンの背景、分割した場合の線の中心に使用される色。 |
 | fontFamily                   | String  |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| iconColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   | ポイント アイコンの中央に表示されるグリフの色。 |
+| iconColor                    | 色   |  ✔   |  ✔   |  ✔   |  ✔   | ポイント アイコンの中央に表示されるグリフの色。 |
 | iconScale                    | Float   |      |  ✔   |  ✔   |  ✔   | アイコンのグリフを拡大縮小する量。  たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
-| labelColor                   | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| labelOutlineColor            | Color   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| labelColor                   | 色   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| labelOutlineColor            | 色   |  ✔   |  ✔   |  ✔   |  ✔   |  |
 | labelScale                   | Float   |  ✔   |  ✔   |  ✔   |  ✔   | 既定のラベル サイズが拡大縮小される量。 たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
 | labelVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  |
 | overwriteColor               | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | **FillColor** のアルファ値で **StrokeColor** をブレンドするのではなく、上書きします。 |
 | scale                        | Float   |  ✔   |  ✔   |  ✔   |  ✔   | ポイント全体のサイズを拡大縮小する量。 たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
-| strokeColor                  | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 多角形の輪郭、ポイント アイコンの輪郭、線の色に使用する色。 |
+| strokeColor                  | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 多角形の輪郭、ポイント アイコンの輪郭、線の色に使用する色。 |
 | strokeWidthScale             | Float   |  ✔   |  ✔   |  ✔   |  ✔   | 線の太さが拡大縮小される量。 たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
 | visible                      | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  |
 
@@ -218,8 +218,8 @@ ms.locfileid: "3957960"
 
 | プロパティ                     | 型    | 1506 | 1629 | 1713 | Next | 説明 |
 |------------------------------|---------|------|------|------|------|-------------|
-| borderOutlineColor           | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 塗りつぶされた多角形の境界線のセカンダリまたはケーシング線の色。 |
-| borderStrokeColor            | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 塗りつぶされた多角形の境界線のプライマリ線の色。 |
+| borderOutlineColor           | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 塗りつぶされた多角形の境界線のセカンダリまたはケーシング線の色。 |
+| borderStrokeColor            | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 塗りつぶされた多角形の境界線のプライマリ線の色。 |
 | borderVisible                | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  |
 | borderWidthScale             | Float   |  ✔   |  ✔   |  ✔   |  ✔   | 境界線の太さが拡大縮小される量。 たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
 
@@ -233,9 +233,9 @@ ms.locfileid: "3957960"
 |------------------------------|---------|------|------|------|------|-------------|
 | 図形バック グラウンド             | Float   |      |      |      |  ✔   | 存在する任意の図形を置き換える--アイコンの背景として使用する図形です。 |
 | stemAnchorRadiusScale        | Float   |      |      |  ✔   |  ✔   | アイコン ステムのアンカー ポイントを拡大縮小する量。  たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
-| stemColor                    | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 3D モードでアイコンの下部から出ている幹の色。 |
+| stemColor                    | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 3D モードでアイコンの下部から出ている幹の色。 |
 | stemHeightScale              | Float   |      |      |  ✔   |  ✔   | アイコンのステムの長さを拡大縮小する量。  たとえば、既定の場合は *1* を、2 倍の長さの場合は *2* を使用します。 |
-| stemOutlineColor             | Color   |  ✔   |  ✔   |  ✔   |  ✔   | 3D モードでアイコンの下部から出ている幹の周囲の輪郭の色。 |
+| stemOutlineColor             | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 3D モードでアイコンの下部から出ている幹の周囲の輪郭の色。 |
 | stemWidthScale               | Float   |  ✔   |  ✔   |  ✔   |  ✔   | アイコンのステムの幅を拡大縮小する量。  たとえば、既定の場合は *1* を、2 倍の長さの場合は *2* を使用します。 |
 
 <a id="mapelement3d" />

@@ -16,11 +16,11 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: ec532749fc2dacfc56e80ee2830da36f71c75b2f
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964126"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983021"
 ---
 # <a name="command-bar-flyout"></a>コマンド バーのポップアップ
 

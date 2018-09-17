@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fb273b6a37cb2f6322b0c9e3842b69676f82c616
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964270"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986331"
 ---
 # <a name="background-transfers"></a>バックグラウンド転送
 ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。 バックグラウンド転送 API には、アプリの一時停止中はバックグラウンドで実行され、アプリの終了後も実行が続行される高度なアップロード機能とダウンロード機能があります。 この API は、ネットワークの状態を監視し、接続が失われたときに転送の中断と再開を自動的に実行します。転送ではデータ センサーとバッテリー セーバーにも対応し、ダウンロード アクティビティは現在の接続とデバイスのバッテリー状態に基づいて調整されます。 この API は、アップロード HTTP(S) を使った大きなファイルのアップロードとダウンロードに適しています。 FTP もサポートされますが、その対象はダウンロードのみです。
@@ -32,7 +32,7 @@ ms.locfileid: "3964270"
 > [!NOTE]
 > アプリごとのリソースの制約により、常にアプリに 200 を超える転送 (DownloadOperations および UploadOperations) を含めてはなりません。 この制限を超過すると、アプリの転送キューが回復不能な状態になる可能性があります。
 
-アプリケーションを起動すると、すべての既存[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)と[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)オブジェクトで[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)を呼び出すことする必要があります。 これを行わない既に完了転送のリークが発生しは最終的にレンダリング バック グラウンド転送機能の使用役に立ちません。
+アプリケーションを起動すると、すべての既存の[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)と[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)オブジェクトの[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)に呼び出す必要があります。 そうしない、既に完了した転送のメモリ リークが発生しは最終的に無用のバック グラウンド転送機能を使用します。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>バックグラウンド転送での認証されたファイル要求の実行
 バックグラウンド転送では、基本サーバーとプロキシの資格情報、Cookie をサポートするメソッドが用意されており、それぞれの転送操作で ([**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) を介して) カスタム HTTP ヘッダーを使うこともできます。
