@@ -15,30 +15,30 @@ dev_langs:
 - cpp
 - cppwinrt
 ms.openlocfilehash: b4e3678e17e7545dfe9cb4049ace7ff864198156
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960726"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982817"
 ---
-# <a name="xaml-lighting"></a><span data-ttu-id="510bf-104">XAML 照明</span><span class="sxs-lookup"><span data-stu-id="510bf-104">XAML lighting</span></span>
+# <a name="xaml-lighting"></a><span data-ttu-id="70f86-104">XAML 照明</span><span class="sxs-lookup"><span data-stu-id="70f86-104">XAML lighting</span></span>
 
-<span data-ttu-id="510bf-105">[**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) オブジェクトは、動的な照明と反射をシミュレートするために [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) と共に使用されます。</span><span class="sxs-lookup"><span data-stu-id="510bf-105">[**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) objects are used in conjunction with [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) to simulate dynamic lighting and reflectivity.</span></span>
+<span data-ttu-id="70f86-105">[**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) オブジェクトは、動的な照明と反射をシミュレートするために [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) と共に使用されます。</span><span class="sxs-lookup"><span data-stu-id="70f86-105">[**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) objects are used in conjunction with [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) to simulate dynamic lighting and reflectivity.</span></span>
 
-<span data-ttu-id="510bf-106">[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) と XAML [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) にライトを適用できます。</span><span class="sxs-lookup"><span data-stu-id="510bf-106">You can apply lights to [**Visuals**](https://msdn.microsoft.com/library/windows/apps/Dn706858) and XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement).</span></span>
+<span data-ttu-id="70f86-106">[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) と XAML [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) にライトを適用できます。</span><span class="sxs-lookup"><span data-stu-id="70f86-106">You can apply lights to [**Visuals**](https://msdn.microsoft.com/library/windows/apps/Dn706858) and XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement).</span></span>
 
-## <a name="applying-lights-to-xaml-uielements"></a><span data-ttu-id="510bf-107">XAML UIElement へのライトの適用</span><span class="sxs-lookup"><span data-stu-id="510bf-107">Applying lights to XAML UIElements</span></span>
+## <a name="applying-lights-to-xaml-uielements"></a><span data-ttu-id="70f86-107">XAML UIElement へのライトの適用</span><span class="sxs-lookup"><span data-stu-id="70f86-107">Applying lights to XAML UIElements</span></span>
 
-<span data-ttu-id="510bf-108">XAML UIElement に動的なライトを適用するには、[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) オブジェクトを使用して [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) を適用します。</span><span class="sxs-lookup"><span data-stu-id="510bf-108">[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) objects are used to apply [**CompositionLights**](/uwp/api/Windows.UI.Composition.CompositionLight) to dynamically light XAML UIElements.</span></span> <span data-ttu-id="510bf-109">XamlLight は Uielement または XAML ブラシ、Uielement のツリーにライトを適用することをターゲットとするメソッドを提供し、現在いるかどうかに基づいてリソースを使用して CompositionLight の有効期間を管理します。</span><span class="sxs-lookup"><span data-stu-id="510bf-109">XamlLight provides methods for targeting UIElements or XAML Brushes, applying lights to trees of UIElements, and helping manage the lifetime of CompositionLight resources based on whether they're currently in use.</span></span>
+<span data-ttu-id="70f86-108">XAML UIElement に動的なライトを適用するには、[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) オブジェクトを使用して [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) を適用します。</span><span class="sxs-lookup"><span data-stu-id="70f86-108">[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) objects are used to apply [**CompositionLights**](/uwp/api/Windows.UI.Composition.CompositionLight) to dynamically light XAML UIElements.</span></span> <span data-ttu-id="70f86-109">XamlLight は Uielement または XAML ブラシ、Uielement のツリーにライトを適用することをターゲットとするメソッドを提供し、現在いるかどうかに基づいてリソースを使用して CompositionLight の有効期間を管理します。</span><span class="sxs-lookup"><span data-stu-id="70f86-109">XamlLight provides methods for targeting UIElements or XAML Brushes, applying lights to trees of UIElements, and helping manage the lifetime of CompositionLight resources based on whether they're currently in use.</span></span>
 
-- <span data-ttu-id="510bf-110">XamlLight で **Brush** をターゲットにする場合、その Brush 使用している任意の UIElement の部分がライトによって照らされます。</span><span class="sxs-lookup"><span data-stu-id="510bf-110">If you target a **Brush** with a XamlLight then the portions of any UIElements using that Brush are lit by the light.</span></span>
-- <span data-ttu-id="510bf-111">XamlLight で **UIElement** をターゲットにする場合、UIElement 全体とその子 UIElement がライトによって照らされます。</span><span class="sxs-lookup"><span data-stu-id="510bf-111">If you target a **UIElement** with a XamlLight then the entire UIElement and its child UIElements are all lit by the light.</span></span>
+- <span data-ttu-id="70f86-110">XamlLight で **Brush** をターゲットにする場合、その Brush 使用している任意の UIElement の部分がライトによって照らされます。</span><span class="sxs-lookup"><span data-stu-id="70f86-110">If you target a **Brush** with a XamlLight then the portions of any UIElements using that Brush are lit by the light.</span></span>
+- <span data-ttu-id="70f86-111">XamlLight で **UIElement** をターゲットにする場合、UIElement 全体とその子 UIElement がライトによって照らされます。</span><span class="sxs-lookup"><span data-stu-id="70f86-111">If you target a **UIElement** with a XamlLight then the entire UIElement and its child UIElements are all lit by the light.</span></span>
 
-## <a name="creating-and-using-a-xamllight"></a><span data-ttu-id="510bf-112">XamlLight の作成と使用</span><span class="sxs-lookup"><span data-stu-id="510bf-112">Creating and using a XamlLight</span></span>
+## <a name="creating-and-using-a-xamllight"></a><span data-ttu-id="70f86-112">XamlLight の作成と使用</span><span class="sxs-lookup"><span data-stu-id="70f86-112">Creating and using a XamlLight</span></span>
 
-<span data-ttu-id="510bf-113">[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) は、カスタム ライトを作成するために使用できる基底クラスです。</span><span class="sxs-lookup"><span data-stu-id="510bf-113">[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) is a base class which can be used to create custom lights.</span></span>
+<span data-ttu-id="70f86-113">[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) は、カスタム ライトを作成するために使用できる基底クラスです。</span><span class="sxs-lookup"><span data-stu-id="70f86-113">[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) is a base class which can be used to create custom lights.</span></span>
 
-<span data-ttu-id="510bf-114">この例では、ターゲットの Uielement とブラシに色付きのスポット ライトを適用するカスタム XamlLight の定義を示します。</span><span class="sxs-lookup"><span data-stu-id="510bf-114">This example shows the definition for a custom XamlLight that applies a multicolored spotlight to targeted UIElements and Brushes.</span></span>
+<span data-ttu-id="70f86-114">この例では、ターゲットの Uielement とブラシに色付きのスポット ライトを適用するカスタム XamlLight の定義を示します。</span><span class="sxs-lookup"><span data-stu-id="70f86-114">This example shows the definition for a custom XamlLight that applies a multicolored spotlight to targeted UIElements and Brushes.</span></span>
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight
@@ -461,10 +461,10 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-<span data-ttu-id="510bf-115">任意の XAML UIElement またはブラシに光をこのライトを適用することができます。</span><span class="sxs-lookup"><span data-stu-id="510bf-115">You can then apply this light to any XAML UIElement or Brush to light them.</span></span> <span data-ttu-id="510bf-116">この例では、さまざまな潜在的な使用法を示します。</span><span class="sxs-lookup"><span data-stu-id="510bf-116">This example shows different potential usages.</span></span>
+<span data-ttu-id="70f86-115">任意の XAML UIElement またはブラシに光をこのライトを適用することができます。</span><span class="sxs-lookup"><span data-stu-id="70f86-115">You can then apply this light to any XAML UIElement or Brush to light them.</span></span> <span data-ttu-id="70f86-116">この例では、さまざまな潜在的な使用法を示します。</span><span class="sxs-lookup"><span data-stu-id="70f86-116">This example shows different potential usages.</span></span>
 
 > [!Important]
-> <span data-ttu-id="510bf-117">[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、削除が 2 回`local:OrangeSpotLight.IsTarget="True"`次のマークアップからです。</span><span class="sxs-lookup"><span data-stu-id="510bf-117">For [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), remove the two occurrences of `local:OrangeSpotLight.IsTarget="True"` from the markup below.</span></span> <span data-ttu-id="510bf-118">添付プロパティは、コード ビハインドで既に設定されます。</span><span class="sxs-lookup"><span data-stu-id="510bf-118">The attached properties are already set in code-behind.</span></span>
+> <span data-ttu-id="70f86-117">[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、削除が 2 回`local:OrangeSpotLight.IsTarget="True"`次のマークアップからです。</span><span class="sxs-lookup"><span data-stu-id="70f86-117">For [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), remove the two occurrences of `local:OrangeSpotLight.IsTarget="True"` from the markup below.</span></span> <span data-ttu-id="70f86-118">添付プロパティは、コード ビハインドで既に設定されます。</span><span class="sxs-lookup"><span data-stu-id="70f86-118">The attached properties are already set in code-behind.</span></span>
 
 ```xaml
 <StackPanel Width="100">
@@ -493,13 +493,13 @@ Platform::String^ OrangeSpotLight::GetId()
 </StackPanel>
 ```
 
-<span data-ttu-id="510bf-119">この XAML の結果を次に示します。</span><span class="sxs-lookup"><span data-stu-id="510bf-119">The results of this XAML look like this.</span></span>
+<span data-ttu-id="70f86-119">この XAML の結果を次に示します。</span><span class="sxs-lookup"><span data-stu-id="70f86-119">The results of this XAML look like this.</span></span>
 
 ![Xaml ライトによって照らさ要素の例](images/orange-spot-light.png)
 
 > [!Important]
-> <span data-ttu-id="510bf-121">上の例で示しているような、マークアップでの UIElement.Lights の設定は、最小バージョンが Windows 10 Creators Update 以降であるアプリでのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="510bf-121">Setting UIElement.Lights in markup as shown in the above example is only supported for apps with a Minimum Version equal to the Windows 10 Creators Update or later.</span></span> <span data-ttu-id="510bf-122">それ以前のバージョンをターゲットとするアプリでは、分離コードでライトを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="510bf-122">For apps that target earlier versions, lights must be created in code-behind.</span></span>
+> <span data-ttu-id="70f86-121">上の例で示しているような、マークアップでの UIElement.Lights の設定は、最小バージョンが Windows 10 Creators Update 以降であるアプリでのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="70f86-121">Setting UIElement.Lights in markup as shown in the above example is only supported for apps with a Minimum Version equal to the Windows 10 Creators Update or later.</span></span> <span data-ttu-id="70f86-122">それ以前のバージョンをターゲットとするアプリでは、分離コードでライトを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="70f86-122">For apps that target earlier versions, lights must be created in code-behind.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="510bf-123">その他のリソース</span><span class="sxs-lookup"><span data-stu-id="510bf-123">Additional Resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="70f86-123">その他のリソース</span><span class="sxs-lookup"><span data-stu-id="70f86-123">Additional Resources</span></span>
 
-* <span data-ttu-id="510bf-124">[WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) にある高度な UI とコンポジションのサンプル</span><span class="sxs-lookup"><span data-stu-id="510bf-124">Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs).</span></span>
+* <span data-ttu-id="70f86-124">[WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) にある高度な UI とコンポジションのサンプル</span><span class="sxs-lookup"><span data-stu-id="70f86-124">Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs).</span></span>
