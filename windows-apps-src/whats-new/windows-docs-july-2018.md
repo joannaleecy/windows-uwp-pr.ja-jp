@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
 title: Windows ドキュメントの最新情報で新 2018 7 月 - UWP アプリの開発
-description: Windows 10 開発者向けドキュメントに 2018 7 月に、新しい機能、ビデオ、サンプル、および開発者向けガイダンスが追加されました。
+description: 2018 7 月の Windows 10 開発者向けドキュメントに、新しい機能、ビデオ、サンプル、および開発者向けガイダンスが追加されました。
 keywords: 新機能, 更新, 機能, 開発者向けガイダンス, Windows 10 年 7 月
 ms.author: quradic
 ms.date: 7/11/2018
@@ -10,13 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f41d25fd6757e5d3f80d00de341168de4f34e946
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3984657"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4015064"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 7 月
+# <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Windows 開発者向けドキュメントの最新情報で新 2018 7 月
 
 Windows 開発者向けドキュメントは、Windows プラットフォームで開発者に提供される新機能の情報を反映して継続的に更新されています。 次の機能概要、開発者向けガイダンス、ビデオ、およびサンプルには 7 月で利用可能ななりました。
 
@@ -26,7 +26,7 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 ### <a name="progressive-web-apps-on-windows"></a>Windows では、プログレッシブ Web アプリ
 
-[プログレッシブ Web アプリ (Pwa)](https://developer.microsoft.com/windows/pwa)は、[段階的に拡張](https://wikipedia.org/wiki/Progressive_enhancement)をサポートするプラットフォームと起動のホームにスクリーンからインストール、オフライン サポート、およびプッシュなど、ブラウザーのエンジンのネイティブ アプリのような機能を備えた web アプリだけです。通知します。 Pwa は、Microsoft Edge (EdgeHTML) エンジンと Windows 10、実行中の利点を楽しめる[UWP アプリとブラウザー ウィンドウに独立して](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)。
+[プログレッシブ Web アプリ (Pwa)](https://developer.microsoft.com/windows/pwa)は、[段階的に拡張](https://wikipedia.org/wiki/Progressive_enhancement)をサポートするプラットフォームと起動のホームにスクリーンからインストール、オフライン サポート、およびプッシュなどのブラウザー エンジンのネイティブ アプリのような機能を備えた web アプリだけです。通知します。 Pwa は、Microsoft Edge (EdgeHTML) エンジンと Windows 10、実行中の利点を楽しめる[UWP アプリとブラウザー ウィンドウに独立して](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)。
 
 ![Pwa のアクションの画像](images/progressive-web-apps.jpg)
 
@@ -38,13 +38,13 @@ PWA さまざまなガイドをご覧ください。
 
 ### <a name="notepad"></a>メモ帳
 
-Windows 10 Insider Preview ビルド 17713、[多くの新しい機能が更新されましたメモ帳](http://aka.ms/ant-man)で使用できます。 ズーム、検索/置換、折り返し Unix/Linux (LF) と Mac (変更リクエスト) の行の末尾のサポートでは、 [Windows insider の皆様](https://insider.windows.com/)に利用可能なようになりました。 
+Windows 10 Insider Preview ビルド 17713、[多くの新しい機能で更新されましたメモ帳](http://aka.ms/ant-man)で使用できます。 ズーム、検索/置換、折り返し Unix/Linux (LF) と Mac (変更リクエスト) 行の末尾のサポートでは、 [Windows insider の皆様](https://insider.windows.com/)に利用可能なようになりました。 
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
 ### <a name="design-landing-page"></a>設計のランディング ページ
 
-チェック アウト、向けに[設計のランディング ページの更新](https://developer.microsoft.com/windows/apps/design)UWP の設計領域と Fluent Design を最新の追加機能に関する情報の概要の概要を示します。
+チェック アウト、向けに[設計ランディング ページの更新](https://developer.microsoft.com/windows/apps/design)UWP の設計領域と Fluent Design を最新の追加機能に関する情報の概要の概要を示します。
 
 ### <a name="design-toolkits"></a>設計ツールキット
 
@@ -66,7 +66,7 @@ Adobe XD、Adobe Illustrator ツールキットは、新しい機能と更新さ
 
 さらに、既存のページにいくつかの更新を行っています。
 
-* 4 つの個別の最上位バケットに目次がより整理できるようになりました。 **Fundamental**、**開発**、**リソース**、および**デモ**します。
+* 4 つの個別の最上位バケットに目次がより整理できるようになりました。**基礎**、**開発**、**リソース**、および**デモ**します。
 
 * [WebVR 開発者向けガイド (ランディング ページ)](https://docs.microsoft.com/microsoft-edge/webvr/): 更新された見た目や操作感、大きい画像とアイコン、および新しいデモとします。
 
@@ -76,11 +76,11 @@ Adobe XD、Adobe Illustrator ツールキットは、新しい機能と更新さ
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>開発者向けの概要: を作成し、Windows 10 でのフォームをカスタマイズします。
 
-Windows 開発者向け[ドキュメントの作業の開始](../get-started/index.md)、基本的なアプリの開発タスクの実践的なエクスペリエンスを提供します。 このビデオでは、これらのトピックでは、いずれかを紹介して、アプリでのフォームの UI の作成の基本について説明します。 [ビデオをご覧ください](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)し、実行中のコードを[」のトピックを確認します](http://aka.ms/CreateForms)。
+Windows 開発者向け[ドキュメントの概要](../get-started/index.md)、基本的なアプリの開発タスクの実践的なエクスペリエンスを提供します。 このビデオでは、これらのトピックでは、いずれかを紹介してで、アプリでのフォームの UI の作成の基本について説明します。 [ビデオをご覧ください](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)アクションを次のコードを確認する[」のトピックを確認します](http://aka.ms/CreateForms)。
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>プロジェクトの個性チャットと、ボットを強化します。
 
-プロジェクトの特徴チャットでは、チャット ボットにカスタマイズ可能なペルソナを追加できます。 Microsoft ボット Framework SDK との統合、顧客とやり取りするより親近感を与えるための方法に関する小さな話しかける機能を追加できます。 [ビデオを見る](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)をし、それには、実践的なエクスペリエンスの[対話型デモを試す](http://aka.ms/PersonalityChat)を実装する方法について説明します。
+プロジェクトの特徴チャットでは、チャット ボットにカスタマイズ可能なペルソナを追加できます。 Microsoft ボット Framework SDK との統合、顧客との対話をより親近感を与えるための方法の小さな話しかける機能を追加できます。 [ビデオ](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)をし、それには、実践的なエクスペリエンスの[対話型デモを試す](http://aka.ms/PersonalityChat)を実装する方法について説明します。
 
 ### <a name="one-dev-question"></a>1 つのデベロッパー質問
 
@@ -99,6 +99,6 @@ Larry Osterman:
 
 ### <a name="photo-editor-cwinrt"></a>フォト エディター、C++/WinRT
 
-フォト エディターのサンプル アプリの開発の紹介、 [、C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)言語プロジェクションです。 アプリでは、**画像**ライブラリから写真を取得し、関連する写真効果で選択のイメージを編集することができます。 [複製またはここでは、サンプルをダウンロードします。](https://github.com/Microsoft/Windows-appsample-photo-editor)
+フォト エディター サンプル アプリの開発の紹介、 [、C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)言語プロジェクションです。 アプリでは、**画像**ライブラリから写真を取得し、関連する写真効果で選択のイメージを編集することができます。 [複製またはここでは、サンプルをダウンロードします。](https://github.com/Microsoft/Windows-appsample-photo-editor)
 
 ![サンプルの動作の例](images/photo-editor-banner.png)

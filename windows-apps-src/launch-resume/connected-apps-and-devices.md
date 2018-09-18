@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 接続されているデバイス、リモート シ�
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: d3efb7e094ce1464028dadaa14c6f0bfb3f3b214
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3984327"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4020964"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>接続されるアプリやデバイス ("Rome" プロジェクト)
 
@@ -39,5 +39,5 @@ Windows 10 バージョン 1607 に導入された[リモート システム API
 | [リモート デバイスの検出](discover-remote-devices.md)  | 接続できるデバイスを検出する方法について説明します。 |
 | [リモート アプリ サービスとの通信](communicate-with-a-remote-app-service.md) | リモート デバイスのアプリを操作する方法について説明します。 |
 | [リモート セッションでデバイスを接続する](remote-sessions.md) | リモート セッションで複数のデバイスを結合することにより、これらのデバイス間で共有エクスペリエンスを作成します。 |
-| [デバイス間でもユーザーのアクティビティを継続する](useractivities.md)| ユーザーがどのようなやっているアプリで複数のデバイス間でもを再開するのに役立ちます。|
+| [デバイス間でもユーザーのアクティビティを継続する](useractivities.md)| ユーザーがどのようなやっているアプリで複数のデバイス間でも再開に役立ちます。|
 | [ユーザー アクティビティのベスト プラクティス](useractivities-best-practices.md)| 作成およびユーザー アクティビティを更新するための推奨事項について説明します。|

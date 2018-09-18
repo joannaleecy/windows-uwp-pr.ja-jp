@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 30e4bb7b493e6fb839f300f4c446b7510f28fabb
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3984809"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4022396"
 ---
 # <a name="app-capability-declarations"></a>アプリ機能の宣言
 
@@ -55,7 +55,7 @@ ms.locfileid: "3984809"
 | **VOIP 呼び出し** | **voipCall** 機能を使うと、アプリは [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) 名前空間の VOIP 呼び出し API にアクセスできます。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**voipCall** 機能に **uap** 名前空間を含める必要があります。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="voipCall"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **3D オブジェクト** | **objects3D** 機能を使用すると、アプリは 3D オブジェクト ファイルにプログラムでアクセスできます。 通常、この機能は、3D オブジェクト ライブラリ全体にアクセスする必要がある 3D アプリやゲームで使用されます。<br /><br />[**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 名前空間の API を使って 3D オブジェクトを含むフォルダーにアクセスする場合は、この機能が必要になります。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**objects3D** 機能に **uap** 名前空間を含める必要があります。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="objects3d"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **ブロックされているメッセージの読み取り**\* | **blockedChatMessages** 機能を使うと、アプリはスパム フィルター アプリでブロックされた SMS メッセージや MMS メッセージを読み取ることができます。<br /><br />[**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 名前空間の API を使ってブロックされたメッセージにアクセスする場合は、この機能が必要になります。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**blockedChatMessages** 機能に **uap** 名前空間を含める必要があります。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="blockedChatMessages"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
-| **カスタム デバイス** | **LowLevelDevices**機能には、さまざまな追加の要件が満たされているカスタム デバイスにアクセスするアプリができます。 この機能は、GPIO、I2C、SPI、および PWM デバイスにアクセスできるように、**ローレベル**デバイス機能と混同しないでください。<br /><br /> 必要な[デバイス インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)を公開するカスタム ドライバーを開発する場合、このデバイスへのハンドルを開くし、Ioctl を送信します。<ul><li>アプリケーション マニフェストで**lowLevelDevices**機能を有効にします。 <table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:Capability Name="lowLevelDevices"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table></li><li>[埋め込みモード](https://docs.microsoft.com/windows/iot-core/develop-your-app/EmbeddedMode)を有効にします。</li><li>[制限付き](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)、 [INF](https://msdn.microsoft.com/library/windows/desktop/hh404264(v=vs.85).aspx)で、またはドライバーの[WdfDeviceAssignInterfaceProperty()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)を呼び出すことによってとしてデバイス インターフェイスをマークします。</ul>  <br /><br />[**Windows.Devices.Custom.CustomDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom.CustomDevice)を使用して、デバイスへのハンドルを開くをすることができます。 詳細については、[内部のデバイス用の UWP デバイス アプリ](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)を参照してください。
+| **カスタム デバイス** | **LowLevelDevices**機能には、さまざまな追加の要件が満たされているカスタム デバイスにアクセスするアプリができます。 この機能は、GPIO、I2C、SPI、および PWM デバイスにアクセスできるように、**ローレベル**デバイス機能と混同しないでください。<br /><br /> 必要な[デバイス インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)を公開するカスタム ドライバーを開発する場合、このデバイスへのハンドルを開くし、Ioctl を送信します。<ul><li>アプリケーション マニフェストで**lowLevelDevices**機能を有効にします。 <table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:Capability Name="lowLevelDevices"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table></li><li>[埋め込みモード](https://docs.microsoft.com/windows/iot-core/develop-your-app/EmbeddedMode)を有効にします。</li><li>[制限付き](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)、 [INF](https://msdn.microsoft.com/library/windows/desktop/hh404264(v=vs.85).aspx)で、またはドライバーの[WdfDeviceAssignInterfaceProperty()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)を呼び出すことによってとしてデバイス インターフェイスをマークします。</ul>  <br /><br />[**Windows.Devices.Custom.CustomDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom.CustomDevice)を使用して、デバイスへのハンドルを開くをことができます。 詳細については、[内部のデバイス用の UWP デバイス アプリ](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)を参照してください。
 | **IoT システム管理** | **systemManagement** 機能を使うと、アプリは基本的なシステム管理者特権 (シャットダウン、再起動、ロケール、タイムゾーンなど) を持つことができます。<br /><br />[**Windows.System**](https://msdn.microsoft.com/library/windows/apps/BR241814) 名前空間の一部の API にアクセスする場合は、この機能が必要になります。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**systemManagement** 機能に **iot** 名前空間を含める必要があります。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:Capability Name="systemManagement"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **バックグラウンドでのメディアの再生** | **backgroundMediaPlayback** 機能は、[ **MediaPlayer** ](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) クラスや [ **AudioGraph** ](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiograph.aspx) クラスなど、メディア固有の API の動作を変更して、アプリがバック グラウンドで実行されている間のメディアの再生を有効にします。 アプリがバックグラウンドに移行しても、アクティブなすべてのオーディオ ストリームはミュートせず、音声を発し続けます。 また再生が行われている間はアプリが有効に保たれるように、アプリの有効期間が自動的に延長されます。
 | **リモート システム** | **remoteSystem**機能を使うと、アプリがユーザーの Microsoft アカウントに関連付けられているデバイスの一覧にアクセスできるようになります。 デバイスの一覧へのアクセスは、実行した操作を複数のデバイス間で保持するために不可欠です。 この機能は、次の項目のすべてのメンバーにアクセスするために必要です。<br /><br />Windows.System.RemoteSystems 名前空間<br />Windows.System.RemoteLauncher 名前空間<br />AppServiceConnection.OpenRemoteAsync メソッド |
@@ -82,17 +82,17 @@ ms.locfileid: "3984809"
 | **モーション アクティビティ** | デバイス機能 **activity** を使うと、アプリはデバイスの現在の動きを検出できるようになります。<br/>[**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) 名前空間の一部の API を使う場合は、この機能が必要になります。 |
 | **シリアル通信** | **serialcommunication** デバイス機能では Windows.Devices.SerialCommunication 名前空間の API へのアクセスが提供され、Windows アプリはシリアル ポートまたはシリアル ポートのアブストラクションを公開するデバイスと通信できるようになります。 [**Windows.Devices.SerialCommnication**](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication) 名前空間の API を使う場合は、この機能が必要になります。 |
 | **アイ トラッカー** | **gazeInput** 機能を使うと、互換性のある視線追跡デバイスが接続されているときにユーザーがアプリケーション境界内で見ている場所を検出できます。 [**Windows.Devices.Input.Preview**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview)名前空間の一部の Api を使用するには、この機能が必要です。 |
-| **GPIO、I2C、SPI、および PWM** | **ローレベル**デバイスの機能は、GPIO、I2C、SPI、および PWM デバイスへのアクセスを提供します。 この機能は、次の名前空間で Api を使用するために必要です: [**Windows.Devices.Gpio**](https://docs.microsoft.com/uwp/api/windows.devices.gpio)、 [**Windows.Devices.I2c**](https://docs.microsoft.com/uwp/api/windows.devices.i2c)、 [**Windows.Devices.Spi**](https://docs.microsoft.com/uwp/api/windows.devices.spi)、[**Windows.Devices.Pwm**](https://docs.microsoft.com/uwp/api/windows.devices.pwm)します。 <table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;DeviceCapability Name="lowLevel"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>|
+| **GPIO、I2C、SPI、および PWM** | **ローレベル**デバイス機能は、GPIO、I2C、SPI、および PWM デバイスへのアクセスを提供します。 この機能は、次の名前空間で Api を使用するために必要です: [**Windows.Devices.Gpio**](https://docs.microsoft.com/uwp/api/windows.devices.gpio)、 [**Windows.Devices.I2c**](https://docs.microsoft.com/uwp/api/windows.devices.i2c)、 [**Windows.Devices.Spi**](https://docs.microsoft.com/uwp/api/windows.devices.spi)、[**Windows.Devices.Pwm**](https://docs.microsoft.com/uwp/api/windows.devices.pwm)します。 <table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;DeviceCapability Name="lowLevel"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>|
 
 
 <span id="special-and-restricted-capabilities" />
 
 ## <a name="restricted-capabilities"></a>制限付き機能
 
-アプリでは、任意の制限付き機能を宣言する場合は、承認を受けるアプリを Microsoft Store に公開するために、[アプリの申請プロセス](../publish/app-submissions.md)中に情報を提供する必要があります。 この情報は、アプリがそれを宣言する各制限付き機能を使用する方法を説明する、申請の[申請オプション](../publish/manage-submission-options.md#restricted-capabilities)] ページで提供します。
+アプリでは、任意の制限付き機能を宣言する場合は、承認を受けるアプリを Microsoft Store に公開するために、[アプリの申請プロセス](../publish/app-submissions.md)中に情報を提供する必要があります。 この情報は、アプリがそれを宣言する各制限付き機能を使用する方法を説明する、申請の[申請オプション](../publish/manage-submission-options.md#restricted-capabilities)ページで提供します。
 
 > [!IMPORTANT]
-> 制限付き機能は、特殊なシナリオを対象としています。 これらの機能は、用途が厳格に制限されており、ストアへの登録に際して追加のポリシーやレビューが適用されます。 任意の承認を受けることがなく、制限付き機能を宣言するアプリのサイドローディングことに注意してください。 承認は、これらのアプリを App Store に提出するときのみ必要です。
+> 制限付き機能は、非常に特定のシナリオを対象としています。 これらの機能は、用途が厳格に制限されており、ストアへの登録に際して追加のポリシーやレビューが適用されます。 任意の承認を受けることがなく、制限付き機能を宣言するアプリのサイドローディングことに注意してください。 承認は、これらのアプリを App Store に提出するときのみ必要です。
 
 必ず、アプリで本当に必要ない限りこれら制限付き機能を宣言しないようにします。 これらの機能が必要で適しているものとしては、身元を証明するデジタル証明書をスマート カードに含めるようにユーザーに求める 2 要素認証を使ったバンキング アプリなどがあります。 また、主に企業ユーザー向けに設計されたアプリや、ユーザーのドメイン資格情報がないとアクセスできな企業リソースへのアクセスを必要とするアプリもあります。
 
@@ -134,7 +134,7 @@ ms.locfileid: "3984809"
 
 ### <a name="restricted-capability-list"></a>制限付き機能の一覧
 
-次の表では、制限付き機能を示します。 上記で説明したプロセスに従うことによって、Microsoft Store に提出するアプリでこれらの機能の承認をリクエストすることができます。
+次の表は、制限付き機能を示します。 上記で説明したプロセスに従うことによって、Microsoft Store に提出するアプリでこれらの機能の承認をリクエストすることができます。
 
 > [!IMPORTANT]
 > かなり限定された状況を除き、一部の制限付き機能が Microsoft Store に提出されるアプリで承認されることはほとんどありません。 これらの機能は、次の表で言及されています。 Microsoft Store で配布する予定の場合、アプリでこれらの機能を宣言しないことをお勧めします。
@@ -215,9 +215,9 @@ ms.locfileid: "3984809"
 | **ファイル システムへの幅広いアクセス** | **broadFileSystemAccess** 機能を使用すると、実行時にファイル ピッカー スタイルのプロンプトを追加使用しなくても、アプリはファイル システムに対して、アプリを実行中のユーザーと同じアクセス許可を獲得できます。<br/><br/>この機能は、[Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) API で動作します。 ただし、この機能をアプリ パッケージ マニフェストに宣言して任意の **Windows.Storage** API を初めて使用すると、ユーザーの同意を求めるプロンプトが表示される点に注意してください。このときユーザーは、アクセスを許可することも拒否することもできます。 また、ユーザーは、[設定] を切り替えることで、このアクセスをいつでも許可または拒否できます。 さらに、この機能では**ドキュメント**、**ピクチャ**、**ビデオ**などの特殊なフォルダー機能を宣言できない点にも注意してください。 |
 | **システム ファームウェアおよび BIOS** | **smbios** 機能を使うと、アプリは BIOS データとシステム ファームウェア データにアクセスできます。 |
 | **完全な信頼のアクセス許可レベル** | **RunFullTrust**制限された機能は、ユーザーのコンピューターで完全な信頼のアクセス許可レベルで動作するアプリを使うとします。 [FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API を使用するには、この機能が必要です。<br /><br />この機能は、デスクトップ アプリケーションが appx として配信するために必要なもパッケージ化 ([デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)) と同様、Desktop App Converter (DAC) またはビジュアルを使用してこれらのアプリをパッケージ化するとき、マニフェストに表示される自動的とStudio します。 |
-| **昇格** | **AllowElevation**制限付き機能には、起動、またはアプリの有効期間中に自動昇格を必要とする既存のデスクトップ機能を維持するには、Microsoft パートナーや企業によって作成されたアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 企業がビジネス向け Microsoft ストアでプライベート ストアをによって展開されている基幹業務アプリののみ承認されます。  |
-| **Windows チーム デバイスの資格情報** | **TeamEditionDeviceCredentials**制限付き機能には、Windows 10 バージョン 1703 以降を実行する Surface Hub デバイスでデバイス アカウントの資格情報を要求する Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 |
-| **Windows チーム アプリケーション ビュー** | **TeamEditionView**制限付き機能には、Windows 10 バージョン 1703 以降を実行する Surface Hub デバイスでアプリケーションのビューをホストするための Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 |
+| **昇格** | **AllowElevation**制限付き機能には、起動、またはアプリの有効期間中に自動昇格を必要とする既存のデスクトップ機能を維持するために、Microsoft パートナーや企業によって作成されたアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 企業がビジネス向け Microsoft ストアでプライベート ストアをによって展開されている基幹業務アプリののみ承認されます。  |
+| **Windows チーム デバイスの資格情報** | **TeamEditionDeviceCredentials**制限付き機能には、Windows 10 バージョン 1703 以降を実行している Surface Hub デバイスでデバイス アカウントの資格情報を要求する Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 |
+| **Windows チーム アプリケーション ビュー** | **TeamEditionView**制限付き機能には、Windows 10 バージョン 1703 以降を実行している Surface Hub デバイスでアプリケーションのビューをホストするための Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 |
 
 
 

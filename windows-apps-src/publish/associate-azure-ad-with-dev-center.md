@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, azure ad, azure テナント, aad テナント, azure ad テナント, テナント管理, テナント
 ms.localizationpriority: medium
 ms.openlocfilehash: dd729d76705849c981516109da39bbd27c140286
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3985397"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4021638"
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>Azure Active Directory とデベロッパー センター アカウントとの関連付け
 
@@ -35,7 +35,7 @@ Windows デベロッパー センターでは、複数のユーザー アカウ�
 
 組織で既に Azure AD が使用されている場合は、次の手順に従ってデベロッパー センター アカウントをリンクします。
 
-1.  [Windows デベロッパー センター ダッシュ ボード](https://partner.microsoft.com/dashboard)から (右上隅のダッシュ ボードの) 近くにある歯車アイコンを選択し、**アカウント設定**] を選択します。 **設定**メニューで、**テナント**を選択します。
+1.  [Windows デベロッパー センター ダッシュ ボード](https://partner.microsoft.com/dashboard)から (右上隅のダッシュ ボードの) 近くにある歯車アイコンを選択し、**アカウントの設定**を選択します。 **Settings** ] メニューで、**テナント**を選択します。
 2.  **[Azure AD と デベロッパー センター アカウントの関連付け]** を選びます。
 3.  関連付けるテナントの Azure AD 資格情報を入力します。
 4.  Azure AD テナントの組織とドメイン名を確認します。 関連付けを完了するには、**[確認]** を選びます。
@@ -49,7 +49,7 @@ Windows デベロッパー センターでは、複数のユーザー アカウ�
 
 デベロッパー センター アカウントをリンクする Azure AD を準備する必要がある場合は、次の手順に従います。
 
-1.  [Windows デベロッパー センター ダッシュ ボード](https://partner.microsoft.com/dashboard)から (右上隅のダッシュ ボードの) 近くにある歯車アイコンを選択し、**アカウント設定**] を選択します。 **設定**メニューで、**テナント**を選択します。
+1.  [Windows デベロッパー センター ダッシュ ボード](https://partner.microsoft.com/dashboard)から (右上隅のダッシュ ボードの) 近くにある歯車アイコンを選択し、**アカウントの設定**を選択します。 **Settings** ] メニューで、**テナント**を選択します。
 2.  **[新しい Azure AD の作成]** を選びます。
 3.  新しい Azure AD のディレクトリ情報を入力します。
     - **[ドメイン名]**: ".onmicrosoft.com" との組み合わせで Azure AD ドメインを示す一意の名前。 たとえば、「example」と入力した場合、Azure AD ドメインは "example.onmicrosoft.com" になります。

@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3981393"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4015106"
 ---
 # <a name="product-declarations"></a>製品の宣言
 
-[申請プロセス](app-submissions.md)の [[プロパティ](enter-app-properties.md)] ページの**製品の宣言**」セクションでは、アプリが適切に表示され、顧客、およびアプリを使用する方法をわかりやすくの適切なセットに提供されることを確認するのに役立ちます。
+[申請プロセス](app-submissions.md)の [[プロパティ](enter-app-properties.md)] ページの**製品の宣言**」セクションでは、アプリが適切に表示され、顧客、およびアプリの使用方法をわかりやすくの適切なセットに提供されていることを確認するのに役立ちます。
 
-次のセクションでは、いくつかの宣言と、各宣言をアプリに適用するかどうかを決定するときに考慮する必要があるについて説明します。 これらの宣言の 2 つが選ばれて既定では (以下のとおりです。) に注意してください。製品のカテゴリによって、追加の宣言を確認することも可能性があります。 必ずすべての宣言を確認し、申請が正確に反映されることを確認してください。
+以下のセクションでは、いくつかの宣言と各宣言をアプリに適用するかどうかを決定するときに考慮する必要があるについて説明します。 これらの宣言の 2 つが選ばれて既定 (以下のとおりです。) に注意してください。製品のカテゴリによって、その他の宣言を確認することも可能性があります。 必ずすべての宣言を確認し、申請が正確に反映されることを確認してください。
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>このアプリは、購入を行うことができますが、Microsoft Store コマース システムを使用できません。
 
@@ -44,11 +44,11 @@ ms.locfileid: "3981393"
 詳しくは、[アクセシビリティ](../design/accessibility/accessibility.md)、[アクセシビリティのテスト](../design/accessibility/accessibility-testing.md)、および[ストア内のアクセシビリティ](../design/accessibility/accessibility-in-the-store.md)を参照してください。
 
 > [!IMPORTANT]
-> 具体的にはエンジニア リングし、その目的のためにテストがない限り、アプリがアクセシビリティ対応の一覧をしないでください。 アプリをアクセシビリティ対応と宣言しているのにアクセシビリティを実際にサポートしていないと、コミュニティから否定的なフィードバックを受けるおそれがあります。
+> 具体的にはエンジニア リングし、その目的をテストする場合を除き、アプリがアクセシビリティ対応の一覧をしません。 アプリをアクセシビリティ対応と宣言しているのにアクセシビリティを実際にサポートしていないと、コミュニティから否定的なフィードバックを受けるおそれがあります。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。
 
-このチェック ボックスはユーザーを外部ドライブなどのメディアが SD カードなど、または非システム ボリュームにドライブまたは外部のリムーバブル ストレージにアプリをインストールできるように、既定でオンです。 (Windows Phone 8.1 では、これが以前指定して StoreManifest.xml。)
+このチェック ボックスはユーザーを外部ドライブなどのメディアが SD カードなど、または非システム ボリュームにドライブまたは外部のリムーバブル ストレージにアプリをインストールできるように、既定でオンです。 (Windows Phone 8.1 では、これ以前指定された StoreManifest.xml を介して。)
 
 アプリが代替ドライブやリムーバブル記憶域にインストールされていることを防ぐし、のみがデバイスに内部ハード ドライブへのインストールを許可する場合は、このチェック ボックスをオフにします。
 
@@ -57,7 +57,7 @@ ms.locfileid: "3981393"
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows では、このアプリのデータを OneDrive への自動バックアップに含めることができます。
 
-このボックスは、Windows が OneDrive に自動バックアップすることをユーザーが選んだ場合にアプリのデータを含めることができるように、既定でオンになっています。 (Windows Phone 8.1 では、これが以前指定して StoreManifest.xml。)
+このボックスは、Windows が OneDrive に自動バックアップすることをユーザーが選んだ場合にアプリのデータを含めることができるように、既定でオンになっています。 (Windows Phone 8.1 では、これ以前指定された StoreManifest.xml を介して。)
 
 アプリのデータが自動バックアップに含まれないようにする場合は、このボックスをオフにします。
 

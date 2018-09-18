@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3990277"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016114"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)」をご覧ください。
@@ -98,7 +98,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-迷う場合に、アプリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルが表示されます。
+迷う場合、アプリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルに表示されます。
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -175,13 +175,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 "AppDisplayName" リソースを `Resources.resw` から `ManifestResources.resw` に移動する場合は、アプリ パッケージ マニフェストで `ms-resource:AppDisplayName` を `ms-resource:/ManifestResources/AppDisplayName` に変更します。
 
-リソース ファイルの名前がセグメント化されている場合 (が含まれている"."の文字) を参照する場合に名前にドットを終了します。 スラッシュ (「/」) 文字、リソース名のと同じようにドットを置き換える**しないでください**。
+リソース ファイル名がセグメント化されている場合 (が含まれている"."の文字) を参照する場合に、名前にドットを終了します。 文字をスラッシュ (「/」)、リソース名のと同じようにドットを置き換える**しないでください**。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-迷う場合に、アプリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルが表示されます。
+迷う場合、アプリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルに表示されます。
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -274,14 +274,14 @@ Windows ランタイム ライブラリ (ユニバーサル Windows)、既定の
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-そのためには、クラス ライブラリ (ユニバーサル Windows) にする必要はありません。 迷う場合は、コンポーネントまたはライブラリの PRI ファイルをダンプに[MakePri.exe](makepri-exe-command-options.md)を使用できます。 各リソースの`uri`ダンプ ファイルが表示されます。
+そのためには、クラス ライブラリ (ユニバーサル Windows) にする必要はありません。 迷う場合は、 [MakePri.exe](makepri-exe-command-options.md)を使用して、コンポーネントまたはライブラリの PRI ファイルをダンプことができます。 各リソースの`uri`ダンプ ファイルに表示されます。
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>他のパッケージから文字列を読み込む
-アプリ パッケージのためのリソースが管理され、パッケージのを通じてアクセス現在[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)からアクセス可能な最上位[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)を所有しています。 各パッケージ内では、さまざまなコンポーネントが独自の ResourceMap サブツリーを持つことができます。これらは、[**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) によってアクセスできます。
+アプリ パッケージのためのリソースの管理し、パッケージのを通じてアクセス現在[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)からアクセス可能な最上位[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)を所有しています。 各パッケージ内では、さまざまなコンポーネントが独自の ResourceMap サブツリーを持つことができます。これらは、[**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) によってアクセスできます。
 
 フレームワーク パッケージは、絶対リソース識別子 URI を使って独自のリソースにアクセスできます。 「[URI スキーム](uri-schemes.md)」もご覧ください。
 

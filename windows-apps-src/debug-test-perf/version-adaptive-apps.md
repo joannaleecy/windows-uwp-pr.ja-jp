@@ -3,18 +3,18 @@ author: jwmsft
 title: バージョン アダプティブ アプリ
 description: 以前のバージョンとの互換性を保ちながら、新しい API を利用する方法について説明します
 ms.author: jimwalk
-ms.date: 10/10/2017
+ms.date: 09/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d43cd9d03977e34b57d78e1f22bd7e8b340ff4ab
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: f2485eab4b192fe4a65c68d957de1ec9192f8c20
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1701038"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4019648"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>バージョン アダプティブ アプリ: 以前のバージョンとの互換性を保ちながら新しい API を使う
 
@@ -48,19 +48,23 @@ Visual Studio 2015 Update 2 以降で新しいプロジェクトを作成する�
 
 Visual Studio で既に作成済みのプロジェクトの最小バージョンとターゲット バージョンを変更するには、[プロジェクト]、[プロパティ]、[アプリケーション] タブ、[ターゲット] の順に移動します。
 
-![Visual Studio でターゲット SDK を変更する](images/vs-target-sdk-2.png) 
+![Visual Studio でターゲット SDK を変更する](images/vs-target-sdk-2.png)
 
-参考のために、各 SDK のビルド番号を次の表に示します。 Windows 10 更新プログラムについて詳しくは、TechNet の「[Windows 10 のリリース情報](https://technet.microsoft.com/windows/release-info)」をご覧ください。
+参考のために、各 SDK のビルド番号を次の表に示します。
 
-フレンドリ名 | バージョン | OS/SDK ビルド | コメント
----- | ---- | ---- | ----
-RTM | 1507 | 10240 | 重要な[サポート](https://support.microsoft.com/help/4015562/windows-10-version-1507-will-no-longer-receive-security-updates)情報をご覧ください。
-11 月の更新プログラム | 1511 | 10586 | 重要な[サポート](https://support.microsoft.com/help/4035050/windows-10-version-1511-will-no-longer-receive-security-updates)情報をご覧ください。
-Anniversary Update | 1607 | 14393 |
-Creators Update | 1703 | 15063 |
-Fall Creators Update | 1709 | 16299 |
+| フレンドリ名 | バージョン | OS/SDK ビルド |
+| ---- | ---- | ---- |
+| RTM | 1507 | 10240 |
+| 11 月の更新プログラム | 1511 | 10586 |
+| Anniversary Update | 1607 | 14393 |
+| Creators Update | 1703 | 15063 |
+| Fall Creators Update | 1709 | 16299 |
+| April 2018 Update | 1803 | 17134 |
+| 年 2018年 10 月 Update | 1809 | _Insider Preview_ |
 
 SDK のすべてのリリース版は、「[Windows SDK とエミュレーターのアーカイブ](https://developer.microsoft.com/downloads/sdk-archive)」からダウンロードできます。 最新の Windows Insider Preview SDK は、[Windows Insider](https://insider.windows.com/Home/BuildWithWindows) サイトの「開発者向け」セクションからダウンロードできます。
+
+ Windows 10 更新プログラムについて詳しくは、 [Windows 10 のリリース情報](https://technet.microsoft.com/windows/release-info)を参照してください。 Windows 10 に関する重要な情報のライフ サイクルをサポートは、 [Windows のライフ サイクルの実際のシート](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)を参照してください。
 
 ## <a name="perform-api-checks"></a>API チェックの実行
 

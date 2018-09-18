@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983893"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016074"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP アプリ設計の概要
 
@@ -49,7 +49,7 @@ ms.locfileid: "3983893"
 ### <a name="multiples-of-four"></a>4 の倍数
 
 :::row:::
-    :::column span::: サイズ、余白、および UI 要素の位置は常に、UWP アプリでは、 **4 epx の倍数**にします。
+    :::column span::: サイズ、余白、および UI 要素の位置は常に、UWP アプリで**4 epx の倍数**にします。
 
         UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
     :::column-end:::
@@ -118,7 +118,7 @@ UWP コントロールとコントロールに基づいて作成できるパタ�
 
 :::row:::
     :::column:::
-        UWP アプリが、使用した幅広い Windows エクスペリエンス Windows[シェル](../shell/tiles-and-notifications/creating-tiles.md)でタイルや通知を操作します。
+        UWP アプリがした幅広い Windows エクスペリエンスと Windows[シェル](../shell/tiles-and-notifications/creating-tiles.md)でタイルや通知をやり取りします。
 
         Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
 
