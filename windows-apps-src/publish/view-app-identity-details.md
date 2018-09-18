@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cf2c10fd8fa581e29fe20c5bdcb2683c5246af1d
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3985145"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4017692"
 ---
 # <a name="view-app-identity-details"></a><span data-ttu-id="8bee3-103">アプリ ID の詳細の表示</span><span class="sxs-lookup"><span data-stu-id="8bee3-103">View app identity details</span></span>
 

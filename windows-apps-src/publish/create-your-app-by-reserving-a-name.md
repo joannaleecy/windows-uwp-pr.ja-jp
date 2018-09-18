@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83f2ab8a27810635b569d44961ff532ce3240e28
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3987187"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4017866"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a><span data-ttu-id="9e613-103">名前の予約によるアプリの作成</span><span class="sxs-lookup"><span data-stu-id="9e613-103">Create your app by reserving a name</span></span>
 

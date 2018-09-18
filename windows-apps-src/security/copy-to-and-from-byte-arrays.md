@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: cc7119ba2d97bfc6e1fb3f1a519b6d650027b1a3
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3985121"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4020704"
 ---
 # <a name="copy-to-and-from-byte-arrays"></a><span data-ttu-id="67edb-104">バイト配列間のコピー</span><span class="sxs-lookup"><span data-stu-id="67edb-104">Copy to and from byte arrays</span></span>
 
