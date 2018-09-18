@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: de0ffd7c9c6c42f2a0ebf633ebcbba8a89a1b8b8
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983206"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016835"
 ---
 # <a name="lastseenrecord-json"></a><span data-ttu-id="2ca9c-104">LastSeenRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="2ca9c-104">LastSeenRecord (JSON)</span></span>
 <span data-ttu-id="2ca9c-105">ユーザーには、有効な DeviceRecord があるないときに利用可能なユーザーが最後システムに表示されていた場合について説明します。</span><span class="sxs-lookup"><span data-stu-id="2ca9c-105">Information about when the system last saw a user, available when the user has no valid DeviceRecord.</span></span> 

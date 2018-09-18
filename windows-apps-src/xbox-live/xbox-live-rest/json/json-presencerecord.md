@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c365760f68aa7c87422e747606175ae9a12f0574
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3981034"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4020327"
 ---
 # <a name="presencerecord-json"></a><span data-ttu-id="86f5a-104">PresenceRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="86f5a-104">PresenceRecord (JSON)</span></span>
 <span data-ttu-id="86f5a-105">1 人のユーザーのオンライン プレゼンスに関するデータ。</span><span class="sxs-lookup"><span data-stu-id="86f5a-105">Data about the online presence of a single user.</span></span>

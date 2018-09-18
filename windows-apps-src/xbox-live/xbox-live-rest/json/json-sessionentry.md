@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6076f4dfbef0f926563f4696f8ee0e2660d0fc24
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3989452"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4021067"
 ---
 # <a name="sessionentry-json"></a><span data-ttu-id="f3077-104">SessionEntry (JSON)</span><span class="sxs-lookup"><span data-stu-id="f3077-104">SessionEntry (JSON)</span></span>
 <span data-ttu-id="f3077-105">フィットネス セッションのデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f3077-105">Contains data for a fitness session.</span></span> 

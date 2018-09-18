@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, コンテキスト検索, 配信, ゲーム クリップ
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c79af0f8543b6a7b5cd1c42926850364dd6a63d
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3981858"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4018013"
 ---
 # <a name="contextual-search"></a><span data-ttu-id="7ee89-104">コンテキスト検索</span><span class="sxs-lookup"><span data-stu-id="7ee89-104">Contextual Search</span></span>
 

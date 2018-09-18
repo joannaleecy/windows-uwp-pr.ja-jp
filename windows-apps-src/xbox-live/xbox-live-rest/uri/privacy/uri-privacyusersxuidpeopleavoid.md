@@ -12,43 +12,43 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 635f11677997523fe952de04b8398410efc503d2
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3990286"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016461"
 ---
-# <a name="usersowneridpeopleavoid"></a><span data-ttu-id="2291f-104">/users/{ownerId}/people/avoid</span><span class="sxs-lookup"><span data-stu-id="2291f-104">/users/{ownerId}/people/avoid</span></span>
-<span data-ttu-id="2291f-105">ユーザーの回避一覧にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="2291f-105">Accesses the Avoid list for a user</span></span>
+# <a name="usersowneridpeopleavoid"></a><span data-ttu-id="70e83-104">/users/{ownerId}/people/avoid</span><span class="sxs-lookup"><span data-stu-id="70e83-104">/users/{ownerId}/people/avoid</span></span>
+<span data-ttu-id="70e83-105">ユーザーの避ける一覧にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="70e83-105">Accesses the Avoid list for a user</span></span>
 
-  * [<span data-ttu-id="2291f-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="2291f-106">URI parameters</span></span>](#ID4EQ)
+  * [<span data-ttu-id="70e83-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="70e83-106">URI parameters</span></span>](#ID4EQ)
 
 <a id="ID4EQ"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="2291f-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="2291f-107">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="70e83-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="70e83-107">URI parameters</span></span>
 
-| <span data-ttu-id="2291f-108">パラメーター</span><span class="sxs-lookup"><span data-stu-id="2291f-108">Parameter</span></span>| <span data-ttu-id="2291f-109">型</span><span class="sxs-lookup"><span data-stu-id="2291f-109">Type</span></span>| <span data-ttu-id="2291f-110">説明</span><span class="sxs-lookup"><span data-stu-id="2291f-110">Description</span></span>|
+| <span data-ttu-id="70e83-108">パラメーター</span><span class="sxs-lookup"><span data-stu-id="70e83-108">Parameter</span></span>| <span data-ttu-id="70e83-109">型</span><span class="sxs-lookup"><span data-stu-id="70e83-109">Type</span></span>| <span data-ttu-id="70e83-110">説明</span><span class="sxs-lookup"><span data-stu-id="70e83-110">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="2291f-111">ownerId</span><span class="sxs-lookup"><span data-stu-id="2291f-111">ownerId</span></span>| <span data-ttu-id="2291f-112">string</span><span class="sxs-lookup"><span data-stu-id="2291f-112">string</span></span>| <span data-ttu-id="2291f-113">必須。</span><span class="sxs-lookup"><span data-stu-id="2291f-113">Required.</span></span> <span data-ttu-id="2291f-114">そのリソースにアクセスしているユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="2291f-114">Identifier of the user whose resource is being accessed.</span></span> <span data-ttu-id="2291f-115">可能な値は<code>xuid({xuid})</code>します。</span><span class="sxs-lookup"><span data-stu-id="2291f-115">The possible values are <code>xuid({xuid})</code>.</span></span> <span data-ttu-id="2291f-116">認証されたユーザーである必要があります。</span><span class="sxs-lookup"><span data-stu-id="2291f-116">Must be the authenticated user.</span></span> <span data-ttu-id="2291f-117">値の例:<code>xuid(2603643534573581)</code>します。</span><span class="sxs-lookup"><span data-stu-id="2291f-117">Example value: <code>xuid(2603643534573581)</code>.</span></span> <span data-ttu-id="2291f-118">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="2291f-118">Maximum size: none.</span></span> |
+| <span data-ttu-id="70e83-111">ownerId</span><span class="sxs-lookup"><span data-stu-id="70e83-111">ownerId</span></span>| <span data-ttu-id="70e83-112">string</span><span class="sxs-lookup"><span data-stu-id="70e83-112">string</span></span>| <span data-ttu-id="70e83-113">必須。</span><span class="sxs-lookup"><span data-stu-id="70e83-113">Required.</span></span> <span data-ttu-id="70e83-114">そのリソースにアクセスしているユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="70e83-114">Identifier of the user whose resource is being accessed.</span></span> <span data-ttu-id="70e83-115">設定可能な値は<code>xuid({xuid})</code>します。</span><span class="sxs-lookup"><span data-stu-id="70e83-115">The possible values are <code>xuid({xuid})</code>.</span></span> <span data-ttu-id="70e83-116">認証されたユーザーである必要があります。</span><span class="sxs-lookup"><span data-stu-id="70e83-116">Must be the authenticated user.</span></span> <span data-ttu-id="70e83-117">値の例:<code>xuid(2603643534573581)</code>します。</span><span class="sxs-lookup"><span data-stu-id="70e83-117">Example value: <code>xuid(2603643534573581)</code>.</span></span> <span data-ttu-id="70e83-118">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="70e83-118">Maximum size: none.</span></span> |
 
 <a id="ID4ERB"></a>
 
 
-## <a name="valid-methods"></a><span data-ttu-id="2291f-119">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="2291f-119">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="70e83-119">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="70e83-119">Valid methods</span></span>
 
-[<span data-ttu-id="2291f-120">GET (/users/{ownerId}/people/avoid)</span><span class="sxs-lookup"><span data-stu-id="2291f-120">GET (/users/{ownerId}/people/avoid)</span></span>](uri-privacyusersxuidpeopleavoidget.md)
+[<span data-ttu-id="70e83-120">GET (/users/{ownerId}/people/avoid)</span><span class="sxs-lookup"><span data-stu-id="70e83-120">GET (/users/{ownerId}/people/avoid)</span></span>](uri-privacyusersxuidpeopleavoidget.md)
 
-<span data-ttu-id="2291f-121">&nbsp;&nbsp;ユーザーの回避一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="2291f-121">&nbsp;&nbsp;Gets the Avoid list for a user.</span></span>
+<span data-ttu-id="70e83-121">&nbsp;&nbsp;ユーザーの避ける一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="70e83-121">&nbsp;&nbsp;Gets the Avoid list for a user.</span></span>
 
 <a id="ID4E2B"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="2291f-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="2291f-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="70e83-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="70e83-122">See also</span></span>
 
 <a id="ID4E4B"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="2291f-123">Parent</span><span class="sxs-lookup"><span data-stu-id="2291f-123">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="70e83-123">Parent</span><span class="sxs-lookup"><span data-stu-id="70e83-123">Parent</span></span>
 
-[<span data-ttu-id="2291f-124">プライバシー URI</span><span class="sxs-lookup"><span data-stu-id="2291f-124">Privacy URIs</span></span>](atoc-reference-privacyv2.md)
+[<span data-ttu-id="70e83-124">プライバシー URI</span><span class="sxs-lookup"><span data-stu-id="70e83-124">Privacy URIs</span></span>](atoc-reference-privacyv2.md)

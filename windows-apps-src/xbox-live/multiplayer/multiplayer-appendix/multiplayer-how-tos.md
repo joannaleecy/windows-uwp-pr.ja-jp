@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: f800afb70f4f32586f5e7db38665a77719792c1a
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3989024"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4015463"
 ---
 # <a name="multiplayer-how-tos"></a><span data-ttu-id="34088-104">マルチプレイヤーの実行方法</span><span class="sxs-lookup"><span data-stu-id="34088-104">Multiplayer how-to's</span></span>
 

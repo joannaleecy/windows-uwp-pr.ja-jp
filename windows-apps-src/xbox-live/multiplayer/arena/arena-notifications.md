@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: 559ea8e1d8c3d4cb01c2fdfc49996b347ec1683b
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3982032"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4021295"
 ---
 # <a name="arena-notifications"></a><span data-ttu-id="a4cbf-104">アリーナによる通知</span><span class="sxs-lookup"><span data-stu-id="a4cbf-104">Arena notifications</span></span>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 494f4a8977a298265c264b050d6a222bd2bdd7d2
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983270"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4020945"
 ---
 # <a name="resetreputation-json"></a><span data-ttu-id="bc600-104">ResetReputation (JSON)</span><span class="sxs-lookup"><span data-stu-id="bc600-104">ResetReputation (JSON)</span></span>
 <span data-ttu-id="bc600-105">ユーザーの既存のスコアを変更する必要があります新しい基本評判スコアが含まれています。</span><span class="sxs-lookup"><span data-stu-id="bc600-105">Contains the new base Reputation scores to which a user's existing scores should be changed.</span></span> 

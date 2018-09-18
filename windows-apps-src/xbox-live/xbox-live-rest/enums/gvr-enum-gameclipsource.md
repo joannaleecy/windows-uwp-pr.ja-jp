@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 953ef16ccc7416d68114e2303af89fcebdfb2382
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3984624"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4022437"
 ---
 # <a name="gameclipsource-enumeration"></a><span data-ttu-id="82a51-104">GameClipSource 列挙型</span><span class="sxs-lookup"><span data-stu-id="82a51-104">GameClipSource Enumeration</span></span>
 <span data-ttu-id="82a51-105">GameClipSource 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="82a51-105">Details the GameClipSource enumeration.</span></span> 

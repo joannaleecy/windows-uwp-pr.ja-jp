@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 1705af67d1bfe89e8b91ee60bc6c52cf9e50300b
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983320"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4015419"
 ---
 # <a name="use-connected-storage-to-save-data"></a><span data-ttu-id="bccaa-104">接続ストレージを使ったデータの保存</span><span class="sxs-lookup"><span data-stu-id="bccaa-104">Use Connected Storage to save data</span></span>
 
