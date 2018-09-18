@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ca47bfb26649f2e8a9fc1344c3264d90548eb836
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983469"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4024178"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>ユーザーへのアピールとアプリの宣伝
 
-アプリは、Microsoft Store が完成したら、できるだけ多くの顧客の前面入手します。 Microsoft では、広告キャンペーン、プロモーション コード、セール価格など、製品を宣伝し、顧客ベースの拡大を図るうえで役立つさまざまな機能を提供しています。
+アプリは、Microsoft Store が完成したら、できるだけ多くの顧客の前面取得します。 Microsoft では、広告キャンペーン、プロモーション コード、セール価格など、製品を宣伝し、顧客ベースの拡大を図るうえで役立つさまざまな機能を提供しています。
 
 -   [プロモーション コードを生成する](generate-promotional-codes.md)
 -   [アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)

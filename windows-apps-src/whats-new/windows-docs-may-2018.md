@@ -1,6 +1,6 @@
 ---
 author: QuinnRadich
-title: Windows ドキュメントの最新情報では、2018 年 5 月 - UWP アプリの開発
+title: Windows ドキュメントの最新情報で新 2018 年 5 月 - UWP アプリの開発
 description: 2018 年 5 月の Windows 10 開発者向けドキュメントと Microsoft Build カンファレンスに、新しい機能、ビデオ、および開発者向けガイダンスが追加されました。
 keywords: 新着情報, 更新, 機能, 開発者向けガイダンス, Windows 10、月、ビルド
 ms.author: quradic
@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3985551"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4024188"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 5 月
+# <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Windows 開発者向けドキュメントの最新情報で新 2018 年 5 月
 
-Windows 開発者向けドキュメントは、Windows プラットフォームで開発者に提供される新機能の情報を反映して継続的に更新されています。 次の機能概要、開発者向けガイダンス、ビデオ、およびサンプルには 5 月の[Microsoft Build 2018](https://www.microsoft.com/build)開発者カンファレンスと一致するので利用可能ななりました。
+Windows 開発者向けドキュメントは、Windows プラットフォームで開発者に提供される新機能の情報を反映して継続的に更新されています。 次の機能概要、開発者向けガイダンス、ビデオ、およびサンプルには、5 月の[Microsoft Build 2018](https://www.microsoft.com/build)開発者カンファレンスと一致するので利用可能ななりました。
 
 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)がどのように使えるかを試したりすることができます。
 
@@ -26,7 +26,7 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 ### <a name="motion-in-fluent-design"></a>Fluent Design のモーション
 
-タイミング、イージング、方向、および重力の基礎上に構築され、Fluent Design System のモーションのユーザーが進化しています。 これらの基礎を適用することは、アプリでユーザーをガイドに役立ち、その接続とそのデジタル エクスペリエンスによって、自然界を反映します。 この記事では、複数について説明します。
+タイミング、イージング、方向、および重力の基礎上に構築され、Fluent Design System のモーションのユーザーが進化しています。 これらの基礎を適用することは、アプリを使用してユーザーをガイドに役立ち、その接続とそのデジタル エクスペリエンスによって、自然界を反映します。 この記事では、複数について説明します。
 
 * これらの基礎を反映するように[、モーションの概要](../design/motion/index.md)が更新されました。
 * [モーションの演習で](../design/motion/motion-in-practice.md)は、アプリ内でこれらの基礎を適用する方法の例を示します。
@@ -52,8 +52,8 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 さらに、まったく新しい情報がコンテンツ領域が次のページを書き換えるしたします。
 
-* [アイコン](../design/style/icons.md)は、アイコンを使用すると、クリック可能なする際に実用的な推奨事項を提供します。
-* [文字体裁](../design/style/typography.md)では、更新されたガイダンスと図の 1 つの場所に配置するすべてのものと同様の記事からの情報を統合します。
+* [アイコン](../design/style/icons.md)は、アイコンを使用して、クリック可能なを行うのためのアドバイスを提供します。
+* [文字体裁](../design/style/typography.md)では、更新されたガイダンスと図を 1 つの場所に配置するすべてのものと同様の記事からの情報を統合します。
 
 ![カラー パレットの画像](../design/style/images/color/accent-color-palette.svg)
 
@@ -69,19 +69,19 @@ Windows コミュニティ ツールキットの今後のリリースにおけ�
 
 ### <a name="gaze-input-and-interactions"></a>視線入力と操作
 
-[ユーザーの視線、注意、および場所とユーザーの目の動きに基づくプレゼンスを追跡します。](../design/input/gaze-interactions.md) この新しいを効果的に使用して、UWP アプリで操作は、支援技術として特に役立ちます。 視線入力は、ゲーム (追跡およびターゲットの入手を含む) と従来の入力デバイス (キーボード、マウス、タッチ) が利用可能ないないその他の対話型シナリオの両方の魅力的な機会も提供します。
+[ユーザーの視線、注意、および場所とユーザーの目の動きに基づくプレゼンスを追跡します。](../design/input/gaze-interactions.md) この強力な新しい方法を使用し、UWP アプリとの対話は、支援技術として特に役立ちます。 視線入力は、ゲーム (追跡およびターゲットの入手を含む) と従来の入力デバイス (キーボード、マウス、タッチ) が利用可能ないないその他の対話型シナリオの両方の魅力的な機会も提供されます。
 
 ### <a name="msix-packaging-format"></a>MSIX パッケージ形式
 
-Microsoft Build 2018 会議での発表、MSIX は、Win32、Windows フォーム、WPF、および UWP を含むすべての Windows アプリケーションに適用される新しいコンテナー パッケージ形式です。 この新しい形式は、UWP の優れた機能を継承します。
+Microsoft Build 2018 カンファレンスで発表、MSIX は、Win32、Windows フォーム、WPF、および UWP を含むすべての Windows アプリケーションに適用される新しいコンテナー パッケージ形式です。 この新しい形式は、UWP の優れた機能を継承します。
 
 * 堅牢なインストールおよび更新します。 
 * 柔軟な機能のシステムとセキュリティ モデルを管理します。
 * Microsoft Store、エンタープライズ管理、多くのカスタム配布モデルをサポートします。
 
-これらのパッケージを作成するためのツールは Visual Studio と Windows SDK の今後のリリースで利用可能になります。
+これらのパッケージを作成するためのツールは、Visual Studio と Windows SDK の今後のリリースで利用可能になります。
 
-MSIX パッケージの形式は、オープン ソース フォーマットされるため、パートナーがツールとソリューションを使って MSIX エコシステムをサポートするために簡単です。 MSIX パッケージ形式に関する詳細については、 [MSIX SDK](https://github.com/Microsoft/msix-packaging)を参照してください。 
+MSIX パッケージ形式は、オープン ソース フォーマットされるため、パートナーがツールとソリューションを使って MSIX エコシステムをサポートするために簡単です。 MSIX パッケージ形式に関する詳細については、 [MSIX SDK](https://github.com/Microsoft/msix-packaging)を参照してください。 
 
 ![MSIX パッケージの画像](images/msix.png)
 
@@ -99,20 +99,20 @@ Project Rome チームは、iOS と Android Sdk、ユーザー アクティビ�
 
 ### <a name="sets"></a>セット
 
-Sets 機能は、Windows Insider preview ビルドで利用できます。 Sets 機能を使用する場合は、タイトル バーに専用のタブを持つ各アプリと他のアプリと共有される可能性があるウィンドウにするアプリが描画されます。 [Sets の設計](../design/shell/design-for-sets.md)は、設定 UI で最適なエクスペリエンスを提供するアプリを最適化する方法に関するガイダンスがあります。
+Sets 機能は、Windows Insider preview ビルドで利用できます。 Sets 機能を使用する場合は、タイトル バーに専用のタブを持つ各アプリと他のアプリと共有される可能性があるウィンドウにアプリが描画されます。 [Sets の設計](../design/shell/design-for-sets.md)は、設定 UI で最適なエクスペリエンスを提供するアプリを最適化する方法に関するガイダンスがあります。
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
 ### <a name="get-started"></a>はじめに
 
-当社 Get します revitalized した新しい学習トラックでコンテンツを開始します。 これらの新しいトピックをいくつかの一般的なタスクを実行するための情報が新しい Windows 10 開発者を提供するようにしてください。 チュートリアルが不明できなくてとハンドヘルド チュートリアルが提供されないも代わりに、既存のドキュメントが存在してその使用方法を指摘します。 チェック アウト改良[コーディングの開始](../get-started/create-uwp-apps.md)ページで、または個々 の学習、各トラックについて説明します。
+当社 Get お revitalized した新しい学習トラックでコンテンツを開始します。 これらの新しいトピックをいくつかの一般的なタスクを実行するための情報が新しい Windows 10 開発者を提供するようにしてください。 チュートリアルが不明できなくてとハンドヘルドのチュートリアルが提供されないも代わりに、既存のドキュメントが存在してその使用方法を指摘します。 チェック アウト改良[コーディングの開始](../get-started/create-uwp-apps.md)ページで、または個々 の学習、各トラックについて説明します。
 
 * [フォームの作成](../get-started/construct-form-learning-track.md)
 * [一覧での顧客の表示](../get-started/display-customers-in-list-learning-track.md)
 * [設定の保存と読み込み](../get-started/settings-learning-track.md)
 * [ファイルの操作](../get-started/fileio-learning-track.md)
 
-![開始された画像を取得します。](../get-started/images/build-your-app.png)
+![開始イメージを取得します。](../get-started/images/build-your-app.png)
 
 ### <a name="advertising-performance-report"></a>広告パフォーマンス レポート
 
@@ -130,10 +130,10 @@ C++/WinRT では、新しい方法の作成と Windows ランタイム Api を�
 
 ### <a name="multi-instance-uwp-apps"></a>マルチインスタンスの UWP アプリ
 
-今すぐ Windows ではそれぞれ独自の別のプロセスで、UWP アプリの複数のインスタンスを実行することができます。 [ビデオをご覧ください](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be)をする方法について、この機能では、その[開発者ドキュメント](../launch-resume/multi-instance-uwp.md)をサポートしている新しいアプリを作成する方法と、この機能を使用する理由を説明します。
+今すぐ Windows ではそれぞれ独自の別のプロセスで、UWP アプリの複数のインスタンスを実行することができます。 [ビデオ](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be)を方法について、この機能をその[開発者ドキュメント](../launch-resume/multi-instance-uwp.md)をサポートしている新しいアプリを作成する方法と、この機能を使用する理由について説明します。
 
 ## <a name="samples"></a>サンプル
 
 ### <a name="customer-database-tutorial"></a>顧客データベース チュートリアル
 
-このチュートリアルでは、顧客の一覧を管理するための基本的な UWP アプリを作成し、概念とエンタープライズ開発で便利なプラクティスを紹介します。 走査する UI 要素を実装すると、ローカルの SQLite データベースに対して操作を追加し、さらに移動する場合は、残りの部分のリモート データベースに接続するための緩やかなガイダンスを提供します。 [ここでは、チュートリアルを確認します。](../enterprise/customer-database-tutorial.md)
+このチュートリアルでは、顧客の一覧を管理するための基本的な UWP アプリを作成し、概念とエンタープライズ開発で便利なプラクティスを紹介します。 紹介の UI 要素を実装して、ローカルの SQLite データベースに対して操作を追加して、さらに移動する場合は、残りの部分のリモート データベースに接続するための緩やかなガイダンスを提供します。 [ここでは、チュートリアルを確認します。](../enterprise/customer-database-tutorial.md)

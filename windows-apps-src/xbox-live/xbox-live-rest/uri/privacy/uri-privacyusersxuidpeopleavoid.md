@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 635f11677997523fe952de04b8398410efc503d2
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3990286"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016461"
 ---
 # <a name="usersowneridpeopleavoid"></a>/users/{ownerId}/people/avoid
-ユーザーの回避一覧にアクセスします。
+ユーザーの避ける一覧にアクセスします。
 
   * [URI パラメーター](#ID4EQ)
 
@@ -30,7 +30,7 @@ ms.locfileid: "3990286"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>します。 認証されたユーザーである必要があります。 値の例:<code>xuid(2603643534573581)</code>します。 最大サイズ: なし。 |
+| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>します。 認証されたユーザーである必要があります。 値の例:<code>xuid(2603643534573581)</code>します。 最大サイズ: なし。 |
 
 <a id="ID4ERB"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "3990286"
 
 [GET (/users/{ownerId}/people/avoid)](uri-privacyusersxuidpeopleavoidget.md)
 
-&nbsp;&nbsp;ユーザーの回避一覧を取得します。
+&nbsp;&nbsp;ユーザーの避ける一覧を取得します。
 
 <a id="ID4E2B"></a>
 

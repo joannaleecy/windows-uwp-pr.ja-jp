@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: db832032a40b40d4b3a774a56487f7065d9cd8ff
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3990262"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4014723"
 ---
 # <a name="post-batch"></a>POST (/batch)
 POST メソッドは複数のタイトルに複数のプレイヤーの統計情報の複雑なバッチ要求の GET メソッドとして機能します。 これらの Uri のドメインが`userstats.xboxlive.com`します。
@@ -26,13 +26,13 @@ POST メソッドは複数のタイトルに複数のプレイヤーの統計情
  
 ## <a name="remarks"></a>注釈
  
-タイトル デベロッパーは、open または XDP またはデベロッパー センターで制限付きの統計情報をマークできます。 ランキングは、統計を開くです。 開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。 サンド ボックスへのユーザーの承認は XDP またはデベロッパー センターで管理されます。
+タイトル デベロッパーは、open または XDP またはデベロッパー センターで制限付き統計をマークできます。 ランキングは、統計を開くです。 開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。 サンド ボックスへのユーザーの承認は XDP またはデベロッパー センターで管理されます。
   
   * [注釈](#ID4ET)
   * [注釈](#ID4EFB)
   * [Authorization](#ID4EUB)
   * [必要な要求ヘッダー](#ID4ETC)
-  * [オプションの要求ヘッダー](#ID4E3D)
+  * [省略可能な要求ヘッダー](#ID4E3D)
   * [要求本文](#ID4EAF)
   * [HTTP ステータス コード](#ID4EWF)
   * [応答本文](#ID4ENBAC)
@@ -44,17 +44,17 @@ POST メソッドは複数のタイトルに複数のプレイヤーの統計情
  
 呼び出し元では、ユーザー、サービス構成 Id (Scid)、およびそれらの統計情報を取得するための Scid ごとの統計情報名の一覧の配列でメッセージの本文が提供されます。
  
-詳しくは、見つけることがある前に[GET](uri-usersxuidscidsscidstatsget.md)メソッド読み取りより複雑なこのバッチ モード ページ、簡単なシングル統計情報を確認すると便利です。
+詳しくは、見つけることがある前に[GET](uri-usersxuidscidsscidstatsget.md)メソッド読み取りより複雑なこのバッチ モード ページ、シンプルな単一統計情報を確認すると便利です。
   
 <a id="ID4EUB"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-コンテンツ分離とアクセス制御のシナリオ向けに実装承認ロジックがあります。
+承認ロジック コンテンツ分離とアクセス制御のシナリオの実装があります。
  
    * ランキング、およびユーザーの両方の統計情報は、呼び出し元が有効な XSTS トークンの要求で送信するに任意のプラットフォーム上のクライアントから読み取ることができます。 書き込みはでサポートされているクライアントに明らかに制限します。
-   * タイトル デベロッパーは、open または XDP またはデベロッパー センターで制限付きの統計情報をマークできます。 ランキングは、統計を開くです。 開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。 サンド ボックスへのユーザーの承認は XDP またはデベロッパー センターで管理されます。
+   * タイトル デベロッパーは、open または XDP またはデベロッパー センターで制限付き統計をマークできます。 ランキングは、統計を開くです。 開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。 サンド ボックスへのユーザーの承認は XDP またはデベロッパー センターで管理されます。
   
 次の例では、チェックの擬似コードを示します。
  
@@ -77,16 +77,16 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
   
 <a id="ID4E3D"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、サービスの名前/番号をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
+| X RequestedServiceVersion|  | この要求を送信する必要があります、サービスの名前/番号をビルドします。 要求はのみにルーティングされ、サービスの認証トークン内の要求ヘッダーの有効性を確認した後です。 既定値: 1 です。| 
   
 <a id="ID4EAF"></a>
 
@@ -142,9 +142,9 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 | 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden| ユーザーまたはサービスの要求は許可されていません。| 
-| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。| 
+| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
 | 406| 許容できません。| リソースのバージョンがサポートされていません。| 
-| 408| 要求のタイムアウト| リソースのバージョンはサポートされていません。MVC レイヤーによって拒否する必要があります。| 
+| 408| 要求のタイムアウト| リソースのバージョンがサポートされていません。MVC レイヤーによって拒否する必要があります。| 
   
 <a id="ID4ENBAC"></a>
 
