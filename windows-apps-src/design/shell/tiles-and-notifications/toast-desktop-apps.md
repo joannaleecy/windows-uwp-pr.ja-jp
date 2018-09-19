@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, win32, デスクトップ, トースト通知, デスクトップ ブリッジ, トーストの送信のオプション, com サーバー, com アクティベーター, com, 偽の com, com なし, com なし, トーストの送信
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f54519fd0ddc975c1e57c2aebde583ef971850d
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4018142"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4054140"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a><span data-ttu-id="7ac13-103">デスクトップ アプリからのトースト通知</span><span class="sxs-lookup"><span data-stu-id="7ac13-103">Toast notifications from desktop apps</span></span>
 
