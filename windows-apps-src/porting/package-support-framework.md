@@ -10,34 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 46d5705233af9e8254b9ac89a2d6e9891e90701f
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.openlocfilehash: 7e5119696498156d36ec63b16b1d76c00b03f4df
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4021522"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4060964"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>パッケージのサポートのフレームワークを使用して MSIX パッケージにランタイムの修正プログラムを適用します。
 
 パッケージのサポート フレームワークでは、修正プログラムの適用、既存の win32 アプリケーションをソース コードにアクセスしていないとき MSIX コンテナーで実行できるようにするために役立つオープン ソースのキットです。 パッケージのサポートのフレームワークには、最新のランタイム環境のベスト プラクティスに従って、アプリケーションが役立ちます。
 
-パッケージのサポートのフレームワークを作成するには、Microsoft Research (MSR) によって開発されたオープン ソースのフレームワークとにより API のリダイレクトを見つけてフック[は](https://www.microsoft.com/en-us/research/project/detours)テクノロジを活用します。
-
-このフレームワークは、オープン ソース、軽量で、アプリケーションの問題を解決する迅速に使用できます。 世界では、コミュニティに相談して、他のユーザーへの投資の最上位に構築する機会もできます。
-
-## <a name="a-quick-look-inside-of-the-package-support-framework"></a>パッケージのサポート フレームワーク内での確認
-
-パッケージのサポートのフレームワークには、実行可能ファイル、ランタイム マネージャー、DLL とランタイムの修正プログラムのセットが含まれています。
-
-![パッケージのサポート フレームワーク](images/desktop-to-uwp/package-support-framework.png)
-
-しくみは次のとおりです。 アプリケーションに適用する fix(s) を指定する構成ファイルを作成します。 次に、shim ランチャー実行可能ファイルをポイントするパッケージを変更します。
-
-ユーザーがアプリケーションを起動するときに実行される最初の実行可能ファイルは shim ランチャーです。 構成ファイルを読み取るし、ランタイム fix(s) とランタイム manager DLL をアプリケーションのプロセスに挿入します。
-
-![パッケージのサポート フレームワーク DLL インジェクション](images/desktop-to-uwp/package-support-framework-2.png)
-
-ランタイム マネージャーでは、MSIX コンテナー内で実行するアプリケーションでは、必要に応じて、修正プログラムが適用されます。
+詳細についてはを[パッケージのサポートのフレームワーク](https://docs.microsoft.com/windows/msix/package-support-framework-overview)を参照してください。
 
 このガイドを支援するアプリケーションの互換性の問題を特定して、それらに対処する修正プログラムを検索し、適用され、ランタイムを拡張します。
 
