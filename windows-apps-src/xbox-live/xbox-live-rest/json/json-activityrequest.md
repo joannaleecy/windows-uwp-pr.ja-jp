@@ -12,30 +12,30 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a3d1560c7bb8c6a6eb4fe9e4786f0378d74aeca2
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4019927"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4055729"
 ---
-# <a name="activityrequest-json"></a><span data-ttu-id="982b6-104">ActivityRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="982b6-104">ActivityRequest (JSON)</span></span>
-<span data-ttu-id="982b6-105">1 つまたは複数のユーザーのリッチ プレゼンスに関する情報を要求します。</span><span class="sxs-lookup"><span data-stu-id="982b6-105">A request for information about one or more users' rich presence.</span></span> 
+# <a name="activityrequest-json"></a><span data-ttu-id="9ff92-104">ActivityRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="9ff92-104">ActivityRequest (JSON)</span></span>
+<span data-ttu-id="9ff92-105">1 つまたは複数のユーザーのリッチ プレゼンスに関する情報を要求します。</span><span class="sxs-lookup"><span data-stu-id="9ff92-105">A request for information about one or more users' rich presence.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="activityrequest"></a><span data-ttu-id="982b6-106">ActivityRequest</span><span class="sxs-lookup"><span data-stu-id="982b6-106">ActivityRequest</span></span>
+## <a name="activityrequest"></a><span data-ttu-id="9ff92-106">ActivityRequest</span><span class="sxs-lookup"><span data-stu-id="9ff92-106">ActivityRequest</span></span>
  
-<span data-ttu-id="982b6-107">ActivityRequest オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="982b6-107">The ActivityRequest object has the following specification.</span></span>
+<span data-ttu-id="9ff92-107">ActivityRequest オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="9ff92-107">The ActivityRequest object has the following specification.</span></span>
  
-| <span data-ttu-id="982b6-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="982b6-108">Member</span></span>| <span data-ttu-id="982b6-109">種類</span><span class="sxs-lookup"><span data-stu-id="982b6-109">Type</span></span>| <span data-ttu-id="982b6-110">説明</span><span class="sxs-lookup"><span data-stu-id="982b6-110">Description</span></span>| 
+| <span data-ttu-id="9ff92-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="9ff92-108">Member</span></span>| <span data-ttu-id="9ff92-109">種類</span><span class="sxs-lookup"><span data-stu-id="9ff92-109">Type</span></span>| <span data-ttu-id="9ff92-110">説明</span><span class="sxs-lookup"><span data-stu-id="9ff92-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="982b6-111">richPresence</span><span class="sxs-lookup"><span data-stu-id="982b6-111">richPresence</span></span>| [<span data-ttu-id="982b6-112">RichPresenceRequest</span><span class="sxs-lookup"><span data-stu-id="982b6-112">RichPresenceRequest</span></span>](json-richpresencerequest.md)| <span data-ttu-id="982b6-113">ために使用するリッチ プレゼンス文字列のフレンドリ名。</span><span class="sxs-lookup"><span data-stu-id="982b6-113">The friendly name of the rich presence string that should be used.</span></span>| 
-| <span data-ttu-id="982b6-114">メディア</span><span class="sxs-lookup"><span data-stu-id="982b6-114">media</span></span>| <span data-ttu-id="982b6-115">MediaRequest</span><span class="sxs-lookup"><span data-stu-id="982b6-115">MediaRequest</span></span>| <span data-ttu-id="982b6-116">どのようなユーザーのメディアの情報が視聴またはをリッスンします。</span><span class="sxs-lookup"><span data-stu-id="982b6-116">Media information for what the user is watching or listening to.</span></span>| 
+| <span data-ttu-id="9ff92-111">richPresence</span><span class="sxs-lookup"><span data-stu-id="9ff92-111">richPresence</span></span>| [<span data-ttu-id="9ff92-112">RichPresenceRequest</span><span class="sxs-lookup"><span data-stu-id="9ff92-112">RichPresenceRequest</span></span>](json-richpresencerequest.md)| <span data-ttu-id="9ff92-113">ために使用するリッチ プレゼンス文字列のフレンドリ名。</span><span class="sxs-lookup"><span data-stu-id="9ff92-113">The friendly name of the rich presence string that should be used.</span></span>| 
+| <span data-ttu-id="9ff92-114">メディア</span><span class="sxs-lookup"><span data-stu-id="9ff92-114">media</span></span>| <span data-ttu-id="9ff92-115">MediaRequest</span><span class="sxs-lookup"><span data-stu-id="9ff92-115">MediaRequest</span></span>| <span data-ttu-id="9ff92-116">どのようなユーザーのメディアの情報が視聴またはをリッスンします。</span><span class="sxs-lookup"><span data-stu-id="9ff92-116">Media information for what the user is watching or listening to.</span></span>| 
   
 <a id="ID4EVB"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="982b6-117">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="982b6-117">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="9ff92-117">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="9ff92-117">Sample JSON syntax</span></span>
  
 
 ```json
@@ -53,13 +53,13 @@ ms.locfileid: "4019927"
 <a id="ID4E5B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="982b6-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="982b6-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9ff92-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="9ff92-118">See also</span></span>
  
 <a id="ID4EAC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="982b6-119">Parent</span><span class="sxs-lookup"><span data-stu-id="982b6-119">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="9ff92-119">Parent</span><span class="sxs-lookup"><span data-stu-id="9ff92-119">Parent</span></span> 
 
-[<span data-ttu-id="982b6-120">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="982b6-120">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="9ff92-120">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="9ff92-120">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

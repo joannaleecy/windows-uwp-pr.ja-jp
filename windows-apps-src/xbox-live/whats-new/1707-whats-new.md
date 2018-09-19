@@ -11,30 +11,30 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 新規事項, july 2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9583b1f51c9dbd11b803ac0d1c8871d81bc16b84
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4018007"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4051699"
 ---
-# <a name="whats-new-for-the-xbox-live-apis---july-2017"></a><span data-ttu-id="ec5d5-104">Xbox Live API の新規事項 - July 2017</span><span class="sxs-lookup"><span data-stu-id="ec5d5-104">What's new for the Xbox Live APIs - July 2017</span></span>
+# <a name="whats-new-for-the-xbox-live-apis---july-2017"></a><span data-ttu-id="bc408-104">Xbox Live API の新規事項 - July 2017</span><span class="sxs-lookup"><span data-stu-id="bc408-104">What's new for the Xbox Live APIs - July 2017</span></span>
 
-<span data-ttu-id="ec5d5-105">June 2017 リリースで追加された内容については、「[新規事項 - June 2017](1706-whats-new.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec5d5-105">Please see the [What's New - June 2017](1706-whats-new.md) article for what was added in the June 2017 release.</span></span>
+<span data-ttu-id="bc408-105">June 2017 リリースで追加された内容については、「[新規事項 - June 2017](1706-whats-new.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="bc408-105">Please see the [What's New - June 2017](1706-whats-new.md) article for what was added in the June 2017 release.</span></span>
 
-<span data-ttu-id="ec5d5-106">[Xbox Live API GitHub コミット履歴](https://github.com/Microsoft/xbox-live-api/commits/master)に関するページで、Xbox Live API に最近加えられたすべてのコード変更について確認することもできます。</span><span class="sxs-lookup"><span data-stu-id="ec5d5-106">You can also check the [Xbox Live API GitHub commit history](https://github.com/Microsoft/xbox-live-api/commits/master) to see all of the recent code changes to the Xbox Live APIs.</span></span>
+<span data-ttu-id="bc408-106">[Xbox Live API GitHub コミット履歴](https://github.com/Microsoft/xbox-live-api/commits/master)に関するページで、Xbox Live API に最近加えられたすべてのコード変更について確認することもできます。</span><span class="sxs-lookup"><span data-stu-id="bc408-106">You can also check the [Xbox Live API GitHub commit history](https://github.com/Microsoft/xbox-live-api/commits/master) to see all of the recent code changes to the Xbox Live APIs.</span></span>
 
-## <a name="xbox-live-features"></a><span data-ttu-id="ec5d5-107">Xbox Live の機能</span><span class="sxs-lookup"><span data-stu-id="ec5d5-107">Xbox Live features</span></span>
+## <a name="xbox-live-features"></a><span data-ttu-id="bc408-107">Xbox Live の機能</span><span class="sxs-lookup"><span data-stu-id="bc408-107">Xbox Live features</span></span>
 
-### <a name="multiplayer-updates"></a><span data-ttu-id="ec5d5-108">マルチプレイヤーの更新</span><span class="sxs-lookup"><span data-stu-id="ec5d5-108">Multiplayer updates</span></span>
+### <a name="multiplayer-updates"></a><span data-ttu-id="bc408-108">マルチプレイヤーの更新</span><span class="sxs-lookup"><span data-stu-id="bc408-108">Multiplayer updates</span></span>
 
-<span data-ttu-id="ec5d5-109">アクティビティ ハンドルと検索ハンドルの照会の応答にカスタム セッション プロパティが含まれるようになりました。</span><span class="sxs-lookup"><span data-stu-id="ec5d5-109">Querying activity handles and search handles now includes the custom session properties in the response.</span></span>
+<span data-ttu-id="bc408-109">アクティビティ ハンドルと検索ハンドルの照会の応答にカスタム セッション プロパティが含まれるようになりました。</span><span class="sxs-lookup"><span data-stu-id="bc408-109">Querying activity handles and search handles now includes the custom session properties in the response.</span></span>
 
-### <a name="tournaments"></a><span data-ttu-id="ec5d5-110">トーナメント</span><span class="sxs-lookup"><span data-stu-id="ec5d5-110">Tournaments</span></span>
+### <a name="tournaments"></a><span data-ttu-id="bc408-110">トーナメント</span><span class="sxs-lookup"><span data-stu-id="bc408-110">Tournaments</span></span>
 
-<span data-ttu-id="ec5d5-111">トーナメントをサポートするための新しい API が追加されました。</span><span class="sxs-lookup"><span data-stu-id="ec5d5-111">New APIs have been added to support tournaments.</span></span> <span data-ttu-id="ec5d5-112">xbox::services::tournaments::tournament_service クラスを使って、タイトルからトーナメント サービスにアクセスできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="ec5d5-112">You can now use the xbox::services::tournaments::tournament_service class to access the tournaments service from your title.</span></span>
-<span data-ttu-id="ec5d5-113">これらの新しいトーナメント API では、以下のシナリオが可能になります。</span><span class="sxs-lookup"><span data-stu-id="ec5d5-113">These new tournament APIs enable the following scenarios:</span></span>
-* <span data-ttu-id="ec5d5-114">サービスをクエリして現在のタイトルの既存トーナメントをすべて検索する。</span><span class="sxs-lookup"><span data-stu-id="ec5d5-114">Query the service to find all existing tournaments for the current title.</span></span>
-* <span data-ttu-id="ec5d5-115">サービスからトーナメントに関する詳細を取得する。</span><span class="sxs-lookup"><span data-stu-id="ec5d5-115">Retrieve details about a tournament from the service.</span></span>
-* <span data-ttu-id="ec5d5-116">サービスをクエリしてトーナメントのチームの一覧を取得する。</span><span class="sxs-lookup"><span data-stu-id="ec5d5-116">Query the service to retrieve a list of teams for a tournament.</span></span>
-* <span data-ttu-id="ec5d5-117">サービスからトーナメントのチームに関する詳細を取得する。</span><span class="sxs-lookup"><span data-stu-id="ec5d5-117">Retrieve details about the teams for a tournament from the service.</span></span>
-* <span data-ttu-id="ec5d5-118">リアルタイム アクティビティ (RTA) サブスクリプションを使用して、トーナメントおよびチームに対する変更を追跡する。</span><span class="sxs-lookup"><span data-stu-id="ec5d5-118">Track changes to tournaments and teams by using Real Time Activity (RTA) subscriptions.</span></span>
+<span data-ttu-id="bc408-111">トーナメントをサポートするための新しい API が追加されました。</span><span class="sxs-lookup"><span data-stu-id="bc408-111">New APIs have been added to support tournaments.</span></span> <span data-ttu-id="bc408-112">xbox::services::tournaments::tournament_service クラスを使って、タイトルからトーナメント サービスにアクセスできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="bc408-112">You can now use the xbox::services::tournaments::tournament_service class to access the tournaments service from your title.</span></span>
+<span data-ttu-id="bc408-113">これらの新しいトーナメント API では、以下のシナリオが可能になります。</span><span class="sxs-lookup"><span data-stu-id="bc408-113">These new tournament APIs enable the following scenarios:</span></span>
+* <span data-ttu-id="bc408-114">サービスをクエリして現在のタイトルの既存トーナメントをすべて検索する。</span><span class="sxs-lookup"><span data-stu-id="bc408-114">Query the service to find all existing tournaments for the current title.</span></span>
+* <span data-ttu-id="bc408-115">サービスからトーナメントに関する詳細を取得する。</span><span class="sxs-lookup"><span data-stu-id="bc408-115">Retrieve details about a tournament from the service.</span></span>
+* <span data-ttu-id="bc408-116">サービスをクエリしてトーナメントのチームの一覧を取得する。</span><span class="sxs-lookup"><span data-stu-id="bc408-116">Query the service to retrieve a list of teams for a tournament.</span></span>
+* <span data-ttu-id="bc408-117">サービスからトーナメントのチームに関する詳細を取得する。</span><span class="sxs-lookup"><span data-stu-id="bc408-117">Retrieve details about the teams for a tournament from the service.</span></span>
+* <span data-ttu-id="bc408-118">リアルタイム アクティビティ (RTA) サブスクリプションを使用して、トーナメントおよびチームに対する変更を追跡する。</span><span class="sxs-lookup"><span data-stu-id="bc408-118">Track changes to tournaments and teams by using Real Time Activity (RTA) subscriptions.</span></span>

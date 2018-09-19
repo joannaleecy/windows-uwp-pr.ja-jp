@@ -12,50 +12,50 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 341baca193d9ac8bf3a2599cd9ad77312729a89d
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4017095"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4052791"
 ---
-# <a name="usersxuidxuidlistspinslistnameremoveitems"></a><span data-ttu-id="3f2f8-104">/users/xuid(xuid)/lists/PINS/{listname}/RemoveItems</span><span class="sxs-lookup"><span data-stu-id="3f2f8-104">/users/xuid(xuid)/lists/PINS/{listname}/RemoveItems</span></span>
-<span data-ttu-id="3f2f8-105">一覧から項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="3f2f8-105">Removes items from a list.</span></span> <span data-ttu-id="3f2f8-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="3f2f8-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>
+# <a name="usersxuidxuidlistspinslistnameremoveitems"></a><span data-ttu-id="85c7f-104">/users/xuid(xuid)/lists/PINS/{listname}/RemoveItems</span><span class="sxs-lookup"><span data-stu-id="85c7f-104">/users/xuid(xuid)/lists/PINS/{listname}/RemoveItems</span></span>
+<span data-ttu-id="85c7f-105">一覧から項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="85c7f-105">Removes items from a list.</span></span> <span data-ttu-id="85c7f-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="85c7f-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="3f2f8-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="3f2f8-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="85c7f-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="85c7f-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="3f2f8-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="3f2f8-108">URI parameters</span></span> 
+## <a name="uri-parameters"></a><span data-ttu-id="85c7f-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="85c7f-108">URI parameters</span></span> 
  
-| <span data-ttu-id="3f2f8-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="3f2f8-109">Parameter</span></span>| <span data-ttu-id="3f2f8-110">型</span><span class="sxs-lookup"><span data-stu-id="3f2f8-110">Type</span></span>| <span data-ttu-id="3f2f8-111">説明</span><span class="sxs-lookup"><span data-stu-id="3f2f8-111">Description</span></span>| 
+| <span data-ttu-id="85c7f-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="85c7f-109">Parameter</span></span>| <span data-ttu-id="85c7f-110">型</span><span class="sxs-lookup"><span data-stu-id="85c7f-110">Type</span></span>| <span data-ttu-id="85c7f-111">説明</span><span class="sxs-lookup"><span data-stu-id="85c7f-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="3f2f8-112">XUID</span><span class="sxs-lookup"><span data-stu-id="3f2f8-112">XUID</span></span>| <span data-ttu-id="3f2f8-113">string</span><span class="sxs-lookup"><span data-stu-id="3f2f8-113">string</span></span>| <span data-ttu-id="3f2f8-114">ユーザーの XUID です。</span><span class="sxs-lookup"><span data-stu-id="3f2f8-114">XUID of the user.</span></span>| 
-| <span data-ttu-id="3f2f8-115">リスト</span><span class="sxs-lookup"><span data-stu-id="3f2f8-115">listname</span></span>| <span data-ttu-id="3f2f8-116">string</span><span class="sxs-lookup"><span data-stu-id="3f2f8-116">string</span></span>| <span data-ttu-id="3f2f8-117">操作をするリストの名前。</span><span class="sxs-lookup"><span data-stu-id="3f2f8-117">Name of the list to manipulate.</span></span>| 
+| <span data-ttu-id="85c7f-112">XUID</span><span class="sxs-lookup"><span data-stu-id="85c7f-112">XUID</span></span>| <span data-ttu-id="85c7f-113">string</span><span class="sxs-lookup"><span data-stu-id="85c7f-113">string</span></span>| <span data-ttu-id="85c7f-114">ユーザーの XUID です。</span><span class="sxs-lookup"><span data-stu-id="85c7f-114">XUID of the user.</span></span>| 
+| <span data-ttu-id="85c7f-115">リスト</span><span class="sxs-lookup"><span data-stu-id="85c7f-115">listname</span></span>| <span data-ttu-id="85c7f-116">string</span><span class="sxs-lookup"><span data-stu-id="85c7f-116">string</span></span>| <span data-ttu-id="85c7f-117">操作をするリストの名前。</span><span class="sxs-lookup"><span data-stu-id="85c7f-117">Name of the list to manipulate.</span></span>| 
   
 <a id="ID4E5B"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="3f2f8-118">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="3f2f8-118">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="85c7f-118">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="85c7f-118">Valid methods</span></span>
 
-[<span data-ttu-id="3f2f8-119">DELETE</span><span class="sxs-lookup"><span data-stu-id="3f2f8-119">DELETE</span></span>](uri-usersxuidlistspinslistnameremoveitemsdelete.md)
+[<span data-ttu-id="85c7f-119">DELETE</span><span class="sxs-lookup"><span data-stu-id="85c7f-119">DELETE</span></span>](uri-usersxuidlistspinslistnameremoveitemsdelete.md)
 
-<span data-ttu-id="3f2f8-120">&nbsp;&nbsp;インデックスを使用して、一覧から項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="3f2f8-120">&nbsp;&nbsp;Removes items from a list by index.</span></span>
+<span data-ttu-id="85c7f-120">&nbsp;&nbsp;インデックスを使用して、一覧から項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="85c7f-120">&nbsp;&nbsp;Removes items from a list by index.</span></span>
 
-[<span data-ttu-id="3f2f8-121">POST</span><span class="sxs-lookup"><span data-stu-id="3f2f8-121">POST</span></span>](uri-usersxuidlistspinslistnameremoveitemspost.md)
+[<span data-ttu-id="85c7f-121">POST</span><span class="sxs-lookup"><span data-stu-id="85c7f-121">POST</span></span>](uri-usersxuidlistspinslistnameremoveitemspost.md)
 
-<span data-ttu-id="3f2f8-122">&nbsp;&nbsp;ItemId によってリストから項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="3f2f8-122">&nbsp;&nbsp;Removes items from a list by itemId.</span></span>
+<span data-ttu-id="85c7f-122">&nbsp;&nbsp;ItemId によってリストから項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="85c7f-122">&nbsp;&nbsp;Removes items from a list by itemId.</span></span>
  
 <a id="ID4ELC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="3f2f8-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="3f2f8-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="85c7f-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="85c7f-123">See also</span></span>
  
 <a id="ID4ENC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="3f2f8-124">Parent</span><span class="sxs-lookup"><span data-stu-id="3f2f8-124">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="85c7f-124">Parent</span><span class="sxs-lookup"><span data-stu-id="85c7f-124">Parent</span></span> 
 
-[<span data-ttu-id="3f2f8-125">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="3f2f8-125">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="85c7f-125">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="85c7f-125">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

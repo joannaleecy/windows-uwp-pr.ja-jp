@@ -12,57 +12,57 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: dd7ed139fffb8bdb10ac5074d5e9725753678f1c
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4020139"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4051753"
 ---
-# <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a><span data-ttu-id="0bc90-104">/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}</span><span class="sxs-lookup"><span data-stu-id="0bc90-104">/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}</span></span>
+# <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a><span data-ttu-id="52353-104">/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}</span><span class="sxs-lookup"><span data-stu-id="52353-104">/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}</span></span>
 
-<span data-ttu-id="0bc90-105">マッチ チケットの削除操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="0bc90-105">Supports a DELETE operation for a match ticket.</span></span>
+<span data-ttu-id="52353-105">マッチ チケットの削除操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="52353-105">Supports a DELETE operation for a match ticket.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="0bc90-106">この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 103 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="0bc90-106">This URI is intended for use with contract 103 or later, and requires a header element of X-Xbl-Contract-Version: 103 or later on every request.</span></span>
+> <span data-ttu-id="52353-106">この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 103 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="52353-106">This URI is intended for use with contract 103 or later, and requires a header element of X-Xbl-Contract-Version: 103 or later on every request.</span></span>
 
 <a id="ID4ER"></a>
 
 
-## <a name="domain"></a><span data-ttu-id="0bc90-107">ドメイン</span><span class="sxs-lookup"><span data-stu-id="0bc90-107">Domain</span></span>
-<span data-ttu-id="0bc90-108">momatch.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="0bc90-108">momatch.xboxlive.com</span></span>  
+## <a name="domain"></a><span data-ttu-id="52353-107">ドメイン</span><span class="sxs-lookup"><span data-stu-id="52353-107">Domain</span></span>
+<span data-ttu-id="52353-108">momatch.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="52353-108">momatch.xboxlive.com</span></span>  
 <a id="ID4EW"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="0bc90-109">注釈</span><span class="sxs-lookup"><span data-stu-id="0bc90-109">Remarks</span></span>
-<span data-ttu-id="0bc90-110">この URI は、対象ユーザーの構成では所有者識別子の値の xuid、gt、および me をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="0bc90-110">This URI supports the values xuid, gt, and me for the owner identifier in configuration of the target user.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="52353-109">注釈</span><span class="sxs-lookup"><span data-stu-id="52353-109">Remarks</span></span>
+<span data-ttu-id="52353-110">この URI は、対象ユーザーの構成では所有者識別子の値の xuid、gt、および me をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="52353-110">This URI supports the values xuid, gt, and me for the owner identifier in configuration of the target user.</span></span>  
 <a id="ID4E2"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="0bc90-111">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="0bc90-111">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="52353-111">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="52353-111">URI parameters</span></span>
 
-| <span data-ttu-id="0bc90-112">パラメーター</span><span class="sxs-lookup"><span data-stu-id="0bc90-112">Parameter</span></span>| <span data-ttu-id="0bc90-113">型</span><span class="sxs-lookup"><span data-stu-id="0bc90-113">Type</span></span>| <span data-ttu-id="0bc90-114">説明</span><span class="sxs-lookup"><span data-stu-id="0bc90-114">Description</span></span>|
+| <span data-ttu-id="52353-112">パラメーター</span><span class="sxs-lookup"><span data-stu-id="52353-112">Parameter</span></span>| <span data-ttu-id="52353-113">型</span><span class="sxs-lookup"><span data-stu-id="52353-113">Type</span></span>| <span data-ttu-id="52353-114">説明</span><span class="sxs-lookup"><span data-stu-id="52353-114">Description</span></span>|
 | --- | --- | --- | --- |
-| <span data-ttu-id="0bc90-115">scid</span><span class="sxs-lookup"><span data-stu-id="0bc90-115">scid</span></span>| <span data-ttu-id="0bc90-116">GUID</span><span class="sxs-lookup"><span data-stu-id="0bc90-116">GUID</span></span>| <span data-ttu-id="0bc90-117">セッションのサービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="0bc90-117">The service configuration identifier (SCID) for the session.</span></span>|
-| <span data-ttu-id="0bc90-118">name</span><span class="sxs-lookup"><span data-stu-id="0bc90-118">name</span></span>| <span data-ttu-id="0bc90-119">string</span><span class="sxs-lookup"><span data-stu-id="0bc90-119">string</span></span>| <span data-ttu-id="0bc90-120">ホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="0bc90-120">The name of the hopper.</span></span>|
-| <span data-ttu-id="0bc90-121">ticketId</span><span class="sxs-lookup"><span data-stu-id="0bc90-121">ticketId</span></span>| <span data-ttu-id="0bc90-122">GUID</span><span class="sxs-lookup"><span data-stu-id="0bc90-122">GUID</span></span>| <span data-ttu-id="0bc90-123">チケット id。</span><span class="sxs-lookup"><span data-stu-id="0bc90-123">The ticket ID.</span></span>|
+| <span data-ttu-id="52353-115">scid</span><span class="sxs-lookup"><span data-stu-id="52353-115">scid</span></span>| <span data-ttu-id="52353-116">GUID</span><span class="sxs-lookup"><span data-stu-id="52353-116">GUID</span></span>| <span data-ttu-id="52353-117">セッションのサービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="52353-117">The service configuration identifier (SCID) for the session.</span></span>|
+| <span data-ttu-id="52353-118">name</span><span class="sxs-lookup"><span data-stu-id="52353-118">name</span></span>| <span data-ttu-id="52353-119">string</span><span class="sxs-lookup"><span data-stu-id="52353-119">string</span></span>| <span data-ttu-id="52353-120">ホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="52353-120">The name of the hopper.</span></span>|
+| <span data-ttu-id="52353-121">ticketId</span><span class="sxs-lookup"><span data-stu-id="52353-121">ticketId</span></span>| <span data-ttu-id="52353-122">GUID</span><span class="sxs-lookup"><span data-stu-id="52353-122">GUID</span></span>| <span data-ttu-id="52353-123">チケット id。</span><span class="sxs-lookup"><span data-stu-id="52353-123">The ticket ID.</span></span>|
 
 <a id="ID4EJC"></a>
 
 
-## <a name="valid-methods"></a><span data-ttu-id="0bc90-124">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="0bc90-124">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="52353-124">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="52353-124">Valid methods</span></span>
 
-[<span data-ttu-id="0bc90-125">DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})</span><span class="sxs-lookup"><span data-stu-id="0bc90-125">DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})</span></span>](uri-scidhoppernameticketiddelete.md)
+[<span data-ttu-id="52353-125">DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})</span><span class="sxs-lookup"><span data-stu-id="52353-125">DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})</span></span>](uri-scidhoppernameticketiddelete.md)
 
-<span data-ttu-id="0bc90-126">&nbsp;&nbsp;マッチ チケットを削除します。</span><span class="sxs-lookup"><span data-stu-id="0bc90-126">&nbsp;&nbsp;Removes a match ticket.</span></span>
+<span data-ttu-id="52353-126">&nbsp;&nbsp;マッチ チケットを削除します。</span><span class="sxs-lookup"><span data-stu-id="52353-126">&nbsp;&nbsp;Removes a match ticket.</span></span>
 
 <a id="ID4ETC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="0bc90-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="0bc90-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="52353-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="52353-127">See also</span></span>
 
 <a id="ID4EVC"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="0bc90-128">Parent</span><span class="sxs-lookup"><span data-stu-id="0bc90-128">Parent</span></span>  
+##### <a name="parent"></a><span data-ttu-id="52353-128">Parent</span><span class="sxs-lookup"><span data-stu-id="52353-128">Parent</span></span>  
 
-[<span data-ttu-id="0bc90-129">マッチメイキング URI</span><span class="sxs-lookup"><span data-stu-id="0bc90-129">Matchmaking URIs</span></span>](atoc-reference-matchtickets.md)
+[<span data-ttu-id="52353-129">マッチメイキング URI</span><span class="sxs-lookup"><span data-stu-id="52353-129">Matchmaking URIs</span></span>](atoc-reference-matchtickets.md)

@@ -12,50 +12,50 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fa886078d429719eb50aa8567bfe238768ba2e3
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4015897"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4054859"
 ---
-# <a name="usersxuidxuidscidsscidstats"></a><span data-ttu-id="5b5d6-104">/users/xuid({xuid})/scids/{scid}/stats</span><span class="sxs-lookup"><span data-stu-id="5b5d6-104">/users/xuid({xuid})/scids/{scid}/stats</span></span>
-<span data-ttu-id="5b5d6-105">スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="5b5d6-105">Accesses a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.</span></span> <span data-ttu-id="5b5d6-106">これらの Uri のドメインが`userstats.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5b5d6-106">The domain for these URIs is `userstats.xboxlive.com`.</span></span>
+# <a name="usersxuidxuidscidsscidstats"></a><span data-ttu-id="a6ffe-104">/users/xuid({xuid})/scids/{scid}/stats</span><span class="sxs-lookup"><span data-stu-id="a6ffe-104">/users/xuid({xuid})/scids/{scid}/stats</span></span>
+<span data-ttu-id="a6ffe-105">スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="a6ffe-105">Accesses a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.</span></span> <span data-ttu-id="a6ffe-106">これらの Uri のドメインが`userstats.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a6ffe-106">The domain for these URIs is `userstats.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="5b5d6-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="5b5d6-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="a6ffe-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a6ffe-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="5b5d6-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="5b5d6-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="a6ffe-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a6ffe-108">URI parameters</span></span>
  
-| <span data-ttu-id="5b5d6-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="5b5d6-109">Parameter</span></span>| <span data-ttu-id="5b5d6-110">型</span><span class="sxs-lookup"><span data-stu-id="5b5d6-110">Type</span></span>| <span data-ttu-id="5b5d6-111">説明</span><span class="sxs-lookup"><span data-stu-id="5b5d6-111">Description</span></span>| 
+| <span data-ttu-id="a6ffe-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a6ffe-109">Parameter</span></span>| <span data-ttu-id="a6ffe-110">型</span><span class="sxs-lookup"><span data-stu-id="a6ffe-110">Type</span></span>| <span data-ttu-id="a6ffe-111">説明</span><span class="sxs-lookup"><span data-stu-id="a6ffe-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="5b5d6-112">xuid</span><span class="sxs-lookup"><span data-stu-id="5b5d6-112">xuid</span></span>| <span data-ttu-id="5b5d6-113">GUID</span><span class="sxs-lookup"><span data-stu-id="5b5d6-113">GUID</span></span>| <span data-ttu-id="5b5d6-114">Xbox ユーザー ID (XUID) がに代わってサービス構成にアクセスするユーザーのです。</span><span class="sxs-lookup"><span data-stu-id="5b5d6-114">Xbox User ID (XUID) of the user on whose behalf to access the service configuration.</span></span>| 
-| <span data-ttu-id="5b5d6-115">scid</span><span class="sxs-lookup"><span data-stu-id="5b5d6-115">scid</span></span>| <span data-ttu-id="5b5d6-116">GUID</span><span class="sxs-lookup"><span data-stu-id="5b5d6-116">GUID</span></span>| <span data-ttu-id="5b5d6-117">アクセス対象のリソースが含まれているサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="5b5d6-117">Identifier of the service configuration that contains the resource being accessed.</span></span>| 
+| <span data-ttu-id="a6ffe-112">xuid</span><span class="sxs-lookup"><span data-stu-id="a6ffe-112">xuid</span></span>| <span data-ttu-id="a6ffe-113">GUID</span><span class="sxs-lookup"><span data-stu-id="a6ffe-113">GUID</span></span>| <span data-ttu-id="a6ffe-114">Xbox ユーザー ID (XUID) がに代わってサービス構成にアクセスするユーザーのです。</span><span class="sxs-lookup"><span data-stu-id="a6ffe-114">Xbox User ID (XUID) of the user on whose behalf to access the service configuration.</span></span>| 
+| <span data-ttu-id="a6ffe-115">scid</span><span class="sxs-lookup"><span data-stu-id="a6ffe-115">scid</span></span>| <span data-ttu-id="a6ffe-116">GUID</span><span class="sxs-lookup"><span data-stu-id="a6ffe-116">GUID</span></span>| <span data-ttu-id="a6ffe-117">アクセス対象のリソースが含まれているサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="a6ffe-117">Identifier of the service configuration that contains the resource being accessed.</span></span>| 
   
 <a id="ID4E4B"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="5b5d6-118">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="5b5d6-118">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="a6ffe-118">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="a6ffe-118">Valid methods</span></span>
 
-[<span data-ttu-id="5b5d6-119">GET</span><span class="sxs-lookup"><span data-stu-id="5b5d6-119">GET</span></span>](uri-usersxuidscidsscidstatsget.md)
+[<span data-ttu-id="a6ffe-119">GET</span><span class="sxs-lookup"><span data-stu-id="a6ffe-119">GET</span></span>](uri-usersxuidscidsscidstatsget.md)
 
-<span data-ttu-id="5b5d6-120">&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成を取得します。</span><span class="sxs-lookup"><span data-stu-id="5b5d6-120">&nbsp;&nbsp;Gets a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.</span></span>
+<span data-ttu-id="a6ffe-120">&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成を取得します。</span><span class="sxs-lookup"><span data-stu-id="a6ffe-120">&nbsp;&nbsp;Gets a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.</span></span>
 
-[<span data-ttu-id="5b5d6-121">値のメタデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="5b5d6-121">GET with value metadata</span></span>](uri-usersxuidscidsscidstatsgetvaluemetadata.md)
+[<span data-ttu-id="a6ffe-121">値のメタデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="a6ffe-121">GET with value metadata</span></span>](uri-usersxuidscidsscidstatsgetvaluemetadata.md)
 
-<span data-ttu-id="5b5d6-122">&nbsp;&nbsp;指定されたサービス構成内のユーザーの統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="5b5d6-122">&nbsp;&nbsp;Gets a list of specified statistics, including metadata associated with the statistic values, for a user in a specified service configuration.</span></span>
+<span data-ttu-id="a6ffe-122">&nbsp;&nbsp;指定されたサービス構成内のユーザーの統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="a6ffe-122">&nbsp;&nbsp;Gets a list of specified statistics, including metadata associated with the statistic values, for a user in a specified service configuration.</span></span>
  
 <a id="ID4EKC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="5b5d6-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="5b5d6-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a6ffe-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="a6ffe-123">See also</span></span>
  
 <a id="ID4EMC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="5b5d6-124">Parent</span><span class="sxs-lookup"><span data-stu-id="5b5d6-124">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="a6ffe-124">Parent</span><span class="sxs-lookup"><span data-stu-id="a6ffe-124">Parent</span></span> 
 
-[<span data-ttu-id="5b5d6-125">ユーザー統計 URI</span><span class="sxs-lookup"><span data-stu-id="5b5d6-125">User Statistics URIs</span></span>](atoc-reference-userstats.md)
+[<span data-ttu-id="a6ffe-125">ユーザー統計 URI</span><span class="sxs-lookup"><span data-stu-id="a6ffe-125">User Statistics URIs</span></span>](atoc-reference-userstats.md)
 
    
