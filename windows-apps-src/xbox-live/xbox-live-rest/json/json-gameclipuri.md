@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d9c5f2e4aa27f86069578211c5c3188b2921449a
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4020727"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4058471"
 ---
 # <a name="gameclipuri-json"></a>GameClipUri (JSON)
  

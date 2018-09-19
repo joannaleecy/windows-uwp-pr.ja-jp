@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4018300"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4060266"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>受取りアカウントの設定と税関連の書類
 

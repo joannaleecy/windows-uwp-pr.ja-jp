@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 携帯電話会社, 携帯電話への課金, 携帯電話会社による課金
 ms.localizationpriority: medium
 ms.openlocfilehash: c8d0e3093a6a44f748ca78ff3fad977f2cc94d77
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4024458"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4060076"
 ---
 # <a name="mobile-operator-billing"></a>携帯電話会社による課金
 

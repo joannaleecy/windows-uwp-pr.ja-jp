@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 776db1cf795ae964621d751d6b4b72d22ba82c2d
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4017887"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4057021"
 ---
 # <a name="mediamarketplaceidbrowse"></a>/media/{marketplaceId}/browse
 1 つのメディア グループ内の項目を参照できます。 参照 API は、クライアントから 1 つのメディア グループ内の項目を参照できます。 非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してデータのページにアクセスできます。

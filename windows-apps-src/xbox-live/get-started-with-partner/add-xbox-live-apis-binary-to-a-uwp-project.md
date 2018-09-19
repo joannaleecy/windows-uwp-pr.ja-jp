@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, NuGet
 ms.localizationpriority: medium
 ms.openlocfilehash: 84d3ce8b56e5d1bf921eef48499d54b1d3fc4c22
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4017889"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4055883"
 ---
 # <a name="add-xbox-live-apis-binary-package-to-your-uwp-project"></a>Xbox Live API のバイナリ パッケージを UWP プロジェクトに追加する
 

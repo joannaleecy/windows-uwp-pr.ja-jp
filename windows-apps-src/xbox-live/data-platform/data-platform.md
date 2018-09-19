@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 統計, 実績, ランキング, 設計, データ プラットフォーム
 ms.localizationpriority: medium
 ms.openlocfilehash: fa9f3e9fa697e3ec7ca474a6e0a38cf5ac9536ad
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4016679"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4056609"
 ---
 # <a name="xbox-live-data-platform---stats-leaderboards-achievements"></a>Xbox Live データ プラットフォーム - 統計、ランキング、実績
 

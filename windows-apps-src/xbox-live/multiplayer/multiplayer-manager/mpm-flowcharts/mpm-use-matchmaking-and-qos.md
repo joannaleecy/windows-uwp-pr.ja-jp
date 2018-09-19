@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, MPM, マルチプレイヤー, サービス品質, QoS, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fad7f1da832a63c93e249f25420ad8e8ab8c2da
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4019975"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4059885"
 ---
 # <a name="flowchart---use-matchmaking-and-manage-quality-of-service"></a>フローチャート - マッチメイキングを使用し、サービス品質を管理する
 

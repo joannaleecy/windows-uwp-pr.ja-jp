@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, バック グラウンド タスクでは、アプリのサービスに接続されているデバイス、リモート システム
 ms.localizationpriority: medium
-ms.openlocfilehash: 142eba8eb919ed25632f44a6f185ae40e16dec6b
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.openlocfilehash: d4aa5a4f379e0791e9da7db4ecd2a27c09cf0a3a
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4021712"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4056976"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>起動、再開、バックグラウンド タスク
 
@@ -102,7 +102,7 @@ ms.locfileid: "4021712"
 | [バックグラウンド タスクからのセンサーやデバイスへのアクセス](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。 |
 | [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)       | フォアグラウンド アプリと同じプロセスで実行されるバックグラウンド タスクを作成して登録します。 |
 | [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)           | アプリとは別のプロセスで実行されるバックグラウンド タスクを作成して登録し、アプリがフォアグラウンドにないときに実行するように登録します。 |
-| [アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクへ変換](convert-out-of-process-background-task.md) | アウトプロセスのバックグラウンド タスクを、フォアグラウンド アプリと同じプロセスで実行されるインプロセスのバックグラウンド タスクに変換する方法を説明します。|
+| [インプロセス バック グラウンド タスクをアウト プロセス バック グラウンド タスクを移植します。](convert-out-of-process-background-task.md) | フォア グラウンド アプリと同じプロセスで実行されるインプロセスのバック グラウンド タスクをアウト プロセス バック グラウンド タスクを移植する方法について説明します。|
 | [バックグラウンド タスクのデバッグ](debug-a-background-task.md)                                                       | バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。 |
 | [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md) | アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。 |
 | [バックグラウンド タスクの登録のグループ化](group-background-tasks.md)                                             | グループによってバックグラウンド タスクの登録を分離します。 |

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f7bc8a4dae55c60e501c2a38e6806b00f4d5075
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4018781"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4060805"
 ---
 # <a name="post-serviceconfigsscidbatch"></a>POST (/serviceconfigs/{scid}/batch)
 サービス構成の複数の Xbox ユーザー Id には、バッチ クエリを作成します。

@@ -15,11 +15,11 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d716bf25c4df41af32084190522e3c5fcd4885b
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4019838"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4057968"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>UWP アプリでの視線の操作と視線追跡
 

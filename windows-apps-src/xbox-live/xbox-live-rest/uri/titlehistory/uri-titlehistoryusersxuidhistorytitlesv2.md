@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a4780c92fc16adb697783ecee50d36523ff92998
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4017885"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4058653"
 ---
 # <a name="usersxuidxuidhistorytitles"></a>/users/xuid({xuid})/history/titles
  

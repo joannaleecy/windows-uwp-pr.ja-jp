@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c1b1741beaf1ffa2b034726a41c56339136e6f1
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4016877"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4054673"
 ---
 # <a name="step-by-step-guide-to-integrate-xbox-live-for-managed-partners-and-idxbox-members"></a>対象パートナーおよび ID@Xbox メンバー向けに Xbox Live を統合するためのステップ バイ ステップ ガイド
 

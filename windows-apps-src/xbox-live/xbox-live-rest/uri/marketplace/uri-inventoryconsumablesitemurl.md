@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed278542fa538a1297069b0f7d67d413e180f30
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4019037"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4056669"
 ---
 # <a name="usersmeconsumablesitemid"></a>/users/me/consumables/{itemID}
 特定のコンシューマブルなインベントリ項目の詳細情報の完全なセットにアクセスします。
