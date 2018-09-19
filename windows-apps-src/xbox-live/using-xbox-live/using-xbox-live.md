@@ -11,24 +11,24 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f73133dc1bd78d3d7f714ac12b9069def093086
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4014649"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4057507"
 ---
-# <a name="using-xbox-live"></a><span data-ttu-id="fd2ba-104">Xbox Live を使用する</span><span class="sxs-lookup"><span data-stu-id="fd2ba-104">Using Xbox Live</span></span>
+# <a name="using-xbox-live"></a><span data-ttu-id="42df3-104">Xbox Live を使用する</span><span class="sxs-lookup"><span data-stu-id="42df3-104">Using Xbox Live</span></span>
 
-<span data-ttu-id="fd2ba-105">このセクションでは、Xbox Live を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="fd2ba-105">This section covers how to use Xbox Live</span></span>
+<span data-ttu-id="42df3-105">このセクションでは、Xbox Live を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="42df3-105">This section covers how to use Xbox Live</span></span>
 
-## <a name="in-this-section"></a><span data-ttu-id="fd2ba-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="fd2ba-106">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="42df3-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="42df3-106">In this section</span></span>
 
-[<span data-ttu-id="fd2ba-107">認証</span><span class="sxs-lookup"><span data-stu-id="fd2ba-107">Authentication</span></span>](auth/authentication.md)
+[<span data-ttu-id="42df3-107">認証</span><span class="sxs-lookup"><span data-stu-id="42df3-107">Authentication</span></span>](auth/authentication.md)
 
-[<span data-ttu-id="fd2ba-108">Xbox Live の呼び出しのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="fd2ba-108">Best practices for calling Xbox Live</span></span>](best-practices/best-practices-for-calling-xbox-live.md)
+[<span data-ttu-id="42df3-108">Xbox Live の呼び出しのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="42df3-108">Best practices for calling Xbox Live</span></span>](best-practices/best-practices-for-calling-xbox-live.md)
 
-[<span data-ttu-id="fd2ba-109">エラー処理</span><span class="sxs-lookup"><span data-stu-id="fd2ba-109">Error handling</span></span>](error-handling/error-handling.md)
+[<span data-ttu-id="42df3-109">エラー処理</span><span class="sxs-lookup"><span data-stu-id="42df3-109">Error handling</span></span>](error-handling/error-handling.md)
 
-[<span data-ttu-id="fd2ba-110">Xbox Live のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="fd2ba-110">Troubleshooting Xbox Live</span></span>](troubleshooting/troubleshooting.md)
+[<span data-ttu-id="42df3-110">Xbox Live のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="42df3-110">Troubleshooting Xbox Live</span></span>](troubleshooting/troubleshooting.md)
 
-[<span data-ttu-id="fd2ba-111">XDK から UWP への Xbox Live コードの移植</span><span class="sxs-lookup"><span data-stu-id="fd2ba-111">Porting Xbox Live code from XDK to UWP</span></span>](porting-xbox-live-code-from-xdk-to-uwp.md)
+[<span data-ttu-id="42df3-111">XDK から UWP への Xbox Live コードの移植</span><span class="sxs-lookup"><span data-stu-id="42df3-111">Porting Xbox Live code from XDK to UWP</span></span>](porting-xbox-live-code-from-xdk-to-uwp.md)

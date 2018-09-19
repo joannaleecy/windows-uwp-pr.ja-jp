@@ -12,48 +12,48 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d1bf7735fabbc08f723dbaf77a020b205f66584d
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4018123"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4057629"
 ---
-# <a name="serviceconfigsscidsessiontemplatessessiontemplatename"></a><span data-ttu-id="8e79e-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}</span><span class="sxs-lookup"><span data-stu-id="8e79e-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}</span></span>
-<span data-ttu-id="8e79e-105">セッション テンプレート名のセットを取得する GET 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="8e79e-105">Supports a GET operation to retrieve a set of session template names.</span></span> 
+# <a name="serviceconfigsscidsessiontemplatessessiontemplatename"></a><span data-ttu-id="0322f-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}</span><span class="sxs-lookup"><span data-stu-id="0322f-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}</span></span>
+<span data-ttu-id="0322f-105">セッション テンプレート名のセットを取得する GET 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="0322f-105">Supports a GET operation to retrieve a set of session template names.</span></span> 
 <a id="ID4EO"></a>
 
  
-## <a name="domain"></a><span data-ttu-id="8e79e-106">ドメイン</span><span class="sxs-lookup"><span data-stu-id="8e79e-106">Domain</span></span>
-<span data-ttu-id="8e79e-107">sessiondirectory.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="8e79e-107">sessiondirectory.xboxlive.com</span></span>  
+## <a name="domain"></a><span data-ttu-id="0322f-106">ドメイン</span><span class="sxs-lookup"><span data-stu-id="0322f-106">Domain</span></span>
+<span data-ttu-id="0322f-107">sessiondirectory.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="0322f-107">sessiondirectory.xboxlive.com</span></span>  
 <a id="ID4ET"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="8e79e-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="8e79e-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="0322f-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="0322f-108">URI parameters</span></span>
  
-| <span data-ttu-id="8e79e-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="8e79e-109">Parameter</span></span>| <span data-ttu-id="8e79e-110">型</span><span class="sxs-lookup"><span data-stu-id="8e79e-110">Type</span></span>| <span data-ttu-id="8e79e-111">説明</span><span class="sxs-lookup"><span data-stu-id="8e79e-111">Description</span></span>| 
+| <span data-ttu-id="0322f-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="0322f-109">Parameter</span></span>| <span data-ttu-id="0322f-110">型</span><span class="sxs-lookup"><span data-stu-id="0322f-110">Type</span></span>| <span data-ttu-id="0322f-111">説明</span><span class="sxs-lookup"><span data-stu-id="0322f-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="8e79e-112">scid</span><span class="sxs-lookup"><span data-stu-id="8e79e-112">scid</span></span>| <span data-ttu-id="8e79e-113">GUID</span><span class="sxs-lookup"><span data-stu-id="8e79e-113">GUID</span></span>| <span data-ttu-id="8e79e-114">サービス構成の識別子 (SCID)。</span><span class="sxs-lookup"><span data-stu-id="8e79e-114">Service configuration identifer (SCID).</span></span> <span data-ttu-id="8e79e-115">パート 1 セッションの id。</span><span class="sxs-lookup"><span data-stu-id="8e79e-115">Part 1 of the session ID.</span></span>| 
-| <span data-ttu-id="8e79e-116">sessionTemplateName</span><span class="sxs-lookup"><span data-stu-id="8e79e-116">sessionTemplateName</span></span>| <span data-ttu-id="8e79e-117">string</span><span class="sxs-lookup"><span data-stu-id="8e79e-117">string</span></span>| <span data-ttu-id="8e79e-118">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="8e79e-118">Name of the current instance of the session template.</span></span> <span data-ttu-id="8e79e-119">パート 2 セッションの id。</span><span class="sxs-lookup"><span data-stu-id="8e79e-119">Part 2 of the session ID.</span></span> | 
+| <span data-ttu-id="0322f-112">scid</span><span class="sxs-lookup"><span data-stu-id="0322f-112">scid</span></span>| <span data-ttu-id="0322f-113">GUID</span><span class="sxs-lookup"><span data-stu-id="0322f-113">GUID</span></span>| <span data-ttu-id="0322f-114">サービス構成の識別子 (SCID)。</span><span class="sxs-lookup"><span data-stu-id="0322f-114">Service configuration identifer (SCID).</span></span> <span data-ttu-id="0322f-115">パート 1 セッションの id。</span><span class="sxs-lookup"><span data-stu-id="0322f-115">Part 1 of the session ID.</span></span>| 
+| <span data-ttu-id="0322f-116">sessionTemplateName</span><span class="sxs-lookup"><span data-stu-id="0322f-116">sessionTemplateName</span></span>| <span data-ttu-id="0322f-117">string</span><span class="sxs-lookup"><span data-stu-id="0322f-117">string</span></span>| <span data-ttu-id="0322f-118">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="0322f-118">Name of the current instance of the session template.</span></span> <span data-ttu-id="0322f-119">パート 2 セッションの id。</span><span class="sxs-lookup"><span data-stu-id="0322f-119">Part 2 of the session ID.</span></span> | 
   
 <a id="ID4EYB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="8e79e-120">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="8e79e-120">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="0322f-120">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="0322f-120">Valid methods</span></span>
 
-[<span data-ttu-id="8e79e-121">GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})</span><span class="sxs-lookup"><span data-stu-id="8e79e-121">GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})</span></span>](uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.md)
+[<span data-ttu-id="0322f-121">GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})</span><span class="sxs-lookup"><span data-stu-id="0322f-121">GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})</span></span>](uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.md)
 
-<span data-ttu-id="8e79e-122">&nbsp;&nbsp;セッション テンプレートの名前のセットを取得します。</span><span class="sxs-lookup"><span data-stu-id="8e79e-122">&nbsp;&nbsp;Retrieves a set of session template names.</span></span>
+<span data-ttu-id="0322f-122">&nbsp;&nbsp;セッション テンプレートの名前のセットを取得します。</span><span class="sxs-lookup"><span data-stu-id="0322f-122">&nbsp;&nbsp;Retrieves a set of session template names.</span></span>
  
 <a id="ID4ECC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="8e79e-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="8e79e-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0322f-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="0322f-123">See also</span></span>
  
 <a id="ID4EEC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="8e79e-124">Parent</span><span class="sxs-lookup"><span data-stu-id="8e79e-124">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="0322f-124">Parent</span><span class="sxs-lookup"><span data-stu-id="0322f-124">Parent</span></span> 
 
-[<span data-ttu-id="8e79e-125">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="8e79e-125">Session Directory URIs</span></span>](atoc-reference-sessiondirectory.md)
+[<span data-ttu-id="0322f-125">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="0322f-125">Session Directory URIs</span></span>](atoc-reference-sessiondirectory.md)
 
    

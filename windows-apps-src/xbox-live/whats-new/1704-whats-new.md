@@ -11,30 +11,30 @@ ms.technology: uwp
 keywords: Xbox Live、Xbox、ゲーム、UWP、Windows 10、Xbox One、アリーナ、トーナメント
 ms.localizationpriority: medium
 ms.openlocfilehash: 5084b0badf29bdf5e4adc3b45ee1961d6a4e7097
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4020195"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4060989"
 ---
-# <a name="whats-new-for-the-xbox-live-apis---april-2017"></a><span data-ttu-id="cc5c7-104">Xbox Live API の新規事項 - April 2017</span><span class="sxs-lookup"><span data-stu-id="cc5c7-104">What's new for the Xbox Live APIs - April 2017</span></span>
+# <a name="whats-new-for-the-xbox-live-apis---april-2017"></a><span data-ttu-id="d8df8-104">Xbox Live API の新規事項 - April 2017</span><span class="sxs-lookup"><span data-stu-id="d8df8-104">What's new for the Xbox Live APIs - April 2017</span></span>
 
-<span data-ttu-id="cc5c7-105">March 2017 リリースで追加された内容については、「[新規事項 - March 2017](1703-whats-new.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc5c7-105">Please see the [What's New - March 2017](1703-whats-new.md) article for what was added in the March 2017 release.</span></span>
+<span data-ttu-id="d8df8-105">March 2017 リリースで追加された内容については、「[新規事項 - March 2017](1703-whats-new.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d8df8-105">Please see the [What's New - March 2017](1703-whats-new.md) article for what was added in the March 2017 release.</span></span>
 
-## <a name="xbox-services-apis"></a><span data-ttu-id="cc5c7-106">Xbox サービス API</span><span class="sxs-lookup"><span data-stu-id="cc5c7-106">Xbox Services APIs</span></span>
+## <a name="xbox-services-apis"></a><span data-ttu-id="d8df8-106">Xbox サービス API</span><span class="sxs-lookup"><span data-stu-id="d8df8-106">Xbox Services APIs</span></span>
 
-### <a name="visual-studio-2017"></a><span data-ttu-id="cc5c7-107">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="cc5c7-107">Visual Studio 2017</span></span>
+### <a name="visual-studio-2017"></a><span data-ttu-id="d8df8-107">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="d8df8-107">Visual Studio 2017</span></span>
 
-<span data-ttu-id="cc5c7-108">Xbox Live API は、ユニバーサル Windows プラットフォーム (UWP) および Xbox One タイトルのために Visual Studio 2017 をサポートするように更新されました。</span><span class="sxs-lookup"><span data-stu-id="cc5c7-108">The Xbox Live APIs have been updated to support Visual Studio 2017, for both Universal Windows Platform (UWP) and Xbox One titles.</span></span>
+<span data-ttu-id="d8df8-108">Xbox Live API は、ユニバーサル Windows プラットフォーム (UWP) および Xbox One タイトルのために Visual Studio 2017 をサポートするように更新されました。</span><span class="sxs-lookup"><span data-stu-id="d8df8-108">The Xbox Live APIs have been updated to support Visual Studio 2017, for both Universal Windows Platform (UWP) and Xbox One titles.</span></span>
 
-### <a name="tournaments"></a><span data-ttu-id="cc5c7-109">トーナメント</span><span class="sxs-lookup"><span data-stu-id="cc5c7-109">Tournaments</span></span>
+### <a name="tournaments"></a><span data-ttu-id="d8df8-109">トーナメント</span><span class="sxs-lookup"><span data-stu-id="d8df8-109">Tournaments</span></span>
 
-<span data-ttu-id="cc5c7-110">トーナメントをサポートするための新しい API が追加されました。</span><span class="sxs-lookup"><span data-stu-id="cc5c7-110">New APIs have been added to support tournaments.</span></span> <span data-ttu-id="cc5c7-111">`xbox::services::tournaments::tournament_service` クラスを使って、タイトルからトーナメント サービスにアクセスできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="cc5c7-111">You can now use the `xbox::services::tournaments::tournament_service` class to access the tournaments service from your title.</span></span>
+<span data-ttu-id="d8df8-110">トーナメントをサポートするための新しい API が追加されました。</span><span class="sxs-lookup"><span data-stu-id="d8df8-110">New APIs have been added to support tournaments.</span></span> <span data-ttu-id="d8df8-111">`xbox::services::tournaments::tournament_service` クラスを使って、タイトルからトーナメント サービスにアクセスできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="d8df8-111">You can now use the `xbox::services::tournaments::tournament_service` class to access the tournaments service from your title.</span></span>
 
-<span data-ttu-id="cc5c7-112">これらの新しいトーナメント API では、以下のシナリオが可能になります。</span><span class="sxs-lookup"><span data-stu-id="cc5c7-112">These new tournament APIs enable the following scenarios:</span></span>
+<span data-ttu-id="d8df8-112">これらの新しいトーナメント API では、以下のシナリオが可能になります。</span><span class="sxs-lookup"><span data-stu-id="d8df8-112">These new tournament APIs enable the following scenarios:</span></span>
 
-* <span data-ttu-id="cc5c7-113">サービスをクエリして現在のタイトルの既存トーナメントをすべて検索する。</span><span class="sxs-lookup"><span data-stu-id="cc5c7-113">Query the service to find all existing tournaments for the current title.</span></span>
-* <span data-ttu-id="cc5c7-114">サービスからトーナメントに関する詳細を取得する。</span><span class="sxs-lookup"><span data-stu-id="cc5c7-114">Retrieve details about a tournament from the service.</span></span>
-* <span data-ttu-id="cc5c7-115">サービスをクエリしてトーナメントのチームの一覧を取得する。</span><span class="sxs-lookup"><span data-stu-id="cc5c7-115">Query the service to retrieve a list of teams for a tournament.</span></span>
-* <span data-ttu-id="cc5c7-116">サービスからトーナメントのチームに関する詳細を取得する。</span><span class="sxs-lookup"><span data-stu-id="cc5c7-116">Retrieve details about the teams for a tournament from the service.</span></span>
-* <span data-ttu-id="cc5c7-117">リアルタイム アクティビティ (RTA) サブスクリプションを使用して、トーナメントおよびチームに対する変更を追跡する。</span><span class="sxs-lookup"><span data-stu-id="cc5c7-117">Track changes to tournaments and teams by using Real Time Activity (RTA) subscriptions.</span></span>
+* <span data-ttu-id="d8df8-113">サービスをクエリして現在のタイトルの既存トーナメントをすべて検索する。</span><span class="sxs-lookup"><span data-stu-id="d8df8-113">Query the service to find all existing tournaments for the current title.</span></span>
+* <span data-ttu-id="d8df8-114">サービスからトーナメントに関する詳細を取得する。</span><span class="sxs-lookup"><span data-stu-id="d8df8-114">Retrieve details about a tournament from the service.</span></span>
+* <span data-ttu-id="d8df8-115">サービスをクエリしてトーナメントのチームの一覧を取得する。</span><span class="sxs-lookup"><span data-stu-id="d8df8-115">Query the service to retrieve a list of teams for a tournament.</span></span>
+* <span data-ttu-id="d8df8-116">サービスからトーナメントのチームに関する詳細を取得する。</span><span class="sxs-lookup"><span data-stu-id="d8df8-116">Retrieve details about the teams for a tournament from the service.</span></span>
+* <span data-ttu-id="d8df8-117">リアルタイム アクティビティ (RTA) サブスクリプションを使用して、トーナメントおよびチームに対する変更を追跡する。</span><span class="sxs-lookup"><span data-stu-id="d8df8-117">Track changes to tournaments and teams by using Real Time Activity (RTA) subscriptions.</span></span>

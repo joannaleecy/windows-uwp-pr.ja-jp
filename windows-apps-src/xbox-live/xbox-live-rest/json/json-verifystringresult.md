@@ -12,30 +12,30 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f774f603d89e29f5233fb0866303bab4577ca3d2
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4022435"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4056763"
 ---
-# <a name="verifystringresult-json"></a><span data-ttu-id="cfde0-104">VerifyStringResult (JSON)</span><span class="sxs-lookup"><span data-stu-id="cfde0-104">VerifyStringResult (JSON)</span></span>
-<span data-ttu-id="cfde0-105">[/System/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)に送信された各文字列に対応する結果コード。</span><span class="sxs-lookup"><span data-stu-id="cfde0-105">Result codes corresponding to each string submitted to [/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md).</span></span>
+# <a name="verifystringresult-json"></a><span data-ttu-id="a7c04-104">VerifyStringResult (JSON)</span><span class="sxs-lookup"><span data-stu-id="a7c04-104">VerifyStringResult (JSON)</span></span>
+<span data-ttu-id="a7c04-105">[/System/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)に送信された各文字列に対応する結果コード。</span><span class="sxs-lookup"><span data-stu-id="a7c04-105">Result codes corresponding to each string submitted to [/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md).</span></span>
 <a id="ID4ER"></a>
 
 
-## <a name="verifystringresult"></a><span data-ttu-id="cfde0-106">VerifyStringResult</span><span class="sxs-lookup"><span data-stu-id="cfde0-106">VerifyStringResult</span></span>
+## <a name="verifystringresult"></a><span data-ttu-id="a7c04-106">VerifyStringResult</span><span class="sxs-lookup"><span data-stu-id="a7c04-106">VerifyStringResult</span></span>
 
-<span data-ttu-id="cfde0-107">VerifyStringResult オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="cfde0-107">The VerifyStringResult object has the following specification.</span></span>
+<span data-ttu-id="a7c04-107">VerifyStringResult オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="a7c04-107">The VerifyStringResult object has the following specification.</span></span>
 
-| <span data-ttu-id="cfde0-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="cfde0-108">Member</span></span>| <span data-ttu-id="cfde0-109">種類</span><span class="sxs-lookup"><span data-stu-id="cfde0-109">Type</span></span>| <span data-ttu-id="cfde0-110">説明</span><span class="sxs-lookup"><span data-stu-id="cfde0-110">Description</span></span>|
+| <span data-ttu-id="a7c04-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="a7c04-108">Member</span></span>| <span data-ttu-id="a7c04-109">種類</span><span class="sxs-lookup"><span data-stu-id="a7c04-109">Type</span></span>| <span data-ttu-id="a7c04-110">説明</span><span class="sxs-lookup"><span data-stu-id="a7c04-110">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="cfde0-111">resultCode</span><span class="sxs-lookup"><span data-stu-id="cfde0-111">resultCode</span></span>| <span data-ttu-id="cfde0-112">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="cfde0-112">32-bit unsigned integer</span></span>| <span data-ttu-id="cfde0-113">必須。</span><span class="sxs-lookup"><span data-stu-id="cfde0-113">Required.</span></span> <span data-ttu-id="cfde0-114">HResult コードに対応する文字列を送信します。</span><span class="sxs-lookup"><span data-stu-id="cfde0-114">HResult code corresponding to submitted string.</span></span>|
-| <span data-ttu-id="cfde0-115">offendingString</span><span class="sxs-lookup"><span data-stu-id="cfde0-115">offendingString</span></span>| <span data-ttu-id="cfde0-116">string</span><span class="sxs-lookup"><span data-stu-id="cfde0-116">string</span></span>| <span data-ttu-id="cfde0-117">必須。</span><span class="sxs-lookup"><span data-stu-id="cfde0-117">Required.</span></span> <span data-ttu-id="cfde0-118">拒否される文字列の原因となった文字列値。</span><span class="sxs-lookup"><span data-stu-id="cfde0-118">String value that caused a string to be rejected.</span></span>|
+| <span data-ttu-id="a7c04-111">resultCode</span><span class="sxs-lookup"><span data-stu-id="a7c04-111">resultCode</span></span>| <span data-ttu-id="a7c04-112">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="a7c04-112">32-bit unsigned integer</span></span>| <span data-ttu-id="a7c04-113">必須。</span><span class="sxs-lookup"><span data-stu-id="a7c04-113">Required.</span></span> <span data-ttu-id="a7c04-114">HResult コードに対応する文字列を送信します。</span><span class="sxs-lookup"><span data-stu-id="a7c04-114">HResult code corresponding to submitted string.</span></span>|
+| <span data-ttu-id="a7c04-115">offendingString</span><span class="sxs-lookup"><span data-stu-id="a7c04-115">offendingString</span></span>| <span data-ttu-id="a7c04-116">string</span><span class="sxs-lookup"><span data-stu-id="a7c04-116">string</span></span>| <span data-ttu-id="a7c04-117">必須。</span><span class="sxs-lookup"><span data-stu-id="a7c04-117">Required.</span></span> <span data-ttu-id="a7c04-118">拒否される文字列の原因となった文字列値。</span><span class="sxs-lookup"><span data-stu-id="a7c04-118">String value that caused a string to be rejected.</span></span>|
 
 <a id="ID4EXB"></a>
 
 
-## <a name="sample-json-syntax"></a><span data-ttu-id="cfde0-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="cfde0-119">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="a7c04-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="a7c04-119">Sample JSON syntax</span></span>
 
 
 ```json
@@ -52,31 +52,31 @@ ms.locfileid: "4022435"
 ```
 
 
-#### <a name="common-hresult-values"></a><span data-ttu-id="cfde0-120">一般的な HResult 値</span><span class="sxs-lookup"><span data-stu-id="cfde0-120">Common HResult Values</span></span>
+#### <a name="common-hresult-values"></a><span data-ttu-id="a7c04-120">一般的な HResult 値</span><span class="sxs-lookup"><span data-stu-id="a7c04-120">Common HResult Values</span></span>
 
-| <span data-ttu-id="cfde0-121">値</span><span class="sxs-lookup"><span data-stu-id="cfde0-121">Value</span></span>| <span data-ttu-id="cfde0-122">エラーの名前</span><span class="sxs-lookup"><span data-stu-id="cfde0-122">Error Name</span></span>|
+| <span data-ttu-id="a7c04-121">値</span><span class="sxs-lookup"><span data-stu-id="a7c04-121">Value</span></span>| <span data-ttu-id="a7c04-122">エラーの名前</span><span class="sxs-lookup"><span data-stu-id="a7c04-122">Error Name</span></span>|
 | --- | --- | --- | --- | --- |
-| <span data-ttu-id="cfde0-123">0</span><span class="sxs-lookup"><span data-stu-id="cfde0-123">0</span></span>| <span data-ttu-id="cfde0-124">成功</span><span class="sxs-lookup"><span data-stu-id="cfde0-124">Success</span></span>|
-| <span data-ttu-id="cfde0-125">1</span><span class="sxs-lookup"><span data-stu-id="cfde0-125">1</span></span>| <span data-ttu-id="cfde0-126">不快感を与える文字列</span><span class="sxs-lookup"><span data-stu-id="cfde0-126">Offensive string</span></span>|
-| <span data-ttu-id="cfde0-127">2</span><span class="sxs-lookup"><span data-stu-id="cfde0-127">2</span></span>| <span data-ttu-id="cfde0-128">文字列が長すぎます</span><span class="sxs-lookup"><span data-stu-id="cfde0-128">String too long</span></span>|
-| <span data-ttu-id="cfde0-129">3</span><span class="sxs-lookup"><span data-stu-id="cfde0-129">3</span></span>| <span data-ttu-id="cfde0-130">不明なエラー</span><span class="sxs-lookup"><span data-stu-id="cfde0-130">Unknown error</span></span>|
+| <span data-ttu-id="a7c04-123">0</span><span class="sxs-lookup"><span data-stu-id="a7c04-123">0</span></span>| <span data-ttu-id="a7c04-124">成功</span><span class="sxs-lookup"><span data-stu-id="a7c04-124">Success</span></span>|
+| <span data-ttu-id="a7c04-125">1</span><span class="sxs-lookup"><span data-stu-id="a7c04-125">1</span></span>| <span data-ttu-id="a7c04-126">不快感を与える文字列</span><span class="sxs-lookup"><span data-stu-id="a7c04-126">Offensive string</span></span>|
+| <span data-ttu-id="a7c04-127">2</span><span class="sxs-lookup"><span data-stu-id="a7c04-127">2</span></span>| <span data-ttu-id="a7c04-128">文字列が長すぎます</span><span class="sxs-lookup"><span data-stu-id="a7c04-128">String too long</span></span>|
+| <span data-ttu-id="a7c04-129">3</span><span class="sxs-lookup"><span data-stu-id="a7c04-129">3</span></span>| <span data-ttu-id="a7c04-130">不明なエラー</span><span class="sxs-lookup"><span data-stu-id="a7c04-130">Unknown error</span></span>|
 
 <a id="ID4ELD"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="cfde0-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="cfde0-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a7c04-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="a7c04-131">See also</span></span>
 
 <a id="ID4END"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="cfde0-132">Parent</span><span class="sxs-lookup"><span data-stu-id="cfde0-132">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="a7c04-132">Parent</span><span class="sxs-lookup"><span data-stu-id="a7c04-132">Parent</span></span>
 
-[<span data-ttu-id="cfde0-133">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="cfde0-133">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="a7c04-133">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="a7c04-133">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
 
 <a id="ID4EXD"></a>
 
 
-##### <a name="reference"></a><span data-ttu-id="cfde0-134">リファレンス</span><span class="sxs-lookup"><span data-stu-id="cfde0-134">Reference</span></span>
+##### <a name="reference"></a><span data-ttu-id="a7c04-134">リファレンス</span><span class="sxs-lookup"><span data-stu-id="a7c04-134">Reference</span></span>
 
-[<span data-ttu-id="cfde0-135">POST (/system/strings/validate)</span><span class="sxs-lookup"><span data-stu-id="cfde0-135">POST (/system/strings/validate)</span></span>](../uri/stringserver/uri-systemstringsvalidatepost.md)
+[<span data-ttu-id="a7c04-135">POST (/system/strings/validate)</span><span class="sxs-lookup"><span data-stu-id="a7c04-135">POST (/system/strings/validate)</span></span>](../uri/stringserver/uri-systemstringsvalidatepost.md)

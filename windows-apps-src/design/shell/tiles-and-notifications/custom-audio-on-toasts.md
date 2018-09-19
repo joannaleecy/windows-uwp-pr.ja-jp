@@ -12,26 +12,26 @@ ms.technology: uwp
 keywords: windows 10, uwp, トースト, カスタム オーディオ, 通知, オーディオ, サウンド
 ms.localizationpriority: medium
 ms.openlocfilehash: 24be148340366163fcab00ec75f7f26fac6c2d80
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4022264"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4055074"
 ---
-# <a name="custom-audio-on-toasts"></a><span data-ttu-id="5c637-103">トーストでのカスタム オーディオの使用</span><span class="sxs-lookup"><span data-stu-id="5c637-103">Custom audio on toasts</span></span>
+# <a name="custom-audio-on-toasts"></a><span data-ttu-id="51d6e-103">トーストでのカスタム オーディオの使用</span><span class="sxs-lookup"><span data-stu-id="51d6e-103">Custom audio on toasts</span></span>
 
-<span data-ttu-id="5c637-104">トースト通知でカスタム オーディオを使用して、アプリでブランド独自のサウンド エフェクトを表現できます。</span><span class="sxs-lookup"><span data-stu-id="5c637-104">Toast notifications can use custom audio, which lets your app express your brand's unique sound effects.</span></span> <span data-ttu-id="5c637-105">たとえば、メッセージング アプリで、トースト通知に汎用の通知サウンドではなく、独自のメッセージング サウンドを使用すると、ユーザーは特定のアプリから通知を受け取ったことが即座にわかります。</span><span class="sxs-lookup"><span data-stu-id="5c637-105">For example, a messaging app can use their own messaging sound on their Toast notifications, so that the user can instantly know that they received a notification from the app, rather than hearing the generic notification sound.</span></span>
+<span data-ttu-id="51d6e-104">トースト通知でカスタム オーディオを使用して、アプリでブランド独自のサウンド エフェクトを表現できます。</span><span class="sxs-lookup"><span data-stu-id="51d6e-104">Toast notifications can use custom audio, which lets your app express your brand's unique sound effects.</span></span> <span data-ttu-id="51d6e-105">たとえば、メッセージング アプリで、トースト通知に汎用の通知サウンドではなく、独自のメッセージング サウンドを使用すると、ユーザーは特定のアプリから通知を受け取ったことが即座にわかります。</span><span class="sxs-lookup"><span data-stu-id="51d6e-105">For example, a messaging app can use their own messaging sound on their Toast notifications, so that the user can instantly know that they received a notification from the app, rather than hearing the generic notification sound.</span></span>
 
-## <a name="install-uwp-community-toolkit-nuget-package"></a><span data-ttu-id="5c637-106">UWP コミュニティ ツールキットの NuGet パッケージをインストールする</span><span class="sxs-lookup"><span data-stu-id="5c637-106">Install UWP Community Toolkit NuGet package</span></span>
+## <a name="install-uwp-community-toolkit-nuget-package"></a><span data-ttu-id="51d6e-106">UWP コミュニティ ツールキットの NuGet パッケージをインストールする</span><span class="sxs-lookup"><span data-stu-id="51d6e-106">Install UWP Community Toolkit NuGet package</span></span>
 
-<span data-ttu-id="5c637-107">コードを利用して通知を作成するには、通知 XML コンテンツのオブジェクト モデルを提供する UWP コミュニティ ツールキットの Notifications ライブラリの使用を強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="5c637-107">In order to create notifications via code, we strongly recommend using the UWP Community Toolkit Notifications library, which provides an object model for the notification XML content.</span></span> <span data-ttu-id="5c637-108">手動で通知用 XML を構築することもできますが、ミスが発生しやすく煩雑です。</span><span class="sxs-lookup"><span data-stu-id="5c637-108">You could manually construct the notification XML, but that is error-prone and messy.</span></span> <span data-ttu-id="5c637-109">UWP コミュニティ ツールキットに用意された Notifications ライブラリは、Microsoft の通知を担当しているチームが構築して管理しています。</span><span class="sxs-lookup"><span data-stu-id="5c637-109">The Notifications library inside UWP Community Toolkit is built and maintained by the team that owns notifications at Microsoft.</span></span>
+<span data-ttu-id="51d6e-107">コードを利用して通知を作成するには、通知 XML コンテンツのオブジェクト モデルを提供する UWP コミュニティ ツールキットの Notifications ライブラリの使用を強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="51d6e-107">In order to create notifications via code, we strongly recommend using the UWP Community Toolkit Notifications library, which provides an object model for the notification XML content.</span></span> <span data-ttu-id="51d6e-108">手動で通知用 XML を構築することもできますが、ミスが発生しやすく煩雑です。</span><span class="sxs-lookup"><span data-stu-id="51d6e-108">You could manually construct the notification XML, but that is error-prone and messy.</span></span> <span data-ttu-id="51d6e-109">UWP コミュニティ ツールキットに用意された Notifications ライブラリは、Microsoft の通知を担当しているチームが構築して管理しています。</span><span class="sxs-lookup"><span data-stu-id="51d6e-109">The Notifications library inside UWP Community Toolkit is built and maintained by the team that owns notifications at Microsoft.</span></span>
 
-<span data-ttu-id="5c637-110">NuGet から [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) をインストールします (このページのサンプルでは、バージョン 1.0.0 を使用しています)。</span><span class="sxs-lookup"><span data-stu-id="5c637-110">Install [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) from NuGet (we're using version 1.0.0 in this documentation).</span></span>
+<span data-ttu-id="51d6e-110">NuGet から [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) をインストールします (このページのサンプルでは、バージョン 1.0.0 を使用しています)。</span><span class="sxs-lookup"><span data-stu-id="51d6e-110">Install [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) from NuGet (we're using version 1.0.0 in this documentation).</span></span>
 
 
-## <a name="add-namespace-declarations"></a><span data-ttu-id="5c637-111">名前空間宣言を追加する</span><span class="sxs-lookup"><span data-stu-id="5c637-111">Add namespace declarations</span></span>
+## <a name="add-namespace-declarations"></a><span data-ttu-id="51d6e-111">名前空間宣言を追加する</span><span class="sxs-lookup"><span data-stu-id="51d6e-111">Add namespace declarations</span></span>
 
-`Windows.UI.Notifications` <span data-ttu-id="5c637-112"> には、タイルとトーストの API が含まれています。</span><span class="sxs-lookup"><span data-stu-id="5c637-112">includes the Tile and Toast API's.</span></span> `Microsoft.Toolkit.Uwp.Notifications` <span data-ttu-id="5c637-113"> には Notifications ライブラリが含まれています。</span><span class="sxs-lookup"><span data-stu-id="5c637-113">includes the Notifications library.</span></span>
+`Windows.UI.Notifications` <span data-ttu-id="51d6e-112"> には、タイルとトーストの API が含まれています。</span><span class="sxs-lookup"><span data-stu-id="51d6e-112">includes the Tile and Toast API's.</span></span> `Microsoft.Toolkit.Uwp.Notifications` <span data-ttu-id="51d6e-113"> には Notifications ライブラリが含まれています。</span><span class="sxs-lookup"><span data-stu-id="51d6e-113">includes the Notifications library.</span></span>
 
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
@@ -39,9 +39,9 @@ using Windows.UI.Notifications;
 ```
 
 
-## <a name="construct-the-notification"></a><span data-ttu-id="5c637-114">通知を作成する</span><span class="sxs-lookup"><span data-stu-id="5c637-114">Construct the notification</span></span>
+## <a name="construct-the-notification"></a><span data-ttu-id="51d6e-114">通知を作成する</span><span class="sxs-lookup"><span data-stu-id="51d6e-114">Construct the notification</span></span>
 
-<span data-ttu-id="5c637-115">トースト通知のコンテンツには、テキストや画像のほか、ボタンや入力も含まれています。</span><span class="sxs-lookup"><span data-stu-id="5c637-115">The toast notification content includes text and images, and also buttons and inputs.</span></span> <span data-ttu-id="5c637-116">完全なコード スニペットについては、[ローカル トースト通知の送信](send-local-toast.md) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5c637-116">Please see [send local toast](send-local-toast.md) to see a full code snippet.</span></span>
+<span data-ttu-id="51d6e-115">トースト通知のコンテンツには、テキストや画像のほか、ボタンや入力も含まれています。</span><span class="sxs-lookup"><span data-stu-id="51d6e-115">The toast notification content includes text and images, and also buttons and inputs.</span></span> <span data-ttu-id="51d6e-116">完全なコード スニペットについては、[ローカル トースト通知の送信](send-local-toast.md) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="51d6e-116">Please see [send local toast](send-local-toast.md) to see a full code snippet.</span></span>
 
 ```csharp
 ToastContent toastContent = new ToastContent()
@@ -54,11 +54,11 @@ ToastContent toastContent = new ToastContent()
 ```
 
 
-## <a name="add-the-custom-audio"></a><span data-ttu-id="5c637-117">カスタム オーディオを追加する</span><span class="sxs-lookup"><span data-stu-id="5c637-117">Add the custom audio</span></span>
+## <a name="add-the-custom-audio"></a><span data-ttu-id="51d6e-117">カスタム オーディオを追加する</span><span class="sxs-lookup"><span data-stu-id="51d6e-117">Add the custom audio</span></span>
 
-<span data-ttu-id="5c637-118">Windows Mobile は、常にトースト通知でカスタム オーディオがサポートされてきました。</span><span class="sxs-lookup"><span data-stu-id="5c637-118">Windows Mobile has always supported custom audio in Toast notifications.</span></span> <span data-ttu-id="5c637-119">しかし、デスクトップ版では、バージョン 1511 (ビルド 10586) で初めてカスタム オーディオのサポートが追加されました。</span><span class="sxs-lookup"><span data-stu-id="5c637-119">However, Desktop only added support for custom audio in Version 1511 (build 10586).</span></span> <span data-ttu-id="5c637-120">バージョン 1511 より前のデスクトップ デバイスに、カスタム オーディオを含んだトーストを送信すると、トーストは無音となります。</span><span class="sxs-lookup"><span data-stu-id="5c637-120">If you send a Toast that contains custom audio to a Desktop device before Version 1511, the toast will be silent.</span></span> <span data-ttu-id="5c637-121">そのため、バージョン 1511 より前のバージョンのデスクトップでは、トースト通知にカスタム オーディオを含めないでください。これにより、通知の際に、少なくとも既定の通知サウンドが使用されます。</span><span class="sxs-lookup"><span data-stu-id="5c637-121">Therefore, for Desktop pre-Version 1511, you should NOT include the custom audio in your Toast notification, so that the notification will at least use the default notification sound.</span></span>
+<span data-ttu-id="51d6e-118">Windows Mobile は、常にトースト通知でカスタム オーディオがサポートされてきました。</span><span class="sxs-lookup"><span data-stu-id="51d6e-118">Windows Mobile has always supported custom audio in Toast notifications.</span></span> <span data-ttu-id="51d6e-119">しかし、デスクトップ版では、バージョン 1511 (ビルド 10586) で初めてカスタム オーディオのサポートが追加されました。</span><span class="sxs-lookup"><span data-stu-id="51d6e-119">However, Desktop only added support for custom audio in Version 1511 (build 10586).</span></span> <span data-ttu-id="51d6e-120">バージョン 1511 より前のデスクトップ デバイスに、カスタム オーディオを含んだトーストを送信すると、トーストは無音となります。</span><span class="sxs-lookup"><span data-stu-id="51d6e-120">If you send a Toast that contains custom audio to a Desktop device before Version 1511, the toast will be silent.</span></span> <span data-ttu-id="51d6e-121">そのため、バージョン 1511 より前のバージョンのデスクトップでは、トースト通知にカスタム オーディオを含めないでください。これにより、通知の際に、少なくとも既定の通知サウンドが使用されます。</span><span class="sxs-lookup"><span data-stu-id="51d6e-121">Therefore, for Desktop pre-Version 1511, you should NOT include the custom audio in your Toast notification, so that the notification will at least use the default notification sound.</span></span>
 
-<span data-ttu-id="5c637-122">**既知の問題**: デスクトップ バージョン 1511 を使用している場合、トーストのカスタム オーディオは、アプリが Microsoft Store 経由でインストールされた場合にのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="5c637-122">**Known Issue**: If you're using Desktop Version 1511, the custom toast audio will only work if your app is installed via the Store.</span></span> <span data-ttu-id="5c637-123">そのため、Microsoft Store への提出前に、ローカル デスクトップでカスタムのオーディオをテストすることはできませんが、Microsoft Store からインストールしたときには、オーディオが正常に機能します。</span><span class="sxs-lookup"><span data-stu-id="5c637-123">That means you cannot locally test your custom audio on Desktop before submitting to the Store - but the audio will work fine once installed from the Store.</span></span> <span data-ttu-id="5c637-124">Anniversary update ではこの問題が修正され、ローカルに展開されたアプリからでもカスタム オーディオが正常に動作します。</span><span class="sxs-lookup"><span data-stu-id="5c637-124">We fixed this in the Anniversary Update, so that custom audio from your locally deployed app will work correctly.</span></span>
+<span data-ttu-id="51d6e-122">**既知の問題**: デスクトップ バージョン 1511 を使用している場合、トーストのカスタム オーディオは、アプリが Microsoft Store 経由でインストールされた場合にのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="51d6e-122">**Known Issue**: If you're using Desktop Version 1511, the custom toast audio will only work if your app is installed via the Store.</span></span> <span data-ttu-id="51d6e-123">そのため、Microsoft Store への提出前に、ローカル デスクトップでカスタムのオーディオをテストすることはできませんが、Microsoft Store からインストールしたときには、オーディオが正常に機能します。</span><span class="sxs-lookup"><span data-stu-id="51d6e-123">That means you cannot locally test your custom audio on Desktop before submitting to the Store - but the audio will work fine once installed from the Store.</span></span> <span data-ttu-id="51d6e-124">Anniversary update ではこの問題が修正され、ローカルに展開されたアプリからでもカスタム オーディオが正常に動作します。</span><span class="sxs-lookup"><span data-stu-id="51d6e-124">We fixed this in the Anniversary Update, so that custom audio from your locally deployed app will work correctly.</span></span>
 
 ```csharp
 ?
@@ -81,19 +81,19 @@ if (supportsCustomAudio)
 }
 ```
 
-<span data-ttu-id="5c637-125">サポートされているオーディオ ファイルの種類は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="5c637-125">Supported audio file types include...</span></span>
+<span data-ttu-id="51d6e-125">サポートされているオーディオ ファイルの種類は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="51d6e-125">Supported audio file types include...</span></span>
 
-- <span data-ttu-id="5c637-126">.aac</span><span class="sxs-lookup"><span data-stu-id="5c637-126">.aac</span></span>
-- <span data-ttu-id="5c637-127">.flac</span><span class="sxs-lookup"><span data-stu-id="5c637-127">.flac</span></span>
-- <span data-ttu-id="5c637-128">.m4a</span><span class="sxs-lookup"><span data-stu-id="5c637-128">.m4a</span></span>
-- <span data-ttu-id="5c637-129">.mp3</span><span class="sxs-lookup"><span data-stu-id="5c637-129">.mp3</span></span>
-- <span data-ttu-id="5c637-130">.wav</span><span class="sxs-lookup"><span data-stu-id="5c637-130">.wav</span></span>
-- <span data-ttu-id="5c637-131">.wma</span><span class="sxs-lookup"><span data-stu-id="5c637-131">.wma</span></span>
+- <span data-ttu-id="51d6e-126">.aac</span><span class="sxs-lookup"><span data-stu-id="51d6e-126">.aac</span></span>
+- <span data-ttu-id="51d6e-127">.flac</span><span class="sxs-lookup"><span data-stu-id="51d6e-127">.flac</span></span>
+- <span data-ttu-id="51d6e-128">.m4a</span><span class="sxs-lookup"><span data-stu-id="51d6e-128">.m4a</span></span>
+- <span data-ttu-id="51d6e-129">.mp3</span><span class="sxs-lookup"><span data-stu-id="51d6e-129">.mp3</span></span>
+- <span data-ttu-id="51d6e-130">.wav</span><span class="sxs-lookup"><span data-stu-id="51d6e-130">.wav</span></span>
+- <span data-ttu-id="51d6e-131">.wma</span><span class="sxs-lookup"><span data-stu-id="51d6e-131">.wma</span></span>
 
 
-## <a name="send-the-notification"></a><span data-ttu-id="5c637-132">通知を送信する</span><span class="sxs-lookup"><span data-stu-id="5c637-132">Send the notification</span></span>
+## <a name="send-the-notification"></a><span data-ttu-id="51d6e-132">通知を送信する</span><span class="sxs-lookup"><span data-stu-id="51d6e-132">Send the notification</span></span>
 
-<span data-ttu-id="5c637-133">トースト コンテンツが完了した後は、簡単に通知を送信できます。</span><span class="sxs-lookup"><span data-stu-id="5c637-133">Now that your toast content is complete, sending the notification is quite simple.</span></span>
+<span data-ttu-id="51d6e-133">トースト コンテンツが完了した後は、簡単に通知を送信できます。</span><span class="sxs-lookup"><span data-stu-id="51d6e-133">Now that your toast content is complete, sending the notification is quite simple.</span></span>
 
 ```csharp
 // Create the toast notification from the previous toast content
@@ -104,8 +104,8 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 ```
 
 
-## <a name="related-topics"></a><span data-ttu-id="5c637-134">関連トピック</span><span class="sxs-lookup"><span data-stu-id="5c637-134">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="51d6e-134">関連トピック</span><span class="sxs-lookup"><span data-stu-id="51d6e-134">Related topics</span></span>
 
-- [<span data-ttu-id="5c637-135">GitHub での完全なコード サンプル</span><span class="sxs-lookup"><span data-stu-id="5c637-135">Full code sample on GitHub</span></span>](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
-- [<span data-ttu-id="5c637-136">ローカル トーストの送信</span><span class="sxs-lookup"><span data-stu-id="5c637-136">Send a local toast</span></span>](send-local-toast.md)
-- [<span data-ttu-id="5c637-137">トースト コンテンツのドキュメント</span><span class="sxs-lookup"><span data-stu-id="5c637-137">Toast content documentation</span></span>](adaptive-interactive-toasts.md)
+- [<span data-ttu-id="51d6e-135">GitHub での完全なコード サンプル</span><span class="sxs-lookup"><span data-stu-id="51d6e-135">Full code sample on GitHub</span></span>](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
+- [<span data-ttu-id="51d6e-136">ローカル トーストの送信</span><span class="sxs-lookup"><span data-stu-id="51d6e-136">Send a local toast</span></span>](send-local-toast.md)
+- [<span data-ttu-id="51d6e-137">トースト コンテンツのドキュメント</span><span class="sxs-lookup"><span data-stu-id="51d6e-137">Toast content documentation</span></span>](adaptive-interactive-toasts.md)

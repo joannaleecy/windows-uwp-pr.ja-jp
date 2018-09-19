@@ -12,37 +12,37 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6356000e1a554c948748abf725804a0d9024e40e
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4016685"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4057505"
 ---
-# <a name="gameclipsserviceerrorresponse-json"></a><span data-ttu-id="b4d3e-104">GameClipsServiceErrorResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="b4d3e-104">GameClipsServiceErrorResponse (JSON)</span></span>
-<span data-ttu-id="b4d3e-105">/Users/{ownerId} {scid}/scids//clips/{gameClipId} への応答の省略可能な部分/uri 形式/{gameClipUriType} API です。</span><span class="sxs-lookup"><span data-stu-id="b4d3e-105">An optional part of the response to the /users/{ownerId}/scids/{scid}/clips/{gameClipId}/uris/format/{gameClipUriType} API.</span></span> 
+# <a name="gameclipsserviceerrorresponse-json"></a><span data-ttu-id="e2246-104">GameClipsServiceErrorResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="e2246-104">GameClipsServiceErrorResponse (JSON)</span></span>
+<span data-ttu-id="e2246-105">/Users/{ownerId} {scid}/scids//clips/{gameClipId} への応答の省略可能な部分/uri 形式/{gameClipUriType} API です。</span><span class="sxs-lookup"><span data-stu-id="e2246-105">An optional part of the response to the /users/{ownerId}/scids/{scid}/clips/{gameClipId}/uris/format/{gameClipUriType} API.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="gameclipsserviceerrorresponse"></a><span data-ttu-id="b4d3e-106">GameClipsServiceErrorResponse</span><span class="sxs-lookup"><span data-stu-id="b4d3e-106">GameClipsServiceErrorResponse</span></span>
+## <a name="gameclipsserviceerrorresponse"></a><span data-ttu-id="e2246-106">GameClipsServiceErrorResponse</span><span class="sxs-lookup"><span data-stu-id="e2246-106">GameClipsServiceErrorResponse</span></span>
  
-<span data-ttu-id="b4d3e-107">GameClipsServiceErrorResponse オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="b4d3e-107">The GameClipsServiceErrorResponse object has the following specification.</span></span>
+<span data-ttu-id="e2246-107">GameClipsServiceErrorResponse オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="e2246-107">The GameClipsServiceErrorResponse object has the following specification.</span></span>
  
-| <span data-ttu-id="b4d3e-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="b4d3e-108">Member</span></span>| <span data-ttu-id="b4d3e-109">種類</span><span class="sxs-lookup"><span data-stu-id="b4d3e-109">Type</span></span>| <span data-ttu-id="b4d3e-110">説明</span><span class="sxs-lookup"><span data-stu-id="b4d3e-110">Description</span></span>| 
+| <span data-ttu-id="e2246-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="e2246-108">Member</span></span>| <span data-ttu-id="e2246-109">種類</span><span class="sxs-lookup"><span data-stu-id="e2246-109">Type</span></span>| <span data-ttu-id="e2246-110">説明</span><span class="sxs-lookup"><span data-stu-id="e2246-110">Description</span></span>| 
 | --- | --- | --- | 
-| <b><span data-ttu-id="b4d3e-111">errorSource</span><span class="sxs-lookup"><span data-stu-id="b4d3e-111">errorSource</span></span></b>| <span data-ttu-id="b4d3e-112">string</span><span class="sxs-lookup"><span data-stu-id="b4d3e-112">string</span></span>| <span data-ttu-id="b4d3e-113">エラーの発生元です。</span><span class="sxs-lookup"><span data-stu-id="b4d3e-113">Source of the error.</span></span>| 
-| <b><span data-ttu-id="b4d3e-114">errorResponseCode</span><span class="sxs-lookup"><span data-stu-id="b4d3e-114">errorResponseCode</span></span></b>| <span data-ttu-id="b4d3e-115">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="b4d3e-115">32-bit signed integer</span></span>| <span data-ttu-id="b4d3e-116">(Null にすることができます) エラーに関連付けられたコードです。</span><span class="sxs-lookup"><span data-stu-id="b4d3e-116">Code associated with the error (can be null).</span></span>| 
-| <b><span data-ttu-id="b4d3e-117">エラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="b4d3e-117">errorMessage</span></span></b>| <span data-ttu-id="b4d3e-118">string</span><span class="sxs-lookup"><span data-stu-id="b4d3e-118">string</span></span>| <span data-ttu-id="b4d3e-119">エラーの詳細を追加します。</span><span class="sxs-lookup"><span data-stu-id="b4d3e-119">Additional details about the error.</span></span>| 
+| <b><span data-ttu-id="e2246-111">errorSource</span><span class="sxs-lookup"><span data-stu-id="e2246-111">errorSource</span></span></b>| <span data-ttu-id="e2246-112">string</span><span class="sxs-lookup"><span data-stu-id="e2246-112">string</span></span>| <span data-ttu-id="e2246-113">エラーの発生元です。</span><span class="sxs-lookup"><span data-stu-id="e2246-113">Source of the error.</span></span>| 
+| <b><span data-ttu-id="e2246-114">errorResponseCode</span><span class="sxs-lookup"><span data-stu-id="e2246-114">errorResponseCode</span></span></b>| <span data-ttu-id="e2246-115">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="e2246-115">32-bit signed integer</span></span>| <span data-ttu-id="e2246-116">(Null にすることができます) エラーに関連付けられたコードです。</span><span class="sxs-lookup"><span data-stu-id="e2246-116">Code associated with the error (can be null).</span></span>| 
+| <b><span data-ttu-id="e2246-117">エラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="e2246-117">errorMessage</span></span></b>| <span data-ttu-id="e2246-118">string</span><span class="sxs-lookup"><span data-stu-id="e2246-118">string</span></span>| <span data-ttu-id="e2246-119">エラーの詳細を追加します。</span><span class="sxs-lookup"><span data-stu-id="e2246-119">Additional details about the error.</span></span>| 
   
 <a id="ID4ECC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="b4d3e-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="b4d3e-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e2246-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="e2246-120">See also</span></span>
  
 <a id="ID4EEC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="b4d3e-121">Parent</span><span class="sxs-lookup"><span data-stu-id="b4d3e-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="e2246-121">Parent</span><span class="sxs-lookup"><span data-stu-id="e2246-121">Parent</span></span> 
 
-[<span data-ttu-id="b4d3e-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="b4d3e-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="e2246-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="e2246-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

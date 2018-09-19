@@ -11,22 +11,22 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c61b5d74fbcd5487b11b71067b0558c67e5590e
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4014977"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4056903"
 ---
-# <a name="troubleshooting-xbox-live"></a><span data-ttu-id="82958-104">Xbox Live のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="82958-104">Troubleshooting Xbox Live</span></span>
+# <a name="troubleshooting-xbox-live"></a><span data-ttu-id="63720-104">Xbox Live のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="63720-104">Troubleshooting Xbox Live</span></span>
 
-<span data-ttu-id="82958-105">このセクションでは、Xbox Live のトラブルシューティングについて説明します。</span><span class="sxs-lookup"><span data-stu-id="82958-105">This section covers troubleshooting Xbox Live</span></span>
+<span data-ttu-id="63720-105">このセクションでは、Xbox Live のトラブルシューティングについて説明します。</span><span class="sxs-lookup"><span data-stu-id="63720-105">This section covers troubleshooting Xbox Live</span></span>
 
-## <a name="in-this-section"></a><span data-ttu-id="82958-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="82958-106">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="63720-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="63720-106">In this section</span></span>
 
-[<span data-ttu-id="82958-107">Xbox Live API のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="82958-107">Troubleshooting the Xbox Live APIs</span></span>](troubleshooting-the-xbox-live-services-api.md)
+[<span data-ttu-id="63720-107">Xbox Live API のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="63720-107">Troubleshooting the Xbox Live APIs</span></span>](troubleshooting-the-xbox-live-services-api.md)
 
-[<span data-ttu-id="82958-108">Windows PC での Xbox Live セットアップのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="82958-108">Troubleshooting Xbox Live setup on Windows PC</span></span>](troubleshooting-pc-setup.md)
+[<span data-ttu-id="63720-108">Windows PC での Xbox Live セットアップのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="63720-108">Troubleshooting Xbox Live setup on Windows PC</span></span>](troubleshooting-pc-setup.md)
 
-[<span data-ttu-id="82958-109">Xbox Live サインインのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="82958-109">Troubleshooting Xbox Live sign-in</span></span>](troubleshooting-sign-in.md)
+[<span data-ttu-id="63720-109">Xbox Live サインインのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="63720-109">Troubleshooting Xbox Live sign-in</span></span>](troubleshooting-sign-in.md)
 
-[<span data-ttu-id="82958-110">Fiddler を使用した Xbox Live のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="82958-110">Troubleshooting Xbox Live using Fiddler</span></span>](how-to-set-up-fiddler-for-debugging.md)
+[<span data-ttu-id="63720-110">Fiddler を使用した Xbox Live のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="63720-110">Troubleshooting Xbox Live using Fiddler</span></span>](how-to-set-up-fiddler-for-debugging.md)

@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, タイトル ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: e98abcb9ab8738291efc40d5148b021ea95110fa
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4018825"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4059949"
 ---
-# <a name="storing-a-json-blob-in-xbox-live-title-storage"></a><span data-ttu-id="3dcb5-104">Xbox Live タイトル ストレージへの JSON BLOB の保存</span><span class="sxs-lookup"><span data-stu-id="3dcb5-104">Storing a JSON blob in Xbox Live Title Storage</span></span>
+# <a name="storing-a-json-blob-in-xbox-live-title-storage"></a><span data-ttu-id="23d8d-104">Xbox Live タイトル ストレージへの JSON BLOB の保存</span><span class="sxs-lookup"><span data-stu-id="23d8d-104">Storing a JSON blob in Xbox Live Title Storage</span></span>
 
-1.  <span data-ttu-id="3dcb5-105">タイトル ストレージにデータを送信するには、*PUT* メソッドを使用して要求を送信します。</span><span class="sxs-lookup"><span data-stu-id="3dcb5-105">Send a request using the *PUT* method to send the data to title storage.</span></span>
+1.  <span data-ttu-id="23d8d-105">タイトル ストレージにデータを送信するには、*PUT* メソッドを使用して要求を送信します。</span><span class="sxs-lookup"><span data-stu-id="23d8d-105">Send a request using the *PUT* method to send the data to title storage.</span></span>
 
         PUT https://titlestorage.xboxlive.com/json/users/xuid(1245111)/scids/{scid}/data/{pathAndFileName},json
         Content-Type: application/octet-stream
@@ -30,17 +30,17 @@ ms.locfileid: "4018825"
 
 
 
--   <span data-ttu-id="3dcb5-106">更新するには、ユーザーはそのセッション内にいなければなりません。</span><span class="sxs-lookup"><span data-stu-id="3dcb5-106">The user must be in the session to update it.</span></span>
+-   <span data-ttu-id="23d8d-106">更新するには、ユーザーはそのセッション内にいなければなりません。</span><span class="sxs-lookup"><span data-stu-id="23d8d-106">The user must be in the session to update it.</span></span>
 
--   <span data-ttu-id="3dcb5-107">STSTokenString は、簡潔にするためのプレースホルダーであり、認証要求から返されるトークンで置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="3dcb5-107">STSTokenString is a placeholder for brevity and should be replaced with the token returned by the authentication request.</span></span>
+-   <span data-ttu-id="23d8d-107">STSTokenString は、簡潔にするためのプレースホルダーであり、認証要求から返されるトークンで置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="23d8d-107">STSTokenString is a placeholder for brevity and should be replaced with the token returned by the authentication request.</span></span>
 
-2.  <span data-ttu-id="3dcb5-108">JSON オブジェクトを送信します。</span><span class="sxs-lookup"><span data-stu-id="3dcb5-108">Send a JSON object.</span></span>
+2.  <span data-ttu-id="23d8d-108">JSON オブジェクトを送信します。</span><span class="sxs-lookup"><span data-stu-id="23d8d-108">Send a JSON object.</span></span>
 
         {
             "startlevel":"1",
             "expression":"smile"
         }
 
-#### <a name="reference"></a><span data-ttu-id="3dcb5-109">参照先</span><span class="sxs-lookup"><span data-stu-id="3dcb5-109">Reference</span></span>
+#### <a name="reference"></a><span data-ttu-id="23d8d-109">参照先</span><span class="sxs-lookup"><span data-stu-id="23d8d-109">Reference</span></span>
 
-**<span data-ttu-id="3dcb5-110">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)</span><span class="sxs-lookup"><span data-stu-id="3dcb5-110">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)</span></span>**
+**<span data-ttu-id="23d8d-110">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)</span><span class="sxs-lookup"><span data-stu-id="23d8d-110">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)</span></span>**

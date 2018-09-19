@@ -12,43 +12,43 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a5de74be5e82fde007d6680eaf4c9e5a543afc64
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4014697"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4058225"
 ---
-# <a name="usersowneridpeoplemute"></a><span data-ttu-id="a3137-104">/users/{ownerId}/people/mute</span><span class="sxs-lookup"><span data-stu-id="a3137-104">/users/{ownerId}/people/mute</span></span>
-<span data-ttu-id="a3137-105">ユーザーのミュート リストにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="a3137-105">Accesses the mute list for a user.</span></span>
+# <a name="usersowneridpeoplemute"></a><span data-ttu-id="b6dde-104">/users/{ownerId}/people/mute</span><span class="sxs-lookup"><span data-stu-id="b6dde-104">/users/{ownerId}/people/mute</span></span>
+<span data-ttu-id="b6dde-105">ユーザーのミュート リストにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="b6dde-105">Accesses the mute list for a user.</span></span>
 
-  * [<span data-ttu-id="a3137-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a3137-106">URI parameters</span></span>](#ID4EQ)
+  * [<span data-ttu-id="b6dde-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b6dde-106">URI parameters</span></span>](#ID4EQ)
 
 <a id="ID4EQ"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="a3137-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a3137-107">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="b6dde-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b6dde-107">URI parameters</span></span>
 
-| <span data-ttu-id="a3137-108">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a3137-108">Parameter</span></span>| <span data-ttu-id="a3137-109">型</span><span class="sxs-lookup"><span data-stu-id="a3137-109">Type</span></span>| <span data-ttu-id="a3137-110">説明</span><span class="sxs-lookup"><span data-stu-id="a3137-110">Description</span></span>|
+| <span data-ttu-id="b6dde-108">パラメーター</span><span class="sxs-lookup"><span data-stu-id="b6dde-108">Parameter</span></span>| <span data-ttu-id="b6dde-109">型</span><span class="sxs-lookup"><span data-stu-id="b6dde-109">Type</span></span>| <span data-ttu-id="b6dde-110">説明</span><span class="sxs-lookup"><span data-stu-id="b6dde-110">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="a3137-111">ownerId</span><span class="sxs-lookup"><span data-stu-id="a3137-111">ownerId</span></span>| <span data-ttu-id="a3137-112">string</span><span class="sxs-lookup"><span data-stu-id="a3137-112">string</span></span>| <span data-ttu-id="a3137-113">必須。</span><span class="sxs-lookup"><span data-stu-id="a3137-113">Required.</span></span> <span data-ttu-id="a3137-114">そのリソースにアクセスしているユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="a3137-114">Identifier of the user whose resource is being accessed.</span></span> <span data-ttu-id="a3137-115">設定可能な値は"me" <code>xuid({xuid})</code>、または gt({gamertag}) します。</span><span class="sxs-lookup"><span data-stu-id="a3137-115">The possible values are "me", <code>xuid({xuid})</code>, or gt({gamertag}).</span></span> <span data-ttu-id="a3137-116">認証されたユーザーである必要があります。</span><span class="sxs-lookup"><span data-stu-id="a3137-116">Must be the authenticated user.</span></span> <span data-ttu-id="a3137-117">値の例: <code>xuid(2603643534573581)</code>、<code>gt(SomeGamertag)</code>します。</span><span class="sxs-lookup"><span data-stu-id="a3137-117">Example values: <code>xuid(2603643534573581)</code>, <code>gt(SomeGamertag)</code>.</span></span> <span data-ttu-id="a3137-118">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="a3137-118">Maximum size: none.</span></span> |
+| <span data-ttu-id="b6dde-111">ownerId</span><span class="sxs-lookup"><span data-stu-id="b6dde-111">ownerId</span></span>| <span data-ttu-id="b6dde-112">string</span><span class="sxs-lookup"><span data-stu-id="b6dde-112">string</span></span>| <span data-ttu-id="b6dde-113">必須。</span><span class="sxs-lookup"><span data-stu-id="b6dde-113">Required.</span></span> <span data-ttu-id="b6dde-114">そのリソースにアクセスしているユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="b6dde-114">Identifier of the user whose resource is being accessed.</span></span> <span data-ttu-id="b6dde-115">設定可能な値は"me" <code>xuid({xuid})</code>、または gt({gamertag}) します。</span><span class="sxs-lookup"><span data-stu-id="b6dde-115">The possible values are "me", <code>xuid({xuid})</code>, or gt({gamertag}).</span></span> <span data-ttu-id="b6dde-116">認証されたユーザーである必要があります。</span><span class="sxs-lookup"><span data-stu-id="b6dde-116">Must be the authenticated user.</span></span> <span data-ttu-id="b6dde-117">値の例: <code>xuid(2603643534573581)</code>、<code>gt(SomeGamertag)</code>します。</span><span class="sxs-lookup"><span data-stu-id="b6dde-117">Example values: <code>xuid(2603643534573581)</code>, <code>gt(SomeGamertag)</code>.</span></span> <span data-ttu-id="b6dde-118">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="b6dde-118">Maximum size: none.</span></span> |
 
 <a id="ID4ETB"></a>
 
 
-## <a name="valid-methods"></a><span data-ttu-id="a3137-119">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="a3137-119">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="b6dde-119">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="b6dde-119">Valid methods</span></span>
 
-[<span data-ttu-id="a3137-120">GET (/users/{ownerId}/people/mute)</span><span class="sxs-lookup"><span data-stu-id="a3137-120">GET (/users/{ownerId}/people/mute)</span></span>](uri-privacyusersowneridpeoplemuteget.md)
+[<span data-ttu-id="b6dde-120">GET (/users/{ownerId}/people/mute)</span><span class="sxs-lookup"><span data-stu-id="b6dde-120">GET (/users/{ownerId}/people/mute)</span></span>](uri-privacyusersowneridpeoplemuteget.md)
 
-<span data-ttu-id="a3137-121">&nbsp;&nbsp;ユーザーのミュートの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="a3137-121">&nbsp;&nbsp;Gets the mute list for a user.</span></span>
+<span data-ttu-id="b6dde-121">&nbsp;&nbsp;ユーザーのミュートの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="b6dde-121">&nbsp;&nbsp;Gets the mute list for a user.</span></span>
 
 <a id="ID4E4B"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="a3137-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="a3137-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b6dde-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="b6dde-122">See also</span></span>
 
 <a id="ID4E6B"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="a3137-123">Parent</span><span class="sxs-lookup"><span data-stu-id="a3137-123">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="b6dde-123">Parent</span><span class="sxs-lookup"><span data-stu-id="b6dde-123">Parent</span></span>
 
-[<span data-ttu-id="a3137-124">プライバシー URI</span><span class="sxs-lookup"><span data-stu-id="a3137-124">Privacy URIs</span></span>](atoc-reference-privacyv2.md)
+[<span data-ttu-id="b6dde-124">プライバシー URI</span><span class="sxs-lookup"><span data-stu-id="b6dde-124">Privacy URIs</span></span>](atoc-reference-privacyv2.md)

@@ -12,32 +12,32 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d9c5f2e4aa27f86069578211c5c3188b2921449a
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4020727"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4058471"
 ---
-# <a name="gameclipuri-json"></a><span data-ttu-id="14585-104">GameClipUri (JSON)</span><span class="sxs-lookup"><span data-stu-id="14585-104">GameClipUri (JSON)</span></span>
+# <a name="gameclipuri-json"></a><span data-ttu-id="41878-104">GameClipUri (JSON)</span><span class="sxs-lookup"><span data-stu-id="41878-104">GameClipUri (JSON)</span></span>
  
 <a id="ID4EO"></a>
 
  
-## <a name="gameclipuri"></a><span data-ttu-id="14585-105">GameClipUri</span><span class="sxs-lookup"><span data-stu-id="14585-105">GameClipUri</span></span>
+## <a name="gameclipuri"></a><span data-ttu-id="41878-105">GameClipUri</span><span class="sxs-lookup"><span data-stu-id="41878-105">GameClipUri</span></span>
  
-<span data-ttu-id="14585-106">GameClipUri オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="14585-106">The GameClipUri object has the following specification.</span></span>
+<span data-ttu-id="41878-106">GameClipUri オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="41878-106">The GameClipUri object has the following specification.</span></span>
  
-| <span data-ttu-id="14585-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="14585-107">Member</span></span>| <span data-ttu-id="14585-108">種類</span><span class="sxs-lookup"><span data-stu-id="14585-108">Type</span></span>| <span data-ttu-id="14585-109">説明</span><span class="sxs-lookup"><span data-stu-id="14585-109">Description</span></span>| 
+| <span data-ttu-id="41878-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="41878-107">Member</span></span>| <span data-ttu-id="41878-108">種類</span><span class="sxs-lookup"><span data-stu-id="41878-108">Type</span></span>| <span data-ttu-id="41878-109">説明</span><span class="sxs-lookup"><span data-stu-id="41878-109">Description</span></span>| 
 | --- | --- | --- | 
-| <b><span data-ttu-id="14585-110">uri</span><span class="sxs-lookup"><span data-stu-id="14585-110">uri</span></span></b>| <span data-ttu-id="14585-111">string</span><span class="sxs-lookup"><span data-stu-id="14585-111">string</span></span>| <span data-ttu-id="14585-112">ビデオのアセットの場所への URI。</span><span class="sxs-lookup"><span data-stu-id="14585-112">The URI to the location of the video asset.</span></span>| 
-| <b><span data-ttu-id="14585-113">fileSize</span><span class="sxs-lookup"><span data-stu-id="14585-113">fileSize</span></span></b>| <span data-ttu-id="14585-114">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="14585-114">32-bit unsigned integer</span></span>| <span data-ttu-id="14585-115">サムネイル画像のファイルの合計サイズ。</span><span class="sxs-lookup"><span data-stu-id="14585-115">The total file size of the thumbnail image.</span></span>| 
-| <b><span data-ttu-id="14585-116">uriType</span><span class="sxs-lookup"><span data-stu-id="14585-116">uriType</span></span></b>| <span data-ttu-id="14585-117">GameClipUriType</span><span class="sxs-lookup"><span data-stu-id="14585-117">GameClipUriType</span></span>| <span data-ttu-id="14585-118">URI の種類です。</span><span class="sxs-lookup"><span data-stu-id="14585-118">The type of the URI.</span></span>| 
-| <b><span data-ttu-id="14585-119">有効期限</span><span class="sxs-lookup"><span data-stu-id="14585-119">expiration</span></span></b>| <span data-ttu-id="14585-120">DateTime</span><span class="sxs-lookup"><span data-stu-id="14585-120">DateTime</span></span>| <span data-ttu-id="14585-121">この応答に含まれている URI の有効期限の時刻。</span><span class="sxs-lookup"><span data-stu-id="14585-121">The expiration time of the URI that is included in this response.</span></span> <span data-ttu-id="14585-122">URL の場合は、空のまたは再生する前に有効期限切れと見なされ、呼び出し元は RefreshUrl API を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="14585-122">If the URL is empty or deemed expired before playback, callers should call the RefreshUrl API.</span></span>| 
+| <b><span data-ttu-id="41878-110">uri</span><span class="sxs-lookup"><span data-stu-id="41878-110">uri</span></span></b>| <span data-ttu-id="41878-111">string</span><span class="sxs-lookup"><span data-stu-id="41878-111">string</span></span>| <span data-ttu-id="41878-112">ビデオのアセットの場所への URI。</span><span class="sxs-lookup"><span data-stu-id="41878-112">The URI to the location of the video asset.</span></span>| 
+| <b><span data-ttu-id="41878-113">fileSize</span><span class="sxs-lookup"><span data-stu-id="41878-113">fileSize</span></span></b>| <span data-ttu-id="41878-114">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="41878-114">32-bit unsigned integer</span></span>| <span data-ttu-id="41878-115">サムネイル画像のファイルの合計サイズ。</span><span class="sxs-lookup"><span data-stu-id="41878-115">The total file size of the thumbnail image.</span></span>| 
+| <b><span data-ttu-id="41878-116">uriType</span><span class="sxs-lookup"><span data-stu-id="41878-116">uriType</span></span></b>| <span data-ttu-id="41878-117">GameClipUriType</span><span class="sxs-lookup"><span data-stu-id="41878-117">GameClipUriType</span></span>| <span data-ttu-id="41878-118">URI の種類です。</span><span class="sxs-lookup"><span data-stu-id="41878-118">The type of the URI.</span></span>| 
+| <b><span data-ttu-id="41878-119">有効期限</span><span class="sxs-lookup"><span data-stu-id="41878-119">expiration</span></span></b>| <span data-ttu-id="41878-120">DateTime</span><span class="sxs-lookup"><span data-stu-id="41878-120">DateTime</span></span>| <span data-ttu-id="41878-121">この応答に含まれている URI の有効期限の時刻。</span><span class="sxs-lookup"><span data-stu-id="41878-121">The expiration time of the URI that is included in this response.</span></span> <span data-ttu-id="41878-122">URL の場合は、空のまたは再生する前に有効期限切れと見なされ、呼び出し元は RefreshUrl API を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="41878-122">If the URL is empty or deemed expired before playback, callers should call the RefreshUrl API.</span></span>| 
   
 <a id="ID4EMC"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="14585-123">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="14585-123">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="41878-123">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="41878-123">Sample JSON syntax</span></span>
  
 
 ```json
@@ -54,13 +54,13 @@ ms.locfileid: "4020727"
 <a id="ID4EVC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="14585-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="14585-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="41878-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="41878-124">See also</span></span>
  
 <a id="ID4EXC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="14585-125">Parent</span><span class="sxs-lookup"><span data-stu-id="14585-125">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="41878-125">Parent</span><span class="sxs-lookup"><span data-stu-id="41878-125">Parent</span></span> 
 
-[<span data-ttu-id="14585-126">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="14585-126">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="41878-126">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="41878-126">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    
