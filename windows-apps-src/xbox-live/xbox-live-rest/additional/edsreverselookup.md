@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b259ae20bd07c6869bc6646fc44a70f994a261b7
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4056791"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4090488"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>ビデオの EDS 逆引き参照
  

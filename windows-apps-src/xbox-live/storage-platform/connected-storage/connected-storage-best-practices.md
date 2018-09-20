@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 936b0333e826d3f9047a6905e7374e1ce9ec47ca
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4057673"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4091809"
 ---
 # <a name="connected-storage-best-practices"></a>接続ストレージのベスト プラクティス
 
