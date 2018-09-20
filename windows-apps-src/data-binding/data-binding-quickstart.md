@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4060160"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4089847"
 ---
 # <a name="data-binding-overview"></a><span data-ttu-id="799fe-104">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="799fe-104">Data binding overview</span></span>
 

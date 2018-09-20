@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 84e12d6c3e25a18902aaa55011949dd5b5ff97ca
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4055828"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4084701"
 ---
 # <a name="shadows-in-windows-ui"></a><span data-ttu-id="c3398-104">Windows UI でのシャドウ</span><span class="sxs-lookup"><span data-stu-id="c3398-104">Shadows in Windows UI</span></span>
 

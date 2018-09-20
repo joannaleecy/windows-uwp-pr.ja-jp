@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 販売促進, プロモーション, おすすめ, ショーケース, Microsoft Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 18b2212a0b063611a546c3f627016fc7d3179071
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4060386"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4085087"
 ---
 # <a name="make-your-app-easier-to-promote"></a><span data-ttu-id="849f4-103">アプリの販売促進を容易にする</span><span class="sxs-lookup"><span data-stu-id="849f4-103">Make your app easier to promote</span></span>
 
