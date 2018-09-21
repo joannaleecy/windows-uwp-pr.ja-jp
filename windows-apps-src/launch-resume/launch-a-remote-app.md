@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 接続されているデバイス、リモート シ�
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
 ms.openlocfilehash: 58a420d73ba4a0cd51f909fd5d7d417af1cfb38f
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4086831"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4112930"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a><span data-ttu-id="c09f4-104">リモート デバイスでのアプリの起動</span><span class="sxs-lookup"><span data-stu-id="c09f4-104">Launch an app on a remote device</span></span>
 

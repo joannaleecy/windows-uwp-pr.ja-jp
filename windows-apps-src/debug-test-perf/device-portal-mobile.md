@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 0531cbefef509f7bc323829031b366bec3c798d8
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4083233"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4110544"
 ---
 # <a name="device-portal-for-mobile"></a><span data-ttu-id="88f2b-104">モバイル用 Device Portal</span><span class="sxs-lookup"><span data-stu-id="88f2b-104">Device Portal for Mobile</span></span>
 

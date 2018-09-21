@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4089101"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4110732"
 ---
 # <a name="windows-app-certification-kit-tests"></a><span data-ttu-id="4ff91-104">Windows アプリ認定キットのテスト</span><span class="sxs-lookup"><span data-stu-id="4ff91-104">Windows App Certification Kit tests</span></span>
 

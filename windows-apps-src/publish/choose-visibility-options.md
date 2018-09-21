@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 表示, プライベート対象ユーザー, 入手可能, 見つけやすさ
 ms.localizationpriority: medium
 ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4083889"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4110788"
 ---
 # <a name="choose-visibility-options"></a><span data-ttu-id="7ac7b-103">表示オプションを選択する</span><span class="sxs-lookup"><span data-stu-id="7ac7b-103">Choose visibility options</span></span>
 
