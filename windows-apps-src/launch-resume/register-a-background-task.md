@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: バック グラウンド タスクの windows 10, uwp,
+keywords: windows 10、uwp、タスクをバック グラウンドします。
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bd0361886181d3c5a3395112c728db3bf57d58f
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4116170"
+ms.locfileid: "4125421"
 ---
 # <a name="register-a-background-task"></a>バックグラウンド タスクの登録
 
