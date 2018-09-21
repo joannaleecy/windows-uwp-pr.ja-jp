@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 62aa90caa899a25fc25b728c0e60cb2db2013c97
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4054529"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4088898"
 ---
 # <a name="connected-storage-loading-on-demand"></a><span data-ttu-id="137f4-104">接続ストレージのオンデマンド読み込み</span><span class="sxs-lookup"><span data-stu-id="137f4-104">Connected Storage loading on demand</span></span>
 

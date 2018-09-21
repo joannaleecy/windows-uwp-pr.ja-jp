@@ -12,34 +12,34 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 233f0e81f041cf1c98e18781c0b312a9d0b0a20a
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4053119"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4082684"
 ---
-# <a name="batch"></a><span data-ttu-id="b3daa-104">/batch</span><span class="sxs-lookup"><span data-stu-id="b3daa-104">/batch</span></span>
-<span data-ttu-id="b3daa-105">複数のプレイヤーの統計情報の複雑なバッチ要求は、複数のタイトルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="b3daa-105">Accesses complex batch requests for multiple player statistics across multiple titles.</span></span> <span data-ttu-id="b3daa-106">これらの Uri のドメインが`userstats.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="b3daa-106">The domain for these URIs is `userstats.xboxlive.com`.</span></span>
+# <a name="batch"></a><span data-ttu-id="30652-104">/batch</span><span class="sxs-lookup"><span data-stu-id="30652-104">/batch</span></span>
+<span data-ttu-id="30652-105">複数のプレイヤーの統計情報の複雑なバッチ要求は、複数のタイトルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="30652-105">Accesses complex batch requests for multiple player statistics across multiple titles.</span></span> <span data-ttu-id="30652-106">これらの Uri のドメインが`userstats.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="30652-106">The domain for these URIs is `userstats.xboxlive.com`.</span></span>
   
 <a id="ID4EV"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="b3daa-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="b3daa-107">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="30652-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="30652-107">Valid methods</span></span>
 
-[<span data-ttu-id="b3daa-108">POST</span><span class="sxs-lookup"><span data-stu-id="b3daa-108">POST</span></span>](uri-batchpost.md)
+[<span data-ttu-id="30652-108">POST</span><span class="sxs-lookup"><span data-stu-id="30652-108">POST</span></span>](uri-batchpost.md)
 
-<span data-ttu-id="b3daa-109">&nbsp;&nbsp;POST メソッドは複数のタイトルに複数のプレイヤーの統計情報の複雑なバッチ要求の GET メソッドとして機能します。</span><span class="sxs-lookup"><span data-stu-id="b3daa-109">&nbsp;&nbsp;POST method that functions as a GET method for complex batch requests for multiple player statistics across multiple titles.</span></span>
+<span data-ttu-id="30652-109">&nbsp;&nbsp;POST メソッドは複数のタイトルに複数のプレイヤーの統計情報の複雑なバッチ要求の GET メソッドとして機能します。</span><span class="sxs-lookup"><span data-stu-id="30652-109">&nbsp;&nbsp;POST method that functions as a GET method for complex batch requests for multiple player statistics across multiple titles.</span></span>
  
 <a id="ID4E6"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="b3daa-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="b3daa-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="30652-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="30652-110">See also</span></span>
  
 <a id="ID4EBB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="b3daa-111">Parent</span><span class="sxs-lookup"><span data-stu-id="b3daa-111">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="30652-111">Parent</span><span class="sxs-lookup"><span data-stu-id="30652-111">Parent</span></span> 
 
-[<span data-ttu-id="b3daa-112">ユーザー統計 URI</span><span class="sxs-lookup"><span data-stu-id="b3daa-112">User Statistics URIs</span></span>](atoc-reference-userstats.md)
+[<span data-ttu-id="30652-112">ユーザー統計 URI</span><span class="sxs-lookup"><span data-stu-id="30652-112">User Statistics URIs</span></span>](atoc-reference-userstats.md)
 
    

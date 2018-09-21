@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム DVR, Windows デベロッパー センター
 ms.openlocfilehash: d3d50dff4f8fc09f4c9303fa68172bd4a46eb2fa
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4057731"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4083526"
 ---
 # <a name="configuring-game-dvr-on-windows-dev-center"></a><span data-ttu-id="8b290-104">Windows デベロッパー センターでのゲーム DVR の構成</span><span class="sxs-lookup"><span data-stu-id="8b290-104">Configuring Game DVR on Windows Dev Center</span></span>
 

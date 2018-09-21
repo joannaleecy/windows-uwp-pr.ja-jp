@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, ソーシャル, People システム, フレンド
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ab0add0f379654be1285faac85690794bf48f9e
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4052799"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4084142"
 ---
 # <a name="xbox-live-people-system"></a><span data-ttu-id="33cb3-104">Xbox Live People システム</span><span class="sxs-lookup"><span data-stu-id="33cb3-104">Xbox Live People System</span></span>
 
