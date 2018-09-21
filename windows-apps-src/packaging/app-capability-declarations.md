@@ -4,18 +4,18 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: アプリ機能の宣言
 description: 一部の API またはピクチャ、ミュージック、デバイス (カメラ、マイクなど) などのリソースにアクセスするには、機能をユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ マニフェストで宣言する必要があります。
 ms.author: misatran
-ms.date: 7/17/2018
+ms.date: 09/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e4bb7b493e6fb839f300f4c446b7510f28fabb
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.openlocfilehash: 17f40055f22d8d065ac85d207f3ea17a58a14519
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4089171"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4110864"
 ---
 # <a name="app-capability-declarations"></a>アプリ機能の宣言
 
@@ -25,13 +25,12 @@ ms.locfileid: "4089171"
 
 一部の機能では、アプリが*機密性の高いリソース*にアクセスできます。 ユーザーの個人データにアクセスしたり、ユーザーに課金したりできるため、これらのリソースは機密性の高いリソースと見なされます。 設定アプリで管理されるプライバシー設定で、機密性の高いリソースへのアクセスを動的に制御することができます。 したがって、機密性の高いリソースが常に利用できるとアプリで認識されないことが重要です。 機密性の高いリソースへのアクセスについて詳しくは、「[個人データにアクセスするアプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/Hh768223)」をご覧ください。 *機密性の高いリソース*へのアクセス許可をアプリに与える機能は、機能のシナリオの横にアスタリスク (\*) が付いています。
 
-次のとおり、3 種類の機能があります。
+機能のいくつかの種類があります。
 
--   アプリのほとんどのシナリオに適用される一般的な用途の機能。
-
--   アプリが周辺機器と内部デバイスにアクセスできるようにするデバイス機能。
-
--   Microsoft Store への提出の承認が必要であるか、通常は Microsoft および特定のパートナーだけが利用可能な制限付き機能。
+- [一般的な用途の機能](#general-use-capabilities)アプリの最も一般的なシナリオに適用します。
+- [デバイスの機能](#device-capabilities)アプリが周辺機器と内部デバイスにアクセスできるようにします。
+- [制限付き機能](#restricted-capabilities)、Microsoft Store 申請の承認が必要か、通常はのみ利用可能な Microsoft および特定のパートナーです。
+- [カスタムの機能](#custom-capabilities)です。
 
 ## <a name="general-use-capabilities"></a>一般的な用途の機能
 
@@ -96,23 +95,19 @@ ms.locfileid: "4089171"
 
 必ず、アプリで本当に必要ない限りこれら制限付き機能を宣言しないようにします。 これらの機能が必要で適しているものとしては、身元を証明するデジタル証明書をスマート カードに含めるようにユーザーに求める 2 要素認証を使ったバンキング アプリなどがあります。 また、主に企業ユーザー向けに設計されたアプリや、ユーザーのドメイン資格情報がないとアクセスできな企業リソースへのアクセスを必要とするアプリもあります。
 
-アプリのパッケージ マニフェストで宣言するとき、すべての制限付き機能に **rescap** 名前空間を含める必要があります。 たとえば、**appCaptureSettings** 機能を宣言する方法を次に示します。
+制限付き機能を宣言する[アプリ パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)ソース ファイルの変更 (`Package.appxmanifest`)。 **Xmlns:rescap** XML 名前空間の宣言を追加し、制限付き機能を宣言するときに、 **rescap**プレフィックスを使用します。 たとえば、**appCaptureSettings** 機能を宣言する方法を次に示します。
 
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    ...
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="... rescap">
+...
 <Capabilities>
     <rescap:Capability Name="appCaptureSettings"/>
 </Capabilities>
-```
-
-次に示すように、Package.appxmanifest ファイルの先頭に **xmlns:rescap** 名前空間の宣言も追加する必要があります。
-
-```xml
-<Package
-    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-    xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-    IgnorableNamespaces="uap mp wincap rescap">
+</Package>
 ```
 
 ### <a name="restricted-capability-approval-process"></a>制限付き機能の承認プロセス
@@ -123,7 +118,7 @@ ms.locfileid: "4089171"
 
 認定プロセス中、テスターが提供された情報を確認し、その申請で機能の使用を承認するかどうかを判断します。 これにより、申請が認定プロセスを完了するまでの時間がいくらか長くなる可能性があります。 機能の使用が承認された場合、アプリの認定プロセスの残りの部分が続行されます。 一般に、アプリの更新プログラムを申請するときに機能の承認プロセスを繰り返す必要はありません (追加の機能を宣言する場合を除く)。
 
-機能の使用が承認されない場合、申請は認定に失敗し、認定レポートでフィードバックが提供されます。 その後、新しい申請を作成して機能を宣言しないパッケージをアップロードすることを選択できます。または、該当する場合は、機能の使用に関連する問題を解決し、新しい申請で承認をリクエストします。
+機能の使用が承認されない、申請は認定に失敗し、認定レポートでフィードバックが提供されます。 その後、新しい申請を作成して機能を宣言しないパッケージをアップロードすることを選択できます。または、該当する場合は、機能の使用に関連する問題を解決し、新しい申請で承認をリクエストします。
 
 > [!NOTE]
 > 申請でデベロッパー センターの開発サンドボックスを使う場合 (たとえば、Xbox Live と統合されるゲームがこれに該当します)、**申請オプション** ページで情報を提供するのではなく事前に承認をリクエストする必要があります。 このためには、[Windows 開発者向けサポート ページ](https://developer.microsoft.com/windows/support)にアクセスしてください。 開発者向けサポート トピック**ダッシュ ボードの問題**問題の種類として**アプリの申請**、およびサブカテゴリ**他**を選択します。 その機能を使用している方法と、製品の必要がある理由を説明します。 必要情報がすべて記載されていない場合、要求が拒否されます。 また別途、追加情報の提供を求められることがあります。 このプロセスには通常 5 営業日以上かかるため、十分前もってリクエストを送信してください。
@@ -219,8 +214,25 @@ ms.locfileid: "4089171"
 | **Windows チーム デバイスの資格情報** | **TeamEditionDeviceCredentials**制限付き機能には、Windows 10 バージョン 1703 以降を実行している Surface Hub デバイスでデバイス アカウントの資格情報を要求する Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 |
 | **Windows チーム アプリケーション ビュー** | **TeamEditionView**制限付き機能には、Windows 10 バージョン 1703 以降を実行している Surface Hub デバイスでアプリケーションのビューをホストするための Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 |
 
+## <a name="custom-capabilities"></a>カスタム機能
 
+上記の[制限付き機能](#restricted-capabilities)では、カスタム機能を使う承認を要求するために使用できると同じ機能の承認プロセスを説明します。 [埋め込みの SIM](/uwp/api/windows.networking.networkoperators.esim) Api は、カスタム機能を必要とする Api の例を示します。 開発者モードでアプリケーションをローカルで実行する場合は、カスタムの機能を必要はありません。 ただし、Microsoft Store にアプリを公開するか、開発者モード外で実行する必要があります。
 
+場合は、Windows のテクニカル アカウント マネージャー (TAM) がある場合は、TAM へのアクセスを要求すると操作することができます。 詳細については、[連絡先 Microsoft TAM](/windows-hardware/drivers/mobilebroadband/testing-your-desktop-cosa-apn-database-submission#contact-your-microsoft-tam)で入手できます。
+
+カスタム機能を宣言する[アプリ パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)ソース ファイルの変更 (`Package.appxmanifest`)。 **Xmlns:uap4** XML 名前空間の宣言を追加し、カスタムの機能を宣言するときに、 **uap4**プレフィックスを使用します。 次に例を示します。
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    ...
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4">
+...
+<Capabilities>
+    <uap4:CustomCapability Name="CompanyName.customCapabilityName_PublisherID"/>
+</Capabilities>
+</Package>
+```
 
 ## <a name="related-topics"></a>関連トピック
 

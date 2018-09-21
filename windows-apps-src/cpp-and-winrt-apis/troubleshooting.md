@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、トラブルシューティング、HRESULT、エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: 4129c50a2273c8ac425f6ea972898aa09fe0fcf3
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.openlocfilehash: cccc58c0b9dd5f922c87d3e6860bb2f2045ea767
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4085729"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4115306"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) に関する問題のトラブルシューティング
 > [!NOTE]
@@ -37,7 +37,7 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 | C++ コンパイラーが、"*削除された関数を参照しようとしています*" というエラーを生成します。 | これは、**make** を呼び出し、テンプレート パラメーターとして渡す実装型の既定のコンストラクターが `= delete` である場合に発生する可能性があります。 実装型のヘッダー ファイルを編集し、`= delete` を `= default` に変更してください。 ランタイム クラスの IDL にコンストラクターを追加することもできます。 |
 | [**INotifyPropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged) を実装しましたが、XAML バインドが更新されません (そのため、UI が [**PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) にサブスクライブしません)。 | XAML マークアップのバインド式で必ず `Mode=OneWay` (または TwoWay) を設定してください。 「[XAML コントロール: C++/WinRT プロパティへのバインド](binding-property.md)」を参照してください。 |
 | XAML アイテム コントロールを監視可能なコレクションにバインドしていますが、実行時に "パラメーターが正しくありません" というメッセージで例外がスローされます。 | IDL および実装で、監視可能なコレクションを型 **Windows.Foundation.Collections.IVector<IInspectable>** として宣言します。 ただし、**Windows.Foundation.Collections.IObservableVector<T>** を実装するオブジェクトを返します。T は要素型です。 「[XAML アイテム コントロール: C++/WinRT コレクションへのバインド](binding-collection.md)」を参照してください。  |
-| C++ コンパイラーが、"*'MyImplementationType_base&lt;MyImplementationType&gt;': 使用可能な適切な既定コンストラクターがありません*" という形式のエラーを生成します。|これは、非自明なコンストラクターを持つ型から派生させた場合に発生する可能性があります。 派生型のコンストラクターは、基本型のコンストラクターが必要とするパラメーターを渡す必要があります。 実証済みの例については、「[非自明なコンストラクタを持つ型からの派生](author-apis.md#deriving-from-a-type-that-has-a-non-trivial-constructor)」を参照してください。|
+| C++ コンパイラーが、"*'MyImplementationType_base&lt;MyImplementationType&gt;': 使用可能な適切な既定コンストラクターがありません*" という形式のエラーを生成します。|これは、非自明なコンストラクターを持つ型から派生させた場合に発生する可能性があります。 派生型のコンストラクターは、基本型のコンストラクターが必要とするパラメーターを渡す必要があります。 実証済みの例については、「[非自明なコンストラクタを持つ型からの派生](author-apis.md#deriving-from-a-type-that-has-a-non-default-constructor)」を参照してください。|
 | C++ コンパイラーが、"*'const std::vector&lt;std::wstring,std::allocator&lt;_Ty&gt;&gt;' から 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'* に変換できません" というエラーを生成します。|これは、コレクションを予期している Windows ランタイム API に std::wstring の std::vector を渡すときに発生する可能性があります。 詳細については、「[標準的な C++ のデータ型と C++/WinRT](std-cpp-data-types.md)」を参照してください。|
 | C++ コンパイラーが、"*'const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;' から 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'* に変換できません" というエラーを生成します。|これは、コレクションを予期している非同期 Windows ランタイム API に winrt::hstring の std::vector を渡すときに、非同期呼び出し先へのベクトルのコピーも移動も行っていない場合に発生する可能性があります。 詳細については、「[標準的な C++ のデータ型と C++/WinRT](std-cpp-data-types.md)」を参照してください。|
 | プロジェクトを開くときに、Visual Studio が "*プロジェクトのアプリケーションはインストールされていません*" というエラーを生成します。|まだ行っていない場合は、Visual Studio の **[新しいプロジェクト]** ダイアログから **C++ での開発用の Windows ユニバーサル ツール**をインストールする必要があります。 それでも問題が解決しない場合は、プロジェクトが C++/WinRT Visual Studio Extension (VSIX) に依存している可能性があります (「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照)。|

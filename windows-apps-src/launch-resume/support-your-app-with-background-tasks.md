@@ -8,14 +8,14 @@ ms.date: 08/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: バック グラウンド タスクの windows 10, uwp,
+keywords: windows 10、uwp、タスクをバック グラウンドします。
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4090259"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4114408"
 ---
 # <a name="support-your-app-with-background-tasks"></a>バックグラウンド タスクによるアプリのサポート
 
@@ -28,18 +28,18 @@ Windows 10 バージョン 1607 以降では、バックグラウンドでのオ
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>インプロセスとアウトプロセスのバックグラウンド タスク
 
-バック グラウンド タスクを実装する 2 つの方法があります。
+バック グラウンド タスクを実装するための 2 つの方法があります。
 
-* : プロセス内で、アプリとそのバック グラウンド プロセスは同じプロセスで実行します。
-* アウト プロセス: アプリとバック グラウンド プロセスは、個別のプロセスで実行されます。
+* 同じプロセス内で実行アプリケーションとそのバック グラウンド プロセスで処理します。
+* アウト プロセス: アプリケーションとバック グラウンド プロセスは、別々 のプロセスで実行します。
 
 インプロセス バックグラウンドのサポートは、バックグラウンド タスクの書き込みを簡略化するために、Windows 10 バージョン 1607 で導入されました。 ただし現在でも、アウトプロセスのバックグラウンド タスクを書き込むことはできます。 インプロセスのバックグラウンド タスクとアウトプロセスのバックグラウンド タスクの使い分けに関する推奨事項については、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
 
-アウト プロセス バック グラウンド タスク回復力の強化ダウンのでがバック グラウンド プロセスできないアプリのプロセス問題が発生した場合。 ただし、回復性には、アプリとバック グラウンド タスクの間でプロセス間通信を管理するより複雑な価格。
+プロセス外のバック グラウンド タスクは、バック グラウンド プロセスは、問題が生じた場合、アプリケーション プロセスを表示できませんので復元力を高める。 ですが、弾力性には、アプリケーションとバック グラウンド タスクの間でプロセス間通信を管理する複雑さの増大の価格です。
 
-アウト プロセス バック グラウンド タスクは、OS が個別のプロセス (backgroundtaskhost.exe) で実行される[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)インターフェイスを実装する、軽量クラスとして実装されます。 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)クラスを使用して、バック グラウンド タスクを登録します。 このクラス名は、バックグラウンド タスクの登録時にエントリ ポイントを指定するために使用されます。
+プロセス外のバック グラウンド タスクは、オペレーティング システムが別のプロセス (backgroundtaskhost.exe) で実行される[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)インターフェイスを実装する軽量のクラスとして実装されます。 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)クラスを使用してバック グラウンド タスクを登録します。 このクラス名は、バックグラウンド タスクの登録時にエントリ ポイントを指定するために使用されます。
 
-Windows 10 バージョン 1607 では、バックグラウンド タスクを作成しなくても、バックグラウンド アクティビティを有効にできます。 代わりに、フォア グラウンド アプリケーションのプロセス内で直接バック グラウンド コードを実行できます。
+Windows 10 バージョン 1607 では、バックグラウンド タスクを作成しなくても、バックグラウンド アクティビティを有効にできます。 代わりに、バック グラウンド、フォア グラウンド アプリケーションのプロセス内に直接コードを実行できます。
 
 インプロセス バックグラウンド タスクの概要については、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください。
 
@@ -75,11 +75,11 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 | **UserNotPresent**       | ユーザーが不在である必要があります。            |
 | **UserPresent**          | ユーザーが在席している必要があります。         |
 
-バックグラウンド タスク [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) に **InternetAvailable** 条件を追加して、ネットワーク スタックが実行されるまで、バックグラウンド タスクのトリガーを遅らせます。 この条件は、ネットワークが利用可能になるまで、バック グラウンド タスクが実行されないために、電力を節約します。 この条件では、リアルタイムのアクティブ化は行われません。
+バックグラウンド タスク [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) に **InternetAvailable** 条件を追加して、ネットワーク スタックが実行されるまで、バックグラウンド タスクのトリガーを遅らせます。 この条件は、ネットワークが利用可能になるまでバック グラウンド タスクを実行しないために、電力を節約します。 この条件では、リアルタイムのアクティブ化は行われません。
 
-バック グラウンド タスクは、ネットワーク接続を必要とする場合は、ネットワークは、バック グラウンド タスクの実行中の応答保つ[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)を設定します。 これによって、デバイスがコネクト スタンバイ モードに入っている場合でも、タスクの実行中はネットワークを稼働状態に保つようにバックグラウンド タスク インフラストラクチャに指示されます。 バック グラウンド タスクが**IsNetworkRequested**を設定していない場合、バック グラウンド タスクはできません (たとえば、電話の画面がになっているとします。) コネクト スタンバイ モードのときにネットワークにアクセスするには
+バック グラウンド タスクは、ネットワーク接続を必要とする場合は、バック グラウンド タスクの実行中のネットワークが残ることを確認するのには[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)を設定します。 これによって、デバイスがコネクト スタンバイ モードに入っている場合でも、タスクの実行中はネットワークを稼働状態に保つようにバックグラウンド タスク インフラストラクチャに指示されます。 バック グラウンド タスクに**IsNetworkRequested**が設定されていない場合、バック グラウンド タスクことはできません (たとえば、携帯電話の画面の電源をオフにします。) 接続されているスタンバイ モードでネットワークにアクセスするには
  
-バック グラウンド タスクの条件について詳しくは、[バック グラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)を参照してください。
+バック グラウンド タスクの条件に関する詳細情報は、[バック グラウンド タスクを実行するための条件を設定](set-conditions-for-running-a-background-task.md)を参照してください。
 
 ## <a name="application-manifest-requirements"></a>アプリケーション マニフェストの要件
 
@@ -143,7 +143,7 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 
 バッテリー節約機能が有効であってもバックグラウンド タスクを実行しプッシュ通知を受信するようにアプリを設定していない限り、デバイスが外部電源に接続されていない状態でバッテリー残量が指定量を下回ると、バッテリー節約機能 (有効な場合) によりバックグラウンド タスクが実行されなくなります。 これによりバックグラウンド タスクを登録できなくなることはありません。
 
-ただし、エンタープライズ アプリ, と Microsoft Store で公開されていないのアプリでは、「[無期限にバック グラウンドで実行](run-in-the-background-indefinetly.md)する機能を使用して、バック グラウンドで無期限にバック グラウンド タスクまたは延長実行セッションを実行する方法について説明します。
+ただし、エンタープライズ アプリケーション、およびアプリケーション Microsoft ストアでは公開されませんが、[バック グラウンドで無限に拡張の実行セッションのバック グラウンド タスクを実行するのには、機能を使用する方法については、[無期限にバック グラウンドで実行](run-in-the-background-indefinetly.md)を参照してください。
 
 ## <a name="background-task-resource-guarantees-for-real-time-communication"></a>リアルタイム通信に対するバックグラウンド タスク リソース保証
 
@@ -162,7 +162,7 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 > [!IMPORTANT]
 > **DeviceUseTrigger** と **DeviceServicingTrigger** は、インプロセスのバックグラウンド タスクでは使用できません。
 
-時間がかかるファームウェア更新など、一部の重要なデバイス操作は、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) では実行できません。 このような操作は PC でのみ、[**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) を使う特権アプリによってのみ実行できます。 *特権アプリ*とは、これらの操作を実行する権限をデバイス製造元から与えられているアプリです。 デバイス メタデータを使って、どのアプリがデバイスの特権アプリであるか (存在する場合) を指定します。 詳しくは、[デバイスの同期と Microsoft Store デバイス アプリの更新プログラム](http://go.microsoft.com/fwlink/p/?LinkId=306619)をご覧ください。
+時間がかかるファームウェア更新など、一部の重要なデバイス操作は、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) では実行できません。 このような操作は PC でのみ、[**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) を使う特権アプリによってのみ実行できます。 *特権アプリ*とは、これらの操作を実行する権限をデバイス製造元から与えられているアプリです。 デバイス メタデータを使って、どのアプリがデバイスの特権アプリであるか (存在する場合) を指定します。 詳細については、[デバイスの同期と Microsoft ストア デバイス アプリの更新プログラム](http://go.microsoft.com/fwlink/p/?LinkId=306619)を参照してください。
 
 ## <a name="managing-background-tasks"></a>バックグラウンド タスクの管理
 
@@ -171,7 +171,7 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)  
 [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
 
-アプリの起動中にバック グラウンド タスクの登録を確認します。 BackgroundTaskBuilder.AllTasks に、アプリのグループ化されていないバック グラウンド タスクが指定されていることを確認します。 存在しないものを再登録します。 不要になったすべてのタスクの登録を解除します。 これにより、アプリが起動されるたびにすべてのバック グラウンド タスクの登録は最新であります。
+アプリケーション起動中に、バック グラウンド タスクの登録を確認してください。 BackgroundTaskBuilder.AllTasks に、アプリケーションのグループ化されていないバック グラウンド タスクが指定されていることを確認します。 存在しないものを再登録します。 不要なすべてのタスクの登録を解除します。 これにより、アプリケーションが起動されるたびにすべてのバック グラウンド タスクの登録が最新です。
 
 ## <a name="related-topics"></a>関連トピック
 
