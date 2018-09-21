@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, 大規模なセッション, 最近のプレイヤー
 ms.localizationpriority: medium
 ms.openlocfilehash: cead1a3ca1d56185ef97fe3f3271484bfbc58f18
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4091511"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4110111"
 ---
 # <a name="large-sessions"></a><span data-ttu-id="ade0f-104">大規模なセッション</span><span class="sxs-lookup"><span data-stu-id="ade0f-104">Large sessions</span></span>
 

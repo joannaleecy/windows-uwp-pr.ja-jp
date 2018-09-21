@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, uwp, windows 10, Xbox one, 注目の統計とランキング, ランキング, 統計 2017, Windows デベロッパー センター
 ms.openlocfilehash: ed965c4d7e2c15e76494fd197808c7f47db2d584
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4088260"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4111875"
 ---
 # <a name="configuring-featured-stats-and-leaderboards-2017-on-windows-dev-center"></a><span data-ttu-id="e0445-104">Windows デベロッパー センターで注目の統計とランキング 2017 を構成する</span><span class="sxs-lookup"><span data-stu-id="e0445-104">Configuring Featured Stats and Leaderboards 2017 on Windows Dev Center</span></span>
 

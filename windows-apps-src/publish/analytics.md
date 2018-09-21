@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、分析、レポート、ダッシュ ボード、アプリ、データ、メトリック
 ms.localizationpriority: medium
 ms.openlocfilehash: 090ddfdfbed1ae49e87f4dc419765e006913764f
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4110470"
+ms.locfileid: "4126107"
 ---
 # <a name="analyze-app-performance"></a><span data-ttu-id="2cd90-103">アプリのパフォーマンスの分析</span><span class="sxs-lookup"><span data-stu-id="2cd90-103">Analyze app performance</span></span>
 

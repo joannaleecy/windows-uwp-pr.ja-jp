@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fba27dd7a5726161e82869f44746ba3bfe4261e
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4087906"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4110287"
 ---
 # <a name="participant-user-scenarios"></a><span data-ttu-id="8bdcb-104">参加者のユーザー シナリオ</span><span class="sxs-lookup"><span data-stu-id="8bdcb-104">Participant user scenarios</span></span>
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e76f63fa30c3a294e1917bf1bed9ea79897390b2
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4091162"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4120006"
 ---
 # <a name="supported-languages"></a><span data-ttu-id="5c430-103">サポートされている言語</span><span class="sxs-lookup"><span data-stu-id="5c430-103">Supported languages</span></span>
 

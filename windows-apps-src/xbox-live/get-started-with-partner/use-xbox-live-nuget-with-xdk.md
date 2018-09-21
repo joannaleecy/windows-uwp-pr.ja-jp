@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, NuGet
 ms.localizationpriority: medium
 ms.openlocfilehash: b8b12201c0511339c4dd38824e17f7586e03708e
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4092091"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4112633"
 ---
 # <a name="use-the-xbox-live-api-nuget-package-to-develop-xdk-titles"></a><span data-ttu-id="fc3cd-104">Xbox Live API NuGet パッケージを使用して XDK タイトルを開発する</span><span class="sxs-lookup"><span data-stu-id="fc3cd-104">Use the Xbox Live API NuGet package to develop XDK titles</span></span>
 

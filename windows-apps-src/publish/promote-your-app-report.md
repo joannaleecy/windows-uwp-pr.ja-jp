@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 販売促進, アプリ, キャンペーン, レポート, インストール
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4087587"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4118512"
 ---
 # <a name="ad-campaign-report"></a><span data-ttu-id="389d5-104">広告キャンペーン レポート</span><span class="sxs-lookup"><span data-stu-id="389d5-104">Ad campaign report</span></span>
 

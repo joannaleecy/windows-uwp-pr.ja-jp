@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 584acb4b74fa74dd91e9f8044b59647d8e5d8787
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4086680"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4112587"
 ---
 # <a name="usersxuidxuidoutbox"></a><span data-ttu-id="bfef5-104">/users/xuid({xuid})/outbox</span><span class="sxs-lookup"><span data-stu-id="bfef5-104">/users/xuid({xuid})/outbox</span></span>
 <span data-ttu-id="bfef5-105">ユーザーに送信専用アクセスが許可のメッセージは、Xbox LIVE サービスに送信トレイします。</span><span class="sxs-lookup"><span data-stu-id="bfef5-105">Provides send-only access to a user's messaging outbox for Xbox LIVE Services.</span></span> <span data-ttu-id="bfef5-106">これらの Uri のドメインが`msg.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="bfef5-106">The domain for these URIs is `msg.xboxlive.com`.</span></span>
