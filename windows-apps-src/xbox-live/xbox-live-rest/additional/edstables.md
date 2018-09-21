@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ae8c61d8afae6788f2f99e4e2beff262c011fc60
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4060837"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4089696"
 ---
 # <a name="eds-tables"></a><span data-ttu-id="43458-104">EDS の表</span><span class="sxs-lookup"><span data-stu-id="43458-104">EDS Tables</span></span>
 

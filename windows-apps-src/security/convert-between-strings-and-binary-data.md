@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: b3c3a3f6f831186302fc32b1f510919da40c57cc
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4057238"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4089793"
 ---
 # <a name="convert-between-strings-and-binary-data"></a><span data-ttu-id="08ef2-104">文字列とバイナリ データの間の変換</span><span class="sxs-lookup"><span data-stu-id="08ef2-104">Convert between strings and binary data</span></span>
 

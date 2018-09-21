@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d183aeab14103ed0d6730571029076d85e7b004a
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4053765"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4090252"
 ---
 # <a name="usersbatchprofilesettings"></a><span data-ttu-id="e9407-104">/users/batch/profile/settings</span><span class="sxs-lookup"><span data-stu-id="e9407-104">/users/batch/profile/settings</span></span>
 <span data-ttu-id="e9407-105">ユーザーまたはユーザーのプロファイルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="e9407-105">Access the profile for a user or users.</span></span> <span data-ttu-id="e9407-106">これらの Uri のドメインが`profile.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="e9407-106">The domain for these URIs is `profile.xboxlive.com`.</span></span>

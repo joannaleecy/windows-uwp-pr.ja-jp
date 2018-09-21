@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 04d2fab9aa836d36a0dba202b2292c311b6d4979
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4058051"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4082928"
 ---
 # <a name="achievements-2017"></a><span data-ttu-id="a09c3-104">Achievements 2017</span><span class="sxs-lookup"><span data-stu-id="a09c3-104">Achievements 2017</span></span>
 
