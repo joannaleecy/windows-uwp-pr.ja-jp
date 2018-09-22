@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, ロール
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab0a8fd83e94af9a06582faebc2923eb459996b
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4111835"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4129052"
 ---
 # <a name="roles"></a>ロール
 

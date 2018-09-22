@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a10b8704de47ef62a283c1b634b4a5212623e5c
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4083872"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4129754"
 ---
 # <a name="get-usersme"></a>GET (/users/me)
 ユーザーの XUID を把握することがなく、現在のユーザーの[presencerecord を要求して](../../json/json-presencerecord.md)を取得します。

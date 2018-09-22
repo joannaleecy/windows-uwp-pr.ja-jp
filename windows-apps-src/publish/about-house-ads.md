@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 155b8f67b5cd6080554afb889c7c27c921c998f8
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4114146"
+ms.locfileid: "4128481"
 ---
 # <a name="about-house-ads"></a>自社広告について
 
 
 自分の他のアプリで、自分のアプリの 1 つを宣伝する広告を無料で作成することができます。 これを「*自社広告*」と呼びます。
 
-自社広告は、マイクロソフトからの広告を[表示](../monetize/display-ads-in-your-app.md)するように構成された独自のアプリケーションでのみ表示されます。
+自社広告は、Microsoft から広告を[表示](../monetize/display-ads-in-your-app.md)するように構成されたアプリでのみ表示されます。
 
 自社広告を設定するには、[広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)時に、**[キャンペーンの種類]** として **[自社広告 (無料)]** を選びます。 広告は、次の条件を満たしている自分のすべてのアプリで、自動的に表示対象になります。
 

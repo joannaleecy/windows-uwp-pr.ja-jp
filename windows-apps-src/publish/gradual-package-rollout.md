@@ -11,15 +11,15 @@ keywords: Windows 10, UWP
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
 ms.openlocfilehash: 407ffb5fdebdc90a63ed7f65b4e97f8358dc58c8
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4114206"
+ms.locfileid: "4129923"
 ---
 # <a name="gradual-package-rollout"></a>段階的なパッケージのロールアウト
 
-提出書類に更新を発行すると、徐々 を展開する更新されたパッケージ アプリのお客様の割合 (Xbox を含む) Windows 10 を選択できます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 この割合は、新しい申請を作成することなく、いつでも増やす (または更新を停止する) ことができます。 
+申請を更新プログラムを公開するときは、段階的にロールアウトの更新されたパッケージ アプリのユーザーの割合を Windows 10 (Xbox を含む) を選択できます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 この割合は、新しい申請を作成することなく、いつでも増やす (または更新を停止する) ことができます。 
 
 > [!IMPORTANT]
 > ロールアウトの選択はすべてのパッケージに適用されますが、適用対象となるユーザーはパッケージ フライトをサポートする OS バージョン (Windows.Desktop ビルド 10586 以降、Windows.Mobile ビルド 10586.63 以降、Xbox) を実行しているユーザーだけです。これには、[ビジネス向け Microsoft ストア](https://businessstore.microsoft.com/store)または[教育機関向け Microsoft ストア](https://educationstore.microsoft.com/store)を通じて、[ストアで管理される (オンライン) ライセンス](organizational-licensing.md)によりアプリを入手するユーザーも含まれます。 段階的なパッケージのロールアウトを使用する場合、次の説明に従ってパッケージのロールアウトを完了するまでは、古い OS バージョンを使用しているユーザーは最新の提出からパッケージを入手できません。

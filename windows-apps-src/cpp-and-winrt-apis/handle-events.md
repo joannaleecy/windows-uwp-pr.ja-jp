@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、プロジェクション、処理、イベント、デリゲート
 ms.localizationpriority: medium
 ms.openlocfilehash: 7af66c3f0586f2fb99a2a742f6da0144ed69d253
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4115442"
+ms.locfileid: "4130117"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) でのデリゲートを使用したイベントの処理
 このトピックでは、C++/WinRT を使用したイベント処理デリゲートの登録方法と取り消し方法について説明します。 標準的な C++ 関数のようなオブジェクトを使用してイベントを処理できます。
@@ -122,7 +122,7 @@ private:
 
 上の例のような強参照の代わりに、弱参照をボタンに格納することができます (「[C++/WinRT の弱参照](weak-references.md)」を参照してください)。
 
-代わりに、デリゲートを登録するときは、(型[**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)) のイベントの revoker を要求する**winrt::auto_revoke** (これが[**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)の型の値) を指定できます。 イベント revoker のイベント ソース (イベントを発生させるオブジェクト) への弱い参照を保持します。 **event_revoker::revoke** メンバー関数を呼び出して手動で取り消すことができますが、イベント リボーカーは参照が範囲外になったときに自動的にその関数自体を呼び出します。 **revoke** 関数は、イベント ソースがまだ存在するかどうかを確認し、存在する場合は、デリケートを取り消します。 次の例では、イベント ソースを格納する必要がないため、デストラクターは必要ありません。
+または、デリゲートを登録する場合は、(の種類の[**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)) イベント リボーカーを要求する**winrt::auto_revoke** (される値の型[**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) を指定できます。 イベント リボーカーをイベント ソース (イベントを発生させるオブジェクト) への弱参照を保持します。 **event_revoker::revoke** メンバー関数を呼び出して手動で取り消すことができますが、イベント リボーカーは参照が範囲外になったときに自動的にその関数自体を呼び出します。 **revoke** 関数は、イベント ソースがまだ存在するかどうかを確認し、存在する場合は、デリケートを取り消します。 次の例では、イベント ソースを格納する必要がないため、デストラクターは必要ありません。
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -264,7 +264,7 @@ void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const
 ラムダのキャプチャ句で、一時変数を作成し、*このオブジェクト*の弱参照を表示します。 ラムダ式の本文で、*このオブジェクト*の強参照を取得する場合は、**OnCompositionScaleChanged** 関数が呼び出されます。 これにより、**OnCompositionScaleChanged** 内で*このオブジェクト*を安全に使用することができます。
 
 ## <a name="important-apis"></a>重要な API
-* [winrt::auto_revoke_t マーカーの構造体](/uwp/cpp-ref-for-winrt/auto-revoke-t)
+* [winrt::auto_revoke_t マーカー構造体](/uwp/cpp-ref-for-winrt/auto-revoke-t)
 * [winrt::implements::get_weak 関数](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [winrt::implements::get_strong 関数](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
 
