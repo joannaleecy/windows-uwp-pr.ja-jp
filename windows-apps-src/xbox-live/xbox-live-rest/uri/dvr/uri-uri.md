@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b70d027146a5aba0495692e2f2bef1e2a7d2bd52
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4112997"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4122646"
 ---
 # <a name="uri"></a><span data-ttu-id="cd937-104">/{uri}</span><span class="sxs-lookup"><span data-stu-id="cd937-104">/{uri}</span></span>
 <span data-ttu-id="cd937-105">ゲーム クリップ データにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="cd937-105">Access game clip data.</span></span> <span data-ttu-id="cd937-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。</span><span class="sxs-lookup"><span data-stu-id="cd937-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>

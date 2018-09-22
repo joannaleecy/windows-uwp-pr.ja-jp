@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d69ab3a5f2ce6092a2aac8dd9cb532ac0848b16
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4110359"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4121710"
 ---
 # <a name="match-engagement"></a><span data-ttu-id="bcca5-104">マッチの交戦</span><span class="sxs-lookup"><span data-stu-id="bcca5-104">Match engagement</span></span>
 
