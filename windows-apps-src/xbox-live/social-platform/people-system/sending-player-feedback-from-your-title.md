@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 評判, プレイヤー フィードバック
 ms.localizationpriority: medium
 ms.openlocfilehash: e5239c04bd6a178133129f43fcd8a71c8e532b01
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4089786"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4127236"
 ---
 # <a name="sending-player-feedback-from-your-title"></a><span data-ttu-id="23ac1-104">タイトルからのプレイヤー フィードバックの送信</span><span class="sxs-lookup"><span data-stu-id="23ac1-104">Sending player feedback from your title</span></span>
 <span data-ttu-id="23ac1-105">Xbox Live メンバーの大多数は良いプレイヤーですが、他のプレイヤーのゲーム エクスペリエンスを不愉快なものにする "悪いプレイヤー" もわずかとはいえ存在します。</span><span class="sxs-lookup"><span data-stu-id="23ac1-105">The majority of Xbox Live members are awesome, but there are a small percentage of "Bad Apples" who hurt other people's game experiences.</span></span> <span data-ttu-id="23ac1-106">こうした少数のユーザーは、ユーザーとタイトルから送信されたフィードバックによって識別されます。</span><span class="sxs-lookup"><span data-stu-id="23ac1-106">We identify these small percentages of users through user and title submitted feedback.</span></span> <span data-ttu-id="23ac1-107">このような "悪いプレイヤー" に対しては、良いプレイヤーを妨害できないようにマルチプレイヤー エクスペリエンスを制限することにより、良いプレイヤーを保護します。</span><span class="sxs-lookup"><span data-stu-id="23ac1-107">We help protect the rest of the population by ensuring that these "Bad Apples" have a limited multiplayer experience where they can't interfere with good players' games.</span></span> <span data-ttu-id="23ac1-108">Xbox ではシステムで他のユーザーの情報を正確に保つためにユーザーからの報告に大きく依存していますが、Xbox One のタイトルもユーザーの評判や評価の正確さを大幅に向上させるのに直接貢献できます。</span><span class="sxs-lookup"><span data-stu-id="23ac1-108">Xbox relies heavily on users to report other users to keep the system accurate, but titles in Xbox One can directly participate and dramatically help improve the accuracy of the user reputation population.</span></span>

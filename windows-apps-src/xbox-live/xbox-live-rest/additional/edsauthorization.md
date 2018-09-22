@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f160711474c3ec99bcfbbbf0dc94830a8600d3b
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4111729"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4128026"
 ---
 # <a name="eds-authorization"></a><span data-ttu-id="893bc-104">EDS 承認</span><span class="sxs-lookup"><span data-stu-id="893bc-104">EDS Authorization</span></span>
  

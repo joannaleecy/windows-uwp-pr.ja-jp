@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.openlocfilehash: 0afc2c55ab0d0bdd2bee0206f986b2724d331eaf
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4119654"
+ms.locfileid: "4125947"
 ---
 # <a name="page-transitions"></a><span data-ttu-id="ad393-103">ページ切り替え効果</span><span class="sxs-lookup"><span data-stu-id="ad393-103">Page transitions</span></span>
 

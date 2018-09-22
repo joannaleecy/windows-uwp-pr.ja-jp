@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f58b4b5f8cf135aaaad5e23095c4c00278dcec83
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4111071"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4127816"
 ---
 # <a name="usersxuidxuidachievementsscidachievementid"></a><span data-ttu-id="6cb72-104">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span><span class="sxs-lookup"><span data-stu-id="6cb72-104">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span></span>
 <span data-ttu-id="6cb72-105">構成済みのメタデータとユーザー固有のデータを含む、実績を詳しく説明を返します。</span><span class="sxs-lookup"><span data-stu-id="6cb72-105">Returns details about the achievement, including its configured metadata and user-specific data.</span></span> 

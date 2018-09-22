@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ecdf3d885a518f622dae00b4b4a98979c3bdefe9
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4112679"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4126634"
 ---
 # <a name="auxiliary-eds-apis"></a><span data-ttu-id="77983-104">EDS の補助 API</span><span class="sxs-lookup"><span data-stu-id="77983-104">Auxiliary EDS APIs</span></span>
 

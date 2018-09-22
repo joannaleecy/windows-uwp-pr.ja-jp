@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e79846ecb0fce63d371b9ade7efa01ca0561b952
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4086982"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4128074"
 ---
 # <a name="get-started-with-the-xbox-live-creators-program"></a><span data-ttu-id="51ed6-104">Xbox Live クリエーターズ プログラムの概要</span><span class="sxs-lookup"><span data-stu-id="51ed6-104">Get started with the Xbox Live Creators Program</span></span>
  

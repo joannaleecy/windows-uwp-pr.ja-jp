@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b11151df981a4b5ce233458581d21e405be9844c
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4114724"
+ms.locfileid: "4128823"
 ---
 # <a name="user-activities-best-practices"></a><span data-ttu-id="78adc-104">ユーザー アクティビティのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="78adc-104">User Activities best practices</span></span>
 

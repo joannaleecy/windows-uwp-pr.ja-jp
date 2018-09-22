@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 44341b5fc8f831e3a500f47a51b94978f587cb8c
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4111921"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4125108"
 ---
 # <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a><span data-ttu-id="83a0b-104">/users/{userId}/profile/settings/people/{userList}?settings={settings}</span><span class="sxs-lookup"><span data-stu-id="83a0b-104">/users/{userId}/profile/settings/people/{userList}?settings={settings}</span></span>
 <span data-ttu-id="83a0b-105">People モニカー サポートでのユーザーのプロファイルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="83a0b-105">Access the profile for a user or users, with People Moniker support.</span></span> <span data-ttu-id="83a0b-106">これらの Uri のドメインが`profile.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="83a0b-106">The domain for these URIs is `profile.xboxlive.com`.</span></span>

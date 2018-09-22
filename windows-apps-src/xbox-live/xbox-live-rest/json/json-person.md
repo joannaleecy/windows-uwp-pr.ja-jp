@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e8e4ac4e91c4359ca20822297ccb625d09e3d59
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4112765"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "4130640"
 ---
 # <a name="person-json"></a><span data-ttu-id="7e9ae-104">Person (JSON)</span><span class="sxs-lookup"><span data-stu-id="7e9ae-104">Person (JSON)</span></span>
 <span data-ttu-id="7e9ae-105">People システムで 1 人のユーザーに関するメタデータ。</span><span class="sxs-lookup"><span data-stu-id="7e9ae-105">Metadata about a single Person in the People system.</span></span> 

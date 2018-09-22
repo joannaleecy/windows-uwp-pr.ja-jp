@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, セカンダリ タイル
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f11ca4d29f22daf953ce03436c3b786c70a9e04
-ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
+ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "4113462"
+ms.locfileid: "4130967"
 ---
 # <a name="secondary-tiles"></a><span data-ttu-id="db87f-103">セカンダリ タイル</span><span class="sxs-lookup"><span data-stu-id="db87f-103">Secondary tiles</span></span>
 
