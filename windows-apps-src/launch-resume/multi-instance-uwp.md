@@ -4,23 +4,26 @@ title: マルチインスタンスのユニバーサル Windows アプリの作�
 description: このトピックでは、マルチインスタンスをサポートする UWP アプリを記述する方法について説明します。
 keywords: マルチインスタンス UWP
 ms.author: twhitney
-ms.date: 09/19/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9302ed0375739153eb95ac2b54c1ed396b14daee
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4126997"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4156097"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>マルチインスタンスのユニバーサル Windows アプリの作成
 
 このトピックでは、マルチインスタンスのユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法について説明します。
 
 Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリは複数のインスタンスをサポートするためにオプトイン以降、します。 マルチインスタンス UWP アプリのインスタンスが実行されていて、後続のライセンス認証要求が行われた場合、既存のインスタンスはアクティブ化されません。 代わりに、別のプロセスで実行される、新しいインスタンスが作成されます。
+
+> [!IMPORTANT]
+> JavaScript のアプリケーションでは、マルチ インスタンスがサポートされていますが、マルチ インスタンスのリダイレクトはありません。 JavaScript のアプリケーションの複数インスタンスのリダイレクトがサポートされていないために、 [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)クラスはこのようなアプリケーションの便利ではありません。
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>マルチ インスタンスの動作にオプトインします。
 
@@ -59,7 +62,7 @@ Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリ�
 
 **Multi-Instance Redirection UWP app** テンプレートは、上記のように `SupportsMultipleInstances` を package.appxmanifest ファイルに追加し、さらに `Main()` 関数を含むプロジェクトに **Program.cs** (または、テンプレートの C++ バージョンを使用している場合は **Program.cpp**) を追加します。 アクティブ化をリダイレクトするためのロジックは `Main` 関数にあります。 **Program.cs**用のテンプレートは、次に示します。
 
-[AppInstance.RecommendedInstance](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)を表すこのライセンス認証要求のシェルが提供する、推奨されるインスタンスが存在する場合 (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合することができることができますのアクティブ化そのインスタンスにしたり、リダイレクトを選択した場合に無視することができます。
+[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)を表すこのライセンス認証要求のシェルが提供する、推奨されるインスタンスが存在する場合 (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合することができることができますのアクティブ化そのインスタンスにしたり、リダイレクトを選択した場合に無視することができます。
 
 ``` csharp
 public static class Program
@@ -109,7 +112,7 @@ public static class Program
 }
 ```
 
-`Main()` これは実行する最初のものです。 [OnLaunched()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) と [OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_) の前に実行します。 これにより、アプリの他の初期化コードが実行される前に、これをアクティブ化するか別のインスタンスをアクティブ化するかを決定できます。
+`Main()` これは実行する最初のものです。 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)と[**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)前に実行します。 これにより、アプリの他の初期化コードが実行される前に、これをアクティブ化するか別のインスタンスをアクティブ化するかを決定できます。
 
 上記のコードは、アプリケーションの既存のインスタンスまたは新しいインスタンスがアクティブになっているかどうかを判断します。 キーを使用して、アクティブ化する既存のインスタンスがあるかどうかを判断します。 たとえば、アプリを起動して [ファイルのアクティブ化の処理](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation) ができる場合は、ファイル名をキーとして使用できます。 次に、アプリのインスタンスがすでにそのキーに登録されているかどうかを確認し、新しいインスタンスを開く代わりにそれをアクティブにすることができます。 これはコード ビハインド アイデアです。 `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
@@ -129,7 +132,7 @@ public static class Program
 - 競合状態や競合の問題を避けるため、マルチインスタンス アプリは、設定、アプリ ローカル ストレージ、その他のリソース (ユーザー ファイル、データストアなど) へのアクセスをパーティション化/同期化するための手順を実行する必要があります。これらのリソースは、複数のインスタンス間で共有できます。 ミューテックス、セマフォ、イベントなどの標準的な同期メカニズムが使用可能です。
 - アプリで、Package.appxmanifest ファイルに `SupportsMultipleInstances` がある場合、その拡張機能は `SupportsMultipleInstances` を宣言する必要はありません。 
 - `SupportsMultipleInstances` をバックグラウンド タスクやアプリ サービス以外の拡張機能に追加し、その拡張機能をホストするアプリが Package.appxmanifest ファイルで `SupportsMultipleInstances` を宣言しない場合は、スキーマ エラーが生成されます。
-- アプリは、マニフェストに [ResourceGroup](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest) 宣言を使用して、複数のバックグラウンド タスクを同じホストにグループ化することができます。 これはマルチインスタンスと競合し、それぞれのアクティブ化は別々のホストに入ります。 したがって、アプリはマニフェストで `SupportsMultipleInstances` と `ResourceGroup` の両方を宣言することはできません。
+- アプリは、同じホストに複数のバック グラウンド タスクをグループ化するのに、マニフェスト[**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)宣言を使用できます。 これはマルチインスタンスと競合し、それぞれのアクティブ化は別々のホストに入ります。 したがって、アプリはマニフェストで `SupportsMultipleInstances` と `ResourceGroup` の両方を宣言することはできません。
 
 ## <a name="sample"></a>サンプル
 

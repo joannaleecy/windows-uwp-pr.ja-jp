@@ -3,18 +3,18 @@ author: stevewhims
 description: C++/WinRT 機能と、多くの時間と労力を実装やコレクションに合格するときに保存する基底クラスを提供します。
 title: コレクション、C++/WinRT
 ms.author: stwhi
-ms.date: 08/24/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、コレクション
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ef6fbfab45197c868296186363c168a6c443247
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: c7ac3635a96b8dd3d757f25da1b826ea318c1ad4
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4126347"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155395"
 ---
 # <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>コレクションと[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -32,6 +32,8 @@ ms.locfileid: "4126347"
 
 ### <a name="general-purpose-collection-empty"></a>空の汎用的なコレクション
 
+このセクションでは、最初に空のコレクションを作成するシナリオを説明します。*後*の作成を設定します。
+
 汎用的なコレクションを実装する型の新しいオブジェクトを取得するには、 [**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector)関数テンプレートを呼び出すことができます。 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)の場合、としてオブジェクトが返され、これによって、返されるオブジェクトの関数とプロパティを呼び出すインターフェイスが。
 
 ```cppwinrt
@@ -42,7 +44,7 @@ using namespace winrt;
 ...
 int main()
 {
-    init_apartment();
+    winrt::init_apartment();
 
     Windows::Foundation::Collections::IVector<int> coll{ winrt::single_threaded_vector<int>() };
     coll.Append(1);
@@ -60,9 +62,13 @@ int main()
 
 上記のコード例で示すように、コレクションを作成した後の要素を追加、反復処理し、して一般 API から受信したすべての Windows ランタイム コレクション オブジェクトと同様に、オブジェクトを扱うできます。 コレクションを固定表示が必要な場合に示す[**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)を呼び出すことができます。 前に示したパターン&mdash;のコレクションの作成と&mdash;が、データを渡すか、API からデータを取得する単純なシナリオに適しています。 **IVector**の場合、または、 **IVectorView**に渡すことができます、任意の場所、 [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)に期待されます。
 
+上記のコード例では **:init_apartment**への呼び出しは COM を初期化します。既定ではマルチ スレッド アパートメントでします。
+
 ### <a name="general-purpose-collection-primed-from-data"></a>データから先読み汎用のコレクション
 
-また上記のコード例で表示される**追加**の呼び出しのオーバーヘッドを回避できます。 ソースのデータが既にまたは Windows ランタイムのコレクション オブジェクトを作成する前に設定することができます。 その方法を以下に示します。
+このセクションでは、コレクションを作成し、同時に設定するシナリオについて説明します。
+
+前のコード例では、**追加**への呼び出しのオーバーヘッドを回避することができます。 ソースのデータが既にまたは Windows ランタイムのコレクション オブジェクトを作成する前にソース データを入力することができます。 その方法を以下に示します。
 
 ```cppwinrt
 auto coll1{ winrt::single_threaded_vector<int>({ 1,2,3 }) };

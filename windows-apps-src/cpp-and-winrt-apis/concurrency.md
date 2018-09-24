@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、同時実行、非同期、非同期、非同期操作
 ms.localizationpriority: medium
-ms.openlocfilehash: 85071fb28cb87c991e2f5ba7f64b681c6850c819
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: fab1e83f212675b2c0bb28e0b1ae449f271edec7
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4127707"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154637"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) を使用した同時実行と非同期操作
 > [!NOTE]
@@ -319,6 +319,83 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
     textblock.Text(L"Done!"); // Guaranteed to work.
 }
 ```
+
+## <a name="reporting-progress"></a>進行状況の報告
+
+コルーチンが返す場合、 [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)、または[**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)、できます**winrt::get_progress_token**関数によって返されるオブジェクトを取得しの進行状況に進行状況の報告を使用ハンドラーです。 次にコード例を示します。
+
+```cppwinrt
+// main.cpp : Defines the entry point for the console application.
+//
+
+#include "pch.h"
+#include <iostream>
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace std::chrono_literals;
+
+IAsyncOperationWithProgress<double, double> CalcPiTo5DPs()
+{
+    auto progress{ co_await winrt::get_progress_token() };
+
+    co_await 1s;
+    double pi_so_far{ 3.1 };
+    progress(0.2);
+
+    co_await 1s;
+    pi_so_far += 4.e-2;
+    progress(0.4);
+
+    co_await 1s;
+    pi_so_far += 1.e-3;
+    progress(0.6);
+
+    co_await 1s;
+    pi_so_far += 5.e-4;
+    progress(0.8);
+
+    co_await 1s;
+    pi_so_far += 9.e-5;
+    progress(1.0);
+    co_return pi_so_far;
+}
+
+IAsyncAction DoMath()
+{
+    auto async_op_with_progress{ CalcPiTo5DPs() };
+    async_op_with_progress.Progress([](auto const& /* sender */, double progress)
+    {
+        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << std::endl;
+    });
+    double pi{ co_await async_op_with_progress };
+    std::wcout << L"CalcPiTo5DPs() is complete !" << std::endl;
+    std::wcout << L"Pi is approx.: " << pi << std::endl;
+}
+
+int main()
+{
+    init_apartment();
+    DoMath().get();
+}
+```
+
+> [!NOTE]
+> 正しい非同期アクションまたは操作のための複数の*完了ハンドラー*を実装することはできません。 その完了イベントのデリゲートが 1 つしたりすることができます`co_await`ことです。 両方がある場合は、2 つ目は失敗します。 いずれか完了ハンドラーの次の 2 種類のいずれかが適切です。両方ではなく、同じ非同期オブジェクトのします。
+
+```cppwinrt
+auto async_op_with_progress{ CalcPiTo5DPs() };
+async_op_with_progress.Completed([](auto const& sender, AsyncStatus /* status */)
+{
+    double pi{ sender.GetResults() };
+});
+```
+
+```cppwinrt
+auto async_op_with_progress{ CalcPiTo5DPs() };
+double pi{ co_await async_op_with_progress };
+```
+
+完了ハンドラーについて詳しくは、[非同期アクションと非同期操作のデリゲート型](handle-events.md#delegate-types-for-asynchronous-actions-and-operations)を参照してください。
 
 ## <a name="important-apis"></a>重要な API
 * [concurrency::task クラス](/cpp/parallel/concrt/reference/task-class)
