@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
 ms.openlocfilehash: bd39074e67c58e20154083be66211dbefc9f782d
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4125282"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152810"
 ---
-# <a name="programming-rich-presence"></a><span data-ttu-id="ec14f-104">リッチ プレゼンスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="ec14f-104">Programming Rich Presence</span></span>
+# <a name="programming-rich-presence"></a><span data-ttu-id="a4b3e-104">リッチ プレゼンスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="a4b3e-104">Programming Rich Presence</span></span>
 
-<span data-ttu-id="ec14f-105">リッチ プレゼンスは、プレイヤーの現在のアクティビティを他のプレイヤーに通知するための機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="ec14f-105">Rich presence provides features for advertising a player's current activity to other players.</span></span> <span data-ttu-id="ec14f-106">詳細については、「[リッチ プレゼンス文字列 - 概要](rich-presence-strings-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ec14f-106">For more information, see [Rich Presence Strings: Overview](rich-presence-strings-overview.md).</span></span>
+<span data-ttu-id="a4b3e-105">リッチ プレゼンスは、プレイヤーの現在のアクティビティを他のプレイヤーに通知するための機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="a4b3e-105">Rich presence provides features for advertising a player's current activity to other players.</span></span> <span data-ttu-id="a4b3e-106">詳細については、「[リッチ プレゼンス文字列 - 概要](rich-presence-strings-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a4b3e-106">For more information, see [Rich Presence Strings: Overview](rich-presence-strings-overview.md).</span></span>
 
 ```cpp
 

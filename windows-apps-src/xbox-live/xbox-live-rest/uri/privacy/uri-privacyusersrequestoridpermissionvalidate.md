@@ -12,47 +12,47 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: faa0325a8540e1e3df9674a4acab2ab33e93dceb
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4123374"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155018"
 ---
-# <a name="usersrequestoridpermissionvalidate"></a><span data-ttu-id="37d27-104">/users/{requestorId}/permission/validate</span><span class="sxs-lookup"><span data-stu-id="37d27-104">/users/{requestorId}/permission/validate</span></span>
+# <a name="usersrequestoridpermissionvalidate"></a><span data-ttu-id="99125-104">/users/{requestorId}/permission/validate</span><span class="sxs-lookup"><span data-stu-id="99125-104">/users/{requestorId}/permission/validate</span></span>
  
-  * [<span data-ttu-id="37d27-105">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="37d27-105">URI parameters</span></span>](#ID4EQ)
+  * [<span data-ttu-id="99125-105">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="99125-105">URI parameters</span></span>](#ID4EQ)
  
 <a id="ID4EQ"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="37d27-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="37d27-106">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="99125-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="99125-106">URI parameters</span></span>
  
-| <span data-ttu-id="37d27-107">パラメーター</span><span class="sxs-lookup"><span data-stu-id="37d27-107">Parameter</span></span>| <span data-ttu-id="37d27-108">型</span><span class="sxs-lookup"><span data-stu-id="37d27-108">Type</span></span>| <span data-ttu-id="37d27-109">説明</span><span class="sxs-lookup"><span data-stu-id="37d27-109">Description</span></span>| 
+| <span data-ttu-id="99125-107">パラメーター</span><span class="sxs-lookup"><span data-stu-id="99125-107">Parameter</span></span>| <span data-ttu-id="99125-108">型</span><span class="sxs-lookup"><span data-stu-id="99125-108">Type</span></span>| <span data-ttu-id="99125-109">説明</span><span class="sxs-lookup"><span data-stu-id="99125-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="37d27-110">requestorId</span><span class="sxs-lookup"><span data-stu-id="37d27-110">requestorId</span></span>| <span data-ttu-id="37d27-111">string</span><span class="sxs-lookup"><span data-stu-id="37d27-111">string</span></span>| <span data-ttu-id="37d27-112">必須。</span><span class="sxs-lookup"><span data-stu-id="37d27-112">Required.</span></span> <span data-ttu-id="37d27-113">アクションを実行するユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="37d27-113">Identifier of the user performing the action.</span></span> <span data-ttu-id="37d27-114">設定可能な値は<code>xuid({xuid})</code>と<code>me</code>します。</span><span class="sxs-lookup"><span data-stu-id="37d27-114">The possible values are <code>xuid({xuid})</code> and <code>me</code>.</span></span> <span data-ttu-id="37d27-115">これは、ログインしているユーザーでなければなりません。</span><span class="sxs-lookup"><span data-stu-id="37d27-115">This must be a logged-in user.</span></span> <span data-ttu-id="37d27-116">値の例:<code>xuid(0987654321)</code>します。</span><span class="sxs-lookup"><span data-stu-id="37d27-116">Example value: <code>xuid(0987654321)</code>.</span></span>| 
+| <span data-ttu-id="99125-110">requestorId</span><span class="sxs-lookup"><span data-stu-id="99125-110">requestorId</span></span>| <span data-ttu-id="99125-111">string</span><span class="sxs-lookup"><span data-stu-id="99125-111">string</span></span>| <span data-ttu-id="99125-112">必須。</span><span class="sxs-lookup"><span data-stu-id="99125-112">Required.</span></span> <span data-ttu-id="99125-113">アクションを実行するユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="99125-113">Identifier of the user performing the action.</span></span> <span data-ttu-id="99125-114">設定可能な値は<code>xuid({xuid})</code>と<code>me</code>します。</span><span class="sxs-lookup"><span data-stu-id="99125-114">The possible values are <code>xuid({xuid})</code> and <code>me</code>.</span></span> <span data-ttu-id="99125-115">これは、ログインしているユーザーでなければなりません。</span><span class="sxs-lookup"><span data-stu-id="99125-115">This must be a logged-in user.</span></span> <span data-ttu-id="99125-116">値の例:<code>xuid(0987654321)</code>します。</span><span class="sxs-lookup"><span data-stu-id="99125-116">Example value: <code>xuid(0987654321)</code>.</span></span>| 
   
 <a id="ID4ETB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="37d27-117">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="37d27-117">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="99125-117">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="99125-117">Valid methods</span></span>
 
-[<span data-ttu-id="37d27-118">GET (/users/{requestorId}/permission/validate)</span><span class="sxs-lookup"><span data-stu-id="37d27-118">GET (/users/{requestorId}/permission/validate)</span></span>](uri-privacyusersrequestoridpermissionvalidateget.md)
+[<span data-ttu-id="99125-118">GET (/users/{requestorId}/permission/validate)</span><span class="sxs-lookup"><span data-stu-id="99125-118">GET (/users/{requestorId}/permission/validate)</span></span>](uri-privacyusersrequestoridpermissionvalidateget.md)
 
-<span data-ttu-id="37d27-119">&nbsp;&nbsp;対象ユーザーを指定したアクションを実行するユーザーを許可するかどうかに関するはいまたは no 応答を取得します。</span><span class="sxs-lookup"><span data-stu-id="37d27-119">&nbsp;&nbsp;Gets a yes-or-no answer about whether the user is allowed to perform the specified action with a target user.</span></span>
+<span data-ttu-id="99125-119">&nbsp;&nbsp;対象ユーザーを指定したアクションを実行するユーザーを許可するかどうかに関するはいまたは no 応答を取得します。</span><span class="sxs-lookup"><span data-stu-id="99125-119">&nbsp;&nbsp;Gets a yes-or-no answer about whether the user is allowed to perform the specified action with a target user.</span></span>
 
-[<span data-ttu-id="37d27-120">POST (/users/{requestorId}/permission/validate)</span><span class="sxs-lookup"><span data-stu-id="37d27-120">POST (/users/{requestorId}/permission/validate)</span></span>](uri-privacyusersrequestoridpermissionvalidatepost.md)
+[<span data-ttu-id="99125-120">POST (/users/{requestorId}/permission/validate)</span><span class="sxs-lookup"><span data-stu-id="99125-120">POST (/users/{requestorId}/permission/validate)</span></span>](uri-privacyusersrequestoridpermissionvalidatepost.md)
 
-<span data-ttu-id="37d27-121">&nbsp;&nbsp;一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no に対する回答を取得します。</span><span class="sxs-lookup"><span data-stu-id="37d27-121">&nbsp;&nbsp;Gets a set of yes-or-no answers about whether the user is allowed to perform specified actions with a set of target users.</span></span>
+<span data-ttu-id="99125-121">&nbsp;&nbsp;一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no に対する回答を取得します。</span><span class="sxs-lookup"><span data-stu-id="99125-121">&nbsp;&nbsp;Gets a set of yes-or-no answers about whether the user is allowed to perform specified actions with a set of target users.</span></span>
  
 <a id="ID4EAC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="37d27-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="37d27-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="99125-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="99125-122">See also</span></span>
  
 <a id="ID4ECC"></a>
 
-   [<span data-ttu-id="37d27-123">プライバシー URI</span><span class="sxs-lookup"><span data-stu-id="37d27-123">Privacy URIs</span></span>](atoc-reference-privacyv2.md)
+   [<span data-ttu-id="99125-123">プライバシー URI</span><span class="sxs-lookup"><span data-stu-id="99125-123">Privacy URIs</span></span>](atoc-reference-privacyv2.md)
 
- [<span data-ttu-id="37d27-124">PermissionId 列挙型</span><span class="sxs-lookup"><span data-stu-id="37d27-124">PermissionId Enumeration</span></span>](../../enums/privacy-enum-permissionid.md)
+ [<span data-ttu-id="99125-124">PermissionId 列挙型</span><span class="sxs-lookup"><span data-stu-id="99125-124">PermissionId Enumeration</span></span>](../../enums/privacy-enum-permissionid.md)
 
    
