@@ -10,20 +10,20 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3690e294a3af29d1af261189310dca1a13ac5130
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4124237"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153013"
 ---
-# <a name="engage-with-your-customers"></a><span data-ttu-id="ea77e-103">ユーザーとの関係を深める</span><span class="sxs-lookup"><span data-stu-id="ea77e-103">Engage with your customers</span></span>
+# <a name="engage-with-your-customers"></a><span data-ttu-id="c2183-103">ユーザーとの関係を深める</span><span class="sxs-lookup"><span data-stu-id="c2183-103">Engage with your customers</span></span>
 
-<span data-ttu-id="ea77e-104">通知、対象のプラン、レビューやフィードバックへの応答などの機能を使用して、ユーザーとの関係を深め、顧客満足度を高めることができます。</span><span class="sxs-lookup"><span data-stu-id="ea77e-104">Drive customer engagement and satisfaction by using features like notifications, targeted offers, responding to reviews and feedback, and more.</span></span>
+<span data-ttu-id="c2183-104">通知、対象のプラン、レビューやフィードバックへの応答などの機能を使用して、ユーザーとの関係を深め、顧客満足度を高めることができます。</span><span class="sxs-lookup"><span data-stu-id="c2183-104">Drive customer engagement and satisfaction by using features like notifications, targeted offers, responding to reviews and feedback, and more.</span></span>
 
--   [<span data-ttu-id="ea77e-105">ユーザー グループを作成する</span><span class="sxs-lookup"><span data-stu-id="ea77e-105">Create customer groups</span></span>](create-customer-groups.md)
--   [<span data-ttu-id="ea77e-106">顧客のレビューに返信する</span><span class="sxs-lookup"><span data-stu-id="ea77e-106">Respond to customer reviews</span></span>](respond-to-customer-reviews.md)
--   [<span data-ttu-id="ea77e-107">顧客のフィードバックに返信する</span><span class="sxs-lookup"><span data-stu-id="ea77e-107">Respond to customer feedback</span></span>](respond-to-customer-feedback.md)
--   [<span data-ttu-id="ea77e-108">アプリのユーザーに通知を送信する</span><span class="sxs-lookup"><span data-stu-id="ea77e-108">Send notifications to your app's customers</span></span>](send-push-notifications-to-your-apps-customers.md)
--   [<span data-ttu-id="ea77e-109">対象のプランによるエンゲージメントとコンバージョンの最大化</span><span class="sxs-lookup"><span data-stu-id="ea77e-109">Use targeted offers to maximize engagement and conversions</span></span>](use-targeted-offers-to-maximize-engagement-and-conversions.md)
+-   [<span data-ttu-id="c2183-105">ユーザー グループを作成する</span><span class="sxs-lookup"><span data-stu-id="c2183-105">Create customer groups</span></span>](create-customer-groups.md)
+-   [<span data-ttu-id="c2183-106">顧客のレビューに返信する</span><span class="sxs-lookup"><span data-stu-id="c2183-106">Respond to customer reviews</span></span>](respond-to-customer-reviews.md)
+-   [<span data-ttu-id="c2183-107">顧客のフィードバックに返信する</span><span class="sxs-lookup"><span data-stu-id="c2183-107">Respond to customer feedback</span></span>](respond-to-customer-feedback.md)
+-   [<span data-ttu-id="c2183-108">アプリのユーザーに通知を送信する</span><span class="sxs-lookup"><span data-stu-id="c2183-108">Send notifications to your app's customers</span></span>](send-push-notifications-to-your-apps-customers.md)
+-   [<span data-ttu-id="c2183-109">対象のプランによるエンゲージメントとコンバージョンの最大化</span><span class="sxs-lookup"><span data-stu-id="c2183-109">Use targeted offers to maximize engagement and conversions</span></span>](use-targeted-offers-to-maximize-engagement-and-conversions.md)
 
  

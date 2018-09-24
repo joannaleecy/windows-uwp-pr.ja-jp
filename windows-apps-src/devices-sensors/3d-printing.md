@@ -11,29 +11,29 @@ ms.technology: uwp
 keywords: windows 10, uwp, 3dprinting、3 d 印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: acf0c9856328e26f8c39adf3f062a3516e7189e2
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4121987"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152821"
 ---
-# <a name="3d-printing"></a><span data-ttu-id="4ca1d-104">3D 印刷</span><span class="sxs-lookup"><span data-stu-id="4ca1d-104">3D Printing</span></span>
+# <a name="3d-printing"></a><span data-ttu-id="638e2-104">3D 印刷</span><span class="sxs-lookup"><span data-stu-id="638e2-104">3D Printing</span></span>
 
 
-<span data-ttu-id="4ca1d-105">このセクションでは、ユニバーサル Windows アプリに 3D 印刷機能を追加する[Windows.Graphics.Printing3D 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)を活用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="4ca1d-105">This section describes how to utilize the [Windows.Graphics.Printing3D namespace](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) to add 3D printing functionality to your Universal Windows app.</span></span>  
+<span data-ttu-id="638e2-105">このセクションでは、ユニバーサル Windows アプリに 3D 印刷機能を追加する[Windows.Graphics.Printing3D 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)を活用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="638e2-105">This section describes how to utilize the [Windows.Graphics.Printing3D namespace](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) to add 3D printing functionality to your Universal Windows app.</span></span>  
 
-<span data-ttu-id="4ca1d-106">ハードウェア パートナー、コミュニティのディスカッション フォーラム、および 3D 印刷機能に関する一般的な情報のリソースを含む、Windows 10 による 3D 印刷について詳しくは、ハードウェア デベロッパー センターで[の Windows 10 の 3D 印刷](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)サイトを参照してください。</span><span class="sxs-lookup"><span data-stu-id="4ca1d-106">For more information on 3D printing with Windows 10, including resources for hardware partners, community discussion forums, and general information on 3D print capabilities, see the [3D printing with Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10) site on the Hardware Dev Center.</span></span>
+<span data-ttu-id="638e2-106">ハードウェア パートナー、コミュニティのディスカッション フォーラム、および 3D 印刷機能に関する一般的な情報のリソースを含む、Windows 10 による 3D 印刷について詳しくは、ハードウェア デベロッパー センターで[の Windows 10 の 3D 印刷](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)サイトを参照してください。</span><span class="sxs-lookup"><span data-stu-id="638e2-106">For more information on 3D printing with Windows 10, including resources for hardware partners, community discussion forums, and general information on 3D print capabilities, see the [3D printing with Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10) site on the Hardware Dev Center.</span></span>
 
-| <span data-ttu-id="4ca1d-107">トピック</span><span class="sxs-lookup"><span data-stu-id="4ca1d-107">Topic</span></span> | <span data-ttu-id="4ca1d-108">説明</span><span class="sxs-lookup"><span data-stu-id="4ca1d-108">Description</span></span> |
+| <span data-ttu-id="638e2-107">トピック</span><span class="sxs-lookup"><span data-stu-id="638e2-107">Topic</span></span> | <span data-ttu-id="638e2-108">説明</span><span class="sxs-lookup"><span data-stu-id="638e2-108">Description</span></span> |
 |-------|-------------|
-| [<span data-ttu-id="4ca1d-109">アプリからの 3D 印刷</span><span class="sxs-lookup"><span data-stu-id="4ca1d-109">3D print from your app</span></span>](3d-print-from-app.md) | <span data-ttu-id="4ca1d-110">UWP アプリに 3D 印刷機能を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="4ca1d-110">Learn how to add 3D printing functionality to your UWP app.</span></span> <span data-ttu-id="4ca1d-111">このトピックでは、3D モデルが印刷可能であり、正しい形式になっていることを確認した後で 3D 印刷ダイアログを起動する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="4ca1d-111">This topic covers how to launch the 3D print dialog after ensuring your 3D model is printable and in the correct format.</span></span> |
-| [<span data-ttu-id="4ca1d-112">3MF パッケージの生成</span><span class="sxs-lookup"><span data-stu-id="4ca1d-112">Generate a 3MF package</span></span>](generate-3mf.md) | <span data-ttu-id="4ca1d-113">3D Manufacturing Format ファイルの種類と方法が作成および操作できる Windows.Graphics.Printing3D Api との構造について説明します。</span><span class="sxs-lookup"><span data-stu-id="4ca1d-113">Describes the structure of the 3D Manufacturing Format file type and how it can be created and manipulated with the Windows.Graphics.Printing3D APIs.</span></span> |
+| [<span data-ttu-id="638e2-109">アプリからの 3D 印刷</span><span class="sxs-lookup"><span data-stu-id="638e2-109">3D print from your app</span></span>](3d-print-from-app.md) | <span data-ttu-id="638e2-110">UWP アプリに 3D 印刷機能を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="638e2-110">Learn how to add 3D printing functionality to your UWP app.</span></span> <span data-ttu-id="638e2-111">このトピックでは、3D モデルが印刷可能であり、正しい形式になっていることを確認した後で 3D 印刷ダイアログを起動する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="638e2-111">This topic covers how to launch the 3D print dialog after ensuring your 3D model is printable and in the correct format.</span></span> |
+| [<span data-ttu-id="638e2-112">3MF パッケージの生成</span><span class="sxs-lookup"><span data-stu-id="638e2-112">Generate a 3MF package</span></span>](generate-3mf.md) | <span data-ttu-id="638e2-113">3D Manufacturing Format ファイルの種類と方法が作成および操作できる Windows.Graphics.Printing3D Api との構造について説明します。</span><span class="sxs-lookup"><span data-stu-id="638e2-113">Describes the structure of the 3D Manufacturing Format file type and how it can be created and manipulated with the Windows.Graphics.Printing3D APIs.</span></span> |
 
-## <a name="related-topics"></a><span data-ttu-id="4ca1d-114">関連トピック</span><span class="sxs-lookup"><span data-stu-id="4ca1d-114">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="638e2-114">関連トピック</span><span class="sxs-lookup"><span data-stu-id="638e2-114">Related topics</span></span>
 
-* [<span data-ttu-id="4ca1d-115">Windows 10 による 3D 印刷 (ハードウェア デベロッパー センター)</span><span class="sxs-lookup"><span data-stu-id="4ca1d-115">3D printing with Windows 10 (Hardware Dev Center)</span></span>](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)
-* [<span data-ttu-id="4ca1d-116">Windows.Graphics.Printing3D 名前空間</span><span class="sxs-lookup"><span data-stu-id="4ca1d-116">Windows.Graphics.Printing3D namespace</span></span>](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
-* [<span data-ttu-id="4ca1d-117">3D 印刷サンプル</span><span class="sxs-lookup"><span data-stu-id="4ca1d-117">3D printing sample</span></span>](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
-* [<span data-ttu-id="4ca1d-118">Unity サンプルからの 3D 印刷</span><span class="sxs-lookup"><span data-stu-id="4ca1d-118">3D printing from Unity sample</span></span>](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
+* [<span data-ttu-id="638e2-115">Windows 10 による 3D 印刷 (ハードウェア デベロッパー センター)</span><span class="sxs-lookup"><span data-stu-id="638e2-115">3D printing with Windows 10 (Hardware Dev Center)</span></span>](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)
+* [<span data-ttu-id="638e2-116">Windows.Graphics.Printing3D 名前空間</span><span class="sxs-lookup"><span data-stu-id="638e2-116">Windows.Graphics.Printing3D namespace</span></span>](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
+* [<span data-ttu-id="638e2-117">3D 印刷サンプル</span><span class="sxs-lookup"><span data-stu-id="638e2-117">3D printing sample</span></span>](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
+* [<span data-ttu-id="638e2-118">Unity サンプルからの 3D 印刷</span><span class="sxs-lookup"><span data-stu-id="638e2-118">3D printing from Unity sample</span></span>](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
 
  

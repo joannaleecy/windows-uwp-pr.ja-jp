@@ -12,55 +12,55 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fa553cce9ee3179f32573e00c1e215ab46e89b21
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4122410"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4148096"
 ---
-# <a name="jsonusersxuidxuidscidssciddatapathandfilenamejson"></a><span data-ttu-id="dff78-104">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json</span><span class="sxs-lookup"><span data-stu-id="dff78-104">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json</span></span>
-<span data-ttu-id="dff78-105">ダウンロード、アップロード、またはファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="dff78-105">Downloads, uploads, or deletes a file.</span></span> <span data-ttu-id="dff78-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="dff78-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
+# <a name="jsonusersxuidxuidscidssciddatapathandfilenamejson"></a><span data-ttu-id="8f98c-104">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json</span><span class="sxs-lookup"><span data-stu-id="8f98c-104">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json</span></span>
+<span data-ttu-id="8f98c-105">ダウンロード、アップロード、またはファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="8f98c-105">Downloads, uploads, or deletes a file.</span></span> <span data-ttu-id="8f98c-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="8f98c-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="dff78-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="dff78-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="8f98c-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="8f98c-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="dff78-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="dff78-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="8f98c-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="8f98c-108">URI parameters</span></span>
  
-| <span data-ttu-id="dff78-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="dff78-109">Parameter</span></span>| <span data-ttu-id="dff78-110">型</span><span class="sxs-lookup"><span data-stu-id="dff78-110">Type</span></span>| <span data-ttu-id="dff78-111">説明</span><span class="sxs-lookup"><span data-stu-id="dff78-111">Description</span></span>| 
+| <span data-ttu-id="8f98c-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="8f98c-109">Parameter</span></span>| <span data-ttu-id="8f98c-110">型</span><span class="sxs-lookup"><span data-stu-id="8f98c-110">Type</span></span>| <span data-ttu-id="8f98c-111">説明</span><span class="sxs-lookup"><span data-stu-id="8f98c-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="dff78-112">xuid</span><span class="sxs-lookup"><span data-stu-id="dff78-112">xuid</span></span>| <span data-ttu-id="dff78-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="dff78-113">unsigned 64-bit integer</span></span>| <span data-ttu-id="dff78-114">Xbox ユーザー ID を (XUID)、プレイヤーの要求を行っているユーザー。</span><span class="sxs-lookup"><span data-stu-id="dff78-114">The Xbox User ID (XUID) of the player who making the request.</span></span>| 
-| <span data-ttu-id="dff78-115">scid</span><span class="sxs-lookup"><span data-stu-id="dff78-115">scid</span></span>| <span data-ttu-id="dff78-116">guid</span><span class="sxs-lookup"><span data-stu-id="dff78-116">guid</span></span>| <span data-ttu-id="dff78-117">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="dff78-117">the ID of the service config to look up.</span></span>| 
-| <span data-ttu-id="dff78-118">pathAndFileName</span><span class="sxs-lookup"><span data-stu-id="dff78-118">pathAndFileName</span></span>| <span data-ttu-id="dff78-119">string</span><span class="sxs-lookup"><span data-stu-id="dff78-119">string</span></span>| <span data-ttu-id="dff78-120">アクセスできる項目のパスとファイル名。</span><span class="sxs-lookup"><span data-stu-id="dff78-120">Path and file name for the item to be accessed.</span></span> <span data-ttu-id="dff78-121">パス部分 (となどを含む最終的なスラッシュ) の有効な文字が大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。</span><span class="sxs-lookup"><span data-stu-id="dff78-121">Valid characters for the path portion (up to and including the final forward slash) include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), and forward slash (/). The path portion may be empty. Valid characters for the file name portion (everything after the final forward slash) include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), period (.), and hyphen (-).</span></span> <span data-ttu-id="dff78-122">ファイル名可能性がありますいないを空にする、期間の終了または 2 つの連続するピリオドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="dff78-122">The file name may not be empty, end in a period or contain two consecutive periods.</span></span>| 
+| <span data-ttu-id="8f98c-112">xuid</span><span class="sxs-lookup"><span data-stu-id="8f98c-112">xuid</span></span>| <span data-ttu-id="8f98c-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="8f98c-113">unsigned 64-bit integer</span></span>| <span data-ttu-id="8f98c-114">Xbox ユーザー ID を (XUID)、プレイヤーの要求を行っているユーザー。</span><span class="sxs-lookup"><span data-stu-id="8f98c-114">The Xbox User ID (XUID) of the player who making the request.</span></span>| 
+| <span data-ttu-id="8f98c-115">scid</span><span class="sxs-lookup"><span data-stu-id="8f98c-115">scid</span></span>| <span data-ttu-id="8f98c-116">guid</span><span class="sxs-lookup"><span data-stu-id="8f98c-116">guid</span></span>| <span data-ttu-id="8f98c-117">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="8f98c-117">the ID of the service config to look up.</span></span>| 
+| <span data-ttu-id="8f98c-118">pathAndFileName</span><span class="sxs-lookup"><span data-stu-id="8f98c-118">pathAndFileName</span></span>| <span data-ttu-id="8f98c-119">string</span><span class="sxs-lookup"><span data-stu-id="8f98c-119">string</span></span>| <span data-ttu-id="8f98c-120">アクセスできる項目のパスとファイル名。</span><span class="sxs-lookup"><span data-stu-id="8f98c-120">Path and file name for the item to be accessed.</span></span> <span data-ttu-id="8f98c-121">パス部分 (となどを含む最終的なスラッシュ) の有効な文字が大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。</span><span class="sxs-lookup"><span data-stu-id="8f98c-121">Valid characters for the path portion (up to and including the final forward slash) include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), and forward slash (/). The path portion may be empty. Valid characters for the file name portion (everything after the final forward slash) include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), period (.), and hyphen (-).</span></span> <span data-ttu-id="8f98c-122">ファイル名可能性がありますいないを空にする、期間の終了または 2 つの連続するピリオドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="8f98c-122">The file name may not be empty, end in a period or contain two consecutive periods.</span></span>| 
   
 <a id="ID4EFC"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="dff78-123">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="dff78-123">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="8f98c-123">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="8f98c-123">Valid methods</span></span>
 
-[<span data-ttu-id="dff78-124">DELETE</span><span class="sxs-lookup"><span data-stu-id="dff78-124">DELETE</span></span>](uri-jsonusersxuidscidssciddatapathandfilenametype-delete.md)
+[<span data-ttu-id="8f98c-124">DELETE</span><span class="sxs-lookup"><span data-stu-id="8f98c-124">DELETE</span></span>](uri-jsonusersxuidscidssciddatapathandfilenametype-delete.md)
 
-<span data-ttu-id="dff78-125">&nbsp;&nbsp;ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="dff78-125">&nbsp;&nbsp;Deletes a file.</span></span> 
+<span data-ttu-id="8f98c-125">&nbsp;&nbsp;ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="8f98c-125">&nbsp;&nbsp;Deletes a file.</span></span> 
 
-[<span data-ttu-id="dff78-126">GET</span><span class="sxs-lookup"><span data-stu-id="dff78-126">GET</span></span>](uri-jsonusersxuidscidssciddatapathandfilenametype-get.md)
+[<span data-ttu-id="8f98c-126">GET</span><span class="sxs-lookup"><span data-stu-id="8f98c-126">GET</span></span>](uri-jsonusersxuidscidssciddatapathandfilenametype-get.md)
 
-<span data-ttu-id="dff78-127">&nbsp;&nbsp;ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="dff78-127">&nbsp;&nbsp;Downloads a file.</span></span>
+<span data-ttu-id="8f98c-127">&nbsp;&nbsp;ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="8f98c-127">&nbsp;&nbsp;Downloads a file.</span></span>
 
-[<span data-ttu-id="dff78-128">PUT</span><span class="sxs-lookup"><span data-stu-id="dff78-128">PUT</span></span>](uri-jsonusersxuidscidssciddatapathandfilenametype-put.md)
+[<span data-ttu-id="8f98c-128">PUT</span><span class="sxs-lookup"><span data-stu-id="8f98c-128">PUT</span></span>](uri-jsonusersxuidscidssciddatapathandfilenametype-put.md)
 
-<span data-ttu-id="dff78-129">&nbsp;&nbsp;ファイルをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="dff78-129">&nbsp;&nbsp;Uploads a file.</span></span> <span data-ttu-id="dff78-130">Json の種類のデータの複数のブロックのアップロードがサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="dff78-130">Multi-block upload is not supported for data of type json.</span></span> 
+<span data-ttu-id="8f98c-129">&nbsp;&nbsp;ファイルをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="8f98c-129">&nbsp;&nbsp;Uploads a file.</span></span> <span data-ttu-id="8f98c-130">Json の種類のデータの複数のブロックのアップロードがサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="8f98c-130">Multi-block upload is not supported for data of type json.</span></span> 
  
 <a id="ID4EVC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="dff78-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="dff78-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8f98c-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="8f98c-131">See also</span></span>
  
 <a id="ID4EXC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="dff78-132">Parent</span><span class="sxs-lookup"><span data-stu-id="dff78-132">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="8f98c-132">Parent</span><span class="sxs-lookup"><span data-stu-id="8f98c-132">Parent</span></span> 
 
-[<span data-ttu-id="dff78-133">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="dff78-133">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
+[<span data-ttu-id="8f98c-133">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="8f98c-133">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
 
    
