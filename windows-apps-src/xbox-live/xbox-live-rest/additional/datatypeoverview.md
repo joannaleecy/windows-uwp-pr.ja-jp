@@ -12,46 +12,46 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9340f4adb83932ef2c48aba271367e7faab645c3
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4129774"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150250"
 ---
-# <a name="data-type-overview"></a><span data-ttu-id="ab962-104">データ型の概要</span><span class="sxs-lookup"><span data-stu-id="ab962-104">Data Type Overview</span></span>
+# <a name="data-type-overview"></a><span data-ttu-id="082d1-104">データ型の概要</span><span class="sxs-lookup"><span data-stu-id="082d1-104">Data Type Overview</span></span>
  
-<span data-ttu-id="ab962-105">Xbox Live サービスは、さまざまな id と認証に関連するデータ型を使用します。</span><span class="sxs-lookup"><span data-stu-id="ab962-105">Xbox Live Services uses a variety of data types related to identity and authentication.</span></span> <span data-ttu-id="ab962-106">このトピックでは、それらの型の概要を示します。</span><span class="sxs-lookup"><span data-stu-id="ab962-106">This topic provides an overview of those types.</span></span>
+<span data-ttu-id="082d1-105">Xbox Live サービスは、さまざまな id と認証に関連するデータ型を使用します。</span><span class="sxs-lookup"><span data-stu-id="082d1-105">Xbox Live Services uses a variety of data types related to identity and authentication.</span></span> <span data-ttu-id="082d1-106">このトピックでは、それらの型の概要を示します。</span><span class="sxs-lookup"><span data-stu-id="082d1-106">This topic provides an overview of those types.</span></span>
  
-| <span data-ttu-id="ab962-107">種類</span><span class="sxs-lookup"><span data-stu-id="ab962-107">Type</span></span>| <span data-ttu-id="ab962-108">説明</span><span class="sxs-lookup"><span data-stu-id="ab962-108">Description</span></span>| 
+| <span data-ttu-id="082d1-107">種類</span><span class="sxs-lookup"><span data-stu-id="082d1-107">Type</span></span>| <span data-ttu-id="082d1-108">説明</span><span class="sxs-lookup"><span data-stu-id="082d1-108">Description</span></span>| 
 | --- | --- | 
-| <span data-ttu-id="ab962-109">ゲーマータグ</span><span class="sxs-lookup"><span data-stu-id="ab962-109">gamertag</span></span>| <span data-ttu-id="ab962-110">ユーザーの人間が判読できる一意の画面の名前。</span><span class="sxs-lookup"><span data-stu-id="ab962-110">A unique, human-readable screen name for the user.</span></span>| 
-| <span data-ttu-id="ab962-111">プレイヤー</span><span class="sxs-lookup"><span data-stu-id="ab962-111">Player</span></span>| <span data-ttu-id="ab962-112">ユーザーの XUID と、セッションおよびカスタム データの小さな blob で、プレイヤーがまだ参加しているかどうか、セッション (または「シート」)、プレイヤーのインデックスを適切にゲーマータグを含む JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="ab962-112">A JSON object containing the user's XUID and gamertag, as well the player's index in the session (or "seat"), whether the player is still participating in the session, and a small blob of custom data.</span></span>| 
-| <span data-ttu-id="ab962-113">profile</span><span class="sxs-lookup"><span data-stu-id="ab962-113">profile</span></span>| <span data-ttu-id="ab962-114">ユーザー プロファイルの URI アドレスと、ユーザーのユーザーでは通常の HTTP メソッドを使用してアクセスが、ゲーマー、ゲーマータグ、XUID などの可能性もなどについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ab962-114">Information about the user accessed through profile URI addresses and HTTP methods, usually the user's UserSettings, but also possibly including gamercard, gamertag, XUID, and so on.</span></span>| 
-| <span data-ttu-id="ab962-115">設定</span><span class="sxs-lookup"><span data-stu-id="ab962-115">setting</span></span>| <span data-ttu-id="ab962-116">ユーザー オブジェクトのタイトルに固有の設定のいずれか。</span><span class="sxs-lookup"><span data-stu-id="ab962-116">One of the title-specific settings in a UserSettings object.</span></span>| 
-| <span data-ttu-id="ab962-117">UserClaims</span><span class="sxs-lookup"><span data-stu-id="ab962-117">UserClaims</span></span>| <span data-ttu-id="ab962-118">ユーザーの XUID とゲーマータグを含むシンプルな JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="ab962-118">A simple JSON object containing the user's XUID and gamertag.</span></span>| 
-| <span data-ttu-id="ab962-119">ユーザー</span><span class="sxs-lookup"><span data-stu-id="ab962-119">UserSettings</span></span>| <span data-ttu-id="ab962-120">タイトルに固有の設定、または現在の認証されたユーザーの基本設定のコレクションを含む JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="ab962-120">A JSON object containing a collection of title-specific settings or preferences for the current authenticated user.</span></span> <span data-ttu-id="ab962-121">ユーザーは、ゲーム内のアクティビティに関連する可能性があります、任意のデータを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="ab962-121">UserSettings can contain arbitrary data, possibly related to in-game activity.</span></span>| 
-| <span data-ttu-id="ab962-122">XUID</span><span class="sxs-lookup"><span data-stu-id="ab962-122">XUID</span></span>| <span data-ttu-id="ab962-123">ユーザーの Xbox ユーザー ID、ユニークな署名されていない長の整数です。</span><span class="sxs-lookup"><span data-stu-id="ab962-123">The user's Xbox User ID, a unique unsigned long integer.</span></span> <span data-ttu-id="ab962-124">判読するものではありません。</span><span class="sxs-lookup"><span data-stu-id="ab962-124">Not meant to be human-readable.</span></span>| 
+| <span data-ttu-id="082d1-109">ゲーマータグ</span><span class="sxs-lookup"><span data-stu-id="082d1-109">gamertag</span></span>| <span data-ttu-id="082d1-110">ユーザーの人間が判読できる一意の画面の名前。</span><span class="sxs-lookup"><span data-stu-id="082d1-110">A unique, human-readable screen name for the user.</span></span>| 
+| <span data-ttu-id="082d1-111">プレイヤー</span><span class="sxs-lookup"><span data-stu-id="082d1-111">Player</span></span>| <span data-ttu-id="082d1-112">ユーザーの XUID と、セッションおよびカスタム データの小さな blob で、プレイヤーがまだ参加しているかどうか、セッション (または「シート」)、プレイヤーのインデックスを適切にゲーマータグを含む JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="082d1-112">A JSON object containing the user's XUID and gamertag, as well the player's index in the session (or "seat"), whether the player is still participating in the session, and a small blob of custom data.</span></span>| 
+| <span data-ttu-id="082d1-113">profile</span><span class="sxs-lookup"><span data-stu-id="082d1-113">profile</span></span>| <span data-ttu-id="082d1-114">ユーザー プロファイルの URI アドレスと、ユーザーのユーザーでは通常の HTTP メソッドを使用してアクセスが、ゲーマー、ゲーマータグ、XUID などの可能性もなどについて説明します。</span><span class="sxs-lookup"><span data-stu-id="082d1-114">Information about the user accessed through profile URI addresses and HTTP methods, usually the user's UserSettings, but also possibly including gamercard, gamertag, XUID, and so on.</span></span>| 
+| <span data-ttu-id="082d1-115">設定</span><span class="sxs-lookup"><span data-stu-id="082d1-115">setting</span></span>| <span data-ttu-id="082d1-116">ユーザー オブジェクトのタイトルに固有の設定のいずれか。</span><span class="sxs-lookup"><span data-stu-id="082d1-116">One of the title-specific settings in a UserSettings object.</span></span>| 
+| <span data-ttu-id="082d1-117">UserClaims</span><span class="sxs-lookup"><span data-stu-id="082d1-117">UserClaims</span></span>| <span data-ttu-id="082d1-118">ユーザーの XUID とゲーマータグを含むシンプルな JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="082d1-118">A simple JSON object containing the user's XUID and gamertag.</span></span>| 
+| <span data-ttu-id="082d1-119">ユーザー</span><span class="sxs-lookup"><span data-stu-id="082d1-119">UserSettings</span></span>| <span data-ttu-id="082d1-120">タイトルに固有の設定、または現在の認証されたユーザーの基本設定のコレクションを含む JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="082d1-120">A JSON object containing a collection of title-specific settings or preferences for the current authenticated user.</span></span> <span data-ttu-id="082d1-121">ユーザーは、ゲーム内のアクティビティに関連する可能性があります、任意のデータを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="082d1-121">UserSettings can contain arbitrary data, possibly related to in-game activity.</span></span>| 
+| <span data-ttu-id="082d1-122">XUID</span><span class="sxs-lookup"><span data-stu-id="082d1-122">XUID</span></span>| <span data-ttu-id="082d1-123">ユーザーの Xbox ユーザー ID、ユニークな署名されていない長の整数です。</span><span class="sxs-lookup"><span data-stu-id="082d1-123">The user's Xbox User ID, a unique unsigned long integer.</span></span> <span data-ttu-id="082d1-124">判読するものではありません。</span><span class="sxs-lookup"><span data-stu-id="082d1-124">Not meant to be human-readable.</span></span>| 
  
 <a id="ID4E6D"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="ab962-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="ab962-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="082d1-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="082d1-125">See also</span></span>
  
 <a id="ID4EBE"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="ab962-126">Parent</span><span class="sxs-lookup"><span data-stu-id="ab962-126">Parent</span></span>  
+##### <a name="parent"></a><span data-ttu-id="082d1-126">Parent</span><span class="sxs-lookup"><span data-stu-id="082d1-126">Parent</span></span>  
 
-[<span data-ttu-id="ab962-127">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="ab962-127">Additional Reference</span></span>](atoc-xboxlivews-reference-additional.md)
+[<span data-ttu-id="082d1-127">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="082d1-127">Additional Reference</span></span>](atoc-xboxlivews-reference-additional.md)
 
   
 <a id="ID4ENE"></a>
 
  
-##### <a name="reference--player-jsonjsonjson-playermd"></a><span data-ttu-id="ab962-128">参照[プレイヤー (JSON)](../json/json-player.md)</span><span class="sxs-lookup"><span data-stu-id="ab962-128">Reference  [Player (JSON)](../json/json-player.md)</span></span>
+##### <a name="reference--player-jsonjsonjson-playermd"></a><span data-ttu-id="082d1-128">参照[プレイヤー (JSON)](../json/json-player.md)</span><span class="sxs-lookup"><span data-stu-id="082d1-128">Reference  [Player (JSON)](../json/json-player.md)</span></span>
 
- [<span data-ttu-id="ab962-129">UserClaims (JSON)</span><span class="sxs-lookup"><span data-stu-id="ab962-129">UserClaims (JSON)</span></span>](../json/json-userclaims.md)
+ [<span data-ttu-id="082d1-129">UserClaims (JSON)</span><span class="sxs-lookup"><span data-stu-id="082d1-129">UserClaims (JSON)</span></span>](../json/json-userclaims.md)
 
- [<span data-ttu-id="ab962-130">UserSettings (JSON)</span><span class="sxs-lookup"><span data-stu-id="ab962-130">UserSettings (JSON)</span></span>](../json/json-usersettings.md)
+ [<span data-ttu-id="082d1-130">UserSettings (JSON)</span><span class="sxs-lookup"><span data-stu-id="082d1-130">UserSettings (JSON)</span></span>](../json/json-usersettings.md)
 
    

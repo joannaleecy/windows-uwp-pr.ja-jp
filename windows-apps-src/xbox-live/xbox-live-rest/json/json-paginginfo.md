@@ -12,28 +12,28 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 933169945c865fc6bc6f7b8b7ba7872fff98d1b8
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4126272"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150386"
 ---
-# <a name="paginginfo-json"></a><span data-ttu-id="1ea46-104">PagingInfo (JSON)</span><span class="sxs-lookup"><span data-stu-id="1ea46-104">PagingInfo (JSON)</span></span>
-<span data-ttu-id="1ea46-105">データのページで返される結果のページング情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="1ea46-105">Contains paging information for results that are returned in pages of data.</span></span> 
+# <a name="paginginfo-json"></a><span data-ttu-id="abd17-104">PagingInfo (JSON)</span><span class="sxs-lookup"><span data-stu-id="abd17-104">PagingInfo (JSON)</span></span>
+<span data-ttu-id="abd17-105">データのページで返される結果のページング情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="abd17-105">Contains paging information for results that are returned in pages of data.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="paginginfo"></a><span data-ttu-id="1ea46-106">PagingInfo</span><span class="sxs-lookup"><span data-stu-id="1ea46-106">PagingInfo</span></span>
+## <a name="paginginfo"></a><span data-ttu-id="abd17-106">PagingInfo</span><span class="sxs-lookup"><span data-stu-id="abd17-106">PagingInfo</span></span>
  
-| <span data-ttu-id="1ea46-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="1ea46-107">Member</span></span>| <span data-ttu-id="1ea46-108">種類</span><span class="sxs-lookup"><span data-stu-id="1ea46-108">Type</span></span>| <span data-ttu-id="1ea46-109">説明</span><span class="sxs-lookup"><span data-stu-id="1ea46-109">Description</span></span>| 
+| <span data-ttu-id="abd17-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="abd17-107">Member</span></span>| <span data-ttu-id="abd17-108">種類</span><span class="sxs-lookup"><span data-stu-id="abd17-108">Type</span></span>| <span data-ttu-id="abd17-109">説明</span><span class="sxs-lookup"><span data-stu-id="abd17-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="1ea46-110">continuationToken</span><span class="sxs-lookup"><span data-stu-id="1ea46-110">continuationToken</span></span>| <span data-ttu-id="1ea46-111">string</span><span class="sxs-lookup"><span data-stu-id="1ea46-111">string</span></span>| <span data-ttu-id="1ea46-112">結果の次のページにアクセスするために使用する不透明な継続トークンです。</span><span class="sxs-lookup"><span data-stu-id="1ea46-112">An opaque continuation token used to access the next page of results.</span></span> <span data-ttu-id="1ea46-113">最大 32 文字以下です。呼び出し元は、次のコレクション内の項目のセットを取得するために、 <b>continuationToken</b>クエリ パラメーターでは、この値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="1ea46-113">Maximum 32 characters.Callers can supply this value in the <b>continuationToken</b> query parameter in order to retrieve the next set of items in the collection.</span></span> <span data-ttu-id="1ea46-114">このプロパティが<b>null</b>の場合、項目がない追加コレクション内です。</span><span class="sxs-lookup"><span data-stu-id="1ea46-114">If this property is <b>null</b>, then there are no additional items in the collection.</span></span> <span data-ttu-id="1ea46-115">このプロパティは、必要な場合でも、 <b>skipItems</b>でページングされるコレクションが提供されます。</span><span class="sxs-lookup"><span data-stu-id="1ea46-115">This property is required and is provided even if the collection is being paged with <b>skipItems</b>.</span></span>| 
-| <span data-ttu-id="1ea46-116">totalItems</span><span class="sxs-lookup"><span data-stu-id="1ea46-116">totalItems</span></span>| <span data-ttu-id="1ea46-117">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="1ea46-117">32-bit signed integer</span></span>| <span data-ttu-id="1ea46-118">コレクション内の項目の合計数。</span><span class="sxs-lookup"><span data-stu-id="1ea46-118">The total number of items in the collection.</span></span> <span data-ttu-id="1ea46-119">これが指定されていない場合は、サービスは、コレクションのサイズにリアルタイムで表示を提供することはできません。</span><span class="sxs-lookup"><span data-stu-id="1ea46-119">This is not provided if the service is unable to provide a real-time view into the size of the collection.</span></span>| 
+| <span data-ttu-id="abd17-110">continuationToken</span><span class="sxs-lookup"><span data-stu-id="abd17-110">continuationToken</span></span>| <span data-ttu-id="abd17-111">string</span><span class="sxs-lookup"><span data-stu-id="abd17-111">string</span></span>| <span data-ttu-id="abd17-112">結果の次のページにアクセスするために使用する不透明な継続トークンです。</span><span class="sxs-lookup"><span data-stu-id="abd17-112">An opaque continuation token used to access the next page of results.</span></span> <span data-ttu-id="abd17-113">最大 32 文字以下です。呼び出し元は、次のコレクション内の項目のセットを取得するために、 <b>continuationToken</b>クエリ パラメーターでは、この値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="abd17-113">Maximum 32 characters.Callers can supply this value in the <b>continuationToken</b> query parameter in order to retrieve the next set of items in the collection.</span></span> <span data-ttu-id="abd17-114">このプロパティが<b>null</b>の場合、項目がない追加コレクション内です。</span><span class="sxs-lookup"><span data-stu-id="abd17-114">If this property is <b>null</b>, then there are no additional items in the collection.</span></span> <span data-ttu-id="abd17-115">このプロパティは、必要な場合でも、 <b>skipItems</b>でページングされるコレクションが提供されます。</span><span class="sxs-lookup"><span data-stu-id="abd17-115">This property is required and is provided even if the collection is being paged with <b>skipItems</b>.</span></span>| 
+| <span data-ttu-id="abd17-116">totalItems</span><span class="sxs-lookup"><span data-stu-id="abd17-116">totalItems</span></span>| <span data-ttu-id="abd17-117">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="abd17-117">32-bit signed integer</span></span>| <span data-ttu-id="abd17-118">コレクション内の項目の合計数。</span><span class="sxs-lookup"><span data-stu-id="abd17-118">The total number of items in the collection.</span></span> <span data-ttu-id="abd17-119">これが指定されていない場合は、サービスは、コレクションのサイズにリアルタイムで表示を提供することはできません。</span><span class="sxs-lookup"><span data-stu-id="abd17-119">This is not provided if the service is unable to provide a real-time view into the size of the collection.</span></span>| 
   
 <a id="ID4E4B"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="1ea46-120">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="1ea46-120">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="abd17-120">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="abd17-120">Sample JSON syntax</span></span>
  
 
 ```json
@@ -48,13 +48,13 @@ ms.locfileid: "4126272"
 <a id="ID4EGC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="1ea46-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="1ea46-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="abd17-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="abd17-121">See also</span></span>
  
 <a id="ID4EIC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="1ea46-122">Parent</span><span class="sxs-lookup"><span data-stu-id="1ea46-122">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="abd17-122">Parent</span><span class="sxs-lookup"><span data-stu-id="abd17-122">Parent</span></span> 
 
-[<span data-ttu-id="1ea46-123">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="1ea46-123">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="abd17-123">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="abd17-123">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

@@ -12,32 +12,32 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 42bf1a09144bec9cddda1ae2fd9656dc6dc8c51d
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4126532"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150428"
 ---
-# <a name="aggregatesessionsresponse-json"></a><span data-ttu-id="9c3bb-104">AggregateSessionsResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="9c3bb-104">AggregateSessionsResponse (JSON)</span></span>
-<span data-ttu-id="9c3bb-105">ユーザーの適合性のセッションの集計データが含まれています。</span><span class="sxs-lookup"><span data-stu-id="9c3bb-105">Contains aggregated data for a user's fitness sessions.</span></span> 
+# <a name="aggregatesessionsresponse-json"></a><span data-ttu-id="f08cb-104">AggregateSessionsResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="f08cb-104">AggregateSessionsResponse (JSON)</span></span>
+<span data-ttu-id="f08cb-105">ユーザーの適合性のセッションの集計データが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f08cb-105">Contains aggregated data for a user's fitness sessions.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="aggregatesessionsresponse"></a><span data-ttu-id="9c3bb-106">AggregateSessionsResponse</span><span class="sxs-lookup"><span data-stu-id="9c3bb-106">AggregateSessionsResponse</span></span>
+## <a name="aggregatesessionsresponse"></a><span data-ttu-id="f08cb-106">AggregateSessionsResponse</span><span class="sxs-lookup"><span data-stu-id="f08cb-106">AggregateSessionsResponse</span></span>
  
-<span data-ttu-id="9c3bb-107">AggregateSessionsResponse オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="9c3bb-107">The AggregateSessionsResponse object has the following specification.</span></span>
+<span data-ttu-id="f08cb-107">AggregateSessionsResponse オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="f08cb-107">The AggregateSessionsResponse object has the following specification.</span></span>
  
-| <span data-ttu-id="9c3bb-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="9c3bb-108">Member</span></span>| <span data-ttu-id="9c3bb-109">種類</span><span class="sxs-lookup"><span data-stu-id="9c3bb-109">Type</span></span>| <span data-ttu-id="9c3bb-110">説明</span><span class="sxs-lookup"><span data-stu-id="9c3bb-110">Description</span></span>| 
+| <span data-ttu-id="f08cb-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="f08cb-108">Member</span></span>| <span data-ttu-id="f08cb-109">種類</span><span class="sxs-lookup"><span data-stu-id="f08cb-109">Type</span></span>| <span data-ttu-id="f08cb-110">説明</span><span class="sxs-lookup"><span data-stu-id="f08cb-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="9c3bb-111">totalDurationInSeconds</span><span class="sxs-lookup"><span data-stu-id="9c3bb-111">totalDurationInSeconds</span></span>| <span data-ttu-id="9c3bb-112">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="9c3bb-112">64-bit signed integer</span></span>| <span data-ttu-id="9c3bb-113">集計期間を秒単位でセッションの合計期間です。</span><span class="sxs-lookup"><span data-stu-id="9c3bb-113">Total duration of sessions in seconds over the aggregation period.</span></span>| 
-| <span data-ttu-id="9c3bb-114">totalJoules</span><span class="sxs-lookup"><span data-stu-id="9c3bb-114">totalJoules</span></span>| <span data-ttu-id="9c3bb-115">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="9c3bb-115">64-bit signed integer</span></span>| <span data-ttu-id="9c3bb-116">エネルギー書き込みの合計-コンセントで-集計期間中です。</span><span class="sxs-lookup"><span data-stu-id="9c3bb-116">Total energy burned—in joules—over the aggregation period.</span></span> | 
-| <span data-ttu-id="9c3bb-117">totalSessions</span><span class="sxs-lookup"><span data-stu-id="9c3bb-117">totalSessions</span></span>| <span data-ttu-id="9c3bb-118">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="9c3bb-118">64-bit signed integer</span></span>| <span data-ttu-id="9c3bb-119">集計期間中のセッションの合計数。</span><span class="sxs-lookup"><span data-stu-id="9c3bb-119">Total number of sessions over the aggregation period.</span></span>| 
-| <span data-ttu-id="9c3bb-120">weightedAverageMets</span><span class="sxs-lookup"><span data-stu-id="9c3bb-120">weightedAverageMets</span></span>| <span data-ttu-id="9c3bb-121">単精度浮動小数点数</span><span class="sxs-lookup"><span data-stu-id="9c3bb-121">single-precision floating-point number</span></span> | <span data-ttu-id="9c3bb-122">加重平均代謝と同等の集計期間中のタスク (MET) の値。</span><span class="sxs-lookup"><span data-stu-id="9c3bb-122">Weighted average metabolic equivalent of task (MET) value over the aggregation period.</span></span> <span data-ttu-id="9c3bb-123">MET 値は、アクティビティを残りの部分で個々 の代謝レートを基準とした時に、個々 の代謝レートの比率です。</span><span class="sxs-lookup"><span data-stu-id="9c3bb-123">The MET value is the ratio of an individual's metabolic rate during an activity relative to the individual's metabolic rate at rest.</span></span> <span data-ttu-id="9c3bb-124">静止の代謝レートは、個々 の太さに関係なく 1.0 MET 値は、個々 の静止代謝レートを基準としたためは、さまざまな重みの人の従業員が実行しているアクティビティの強さを比較する使用できます。</span><span class="sxs-lookup"><span data-stu-id="9c3bb-124">Because the metabolic rate for resting is 1.0 regardless of an individual's weight, and MET values are relative to an individual's resting metabolic rate, they can be used to compare the intensity of an activity being performed by individuals of different weights.</span></span>| 
+| <span data-ttu-id="f08cb-111">totalDurationInSeconds</span><span class="sxs-lookup"><span data-stu-id="f08cb-111">totalDurationInSeconds</span></span>| <span data-ttu-id="f08cb-112">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="f08cb-112">64-bit signed integer</span></span>| <span data-ttu-id="f08cb-113">集計期間を秒単位でセッションの合計期間です。</span><span class="sxs-lookup"><span data-stu-id="f08cb-113">Total duration of sessions in seconds over the aggregation period.</span></span>| 
+| <span data-ttu-id="f08cb-114">totalJoules</span><span class="sxs-lookup"><span data-stu-id="f08cb-114">totalJoules</span></span>| <span data-ttu-id="f08cb-115">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="f08cb-115">64-bit signed integer</span></span>| <span data-ttu-id="f08cb-116">エネルギー書き込みの合計-コンセントで-集計期間中です。</span><span class="sxs-lookup"><span data-stu-id="f08cb-116">Total energy burned—in joules—over the aggregation period.</span></span> | 
+| <span data-ttu-id="f08cb-117">totalSessions</span><span class="sxs-lookup"><span data-stu-id="f08cb-117">totalSessions</span></span>| <span data-ttu-id="f08cb-118">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="f08cb-118">64-bit signed integer</span></span>| <span data-ttu-id="f08cb-119">集計期間中のセッションの合計数。</span><span class="sxs-lookup"><span data-stu-id="f08cb-119">Total number of sessions over the aggregation period.</span></span>| 
+| <span data-ttu-id="f08cb-120">weightedAverageMets</span><span class="sxs-lookup"><span data-stu-id="f08cb-120">weightedAverageMets</span></span>| <span data-ttu-id="f08cb-121">単精度浮動小数点数</span><span class="sxs-lookup"><span data-stu-id="f08cb-121">single-precision floating-point number</span></span> | <span data-ttu-id="f08cb-122">加重平均代謝と同等の集計期間中のタスク (MET) の値。</span><span class="sxs-lookup"><span data-stu-id="f08cb-122">Weighted average metabolic equivalent of task (MET) value over the aggregation period.</span></span> <span data-ttu-id="f08cb-123">MET 値は、アクティビティを残りの部分で個々 の代謝レートを基準とした時に、個々 の代謝レートの比率です。</span><span class="sxs-lookup"><span data-stu-id="f08cb-123">The MET value is the ratio of an individual's metabolic rate during an activity relative to the individual's metabolic rate at rest.</span></span> <span data-ttu-id="f08cb-124">静止の代謝レートは、個々 の太さに関係なく 1.0 MET 値は、個々 の静止代謝レートを基準としたためは、さまざまな重みの人の従業員が実行しているアクティビティの強さを比較する使用できます。</span><span class="sxs-lookup"><span data-stu-id="f08cb-124">Because the metabolic rate for resting is 1.0 regardless of an individual's weight, and MET values are relative to an individual's resting metabolic rate, they can be used to compare the intensity of an activity being performed by individuals of different weights.</span></span>| 
   
 <a id="ID4ESC"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="9c3bb-125">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="9c3bb-125">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="f08cb-125">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="f08cb-125">Sample JSON syntax</span></span>
  
 
 ```json
@@ -55,13 +55,13 @@ ms.locfileid: "4126532"
 <a id="ID4E2C"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="9c3bb-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="9c3bb-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f08cb-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="f08cb-126">See also</span></span>
  
 <a id="ID4E4C"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="9c3bb-127">Parent</span><span class="sxs-lookup"><span data-stu-id="9c3bb-127">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="f08cb-127">Parent</span><span class="sxs-lookup"><span data-stu-id="f08cb-127">Parent</span></span> 
 
-[<span data-ttu-id="9c3bb-128">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="9c3bb-128">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="f08cb-128">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="f08cb-128">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

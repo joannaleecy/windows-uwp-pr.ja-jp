@@ -11,20 +11,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: 042ecc09302fce4ef86905a7b7d5adcafb0a97f4
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4125952"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4147568"
 ---
-# <a name="flowchart---fill-open-slots-in-a-multiplayer-game"></a><span data-ttu-id="1110c-104">フローチャート - マルチプレイヤー ゲームで空いているスロットを埋める</span><span class="sxs-lookup"><span data-stu-id="1110c-104">Flowchart - Fill open slots in a multiplayer game</span></span>
+# <a name="flowchart---fill-open-slots-in-a-multiplayer-game"></a><span data-ttu-id="8727a-104">フローチャート - マルチプレイヤー ゲームで空いているスロットを埋める</span><span class="sxs-lookup"><span data-stu-id="8727a-104">Flowchart - Fill open slots in a multiplayer game</span></span>
 
-<span data-ttu-id="1110c-105">次のフローチャートでは、マルチプレイヤー ゲームの空いているスロットをフレンドまたはマッチメイキングで埋めるフローを示します。</span><span class="sxs-lookup"><span data-stu-id="1110c-105">The following flowcharts show the flow of filling open slots in a multiplayer game, with friends and/or with matchmaking.</span></span>
+<span data-ttu-id="8727a-105">次のフローチャートでは、マルチプレイヤー ゲームの空いているスロットをフレンドまたはマッチメイキングで埋めるフローを示します。</span><span class="sxs-lookup"><span data-stu-id="8727a-105">The following flowcharts show the flow of filling open slots in a multiplayer game, with friends and/or with matchmaking.</span></span>
 
-## <a name="fill-open-slots-with-friends"></a><span data-ttu-id="1110c-106">空いているスロットをフレンドで埋める</span><span class="sxs-lookup"><span data-stu-id="1110c-106">Fill open slots with friends</span></span>
+## <a name="fill-open-slots-with-friends"></a><span data-ttu-id="8727a-106">空いているスロットをフレンドで埋める</span><span class="sxs-lookup"><span data-stu-id="8727a-106">Fill open slots with friends</span></span>
 
 ![SmartMatch マッチメイキング](../../../images/multiplayer/mpm-fill-open-slots-with-friends.png)
 
-## <a name="fill-open-slots-with-matchmaking"></a><span data-ttu-id="1110c-108">空いているスロットをマッチメイキングで埋める</span><span class="sxs-lookup"><span data-stu-id="1110c-108">Fill open slots with matchmaking</span></span>
+## <a name="fill-open-slots-with-matchmaking"></a><span data-ttu-id="8727a-108">空いているスロットをマッチメイキングで埋める</span><span class="sxs-lookup"><span data-stu-id="8727a-108">Fill open slots with matchmaking</span></span>
 
 ![SmartMatch マッチメイキング](../../../images/multiplayer/mpm-fill-open-slots-with-matchmaking.png)

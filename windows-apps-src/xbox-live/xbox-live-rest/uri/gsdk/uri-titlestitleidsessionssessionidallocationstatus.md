@@ -12,42 +12,42 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f8137980bddbf494c989f4f8a39c2f6edaf3d30a
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4129058"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149280"
 ---
-# <a name="titlestitleidsessionssessionidallocationstatus"></a><span data-ttu-id="af461-104">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span><span class="sxs-lookup"><span data-stu-id="af461-104">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span></span>
-<span data-ttu-id="af461-105">特定のタイトル id とセッション id、チケットの要求の状態を取得します。</span><span class="sxs-lookup"><span data-stu-id="af461-105">For the given title id and session id, get status of the ticket request.</span></span> <span data-ttu-id="af461-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="af461-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
+# <a name="titlestitleidsessionssessionidallocationstatus"></a><span data-ttu-id="5c749-104">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span><span class="sxs-lookup"><span data-stu-id="5c749-104">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span></span>
+<span data-ttu-id="5c749-105">特定のタイトル id とセッション id、チケットの要求の状態を取得します。</span><span class="sxs-lookup"><span data-stu-id="5c749-105">For the given title id and session id, get status of the ticket request.</span></span> <span data-ttu-id="5c749-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5c749-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="af461-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="af461-107">URI Parameters</span></span>](#ID4EU)
-  * [<span data-ttu-id="af461-108">ホスト名</span><span class="sxs-lookup"><span data-stu-id="af461-108">Host Name</span></span>](#ID4EPB)
-  * [<span data-ttu-id="af461-109">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="af461-109">Valid Methods</span></span>](#ID4EWB)
+  * [<span data-ttu-id="5c749-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="5c749-107">URI Parameters</span></span>](#ID4EU)
+  * [<span data-ttu-id="5c749-108">ホスト名</span><span class="sxs-lookup"><span data-stu-id="5c749-108">Host Name</span></span>](#ID4EPB)
+  * [<span data-ttu-id="5c749-109">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="5c749-109">Valid Methods</span></span>](#ID4EWB)
  
 <a id="ID4EU"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="af461-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="af461-110">URI Parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="5c749-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="5c749-110">URI Parameters</span></span>
  
-| <span data-ttu-id="af461-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="af461-111">Parameter</span></span>| <span data-ttu-id="af461-112">説明</span><span class="sxs-lookup"><span data-stu-id="af461-112">Description</span></span>| 
+| <span data-ttu-id="5c749-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="5c749-111">Parameter</span></span>| <span data-ttu-id="5c749-112">説明</span><span class="sxs-lookup"><span data-stu-id="5c749-112">Description</span></span>| 
 | --- | --- | 
-| <span data-ttu-id="af461-113">titleId</span><span class="sxs-lookup"><span data-stu-id="af461-113">titleId</span></span>| <span data-ttu-id="af461-114">要求の操作のタイトルの ID です。</span><span class="sxs-lookup"><span data-stu-id="af461-114">ID of the title that the request should operate on.</span></span>| 
-| <span data-ttu-id="af461-115">sessionId</span><span class="sxs-lookup"><span data-stu-id="af461-115">sessionId</span></span>| <span data-ttu-id="af461-116">検索するセッションの ID。</span><span class="sxs-lookup"><span data-stu-id="af461-116">the ID of the session to look up.</span></span>| 
+| <span data-ttu-id="5c749-113">titleId</span><span class="sxs-lookup"><span data-stu-id="5c749-113">titleId</span></span>| <span data-ttu-id="5c749-114">要求の操作のタイトルの ID です。</span><span class="sxs-lookup"><span data-stu-id="5c749-114">ID of the title that the request should operate on.</span></span>| 
+| <span data-ttu-id="5c749-115">sessionId</span><span class="sxs-lookup"><span data-stu-id="5c749-115">sessionId</span></span>| <span data-ttu-id="5c749-116">検索するセッションの ID。</span><span class="sxs-lookup"><span data-stu-id="5c749-116">the ID of the session to look up.</span></span>| 
   
 <a id="ID4EPB"></a>
 
  
-## <a name="host-name"></a><span data-ttu-id="af461-117">ホスト名</span><span class="sxs-lookup"><span data-stu-id="af461-117">Host Name</span></span>
+## <a name="host-name"></a><span data-ttu-id="5c749-117">ホスト名</span><span class="sxs-lookup"><span data-stu-id="5c749-117">Host Name</span></span>
  
-<span data-ttu-id="af461-118">gameserverms.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="af461-118">gameserverms.xboxlive.com</span></span>
+<span data-ttu-id="5c749-118">gameserverms.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="5c749-118">gameserverms.xboxlive.com</span></span>
   
 <a id="ID4EWB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="af461-119">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="af461-119">Valid Methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="5c749-119">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="5c749-119">Valid Methods</span></span>
   
-[<span data-ttu-id="af461-120">GET</span><span class="sxs-lookup"><span data-stu-id="af461-120">GET</span></span>](uri-titlestitleidsessionssessionidallocationstatus-get.md)
+[<span data-ttu-id="5c749-120">GET</span><span class="sxs-lookup"><span data-stu-id="5c749-120">GET</span></span>](uri-titlestitleidsessionssessionidallocationstatus-get.md)
  
-<span data-ttu-id="af461-121">&nbsp;&nbsp;その sessionId で識別される sessionhost の割り当ての状態を返します。</span><span class="sxs-lookup"><span data-stu-id="af461-121">&nbsp;&nbsp;Returns the allocation status of the sessionhost identified by its sessionId.</span></span>
+<span data-ttu-id="5c749-121">&nbsp;&nbsp;その sessionId で識別される sessionhost の割り当ての状態を返します。</span><span class="sxs-lookup"><span data-stu-id="5c749-121">&nbsp;&nbsp;Returns the allocation status of the sessionhost identified by its sessionId.</span></span>
    

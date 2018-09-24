@@ -11,22 +11,22 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 認証, サインイン
 ms.localizationpriority: medium
 ms.openlocfilehash: 61a4b0ef33d346b8ed4d3e0b8e074ede1edeba23
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4125198"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149098"
 ---
-# <a name="authentication"></a><span data-ttu-id="6d22e-104">認証</span><span class="sxs-lookup"><span data-stu-id="6d22e-104">Authentication</span></span>
+# <a name="authentication"></a><span data-ttu-id="711ec-104">認証</span><span class="sxs-lookup"><span data-stu-id="711ec-104">Authentication</span></span>
 
-<span data-ttu-id="6d22e-105">このセクションでは、Xbox Live を使用した認証について説明します。</span><span class="sxs-lookup"><span data-stu-id="6d22e-105">This section covers authentication with Xbox Live</span></span>
+<span data-ttu-id="711ec-105">このセクションでは、Xbox Live を使用した認証について説明します。</span><span class="sxs-lookup"><span data-stu-id="711ec-105">This section covers authentication with Xbox Live</span></span>
 
-## <a name="in-this-section"></a><span data-ttu-id="6d22e-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="6d22e-106">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="711ec-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="711ec-106">In this section</span></span>
 
-[<span data-ttu-id="6d22e-107">ユニバーサル Windows プラットフォーム (UWP) プロジェクトの認証</span><span class="sxs-lookup"><span data-stu-id="6d22e-107">Authentication for Universal Windows Platform (UWP) projects</span></span>](authentication-for-UWP-projects.md)
+[<span data-ttu-id="711ec-107">ユニバーサル Windows プラットフォーム (UWP) プロジェクトの認証</span><span class="sxs-lookup"><span data-stu-id="711ec-107">Authentication for Universal Windows Platform (UWP) projects</span></span>](authentication-for-UWP-projects.md)
 
-[<span data-ttu-id="6d22e-108">Xbox Developer Kit (XDK) プロジェクトの認証</span><span class="sxs-lookup"><span data-stu-id="6d22e-108">Authentication for Xbox Developer Kit (XDK) projects</span></span>](authentication-for-XDK-projects.md)
+[<span data-ttu-id="711ec-108">Xbox Developer Kit (XDK) プロジェクトの認証</span><span class="sxs-lookup"><span data-stu-id="711ec-108">Authentication for Xbox Developer Kit (XDK) projects</span></span>](authentication-for-XDK-projects.md)
 
-[<span data-ttu-id="6d22e-109">Single Point of Presence (SPOP)</span><span class="sxs-lookup"><span data-stu-id="6d22e-109">Single Point of Presence (SPOP)</span></span>](single-point-of-presence.md)
+[<span data-ttu-id="711ec-109">Single Point of Presence (SPOP)</span><span class="sxs-lookup"><span data-stu-id="711ec-109">Single Point of Presence (SPOP)</span></span>](single-point-of-presence.md)
 
-[<span data-ttu-id="6d22e-110">UWP での Windows システム ユーザーの取得</span><span class="sxs-lookup"><span data-stu-id="6d22e-110">Retrieving the Windows System User on UWP</span></span>](retrieving-windows-system-user-on-UWP.md)
+[<span data-ttu-id="711ec-110">UWP での Windows システム ユーザーの取得</span><span class="sxs-lookup"><span data-stu-id="711ec-110">Retrieving the Windows System User on UWP</span></span>](retrieving-windows-system-user-on-UWP.md)

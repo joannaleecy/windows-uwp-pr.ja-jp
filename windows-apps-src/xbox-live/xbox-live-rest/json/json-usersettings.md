@@ -12,32 +12,32 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 20ac62403a8248011928089ea81cdf6418259db1
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4126168"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4149114"
 ---
-# <a name="usersettings-json"></a><span data-ttu-id="f206e-104">UserSettings (JSON)</span><span class="sxs-lookup"><span data-stu-id="f206e-104">UserSettings (JSON)</span></span>
-<span data-ttu-id="f206e-105">現在の認証されたユーザーの設定を返します。</span><span class="sxs-lookup"><span data-stu-id="f206e-105">Returns settings for current authenticated user.</span></span> 
+# <a name="usersettings-json"></a><span data-ttu-id="2f6ff-104">UserSettings (JSON)</span><span class="sxs-lookup"><span data-stu-id="2f6ff-104">UserSettings (JSON)</span></span>
+<span data-ttu-id="2f6ff-105">現在の認証されたユーザーの設定を返します。</span><span class="sxs-lookup"><span data-stu-id="2f6ff-105">Returns settings for current authenticated user.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="usersettings"></a><span data-ttu-id="f206e-106">ユーザー</span><span class="sxs-lookup"><span data-stu-id="f206e-106">UserSettings</span></span>
+## <a name="usersettings"></a><span data-ttu-id="2f6ff-106">ユーザー</span><span class="sxs-lookup"><span data-stu-id="2f6ff-106">UserSettings</span></span>
  
-<span data-ttu-id="f206e-107">ユーザー オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="f206e-107">The UserSettings object has the following specification.</span></span>
+<span data-ttu-id="2f6ff-107">ユーザー オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="2f6ff-107">The UserSettings object has the following specification.</span></span>
  
-| <span data-ttu-id="f206e-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="f206e-108">Member</span></span>| <span data-ttu-id="f206e-109">種類</span><span class="sxs-lookup"><span data-stu-id="f206e-109">Type</span></span>| <span data-ttu-id="f206e-110">説明</span><span class="sxs-lookup"><span data-stu-id="f206e-110">Description</span></span>| 
+| <span data-ttu-id="2f6ff-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="2f6ff-108">Member</span></span>| <span data-ttu-id="2f6ff-109">種類</span><span class="sxs-lookup"><span data-stu-id="2f6ff-109">Type</span></span>| <span data-ttu-id="2f6ff-110">説明</span><span class="sxs-lookup"><span data-stu-id="2f6ff-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="f206e-111">id</span><span class="sxs-lookup"><span data-stu-id="f206e-111">id</span></span>| <span data-ttu-id="f206e-112">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="f206e-112">32-bit unsigned integer</span></span>| <span data-ttu-id="f206e-113">設定の識別子です。</span><span class="sxs-lookup"><span data-stu-id="f206e-113">The identifier of the setting.</span></span>| 
-| <span data-ttu-id="f206e-114">ソース</span><span class="sxs-lookup"><span data-stu-id="f206e-114">source</span></span>| <span data-ttu-id="f206e-115">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="f206e-115">32-bit unsigned integer</span></span>| <span data-ttu-id="f206e-116">設定のソースを表します。</span><span class="sxs-lookup"><span data-stu-id="f206e-116">Represents the source of the setting.</span></span> | 
-| <span data-ttu-id="f206e-117">titleId</span><span class="sxs-lookup"><span data-stu-id="f206e-117">titleId</span></span>| <span data-ttu-id="f206e-118">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="f206e-118">32-bit unsigned integer</span></span>| <span data-ttu-id="f206e-119">設定に関連付けられているタイトルの識別子です。</span><span class="sxs-lookup"><span data-stu-id="f206e-119">The identifier of the title associated with the setting.</span></span> | 
-| <span data-ttu-id="f206e-120">value</span><span class="sxs-lookup"><span data-stu-id="f206e-120">value</span></span>| <span data-ttu-id="f206e-121">8 ビットの符号なし整数の配列</span><span class="sxs-lookup"><span data-stu-id="f206e-121">array of 8-bit unsigned integer</span></span>| <span data-ttu-id="f206e-122">設定の値を表します。</span><span class="sxs-lookup"><span data-stu-id="f206e-122">Represents the value of the setting.</span></span> <span data-ttu-id="f206e-123">クライアント設定を取得する表現形式のデータを読み取ることができるを理解する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f206e-123">Clients retrieving settings must understand the representation format to be able to read the data.</span></span> | 
+| <span data-ttu-id="2f6ff-111">id</span><span class="sxs-lookup"><span data-stu-id="2f6ff-111">id</span></span>| <span data-ttu-id="2f6ff-112">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="2f6ff-112">32-bit unsigned integer</span></span>| <span data-ttu-id="2f6ff-113">設定の識別子です。</span><span class="sxs-lookup"><span data-stu-id="2f6ff-113">The identifier of the setting.</span></span>| 
+| <span data-ttu-id="2f6ff-114">ソース</span><span class="sxs-lookup"><span data-stu-id="2f6ff-114">source</span></span>| <span data-ttu-id="2f6ff-115">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="2f6ff-115">32-bit unsigned integer</span></span>| <span data-ttu-id="2f6ff-116">設定のソースを表します。</span><span class="sxs-lookup"><span data-stu-id="2f6ff-116">Represents the source of the setting.</span></span> | 
+| <span data-ttu-id="2f6ff-117">titleId</span><span class="sxs-lookup"><span data-stu-id="2f6ff-117">titleId</span></span>| <span data-ttu-id="2f6ff-118">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="2f6ff-118">32-bit unsigned integer</span></span>| <span data-ttu-id="2f6ff-119">設定に関連付けられているタイトルの識別子です。</span><span class="sxs-lookup"><span data-stu-id="2f6ff-119">The identifier of the title associated with the setting.</span></span> | 
+| <span data-ttu-id="2f6ff-120">value</span><span class="sxs-lookup"><span data-stu-id="2f6ff-120">value</span></span>| <span data-ttu-id="2f6ff-121">8 ビットの符号なし整数の配列</span><span class="sxs-lookup"><span data-stu-id="2f6ff-121">array of 8-bit unsigned integer</span></span>| <span data-ttu-id="2f6ff-122">設定の値を表します。</span><span class="sxs-lookup"><span data-stu-id="2f6ff-122">Represents the value of the setting.</span></span> <span data-ttu-id="2f6ff-123">クライアント設定を取得する表現形式のデータを読み取ることができるを理解する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2f6ff-123">Clients retrieving settings must understand the representation format to be able to read the data.</span></span> | 
   
 <a id="ID4EJC"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="f206e-124">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="f206e-124">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="2f6ff-124">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="2f6ff-124">Sample JSON syntax</span></span>
  
 
 ```json
@@ -54,13 +54,13 @@ ms.locfileid: "4126168"
 <a id="ID4ESC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="f206e-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="f206e-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2f6ff-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="2f6ff-125">See also</span></span>
  
 <a id="ID4EUC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="f206e-126">Parent</span><span class="sxs-lookup"><span data-stu-id="f206e-126">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="2f6ff-126">Parent</span><span class="sxs-lookup"><span data-stu-id="2f6ff-126">Parent</span></span> 
 
-[<span data-ttu-id="f206e-127">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="f206e-127">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="2f6ff-127">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="2f6ff-127">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

@@ -12,46 +12,46 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b7c0c664b7fdff7eae607acdc4dd7ef78aeb3caf
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4125034"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4147780"
 ---
-# <a name="publicscidsscidclips"></a><span data-ttu-id="e29f6-104">/public/scids/{scid}/clips</span><span class="sxs-lookup"><span data-stu-id="e29f6-104">/public/scids/{scid}/clips</span></span>
-<span data-ttu-id="e29f6-105">クリップをパブリックにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="e29f6-105">Access public clips.</span></span> <span data-ttu-id="e29f6-106">この URI に実際にで指定できる 2 つのフォーム`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。</span><span class="sxs-lookup"><span data-stu-id="e29f6-106">This URI actually can be specified in two forms, `/public/scids/{scid}/clips` and `/public/titles/{titleId}/clips`.</span></span> <span data-ttu-id="e29f6-107">詳しくは、後のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e29f6-107">See below for more details.</span></span> <span data-ttu-id="e29f6-108">この URI のドメインが`gameclipsmetadata.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="e29f6-108">The domain for this URI is `gameclipsmetadata.xboxlive.com`.</span></span>
+# <a name="publicscidsscidclips"></a><span data-ttu-id="418b3-104">/public/scids/{scid}/clips</span><span class="sxs-lookup"><span data-stu-id="418b3-104">/public/scids/{scid}/clips</span></span>
+<span data-ttu-id="418b3-105">クリップをパブリックにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="418b3-105">Access public clips.</span></span> <span data-ttu-id="418b3-106">この URI に実際にで指定できる 2 つのフォーム`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。</span><span class="sxs-lookup"><span data-stu-id="418b3-106">This URI actually can be specified in two forms, `/public/scids/{scid}/clips` and `/public/titles/{titleId}/clips`.</span></span> <span data-ttu-id="418b3-107">詳しくは、後のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="418b3-107">See below for more details.</span></span> <span data-ttu-id="418b3-108">この URI のドメインが`gameclipsmetadata.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="418b3-108">The domain for this URI is `gameclipsmetadata.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="e29f6-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="e29f6-109">URI parameters</span></span>](#ID4E1)
+  * [<span data-ttu-id="418b3-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="418b3-109">URI parameters</span></span>](#ID4E1)
  
 <a id="ID4E1"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="e29f6-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="e29f6-110">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="418b3-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="418b3-110">URI parameters</span></span>
  
-| <span data-ttu-id="e29f6-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="e29f6-111">Parameter</span></span>| <span data-ttu-id="e29f6-112">型</span><span class="sxs-lookup"><span data-stu-id="e29f6-112">Type</span></span>| <span data-ttu-id="e29f6-113">説明</span><span class="sxs-lookup"><span data-stu-id="e29f6-113">Description</span></span>| 
+| <span data-ttu-id="418b3-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="418b3-111">Parameter</span></span>| <span data-ttu-id="418b3-112">型</span><span class="sxs-lookup"><span data-stu-id="418b3-112">Type</span></span>| <span data-ttu-id="418b3-113">説明</span><span class="sxs-lookup"><span data-stu-id="418b3-113">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="e29f6-114">scid</span><span class="sxs-lookup"><span data-stu-id="e29f6-114">scid</span></span>| <span data-ttu-id="e29f6-115">string</span><span class="sxs-lookup"><span data-stu-id="e29f6-115">string</span></span>| <span data-ttu-id="e29f6-116">パブリック クリップの主要なサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="e29f6-116">The primary service configuration identifier of the public clips.</span></span>| 
-| <span data-ttu-id="e29f6-117">タイトル id</span><span class="sxs-lookup"><span data-stu-id="e29f6-117">titleid</span></span>| <span data-ttu-id="e29f6-118">string</span><span class="sxs-lookup"><span data-stu-id="e29f6-118">string</span></span>| <span data-ttu-id="e29f6-119">パブリック クリップのタイトル Id。</span><span class="sxs-lookup"><span data-stu-id="e29f6-119">The titleId of the public clips.</span></span> <span data-ttu-id="e29f6-120">SCID と同じ URI で指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="e29f6-120">Cannot be specified in the same URI as the SCID.</span></span> <span data-ttu-id="e29f6-121">指定した場合はプライマリー SCID を検索するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="e29f6-121">If specified, will be used to look up the primary SCID.</span></span>| 
+| <span data-ttu-id="418b3-114">scid</span><span class="sxs-lookup"><span data-stu-id="418b3-114">scid</span></span>| <span data-ttu-id="418b3-115">string</span><span class="sxs-lookup"><span data-stu-id="418b3-115">string</span></span>| <span data-ttu-id="418b3-116">パブリック クリップの主要なサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="418b3-116">The primary service configuration identifier of the public clips.</span></span>| 
+| <span data-ttu-id="418b3-117">タイトル id</span><span class="sxs-lookup"><span data-stu-id="418b3-117">titleid</span></span>| <span data-ttu-id="418b3-118">string</span><span class="sxs-lookup"><span data-stu-id="418b3-118">string</span></span>| <span data-ttu-id="418b3-119">パブリック クリップのタイトル Id。</span><span class="sxs-lookup"><span data-stu-id="418b3-119">The titleId of the public clips.</span></span> <span data-ttu-id="418b3-120">SCID と同じ URI で指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="418b3-120">Cannot be specified in the same URI as the SCID.</span></span> <span data-ttu-id="418b3-121">指定した場合はプライマリー SCID を検索するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="418b3-121">If specified, will be used to look up the primary SCID.</span></span>| 
   
 <a id="ID4E6B"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="e29f6-122">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="e29f6-122">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="418b3-122">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="418b3-122">Valid methods</span></span>
 
-[<span data-ttu-id="e29f6-123">GET (/public/scids/{scid}/clips)</span><span class="sxs-lookup"><span data-stu-id="e29f6-123">GET (/public/scids/{scid}/clips)</span></span>](uri-publicscidclipsget.md)
+[<span data-ttu-id="418b3-123">GET (/public/scids/{scid}/clips)</span><span class="sxs-lookup"><span data-stu-id="418b3-123">GET (/public/scids/{scid}/clips)</span></span>](uri-publicscidclipsget.md)
 
-<span data-ttu-id="e29f6-124">&nbsp;&nbsp;パブリック クリップを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="e29f6-124">&nbsp;&nbsp;List public clips.</span></span>
+<span data-ttu-id="418b3-124">&nbsp;&nbsp;パブリック クリップを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="418b3-124">&nbsp;&nbsp;List public clips.</span></span>
  
 <a id="ID4EJC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="e29f6-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="e29f6-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="418b3-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="418b3-125">See also</span></span>
  
 <a id="ID4ELC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="e29f6-126">Parent</span><span class="sxs-lookup"><span data-stu-id="e29f6-126">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="418b3-126">Parent</span><span class="sxs-lookup"><span data-stu-id="418b3-126">Parent</span></span> 
 
-[<span data-ttu-id="e29f6-127">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="e29f6-127">Marketplace URIs</span></span>](../marketplace/atoc-reference-marketplace.md)
+[<span data-ttu-id="418b3-127">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="418b3-127">Marketplace URIs</span></span>](../marketplace/atoc-reference-marketplace.md)
 
    

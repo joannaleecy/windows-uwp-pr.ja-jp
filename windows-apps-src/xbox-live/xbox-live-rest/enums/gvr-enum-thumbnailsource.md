@@ -12,22 +12,22 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d14304f38d84894ef999003e86f92beeca526ef
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4127722"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4147778"
 ---
-# <a name="thumbnailsource-enumeration"></a><span data-ttu-id="3266e-104">ThumbnailSource 列挙型</span><span class="sxs-lookup"><span data-stu-id="3266e-104">ThumbnailSource Enumeration</span></span>
-<span data-ttu-id="3266e-105">ThumbnailSource 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="3266e-105">Details the ThumbnailSource enumeration.</span></span> 
+# <a name="thumbnailsource-enumeration"></a><span data-ttu-id="73cc2-104">ThumbnailSource 列挙型</span><span class="sxs-lookup"><span data-stu-id="73cc2-104">ThumbnailSource Enumeration</span></span>
+<span data-ttu-id="73cc2-105">ThumbnailSource 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="73cc2-105">Details the ThumbnailSource enumeration.</span></span> 
 <a id="ID4ER"></a>
 
  
-## <a name="thumbnailsource"></a><span data-ttu-id="3266e-106">ThumbnailSource</span><span class="sxs-lookup"><span data-stu-id="3266e-106">ThumbnailSource</span></span>
+## <a name="thumbnailsource"></a><span data-ttu-id="73cc2-106">ThumbnailSource</span><span class="sxs-lookup"><span data-stu-id="73cc2-106">ThumbnailSource</span></span>
  
-| <b><span data-ttu-id="3266e-107">列挙子</span><span class="sxs-lookup"><span data-stu-id="3266e-107">Enumerator</span></span></b>| <b><span data-ttu-id="3266e-108">説明</span><span class="sxs-lookup"><span data-stu-id="3266e-108">Description</span></span></b>| 
+| <b><span data-ttu-id="73cc2-107">列挙子</span><span class="sxs-lookup"><span data-stu-id="73cc2-107">Enumerator</span></span></b>| <b><span data-ttu-id="73cc2-108">説明</span><span class="sxs-lookup"><span data-stu-id="73cc2-108">Description</span></span></b>| 
 | --- | --- | 
-| <span data-ttu-id="3266e-109">既定値</span><span class="sxs-lookup"><span data-stu-id="3266e-109">Default</span></span>| <span data-ttu-id="3266e-110">クリップの 3 つの 2 つ目の点から、大とサイズの小さなサムネイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="3266e-110">A Large and Small sized thumbnail are generated from the 3 second point in the clip.</span></span>| 
-| <span data-ttu-id="3266e-111">Offset</span><span class="sxs-lookup"><span data-stu-id="3266e-111">Offset</span></span>| <span data-ttu-id="3266e-112">クリップの InitialUploadRequest で指定された値から、大とサイズの小さなサムネイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="3266e-112">A Large and Small sized thumbnail are generated from the value specified in the InitialUploadRequest for the clip.</span></span>| 
-| <span data-ttu-id="3266e-113">Upload</span><span class="sxs-lookup"><span data-stu-id="3266e-113">Upload</span></span>| <span data-ttu-id="3266e-114">縮小表示が生成され、GameClips サービスから独立してアップロードします。</span><span class="sxs-lookup"><span data-stu-id="3266e-114">Thumbnails are generated and uploaded independent of the GameClips service.</span></span>| 
+| <span data-ttu-id="73cc2-109">既定値</span><span class="sxs-lookup"><span data-stu-id="73cc2-109">Default</span></span>| <span data-ttu-id="73cc2-110">クリップの 3 つの 2 つ目の点から、大とサイズの小さなサムネイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="73cc2-110">A Large and Small sized thumbnail are generated from the 3 second point in the clip.</span></span>| 
+| <span data-ttu-id="73cc2-111">Offset</span><span class="sxs-lookup"><span data-stu-id="73cc2-111">Offset</span></span>| <span data-ttu-id="73cc2-112">クリップの InitialUploadRequest で指定された値から、大とサイズの小さなサムネイルが生成されます。</span><span class="sxs-lookup"><span data-stu-id="73cc2-112">A Large and Small sized thumbnail are generated from the value specified in the InitialUploadRequest for the clip.</span></span>| 
+| <span data-ttu-id="73cc2-113">Upload</span><span class="sxs-lookup"><span data-stu-id="73cc2-113">Upload</span></span>| <span data-ttu-id="73cc2-114">縮小表示が生成され、GameClips サービスから独立してアップロードします。</span><span class="sxs-lookup"><span data-stu-id="73cc2-114">Thumbnails are generated and uploaded independent of the GameClips service.</span></span>| 
   

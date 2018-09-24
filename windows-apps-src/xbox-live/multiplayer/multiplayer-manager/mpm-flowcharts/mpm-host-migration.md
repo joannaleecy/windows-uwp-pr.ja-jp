@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: 6394e440981dea5da28b0a5e59334def9a2a57e8
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4125750"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152734"
 ---
-# <a name="flowchart---handle-host-migration"></a><span data-ttu-id="bfb0f-104">フローチャート - ホストの移行を処理する</span><span class="sxs-lookup"><span data-stu-id="bfb0f-104">Flowchart - Handle host migration</span></span>
+# <a name="flowchart---handle-host-migration"></a><span data-ttu-id="46682-104">フローチャート - ホストの移行を処理する</span><span class="sxs-lookup"><span data-stu-id="46682-104">Flowchart - Handle host migration</span></span>
 
-<span data-ttu-id="bfb0f-105">次のフローチャートでは、マルチプレイヤー ゲームのホストが切断されたときにホストの移行を処理するフローを示します。</span><span class="sxs-lookup"><span data-stu-id="bfb0f-105">The following flowcharts show the flow of handling a host migration when the host of a multiplayer game disconnects.</span></span>
+<span data-ttu-id="46682-105">次のフローチャートでは、マルチプレイヤー ゲームのホストが切断されたときにホストの移行を処理するフローを示します。</span><span class="sxs-lookup"><span data-stu-id="46682-105">The following flowcharts show the flow of handling a host migration when the host of a multiplayer game disconnects.</span></span>
 
-## <a name="handle-host-migration"></a><span data-ttu-id="bfb0f-106">ホストの移行を処理する</span><span class="sxs-lookup"><span data-stu-id="bfb0f-106">Handle host migration</span></span>
+## <a name="handle-host-migration"></a><span data-ttu-id="46682-106">ホストの移行を処理する</span><span class="sxs-lookup"><span data-stu-id="46682-106">Handle host migration</span></span>
 
 ![SmartMatch マッチメイキング](../../../images/multiplayer/mpm-host-migration.png)
