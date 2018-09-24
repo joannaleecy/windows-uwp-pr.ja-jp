@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, トースト, 進行状況バー, トーストの進行状況バー, 通知, トーストのデータ バインディング
 ms.localizationpriority: medium
 ms.openlocfilehash: b99c2479bef3c10ecc82707e475f49fd2b9014ec
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4130595"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153135"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>トーストの進行状況バーとデータ バインディング
 

@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: fe36fec72645558c539dd8270fd15d35d92b66b5
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4125027"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4151613"
 ---
 # <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>パッケージ デスクトップ アプリの配布 (デスクトップ ブリッジ)
 

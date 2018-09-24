@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、プロジェクション、処理、イベント、デリゲート
 ms.localizationpriority: medium
-ms.openlocfilehash: 7af66c3f0586f2fb99a2a742f6da0144ed69d253
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: 6b8749b53e28047842343bd2a1e0c005f588d79d
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4130117"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4152527"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) でのデリゲートを使用したイベントの処理
 このトピックでは、C++/WinRT を使用したイベント処理デリゲートの登録方法と取り消し方法について説明します。 標準的な C++ 関数のようなオブジェクトを使用してイベントを処理できます。
@@ -187,14 +187,17 @@ void ProcessFeedAsync()
         // use syndicationFeed;
     });
     
-    // or (but this function must then be a coroutine and return IAsyncAction)
+    // or (but this function must then be a coroutine, and return IAsyncAction)
     // SyndicationFeed syndicationFeed{ co_await async_op_with_progress };
 }
 ```
 
 上記の "コルーチン" のコメントからも分かるように、非同期アクションと非同期操作の完了イベントでデリゲートを使用するよりも、コルーチンを使用するほうがより自然です。 詳細とコード例については、「[C++/WinRT を使用した同時実行操作と非同期操作](concurrency.md)」を参照してください。
 
-ただし、デリゲートを使用する場合は、単純な形式の構文を選択できます。
+> [!NOTE]
+> 正しい非同期アクションまたは操作のための複数の*完了ハンドラー*を実装することはできません。 その完了イベントのデリゲートが 1 つしたりすることができます`co_await`ことです。 両方がある場合は、2 つ目は失敗します。
+
+コルーチンではなくデリゲートを使用する場合、単純な構文のオプトアウトすることができます。
 
 ```cppwinrt
 async_op_with_progress.Completed(

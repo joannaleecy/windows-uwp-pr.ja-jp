@@ -17,11 +17,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: daffbc5ff74adc234ac6c2b414a7e1b85763849d
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4123839"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4150011"
 ---
 # <a name="toggle-switches"></a>トグル スイッチ
 

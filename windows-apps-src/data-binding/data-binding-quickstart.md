@@ -10,12 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+dev_langs:
+- csharp
+- cppwinrt
+- cpp
+ms.openlocfilehash: ff104bfb5114cd51eb04d75af3c096f47a7d286d
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4122513"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153625"
 ---
 # <a name="data-binding-overview"></a>データ バインディングの概要
 
@@ -36,7 +40,7 @@ ms.locfileid: "4122513"
 
 すべてのバインディングにはバインディング ターゲットとバインディング ソースがあります。 通常、ターゲットはコントロールまたは他の UI 要素のプロパティであり、ソースはクラス インスタンス (データ モデルやビュー モデル) のプロパティです。 コントロールを単一の項目にバインドする例を次に示します。 ターゲットは **TextBlock** の **Text** プロパティです。 ソースは、オーディオの録音を表す **Recording** という名前の単純なクラスのインスタンスです。 まずクラスを見てみましょう。
 
-C# を使用している場合、プロジェクトに新しいクラスを追加し、名前を付けます`Recording.cs`します。
+C# または C++ を使っている場合 +/CX という新しいクラスをプロジェクトに追加し、クラス**レコーディング**の名前します。
 
 使っている場合[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、という名前の c++ に示すように、プロジェクトに新しい**Midl ファイル (.idl)** 項目を追加/以下の WinRT のコード例をリストします。 これらの新しいファイルの内容を一覧に表示される[MIDL 3.0](/uwp/midl-3/intro)コードに置き換えます、生成するプロジェクトをビルド`Recording.h`と`.cpp`と`RecordingViewModel.h`と`.cpp`、し、登録情報に一致するように、生成されたファイルにコードを追加します。 それらの生成されたファイルについて詳しくは、プロジェクトにコピーする方法を参照してください[XAML コントロール、バインドを C++/WinRT プロパティ](/windows/uwp/cpp-and-winrt-apis/binding-property)します。
 
@@ -157,6 +161,7 @@ Quickstart::Recording RecordingViewModel::DefaultRecording()
 ```
 
 ```cpp
+// Recording.h
 #include <sstream>
 namespace Quickstart
 {
@@ -217,6 +222,10 @@ namespace Quickstart
         }
     };
 }
+
+// Recording.cpp
+#include "pch.h"
+#include "Recording.h"
 ```
 
 次に、マークアップのページを表すクラスからバインディング ソース クラスを公開します。 これを行うには、**RecordingViewModel** 型のプロパティを **MainPage** に追加します。
@@ -273,6 +282,10 @@ Quickstart::RecordingViewModel MainPage::ViewModel()
 ```
 
 ```cpp
+// MainPage.h
+...
+#include "Recording.h"
+
 namespace Quickstart
 {
     public ref class MainPage sealed
@@ -280,16 +293,21 @@ namespace Quickstart
     private:
         RecordingViewModel ^ viewModel;
     public:
-        MainPage()
-        {
-            InitializeComponent();
-            this->viewModel = ref new RecordingViewModel();
-        }
+        MainPage();
+
         property RecordingViewModel^ ViewModel
         {
             RecordingViewModel^ get() { return this->viewModel; };
         }
     };
+}
+
+// MainPage.cpp
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+    this->viewModel = ref new RecordingViewModel();
 }
 ```
 
@@ -381,6 +399,8 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Rec
 ```
 
 ```cpp
+// Recording.h
+...
 public ref class RecordingViewModel sealed
 {
 private:
@@ -561,11 +581,14 @@ public ref class Recording sealed
 
 次のように、いずれの場合も結果は同じです。
 
+> [!NOTE]
+> C++ を使用している場合、UI を検索しません次の図とまったく同じ: **ReleaseDateTime**プロパティのレンダリングは異なります。 詳細については、次のセクションを参照してください。
+
 ![一覧ビューのバインド](images/xaml-databinding4.png)
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>表示のためのデータ値の書式設定と変換
 
-前のレンダリングには、小さな問題が 1 つあります。 **ReleaseDateTime** プロパティは日付だけではなく、[**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) であるため、必要以上の精度で表示されています。 解決策の 1 つは、`this.ReleaseDateTime.ToString("d")` を返す **Recording** クラスに文字列プロパティを追加することです。 プロパティに **ReleaseDate** という名前を付けると、日付と時刻ではなく、日付が返されることを示します。 **ReleaseDateAsString** という名前を付けると、さらに文字列が返されることを示します。
+前のレンダリングに問題があります。 **ReleaseDateTime**プロパティは、日付だけではなく、 [**DateTime**](/uwp/api/windows.foundation.datetime) ([**カレンダー**](/uwp/api/windows.globalization.calendar)は、C++ を使用している) 場合。 そのため、c# でそれが表示されているの必要な精度でします。 C++ でレンダリングされる型名としてします。 1 つのソリューションと同等の結果を返す**レコーディング**クラスに文字列プロパティを追加するには`this.ReleaseDateTime.ToString("d")`します。 **ReleaseDate**そのプロパティの名前を付けると、日付、およびしない、日付と時間が返されることを示します。 **ReleaseDateAsString** という名前を付けると、さらに文字列が返されることを示します。
 
 より柔軟な解決策は、値コンバーターと呼ばれるものを使うことです。 独自の値コンバーターを作成する方法の例を示します。 次のコードを Recording.cs ソース コード ファイルに追加します。
 
@@ -598,7 +621,94 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 }
 ```
 
-これで、**StringFormatter** のインスタンスをページ リソースとして追加し、バインドで使うことができます。 最終的な書式設定の柔軟性のために、マークアップからコンバーターに書式設定文字列を渡します。
+```cppwinrt
+// StringFormatter.idl
+namespace Quickstart
+{
+    runtimeclass StringFormatter : Windows.UI.Xaml.Data.IValueConverter
+    {
+        StringFormatter();
+    }
+}
+
+// StringFormatter.h
+#pragma once
+
+#include "StringFormatter.g.h"
+#include <sstream>
+
+namespace winrt::Quickstart::implementation
+{
+    struct StringFormatter : StringFormatterT<StringFormatter>
+    {
+        StringFormatter() = default;
+
+        Windows::Foundation::IInspectable Convert(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& targetType, Windows::Foundation::IInspectable const& parameter, hstring const& language);
+        Windows::Foundation::IInspectable ConvertBack(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& targetType, Windows::Foundation::IInspectable const& parameter, hstring const& language);
+    };
+}
+
+namespace winrt::Quickstart::factory_implementation
+{
+    struct StringFormatter : StringFormatterT<StringFormatter, implementation::StringFormatter>
+    {
+    };
+}
+
+// StringFormatter.cpp
+#include "pch.h"
+#include "StringFormatter.h"
+
+namespace winrt::Quickstart::implementation
+{
+    Windows::Foundation::IInspectable StringFormatter::Convert(Windows::Foundation::IInspectable const& value, Windows::UI::Xaml::Interop::TypeName const& /* targetType */, Windows::Foundation::IInspectable const& /* parameter */, hstring const& /* language */)
+    {
+        // Retrieve the value as a Calendar.
+        Windows::Globalization::Calendar valueAsCalendar{ value.as<Windows::Globalization::Calendar>() };
+
+        std::wstringstream wstringstream;
+        wstringstream << L"Released: ";
+        wstringstream << valueAsCalendar.MonthAsNumericString().c_str();
+        wstringstream << L"/" << valueAsCalendar.DayAsString().c_str();
+        wstringstream << L"/" << valueAsCalendar.YearAsString().c_str();
+        return winrt::box_value(hstring{ wstringstream.str().c_str() });
+    }
+
+    Windows::Foundation::IInspectable StringFormatter::ConvertBack(Windows::Foundation::IInspectable const& /* value */, Windows::UI::Xaml::Interop::TypeName const& /* targetType */, Windows::Foundation::IInspectable const& /* parameter */, hstring const& /* language */)
+    {
+        throw hresult_not_implemented();
+    }
+}
+```
+
+```cpp
+...
+public ref class StringFormatter sealed : Windows::UI::Xaml::Data::IValueConverter
+{
+public:
+    virtual Platform::Object^ Convert(Platform::Object^ value, TypeName targetType, Platform::Object^ parameter, Platform::String^ language)
+    {
+        // Retrieve the value as a Calendar.
+        Windows::Globalization::Calendar^ valueAsCalendar = dynamic_cast<Windows::Globalization::Calendar^>(value);
+
+        std::wstringstream wstringstream;
+        wstringstream << L"Released: ";
+        wstringstream << valueAsCalendar->MonthAsNumericString()->Data();
+        wstringstream << L"/" << valueAsCalendar->DayAsString()->Data();
+        wstringstream << L"/" << valueAsCalendar->YearAsString()->Data();
+        return ref new Platform::String(wstringstream.str().c_str());
+    }
+
+    // No need to implement converting back on a one-way binding
+    virtual Platform::Object^ ConvertBack(Platform::Object^ value, TypeName targetType, Platform::Object^ parameter, Platform::String^ language)
+    {
+        throw ref new Platform::NotImplementedException();
+    }
+};
+...
+```
+
+これで、**StringFormatter** のインスタンスをページ リソースとして追加し、バインドで使うことができます。
 
 ```xml
 <Page.Resources>
@@ -610,6 +720,8 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
     ConverterParameter=Released: \{0:d\}}"/>
 ...
 ```
+
+上記わかるように、柔軟性を書式設定のマークアップを使ってコンバーター パラメーターを使用してコンバーターに書式設定文字列を渡します。 によりのみ c# 値コンバーターは、このトピックに示すようにコード例では、そのパラメーターの使用します。 簡単に C++ スタイル形式の文字列をコンバーター パラメーターとして渡すし、 **wprintf**や**swprintf**などの書式設定の関数を使って、値コンバーターを使用する可能性があります。
 
 結果は次のようになります。
 

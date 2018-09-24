@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 28a6160019fd3bf64dd1f75bc5c6df29cd3165ad
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4124919"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4148639"
 ---
 # <a name="masterdetails-pattern"></a>マスター/詳細パターン
 
