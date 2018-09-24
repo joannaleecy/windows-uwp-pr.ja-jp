@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f295c1f1b432f90e12d3e628cd35a54412812ec
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4129228"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153152"
 ---
 # <a name="introduction-to-xbox-live-apis"></a>Xbox Live API の概要
 
