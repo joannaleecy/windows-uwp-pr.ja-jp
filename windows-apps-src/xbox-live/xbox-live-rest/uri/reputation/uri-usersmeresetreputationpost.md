@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a8bfe8a76b83c78886c48f7e15de274fe89a52a
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4152892"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4178980"
 ---
 # <a name="post-usersmeresetreputation"></a>POST (/users/me/resetreputation)
 アカウント ハイジャックでは (たとえば) 後、現在のユーザーの評判スコアをいくつかの任意の値に設定する執行チームを使用できます。 これらの Uri のドメインが`reputation.xboxlive.com`します。

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a3b7f63e7a991420ee594cf45acf2f9952bcf74
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151200"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4176534"
 ---
 # <a name="permissioncheckbatchrequest-json"></a>PermissionCheckBatchRequest (JSON)
 PermissionCheckBatchRequest オブジェクトのコレクションです。 

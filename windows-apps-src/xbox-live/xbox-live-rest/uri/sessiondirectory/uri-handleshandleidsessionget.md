@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab3214ca9b2cb2ff8ace11706ceda22885598e1
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151272"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174250"
 ---
 # <a name="get-handleshandleidsession"></a>GET (/handles/{handleId}/session)
 指定したハンドル識別子のセッション オブジェクトを取得します。

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 953ef16ccc7416d68114e2303af89fcebdfb2382
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4152780"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4176886"
 ---
 # <a name="gameclipsource-enumeration"></a>GameClipSource 列挙型
 GameClipSource 列挙をについて説明します。 
