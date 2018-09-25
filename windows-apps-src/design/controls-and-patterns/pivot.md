@@ -15,11 +15,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4154417"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173357"
 ---
 # <a name="pivot"></a><span data-ttu-id="0dce1-103">ピボット</span><span class="sxs-lookup"><span data-stu-id="0dce1-103">Pivot</span></span>
 

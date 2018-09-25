@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 公開の保留, 公開日, 申請を送信して公開, 制限付き機能の承認
 ms.localizationpriority: medium
 ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156389"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173847"
 ---
 # <a name="manage-submission-options"></a><span data-ttu-id="6c2be-103">申請オプションの管理</span><span class="sxs-lookup"><span data-stu-id="6c2be-103">Manage submission options</span></span>
 

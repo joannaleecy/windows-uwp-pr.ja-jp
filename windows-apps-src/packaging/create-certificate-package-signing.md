@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: db2c360a881071db14a1e65ffe2cd9a5bb16f0fe
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156405"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181523"
 ---
 # <a name="create-a-certificate-for-package-signing"></a><span data-ttu-id="55a5c-104">パッケージ署名用の証明書を作成する</span><span class="sxs-lookup"><span data-stu-id="55a5c-104">Create a certificate for package signing</span></span>
 

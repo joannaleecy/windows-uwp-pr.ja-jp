@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f2485eab4b192fe4a65c68d957de1ec9192f8c20
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148337"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181327"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a><span data-ttu-id="6c37f-104">バージョン アダプティブ アプリ: 以前のバージョンとの互換性を保ちながら新しい API を使う</span><span class="sxs-lookup"><span data-stu-id="6c37f-104">Version adaptive apps: Use new APIs while maintaining compatibility with previous versions</span></span>
 
