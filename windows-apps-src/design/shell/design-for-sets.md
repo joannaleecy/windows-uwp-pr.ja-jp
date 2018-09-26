@@ -12,11 +12,11 @@ keywords: windows 10, uwp, タイトル バー
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c3e0e6ec7331e860c9153e2a2e29a51fb5848bd
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4179395"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4213332"
 ---
 # <a name="designing-for-sets"></a>Sets の設計
 

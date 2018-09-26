@@ -9,40 +9,37 @@ ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows, フォーム, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b8c263b030cbb8f945ffb13a24b6dff3af28fcc
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.openlocfilehash: 67669dd30f376df823f2f9ad08ad69c193cdb602
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4173635"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4204674"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>デスクトップ アプリケーションで UWP コントロール
 
 > [!NOTE]
 > Api と、この記事で説明するコントロールは開発者プレビューとして現在利用可能です。 それらプロトタイプ コードで今すぐ試すをお勧めしますがないことで使う運用コードこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟し、今後の Windows のリリースに安定します。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
 
-ここで、Windows 10 では、外観や操作感を既存のデスクトップ アプリケーション、最新の Windows 10 の UI 機能のみで利用可能な UWP コントロールの機能を高めることができるように、UWP 以外のデスクトップ アプリケーションで UWP コントロールを使用できます。 つまり、 [Fluent Design System](../design/fluent-design-system/index.md)と、既存の WPF、Windows フォーム、および C++ Win32 アプリケーションでは、 [Windows Ink](../design/input/pen-and-stylus-interactions.md)などの UWP 機能を使用することができます。 このシナリオは、 *XAML 諸島*と呼ばれます。
+ここで、Windows 10 では、外観や操作感を既存のデスクトップ アプリケーション、最新の Windows 10 の UI 機能のみで利用可能な UWP コントロールの機能を高めることができるように、UWP 以外のデスクトップ アプリケーションで UWP コントロールを使用できます。 つまり、 [Windows Ink](../design/input/pen-and-stylus-interactions.md)と、既存の WPF、Windows フォーム、および C++ Win32 アプリケーションで、 [Fluent Design System](../design/fluent-design-system/index.md)をサポートするコントロールなどの UWP 機能を使用することができます。 このシナリオは、 *XAML 諸島*と呼ばれます。
 
-テクノロジやフレームワークを使用しているによって、デスクトップ アプリケーションで XAML 諸島を使用する方法をいくつか用意されています。
+テクノロジやフレームワークを使用しているによって、WPF、Windows フォーム、および C++ の Win32 アプリケーションで XAML 諸島を使用する方法をいくつか用意されています。
 
 ## <a name="wrapped-controls"></a>ラップされたコントロール
 
-WPF および Windows フォーム アプリケーションでは、 [Windows コミュニティ ツールキット](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)でラップされた UWP のコントロールの選択を使用できます。 これらのコントロールを直接 WPF または Windows フォーム プロジェクトのデザイン サーフェイスに追加し、デザイナーで、他の WPF または Windows フォームなどのコントロールと同様に使用できます。 これらのコントロールといいます*コントロールをラップ*インターフェイスと特定の UWP コントロールの機能をラップするためです。
-
-次のラップされたコントロールでは、Windows 10 バージョン 1803 以降をサポートします。
-
-* [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview)します。 このコントロールは、WPF または Windows フォーム アプリケーションで web コンテンツを表示するのに Microsoft Edge レンダリング エンジンを使用します。
-* [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible)します。 このコントロールは、Windows 10 と互換性がある**WebView**のバージョンと Windows の以前のバージョンです。 このコントロールは、Windows 10 (バージョン 1803 以降) で web コンテンツを表示する Microsoft Edge レンダリング エンジンと Windows 7 および Windows 上の web コンテンツを表示する Internet Explorer のレンダリング エンジンを使います 8.x します。
-
-次のラップされたコントロールでは、Windows 10 Insider Preview SDK ビルド 17709 以降のリリースをサポートします。
-
-* [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)と[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)します。 これらのコントロールは、Windows フォームや WPF デスクトップ アプリケーションでの Windows Ink ベースのユーザー操作のサーフェスと関連するツールバーを提供します。
-* [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement)します。 このコントロールは、ストリームし、Windows フォームや WPF デスクトップ アプリケーションのビデオなどのメディア コンテンツをレンダリングするビューを埋め込みます。
-
-複数の UWP では、コントロールをラップ wpf と Windows コミュニティ ツールキットの今後のリリースの Windows フォーム アプリケーションが計画されています。
+WPF および Windows フォーム アプリケーションでは、 [Windows コミュニティ ツールキット](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)でラップされた UWP のコントロールの選択を使用できます。 これらのコントロールといいます*コントロールをラップ*インターフェイスと特定の UWP コントロールの機能をラップするためです。 直接 WPF または Windows フォーム プロジェクトのデザイン サーフェイスにこれらのコントロールを追加し、デザイナーで、他の WPF または Windows フォームなどのコントロールと同様に使用できます。
 
 > [!NOTE]
 > C++ Win32 デスクトップ アプリケーションにラップされたコントロールが利用できません。 この種類のアプリケーションでは、 [API をホストしている UWP XAML](#uwp-xaml-hosting-api)を使う必要があります。
+
+次のラップされた UWP コントロールは、WPF および Windows フォーム アプリケーションでは現在使用します。 さらにラップされた UWP のコントロールは、Windows コミュニティ ツールキットの今後のリリースの予定です。
+
+| コントロール | サポートされる最小の OS | 説明 |
+|-----------------|-------------------------------|-------------|
+| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 バージョン 1803 | Web コンテンツを表示するのにには、Microsoft Edge レンダリング エンジンを使用します。 |
+| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 複数の OS バージョンと互換性がある**WebView**のバージョンを提供します。 このコントロールを Windows 10 バージョン 1803 以降で web コンテンツを表示する Microsoft Edge レンダリング エンジンと以前のバージョンの Windows 10、Windows 上の web コンテンツを表示する Internet Explorer のレンダリング エンジンを使用して、8.x と Windows 7 です。 |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 Insider Preview SDK ビルド 17709 | Windows フォームや WPF デスクトップ アプリケーションでの Windows Ink ベースのユーザー操作のサーフェスと関連するツールバーを提供します。 |
+| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 Insider Preview SDK ビルド 17709 | ストリームし、Windows フォームや WPF デスクトップ アプリケーションのビデオなどのメディア コンテンツをレンダリングするビューを埋め込みます。 |
 
 ## <a name="host-controls"></a>コントロールをホストします。
 

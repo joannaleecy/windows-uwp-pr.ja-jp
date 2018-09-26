@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、作成者、COM、コンポーネント
 ms.localizationpriority: medium
-ms.openlocfilehash: 729cfae39f302ae6b5bae275d9e28a39f3d9503b
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.openlocfilehash: 227ffcd72150e37a513649e69bc7a6709581d65c
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4176515"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4205328"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>COM コンポーネントを作成[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -381,6 +381,127 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 ## <a name="how-to-test-the-example-application"></a>サンプル アプリケーションをテストする方法
 
 アプリケーションをビルドし、少なくとも 1 回、登録され、その他のセットアップでは、コードを実行するには管理者として実行します。 管理者は、それを実行しているし、T キーを押してするかどうか ' を表示するトーストが発生します。 どちらか、または、アクション センターと、アプリケーションからポップが起動されること、トースト通知、インスタンス化され、コクラス**INotificationActivationCallback から直接**ToastAndCallback コールバック**のボタンをクリックします。: アクティブ化**メソッドを実行します。
+
+## <a name="in-process-com-server"></a>プロセス内で COM サーバー
+
+上記の*ToastAndCallback*サンプル アプリはローカル (または、アウト プロセス) の COM サーバーとして機能します。 これにより、表示[LocalServer32](/windows/desktop/com/localserver32)レジストリ キーを使って登録することです。 ローカル COM サーバーのホスト実行可能なバイナリ内でその coclass(es) (、 `.exe`)。
+
+代わりに (および間違いなく可能性があります)、ダイナミック リンク ライブラリ内で、coclass(es) をホストすることもできます (、 `.dll`)。 DLL の形式で COM サーバーが、プロセス内で COM サーバーと呼ばれ、 [InprocServer32](/windows/desktop/com/inprocserver32) Windows レジストリ キーを使用して登録されることが記載されています。
+
+### <a name="create-a-dynamic-link-library-dll-project"></a>ダイナミック リンク ライブラリ (DLL) プロジェクトを作成します。
+
+Microsoft Visual Studio で新しいプロジェクトを作成して、インプロセス COM サーバーを作成するタスクを開始することができます。 **Visual C**を作成 > **Windows デスクトップ** > **ダイナミック リンク ライブラリ (DLL)** プロジェクトです。
+
+### <a name="set-project-properties"></a>プロジェクトのプロパティを設定します。
+
+**一般的な**プロパティをプロジェクトに移動する \> **Windows SDK のバージョン**と選択の**すべての構成**と**すべてのプラットフォーム**です。 *10.0.17134.0 (Windows 10、バージョン 1803)*、またはそれ以降は、 **Windows SDK バージョン**を設定します。
+
+C++、Visual Studio サポートを追加する/、プロジェクトに WinRT の編集、`.vcxproj`ファイルで見つける`<PropertyGroup Label="Globals">`と、そのプロパティ グループ内でプロパティを設定`<CppWinRTEnabled>true</CppWinRTEnabled>`します。
+
+C++/WinRT の c++ 17 標準から機能を使用して、プロジェクト プロパティ**C/C++** 設定 > **言語** > **標準的な C++ 言語**に*ISO C 17 標準 (//std:c では 17)* します。
+
+### <a name="the-precompiled-header"></a>プリコンパイル済みヘッダー
+
+名前を変更して`stdafx.h`と`stdafx.cpp`に`pch.h`と`pch.cpp`、それぞれします。 **C/C++** プロジェクトのプロパティを設定 > **プリコンパイル済みヘッダー** >  *pch.h*に**プリコンパイル済みヘッダー ファイル**です。
+
+検索し、置換すべて`#include "stdafx.h"`と`#include "pch.h"`します。
+
+`pch.h`、含める`winrt/base.h`します。
+
+```cppwinrt
+// pch.h
+...
+#include <winrt/base.h>
+```
+
+発生していないを確認[新しいプロジェクトがコンパイルされません理由かどうか。](/windows/uwp/cpp-and-winrt-apis/faq)します。
+
+### <a name="implement-the-coclass-class-factory-and-in-proc-server-exports"></a>コクラス、クラスのファクトリのインプロセス サーバーのエクスポートを実装します。
+
+開いている`dllmain.cpp`、次に示すコードを追加します。
+
+C + を実装する DLL が既にあるかどうかは + WinRT Windows ランタイム クラス、次に示す**DllCanUnloadNow**関数を既に必要があります。 コクラスをその DLL に追加する場合は、 **DllGetClassObject**関数を追加することができます。
+
+場合との互換性を維持する既存の[Windows ランタイム C++ テンプレート ライブラリ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)コードがないし、コードから WRL 部分を削除することができます。
+
+```cppwinrt
+// dllmain.cpp
+
+struct MyCoclass : winrt::implements<MyCoclass, IPersist>
+{
+    HRESULT STDMETHODCALLTYPE GetClassID(CLSID* id) noexcept override
+    {
+        *id = IID_IPersist; // Doesn't matter what we return, for this example.
+        return S_OK;
+    }
+};
+
+struct __declspec(uuid("85d6672d-0606-4389-a50a-356ce7bded09"))
+    MyCoclassFactory : winrt::implements<MyCoclassFactory, IClassFactory>
+{
+    HRESULT STDMETHODCALLTYPE CreateInstance(IUnknown *pUnkOuter, REFIID riid, void **ppvObject) noexcept override
+    {
+        try
+        {
+            *ppvObject = winrt::make<MyCoclass>().get();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return winrt::to_hresult();
+        }
+    }
+
+    HRESULT STDMETHODCALLTYPE LockServer(BOOL fLock) noexcept override
+    {
+        // ...
+        return S_OK;
+    }
+
+    // ...
+};
+
+HRESULT __stdcall DllCanUnloadNow()
+{
+#ifdef _WRL_MODULE_H_
+    if (!::Microsoft::WRL::Module<::Microsoft::WRL::InProc>::GetModule().Terminate())
+    {
+        return S_FALSE;
+    }
+#endif
+
+    if (winrt::get_module_lock())
+    {
+        return S_FALSE;
+    }
+
+    winrt::clear_factory_cache();
+    return S_OK;
+}
+
+HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** result)
+{
+    try
+    {
+        *result = nullptr;
+
+        if (clsid == __uuidof(MyCoclassFactory))
+        {
+            return winrt::make<MyCoclassFactory>()->QueryInterface(iid, result);
+        }
+
+#ifdef _WRL_MODULE_H_
+        return ::Microsoft::WRL::Module<::Microsoft::WRL::InProc>::GetModule().GetClassObject(clsid, iid, result);
+#else
+        return winrt::hresult_class_not_available().to_abi();
+#endif
+    }
+    catch (...)
+    {
+        return winrt::to_hresult();
+    }
+}
+```
 
 ## <a name="important-apis"></a>重要な API
 * [IInspectable インターフェイス](https://msdn.microsoft.com/library/br205821)
