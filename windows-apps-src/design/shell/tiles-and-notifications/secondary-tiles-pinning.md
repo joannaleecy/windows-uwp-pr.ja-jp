@@ -12,43 +12,43 @@ ms.technology: uwp
 keywords: Windows 10、UWP、セカンダリ タイル、ピン留め、クイック スタート、コード サンプル、例
 ms.localizationpriority: medium
 ms.openlocfilehash: 437d149e22f035fdd0cb1f5251a114b6dd4765e4
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4181583"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4209962"
 ---
-# <a name="pin-secondary-tiles"></a><span data-ttu-id="c72cb-103">セカンダリ タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="c72cb-103">Pin secondary tiles</span></span>
+# <a name="pin-secondary-tiles"></a><span data-ttu-id="58190-103">セカンダリ タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="58190-103">Pin secondary tiles</span></span>
 
 
-<span data-ttu-id="c72cb-104">このトピックでは、UWP アプリのセカンダリ タイルを作り、スタート メニューにピン留めする手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="c72cb-104">This topic walks you through the steps to create a secondary tile for your UWP app and pin it to the Start menu.</span></span>
+<span data-ttu-id="58190-104">このトピックでは、UWP アプリのセカンダリ タイルを作り、スタート メニューにピン留めする手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="58190-104">This topic walks you through the steps to create a secondary tile for your UWP app and pin it to the Start menu.</span></span>
 
 ![セカンダリ タイルのスクリーン ショット](images/secondarytiles.png)
 
-<span data-ttu-id="c72cb-106">セカンダリ タイルについて詳しくは、「[セカンダリ タイルの概要](secondary-tiles.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c72cb-106">To learn more about secondary tiles, please see the [Secondary tiles overview](secondary-tiles.md).</span></span>
+<span data-ttu-id="58190-106">セカンダリ タイルについて詳しくは、「[セカンダリ タイルの概要](secondary-tiles.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="58190-106">To learn more about secondary tiles, please see the [Secondary tiles overview](secondary-tiles.md).</span></span>
 
 
-## <a name="add-namespace"></a><span data-ttu-id="c72cb-107">名前空間を追加する</span><span class="sxs-lookup"><span data-stu-id="c72cb-107">Add namespace</span></span>
+## <a name="add-namespace"></a><span data-ttu-id="58190-107">名前空間を追加する</span><span class="sxs-lookup"><span data-stu-id="58190-107">Add namespace</span></span>
 
-<span data-ttu-id="c72cb-108">Windows.UI.StartScreen 名前空間には SecondaryTile クラスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c72cb-108">The Windows.UI.StartScreen namespace includes the SecondaryTile class.</span></span>
+<span data-ttu-id="58190-108">Windows.UI.StartScreen 名前空間には SecondaryTile クラスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="58190-108">The Windows.UI.StartScreen namespace includes the SecondaryTile class.</span></span>
 
 ```csharp
 using Windows.UI.StartScreen;
 ```
 
 
-## <a name="initialize-the-secondary-tile"></a><span data-ttu-id="c72cb-109">セカンダリ タイルを初期化する</span><span class="sxs-lookup"><span data-stu-id="c72cb-109">Initialize the secondary tile</span></span>
+## <a name="initialize-the-secondary-tile"></a><span data-ttu-id="58190-109">セカンダリ タイルを初期化する</span><span class="sxs-lookup"><span data-stu-id="58190-109">Initialize the secondary tile</span></span>
 
-<span data-ttu-id="c72cb-110">セカンダリ タイルは、いくつかの主要なコンポーネントで構成されます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-110">Secondary tiles are composed of a few key components...</span></span>
+<span data-ttu-id="58190-110">セカンダリ タイルは、いくつかの主要なコンポーネントで構成されます。</span><span class="sxs-lookup"><span data-stu-id="58190-110">Secondary tiles are composed of a few key components...</span></span>
 
-* <span data-ttu-id="c72cb-111">**TileId**: 他のセカンダリ タイルからタイルを識別する一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="c72cb-111">**TileId**: A unique identifier that lets you identify the tile among your other secondary tiles.</span></span>
-* <span data-ttu-id="c72cb-112">**DisplayName**: タイルに表示される名前。</span><span class="sxs-lookup"><span data-stu-id="c72cb-112">**DisplayName**: The name you want shown on the tile.</span></span>
-* <span data-ttu-id="c72cb-113">**Arguments**: ユーザーがタイルをクリックしたときにアプリに戻される引数。</span><span class="sxs-lookup"><span data-stu-id="c72cb-113">**Arguments**: The arguments you want passed back to your app when the user clicks your tile.</span></span>
-* <span data-ttu-id="c72cb-114">**Square150x150Logo**: 中サイズのタイルで表示される、必須のロゴ (小サイズのロゴが提供されない場合には、小サイズにサイズ変更されます)。</span><span class="sxs-lookup"><span data-stu-id="c72cb-114">**Square150x150Logo**: The required logo, displayed on the medium size tile (and resized to small size tile if no small logo provided).</span></span>
+* <span data-ttu-id="58190-111">**TileId**: 他のセカンダリ タイルからタイルを識別する一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="58190-111">**TileId**: A unique identifier that lets you identify the tile among your other secondary tiles.</span></span>
+* <span data-ttu-id="58190-112">**DisplayName**: タイルに表示される名前。</span><span class="sxs-lookup"><span data-stu-id="58190-112">**DisplayName**: The name you want shown on the tile.</span></span>
+* <span data-ttu-id="58190-113">**Arguments**: ユーザーがタイルをクリックしたときにアプリに戻される引数。</span><span class="sxs-lookup"><span data-stu-id="58190-113">**Arguments**: The arguments you want passed back to your app when the user clicks your tile.</span></span>
+* <span data-ttu-id="58190-114">**Square150x150Logo**: 中サイズのタイルで表示される、必須のロゴ (小サイズのロゴが提供されない場合には、小サイズにサイズ変更されます)。</span><span class="sxs-lookup"><span data-stu-id="58190-114">**Square150x150Logo**: The required logo, displayed on the medium size tile (and resized to small size tile if no small logo provided).</span></span>
 
-<span data-ttu-id="c72cb-115">上記のすべてのプロパティに初期化された値を提供する**必要があります**。提供されない場合には、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-115">You **MUST** provide initialized values for all of the above properties, or else you will get an exception.</span></span>
+<span data-ttu-id="58190-115">上記のすべてのプロパティに初期化された値を提供する**必要があります**。提供されない場合には、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="58190-115">You **MUST** provide initialized values for all of the above properties, or else you will get an exception.</span></span>
 
-<span data-ttu-id="c72cb-116">さまざまなコンストラクターを使用することができますが、tileId、displayName、引数、square150x150Logo、desiredSize でコンストラクターを使用すると、必須のプロパティをすべて設定するようにできます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-116">There are a variety of constructors you can use, but using the constructor that takes in the tileId, displayName, arguments, square150x150Logo, and desiredSize helps ensure you set all of the required properties.</span></span>
+<span data-ttu-id="58190-116">さまざまなコンストラクターを使用することができますが、tileId、displayName、引数、square150x150Logo、desiredSize でコンストラクターを使用すると、必須のプロパティをすべて設定するようにできます。</span><span class="sxs-lookup"><span data-stu-id="58190-116">There are a variety of constructors you can use, but using the constructor that takes in the tileId, displayName, arguments, square150x150Logo, and desiredSize helps ensure you set all of the required properties.</span></span>
 
 ```csharp
 // Construct a unique tile ID, which you will need to use later for updating the tile
@@ -71,13 +71,13 @@ SecondaryTile tile = new SecondaryTile(
 ```
 
 
-## <a name="optional-add-support-for-larger-tile-sizes"></a><span data-ttu-id="c72cb-117">オプション: より大きいタイル サイズのサポートを追加します。</span><span class="sxs-lookup"><span data-stu-id="c72cb-117">Optional: Add support for larger tile sizes</span></span>
+## <a name="optional-add-support-for-larger-tile-sizes"></a><span data-ttu-id="58190-117">オプション: より大きいタイル サイズのサポートを追加します。</span><span class="sxs-lookup"><span data-stu-id="58190-117">Optional: Add support for larger tile sizes</span></span>
 
-<span data-ttu-id="c72cb-118">セカンダリ タイルにリッチなタイル通知を表示する場合、ユーザーがタイルのサイズをワイド サイズや大サイズに変更して、より多くのコンテンツを表示できるようにすることが望まれます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-118">If you're going to be displaying rich tile notifications on your secondary tile, you'll likely want to allow the user to resize their tile to be wide or large, so that they can see even more of your content.</span></span>
+<span data-ttu-id="58190-118">セカンダリ タイルにリッチなタイル通知を表示する場合、ユーザーがタイルのサイズをワイド サイズや大サイズに変更して、より多くのコンテンツを表示できるようにすることが望まれます。</span><span class="sxs-lookup"><span data-stu-id="58190-118">If you're going to be displaying rich tile notifications on your secondary tile, you'll likely want to allow the user to resize their tile to be wide or large, so that they can see even more of your content.</span></span>
 
-<span data-ttu-id="c72cb-119">ワイド サイズ、大サイズのタイルを有効化するには、*Wide310x150Logo* および *Square310x310Logo* を提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c72cb-119">To enable wide and large tile sizes, you need to provide the *Wide310x150Logo* and *Square310x310Logo*.</span></span> <span data-ttu-id="c72cb-120">また、可能であれば、小サイズのタイル用に *Square71x71Logo* を提供します (提供されない場合、小サイズ用に必要な Square150x150Logo は自動的にサイズ変更して作成されます)。</span><span class="sxs-lookup"><span data-stu-id="c72cb-120">Also, if possible, you should provide the *Square71x71Logo* for the small tile size (otherwise we will downsize your required Square150x150Logo for the small tile).</span></span>
+<span data-ttu-id="58190-119">ワイド サイズ、大サイズのタイルを有効化するには、*Wide310x150Logo* および *Square310x310Logo* を提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="58190-119">To enable wide and large tile sizes, you need to provide the *Wide310x150Logo* and *Square310x310Logo*.</span></span> <span data-ttu-id="58190-120">また、可能であれば、小サイズのタイル用に *Square71x71Logo* を提供します (提供されない場合、小サイズ用に必要な Square150x150Logo は自動的にサイズ変更して作成されます)。</span><span class="sxs-lookup"><span data-stu-id="58190-120">Also, if possible, you should provide the *Square71x71Logo* for the small tile size (otherwise we will downsize your required Square150x150Logo for the small tile).</span></span>
 
-<span data-ttu-id="c72cb-121">さらに、独自の *Square44x44Logo* を提供すると、通知が表示されるときに右下隅にオプションとして表示されます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-121">You can also provide a unique *Square44x44Logo*, which is optionally displayed on the bottom right corner when a notification is present.</span></span> <span data-ttu-id="c72cb-122">提供されない場合には、代わりにプライマリ タイルの *Square44x44Logo* が使用されます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-122">If you don't provide one, the *Square44x44Logo* from your primary tile will be used instead.</span></span>
+<span data-ttu-id="58190-121">さらに、独自の *Square44x44Logo* を提供すると、通知が表示されるときに右下隅にオプションとして表示されます。</span><span class="sxs-lookup"><span data-stu-id="58190-121">You can also provide a unique *Square44x44Logo*, which is optionally displayed on the bottom right corner when a notification is present.</span></span> <span data-ttu-id="58190-122">提供されない場合には、代わりにプライマリ タイルの *Square44x44Logo* が使用されます。</span><span class="sxs-lookup"><span data-stu-id="58190-122">If you don't provide one, the *Square44x44Logo* from your primary tile will be used instead.</span></span>
 
 ```csharp
 // Enable wide and large tile sizes
@@ -92,9 +92,9 @@ tile.VisualElements.Square44x44Logo = new Uri("ms-appx:///Assets/CityTiles/Squar
 ```
 
 
-## <a name="optional-enable-showing-the-display-name"></a><span data-ttu-id="c72cb-123">オプション: 表示名の表示を有効にする</span><span class="sxs-lookup"><span data-stu-id="c72cb-123">Optional: Enable showing the display name</span></span>
+## <a name="optional-enable-showing-the-display-name"></a><span data-ttu-id="58190-123">オプション: 表示名の表示を有効にする</span><span class="sxs-lookup"><span data-stu-id="58190-123">Optional: Enable showing the display name</span></span>
 
-<span data-ttu-id="c72cb-124">既定では、表示名は表示されません。</span><span class="sxs-lookup"><span data-stu-id="c72cb-124">By default the display name will NOT be shown.</span></span> <span data-ttu-id="c72cb-125">中サイズ、ワイド サイズ、大サイズで表示名を表示するには、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="c72cb-125">To show the display name on medium/wide/large, add the following code.</span></span>
+<span data-ttu-id="58190-124">既定では、表示名は表示されません。</span><span class="sxs-lookup"><span data-stu-id="58190-124">By default the display name will NOT be shown.</span></span> <span data-ttu-id="58190-125">中サイズ、ワイド サイズ、大サイズで表示名を表示するには、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="58190-125">To show the display name on medium/wide/large, add the following code.</span></span>
 
 ```csharp
 // Show the display name on all sizes
@@ -104,17 +104,17 @@ tile.VisualElements.ShowNameOnSquare310x310Logo = true;
 ```
 
 
-## <a name="optional-3d-secondary-tiles"></a><span data-ttu-id="c72cb-126">オプション: 3D セカンダリ タイル</span><span class="sxs-lookup"><span data-stu-id="c72cb-126">Optional: 3D secondary tiles</span></span>
-<span data-ttu-id="c72cb-127">3D アセットを追加して、Windows Mixed Reality に対応することで、さらに高度なセカンダリ タイルを作成できます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-127">You can enhance your secondary tile for Windows Mixed Reality by adding 3D assets.</span></span> <span data-ttu-id="c72cb-128">アプリを Mixed Reality 環境で使用すると、ユーザーは 3D タイルをスタート メニューではなく、Windows Mixed Reality ホームに直接配置できます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-128">Users can place 3D tiles directly in their Windows Mixed Reality home instead of the Start menu when using your app in a Mixed Reality environment.</span></span> <span data-ttu-id="c72cb-129">たとえば、360° フォト ビューアー アプリに直接リンクした 360° フォトスフィアを作成したり、ユーザーが家具のカタログから椅子の 3D モデルを配置して、選択するとそのオブジェクトの価格やカラー展開に関する詳細ページが開くようにしたりすることができます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-129">For example, you can create 360° photospheres that link directly into a 360° photo viewer app, or let users place a 3D model of a chair from a furniture catalog that opens a details page about the pricing and color options for that object when selected.</span></span> <span data-ttu-id="c72cb-130">この機能を使い始めるには、[Mixed Reality の開発者向けドキュメント](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c72cb-130">To get started, refer to the [Mixed Reality developer documentation](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home).</span></span>
+## <a name="optional-3d-secondary-tiles"></a><span data-ttu-id="58190-126">オプション: 3D セカンダリ タイル</span><span class="sxs-lookup"><span data-stu-id="58190-126">Optional: 3D secondary tiles</span></span>
+<span data-ttu-id="58190-127">3D アセットを追加して、Windows Mixed Reality に対応することで、さらに高度なセカンダリ タイルを作成できます。</span><span class="sxs-lookup"><span data-stu-id="58190-127">You can enhance your secondary tile for Windows Mixed Reality by adding 3D assets.</span></span> <span data-ttu-id="58190-128">アプリを Mixed Reality 環境で使用すると、ユーザーは 3D タイルをスタート メニューではなく、Windows Mixed Reality ホームに直接配置できます。</span><span class="sxs-lookup"><span data-stu-id="58190-128">Users can place 3D tiles directly in their Windows Mixed Reality home instead of the Start menu when using your app in a Mixed Reality environment.</span></span> <span data-ttu-id="58190-129">たとえば、360° フォト ビューアー アプリに直接リンクした 360° フォトスフィアを作成したり、ユーザーが家具のカタログから椅子の 3D モデルを配置して、選択するとそのオブジェクトの価格やカラー展開に関する詳細ページが開くようにしたりすることができます。</span><span class="sxs-lookup"><span data-stu-id="58190-129">For example, you can create 360° photospheres that link directly into a 360° photo viewer app, or let users place a 3D model of a chair from a furniture catalog that opens a details page about the pricing and color options for that object when selected.</span></span> <span data-ttu-id="58190-130">この機能を使い始めるには、[Mixed Reality の開発者向けドキュメント](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="58190-130">To get started, refer to the [Mixed Reality developer documentation](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home).</span></span>
 
 
 
-## <a name="pin-the-secondary-tile"></a><span data-ttu-id="c72cb-131">セカンダリ タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="c72cb-131">Pin the secondary tile</span></span>
+## <a name="pin-the-secondary-tile"></a><span data-ttu-id="58190-131">セカンダリ タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="58190-131">Pin the secondary tile</span></span>
 
-<span data-ttu-id="c72cb-132">最後に、タイルのピン留めを要求します。</span><span class="sxs-lookup"><span data-stu-id="c72cb-132">Finally, request to pin the tile.</span></span> <span data-ttu-id="c72cb-133">これは UI スレッドから呼び出す必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="c72cb-133">Note that this must be called from a UI thread.</span></span> <span data-ttu-id="c72cb-134">デスクトップに、ユーザーにタイルをピン留めするかどうかの確認を求める、ダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-134">On Desktop, a dialog will appear asking the user to confirm whether they would like to pin the tile.</span></span>
+<span data-ttu-id="58190-132">最後に、タイルのピン留めを要求します。</span><span class="sxs-lookup"><span data-stu-id="58190-132">Finally, request to pin the tile.</span></span> <span data-ttu-id="58190-133">これは UI スレッドから呼び出す必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="58190-133">Note that this must be called from a UI thread.</span></span> <span data-ttu-id="58190-134">デスクトップに、ユーザーにタイルをピン留めするかどうかの確認を求める、ダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="58190-134">On Desktop, a dialog will appear asking the user to confirm whether they would like to pin the tile.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="c72cb-135">デスクトップ ブリッジを使った Windows デスクトップ アプリケーションの場合は、まず「[デスクトップ アプリケーションからピン留めする](secondary-tiles-desktop-pinning.md)」に記載された追加の手順を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c72cb-135">If you are a Windows desktop application using the Desktop Bridge, you must first perform an extra step as described in [Pin from desktop application](secondary-tiles-desktop-pinning.md)</span></span>
+> <span data-ttu-id="58190-135">デスクトップ ブリッジを使った Windows デスクトップ アプリケーションの場合は、まず「[デスクトップ アプリケーションからピン留めする](secondary-tiles-desktop-pinning.md)」に記載された追加の手順を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="58190-135">If you are a Windows desktop application using the Desktop Bridge, you must first perform an extra step as described in [Pin from desktop application](secondary-tiles-desktop-pinning.md)</span></span>
 
 ```csharp
 // Pin the tile
@@ -124,11 +124,11 @@ bool isPinned = await tile.RequestCreateAsync();
 ```
 
 
-## <a name="check-if-a-secondary-tile-exists"></a><span data-ttu-id="c72cb-136">セカンダリ タイルが存在するかを確認する</span><span class="sxs-lookup"><span data-stu-id="c72cb-136">Check if a secondary tile exists</span></span>
+## <a name="check-if-a-secondary-tile-exists"></a><span data-ttu-id="58190-136">セカンダリ タイルが存在するかを確認する</span><span class="sxs-lookup"><span data-stu-id="58190-136">Check if a secondary tile exists</span></span>
 
-<span data-ttu-id="c72cb-137">既にスタートにピン留めされているアプリのページでは、[ピン留めを外す] ボタンを表示するようにします。</span><span class="sxs-lookup"><span data-stu-id="c72cb-137">If your user visits a page in your app that they have already pinned to Start, you will want to instead display an "Unpin" button.</span></span>
+<span data-ttu-id="58190-137">既にスタートにピン留めされているアプリのページでは、[ピン留めを外す] ボタンを表示するようにします。</span><span class="sxs-lookup"><span data-stu-id="58190-137">If your user visits a page in your app that they have already pinned to Start, you will want to instead display an "Unpin" button.</span></span>
 
-<span data-ttu-id="c72cb-138">このため、表示ボタンを選ぶときには、セカンダリ タイルが既にピン留めされているかどうかを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c72cb-138">Therefore, when choosing what button to display, you need to first check whether the secondary tile is currently pinned.</span></span>
+<span data-ttu-id="58190-138">このため、表示ボタンを選ぶときには、セカンダリ タイルが既にピン留めされているかどうかを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="58190-138">Therefore, when choosing what button to display, you need to first check whether the secondary tile is currently pinned.</span></span>
 
 ```csharp
 // Check if the secondary tile is pinned
@@ -138,9 +138,9 @@ bool isPinned = SecondaryTile.Exists(tileId);
 ```
 
 
-## <a name="unpinning-a-secondary-tile"></a><span data-ttu-id="c72cb-139">セカンダリ タイルのピン留めを外す</span><span class="sxs-lookup"><span data-stu-id="c72cb-139">Unpinning a secondary tile</span></span>
+## <a name="unpinning-a-secondary-tile"></a><span data-ttu-id="58190-139">セカンダリ タイルのピン留めを外す</span><span class="sxs-lookup"><span data-stu-id="58190-139">Unpinning a secondary tile</span></span>
 
-<span data-ttu-id="c72cb-140">タイルが既にピン留めされているときに、ユーザーが [ピン留めを外す] ボタンをクリックした場合には、タイルのピン留めを外す (削除する) 必要があります。</span><span class="sxs-lookup"><span data-stu-id="c72cb-140">If the tile is currently pinned, and the user clicks your unpin button, you'll want to unpin (delete) the tile.</span></span>
+<span data-ttu-id="58190-140">タイルが既にピン留めされているときに、ユーザーが [ピン留めを外す] ボタンをクリックした場合には、タイルのピン留めを外す (削除する) 必要があります。</span><span class="sxs-lookup"><span data-stu-id="58190-140">If the tile is currently pinned, and the user clicks your unpin button, you'll want to unpin (delete) the tile.</span></span>
 
 ```csharp
 // Initialize a secondary tile with the same tile ID you want removed
@@ -151,9 +151,9 @@ await toBeDeleted.RequestDeleteAsync();
 ```
 
 
-## <a name="updating-a-secondary-tile"></a><span data-ttu-id="c72cb-141">セカンダリ タイルを更新する</span><span class="sxs-lookup"><span data-stu-id="c72cb-141">Updating a secondary tile</span></span>
+## <a name="updating-a-secondary-tile"></a><span data-ttu-id="58190-141">セカンダリ タイルを更新する</span><span class="sxs-lookup"><span data-stu-id="58190-141">Updating a secondary tile</span></span>
 
-<span data-ttu-id="c72cb-142">ロゴ、表示名、その他のセカンダリ タイル上の情報を更新する場合には、*RequestUpdateAsync* を使用できます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-142">If you need to update the logos, display name, or anything else on the secondary tile, you can use *RequestUpdateAsync*.</span></span>
+<span data-ttu-id="58190-142">ロゴ、表示名、その他のセカンダリ タイル上の情報を更新する場合には、*RequestUpdateAsync* を使用できます。</span><span class="sxs-lookup"><span data-stu-id="58190-142">If you need to update the logos, display name, or anything else on the secondary tile, you can use *RequestUpdateAsync*.</span></span>
 
 ```csharp
 // Initialize a secondary tile with the same tile ID you want to update
@@ -166,9 +166,9 @@ await tile.UpdateAsync();
 ```
 
 
-## <a name="enumerating-all-pinned-secondary-tiles"></a><span data-ttu-id="c72cb-143">ピン留めされているすべてのセカンダリ タイルを列挙する</span><span class="sxs-lookup"><span data-stu-id="c72cb-143">Enumerating all pinned secondary tiles</span></span>
+## <a name="enumerating-all-pinned-secondary-tiles"></a><span data-ttu-id="58190-143">ピン留めされているすべてのセカンダリ タイルを列挙する</span><span class="sxs-lookup"><span data-stu-id="58190-143">Enumerating all pinned secondary tiles</span></span>
 
-<span data-ttu-id="c72cb-144">ユーザーがピン留めしたすべてのタイルを検出する必要がある場合、*SecondaryTile.Exists* を使用する代わりに、*SecondaryTile.FindAllAsync()* を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="c72cb-144">If you need to discover all the tiles your user has pinned, instead of using *SecondaryTile.Exists*, you can alternatively use *SecondaryTile.FindAllAsync()*.</span></span>
+<span data-ttu-id="58190-144">ユーザーがピン留めしたすべてのタイルを検出する必要がある場合、*SecondaryTile.Exists* を使用する代わりに、*SecondaryTile.FindAllAsync()* を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="58190-144">If you need to discover all the tiles your user has pinned, instead of using *SecondaryTile.Exists*, you can alternatively use *SecondaryTile.FindAllAsync()*.</span></span>
 
 ```csharp
 // Get all secondary tiles
@@ -176,15 +176,15 @@ var tiles = await SecondaryTile.FindAllAsync();
 ```
 
 
-## <a name="send-a-tile-notification"></a><span data-ttu-id="c72cb-145">タイル通知を送信する</span><span class="sxs-lookup"><span data-stu-id="c72cb-145">Send a tile notification</span></span>
+## <a name="send-a-tile-notification"></a><span data-ttu-id="58190-145">タイル通知を送信する</span><span class="sxs-lookup"><span data-stu-id="58190-145">Send a tile notification</span></span>
 
-<span data-ttu-id="c72cb-146">タイル通知を使って、タイルにリッチ コンテンツを表示する方法については、「[ローカル タイル通知の送信](sending-a-local-tile-notification.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c72cb-146">To learn how to display rich content on your tile via tile notifications, please see [Send a local tile notification](sending-a-local-tile-notification.md).</span></span>
+<span data-ttu-id="58190-146">タイル通知を使って、タイルにリッチ コンテンツを表示する方法については、「[ローカル タイル通知の送信](sending-a-local-tile-notification.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="58190-146">To learn how to display rich content on your tile via tile notifications, please see [Send a local tile notification](sending-a-local-tile-notification.md).</span></span>
 
 
-## <a name="related"></a><span data-ttu-id="c72cb-147">関連</span><span class="sxs-lookup"><span data-stu-id="c72cb-147">Related</span></span>
+## <a name="related"></a><span data-ttu-id="58190-147">関連</span><span class="sxs-lookup"><span data-stu-id="58190-147">Related</span></span>
 
-* [<span data-ttu-id="c72cb-148">セカンダリ タイルの概要</span><span class="sxs-lookup"><span data-stu-id="c72cb-148">Secondary tiles overview</span></span>](secondary-tiles.md)
-* [<span data-ttu-id="c72cb-149">セカンダリ タイルのガイダンス</span><span class="sxs-lookup"><span data-stu-id="c72cb-149">Secondary tiles guidance</span></span>](secondary-tiles-guidance.md)
-* [<span data-ttu-id="c72cb-150">タイル アセット</span><span class="sxs-lookup"><span data-stu-id="c72cb-150">Tile assets</span></span>](app-assets.md)
-* [<span data-ttu-id="c72cb-151">タイル コンテンツのドキュメント</span><span class="sxs-lookup"><span data-stu-id="c72cb-151">Tile content documentation</span></span>](create-adaptive-tiles.md)
-* [<span data-ttu-id="c72cb-152">ローカル タイル通知の送信</span><span class="sxs-lookup"><span data-stu-id="c72cb-152">Send a local tile notification</span></span>](sending-a-local-tile-notification.md)
+* [<span data-ttu-id="58190-148">セカンダリ タイルの概要</span><span class="sxs-lookup"><span data-stu-id="58190-148">Secondary tiles overview</span></span>](secondary-tiles.md)
+* [<span data-ttu-id="58190-149">セカンダリ タイルのガイダンス</span><span class="sxs-lookup"><span data-stu-id="58190-149">Secondary tiles guidance</span></span>](secondary-tiles-guidance.md)
+* [<span data-ttu-id="58190-150">タイル アセット</span><span class="sxs-lookup"><span data-stu-id="58190-150">Tile assets</span></span>](app-assets.md)
+* [<span data-ttu-id="58190-151">タイル コンテンツのドキュメント</span><span class="sxs-lookup"><span data-stu-id="58190-151">Tile content documentation</span></span>](create-adaptive-tiles.md)
+* [<span data-ttu-id="58190-152">ローカル タイル通知の送信</span><span class="sxs-lookup"><span data-stu-id="58190-152">Send a local tile notification</span></span>](sending-a-local-tile-notification.md)

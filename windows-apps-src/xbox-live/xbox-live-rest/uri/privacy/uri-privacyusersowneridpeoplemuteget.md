@@ -12,111 +12,111 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: af9f52e04a163e0839017e1d051653d968df816d
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4176858"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4205389"
 ---
-# <a name="get-usersowneridpeoplemute"></a><span data-ttu-id="dbb3f-104">GET (/users/{ownerId}/people/mute)</span><span class="sxs-lookup"><span data-stu-id="dbb3f-104">GET (/users/{ownerId}/people/mute)</span></span>
-<span data-ttu-id="dbb3f-105">ユーザーのミュートの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-105">Gets the mute list for a user.</span></span>
+# <a name="get-usersowneridpeoplemute"></a><span data-ttu-id="9bb0e-104">GET (/users/{ownerId}/people/mute)</span><span class="sxs-lookup"><span data-stu-id="9bb0e-104">GET (/users/{ownerId}/people/mute)</span></span>
+<span data-ttu-id="9bb0e-105">ユーザーのミュートの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-105">Gets the mute list for a user.</span></span>
 
-  * [<span data-ttu-id="dbb3f-106">注釈</span><span class="sxs-lookup"><span data-stu-id="dbb3f-106">Remarks</span></span>](#ID4EQ)
-  * [<span data-ttu-id="dbb3f-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="dbb3f-107">URI parameters</span></span>](#ID4EZ)
-  * [<span data-ttu-id="dbb3f-108">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="dbb3f-108">Effect of privacy settings on resource</span></span>](#ID4EEB)
-  * [<span data-ttu-id="dbb3f-109">Authorization</span><span class="sxs-lookup"><span data-stu-id="dbb3f-109">Authorization</span></span>](#ID4ENB)
-  * [<span data-ttu-id="dbb3f-110">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="dbb3f-110">Required Request Headers</span></span>](#ID4ESC)
-  * [<span data-ttu-id="dbb3f-111">要求本文</span><span class="sxs-lookup"><span data-stu-id="dbb3f-111">Request body</span></span>](#ID4EPE)
-  * [<span data-ttu-id="dbb3f-112">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="dbb3f-112">HTTP status codes</span></span>](#ID4E1E)
-  * [<span data-ttu-id="dbb3f-113">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="dbb3f-113">Required Response Headers</span></span>](#ID4E3G)
-  * [<span data-ttu-id="dbb3f-114">応答本文</span><span class="sxs-lookup"><span data-stu-id="dbb3f-114">Response body</span></span>](#ID4ETAAC)
+  * [<span data-ttu-id="9bb0e-106">注釈</span><span class="sxs-lookup"><span data-stu-id="9bb0e-106">Remarks</span></span>](#ID4EQ)
+  * [<span data-ttu-id="9bb0e-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9bb0e-107">URI parameters</span></span>](#ID4EZ)
+  * [<span data-ttu-id="9bb0e-108">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="9bb0e-108">Effect of privacy settings on resource</span></span>](#ID4EEB)
+  * [<span data-ttu-id="9bb0e-109">Authorization</span><span class="sxs-lookup"><span data-stu-id="9bb0e-109">Authorization</span></span>](#ID4ENB)
+  * [<span data-ttu-id="9bb0e-110">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9bb0e-110">Required Request Headers</span></span>](#ID4ESC)
+  * [<span data-ttu-id="9bb0e-111">要求本文</span><span class="sxs-lookup"><span data-stu-id="9bb0e-111">Request body</span></span>](#ID4EPE)
+  * [<span data-ttu-id="9bb0e-112">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="9bb0e-112">HTTP status codes</span></span>](#ID4E1E)
+  * [<span data-ttu-id="9bb0e-113">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9bb0e-113">Required Response Headers</span></span>](#ID4E3G)
+  * [<span data-ttu-id="9bb0e-114">応答本文</span><span class="sxs-lookup"><span data-stu-id="9bb0e-114">Response body</span></span>](#ID4ETAAC)
 
 <a id="ID4EQ"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="dbb3f-115">注釈</span><span class="sxs-lookup"><span data-stu-id="dbb3f-115">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="9bb0e-115">注釈</span><span class="sxs-lookup"><span data-stu-id="9bb0e-115">Remarks</span></span>
 
-<span data-ttu-id="dbb3f-116">この URI にターゲットを指定すると、ユーザーがない場合、ユーザーがミュートの一覧で、空の場合のみ、そのユーザーを返します。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-116">If a target is given, this URI returns only that user if the user is on the mute list, or else empty if the user is not.</span></span>
+<span data-ttu-id="9bb0e-116">この URI にターゲットを指定すると、ユーザーがない場合、ユーザーがミュートの一覧で、空の場合のみ、そのユーザーを返します。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-116">If a target is given, this URI returns only that user if the user is on the mute list, or else empty if the user is not.</span></span>
 
 <a id="ID4EZ"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="dbb3f-117">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="dbb3f-117">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="9bb0e-117">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9bb0e-117">URI parameters</span></span>
 
-| <span data-ttu-id="dbb3f-118">パラメーター</span><span class="sxs-lookup"><span data-stu-id="dbb3f-118">Parameter</span></span>| <span data-ttu-id="dbb3f-119">型</span><span class="sxs-lookup"><span data-stu-id="dbb3f-119">Type</span></span>| <span data-ttu-id="dbb3f-120">説明</span><span class="sxs-lookup"><span data-stu-id="dbb3f-120">Description</span></span>|
+| <span data-ttu-id="9bb0e-118">パラメーター</span><span class="sxs-lookup"><span data-stu-id="9bb0e-118">Parameter</span></span>| <span data-ttu-id="9bb0e-119">型</span><span class="sxs-lookup"><span data-stu-id="9bb0e-119">Type</span></span>| <span data-ttu-id="9bb0e-120">説明</span><span class="sxs-lookup"><span data-stu-id="9bb0e-120">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="dbb3f-121">ownerId</span><span class="sxs-lookup"><span data-stu-id="dbb3f-121">ownerId</span></span>| <span data-ttu-id="dbb3f-122">string</span><span class="sxs-lookup"><span data-stu-id="dbb3f-122">string</span></span>| <span data-ttu-id="dbb3f-123">必須。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-123">Required.</span></span> <span data-ttu-id="dbb3f-124">そのリソースにアクセスしているユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-124">Identifier of the user whose resource is being accessed.</span></span> <span data-ttu-id="dbb3f-125">設定可能な値は"me" <code>xuid({xuid})</code>、または gt({gamertag}) します。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-125">The possible values are "me", <code>xuid({xuid})</code>, or gt({gamertag}).</span></span> <span data-ttu-id="dbb3f-126">認証されたユーザーである必要があります。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-126">Must be the authenticated user.</span></span> <span data-ttu-id="dbb3f-127">値の例: <code>xuid(2603643534573581)</code>、<code>gt(SomeGamertag)</code>します。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-127">Example values: <code>xuid(2603643534573581)</code>, <code>gt(SomeGamertag)</code>.</span></span> <span data-ttu-id="dbb3f-128">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-128">Maximum size: none.</span></span> |
+| <span data-ttu-id="9bb0e-121">ownerId</span><span class="sxs-lookup"><span data-stu-id="9bb0e-121">ownerId</span></span>| <span data-ttu-id="9bb0e-122">string</span><span class="sxs-lookup"><span data-stu-id="9bb0e-122">string</span></span>| <span data-ttu-id="9bb0e-123">必須。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-123">Required.</span></span> <span data-ttu-id="9bb0e-124">そのリソースにアクセスしているユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-124">Identifier of the user whose resource is being accessed.</span></span> <span data-ttu-id="9bb0e-125">設定可能な値は"me" <code>xuid({xuid})</code>、または gt({gamertag}) します。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-125">The possible values are "me", <code>xuid({xuid})</code>, or gt({gamertag}).</span></span> <span data-ttu-id="9bb0e-126">認証されたユーザーである必要があります。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-126">Must be the authenticated user.</span></span> <span data-ttu-id="9bb0e-127">値の例: <code>xuid(2603643534573581)</code>、<code>gt(SomeGamertag)</code>します。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-127">Example values: <code>xuid(2603643534573581)</code>, <code>gt(SomeGamertag)</code>.</span></span> <span data-ttu-id="9bb0e-128">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-128">Maximum size: none.</span></span> |
 
 <a id="ID4EEB"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a><span data-ttu-id="dbb3f-129">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="dbb3f-129">Effect of privacy settings on resource</span></span>
+## <a name="effect-of-privacy-settings-on-resource"></a><span data-ttu-id="9bb0e-129">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="9bb0e-129">Effect of privacy settings on resource</span></span>
 
-<span data-ttu-id="dbb3f-130">なし。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-130">None.</span></span>
+<span data-ttu-id="9bb0e-130">なし。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-130">None.</span></span>
 
 <a id="ID4ENB"></a>
 
 
-## <a name="authorization"></a><span data-ttu-id="dbb3f-131">Authorization</span><span class="sxs-lookup"><span data-stu-id="dbb3f-131">Authorization</span></span>
+## <a name="authorization"></a><span data-ttu-id="9bb0e-131">Authorization</span><span class="sxs-lookup"><span data-stu-id="9bb0e-131">Authorization</span></span>
 
-<span data-ttu-id="dbb3f-132">承認要求の使用</span><span class="sxs-lookup"><span data-stu-id="dbb3f-132">Authorization claims used</span></span> | <span data-ttu-id="dbb3f-133">要求</span><span class="sxs-lookup"><span data-stu-id="dbb3f-133">Claim</span></span>| <span data-ttu-id="dbb3f-134">種類</span><span class="sxs-lookup"><span data-stu-id="dbb3f-134">Type</span></span>| <span data-ttu-id="dbb3f-135">必須?</span><span class="sxs-lookup"><span data-stu-id="dbb3f-135">Required?</span></span>| <span data-ttu-id="dbb3f-136">値の例</span><span class="sxs-lookup"><span data-stu-id="dbb3f-136">Example value</span></span>|
+<span data-ttu-id="9bb0e-132">承認要求の使用</span><span class="sxs-lookup"><span data-stu-id="9bb0e-132">Authorization claims used</span></span> | <span data-ttu-id="9bb0e-133">要求</span><span class="sxs-lookup"><span data-stu-id="9bb0e-133">Claim</span></span>| <span data-ttu-id="9bb0e-134">種類</span><span class="sxs-lookup"><span data-stu-id="9bb0e-134">Type</span></span>| <span data-ttu-id="9bb0e-135">必須?</span><span class="sxs-lookup"><span data-stu-id="9bb0e-135">Required?</span></span>| <span data-ttu-id="9bb0e-136">値の例</span><span class="sxs-lookup"><span data-stu-id="9bb0e-136">Example value</span></span>|
 | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="dbb3f-137">Xuid</span><span class="sxs-lookup"><span data-stu-id="dbb3f-137">Xuid</span></span>| <span data-ttu-id="dbb3f-138">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="dbb3f-138">64-bit signed integer</span></span>| <span data-ttu-id="dbb3f-139">必須</span><span class="sxs-lookup"><span data-stu-id="dbb3f-139">yes</span></span>| <span data-ttu-id="dbb3f-140">1234567890</span><span class="sxs-lookup"><span data-stu-id="dbb3f-140">1234567890</span></span>|
+| <span data-ttu-id="9bb0e-137">Xuid</span><span class="sxs-lookup"><span data-stu-id="9bb0e-137">Xuid</span></span>| <span data-ttu-id="9bb0e-138">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="9bb0e-138">64-bit signed integer</span></span>| <span data-ttu-id="9bb0e-139">必須</span><span class="sxs-lookup"><span data-stu-id="9bb0e-139">yes</span></span>| <span data-ttu-id="9bb0e-140">1234567890</span><span class="sxs-lookup"><span data-stu-id="9bb0e-140">1234567890</span></span>|
 
 <a id="ID4ESC"></a>
 
 
-## <a name="required-request-headers"></a><span data-ttu-id="dbb3f-141">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="dbb3f-141">Required Request Headers</span></span>
+## <a name="required-request-headers"></a><span data-ttu-id="9bb0e-141">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9bb0e-141">Required Request Headers</span></span>
 
-| <span data-ttu-id="dbb3f-142">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="dbb3f-142">Header</span></span>| <span data-ttu-id="dbb3f-143">型</span><span class="sxs-lookup"><span data-stu-id="dbb3f-143">Type</span></span>| <span data-ttu-id="dbb3f-144">説明</span><span class="sxs-lookup"><span data-stu-id="dbb3f-144">Description</span></span>|
+| <span data-ttu-id="9bb0e-142">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9bb0e-142">Header</span></span>| <span data-ttu-id="9bb0e-143">型</span><span class="sxs-lookup"><span data-stu-id="9bb0e-143">Type</span></span>| <span data-ttu-id="9bb0e-144">説明</span><span class="sxs-lookup"><span data-stu-id="9bb0e-144">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="dbb3f-145">Authorization</span><span class="sxs-lookup"><span data-stu-id="dbb3f-145">Authorization</span></span> | <span data-ttu-id="dbb3f-146">string</span><span class="sxs-lookup"><span data-stu-id="dbb3f-146">string</span></span>| <span data-ttu-id="dbb3f-147">HTTP 認証の資格情報を認証します。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-147">Authentication credentials for HTTP authentication.</span></span> <span data-ttu-id="dbb3f-148">値の例:<code>Xauth=&lt;authtoken></code>します。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-148">Example value: <code>Xauth=&lt;authtoken></code>.</span></span> <span data-ttu-id="dbb3f-149">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-149">Maximum size: none.</span></span>|
-| <span data-ttu-id="dbb3f-150">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="dbb3f-150">X-RequestedServiceVersion</span></span>| <span data-ttu-id="dbb3f-151">string</span><span class="sxs-lookup"><span data-stu-id="dbb3f-151">string</span></span>| <span data-ttu-id="dbb3f-152">この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-152">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="dbb3f-153">要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-153">The request will only be routed to that service after verifying the validity of the header, the claims in the authorization token, and so on.</span></span> <span data-ttu-id="dbb3f-154">値の例: <code>1</code>、<code>vnext</code>します。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-154">Example values: <code>1</code>, <code>vnext</code>.</span></span> <span data-ttu-id="dbb3f-155">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-155">Maximum size: none.</span></span>|
-| <span data-ttu-id="dbb3f-156">Accept</span><span class="sxs-lookup"><span data-stu-id="dbb3f-156">Accept</span></span>| <span data-ttu-id="dbb3f-157">string</span><span class="sxs-lookup"><span data-stu-id="dbb3f-157">string</span></span>| <span data-ttu-id="dbb3f-158">コンテンツの種類の受け入れられるします。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-158">Content-Types that are acceptable.</span></span> <span data-ttu-id="dbb3f-159">値の例:<code>application/json</code>します。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-159">Example value: <code>application/json</code>.</span></span> <span data-ttu-id="dbb3f-160">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-160">Maximum size: none.</span></span>|
+| <span data-ttu-id="9bb0e-145">Authorization</span><span class="sxs-lookup"><span data-stu-id="9bb0e-145">Authorization</span></span> | <span data-ttu-id="9bb0e-146">string</span><span class="sxs-lookup"><span data-stu-id="9bb0e-146">string</span></span>| <span data-ttu-id="9bb0e-147">HTTP 認証の資格情報を認証します。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-147">Authentication credentials for HTTP authentication.</span></span> <span data-ttu-id="9bb0e-148">値の例:<code>Xauth=&lt;authtoken></code>します。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-148">Example value: <code>Xauth=&lt;authtoken></code>.</span></span> <span data-ttu-id="9bb0e-149">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-149">Maximum size: none.</span></span>|
+| <span data-ttu-id="9bb0e-150">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="9bb0e-150">X-RequestedServiceVersion</span></span>| <span data-ttu-id="9bb0e-151">string</span><span class="sxs-lookup"><span data-stu-id="9bb0e-151">string</span></span>| <span data-ttu-id="9bb0e-152">この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-152">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="9bb0e-153">要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-153">The request will only be routed to that service after verifying the validity of the header, the claims in the authorization token, and so on.</span></span> <span data-ttu-id="9bb0e-154">値の例: <code>1</code>、<code>vnext</code>します。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-154">Example values: <code>1</code>, <code>vnext</code>.</span></span> <span data-ttu-id="9bb0e-155">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-155">Maximum size: none.</span></span>|
+| <span data-ttu-id="9bb0e-156">Accept</span><span class="sxs-lookup"><span data-stu-id="9bb0e-156">Accept</span></span>| <span data-ttu-id="9bb0e-157">string</span><span class="sxs-lookup"><span data-stu-id="9bb0e-157">string</span></span>| <span data-ttu-id="9bb0e-158">コンテンツの種類の受け入れられるします。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-158">Content-Types that are acceptable.</span></span> <span data-ttu-id="9bb0e-159">値の例:<code>application/json</code>します。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-159">Example value: <code>application/json</code>.</span></span> <span data-ttu-id="9bb0e-160">最大サイズ: なし。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-160">Maximum size: none.</span></span>|
 
 <a id="ID4EPE"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="dbb3f-161">要求本文</span><span class="sxs-lookup"><span data-stu-id="dbb3f-161">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="9bb0e-161">要求本文</span><span class="sxs-lookup"><span data-stu-id="9bb0e-161">Request body</span></span>
 
-<span data-ttu-id="dbb3f-162">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-162">No objects are sent in the body of this request.</span></span>
+<span data-ttu-id="9bb0e-162">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-162">No objects are sent in the body of this request.</span></span>
 
 <a id="ID4E1E"></a>
 
 
-## <a name="http-status-codes"></a><span data-ttu-id="dbb3f-163">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="dbb3f-163">HTTP status codes</span></span>
+## <a name="http-status-codes"></a><span data-ttu-id="9bb0e-163">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="9bb0e-163">HTTP status codes</span></span>
 
-<span data-ttu-id="dbb3f-164">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-164">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="dbb3f-165">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-165">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
+<span data-ttu-id="9bb0e-164">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-164">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="9bb0e-165">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-165">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
 
-| <span data-ttu-id="dbb3f-166">コード</span><span class="sxs-lookup"><span data-stu-id="dbb3f-166">Code</span></span>| <span data-ttu-id="dbb3f-167">理由フレーズ</span><span class="sxs-lookup"><span data-stu-id="dbb3f-167">Reason phrase</span></span>| <span data-ttu-id="dbb3f-168">説明</span><span class="sxs-lookup"><span data-stu-id="dbb3f-168">Description</span></span>|
+| <span data-ttu-id="9bb0e-166">コード</span><span class="sxs-lookup"><span data-stu-id="9bb0e-166">Code</span></span>| <span data-ttu-id="9bb0e-167">理由フレーズ</span><span class="sxs-lookup"><span data-stu-id="9bb0e-167">Reason phrase</span></span>| <span data-ttu-id="9bb0e-168">説明</span><span class="sxs-lookup"><span data-stu-id="9bb0e-168">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="dbb3f-169">200</span><span class="sxs-lookup"><span data-stu-id="dbb3f-169">200</span></span>| <span data-ttu-id="dbb3f-170">OK</span><span class="sxs-lookup"><span data-stu-id="dbb3f-170">OK</span></span>| <span data-ttu-id="dbb3f-171">ミュート リストの要求が成功した場合。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-171">Successful request for the mute list.</span></span>|
-| <span data-ttu-id="dbb3f-172">400</span><span class="sxs-lookup"><span data-stu-id="dbb3f-172">400</span></span>| <span data-ttu-id="dbb3f-173">Bad Request</span><span class="sxs-lookup"><span data-stu-id="dbb3f-173">Bad Request</span></span>| <span data-ttu-id="dbb3f-174">URI で指定されたターゲット ID が正しくありません。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-174">The target ID specified in the URI is not valid.</span></span>|
-| <span data-ttu-id="dbb3f-175">403</span><span class="sxs-lookup"><span data-stu-id="dbb3f-175">403</span></span>| <span data-ttu-id="dbb3f-176">Forbidden</span><span class="sxs-lookup"><span data-stu-id="dbb3f-176">Forbidden</span></span>| <span data-ttu-id="dbb3f-177">URI で指定された所有者は、認証されたユーザーではありません。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-177">The owner specified in the URI is not the authenticated user.</span></span>|
-| <span data-ttu-id="dbb3f-178">404</span><span class="sxs-lookup"><span data-stu-id="dbb3f-178">404</span></span>| <span data-ttu-id="dbb3f-179">Not Found します。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-179">Not Found</span></span>| <span data-ttu-id="dbb3f-180">URI で指定された所有者は存在しません。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-180">The owner specified in the URI does not exist.</span></span>|
+| <span data-ttu-id="9bb0e-169">200</span><span class="sxs-lookup"><span data-stu-id="9bb0e-169">200</span></span>| <span data-ttu-id="9bb0e-170">OK</span><span class="sxs-lookup"><span data-stu-id="9bb0e-170">OK</span></span>| <span data-ttu-id="9bb0e-171">ミュート リストの要求が成功した場合。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-171">Successful request for the mute list.</span></span>|
+| <span data-ttu-id="9bb0e-172">400</span><span class="sxs-lookup"><span data-stu-id="9bb0e-172">400</span></span>| <span data-ttu-id="9bb0e-173">Bad Request</span><span class="sxs-lookup"><span data-stu-id="9bb0e-173">Bad Request</span></span>| <span data-ttu-id="9bb0e-174">URI で指定されたターゲット ID が正しくありません。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-174">The target ID specified in the URI is not valid.</span></span>|
+| <span data-ttu-id="9bb0e-175">403</span><span class="sxs-lookup"><span data-stu-id="9bb0e-175">403</span></span>| <span data-ttu-id="9bb0e-176">Forbidden</span><span class="sxs-lookup"><span data-stu-id="9bb0e-176">Forbidden</span></span>| <span data-ttu-id="9bb0e-177">URI で指定された所有者は、認証されたユーザーではありません。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-177">The owner specified in the URI is not the authenticated user.</span></span>|
+| <span data-ttu-id="9bb0e-178">404</span><span class="sxs-lookup"><span data-stu-id="9bb0e-178">404</span></span>| <span data-ttu-id="9bb0e-179">Not Found します。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-179">Not Found</span></span>| <span data-ttu-id="9bb0e-180">URI で指定された所有者は存在しません。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-180">The owner specified in the URI does not exist.</span></span>|
 
 <a id="ID4E3G"></a>
 
 
-## <a name="required-response-headers"></a><span data-ttu-id="dbb3f-181">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="dbb3f-181">Required Response Headers</span></span>
+## <a name="required-response-headers"></a><span data-ttu-id="9bb0e-181">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9bb0e-181">Required Response Headers</span></span>
 
-| <span data-ttu-id="dbb3f-182">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="dbb3f-182">Header</span></span>| <span data-ttu-id="dbb3f-183">型</span><span class="sxs-lookup"><span data-stu-id="dbb3f-183">Type</span></span>| <span data-ttu-id="dbb3f-184">説明</span><span class="sxs-lookup"><span data-stu-id="dbb3f-184">Description</span></span>|
+| <span data-ttu-id="9bb0e-182">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9bb0e-182">Header</span></span>| <span data-ttu-id="9bb0e-183">型</span><span class="sxs-lookup"><span data-stu-id="9bb0e-183">Type</span></span>| <span data-ttu-id="9bb0e-184">説明</span><span class="sxs-lookup"><span data-stu-id="9bb0e-184">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="dbb3f-185">Content-Type</span><span class="sxs-lookup"><span data-stu-id="dbb3f-185">Content-Type</span></span>| <span data-ttu-id="dbb3f-186">string</span><span class="sxs-lookup"><span data-stu-id="dbb3f-186">string</span></span>| <span data-ttu-id="dbb3f-187">要求の本文の MIME タイプ。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-187">The MIME type of the body of the request.</span></span> <span data-ttu-id="dbb3f-188">値の例:</span><span class="sxs-lookup"><span data-stu-id="dbb3f-188">Example value:</span></span> <code>application/json</code>|
-| <span data-ttu-id="dbb3f-189">Content-Length</span><span class="sxs-lookup"><span data-stu-id="dbb3f-189">Content-Length</span></span>| <span data-ttu-id="dbb3f-190">string</span><span class="sxs-lookup"><span data-stu-id="dbb3f-190">string</span></span>| <span data-ttu-id="dbb3f-191">応答に送信されるバイト数。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-191">The number of bytes being sent in the response.</span></span> <span data-ttu-id="dbb3f-192">値の例: 34</span><span class="sxs-lookup"><span data-stu-id="dbb3f-192">Example value: 34</span></span>|
-| <span data-ttu-id="dbb3f-193">キャッシュ コントロール</span><span class="sxs-lookup"><span data-stu-id="dbb3f-193">Cache-Control</span></span>| <span data-ttu-id="dbb3f-194">string</span><span class="sxs-lookup"><span data-stu-id="dbb3f-194">string</span></span>| <span data-ttu-id="dbb3f-195">キャッシュ動作を指定するサーバーからていねい要求します。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-195">Polite request from the server to specify caching behavior.</span></span> <span data-ttu-id="dbb3f-196">例:</span><span class="sxs-lookup"><span data-stu-id="dbb3f-196">Example:</span></span> <code>no-cache, no-store</code>|
+| <span data-ttu-id="9bb0e-185">Content-Type</span><span class="sxs-lookup"><span data-stu-id="9bb0e-185">Content-Type</span></span>| <span data-ttu-id="9bb0e-186">string</span><span class="sxs-lookup"><span data-stu-id="9bb0e-186">string</span></span>| <span data-ttu-id="9bb0e-187">要求の本文の MIME タイプ。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-187">The MIME type of the body of the request.</span></span> <span data-ttu-id="9bb0e-188">値の例:</span><span class="sxs-lookup"><span data-stu-id="9bb0e-188">Example value:</span></span> <code>application/json</code>|
+| <span data-ttu-id="9bb0e-189">Content-Length</span><span class="sxs-lookup"><span data-stu-id="9bb0e-189">Content-Length</span></span>| <span data-ttu-id="9bb0e-190">string</span><span class="sxs-lookup"><span data-stu-id="9bb0e-190">string</span></span>| <span data-ttu-id="9bb0e-191">応答に送信されるバイト数。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-191">The number of bytes being sent in the response.</span></span> <span data-ttu-id="9bb0e-192">値の例: 34</span><span class="sxs-lookup"><span data-stu-id="9bb0e-192">Example value: 34</span></span>|
+| <span data-ttu-id="9bb0e-193">キャッシュ コントロール</span><span class="sxs-lookup"><span data-stu-id="9bb0e-193">Cache-Control</span></span>| <span data-ttu-id="9bb0e-194">string</span><span class="sxs-lookup"><span data-stu-id="9bb0e-194">string</span></span>| <span data-ttu-id="9bb0e-195">キャッシュ動作を指定するサーバーからていねい要求します。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-195">Polite request from the server to specify caching behavior.</span></span> <span data-ttu-id="9bb0e-196">例:</span><span class="sxs-lookup"><span data-stu-id="9bb0e-196">Example:</span></span> <code>no-cache, no-store</code>|
 
 <a id="ID4ETAAC"></a>
 
 
-## <a name="response-body"></a><span data-ttu-id="dbb3f-197">応答本文</span><span class="sxs-lookup"><span data-stu-id="dbb3f-197">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="9bb0e-197">応答本文</span><span class="sxs-lookup"><span data-stu-id="9bb0e-197">Response body</span></span>
 
 <a id="ID4EZAAC"></a>
 
 
-### <a name="sample-response"></a><span data-ttu-id="dbb3f-198">応答の例</span><span class="sxs-lookup"><span data-stu-id="dbb3f-198">Sample response</span></span>
+### <a name="sample-response"></a><span data-ttu-id="9bb0e-198">応答の例</span><span class="sxs-lookup"><span data-stu-id="9bb0e-198">Sample response</span></span>
 
-<span data-ttu-id="dbb3f-199">[UserList](../../json/json-userlist.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="dbb3f-199">See [UserList](../../json/json-userlist.md).</span></span>
+<span data-ttu-id="9bb0e-199">[UserList](../../json/json-userlist.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9bb0e-199">See [UserList](../../json/json-userlist.md).</span></span>
 
 
 ```cpp
@@ -134,11 +134,11 @@ ms.locfileid: "4176858"
 <a id="ID4EJBAC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="dbb3f-200">関連項目</span><span class="sxs-lookup"><span data-stu-id="dbb3f-200">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9bb0e-200">関連項目</span><span class="sxs-lookup"><span data-stu-id="9bb0e-200">See also</span></span>
 
 <a id="ID4ELBAC"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="dbb3f-201">Parent</span><span class="sxs-lookup"><span data-stu-id="dbb3f-201">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="9bb0e-201">Parent</span><span class="sxs-lookup"><span data-stu-id="9bb0e-201">Parent</span></span>
 
-[<span data-ttu-id="dbb3f-202">/users/{ownerId}/people/mute</span><span class="sxs-lookup"><span data-stu-id="dbb3f-202">/users/{ownerId}/people/mute</span></span>](uri-privacyusersowneridpeoplemute.md)
+[<span data-ttu-id="9bb0e-202">/users/{ownerId}/people/mute</span><span class="sxs-lookup"><span data-stu-id="9bb0e-202">/users/{ownerId}/people/mute</span></span>](uri-privacyusersowneridpeoplemute.md)
