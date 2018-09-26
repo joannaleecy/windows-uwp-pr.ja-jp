@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クロスプレイ, Play Anywhere
 ms.localizationpriority: medium
 ms.openlocfilehash: 14f6e895ed98804fa965ee6d9ef6cadcde6f220f
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4152502"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177532"
 ---
 # <a name="get-started-with-cross-play-games"></a><span data-ttu-id="dd0cb-104">クロスプレイ ゲームの概要</span><span class="sxs-lookup"><span data-stu-id="dd0cb-104">Get started with cross-play games</span></span>
 

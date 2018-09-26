@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: 2b56a4d3fa857222e2b93cd0f9e39133c16c2ebc
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4150998"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4172988"
 ---
 # <a name="configure-data-sharing-on-dev-center"></a><span data-ttu-id="a3254-104">デベロッパー センターでのデータ共有の構成</span><span class="sxs-lookup"><span data-stu-id="a3254-104">Configure data sharing on Dev Center</span></span>
 

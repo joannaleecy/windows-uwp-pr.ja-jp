@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f4c2a34d47f894e2ac9aeaf6228c8ebd41348306
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156076"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177262"
 ---
 # <a name="presence-uris"></a><span data-ttu-id="ebc9c-104">プレゼンス URI</span><span class="sxs-lookup"><span data-stu-id="ebc9c-104">Presence URIs</span></span>
  
