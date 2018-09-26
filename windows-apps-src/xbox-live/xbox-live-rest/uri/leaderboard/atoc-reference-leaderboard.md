@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a2c8ca1cdac0b6a2ad2f981d2a57d926cf4e1f5
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4147854"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177094"
 ---
 # <a name="leaderboards-uris"></a><span data-ttu-id="19fbb-104">ランキング URI</span><span class="sxs-lookup"><span data-stu-id="19fbb-104">Leaderboards URIs</span></span>
 

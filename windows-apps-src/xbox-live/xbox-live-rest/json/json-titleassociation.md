@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c9d42f4285cd20785f5606d3e2ac6094a874acba
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4153086"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4179232"
 ---
 # <a name="titleassociation-json"></a><span data-ttu-id="ba82a-104">TitleAssociation (JSON)</span><span class="sxs-lookup"><span data-stu-id="ba82a-104">TitleAssociation (JSON)</span></span>
 <span data-ttu-id="ba82a-105">実績に関連付けられているタイトルです。</span><span class="sxs-lookup"><span data-stu-id="ba82a-105">A title that is associated with the achievement.</span></span> 

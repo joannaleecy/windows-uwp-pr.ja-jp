@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bcb7b1c6c23f39846084ba4e6583553e2ff04a1
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4152420"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4179344"
 ---
 # <a name="post-usersxuidxuiddeleteuserdata"></a><span data-ttu-id="6d2b3-104">POST (/users/xuid({xuid})/deleteuserdata)</span><span class="sxs-lookup"><span data-stu-id="6d2b3-104">POST (/users/xuid({xuid})/deleteuserdata)</span></span>
 <span data-ttu-id="6d2b3-105">テスト ユーザーの評判のデータを完全にリセットします。</span><span class="sxs-lookup"><span data-stu-id="6d2b3-105">Completely resets the reputation data for a test user.</span></span> <span data-ttu-id="6d2b3-106">テストのみです。</span><span class="sxs-lookup"><span data-stu-id="6d2b3-106">For testing only.</span></span>
