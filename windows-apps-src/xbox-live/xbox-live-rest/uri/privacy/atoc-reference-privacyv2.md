@@ -12,45 +12,45 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: bed703722b6c2d03cbc7b5e9f1b8be08ef38c7f0
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4177512"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4204413"
 ---
-# <a name="privacy-uris"></a><span data-ttu-id="7bbea-104">プライバシー URI</span><span class="sxs-lookup"><span data-stu-id="7bbea-104">Privacy URIs</span></span>
+# <a name="privacy-uris"></a><span data-ttu-id="39003-104">プライバシー URI</span><span class="sxs-lookup"><span data-stu-id="39003-104">Privacy URIs</span></span>
  
-<span data-ttu-id="7bbea-105">このセクションでは、*プライバシー*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="7bbea-105">This section provides detail about the Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *privacy*.</span></span>
+<span data-ttu-id="39003-105">このセクションでは、*プライバシー*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="39003-105">This section provides detail about the Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *privacy*.</span></span>
  
-<span data-ttu-id="7bbea-106">のみ Windows 8 で実行されるゲームでも、Xbox 360、または Windows Phone デバイスこのサービスを使用します。</span><span class="sxs-lookup"><span data-stu-id="7bbea-106">Only games running on Windows 8, on an Xbox 360, or a Windows Phone device can use this service.</span></span>
+<span data-ttu-id="39003-106">のみ Windows 8 で実行されるゲームでも、Xbox 360、または Windows Phone デバイスこのサービスを使用します。</span><span class="sxs-lookup"><span data-stu-id="39003-106">Only games running on Windows 8, on an Xbox 360, or a Windows Phone device can use this service.</span></span>
  
-<span data-ttu-id="7bbea-107">これらの Uri のドメインは、privacy.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="7bbea-107">The domain for these URIs is privacy.xboxlive.com.</span></span>
+<span data-ttu-id="39003-107">これらの Uri のドメインは、privacy.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="39003-107">The domain for these URIs is privacy.xboxlive.com.</span></span>
  
 <a id="ID4EPB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="7bbea-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7bbea-108">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="39003-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="39003-108">In this section</span></span>
 
-[<span data-ttu-id="7bbea-109">/users/{ownerId}/people/mute</span><span class="sxs-lookup"><span data-stu-id="7bbea-109">/users/{ownerId}/people/mute</span></span>](uri-privacyusersowneridpeoplemute.md)
+[<span data-ttu-id="39003-109">/users/{ownerId}/people/mute</span><span class="sxs-lookup"><span data-stu-id="39003-109">/users/{ownerId}/people/mute</span></span>](uri-privacyusersowneridpeoplemute.md)
 
-<span data-ttu-id="7bbea-110">&nbsp;&nbsp;ユーザーのミュート リストにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="7bbea-110">&nbsp;&nbsp;Accesses the mute list for a user.</span></span>
+<span data-ttu-id="39003-110">&nbsp;&nbsp;ユーザーのミュート リストにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="39003-110">&nbsp;&nbsp;Accesses the mute list for a user.</span></span>
 
-[<span data-ttu-id="7bbea-111">/users/{requestorId}/permission/validate</span><span class="sxs-lookup"><span data-stu-id="7bbea-111">/users/{requestorId}/permission/validate</span></span>](uri-privacyusersrequestoridpermissionvalidate.md)
+[<span data-ttu-id="39003-111">/users/{requestorId}/permission/validate</span><span class="sxs-lookup"><span data-stu-id="39003-111">/users/{requestorId}/permission/validate</span></span>](uri-privacyusersrequestoridpermissionvalidate.md)
 
-[<span data-ttu-id="7bbea-112">/users/{ownerId}/people/avoid</span><span class="sxs-lookup"><span data-stu-id="7bbea-112">/users/{ownerId}/people/avoid</span></span>](uri-privacyusersxuidpeopleavoid.md)
+[<span data-ttu-id="39003-112">/users/{ownerId}/people/avoid</span><span class="sxs-lookup"><span data-stu-id="39003-112">/users/{ownerId}/people/avoid</span></span>](uri-privacyusersxuidpeopleavoid.md)
 
-<span data-ttu-id="7bbea-113">&nbsp;&nbsp;ユーザーの避ける一覧にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="7bbea-113">&nbsp;&nbsp;Accesses the Avoid list for a user</span></span>
+<span data-ttu-id="39003-113">&nbsp;&nbsp;ユーザーの避ける一覧にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="39003-113">&nbsp;&nbsp;Accesses the Avoid list for a user</span></span>
  
 <a id="ID4E2B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="7bbea-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="7bbea-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="39003-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="39003-114">See also</span></span>
  
 <a id="ID4E4B"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="7bbea-115">Parent</span><span class="sxs-lookup"><span data-stu-id="7bbea-115">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="39003-115">Parent</span><span class="sxs-lookup"><span data-stu-id="39003-115">Parent</span></span> 
 
-[<span data-ttu-id="7bbea-116">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="7bbea-116">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="39003-116">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="39003-116">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

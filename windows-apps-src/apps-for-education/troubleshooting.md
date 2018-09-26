@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
 ms.openlocfilehash: 3193525316d085e56244d6f03da99e3e07c6539f
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4173283"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4207469"
 ---
-# <a name="troubleshoot-microsoft-take-a-test-with-the-event-viewer"></a><span data-ttu-id="d1fe1-103">イベント ビューアーを使用して、Microsoft テストをトラブルシューティングします</span><span class="sxs-lookup"><span data-stu-id="d1fe1-103">Troubleshoot Microsoft Take a Test with the event viewer</span></span>
+# <a name="troubleshoot-microsoft-take-a-test-with-the-event-viewer"></a><span data-ttu-id="22138-103">イベント ビューアーを使用して、Microsoft テストをトラブルシューティングします</span><span class="sxs-lookup"><span data-stu-id="22138-103">Troubleshoot Microsoft Take a Test with the event viewer</span></span>
 
-<span data-ttu-id="d1fe1-104">イベント ビューアーを使用して、テストのイベントとエラーを表示することができます。</span><span class="sxs-lookup"><span data-stu-id="d1fe1-104">You can use the Event Viewer to view Take a Test events and errors.</span></span> <span data-ttu-id="d1fe1-105">テストでは、ロックダウン要求を受け取ったとき、デバイスの登録が成功したとき、ロックダウン ポリシーが正常に適用されたときなどに、イベントがログに記録されます。</span><span class="sxs-lookup"><span data-stu-id="d1fe1-105">Take a Test logs events when a lockdown request has been received, device enrollment has succeeded, lockdown policies were successfully applied, and more.</span></span>
+<span data-ttu-id="22138-104">イベント ビューアーを使用して、テストのイベントとエラーを表示することができます。</span><span class="sxs-lookup"><span data-stu-id="22138-104">You can use the Event Viewer to view Take a Test events and errors.</span></span> <span data-ttu-id="22138-105">テストでは、ロックダウン要求を受け取ったとき、デバイスの登録が成功したとき、ロックダウン ポリシーが正常に適用されたときなどに、イベントがログに記録されます。</span><span class="sxs-lookup"><span data-stu-id="22138-105">Take a Test logs events when a lockdown request has been received, device enrollment has succeeded, lockdown policies were successfully applied, and more.</span></span>
 
-<span data-ttu-id="d1fe1-106">イベント ビューアーでイベントの表示を有効にするには:</span><span class="sxs-lookup"><span data-stu-id="d1fe1-106">To enable viewing events in the Event Viewer:</span></span>
-1. <span data-ttu-id="d1fe1-107">次を開きます: </span><span class="sxs-lookup"><span data-stu-id="d1fe1-107">Open the</span></span> `Event Viewer`
-2. <span data-ttu-id="d1fe1-108">次に移動します: </span><span class="sxs-lookup"><span data-stu-id="d1fe1-108">Navigate to</span></span> `Applications and Services Logs > Microsoft > Windows > Management-SecureAssessment`
-3. <span data-ttu-id="d1fe1-109">`Operational` を右クリックして、次を選びます: </span><span class="sxs-lookup"><span data-stu-id="d1fe1-109">Right-click `Operational` and select</span></span> `Enable Log`
+<span data-ttu-id="22138-106">イベント ビューアーでイベントの表示を有効にするには:</span><span class="sxs-lookup"><span data-stu-id="22138-106">To enable viewing events in the Event Viewer:</span></span>
+1. <span data-ttu-id="22138-107">次を開きます: </span><span class="sxs-lookup"><span data-stu-id="22138-107">Open the</span></span> `Event Viewer`
+2. <span data-ttu-id="22138-108">次に移動します: </span><span class="sxs-lookup"><span data-stu-id="22138-108">Navigate to</span></span> `Applications and Services Logs > Microsoft > Windows > Management-SecureAssessment`
+3. <span data-ttu-id="22138-109">`Operational` を右クリックして、次を選びます: </span><span class="sxs-lookup"><span data-stu-id="22138-109">Right-click `Operational` and select</span></span> `Enable Log`
 
-<span data-ttu-id="d1fe1-110">イベント ログを保存するには:</span><span class="sxs-lookup"><span data-stu-id="d1fe1-110">To save the event logs:</span></span>
-1. <span data-ttu-id="d1fe1-111">次を右クリックします: </span><span class="sxs-lookup"><span data-stu-id="d1fe1-111">Right-click</span></span> `Operational`
-2. <span data-ttu-id="d1fe1-112">次をクリックします: </span><span class="sxs-lookup"><span data-stu-id="d1fe1-112">Click</span></span> `Save All Events As…`
+<span data-ttu-id="22138-110">イベント ログを保存するには:</span><span class="sxs-lookup"><span data-stu-id="22138-110">To save the event logs:</span></span>
+1. <span data-ttu-id="22138-111">次を右クリックします: </span><span class="sxs-lookup"><span data-stu-id="22138-111">Right-click</span></span> `Operational`
+2. <span data-ttu-id="22138-112">次をクリックします: </span><span class="sxs-lookup"><span data-stu-id="22138-112">Click</span></span> `Save All Events As…`

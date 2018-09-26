@@ -11,31 +11,31 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef50675ec7741c067cbe5641321ae5711ff335b
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4181043"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4204768"
 ---
-# <a name="data-protection"></a><span data-ttu-id="97086-104">データ保護</span><span class="sxs-lookup"><span data-stu-id="97086-104">Data protection</span></span>
+# <a name="data-protection"></a><span data-ttu-id="890f1-104">データ保護</span><span class="sxs-lookup"><span data-stu-id="890f1-104">Data protection</span></span>
 
 
 
-<span data-ttu-id="97086-105">この記事では、[**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 名前空間の [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) クラスを使って、UWP アプリでデジタル データの暗号化と暗号化解除を行う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="97086-105">This article explains how to use the [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt digital data in a UWP app.</span></span>
+<span data-ttu-id="890f1-105">この記事では、[**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 名前空間の [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) クラスを使って、UWP アプリでデジタル データの暗号化と暗号化解除を行う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="890f1-105">This article explains how to use the [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt digital data in a UWP app.</span></span>
 
-<span data-ttu-id="97086-106">データ保護 API はさまざまな方法で使用することができます。</span><span class="sxs-lookup"><span data-stu-id="97086-106">You can use the data protection APIs in multiple ways:</span></span>
+<span data-ttu-id="890f1-106">データ保護 API はさまざまな方法で使用することができます。</span><span class="sxs-lookup"><span data-stu-id="890f1-106">You can use the data protection APIs in multiple ways:</span></span>
 
--   <span data-ttu-id="97086-107">Active Directory (AD) グループなどの AD セキュリティ プリンシパルに対するデータを保護します。</span><span class="sxs-lookup"><span data-stu-id="97086-107">To protect data to an Active Directory (AD) security principal like an AD group.</span></span> <span data-ttu-id="97086-108">このグループのすべてのメンバーがデータを暗号化解除できます。</span><span class="sxs-lookup"><span data-stu-id="97086-108">Any member of the group can decrypt the data.</span></span>
--   <span data-ttu-id="97086-109">X.509 証明書に含まれている公開キーでデータを保護します。</span><span class="sxs-lookup"><span data-stu-id="97086-109">To protect data to the public key contained in an X.509 certificate.</span></span> <span data-ttu-id="97086-110">秘密キーの所有者がデータを暗号化解除できます。</span><span class="sxs-lookup"><span data-stu-id="97086-110">The owner of the private key can decrypt the data.</span></span>
--   <span data-ttu-id="97086-111">対称キーを使ってデータを保護します。</span><span class="sxs-lookup"><span data-stu-id="97086-111">To protect data by using a symmetric key.</span></span> <span data-ttu-id="97086-112">この方法は、たとえば、Live ID のような非 AD プリンシパルに対するデータを保護する場合に適しています。</span><span class="sxs-lookup"><span data-stu-id="97086-112">This works, for example, to protect data to a non-AD principal such as Live ID.</span></span>
--   <span data-ttu-id="97086-113">Web サイトへのログオン時に使われる資格情報 (パスワード) でデータを保護できます。</span><span class="sxs-lookup"><span data-stu-id="97086-113">To protect data to the credentials (password) used during logon to a website.</span></span>
+-   <span data-ttu-id="890f1-107">Active Directory (AD) グループなどの AD セキュリティ プリンシパルに対するデータを保護します。</span><span class="sxs-lookup"><span data-stu-id="890f1-107">To protect data to an Active Directory (AD) security principal like an AD group.</span></span> <span data-ttu-id="890f1-108">このグループのすべてのメンバーがデータを暗号化解除できます。</span><span class="sxs-lookup"><span data-stu-id="890f1-108">Any member of the group can decrypt the data.</span></span>
+-   <span data-ttu-id="890f1-109">X.509 証明書に含まれている公開キーでデータを保護します。</span><span class="sxs-lookup"><span data-stu-id="890f1-109">To protect data to the public key contained in an X.509 certificate.</span></span> <span data-ttu-id="890f1-110">秘密キーの所有者がデータを暗号化解除できます。</span><span class="sxs-lookup"><span data-stu-id="890f1-110">The owner of the private key can decrypt the data.</span></span>
+-   <span data-ttu-id="890f1-111">対称キーを使ってデータを保護します。</span><span class="sxs-lookup"><span data-stu-id="890f1-111">To protect data by using a symmetric key.</span></span> <span data-ttu-id="890f1-112">この方法は、たとえば、Live ID のような非 AD プリンシパルに対するデータを保護する場合に適しています。</span><span class="sxs-lookup"><span data-stu-id="890f1-112">This works, for example, to protect data to a non-AD principal such as Live ID.</span></span>
+-   <span data-ttu-id="890f1-113">Web サイトへのログオン時に使われる資格情報 (パスワード) でデータを保護できます。</span><span class="sxs-lookup"><span data-stu-id="890f1-113">To protect data to the credentials (password) used during logon to a website.</span></span>
 
-<span data-ttu-id="97086-114">データを保護するには、[**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) オブジェクトを作成するときに、保護記述子を指定してから [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) または [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="97086-114">To protect data, when you create a [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) object you must specify a protection descriptor before calling [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) or [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564).</span></span> <span data-ttu-id="97086-115">保護記述子の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="97086-115">The following example shows possible sample protection descriptors.</span></span>
+<span data-ttu-id="890f1-114">データを保護するには、[**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) オブジェクトを作成するときに、保護記述子を指定してから [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) または [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="890f1-114">To protect data, when you create a [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) object you must specify a protection descriptor before calling [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) or [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564).</span></span> <span data-ttu-id="890f1-115">保護記述子の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="890f1-115">The following example shows possible sample protection descriptors.</span></span>
 
-## <a name="protecting-static-data"></a><span data-ttu-id="97086-116">静的データの保護</span><span class="sxs-lookup"><span data-stu-id="97086-116">Protecting static data</span></span>
+## <a name="protecting-static-data"></a><span data-ttu-id="890f1-116">静的データの保護</span><span class="sxs-lookup"><span data-stu-id="890f1-116">Protecting static data</span></span>
 
 
-<span data-ttu-id="97086-117">次の例に、[**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) メソッドと [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) メソッドを使って、現在のユーザーの SID に対する静的データを非同期に保護する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="97086-117">The following example shows how to use the [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) and [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) methods to asynchronously protect static data to the current user's SID.</span></span>
+<span data-ttu-id="890f1-117">次の例に、[**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) メソッドと [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) メソッドを使って、現在のユーザーの SID に対する静的データを非同期に保護する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="890f1-117">The following example shows how to use the [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) and [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) methods to asynchronously protect static data to the current user's SID.</span></span>
 
 ```cs
 using Windows.Security.Cryptography;
@@ -117,10 +117,10 @@ namespace SampleProtectAsync
 }
 ```
 
-## <a name="protecting-stream-data"></a><span data-ttu-id="97086-118">ストリーム データの保護</span><span class="sxs-lookup"><span data-stu-id="97086-118">Protecting stream data</span></span>
+## <a name="protecting-stream-data"></a><span data-ttu-id="890f1-118">ストリーム データの保護</span><span class="sxs-lookup"><span data-stu-id="890f1-118">Protecting stream data</span></span>
 
 
-<span data-ttu-id="97086-119">次の例に、[**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) メソッドと [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) メソッドを使って、現在のユーザーの SID に対するストリーム データを非同期に保護する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="97086-119">The following example shows how to use the [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) and [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) methods to asynchronously protect stream data to the current user's SID.</span></span>
+<span data-ttu-id="890f1-119">次の例に、[**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) メソッドと [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) メソッドを使って、現在のユーザーの SID に対するストリーム データを非同期に保護する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="890f1-119">The following example shows how to use the [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) and [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) methods to asynchronously protect stream data to the current user's SID.</span></span>
 
 ```cs
 using Windows.Security.Cryptography;

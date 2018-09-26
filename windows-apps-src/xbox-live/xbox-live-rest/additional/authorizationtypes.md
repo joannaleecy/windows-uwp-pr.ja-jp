@@ -12,37 +12,37 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2db953d711bcb423f02aebfd3579cddea717826b
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4180702"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4204353"
 ---
-# <a name="authorization-types"></a><span data-ttu-id="558fd-104">承認のタイプ</span><span class="sxs-lookup"><span data-stu-id="558fd-104">Authorization Types</span></span>
+# <a name="authorization-types"></a><span data-ttu-id="ff31c-104">承認のタイプ</span><span class="sxs-lookup"><span data-stu-id="ff31c-104">Authorization Types</span></span>
  
-<span data-ttu-id="558fd-105">Xbox Live サービスは、要求と承認の種類の数を使用します。</span><span class="sxs-lookup"><span data-stu-id="558fd-105">Xbox Live Services uses a number of authorization types with requests.</span></span> <span data-ttu-id="558fd-106">このトピックでは、標準的な認証の種類について説明します。</span><span class="sxs-lookup"><span data-stu-id="558fd-106">This topic describes the standard authorization types.</span></span>
+<span data-ttu-id="ff31c-105">Xbox Live サービスは、要求と承認の種類の数を使用します。</span><span class="sxs-lookup"><span data-stu-id="ff31c-105">Xbox Live Services uses a number of authorization types with requests.</span></span> <span data-ttu-id="ff31c-106">このトピックでは、標準的な認証の種類について説明します。</span><span class="sxs-lookup"><span data-stu-id="ff31c-106">This topic describes the standard authorization types.</span></span>
  
-| <span data-ttu-id="558fd-107">種類</span><span class="sxs-lookup"><span data-stu-id="558fd-107">Type</span></span>| <span data-ttu-id="558fd-108">説明</span><span class="sxs-lookup"><span data-stu-id="558fd-108">Description</span></span>| 
+| <span data-ttu-id="ff31c-107">種類</span><span class="sxs-lookup"><span data-stu-id="ff31c-107">Type</span></span>| <span data-ttu-id="ff31c-108">説明</span><span class="sxs-lookup"><span data-stu-id="ff31c-108">Description</span></span>| 
 | --- | --- | 
-| <span data-ttu-id="558fd-109">ユーザー</span><span class="sxs-lookup"><span data-stu-id="558fd-109">User</span></span> | <span data-ttu-id="558fd-110">呼び出し元が、承認された Xbox Live ユーザーです。</span><span class="sxs-lookup"><span data-stu-id="558fd-110">Caller is an authorized Xbox Live user.</span></span> | 
-| <span data-ttu-id="558fd-111">Title (タイトル)</span><span class="sxs-lookup"><span data-stu-id="558fd-111">Title</span></span> | <span data-ttu-id="558fd-112">呼び出し元が、信頼されたプラットフォーム上のタイトルです。</span><span class="sxs-lookup"><span data-stu-id="558fd-112">Caller is a title on a trusted platform.</span></span>| 
+| <span data-ttu-id="ff31c-109">ユーザー</span><span class="sxs-lookup"><span data-stu-id="ff31c-109">User</span></span> | <span data-ttu-id="ff31c-110">呼び出し元が、承認された Xbox Live ユーザーです。</span><span class="sxs-lookup"><span data-stu-id="ff31c-110">Caller is an authorized Xbox Live user.</span></span> | 
+| <span data-ttu-id="ff31c-111">Title (タイトル)</span><span class="sxs-lookup"><span data-stu-id="ff31c-111">Title</span></span> | <span data-ttu-id="ff31c-112">呼び出し元が、信頼されたプラットフォーム上のタイトルです。</span><span class="sxs-lookup"><span data-stu-id="ff31c-112">Caller is a title on a trusted platform.</span></span>| 
  
 <a id="ID4EGC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="558fd-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="558fd-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ff31c-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="ff31c-113">See also</span></span>
  
 <a id="ID4EIC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="558fd-114">Parent</span><span class="sxs-lookup"><span data-stu-id="558fd-114">Parent</span></span>  
+##### <a name="parent"></a><span data-ttu-id="ff31c-114">Parent</span><span class="sxs-lookup"><span data-stu-id="ff31c-114">Parent</span></span>  
 
-[<span data-ttu-id="558fd-115">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="558fd-115">Additional Reference</span></span>](atoc-xboxlivews-reference-additional.md)
+[<span data-ttu-id="ff31c-115">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="ff31c-115">Additional Reference</span></span>](atoc-xboxlivews-reference-additional.md)
 
   
 <a id="ID4EUC"></a>
 
  
-##### <a name="reference--universal-resource-identifier-uri-referenceuriatoc-xboxlivews-reference-urismd"></a><span data-ttu-id="558fd-116">参照[ユニバーサル リソース識別子 (URI) リファレンス](../uri/atoc-xboxlivews-reference-uris.md)</span><span class="sxs-lookup"><span data-stu-id="558fd-116">Reference  [Universal Resource Identifier (URI) Reference](../uri/atoc-xboxlivews-reference-uris.md)</span></span>
+##### <a name="reference--universal-resource-identifier-uri-referenceuriatoc-xboxlivews-reference-urismd"></a><span data-ttu-id="ff31c-116">参照[ユニバーサル リソース識別子 (URI) リファレンス](../uri/atoc-xboxlivews-reference-uris.md)</span><span class="sxs-lookup"><span data-stu-id="ff31c-116">Reference  [Universal Resource Identifier (URI) Reference](../uri/atoc-xboxlivews-reference-uris.md)</span></span>
 
    

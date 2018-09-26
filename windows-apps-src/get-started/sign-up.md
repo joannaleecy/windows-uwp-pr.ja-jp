@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: Windows 10, UWP, サインアップ, 開発者アカウント
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ed54f1df2ace18d06f9273fb9e26459907f8542
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4176381"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4206032"
 ---
-# <a name="create-a-developer-account"></a><span data-ttu-id="f892a-104">開発者アカウントを作る</span><span class="sxs-lookup"><span data-stu-id="f892a-104">Create a developer account</span></span>
+# <a name="create-a-developer-account"></a><span data-ttu-id="ac54b-104">開発者アカウントを作る</span><span class="sxs-lookup"><span data-stu-id="ac54b-104">Create a developer account</span></span>
 
-<span data-ttu-id="f892a-105">今すぐ開発者アカウントにご登録ください。Microsoft Store でアプリを公開し、他の Microsoft プログラムに参加できます。</span><span class="sxs-lookup"><span data-stu-id="f892a-105">Register now for a developer account so you can get your apps into the Microsoft Store and participate in other Microsoft programs.</span></span>
+<span data-ttu-id="ac54b-105">今すぐ開発者アカウントにご登録ください。Microsoft Store でアプリを公開し、他の Microsoft プログラムに参加できます。</span><span class="sxs-lookup"><span data-stu-id="ac54b-105">Register now for a developer account so you can get your apps into the Microsoft Store and participate in other Microsoft programs.</span></span>
 
-[<span data-ttu-id="f892a-106">今すぐサインアップ</span><span class="sxs-lookup"><span data-stu-id="f892a-106">Sign up now!</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=615100)
+[<span data-ttu-id="ac54b-106">今すぐサインアップ</span><span class="sxs-lookup"><span data-stu-id="ac54b-106">Sign up now!</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=615100)
 
-## <a name="opening-your-developer-account"></a><span data-ttu-id="f892a-107">開発者アカウントの開設</span><span class="sxs-lookup"><span data-stu-id="f892a-107">Opening your developer account</span></span>
+## <a name="opening-your-developer-account"></a><span data-ttu-id="ac54b-107">開発者アカウントの開設</span><span class="sxs-lookup"><span data-stu-id="ac54b-107">Opening your developer account</span></span>
 
-<span data-ttu-id="f892a-108">Microsoft では、[世界各地で個人のアカウントと会社のアカウント](../publish/account-types-locations-and-fees.md)を提供しています。</span><span class="sxs-lookup"><span data-stu-id="f892a-108">We offer [individual and company accounts in locations around the world](../publish/account-types-locations-and-fees.md).</span></span> <span data-ttu-id="f892a-109">そのしくみについては、[サインアップ プロセスの概要](../publish/opening-a-developer-account.md)をご確認ください。</span><span class="sxs-lookup"><span data-stu-id="f892a-109">Check out our [overview of the sign-up process](../publish/opening-a-developer-account.md) to see how it works.</span></span>
+<span data-ttu-id="ac54b-108">Microsoft では、[世界各地で個人のアカウントと会社のアカウント](../publish/account-types-locations-and-fees.md)を提供しています。</span><span class="sxs-lookup"><span data-stu-id="ac54b-108">We offer [individual and company accounts in locations around the world](../publish/account-types-locations-and-fees.md).</span></span> <span data-ttu-id="ac54b-109">そのしくみについては、[サインアップ プロセスの概要](../publish/opening-a-developer-account.md)をご確認ください。</span><span class="sxs-lookup"><span data-stu-id="ac54b-109">Check out our [overview of the sign-up process](../publish/opening-a-developer-account.md) to see how it works.</span></span>
 
-## <a name="have-a-name-for-your-app"></a><span data-ttu-id="f892a-110">アプリの名前は用意している場合</span><span class="sxs-lookup"><span data-stu-id="f892a-110">Have a name for your app?</span></span>
+## <a name="have-a-name-for-your-app"></a><span data-ttu-id="ac54b-110">アプリの名前は用意している場合</span><span class="sxs-lookup"><span data-stu-id="ac54b-110">Have a name for your app?</span></span>
 
-<span data-ttu-id="f892a-111">開発者アカウントを開設したら、[名前を予約してアプリを作る](https://msdn.microsoft.com/library/windows/apps/JJ657967)ことができます。</span><span class="sxs-lookup"><span data-stu-id="f892a-111">As soon as you open your developer account, you can [create your app by reserving a name](https://msdn.microsoft.com/library/windows/apps/JJ657967).</span></span>
+<span data-ttu-id="ac54b-111">開発者アカウントを開設したら、[名前を予約してアプリを作る](https://msdn.microsoft.com/library/windows/apps/JJ657967)ことができます。</span><span class="sxs-lookup"><span data-stu-id="ac54b-111">As soon as you open your developer account, you can [create your app by reserving a name](https://msdn.microsoft.com/library/windows/apps/JJ657967).</span></span>
 

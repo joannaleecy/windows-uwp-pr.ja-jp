@@ -12,30 +12,30 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f0eed745b9350bd1bc2f4860cb3db5e5a6b9ad7c
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4176898"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4204409"
 ---
-# <a name="serviceerrorresponse-json"></a><span data-ttu-id="ada3d-104">ServiceErrorResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="ada3d-104">ServiceErrorResponse (JSON)</span></span>
-<span data-ttu-id="ada3d-105">サービスのエラーが発生したときは、適切な HTTP エラー コードが返されます。</span><span class="sxs-lookup"><span data-stu-id="ada3d-105">When a service error is encountered, an appropriate HTTP error code will be returned.</span></span> <span data-ttu-id="ada3d-106">必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下で定義されています。</span><span class="sxs-lookup"><span data-stu-id="ada3d-106">Optionally, the service may also include a ServiceErrorResponse object as defined below.</span></span> <span data-ttu-id="ada3d-107">運用環境での低いデータを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="ada3d-107">In production environments, less data may be included.</span></span> 
+# <a name="serviceerrorresponse-json"></a><span data-ttu-id="69e61-104">ServiceErrorResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="69e61-104">ServiceErrorResponse (JSON)</span></span>
+<span data-ttu-id="69e61-105">サービスのエラーが発生したときは、適切な HTTP エラー コードが返されます。</span><span class="sxs-lookup"><span data-stu-id="69e61-105">When a service error is encountered, an appropriate HTTP error code will be returned.</span></span> <span data-ttu-id="69e61-106">必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下で定義されています。</span><span class="sxs-lookup"><span data-stu-id="69e61-106">Optionally, the service may also include a ServiceErrorResponse object as defined below.</span></span> <span data-ttu-id="69e61-107">運用環境での低いデータを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="69e61-107">In production environments, less data may be included.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="serviceerrorresponse"></a><span data-ttu-id="ada3d-108">ServiceErrorResponse</span><span class="sxs-lookup"><span data-stu-id="ada3d-108">ServiceErrorResponse</span></span>
+## <a name="serviceerrorresponse"></a><span data-ttu-id="69e61-108">ServiceErrorResponse</span><span class="sxs-lookup"><span data-stu-id="69e61-108">ServiceErrorResponse</span></span>
  
-<span data-ttu-id="ada3d-109">ServiceErrorResponse オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="ada3d-109">The ServiceErrorResponse object has the following specification.</span></span>
+<span data-ttu-id="69e61-109">ServiceErrorResponse オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="69e61-109">The ServiceErrorResponse object has the following specification.</span></span>
  
-| <span data-ttu-id="ada3d-110">メンバー</span><span class="sxs-lookup"><span data-stu-id="ada3d-110">Member</span></span>| <span data-ttu-id="ada3d-111">種類</span><span class="sxs-lookup"><span data-stu-id="ada3d-111">Type</span></span>| <span data-ttu-id="ada3d-112">説明</span><span class="sxs-lookup"><span data-stu-id="ada3d-112">Description</span></span>| 
+| <span data-ttu-id="69e61-110">メンバー</span><span class="sxs-lookup"><span data-stu-id="69e61-110">Member</span></span>| <span data-ttu-id="69e61-111">種類</span><span class="sxs-lookup"><span data-stu-id="69e61-111">Type</span></span>| <span data-ttu-id="69e61-112">説明</span><span class="sxs-lookup"><span data-stu-id="69e61-112">Description</span></span>| 
 | --- | --- | --- | 
-| <b><span data-ttu-id="ada3d-113">errorCode</span><span class="sxs-lookup"><span data-stu-id="ada3d-113">errorCode</span></span></b>| <span data-ttu-id="ada3d-114">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="ada3d-114">32-bit signed integer</span></span>| <span data-ttu-id="ada3d-115">(Null にすることができます) エラーに関連付けられたコードです。</span><span class="sxs-lookup"><span data-stu-id="ada3d-115">Code associated with the error (can be null).</span></span>| 
-| <b><span data-ttu-id="ada3d-116">エラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="ada3d-116">errorMessage</span></span></b>| <span data-ttu-id="ada3d-117">string</span><span class="sxs-lookup"><span data-stu-id="ada3d-117">string</span></span>| <span data-ttu-id="ada3d-118">エラーの詳細を追加します。</span><span class="sxs-lookup"><span data-stu-id="ada3d-118">Additional details about the error.</span></span>| 
+| <b><span data-ttu-id="69e61-113">errorCode</span><span class="sxs-lookup"><span data-stu-id="69e61-113">errorCode</span></span></b>| <span data-ttu-id="69e61-114">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="69e61-114">32-bit signed integer</span></span>| <span data-ttu-id="69e61-115">(Null にすることができます) エラーに関連付けられたコードです。</span><span class="sxs-lookup"><span data-stu-id="69e61-115">Code associated with the error (can be null).</span></span>| 
+| <b><span data-ttu-id="69e61-116">エラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="69e61-116">errorMessage</span></span></b>| <span data-ttu-id="69e61-117">string</span><span class="sxs-lookup"><span data-stu-id="69e61-117">string</span></span>| <span data-ttu-id="69e61-118">エラーの詳細を追加します。</span><span class="sxs-lookup"><span data-stu-id="69e61-118">Additional details about the error.</span></span>| 
   
 <a id="ID4EVB"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="ada3d-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="ada3d-119">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="69e61-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="69e61-119">Sample JSON syntax</span></span>
  
 
 ```json
@@ -50,13 +50,13 @@ ms.locfileid: "4176898"
 <a id="ID4E5B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="ada3d-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="ada3d-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="69e61-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="69e61-120">See also</span></span>
  
 <a id="ID4EAC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="ada3d-121">Parent</span><span class="sxs-lookup"><span data-stu-id="ada3d-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="69e61-121">Parent</span><span class="sxs-lookup"><span data-stu-id="69e61-121">Parent</span></span> 
 
-[<span data-ttu-id="ada3d-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="ada3d-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="69e61-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="69e61-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    
