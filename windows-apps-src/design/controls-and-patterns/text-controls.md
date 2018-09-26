@@ -15,24 +15,21 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d68d0a5e6f2a22bc0012b3245ba050df271f7f92
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: fc18db25e6404e5236038badd8169ef7bcfc4817
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817410"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4210994"
 ---
 # <a name="text-controls"></a>テキスト コントロール
-
- 
 
 テキスト コントロールは、テキスト入力ボックス、パスワード ボックス、自動提案ボックス、テキスト ブロックで構成されています。 XAML フレームワークには、テキストのレンダリング、入力、編集用のいくつかのコントロールと、テキストの書式設定用のプロパティのセットが用意されています。
 
 - 読み取り専用テキストを表示するためのコントロールは、[TextBlock](text-block.md) および [RichTextBlock](rich-text-block.md) です。
-- テキストの入力と編集用のコントロールは、[TextBox](text-box.md)、[AutoSuggestBox](auto-suggest-box.md)、[PasswordBox](password-box.md)、[RichEditBox](rich-edit-box.md) です。
+- テキスト入力と編集用のコントロールは、: [TextBox](text-box.md)、 [RichEditBox](rich-edit-box.md)、 [AutoSuggestBox](auto-suggest-box.md)、および[PasswordBox](password-box.md)します。
 
-> **重要な API**: [AutoSuggestBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、[PasswordBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)、[RichEditBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、[RichTextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、[TextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[TextBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
-
+> **重要な Api**: [TextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、 [RichTextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、 [TextBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、 [RichEditBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、 [AutoSuggestBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、 [PasswordBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
@@ -124,28 +121,13 @@ TextBox を読み取り専用にすることはできますが、これは一時
 
 ## <a name="pen-input"></a>ペン入力
 
-> ペン入力機能は現在、Windows Insider Preview でのみ利用可能です。 機能名、用語、および機能は最終版ではありません。
-
 **適用対象:** TextBox、RichEditBox、AutoSuggestBox
 
 Windows 10 バージョン 1803 以降では、XAML テキスト入力ボックスは、[Windows Ink](../input/pen-and-stylus-interactions.md) を使用したペン入力の埋め込みをサポートしています。 ユーザーが Windows ペンを使用してテキスト入力ボックスでタップすると、テキスト ボックスは変換され、ユーザーは別の入力パネルを開かなくても、ペンを使用して直接書き込むことができます。
 
 ![ペンでタップするとテキスト ボックスが展開する](images/pen-input-expand.gif)
 
-ユーザーがテキスト ボックスの任意の場所に書き込むと、テキストが認識され、候補ウィンドウには認識結果が表示されます。 ユーザーは結果をタップしてそれを選択したり、さらに書き込んで提案された候補を受け入れたりすることができます。 リテラル (1 文字ずつ) による認識結果は候補ウィンドウに含まれているため、認識はディクショナリ内の単語に制限されません。 ユーザーが手書きで入力すると、受け入れられたテキスト入力は自然な手書き感を維持して Script フォントに変換されます。
-
-![ペン入力のあるテキスト ボックス](images/pen-input-1.png)
-
-ユーザーは、次のような標準的なジェスチャや操作を使用してテキストを編集できます。
-
-- _取り消し線_または_インクを消す_ - 単語や単語の一部を削除します
-- _結合_ - 単語間に円弧を描き、単語間のスペースを削除します
-- _挿入_- スペースを挿入するキャレット記号を描画します
-- _上書き_- 既存のテキストの上に書き込み、それを置き換えます
-
-![ペン入力を上書きする](images/pen-input-2.png)
-
-アプリが Windows 10 バージョン 1803 以降を対象として実行されている場合、埋め込みのテキスト入力は既定で有効になっています。 テキスト ボックスごとにオプトアウトして、機能を無効にし、テキスト入力パネルに戻すことができます。 埋め込まれたテキスト入力を無効にするには、テキスト コントロールの **IsHandwritingViewEnabled** プロパティを **false** に設定します。
+詳しくは、[手書きのビューを使って、テキスト入力](text-handwriting-view.md)を参照してください。
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>テキスト コントロールに適切なキーボードの選択
 
