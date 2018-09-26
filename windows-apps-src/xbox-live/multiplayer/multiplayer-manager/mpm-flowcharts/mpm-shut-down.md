@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: e437cd488c1a16020f4b315f418cb57c97e2b1b4
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4175652"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4210885"
 ---
-# <a name="flowchart---shut-down-after-a-multiplayer-game-is-complete"></a><span data-ttu-id="94bba-104">フローチャート - マルチプレイヤー ゲームが完了した後でシャットダウンする</span><span class="sxs-lookup"><span data-stu-id="94bba-104">Flowchart - Shut down after a multiplayer game is complete</span></span>
+# <a name="flowchart---shut-down-after-a-multiplayer-game-is-complete"></a><span data-ttu-id="cf311-104">フローチャート - マルチプレイヤー ゲームが完了した後でシャットダウンする</span><span class="sxs-lookup"><span data-stu-id="cf311-104">Flowchart - Shut down after a multiplayer game is complete</span></span>
 
-<span data-ttu-id="94bba-105">次のフローチャートでは、不要になったマルチプレイヤー セッションをシャットダウンするフローを示します。</span><span class="sxs-lookup"><span data-stu-id="94bba-105">The following flowcharts show the flow of shutting down a multiplayer session after it is no longer needed.</span></span>
+<span data-ttu-id="cf311-105">次のフローチャートでは、不要になったマルチプレイヤー セッションをシャットダウンするフローを示します。</span><span class="sxs-lookup"><span data-stu-id="cf311-105">The following flowcharts show the flow of shutting down a multiplayer session after it is no longer needed.</span></span>
 
-## <a name="shut-down-a-multiplayer-session"></a><span data-ttu-id="94bba-106">マルチプレイヤー セッションをシャットダウンする</span><span class="sxs-lookup"><span data-stu-id="94bba-106">Shut down a multiplayer session</span></span>
+## <a name="shut-down-a-multiplayer-session"></a><span data-ttu-id="cf311-106">マルチプレイヤー セッションをシャットダウンする</span><span class="sxs-lookup"><span data-stu-id="cf311-106">Shut down a multiplayer session</span></span>
 
 ![SmartMatch マッチメイキング](../../../images/multiplayer/mpm-shut-down.png)

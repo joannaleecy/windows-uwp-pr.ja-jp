@@ -11,101 +11,101 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b9175eda1d73a7678ac9fd304dc60ef228a57c7f
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4177220"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4210617"
 ---
-# <a name="xbox-live-sandboxes-introduction"></a><span data-ttu-id="e02ba-104">Xbox Live のサンドボックスの概要</span><span class="sxs-lookup"><span data-stu-id="e02ba-104">Xbox Live sandboxes introduction</span></span>
+# <a name="xbox-live-sandboxes-introduction"></a><span data-ttu-id="7e9de-104">Xbox Live のサンドボックスの概要</span><span class="sxs-lookup"><span data-stu-id="7e9de-104">Xbox Live sandboxes introduction</span></span>
 
-<span data-ttu-id="e02ba-105">「[Xbox Live サービス構成](xbox-live-service-configuration-creators.md)」では、タイトルに関する情報は [Windows デベロッパー センター](http://dev.windows.com)で構成する必要があることを説明しました。</span><span class="sxs-lookup"><span data-stu-id="e02ba-105">In the [Xbox Live service configuration](xbox-live-service-configuration-creators.md) article, it was explained that you must configure information about your title in [Windows Dev Center](http://dev.windows.com).</span></span> <span data-ttu-id="e02ba-106">この情報には、統計、ランキング、ローカライズなどが含まれます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-106">This information includes things like the stats, leaderboards, localization, and more.</span></span> <span data-ttu-id="e02ba-107">Xbox Live サービス構成への変更を Xbox Live の他の部分が取得し、タイトルからアクセスするには、その変更をデベロッパー センターから開発サンドボックスに公開する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e02ba-107">Changes to your Xbox Live service configuration need to be published from Dev Center into your development sandbox before the changes are picked up by the rest of Xbox Live and can be accessed in your title.</span></span>
+<span data-ttu-id="7e9de-105">「[Xbox Live サービス構成](xbox-live-service-configuration-creators.md)」では、タイトルに関する情報は [Windows デベロッパー センター](http://dev.windows.com)で構成する必要があることを説明しました。</span><span class="sxs-lookup"><span data-stu-id="7e9de-105">In the [Xbox Live service configuration](xbox-live-service-configuration-creators.md) article, it was explained that you must configure information about your title in [Windows Dev Center](http://dev.windows.com).</span></span> <span data-ttu-id="7e9de-106">この情報には、統計、ランキング、ローカライズなどが含まれます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-106">This information includes things like the stats, leaderboards, localization, and more.</span></span> <span data-ttu-id="7e9de-107">Xbox Live サービス構成への変更を Xbox Live の他の部分が取得し、タイトルからアクセスするには、その変更をデベロッパー センターから開発サンドボックスに公開する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7e9de-107">Changes to your Xbox Live service configuration need to be published from Dev Center into your development sandbox before the changes are picked up by the rest of Xbox Live and can be accessed in your title.</span></span>
 
-<span data-ttu-id="e02ba-108">開発サンドボックスでは、分離された環境でタイトルへの変更に取り組むことができます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-108">A development sandbox allows you to work on changes to your title in an isolated environment.</span></span> <span data-ttu-id="e02ba-109">サンドボックスには、いくつかの利点があります。</span><span class="sxs-lookup"><span data-stu-id="e02ba-109">Sandboxes offer several benefits:</span></span>
+<span data-ttu-id="7e9de-108">開発サンドボックスでは、分離された環境でタイトルへの変更に取り組むことができます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-108">A development sandbox allows you to work on changes to your title in an isolated environment.</span></span> <span data-ttu-id="7e9de-109">サンドボックスには、いくつかの利点があります。</span><span class="sxs-lookup"><span data-stu-id="7e9de-109">Sandboxes offer several benefits:</span></span>
 
-1. <span data-ttu-id="e02ba-110">現在公開されているバージョンに影響を与えずに、タイトルの更新への変更を反復処理できます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-110">You can iterate on changes to an update for your title without affecting the version that is live in production.</span></span>
-2. <span data-ttu-id="e02ba-111">セキュリティ上の理由から、一部のツールは開発サンドボックス内でのみ動作します。</span><span class="sxs-lookup"><span data-stu-id="e02ba-111">For security reasons, some tools only work in a development sandbox.</span></span>
-3. <span data-ttu-id="e02ba-112">他の公開元は、サンドボックスへのアクセス権が付与されない限り、その内部での作業内容を閲覧できません。</span><span class="sxs-lookup"><span data-stu-id="e02ba-112">Other publishers cannot see what you are working on without being granted access to your sandbox.</span></span>
+1. <span data-ttu-id="7e9de-110">現在公開されているバージョンに影響を与えずに、タイトルの更新への変更を反復処理できます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-110">You can iterate on changes to an update for your title without affecting the version that is live in production.</span></span>
+2. <span data-ttu-id="7e9de-111">セキュリティ上の理由から、一部のツールは開発サンドボックス内でのみ動作します。</span><span class="sxs-lookup"><span data-stu-id="7e9de-111">For security reasons, some tools only work in a development sandbox.</span></span>
+3. <span data-ttu-id="7e9de-112">他の公開元は、サンドボックスへのアクセス権が付与されない限り、その内部での作業内容を閲覧できません。</span><span class="sxs-lookup"><span data-stu-id="7e9de-112">Other publishers cannot see what you are working on without being granted access to your sandbox.</span></span>
 
-<span data-ttu-id="e02ba-113">既定では、Xbox One 本体と Windows 10 PC は RETAIL サンドボックスになっています。</span><span class="sxs-lookup"><span data-stu-id="e02ba-113">By default, Xbox One consoles and Windows 10 PCs are in the RETAIL sandbox.</span></span> <span data-ttu-id="e02ba-114">Xbox Live サービス構成のバージョンにアクセスするには、PC や Xbox One を開発サンドボックスに切り替える必要があります。</span><span class="sxs-lookup"><span data-stu-id="e02ba-114">You will need to switch your PC and/or Xbox One to the development sandbox to access that version of the Xbox Live service configuration.</span></span> <span data-ttu-id="e02ba-115">RETAIL で何かをテストする必要がある場合や、休憩を取ってお気に入りの Xbox Live ゲームをプレイする場合は、デバイスを元の RETAIL サンドボックスに戻す必要がある点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="e02ba-115">It's important to remember to change the device back to the RETAIL sandbox if you need to test something in RETAIL or want to take a break to play your favorite Xbox Live game.</span></span>
+<span data-ttu-id="7e9de-113">既定では、Xbox One 本体と Windows 10 PC は RETAIL サンドボックスになっています。</span><span class="sxs-lookup"><span data-stu-id="7e9de-113">By default, Xbox One consoles and Windows 10 PCs are in the RETAIL sandbox.</span></span> <span data-ttu-id="7e9de-114">Xbox Live サービス構成のバージョンにアクセスするには、PC や Xbox One を開発サンドボックスに切り替える必要があります。</span><span class="sxs-lookup"><span data-stu-id="7e9de-114">You will need to switch your PC and/or Xbox One to the development sandbox to access that version of the Xbox Live service configuration.</span></span> <span data-ttu-id="7e9de-115">RETAIL で何かをテストする必要がある場合や、休憩を取ってお気に入りの Xbox Live ゲームをプレイする場合は、デバイスを元の RETAIL サンドボックスに戻す必要がある点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="7e9de-115">It's important to remember to change the device back to the RETAIL sandbox if you need to test something in RETAIL or want to take a break to play your favorite Xbox Live game.</span></span>
 
-## <a name="finding-out-about-your-sandbox"></a><span data-ttu-id="e02ba-116">サンドボックスを調べる</span><span class="sxs-lookup"><span data-stu-id="e02ba-116">Finding out about your sandbox</span></span>
+## <a name="finding-out-about-your-sandbox"></a><span data-ttu-id="7e9de-116">サンドボックスを調べる</span><span class="sxs-lookup"><span data-stu-id="7e9de-116">Finding out about your sandbox</span></span>
 
-<span data-ttu-id="e02ba-117">サンドボックスは、タイトルの作成時に作られます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-117">A sandbox is created for you when you create a title.</span></span> <span data-ttu-id="e02ba-118">サンド ボックス ID を検索するには、**Windows デベロッパー センター**で製品を開き、**[サービス]** > **[Xbox Live]** の順に選びます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-118">You can find your Sandbox ID by opening your product in **Windows Dev Center** and navigating to **Services** > **Xbox Live**.</span></span> <span data-ttu-id="e02ba-119">ページの上部に**サンドボックス ID** が表示されます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-119">The **Sandbox ID** will be listed at the top of the page.</span></span>
+<span data-ttu-id="7e9de-117">サンドボックスは、タイトルの作成時に作られます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-117">A sandbox is created for you when you create a title.</span></span> <span data-ttu-id="7e9de-118">サンド ボックス ID を検索するには、**Windows デベロッパー センター**で製品を開き、**[サービス]** > **[Xbox Live]** の順に選びます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-118">You can find your Sandbox ID by opening your product in **Windows Dev Center** and navigating to **Services** > **Xbox Live**.</span></span> <span data-ttu-id="7e9de-119">ページの上部に**サンドボックス ID** が表示されます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-119">The **Sandbox ID** will be listed at the top of the page.</span></span>
 
 ![](../images/getting_started/devcenter_sandbox_id.png)
 
-## <a name="switch-your-pcs-development-sandbox"></a><span data-ttu-id="e02ba-120">PC の開発サンドボックスを切り替える</span><span class="sxs-lookup"><span data-stu-id="e02ba-120">Switch your PC's development sandbox</span></span>
-<span data-ttu-id="e02ba-121">Unity、Windows デバイス ポータル (WPD)、またはコマンド ラインを使って、PC を開発サンドボックスに切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-121">You can switch your PC into the development sandbox by using Unity, Windows Device Portal (WPD) or via command-line.</span></span>
+## <a name="switch-your-pcs-development-sandbox"></a><span data-ttu-id="7e9de-120">PC の開発サンドボックスを切り替える</span><span class="sxs-lookup"><span data-stu-id="7e9de-120">Switch your PC's development sandbox</span></span>
+<span data-ttu-id="7e9de-121">Unity、Windows デバイス ポータル (WPD)、またはコマンド ラインを使って、PC を開発サンドボックスに切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-121">You can switch your PC into the development sandbox by using Unity, Windows Device Portal (WPD) or via command-line.</span></span>
 
-### <a name="unity"></a><span data-ttu-id="e02ba-122">Unity</span><span class="sxs-lookup"><span data-stu-id="e02ba-122">Unity</span></span>
+### <a name="unity"></a><span data-ttu-id="7e9de-122">Unity</span><span class="sxs-lookup"><span data-stu-id="7e9de-122">Unity</span></span>
 
-#### <a name="prerequisites"></a><span data-ttu-id="e02ba-123">前提条件</span><span class="sxs-lookup"><span data-stu-id="e02ba-123">Prerequisites</span></span>
-<span data-ttu-id="e02ba-124">Unity で開発サンドボックスとの切り替えを行うには、以下の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="e02ba-124">The following needs to be done before you can switch in and out of the development sandbox in Unity:</span></span>
+#### <a name="prerequisites"></a><span data-ttu-id="7e9de-123">前提条件</span><span class="sxs-lookup"><span data-stu-id="7e9de-123">Prerequisites</span></span>
+<span data-ttu-id="7e9de-124">Unity で開発サンドボックスとの切り替えを行うには、以下の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="7e9de-124">The following needs to be done before you can switch in and out of the development sandbox in Unity:</span></span>
 
-1. [<span data-ttu-id="e02ba-125">Unity で Xbox Live を構成する</span><span class="sxs-lookup"><span data-stu-id="e02ba-125">Configure Xbox Live in Unity</span></span>](configure-xbox-live-in-unity.md)
+1. [<span data-ttu-id="7e9de-125">Unity で Xbox Live を構成する</span><span class="sxs-lookup"><span data-stu-id="7e9de-125">Configure Xbox Live in Unity</span></span>](configure-xbox-live-in-unity.md)
 
-#### <a name="switch-sandboxes"></a><span data-ttu-id="e02ba-126">サンドボックスを切り替える</span><span class="sxs-lookup"><span data-stu-id="e02ba-126">Switch Sandboxes</span></span>
-<span data-ttu-id="e02ba-127">組み込みの Xbox Live の構成ウィンドウを使うと、開発サンドボックスと RETAIL サンドボックスを簡単に切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-127">The built in Xbox Live Configuration window lets you toggle between your development and RETAIL sandboxes easily.</span></span> <span data-ttu-id="e02ba-128">開始するには、メニューで **[Xbox Live]** > **[構成]** の順に移動します。</span><span class="sxs-lookup"><span data-stu-id="e02ba-128">To start, go to **Xbox Live** > **Configuration** in the menu.</span></span> <span data-ttu-id="e02ba-129">**[Developer Mode Configuration]** セクションに現在のサンドボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-129">You can see the current sandbox in the **Developer Mode Configuration** section.</span></span>
+#### <a name="switch-sandboxes"></a><span data-ttu-id="7e9de-126">サンドボックスを切り替える</span><span class="sxs-lookup"><span data-stu-id="7e9de-126">Switch Sandboxes</span></span>
+<span data-ttu-id="7e9de-127">組み込みの Xbox Live の構成ウィンドウを使うと、開発サンドボックスと RETAIL サンドボックスを簡単に切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-127">The built in Xbox Live Configuration window lets you toggle between your development and RETAIL sandboxes easily.</span></span> <span data-ttu-id="7e9de-128">開始するには、メニューで **[Xbox Live]** > **[構成]** の順に移動します。</span><span class="sxs-lookup"><span data-stu-id="7e9de-128">To start, go to **Xbox Live** > **Configuration** in the menu.</span></span> <span data-ttu-id="7e9de-129">**[Developer Mode Configuration]** セクションに現在のサンドボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-129">You can see the current sandbox in the **Developer Mode Configuration** section.</span></span>
 
-1. <span data-ttu-id="e02ba-130">**[Developer Mode]** に **[enabled]** と表示された場合、現在ゲームに関連付けられた開発サンドボックスになっています。</span><span class="sxs-lookup"><span data-stu-id="e02ba-130">If **Developer Mode** says **enabled**, then you are currently in the development sandbox associated with your game.</span></span> <span data-ttu-id="e02ba-131">**[Switch back to Retail Mode]** ボタンをクリックすると切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-131">You can click the **Switch back to Retail Mode** button to switch out.</span></span>
-2. <span data-ttu-id="e02ba-132">**[Developer Mode]** が **[disabled]** の場合、現在 RETAIL サンドボックスになっています。</span><span class="sxs-lookup"><span data-stu-id="e02ba-132">If **Developer Mode** says **disabled**, then you are currently in the RETAIL sandbox.</span></span> <span data-ttu-id="e02ba-133">**[Switch to Developer Mode]** ボタンをクリックすると再度切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-133">You can click the **Switch to Developer Mode** button to switch in.</span></span>
+1. <span data-ttu-id="7e9de-130">**[Developer Mode]** に **[enabled]** と表示された場合、現在ゲームに関連付けられた開発サンドボックスになっています。</span><span class="sxs-lookup"><span data-stu-id="7e9de-130">If **Developer Mode** says **enabled**, then you are currently in the development sandbox associated with your game.</span></span> <span data-ttu-id="7e9de-131">**[Switch back to Retail Mode]** ボタンをクリックすると切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-131">You can click the **Switch back to Retail Mode** button to switch out.</span></span>
+2. <span data-ttu-id="7e9de-132">**[Developer Mode]** が **[disabled]** の場合、現在 RETAIL サンドボックスになっています。</span><span class="sxs-lookup"><span data-stu-id="7e9de-132">If **Developer Mode** says **disabled**, then you are currently in the RETAIL sandbox.</span></span> <span data-ttu-id="7e9de-133">**[Switch to Developer Mode]** ボタンをクリックすると再度切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-133">You can click the **Switch to Developer Mode** button to switch in.</span></span>
 
 ![XBL 有効](../images/unity/unity-xbl-dev-mode.PNG)
 
-### <a name="windows-device-portal"></a><span data-ttu-id="e02ba-135">Windows デバイス ポータル</span><span class="sxs-lookup"><span data-stu-id="e02ba-135">Windows Device Portal</span></span>
+### <a name="windows-device-portal"></a><span data-ttu-id="7e9de-135">Windows デバイス ポータル</span><span class="sxs-lookup"><span data-stu-id="7e9de-135">Windows Device Portal</span></span>
 
-#### <a name="prerequisites"></a><span data-ttu-id="e02ba-136">前提条件</span><span class="sxs-lookup"><span data-stu-id="e02ba-136">Prerequisites</span></span>
-<span data-ttu-id="e02ba-137">Windows デバイス ポータル (WPD) でサンドボックスに切り替える前に、次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="e02ba-137">The following needs to be done before you switch your sandbox in Windows Device Portal (WPD):</span></span>
+#### <a name="prerequisites"></a><span data-ttu-id="7e9de-136">前提条件</span><span class="sxs-lookup"><span data-stu-id="7e9de-136">Prerequisites</span></span>
+<span data-ttu-id="7e9de-137">Windows デバイス ポータル (WPD) でサンドボックスに切り替える前に、次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="7e9de-137">The following needs to be done before you switch your sandbox in Windows Device Portal (WPD):</span></span>
 
-1. [<span data-ttu-id="e02ba-138">Windows デスクトップでデバイス ポータルをセットアップする</span><span class="sxs-lookup"><span data-stu-id="e02ba-138">Setup Device Portal on Windows Desktop</span></span>](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop)
+1. [<span data-ttu-id="7e9de-138">Windows デスクトップでデバイス ポータルをセットアップする</span><span class="sxs-lookup"><span data-stu-id="7e9de-138">Setup Device Portal on Windows Desktop</span></span>](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop)
 
-#### <a name="switch-sandboxes"></a><span data-ttu-id="e02ba-139">サンドボックスを切り替える</span><span class="sxs-lookup"><span data-stu-id="e02ba-139">Switch Sandboxes</span></span>
+#### <a name="switch-sandboxes"></a><span data-ttu-id="7e9de-139">サンドボックスを切り替える</span><span class="sxs-lookup"><span data-stu-id="7e9de-139">Switch Sandboxes</span></span>
 
-1. <span data-ttu-id="e02ba-140">「[Windows デスクトップでデバイス ポータルをセットアップする](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop)」で説明したように Web ブラウザーで **Windows デバイス ポータル**に接続してこのポータルを開きます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-140">Open **Windows Dev Portal** by connecting to it in your web browser, as described in the [Setup Device Portal on Windows Desktop](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop) article.</span></span>
-2. <span data-ttu-id="e02ba-141">**[Xbox Live]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e02ba-141">Click on **Xbox Live**.</span></span>
-3. <span data-ttu-id="e02ba-142">テキスト フィールドに開発サンドボックスを入力し、**[change]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e02ba-142">Enter your development sandbox in the text field and click **change**.</span></span>
+1. <span data-ttu-id="7e9de-140">「[Windows デスクトップでデバイス ポータルをセットアップする](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop)」で説明したように Web ブラウザーで **Windows デバイス ポータル**に接続してこのポータルを開きます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-140">Open **Windows Dev Portal** by connecting to it in your web browser, as described in the [Setup Device Portal on Windows Desktop](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop) article.</span></span>
+2. <span data-ttu-id="7e9de-141">**[Xbox Live]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7e9de-141">Click on **Xbox Live**.</span></span>
+3. <span data-ttu-id="7e9de-142">テキスト フィールドに開発サンドボックスを入力し、**[change]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7e9de-142">Enter your development sandbox in the text field and click **change**.</span></span>
 
 ![](../images/getting_started/wdp_switch_sandbox.png)
 
-<span data-ttu-id="e02ba-143">RETAIL に戻るには、ここで「RETAIL」と入力します。</span><span class="sxs-lookup"><span data-stu-id="e02ba-143">To switch back to RETAIL, you can enter RETAIL here.</span></span>
+<span data-ttu-id="7e9de-143">RETAIL に戻るには、ここで「RETAIL」と入力します。</span><span class="sxs-lookup"><span data-stu-id="7e9de-143">To switch back to RETAIL, you can enter RETAIL here.</span></span>
 
-### <a name="command-line"></a><span data-ttu-id="e02ba-144">コマンド ライン</span><span class="sxs-lookup"><span data-stu-id="e02ba-144">Command-line</span></span>
+### <a name="command-line"></a><span data-ttu-id="7e9de-144">コマンド ライン</span><span class="sxs-lookup"><span data-stu-id="7e9de-144">Command-line</span></span>
 
-#### <a name="prerequisites"></a><span data-ttu-id="e02ba-145">前提条件</span><span class="sxs-lookup"><span data-stu-id="e02ba-145">Prerequisites</span></span>
-<span data-ttu-id="e02ba-146">コマンド ラインを使って開発サンドボックスとの切り替えを行うには、以下の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="e02ba-146">The following needs to be done before you can switch in and out of the development sandbox via command-line:</span></span>
+#### <a name="prerequisites"></a><span data-ttu-id="7e9de-145">前提条件</span><span class="sxs-lookup"><span data-stu-id="7e9de-145">Prerequisites</span></span>
+<span data-ttu-id="7e9de-146">コマンド ラインを使って開発サンドボックスとの切り替えを行うには、以下の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="7e9de-146">The following needs to be done before you can switch in and out of the development sandbox via command-line:</span></span>
 
-1. <span data-ttu-id="e02ba-147">[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) で Xbox Live ツール パッケージをダウンロードし、解凍します。</span><span class="sxs-lookup"><span data-stu-id="e02ba-147">Download the Xbox Live Tools Package at [https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) and unzip.</span></span>
+1. <span data-ttu-id="7e9de-147">[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) で Xbox Live ツール パッケージをダウンロードし、解凍します。</span><span class="sxs-lookup"><span data-stu-id="7e9de-147">Download the Xbox Live Tools Package at [https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) and unzip.</span></span>
 
-#### <a name="switch-sandboxes"></a><span data-ttu-id="e02ba-148">サンドボックスを切り替える</span><span class="sxs-lookup"><span data-stu-id="e02ba-148">Switch Sandboxes</span></span>
-1. <span data-ttu-id="e02ba-149">**管理者モード**で SwitchSandbox.cmd バッチ ファイルを実行します。</span><span class="sxs-lookup"><span data-stu-id="e02ba-149">Run SwitchSandbox.cmd batch file in **administrator mode**.</span></span>
+#### <a name="switch-sandboxes"></a><span data-ttu-id="7e9de-148">サンドボックスを切り替える</span><span class="sxs-lookup"><span data-stu-id="7e9de-148">Switch Sandboxes</span></span>
+1. <span data-ttu-id="7e9de-149">**管理者モード**で SwitchSandbox.cmd バッチ ファイルを実行します。</span><span class="sxs-lookup"><span data-stu-id="7e9de-149">Run SwitchSandbox.cmd batch file in **administrator mode**.</span></span>
 
-<span data-ttu-id="e02ba-150">サンドボックスを切り替えるには、管理者モードでこのバッチ ファイルを実行します。</span><span class="sxs-lookup"><span data-stu-id="e02ba-150">Run this in Administrator mode to switch your sandbox.</span></span> <span data-ttu-id="e02ba-151">最初の引数がサンドボックスです。</span><span class="sxs-lookup"><span data-stu-id="e02ba-151">The first argument is the sandbox.</span></span> <span data-ttu-id="e02ba-152">たとえば、MJJSQH.58 サンドボックスに切り替える場合は、このコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="e02ba-152">For example, if you are trying to switch to the MJJSQH.58 sandbox, you would use this command:</span></span>
+<span data-ttu-id="7e9de-150">サンドボックスを切り替えるには、管理者モードでこのバッチ ファイルを実行します。</span><span class="sxs-lookup"><span data-stu-id="7e9de-150">Run this in Administrator mode to switch your sandbox.</span></span> <span data-ttu-id="7e9de-151">最初の引数がサンドボックスです。</span><span class="sxs-lookup"><span data-stu-id="7e9de-151">The first argument is the sandbox.</span></span> <span data-ttu-id="7e9de-152">たとえば、MJJSQH.58 サンドボックスに切り替える場合は、このコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="7e9de-152">For example, if you are trying to switch to the MJJSQH.58 sandbox, you would use this command:</span></span>
 
 ```cmd
 SwitchSandbox.cmd MJJSQH.58
 ```
 
-<span data-ttu-id="e02ba-153">RETAIL に戻るには、2 番目の引数として RETAIL を指定するだけです。</span><span class="sxs-lookup"><span data-stu-id="e02ba-153">To switch back to RETAIL, you simply provide that as the second argument.</span></span>
+<span data-ttu-id="7e9de-153">RETAIL に戻るには、2 番目の引数として RETAIL を指定するだけです。</span><span class="sxs-lookup"><span data-stu-id="7e9de-153">To switch back to RETAIL, you simply provide that as the second argument.</span></span>
 
 ```cmd
 SwitchSandbox.cmd RETAIL
 ```
 
-## <a name="switch-your-xbox-one-console-development-sandbox"></a><span data-ttu-id="e02ba-154">Xbox One 本体の開発サンドボックスを切り替える</span><span class="sxs-lookup"><span data-stu-id="e02ba-154">Switch your Xbox One console development sandbox</span></span>
+## <a name="switch-your-xbox-one-console-development-sandbox"></a><span data-ttu-id="7e9de-154">Xbox One 本体の開発サンドボックスを切り替える</span><span class="sxs-lookup"><span data-stu-id="7e9de-154">Switch your Xbox One console development sandbox</span></span>
 
-### <a name="using-xbox-dev-portal"></a><span data-ttu-id="e02ba-155">Xbox デベロッパー ポータルの使用</span><span class="sxs-lookup"><span data-stu-id="e02ba-155">Using Xbox Dev Portal</span></span>
+### <a name="using-xbox-dev-portal"></a><span data-ttu-id="7e9de-155">Xbox デベロッパー ポータルの使用</span><span class="sxs-lookup"><span data-stu-id="7e9de-155">Using Xbox Dev Portal</span></span>
 
-<span data-ttu-id="e02ba-156">Xbox デベロッパー ポータルを使用して、本体でサンドボックスを変更できます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-156">You can use the Xbox Dev Portal to change the sandbox on your console.</span></span> <span data-ttu-id="e02ba-157">これを行うには、使用している本体で [[Dev Home]](https://docs.microsoft.com/windows/uwp/xbox-apps/dev-home) に移動して[デバイス ポータルを有効](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox)にします。</span><span class="sxs-lookup"><span data-stu-id="e02ba-157">To do this, go to [Dev Home](https://docs.microsoft.com/windows/uwp/xbox-apps/dev-home) on your console and [enable the Device Portal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox).</span></span> <span data-ttu-id="e02ba-158">Xbox デベロッパー ポータルを開いたら、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="e02ba-158">Once you have the Xbox Dev Portal open:</span></span>
+<span data-ttu-id="7e9de-156">Xbox デベロッパー ポータルを使用して、本体でサンドボックスを変更できます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-156">You can use the Xbox Dev Portal to change the sandbox on your console.</span></span> <span data-ttu-id="7e9de-157">これを行うには、使用している本体で [[Dev Home]](https://docs.microsoft.com/windows/uwp/xbox-apps/dev-home) に移動して[デバイス ポータルを有効](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox)にします。</span><span class="sxs-lookup"><span data-stu-id="7e9de-157">To do this, go to [Dev Home](https://docs.microsoft.com/windows/uwp/xbox-apps/dev-home) on your console and [enable the Device Portal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox).</span></span> <span data-ttu-id="7e9de-158">Xbox デベロッパー ポータルを開いたら、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="7e9de-158">Once you have the Xbox Dev Portal open:</span></span>
 
-2. <span data-ttu-id="e02ba-159">**[Xbox Live]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e02ba-159">Click on **Xbox Live**.</span></span>
-3. <span data-ttu-id="e02ba-160">テキスト フィールドに開発サンドボックスを入力し、**[change]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e02ba-160">Enter your development sandbox in the text field and chick **change**.</span></span>
+2. <span data-ttu-id="7e9de-159">**[Xbox Live]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7e9de-159">Click on **Xbox Live**.</span></span>
+3. <span data-ttu-id="7e9de-160">テキスト フィールドに開発サンドボックスを入力し、**[change]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7e9de-160">Enter your development sandbox in the text field and chick **change**.</span></span>
 
 ![](../images/getting_started/xdp_switch_sandbox.png)
 
-### <a name="using-xbox-one-console-ui"></a><span data-ttu-id="e02ba-161">Xbox One 本体の UI の使用</span><span class="sxs-lookup"><span data-stu-id="e02ba-161">Using Xbox One console UI</span></span>
+### <a name="using-xbox-one-console-ui"></a><span data-ttu-id="7e9de-161">Xbox One 本体の UI の使用</span><span class="sxs-lookup"><span data-stu-id="7e9de-161">Using Xbox One console UI</span></span>
 
-<span data-ttu-id="e02ba-162">[Dev Home](https://docs.microsoft.com/windows/uwp/xbox-apps/dev-home) を使用して、本体で直接サンドボックスを変更できます。</span><span class="sxs-lookup"><span data-stu-id="e02ba-162">You can use [Dev Home](https://docs.microsoft.com/windows/uwp/xbox-apps/dev-home) to change the sandbox on your console directly:</span></span>
+<span data-ttu-id="7e9de-162">[Dev Home](https://docs.microsoft.com/windows/uwp/xbox-apps/dev-home) を使用して、本体で直接サンドボックスを変更できます。</span><span class="sxs-lookup"><span data-stu-id="7e9de-162">You can use [Dev Home](https://docs.microsoft.com/windows/uwp/xbox-apps/dev-home) to change the sandbox on your console directly:</span></span>
 
-1. <span data-ttu-id="e02ba-163">**[クイックアクション]** にある **[サンドボックスの変更]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e02ba-163">Click **Change Sandbox**, located under **Quick Actions**.</span></span>
-2. <span data-ttu-id="e02ba-164">サンドボックス ID を入力し、**[保存すて再起動]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e02ba-164">Enter the sandbox ID and then click **Save and restart**.</span></span>
+1. <span data-ttu-id="7e9de-163">**[クイックアクション]** にある **[サンドボックスの変更]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7e9de-163">Click **Change Sandbox**, located under **Quick Actions**.</span></span>
+2. <span data-ttu-id="7e9de-164">サンドボックス ID を入力し、**[保存すて再起動]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7e9de-164">Enter the sandbox ID and then click **Save and restart**.</span></span>

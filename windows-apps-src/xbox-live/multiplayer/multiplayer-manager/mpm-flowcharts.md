@@ -11,28 +11,28 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: 684850d472d02463501f29b62e771744bf621e72
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4178256"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4205747"
 ---
-# <a name="multiplayer-manager-flowcharts"></a><span data-ttu-id="8d577-104">Multiplayer Manager のフローチャート</span><span class="sxs-lookup"><span data-stu-id="8d577-104">Multiplayer manager flowcharts</span></span>
+# <a name="multiplayer-manager-flowcharts"></a><span data-ttu-id="ed95a-104">Multiplayer Manager のフローチャート</span><span class="sxs-lookup"><span data-stu-id="ed95a-104">Multiplayer manager flowcharts</span></span>
 
-<span data-ttu-id="8d577-105">このセクションでは、Multiplayer Manager の特定のシナリオを実装するときのコード フローを理解するのに役立つフローチャートを示します。</span><span class="sxs-lookup"><span data-stu-id="8d577-105">This section contains flowchart diagrams that can help you to visualize the code flow to implementing specific multiplayer manager scenarios.</span></span>
+<span data-ttu-id="ed95a-105">このセクションでは、Multiplayer Manager の特定のシナリオを実装するときのコード フローを理解するのに役立つフローチャートを示します。</span><span class="sxs-lookup"><span data-stu-id="ed95a-105">This section contains flowchart diagrams that can help you to visualize the code flow to implementing specific multiplayer manager scenarios.</span></span>
 
-* [<span data-ttu-id="8d577-106">フレンドとマルチプレイヤー/協力型ゲームをプレイする</span><span class="sxs-lookup"><span data-stu-id="8d577-106">Play a multiplayer/co-op game with friends</span></span>](mpm-flowcharts/mpm-play-with-friends.md)
+* [<span data-ttu-id="ed95a-106">フレンドとマルチプレイヤー/協力型ゲームをプレイする</span><span class="sxs-lookup"><span data-stu-id="ed95a-106">Play a multiplayer/co-op game with friends</span></span>](mpm-flowcharts/mpm-play-with-friends.md)
 
-* [<span data-ttu-id="8d577-107">SmartMatch マッチメイキングを使用してマルチプレイヤー ゲームをプレイする</span><span class="sxs-lookup"><span data-stu-id="8d577-107">Play a multiplayer game by using SmartMatch matchmaking</span></span>](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md)
+* [<span data-ttu-id="ed95a-107">SmartMatch マッチメイキングを使用してマルチプレイヤー ゲームをプレイする</span><span class="sxs-lookup"><span data-stu-id="ed95a-107">Play a multiplayer game by using SmartMatch matchmaking</span></span>](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md)
 
-* [<span data-ttu-id="8d577-108">マッチメイキングを使用し、サービス品質を管理する</span><span class="sxs-lookup"><span data-stu-id="8d577-108">Use matchmaking and manage Quality of Service</span></span>](mpm-flowcharts/mpm-use-matchmaking-and-qos.md)
+* [<span data-ttu-id="ed95a-108">マッチメイキングを使用し、サービス品質を管理する</span><span class="sxs-lookup"><span data-stu-id="ed95a-108">Use matchmaking and manage Quality of Service</span></span>](mpm-flowcharts/mpm-use-matchmaking-and-qos.md)
 
-* [<span data-ttu-id="8d577-109">別のプレイヤーに招待を送信する</span><span class="sxs-lookup"><span data-stu-id="8d577-109">Send an invitation to another player</span></span>](mpm-flowcharts/mpm-send-invites.md)
+* [<span data-ttu-id="ed95a-109">別のプレイヤーに招待を送信する</span><span class="sxs-lookup"><span data-stu-id="ed95a-109">Send an invitation to another player</span></span>](mpm-flowcharts/mpm-send-invites.md)
 
-* [<span data-ttu-id="8d577-110">プロトコルのアクティブ化を処理する</span><span class="sxs-lookup"><span data-stu-id="8d577-110">Handle protocol activation</span></span>](mpm-flowcharts/mpm-on-protocol-activation.md)
+* [<span data-ttu-id="ed95a-110">プロトコルのアクティブ化を処理する</span><span class="sxs-lookup"><span data-stu-id="ed95a-110">Handle protocol activation</span></span>](mpm-flowcharts/mpm-on-protocol-activation.md)
 
-* [<span data-ttu-id="8d577-111">マルチプレイヤー ゲームで空いているスロットを埋める</span><span class="sxs-lookup"><span data-stu-id="8d577-111">Fill open slots in a multiplayer game</span></span>](mpm-flowcharts/mpm-fill-open-slots.md)
+* [<span data-ttu-id="ed95a-111">マルチプレイヤー ゲームで空いているスロットを埋める</span><span class="sxs-lookup"><span data-stu-id="ed95a-111">Fill open slots in a multiplayer game</span></span>](mpm-flowcharts/mpm-fill-open-slots.md)
 
-* [<span data-ttu-id="8d577-112">ホストの移行を処理する</span><span class="sxs-lookup"><span data-stu-id="8d577-112">Handle host migration</span></span>](mpm-flowcharts/mpm-host-migration.md)
+* [<span data-ttu-id="ed95a-112">ホストの移行を処理する</span><span class="sxs-lookup"><span data-stu-id="ed95a-112">Handle host migration</span></span>](mpm-flowcharts/mpm-host-migration.md)
 
-* [<span data-ttu-id="8d577-113">マルチプレイヤー セッションをシャットダウンする</span><span class="sxs-lookup"><span data-stu-id="8d577-113">Shut down a multiplayer session</span></span>](mpm-flowcharts/mpm-shut-down.md)
+* [<span data-ttu-id="ed95a-113">マルチプレイヤー セッションをシャットダウンする</span><span class="sxs-lookup"><span data-stu-id="ed95a-113">Shut down a multiplayer session</span></span>](mpm-flowcharts/mpm-shut-down.md)

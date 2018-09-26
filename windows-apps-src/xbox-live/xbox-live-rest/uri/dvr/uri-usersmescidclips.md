@@ -12,45 +12,45 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ddb5800be9f96b7b90ed816f094cb38d83ee4727
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4175118"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4211921"
 ---
-# <a name="usersmescidsscidclips"></a><span data-ttu-id="9a692-104">/users/me/scids/{scid}/clips</span><span class="sxs-lookup"><span data-stu-id="9a692-104">/users/me/scids/{scid}/clips</span></span>
-<span data-ttu-id="9a692-105">最初のアクセスは、要求をアップロードします。</span><span class="sxs-lookup"><span data-stu-id="9a692-105">Access an initial upload request.</span></span> <span data-ttu-id="9a692-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。</span><span class="sxs-lookup"><span data-stu-id="9a692-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>
+# <a name="usersmescidsscidclips"></a><span data-ttu-id="e3186-104">/users/me/scids/{scid}/clips</span><span class="sxs-lookup"><span data-stu-id="e3186-104">/users/me/scids/{scid}/clips</span></span>
+<span data-ttu-id="e3186-105">最初のアクセスは、要求をアップロードします。</span><span class="sxs-lookup"><span data-stu-id="e3186-105">Access an initial upload request.</span></span> <span data-ttu-id="e3186-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。</span><span class="sxs-lookup"><span data-stu-id="e3186-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>
  
-  * [<span data-ttu-id="9a692-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9a692-107">URI parameters</span></span>](#ID4EX)
+  * [<span data-ttu-id="e3186-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="e3186-107">URI parameters</span></span>](#ID4EX)
  
 <a id="ID4EX"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="9a692-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9a692-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="e3186-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="e3186-108">URI parameters</span></span>
  
-| <span data-ttu-id="9a692-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="9a692-109">Parameter</span></span>| <span data-ttu-id="9a692-110">型</span><span class="sxs-lookup"><span data-stu-id="9a692-110">Type</span></span>| <span data-ttu-id="9a692-111">説明</span><span class="sxs-lookup"><span data-stu-id="9a692-111">Description</span></span>| 
+| <span data-ttu-id="e3186-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="e3186-109">Parameter</span></span>| <span data-ttu-id="e3186-110">型</span><span class="sxs-lookup"><span data-stu-id="e3186-110">Type</span></span>| <span data-ttu-id="e3186-111">説明</span><span class="sxs-lookup"><span data-stu-id="e3186-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="9a692-112">scid</span><span class="sxs-lookup"><span data-stu-id="9a692-112">scid</span></span>| <span data-ttu-id="9a692-113">string</span><span class="sxs-lookup"><span data-stu-id="9a692-113">string</span></span>| <span data-ttu-id="9a692-114">アクセスされているリソースのサービス構成 ID。</span><span class="sxs-lookup"><span data-stu-id="9a692-114">Service Config ID of the resource that is being accessed.</span></span> <span data-ttu-id="9a692-115">認証されたユーザーの SCID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9a692-115">Must match the SCID of the authenticated user.</span></span>| 
+| <span data-ttu-id="e3186-112">scid</span><span class="sxs-lookup"><span data-stu-id="e3186-112">scid</span></span>| <span data-ttu-id="e3186-113">string</span><span class="sxs-lookup"><span data-stu-id="e3186-113">string</span></span>| <span data-ttu-id="e3186-114">アクセスされているリソースのサービス構成 ID。</span><span class="sxs-lookup"><span data-stu-id="e3186-114">Service Config ID of the resource that is being accessed.</span></span> <span data-ttu-id="e3186-115">認証されたユーザーの SCID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e3186-115">Must match the SCID of the authenticated user.</span></span>| 
   
 <a id="ID4ETB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="9a692-116">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="9a692-116">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="e3186-116">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="e3186-116">Valid methods</span></span>
 
-[<span data-ttu-id="9a692-117">POST (/users/me/scids/{scid}/clips)</span><span class="sxs-lookup"><span data-stu-id="9a692-117">POST (/users/me/scids/{scid}/clips)</span></span>](uri-usersmescidclipspost.md)
+[<span data-ttu-id="e3186-117">POST (/users/me/scids/{scid}/clips)</span><span class="sxs-lookup"><span data-stu-id="e3186-117">POST (/users/me/scids/{scid}/clips)</span></span>](uri-usersmescidclipspost.md)
 
-<span data-ttu-id="9a692-118">&nbsp;&nbsp;初期のアップロード要求を行います。</span><span class="sxs-lookup"><span data-stu-id="9a692-118">&nbsp;&nbsp;Make an initial upload request.</span></span>
+<span data-ttu-id="e3186-118">&nbsp;&nbsp;初期のアップロード要求を行います。</span><span class="sxs-lookup"><span data-stu-id="e3186-118">&nbsp;&nbsp;Make an initial upload request.</span></span>
  
 <a id="ID4E4B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="9a692-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="9a692-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e3186-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="e3186-119">See also</span></span>
  
 <a id="ID4E6B"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="9a692-120">Parent</span><span class="sxs-lookup"><span data-stu-id="9a692-120">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="e3186-120">Parent</span><span class="sxs-lookup"><span data-stu-id="e3186-120">Parent</span></span> 
 
-[<span data-ttu-id="9a692-121">ゲーム DVR URI</span><span class="sxs-lookup"><span data-stu-id="9a692-121">Game DVR URIs</span></span>](atoc-reference-dvr.md)
+[<span data-ttu-id="e3186-121">ゲーム DVR URI</span><span class="sxs-lookup"><span data-stu-id="e3186-121">Game DVR URIs</span></span>](atoc-reference-dvr.md)
 
    

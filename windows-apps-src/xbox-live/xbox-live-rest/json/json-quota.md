@@ -12,34 +12,34 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4308c148a530233e06d666da5ec446821ba6ee26
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4179812"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4206481"
 ---
-# <a name="quotainfo-json"></a><span data-ttu-id="5f933-104">quotaInfo (JSON)</span><span class="sxs-lookup"><span data-stu-id="5f933-104">quotaInfo (JSON)</span></span>
-<span data-ttu-id="5f933-105">クォータ タイトル グループについてを説明します。</span><span class="sxs-lookup"><span data-stu-id="5f933-105">Contains quota information about a title group.</span></span> 
+# <a name="quotainfo-json"></a><span data-ttu-id="a3e9d-104">quotaInfo (JSON)</span><span class="sxs-lookup"><span data-stu-id="a3e9d-104">quotaInfo (JSON)</span></span>
+<span data-ttu-id="a3e9d-105">クォータ タイトル グループについてを説明します。</span><span class="sxs-lookup"><span data-stu-id="a3e9d-105">Contains quota information about a title group.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="quotainfo"></a><span data-ttu-id="5f933-106">quotaInfo</span><span class="sxs-lookup"><span data-stu-id="5f933-106">quotaInfo</span></span>
+## <a name="quotainfo"></a><span data-ttu-id="a3e9d-106">quotaInfo</span><span class="sxs-lookup"><span data-stu-id="a3e9d-106">quotaInfo</span></span>
  
-<span data-ttu-id="5f933-107">QuotaInfo オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="5f933-107">The quotaInfo object has the following specifications.</span></span>
+<span data-ttu-id="a3e9d-107">QuotaInfo オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="a3e9d-107">The quotaInfo object has the following specifications.</span></span>
  
-<span data-ttu-id="5f933-108">グローバル ストレージ</span><span class="sxs-lookup"><span data-stu-id="5f933-108">For global storage</span></span>
+<span data-ttu-id="a3e9d-108">グローバル ストレージ</span><span class="sxs-lookup"><span data-stu-id="a3e9d-108">For global storage</span></span>
  
-| <span data-ttu-id="5f933-109">メンバー</span><span class="sxs-lookup"><span data-stu-id="5f933-109">Member</span></span>| <span data-ttu-id="5f933-110">種類</span><span class="sxs-lookup"><span data-stu-id="5f933-110">Type</span></span>| <span data-ttu-id="5f933-111">説明</span><span class="sxs-lookup"><span data-stu-id="5f933-111">Description</span></span>| 
+| <span data-ttu-id="a3e9d-109">メンバー</span><span class="sxs-lookup"><span data-stu-id="a3e9d-109">Member</span></span>| <span data-ttu-id="a3e9d-110">種類</span><span class="sxs-lookup"><span data-stu-id="a3e9d-110">Type</span></span>| <span data-ttu-id="a3e9d-111">説明</span><span class="sxs-lookup"><span data-stu-id="a3e9d-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="5f933-112">quotaBytes</span><span class="sxs-lookup"><span data-stu-id="5f933-112">quotaBytes</span></span>| <span data-ttu-id="5f933-113">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="5f933-113">32-bit signed integer</span></span> | <span data-ttu-id="5f933-114">タイトルで使用可能なバイトの最大数。</span><span class="sxs-lookup"><span data-stu-id="5f933-114">Maximum number of bytes usable by the title.</span></span>| 
-| <span data-ttu-id="5f933-115">usedBytes</span><span class="sxs-lookup"><span data-stu-id="5f933-115">usedBytes</span></span>| <span data-ttu-id="5f933-116">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="5f933-116">32-bit signed integer</span></span> | <span data-ttu-id="5f933-117">タイトルで使用されるバイト数。</span><span class="sxs-lookup"><span data-stu-id="5f933-117">Number of bytes used by the title.</span></span>| 
+| <span data-ttu-id="a3e9d-112">quotaBytes</span><span class="sxs-lookup"><span data-stu-id="a3e9d-112">quotaBytes</span></span>| <span data-ttu-id="a3e9d-113">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="a3e9d-113">32-bit signed integer</span></span> | <span data-ttu-id="a3e9d-114">タイトルで使用可能なバイトの最大数。</span><span class="sxs-lookup"><span data-stu-id="a3e9d-114">Maximum number of bytes usable by the title.</span></span>| 
+| <span data-ttu-id="a3e9d-115">usedBytes</span><span class="sxs-lookup"><span data-stu-id="a3e9d-115">usedBytes</span></span>| <span data-ttu-id="a3e9d-116">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="a3e9d-116">32-bit signed integer</span></span> | <span data-ttu-id="a3e9d-117">タイトルで使用されるバイト数。</span><span class="sxs-lookup"><span data-stu-id="a3e9d-117">Number of bytes used by the title.</span></span>| 
   
 <a id="ID4EXB"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="5f933-118">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="5f933-118">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="a3e9d-118">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="a3e9d-118">Sample JSON syntax</span></span>
  
-<span data-ttu-id="5f933-119">次の例は、グローバル ストレージへの応答を示しています。</span><span class="sxs-lookup"><span data-stu-id="5f933-119">The following example shows the response for global storage:</span></span>
+<span data-ttu-id="a3e9d-119">次の例は、グローバル ストレージへの応答を示しています。</span><span class="sxs-lookup"><span data-stu-id="a3e9d-119">The following example shows the response for global storage:</span></span>
  
 
 ```json
@@ -57,13 +57,13 @@ ms.locfileid: "4179812"
 <a id="ID4ECC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="5f933-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="5f933-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a3e9d-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="a3e9d-120">See also</span></span>
  
 <a id="ID4EEC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="5f933-121">Parent</span><span class="sxs-lookup"><span data-stu-id="5f933-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="a3e9d-121">Parent</span><span class="sxs-lookup"><span data-stu-id="a3e9d-121">Parent</span></span> 
 
-[<span data-ttu-id="5f933-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="5f933-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="a3e9d-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="a3e9d-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

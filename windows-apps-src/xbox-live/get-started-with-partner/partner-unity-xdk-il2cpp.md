@@ -11,56 +11,56 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity
 ms.localizationpriority: medium
 ms.openlocfilehash: 58c10ba1a74b3b2cd99c1171d8305b55f68212fe
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4172734"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4208693"
 ---
-# <a name="add-xbox-live-support-to-unity-for-xdk-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a><span data-ttu-id="a60fe-104">ID@Xbox および対象パートナー向けに、IL2CPP スクリプト バックエンドを使用して、Xbox Live サポートを XDK 用 Unity に追加する</span><span class="sxs-lookup"><span data-stu-id="a60fe-104">Add Xbox Live support to Unity for XDK with IL2CPP scripting backend for ID@Xbox and managed partners</span></span>
+# <a name="add-xbox-live-support-to-unity-for-xdk-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a><span data-ttu-id="db34f-104">ID@Xbox および対象パートナー向けに、IL2CPP スクリプト バックエンドを使用して、Xbox Live サポートを XDK 用 Unity に追加する</span><span class="sxs-lookup"><span data-stu-id="db34f-104">Add Xbox Live support to Unity for XDK with IL2CPP scripting backend for ID@Xbox and managed partners</span></span>
 
-## <a name="overview"></a><span data-ttu-id="a60fe-105">概要</span><span class="sxs-lookup"><span data-stu-id="a60fe-105">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="db34f-105">概要</span><span class="sxs-lookup"><span data-stu-id="db34f-105">Overview</span></span>
 
-<span data-ttu-id="a60fe-106">Unity での IL2CPP 用の Windows ランタイム サポート</span><span class="sxs-lookup"><span data-stu-id="a60fe-106">Windows Runtime Support for IL2CPP in Unity</span></span>
+<span data-ttu-id="db34f-106">Unity での IL2CPP 用の Windows ランタイム サポート</span><span class="sxs-lookup"><span data-stu-id="db34f-106">Windows Runtime Support for IL2CPP in Unity</span></span>
 
-<span data-ttu-id="a60fe-107">Unity 5.6f3 のリリースでは、エンジンに新しい機能が組み込まれました。この新機能によって、開発者は Windows ランタイム (WinRT) コンポーネントをスクリプト内で直接使用することができます。そのためには、コンポーネントをゲーム プロジェクトに直接取り込みます。</span><span class="sxs-lookup"><span data-stu-id="a60fe-107">With the release of Unity 5.6f3 the engine has included a new feature that enables developers to use Windows Runtime (WinRT) components directly in script by including them in the game project directly.</span></span> <span data-ttu-id="a60fe-108">Until 5.6 を利用していた開発者は、ゲーム スクリプトでプラットフォーム機能 (Xbox Live SDK など) をサポートするために、プラグインや dll を必要としていました。</span><span class="sxs-lookup"><span data-stu-id="a60fe-108">Until 5.6 developers have needed a plugin, or dll to support any platform feature (including Xbox Live SDK) from game script.</span></span> <span data-ttu-id="a60fe-109">この新しいプロジェクション レイヤーによって、プラグインを使用する必要がなくなり、IL2CPP スクリプト バックエンドを選んだゲームでのみサポートされる、新しい簡略化されたワークフローが導入されました。</span><span class="sxs-lookup"><span data-stu-id="a60fe-109">This new projection layer removes the plugin requirement, and introduces a new and simplified workflow supported only with games that choose the IL2CPP scripting backend.</span></span>
+<span data-ttu-id="db34f-107">Unity 5.6f3 のリリースでは、エンジンに新しい機能が組み込まれました。この新機能によって、開発者は Windows ランタイム (WinRT) コンポーネントをスクリプト内で直接使用することができます。そのためには、コンポーネントをゲーム プロジェクトに直接取り込みます。</span><span class="sxs-lookup"><span data-stu-id="db34f-107">With the release of Unity 5.6f3 the engine has included a new feature that enables developers to use Windows Runtime (WinRT) components directly in script by including them in the game project directly.</span></span> <span data-ttu-id="db34f-108">Until 5.6 を利用していた開発者は、ゲーム スクリプトでプラットフォーム機能 (Xbox Live SDK など) をサポートするために、プラグインや dll を必要としていました。</span><span class="sxs-lookup"><span data-stu-id="db34f-108">Until 5.6 developers have needed a plugin, or dll to support any platform feature (including Xbox Live SDK) from game script.</span></span> <span data-ttu-id="db34f-109">この新しいプロジェクション レイヤーによって、プラグインを使用する必要がなくなり、IL2CPP スクリプト バックエンドを選んだゲームでのみサポートされる、新しい簡略化されたワークフローが導入されました。</span><span class="sxs-lookup"><span data-stu-id="db34f-109">This new projection layer removes the plugin requirement, and introduces a new and simplified workflow supported only with games that choose the IL2CPP scripting backend.</span></span>
 
-<span data-ttu-id="a60fe-110">作業を開始する方法について詳しくは、Unity のドキュメント (https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a60fe-110">For more information on how to get started, see the Unity documentation: https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html</span></span>
+<span data-ttu-id="db34f-110">作業を開始する方法について詳しくは、Unity のドキュメント (https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="db34f-110">For more information on how to get started, see the Unity documentation: https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html</span></span>
 
-## <a name="steps"></a><span data-ttu-id="a60fe-111">手順</span><span class="sxs-lookup"><span data-stu-id="a60fe-111">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="db34f-111">手順</span><span class="sxs-lookup"><span data-stu-id="db34f-111">Steps</span></span>
 
-**<span data-ttu-id="a60fe-112">1) Unity をインストールします。</span><span class="sxs-lookup"><span data-stu-id="a60fe-112">1) Install Unity</span></span>**
+**<span data-ttu-id="db34f-112">1) Unity をインストールします。</span><span class="sxs-lookup"><span data-stu-id="db34f-112">1) Install Unity</span></span>**
 
-<span data-ttu-id="a60fe-113">Unity 5.6 以上をインストールし、Xbox One エディター拡張機能がインストールされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="a60fe-113">Install Unity 5.6 or higher, and ensure you have the Xbox One editor extension installed.</span></span>
+<span data-ttu-id="db34f-113">Unity 5.6 以上をインストールし、Xbox One エディター拡張機能がインストールされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="db34f-113">Install Unity 5.6 or higher, and ensure you have the Xbox One editor extension installed.</span></span>
 
-<span data-ttu-id="a60fe-114">**2) WinMDs を使用するときに IntelliSense をサポートするために、Visual Studio Tools for Unity バージョン 3.1 以上をインストールします。** Visual Studio 2015 の場合、このツールは https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity で入手できます。</span><span class="sxs-lookup"><span data-stu-id="a60fe-114">**2) Install Visual Studio Tools for Unity version 3.1 and above for IntelliSense support when using WinMDs** For Visual Studio 2015, this can be found at https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity.</span></span>  <span data-ttu-id="a60fe-115">Visual Studio 2017 の場合、Visual Studio 2017 インストーラー内でこのコンポーネントを追加することができます。</span><span class="sxs-lookup"><span data-stu-id="a60fe-115">For Visual Studio 2017, the component can be added inside the Visual Studio 2017 installer.</span></span>
+<span data-ttu-id="db34f-114">**2) WinMDs を使用するときに IntelliSense をサポートするために、Visual Studio Tools for Unity バージョン 3.1 以上をインストールします。** Visual Studio 2015 の場合、このツールは https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity で入手できます。</span><span class="sxs-lookup"><span data-stu-id="db34f-114">**2) Install Visual Studio Tools for Unity version 3.1 and above for IntelliSense support when using WinMDs** For Visual Studio 2015, this can be found at https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity.</span></span>  <span data-ttu-id="db34f-115">Visual Studio 2017 の場合、Visual Studio 2017 インストーラー内でこのコンポーネントを追加することができます。</span><span class="sxs-lookup"><span data-stu-id="db34f-115">For Visual Studio 2017, the component can be added inside the Visual Studio 2017 installer.</span></span>
 
-**<span data-ttu-id="a60fe-116">3) 新規または既存の Unity プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="a60fe-116">3) Open a new or existing Unity project</span></span>**
+**<span data-ttu-id="db34f-116">3) 新規または既存の Unity プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="db34f-116">3) Open a new or existing Unity project</span></span>**
 
-**<span data-ttu-id="a60fe-117">4) Unity の [Build Settings] メニューで、プラットフォームを Xbox One に切り替えます。</span><span class="sxs-lookup"><span data-stu-id="a60fe-117">4) Switch the platform to Xbox One in the Unity Build Settings menu</span></span>**
+**<span data-ttu-id="db34f-117">4) Unity の [Build Settings] メニューで、プラットフォームを Xbox One に切り替えます。</span><span class="sxs-lookup"><span data-stu-id="db34f-117">4) Switch the platform to Xbox One in the Unity Build Settings menu</span></span>**
 
-**<span data-ttu-id="a60fe-118">5) Unity のプレイヤーの設定で IL2CPP スクリプト バックエンドを有効にして、API の互換性を .NET 4.6 に設定します。</span><span class="sxs-lookup"><span data-stu-id="a60fe-118">5) Enable IL2CPP scripting backend in the Unity player settings, and set API compatibility to .NET 4.6</span></span>**
+**<span data-ttu-id="db34f-118">5) Unity のプレイヤーの設定で IL2CPP スクリプト バックエンドを有効にして、API の互換性を .NET 4.6 に設定します。</span><span class="sxs-lookup"><span data-stu-id="db34f-118">5) Enable IL2CPP scripting backend in the Unity player settings, and set API compatibility to .NET 4.6</span></span>**
 
 ![](../images/unity/unity-il2cpp-1.png)
 
-**<span data-ttu-id="a60fe-119">6) スクリプト コンパイラを Roslyn に切り替えます。</span><span class="sxs-lookup"><span data-stu-id="a60fe-119">6) Switch the Script Compiler to Roslyn</span></span>**
+**<span data-ttu-id="db34f-119">6) スクリプト コンパイラを Roslyn に切り替えます。</span><span class="sxs-lookup"><span data-stu-id="db34f-119">6) Switch the Script Compiler to Roslyn</span></span>**
 
-**<span data-ttu-id="a60fe-120">7) Xbox One の該当するシステム ライブラリがすべて自動的にプロジェクトに追加されます。プラットフォーム バイナリを取り込むための追加の手順は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="a60fe-120">7) The Xbox One appropriate system libraries will all be added automatically to your project, and no extra steps are needed to include the platform binaries.</span></span>**
+**<span data-ttu-id="db34f-120">7) Xbox One の該当するシステム ライブラリがすべて自動的にプロジェクトに追加されます。プラットフォーム バイナリを取り込むための追加の手順は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="db34f-120">7) The Xbox One appropriate system libraries will all be added automatically to your project, and no extra steps are needed to include the platform binaries.</span></span>**
 
-**<span data-ttu-id="a60fe-121">8) 新しい C\# スクリプトを Unity オブジェクトに追加およびアタッチします。</span><span class="sxs-lookup"><span data-stu-id="a60fe-121">8) Add and attach a new C\# script to a Unity object.</span></span>**
+**<span data-ttu-id="db34f-121">8) 新しい C\# スクリプトを Unity オブジェクトに追加およびアタッチします。</span><span class="sxs-lookup"><span data-stu-id="db34f-121">8) Add and attach a new C\# script to a Unity object.</span></span>**
 
-<span data-ttu-id="a60fe-122">たとえば、"Main Camera" などの Unity オブジェクトをクリックし、[Add Component]、[New Script]、[C\# Script] の順にクリックして、"XboxLiveScript" という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="a60fe-122">For example, click on a Unity object such as the "Main Camera", and click "Add Component" \| "New Script" \| C\# Script \| and name it "XboxLiveScript".</span></span> <span data-ttu-id="a60fe-123">ゲーム オブジェクトの種類は問いません。</span><span class="sxs-lookup"><span data-stu-id="a60fe-123">Any game object will do.</span></span>
+<span data-ttu-id="db34f-122">たとえば、"Main Camera" などの Unity オブジェクトをクリックし、[Add Component]、[New Script]、[C\# Script] の順にクリックして、"XboxLiveScript" という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="db34f-122">For example, click on a Unity object such as the "Main Camera", and click "Add Component" \| "New Script" \| C\# Script \| and name it "XboxLiveScript".</span></span> <span data-ttu-id="db34f-123">ゲーム オブジェクトの種類は問いません。</span><span class="sxs-lookup"><span data-stu-id="db34f-123">Any game object will do.</span></span>
 
-**<span data-ttu-id="a60fe-124">9) Visual Studio (VSTU 3.1+ がインストールされていること) でスクリプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="a60fe-124">9) Open the script in Visual Studio (with VSTU 3.1+ installed)</span></span>**
+**<span data-ttu-id="db34f-124">9) Visual Studio (VSTU 3.1+ がインストールされていること) でスクリプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="db34f-124">9) Open the script in Visual Studio (with VSTU 3.1+ installed)</span></span>**
 
-<span data-ttu-id="a60fe-125">2 つのプロジェクトを確認し、VSTU によって生成された "Player" プロジェクト内のゲーム スクリプト XboxLiveTest.cs を開きます。</span><span class="sxs-lookup"><span data-stu-id="a60fe-125">You will notice two projects, open your game script XboxLiveTest.cs in the "Player" project generated by VSTU</span></span>
+<span data-ttu-id="db34f-125">2 つのプロジェクトを確認し、VSTU によって生成された "Player" プロジェクト内のゲーム スクリプト XboxLiveTest.cs を開きます。</span><span class="sxs-lookup"><span data-stu-id="db34f-125">You will notice two projects, open your game script XboxLiveTest.cs in the "Player" project generated by VSTU</span></span>
 
 ![](../images/unity/unity-il2cpp-2.png)
 
-<span data-ttu-id="a60fe-126">このプロジェクトは XDK 用に生成された特別なプロジェクトであり、アセットに配置した winmd ファイルへの参照が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a60fe-126">This is a special project generated for XDK, and includes references for the winmd files you have placed in your assets.</span></span>
-<span data-ttu-id="a60fe-127">また、"#if ENABLE_WINMD_SUPPORT" 定義が自動的に設定されるため、IntelliSense と構文の強調表示が適切に機能します。</span><span class="sxs-lookup"><span data-stu-id="a60fe-127">It will also define the "#if ENABLE_WINMD_SUPPORT" define for you so IntelliSense and syntax highlighting will work properly.</span></span>
+<span data-ttu-id="db34f-126">このプロジェクトは XDK 用に生成された特別なプロジェクトであり、アセットに配置した winmd ファイルへの参照が含まれています。</span><span class="sxs-lookup"><span data-stu-id="db34f-126">This is a special project generated for XDK, and includes references for the winmd files you have placed in your assets.</span></span>
+<span data-ttu-id="db34f-127">また、"#if ENABLE_WINMD_SUPPORT" 定義が自動的に設定されるため、IntelliSense と構文の強調表示が適切に機能します。</span><span class="sxs-lookup"><span data-stu-id="db34f-127">It will also define the "#if ENABLE_WINMD_SUPPORT" define for you so IntelliSense and syntax highlighting will work properly.</span></span>
 
-**<span data-ttu-id="a60fe-128">10) 次の Xbox Live コードを XboxLiveTest.cs ソース ファイルに追加します。</span><span class="sxs-lookup"><span data-stu-id="a60fe-128">10) Add the following Xbox Live code to the XboxLiveTest.cs source file</span></span>**
+**<span data-ttu-id="db34f-128">10) 次の Xbox Live コードを XboxLiveTest.cs ソース ファイルに追加します。</span><span class="sxs-lookup"><span data-stu-id="db34f-128">10) Add the following Xbox Live code to the XboxLiveTest.cs source file</span></span>**
 
 ```csharp
 
@@ -98,8 +98,8 @@ public class XboxLiveTest : MonoBehaviour
 
 ```
 
-**<span data-ttu-id="a60fe-129">11) プレイヤーの設定内にある公開の設定で、"InternetClient" 機能が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="a60fe-129">11)   Make sure you have 'InternetClient' capability selected in the publishing settings found in player settings</span></span>**
+**<span data-ttu-id="db34f-129">11) プレイヤーの設定内にある公開の設定で、"InternetClient" 機能が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="db34f-129">11)   Make sure you have 'InternetClient' capability selected in the publishing settings found in player settings</span></span>**
 
 ![](../images/unity/unity-il2cpp-3.png)
 
-**<span data-ttu-id="a60fe-130">12) Unity でプロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="a60fe-130">12) Build the project in Unity.</span></span>**
+**<span data-ttu-id="db34f-130">12) Unity でプロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="db34f-130">12) Build the project in Unity.</span></span>**

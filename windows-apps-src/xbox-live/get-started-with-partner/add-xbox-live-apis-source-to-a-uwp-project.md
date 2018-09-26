@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 71d8701e5efa4df719ddc3bda66b5c6cdbece435
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4179668"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4210785"
 ---
-# <a name="add-and-compile-the-xbox-live-apis-source-in-your-uwp-project"></a><span data-ttu-id="0f2a8-104">UWP プロジェクトで Xbox Live API のソースを追加し、コンパイルする</span><span class="sxs-lookup"><span data-stu-id="0f2a8-104">Add and compile the Xbox Live APIs source in your UWP project</span></span>
+# <a name="add-and-compile-the-xbox-live-apis-source-in-your-uwp-project"></a><span data-ttu-id="736ed-104">UWP プロジェクトで Xbox Live API のソースを追加し、コンパイルする</span><span class="sxs-lookup"><span data-stu-id="736ed-104">Add and compile the Xbox Live APIs source in your UWP project</span></span>
 
-<span data-ttu-id="0f2a8-105">Xbox Live API (XSAPI) のソースが GitHub で利用できるようになりました[https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api)します。</span><span class="sxs-lookup"><span data-stu-id="0f2a8-105">The Xbox Live API (XSAPI) source is now available on GitHub at [https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api).</span></span> <span data-ttu-id="0f2a8-106">開発者は、次の手順を使用して、ローカル ビルドを使用するようにプロジェクトを更新できます。</span><span class="sxs-lookup"><span data-stu-id="0f2a8-106">Developers can follow these instructions to update their projects to use a local build.</span></span>
+<span data-ttu-id="736ed-105">Xbox Live API (XSAPI) のソースが GitHub で利用できるようになりました[https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api)します。</span><span class="sxs-lookup"><span data-stu-id="736ed-105">The Xbox Live API (XSAPI) source is now available on GitHub at [https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api).</span></span> <span data-ttu-id="736ed-106">開発者は、次の手順を使用して、ローカル ビルドを使用するようにプロジェクトを更新できます。</span><span class="sxs-lookup"><span data-stu-id="736ed-106">Developers can follow these instructions to update their projects to use a local build.</span></span>
 
-<span data-ttu-id="0f2a8-107">次のような場合、XSAPI を自分でビルドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="0f2a8-107">You might want to build XSAPI yourself if:</span></span>
-1. <span data-ttu-id="0f2a8-108">問題をデバッグしてエラーのあるコードの場所を特定する場合。</span><span class="sxs-lookup"><span data-stu-id="0f2a8-108">If you want to debug an issue to understand where an error code is coming from.</span></span>
-1. <span data-ttu-id="0f2a8-109">QFE が配布されるまでに、問題を解決するためのソース コード パッチを提供する場合。</span><span class="sxs-lookup"><span data-stu-id="0f2a8-109">If we provide a source code patch to fix an issue for you, before we can distribute a QFE.</span></span>
+<span data-ttu-id="736ed-107">次のような場合、XSAPI を自分でビルドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="736ed-107">You might want to build XSAPI yourself if:</span></span>
+1. <span data-ttu-id="736ed-108">問題をデバッグしてエラーのあるコードの場所を特定する場合。</span><span class="sxs-lookup"><span data-stu-id="736ed-108">If you want to debug an issue to understand where an error code is coming from.</span></span>
+1. <span data-ttu-id="736ed-109">QFE が配布されるまでに、問題を解決するためのソース コード パッチを提供する場合。</span><span class="sxs-lookup"><span data-stu-id="736ed-109">If we provide a source code patch to fix an issue for you, before we can distribute a QFE.</span></span>
 
-<span data-ttu-id="0f2a8-110">XSAPI プロジェクトを自分でコンパイルするには、GitHub プロジェクト サイトの指示に従ってください。</span><span class="sxs-lookup"><span data-stu-id="0f2a8-110">To compile the XSAPI project yourself, follow the instructions on the GitHub project site.</span></span>
+<span data-ttu-id="736ed-110">XSAPI プロジェクトを自分でコンパイルするには、GitHub プロジェクト サイトの指示に従ってください。</span><span class="sxs-lookup"><span data-stu-id="736ed-110">To compile the XSAPI project yourself, follow the instructions on the GitHub project site.</span></span>

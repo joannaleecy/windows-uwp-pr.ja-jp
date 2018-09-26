@@ -12,33 +12,33 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 72b4a7b971647304e08fe52e7696be9fcd39e584
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4175202"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4211143"
 ---
-# <a name="updatemetadatarequest-json"></a><span data-ttu-id="55c51-104">UpdateMetadataRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="55c51-104">UpdateMetadataRequest (JSON)</span></span>
-<span data-ttu-id="55c51-105">このメタデータは、クリップを更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="55c51-105">The metadata that should be updated for a clip.</span></span> 
+# <a name="updatemetadatarequest-json"></a><span data-ttu-id="85380-104">UpdateMetadataRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="85380-104">UpdateMetadataRequest (JSON)</span></span>
+<span data-ttu-id="85380-105">このメタデータは、クリップを更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="85380-105">The metadata that should be updated for a clip.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="updatemetadatarequest"></a><span data-ttu-id="55c51-106">UpdateMetadataRequest</span><span class="sxs-lookup"><span data-stu-id="55c51-106">UpdateMetadataRequest</span></span>
+## <a name="updatemetadatarequest"></a><span data-ttu-id="85380-106">UpdateMetadataRequest</span><span class="sxs-lookup"><span data-stu-id="85380-106">UpdateMetadataRequest</span></span>
  
-<span data-ttu-id="55c51-107">UpdateMetadataRequest オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="55c51-107">The UpdateMetadataRequest object has the following specification.</span></span>
+<span data-ttu-id="85380-107">UpdateMetadataRequest オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="85380-107">The UpdateMetadataRequest object has the following specification.</span></span>
  
-| <span data-ttu-id="55c51-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="55c51-108">Member</span></span>| <span data-ttu-id="55c51-109">種類</span><span class="sxs-lookup"><span data-stu-id="55c51-109">Type</span></span>| <span data-ttu-id="55c51-110">説明</span><span class="sxs-lookup"><span data-stu-id="55c51-110">Description</span></span>| 
+| <span data-ttu-id="85380-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="85380-108">Member</span></span>| <span data-ttu-id="85380-109">種類</span><span class="sxs-lookup"><span data-stu-id="85380-109">Type</span></span>| <span data-ttu-id="85380-110">説明</span><span class="sxs-lookup"><span data-stu-id="85380-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="55c51-111">userCaption</span><span class="sxs-lookup"><span data-stu-id="55c51-111">userCaption</span></span>| <span data-ttu-id="55c51-112">string</span><span class="sxs-lookup"><span data-stu-id="55c51-112">string</span></span>| <span data-ttu-id="55c51-113">ゲーム クリップのユーザーが入力した以外にローカライズされた文字列を変更します。</span><span class="sxs-lookup"><span data-stu-id="55c51-113">Changes the user entered non-localized string for the game clip.</span></span>| 
-| <span data-ttu-id="55c51-114">visibility</span><span class="sxs-lookup"><span data-stu-id="55c51-114">visibility</span></span>| [<span data-ttu-id="55c51-115">GameClipVisibility 列挙型</span><span class="sxs-lookup"><span data-stu-id="55c51-115">GameClipVisibility Enumeration</span></span>](../enums/gvr-enum-gameclipvisibility.md)| <span data-ttu-id="55c51-116">これは、システムで公開されるゲーム クリップの可視性を変更します。</span><span class="sxs-lookup"><span data-stu-id="55c51-116">Changes the visibility of the game clip as it is published in the system.</span></span>| 
-| <span data-ttu-id="55c51-117">titleData</span><span class="sxs-lookup"><span data-stu-id="55c51-117">titleData</span></span>| <span data-ttu-id="55c51-118">string</span><span class="sxs-lookup"><span data-stu-id="55c51-118">string</span></span>| <span data-ttu-id="55c51-119">タイトルに固有のプロパティ バッグです。</span><span class="sxs-lookup"><span data-stu-id="55c51-119">The title-specific property bag.</span></span> <span data-ttu-id="55c51-120">最大サイズ: 10 kb です。</span><span class="sxs-lookup"><span data-stu-id="55c51-120">Maximum size: 10 KB.</span></span>| 
+| <span data-ttu-id="85380-111">userCaption</span><span class="sxs-lookup"><span data-stu-id="85380-111">userCaption</span></span>| <span data-ttu-id="85380-112">string</span><span class="sxs-lookup"><span data-stu-id="85380-112">string</span></span>| <span data-ttu-id="85380-113">ゲーム クリップのユーザーが入力した以外にローカライズされた文字列を変更します。</span><span class="sxs-lookup"><span data-stu-id="85380-113">Changes the user entered non-localized string for the game clip.</span></span>| 
+| <span data-ttu-id="85380-114">visibility</span><span class="sxs-lookup"><span data-stu-id="85380-114">visibility</span></span>| [<span data-ttu-id="85380-115">GameClipVisibility 列挙型</span><span class="sxs-lookup"><span data-stu-id="85380-115">GameClipVisibility Enumeration</span></span>](../enums/gvr-enum-gameclipvisibility.md)| <span data-ttu-id="85380-116">これは、システムで公開されるゲーム クリップの可視性を変更します。</span><span class="sxs-lookup"><span data-stu-id="85380-116">Changes the visibility of the game clip as it is published in the system.</span></span>| 
+| <span data-ttu-id="85380-117">titleData</span><span class="sxs-lookup"><span data-stu-id="85380-117">titleData</span></span>| <span data-ttu-id="85380-118">string</span><span class="sxs-lookup"><span data-stu-id="85380-118">string</span></span>| <span data-ttu-id="85380-119">タイトルに固有のプロパティ バッグです。</span><span class="sxs-lookup"><span data-stu-id="85380-119">The title-specific property bag.</span></span> <span data-ttu-id="85380-120">最大サイズ: 10 kb です。</span><span class="sxs-lookup"><span data-stu-id="85380-120">Maximum size: 10 KB.</span></span>| 
   
 <a id="ID4EBC"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="55c51-121">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="55c51-121">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="85380-121">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="85380-121">Sample JSON syntax</span></span>
  
-<span data-ttu-id="55c51-122">ユーザーのクリップ名と認知度を変更します。</span><span class="sxs-lookup"><span data-stu-id="55c51-122">Changing User Clip Name and Visibility:</span></span>
+<span data-ttu-id="85380-122">ユーザーのクリップ名と認知度を変更します。</span><span class="sxs-lookup"><span data-stu-id="85380-122">Changing User Clip Name and Visibility:</span></span>
  
 
 ```json
@@ -50,7 +50,7 @@ ms.locfileid: "4175202"
 ```
 
  
-<span data-ttu-id="55c51-123">タイトルのプロパティ (これは単なる例、このフィールドのスキーマは、呼び出し元であるため) だけを変更するには。</span><span class="sxs-lookup"><span data-stu-id="55c51-123">Changing just title properties (this is just an example, since the schema of this field is up to the caller):</span></span>
+<span data-ttu-id="85380-123">タイトルのプロパティ (これは単なる例、このフィールドのスキーマは、呼び出し元であるため) だけを変更するには。</span><span class="sxs-lookup"><span data-stu-id="85380-123">Changing just title properties (this is just an example, since the schema of this field is up to the caller):</span></span>
  
 
 ```json
@@ -64,21 +64,21 @@ ms.locfileid: "4175202"
 <a id="ID4EQC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="55c51-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="55c51-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="85380-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="85380-124">See also</span></span>
  
 <a id="ID4ESC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="55c51-125">Parent</span><span class="sxs-lookup"><span data-stu-id="55c51-125">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="85380-125">Parent</span><span class="sxs-lookup"><span data-stu-id="85380-125">Parent</span></span> 
 
-[<span data-ttu-id="55c51-126">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="55c51-126">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="85380-126">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="85380-126">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E3C"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="55c51-127">リファレンス</span><span class="sxs-lookup"><span data-stu-id="55c51-127">Reference</span></span> 
+##### <a name="reference"></a><span data-ttu-id="85380-127">リファレンス</span><span class="sxs-lookup"><span data-stu-id="85380-127">Reference</span></span> 
 
-[<span data-ttu-id="55c51-128">POST (/users/me/scids/{scid}/clips/{gameClipId})</span><span class="sxs-lookup"><span data-stu-id="55c51-128">POST (/users/me/scids/{scid}/clips/{gameClipId})</span></span>](../uri/dvr/uri-usersmescidclipsgameclipidpost.md)
+[<span data-ttu-id="85380-128">POST (/users/me/scids/{scid}/clips/{gameClipId})</span><span class="sxs-lookup"><span data-stu-id="85380-128">POST (/users/me/scids/{scid}/clips/{gameClipId})</span></span>](../uri/dvr/uri-usersmescidclipsgameclipidpost.md)
 
    

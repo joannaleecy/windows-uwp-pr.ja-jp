@@ -12,30 +12,30 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 308301b41b407291ffad74337172c5be8f4d2c59
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4179972"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4212945"
 ---
-# <a name="permissioncheckresult-json"></a><span data-ttu-id="d1d83-104">PermissionCheckResult (JSON)</span><span class="sxs-lookup"><span data-stu-id="d1d83-104">PermissionCheckResult (JSON)</span></span>
-<span data-ttu-id="d1d83-105">1 つの対象ユーザーに対して 1 つのアクセス許可の設定を 1 人のユーザーからチェックの結果。</span><span class="sxs-lookup"><span data-stu-id="d1d83-105">The results of a check from a single user for a single permission setting against a single target user.</span></span> 
+# <a name="permissioncheckresult-json"></a><span data-ttu-id="9422f-104">PermissionCheckResult (JSON)</span><span class="sxs-lookup"><span data-stu-id="9422f-104">PermissionCheckResult (JSON)</span></span>
+<span data-ttu-id="9422f-105">1 つの対象ユーザーに対して 1 つのアクセス許可の設定を 1 人のユーザーからチェックの結果。</span><span class="sxs-lookup"><span data-stu-id="9422f-105">The results of a check from a single user for a single permission setting against a single target user.</span></span> 
 <a id="ID4EP"></a>
 
  
-## <a name="permissioncheckresult"></a><span data-ttu-id="d1d83-106">PermissionCheckResult</span><span class="sxs-lookup"><span data-stu-id="d1d83-106">PermissionCheckResult</span></span>
+## <a name="permissioncheckresult"></a><span data-ttu-id="9422f-106">PermissionCheckResult</span><span class="sxs-lookup"><span data-stu-id="9422f-106">PermissionCheckResult</span></span>
  
-<span data-ttu-id="d1d83-107">PermissionCheckResult オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="d1d83-107">The PermissionCheckResult object has the following specification.</span></span>
+<span data-ttu-id="9422f-107">PermissionCheckResult オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="9422f-107">The PermissionCheckResult object has the following specification.</span></span>
  
-| <span data-ttu-id="d1d83-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="d1d83-108">Member</span></span>| <span data-ttu-id="d1d83-109">種類</span><span class="sxs-lookup"><span data-stu-id="d1d83-109">Type</span></span>| <span data-ttu-id="d1d83-110">説明</span><span class="sxs-lookup"><span data-stu-id="d1d83-110">Description</span></span>| 
+| <span data-ttu-id="9422f-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="9422f-108">Member</span></span>| <span data-ttu-id="9422f-109">種類</span><span class="sxs-lookup"><span data-stu-id="9422f-109">Type</span></span>| <span data-ttu-id="9422f-110">説明</span><span class="sxs-lookup"><span data-stu-id="9422f-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="d1d83-111">理由</span><span class="sxs-lookup"><span data-stu-id="d1d83-111">reason</span></span>| <span data-ttu-id="d1d83-112">string</span><span class="sxs-lookup"><span data-stu-id="d1d83-112">string</span></span>| <span data-ttu-id="d1d83-113">省略可能。</span><span class="sxs-lookup"><span data-stu-id="d1d83-113">Optional.</span></span> <span data-ttu-id="d1d83-114">アクセス許可が拒否された理由を示す<b>PermissionResultCode</b>値<b>どう</b>が false の場合。</span><span class="sxs-lookup"><span data-stu-id="d1d83-114">A <b>PermissionResultCode</b> value that indicates why the permission was denied if <b>IsAllowed</b> was false.</span></span>| 
-| <span data-ttu-id="d1d83-115">restrictedSetting</span><span class="sxs-lookup"><span data-stu-id="d1d83-115">restrictedSetting</span></span>| <span data-ttu-id="d1d83-116">string</span><span class="sxs-lookup"><span data-stu-id="d1d83-116">string</span></span>| <span data-ttu-id="d1d83-117">省略可能。</span><span class="sxs-lookup"><span data-stu-id="d1d83-117">Optional.</span></span> <span data-ttu-id="d1d83-118">リクエスターの特権チェックが失敗した<b>理由</b>メンバーの<b>PermissionResultCode</b>値が示されている場合は、どの特権が失敗したを示します。</span><span class="sxs-lookup"><span data-stu-id="d1d83-118">If the <b>PermissionResultCode</b> value in the <b>reason</b> member indicates that a privilege check for the requestor failed, this indicates which privilege failed.</span></span>| 
+| <span data-ttu-id="9422f-111">理由</span><span class="sxs-lookup"><span data-stu-id="9422f-111">reason</span></span>| <span data-ttu-id="9422f-112">string</span><span class="sxs-lookup"><span data-stu-id="9422f-112">string</span></span>| <span data-ttu-id="9422f-113">省略可能。</span><span class="sxs-lookup"><span data-stu-id="9422f-113">Optional.</span></span> <span data-ttu-id="9422f-114">アクセス許可が拒否された理由を示す<b>PermissionResultCode</b>値<b>どう</b>が false の場合。</span><span class="sxs-lookup"><span data-stu-id="9422f-114">A <b>PermissionResultCode</b> value that indicates why the permission was denied if <b>IsAllowed</b> was false.</span></span>| 
+| <span data-ttu-id="9422f-115">restrictedSetting</span><span class="sxs-lookup"><span data-stu-id="9422f-115">restrictedSetting</span></span>| <span data-ttu-id="9422f-116">string</span><span class="sxs-lookup"><span data-stu-id="9422f-116">string</span></span>| <span data-ttu-id="9422f-117">省略可能。</span><span class="sxs-lookup"><span data-stu-id="9422f-117">Optional.</span></span> <span data-ttu-id="9422f-118">リクエスターの特権チェックが失敗した<b>理由</b>メンバーの<b>PermissionResultCode</b>値が示されている場合は、どの特権が失敗したを示します。</span><span class="sxs-lookup"><span data-stu-id="9422f-118">If the <b>PermissionResultCode</b> value in the <b>reason</b> member indicates that a privilege check for the requestor failed, this indicates which privilege failed.</span></span>| 
   
 <a id="ID4E6B"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="d1d83-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="d1d83-119">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="9422f-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="9422f-119">Sample JSON syntax</span></span>
  
 
 ```json
@@ -50,13 +50,13 @@ ms.locfileid: "4179972"
 <a id="ID4EIC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="d1d83-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="d1d83-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9422f-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="9422f-120">See also</span></span>
  
 <a id="ID4EKC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="d1d83-121">Parent</span><span class="sxs-lookup"><span data-stu-id="d1d83-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="9422f-121">Parent</span><span class="sxs-lookup"><span data-stu-id="9422f-121">Parent</span></span> 
 
-[<span data-ttu-id="d1d83-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="d1d83-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="9422f-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="9422f-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

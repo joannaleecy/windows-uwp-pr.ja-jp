@@ -12,39 +12,39 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b259ae20bd07c6869bc6646fc44a70f994a261b7
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4179528"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4210829"
 ---
-# <a name="eds-reverse-lookup-for-video"></a><span data-ttu-id="18179-104">ビデオの EDS 逆引き参照</span><span class="sxs-lookup"><span data-stu-id="18179-104">EDS Reverse Lookup for Video</span></span>
+# <a name="eds-reverse-lookup-for-video"></a><span data-ttu-id="d6e2c-104">ビデオの EDS 逆引き参照</span><span class="sxs-lookup"><span data-stu-id="d6e2c-104">EDS Reverse Lookup for Video</span></span>
  
-  * [<span data-ttu-id="18179-105">逆の検索手順</span><span class="sxs-lookup"><span data-stu-id="18179-105">Reverse Lookup steps</span></span>](#ID4EQ)
+  * [<span data-ttu-id="d6e2c-105">逆の検索手順</span><span class="sxs-lookup"><span data-stu-id="d6e2c-105">Reverse Lookup steps</span></span>](#ID4EQ)
  
 <a id="ID4EQ"></a>
 
  
-## <a name="reverse-lookup-steps"></a><span data-ttu-id="18179-106">逆の検索手順</span><span class="sxs-lookup"><span data-stu-id="18179-106">Reverse Lookup steps</span></span>
+## <a name="reverse-lookup-steps"></a><span data-ttu-id="d6e2c-106">逆の検索手順</span><span class="sxs-lookup"><span data-stu-id="d6e2c-106">Reverse Lookup steps</span></span>
  
-<span data-ttu-id="18179-107">すべてのビデオ メディアの種類 (**MediaItemType.Movie**、 **MediaItemType.TVSeries**、 **MediaItemType.TVEpisode**、 **MediaItemType.TVSeason**、および**エンターテイメント探索サービス (EDS) の逆引き参照がサポートされています。MediaItemType.TVShow**)、および**MediaItemType.Unknown**します。</span><span class="sxs-lookup"><span data-stu-id="18179-107">Entertainment Discovery Services (EDS) Reverse Lookup is supported for all Video media types (**MediaItemType.Movie**, **MediaItemType.TVSeries**, **MediaItemType.TVEpisode**, **MediaItemType.TVSeason**, and **MediaItemType.TVShow**), as well as **MediaItemType.Unknown**.</span></span>
+<span data-ttu-id="d6e2c-107">すべてのビデオ メディアの種類 (**MediaItemType.Movie**、 **MediaItemType.TVSeries**、 **MediaItemType.TVEpisode**、 **MediaItemType.TVSeason**、および**エンターテイメント探索サービス (EDS) の逆引き参照がサポートされています。MediaItemType.TVShow**)、および**MediaItemType.Unknown**します。</span><span class="sxs-lookup"><span data-stu-id="d6e2c-107">Entertainment Discovery Services (EDS) Reverse Lookup is supported for all Video media types (**MediaItemType.Movie**, **MediaItemType.TVSeries**, **MediaItemType.TVEpisode**, **MediaItemType.TVSeason**, and **MediaItemType.TVShow**), as well as **MediaItemType.Unknown**.</span></span>
  
-<span data-ttu-id="18179-108">逆引き参照では、4 つのパラメーターを渡すことが必要です。</span><span class="sxs-lookup"><span data-stu-id="18179-108">Reverse lookup requires 4 parameters to be passed:</span></span> 
+<span data-ttu-id="d6e2c-108">逆引き参照では、4 つのパラメーターを渡すことが必要です。</span><span class="sxs-lookup"><span data-stu-id="d6e2c-108">Reverse lookup requires 4 parameters to be passed:</span></span> 
    * `idType=ScopedMediaId`
-   * `ids=` <span data-ttu-id="18179-109">プロバイダーのメディア ID</span><span class="sxs-lookup"><span data-stu-id="18179-109">the provider media ID</span></span>
+   * `ids=` <span data-ttu-id="d6e2c-109">プロバイダーのメディア ID</span><span class="sxs-lookup"><span data-stu-id="d6e2c-109">the provider media ID</span></span>
    * `ScopeIdType=Title`
-   * `ScopeId=` <span data-ttu-id="18179-110">プロバイダーのタイトル ID</span><span class="sxs-lookup"><span data-stu-id="18179-110">the provider title ID</span></span>
+   * `ScopeId=` <span data-ttu-id="d6e2c-110">プロバイダーのタイトル ID</span><span class="sxs-lookup"><span data-stu-id="d6e2c-110">the provider title ID</span></span>
  
  
-<span data-ttu-id="18179-111">通常の逆引き参照では、2 つの手順が必要です。</span><span class="sxs-lookup"><span data-stu-id="18179-111">Usually the reverse lookup requires 2 steps:</span></span> 
-   * <span data-ttu-id="18179-112">利用できない場合 (たとえば、詳細呼び出し) からプロバイダー メディア id を取得します。</span><span class="sxs-lookup"><span data-stu-id="18179-112">Retrieve provider media id (for example, from a details call) if it's not available.</span></span> 
+<span data-ttu-id="d6e2c-111">通常の逆引き参照では、2 つの手順が必要です。</span><span class="sxs-lookup"><span data-stu-id="d6e2c-111">Usually the reverse lookup requires 2 steps:</span></span> 
+   * <span data-ttu-id="d6e2c-112">利用できない場合 (たとえば、詳細呼び出し) からプロバイダー メディア id を取得します。</span><span class="sxs-lookup"><span data-stu-id="d6e2c-112">Retrieve provider media id (for example, from a details call) if it's not available.</span></span> 
 
 ```cpp
 GET /media/en-us/details?ids=4eeaf5b4-9af2-56e4-a738-68b48e954494&desiredMediaItemTypes=Movie&desired=Providers
 ```
 
  
-   * <span data-ttu-id="18179-113">応答には、以前から**ProviderMediaId**フィールドを使用して逆引き参照の呼び出しを発行します。</span><span class="sxs-lookup"><span data-stu-id="18179-113">Issue the call for reverse lookup using the **ProviderMediaId** field from the previous response:</span></span> 
+   * <span data-ttu-id="d6e2c-113">応答には、以前から**ProviderMediaId**フィールドを使用して逆引き参照の呼び出しを発行します。</span><span class="sxs-lookup"><span data-stu-id="d6e2c-113">Issue the call for reverse lookup using the **ProviderMediaId** field from the previous response:</span></span> 
 
 ```cpp
 GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedMediaId&desiredMediaItemTypes=Movie&fields=all&ScopeIdType=Title&ScopeId=0x5848085B
@@ -53,26 +53,26 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
   
  
-<span data-ttu-id="18179-114">**ProviderMediaId**フィールドが EDS から取得されていない場合、フィールドは、EDS に正しくを渡される URL エンコードである必要があります。</span><span class="sxs-lookup"><span data-stu-id="18179-114">If the **ProviderMediaId** field has not been retrieved from EDS then the field must be URL-encoded to be passed correctly to EDS.</span></span>
+<span data-ttu-id="d6e2c-114">**ProviderMediaId**フィールドが EDS から取得されていない場合、フィールドは、EDS に正しくを渡される URL エンコードである必要があります。</span><span class="sxs-lookup"><span data-stu-id="d6e2c-114">If the **ProviderMediaId** field has not been retrieved from EDS then the field must be URL-encoded to be passed correctly to EDS.</span></span>
   
 <a id="ID4EOC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="18179-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="18179-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d6e2c-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="d6e2c-115">See also</span></span>
  
 <a id="ID4EQC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="18179-116">Parent</span><span class="sxs-lookup"><span data-stu-id="18179-116">Parent</span></span>  
+##### <a name="parent"></a><span data-ttu-id="d6e2c-116">Parent</span><span class="sxs-lookup"><span data-stu-id="d6e2c-116">Parent</span></span>  
 
-[<span data-ttu-id="18179-117">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="18179-117">Additional Reference</span></span>](atoc-xboxlivews-reference-additional.md)
+[<span data-ttu-id="d6e2c-117">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="d6e2c-117">Additional Reference</span></span>](atoc-xboxlivews-reference-additional.md)
 
   
 <a id="ID4E3C"></a>
 
  
-##### <a name="further-information"></a><span data-ttu-id="18179-118">詳細情報</span><span class="sxs-lookup"><span data-stu-id="18179-118">Further Information</span></span> 
+##### <a name="further-information"></a><span data-ttu-id="d6e2c-118">詳細情報</span><span class="sxs-lookup"><span data-stu-id="d6e2c-118">Further Information</span></span> 
 
-[<span data-ttu-id="18179-119">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="18179-119">Marketplace URIs</span></span>](../uri/marketplace/atoc-reference-marketplace.md)
+[<span data-ttu-id="d6e2c-119">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="d6e2c-119">Marketplace URIs</span></span>](../uri/marketplace/atoc-reference-marketplace.md)
 
    

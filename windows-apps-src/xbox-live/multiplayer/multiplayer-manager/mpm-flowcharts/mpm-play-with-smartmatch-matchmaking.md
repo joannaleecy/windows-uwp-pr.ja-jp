@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: d8b56682054a96091480a5b8ff4b493ecebf6ba9
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4179318"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4208265"
 ---
-# <a name="flowchart---play-a-multiplayer-game-by-using-smartmatch-matchmaking"></a><span data-ttu-id="e52a7-104">フローチャート - SmartMatch マッチメイキングを使用してマルチプレイヤー ゲームをプレイする</span><span class="sxs-lookup"><span data-stu-id="e52a7-104">Flowchart - Play a multiplayer game by using SmartMatch matchmaking</span></span>
+# <a name="flowchart---play-a-multiplayer-game-by-using-smartmatch-matchmaking"></a><span data-ttu-id="09284-104">フローチャート - SmartMatch マッチメイキングを使用してマルチプレイヤー ゲームをプレイする</span><span class="sxs-lookup"><span data-stu-id="09284-104">Flowchart - Play a multiplayer game by using SmartMatch matchmaking</span></span>
 
-<span data-ttu-id="e52a7-105">次のフローチャートでは、フレンドをゲームに追加および招待した後、SmartMatch マッチメイキングを使用して空いているスロットを他の Xbox Live メンバーで埋めることにより、新しいマルチプレイヤー ゲームを開始する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="e52a7-105">The following flowcharts show how to start a new multiplayer game by adding and inviting friends to the game, and then using SmartMatch matchmaking to fill any open slots with other Xbox Live members.</span></span>
+<span data-ttu-id="09284-105">次のフローチャートでは、フレンドをゲームに追加および招待した後、SmartMatch マッチメイキングを使用して空いているスロットを他の Xbox Live メンバーで埋めることにより、新しいマルチプレイヤー ゲームを開始する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="09284-105">The following flowcharts show how to start a new multiplayer game by adding and inviting friends to the game, and then using SmartMatch matchmaking to fill any open slots with other Xbox Live members.</span></span>
 
-<span data-ttu-id="e52a7-106">このプロセスの Multiplayer Manager のコードの例については、「[SmartMatch を使用してマルチプレイヤー ゲームを探す](../play-multiplayer-with-matchmaking.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e52a7-106">You can see multiplayer manager code examples of this process in [Play a multiplayer game by using SmartMatch](../play-multiplayer-with-matchmaking.md).</span></span>
+<span data-ttu-id="09284-106">このプロセスの Multiplayer Manager のコードの例については、「[SmartMatch を使用してマルチプレイヤー ゲームを探す](../play-multiplayer-with-matchmaking.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="09284-106">You can see multiplayer manager code examples of this process in [Play a multiplayer game by using SmartMatch](../play-multiplayer-with-matchmaking.md).</span></span>
 
-## <a name="smartmatch-matchmaking"></a><span data-ttu-id="e52a7-107">SmartMatch マッチメイキング</span><span class="sxs-lookup"><span data-stu-id="e52a7-107">SmartMatch matchmaking</span></span>
+## <a name="smartmatch-matchmaking"></a><span data-ttu-id="09284-107">SmartMatch マッチメイキング</span><span class="sxs-lookup"><span data-stu-id="09284-107">SmartMatch matchmaking</span></span>
 
 ![SmartMatch マッチメイキング](../../../images/multiplayer/mpm-smartmatch-matchmaking.png)
