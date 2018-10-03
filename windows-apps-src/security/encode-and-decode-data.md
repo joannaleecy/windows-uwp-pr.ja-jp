@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: a9177061f70419e2a3b0e3b47f933af75a11ad68
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4263235"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4320900"
 ---
 # <a name="encode-and-decode-data"></a><span data-ttu-id="8a844-104">データのエンコードとデコード</span><span class="sxs-lookup"><span data-stu-id="8a844-104">Encode and decode data</span></span>
 
