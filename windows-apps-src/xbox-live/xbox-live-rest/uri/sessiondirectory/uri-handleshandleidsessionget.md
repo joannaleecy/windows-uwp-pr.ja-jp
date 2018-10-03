@@ -12,67 +12,67 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab3214ca9b2cb2ff8ace11706ceda22885598e1
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212465"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4261214"
 ---
-# <a name="get-handleshandleidsession"></a><span data-ttu-id="ce4ba-104">GET (/handles/{handleId}/session)</span><span class="sxs-lookup"><span data-stu-id="ce4ba-104">GET (/handles/{handleId}/session)</span></span>
-<span data-ttu-id="ce4ba-105">指定したハンドル識別子のセッション オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-105">Gets a session object for the specified handle identifier.</span></span>
+# <a name="get-handleshandleidsession"></a><span data-ttu-id="a0945-104">GET (/handles/{handleId}/session)</span><span class="sxs-lookup"><span data-stu-id="a0945-104">GET (/handles/{handleId}/session)</span></span>
+<span data-ttu-id="a0945-105">指定したハンドル識別子のセッション オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="a0945-105">Gets a session object for the specified handle identifier.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="ce4ba-106">このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-106">This method is used by the 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="ce4ba-107">テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-107">It is intended for use with template contract 104/105 or later, and requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
+> <span data-ttu-id="a0945-106">このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="a0945-106">This method is used by the 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="a0945-107">テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="a0945-107">It is intended for use with template contract 104/105 or later, and requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
 
-  * [<span data-ttu-id="ce4ba-108">注釈</span><span class="sxs-lookup"><span data-stu-id="ce4ba-108">Remarks</span></span>](#ID4ET)
-  * [<span data-ttu-id="ce4ba-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ce4ba-109">URI parameters</span></span>](#ID4EDB)
-  * [<span data-ttu-id="ce4ba-110">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="ce4ba-110">HTTP status codes</span></span>](#ID4EOB)
-  * [<span data-ttu-id="ce4ba-111">要求本文</span><span class="sxs-lookup"><span data-stu-id="ce4ba-111">Request body</span></span>](#ID4EVB)
-  * [<span data-ttu-id="ce4ba-112">応答本文</span><span class="sxs-lookup"><span data-stu-id="ce4ba-112">Response body</span></span>](#ID4E6B)
+  * [<span data-ttu-id="a0945-108">注釈</span><span class="sxs-lookup"><span data-stu-id="a0945-108">Remarks</span></span>](#ID4ET)
+  * [<span data-ttu-id="a0945-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a0945-109">URI parameters</span></span>](#ID4EDB)
+  * [<span data-ttu-id="a0945-110">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="a0945-110">HTTP status codes</span></span>](#ID4EOB)
+  * [<span data-ttu-id="a0945-111">要求本文</span><span class="sxs-lookup"><span data-stu-id="a0945-111">Request body</span></span>](#ID4EVB)
+  * [<span data-ttu-id="a0945-112">応答本文</span><span class="sxs-lookup"><span data-stu-id="a0945-112">Response body</span></span>](#ID4E6B)
 
 <a id="ID4ET"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="ce4ba-113">注釈</span><span class="sxs-lookup"><span data-stu-id="ce4ba-113">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="a0945-113">注釈</span><span class="sxs-lookup"><span data-stu-id="a0945-113">Remarks</span></span>
 
-<span data-ttu-id="ce4ba-114">この HTTP/REST メソッドは、セッション (ハンドル) に指定されたサービス側ポインターを使用して、サーバーからセッション オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-114">This HTTP/REST method retrieves a session object from the server, using the supplied service-side pointer to the session (handle).</span></span> <span data-ttu-id="ce4ba-115">すべての属性を使用して、セッション オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-115">The return is the session object, with all its attributes.</span></span> <span data-ttu-id="ce4ba-116">このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-116">This method can be wrapped by **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**.</span></span>
+<span data-ttu-id="a0945-114">この HTTP/REST メソッドは、セッション (ハンドル) に指定されたサービス側ポインターを使用して、サーバーからセッション オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="a0945-114">This HTTP/REST method retrieves a session object from the server, using the supplied service-side pointer to the session (handle).</span></span> <span data-ttu-id="a0945-115">すべての属性を使用して、セッション オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="a0945-115">The return is the session object, with all its attributes.</span></span> <span data-ttu-id="a0945-116">このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="a0945-116">This method can be wrapped by **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**.</span></span>
 
-<span data-ttu-id="ce4ba-117">このメソッドの呼び出し元は、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-117">The caller of this method obtains the handle ID from a player's **MultiplayerActivityDetails** object.</span></span> <span data-ttu-id="ce4ba-118">または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-118">Alternatively, the caller gets the ID from a protocol activation after a user has accepted a game invite.</span></span>
+<span data-ttu-id="a0945-117">このメソッドの呼び出し元は、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="a0945-117">The caller of this method obtains the handle ID from a player's **MultiplayerActivityDetails** object.</span></span> <span data-ttu-id="a0945-118">または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="a0945-118">Alternatively, the caller gets the ID from a protocol activation after a user has accepted a game invite.</span></span>
 
 <a id="ID4EDB"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="ce4ba-119">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ce4ba-119">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="a0945-119">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a0945-119">URI parameters</span></span>
 
-| <span data-ttu-id="ce4ba-120">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ce4ba-120">Parameter</span></span>| <span data-ttu-id="ce4ba-121">型</span><span class="sxs-lookup"><span data-stu-id="ce4ba-121">Type</span></span>| <span data-ttu-id="ce4ba-122">説明</span><span class="sxs-lookup"><span data-stu-id="ce4ba-122">Description</span></span>|
+| <span data-ttu-id="a0945-120">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a0945-120">Parameter</span></span>| <span data-ttu-id="a0945-121">型</span><span class="sxs-lookup"><span data-stu-id="a0945-121">Type</span></span>| <span data-ttu-id="a0945-122">説明</span><span class="sxs-lookup"><span data-stu-id="a0945-122">Description</span></span>|
 | --- | --- | --- | --- |
-| <span data-ttu-id="ce4ba-123">ハンドル id を使用</span><span class="sxs-lookup"><span data-stu-id="ce4ba-123">handleId</span></span>| <span data-ttu-id="ce4ba-124">GUID</span><span class="sxs-lookup"><span data-stu-id="ce4ba-124">GUID</span></span>| <span data-ttu-id="ce4ba-125">セッション ハンドルの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-125">The unique ID of the handle for the session.</span></span>|
+| <span data-ttu-id="a0945-123">ハンドル id を使用</span><span class="sxs-lookup"><span data-stu-id="a0945-123">handleId</span></span>| <span data-ttu-id="a0945-124">GUID</span><span class="sxs-lookup"><span data-stu-id="a0945-124">GUID</span></span>| <span data-ttu-id="a0945-125">セッション ハンドルの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="a0945-125">The unique ID of the handle for the session.</span></span>|
 
 <a id="ID4EOB"></a>
 
 
-## <a name="http-status-codes"></a><span data-ttu-id="ce4ba-126">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="ce4ba-126">HTTP status codes</span></span>
-<span data-ttu-id="ce4ba-127">サービスは、MPSD に適用される HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-127">The service returns an HTTP status code as it applies to MPSD.</span></span>  
+## <a name="http-status-codes"></a><span data-ttu-id="a0945-126">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="a0945-126">HTTP status codes</span></span>
+<span data-ttu-id="a0945-127">サービスは、MPSD に適用される HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="a0945-127">The service returns an HTTP status code as it applies to MPSD.</span></span>  
 <a id="ID4EVB"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="ce4ba-128">要求本文</span><span class="sxs-lookup"><span data-stu-id="ce4ba-128">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="a0945-128">要求本文</span><span class="sxs-lookup"><span data-stu-id="a0945-128">Request body</span></span>
 
-<span data-ttu-id="ce4ba-129">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-129">No objects are sent in the body of this request.</span></span>
+<span data-ttu-id="a0945-129">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="a0945-129">No objects are sent in the body of this request.</span></span>
 
 <a id="ID4E6B"></a>
 
 
-## <a name="response-body"></a><span data-ttu-id="ce4ba-130">応答本文</span><span class="sxs-lookup"><span data-stu-id="ce4ba-130">Response body</span></span>
-<span data-ttu-id="ce4ba-131">[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)の応答構造を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ce4ba-131">See the response structure in [MultiplayerSession (JSON)](../../json/json-multiplayersession.md).</span></span>  
+## <a name="response-body"></a><span data-ttu-id="a0945-130">応答本文</span><span class="sxs-lookup"><span data-stu-id="a0945-130">Response body</span></span>
+<span data-ttu-id="a0945-131">[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)の応答構造を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0945-131">See the response structure in [MultiplayerSession (JSON)](../../json/json-multiplayersession.md).</span></span>  
 <a id="ID4EIC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="ce4ba-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="ce4ba-132">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a0945-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="a0945-132">See also</span></span>
 
 <a id="ID4EKC"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="ce4ba-133">Parent</span><span class="sxs-lookup"><span data-stu-id="ce4ba-133">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="a0945-133">Parent</span><span class="sxs-lookup"><span data-stu-id="a0945-133">Parent</span></span>
 
-[<span data-ttu-id="ce4ba-134">/handles/{handleId}/session</span><span class="sxs-lookup"><span data-stu-id="ce4ba-134">/handles/{handleId}/session</span></span>](uri-handleshandleidsession.md)
+[<span data-ttu-id="a0945-134">/handles/{handleId}/session</span><span class="sxs-lookup"><span data-stu-id="a0945-134">/handles/{handleId}/session</span></span>](uri-handleshandleidsession.md)

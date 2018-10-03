@@ -12,63 +12,63 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ed96418141aec049a9577924597a07da4313b7e2
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209507"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4261768"
 ---
-# <a name="get-usersxuidxuidscidsscidstats"></a><span data-ttu-id="279b1-104">GET (/users/xuid({xuid})/scids/{scid}/stats)</span><span class="sxs-lookup"><span data-stu-id="279b1-104">GET (/users/xuid({xuid})/scids/{scid}/stats)</span></span>
-<span data-ttu-id="279b1-105">スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成を取得します。</span><span class="sxs-lookup"><span data-stu-id="279b1-105">Gets a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.</span></span>
-<span data-ttu-id="279b1-106">これらの Uri のドメインが`userstats.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="279b1-106">The domain for these URIs is `userstats.xboxlive.com`.</span></span>
+# <a name="get-usersxuidxuidscidsscidstats"></a><span data-ttu-id="a16ba-104">GET (/users/xuid({xuid})/scids/{scid}/stats)</span><span class="sxs-lookup"><span data-stu-id="a16ba-104">GET (/users/xuid({xuid})/scids/{scid}/stats)</span></span>
+<span data-ttu-id="a16ba-105">スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成を取得します。</span><span class="sxs-lookup"><span data-stu-id="a16ba-105">Gets a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.</span></span>
+<span data-ttu-id="a16ba-106">これらの Uri のドメインが`userstats.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a16ba-106">The domain for these URIs is `userstats.xboxlive.com`.</span></span>
 
-  * [<span data-ttu-id="279b1-107">注釈</span><span class="sxs-lookup"><span data-stu-id="279b1-107">Remarks</span></span>](#ID4EV)
-  * [<span data-ttu-id="279b1-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="279b1-108">URI parameters</span></span>](#ID4EEB)
-  * [<span data-ttu-id="279b1-109">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="279b1-109">Query string parameters</span></span>](#ID4EPB)
-  * [<span data-ttu-id="279b1-110">Authorization</span><span class="sxs-lookup"><span data-stu-id="279b1-110">Authorization</span></span>](#ID4EUC)
-  * [<span data-ttu-id="279b1-111">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="279b1-111">Required Request Headers</span></span>](#ID4EPD)
-  * [<span data-ttu-id="279b1-112">省略可能な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="279b1-112">Optional Request Headers</span></span>](#ID4EYE)
-  * [<span data-ttu-id="279b1-113">要求本文</span><span class="sxs-lookup"><span data-stu-id="279b1-113">Request body</span></span>](#ID4E3F)
-  * [<span data-ttu-id="279b1-114">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="279b1-114">HTTP status codes</span></span>](#ID4EHG)
-  * [<span data-ttu-id="279b1-115">応答本文</span><span class="sxs-lookup"><span data-stu-id="279b1-115">Response body</span></span>](#ID4E5BAC)
+  * [<span data-ttu-id="a16ba-107">注釈</span><span class="sxs-lookup"><span data-stu-id="a16ba-107">Remarks</span></span>](#ID4EV)
+  * [<span data-ttu-id="a16ba-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a16ba-108">URI parameters</span></span>](#ID4EEB)
+  * [<span data-ttu-id="a16ba-109">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="a16ba-109">Query string parameters</span></span>](#ID4EPB)
+  * [<span data-ttu-id="a16ba-110">Authorization</span><span class="sxs-lookup"><span data-stu-id="a16ba-110">Authorization</span></span>](#ID4EUC)
+  * [<span data-ttu-id="a16ba-111">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a16ba-111">Required Request Headers</span></span>](#ID4EPD)
+  * [<span data-ttu-id="a16ba-112">省略可能な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a16ba-112">Optional Request Headers</span></span>](#ID4EYE)
+  * [<span data-ttu-id="a16ba-113">要求本文</span><span class="sxs-lookup"><span data-stu-id="a16ba-113">Request body</span></span>](#ID4E3F)
+  * [<span data-ttu-id="a16ba-114">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="a16ba-114">HTTP status codes</span></span>](#ID4EHG)
+  * [<span data-ttu-id="a16ba-115">応答本文</span><span class="sxs-lookup"><span data-stu-id="a16ba-115">Response body</span></span>](#ID4E5BAC)
 
 <a id="ID4EV"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="279b1-116">注釈</span><span class="sxs-lookup"><span data-stu-id="279b1-116">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="a16ba-116">注釈</span><span class="sxs-lookup"><span data-stu-id="a16ba-116">Remarks</span></span>
 
-<span data-ttu-id="279b1-117">クライアントには、新しいプレイヤーの統計情報システムへのプレイヤーの代理としてタイトルの統計情報を読み書きする方法が必要があります。</span><span class="sxs-lookup"><span data-stu-id="279b1-117">clients need a way to read and write title statistics on behalf of players to our new player statistics system.</span></span>
+<span data-ttu-id="a16ba-117">クライアントには、新しいプレイヤーの統計情報システムへのプレイヤーの代理としてタイトルの統計情報を読み書きする方法が必要があります。</span><span class="sxs-lookup"><span data-stu-id="a16ba-117">clients need a way to read and write title statistics on behalf of players to our new player statistics system.</span></span>
 
 <a id="ID4EEB"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="279b1-118">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="279b1-118">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="a16ba-118">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a16ba-118">URI parameters</span></span>
 
-| <span data-ttu-id="279b1-119">パラメーター</span><span class="sxs-lookup"><span data-stu-id="279b1-119">Parameter</span></span>| <span data-ttu-id="279b1-120">型</span><span class="sxs-lookup"><span data-stu-id="279b1-120">Type</span></span>| <span data-ttu-id="279b1-121">説明</span><span class="sxs-lookup"><span data-stu-id="279b1-121">Description</span></span>|
+| <span data-ttu-id="a16ba-119">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a16ba-119">Parameter</span></span>| <span data-ttu-id="a16ba-120">型</span><span class="sxs-lookup"><span data-stu-id="a16ba-120">Type</span></span>| <span data-ttu-id="a16ba-121">説明</span><span class="sxs-lookup"><span data-stu-id="a16ba-121">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="279b1-122">xuid</span><span class="sxs-lookup"><span data-stu-id="279b1-122">xuid</span></span>| <span data-ttu-id="279b1-123">GUID</span><span class="sxs-lookup"><span data-stu-id="279b1-123">GUID</span></span>| <span data-ttu-id="279b1-124">Xbox ユーザー ID (XUID) がに代わってサービス構成にアクセスするユーザーのです。</span><span class="sxs-lookup"><span data-stu-id="279b1-124">Xbox User ID (XUID) of the user on whose behalf to access the service configuration.</span></span>|
-| <span data-ttu-id="279b1-125">scid</span><span class="sxs-lookup"><span data-stu-id="279b1-125">scid</span></span>| <span data-ttu-id="279b1-126">GUID</span><span class="sxs-lookup"><span data-stu-id="279b1-126">GUID</span></span>| <span data-ttu-id="279b1-127">アクセス対象のリソースが含まれているサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="279b1-127">Identifier of the service configuration that contains the resource being accessed.</span></span>|
+| <span data-ttu-id="a16ba-122">xuid</span><span class="sxs-lookup"><span data-stu-id="a16ba-122">xuid</span></span>| <span data-ttu-id="a16ba-123">GUID</span><span class="sxs-lookup"><span data-stu-id="a16ba-123">GUID</span></span>| <span data-ttu-id="a16ba-124">Xbox ユーザー ID (XUID) がに代わってサービス構成にアクセスするユーザーのです。</span><span class="sxs-lookup"><span data-stu-id="a16ba-124">Xbox User ID (XUID) of the user on whose behalf to access the service configuration.</span></span>|
+| <span data-ttu-id="a16ba-125">scid</span><span class="sxs-lookup"><span data-stu-id="a16ba-125">scid</span></span>| <span data-ttu-id="a16ba-126">GUID</span><span class="sxs-lookup"><span data-stu-id="a16ba-126">GUID</span></span>| <span data-ttu-id="a16ba-127">アクセス対象のリソースが含まれているサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="a16ba-127">Identifier of the service configuration that contains the resource being accessed.</span></span>|
 
 <a id="ID4EPB"></a>
 
  
-## <a name="query-string-parameters"></a><span data-ttu-id="279b1-128">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="279b1-128">Query string parameters</span></span>
+## <a name="query-string-parameters"></a><span data-ttu-id="a16ba-128">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="a16ba-128">Query string parameters</span></span>
 
-| <span data-ttu-id="279b1-129">パラメーター</span><span class="sxs-lookup"><span data-stu-id="279b1-129">Parameter</span></span>| <span data-ttu-id="279b1-130">型</span><span class="sxs-lookup"><span data-stu-id="279b1-130">Type</span></span>| <span data-ttu-id="279b1-131">説明</span><span class="sxs-lookup"><span data-stu-id="279b1-131">Description</span></span>|
+| <span data-ttu-id="a16ba-129">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a16ba-129">Parameter</span></span>| <span data-ttu-id="a16ba-130">型</span><span class="sxs-lookup"><span data-stu-id="a16ba-130">Type</span></span>| <span data-ttu-id="a16ba-131">説明</span><span class="sxs-lookup"><span data-stu-id="a16ba-131">Description</span></span>|
 | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="279b1-132">statNames</span><span class="sxs-lookup"><span data-stu-id="279b1-132">statNames</span></span>| <span data-ttu-id="279b1-133">string</span><span class="sxs-lookup"><span data-stu-id="279b1-133">string</span></span>| <span data-ttu-id="279b1-134">唯一のクエリ文字列パラメーターは、コンマで区切られたユーザー統計情報名 URI 名詞です。たとえば、次の URI 通知サービス URI で指定されたユーザー id の代理として 4 つの統計情報を要求します。</span><span class="sxs-lookup"><span data-stu-id="279b1-134">The only query string parameter is the comma delimited user statistic name URI noun.For example, the following URI informs the service that four statistics are requested on behalf of the user id specified in the URI.</span></span> `https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots`<span data-ttu-id="279b1-135">1 つの呼び出しで要求できる統計の数に制限があり、その制限は URI の長さの実用性と開発者の利便性の「スイート スポット」を慎重に検討します。</span><span class="sxs-lookup"><span data-stu-id="279b1-135">There will be a limit on the number of statistics that can be requested in a single call, and that limit will carefully consider a "sweet spot" for developer convenience vs. URI length practicality.</span></span> <span data-ttu-id="279b1-136">たとえば、制限は、統計情報名のテキスト (コンマを含む) の価値があるか 600 文字または最大 10 個の統計情報によって決まります可能性があります。</span><span class="sxs-lookup"><span data-stu-id="279b1-136">For example, the limit might be determined by either 600 characters worth of statistic name text (including the commas), or 10 statistics maximum.</span></span> <span data-ttu-id="279b1-137">このようなシンプルな GET を有効にするようにクライアントからの呼び出しの量は減少よく要求される統計情報の HTTP がキャッシュされるようにします。</span><span class="sxs-lookup"><span data-stu-id="279b1-137">Enabling a simple GET like this enables HTTP caching for commonly requested statistics, which reduces call volume from chatty clients.</span></span> |
+| <span data-ttu-id="a16ba-132">statNames</span><span class="sxs-lookup"><span data-stu-id="a16ba-132">statNames</span></span>| <span data-ttu-id="a16ba-133">string</span><span class="sxs-lookup"><span data-stu-id="a16ba-133">string</span></span>| <span data-ttu-id="a16ba-134">唯一のクエリ文字列パラメーターは、コンマで区切られたユーザー統計情報名 URI 名詞です。たとえば、次の URI 通知サービス URI で指定されたユーザー id の代理として 4 つの統計情報を要求します。</span><span class="sxs-lookup"><span data-stu-id="a16ba-134">The only query string parameter is the comma delimited user statistic name URI noun.For example, the following URI informs the service that four statistics are requested on behalf of the user id specified in the URI.</span></span> `https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots`<span data-ttu-id="a16ba-135">1 つの呼び出しで要求できる統計の数に制限があり、その制限は URI の長さの実用性と開発者の利便性の「スイート スポット」を慎重に検討します。</span><span class="sxs-lookup"><span data-stu-id="a16ba-135">There will be a limit on the number of statistics that can be requested in a single call, and that limit will carefully consider a "sweet spot" for developer convenience vs. URI length practicality.</span></span> <span data-ttu-id="a16ba-136">たとえば、制限は、統計情報名のテキスト (コンマを含む) の価値があるか 600 文字または最大 10 個の統計情報によって決まります可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a16ba-136">For example, the limit might be determined by either 600 characters worth of statistic name text (including the commas), or 10 statistics maximum.</span></span> <span data-ttu-id="a16ba-137">このようなシンプルな GET を有効にするようにクライアントからの呼び出しの量は減少よく要求される統計情報の HTTP がキャッシュされるようにします。</span><span class="sxs-lookup"><span data-stu-id="a16ba-137">Enabling a simple GET like this enables HTTP caching for commonly requested statistics, which reduces call volume from chatty clients.</span></span> |
 
 <a id="ID4EUC"></a>
 
 
-## <a name="authorization"></a><span data-ttu-id="279b1-138">Authorization</span><span class="sxs-lookup"><span data-stu-id="279b1-138">Authorization</span></span>
+## <a name="authorization"></a><span data-ttu-id="a16ba-138">Authorization</span><span class="sxs-lookup"><span data-stu-id="a16ba-138">Authorization</span></span>
 
-<span data-ttu-id="279b1-139">承認ロジック コンテンツ分離とアクセス制御のシナリオの実装があります。</span><span class="sxs-lookup"><span data-stu-id="279b1-139">There is authorization logic implemented for content-isolation and access-control scenarios.</span></span>
+<span data-ttu-id="a16ba-139">承認ロジック コンテンツ分離とアクセス制御のシナリオの実装があります。</span><span class="sxs-lookup"><span data-stu-id="a16ba-139">There is authorization logic implemented for content-isolation and access-control scenarios.</span></span>
 
-   * <span data-ttu-id="279b1-140">ランキング、およびユーザーの両方の統計情報は、呼び出し元が有効な XSTS トークンの要求で送信するに任意のプラットフォーム上のクライアントから読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="279b1-140">Both leaderboards and user statistics can be read from clients on any platform, provided that the caller submits a valid XSTS token with the request.</span></span> <span data-ttu-id="279b1-141">書き込みは、データ プラットフォームでサポートされているクライアントに明らかに制限されます。</span><span class="sxs-lookup"><span data-stu-id="279b1-141">Writes are obviously limited to clients supported by the Data Platform.</span></span>
-   * <span data-ttu-id="279b1-142">タイトル デベロッパーは、open または XDP またはデベロッパー センターで制限付き統計をマークできます。</span><span class="sxs-lookup"><span data-stu-id="279b1-142">Title developers can mark statistics as open or restricted with XDP or Dev Center.</span></span> <span data-ttu-id="279b1-143">ランキングは、統計を開くです。</span><span class="sxs-lookup"><span data-stu-id="279b1-143">Leaderboards are open statistics.</span></span> <span data-ttu-id="279b1-144">開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="279b1-144">Open statistics can be accessed by Smartglass, as well as iOS, Android, Windows, Windows Phone, and web applications, as long as the user is authorized to the sandbox.</span></span> <span data-ttu-id="279b1-145">サンド ボックスへのユーザーの承認は XDP またはデベロッパー センターで管理されます。</span><span class="sxs-lookup"><span data-stu-id="279b1-145">User authorization to a sandbox is managed through XDP or Dev Center.</span></span>
+   * <span data-ttu-id="a16ba-140">ランキング、およびユーザーの両方の統計情報は、呼び出し元が有効な XSTS トークンの要求で送信するに任意のプラットフォーム上のクライアントから読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="a16ba-140">Both leaderboards and user statistics can be read from clients on any platform, provided that the caller submits a valid XSTS token with the request.</span></span> <span data-ttu-id="a16ba-141">書き込みは、データ プラットフォームでサポートされているクライアントに明らかに制限されます。</span><span class="sxs-lookup"><span data-stu-id="a16ba-141">Writes are obviously limited to clients supported by the Data Platform.</span></span>
+   * <span data-ttu-id="a16ba-142">タイトル デベロッパーは、open または XDP またはデベロッパー センターで制限付き統計をマークできます。</span><span class="sxs-lookup"><span data-stu-id="a16ba-142">Title developers can mark statistics as open or restricted with XDP or Dev Center.</span></span> <span data-ttu-id="a16ba-143">ランキングは、統計を開くです。</span><span class="sxs-lookup"><span data-stu-id="a16ba-143">Leaderboards are open statistics.</span></span> <span data-ttu-id="a16ba-144">開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="a16ba-144">Open statistics can be accessed by Smartglass, as well as iOS, Android, Windows, Windows Phone, and web applications, as long as the user is authorized to the sandbox.</span></span> <span data-ttu-id="a16ba-145">サンド ボックスへのユーザーの承認は XDP またはデベロッパー センターで管理されます。</span><span class="sxs-lookup"><span data-stu-id="a16ba-145">User authorization to a sandbox is managed through XDP or Dev Center.</span></span>
 
-<span data-ttu-id="279b1-146">チェックの擬似コードは、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="279b1-146">Pseudo-code for the check looks like this:</span></span>
+<span data-ttu-id="a16ba-146">チェックの擬似コードは、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="a16ba-146">Pseudo-code for the check looks like this:</span></span>
 
 
 ```cpp
@@ -85,55 +85,55 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 <a id="ID4EPD"></a>
 
 
-## <a name="required-request-headers"></a><span data-ttu-id="279b1-147">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="279b1-147">Required Request Headers</span></span>
+## <a name="required-request-headers"></a><span data-ttu-id="a16ba-147">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a16ba-147">Required Request Headers</span></span>
 
-| <span data-ttu-id="279b1-148">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="279b1-148">Header</span></span>| <span data-ttu-id="279b1-149">型</span><span class="sxs-lookup"><span data-stu-id="279b1-149">Type</span></span>| <span data-ttu-id="279b1-150">説明</span><span class="sxs-lookup"><span data-stu-id="279b1-150">Description</span></span>|
+| <span data-ttu-id="a16ba-148">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a16ba-148">Header</span></span>| <span data-ttu-id="a16ba-149">型</span><span class="sxs-lookup"><span data-stu-id="a16ba-149">Type</span></span>| <span data-ttu-id="a16ba-150">説明</span><span class="sxs-lookup"><span data-stu-id="a16ba-150">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="279b1-151">Authorization</span><span class="sxs-lookup"><span data-stu-id="279b1-151">Authorization</span></span>| <span data-ttu-id="279b1-152">string</span><span class="sxs-lookup"><span data-stu-id="279b1-152">string</span></span>| <span data-ttu-id="279b1-153">HTTP 認証の資格情報を認証します。</span><span class="sxs-lookup"><span data-stu-id="279b1-153">Authentication credentials for HTTP authentication.</span></span> <span data-ttu-id="279b1-154">値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。</span><span class="sxs-lookup"><span data-stu-id="279b1-154">Example value: "XBL3.0 x=&lt;userhash>;&lt;token>".</span></span>|
+| <span data-ttu-id="a16ba-151">Authorization</span><span class="sxs-lookup"><span data-stu-id="a16ba-151">Authorization</span></span>| <span data-ttu-id="a16ba-152">string</span><span class="sxs-lookup"><span data-stu-id="a16ba-152">string</span></span>| <span data-ttu-id="a16ba-153">HTTP 認証の資格情報を認証します。</span><span class="sxs-lookup"><span data-stu-id="a16ba-153">Authentication credentials for HTTP authentication.</span></span> <span data-ttu-id="a16ba-154">値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。</span><span class="sxs-lookup"><span data-stu-id="a16ba-154">Example value: "XBL3.0 x=&lt;userhash>;&lt;token>".</span></span>|
 
 <a id="ID4EYE"></a>
 
 
-## <a name="optional-request-headers"></a><span data-ttu-id="279b1-155">省略可能な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="279b1-155">Optional Request Headers</span></span>
+## <a name="optional-request-headers"></a><span data-ttu-id="a16ba-155">省略可能な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a16ba-155">Optional Request Headers</span></span>
 
-| <span data-ttu-id="279b1-156">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="279b1-156">Header</span></span>| <span data-ttu-id="279b1-157">型</span><span class="sxs-lookup"><span data-stu-id="279b1-157">Type</span></span>| <span data-ttu-id="279b1-158">説明</span><span class="sxs-lookup"><span data-stu-id="279b1-158">Description</span></span>|
+| <span data-ttu-id="a16ba-156">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a16ba-156">Header</span></span>| <span data-ttu-id="a16ba-157">型</span><span class="sxs-lookup"><span data-stu-id="a16ba-157">Type</span></span>| <span data-ttu-id="a16ba-158">説明</span><span class="sxs-lookup"><span data-stu-id="a16ba-158">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="279b1-159">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="279b1-159">X-RequestedServiceVersion</span></span>|  | <span data-ttu-id="279b1-160">この要求を送信する必要があります、サービスの名前/番号をビルドします。</span><span class="sxs-lookup"><span data-stu-id="279b1-160">Build name/number of the service to which this request should be directed.</span></span> <span data-ttu-id="279b1-161">要求はのみにルーティングされ、サービスの認証トークン内の要求ヘッダーの有効性を確認した後です。</span><span class="sxs-lookup"><span data-stu-id="279b1-161">The request will only be routed to that service after verifying the validity of the header, the claims in the authentication token, and so on.</span></span> <span data-ttu-id="279b1-162">既定値: 1 です。</span><span class="sxs-lookup"><span data-stu-id="279b1-162">Default value: 1.</span></span>|
+| <span data-ttu-id="a16ba-159">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="a16ba-159">X-RequestedServiceVersion</span></span>|  | <span data-ttu-id="a16ba-160">この要求を送信する必要があります、サービスの名前/番号をビルドします。</span><span class="sxs-lookup"><span data-stu-id="a16ba-160">Build name/number of the service to which this request should be directed.</span></span> <span data-ttu-id="a16ba-161">要求はのみにルーティングされ、サービスの認証トークン内の要求ヘッダーの有効性を確認した後です。</span><span class="sxs-lookup"><span data-stu-id="a16ba-161">The request will only be routed to that service after verifying the validity of the header, the claims in the authentication token, and so on.</span></span> <span data-ttu-id="a16ba-162">既定値: 1 です。</span><span class="sxs-lookup"><span data-stu-id="a16ba-162">Default value: 1.</span></span>|
 
 <a id="ID4E3F"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="279b1-163">要求本文</span><span class="sxs-lookup"><span data-stu-id="279b1-163">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="a16ba-163">要求本文</span><span class="sxs-lookup"><span data-stu-id="a16ba-163">Request body</span></span>
 
-<span data-ttu-id="279b1-164">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="279b1-164">No objects are sent in the body of this request.</span></span>
+<span data-ttu-id="a16ba-164">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="a16ba-164">No objects are sent in the body of this request.</span></span>
 
 <a id="ID4EHG"></a>
 
 
-## <a name="http-status-codes"></a><span data-ttu-id="279b1-165">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="279b1-165">HTTP status codes</span></span>
+## <a name="http-status-codes"></a><span data-ttu-id="a16ba-165">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="a16ba-165">HTTP status codes</span></span>
 
-<span data-ttu-id="279b1-166">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="279b1-166">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="279b1-167">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="279b1-167">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
+<span data-ttu-id="a16ba-166">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="a16ba-166">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="a16ba-167">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a16ba-167">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
 
-| <span data-ttu-id="279b1-168">コード</span><span class="sxs-lookup"><span data-stu-id="279b1-168">Code</span></span>| <span data-ttu-id="279b1-169">理由フレーズ</span><span class="sxs-lookup"><span data-stu-id="279b1-169">Reason phrase</span></span>| <span data-ttu-id="279b1-170">説明</span><span class="sxs-lookup"><span data-stu-id="279b1-170">Description</span></span>|
+| <span data-ttu-id="a16ba-168">コード</span><span class="sxs-lookup"><span data-stu-id="a16ba-168">Code</span></span>| <span data-ttu-id="a16ba-169">理由フレーズ</span><span class="sxs-lookup"><span data-stu-id="a16ba-169">Reason phrase</span></span>| <span data-ttu-id="a16ba-170">説明</span><span class="sxs-lookup"><span data-stu-id="a16ba-170">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="279b1-171">200</span><span class="sxs-lookup"><span data-stu-id="279b1-171">200</span></span>| <span data-ttu-id="279b1-172">OK</span><span class="sxs-lookup"><span data-stu-id="279b1-172">OK</span></span>| <span data-ttu-id="279b1-173">セッションが正常に取得されました。</span><span class="sxs-lookup"><span data-stu-id="279b1-173">The session was successfully retrieved.</span></span>|
-| <span data-ttu-id="279b1-174">304</span><span class="sxs-lookup"><span data-stu-id="279b1-174">304</span></span>| <span data-ttu-id="279b1-175">Not Modified</span><span class="sxs-lookup"><span data-stu-id="279b1-175">Not Modified</span></span>| <span data-ttu-id="279b1-176">リソースされていない以降に変更するように要求します。</span><span class="sxs-lookup"><span data-stu-id="279b1-176">Resource not been modified since last requested.</span></span>|
-| <span data-ttu-id="279b1-177">400</span><span class="sxs-lookup"><span data-stu-id="279b1-177">400</span></span>| <span data-ttu-id="279b1-178">Bad Request</span><span class="sxs-lookup"><span data-stu-id="279b1-178">Bad Request</span></span>| <span data-ttu-id="279b1-179">サービスは、形式が正しくない要求を理解していない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="279b1-179">Service could not understand malformed request.</span></span> <span data-ttu-id="279b1-180">通常、無効なパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="279b1-180">Typically an invalid parameter.</span></span>|
-| <span data-ttu-id="279b1-181">401</span><span class="sxs-lookup"><span data-stu-id="279b1-181">401</span></span>| <span data-ttu-id="279b1-182">権限がありません</span><span class="sxs-lookup"><span data-stu-id="279b1-182">Unauthorized</span></span>| <span data-ttu-id="279b1-183">要求には、ユーザー認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="279b1-183">The request requires user authentication.</span></span>|
-| <span data-ttu-id="279b1-184">403</span><span class="sxs-lookup"><span data-stu-id="279b1-184">403</span></span>| <span data-ttu-id="279b1-185">Forbidden</span><span class="sxs-lookup"><span data-stu-id="279b1-185">Forbidden</span></span>| <span data-ttu-id="279b1-186">ユーザーまたはサービスの要求は許可されていません。</span><span class="sxs-lookup"><span data-stu-id="279b1-186">The request is not allowed for the user or service.</span></span>|
-| <span data-ttu-id="279b1-187">404</span><span class="sxs-lookup"><span data-stu-id="279b1-187">404</span></span>| <span data-ttu-id="279b1-188">Not Found します。</span><span class="sxs-lookup"><span data-stu-id="279b1-188">Not Found</span></span>| <span data-ttu-id="279b1-189">指定されたリソースは見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="279b1-189">The specified resource could not be found.</span></span>|
-| <span data-ttu-id="279b1-190">406</span><span class="sxs-lookup"><span data-stu-id="279b1-190">406</span></span>| <span data-ttu-id="279b1-191">許容できません。</span><span class="sxs-lookup"><span data-stu-id="279b1-191">Not Acceptable</span></span>| <span data-ttu-id="279b1-192">リソースのバージョンがサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="279b1-192">Resource version is not supported.</span></span>|
-| <span data-ttu-id="279b1-193">408</span><span class="sxs-lookup"><span data-stu-id="279b1-193">408</span></span>| <span data-ttu-id="279b1-194">要求のタイムアウト</span><span class="sxs-lookup"><span data-stu-id="279b1-194">Request Timeout</span></span>| <span data-ttu-id="279b1-195">リソースのバージョンがサポートされていません。MVC レイヤーによって拒否する必要があります。</span><span class="sxs-lookup"><span data-stu-id="279b1-195">Resource version is not supported; should be rejected by the MVC layer.</span></span>|
+| <span data-ttu-id="a16ba-171">200</span><span class="sxs-lookup"><span data-stu-id="a16ba-171">200</span></span>| <span data-ttu-id="a16ba-172">OK</span><span class="sxs-lookup"><span data-stu-id="a16ba-172">OK</span></span>| <span data-ttu-id="a16ba-173">セッションが正常に取得されました。</span><span class="sxs-lookup"><span data-stu-id="a16ba-173">The session was successfully retrieved.</span></span>|
+| <span data-ttu-id="a16ba-174">304</span><span class="sxs-lookup"><span data-stu-id="a16ba-174">304</span></span>| <span data-ttu-id="a16ba-175">Not Modified</span><span class="sxs-lookup"><span data-stu-id="a16ba-175">Not Modified</span></span>| <span data-ttu-id="a16ba-176">リソースされていない以降に変更するように要求します。</span><span class="sxs-lookup"><span data-stu-id="a16ba-176">Resource not been modified since last requested.</span></span>|
+| <span data-ttu-id="a16ba-177">400</span><span class="sxs-lookup"><span data-stu-id="a16ba-177">400</span></span>| <span data-ttu-id="a16ba-178">Bad Request</span><span class="sxs-lookup"><span data-stu-id="a16ba-178">Bad Request</span></span>| <span data-ttu-id="a16ba-179">サービスは、形式が正しくない要求を理解していない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a16ba-179">Service could not understand malformed request.</span></span> <span data-ttu-id="a16ba-180">通常、無効なパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="a16ba-180">Typically an invalid parameter.</span></span>|
+| <span data-ttu-id="a16ba-181">401</span><span class="sxs-lookup"><span data-stu-id="a16ba-181">401</span></span>| <span data-ttu-id="a16ba-182">権限がありません</span><span class="sxs-lookup"><span data-stu-id="a16ba-182">Unauthorized</span></span>| <span data-ttu-id="a16ba-183">要求には、ユーザー認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="a16ba-183">The request requires user authentication.</span></span>|
+| <span data-ttu-id="a16ba-184">403</span><span class="sxs-lookup"><span data-stu-id="a16ba-184">403</span></span>| <span data-ttu-id="a16ba-185">Forbidden</span><span class="sxs-lookup"><span data-stu-id="a16ba-185">Forbidden</span></span>| <span data-ttu-id="a16ba-186">ユーザーまたはサービスの要求は許可されていません。</span><span class="sxs-lookup"><span data-stu-id="a16ba-186">The request is not allowed for the user or service.</span></span>|
+| <span data-ttu-id="a16ba-187">404</span><span class="sxs-lookup"><span data-stu-id="a16ba-187">404</span></span>| <span data-ttu-id="a16ba-188">Not Found します。</span><span class="sxs-lookup"><span data-stu-id="a16ba-188">Not Found</span></span>| <span data-ttu-id="a16ba-189">指定されたリソースは見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="a16ba-189">The specified resource could not be found.</span></span>|
+| <span data-ttu-id="a16ba-190">406</span><span class="sxs-lookup"><span data-stu-id="a16ba-190">406</span></span>| <span data-ttu-id="a16ba-191">許容できません。</span><span class="sxs-lookup"><span data-stu-id="a16ba-191">Not Acceptable</span></span>| <span data-ttu-id="a16ba-192">リソースのバージョンがサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="a16ba-192">Resource version is not supported.</span></span>|
+| <span data-ttu-id="a16ba-193">408</span><span class="sxs-lookup"><span data-stu-id="a16ba-193">408</span></span>| <span data-ttu-id="a16ba-194">要求のタイムアウト</span><span class="sxs-lookup"><span data-stu-id="a16ba-194">Request Timeout</span></span>| <span data-ttu-id="a16ba-195">リソースのバージョンがサポートされていません。MVC レイヤーによって拒否する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a16ba-195">Resource version is not supported; should be rejected by the MVC layer.</span></span>|
 
 <a id="ID4E5BAC"></a>
 
 
-## <a name="response-body"></a><span data-ttu-id="279b1-196">応答本文</span><span class="sxs-lookup"><span data-stu-id="279b1-196">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="a16ba-196">応答本文</span><span class="sxs-lookup"><span data-stu-id="a16ba-196">Response body</span></span>
 
 <a id="ID4EECAC"></a>
 
 
-### <a name="sample-response"></a><span data-ttu-id="279b1-197">応答の例</span><span class="sxs-lookup"><span data-stu-id="279b1-197">Sample response</span></span>
+### <a name="sample-response"></a><span data-ttu-id="a16ba-197">応答の例</span><span class="sxs-lookup"><span data-stu-id="a16ba-197">Sample response</span></span>
 
 
 ```cpp
@@ -172,11 +172,11 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 <a id="ID4EOCAC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="279b1-198">関連項目</span><span class="sxs-lookup"><span data-stu-id="279b1-198">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a16ba-198">関連項目</span><span class="sxs-lookup"><span data-stu-id="a16ba-198">See also</span></span>
 
 <a id="ID4EQCAC"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="279b1-199">Parent</span><span class="sxs-lookup"><span data-stu-id="279b1-199">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="a16ba-199">Parent</span><span class="sxs-lookup"><span data-stu-id="a16ba-199">Parent</span></span>
 
-[<span data-ttu-id="279b1-200">/users/xuid({xuid})/scids/{scid}/stats</span><span class="sxs-lookup"><span data-stu-id="279b1-200">/users/xuid({xuid})/scids/{scid}/stats</span></span>](uri-usersxuidscidsscidstats.md)
+[<span data-ttu-id="a16ba-200">/users/xuid({xuid})/scids/{scid}/stats</span><span class="sxs-lookup"><span data-stu-id="a16ba-200">/users/xuid({xuid})/scids/{scid}/stats</span></span>](uri-usersxuidscidsscidstats.md)

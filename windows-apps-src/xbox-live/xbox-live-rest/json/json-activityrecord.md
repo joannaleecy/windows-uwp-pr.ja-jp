@@ -12,30 +12,30 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0eb34d64daa9b1349c4f956a59ccf5d8efa5b565
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210725"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4257858"
 ---
-# <a name="activityrecord-json"></a><span data-ttu-id="deeb7-104">ActivityRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="deeb7-104">ActivityRecord (JSON)</span></span>
-<span data-ttu-id="deeb7-105">1 つまたは複数のユーザーのリッチ プレゼンスの書式設定されたとローカライズされた文字列です。</span><span class="sxs-lookup"><span data-stu-id="deeb7-105">A formatted and localized string about one or more users' rich presence.</span></span> 
+# <a name="activityrecord-json"></a><span data-ttu-id="a17f4-104">ActivityRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="a17f4-104">ActivityRecord (JSON)</span></span>
+<span data-ttu-id="a17f4-105">1 つまたは複数のユーザーのリッチ プレゼンスの書式設定されたとローカライズされた文字列です。</span><span class="sxs-lookup"><span data-stu-id="a17f4-105">A formatted and localized string about one or more users' rich presence.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="activityrecord"></a><span data-ttu-id="deeb7-106">ActivityRecord</span><span class="sxs-lookup"><span data-stu-id="deeb7-106">ActivityRecord</span></span>
+## <a name="activityrecord"></a><span data-ttu-id="a17f4-106">ActivityRecord</span><span class="sxs-lookup"><span data-stu-id="a17f4-106">ActivityRecord</span></span>
  
-<span data-ttu-id="deeb7-107">ActivityRecord オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="deeb7-107">The ActivityRecord object has the following specification.</span></span>
+<span data-ttu-id="a17f4-107">ActivityRecord オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="a17f4-107">The ActivityRecord object has the following specification.</span></span>
  
-| <span data-ttu-id="deeb7-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="deeb7-108">Member</span></span>| <span data-ttu-id="deeb7-109">種類</span><span class="sxs-lookup"><span data-stu-id="deeb7-109">Type</span></span>| <span data-ttu-id="deeb7-110">説明</span><span class="sxs-lookup"><span data-stu-id="deeb7-110">Description</span></span>| 
+| <span data-ttu-id="a17f4-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="a17f4-108">Member</span></span>| <span data-ttu-id="a17f4-109">種類</span><span class="sxs-lookup"><span data-stu-id="a17f4-109">Type</span></span>| <span data-ttu-id="a17f4-110">説明</span><span class="sxs-lookup"><span data-stu-id="a17f4-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="deeb7-111">richPresence</span><span class="sxs-lookup"><span data-stu-id="deeb7-111">richPresence</span></span>| <span data-ttu-id="deeb7-112">string</span><span class="sxs-lookup"><span data-stu-id="deeb7-112">string</span></span>| <span data-ttu-id="deeb7-113">フォーマットされて、ローカライズされたリッチ プレゼンス文字列。</span><span class="sxs-lookup"><span data-stu-id="deeb7-113">The rich presence string, formatted and localized.</span></span>| 
-| <span data-ttu-id="deeb7-114">メディア</span><span class="sxs-lookup"><span data-stu-id="deeb7-114">media</span></span>| <span data-ttu-id="deeb7-115">MediaRecord</span><span class="sxs-lookup"><span data-stu-id="deeb7-115">MediaRecord</span></span>| <span data-ttu-id="deeb7-116">どのようなユーザーが視聴またはをリッスンします。</span><span class="sxs-lookup"><span data-stu-id="deeb7-116">What the user is watching or listening to.</span></span>| 
+| <span data-ttu-id="a17f4-111">richPresence</span><span class="sxs-lookup"><span data-stu-id="a17f4-111">richPresence</span></span>| <span data-ttu-id="a17f4-112">string</span><span class="sxs-lookup"><span data-stu-id="a17f4-112">string</span></span>| <span data-ttu-id="a17f4-113">フォーマットされて、ローカライズされたリッチ プレゼンス文字列。</span><span class="sxs-lookup"><span data-stu-id="a17f4-113">The rich presence string, formatted and localized.</span></span>| 
+| <span data-ttu-id="a17f4-114">メディア</span><span class="sxs-lookup"><span data-stu-id="a17f4-114">media</span></span>| <span data-ttu-id="a17f4-115">MediaRecord</span><span class="sxs-lookup"><span data-stu-id="a17f4-115">MediaRecord</span></span>| <span data-ttu-id="a17f4-116">どのようなユーザーが視聴またはをリッスンします。</span><span class="sxs-lookup"><span data-stu-id="a17f4-116">What the user is watching or listening to.</span></span>| 
   
 <a id="ID4ETB"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="deeb7-117">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="deeb7-117">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="a17f4-117">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="a17f4-117">Sample JSON syntax</span></span>
  
 
 ```json
@@ -49,13 +49,13 @@ ms.locfileid: "4210725"
 <a id="ID4E3B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="deeb7-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="deeb7-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a17f4-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="a17f4-118">See also</span></span>
  
 <a id="ID4E5B"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="deeb7-119">Parent</span><span class="sxs-lookup"><span data-stu-id="deeb7-119">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="a17f4-119">Parent</span><span class="sxs-lookup"><span data-stu-id="a17f4-119">Parent</span></span> 
 
-[<span data-ttu-id="deeb7-120">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="deeb7-120">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="a17f4-120">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="a17f4-120">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

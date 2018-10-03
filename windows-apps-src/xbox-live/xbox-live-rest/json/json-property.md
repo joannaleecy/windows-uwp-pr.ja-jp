@@ -12,31 +12,31 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 033a87580680b054f5eefec7c543215e4351ace3
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205785"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4260258"
 ---
-# <a name="property-json"></a><span data-ttu-id="32951-104">Property (JSON)</span><span class="sxs-lookup"><span data-stu-id="32951-104">Property (JSON)</span></span>
-<span data-ttu-id="32951-105">マッチメイ キング要求条件のクライアントによって提供されるプロパティのデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="32951-105">Contains property data provided by the client for matchmaking request criteria.</span></span>
+# <a name="property-json"></a><span data-ttu-id="50290-104">Property (JSON)</span><span class="sxs-lookup"><span data-stu-id="50290-104">Property (JSON)</span></span>
+<span data-ttu-id="50290-105">マッチメイ キング要求条件のクライアントによって提供されるプロパティのデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="50290-105">Contains property data provided by the client for matchmaking request criteria.</span></span>
 <a id="ID4EN"></a>
 
 
-## <a name="property"></a><span data-ttu-id="32951-106">プロパティ</span><span class="sxs-lookup"><span data-stu-id="32951-106">Property</span></span>
+## <a name="property"></a><span data-ttu-id="50290-106">プロパティ</span><span class="sxs-lookup"><span data-stu-id="50290-106">Property</span></span>
 
-<span data-ttu-id="32951-107">プロパティのオブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="32951-107">The Property object has the following specification.</span></span>
+<span data-ttu-id="50290-107">プロパティのオブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="50290-107">The Property object has the following specification.</span></span>
 
-| <span data-ttu-id="32951-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="32951-108">Member</span></span>| <span data-ttu-id="32951-109">種類</span><span class="sxs-lookup"><span data-stu-id="32951-109">Type</span></span>| <span data-ttu-id="32951-110">説明</span><span class="sxs-lookup"><span data-stu-id="32951-110">Description</span></span>|
+| <span data-ttu-id="50290-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="50290-108">Member</span></span>| <span data-ttu-id="50290-109">種類</span><span class="sxs-lookup"><span data-stu-id="50290-109">Type</span></span>| <span data-ttu-id="50290-110">説明</span><span class="sxs-lookup"><span data-stu-id="50290-110">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="32951-111">id</span><span class="sxs-lookup"><span data-stu-id="32951-111">id</span></span>| <span data-ttu-id="32951-112">string</span><span class="sxs-lookup"><span data-stu-id="32951-112">string</span></span>| <span data-ttu-id="32951-113">このプロパティの id です。</span><span class="sxs-lookup"><span data-stu-id="32951-113">An id for this property.</span></span>|
-| <span data-ttu-id="32951-114">type</span><span class="sxs-lookup"><span data-stu-id="32951-114">type</span></span>| <span data-ttu-id="32951-115">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="32951-115">32-bit signed integer</span></span> | <span data-ttu-id="32951-116">プロパティの種類です。</span><span class="sxs-lookup"><span data-stu-id="32951-116">Type of the property.</span></span> <span data-ttu-id="32951-117">サポートされる値は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="32951-117">Supported values are:</span></span> <ul><li><span data-ttu-id="32951-118">0 = 整数</span><span class="sxs-lookup"><span data-stu-id="32951-118">0 = integer</span></span></li><li><span data-ttu-id="32951-119">1 = 文字列</span><span class="sxs-lookup"><span data-stu-id="32951-119">1 = string</span></span></li></ul>| 
-| <span data-ttu-id="32951-120">value</span><span class="sxs-lookup"><span data-stu-id="32951-120">value</span></span>| <span data-ttu-id="32951-121">string</span><span class="sxs-lookup"><span data-stu-id="32951-121">string</span></span>| <span data-ttu-id="32951-122">このプロパティの値。</span><span class="sxs-lookup"><span data-stu-id="32951-122">Value of this property.</span></span>|
+| <span data-ttu-id="50290-111">id</span><span class="sxs-lookup"><span data-stu-id="50290-111">id</span></span>| <span data-ttu-id="50290-112">string</span><span class="sxs-lookup"><span data-stu-id="50290-112">string</span></span>| <span data-ttu-id="50290-113">このプロパティの id です。</span><span class="sxs-lookup"><span data-stu-id="50290-113">An id for this property.</span></span>|
+| <span data-ttu-id="50290-114">type</span><span class="sxs-lookup"><span data-stu-id="50290-114">type</span></span>| <span data-ttu-id="50290-115">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="50290-115">32-bit signed integer</span></span> | <span data-ttu-id="50290-116">プロパティの種類です。</span><span class="sxs-lookup"><span data-stu-id="50290-116">Type of the property.</span></span> <span data-ttu-id="50290-117">サポートされる値は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="50290-117">Supported values are:</span></span> <ul><li><span data-ttu-id="50290-118">0 = 整数</span><span class="sxs-lookup"><span data-stu-id="50290-118">0 = integer</span></span></li><li><span data-ttu-id="50290-119">1 = 文字列</span><span class="sxs-lookup"><span data-stu-id="50290-119">1 = string</span></span></li></ul>| 
+| <span data-ttu-id="50290-120">value</span><span class="sxs-lookup"><span data-stu-id="50290-120">value</span></span>| <span data-ttu-id="50290-121">string</span><span class="sxs-lookup"><span data-stu-id="50290-121">string</span></span>| <span data-ttu-id="50290-122">このプロパティの値。</span><span class="sxs-lookup"><span data-stu-id="50290-122">Value of this property.</span></span>|
 
 <a id="ID4EGC"></a>
 
 
-## <a name="sample-json-syntax"></a><span data-ttu-id="32951-123">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="32951-123">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="50290-123">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="50290-123">Sample JSON syntax</span></span>
 
 
 ```json
@@ -52,11 +52,11 @@ ms.locfileid: "4205785"
 <a id="ID4EPC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="32951-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="32951-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="50290-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="50290-124">See also</span></span>
 
 <a id="ID4ERC"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="32951-125">Parent</span><span class="sxs-lookup"><span data-stu-id="32951-125">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="50290-125">Parent</span><span class="sxs-lookup"><span data-stu-id="50290-125">Parent</span></span>
 
-[<span data-ttu-id="32951-126">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="32951-126">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="50290-126">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="50290-126">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)

@@ -12,39 +12,39 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 47b487a4708e42ee66f293bfa020ba51cfad82a9
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205423"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4265582"
 ---
-# <a name="system-strings-validatation-uris"></a><span data-ttu-id="e4128-104">システム文字列の検証 URI</span><span class="sxs-lookup"><span data-stu-id="e4128-104">System Strings Validatation URIs</span></span>
+# <a name="system-strings-validatation-uris"></a><span data-ttu-id="994e4-104">システム文字列の検証 URI</span><span class="sxs-lookup"><span data-stu-id="994e4-104">System Strings Validatation URIs</span></span>
  
-<span data-ttu-id="e4128-105">このセクションでは、*システムの文字列の検証*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="e4128-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *system strings validation*.</span></span>
+<span data-ttu-id="994e4-105">このセクションでは、*システムの文字列の検証*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="994e4-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *system strings validation*.</span></span>
  
-<span data-ttu-id="e4128-106">永続的な文字列データをアップロードする前に、倫理規定や使用条件に違反していないことを確認する検証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4128-106">Before uploading persistent string data to , it should be validated to ensure it doesn't violate the Code of Conduct or Terms of Use.</span></span> <span data-ttu-id="e4128-107">この REST リソースは、文字列の配列を受け取り、それぞれには、許容できるかどうかと、問題のある語句を含む文字列を示す結果コードを返します。</span><span class="sxs-lookup"><span data-stu-id="e4128-107">This REST resource takes an array of strings and returns a result code for each one, indicating whether or not it is acceptable on , and a string containing the offending term.</span></span>
+<span data-ttu-id="994e4-106">永続的な文字列データをアップロードする前に、倫理規定や使用条件に違反していないことを確認する検証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="994e4-106">Before uploading persistent string data to , it should be validated to ensure it doesn't violate the Code of Conduct or Terms of Use.</span></span> <span data-ttu-id="994e4-107">この REST リソースは、文字列の配列を受け取り、それぞれには、許容できるかどうかと、問題のある語句を含む文字列を示す結果コードを返します。</span><span class="sxs-lookup"><span data-stu-id="994e4-107">This REST resource takes an array of strings and returns a result code for each one, indicating whether or not it is acceptable on , and a string containing the offending term.</span></span>
  
-<span data-ttu-id="e4128-108">これらの Uri のドメインは、クライアント strings.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="e4128-108">The domain for these URIs is client-strings.xboxlive.com.</span></span>
+<span data-ttu-id="994e4-108">これらの Uri のドメインは、クライアント strings.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="994e4-108">The domain for these URIs is client-strings.xboxlive.com.</span></span>
  
 <a id="ID4EQB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="e4128-109">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="e4128-109">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="994e4-109">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="994e4-109">In this section</span></span>
 
-[<span data-ttu-id="e4128-110">/system/strings/validate</span><span class="sxs-lookup"><span data-stu-id="e4128-110">/system/strings/validate</span></span>](uri-systemstringsvalidate.md)
+[<span data-ttu-id="994e4-110">/system/strings/validate</span><span class="sxs-lookup"><span data-stu-id="994e4-110">/system/strings/validate</span></span>](uri-systemstringsvalidate.md)
 
-<span data-ttu-id="e4128-111">&nbsp;&nbsp;検証のための文字列の配列にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="e4128-111">&nbsp;&nbsp;Accesses an array of strings for validation.</span></span>
+<span data-ttu-id="994e4-111">&nbsp;&nbsp;検証のための文字列の配列にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="994e4-111">&nbsp;&nbsp;Accesses an array of strings for validation.</span></span>
  
 <a id="ID4EWB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="e4128-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="e4128-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="994e4-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="994e4-112">See also</span></span>
  
 <a id="ID4EYB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="e4128-113">Parent</span><span class="sxs-lookup"><span data-stu-id="e4128-113">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="994e4-113">Parent</span><span class="sxs-lookup"><span data-stu-id="994e4-113">Parent</span></span> 
 
-[<span data-ttu-id="e4128-114">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="e4128-114">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="994e4-114">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="994e4-114">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

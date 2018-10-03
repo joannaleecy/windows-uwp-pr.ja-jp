@@ -12,91 +12,91 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 246427b772403ca07adac2a4b1b07ec159142049
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212229"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4258358"
 ---
-# <a name="post-titlestitleidvariants"></a><span data-ttu-id="9cba8-104">POST (/titles/{titleId}/variants)</span><span class="sxs-lookup"><span data-stu-id="9cba8-104">POST (/titles/{titleId}/variants)</span></span>
-<span data-ttu-id="9cba8-105">指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URIこれらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="9cba8-105">URI called by a client that retrieves a list of game variants for the specified title Id. The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
+# <a name="post-titlestitleidvariants"></a><span data-ttu-id="6ae32-104">POST (/titles/{titleId}/variants)</span><span class="sxs-lookup"><span data-stu-id="6ae32-104">POST (/titles/{titleId}/variants)</span></span>
+<span data-ttu-id="6ae32-105">指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URIこれらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="6ae32-105">URI called by a client that retrieves a list of game variants for the specified title Id. The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="9cba8-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9cba8-106">URI Parameters</span></span>](#ID4EZ)
-  * [<span data-ttu-id="9cba8-107">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-107">Required Request Headers</span></span>](#ID4EIB)
-  * [<span data-ttu-id="9cba8-108">省略可能な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-108">Optional Request Headers</span></span>](#ID4EED)
-  * [<span data-ttu-id="9cba8-109">Authorization</span><span class="sxs-lookup"><span data-stu-id="9cba8-109">Authorization</span></span>](#ID4E3D)
-  * [<span data-ttu-id="9cba8-110">要求本文</span><span class="sxs-lookup"><span data-stu-id="9cba8-110">Request Body</span></span>](#ID4EEE)
-  * [<span data-ttu-id="9cba8-111">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-111">Required Response Headers</span></span>](#ID4ELF)
-  * [<span data-ttu-id="9cba8-112">省略可能な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-112">Optional Response Headers</span></span>](#ID4EMG)
-  * [<span data-ttu-id="9cba8-113">応答本文</span><span class="sxs-lookup"><span data-stu-id="9cba8-113">Response Body</span></span>](#ID4EEH)
+  * [<span data-ttu-id="6ae32-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="6ae32-106">URI Parameters</span></span>](#ID4EZ)
+  * [<span data-ttu-id="6ae32-107">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-107">Required Request Headers</span></span>](#ID4EIB)
+  * [<span data-ttu-id="6ae32-108">省略可能な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-108">Optional Request Headers</span></span>](#ID4EED)
+  * [<span data-ttu-id="6ae32-109">Authorization</span><span class="sxs-lookup"><span data-stu-id="6ae32-109">Authorization</span></span>](#ID4E3D)
+  * [<span data-ttu-id="6ae32-110">要求本文</span><span class="sxs-lookup"><span data-stu-id="6ae32-110">Request Body</span></span>](#ID4EEE)
+  * [<span data-ttu-id="6ae32-111">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-111">Required Response Headers</span></span>](#ID4ELF)
+  * [<span data-ttu-id="6ae32-112">省略可能な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-112">Optional Response Headers</span></span>](#ID4EMG)
+  * [<span data-ttu-id="6ae32-113">応答本文</span><span class="sxs-lookup"><span data-stu-id="6ae32-113">Response Body</span></span>](#ID4EEH)
  
 <a id="ID4EZ"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="9cba8-114">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9cba8-114">URI Parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="6ae32-114">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="6ae32-114">URI Parameters</span></span>
  
-| <span data-ttu-id="9cba8-115">パラメーター</span><span class="sxs-lookup"><span data-stu-id="9cba8-115">Parameter</span></span>| <span data-ttu-id="9cba8-116">説明</span><span class="sxs-lookup"><span data-stu-id="9cba8-116">Description</span></span>| 
+| <span data-ttu-id="6ae32-115">パラメーター</span><span class="sxs-lookup"><span data-stu-id="6ae32-115">Parameter</span></span>| <span data-ttu-id="6ae32-116">説明</span><span class="sxs-lookup"><span data-stu-id="6ae32-116">Description</span></span>| 
 | --- | --- | 
-| <span data-ttu-id="9cba8-117">タイトル id</span><span class="sxs-lookup"><span data-stu-id="9cba8-117">titleid</span></span>| <span data-ttu-id="9cba8-118">要求の操作のタイトルの ID です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-118">ID of the title that the request should operate on.</span></span>| 
+| <span data-ttu-id="6ae32-117">タイトル id</span><span class="sxs-lookup"><span data-stu-id="6ae32-117">titleid</span></span>| <span data-ttu-id="6ae32-118">要求の操作のタイトルの ID です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-118">ID of the title that the request should operate on.</span></span>| 
   
 <a id="ID5EG"></a>
 
  
-## <a name="host-name"></a><span data-ttu-id="9cba8-119">ホスト名</span><span class="sxs-lookup"><span data-stu-id="9cba8-119">Host Name</span></span>
+## <a name="host-name"></a><span data-ttu-id="6ae32-119">ホスト名</span><span class="sxs-lookup"><span data-stu-id="6ae32-119">Host Name</span></span>
 
-<span data-ttu-id="9cba8-120">gameserverds.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="9cba8-120">gameserverds.xboxlive.com</span></span>
+<span data-ttu-id="6ae32-120">gameserverds.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="6ae32-120">gameserverds.xboxlive.com</span></span>
  
 <a id="ID4EIB"></a>
 
  
-## <a name="required-request-headers"></a><span data-ttu-id="9cba8-121">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-121">Required Request Headers</span></span>
+## <a name="required-request-headers"></a><span data-ttu-id="6ae32-121">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-121">Required Request Headers</span></span>
  
-<span data-ttu-id="9cba8-122">要求を行う場合、次の表に示すようにヘッダーは必要です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-122">When making a request, the headers shown in the following table are required.</span></span>
+<span data-ttu-id="6ae32-122">要求を行う場合、次の表に示すようにヘッダーは必要です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-122">When making a request, the headers shown in the following table are required.</span></span>
  
-| <span data-ttu-id="9cba8-123">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-123">Header</span></span>| <span data-ttu-id="9cba8-124">設定値</span><span class="sxs-lookup"><span data-stu-id="9cba8-124">Value</span></span>| <span data-ttu-id="9cba8-125">説明</span><span class="sxs-lookup"><span data-stu-id="9cba8-125">Description</span></span>| 
+| <span data-ttu-id="6ae32-123">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-123">Header</span></span>| <span data-ttu-id="6ae32-124">設定値</span><span class="sxs-lookup"><span data-stu-id="6ae32-124">Value</span></span>| <span data-ttu-id="6ae32-125">説明</span><span class="sxs-lookup"><span data-stu-id="6ae32-125">Description</span></span>| 
 | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="9cba8-126">Content-Type</span><span class="sxs-lookup"><span data-stu-id="9cba8-126">Content-Type</span></span>| <span data-ttu-id="9cba8-127">application/json</span><span class="sxs-lookup"><span data-stu-id="9cba8-127">application/json</span></span>| <span data-ttu-id="9cba8-128">送信されたデータの種類です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-128">Type of data being submitted.</span></span>| 
-| <span data-ttu-id="9cba8-129">Host</span><span class="sxs-lookup"><span data-stu-id="9cba8-129">Host</span></span>| <span data-ttu-id="9cba8-130">gameserverds.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="9cba8-130">gameserverds.xboxlive.com</span></span>|  | 
-| <span data-ttu-id="9cba8-131">Content-Length</span><span class="sxs-lookup"><span data-stu-id="9cba8-131">Content-Length</span></span>|  | <span data-ttu-id="9cba8-132">要求オブジェクトの長さ。</span><span class="sxs-lookup"><span data-stu-id="9cba8-132">Length of the request object.</span></span>| 
-| <span data-ttu-id="9cba8-133">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="9cba8-133">x-xbl-contract-version</span></span>| <span data-ttu-id="9cba8-134">1</span><span class="sxs-lookup"><span data-stu-id="9cba8-134">1</span></span>| <span data-ttu-id="9cba8-135">API コントラクト バージョンです。</span><span class="sxs-lookup"><span data-stu-id="9cba8-135">API contract version.</span></span>| 
-| <span data-ttu-id="9cba8-136">Authorization</span><span class="sxs-lookup"><span data-stu-id="9cba8-136">Authorization</span></span>| <span data-ttu-id="9cba8-137">XBL3.0 x = [ハッシュ]。[トークン]</span><span class="sxs-lookup"><span data-stu-id="9cba8-137">XBL3.0 x=[hash];[token]</span></span>| <span data-ttu-id="9cba8-138">認証トークンです。</span><span class="sxs-lookup"><span data-stu-id="9cba8-138">Authentication token.</span></span>| 
+| <span data-ttu-id="6ae32-126">Content-Type</span><span class="sxs-lookup"><span data-stu-id="6ae32-126">Content-Type</span></span>| <span data-ttu-id="6ae32-127">application/json</span><span class="sxs-lookup"><span data-stu-id="6ae32-127">application/json</span></span>| <span data-ttu-id="6ae32-128">送信されたデータの種類です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-128">Type of data being submitted.</span></span>| 
+| <span data-ttu-id="6ae32-129">Host</span><span class="sxs-lookup"><span data-stu-id="6ae32-129">Host</span></span>| <span data-ttu-id="6ae32-130">gameserverds.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="6ae32-130">gameserverds.xboxlive.com</span></span>|  | 
+| <span data-ttu-id="6ae32-131">Content-Length</span><span class="sxs-lookup"><span data-stu-id="6ae32-131">Content-Length</span></span>|  | <span data-ttu-id="6ae32-132">要求オブジェクトの長さ。</span><span class="sxs-lookup"><span data-stu-id="6ae32-132">Length of the request object.</span></span>| 
+| <span data-ttu-id="6ae32-133">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="6ae32-133">x-xbl-contract-version</span></span>| <span data-ttu-id="6ae32-134">1</span><span class="sxs-lookup"><span data-stu-id="6ae32-134">1</span></span>| <span data-ttu-id="6ae32-135">API コントラクト バージョンです。</span><span class="sxs-lookup"><span data-stu-id="6ae32-135">API contract version.</span></span>| 
+| <span data-ttu-id="6ae32-136">Authorization</span><span class="sxs-lookup"><span data-stu-id="6ae32-136">Authorization</span></span>| <span data-ttu-id="6ae32-137">XBL3.0 x = [ハッシュ]。[トークン]</span><span class="sxs-lookup"><span data-stu-id="6ae32-137">XBL3.0 x=[hash];[token]</span></span>| <span data-ttu-id="6ae32-138">認証トークンです。</span><span class="sxs-lookup"><span data-stu-id="6ae32-138">Authentication token.</span></span>| 
   
 <a id="ID4EED"></a>
 
  
-## <a name="optional-request-headers"></a><span data-ttu-id="9cba8-139">省略可能な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-139">Optional Request Headers</span></span>
+## <a name="optional-request-headers"></a><span data-ttu-id="6ae32-139">省略可能な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-139">Optional Request Headers</span></span>
  
-<span data-ttu-id="9cba8-140">要求を行う場合は、次の表に示すようにヘッダーはオプションです。</span><span class="sxs-lookup"><span data-stu-id="9cba8-140">When making a request, the headers shown in the following table are optional.</span></span>
+<span data-ttu-id="6ae32-140">要求を行う場合は、次の表に示すようにヘッダーはオプションです。</span><span class="sxs-lookup"><span data-stu-id="6ae32-140">When making a request, the headers shown in the following table are optional.</span></span>
  
-| <span data-ttu-id="9cba8-141">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-141">Header</span></span>| <span data-ttu-id="9cba8-142">設定値</span><span class="sxs-lookup"><span data-stu-id="9cba8-142">Value</span></span>| <span data-ttu-id="9cba8-143">説明</span><span class="sxs-lookup"><span data-stu-id="9cba8-143">Description</span></span>| 
+| <span data-ttu-id="6ae32-141">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-141">Header</span></span>| <span data-ttu-id="6ae32-142">設定値</span><span class="sxs-lookup"><span data-stu-id="6ae32-142">Value</span></span>| <span data-ttu-id="6ae32-143">説明</span><span class="sxs-lookup"><span data-stu-id="6ae32-143">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="9cba8-144">X XblCorrelationId</span><span class="sxs-lookup"><span data-stu-id="9cba8-144">X-XblCorrelationId</span></span>|  | <span data-ttu-id="9cba8-145">要求の本文の mime タイプ。</span><span class="sxs-lookup"><span data-stu-id="9cba8-145">The mime type of the body of the request.</span></span>| 
+| <span data-ttu-id="6ae32-144">X XblCorrelationId</span><span class="sxs-lookup"><span data-stu-id="6ae32-144">X-XblCorrelationId</span></span>|  | <span data-ttu-id="6ae32-145">要求の本文の mime タイプ。</span><span class="sxs-lookup"><span data-stu-id="6ae32-145">The mime type of the body of the request.</span></span>| 
   
 <a id="ID4E3D"></a>
 
  
-## <a name="authorization"></a><span data-ttu-id="9cba8-146">Authorization</span><span class="sxs-lookup"><span data-stu-id="9cba8-146">Authorization</span></span>
+## <a name="authorization"></a><span data-ttu-id="6ae32-146">Authorization</span><span class="sxs-lookup"><span data-stu-id="6ae32-146">Authorization</span></span>
 
-<span data-ttu-id="9cba8-147">要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="9cba8-147">The request must include a valid Xbox Live authorization header.</span></span> <span data-ttu-id="9cba8-148">呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは応答に 403 Forbidden を返します。</span><span class="sxs-lookup"><span data-stu-id="9cba8-148">If the caller is not allowed to access this resource, the service returns 403 Forbidden in response.</span></span> <span data-ttu-id="9cba8-149">ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。</span><span class="sxs-lookup"><span data-stu-id="9cba8-149">If the header is invalid or missing, the service returns 401 Unauthorized in response.</span></span>
+<span data-ttu-id="6ae32-147">要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="6ae32-147">The request must include a valid Xbox Live authorization header.</span></span> <span data-ttu-id="6ae32-148">呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは応答に 403 Forbidden を返します。</span><span class="sxs-lookup"><span data-stu-id="6ae32-148">If the caller is not allowed to access this resource, the service returns 403 Forbidden in response.</span></span> <span data-ttu-id="6ae32-149">ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。</span><span class="sxs-lookup"><span data-stu-id="6ae32-149">If the header is invalid or missing, the service returns 401 Unauthorized in response.</span></span>
  
 <a id="ID4EEE"></a>
 
  
-## <a name="request-body"></a><span data-ttu-id="9cba8-150">要求本文</span><span class="sxs-lookup"><span data-stu-id="9cba8-150">Request Body</span></span>
+## <a name="request-body"></a><span data-ttu-id="6ae32-150">要求本文</span><span class="sxs-lookup"><span data-stu-id="6ae32-150">Request Body</span></span>
  
-<span data-ttu-id="9cba8-151">要求は、次のメンバーを含む JSON オブジェクトを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="9cba8-151">The request must contain a JSON object with the following members.</span></span>
+<span data-ttu-id="6ae32-151">要求は、次のメンバーを含む JSON オブジェクトを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="6ae32-151">The request must contain a JSON object with the following members.</span></span>
  
-| <span data-ttu-id="9cba8-152">メンバー</span><span class="sxs-lookup"><span data-stu-id="9cba8-152">Member</span></span>| <span data-ttu-id="9cba8-153">説明</span><span class="sxs-lookup"><span data-stu-id="9cba8-153">Description</span></span>| 
+| <span data-ttu-id="6ae32-152">メンバー</span><span class="sxs-lookup"><span data-stu-id="6ae32-152">Member</span></span>| <span data-ttu-id="6ae32-153">説明</span><span class="sxs-lookup"><span data-stu-id="6ae32-153">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="9cba8-154">locale</span><span class="sxs-lookup"><span data-stu-id="9cba8-154">locale</span></span>| <span data-ttu-id="9cba8-155">返されるバリエーションのローカルです。</span><span class="sxs-lookup"><span data-stu-id="9cba8-155">The local of variants to return.</span></span>| 
-| <span data-ttu-id="9cba8-156">maxVariants</span><span class="sxs-lookup"><span data-stu-id="9cba8-156">maxVariants</span></span>| <span data-ttu-id="9cba8-157">返されるバリアントの最大数。</span><span class="sxs-lookup"><span data-stu-id="9cba8-157">The maximum number of variants to return.</span></span>| 
-| <span data-ttu-id="9cba8-158">publisherOnly</span><span class="sxs-lookup"><span data-stu-id="9cba8-158">publisherOnly</span></span>|  | 
-| <span data-ttu-id="9cba8-159">制限</span><span class="sxs-lookup"><span data-stu-id="9cba8-159">restriction</span></span>|  | 
+| <span data-ttu-id="6ae32-154">locale</span><span class="sxs-lookup"><span data-stu-id="6ae32-154">locale</span></span>| <span data-ttu-id="6ae32-155">返されるバリエーションのローカルです。</span><span class="sxs-lookup"><span data-stu-id="6ae32-155">The local of variants to return.</span></span>| 
+| <span data-ttu-id="6ae32-156">maxVariants</span><span class="sxs-lookup"><span data-stu-id="6ae32-156">maxVariants</span></span>| <span data-ttu-id="6ae32-157">返されるバリアントの最大数。</span><span class="sxs-lookup"><span data-stu-id="6ae32-157">The maximum number of variants to return.</span></span>| 
+| <span data-ttu-id="6ae32-158">publisherOnly</span><span class="sxs-lookup"><span data-stu-id="6ae32-158">publisherOnly</span></span>|  | 
+| <span data-ttu-id="6ae32-159">制限</span><span class="sxs-lookup"><span data-stu-id="6ae32-159">restriction</span></span>|  | 
  
 <a id="ID4EDF"></a>
 
  
-### <a name="sample-request"></a><span data-ttu-id="9cba8-160">要求の例</span><span class="sxs-lookup"><span data-stu-id="9cba8-160">Sample Request</span></span>
+### <a name="sample-request"></a><span data-ttu-id="6ae32-160">要求の例</span><span class="sxs-lookup"><span data-stu-id="6ae32-160">Sample Request</span></span>
  
 
 ```cpp
@@ -113,57 +113,57 @@ ms.locfileid: "4212229"
 <a id="ID4ELF"></a>
 
  
-## <a name="required-response-headers"></a><span data-ttu-id="9cba8-161">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-161">Required Response Headers</span></span>
+## <a name="required-response-headers"></a><span data-ttu-id="6ae32-161">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-161">Required Response Headers</span></span>
  
-<span data-ttu-id="9cba8-162">応答は常に、次の表に示すようにヘッダーを含めます。</span><span class="sxs-lookup"><span data-stu-id="9cba8-162">A response will always include the headers shown in the following table.</span></span>
+<span data-ttu-id="6ae32-162">応答は常に、次の表に示すようにヘッダーを含めます。</span><span class="sxs-lookup"><span data-stu-id="6ae32-162">A response will always include the headers shown in the following table.</span></span>
  
-| <span data-ttu-id="9cba8-163">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-163">Header</span></span>| <span data-ttu-id="9cba8-164">設定値</span><span class="sxs-lookup"><span data-stu-id="9cba8-164">Value</span></span>| <span data-ttu-id="9cba8-165">説明</span><span class="sxs-lookup"><span data-stu-id="9cba8-165">Description</span></span>| 
+| <span data-ttu-id="6ae32-163">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-163">Header</span></span>| <span data-ttu-id="6ae32-164">設定値</span><span class="sxs-lookup"><span data-stu-id="6ae32-164">Value</span></span>| <span data-ttu-id="6ae32-165">説明</span><span class="sxs-lookup"><span data-stu-id="6ae32-165">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="9cba8-166">Content-Type</span><span class="sxs-lookup"><span data-stu-id="9cba8-166">Content-Type</span></span>| <span data-ttu-id="9cba8-167">application/json</span><span class="sxs-lookup"><span data-stu-id="9cba8-167">application/json</span></span>| <span data-ttu-id="9cba8-168">応答本文内のデータの種類です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-168">Type of data in the response body.</span></span>| 
-| <span data-ttu-id="9cba8-169">Content-Length</span><span class="sxs-lookup"><span data-stu-id="9cba8-169">Content-Length</span></span>|  | <span data-ttu-id="9cba8-170">応答本文の長さ。</span><span class="sxs-lookup"><span data-stu-id="9cba8-170">Length of the response body.</span></span>| 
+| <span data-ttu-id="6ae32-166">Content-Type</span><span class="sxs-lookup"><span data-stu-id="6ae32-166">Content-Type</span></span>| <span data-ttu-id="6ae32-167">application/json</span><span class="sxs-lookup"><span data-stu-id="6ae32-167">application/json</span></span>| <span data-ttu-id="6ae32-168">応答本文内のデータの種類です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-168">Type of data in the response body.</span></span>| 
+| <span data-ttu-id="6ae32-169">Content-Length</span><span class="sxs-lookup"><span data-stu-id="6ae32-169">Content-Length</span></span>|  | <span data-ttu-id="6ae32-170">応答本文の長さ。</span><span class="sxs-lookup"><span data-stu-id="6ae32-170">Length of the response body.</span></span>| 
   
 <a id="ID4EMG"></a>
 
  
-## <a name="optional-response-headers"></a><span data-ttu-id="9cba8-171">省略可能な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-171">Optional Response Headers</span></span>
+## <a name="optional-response-headers"></a><span data-ttu-id="6ae32-171">省略可能な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-171">Optional Response Headers</span></span>
  
-<span data-ttu-id="9cba8-172">応答には、次に示すようにヘッダー各自が可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9cba8-172">A response may inlcude the headers shown in the following.</span></span>
+<span data-ttu-id="6ae32-172">応答には、次に示すようにヘッダー各自が可能性があります。</span><span class="sxs-lookup"><span data-stu-id="6ae32-172">A response may inlcude the headers shown in the following.</span></span>
  
-| <span data-ttu-id="9cba8-173">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9cba8-173">Header</span></span>| <span data-ttu-id="9cba8-174">設定値</span><span class="sxs-lookup"><span data-stu-id="9cba8-174">Value</span></span>| <span data-ttu-id="9cba8-175">説明</span><span class="sxs-lookup"><span data-stu-id="9cba8-175">Description</span></span>| 
+| <span data-ttu-id="6ae32-173">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="6ae32-173">Header</span></span>| <span data-ttu-id="6ae32-174">設定値</span><span class="sxs-lookup"><span data-stu-id="6ae32-174">Value</span></span>| <span data-ttu-id="6ae32-175">説明</span><span class="sxs-lookup"><span data-stu-id="6ae32-175">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="9cba8-176">X XblCorrelationId</span><span class="sxs-lookup"><span data-stu-id="9cba8-176">X-XblCorrelationId</span></span>|  | <span data-ttu-id="9cba8-177">応答本文の mime タイプ。</span><span class="sxs-lookup"><span data-stu-id="9cba8-177">The mime type of the response body.</span></span>| 
+| <span data-ttu-id="6ae32-176">X XblCorrelationId</span><span class="sxs-lookup"><span data-stu-id="6ae32-176">X-XblCorrelationId</span></span>|  | <span data-ttu-id="6ae32-177">応答本文の mime タイプ。</span><span class="sxs-lookup"><span data-stu-id="6ae32-177">The mime type of the response body.</span></span>| 
   
 <a id="ID4EEH"></a>
 
  
-## <a name="response-body"></a><span data-ttu-id="9cba8-178">応答本文</span><span class="sxs-lookup"><span data-stu-id="9cba8-178">Response Body</span></span>
+## <a name="response-body"></a><span data-ttu-id="6ae32-178">応答本文</span><span class="sxs-lookup"><span data-stu-id="6ae32-178">Response Body</span></span>
  
-<span data-ttu-id="9cba8-179">呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="9cba8-179">If the call is successful, the service will return a JSON object with the following members.</span></span>
+<span data-ttu-id="6ae32-179">呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="6ae32-179">If the call is successful, the service will return a JSON object with the following members.</span></span>
  
-| <span data-ttu-id="9cba8-180">メンバー</span><span class="sxs-lookup"><span data-stu-id="9cba8-180">Member</span></span>| <span data-ttu-id="9cba8-181">説明</span><span class="sxs-lookup"><span data-stu-id="9cba8-181">Description</span></span>| 
+| <span data-ttu-id="6ae32-180">メンバー</span><span class="sxs-lookup"><span data-stu-id="6ae32-180">Member</span></span>| <span data-ttu-id="6ae32-181">説明</span><span class="sxs-lookup"><span data-stu-id="6ae32-181">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="9cba8-182">バリエーション</span><span class="sxs-lookup"><span data-stu-id="9cba8-182">variants</span></span>| <span data-ttu-id="9cba8-183">バリアントの配列です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-183">An array of variants.</span></span>| 
-| <span data-ttu-id="9cba8-184">バリエーション</span><span class="sxs-lookup"><span data-stu-id="9cba8-184">variantId</span></span>| <span data-ttu-id="9cba8-185">バリアントの Id です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-185">The Id of a variant.</span></span>| 
-| <span data-ttu-id="9cba8-186">name</span><span class="sxs-lookup"><span data-stu-id="9cba8-186">name</span></span>| <span data-ttu-id="9cba8-187">バリアントの名前です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-187">The name of a variant.</span></span>| 
-| <span data-ttu-id="9cba8-188">isPublisher</span><span class="sxs-lookup"><span data-stu-id="9cba8-188">isPublisher</span></span>|  | 
-| <span data-ttu-id="9cba8-189">ランク</span><span class="sxs-lookup"><span data-stu-id="9cba8-189">rank</span></span>|  | 
-| <span data-ttu-id="9cba8-190">gameVariantSchemaId</span><span class="sxs-lookup"><span data-stu-id="9cba8-190">gameVariantSchemaId</span></span>|  | 
-| <span data-ttu-id="9cba8-191">variantSchemas</span><span class="sxs-lookup"><span data-stu-id="9cba8-191">variantSchemas</span></span>| <span data-ttu-id="9cba8-192">バリアントのスキーマの配列です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-192">An array of variant schemas.</span></span>| 
-| <span data-ttu-id="9cba8-193">variantSchemaId</span><span class="sxs-lookup"><span data-stu-id="9cba8-193">variantSchemaId</span></span>| <span data-ttu-id="9cba8-194">スキーマの Id です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-194">The Id of the schema.</span></span>| 
-| <span data-ttu-id="9cba8-195">schemaContent</span><span class="sxs-lookup"><span data-stu-id="9cba8-195">schemaContent</span></span>| <span data-ttu-id="9cba8-196">スキーマの内容</span><span class="sxs-lookup"><span data-stu-id="9cba8-196">The schema contents</span></span>| 
-| <span data-ttu-id="9cba8-197">name</span><span class="sxs-lookup"><span data-stu-id="9cba8-197">name</span></span>| <span data-ttu-id="9cba8-198">スキーマの名前</span><span class="sxs-lookup"><span data-stu-id="9cba8-198">Name of the schema</span></span>| 
-| <span data-ttu-id="9cba8-199">gsiSets</span><span class="sxs-lookup"><span data-stu-id="9cba8-199">gsiSets</span></span>| <span data-ttu-id="9cba8-200">GSI セットの配列です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-200">An array of GSI sets.</span></span>| 
-| <span data-ttu-id="9cba8-201">minRequiredPlayers</span><span class="sxs-lookup"><span data-stu-id="9cba8-201">minRequiredPlayers</span></span>| <span data-ttu-id="9cba8-202">バリアントのプレイヤーの最小数。</span><span class="sxs-lookup"><span data-stu-id="9cba8-202">The minimum number of players for the variant.</span></span>| 
-| <span data-ttu-id="9cba8-203">maxAllowedPlayers</span><span class="sxs-lookup"><span data-stu-id="9cba8-203">maxAllowedPlayers</span></span>| <span data-ttu-id="9cba8-204">バリアントのプレイヤーの最大数。</span><span class="sxs-lookup"><span data-stu-id="9cba8-204">The maximum number of players for the variant.</span></span>| 
-| <span data-ttu-id="9cba8-205">は</span><span class="sxs-lookup"><span data-stu-id="9cba8-205">gsiSetId</span></span>| <span data-ttu-id="9cba8-206">GSI セットの Id です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-206">The Id of the GSI set.</span></span>| 
-| <span data-ttu-id="9cba8-207">gsiSetName</span><span class="sxs-lookup"><span data-stu-id="9cba8-207">gsiSetName</span></span>| <span data-ttu-id="9cba8-208">GSI セットの名前です。</span><span class="sxs-lookup"><span data-stu-id="9cba8-208">The name of the GSI set.</span></span>| 
-| <span data-ttu-id="9cba8-209">selectionOrder</span><span class="sxs-lookup"><span data-stu-id="9cba8-209">selectionOrder</span></span>|  | 
-| <span data-ttu-id="9cba8-210">variantSchemaId</span><span class="sxs-lookup"><span data-stu-id="9cba8-210">variantSchemaId</span></span>| <span data-ttu-id="9cba8-211">GSI で使われる varaint スキーマの id を設定します。</span><span class="sxs-lookup"><span data-stu-id="9cba8-211">Id of the varaint schema used in the GSI set.</span></span>| 
+| <span data-ttu-id="6ae32-182">バリエーション</span><span class="sxs-lookup"><span data-stu-id="6ae32-182">variants</span></span>| <span data-ttu-id="6ae32-183">バリアントの配列です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-183">An array of variants.</span></span>| 
+| <span data-ttu-id="6ae32-184">バリエーション</span><span class="sxs-lookup"><span data-stu-id="6ae32-184">variantId</span></span>| <span data-ttu-id="6ae32-185">バリアントの Id です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-185">The Id of a variant.</span></span>| 
+| <span data-ttu-id="6ae32-186">name</span><span class="sxs-lookup"><span data-stu-id="6ae32-186">name</span></span>| <span data-ttu-id="6ae32-187">バリアントの名前です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-187">The name of a variant.</span></span>| 
+| <span data-ttu-id="6ae32-188">isPublisher</span><span class="sxs-lookup"><span data-stu-id="6ae32-188">isPublisher</span></span>|  | 
+| <span data-ttu-id="6ae32-189">ランク</span><span class="sxs-lookup"><span data-stu-id="6ae32-189">rank</span></span>|  | 
+| <span data-ttu-id="6ae32-190">gameVariantSchemaId</span><span class="sxs-lookup"><span data-stu-id="6ae32-190">gameVariantSchemaId</span></span>|  | 
+| <span data-ttu-id="6ae32-191">variantSchemas</span><span class="sxs-lookup"><span data-stu-id="6ae32-191">variantSchemas</span></span>| <span data-ttu-id="6ae32-192">バリアントのスキーマの配列です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-192">An array of variant schemas.</span></span>| 
+| <span data-ttu-id="6ae32-193">variantSchemaId</span><span class="sxs-lookup"><span data-stu-id="6ae32-193">variantSchemaId</span></span>| <span data-ttu-id="6ae32-194">スキーマの Id です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-194">The Id of the schema.</span></span>| 
+| <span data-ttu-id="6ae32-195">schemaContent</span><span class="sxs-lookup"><span data-stu-id="6ae32-195">schemaContent</span></span>| <span data-ttu-id="6ae32-196">スキーマの内容</span><span class="sxs-lookup"><span data-stu-id="6ae32-196">The schema contents</span></span>| 
+| <span data-ttu-id="6ae32-197">name</span><span class="sxs-lookup"><span data-stu-id="6ae32-197">name</span></span>| <span data-ttu-id="6ae32-198">スキーマの名前</span><span class="sxs-lookup"><span data-stu-id="6ae32-198">Name of the schema</span></span>| 
+| <span data-ttu-id="6ae32-199">gsiSets</span><span class="sxs-lookup"><span data-stu-id="6ae32-199">gsiSets</span></span>| <span data-ttu-id="6ae32-200">GSI セットの配列です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-200">An array of GSI sets.</span></span>| 
+| <span data-ttu-id="6ae32-201">minRequiredPlayers</span><span class="sxs-lookup"><span data-stu-id="6ae32-201">minRequiredPlayers</span></span>| <span data-ttu-id="6ae32-202">バリアントのプレイヤーの最小数。</span><span class="sxs-lookup"><span data-stu-id="6ae32-202">The minimum number of players for the variant.</span></span>| 
+| <span data-ttu-id="6ae32-203">maxAllowedPlayers</span><span class="sxs-lookup"><span data-stu-id="6ae32-203">maxAllowedPlayers</span></span>| <span data-ttu-id="6ae32-204">バリアントのプレイヤーの最大数。</span><span class="sxs-lookup"><span data-stu-id="6ae32-204">The maximum number of players for the variant.</span></span>| 
+| <span data-ttu-id="6ae32-205">は</span><span class="sxs-lookup"><span data-stu-id="6ae32-205">gsiSetId</span></span>| <span data-ttu-id="6ae32-206">GSI セットの Id です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-206">The Id of the GSI set.</span></span>| 
+| <span data-ttu-id="6ae32-207">gsiSetName</span><span class="sxs-lookup"><span data-stu-id="6ae32-207">gsiSetName</span></span>| <span data-ttu-id="6ae32-208">GSI セットの名前です。</span><span class="sxs-lookup"><span data-stu-id="6ae32-208">The name of the GSI set.</span></span>| 
+| <span data-ttu-id="6ae32-209">selectionOrder</span><span class="sxs-lookup"><span data-stu-id="6ae32-209">selectionOrder</span></span>|  | 
+| <span data-ttu-id="6ae32-210">variantSchemaId</span><span class="sxs-lookup"><span data-stu-id="6ae32-210">variantSchemaId</span></span>| <span data-ttu-id="6ae32-211">GSI で使われる varaint スキーマの id を設定します。</span><span class="sxs-lookup"><span data-stu-id="6ae32-211">Id of the varaint schema used in the GSI set.</span></span>| 
  
 <a id="ID4EYBAC"></a>
 
  
-### <a name="sample-response"></a><span data-ttu-id="9cba8-212">応答の例</span><span class="sxs-lookup"><span data-stu-id="9cba8-212">Sample Response</span></span>
+### <a name="sample-response"></a><span data-ttu-id="6ae32-212">応答の例</span><span class="sxs-lookup"><span data-stu-id="6ae32-212">Sample Response</span></span>
  
 
 ```cpp
@@ -201,7 +201,7 @@ ms.locfileid: "4212229"
 <a id="ID4ERCAC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="9cba8-213">関連項目</span><span class="sxs-lookup"><span data-stu-id="9cba8-213">See also</span></span>
- [<span data-ttu-id="9cba8-214">/titles/{titleId}/variants</span><span class="sxs-lookup"><span data-stu-id="9cba8-214">/titles/{titleId}/variants</span></span>](uri-titlestitleidvariants.md)
+## <a name="see-also"></a><span data-ttu-id="6ae32-213">関連項目</span><span class="sxs-lookup"><span data-stu-id="6ae32-213">See also</span></span>
+ [<span data-ttu-id="6ae32-214">/titles/{titleId}/variants</span><span class="sxs-lookup"><span data-stu-id="6ae32-214">/titles/{titleId}/variants</span></span>](uri-titlestitleidvariants.md)
 
   

@@ -13,124 +13,227 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a789a8f082192b79b3e96990827f9a4f6a0eacbc
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 31e940c87626a05ee6911d3ffda36ab8dfd3fad0
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206398"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267235"
 ---
-# <a name="connected-animation-for-uwp-apps"></a><span data-ttu-id="15878-104">UWP アプリ用の接続型アニメーション</span><span class="sxs-lookup"><span data-stu-id="15878-104">Connected animation for UWP apps</span></span>
+# <a name="connected-animation-for-uwp-apps"></a><span data-ttu-id="35f21-104">UWP アプリ用の接続型アニメーション</span><span class="sxs-lookup"><span data-stu-id="35f21-104">Connected animation for UWP apps</span></span>
 
-## <a name="what-is-connected-animation"></a><span data-ttu-id="15878-105">接続型アニメーションとは</span><span class="sxs-lookup"><span data-stu-id="15878-105">What is connected animation?</span></span>
+<span data-ttu-id="35f21-105">接続型アニメーションを使用すると、2 つの異なるビューの間で要素が切り替わる様子をアニメーション化することによって、動的で魅力的なナビゲーション エクスペリエンスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="35f21-105">Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.</span></span> <span data-ttu-id="35f21-106">これにより、ユーザーはコンテキストを維持して、ビューの間の継続性を実現することができます。</span><span class="sxs-lookup"><span data-stu-id="35f21-106">This helps the user maintain their context and provides continuity between the views.</span></span>
 
-<span data-ttu-id="15878-106">接続型アニメーションを使用すると、2 つの異なるビューの間で要素が切り替わる様子をアニメーション化することによって、動的で魅力的なナビゲーション エクスペリエンスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="15878-106">Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.</span></span> <span data-ttu-id="15878-107">これにより、ユーザーはコンテキストを維持して、ビューの間の継続性を実現することができます。</span><span class="sxs-lookup"><span data-stu-id="15878-107">This helps the user maintain their context and provides continuity between the views.</span></span>
-<span data-ttu-id="15878-108">接続型アニメーションでは、UI コンテンツが変化するとき (画面間を移動して、ソース ビュー内の要素の場所から新しいビュー内の切り替え先となる場所が表示されるとき)、要素が 2 つのビューの間で "途切れることなく" 表示されます。</span><span class="sxs-lookup"><span data-stu-id="15878-108">In a connected animation, an element appears to “continue” between two views during a change in UI content, flying across the screen from its location in the source view to its destination in the new view.</span></span> <span data-ttu-id="15878-109">これにより、ビューの間で共通するコンテンツが強調され、要素が切り替わるときに魅力的で動的な効果が発生します。</span><span class="sxs-lookup"><span data-stu-id="15878-109">This emphasizes the common content in between the views and creates a beautiful and dynamic effect as part of a transition.</span></span>
+<span data-ttu-id="35f21-107">接続型のアニメーションでは、要素を UI コンテンツが途切れることがなく、画面上で、ソース ビュー内の場所から新しいビュー内の宛先への変更時に 2 つのビューの間で「続行」が表示されます。</span><span class="sxs-lookup"><span data-stu-id="35f21-107">In a connected animation, an element appears to "continue" between two views during a change in UI content, flying across the screen from its location in the source view to its destination in the new view.</span></span> <span data-ttu-id="35f21-108">これは、ビューの間で共通のコンテンツが強調され、移行の一環として、優れた美しさを持つで動的な効果を作成します。</span><span class="sxs-lookup"><span data-stu-id="35f21-108">This emphasizes the common content between the views and creates a beautiful and dynamic effect as part of a transition.</span></span>
 
-## <a name="see-it-in-action"></a><span data-ttu-id="15878-110">実際の動作を見る</span><span class="sxs-lookup"><span data-stu-id="15878-110">See it in action</span></span>
+> <span data-ttu-id="35f21-109">**重要な Api**: [ConnectedAnimation クラス](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)、 [ConnectedAnimationService クラス](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)</span><span class="sxs-lookup"><span data-stu-id="35f21-109">**Important APIs**:  [ConnectedAnimation class](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService class](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)</span></span>
 
-<span data-ttu-id="15878-111">この短い動画では、アプリは接続型アニメーションを使用して項目の画像をアニメーション化し、その画像が "途切れることなく" 切り替わり、次のページにあるヘッダーの一部となります。</span><span class="sxs-lookup"><span data-stu-id="15878-111">In this short video, an app uses a connected animation to animate an item image as it “continues” to become part of the header of the next page.</span></span> <span data-ttu-id="15878-112">この効果を利用すると、画面の切り替えでユーザー コンテキストを維持することができます。</span><span class="sxs-lookup"><span data-stu-id="15878-112">The effect helps maintain user context across the transition.</span></span>
+## <a name="see-it-in-action"></a><span data-ttu-id="35f21-110">実際の動作を見る</span><span class="sxs-lookup"><span data-stu-id="35f21-110">See it in action</span></span>
 
-![継続的なモーションの UI の例](images/continuous3.gif)
+<span data-ttu-id="35f21-111">この短いビデオでは、アプリは、アニメーション化し、「再開」を次のページのヘッダーの一部となる項目のイメージに接続型アニメーションを使用します。</span><span class="sxs-lookup"><span data-stu-id="35f21-111">In this short video, an app uses a connected animation to animate an item image as it "continues" to become part of the header of the next page.</span></span> <span data-ttu-id="35f21-112">この効果を利用すると、画面の切り替えでユーザー コンテキストを維持することができます。</span><span class="sxs-lookup"><span data-stu-id="35f21-112">The effect helps maintain user context across the transition.</span></span>
+
+![接続型アニメーション](images/connected-animations/example.gif)
 
 <!-- 
 <iframe width=640 height=360 src='https://microsoft.sharepoint.com/portals/hub/_layouts/15/VideoEmbedHost.aspx?chId=552c725c%2De353%2D4118%2Dbd2b%2Dc2d0584c9848&amp;vId=b2daa5ee%2Dbe15%2D4503%2Db541%2D1328a6587c36&amp;width=640&amp;height=360&amp;autoPlay=false&amp;showInfo=true' allowfullscreen></iframe>
 -->
 
-## <a name="video-summary"></a><span data-ttu-id="15878-114">ビデオの概要</span><span class="sxs-lookup"><span data-stu-id="15878-114">Video summary</span></span>
+## <a name="video-summary"></a><span data-ttu-id="35f21-114">ビデオの概要</span><span class="sxs-lookup"><span data-stu-id="35f21-114">Video summary</span></span>
 
 > [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev005/player]
 
-## <a name="connected-animation-and-the-fluent-design-system"></a><span data-ttu-id="15878-115">接続型アニメーションと Fluent Design System</span><span class="sxs-lookup"><span data-stu-id="15878-115">Connected animation and the Fluent Design System</span></span>
+## <a name="connected-animation-and-the-fluent-design-system"></a><span data-ttu-id="35f21-115">接続型アニメーションと Fluent Design System</span><span class="sxs-lookup"><span data-stu-id="35f21-115">Connected animation and the Fluent Design System</span></span>
 
- <span data-ttu-id="15878-116">Fluent Design System では、ライト、深度、モーション、マテリアル、スケールを取り入れた、モダンで目を引く UI を作成できます。</span><span class="sxs-lookup"><span data-stu-id="15878-116">The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale.</span></span> <span data-ttu-id="15878-117">接続型アニメーションは、アプリに動きを加える Fluent Design System コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="15878-117">Connected animation is a Fluent Design System component that adds motion to your app.</span></span> <span data-ttu-id="15878-118">詳しくは、[UWP 用の Fluent Design の概要に関するページ](../fluent-design-system/index.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="15878-118">To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).</span></span>
+ <span data-ttu-id="35f21-116">Fluent Design System では、ライト、深度、モーション、マテリアル、スケールを取り入れた、モダンで目を引く UI を作成できます。</span><span class="sxs-lookup"><span data-stu-id="35f21-116">The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale.</span></span> <span data-ttu-id="35f21-117">接続型アニメーションは、アプリに動きを加える Fluent Design System コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="35f21-117">Connected animation is a Fluent Design System component that adds motion to your app.</span></span> <span data-ttu-id="35f21-118">詳しくは、[UWP 用の Fluent Design の概要に関するページ](../fluent-design-system/index.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="35f21-118">To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).</span></span>
 
-## <a name="why-connected-animation"></a><span data-ttu-id="15878-119">接続型アニメーションを使用する理由</span><span class="sxs-lookup"><span data-stu-id="15878-119">Why connected animation?</span></span>
+## <a name="why-connected-animation"></a><span data-ttu-id="35f21-119">接続型アニメーションを使用する理由</span><span class="sxs-lookup"><span data-stu-id="35f21-119">Why connected animation?</span></span>
 
-<span data-ttu-id="15878-120">ページ間を移動するときには、移動後にどのような新しいコンテンツが表示されるか、その新しいコンテンツがページを移動するユーザーの目的とどのように関連しているかを、ユーザーが理解できるようにすることが重要です。</span><span class="sxs-lookup"><span data-stu-id="15878-120">When navigating between pages, it’s important for the user to understand what new content is being presented after the navigation and how it relates to their intent when navigating.</span></span> <span data-ttu-id="15878-121">接続型アニメーションを利用すると、2 つのビューで共有されているコンテンツにユーザーを注目させることによって、2 つのビューの間の関係を強調する強力な視覚的メタファが実現されます。</span><span class="sxs-lookup"><span data-stu-id="15878-121">Connected animations provide a powerful visual metaphor that emphasizes the relationship between two views by drawing the user’s focus to the content shared between them.</span></span> <span data-ttu-id="15878-122">また、接続型アニメーションによって、ページを移動するときに、視覚的に注目を引く効果や洗練された視覚効果を発生させることができます。このことは、アプリのモーション デザインを特徴付ける際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="15878-122">Additionally, connected animations add visual interest and polish to page navigation that can help differentiate the motion design of your app.</span></span>
+<span data-ttu-id="35f21-120">ページ間を移動するときには、移動後にどのような新しいコンテンツが表示されるか、その新しいコンテンツがページを移動するユーザーの目的とどのように関連しているかを、ユーザーが理解できるようにすることが重要です。</span><span class="sxs-lookup"><span data-stu-id="35f21-120">When navigating between pages, it’s important for the user to understand what new content is being presented after the navigation and how it relates to their intent when navigating.</span></span> <span data-ttu-id="35f21-121">接続型アニメーションを利用すると、2 つのビューで共有されているコンテンツにユーザーを注目させることによって、2 つのビューの間の関係を強調する強力な視覚的メタファが実現されます。</span><span class="sxs-lookup"><span data-stu-id="35f21-121">Connected animations provide a powerful visual metaphor that emphasizes the relationship between two views by drawing the user’s focus to the content shared between them.</span></span> <span data-ttu-id="35f21-122">また、接続型アニメーションによって、ページを移動するときに、視覚的に注目を引く効果や洗練された視覚効果を発生させることができます。このことは、アプリのモーション デザインを特徴付ける際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="35f21-122">Additionally, connected animations add visual interest and polish to page navigation that can help differentiate the motion design of your app.</span></span>
 
-## <a name="when-to-use-connected-animation"></a><span data-ttu-id="15878-123">接続型アニメーションを使用するタイミング</span><span class="sxs-lookup"><span data-stu-id="15878-123">When to use connected animation</span></span>
+## <a name="when-to-use-connected-animation"></a><span data-ttu-id="35f21-123">接続型アニメーションを使用するタイミング</span><span class="sxs-lookup"><span data-stu-id="35f21-123">When to use connected animation</span></span>
 
-<span data-ttu-id="15878-124">一般に、接続型アニメーションはページを変更するとき使用されます。ただし、UI のコンテンツを変更するときに、そのコンテンツが維持されるようにユーザーに対して表示する必要がある場合は、接続型アニメーションをどのようなエクスペリエンスにでも適用できます。</span><span class="sxs-lookup"><span data-stu-id="15878-124">Connected animations are generally used when changing pages, though they can be applied to any experience where you are changing content in a UI and want the user to maintain context.</span></span> <span data-ttu-id="15878-125">ソース ビューと切り替え先のビューの間で UI の画像や他の UI の要素が共有されている場合は、必ず、[ドリル インによるナビゲーション切り替え](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx)ではなく、接続型アニメーションの使用を検討してください。</span><span class="sxs-lookup"><span data-stu-id="15878-125">You should consider using a connected animation instead of a [drill in navigation transition](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx) whenever there is an image or other piece of UI shared between the source and destination views.</span></span>
+<span data-ttu-id="35f21-124">一般に、接続型アニメーションはページを変更するとき使用されます。ただし、UI のコンテンツを変更するときに、そのコンテンツが維持されるようにユーザーに対して表示する必要がある場合は、接続型アニメーションをどのようなエクスペリエンスにでも適用できます。</span><span class="sxs-lookup"><span data-stu-id="35f21-124">Connected animations are generally used when changing pages, though they can be applied to any experience where you are changing content in a UI and want the user to maintain context.</span></span> <span data-ttu-id="35f21-125">ソース ビューと切り替え先のビューの間で UI の画像や他の UI の要素が共有されている場合は、必ず、[ドリル インによるナビゲーション切り替え](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx)ではなく、接続型アニメーションの使用を検討してください。</span><span class="sxs-lookup"><span data-stu-id="35f21-125">You should consider using a connected animation instead of a [drill in navigation transition](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx) whenever there is an image or other piece of UI shared between the source and destination views.</span></span>
 
-## <a name="how-to-implement"></a><span data-ttu-id="15878-126">実装方法</span><span class="sxs-lookup"><span data-stu-id="15878-126">How to implement</span></span>
+## <a name="configure-connected-animation"></a><span data-ttu-id="35f21-126">接続型アニメーションを構成します。</span><span class="sxs-lookup"><span data-stu-id="35f21-126">Configure connected animation</span></span>
 
-<span data-ttu-id="15878-127">接続型アニメーションのセットアップでは、次の 2 つの手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="15878-127">Setting up a connected animation involves two steps:</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="35f21-127">この機能は、アプリのターゲット バージョンは、RS5 である必要があります (Windows SDK バージョン 10.0.NNNNN.0 (Windows 10、バージョン YYMM) 以上。</span><span class="sxs-lookup"><span data-stu-id="35f21-127">This feature requires that your app's Target version be RS5 (Windows SDK version 10.0.NNNNN.0 (Windows 10, version YYMM) or greater.</span></span> <span data-ttu-id="35f21-128">構成のプロパティでは、以前の Sdk で利用できません。</span><span class="sxs-lookup"><span data-stu-id="35f21-128">The Configuration property is not available in earlier SDKs.</span></span> <span data-ttu-id="35f21-129">RS5 より小さい最小バージョンをターゲットにすることができます (Windows SDK バージョン 10.0.NNNNN.0 (Windows 10、バージョン YYMM) を使用してアダプティブ コードや条件付き XAML です。</span><span class="sxs-lookup"><span data-stu-id="35f21-129">You can target a Minimum version lower than RS5 (Windows SDK version 10.0.NNNNN.0 (Windows 10, version YYMM) using adaptive code or conditional XAML.</span></span> <span data-ttu-id="35f21-130">詳しくは、[バージョン アダプティブ アプリ](/debug-test-perf/version-adaptive-apps)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="35f21-130">For more info, see [Version adaptive apps](/debug-test-perf/version-adaptive-apps).</span></span>
 
-1.  <span data-ttu-id="15878-128">ソース ページでアニメーション オブジェクトを*準備*します。この手順では、ソース要素が接続型アニメーションに参加することを、システムに伝えます。</span><span class="sxs-lookup"><span data-stu-id="15878-128">*Prepare* an animation object on the source page, which indicates to the system that the source element will participate in the connected animation</span></span> 
-2.  <span data-ttu-id="15878-129">切り替え先のページでアニメーションを*開始*します。この手順では、切り替え先の要素に参照を渡します。</span><span class="sxs-lookup"><span data-stu-id="15878-129">*Start* the animation on the destination page, passing a reference to the destination element</span></span>
+<span data-ttu-id="35f21-131">接続型アニメーションをさらには、Fluent design を具体化以降 RS5 では、アニメーションを提供することによって構成に合わせた具体的には前方と後方ページのナビゲーション。</span><span class="sxs-lookup"><span data-stu-id="35f21-131">Starting in RS5, connected animations further embody Fluent design by providing animation configurations tailored specifically for forward and backwards page navigation.</span></span>
 
-<span data-ttu-id="15878-130">2 つの手順の間では、ソース要素がアプリの他の UI 上でフリーズしているかのように見えます。このとき、他の切り替えアニメーションを同時に実行できてしまいます。</span><span class="sxs-lookup"><span data-stu-id="15878-130">In between the two steps, the source element will appear frozen above other UI in the app, allowing you to perform any other transition animations simultaneously.</span></span> <span data-ttu-id="15878-131">このため、2 つの手順の間の待機時間は 250 ミリ秒を超えないようにしてください。250 ミリ秒を超えると、ソース要素が存在することで問題が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="15878-131">For this reason, you shouldn’t wait more than ~250 milliseconds in between the two steps since the presence of the source element may become distracting.</span></span> <span data-ttu-id="15878-132">アニメーションを準備しても、アニメーションを 3 秒以内に開始しないと、システムによってアニメーションが破棄され、後続の **TryStart** の呼び出しは失敗します。</span><span class="sxs-lookup"><span data-stu-id="15878-132">If you prepare an animation and do not start it within three seconds, the system will dispose of the animation and any subsequent calls to **TryStart** will fail.</span></span>
+<span data-ttu-id="35f21-132">アニメーションは、構成を指定するには、ConnectedAnimation の構成のプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="35f21-132">You specify an animation configuration by setting the Configuration property on the ConnectedAnimation.</span></span> <span data-ttu-id="35f21-133">(これの例を示しますが、次のセクションに表示されます)。</span><span class="sxs-lookup"><span data-stu-id="35f21-133">(We’ll show examples of this in the next section.)</span></span>
 
-<span data-ttu-id="15878-133">現在の ConnectedAnimationService インスタンスにアクセスするには、**ConnectedAnimationService.GetForCurrentView** を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="15878-133">You can get access to the current ConnectedAnimationService instance by calling **ConnectedAnimationService.GetForCurrentView**.</span></span> <span data-ttu-id="15878-134">アニメーションを準備するには、このインスタンスの **PrepareToAnimate** を呼び出し、切り替えで使用する一意のキーと UI 要素への参照を渡します。</span><span class="sxs-lookup"><span data-stu-id="15878-134">To prepare an animation, call **PrepareToAnimate** on this instance, passing a reference to a unique key and the UI element you want to use in the transition.</span></span> <span data-ttu-id="15878-135">一意のキーを使用すると、アニメーションを後で取得することができます。たとえば、別のページ上でアニメーションを取得できます。</span><span class="sxs-lookup"><span data-stu-id="15878-135">The unique key allows you to retrieve the animation later, for example on a different page.</span></span>
+<span data-ttu-id="35f21-134">次の表では、利用可能な構成について説明します。</span><span class="sxs-lookup"><span data-stu-id="35f21-134">This table describes the available configurations.</span></span> <span data-ttu-id="35f21-135">これらのアニメーションに適用されるモーションの原則について詳しくは、[方向性と重力](index.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="35f21-135">For more information about the motion principles applied in these animations, see [Directionality and gravity](index.md).</span></span>
+
+| [<span data-ttu-id="35f21-136">GravityConnectedAnimationConfiguration</span><span class="sxs-lookup"><span data-stu-id="35f21-136">GravityConnectedAnimationConfiguration</span></span>]() |
+| - |
+| <span data-ttu-id="35f21-137">これは既定の構成であり、転送のナビゲーションをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="35f21-137">This is the default configuration, and is recommended for forward navigation.</span></span> |
+<span data-ttu-id="35f21-138">ユーザーがアプリ (A B から) で前方に移動するように物理的に"ページ"接続されている要素が表示されます。</span><span class="sxs-lookup"><span data-stu-id="35f21-138">As the user navigates forward in the app (A to B), the connected element appears to physically “pull off the page”.</span></span> <span data-ttu-id="35f21-139">これによりは、要素は、z 座標で前方に移動する表示され、重力の影響の保留を受けるとしてビットを削除します。</span><span class="sxs-lookup"><span data-stu-id="35f21-139">In doing so, the element appears to move forward in z-space and drops a bit as an effect of gravity taking hold.</span></span> <span data-ttu-id="35f21-140">重力の影響をなくすためには、要素は速度を向上し、最終的な位置に高速化します。</span><span class="sxs-lookup"><span data-stu-id="35f21-140">To overcome the effects of gravity, the element gains velocity and accelerates into its final position.</span></span> <span data-ttu-id="35f21-141">結果は、「スケールと dip」のアニメーションです。</span><span class="sxs-lookup"><span data-stu-id="35f21-141">The result is a “scale and dip” animation.</span></span> |
+
+| [<span data-ttu-id="35f21-142">DirectConnectedAnimationConfiguration</span><span class="sxs-lookup"><span data-stu-id="35f21-142">DirectConnectedAnimationConfiguration</span></span>]() |
+| - |
+| <span data-ttu-id="35f21-143">ユーザーはアプリ (A から b、B) では前に戻る移動したときに、アニメーションはより直接的です。</span><span class="sxs-lookup"><span data-stu-id="35f21-143">As the user navigates backwards in the app (B to A), the animation is more direct.</span></span> <span data-ttu-id="35f21-144">接続されている要素は、減速三次ベジエ イージング関数を使用する B から線形変換します。</span><span class="sxs-lookup"><span data-stu-id="35f21-144">The connected element linearly translates from B to A using a decelerate cubic Bezier easing function.</span></span> <span data-ttu-id="35f21-145">逆方向に視覚的アフォー ダンスは、できるだけ早く、ナビゲーション フローのコンテキストを維持しつつ、ユーザーを以前の状態に返します。</span><span class="sxs-lookup"><span data-stu-id="35f21-145">The backwards visual affordance returns the user to their previous state as fast as possible while still maintaining the context of the navigation flow.</span></span> |
+
+| [<span data-ttu-id="35f21-146">BasicConnectedAnimationConfiguration</span><span class="sxs-lookup"><span data-stu-id="35f21-146">BasicConnectedAnimationConfiguration</span></span>]() |
+| - |
+| <span data-ttu-id="35f21-147">これは、既定の (およびのみ) RS5 より前の SDK バージョンで使用されるアニメーション (Windows SDK バージョン 10.0.NNNNN.0 (Windows 10、バージョン YYMM)。</span><span class="sxs-lookup"><span data-stu-id="35f21-147">This is the default (and only) animation used in SDK versions prior to RS5 (Windows SDK version 10.0.NNNNN.0 (Windows 10, version YYMM).</span></span> |
+
+### <a name="connectedanimationservice-configuration"></a><span data-ttu-id="35f21-148">ConnectedAnimationService の構成</span><span class="sxs-lookup"><span data-stu-id="35f21-148">ConnectedAnimationService configuration</span></span>
+
+<span data-ttu-id="35f21-149">[ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)クラスには、全体のサービスではなく、個々 のアニメーションに適用する 2 つのプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="35f21-149">The [ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) class has two properties that apply to the individual animations rather than the overall service.</span></span>
+
+- [<span data-ttu-id="35f21-150">DefaultDuration</span><span class="sxs-lookup"><span data-stu-id="35f21-150">DefaultDuration</span></span>](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaultduration)
+- [<span data-ttu-id="35f21-151">DefaultEasingFunction</span><span class="sxs-lookup"><span data-stu-id="35f21-151">DefaultEasingFunction</span></span>](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaulteasingfunction)
+
+<span data-ttu-id="35f21-152">さまざまな効果を実現するためにいくつかの構成は ConnectedAnimationService に対してこれらのプロパティを無視し、代わりに、次の表で説明したように独自の値を使用します。</span><span class="sxs-lookup"><span data-stu-id="35f21-152">To achieve the various effects, some configurations ignore these properties on ConnectedAnimationService and use their own values instead, as described in this table.</span></span>
+
+| <span data-ttu-id="35f21-153">構成</span><span class="sxs-lookup"><span data-stu-id="35f21-153">Configuration</span></span> | <span data-ttu-id="35f21-154">点 DefaultDuration かどうか。</span><span class="sxs-lookup"><span data-stu-id="35f21-154">Respects DefaultDuration?</span></span> | <span data-ttu-id="35f21-155">点 DefaultEasingFunction かどうか。</span><span class="sxs-lookup"><span data-stu-id="35f21-155">Respects DefaultEasingFunction?</span></span> |
+| - | - | - |
+| <span data-ttu-id="35f21-156">重力</span><span class="sxs-lookup"><span data-stu-id="35f21-156">Gravity</span></span> | <span data-ttu-id="35f21-157">はい</span><span class="sxs-lookup"><span data-stu-id="35f21-157">Yes</span></span> | <span data-ttu-id="35f21-158">○\*</span><span class="sxs-lookup"><span data-stu-id="35f21-158">Yes\*</span></span> <br/> <span data-ttu-id="35f21-159">\**A から b、b の基本的な翻訳がこのイージング関数を使用しますが、"重力 dip"が、独自のイージング関数。*</span><span class="sxs-lookup"><span data-stu-id="35f21-159">\**The basic translation from A to B uses this easing function, but the "gravity dip" has its own easing function.*</span></span>  |
+| <span data-ttu-id="35f21-160">直接</span><span class="sxs-lookup"><span data-stu-id="35f21-160">Direct</span></span> | <span data-ttu-id="35f21-161">いいえ</span><span class="sxs-lookup"><span data-stu-id="35f21-161">No</span></span> <br/> *<span data-ttu-id="35f21-162">150 ミリ秒を超えるをアニメーション化します。</span><span class="sxs-lookup"><span data-stu-id="35f21-162">Animates over 150ms.</span></span>*| <span data-ttu-id="35f21-163">いいえ</span><span class="sxs-lookup"><span data-stu-id="35f21-163">No</span></span> <br/> *<span data-ttu-id="35f21-164">減速のイージング関数を使用します。</span><span class="sxs-lookup"><span data-stu-id="35f21-164">Uses the Decelerate easing function.</span></span>* |
+| <span data-ttu-id="35f21-165">基本</span><span class="sxs-lookup"><span data-stu-id="35f21-165">Basic</span></span> | <span data-ttu-id="35f21-166">はい</span><span class="sxs-lookup"><span data-stu-id="35f21-166">Yes</span></span> | <span data-ttu-id="35f21-167">はい</span><span class="sxs-lookup"><span data-stu-id="35f21-167">Yes</span></span> |
+
+## <a name="how-to-implement-connected-animation"></a><span data-ttu-id="35f21-168">接続型アニメーションを実装する方法</span><span class="sxs-lookup"><span data-stu-id="35f21-168">How to implement connected animation</span></span>
+
+<span data-ttu-id="35f21-169">接続型アニメーションのセットアップでは、次の 2 つの手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="35f21-169">Setting up a connected animation involves two steps:</span></span>
+
+1. <span data-ttu-id="35f21-170">*環境の準備*ソース] ページで、システムに、ソース要素が接続型アニメーションに参加することを示すアニメーション オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="35f21-170">*Prepare* an animation object on the source page, which indicates to the system that the source element will participate in the connected animation.</span></span>
+1. <span data-ttu-id="35f21-171">アニメーションを*開始*先] ページで、切り替え先の要素への参照を渡します。</span><span class="sxs-lookup"><span data-stu-id="35f21-171">*Start* the animation on the destination page, passing a reference to the destination element.</span></span>
+
+<span data-ttu-id="35f21-172">ソース ページから移動すると、ConnectedAnimationService のインスタンスを取得するのには、 [ConnectedAnimationService.GetForCurrentView](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getforcurrentview)を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="35f21-172">When navigating from the source page, call [ConnectedAnimationService.GetForCurrentView](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getforcurrentview) to get an instance of ConnectedAnimationService.</span></span> <span data-ttu-id="35f21-173">アニメーションを準備するには、このインスタンスに[PrepareToAnimate](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.preparetoanimate)を呼び出し、一意のキーと、切り替えで使用する UI 要素に渡します。</span><span class="sxs-lookup"><span data-stu-id="35f21-173">To prepare an animation, call [PrepareToAnimate](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.preparetoanimate) on this instance, and pass in a unique key and the UI element you want to use in the transition.</span></span> <span data-ttu-id="35f21-174">一意のキーを使用して、切り替え先のページに後でアニメーションを取得できます。</span><span class="sxs-lookup"><span data-stu-id="35f21-174">The unique key lets you retrieve the animation later on the destination page.</span></span>
 
 ```csharp
-ConnectedAnimationService.GetForCurrentView().PrepareToAnimate("image", SourceImage);
+ConnectedAnimationService.GetForCurrentView()
+    .PrepareToAnimate("forwardAnimation", SourceImage);
 ```
 
-<span data-ttu-id="15878-136">アニメーションを開始するには、**ConnectedAnimation.TryStart** を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="15878-136">To start the animation, call **ConnectedAnimation.TryStart**.</span></span> <span data-ttu-id="15878-137">アニメーションの作成時に指定した一意のキーを使用して **ConnectedAnimationService.GetAnimation** を呼び出すことにより、適切なアニメーションのインスタンスを取得できます。</span><span class="sxs-lookup"><span data-stu-id="15878-137">You can retrieve the right animation instance by calling **ConnectedAnimationService.GetAnimation** with the unique key you provided when creating the animation.</span></span>
+<span data-ttu-id="35f21-175">ナビゲーションが発生した場合、切り替え先のページでアニメーションを開始します。</span><span class="sxs-lookup"><span data-stu-id="35f21-175">When the navigation occurs, start the animation in the destination page.</span></span> <span data-ttu-id="35f21-176">アニメーションを開始するには、[ConnectedAnimation.TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="35f21-176">To start the animation, call [ConnectedAnimation.TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart).</span></span> <span data-ttu-id="35f21-177">アニメーションの作成時に指定した一意のキーを使用して [ConnectedAnimationService.GetAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getanimation) を呼び出すことにより、適切なアニメーションのインスタンスを取得できます。</span><span class="sxs-lookup"><span data-stu-id="35f21-177">You can retrieve the right animation instance by calling [ConnectedAnimationService.GetAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getanimation) with the unique key you provided when creating the animation.</span></span>
 
 ```csharp
-ConnectedAnimation imageAnimation = 
-    ConnectedAnimationService.GetForCurrentView().GetAnimation("image");
-if (imageAnimation != null)
+ConnectedAnimation animation =
+    ConnectedAnimationService.GetForCurrentView().GetAnimation("forwardAnimation");
+if (animation != null)
 {
-    imageAnimation.TryStart(DestinationImage);
+    animation.TryStart(DestinationImage);
 }
 ```
 
-<span data-ttu-id="15878-138">ConnectedAnimationService を使用して 2 つのページ間の切り替えを作成する完全な例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="15878-138">Here is a full example of using ConnectedAnimationService to create a transition between two pages.</span></span>
+### <a name="forward-navigation"></a><span data-ttu-id="35f21-178">ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="35f21-178">Forward navigation</span></span>
 
-*<span data-ttu-id="15878-139">SourcePage.xaml</span><span class="sxs-lookup"><span data-stu-id="15878-139">SourcePage.xaml</span></span>*
+<span data-ttu-id="35f21-179">この例では、2 つのページ (Page_B に Page_A) 間のナビゲーションが前方の切り替えを作成する ConnectedAnimationService を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="35f21-179">This example shows how to use ConnectedAnimationService to create a transition for forward navigation between two pages (Page_A to Page_B).</span></span>
+
+<span data-ttu-id="35f21-180">ナビゲーションの推奨されるアニメーションの構成では、 [GravityConnectedAnimationConfiguration]()です。</span><span class="sxs-lookup"><span data-stu-id="35f21-180">The recommended animation configuration for forward navigation is [GravityConnectedAnimationConfiguration]().</span></span> <span data-ttu-id="35f21-181">これは、既定では、さまざまな構成を指定する必要がない限り、[構成](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration)プロパティを設定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="35f21-181">This is the default, so you don't need to set the [Configuration](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration) property unless you want to specify a different configuration.</span></span>
+
+<span data-ttu-id="35f21-182">ソース ページでアニメーションを設定します。</span><span class="sxs-lookup"><span data-stu-id="35f21-182">Set up the animation in the source page.</span></span>
 
 ```xaml
+<!-- Page_A.xaml -->
+
 <Image x:Name="SourceImage"
-       Width="200"
-       Height="200"
+       HorizontalAlignment="Left" VerticalAlignment="Top"
+       Width="200" Height="200"
        Stretch="Fill"
-       Source="Assets/StoreLogo.png" />
+       Source="Assets/StoreLogo.png"
+       PointerPressed="SourceImage_PointerPressed"/>
 ```
 
-*<span data-ttu-id="15878-140">SourcePage.xaml.cs</span><span class="sxs-lookup"><span data-stu-id="15878-140">SourcePage.xaml.cs</span></span>*
-
 ```csharp
-private void NavigateToDestinationPage()
+// Page_A.xaml.cs
+
+private void SourceImage_PointerPressed(object sender, PointerRoutedEventArgs e)
 {
-    ConnectedAnimationService.GetForCurrentView().PrepareToAnimate("image", SourceImage);
-    Frame.Navigate(typeof(DestinationPage));
+    // Navigate to detail page.
+    // Suppress the default animation to avoid conflict with the connected animation.
+    Frame.Navigate(typeof(Page_B), null, new SuppressNavigationTransitionInfo());
+}
+
+protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+{
+    ConnectedAnimationService.GetForCurrentView()
+        .PrepareToAnimate("forwardAnimation", SourceImage);
+    // You don't need to explicitly set the Configuration property because
+    // the recommended Gravity configuration is default.
+    // For custom animation, use:
+    // animation.Configuration = new BasicConnectedAnimationConfiguration();
 }
 ```
 
-*<span data-ttu-id="15878-141">DestinationPage.xaml</span><span class="sxs-lookup"><span data-stu-id="15878-141">DestinationPage.xaml</span></span>*
+<span data-ttu-id="35f21-183">切り替え先のページでアニメーションを開始します。</span><span class="sxs-lookup"><span data-stu-id="35f21-183">Start the animation in the destination page.</span></span>
 
 ```xaml
+<!-- Page_B.xaml -->
+
 <Image x:Name="DestinationImage"
-       Width="400"
-       Height="400"
+       Width="400" Height="400"
        Stretch="Fill"
        Source="Assets/StoreLogo.png" />
 ```
 
-*<span data-ttu-id="15878-142">DestinationPage.xaml.cs</span><span class="sxs-lookup"><span data-stu-id="15878-142">DestinationPage.xaml.cs</span></span>*
-
 ```csharp
+// Page_B.xaml.cs
+
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     base.OnNavigatedTo(e);
 
-    ConnectedAnimation imageAnimation = 
-        ConnectedAnimationService.GetForCurrentView().GetAnimation("image");
-    if (imageAnimation != null)
+    ConnectedAnimation animation =
+        ConnectedAnimationService.GetForCurrentView().GetAnimation("forwardAnimation");
+    if (animation != null)
     {
-        imageAnimation.TryStart(DestinationImage);
+        animation.TryStart(DestinationImage);
     }
 }
 ```
 
-## <a name="connected-animation-in-list-and-grid-experiences"></a><span data-ttu-id="15878-143">リスト エクスペリエンスとグリッド エクスペリエンスでの接続型アニメーション</span><span class="sxs-lookup"><span data-stu-id="15878-143">Connected animation in list and grid experiences</span></span>
+### <a name="back-navigation"></a><span data-ttu-id="35f21-184">"戻る"ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="35f21-184">Back navigation</span></span>
 
-<span data-ttu-id="15878-144">多くの場合、リスト コントロールやグリッド コントロール間の切り替えで接続型アニメーションの作成が必要になります。</span><span class="sxs-lookup"><span data-stu-id="15878-144">Often, you will want to create a connected animation from or to a list or grid control.</span></span> <span data-ttu-id="15878-145">**ListView** と **GridView** の 2 つの新しいメソッドである、**PrepareConnectedAnimation** と **TryStartConnectedAnimationAsync** を使用して、このプロセスを簡略化できます。</span><span class="sxs-lookup"><span data-stu-id="15878-145">You can use two new methods of **ListView** and **GridView**, **PrepareConnectedAnimation** and **TryStartConnectedAnimationAsync**, to simplify this process.</span></span>
-<span data-ttu-id="15878-146">たとえば、データ テンプレート内に "PortraitEllipse" という名前の要素を含んでいる **ListView** があるとします。</span><span class="sxs-lookup"><span data-stu-id="15878-146">For example, say you have a **ListView** that contains an element with the name "PortraitEllipse" in its data template.</span></span>
+<span data-ttu-id="35f21-185">"戻る"ナビゲーション (Page_A に Page_B) では、同じ手順に従うが、ソースとレプリケーション先のページが逆になります。</span><span class="sxs-lookup"><span data-stu-id="35f21-185">For back navigation (Page_B to Page_A), you follow the same steps, but the source and destination pages are reversed.</span></span>
+
+<span data-ttu-id="35f21-186">ユーザーが戻る移動したとき、できるだけ早く以前の状態に返されるアプリを期待します。</span><span class="sxs-lookup"><span data-stu-id="35f21-186">When the user navigates back, they expect the app to be returned to the previous state as soon as possible.</span></span> <span data-ttu-id="35f21-187">したがって、推奨される構成は、 [DirectConnectedAnimationConfiguration]()です。</span><span class="sxs-lookup"><span data-stu-id="35f21-187">Therefore, the recommended configuration is [DirectConnectedAnimationConfiguration]().</span></span> <span data-ttu-id="35f21-188">このアニメーションはより迅速で直接的であり、減速のイージングを使用します。</span><span class="sxs-lookup"><span data-stu-id="35f21-188">This animation is quicker, more direct, and uses the decelerate easing.</span></span>
+
+<span data-ttu-id="35f21-189">ソース ページでアニメーションを設定します。</span><span class="sxs-lookup"><span data-stu-id="35f21-189">Set up the animation in the source page.</span></span>
+
+```csharp
+// Page_B.xaml.cs
+
+protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+{
+    if (e.NavigationMode == NavigationMode.Back)
+    {
+        ConnectedAnimationService.GetForCurrentView()
+            .PrepareToAnimate("backAnimation", DestinationImage);
+
+        // Use the recommended configuration for back animation.
+        animation.Configuration = new DirectConnectedAnimationConfiguration();
+    }
+}
+```
+
+<span data-ttu-id="35f21-190">切り替え先のページでアニメーションを開始します。</span><span class="sxs-lookup"><span data-stu-id="35f21-190">Start the animation in the destination page.</span></span>
+
+```csharp
+// Page_A.xaml.cs
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    base.OnNavigatedTo(e);
+
+    ConnectedAnimation animation =
+        ConnectedAnimationService.GetForCurrentView().GetAnimation("backAnimation");
+    if (animation != null)
+    {
+        animation.TryStart(SourceImage);
+    }
+}
+```
+
+<span data-ttu-id="35f21-191">までの間、アニメーションを設定して開始されたときに、ソース要素には、アプリの他の UI 上でフリーズが表示されます。</span><span class="sxs-lookup"><span data-stu-id="35f21-191">Between the time that the animation is set up and when it's started, the source element appears frozen above other UI in the app.</span></span> <span data-ttu-id="35f21-192">その他の切り替え効果のアニメーションを同時に実行できます。</span><span class="sxs-lookup"><span data-stu-id="35f21-192">This lets you perform any other transition animations simultaneously.</span></span> <span data-ttu-id="35f21-193">このため、ソース要素のプレゼンスを煩わしいになる可能性がありますので以上 250 ミリ秒を 2 つの手順の間を待機しないでください。</span><span class="sxs-lookup"><span data-stu-id="35f21-193">For this reason, you shouldn't wait more than ~250 milliseconds in between the two steps because the presence of the source element may become distracting.</span></span> <span data-ttu-id="35f21-194">アニメーションを準備しても、アニメーションを 3 秒以内に開始しないと、システムによってアニメーションが破棄され、後続の [TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) の呼び出しは失敗します。</span><span class="sxs-lookup"><span data-stu-id="35f21-194">If you prepare an animation and do not start it within three seconds, the system will dispose of the animation and any subsequent calls to [TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) will fail.</span></span>
+
+## <a name="connected-animation-in-list-and-grid-experiences"></a><span data-ttu-id="35f21-195">リスト エクスペリエンスとグリッド エクスペリエンスでの接続型アニメーション</span><span class="sxs-lookup"><span data-stu-id="35f21-195">Connected animation in list and grid experiences</span></span>
+
+<span data-ttu-id="35f21-196">多くの場合、リスト コントロールやグリッド コントロール間の切り替えで接続型アニメーションの作成が必要になります。</span><span class="sxs-lookup"><span data-stu-id="35f21-196">Often, you will want to create a connected animation from or to a list or grid control.</span></span> <span data-ttu-id="35f21-197">[ListView](/uwp/api/windows.ui.xaml.controls.listview)と[GridView](/uwp/api/windows.ui.xaml.controls.gridview)で[ある PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation)と[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)で 2 つのメソッドを使用すると、このプロセスを簡略化します。</span><span class="sxs-lookup"><span data-stu-id="35f21-197">You can use the two methods on [ListView](/uwp/api/windows.ui.xaml.controls.listview) and [GridView](/uwp/api/windows.ui.xaml.controls.gridview), [PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation) and [TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync), to simplify this process.</span></span>
+
+<span data-ttu-id="35f21-198">たとえば、データ テンプレート内に "PortraitEllipse" という名前の要素を含んでいる **ListView** があるとします。</span><span class="sxs-lookup"><span data-stu-id="35f21-198">For example, say you have a **ListView** that contains an element with the name "PortraitEllipse" in its data template.</span></span>
 
 ```xaml
 <ListView x:Name="ContactsListView" Loaded="ContactsListView_Loaded">
@@ -140,12 +243,12 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
                 …
                 <Ellipse x:Name="PortraitEllipse" … />
             </Grid>
-        </DataTemplate> 
+        </DataTemplate>
     </ListView.ItemTemplate>
 </ListView>
 ```
 
-<span data-ttu-id="15878-147">指定されたリスト項目に対応する楕円を表示する接続型アニメーションを準備するには、一意のキー、項目、および "PortraitEllipse" という名前を指定して、**PrepareConnectedAnimation** メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="15878-147">To prepare a connected animation with the ellipse corresponding to a given list item, call the **PrepareConnectedAnimation** method with a unique key, the item, and the name “PortraitEllipse”.</span></span>
+<span data-ttu-id="35f21-199">指定された一覧項目に対応する楕円を接続型アニメーションを準備するには、一意のキー、項目、および"portraitellipse という"名前で[PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation)メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="35f21-199">To prepare a connected animation with the ellipse corresponding to a given list item, call the [PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation) method with a unique key, the item, and the name "PortraitEllipse".</span></span>
 
 ```csharp
 void PrepareAnimationWithItem(ContactsItem item)
@@ -154,7 +257,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 }
 ```
 
-<span data-ttu-id="15878-148">また、この要素を切り替え先として使用してアニメーションを開始するには (たとえば、詳細ビューから戻ったときなど)、**TryStartConnectedAnimationAsync** を使用します。</span><span class="sxs-lookup"><span data-stu-id="15878-148">Alternatively, to start an animation with this element as the destination, for example when navigating back from a detail view, use **TryStartConnectedAnimationAsync**.</span></span> <span data-ttu-id="15878-149">**ListView** のデータ ソースが読み込まれると、**TryStartConnectedAnimationAsync** は、対応する項目コンテナーが作成されるまで、アニメーションが開始されるのを待機します。</span><span class="sxs-lookup"><span data-stu-id="15878-149">If you have just loaded the data source for the **ListView**, **TryStartConnectedAnimationAsync** will wait to start the animation until the corresponding item container has been created.</span></span>
+<span data-ttu-id="35f21-200">この要素と、詳細ビューから戻る移動するときなど、レプリケーション先としてアニメーションを開始するには、 [TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)を使用します。</span><span class="sxs-lookup"><span data-stu-id="35f21-200">To start an animation with this element as the destination, such as when navigating back from a detail view, use [TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync).</span></span> <span data-ttu-id="35f21-201">ListView のデータ ソースが読み込まれると、TryStartConnectedAnimationAsync は、対応する項目コンテナーが作成されるまで、アニメーションが開始されるのを待機します。</span><span class="sxs-lookup"><span data-stu-id="35f21-201">If you have just loaded the data source for the ListView, TryStartConnectedAnimationAsync will wait to start the animation until the corresponding item container has been created.</span></span>
 
 ```csharp
 private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
@@ -163,7 +266,7 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
     if (item != null)
     {
         ContactsListView.ScrollIntoView(item);
-        ConnectedAnimation animation = 
+        ConnectedAnimation animation =
             ConnectedAnimationService.GetForCurrentView().GetAnimation("portrait");
         if (animation != null)
         {
@@ -174,7 +277,7 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="coordinated-animation"></a><span data-ttu-id="15878-150">連動型アニメーション</span><span class="sxs-lookup"><span data-stu-id="15878-150">Coordinated animation</span></span>
+## <a name="coordinated-animation"></a><span data-ttu-id="35f21-202">連動型アニメーション</span><span class="sxs-lookup"><span data-stu-id="35f21-202">Coordinated animation</span></span>
 
 ![連動型アニメーション](images/connected-animations/coordinated_example.gif)
 
@@ -182,27 +285,27 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 <iframe width=640 height=360 src='https://microsoft.sharepoint.com/portals/hub/_layouts/15/VideoEmbedHost.aspx?chId=552c725c%2De353%2D4118%2Dbd2b%2Dc2d0584c9848&amp;vId=9066bbbe%2Dcf58%2D4ab4%2Db274%2D595616f5d0a0&amp;width=640&amp;height=360&amp;autoPlay=false&amp;showInfo=true' allowfullscreen></iframe>
 -->
 
-<span data-ttu-id="15878-152">*連動型アニメーション*は特殊な種類の開始アニメーションで、要素が接続型アニメーションのターゲットと共に表示され、接続型アニメーションの要素と連動してアニメーション化され、画面上を横切って移動します。</span><span class="sxs-lookup"><span data-stu-id="15878-152">A *coordinated animation* is a special type of entrance animation where an element will appear alongside the connected animation target, animating in tandem with the connected animation element as it moves across the screen.</span></span> <span data-ttu-id="15878-153">連動型アニメーションによって、ビューの切り替え時に視覚的にさらに注目を引く効果が発生し、ソース ビューと切り替え先のビューの間で共有されているコンテキストにユーザーを注目させることができます。</span><span class="sxs-lookup"><span data-stu-id="15878-153">Coordinated animations can add more visual interest to a transition and further draw the user’s attention to the context that is shared between the source and destination views.</span></span> <span data-ttu-id="15878-154">上記の画像では、連動型アニメーションを使用して、項目のキャプション UI がアニメーション化されています。</span><span class="sxs-lookup"><span data-stu-id="15878-154">In these images, the caption UI for the item is animating using a coordinated animation.</span></span>
+<span data-ttu-id="35f21-204">*連動型アニメーション*は、特殊な開始アニメーションの要素が画面上で移動するときに、接続型アニメーションの要素と連動してアニメーション化、接続型アニメーションのターゲットと共に表示されます。</span><span class="sxs-lookup"><span data-stu-id="35f21-204">A *coordinated animation* is a special type of entrance animation where an element appears along with the connected animation target, animating in tandem with the connected animation element as it moves across the screen.</span></span> <span data-ttu-id="35f21-205">連動型アニメーションによって、ビューの切り替え時に視覚的にさらに注目を引く効果が発生し、ソース ビューと切り替え先のビューの間で共有されているコンテキストにユーザーを注目させることができます。</span><span class="sxs-lookup"><span data-stu-id="35f21-205">Coordinated animations can add more visual interest to a transition and further draw the user’s attention to the context that is shared between the source and destination views.</span></span> <span data-ttu-id="35f21-206">上記の画像では、連動型アニメーションを使用して、項目のキャプション UI がアニメーション化されています。</span><span class="sxs-lookup"><span data-stu-id="35f21-206">In these images, the caption UI for the item is animating using a coordinated animation.</span></span>
 
-<span data-ttu-id="15878-155">**TryStart** の 2 つのパラメーター オーバーロードを使用して、連動型の要素を接続型アニメーションに追加します。</span><span class="sxs-lookup"><span data-stu-id="15878-155">Use the two-parameter overload of **TryStart** to add coordinated elements to a connected animation.</span></span> <span data-ttu-id="15878-156">次の例では、“DescriptionRoot” という名前のグリッド レイアウトの連動型アニメーションを説明します。このアニメーションは、“CoverImage” という名前の接続型アニメーションの要素と連動して表示されます。</span><span class="sxs-lookup"><span data-stu-id="15878-156">This example demonstrates a coordinated animation of a Grid layout named “DescriptionRoot” that will enter in tandem with a connected animation element named “CoverImage”.</span></span>
+<span data-ttu-id="35f21-207">連動型アニメーションは、重力の構成を使用する場合は、重力が接続型アニメーションの要素と連動型の要素の両方に適用されます。</span><span class="sxs-lookup"><span data-stu-id="35f21-207">When a coordinated animation uses the gravity configuration, gravity is applied to both the connected animation element and the coordinated elements.</span></span> <span data-ttu-id="35f21-208">連動型の要素は"swoop"接続されている要素と一緒に本当に連動型の要素が保持されるようにします。</span><span class="sxs-lookup"><span data-stu-id="35f21-208">The coordinated elements will "swoop" alongside the connected element so the elements stay truly coordinated.</span></span>
 
-*<span data-ttu-id="15878-157">DestinationPage.xaml</span><span class="sxs-lookup"><span data-stu-id="15878-157">DestinationPage.xaml</span></span>*
+<span data-ttu-id="35f21-209">**TryStart** の 2 つのパラメーター オーバーロードを使用して、連動型の要素を接続型アニメーションに追加します。</span><span class="sxs-lookup"><span data-stu-id="35f21-209">Use the two-parameter overload of **TryStart** to add coordinated elements to a connected animation.</span></span> <span data-ttu-id="35f21-210">この例では、"CoverImage"という名前の接続型アニメーションの要素と連動して入力"DescriptionRoot"という名前のグリッド レイアウトの連動型アニメーションを示します。</span><span class="sxs-lookup"><span data-stu-id="35f21-210">This example demonstrates a coordinated animation of a Grid layout named "DescriptionRoot" that enters in tandem with a connected animation element named "CoverImage".</span></span>
 
 ```xaml
+<!-- DestinationPage.xaml -->
 <Grid>
     <Image x:Name="CoverImage" />
     <Grid x:Name="DescriptionRoot" />
 </Grid>
 ```
 
-*<span data-ttu-id="15878-158">DestinationPage.xaml.cs</span><span class="sxs-lookup"><span data-stu-id="15878-158">DestinationPage.xaml.cs</span></span>*
-
 ```csharp
+// DestinationPage.xaml.cs
 void OnNavigatedTo(NavigationEventArgs e)
 {
     var animationService = ConnectedAnimationService.GetForCurrentView();
     var animation = animationService.GetAnimation("coverImage");
-    
+
     if (animation != null)
     {
         // Don’t need to capture the return value as we are not scheduling any subsequent
@@ -212,19 +315,22 @@ void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-## <a name="dos-and-donts"></a><span data-ttu-id="15878-159">推奨と非推奨</span><span class="sxs-lookup"><span data-stu-id="15878-159">Do’s and don’ts</span></span>
+## <a name="dos-and-donts"></a><span data-ttu-id="35f21-211">推奨と非推奨</span><span class="sxs-lookup"><span data-stu-id="35f21-211">Do’s and don’ts</span></span>
 
-- <span data-ttu-id="15878-160">接続型アニメーションは、ソース ページと切り替え先のページの間で要素が共有されている場合に、ページの切り替えで使用してください。</span><span class="sxs-lookup"><span data-stu-id="15878-160">Use a connected animation in page transitions where an element is shared between the source and destination pages.</span></span>
-- <span data-ttu-id="15878-161">接続型アニメーションの準備と開始の間で発生する、ネットワーク要求や他の実行時間の長い非同期操作を待機しないでください。</span><span class="sxs-lookup"><span data-stu-id="15878-161">Don’t wait on network requests or other long-running asynchronous operations in between preparing and starting a connected animation.</span></span> <span data-ttu-id="15878-162">早めに切り替えを実行するには、必要な情報を事前に読み込んでおく必要があります。または、高解像度の画像が切り替え先のビューに読み込まれるときに、低解像度のプレースホルダー画像を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="15878-162">You may need to pre-load the necessary information to run the transition ahead of time, or use a low-resolution placeholder image while a high-resolution image loads in the destination view.</span></span>
-- <span data-ttu-id="15878-163">**ConnectedAnimationService** を使用する場合、**Frame** 内で切り替えアニメーションが使われないようにするには、[SuppressNavigationTransitionInfo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) を使用します。これは、接続型アニメーションが既定のナビゲーション切り替えとは同時に使用できないアニメーションであるためです。</span><span class="sxs-lookup"><span data-stu-id="15878-163">Use [SuppressNavigationTransitionInfo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) to prevent a transition animation in a **Frame** if you are using **ConnectedAnimationService**, since connected animations aren’t meant to be used simultaneously with the default navigation transitions.</span></span> <span data-ttu-id="15878-164">ナビゲーション切り替えの使用方法について詳しくは、「[NavigationThemeTransition](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="15878-164">See [NavigationThemeTransition](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx) for more info on how to use navigation transitions.</span></span>
+- <span data-ttu-id="35f21-212">接続型アニメーションは、ソース ページと切り替え先のページの間で要素が共有されている場合に、ページの切り替えで使用してください。</span><span class="sxs-lookup"><span data-stu-id="35f21-212">Use a connected animation in page transitions where an element is shared between the source and destination pages.</span></span>
+- <span data-ttu-id="35f21-213">ナビゲーションの[GravityConnectedAnimationConfiguration]()を使用します。</span><span class="sxs-lookup"><span data-stu-id="35f21-213">Use [GravityConnectedAnimationConfiguration]() for forward navigation.</span></span>
+- <span data-ttu-id="35f21-214">"戻る"ナビゲーションの[DirectConnectedAnimationConfiguration]()を使用します。</span><span class="sxs-lookup"><span data-stu-id="35f21-214">Use [DirectConnectedAnimationConfiguration]() for back navigation.</span></span>
+- <span data-ttu-id="35f21-215">ネットワーク要求や他の実行時間の長い非同期の操作を準備して、接続型アニメーションの開始の間待機しないでください。</span><span class="sxs-lookup"><span data-stu-id="35f21-215">Don't wait on network requests or other long-running asynchronous operations in between preparing and starting a connected animation.</span></span> <span data-ttu-id="35f21-216">早めに切り替えを実行するには、必要な情報を事前に読み込んでおく必要があります。または、高解像度の画像が切り替え先のビューに読み込まれるときに、低解像度のプレースホルダー画像を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="35f21-216">You may need to pre-load the necessary information to run the transition ahead of time, or use a low-resolution placeholder image while a high-resolution image loads in the destination view.</span></span>
+- <span data-ttu-id="35f21-217">接続型アニメーションは既定のナビゲーションを同時に使用できるものであるために、 **ConnectedAnimationService**を使用している場合は、**フレーム**内の切り替えアニメーションを防ぐために[SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo)を使う遷移します。</span><span class="sxs-lookup"><span data-stu-id="35f21-217">Use [SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) to prevent a transition animation in a **Frame** if you are using **ConnectedAnimationService**, since connected animations aren't meant to be used simultaneously with the default navigation transitions.</span></span> <span data-ttu-id="35f21-218">ナビゲーション切り替えの使用方法について詳しくは、「[NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="35f21-218">See [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) for more info on how to use navigation transitions.</span></span>
 
+## <a name="download-the-code-samples"></a><span data-ttu-id="35f21-219">コード サンプルのダウンロード</span><span class="sxs-lookup"><span data-stu-id="35f21-219">Download the code samples</span></span>
 
-## <a name="download-the-code-samples"></a><span data-ttu-id="15878-165">コード サンプルのダウンロード</span><span class="sxs-lookup"><span data-stu-id="15878-165">Download the code samples</span></span>
+<span data-ttu-id="35f21-220">[WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs) サンプル ギャラリーの[接続型アニメーションのサンプル](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/ConnectedAnimationSample)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="35f21-220">See the [Connected Animation sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/ConnectedAnimationSample) in the [WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs) sample gallery.</span></span>
 
-<span data-ttu-id="15878-166">[WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs) サンプル ギャラリーの[接続型アニメーションのサンプル](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/ConnectedAnimationSample)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="15878-166">See the [Connected Animation sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/ConnectedAnimationSample) in the [WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs) sample gallery.</span></span>
+## <a name="related-articles"></a><span data-ttu-id="35f21-221">関連記事</span><span class="sxs-lookup"><span data-stu-id="35f21-221">Related articles</span></span>
 
-## <a name="related-articles"></a><span data-ttu-id="15878-167">関連記事</span><span class="sxs-lookup"><span data-stu-id="15878-167">Related articles</span></span>
+[<span data-ttu-id="35f21-222">ConnectedAnimation</span><span class="sxs-lookup"><span data-stu-id="35f21-222">ConnectedAnimation</span></span>](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)
 
-- [<span data-ttu-id="15878-168">ConnectedAnimation</span><span class="sxs-lookup"><span data-stu-id="15878-168">ConnectedAnimation</span></span>](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimation)
-- [<span data-ttu-id="15878-169">ConnectedAnimationService</span><span class="sxs-lookup"><span data-stu-id="15878-169">ConnectedAnimationService</span></span>](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.connectedanimation.aspx)
-- [<span data-ttu-id="15878-170">NavigationThemeTransition</span><span class="sxs-lookup"><span data-stu-id="15878-170">NavigationThemeTransition</span></span>](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx)
+[<span data-ttu-id="35f21-223">ConnectedAnimationService</span><span class="sxs-lookup"><span data-stu-id="35f21-223">ConnectedAnimationService</span></span>](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+
+[<span data-ttu-id="35f21-224">NavigationThemeTransition</span><span class="sxs-lookup"><span data-stu-id="35f21-224">NavigationThemeTransition</span></span>](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition)

@@ -12,45 +12,45 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d62e4f7106f7f0f2c324ca2c68ea8fe476bc7bfb
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209545"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4257778"
 ---
-# <a name="post-usersbatchfeedback"></a><span data-ttu-id="821f4-104">POST (/users/batchfeedback)</span><span class="sxs-lookup"><span data-stu-id="821f4-104">POST (/users/batchfeedback)</span></span>
-<span data-ttu-id="821f4-105">タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="821f4-105">Used by your title's service to send feedback in batch form outside of your title's interface.</span></span> <span data-ttu-id="821f4-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="821f4-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>
+# <a name="post-usersbatchfeedback"></a><span data-ttu-id="8a276-104">POST (/users/batchfeedback)</span><span class="sxs-lookup"><span data-stu-id="8a276-104">POST (/users/batchfeedback)</span></span>
+<span data-ttu-id="8a276-105">タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="8a276-105">Used by your title's service to send feedback in batch form outside of your title's interface.</span></span> <span data-ttu-id="8a276-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="8a276-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="821f4-107">要求本文</span><span class="sxs-lookup"><span data-stu-id="821f4-107">Request body</span></span>](#ID4EX)
-  * [<span data-ttu-id="821f4-108">必要なヘッダー</span><span class="sxs-lookup"><span data-stu-id="821f4-108">Required Headers</span></span>](#ID4E3E)
-  * [<span data-ttu-id="821f4-109">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="821f4-109">HTTP status codes</span></span>](#ID4EWG)
-  * [<span data-ttu-id="821f4-110">応答本文</span><span class="sxs-lookup"><span data-stu-id="821f4-110">Response body</span></span>](#ID4EDAAC)
+  * [<span data-ttu-id="8a276-107">要求本文</span><span class="sxs-lookup"><span data-stu-id="8a276-107">Request body</span></span>](#ID4EX)
+  * [<span data-ttu-id="8a276-108">必要なヘッダー</span><span class="sxs-lookup"><span data-stu-id="8a276-108">Required Headers</span></span>](#ID4E3E)
+  * [<span data-ttu-id="8a276-109">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="8a276-109">HTTP status codes</span></span>](#ID4EWG)
+  * [<span data-ttu-id="8a276-110">応答本文</span><span class="sxs-lookup"><span data-stu-id="8a276-110">Response body</span></span>](#ID4EDAAC)
  
 <a id="ID4EX"></a>
 
  
-## <a name="request-body"></a><span data-ttu-id="821f4-111">要求本文</span><span class="sxs-lookup"><span data-stu-id="821f4-111">Request body</span></span> 
+## <a name="request-body"></a><span data-ttu-id="8a276-111">要求本文</span><span class="sxs-lookup"><span data-stu-id="8a276-111">Request body</span></span> 
  
-<span data-ttu-id="821f4-112">呼び出し元は、その web 要求オブジェクトの [ClientCertificates] セクションで、要求の証明書を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="821f4-112">Callers must include their Claims Cert in the ClientCertificates section of their web request object.</span></span>
+<span data-ttu-id="8a276-112">呼び出し元は、その web 要求オブジェクトの [ClientCertificates] セクションで、要求の証明書を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a276-112">Callers must include their Claims Cert in the ClientCertificates section of their web request object.</span></span>
  
 <a id="ID4EBB"></a>
 
  
-### <a name="required-members"></a><span data-ttu-id="821f4-113">必要なメンバー</span><span class="sxs-lookup"><span data-stu-id="821f4-113">Required members</span></span> 
+### <a name="required-members"></a><span data-ttu-id="8a276-113">必要なメンバー</span><span class="sxs-lookup"><span data-stu-id="8a276-113">Required members</span></span> 
  
-<span data-ttu-id="821f4-114">要求は、 **BatchFeedback**オブジェクトの配列を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="821f4-114">The request should contain an array of **BatchFeedback** objects.</span></span> 
+<span data-ttu-id="8a276-114">要求は、 **BatchFeedback**オブジェクトの配列を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a276-114">The request should contain an array of **BatchFeedback** objects.</span></span> 
   
 <a id="ID4EPB"></a>
 
  
-### <a name="prohibited-members"></a><span data-ttu-id="821f4-115">禁止されているメンバー</span><span class="sxs-lookup"><span data-stu-id="821f4-115">Prohibited members</span></span> 
+### <a name="prohibited-members"></a><span data-ttu-id="8a276-115">禁止されているメンバー</span><span class="sxs-lookup"><span data-stu-id="8a276-115">Prohibited members</span></span> 
  
-<span data-ttu-id="821f4-116">要求では、その他のすべてのメンバーが禁止されています。</span><span class="sxs-lookup"><span data-stu-id="821f4-116">All other members are prohibited in a request.</span></span>
+<span data-ttu-id="8a276-116">要求では、その他のすべてのメンバーが禁止されています。</span><span class="sxs-lookup"><span data-stu-id="8a276-116">All other members are prohibited in a request.</span></span>
   
 <a id="ID4E3B"></a>
 
  
-### <a name="sample-request"></a><span data-ttu-id="821f4-117">要求の例</span><span class="sxs-lookup"><span data-stu-id="821f4-117">Sample request</span></span> 
+### <a name="sample-request"></a><span data-ttu-id="8a276-117">要求の例</span><span class="sxs-lookup"><span data-stu-id="8a276-117">Sample request</span></span> 
  
 
 ```cpp
@@ -90,77 +90,77 @@ ms.locfileid: "4209545"
 ```
 
  
-| <b><span data-ttu-id="821f4-118">フィールド</span><span class="sxs-lookup"><span data-stu-id="821f4-118">Field</span></span></b>| <b><span data-ttu-id="821f4-119">JSON 型</span><span class="sxs-lookup"><span data-stu-id="821f4-119">JSON Type</span></span></b>| <b><span data-ttu-id="821f4-120">説明</span><span class="sxs-lookup"><span data-stu-id="821f4-120">Description</span></span></b>| 
+| <b><span data-ttu-id="8a276-118">フィールド</span><span class="sxs-lookup"><span data-stu-id="8a276-118">Field</span></span></b>| <b><span data-ttu-id="8a276-119">JSON 型</span><span class="sxs-lookup"><span data-stu-id="8a276-119">JSON Type</span></span></b>| <b><span data-ttu-id="8a276-120">説明</span><span class="sxs-lookup"><span data-stu-id="8a276-120">Description</span></span></b>| 
 | --- | --- | --- | 
-| <span data-ttu-id="821f4-121">items</span><span class="sxs-lookup"><span data-stu-id="821f4-121">items</span></span>| <span data-ttu-id="821f4-122">array</span><span class="sxs-lookup"><span data-stu-id="821f4-122">array</span></span>| <span data-ttu-id="821f4-123">フィードバックの JSON ドキュメントのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="821f4-123">A collection of Feedback JSON documents.</span></span>| 
-| <span data-ttu-id="821f4-124">targetXuid</span><span class="sxs-lookup"><span data-stu-id="821f4-124">targetXuid</span></span>| <span data-ttu-id="821f4-125">string</span><span class="sxs-lookup"><span data-stu-id="821f4-125">string</span></span>| <span data-ttu-id="821f4-126">ターゲット ユーザーの XUID</span><span class="sxs-lookup"><span data-stu-id="821f4-126">The target user's XUID</span></span>| 
-| <span data-ttu-id="821f4-127">titleId</span><span class="sxs-lookup"><span data-stu-id="821f4-127">titleId</span></span>| <span data-ttu-id="821f4-128">string</span><span class="sxs-lookup"><span data-stu-id="821f4-128">string</span></span>| <span data-ttu-id="821f4-129">このフィードバックから送信されたタイトルまたは NULL。</span><span class="sxs-lookup"><span data-stu-id="821f4-129">The title that this feedback was sent from, or NULL.</span></span>| 
-| <span data-ttu-id="821f4-130">sessionRef</span><span class="sxs-lookup"><span data-stu-id="821f4-130">sessionRef</span></span>| <span data-ttu-id="821f4-131">object</span><span class="sxs-lookup"><span data-stu-id="821f4-131">object</span></span>| <span data-ttu-id="821f4-132">MPSD セッションを表すオブジェクトです。 このフィードバックが関連する、または NULL。</span><span class="sxs-lookup"><span data-stu-id="821f4-132">An object describing the MPSD session this feedback relates to, or NULL.</span></span>| 
-| <span data-ttu-id="821f4-133">feedbackType</span><span class="sxs-lookup"><span data-stu-id="821f4-133">feedbackType</span></span>| <span data-ttu-id="821f4-134">string</span><span class="sxs-lookup"><span data-stu-id="821f4-134">string</span></span>| <span data-ttu-id="821f4-135">FeedbackType 列挙体の値の文字列バージョン。</span><span class="sxs-lookup"><span data-stu-id="821f4-135">A string version of a value in the FeedbackType enumeration.</span></span>| 
-| <span data-ttu-id="821f4-136">textReason</span><span class="sxs-lookup"><span data-stu-id="821f4-136">textReason</span></span>| <span data-ttu-id="821f4-137">string</span><span class="sxs-lookup"><span data-stu-id="821f4-137">string</span></span>| <span data-ttu-id="821f4-138">送信者に送信されたフィードバックに関する詳細を提供する追加されるパートナーが指定したテキストです。</span><span class="sxs-lookup"><span data-stu-id="821f4-138">Partner-supplied text that the sender may add to give more details about the feedback that was submitted.</span></span>| 
-| <span data-ttu-id="821f4-139">evidenceId</span><span class="sxs-lookup"><span data-stu-id="821f4-139">evidenceId</span></span>| <span data-ttu-id="821f4-140">string</span><span class="sxs-lookup"><span data-stu-id="821f4-140">string</span></span>| <span data-ttu-id="821f4-141">送信されたフィードバックの証拠として使用できるリソースの ID です。</span><span class="sxs-lookup"><span data-stu-id="821f4-141">The ID of a resource that can be used as evidence of the feedback being submitted.</span></span> <span data-ttu-id="821f4-142">例: ビデオ ファイルの ID です。</span><span class="sxs-lookup"><span data-stu-id="821f4-142">e.g. the ID of a video file.</span></span>| 
+| <span data-ttu-id="8a276-121">items</span><span class="sxs-lookup"><span data-stu-id="8a276-121">items</span></span>| <span data-ttu-id="8a276-122">array</span><span class="sxs-lookup"><span data-stu-id="8a276-122">array</span></span>| <span data-ttu-id="8a276-123">フィードバックの JSON ドキュメントのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="8a276-123">A collection of Feedback JSON documents.</span></span>| 
+| <span data-ttu-id="8a276-124">targetXuid</span><span class="sxs-lookup"><span data-stu-id="8a276-124">targetXuid</span></span>| <span data-ttu-id="8a276-125">string</span><span class="sxs-lookup"><span data-stu-id="8a276-125">string</span></span>| <span data-ttu-id="8a276-126">ターゲット ユーザーの XUID</span><span class="sxs-lookup"><span data-stu-id="8a276-126">The target user's XUID</span></span>| 
+| <span data-ttu-id="8a276-127">titleId</span><span class="sxs-lookup"><span data-stu-id="8a276-127">titleId</span></span>| <span data-ttu-id="8a276-128">string</span><span class="sxs-lookup"><span data-stu-id="8a276-128">string</span></span>| <span data-ttu-id="8a276-129">このフィードバックから送信されたタイトルまたは NULL。</span><span class="sxs-lookup"><span data-stu-id="8a276-129">The title that this feedback was sent from, or NULL.</span></span>| 
+| <span data-ttu-id="8a276-130">sessionRef</span><span class="sxs-lookup"><span data-stu-id="8a276-130">sessionRef</span></span>| <span data-ttu-id="8a276-131">object</span><span class="sxs-lookup"><span data-stu-id="8a276-131">object</span></span>| <span data-ttu-id="8a276-132">MPSD セッションを表すオブジェクトです。 このフィードバックが関連する、または NULL。</span><span class="sxs-lookup"><span data-stu-id="8a276-132">An object describing the MPSD session this feedback relates to, or NULL.</span></span>| 
+| <span data-ttu-id="8a276-133">feedbackType</span><span class="sxs-lookup"><span data-stu-id="8a276-133">feedbackType</span></span>| <span data-ttu-id="8a276-134">string</span><span class="sxs-lookup"><span data-stu-id="8a276-134">string</span></span>| <span data-ttu-id="8a276-135">FeedbackType 列挙体の値の文字列バージョン。</span><span class="sxs-lookup"><span data-stu-id="8a276-135">A string version of a value in the FeedbackType enumeration.</span></span>| 
+| <span data-ttu-id="8a276-136">textReason</span><span class="sxs-lookup"><span data-stu-id="8a276-136">textReason</span></span>| <span data-ttu-id="8a276-137">string</span><span class="sxs-lookup"><span data-stu-id="8a276-137">string</span></span>| <span data-ttu-id="8a276-138">送信者に送信されたフィードバックに関する詳細を提供する追加されるパートナーが指定したテキストです。</span><span class="sxs-lookup"><span data-stu-id="8a276-138">Partner-supplied text that the sender may add to give more details about the feedback that was submitted.</span></span>| 
+| <span data-ttu-id="8a276-139">evidenceId</span><span class="sxs-lookup"><span data-stu-id="8a276-139">evidenceId</span></span>| <span data-ttu-id="8a276-140">string</span><span class="sxs-lookup"><span data-stu-id="8a276-140">string</span></span>| <span data-ttu-id="8a276-141">送信されたフィードバックの証拠として使用できるリソースの ID です。</span><span class="sxs-lookup"><span data-stu-id="8a276-141">The ID of a resource that can be used as evidence of the feedback being submitted.</span></span> <span data-ttu-id="8a276-142">例: ビデオ ファイルの ID です。</span><span class="sxs-lookup"><span data-stu-id="8a276-142">e.g. the ID of a video file.</span></span>| 
    
 <a id="ID4E3E"></a>
 
  
-## <a name="required-headers"></a><span data-ttu-id="821f4-143">必要なヘッダー</span><span class="sxs-lookup"><span data-stu-id="821f4-143">Required Headers</span></span>
+## <a name="required-headers"></a><span data-ttu-id="8a276-143">必要なヘッダー</span><span class="sxs-lookup"><span data-stu-id="8a276-143">Required Headers</span></span>
  
-<span data-ttu-id="821f4-144">次のヘッダーは、Xbox Live サービス要求を行ったときに必要があります。</span><span class="sxs-lookup"><span data-stu-id="821f4-144">The following headers are required when making an Xbox Live Services request.</span></span> 
+<span data-ttu-id="8a276-144">次のヘッダーは、Xbox Live サービス要求を行ったときに必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a276-144">The following headers are required when making an Xbox Live Services request.</span></span> 
 
 > [!NOTE] 
-> <span data-ttu-id="821f4-145">パートナーの要求の証明書は、バッチ フィードバックを送信するために要求送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="821f4-145">A Partner Claims Certificate must be sent up with the request in order to submit batch feedback.</span></span> 
+> <span data-ttu-id="8a276-145">パートナーの要求の証明書は、バッチ フィードバックを送信するために要求送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a276-145">A Partner Claims Certificate must be sent up with the request in order to submit batch feedback.</span></span> 
 
 
  
-| <span data-ttu-id="821f4-146">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="821f4-146">Header</span></span>| <span data-ttu-id="821f4-147">設定値</span><span class="sxs-lookup"><span data-stu-id="821f4-147">Value</span></span>| <span data-ttu-id="821f4-148">説明</span><span class="sxs-lookup"><span data-stu-id="821f4-148">Description</span></span>| 
+| <span data-ttu-id="8a276-146">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="8a276-146">Header</span></span>| <span data-ttu-id="8a276-147">設定値</span><span class="sxs-lookup"><span data-stu-id="8a276-147">Value</span></span>| <span data-ttu-id="8a276-148">説明</span><span class="sxs-lookup"><span data-stu-id="8a276-148">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="821f4-149">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="821f4-149">x-xbl-contract-version</span></span>| <span data-ttu-id="821f4-150">101</span><span class="sxs-lookup"><span data-stu-id="821f4-150">101</span></span>| <span data-ttu-id="821f4-151">API コントラクト バージョンです。</span><span class="sxs-lookup"><span data-stu-id="821f4-151">API contract version.</span></span>| 
-| <span data-ttu-id="821f4-152">Content-Type</span><span class="sxs-lookup"><span data-stu-id="821f4-152">Content-Type</span></span>| <span data-ttu-id="821f4-153">application/json</span><span class="sxs-lookup"><span data-stu-id="821f4-153">application/json</span></span>| <span data-ttu-id="821f4-154">送信されたデータの種類です。</span><span class="sxs-lookup"><span data-stu-id="821f4-154">Type of data being submitted.</span></span>| 
-| <span data-ttu-id="821f4-155">Authorization</span><span class="sxs-lookup"><span data-stu-id="821f4-155">Authorization</span></span>| <span data-ttu-id="821f4-156">"XBL3.0 x =&lt;userhash > です。&lt;トークン >"</span><span class="sxs-lookup"><span data-stu-id="821f4-156">"XBL3.0 x=&lt;userhash>;&lt;token>"</span></span>| <span data-ttu-id="821f4-157">HTTP 認証の資格情報を認証します。</span><span class="sxs-lookup"><span data-stu-id="821f4-157">Authentication credentials for HTTP authentication.</span></span>| 
-| <span data-ttu-id="821f4-158">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="821f4-158">X-RequestedServiceVersion</span></span>| <span data-ttu-id="821f4-159">101</span><span class="sxs-lookup"><span data-stu-id="821f4-159">101</span></span>| <span data-ttu-id="821f4-160">この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="821f4-160">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="821f4-161">要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。</span><span class="sxs-lookup"><span data-stu-id="821f4-161">The request will only be routed to that service after verifying the validity of the header, the claims in the auth token, and so on.</span></span>| 
+| <span data-ttu-id="8a276-149">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="8a276-149">x-xbl-contract-version</span></span>| <span data-ttu-id="8a276-150">101</span><span class="sxs-lookup"><span data-stu-id="8a276-150">101</span></span>| <span data-ttu-id="8a276-151">API コントラクト バージョンです。</span><span class="sxs-lookup"><span data-stu-id="8a276-151">API contract version.</span></span>| 
+| <span data-ttu-id="8a276-152">Content-Type</span><span class="sxs-lookup"><span data-stu-id="8a276-152">Content-Type</span></span>| <span data-ttu-id="8a276-153">application/json</span><span class="sxs-lookup"><span data-stu-id="8a276-153">application/json</span></span>| <span data-ttu-id="8a276-154">送信されたデータの種類です。</span><span class="sxs-lookup"><span data-stu-id="8a276-154">Type of data being submitted.</span></span>| 
+| <span data-ttu-id="8a276-155">Authorization</span><span class="sxs-lookup"><span data-stu-id="8a276-155">Authorization</span></span>| <span data-ttu-id="8a276-156">"XBL3.0 x =&lt;userhash > です。&lt;トークン >"</span><span class="sxs-lookup"><span data-stu-id="8a276-156">"XBL3.0 x=&lt;userhash>;&lt;token>"</span></span>| <span data-ttu-id="8a276-157">HTTP 認証の資格情報を認証します。</span><span class="sxs-lookup"><span data-stu-id="8a276-157">Authentication credentials for HTTP authentication.</span></span>| 
+| <span data-ttu-id="8a276-158">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="8a276-158">X-RequestedServiceVersion</span></span>| <span data-ttu-id="8a276-159">101</span><span class="sxs-lookup"><span data-stu-id="8a276-159">101</span></span>| <span data-ttu-id="8a276-160">この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="8a276-160">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="8a276-161">要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。</span><span class="sxs-lookup"><span data-stu-id="8a276-161">The request will only be routed to that service after verifying the validity of the header, the claims in the auth token, and so on.</span></span>| 
   
 <a id="ID4EWG"></a>
 
  
-## <a name="http-status-codes"></a><span data-ttu-id="821f4-162">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="821f4-162">HTTP status codes</span></span>
+## <a name="http-status-codes"></a><span data-ttu-id="8a276-162">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="8a276-162">HTTP status codes</span></span>
  
-<span data-ttu-id="821f4-163">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="821f4-163">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="821f4-164">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="821f4-164">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
+<span data-ttu-id="8a276-163">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="8a276-163">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="8a276-164">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8a276-164">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
  
-| <span data-ttu-id="821f4-165">コード</span><span class="sxs-lookup"><span data-stu-id="821f4-165">Code</span></span>| <span data-ttu-id="821f4-166">理由フレーズ</span><span class="sxs-lookup"><span data-stu-id="821f4-166">Reason phrase</span></span>| <span data-ttu-id="821f4-167">説明</span><span class="sxs-lookup"><span data-stu-id="821f4-167">Description</span></span>| 
+| <span data-ttu-id="8a276-165">コード</span><span class="sxs-lookup"><span data-stu-id="8a276-165">Code</span></span>| <span data-ttu-id="8a276-166">理由フレーズ</span><span class="sxs-lookup"><span data-stu-id="8a276-166">Reason phrase</span></span>| <span data-ttu-id="8a276-167">説明</span><span class="sxs-lookup"><span data-stu-id="8a276-167">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="821f4-168">400</span><span class="sxs-lookup"><span data-stu-id="821f4-168">400</span></span>| <span data-ttu-id="821f4-169">Bad Request</span><span class="sxs-lookup"><span data-stu-id="821f4-169">Bad Request</span></span>| <span data-ttu-id="821f4-170">サービスは、形式が正しくない要求を理解していない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="821f4-170">Service could not understand malformed request.</span></span> <span data-ttu-id="821f4-171">通常、無効なパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="821f4-171">Typically an invalid parameter.</span></span>| 
-| <span data-ttu-id="821f4-172">401</span><span class="sxs-lookup"><span data-stu-id="821f4-172">401</span></span>| <span data-ttu-id="821f4-173">権限がありません</span><span class="sxs-lookup"><span data-stu-id="821f4-173">Unauthorized</span></span>| <span data-ttu-id="821f4-174">要求には、ユーザー認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="821f4-174">The request requires user authentication.</span></span>| 
-| <span data-ttu-id="821f4-175">404</span><span class="sxs-lookup"><span data-stu-id="821f4-175">404</span></span>| <span data-ttu-id="821f4-176">Not Found します。</span><span class="sxs-lookup"><span data-stu-id="821f4-176">Not Found</span></span>| <span data-ttu-id="821f4-177">指定されたリソースは見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="821f4-177">The specified resource could not be found.</span></span>| 
-| <span data-ttu-id="821f4-178">500</span><span class="sxs-lookup"><span data-stu-id="821f4-178">500</span></span>| <span data-ttu-id="821f4-179">内部サーバー エラー</span><span class="sxs-lookup"><span data-stu-id="821f4-179">Internal Server Error</span></span>| <span data-ttu-id="821f4-180">サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。</span><span class="sxs-lookup"><span data-stu-id="821f4-180">The server encountered an unexpected condition which prevented it from fulfilling the request.</span></span>| 
-| <span data-ttu-id="821f4-181">503</span><span class="sxs-lookup"><span data-stu-id="821f4-181">503</span></span>| <span data-ttu-id="821f4-182">Service Unavailable</span><span class="sxs-lookup"><span data-stu-id="821f4-182">Service Unavailable</span></span>| <span data-ttu-id="821f4-183">要求が調整された、クライアント再試行値 (例: 5 秒後) を秒単位で後にもう一度やり直してください。</span><span class="sxs-lookup"><span data-stu-id="821f4-183">Request has been throttled, try the request again after the client-retry value in seconds (e.g. 5 seconds later).</span></span>| 
+| <span data-ttu-id="8a276-168">400</span><span class="sxs-lookup"><span data-stu-id="8a276-168">400</span></span>| <span data-ttu-id="8a276-169">Bad Request</span><span class="sxs-lookup"><span data-stu-id="8a276-169">Bad Request</span></span>| <span data-ttu-id="8a276-170">サービスは、形式が正しくない要求を理解していない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="8a276-170">Service could not understand malformed request.</span></span> <span data-ttu-id="8a276-171">通常、無効なパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="8a276-171">Typically an invalid parameter.</span></span>| 
+| <span data-ttu-id="8a276-172">401</span><span class="sxs-lookup"><span data-stu-id="8a276-172">401</span></span>| <span data-ttu-id="8a276-173">権限がありません</span><span class="sxs-lookup"><span data-stu-id="8a276-173">Unauthorized</span></span>| <span data-ttu-id="8a276-174">要求には、ユーザー認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="8a276-174">The request requires user authentication.</span></span>| 
+| <span data-ttu-id="8a276-175">404</span><span class="sxs-lookup"><span data-stu-id="8a276-175">404</span></span>| <span data-ttu-id="8a276-176">Not Found します。</span><span class="sxs-lookup"><span data-stu-id="8a276-176">Not Found</span></span>| <span data-ttu-id="8a276-177">指定されたリソースは見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="8a276-177">The specified resource could not be found.</span></span>| 
+| <span data-ttu-id="8a276-178">500</span><span class="sxs-lookup"><span data-stu-id="8a276-178">500</span></span>| <span data-ttu-id="8a276-179">内部サーバー エラー</span><span class="sxs-lookup"><span data-stu-id="8a276-179">Internal Server Error</span></span>| <span data-ttu-id="8a276-180">サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。</span><span class="sxs-lookup"><span data-stu-id="8a276-180">The server encountered an unexpected condition which prevented it from fulfilling the request.</span></span>| 
+| <span data-ttu-id="8a276-181">503</span><span class="sxs-lookup"><span data-stu-id="8a276-181">503</span></span>| <span data-ttu-id="8a276-182">Service Unavailable</span><span class="sxs-lookup"><span data-stu-id="8a276-182">Service Unavailable</span></span>| <span data-ttu-id="8a276-183">要求が調整された、クライアント再試行値 (例: 5 秒後) を秒単位で後にもう一度やり直してください。</span><span class="sxs-lookup"><span data-stu-id="8a276-183">Request has been throttled, try the request again after the client-retry value in seconds (e.g. 5 seconds later).</span></span>| 
   
 <a id="ID4EDAAC"></a>
 
  
-## <a name="response-body"></a><span data-ttu-id="821f4-184">応答本文</span><span class="sxs-lookup"><span data-stu-id="821f4-184">Response body</span></span> 
+## <a name="response-body"></a><span data-ttu-id="8a276-184">応答本文</span><span class="sxs-lookup"><span data-stu-id="8a276-184">Response body</span></span> 
  
-<span data-ttu-id="821f4-185">呼び出しが成功した場合は、この応答からのオブジェクトは返されません。</span><span class="sxs-lookup"><span data-stu-id="821f4-185">If the call is successful, no objects are returned from this response.</span></span> <span data-ttu-id="821f4-186">それ以外の場合、サービスは、 [ServiceError](../../json/json-serviceerror.md)オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="821f4-186">Otherwise, the service returns a [ServiceError](../../json/json-serviceerror.md) object.</span></span>
+<span data-ttu-id="8a276-185">呼び出しが成功した場合は、この応答からのオブジェクトは返されません。</span><span class="sxs-lookup"><span data-stu-id="8a276-185">If the call is successful, no objects are returned from this response.</span></span> <span data-ttu-id="8a276-186">それ以外の場合、サービスは、 [ServiceError](../../json/json-serviceerror.md)オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="8a276-186">Otherwise, the service returns a [ServiceError](../../json/json-serviceerror.md) object.</span></span>
   
 <a id="ID4EXAAC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="821f4-187">関連項目</span><span class="sxs-lookup"><span data-stu-id="821f4-187">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8a276-187">関連項目</span><span class="sxs-lookup"><span data-stu-id="8a276-187">See also</span></span>
  
 <a id="ID4EZAAC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="821f4-188">Parent</span><span class="sxs-lookup"><span data-stu-id="821f4-188">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="8a276-188">Parent</span><span class="sxs-lookup"><span data-stu-id="8a276-188">Parent</span></span> 
 
-[<span data-ttu-id="821f4-189">/users/batchfeedback</span><span class="sxs-lookup"><span data-stu-id="821f4-189">/users/batchfeedback</span></span>](uri-reputationusersbatchfeedback.md)
+[<span data-ttu-id="8a276-189">/users/batchfeedback</span><span class="sxs-lookup"><span data-stu-id="8a276-189">/users/batchfeedback</span></span>](uri-reputationusersbatchfeedback.md)
 
   
 <a id="ID4EFBAC"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="821f4-190">リファレンス</span><span class="sxs-lookup"><span data-stu-id="821f4-190">Reference</span></span> 
+##### <a name="reference"></a><span data-ttu-id="8a276-190">リファレンス</span><span class="sxs-lookup"><span data-stu-id="8a276-190">Reference</span></span> 
 
-[<span data-ttu-id="821f4-191">Feedback (JSON)</span><span class="sxs-lookup"><span data-stu-id="821f4-191">Feedback (JSON)</span></span>](../../json/json-feedback.md)
+[<span data-ttu-id="8a276-191">Feedback (JSON)</span><span class="sxs-lookup"><span data-stu-id="8a276-191">Feedback (JSON)</span></span>](../../json/json-feedback.md)
 
- [<span data-ttu-id="821f4-192">ServiceError (JSON)</span><span class="sxs-lookup"><span data-stu-id="821f4-192">ServiceError (JSON)</span></span>](../../json/json-serviceerror.md)
+ [<span data-ttu-id="8a276-192">ServiceError (JSON)</span><span class="sxs-lookup"><span data-stu-id="8a276-192">ServiceError (JSON)</span></span>](../../json/json-serviceerror.md)
 
    

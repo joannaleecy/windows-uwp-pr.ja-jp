@@ -12,45 +12,45 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b0819ab8f0014b945a2340ebf7252bbe9d8d8726
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206479"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4265532"
 ---
-# <a name="usersowneridclips"></a><span data-ttu-id="3d9c4-104">/users/{ownerId}/clips</span><span class="sxs-lookup"><span data-stu-id="3d9c4-104">/users/{ownerId}/clips</span></span>
-<span data-ttu-id="3d9c4-105">ユーザーのクリップのアクセスの一覧です。</span><span class="sxs-lookup"><span data-stu-id="3d9c4-105">Access list of user's clips.</span></span> <span data-ttu-id="3d9c4-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。</span><span class="sxs-lookup"><span data-stu-id="3d9c4-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>
+# <a name="usersowneridclips"></a><span data-ttu-id="f75b8-104">/users/{ownerId}/clips</span><span class="sxs-lookup"><span data-stu-id="f75b8-104">/users/{ownerId}/clips</span></span>
+<span data-ttu-id="f75b8-105">ユーザーのクリップのアクセスの一覧です。</span><span class="sxs-lookup"><span data-stu-id="f75b8-105">Access list of user's clips.</span></span> <span data-ttu-id="f75b8-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。</span><span class="sxs-lookup"><span data-stu-id="f75b8-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>
  
-  * [<span data-ttu-id="3d9c4-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="3d9c4-107">URI parameters</span></span>](#ID4EX)
+  * [<span data-ttu-id="f75b8-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="f75b8-107">URI parameters</span></span>](#ID4EX)
  
 <a id="ID4EX"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="3d9c4-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="3d9c4-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="f75b8-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="f75b8-108">URI parameters</span></span>
  
-| <span data-ttu-id="3d9c4-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="3d9c4-109">Parameter</span></span>| <span data-ttu-id="3d9c4-110">型</span><span class="sxs-lookup"><span data-stu-id="3d9c4-110">Type</span></span>| <span data-ttu-id="3d9c4-111">説明</span><span class="sxs-lookup"><span data-stu-id="3d9c4-111">Description</span></span>| 
+| <span data-ttu-id="f75b8-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="f75b8-109">Parameter</span></span>| <span data-ttu-id="f75b8-110">型</span><span class="sxs-lookup"><span data-stu-id="f75b8-110">Type</span></span>| <span data-ttu-id="f75b8-111">説明</span><span class="sxs-lookup"><span data-stu-id="f75b8-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="3d9c4-112">ownerId</span><span class="sxs-lookup"><span data-stu-id="3d9c4-112">ownerId</span></span>| <span data-ttu-id="3d9c4-113">string</span><span class="sxs-lookup"><span data-stu-id="3d9c4-113">string</span></span>| <span data-ttu-id="3d9c4-114">そのリソースにアクセスしているユーザーのユーザー id。</span><span class="sxs-lookup"><span data-stu-id="3d9c4-114">User identity of the user whose resource is being accessed.</span></span> <span data-ttu-id="3d9c4-115">サポートされる形式:"me"または"xuid(123456789)"です。</span><span class="sxs-lookup"><span data-stu-id="3d9c4-115">Supported formats: "me" or "xuid(123456789)".</span></span> <span data-ttu-id="3d9c4-116">最大長: 16 です。</span><span class="sxs-lookup"><span data-stu-id="3d9c4-116">Maximum length: 16.</span></span>| 
+| <span data-ttu-id="f75b8-112">ownerId</span><span class="sxs-lookup"><span data-stu-id="f75b8-112">ownerId</span></span>| <span data-ttu-id="f75b8-113">string</span><span class="sxs-lookup"><span data-stu-id="f75b8-113">string</span></span>| <span data-ttu-id="f75b8-114">そのリソースにアクセスしているユーザーのユーザー id。</span><span class="sxs-lookup"><span data-stu-id="f75b8-114">User identity of the user whose resource is being accessed.</span></span> <span data-ttu-id="f75b8-115">サポートされる形式:"me"または"xuid(123456789)"です。</span><span class="sxs-lookup"><span data-stu-id="f75b8-115">Supported formats: "me" or "xuid(123456789)".</span></span> <span data-ttu-id="f75b8-116">最大長: 16 です。</span><span class="sxs-lookup"><span data-stu-id="f75b8-116">Maximum length: 16.</span></span>| 
   
 <a id="ID4EVB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="3d9c4-117">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="3d9c4-117">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="f75b8-117">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="f75b8-117">Valid methods</span></span>
 
-[<span data-ttu-id="3d9c4-118">GET (/users/{ownerId}/clips)</span><span class="sxs-lookup"><span data-stu-id="3d9c4-118">GET (/users/{ownerId}/clips)</span></span>](uri-usersowneridclipsget.md)
+[<span data-ttu-id="f75b8-118">GET (/users/{ownerId}/clips)</span><span class="sxs-lookup"><span data-stu-id="f75b8-118">GET (/users/{ownerId}/clips)</span></span>](uri-usersowneridclipsget.md)
 
-<span data-ttu-id="3d9c4-119">&nbsp;&nbsp;ユーザーのクリップの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="3d9c4-119">&nbsp;&nbsp;Retrieve list of user's clips.</span></span>
+<span data-ttu-id="f75b8-119">&nbsp;&nbsp;ユーザーのクリップの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="f75b8-119">&nbsp;&nbsp;Retrieve list of user's clips.</span></span>
  
 <a id="ID4E6B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="3d9c4-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="3d9c4-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f75b8-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="f75b8-120">See also</span></span>
  
 <a id="ID4EBC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="3d9c4-121">Parent</span><span class="sxs-lookup"><span data-stu-id="3d9c4-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="f75b8-121">Parent</span><span class="sxs-lookup"><span data-stu-id="f75b8-121">Parent</span></span> 
 
-[<span data-ttu-id="3d9c4-122">ゲーム DVR URI</span><span class="sxs-lookup"><span data-stu-id="3d9c4-122">Game DVR URIs</span></span>](atoc-reference-dvr.md)
+[<span data-ttu-id="f75b8-122">ゲーム DVR URI</span><span class="sxs-lookup"><span data-stu-id="f75b8-122">Game DVR URIs</span></span>](atoc-reference-dvr.md)
 
    

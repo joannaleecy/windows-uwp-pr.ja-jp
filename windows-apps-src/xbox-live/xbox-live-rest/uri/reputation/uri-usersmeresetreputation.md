@@ -12,34 +12,34 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dd75899bfe94ab7a9dc0a23df0ea40c0431d809
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204463"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4260308"
 ---
-# <a name="usersmeresetreputation"></a><span data-ttu-id="ff9f5-104">/users/me/resetreputation</span><span class="sxs-lookup"><span data-stu-id="ff9f5-104">/users/me/resetreputation</span></span>
-<span data-ttu-id="ff9f5-105">現在のユーザーの評判スコアにアクセスする執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="ff9f5-105">Enables the Enforcement team to access the current user's Reputation scores.</span></span> <span data-ttu-id="ff9f5-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="ff9f5-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>
+# <a name="usersmeresetreputation"></a><span data-ttu-id="8888a-104">/users/me/resetreputation</span><span class="sxs-lookup"><span data-stu-id="8888a-104">/users/me/resetreputation</span></span>
+<span data-ttu-id="8888a-105">現在のユーザーの評判スコアにアクセスする執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="8888a-105">Enables the Enforcement team to access the current user's Reputation scores.</span></span> <span data-ttu-id="8888a-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="8888a-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>
   
 <a id="ID4EV"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="ff9f5-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="ff9f5-107">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="8888a-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="8888a-107">Valid methods</span></span>
 
-[<span data-ttu-id="ff9f5-108">POST (/users/me/resetreputation)</span><span class="sxs-lookup"><span data-stu-id="ff9f5-108">POST (/users/me/resetreputation)</span></span>](uri-usersmeresetreputationpost.md)
+[<span data-ttu-id="8888a-108">POST (/users/me/resetreputation)</span><span class="sxs-lookup"><span data-stu-id="8888a-108">POST (/users/me/resetreputation)</span></span>](uri-usersmeresetreputationpost.md)
 
-<span data-ttu-id="ff9f5-109">&nbsp;&nbsp;アカウント ハイジャックでは (たとえば) 後、現在のユーザーの評判スコアをいくつかの任意の値に設定する執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="ff9f5-109">&nbsp;&nbsp;Enables the Enforcement team to set the current user's Reputation Scores to some arbitrary values after (for example) an account hijacking.</span></span>
+<span data-ttu-id="8888a-109">&nbsp;&nbsp;アカウント ハイジャックでは (たとえば) 後、現在のユーザーの評判スコアをいくつかの任意の値に設定する執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="8888a-109">&nbsp;&nbsp;Enables the Enforcement team to set the current user's Reputation Scores to some arbitrary values after (for example) an account hijacking.</span></span>
  
 <a id="ID4E6"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="ff9f5-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="ff9f5-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8888a-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="8888a-110">See also</span></span>
  
 <a id="ID4EBB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="ff9f5-111">Parent</span><span class="sxs-lookup"><span data-stu-id="ff9f5-111">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="8888a-111">Parent</span><span class="sxs-lookup"><span data-stu-id="8888a-111">Parent</span></span> 
 
-[<span data-ttu-id="ff9f5-112">評判 URI</span><span class="sxs-lookup"><span data-stu-id="ff9f5-112">Reputation URIs</span></span>](atoc-reference-reputation.md)
+[<span data-ttu-id="8888a-112">評判 URI</span><span class="sxs-lookup"><span data-stu-id="8888a-112">Reputation URIs</span></span>](atoc-reference-reputation.md)
 
    

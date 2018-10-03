@@ -12,54 +12,54 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 944b2c9f0e5758444295ef9ec189d84728a3845d
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208571"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4265014"
 ---
-# <a name="usersxuidxuidinbox"></a><span data-ttu-id="ba75c-104">/users/xuid({xuid})/inbox</span><span class="sxs-lookup"><span data-stu-id="ba75c-104">/users/xuid({xuid})/inbox</span></span>
-<span data-ttu-id="ba75c-105">ユーザーへのアクセスの Xbox LIVE サービスの受信トレイのメッセージを提供します。</span><span class="sxs-lookup"><span data-stu-id="ba75c-105">Provides access to a user's messaging inbox for Xbox LIVE Services.</span></span> <span data-ttu-id="ba75c-106">これらの Uri のドメインが`msg.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="ba75c-106">The domain for these URIs is `msg.xboxlive.com`.</span></span>
+# <a name="usersxuidxuidinbox"></a><span data-ttu-id="95ec2-104">/users/xuid({xuid})/inbox</span><span class="sxs-lookup"><span data-stu-id="95ec2-104">/users/xuid({xuid})/inbox</span></span>
+<span data-ttu-id="95ec2-105">ユーザーへのアクセスの Xbox LIVE サービスの受信トレイのメッセージを提供します。</span><span class="sxs-lookup"><span data-stu-id="95ec2-105">Provides access to a user's messaging inbox for Xbox LIVE Services.</span></span> <span data-ttu-id="95ec2-106">これらの Uri のドメインが`msg.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="95ec2-106">The domain for these URIs is `msg.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="ba75c-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ba75c-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="95ec2-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="95ec2-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="ba75c-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ba75c-108">URI parameters</span></span> 
+## <a name="uri-parameters"></a><span data-ttu-id="95ec2-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="95ec2-108">URI parameters</span></span> 
  
-| <span data-ttu-id="ba75c-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ba75c-109">Parameter</span></span>| <span data-ttu-id="ba75c-110">型</span><span class="sxs-lookup"><span data-stu-id="ba75c-110">Type</span></span>| <span data-ttu-id="ba75c-111">説明</span><span class="sxs-lookup"><span data-stu-id="ba75c-111">Description</span></span>| 
+| <span data-ttu-id="95ec2-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="95ec2-109">Parameter</span></span>| <span data-ttu-id="95ec2-110">型</span><span class="sxs-lookup"><span data-stu-id="95ec2-110">Type</span></span>| <span data-ttu-id="95ec2-111">説明</span><span class="sxs-lookup"><span data-stu-id="95ec2-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="ba75c-112">xuid</span><span class="sxs-lookup"><span data-stu-id="ba75c-112">xuid</span></span> | <span data-ttu-id="ba75c-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="ba75c-113">unsigned 64-bit integer</span></span> | <span data-ttu-id="ba75c-114">Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。</span><span class="sxs-lookup"><span data-stu-id="ba75c-114">The Xbox User ID (XUID) of the player who is making the request.</span></span> | 
-| <span data-ttu-id="ba75c-115">メッセージ Id</span><span class="sxs-lookup"><span data-stu-id="ba75c-115">messageId</span></span> | <span data-ttu-id="ba75c-116">文字列 [50]</span><span class="sxs-lookup"><span data-stu-id="ba75c-116">string[50]</span></span> | <span data-ttu-id="ba75c-117">取得または削除されるメッセージの ID です。</span><span class="sxs-lookup"><span data-stu-id="ba75c-117">ID of the message being retrieved or deleted.</span></span> | 
+| <span data-ttu-id="95ec2-112">xuid</span><span class="sxs-lookup"><span data-stu-id="95ec2-112">xuid</span></span> | <span data-ttu-id="95ec2-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="95ec2-113">unsigned 64-bit integer</span></span> | <span data-ttu-id="95ec2-114">Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。</span><span class="sxs-lookup"><span data-stu-id="95ec2-114">The Xbox User ID (XUID) of the player who is making the request.</span></span> | 
+| <span data-ttu-id="95ec2-115">メッセージ Id</span><span class="sxs-lookup"><span data-stu-id="95ec2-115">messageId</span></span> | <span data-ttu-id="95ec2-116">文字列 [50]</span><span class="sxs-lookup"><span data-stu-id="95ec2-116">string[50]</span></span> | <span data-ttu-id="95ec2-117">取得または削除されるメッセージの ID です。</span><span class="sxs-lookup"><span data-stu-id="95ec2-117">ID of the message being retrieved or deleted.</span></span> | 
   
 <a id="ID4EDC"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="ba75c-118">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="ba75c-118">Valid methods</span></span> 
+## <a name="valid-methods"></a><span data-ttu-id="95ec2-118">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="95ec2-118">Valid methods</span></span> 
 
-[<span data-ttu-id="ba75c-119">GET (/users/xuid({xuid})/inbox)</span><span class="sxs-lookup"><span data-stu-id="ba75c-119">GET (/users/xuid({xuid})/inbox)</span></span>](uri-usersxuidinboxget.md)
+[<span data-ttu-id="95ec2-119">GET (/users/xuid({xuid})/inbox)</span><span class="sxs-lookup"><span data-stu-id="95ec2-119">GET (/users/xuid({xuid})/inbox)</span></span>](uri-usersxuidinboxget.md)
 
-<span data-ttu-id="ba75c-120">&nbsp;&nbsp;サービスから指定したメッセージの概要をユーザー数を取得します。</span><span class="sxs-lookup"><span data-stu-id="ba75c-120">&nbsp;&nbsp;Retrieves a specified number of user message summaries from the service.</span></span> 
+<span data-ttu-id="95ec2-120">&nbsp;&nbsp;サービスから指定したメッセージの概要をユーザー数を取得します。</span><span class="sxs-lookup"><span data-stu-id="95ec2-120">&nbsp;&nbsp;Retrieves a specified number of user message summaries from the service.</span></span> 
 
-[<span data-ttu-id="ba75c-121">DELETE (/users/xuid({xuid})/inbox/{messageId})</span><span class="sxs-lookup"><span data-stu-id="ba75c-121">DELETE (/users/xuid({xuid})/inbox/{messageId})</span></span>](uri-usersxuidinboxmessageiddelete.md)
+[<span data-ttu-id="95ec2-121">DELETE (/users/xuid({xuid})/inbox/{messageId})</span><span class="sxs-lookup"><span data-stu-id="95ec2-121">DELETE (/users/xuid({xuid})/inbox/{messageId})</span></span>](uri-usersxuidinboxmessageiddelete.md)
 
-<span data-ttu-id="ba75c-122">&nbsp;&nbsp;ユーザーの受信トレイでユーザーのメッセージを削除します。</span><span class="sxs-lookup"><span data-stu-id="ba75c-122">&nbsp;&nbsp;Deletes a user message in the user's inbox.</span></span>
+<span data-ttu-id="95ec2-122">&nbsp;&nbsp;ユーザーの受信トレイでユーザーのメッセージを削除します。</span><span class="sxs-lookup"><span data-stu-id="95ec2-122">&nbsp;&nbsp;Deletes a user message in the user's inbox.</span></span>
 
-[<span data-ttu-id="ba75c-123">GET (/users/xuid({xuid})/inbox/{messageId})</span><span class="sxs-lookup"><span data-stu-id="ba75c-123">GET (/users/xuid({xuid})/inbox/{messageId})</span></span>](uri-usersxuidinboxmessageidget.md)
+[<span data-ttu-id="95ec2-123">GET (/users/xuid({xuid})/inbox/{messageId})</span><span class="sxs-lookup"><span data-stu-id="95ec2-123">GET (/users/xuid({xuid})/inbox/{messageId})</span></span>](uri-usersxuidinboxmessageidget.md)
 
-<span data-ttu-id="ba75c-124">&nbsp;&nbsp;サービスの読み取りとしてマーク、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。</span><span class="sxs-lookup"><span data-stu-id="ba75c-124">&nbsp;&nbsp;Retrieves the detailed message text for a particular user message, marking it as read on the service.</span></span> 
+<span data-ttu-id="95ec2-124">&nbsp;&nbsp;サービスの読み取りとしてマーク、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。</span><span class="sxs-lookup"><span data-stu-id="95ec2-124">&nbsp;&nbsp;Retrieves the detailed message text for a particular user message, marking it as read on the service.</span></span> 
  
 <a id="ID4EVC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="ba75c-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="ba75c-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="95ec2-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="95ec2-125">See also</span></span>
  
 <a id="ID4EXC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="ba75c-126">Parent</span><span class="sxs-lookup"><span data-stu-id="ba75c-126">Parent</span></span>  
+##### <a name="parent"></a><span data-ttu-id="95ec2-126">Parent</span><span class="sxs-lookup"><span data-stu-id="95ec2-126">Parent</span></span>  
 
-[<span data-ttu-id="ba75c-127">ユーザー URI</span><span class="sxs-lookup"><span data-stu-id="ba75c-127">Users URIs</span></span>](atoc-reference-users.md)
+[<span data-ttu-id="95ec2-127">ユーザー URI</span><span class="sxs-lookup"><span data-stu-id="95ec2-127">Users URIs</span></span>](atoc-reference-users.md)
 
    

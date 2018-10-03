@@ -12,47 +12,47 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d12f9e530ee6d703aa324cb6380591aab31facfd
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212667"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4261296"
 ---
-# <a name="usersowneridscidsscidclipsgameclipid"></a><span data-ttu-id="4992e-104">/users/{ownerId}/scids/{scid}/clips/{gameClipId}</span><span class="sxs-lookup"><span data-stu-id="4992e-104">/users/{ownerId}/scids/{scid}/clips/{gameClipId}</span></span>
-<span data-ttu-id="4992e-105">すべての Id を見つけることがわかっている場合はシステムから 1 つのゲーム クリップにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="4992e-105">Access a single game clip from the system if all the IDs to locate it are known.</span></span> <span data-ttu-id="4992e-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。</span><span class="sxs-lookup"><span data-stu-id="4992e-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>
+# <a name="usersowneridscidsscidclipsgameclipid"></a><span data-ttu-id="c4066-104">/users/{ownerId}/scids/{scid}/clips/{gameClipId}</span><span class="sxs-lookup"><span data-stu-id="c4066-104">/users/{ownerId}/scids/{scid}/clips/{gameClipId}</span></span>
+<span data-ttu-id="c4066-105">すべての Id を見つけることがわかっている場合はシステムから 1 つのゲーム クリップにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="c4066-105">Access a single game clip from the system if all the IDs to locate it are known.</span></span> <span data-ttu-id="c4066-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。</span><span class="sxs-lookup"><span data-stu-id="c4066-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>
  
-  * [<span data-ttu-id="4992e-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="4992e-107">URI parameters</span></span>](#ID4EX)
+  * [<span data-ttu-id="c4066-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="c4066-107">URI parameters</span></span>](#ID4EX)
  
 <a id="ID4EX"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="4992e-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="4992e-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="c4066-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="c4066-108">URI parameters</span></span>
  
-| <span data-ttu-id="4992e-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="4992e-109">Parameter</span></span>| <span data-ttu-id="4992e-110">型</span><span class="sxs-lookup"><span data-stu-id="4992e-110">Type</span></span>| <span data-ttu-id="4992e-111">説明</span><span class="sxs-lookup"><span data-stu-id="4992e-111">Description</span></span>| 
+| <span data-ttu-id="c4066-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="c4066-109">Parameter</span></span>| <span data-ttu-id="c4066-110">型</span><span class="sxs-lookup"><span data-stu-id="c4066-110">Type</span></span>| <span data-ttu-id="c4066-111">説明</span><span class="sxs-lookup"><span data-stu-id="c4066-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="4992e-112">ownerId</span><span class="sxs-lookup"><span data-stu-id="4992e-112">ownerId</span></span>| <span data-ttu-id="4992e-113">string</span><span class="sxs-lookup"><span data-stu-id="4992e-113">string</span></span>| <span data-ttu-id="4992e-114">そのリソースにアクセスしているユーザーのユーザー id。</span><span class="sxs-lookup"><span data-stu-id="4992e-114">User identity of the user whose resource is being accessed.</span></span> <span data-ttu-id="4992e-115">サポートされる形式:"me"または"xuid(123456789)"です。</span><span class="sxs-lookup"><span data-stu-id="4992e-115">Supported formats: "me" or "xuid(123456789)".</span></span> <span data-ttu-id="4992e-116">最大長: 16 です。</span><span class="sxs-lookup"><span data-stu-id="4992e-116">Maximum length: 16.</span></span>| 
-| <span data-ttu-id="4992e-117">scid</span><span class="sxs-lookup"><span data-stu-id="4992e-117">scid</span></span>| <span data-ttu-id="4992e-118">string</span><span class="sxs-lookup"><span data-stu-id="4992e-118">string</span></span>| <span data-ttu-id="4992e-119">アクセスされているリソースのサービス構成 ID。</span><span class="sxs-lookup"><span data-stu-id="4992e-119">Service Config ID of the resource that is being accessed.</span></span> <span data-ttu-id="4992e-120">認証されたユーザーの SCID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4992e-120">Must match the SCID of the authenticated user.</span></span>| 
-| <span data-ttu-id="4992e-121">gameClipId</span><span class="sxs-lookup"><span data-stu-id="4992e-121">gameClipId</span></span>| <span data-ttu-id="4992e-122">string</span><span class="sxs-lookup"><span data-stu-id="4992e-122">string</span></span>| <span data-ttu-id="4992e-123">ゲーム クリップだったにアクセスしているリソースの ID です。</span><span class="sxs-lookup"><span data-stu-id="4992e-123">GameClip ID of the resource that is being accessed.</span></span>| 
+| <span data-ttu-id="c4066-112">ownerId</span><span class="sxs-lookup"><span data-stu-id="c4066-112">ownerId</span></span>| <span data-ttu-id="c4066-113">string</span><span class="sxs-lookup"><span data-stu-id="c4066-113">string</span></span>| <span data-ttu-id="c4066-114">そのリソースにアクセスしているユーザーのユーザー id。</span><span class="sxs-lookup"><span data-stu-id="c4066-114">User identity of the user whose resource is being accessed.</span></span> <span data-ttu-id="c4066-115">サポートされる形式:"me"または"xuid(123456789)"です。</span><span class="sxs-lookup"><span data-stu-id="c4066-115">Supported formats: "me" or "xuid(123456789)".</span></span> <span data-ttu-id="c4066-116">最大長: 16 です。</span><span class="sxs-lookup"><span data-stu-id="c4066-116">Maximum length: 16.</span></span>| 
+| <span data-ttu-id="c4066-117">scid</span><span class="sxs-lookup"><span data-stu-id="c4066-117">scid</span></span>| <span data-ttu-id="c4066-118">string</span><span class="sxs-lookup"><span data-stu-id="c4066-118">string</span></span>| <span data-ttu-id="c4066-119">アクセスされているリソースのサービス構成 ID。</span><span class="sxs-lookup"><span data-stu-id="c4066-119">Service Config ID of the resource that is being accessed.</span></span> <span data-ttu-id="c4066-120">認証されたユーザーの SCID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c4066-120">Must match the SCID of the authenticated user.</span></span>| 
+| <span data-ttu-id="c4066-121">gameClipId</span><span class="sxs-lookup"><span data-stu-id="c4066-121">gameClipId</span></span>| <span data-ttu-id="c4066-122">string</span><span class="sxs-lookup"><span data-stu-id="c4066-122">string</span></span>| <span data-ttu-id="c4066-123">ゲーム クリップだったにアクセスしているリソースの ID です。</span><span class="sxs-lookup"><span data-stu-id="c4066-123">GameClip ID of the resource that is being accessed.</span></span>| 
   
 <a id="ID4EFC"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="4992e-124">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="4992e-124">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="c4066-124">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="c4066-124">Valid methods</span></span>
 
-[<span data-ttu-id="4992e-125">GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})</span><span class="sxs-lookup"><span data-stu-id="4992e-125">GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})</span></span>](uri-usersowneridscidclipsgameclipidget.md)
+[<span data-ttu-id="c4066-125">GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})</span><span class="sxs-lookup"><span data-stu-id="c4066-125">GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})</span></span>](uri-usersowneridscidclipsgameclipidget.md)
 
-<span data-ttu-id="4992e-126">&nbsp;&nbsp;すべての Id を見つけることがわかっている場合は、システムから 1 つのゲーム クリップを取得します。</span><span class="sxs-lookup"><span data-stu-id="4992e-126">&nbsp;&nbsp;Get a single game clip from the system if all the IDs to locate it are known.</span></span>
+<span data-ttu-id="c4066-126">&nbsp;&nbsp;すべての Id を見つけることがわかっている場合は、システムから 1 つのゲーム クリップを取得します。</span><span class="sxs-lookup"><span data-stu-id="c4066-126">&nbsp;&nbsp;Get a single game clip from the system if all the IDs to locate it are known.</span></span>
  
 <a id="ID4EPC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="4992e-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="4992e-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c4066-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="c4066-127">See also</span></span>
  
 <a id="ID4ERC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="4992e-128">Parent</span><span class="sxs-lookup"><span data-stu-id="4992e-128">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="c4066-128">Parent</span><span class="sxs-lookup"><span data-stu-id="c4066-128">Parent</span></span> 
 
-[<span data-ttu-id="4992e-129">ゲーム DVR URI</span><span class="sxs-lookup"><span data-stu-id="4992e-129">Game DVR URIs</span></span>](atoc-reference-dvr.md)
+[<span data-ttu-id="c4066-129">ゲーム DVR URI</span><span class="sxs-lookup"><span data-stu-id="c4066-129">Game DVR URIs</span></span>](atoc-reference-dvr.md)
 
    

@@ -12,54 +12,54 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eaddef523fcfa3b794c421acbe6c1aac4785b68
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211863"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4262728"
 ---
-# <a name="post-handles"></a><span data-ttu-id="6e97b-104">POST (/handles)</span><span class="sxs-lookup"><span data-stu-id="6e97b-104">POST (/handles)</span></span>
-<span data-ttu-id="6e97b-105">ユーザーの現在のアクティビティのマルチプレイヤー セッションを設定し、必要な場合は、セッション メンバーを招待します。</span><span class="sxs-lookup"><span data-stu-id="6e97b-105">Sets the multiplayer session for the user's current activity, and invites session members if required.</span></span>
+# <a name="post-handles"></a><span data-ttu-id="e30f2-104">POST (/handles)</span><span class="sxs-lookup"><span data-stu-id="e30f2-104">POST (/handles)</span></span>
+<span data-ttu-id="e30f2-105">ユーザーの現在のアクティビティのマルチプレイヤー セッションを設定し、必要な場合は、セッション メンバーを招待します。</span><span class="sxs-lookup"><span data-stu-id="e30f2-105">Sets the multiplayer session for the user's current activity, and invites session members if required.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="6e97b-106">このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="6e97b-106">This method is used by the 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="6e97b-107">テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="6e97b-107">It is intended for use with template contract 104/105 or later, and requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
+> <span data-ttu-id="e30f2-106">このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="e30f2-106">This method is used by the 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="e30f2-107">テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="e30f2-107">It is intended for use with template contract 104/105 or later, and requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
 
-  * [<span data-ttu-id="6e97b-108">注釈</span><span class="sxs-lookup"><span data-stu-id="6e97b-108">Remarks</span></span>](#ID4ET)
-  * [<span data-ttu-id="6e97b-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="6e97b-109">URI parameters</span></span>](#ID4EHB)
-  * [<span data-ttu-id="6e97b-110">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="6e97b-110">HTTP status codes</span></span>](#ID4EPB)
-  * [<span data-ttu-id="6e97b-111">要求本文</span><span class="sxs-lookup"><span data-stu-id="6e97b-111">Request body</span></span>](#ID4EVB)
-  * [<span data-ttu-id="6e97b-112">応答本文</span><span class="sxs-lookup"><span data-stu-id="6e97b-112">Response body</span></span>](#ID4EJC)
+  * [<span data-ttu-id="e30f2-108">注釈</span><span class="sxs-lookup"><span data-stu-id="e30f2-108">Remarks</span></span>](#ID4ET)
+  * [<span data-ttu-id="e30f2-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="e30f2-109">URI parameters</span></span>](#ID4EHB)
+  * [<span data-ttu-id="e30f2-110">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="e30f2-110">HTTP status codes</span></span>](#ID4EPB)
+  * [<span data-ttu-id="e30f2-111">要求本文</span><span class="sxs-lookup"><span data-stu-id="e30f2-111">Request body</span></span>](#ID4EVB)
+  * [<span data-ttu-id="e30f2-112">応答本文</span><span class="sxs-lookup"><span data-stu-id="e30f2-112">Response body</span></span>](#ID4EJC)
 
 <a id="ID4ET"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="6e97b-113">注釈</span><span class="sxs-lookup"><span data-stu-id="6e97b-113">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="e30f2-113">注釈</span><span class="sxs-lookup"><span data-stu-id="e30f2-113">Remarks</span></span>
 
-<span data-ttu-id="6e97b-114">現在のアクティビティのセッションを設定するこの HTTP/REST メソッドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="6e97b-114">This HTTP/REST method can be used to set the session for current activity.</span></span> <span data-ttu-id="6e97b-115">この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="6e97b-115">In this case, the method can be wrapped by **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**.</span></span> <span data-ttu-id="6e97b-116">要求本文には、「アクティビティ」の種類] フィールドに、JSON ファイルで**sessionRef**オブジェクトを使用して、セッションの参照を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6e97b-116">The request body must define the session reference, using the **sessionRef** object in the JSON file, with the type field to "activity".</span></span> <span data-ttu-id="6e97b-117">応答本文は取得されません。</span><span class="sxs-lookup"><span data-stu-id="6e97b-117">No response body is retrieved.</span></span> <span data-ttu-id="6e97b-118">セッション参照で指定された項目の定義、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6e97b-118">For definitions of the items specified in a session reference, see **Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**.</span></span>
+<span data-ttu-id="e30f2-114">現在のアクティビティのセッションを設定するこの HTTP/REST メソッドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="e30f2-114">This HTTP/REST method can be used to set the session for current activity.</span></span> <span data-ttu-id="e30f2-115">この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="e30f2-115">In this case, the method can be wrapped by **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**.</span></span> <span data-ttu-id="e30f2-116">要求本文には、「アクティビティ」の種類] フィールドに、JSON ファイルで**sessionRef**オブジェクトを使用して、セッションの参照を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e30f2-116">The request body must define the session reference, using the **sessionRef** object in the JSON file, with the type field to "activity".</span></span> <span data-ttu-id="e30f2-117">応答本文は取得されません。</span><span class="sxs-lookup"><span data-stu-id="e30f2-117">No response body is retrieved.</span></span> <span data-ttu-id="e30f2-118">セッション参照で指定された項目の定義、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e30f2-118">For definitions of the items specified in a session reference, see **Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**.</span></span>
 
-<span data-ttu-id="6e97b-119">この POST メソッドは、セッションへのハンドルによって指定されたユーザーの招待を使用できます。</span><span class="sxs-lookup"><span data-stu-id="6e97b-119">This POST method can also be used to invite users specified by the handles to a session.</span></span> <span data-ttu-id="6e97b-120">この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="6e97b-120">In this case, the method can be wrapped by **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**.</span></span> <span data-ttu-id="6e97b-121">このような POST メソッドの使用には、セッションの参照を定義する、要求本文が必要ですが、型フィールド「招待」に設定します。</span><span class="sxs-lookup"><span data-stu-id="6e97b-121">This use of the POST method requires your request body to define the session reference, but with the type field set to "invite".</span></span> <span data-ttu-id="6e97b-122">応答本文では、招待ハンドルです。</span><span class="sxs-lookup"><span data-stu-id="6e97b-122">The response body is an invite handle.</span></span>
+<span data-ttu-id="e30f2-119">この POST メソッドは、セッションへのハンドルによって指定されたユーザーの招待を使用できます。</span><span class="sxs-lookup"><span data-stu-id="e30f2-119">This POST method can also be used to invite users specified by the handles to a session.</span></span> <span data-ttu-id="e30f2-120">この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="e30f2-120">In this case, the method can be wrapped by **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**.</span></span> <span data-ttu-id="e30f2-121">このような POST メソッドの使用には、セッションの参照を定義する、要求本文が必要ですが、型フィールド「招待」に設定します。</span><span class="sxs-lookup"><span data-stu-id="e30f2-121">This use of the POST method requires your request body to define the session reference, but with the type field set to "invite".</span></span> <span data-ttu-id="e30f2-122">応答本文では、招待ハンドルです。</span><span class="sxs-lookup"><span data-stu-id="e30f2-122">The response body is an invite handle.</span></span>
 
 <a id="ID4EHB"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="6e97b-123">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="6e97b-123">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="e30f2-123">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="e30f2-123">URI parameters</span></span>
 
-<span data-ttu-id="6e97b-124">なし</span><span class="sxs-lookup"><span data-stu-id="6e97b-124">None</span></span>
+<span data-ttu-id="e30f2-124">なし</span><span class="sxs-lookup"><span data-stu-id="e30f2-124">None</span></span>
 
 <a id="ID4EPB"></a>
 
 
-## <a name="http-status-codes"></a><span data-ttu-id="6e97b-125">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="6e97b-125">HTTP status codes</span></span>
-<span data-ttu-id="6e97b-126">サービスは、MPSD に適用される HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="6e97b-126">The service returns an HTTP status code as it applies to MPSD.</span></span>  
+## <a name="http-status-codes"></a><span data-ttu-id="e30f2-125">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="e30f2-125">HTTP status codes</span></span>
+<span data-ttu-id="e30f2-126">サービスは、MPSD に適用される HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="e30f2-126">The service returns an HTTP status code as it applies to MPSD.</span></span>  
 <a id="ID4EVB"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="6e97b-127">要求本文</span><span class="sxs-lookup"><span data-stu-id="6e97b-127">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="e30f2-127">要求本文</span><span class="sxs-lookup"><span data-stu-id="e30f2-127">Request body</span></span>
 
 <a id="ID4E1B"></a>
 
 
-### <a name="request-body-for-setting-activity"></a><span data-ttu-id="6e97b-128">要求本文のアクティビティを設定します。</span><span class="sxs-lookup"><span data-stu-id="6e97b-128">Request body for setting activity</span></span>
+### <a name="request-body-for-setting-activity"></a><span data-ttu-id="e30f2-128">要求本文のアクティビティを設定します。</span><span class="sxs-lookup"><span data-stu-id="e30f2-128">Request body for setting activity</span></span>
 
 
 ```cpp
@@ -80,7 +80,7 @@ ms.locfileid: "4211863"
 <a id="ID4EBC"></a>
 
 
-### <a name="request-body-for-sending-invites"></a><span data-ttu-id="6e97b-129">招待を送信するための要求本文</span><span class="sxs-lookup"><span data-stu-id="6e97b-129">Request body for sending invites</span></span>
+### <a name="request-body-for-sending-invites"></a><span data-ttu-id="e30f2-129">招待を送信するための要求本文</span><span class="sxs-lookup"><span data-stu-id="e30f2-129">Request body for sending invites</span></span>
 
 
 ```cpp
@@ -109,26 +109,26 @@ ms.locfileid: "4211863"
 <a id="ID4EJC"></a>
 
 
-## <a name="response-body"></a><span data-ttu-id="6e97b-130">応答本文</span><span class="sxs-lookup"><span data-stu-id="6e97b-130">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="e30f2-130">応答本文</span><span class="sxs-lookup"><span data-stu-id="e30f2-130">Response body</span></span>
 
 <a id="ID4EOC"></a>
 
 
-### <a name="response-body-for-setting-activity"></a><span data-ttu-id="6e97b-131">アクティビティを設定するための応答本文</span><span class="sxs-lookup"><span data-stu-id="6e97b-131">Response body for setting activity</span></span>
-<span data-ttu-id="6e97b-132">なし。</span><span class="sxs-lookup"><span data-stu-id="6e97b-132">None.</span></span>  
+### <a name="response-body-for-setting-activity"></a><span data-ttu-id="e30f2-131">アクティビティを設定するための応答本文</span><span class="sxs-lookup"><span data-stu-id="e30f2-131">Response body for setting activity</span></span>
+<span data-ttu-id="e30f2-132">なし。</span><span class="sxs-lookup"><span data-stu-id="e30f2-132">None.</span></span>  
 <a id="ID4ESC"></a>
 
 
-### <a name="response-body-for-sending-invites"></a><span data-ttu-id="6e97b-133">招待を送信するための応答本文</span><span class="sxs-lookup"><span data-stu-id="6e97b-133">Response body for sending invites</span></span>
-<span data-ttu-id="6e97b-134">招待ハンドル。</span><span class="sxs-lookup"><span data-stu-id="6e97b-134">An invite handle.</span></span>   
+### <a name="response-body-for-sending-invites"></a><span data-ttu-id="e30f2-133">招待を送信するための応答本文</span><span class="sxs-lookup"><span data-stu-id="e30f2-133">Response body for sending invites</span></span>
+<span data-ttu-id="e30f2-134">招待ハンドル。</span><span class="sxs-lookup"><span data-stu-id="e30f2-134">An invite handle.</span></span>   
 <a id="ID4EXC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="6e97b-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="6e97b-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e30f2-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="e30f2-135">See also</span></span>
 
 <a id="ID4EZC"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="6e97b-136">Parent</span><span class="sxs-lookup"><span data-stu-id="6e97b-136">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="e30f2-136">Parent</span><span class="sxs-lookup"><span data-stu-id="e30f2-136">Parent</span></span>
 
-[<span data-ttu-id="6e97b-137">/handles</span><span class="sxs-lookup"><span data-stu-id="6e97b-137">/handles</span></span>](uri-handles.md)
+[<span data-ttu-id="e30f2-137">/handles</span><span class="sxs-lookup"><span data-stu-id="e30f2-137">/handles</span></span>](uri-handles.md)
