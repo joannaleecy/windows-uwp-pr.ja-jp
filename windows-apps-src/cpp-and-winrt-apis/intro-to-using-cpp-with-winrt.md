@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 概要
 ms.localizationpriority: medium
-ms.openlocfilehash: 220c5c7395ed9388b02b74e0cbed5b913971bbba
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 3e1563f85df6d437ce313c99df52ea319ef94a30
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4259611"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4318744"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT の概要
 &nbsp;
@@ -42,7 +42,7 @@ C++/WinRT では、COM スタイルのプログラミングを使用せずに、
 Visual Studio の C++/WinRT プロジェクト テンプレート、および C++/WinRT MSBuild プロジェクト テンプレートの
 プロパティとターゲットでは、[Visual Studio Marketplace](https://marketplace.visualstudio.com/) から [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) をダウンロードし、インストールします。
 
-Visual Studio 2017 (バージョン 15.6 以上、15.7 以上を推奨)、および Windows SDK バージョン 10.0.17134.0 (Windows 10 バージョン 1803) が必要になります。 まだインストールして、Visual Studio インストーラー内から**C++ ユニバーサル Windows プラットフォーム ツール**のオプションをインストールする必要があります。 Windows の**設定**で > **Update \ & セキュリティ** > **開発者のため**、**アプリのサイドローディング**オプションではなく、**開発者モード**のオプションを選択します。
+Visual Studio 2017 が必要があります (少なくとも必要がありますバージョン 15.6、お勧めします 15.7 以上)、および Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803)。 まだインストールして、Visual Studio インストーラー内から**C++ ユニバーサル Windows プラットフォーム ツール**のオプションをインストールする必要があります。 Windows の**設定**で > **Update \ & セキュリティ** > **開発者のため**、**アプリのサイドローディング**オプションではなく、**開発者モード**のオプションを選択します。
 
 そのことができますを作成し、ビルド、または開くには、c++/WinRT Visual Studio でプロジェクトを作成し展開します。 または、既存のプロジェクトを変換を追加して、`<CppWinRTEnabled>true</CppWinRTEnabled>`プロパティをその`.vcxproj`ファイル。
 

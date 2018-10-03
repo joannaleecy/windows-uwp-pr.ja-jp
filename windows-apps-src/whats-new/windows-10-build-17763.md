@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0f67562699e437be83cd6a7251efdb93f9e034
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: c354d9ed4bae4cd8b484fcc3281dc5ac753dab1e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4268925"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4312888"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>ビルド 17763 の開発者向け新機能では、Windows 10 の新規作成
 
@@ -69,7 +69,7 @@ Windows Mixed Reality | 開発者は、ハードウェアで保護された要�
 
 ## <a name="web-development"></a>Web 開発
 
-機能 |説明:--|:---EdgeHTML 18 |Windows 10 Fall 2018 では、 [EdgeHTML 18](https://aka.ms/devguide_edgehtml_18)、Microsoft Edge ブラウザーと UWP アプリ用の JavaScript エンジンに最新の更新プログラムで船舶を更新します。 EdgeHTML 18 では、Web 認証 API、WebView コントロールの新機能、最先端と展開のサポートが表示されます。 ツールの側では、EdgeHTML 18 は、Edge DevTools と Edge DevTools プロトコルに WebDriver の新機能と自動更新、および拡張機能をもたらします。 すべての詳細について[EdgeHTML 18 の新機能では](https://aka.ms/devguide_edgehtml_18)[最新の Windows 10 で DevTools (EdgeHTML 18) の更新](https://docs.microsoft.com/microsoft-edge/devtools-guide/whats-new)を確認します。
+機能 |説明:--|:---EdgeHTML 18 |Windows 10 年 2018年 10 月は、 [EdgeHTML 18](https://docs.microsoft.com/microsoft-edge/dev-guide)、Microsoft Edge ブラウザーと UWP アプリ用の JavaScript エンジンに最新の更新プログラムでの船舶を更新します。 EdgeHTML 18 では、Web 認証 API、WebView コントロールの新機能、最先端と展開のサポートが表示されます。 ツールの側では、EdgeHTML 18 は、Edge DevTools と Edge DevTools プロトコルに WebDriver の新機能と自動更新、および拡張機能をもたらします。 すべての詳細について[EdgeHTML 18 の新機能では](https://docs.microsoft.com/microsoft-edge/dev-guide)[最新の Windows 10 で DevTools (EdgeHTML 18) の更新](https://docs.microsoft.com/microsoft-edge/devtools-guide/whats-new)を確認します。
 プログレッシブ Web アプリ |Pwa は、Windows 用に開発かどうか。 次のガイドを確認します。 </br> * [単純な web アプリを PWA としてビルドします。](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started) </br> * [Windows ランタイムを使った、PWA を強化します。](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/windows-features) </br> * [Microsoft ストアに、PWA の公開](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store)API の拡張機能を web |Mozilla Developer Network ドキュメントにブラウザー間の web 開発は、[従来の Microsoft API 拡張機能](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)の一覧が追加されました。 これらの API の拡張機能は、Internet Explorer または Microsoft Edge に固有のもの MDN web ドキュメントの互換性とブラウザーのサポートに関する既存の情報を補足します。従来の Microsoft [CSS 拡張機能](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)と[JavaScript の拡張機能](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)は、利用可能なもとリッチ web MDN から API の情報を直接表面化を見つけることができます[Visual Studio Code](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn) 。
 WebVR |主要な更新プログラムには、 [WebVR 開発者向けガイド](https://docs.microsoft.com/microsoft-edge/webvr/)、完全に再設計ホーム ページと内容のテーブルの再編成を含むなりました。 など、いくつかの新しいトピックも書き込んだ。 </br> * [WebVR は何ですか。](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) WebVR、それを使用する理由と、用の開発を開始する方法について説明します。 </br> * [プログレッシブ Web アプリで WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas): WebVR をプログレッシブ Web アプリ (PWA) を追加する方法について説明します。 </br> * [WebView で WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview): Windows 10 アプリケーションの WebView コントロールに WebVR を追加する方法について説明します。 </br> * [WebVR デモ](https://docs.microsoft.com/microsoft-edge/webvr/demos): Microsoft Edge と Windows Mixed Reality イマーシブ ヘッドセットを使用していくつかの WebVR デモを確認します。
 

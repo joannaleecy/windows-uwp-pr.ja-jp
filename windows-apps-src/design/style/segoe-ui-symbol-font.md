@@ -13,12 +13,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3480288035d98ab3f68da33f9121e7daaf86180f
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 49ac0b2094b17120af8a0c85505cd03af389f1f4
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4264387"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4332527"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 アイコン
 
@@ -58,6 +58,12 @@ Symbol 列挙値に含まれていない **Segoe MDL2 アセット** フォン�
 ```xaml
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
+
+静的なリソースを使用することもできます。`SymbolThemeFontFamily`フォントを名を指定するのではなく、 **Segoe MDL2 アセット**にアクセスします。
+```xaml
+<FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
+```
+
 
 ## <a name="how-do-i-get-this-font"></a>このフォントの入手方法
 * Windows 10: を行うには必要ありませんが、フォントが Windows に付属します。

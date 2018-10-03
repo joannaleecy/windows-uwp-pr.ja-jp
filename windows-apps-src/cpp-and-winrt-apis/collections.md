@@ -3,30 +3,29 @@ author: stevewhims
 description: C++/WinRT 機能と、多くの時間と労力を実装やコレクションに合格するときに保存する基底クラスを提供します。
 title: コレクション、C++/WinRT
 ms.author: stwhi
-ms.date: 09/21/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、コレクション
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ac3635a96b8dd3d757f25da1b826ea318c1ad4
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: e6a0cf8c2798adc59ffcf84381d6bbf64f2ce80e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265367"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4312316"
 ---
-# <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>コレクションと[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="collections-with-cwinrt"></a>コレクション、C++/WinRT
 
-> [!NOTE]
-> **一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。**
-
-内部では、Windows ランタイムのコレクションでは、単純な移動部分の多くがあります。 コレクション オブジェクトを Windows ランタイム関数に渡すか、独自のコレクションのプロパティとコレクション型を実装する場合は、関数と基底クラスでは、C++/WinRT をサポートします。 これらの機能は、手の複雑さを解消し、時間と労力で、多くのオーバーヘッドを保存します。
-
-> [!IMPORTANT]
-> このトピックで説明されている機能は、 [Windows 10 SDK プレビュー ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)をインストールした場合に利用可能な以降できます。
+内部では、Windows ランタイムのコレクションでは、単純な移動部分の多くがあります。 コレクション オブジェクトを Windows ランタイム関数に渡すか、独自のコレクションのプロパティとコレクション型を実装する場合は、関数と基底クラスで[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)をサポートします。 これらの機能は、手の複雑さを解消し、時間と労力で、多くのオーバーヘッドを保存します。
 
 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)は、要素の任意のランダム アクセス コレクションによって実装された Windows ランタイム インターフェイスです。 **IVector**を実装する場合は、 [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)、 [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_)、 [**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_)を実装する必要がありますがも。 入力する*必要がある*カスタム コレクション場合でも、多くの作業です。 **Std::vector** ( **std::map**、または**std::unordered_map**) 内のデータがあり、Windows ランタイム API に渡すことがすべて実行する場合、必要しますが、あるが可能であれば、作業のレベルを避けるため。 回避すること*は*できる限り、ためと、C++/WinRT では、わずかな労力で効率的にし、コレクションを作成できます。
+
+表示[XAML アイテム コントロール: c++ へのバインド/WinRT コレクション](binding-collection.md)します。
+
+> [!NOTE]
+> Windows SDK バージョン 10.0.17763.0 (Windows 10、バージョン 1809) をインストールしていないか、後で、その必要はありませんこのトピックに記載されている基本クラスと関数へのアクセス場合。 代わりに、代わりに使用できる監視可能なベクター テンプレートの一覧については[Windows SDK の以前のバージョンがあるかどうか](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk)を表示します。
 
 ## <a name="helper-functions-for-collections"></a>コレクションのヘルパー関数
 

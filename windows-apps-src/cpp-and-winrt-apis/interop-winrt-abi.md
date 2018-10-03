@@ -9,15 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: b641591e7be23226edc354e02513d723fbe8afba
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 098d182b9cc4cc51bda0a7959702e53accf2699f
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4266631"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4318386"
 ---
-# <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-the-abi"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) と ABI 間の相互運用
-このトピックでは、SDK アプリケーション バイナリ インターフェイス (ABI) と C++/WinRT オブジェクト間の変換方法について説明します。 これらの手法を使用すると、Windows ランタイムでこれら 2 つの手法によるプログラミングを使用するコード間を相互運用するか、ABI から C++/WinRT にコードを徐々に移動することができます。
+# <a name="interop-between-cwinrt-and-the-abi"></a>C++/WinRT と ABI 間の相互運用
+
+このトピックでは、SDK アプリケーション バイナリ インターフェイス (ABI) の間で変換する方法を示しています。 と[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)オブジェクトです。 これらの手法を使用すると、Windows ランタイムでこれら 2 つの手法によるプログラミングを使用するコード間を相互運用するか、ABI から C++/WinRT にコードを徐々に移動することができます。
 
 ## <a name="what-is-the-windows-runtime-abi-and-what-are-abi-types"></a>Windows ランタイム ABI および ABI の種類とは何ですか。
 Windows ランタイム クラス (ランタイム クラス) は実際にはアブストラクションです。 このアブストラクションは、さまざまなプログラミング言語がオブジェクトと対話できるようにするバイナリ インターフェイス (アプリケーション バイナリ インターフェイス、または ABI) を定義します。 プログラミング言語に関係なく、クライアント コードと Windows ランタイム オブジェクトとの対話は最下位レベルで発生し、クライアントの言語の構成要素はオブジェクトの ABI への呼び出しに変換されます。

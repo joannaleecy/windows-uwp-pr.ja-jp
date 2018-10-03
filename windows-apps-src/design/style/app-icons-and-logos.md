@@ -12,12 +12,12 @@ keywords: Windows 10, UWP
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e947b00c3a070a8d95a21e38c56bda07cd45d3c4
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 04263122c1a96aadc5e4d0ad8f804730d3a2a20f
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268167"
+ms.locfileid: "4312430"
 ---
 # <a name="app-icons-and-logos"></a>アプリのアイコンとロゴ 
 
@@ -162,9 +162,9 @@ Visual Studio では、**マニフェスト デザイナー**と呼ばれる、�
 
 **ビジュアル資産**] タブで、**すべてのビジュアル資産**の最初のメニュー項目はその名前が示す内容正確: ボタンを押すと、アプリが必要なすべてのビジュアル アセットを生成します。
 
-![Visaul Studio のすべてのビジュアル資産を生成します。](images/app-icons/all-visual-assets.png)
+![Visual Studio ですべてのビジュアル資産を生成します。](images/app-icons/all-visual-assets.png)
 
-実行する必要があるすべてサプライ 1 つの画像は、Visaul Studio は小さいタイル、普通サイズのタイル、大きいタイル、ワイド タイル、大きいタイル、アプリのアイコン、スプラッシュ画面を生成してすべての倍率のアセットをロゴをパッケージ化します。
+1 つの画像を提供を行うには必要なすべてと Visual Studio は小さいタイル、普通サイズのタイル、大きいタイル、ワイド タイル、大きいタイル、アプリのアイコン、スプラッシュ画面を生成し、すべての倍率のアセットをロゴをパッケージ化します。
 
 すべてのアセットを一度に生成するには。
 1. **ソース**フィールドの横にある **...** ] をクリックし、使用するイメージを選択します。 ビットマップ画像を使用している場合は、鋭い結果を取得できるように、400 ピクセル以上 400 を確認します。 ベクター ベースのイメージが最適です。Visual Studio では、AI (Adobe Illustrator) と PDF ファイルを使用することができます。 

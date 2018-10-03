@@ -9,39 +9,61 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、作成者、COM、コンポーネント
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e273d593d7b2e24cc82063ce25b66771b8221e1
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 2886d2b42d4c192a3f6924a41a4c4dd1483db471
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4267181"
+ms.locfileid: "4313832"
 ---
-# <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>COM コンポーネントを作成[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="author-com-components-with-cwinrt"></a>C++ に COM コンポーネントの作成/WinRT
 
-C++/WinRT は、Windows ランタイム クラスを作成するのに役立ち、同様、クラシック コンポーネント オブジェクト モデル (COM) コンポーネント (またはコクラス) を作成するために役立ちます。 貼り付ける場合をテストする非常に単純な図は、ここでは、`main.cpp`の新しい**Windows コンソール アプリケーション (、C++/WinRT)** プロジェクトです。
+[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)する Windows ランタイム クラスを作成するのに役立ち、同様、クラシック コンポーネント オブジェクト モデル (COM) コンポーネント (またはコクラス) を作成することができます。 コードを貼り付ける場合をテストする単純な図に示します、`pch.h`と`main.cpp`の新しい**Windows コンソール アプリケーション (、C++/WinRT)** プロジェクトです。
 
 ```cppwinrt
+// pch.h
+#pragma once
+#include <unknwn.h>
+#include <winrt/Windows.Foundation.h>
+
 // main.cpp : Defines the entry point for the console application.
 #include "pch.h"
 
+struct __declspec(uuid("ddc36e02-18ac-47c4-ae17-d420eece2281")) IMyComInterface : ::IUnknown
+{
+    virtual HRESULT __stdcall Call() = 0;
+};
+
 using namespace winrt;
+using namespace Windows::Foundation;
 
 int main()
 {
-    init_apartment();
+    winrt::init_apartment();
 
-    struct MyCoclass : winrt::implements<MyCoclass, IPersist>
+    struct MyCoclass : winrt::implements<MyCoclass, IPersist, IStringable, IMyComInterface>
     {
-        HRESULT STDMETHODCALLTYPE GetClassID(CLSID* id) noexcept override
+        HRESULT __stdcall Call() noexcept override
+        {
+            return S_OK;
+        }
+
+        HRESULT __stdcall GetClassID(CLSID* id) noexcept override
         {
             *id = IID_IPersist; // Doesn't matter what we return, for this example.
             return S_OK;
+        }
+
+        winrt::hstring ToString()
+        {
+            return L"MyCoclass as a string";
         }
     };
 
     auto mycoclass_instance{ winrt::make<MyCoclass>() };
     CLSID id{};
     winrt::check_hresult(mycoclass_instance->GetClassID(&id));
+    winrt::check_hresult(mycoclass_instance.as<IMyComInterface>()->Call());
 }
 ```
 
@@ -56,6 +78,15 @@ int main()
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>Windows コンソール アプリケーション プロジェクト (ToastAndCallback) を作成します。
 
 まず、Microsoft Visual Studio で、新しいプロジェクトを作ります。 **Visual C**を作成 > **Windows デスクトップ** > **Windows コンソール アプリケーション (、C++/WinRT)** プロジェクト、および*ToastAndCallback*名前を付けます。
+
+開いている`pch.h`、し、追加`#include <unknwn.h>`する前に、c++ が含まれています//winrt ヘッダー。
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <unknwn.h>
+#include <winrt/Windows.Foundation.h>
+```
 
 開いている`main.cpp`、および削除を使用して、ディレクティブ プロジェクト テンプレートを生成します。 自分の場所で (これにより、ライブラリ、ヘッダーと型名が必要ですが) 次のコードを貼り付けます。
 
@@ -134,7 +165,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-上記のコクラスの実装に示す同じパターンに従います[において、C++ Api の作成/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)します。 そのため、同じ手法を使用すると、COM インターフェイスとしての Windows ランタイム インターフェイスを実装します。 COM コンポーネントと Windows ランタイム クラス、インターフェイス経由でその機能を公開します。 すべての COM インターフェイスは、最終的に[**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)インターフェイスから派生します。 Windows ランタイムは COM に基づいて&mdash;1 つの区別されている Windows ランタイム インターフェイスは、最終的に[**IInspectable インターフェイス**](https://msdn.microsoft.com/library/windows/desktop/br205821)から派生 (および**IUnknown**から派生した**IInspectable** )。
+上記のコクラスの実装に示す同じパターンに従います[において、C++ Api の作成/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)します。 そのため、同じ手法を使用すると、COM インターフェイスとしての Windows ランタイム インターフェイスを実装します。 COM コンポーネントと Windows ランタイム クラス、インターフェイス経由でその機能を公開します。 すべての COM インターフェイスは、最終的に[**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)インターフェイスから派生します。 Windows ランタイムは COM に基づいて&mdash;1 つの区別されている Windows ランタイム インターフェイスは、最終的に[**IInspectable インターフェイス**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)から派生 (および**IUnknown**から派生した**IInspectable** )。
 
 上記のコードでコクラスは、 **INotificationActivationCallback::Activate**メソッドは、ユーザーがトースト通知のコールバック ボタンをクリックしたときに呼び出される関数を実装します。 コクラスのインスタンスを作成する必要があるし、 **IClassFactory::CreateInstance**関数のジョブは前に、この関数を呼び出すことができます。
 
@@ -324,7 +355,7 @@ void LaunchedFromNotification(HANDLE, INPUT_RECORD &, DWORD &);
 
 int wmain(int argc, wchar_t * argv[], wchar_t * /* envp */[])
 {
-    init_apartment();
+    winrt::init_apartment();
 
     register_callback();
 
@@ -503,8 +534,23 @@ HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** r
 }
 ```
 
+### <a name="support-for-weak-references"></a>弱参照サポート
+
+」もご覧ください[弱参照 C + + WinRT](weak-references.md#weak-references-in-cwinrt)します。
+
+C++/WinRT (具体的には、 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements)基本構造体テンプレート) [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource)はの実装する場合は、型が[**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (または**IInspectable**から派生したすべてのインターフェイス) を実装します。
+
+これは、 **IWeakReferenceSource**と[**IWeakReference**](/windows/desktop/api/weakreference/nn-weakreference-iweakreference) Windows ランタイム型のように設計されているためにです。 そのため、するに対して有効にできます弱参照サポート、コクラス **:iinspectable** (または**IInspectable**から派生するインターフェイス) を実装に追加するだけです。
+
+```cppwinrt
+struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows::Foundation::IInspectable>
+{
+    //  ...
+};
+```
+
 ## <a name="important-apis"></a>重要な API
-* [IInspectable インターフェイス](https://msdn.microsoft.com/library/br205821)
+* [IInspectable インターフェイス](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
 * [IUnknown インターフェイス](https://msdn.microsoft.com/library/windows/desktop/ms680509)
 * [winrt::implements 構造体テンプレート](/uwp/cpp-ref-for-winrt/implements)
 

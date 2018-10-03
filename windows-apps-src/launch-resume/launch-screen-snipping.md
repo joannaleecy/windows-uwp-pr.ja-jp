@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、uri、切り取り、スケッチ
 ms.localizationpriority: medium
 ms.openlocfilehash: e18662125ef72051a289b3f1d0f3dc09b452d256
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268931"
+ms.locfileid: "4315710"
 ---
 # <a name="launch-screen-snipping"></a>起動画面 snipping
 

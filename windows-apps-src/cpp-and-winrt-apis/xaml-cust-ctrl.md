@@ -3,26 +3,23 @@ author: stevewhims
 description: このトピックでは、C++ を使用してシンプルなカスタム コントロールを作成する手順について/WinRT します。 ここでは、独自の機能が豊富でカスタマイズ可能な UI コントロールを作成する情報に基づいてビルドすることができます。
 title: C++/WinRT による XAML カスタム (テンプレート化) コントロール
 ms.author: stwhi
-ms.date: 08/01/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML で、テンプレート化された、カスタム コントロール
 ms.localizationpriority: medium
-ms.openlocfilehash: fd1843afc58bc758db1c6e575f3733bdc4f47b4e
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 539876113ce2aba563cfa65b13571cbf3998cc2d
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265831"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4313876"
 ---
-# <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>による XAML カスタム (テンプレート化) コントロール[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-
-> [!NOTE]
-> **一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。**
+# <a name="xaml-custom-templated-controls-with-cwinrt"></a>C++/WinRT による XAML カスタム (テンプレート化) コントロール
 
 > [!IMPORTANT]
-> C++/WinRT でランタイム クラスを使用および作成する方法についての理解をサポートするために重要な概念と用語については、「[C++/WinRT での API の使用](consume-apis.md)」と「[C++/WinRT での作成者 API](author-apis.md)」を参照してください。
+> 基本的な概念と用語を使用およびでランタイム クラスを作成する方法についての理解をサポートする[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)を参照してください[、C++ での Api の/WinRT](consume-apis.md)と[において、C++ Api の作成/WinRT](author-apis.md)します。
 
 最も強力な機能をユニバーサル Windows プラットフォーム (UWP) の XAML[**コントロール**](/uwp/api/windows.ui.xaml.controls.control)の種類に基づいてカスタム コントロールを作成するユーザー インターフェイス (UI) スタックを提供する柔軟性があります。 XAML UI フレームワークでは、[カスタム依存関係プロパティ](/windows/uwp/xaml-platform/custom-dependency-properties)と添付プロパティ、および[コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)の機能が豊富でカスタマイズ可能なコントロールを作成しやすくなどの機能を提供します。 このトピックでは、C++、カスタム (テンプレート化) コントロールを作成する手順について/WinRT します。
 
@@ -106,7 +103,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
     {
         // Call members of the projected type via theControl.
 
-        BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::from_abi<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
+        BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::get_self<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
         // Call members of the implementation type via ptr.
     }
 }
@@ -116,7 +113,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 このチュートリアルでは使用しません**OnLabelChanged**を。 ありますが、プロパティ変更コールバックに依存関係プロパティを登録する方法を確認できるようにできます。 **OnLabelChanged**の実装では、(基本投影された型が、 **DependencyObject**、ここでは) ベースの投影された型から派生投影された型を取得する方法についても説明します。 投影された型を実装する型へのポインターを取得する方法を示しています。 2 番目の操作が自然のみされること投影型 (ランタイム クラスを実装するプロジェクト) を実装するプロジェクトで可能です。
 
 > [!NOTE]
-> [Windows 10 SDK プレビュー ビルド 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)をインストールした場合、後で、し、呼び出すことができます[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi)ではなく、上記の依存関係プロパティ変更イベント ハンドラーです。
+> [**Winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)ではなく、上記の依存関係プロパティ変更イベント ハンドラーを呼び出す必要がありますし、後で、Windows SDK バージョン 10.0.17763.0 (Windows 10、バージョン 1809) をインストールしていない場合。
 
 ## <a name="design-the-default-style-for-bglabelcontrol"></a>既定のスタイルに**BgLabelControl**設計します。
 

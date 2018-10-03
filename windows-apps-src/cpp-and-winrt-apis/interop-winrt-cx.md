@@ -9,15 +9,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d265189c338d95a8c8f206fd196e99d5b0a1e068
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: b60b0d7c201f172261de1546fc250e40b8cd670f
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4258175"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4314708"
 ---
-# <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-ccx"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) と C++/CX 間の相互運用
-このトピックでは、[C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) と C++/WinRT オブジェクト間の変換に使用できる 2 つのヘルパー関数について説明します。 それらを使用するには、2 つの言語プロジェクションを使用するコード間で相互運用機能または関数を使用するには、C + からコードを徐々 に移動するよう/CX を C++/WinRT (を参照してください[C + への移行/C + から WinRT/CX](move-to-winrt-from-cx.md))。
+# <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT と C++/CX 間の相互運用
+このトピックでは 2 つのヘルパー関数間の変換に使用できる[、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)と[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)オブジェクト。 それらを使用するには、2 つの言語プロジェクションを使用するコード間で相互運用機能または関数を使用するには、C + からコードを徐々 に移動するよう/CX を C++/WinRT (を参照してください[C + への移行/C + から WinRT/CX](move-to-winrt-from-cx.md))。
 
 ## <a name="fromcx-and-tocx-functions"></a>from_cx and to_cx 関数
 以下のヘルパー関数では、C++/CX オブジェクトを同等の C++/WinRT オブジェクトに変換します。 この関数は、C++/CX オブジェクトを基礎となる [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) インターフェイス ポインターにキャストします。 次に、このポインター上で [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) を呼び出し、C++/WinRT オブジェクトの既定のインターフェイスを照会します。 **QueryInterface**は、C++/CX safe_cast 拡張と同等の Windows ランタイム アプリケーション バイナリ インターフェイス (ABI) です。 [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 関数は、別の値に設定できるように C++/WinRT オブジェクトの基礎となる **IUnknown** インターフェイス ポインターのアドレスを取得します。

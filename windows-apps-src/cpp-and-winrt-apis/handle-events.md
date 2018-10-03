@@ -9,20 +9,22 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、プロジェクション、処理、イベント、デリゲート
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b8749b53e28047842343bd2a1e0c005f588d79d
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: c64b4a23e3b63c939d192e828e890a9ceb92e5ab
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265357"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4313648"
 ---
-# <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) でのデリゲートを使用したイベントの処理
-このトピックでは、C++/WinRT を使用したイベント処理デリゲートの登録方法と取り消し方法について説明します。 標準的な C++ 関数のようなオブジェクトを使用してイベントを処理できます。
+# <a name="handle-events-by-using-delegates-in-cwinrt"></a>C++/WinRT でのデリゲートを使用したイベントの処理
+
+このトピックでは、登録を使用してイベント処理デリゲートの取り消し方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)します。 標準的な C++ 関数のようなオブジェクトを使用してイベントを処理できます。
 
 > [!NOTE]
 > C++/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートおよび C++/WinRT MSBuild プロパティとターゲットを提供) のインストールと使用については、「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照してください。
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>デリゲートを登録してイベントを処理する
+
 次に、ボタンのクリック イベントの処理例を示します。 通常、イベントを処理するメンバー関数を登録するには、次のように XAML マークアップを使用します。
 
 ```xaml
@@ -32,7 +34,7 @@ ms.locfileid: "4265357"
 
 ```cppwinrt
 // MainPage.cpp
-void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
+void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
 {
     Button().Content(box_value(L"Clicked"));
 }
@@ -49,6 +51,9 @@ MainPage::MainPage()
     Button().Click({ this, &MainPage::ClickHandler });
 }
 ```
+
+> [!IMPORTANT]
+> デリゲートを登録するには、上記のコード例は、直接*この*ポインター (現在のオブジェクトを指す) を渡します。 強参照または弱参照を現在のオブジェクトを確立する方法については、[イベント処理デリゲートを使用して*この*ポインターを安全にアクセスする](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)セクションで**デリゲートとしてメンバー関数を使用する場合**のサブ セクションを参照してください。
 
 **RoutedEventHandler** の作成には他の方法もあります。 次に、[**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) のドキュメント内にある構文ブロックを示します (ページの [**言語**] ドロップダウンから [*C++/WinRT*] を選択)。 さまざまなコンストラクターがあることに注意してください。ラムダ、自由関数、メンバー関数へのオブジェクトとポインター (上記で使用したもの) を受け取ります。
 
@@ -73,7 +78,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click([this](IInspectable const&, RoutedEventArgs const&)
+    Button().Click([this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
     {
         Button().Content(box_value(L"Clicked"));
     });
@@ -87,7 +92,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    auto click_handler = [](IInspectable const& sender, RoutedEventArgs const&)
+    auto click_handler = [](IInspectable const& sender, RoutedEventArgs const& /* args */)
     {
         sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
     };
@@ -97,6 +102,7 @@ MainPage::MainPage()
 ```
 
 ## <a name="revoke-a-registered-delegate"></a>登録済みデリゲートの取り消し
+
 デリゲートを登録すると、通常、トークンがユーザーに返されます。 その後、このトークンを使用してデリゲートを取り消すことができます。つまり、このトークンはイベントから登録解除され、イベントが再び発生しても呼び出されることはありません。 説明を簡単にするために、上記の例にはその方法を示すコードは含まれていません。 ただし、次のコード例では、トークンを構造体のプライベート データ メンバーに格納し、デストラクターの該当するハンドラーを取り消しています。
 
 ```cppwinrt
@@ -106,7 +112,7 @@ struct Example : ExampleT<Example>
     {
         m_token = m_button.Click([this](IInspectable const&, RoutedEventArgs const&)
         {
-            ...
+            // ...
         });
     }
     ~Example()
@@ -120,7 +126,7 @@ private:
 };
 ```
 
-上の例のような強参照の代わりに、弱参照をボタンに格納することができます (「[C++/WinRT の弱参照](weak-references.md)」を参照してください)。
+上記の例のように、強参照ではなくボタンへの弱参照を保存することができます (を参照してください[強度への参照では、C++/WinRT](weak-references.md))。
 
 または、デリゲートを登録する場合は、(の種類の[**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)) イベント リボーカーを要求する**winrt::auto_revoke** (される値の型[**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) を指定できます。 イベント リボーカーをイベント ソース (イベントを発生させるオブジェクト) への弱参照を保持します。 **event_revoker::revoke** メンバー関数を呼び出して手動で取り消すことができますが、イベント リボーカーは参照が範囲外になったときに自動的にその関数自体を呼び出します。 **revoke** 関数は、イベント ソースがまだ存在するかどうかを確認し、存在する場合は、デリケートを取り消します。 次の例では、イベント ソースを格納する必要がないため、デストラクターは必要ありません。
 
@@ -129,9 +135,9 @@ struct Example : ExampleT<Example>
 {
     Example(winrt::Windows::UI::Xaml::Controls::Button button)
     {
-        m_event_revoker = button.Click(winrt::auto_revoke, [this](IInspectable const&, RoutedEventArgs const&)
+        m_event_revoker = button.Click(winrt::auto_revoke, [this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
         {
-            ...
+            // ...
         });
     }
 
@@ -159,6 +165,7 @@ winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase
 ページのナビゲーションのシナリオでハンドラーの取り消しを検討します。 あるページへの移動を繰り返す場合、そのページから移動する際にハンドラーを取り消すことができます。 または、同じページ インスタンスを再使用しているときは、トークンの値を確認し、(`if (!m_token){ ... }`) がまだ設定されていない場合のみ登録します。 3 番目のオプションでは、ページにイベント リボーカーをデータ メンバーとして格納します。 このトピック後半で紹介する 4 番目のオプションでは、ラムダ関数内の*この*オブジェクトの強参照または弱参照をキャプチャします。
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>非同期アクションと非同期操作のデリゲート型
+
 上記の例では、**RoutedEventHandler** デリゲート型を使用していますが、他にも多くのデリゲート型があります。 たとえば、非同期アクションと非同期操作 (進行状況ありとなし) には、対応するデリゲート型を必要とする完了イベントと進行状況イベントがあります。 たとえば、進行状況ありの非同期操作の進行状況イベント ([**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) を実装する任意のイベント) には、[**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler) のデリゲート型が必要です。 次に、ラムダ関数を使用してこの型のデリゲートを作成するコード例を示します。 この例は、[**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler) デリゲートの作成方法も示しています。
 
 ```cppwinrt
@@ -174,14 +181,14 @@ void ProcessFeedAsync()
     auto async_op_with_progress = syndicationClient.RetrieveFeedAsync(rssFeedUri);
 
     async_op_with_progress.Progress(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const&, RetrievalProgress const& args)
+        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& /* sender */, RetrievalProgress const& args)
     {
         uint32_t bytes_retrieved = args.BytesRetrieved;
         // use bytes_retrieved;
     });
 
     async_op_with_progress.Completed(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const)
+        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const /* asyncStatus */)
     {
         SyndicationFeed syndicationFeed = sender.GetResults();
         // use syndicationFeed;
@@ -201,13 +208,14 @@ void ProcessFeedAsync()
 
 ```cppwinrt
 async_op_with_progress.Completed(
-    [](auto&& /*sender*/, AsyncStatus const)
+    [](auto&& /*sender*/, AsyncStatus const /* args */)
 {
-    ....
+    // ...
 });
 ```
 
 ## <a name="delegate-types-that-return-a-value"></a>値を返すデリゲート型
+
 一部のデリゲート型では自身に値を戻す必要があります。 たとえば、[**ListViewItemToKeyHandler**](/uwp/api/windows.ui.xaml.controls.listviewitemtokeyhandler) は文字列を返します。 次に、このような型のデリゲートの作成例を示します (ラムダ関数が値を返します)。
 
 ```cppwinrt
@@ -222,49 +230,9 @@ winrt::hstring f(ListView listview)
 }
 ```
 
-## <a name="using-the-this-object-in-an-event-handler"></a>イベント ハンドラーでの*この*オブジェクトの使用
-オブジェクトのメンバー関数内にあるラムダ関数のイベントを処理する場合は、イベント受信側 (イベントを処理するオブジェクト) とイベント ソース (イベントを発生させるオブジェクト) の相対的な有効期間を考慮する必要があります。
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>イベント処理デリゲートを使用して*この*ポインターを安全にアクセスします。
 
-多くの場合、受信側は、任意のラムダ関数内にある自身の*この*ポインターのすべての依存関係を失います。 UI ページでそのページ上にあるコントロールで発生したイベントを処理するときなど、明らかな場合があります。 ボタンがページ上に表示されないため、ハンドラーも表示されません。 これは、受信側がソースを所有する場合 (データ メンバーとしてなど)、または受信側とソースが兄弟関係にあり、他のオブジェクトによって直接所有されている場合に当てはまります。 ハンドラーが依存する*このオブジェクト*に表示されない場合、有効期間の強弱を気にしなくても、通常どおり*このオブジェクト*をキャプチャできます。
-
-ただし、*このオブジェクト*がハンドラー内の自身の用途に表示されない場合などもあります (非同期アクションと非同期操作によって発生する完了イベントと進行状況イベントのハンドラーなど)。
-
-- 非同期メソッドを実装するためにコルーチンを作成する場合は可能です。
-- 特定の XAML UI フレームワーク オブジェクト ([**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel) など) を使用するまれなケースで、イベント ソースから登録解除しなくても、受信側が最終処理される場合は可能です。
-
-このような場合、*この*無効なオブジェクトを使用してハンドラーまたはコルーチンが継続するため、アクセス違反になります。
-
-> [!IMPORTANT]
-> このいずれかの状況になった場合は、キャプチャした*この*オブジェクトのキャプチャの状態を続けるかどうか、*この*オブジェクトの有効期間を検討する必要があります。 それ以外の場合は、強参照または弱参照を使用してオブジェクトを必要に応じてキャプチャします。 [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function) と [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) をご覧ください。
-> または、シナリオに適している場合、およびスレッドの考慮事項にも対応する場合、受信側のイベントの完了後や受信側のデストラクターで、ハンドラーを取り消すといった別のオプションがあります。
-
-次のコード例では、[**SwapChainPanel.CompositionScaleChanged**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged) イベントを使用しています。 受信側の弱参照をキャプチャするラムダを使用して、イベント ハンドラーを登録します。 弱参照の詳細については、「[C++/WinRT の弱参照](weak-references.md)」をご覧ください。 
-
-```cppwinrt
-winrt::Windows::UI::Xaml::Controls::SwapChainPanel m_swapChainPanel;
-winrt::event_token m_compositionScaleChangedEventToken;
-
-void RegisterEventHandler()
-{
-    m_compositionScaleChangedEventToken = m_swapChainPanel.CompositionScaleChanged([weakReferenceToThis{ get_weak() }]
-        (Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
-        Windows::Foundation::IInspectable const& object)
-    {
-        if (auto strongReferenceToThis = weakReferenceToThis.get())
-        {
-            strongReferenceToThis->OnCompositionScaleChanged(sender, object);
-        }
-    });
-}
-
-void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
-    Windows::Foundation::IInspectable const& object)
-{
-    // Here, we know that the "this" object is valid.
-}
-```
-
-ラムダのキャプチャ句で、一時変数を作成し、*このオブジェクト*の弱参照を表示します。 ラムダ式の本文で、*このオブジェクト*の強参照を取得する場合は、**OnCompositionScaleChanged** 関数が呼び出されます。 これにより、**OnCompositionScaleChanged** 内で*このオブジェクト*を安全に使用することができます。
+オブジェクトのメンバー関数を使用したイベントを処理するからオブジェクトのメンバー関数内にあるラムダ関数しする必要がある場合、イベント受信側 (イベントを処理するオブジェクト) と、イベント ソース (オブジェクトの相対的な有効期間について検討するにはイベントを発生させる)。 詳しくは、コード例を参照してください[強度への参照では、C++/WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)します。
 
 ## <a name="important-apis"></a>重要な API
 * [winrt::auto_revoke_t マーカー構造体](/uwp/cpp-ref-for-winrt/auto-revoke-t)
@@ -274,4 +242,4 @@ void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const
 ## <a name="related-topics"></a>関連トピック
 * [C++/WinRT でのイベントの作成](author-events.md)
 * [C++/WinRT を使用した同時実行操作と非同期操作](concurrency.md)
-* [C++/WinRT の弱参照](weak-references.md)
+* [強度への参照では、C++/WinRT](weak-references.md)
