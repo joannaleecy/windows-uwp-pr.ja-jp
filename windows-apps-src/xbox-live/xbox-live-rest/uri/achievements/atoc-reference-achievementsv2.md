@@ -12,45 +12,45 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 891d1d03ab5b7b60dd25c58d9f2f40083bde6e7c
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206101"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268118"
 ---
-# <a name="achievements-uris"></a><span data-ttu-id="c3cf0-104">実績 URI</span><span class="sxs-lookup"><span data-stu-id="c3cf0-104">Achievements URIs</span></span>
+# <a name="achievements-uris"></a><span data-ttu-id="1c847-104">実績 URI</span><span class="sxs-lookup"><span data-stu-id="1c847-104">Achievements URIs</span></span>
 
-<span data-ttu-id="c3cf0-105">このセクションでは、*実績*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="c3cf0-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *achievements*.</span></span>
+<span data-ttu-id="1c847-105">このセクションでは、*実績*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="1c847-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *achievements*.</span></span>
 
-<span data-ttu-id="c3cf0-106">これらの Uri のドメインは、achievements.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="c3cf0-106">The domain for these URIs is achievements.xboxlive.com.</span></span>
+<span data-ttu-id="1c847-106">これらの Uri のドメインは、achievements.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="1c847-106">The domain for these URIs is achievements.xboxlive.com.</span></span>
 
 <a id="ID4EDB"></a>
 
 
-## <a name="in-this-section"></a><span data-ttu-id="c3cf0-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="c3cf0-107">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="1c847-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="1c847-107">In this section</span></span>
 
-[<span data-ttu-id="c3cf0-108">/users/xuid({xuid})/achievements</span><span class="sxs-lookup"><span data-stu-id="c3cf0-108">/users/xuid({xuid})/achievements</span></span>](uri-achievementsusersxuidachievementsv2.md)
+[<span data-ttu-id="1c847-108">/users/xuid({xuid})/achievements</span><span class="sxs-lookup"><span data-stu-id="1c847-108">/users/xuid({xuid})/achievements</span></span>](uri-achievementsusersxuidachievementsv2.md)
 
-<span data-ttu-id="c3cf0-109">&nbsp;&nbsp;ユーザーの実績へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="c3cf0-109">&nbsp;&nbsp;Provides access to user achievements.</span></span>
+<span data-ttu-id="1c847-109">&nbsp;&nbsp;ユーザーの実績へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="1c847-109">&nbsp;&nbsp;Provides access to user achievements.</span></span>
 
-[<span data-ttu-id="c3cf0-110">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span><span class="sxs-lookup"><span data-stu-id="c3cf0-110">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span></span>](uri-usersxuidachievementsscidachievementid.md)
+[<span data-ttu-id="1c847-110">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span><span class="sxs-lookup"><span data-stu-id="1c847-110">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span></span>](uri-usersxuidachievementsscidachievementid.md)
 
-<span data-ttu-id="c3cf0-111">&nbsp;&nbsp;構成済みのメタデータとユーザー固有のデータを含む、実績を詳しく説明を返します。</span><span class="sxs-lookup"><span data-stu-id="c3cf0-111">&nbsp;&nbsp;Returns details about the achievement, including its configured metadata and user-specific data.</span></span>
+<span data-ttu-id="1c847-111">&nbsp;&nbsp;構成済みのメタデータとユーザー固有のデータを含む、実績を詳しく説明を返します。</span><span class="sxs-lookup"><span data-stu-id="1c847-111">&nbsp;&nbsp;Returns details about the achievement, including its configured metadata and user-specific data.</span></span>
 
 
 > [!NOTE] 
-> <span data-ttu-id="c3cf0-112">プラットフォームでのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="c3cf0-112">Only supported for the platform.</span></span>
+> <span data-ttu-id="1c847-112">プラットフォームでのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="1c847-112">Only supported for the platform.</span></span>
 
 
 
 <a id="ID4EMB"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="c3cf0-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="c3cf0-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1c847-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="1c847-113">See also</span></span>
 
 <a id="ID4EOB"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="c3cf0-114">Parent</span><span class="sxs-lookup"><span data-stu-id="c3cf0-114">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="1c847-114">Parent</span><span class="sxs-lookup"><span data-stu-id="1c847-114">Parent</span></span>
 
-[<span data-ttu-id="c3cf0-115">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="c3cf0-115">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="1c847-115">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="1c847-115">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
