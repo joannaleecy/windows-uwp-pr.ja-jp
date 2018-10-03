@@ -3,18 +3,18 @@ author: jnHs
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: デバイス ファミリの利用可否
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, パッケージ, アップロード, デバイス ファミリの利用可否
 ms.localizationpriority: medium
-ms.openlocfilehash: 0485ef2f884d8957f6d3d1d7544415dd676bf95b
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: e86b56c09f907e45655a0ef9b94fad30a4959b59
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209748"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266801"
 ---
 # <a name="device-family-availability"></a>デバイス ファミリの利用可否
 
@@ -55,11 +55,9 @@ Windows 10 IoT Core の UWP アプリを申請する場合、パッケージを�
 **Windows 8/8.1** および **Windows Phone 8.x 以前**で実行できるパッケージが申請に含まれている場合は、これらのパッケージはテーブルに示されているとおりにユーザーに提供されます。 これらの OS バージョンのチェック ボックスはありません。 これらのユーザーへのアプリ提供を停止するには、対応するパッケージを申請から削除する必要があります。
 
 > [!IMPORTANT]
-> 申請したアプリを特定の Windows 10 デバイス ファミリで完全に入手できないようにするには、appx マニフェストの [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 要素を Microsoft Visual Studio の appx マニフェストに既定で含まれる Windows.Universal 値 (ユニバーサル デバイス ファミリ用) としてそのままにしておくのではなく、サポートするデバイス ファミリのみ (Windows.Mobile または Windows.Desktop) が対象となるように更新します。
+> 申請の取得から完全に特定の Windows 10 デバイス ファミリを防ぐためには、更新をサポートするデバイス ファミリのみを対象に、マニフェストで[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)要素 (つまり、Windows.Mobile または Windows.Desktop) ではなくまま Windows.Universal 値 (ユニバーサル デバイス ファミリ用) としてするよりも Microsoft Visual Studio が既定では、マニフェストに含まれます。
 
-**[デバイス ファミリの利用可否]** セクションで行った選択は新しい取得のみに適用されることにも注意することが重要です。 ここでデバイス ファミリを削除した場合でも、アプリを既に持っているユーザーは使い続けることができ、提出された更新プログラムを取得します。 これは、Windows 10 にアップグレードする前にアプリを取得したユーザーにも当てはまります。
-
-たとえば、Windows Phone 8.1 パッケージで公開したアプリがあり、ユニバーサル デバイス ファミリを対象とする同じアプリに Windows 10 (UWP) パッケージを後で追加する場合、**[Windows 10 Mobile]** チェック ボックスをオフにしていた場合でも、Windows Phone 8.1 パッケージを持っていた Windows 10 Mobile ユーザーにはこの Windows 10 (UWP) パッケージに対する更新プログラムが提供されます (これは新しい取得ではなく更新プログラムであるため)。 ただし、ユニバーサルまたはモバイル デバイス ファミリを対象とする Windows 10 (UWP) パッケージを一切提供しない場合は、Windows 10 モバイル ユーザーは Windows Phone 8.1 パッケージのままになります。
+**[デバイス ファミリの利用可否]** セクションで行った選択は新しい取得のみに適用されることにも注意することが重要です。 ここでデバイス ファミリを削除した場合でも、アプリを既に持っているユーザーは使い続けることができ、提出された更新プログラムを取得します。 これは、Windows 10 にアップグレードする前にアプリを取得したユーザーにも当てはまります。 たとえば、Windows Phone 8.1 パッケージで公開したアプリがあり、ユニバーサル デバイス ファミリを対象とする同じアプリに Windows 10 (UWP) パッケージを後で追加する場合、**[Windows 10 Mobile]** チェック ボックスをオフにしていた場合でも、Windows Phone 8.1 パッケージを持っていた Windows 10 Mobile ユーザーにはこの Windows 10 (UWP) パッケージに対する更新プログラムが提供されます (これは新しい取得ではなく更新プログラムであるため)。 ただし、ユニバーサルまたはモバイル デバイス ファミリを対象とする Windows 10 (UWP) パッケージを一切提供しない場合は、Windows 10 モバイル ユーザーは Windows Phone 8.1 パッケージのままになります。
 
 デバイス ファミリについて詳しくは、[**デバイス ファミリの概要に関する記事**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)をご覧ください。
 

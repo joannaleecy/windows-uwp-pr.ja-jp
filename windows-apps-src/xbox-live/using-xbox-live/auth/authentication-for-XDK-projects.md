@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 594c966ab3d1e70d5a423da0e4681ecfca22f4b0
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206621"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4262884"
 ---
 # <a name="authentication-for-xdk-projects"></a>XDK プロジェクトの認証
 

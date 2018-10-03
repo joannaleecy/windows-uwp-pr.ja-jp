@@ -2,9 +2,6 @@
 author: QuinnRadich
 Description: Learn how to implement backwards navigation for traversing the user's navigation history within an UWP app.
 title: ナビゲーション履歴と前に戻る移動 (Windows アプリ)
-ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
-isNew: true
-label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
 ms.author: quradic
@@ -14,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eb8bc40c2e9066487a14d217f53a6433266b308
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 255f0bbcdc0e746499a1014ad818a71d90887234
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211560"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268133"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP アプリのナビゲーション履歴と前に戻る移動
 
@@ -50,7 +47,7 @@ ms.locfileid: "4211560"
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 ```
 
-アプリ内で動き回る UI 要素を最小化するために、バックスタックに何もないときに、無効になった戻るボタンを表示します (以下のコード例を参照)。
+アプリ内で動き回る UI 要素を最小化するために、バックスタックに何もないときに、無効になった戻るボタンを表示します (以下のコード例を参照)。 ただし、アプリは、backstack を持つことがない場合は、すべての"戻る"ボタンを表示する必要はありません。
 
 ![[戻る] ボタンの状態](images/back-nav/BackDisabled.png)
 
@@ -289,9 +286,9 @@ bool App::On_BackRequested()
 
 ## <a name="system-back-behavior-for-backward-compatibilities"></a>下位互換性のためのシステムの戻る動作
 
-以前、UWP アプリは前に戻る移動のために [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) を使用しました。 この API は下位互換性のためにサポートが継続されますが、タイトル バーの戻るボタンの使用はもうお勧めできません。 代わりに、アプリで独自のアプリ内の戻るボタンを描画してください。
+以前、UWP アプリは前に戻る移動のために [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) を使用しました。 API は引き続き下位の互換性を確保するサポートされているがしなくなった[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)に依存することをお勧めします。 代わりに、アプリで独自のアプリ内の戻るボタンを描画してください。
 
-アプリで [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) の使用を続ける場合は、通常どおり、戻るボタンはタイトル バーの内部にレンダリングされます。
+[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)を使用して、アプリが引き続き発生する場合、システム UI を表示するシステム戻るボタン。
 
 - アプリが**タブがない**場合は、タイトル バーの内部、戻るボタンがレンダリングされます。 "戻る"ボタンの視覚エクスペリエンスとユーザーの操作では、以前のビルドから変更されません。
 
@@ -306,9 +303,26 @@ bool App::On_BackRequested()
 > [!NOTE]
 > "システムの戻るバー"正式な名前ではなく、説明のみです。
 
-システムの戻るバーは、タブ バンドとアプリのコンテンツ領域の間に挿入バンドします。 バンドは、アプリの幅に沿って表示され、左端に戻るボタンが配置されます。 バンドは、戻るボタンの適切なタッチ ターゲットのサイズを確認する 32 ピクセルの高さがあります。
+システムの戻るバーは、タブ バンドとアプリのコンテンツ領域の間に挿入されている「バンド」です。 バンドは、アプリの幅に沿って表示され、左端に戻るボタンが配置されます。 バンドは、戻るボタンの適切なタッチ ターゲットのサイズを確認する 32 ピクセルの高さがあります。
+
+- アプリが**タブがない**場合は、タイトル バーの内部、戻るボタンがレンダリングされます。 "戻る"ボタンの視覚エクスペリエンスとユーザーの操作では、以前のビルドから変更されません。
+
+    ![タイトル バーの戻るボタン](images/nav-back-pc.png)
+
+- アプリが**タブ付き**のかどうか、新しいシステムの戻る内で戻るボタンがレンダリングされるバー。
+
+    ![戻るボタンのバーに描画されるシステム](images/back-nav/tabs.png)
+
+### <a name="system-back-bar"></a>システムの戻るバー
+
+> [!NOTE]
+> "システムの戻るバー"正式な名前ではなく、説明のみです。
+
+システムの戻るバーは、タブ バンドとアプリのコンテンツ領域の間に挿入されている「バンド」です。 バンドは、アプリの幅に沿って表示され、左端に戻るボタンが配置されます。 バンドは、戻るボタンの適切なタッチ ターゲットのサイズを確認する 32 ピクセルの高さがあります。
 
 システムの戻るバーは、戻るボタンの可視性に基づいて動的に表示されます。 [戻る] ボタンが表示されるとき、システムの戻るバーが挿入され、アプリのコンテンツをタブ バンドの下の 32 ピクセル下に移動します。 [戻る] ボタンを非表示するとき、システムの戻るバーは動的に削除され、× 32 ピクセルをタブ バンドを満たすためにアプリのコンテンツを移動します。 上または下に、アプリの UI shift キーを持つを避けるためには、[アプリ内の戻るボタン](#back-button)を描画お勧めします。
+
+[タイトル バーのカスタマイズ](../shell/title-bar.md)は、アプリ タブとシステムの戻るの両方に引き継がバー。 アプリ[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、バック グラウンドとフォア グラウンドの色のプロパティを指定する場合、色がタブとシステムの戻るに適用されますバー。
 
 [タイトル バーのカスタマイズ](../shell/title-bar.md)は、アプリ タブとシステムの戻るの両方に引き継がバー。 アプリ[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、バック グラウンドとフォア グラウンドの色のプロパティを指定する場合、色がタブとシステムの戻るに適用されますバー。
 

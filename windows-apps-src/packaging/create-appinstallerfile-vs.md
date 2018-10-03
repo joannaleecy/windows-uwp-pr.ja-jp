@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング
 ms.localizationpriority: medium
-ms.openlocfilehash: f8cd18296e0e443b98d6de586d7103dd2eb6d894
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 6158b804e1d4ece3c76099a3f8d33d5fa562078d
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833249"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4258545"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Visual Studio を使ったアプリ インストーラー ファイルの作成
 
@@ -34,7 +34,7 @@ Windows 10 バージョン 1804 と Visual Studio 2017 Update 15.7 以降では�
 
 ### <a name="create-packages"></a>パッケージの作成
 
-サイドローディングを通じてアプリを配布するには、アプリ パッケージ (.appx) またはアプリ バンドル (.appxbundle) を作成し、共有の場所で公開する必要があります。
+サイドローディングによってアプリを配布するには、アプリ パッケージ (.appx/.msix) またはアプリ バンドル (.appxbundle/.msixbundle) を作成し、共有の場所に公開する必要があります。
 
 これを行うには、Visual Studio で**アプリ パッケージの作成**ウィザードを使って手順に従います。
 

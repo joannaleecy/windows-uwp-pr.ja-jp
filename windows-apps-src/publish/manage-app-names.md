@@ -4,22 +4,25 @@ Description: View the names that you've reserved for your app, reserve additiona
 title: アプリ名の管理
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ms.author: wdg-dev-content
-ms.date: 8/07/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, アプリの名前, アプリ名, アプリ名の更新、ゲームの名前, 製品名を変更します。
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d2c6f72e2f69f0b768af55f9bddeb9bb008027
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 878b105541691834dbbe35b5210f33045afdc47b
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206488"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4258535"
 ---
 # <a name="manage-app-names"></a>アプリ名の管理
 
 すべてのアプリについて予約した名前を表示する**アプリ名の管理**では (その他の言語またはアプリの名前を変更する) の追加の名前を予約し、名前は必要ありませんを削除します。 このページは、アプリのいずれかの左側のナビゲーション メニューで**アプリの管理**セクションを展開する[Windows デベロッパー センター ダッシュ ボード](https://partner.microsoft.com/dashboard)で確認できます。
+
+> [!IMPORTANT]
+> 追加、アプリの名前を予約することができ、最初に、ダッシュ ボードでアプリを作成するときに予約したものではなく、アプリの公開されているバージョンでそれらのいずれかを使用することができます。 ただしなどの[id の詳細](view-app-identity-details.md)、**パッケージ ファミリ名 (PFN)** の製品の予約名を it の一部で使用されます。 これらの値は、一部のユーザーに表示される可能性がありすることはできません、変更されたため、必ずまずを予約する名前がこのような使用に適していること。
 
 
 ## <a name="reserve-additional-names-for-your-app"></a>アプリの追加の名前の予約

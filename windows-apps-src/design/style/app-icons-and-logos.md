@@ -13,11 +13,11 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e947b00c3a070a8d95a21e38c56bda07cd45d3c4
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205288"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268167"
 ---
 # <a name="app-icons-and-logos"></a>アプリのアイコンとロゴ 
 
@@ -25,9 +25,15 @@ ms.locfileid: "4205288"
 
 :::row:::
     :::column:::
-        *、アプリ ウィンドウのタイトル バー * [スタート] メニューで、アプリの一覧 * タスク バーとタスク マネージャー * アプリのタイル * アプリのスプラッシュ画面 * Microsoft ストア内 :::column-end:::
+        * アプリ ウィンドウのタイトル バー
+        * [スタート] メニューで、アプリの一覧
+        * タスク バーとタスク マネージャー
+        * アプリのタイル
+        * アプリのスプラッシュ画面
+        * Microsoft Store で
+    :::column-end:::
     :::column:::
-        ![Windows 10 のスタート画面とタイル](images/assetguidance01.jpg)
+        ![windows 10 start and tiles](images/assetguidance01.jpg)
     :::column-end:::
 :::row-end:::
 
@@ -58,7 +64,7 @@ ms.locfileid: "4205288"
 
 :::row:::
     :::column:::
-        Windows では、ディスプレイの DPI (ドット/インチ) と、デバイスの視聴距離に基づいて各ディスプレイの倍率が自動的に設定します。 
+        Windows automatically sets the scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. 
 
         (Users can override the default value by going to the **Settings &gt; Display &gt; Scale and layout** page.)
     :::column-end:::
@@ -121,7 +127,7 @@ Visual Studio では、**マニフェスト デザイナー**と呼ばれる、�
 
 :::row:::
     :::column:::
-        1. Visual Studio を使用して UWP プロジェクトを開きます。
+        1. Visual Studio を使用して、UWP プロジェクトを開きます。
     :::column-end:::
     :::column:::
         
@@ -129,25 +135,26 @@ Visual Studio では、**マニフェスト デザイナー**と呼ばれる、�
 :::row-end:::
 :::row:::
     :::column:::
-        2. [**ソリューション エクスプ ローラー**で、Package.appmxanifest ファイルをダブルクリックします。
+        2. **ソリューション エクスプ ローラー**で、Package.appmxanifest ファイルをダブルクリックします。
     :::column-end:::
     :::column:::
-        ![Visual Studio 2017 のマニフェスト デザイナー](images/icons/vs-solution-explorer.png)
+        ![The Visual Studio 2017 Manifest Designer](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-            Visual Studio では、マニフェスト デザイナーを表示します。
+            Visual Studio displays the Manifest Designer.
     :::column-end:::
     :::column:::
-            ![[ビジュアル資産] タブ](images/icons/vs-manfiest-designer.png)
+            ![The Visual Assets tab](images/icons/vs-manfiest-designer.png)
     :::column-end:::
 :::row-end:::    
 :::row:::
     :::column:::
-        3. [**ビジュアル資産**] タブをクリックします。 :::column-end:::
+        3. [**ビジュアル資産**] タブをクリックします。
+    :::column-end:::
     :::column:::
-        ![[ビジュアル資産] タブ](images/icons/vs-manfiest-designer-visual-assets.png)
+        ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 

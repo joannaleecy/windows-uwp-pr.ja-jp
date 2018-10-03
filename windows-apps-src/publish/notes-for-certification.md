@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 審査担当者へのコメント
 ms.localizationpriority: medium
 ms.openlocfilehash: 741925a3ac49273bd7ba826dfbadd2e18724f307
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211912"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267033"
 ---
 # <a name="notes-for-certification"></a>認定の注意書き
 

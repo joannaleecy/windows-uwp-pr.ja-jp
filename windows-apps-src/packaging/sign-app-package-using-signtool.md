@@ -3,19 +3,19 @@ author: laurenhughes
 title: SignTool を使ってアプリ パッケージに署名する
 description: SignTool を使って手動でアプリ パッケージに証明書による署名を行います。
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: b0aab34b187e06ba2b87a1537d6e30df09b35d7e
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: c238855f4f018e8e3142509842221c6b9d97fae3
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663012"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267853"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>SignTool を使ってアプリ パッケージに署名する
 
@@ -79,16 +79,25 @@ SignTool sign [options] <filename(s)>
 ```
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.appx
 ```
+```
+SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.msix
+```
 `/a` オプションを使用すると、**SignTool** によって自動的に最適な証明書が選択されます。
 
 .pfx ファイルの証明書ではない場合は、次の構文を使用します。
 ```
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.appx
 ```
+```
+SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.msix
+```
 
 または、次の構文を使用して、&lt;証明署名&gt; ではなく、使用する証明書の SHA1 ハッシュを指定することもできます。
 ```
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.appx
+```
+```
+SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ```
 
 証明書の中には、パスワードを使用しないものもあります。 証明書がパスワードを使用していない場合は、サンプル コマンドの "/p &lt;パスワード&gt;" を省略してください。

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 602a0af685e812f5c65f94d07297cac9fc411923
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206944"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268001"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP アプリ設計の概要
 
@@ -49,7 +49,8 @@ UWP は、読みやすくしやすいですべてのデバイスや画面サイ�
 ### <a name="multiples-of-four"></a>4 の倍数
 
 :::row:::
-    :::column span::: サイズ、余白、および UI 要素の位置は常に、UWP アプリで**4 epx の倍数**にします。
+    :::column span:::
+        The sizes, margins, and positions of UI elements should always be in **multiples of 4 epx** in your UWP apps.
 
         UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
     :::column-end:::
@@ -66,16 +67,16 @@ UWP アプリは、すべてのデバイスに合わせて自動的に拡大縮�
 
 :::row:::
     :::column:::
-        UWP アプリを起動すると、任意の Windows 10 デバイスでは、[フレーム](/uwp/api/Windows.UI.Xaml.Controls.Frame)、[ページ](/uwp/api/Windows.UI.Xaml.Controls.Page)のインスタンス間を移動できる[ウィンドウ](/uwp/api/Windows.UI.Xaml.Controls.Window)で起動します。
+        When a UWP app is launched on any Windows 10 device, it launches in a [Window](/uwp/api/Windows.UI.Xaml.Controls.Window) with a [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame), which can navigate between [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) instances.
     :::column-end:::
     :::column:::
-        ![フレーム](images/frame.svg)
+        ![Frame](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        アプリの UI は、ページのコレクションとして考えることができます。 各ページに配置する項目や、ページ間の関係は、開発者が自由に決めることができます。
+        You can think of your app's UI as a collection of pages. It's up to you to decide what should go on each page, and the relationships between pages.
 
         To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::
@@ -118,7 +119,7 @@ UWP コントロールとコントロールに基づいて作成できるパタ�
 
 :::row:::
     :::column:::
-        UWP アプリがした幅広い Windows エクスペリエンスと Windows[シェル](../shell/tiles-and-notifications/creating-tiles.md)でタイルや通知をやり取りします。
+        Your UWP app will interact with the broader Windows experience with tiles and notifications in the Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md).
 
         Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
 
@@ -133,10 +134,10 @@ UWP コントロールとコントロールに基づいて作成できるパタ�
 
 :::row:::
     :::column:::
-        UWP アプリではスマート操作が使用されます。 クリックの発生元がマウスか、スタイラスか、指によるタップかを認識または定義しなくても、クリック操作に対応したデザインを行うことができます。 ただし、[特定の入力モード](../input/input-primer.md)向けにアプリを設計することもできます。
+        UWP apps rely on smart interactions. You can design around a click interaction without having to know or define whether the click comes from a mouse, a stylus, or a tap of a finger. However, you can also design your apps for [specific input modes](../input/input-primer.md).
     :::column-end:::
     :::column:::
-        ![入力](images/inputs.svg)
+        ![inputs](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 

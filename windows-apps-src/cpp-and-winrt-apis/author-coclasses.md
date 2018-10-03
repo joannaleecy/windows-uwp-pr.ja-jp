@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、作成者、COM、コンポーネント
 ms.localizationpriority: medium
-ms.openlocfilehash: 227ffcd72150e37a513649e69bc7a6709581d65c
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 2e273d593d7b2e24cc82063ce25b66771b8221e1
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205328"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267181"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>COM コンポーネントを作成[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -49,7 +49,7 @@ int main()
 
 ## <a name="a-more-realistic-and-interesting-example"></a>現実的で興味深い例
 
-このトピックの残りの部分では、C++ を使用する最小限に抑えながらコンソール アプリケーション プロジェクトの作成について説明します/WinRT 基本的なコクラスとクラスのファクトリを実装します。 アプリケーションの例は、それに基づいてコールバックのボタンを含むトースト通知を配信する方法を示していますと ( **INotificationActivationCallback** COM インターフェイスを実装) するコクラスにより、アプリケーションを起動し、と呼ばれるタイミング ユーザー。トースト通知では、そのボタンをクリックします。
+このトピックの残りの部分では、C++ を使用する最小限に抑えながらコンソール アプリケーション プロジェクトの作成について説明します + (COM コンポーネント、または COM クラス) の基本的なコクラスおよびクラス ファクトリの実装に WinRT します。 アプリケーションの例は、それに基づいてコールバックのボタンを含むトースト通知を配信する方法を示していますと ( **INotificationActivationCallback** COM インターフェイスを実装) するコクラスにより、アプリケーションを起動し、と呼ばれるタイミング ユーザー。トースト通知では、そのボタンをクリックします。
 
 トースト通知の機能領域についての詳しい背景は、[ローカル トースト通知の送信](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)で入手できます。 いずれのドキュメントのセクションのコード例を使用して、C++/WinRT、ただし、お勧めしますここに示すようにコードを希望します。
 
@@ -134,7 +134,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-上記のコクラスの実装に示す同じパターンに従います[において、C++ Api の作成/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)します。 Windows ランタイム インターフェイス (インターフェイスはすべて最終的に[**IInspectable**](https://msdn.microsoft.com/library/br205821)から派生した) は COM インターフェイス (最終的に[**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)から派生したインターフェイス) を実装するだけでなく、この手法を使用することに注意してください。
+上記のコクラスの実装に示す同じパターンに従います[において、C++ Api の作成/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)します。 そのため、同じ手法を使用すると、COM インターフェイスとしての Windows ランタイム インターフェイスを実装します。 COM コンポーネントと Windows ランタイム クラス、インターフェイス経由でその機能を公開します。 すべての COM インターフェイスは、最終的に[**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)インターフェイスから派生します。 Windows ランタイムは COM に基づいて&mdash;1 つの区別されている Windows ランタイム インターフェイスは、最終的に[**IInspectable インターフェイス**](https://msdn.microsoft.com/library/windows/desktop/br205821)から派生 (および**IUnknown**から派生した**IInspectable** )。
 
 上記のコードでコクラスは、 **INotificationActivationCallback::Activate**メソッドは、ユーザーがトースト通知のコールバック ボタンをクリックしたときに呼び出される関数を実装します。 コクラスのインスタンスを作成する必要があるし、 **IClassFactory::CreateInstance**関数のジョブは前に、この関数を呼び出すことができます。
 

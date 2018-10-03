@@ -2,38 +2,38 @@
 author: normesta
 Description: Shows how to manually package a Windows desktop application (like Win32, WPF, and Windows Forms) for Windows 10.
 Search.Product: eADQiWindows 10XVcnh
-title: アプリを手動でパッケージ化する (デスクトップ ブリッジ)
+title: アプリケーションを手動でパッケージ化 (デスクトップ ブリッジ)
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a9c413b8f0b79f9e6a331145d086e3e563bd989
-ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "2410839"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268110"
 ---
-# <a name="package-an-app-manually-desktop-bridge"></a>アプリを手動でパッケージ化する (デスクトップ ブリッジ)
+# <a name="package-a-desktop-application-manually"></a>デスクトップ アプリケーションを手動でパッケージ化します。
 
-このトピックでは、Visual Studio、Desktop App Converter (DAC) などのツールを使用せずにアプリをパッケージ化する方法を示します。
+このトピックでは、Visual Studio、Desktop App Converter (DAC) などのツールを使用せず、アプリケーションをパッケージ化する方法を示しています。
 
 アプリを手動でパッケージ化するには、パッケージ マニフェスト ファイルを作成してから、Windows アプリ パッケージを生成するコマンド ライン ツールを実行します。
 
-xcopy コマンドを使用してアプリをインストールする場合や、アプリのインストーラーがシステムに加える変更を熟知したうえで、プロセスをきめ細かく制御する必要がある場合は、手動によるパッケージ化を検討してください。
+Xcopy コマンドを使用して、アプリケーションをインストールするか、アプリのインストーラーによるシステムへの変更に慣れている場合は、手動によるパッケージ化を検討し、プロセスをさらに細かく制御すます。
 
 インストーラーによってどのような変更がシステムに加えられるのかわからない場合や、自動化ツールを使用してパッケージ マニフェストを生成する場合は、[こちら](desktop-to-uwp-root.md#convert)のオプションのいずれかを検討してください。
 
 >[!IMPORTANT]
->デスクトップ ブリッジは、Windows 10 Version 1607 で導入されており、Windows 10 Anniversary Update (10.0、ビルド 14393) 以降のリリースをターゲットとする Visual Studio プロジェクトでのみ使用できます。
+>デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (デスクトップ ブリッジとも呼ばれるを Windows 10 バージョン 1607 で導入されたそれ以外の場合と、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
 
 ## <a name="first-prepare-your-application"></a>まず、アプリケーションを準備します
 
-アプリケーションのパッケージの作成を開始する前に、必ず「[アプリのパッケージ化の準備 (デスクトップ ブリッジ)](desktop-to-uwp-prepare.md)」を確認してください。
+アプリケーションのパッケージの作成を開始する前に、このガイドを確認:[デスクトップ アプリケーションのパッケージを準備](desktop-to-uwp-prepare.md)します。
 
 ## <a name="create-a-package-manifest"></a>パッケージ マニフェストを作成する
 
@@ -87,11 +87,11 @@ xcopy コマンドを使用してアプリをインストールする場合や�
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> Windows ストアでアプリ名を予約済みの場合は、Windows デベロッパー センターのダッシュ ボードを使用して、名前と発行元を取得できます。 アプリを他のシステムにサイドローディング展開する場合は、独自の名前を指定できます。ただし、選択する発行元名は、アプリへの署名に使用する証明書の名前と一致する必要があります。
+> Windows ストアでアプリケーション名を予約済み、Windows デベロッパー センター ダッシュ ボードを使用して、名前と発行元を取得できます。 他のシステム上にアプリケーションをサイドローディングする場合は、アプリに署名証明書の名前と一致を選択する発行元名を使用する限り、独自の名前を提供できます。
 
-### <a name="properties"></a>Properties
+### <a name="properties"></a>プロパティ
 
-[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 要素には、必須の子要素が 3 つあります。 次に示すのは、**Properties** ノードの例です。要素はプレースホルダー テキストが指定されています。 **DisplayName** は、ストアにアップロードするアプリに対して、ストアで予約するアプリの名前です。
+[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 要素には、必須の子要素が 3 つあります。 次に示すのは、**Properties** ノードの例です。要素はプレースホルダー テキストが指定されています。 **表示名**は、ストアにアップロードするアプリに対して、ストアで予約するアプリケーションの名前です。
 
 ```XML
 <Properties>
@@ -101,7 +101,7 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 </Properties>
 ```
 
-### <a name="resources"></a>Resources
+### <a name="resources"></a>リソース
 
 次に [Resources](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources) ノードの例を示します。
 
@@ -112,7 +112,7 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 ```
 ### <a name="dependencies"></a>依存関係
 
-デスクトップ ブリッジを使用してパッケージ化するデスクトップ アプリでは、常に ``Name`` 属性を ``Windows.Desktop`` に設定します。
+常に設定用のパッケージを作成するデスクトップ アプリの場合、``Name``属性を``Windows.Desktop``します。
 
 ```XML
 <Dependencies>
@@ -121,7 +121,7 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 ```
 
 ### <a name="capabilities"></a>機能
-デスクトップ ブリッジを使用してパッケージ化するデスクトップ アプリでは、``runFullTrust`` 機能を追加する必要があります。
+追加する必要があるは、パッケージを作成するデスクトップ アプリの場合、``runFullTrust``機能します。
 
 ```XML
 <Capabilities>
@@ -134,7 +134,7 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 
 ### <a name="application-element"></a>Application 要素
 
-デスクトップ ブリッジを使用してパッケージ化するデスクトップ アプリでは、Application 要素の ``EntryPoint`` 属性は常に ``Windows.FullTrustApplication`` です。
+デスクトップ アプリで、パッケージを作成する、 ``EntryPoint`` Application 要素の属性は常に``Windows.FullTrustApplication``します。
 
 ```XML
 <Applications>
@@ -177,7 +177,7 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>パッケージ リソース インデックス (PRI) ファイルを生成する
 
-前のセクションで説明したようにターゲット ベースのアセットを作成する場合や、パッケージを作成した後、アプリのビジュアル アセットのいずれかを変更する場合は、新しい PRI ファイルを生成する必要があります。
+前のセクションで説明したように、ターゲット ベースのアセットを作成するか、パッケージを作成したら、アプリケーションのビジュアル アセットのいずれかを変更する場合は、新しい PRI ファイルを生成する必要があります。
 
 1.  **[開発者コマンド プロンプト for VS 2017]** を開きます。
 
@@ -187,7 +187,7 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 
 5.  コマンド ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml`` を使用して、resources.pri ファイルを作成します。
 
-    たとえば、アプリのコマンドは、``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml`` のようになります。
+    たとえば、アプリケーションのコマンドが、これのようになります。:``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``します。
 
 6.  次の手順の説明に従って Windows アプリ パッケージをパッケージ化します。
 
@@ -201,14 +201,14 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 
 ## <a name="run-the-packaged-app"></a>パッケージ アプリを実行する
 
-証明書を取得して署名する作業を行わなくても、アプリをローカルで実行およびテストできます。 次の PowerShell コマンドレットを実行するだけで済みます。
+証明書を取得し、それに署名することがなくローカルでテストするアプリケーションを実行することができます。 次の PowerShell コマンドレットを実行するだけで済みます。
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
 アプリの .exe または .dll ファイルを更新するには、パッケージ内の既存のファイルを新しいファイルに置き換え、AppxManifest.xml のバージョン番号を繰り上げて、上記のコマンドをもう一度実行します。
 
 > [!NOTE]
-> パッケージ アプリは、常に対話ユーザーとして実行されます。パッケージ アプリをインストールするドライブは、NTFS 形式にフォーマットされている必要があります。
+> パッケージ化されたアプリケーションでは、常には、対話ユーザーとして実行されにパッケージ化されたアプリケーションをインストールするすべてのドライブを NTFS 形式にフォーマットする必要があります。
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -222,8 +222,8 @@ xcopy コマンドを使用してアプリをインストールする場合や�
 
 **コードをステップ実行する/問題を見つけて修正する**
 
-[パッケージ デスクトップ アプリの実行、デバッグ、テスト (デスクトップ ブリッジ)](desktop-to-uwp-debug.md) をご覧ください。
+[実行、デバッグ、およびデスクトップ アプリケーションをパッケージ化されたテスト](desktop-to-uwp-debug.md)を参照してください。
 
-**アプリに署名して配布する**
+**アプリケーションに署名して配布する.**
 
-[パッケージ デスクトップ アプリの配布 (デスクトップ ブリッジ)](desktop-to-uwp-distribute.md) をご覧ください。
+[デスクトップ アプリケーションのパッケージの配布](desktop-to-uwp-distribute.md)を参照してください。

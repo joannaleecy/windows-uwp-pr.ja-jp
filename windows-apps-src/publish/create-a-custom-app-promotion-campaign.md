@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP、カスタム、アプリ、プロモーション、キャンペーン
 ms.localizationpriority: medium
 ms.openlocfilehash: 13ee8d7482a2ce0716d4e133af329cd0ea42c184
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204806"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267813"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>カスタム アプリ プロモーション キャンペーンの作成
 
