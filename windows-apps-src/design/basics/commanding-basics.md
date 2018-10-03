@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 104788b98377b55564fcc204ecc161521d071c6b
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4262653"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4315460"
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a><span data-ttu-id="a2cac-103">UWP アプリのコマンド設計の基本</span><span class="sxs-lookup"><span data-stu-id="a2cac-103">Command design basics for UWP apps</span></span>
 

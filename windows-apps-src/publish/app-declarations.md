@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4263533"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4312694"
 ---
 # <a name="product-declarations"></a><span data-ttu-id="15680-103">製品の宣言</span><span class="sxs-lookup"><span data-stu-id="15680-103">Product declarations</span></span>
 

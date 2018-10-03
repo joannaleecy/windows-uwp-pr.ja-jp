@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、移動、転送、値のカテゴリ、移動セマンティクス、完全転送、左辺、右辺値、glvalue、prvalue、xvalue フラグ
 ms.localizationpriority: medium
 ms.openlocfilehash: cbccaf78b45d85d93619977d149431c4eec9e10a
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4260249"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4315798"
 ---
 # <a name="value-categories-and-references-to-them"></a><span data-ttu-id="61d31-105">値のカテゴリとへの参照</span><span class="sxs-lookup"><span data-stu-id="61d31-105">Value categories, and references to them</span></span>
 <span data-ttu-id="61d31-106">このトピックでは、C++ で存在するさまざまなカテゴリの値 (および値への参照) について説明します。</span><span class="sxs-lookup"><span data-stu-id="61d31-106">This topic describes the various categories of values (and references to values) that exist in C++.</span></span> <span data-ttu-id="61d31-107">*左辺値*と*rvalue*の音が間違いされますが、このトピックでは条件でそれらのない考え。</span><span class="sxs-lookup"><span data-stu-id="61d31-107">You will doubtless have heard of *lvalues* and *rvalues*, but you may not think of them in the terms that this topic presents.</span></span> <span data-ttu-id="61d31-108">すぎるは、値の他の種類があります。</span><span class="sxs-lookup"><span data-stu-id="61d31-108">And there are other kinds of values, too.</span></span>

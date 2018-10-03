@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト、バック グラウンド タスク、アプリ サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 72a8a02d14a4fa9287c987150a526745b294b65f
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4263889"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4309262"
 ---
 # <a name="communicate-with-a-remote-app-service"></a><span data-ttu-id="9618e-104">リモート アプリ サービスとの通信</span><span class="sxs-lookup"><span data-stu-id="9618e-104">Communicate with a remote app service</span></span>
 

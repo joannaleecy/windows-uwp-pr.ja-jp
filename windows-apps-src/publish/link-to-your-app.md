@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, リンク, windows store プロトコル, アプリにリンクする, アプリへのリンク
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025321aa73a66cc0a976bd347e613de3c3c4765
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4262079"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4319086"
 ---
 # <a name="link-to-your-app"></a><span data-ttu-id="31e83-103">アプリへのリンク</span><span class="sxs-lookup"><span data-stu-id="31e83-103">Link to your app</span></span>
 

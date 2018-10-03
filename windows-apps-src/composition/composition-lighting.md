@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e634b18fffc4f601f6512d6ceeed51efbe9c1886
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4267783"
+ms.locfileid: "4319847"
 ---
 # <a name="using-lights-in-windows-ui"></a><span data-ttu-id="1c38f-104">Windows UI でのライトの使用</span><span class="sxs-lookup"><span data-stu-id="1c38f-104">Using lights in Windows UI</span></span>
 

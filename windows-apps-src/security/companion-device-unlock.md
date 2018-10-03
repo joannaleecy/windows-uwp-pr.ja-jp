@@ -11,11 +11,11 @@ keywords: windows 10, uwp, セキュリティ
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
 ms.openlocfilehash: ac2e29d5219809058edee2d7a92c2e2475d9752e
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4262561"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4317190"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a><span data-ttu-id="4957c-105">Windows Hello コンパニオン (IoT) デバイスを使った Windows のロック解除</span><span class="sxs-lookup"><span data-stu-id="4957c-105">Windows Unlock with Windows Hello companion (IoT) devices</span></span>
 

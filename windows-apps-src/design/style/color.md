@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.openlocfilehash: ca59855456abe366ec681404b3bf6253bc182f79
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4258691"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4318248"
 ---
 # <a name="color"></a><span data-ttu-id="5d625-104">色</span><span class="sxs-lookup"><span data-stu-id="5d625-104">Color</span></span>
 

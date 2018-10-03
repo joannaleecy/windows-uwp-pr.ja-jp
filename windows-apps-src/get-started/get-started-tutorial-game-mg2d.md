@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: d38465ce02e0aedf854094ede75fc33701b226a6
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265971"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4319834"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a><span data-ttu-id="440d5-104">MonoGame 2D で UWP ゲームを作成する</span><span class="sxs-lookup"><span data-stu-id="440d5-104">Create a UWP game in MonoGame 2D</span></span>
 

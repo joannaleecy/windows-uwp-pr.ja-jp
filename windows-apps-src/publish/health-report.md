@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 正常性, クラッシュ, 応答停止イベント, アプリの正常性, 正常性データ, スタック トレース, cab ファイル, 失敗, エラー, pdb, シンボル
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f5bf63eae4b1504642e764265a7936bcd67c645
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4258555"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4316096"
 ---
 # <a name="health-report"></a><span data-ttu-id="74670-103">[正常性] レポート</span><span class="sxs-lookup"><span data-stu-id="74670-103">Health report</span></span>
 

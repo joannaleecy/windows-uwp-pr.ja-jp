@@ -17,11 +17,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 48d830b388fee8a0007447a66aa58e3794cfaae0
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4266457"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4314748"
 ---
 # <a name="radio-buttons"></a><span data-ttu-id="c8bf1-103">ラジオ ボタン</span><span class="sxs-lookup"><span data-stu-id="c8bf1-103">Radio buttons</span></span>
 
