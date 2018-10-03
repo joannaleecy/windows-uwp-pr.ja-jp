@@ -4,23 +4,23 @@ Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
 title: 既知の問題 (デスクトップ ブリッジ)
 ms.author: normesta
-ms.date: 05/18/2018
+ms.date: 06/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 76ff4fb4b7933c54e5137507e7996eefa7b46d5a
-ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
-ms.translationtype: HT
+ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "1905383"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263879"
 ---
-# <a name="known-issues-desktop-bridge"></a>既知の問題 (デスクトップ ブリッジ)
+# <a name="known-issues-with-packaged-desktop-applications"></a>パッケージ デスクトップ アプリケーションに関する既知の問題
 
-この記事では、デスクトップ ブリッジに関する既知の問題について説明します。
+この記事でには、デスクトップ アプリケーションの Windows アプリ パッケージを作成するときに発生する可能性がある既知の問題が含まれています。
 
 <a id="app-converter" />
 
@@ -38,7 +38,7 @@ ms.locfileid: "1905383"
 
 この問題を解決するには、管理者特権で開いたコマンド プロンプトで `Netsh int ipv4 reset` コマンドを実行して、コンピューターを再起動します。
 
-### <a name="your-net-app-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET アプリが "AnyCPU" ビルド オプションでコンパイルされ、インストールに失敗する
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET アプリケーションが"AnyCPU"ビルド オプションでコンパイルし、インストールに失敗するには
 
 この問題は、メインの実行可能ファイルまたは何らかの依存ファイルが、**Program Files** または **Windows\System32** のフォルダー階層に配置された場合に発生することがあります。
 
@@ -54,9 +54,9 @@ ms.locfileid: "1905383"
 
 ### <a name="error-found-in-xml-the-executable-attribute-is-invalid---the-value-myappexe-is-invalid-according-to-its-datatype"></a>XML にエラーが見つかり、 'Executable' 属性が無効 - 'MyApp.EXE' の値がデータ型に対して無効
 
-この問題は、アプリケーションに含まれる実行可能ファイルの **.EXE** 拡張子が大文字になっている場合に発生することがあります。 この拡張子が大文字であってもアプリの実行には影響しませんが、DAC ではこのエラーが発生する場合があります。
+この問題は、アプリケーションに含まれる実行可能ファイルの **.EXE** 拡張子が大文字になっている場合に発生することがあります。 ですが、この拡張機能の大文字小文字の区別しないように、アプリケーションを実行するかどうかに影響を与える、DAC でこのエラーが発生することができます。
 
-この問題を解決するには、パッケージ化を行うときに **-AppExecutable** フラグを指定し、メインの実行可能ファイルの拡張子として小文字の ".exe" を使用してみてください (例: MYAPP.exe)。    または、アプリに含まれるすべての実行可能ファイルについて、小文字を大文字に変更することもできます (例: .EXE を .exe に変更する)。
+この問題を解決するには、パッケージ化を行うときに **-AppExecutable** フラグを指定し、メインの実行可能ファイルの拡張子として小文字の ".exe" を使用してみてください (例: MYAPP.exe)。    代わりに大文字小文字のアプリケーションですべての実行可能ファイルの大文字と小文字を変更できます (例: からです。EXE を .exe) します。
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>Authenticode 署名が破損しているか、形式が正しくない
 
@@ -95,11 +95,11 @@ Microsoft Store のアプリをインストールまたは起動した後、予�
 
 更新しても問題が解決しない場合や、PC を回復する方法がわからない場合は、[Microsoft サポート](https://support.microsoft.com/contactus/)にお問い合わせください。
 
-開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 その場合、更新プログラムをインストールしていないユーザーはアプリを利用できません。 この更新プログラムをインストールしたユーザーだけがアプリを使用できるようにするには、AppxManifest.xml ファイルを次のように変更します。
+開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 この操作を行うアプリケーション、更新プログラムをインストールしていないユーザーが利用できないことに注意します。 この更新プログラムをインストールしているユーザーに、アプリケーションの可用性を制限するには、次のように、AppxManifest.xml ファイルを変更します。
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
-Windows Update について詳しくは、以下をご覧ください。
+Windows 更新プログラムについて詳しくは、以下をご覧ください。
 * https://support.microsoft.com/kb/3197954
 * https://support.microsoft.com/help/12387/windows-10-update-history
 
@@ -129,6 +129,41 @@ Windows アプリ パッケージ マニフェストの発行元エントリは�
 certutil -dump <cert_file.pfx>
 ```
 
+<a id="bad-pe-cert" />
+
+### <a name="bad-pe-certificate-0x800700c1"></a>不適切な PE 証明書 (番号: 0x800700C1)
+
+これは、パッケージには、破損している証明書を持つバイナリが含まれている場合に発生します。 これは、発生理由理由の一部を以下に示します。
+
+* 証明書のスタート画面は、画像の終了時にありません。  
+
+* 証明書のサイズは正の値はありません。
+
+* 証明書のスタート画面のない後、`IMAGE_NT_HEADERS32`または後に 32 ビット実行可能ファイルの構造体、 `IMAGE_NT_HEADERS64` 64 ビット実行可能ファイルの構造。
+
+* 証明書のポインターがない、正しく WIN_CERTIFICATE 構造体に配置されます。
+
+無効な PE 証明書を含むファイルを検索する**コマンド プロンプト**を開き、という名前の環境変数を設定`APPXSIP_LOG`1 の値にします。
+
+```
+set APPXSIP_LOG=1
+```
+
+次に、**コマンド プロンプト**で、もう一度アプリケーションに署名します。 例:
+
+```
+signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
+```
+
+無効な PE 証明書を含むファイルに関する情報は、**コンソール ウィンドウ**に表示されます。 例:
+
+```
+...
+
+ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.exe
+
+...   
+```
 ## <a name="next-steps"></a>次のステップ
 
 **質問に対する回答を見つける**

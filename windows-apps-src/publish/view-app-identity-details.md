@@ -4,30 +4,30 @@ Description: View details related to the unique identity assigned to your app by
 title: アプリ ID の詳細の表示
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.author: wdg-dev-content
-ms.date: 12/21/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cf2c10fd8fa581e29fe20c5bdcb2683c5246af1d
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 4b04033fb53a90015427feb820c91d0f4a1de7d5
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211116"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259831"
 ---
 # <a name="view-app-identity-details"></a>アプリ ID の詳細の表示
 
 
-Windows デベロッパー センター ダッシュ ボードでアプリを使用する場合は、Microsoft Store で割り当てられた一意の id に関連する詳細を表示できます。 アプリのストア登録情報へのリンクを取得することもできます。
+Microsoft Store の**アプリ id**ページにして、アプリに割り当てられた一意の id に関連する詳細を表示できます。 取得できますアプリのストアへのリンクをこのページに一覧表示します。
 
 アプリ ID の情報を探すには、アプリのいずれかに移動し、左側のナビゲーション メニューで **[アプリ管理]** を展開します。 **[アプリ ID]** を選ぶと、アプリ ID の詳細が表示されます。
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>アプリのパッケージ マニフェストに追加する値
 
-次の値を .appx パッケージ マニフェストに追加する必要があります。 [パッケージのビルドに Microsoft Visual Studio を使っていて](../packaging/packaging-uwp-apps.md)、開発者アカウントに関連付けられている同じ Microsoft アカウントでサインインしている場合は、これらの値は自動的に追加されています。 パッケージを手動でビルドしている場合は、以下の項目を追加する必要があります。
+パッケージ マニフェストでは、次の値を含める必要があります。 [パッケージのビルドに Microsoft Visual Studio を使っていて](../packaging/packaging-uwp-apps.md)、開発者アカウントに関連付けられている同じ Microsoft アカウントでサインインしている場合は、これらの値は自動的に追加されています。 パッケージを手動でビルドしている場合は、以下の項目を追加する必要があります。
 
 -   **Package/Identity/Name**
 -   **Package/Identity/Publisher**

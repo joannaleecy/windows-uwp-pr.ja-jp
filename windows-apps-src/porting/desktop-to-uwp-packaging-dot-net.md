@@ -1,8 +1,8 @@
 ---
 author: normesta
-Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop app for the Desktop Bridge.
+Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
 Search.Product: eADQiWindows 10XVcnh
-title: Visual Studio を使ったアプリのパッケージ化 (デスクトップ ブリッジ)
+title: Visual Studio を使ってデスクトップ アプリケーションをパッケージ化します。
 ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
@@ -11,25 +11,25 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f7ff53aeffced746e78d8b27243469dc547097
-ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "2410709"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259811"
 ---
-# <a name="package-an-app-by-using-visual-studio-desktop-bridge"></a>Visual Studio を使ったアプリのパッケージ化 (デスクトップ ブリッジ)
+# <a name="package-a-desktop-application-by-using-visual-studio"></a>Visual Studio を使ってデスクトップ アプリケーションをパッケージ化します。
 
 Visual Studio を使用して、デスクトップ アプリのパッケージを生成できます。 その後、そのパッケージを Microsoft Store に公開したり、1 台以上の PC にサイドローディングしたりすることができます。
 
 最新バージョンの Visual Studio には、アプリのパッケージ化に必要であった手動ステップをすべてなくす新しいバージョンのパッケージ プロジェクトが用意されています。 パッケージ プロジェクトを追加して、デスクトップ プロジェクトを参照し、F5 キーを押してアプリをデバッグするだけです。 手動で調整する必要はありません。 この新しい効率化されたエクスペリエンスは、以前のバージョンの Visual Studio のエクスペリエンスから大幅に向上しています。
 
 >[!IMPORTANT]
->デスクトップ ブリッジは、Windows 10 Version 1607 で導入されており、Windows 10 Anniversary Update (10.0、ビルド 14393) 以降のリリースをターゲットとする Visual Studio プロジェクトでのみ使用できます。
+>デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (デスクトップ ブリッジとも呼ばれるを Windows 10 バージョン 1607 で導入されたそれ以外の場合と、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
 
 ## <a name="first-prepare-your-application"></a>まず、アプリケーションを準備します
 
-アプリケーションのパッケージの作成を開始する前に、必ず「[アプリのパッケージ化の準備 (デスクトップ ブリッジ)](desktop-to-uwp-prepare.md)」を確認してください。
+アプリケーションのパッケージの作成を開始する前に、このガイドを確認:[デスクトップ アプリケーションのパッケージを準備](desktop-to-uwp-prepare.md)します。
 
 <a id="new-packaging-project"/>
 
@@ -83,18 +83,18 @@ Visual Studio を使用して、デスクトップ アプリのパッケージ�
 
 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) のページをご覧ください。
 
-**アプリを実行、デバッグ、テストする**
+**実行、デバッグ、テスト、デスクトップ アプリケーション**
 
-[パッケージ デスクトップ アプリの実行、デバッグ、テスト (デスクトップ ブリッジ)](desktop-to-uwp-debug.md) をご覧ください。
+[実行、デバッグ、およびデスクトップ アプリケーションをパッケージ化されたテスト](desktop-to-uwp-debug.md)を参照してください。
 
-**UWP API を追加してデスクトップ アプリを強化する**
+**UWP Api を追加してデスクトップ アプリケーションを拡張します。**
 
 「[Windows 10 向けのデスクトップ アプリを強化する](desktop-to-uwp-enhance.md)」をご覧ください。
 
-**UWP プロジェクトと Windows ランタイム コンポーネントを追加することによってデスクトップ アプリを拡張する**
+**UWP プロジェクトと Windows ランタイム コンポーネントを追加してデスクトップ アプリケーションを拡張します。**
 
 「[最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張](desktop-to-uwp-extend.md)」をご覧ください。
 
 **アプリを配布する**
 
-[パッケージ デスクトップ アプリの配布 (デスクトップ ブリッジ)](desktop-to-uwp-distribute.md) をご覧ください。
+[デスクトップ アプリケーションのパッケージの配布](desktop-to-uwp-distribute.md)を参照してください。

@@ -5,7 +5,7 @@ title: ボタン
 label: Buttons
 template: detail.hbs
 ms.author: quradic
-ms.date: 05/19/2017
+ms.date: 10/2/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,17 +16,14 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b52f61a4bb54c3432c3e1544bb690df08c3b891
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: badaefc406daa5f4500c76262d916f47d82e7a52
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208840"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263505"
 ---
 # <a name="buttons"></a>ボタン
-
-> [!IMPORTANT]
-> この記事では、まだリリースされていない機能について説明しています。この機能は、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。 プレビュー機能[最新の Windows 10 Insider Preview ビルドと SDK](https://insider.windows.com/for-developers/)または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)が必要です。
 
 ボタンは、特定の操作を直ちに実行する方法をユーザーに与えます。 いくつかのボタンはナビゲーション、繰り返される操作は、メニューを表示するなど、特定のタスクの特殊な。
 

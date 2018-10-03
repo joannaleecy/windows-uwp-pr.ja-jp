@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 17f40055f22d8d065ac85d207f3ea17a58a14519
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 72081a87ece7f1ab0b92ce66a5fdb3e380d0d4cb
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212872"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258881"
 ---
 # <a name="app-capability-declarations"></a>アプリ機能の宣言
 
@@ -209,7 +209,7 @@ ms.locfileid: "4212872"
 | **開発モード ネットワーク** | **developmentModeNetwork** 機能を使用すると、C++/CX の UWP アプリまたは C++ の Windows ランタイム コンポーネントで OpenFile Win32 API を呼び出す際に、サインイン済みユーザーの資格情報を使用してネットワーク パスにアクセスできます。 <br /><br />Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 |
 | **ファイル システムへの幅広いアクセス** | **broadFileSystemAccess** 機能を使用すると、実行時にファイル ピッカー スタイルのプロンプトを追加使用しなくても、アプリはファイル システムに対して、アプリを実行中のユーザーと同じアクセス許可を獲得できます。<br/><br/>この機能は、[Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) API で動作します。 ただし、この機能をアプリ パッケージ マニフェストに宣言して任意の **Windows.Storage** API を初めて使用すると、ユーザーの同意を求めるプロンプトが表示される点に注意してください。このときユーザーは、アクセスを許可することも拒否することもできます。 また、ユーザーは、[設定] を切り替えることで、このアクセスをいつでも許可または拒否できます。 さらに、この機能では**ドキュメント**、**ピクチャ**、**ビデオ**などの特殊なフォルダー機能を宣言できない点にも注意してください。 |
 | **システム ファームウェアおよび BIOS** | **smbios** 機能を使うと、アプリは BIOS データとシステム ファームウェア データにアクセスできます。 |
-| **完全な信頼のアクセス許可レベル** | **RunFullTrust**制限された機能は、ユーザーのコンピューターで完全な信頼のアクセス許可レベルで動作するアプリを使うとします。 [FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API を使用するには、この機能が必要です。<br /><br />この機能は、デスクトップ アプリケーションが appx として配信するために必要なもパッケージ化 ([デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)) と同様、Desktop App Converter (DAC) またはビジュアルを使用してこれらのアプリをパッケージ化するとき、マニフェストに表示される自動的とStudio します。 |
+| **完全な信頼のアクセス許可レベル** | **RunFullTrust**制限された機能は、ユーザーのコンピューターで完全な信頼のアクセス許可レベルで動作するアプリを使うとします。 [FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API を使用するには、この機能が必要です。<br /><br />この機能は、デスクトップ アプリケーションとして msix appx パッケージとして配信するために必要なも ([デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)と同様)、Desktop App Converter (DAC) を使用してこれらのアプリをパッケージ化するとき、マニフェストに表示される自動的に、またはVisual Studio します。 |
 | **昇格** | **AllowElevation**制限付き機能には、起動、またはアプリの有効期間中に自動昇格を必要とする既存のデスクトップ機能を維持するために、Microsoft パートナーや企業によって作成されたアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 企業がビジネス向け Microsoft ストアでプライベート ストアをによって展開されている基幹業務アプリののみ承認されます。  |
 | **Windows チーム デバイスの資格情報** | **TeamEditionDeviceCredentials**制限付き機能には、Windows 10 バージョン 1703 以降を実行している Surface Hub デバイスでデバイス アカウントの資格情報を要求する Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 |
 | **Windows チーム アプリケーション ビュー** | **TeamEditionView**制限付き機能には、Windows 10 バージョン 1703 以降を実行している Surface Hub デバイスでアプリケーションのビューをホストするための Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 |

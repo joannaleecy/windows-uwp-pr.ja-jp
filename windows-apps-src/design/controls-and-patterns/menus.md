@@ -5,7 +5,7 @@ title: メニューとコンテキスト メニュー
 label: Menus and context menus
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 07/19/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,17 +16,14 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 703667bf22ce11c119463008e868a943d447c7ff
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 20b6f54f39be116ad77cb5a179ff8c3d188eb8c4
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211548"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264301"
 ---
 # <a name="menus-and-context-menus"></a>メニューとコンテキスト メニュー
-
-> [!IMPORTANT]
-> この記事では、まだリリースされていない機能について説明しています。この機能は、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。 プレビュー機能[最新の Windows 10 Insider Preview ビルドと SDK](https://insider.windows.com/for-developers/)または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)が必要です。
 
 メニューとコンテキスト メニューは、ユーザーが要求するときにコマンドやオプションの一覧を表示します。 メニュー ポップアップを使用して、1 つ、インライン メニューを表示します。 通常は、アプリ ウィンドウの上部で水平方向の行で一連のメニューを表示するのにには、メニュー バーを使用します。 メニュー項目やサブメニュー各メニューことができます。
 
@@ -54,7 +51,7 @@ ms.locfileid: "4211548"
 
 ### <a name="menubar-vs-commandbar"></a>メニュー バーとコマンド バー
 
-メニュー バーや CommandBar 両方をユーザーにコマンドを公開するために使用できるサーフェスを表します。 メニュー バーが一連の多くの組織やグループ化が必要なアプリのコマンドを公開するためのクイックでシンプルな方法を提供し、CommandBar ができるようにします。
+メニュー バーや CommandBar 両方をユーザーにコマンドを公開するために使用できるサーフェスを表します。 メニュー バーでは、CommandBar よりをグループ化または複数の組織が必要なアプリのコマンドのセットを公開するためのクイックでシンプルな方法を提供します。
 
 メニュー バー CommandBar と組み合わせて使用することもできます。 メニュー バーを使用して、最も使用されているコマンドを強調表示するには、コマンドと CommandBar の大部分を提供します。
 

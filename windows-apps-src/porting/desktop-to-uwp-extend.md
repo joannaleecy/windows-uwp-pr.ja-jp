@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204738"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258393"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張
 
@@ -24,7 +24,7 @@ ms.locfileid: "4204738"
 多くの場合、デスクトップ アプリケーションから UWP API を直接呼び出すことができます。そのため、このガイドを確認する前に、「[Windows 10 のための拡張](desktop-to-uwp-enhance.md)」をご覧ください。
 
 >[!NOTE]
->このガイドは、デスクトップ ブリッジを使用してデスクトップ アプリケーションの Windows アプリ パッケージを作成済みであることを前提としています。 この作業をまだ行っていない場合は、「[デスクトップ ブリッジ](desktop-to-uwp-root.md)」をご覧ください。
+>このガイドでは、デスクトップ アプリケーションの Windows アプリ パッケージを作成したことを前提としています。 このまだ完了していない、[デスクトップ アプリケーションのパッケージ](desktop-to-uwp-root.md)を参照してください。
 
 準備ができたら始めましょう。
 
@@ -40,7 +40,7 @@ UWP プロジェクトとランタイム コンポーネントを 1 つ以上ソ
 
 ![開始プロジェクトを拡張する](images/desktop-to-uwp/extend-start-project.png)
 
-ソリューションにパッケージ プロジェクトが含まれていない場合、[Visual Studio を使ったアプリのパッケージ化に関するページ](desktop-to-uwp-packaging-dot-net.md)をご覧ください。
+ソリューションにパッケージ プロジェクトがない場合は、 [Visual Studio を使ってデスクトップ アプリケーションのパッケージ](desktop-to-uwp-packaging-dot-net.md)を参照してください。
 
 ### <a name="add-a-uwp-project"></a>UWP プロジェクトを追加する
 
@@ -83,6 +83,9 @@ UWP プロジェクトとランタイム コンポーネントで行うことが
 次の画像に、マップ コントロールを含む XAML ベースの最新の UI を表示している Windows フォーム アプリケーションを示しています。
 
 ![アダプティブ デザイン](images/desktop-to-uwp/extend-xaml-ui.png)
+
+>[!NOTE]
+>この例では、UWP プロジェクトをソリューションに追加することで、XAML UI を示しています。 デスクトップ アプリケーションでの XAML Ui の表示を安定したサポートされている方法です。 代わりに、この方法では、XAML 島を使用して、デスクトップ アプリケーションに直接 UWP XAML コントロールを追加します。 XAML 諸島現在利用可能な開発者プレビューとしてします。 それらプロトタイプ コードで今すぐ試すをお勧めしますがないことで使う運用コードこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟し、今後の Windows のリリースに安定します。 XAML 諸島について詳しくは、[デスクトップ アプリケーションで UWP コントロール](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)を参照してください。
 
 ### <a name="the-design-pattern"></a>設計パターン
 
@@ -245,7 +248,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ## <a name="provide-services-to-other-apps"></a>サービスを他のアプリに提供する
 
-他のアプリで利用できるサービスを追加します。 たとえば、アプリの背後でデータベースが実行されている場合に、そのデータベースへの制御されたアクセスを他のアプリに提供するサービスを追加できます。 バックグラウンド タスクを実装することで、デスクトップ アプリが実行されていない場合でも他のアプリからサービスにアクセスできます。
+他のアプリで利用できるサービスを追加します。 たとえば、アプリの背後でデータベースが実行されている場合に、そのデータベースへの制御されたアクセスを他のアプリに提供するサービスを追加できます。 バック グラウンド タスクを実装すると、アプリ サービスに到達可能、デスクトップ アプリケーションが実行されていない場合でもします。
 
 これを実行するサンプルを次に示します。
 
@@ -330,7 +333,7 @@ public sealed class AppServiceTask : IBackgroundTask
 
 ### <a name="test-the-app-service"></a>アプリ サービスをテストする
 
-別のアプリからサービスを呼び出すことにより、サービスをテストします。 このコードは、Windows フォーム アプリや別の UWP アプリなどのデスクトップ アプリケーションにすることができます。
+別のアプリからサービスを呼び出すことにより、サービスをテストします。 このコードは、Windows フォーム アプリケーションまたは別の UWP アプリなどのデスクトップ アプリケーションにすることができます。
 
 > [!NOTE]
 > このコードは、``AppServiceConnection`` クラスの ``PackageFamilyName`` プロパティを適切に設定した場合のみ動作します。 その名前を取得するには、UWP プロジェクトで ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` を呼び出します。 「[App Service の作成と利用](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)」をご覧ください。
@@ -376,7 +379,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 デスクトップ アプリケーションを共有ターゲットにすることで、共有をサポートしている他のアプリのデータ (画像など) をユーザーが簡単に共有できるようになります。
 
-たとえば、ユーザーは、Microsoft Edge やフォト アプリから画像を共有するためにアプリを選択できます。 そのような機能を備えた WPF サンプル アプリは次のとおりです。
+たとえば、ユーザーは、Microsoft Edge、フォト アプリから画像を共有するアプリケーションを選択できます。 そのような機能を WPF サンプル アプリケーションを以下に示します。
 
 ![共有ターゲット](images/desktop-to-uwp/share-target.png)
 
@@ -447,7 +450,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 
 バックグラウンド タスクを追加して、アプリが一時停止されているときでもコードを実行できます。 バックグラウンド タスクは、ユーザーの操作を必要としない小さなタスクに最適です。 たとえば、タスクはメールのダウンロード、受信チャット メッセージに関するトースト通知の表示、システムの状態の変化に対する対応を行うことができます。
 
-バックグラウンド タスクを登録する WPF サンプル アプリを以下に示します。
+バック グラウンド タスクを登録する WPF サンプル アプリケーションを以下に示します。
 
 ![バックグラウンド タスク](images/desktop-to-uwp/sample-background-task.png)
 

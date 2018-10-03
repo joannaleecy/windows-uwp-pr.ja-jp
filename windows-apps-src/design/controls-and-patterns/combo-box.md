@@ -5,7 +5,7 @@ title: コンボ ボックス (ドロップダウン リスト)
 label: Combo box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 05/19/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,17 +14,14 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f7592f584227d9b3a93a0ef4cea3ce53cd203ea
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 518ce49ddb631e3e914a6c7662b4e74de247c29c
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205020"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259741"
 ---
 # <a name="combo-box"></a>コンボ ボックス
-
-> [!IMPORTANT]
-> この記事では、まだリリースされていない機能について説明しています。この機能は、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
 
 ユーザーが選択できる項目の一覧を表示するのにには、コンボ ボックス (ドロップダウン リストとも呼ばれます) を使用します。 コンボ ボックスでは、コンパクトな状態で開始し、展開を選択できる項目の一覧を表示します。
 

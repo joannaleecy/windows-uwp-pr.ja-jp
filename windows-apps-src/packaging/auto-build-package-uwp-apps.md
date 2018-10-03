@@ -3,19 +3,19 @@ author: laurenhughes
 title: UWP アプリの自動ビルドを設定する
 description: サイドロード パッケージやストア パッケージを生成する自動ビルドを構成する方法について説明します。
 ms.author: lahugh
-ms.date: 03/30/2018
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 4354254e01333db17f1151c182267c0330a799ba
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832363"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261685"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>UWP アプリの自動ビルドを設定する
 
@@ -81,7 +81,7 @@ VSTS で最初のビルド定義を作成するには、[ビルド] タブに移
 
 #### <a name="configure-the-build-solution-build-task"></a>ソリューションのビルドのビルド タスクを構成する
 
-このタスクは、作業フォルダーにあるすべてのソリューションをバイナリにコンパイルし、出力 AppX ファイルを生成します。 このタスクでは、MSBuild の引数を使用します。  これらの引数の値を指定する必要があります。 次の表をガイドとして使用してください。 
+このタスクは、バイナリに作業フォルダー内では出力アプリ パッケージ ファイルを生成したすべてのソリューションをコンパイルします。 このタスクでは、MSBuild の引数を使用します。  これらの引数の値を指定する必要があります。 次の表をガイドとして使用してください。 
 
 |**MSBuild の引数**|**値**|**説明**|
 |--------------------|---------|---------------|
@@ -111,7 +111,7 @@ $() 構文で定義されたパラメーターは、ビルド定義で定義さ�
 
 ![成果物](images/building-screen6.png)
 
-ここでは、`UapAppxPackageBuildMode` プロパティを `StoreUpload` に設定しているため、成果物フォルダーには、ストアへの提出に推奨されるパッケージ (.appxupload) が含まれます。 また、通常のアプリ パッケージ (.appx) や アプリ バンドル (.appxbundle) もストアに提出できることに注意してください。 この資料の目的上、.appxupload ファイルを使います。
+ここでは、`UapAppxPackageBuildMode` プロパティを `StoreUpload` に設定しているため、成果物フォルダーには、ストアへの提出に推奨されるパッケージ (.appxupload) が含まれます。 提出できることも通常のアプリ パッケージ (.appx/.msix) またはアプリ バンドル (.appxbundle/.msixbundle) ストアに注意してください。 この資料の目的上、.appxupload ファイルを使います。
 
 
 >[!NOTE]
@@ -216,7 +216,7 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 その後、ビルド ステップから MSBuild の `AppxBundle` 引数を削除します。
 
 ## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>サイドロード用の継続的配置ビルドの設定
-この種類のビルドが完了したら、ユーザーは、ビルド結果ページの [成果物] セクションから .appxbundle ファイルをダウンロードできます。 より完全な配布を作成することでアプリのベータ テストを行う場合は、HockeyApp サービスを使用できます。 このサービスは、ベータ テスト、ユーザー分析、クラッシュ診断用の高度な機能を提供します。
+この種類のビルドが完了したら、ユーザーは、ビルド結果ページの [成果物] セクションから、アプリ バンドル ファイルをダウンロードできます。 より完全な配布を作成することでアプリのベータ テストを行う場合は、HockeyApp サービスを使用できます。 このサービスは、ベータ テスト、ユーザー分析、クラッシュ診断用の高度な機能を提供します。
 
 ### <a name="applying-version-numbers-to-your-builds"></a>ビルドにバージョン番号を適用する
 
@@ -256,9 +256,9 @@ CI_MyUWPApp_1.1.2501.0
 
 次に、HockeyApp の接続を構成します。手順については、[Visual Studio Team Services (VSTS) や Team Foundation Server (TFS) で HockeyApp を使用する方法に関するページ](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs)をご覧ください。 HockeyApp アカウントを設定するには、Microsoft アカウント、ソーシャル メディア アカウント、または電子メール アドレスのみを使用できます。 無料プランには、2 つのアプリ、1 人の所有者が含まれ、データ制限はありません。
 
-次に、手動で、つまり既存の appx パッケージ ファイルをアップロードすることで、HockeyApp アプリを作成できます。 詳しくは、[新しいアプリを作成する方法に関するページ](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)をご覧ください。  
+次に、手動で、または既存のアプリ パッケージ ファイルをアップロードすることで、HockeyApp アプリを作成できます。 詳しくは、[新しいアプリを作成する方法に関するページ](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)をご覧ください。  
 
-既存の appx パッケージ ファイルを使用するには、ビルド ステップを追加し、ビルド ステップのバイナリ ファイルのパスのパラメーターを設定します。 
+既存のアプリ パッケージ ファイルを使用して、ビルド ステップを追加し、ビルド ステップのバイナリ ファイルのパスのパラメーターを設定します。 
 
 ![HockeyApp を構成する](images/building-screen15.png) 
 
@@ -268,7 +268,7 @@ CI_MyUWPApp_1.1.2501.0
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
-HockeyApp タスクでは、シンボル ファイルへのパスを指定することはできますが、バンドルと共にシンボル (appxsymファイル) を含めることをお勧めします。
+HockeyApp タスクには、シンボル ファイルへのパスを指定することができますが、お、バンドルと共にシンボルを含めることをお勧めします。
 
 ## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>Microsoft Store にパッケージを提出する継続的配置ビルドを設定する 
 
@@ -286,7 +286,7 @@ HockeyApp タスクでは、シンボル ファイルへのパスを指定する
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-これにより、ストアに提出できる .appxupload ファイルが生成されます。
+これにより、ストアに提出できるファイルのアップロードが生成されます。
 
 
 #### <a name="configure-automatic-store-submission"></a>Microsoft Store への自動提出を構成する
@@ -295,7 +295,7 @@ Visual Studio Team Services の Microsoft Store 用の拡張機能を使用し�
 
 Azure Active Directory (AD) を使用してデベロッパー センター アカウントを接続し、AD で要求を認証するアプリを作成する必要があります。 これを実行するには、拡張機能のページのガイダンスに従います。 
 
-拡張機能を構成した後、ビルド タスクを追加し、アプリの ID と .appxupload ファイルの場所を使ってビルド タスクを構成できます。
+拡張機能を構成した後は、ビルド タスクを追加し、アプリの ID とアップロード ファイルの場所を使用して構成します。
 
 ![デベロッパー センターを構成する](images/building-screen17.png) 
 
@@ -316,17 +316,17 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 ストアに公開せずに、アプリを配布する場合は、直接デバイスにアプリをサイドロードできます。ただし、それらのデバイスは、アプリ パッケージの署名に使用された証明書を信頼している必要があります。 
 
-`Add-AppDevPackage.ps1` PowerShell スクリプトを使用してアプリをインストールします。 このスクリプトは、ローカル コンピューターの信頼されたルート証明書セクションに証明書を追加し、appx ファイルをインストールまたは更新します。
+`Add-AppDevPackage.ps1` PowerShell スクリプトを使用してアプリをインストールします。 このスクリプトは、証明書を追加して、ローカル コンピューターの信頼されたルート証明セクションにをインストールするかアプリのパッケージ ファイルを更新します。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Windows 10 Anniversary Update でのアプリのサイドロード
-Windows 10 Anniversary Update では、appxbundle ファイルをダブルクリックし、ダイアログ ボックスで [インストール] ボタンを選択してアプリをインストールできます。 
+Windows 10 Anniversary update では、アプリのパッケージ ファイルをダブルクリックし] ダイアログ ボックスで [インストール] ボタンを選択してアプリをインストールできます。 
 
 ![rs1 でのサイドロード](images/building-screen18.png) 
 
 >[!NOTE]
 > この方法では、証明書や関連付けられている依存関係はインストールされません。
 
-VSTS や HockeyApp などの Web サイトから appx パッケージを配布する場合は、お使いのブラウザーで信頼済みサイトの一覧にそのサイトを追加する必要があります。 そうしないと、Windows は、ファイルがロックされているものとしてマークします。 
+VSTS や HockeyApp などの web サイトから Windows アプリ パッケージを配布する場合は、そのサイトをブラウザーで信頼済みサイトの一覧に追加する必要があります。 そうしないと、Windows は、ファイルがロックされているものとしてマークします。 
 
 <span id="certificates-best-practices"/>
 
@@ -373,7 +373,7 @@ Visual Studio と MSBuild は、アプリの署名に使う証明書を管理す
 証明書を登録する最もすばやい方法は、.cer ファイルをダブルクリックし、ウィザードの手順に従って、**ローカル コンピューター**の**信頼されたユーザー** ストアに証明書を保存することです。
 
 ## <a name="related-topics"></a>関連トピック
-* [Windows 用の .NET アプリを構築する](https://www.visualstudio.com/docs/build/get-started/dot-net) 
+* [Windows 用の .NETアプリを構築する](https://www.visualstudio.com/docs/build/get-started/dot-net) 
 * [UWP アプリのパッケージ化](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
 * [Windows 10 での LOB アプリのサイドローディング](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
 * [パッケージ署名用の証明書を作成する](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

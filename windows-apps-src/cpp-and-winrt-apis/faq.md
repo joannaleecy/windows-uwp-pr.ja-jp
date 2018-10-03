@@ -9,18 +9,36 @@ ms.prod: windows
 ms.technology: uwp
 keywords: wwindows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 頻繁, 質問, 質問, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 9316a29a50970bdaa288a4744f3aab7d873cbe4e
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: eb4b7b78bf3ef0a561d102804a245c59b6519796
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206920"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264357"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) についてよく寄せられる質問
 C++/WinRT での Windows ランタイム API の作成と使用に関する質問への回答です。
 
 > [!NOTE]
 > 質問の内容が、表示されたエラー メッセージに関するものである場合は、「[C++/WinRT に関する問題のトラブルシューティング](troubleshooting.md)」のトピックも参照してください。
+
+## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>どの行う I 対象 my C + + 以降のバージョンの Windows SDK に WinRT プロジェクトかどうか。
+
+Windows SDK の最新の一般公開バージョンは、10.0.17763.0 (Windows 10、バージョン 1809) です。 最小限のコンパイラとリンカーの問題が発生する可能性があるプロジェクトの再ターゲットのメソッドは、最も労力が必要もあります。 (任意の Windows SDK バージョンをターゲットと)、新しいプロジェクトを作成して、古いからは経由で新しいプロジェクトのファイルをコピーし、そのメソッドが含まれます。 古いのセクションがあります`.vcxproj`と`.vcxproj.filters`すればファイルのコピーで Visual Studio でファイルを追加することができます。
+
+ただし、Visual Studio でプロジェクトのターゲットを変更する他の 2 つの方法はあります。
+
+- **一般的な**プロパティをプロジェクトに移動する \> **Windows SDK のバージョン**と選択の**すべての構成**と**すべてのプラットフォーム**です。 バージョンをターゲットにするには、 **Windows SDK バージョン**を設定します。
+- **ソリューション エクスプ ローラー**でプロジェクト ノードを右クリックして、**プロジェクトの再ターゲット**] をクリックを対象とするバージョンを選択し、 **[ok]** をクリックします。
+
+これら 2 つの方法のいずれかを使用した後、コンパイラやリンカーのエラーが発生するかどうかは、ソリューションをクリーンアップしてみてください (**ビルド** > **クリーンなソリューション**や、すべての一時フォルダーとファイルを手動で削除) もう一度ビルドを試みる前にします。
+
+C++ コンパイラーが場合"*エラー C2039: 'IUnknown': のメンバーでない '\'global 名前空間'*"、追加し、`#include <unknwn.h>`の先頭に、`pch.h`ファイル。
+
+追加する必要があります`#include <hstring.h>`後です。
+
+C++ リンカーを生成する場合"*エラー lnk 2019: 外部シンボルは未解決_WINRT_CanUnloadNow@0関数で参照されている_VSDesignerCanUnloadNow@0*"を追加することで解決できます`#define _VSDESIGNER_DONT_LOAD_AS_DLL`を`pch.h`ファイル。
+
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>新しいプロジェクトがコンパイルされません。 Visual Studio 2017 を使用している (バージョン 15.8.0 以上)、および SDK バージョン 17134
 

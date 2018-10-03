@@ -1,23 +1,23 @@
 ---
 author: normesta
-Description: Share code between a desktop app and a UWP app
+Description: Share code between a desktop application and a UWP app
 Search.Product: eADQiWindows 10XVcnh
-title: デスクトップ アプリと UWP アプリでコードを共有する
+title: デスクトップ アプリケーションと UWP アプリの間でコードを共有します。
 ms.author: normesta
 ms.date: 10/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e0931440977c33642a3154cfa1b0adca42032df0
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: ca5b722ea97202d57f05613bec88ae6bee1db5f2
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018628"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260111"
 ---
-# <a name="share-code-between-a-desktop-app-and-a-uwp-app"></a>デスクトップ アプリと UWP アプリでコードを共有する
+# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>デスクトップ アプリケーションと UWP アプリの間でコードを共有します。
 
 お持ちのコードを .NET Standard ライブラリに移行し、ユニバーサル Windows プラットフォーム (UWP) アプリを作成すると、すべての Windows 10 デバイスをターゲットにすることができます。 デスクトップ アプリケーションを UWP アプリに変換できるツールはありませんが、多くの既存コードを再利用できるため、UWP アプリの作成コストを削減できます。 このガイドでは、その方法を示しています。
 
@@ -67,7 +67,7 @@ ms.locfileid: "2018628"
 
 ### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>例: .NET Standard 2.0 ライブラリにデータ アクセス コードを移行する
 
-Northwind のサンプル データベースに含まれる顧客を表示する基本的な Windows フォーム アプリがあると仮定します。
+Northwind サンプル データベースから顧客を表示する非常に基本的な Windows フォーム アプリケーションがあると仮定します。
 
 ![Windows フォーム アプリ](images/desktop-to-uwp/win-forms-app.png)
 

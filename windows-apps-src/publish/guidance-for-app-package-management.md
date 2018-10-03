@@ -4,18 +4,18 @@ Description: Learn how your app's packages are made available to your customers,
 title: アプリ パッケージ管理のガイダンス
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b0b6315b1177138c3ede7834e2dbc792ee106dd
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: a43f3b4c5684d93ea6986c4d1f1e4dae46c1a959
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205142"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266197"
 ---
 # <a name="guidance-for-app-package-management"></a>アプリ パッケージ管理のガイダンス
 
@@ -110,30 +110,11 @@ ms.locfileid: "4205142"
 
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>以前に公開したアプリに Windows 10 用のパッケージを追加する
 
-ストアに Windows 8.x や Windows Phone 8.x を対象とするアプリがあり、Windows 10 用にアプリを更新する場合、「[パッケージ](upload-app-packages.md)」の手順で、新しい申請を作成し、UWP の .appxupload パッケージを追加します。 アプリが認定プロセスを通過した後既にアプリを持っていて、Windows 10 ではお客様は UWP パッケージをストアから更新プログラムとして取得します。 この UWP パッケージは、Windows 10 のユーザーが新規の取得として利用することもできます。
+For Windows パッケージしか含まれているストアにアプリがあるかどうかは 8.x や Windows Phone 8.x する Windows 10 向けにアプリを更新し、新しい申請を作成し、[パッケージ](upload-app-packages.md)手順中に、UWP .msixupload または .appxupload パッケージを追加します。 アプリが認定プロセスを通過した後、UWP パッケージは Windows 10 のユーザーが新規取得用に利用可能なあります。
 
 > [!NOTE]
 > Windows 10 のユーザーが UWP パッケージを入手した場合、以前の OS バージョン用のパッケージを使うようにそのユーザーをロールバックすることはできません。 
 
-Windows 10 パッケージのバージョン番号は、含めている Windows 8、Windows 8.1、Windows Phone 8.1 のパッケージ (または以前に公開したこれらの OS バージョン用のパッケージ) のバージョン番号より大きくする必要があることに注意してください。 詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。
+使用した Windows 8 や Windows 8.1、Windows Phone 8.1 のパッケージよりも高い Windows 10 パッケージのバージョン番号である必要がありますに注意してください。 詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。
 
 Microsoft Store 用の UWP アプリのパッケージ化について詳しくは、「[アプリのパッケージ化](../packaging/index.md)」をご覧ください。
-
-> [!IMPORTANT]
-> ユニバーサル デバイス ファミリをターゲットとするパッケージを提供する場合は、以前のオペレーティング システム (Windows Phone 8、Windows 8.1 など) で既にアプリを入手していたユーザーが Windows 10 にアップグレードすると、そのユーザーは Windows 10 パッケージを使うように更新されることに注意してください。
-> 
-> これが発生以降に提出の[デバイス ファミリの利用可否](device-family-availability.md)手順で特定のデバイス ファミリを除外している場合でもセクションは、新規の利用者にのみ適用されます。 以前のすべてのユーザーに新しいユニバーサル Windows 10 パッケージを取得させることを避けたい場合は、サポート対象の特定のデバイス ファミリのみを含めるように appx マニフェストの [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 要素を更新する必要があります。
-> 
-> たとえば、Windows 8 と Windows 8.1 のお客様が、新しい UWP アプリを取得するのには、Windows 10 デスクトップ デバイスにアップグレードするしたい場合は以前の場合、パッケージのままに Windows 10 Mobile デバイスのようになりました availabl Windows Phone ユーザーe (Windows Phone 8 または Windows Phone 8.1 をターゲットと)。 これを行う必要があります (デスクトップ デバイス ファミリ用)、 **Windows.Desktop**を含める appx マニフェスト[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)を更新する**Windows.Universal**値 (ユニバーサル デバイス ファミリ用) としてそのままではなくMicrosoft Visual Studio で既定では、マニフェストに含まれています。 ユニバーサル デバイス ファミリまたはモバイル デバイス ファミリ (**Windows.Universal** または **Windows.Universal**) のどちらかを対象にした UWP パッケージは申請しないでください。 この場合、Windows 10 Mobile のユーザーが UWP パッケージを取得することはなくなります。
-
-
-## <a name="maintaining-package-compatibility-for-windows-phone-81"></a>Windows Phone 8.1 に対するパッケージの互換性を維持する
-
-Windows Phone 8.1 用に以前公開されていたアプリを更新する場合、パッケージの種類に関する特定の要件が適用されます。
-
--   アプリに公開済みの Windows Phone 8.1 パッケージがある場合、それ以降のすべての更新にも Windows Phone 8.1 パッケージを含める必要があります。
--   アプリに公開済みの Windows Phone 8.1 XAP がある場合、それ以降の更新には Windows Phone 8.1 XAP、Windows Phone 8.1 appx、Windows Phone 8.1 appxbundle のいずれかが含まれている必要があります。
--   アプリに公開済みの Windows Phone 8.1 .appx がある場合、それ以降の更新には Windows Phone 8.1 .appx または Windows Phone 8.1 .appxbundle が含まれている必要があります。 つまり、Windows Phone 8.1 XAP は認められません。 これは、Windows Phone 8.1 .appx を含む .appxupload にも適用されます。
--   アプリに公開済みの Windows Phone 8.1 .appxbundle がある場合、それ以降の更新にも Windows Phone 8.1 .appxbundle を含める必要があります。 つまり、Windows Phone 8.1 XAP または Windows Phone 8.1 .appx は認められません。 これは、Windows Phone 8.1 .appxbundle を含む .appxupload にも適用されます。
-
-これらの規則に従わない場合、パッケージのアップロード エラーとなり申請を完了できません。

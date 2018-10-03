@@ -3,19 +3,19 @@ author: laurenhughes
 title: MakeAppx.exe ツールを使ったアプリ パッケージの作成
 description: MakeAppx.exe は、アプリ パッケージとバンドルからのファイルの作成、暗号化、暗号化解除、抽出を行います。
 ms.author: lahugh
-ms.date: 03/07/2017
+ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, パッケージ化
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
-ms.openlocfilehash: 94972915e5fc80a477d8d647212ab3b91e0aa384
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: dbde8f2f11276ded6ad0994a1cd52f7f12de229e
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817793"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264327"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>MakeAppx.exe ツールを使ったアプリ パッケージの作成
 
@@ -25,10 +25,12 @@ ms.locfileid: "1817793"
 > [!IMPORTANT] 
 > Visual Studio を使用してアプリを開発する場合は、Visual Studio のウィザードを使ってアプリ パッケージを作成することをお勧めします。 詳しくは、「[Visual Studio での UWP アプリのパッケージ化](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)」をご覧ください。
 
-**MakeAppx.exe** では .appxupload ファイルを作成できないことに注意してください。 .appxupload ファイルは、Visual Studio のパッケージ化プロセスの一環として作成され、.appx と .appxsym という他の 2 つのファイルが含まれます。 .appxsym ファイルは、アプリのパブリック シンボルが格納された圧縮 .pdb ファイルです。これらのパブリック シンボルは、Windows デベロッパー センターでの[クラッシュ分析](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)に使われます。 通常の .appx ファイルもストアに提出できますが、クラッシュ分析やデバッグ情報を行うことはできません。 ストアにパッケージを提出する方法について詳しくは、「[アプリ パッケージのアップロード](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)」をご覧ください。 
+**MakeAppx.exe** では .appxupload ファイルを作成できないことに注意してください。 .Appxupload ファイルは、Visual Studio のパッケージ化プロセスの一部として作成され、他の 2 つのファイルが含まれています: .msix または .appx と .appxsym というします。 .appxsym ファイルは、アプリのパブリック シンボルが格納された圧縮 .pdb ファイルです。これらのパブリック シンボルは、Windows デベロッパー センターでの[クラッシュ分析](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)に使われます。 通常の .appx ファイルもストアに提出できますが、クラッシュ分析やデバッグ情報を行うことはできません。 ストアにパッケージを提出する方法について詳しくは、「[アプリ パッケージのアップロード](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)」をご覧ください。 
+
+ 最新バージョンの Windows 10 では、このツールの更新プログラムは、.appx パッケージの使用法には影響しません。 引き続き .appx パッケージでは、このツールを使用したり、以下のように .msix パッケージのサポート ツールを使用できます。
 
 .appxupload ファイルを手動で作成するには:
-- .appx と .appxsym を 1 つのフォルダーに格納する
+- フォルダーで、.msix と .appxsym を配置します。
 - ファイルが入ったフォルダーを zip 圧縮する
 - zip 圧縮したフォルダーの拡張指名を .zip から .appxupload に変更する
 
@@ -58,7 +60,6 @@ MakeAppx <command> [options]
 | unbundle      | 指定された出力パスの下に、バンドルの完全な名前に基づく名前のサブディレクトリを作成し、すべてのパッケージをそのディレクトリにアンパックします。 |
 | encrypt       | 入力パッケージ/バンドルから、暗号化されたアプリ パッケージやバンドルを作成し、指定された出力パッケージ/バンドルとして保存します。 |
 | decrypt       | 入力アプリ パッケージ/バンドルから、暗号化解除されたアプリ パッケージやバンドルを作成し、指定された出力パッケージ/バンドルとして保存します。 |
-| ビルド         |  |
 
 
 このオプションの一覧は、すべてのコマンドに適用されます。
@@ -81,14 +82,14 @@ MakeAppx <command> [options]
 
 | **引数**                          | **説明**                       |
 |---------------------------------------|---------------------------------------|
-| &lt;出力パッケージの名前&gt;           | 作成されるパッケージの名前。 ファイル名の末尾に .appx が追加された名前です。 |
-| &lt;暗号化された出力パッケージの名前&gt; | 作成される暗号化されたパッケージの名前。 ファイル名の末尾に .eappx が追加された名前です。 |
-| &lt;入力パッケージ名&gt;            | パッケージの名前。 ファイル名の末尾に .appx が追加された名前です。 |
-| &lt;暗号化された入力パッケージ名&gt;  | 暗号化されたパッケージの名前。 ファイル名の末尾に .eappx が追加された名前です。 |
-| &lt;出力バンドル名&gt;            | 作成されるバンドルの名前。 ファイル名の末尾に .appxbundle が追加された名前です。 |
-| &lt;暗号化された出力バンドル名&gt;  | 作成される暗号化されたバンドルの名前。 ファイル名の末尾に .eappxbundle が追加された名前です。 |
-| &lt;入力バンドル名&gt;             | バンドルの名前。 ファイル名の末尾に .appxbundle が追加された名前です。 |
-| &lt;暗号化された入力バンドル名&gt;   | 暗号化されたバンドルの名前です。 ファイル名の末尾に .eappxbundle が追加された名前です。 |
+| &lt;出力パッケージの名前&gt;           | 作成されるパッケージの名前。 これは、末尾に .msix または .appx ファイル名です。 |
+| &lt;暗号化された出力パッケージの名前&gt; | 作成される暗号化されたパッケージの名前。 これは、末尾に .emsix または .eappx ファイル名です。 |
+| &lt;入力パッケージ名&gt;            | パッケージの名前。 これは、末尾に .msix または .appx ファイル名です。 |
+| &lt;暗号化された入力パッケージ名&gt;  | 暗号化されたパッケージの名前。 これは、末尾に .emsix または .eappx ファイル名です。 |
+| &lt;出力バンドル名&gt;            | 作成されるバンドルの名前。 これは、末尾に .msixbundle または .appxbundle ファイル名です。 |
+| &lt;暗号化された出力バンドル名&gt;  | 作成される暗号化されたバンドルの名前。 これは、末尾に .emsixbundle または .eappxbundle ファイル名です。 |
+| &lt;入力バンドル名&gt;             | バンドルの名前。 これは、末尾に .msixbundle または .appxbundle ファイル名です。 |
+| &lt;暗号化された入力バンドル名&gt;   | 暗号化されたバンドルの名前です。 これは、末尾に .emsixbundle または .eappxbundle ファイル名です。 |
 | &lt;コンテンツ ディレクトリ&gt;             | アプリ パッケージまたはバンドルのコンテンツのパス。 |
 | &lt;マッピング ファイル&gt;                  | パッケージのソースとターゲットを指定するファイル名。 |
 | &lt;出力ディレクトリ&gt;              | 出力パッケージとバンドルのディレクトリへのパス。 |
@@ -98,7 +99,7 @@ MakeAppx <command> [options]
 
 ### <a name="create-an-app-package"></a>アプリ パッケージを作成する
 
-アプリ パッケージは、.appx パッケージ ファイルにパッケージ化されたアプリ ファイルの完全なセットです。 **pack** コマンドを使ってアプリ パッケージを作成するには、パッケージの保存場所としてコンテンツ ディレクトリまたはマッピング ファイルを指定する必要があります。 また作成時にパッケージを暗号化することもできます。 パッケージを暗号化する場合は、/ep を使って、キー ファイル (/kf) とグローバル テスト キー (/kt) のいずれを使うかを指定する必要があります。 暗号化されたパッケージを作成する方法について詳しくは、「[パッケージまたはバンドルを暗号化または暗号化解除する](#encrypt-or-decrypt-a-package-or-bundle)」をご覧ください。
+アプリ パッケージは、.msix または .appx パッケージ ファイルにパッケージ化されたアプリのファイルの完全なセットです。 **pack** コマンドを使ってアプリ パッケージを作成するには、パッケージの保存場所としてコンテンツ ディレクトリまたはマッピング ファイルを指定する必要があります。 また作成時にパッケージを暗号化することもできます。 パッケージを暗号化する場合は、/ep を使って、キー ファイル (/kf) とグローバル テスト キー (/kt) のいずれを使うかを指定する必要があります。 暗号化されたパッケージを作成する方法について詳しくは、「[パッケージまたはバンドルを暗号化または暗号化解除する](#encrypt-or-decrypt-a-package-or-bundle)」をご覧ください。
 
 **pack** コマンドに固有のオプション:
 
@@ -125,12 +126,12 @@ MakeAppx pack [options] /d <content directory> /ep <encrypted output package nam
 以下では、**pack** コマンドのコマンド ラインの例を示します。
 
 ``` examples
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /p MyPackage.appx
-MakeAppx pack /v /o /f MyMapping.txt /p MyPackage.appx
-MakeAppx pack /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p AppPackage.appx
-MakeAppx pack /r /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p ResourcePackage.appx
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kf MyKeyFile.txt
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kt
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /p MyPackage.msix
+MakeAppx pack /v /o /f MyMapping.txt /p MyPackage.msix
+MakeAppx pack /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p AppPackage.msix
+MakeAppx pack /r /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p ResourcePackage.msix
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kf MyKeyFile.txt
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kt
 ```
 
 ### <a name="create-an-app-bundle"></a>アプリ バンドルを作成する
@@ -157,10 +158,10 @@ MakeAppx bundle [options] /f <mapping file> /ep <encrypted output bundle name> /
 以下のブロックでは、**bundle** コマンドの例を示します。
 
 ``` examples
-MakeAppx bundle /v /d "C:\My Files" /p MyBundle.appxbundle
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /p MyBundle.appxbundle
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /kf MyKeyFile.txt
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /kt
+MakeAppx bundle /v /d "C:\My Files" /p MyBundle.msixbundle
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /p MyBundle.msixbundle
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /kf MyKeyFile.txt
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /kt
 ```
 
 ### <a name="extract-files-from-a-package-or-bundle"></a>パッケージまたはバンドルからファイルを抽出する
@@ -189,13 +190,13 @@ MakeAppx unbundle [options] /ep <encrypted input bundle name> /d <output directo
 以下のブロックでは、**unpack** コマンドと **unbundle** コマンドの使用例を示します。
 
 ``` examples
-MakeAppx unpack /v /p MyPackage.appx /d "C:\My Files"
-MakeAppx unpack /v /ep MyPackage.eappx /d "C:\My Files" /kf MyKeyFile.txt
-MakeAppx unpack /v /ep MyPackage.eappx /d "C:\My Files" /kt
+MakeAppx unpack /v /p MyPackage.msix /d "C:\My Files"
+MakeAppx unpack /v /ep MyPackage.emsix /d "C:\My Files" /kf MyKeyFile.txt
+MakeAppx unpack /v /ep MyPackage.emsix /d "C:\My Files" /kt
 
-MakeAppx unbundle /v /p MyBundle.appxbundle /d "C:\My Files"
-MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kf MyKeyFile.txt
-MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kt
+MakeAppx unbundle /v /p MyBundle.msixbundle /d "C:\My Files"
+MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kf MyKeyFile.txt
+MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 ```
 
 ### <a name="encrypt-or-decrypt-a-package-or-bundle"></a>パッケージまたはバンドルを暗号化または暗号化解除する
@@ -223,28 +224,12 @@ MakeAppx decrypt [options] /ep <package name> /p <output package name> /kt
 以下のブロックでは、**encrypt** コマンドと **decrypt** コマンドの使用例を示します。
 
 ``` examples
-MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
-MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
+MakeAppx.exe encrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kt
+MakeAppx.exe encrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile.txt
 
-MakeAppx.exe decrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
-MakeAppx.exe decrypt p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
+MakeAppx.exe decrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kt
+MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile.txt
 ```
-
-### <a name="build-an-app-package"></a>アプリ パッケージをビルドする 
-
-**MakeAppx.exe** は、アプリ パッケージ レイアウト ファイルに基づいてアプリをビルドできます。 パッケージ レイアウト ファイルを作成する方法と **MakeAppx.exe** を使ってビルドする方法については、「[パッケージ レイアウトを使ったパッケージの作成](packaging-layout.md)」をご覧ください。  
-
-**build** コマンドに固有のオプション:
-
-| **オプション**    | **説明**                       |
-|---------------|---------------------------------------|
-| /bc           | ビルドするパッケージ ファミリでサブパッケージを指定します。  |
-| /id           | パッケージ **ID** 属性に基づいてビルドするパッケージを選択するために使います。 |
-| /ip           | 以前のバージョンのアプリ パッケージの場所を示します。 |
-| /iv           | ビルドするパッケージのバージョンを自動的に増分します。 |
-| /f            | パッケージ レイアウト ファイルを指定します。 |
-| /nbp          | アプリ パッケージをビルドしないことを指定します。 |
-| /op           | 出力パッケージの移動先。 |
 
 ## <a name="key-files"></a>キー ファイル
 

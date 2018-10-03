@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
-ms.openlocfilehash: 0afc2c55ab0d0bdd2bee0206f986b2724d331eaf
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: a2923834fd968114a4ed607de214763fb2575697
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211414"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261905"
 ---
 # <a name="page-transitions"></a>ページ切り替え効果
 
@@ -55,6 +55,20 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 ```csharp
 // Play the drill in animation
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
+```
+
+## <a name="horizontal-slide"></a>水平方向のスライド
+
+水平方向のスライドを使用して、兄弟のページに並べて表示されることを示します。 [NavigationView](../controls-and-patterns/navigationview.md)コントロールは自動的に、上部のナビゲーションのこのアニメーションを使用が水平方向のナビゲーション エクスペリエンスを構築する場合する実装できます SlideNavigationTransitionInfo と水平方向にスライドします。
+
+持てるでは、ユーザーが互いの横にあるページ間で移動することです。 
+
+```csharp
+// Navigate to the right, ie. from LeftPage to RightPage
+myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromRight } );
+
+// Navigate to the left, ie. from RightPage to LeftPage
+myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromLeft } );
 ```
 
 ## <a name="suppress"></a>抑制

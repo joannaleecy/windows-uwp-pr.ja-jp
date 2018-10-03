@@ -5,6 +5,7 @@ title: ツリー ビュー
 label: Tree view
 template: detail.hbs
 ms.author: jimwalk
+ms.date: 10/02/2018
 ms.localizationpriority: medium
 pm-contact: predavid
 design-contact: ksulliv
@@ -13,17 +14,14 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 20de58d13c4ace6b71ec952dc88cd59d1ab6114f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 36b81cf07b92760235a18f4474a14b7b55e0a7be
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212646"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259865"
 ---
 # <a name="treeview"></a>TreeView
-
-> [!IMPORTANT]
-> この記事では、まだリリースされていない機能について説明しています。この機能は、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。 プレビュー機能[最新の Windows 10 Insider Preview ビルドと SDK](https://insider.windows.com/for-developers/)または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)が必要です。
 
 XAML TreeView コントロールを使用すると、階層リストが有効になり、入れ子になった項目を含むノードを展開したり、折りたたんだりすることができるようになります。 フォルダー構造や入れ子になった関係を UI で視覚的に示すために使用できます。
 
@@ -341,9 +339,9 @@ End Sub
 
 **[TreeViewItemInvokedEventArgs](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs) クラス**
 
-ItemInvoked イベント引数により、呼び出された項目にアクセスできます。 [InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) プロパティには呼び出されたノードが含まれています。 これを TreeViewNode にキャストし、データ項目を TreeViewNode.Content プロパティから取得できます。
+ItemInvoked イベント引数は、呼び出された項目にアクセスを提供します。 [InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) プロパティには呼び出されたノードが含まれています。 これを TreeViewNode にキャストし、データ項目を TreeViewNode.Content プロパティから取得できます。
 
-ItemInvoked イベント ハンドラーの例を次に示します。 データ項目は [IStorageItem](/uwp/api/windows.storage.istorageitem) です。この例では、ファイルおよびツリーについての情報だけが表示されます。 また、ノードがフォルダー ノードの場合は、ノードを同時に展開または折りたたみます。 それ以外の場合、ノードは山形マークをクリックした場合にのみ展開または折りたたまれます。
+ItemInvoked イベント ハンドラーの例を次に示します。 データ項目は [IStorageItem](/uwp/api/windows.storage.istorageitem) です。この例では、ファイルおよびツリーについての情報だけが表示されます。 ノードがフォルダー ノードの場合、展開またはノードを同時に折りたたまれます。 それ以外の場合、ノードは山形マークをクリックした場合にのみ展開または折りたたまれます。
 
 ```csharp
 private void SampleTreeView_ItemInvoked(TreeView sender, TreeViewItemInvokedEventArgs args)
@@ -382,7 +380,13 @@ End Sub
 
 TreeView コントロールでは、単一選択と複数選択の両方がサポートされています。 既定では、ノードの選択はオフになっていますが、[TreeView.SelectionMode](/uwp/api/windows.ui.xaml.controls.treeview.selectionmode) プロパティを設定してノードの選択を許可することができます。 [TreeViewSelectionMode](/uwp/api/windows.ui.xaml.controls.treeviewselectionmode) 値は **None**、**Single**、および **Multiple** です。
 
-選択を有効にすると、各ツリー ビュー ノードの横にあるチェック ボックスが表示され、選択した項目が強調表示されます。 ユーザーは、チェック ボックスを使用して項目を選択または選択解除できます。項目は引き続きクリックして呼び出すことができます。
+#### <a name="multiple-selection"></a>複数選択
+
+複数選択を有効にすると、各ツリー ビュー ノードの横にあるチェック ボックスが表示し、選択した項目が強調表示されています。 ユーザーは、チェック ボックスを使用して項目を選択または選択解除できます。項目は引き続きクリックして呼び出すことができます。
+
+選択、または親ノードを選択解除がオンまたはそのノードの下のすべての子の選択を解除します。 全部ではない場合は、いくつかが選択されている親ノードの下の子、親ノードのチェック ボックスが表示される、不確定 (黒のボックスに入力されます)。
+
+![ツリー ビューでの複数選択](images/treeview-selection.png)
 
 選択、または親ノードを選択解除がオンまたはそのノードの下のすべての子の選択を解除します。 全部ではない場合は、いくつかが選択されている親ノードの下の子、親ノードのチェック ボックスが表示される、不確定 (黒のボックスに入力されます)。
 

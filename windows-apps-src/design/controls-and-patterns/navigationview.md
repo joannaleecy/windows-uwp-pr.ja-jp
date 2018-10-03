@@ -15,11 +15,11 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c75169f118e2c8ef575fa251a7badc8cfe44247
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205650"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261659"
 ---
 # <a name="navigation-view-preview-version"></a>ナビゲーション ビュー (プレビュー版)
 
@@ -61,10 +61,11 @@ NavigationView は、適しているアダプティブ ナビゲーション コ
 
 :::row:::
     :::column:::
-        ![一部の画像](images/XAML-controls-gallery-app-icon.png)
+        ![Some image](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
-    :::column span =「2」::: **XAML コントロール ギャラリー**<br>
-        XAML コントロール ギャラリー アプリをインストールした場合は、クリックして<a href="xamlcontrolsgallery:/item/NavigationView">ここで</a>アプリを開き、NavigationView の操作を参照してください。
+    :::column span="2":::
+        **XAML Controls Gallery**<br>
+        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/NavigationView">here</a> to open the app and see NavigationView in action.
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
@@ -77,11 +78,11 @@ NavigationView は、経由で、さまざまな表示モードを設定でき�
 
 :::row:::
     :::column:::
-    ### Left
-    Displays an expanded left positioned pane.
+    ### <a name="left"></a>Left
+    展開された左側の位置付けで、ウィンドウが表示されます。
     :::column-end:::
     :::column span="2":::
-    ![left nav pane expanded](images/displaymode-left.png)
+    ![左側のナビゲーション ウィンドウの展開](images/displaymode-left.png)
     :::column-end:::
 :::row-end:::
 
@@ -92,11 +93,11 @@ NavigationView は、経由で、さまざまな表示モードを設定でき�
 
 :::row:::
     :::column:::
-    ### Top
-    Displays a top positioned pane.
+    ### <a name="top"></a>Top
+    ウィンドウの上部に表示に配置されます。
     :::column-end:::
     :::column span="2":::
-    ![top navigation](images/displaymode-top.png)
+    ![上部のナビゲーション](images/displaymode-top.png)
     :::column-end:::
 :::row-end:::
 
@@ -109,21 +110,21 @@ NavigationView は、経由で、さまざまな表示モードを設定でき�
 
 :::row:::
     :::column:::
-    ### LeftCompact
-    Displays a thin sliver with icons on the left.
+    ### <a name="leftcompact"></a>LeftCompact
+    左側のアイコンを含むシン小片が表示されます。
     :::column-end:::
     :::column span="2":::
-    ![nav pane compact](images/displaymode-leftcompact.png)
+    ![コンパクトなナビゲーション ウィンドウ](images/displaymode-leftcompact.png)
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-    ### LeftMinimal
-    Displays only the menu button.
+    ### <a name="leftminimal"></a>LeftMinimal
+    メニュー ボタンのみが表示されます。
     :::column-end:::
     :::column span="2":::
-    ![nav pane minimal](images/displaymode-leftminimal.png)
+    ![ナビゲーション ウィンドウを最小限に抑えながら](images/displaymode-leftminimal.png)
     :::column-end:::
 :::row-end:::
 

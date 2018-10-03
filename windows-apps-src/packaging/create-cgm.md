@@ -4,17 +4,18 @@ ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
 title: ソース コンテンツ グループ マップの作成と変換
 description: ユニバーサル Windows プラットフォーム (UWP) アプリを UWP アプリ ストリーミング インストールに対応させるには、コンテンツ グループ マップを作成する必要があります。 この記事では、コンテンツ グループ マップの作成と変換に関する詳細情報と、それに伴うヒントやコツを示します。
 ms.author: lahugh
-ms.date: 4/05/2017
+ms.date: 9/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, コンテンツ グループ マップ, ストリーミング インストール, UWP アプリ ストリーミング インストール, ソース コンテンツ グループ マップ
-ms.openlocfilehash: d27869f349d7ee813c1418cd0d02f82ada05e155
-ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.localizationpriority: medium
+ms.openlocfilehash: 4ce32958d5a99dc9f3f772d6272450a4f2b0f81b
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2017
-ms.locfileid: "617265"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258701"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>ソース コンテンツ グループ マップの作成と変換
 
@@ -26,7 +27,7 @@ ms.locfileid: "617265"
 
 UWP アプリ ストリーミング インストールが適した簡単なシナリオを見てみましょう。 
 
-たとえば、作成した UWP ゲームの最終的なアプリのサイズが 100 GB を超えているとします。 このサイズであれば Windows ストアからダウンロードする際に長い時間がかかって不便です。 UWP アプリ ストリーミング インストールを使用する場合は、アプリのファイルがダウンロードされる順序を指定できます。 必須ファイルから先にダウンロードされるようストアに指定しておくことで、ユーザーは必須ではないファイルをバックグラウンドでダウンロードしながらアプリの使用を早く開始できます。
+たとえば、作成した UWP ゲームの最終的なアプリのサイズが 100 GB を超えているとします。 便利なことができる Microsoft Store からダウンロードに時間がかかるする予定です。 UWP アプリ ストリーミング インストールを使用する場合は、アプリのファイルがダウンロードされる順序を指定できます。 必須ファイルから先にダウンロードされるようストアに指定しておくことで、ユーザーは必須ではないファイルをバックグラウンドでダウンロードしながらアプリの使用を早く開始できます。
 
 > [!NOTE]
 > UWP アプリ ストリーミング インストールの使用には、アプリのファイル構成が大きく影響します。 アプリのファイル分割を容易にするには、UWP アプリ ストリーミング インストールに合わせてアプリのコンテンツ レイアウトをできるだけ早く検討するようお勧めします。
@@ -169,4 +170,4 @@ MakeAppx convertCGM /s MyApp\SourceAppxContentGroupMap.xml /f MyApp\AppxContentG
 MakeAppx convertCGM /?
 ```
 
-これで、アプリ用に最終的な `AppxContentGroupMap.xml` を準備できました。 ただし、アプリを Windows ストア用に完全に準備するには、まだ他の作業が必要です。 UWP アプリ ストリーミング インストールをアプリに追加する完全なプロセスについては、[こちらのブログ記事](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)をご覧ください。
+これで、アプリ用に最終的な `AppxContentGroupMap.xml` を準備できました。 あるでもを行う前に、アプリが Microsoft Store の準備が整います。 UWP アプリ ストリーミング インストールをアプリに追加する完全なプロセスについては、[こちらのブログ記事](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)をご覧ください。

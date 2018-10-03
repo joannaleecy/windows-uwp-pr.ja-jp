@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: xBind マークアップ拡張は Binding の代わりです。 xBind では、Binding の機能のいくつかが省略されていますが、Binding よりも短い時間および少ないメモリで動作し、より適切なデバッグをサポートしています。
+description: XBind マークアップ拡張では、高パフォーマンスの代わりのバインディングにです。 xBind - Windows 10 での新機能を実行および少ないメモリのバインドとデバッグの向上をサポートするよりも短い時間でします。
 title: xBind マークアップ拡張
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -10,18 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 340f8e72c5015fad341810ef335dea73f77fc82f
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1672889"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261489"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} マークアップ拡張
 
 **注**  **{x:Bind}** によりアプリでデータ バインディングを使う方法に関する一般的な情報 (および **{x:Bind}** と **{Binding}** の全体的な比較) については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
-Windows 10 では、**{Binding}** に代わり、**{x:Bind}** マークアップ拡張が新たに提供されています。 **{x:Bind}** では、**{Binding}** の機能のいくつかが省略されていますが、**{Binding}** よりも短い時間および少ないメモリで動作し、より適切なデバッグをサポートしています。
+Windows 10 では、**{Binding}** に代わり、**{x:Bind}** マークアップ拡張が新たに提供されています。 **{X:bind}** は、および少ないメモリ **{Binding}** して適切なデバッグをサポートするよりも短い時間で実行されます。
 
 XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロパティから値を取得してマークアップで指定されたプロパティに設定するコードに変換されます。 必要な場合、バインディング オブジェクトは、データ ソース プロパティの値の変化を監視し、その変化に基づいて自分自身を更新するように構成できます (`Mode="OneWay"`)。 また、その独自の値の変化をソース プロパティにプッシュするように構成することもできます (`Mode="TwoWay"`)。
 
@@ -46,6 +46,8 @@ XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロ�
 <object property="{x:Bind bindingProperties}" .../>
 -or-
 <object property="{x:Bind propertyPath, bindingProperties}" .../>
+-or-
+<object property="{x:Bind pathToFunction.functionName(functionParameter1, functionParameter2, ...), bindingProperties}" .../>
 ```
 
 | 用語 | 説明 |
@@ -55,6 +57,25 @@ XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロ�
 | _propName_=_value_\[, _propName_=_value_\]* | 名前と値のペアの構文を使って指定する、1 つ以上のバインド プロパティ。 |
 | _propName_ | Binding オブジェクトで設定するプロパティの文字列名。 たとえば、"Converter" です。 |
 | _value_ | プロパティに設定する値。 引数の構文は、設定されているプロパティによって異なります。 値がそれ自体マークアップ拡張である _propName_=_value_ の使用例を示します: `Converter={StaticResource myConverterClass}`。 詳しくは、以下の「[{x:Bind} で設定できるプロパティ](#properties-you-can-set)」をご覧ください。 |
+
+## <a name="examples"></a>例
+
+```XAML
+<Page x:Class="QuizGame.View.HostView" ... >
+    <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
+</Page>
+```
+
+この例の XAML では、**{x:Bind}** が **ListView.ItemTemplate** プロパティと共に使用されています。 **x:DataType** 値の宣言に注意してください。
+
+```XAML
+  <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
+    <StackPanel Orientation="Vertical" Height="50">
+      <TextBlock Text="{x:Bind Title}"/>
+      <TextBlock Text="{x:Bind Description}"/>
+    </StackPanel>
+  </DataTemplate>
+```
 
 ## <a name="property-path"></a>プロパティ パス
 
@@ -68,7 +89,8 @@ XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロ�
 
 C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプライベート フィールドおよびプロパティにバインドできません。バインドできるようにするには、パブリック プロパティが必要です。 バインディング用のサーフェス領域を CX クラス/インターフェイスとして公開し、関連するメタデータを取得できるようにする必要があります。 **\[Bindable\]** 属性は必要ありません。
 
-**x:Bind** では、**ElementName=xxx** をバインド式の一部として使用する必要はありません。 **x:Bind** では、要素の名前をバインディングのパスの先頭部分として使用できません。これは、名前付き要素が、ルート バインディング ソースを表すページまたはユーザー コントロール内のフィールドになるためです。
+**x:Bind** では、**ElementName=xxx** をバインド式の一部として使用する必要はありません。 代わりに、名前付きの要素が、ルート バインディング ソースを表すページまたはユーザー コントロール内のフィールドになるためには、バインディングのパスの最初の部分として、要素の名前を使用することができます。 
+
 
 ### <a name="collections"></a>コレクション
 
@@ -93,78 +115,7 @@ _注: C# スタイルのキャスト構文は添付プロパティ構文より�
 
 ## <a name="functions-in-binding-paths"></a>バインディング パス内の関数
 
-Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これにより次のことが可能になります。
-
-- 値の変換を実現するためのより簡単な方法
-- 複数のパラメーターに依存するようにバインディングする方法
-
-> [!NOTE]
-> **{x:Bind}** で関数を使うには、アプリの対象が SDK バージョン 14393 以降である必要があります。 アプリがそれよりも前のバージョンの Windows 10 を対象としている場合は、関数を使えません。 ターゲット バージョンについて詳しくは、「[バージョン アダプティブ コード](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)」をご覧ください。
-
-次の例では、項目の背景と前景が、Color パラメーターに基づいて変換を行うために関数にバインドされています。
-
-```xaml
-<DataTemplate x:DataType="local:ColorEntry">
-    <Grid Background="{x:Bind local:ColorEntry.Brushify(Color)}" Width="240">
-        <TextBlock Text="{x:Bind ColorName}" Foreground="{x:Bind TextColor(Color)}" Margin="10,5" />
-    </Grid>
-</DataTemplate>
-```
-
-```csharp
-class ColorEntry
-{
-    public string ColorName { get; set; }
-    public Color Color { get; set; }
-
-    public static SolidColorBrush Brushify(Color c)
-    {
-        return new SolidColorBrush(c);
-    }
-
-    public SolidColorBrush TextColor(Color c)
-    {
-        return new SolidColorBrush(((c.R * 0.299 + c.G * 0.587 + c.B * 0.114) > 150) ? Colors.Black : Colors.White);
-    }
-}
-
-```
-
-### <a name="function-syntax"></a>関数の構文
-
-``` Syntax
-Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Order.ShipAddr.Zip, 'Contoso'), Mode=OneTime}"
-             |      Path to function         |    Path argument   |       Path argument       | Const arg |  Bind Props
-```
-
-### <a name="path-to-the-function"></a>関数へのパス
-
-関数へのパスは、他のプロパティ パスと同じように指定され、関数を見つけるためにドット (.)、インデクサー、またはキャストを含めることができます。
-
-静的関数は、XMLNamespace:ClassName.MethodName 構文を使って指定できます。 たとえば、ページの先頭で **xmlns:sys="using:System"** が指定されているものとすると、**&lt;CalendarDatePicker Date="\{x:Bind sys:DateTime.Parse(TextBlock1.Text)\}" /&gt;** は DateTime.Parse 関数にマップします。
-
-モードが OneWay/TwoWay である場合、関数のパスでは変更の検出が実行され、それらのオブジェクトに変更があるとバインディングが再評価されます。
-
-バインディングされる関数には以下のことが要求されます。
-
-- コードとメタデータにアクセスできる必要があります。したがって、C# では internal/private を使用できますが、C++/CX ではメソッドをパブリック WinRT メソッドにする必要があります。
-- オーバーロードは引数の型ではなく数に基づき、同じ数の引数を持つ最初のオーバーロードとの一致が試みられます。
-- 引数の型は渡されるデータと一致する必要があります。縮小変換は行われません。
-- 関数の戻り値の型は、バインディングを使用しているプロパティの型と一致する必要があります。
-
-### <a name="function-arguments"></a>関数の引数
-
-複数の関数引数をコンマ (,) で区切って指定できます。
-
-- バインディング パス – そのオブジェクトにバインドする場合と同じ構文です。
-  - モードが OneWay/TwoWay の場合は、変更検出が実行されて、オブジェクトが変化するとバインディングが再評価されます。
-- 引用符で囲まれた定数文字列 – 文字列として指定するには引用符が必要です。 文字列で引用符をエスケープするにはハット (^) を使用できます
-- 定数 - たとえば -123.456
-- ブール値 – "x:True" または "x:False" と指定します
-
-### <a name="two-way-function-bindings"></a>双方向の関数バインド
-
-双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、**BindBack** バインド プロパティを使って行います (例: **Text="\{x:Bind a.MyFunc(b), BindBack=a.MyFunc2\}"**)。 関数が受け取る必要のある引数は 1 つで、モデルにプッシュバックする必要のある値です。
+Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これは、データ バインド マークアップでいくつかのシナリオを可能にするための強力な機能です。 詳細については、[関数のバインディング](../data-binding/function-bindings.md)を参照してください。
 
 ## <a name="event-binding"></a>イベント バインディング
 
@@ -226,21 +177,3 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 
 **{x:Bind}** は、マークアップ拡張のみです。このようなバインディングをプログラムで作成したり操作したりする方法はありません。 マークアップ拡張について詳しくは、「[XAML の概要](xaml-overview.md)」をご覧ください。
 
-## <a name="examples"></a>例
-
-```XML
-<Page x:Class="QuizGame.View.HostView" ... >
-    <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
-</Page>
-```
-
-この例の XAML では、**{x:Bind}** が **ListView.ItemTemplate** プロパティと共に使用されています。 **x:DataType** 値の宣言に注意してください。
-
-```XML
-  <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
-    <StackPanel Orientation="Vertical" Height="50">
-      <TextBlock Text="{x:Bind Title}"/>
-      <TextBlock Text="{x:Bind Description}"/>
-    </StackPanel>
-  </DataTemplate>
-```

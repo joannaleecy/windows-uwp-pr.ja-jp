@@ -4,18 +4,18 @@ Description: If you encounter errors after submitting your app to the Store, you
 title: 申請エラーの解決
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.author: wdg-dev-content
-ms.date: 09/13/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d027e35f8fe76a0d4139301f1a7dabc7798348a
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 2aa30af537874f3c3f4845706de6f6788c7b08fb
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210228"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260777"
 ---
 # <a name="resolve-submission-errors"></a>申請エラーの解決
 
@@ -23,7 +23,7 @@ ms.locfileid: "4210228"
 
 ## <a name="uwp-apps"></a>UWP アプリ
 
-UWP アプリを提出する場合は、パッケージ ファイルがストア向けに Visual Studio によって生成された .appxupload ファイルでない場合に、前処理の間にエラーが表示されることがあります。 [Visual Studio で UWP アプリのパッケージ](../packaging/packaging-uwp-apps.md)アプリのパッケージ ファイルを作成するときの手順し、申請、しない、appx や .appxbundle の[パッケージ](upload-app-packages.md)] ページで、.appxupload ファイルをアップロードのみことを確認します。
+UWP アプリを提出する場合、パッケージ ファイルが、ストアの Visual Studio によって生成された .msixupload または .appxupload ファイルではない場合に、前処理中にエラーが表示可能性があります。 [Visual Studio で UWP アプリのパッケージ](../packaging/packaging-uwp-apps.md)アプリのパッケージ ファイルを作成するときの手順し、のみ .msix/appx または .msixbundle/appxbundle いない、申請の[パッケージ](upload-app-packages.md)] ページで、.msixupload または .appxupload ファイルをアップロードしてください。.
 
 コンパイル エラーが表示される場合は、リリース モードでアプリケーションを正常にビルドできることを確認します。 詳しくは、[.NET ネイティブ内部コンパイラ エラーに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=613098)をご覧ください。
 
@@ -31,7 +31,7 @@ UWP アプリを提出する場合は、パッケージ ファイルがストア
 
 Win32 と UWP の両方のバイナリが含まれているパッケージを提出する場合は、Visual Studio 2017 Update 4 で利用可能な Windows パッケージ プロジェクトを使用して、そのパッケージを作成することを確認します。 UWP プロジェクト テンプレートを使用して、パッケージを作成する場合は、提出するパッケージをストアまたはサイドローディング化上の他の Pc にできない可能性があります。 パッケージが正常に発行、した場合でもユーザーの PC で予期しない方法で動作する可能性があります。 詳しくは、 [Visual Studio (デスクトップ ブリッジ) を使用して、アプリのパッケージ]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)を参照してください。
 
-## <a name="windows-phone-apps"></a>Windows Phone アプリ
+## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 以前のバージョン
 
 前処理中に Windows Phone のパッケージに関する問題が検出されると、**エラー 2001** が表示されることがあります。 ほとんどの場合は、アプリのパッケージをリビルドしてエラーを修正する必要があります。 処理が完了したら、[パッケージ](upload-app-packages.md) ページで古いパッケージを新しいパッケージに置き換えてから、**[ストアに提出]** をもう一度クリックします。
 

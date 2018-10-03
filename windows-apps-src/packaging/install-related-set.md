@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7ef1d1a9eb3e268e642cf9b0889df71a59fb44
-ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
-ms.translationtype: HT
+ms.openlocfilehash: 965ef217fa00131504841ef2209dbe6aa54f50af
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2018
-ms.locfileid: "1917617"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265991"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>アプリ インストーラー ファイルを使用して関連セットをインストールする
 
@@ -91,7 +91,7 @@ Windows 10 Fall Creators Update では、関連セットをアプリ インス�
 ```
 
 ### <a name="step-3-add-the-main-package-information"></a>手順 3: メイン パッケージ情報の追加 
-メイン アプリ パッケージが .appxbundle ファイルの場合は、以下に示されている `<MainBundle>` を参照します。 メイン アプリ パッケージが .appx ファイルの場合は、スニペット内で `<MainBundle>` の代わりに `<MainPackage>` を使用します。 
+メイン アプリ パッケージが .appxbundle または .msixbundle ファイルの場合は使用し、`<MainBundle>`の下に表示します。 メイン アプリ パッケージが .appx または .msix ファイルの場合は使用し、`<MainPackage>`の代わりに`<MainBundle>`スニペットにします。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

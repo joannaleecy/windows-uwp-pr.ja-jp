@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、トラブルシューティング、HRESULT、エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: cccc58c0b9dd5f922c87d3e6860bb2f2045ea767
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: bc2e7a8f28de4b43a42ff180fe0b12493c398dd0
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208294"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259587"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) に関する問題のトラブルシューティング
 > [!NOTE]
@@ -51,6 +51,9 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 | LLVM および Clang ツール チェーンは、C++ を使用するとエラーを生成/WinRT します。|LLVM および Clang ツール チェーンは、C++ サポートしていません/WinRT の使用方法が内部をエミュレートする場合に後、は、いずれかで説明されているように、実験に試すことができます[において、C++ をコンパイルする Llvm/clang を使用できる/WinRT かどうか。](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)します。|
 | C++ コンパイラーは、投影された型の「*適切な既定コンス トラクターがありません利用可能な*」を生成します。 | ランタイム クラスのオブジェクトの初期化を遅延するまたはを消費し、同じプロジェクトにランタイム クラスを実装する場合に呼び出す必要があります、`nullptr_t`コンス トラクター。 詳細については、「[C++/WinRT での API の使用](consume-apis.md)」を参照してください。 |
 | C++ コンパイラーが"*エラー C3861: 'from_abi': 識別子が見つかりません*"、および*base.h*でその他のエラー。 Visual Studio 2017 を使用している場合にこのエラーが表示することがあります (バージョン 15.8.0 以上)、Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803) をターゲットとします。 | 以降 (詳しく準拠) をターゲットにするかのバージョンの Windows SDK、またはプロジェクトのプロパティを設定する**C/C++** > **言語** > **Conformance mode: いいえ**(また場合、 **/制限解除-** **C/C++**  > **言語** > **コマンド ライン**[**その他のオプション**を削除します)。 |
+| C++ コンパイラーが"*エラー C2039: 'IUnknown': のメンバーでない '\'global 名前空間'*"です。 | 参照してください[方法は I 対象 my C + + 以降のバージョンの Windows SDK に WinRT プロジェクトかどうか。](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk)します。 |
+| C++ リンカー生成"*エラー lnk 2019: 外部シンボルは未解決_WINRT_CanUnloadNow@0関数で参照されている_VSDesignerCanUnloadNow@0*" | 参照してください[方法は I 対象 my C + + 以降のバージョンの Windows SDK に WinRT プロジェクトかどうか。](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk)します。 |
+
 
 > [!NOTE]
 > このトピックで質問の回答が得られない場合は、[Stack Overflow で `c++-winrt` タグ](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)を使用してヘルプ情報を見つけることができます。

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, パッケージ化
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8a9c7f504584f64bb561a01170c965aa9d3983
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: fcd6d937c7261b5cfa8af954eb5d2ec2869d8afd
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815827"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260507"
 ---
 # <a name="manual-app-packaging"></a>手動でのアプリのパッケージ化
 
@@ -46,5 +46,5 @@ ms.locfileid: "1815827"
 |-------|-------------|
 | [アセット パッケージの概要](asset-packages.md) | アセット パッケージは、アプリケーションの共通ファイルの一元的な場所として機能するパッケージの種類です。これにより、そのアーキテクチャ パッケージ全体で重複するファイルが事実上不要になります。 |
 | [アセット パッケージとパッケージ圧縮を使った開発](package-folding.md) | アセット パッケージとパッケージ圧縮を使ってアプリケーションを効率的に整理する方法について説明します。 |
-| [フラット バンドル アプリ パッケージ](flat-bundles.md) | フラット バンドルを作成してアプリ パッケージへの参照を持つアプリの .appx パッケージ ファイルをバンドルする方法について説明します。 |
+| [フラット バンドル アプリ パッケージ](flat-bundles.md) | アプリのパッケージ ファイルのフラット バンドルを作成する方法について説明します。 |
 | [パッケージ レイアウトを使ったパッケージの作成](packaging-layout.md) | パッケージ レイアウトは、アプリのパッケージ構造を記述する 1 つのドキュメントです。 アプリのバンドル (プライマリおよびオプション)、バンドル内のパッケージ、パッケージ内のファイルを指定します。 |

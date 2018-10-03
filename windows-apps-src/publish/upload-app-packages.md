@@ -4,31 +4,31 @@ Description: The Packages page is where you upload all of the package files (.ap
 title: アプリ パッケージのアップロード
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ms.author: wdg-dev-content
-ms.date: 5/10/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, パッケージ, アップロード, パッケージのアップロード
 ms.localizationpriority: medium
-ms.openlocfilehash: 6013a238cff8db3b85dd98af58cccaf344a72f51
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: d966688110870b669bdd296ec14e145a5d77b74e
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207738"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263031"
 ---
 # <a name="upload-app-packages"></a>アプリ パッケージのアップロード
 
-**[パッケージ]** ページは、提出するアプリのすべてのパッケージ ファイル (.appx、.appxupload、.appxbundle、.xap) をアップロードする場所です。 この手順では、アプリがターゲットとしているすべてのオペレーティング システムのパッケージをアップロードできます。 ユーザーがアプリをダウンロードするとき、ストアはユーザーのデバイスで最適に動作するパッケージを各ユーザーに自動的に提供します。 開発者がパッケージをアップロードした後は、[特定の Windows 10 デバイス ファミリ (および該当する場合は以前の OS バージョン) に対して提供されるパッケージ](#device-family-availability)をランキング順に示すテーブルが表示されます。
+**[パッケージ**] ページでは、すべての提出するアプリのパッケージ ファイル (.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle、.xap) をアップロードします。 この手順では、アプリがターゲットとしているすべてのオペレーティング システムのパッケージをアップロードできます。 ユーザーがアプリをダウンロードするとき、ストアはユーザーのデバイスで最適に動作するパッケージを各ユーザーに自動的に提供します。 開発者がパッケージをアップロードした後は、[特定の Windows 10 デバイス ファミリ (および該当する場合は以前の OS バージョン) に対して提供されるパッケージ](#device-family-availability)をランキング順に示すテーブルが表示されます。
 
 パッケージに含まれる内容やパッケージの構成方法について詳しくは、「[アプリ パッケージの要件](app-package-requirements.md)」をご覧ください。 [特定のユーザーに配信されるバージョン番号がパッケージにに対する影響](package-version-numbering.md)し、[さまざまなオペレーティング システムにパッケージを配布する方法](guidance-for-app-package-management.md)について説明します。
 
 ## <a name="uploading-packages-to-your-submission"></a>申請へのパッケージのアップロード
 
-パッケージをアップロードするには、アップロード フィールドにパッケージをドラッグするか、クリックしてファイルを参照します。 **[パッケージ]** ページでは、.xap、.appx、.appxupload、.appxbundle ファイルをアップロードできます。
+パッケージをアップロードするには、アップロード フィールドにパッケージをドラッグするか、クリックしてファイルを参照します。 **[パッケージ**] ページを使う .msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle、.xap ファイルをアップロードできます。
 
 > [!IMPORTANT]
-> Windows 10 の場合、ここでは .appx や .appxbundle ではなく、.appxupload ファイルをアップロードすることをお勧めします。  ストア用の UWP アプリのパッケージ化について詳しくは、「[Visual Studio での UWP アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
+> Windows 10 では、アップロード .msixupload または .appxupload ファイルは、ここではなく .msix、.appx、.msixbundle、または .appxbundle お勧めします。  ストア用の UWP アプリのパッケージ化について詳しくは、「[Visual Studio での UWP アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
 
 アプリの[パッケージ フライト](package-flights.md)を作成すると、いずれかのパッケージ フライトからパッケージをコピーするオプションがドロップダウンに表示されます。 必要なパッケージが含まれているパッケージ フライトを選びます。 その後で、いずれかまたはすべてのパッケージを選んで、この申請に含めることができます。
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
-ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210452"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259981"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>UWP アプリ用の設計ツールキットとサンプル
  
@@ -29,32 +29,37 @@ ms.locfileid: "4210452"
 
 :::row:::
     :::column:::
-        ![ヒーロー イメージ](images/adobe-xd.png) <b>Adobe XD ツールキット</b><br>
-        v1806、2018年 6 月<br>
-        <a href="https://aka.ms/adobexdtoolkit">ダウンロード</a>
+        ![hero image](images/adobe-xd.png)
+        <b>Adobe XD toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![ヒーロー イメージ](images/adobe-illustrator.png) <b>Adobe Illustrator ツールキット</b><br>
-        v1806、2018年 6 月<br>
-        <a href="https://aka.ms/adobeillustratortoolkit">ダウンロード</a>
+        ![hero image](images/adobe-illustrator.png)
+        <b>Adobe Illustrator toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![ヒーロー イメージ](images/sketch.png)<b>スケッチ</b><br>
-        v1803、2018 年 3 月<br>
-        <a href="https://aka.ms/sketchtoolkit">ダウンロード</a>
+        ![hero image](images/sketch.png)
+        <b>Sketch</b><br>
+        v1803, March 2018<br>
+        <a href="https://aka.ms/sketchtoolkit">Download</a>
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![ヒーロー イメージ](images/adobe-photoshop.png) <b>Adobe Photoshop ツールキット</b><br>
-        v1705、2017 年 5 月<br>
-        <a href="https://aka.ms/adobephotoshoptoolkit">ダウンロード</a>
+        ![hero image](images/adobe-photoshop.png)
+        <b>Adobe Photoshop toolkit</b><br>
+        v1705, May 2017<br>
+        <a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![ヒーロー イメージ](images/framer.png) <b>Framer ツールキット</b><br>
-        v1806、2018年 6 月<br>
-        <a href="https://aka.ms/framertoolkit">ダウンロード</a>
+        ![hero image](images/framer.png)
+        <b>Framer toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/framertoolkit">Download</a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -64,14 +69,16 @@ ms.locfileid: "4210452"
 
 :::row:::
     :::column:::
-        ![WinUI ライブラリ サムネイル](images/WinUI-library.png) <b>Windows UI ライブラリ</b><br>
-        コントロールと UWP アプリの他の UI 要素です。<br/>
-        <a href="/uwp/toolkits/winui/getting-started">インストール手順</a><br/>
+        ![WinUI library thumbnail](images/WinUI-library.png)
+        <b>Windows UI Library</b><br>
+        Controls and other UI elements for UWP apps.<br/>
+        <a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
     :::column-end:::
     :::column:::
-        ![Windows コミュニティ サムネイル](images/Windows-community-toolkit.png) <b>Windows コミュニティ ツールキット</b><br>
-        ヘルパー関数、カスタム コントロール、およびアプリ サービスです。<br />
-        <a href="/windows/uwpcommunitytoolkit/getting-started">インストール手順</a>
+        ![Windows community thumbnail](images/Windows-community-toolkit.png)
+        <b>Windows Community Toolkit</b><br>
+        Helper functions, custom controls, and app services.<br />
+        <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -88,16 +95,22 @@ ms.locfileid: "4210452"
     :::column:::
         <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
-    :::column span =「2」::: **Adobe Photoshop 用のタイル/アイコン ジェネレーター**この一連の Adobe Photoshop 用のアクションは、7 ファイルから 68 の推奨されるタイルとアイコン アセットを生成します。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">タイル/アイコン ジェネレーターをダウンロードする</a></p>
+    :::column span="2":::
+      **Adobe Photoshop 用のタイル/アイコン ジェネレーター**この一連の Adobe Photoshop 用のアクションは、7 ファイルから 68 の推奨されるタイルとアイコン アセットを生成します。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">タイル/アイコン ジェネレーターをダウンロードする</a></p>
     :::column-end:::
 :::row-end:::
 
     
 ## <a name="samples"></a>サンプル
 
+![VanArsdel イメージ](images/VanArsdel_Screenshot.png)
+**VanArsdel**<br>
+Van Arsdel, Ltd. エンド ツー エンドの UWP サンプル アプリは、Microsoft の Fluent Design System の次の基準を広く告知を構築されました。 <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI のライブラリ</a>として ux フレームワークとコンポジションの強力な基になっている機能で強化された密度と新しいコントロールの広範な使用をかなっています。 このサンプルでは、(この場合は、ライト) で IoT デバイスの購入を管理およびリッチな生産性エクスペリエンスを構築する方法を示します。<br>
+<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">VanArsdel サンプルをダウンロードします。</a> <br><a href="https://github.com/microsoft/vanarsdel">GitHub で VanArsdel サンプルします。</a>
+
 ![キャスト イメージを構築する](images/buildcast.png)
 **BuildCast**<br>
-BuildCast は、Fluent Design System と、ユニバーサル Windows プラットフォームの他の機能に組み込まれているエンド ツー エンドのサンプルです。 Channel 9 や Windows 技術者のフィードにおける人気コンテンツのサンプルなど、特定のビデオ ポッドキャストの参照、ダウンロード、再生を行うことができます。 インク メモ、ブックマーク、リモート再生の機能もあります。 このサンプルは、2017 年の Build カンファレンスの <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Fluent Design によるすばらしいアプリの構築に関する講演</a>で最初に取り上げられたものです。 <br>
+BuildCast は、Fluent Design System と UWP に組み込まれているエンド ツー エンドのサンプルです。 Channel 9 や Windows 技術者のフィードにおける人気コンテンツのサンプルなど、特定のビデオ ポッドキャストの参照、ダウンロード、再生を行うことができます。 インク メモ、ブックマーク、リモート再生の機能もあります。 このサンプルは、2017 年の Build カンファレンスの <a href="https://channel9.msdn.com/Events/Build/2017/B8034">Fluent Design によるすばらしいアプリの構築に関する講演</a>で最初に取り上げられたものです。 <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">BuildCast サンプルのダウンロード</a> <br><a href="https://github.com/Microsoft/BuildCast">Github で BuildCast サンプルを確認する</a>
 
 ![ランチ スケジューラ](images/lunchscheduler.png)

@@ -5,7 +5,7 @@ title: コマンド バーのポップアップ
 label: Command bar flyout
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 07/19/2018
+ms.date: 10/2/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,17 +15,14 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ec532749fc2dacfc56e80ee2830da36f71c75b2f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: ed17299051ae7da32f238eb57876b81597c8effa
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205174"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258515"
 ---
 # <a name="command-bar-flyout"></a>コマンド バーのポップアップ
-
-> [!IMPORTANT]
-> この記事では、まだリリースされていない機能について説明しています。この機能は、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。 プレビュー機能[最新の Windows 10 Insider Preview ビルドと SDK](https://insider.windows.com/for-developers/)または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)が必要です。
 
 コマンド バーのポップアップでは、UI のキャンバス上の要素に関連する浮動ツールバーでのコマンドを表示することによって一般的なタスクに簡単にアクセスをユーザーに提供できます。
 
@@ -94,12 +91,12 @@ TextCommandBarFlyout では、TextBox、TextBlock、RichEditBox、RichTextBlock�
 
 :::row:::
     :::column:::
-        折りたたまれているコマンド バーのポップアップ<br/>
-        ![折りたたまれているコマンド バーのポップアップの例](images/command-bar-flyout-img-collapsed.png)
+        A collapsed command bar flyout<br/>
+        ![Example of a collapsed command bar flyout](images/command-bar-flyout-img-collapsed.png)
     :::column-end:::
     :::column:::
-        展開されたコマンド バー ポップアップ<br/>
-        ![展開されたコマンド バー ポップアップの例](images/command-bar-flyout-img-expanded.png)
+        An expanded command bar flyout<br/>
+        ![Example of an expanded command bar flyout](images/command-bar-flyout-img-expanded.png)
     :::column-end:::
 :::row-end:::
 
@@ -191,12 +188,12 @@ PrimaryCommands と SecondaryCommands には、 [AppBarButton](https://msdn.micr
 
 :::row:::
     :::column:::
-        開いている SplitButton と折りたたまれているコマンド バーのポップアップ<br/>
-        ![分割のボタンを含むコマンド バーのポップアップ](images/command-bar-flyout-split-button.png)
+        A collapsed command bar flyout with an open SplitButton<br/>
+        ![A command bar flyout with a split button](images/command-bar-flyout-split-button.png)
     :::column-end:::
     :::column:::
-        メニューにカスタム ズーム UI での展開されたコマンド バー ポップアップ<br/>
-        ![複雑な UI とコマンド バーのポップアップ](images/command-bar-flyout-complex-ui.png)
+        An expanded command bar flyout with custom zoom UI in the menu<br/>
+        ![A command bar flyout with complex UI](images/command-bar-flyout-complex-ui.png)
     :::column-end:::
 :::row-end:::
 
@@ -317,12 +314,12 @@ PrimaryCommands と SecondaryCommands には、 [AppBarButton](https://msdn.micr
 
 :::row:::
     :::column:::
-        テキストの選択でテキスト コマンド バーのポップアップ<br/>
-        ![折りたたまれているテキスト コマンド バーのポップアップ](images/command-bar-flyout-text-selection.png)
+        A text command bar flyout on text selection<br/>
+        ![A collapsed text command bar flyout](images/command-bar-flyout-text-selection.png)
     :::column-end:::
     :::column:::
-        展開されたテキスト コマンド バー ポップアップ<br/>
-        ![展開されたテキスト コマンド バー ポップアップ](images/command-bar-flyout-text-full.png)
+        An expanded text command bar flyout<br/>
+        ![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
     :::column-end:::
 :::row-end:::
 

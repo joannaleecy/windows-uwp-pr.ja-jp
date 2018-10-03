@@ -5,7 +5,7 @@ title: 実践的なモーション -  UWP アプリのアニメーション
 label: Motion in practice
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 05/19/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,23 +14,22 @@ pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 87a17d3f73887c9b1b5029e2096c5b41c9444c4e
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 6001f955b3ab6a60446eb84296dc3bc52ad3a99e
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843865"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260017"
 ---
 # <a name="bringing-it-together"></a>まとめる
-
-> [!IMPORTANT]
-> この記事では、まだリリースされていない機能について説明しています。この機能は、正式版がリリースされるまでに大幅に変更される可能性があります。 本書に記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
 
 タイミング、イージング、方向、および重力は、連携して Fluent モーションの基礎となります。 それぞれが、互いのコンテキストで考慮され、アプリのコンテキストで適切に適用される必要があります。
 
 アプリに Fluent モーションの基礎を適用する 3 つの方法を次に示します。
 
-:::row::: :::column::: **暗黙的なアニメーション**
+:::row:::
+    :::column:::
+        **Implicit animation**
 
         Automatic tween and timing between values in a parameter change to achieve very simple Fluent motion using the standardized values.
     :::column-end:::
@@ -46,12 +45,14 @@ ms.locfileid: "1843865"
     :::column-end:::
 :::row-end:::
 
-### **<a name="transition-example"></a>切り替えの例**
+**切り替えの例**
 
 ![機能的なアニメーション](images/pageRefresh.gif)
 
-:::row::: :::column::: <b>方向前方アウト:</b><br>
-        フェード アウト: 150 m、イージング: 既定加速
+:::row:::
+    :::column:::
+        <b>Direction Forward Out:</b><br>
+        Fade out: 150m; Easing: Default Accelerate
 
         <b>Direction Forward In:</b><br>
         Slide up 150px: 300ms; Easing: Default Decelerate
@@ -59,19 +60,74 @@ ms.locfileid: "1843865"
     :::column:::
          <b>Direction Backward Out:</b><br>
         Slide down 150px: 150ms; Easing: Default Accelerate
-      
+
         <b>Direction Backward In:</b><br>
         Fade in: 300ms; Easing: Default Decelerate
     :::column-end:::
 :::row-end:::
 
- ### **<a name="object-example"></a>オブジェクトの例**
+**オブジェクトの例**
 
  ![300 ミリ秒のモーション](images/control.gif)
- 
-:::row::: :::column::: <b>方向展開:</b><br>
-        拡大: 300 ミリ秒、イージング: 標準 :::column-end::: :::column::: <b>方向コントラクト:</b><br>
-        拡大: 150 ミリ秒、イージング: 既定加速 :::column-end::: :::row-end:::
+
+:::row:::
+    :::column:::
+        <b>Direction Expand:</b><br>
+        Grow: 300ms; Easing: Standard
+    :::column-end:::
+    :::column:::
+        <b>Direction Contract:</b><br>
+        Grow: 150ms; Easing: Default Accelerate
+    :::column-end:::
+:::row-end:::
+
+## <a name="implicit-animations"></a>暗黙的なアニメーション
+
+> **プレビュー**: 暗黙的なアニメーション[最新の Windows 10 Insider Preview ビルドと SDK](https://insider.windows.com/for-developers/)が必要です。
+
+暗黙的なアニメーションは、パラメーターの変更時に新旧の値の間で自動的に補間によって Fluent モーションを実現するための簡単な方法です。
+
+暗黙的に、次のプロパティへの変更をアニメーション化することができます。
+
+- [UIElement](/uwp/api/windows.ui.xaml.uielement)
+  - **Opacity**
+  - **回転**
+  - **Scale**
+  - **Translation**
+
+- [境界線](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)、または[パネル](/uwp/api/windows.ui.xaml.controls.panel)
+  - **Background**
+
+暗黙的なアニメーションの変更を持つことができる各プロパティには、対応する_移行_プロパティがあります。 プロパティをアニメーション化するには、対応する_移行_プロパティに切り替えの種類を割り当てます。 _切り替え効果_のプロパティとごとに使用する切り替え効果の種類を示します。
+
+| アニメーション化されたプロパティ | 切り替え効果のプロパティ | 暗黙的な切り替えの種類 |
+| -- | -- | -- |
+| [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
+| [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
+| [UIElement.Scale](/uwp/api/windows.ui.xaml.uielement.scale) | [ScaleTransition](/uwp/api/windows.ui.xaml.uielement.scaletransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
+| [UIElement.Translation](/uwp/api/windows.ui.xaml.uielement.scale) | [TranslationTransition](/uwp/api/windows.ui.xaml.uielement.translationtransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
+| [Border.Background](/uwp/api/windows.ui.xaml.controls.border.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.border.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+
+この例では、ボタン コントロールを有効にすると、フェードインし、フェードアウトは無効になっているときに、Opacity プロパティと切り替え効果を使用する方法を示します。
+
+```xaml
+<Button x:Name="SubmitButton"
+        Content="Submit"
+        Opacity="{x:Bind OpaqueIfEnabled(SubmitButton.IsEnabled), Mode=OneWay}">
+    <Button.OpacityTransition>
+        <ScalarTransition />
+    </Button.OpacityTransition>
+</Button>
+```
+
+```csharp
+public double OpaqueIfEnabled(bool IsEnabled)
+{
+    return IsEnabled ? 1.0 : 0.2;
+}
+```
 
 ## <a name="related-articles"></a>関連記事
 

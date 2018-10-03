@@ -14,12 +14,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8589a450b53a5ea028f8af2cee2aef7dc0816b52
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 3bf91725a62c8d03c37448ddf69b072461288f11
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205718"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258485"
 ---
 # <a name="acrylic-material"></a>アクリル素材
 
@@ -31,10 +31,12 @@ ms.locfileid: "4205718"
 
 :::row:::
     :::column:::
-        淡色テーマのアクリル![淡色テーマのアクリル](images/Acrylic_LightTheme_Base.png)
+        Acrylic in light theme
+        ![Acrylic in light theme](images/Acrylic_LightTheme_Base.png)
     :::column-end:::
     :::column:::
-        濃色テーマのアクリル![濃色テーマのアクリル](images/Acrylic_DarkTheme_Base.png)
+        Acrylic in dark theme
+        ![Acrylic in dark theme](images/Acrylic_DarkTheme_Base.png)
     :::column-end:::
 :::row-end:::
 
@@ -49,68 +51,20 @@ ms.locfileid: "4205718"
 ## <a name="examples"></a>例
 
 :::row:::
-    :::column span:::![一部の画像](images/XAML-controls-gallery-app-icon.png)
+    :::column span:::
+        ![Some image](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
-    :::column span =「2」::: **XAML コントロール ギャラリー**<br>
-        XAML コントロール ギャラリー アプリをインストールした場合は、クリックして<a href="xamlcontrolsgallery:/item/Acrylic">ここで</a>アプリを開き、アクリルの動作を参照してください。
+    :::column span="2":::
+        **XAML Controls Gallery**<br>
+        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
-## <a name="when-to-use-acrylic"></a>アクリルを使用する状況
-
-アプリ内ナビゲーションの要素やコマンド実行要素などのサポート UI は、アクリル サーフェス上に配置することをお勧めします。 アクリル素材は、ダイアログやポップアップなどの一時的な UI の要素を使用する場合にも役立ちます。これは、この素材によって、一時的な UI をトリガーしたコンテンツとの視覚的な関係を維持することができるためです。 アクリルは、背景素材として使用し、視覚的に分離されたウィンドウ内に表示するように設計されています。そのため、アクリルは詳細な前景要素には適用しないでください。
-
-アプリの主要なコンテンツの背後にあるサーフェスでは、単色で不透明な背景を使用してください。
-
-滑らかな表示を実現するには、アクリルを、アプリの 1 つまたは複数の端にまで (ウィンドウのタイトル バーも含む) 拡張することを検討してください。 ブレンドの種類が異なる複数のアクリルを相互に隣接するように重ねて、ストライプ効果を作成することは回避してください。 アクリルは、デザインで視覚的な調和をとるためのツールですが、正しく使用しないと、視覚的なノイズになる場合があります。
-
-次の使用パターンを検討して、アクリルをアプリに組み込むに最適な方法を決定してください。
-
-### <a name="vertical-acrylic-pane"></a>垂直方向のアクリル ウィンドウ
-
-垂直方向のナビゲーションを行うアプリでは、アクリルを、ナビゲーション要素を含んでいるセカンダリ ウィンドウに適用することをお勧めします。
-
-![1 つの垂直方向のアクリル ウィンドウを使用するアプリのパターン](images/acrylic_app-pattern_vertical.png)
-
-[NavigationView](../controls-and-patterns/navigationview.md) は、ナビゲーションをアプリに追加し、そのビジュアル デザインにアクリルを取り込むための新しいコモン コントロール です。 NavigationView のウィンドウでは、ウィンドウが主要なコンテンツと並んで開かれるとき、背景アクリルが表示されます。また、ウィンドウがオーバーレイとして開くと、自動的にアプリ内アクリルに切り替わります。
-
-アプリは NavigationView を活用することはできません、独自にアクリルを追加する場合は、60% の濃淡の不透明度で比較的半透明のアクリルの使用をお勧めします。
- - ウィンドウが他のアプリ コンテンツ上でオーバーレイとして開くときは、[60% のアプリ内アクリル](#acrylic-theme-resources)にする必要があります
- - ウィンドウがメイン アプリ コンテンツと並んで開かれるときは、[60% の背景アクリル](#acrylic-theme-resources)にする必要があります
-
-### <a name="multiple-acrylic-panes"></a>複数のアクリル ウィンドウ
-
-3 つの異なる垂直方向のウィンドウを持つアプリでは、アクリルを主要なコンテンツ以外のコンテンツに追加することをお勧めします。
- - 主要なコンテンツの最も近くに表示される第 2 ウィンドウでは、[80% の背景アクリル](#acrylic-theme-resources)を使用します
- - 主要なコンテンツから離れて表示される第 3 ウィンドウでは、[60% の背景アクリル](#acrylic-theme-resources)を使用します
-
-![2 つの垂直方向のアクリル ウィンドウを使用するアプリのパターン](images/acrylic_app-pattern_double-vertical.png)
-
-### <a name="horizontal-acrylic-pane"></a>水平方向のアクリル ウィンドウ
-
-水平方向のナビゲーションやコマンド実行を行ったり、アプリの上部で水平方向に他の重要な要素が表示されるアプリでは、この視覚要素に [70% のアクリル](#acrylic-theme-resources)を適用することをお勧めします。
-
-![水平方向のアクリル ウィンドウを使用するアプリのパターン](images/acrylic_app-pattern_horizontal.png)
-
-連続性があるズーム可能なコンテンツに重点を置くキャンバス アプリでは、上部のバーでアプリ内アクリルを使用し、ユーザーがこのコンテンツにアクセスできるようにしてください。 キャンバス アプリには、マップや各種の描画を含んでいるものがあります。
-
-単一の連続したキャンバスのないアプリでは、背景アクリルを使用して、ユーザーがデスクトップ環境全体にアクセスできるようにすることをお勧めします。
-
-### <a name="acrylic-in-utility-apps"></a>ユーティリティ アプリでのアクリル
-
-ウィジェットや軽量アプリでは、アプリ ウィンドウの内部いっぱいにアクリルを描画して、ユーティリティ アプリとしての用途を強化することができます。 このカテゴリのアプリは、ユーザーによる使用時間が短く、ユーザーのデスクトップ画面全体を占有することもないのが一般的です。 たとえば、電卓やアクション センターが該当します。
-
-![アクリルを背景全体として使用した電卓ユーティリティ アプリ](images/acrylic_app-pattern_full.png)
-
-> [!Note]
-> アクリル サーフェスのレンダリングでは GPU を多用するデバイスの電力消費量を増やすし、バッテリーの寿命を短くことができます。 アクリルの効果は自動的に無効にデバイスがバッテリー節約機能モードを入力し、ユーザーがすべてのアプリでアクリルの効果を無効にすることができます選択した場合。
-
-
 ## <a name="acrylic-blend-types"></a>アクリル ブレンドの種類
-アクリルの最も注目すべき特徴は、その透明度を設定します。 アクリル ブレンドの種類は 2 つあり、素材を通して何が表示されるかを変更することができます。
+アクリルの最も注目すべき特徴は、その透明度です。 アクリル ブレンドの種類は 2 つあり、素材を通して何が表示されるかを変更することができます。
  - **背景アクリル**では、デスクトップの壁紙と現在アクティブになっているアプリの背後にある他のウィンドウが表示されます。これにより、アプリケーション ウィンドウの間に奥行きが出て、ユーザーが個人的に優先する画面を明示しておくことができます。
  - **アプリ内アクリル**では、アプリ フレーム内に奥行きの感覚がもたらされ、フォーカスと階層の両方が提供されます。
 
@@ -118,8 +72,41 @@ ms.locfileid: "4205718"
 
  ![アプリ内アクリル](images/AppAcrylic_DarkTheme.png)
 
- 複数のアクリル サーフェスを重ねる場合には注意が必要です。 背景アクリルは、その名前が示すように、Z オーダーではユーザーの最も近くには表示しないでください。 背景アクリルの複数のレイヤーは、予期しない目の錯覚を引き起こす傾向があるので、使用しないでください。 アクリルを重ねる場合は、アプリ内アクリルを重ねてください。また、アクリルの濃淡が薄くなるように値を設定して、アクリルのレイヤーが視覚的に閲覧者の近くに表示されるようにすることを検討してください。
+ 注意が必要に複数のアクリル サーフェスを重ねる: 背景アクリルの複数のレイヤーが煩わしくない目の錯覚を作成できます。
 
+## <a name="when-to-use-acrylic"></a>アクリルを使用する状況
+
+* NavigationView またはインラインのコマンド実行要素などの UI をサポートするためには、アプリ内アクリルを使用します。 
+* コンテキスト メニューのポップアップ、および光 dimsissable UI などの一時的な UI 要素の背景アクリルを使用します。<br />一時的なシナリオでアクリルを使用すると、一時的な UI をトリガーしたコンテンツと視覚的な関係を維持できます。
+
+ナビゲーションのサーフェスをアプリ内アクリルを使用している場合をアプリのフローを向上させるためのアクリル ウィンドウの下にあるコンテンツを拡張することを検討します。 NavigationView を使用して、これを自動的にします。 ただし、ストライプ効果の作成を回避するため、複数のアクリルのエッジ - を配置しないでくださいぼやけたの 2 つのサーフェスの間、望ましくない継ぎ目を作成このことができます。 アクリルは、デザインに視覚的な調和を移植するツールですが適切に使用できるノイズの。
+
+アクリルをアプリに組み込むに最適な方法を決定する次の使用パターンを検討してください。
+
+### <a name="horizontal-navigation-or-commanding"></a>水平方向のナビゲーションやコマンド実行
+
+アプリは NavigationView を活用することはできません、独自にアクリルを追加する場合は、60% の濃淡の不透明度で比較的半透明のアクリルの使用をお勧めします。
+ - ウィンドウが他のアプリ コンテンツ上でオーバーレイとして開くときは、[60% のアプリ内アクリル](#acrylic-theme-resources)にする必要があります
+ - ウィンドウがメイン アプリ コンテンツと並んで開かれるときは、[60% の背景アクリル](#acrylic-theme-resources)にする必要があります
+
+![アプリ内の水平方向コマンド実行を使ったマップ アプリ](images/Maps_In_App_Acrylic_1.png)
+
+さらに、上部にある、コンテンツの拡張または、アクリルの下にスクロールをことにより、アプリより没入型とシームレスなエクスペリエンスします。
+
+### <a name="vertical-panes"></a>垂直方向のウィンドウ
+
+垂直方向のウィンドウまたはサーフェスに役立つ、アプリのコンテンツをオフのセクションでは、不透明な背景アクリル代わりに使うことをお勧めします。 コンテンツの上を垂直方向のウィンドウを開く場合と同様に NavigationView の**Collapsed**または**最小限**のモードでお勧めします、ユーザーがあるこのウィンドウを開いているときに、ページのコンテキストを維持するためにアプリ内アクリルを使用します。
+
+### <a name="transient-surfaces"></a>一時的なサーフェス
+
+メニュー ポップアップ、非モーダル ポップアップでは、アプリのウィンドウ、簡易または背景アクリルを使用することをお勧めします。
+
+![情報のポップアップを使用してメール アプリのパターン](images/Mail_TransientContextMenu.png)
+
+アクリルは、既定では、コントロールの多くは使用されます。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[コンボ ボックス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)などの光 dimiss ポップアップを持つコントロールはすべてを使用して一時的なアクリルときに呼び出されます。
+
+> [!Note]
+> アクリル サーフェスのレンダリングでは GPU を多用するデバイスの電力消費量を増やすし、バッテリーの寿命を短くことができます。 アクリルの効果は自動的に無効にデバイスがバッテリー節約機能モードを入力し、ユーザーがすべてのアプリでアクリルの効果を無効にすることができます選択した場合。
 
 ## <a name="usability-and-adaptability"></a>使いやすさと適応性
 アクリルの外観は、さまざまなデバイスやコンテキストに合うように自動的に対応します。
@@ -212,7 +199,6 @@ ms.locfileid: "4205718"
  - **TintOpacity**: 濃淡レイヤーの不透明度です。 別の色がより魅力的に他の translucencies を表示することがありますが、開始点として 80% の不透明度お勧めします。
  - **BackgroundSource**: 背景アクリルまたはアプリ内アクリルのどちらを使用するかを指定するフラグです。
  - **FallbackColor**: 単色のバッテリー節約機能のアクリルに置き換えられます。 背景アクリルでは、フォールバックの色は、アプリが作業中のデスクトップ ウィンドウにない場合、またはアプリが電話や Xbox 上で実行されている場合にもアクリルと置き換わります。
-
 
 ![淡色テーマのアクリルの見本](images/CustomAcrylic_Swatches_LightTheme.png)
 
@@ -332,6 +318,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>推奨と非推奨
 * アクリルは、ナビゲーション ウィンドウなど、アプリのプライマリ サーフェス以外のサーフェスで背景素材として使用してください。
 * シームレスなエクスペリエンスを実現するには、アプリの周囲とわずかにブレンドするようにして、アクリルをアプリの 1 つ以上の端にまで拡張してください。
+* アプリのバック グラウンドの大規模なサーフェス上のデスクトップ arylic を配置しないように - この一時的なサーフェスに主に使用されているアクリルの概念的モデルを中断します。
 * アプリ内アクリルと背景アクリルは、継ぎ目部分での視覚的なテンションを回避するために、隣接するようには配置しないでください。
 * 複数のアクリル ウィンドウを、同じ濃淡や不透明度で隣接するように配置しないでください。このようにすると、望ましくない継ぎ目が表示されます。
 * アクリル サーフェスの上には、アクセント カラーのテキストを配置しないでください。
