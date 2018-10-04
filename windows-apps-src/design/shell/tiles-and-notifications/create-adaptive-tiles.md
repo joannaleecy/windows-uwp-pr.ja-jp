@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 761d87654ef340f4b539dbefa0950c58f627d310
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4266823"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4319508"
 ---
 # <a name="create-adaptive-tiles"></a><span data-ttu-id="0f65e-103">アダプティブ タイルの作成</span><span class="sxs-lookup"><span data-stu-id="0f65e-103">Create adaptive tiles</span></span>
 
