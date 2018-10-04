@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9201f6244db108d548ebb9e484380b7d0eb38e3a
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4312759"
+ms.locfileid: "4352516"
 ---
 # <a name="matchticket-json"></a>MatchTicket (JSON)
 プレイヤーがマルチプレイヤー セッション ディレクトリ (MPSD) を通じて他のプレイヤーを検索に使用するマッチ チケットを表す JSON オブジェクト。 
@@ -24,15 +24,15 @@ ms.locfileid: "4312759"
 
   
  
-MatchTicket JSON オブジェクトでは、次の仕様があります。
+MatchTicket JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | serviceConfig| GUID| セッションのサービス構成 id (SCID)。| 
 | hopperName| string| このチケットを配置する必要があります、ホッパーの名前です。| 
 | giveUpDuration| 32 ビット符号付き整数| 最大待機時間 (秒の整数)。| 
-| preserveSession| 列挙値| セッションに一致するようになると、セッションを再利用する必要があるかどうかを示す値。 値は、「しない」または"always"します。 | 
-| ticketSessionRef| MultiplayerSessionReference| これでプレイヤーまたはグループは、現在再生中のセッションの<b>MultiplayerSessionReference</b>オブジェクトです。 このメンバーが必要です。 | 
+| preserveSession| 列挙型| セッションに一致するようになると、セッションを再利用する必要があるかどうかを示す値。 値は、「しない」または"always"します。 | 
+| ticketSessionRef| MultiplayerSessionReference| これでプレイヤーまたはグループは、現在再生中のセッションの<b>MultiplayerSessionReference</b>オブジェクトです。 このメンバーは必須です。 | 
 | ticketAttributes| オブジェクトの配列| プレイヤーのユーザー指定の属性と値について、チケットのコレクションです。| 
 | プレイヤー| オブジェクトの配列| ユーザー指定の属性のプロパティ バッグに各プレイヤーのオブジェクトのコレクションです。 | 
   

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d57a6620115d5f009c054210a50548c3da7e47d5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318457"
+ms.locfileid: "4353843"
 ---
 # <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
 ユーザーのプロファイルを取得またはユーザー, People モニカーをサポートします。 これらの Uri のドメインが`profile.xboxlive.com`します。
@@ -32,7 +32,7 @@ ms.locfileid: "4318457"
  
 ## <a name="remarks"></a>注釈
  
-**userList**と**ユーザー Id**は、相互に排他的なパラメーターです。 いずれかまたは両方が指定されている場合は、 **BadRequest**をもう一度表示されます。 **userList**は、複数の名前付きリストが要求に便利なシナリオで将来の配列です。 **ユーザー Id**は Xuid の 10 進数の文字列の構成 - JSON は 64 ビットの符号なし整数をシリアル化するのには不適切です。 最後に、Xbox One での設定の名前は、通常のわかりやすい名前ではなく 64 ビットの符号なし整数またはあいまいな定数**XONLINE_PROFILE_ASDF**などの設定になります。
+**userList**と**ユーザー Id**は、相互に排他的なパラメーターです。 いずれかまたは両方が指定されている場合は、 **BadRequest**をもう一度表示されます。 **userList**は、複数の名前付きリストが要求に便利なシナリオで将来の配列です。 **ユーザー Id**は Xuid の 10 進数の文字列の構成 - JSON は 64 ビットの符号なし整数をシリアル化するのには不適切です。 最後に、Xbox One での設定の名前は、通常のわかりやすい名前ではなく 64 ビットの符号なし整数または**XONLINE_PROFILE_ASDF**などあいまいな定数の設定になります。
   
 <a id="ID4EKB"></a>
 

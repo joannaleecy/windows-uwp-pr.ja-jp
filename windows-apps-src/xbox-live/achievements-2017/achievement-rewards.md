@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 実績, リワード
 ms.localizationpriority: medium
 ms.openlocfilehash: 67a84ac7296ccbb3aed82f676f09083dc9c16b17
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4319729"
+ms.locfileid: "4350697"
 ---
 # <a name="achievement-rewards"></a>実績のリワード
 
@@ -40,7 +40,7 @@ Xbox Live では、次の種類のリワードがサポートされます。
 
 ユーザーがゲーマースコア実績をロック解除すると、Xbox Live は、設定された値をそのユーザーのゲーマースコアに自動的に加算します。
 
-実績に対するリワードとしてゲーマースコアを提供できるタイトルには制限事項があります。 ポリシー ドキュメントを参照してくださいhttps://developer.xboxlive.com/最新の情報です。
+実績に対するリワードとしてゲーマースコアを提供できるタイトルには制限事項があります。 ポリシー ドキュメントの参照がhttps://developer.xboxlive.com/最新の情報。
 
 #### <a name="art"></a>アート ####
 タイトルの開始段階の初期にデザイナーが描いたおもしろいコンセプト アートがありますか。 プレイヤーがアクセスしたときにハブ アプリケーションを装飾できる美しい高解像度イメージがありますか。 あるいは、アプリで複数のスキンをサポートしていますか。 アートのリワードにより、プレイヤーが獲得せずにはいられない豪華で美しいエクスペリエンスをタイトルで提供できます。

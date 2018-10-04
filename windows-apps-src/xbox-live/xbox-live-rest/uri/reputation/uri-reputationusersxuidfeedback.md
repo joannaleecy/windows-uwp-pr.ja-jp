@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4772620a79eed3c66886d5adde716b56f5c7bb9e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320112"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4356323"
 ---
 # <a name="usersxuidxuidfeedback"></a>/users/xuid({xuid})/feedback
  
@@ -29,7 +29,7 @@ ms.locfileid: "4320112"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| ulong| Xbox ユーザー ID (XUID)、ユーザーが報告されるのです。| 
+| xuid| ulong| Xbox ユーザー ID (XUID) のユーザーを報告します。| 
   
 <a id="ID4EZB"></a>
 
@@ -38,7 +38,7 @@ ms.locfileid: "4320112"
 
 [POST](uri-reputationusersxuidfeedbackpost.md)
 
-&nbsp;&nbsp;シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合に、タイトルから使われます。
+&nbsp;&nbsp;シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。
  
 <a id="ID4EDC"></a>
 

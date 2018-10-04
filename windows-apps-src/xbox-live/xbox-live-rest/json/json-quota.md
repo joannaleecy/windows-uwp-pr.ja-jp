@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4308c148a530233e06d666da5ec446821ba6ee26
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317543"
+ms.locfileid: "4353391"
 ---
 # <a name="quotainfo-json"></a>quotaInfo (JSON)
 クォータ タイトル グループについてを説明します。 
@@ -32,7 +32,7 @@ QuotaInfo オブジェクトには、次の仕様があります。
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | quotaBytes| 32 ビット符号付き整数 | タイトルで使用可能なバイトの最大数。| 
-| usedBytes| 32 ビット符号付き整数 | タイトルで使用されるバイト数。| 
+| usedBytes| 32 ビット符号付き整数 | タイトルで使用されるバイト数です。| 
   
 <a id="ID4EXB"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 494f4a8977a298265c264b050d6a222bd2bdd7d2
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4312641"
+ms.locfileid: "4351726"
 ---
 # <a name="resetreputation-json"></a>ResetReputation (JSON)
 ユーザーの既存のスコアを変更する必要があります新しい基本評判スコアが含まれています。 
@@ -25,13 +25,13 @@ ms.locfileid: "4312641"
  
 ## <a name="resetreputation"></a>ResetReputation
  
-ResetReputation オブジェクトでは、次の仕様があります。
+ResetReputation オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| fairplayReputation| number| 必要な基本フェアプレイ評判スコアのユーザー (有効な範囲 0 ~ 75)。| 
+| fairplayReputation| number| 目的の基本 (有効な範囲 0 ~ 75) のユーザーのフェアプレイ評判スコア。| 
 | commsReputation| number| 目的の基本 (有効な範囲 0 ~ 75) のユーザーの通信の評判スコア。| 
-| userContentReputation| number| 必要な基本 UserContent 評判スコアのユーザー (有効な範囲 0 ~ 75)。| 
+| userContentReputation| number| 目的の基本 (有効な範囲 0 ~ 75) のユーザーの UserContent 評判スコア。| 
   
 <a id="ID4E4B"></a>
 

@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: eaa7314b2cb2c8459f4bd2aae78794685c277c70
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4310853"
+ms.locfileid: "4352979"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
-セッション テンプレートの名前のセットを取得します。
+一連のセッション テンプレート名を取得します。
 
 > [!IMPORTANT]
-> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
+> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
 
   * [URI パラメーター](#ID4ET)
   * [HTTP ステータス コード](#ID4E5)
@@ -37,7 +37,7 @@ ms.locfileid: "4310853"
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
 | scid| GUID| サービス構成の識別子 (SCID)。 パート 1 セッションの id。|
-| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 パート 2 セッションの id。 |
+| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 パート 2、セッションの id。 |
 
 <a id="ID4E5"></a>
 

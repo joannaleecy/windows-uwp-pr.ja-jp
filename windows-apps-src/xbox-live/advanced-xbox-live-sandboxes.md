@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Xbox One, XDK, 対象パートナー, サンドボックス, コンテンツの分離
 ms.localizationpriority: medium
 ms.openlocfilehash: 02817869aeba78ad1b86e12d4bbd31a1107d3195
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4319673"
+ms.locfileid: "4356440"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高度な Xbox Live のサンドボックス
 
@@ -45,7 +45,7 @@ CERT と RETAIL の 2 つのシステム サンドボックスは Microsoft の�
 
 ## <a name="initial-setup-for-a-title"></a>タイトル用の初期セットアップ
 
-タイトルは Xbox デベロッパー ポータル (XDP) または Windows デベロッパー センターで作成されます。 このドキュメントでは、XDP で生まれタイトルについて説明します。 タイトルには、タイトル ID、製品 ID とサービス構成 ID (SCID) が割り当てられます。
+タイトルは Xbox デベロッパー ポータル (XDP) または Windows デベロッパー センターで作成されます。 このドキュメントでは、XDP で作成されますタイトルについて説明します。 タイトルには、タイトル ID、製品 ID とサービス構成 ID (SCID) が割り当てられます。
 
 タイトルを新たに作成しても、タイトルや製品だけでは Xbox Live にとって何の意味もありません。 1 つのタイトルを、製品版や開発用に同時に使用できるようにする必要があります。そのため、タイトルの*インスタンス化*をサポートして、タイトルを必要に応じて区別し、これを維持する必要があります。 タイトルのインスタンスはサンドボックスに存在します。これがサンドボックスの役割です。
 
@@ -171,7 +171,7 @@ Xbox One では、すべてのコンテンツ (プレリリース版および製
 
 サンドボックス ID は、タイトル、製品、サービス構成に関するデータのパーティション分割単位を表します。複数のタイトルが同じサンドボックス内に共存することができます。これは、それらのタイトルがサービス構成データを共有するための前提条件となります。
 
-(大文字と小文字) サンド ボックス ID は、次の形式で文字列: &lt;PublisherMoniker&gt;します。*n*があります。 XLDP.5 というサンドボックス ID の例について、次に説明します。
+(大文字と小文字のサンド ボックス ID は、次の形式で文字列: &lt;PublisherMoniker&gt;します。*n*があります。 XLDP.5 というサンドボックス ID の例について、次に説明します。
 
 -   *パブリッシャー モニカー*はすべての公開元の間で一意です。 したがって、"XLPD" はこの特定の公開元のパブリッシャー モニカーとなります。 パブリッシャー モニカーは、開発者アカウント情報マネージャーによって公開元が XDP 内で "アクティブ化" されるときに作成されます。
 

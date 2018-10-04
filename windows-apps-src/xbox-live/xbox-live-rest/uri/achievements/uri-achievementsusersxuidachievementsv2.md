@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ece582e46601fd63ba16a99a071ae40ecaff2d4
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318329"
+ms.locfileid: "4356417"
 ---
 # <a name="usersxuidxuidachievements"></a>/users/xuid({xuid})/achievements
  
-このユニバーサル Resource Identifier (URI) は、ユーザーの実績へのアクセスを提供します。
+このユニバーサル リソース識別子 (URI) は、ユーザーの実績へのアクセスを提供します。
  
 これらの Uri のドメインが`achievements.xboxlive.com`します。
  
@@ -31,7 +31,7 @@ ms.locfileid: "4318329"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) が (リソース) にアクセスしているユーザーのです。 認証されたユーザーの XUID に一致する必要があります。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) が (リソース) にアクセスしているユーザー。 認証されたユーザーの XUID に一致する必要があります。| 
   
 <a id="ID4EAC"></a>
 

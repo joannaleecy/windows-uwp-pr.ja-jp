@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 03adb20f796e7bff59214999febad38434a2a287
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317757"
+ms.locfileid: "4355157"
 ---
 # <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersindex"></a>DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index})
 指定されたメンバーをセッションから削除します。
 
 > [!IMPORTANT]
-> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
+> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
 
   * [URI パラメーター](#ID4ET)
   * [HTTP ステータス コード](#ID4E5)
@@ -54,7 +54,7 @@ ms.locfileid: "4317757"
 
 
 ## <a name="response-body"></a>応答本文
-[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)の応答構造を参照してください。  
+[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)で応答構造を参照してください。  
 <a id="ID4EYB"></a>
 
 

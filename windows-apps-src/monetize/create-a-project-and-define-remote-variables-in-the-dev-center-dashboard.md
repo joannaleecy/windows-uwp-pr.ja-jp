@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験
 ms.localizationpriority: medium
 ms.openlocfilehash: 25400d892f069f2536285a400cb850bedc2f09b3
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317570"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359015"
 ---
 # <a name="create-an-experiment-project-in-the-dashboard"></a>ダッシュ ボードで実験プロジェクトを作成する
 

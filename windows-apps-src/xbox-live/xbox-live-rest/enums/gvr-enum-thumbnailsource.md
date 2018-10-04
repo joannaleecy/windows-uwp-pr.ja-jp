@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d14304f38d84894ef999003e86f92beeca526ef
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4311213"
+ms.locfileid: "4354029"
 ---
 # <a name="thumbnailsource-enumeration"></a>ThumbnailSource 列挙型
-ThumbnailSource 列挙をについて説明します。 
+ThumbnailSource 列挙型をについて説明します。 
 <a id="ID4ER"></a>
 
  
@@ -28,6 +28,6 @@ ThumbnailSource 列挙をについて説明します。
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
 | 既定値| クリップの 3 つの 2 つ目の点から、大とサイズの小さなサムネイルが生成されます。| 
-| Offset| クリップの InitialUploadRequest で指定された値から、大とサイズの小さなサムネイルが生成されます。| 
+| Offset| クリップの InitialUploadRequest に指定された値から、大とサイズの小さなサムネイルが生成されます。| 
 | Upload| 縮小表示が生成され、GameClips サービスから独立してアップロードします。| 
   

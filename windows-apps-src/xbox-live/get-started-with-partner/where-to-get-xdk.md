@@ -11,20 +11,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 604fcf1e77a1ca4666c14216be5c690362c9048b
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4319501"
+ms.locfileid: "4352719"
 ---
 # <a name="how-to-get-the-xbox-development-kit-xdk"></a>Xbox 開発キット (XDK) を取得する方法
 
-Xbox 開発キット (XDK) は一般に公開されません。 対象パートナーの 2 つのグループとID@Xbox、開発者のドキュメントとミドルウェア ツールなどの開発に関するリソースの関連して、XDK へのアクセスを許可します。 XDK は、[ソフトウェアのダウンロード ページ](https://developer.microsoft.com/en-us/games/xbox/partner/resources-softwaredownloads)developer.microsoft.com サイトからダウンロードできます。
+Xbox 開発キット (XDK) は一般に公開されません。 2 つのグループでは、対象パートナーとID@Xbox、開発者のドキュメントとミドルウェア ツールなどの開発に関するリソースの関連して、XDK へのアクセスを許可します。 XDK は、[ソフトウェアのダウンロード ページ](https://developer.microsoft.com/en-us/games/xbox/partner/resources-softwaredownloads)で、developer.microsoft.com サイトからダウンロードできます。
 
-サイトにアクセスできない場合、ダウンロードまたは XDK を使用することはできません。 アクセスのアカウント マネージャーに問い合わせていいえできない場合はします。
+サイトにアクセスできない場合、ダウンロードまたは XDK を使用することはできません。 お持ちでないでない場合へのアクセスには、担当のアカウント マネージャーがお問い合わせください。
 
-XDK アクセスすることができます条件を満たすために[申し込む、ID@Xbox開発者](https://www.xbox.com/en-us/Developers/id)します。
-[ここをクリックして](../developer-program-overview.md)について詳しくはして、ID@Xboxプログラムとその他の開発者の階層します。
+条件を満たすことができます XDK アクセスするために[申し込む、ID@Xbox開発者](https://www.xbox.com/en-us/Developers/id)します。
+[ここをクリックして](../developer-program-overview.md)について詳しくはして、ID@Xboxプログラムとその他の開発者階層します。
 
 ## <a name="software-requirements"></a>ソフトウェア要件
 
@@ -41,10 +41,10 @@ XDK アクセスすることができます条件を満たすために[申し込
 
 ## <a name="use"></a>使用
 
-XDK へのアクセスもの指示に従って、その使用されているリソースへのアクセスを与えます。 これらのリソースが公開されないし、のみが利用 XDK と同様にID@Xboxおよび対象パートナー開発者です。
+XDK へのアクセスはの指示に従って、その使用されているリソースへのアクセスを与えます。 これらのリソースが公開されないし、のみが利用 XDK と同様にID@Xboxマネージ パートナー開発者とします。
 
 - Xbox Live 開発キットを使用して、 [XDK ドキュメント](https://developer.microsoft.com/en-us/games/xbox/partner/development-documentation)の最新情報の詳細を表示します。
-- 追加のヘルプのコミュニティの詳細については、[開発者フォーラム](https://forums.xboxlive.com/index.html)を参照してください。 または、アカウント マネージャーに問い合わせてできます。
+- 追加のヘルプのコミュニティの詳細については、[開発者フォーラム](https://forums.xboxlive.com/index.html)を参照してください。 またはアカウント マネージャーに連絡できます。
 
 ## <a name="install-the-xdk"></a>XDK のインストール
 

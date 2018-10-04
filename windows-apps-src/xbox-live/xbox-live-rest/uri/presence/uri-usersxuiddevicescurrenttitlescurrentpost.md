@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ac24fb580696f1524ce7a6cf09dc1e492e9d2378
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4309685"
+ms.locfileid: "4352467"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
-ユーザーのプレゼンスでタイトルを更新します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
+ユーザーのプレゼンスでは、タイトルを更新します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EEB)
   * [Authorization](#ID4EPB)
   * [必要な要求ヘッダー](#ID4ENE)
-  * [省略可能な要求ヘッダー](#ID4ERG)
+  * [オプションの要求ヘッダー](#ID4ERG)
   * [要求本文](#ID4ERH)
   * [応答本文](#ID4EKAAC)
  
@@ -36,7 +36,7 @@ ms.locfileid: "4309685"
  
 この URI は、追加およびプレゼンス、リッチ プレゼンス、およびタイトルのメディアのプレゼンス データを更新するコンソール以外のプラットフォームですべてのタイトルで使用できます。
  
-**SandboxId**は今すぐ、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は 400 Bad request エラーをスローします。
+**SandboxId**は今すぐ、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
   
 <a id="ID4EEB"></a>
 
@@ -67,8 +67,8 @@ ms.locfileid: "4309685"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
-| x xbl コントラクト バージョン| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3, vnext します。| 
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
+| x xbl コントラクト バージョン| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3、vnext します。| 
 | Content-Type| string| 値の例の要求の本文の mime タイプ: アプリケーション/json します。| 
 | Content-Length| string| 要求の本文の長さ。 値の例: 312 します。| 
 | Host| string| サーバーのドメイン名。 値の例: presencebeta.xboxlive.com します。| 
@@ -76,11 +76,11 @@ ms.locfileid: "4309685"
 <a id="ID4ERG"></a>
 
  
-## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
+## <a name="optional-request-headers"></a>オプションの要求ヘッダー
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
+| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
   
 <a id="ID4ERH"></a>
 
@@ -110,7 +110,7 @@ ms.locfileid: "4309685"
  
 ## <a name="response-body"></a>応答本文
  
-、成功した場合または 200 201 Created の HTTP ステータス コードは、返された、必要に応じてです。
+成功した場合、発生 200 または 201 Created の HTTP ステータス コードが返されますで適切なします。
  
 エラー (HTTP 4 xx または 5 xx) の場合は、適切なエラー情報は、応答本文で返されます。
   

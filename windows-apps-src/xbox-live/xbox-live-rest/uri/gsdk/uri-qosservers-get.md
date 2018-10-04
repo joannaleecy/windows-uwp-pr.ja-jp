@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a4787bf6b139d1a638ec783c0293d70a8ee239
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317993"
+ms.locfileid: "4352186"
 ---
 # <a name="get-qosservers"></a>GET (/qosservers)
-URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するために、クライアントによって呼び出されます。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [必要な要求ヘッダー](#ID4EBB)
   * [必要な応答ヘッダー](#ID4EUC)
@@ -43,7 +43,7 @@ gameserverds.xboxlive.com
 | --- | --- | --- | 
 | Content-Type| application/json| 送信されたデータの種類です。| 
 | Host| gameserverds.xboxlive.com|  | 
-| Content-Length|  | 要求オブジェクトの長さ。| 
+| Content-Length|  | 要求のオブジェクトの長さ。| 
 | x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
   
 <a id="ID4EUC"></a>

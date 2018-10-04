@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f1b1c9d15cc1bc06c14a44d395b478cdc536fd74
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4308345"
+ms.locfileid: "4350448"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 セッション オブジェクトを取得します。
 
 > [!IMPORTANT]
-> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
+> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4EMB)
@@ -35,7 +35,7 @@ ms.locfileid: "4308345"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドは、指定した名前のセッション ドキュメントを読み込んで、セッションを取得します。 成功した場合、サーバーから取得したすべての属性と、セッション オブジェクトを返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**でラップすることができます。 直接 GET メソッドのパラメーターでは指定されている**MultiplayerSessionReference**オブジェクトで、セッションの**GetCurrentSessionAsync**の*sessionReference*パラメーターで渡されたは似ています。
+この HTTP/REST メソッドでは、指定した名前のセッション ドキュメントを読み取り、セッションを取得します。 成功した場合、サーバーから取得したセッション オブジェクトのすべての属性を返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**でラップすることができます。 直接 GET メソッドのパラメーターでは指定されている**MultiplayerSessionReference**オブジェクトで、セッションの**GetCurrentSessionAsync**の*sessionReference*パラメーターで渡されたは似ています。
 
 GET メソッドのワイヤ形式は、次に示します。
 
@@ -74,7 +74,7 @@ GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 
 ## <a name="response-body"></a>応答本文
-[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)の応答構造を参照してください。  
+[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)で応答構造を参照してください。  
 <a id="ID4ETC"></a>
 
 

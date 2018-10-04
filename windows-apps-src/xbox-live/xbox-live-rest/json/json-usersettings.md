@@ -12,27 +12,27 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 20ac62403a8248011928089ea81cdf6418259db1
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4308615"
+ms.locfileid: "4353419"
 ---
 # <a name="usersettings-json"></a>UserSettings (JSON)
 現在の認証されたユーザーの設定を返します。 
 <a id="ID4EN"></a>
 
  
-## <a name="usersettings"></a>ユーザー
+## <a name="usersettings"></a>UserSettings
  
-ユーザー オブジェクトでは、次の仕様があります。
+UserSettings オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | id| 32 ビット符号なし整数| 設定の識別子です。| 
 | ソース| 32 ビット符号なし整数| 設定のソースを表します。 | 
 | titleId| 32 ビット符号なし整数| 設定に関連付けられているタイトルの識別子です。 | 
-| value| 8 ビットの符号なし整数の配列| 設定の値を表します。 クライアント設定を取得する表現形式のデータを読み取ることができるを理解する必要があります。 | 
+| value| 8 ビットの符号なし整数の配列| 設定の値を表します。 クライアント設定を取得してデータを読み取ることができるため表現の書式設定する必要がありますについて説明します。 | 
   
 <a id="ID4EJC"></a>
 

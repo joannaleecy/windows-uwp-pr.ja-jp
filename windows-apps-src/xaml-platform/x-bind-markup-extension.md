@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind マークアップ拡張では、高パフォーマンスの代わりのバインディングにです。 xBind - Windows 10 での新機能を実行および少ないメモリのバインドとデバッグの向上をサポートするよりも短い時間でします。
+description: XBind マークアップ拡張には、バインド、高パフォーマンス代わりです。 xBind - Windows 10 の新規の短時間でおよび少ないメモリ動作バインディングとデバッグの向上をサポートしています。
 title: xBind マークアップ拡張
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313770"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358149"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} マークアップ拡張
 
@@ -115,7 +115,7 @@ _注: C# スタイルのキャスト構文は添付プロパティ構文より�
 
 ## <a name="functions-in-binding-paths"></a>バインディング パス内の関数
 
-Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これは、データ バインド マークアップでいくつかのシナリオを可能にするための強力な機能です。 詳細については、[関数のバインディング](../data-binding/function-bindings.md)を参照してください。
+Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これは、マークアップでいくつかのシナリオを可能にするデータをバインドするための強力な機能です。 詳細については、[関数のバインディング](../data-binding/function-bindings.md)を参照してください。
 
 ## <a name="event-binding"></a>イベント バインディング
 

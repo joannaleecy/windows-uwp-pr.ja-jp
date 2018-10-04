@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 459624ea487c158f3fc92b9c6024b086d49c204e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4316465"
+ms.locfileid: "4352764"
 ---
 # <a name="post-titlestitleidclusters"></a>POST (/titles/{titleId}/clusters)
-Xbox Live Compute サーバー インスタンスを作成するクライアントをできる URI。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
+クライアントが Xbox Live Compute サーバー インスタンスを作成することができる URI。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
   * [必要な要求ヘッダー](#ID4EGB)
@@ -56,7 +56,7 @@ gameserverms.xboxlive.com
 | ユーザー エージェント|  | 要求を行っているユーザー エージェントについて説明します。| 
 | Content-Type| application/json| 送信されたデータの種類です。| 
 | Host| gameserverms.xboxlive.com|  | 
-| Content-Length|  | 要求オブジェクトの長さ。| 
+| Content-Length|  | 要求のオブジェクトの長さ。| 
 | x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
 | Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークンです。| 
   
@@ -76,8 +76,8 @@ gameserverms.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| sessionId| MPSD からセッション識別子。| 
-| abortIfQueued| 省略可能なパラメーターは、どの場合に true に設定する場合はすぐにフルフィルメントしないことができますが、リソースのこのセッションをキューに入れいない GSMS に指示します。 この値が true であるため、要求が中止されると、応答オブジェクトに含まは<code>"fulfillmentState" : "Aborted"</code>します。 | 
+| sessionId| MPSD からセッション識別子です。| 
+| abortIfQueued| 省略可能なパラメーターは、どの場合に true に設定する場合はすぐにフルフィルメントしないことができますが、リソースのこのセッションをキューに入れいない GSMS に指示します。 この値が true であるため、要求が中止されると、応答オブジェクトを含むは<code>"fulfillmentState" : "Aborted"</code>します。 | 
  
 <a id="ID4ERE"></a>
 
@@ -120,8 +120,8 @@ gameserverms.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| pollIntervalMilliseconds| (ミリ秒) の完了をポーリング間隔をお勧めします。 注意がこれには、クラスターが準備ができたら、するときの推定値ではありませんが、サブスクリプションとレートを要求し、フルフィルメントの現在のプールを指定された状態を更新する頻度、呼び出し元のポーリングを行うための推奨事項ではなく。| 
-| fulfillmentState| 提供されているセッションは、リソースをすぐに割り当てられたかどうか「フルフィルメント、」リソースの今後の可用性のキューに追加される「キューに入れ」を示すまたは中止され、「中止」、要求を処理することができない原因とすぐに要求"true"と指定した abortIfQueued します。 | 
+| pollIntervalMilliseconds| (ミリ秒) の完了をポーリングする間隔をお勧めします。 注意がこれには、クラスターが準備ができたら、するときの推定値ではありませんが、サブスクリプションとレートを要求し、フルフィルメントの現在のプールを指定された状態を更新する頻度、呼び出し元のポーリングを行うための推奨事項ではなく。| 
+| fulfillmentState| 提供されているセッションは、リソースをすぐに割り当てられたかどうか「フルフィルメント、」リソースの今後の可用性のキューに追加される「キューに入れ」を示すまたは中止され、「中止」、要求を処理することができない原因とすぐに、要求"true"と指定した abortIfQueued します。 | 
  
 <a id="ID4EWH"></a>
 
@@ -143,13 +143,13 @@ gameserverms.xboxlive.com
  
 ## <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しをのみ再試行する必要があります。
+次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しを再試行のみする必要があります。
  
    * 408-サーバー タイムアウト
    * 429: too Many Requests
    * 500-サーバー エラー
    * 502-無効なゲートウェイ
-   * 503-Service Unavailable
+   * 503-サービスを利用できません
    * 504-ゲートウェイ タイムアウト
    
 <a id="ID4EFBAC"></a>

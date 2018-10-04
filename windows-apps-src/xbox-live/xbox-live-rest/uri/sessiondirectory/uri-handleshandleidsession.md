@@ -12,22 +12,22 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: eb7ca17500f571ed72cf0bcd6ececbcde17ce717
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4309687"
+ms.locfileid: "4351516"
 ---
 # <a name="handleshandleidsession"></a>/handles/{handleId}/session
 PUT および GET 操作セッションでは、ハンドルを逆参照を使用してをサポートしています。 
 
 > [!NOTE] 
-> この URI は、2015年マルチプレイヤーで使用し、そのマルチプレイヤーのバージョンにのみとを適用します。 テンプレート コントラクト 104/105 以降で使用されます。  
+> この URI は、2015年マルチプレイヤーで使用し、そのマルチプレイヤーのバージョンにのみ以降を適用します。 テンプレート コントラクト 104/105 以降で使用する概念があることです。  
 
  
 
 > [!NOTE] 
-> この URI は、現在 Xbox One 本体とサービスの識別子を使用してサーバーによって外部的にもアクセスのみです。  
+> この URI は、現在 Xbox One 本体とサーバーのサービスの識別子を使用してアクセスできる外部のみです。  
 
  
 <a id="ID4ES"></a>

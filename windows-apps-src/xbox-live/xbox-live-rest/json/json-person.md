@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e8e4ac4e91c4359ca20822297ccb625d09e3d59
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4308223"
+ms.locfileid: "4350257"
 ---
 # <a name="person-json"></a>Person (JSON)
 People システムで 1 人のユーザーに関するメタデータ。 
@@ -25,13 +25,13 @@ People システムで 1 人のユーザーに関するメタデータ。
  
 ## <a name="person"></a>人
  
-Person オブジェクトでは、次の仕様があります。
+ユーザー オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| string| 必須。 Xbox ユーザー ID (XUID)、10 進数です。 値の例: 2603643534573573 します。| 
-| isFavorite| ブール値| 必須。 かどうかこのユーザーは、ユーザーが気詳細です。 ユーザーためできるユーザー数が非常に大規模な自分のユーザー リストで、にお気に入りユーザーをエクスペリエンスに優先順位し、する前に [お気に入り] ではない他のユーザーに表示する必要があります。| 
-| isFollowingCaller| ブール値| 省略可能。 このユーザーがユーザーをフォローするかどうかを代わりに、API 呼び出ししました。| 
+| xuid| string| 必須。 Xbox ユーザー ID (XUID)、10 進数。 値の例: 2603643534573573 します。| 
+| isFavorite| ブール値| 必須。 かどうかこのユーザーは、ユーザーが気詳細です。 ユーザーでは自分のユーザー リストでに非常に多数のユーザーがあるためお気に入りユーザーをエクスペリエンスに優先順位し、する前に [お気に入り] ではない他のユーザーに表示する必要があります。| 
+| isFollowingCaller| ブール値| 省略可能。 このユーザーが、ユーザーをフォローするかどうかを代わりに、API 呼び出ししました。| 
 | socialNetworks| 文字列の配列| 省略可能。 外部ネットワーク内でユーザーがこの人と関係のあります。| 
   
 <a id="ID4EHC"></a>

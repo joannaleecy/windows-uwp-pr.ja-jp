@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d563fde1f5c7aa430547e16771fa920786cd739
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4308187"
+ms.locfileid: "4354700"
 ---
 # <a name="usersxuidxuidgroupsmonikerbroadcastingcount"></a>/users/xuid({xuid})/groups/{moniker}/broadcasting/count
 アクセス グループ モニカーで指定されているブロードキャスト ユーザーの数は、URI に表示される XUID に関連します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
@@ -30,8 +30,8 @@ ms.locfileid: "4308187"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| string| Xbox ユーザー ID (XUID)、ユーザー、グループ内の Xuid に関連するのです。| 
-| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるだけモニカーでは、大文字の 'P'"People"でです。| 
+| xuid| string| Xbox ユーザー ID (XUID)、グループ内の Xuid に関連するユーザーのです。| 
+| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるだけモニカーでは、'P' の首都を"People"でです。| 
   
 <a id="ID4E4B"></a>
 

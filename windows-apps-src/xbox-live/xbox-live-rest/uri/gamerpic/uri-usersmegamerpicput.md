@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c8c8f4297bb671f8e90c233ccf98dc2cf0730ad
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320006"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355397"
 ---
 # <a name="put-usersmegamerpic"></a>PUT (/users/me/gamerpic)
 1080 x 1080 ゲーマー アイコンをアップロードします。 
@@ -29,14 +29,14 @@ ms.locfileid: "4320006"
  
 ## <a name="request-body"></a>要求本文
  
-要求本文は、ゲーマー アイコン (1080 x 1080 PNG ファイルです)。
+要求本文には、ゲーマー アイコン (1080 x 1080 PNG ファイル) です。
   
 <a id="ID4EZ"></a>
 
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ba33a1e79a2447c5dac546ce0f1caeaf16929a3
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313368"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357858"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ
 
@@ -26,7 +26,7 @@ ms.locfileid: "4313368"
 独自のカメラ用 UI を用意する場合、またはキャプチャ操作に対してより堅牢で低レベルな制御が必要な場合は、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトを使用して、独自のキャプチャ操作を実装する必要があります。 詳しくは、「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」をご覧ください。
 
 > [!NOTE]
-> アプリが CameraCaptureUI のみ使用している場合、アプリのマニフェスト ファイルで**web カメラ**または**マイク**機能を指定する必要がありますできません。 指定すると、アプリはデバイスのカメラのプライバシー設定に表示されますが、ユーザーがアプリからのカメラへのアクセスを拒否しても、CameraCaptureUI はメディアをキャプチャできます。 これは、Windows の組み込みのカメラ アプリが、写真、音声、ビデオのキャプチャをボタンを押して開始する必要がある、信頼されているファースト パーティ アプリであるためです。 Windows アプリケーション認定キットの認定の唯一の写真のキャプチャ メカニズムとして CameraCaptureUI を使用して、web カメラまたはマイク機能を指定した場合、ストアに提出するとき、アプリがあります。
+> アプリが CameraCaptureUI のみ使用している場合、アプリのマニフェスト ファイルで**web カメラ**または**マイク**機能を指定する必要がありますできません。 指定すると、アプリはデバイスのカメラのプライバシー設定に表示されますが、ユーザーがアプリからのカメラへのアクセスを拒否しても、CameraCaptureUI はメディアをキャプチャできます。 これは、Windows の組み込みのカメラ アプリが、写真、音声、ビデオのキャプチャをボタンを押して開始する必要がある、信頼されているファースト パーティ アプリであるためです。 アプリには、Windows アプリケーション認定キットの証明書ストアに提出する場合は、写真のキャプチャの唯一のメカニズムとして CameraCaptureUI を使用するときに、web カメラまたはマイク機能を指定するときが失敗する可能性があります。
 > MediaCapture を使用して、音声、写真、またはビデオをプログラムによってキャプチャする場合は、アプリのマニフェスト ファイルで Web カメラまたはマイク機能を指定する必要があります。
 
 ## <a name="capture-a-photo-with-cameracaptureui"></a>CameraCaptureUI を使った写真のキャプチャ

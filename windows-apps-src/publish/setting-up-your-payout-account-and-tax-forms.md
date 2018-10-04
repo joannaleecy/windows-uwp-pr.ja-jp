@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313474"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360557"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>受取りアカウントの設定と税関連の書類
 
 
 Microsoft Store でアプリの売上から収益を受け取るには、受取りアカウントを設定し、税関連の必要があります。
 
-無料アプリのみを公開する (かつアプリ内購入の提供や Microsoft Advertising を使用しない) 場合は、受取りアカウントを設定する必要も、税関連の書類を入力する必要もありません。 変わったり、後で変更し、アプリ (またはアドオン) を販売するかを決定する場合は、受取りアカウントを設定し、その時点で税フォームに記入します。 受け取りアカウントと税プロファイルの設定が完了するまで、有料アプリまたはアドオンを申請することはできません。
+無料アプリのみを公開する (かつアプリ内購入の提供や Microsoft Advertising を使用しない) 場合は、受取りアカウントを設定する必要も、税関連の書類を入力する必要もありません。 変わったり、後で変更し、アプリ (またはアドオン) を販売するかを決定する場合は、受取りアカウントを設定し、その時点で、税関連の書類を記入します。 受け取りアカウントと税プロファイルの設定が完了するまで、有料アプリまたはアドオンを申請することはできません。
 
 > [!NOTE]
 > [特定の市場](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)では、無料のアプリしか申請できません。 アカウントがそうした市場のいずれかで登録されている場合は、受取りアカウントを設定できません。

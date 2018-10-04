@@ -12,39 +12,39 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 047f7287578f52591c48ee059e72efb559b41c87
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4315691"
+ms.locfileid: "4352399"
 ---
 # <a name="gameclip-json"></a>GameClip (JSON)
  
 <a id="ID4EO"></a>
 
  
-## <a name="gameclip"></a>ゲーム クリップだった
+## <a name="gameclip"></a>GameClip
  
-ゲーム クリップだったオブジェクトでは、次の仕様があります。
+GameClip オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | <b>gameClipId</b>| string| ゲーム クリップに割り当てられている ID。| 
 | <b>状態</b>| GameClipState| システムでゲーム クリップの状態。| 
-| <b>dateRecorded</b>| DateTime| 日付と UTC (ISO 8601 形式) での記録が開始された時刻。| 
+| <b>dateRecorded</b>| DateTime| 日付と UTC (ISO 8601 形式) で、録画が開始された時刻。| 
 | <b>lastModified</b>| DateTime| 最終ゲーム クリップまたは UTC (ISO 8601 形式) で、メタデータの時間を変更します。| 
-| <b>userCaption</b>| string| ユーザーが入力したローカライズ文字列ゲーム クリップ。| 
+| <b>userCaption</b>| string| ユーザーが入力した以外にローカライズされた文字列ゲーム クリップの。| 
 | <b>type</b>| GameClipTypes| クリップの種類です。 そうである場合をコンマで区切られたことが、複数の値ができます。| 
-| <b>ソース</b>| GameClipSource| どのクリップは供給されました。| 
+| <b>ソース</b>| GameClipSource| クリップが作成された方法です。| 
 | <b>visibility</b>| GameClipVisibility| システムでの公開後に、ゲーム クリップの可視性です。| 
 | <b>durationInSeconds</b>| 32 ビット符号なし整数| 秒単位でゲーム クリップの期間です。| 
-| <b>scid</b>| string| ゲーム クリップが関連付けられている SCID です。| 
-| <b>rating</b>| 倍精度浮動小数点数| ゲーム クリップ, 0.0 に 5.0 の範囲内に関連付けられている区分します。| 
+| <b>scid</b>| string| ゲームのクリップが関連付けられている SCID です。| 
+| <b>rating</b>| 倍精度浮動小数点数| 0.0 に 5.0 の範囲で、ゲーム クリップに関連付けられている評価します。| 
 | <b>ratingCount</b>| 32 ビット符号なし整数| このクリップが評価された回数。| 
 | <b>表示モード</b>| 32 ビット符号なし整数| ゲーム クリップに関連付けられているビューの数。| 
 | <b>titleData</b>| string| タイトルに固有のプロパティ バッグです。| 
 | <b>titleData</b>| string| コンソールに固有のプロパティ バッグです。| 
-| <b>縮小表示</b>| GameClipThumbnail の配列| GameClipThumbnail オブジェクトの配列です。| 
+| <b>サムネイル</b>| GameClipThumbnail の配列| GameClipThumbnail オブジェクトの配列です。| 
 | <b>gameClipUris</b>| GameClipUri の配列| GameClipUri オブジェクトの配列です。| 
 | <b>xuid</b>| string| ゲーム クリップ, 文字列としてマーシャ リングの所有者の XUID です。| 
 | <b>clipName</b>| string| タイトルの管理システムから検索要求の入力のロケールに基づいて、クリップの名前のローカライズされたバージョンです。| 

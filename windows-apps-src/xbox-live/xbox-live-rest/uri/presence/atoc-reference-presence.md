@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f4c2a34d47f894e2ac9aeaf6228c8ebd41348306
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318289"
+ms.locfileid: "4354333"
 ---
 # <a name="presence-uris"></a>プレゼンス URI
  
-このセクションでは、*プレゼンス*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*プレゼンス*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
  
-Xbox 360、Windows Phone デバイス、または Windows を実行しているゲームだけでは、このサービスを使用できます。
+Xbox 360、Windows Phone デバイス、または Windows を実行しているゲームのみでは、このサービスを使用できます。
  
 これらの Uri のドメインは、userpresence.xboxlive.com です。
  
@@ -43,7 +43,7 @@ Xbox 360、Windows Phone デバイス、または Windows を実行している�
 
 [/users/me/groups/{moniker}](uri-usersmegroupsmoniker.md)
 
-&nbsp;&nbsp;[グループの presencerecord を要求してにアクセスします。
+&nbsp;&nbsp;[グループの PresenceRecord にアクセスします。
 
 [/users/xuid({xuid})](uri-usersxuid.md)
 
@@ -55,7 +55,7 @@ Xbox 360、Windows Phone デバイス、または Windows を実行している�
 
 [/users/xuid({xuid})/groups/{moniker}](uri-usersxuidgroupsmoniker.md)
 
-&nbsp;&nbsp;グループの presencerecord を要求してにアクセスします。
+&nbsp;&nbsp;グループの PresenceRecord にアクセスします。
 
 [/users/xuid({xuid})/groups/{moniker}/broadcasting](uri-usersxuidgroupsmonikerbroadcasting.md)
 

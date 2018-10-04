@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b259ae20bd07c6869bc6646fc44a70f994a261b7
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318147"
+ms.locfileid: "4350379"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>ビデオの EDS 逆引き参照
  
@@ -37,14 +37,14 @@ ms.locfileid: "4318147"
  
  
 通常の逆引き参照では、2 つの手順が必要です。 
-   * 利用できない場合 (たとえば、詳細呼び出し) からプロバイダー メディア id を取得します。 
+   * 利用できない場合 (たとえば、詳細呼び出し) からプロバイダー メディアの id を取得します。 
 
 ```cpp
 GET /media/en-us/details?ids=4eeaf5b4-9af2-56e4-a738-68b48e954494&desiredMediaItemTypes=Movie&desired=Providers
 ```
 
  
-   * 応答には、以前から**ProviderMediaId**フィールドを使用して逆引き参照の呼び出しを発行します。 
+   * 以前の応答から**ProviderMediaId**フィールドを使用して逆引き参照の呼び出しを発行します。 
 
 ```cpp
 GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedMediaId&desiredMediaItemTypes=Movie&fields=all&ScopeIdType=Title&ScopeId=0x5848085B
@@ -53,7 +53,7 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
   
  
-**ProviderMediaId**フィールドが EDS から取得されていない場合、フィールドは、EDS に正しくを渡される URL エンコードである必要があります。
+**ProviderMediaId**フィールドが EDS から取得されていない場合、フィールドは、EDS に正しく渡される URL エンコードである必要があります。
   
 <a id="ID4EOC"></a>
 

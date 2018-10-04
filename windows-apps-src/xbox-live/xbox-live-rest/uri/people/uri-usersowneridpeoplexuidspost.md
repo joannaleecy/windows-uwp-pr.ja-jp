@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 27fbc0e209439fca01cf1e7d8c7c3bf98c4b9053
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4308529"
+ms.locfileid: "4351152"
 ---
 # <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/people/xuids)
 呼び出し元のユーザーからコレクションの XUID によってユーザーを取得します。 これらの Uri のドメインが`social.xboxlive.com`します。
@@ -25,7 +25,7 @@ ms.locfileid: "4308529"
   * [URI パラメーター](#ID4E5)
   * [Authorization](#ID4EJB)
   * [必要な要求ヘッダー](#ID4ERC)
-  * [省略可能な要求ヘッダー](#ID4EBE)
+  * [オプションの要求ヘッダー](#ID4EBE)
   * [要求本文](#ID4EHF)
   * [HTTP ステータス コード](#ID4EKH)
   * [必要な応答ヘッダー](#ID4ENBAC)
@@ -36,7 +36,7 @@ ms.locfileid: "4308529"
  
 ## <a name="remarks"></a>注釈
  
-POST ので、これと同じ結果に 1 回または複数回実行する場合、操作はすべてのリソースを変更しません。
+POST ので、これと同じ結果に 1 回または複数回実行している場合、操作はすべてのリソースを変更しません。
   
 <a id="ID4E5"></a>
 
@@ -45,7 +45,7 @@ POST ので、これと同じ結果に 1 回または複数回実行する場合
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。| 
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。| 
   
 <a id="ID4EJB"></a>
 
@@ -64,13 +64,13 @@ POST ので、これと同じ結果に 1 回または複数回実行する場合
 | ヘッダー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Authorization| [String]。 Xbox LIVE のデータを承認します。 これは、通常、暗号化された XSTS トークンです。 値の例: <b>XBL3.0 x =&lt;userhash >;&lt;トークン ></b>します。| 
-| Content-Length| 32 ビット符号なし整数。 バイト単位の長さ、要求本文。 値の例: 22 します。| 
-| Content-Type| [String]。 要求本文の MIME タイプ。 これは、<b>アプリケーション/json</b>でなければなりません。| 
+| Content-Length| 32 ビットの符号なし整数。 、バイトで、要求の本文の長さ。 値の例: 22 します。| 
+| Content-Type| [String]。 要求本文の MIME タイプ。 <b>アプリケーション/json</b>可能性があります。| 
   
 <a id="ID4EBE"></a>
 
  
-## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
+## <a name="optional-request-headers"></a>オプションの要求ヘッダー
  
 | ヘッダー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -128,12 +128,12 @@ POST ので、これと同じ結果に 1 回または複数回実行する場合
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| OK| メソッドは、「取得」するときに成功します。| 
-| 204| No Content| 成功の方法が「追加」または「削除」します。| 
+| 204| No Content| 成功メソッドが「追加」または「削除」します。| 
 | 400| Bad Request| メソッドのパラメーターが不足しているか、正しくないか、ユーザー Id が正しくありません。| 
 | 403| Forbidden| 承認ヘッダーから XUID クレームを解析できませんでした。| 
   
@@ -154,7 +154,7 @@ POST ので、これと同じ結果に 1 回または複数回実行する場合
  
 応答本文は要求メソッドは、「取得」するときにのみ送信されます。 「追加」または「削除」の応答の本文はありません。
  
-「取得」メソッドの呼び出しが成功した場合は、サービスはコレクション、および呼び出し元のユーザーのコレクションが含まれた配列で呼び出し元のユーザーのユーザーの合計数を返します。 「追加」と「を削除する」メソッドの応答は返されません。 [PeopleList (JSON)](../../json/json-peoplelist.md)を参照してください。
+「取得」メソッドの呼び出しが成功した場合は、サービスはコレクション、および呼び出し元のユーザーのコレクションが含まれた配列で、呼び出し元のユーザーのユーザーの合計数を返します。 「追加」と「削除」メソッドの応答は返されません。 [PeopleList (JSON)](../../json/json-peoplelist.md)を参照してください。
  
 <a id="ID4EHDAC"></a>
 

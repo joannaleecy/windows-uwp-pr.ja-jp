@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 036a64f893ab1581d42f1601204b383968c607e3
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4313163"
+ms.locfileid: "4353630"
 ---
 # <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefinersqueryrefinersubqueryrefinervalues"></a>GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues)
-指定されたクエリの調整値 ("subgenres には、指定したジャンル"など) のサブ値の一覧を取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
+指定されたクエリの絞り込み条件値 ("subgenres には、特定のジャンル"など) のサブ値の一覧を取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EDB)
@@ -29,7 +29,7 @@ ms.locfileid: "4313163"
  
 ## <a name="remarks"></a>注釈
  
-クエリの調整値はで**queryRefinerValue**クエリに渡される URI 語幹で禁止されている文字の調整値を許可する動作を行うという名前のクエリ文字列パラメーターとして渡されます。
+クエリの絞り込み条件値で**queryRefinerValue**値を許可するクエリ絞り込み条件を渡すことが URI 語幹で禁止されている文字で実行されるという名前のクエリ文字列パラメーターとして渡されます。
  
 この API は、音楽ののみサポートされます。
   
@@ -40,7 +40,7 @@ ms.locfileid: "4313163"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
+| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
   
 <a id="ID4EOB"></a>
 

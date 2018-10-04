@@ -1,6 +1,6 @@
 ---
 title: MonoGame 2D で UWP ゲームを作成する
-description: ゲームは、c# と MonoGame で記述された、Microsoft Store 向けのシンプルな UWP
+description: C# と MonoGame で記述された Microsoft ストアのゲームのシンプルな UWP
 author: muhsinking
 ms.author: mukin
 ms.date: 03/06/2017
@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: d38465ce02e0aedf854094ede75fc33701b226a6
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319834"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360383"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>MonoGame 2D で UWP ゲームを作成する
 
@@ -30,21 +30,21 @@ MonoGame は、軽量のゲーム開発フレームワークです。 このチ�
 
 ## <a name="prerequisites"></a>前提条件
 +   Windows 10 と Microsoft Visual Studio 2017。  [Visual Studio を備えた環境をセットアップする方法については、ここをクリックしてください](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
-+ .NET デスクトップ開発フレームワークです。 このインストールされていない場合は、Visual Studio インストーラーを再度実行し、Visual Studio 2017 のインストールを変更することによって取得できます。
++ .NET デスクトップ開発フレームワークです。 このインストールされていない場合は、Visual Studio インストーラーを再実行して、Visual Studio 2017 のインストールを変更することによって取得できます。
 +   C# またはこれに類似するオブジェクト指向プログラミング言語に関する基本的な知識。 [C# によるチュートリアルについては、こちらをご覧ください](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 +   オプションとして、クラス、メソッド、変数など、基本的なコンピューター サイエンスの概念に関する知識。
 
 ## <a name="why-monogame"></a>MonoGame を使用する理由
-ゲームの開発環境には、今や十分すぎるほどの選択肢が存在します。 Unity などフル機能を備えたエンジンから DirectX など包括的で複雑なマルチメディア API まで、どこから始めるべきか迷います。 MonoGame は、複雑さのレベルがゲーム エンジンと DirectX などの基本 API の中間に分類されるツールのセットです。 MonoGame では、使いやすいコンテンツ パイプラインと、多様なプラットフォームで動作する軽量のゲームを作成するために必要なすべての機能が提供されています。 何よりも、MonoGame のアプリは純粋な c# で記述し、Microsoft ストアまたはその他の同様の配布プラットフォームを通じて迅速の配布にことができます。
+ゲームの開発環境には、今や十分すぎるほどの選択肢が存在します。 Unity などフル機能を備えたエンジンから DirectX など包括的で複雑なマルチメディア API まで、どこから始めるべきか迷います。 MonoGame は、複雑さのレベルがゲーム エンジンと DirectX などの基本 API の中間に分類されるツールのセットです。 MonoGame では、使いやすいコンテンツ パイプラインと、多様なプラットフォームで動作する軽量のゲームを作成するために必要なすべての機能が提供されています。 、すべての MonoGame のアプリは純粋な c# で記述され、Microsoft ストアやその他の同様の配布プラットフォームを通じて迅速に配布することができます。
 
 ## <a name="get-the-code"></a>コードを入手する
 段階を追ってチュートリアルを進めるのではなく、MonoGame の動作を確認するには、[こちらをクリックして完成したアプリを入手してください](https://github.com/Microsoft/Windows-appsample-get-started-mg2d)。
 
-Visual Studio 2017 でプロジェクトを開き、サンプルを実行する、 **F5**キーを押します。 初めての実行時には、インストールに含まれていない NuGet パッケージを Visual Studio が取得する必要があるため、少し時間がかかることがあります。
+Visual Studio 2017 で、プロジェクトを開くし、サンプルを実行する、 **F5**キーを押します。 初めての実行時には、インストールに含まれていない NuGet パッケージを Visual Studio が取得する必要があるため、少し時間がかかることがあります。
 
 これを行った場合は、MonoGame のセットアップに関する次のセクションをスキップして、順を追ったコードのウォークスルーに進むことができます。
 
-**注:** このサンプルで作成するゲームは、完全なゲームではなく、おもしろい内容でもありません。 その唯一の目的は、MonoGame での 2D 開発の主要概念をすべての方法を示すためです。 このコードを基にして、より優れたゲームを作成することも、基礎を習得して 1 から始めることもできます。
+**注:** このサンプルで作成するゲームは、完全なゲームではなく、おもしろい内容でもありません。 そのだけを目的では、MonoGame での 2D 開発のすべての主要な概念を示します。 このコードを基にして、より優れたゲームを作成することも、基礎を習得して 1 から始めることもできます。
 
 ## <a name="set-up-monogame-project"></a>MonoGame プロジェクトのセットアップ
 1. [MonoGame.net](http://www.monogame.net/) から、**MonoGame 3.6** for Visual Studio をインストールします。

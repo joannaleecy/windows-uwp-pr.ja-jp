@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 556a787eb1e92e4c8adb7457235afb45c02df2dc
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316754"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358558"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>バックグラウンド タスクを実行するための条件の設定
 
@@ -31,9 +31,9 @@ ms.locfileid: "4316754"
 
 バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。
 
-場合によっては、バック グラウンド タスクでは、特定の条件を満たすのバック グラウンド タスクを完了する必要があります。 バックグラウンド タスクを登録するときに、[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) で指定される条件を 1 つ以上指定することができます。 トリガーが起動された後、条件をオンになります。 バック グラウンド タスクはキューに登録しが必要なすべての条件が満たされるまでは実行されません。
+場合によっては、バック グラウンド タスクでは、特定の条件が成功するバック グラウンド タスクが満たす必要があります。 バックグラウンド タスクを登録するときに、[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) で指定される条件を 1 つ以上指定することができます。 トリガーが起動された後、条件をオンになります。 バック グラウンド タスクはキューに登録しが必要なすべての条件が満たされるまでは実行されません。
 
-バック グラウンド タスクの条件を入れるタスクが不必要に実行されていることを防ぐことで、バッテリーの寿命と CPU を保存します。 たとえば、バックグラウンド タスクがタイマーで実行され、インターネット接続が必要な場合は、タスクを登録する前に、**InternetAvailable** 条件を [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) に追加します。 これにより、タイマーの設定時間が経過し、*かつ*インターネットが利用可能な場合にのみバックグラウンド タスクが実行されるため、タスクがシステム リソースやバッテリー残量を無駄に消費することはなくなります。
+タスクが不必要に実行されていることを防ぐことで、バッテリーの寿命と CPU を保存するバック グラウンド タスクの条件を配置します。 たとえば、バックグラウンド タスクがタイマーで実行され、インターネット接続が必要な場合は、タスクを登録する前に、**InternetAvailable** 条件を [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) に追加します。 これにより、タイマーの設定時間が経過し、*かつ*インターネットが利用可能な場合にのみバックグラウンド タスクが実行されるため、タスクがシステム リソースやバッテリー残量を無駄に消費することはなくなります。
 
 同じ[**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)上**で AddCondition**が複数回呼び出すことによって、複数の条件を結合することもできます。 **UserPresent** や **UserNotPresent** など競合する条件を追加しないように注意してください。
 
@@ -43,9 +43,9 @@ ms.locfileid: "4316754"
 
 このトピックの内容は、アウトプロセスで実行されるバックグラウンド タスク、およびフォアグラウンド アプリと同じプロセスで実行されるバックグラウンド タスクに適用されます。
 
-条件を追加する前に、バック グラウンド タスクの実行を有効にする必要のある条件を表す[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)オブジェクトを作成します。 コンス トラクターで[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)列挙値を満たす必要がある条件を指定します。
+条件を追加する前を実行するバック グラウンド タスクを有効にする必要のある条件を表す[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)オブジェクトを作成します。 コンス トラクターで[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)列挙値を満たす必要がある条件を指定します。
 
-次のコードでは、 **InternetAvailable**条件を指定する[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)オブジェクトを作成します。
+次のコードは、 **InternetAvailable**条件を指定する[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)オブジェクトを作成します。
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -64,7 +64,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 条件を追加するには、[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトで [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) メソッドを呼び出して、[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) オブジェクトに渡します。
 
-次のコードは、 **InternetAvailable**条件を追加するのに**taskBuilder**を使用します。
+次のコードでは、 **InternetAvailable**条件を追加するのに**taskBuilder**を使用します。
 
 ```csharp
 taskBuilder.AddCondition(internetCondition);
@@ -182,7 +182,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>注釈
 
 > [!NOTE]
-> 必要な適切でないときに実行しないと、のみ実行するために、バック グラウンド タスクの条件を選択します。 バックグラウンド タスクの各条件については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
+> 必要に応じて、され適切でないときに実行されないのみ実行するために、バック グラウンド タスクの条件を選択します。 バックグラウンド タスクの各条件については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 

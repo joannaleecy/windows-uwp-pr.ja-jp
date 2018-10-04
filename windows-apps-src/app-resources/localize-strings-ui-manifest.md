@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309392"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358641"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)」をご覧ください。
@@ -92,13 +92,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 クラス ライブラリ (ユニバーサル Windows) または[Windows ランタイム ライブラリ (ユニバーサル Windows)](../winrt-components/index.md) プロジェクト内からこの同じコードを使用することができます。 実行時に、ライブラリをホストしているアプリのリソースが読み込まれます。 アプリはローカライズの度合いが大きくなる可能性があるため、ライブラリでは、ライブラリをホストしているアプリからリソースを読み込むことをお勧めします。 ライブラリがリソースを提供する必要がある場合、ライブラリをホストしているアプリがそれらのリソースを入力に置き換えられるようにするオプションを提供する必要があります。
 
-リソース名がセグメント化されている場合 (が含まれている"."の文字)、し、置換ドットとスラッシュ (「/」) リソース名の文字です。 プロパティの識別子には、ドット; などが含まれます。そのためのコードからそれらのいずれかを読み込むためにこのブロックを行う必要があります。
+リソース名がセグメント化されている場合 (が含まれている"."文字)、し、置換ドットとスラッシュ (「/」) リソース名の文字です。 プロパティの識別子には、ドット; などが含まれます。そのためのコードからそれらのいずれかを読み込むためにこのブロックを行う必要があります。
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-迷う場合、アプリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルに表示されます。
+迷う場合に、アプリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルに表示されます。
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -175,13 +175,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 "AppDisplayName" リソースを `Resources.resw` から `ManifestResources.resw` に移動する場合は、アプリ パッケージ マニフェストで `ms-resource:AppDisplayName` を `ms-resource:/ManifestResources/AppDisplayName` に変更します。
 
-リソース ファイル名がセグメント化されている場合 (が含まれている"."の文字) を参照する場合に、名前にドットを終了します。 文字をスラッシュ (「/」)、リソース名のと同じようにドットを置き換える**しないでください**。
+リソース ファイルの名前がセグメント化されている場合 (が含まれている"."の文字) を参照する場合に名前にドットを終了します。 スラッシュ (「/」) 文字、リソース名のと同じようにドットを置き換える**しないでください**。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-迷う場合、アプリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルに表示されます。
+迷う場合に、アプリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルに表示されます。
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -268,7 +268,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Windows ランタイム ライブラリ (ユニバーサル Windows)、既定の名前空間がセグメント化されている場合の (が含まれている"."の文字)、リソース マップ名にドットを使用します。
+Windows ランタイム ライブラリ (ユニバーサル Windows)、既定の名前空間を分割する場合の (が含まれている"."の文字)、リソース マップ名にドットを使用します。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
@@ -281,7 +281,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>他のパッケージから文字列を読み込む
-アプリ パッケージのためのリソースの管理し、パッケージのを通じてアクセス現在[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)からアクセス可能な最上位[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)を所有しています。 各パッケージ内では、さまざまなコンポーネントが独自の ResourceMap サブツリーを持つことができます。これらは、[**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) によってアクセスできます。
+アプリ パッケージのリソースの管理し、パッケージのを通じてアクセス現在[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)からアクセス可能な最上位[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)を所有します。 各パッケージ内では、さまざまなコンポーネントが独自の ResourceMap サブツリーを持つことができます。これらは、[**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) によってアクセスできます。
 
 フレームワーク パッケージは、絶対リソース識別子 URI を使って独自のリソースにアクセスできます。 「[URI スキーム](uri-schemes.md)」もご覧ください。
 

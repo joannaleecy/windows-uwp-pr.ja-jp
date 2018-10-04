@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bfeb225c67567c392615686743828941c02f6d2
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4309697"
+ms.locfileid: "4353011"
 ---
 # <a name="matchmaking-uris"></a>マッチメイキング URI
  
-このセクションでは、マッチメイ キング サービス用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。 
+このセクションでは、マッチメイ キング サービス用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。 
  
 <a id="ID4E6"></a>
 
@@ -32,16 +32,16 @@ momatch.xboxlive.com
  
 ## <a name="service-version"></a>サービスのバージョン
  
-これらの HTTP/REST Uri の呼び出し元渡す必要があります値 103 以降 X-Xbl-コントラクトのバージョン、サービス バージョン エンターテイメント探索サービス (EDS) を指定する HTTP ヘッダー。 
+これらの HTTP/REST Uri の呼び出し元渡す必要があります値 103 以降 X の Xbl のコントラクトのバージョン、サービス バージョン エンターテイメント探索サービス (EDS) を指定する HTTP ヘッダー。 
   
 <a id="ID4ELB"></a>
 
  
 ## <a name="system-objects-and-properties"></a>システム オブジェクトとプロパティ
  
-現時点では、マッチメイ キング サービスのすべての構成が発生した手動で、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://partner.microsoft.com/dashboard/windows/overview)のサービス構成部分を使用します。 一部のマッチメイ キング情報は、MPSD で定義されたオブジェクトにも反映されます。 
+現時点では、マッチメイ キング サービスのすべての構成が発生した手動で、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://partner.microsoft.com/dashboard/windows/overview)のサービス構成部分を使用します。 一部のマッチメイ キング情報は、MPSD に定義されたオブジェクトにも反映されます。 
  
-マッチメイ キングを構成するために、メイン JSON オブジェクトは、 [MatchTicket (JSON)](../../json/json-matchticket.md)と[HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md)で定義されます。 すべてのマッチ チケットが他のユーザーと一致する必要があるプレイヤーが含まれているマルチプレイヤー セッションへの参照を提供する**ticketSessionRef**オブジェクトを定義する必要があることに注意してください。 
+マッチメイ キングを構成するために使われるメインの JSON オブジェクトは、 [MatchTicket (JSON)](../../json/json-matchticket.md)と[HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md)で定義されます。 すべてのマッチ チケットがプレイヤーまたは他のユーザーと一致する必要があるプレイヤーが含まれているマルチプレイヤー セッションへの参照を提供する**ticketSessionRef**オブジェクトを定義する必要があることに注意してください。 
   
 <a id="ID4EBC"></a>
 
@@ -54,7 +54,7 @@ momatch.xboxlive.com
 
 [/serviceconfigs/{scid}/hoppers/{name}/stats](uri-serviceconfigsscidhoppershoppernamestats.md)
 
-&nbsp;&nbsp;ホッパーの統計情報を取得する GET 操作をサポートしています。
+&nbsp;&nbsp;ホッパーの統計情報を取得するための取得操作をサポートしています。
 
 [/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}](uri-scidhoppernameticketid.md)
 

@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 82d6dc051911ea04b685ffaeb21f821241bec77d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4314925"
+ms.locfileid: "4356197"
 ---
 # <a name="achievement-title-history-uris"></a>実績タイトル履歴 URI
  
-このセクションでは、実績に関連する*タイトル履歴*の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。 すべてのプラットフォームで実行されるゲームには、この履歴情報を読み取ることができます。
+このセクションでは、実績に関連する*タイトル履歴*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。 すべてのプラットフォームで実行されるゲームには、この履歴情報を読み取ることができます。
  
 これらの Uri のドメインは、achievements.xboxlive.com です。
  
@@ -31,7 +31,7 @@ ms.locfileid: "4314925"
 
 [/users/xuid({xuid})/history/titles](uri-titlehistoryusersxuidhistorytitlesv2.md)
 
-&nbsp;&nbsp;ユーザーのタイトルの実績に関連する履歴へのアクセスを提供します。
+&nbsp;&nbsp;ユーザーの実績に関連するタイトル履歴へのアクセスを提供します。
  
 <a id="ID4EMB"></a>
 

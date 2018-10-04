@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a188c3406ad0ca3bfca78d6b45c548c72bf791e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4310311"
+ms.locfileid: "4356408"
 ---
 # <a name="title-storage-uris"></a>タイトル ストレージ URI
  
-このセクションでは、*タイトル ストレージ*用の Xbox Live サービスからの詳細については、ユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドを提供します。
+このセクションでは、*タイトル ストレージ*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドの詳細を提供します。
  
 どのプラットフォームで実行されるゲームでも、このサービスを使用できます。
  
@@ -45,7 +45,7 @@ ms.locfileid: "4310311"
 
 [/json/users/batch/scids/{scid}/data/{pathAndFileName},json](uri-jsonusersbatchscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;同じファイル名を持つ複数のユーザーから複数のファイルをダウンロードします。
+&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。
 
 [/json/users/xuid({xuid})/scids/{scid}](uri-jsonusersxuidscidsscid.md)
 
@@ -73,7 +73,7 @@ ms.locfileid: "4310311"
 
 [/trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}](uri-trustedplatformusersbatchscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;同じファイル名を持つ複数のユーザーから複数のファイルをダウンロードします。
+&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}](uri-trustedplatformusersxuidscidsscid.md)
 
@@ -89,7 +89,7 @@ ms.locfileid: "4310311"
 
 [/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}](uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.md)
 
-&nbsp;&nbsp;同じファイル名を持つ複数のユーザーから複数のファイルをダウンロードします。
+&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。
 
 [/untrustedplatform/users/xuid({xuid})/scids/{scid}](uri-untrustedplatformusersxuidscidsscid.md)
 

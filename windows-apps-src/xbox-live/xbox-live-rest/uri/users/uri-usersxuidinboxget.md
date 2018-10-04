@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d27ed6fa81bfd8618f19938c97a56361c16c009
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4316005"
+ms.locfileid: "4355336"
 ---
 # <a name="get-usersxuidxuidinbox"></a>GET (/users/xuid({xuid})/inbox)
 サービスから指定したメッセージの概要をユーザー数を取得します。
@@ -28,18 +28,18 @@ ms.locfileid: "4316005"
   * [Authorization](#ID4EGE)
   * [リソースのプライバシーの設定の効果](#ID4ETE)
   * [HTTP ステータス コード](#ID4E5E)
-  * [JavaScript オブジェクト Notation (JSON) の応答](#ID4EMH)
+  * [JavaScript Object Notation (JSON) の応答](#ID4EMH)
 
 <a id="ID4EV"></a>
 
 
 ## <a name="remarks"></a>注釈
 
-ユーザーのメッセージ要約にはには、メッセージの件名のみが含まれています。 ユーザーが生成したメッセージの場合、これは、現在メッセージのテキストの最初の 20 文字。 システム メッセージは、"ライブ"システムなどの別のサブジェクトを提供することができます。
+ユーザーのメッセージ要約にはには、メッセージの件名のみが含まれています。 ユーザーが生成したメッセージの場合、これは、現在メッセージのテキストの最初の 20 文字。 システム メッセージは、"LIVE System"などの別のサブジェクトを提供することができます。
 
 メッセージが送信された注文の逆の順序で返されますつまり、新しいメッセージは、最初に返されます。
 
-この API は、サポートのみコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
+この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
 
 <a id="ID4EEB"></a>
 
@@ -58,8 +58,8 @@ ms.locfileid: "4316005"
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- | --- | --- | --- |
 | maxItems| int| 100| メッセージの最大数が返されます。|
-| continuationToken| string|  | 以前の列挙呼び出し; で返される文字列列挙値を続行するために使用します。|
-| skipItems| int| 100| をスキップするメッセージの数continuationToken が存在する場合は無視されます。|
+| continuationToken| string|  | 以前の列挙呼び出し; で返される文字列列挙を続行するために使用します。|
+| skipItems| int| 100| これを省略すると、メッセージの最大数continuationToken が存在する場合は無視されます。|
 
 <a id="ID4EGE"></a>
 
@@ -80,14 +80,14 @@ ms.locfileid: "4316005"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| 要求が成功しました。|
 | 400| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。|
 | 403| ユーザーまたはサービスの要求は許可されていません。|
-| 404| 有効な XUID は、URI の不足しています。|
+| 404| 有効な XUID は、URI で不足しています。|
 | 409| 基になるコレクションでは、渡された継続トークンに基づいて変更されます。|
 | 416| スキップされる項目の数は、利用可能な項目の数を超えています。|
 | 500| サーバー側の一般的なエラーです。|
@@ -95,7 +95,7 @@ ms.locfileid: "4316005"
 <a id="ID4EMH"></a>
 
 
-## <a name="javascript-object-notation-json-response"></a>JavaScript オブジェクト Notation (JSON) の応答
+## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答
 
 正常に呼び出されると、サービスは結果データを JSON 形式で返します。
 
@@ -123,7 +123,7 @@ ms.locfileid: "4316005"
 | senderXuid| ulong|  | 送信者の XUID です。|
 | 送信者| string| 15| 送信者のゲーマータグです。|
 | hasAudio| bool|  | かどうか、メッセージは、オーディオ (声) の添付ファイルがあります。|
-| hasPhoto| bool|  | かどうか、メッセージは、写真の添付ファイルがあります。|
+| hasPhoto| bool|  | メッセージに写真の添付ファイルがあるかどうか。|
 | hasText| bool|  | かどうか、メッセージには、テキストが含まれています。|
 
 #### <a name="paging-info"></a>ページング情報
@@ -168,7 +168,7 @@ ms.locfileid: "4316005"
 
 #### <a name="error-response"></a>エラー応答
 
-エラーの場合、サービスはサービスの環境からの値が含まれている全て、errorResponse オブジェクトを返す可能性があります。
+エラーの場合、サービスは、サービスの環境から値を含めることができますが全て、errorResponse オブジェクトを返す可能性があります。
 
 | プロパティ| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

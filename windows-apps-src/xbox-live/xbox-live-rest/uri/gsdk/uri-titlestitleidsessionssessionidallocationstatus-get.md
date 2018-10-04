@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317647"
+ms.locfileid: "4351876"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
 その sessionId で識別される sessionhost の割り当ての状態を返します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
@@ -57,7 +57,7 @@ ms.locfileid: "4317647"
 | secureContext| セキュア デバイス アドレスです。| 
 | portMappings| インスタンスのポート マッピングします。| 
 | 地域| インスタンスの場所です。| 
-| ticketId| 現在のセッション ID (左での下位互換性) です。| 
+| ticketId| 現在のセッション ID です (左での下位互換性)。| 
 | gameHostId| (左での下位互換性) 現在 sessionHostId します。| 
  
 <a id="ID4EGD"></a>
@@ -104,7 +104,7 @@ ms.locfileid: "4317647"
  
 ### <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しをのみ再試行する必要があります。
+次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しを再試行のみする必要があります。
  
    * 200-成功 
    * 400-要求が無効なパラメーターが含まれています 

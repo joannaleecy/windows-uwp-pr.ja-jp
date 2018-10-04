@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 404db3963d2f9508d7c81053abf96b0e742103f7
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320952"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360880"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 用 Device Portal
 
@@ -197,11 +197,11 @@ Xbox Device Portal の **[ネットワーク]** ページは Windows Device Port
 
 ![ワークスペースにツールを追加する](images/device-portal-xbox-13.png)
 
-### <a name="game-event-data"></a>ゲーム イベント データ
+### <a name="game-event-data"></a>ゲームのイベント データ
 
-**ゲーム イベントのデータ**] ページで、できますグラフを表示するリアルタイムそのストリーム現在、Xbox One で記録されているイベント Windows トレーシング (ETW) ゲームのイベントの数。 システムに記録されたゲーム イベントがある場合は、表示することも (イベント名、イベントの発生とゲームのタイトル) の詳細データ グラフの下のデータ テーブル内の各イベントを記述しています。 テーブルは、記録されたイベントがある場合に利用可能なのみ。
+**ゲーム イベントのデータ**] ページで、できますグラフを表示するリアルタイムそのストリームでは、現在、Xbox One で記録されているイベント Windows トレーシング (ETW) ゲーム イベントの数。 システムに記録されたゲームのイベントがある場合は、表示することも (イベント名、イベントの発生とゲームのタイトル) の詳細データ グラフの下のデータ テーブル内の各イベントを説明します。 テーブルには、記録されたイベントがある場合は、できるだけです。
 
-![ゲーム イベント データ](images/device-portal-xbox-22.PNG)
+![ゲームのイベント データ](images/device-portal-xbox-22.PNG)
 
 ## <a name="see-also"></a>関連項目
 

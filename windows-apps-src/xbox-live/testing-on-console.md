@@ -1,20 +1,20 @@
 ---
 author: aablackm
 title: Xbox One 本体上でのテスト
-description: Xbox Live 本体で Xbox Live サービスをテストする方法について説明します
+description: Xbox Live の本体で Xbox Live サービスをテストする方法について説明します
 ms.author: aablackm
 ms.date: 08/15/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ゲーム, xbox、xbox live, xbox one
+keywords: windows 10, uwp, ゲーム、xbox、xbox live, xbox one
 ms.localizationpriority: low
 ms.openlocfilehash: 5500f6f396d6dae179e434283097c34274d9b829
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319945"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352415"
 ---
 # <a name="testing-on-the-xbox-one-console"></a>Xbox One 本体上でのテスト
 
@@ -22,15 +22,15 @@ ms.locfileid: "4319945"
 
 ## <a name="retail-console-testing-xbox-live-creators"></a>製品版の本体のテスト: Xbox Live クリエーターズ
 
-市販の Xbox One 本体で開発者モードをアクティブ化を使用すると、Visual Studio のビルドでペアリングを Xbox One 本体に UWP タイトルとアプリを展開できます。 これは、Xbox Live クリエーターズ プログラム開発者向けのオプションのテスト コンソールです。 製品版の Xbox One 本体で XDK ゲームをテストすることはできません。
+Xbox One の製品版の本体で開発者モードをアクティブ化を使用して、Visual Studio のビルドにペアリングして、UWP タイトルとアプリを Xbox One 本体に配置するのにはできます。 これは、Xbox Live クリエーターズ プログラム開発者向けのオプションをテスト コンソールです。 製品版の Xbox One 本体で XDK ゲームをテストすることはできません。
 
 * 開発製品版の本体でテストできるようにする[開発者モードのアクティブ化手順](../xbox-apps/devkit-activation.md)に従います。  
-* 次の[セットアップ Xbox One の指示](../xbox-apps/development-environment-setup.md#setting-up-your-xbox-one)に従ってに Xbox One タイトルを読み込みます。  
-* 本体をリテール モードに戻す、または製品版の本体で開発環境をアンインストールする[開発者モードの非アクティブ化手順](../xbox-apps/devkit-deactivation.md)に従います。  
+* 次の[設定 Xbox One の指示](../xbox-apps/development-environment-setup.md#setting-up-your-xbox-one)に従って、Xbox One にタイトルを読み込みます。  
+* 本体をリテール モードに戻す、または製品版の本体での開発環境をアンインストールする[開発者モードの非アクティブ化手順](../xbox-apps/devkit-deactivation.md)に従います。  
 * 本体が開発者モードの中にアクセスできますがリモートでお使いの PC で[Xbox 用の Windows デバイス ポータル](../debug-test-perf/device-portal-xbox.md)を使用しています。  
 
 ## <a name="xbox-development-kit-testing-idxbox-and-managed-partners"></a>Xbox 開発キットのテスト:ID@Xboxおよび対象パートナー
 
-対象パートナーとID@Xbox開発者がだけがアクセスできる管理対象の開発者アカウントを持つ、 [Xbox デベロッパー ストア](https://gamedevstore.partners.extranet.microsoft.com/)から Xbox 開発キットを購入するオプションがあります。 Xbox 開発キット グランド XDK をロードするコンソールにゲームをテストするため、UWP ゲームを開発キットを調べることもできます。 開発キットは、ハードウェア オプションと詳細なパフォーマンスのテストと本体の管理を使用するテスト機能が付属します。
+対象パートナーとID@Xbox開発者になるだけがアクセスできる管理対象の開発者アカウントを持つ、 [Xbox デベロッパー ストア](https://gamedevstore.partners.extranet.microsoft.com/)から Xbox 開発キットを購入するオプションがあります。 Xbox 開発キット グランド XDK をロードするコンソールにゲームをテストするため、UWP ゲームを開発キットを調べることもできます。 開発キットは、ハードウェア オプションと詳細なパフォーマンスのテストとコンソールの管理を使用するテスト機能が付属します。
 
 Xbox 開発者への取り組みを開始するには、キットは、 [Xbox One の開発の記事をはじめ](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/atoc-getting-started)対象パートナーのドキュメントのサイトを読み取ります。 このドキュメントは、承認された開発者にアクセスできるようにのみ、ID@Xboxプログラムおよび対象パートナーです。

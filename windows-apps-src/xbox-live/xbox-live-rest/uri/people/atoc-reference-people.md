@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 03a96c69415a8ad13bdafaa821df66a919296f61
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4316893"
+ms.locfileid: "4354571"
 ---
 # <a name="people-uris"></a>People URI
  
-このセクションでは、 *people*システム用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、 *people*システムの Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
  
-Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームだけでは、このサービスを使用できます。
+Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームのみでは、このサービスを使用できます。
  
 これらの Uri のドメインは、social.xboxlive.com です。
  
@@ -37,15 +37,15 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/users/{ownerId}/people/{targetid}](uri-usersowneridpeopletargetid.md)
 
-&nbsp;&nbsp;呼び出し元のユーザーのコレクションからターゲット ID によってユーザーにアクセスします。
+&nbsp;&nbsp;呼び出し元のユーザーのコレクションからターゲット ID でユーザーにアクセスします。
 
 [/users/{ownerId}/people/xuids](uri-usersowneridpeoplexuids.md)
 
-&nbsp;&nbsp;XUID によって people を呼び出し元のユーザーのコレクションからアクセスします。
+&nbsp;&nbsp;XUID によってユーザーを呼び出し元のユーザーのコレクションからアクセスします。
 
 [/users/{ownerId}/summary](uri-usersowneridsummary.md)
 
-&nbsp;&nbsp;呼び出し元の観点から所有者に関する集計データをアクセスします。
+&nbsp;&nbsp;呼び出し元の観点から所有者に関する集計データにアクセスします。
  
 <a id="ID4E5B"></a>
 

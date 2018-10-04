@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: edffbbff7fb9cd5fc4e471a6af1f494f4a35ea57
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4310727"
+ms.locfileid: "4356213"
 ---
 # <a name="post-usersrequestoridpermissionvalidate"></a>POST (/users/{requestorId}/permission/validate)
-一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no に対する回答を取得します。
+一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no 回答を取得します。
 
   * [注釈](#ID4EQ)
   * [URI パラメーター](#ID4ECB)
@@ -64,7 +64,7 @@ ms.locfileid: "4310727"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| HTTP 認証の資格情報を認証します。 値の例: <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
 | X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1 です。|
 
 <a id="ID4E4D"></a>
@@ -102,7 +102,7 @@ ms.locfileid: "4310727"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -118,8 +118,8 @@ ms.locfileid: "4310727"
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| string| 要求の本文の MIME タイプ。 値の例: <code>application/json</code>|
-| Content-Length| string| 応答に送信されるバイト数。 値の例: 34|
-| キャッシュ コントロール| string| キャッシュ動作を指定するサーバーからていねい要求します。 例: <code>no-cache, no-store</code>|
+| Content-Length| string| 応答に送信されるバイト数です。 値の例: 34|
+| キャッシュ コントロール| string| キャッシュ動作を指定する、サーバーからていねい要求します。 例: <code>no-cache, no-store</code>|
 
 <a id="ID4E5H"></a>
 

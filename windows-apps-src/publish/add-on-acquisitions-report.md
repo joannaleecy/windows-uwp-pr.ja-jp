@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, アドオン販売, アドオン取得, IAP 売り上げ, アプリ内製品, iap, アドオン
 ms.localizationpriority: medium
 ms.openlocfilehash: 019bb410e6ac65f9951f06052c78f40e9a5f32e2
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317632"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358324"
 ---
 # <a name="add-on-acquisitions-report"></a>[アドオン取得] レポート
 
 
-Windows デベロッパー センター ダッシュ ボードで**アドオン取得]** レポートでは、人口統計データと共に、販売したアドオンの数を表示できます。 プラットフォームの詳細、および Windows 10 (Xbox を含む) ユーザーのコンバージョン情報を示しています。 最後の時間、または 70 2 時間の期間のリアルタイムの入手データの近く表示することもできます。
+Windows デベロッパー センター ダッシュ ボードで**アドオン取得]** レポートでは、人口統計データと共に、販売したアドオンの数を表示できます。 プラットフォームの詳細、および Windows 10 (Xbox を含む) のユーザーのコンバージョン情報を示しています。 最後の時間、または 70 2 時間の期間のリアルタイムの入手データの近く表示することもできます。
 
 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。 または、[Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[アドオンの入手数の取得](../monetize/get-in-app-acquisitions.md)メソッドを使って、プログラムでこのデータを取得できます。
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 681a269cd861f741e2bbde3554acc1b25104d90d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317761"
+ms.locfileid: "4352799"
 ---
 # <a name="gameclipthumbnail-json"></a>GameClipThumbnail (JSON)
 個々 のサムネイルに関連する情報が含まれています。 1 つのクリップを複数のサイズが存在することができ、表示用の適切なものを選択するクライアントがします。 
@@ -25,7 +25,7 @@ ms.locfileid: "4317761"
  
 ## <a name="gameclipthumbnail"></a>GameClipThumbnail
  
-GameClipThumbnail オブジェクトでは、次の仕様があります。
+GameClipThumbnail オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

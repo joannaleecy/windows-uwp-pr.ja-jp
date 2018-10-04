@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bcb7b1c6c23f39846084ba4e6583553e2ff04a1
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4309729"
+ms.locfileid: "4351519"
 ---
 # <a name="post-usersxuidxuiddeleteuserdata"></a>POST (/users/xuid({xuid})/deleteuserdata)
 テスト ユーザーの評判のデータを完全にリセットします。 テストのみです。
@@ -33,7 +33,7 @@ ms.locfileid: "4309729"
 
 ## <a name="remarks"></a>注釈
 
-この API を呼び出すと、ユーザーからすべてのフィードバック項目と評判のデータが削除されます。 パートナーは、Retail を除くすべてのサンド ボックスに対してこの API を呼び出すことがあります。 執行チームは、サンド ボックス ID を持つには、この API を呼び出すことがあります。
+この API を呼び出すと、ユーザーからすべてのフィードバック項目と評判のデータが削除されます。 パートナーには、Retail を除くすべてのサンド ボックスに対してこの API を呼び出すことがあります。 執行チームは、サンド ボックス ID を持つには、この API を呼び出すことがあります。
 
 これらの Uri のドメインが`reputation.xboxlive.com`します。 この URI は、常にポート 10443 で呼び出されます。
 
@@ -44,14 +44,14 @@ ms.locfileid: "4309729"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーがデータが削除されるのです。|
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーがデータを削除しています。|
 
 <a id="ID4EJB"></a>
 
 
 ## <a name="authorization"></a>Authorization
 
-Retail サンド ボックスで、執行チームから**PartnerClaim**します。
+Retail サンド ボックスで、実施チームから**PartnerClaim**します。
 
 すべての他のサンド ボックスに対して、 **PartnerClaim**と**SandboxIdClaim**します。
 
@@ -67,7 +67,7 @@ Retail サンド ボックスで、執行チームから**PartnerClaim**しま�
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- |
@@ -76,7 +76,7 @@ Retail サンド ボックスで、執行チームから**PartnerClaim**しま�
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。|
 | 404| Not Found します。| 指定されたリソースは見つかりませんでした。|
 | 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。|
-| 503| Service Unavailable| 要求が調整された、クライアント再試行値 (例: 5 秒後) を秒単位で後にもう一度やり直してください。|
+| 503| Service Unavailable| 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度やり直してください。|
 
 <a id="ID4EJF"></a>
 

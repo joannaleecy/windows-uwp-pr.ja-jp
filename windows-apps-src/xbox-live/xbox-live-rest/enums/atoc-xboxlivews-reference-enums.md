@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e5490ec5b940f70180d2830e7caaed9a9926f50
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4311415"
+ms.locfileid: "4355394"
 ---
 # <a name="enumerations-used-in-javascript-object-notation-json-objects"></a>JavaScript Object Notation (JSON) オブジェクトで使用される列挙型
  
-Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。 サービスによって使われる多くの JavaScript Object Notation (JSON) オブジェクトには、JavaScript Object Notation (JSON) オブジェクトに表示されるフィールドの有効な値を指定する列挙体が関連付けられています。 このセクションでは、JavaScript Object Notation (JSON) オブジェクトで使用する列挙体で示します。 
+Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。 サービスで使われる多くの JavaScript Object Notation (JSON) オブジェクトには、JavaScript Object Notation (JSON) オブジェクトに表示されるフィールドの有効な値を指定する列挙体が関連付けられています。 このセクションでは、JavaScript Object Notation (JSON) オブジェクトで使用する列挙体で示します。 
  
 <a id="ID4EJB"></a>
 
@@ -29,11 +29,11 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [GameClipSource 列挙型](gvr-enum-gameclipsource.md)
 
-&nbsp;&nbsp;GameClipSource 列挙をについて説明します。 
+&nbsp;&nbsp;GameClipSource 列挙型をについて説明します。 
 
 [GameClipState 列挙型](gvr-enum-gameclipstate.md)
 
-&nbsp;&nbsp;GameClipState 列挙をについて説明します。 
+&nbsp;&nbsp;GameClipState 列挙型をについて説明します。 
 
 [GameClipType 列挙型](gvr-enum-gamecliptypes.md)
 
@@ -41,23 +41,23 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [GameClipUriType 列挙型](gvr-enum-gameclipuritype.md)
 
-&nbsp;&nbsp;GameClipUriType 列挙をについて説明します。 
+&nbsp;&nbsp;GameClipUriType 列挙型をについて説明します。 
 
 [GameClipVisibility 列挙型](gvr-enum-gameclipvisibility.md)
 
-&nbsp;&nbsp;GameClipVisibility 列挙をについて説明します。 
+&nbsp;&nbsp;GameClipVisibility 列挙型をについて説明します。 
 
 [ThumbnailSource 列挙型](gvr-enum-thumbnailsource.md)
 
-&nbsp;&nbsp;ThumbnailSource 列挙をについて説明します。 
+&nbsp;&nbsp;ThumbnailSource 列挙型をについて説明します。 
 
 [ThumbnailType 列挙型](gvr-enum-thumbnailtype.md)
 
-&nbsp;&nbsp;ThumbnailType 列挙をについて説明します。 
+&nbsp;&nbsp;ThumbnailType 列挙型をについて説明します。 
 
 [PermissionId 列挙型](privacy-enum-permissionid.md)
 
-&nbsp;&nbsp;PermissionId 列挙をについて説明します。 
+&nbsp;&nbsp;PermissionId 列挙型をについて説明します。 
  
 <a id="ID4EGC"></a>
 

@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318764"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360803"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>マルチインスタンスのユニバーサル Windows アプリの作成
 
@@ -62,7 +62,7 @@ Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリ�
 
 **Multi-Instance Redirection UWP app** テンプレートは、上記のように `SupportsMultipleInstances` を package.appxmanifest ファイルに追加し、さらに `Main()` 関数を含むプロジェクトに **Program.cs** (または、テンプレートの C++ バージョンを使用している場合は **Program.cpp**) を追加します。 アクティブ化をリダイレクトするためのロジックは `Main` 関数にあります。 **Program.cs**用のテンプレートは、次に示します。
 
-[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)を表すこのライセンス認証要求のシェルが提供する、推奨されるインスタンスが存在する場合 (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合することができることができますのアクティブ化そのインスタンスにしたり、リダイレクトを選択した場合に無視することができます。
+[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)プロパティがいずれかを使用する必要がある場合、このライセンス認証要求のシェルが提供する、推奨されるインスタンスを表します (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合することができることができますライセンス認証そのインスタンスにしたり、リダイレクトを選択した場合に無視することができます。
 
 ``` csharp
 public static class Program

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317877"
+ms.locfileid: "4356459"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
-サービスの読み取りとしてマーク、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。
+サービスの読み取りとしてマークすること、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。
 これらの Uri のドメインが`msg.xboxlive.com`します。
 
   * [注釈](#ID4EV)
@@ -28,7 +28,7 @@ ms.locfileid: "4317877"
   * [要求本文](#ID4E3B)
   * [リソースのプライバシーの設定の効果](#ID4EJC)
   * [HTTP ステータス コード](#ID4EUC)
-  * [JavaScript オブジェクト Notation (JSON) の応答](#ID4EUE)
+  * [JavaScript Object Notation (JSON) の応答](#ID4EUE)
 
 <a id="ID4EV"></a>
 
@@ -37,9 +37,9 @@ ms.locfileid: "4317877"
 
 Get 操作は、ユーザー、システム、および FriendRequest メッセージの種類でのみ実行できます。
 
-この URI には、Xbox.com に更新が必要です。 現時点では、まで、ユーザーがサインアウトしたとに戻り、Xbox 360 は読み取り/未読メ状態を更新されません。
+この URI には、Xbox.com での更新が必要です。 現時点では、まで、ユーザーがサインアウトしたとに戻り、Xbox 360 は読み取り/未読メの状態を更新されません。
 
-この API は、サポートのみコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
+この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
 
 <a id="ID4EEB"></a>
 
@@ -70,14 +70,14 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果
 
-だけユーザー メッセージを取得できます。
+のみ、独自のユーザーのメッセージを取得できます。
 
 <a id="ID4EUC"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 説明|
 | --- | --- | --- | --- | --- |
@@ -90,7 +90,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 <a id="ID4EUE"></a>
 
 
-## <a name="javascript-object-notation-json-response"></a>JavaScript オブジェクト Notation (JSON) の応答
+## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答
 
 正常に呼び出されると、サービスは結果データを JSON 形式で返します。 ルート オブジェクトは、UserMessageHeader オブジェクトです。
 
@@ -105,13 +105,13 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- |
-| 送信| DateTime|  | メッセージが送信された日付と時刻。 (サービスによって提供されます)。|
+| 送信| DateTime|  | 日付と時刻は、メッセージが送信されました。 (サービスによって提供されます)。|
 | 有効期限| DateTime|  | 日付と時刻のメッセージの有効期限が切れます。 (すべてのメッセージによって、決定する、今後の最長有効期間がある)。|
 | メッセージの種類| string| 13| メッセージの種類: ユーザー、システム、FriendRequest します。|
 | senderXuid| ulong|  | 送信者の XUID です。|
 | 送信者| string| 15| 送信者のゲーマータグです。|
 | hasAudio| bool|  | かどうか、メッセージは、オーディオ (声) の添付ファイルがあります。|
-| hasPhoto| bool|  | かどうか、メッセージは、写真の添付ファイルがあります。|
+| hasPhoto| bool|  | メッセージに写真の添付ファイルがあるかどうか。|
 | hasText| bool|  | かどうか、メッセージには、テキストが含まれています。|
 
 #### <a name="sample-response"></a>応答の例
@@ -136,7 +136,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 #### <a name="error-response"></a>エラー応答
 
-エラーの場合、サービスはサービスの環境からの値が含まれている全て、errorResponse オブジェクトを返す可能性があります。
+エラーの場合、サービスは、サービスの環境から値を含めることができますが全て、errorResponse オブジェクトを返す可能性があります。
 
 | プロパティ| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e775e5e7033b5ddf53ed4f05c9965731c5d70a3
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317799"
+ms.locfileid: "4357565"
 ---
 # <a name="usersxuidxuidlistspinslistnamecontainsitems"></a>/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems
 全体の一覧を取得することがなく一連項目 (itemId により指定) にはが一覧に含まれているかどうかを決定します。 これらの Uri のドメインが`eplists.xboxlive.com`します。
@@ -31,7 +31,7 @@ ms.locfileid: "4317799"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | XUID| string| ユーザーの XUID です。| 
-| リスト| string| 操作をするリストの名前。| 
+| リスト| string| 操作するリストの名前。| 
   
 <a id="ID4E5B"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "4317799"
 
 [POST](uri-usersxuidlistspinslistnamecontainsitemspost.md)
 
-&nbsp;&nbsp;全体の一覧を取得することがなく、一覧に一連項目 (itemId により指定) にはが含まれているかどうかを決定します。
+&nbsp;&nbsp;全体の一覧を取得することがなく、一連項目 (itemId により指定) にはが一覧に含まれて かどうかを決定します。
  
 <a id="ID4EIC"></a>
 

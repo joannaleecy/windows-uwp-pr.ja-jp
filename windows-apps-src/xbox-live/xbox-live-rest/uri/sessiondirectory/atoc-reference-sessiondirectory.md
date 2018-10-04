@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b03c55b827b083c050451c12c1fe48834d7ae186
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4308469"
+ms.locfileid: "4352215"
 ---
 # <a name="session-directory-uris"></a>セッション ディレクトリ URI
 
-このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) からユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) からユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
 
 
 > [!NOTE] 
@@ -42,14 +42,14 @@ sessiondirectory.xboxlive.com
 
 ## <a name="service-version"></a>サービスのバージョン
 
-これらの Uri の残りの部分の呼び出し元渡す必要があります値 104/105 以降 X-Xbl-コントラクトのバージョン、サービス バージョン エンターテイメント探索サービス (EDS) を指定する HTTP ヘッダー。
+これらの Uri の残りの部分の呼び出し元渡す必要があります値 104/105 以降 X の Xbl のコントラクトのバージョン、サービス バージョン エンターテイメント探索サービス (EDS) を指定する HTTP ヘッダー。
 
 <a id="ID4EAC"></a>
 
 
 ## <a name="system-objects-and-properties"></a>システム オブジェクトとプロパティ
 
-セッションとテンプレートを構成する、MPSD は、ディレクトリを適用および解釈される固定のスキーマに準拠しているセッションの JSON オブジェクトの数を使用します。 さまざまなセッション ディレクトリ Uri でサポートされているメソッドの呼び出し時にこれらのオブジェクトは検証およびマージに基づいて、サポートされているスキーマ。 マルチプレイヤーの構成に関連付けられている主な JSON オブジェクトは次のとおりです。
+セッションとテンプレートを構成する、MPSD は、ディレクトリの強制し、解釈される固定のスキーマに準拠しているセッションの JSON オブジェクトの数を使用します。 さまざまなセッション ディレクトリ Uri でサポートされているメソッドの呼び出し時にこれらのオブジェクトは検証し結合に基づいて、サポートされているスキーマです。 マルチプレイヤーの構成に関連付けられている主な JSON オブジェクトは次のとおりです。
 
    *  [MultiplayerActivityDetails (JSON)](../../json/json-multiplayeractivitydetails.md)
    *  [MultiplayerSession (JSON)](../../json/json-multiplayersession.md)
@@ -70,7 +70,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="handles"></a>ハンドル
 
-2015 マルチプレイヤーの場合のみ、セッションはセッション ハンドルを通じてアクセスできます。 ハンドルをサポートする機能を提供するいくつかの Uri が追加されました。  
+2015 マルチプレイヤーの場合のみ、セッションはセッション ハンドルを通じてアクセスできます。 ハンドルをサポートする機能を提供する、いくつかの Uri が追加されました。  
 <a id="ID4EFE"></a>
 
 
@@ -118,7 +118,7 @@ sessiondirectory.xboxlive.com
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md)
 
-&nbsp;&nbsp;作成してセッションを取得する PUT と取得の操作をサポートしています。
+&nbsp;&nbsp;PUT と取得の操作を作成してセッションを取得をサポートしています。
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md)
 

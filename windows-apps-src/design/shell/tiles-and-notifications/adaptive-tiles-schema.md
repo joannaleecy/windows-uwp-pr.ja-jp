@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 30a0e3056f8b7be2ed9d033e2da57795aec6946f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4340910"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359525"
 ---
 # <a name="adaptive-tile-templates-schema-and-guidance"></a>アダプティブ タイル テンプレート: スキーマとガイダンス
 

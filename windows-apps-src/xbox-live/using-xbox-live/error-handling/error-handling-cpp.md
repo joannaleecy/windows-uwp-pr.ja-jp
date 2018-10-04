@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, エラー処理
 ms.localizationpriority: medium
 ms.openlocfilehash: 9863ac224e04d48265a05fe56ed484db5dcc3cd8
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4314431"
+ms.locfileid: "4357568"
 ---
 # <a name="c-api-error-handling"></a>C++ API のエラー処理
 

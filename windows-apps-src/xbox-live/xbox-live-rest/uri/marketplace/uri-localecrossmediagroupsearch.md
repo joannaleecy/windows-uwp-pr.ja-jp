@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8357937fa210d74fd8393be0e4746863c477b63c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4314427"
+ms.locfileid: "4353501"
 ---
 # <a name="mediamarketplaceidcrossmediagroupsearch"></a>/media/{marketplaceId}/crossMediaGroupSearch
-いくつかの異なるメディア グループからの項目をアクセスします。 これらの Uri のドメインが`eds.xboxlive.com`します。
+いくつかの異なるメディア グループからの項目にアクセスします。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -30,7 +30,7 @@ ms.locfileid: "4314427"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
+| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
   
 <a id="ID4EUB"></a>
 

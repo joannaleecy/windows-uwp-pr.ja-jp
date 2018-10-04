@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a0735a65afe8b5748efefce5dec9ad1989a77b4d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318149"
+ms.locfileid: "4354421"
 ---
 # <a name="get-usersowneridpeopletargetid"></a>GET (/users/{ownerId}/people/{targetid})
-呼び出し元のユーザーのコレクションからターゲット ID によってユーザーを取得します。 これらの Uri のドメインが`social.xboxlive.com`します。
+呼び出し元のユーザーのコレクションからターゲット ID でユーザーを取得します。 これらの Uri のドメインが`social.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4E5)
   * [Authorization](#ID4EJB)
   * [必要な要求ヘッダー](#ID4ERC)
-  * [省略可能な要求ヘッダー](#ID4EQD)
+  * [オプションの要求ヘッダー](#ID4EQD)
   * [要求本文](#ID4EWE)
   * [HTTP ステータス コード](#ID4EBF)
   * [必要な応答ヘッダー](#ID4EDH)
@@ -36,7 +36,7 @@ ms.locfileid: "4318149"
  
 ## <a name="remarks"></a>注釈
  
-これと同じ結果に 1 回または複数回実行する場合、GET 操作はすべてのリソースを変更しません。
+これと同じ結果に 1 回または複数回実行している場合、GET 操作はすべてのリソースを変更しません。
   
 <a id="ID4E5"></a>
 
@@ -45,8 +45,8 @@ ms.locfileid: "4318149"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。| 
-| targetid| string| 所有者の People リストで、Xbox ユーザー ID (XUID) か、ゲーマータグがデータを取得するユーザーの識別子です。 値の例: xuid(2603643534573581)、gt(SomeGamertag) します。| 
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。| 
+| targetid| string| 所有者のユーザーのリストが Xbox ユーザー ID (XUID) またはゲーマータグのいずれかからのデータを取得するユーザーの識別子です。 値の例: xuid(2603643534573581)、gt(SomeGamertag) します。| 
   
 <a id="ID4EJB"></a>
 
@@ -69,7 +69,7 @@ ms.locfileid: "4318149"
 <a id="ID4EQD"></a>
 
  
-## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
+## <a name="optional-request-headers"></a>オプションの要求ヘッダー
  
 | ヘッダー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -88,14 +88,14 @@ ms.locfileid: "4318149"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| OK| 成功します。| 
 | 400| Bad Request| ユーザー Id が正しくありませんでした。| 
 | 403| Forbidden| 承認ヘッダーから XUID クレームを解析できませんでした。| 
-| 404| Not Found します。| 対象ユーザーが所有者の People リストに見つかりませんでした。| 
+| 404| Not Found します。| 対象ユーザーが所有者のユーザー リストに見つかりませんでした。| 
   
 <a id="ID4EDH"></a>
 
@@ -112,7 +112,7 @@ ms.locfileid: "4318149"
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、対象のユーザーを返します。 [ユーザー (JSON)](../../json/json-person.md)を参照してください。
+呼び出しが成功した場合は、サービスは、対象のユーザーを返します。 [Person (JSON)](../../json/json-person.md)を参照してください。
  
 <a id="ID4E3AAC"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 966ff94004d6fd6bfc404800c5ea6561ae3a3864
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4315037"
+ms.locfileid: "4353670"
 ---
 # <a name="get-usersxuidxuidhistorytitles"></a>GET (/users/xuid({xuid})/history/titles)
 タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。 この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。 これらの Uri のドメインが`achievements.xboxlive.com`します。
@@ -24,7 +24,7 @@ ms.locfileid: "4315037"
   * [URI パラメーター](#ID4EY)
   * [クエリ文字列パラメーター](#ID4EDB)
   * [Authorization](#ID4EFD)
-  * [省略可能な要求ヘッダー](#ID4EGE)
+  * [オプションの要求ヘッダー](#ID4EGE)
   * [要求本文](#ID4ERF)
  
 <a id="ID4EY"></a>
@@ -34,7 +34,7 @@ ms.locfileid: "4315037"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーがタイトル履歴にアクセスしているのです。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) がタイトル履歴にアクセスしているユーザー。| 
   
 <a id="ID4EDB"></a>
 
@@ -54,12 +54,12 @@ ms.locfileid: "4315037"
  
 | 要求| 必須?| 説明| 不足している場合の動作| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| ユーザー| 呼び出し元が、承認された Xbox LIVE ユーザーです。| 呼び出し元は、Xbox LIVE で有効なユーザーをする必要があります。| 403 Forbidden| 
+| ユーザー| 呼び出し元が、承認された Xbox LIVE ユーザーです。| 呼び出し元では、Xbox LIVE で有効なユーザーを指定する必要があります。| 403 Forbidden| 
   
 <a id="ID4EGE"></a>
 
  
-## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
+## <a name="optional-request-headers"></a>オプションの要求ヘッダー
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 

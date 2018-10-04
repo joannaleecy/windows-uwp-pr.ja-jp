@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 602a0af685e812f5c65f94d07297cac9fc411923
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312198"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358165"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP アプリ設計の概要
 
@@ -29,7 +29,7 @@ ms.locfileid: "4312198"
 
 ## <a name="effective-pixels-and-scaling"></a>有効ピクセルとスケーリング
 
-UWP アプリは、タブレット、PC、TV からすべての[Windows 10 デバイス](../devices/index.md)で実行します。 さまざまなデバイスや画面サイズで適切に表示される UI を設計するには、どのように必要かどうか。
+UWP アプリでは、タブレット、PC、テレビからすべての[Windows 10 デバイス](../devices/index.md)で実行します。 さまざまなデバイスや画面サイズで適切に表示される UI を設計するには、どのように行うかどうか。
 
 ![さまざまなデバイス上にある同じアプリ](images/universal-image-1.jpg)
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316160"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359382"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>アプリケーション マニフェストでのバックグラウンド タスクの宣言
 

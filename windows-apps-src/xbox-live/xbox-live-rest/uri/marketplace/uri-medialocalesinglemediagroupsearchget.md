@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a66f5b505114eb63f9b62c985c108af6d752334
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4312613"
+ms.locfileid: "4357183"
 ---
 # <a name="get-mediamarketplaceidsinglemediagroupsearch"></a>GET (media/{marketplaceId}/singleMediaGroupSearch)
 1 つのメディア グループ内の項目を検索をできます。 これらの Uri のドメインが`eds.xboxlive.com`します。
@@ -31,9 +31,9 @@ ms.locfileid: "4312613"
  
 ## <a name="remarks"></a>注釈
  
-非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してこの検索から返されるデータのページにアクセスできます。 この API は、絞り込み条件のクエリを受け取ります。 
+この検索から返されるデータのページは、非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してアクセスできます。 この API は、クエリの絞り込み条件を受け取ります。 
  
-**SandboxId**は今すぐ、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は 400 Bad request エラーをスローします。
+**SandboxId**は今すぐ、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
   
 <a id="ID4EEB"></a>
 
@@ -42,7 +42,7 @@ ms.locfileid: "4312613"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
+| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
   
 <a id="ID4EPB"></a>
 

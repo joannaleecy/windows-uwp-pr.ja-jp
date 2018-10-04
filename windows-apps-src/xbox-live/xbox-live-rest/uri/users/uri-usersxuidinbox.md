@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 944b2c9f0e5758444295ef9ec189d84728a3845d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317563"
+ms.locfileid: "4354141"
 ---
 # <a name="usersxuidxuidinbox"></a>/users/xuid({xuid})/inbox
 ユーザーへのアクセスの Xbox LIVE サービスの受信トレイのメッセージを提供します。 これらの Uri のドメインが`msg.xboxlive.com`します。
@@ -48,7 +48,7 @@ ms.locfileid: "4317563"
 
 [GET (/users/xuid({xuid})/inbox/{messageId})](uri-usersxuidinboxmessageidget.md)
 
-&nbsp;&nbsp;サービスの読み取りとしてマーク、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。 
+&nbsp;&nbsp;サービスの読み取りとしてマークすること、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。 
  
 <a id="ID4EVC"></a>
 

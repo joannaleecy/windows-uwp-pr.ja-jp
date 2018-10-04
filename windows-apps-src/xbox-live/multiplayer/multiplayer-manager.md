@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: bf931a2811a9a627c40a7dc45178688236437fa8
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4319672"
+ms.locfileid: "4356443"
 ---
 # <a name="multiplayer-manager"></a>Multiplayer Manager
 
@@ -106,4 +106,4 @@ Multiplayer Manager によってマルチプレイヤー シナリオの実装�
 
 API ドキュメントは、Microsoft::Xbox::Services::Multiplayer::Manager 名前空間の C++ ガイドまたは WinRT ガイドにあります。  `multiplayer_manager.h` ヘッダーもご覧ください。
 
-に関する質問やフィードバック、または Multiplayer Manager を使用して問題が発生した場合ください、担当の DAM に問い合わせてまたはフォーラムでサポート スレッドを投稿[https://forums.xboxlive.com](https://forums.xboxlive.com)します。
+に関する質問やフィードバック、または Multiplayer Manager を使用して問題が発生した場合、ください、担当の DAM に問い合わせてくださいまたはフォーラムでサポート スレッドを投稿[https://forums.xboxlive.com](https://forums.xboxlive.com)します。

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d08a8ff9e04b255944128ffc1cd1c0b101180d8f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4312973"
+ms.locfileid: "4354726"
 ---
 # <a name="get-usersowneridpeople"></a>GET (/users/{ownerId}/people)
 呼び出し元のユーザーのコレクションを取得します。
@@ -27,7 +27,7 @@ ms.locfileid: "4312973"
   * [クエリ文字列パラメーター](#ID4EJB)
   * [Authorization](#ID4ERD)
   * [必要な要求ヘッダー](#ID4EZE)
-  * [省略可能な要求ヘッダー](#ID4EYF)
+  * [オプションの要求ヘッダー](#ID4EYF)
   * [要求本文](#ID4E5G)
   * [HTTP ステータス コード](#ID4EJH)
   * [必要な応答ヘッダー](#ID4EBBAC)
@@ -38,7 +38,7 @@ ms.locfileid: "4312973"
 
 ## <a name="remarks"></a>注釈
 
-これと同じ結果に 1 回または複数回実行する場合、GET 操作はすべてのリソースを変更しません。
+これと同じ結果に 1 回または複数回実行している場合、GET 操作はすべてのリソースを変更しません。
 
 <a id="ID4E5"></a>
 
@@ -47,7 +47,7 @@ ms.locfileid: "4312973"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。|
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。|
 
 <a id="ID4EJB"></a>
 
@@ -56,9 +56,9 @@ ms.locfileid: "4312973"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- | --- | --- |
-| 表示| string| ビューに関連付けられているユーザーを返します。 既定値は、"all"です。 設定できる値は次のとおりです。 <ul><li><b>すべて</b>のユーザーの People リスト上のすべてのユーザーを返します。 これは既定値です。</li><li><b>お気に入り</b>お気に入り属性を持っているユーザーの People リスト上のすべてのユーザーを返します。</li><li><b>LegacyXboxLiveFriends</b> - を持っている従来の Xbox LIVE のフレンドでも、ユーザーの People リスト上のすべてのユーザーを返します。</li></br>**注:** 呼び出し元のユーザーが所有するユーザーと異なる場合、**すべて**の値のみがサポートされています。|
+| 表示| string| ビューに関連付けられているユーザーを返します。 既定値は"all"します。 設定できる値は次のとおりです。 <ul><li><b>すべて</b>のユーザーの People リスト上のすべてのユーザーを返します。 これは既定値です。</li><li><b>お気に入り</b>お気に入り属性を持っているユーザーの People リスト上のすべてのユーザーを返します。</li><li><b>LegacyXboxLiveFriends</b> - は、従来の Xbox LIVE のフレンドではまた、ユーザーの People リスト上のすべてのユーザーを返します。</li></br>**注:** 呼び出し元のユーザーが所有するユーザーと異なる場合、**すべて**の値のみがサポートされています。|
 | startIndex| 32 ビット符号なし整数| 特定のインデックスを開始する項目を返します。  
-| maxItems| 32 ビット符号なし整数| スタート画面のインデックスから始まるコレクションから返されるユーザーの最大数。 <b>MaxItems</b>が存在しないと、(結果の最後のページが返されていない) 場合でも同様に返す<b>maxItems</b>よりも少ない可能性がある場合、サービスは既定値を提供可能性があります。|
+| maxItems| 32 ビット符号なし整数| スタート画面のインデックスから始まるコレクションから返されるユーザーの最大数。 <b>MaxItems</b>が存在しないと、(結果の最後のページが返されていない) 場合でも<b>maxItems</b>よりも少ない返す可能性がある場合、サービスは既定値を提供可能性があります。|
 
 <a id="ID4ERD"></a>
 
@@ -81,7 +81,7 @@ ms.locfileid: "4312973"
 <a id="ID4EYF"></a>
 
 
-## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
+## <a name="optional-request-headers"></a>オプションの要求ヘッダー
 
 | ヘッダー| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -100,7 +100,7 @@ ms.locfileid: "4312973"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -123,7 +123,7 @@ ms.locfileid: "4312973"
 
 ## <a name="response-body"></a>応答本文
 
-呼び出しが成功した場合は、サービスは、呼び出し元のユーザーのコレクション、および呼び出し元のユーザーのコレクションが含まれた配列内のユーザーの合計数を返します。 [PeopleList (JSON)](../../json/json-peoplelist.md)を参照してください。
+呼び出しが成功した場合は、サービスは、呼び出し元のユーザーのコレクション、および呼び出し元のユーザーのコレクションが含まれた配列でユーザーの合計数を返します。 [PeopleList (JSON)](../../json/json-peoplelist.md)を参照してください。
 
 <a id="ID4EZCAC"></a>
 

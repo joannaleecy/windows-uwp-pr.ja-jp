@@ -12,24 +12,24 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 068ae15566d73dfc4610f8540972b7e80329de8e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317995"
+ms.locfileid: "4353869"
 ---
 # <a name="usertitle-json"></a>UserTitle (JSON)
-タイトルのユーザー データが含まれています。 
+ユーザーのタイトル データが含まれています。 
 <a id="ID4EN"></a>
 
  
-## <a name="usertitle"></a>ユーザー タイトル
+## <a name="usertitle"></a>UserTitle
  
-ユーザー タイトル オブジェクトでは、次の仕様があります。 すべてのプロパティは、必要があります。
+UserTitle オブジェクトには、次の仕様があります。 すべてのプロパティは、必要があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| lastUnlock| DateTime| 実績が最後に獲得した時刻。| 
+| lastUnlock| DateTime| 実績を獲得した最後の時刻。| 
 | titleId| 32 ビット符号なし整数| タイトルの一意の識別子。| 
 | titleVersion| string| タイトルのバージョンです。| 
 | serviceConfigId| string| タイトルに関連付けられているプライマリ サービス構成のセットの ID です。| 
@@ -38,7 +38,7 @@ ms.locfileid: "4317995"
 | name| string| このタイトルのテキストの名前。 最大長 22 です。| 
 | earnedAchievements| 32 ビット符号なし整数| 実績の数は、ロック解除した実績を含む、タイトルの獲得し、課題が正常に完了します。| 
 | currentGamerscore| 32 ビット符号なし整数| このユーザーがこのタイトルでの原因の合計ゲーマー スコア。| 
-| maxGamerscore| 32 ビット符号なし整数| このタイトルの合計の考えられるゲーマー スコア。| 
+| maxGamerscore| 32 ビット符号なし整数| このタイトルの合計の可能なゲーマー スコア。| 
   
 <a id="ID4EFE"></a>
 

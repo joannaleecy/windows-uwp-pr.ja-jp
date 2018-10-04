@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f048d13c981bf07a124bd9637a36338b9dd3339
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4310723"
+ms.locfileid: "4354199"
 ---
 # <a name="get-handleshandle-id"></a>GET (/handles/{handle-id})
 ハンドル ID で指定されたハンドルを取得します。
@@ -35,7 +35,7 @@ ms.locfileid: "4310723"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドは、指定したハンドル、セッションでは、ユーザーの現在のアクティビティを取得します。 すべての属性を使用して、セッション オブジェクトを返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**でラップすることができます。
+この HTTP/REST メソッドでは、指定したハンドル、セッションでは、ユーザーの現在のアクティビティを取得します。 すべての属性を使用して、セッション オブジェクトを返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**でラップすることができます。
 
 このメソッドの呼び出し元は、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
 
@@ -64,7 +64,7 @@ ms.locfileid: "4310723"
 
 
 ## <a name="response-body"></a>応答本文
-[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)の応答構造を参照してください。  
+[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)で応答構造を参照してください。  
 <a id="ID4EKC"></a>
 
 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb56b51e2d558b2a4ef05d117244d464756e6ec
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4313079"
+ms.locfileid: "4350594"
 ---
 # <a name="post-usersxuidxuidfeedback"></a>POST (/users/xuid({xuid})/feedback)
-シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合に、タイトルから使われます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
+シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EZ)
   * [必要な要求ヘッダー](#ID4EEB)
@@ -36,7 +36,7 @@ ms.locfileid: "4313079"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| ulong| Xbox ユーザー ID (XUID)、ユーザーが報告されるのです。| 
+| xuid| ulong| Xbox ユーザー ID (XUID) のユーザーを報告します。| 
   
 <a id="ID4EEB"></a>
 
@@ -45,8 +45,8 @@ ms.locfileid: "4313079"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
+| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
   
 <a id="ID4ENC"></a>
 
@@ -96,7 +96,7 @@ ms.locfileid: "4313079"
  
 ## <a name="required-headers"></a>必要なヘッダー
  
-次のヘッダーは、Xbox Live サービス要求を行ったときに必要があります。
+Xbox Live サービス要求を行うときは、次のヘッダーを必要があります。
  
 | <b>ヘッダー</b>| <b>値</b>| <b>Deacription</b>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -118,7 +118,7 @@ application/json|
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 

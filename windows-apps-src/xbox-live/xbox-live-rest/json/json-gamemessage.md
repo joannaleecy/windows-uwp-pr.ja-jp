@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 089d2a492c8878e79bd60de1226c948e1eee7e0f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4319225"
+ms.locfileid: "4352327"
 ---
 # <a name="gamemessage-json"></a>GameMessage (JSON)
 ゲーム セッションのメッセージ キューにメッセージのデータを定義する JSON オブジェクト。 
@@ -24,15 +24,15 @@ ms.locfileid: "4319225"
 
   
  
-GameMessage JSON オブジェクトでは、次の仕様があります。
+GameMessage JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | data| 8 ビットの符号なし整数の配列| ゲームのクライアントが他のゲームのクライアントに送信する必要がある Base64 でエンコードされたデータ。 この値は、サーバーに不透明です。 | 
-| senderXuid| 64 ビットの符号なし整数| メッセージを送信するプレイヤーの Xbox ユーザー ID。 | 
-| シーケンス番号| 32 ビット符号付き整数| ゲームのメッセージのシーケンス番号。 この値は、サーバーが割り当てられます。 シーケンス番号を単調に増加することが保証連続することができない可能性があります。 シーケンス番号が一意メッセージ キュー内では、メッセージ キュー間ではなくします。 | 
-| queueIndex| 32 ビット符号付き整数| メッセージのセッション メッセージ キューのインデックス。 設定可能な値は、0 ~ 3 です。| 
-| タイムスタンプ| DateTime| サーバーは、UTC で、ゲームのメッセージをキューに作成されたときの時間。 | 
+| senderXuid| 64 ビットの符号なし整数| メッセージを送信するプレイヤーの Xbox ユーザー ID です。 | 
+| シーケンス番号| 32 ビット符号付き整数| ゲームのメッセージのシーケンス番号。 この値は、サーバーが割り当てられます。 シーケンス番号を単調に増加することが保証連続することができない可能性があります。 シーケンス番号が一意がメッセージ キュー間ではなく、メッセージ キュー内でします。 | 
+| queueIndex| 32 ビット符号付き整数| メッセージのセッション メッセージ キューのインデックス。 使用可能な値は、0 ~ 3 です。| 
+| タイムスタンプ| DateTime| 時刻は UTC で、サーバーによって、ゲームのメッセージをキューに作成された場合。 | 
   
 <a id="ID4ERC"></a>
 

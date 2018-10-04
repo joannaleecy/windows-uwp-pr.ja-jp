@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 301d646b421e77044f613244ccab987f1cb40dc6
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4315519"
+ms.locfileid: "4351240"
 ---
 # <a name="compile-the-xbox-developer-kit-xdk-xbox-live-api-source"></a>Xbox 開発キット (XDK) に付属する Xbox Live API のソースをコンパイルする
 
@@ -54,7 +54,7 @@ Visual Studio 2012 の場合: <ul>
 ## <a name="to-compile-the-xdk-winrt-xsapi-project-for-yourself"></a>XDK WinRT XSAPI プロジェクトを自分でコンパイルするには
 
 <ol>
-  <li> Microsoft.Xbox.Services ソースを取得します。 すべてのファイルを抽出するには、"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox サービス API\8.0\SourceDist\Xbox.Services.zip"または"C:\Program Files (x86)"以外の書き込み可能なフォルダーにソースを複製できます<a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
+  <li> Microsoft.Xbox.Services ソースを取得します。 これを行うには、すべてのファイルを抽出する"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox サービス API\8.0\SourceDist\Xbox.Services.zip"または"C:\Program Files (x86)"以外の書き込み可能なフォルダーにソースを複製できます<a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
   <li> プロジェクトがビルド済み DLL を参照している場合は、参照を削除する必要があります。</li>
     <ul>
       <li> Visual Studio 2012 の場合: Visual Studio で、[プロジェクト] の [参照...] を選択します。 Xbox Services API が参照として一覧に表示されている場合は、それを選択し、[参照の削除] をクリックします。 [OK] をクリックしてプロジェクト ファイルを保存します。</li>

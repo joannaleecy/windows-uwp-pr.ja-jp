@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4795b1ee19017e5598655117a41617e348986503
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318459"
+ms.locfileid: "4352268"
 ---
 # <a name="post-systemstringsvalidate"></a>POST (/system/strings/validate)
 検証のための文字列の配列を受け取り、同じサイズの結果の配列を返します。 これらの Uri のドメインが`client-strings.xboxlive.com`します。
@@ -32,14 +32,14 @@ ms.locfileid: "4318459"
  
 ## <a name="remarks"></a>注釈
  
-各結果は、対応する文字列が Xbox live で許容されると、該当する場合、問題の文字列が含まれて かどうかを示します。
+各結果は、対応する文字列が Xbox live で許容されると、該当する場合、問題のある文字列が含まれて かどうかを示します。
  
-同一の文字列には、常に同一の結果が得られます。 非成功の結果が発生した場合、結果を分析し、適宜変更して、文字列です。
+同一の文字列には、常に同一の結果が得られます。 非成功の結果が発生した場合は、結果を分析し、適宜変更して、文字列。
  
  
 
 > [!NOTE] 
-> 結果として得られる<b>VerifyStringResult</b>のみ、文字列の最初の問題のある単語を報告します。 ある可能性があります問題の文字列内の単語を追加します。 文字列を使用できるようにする問題のある単語を置換する場合は、問題のある単語または部分文字列を置き換える、問題のあるその他の部分文字列を検索する文字列をもう一度確認してください。  
+> 結果として得られる<b>VerifyStringResult</b>のみ、文字列の最初の問題のある単語を報告します。 ある可能性があります問題の文字列内の単語を追加します。 文字列を使用できるようにする問題のある単語を置換する場合は、問題のある単語または部分文字列を置き換えるし、問題のあるその他の部分文字列を検索する文字列を再検証する必要があります。  
 
  
   
@@ -85,7 +85,7 @@ ms.locfileid: "4318459"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | 

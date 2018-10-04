@@ -18,11 +18,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 02b2c0d24c3f963025774c87c0c0a1c588c8a249
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309180"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358439"
 ---
 # <a name="implement-navigation-between-two-pages"></a>2 ページ間でのナビゲーションを実装する
 
@@ -300,7 +300,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> ここでは、コードでは、アプリの初期ウィンドウ フレームへのナビゲーションが失敗した場合は、アプリ例外をスローするのに[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)の戻り値を使用します。 **Navigate** が **true** を返す場合は、ナビゲーションが行われます。
+> ここでは、コードでは、アプリの初期ウィンドウ フレームへのナビゲーションが失敗した場合にアプリの例外をスローするのに[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)の戻り値を使用します。 **Navigate** が **true** を返す場合は、ナビゲーションが行われます。
 
 次に、アプリをビルドして実行します。 "Click to go to page 2" と書かれているリンクをクリックします。 上部に "Page 2" と書かれた 2 番目のページが読み込まれ、フレームに表示される必要があります。
 

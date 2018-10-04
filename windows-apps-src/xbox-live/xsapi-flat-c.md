@@ -1,5 +1,5 @@
 ---
-title: Xbox Live の C++ Api
+title: Xbox Live C Api
 author: KevinAsgari
 description: Xbox Live サービスとのやり取りに使用できるフラット C API モデルについて説明します。
 ms.author: kevinasg
@@ -7,20 +7,20 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one, c, xsapi
+keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one、c, xsapi
 ms.localizationpriority: medium
 ms.openlocfilehash: ac47d3877c44cfa9891753c49be8a5749fba9185
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4314409"
+ms.locfileid: "4351547"
 ---
-# <a name="introduction-to-the-xbox-live-c-apis"></a>Xbox Live の C++ Api の概要
+# <a name="introduction-to-the-xbox-live-c-apis"></a>Xbox Live C Api の概要
 
 2018 年 6 月の新しいフラット C API レイヤーは、XSAPI に追加されました。 この新しい API レイヤーでは、C++ と WinRT API レイヤーで発生したいくつかの問題を解決します。
 
-C++ API は、XSAPI のすべての機能をまだ対応していませんが、作業中は追加の機能。 すべて 3 API レイヤー、C、C++ と WinRT は引き続きサポートされているし、時間の経過と共に新しい機能を追加します。
+C++ API は、XSAPI のすべての機能をまだ対応していませんが、作業中は追加の機能。 すべて 3 API レイヤー、C、C++、および WinRT は引き続きサポートされているし、時間の経過と共に新しい機能を追加します。
 
 > [!NOTE]
 > C++ Api は、現在のみ動作 Xbox 開発キット (XDK) を使用するタイトルにします。 この時点で UWP ゲームはサポートしていません。
@@ -37,15 +37,15 @@ C++ API は、XSAPI のすべての機能をまだ対応していませんが、
 
 ## <a name="benefits-of-the-c-api-for-xsapi"></a>Xsapi C API のメリット
 
-- タイトルを XSAPI を呼び出すときにメモリ割り当てを制御できます。
+- タイトルを XSAPI を呼び出すと、メモリ割り当てを制御できます。
 - により、タイトルを XSAPI を呼び出すときの処理スレッドの完全な制御を取得します。
 - 新しい HTTP ライブラリ、libHttpClient、ゲーム開発者向けに設計されたを使用します。
 
-と共に C++ XSAPI C Api を使用することができますが、C++ Api を使って上記のメリットを獲得はできません。
+と共に C++ XSAPI C Api を使用することができますが、C++ Api を使った上記のメリットを獲得はありません。
 
 ### <a name="managing-memory-allocations"></a>メモリ割り当てを管理します。
 
-新しい C++ API を使った、XSAPI がメモリを割り当てることがしようとしたときに呼び出す関数コールバックを指定できます。 関数コールバックを指定しない場合、XSAPI は標準的なメモリ割り当てルーチンを使用します。
+新しい C++ API を使った、XSAPI がメモリを割り当てることがしようとしたときに呼び出す関数コールバックを指定できます。 関数のコールバックを指定しない場合、XSAPI は標準的なメモリ割り当てルーチンを使用します。
 
 メモリ ルーチンを手動で指定するには、次の操作を行うことができます。
 
@@ -60,7 +60,7 @@ C++ API は、XSAPI のすべての機能をまだ対応していませんが、
 
 ### <a name="managing-asynchronous-threads"></a>非同期のスレッドを管理します。
 
-C++ API には、呼び出しパターンにより、開発者はスレッド モデルの完全な制御を新しい非同期スレッドが導入されています。 詳細については、[呼び出しパターン XSAPI フラット C レイヤーの非同期呼び出し](flatc-async-patterns.md)を参照してください。
+C++ API には、開発者がスレッド モデルを完全に制御できるパターンを呼び出して新しい非同期スレッドが導入されています。 詳細については、[呼び出しパターン XSAPI フラット C レイヤーの非同期呼び出し](flatc-async-patterns.md)を参照してください。
 
 ## <a name="migrating-code-to-use-c-xsapi"></a>C++ XSAPI を使用するコードの移行
 

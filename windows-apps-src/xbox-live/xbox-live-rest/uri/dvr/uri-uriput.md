@@ -12,21 +12,21 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 61eecfbc6d5ebeda4825b8a3d29e90347b9988af
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4316239"
+ms.locfileid: "4357346"
 ---
 # <a name="put-uri"></a>PUT (/{uri})
 ゲーム クリップのデータをアップロードします。
-これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。
+これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`対象の URI の機能に応じて、します。
 
   * [注釈](#ID4EX)
   * [URI パラメーター](#ID4EQB)
   * [クエリ文字列パラメーター](#ID4ERC)
   * [必要な要求ヘッダー](#ID4EBE)
-  * [省略可能な要求ヘッダー](#ID4ENG)
+  * [オプションの要求ヘッダー](#ID4ENG)
   * [要求本文](#ID4EWH)
   * [HTTP ステータス コード](#ID4ECAAC)
   * [必要な応答ヘッダー](#ID4EYEAC)
@@ -38,14 +38,14 @@ ms.locfileid: "4316239"
 
 ## <a name="remarks"></a>注釈
 
-**InitialUploadResponse**が返された後、アップロードはそのオブジェクトで返される**uploadUri**を通じて実行されます。 クライアントする必要がありますファイルに分割**expectedBlocks**連番のブロックで各 2 MB を超えるします。 これらは、並列にアップロードできます。
+**InitialUploadResponse**が返された後、アップロードはそのオブジェクトで返される**uploadUri**を通じて実行されます。 クライアントする必要があります、ファイルに分割**expectedBlocks**連番のブロックで各 2 MB を超える。 これらは、並列にアップロードできます。
 
-ブロック内のファイルをアップロードする場合、サーバー (202) を承諾済みの各要求の HTTP ステータス コードが返されます、Created (201) を返す、1 つのファイルとすべてのブロックをコミットを受け取るまで、予想されるすべてのブロックの場合はします。 このような場合、応答に、オブジェクトが含まれていないと、サーバーは、追加の処理をスケジュール可能性があります。 エラーが発生した**ServiceErrorResponse**オブジェクトを適切な HTTP ステータス コードと共に返される可能性があります。
+ブロック内のファイルをアップロードしている場合、サーバー (202) を承諾済みの各要求の HTTP ステータス コードが返されます、Created (201) を返す、1 つのファイルとすべてのブロックをコミットを受け取るまで、予想されるすべてのブロックの場合はします。 このような場合は、応答に、オブジェクトが含まれていないと、サーバーは、追加の処理をスケジュール可能性があります。 エラーが発生した**ServiceErrorResponse**オブジェクトを適切な HTTP ステータス コードと共に返される可能性があります。
 
 、回復不可能なエラー コード バックオフ再試行の標準的なメカニズムを使用して、クライアントを再試行する必要があります。
 
 > [!NOTE] 
-> 場合でも、アップロードが正常に完了すると、さらに処理が発生する可能性があります拒否上の理由から、クリップがアップロードまたはメタデータに関連しない方法を進めますプロセスします。
+> 場合でも、アップロードが正常に完了すると、それ以降の処理が発生する可能性があります拒否上の理由から、クリップがアップロードまたはメタデータに関連しない方法を進めますプロセスします。
 
 
 <a id="ID4EQB"></a>
@@ -74,20 +74,20 @@ ms.locfileid: "4316239"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| HTTP 認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>|
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>|
 | X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。|
 | Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。|
-| Accept| string| コンテンツの種類の許容値です。 例:<b>アプリケーション/json</b>します。|
+| Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。|
 | キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。|
 
 <a id="ID4ENG"></a>
 
 
-## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
+## <a name="optional-request-headers"></a>オプションの要求ヘッダー
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、圧縮を識別します。|
+| Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、身元を圧縮します。|
 | ETag| string| キャッシュの最適化のために使用します。 値の例:"686897696a7c876b7e"です。|
 
 <a id="ID4EWH"></a>
@@ -102,7 +102,7 @@ ms.locfileid: "4316239"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -115,7 +115,7 @@ ms.locfileid: "4316239"
 | 404| Not Found します。| 指定されたリソースは見つかりませんでした。|
 | 406| 許容できません。| リソースのバージョンがサポートされていません。|
 | 408| 要求のタイムアウト| 要求にかかった時間が長すぎます。|
-| 410| なった| 要求されたリソースが利用可能ではありません。|
+| 410| なった| 要求されたリソースが利用可能ではなくなりました。|
 
 <a id="ID4EYEAC"></a>
 
@@ -127,7 +127,7 @@ ms.locfileid: "4316239"
 | X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。|
 | Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。|
 | キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。|
-| Accept| string| コンテンツの種類の許容値です。 例:<b>アプリケーション/json</b>します。|
+| Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。|
 | Retry-after| string| クライアントが利用できないサーバーの場合、後で再試行するように指示します。|
 | 異なる| string| 下位のプロキシ応答をキャッシュする方法を指示します。|
 

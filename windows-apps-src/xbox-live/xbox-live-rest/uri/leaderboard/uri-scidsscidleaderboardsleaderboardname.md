@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 797a557b4bb7d443ecfdce1f136f5db2079b1990
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317979"
+ms.locfileid: "4352519"
 ---
 # <a name="scidsscidleaderboardsleaderboardname"></a>/scids/{scid}/leaderboards/{leaderboardname}
 定義済みグローバル ランキングにアクセスします。 これらの Uri のドメインが`leaderboards.xboxlive.com`します。
@@ -45,7 +45,7 @@ ms.locfileid: "4317979"
 
 [値のメタデータを取得します。](uri-scidsscidleaderboardsleaderboardnamegetvaluemetadata.md)
 
-&nbsp;&nbsp;&nbsp;&nbsp;ランキングの値に関連付けられたメタデータと共に、定義済みグローバル ランキングを取得します。
+&nbsp;&nbsp;&nbsp;&nbsp;ランキングの値に関連付けられたメタデータと共に定義済みグローバル ランキングを取得します。
 
  
 <a id="ID4EJC"></a>

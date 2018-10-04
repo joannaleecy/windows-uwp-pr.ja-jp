@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a2c8ca1cdac0b6a2ad2f981d2a57d926cf4e1f5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4308239"
+ms.locfileid: "4351324"
 ---
 # <a name="leaderboards-uris"></a>ランキング URI
 
-このセクションでは、*ランキング*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
+このセクションでは、*ランキング*用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
 
 これらの Uri のドメインは、leaderboards.xboxlive.com です。
 
@@ -33,7 +33,7 @@ ms.locfileid: "4308239"
 
 &nbsp;&nbsp;定義済みグローバル ランキングにアクセスします。
 
-[ユーザー/xuid ({xuid})/scids/{scid}/stats/{statname) そして {all\ | お気に入り}](uri-usersxuidscidstatnamepeople.md)
+[ユーザー/xuid ({xuid})/scids/{scid}/stats/{statname)/people/{all\ | favorite}](uri-usersxuidscidstatnamepeople.md)
 
 &nbsp;&nbsp;ソーシャル (ランク付け) ランキングにアクセスします。
  

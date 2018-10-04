@@ -12,27 +12,27 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: de0ffd7c9c6c42f2a0ebf633ebcbba8a89a1b8b8
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4312877"
+ms.locfileid: "4353636"
 ---
 # <a name="lastseenrecord-json"></a>LastSeenRecord (JSON)
-ユーザーには、有効な DeviceRecord があるないときに利用可能なユーザーが最後システムに表示されていた場合について説明します。 
+ユーザーには、有効な DeviceRecord があるないときに使用できる、ユーザーが最後、システムに表示されていた場合について説明します。 
 <a id="ID4EN"></a>
 
  
 ## <a name="lastseenrecord"></a>LastSeenRecord
  
-LastSeenRecord オブジェクトでは、次の仕様があります。
+LastSeenRecord オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| deviceType| string| ユーザーが過去の存在をでしたデバイスの種類。| 
-| titleId| 32 ビット符号なし整数| ユーザーが過去の存在をでしたタイトルの識別子です。| 
-| titleName| string| ユーザーが過去の存在をでしたタイトルの名前です。| 
-| タイムスタンプ| DateTime| ユーザーが過去の存在を示す UTC タイムスタンプ。| 
+| deviceType| string| ユーザーが最後の存在をでしたデバイスの種類。| 
+| titleId| 32 ビット符号なし整数| ユーザーが最後の存在をでしたタイトルの識別子です。| 
+| titleName| string| ユーザーが最後の存在をでしたタイトルの名前です。| 
+| タイムスタンプ| DateTime| Utc 形式のユーザーが過去の存在を示すタイムスタンプ。| 
   
 <a id="ID4EHC"></a>
 

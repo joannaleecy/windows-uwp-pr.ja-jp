@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4314785"
+ms.locfileid: "4353840"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 ユーザーの受信トレイでユーザーのメッセージを削除します。 これらの Uri のドメインが`msg.xboxlive.com`します。
@@ -26,7 +26,7 @@ ms.locfileid: "4314785"
   * [Authorization](#ID4EPB)
   * [要求本文](#ID4E1B)
   * [HTTP ステータス コード](#ID4EHC)
-  * [JavaScript オブジェクト Notation (JSON) の応答](#ID4EAE)
+  * [JavaScript Object Notation (JSON) の応答](#ID4EAE)
   * [リソースのプライバシーの設定の効果](#ID4EYF)
  
 <a id="ID4EV"></a>
@@ -36,7 +36,7 @@ ms.locfileid: "4314785"
  
 削除操作では、等です。
  
-この API は、サポートのみコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
+この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
   
 <a id="ID4ECB"></a>
 
@@ -67,21 +67,21 @@ ms.locfileid: "4314785"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード 
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 説明| 
 | --- | --- | --- | --- | --- | 
 | 204| 成功します。| 
 | 403| XUID に変換することはできませんか、有効な XUID クレームが見つかったことはできません。| 
-| 404| URI のメッセージ ID を解析できませんか、XUID が URI にありません。| 
+| 404| URI のメッセージ ID を解析できませんまたは、XUID が URI ではありません。| 
 | 500| サーバー側の一般的なエラーです。| 
   
 <a id="ID4EAE"></a>
 
  
-## <a name="javascript-object-notation-json-response"></a>JavaScript オブジェクト Notation (JSON) の応答 
+## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答 
  
-エラーの場合、サービスはサービスの環境からの値が含まれている全て、errorResponse オブジェクトを返す可能性があります。
+エラーの場合、サービスは、サービスの環境から値を含めることができますが全て、errorResponse オブジェクトを返す可能性があります。
  
 | プロパティ| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -94,7 +94,7 @@ ms.locfileid: "4314785"
  
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果 
  
-のみユーザー メッセージを削除することができます。 
+のみ、独自のユーザー メッセージを削除することができます。 
   
 <a id="ID4EDG"></a>
 
