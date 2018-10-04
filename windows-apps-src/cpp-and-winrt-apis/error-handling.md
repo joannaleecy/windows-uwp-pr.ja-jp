@@ -9,15 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, エラー, 処理, 例外
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d9eccbee14da3fb21a00e923c3491b2266c698c
-ms.sourcegitcommit: 43ce38a4789e0a5194069cc3307cbbc20aa0367e
-ms.translationtype: HT
+ms.openlocfilehash: 9a4cf60fea70722e66eb44d52542be248e9ad01c
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "1934455"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4319494"
 ---
-# <a name="error-handling-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) でのエラー処理
-このトピックでは、C++/WinRT でのプログラミング時にエラーを処理するための方法について説明します。 一般的な情報、および背景については、「[エラーと例外の処理 (最新の C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)」を参照してください。
+# <a name="error-handling-with-cwinrt"></a>C++/WinRT でのエラー処理
+
+このトピックで説明したプログラミングでは、エラーを処理するための戦略[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)します。 一般的な情報、および背景については、「[エラーと例外の処理 (最新の C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)」を参照してください。
 
 ## <a name="avoid-catching-and-throwing-exceptions"></a>例外のキャッチとスローの回避
 引き続き[例外安全なコード](/cpp/cpp/how-to-design-for-exception-safety)を記述することをお勧めしますが、可能な限り、例外のキャッチとスローを回避します。 例外のハンドラーがない場合、Windows は (クラッシュのミニダンプを含む) エラー レポートを自動的に生成します。このレポートは、問題のある場所を追跡するのに役立ちます。
@@ -45,14 +46,14 @@ using namespace Windows::UI::Xaml::Media::Imaging;
 
 IAsyncAction MakeThumbnailsAsync()
 {
-    auto imageFiles = co_await KnownFolders::PicturesLibrary().GetFilesAsync();
+    auto imageFiles{ co_await KnownFolders::PicturesLibrary().GetFilesAsync() };
 
     for (StorageFile const& imageFile : imageFiles)
     {
         BitmapImage bitmapImage;
         try
         {
-            auto thumbnail = co_await imageFile.GetThumbnailAsync(FileProperties::ThumbnailMode::PicturesView);
+            auto thumbnail{ co_await imageFile.GetThumbnailAsync(FileProperties::ThumbnailMode::PicturesView) };
             if (thumbnail) bitmapImage.SetSource(thumbnail);
         }
         catch (winrt::hresult_error const& ex)
