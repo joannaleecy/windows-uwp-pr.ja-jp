@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, ツール, プレイヤーのリセット, live trace analyzer, LTA, xbox live アカウント ツール,
 ms.localizationpriority: medium
 ms.openlocfilehash: 98b21eda55c6122104c9ec79cda10708e362f3a4
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318221"
+ms.locfileid: "4350366"
 ---
 # <a name="development-tools-for-xbox-live"></a><span data-ttu-id="2cd1a-104">Xbox Live の開発ツール</span><span class="sxs-lookup"><span data-stu-id="2cd1a-104">Development tools for Xbox Live</span></span>
 

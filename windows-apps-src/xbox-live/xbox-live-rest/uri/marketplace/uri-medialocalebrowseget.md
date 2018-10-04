@@ -12,58 +12,58 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b747ea8e576ecbd3723282ffa3a59113b8187428
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4308213"
+ms.locfileid: "4350901"
 ---
-# <a name="get-mediamarketplaceidbrowse"></a><span data-ttu-id="7cff3-104">GET (media/{marketplaceId}/browse)</span><span class="sxs-lookup"><span data-stu-id="7cff3-104">GET (media/{marketplaceId}/browse)</span></span>
-<span data-ttu-id="7cff3-105">1 つのメディア グループ内の項目を参照できます。</span><span class="sxs-lookup"><span data-stu-id="7cff3-105">Allows browsing for items within a single media group.</span></span> <span data-ttu-id="7cff3-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="7cff3-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>
+# <a name="get-mediamarketplaceidbrowse"></a><span data-ttu-id="0cceb-104">GET (media/{marketplaceId}/browse)</span><span class="sxs-lookup"><span data-stu-id="0cceb-104">GET (media/{marketplaceId}/browse)</span></span>
+<span data-ttu-id="0cceb-105">1 つのメディア グループ内の項目を参照できます。</span><span class="sxs-lookup"><span data-stu-id="0cceb-105">Allows browsing for items within a single media group.</span></span> <span data-ttu-id="0cceb-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="0cceb-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="7cff3-107">注釈</span><span class="sxs-lookup"><span data-stu-id="7cff3-107">Remarks</span></span>](#ID4EV)
-  * [<span data-ttu-id="7cff3-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="7cff3-108">URI parameters</span></span>](#ID4EFB)
-  * [<span data-ttu-id="7cff3-109">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="7cff3-109">Query string parameters</span></span>](#ID4EQB)
-  * [<span data-ttu-id="7cff3-110">応答本文</span><span class="sxs-lookup"><span data-stu-id="7cff3-110">Response body</span></span>](#ID4E6B)
+  * [<span data-ttu-id="0cceb-107">注釈</span><span class="sxs-lookup"><span data-stu-id="0cceb-107">Remarks</span></span>](#ID4EV)
+  * [<span data-ttu-id="0cceb-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="0cceb-108">URI parameters</span></span>](#ID4EFB)
+  * [<span data-ttu-id="0cceb-109">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="0cceb-109">Query string parameters</span></span>](#ID4EQB)
+  * [<span data-ttu-id="0cceb-110">応答本文</span><span class="sxs-lookup"><span data-stu-id="0cceb-110">Response body</span></span>](#ID4E6B)
  
 <a id="ID4EV"></a>
 
  
-## <a name="remarks"></a><span data-ttu-id="7cff3-111">注釈</span><span class="sxs-lookup"><span data-stu-id="7cff3-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="0cceb-111">注釈</span><span class="sxs-lookup"><span data-stu-id="0cceb-111">Remarks</span></span>
  
-<span data-ttu-id="7cff3-112">非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してこの検索から返されるデータのページにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="7cff3-112">Pages of data returned from this search can be accessed non-sequentially using the skipItems parameter instead of using the continuation token.</span></span> <span data-ttu-id="7cff3-113">この API は、絞り込み条件のクエリを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="7cff3-113">This API accepts Query Refiners.</span></span> 
+<span data-ttu-id="0cceb-112">この検索から返されるデータのページは、非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="0cceb-112">Pages of data returned from this search can be accessed non-sequentially using the skipItems parameter instead of using the continuation token.</span></span> <span data-ttu-id="0cceb-113">この API は、クエリの絞り込み条件を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="0cceb-113">This API accepts Query Refiners.</span></span> 
  
- <span data-ttu-id="7cff3-114">**SandboxId**は今すぐ、XToken で要求から取得され、適用されます。</span><span class="sxs-lookup"><span data-stu-id="7cff3-114">**SandboxId** is now retrieved from the claim in the XToken and enforced.</span></span> <span data-ttu-id="7cff3-115">**SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は 400 Bad request エラーをスローします。</span><span class="sxs-lookup"><span data-stu-id="7cff3-115">If the **SandboxId** is not present, then Entertainment Discovery Services (EDS) will throw a 400 Bad request error.</span></span> 
+ <span data-ttu-id="0cceb-114">**SandboxId**は今すぐ、XToken で要求から取得され、適用されます。</span><span class="sxs-lookup"><span data-stu-id="0cceb-114">**SandboxId** is now retrieved from the claim in the XToken and enforced.</span></span> <span data-ttu-id="0cceb-115">**SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。</span><span class="sxs-lookup"><span data-stu-id="0cceb-115">If the **SandboxId** is not present, then Entertainment Discovery Services (EDS) will throw a 400 Bad request error.</span></span> 
   
 <a id="ID4EFB"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="7cff3-116">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="7cff3-116">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="0cceb-116">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="0cceb-116">URI parameters</span></span>
  
-| <span data-ttu-id="7cff3-117">パラメーター</span><span class="sxs-lookup"><span data-stu-id="7cff3-117">Parameter</span></span>| <span data-ttu-id="7cff3-118">型</span><span class="sxs-lookup"><span data-stu-id="7cff3-118">Type</span></span>| <span data-ttu-id="7cff3-119">説明</span><span class="sxs-lookup"><span data-stu-id="7cff3-119">Description</span></span>| 
+| <span data-ttu-id="0cceb-117">パラメーター</span><span class="sxs-lookup"><span data-stu-id="0cceb-117">Parameter</span></span>| <span data-ttu-id="0cceb-118">型</span><span class="sxs-lookup"><span data-stu-id="0cceb-118">Type</span></span>| <span data-ttu-id="0cceb-119">説明</span><span class="sxs-lookup"><span data-stu-id="0cceb-119">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="7cff3-120">marketplaceId</span><span class="sxs-lookup"><span data-stu-id="7cff3-120">marketplaceId</span></span>| <span data-ttu-id="7cff3-121">string</span><span class="sxs-lookup"><span data-stu-id="7cff3-121">string</span></span>| <span data-ttu-id="7cff3-122">必須。</span><span class="sxs-lookup"><span data-stu-id="7cff3-122">Required.</span></span> <span data-ttu-id="7cff3-123">文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。</span><span class="sxs-lookup"><span data-stu-id="7cff3-123">String value obtained from the <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>.</span></span>| 
+| <span data-ttu-id="0cceb-120">marketplaceId</span><span class="sxs-lookup"><span data-stu-id="0cceb-120">marketplaceId</span></span>| <span data-ttu-id="0cceb-121">string</span><span class="sxs-lookup"><span data-stu-id="0cceb-121">string</span></span>| <span data-ttu-id="0cceb-122">必須。</span><span class="sxs-lookup"><span data-stu-id="0cceb-122">Required.</span></span> <span data-ttu-id="0cceb-123"><b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。</span><span class="sxs-lookup"><span data-stu-id="0cceb-123">String value obtained from the <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>.</span></span>| 
   
 <a id="ID4EQB"></a>
 
  
-## <a name="query-string-parameters"></a><span data-ttu-id="7cff3-124">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="7cff3-124">Query string parameters</span></span>
+## <a name="query-string-parameters"></a><span data-ttu-id="0cceb-124">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="0cceb-124">Query string parameters</span></span>
  
-<span data-ttu-id="7cff3-125">この API は、次のクエリ パラメーターを受け取る: combinedContentRating、desiredMediaItemTypes、フィールド、maxItems、preferredProvider、q、queryRefiners、skipItems、firstPartyOnly、freeOnly、hasTrailer、latestOnly、subscriptionLevel、および topRatedOnly.</span><span class="sxs-lookup"><span data-stu-id="7cff3-125">This API accepts the following query parameters: combinedContentRating, desiredMediaItemTypes, fields, maxItems, preferredProvider, q, queryRefiners, skipItems, firstPartyOnly, freeOnly, hasTrailer, latestOnly, subscriptionLevel, and topRatedOnly.</span></span>
+<span data-ttu-id="0cceb-125">この API は、次のクエリ パラメーターを受け取る: combinedContentRating、desiredMediaItemTypes、フィールド、maxItems、preferredProvider、q、queryRefiners、skipItems、firstPartyOnly、freeOnly、hasTrailer、latestOnly、subscriptionLevel、および topRatedOnly.</span><span class="sxs-lookup"><span data-stu-id="0cceb-125">This API accepts the following query parameters: combinedContentRating, desiredMediaItemTypes, fields, maxItems, preferredProvider, q, queryRefiners, skipItems, firstPartyOnly, freeOnly, hasTrailer, latestOnly, subscriptionLevel, and topRatedOnly.</span></span>
  
-<span data-ttu-id="7cff3-126">これらのパラメーターについて詳しくは、 [EDS パラメーター](../../additional/edsparameters.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7cff3-126">See [EDS Parameters](../../additional/edsparameters.md) for more information on these parameters.</span></span>
+<span data-ttu-id="0cceb-126">これらのパラメーターについて詳しくは、 [EDS パラメーター](../../additional/edsparameters.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0cceb-126">See [EDS Parameters](../../additional/edsparameters.md) for more information on these parameters.</span></span>
   
 <a id="ID4E6B"></a>
 
  
-## <a name="response-body"></a><span data-ttu-id="7cff3-127">応答本文</span><span class="sxs-lookup"><span data-stu-id="7cff3-127">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="0cceb-127">応答本文</span><span class="sxs-lookup"><span data-stu-id="0cceb-127">Response body</span></span>
  
 <a id="ID4EFC"></a>
 
  
-### <a name="sample-response"></a><span data-ttu-id="7cff3-128">応答の例</span><span class="sxs-lookup"><span data-stu-id="7cff3-128">Sample response</span></span>
+### <a name="sample-response"></a><span data-ttu-id="0cceb-128">応答の例</span><span class="sxs-lookup"><span data-stu-id="0cceb-128">Sample response</span></span>
  
-<span data-ttu-id="7cff3-129">次の JSON コードは、呼び出しへの応答で`/media/en-us/browse?orderBy=releaseDate&desiredMediaItemTypes=DGame&fields=all`します。</span><span class="sxs-lookup"><span data-stu-id="7cff3-129">The JSON code below is in response to the call `/media/en-us/browse?orderBy=releaseDate&desiredMediaItemTypes=DGame&fields=all`.</span></span>
+<span data-ttu-id="0cceb-129">次の JSON コードは、呼び出しへの応答で`/media/en-us/browse?orderBy=releaseDate&desiredMediaItemTypes=DGame&fields=all`します。</span><span class="sxs-lookup"><span data-stu-id="0cceb-129">The JSON code below is in response to the call `/media/en-us/browse?orderBy=releaseDate&desiredMediaItemTypes=DGame&fields=all`.</span></span>
  
 
 ```cpp
@@ -215,29 +215,29 @@ ms.locfileid: "4308213"
 <a id="ID4EUC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="7cff3-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="7cff3-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0cceb-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="0cceb-130">See also</span></span>
  
 <a id="ID4EWC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="7cff3-131">Parent</span><span class="sxs-lookup"><span data-stu-id="7cff3-131">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="0cceb-131">Parent</span><span class="sxs-lookup"><span data-stu-id="0cceb-131">Parent</span></span> 
 
-[<span data-ttu-id="7cff3-132">/media/{marketplaceId}/browse</span><span class="sxs-lookup"><span data-stu-id="7cff3-132">/media/{marketplaceId}/browse</span></span>](uri-medialocalebrowse.md)
+[<span data-ttu-id="0cceb-132">/media/{marketplaceId}/browse</span><span class="sxs-lookup"><span data-stu-id="0cceb-132">/media/{marketplaceId}/browse</span></span>](uri-medialocalebrowse.md)
 
   
 <a id="ID4EAD"></a>
 
  
-##### <a name="further-information"></a><span data-ttu-id="7cff3-133">詳細情報</span><span class="sxs-lookup"><span data-stu-id="7cff3-133">Further Information</span></span> 
+##### <a name="further-information"></a><span data-ttu-id="0cceb-133">詳細情報</span><span class="sxs-lookup"><span data-stu-id="0cceb-133">Further Information</span></span> 
 
-[<span data-ttu-id="7cff3-134">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="7cff3-134">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
+[<span data-ttu-id="0cceb-134">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="0cceb-134">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
 
- [<span data-ttu-id="7cff3-135">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="7cff3-135">EDS Parameters</span></span>](../../additional/edsparameters.md)
+ [<span data-ttu-id="0cceb-135">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="0cceb-135">EDS Parameters</span></span>](../../additional/edsparameters.md)
 
- [<span data-ttu-id="7cff3-136">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="7cff3-136">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
+ [<span data-ttu-id="0cceb-136">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="0cceb-136">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
 
- [<span data-ttu-id="7cff3-137">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="7cff3-137">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
+ [<span data-ttu-id="0cceb-137">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="0cceb-137">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
 
- [<span data-ttu-id="7cff3-138">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="7cff3-138">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)
+ [<span data-ttu-id="0cceb-138">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="0cceb-138">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

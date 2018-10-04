@@ -12,32 +12,32 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a643775f835a87b4c1287b0954f698c4c987c10
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4310587"
+ms.locfileid: "4353434"
 ---
-# <a name="initialuploadresponse-json"></a><span data-ttu-id="3abbd-104">InitialUploadResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="3abbd-104">InitialUploadResponse (JSON)</span></span>
+# <a name="initialuploadresponse-json"></a><span data-ttu-id="01b9a-104">InitialUploadResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="01b9a-104">InitialUploadResponse (JSON)</span></span>
  
 <a id="ID4EO"></a>
 
  
-## <a name="initialuploadresponse"></a><span data-ttu-id="3abbd-105">InitialUploadResponse</span><span class="sxs-lookup"><span data-stu-id="3abbd-105">InitialUploadResponse</span></span>
+## <a name="initialuploadresponse"></a><span data-ttu-id="01b9a-105">InitialUploadResponse</span><span class="sxs-lookup"><span data-stu-id="01b9a-105">InitialUploadResponse</span></span>
  
-<span data-ttu-id="3abbd-106">InitialUploadResponse オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="3abbd-106">The InitialUploadResponse object has the following specification.</span></span>
+<span data-ttu-id="01b9a-106">InitialUploadResponse オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="01b9a-106">The InitialUploadResponse object has the following specification.</span></span>
  
-| <span data-ttu-id="3abbd-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="3abbd-107">Member</span></span>| <span data-ttu-id="3abbd-108">種類</span><span class="sxs-lookup"><span data-stu-id="3abbd-108">Type</span></span>| <span data-ttu-id="3abbd-109">説明</span><span class="sxs-lookup"><span data-stu-id="3abbd-109">Description</span></span>| 
+| <span data-ttu-id="01b9a-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="01b9a-107">Member</span></span>| <span data-ttu-id="01b9a-108">種類</span><span class="sxs-lookup"><span data-stu-id="01b9a-108">Type</span></span>| <span data-ttu-id="01b9a-109">説明</span><span class="sxs-lookup"><span data-stu-id="01b9a-109">Description</span></span>| 
 | --- | --- | --- | 
-| <b><span data-ttu-id="3abbd-110">gameClipId</span><span class="sxs-lookup"><span data-stu-id="3abbd-110">gameClipId</span></span></b>| <span data-ttu-id="3abbd-111">string</span><span class="sxs-lookup"><span data-stu-id="3abbd-111">string</span></span>| <span data-ttu-id="3abbd-112">アップロードのデータ要求に割り当てられている ID。</span><span class="sxs-lookup"><span data-stu-id="3abbd-112">ID assigned for the upload data request.</span></span>| 
-| <b><span data-ttu-id="3abbd-113">uploadUri</span><span class="sxs-lookup"><span data-stu-id="3abbd-113">uploadUri</span></span></b>| <span data-ttu-id="3abbd-114">URI</span><span class="sxs-lookup"><span data-stu-id="3abbd-114">URI</span></span>| <span data-ttu-id="3abbd-115">場所は、ゲーム クリップをアップロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="3abbd-115">Location to which the game clip should be uploaded.</span></span>| 
-| <b><span data-ttu-id="3abbd-116">largeThumbnailUri</span><span class="sxs-lookup"><span data-stu-id="3abbd-116">largeThumbnailUri</span></span></b>| <span data-ttu-id="3abbd-117">URI</span><span class="sxs-lookup"><span data-stu-id="3abbd-117">URI</span></span>| <span data-ttu-id="3abbd-118">省略可能。</span><span class="sxs-lookup"><span data-stu-id="3abbd-118">Optional.</span></span> <span data-ttu-id="3abbd-119">大きなサムネイルのアップロード場所です。</span><span class="sxs-lookup"><span data-stu-id="3abbd-119">Location to which the large thumbnail should be uploaded.</span></span> <span data-ttu-id="3abbd-120">このフィールドの有無については、(アップロードが指定されているときになります) <b>InitialUploadRequest</b>で[ThumbnailSource 列挙](../enums/gvr-enum-thumbnailsource.md)値によって決まります。</span><span class="sxs-lookup"><span data-stu-id="3abbd-120">Presence of this field is determined by the [ThumbnailSource Enumeration](../enums/gvr-enum-thumbnailsource.md) value in the <b>InitialUploadRequest</b> (will be present when the upload is specified).</span></span>| 
-| <b><span data-ttu-id="3abbd-121">smallThumbnailUri</span><span class="sxs-lookup"><span data-stu-id="3abbd-121">smallThumbnailUri</span></span></b>| <span data-ttu-id="3abbd-122">URI</span><span class="sxs-lookup"><span data-stu-id="3abbd-122">URI</span></span>| <span data-ttu-id="3abbd-123">省略可能。</span><span class="sxs-lookup"><span data-stu-id="3abbd-123">Optional.</span></span> <span data-ttu-id="3abbd-124">小さなサムネイルのアップロード場所です。</span><span class="sxs-lookup"><span data-stu-id="3abbd-124">Location to which the small thumbnail should be uploaded.</span></span> <span data-ttu-id="3abbd-125">このフィールドの有無については、(アップロードが指定されているときになります) <b>InitialUploadRequest</b>で[ThumbnailSource 列挙](../enums/gvr-enum-thumbnailsource.md)値によって決まります。</span><span class="sxs-lookup"><span data-stu-id="3abbd-125">Presence of this field is determined by the [ThumbnailSource Enumeration](../enums/gvr-enum-thumbnailsource.md) value in the <b>InitialUploadRequest</b> (will be present when the upload is specified).</span></span>| 
+| <b><span data-ttu-id="01b9a-110">gameClipId</span><span class="sxs-lookup"><span data-stu-id="01b9a-110">gameClipId</span></span></b>| <span data-ttu-id="01b9a-111">string</span><span class="sxs-lookup"><span data-stu-id="01b9a-111">string</span></span>| <span data-ttu-id="01b9a-112">アップロードのデータ要求に割り当てられている ID。</span><span class="sxs-lookup"><span data-stu-id="01b9a-112">ID assigned for the upload data request.</span></span>| 
+| <b><span data-ttu-id="01b9a-113">uploadUri</span><span class="sxs-lookup"><span data-stu-id="01b9a-113">uploadUri</span></span></b>| <span data-ttu-id="01b9a-114">URI</span><span class="sxs-lookup"><span data-stu-id="01b9a-114">URI</span></span>| <span data-ttu-id="01b9a-115">場所は、ゲーム クリップをアップロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="01b9a-115">Location to which the game clip should be uploaded.</span></span>| 
+| <b><span data-ttu-id="01b9a-116">largeThumbnailUri</span><span class="sxs-lookup"><span data-stu-id="01b9a-116">largeThumbnailUri</span></span></b>| <span data-ttu-id="01b9a-117">URI</span><span class="sxs-lookup"><span data-stu-id="01b9a-117">URI</span></span>| <span data-ttu-id="01b9a-118">省略可能。</span><span class="sxs-lookup"><span data-stu-id="01b9a-118">Optional.</span></span> <span data-ttu-id="01b9a-119">場所は、大きなサムネイルをアップロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="01b9a-119">Location to which the large thumbnail should be uploaded.</span></span> <span data-ttu-id="01b9a-120">このフィールドの有無については、(アップロードが指定されているときになります) <b>InitialUploadRequest</b> [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)の値によって決まります。</span><span class="sxs-lookup"><span data-stu-id="01b9a-120">Presence of this field is determined by the [ThumbnailSource Enumeration](../enums/gvr-enum-thumbnailsource.md) value in the <b>InitialUploadRequest</b> (will be present when the upload is specified).</span></span>| 
+| <b><span data-ttu-id="01b9a-121">smallThumbnailUri</span><span class="sxs-lookup"><span data-stu-id="01b9a-121">smallThumbnailUri</span></span></b>| <span data-ttu-id="01b9a-122">URI</span><span class="sxs-lookup"><span data-stu-id="01b9a-122">URI</span></span>| <span data-ttu-id="01b9a-123">省略可能。</span><span class="sxs-lookup"><span data-stu-id="01b9a-123">Optional.</span></span> <span data-ttu-id="01b9a-124">場所は、小さなサムネイルをアップロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="01b9a-124">Location to which the small thumbnail should be uploaded.</span></span> <span data-ttu-id="01b9a-125">このフィールドの有無については、(アップロードが指定されているときになります) <b>InitialUploadRequest</b> [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)の値によって決まります。</span><span class="sxs-lookup"><span data-stu-id="01b9a-125">Presence of this field is determined by the [ThumbnailSource Enumeration](../enums/gvr-enum-thumbnailsource.md) value in the <b>InitialUploadRequest</b> (will be present when the upload is specified).</span></span>| 
   
 <a id="ID4EYC"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="3abbd-126">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="3abbd-126">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="01b9a-126">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="01b9a-126">Sample JSON syntax</span></span>
  
 
 ```json
@@ -54,13 +54,13 @@ ms.locfileid: "4310587"
 <a id="ID4EBD"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="3abbd-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="3abbd-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="01b9a-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="01b9a-127">See also</span></span>
  
 <a id="ID4EDD"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="3abbd-128">Parent</span><span class="sxs-lookup"><span data-stu-id="3abbd-128">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="01b9a-128">Parent</span><span class="sxs-lookup"><span data-stu-id="01b9a-128">Parent</span></span> 
 
-[<span data-ttu-id="3abbd-129">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="3abbd-129">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="01b9a-129">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="01b9a-129">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

@@ -12,30 +12,30 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 36726153d1364f384358471324452422f67741d2
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4314983"
+ms.locfileid: "4351650"
 ---
-# <a name="permissioncheckbatchuserresponse-json"></a><span data-ttu-id="49b00-104">PermissionCheckBatchUserResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="49b00-104">PermissionCheckBatchUserResponse (JSON)</span></span>
-<span data-ttu-id="49b00-105">バッチのアクセス許可の理由は、1 つの対象ユーザーのアクセス権の値の一覧を確認します。</span><span class="sxs-lookup"><span data-stu-id="49b00-105">The reasons of a batch permission check for list of permission values for a single target user.</span></span> 
+# <a name="permissioncheckbatchuserresponse-json"></a><span data-ttu-id="1dec8-104">PermissionCheckBatchUserResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="1dec8-104">PermissionCheckBatchUserResponse (JSON)</span></span>
+<span data-ttu-id="1dec8-105">バッチのアクセス許可の理由は、1 つの対象ユーザーのアクセス権の値の一覧を確認します。</span><span class="sxs-lookup"><span data-stu-id="1dec8-105">The reasons of a batch permission check for list of permission values for a single target user.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="permissioncheckbatchuserresponse"></a><span data-ttu-id="49b00-106">PermissionCheckBatchUserResponse</span><span class="sxs-lookup"><span data-stu-id="49b00-106">PermissionCheckBatchUserResponse</span></span>
+## <a name="permissioncheckbatchuserresponse"></a><span data-ttu-id="1dec8-106">PermissionCheckBatchUserResponse</span><span class="sxs-lookup"><span data-stu-id="1dec8-106">PermissionCheckBatchUserResponse</span></span>
  
-<span data-ttu-id="49b00-107">PermissionCheckBatchUserResponse オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="49b00-107">The PermissionCheckBatchUserResponse object has the following specification.</span></span>
+<span data-ttu-id="1dec8-107">PermissionCheckBatchUserResponse オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="1dec8-107">The PermissionCheckBatchUserResponse object has the following specification.</span></span>
  
-| <span data-ttu-id="49b00-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="49b00-108">Member</span></span>| <span data-ttu-id="49b00-109">種類</span><span class="sxs-lookup"><span data-stu-id="49b00-109">Type</span></span>| <span data-ttu-id="49b00-110">説明</span><span class="sxs-lookup"><span data-stu-id="49b00-110">Description</span></span>| 
+| <span data-ttu-id="1dec8-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="1dec8-108">Member</span></span>| <span data-ttu-id="1dec8-109">種類</span><span class="sxs-lookup"><span data-stu-id="1dec8-109">Type</span></span>| <span data-ttu-id="1dec8-110">説明</span><span class="sxs-lookup"><span data-stu-id="1dec8-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="49b00-111">ユーザー</span><span class="sxs-lookup"><span data-stu-id="49b00-111">User</span></span>| <span data-ttu-id="49b00-112">string</span><span class="sxs-lookup"><span data-stu-id="49b00-112">string</span></span>| <span data-ttu-id="49b00-113">必須。</span><span class="sxs-lookup"><span data-stu-id="49b00-113">Required.</span></span> <span data-ttu-id="49b00-114">このメンバーは、ターゲット ユーザーと要求された操作を実行する要求元のユーザーが許可されている場合<b>は true</b> 。</span><span class="sxs-lookup"><span data-stu-id="49b00-114">This member is <b>true</b> if the requesting user is allowed to perform the requested action with the target user.</span></span>| 
-| <span data-ttu-id="49b00-115">アクセス許可</span><span class="sxs-lookup"><span data-stu-id="49b00-115">Permissions</span></span>| <span data-ttu-id="49b00-116">[PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)の配列</span><span class="sxs-lookup"><span data-stu-id="49b00-116">Array of [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)</span></span>| <span data-ttu-id="49b00-117">必須。</span><span class="sxs-lookup"><span data-stu-id="49b00-117">Required.</span></span> <span data-ttu-id="49b00-118">各アクセス許可の要求と同じ順序で元の要求が要求されている[PermissionCheckResponse (JSON)](json-permissioncheckresponse.md) 。</span><span class="sxs-lookup"><span data-stu-id="49b00-118">A [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md) for each permission that was asked for in the original request, in the same order as in the request.</span></span>| 
+| <span data-ttu-id="1dec8-111">ユーザー</span><span class="sxs-lookup"><span data-stu-id="1dec8-111">User</span></span>| <span data-ttu-id="1dec8-112">string</span><span class="sxs-lookup"><span data-stu-id="1dec8-112">string</span></span>| <span data-ttu-id="1dec8-113">必須。</span><span class="sxs-lookup"><span data-stu-id="1dec8-113">Required.</span></span> <span data-ttu-id="1dec8-114">このメンバーは、ターゲット ユーザーと要求された操作を実行する要求元のユーザーが許可されている場合<b>は true</b> 。</span><span class="sxs-lookup"><span data-stu-id="1dec8-114">This member is <b>true</b> if the requesting user is allowed to perform the requested action with the target user.</span></span>| 
+| <span data-ttu-id="1dec8-115">アクセス許可</span><span class="sxs-lookup"><span data-stu-id="1dec8-115">Permissions</span></span>| <span data-ttu-id="1dec8-116">[PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)の配列</span><span class="sxs-lookup"><span data-stu-id="1dec8-116">Array of [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)</span></span>| <span data-ttu-id="1dec8-117">必須。</span><span class="sxs-lookup"><span data-stu-id="1dec8-117">Required.</span></span> <span data-ttu-id="1dec8-118">各アクセス許可の要求と同じ順序で、元の要求で要求されている[PermissionCheckResponse (JSON)](json-permissioncheckresponse.md) 。</span><span class="sxs-lookup"><span data-stu-id="1dec8-118">A [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md) for each permission that was asked for in the original request, in the same order as in the request.</span></span>| 
   
 <a id="ID4E4B"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="49b00-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="49b00-119">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="1dec8-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="1dec8-119">Sample JSON syntax</span></span>
  
 
 ```json
@@ -66,13 +66,13 @@ ms.locfileid: "4314983"
 <a id="ID4EGC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="49b00-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="49b00-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1dec8-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="1dec8-120">See also</span></span>
  
 <a id="ID4EIC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="49b00-121">Parent</span><span class="sxs-lookup"><span data-stu-id="49b00-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="1dec8-121">Parent</span><span class="sxs-lookup"><span data-stu-id="1dec8-121">Parent</span></span> 
 
-[<span data-ttu-id="49b00-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="49b00-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="1dec8-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="1dec8-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

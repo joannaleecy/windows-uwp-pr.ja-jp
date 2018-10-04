@@ -12,57 +12,57 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 03adb20f796e7bff59214999febad38434a2a287
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317757"
+ms.locfileid: "4355157"
 ---
-# <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersindex"></a><span data-ttu-id="fb922-104">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index})</span><span class="sxs-lookup"><span data-stu-id="fb922-104">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index})</span></span>
-<span data-ttu-id="fb922-105">指定されたメンバーをセッションから削除します。</span><span class="sxs-lookup"><span data-stu-id="fb922-105">Removes the specified members from a session.</span></span>
+# <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersindex"></a><span data-ttu-id="f4ed4-104">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index})</span><span class="sxs-lookup"><span data-stu-id="f4ed4-104">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index})</span></span>
+<span data-ttu-id="f4ed4-105">指定されたメンバーをセッションから削除します。</span><span class="sxs-lookup"><span data-stu-id="f4ed4-105">Removes the specified members from a session.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="fb922-106">この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="fb922-106">This URI method requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
+> <span data-ttu-id="f4ed4-106">この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="f4ed4-106">This URI method requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
 
-  * [<span data-ttu-id="fb922-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="fb922-107">URI parameters</span></span>](#ID4ET)
-  * [<span data-ttu-id="fb922-108">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="fb922-108">HTTP status codes</span></span>](#ID4E5)
-  * [<span data-ttu-id="fb922-109">要求本文</span><span class="sxs-lookup"><span data-stu-id="fb922-109">Request body</span></span>](#ID4EFB)
-  * [<span data-ttu-id="fb922-110">応答本文</span><span class="sxs-lookup"><span data-stu-id="fb922-110">Response body</span></span>](#ID4EOB)
+  * [<span data-ttu-id="f4ed4-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="f4ed4-107">URI parameters</span></span>](#ID4ET)
+  * [<span data-ttu-id="f4ed4-108">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="f4ed4-108">HTTP status codes</span></span>](#ID4E5)
+  * [<span data-ttu-id="f4ed4-109">要求本文</span><span class="sxs-lookup"><span data-stu-id="f4ed4-109">Request body</span></span>](#ID4EFB)
+  * [<span data-ttu-id="f4ed4-110">応答本文</span><span class="sxs-lookup"><span data-stu-id="f4ed4-110">Response body</span></span>](#ID4EOB)
 
 <a id="ID4ET"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="fb922-111">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="fb922-111">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="f4ed4-111">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="f4ed4-111">URI parameters</span></span>
 
-| <span data-ttu-id="fb922-112">パラメーター</span><span class="sxs-lookup"><span data-stu-id="fb922-112">Parameter</span></span>| <span data-ttu-id="fb922-113">型</span><span class="sxs-lookup"><span data-stu-id="fb922-113">Type</span></span>| <span data-ttu-id="fb922-114">説明</span><span class="sxs-lookup"><span data-stu-id="fb922-114">Description</span></span>|
+| <span data-ttu-id="f4ed4-112">パラメーター</span><span class="sxs-lookup"><span data-stu-id="f4ed4-112">Parameter</span></span>| <span data-ttu-id="f4ed4-113">型</span><span class="sxs-lookup"><span data-stu-id="f4ed4-113">Type</span></span>| <span data-ttu-id="f4ed4-114">説明</span><span class="sxs-lookup"><span data-stu-id="f4ed4-114">Description</span></span>|
 | --- | --- | --- | --- |
-| <span data-ttu-id="fb922-115">scid</span><span class="sxs-lookup"><span data-stu-id="fb922-115">scid</span></span>| <span data-ttu-id="fb922-116">GUID</span><span class="sxs-lookup"><span data-stu-id="fb922-116">GUID</span></span>| <span data-ttu-id="fb922-117">サービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="fb922-117">Service configuration identifier (SCID).</span></span> <span data-ttu-id="fb922-118">セッション識別子のパート 1 です。</span><span class="sxs-lookup"><span data-stu-id="fb922-118">Part 1 of the session identifier.</span></span>|
-| <span data-ttu-id="fb922-119">sessionTemplateName</span><span class="sxs-lookup"><span data-stu-id="fb922-119">sessionTemplateName</span></span>| <span data-ttu-id="fb922-120">string</span><span class="sxs-lookup"><span data-stu-id="fb922-120">string</span></span>| <span data-ttu-id="fb922-121">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="fb922-121">Name of the current instance of the session template.</span></span> <span data-ttu-id="fb922-122">セッション識別子のパート 2 です。</span><span class="sxs-lookup"><span data-stu-id="fb922-122">Part 2 of the session identifier.</span></span>|
-| <span data-ttu-id="fb922-123">セッション名</span><span class="sxs-lookup"><span data-stu-id="fb922-123">sessionName</span></span>| <span data-ttu-id="fb922-124">GUID</span><span class="sxs-lookup"><span data-stu-id="fb922-124">GUID</span></span>| <span data-ttu-id="fb922-125">セッションの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="fb922-125">Unique ID of the session.</span></span> <span data-ttu-id="fb922-126">セッション識別子のパート 3 です。</span><span class="sxs-lookup"><span data-stu-id="fb922-126">Part 3 of the session identifier.</span></span>|
+| <span data-ttu-id="f4ed4-115">scid</span><span class="sxs-lookup"><span data-stu-id="f4ed4-115">scid</span></span>| <span data-ttu-id="f4ed4-116">GUID</span><span class="sxs-lookup"><span data-stu-id="f4ed4-116">GUID</span></span>| <span data-ttu-id="f4ed4-117">サービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="f4ed4-117">Service configuration identifier (SCID).</span></span> <span data-ttu-id="f4ed4-118">セッション識別子のパート 1 です。</span><span class="sxs-lookup"><span data-stu-id="f4ed4-118">Part 1 of the session identifier.</span></span>|
+| <span data-ttu-id="f4ed4-119">sessionTemplateName</span><span class="sxs-lookup"><span data-stu-id="f4ed4-119">sessionTemplateName</span></span>| <span data-ttu-id="f4ed4-120">string</span><span class="sxs-lookup"><span data-stu-id="f4ed4-120">string</span></span>| <span data-ttu-id="f4ed4-121">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="f4ed4-121">Name of the current instance of the session template.</span></span> <span data-ttu-id="f4ed4-122">セッション識別子のパート 2 です。</span><span class="sxs-lookup"><span data-stu-id="f4ed4-122">Part 2 of the session identifier.</span></span>|
+| <span data-ttu-id="f4ed4-123">セッション名</span><span class="sxs-lookup"><span data-stu-id="f4ed4-123">sessionName</span></span>| <span data-ttu-id="f4ed4-124">GUID</span><span class="sxs-lookup"><span data-stu-id="f4ed4-124">GUID</span></span>| <span data-ttu-id="f4ed4-125">セッションの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="f4ed4-125">Unique ID of the session.</span></span> <span data-ttu-id="f4ed4-126">セッション識別子のパート 3 です。</span><span class="sxs-lookup"><span data-stu-id="f4ed4-126">Part 3 of the session identifier.</span></span>|
 
 <a id="ID4E5"></a>
 
 
-## <a name="http-status-codes"></a><span data-ttu-id="fb922-127">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="fb922-127">HTTP status codes</span></span>
-<span data-ttu-id="fb922-128">サービスは、MPSD に適用される HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="fb922-128">The service returns an HTTP status code as it applies to MPSD.</span></span>  
+## <a name="http-status-codes"></a><span data-ttu-id="f4ed4-127">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="f4ed4-127">HTTP status codes</span></span>
+<span data-ttu-id="f4ed4-128">サービスは、MPSD に適用される HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="f4ed4-128">The service returns an HTTP status code as it applies to MPSD.</span></span>  
 <a id="ID4EFB"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="fb922-129">要求本文</span><span class="sxs-lookup"><span data-stu-id="fb922-129">Request body</span></span>
-<span data-ttu-id="fb922-130">[MultiplayerSessionRequest (JSON)](../../json/json-multiplayersessionrequest.md)の要求の構造を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fb922-130">See the request structure in [MultiplayerSessionRequest (JSON)](../../json/json-multiplayersessionrequest.md).</span></span>  
+## <a name="request-body"></a><span data-ttu-id="f4ed4-129">要求本文</span><span class="sxs-lookup"><span data-stu-id="f4ed4-129">Request body</span></span>
+<span data-ttu-id="f4ed4-130">[MultiplayerSessionRequest (JSON)](../../json/json-multiplayersessionrequest.md)の要求の構造を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f4ed4-130">See the request structure in [MultiplayerSessionRequest (JSON)](../../json/json-multiplayersessionrequest.md).</span></span>  
 <a id="ID4EOB"></a>
 
 
-## <a name="response-body"></a><span data-ttu-id="fb922-131">応答本文</span><span class="sxs-lookup"><span data-stu-id="fb922-131">Response body</span></span>
-<span data-ttu-id="fb922-132">[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)の応答構造を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fb922-132">See the response structure in [MultiplayerSession (JSON)](../../json/json-multiplayersession.md).</span></span>  
+## <a name="response-body"></a><span data-ttu-id="f4ed4-131">応答本文</span><span class="sxs-lookup"><span data-stu-id="f4ed4-131">Response body</span></span>
+<span data-ttu-id="f4ed4-132">[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)で応答構造を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f4ed4-132">See the response structure in [MultiplayerSession (JSON)](../../json/json-multiplayersession.md).</span></span>  
 <a id="ID4EYB"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="fb922-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="fb922-133">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f4ed4-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="f4ed4-133">See also</span></span>
 
 <a id="ID4E1B"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="fb922-134">Parent</span><span class="sxs-lookup"><span data-stu-id="fb922-134">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="f4ed4-134">Parent</span><span class="sxs-lookup"><span data-stu-id="f4ed4-134">Parent</span></span>
 
-[<span data-ttu-id="fb922-135">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}</span><span class="sxs-lookup"><span data-stu-id="fb922-135">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}</span></span>](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md)
+[<span data-ttu-id="f4ed4-135">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}</span><span class="sxs-lookup"><span data-stu-id="f4ed4-135">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}</span></span>](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md)

@@ -12,51 +12,51 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 03a96c69415a8ad13bdafaa821df66a919296f61
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4316893"
+ms.locfileid: "4354571"
 ---
-# <a name="people-uris"></a><span data-ttu-id="58514-104">People URI</span><span class="sxs-lookup"><span data-stu-id="58514-104">People URIs</span></span>
+# <a name="people-uris"></a><span data-ttu-id="c4579-104">People URI</span><span class="sxs-lookup"><span data-stu-id="c4579-104">People URIs</span></span>
  
-<span data-ttu-id="58514-105">このセクションでは、 *people*システム用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="58514-105">This section provides detail about the Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for the *people* system.</span></span>
+<span data-ttu-id="c4579-105">このセクションでは、 *people*システムの Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="c4579-105">This section provides detail about the Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for the *people* system.</span></span>
  
-<span data-ttu-id="58514-106">Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームだけでは、このサービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="58514-106">Only games running on an Xbox 360, on a Windows Phone device, or on Xbox.com can use this service.</span></span>
+<span data-ttu-id="c4579-106">Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームのみでは、このサービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="c4579-106">Only games running on an Xbox 360, on a Windows Phone device, or on Xbox.com can use this service.</span></span>
  
-<span data-ttu-id="58514-107">これらの Uri のドメインは、social.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="58514-107">The domain for these URIs is social.xboxlive.com.</span></span>
+<span data-ttu-id="c4579-107">これらの Uri のドメインは、social.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="c4579-107">The domain for these URIs is social.xboxlive.com.</span></span>
  
 <a id="ID4EPB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="58514-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="58514-108">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="c4579-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="c4579-108">In this section</span></span>
 
-[<span data-ttu-id="58514-109">/users/{ownerId}/people</span><span class="sxs-lookup"><span data-stu-id="58514-109">/users/{ownerId}/people</span></span>](uri-usersowneridpeople.md)
+[<span data-ttu-id="c4579-109">/users/{ownerId}/people</span><span class="sxs-lookup"><span data-stu-id="c4579-109">/users/{ownerId}/people</span></span>](uri-usersowneridpeople.md)
 
-<span data-ttu-id="58514-110">&nbsp;&nbsp;呼び出し元のユーザーのコレクションにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="58514-110">&nbsp;&nbsp;Accesses caller's people collection.</span></span>
+<span data-ttu-id="c4579-110">&nbsp;&nbsp;呼び出し元のユーザーのコレクションにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="c4579-110">&nbsp;&nbsp;Accesses caller's people collection.</span></span>
 
-[<span data-ttu-id="58514-111">/users/{ownerId}/people/{targetid}</span><span class="sxs-lookup"><span data-stu-id="58514-111">/users/{ownerId}/people/{targetid}</span></span>](uri-usersowneridpeopletargetid.md)
+[<span data-ttu-id="c4579-111">/users/{ownerId}/people/{targetid}</span><span class="sxs-lookup"><span data-stu-id="c4579-111">/users/{ownerId}/people/{targetid}</span></span>](uri-usersowneridpeopletargetid.md)
 
-<span data-ttu-id="58514-112">&nbsp;&nbsp;呼び出し元のユーザーのコレクションからターゲット ID によってユーザーにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="58514-112">&nbsp;&nbsp;Accesses a person by target ID from caller's people collection.</span></span>
+<span data-ttu-id="c4579-112">&nbsp;&nbsp;呼び出し元のユーザーのコレクションからターゲット ID でユーザーにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="c4579-112">&nbsp;&nbsp;Accesses a person by target ID from caller's people collection.</span></span>
 
-[<span data-ttu-id="58514-113">/users/{ownerId}/people/xuids</span><span class="sxs-lookup"><span data-stu-id="58514-113">/users/{ownerId}/people/xuids</span></span>](uri-usersowneridpeoplexuids.md)
+[<span data-ttu-id="c4579-113">/users/{ownerId}/people/xuids</span><span class="sxs-lookup"><span data-stu-id="c4579-113">/users/{ownerId}/people/xuids</span></span>](uri-usersowneridpeoplexuids.md)
 
-<span data-ttu-id="58514-114">&nbsp;&nbsp;XUID によって people を呼び出し元のユーザーのコレクションからアクセスします。</span><span class="sxs-lookup"><span data-stu-id="58514-114">&nbsp;&nbsp;Accesses people by XUID from caller's people collection.</span></span>
+<span data-ttu-id="c4579-114">&nbsp;&nbsp;XUID によってユーザーを呼び出し元のユーザーのコレクションからアクセスします。</span><span class="sxs-lookup"><span data-stu-id="c4579-114">&nbsp;&nbsp;Accesses people by XUID from caller's people collection.</span></span>
 
-[<span data-ttu-id="58514-115">/users/{ownerId}/summary</span><span class="sxs-lookup"><span data-stu-id="58514-115">/users/{ownerId}/summary</span></span>](uri-usersowneridsummary.md)
+[<span data-ttu-id="c4579-115">/users/{ownerId}/summary</span><span class="sxs-lookup"><span data-stu-id="c4579-115">/users/{ownerId}/summary</span></span>](uri-usersowneridsummary.md)
 
-<span data-ttu-id="58514-116">&nbsp;&nbsp;呼び出し元の観点から所有者に関する集計データをアクセスします。</span><span class="sxs-lookup"><span data-stu-id="58514-116">&nbsp;&nbsp;Accesses summary data about the owner from the caller's perspective.</span></span>
+<span data-ttu-id="c4579-116">&nbsp;&nbsp;呼び出し元の観点から所有者に関する集計データにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="c4579-116">&nbsp;&nbsp;Accesses summary data about the owner from the caller's perspective.</span></span>
  
 <a id="ID4E5B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="58514-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="58514-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c4579-117">関連項目</span><span class="sxs-lookup"><span data-stu-id="c4579-117">See also</span></span>
  
 <a id="ID4EAC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="58514-118">Parent</span><span class="sxs-lookup"><span data-stu-id="58514-118">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="c4579-118">Parent</span><span class="sxs-lookup"><span data-stu-id="c4579-118">Parent</span></span> 
 
-[<span data-ttu-id="58514-119">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="58514-119">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="c4579-119">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="c4579-119">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

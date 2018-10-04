@@ -18,65 +18,65 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 02b2c0d24c3f963025774c87c0c0a1c588c8a249
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309180"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358439"
 ---
-# <a name="implement-navigation-between-two-pages"></a><span data-ttu-id="46dda-103">2 ページ間でのナビゲーションを実装する</span><span class="sxs-lookup"><span data-stu-id="46dda-103">Implement navigation between two pages</span></span>
+# <a name="implement-navigation-between-two-pages"></a><span data-ttu-id="aa326-103">2 ページ間でのナビゲーションを実装する</span><span class="sxs-lookup"><span data-stu-id="aa326-103">Implement navigation between two pages</span></span>
 
-<span data-ttu-id="46dda-104">フレームおよびページを使用した、アプリでの基本的なピア ツー ピアのナビゲーションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="46dda-104">Learn how to use a frame and pages to enable basic peer-to-peer navigation in your app.</span></span> 
+<span data-ttu-id="aa326-104">フレームおよびページを使用した、アプリでの基本的なピア ツー ピアのナビゲーションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="aa326-104">Learn how to use a frame and pages to enable basic peer-to-peer navigation in your app.</span></span> 
 
-> <span data-ttu-id="46dda-105">**重要な APIs**: [**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) クラス、[**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラス、[**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) 名前空間</span><span class="sxs-lookup"><span data-stu-id="46dda-105">**Important APIs**: [**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class, [**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class, [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) namespace</span></span>
+> <span data-ttu-id="aa326-105">**重要な APIs**: [**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) クラス、[**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラス、[**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) 名前空間</span><span class="sxs-lookup"><span data-stu-id="aa326-105">**Important APIs**: [**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class, [**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class, [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) namespace</span></span>
 
 ![ピア ツー ピアのナビゲーション](images/peertopeer.png)
 
-## <a name="1-create-a-blank-app"></a><span data-ttu-id="46dda-107">1. 空のアプリの作成</span><span class="sxs-lookup"><span data-stu-id="46dda-107">1. Create a blank app</span></span>
+## <a name="1-create-a-blank-app"></a><span data-ttu-id="aa326-107">1. 空のアプリの作成</span><span class="sxs-lookup"><span data-stu-id="aa326-107">1. Create a blank app</span></span>
 
-1.  <span data-ttu-id="46dda-108">Microsoft Visual Studio のメニューで、**[ファイル]** > **[新しいプロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="46dda-108">On the Microsoft Visual Studio menu, choose **File** > **New Project**.</span></span>
-2.  <span data-ttu-id="46dda-109">**[新しいプロジェクト]** ダイアログ ボックスの左側のウィンドウで、**[Visual C#]** > **[Windows]** > **[ユニバーサル]** ノード、または **[Visual C++]** > **[Windows]** > **[ユニバーサル]** ノードの順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="46dda-109">In the left pane of the **New Project** dialog box, choose the **Visual C#** > **Windows** > **Universal** or the **Visual C++** > **Windows** > **Universal** node.</span></span>
-3.  <span data-ttu-id="46dda-110">中央のウィンドウで、**[空のアプリケーション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="46dda-110">In the center pane, choose **Blank App**.</span></span>
-4.  <span data-ttu-id="46dda-111">**[名前]** ボックスに「**NavApp1**」と入力し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="46dda-111">In the **Name** box, enter **NavApp1**, and then choose the **OK** button.</span></span>
-    <span data-ttu-id="46dda-112">ソリューションが作られ、プロジェクト ファイルが**ソリューション エクスプローラー**に表示されます。</span><span class="sxs-lookup"><span data-stu-id="46dda-112">The solution is created, and the project files appear in **Solution Explorer**.</span></span>
-5.  <span data-ttu-id="46dda-113">プログラムを実行するには、メニューから **[デバッグ]** > **[デバッグの開始]** の順にクリックするか、F5 キーを押します。</span><span class="sxs-lookup"><span data-stu-id="46dda-113">To run the program, choose **Debug** > **Start Debugging** from the menu, or press F5.</span></span>
-    <span data-ttu-id="46dda-114">空白のページが表示されます。</span><span class="sxs-lookup"><span data-stu-id="46dda-114">A blank page is displayed.</span></span>
-6.  <span data-ttu-id="46dda-115">デバッグを終了して Visual Studio に戻るには、アプリを終了するか、メニューから **[デバッグの停止]** クリックします。</span><span class="sxs-lookup"><span data-stu-id="46dda-115">To stop debugging and return to Visual Studio, exit the app, or click **Stop Debugging** from the menu.</span></span>
+1.  <span data-ttu-id="aa326-108">Microsoft Visual Studio のメニューで、**[ファイル]** > **[新しいプロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="aa326-108">On the Microsoft Visual Studio menu, choose **File** > **New Project**.</span></span>
+2.  <span data-ttu-id="aa326-109">**[新しいプロジェクト]** ダイアログ ボックスの左側のウィンドウで、**[Visual C#]** > **[Windows]** > **[ユニバーサル]** ノード、または **[Visual C++]** > **[Windows]** > **[ユニバーサル]** ノードの順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="aa326-109">In the left pane of the **New Project** dialog box, choose the **Visual C#** > **Windows** > **Universal** or the **Visual C++** > **Windows** > **Universal** node.</span></span>
+3.  <span data-ttu-id="aa326-110">中央のウィンドウで、**[空のアプリケーション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="aa326-110">In the center pane, choose **Blank App**.</span></span>
+4.  <span data-ttu-id="aa326-111">**[名前]** ボックスに「**NavApp1**」と入力し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="aa326-111">In the **Name** box, enter **NavApp1**, and then choose the **OK** button.</span></span>
+    <span data-ttu-id="aa326-112">ソリューションが作られ、プロジェクト ファイルが**ソリューション エクスプローラー**に表示されます。</span><span class="sxs-lookup"><span data-stu-id="aa326-112">The solution is created, and the project files appear in **Solution Explorer**.</span></span>
+5.  <span data-ttu-id="aa326-113">プログラムを実行するには、メニューから **[デバッグ]** > **[デバッグの開始]** の順にクリックするか、F5 キーを押します。</span><span class="sxs-lookup"><span data-stu-id="aa326-113">To run the program, choose **Debug** > **Start Debugging** from the menu, or press F5.</span></span>
+    <span data-ttu-id="aa326-114">空白のページが表示されます。</span><span class="sxs-lookup"><span data-stu-id="aa326-114">A blank page is displayed.</span></span>
+6.  <span data-ttu-id="aa326-115">デバッグを終了して Visual Studio に戻るには、アプリを終了するか、メニューから **[デバッグの停止]** クリックします。</span><span class="sxs-lookup"><span data-stu-id="aa326-115">To stop debugging and return to Visual Studio, exit the app, or click **Stop Debugging** from the menu.</span></span>
 
-## <a name="2-add-basic-pages"></a><span data-ttu-id="46dda-116">2. 基本ページの追加</span><span class="sxs-lookup"><span data-stu-id="46dda-116">2. Add basic pages</span></span>
+## <a name="2-add-basic-pages"></a><span data-ttu-id="aa326-116">2. 基本ページの追加</span><span class="sxs-lookup"><span data-stu-id="aa326-116">2. Add basic pages</span></span>
 
-<span data-ttu-id="46dda-117">次に、プロジェクトにページを 2 つ追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-117">Next, add two pages to the project.</span></span>
+<span data-ttu-id="aa326-117">次に、プロジェクトにページを 2 つ追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-117">Next, add two pages to the project.</span></span>
 
-1.  <span data-ttu-id="46dda-118">**ソリューション エクスプローラー**で、**[BlankApp]** プロジェクト ノードを右クリックして、ショートカット メニューを開きます。</span><span class="sxs-lookup"><span data-stu-id="46dda-118">In **Solution Explorer**, right-click the **BlankApp** project node to open the shortcut menu.</span></span>
-2.  <span data-ttu-id="46dda-119">ショートカット メニューから **[追加]** > **[新しい項目]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="46dda-119">Choose **Add** > **New Item** from the shortcut menu.</span></span>
-3.  <span data-ttu-id="46dda-120">**[新しい項目の追加]** ダイアログ ボックスの中央のウィンドウで、**[空白のページ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="46dda-120">In the **Add New Item** dialog box, choose **Blank Page** in the middle pane.</span></span>
-4.  <span data-ttu-id="46dda-121">**[名前]** ボックスに「**Page1**」(または「**Page2**」) と入力し、**[追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="46dda-121">In the **Name** box, enter **Page1** (or **Page2**) and press the **Add** button.</span></span>
-5. <span data-ttu-id="46dda-122">手順 1 ～ 4 を繰り返して、2 つ目のページを追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-122">Repeat steps 1-4 to add the second page.</span></span>
+1.  <span data-ttu-id="aa326-118">**ソリューション エクスプローラー**で、**[BlankApp]** プロジェクト ノードを右クリックして、ショートカット メニューを開きます。</span><span class="sxs-lookup"><span data-stu-id="aa326-118">In **Solution Explorer**, right-click the **BlankApp** project node to open the shortcut menu.</span></span>
+2.  <span data-ttu-id="aa326-119">ショートカット メニューから **[追加]** > **[新しい項目]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="aa326-119">Choose **Add** > **New Item** from the shortcut menu.</span></span>
+3.  <span data-ttu-id="aa326-120">**[新しい項目の追加]** ダイアログ ボックスの中央のウィンドウで、**[空白のページ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="aa326-120">In the **Add New Item** dialog box, choose **Blank Page** in the middle pane.</span></span>
+4.  <span data-ttu-id="aa326-121">**[名前]** ボックスに「**Page1**」(または「**Page2**」) と入力し、**[追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="aa326-121">In the **Name** box, enter **Page1** (or **Page2**) and press the **Add** button.</span></span>
+5. <span data-ttu-id="aa326-122">手順 1 ～ 4 を繰り返して、2 つ目のページを追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-122">Repeat steps 1-4 to add the second page.</span></span>
 
-<span data-ttu-id="46dda-123">これで、NavApp1 プロジェクトの一部としてこれらのファイルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="46dda-123">Now, these files should be listed as part of your NavApp1 project.</span></span>
+<span data-ttu-id="aa326-123">これで、NavApp1 プロジェクトの一部としてこれらのファイルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="aa326-123">Now, these files should be listed as part of your NavApp1 project.</span></span>
 
 <table>
 <thead>
 <tr class="header">
-<th align="left"><span data-ttu-id="46dda-124">C#</span><span class="sxs-lookup"><span data-stu-id="46dda-124">C#</span></span></th>
-<th align="left"><span data-ttu-id="46dda-125">C++</span><span class="sxs-lookup"><span data-stu-id="46dda-125">C++</span></span></th>
+<th align="left"><span data-ttu-id="aa326-124">C#</span><span class="sxs-lookup"><span data-stu-id="aa326-124">C#</span></span></th>
+<th align="left"><span data-ttu-id="aa326-125">C++</span><span class="sxs-lookup"><span data-stu-id="aa326-125">C++</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="vertical-align:top;"><ul>
-<li><span data-ttu-id="46dda-126">Page1.xaml</span><span class="sxs-lookup"><span data-stu-id="46dda-126">Page1.xaml</span></span></li>
-<li><span data-ttu-id="46dda-127">Page1.xaml.cs</span><span class="sxs-lookup"><span data-stu-id="46dda-127">Page1.xaml.cs</span></span></li>
-<li><span data-ttu-id="46dda-128">Page2.xaml</span><span class="sxs-lookup"><span data-stu-id="46dda-128">Page2.xaml</span></span></li>
-<li><span data-ttu-id="46dda-129">Page2.xaml.cs</span><span class="sxs-lookup"><span data-stu-id="46dda-129">Page2.xaml.cs</span></span></li>
+<li><span data-ttu-id="aa326-126">Page1.xaml</span><span class="sxs-lookup"><span data-stu-id="aa326-126">Page1.xaml</span></span></li>
+<li><span data-ttu-id="aa326-127">Page1.xaml.cs</span><span class="sxs-lookup"><span data-stu-id="aa326-127">Page1.xaml.cs</span></span></li>
+<li><span data-ttu-id="aa326-128">Page2.xaml</span><span class="sxs-lookup"><span data-stu-id="aa326-128">Page2.xaml</span></span></li>
+<li><span data-ttu-id="aa326-129">Page2.xaml.cs</span><span class="sxs-lookup"><span data-stu-id="aa326-129">Page2.xaml.cs</span></span></li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
-<li><span data-ttu-id="46dda-130">Page1.xaml</span><span class="sxs-lookup"><span data-stu-id="46dda-130">Page1.xaml</span></span></li>
-<li><span data-ttu-id="46dda-131">Page1.xaml.cpp</span><span class="sxs-lookup"><span data-stu-id="46dda-131">Page1.xaml.cpp</span></span></li>
-<li><span data-ttu-id="46dda-132">Page1.xaml.h</span><span class="sxs-lookup"><span data-stu-id="46dda-132">Page1.xaml.h</span></span></li>
-<li><span data-ttu-id="46dda-133">Page2.xaml</span><span class="sxs-lookup"><span data-stu-id="46dda-133">Page2.xaml</span></span></li>
-<li><span data-ttu-id="46dda-134">Page2.xaml.cpp</span><span class="sxs-lookup"><span data-stu-id="46dda-134">Page2.xaml.cpp</span></span></li>
-<li><span data-ttu-id="46dda-135">Page2.xaml.h</span><span class="sxs-lookup"><span data-stu-id="46dda-135">Page2.xaml.h</span></span>
+<li><span data-ttu-id="aa326-130">Page1.xaml</span><span class="sxs-lookup"><span data-stu-id="aa326-130">Page1.xaml</span></span></li>
+<li><span data-ttu-id="aa326-131">Page1.xaml.cpp</span><span class="sxs-lookup"><span data-stu-id="aa326-131">Page1.xaml.cpp</span></span></li>
+<li><span data-ttu-id="aa326-132">Page1.xaml.h</span><span class="sxs-lookup"><span data-stu-id="aa326-132">Page1.xaml.h</span></span></li>
+<li><span data-ttu-id="aa326-133">Page2.xaml</span><span class="sxs-lookup"><span data-stu-id="aa326-133">Page2.xaml</span></span></li>
+<li><span data-ttu-id="aa326-134">Page2.xaml.cpp</span><span class="sxs-lookup"><span data-stu-id="aa326-134">Page2.xaml.cpp</span></span></li>
+<li><span data-ttu-id="aa326-135">Page2.xaml.h</span><span class="sxs-lookup"><span data-stu-id="aa326-135">Page2.xaml.h</span></span>
 
 </li>
 </ul></td>
@@ -84,21 +84,21 @@ ms.locfileid: "4309180"
 </tbody>
 </table>
 
-<span data-ttu-id="46dda-136">Page1.xaml に次のコンテンツを追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-136">In Page1.xaml, add the following content:</span></span>
+<span data-ttu-id="aa326-136">Page1.xaml に次のコンテンツを追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-136">In Page1.xaml, add the following content:</span></span>
 
--   <span data-ttu-id="46dda-137">`pageTitle` という名前を付けた [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-137">A [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element named `pageTitle` as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704).</span></span> <span data-ttu-id="46dda-138">[**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティを `Page 1` に変更します。</span><span class="sxs-lookup"><span data-stu-id="46dda-138">Change the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property to `Page 1`.</span></span>
+-   <span data-ttu-id="aa326-137">`pageTitle` という名前を付けた [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-137">A [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element named `pageTitle` as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704).</span></span> <span data-ttu-id="aa326-138">[**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティを `Page 1` に変更します。</span><span class="sxs-lookup"><span data-stu-id="aa326-138">Change the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property to `Page 1`.</span></span>
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   <span data-ttu-id="46dda-139">[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-139">A [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) element as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) and after the `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element.</span></span>
+-   <span data-ttu-id="aa326-139">[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-139">A [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) element as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) and after the `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element.</span></span>
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
                  HorizontalAlignment="Center"/>
 ```
 
-<span data-ttu-id="46dda-140">Page1.xaml 分離コード ファイルに、Page2.xaml に移動するために追加した [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の `Click` イベントを処理する次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-140">In the Page1.xaml code-behind file, add the following code to handle the `Click` event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) you added to navigate to Page2.xaml.</span></span>
+<span data-ttu-id="aa326-140">Page1.xaml 分離コード ファイルに、Page2.xaml に移動するために追加した [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の `Click` イベントを処理する次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-140">In the Page1.xaml code-behind file, add the following code to handle the `Click` event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) you added to navigate to Page2.xaml.</span></span>
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -121,21 +121,21 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-<span data-ttu-id="46dda-141">Page2.xaml に次のコンテンツを追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-141">In Page2.xaml, add the following content:</span></span>
+<span data-ttu-id="aa326-141">Page2.xaml に次のコンテンツを追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-141">In Page2.xaml, add the following content:</span></span>
 
--   <span data-ttu-id="46dda-142">`pageTitle` という名前を付けた [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-142">A [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element named `pageTitle` as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704).</span></span> <span data-ttu-id="46dda-143">[**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティの値を `Page 2` に変更します。</span><span class="sxs-lookup"><span data-stu-id="46dda-143">Change the value of the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property to `Page 2`.</span></span>
+-   <span data-ttu-id="aa326-142">`pageTitle` という名前を付けた [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-142">A [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element named `pageTitle` as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704).</span></span> <span data-ttu-id="aa326-143">[**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティの値を `Page 2` に変更します。</span><span class="sxs-lookup"><span data-stu-id="aa326-143">Change the value of the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property to `Page 2`.</span></span>
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   <span data-ttu-id="46dda-144">[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-144">A [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) element as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) and after the `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element.</span></span>
+-   <span data-ttu-id="aa326-144">[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-144">A [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) element as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) and after the `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element.</span></span>
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
                  HorizontalAlignment="Center"/>
 ```
 
-<span data-ttu-id="46dda-145">Page2.xaml 分離コード ファイルに、Page1.xaml に移動するための [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の `Click` イベントを処理する次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-145">In the Page2.xaml code-behind file, add the following code to handle the `Click` event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) to navigate to Page1.xaml.</span></span>
+<span data-ttu-id="aa326-145">Page2.xaml 分離コード ファイルに、Page1.xaml に移動するための [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の `Click` イベントを処理する次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-145">In the Page2.xaml code-behind file, add the following code to handle the `Click` event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) to navigate to Page1.xaml.</span></span>
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -159,13 +159,13 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 ```
 
 > [!NOTE]
-> <span data-ttu-id="46dda-146">C++ プロジェクトの場合は、別のページを参照する各ページのヘッダー ファイルに `#include` ディレクティブを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="46dda-146">For C++ projects, you must add a `#include` directive in the header file of each page that references another page.</span></span> <span data-ttu-id="46dda-147">ここで示したページ間のナビゲーションの例では、page1.xaml.h ファイルに `#include "Page2.xaml.h"` が、page2.xaml.h に `#include "Page1.xaml.h"` が含まれています。</span><span class="sxs-lookup"><span data-stu-id="46dda-147">For the inter-page navigation example presented here, page1.xaml.h file contains `#include "Page2.xaml.h"`, in turn, page2.xaml.h contains `#include "Page1.xaml.h"`.</span></span>
+> <span data-ttu-id="aa326-146">C++ プロジェクトの場合は、別のページを参照する各ページのヘッダー ファイルに `#include` ディレクティブを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="aa326-146">For C++ projects, you must add a `#include` directive in the header file of each page that references another page.</span></span> <span data-ttu-id="aa326-147">ここで示したページ間のナビゲーションの例では、page1.xaml.h ファイルに `#include "Page2.xaml.h"` が、page2.xaml.h に `#include "Page1.xaml.h"` が含まれています。</span><span class="sxs-lookup"><span data-stu-id="aa326-147">For the inter-page navigation example presented here, page1.xaml.h file contains `#include "Page2.xaml.h"`, in turn, page2.xaml.h contains `#include "Page1.xaml.h"`.</span></span>
 
-<span data-ttu-id="46dda-148">ページが用意できたら、Page1.xaml をアプリの開始時に表示されるように設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="46dda-148">Now that we've prepared the pages, we need to make Page1.xaml display when the app starts.</span></span>
+<span data-ttu-id="aa326-148">ページが用意できたら、Page1.xaml をアプリの開始時に表示されるように設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="aa326-148">Now that we've prepared the pages, we need to make Page1.xaml display when the app starts.</span></span>
 
-<span data-ttu-id="46dda-149">App.xaml 分離コードファイルを開き、`OnLaunched` ハンドラーを変更します。</span><span class="sxs-lookup"><span data-stu-id="46dda-149">Open the App.xaml code-behind file and change the `OnLaunched` handler.</span></span>
+<span data-ttu-id="aa326-149">App.xaml 分離コードファイルを開き、`OnLaunched` ハンドラーを変更します。</span><span class="sxs-lookup"><span data-stu-id="aa326-149">Open the App.xaml code-behind file and change the `OnLaunched` handler.</span></span>
 
-<span data-ttu-id="46dda-150">次に、[**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) の呼び出しに、`MainPage` ではなく `Page1` を追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-150">Here, we specify `Page1` in the call to [**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) instead of `MainPage`.</span></span>
+<span data-ttu-id="aa326-150">次に、[**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) の呼び出しに、`MainPage` ではなく `Page1` を追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-150">Here, we specify `Page1` in the call to [**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) instead of `MainPage`.</span></span>
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -300,29 +300,29 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> <span data-ttu-id="46dda-151">ここでは、コードでは、アプリの初期ウィンドウ フレームへのナビゲーションが失敗した場合は、アプリ例外をスローするのに[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)の戻り値を使用します。</span><span class="sxs-lookup"><span data-stu-id="46dda-151">The code here uses the return value of [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) to throw an app exception if the navigation to the app's initial window frame fails.</span></span> <span data-ttu-id="46dda-152">**Navigate** が **true** を返す場合は、ナビゲーションが行われます。</span><span class="sxs-lookup"><span data-stu-id="46dda-152">When **Navigate** returns **true**, the navigation happens.</span></span>
+> <span data-ttu-id="aa326-151">ここでは、コードでは、アプリの初期ウィンドウ フレームへのナビゲーションが失敗した場合にアプリの例外をスローするのに[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)の戻り値を使用します。</span><span class="sxs-lookup"><span data-stu-id="aa326-151">The code here uses the return value of [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) to throw an app exception if the navigation to the app's initial window frame fails.</span></span> <span data-ttu-id="aa326-152">**Navigate** が **true** を返す場合は、ナビゲーションが行われます。</span><span class="sxs-lookup"><span data-stu-id="aa326-152">When **Navigate** returns **true**, the navigation happens.</span></span>
 
-<span data-ttu-id="46dda-153">次に、アプリをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="46dda-153">Now, build and run the app.</span></span> <span data-ttu-id="46dda-154">"Click to go to page 2" と書かれているリンクをクリックします。</span><span class="sxs-lookup"><span data-stu-id="46dda-154">Click the link that says "Click to go to page 2".</span></span> <span data-ttu-id="46dda-155">上部に "Page 2" と書かれた 2 番目のページが読み込まれ、フレームに表示される必要があります。</span><span class="sxs-lookup"><span data-stu-id="46dda-155">The second page that says "Page 2" at the top should be loaded and displayed in the frame.</span></span>
+<span data-ttu-id="aa326-153">次に、アプリをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="aa326-153">Now, build and run the app.</span></span> <span data-ttu-id="aa326-154">"Click to go to page 2" と書かれているリンクをクリックします。</span><span class="sxs-lookup"><span data-stu-id="aa326-154">Click the link that says "Click to go to page 2".</span></span> <span data-ttu-id="aa326-155">上部に "Page 2" と書かれた 2 番目のページが読み込まれ、フレームに表示される必要があります。</span><span class="sxs-lookup"><span data-stu-id="aa326-155">The second page that says "Page 2" at the top should be loaded and displayed in the frame.</span></span>
 
-### <a name="about-the-frame-and-page-classes"></a><span data-ttu-id="46dda-156">Frame クラスと Page クラスについて</span><span class="sxs-lookup"><span data-stu-id="46dda-156">About the Frame and Page classes</span></span>
+### <a name="about-the-frame-and-page-classes"></a><span data-ttu-id="aa326-156">Frame クラスと Page クラスについて</span><span class="sxs-lookup"><span data-stu-id="aa326-156">About the Frame and Page classes</span></span>
 
-<span data-ttu-id="46dda-157">アプリにさらに機能を加える前に、追加したページに用意されているアプリ内のナビゲーションについて見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="46dda-157">Before we add more functionality to our app, let's look at how the pages we added provide navigation within our app.</span></span>
+<span data-ttu-id="aa326-157">アプリにさらに機能を加える前に、追加したページに用意されているアプリ内のナビゲーションについて見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="aa326-157">Before we add more functionality to our app, let's look at how the pages we added provide navigation within our app.</span></span>
 
-<span data-ttu-id="46dda-158">まず、App.xaml 分離コード ファイルの `App.OnLaunched` メソッドで、アプリの [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`) が作成されます。</span><span class="sxs-lookup"><span data-stu-id="46dda-158">First, a [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) called `rootFrame` is created for the app in the `App.OnLaunched` method in the App.xaml code-behind file.</span></span> <span data-ttu-id="46dda-159">**Frame** クラスは、[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)、[**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) などのさまざまなナビゲーション メソッドと、[**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543)、[**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547)、[**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995) などのプロパティをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="46dda-159">The **Frame** class supports various navigation methods such as [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694), [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568), and [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), and properties such as [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543), [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547), and [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995).</span></span>
+<span data-ttu-id="aa326-158">まず、App.xaml 分離コード ファイルの `App.OnLaunched` メソッドで、アプリの [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`) が作成されます。</span><span class="sxs-lookup"><span data-stu-id="aa326-158">First, a [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) called `rootFrame` is created for the app in the `App.OnLaunched` method in the App.xaml code-behind file.</span></span> <span data-ttu-id="aa326-159">**Frame** クラスは、[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)、[**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) などのさまざまなナビゲーション メソッドと、[**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543)、[**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547)、[**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995) などのプロパティをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="aa326-159">The **Frame** class supports various navigation methods such as [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694), [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568), and [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), and properties such as [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543), [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547), and [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995).</span></span>
  
-<span data-ttu-id="46dda-160">[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) メソッドを使って、この **Frame** にコンテンツが表示されます。</span><span class="sxs-lookup"><span data-stu-id="46dda-160">The [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) method is used to display content in this **Frame**.</span></span> <span data-ttu-id="46dda-161">既定では、このメソッドは MainPage.xaml を読み込みます。</span><span class="sxs-lookup"><span data-stu-id="46dda-161">By default, this method loads MainPage.xaml.</span></span> <span data-ttu-id="46dda-162">この例では、`Page1` が **Navigate** メソッドに渡されるため、メソッドは **Frame** に `Page1` を読み込みます。</span><span class="sxs-lookup"><span data-stu-id="46dda-162">In our example, `Page1` is passed to the **Navigate** method, so the method loads `Page1` in the **Frame**.</span></span> 
+<span data-ttu-id="aa326-160">[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) メソッドを使って、この **Frame** にコンテンツが表示されます。</span><span class="sxs-lookup"><span data-stu-id="aa326-160">The [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) method is used to display content in this **Frame**.</span></span> <span data-ttu-id="aa326-161">既定では、このメソッドは MainPage.xaml を読み込みます。</span><span class="sxs-lookup"><span data-stu-id="aa326-161">By default, this method loads MainPage.xaml.</span></span> <span data-ttu-id="aa326-162">この例では、`Page1` が **Navigate** メソッドに渡されるため、メソッドは **Frame** に `Page1` を読み込みます。</span><span class="sxs-lookup"><span data-stu-id="aa326-162">In our example, `Page1` is passed to the **Navigate** method, so the method loads `Page1` in the **Frame**.</span></span> 
 
-`Page1` <span data-ttu-id="46dda-163"> は [*\*Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラスのサブクラスです。</span><span class="sxs-lookup"><span data-stu-id="46dda-163">is a subclass of the [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class.</span></span> <span data-ttu-id="46dda-164">**Page** クラスには、**Page** が含まれる **Frame** を取得する読み取り専用の **Frame** プロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="46dda-164">The **Page** class has a read-only **Frame** property that gets the **Frame** containing the **Page**.</span></span> <span data-ttu-id="46dda-165">`Page1` で **HyperlinkButton** の **Click** イベント ハンドラーが `this.Frame.Navigate(typeof(Page2))` を呼び出すと、**Frame** に Page2.xaml のコンテンツが表示されます。</span><span class="sxs-lookup"><span data-stu-id="46dda-165">When the **Click** event handler of the **HyperlinkButton** in `Page1` calls `this.Frame.Navigate(typeof(Page2))`, the **Frame** displays the content of Page2.xaml.</span></span>
+`Page1` <span data-ttu-id="aa326-163"> は [*\*Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラスのサブクラスです。</span><span class="sxs-lookup"><span data-stu-id="aa326-163">is a subclass of the [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class.</span></span> <span data-ttu-id="aa326-164">**Page** クラスには、**Page** が含まれる **Frame** を取得する読み取り専用の **Frame** プロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="aa326-164">The **Page** class has a read-only **Frame** property that gets the **Frame** containing the **Page**.</span></span> <span data-ttu-id="aa326-165">`Page1` で **HyperlinkButton** の **Click** イベント ハンドラーが `this.Frame.Navigate(typeof(Page2))` を呼び出すと、**Frame** に Page2.xaml のコンテンツが表示されます。</span><span class="sxs-lookup"><span data-stu-id="aa326-165">When the **Click** event handler of the **HyperlinkButton** in `Page1` calls `this.Frame.Navigate(typeof(Page2))`, the **Frame** displays the content of Page2.xaml.</span></span>
 
-<span data-ttu-id="46dda-166">最後に、フレームにページが読み込まれるたびに、そのページが [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) として、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) の [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) または [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) に追加され、[履歴と前に戻る移動](navigation-history-and-backwards-navigation.md)が可能になります。</span><span class="sxs-lookup"><span data-stu-id="46dda-166">Finally, whenever a page is loaded into the frame, that page is added as a [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) to the [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) or [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) of the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504), allowing for [history and backwards navigation](navigation-history-and-backwards-navigation.md).</span></span>
+<span data-ttu-id="aa326-166">最後に、フレームにページが読み込まれるたびに、そのページが [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) として、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) の [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) または [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) に追加され、[履歴と前に戻る移動](navigation-history-and-backwards-navigation.md)が可能になります。</span><span class="sxs-lookup"><span data-stu-id="aa326-166">Finally, whenever a page is loaded into the frame, that page is added as a [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) to the [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) or [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) of the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504), allowing for [history and backwards navigation](navigation-history-and-backwards-navigation.md).</span></span>
 
-## <a name="3-pass-information-between-pages"></a><span data-ttu-id="46dda-167">3. ページ間での情報の受け渡し</span><span class="sxs-lookup"><span data-stu-id="46dda-167">3. Pass information between pages</span></span>
+## <a name="3-pass-information-between-pages"></a><span data-ttu-id="aa326-167">3. ページ間での情報の受け渡し</span><span class="sxs-lookup"><span data-stu-id="aa326-167">3. Pass information between pages</span></span>
 
-<span data-ttu-id="46dda-168">このアプリでは、ページ間の移動は行いますが、実際に何かの処理を行うわけではありません。</span><span class="sxs-lookup"><span data-stu-id="46dda-168">Our app navigates between two pages, but it really doesn't do anything interesting yet.</span></span> <span data-ttu-id="46dda-169">多くの場合、アプリに複数のページがあれば、ページ間で情報を共有する必要があります。</span><span class="sxs-lookup"><span data-stu-id="46dda-169">Often, when an app has multiple pages, the pages need to share information.</span></span> <span data-ttu-id="46dda-170">最初のページから 2 番目のページへ情報を渡してみましょう。</span><span class="sxs-lookup"><span data-stu-id="46dda-170">Let's pass some information from the first page to the second page.</span></span>
+<span data-ttu-id="aa326-168">このアプリでは、ページ間の移動は行いますが、実際に何かの処理を行うわけではありません。</span><span class="sxs-lookup"><span data-stu-id="aa326-168">Our app navigates between two pages, but it really doesn't do anything interesting yet.</span></span> <span data-ttu-id="aa326-169">多くの場合、アプリに複数のページがあれば、ページ間で情報を共有する必要があります。</span><span class="sxs-lookup"><span data-stu-id="aa326-169">Often, when an app has multiple pages, the pages need to share information.</span></span> <span data-ttu-id="aa326-170">最初のページから 2 番目のページへ情報を渡してみましょう。</span><span class="sxs-lookup"><span data-stu-id="aa326-170">Let's pass some information from the first page to the second page.</span></span>
 
-<span data-ttu-id="46dda-171">Page1.xaml で、前に追加した **HyperlinkButton** を次の [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="46dda-171">In Page1.xaml, replace the the **HyperlinkButton** you added earlier with the following [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).</span></span>
+<span data-ttu-id="aa326-171">Page1.xaml で、前に追加した **HyperlinkButton** を次の [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="aa326-171">In Page1.xaml, replace the the **HyperlinkButton** you added earlier with the following [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).</span></span>
 
-<span data-ttu-id="46dda-172">次に、テキスト文字列を入力するための [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) ラベルと [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) `name` を追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-172">Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) label and a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) `name` for entering a text string.</span></span>
+<span data-ttu-id="aa326-172">次に、テキスト文字列を入力するための [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) ラベルと [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) `name` を追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-172">Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) label and a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) `name` for entering a text string.</span></span>
 
 ```xaml
 <StackPanel>
@@ -334,7 +334,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 </StackPanel>
 ```
 
-<span data-ttu-id="46dda-173">Page1.xaml 分離コード ファイルの `HyperlinkButton_Click` イベント ハンドラーで、`name` **TextBox** の `Text` プロパティを参照するパラメーターを `Navigate` メソッドに追加します。</span><span class="sxs-lookup"><span data-stu-id="46dda-173">In the `HyperlinkButton_Click` event handler of the Page1.xaml code-behind file, add a parameter referencing the `Text` property of the `name` **TextBox** to the `Navigate` method.</span></span>
+<span data-ttu-id="aa326-173">Page1.xaml 分離コード ファイルの `HyperlinkButton_Click` イベント ハンドラーで、`name` **TextBox** の `Text` プロパティを参照するパラメーターを `Navigate` メソッドに追加します。</span><span class="sxs-lookup"><span data-stu-id="aa326-173">In the `HyperlinkButton_Click` event handler of the Page1.xaml code-behind file, add a parameter referencing the `Text` property of the `name` **TextBox** to the `Navigate` method.</span></span>
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -357,9 +357,9 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-<span data-ttu-id="46dda-174">Page2.xaml で、前に追加した **HyperlinkButton** を次の **StackPanel** に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="46dda-174">In Page2.xaml, replace the **HyperlinkButton** you added earlier with the following **StackPanel**.</span></span>
+<span data-ttu-id="aa326-174">Page2.xaml で、前に追加した **HyperlinkButton** を次の **StackPanel** に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="aa326-174">In Page2.xaml, replace the **HyperlinkButton** you added earlier with the following **StackPanel**.</span></span>
 
-<span data-ttu-id="46dda-175">次に、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) を追加して、Page1 から渡された文字列を表示します。</span><span class="sxs-lookup"><span data-stu-id="46dda-175">Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) for displaying the text string passed from Page1.</span></span>
+<span data-ttu-id="aa326-175">次に、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) を追加して、Page1 から渡された文字列を表示します。</span><span class="sxs-lookup"><span data-stu-id="aa326-175">Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) for displaying the text string passed from Page1.</span></span>
 
 ```xaml
 <StackPanel>
@@ -370,7 +370,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 </StackPanel>
 ```
 
-<span data-ttu-id="46dda-176">Page2.xaml 分離コード ファイルで、次のコードを追加して `OnNavigatedTo` メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="46dda-176">In the Page2.xaml code-behind file, add the following to override the `OnNavigatedTo` method:</span></span>
+<span data-ttu-id="aa326-176">Page2.xaml 分離コード ファイルで、次のコードを追加して `OnNavigatedTo` メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="aa326-176">In the Page2.xaml code-behind file, add the following to override the `OnNavigatedTo` method:</span></span>
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -418,17 +418,17 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-<span data-ttu-id="46dda-177">アプリを実行し、テキスト ボックスに自分の名前を入力し、**[Click to go to page 2]** と書かれているリンクをクリックします。</span><span class="sxs-lookup"><span data-stu-id="46dda-177">Run the app, type your name in the text box, and then click the link that says **Click to go to page 2**.</span></span> 
+<span data-ttu-id="aa326-177">アプリを実行し、テキスト ボックスに自分の名前を入力し、**[Click to go to page 2]** と書かれているリンクをクリックします。</span><span class="sxs-lookup"><span data-stu-id="aa326-177">Run the app, type your name in the text box, and then click the link that says **Click to go to page 2**.</span></span> 
 
-<span data-ttu-id="46dda-178">`Page1` の **HyperlinkButton** の **Click** イベントで `this.Frame.Navigate(typeof(Page2), name.Text)` を呼び出すと、`name.Text` プロパティが `Page2` に渡され、イベント データの値がページに表示されるメッセージに使用されます。</span><span class="sxs-lookup"><span data-stu-id="46dda-178">When the **Click** event of the **HyperlinkButton** in `Page1` calls `this.Frame.Navigate(typeof(Page2), name.Text)`, the `name.Text` property is passed to `Page2`, and the value from the event data is used for the message displayed on the page.</span></span>
+<span data-ttu-id="aa326-178">`Page1` の **HyperlinkButton** の **Click** イベントで `this.Frame.Navigate(typeof(Page2), name.Text)` を呼び出すと、`name.Text` プロパティが `Page2` に渡され、イベント データの値がページに表示されるメッセージに使用されます。</span><span class="sxs-lookup"><span data-stu-id="aa326-178">When the **Click** event of the **HyperlinkButton** in `Page1` calls `this.Frame.Navigate(typeof(Page2), name.Text)`, the `name.Text` property is passed to `Page2`, and the value from the event data is used for the message displayed on the page.</span></span>
 
-## <a name="4-cache-a-page"></a><span data-ttu-id="46dda-179">4. ページのキャッシュ</span><span class="sxs-lookup"><span data-stu-id="46dda-179">4. Cache a page</span></span>
+## <a name="4-cache-a-page"></a><span data-ttu-id="aa326-179">4. ページのキャッシュ</span><span class="sxs-lookup"><span data-stu-id="aa326-179">4. Cache a page</span></span>
 
-<span data-ttu-id="46dda-180">ページのコンテンツと状態は既定ではキャッシュされないため、情報をキャッシュする場合は、アプリの各ページでキャッシュを有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="46dda-180">Page content and state is not cached by default, so if you'd like to cache information, you must enable it in each page of your app.</span></span>
+<span data-ttu-id="aa326-180">ページのコンテンツと状態は既定ではキャッシュされないため、情報をキャッシュする場合は、アプリの各ページでキャッシュを有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="aa326-180">Page content and state is not cached by default, so if you'd like to cache information, you must enable it in each page of your app.</span></span>
 
-<span data-ttu-id="46dda-181">この基本的なピア ツー ピアの例では、戻るボタンはありませんが (戻るナビゲーションは「[前に戻る移動](navigation-history-and-backwards-navigation.md)」で示しました)、`Page2` で戻るボタンをクリックした場合、`Page1` の **TextBox** (およびその他のすべてのフィールド) は既定の状態に設定されます。</span><span class="sxs-lookup"><span data-stu-id="46dda-181">In our basic peer-to-peer example, there is no back button (we demonstrate back navigation in [backwards navigation](navigation-history-and-backwards-navigation.md)), but if you did click a back button on `Page2`, the **TextBox** (and any other field) on `Page1` would be set to its default state.</span></span> <span data-ttu-id="46dda-182">これを回避する方法の 1 つは、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) プロパティを使って、ページがフレームのページ キャッシュに追加されるように指定することです。</span><span class="sxs-lookup"><span data-stu-id="46dda-182">One way to work around this is to use the [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) property to specify that a page be added to the frame's page cache.</span></span> 
+<span data-ttu-id="aa326-181">この基本的なピア ツー ピアの例では、戻るボタンはありませんが (戻るナビゲーションは「[前に戻る移動](navigation-history-and-backwards-navigation.md)」で示しました)、`Page2` で戻るボタンをクリックした場合、`Page1` の **TextBox** (およびその他のすべてのフィールド) は既定の状態に設定されます。</span><span class="sxs-lookup"><span data-stu-id="aa326-181">In our basic peer-to-peer example, there is no back button (we demonstrate back navigation in [backwards navigation](navigation-history-and-backwards-navigation.md)), but if you did click a back button on `Page2`, the **TextBox** (and any other field) on `Page1` would be set to its default state.</span></span> <span data-ttu-id="aa326-182">これを回避する方法の 1 つは、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) プロパティを使って、ページがフレームのページ キャッシュに追加されるように指定することです。</span><span class="sxs-lookup"><span data-stu-id="aa326-182">One way to work around this is to use the [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) property to specify that a page be added to the frame's page cache.</span></span> 
 
-<span data-ttu-id="46dda-183">`Page1` のコンストラクターで、**NavigationCacheMode** を **Enabled** に設定して、フレームのページ キャッシュを超えるまでページのすべてのコンテンツと状態の値を保持することができます。</span><span class="sxs-lookup"><span data-stu-id="46dda-183">In the constructor of `Page1`, you can set **NavigationCacheMode** to **Enabled** to retains all content and state values for the page until the page cache for the frame is exceeded.</span></span> <span data-ttu-id="46dda-184">[**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) の制限を無視する場合は、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) を [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284) に設定します。これで、フレームにキャッシュできる、ナビゲーション履歴内のページ数を指定します。</span><span class="sxs-lookup"><span data-stu-id="46dda-184">Set [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) to [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284) if you want to ignore [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) limits, which specify the number of pages in the navigation history that can be cached for the frame.</span></span> <span data-ttu-id="46dda-185">ただし、キャッシュ サイズの制限は、デバイスのメモリの制限に依存しており、重要である可能性があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="46dda-185">However, keep in mind that cache size limits might be crucial, depending on the memory limits of a device.</span></span>
+<span data-ttu-id="aa326-183">`Page1` のコンストラクターで、**NavigationCacheMode** を **Enabled** に設定して、フレームのページ キャッシュを超えるまでページのすべてのコンテンツと状態の値を保持することができます。</span><span class="sxs-lookup"><span data-stu-id="aa326-183">In the constructor of `Page1`, you can set **NavigationCacheMode** to **Enabled** to retains all content and state values for the page until the page cache for the frame is exceeded.</span></span> <span data-ttu-id="aa326-184">[**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) の制限を無視する場合は、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) を [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284) に設定します。これで、フレームにキャッシュできる、ナビゲーション履歴内のページ数を指定します。</span><span class="sxs-lookup"><span data-stu-id="aa326-184">Set [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) to [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284) if you want to ignore [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) limits, which specify the number of pages in the navigation history that can be cached for the frame.</span></span> <span data-ttu-id="aa326-185">ただし、キャッシュ サイズの制限は、デバイスのメモリの制限に依存しており、重要である可能性があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="aa326-185">However, keep in mind that cache size limits might be crucial, depending on the memory limits of a device.</span></span>
 
 ```csharp
 public Page1()
@@ -454,7 +454,7 @@ Page1::Page1()
 }
 ```
 
-## <a name="related-articles"></a><span data-ttu-id="46dda-186">関連記事</span><span class="sxs-lookup"><span data-stu-id="46dda-186">Related articles</span></span>
-* [<span data-ttu-id="46dda-187">UWP アプリのナビゲーション デザインの基本</span><span class="sxs-lookup"><span data-stu-id="46dda-187">Navigation design basics for UWP apps</span></span>](https://msdn.microsoft.com/library/windows/apps/dn958438)
-* [<span data-ttu-id="46dda-188">タブとピボットのガイドライン</span><span class="sxs-lookup"><span data-stu-id="46dda-188">Guidelines for tabs and pivots</span></span>](https://msdn.microsoft.com/library/windows/apps/dn997788)
-* [<span data-ttu-id="46dda-189">ナビゲーション ウィンドウのガイドライン</span><span class="sxs-lookup"><span data-stu-id="46dda-189">Guidelines for navigation panes</span></span>](https://msdn.microsoft.com/library/windows/apps/dn997766)
+## <a name="related-articles"></a><span data-ttu-id="aa326-186">関連記事</span><span class="sxs-lookup"><span data-stu-id="aa326-186">Related articles</span></span>
+* [<span data-ttu-id="aa326-187">UWP アプリのナビゲーション デザインの基本</span><span class="sxs-lookup"><span data-stu-id="aa326-187">Navigation design basics for UWP apps</span></span>](https://msdn.microsoft.com/library/windows/apps/dn958438)
+* [<span data-ttu-id="aa326-188">タブとピボットのガイドライン</span><span class="sxs-lookup"><span data-stu-id="aa326-188">Guidelines for tabs and pivots</span></span>](https://msdn.microsoft.com/library/windows/apps/dn997788)
+* [<span data-ttu-id="aa326-189">ナビゲーション ウィンドウのガイドライン</span><span class="sxs-lookup"><span data-stu-id="aa326-189">Guidelines for navigation panes</span></span>](https://msdn.microsoft.com/library/windows/apps/dn997766)

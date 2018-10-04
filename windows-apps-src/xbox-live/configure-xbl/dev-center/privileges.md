@@ -10,11 +10,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 特権, Windows デベロッパー センター
 ms.openlocfilehash: f9ca72d54a539ab7fac684646019e2923572c297
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318623"
+ms.locfileid: "4354026"
 ---
 # <a name="configure-privileges-on-windows-dev-center"></a><span data-ttu-id="9dd59-104">Windows デベロッパー センターでの特権を構成します。</span><span class="sxs-lookup"><span data-stu-id="9dd59-104">Configure Privileges on Windows Dev Center</span></span>
 

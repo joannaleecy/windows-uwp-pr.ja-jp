@@ -12,51 +12,51 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 31499f8d6fa41d888afd84bea64f7f9de0585b96
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4312459"
+ms.locfileid: "4357284"
 ---
-# <a name="standard-http-request-and-response-headers"></a><span data-ttu-id="c7f37-104">標準の HTTP 要求および応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="c7f37-104">Standard HTTP Request and Response Headers</span></span>
+# <a name="standard-http-request-and-response-headers"></a><span data-ttu-id="86491-104">標準の HTTP 要求および応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="86491-104">Standard HTTP Request and Response Headers</span></span>
  
 <a id="ID4ES"></a>
 
  
-## <a name="request-headers"></a><span data-ttu-id="c7f37-105">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="c7f37-105">Request Headers</span></span>
+## <a name="request-headers"></a><span data-ttu-id="86491-105">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="86491-105">Request Headers</span></span>
  
-<span data-ttu-id="c7f37-106">次の表は、Xbox Live サービス要求を行ったときに使用する標準的な HTTP ヘッダーを示します。</span><span class="sxs-lookup"><span data-stu-id="c7f37-106">The following table lists the standard HTTP headers used when making Xbox Live Services requests.</span></span>
+<span data-ttu-id="86491-106">次の表では、Xbox Live サービス要求を作成するときに使用する標準的な HTTP ヘッダーを示します。</span><span class="sxs-lookup"><span data-stu-id="86491-106">The following table lists the standard HTTP headers used when making Xbox Live Services requests.</span></span>
  
-| <span data-ttu-id="c7f37-107">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="c7f37-107">Header</span></span>| <span data-ttu-id="c7f37-108">設定値</span><span class="sxs-lookup"><span data-stu-id="c7f37-108">Value</span></span>| <span data-ttu-id="c7f37-109">説明</span><span class="sxs-lookup"><span data-stu-id="c7f37-109">Description</span></span>| 
+| <span data-ttu-id="86491-107">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="86491-107">Header</span></span>| <span data-ttu-id="86491-108">設定値</span><span class="sxs-lookup"><span data-stu-id="86491-108">Value</span></span>| <span data-ttu-id="86491-109">説明</span><span class="sxs-lookup"><span data-stu-id="86491-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="c7f37-110">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="c7f37-110">x-xbl-contract-version</span></span>| <span data-ttu-id="c7f37-111">1</span><span class="sxs-lookup"><span data-stu-id="c7f37-111">1</span></span>| <span data-ttu-id="c7f37-112">API コントラクト バージョンです。</span><span class="sxs-lookup"><span data-stu-id="c7f37-112">API contract version.</span></span> <span data-ttu-id="c7f37-113">Xbox Live サービスのすべての要求に必要です。</span><span class="sxs-lookup"><span data-stu-id="c7f37-113">Required on all Xbox Live Services requests.</span></span>| 
-| <span data-ttu-id="c7f37-114">Authorization</span><span class="sxs-lookup"><span data-stu-id="c7f37-114">Authorization</span></span>| <span data-ttu-id="c7f37-115">STSTokenString</span><span class="sxs-lookup"><span data-stu-id="c7f37-115">STSTokenString</span></span>| <span data-ttu-id="c7f37-116">STS 認証トークンです。</span><span class="sxs-lookup"><span data-stu-id="c7f37-116">STS authentication token.</span></span> <span data-ttu-id="c7f37-117">このヘッダーの値は、 <b>GetTokenAndSignatureResult.Token</b>プロパティから取得されます。</span><span class="sxs-lookup"><span data-stu-id="c7f37-117">The value for this header is retrieved from the <b>GetTokenAndSignatureResult.Token</b> property.</span></span> | 
-| <span data-ttu-id="c7f37-118">Content-Type</span><span class="sxs-lookup"><span data-stu-id="c7f37-118">Content-Type</span></span>| <span data-ttu-id="c7f37-119">アプリケーション/xml、アプリケーション/json、マルチパート フォーム/データまたはアプリケーション/x-www-form-urlencoded</span><span class="sxs-lookup"><span data-stu-id="c7f37-119">application/xml, application/json, multipart/form-data or application/x-www-form-urlencoded</span></span>| <span data-ttu-id="c7f37-120">要求が送信されているコンテンツの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="c7f37-120">Specifies the type of content being submitted with a request.</span></span>| 
-| <span data-ttu-id="c7f37-121">Content-Length</span><span class="sxs-lookup"><span data-stu-id="c7f37-121">Content-Length</span></span>| <span data-ttu-id="c7f37-122">整数値</span><span class="sxs-lookup"><span data-stu-id="c7f37-122">Integer value</span></span>| <span data-ttu-id="c7f37-123">POST 要求で送信されるデータの長さを指定します。</span><span class="sxs-lookup"><span data-stu-id="c7f37-123">Specifies the length of the data being submitted in a POST request.</span></span>| 
-| <span data-ttu-id="c7f37-124">言語を受け入れる</span><span class="sxs-lookup"><span data-stu-id="c7f37-124">Accept-Language</span></span> | <span data-ttu-id="c7f37-125">String</span><span class="sxs-lookup"><span data-stu-id="c7f37-125">String</span></span>| <span data-ttu-id="c7f37-126">返される任意の文字列をローカライズする方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="c7f37-126">Specifies how to localize any strings returned.</span></span> <span data-ttu-id="c7f37-127">有効な言語/ロケールの組み合わせの一覧については、<a href="http://msdn.microsoft.com/en-us/library/bb975829.aspx">高度な Xbox 360 のプログラミング</a>を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c7f37-127">See <a href="http://msdn.microsoft.com/en-us/library/bb975829.aspx">Advanced Xbox 360 Programming</a> for a list of valid language/locale combinations.</span></span>| 
+| <span data-ttu-id="86491-110">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="86491-110">x-xbl-contract-version</span></span>| <span data-ttu-id="86491-111">1</span><span class="sxs-lookup"><span data-stu-id="86491-111">1</span></span>| <span data-ttu-id="86491-112">API コントラクト バージョンです。</span><span class="sxs-lookup"><span data-stu-id="86491-112">API contract version.</span></span> <span data-ttu-id="86491-113">Xbox Live サービスのすべての要求に必要です。</span><span class="sxs-lookup"><span data-stu-id="86491-113">Required on all Xbox Live Services requests.</span></span>| 
+| <span data-ttu-id="86491-114">Authorization</span><span class="sxs-lookup"><span data-stu-id="86491-114">Authorization</span></span>| <span data-ttu-id="86491-115">STSTokenString</span><span class="sxs-lookup"><span data-stu-id="86491-115">STSTokenString</span></span>| <span data-ttu-id="86491-116">STS 認証トークンです。</span><span class="sxs-lookup"><span data-stu-id="86491-116">STS authentication token.</span></span> <span data-ttu-id="86491-117">このヘッダーの値は、 <b>GetTokenAndSignatureResult.Token</b>プロパティから取得されます。</span><span class="sxs-lookup"><span data-stu-id="86491-117">The value for this header is retrieved from the <b>GetTokenAndSignatureResult.Token</b> property.</span></span> | 
+| <span data-ttu-id="86491-118">Content-Type</span><span class="sxs-lookup"><span data-stu-id="86491-118">Content-Type</span></span>| <span data-ttu-id="86491-119">アプリケーション/xml、アプリケーション/json、マルチパート/フォーム データまたはアプリケーション/x-www-form-urlencoded</span><span class="sxs-lookup"><span data-stu-id="86491-119">application/xml, application/json, multipart/form-data or application/x-www-form-urlencoded</span></span>| <span data-ttu-id="86491-120">要求で送信されるコンテンツの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="86491-120">Specifies the type of content being submitted with a request.</span></span>| 
+| <span data-ttu-id="86491-121">Content-Length</span><span class="sxs-lookup"><span data-stu-id="86491-121">Content-Length</span></span>| <span data-ttu-id="86491-122">整数値</span><span class="sxs-lookup"><span data-stu-id="86491-122">Integer value</span></span>| <span data-ttu-id="86491-123">POST 要求で送信されるデータの長さを指定します。</span><span class="sxs-lookup"><span data-stu-id="86491-123">Specifies the length of the data being submitted in a POST request.</span></span>| 
+| <span data-ttu-id="86491-124">同意言語</span><span class="sxs-lookup"><span data-stu-id="86491-124">Accept-Language</span></span> | <span data-ttu-id="86491-125">String</span><span class="sxs-lookup"><span data-stu-id="86491-125">String</span></span>| <span data-ttu-id="86491-126">返される任意の文字列をローカライズする方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="86491-126">Specifies how to localize any strings returned.</span></span> <span data-ttu-id="86491-127">有効な言語/ロケールの組み合わせの一覧については、<a href="http://msdn.microsoft.com/en-us/library/bb975829.aspx">高度な Xbox 360 のプログラミング</a>を参照してください。</span><span class="sxs-lookup"><span data-stu-id="86491-127">See <a href="http://msdn.microsoft.com/en-us/library/bb975829.aspx">Advanced Xbox 360 Programming</a> for a list of valid language/locale combinations.</span></span>| 
   
 <a id="ID4E6C"></a>
 
  
-## <a name="response-headers"></a><span data-ttu-id="c7f37-128">応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="c7f37-128">Response Headers</span></span>
+## <a name="response-headers"></a><span data-ttu-id="86491-128">応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="86491-128">Response Headers</span></span>
  
-<span data-ttu-id="c7f37-129">次の表は、Xbox Live サービスの応答で使用される標準の HTTP ヘッダーを示します。</span><span class="sxs-lookup"><span data-stu-id="c7f37-129">The following table lists the standard HTTP header used in Xbox Live Services responses.</span></span>
+<span data-ttu-id="86491-129">次の表では、Xbox Live サービスの応答で使用される標準の HTTP ヘッダーを示します。</span><span class="sxs-lookup"><span data-stu-id="86491-129">The following table lists the standard HTTP header used in Xbox Live Services responses.</span></span>
  
-| <span data-ttu-id="c7f37-130">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="c7f37-130">Header</span></span>| <span data-ttu-id="c7f37-131">設定値</span><span class="sxs-lookup"><span data-stu-id="c7f37-131">Value</span></span>| <span data-ttu-id="c7f37-132">説明</span><span class="sxs-lookup"><span data-stu-id="c7f37-132">Description</span></span>| 
+| <span data-ttu-id="86491-130">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="86491-130">Header</span></span>| <span data-ttu-id="86491-131">設定値</span><span class="sxs-lookup"><span data-stu-id="86491-131">Value</span></span>| <span data-ttu-id="86491-132">説明</span><span class="sxs-lookup"><span data-stu-id="86491-132">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="c7f37-133">Content-Type</span><span class="sxs-lookup"><span data-stu-id="c7f37-133">Content-Type</span></span>| <span data-ttu-id="c7f37-134">アプリケーション/xml アプリケーション/json</span><span class="sxs-lookup"><span data-stu-id="c7f37-134">application/xml, application/json</span></span>| <span data-ttu-id="c7f37-135">返されるコンテンツの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="c7f37-135">Specifies the type of content being returned.</span></span>| 
-| <span data-ttu-id="c7f37-136">Content-Length</span><span class="sxs-lookup"><span data-stu-id="c7f37-136">Content-Length</span></span>| <span data-ttu-id="c7f37-137">整数値</span><span class="sxs-lookup"><span data-stu-id="c7f37-137">Integer value</span></span>| <span data-ttu-id="c7f37-138">返されるデータの長さを指定します。</span><span class="sxs-lookup"><span data-stu-id="c7f37-138">Specifies the length of the data being returned.</span></span>| 
+| <span data-ttu-id="86491-133">Content-Type</span><span class="sxs-lookup"><span data-stu-id="86491-133">Content-Type</span></span>| <span data-ttu-id="86491-134">アプリケーション xml/アプリケーション/json</span><span class="sxs-lookup"><span data-stu-id="86491-134">application/xml, application/json</span></span>| <span data-ttu-id="86491-135">返されるコンテンツの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="86491-135">Specifies the type of content being returned.</span></span>| 
+| <span data-ttu-id="86491-136">Content-Length</span><span class="sxs-lookup"><span data-stu-id="86491-136">Content-Length</span></span>| <span data-ttu-id="86491-137">整数値</span><span class="sxs-lookup"><span data-stu-id="86491-137">Integer value</span></span>| <span data-ttu-id="86491-138">返されるデータの長さを指定します。</span><span class="sxs-lookup"><span data-stu-id="86491-138">Specifies the length of the data being returned.</span></span>| 
   
 <a id="ID4EEE"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="c7f37-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="c7f37-139">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="86491-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="86491-139">See also</span></span>
  
 <a id="ID4EGE"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="c7f37-140">Parent</span><span class="sxs-lookup"><span data-stu-id="c7f37-140">Parent</span></span>  
+##### <a name="parent"></a><span data-ttu-id="86491-140">Parent</span><span class="sxs-lookup"><span data-stu-id="86491-140">Parent</span></span>  
 
-[<span data-ttu-id="c7f37-141">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="c7f37-141">Additional Reference</span></span>](atoc-xboxlivews-reference-additional.md)
+[<span data-ttu-id="86491-141">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="86491-141">Additional Reference</span></span>](atoc-xboxlivews-reference-additional.md)
 
    

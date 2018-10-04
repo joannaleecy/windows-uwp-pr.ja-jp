@@ -12,24 +12,24 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 85d7390f16d2cc8f61d76f51713c2903a6fd2c9c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4314913"
+ms.locfileid: "4351563"
 ---
-# <a name="gameclipvisibility-enumeration"></a><span data-ttu-id="4f3b4-104">GameClipVisibility 列挙型</span><span class="sxs-lookup"><span data-stu-id="4f3b4-104">GameClipVisibility Enumeration</span></span>
-<span data-ttu-id="4f3b4-105">GameClipVisibility 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4f3b4-105">Details the GameClipVisibility enumeration.</span></span> 
+# <a name="gameclipvisibility-enumeration"></a><span data-ttu-id="246d5-104">GameClipVisibility 列挙型</span><span class="sxs-lookup"><span data-stu-id="246d5-104">GameClipVisibility Enumeration</span></span>
+<span data-ttu-id="246d5-105">GameClipVisibility 列挙型をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="246d5-105">Details the GameClipVisibility enumeration.</span></span> 
 <a id="ID4ER"></a>
 
  
-## <a name="gameclipvisibility"></a><span data-ttu-id="4f3b4-106">GameClipVisibility</span><span class="sxs-lookup"><span data-stu-id="4f3b4-106">GameClipVisibility</span></span>
+## <a name="gameclipvisibility"></a><span data-ttu-id="246d5-106">GameClipVisibility</span><span class="sxs-lookup"><span data-stu-id="246d5-106">GameClipVisibility</span></span>
  
-| <b><span data-ttu-id="4f3b4-107">列挙子</span><span class="sxs-lookup"><span data-stu-id="4f3b4-107">Enumerator</span></span></b>| <b><span data-ttu-id="4f3b4-108">説明</span><span class="sxs-lookup"><span data-stu-id="4f3b4-108">Description</span></span></b>| 
+| <b><span data-ttu-id="246d5-107">列挙子</span><span class="sxs-lookup"><span data-stu-id="246d5-107">Enumerator</span></span></b>| <b><span data-ttu-id="246d5-108">説明</span><span class="sxs-lookup"><span data-stu-id="246d5-108">Description</span></span></b>| 
 | --- | --- | 
-| <span data-ttu-id="4f3b4-109">None</span><span class="sxs-lookup"><span data-stu-id="4f3b4-109">None</span></span>| <span data-ttu-id="4f3b4-110">可視性が指定されていません。</span><span class="sxs-lookup"><span data-stu-id="4f3b4-110">Visibility is not specified.</span></span> <span data-ttu-id="4f3b4-111">これは、ほとんどの場合、無効な値です。</span><span class="sxs-lookup"><span data-stu-id="4f3b4-111">This is an invalid value in most cases.</span></span>| 
-| <span data-ttu-id="4f3b4-112">既定値</span><span class="sxs-lookup"><span data-stu-id="4f3b4-112">Default</span></span>| <span data-ttu-id="4f3b4-113">ゲーム クリップの可視性が Xbox LIVE プライバシー設定によって決まります。</span><span class="sxs-lookup"><span data-stu-id="4f3b4-113">Game clip visibility determined by Xbox LIVE privacy settings.</span></span>| 
-| <span data-ttu-id="4f3b4-114">オーナー</span><span class="sxs-lookup"><span data-stu-id="4f3b4-114">Owner</span></span>| <span data-ttu-id="4f3b4-115">ゲーム クリップを作成した元の XUID をできるだけです。</span><span class="sxs-lookup"><span data-stu-id="4f3b4-115">Game clip is only available to the original XUID that created it.</span></span>| 
-| <span data-ttu-id="4f3b4-116">Title (タイトル)</span><span class="sxs-lookup"><span data-stu-id="4f3b4-116">Title</span></span>| <span data-ttu-id="4f3b4-117">作成した元のタイトルがゲーム クリップにのみです。</span><span class="sxs-lookup"><span data-stu-id="4f3b4-117">Game clip is only available for the original Title that created it.</span></span>| 
-| <span data-ttu-id="4f3b4-118">Public</span><span class="sxs-lookup"><span data-stu-id="4f3b4-118">Public</span></span>| <span data-ttu-id="4f3b4-119">ゲーム クリップはだれでも Xbox LIVE で利用できます。</span><span class="sxs-lookup"><span data-stu-id="4f3b4-119">Game clip is available for anyone in Xbox LIVE.</span></span>| 
+| <span data-ttu-id="246d5-109">None</span><span class="sxs-lookup"><span data-stu-id="246d5-109">None</span></span>| <span data-ttu-id="246d5-110">可視性が指定されていません。</span><span class="sxs-lookup"><span data-stu-id="246d5-110">Visibility is not specified.</span></span> <span data-ttu-id="246d5-111">これは、ほとんどの場合、無効な値です。</span><span class="sxs-lookup"><span data-stu-id="246d5-111">This is an invalid value in most cases.</span></span>| 
+| <span data-ttu-id="246d5-112">既定値</span><span class="sxs-lookup"><span data-stu-id="246d5-112">Default</span></span>| <span data-ttu-id="246d5-113">ゲーム クリップの可視性が Xbox LIVE プライバシー設定によって決まります。</span><span class="sxs-lookup"><span data-stu-id="246d5-113">Game clip visibility determined by Xbox LIVE privacy settings.</span></span>| 
+| <span data-ttu-id="246d5-114">オーナー</span><span class="sxs-lookup"><span data-stu-id="246d5-114">Owner</span></span>| <span data-ttu-id="246d5-115">ゲーム クリップには、それを作成した元の XUID をできるだけです。</span><span class="sxs-lookup"><span data-stu-id="246d5-115">Game clip is only available to the original XUID that created it.</span></span>| 
+| <span data-ttu-id="246d5-116">Title (タイトル)</span><span class="sxs-lookup"><span data-stu-id="246d5-116">Title</span></span>| <span data-ttu-id="246d5-117">作成した元のタイトルがゲーム クリップにのみです。</span><span class="sxs-lookup"><span data-stu-id="246d5-117">Game clip is only available for the original Title that created it.</span></span>| 
+| <span data-ttu-id="246d5-118">Public</span><span class="sxs-lookup"><span data-stu-id="246d5-118">Public</span></span>| <span data-ttu-id="246d5-119">ゲーム クリップは、だれでも Xbox LIVE で利用できます。</span><span class="sxs-lookup"><span data-stu-id="246d5-119">Game clip is available for anyone in Xbox LIVE.</span></span>| 
   
