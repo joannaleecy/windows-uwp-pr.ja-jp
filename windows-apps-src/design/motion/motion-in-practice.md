@@ -15,11 +15,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 6001f955b3ab6a60446eb84296dc3bc52ad3a99e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315828"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361337"
 ---
 # <a name="bringing-it-together"></a>まとめる
 
@@ -85,9 +85,9 @@ ms.locfileid: "4315828"
 
 > **プレビュー**: 暗黙的なアニメーション[最新の Windows 10 Insider Preview ビルドと SDK](https://insider.windows.com/for-developers/)が必要です。
 
-暗黙的なアニメーションは、パラメーターの変更時に新旧の値の間で自動的に補間によって Fluent モーションを実現するための簡単な方法です。
+暗黙的なアニメーションは、パラメーターの変更時に古いと新しい値の間で自動的に補間によって Fluent モーションを実現するための簡単な方法です。
 
-暗黙的に、次のプロパティへの変更をアニメーション化することができます。
+暗黙的に次のプロパティを変更するをアニメーション化することができます。
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **Opacity**
@@ -98,7 +98,7 @@ ms.locfileid: "4315828"
 - [境界線](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)、または[パネル](/uwp/api/windows.ui.xaml.controls.panel)
   - **Background**
 
-暗黙的なアニメーションの変更を持つことができる各プロパティには、対応する_移行_プロパティがあります。 プロパティをアニメーション化するには、対応する_移行_プロパティに切り替えの種類を割り当てます。 _切り替え効果_のプロパティとごとに使用する切り替え効果の種類を示します。
+暗黙的なアニメーションの変更を持つことができる各プロパティには、対応する_移行_プロパティがあります。 プロパティをアニメーション化するには、対応するの_切り替え効果_プロパティに遷移タイプを割り当てます。 次の表は、_切り替え効果_のプロパティとそれぞれに使用する移行入力を示します。
 
 | アニメーション化されたプロパティ | 切り替え効果のプロパティ | 暗黙的な切り替えの種類 |
 | -- | -- | -- |
@@ -110,7 +110,7 @@ ms.locfileid: "4315828"
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-この例では、ボタン コントロールを有効にすると、フェードインし、フェードアウトは無効になっているときに、Opacity プロパティと切り替え効果を使用する方法を示します。
+この例では、ボタン コントロールを有効にするフェードイン/無効になっているときに、Opacity プロパティと切り替え効果を使用する方法を示します。
 
 ```xaml
 <Button x:Name="SubmitButton"

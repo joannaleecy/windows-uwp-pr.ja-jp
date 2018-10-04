@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影された, プロジェクション, 実装, インプリメント, ランタイム クラス, ライセンス認証
 ms.localizationpriority: medium
 ms.openlocfilehash: 2476161954c1d4d49fcf9f8f74cd1b7cf9180c0a
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309272"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361088"
 ---
 # <a name="author-apis-with-cwinrt"></a>C++/WinRT での API の作成
 
-このトピックでは、作成する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)直接的または間接的に Api を使って[**winrt::implements**](/uwp/cpp-ref-for-winrt/implements)基本構造体をします。 このコンテキストで*作成者*の同義語は、*生成*、または*実装*です。 このトピックでは、C++/WinRT で API を実装するために、次のシナリオをこの順序で説明します。
+このトピックでは、作成する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)直接的または間接的に[**winrt::implements**](/uwp/cpp-ref-for-winrt/implements)を使用して、Api 基本構造体をします。 このコンテキストで*作成者*の同義語は、*生成*、または*実装*です。 このトピックでは、C++/WinRT で API を実装するために、次のシナリオをこの順序で説明します。
 
 - Windows ランタイム クラス (ランタイム クラス) は作成*しません*。アプリ内でのローカルの使用のために 1 つまたは複数の Windows ランタイム インターフェイスを実装するだけです。 この場合、**winrt::implements** から直接派生し、機能を実装します。
 - ランタイム クラスを作成*します*。 アプリで使用するコンポーネントを作成している場合があります。 または、XAML ユーザー インターフェイス (UI) で使用する型を作成していることがあり、その場合は両方を実装して、同じのコンパイル ユニット内のランタイム クラスを使用しています。 このような場合、ツールで **winrt::implements** から派生するクラスを生成することができます。
@@ -260,7 +260,7 @@ IStringable istringable = winrt::make<MyType>();
 ```
 
 > [!NOTE]
-> ただし、XAML UI から型を参照している場合は、同じプロジェクト内に実装型と投影型の両方があります。 その場合は、**ように**投影された型のインスタンスを返します。 そのシナリオのコード例については、「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)」を参照してください。
+> ただし、XAML UI から型を参照している場合は、同じプロジェクト内に実装型と投影型の両方があります。 その場合は、**ように**投影型のインスタンスを返します。 そのシナリオのコード例については、「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)」を参照してください。
 
 **IStringable** インターフェイスのメンバーを呼び出すには (上記のコード例の場合) `istringable` のみ使用できます。 ただし C++/WinRT インターフェイス (投影されたインターフェイス) は [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) から派生します。 そのため、他の投影された型またはインターフェイスも使うかを返す[**iunknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (または[**iunknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) でクエリを呼び出すことができます。
 
@@ -287,7 +287,7 @@ iclosable.Close();
 > [!NOTE]
 > [**Winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)ではなくを呼び出す必要がありますし、後で、Windows SDK バージョン 10.0.17763.0 (Windows 10、バージョン 1809) をインストールしていない場合。
 
-次に例を示します。 [ **BgLabelControl**カスタム コントロール クラスの実装](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)には、別の例があります。
+次に例を示します。 [ **BgLabelControl**のカスタム コントロール クラスの実装](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)には、別の例があります。
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -315,7 +315,7 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
-実装型のインスタンスがある場合は、対応する投影型を想定している関数にこれを渡す必要があり、その後実行できます。 実装型に存在する変換演算子 (によって実装型が生成された、`cppwinrt.exe`ツール) によりこのできます。
+実装型のインスタンスがある場合は、対応する投影型を想定している関数にこれを渡す必要があり、その後実行できます。 実装型に変換演算子が存在する (実装型がによって生成された、`cppwinrt.exe`ツール) によりこのできます。
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>既定以外のコンス トラクターを持つ型からの派生
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)は、既定以外のコンス トラクターの例を示します。 既定のコンストラクターがないので、**ToggleButtonAutomationPeer** を作成するには、*オーナー* に渡す必要があります。 したがって、**ToggleButtonAutomationPeer** から派生する場合、*オーナー* を受け取りベースに渡すコンストラクターを提供する必要があります。 実際には次のようになります。

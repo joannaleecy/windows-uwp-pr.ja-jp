@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ac0b2094b17120af8a0c85505cd03af389f1f4
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4332527"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355827"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 アイコン
 
@@ -59,7 +59,7 @@ Symbol 列挙値に含まれていない **Segoe MDL2 アセット** フォン�
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-静的なリソースを使用することもできます。`SymbolThemeFontFamily`フォントを名を指定するのではなく、 **Segoe MDL2 アセット**にアクセスします。
+静的なリソースを使用することもできます。`SymbolThemeFontFamily`名を、フォントを指定するのではなく、 **Segoe MDL2 アセット**にアクセスします。
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
@@ -67,7 +67,7 @@ Symbol 列挙値に含まれていない **Segoe MDL2 アセット** フォン�
 
 ## <a name="how-do-i-get-this-font"></a>このフォントの入手方法
 * Windows 10: を行うには必要ありませんが、フォントが Windows に付属します。
-* Mac では、ダウンロードとフォントをインストールする必要があります: <a href="https://aka.ms/SegoeFonts">Segoe UI と MDL2 アイコン フォントを取得します。</a>
+* Mac では、ダウンロードして、フォントをインストールする必要があります: <a href="https://aka.ms/SegoeFonts">Segoe UI と MDL2 アイコン フォントを取得します。</a>
 
 ## <a name="icon-list"></a>アイコン一覧
 **Segoe MDL2 アセット** フォントには、以下に示すアイコンもあります。 ここで紹介するアイコンの多くは、特殊な目的のために使用されるもので、それ以外の場合は通常使用しません。

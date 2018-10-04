@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311140"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354380"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>パッケージ デスクトップ アプリケーションに関する既知の問題
 
@@ -95,7 +95,7 @@ Microsoft Store のアプリをインストールまたは起動した後、予�
 
 更新しても問題が解決しない場合や、PC を回復する方法がわからない場合は、[Microsoft サポート](https://support.microsoft.com/contactus/)にお問い合わせください。
 
-開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 この操作を行うアプリケーション、更新プログラムをインストールしていないユーザーが利用できないことに注意します。 この更新プログラムをインストールしているユーザーに、アプリケーションの可用性を制限するには、次のように、AppxManifest.xml ファイルを変更します。
+開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 この操作を行うアプリケーション、更新プログラムをインストールしていないユーザーが利用できないことに注意します。 この更新プログラムをインストールしているユーザーに、アプリケーションの可用性を制限するには、次のように、AppxManifest.xml ファイルに変更します。
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -133,15 +133,15 @@ certutil -dump <cert_file.pfx>
 
 ### <a name="bad-pe-certificate-0x800700c1"></a>不適切な PE 証明書 (番号: 0x800700C1)
 
-これは、パッケージには、破損している証明書を持つバイナリが含まれている場合に発生します。 これは、発生理由理由の一部を以下に示します。
+これは、パッケージには、破損した証明書を持つバイナリが含まれている場合に発生します。 これは、発生理由理由の一部を以下に示します。
 
-* 証明書のスタート画面は、画像の終了時にありません。  
+* 証明書のスタート画面の画像の終了時にではありません。  
 
 * 証明書のサイズは正の値はありません。
 
 * 証明書のスタート画面のない後、`IMAGE_NT_HEADERS32`または後に 32 ビット実行可能ファイルの構造体、 `IMAGE_NT_HEADERS64` 64 ビット実行可能ファイルの構造。
 
-* 証明書のポインターがない、正しく WIN_CERTIFICATE 構造体に配置されます。
+* 証明書のポインターはいない WIN_CERTIFICATE 構造を正しく配置されます。
 
 無効な PE 証明書を含むファイルを検索する**コマンド プロンプト**を開き、という名前の環境変数を設定`APPXSIP_LOG`1 の値にします。
 

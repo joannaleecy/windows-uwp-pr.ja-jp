@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316438"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354274"
 ---
 # <a name="handle-a-cancelled-background-task"></a>取り消されたバックグラウンド タスクの処理
 
@@ -137,9 +137,9 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 バックグラウンド処理を実行しているメソッドは、**\_cancelRequested** が **true** に設定されたタイミングを認識し、処理を停止して終了する必要があります。 インプロセス バック グラウンド タスクの場合、 **OnBackgroundActivated**メソッドから戻ることを意味します。 アウト プロセス バック グラウンド タスクの場合、 **Run**メソッドから戻ることを意味します。
 
-バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。 **\_CancelRequested**になる続行 true に設定場合します。
+バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。 場合**\_cancelRequested**は、続行から true に設定になります。
 
-[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、バック グラウンド タスクが取り消された場合、定期タイマーのコールバックを停止することを確認するが含まれます。
+[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)には、バック グラウンド タスクが取り消された場合、定期タイマーのコールバックを停止することを確認するが含まれています。
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -183,7 +183,7 @@ else
 > [!NOTE]
 > 上記のコード サンプルでは、 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)を使用します。[**進行状況**](https://msdn.microsoft.com/library/windows/apps/br224800)のプロパティがバック グラウンド タスクの進捗状況を記録するために使用されています。 進行状況は、[**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) クラスを使ってアプリに報告されます。
 
-**Run**メソッドは、処理が停止した後、タスクが完了したか、取り消されたかどうかを記録するように変更します。 この手順は、バックグラウンド タスクが取り消されたときにプロセス間で通信する手段が必要となるため、別のプロセスで実行されるアウトプロセス バック グラウンド タスクに適用されます。 インプロセス バックグラウンド タスクでは、タスクが取り消されたことを示すために、状態をアプリケーションと共有するだけで十分です。
+処理が停止した後、タスクが完了したか、取り消されたかどうか記録するように、 **Run**メソッドを変更します。 この手順は、バックグラウンド タスクが取り消されたときにプロセス間で通信する手段が必要となるため、別のプロセスで実行されるアウトプロセス バック グラウンド タスクに適用されます。 インプロセス バックグラウンド タスクでは、タスクが取り消されたことを示すために、状態をアプリケーションと共有するだけで十分です。
 
 [バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、LocalSettings に状態を記録します。
 
@@ -265,7 +265,7 @@ else
 
 ## <a name="run-method-example"></a>メソッド例を実行します。
 
-**Run**メソッドとタイマーのコールバック コード一式、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から次のとおりのコンテキストにします。
+メソッドの**実行**とタイマーのコールバック コード一式、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から次のとおりのコンテキストにします。
 
 ```csharp
 // The Run method is the entry point of a background task.

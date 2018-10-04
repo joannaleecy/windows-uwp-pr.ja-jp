@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319712"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351264"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>UWP アプリ用の設計ツールキットとサンプル
  
@@ -105,8 +105,8 @@ ms.locfileid: "4319712"
 
 ![VanArsdel イメージ](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-Van Arsdel, Ltd. エンド ツー エンドの UWP サンプル アプリは、Microsoft の Fluent Design System の次の基準を広く告知を構築されました。 <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI のライブラリ</a>として ux フレームワークとコンポジションの強力な基になっている機能で強化された密度と新しいコントロールの広範な使用をかなっています。 このサンプルでは、(この場合は、ライト) で IoT デバイスの購入を管理およびリッチな生産性エクスペリエンスを構築する方法を示します。<br>
-<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">VanArsdel サンプルをダウンロードします。</a> <br><a href="https://github.com/microsoft/vanarsdel">GitHub で VanArsdel サンプルします。</a>
+Van Arsdel, Ltd. エンド ツー エンドの UWP サンプル アプリは、Microsoft の Fluent Design System の次の波に組み込まれているされました。 <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI のライブラリ</a>として ux フレームワークとコンポジションの強力な基になる機能で強化された密度と新しいコントロールの広範な使用をかなっています。 このサンプルでは、(この場合は、ライト) で IoT デバイスの購入を管理およびリッチな生産性エクスペリエンスを構築する方法を示します。<br>
+<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">サンプルをダウンロードする VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">GitHub で VanArsdel サンプルします。</a>
 
 ![キャスト イメージを構築する](images/buildcast.png)
 **BuildCast**<br>

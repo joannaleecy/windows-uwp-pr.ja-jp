@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aa30af537874f3c3f4845706de6f6788c7b08fb
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311288"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352705"
 ---
 # <a name="resolve-submission-errors"></a>申請エラーの解決
 
@@ -23,13 +23,13 @@ ms.locfileid: "4311288"
 
 ## <a name="uwp-apps"></a>UWP アプリ
 
-UWP アプリを提出する場合、パッケージ ファイルが、ストアの Visual Studio によって生成された .msixupload または .appxupload ファイルではない場合に、前処理中にエラーが表示可能性があります。 [Visual Studio で UWP アプリのパッケージ](../packaging/packaging-uwp-apps.md)アプリのパッケージ ファイルを作成するときの手順し、のみ .msix/appx または .msixbundle/appxbundle いない、申請の[パッケージ](upload-app-packages.md)] ページで、.msixupload または .appxupload ファイルをアップロードしてください。.
+UWP アプリを提出する場合、パッケージ ファイルが、ストアの Visual Studio によって生成された .msixupload または .appxupload ファイルではない場合に、前処理中にエラーを表示があります。 [Visual Studio で UWP アプリのパッケージ](../packaging/packaging-uwp-apps.md)アプリのパッケージのファイルを作成するときの手順し、のみ .msix/appx または .msixbundle/appxbundle いない、申請の[パッケージ](upload-app-packages.md)] ページで、.msixupload または .appxupload ファイルをアップロードことを確認します。.
 
 コンパイル エラーが表示される場合は、リリース モードでアプリケーションを正常にビルドできることを確認します。 詳しくは、[.NET ネイティブ内部コンパイラ エラーに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=613098)をご覧ください。
 
 ## <a name="desktop-application"></a>デスクトップ アプリケーション
 
-Win32 と UWP の両方のバイナリが含まれているパッケージを提出する場合は、Visual Studio 2017 Update 4 で利用可能な Windows パッケージ プロジェクトを使用して、そのパッケージを作成することを確認します。 UWP プロジェクト テンプレートを使用して、パッケージを作成する場合は、提出するパッケージをストアまたはサイドローディング化上の他の Pc にできない可能性があります。 パッケージが正常に発行、した場合でもユーザーの PC で予期しない方法で動作する可能性があります。 詳しくは、 [Visual Studio (デスクトップ ブリッジ) を使用して、アプリのパッケージ]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)を参照してください。
+Win32 と UWP の両方のバイナリが含まれているパッケージを提出する場合は、Visual Studio 2017 Update 4 で利用可能な Windows パッケージ プロジェクトを使用して、そのパッケージを作成することを確認します。 UWP プロジェクト テンプレートを使用して、パッケージを作成する場合は、提出するパッケージをストアまたはサイドローディング化上の他の Pc にできない可能性があります。 場合でも、パッケージが正常に公開、ユーザーの PC で予期しない方法で動作する可能性があります。 詳しくは、 [Visual Studio (デスクトップ ブリッジ) を使用して、アプリのパッケージ]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)を参照してください。
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 以前のバージョン
 

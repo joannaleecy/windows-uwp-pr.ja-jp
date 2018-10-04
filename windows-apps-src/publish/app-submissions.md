@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309132"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354838"
 ---
 # <a name="app-submissions"></a>アプリの申請
 
@@ -27,7 +27,7 @@ ms.locfileid: "4309132"
 > [!NOTE]
 > [Windows デベロッパー センター](https://partner.microsoft.com/dashboard)にアクセスし、Microsoft Store にアプリを提出するために、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
 
-アプリが公開された後は、ダッシュボードで別の申請を作成して更新バージョンを公開できます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されているアプリに対して新しい申請を作成するには、[アプリの概要] ページに表示されている前回の申請の横にある **[更新]** をクリックします。 こともできます[ストアからアプリを削除](guidance-for-app-package-management.md#removing-an-app-from-the-store)する必要がある場合は (し、利用できるように、後でもう一度たい場合)。
+アプリが公開された後は、ダッシュボードで別の申請を作成して更新バージョンを公開できます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されているアプリに対して新しい申請を作成するには、[アプリの概要] ページに表示されている前回の申請の横にある **[更新]** をクリックします。 こともできます[、ストアからアプリを削除](guidance-for-app-package-management.md#removing-an-app-from-the-store)を行う (とし、利用できるように、後でもう一度する場合) 必要がある場合。
 
 > [!NOTE]
 > このセクションでは、デベロッパー センター ダッシュボードでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリ申請を自動化することもできます。

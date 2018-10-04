@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e76f63fa30c3a294e1917bf1bed9ea79897390b2
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320220"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354822"
 ---
 # <a name="supported-languages"></a>サポートされている言語
 
 
 100 を超える言語で Microsoft ストアにアプリを提出することができます。
 
-アプリでの言語の構成について詳しくは、[理解ユーザー プロファイルの言語とアプリ マニフェストの言語](../design/globalizing/manage-language-and-region.md)と[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)を参照してください。 複数の言語をサポートするアプリを作るのに役立つ[多言語アプリ ツールキット](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)も用意されています。
+アプリでの言語の構成について詳しくは、[についてユーザー プロファイルの言語とアプリ マニフェストの言語](../design/globalizing/manage-language-and-region.md)と[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)を参照してください。 複数の言語をサポートするアプリを作るのに役立つ[多言語アプリ ツールキット](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)も用意されています。
 
 ## <a name="supported-languages"></a>サポートされている言語
 

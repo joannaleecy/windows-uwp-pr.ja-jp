@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 104788b98377b55564fcc204ecc161521d071c6b
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315460"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4353343"
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>UWP アプリのコマンド設計の基本
 
@@ -94,9 +94,9 @@ ms.locfileid: "4315460"
 
 ## <a name="place-commands-on-the-right-surface"></a>適切なサーフェスへのコマンドの配置
 
-アプリのキャンバスや、コマンド バー、コマンド バーのポップアップ、メニュー バー、およびダイアログなどの特殊なコマンド コンテナーを含む、アプリでの多くのサーフェスにコマンド要素を配置できます。
+アプリのキャンバスやコマンド バー、コマンド バーのポップアップ、メニュー バー、およびダイアログなどの特殊なコマンド コンテナーを含む、アプリでの多くのサーフェスにコマンド要素を配置できます。
 
-、可能であれば、ようにすることがユーザー、コンテンツを操作するコマンドを使用してではなく、コンテンツを直接操作に注意してください。 たとえば、上下に移動するコマンド ボタンを使うのではなく、リスト項目をドラッグ アンド ドロップしてリストを並べ替えることができるようにします。
+、可能であれば、する必要があることをユーザーがコンテンツを操作するコマンドを使用してではなく、コンテンツを直接操作に注意してください。 たとえば、上下に移動するコマンド ボタンを使うのではなく、リスト項目をドラッグ アンド ドロップしてリストを並べ替えることができるようにします。
 
 ユーザーが直接コンテンツを操作できない場合は、コマンド要素をアプリのコマンド サーフェスに配置します。 最も一般的ないくつかのコマンド サーフェスの一覧を次に示します。
 
@@ -157,7 +157,7 @@ ms.locfileid: "4315460"
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">ポップアップ</a>は、軽量のコンテキストに沿ったポップアップをタップするか、どこかクリックすると、ポップアップの外側で閉じることができます。
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">ポップアップ</a>は、軽量のコンテキスト ポップアップをタップするか、どこかクリックすると、ポップアップ外で閉じることができます。
 :::row-end:::
 
 :::row:::

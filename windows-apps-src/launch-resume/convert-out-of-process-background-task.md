@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
-title: インプロセス バック グラウンド タスクをアウト プロセス バック グラウンド タスクを移植します。
-description: フォア グラウンド アプリのプロセス内で実行されるインプロセスのバック グラウンド タスクをアウト プロセス バック グラウンド タスクを移植します。
+title: アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクに移植する
+description: フォア グラウンド アプリのプロセス内で実行されるインプロセス バック グラウンド タスクをアウト プロセス バック グラウンド タスクを移植します。
 ms.author: twhitney
 ms.date: 09/19/2018
 ms.topic: article
@@ -11,15 +11,15 @@ keywords: windows 10、uwp、バック グラウンド タスク、アプリ サ
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: b9010f82b0460bd46757bc1e0d58c01dec459104
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311230"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350896"
 ---
-# <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>インプロセス バック グラウンド タスクをアウト プロセス バック グラウンド タスクを移植します。
+# <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクに移植する
 
-[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated)から開始し、アプリケーション内では、 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)メソッドのコードをインプロセス アクティビティには、アウト プロセス (OOP) バック グラウンド アクティビティを移植する最も簡単な方法です。 ここで説明されている手法でない shim を OOP バック グラウンド タスクから、インプロセス バック グラウンド タスクを作成する方法そのについて書き直して (または移植)、プロセス内でのバージョンに OOP のバージョン。
+インプロセス アクティビティには、アウト プロセス (OOP) バック グラウンド アクティビティを移植する最も簡単な方法では、アプリケーション内で、 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)メソッドのコードと[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated)から開始します。 ここで説明されている手法でない OOP のバック グラウンド タスクから、インプロセス バック グラウンド タスクを shim を作成する方法そのについて書き直して (または移植)、プロセス内でのバージョンに OOP のバージョン。
 
 アプリに複数バックグラウンド タスクがある場合、[バックグラウンドのアクティブ化のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BackgroundActivation) に、`BackgroundActivatedEventArgs.TaskInstance.Task.Name` を使って開始されるタスクを識別する方法が示されています。
 

@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b04033fb53a90015427feb820c91d0f4a1de7d5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4308688"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355328"
 ---
 # <a name="view-app-identity-details"></a>アプリ ID の詳細の表示
 
 
-Microsoft Store の**アプリ id**ページにして、アプリに割り当てられた一意の id に関連する詳細を表示できます。 取得できますアプリのストアへのリンクをこのページに一覧表示します。
+その**アプリ id**ページで、Microsoft Store でアプリに割り当てられている一意の id に関連する詳細を表示できます。 取得することも、アプリのストアへのリンクをこのページに一覧表示します。
 
 アプリ ID の情報を探すには、アプリのいずれかに移動し、左側のナビゲーション メニューで **[アプリ管理]** を展開します。 **[アプリ ID]** を選ぶと、アプリ ID の詳細が表示されます。
 

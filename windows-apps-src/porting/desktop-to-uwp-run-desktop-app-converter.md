@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: bde2e58934e24df7db2cb77fb793106aa65e3834
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315922"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357602"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Desktop App Converter を使用してデスクトップ アプリケーションをパッケージ化します。
 
@@ -33,7 +33,7 @@ Desktop App Converter (DAC) を使用すると、デスクトップ アプリを
 このコンバーターは、コンバーターのダウンロードに含まれるクリーンな状態の基本イメージを使って、分離された Windows 環境でデスクトップ インストーラーを実行します。 デスクトップ インストーラーが作成するすべてのレジストリとファイル システムの I/O をキャプチャし、出力の一部としてパッケージ化します。
 
 >[!IMPORTANT]
->デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (デスクトップ ブリッジとも呼ばれるを Windows 10 バージョン 1607 で導入されたそれ以外の場合と、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
+>デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (それ以外の場合、デスクトップ ブリッジとも呼ばれるは Windows 10 バージョン 1607 で導入されましたし、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
 
 > [!NOTE]
 > Microsoft Virtual Academy から公開されている、<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">このシリーズ</a>の短いビデオをご覧ください。 これらのビデオでは、Desktop App Converter を使用する一般的な方法が紹介されています。
@@ -180,7 +180,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >デベロッパー センターが数値で始まる ID をパッケージに割り当てる場合、必ず <i>-AppId</i> パラメーターも渡し、そのパラメーターの値として文字列サフィックスのみを使ってください (ピリオドの区切り記号の後)。
 
-``InstallerArguments`` パラメーターは省略可能なパラメーターです。 ただし、Desktop App Converter は、インストーラーを無人モードで実行する必要があるため、アプリケーションがサイレント フラグをサイレント モードで実行する必要がある場合に使用する必要があります。 ``/S`` フラグは非常に一般的なサイレント フラグですが、セットアップ ファイルを作成するために使用したインストーラー テクノロジによっては、使用するフラグが異なる場合もあります。
+``InstallerArguments`` パラメーターは省略可能なパラメーターです。 ただし、Desktop App Converter は、インストーラーを無人モードで実行する必要があるため、アプリケーションはサイレント実行のサイレント フラグを必要とする場合に使用する必要があります。 ``/S`` フラグは非常に一般的なサイレント フラグですが、セットアップ ファイルを作成するために使用したインストーラー テクノロジによっては、使用するフラグが異なる場合もあります。
 
 **ビデオ**
 
@@ -190,7 +190,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 #### <a name="package-an-application-that-doesnt-have-an-installer"></a>インストーラーがないアプリケーションをパッケージ化します。
 
-この例では、使用、``Installer``パラメーターをアプリケーションのファイルのルート フォルダーを指定します。
+この例では、使用して、``Installer``アプリケーションのファイルのルート フォルダーをポイントするパラメーター。
 
 アプリの実行可能ファイルを指定するには、`AppExecutable` パラメーターを使用します。
 
@@ -209,7 +209,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>アプリをパッケージ化し、アプリに署名して、パッケージに対して検証チェックを実行する
 
-この例は、点を除いて、アプリケーション ローカル テスト用に署名し、パッケージ アプリと Microsoft Store 要件に照らしてアプリを検証する方法を示しています 1 つ目に似ています。
+この例は、点を除いて、アプリケーション ローカル テスト用に署名し、パッケージ アプリと Microsoft Store 要件に照らしてアプリを検証する方法を示していますに 1 つ目に似ています。
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
@@ -336,7 +336,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 バグを解決、ビジュアルのアセットを追加またはライブ タイルなどの最新のエクスペリエンスを使用してアプリケーションを強化をパッケージ化されたアプリケーションに変更を加えたあります可能性があります。
 
-変更を加えた後、もう一度コンバーターを実行する必要はありません。 ほとんどの場合、することができますだけと再パッケージ化、アプリケーション、MakeAppx ツールを使って、アプリによって生成される appxmanifest.xml ファイル、DAC します。 「[Windows アプリ パッケージを生成する](desktop-to-uwp-manual-conversion.md#make-appx)」をご覧ください。
+変更を加えた後、もう一度コンバーターを実行する必要はありません。 ほとんどの場合、することができますだけと再パッケージ化アプリケーション MakeAppx ツールを使用して、アプリの appxmanifest.xml ファイル、DAC が生成されます。 「[Windows アプリ パッケージを生成する](desktop-to-uwp-manual-conversion.md#make-appx)」をご覧ください。
 
 * アプリのビジュアル アセットを変更する場合、新しいパッケージ リソース インデックス ファイルを生成し、MakeAppx ツールを実行して新しいパッケージを生成します。 「[パッケージ リソース インデックス (PRI) ファイルを生成する](desktop-to-uwp-manual-conversion.md#make-pri)」をご覧ください。
 

@@ -1,6 +1,6 @@
 ---
 author: TerryWarwick
-title: バーコード スキャナーを構成します。
+title: バーコード スキャナーの構成
 description: 目的のアプリケーションのバーコード スキャナーを構成する方法について説明します。
 ms.author: jken
 ms.date: 08/29/2018
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: b33c1d33fe88a09de36e8f80a3034b915d338861
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319402"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354770"
 ---
-# <a name="configure-a-barcode-scanner"></a>バーコード スキャナーを構成します。
+# <a name="configure-a-barcode-scanner"></a>バーコード スキャナーの構成
 
 バーコード スキャナーは、いくつかの異なるモードで構成することができます。  目的の用途に合わせてバーコード スキャナーを正しく構成することが重要です。
 
@@ -30,7 +30,7 @@ USB 接続されたバーコード スキャナーは、Windows に含まれて�
 ## <a name="bluetooth-barcode-scanner"></a>Bluetooth バーコード スキャナー
 Bluetooth で接続されているスキャナーで UWP バーコード スキャナー API を使用するには、バーコード スキャナーを **Serial Port Protocol - Simple Serial Interface (SPP-SSI)** モードで構成する必要があります。  **SPP-SSI モード**を有効にする手順については、バーコード スキャナーの説明書を参照するか、バーコード スキャナーの製造元にお問い合わせください。
 
-Bluetooth バーコード スキャナーを使用する前を使用してをペアリングする必要があります**設定 > デバイス > Bluetooth とその他のデバイス > [Bluetooth またはその他のデバイス**します。
+使用してペアリングする必要があります、Bluetooth バーコード スキャナーを使用する前に**設定 > デバイス > Bluetooth とその他のデバイス > [Bluetooth またはその他のデバイス**。
 
 開始し、 [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration)名前空間を使用して、ペアリング プロセスを制御できます。  詳細については、「[デバイスのペアリング](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices)」を参照してください。
 

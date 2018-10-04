@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, ユーザー ロール, ユーザーのアクセス許可, カスタム ロール, ユーザー アクセス, アクセス許可のカスタマイズ, 標準ロール
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317684"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351440"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>アカウント ユーザーのロールまたはカスタムのアクセス許可の設定
 
@@ -194,7 +194,7 @@ ms.locfileid: "4317684"
     <tbody>
     <tr><td align="left">    <b>プロモーション コード</b>     </td><td>    製品とそのアドオンの<a href="generate-promotional-codes.md">プロモーション コード</a>の注文と利用状況の情報、また利用状況情報を表示できます。         </td><td>    製品とそのアドオンの<a href="generate-promotional-codes.md">プロモーション コード</a>の注文の表示、管理、および作成、また利用状況情報の表示ができます。          </td><td>    該当なし (すべてのアドオンに親製品の設定が適用されます)     </td><td>    該当なし (すべてのアドオンに親製品の設定が適用されます)     </td></tr>
     <tr><td align="left">    <b>対象のプラン</b>     </td><td>    製品の<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">対象プラン</a>を表示できます。         </td><td>    製品の<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">対象プラン</a>を表示、管理、作成できます。          </td><td>    該当なし     </td><td>    該当なし      </td></tr>
-    <tr><td align="left">    <b>顧客への連絡</b>  </td><td>    <b>カスタマー フィードバック</b> アクセス許可も付与されている限り、<a href="respond-to-customer-feedback.md">カスタマー フィードバックへの返信</a>と<a href="respond-to-customer-reviews.md">カスタマー レビューへの返信</a>を表示できます。 製品に対して作成された<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知</a>も表示できます。    </td><td>    <a href="respond-to-customer-feedback.md">お客様のフィードバックに返信して</a>、<a href="respond-to-customer-reviews.md">顧客のレビューに返信</a>をが<b>お客様のフィードバック</b>のアクセス許可も付与されている限りすることができます。 製品に対する<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知の作成と送信</a>もできます。                   </td><td>    該当なし         </td><td>    該当なし                          </td></tr>
+    <tr><td align="left">    <b>顧客への連絡</b>  </td><td>    <b>カスタマー フィードバック</b> アクセス許可も付与されている限り、<a href="respond-to-customer-feedback.md">カスタマー フィードバックへの返信</a>と<a href="respond-to-customer-reviews.md">カスタマー レビューへの返信</a>を表示できます。 製品に対して作成された<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知</a>も表示できます。    </td><td>    <b>お客様のフィードバック</b>のアクセス許可も付与されている限り、<a href="respond-to-customer-feedback.md">顧客のフィードバックに返信して</a>、<a href="respond-to-customer-reviews.md">顧客のレビューに返信する</a>にをことができます。 製品に対する<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知の作成と送信</a>もできます。                   </td><td>    該当なし         </td><td>    該当なし                          </td></tr>
     <tr><td align="left">    <b>実験</b></td><td>    製品の<a href="../monetize/run-app-experiments-with-a-b-testing.md">実験 (A/Bテスト)</a>と実験データを表示できます。   </td><td>    製品の<a href="../monetize/run-app-experiments-with-a-b-testing.md">実験 (A/B テスト)</a> の作成、管理、および表示と、実験データの表示ができます。     </td><td>    該当なし  </td><td>    該当なし                 </td></tr>
     <tr><td align="left">    <b>Microsoft Store セール イベント</b>&nbsp;*</td><td>    製品のセール イベントの状態を表示できます。   </td><td>    製品をセール イベントに追加して、割引を構成できます。      </td><td>    製品のセール イベントの状態を表示できます。   </td><td>    製品をセール イベントに追加して、割引を構成できます。      </td></tr>
     </tbody>

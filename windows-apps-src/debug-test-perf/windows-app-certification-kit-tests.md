@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4316428"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351826"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
 
@@ -320,11 +320,11 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 アプリが、デバッグ用のビルドではなくリリース用ビルドとしてコンパイルされていることを確認します。
 
-> **注:** アプリが[UWP アプリ用 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のみを使っている場合でも、デバッグ用ビルドのアプリはこのテストに合格します。
+> **注:** アプリが[UWP アプリ用の Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のみを使っている場合でも、アプリのデバッグ ビルドにはこのテストは失敗します。
 
 [UWP アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)ではないアプリを使用して、API を識別するエラー メッセージを確認します。
 
-> **注:** 構成が UWP アプリのみ Windows SDK の Api を使っている場合でも、デバッグ構成で構築された C++ アプリにはこのテストは失敗します。 詳しくは、 [UWP アプリでの Windows api の代替手段](http://go.microsoft.com/fwlink/p/?LinkID=244022)を確認します。
+> **注:** 構成が UWP アプリのみ Windows SDK の Api を使っている場合でも、デバッグ構成で構築された C++ アプリにはこのテストは失敗します。 詳しくは、 [UWP アプリでの Windows api の代替手段](http://go.microsoft.com/fwlink/p/?LinkID=244022)を表示します。
 
 ## <a name="performance-tests"></a>パフォーマンスのテスト
 
@@ -434,7 +434,7 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 <tr><td>
 <p>The "resources.pri" file must not have AutoMerge enabled. ("resources.pri" ファイルは AutoMerge を有効にしないでください。)</p>
 </td><td>
-<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft Store を通じて配布するアプリをお勧めしません。 Microsoft Store を通じて配布されるアプリの resources.pri では、アプリのパッケージのルートであるをアプリがサポートする言語のリファレンスをすべて含める必要があります。</p>
+<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft Store を通じて配布する予定のアプリをお勧めしません。 Microsoft Store を通じて配布するアプリの resources.pri では、アプリのパッケージのルートをアプリがサポートする言語のリファレンスをすべて含める必要があります。</p>
 </td></tr>
 <tr><td>
 <p>The string {string} failed the max length restriction of {number} characters. (文字列 {string} が {number} 文字の最大文字数の制限を満たしていません。)</p>
@@ -502,7 +502,7 @@ UWP アプリ完成していて完全に機能することが期待されます�
 
 ### <a name="background"></a>背景
 
-Microsoft Store の認定を受けるアプリする必要がありますがコンパイルされずデバッグ用、デバッグ版の実行可能ファイルを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
+Microsoft Store の認定を受けるアプリする必要がありますいないにコンパイル デバッグされ実行可能ファイルのデバッグ バージョンを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -552,7 +552,7 @@ Microsoft Store では、すべてのアプリケーションが Direct3D を使
 
 ### <a name="direct3d-trim-after-suspend"></a>中断後の Direct3D トリミング
 
-> **注:** このテストは、Windows 8.1 以降に開発された UWP アプリにのみ適用されます。
+> **注:** このテストは、Windows 8.1 以降を開発する UWP アプリにのみ適用されます。
 
 ### <a name="background"></a>背景
 

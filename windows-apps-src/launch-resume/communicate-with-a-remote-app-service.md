@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト、バック グラウンド タスク、アプリ サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 72a8a02d14a4fa9287c987150a526745b294b65f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309262"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361237"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>リモート アプリ サービスとの通信
 
@@ -24,7 +24,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 ## <a name="set-up-the-app-service-on-the-host-device"></a>ホスト デバイスでアプリ サービスをセットアップする
 リモート デバイスでアプリ サービスを実行するには、アプリ サービスのプロバイダーが既にそのデバイスにインストールされている必要があります。 このガイドでは、[ユニバーサル Windows アプリ サンプルのリポジトリ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)で入手可能な[乱数ジェネレーター アプリ サービス](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)の CSharp バージョンを使います。 独自のアプリ サービスを記述する方法については、「[アプリ サービスの作成と利用](how-to-create-and-consume-an-app-service.md)」をご覧ください。
 
-既製のアプリ サービスを使うか独自のアプリ サービスを記述するかにかかわらず、リモート システムとの互換性を確保するにはいくらかの編集を行う必要があります。 Visual Studio で、アプリ サービス プロバイダーのプロジェクト (サンプルでは「AppServicesProvider」と呼ばれます) に移動し、その _Package.appxmanifest_ ファイルを選びます。 右クリックして **[コードの表示]** を選び、ファイルの全内容を表示します。 メイン**アプリケーション**要素内で**Extensions**要素を作ります (または方が既に存在する場合)。 **拡張機能**としてアプリ サービス プロジェクトを定義し、その親プロジェクトの参照を作成します。
+既製のアプリ サービスを使うか独自のアプリ サービスを記述するかにかかわらず、リモート システムとの互換性を確保するにはいくらかの編集を行う必要があります。 Visual Studio で、アプリ サービス プロバイダーのプロジェクト (サンプルでは「AppServicesProvider」と呼ばれます) に移動し、その _Package.appxmanifest_ ファイルを選びます。 右クリックして **[コードの表示]** を選び、ファイルの全内容を表示します。 メイン**アプリケーション**要素内で**拡張機能**要素を作成 (または、既に存在している場合)。 **拡張機能**をアプリ サービスとして、プロジェクトを定義し、その親プロジェクトの参照を作成します。
 
 ``` xml
 ...
@@ -36,7 +36,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 ...
 ```
 
-**AppService**の要素の横にある**SupportsRemoteSystems**属性を追加します。
+**AppService**要素の横にある**SupportsRemoteSystems**属性を追加します。
 
 ``` xml
 ...

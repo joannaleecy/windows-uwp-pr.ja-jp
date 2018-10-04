@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319380"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354630"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} マークアップ拡張
 
@@ -61,13 +61,13 @@ XAML の [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/b
 
 ### <a name="xbind-in-controltemplate"></a>ControlTemplate で X:bind
 
-次回のメジャー アップデートを Windows 10 以降、 **X:bind**マークアップ拡張を使用することができます[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) **TemplateBinding**を使用して任意の場所です。 
+次回のメジャー アップデートを Windows 10 以降、 **X:bind**マークアップ拡張を使用することができます[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)で**TemplateBinding**を使用した任意の場所です。 
 
 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType)プロパティが必要です (オプションではなく) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) **X:bind**を使用する場合にします。
 
 **X:bind**をサポートできるようになりましたとして使用できます両方[関数バインディング](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)でも、双方向バインディング
 
-次の例では、TextBlock.Text Button.Content.ToString() と評価されます。 ControlTemplate で TargetType はデータ ソースとして機能し、親に TemplateBinding と同じ結果を実現します。
+次の例では、TextBlock.Text Button.Content.ToString() と評価されます。 ControlTemplate で TargetType では、データ ソースとして機能し、親に TemplateBinding と同じ結果を実現します。
 
 ```xaml
 <ControlTemplate TargetType="Button">

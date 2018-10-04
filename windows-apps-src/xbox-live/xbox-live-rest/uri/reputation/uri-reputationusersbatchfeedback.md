@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e8989e05ce4874b3783e9cf130124be3f2129f3
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4309713"
+ms.locfileid: "4361126"
 ---
 # <a name="usersbatchfeedback"></a>/users/batchfeedback
  
-これらの Uri のドメインとポート番号を`reputation.xboxlive.com:10443`します。
+これらの Uri のドメインとポート番号は`reputation.xboxlive.com:10443`します。
  
 <a id="ID4EW"></a>
 
@@ -36,7 +36,7 @@ ms.locfileid: "4309713"
 
 [POST](uri-reputationusersbatchfeedbackpost.md)
 
-&nbsp;&nbsp;タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。
+&nbsp;&nbsp;タイトルのサービスによってタイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するために使用します。
  
 <a id="ID4EJB"></a>
 

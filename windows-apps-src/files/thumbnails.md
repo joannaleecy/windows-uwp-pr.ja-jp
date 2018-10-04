@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: df1eec58d936ba4f03e1eadae534abf0620b1a39
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4314116"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350961"
 ---
 # <a name="thumbnail-images"></a>サムネイル画像
 

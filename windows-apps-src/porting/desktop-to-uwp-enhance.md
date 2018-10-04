@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 392f8166e16c028a57bc9e27039a9884f1d9714a
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320354"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355747"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Windows 10 向けのデスクトップ アプリを強化する
 
@@ -78,11 +78,11 @@ UWP API を使用するには、プロジェクトにいくつかの変更を加
 
 :white_check_mark: **追加するエクスペリエンスを最初に決定する**
 
-選択肢はたくさんあります。 たとえば、収益化 Api、別のユーザーが投稿した新しい写真など共有興味深いコンテンツがある場合は、アプリケーションに注目を使用して、発注フローを簡略化できます。
+選択肢はたくさんあります。 たとえば、収益化 Api、別のユーザーが投稿した新しい写真など共有に関心のあるものがある場合は、アプリケーションに注目を使用して、発注フローを簡略化できます。
 
 ![トースト](images/desktop-to-uwp/toast.png)
 
-ユーザーがメッセージを無視したり、非表示にした場合でも、ユーザーはアクション センターで再度メッセージを表示し、クリックすることで、アプリを開くことができます。 これにより、アプリケーションとのエンゲージメントを向上し、オペレーティング システムと密接に統合表示されるアプリケーションの特典には。 このエクスペリエンスのコードについては、少し後で紹介します。
+ユーザーがメッセージを無視したり、非表示にした場合でも、ユーザーはアクション センターで再度メッセージを表示し、クリックすることで、アプリを開くことができます。 これにより、アプリケーションとのエンゲージメントを向上し、表示のオペレーティング システムと密接に統合アプリケーションの特典には。 このエクスペリエンスのコードについては、少し後で紹介します。
 
 さまざまなアイデアを[デベロッパー センター](https://developer.microsoft.com/windows)で参照してください。
 
@@ -173,7 +173,7 @@ void UWP::ShowToast()
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>Windows XP、Windows Vista、および Windows 7/8 インストール ベースのサポート
 
-新しいブランチを作成し、個別のコード ベースを保守しなくても、Windows 10 向けのアプリを現代化できます。
+新しいブランチを作成し、個別のコード ベースを保守しなくても、Windows 10 向けアプリを現代化できます。
 
 Windows 10 ユーザー向けに個別のバイナリをビルドする場合は、条件付きコンパイルを使用します。 すべての Windows ユーザーに対して 1 組のバイナリをビルドして展開する場合は、ランタイム チェックを使用します。
 

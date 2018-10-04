@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309322"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354113"
 ---
 # <a name="keyboard-accelerators"></a>キーボード アクセラレータ
 
@@ -252,7 +252,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>既定のキーボード動作を上書き
 
-場合によっては、Backspace キーや Enter キーなどの特定のキーの既定の動作をオーバーライドする必要があります。 例: 
+場合によっては、Backspace キーまたは Enter キーなどの特定のキーの既定の動作をオーバーライドする必要があります。 例: 
 
 ## <a name="disable-a-keyboard-accelerator"></a>キーボード アクセラレータを無効にする 
 
@@ -361,7 +361,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 **Windows 10、バージョン 1803 (April 2018 Update) 以降**
 
-既定では、キーボード アクセラレータを宣言すると ( [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) を除くすべてのコントロールを表示、対応するキーの組み合わせヒントに表示します。
+既定では、キーボード アクセラレータを宣言すると、( [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) を除くすべてのコントロールを表示、対応するキーの組み合わせヒントに表示します。
 
 > [!NOTE] 
 > コントロールには、複数のアクセラレータが定義されている場合、最初のものだけが表示されます。

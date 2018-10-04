@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 収益化, エンゲージメント, プロモーション, ストア サービス
 ms.localizationpriority: medium
-ms.openlocfilehash: 58993f3a62f6fd85589aeac931e3abbb42a6cda6
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 02ef073e319af3fe2cf3bdd7906a7027200c4854
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689048"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352511"
 ---
 # <a name="monetization-engagement-and-store-services"></a>収益化、エンゲージメント、ストア サービス
 
@@ -36,7 +36,7 @@ Microsoft Store の手数料に関する説明とアプリの収益を受け取�
 | [デベロッパー センターのカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)  | UWP アプリからのカスタム イベントをログに記録し、デベロッパー センター ダッシュボードの[利用状況レポート](../publish/usage-report.md)のイベントを確認します。 この機能を使うには、Microsoft Store Services SDK が必要です。 |
 | [評価とレビューを求める](request-ratings-and-reviews.md) |  プログラムで評価とレビュー UI を表示して、ユーザーにアプリの評価やレビューを求めます。  |
 | [Microsoft Store サービス](using-windows-store-services.md)    |  RESTful API を使用して、ストアへの申請の自動化、アプリの分析データへのアクセス、ストアに関連するその他のタスクの自動化を行う方法を説明します。    |
-| [市販デモ エクスペリエンス (RDX) アプリを作成する](retail-demo-experience.md)        |  小売店で PC やモバイルのデモ デバイスにインストールできる、市販デモ エクスペリエンス アプリを作成する方法を説明します。  |
+| [市販デモ (RDX) 機能をアプリに追加します。](retail-demo-experience.md)        |  Pc やデバイス販売フロアに試すお客様にすぐに、Windows アプリで、市販デモ モードが含まれます。  |
 
 ## <a name="related-topics"></a>関連トピック
 

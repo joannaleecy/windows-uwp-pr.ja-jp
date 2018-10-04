@@ -11,11 +11,11 @@ keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320230"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351335"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>UWP アプリの自動ビルドを設定する
 
@@ -258,7 +258,7 @@ CI_MyUWPApp_1.1.2501.0
 
 次に、手動で、または既存のアプリ パッケージ ファイルをアップロードすることで、HockeyApp アプリを作成できます。 詳しくは、[新しいアプリを作成する方法に関するページ](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)をご覧ください。  
 
-既存のアプリ パッケージ ファイルを使用して、ビルド ステップを追加し、ビルド ステップのバイナリ ファイルのパスのパラメーターを設定します。 
+既存のアプリ パッケージ ファイルを使用するには、ビルド ステップを追加し、ビルド ステップのバイナリ ファイルのパス パラメーターを設定します。 
 
 ![HockeyApp を構成する](images/building-screen15.png) 
 
@@ -295,7 +295,7 @@ Visual Studio Team Services の Microsoft Store 用の拡張機能を使用し�
 
 Azure Active Directory (AD) を使用してデベロッパー センター アカウントを接続し、AD で要求を認証するアプリを作成する必要があります。 これを実行するには、拡張機能のページのガイダンスに従います。 
 
-拡張機能を構成した後は、ビルド タスクを追加し、アプリの ID とアップロード ファイルの場所を使用して構成します。
+拡張機能を構成した後は、ビルド タスクを追加し、アプリの ID と、アップロード ファイルの場所を使用して構成します。
 
 ![デベロッパー センターを構成する](images/building-screen17.png) 
 
@@ -319,7 +319,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 `Add-AppDevPackage.ps1` PowerShell スクリプトを使用してアプリをインストールします。 このスクリプトは、証明書を追加して、ローカル コンピューターの信頼されたルート証明セクションにをインストールするかアプリのパッケージ ファイルを更新します。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Windows 10 Anniversary Update でのアプリのサイドロード
-Windows 10 Anniversary update では、アプリのパッケージ ファイルをダブルクリックし] ダイアログ ボックスで [インストール] ボタンを選択してアプリをインストールできます。 
+Windows 10 Anniversary update では、アプリのパッケージ ファイルをダブルクリックし、ダイアログ ボックスで [インストール] ボタンを選択してアプリをインストールできます。 
 
 ![rs1 でのサイドロード](images/building-screen18.png) 
 

@@ -1,8 +1,8 @@
 ---
 author: Xansky
 ms.assetid: 99DB5622-3700-4FB2-803B-DA447A1FD7B7
-description: 特定の日付範囲やその他のオプション フィルターを毎日のアプリの使用状況データを取得するのに Microsoft Store 分析 API の以下のメソッドを使用します。
-title: 毎日のアプリの使用量を取得します。
+description: 毎日のアプリの使用状況データを取得する特定の日付範囲やその他のオプション フィルターを Microsoft Store 分析 API でこのメソッドを使います。
+title: アプリの使用状況 (日単位) の取得
 ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, 使用状況
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4310176"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350798"
 ---
-# <a name="get-daily-app-usage"></a>毎日のアプリの使用量を取得します。
+# <a name="get-daily-app-usage"></a>アプリの使用状況 (日単位) の取得
 
 (過去 90 日間のみ) 特定の日付範囲やその他のオプション フィルターを使って、アプリケーションに関する JSON 形式で (Xbox マルチプレイヤーは含まない) 集計の使用状況データを取得するのに、Microsoft Store 分析 api の以下のメソッドを使用します。 この情報も[使用状況] レポート](../publish/usage-report.md)では、Windows デベロッパー センター ダッシュ ボードで使用できます。
 
@@ -93,9 +93,9 @@ Authorization: Bearer <your access token>
 | packageVersion            | string  | 使用状況が発生したパッケージのバージョン。                          |
 | market                    | string  | お客様がアプリを使用する市場の ISO 3166 国コードです。 |
 | subscriptionName          | string  | Xbox Game Pass を通じて使用量があったかどうかを示します。                            |
-| dailySessionCount         | long    | その日にユーザー セッションの数。                                  |
-| engagementDurationMinutes | double  | ユーザーが積極的に個別のアプリを起動したときに始まり、時間の期間で測定されたアプリ (プロセスが開始) を使用して終了 (プロセスの終了) または後に一定の期間の終了位置分です。             |
-| dailyActiveUsers          | long    | その日にアプリを使用しているユーザーの数。                           |
+| dailySessionCount         | long    | その日のユーザー セッション数です。                                  |
+| engagementDurationMinutes | double  | ユーザーが積極的に個別のアプリを起動したときに始まり期間によって測定アプリ (プロセスが開始) を使用して終了 (プロセスの終了) または後に一定の期間の終了位置分です。             |
+| dailyActiveUsers          | long    | その日にアプリを使用しているお客様の数。                           |
 | dailyActiveDevices        | long    | すべてのユーザーがアプリを操作するために使用 1 日あたりのデバイスの数。  |
 | dailyNewUsers             | long    | 最初にその日にアプリを使用したユーザーの数。    |
 | monthlyActiveUsers        | long    | アプリをその月を使っているユーザーの数。                         |

@@ -7,22 +7,22 @@ ms.date: 04/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, 更新, バック グラウンド タスク、updatetask, バック グラウンド タスク
+keywords: windows 10、uwp、update、バック グラウンド タスク、updatetask、バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: fcba2cb736f86cebc6d2664e2ec3b557d47c86d7
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311342"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350994"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>UWP アプリが更新された際のバックグラウンド タスクの実行
 
 ユニバーサル Windows プラットフォーム (UWP) アプリが更新された後に実行されるバック グラウンド タスクを作成する方法について説明します。
 
-ユーザーがデバイスにインストールされているアプリに更新プログラムをインストールした後、オペレーティング システムによって更新タスクのバック グラウンド タスクが呼び出されます。 これにより、アプリを初期化タスクなど、ユーザーが、更新されたアプリを起動する前にデータベース スキーマとなどの更新、新しいプッシュ通知チャネルの初期化を実行できます。
+ユーザーがデバイスにインストールされているアプリに更新プログラムをインストールした後、オペレーティング システムによって更新タスクのバック グラウンド タスクが呼び出されます。 これにより、ユーザーが、更新されたアプリを起動する前に、データベース スキーマの更新、新しいプッシュ通知チャネルを初期化などの初期化タスクを実行するアプリです。
 
-更新のタスクとは異なります[ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)トリガーを使用して、その場合、アプリする必要があります実行するために少なくとも 1 回、**がアクティブ化されるバック グラウンド タスクを登録するために更新される前に、バック グラウンド タスクを起動します。ServicingComplete**トリガーします。  更新タスクが登録されていないし、ためが実行されていないがをアップグレードすると、アプリがまだその更新タスクをトリガーします。
+更新のタスクとは異なります[ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)トリガーを使用して、その場合、アプリする必要があります実行するために少なくとも 1 回、**がアクティブ化されるバック グラウンド タスクを登録するために更新される前に、バック グラウンド タスクを起動します。ServicingComplete**トリガーします。  更新タスクが登録されていないし、ために実行されていないがをアップグレードすると、アプリがまだその更新タスクをトリガーします。
 
 ## <a name="step-1-create-the-background-task-class"></a>手順 1: バック グラウンド タスク クラスを作成します。
 
@@ -31,11 +31,11 @@ ms.locfileid: "4311342"
 - Windows ランタイム コンポーネント プロジェクトをソリューションに追加します。
 - アプリからコンポーネントへの参照を作成します。
 - [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)を実装するコンポーネントのパブリック、シール クラスを作成します。
-- 更新タスクの実行時に呼び出される必須のエントリ ポイントは、 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811)メソッドを実装します。 バック グラウンド タスクからの非同期呼び出しを行う場合は[の作成と登録アウト プロセス バック グラウンド タスク](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)の**Run**メソッドで、保留を使用する方法について説明します。
+- 更新のタスクを実行するときに呼び出される必須のエントリ ポイントは、 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811)メソッドを実装します。 バック グラウンド タスクからの非同期呼び出しを行う場合は[の作成と登録アウト プロセス バック グラウンド タスク](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)の**Run**メソッドで、保留を使用する方法について説明します。
 
 更新プログラムのタスクを使用して (「を実行するバック グラウンド タスクの登録」のセクション**の作成と登録アウト プロセス バック グラウンド タスク**のトピックで)、このバック グラウンド タスクを登録する必要はありません。 これは、タスクを登録するアプリにコードを追加する必要はなく、アプリがバック グラウンド タスクを登録するように更新されている前に、1 回以上実行がないために、更新のタスクを使用する主な理由です。
 
-次のサンプル コードは、c# で更新タスクのバック グラウンド タスク クラスの基本的な開始点を示します。 バック グラウンド タスク クラス自体とバック グラウンド タスク プロジェクト内の他のすべてのクラスは、**パブリック**して**シール**する必要があります。 バック グラウンド タスク クラスは、 **IBackgroundTask**から派生し、次に示すシグネチャを持つ public **Run()** メソッドがある必要があります。
+次のサンプル コードでは、c# で更新タスクのバック グラウンド タスク クラスの基本的な開始点を示しています。 バック グラウンド タスク クラス自体とバック グラウンド タスク プロジェクト内の他のすべてのクラスは、**パブリック**にして**シール**必要があります。 バック グラウンド タスク クラスでは、 **IBackgroundTask**から派生を次に示すシグネチャを持つパブリック**Run()** メソッドがある必要があります。
 
 ```cs
 using Windows.ApplicationModel.Background;
@@ -54,7 +54,7 @@ namespace BackgroundTasks
 
 ## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>手順 2: パッケージ マニフェストでバック グラウンド タスクを宣言します。
 
-Visual Studio のソリューション エクスプ ローラーで、 **Package.appxmanifest**を右クリックし、パッケージ マニフェストを表示する**コードの表示**] をクリックします。 次の追加`<Extensions>`更新タスクを宣言する XML:
+Visual Studio のソリューション エクスプ ローラーでは、 **Package.appxmanifest**を右クリックし、パッケージ マニフェストを表示する**コードの表示**] をクリックします。 次の追加`<Extensions>`更新タスクを宣言する XML:
 
 ```XML
 <Package ...>
@@ -72,9 +72,9 @@ Visual Studio のソリューション エクスプ ローラーで、 **Package
 </Package>
 ```
 
-上記の XML で、 `EntryPoint` namespace.class 名更新タスク クラスの属性を設定します。 名前が区別されます。
+上記の XML でことを確認します、`EntryPoint`更新タスク クラスの namespace.class 名に属性を設定します。 名前が区別されます。
 
-## <a name="step-3-debugtest-your-update-task"></a>手順 3: デバッグ/テスト、更新タスク
+## <a name="step-3-debugtest-your-update-task"></a>手順 3: デバッグ/テスト、更新プログラムのタスク
 
 展開したアプリをコンピューターに更新する必要があるようにを確認します。
 
@@ -86,16 +86,16 @@ Visual Studio のソリューション エクスプ ローラーで、 **Package
 
 ![デバッグを設定します。](images/do-not-launch-but-debug.png)
 
-次に、UpdateTask がトリガーされることを確認するには、パッケージのバージョン番号を大ききます。 ソリューション エクスプ ローラーで、パッケージ デザイナーを開きますアプリの**Package.appxmanifest**ファイルをダブルクリックし、**ビルド**番号を更新します。
+次に、UpdateTask がトリガーされることを確認するには、パッケージのバージョン番号を大ききます。 ソリューション エクスプ ローラーで、パッケージ デザイナーを開き、アプリの**Package.appxmanifest**ファイルをダブルクリックしてし、**ビルド**番号を更新します。
 
 ![バージョンを更新します。](images/bump-version.png)
 
-これで、Visual Studio 2017 で f5 キーを押すと、アプリが更新し、システムがバック グラウンドで UpdateTask コンポーネントをアクティブ化します。 デバッガーは、自動的にバック グラウンド プロセスにアタッチします。 ブレークポイントがヒットを取得して、更新コードのロジックをステップ実行することができます。
+これで、Visual Studio 2017 で f5 キーを押すと、アプリを更新し、システムがバック グラウンドで UpdateTask コンポーネントをアクティブ化します。 デバッガーは、自動的にバック グラウンド プロセスにアタッチします。 ブレークポイントがヒットを取得して、更新コード ロジックをステップ実行することができます。
 
-バック グラウンド タスクが完了したら、同じデバッグ セッション内で Windows のスタート メニューからフォア グラウンド アプリを起動できます。 デバッガーはもう一度自動的にアタッチ、今度は、フォア グラウンド プロセスと、アプリのロジックをステップ実行することができます。
+バック グラウンド タスクが完了したら、同じデバッグ セッションで Windows のスタート メニューからフォア グラウンド アプリを起動できます。 デバッガーはもう一度自動的にアタッチ、今度は、フォア グラウンド プロセスと、アプリのロジックをステップ実行することができます。
 
 > [!NOTE]
-> Visual Studio 2015 ユーザー: 上記の手順は、Visual Studio 2017 を適用します。 Visual Studio 2015 を使用している場合は、トリガーとそれに Visual Studio を除く、UpdateTask を添付しませんテストを同じ手法を使用することができます。 VS 2015 の代替の手順では、設定のエントリ ポイント、UpdateTask [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)をセットアップし、フォア グラウンド アプリから直接実行をトリガーします。
+> Visual Studio 2015 ユーザー: 上記の手順は、Visual Studio 2017 を適用します。 Visual Studio 2015 を使用している場合は、トリガーとそれに Visual Studio を除く、UpdateTask を添付しませんテストを同じ手法を使用することができます。 VS 2015 の代替の手順のエントリ ポイントとして、UpdateTask を設定する[ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)をセットアップし、フォア グラウンド アプリから直接実行をトリガーすることです。
 
 ## <a name="see-also"></a>関連項目
 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ef50154e1620f7f888db9969929d195b32960134
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4313241"
+ms.locfileid: "4361015"
 ---
 # <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
-ユーザーの避ける一覧を取得します。
+ユーザーの回避一覧を取得します。
 
   * [注釈](#ID4EQ)
   * [URI パラメーター](#ID4EZ)
@@ -61,15 +61,15 @@ ms.locfileid: "4313241"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization | string| HTTP 認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
-| Accept| string| コンテンツの種類の受け入れられるします。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
+| Authorization | string| HTTP の認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
+| Accept| string| コンテンツの種類の受け入れられる。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
 
 <a id="ID4EYD"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -86,8 +86,8 @@ ms.locfileid: "4313241"
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| string| 要求の本文の MIME タイプ。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
-| Content-Length| string| 応答に送信されるバイト数。 値の例: 34 します。 最大サイズ: なし。|
-| キャッシュ コントロール| string| キャッシュ動作を指定するサーバーからていねい要求します。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
+| Content-Length| string| 応答に送信されるバイト数です。 値の例: 34 します。 最大サイズ: なし。|
+| キャッシュ コントロール| string| キャッシュ動作を指定する、サーバーからていねい要求します。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
 
 <a id="ID4ESH"></a>
 

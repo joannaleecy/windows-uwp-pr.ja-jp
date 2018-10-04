@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 160a4ab0ff5bdc40ea46ff6d8fb9fd8e47f560e3
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315960"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4356870"
 ---
 # <a name="hardware-drm"></a>ハードウェア DRM
 
@@ -83,7 +83,7 @@ localSettings.values["SoftwareOverride"] = 1;
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-ハードウェア DRM を使用しているかどうかやを調べるには、C:\\Users\\ ソフトウェア DRM は、通知する最善の方法&lt;username&gt;\\AppData\\Local\\Packages\\&lt;アプリケーション名&gt;\\LocalCache\\PlayReady\\\*
+ハードウェア DRM を使用しているかどうかや、ソフトウェア DRM は、C:\\Users\\ を参照するを通知する最善の方法&lt;ユーザー名&gt;\\AppData\\Local\\Packages\\&lt;アプリケーション名&gt;\\LocalCache\\PlayReady\\\*
 
 -   mspr.hds ファイルがある場合は、ソフトウェア DRM を使っています。
 -   他の \*.hds ファイルがある場合は、ハードウェア DRM を使っています。

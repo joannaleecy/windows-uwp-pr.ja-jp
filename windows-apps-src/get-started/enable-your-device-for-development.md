@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ad817bbae2fb8b28b95095880aa1a65c391720f3
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4314015"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352083"
 ---
 # <a name="enable-your-device-for-development"></a>デバイスを開発用に有効にする
 
@@ -56,7 +56,7 @@ ms.locfileid: "4314015"
 
  デバイスでは、開発者モードを有効にすることも、サイドローディングのみを有効にすることもできます。
 
--   *Microsoft Store アプリ*は、既定の設定です。 アプリの開発中でない場合や、組織から配布された特殊な内部アプリを使っている場合は、この設定を有効にしておきます。
+-   *Microsoft Store アプリ*では、既定の設定です。 アプリの開発中でない場合や、組織から配布された特殊な内部アプリを使っている場合は、この設定を有効にしておきます。
 -   *サイドローディング*では、Microsoft Store の認証を受けていないアプリをインストールし、実行やテストを行うことができます。 たとえば、社内のみで使うアプリなどがあります。
 -   *開発者モード*を使用すると、アプリをサイドロードし、Visual Studio からデバッグ モードでアプリを実行することもできます。 
 
@@ -150,7 +150,7 @@ Windows 10 PC から Windows 10 デバイスへのアプリの展開に使用で
 これらの問題に対する回避策を検索するには、[既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)フォーラムをご覧ください。 
 
 > [!NOTE]
-> 開発者モードが正しくインストールしない場合、要求をフィードバックをお勧めします。 **フィードバック Hub**アプリでは、**新しいフィードバックの追加**を選択し、**開発者向けプラットフォーム**カテゴリとサブカテゴリ**開発者モード**を選択します。 フィードバックの送信は、Microsoft が発生した問題を解決するに役立ちます。
+> 開発者モードが正しくインストールしない場合、要求をフィードバックをお勧めします。 **フィードバック Hub**アプリでは、**新しいフィードバックの追加**を選択し、**開発者向けプラットフォーム**カテゴリと**開発者モード**のサブカテゴリを選択します。 フィードバックの送信は、Microsoft が発生した問題を解決するに役立ちます。
 
 ### <a name="failed-to-locate-the-package"></a>パッケージ検索エラー
 

@@ -12,13 +12,13 @@ keywords: Windows 10, UWP
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: c81e8d07efa04e93128089eaec78fb83b822a4b9
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317910"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354047"
 ---
-# <a name="distribute-a-packaged-desktop-application"></a>デスクトップ アプリケーションのパッケージを配布します。
+# <a name="distribute-a-packaged-desktop-application"></a>デスクトップ アプリケーションのパッケージの配布します。
 
 Windows ストアまたはサイドローディングをパッケージ化されたデスクトップ アプリケーションを公開して 1 つまたは複数のデバイスにします。  
 
@@ -29,24 +29,24 @@ Windows ストアまたはサイドローディングをパッケージ化され
 
 [Microsoft Store](https://www.microsoft.com/store/apps) は、お客様がアプリを取得する場合に最も便利な方法です。
 
-幅広いお客様を対象にそのストアにアプリを公開します。 また、組織のお客様は、[ビジネス向け Microsoft ストア](https://www.microsoft.com/business-store)を通じて、組織に内部的に配布するアプリを入手できます。
+幅広いお客様を対象にそのストアにアプリを公開します。 また、組織のお客様は、[ビジネス向け Microsoft ストア](https://www.microsoft.com/business-store)を通じて、組織に内部的に配布するアプリケーションを入手できます。
 
 Microsoft Store への公開を計画している場合は、申請プロセスの一部としていくつかの追加の質問をされます。 これは、パッケージ マニフェストが **runFullTrust** という名前の制限付き機能を宣言し、弊社でアプリケーションによるその機能の使用を承認する必要があるためです。 この要件の詳細については、「[制限付き機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)」を参照してください。
 
 ストアに提出する前に、アプリケーションに署名する必要はありません。
 
 >[!IMPORTANT]
-> Microsoft Store にアプリを公開する場合は、アプリケーションが Windows 10 秒を実行しているデバイスで正しく動作することを確認します。これは、ストア要件です。 「[Windows アプリの Windows 10 S 対応をテストする](desktop-to-uwp-test-windows-s.md)」をご覧ください。
+> Microsoft Store にアプリを公開することを計画する場合、アプリケーションが Windows 10 秒を実行しているデバイスで正しく動作することを確認します。これは、ストア要件です。 「[Windows アプリの Windows 10 S 対応をテストする](desktop-to-uwp-test-windows-s.md)」をご覧ください。
 
 <a id="side-load" />
 
-## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Microsoft Store に掲載せずにアプリを配布します。
+## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Microsoft Store に掲載せずに、アプリケーションを配布します。
 
-配布するアプリケーション ストアを使用することがなく場合、は、1 つまたは複数のデバイスにアプリを手動で配布できます。
+場合は、ストアを使用せず、アプリケーションを配布する場合ではなく、1 つまたは複数のデバイスにアプリを手動で配布できます。
 
 この方法は、配布エクスペリエンスをきめ細かく制御する必要がある場合や、Microsoft Store の認定プロセスへの関与が望ましくない場合などに有効です。
 
-ストアに掲載せずには、他のデバイスにアプリを配布するには、証明書を取得して、それらのデバイスにアプリを使用してその証明書、サイドローディングによって、アプリケーションの署名する必要があります。
+ストアに掲載せずには、他のデバイスにアプリを配布するには、証明書を取得して、それらのデバイス上にアプリケーションを使用してその証明書、サイドローディングによって、アプリケーションに署名する必要があります。
 
 [証明書を作成](../packaging/create-certificate-package-signing.md)することも、[Verisign](https://www.verisign.com/) などのポピュラーなベンダーから取得することもできます。
 
@@ -57,9 +57,9 @@ Windows 10 S を実行しているデバイスにアプリを配布する場合�
 > [!IMPORTANT]
 > 証明書の発行元名がアプリの発行者名と一致することを確認してください。
 
-証明書を使って、アプリケーションの署名、 [SignTool を使用するアプリケーション パッケージの署名](../packaging/sign-app-package-using-signtool.md)を参照してください。
+証明書を使用して、アプリケーションの署名、 [SignTool を使用するアプリケーション パッケージの署名](../packaging/sign-app-package-using-signtool.md)を参照してください。
 
-サイドローディング アプリの他のデバイスに[サイドローディング LOB アプリの Windows 10 で](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)参照してください。
+サイドローディングは、他のデバイスに、アプリケーションには、 [LOB アプリのサイドローディングでは、Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)が参照してください。
 
 **ビデオ**
 
@@ -74,7 +74,7 @@ Windows 10 S を実行しているデバイスにアプリを配布する場合�
 ユーザーによってパッケージ アプリが使用されるようにするには、アプリを配布する前に、パッケージ マニフェストにいくつかの拡張機能を追加することを検討してください。 次のようなことができます。
 
 * 既存のスタート タイルとタスク バー ボタンの参照先をパッケージ アプリに設定する。
-* ファイルの種類のセットを使用してパッケージ化されたアプリケーションを関連付けます。
+* パッケージ化されたアプリケーションを一連のファイルの種類に関連付けます。
 * 既定では、特定の種類のファイルを開き、パッケージ化されたアプリケーションを作成します。
 
 拡張機能の完全な一覧と使用方法のガイダンスについては、「[アプリにユーザーを移行する](desktop-to-uwp-extensions.md#transition-users-to-your-app)」を参照してください。
@@ -127,7 +127,7 @@ private void MigrateUserData()
 
 ### <a name="uninstall-the-desktop-version-of-your-app"></a>アプリのデスクトップ バージョンをアンインストールする
 
-最初にアクセス許可を求めることがなく、ユーザーのデスクトップ アプリケーションをアンインストールしないことをお勧めします。 ユーザーに許可を求めるには、そのためのダイアログ ボックスを表示します。 ユーザーによって、アプリのデスクトップ バージョンをアンインストールしないように指定されることも考えられます。 発生した場合は、デスクトップ アプリケーションの使用をブロックまたは両方のアプリのサイド バイ サイド使用をサポートするかどうかを決定する必要があります。
+最初にアクセス許可を求めることがなく、ユーザーのデスクトップ アプリケーションをアンインストールしないことをお勧めします。 ユーザーに許可を求めるには、そのためのダイアログ ボックスを表示します。 ユーザーによって、アプリのデスクトップ バージョンをアンインストールしないように指定されることも考えられます。 その場合は、デスクトップ アプリケーションの使用をブロックまたは両方のアプリのサイド バイ サイド使用をサポートするかどうかを決定する必要があります。
 
 例として、.NET ベースのパッケージ アプリでの方法を次に示します。
 

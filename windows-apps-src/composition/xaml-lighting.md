@@ -1,6 +1,6 @@
 ---
 author: daneuber
-title: XAML 照明
+title: XAML の照明
 description: Light オブジェクトは、動的な照明と反射をシミュレートするために SceneLightingEffect と共に使用されます。
 ms.author: jimwalk
 ms.date: 06/28/2018
@@ -15,13 +15,13 @@ dev_langs:
 - cpp
 - cppwinrt
 ms.openlocfilehash: b4e3678e17e7545dfe9cb4049ace7ff864198156
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319474"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355574"
 ---
-# <a name="xaml-lighting"></a>XAML 照明
+# <a name="xaml-lighting"></a>XAML の照明
 
 [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) オブジェクトは、動的な照明と反射をシミュレートするために [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) と共に使用されます。
 
@@ -29,7 +29,7 @@ ms.locfileid: "4319474"
 
 ## <a name="applying-lights-to-xaml-uielements"></a>XAML UIElement へのライトの適用
 
-XAML UIElement に動的なライトを適用するには、[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) オブジェクトを使用して [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) を適用します。 XamlLight は Uielement または XAML ブラシ、Uielement のツリーにライトを適用することをターゲットとするメソッドを提供し、現在いるかどうかに基づいてリソースを使用して CompositionLight の有効期間を管理します。
+XAML UIElement に動的なライトを適用するには、[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) オブジェクトを使用して [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) を適用します。 XamlLight がターゲットの Uielement または XAML ブラシ、Uielement のツリーにライトを適用するためのメソッドを提供し、現在いるかどうかに基づいて、リソースの使用を CompositionLight の有効期間を管理します。
 
 - XamlLight で **Brush** をターゲットにする場合、その Brush 使用している任意の UIElement の部分がライトによって照らされます。
 - XamlLight で **UIElement** をターゲットにする場合、UIElement 全体とその子 UIElement がライトによって照らされます。

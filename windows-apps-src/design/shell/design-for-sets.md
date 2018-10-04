@@ -12,11 +12,11 @@ keywords: windows 10, uwp, タイトル バー
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c3e0e6ec7331e860c9153e2a2e29a51fb5848bd
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318358"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351160"
 ---
 # <a name="designing-for-sets"></a>Sets の設計
 
@@ -119,7 +119,7 @@ titleBar.BackgroundColor = Windows.UI.Colors.Green;
 
 アプリ アイコンが Set 内で最適に表示されるようにするには、アプリの代替のプレートなしのアイコンを指定する必要があります  (アプリのタブで使用されるアプリ アイコンは、タスク バーで使用されるのと同じアイコンです)。代替のアイコンの目的は、任意の背景色に対して最適に表示されることです。 代替のアイコンは、利用可能な場合に使用されます。
 
-アプリ マニフェストでは、通常のアイコンだけでなく、代替フォームのプレートなしのアイコンを指定します。 詳細については、[アプリのアイコンとロゴ](/windows/uwp/design/style/app-icons-and-logos)を参照してください。 この記事での[アプリ アイコン アセットに関する詳細情報](/windows/uwp/design/style/app-icons-and-logos#more-about-app-icon-assets)] セクションで「プレートなしのターゲット サイズの一覧のアセット」として指定するアイコンが記載されています。
+アプリ マニフェストでは、通常のアイコンだけでなく、代替フォームのプレートなしのアイコンを指定します。 詳細については、[アプリのアイコンとロゴ](/windows/uwp/design/style/app-icons-and-logos)を参照してください。 指定するアイコンは、「プレートなしのターゲット サイズの一覧のアセット」として」の記事の[アプリ アイコン アセットの詳細](/windows/uwp/design/style/app-icons-and-logos#more-about-app-icon-assets)セクションに記載されています。
 
 アプリ マニフェストで代替のアイコンを指定しない場合、システムはタイル アイコンをタブの色で再プレートし、それを使用します。
 

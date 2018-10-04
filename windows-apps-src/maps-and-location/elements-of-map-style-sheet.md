@@ -11,16 +11,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, マップ, マップ スタイル シート
 ms.localizationpriority: medium
-ms.openlocfilehash: 11360f9d76fc07d7a6b24bd1e0bfb78df4f1d22d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: f0a657ada755b77abe8ffef6a38bfa1f9ece8fcd
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313604"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4353399"
 ---
 # <a name="map-style-sheet-reference"></a>マップ スタイル シート リファレンス
 
-マッピングの Microsoft テクノロジでは、_マップ スタイル シート_を使用して、地図の外観を定義します。  マップ スタイル シートでは、JavaScript Object Notation (JSON) を使用して定義され、さまざまな方法を含む Windows ストア アプリケーションの[MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol)で[MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_)メソッドを通じてで使用できます。
+マッピングの Microsoft テクノロジでは、_マップ スタイル シート_を使用して、地図の外観を定義します。  マップ スタイル シートでは、JavaScript Object Notation (JSON) を使用して定義され、さまざまな方法を含む、Windows ストア アプリケーションの[MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol)で[MapStyleSheet.ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_)メソッドを通じてで使用できます。
 
 スタイル シートを対話的に[マップ スタイル シート エディター](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft)アプリケーションを使用して作成できます。
 
@@ -49,26 +49,27 @@ ms.locfileid: "4313604"
     }
 ```
 
-このトピックでは、地図の外観をカスタマイズするために使用できる JSON のエントリと[プロパティ](#properties)を示します。
+このトピックでは、地図の外観をカスタマイズするために使用できる JSON のエントリと[プロパティ](#properties)を示します。  これらのプロパティは、 [MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.mapstylesheetentry)プロパティを通じてユーザー マップの要素にも適用できます。
 
 <a id="entries" />
 
 ## <a name="entries"></a>エントリ
-この表では、文字 ">" を使用してエントリ階層内のレベルを表しています。  また、どのバージョンの Windows の各エントリをサポートして無視されるも表示されます。
+この表では、文字 ">" を使用してエントリ階層内のレベルを表しています。  また、どのバージョンの Windows の各エントリのサポートし、を無視することも表示されます。
 
-| ビルド | Windows のリリースの名前 |
-|-------|----------------------|
-| 1506  | Creators Update      |
-| 1629  | Fall Creators Update |
-| 1713  | April 2018 Update    |
+| バージョン | Windows のリリースの名前 |
+|---------|----------------------|
+|  1703   | Creators Update      |
+|  1709   | Fall Creators Update |
+|  1803   | April 2018 Update    |
+|  1809   | 年 2018年 10 月 Update  |
 
-| 名前                         | プロパティ グループ            | 1506 | 1629 | 1713 | Next | 説明    |
+| 名前                         | プロパティ グループ            | 1703 | 1709 | 1803 | 1809 | 説明    |
 |------------------------------|---------------------------|------|------|------|------|----------------|
 | version                      | [バージョン](#version)       |  ✔   |  ✔   |  ✔   |  ✔   | 使用するスタイル シートのバージョン。 |
 | settings                     | [設定](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   | スタイル シート全体に適用される設定。 |
 | mapElement                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 地図のすべてのエントリの親エントリ。 |
 | > baseMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | すべての非ユーザー エントリの親エントリ。 |
-| >> area                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 土地を記述している領域を使用します。  これらは、構造体エントリの下にある物理建物と混同しないでくださいする必要があります。 |
+| >> area                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 土地を記述している領域を使用します。  これらは、構造体のエントリは物理建物と混同しないでくださいする必要があります。 |
 | >>> airport                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 空港を囲む領域。 |
 | >>> areaOfInterest           | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 企業や興味深いポイントが高度に集中しているエリアです。 |
 | >>> cemetery                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 墓地を囲む領域。 |
@@ -78,8 +79,8 @@ ms.locfileid: "4313604"
 | >>> industrial               | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 工業目的に使用される領域。 |
 | >>> island                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 島領域のラベル。 |
 | >>> medical                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 医療用に使用される領域 (例: 病院の構内)。 |
-| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 軍事を取り巻くまたは軍事使用できる領域。 |
-| >>> nautical                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 海事関連する目的に使用される領域。 |
+| >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 軍事を取り巻くまたは軍事使用される領域。 |
+| >>> nautical                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 海事の関連する目的に使用される領域。 |
 | >>> neighborhood             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Neighborhood 領域のラベル。 |
 | >>> runway                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 機内滑走として使われる領域。 |
 | >>> sand                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 海辺のような砂地の領域。 |
@@ -92,7 +93,7 @@ ms.locfileid: "4313604"
 | >>>> park                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 公園を囲む領域。 |
 | >>>> playingField            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 野球場やテニス コートなどの競技場。 |
 | >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 性質を囲む領域を予約します。 |
-| >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 何らかのアイコンで描画されるすべてのポイント機能。 |
+| >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | すべてのポイントは、何らかのアイコンで描画される機能です。 |
 | >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | 数値ラベルに対応します。 |
 | >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 自然な機能を表すアイコン。 |
 | >>>> peak                    | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 山頂を表すアイコン。 |
@@ -117,9 +118,9 @@ ms.locfileid: "4313604"
 | >>> roadExit                 | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 通常、通行が管理された高速道路の出口を表すアイコン。 |
 | >>> transit                  | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | バスの停留所、鉄道の駅、空港などを表すアイコン。 |
 | >> political                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 国、地域、州などの政治的な区域。 |
-| >>> countryRegion            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 国境地域とラベル。 |
-| >>> adminDistrict            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin1、状態、州などの境界線し、ラベルします。 |
-| >>> district                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin2、郡などの境界線し、ラベルします。 |
+| >>> countryRegion            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 国の地域の境界線とラベル。 |
+| >>> adminDistrict            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin1、状態、都道府県などの境界線し、ラベルします。 |
+| >>> district                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin2、郡など、境界線し、ラベルを付けます。 |
 | >> structure                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建物やその他の建物のような構造体。 |
 | >>> building                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建物します。 |
 | >>>> educationBuilding       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建物の教育機関向けに使用します。 |
@@ -127,8 +128,8 @@ ms.locfileid: "4313604"
 | >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建物空港などの転送時に使用します。 |
 | >> transportation            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 交通輸送網の一部である線 (例: 道路、鉄道、フェリー航路)。 |
 | >>> road                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | すべての道路を表す線。 |
-| >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | アクセス制御された、大規模な高速道路を表す線。 |
-| >>>>> highSpeedRamp          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 通常に接続する高速ランプを表す線は、高速道路を制御します。 |
+| >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | アクセスの制御された、大規模な高速道路を表す線。 |
+| >>>>> highSpeedRamp          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 通常に接続する高速ランプを表すでは、高速道路を制御します。 |
 | >>>> highway                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 高速道路を表す線。 |
 | >>>> majorRoad               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 主要な道路を表す線。 |
 | >>>> arterialRoad            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Arterial 道路を表す線。 |
@@ -138,11 +139,11 @@ ms.locfileid: "4313604"
 | >>>> tollRoad                | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 使用する有料道路を表す線。 |
 | >>> railway                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 鉄道の路線。 |
 | >>> trail                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 公園内の遊歩道やハイキング コース。 |
-| >>> walkway                  | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 管理者特権での walkway します。 |
+| >>> walkway                  | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 管理者特権の walkway します。 |
 | >>> waterRoute               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | フェリー航路の線。 |
 | >> water                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 水のように見えるものすべて。 これには海や河川が含まれます。 |
 | >>> river                    | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 河川、小川、その他の水路。  これは線の場合も、多角形の場合もあり、線があり、河川以外の水域に接続している場合があることに注意してください。 |
-| > routeMapElement            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | すべてのルーティング関連エントリ。 |
+| > routeMapElement            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | すべてのルーティング関連するエントリ。 |
 | >> routeLine                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | ルートの線のエントリに関連します。 |
 | >>> drivingRoute             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 自動車ルートを表す線。 |
 | >>> scenicRoute              | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   | 観光自動車ルートを表す線。 |
@@ -171,7 +172,7 @@ ms.locfileid: "4313604"
 
 ### <a name="settings-properties"></a>Settings のプロパティ
 
-| プロパティ                     | 型    | 1506 | 1629 | 1713 | Next | 説明 |
+| プロパティ                     | 型    | 1703 | 1709 | 1803 | 1809 | 説明 |
 |------------------------------|---------|------|------|------|------|-------------|
 | atmosphereVisible            | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 大気が 3D コントロールに表示されるかどうかを示すフラグ。 |
 | buildingTexturesVisible      | Bool    |      |      |  ✔   |  ✔   | テクスチャのあるシンボル 3D 施設にテクスチャを表示するかどうかを示すフラグ。 |
@@ -193,7 +194,7 @@ ms.locfileid: "4313604"
 
 ### <a name="mapelement-properties"></a>MapElement のプロパティ
 
-| プロパティ                     | 型    | 1506 | 1629 | 1713 | Next | 説明 |
+| プロパティ                     | 型    | 1703 | 1709 | 1803 | 1809 | 説明 |
 |------------------------------|---------|------|------|------|------|-------------|
 | backgroundScale              | Float   |  ✔   |  ✔   |  ✔   |  ✔   | アイコンの背景要素を拡大縮小する量。  たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
 | fillColor                    | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 多角形の塗りつぶし、ポイント アイコンの背景、分割した場合の線の中心に使用される色。 |
@@ -216,7 +217,7 @@ ms.locfileid: "4313604"
 
 このプロパティ グループは、[MapElement](#mapelement) プロパティ グループを継承します。
 
-| プロパティ                     | 型    | 1506 | 1629 | 1713 | Next | 説明 |
+| プロパティ                     | 型    | 1703 | 1709 | 1803 | 1809 | 説明 |
 |------------------------------|---------|------|------|------|------|-------------|
 | borderOutlineColor           | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 塗りつぶされた多角形の境界線のセカンダリまたはケーシング線の色。 |
 | borderStrokeColor            | 色   |  ✔   |  ✔   |  ✔   |  ✔   | 塗りつぶされた多角形の境界線のプライマリ線の色。 |
@@ -229,7 +230,7 @@ ms.locfileid: "4313604"
 
 このプロパティ グループは、[MapElement](#mapelement) プロパティ グループを継承します。
 
-| プロパティ                     | 型    | 1506 | 1629 | 1713 | Next | 説明 |
+| プロパティ                     | 型    | 1703 | 1709 | 1803 | 1809 | 説明 |
 |------------------------------|---------|------|------|------|------|-------------|
 | バック グラウンドの図形             | Float   |      |      |      |  ✔   | 存在する任意の図形を置き換える--アイコンの背景として使用する図形です。 |
 | stemAnchorRadiusScale        | Float   |      |      |  ✔   |  ✔   | アイコン ステムのアンカー ポイントを拡大縮小する量。  たとえば、既定の場合は *1* を、2 倍の大きさの場合は *2* を使用します。 |
@@ -244,6 +245,6 @@ ms.locfileid: "4313604"
 
 このプロパティ グループは、[MapElement](#mapelement) プロパティ グループを継承します。
 
-| プロパティ                     | 型    | 1506 | 1629 | 1713 | Next | 説明 |
+| プロパティ                     | 型    | 1703 | 1709 | 1803 | 1809 | 説明 |
 |------------------------------|---------|------|------|------|------|------------|
 | renderAsSurface              | Bool    |      |      |  ✔   |  ✔   | 3D モデルを地面に対して深度フェーディングなしで建物のようにレンダリングする必要があることを示すフラグ。 |

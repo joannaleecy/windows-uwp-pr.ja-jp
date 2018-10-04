@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ed96418141aec049a9577924597a07da4313b7e2
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4314413"
+ms.locfileid: "4361047"
 ---
 # <a name="get-usersxuidxuidscidsscidstats"></a>GET (/users/xuid({xuid})/scids/{scid}/stats)
-スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成を取得します。
+スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストでサービス構成を取得します。
 これらの Uri のドメインが`userstats.xboxlive.com`します。
 
   * [注釈](#ID4EV)
@@ -27,7 +27,7 @@ ms.locfileid: "4314413"
   * [クエリ文字列パラメーター](#ID4EPB)
   * [Authorization](#ID4EUC)
   * [必要な要求ヘッダー](#ID4EPD)
-  * [省略可能な要求ヘッダー](#ID4EYE)
+  * [オプションの要求ヘッダー](#ID4EYE)
   * [要求本文](#ID4E3F)
   * [HTTP ステータス コード](#ID4EHG)
   * [応答本文](#ID4E5BAC)
@@ -37,7 +37,7 @@ ms.locfileid: "4314413"
 
 ## <a name="remarks"></a>注釈
 
-クライアントには、新しいプレイヤーの統計情報システムへのプレイヤーの代理としてタイトルの統計情報を読み書きする方法が必要があります。
+クライアントには、読み取りし、新しいプレイヤーの統計情報システムにプレイヤーの代理としてタイトルの統計情報を記述する方法が必要があります。
 
 <a id="ID4EEB"></a>
 
@@ -46,7 +46,7 @@ ms.locfileid: "4314413"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| xuid| GUID| Xbox ユーザー ID (XUID) がに代わってサービス構成にアクセスするユーザーのです。|
+| xuid| GUID| Xbox ユーザー ID (XUID) がに代わってサービス構成にアクセスするユーザーのします。|
 | scid| GUID| アクセス対象のリソースが含まれているサービス構成の識別子です。|
 
 <a id="ID4EPB"></a>
@@ -56,17 +56,17 @@ ms.locfileid: "4314413"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- | --- | --- |
-| statNames| string| 唯一のクエリ文字列パラメーターは、コンマで区切られたユーザー統計情報名 URI 名詞です。たとえば、次の URI 通知サービス URI で指定されたユーザー id の代理として 4 つの統計情報を要求します。 `https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots`1 つの呼び出しで要求できる統計の数に制限があり、その制限は URI の長さの実用性と開発者の利便性の「スイート スポット」を慎重に検討します。 たとえば、制限は、統計情報名のテキスト (コンマを含む) の価値があるか 600 文字または最大 10 個の統計情報によって決まります可能性があります。 このようなシンプルな GET を有効にするようにクライアントからの呼び出しの量は減少よく要求される統計情報の HTTP がキャッシュされるようにします。 |
+| statNames| string| 唯一のクエリ文字列パラメーターでは、コンマで区切られたユーザー統計情報名 URI 名詞です。たとえば、次の URI では、サービスが通知 URI で指定されたユーザー id の代理として 4 つの統計情報を要求します。 `https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots`1 つの呼び出しで要求できる統計の数に制限があり、その制限は URI の長さの実用性と開発者の利便性の「スイート スポット」を慎重に検討します。 たとえば、制限は、統計情報名のテキスト (コンマを含む) の価値があるか 600 文字または最大 10 個の統計情報によって決まります可能性があります。 このようなシンプルな GET を有効にするようにクライアントからの呼び出しの量は減少よく要求される統計情報の HTTP がキャッシュされるようにします。 |
 
 <a id="ID4EUC"></a>
 
 
 ## <a name="authorization"></a>Authorization
 
-承認ロジック コンテンツ分離とアクセス制御のシナリオの実装があります。
+承認ロジックがコンテンツ分離とアクセス制御のシナリオの実装があります。
 
-   * ランキング、およびユーザーの両方の統計情報は、呼び出し元が有効な XSTS トークンの要求で送信するに任意のプラットフォーム上のクライアントから読み取ることができます。 書き込みは、データ プラットフォームでサポートされているクライアントに明らかに制限されます。
-   * タイトル デベロッパーは、open または XDP またはデベロッパー センターで制限付き統計をマークできます。 ランキングは、統計を開くです。 開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。 サンド ボックスへのユーザーの承認は XDP またはデベロッパー センターで管理されます。
+   * ランキング、およびユーザーの両方の統計情報は、呼び出し元が要求に有効な XSTS トークンを送信するに、すべてのプラットフォーム上のクライアントから読み取ることができます。 書き込みは、データ プラットフォームでサポートされているクライアントに明らかに制限されます。
+   * タイトル デベロッパーは、open または XDP またはデベロッパー センターで制限付きの統計情報をマークできます。 ランキングは、統計を開くです。 開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。 サンド ボックスへのユーザーの承認は XDP またはデベロッパー センターで管理されます。
 
 チェックの擬似コードは、次のようになります。
 
@@ -89,16 +89,16 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。|
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。|
 
 <a id="ID4EYE"></a>
 
 
-## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
+## <a name="optional-request-headers"></a>オプションの要求ヘッダー
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | この要求を送信する必要があります、サービスの名前/番号をビルドします。 要求はのみにルーティングされ、サービスの認証トークン内の要求ヘッダーの有効性を確認した後です。 既定値: 1 です。|
+| X RequestedServiceVersion|  | この要求を送信する必要があります、サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。|
 
 <a id="ID4E3F"></a>
 
@@ -112,7 +112,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

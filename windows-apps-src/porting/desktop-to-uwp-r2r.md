@@ -11,31 +11,31 @@ ms.technology: uwp
 keywords: windows 10, ネイティブ コンパイラを画像します。
 ms.localizationpriority: medium
 ms.openlocfilehash: d98b576fb51a8f9507802796ab359d0d00d21998
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318690"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352309"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>ネイティブ イメージを使って、.NET デスクトップ アプリを最適化します。
 
 > [!NOTE]
 > 一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
 
-事前、バイナリをコンパイルすることによって、.NET Framework アプリケーションの起動時間を向上できます。 パッケージ化し、Windows ストア経由で配布する大規模なアプリケーションでは、このテクノロジを使用できます。 場合によっては、お客様が 20% のパフォーマンスを向上させるを確認しました。 [技術概要](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md)では、このテクノロジについて詳しくを知ることができます。
+事前、バイナリをコンパイルすることによって、.NET Framework アプリケーションの起動時間を向上できます。 大規模なアプリケーションをパッケージ化し、Windows ストア経由で配布するには、このテクノロジを使用できます。 場合によっては、お客様には、20% のパフォーマンスの向上を確認しました。 [技術概要](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md)では、このテクノロジについて詳しくを知ることができます。
 
 ネイティブ イメージ コンパイラのプレビュー バージョンの[NuGet パッケージ](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler)としてリリースされてきましたしました。 このパッケージを適用するには、.NET Framework バージョン 4.6.2 をターゲットとする .NET Framework アプリケーションにまたはそれ以降。 このパッケージは、アプリケーションで使用されるすべてのバイナリにネイティブのペイロードを含む post ビルド ステップを追加します。 この最適化されたペイロードは、アプリケーションが実行される .NET 4.7.2 で以降の以前のバージョンの MSIL コードがまだ読み込み中に読み込まれます。
 
 [Windows 10 April 2018 update](https://blogs.windows.com/windowsexperience/2018/04/30/how-to-get-the-windows-10-april-2018-update/)では、 [.NET framework 4.7.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/)が含まれます。 Windows 7 + および Windows Server 2008 R2 + を実行している PC で、このバージョンの .NET Framework をインストールすることもできます。
 
 > [!IMPORTANT]
-> Windows アプリケーション パッケージ プロジェクトをパッケージ化アプリケーションのネイティブ イメージを作成する場合は、プロジェクトのターゲット プラットフォームの最小バージョンを Windows Anniversary Update に設定することを確認してください。
+> Windows アプリケーション パッケージ プロジェクトをパッケージ化アプリケーションのネイティブ イメージを生成する場合は、プロジェクトのターゲット プラットフォームの最小バージョンを Windows Anniversary Update に設定することを確認してください。
 
 ## <a name="how-to-produce-native-images"></a>ネイティブ イメージを作成する方法
 
 プロジェクトを構成する次の手順に従います。
 
-1. 4.6.2 としてまたは上にターゲット フレームワークを構成します。
+1. 4.6.2 として以上ターゲット フレームワークを構成します。
 
 2. ターゲット プラットフォームを x86 または x64 として構成します。 
 
@@ -43,27 +43,27 @@ ms.locfileid: "4318690"
 
 4. リリース ビルドを作成します。
 
-## <a name="configure-the-target-framework-as-462-or-above"></a>4.6.2 としてまたは上にターゲット フレームワークを構成します。
+## <a name="configure-the-target-framework-as-462-or-above"></a>4.6.2 として以上ターゲット フレームワークを構成します。
 
-.NET Framework 4.6.2 をターゲットにプロジェクトを構成する必要があります、.NET Framework 4.6.2 開発ツールまたはそれ以降。 これらのツールは、.NET デスクトップ開発ワークロードの下のオプション コンポーネントとして Visual Studio インストーラーを利用します。
+.NET Framework 4.6.2 をターゲットにプロジェクトを構成する必要があります、.NET Framework 4.6.2 開発ツールまたはそれ以降。 これらのツールは、.NET デスクトップ開発のワークロードの下のオプション コンポーネントとして Visual Studio インストーラーを利用します。
 
 ![.NET 4.6.2 インストール開発ツール](images/desktop-to-uwp/install-4.6.2-devpack.png)
 
-またから .NET 開発者パックを取得できます。[https://www.microsoft.com/net/download/visual-studio-sdks](https://www.microsoft.com/net/download/visual-studio-sdks)
+またはから .NET 開発者パックを取得できます。[https://www.microsoft.com/net/download/visual-studio-sdks](https://www.microsoft.com/net/download/visual-studio-sdks)
 
 ## <a name="configure-the-target-platform-as-x86-or-x64"></a>ターゲット プラットフォームを x86 または x64 として構成します。
 
 ネイティブ イメージ コンパイラは、特定のプラットフォーム用のコードを最適化します。 これを使用するには、x86 または x64 など特定の 1 つのプラットフォームを対象としたアプリケーションを構成する必要があります。
 
-複数のプロジェクトをソリューションがある場合のみ、エントリ ポイント プロジェクト (ほとんどの場合、実行可能ファイルを生成する) を x86 または x64 としてコンパイルがあります。 メイン プロジェクトから参照されるその他のバイナリが AnyCPU としてコンパイルされる場合でも、メイン プロジェクトで指定されたアーキテクチャで処理されます。
+複数のプロジェクトをソリューションがある場合のみ、エントリ ポイント プロジェクト (ほとんどの場合は、実行可能ファイルを生成するプロジェクト) には x86 または x64 としてコンパイルします。 メイン プロジェクトから参照されるその他のバイナリが AnyCPU としてコンパイルされる場合でも、メイン プロジェクトで指定されたアーキテクチャで処理されます。
 
-プロジェクトを構成します。
+プロジェクトを構成するには。
 
 1. ソリューションを右クリックし、 **Configuration Manager**を選択します。
 
 2. 選択 **< 新規.>** **プラットフォーム**ドロップダウン メニューで、実行可能ファイルを生成するプロジェクトの名前の横にあります。
 
-3. **新しいプロジェクト プラットフォーム**] ダイアログ ボックスで、**設定のコピー元**のドロップダウン リストを**任意の CPU**に設定されていることを確認します。
+3. **新しいプロジェクトのプラットフォーム**] ダイアログ ボックスで、**設定のコピー元**のドロップダウン リストを**任意の CPU**に設定されていることを確認します。
 
 ![X86 を構成します。](images/desktop-to-uwp/configure-x86.png)
 
@@ -85,7 +85,7 @@ PM> Install-Package Microsoft.DotNet.Framework.NativeImageCompiler -Version 0.0.
 
 ## <a name="create-a-release-build"></a>リリース ビルドを作成します。
 
-NuGet パッケージは、リリース ビルドの他のツールを実行するのには、プロジェクトを構成します。 このツールは、同じバイナリにネイティブ コードを追加します。
+NuGet パッケージは、リリース ビルドの他のツールを実行するのには、プロジェクトを構成します。 このツールは、同じバイナリをネイティブ コードを追加します。
 ツールのバイナリが処理されることを確認するには、ビルドなど、このいずれかのメッセージが含まれているかどうかを確認する出力を確認できます。
 
 ```
@@ -102,10 +102,10 @@ A. 最適化されたバイナリのメリットは、機能強化 .NET Framewor
 
 A. Visual Studio 2017 でフィードバック ツールを使用して、問題を報告します。 [詳細について](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)はです。
 
-**Q します。 ネイティブ イメージに追加する既存のバイナリへの影響は何ですか。**
+**Q します。 ネイティブ イメージを既存のバイナリに追加の影響は何ですか。**
 
 A. 最適化されたバイナリには、最終的なファイルを大きくするマネージとネイティブ コードが含まれています。
 
-**Q します。 このテクノロジを使用してバイナリを解放することができますか。**
+**Q します。 このテクノロジを使用してバイナリをリリースすることができますか。**
 
-A. このバージョンには、今すぐに使用できるライブ移動のライセンスが含まれています。
+A. このバージョンには、現在使用できる Live 移動のライセンスが含まれています。

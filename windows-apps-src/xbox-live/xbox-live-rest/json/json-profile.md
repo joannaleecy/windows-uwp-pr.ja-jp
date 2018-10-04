@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5e95befc6611c5905e6efe2bb01a396167626
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4316211"
+ms.locfileid: "4361093"
 ---
 # <a name="profile-json"></a>Profile (JSON)
 ユーザーの個人用プロファイル設定します。 
@@ -25,7 +25,7 @@ ms.locfileid: "4316211"
  
 ## <a name="profile"></a>プロファイル
  
-プロファイル オブジェクトでは、次の仕様があります。
+プロファイル オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -41,11 +41,11 @@ ms.locfileid: "4316211"
 
 
 > [!NOTE] 
-> 画像は、ユーザーの '実際の画像' またはプライバシーに応じて、XboxOne ゲーマー アイコンを指定できます。 これらの設定は、クライアント上に表示するために使用するユーザーの画像の url を表します。 この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする場合があります。 
+> 画像は、ユーザーの '実際の図' またはプライバシーに応じて、XboxOne ゲーマー アイコンであることができます。 これらの設定では、クライアント上に表示するために使用するユーザーの画像の url を表します。 この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする場合があります。 
 
 
  
-生の URL は、サイズ変更できる URL です。 サイズし、形式を追加して、次のいずれかを指定するために使用できる`&format={format}&w={width}&h={height}`をその URI:
+生の URL は、サイズ変更できる URL です。 サイズし、形式の追加を使用して、次のいずれかを指定するために使用できる`&format={format}&w={width}&h={height}`をその URI:
  
 形式: png
  

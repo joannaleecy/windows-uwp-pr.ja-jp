@@ -16,11 +16,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: ad7326acf728aef66f10c72ee04461fd90e5f775
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315892"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350749"
 ---
 # <a name="text-controls"></a>テキスト コントロール
 
@@ -127,7 +127,7 @@ Windows 10 バージョン 1803 以降では、XAML テキスト入力ボック�
 
 ![ペンでタップするとテキスト ボックスが展開する](images/pen-input-expand.gif)
 
-詳しくは、[手書きのビューを使って、テキスト入力](text-handwriting-view.md)を参照してください。
+詳しくは、[テキスト入力では、手書きのビュー](text-handwriting-view.md)を参照してください。
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>テキスト コントロールに適切なキーボードの選択
 

@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: windows 10, uwp, iap, アプリ内購入, アプリ内製品, iap の申請
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d05722578ed945fbf75040f96360bb569c6d06
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315752"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355707"
 ---
 # <a name="add-on-submissions"></a>アドオンの申請
 
-アドオン (アプリ内製品とも呼ばれる) は、お客様が購入可能なアプリの補助アイテムです。 アドオンは、楽しいと思われる新しいゲーム レベル、またはその他の新機能に対するユーザーのエンゲージメントとできます。 アドオンは収益を得るためだけでなく、お客様との意見交換や顧客エンゲージメントの獲得を促すためにも役立ちます。
+アドオン (アプリ内製品とも呼ばれる) は、お客様が購入可能なアプリの補助アイテムです。 アドオンは、楽しいと思われる新しいゲーム レベル、またはその他の新機能はユーザーの関心にできます。 アドオンは収益を得るためだけでなく、お客様との意見交換や顧客エンゲージメントの獲得を促すためにも役立ちます。
 
 アドオンは Windows デベロッパー センター ダッシュボードを使って公開します。 また、アプリのコードで [アドオンを有効にする](../monetize/in-app-purchases-and-trials.md)ことも必要です。
 
-アドオンの申請プロセスでは、最初に、[その製品の種類と製品 ID を定義](set-your-add-on-product-id.md)して、ダッシュボードでアドオンを作成します。 その後、Microsoft Store 経由でアドオンを購入できるように、申請を作成します。 [アプリの申請](app-submissions.md)と同時にまたは別々にアドオンを申請できます。 アプリがストアに公開された後は、アプリを再び申請することなく、アドオンを[更新](#updating-an-add-on-after-publication)できます。
+アドオンの申請プロセスでは、最初に、[その製品の種類と製品 ID を定義](set-your-add-on-product-id.md)して、ダッシュボードでアドオンを作成します。 その後、アドオンは、Microsoft Store 経由で購入できるように、申請を作成します。 [アプリの申請](app-submissions.md)と同時にまたは別々にアドオンを申請できます。 アプリがストアに公開された後は、アプリを再び申請することなく、アドオンを[更新](#updating-an-add-on-after-publication)できます。
 
 > [!NOTE]
 > ドキュメントのこのセクションでは、デベロッパー センター ダッシュボードでアドオンを申請する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアドオン申請を自動化することもできます。

@@ -4,22 +4,20 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: データ バインディングの詳細
 description: データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。
 ms.author: markl
-ms.date: 02/08/2017
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 72c7037e9e99ad69ff13c65fb2195bc6e3f8110f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: 559bbbc3421151a9055b89c94bc1293a950ccb5b
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318466"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351453"
 ---
 # <a name="data-binding-in-depth"></a>データ バインディングの詳細
-
-
 
 **重要な API**
 
@@ -31,16 +29,15 @@ ms.locfileid: "4318466"
 > [!Note]
 > このトピックでは、データ バインディングの機能について詳しく説明します。 簡潔で実用的な紹介については、「[データ バインディングの概要](data-binding-quickstart.md)」をご覧ください。
 
-
 データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。 データ バインディングによって、UI の問題からデータの問題を切り離すことができるため、概念的なモデルが簡素化されると共に、アプリの読みやすさ、テストの容易性、保守容易性が向上します。
 
-データ バインディングは、UI が最初に表示されたときにデータ ソースからの値を表示するだけの場合に使うことができ、それらの値の変化に応答するために使うことはできません。 これは 1 回限りのバインディングと呼ばれており、実行時に値が変更しないデータに適しています。 さらに、値を "監視" し、値が変化したときに UI を更新することを選択できます。 これは一方向バインディングと呼ばれており、読み取り専用のデータに適しています。 最終的には、ユーザーが UI で値に対して行った変更が自動的にデータ ソースにプッシュバックされるように、監視と更新の両方を行うことを選択できます。 これは双方向バインディングと呼ばれており、読み書き可能なデータに適しています。 例をいくつか紹介します。
+データ バインディングは、UI が最初に表示されたときにデータ ソースからの値を表示するだけの場合に使うことができ、それらの値の変化に応答するために使うことはできません。 これは、モードのバインディングと呼ばれる*1 回限り*が実行時に変化しない値に適しているとします。 または、値を「監視」しが変化したときに UI を更新するを選択できます。 詳しくと呼ば*一方向*、読み取り専用のデータに適しているとします。 最終的には、ユーザーが UI で値に対して行った変更が自動的にデータ ソースにプッシュバックされるように、監視と更新の両方を行うことを選択できます。 このモードと呼ばれる*双方向*、および読み取り/書き込みのデータに適しています。 例をいくつか紹介します。
 
--   1 回限りのバインディングを使って、[**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) を現在のユーザーの写真にバインドできます。
--   一方向バインディングを使って、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を新聞のセクションでグループ化された、リアルタイムのニュース記事のコレクションにバインドできます。
--   双方向バインディングを使って、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) をフォーム内の顧客の名前にバインドできます。
+-   1 回限りのモードを使用して、[**イメージ**](https://msdn.microsoft.com/library/windows/apps/BR242752)を現在のユーザーの写真にバインドする可能性があります。
+-   一方向モードを使用して、 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)を新聞のセクションでグループ化されたリアルタイムのニュース記事のコレクションにバインドすることができます。
+-   双方向モードを使用して、 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)をフォーム内の顧客の名前にバインドすることができます。
 
-バインディングには 2 つの種類があり、いずれも通常は UI のマークアップで宣言されます。 [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)と [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)のいずれを使うかを選択できます。 また、同じアプリや同じ UI 要素で、この 2 つを組み合わせて使うこともできます。 {x:Bind} は Windows 10 の新機能で、パフォーマンスが向上しています。 このトピックで説明されているすべての詳細は、特に明記していない限り、両方の種類のバインディングに適用されます。
+モードに関係なくは、バインドの 2 つの種類があります、どちらも通常宣言されている UI のマークアップでします。 [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)と [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)のいずれを使うかを選択できます。 また、同じアプリや同じ UI 要素で、この 2 つを組み合わせて使うこともできます。 {x:Bind} は Windows 10 の新機能で、パフォーマンスが向上しています。 このトピックで説明されているすべての詳細は、特に明記していない限り、両方の種類のバインディングに適用されます。
 
 **{x:Bind} の使い方を示すサンプル アプリ**
 
@@ -202,7 +199,7 @@ namespace QuizGame.View
 [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) プロパティは、入れ子になったプロパティ、添付プロパティ、整数と文字列のインデクサーにバインドするためのさまざまな構文オプションをサポートしています。 詳しくは、「[Property-path 構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)」をご覧ください。 文字列のインデクサーにバインドすると、[**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) を実装しなくても動的プロパティにバインドする効果を得られます。 その他の設定については、「[{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)」をご覧ください。
 
 > [!Note]
-> [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text)への変更は、双方向のバインド ソース[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)は、フォーカスを失ったときに、およびユーザーのキーストロークのたびに送信されます。
+> [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text)に変更は、双方向のバインド ソース[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)は、フォーカスを失ったときに、およびユーザーのキーストロークのたびに送信されます。
 
 **DataTemplate と x:DataType**
 
@@ -260,7 +257,7 @@ UI 要素の [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
 ```
 
 > [!Note]
-> 既定では、 [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text)への変更は、 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)がフォーカスを失ったとき双方向のバインド ソースに送信されます。 変更をユーザーの各キーストロークの後に送信するには、マークアップのバインディングで **UpdateSourceTrigger** を **PropertyChanged** に設定します。 **UpdateSourceTrigger** を **Explicit** に設定することによって、変更が送信されるタイミングを完全に制御することもできます。 次に、テキスト ボックスでのイベント (通常 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)) を処理し、ターゲットで [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) を呼び出して [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) オブジェクトを取得します。最後に、[**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) を呼び出して、データ ソースをプログラムで更新します。
+> 既定では、 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)がフォーカスを失ったときに、双方向のバインド ソースに[**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text)への変更が送信されます。 変更をユーザーの各キーストロークの後に送信するには、マークアップのバインディングで **UpdateSourceTrigger** を **PropertyChanged** に設定します。 **UpdateSourceTrigger** を **Explicit** に設定することによって、変更が送信されるタイミングを完全に制御することもできます。 次に、テキスト ボックスでのイベント (通常 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683)) を処理し、ターゲットで [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) を呼び出して [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) オブジェクトを取得します。最後に、[**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) を呼び出して、データ ソースをプログラムで更新します。
 
 [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) プロパティは、入れ子になったプロパティ、添付プロパティ、整数と文字列のインデクサーにバインドするためのさまざまな構文オプションをサポートしています。 詳しくは、「[Property-path 構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)」をご覧ください。 文字列のインデクサーにバインドすると、[**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) を実装しなくても動的プロパティにバインドする効果を得られます。 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) プロパティは要素間のバインディングに便利です。 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) プロパティにはいくつかの用途があり、そのうちの 1 つが、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391) 内でバインディングをテンプレート化するためのより強力な方法としての用途です。 その他の設定については、「[{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)」と [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) クラスの説明をご覧ください。
 
@@ -657,7 +654,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | バインディングのパスの一部 (リーフを除く) が null の場合に使用されます。 | 
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | {x:Bind} によって、フィールドにバインドしています。Path は既定で Page をルートとするため、名前付きの要素はそのフィールドを使ってアクセスできます。 | 
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | {x:Bind} では、要素に名前を付けて、Path でその名前を使います。 | 
-| RelativeSource: TemplatedParent | 不要 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | {X:bind} TargetType ControlTemplate では、テンプレートの親へのバインドを示します。 {Binding} 標準のテンプレート バインディングほとんどのユーザー コントロール テンプレートで使用することができます。 ただし、コンバーターまたは双方向バインディングを使用する必要がある場合は TemplatedParent を使います。< | 
+| RelativeSource: TemplatedParent | 不要 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | {X:bind} は、TargetType ControlTemplate では、テンプレートの親へのバインドを示します。 {Binding} には、標準のテンプレート バインディングをほとんどのユーザーのコントロール テンプレートで使用することができます。 ただし、コンバーターまたは双方向バインディングを使用する必要がある場合は TemplatedParent を使います。< | 
 | Source | 不要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | {X:bind} の名前付きの要素を直接に使用できるプロパティまたは静的パスを使います。 | 
 | Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode には、OneTime、OneWay、TwoWay を指定できます。 {x:Bind} の既定値は OneTime で、{Binding} の既定値は OneWay です。 | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger には、Default、LostFocus、PropertyChanged を指定できます。 {x:Bind} では、UpdateSourceTrigger=Explicit はサポートされません。 {x:Bind} では、TextBox.Text を除くすべての場合に PropertyChanged 動作を使います。TextBox.Text の場合は LostFocus 動作を使います。 | 

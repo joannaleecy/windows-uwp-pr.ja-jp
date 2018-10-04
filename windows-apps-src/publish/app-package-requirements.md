@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, パッケージ要件, パッケージ, パッケージ形式, サポートされているバージョン, 提出
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e294fdf5a9b2d98f09d839fa62499b556de3a5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318268"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355757"
 ---
 # <a name="app-package-requirements"></a>アプリ パッケージの要件
 
@@ -34,7 +34,7 @@ Microsoft Store に申請するために、次のガイドラインに従って�
 
 Visual Studio でパッケージを作るときは、必ず、開発者アカウントに関連付けられている同じアカウントでサインインしてください。 パッケージ マニフェストの一部には、お使いのアカウントに関連する固有の詳細情報が含まれています。 この情報は自動的に検出されて追加されます。 マニフェストにこの追加情報が追加されていない場合、パッケージのアップロードでエラーが発生する可能性があります。 
 
-アプリの UWP パッケージをビルドするとき、Visual Studio は、.msix または appx ファイル、または .msixupload または .appxupload ファイルを作成できます。 UWP アプリでは、常に[[パッケージ](upload-app-packages.md)] ページで .msixupload または .appxupload ファイルをアップロードすることをお勧めします。 Microsoft Store 用の UWP アプリのパッケージ化について詳しくは、「[Visual Studio での UWP アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
+アプリの UWP パッケージを作成する場合、Visual Studio は、.msix または appx ファイル、または .msixupload または .appxupload ファイルを作成できます。 UWP アプリでは、常に[[パッケージ](upload-app-packages.md)] ページで、.msixupload または .appxupload ファイルをアップロードすることをお勧めします。 Microsoft Store 用の UWP アプリのパッケージ化について詳しくは、「[Visual Studio での UWP アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
 
 アプリのパッケージに、信頼された証明機関が発行する証明書で署名する必要はありません。
 
@@ -61,7 +61,7 @@ UWP アプリでは、Visual Studio は、アプリ バンドル (.msixbundle �
 > マニフェスト内の値は、大文字と小文字が区別されます。 スペースや句読点なども一致する必要があります。 注意して入力し、間違いがないか確認してください。
 
 
-アプリ バンドル (.msixbundle または .appxbundle) は、さまざまなマニフェストを使用します。 アプリ バンドル マニフェストの詳細や要件については、[バンドル マニフェスト](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) に関するドキュメントをご覧ください。 注: .msixbundle や .appxbundle では、それぞれのマニフェスト含まれているパッケージには、同じ[Id](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)要素の**ProcessorArchitecture**属性を除くの属性と要素を使う必要があります。
+アプリ バンドル (.msixbundle または .appxbundle) は、さまざまなマニフェストを使用します。 アプリ バンドル マニフェストの詳細や要件については、[バンドル マニフェスト](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) に関するドキュメントをご覧ください。 注 .msixbundle または .appxbundle では、それぞれのマニフェスト含まれているパッケージには、同じ[Id](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)要素の**ProcessorArchitecture**属性を除くの属性と要素を使う必要があります。
 
 > [!TIP]
 > 必ず、[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)を実行してから、パッケージを提出してください。 これによって、認定や提出の失敗の原因となる可能性がある問題がマニフェストに含まれているかどうかを判断できます。
@@ -88,7 +88,7 @@ UWP アプリの場合、すべてのパッケージは Microsoft Store によ�
 
 ## <a name="storemanifest-xml-file"></a>StoreManifest XML ファイル
 
-StoreManifest.xml は、必要に応じてアプリ パッケージに含めることのできる構成ファイルです。 その目的は、Microsoft Store デバイス アプリとしてアプリを宣言する機能や、パッケージ マニフェストの対象外となるデバイスに適用される要件を宣言する機能などを有効にすることです。 使用する場合、StoreManifest.xml はアプリ パッケージを使ってが送信され、アプリのメイン プロジェクトのルート フォルダーにある必要があります。 詳しくは、「[StoreManifest スキーマ](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)」をご覧ください。
+StoreManifest.xml は、必要に応じてアプリ パッケージに含めることのできる構成ファイルです。 その目的は、Microsoft Store デバイス アプリとしてアプリを宣言する機能や、パッケージ マニフェストの対象外となるデバイスに適用される要件を宣言する機能などを有効にすることです。 使用する場合、StoreManifest.xml はアプリ パッケージを使って送信され、アプリのメイン プロジェクトのルート フォルダーにある必要があります。 詳しくは、「[StoreManifest スキーマ](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)」をご覧ください。
 
  
 

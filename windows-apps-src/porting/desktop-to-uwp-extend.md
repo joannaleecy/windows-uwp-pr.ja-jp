@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311032"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4353473"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張
 
@@ -85,7 +85,7 @@ UWP プロジェクトとランタイム コンポーネントで行うことが
 ![アダプティブ デザイン](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->この例では、UWP プロジェクトをソリューションに追加することで、XAML UI を示しています。 デスクトップ アプリケーションでの XAML Ui の表示を安定したサポートされている方法です。 代わりに、この方法では、XAML 島を使用して、デスクトップ アプリケーションに直接 UWP XAML コントロールを追加します。 XAML 諸島現在利用可能な開発者プレビューとしてします。 それらプロトタイプ コードで今すぐ試すをお勧めしますがないことで使う運用コードこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟し、今後の Windows のリリースに安定します。 XAML 諸島について詳しくは、[デスクトップ アプリケーションで UWP コントロール](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)を参照してください。
+>この例では、UWP プロジェクトをソリューションに追加することで、XAML UI を示しています。 デスクトップ アプリケーションでの XAML Ui の表示を安定したサポートされているアプローチです。 代わりに、この方法では、XAML 島を使用して、デスクトップ アプリケーションに直接 UWP XAML コントロールを追加します。 XAML 諸島現在利用可能な開発者プレビューとしてします。 それらプロトタイプ コードで今すぐ試すをお勧めしますがないことで使う運用コードこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟して、今後のリリースの Windows に安定します。 XAML 諸島について詳しくは、[デスクトップ アプリケーションで UWP コントロール](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)を参照してください。
 
 ### <a name="the-design-pattern"></a>設計パターン
 
@@ -316,7 +316,7 @@ public sealed class AppServiceTask : IBackgroundTask
 
 ### <a name="add-an-app-service-extension-to-the-packaging-project"></a>アプリ サービスの拡張機能をパッケージ プロジェクトに追加します。
 
-パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、アプリ サービスの拡張機能を追加、``<Application>``要素です。
+パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、アプリ サービスの拡張機能の追加、``<Application>``要素です。
 
 ```xml
 <Extensions>
@@ -401,7 +401,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>共有ターゲットの拡張機能を追加する
 
-**ソリューション エクスプ ローラー**で、ソリューションにパッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、拡張機能を追加します。
+**ソリューション エクスプ ローラー**でソリューションで、パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、拡張機能を追加します。
 
 ```xml
 <Extensions>

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 456ae44dcffeede64011719c02dbeb3806792405
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318157"
+ms.locfileid: "4353545"
 ---
 # <a name="get-mediamarketplaceidcontentrating"></a>GET (/media/{marketplaceId}/contentRating)
 コンテンツの規制のトークンを取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
@@ -30,11 +30,11 @@ ms.locfileid: "4318157"
  
 ## <a name="remarks"></a>注釈
  
-保護者子が表示できるコンテンツを適用することは、複雑な作業です。 だけでなく各メディア項目の種類は、独自の評価システムがそれらの評価システムは国によって異なることができます。 これはすべての項目を正しくフィルターを指定する必要があるデータの複数の異なる部分があることを意味します。
+保護者子が表示できるコンテンツを適用することは、複雑な作業です。 だけでなく各メディア項目の種類は、独自の評価システムがそれらの評価システムは国によって異なることができます。 これはするすべての項目を適切にフィルターを指定する必要があるデータの複数の異なる部分があることを意味します。
  
-すべてのパラメーターを指定する、すべての API 呼び出しで、代わりは、この API は、その他の Api で**combinedContentRating**パラメーターに渡すとでも同じ情報を伝える値を生成します。 これは、この API に渡されるいくつかのパラメーターは、その他の Api の 1 つの再利用可能な値に折りたたまれたとき、Api を使用し、保守、やすくするために設計されています。
+すべてのパラメーターを指定する、すべての API 呼び出しで、代わりは、この API は、その他の Api で**combinedContentRating**パラメーターに渡すとでも同じ情報を伝える値を生成します。 これは、この API に渡されるいくつかのパラメーターは、その他の Api の 1 つ、再利用可能な値に折りたたまれたとき、Api を使用し、保守、やすくするために設計されています。
  
-頻繁に変更する必要がありますが、この API によって返される正確な値は変更が最終的に、(リリース エンターテイメント探索サービス (EDS) の間など)、したがって、長期間のキャッシュ可能性があります。 **CombinedContentRating**パラメーターにより、わかりやすいエラー メッセージで渡した値が有効である場合を受け入れることを意味する API 呼び出し元だけ必要があります、更新された値を取得するには、もう一度この API を呼び出します。 API が**combinedContentRating**パラメーターを受け入れるいずれかが提供されない場合は、コンテンツのフィルター処理は行われません保護者に基づいています。 
+頻繁に変更する必要がありますが、この API によって返される正確な値は変更が最終的に、(リリース エンターテイメント探索サービス (EDS) の間など)、そのため、長期間のキャッシュ可能性があります。 **CombinedContentRating**パラメーターにより、わかりやすいエラー メッセージで渡した値が有効である場合を受け入れることを意味する API 呼び出し元単なる必要があります、更新された値を取得するには、もう一度この API を呼び出します。 API は、 **combinedContentRating**パラメーターを受け入れるいずれかの指定しない場合は、コンテンツのフィルター処理は行われません保護者に基づいています。 
 
 > [!NOTE] 
 > これとは限りません。 のみ"安全"コンテンツが返されること - すべてのコンテンツが返されること、明示的な可能性のあるコンテンツを含むことを意味します。 
@@ -48,7 +48,7 @@ ms.locfileid: "4318157"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | 
-| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
+| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
   
 <a id="ID4EWB"></a>
 
@@ -61,7 +61,7 @@ ms.locfileid: "4318157"
 | filterFamilyOnlyApps| ブール値| 省略可能。 わかりやすいファミリとしてマークいないアプリをフィルター処理します。| 
 | filterUnrated| ブール値| 省略可能。 か、評価されるコンテンツを応答に含める必要があるかどうかを決定します。| 
 | maxGameRating| 32 ビット符号付き整数| 省略可能。 ゲームをフィルター処理します。| 
-| maxMovieRating| 32 ビット符号付き整数| 省略可能。 特定のレベルよりも映画をフィルター処理します。| 
+| maxMovieRating| 32 ビット符号付き整数| 省略可能。 特定のレベルを超える映画をフィルター処理します。| 
 | maxTVRating| 32 ビット符号付き整数| 省略可能。 テレビをフィルター処理します。| 
   
 <a id="ID4E5D"></a>

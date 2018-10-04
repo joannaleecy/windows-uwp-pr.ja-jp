@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c5cb8a0f81513038a18522c39f0138bb25ab27
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315980"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352436"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
-[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)は、完全に標準化された最新の c++ 17 言語プロジェクションで Windows ランタイム (WinRT) Api では、ヘッダー ファイル ベースのライブラリとして実装し、最新の Windows API への最上位アクセスを提供するように設計します。 C++/WinRT の場合、標準に準拠した C++17 のコンパイラを使用して Windows ランタイム API を作成および使用できます。 Windows SDK には C++/WinRT が含まれます。バージョン 10.0.17134.0 (Windows 10、バージョン 1803) で導入されました。
+[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 、完全に標準化された最新の c++ 17 言語プロジェクションで Windows ランタイム (WinRT) Api では、ヘッダー ファイル ベースのライブラリとして実装は、最新の Windows API への最上位アクセスを提供するように設計します。 C++/WinRT の場合、標準に準拠した C++17 のコンパイラを使用して Windows ランタイム API を作成および使用できます。 Windows SDK には C++/WinRT が含まれます。バージョン 10.0.17134.0 (Windows 10、バージョン 1803) で導入されました。
 
 C++/WinRT は、Windows 用の美しく高速なコードの作成に興味のある開発者向けです。 次に、その理由を示します。
 
@@ -30,7 +30,7 @@ C++ プログラミング言語は、企業*と*アプリケーションの独�
 
 言語の観点から見ると、C++ では、型が豊富で軽量な抽象化を常に作成および使用します。 ただし、RAW ポインター、RAW ループ、煩雑なメモリ割り当て、C++98 のリリース以降、言語は急激に変化しました。 最新の C++ (C++11 以降) は、アイデアの明確な表現、シンプルさ、読みやすさ、バグ発生の大幅な軽減が中心です。
 
-C++ を使用して Windows ランタイム API を作成および使用する場合は、C++/WinRT を使用します。 これは、マイクロソフトの推奨される代替、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)言語プロジェクションで、および[Windows ランタイム C++ テンプレート ライブラリ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。
+C++ を使用して Windows ランタイム API を作成および使用する場合は、C++/WinRT を使用します。 これは、マイクロソフトの推奨される代替、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)言語のプロジェクションと[Windows ランタイム C++ テンプレート ライブラリ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。
 
 C++/WinRT を使用する場合は、標準的な C++ データ型、アルゴリズム、およびキーワードを使用します。 プロジェクションに独自のカスタム データ型はありませんが、多くの場合、標準型から適切に変換されるため、学習する必要はありません。 このため、使い慣れた標準的な C++ 言語機能と使用中のソース コードを使用し続けることができます。 C++/WinRT では、C++ アプリケーションで Windows ランタイム API を Win32 から UWP に非常に簡単に呼び出すことができます。
 
@@ -54,25 +54,25 @@ Windows ランタイムの他の言語オプションに比べて、C++/WinRT �
 | [C++/WinRT でのエラー処理](error-handling.md) | このトピックでは、C++/WinRT でのプログラミング時にエラーを処理するための方法について説明します。 |
 | [デリゲートを使用したイベントの処理](handle-events.md) | このトピックでは、C++/WinRT を使用したイベント処理デリゲートの登録方法と取り消し方法について説明します。 |
 | [イベントの作成](author-events.md) | このトピックでは、イベントを発生させるランタイム クラスを含む、Windows ランタイム コンポーネントを作成する方法を示します。 コンポーネントを使用してイベントを処理するアプリも示します。 |
-| [コレクション、C++/WinRT](collections.md) | C++/WinRT 機能と、多くの時間と労力を実装やコレクションに合格するときに保存する基底クラスを提供します。 |
+| [C++/WinRT でのコレクション](collections.md) | C++/WinRT 機能と、多くの時間と労力を実装やコレクションに合格するときに保存する基底クラスを提供します。 |
 | [同時実行操作と非同期操作](concurrency.md) | このトピックでは、C++/WinRT を使用した Windows ランタイムの非同期オブジェクトの作成方法と利用方法について説明します。 |
 | [XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md) | XAML コントロールに効果的にバインドできるプロパティは、*監視可能な*プロパティと呼ばれます。 このトピックでは、監視可能なプロパティを実装および使用する方法と、XAML コントロールをバインドする方法を示します。 |
 | [XAML アイテム コントロール: C++/WinRT コレクションへのバインド](binding-collection.md) | XAML アイテム コントロールに効果的にバインドできるコレクションは、*監視可能な*コレクションと呼ばれます。 このトピックでは、監視可能なコレクションを実装および使用する方法と、それに XAML アイテム コントロールをバインドする方法を示します。 |
-| [C++/WinRT による XAML カスタム (テンプレート化) コントロール](xaml-cust-ctrl.md) | このトピックでは、C++ を使用してシンプルなカスタム コントロールを作成する手順について/WinRT します。 ここでは、独自の機能が豊富でカスタマイズ可能な UI コントロールを作成する情報に基づいてビルドすることができます。 |
-| [C++ に COM コンポーネントを使用/WinRT](consume-com.md) | このトピックでは、Direct2D の完全なコード例を使用して、C++ を使用する方法を示して/WinRT COM クラスとインターフェイスを利用します。 |
-| [C++ に COM コンポーネントの作成/WinRT](author-coclasses.md) | C++/WinRT で役立つ従来の COM コンポーネントを作成する Windows ランタイム クラスを作成するのに役立ち、同様です。 |
+| [C++/WinRT による XAML カスタム (テンプレート化) コントロール](xaml-cust-ctrl.md) | このトピックでは、C++ を使用して、単純なカスタム コントロールを作成する手順について/WinRT します。 ここでは、独自の機能が豊富でカスタマイズ可能な UI コントロールを作成する情報に基づいて構築できます。 |
+| [C++/WinRT での COM コンポーネントの使用](consume-com.md) | このトピックでは、Direct2D の完全なコード例を使用して、C++ を使用する方法を示して/WinRT COM クラスとインターフェイスを利用します。 |
+| [C++/WinRT での COM コンポーネントの作成](author-coclasses.md) | C++/WinRT で役立つ従来の COM コンポーネントを作成する Windows ランタイム クラスを作成するのに役立ち、同様です。 |
 | [C++/WinRT と C++/CX 間の相互運用](interop-winrt-cx.md) | このトピックでは、[C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) と C++/WinRT オブジェクト間の変換に使用できる 2 つのヘルパー関数について説明します。 |
 | [C++/CX から C++/WinRT への移行](move-to-winrt-from-cx.md) | このトピックでは、C++/CX コードを C++/WinRT の同等のコードに移植する方法について説明します。 |
 | [C++/WinRT と ABI 間の相互運用](interop-winrt-abi.md) | このトピックでは、アプリケーション バイナリ インターフェイス (ABI) と C++/WinRT オブジェクト間の変換方法について説明します。 |
 | [WRL から C++/WinRT への移行](move-to-winrt-from-wrl.md) | このトピックでは、[Windows ランタイム C++ テンプレート ライブラリ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) のコードを C++/WinRT の同等のコードに移植する方法について説明します。 |
-| [強度への参照では、C++/WinRT](weak-references.md) | Windows ランタイムは参照カウントのシステムです。システムの重要性、およびの違いについて理解するために重要で強力なと弱参照します。 |
+| [C++ 強力かつ弱参照/WinRT](weak-references.md) | Windows ランタイムは参照カウントのシステムです。知っておくは、重要性とを区別するための重要なシステムで強力なと弱参照します。 |
 | [アジャイル オブジェクト](agile-objects.md) | アジャイル オブジェクトは、いずれかのスレッドからアクセスできます。 お使いの C++/WinRT 型は既定ではアジャイルですが、オプトアウトできます。 |
 
 ### <a name="topics-about-the-c-language"></a>C++ 言語についてのトピック
 
 | トピック | 説明 |
 | - | - |
-| [値のカテゴリとへの参照](cpp-value-categories.md) | このトピックでは、C++ での値のさまざまなカテゴリについて説明します。 左辺値と rvalue の音が間違いされますが、すぎる他の種類。 |
+| [値のカテゴリとそれらへの参照](cpp-value-categories.md) | このトピックでは、C++ での値のさまざまなカテゴリについて説明します。 左辺値と rvalue の音が間違いが、その他の種類すぎます。 |
 
 ## <a name="important-apis"></a>重要な API
 * [winrt 名前空間](/uwp/cpp-ref-for-winrt/winrt)
