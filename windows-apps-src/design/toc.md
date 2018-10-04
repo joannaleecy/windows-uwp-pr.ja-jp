@@ -39,6 +39,7 @@
 ## [ボタン](controls-and-patterns/buttons.md)
 ## [チェック ボックス](controls-and-patterns/checkbox.md)
 ## [カラー ピッカー](controls-and-patterns/color-picker.md)
+## [コマンド バーのポップアップ](controls-and-patterns/command-bar-flyout.md)
 ## [連絡先カード](controls-and-patterns/contact-card.md)
 ## [日付と時刻](controls-and-patterns/date-and-time.md)
 ### [カレンダーの日付の選択コントロール](controls-and-patterns/calendar-date-picker.md)
@@ -56,6 +57,7 @@
 ## [画像とイメージ ブラシ](controls-and-patterns/images-imagebrushes.md)
 ## [インク コントロール](controls-and-patterns/inking-controls.md)
 ## [リスト](controls-and-patterns/lists.md)
+### [コンボ ボックス](controls-and-patterns/combo-box.md)
 ### [リスト ビューとグリッド ビュー](controls-and-patterns/listview-and-gridview.md)
 ### [項目コンテナーやテンプレート](controls-and-patterns/item-containers-templates.md)
 ### [リスト ビューの項目テンプレート](controls-and-patterns/item-templates-listview.md)
@@ -100,6 +102,7 @@
 ## [文字体裁](style/typography.md)
 ## アイコン
 ### [概要](style/icons.md)
+### [アプリのアイコンとロゴ](style/app-icons-and-logos.md)
 ### [Segoe MDL2 アイコン](style/segoe-ui-symbol-font.md)
 ## [アクリル](style/acrylic.md)
 ## [表示ハイライト](style/reveal.md)
@@ -126,7 +129,6 @@
 
 # シェル
 ## [タイル](shell/tiles-and-notifications/creating-tiles.md)
-### [タイルとアイコン アセットのガイドライン](shell/tiles-and-notifications/app-assets.md)
 ### [セカンダリ タイル](shell/tiles-and-notifications/secondary-tiles.md)
 #### [ガイダンス](shell/tiles-and-notifications/secondary-tiles-guidance.md)
 #### [セカンダリ タイルをピン留めする](shell/tiles-and-notifications/secondary-tiles-pinning.md)
