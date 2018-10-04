@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, プレイヤーの統計, 統計 2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 57d52b102d46efa1a2e6d35dedd46e6aba577977
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4265094"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4314443"
 ---
 # <a name="updating-stats-2017"></a>統計の更新 2017
 

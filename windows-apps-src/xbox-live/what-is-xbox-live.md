@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 74d6ec0f38f86fb355941bb84f8e2157bf4d1f86
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4257782"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4318737"
 ---
 # <a name="what-is-xbox-live"></a>Xbox Live とは
 

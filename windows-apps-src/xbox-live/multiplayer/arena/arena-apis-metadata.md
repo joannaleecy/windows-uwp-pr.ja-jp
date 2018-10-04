@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: dde5d59167b90473669770ad584382387f5e3f41
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4264222"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4312875"
 ---
 # <a name="arena-apis-a-comprehensive-list-of-ui-metadata"></a>アリーナ API: すべての UI メタデータ一覧
 
