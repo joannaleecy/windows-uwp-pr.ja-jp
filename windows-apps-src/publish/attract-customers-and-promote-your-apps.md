@@ -10,23 +10,23 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ca47bfb26649f2e8a9fc1344c3264d90548eb836
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4310950"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354226"
 ---
-# <a name="attract-customers-and-promote-your-apps"></a><span data-ttu-id="3782d-103">ユーザーへのアピールとアプリの宣伝</span><span class="sxs-lookup"><span data-stu-id="3782d-103">Attract customers and promote your apps</span></span>
+# <a name="attract-customers-and-promote-your-apps"></a><span data-ttu-id="6c163-103">ユーザーへのアピールとアプリの宣伝</span><span class="sxs-lookup"><span data-stu-id="6c163-103">Attract customers and promote your apps</span></span>
 
-<span data-ttu-id="3782d-104">アプリは、Microsoft Store が完成したら、できるだけ多くの顧客の前面取得します。</span><span class="sxs-lookup"><span data-stu-id="3782d-104">Once your app is in the Microsoft Store, it's time to get it in front of as many customers as possible.</span></span> <span data-ttu-id="3782d-105">Microsoft では、広告キャンペーン、プロモーション コード、セール価格など、製品を宣伝し、顧客ベースの拡大を図るうえで役立つさまざまな機能を提供しています。</span><span class="sxs-lookup"><span data-stu-id="3782d-105">We offer many features that help you promote your products and grow your customer base, including ad campaigns, promo codes, sale pricing, and more.</span></span>
+<span data-ttu-id="6c163-104">アプリは、Microsoft Store が完成したら、できるだけ多くの顧客の前面入手します。</span><span class="sxs-lookup"><span data-stu-id="6c163-104">Once your app is in the Microsoft Store, it's time to get it in front of as many customers as possible.</span></span> <span data-ttu-id="6c163-105">Microsoft では、広告キャンペーン、プロモーション コード、セール価格など、製品を宣伝し、顧客ベースの拡大を図るうえで役立つさまざまな機能を提供しています。</span><span class="sxs-lookup"><span data-stu-id="6c163-105">We offer many features that help you promote your products and grow your customer base, including ad campaigns, promo codes, sale pricing, and more.</span></span>
 
--   [<span data-ttu-id="3782d-106">プロモーション コードを生成する</span><span class="sxs-lookup"><span data-stu-id="3782d-106">Generate promotional codes</span></span>](generate-promotional-codes.md)
--   [<span data-ttu-id="3782d-107">アプリの広告キャンペーンの作成</span><span class="sxs-lookup"><span data-stu-id="3782d-107">Create an ad campaign for your app</span></span>](create-an-ad-campaign-for-your-app.md)
--   [<span data-ttu-id="3782d-108">カスタム アプリ プロモーション キャンペーンの作成</span><span class="sxs-lookup"><span data-stu-id="3782d-108">Create a custom app promotion campaign</span></span>](create-a-custom-app-promotion-campaign.md)
--   [<span data-ttu-id="3782d-109">アプリとアドオンの販売</span><span class="sxs-lookup"><span data-stu-id="3782d-109">Put apps and add-ons on sale</span></span>](put-apps-and-add-ons-on-sale.md)
--   [<span data-ttu-id="3782d-110">Microsoft Store アプリのガイドラインをマーケティング</span><span class="sxs-lookup"><span data-stu-id="3782d-110">Microsoft Store marketing guidelines for apps</span></span>](app-marketing-guidelines.md)
--   [<span data-ttu-id="3782d-111">アプリへのリンク</span><span class="sxs-lookup"><span data-stu-id="3782d-111">Link to your app</span></span>](link-to-your-app.md)
--   [<span data-ttu-id="3782d-112">アプリの販売促進を容易にする</span><span class="sxs-lookup"><span data-stu-id="3782d-112">Make your app easier to promote</span></span>](make-your-app-easier-to-promote.md)
+-   [<span data-ttu-id="6c163-106">プロモーション コードを生成する</span><span class="sxs-lookup"><span data-stu-id="6c163-106">Generate promotional codes</span></span>](generate-promotional-codes.md)
+-   [<span data-ttu-id="6c163-107">アプリの広告キャンペーンの作成</span><span class="sxs-lookup"><span data-stu-id="6c163-107">Create an ad campaign for your app</span></span>](create-an-ad-campaign-for-your-app.md)
+-   [<span data-ttu-id="6c163-108">カスタム アプリ プロモーション キャンペーンの作成</span><span class="sxs-lookup"><span data-stu-id="6c163-108">Create a custom app promotion campaign</span></span>](create-a-custom-app-promotion-campaign.md)
+-   [<span data-ttu-id="6c163-109">アプリとアドオンの販売</span><span class="sxs-lookup"><span data-stu-id="6c163-109">Put apps and add-ons on sale</span></span>](put-apps-and-add-ons-on-sale.md)
+-   [<span data-ttu-id="6c163-110">Microsoft Store のアプリのガイドラインをマーケティング</span><span class="sxs-lookup"><span data-stu-id="6c163-110">Microsoft Store marketing guidelines for apps</span></span>](app-marketing-guidelines.md)
+-   [<span data-ttu-id="6c163-111">アプリへのリンク</span><span class="sxs-lookup"><span data-stu-id="6c163-111">Link to your app</span></span>](link-to-your-app.md)
+-   [<span data-ttu-id="6c163-112">アプリの販売促進を容易にする</span><span class="sxs-lookup"><span data-stu-id="6c163-112">Make your app easier to promote</span></span>](make-your-app-easier-to-promote.md)
 
  
 

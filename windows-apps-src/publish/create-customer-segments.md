@@ -11,11 +11,11 @@ keywords: windows 10, uwp, セグメント, セグメント, 対象グループ,
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ec3bdd1d46927c9d6037906ebdb07e7a5c8f3f1
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319739"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361111"
 ---
 # <a name="create-customer-segments"></a><span data-ttu-id="136b2-103">ユーザー セグメントを作成する</span><span class="sxs-lookup"><span data-stu-id="136b2-103">Create customer segments</span></span>
 
