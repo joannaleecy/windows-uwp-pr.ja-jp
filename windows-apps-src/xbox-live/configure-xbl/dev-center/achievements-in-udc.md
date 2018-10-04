@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: 108d022909afc9a118cc1f011acf100972576841
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4261018"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4311109"
 ---
 # <a name="configure-achievements-2017-on-dev-center"></a><span data-ttu-id="0ecec-104">デベロッパー センターでの Achievements 2017 の構成</span><span class="sxs-lookup"><span data-stu-id="0ecec-104">Configure Achievements 2017 on Dev Center</span></span>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d62e4f7106f7f0f2c324ca2c68ea8fe476bc7bfb
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4257778"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4317639"
 ---
 # <a name="post-usersbatchfeedback"></a><span data-ttu-id="8a276-104">POST (/users/batchfeedback)</span><span class="sxs-lookup"><span data-stu-id="8a276-104">POST (/users/batchfeedback)</span></span>
 <span data-ttu-id="8a276-105">タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="8a276-105">Used by your title's service to send feedback in batch form outside of your title's interface.</span></span> <span data-ttu-id="8a276-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="8a276-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>

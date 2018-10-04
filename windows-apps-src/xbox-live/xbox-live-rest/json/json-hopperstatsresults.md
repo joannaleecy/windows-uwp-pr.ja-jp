@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 17b6bf856dd87abc72a000cb92724baf91452d73
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4265520"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4316997"
 ---
 # <a name="hopperstatsresults-json"></a><span data-ttu-id="cf3a4-104">HopperStatsResults (JSON)</span><span class="sxs-lookup"><span data-stu-id="cf3a4-104">HopperStatsResults (JSON)</span></span>
 <span data-ttu-id="cf3a4-105">ホッパーの統計情報を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="cf3a4-105">A JSON object representing the statistics for a hopper.</span></span> 

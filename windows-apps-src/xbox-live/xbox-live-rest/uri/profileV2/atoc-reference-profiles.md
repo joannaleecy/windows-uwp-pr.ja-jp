@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: bcae059476cd5e55d95cbbbc7c4b479c359e46fe
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4265618"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4316837"
 ---
 # <a name="profiles-uris"></a><span data-ttu-id="6ef05-104">プロフィール URI</span><span class="sxs-lookup"><span data-stu-id="6ef05-104">Profiles URIs</span></span>
  

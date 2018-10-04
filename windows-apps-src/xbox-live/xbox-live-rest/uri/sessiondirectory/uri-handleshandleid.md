@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 47dda291a9a86ccbee69e1e51ca71be373f5dc1d
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268266"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4317481"
 ---
 # <a name="handleshandleid"></a><span data-ttu-id="22f81-104">/handles/{handleId}</span><span class="sxs-lookup"><span data-stu-id="22f81-104">/handles/{handleId}</span></span>
 <span data-ttu-id="22f81-105">識別子により指定されたセッション ハンドルを削除または取得の操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="22f81-105">Supports DELETE and GET operations for session handles specified by identifier.</span></span> 

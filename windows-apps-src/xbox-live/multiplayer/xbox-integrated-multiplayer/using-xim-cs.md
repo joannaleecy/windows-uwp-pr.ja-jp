@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cb15206469abf96d8c88490c35c86b8c5197e93
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4266924"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4318607"
 ---
 # <a name="using-xim-c"></a><span data-ttu-id="07f6d-104">XIM (C#) の使用</span><span class="sxs-lookup"><span data-stu-id="07f6d-104">Using XIM (C#)</span></span>
 

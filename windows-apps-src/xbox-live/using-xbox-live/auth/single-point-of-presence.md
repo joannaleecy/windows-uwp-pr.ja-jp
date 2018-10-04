@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, spop, single point of presence
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ad187ea8645138d3076892e893cb0b770236ae8
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4266982"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4316085"
 ---
 # <a name="single-point-of-presence-spop"></a><span data-ttu-id="bc05f-104">Single Point of Presence (SPOP)</span><span class="sxs-lookup"><span data-stu-id="bc05f-104">Single Point of Presence (SPOP)</span></span>
 

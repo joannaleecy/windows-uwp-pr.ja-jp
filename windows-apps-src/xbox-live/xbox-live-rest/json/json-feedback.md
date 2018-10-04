@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e9ef3bb19155199ae94b18b828fb40eb7a0a2ce6
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4265502"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4314411"
 ---
 # <a name="feedback-json"></a><span data-ttu-id="03c82-104">Feedback (JSON)</span><span class="sxs-lookup"><span data-stu-id="03c82-104">Feedback (JSON)</span></span>
 <span data-ttu-id="03c82-105">プレイヤーに関するフィードバックの情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="03c82-105">Contains feedback information about a player.</span></span>

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a0735a65afe8b5748efefce5dec9ad1989a77b4d
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4264282"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4318149"
 ---
 # <a name="get-usersowneridpeopletargetid"></a><span data-ttu-id="2f327-104">GET (/users/{ownerId}/people/{targetid})</span><span class="sxs-lookup"><span data-stu-id="2f327-104">GET (/users/{ownerId}/people/{targetid})</span></span>
 <span data-ttu-id="2f327-105">呼び出し元のユーザーのコレクションからターゲット ID によってユーザーを取得します。</span><span class="sxs-lookup"><span data-stu-id="2f327-105">Gets a person by target ID from caller's people collection.</span></span> <span data-ttu-id="2f327-106">これらの Uri のドメインが`social.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="2f327-106">The domain for these URIs is `social.xboxlive.com`.</span></span>

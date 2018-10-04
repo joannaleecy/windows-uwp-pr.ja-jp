@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d7c2cb3ca95524b49ea6e0cbe14771036a3e6925
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4264306"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4316317"
 ---
 # <a name="multiplayersessionrequest-json"></a><span data-ttu-id="4cbdf-104">MultiplayerSessionRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="4cbdf-104">MultiplayerSessionRequest (JSON)</span></span>
 <span data-ttu-id="4cbdf-105">**MultiplayerSession**オブジェクト上の操作に対して要求の JSON オブジェクトが渡されます。</span><span class="sxs-lookup"><span data-stu-id="4cbdf-105">The request JSON object passed for an operation on a **MultiplayerSession** object.</span></span> 

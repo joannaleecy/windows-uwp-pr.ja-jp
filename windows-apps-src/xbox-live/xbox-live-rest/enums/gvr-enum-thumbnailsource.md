@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d14304f38d84894ef999003e86f92beeca526ef
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4267270"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4311213"
 ---
 # <a name="thumbnailsource-enumeration"></a><span data-ttu-id="82a6c-104">ThumbnailSource 列挙型</span><span class="sxs-lookup"><span data-stu-id="82a6c-104">ThumbnailSource Enumeration</span></span>
 <span data-ttu-id="82a6c-105">ThumbnailSource 列挙をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="82a6c-105">Details the ThumbnailSource enumeration.</span></span> 

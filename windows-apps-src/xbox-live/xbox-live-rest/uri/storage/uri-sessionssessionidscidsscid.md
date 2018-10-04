@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b90272b9674e3c16ad48e66a835220575684714
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4258468"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4316851"
 ---
 # <a name="sessionssessionidscidsscid"></a><span data-ttu-id="41ce9-104">/sessions/{sessionId}/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="41ce9-104">/sessions/{sessionId}/scids/{scid}</span></span>
 <span data-ttu-id="41ce9-105">このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="41ce9-105">Retrieves quota information for this storage type.</span></span> <span data-ttu-id="41ce9-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="41ce9-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

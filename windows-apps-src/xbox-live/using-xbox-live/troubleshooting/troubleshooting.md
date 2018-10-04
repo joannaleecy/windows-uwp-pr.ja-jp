@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c61b5d74fbcd5487b11b71067b0558c67e5590e
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4257966"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4312615"
 ---
 # <a name="troubleshooting-xbox-live"></a><span data-ttu-id="4ff79-104">Xbox Live のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="4ff79-104">Troubleshooting Xbox Live</span></span>
 
