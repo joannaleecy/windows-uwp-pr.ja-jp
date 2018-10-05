@@ -12,31 +12,31 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c9d42f4285cd20785f5606d3e2ac6094a874acba
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317837"
+ms.locfileid: "4359293"
 ---
-# <a name="titleassociation-json"></a><span data-ttu-id="19c3d-104">TitleAssociation (JSON)</span><span class="sxs-lookup"><span data-stu-id="19c3d-104">TitleAssociation (JSON)</span></span>
-<span data-ttu-id="19c3d-105">実績に関連付けられているタイトルです。</span><span class="sxs-lookup"><span data-stu-id="19c3d-105">A title that is associated with the achievement.</span></span> 
+# <a name="titleassociation-json"></a><span data-ttu-id="2710b-104">TitleAssociation (JSON)</span><span class="sxs-lookup"><span data-stu-id="2710b-104">TitleAssociation (JSON)</span></span>
+<span data-ttu-id="2710b-105">実績に関連付けられているタイトルです。</span><span class="sxs-lookup"><span data-stu-id="2710b-105">A title that is associated with the achievement.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="titleassociation"></a><span data-ttu-id="19c3d-106">TitleAssociation</span><span class="sxs-lookup"><span data-stu-id="19c3d-106">TitleAssociation</span></span>
+## <a name="titleassociation"></a><span data-ttu-id="2710b-106">TitleAssociation</span><span class="sxs-lookup"><span data-stu-id="2710b-106">TitleAssociation</span></span>
  
-<span data-ttu-id="19c3d-107">TitleAssociation オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="19c3d-107">The TitleAssociation object has the following specification.</span></span>
+<span data-ttu-id="2710b-107">TitleAssociation オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="2710b-107">The TitleAssociation object has the following specification.</span></span>
  
-| <span data-ttu-id="19c3d-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="19c3d-108">Member</span></span>| <span data-ttu-id="19c3d-109">種類</span><span class="sxs-lookup"><span data-stu-id="19c3d-109">Type</span></span>| <span data-ttu-id="19c3d-110">説明</span><span class="sxs-lookup"><span data-stu-id="19c3d-110">Description</span></span>| 
+| <span data-ttu-id="2710b-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="2710b-108">Member</span></span>| <span data-ttu-id="2710b-109">種類</span><span class="sxs-lookup"><span data-stu-id="2710b-109">Type</span></span>| <span data-ttu-id="2710b-110">説明</span><span class="sxs-lookup"><span data-stu-id="2710b-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="19c3d-111">name</span><span class="sxs-lookup"><span data-stu-id="19c3d-111">name</span></span>| <span data-ttu-id="19c3d-112">string</span><span class="sxs-lookup"><span data-stu-id="19c3d-112">string</span></span>| <span data-ttu-id="19c3d-113">コンテンツのローカライズされた名前です。</span><span class="sxs-lookup"><span data-stu-id="19c3d-113">The localized name of the content.</span></span>| 
-| <span data-ttu-id="19c3d-114">id</span><span class="sxs-lookup"><span data-stu-id="19c3d-114">id</span></span>| <span data-ttu-id="19c3d-115">string</span><span class="sxs-lookup"><span data-stu-id="19c3d-115">string</span></span>| <span data-ttu-id="19c3d-116">TitleId (32 ビット符号なし整数、10 進数で返されます)。</span><span class="sxs-lookup"><span data-stu-id="19c3d-116">The titleId (32-bit unsigned integer, returned in decimal).</span></span>| 
-| <span data-ttu-id="19c3d-117">version</span><span class="sxs-lookup"><span data-stu-id="19c3d-117">version</span></span>| <span data-ttu-id="19c3d-118">string</span><span class="sxs-lookup"><span data-stu-id="19c3d-118">string</span></span>| <span data-ttu-id="19c3d-119">(該当する場合) に関連付けられているタイトルの特定のバージョン。</span><span class="sxs-lookup"><span data-stu-id="19c3d-119">Specific version of the associated title (if appropriate).</span></span>| 
+| <span data-ttu-id="2710b-111">name</span><span class="sxs-lookup"><span data-stu-id="2710b-111">name</span></span>| <span data-ttu-id="2710b-112">string</span><span class="sxs-lookup"><span data-stu-id="2710b-112">string</span></span>| <span data-ttu-id="2710b-113">コンテンツのローカライズされた名前です。</span><span class="sxs-lookup"><span data-stu-id="2710b-113">The localized name of the content.</span></span>| 
+| <span data-ttu-id="2710b-114">id</span><span class="sxs-lookup"><span data-stu-id="2710b-114">id</span></span>| <span data-ttu-id="2710b-115">string</span><span class="sxs-lookup"><span data-stu-id="2710b-115">string</span></span>| <span data-ttu-id="2710b-116">タイトル Id (32 ビット符号なし整数、10 進数で返されます)。</span><span class="sxs-lookup"><span data-stu-id="2710b-116">The titleId (32-bit unsigned integer, returned in decimal).</span></span>| 
+| <span data-ttu-id="2710b-117">version</span><span class="sxs-lookup"><span data-stu-id="2710b-117">version</span></span>| <span data-ttu-id="2710b-118">string</span><span class="sxs-lookup"><span data-stu-id="2710b-118">string</span></span>| <span data-ttu-id="2710b-119">(該当する場合) に関連付けられているタイトルの特定のバージョン。</span><span class="sxs-lookup"><span data-stu-id="2710b-119">Specific version of the associated title (if appropriate).</span></span>| 
   
 <a id="ID4E4B"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="19c3d-120">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="19c3d-120">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="2710b-120">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="2710b-120">Sample JSON syntax</span></span>
  
 
 ```json
@@ -52,13 +52,13 @@ ms.locfileid: "4317837"
 <a id="ID4EGC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="19c3d-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="19c3d-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2710b-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="2710b-121">See also</span></span>
  
 <a id="ID4EIC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="19c3d-122">Parent</span><span class="sxs-lookup"><span data-stu-id="19c3d-122">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="2710b-122">Parent</span><span class="sxs-lookup"><span data-stu-id="2710b-122">Parent</span></span> 
 
-[<span data-ttu-id="19c3d-123">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="19c3d-123">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="2710b-123">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="2710b-123">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

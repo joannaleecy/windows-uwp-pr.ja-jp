@@ -12,55 +12,55 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 910e2e46725c8628d6984983c808bf5fc9937f9f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317645"
+ms.locfileid: "4359393"
 ---
-# <a name="post-itemid"></a><span data-ttu-id="cfc23-104">POST ({itemID})</span><span class="sxs-lookup"><span data-stu-id="cfc23-104">POST ({itemID})</span></span>
-<span data-ttu-id="cfc23-105">またはのコンシューマブルなインベントリ項目の一部が使用されていることを示しますデクリメントし、要求された時間の長さによって、コンシューマブルの数量。</span><span class="sxs-lookup"><span data-stu-id="cfc23-105">Indicates that all or a portion of a consumable inventory item has been used and decrements the quantity of the consumable by the requested amount.</span></span>
-<span data-ttu-id="cfc23-106">これらの Uri のドメインが`inventory.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="cfc23-106">The domain for these URIs is `inventory.xboxlive.com`.</span></span>
+# <a name="post-itemid"></a><span data-ttu-id="ea439-104">POST ({itemID})</span><span class="sxs-lookup"><span data-stu-id="ea439-104">POST ({itemID})</span></span>
+<span data-ttu-id="ea439-105">または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント、要求された時間の長さによって、コンシューマブルの数量。</span><span class="sxs-lookup"><span data-stu-id="ea439-105">Indicates that all or a portion of a consumable inventory item has been used and decrements the quantity of the consumable by the requested amount.</span></span>
+<span data-ttu-id="ea439-106">これらの Uri のドメインが`inventory.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="ea439-106">The domain for these URIs is `inventory.xboxlive.com`.</span></span>
 
-  * [<span data-ttu-id="cfc23-107">注釈</span><span class="sxs-lookup"><span data-stu-id="cfc23-107">Remarks</span></span>](#ID4EX)
-  * [<span data-ttu-id="cfc23-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="cfc23-108">URI parameters</span></span>](#ID4EQB)
-  * [<span data-ttu-id="cfc23-109">要求本文</span><span class="sxs-lookup"><span data-stu-id="cfc23-109">Request body</span></span>](#ID4E2B)
-  * [<span data-ttu-id="cfc23-110">応答本文</span><span class="sxs-lookup"><span data-stu-id="cfc23-110">Response body</span></span>](#ID4ENC)
+  * [<span data-ttu-id="ea439-107">注釈</span><span class="sxs-lookup"><span data-stu-id="ea439-107">Remarks</span></span>](#ID4EX)
+  * [<span data-ttu-id="ea439-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ea439-108">URI parameters</span></span>](#ID4EQB)
+  * [<span data-ttu-id="ea439-109">要求本文</span><span class="sxs-lookup"><span data-stu-id="ea439-109">Request body</span></span>](#ID4E2B)
+  * [<span data-ttu-id="ea439-110">応答本文</span><span class="sxs-lookup"><span data-stu-id="ea439-110">Response body</span></span>](#ID4ENC)
 
 <a id="ID4EX"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="cfc23-111">注釈</span><span class="sxs-lookup"><span data-stu-id="cfc23-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="ea439-111">注釈</span><span class="sxs-lookup"><span data-stu-id="ea439-111">Remarks</span></span>
 
-   * <span data-ttu-id="cfc23-112">呼び出し元が利用するよう求め数量は、項目の残りのサプライを超えている場合、呼び出しが拒否されます。</span><span class="sxs-lookup"><span data-stu-id="cfc23-112">If the quantity the caller asked to consume exceeds the remaining supply of the item, the call will be rejected.</span></span>
-   * <span data-ttu-id="cfc23-113">呼び出し元が利用するよう求め数量は 0 上の正の整数である必要があります。</span><span class="sxs-lookup"><span data-stu-id="cfc23-113">The quantity the caller asked to consume must be a positive integer above 0.</span></span> <span data-ttu-id="cfc23-114">消費量の値を 0 または小さい呼び出しが拒否されます。</span><span class="sxs-lookup"><span data-stu-id="cfc23-114">Calls with a consumption value of 0 or lower will be rejected.</span></span>
-   * <span data-ttu-id="cfc23-115">呼び出し元では、空のトランザクション ID を提供する場合は、要求が拒否されます。</span><span class="sxs-lookup"><span data-stu-id="cfc23-115">If the caller provides an empty Transaction ID, the request will be rejected.</span></span>
-   * <span data-ttu-id="cfc23-116">利用可能な場合は、どのタイトルによって報告されている使用量を判断することができるように、タイトル クレームが記録されます。</span><span class="sxs-lookup"><span data-stu-id="cfc23-116">If available the title claim will be logged so that it will be possible to determine which title is reporting the consumption.</span></span>
-   * <span data-ttu-id="cfc23-117">同じ transactionId とその他の投稿は、いくつかの期間は無視されます。</span><span class="sxs-lookup"><span data-stu-id="cfc23-117">Additional POSTs with the same transactionId will be ignored for some time period.</span></span>
+   * <span data-ttu-id="ea439-112">呼び出し元が利用するよう求め数量は、項目の残りの電源を超えている場合、呼び出しが拒否されます。</span><span class="sxs-lookup"><span data-stu-id="ea439-112">If the quantity the caller asked to consume exceeds the remaining supply of the item, the call will be rejected.</span></span>
+   * <span data-ttu-id="ea439-113">呼び出し元が利用するよう求め数量は 0 上の正の整数である必要があります。</span><span class="sxs-lookup"><span data-stu-id="ea439-113">The quantity the caller asked to consume must be a positive integer above 0.</span></span> <span data-ttu-id="ea439-114">消費量の値を 0 または小さい呼び出しが拒否されます。</span><span class="sxs-lookup"><span data-stu-id="ea439-114">Calls with a consumption value of 0 or lower will be rejected.</span></span>
+   * <span data-ttu-id="ea439-115">呼び出し元では、空のトランザクション ID を提供する場合は、要求が拒否されます。</span><span class="sxs-lookup"><span data-stu-id="ea439-115">If the caller provides an empty Transaction ID, the request will be rejected.</span></span>
+   * <span data-ttu-id="ea439-116">利用可能な場合は、どのタイトルによって報告されている使用量を判断することができるように、タイトル クレームが記録されます。</span><span class="sxs-lookup"><span data-stu-id="ea439-116">If available the title claim will be logged so that it will be possible to determine which title is reporting the consumption.</span></span>
+   * <span data-ttu-id="ea439-117">同じ transactionId で追加の投稿は、いくつかの期間は無視されます。</span><span class="sxs-lookup"><span data-stu-id="ea439-117">Additional POSTs with the same transactionId will be ignored for some time period.</span></span>
 
 
 > [!NOTE]
-> <span data-ttu-id="cfc23-118">この API の<b>x xbl コントラクト バージョン ヘッダー</b>は「4」です。</span><span class="sxs-lookup"><span data-stu-id="cfc23-118">The <b>x-xbl-contract-version header</b> for this API is "4".</span></span>
+> <span data-ttu-id="ea439-118">この API の<b>x xbl コントラクト バージョン ヘッダー</b>は「4」です。</span><span class="sxs-lookup"><span data-stu-id="ea439-118">The <b>x-xbl-contract-version header</b> for this API is "4".</span></span>
 
 
 <a id="ID4EQB"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="cfc23-119">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="cfc23-119">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="ea439-119">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ea439-119">URI parameters</span></span>
 
-| <span data-ttu-id="cfc23-120">パラメーター</span><span class="sxs-lookup"><span data-stu-id="cfc23-120">Parameter</span></span>| <span data-ttu-id="cfc23-121">型</span><span class="sxs-lookup"><span data-stu-id="cfc23-121">Type</span></span>| <span data-ttu-id="cfc23-122">説明</span><span class="sxs-lookup"><span data-stu-id="cfc23-122">Description</span></span>|
+| <span data-ttu-id="ea439-120">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ea439-120">Parameter</span></span>| <span data-ttu-id="ea439-121">型</span><span class="sxs-lookup"><span data-stu-id="ea439-121">Type</span></span>| <span data-ttu-id="ea439-122">説明</span><span class="sxs-lookup"><span data-stu-id="ea439-122">Description</span></span>|
 | --- | --- | --- | --- |
-| <span data-ttu-id="cfc23-123">itemID</span><span class="sxs-lookup"><span data-stu-id="cfc23-123">itemID</span></span>| <span data-ttu-id="cfc23-124">string</span><span class="sxs-lookup"><span data-stu-id="cfc23-124">string</span></span>| <span data-ttu-id="cfc23-125">単数形インベントリ項目の各ユーザーに一意の ID</span><span class="sxs-lookup"><span data-stu-id="cfc23-125">the ID unique to each user for a singular inventory item</span></span>|
+| <span data-ttu-id="ea439-123">itemID</span><span class="sxs-lookup"><span data-stu-id="ea439-123">itemID</span></span>| <span data-ttu-id="ea439-124">string</span><span class="sxs-lookup"><span data-stu-id="ea439-124">string</span></span>| <span data-ttu-id="ea439-125">単数形インベントリ項目の各ユーザーに一意の ID</span><span class="sxs-lookup"><span data-stu-id="ea439-125">the ID unique to each user for a singular inventory item</span></span>|
 
 <a id="ID4E2B"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="cfc23-126">要求本文</span><span class="sxs-lookup"><span data-stu-id="cfc23-126">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="ea439-126">要求本文</span><span class="sxs-lookup"><span data-stu-id="ea439-126">Request body</span></span>
 
 <a id="ID4EBC"></a>
 
 
-### <a name="sample-request"></a><span data-ttu-id="cfc23-127">要求の例</span><span class="sxs-lookup"><span data-stu-id="cfc23-127">Sample request</span></span>
+### <a name="sample-request"></a><span data-ttu-id="ea439-127">要求の例</span><span class="sxs-lookup"><span data-stu-id="ea439-127">Sample request</span></span>
 
 
 ```cpp
@@ -72,19 +72,19 @@ ms.locfileid: "4317645"
 ```
 
 
-<span data-ttu-id="cfc23-128">削除数量フィールドには、コンシューマブルの残りの数量から削除するコンシューマブルの数量を示すために、呼び出し元ことができます。</span><span class="sxs-lookup"><span data-stu-id="cfc23-128">The remove quantity field allows the caller to indicate the quantity of consumable they wish to remove from the consumable's remaining quantity.</span></span> <span data-ttu-id="cfc23-129">トランザクション ID フィールドでは、同じの使用状況を 2 回にカウントのリスクを軽減しながらコンシューマブルなコンテンツの操作を使用して再試行する手段を呼び出し元を提供します。</span><span class="sxs-lookup"><span data-stu-id="cfc23-129">The Transaction ID field provides the caller with a means to retry using consumable content operations while limiting the risk of counting the same usage twice.</span></span>
+<span data-ttu-id="ea439-128">削除の数量フィールドには、コンシューマブルの残りの数量から削除するコンシューマブルの数量を示すために、呼び出し元ことができます。</span><span class="sxs-lookup"><span data-stu-id="ea439-128">The remove quantity field allows the caller to indicate the quantity of consumable they wish to remove from the consumable's remaining quantity.</span></span> <span data-ttu-id="ea439-129">トランザクション ID フィールドでは、同じの使用状況を 2 回にカウントのリスクを軽減しながらコンシューマブルなコンテンツの操作を使用して再試行する手段を呼び出し元を提供します。</span><span class="sxs-lookup"><span data-stu-id="ea439-129">The Transaction ID field provides the caller with a means to retry using consumable content operations while limiting the risk of counting the same usage twice.</span></span>
 
 <a id="ID4ENC"></a>
 
 
-## <a name="response-body"></a><span data-ttu-id="cfc23-130">応答本文</span><span class="sxs-lookup"><span data-stu-id="cfc23-130">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="ea439-130">応答本文</span><span class="sxs-lookup"><span data-stu-id="ea439-130">Response body</span></span>
 
-<span data-ttu-id="cfc23-131">認証に合格して適切な承認コンテキストが割り当てられていると仮定すると、POST への応答は、POST 要求、コンシューマブルの項目の URL、および項目は新しいでサービスに渡すことと同じ transactionId 受領通知の acknolodgement数量の値。</span><span class="sxs-lookup"><span data-stu-id="cfc23-131">The response to the POST, assuming it passes authentication and is assigned the appropriate authorization context is a an acknolodgement of receipt with the same transactionId passed to the service in the POST request, the consumable item's URL, and the item's new quantity value.</span></span>
+<span data-ttu-id="ea439-131">認証に合格して適切な承認コンテキストが割り当てられていると仮定すると、POST への応答は、POST 要求、コンシューマブルの項目の URL、および項目は新しいでサービスに渡すことと同じ transactionId 受領通知の acknolodgement数量の値。</span><span class="sxs-lookup"><span data-stu-id="ea439-131">The response to the POST, assuming it passes authentication and is assigned the appropriate authorization context is a an acknolodgement of receipt with the same transactionId passed to the service in the POST request, the consumable item's URL, and the item's new quantity value.</span></span>
 
 <a id="ID4EVC"></a>
 
 
-### <a name="sample-response"></a><span data-ttu-id="cfc23-132">応答の例</span><span class="sxs-lookup"><span data-stu-id="cfc23-132">Sample response</span></span>
+### <a name="sample-response"></a><span data-ttu-id="ea439-132">応答の例</span><span class="sxs-lookup"><span data-stu-id="ea439-132">Sample response</span></span>
 
 
 ```cpp
@@ -100,27 +100,27 @@ ms.locfileid: "4317645"
 <a id="ID4E6C"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="cfc23-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="cfc23-133">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ea439-133">関連項目</span><span class="sxs-lookup"><span data-stu-id="ea439-133">See also</span></span>
 
 <a id="ID4EBD"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="cfc23-134">Parent</span><span class="sxs-lookup"><span data-stu-id="cfc23-134">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="ea439-134">Parent</span><span class="sxs-lookup"><span data-stu-id="ea439-134">Parent</span></span>
 
-[<span data-ttu-id="cfc23-135">/users/me/consumables/{itemID}</span><span class="sxs-lookup"><span data-stu-id="cfc23-135">/users/me/consumables/{itemID}</span></span>](uri-inventoryconsumablesitemurl.md)
+[<span data-ttu-id="ea439-135">/users/me/consumables/{itemID}</span><span class="sxs-lookup"><span data-stu-id="ea439-135">/users/me/consumables/{itemID}</span></span>](uri-inventoryconsumablesitemurl.md)
 
 
 <a id="ID4ELD"></a>
 
 
-##### <a name="further-information"></a><span data-ttu-id="cfc23-136">詳細情報</span><span class="sxs-lookup"><span data-stu-id="cfc23-136">Further Information</span></span>
+##### <a name="further-information"></a><span data-ttu-id="ea439-136">詳細情報</span><span class="sxs-lookup"><span data-stu-id="ea439-136">Further Information</span></span>
 
-[<span data-ttu-id="cfc23-137">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="cfc23-137">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
+[<span data-ttu-id="ea439-137">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="ea439-137">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
 
- [<span data-ttu-id="cfc23-138">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="cfc23-138">EDS Parameters</span></span>](../../additional/edsparameters.md)
+ [<span data-ttu-id="ea439-138">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="ea439-138">EDS Parameters</span></span>](../../additional/edsparameters.md)
 
- [<span data-ttu-id="cfc23-139">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="cfc23-139">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
+ [<span data-ttu-id="ea439-139">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="ea439-139">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
 
- [<span data-ttu-id="cfc23-140">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="cfc23-140">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
+ [<span data-ttu-id="ea439-140">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="ea439-140">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
 
- [<span data-ttu-id="cfc23-141">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="cfc23-141">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)
+ [<span data-ttu-id="ea439-141">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="ea439-141">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)

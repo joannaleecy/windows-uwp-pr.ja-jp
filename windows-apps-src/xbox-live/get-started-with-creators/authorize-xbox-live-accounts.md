@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アカウント, テスト アカウント
 ms.localizationpriority: medium
 ms.openlocfilehash: 69c184d4cf3069b26cdce4cab35a225b6913fd2b
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4319685"
+ms.locfileid: "4357763"
 ---
 # <a name="authorize-xbox-live-accounts-for-testing-in-your-environment"></a><span data-ttu-id="3bb86-104">環境内でテスト用の Xbox Live アカウントを承認する</span><span class="sxs-lookup"><span data-stu-id="3bb86-104">Authorize Xbox Live Accounts for Testing in your environment</span></span>
 

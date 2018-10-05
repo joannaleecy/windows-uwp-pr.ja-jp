@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ecdf1bb3da9f2cd92e95976e07bbc2fd58a51800
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4317411"
+ms.locfileid: "4358766"
 ---
 # <a name="xbox-live-storage-platform---connected-storage-title-storage"></a><span data-ttu-id="6c077-104">Xbox Live ストレージ プラットフォーム - 接続ストレージ、タイトル ストレージ</span><span class="sxs-lookup"><span data-stu-id="6c077-104">Xbox Live Storage Platform - Connected Storage, Title Storage</span></span>
 

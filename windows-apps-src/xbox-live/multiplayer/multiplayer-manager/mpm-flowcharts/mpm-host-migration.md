@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: 6394e440981dea5da28b0a5e59334def9a2a57e8
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318783"
+ms.locfileid: "4360917"
 ---
 # <a name="flowchart---handle-host-migration"></a><span data-ttu-id="10e58-104">フローチャート - ホストの移行を処理する</span><span class="sxs-lookup"><span data-stu-id="10e58-104">Flowchart - Handle host migration</span></span>
 

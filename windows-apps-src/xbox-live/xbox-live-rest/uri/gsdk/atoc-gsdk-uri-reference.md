@@ -12,37 +12,37 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 912c3febd0a29a9aca326761ae63e61a0bdfada0
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4314783"
+ms.locfileid: "4360728"
 ---
-# <a name="game-server-universal-resource-identifier-uri-reference"></a><span data-ttu-id="27048-104">ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="27048-104">Game Server Universal Resource Identifier (URI) Reference</span></span>
-<span data-ttu-id="27048-105">Uri のクライアントで、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。</span><span class="sxs-lookup"><span data-stu-id="27048-105">URIs used by clients to create Game Server Development Kit server instances for a title.</span></span> <span data-ttu-id="27048-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="27048-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
+# <a name="game-server-universal-resource-identifier-uri-reference"></a><span data-ttu-id="ed716-104">ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="ed716-104">Game Server Universal Resource Identifier (URI) Reference</span></span>
+<span data-ttu-id="ed716-105">Uri のクライアントで、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。</span><span class="sxs-lookup"><span data-stu-id="ed716-105">URIs used by clients to create Game Server Development Kit server instances for a title.</span></span> <span data-ttu-id="ed716-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="ed716-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
  
 <a id="ID4EY"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="27048-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="27048-107">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="ed716-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="ed716-107">In this section</span></span>
 
-[<span data-ttu-id="27048-108">/qosservers</span><span class="sxs-lookup"><span data-stu-id="27048-108">/qosservers</span></span>](uri-qosservers.md)
+[<span data-ttu-id="ed716-108">/qosservers</span><span class="sxs-lookup"><span data-stu-id="ed716-108">/qosservers</span></span>](uri-qosservers.md)
 
-<span data-ttu-id="27048-109">&nbsp;&nbsp;URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="27048-109">&nbsp;&nbsp;URI called by a client to get the list of QoS servers available for use with Xbox Live Compute.</span></span>
+<span data-ttu-id="ed716-109">&nbsp;&nbsp;URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するために、クライアントによって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ed716-109">&nbsp;&nbsp;URI called by a client to get the list of QoS servers available for use with Xbox Live Compute.</span></span>
 
-[<span data-ttu-id="27048-110">/titles/{titleId}/clusters</span><span class="sxs-lookup"><span data-stu-id="27048-110">/titles/{titleId}/clusters</span></span>](uri-titlestitleidclusters.md)
+[<span data-ttu-id="ed716-110">/titles/{titleId}/clusters</span><span class="sxs-lookup"><span data-stu-id="ed716-110">/titles/{titleId}/clusters</span></span>](uri-titlestitleidclusters.md)
 
-<span data-ttu-id="27048-111">&nbsp;&nbsp;により、クライアントは、タイトルの Xbox Live Compute サーバー インスタンスを作成する URI。</span><span class="sxs-lookup"><span data-stu-id="27048-111">&nbsp;&nbsp;URI that allows a client to create an Xbox Live Compute server instance for a title.</span></span>
+<span data-ttu-id="ed716-111">&nbsp;&nbsp;により、クライアントは、タイトルの Xbox Live Compute サーバー インスタンスを作成する URI。</span><span class="sxs-lookup"><span data-stu-id="ed716-111">&nbsp;&nbsp;URI that allows a client to create an Xbox Live Compute server instance for a title.</span></span>
 
-[<span data-ttu-id="27048-112">/titles/{titleId}/variants</span><span class="sxs-lookup"><span data-stu-id="27048-112">/titles/{titleId}/variants</span></span>](uri-titlestitleidvariants.md)
+[<span data-ttu-id="ed716-112">/titles/{titleId}/variants</span><span class="sxs-lookup"><span data-stu-id="ed716-112">/titles/{titleId}/variants</span></span>](uri-titlestitleidvariants.md)
 
-<span data-ttu-id="27048-113">&nbsp;&nbsp;URI は、タイトルの利用可能な言語バリアントを取得するクライアントによって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="27048-113">&nbsp;&nbsp;URI called by a client to get the available variants for a title.</span></span>
+<span data-ttu-id="ed716-113">&nbsp;&nbsp;URI は、タイトルの利用可能なバリエーションを取得するクライアントによって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="ed716-113">&nbsp;&nbsp;URI called by a client to get the available variants for a title.</span></span>
 
-[<span data-ttu-id="27048-114">/titles/{titleId}/sessionhosts</span><span class="sxs-lookup"><span data-stu-id="27048-114">/titles/{titleId}/sessionhosts</span></span>](uri-titlestitleidsessionhosts.md)
+[<span data-ttu-id="ed716-114">/titles/{titleId}/sessionhosts</span><span class="sxs-lookup"><span data-stu-id="ed716-114">/titles/{titleId}/sessionhosts</span></span>](uri-titlestitleidsessionhosts.md)
 
-<span data-ttu-id="27048-115">&nbsp;&nbsp;特定のタイトル id に割り当てられる Xbox Live Compute sessionhost を要求します。</span><span class="sxs-lookup"><span data-stu-id="27048-115">&nbsp;&nbsp;Requests a Xbox Live Compute sessionhost to be allocated for a given title id.</span></span>
+<span data-ttu-id="ed716-115">&nbsp;&nbsp;特定のタイトル id が割り当ての Xbox Live Compute sessionhost を要求します。</span><span class="sxs-lookup"><span data-stu-id="ed716-115">&nbsp;&nbsp;Requests a Xbox Live Compute sessionhost to be allocated for a given title id.</span></span>
 
-[<span data-ttu-id="27048-116">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span><span class="sxs-lookup"><span data-stu-id="27048-116">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span></span>](uri-titlestitleidsessionssessionidallocationstatus.md)
+[<span data-ttu-id="ed716-116">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span><span class="sxs-lookup"><span data-stu-id="ed716-116">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span></span>](uri-titlestitleidsessionssessionidallocationstatus.md)
 
-<span data-ttu-id="27048-117">&nbsp;&nbsp;特定のタイトル id とセッション id、チケットの要求の状態を取得します。</span><span class="sxs-lookup"><span data-stu-id="27048-117">&nbsp;&nbsp;For the given title id and session id, get status of the ticket request.</span></span>
+<span data-ttu-id="ed716-117">&nbsp;&nbsp;特定のタイトル id とセッション id、チケットの要求の状態を取得します。</span><span class="sxs-lookup"><span data-stu-id="ed716-117">&nbsp;&nbsp;For the given title id and session id, get status of the ticket request.</span></span>
  
