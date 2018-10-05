@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e82306119e428dd9279e26d1497d44b371b9587e
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4356383"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4394301"
 ---
 # <a name="achievement-json"></a><span data-ttu-id="e2ad5-104">Achievement (JSON)</span><span class="sxs-lookup"><span data-stu-id="e2ad5-104">Achievement (JSON)</span></span>
 <span data-ttu-id="e2ad5-105">実績オブジェクト (バージョン 2)。</span><span class="sxs-lookup"><span data-stu-id="e2ad5-105">An Achievement object (version 2).</span></span>

@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4354838"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4387331"
 ---
 # <a name="app-submissions"></a><span data-ttu-id="23ac3-103">アプリの申請</span><span class="sxs-lookup"><span data-stu-id="23ac3-103">App submissions</span></span>
 

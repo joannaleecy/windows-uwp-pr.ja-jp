@@ -16,11 +16,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fecff4fdd836f271b9fb066c58f159111c37772
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4350808"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4383023"
 ---
 # <a name="hub-controlpattern"></a><span data-ttu-id="3f1ab-103">ハブ コントロール/パターン</span><span class="sxs-lookup"><span data-stu-id="3f1ab-103">Hub control/pattern</span></span>
 

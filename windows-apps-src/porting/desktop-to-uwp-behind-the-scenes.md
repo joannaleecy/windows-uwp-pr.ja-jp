@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e6cd2b305a9d52a2239be46cc7f77650cdd6531
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4352912"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4384318"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a><span data-ttu-id="9cb4b-103">パッケージ デスクトップ アプリケーションの内側</span><span class="sxs-lookup"><span data-stu-id="9cb4b-103">Behind the scenes of your packaged desktop application</span></span>
 
