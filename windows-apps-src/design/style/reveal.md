@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353249"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4393213"
 ---
 # <a name="reveal-highlight"></a><span data-ttu-id="1fc16-104">表示ハイライト</span><span class="sxs-lookup"><span data-stu-id="1fc16-104">Reveal Highlight</span></span>
 
