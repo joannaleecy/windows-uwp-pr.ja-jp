@@ -79,6 +79,6 @@ C++ 以前左する場合/WinRT 今すぐそれらを含める必要がありま
 
 C++ コンパイラーが場合"*エラー C2039: 'IUnknown': のメンバーでない '\'global 名前空間'*"、追加し、`#include <unknwn.h>`の先頭に、`pch.h`ファイル (c++ インクルードする前に +/winrt ヘッダー)。
 
-追加する必要があります`#include <hstring.h>`その後。
+You may also need to add `#include <hstring.h>` after that.
 
 C++ リンカーを生成する場合"*エラー lnk 2019: 外部シンボルは未解決です_WINRT_CanUnloadNow@0関数で参照されている_VSDesignerCanUnloadNow@0*"を追加することで解決できます`#define _VSDESIGNER_DONT_LOAD_AS_DLL`を`pch.h`ファイル。

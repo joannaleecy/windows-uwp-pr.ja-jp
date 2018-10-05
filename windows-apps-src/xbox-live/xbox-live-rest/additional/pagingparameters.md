@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e1ed654e4dc1c0f1233ecdedf5d4af66da868bff
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4316225"
+ms.locfileid: "4357704"
 ---
 # <a name="paging-parameters"></a>ページング パラメーター
  
-一部の Xbox Live サービス Uri では、JavaScript Object Notation (JSON) オブジェクトのコレクションを返します。 これらのコレクションは、URI に接続されているクエリ文字列の一部としてページングのパラメーターを指定することによって、を通じてページングことができます。 ページング パラメーターの完全な一覧に従います。 ページングのパラメーターを許可するすべての Uri は、このページの下部にリンクされます。
+一部の Xbox Live サービス Uri では、JavaScript Object Notation (JSON) オブジェクトのコレクションを返します。 これらのコレクションは、URI に接続されているクエリ文字列の一部としてページング パラメーターを指定することによって、を通じてページことができます。 ページング パラメーターの完全な一覧に依存します。 ページング パラメーターを許可するすべての Uri は、このページの下部にリンクされます。
  
 <a id="ID4E2"></a>
 

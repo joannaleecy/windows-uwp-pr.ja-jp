@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ddb5800be9f96b7b90ed816f094cb38d83ee4727
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4320098"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358060"
 ---
 # <a name="usersmescidsscidclips"></a>/users/me/scids/{scid}/clips
-最初のアクセスは、要求をアップロードします。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`問題の URI の機能に応じて、します。
+最初のアクセスは、要求をアップロードします。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`対象の URI の機能に応じて、します。
  
   * [URI パラメーター](#ID4EX)
  
@@ -30,7 +30,7 @@ ms.locfileid: "4320098"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| scid| string| アクセスされているリソースのサービス構成 ID。 認証されたユーザーの SCID に一致する必要があります。| 
+| scid| string| サービスにアクセスしているリソースの ID を構成します。 認証されたユーザーの SCID に一致する必要があります。| 
   
 <a id="ID4ETB"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "4320098"
 
 [POST (/users/me/scids/{scid}/clips)](uri-usersmescidclipspost.md)
 
-&nbsp;&nbsp;初期のアップロード要求を行います。
+&nbsp;&nbsp;初期のアップロード要求を実行します。
  
 <a id="ID4E4B"></a>
 

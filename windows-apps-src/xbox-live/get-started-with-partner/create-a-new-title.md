@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 72126b51c4e155babad6cfee737e21d6102b03e5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4310313"
+ms.locfileid: "4359153"
 ---
 # <a name="create-a-new-title-for-xbox-live"></a>Xbox Live 用の新しいタイトルを作成する
 
@@ -45,7 +45,7 @@ Microsoft アカウント (MSA とも呼ばれます) がない場合は、一�
 ### <a name="register-as-an-app-developer"></a>アプリ開発者として登録する
 デベロッパー センターで新しいタイトルを作成できるようにするには、アプリ開発者として登録する必要があります。
 
-Go を登録するhttps://developer.microsoft.com/en-us/store/registerし、サインアップ プロセスに従います。
+登録するにhttps://developer.microsoft.com/en-us/store/registerし、サインアップ プロセスに従います。
 
 ### <a name="create-a-new-uwp-title"></a>新しい UWP タイトルを作成する
 次に、デベロッパー センターで定義されている UWP タイトルが必要です。  これを実行するには、まずダッシュ ボードに移動します

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ff8e5444ec65de3665d593168e430a64f4d250e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4316813"
+ms.locfileid: "4358238"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>ユニバーサル リソース識別子 (URI) リファレンス
 
@@ -65,7 +65,7 @@ ms.locfileid: "4316813"
 
 [プレゼンス URI](presence/atoc-reference-presence.md)
 
-&nbsp;&nbsp;Uri とプレゼンスに関連する HTTP メソッドです。
+&nbsp;&nbsp;Uri とプレゼンスの HTTP メソッドが関連付けられています。
 
 [プライバシー URI](privacy/atoc-reference-privacyv2.md)
 
@@ -85,7 +85,7 @@ ms.locfileid: "4316813"
 
 [実績タイトル履歴 URI](titlehistory/atoc-reference-titlehistoryv2.md)
 
-&nbsp;&nbsp;Uri と*タイトルの履歴*の HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;Uri と*タイトル履歴*の HTTP メソッドが関連付けられています。
 
 [タイトル ストレージ URI](storage/atoc-reference-storagev2.md)
 
@@ -101,7 +101,7 @@ ms.locfileid: "4316813"
 
 [ユーザー統計 URI](userstats/atoc-reference-userstats.md)
 
-&nbsp;&nbsp;Uri とユーザーの統計情報の HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;Uri とユーザーの統計情報の関連付けの HTTP メソッドです。
 
 <a id="ID4E5C"></a>
 

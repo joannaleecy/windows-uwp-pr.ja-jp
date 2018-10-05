@@ -12,33 +12,33 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4de72a24c34af1a5f145c44b2acfa11a7bd07f95
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4318367"
+ms.locfileid: "4358662"
 ---
 # <a name="multiplayeractivitydetails-json"></a>MultiplayerActivityDetails (JSON)
 **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**を表す JSON オブジェクト。 
 
 > [!NOTE] 
-> このオブジェクトは、2015年マルチプレイヤーで実装され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用されます。  
+> このオブジェクトは、2015年マルチプレイヤーで実装され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用する概念があることです。  
 
  
 <a id="ID4ES"></a>
 
   
  
-MultiplayerActivityDetails JSON オブジェクトでは、次の仕様があります。
+MultiplayerActivityDetails JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | --- | 
-| SessionReference| MultiplayerSessionReference| セッションの識別情報を表す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b>オブジェクト。| 
+| SessionReference| MultiplayerSessionReference| セッションの識別情報を表す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b>オブジェクトを返します。| 
 | ハンドル id を使用| 64 ビットの符号なし整数| アクティビティに対応するハンドル ID。| 
 | TitleId| 32 ビット符号なし整数| タイトル ID は、アクティビティに参加するために起動する必要があります。| 
 | 表示| MultiplayerSessionVisibility| セッションの可視性の状態を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>値。| 
 | による| MultiplayerSessionJoinRestriction| セッションの参加制限を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b>値。 表示のフィールドが「開く」に設定されている場合、この制限が適用されます。| 
-| 終了| ブール値| セッションが一時的に閉じている場合、参加するため、false そうでない場合は true。| 
+| 終了| ブール値| セッションが一時的に閉じている場合、参加するため、false それ以外の場合は true。| 
 | OwnerXboxUserId| 64 ビットの符号なし整数| アクティビティを所有しているメンバーの Xbox ユーザー ID。| 
 | MaxMembersCount| 32 ビット符号なし整数| スロットの合計数。| 
 | MembersCount| 32 ビット符号なし整数| スロットを占有の数。| 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7070d829000821cb48d8fcbaa4fde1d6f393b16a
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4313587"
+ms.locfileid: "4359345"
 ---
 # <a name="user-json"></a>User (JSON)
 ユーザーのランキング データが含まれています。 
@@ -25,7 +25,7 @@ ms.locfileid: "4313587"
  
 ## <a name="user"></a>ユーザー
  
-ユーザー オブジェクトでは、次の仕様があります。
+ユーザー オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

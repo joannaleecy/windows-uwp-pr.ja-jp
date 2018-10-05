@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 635f11677997523fe952de04b8398410efc503d2
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4311279"
+ms.locfileid: "4359079"
 ---
 # <a name="usersowneridpeopleavoid"></a>/users/{ownerId}/people/avoid
-ユーザーの避ける一覧にアクセスします。
+ユーザーの回避一覧にアクセスします。
 
   * [URI パラメーター](#ID4EQ)
 
@@ -39,7 +39,7 @@ ms.locfileid: "4311279"
 
 [GET (/users/{ownerId}/people/avoid)](uri-privacyusersxuidpeopleavoidget.md)
 
-&nbsp;&nbsp;ユーザーの避ける一覧を取得します。
+&nbsp;&nbsp;ユーザーの回避一覧を取得します。
 
 <a id="ID4E2B"></a>
 

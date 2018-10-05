@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: bed703722b6c2d03cbc7b5e9f1b8be08ef38c7f0
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4310229"
+ms.locfileid: "4358617"
 ---
 # <a name="privacy-uris"></a>プライバシー URI
  
-このセクションでは、*プライバシー*用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*プライバシー*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
  
-のみ Windows 8 で実行されるゲームでも、Xbox 360、または Windows Phone デバイスこのサービスを使用します。
+のみ Windows 8 で実行されるゲームでは、Xbox 360、または Windows Phone デバイスこのサービスを使用します。
  
 これらの Uri のドメインは、privacy.xboxlive.com です。
  
@@ -39,7 +39,7 @@ ms.locfileid: "4310229"
 
 [/users/{ownerId}/people/avoid](uri-privacyusersxuidpeopleavoid.md)
 
-&nbsp;&nbsp;ユーザーの避ける一覧にアクセスします。
+&nbsp;&nbsp;ユーザーの回避一覧にアクセスします。
  
 <a id="ID4E2B"></a>
 

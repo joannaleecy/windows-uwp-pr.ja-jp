@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 246427b772403ca07adac2a4b1b07ec159142049
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4310289"
+ms.locfileid: "4359374"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
 指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URIこれらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EZ)
   * [必要な要求ヘッダー](#ID4EIB)
-  * [省略可能な要求ヘッダー](#ID4EED)
+  * [オプションの要求ヘッダー](#ID4EED)
   * [Authorization](#ID4E3D)
   * [要求本文](#ID4EEE)
   * [必要な応答ヘッダー](#ID4ELF)
@@ -57,14 +57,14 @@ gameserverds.xboxlive.com
 | --- | --- | --- | --- | --- | 
 | Content-Type| application/json| 送信されたデータの種類です。| 
 | Host| gameserverds.xboxlive.com|  | 
-| Content-Length|  | 要求オブジェクトの長さ。| 
+| Content-Length|  | 要求のオブジェクトの長さ。| 
 | x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
 | Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークンです。| 
   
 <a id="ID4EED"></a>
 
  
-## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
+## <a name="optional-request-headers"></a>オプションの要求ヘッダー
  
 要求を行う場合は、次の表に示すようにヘッダーはオプションです。
  
@@ -88,8 +88,8 @@ gameserverds.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| locale| 返されるバリエーションのローカルです。| 
-| maxVariants| 返されるバリアントの最大数。| 
+| locale| 返すバリエーションのローカルです。| 
+| maxVariants| 返すバリエーションの最大数。| 
 | publisherOnly|  | 
 | 制限|  | 
  
@@ -153,7 +153,7 @@ gameserverds.xboxlive.com
 | schemaContent| スキーマの内容| 
 | name| スキーマの名前| 
 | gsiSets| GSI セットの配列です。| 
-| minRequiredPlayers| バリアントのプレイヤーの最小数。| 
+| minRequiredPlayers| バリアントのプレイヤーの最小数です。| 
 | maxAllowedPlayers| バリアントのプレイヤーの最大数。| 
 | は| GSI セットの Id です。| 
 | gsiSetName| GSI セットの名前です。| 

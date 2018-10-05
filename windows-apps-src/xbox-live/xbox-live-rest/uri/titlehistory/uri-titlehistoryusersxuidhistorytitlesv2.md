@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a4780c92fc16adb697783ecee50d36523ff92998
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4308189"
+ms.locfileid: "4358633"
 ---
 # <a name="usersxuidxuidhistorytitles"></a>/users/xuid({xuid})/history/titles
  
-このユニバーサル Resource Identifier (URI) は、ユーザーのタイトルの実績に関連する履歴へのアクセスを提供します。
+このユニバーサル リソース識別子 (URI) は、ユーザーの実績に関連するタイトル履歴へのアクセスを提供します。
  
 これらの Uri のドメインが`achievements.xboxlive.com`します。
  
@@ -31,7 +31,7 @@ ms.locfileid: "4308189"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーがタイトル履歴にアクセスしているのです。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) がタイトル履歴にアクセスしているユーザー。| 
   
 <a id="ID4EAC"></a>
 

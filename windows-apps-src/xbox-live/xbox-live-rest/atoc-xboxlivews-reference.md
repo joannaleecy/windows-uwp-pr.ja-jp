@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a6d5460d4021de8daa6af344e2da920e55dbba5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4308175"
+ms.locfileid: "4358918"
 ---
 # <a name="xbox-live-services-restful-reference"></a>Xbox Live サービス RESTful リファレンス
 
@@ -41,4 +41,4 @@ Xbox Live サービスでは、一連のゲームとプレイヤーの情報を�
 
 [その他の参照情報](additional/atoc-xboxlivews-reference-additional.md)
 
-&nbsp;&nbsp;Xbox Live サービスの補助リファレンスです。 これには、認証の種類、データ型、標準の HTTP ステータス コードとヘッダー、ページング パラメーターには、エンターテインメント探索サービス (EDS) に関する情報が含まれます。
+&nbsp;&nbsp;Xbox Live サービスの補助リファレンスです。 これには、承認のタイプ、データ型、標準の HTTP ステータス コードとヘッダー、ページング パラメーター、およびエンターテイメント探索サービス (EDS) に関する情報が含まれます。

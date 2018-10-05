@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a8bfe8a76b83c78886c48f7e15de274fe89a52a
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4316567"
+ms.locfileid: "4360965"
 ---
 # <a name="post-usersmeresetreputation"></a>POST (/users/me/resetreputation)
-アカウント ハイジャックでは (たとえば) 後、現在のユーザーの評判スコアをいくつかの任意の値に設定する執行チームを使用できます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
+により、実施チームは、アカウント ハイジャック (たとえば) 後、現在のユーザーの評判スコアをいくつかの任意の値に設定します。 これらの Uri のドメインが`reputation.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [Authorization](#ID4E5)
@@ -33,14 +33,14 @@ ms.locfileid: "4316567"
  
 ## <a name="remarks"></a>注釈
  
-テストのために、Retail を除くすべてのサンド ボックス内のユーザーと Retail を除くすべてのサンド ボックスの他のパートナー様により、このメソッドを呼び出すも可能性があります。 この要求は、「基本」評判スコアをユーザーに設定し、肯定的なフィードバック良い評価の彼は重みをすべて消去ことに注意してください。この呼び出しを行った後、ユーザーの実際の評判は、この基本スコアと自分のアンバサダー ボーナスと自分のフォロワー ボーナスになります。
+テストのために、Retail を除くすべてのサンド ボックス内のユーザーと Retail を除くすべてのサンド ボックスの他のパートナー様により、このメソッドを呼び出すも可能性があります。 この要求は、「基本」評判スコアをユーザーに設定し、肯定的なフィードバック良い評価の彼は重みをすべて消去アウトことに注意してください。この呼び出しを行った後、ユーザーの実際の評判は、この基本スコアと自分のアンバサダー ボーナスと自分のフォロワー ボーナスになります。
   
 <a id="ID4E5"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-パートナーから: **PartnerClaim**実施チームから、市販のサンド ボックスすべてのサンド ボックスに対して、 **PartnerClaim**します。
+パートナーから: **PartnerClaim**実施チームから、市販のサンド ボックスすべての他のサンド ボックスに対して、 **PartnerClaim**します。
  
 ユーザーから: 製品版、 **XuidClaim** **TitleClaim**を除くすべてのサンド ボックスにします。
   
@@ -51,14 +51,14 @@ ms.locfileid: "4316567"
  
 すべてから:**コンテンツの種類: アプリケーション/json**します。
  
-パートナーから: **X Xbl コントラクト バージョン**(現在のバージョンは 101)、 **X-Xbl-サンド ボックス**です。
+パートナーから: **X Xbl コントラクト バージョン**(現在のバージョンは 101)、 **X の Xbl のサンド ボックス**です。
  
 ユーザーから: **X Xbl コントラクト バージョン**(現在のバージョンは 101)。
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | 
-| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
+| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
   
 <a id="ID4END"></a>
 
@@ -88,7 +88,7 @@ ms.locfileid: "4316567"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | 
@@ -97,7 +97,7 @@ ms.locfileid: "4316567"
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
 | 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
 | 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable| 要求が調整された、クライアント再試行値 (例: 5 秒後) を秒単位で後にもう一度やり直してください。| 
+| 503| Service Unavailable| 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度やり直してください。| 
   
 <a id="ID4EFH"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eaddef523fcfa3b794c421acbe6c1aac4785b68
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4314815"
+ms.locfileid: "4360150"
 ---
 # <a name="post-handles"></a>POST (/handles)
 ユーザーの現在のアクティビティのマルチプレイヤー セッションを設定し、必要な場合は、セッション メンバーを招待します。
@@ -35,9 +35,9 @@ ms.locfileid: "4314815"
 
 ## <a name="remarks"></a>注釈
 
-現在のアクティビティのセッションを設定するこの HTTP/REST メソッドを使用できます。 この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**でラップすることができます。 要求本文には、「アクティビティ」の種類] フィールドに、JSON ファイルで**sessionRef**オブジェクトを使用して、セッションの参照を定義する必要があります。 応答本文は取得されません。 セッション参照で指定された項目の定義、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**を参照してください。
+現在のアクティビティのセッションを設定するのには、この HTTP/REST メソッドを使用できます。 この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**でラップすることができます。 要求本文には、「アクティビティ」の種類] フィールドに、JSON ファイルで**sessionRef**オブジェクトを使用して、セッションの参照を定義する必要があります。 応答本文は取得されません。 セッション参照で指定された項目の定義、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**を参照してください。
 
-この POST メソッドは、セッションへのハンドルによって指定されたユーザーの招待を使用できます。 この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**でラップすることができます。 このような POST メソッドの使用には、セッションの参照を定義する、要求本文が必要ですが、型フィールド「招待」に設定します。 応答本文では、招待ハンドルです。
+この POST メソッドは、セッションへのハンドルによって指定されたユーザーを招待するも使用できます。 この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**でラップすることができます。 このような POST メソッドの使用には、セッションの参照を定義する、要求本文が必要ですが、型のフィールド「招待」に設定します。 応答本文では、招待ハンドルです。
 
 <a id="ID4EHB"></a>
 
@@ -59,7 +59,7 @@ ms.locfileid: "4314815"
 <a id="ID4E1B"></a>
 
 
-### <a name="request-body-for-setting-activity"></a>要求本文のアクティビティを設定します。
+### <a name="request-body-for-setting-activity"></a>要求本文のアクティビティの設定
 
 
 ```cpp

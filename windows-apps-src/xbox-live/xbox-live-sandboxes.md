@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 63447a9423ab65f79f034877a1c74c1eea75c78c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4314051"
+ms.locfileid: "4360195"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live のサンドボックスの概要
 
@@ -95,7 +95,7 @@ RETAIL に戻るには、ここで「RETAIL」と入力します。
     2. 次のコマンドを実行して使用を開始します。 `Import-Module XboxlivePSModule`
     3. コマンドレット Set-XblSandbox XDKS.1 または Get-XblSandbox を実行します。
 
-* ある zip ファイルから利用する[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)、PowerShell ウィンドウを開きます
+* ある zip ファイルから使用する[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)、PowerShell ウィンドウを開きます
     1. 実行 `Import-Module <path to unzipped folder>\XboxLivePsModule\XboxLivePsModule.psd1`
     2. コマンドレット Set-XblSandbox XDKS.1 または Get-XblSandbox を実行します。
 

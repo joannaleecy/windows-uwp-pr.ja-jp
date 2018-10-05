@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b869f87760498dc6a2224809a42380f1b8f5930b
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "4311276"
+ms.locfileid: "4360737"
 ---
 # <a name="reputation-uris"></a>評判 URI
  
-このセクションでは、 **Microsoft.Xbox.Services.Social.ReputationService**用の Xbox Live サービスからユニバーサル Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。 評判 Uri ドメインは、reputation.xboxlive.com です。 一般的な URI 形式がありますhttps://reputation.xboxlive.com/users/xuid(2533274790412952)/feedbackします。 
+このセクションでは、 **Microsoft.Xbox.Services.Social.ReputationService**用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。 評判 Uri ドメインは、reputation.xboxlive.com です。 一般的な URI 形式がありますhttps://reputation.xboxlive.com/users/xuid(2533274790412952)/feedbackします。 
  
 評判サービスで使用してフィードバックを[フィードバック (JSON)](../../json/json-feedback.md)、評判スコアを計算します。 このスコアは、ReputationOverall キーの下で、ユーザーの統計情報の領域に保存されます。 ユーザーの統計情報の取得について詳しくは、以下を参照してください。[を取得する (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md)します。 
  
@@ -33,15 +33,15 @@ ms.locfileid: "4311276"
 
 [/users/xuid({xuid})/feedback](uri-reputationusersxuidfeedback.md)
 
-&nbsp;&nbsp;シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合に、タイトルから使われます。
+&nbsp;&nbsp;シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。
 
 [/users/batchfeedback](uri-reputationusersbatchfeedback.md)
 
-&nbsp;&nbsp;タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。
+&nbsp;&nbsp;タイトルのサービスによってタイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するために使用します。
 
 [/users/me/resetreputation](uri-usersmeresetreputation.md)
 
-&nbsp;&nbsp;現在のユーザーの評判スコアにアクセスする執行チームを使用できます。
+&nbsp;&nbsp;現在のユーザーの評判スコアにアクセスするに執行チームを使用できます。
 
 [/users/xuid({xuid})/deleteuserdata](uri-usersxuiddeleteuserdata.md)
 
