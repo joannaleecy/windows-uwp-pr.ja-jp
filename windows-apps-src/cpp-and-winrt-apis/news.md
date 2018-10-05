@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ニュース、ものの新機能
 ms.localizationpriority: medium
 ms.openlocfilehash: bc6be28e112dfdd14b3585bd88ba066fbeae382d
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4357774"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4388843"
 ---
 # <a name="whats-new-in-cwinrt"></a>新機能、C++/WinRT
 
@@ -79,6 +79,6 @@ C++ 以前左する場合/WinRT 今すぐそれらを含める必要がありま
 
 C++ コンパイラーが場合"*エラー C2039: 'IUnknown': のメンバーでない '\'global 名前空間'*"、追加し、`#include <unknwn.h>`の先頭に、`pch.h`ファイル (c++ インクルードする前に +/winrt ヘッダー)。
 
-You may also need to add `#include <hstring.h>` after that.
+追加する必要があります`#include <hstring.h>`その後。
 
 C++ リンカーを生成する場合"*エラー lnk 2019: 外部シンボルは未解決です_WINRT_CanUnloadNow@0関数で参照されている_VSDesignerCanUnloadNow@0*"を追加することで解決できます`#define _VSDESIGNER_DONT_LOAD_AS_DLL`を`pch.h`ファイル。

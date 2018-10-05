@@ -1,7 +1,7 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: このロードマップは、Windows 10 とユニバーサル Windows プラットフォーム (UWP) アプリの主要なエンタープライズ機能の概要を示します。
-title: エンタープライズ
+title: Enterprise
 author: awkoren
 ms.author: alkoren
 ms.date: 08/30/2018
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4351186"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4388041"
 ---
-# <a name="enterprise"></a>エンタープライズ
+# <a name="enterprise"></a>Enterprise
 
 このロードマップは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリの主要なエンタープライズ機能の概要を提供します。
 
@@ -120,7 +120,7 @@ MSIX 安全性と信頼性の高い、セキュリティで保護されたに組
 
 <a id="distribution" />
 
-## <a name="security"></a>セキュリティ
+## <a name="security"></a>Security
 
 Windows 10 では、一連のアプリ開発者の id、ユーザー、企業のネットワークのセキュリティやデバイスに保存されている任意のビジネス データを保護するためのセキュリティ機能を提供します。 新しい Windows 10 は Microsoft Passport、PIN を使用して、アクセス可能な 2 要素のパスワードの導入が容易な代替または Windows こんにちは、エンタープライズ レベルのセキュリティを提供し、指紋、顔をサポートする、ベース虹彩認識です。
 
@@ -128,7 +128,7 @@ Windows 10 では、一連のアプリ開発者の id、ユーザー、企業の
 |-------|-------------|
 | [安全な Windows アプリの開発について](https://msdn.microsoft.com/library/windows/apps/mt622741) | この概要記事では、認証、フライトのデータ、およびデータの保存の各ステージ間でさまざまな Windows のセキュリティ機能について説明します。 これらの段階をアプリに統合する方法も説明します。 大規模なさまざまなトピックについて説明していて、目的はアプリの設計者が迅速かつ簡単に作成するユニバーサル Windows プラットフォーム アプリを作成する Windows の機能を理解の支援、主にします。 |
 | [認証とユーザー ID](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP アプリでは、この記事に記載されているユーザー認証のためのいくつかのオプションがあります。 企業の Microsoft Passport の新機能は強くお勧めします。 Microsoft Passport は、パスワードを強力な 2 要素認証 (2 fa) に既存の資格情報を確認することで置き換え、デバイス固有の資格情報を作成して、生体認証または PIN ベースのユーザーのジェスチャを保護、その結果、どちらも便利なと高度安全なエクスペリエンスです。 |
-| [暗号化](https://msdn.microsoft.com/library/windows/apps/mt270191) | 暗号化」セクションでは、UWP アプリで利用できる暗号化機能の概要を示します。 記事の範囲を簡単に暗号化キーを操作して、Mac、ハッシュ、署名操作などの高度なトピックへの高度なビジネス上の機密データを暗号化する方法に関する入門チュートリアルです。 |
+| [Cryptography](https://msdn.microsoft.com/library/windows/apps/mt270191) | 暗号化」セクションでは、UWP アプリで利用できる暗号化機能の概要を示します。 記事の範囲を簡単に暗号化キーを操作して、Mac、ハッシュ、署名操作などの高度なトピックへの高度なビジネス上の機密データを暗号化する方法に関する入門チュートリアルです。 |
 | [Windows 情報保護 (WIP)](wip-hub.md) | ここでは、Windows 情報保護 (WIP) と、ファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係について、開発者向けに全体像を説明します。 |
 
 ## <a name="data-binding-and-databases"></a>データ バインディングとデータベース
@@ -180,7 +180,7 @@ Windows 10 では、一連のアプリ開発者の id、ユーザー、企業の
 | トピック | 説明 |
 |-------|-------------|
 | [LOB アプリの企業への配布](https://msdn.microsoft.com/library/windows/apps/mt608995) | 基幹業務アプリは、一般に、アプリを広く利用できるようにすることがなく、ビジネス向け Microsoft Store 経由でボリューム取得用に企業に直接公開できます。 |
-| [アプリのサイドローディング](https://technet.microsoft.com/library/mt269549) | サイドローディングするアプリを展開するときに署名されたアプリ パッケージをデバイス。 署名、ホスト、およびこれらのアプリの展開を保持しています。 アプリのサイドローディング用のプロセスは、Windows 10 を合理化しました。             |
+| [アプリのサイドロード](https://technet.microsoft.com/library/mt269549) | サイドローディングするアプリを展開するときに署名されたアプリ パッケージをデバイス。 署名、ホスト、およびこれらのアプリの展開を保持しています。 アプリのサイドローディング用のプロセスは、Windows 10 を合理化しました。             |
 | [アプリを Microsoft Store に公開します。](https://dev.windows.com/publish) | 統一された Microsoft Store では、公開し、すべてのアプリのすべての Windows デバイスを管理することができます。 市場ごとの価格設定、分布と認知度コントロール、およびその他のオプションのアプリの可用性をカスタマイズします。 |
 
 ## <a name="enterprise-uwp-samples"></a>エンタープライズ UWP のサンプル
