@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 492b2ff62927812337f1b94f487a2649c0446f00
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4354785"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4383117"
 ---
 # <a name="post-jsonusersbatchscidssciddatapathandfilenamejson"></a><span data-ttu-id="e610b-104">POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)</span><span class="sxs-lookup"><span data-stu-id="e610b-104">POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)</span></span>
 <span data-ttu-id="e610b-105">同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="e610b-105">Downloads multiple files from multiple users with the same filename.</span></span> <span data-ttu-id="e610b-106">ダウンロードするファイルは、要求の URI によって決定されます。</span><span class="sxs-lookup"><span data-stu-id="e610b-106">The file to be downloaded is determined by the URI of the request.</span></span> <span data-ttu-id="e610b-107">要求の本文には、ダウンロードするファイル持つにはユーザーの Xuid のリストが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e610b-107">The body of the request contains the list of XUIDs of the users whose files to download.</span></span> <span data-ttu-id="e610b-108">応答の本文が含まれるマルチパート MIME メッセージ、独自のヘッダーのセットを特定のユーザーのファイルを表す各部分になります。</span><span class="sxs-lookup"><span data-stu-id="e610b-108">The body of the response will be a multi-part MIME message, with each part representing a file for a particular user with its own set of headers.</span></span> <span data-ttu-id="e610b-109">成功と失敗の混在する応答の部分のことができます。</span><span class="sxs-lookup"><span data-stu-id="e610b-109">It's possible for the parts of the response to be a mix of successes and failures.</span></span> <span data-ttu-id="e610b-110">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="e610b-110">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

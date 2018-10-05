@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4361347"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389158"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a><span data-ttu-id="58bf3-103">UWP アプリのナビゲーション デザインの基本</span><span class="sxs-lookup"><span data-stu-id="58bf3-103">Navigation design basics for UWP apps</span></span>
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4358149"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4387894"
 ---
 # <a name="xbind-markup-extension"></a><span data-ttu-id="20341-105">{x:Bind} マークアップ拡張</span><span class="sxs-lookup"><span data-stu-id="20341-105">{x:Bind} markup extension</span></span>
 

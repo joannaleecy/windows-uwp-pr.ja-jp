@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
 ms.openlocfilehash: 38596ad12ac309db5dc60e4a5183eee9bf8c7b7c
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4351222"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4391165"
 ---
 # <a name="take-a-test-javascript-api"></a><span data-ttu-id="4a24c-103">テスト JavaScript API</span><span class="sxs-lookup"><span data-stu-id="4a24c-103">Take a Test JavaScript API</span></span>
 

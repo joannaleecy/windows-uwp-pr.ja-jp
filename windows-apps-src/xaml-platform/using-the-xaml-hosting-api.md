@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows 10、uwp、windows フォーム、wpf、win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 860e515d013046ef77d0aee38eb5d42c9c3e2dc9
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4356757"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4390452"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a><span data-ttu-id="65c4e-104">デスクトップ アプリケーションで API をホストしている UWP XAML を使う</span><span class="sxs-lookup"><span data-stu-id="65c4e-104">Using the UWP XAML hosting API in a desktop application</span></span>
 

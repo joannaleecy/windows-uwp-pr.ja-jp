@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, マッチメイキング, SmartMatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fe8ad244b9b7a650af4fc77c4adbb1805023ecf
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4354183"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4386820"
 ---
 # <a name="smartmatch-matchmaking"></a><span data-ttu-id="b123f-104">SmartMatch マッチメイキング</span><span class="sxs-lookup"><span data-stu-id="b123f-104">SmartMatch Matchmaking</span></span>
 

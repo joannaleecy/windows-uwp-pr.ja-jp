@@ -12,14 +12,14 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
-- cpp
+- cppcx
 - cppwinrt
-ms.openlocfilehash: b4e3678e17e7545dfe9cb4049ace7ff864198156
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.openlocfilehash: 672efaa0899fa8b63b5ec0fda09a20f4f0ab7d67
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4355574"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4391191"
 ---
 # <a name="xaml-lighting"></a><span data-ttu-id="31d39-104">XAML の照明</span><span class="sxs-lookup"><span data-stu-id="31d39-104">XAML lighting</span></span>
 
@@ -344,7 +344,7 @@ struct MainPage : MainPageT<MainPage>
 };
 ```
 
-```cpp
+```cppcx
 // OrangeSpotLight.h:
 public ref class OrangeSpotLight sealed :
     public Windows::UI::Xaml::Media::XamlLight

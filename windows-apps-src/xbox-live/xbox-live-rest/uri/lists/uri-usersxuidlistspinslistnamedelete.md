@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0749229af844c7b71496351000cadece7544bfc6
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4361012"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4387953"
 ---
 # <a name="delete-usersxuidxuidlistspinslistname"></a><span data-ttu-id="78633-104">DELETE (/users/xuid(xuid)/lists/PINS/{listname})</span><span class="sxs-lookup"><span data-stu-id="78633-104">DELETE (/users/xuid(xuid)/lists/PINS/{listname})</span></span>
 <span data-ttu-id="78633-105">一覧から項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="78633-105">Removes items from a list.</span></span> <span data-ttu-id="78633-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="78633-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>
