@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4357416"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4386932"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 5 月
 
@@ -103,7 +103,7 @@ Sets 機能では、Windows Insider preview ビルドで利用できます。 Se
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
-### <a name="get-started"></a>はじめに
+### <a name="get-started"></a>概要
 
 当社の取得を revitalized しますした新しい学習トラックでコンテンツを開始します。 これらの新しいトピックをいくつかの一般的なタスクを実行するための情報が新しい Windows 10 開発者を提供するようにしてください。 ハンドヘルド チュートリアルが提供されないとが代わりに、既存のドキュメントが存在してその使用方法を指摘がいるチュートリアルではありません。 チェック アウト改良の[コーディングを開始](../get-started/create-uwp-apps.md)ページで、または個々 の学習、各トラックについて説明します。
 
