@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 15300451495c198a1f15997bae38cb862a9b8186
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353661"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389873"
 ---
 # <a name="delete-handleshandleid"></a>DELETE (/handles/{handleId})
 ハンドル ID で指定されたハンドルを削除します。

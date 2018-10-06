@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リアルタイム アクティビティ サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 1969a36a363f86ba6eced1c27d2206de1160c7bc
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4351860"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4390518"
 ---
 # <a name="real-time-activity-service"></a>リアルタイム アクティビティ サービス
 

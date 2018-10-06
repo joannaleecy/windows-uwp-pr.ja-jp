@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 656a8df9a810252e4bc77f1537428ae0104ef98f
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4350112"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4388168"
 ---
 # <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypesortorders"></a>GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)
 Mediaitem の特定の種類と EDS の特定のバージョンで利用可能な並べ替え順の一覧を示します。 これらの Uri のドメインが`eds.xboxlive.com`します。

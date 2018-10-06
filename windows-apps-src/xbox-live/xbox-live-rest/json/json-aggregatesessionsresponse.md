@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 42bf1a09144bec9cddda1ae2fd9656dc6dc8c51d
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4354424"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4393137"
 ---
 # <a name="aggregatesessionsresponse-json"></a>AggregateSessionsResponse (JSON)
 ユーザーの適合性のセッションは、集計されたデータが含まれています。 

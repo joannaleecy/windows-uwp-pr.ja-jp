@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ローカライズされた文字列, Windows デベロッパー センター
 ms.openlocfilehash: fac642adad099bf930a4ddabba151384a83db17c
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4357995"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4392012"
 ---
 # <a name="configuring-localized-strings-on-windows-dev-center"></a>Windows デベロッパー センターでのローカライズされた文字列の構成
 

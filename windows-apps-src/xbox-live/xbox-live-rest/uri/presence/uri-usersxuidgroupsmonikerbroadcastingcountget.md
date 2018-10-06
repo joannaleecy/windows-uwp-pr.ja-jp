@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e0915962803ddd304207bc726c0e5423ad0c8c77
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353043"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4393585"
 ---
 # <a name="get-usersxuidxuidgroupsmonikerbroadcastingcount-"></a>GET (/users/xuid({xuid})/groups/{moniker}/broadcasting/count )
 URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーの数を取得します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。

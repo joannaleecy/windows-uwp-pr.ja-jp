@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, MPSD, マルチプレイヤー セッション ディレクトリ
 ms.localizationpriority: medium
 ms.openlocfilehash: d69867e2ba5d56eb47007732ae7197c9991be4c4
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353573"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4390652"
 ---
 # <a name="multiplayer-session-directory-mpsd"></a>マルチプレイヤー セッション ディレクトリ (MPSD)
 

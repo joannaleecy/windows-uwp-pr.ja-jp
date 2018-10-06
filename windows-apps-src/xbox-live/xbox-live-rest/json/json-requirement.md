@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f13edfbe5858a5fc3c4f24d22b31eb25f8386e25
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4350194"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389100"
 ---
 # <a name="requirement-json"></a>Requirement (JSON)
 実績とそれらに対応するため、ユーザーは、どのくらいのロック解除条件。 
