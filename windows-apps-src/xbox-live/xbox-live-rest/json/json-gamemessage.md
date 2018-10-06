@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 089d2a492c8878e79bd60de1226c948e1eee7e0f
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4352327"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389094"
 ---
 # <a name="gamemessage-json"></a><span data-ttu-id="a9ef2-104">GameMessage (JSON)</span><span class="sxs-lookup"><span data-stu-id="a9ef2-104">GameMessage (JSON)</span></span>
 <span data-ttu-id="a9ef2-105">ゲーム セッションのメッセージ キューにメッセージのデータを定義する JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a9ef2-105">A JSON object defining data for a message in a game session's message queue.</span></span> 

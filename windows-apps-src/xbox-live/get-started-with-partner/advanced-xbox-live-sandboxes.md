@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 23be9758a587644bc834236abd6961d4ac120d50
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4356248"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4393125"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a><span data-ttu-id="dda60-104">高度な Xbox Live のサンドボックス</span><span class="sxs-lookup"><span data-stu-id="dda60-104">Advanced Xbox Live sandboxes</span></span>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b747ea8e576ecbd3723282ffa3a59113b8187428
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4350901"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389798"
 ---
 # <a name="get-mediamarketplaceidbrowse"></a><span data-ttu-id="0cceb-104">GET (media/{marketplaceId}/browse)</span><span class="sxs-lookup"><span data-stu-id="0cceb-104">GET (media/{marketplaceId}/browse)</span></span>
 <span data-ttu-id="0cceb-105">1 つのメディア グループ内の項目を参照できます。</span><span class="sxs-lookup"><span data-stu-id="0cceb-105">Allows browsing for items within a single media group.</span></span> <span data-ttu-id="0cceb-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="0cceb-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>

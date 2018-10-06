@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bfeb225c67567c392615686743828941c02f6d2
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353011"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4393486"
 ---
 # <a name="matchmaking-uris"></a><span data-ttu-id="26be3-104">マッチメイキング URI</span><span class="sxs-lookup"><span data-stu-id="26be3-104">Matchmaking URIs</span></span>
  
