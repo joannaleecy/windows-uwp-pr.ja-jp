@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, uwp, windows 10, Xbox one, 注目の統計とランキング, ランキング, 統計 2017, Windows デベロッパー センター
 ms.openlocfilehash: ed965c4d7e2c15e76494fd197808c7f47db2d584
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4391581"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4415110"
 ---
 # <a name="configuring-featured-stats-and-leaderboards-2017-on-windows-dev-center"></a>Windows デベロッパー センターで注目の統計とランキング 2017 を構成する
 
@@ -23,7 +23,7 @@ ms.locfileid: "4391581"
 
 ![ゲーム ハブの実績ページのスクリーンショット](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-2.png) 上の図は、タイトルのゲーム ハブに、注目の統計がどのように表示されるかを示しています。 注目の統計は赤のボックス内に表示されています。
 
-データ プラットフォーム 2017 のみプレイヤーのゲーム ハブ ページで注目されるソーシャル ランキングで使用される統計を構成する必要があります。
+データ プラットフォーム 2017 のみに表示されるソーシャル ランキングは、プレイヤーのゲーム ハブ ページで注目としてに使用されます。 統計を構成する必要があります。
 
 Windows デベロッパー センターを使うと、ゲームに関連付けられている注目の統計とランキングを構成することができます。 次の手順に従って、構成を追加します。
 

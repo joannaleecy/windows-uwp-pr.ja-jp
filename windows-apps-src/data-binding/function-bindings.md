@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind マークアップ拡張機能により、マークアップで使用する関数です。
+description: XBind マークアップ拡張は、マークアップで使用する機能を許可します。
 title: X:bind 内の関数
 ms.author: jimwalk
 ms.date: 04/26/2018
@@ -10,17 +10,17 @@ ms.technology: uwp
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4388957"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4416059"
 ---
 # <a name="functions-in-xbind"></a>X:bind 内の関数
 
 **注**  **{x:Bind}** によりアプリでデータ バインディングを使う方法に関する一般的な情報 (および **{x:Bind}** と **{Binding}** の全体的な比較) については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
-Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これにより、できます。
+Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これにより。
 
 - 値の変換を実現するためのより簡単な方法
 - 複数のパラメーターに依存するようにバインディングする方法
@@ -88,7 +88,7 @@ public class MyPage : Page
 }
 ```
 
-たとえば日付の書式設定、テキストの書式設定、テキストの連結などのような単純なシナリオを実現するのにマークアップで直接システム機能を使用することもできます。
+たとえば日付の書式設定、テキストの書式設定、テキストの連結などのような単純なシナリオを実行するためにマークアップで直接システム機能を使用することもできます。
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -108,7 +108,7 @@ public class MyPage : Page
 - 引数の型は渡されるデータと一致する必要があります。縮小変換は行われません。
 - 関数の戻り値の型は、バインディングを使用しているプロパティの型と一致する必要があります。
 
-次回のメジャー アップデートを Windows 10 以降、バインディング エンジンは、関数の名前で発生したプロパティ変更通知に対応し、必要に応じて、バインディングが再評価します。 例: 
+次回のメジャー アップデートを Windows 10 以降、バインド エンジンは、関数の名前で発生したプロパティ変更通知に対応し、必要に応じて、バインドを再評価すます。 例: 
 
 ```XAML
 <DataTemplate x:DataType="local:Person">
@@ -177,7 +177,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>双方向の関数バインド
 
-双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、**バインド バック**バインディングのプロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
+双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、**バインド バック**バインド プロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```

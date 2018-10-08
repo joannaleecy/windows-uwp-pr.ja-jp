@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9865d626fe3c07645c8cb51f9bd5fe2274bf23f3
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389255"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4415244"
 ---
 # <a name="gameclipstate-enumeration"></a>GameClipState 列挙型
 GameClipState 列挙型をについて説明します。 
@@ -29,14 +29,14 @@ GameClipState 列挙型をについて説明します。
 | --- | --- | 
 | None | ゲーム クリップ サービスの状態が、不明なまたは設定されていません。| 
 | PendingUpload | ゲーム クリップ サービスは、資産のアップロードを待機しています。| 
-| PendingDelete | ゲーム クリップでは、削除、キューにします。 (実質的には、「削除」)。| 
+| PendingDelete | 削除のキューがゲーム クリップにします。 (実質的には、「削除」)。| 
 | 処理済み | ゲーム クリップには、すべての処理が完了します。| 
 | Processing| ゲーム クリップが処理されている (エンコーディングは、サムネイルなどです。)。| 
 | Publishing| ゲーム クリップ アセットが公開されています。| 
 | Published| ゲーム クリップ アセットが公開された – この状態は、すべてのセットを表示することを示します。| 
-| フラグが設定| ゲーム クリップが実施のフラグを設定されています。| 
+| フラグが設定| ゲーム クリップを適用してマークされています。| 
 | 禁止| ゲーム クリップが禁止されましたが削除されていません。| 
 | Uploaded| ゲーム クリップには、アップロードが完了しました。| 
 | 削除済み| ゲーム クリップが削除されました。| 
-| エラー| ゲーム クリップがエラー状態と使用できなくなります。| 
+| エラー| ゲーム クリップはエラー状態と使用できなくなります。| 
   

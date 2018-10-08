@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 052a83f47dc2d5b692c811850e41381c4745815c
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4386226"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4419204"
 ---
 # <a name="usersxuidxuidlistspinslistname"></a>/users/xuid(xuid)/lists/PINS/{listname}
 リストの項目にアクセスします。 これらの Uri のドメインが`eplists.xboxlive.com`します。
@@ -31,8 +31,8 @@ ms.locfileid: "4386226"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | xuid| string| Xbox ユーザー ID (XUID) です。| 
-| listtype| string| (使用方法と動作) の一覧の種類です。 常に「ピン」これらのメソッドに関連します。| 
-| リスト| string| リストの名前 (際に指定された listtype の一覧がどの)。 常に"XBLPins"の項目のピン留めします。| 
+| listtype| string| (その使用方法と動作) の一覧の種類です。 常に「ピン」これらのメソッドに関連します。| 
+| リスト| string| リストの名前 (際に指定された listtype の一覧がどの)。 常に"XBLPins"のアイテムを Pin にします。| 
   
 <a id="ID4EGC"></a>
 

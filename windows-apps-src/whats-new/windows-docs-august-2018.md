@@ -1,6 +1,6 @@
 ---
 author: QuinnRadich
-title: 新機能では、2018 年 8 月 Windows ドキュメントの新しい - UWP アプリの開発
+title: Windows ドキュメントの最新情報で新 2018 年 8 月 - UWP アプリの開発
 description: 2018 年 8 月の Windows 10 開発者向けドキュメントに、新しい機能、ビデオ、サンプル、および開発者向けガイダンスが追加されました。
 keywords: 新機能, 更新, 機能, 開発者向けガイダンス, Windows 10, 8 月
 ms.author: quradic
@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4388616"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4420556"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 8 月
 
@@ -28,27 +28,27 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 次の機能が Insider Preview ビルドの[Windows Insider](https://insider.windows.com/) program で利用できる、Windows に追加されました。
 
-* [Windows UI のライブラリ](https://aka.ms/winui-docs)とは、UWP アプリのコントロールとその他のユーザーの interfact 要素を提供する NuGet パッケージのセットです。 これらのパッケージも以前のバージョンの Windows 10 互換、ユーザーが最新の OS バージョンに存在しない場合でも、アプリが動作するようにします。
+* [Windows UI のライブラリ](https://aka.ms/winui-docs)とは、UWP アプリのコントロールとその他のユーザーの interfact 要素を提供する NuGet パッケージのセットです。 これらのパッケージも以前のバージョンの Windows 10 互換、ユーザーが最新の OS バージョンに存在しない場合でも、アプリが機能するようにします。
 
-* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、 [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button)、および[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)は、アプリのユーザー インターフェイスを強化するために特殊な機能を備えたボタン コントロールを提供します。
+* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、 [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button)、および[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)は、アプリのユーザー インターフェイスを強化するために特別な機能を備えたボタン コントロールを提供します。
 
 ![前景色を選択するための分割ボタン](../design/controls-and-patterns/images/split-button-rtb.png)
 
-* NavigationView がアプリのナビゲーション オプションの数を減らしてがあり、アプリのコンテンツの空き領域が必要な場合[上部のナビゲーション](../design/controls-and-patterns/navigationview.md)をサポートします。
+* NavigationView で、アプリのナビゲーション オプションの数を減らしてがあり、アプリのコンテンツの空き領域が必要な場合、[上部のナビゲーション](../design/controls-and-patterns/navigationview.md)をサポートします。
 
 * ツリー ビューがサポートするために拡張されて[データ バインディング、項目テンプレート、ドラッグ アンド ドロップします](../design/controls-and-patterns/tree-view.md)。
 
 ### <a name="package-support-framework"></a>パッケージのサポート フレームワーク
 
-パッケージのサポートのフレームワークでは、修正プログラムの適用、win32 アプリケーションをソース コードにアクセスできないとき MSIX コンテナーで実行できるようにするために役立つ、オープン ソースのキットです。
+パッケージのサポート フレームワークでは、修正プログラムの適用、win32 アプリケーションをソース コードにアクセスできない場合、MSIX コンテナーで実行できるようにするために役立つオープン ソース キットです。
 
-詳細については、[パッケージのサポートのフレームワークを使用して、MSIX パッケージを適用ランタイムの修正プログラム](../porting/package-support-framework.md)を参照してください。
+詳細については、[パッケージのサポートのフレームワークを使用して、MSIX パッケージに適用ランタイムの修正プログラム](../porting/package-support-framework.md)を参照してください。
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
 ### <a name="web-api-extensions"></a>Web API の拡張機能
 
-Mozilla Developer Network ドキュメントに複数のブラウザー間の web 開発は、[従来の Microsoft API の拡張機能](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)の一覧が追加されました。 これらの API の拡張機能は、Internet Explorer または Microsoft Edge に固有のもの MDN web ドキュメントの互換性とブラウザーのサポートについての既存の情報を補足します。従来の Microsoft [CSS 拡張機能](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)と[JavaScript の拡張機能](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)は、利用可能なもと直接でリッチ web MDN から API の情報が表示されるかを確認できます[Visual Studio Code](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn) 。
+Mozilla Developer Network ドキュメントには、ブラウザー間の web 開発、[従来の Microsoft API 拡張機能](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)の一覧が追加されました。 これらの API の拡張機能は、Internet Explorer または Microsoft Edge に固有のもの MDN web ドキュメントの互換性とブラウザーのサポートに関する既存の情報を補足します。従来の Microsoft [CSS 拡張機能](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)と[JavaScript の拡張機能](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)は、利用可能なもとリッチ web MDN から API の情報が提示で直接を見つけることができます[Visual Studio Code](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn) 。
 
 ### <a name="cwinrt-code-examples"></a>C++/WinRT のコード例
 

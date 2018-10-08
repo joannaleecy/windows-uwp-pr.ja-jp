@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f58b4b5f8cf135aaaad5e23095c4c00278dcec83
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4386229"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4416783"
 ---
 # <a name="usersxuidxuidachievementsscidachievementid"></a>/users/xuid({xuid})/achievements/{scid}/{achievementid}
-構成済みのメタデータとユーザー固有のデータを含む、実績の詳細を返します。 
+構成済みのメタデータとユーザー固有のデータを含む、実績についての詳細を返します。 
 
 > [!NOTE] 
 > プラットフォームでのみサポートされます。 
@@ -37,7 +37,7 @@ ms.locfileid: "4386229"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | 
 | xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) がリソースにアクセスしているユーザー。 認証されたユーザーの XUID に一致する必要があります。| 
-| scid| GUID| 対象の実績にアクセスしているサービス構成の一意の識別子。| 
+| scid| GUID| その実績にアクセスしているサービス構成の一意の識別子。| 
 | achievementid| 32 ビット符号なし整数| アクセスされている実績を (指定された SCID) 内で一意の識別子です。| 
   
 <a id="ID4EMC"></a>

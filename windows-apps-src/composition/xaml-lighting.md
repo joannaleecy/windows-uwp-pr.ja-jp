@@ -15,11 +15,11 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: 672efaa0899fa8b63b5ec0fda09a20f4f0ab7d67
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4391191"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4421541"
 ---
 # <a name="xaml-lighting"></a>XAML の照明
 
@@ -29,7 +29,7 @@ ms.locfileid: "4391191"
 
 ## <a name="applying-lights-to-xaml-uielements"></a>XAML UIElement へのライトの適用
 
-XAML UIElement に動的なライトを適用するには、[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) オブジェクトを使用して [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) を適用します。 XamlLight がターゲットの Uielement または XAML ブラシ、Uielement のツリーにライトを適用するためのメソッドを提供し、現在いるかどうかに基づいて、リソースの使用を CompositionLight の有効期間を管理します。
+XAML UIElement に動的なライトを適用するには、[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) オブジェクトを使用して [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) を適用します。 XamlLight は Uielement または XAML ブラシ、Uielement のツリーにライトを適用することをターゲットとするメソッドを提供し、現在いるかどうかに基づいて、リソースの使用を CompositionLight の有効期間を管理します。
 
 - XamlLight で **Brush** をターゲットにする場合、その Brush 使用している任意の UIElement の部分がライトによって照らされます。
 - XamlLight で **UIElement** をターゲットにする場合、UIElement 全体とその子 UIElement がライトによって照らされます。
@@ -461,10 +461,10 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-この光は、任意の XAML UIElement またはブラシに光を適用できます。 この例では、さまざまな潜在的な使用法を示します。
+任意の XAML UIElement またはブラシに光をこのライトを適用することができます。 この例では、さまざまな潜在的な使用法を示します。
 
 > [!Important]
-> [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、削除が 2 回`local:OrangeSpotLight.IsTarget="True"`次のマークアップからです。 添付プロパティは、コード ビハインドで既に設定されます。
+> [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、削除が 2 回`local:OrangeSpotLight.IsTarget="True"`次のマークアップからします。 添付プロパティは、コード ビハインドで既に設定されます。
 
 ```xaml
 <StackPanel Width="100">

@@ -10,18 +10,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, 価格設定, アプリの価格設定, アプリの価格, アプリの販売, 価格変更, カスタム価格, 価格, 料金, コスト, 基本価格の上書き, 自由設定価格, 自由設定
 ms.localizationpriority: medium
 ms.openlocfilehash: ca37d0b360679a878cff3aeabd96f82016c36fde
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4394186"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4430978"
 ---
 # <a name="set-and-schedule-app-pricing"></a>アプリの価格の設定とスケジュール
 
 [[価格と使用可能状況]](set-app-pricing-and-availability.md) ページの **[価格設定]** セクションでは、アプリの基本価格を選択できます。 [価格変更をスケジュール](#schedule-price-changes)して、アプリの価格を変更する日時を指定することもできます。 また、[特定の市場の基本価格を上書きする](#override-base-price-for-specific-markets)こともできます。その場合は、新しい価格帯を選択するか、市場の現地通貨で自由設定価格を入力します。
 
 > [!NOTE]
-> このトピックはアプリについて説明していますが、アドオンの申請の価格設定にも同じプロセスを使います。 [サブスクリプション アドオン](../monetize/enable-subscription-add-ons-for-your-app.md)の基本価格を選択するを増やすことができませんこれまで (基本価格を変更することであるかどうか、または価格変更をスケジュールすることによって)、戻ることがありますが、注意してください。
+> このトピックはアプリについて説明していますが、アドオンの申請の価格設定にも同じプロセスを使います。 [サブスクリプション アドオン](../monetize/enable-subscription-add-ons-for-your-app.md)の基本価格を選択するを増やすことができませんこれまで (基本価格を変更しているかどうか、または価格変更をスケジュールすることによって)、戻ることがありますが、注意してください。
 
 ## <a name="base-price"></a>基本価格
 

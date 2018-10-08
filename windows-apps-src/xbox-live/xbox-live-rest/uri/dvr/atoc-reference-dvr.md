@@ -12,19 +12,19 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c9be3254d9264c1d06dd0a327c36b473a457a35
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4393143"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4418191"
 ---
 # <a name="game-dvr-uris"></a>ゲーム DVR URI
  
-このセクションでは、*ゲーム DVR*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*ゲーム DVR*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
  
-本体のみが、ゲーム クリップを記録できますにアクセスできる任意のデバイスにクリップを表示できます。
+本体のみが、ゲーム クリップを記録できますにアクセスできる任意のデバイスがクリップを表示できます。
  
-これらの Uri のドメインは、対象の URI の関数によっては。
+によっては、対象の URI の関数は、これらの Uri のドメインは。
  
    *  gameclipsmetadata.xboxlive.com 
    *  gameclipstransfer.xboxlive.com 
@@ -44,7 +44,7 @@ ms.locfileid: "4393143"
 
 [/users/me/scids/{scid}/clips](uri-usersmescidclips.md)
 
-&nbsp;&nbsp;最初のアクセスは、要求をアップロードします。
+&nbsp;&nbsp;初期のアクセスは、要求をアップロードします。
 
 [/users/me/scids/{scid}/clips/{gameClipId}](uri-usersmescidclipsgameclipid.md)
 

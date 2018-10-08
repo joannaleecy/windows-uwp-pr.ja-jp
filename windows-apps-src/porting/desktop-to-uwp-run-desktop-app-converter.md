@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: bde2e58934e24df7db2cb77fb793106aa65e3834
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4390462"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4430998"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Desktop App Converter を使用してデスクトップ アプリケーションをパッケージ化します。
 
@@ -26,14 +26,14 @@ Desktop App Converter (DAC) を使用すると、デスクトップ アプリを
 
 ![DAC アイコン](images/desktop-to-uwp/dac.png)
 
-このツールの名前には "Converter" という用語が含まれますが、実は、アプリの変換は行いません。 アプリケーションはそのまま残ります。 しかし、DACは、パッケージ ID を持ち多くの WinRT API を呼び出すことができる Windows アプリ パッケージを生成します。
+このツールの名前には "Converter" という用語が含まれますが、実は、アプリの変換は行いません。 アプリケーションは変更されません。 しかし、DACは、パッケージ ID を持ち多くの WinRT API を呼び出すことができる Windows アプリ パッケージを生成します。
 
 このパッケージは、開発コンピューターで Add-AppxPackage という PowerShell コマンドレットを使ってインストールすることができます。
 
 このコンバーターは、コンバーターのダウンロードに含まれるクリーンな状態の基本イメージを使って、分離された Windows 環境でデスクトップ インストーラーを実行します。 デスクトップ インストーラーが作成するすべてのレジストリとファイル システムの I/O をキャプチャし、出力の一部としてパッケージ化します。
 
 >[!IMPORTANT]
->デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (それ以外の場合、デスクトップ ブリッジとも呼ばれるは Windows 10 バージョン 1607 で導入されましたし、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
+>デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (、デスクトップ ブリッジとも呼ばれるを Windows 10 バージョン 1607 で導入されたそれ以外の場合と、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
 
 > [!NOTE]
 > Microsoft Virtual Academy から公開されている、<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">このシリーズ</a>の短いビデオをご覧ください。 これらのビデオでは、Desktop App Converter を使用する一般的な方法が紹介されています。
@@ -180,7 +180,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >デベロッパー センターが数値で始まる ID をパッケージに割り当てる場合、必ず <i>-AppId</i> パラメーターも渡し、そのパラメーターの値として文字列サフィックスのみを使ってください (ピリオドの区切り記号の後)。
 
-``InstallerArguments`` パラメーターは省略可能なパラメーターです。 ただし、Desktop App Converter は、インストーラーを無人モードで実行する必要があるため、アプリケーションはサイレント実行のサイレント フラグを必要とする場合に使用する必要があります。 ``/S`` フラグは非常に一般的なサイレント フラグですが、セットアップ ファイルを作成するために使用したインストーラー テクノロジによっては、使用するフラグが異なる場合もあります。
+``InstallerArguments`` パラメーターは省略可能なパラメーターです。 ただし、Desktop App Converter は、インストーラーを無人モードで実行する必要があるため、アプリケーションがサイレント フラグをサイレント モードで実行する必要がある場合に使用する必要があります。 ``/S`` フラグは非常に一般的なサイレント フラグですが、セットアップ ファイルを作成するために使用したインストーラー テクノロジによっては、使用するフラグが異なる場合もあります。
 
 **ビデオ**
 
@@ -217,7 +217,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >デベロッパー センターが数値で始まる ID をパッケージに割り当てる場合、必ず <i>-AppId</i> パラメーターも渡し、そのパラメーターの値として文字列サフィックスのみを使ってください (ピリオドの区切り記号の後)。
 
-``Sign``パラメーターが証明書を生成し、それを使用してアプリケーションを署名します。 アプリを実行するには、生成された証明書をインストールする必要があります。 その方法については、このガイドの「[パッケージ アプリを実行する](#run-app)」セクションをご覧ください。
+``Sign``パラメーターは、証明書を生成し、それを使用してアプリケーションを署名します。 アプリを実行するには、生成された証明書をインストールする必要があります。 その方法については、このガイドの「[パッケージ アプリを実行する](#run-app)」セクションをご覧ください。
 
 検証するアプリケーションを使用して、``Verify``パラメーター。
 
@@ -271,7 +271,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-InstallerArguments &lt;String&gt; |省略可能 |インストーラーに無人/サイレント モードでの実行を強制する引数の文字列、またはコンマ区切り一覧。 インストーラーが msi の場合は、このパラメーターは省略可能です。 インストーラーからログを取得するには、ここで、インストーラーのログ記録の引数を指定し、パス &lt;log_folder&gt; (コンバーターが適切なパスに置換するトークン) を使います。 <br><br>**注**: 無人/サイレント フラグとログの引数は、インストーラー テクノロジごとに異なります。 <br><br>このパラメーターの使用例: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log"。ログ ファイルを生成しない別の例: ```-InstallerArguments "/quiet", "/norestart"```。コンバーターでログをキャプチャし、最終的なログ フォルダーに格納する場合は、文字どおりすべてのログにトークン パス &lt;log_folder&gt; を指定する必要があります。|
 |-InstallerValidExitCodes &lt;Int32&gt; |省略可能 |インストーラーの正常な実行を示す、コンマで区切った終了コードの一覧 (例: 0, 1234, 5678)。  既定では、非 msi は 0、msi は 0, 1641, 3010 です。|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |省略可能 |このスクリプトに出力で MakeAppx を呼び出すように指示するスイッチ (存在する場合)。 |
-|-MakeMSIX [&lt;SwitchParameter&gt;]  |オプション |存在する場合、出力 MSIX パッケージとしてパッケージ化するには、このスクリプトに指示するスイッチ。 |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |オプション |存在する場合、出力を MSIX パッケージとしてパッケージ化するには、このスクリプトに指示するスイッチ。 |
 |<a id="identity-params" /><strong>パッケージ ID パラメーター</strong>||
 |-PackageName &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの名前。 デベロッパー センターが数値で始まる ID をパッケージに割り当てる場合、必ず <i>-AppId</i> パラメーターも渡し、そのパラメーターの値として文字列サフィックスのみを使ってください (ピリオドの区切り記号の後)。 |
 |-Publisher &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの発行元 |
@@ -296,7 +296,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-LogFile &lt;String&gt;  |省略可能 |ログ ファイルを指定します。 省略した場合は、ログ ファイルの一時的な場所が作成されます。 |
 | -Sign [&lt;SwitchParameter&gt;] |省略可能 |出力する Windows アプリ パッケージに、テスト用に生成された証明書を使用して署名するようにこのスクリプトに指示します。 このスイッチは、```-MakeAppx``` スイッチと共に指定する必要があります。 |
 |&lt;共通パラメーター&gt; |必須 |このコマンドレットは、共通パラメーター *Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable*、*OutVariable* をサポートします。 詳しくは、「[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)」をご覧ください。 |
-| -Verify [&lt;SwitchParameter&gt;] |オプション |指定されている場合、パッケージ アプリと Microsoft Store 要件に照らして、アプリ パッケージを検証する DAC に指示するスイッチ。 結果は、検証レポート "VerifyReport.xml" で、ブラウザーでの視覚化に最適です。 このスイッチは、`-MakeAppx` スイッチと共に指定する必要があります。 |
+| -Verify [&lt;SwitchParameter&gt;] |オプション |指定されている場合、パッケージ アプリと Microsoft Store 要件に照らして、アプリ パッケージを検証するように DAC に指示するスイッチ。 結果は、検証レポート "VerifyReport.xml" で、ブラウザーでの視覚化に最適です。 このスイッチは、`-MakeAppx` スイッチと共に指定する必要があります。 |
 |-PublishComRegistrations| 省略可能| インストーラーによって行われたすべての パブリック COM 登録をスキャンし、有効な登録をマニフェストで公開します。 このフラグは、これらの登録を他のアプリケーションで利用できるようにする場合にのみ使用してください。 これらの登録を対象アプリケーションでのみ使用する場合、このフラグを使用する必要はありません。 <br><br>アプリをパッケージ化した後、正常に動作するように COM 登録を行うには、[こちらの記事](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97)をご覧ください。
 
 <a id="run-app" />
@@ -336,7 +336,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 バグを解決、ビジュアルのアセットを追加またはライブ タイルなどの最新のエクスペリエンスを使用してアプリケーションを強化をパッケージ化されたアプリケーションに変更を加えたあります可能性があります。
 
-変更を加えた後、もう一度コンバーターを実行する必要はありません。 ほとんどの場合、することができますだけと再パッケージ化アプリケーション MakeAppx ツールを使用して、アプリの appxmanifest.xml ファイル、DAC が生成されます。 「[Windows アプリ パッケージを生成する](desktop-to-uwp-manual-conversion.md#make-appx)」をご覧ください。
+変更を加えた後、もう一度コンバーターを実行する必要はありません。 ほとんどの場合、することができますだけと再パッケージ化、アプリケーション、MakeAppx ツールを使って、アプリの appxmanifest.xml ファイル、DAC が生成されます。 「[Windows アプリ パッケージを生成する](desktop-to-uwp-manual-conversion.md#make-appx)」をご覧ください。
 
 * アプリのビジュアル アセットを変更する場合、新しいパッケージ リソース インデックス ファイルを生成し、MakeAppx ツールを実行して新しいパッケージを生成します。 「[パッケージ リソース インデックス (PRI) ファイルを生成する](desktop-to-uwp-manual-conversion.md#make-pri)」をご覧ください。
 
@@ -351,7 +351,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Modifying-and-Repackaging-Output-from-Desktop-App-Converter-OwpAJ3WhD_6706218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Modify-Output-from-Desktop-App-Converter-gEnsa3WhD_8606218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
-次の 2 つのセクションでは、いくつかの省略可能な修正を検討してパッケージのアプリケーションについて説明します。
+次の 2 つのセクションでは、いくつかの省略可能な修正を検討しているパッケージ化されたアプリケーションをについて説明します。
 
 ### <a name="delete-unnecessary-files-and-registry-keys"></a>不要なファイルとレジストリ キーを削除する
 

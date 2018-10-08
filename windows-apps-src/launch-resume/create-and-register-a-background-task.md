@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: a599fdef47bb681ef4909fe5bba2a01a1687ba66
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389197"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4418840"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>アウトプロセス バックグラウンド タスクの作成と登録
 
@@ -40,12 +40,12 @@ ms.locfileid: "4389197"
 
 次の手順では、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装する新しいクラスを記述する方法について説明します。
 
-1.  バックグラウンド タスク用に新しいプロジェクトを作ってソリューションに追加します。 これを行うには、**ソリューション エクスプ ローラー**で、ソリューション ノードを右クリックし、[**追加** \> **新しいプロジェクト**です。 **Windows ランタイム コンポーネント**プロジェクトの種類、プロジェクトに名前を選択し、[ok] をクリックします。
-2.  ユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトからバックグラウンド タスク プロジェクトを参照します。 C# または C++ アプリの場合、アプリ プロジェクトで**参照**で右クリックし、[**新しい参照の追加**を選択します。 **[ソリューション]** で、**[プロジェクト]** を選び、バックグラウンド タスク プロジェクトの名前を選んで **[OK]** をクリックします。
-3.  バック グラウンド タスク プロジェクトでは、 [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)インターフェイスを実装する新しいクラスを追加します。 [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)メソッドが呼び出される、指定のイベントがトリガーされると、必須のエントリ ポイントです。すべてのバック グラウンド タスクでは、このメソッドが必要です。
+1.  バックグラウンド タスク用に新しいプロジェクトを作ってソリューションに追加します。 これを行うには、**ソリューション エクスプ ローラー**でソリューション ノードを右クリックし、[**追加** \> **新しいプロジェクト**です。 **Windows ランタイム コンポーネント**プロジェクトの種類、プロジェクトに名前を選択し、[ok] をクリックします。
+2.  ユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトからバックグラウンド タスク プロジェクトを参照します。 C# または C++ アプリの場合、アプリ プロジェクトでの**参照**を右クリックし、**新しい参照の追加**を選択します。 **[ソリューション]** で、**[プロジェクト]** を選び、バックグラウンド タスク プロジェクトの名前を選んで **[OK]** をクリックします。
+3.  バック グラウンド タスク プロジェクトでは、 [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)インターフェイスを実装する新しいクラスを追加します。 [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)メソッドは、指定のイベントがトリガーされた; ときに呼び出される必須のエントリ ポイントです。このメソッドが各バック グラウンド タスクに必要です。
 
 > [!NOTE]
-> バック グラウンド タスク クラス自体&mdash;とバック グラウンド タスク プロジェクト内の他のすべてのクラス&mdash; **sealed** (または**最終的な**) は**パブリック**クラスを使用する必要があります。
+> バック グラウンド タスク クラス自体&mdash;と他のクラスをバック グラウンド タスク プロジェクト&mdash;**シール**(または**最終的な**) は**パブリック**クラスを使用する必要があります。
 
 次のサンプル コードでは、バック グラウンド タスク クラスの場合は、非常に基本的な開始点を示します。
 
@@ -144,9 +144,9 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-4.  バックグラウンド タスクで非同期コードを実行する場合は、バックグラウンド タスクで遅延を使う必要があります。 遅延を使わない場合し、バック グラウンド タスクの処理を終了できますが予期せず、非同期処理の実行が完了する前に、 **Run**メソッドが返す場合。
+4.  バックグラウンド タスクで非同期コードを実行する場合は、バックグラウンド タスクで遅延を使う必要があります。 遅延を使わない場合、バック グラウンド タスクの処理を終了できます予期せず、非同期処理の実行が完了する前に、 **Run**メソッドが返す場合。
 
-非同期メソッドを呼び出す前に、 **Run**メソッドでは、保留を要求します。 非同期メソッドからアクセスできるように、クラスのデータ メンバーに、遅延を保存します。 非同期コードが完了した後、遅延を完了するように宣言します。
+非同期メソッドを呼び出す前に、 **Run**メソッドでは、保留を要求します。 非同期メソッドからアクセスできるように、クラスのデータ メンバーには、保留を保存します。 非同期コードが完了した後、遅延を完了するように宣言します。
 
 次のサンプル コードは、保留を取得するには、保存、および非同期コードが完了したら、それを解放します。
 
@@ -204,18 +204,18 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 ```
 
 > [!NOTE]
-> C# では、**async/await** キーワードを使ってバックグラウンド タスクの非同期メソッドを呼び出すことができます。 C++/cli CX、タスク チェーンを使用して、同様の結果を実現できます。
+> C# では、**async/await** キーワードを使ってバックグラウンド タスクの非同期メソッドを呼び出すことができます。 C++/cli CX、同様の結果は、タスク チェーンを使用して実現できます。
 
 非同期パターンについて詳しくは、「[非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187335)」をご覧ください。 遅延を使ってバックグラウンド タスクの早期停止を防ぐ方法に関するその他の例については、[バックグラウンド タスクのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=618666)をご覧ください。
 
 次の手順はいずれかのアプリ クラス (MainPage.xaml.cs など) で実行します。
 
 > [!NOTE]
-> バック グラウンド タスクを登録するための専用の関数を作成することもできます。&mdash;[バック グラウンド タスクの登録](register-a-background-task.md)を参照してください。 その場合は、次の 3 つの手順ではなく単にトリガーを作成してタスク名、タスクのエントリ ポイントと (必要に応じて) 条件併せて登録関数に提供できます。
+> バック グラウンド タスクを登録するための専用の関数を作成することもできます。&mdash;[バック グラウンド タスクの登録](register-a-background-task.md)を参照してください。 その場合は、次の 3 つの手順ではなく単にトリガーを作成して、タスク名、タスクのエントリ ポイント、および (必要に応じて) 条件併せて登録関数に提供できます。
 
 ## <a name="register-the-background-task-to-run"></a>実行するバックグラウンド タスクを登録する
 
-1.  [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787)プロパティを反復処理して、バック グラウンド タスクが既に登録されているかどうかについて説明します。 この確認は重要です。既にあるバックグラウンド タスクの二重登録をアプリで確認しなかった場合、同じタスクが何度も登録され、パフォーマンスが低下したり、タスクの CPU 時間を使い切って処理を完了できなくなるなどの問題が生じます。
+1.  [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787)プロパティを反復処理によって、バック グラウンド タスクが既に登録されているかどうかについて説明します。 この確認は重要です。既にあるバックグラウンド タスクの二重登録をアプリで確認しなかった場合、同じタスクが何度も登録され、パフォーマンスが低下したり、タスクの CPU 時間を使い切って処理を完了できなくなるなどの問題が生じます。
 
 次の例では、 **AllTasks**プロパティを反復処理し、タスクが既に登録されている場合は true にフラグ変数を設定します。
 
@@ -276,7 +276,7 @@ while (hascur)
 
 バックグラウンド タスク トリガーは、バックグラウンド タスクが実行されるタイミングを制御します。 指定できるトリガーの一覧については、「[**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)」をご覧ください。
 
-たとえば、このコードでは、新しいバック グラウンド タスクを作成し、 **TimeZoneChanged**トリガーが発生したときに実行するように設定します。
+たとえば、このコードは、新しいバック グラウンド タスクを作成し、 **TimeZoneChanged**トリガーが発生したときに実行するように設定します。
 
 ```csharp
 var builder = new BackgroundTaskBuilder();
@@ -348,7 +348,7 @@ BackgroundTaskRegistration^ task = builder->Register();
 
 ## <a name="handle-background-task-completion-using-event-handlers"></a>イベント ハンドラーでバックグラウンド タスクの完了を処理する
 
-アプリからバックグラウンド タスクの結果を取得できるように、[**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) にメソッドを登録します。 アプリが起動、または再開するときは、前回がアプリをフォア グラウンドからバック グラウンド タスクが完了した場合マークされたメソッドが呼び出されます。 (アプリがフォアグラウンドにある間にバックグラウンド タスクが終了した場合は、OnCompleted メソッドが直ちに呼び出されます)。
+アプリからバックグラウンド タスクの結果を取得できるように、[**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) にメソッドを登録します。 アプリが起動、または再開するときは、前回がアプリをフォア グラウンドからバック グラウンド タスクが完了した場合、マークされているメソッドが呼び出されます。 (アプリがフォアグラウンドにある間にバックグラウンド タスクが終了した場合は、OnCompleted メソッドが直ちに呼び出されます)。
 
 1.  バックグラウンド タスクの完了を処理する OnCompleted メソッドを記述します。 たとえば、バックグラウンド タスクの結果により UI を更新できます。 ここに示すメソッドのフットプリントは、この例では *args* パラメーターは使われていませんが、OnCompleted イベント ハンドラー メソッドで必須になります。
 
@@ -415,7 +415,7 @@ task.Completed({ this, &MainPage::OnCompleted });
 task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::OnCompleted);
 ```
 
-## <a name="declare-in-the-app-manifest-that-your-app-uses-background-tasks"></a>アプリがバック グラウンド タスクを使っているアプリのマニフェストで宣言します。
+## <a name="declare-in-the-app-manifest-that-your-app-uses-background-tasks"></a>アプリがバック グラウンド タスクを使うことをアプリ マニフェストで宣言します。
 
 アプリでバックグラウンド タスクを実行する前に、各バックグラウンド タスクをアプリ マニフェストで宣言する必要があります。 アプリがマニフェストに記載されていないトリガーでバック グラウンド タスクを登録しようとすると、バック グラウンド タスクの登録は"ランタイム クラスが登録されていない"というエラーで失敗します。
 
@@ -423,7 +423,7 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 2.  **[宣言]** タブを開きます。
 3.  **[使用可能な宣言]** ボックスの一覧の **[バックグラウンド タスク]** を選び、**[追加]** をクリックします。
 4.  **[システム イベント]** チェック ボックスをオンにします。
-5.  **エントリ ポイント:** textbox、名前空間と次の例は、Tasks.ExampleBackgroundTask のバック グラウンド クラスの名前を入力します。
+5.  **エントリ ポイント:** textbox、名前空間と、この例は、Tasks.ExampleBackgroundTask のバック グラウンド クラスの名前を入力します。
 6.  マニフェスト デザイナーを閉じます。
 
 バック グラウンド タスクを登録するために、次の Extensions 要素が Package.appxmanifest ファイルに追加されます。

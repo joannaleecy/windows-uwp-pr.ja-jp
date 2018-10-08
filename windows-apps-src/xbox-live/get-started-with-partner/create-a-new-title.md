@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 72126b51c4e155babad6cfee737e21d6102b03e5
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4385446"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4418387"
 ---
 # <a name="create-a-new-title-for-xbox-live"></a>Xbox Live 用の新しいタイトルを作成する
 
@@ -40,12 +40,12 @@ ms.locfileid: "4385446"
 Xbox Live の機能が動作するための前提条件として、[Windows デベロッパー センター](http://dev.windows.com)で作成した Xbox Live 対応のタイトルが必要です。
 
 ### <a name="create-a-microsoft-account"></a>Microsoft アカウントを作成する
-Microsoft アカウント (MSA とも呼ばれます) がない場合は、一度に 1 つを最初に作成する必要があります。[https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)します。  Office 365 アカウントをお持ちの場合は、Outlook.com を使用してください。または Xbox Live アカウントをお持ちの場合は、既に MSA を持っている可能性があります。
+Microsoft アカウント (MSA とも呼ばれます) があるない場合は、一度に 1 つを最初に作成する必要があります。[https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)します。  Office 365 アカウントをお持ちの場合は、Outlook.com を使用してください。または Xbox Live アカウントをお持ちの場合は、既に MSA を持っている可能性があります。
 
 ### <a name="register-as-an-app-developer"></a>アプリ開発者として登録する
 デベロッパー センターで新しいタイトルを作成できるようにするには、アプリ開発者として登録する必要があります。
 
-登録するにhttps://developer.microsoft.com/en-us/store/registerし、サインアップ プロセスに従います。
+Go を登録するhttps://developer.microsoft.com/en-us/store/registerし、サインアップ プロセスに従います。
 
 ### <a name="create-a-new-uwp-title"></a>新しい UWP タイトルを作成する
 次に、デベロッパー センターで定義されている UWP タイトルが必要です。  これを実行するには、まずダッシュ ボードに移動します

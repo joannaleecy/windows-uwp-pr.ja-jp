@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 91423df8367c275f40cd7f856a60070e1a46ad40
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4385365"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4418895"
 ---
 # <a name="titleblob-json"></a>TitleBlob (JSON)
 記憶域からのタイトルに関する情報が含まれています。 
@@ -31,7 +31,7 @@ TitleBlob オブジェクトには、次の仕様があります。
 | --- | --- | --- | 
 | clientFileTime| DateTime| [オプション]ファイルの最後のアップロードの日時。| 
 | displayName| string| [オプション]ユーザーに表示されているファイルの名前。| 
-| etag| string| タグで使用されるファイルをダウンロードして要求をアップロードします。| 
+| etag| string| タグで使用するファイルのダウンロードし、要求をアップロードします。| 
 | fileName| string| ファイルの名前です。| 
 | size| 64 ビットの符号付き整数| ファイルのバイトのサイズ。| 
 | smartBlobType| string| [オプション]データの種類です。 使用可能な値: config、json、バイナリ。| 

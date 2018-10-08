@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 246427b772403ca07adac2a4b1b07ec159142049
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4385524"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4415219"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
 指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URIこれらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
@@ -77,7 +77,7 @@ gameserverds.xboxlive.com
  
 ## <a name="authorization"></a>Authorization
 
-要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
+要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
  
 <a id="ID4EEE"></a>
 
@@ -88,8 +88,8 @@ gameserverds.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| locale| 返すバリエーションのローカルです。| 
-| maxVariants| 返すバリエーションの最大数。| 
+| locale| 返されるバリエーションのローカルです。| 
+| maxVariants| 返されるバリアントの最大数。| 
 | publisherOnly|  | 
 | 制限|  | 
  
@@ -142,8 +142,8 @@ gameserverds.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| バリエーション| バリアントの配列です。| 
-| バリエーション| バリアントの Id です。| 
+| バリアント| バリアントの配列です。| 
+| バリエーション Id| バリアントの Id です。| 
 | name| バリアントの名前です。| 
 | isPublisher|  | 
 | ランク|  | 
@@ -153,7 +153,7 @@ gameserverds.xboxlive.com
 | schemaContent| スキーマの内容| 
 | name| スキーマの名前| 
 | gsiSets| GSI セットの配列です。| 
-| minRequiredPlayers| バリアントのプレイヤーの最小数です。| 
+| minRequiredPlayers| バリアントのプレイヤーの最小数。| 
 | maxAllowedPlayers| バリアントのプレイヤーの最大数。| 
 | は| GSI セットの Id です。| 
 | gsiSetName| GSI セットの名前です。| 

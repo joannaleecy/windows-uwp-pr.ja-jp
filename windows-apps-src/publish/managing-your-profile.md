@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, デベロッパー センター, アカウント設定, プロファイル, アカウント プロファイル, 開発者アカウント, 開発者アカウントの設定
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392906"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4423342"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>アカウントの設定とプロファイル情報の管理
 
@@ -48,12 +48,12 @@ ms.locfileid: "4392906"
 
 **[アカウント設定]** セクションに表示されるその他の項目の一部を以下に示します。
 
-- **確認状態**: アカウントが進行中 (最初にサインアップすると、たとえば、または、連絡先情報を大幅に更新した後など)、検証の処理、ここで検証ステータスを確認することができます。
-- **デベロッパー センター Insider Program**: することでオプトインまたはオプトアウト[デベロッパー センター Insider Program](dev-center-insider-program.md)のメインの**アカウント設定**] ページ。
+- **確認状態**: 検証プロセス (最初にサインアップすると、たとえば、または、連絡先情報を大幅に更新した後など)、アカウントの進行中は、ここで検証ステータスを確認することができます。
+- **デベロッパー センター Insider Program**: することでオプトインまたはオプトアウト メインから、[デベロッパー センター Insider Program](dev-center-insider-program.md) **アカウント設定**] ページ。
 - **[受取りアカウント]** と **[税務プロファイル]**: ここでは、[受取りアカウントと税関連の書類を設定](setting-up-your-payout-account-and-tax-forms.md)します。 これらの準備は、アプリやアドオンの代金を請求する前に行う必要があります。
 - **[企業団体]**: 専用アプリの公開を求めている企業からの招待を承認します。 詳しくは、「[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)」をご覧ください。
 - **[ユーザー]**: ユーザーをデベロッパー センター アカウントに追加し、役割やアクセス許可を割り当てます。 詳しくは、「[アカウント ユーザーの管理](manage-account-users.md)」をご覧ください。
-- **テナント**: Azure AD テナントの関連付けを管理します。 詳しくは、[デベロッパー センター アカウントと Azure AD の関連付け](associate-azure-ad-with-dev-center.md)を参照してください。
+- **テナント**: Azure AD テナントの関連付けを管理します。 詳しくは、 [Azure AD とデベロッパー センター アカウントの関連付け](associate-azure-ad-with-dev-center.md)を参照してください。
 - **[プログラム]**: 参加しているプログラムについての詳細を確認したり、関心のあるその他のプログラムについて情報を得ることができます。
 - **[契約]**: お使いのアカウントで承認している契約を表示します。
 - **デベロッパー デバイス**: 表示と管理[をテストするためのロックを解除した Windows Phone 8.x デバイス](http://go.microsoft.com/fwlink/p/?LinkId=533897)と[Xbox One 本体](../xbox-apps/devkit-activation.md)が開発用に有効にします。 

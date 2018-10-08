@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 966ff94004d6fd6bfc404800c5ea6561ae3a3864
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4383516"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4417436"
 ---
 # <a name="get-usersxuidxuidhistorytitles"></a>GET (/users/xuid({xuid})/history/titles)
 タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。 この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。 これらの Uri のドメインが`achievements.xboxlive.com`します。
@@ -43,7 +43,7 @@ ms.locfileid: "4383516"
  
 | パラメーター| 必須かどうか| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| skipItems| いいえ| 32 ビット符号付き整数| 特定の項目数後以降の項目を返します。 たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。 | 
+| skipItems| いいえ| 32 ビット符号付き整数| 特定の項目数後から始まって項目を返します。 たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。 | 
 | continuationToken| いいえ| string| 特定の継続トークンで始まる項目を返します。 | 
 | maxItems| いいえ| 32 ビット符号付き整数| <b>SkipItems</b>と項目の範囲を返す<b>continuationToken</b>と組み合わせることができるコレクションから返される項目の最大数。 サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。 | 
   
@@ -54,7 +54,7 @@ ms.locfileid: "4383516"
  
 | 要求| 必須?| 説明| 不足している場合の動作| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| ユーザー| 呼び出し元が、承認された Xbox LIVE ユーザーです。| 呼び出し元では、Xbox LIVE で有効なユーザーを指定する必要があります。| 403 Forbidden| 
+| ユーザー| 呼び出し元は、承認された Xbox LIVE ユーザーです。| 呼び出し元は、Xbox LIVE で有効なユーザーをする必要があります。| 403 Forbidden| 
   
 <a id="ID4EGE"></a>
 

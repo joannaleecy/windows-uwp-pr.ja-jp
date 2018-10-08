@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 47dda291a9a86ccbee69e1e51ca71be373f5dc1d
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4388569"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4417512"
 ---
 # <a name="handleshandleid"></a>/handles/{handleId}
-識別子により指定されたセッション ハンドルを削除または取得の操作をサポートしています。 
+識別子により指定されたセッション ハンドルを削除または GET の操作をサポートしています。 
 
 > [!NOTE] 
-> この URI は、2015年マルチプレイヤーで使用し、そのマルチプレイヤーのバージョンにのみ以降を適用します。 テンプレート コントラクト 104/105 以降で使用する概念があることです。  
+> この URI は、2015年マルチプレイヤーで使用され、および後でそのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用する概念があることです。  
 
  
 <a id="ID4EQ"></a>
@@ -37,7 +37,7 @@ sessiondirectory.xboxlive.com
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | 
-| ハンドル id を使用| GUID| セッション ハンドルの一意の ID。| 
+| ハンドル id を使用| GUID| セッションのハンドルを一意の ID。| 
   
 <a id="ID4ERB"></a>
 

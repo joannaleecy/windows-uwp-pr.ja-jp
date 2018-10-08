@@ -1,6 +1,6 @@
 ---
 author: QuinnRadich
-title: 2018 年 9 月年月 Windows ドキュメントの新しい - UWP アプリの開発
+title: 2018 年の 9 月に Windows ドキュメントの新しい - UWP アプリの開発
 description: 2018 9 月の Windows 10 開発者向けドキュメントに、新しい機能、ビデオ、サンプル、および開発者向けガイダンスが追加されました。
 keywords: 新機能, 更新, 機能, 開発者向けガイダンス, Windows 10 年 9 月
 ms.author: quradic
@@ -10,13 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f017dbb30586d3ec3c2da54d0f262c4b159328cc
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4383595"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4420513"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 9 月
+# <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>2018 年の 9 月に、Windows 開発者向けドキュメントの新しいとは
 
 Windows 開発者向けドキュメントは、Windows プラットフォームで開発者に提供される新機能の情報を反映して継続的に更新されています。 次の機能概要、開発者向けガイダンス、およびビデオには 9 月で利用可能ななりました。
 
@@ -26,25 +26,25 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 ### <a name="windows-machine-learning"></a>Windows Machine Learning
 
-[ドキュメントの「Windows Machine Learning](https://docs.microsoft.com/windows/ai/)独自のサイト上にあり最新の Windows Insider SDK の更新できるようになりました。 デスクトップあり、C++ および c# に役立つ UWP チュートリアルは開始 WinML アプリケーションを追加します。
+[ドキュメントの「Windows Machine Learning](https://docs.microsoft.com/windows/ai/)自身のサイト上にあり最新の Windows Insider SDK の更新できるようになりました。 デスクトップあり、C++ および c# に役立つ UWP チュートリアル最初に WinML アプリケーションを追加します。
 
 最新の Windows Insider SDK の[「Windows.AI.MachineLearning API リファレンス](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)が更新されました。
 
-新しいサンプルが最新の SDK と連携すると[、Windows の機械学習 GitHub リポジトリ](https://github.com/Microsoft/Windows-Machine-Learning)が更新されました。
+最新の SDK と連携するための新しいサンプルで[、Windows の機械学習 GitHub リポジトリにある](https://github.com/Microsoft/Windows-Machine-Learning)が更新されました。
 
 ![Windows Machine Learning のグラフィック](images/winml-graphic.png)
 
 ### <a name="windows-ui-library"></a>Windows UI ライブラリ
 
-[Windows UI ライブラリ](https://aka.ms/winui-docs)には、UWP アプリのコントロールとその他のユーザー インターフェイス要素を提供する NuGet パッケージのセットです。 これらのパッケージは、ユーザーが最新の OS バージョンに存在しない場合でも、アプリが動作するように以前のバージョンの Windows 10 と互換性があります。
+[Windows UI ライブラリ](https://aka.ms/winui-docs)には、UWP アプリのコントロールとその他のユーザー インターフェイス要素を提供する NuGet パッケージのセットです。 これらのパッケージは、ユーザーが最新の OS バージョンに存在しない場合でも、アプリが機能するため、Windows 10 の以前のバージョンと互換性があります。
 
 Windows UI のライブラリについて詳しくは、次を参照してください[この NuGet パッケージに含まれている API 名前空間の一覧。](https://docs.microsoft.com/uwp/api/overview/winui/) 。
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
-### <a name="how-blur-effects-work"></a>効果の作業をどのようにぼかし
+### <a name="how-blur-effects-work"></a>効果の作業をどのように blur
 
-一連の中アプリとゲームの設計に写真をビジョンからのぼかしについての記事、作成者、esteemed マイク Jacobs のいずれかが開始します。 この一般的な視覚効果に関する詳細情報に興味がある場合をチェック アウト[ビジョンと写真の最初の記事](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)と[、2 つ目のアンチエイリアシング グラフィックス内で](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)。
+当社ライター、esteemed マイク Jacobs のいずれかには、一連の中アプリとゲームの設計に写真をビジョンからのぼかしに関する記事が開始しました。 この一般的な視覚効果に関する詳細情報に興味があるならをチェック アウト[ビジョンと写真の最初の記事](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)と[、2 つ目のアンチエイリアシング グラフィックス内で](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)。
 
 ![ぼかしの動作を確認](images/blur-example.jpg)
 
@@ -68,4 +68,4 @@ Chris Heilmann
 
 Larry Osterman:
 
-* [COM のどの部分は、Windows ランタイムではかどうか。](https://youtu.be/_nsMjHqRn1w)
+* [Windows ランタイムは、COM のどの部分かどうか。](https://youtu.be/_nsMjHqRn1w)

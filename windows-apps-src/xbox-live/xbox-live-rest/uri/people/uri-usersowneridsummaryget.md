@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ba0cd060b3432de1cbb641a8991283974da192
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392978"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4415950"
 ---
 # <a name="get-usersowneridsummary"></a>GET (/users/{ownerId}/summary)
-呼び出し元の観点から、所有者に関する集計データを取得します。
+呼び出し元の観点から所有者に関する集計データを取得します。
 
   * [URI パラメーター](#ID4EQ)
   * [Authorization](#ID4E2)
@@ -37,7 +37,7 @@ ms.locfileid: "4392978"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
 
 <a id="ID4E2"></a>
 
@@ -46,7 +46,7 @@ ms.locfileid: "4392978"
 
 | <b>名前</b>| <b>種類</b>| <b>説明</b>|
 | --- | --- | --- | --- | --- | --- |
-| xuid| 64 ビットの符号なし整数| 必須。 呼び出し元のユーザーの識別子です。 値の例: 2533274790395904|
+| xuid| 64 ビットの符号なし整数| 必須。 呼び出し元のユーザーの id。 値の例: 2533274790395904|
 
 <a id="ID4EBC"></a>
 
@@ -55,7 +55,7 @@ ms.locfileid: "4392978"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| データを承認します。 これは、通常、暗号化された XSTS トークンです。 値の例: <b>XBL3.0 x = [ハッシュ]、[トークン]</b>します。|
+| Authorization| string| データを承認します。 これは、通常、暗号化された XSTS トークンです。 値の例: <b>XBL3.0 x = [ハッシュ] は [。トークン]</b>します。|
 
 <a id="ID4EHD"></a>
 
@@ -79,7 +79,7 @@ ms.locfileid: "4392978"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -94,8 +94,8 @@ ms.locfileid: "4392978"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Content-Length| string| 応答に送信されるバイト数です。 値の例: 232 します。|
-| Content-Type| string| 応答本文の MIME タイプ。 <b>アプリケーション/json</b>可能性があります。|
+| Content-Length| string| 応答に送信されるバイト数。 値の例: 232 します。|
+| Content-Type| string| 応答本文の MIME タイプ。 これは、<b>アプリケーション/json</b>でなければなりません。|
 
 <a id="ID4EGAAC"></a>
 

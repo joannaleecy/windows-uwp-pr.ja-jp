@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6271cdf3d94f194adee5087136c1d87ad9f214b5
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392199"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4418098"
 ---
 # <a name="batchrequest-json"></a>BatchRequest (JSON)
 ユーザー、デバイス、およびタイトルなどのプレゼンス情報をフィルター処理するためのプロパティの配列です。
@@ -32,8 +32,8 @@ BatchRequest オブジェクトには、次の仕様があります。
 | ユーザー| 文字列の配列| については、一度に 1100 Xuid の最大プレゼンスがユーザーの Xuid をリストします。|
 | deviceTypes| 文字列の配列| について知りたいユーザーに使用されるデバイスの種類の一覧です。 空の配列の場合、既定値はすべての可能なデバイスの種類 (つまり、none が除外されます)。|
 | タイトル| 32 ビット符号なし整数の配列| デバイスの一覧について理解していることをユーザーを種類します。 空の配列の場合、既定値はすべての可能なタイトル (つまり、none が除外されます)。|
-| level| string| 設定可能な値: <ul><li>ユーザーのユーザーのノードを入手します。</li><li>デバイスの取得ユーザーとデバイス ノード</li><li>タイトルのタイトルの基本的なレベルの情報の取得</li><li>リッチ プレゼンス情報やメディアについては、すべてを取得します。</li></ul>既定値は、「タイトル」です。| 
-| ガジェットの onlineOnly| ブール値| このプロパティが true の場合は、バッチ操作はオフラインのユーザーが (回答が決まるものを含む) のレコードをフィルター処理します。 指定されていない場合は、オンラインとオフライン両方のユーザーが返されます。|
+| level| string| 設定可能な値: <ul><li>ユーザーのユーザーのノードを入手します。</li><li>デバイスの get ユーザーとデバイス ノード</li><li>タイトルのタイトルの基本的なレベルの情報の取得</li><li>リッチ プレゼンス情報やメディアについては、すべてを取得します。</li></ul>既定値は、「タイトル」です。| 
+| ガジェットの onlineOnly| ブール値| このプロパティが true の場合は、オフラインのユーザーが (回答が決まるものを含む) のレコードを除外バッチ操作されます。 指定されていない場合は、オンラインとオフライン両方のユーザーが返されます。|
 
 <a id="ID4EAD"></a>
 

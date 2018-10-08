@@ -12,17 +12,17 @@ keywords: Windows 10, UWP
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: fadd9c2b6a35a1418a782ab0a6ef419e3f127f42
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4394533"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4416089"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Windows 10 にパッケージ化されたデスクトップ アプリケーションを統合します。
 
 拡張機能を使用すると、あらかじめ定義された方法で Windows 10 にパッケージ化されたデスクトップ アプリケーションを統合します。
 
-たとえば、ファイアウォールの例外を作成、アプリケーションのファイルの種類の既定のアプリケーションやスタート画面のタイルをポイントして、アプリのパッケージ バージョン、拡張機能を使用します。 拡張機能は、アプリのパッケージ マニフェスト ファイルに XML を追加するだけで使用できます。 コードは必要ありません。
+たとえば、ファイアウォールの例外を作成、アプリケーションのファイルの種類の既定のアプリケーションを作成またはスタート画面のタイルをポイントして、アプリのパッケージ バージョン、拡張機能を使用します。 拡張機能は、アプリのパッケージ マニフェスト ファイルに XML を追加するだけで使用できます。 コードは必要ありません。
 
 このトピックでは、これらの拡張機能について説明し、拡張機能を使って実行できるタスクについても示します。
 
@@ -123,7 +123,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |-------|-------------|
 |Category |常に ``windows.fileTypeAssociation`` です。
 |名前 |アプリの一意の ID。 この ID は、ファイルの種類の関連付けによって関連付けられたハッシュ対象の[プログラム識別子 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) を生成するために内部で使用されます。 この ID を使って、アプリの今後のバージョンで変更を管理することができます。 |
-|MigrationProgId |[プログラム識別子 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)をアプリケーション、コンポーネント、およびファイルの関連付けを継承するデスクトップ アプリケーションのバージョンを説明します。|
+|MigrationProgId |アプリケーション、コンポーネント、およびファイルの関連付けを継承するデスクトップ アプリケーションのバージョンを記述した[プログラム識別子 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)します。|
 
 #### <a name="example"></a>例
 
@@ -156,7 +156,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>ファイルの種類のセットをパッケージ化されたアプリケーションを関連付ける
 
-パッケージ化されたアプリケーションは、ファイル拡張子に関連付けられていることができます。 ユーザーは、ファイルを右クリックし、**プログラムから開く**] オプションを選択し、アプリケーションは候補の一覧に表示されます。
+パッケージ化されたアプリケーションは、ファイル拡張子に関連付けられていることができます。 ユーザーは、ファイルを右クリックし、**プログラムから開く**] オプションを選択し、候補の一覧に、アプリケーションが表示されます。
 
 #### <a name="xml-namespace"></a>XML 名前空間
 
@@ -245,8 +245,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Category | 常に ``windows.fileTypeAssociation`` です。
 |名前 |アプリの一意の ID。 |
 |Verb |エクスプローラーのコンテキスト メニューに表示される名前です。 この文字列は、```ms-resource``` を使用してローカライズできます。|
-|Id |動詞の一意の ID。 アプリケーションが UWP アプリの場合は、ユーザーの選択内容を適切に処理できるようにアクティブ化イベント引数の一部としてアプリに渡されます。 アプリケーションが完全に信頼できるパッケージ アプリの場合は、パラメーターを受け取ります (次の項目をご覧ください)。 |
-|パラメーター |動詞に関連付けられている引数のパラメーターと値のリスト。 アプリケーションが完全に信頼できるパッケージ アプリの場合は、アプリケーションがアクティブ化されるときに、これらのパラメーターがイベント引数としてアプリケーションに渡されます。 さまざまなアクティブ化の動詞に基づいて、アプリケーションの動作をカスタマイズすることができます。 変数にファイル パスが含まれる可能性がある場合は、パラメーター値を引用符で囲みます。 これにより、パスにスペースが含まれている場合に発生する問題を回避できます。 アプリケーションが UWP アプリの場合は、パラメーターを渡すことはできません。 アプリは、代わりに ID を受け取ります (前の項目を参照してください)。|
+|Id |動詞の一意の ID。 アプリが UWP アプリの場合、ユーザーの選択を適切に処理できるようにアクティブ化イベント引数の一部としてアプリに渡されます。 アプリケーションが完全に信頼できるパッケージ アプリの場合は、パラメーターを受け取ります (次の項目をご覧ください)。 |
+|パラメーター |動詞に関連付けられている引数のパラメーターと値のリスト。 アプリケーションが完全に信頼できるパッケージ アプリの場合は、アプリケーションがアクティブ化されるときに、これらのパラメーターがイベント引数としてアプリケーションに渡されます。 さまざまなアクティブ化の動詞に基づいて、アプリケーションの動作をカスタマイズすることができます。 変数にファイル パスが含まれる可能性がある場合は、パラメーター値を引用符で囲みます。 これにより、パスにスペースが含まれている場合に発生する問題を回避できます。 アプリが UWP アプリの場合は、パラメーターを渡すことはできません。 アプリは、代わりに ID を受け取ります (前の項目を参照してください)。|
 |Extended |ユーザーが **Shift** キーを押しながらファイルを右クリックすることでコンテキスト メニューを表示した場合にのみ表示される動詞を指定します。 この属性は省略可能であり、指定されていない場合の既定値は **False** (常に動詞を表示する) です。 この動作は各動詞について個別に指定します ("開く" は例外で、常に **False**)。|
 
 #### <a name="example"></a>例
@@ -854,7 +854,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 * [プロトコルを使用して、アプリケーションを起動します。](#protocol)
 * [エイリアスを使用して、アプリケーションを起動します。](#alias)
 * [ユーザーが Windows にログオンしたときに実行可能ファイルを起動する](#executable)
-* [デバイスを PC に接続するときに、アプリケーションを起動できるようにします。](#autoplay)
+* [ユーザーが自分の PC にデバイスを接続するときに、アプリケーションを起動を有効にします。](#autoplay)
 * [Microsoft Store から更新プログラムを受信した後、自動的に再起動する](#updates)
 
 <a id="protocol" />
@@ -911,7 +911,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 
 ### <a name="start-your-application-by-using-an-alias"></a>エイリアスを使用して、アプリケーションを起動します。
 
-ユーザーおよびその他のプロセスは、エイリアスを使用してアプリへの完全パスを指定することがなく、アプリケーションを起動します。 そのエイリアス名を指定できます。
+ユーザーおよびその他のプロセスは、エイリアスを使用して、アプリへの完全パスを指定することがなく、アプリケーションを起動します。 そのエイリアス名を指定できます。
 
 #### <a name="xml-namespaces"></a>XML 名前空間
 
@@ -970,7 +970,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 > [!NOTE]
 > ユーザーは、アプリケーションを起動、少なくとも 1 回このスタートアップ タスクを登録します。
 
-アプリケーションでは、複数のスタートアップ タスクを宣言できます。 各タスクは独立して起動されます。 すべてのスタートアップ タスクは、タスク マネージャーの **[スタートアップ]** タブに、アプリのマニフェストで指定した名前とアプリのアイコンを使って表示されます。 タスク マネージャーによって、タスクの起動への影響が自動的に分析されます。
+アプリケーションは、複数のスタートアップ タスクを宣言できます。 各タスクは独立して起動されます。 すべてのスタートアップ タスクは、タスク マネージャーの **[スタートアップ]** タブに、アプリのマニフェストで指定した名前とアプリのアイコンを使って表示されます。 タスク マネージャーによって、タスクの起動への影響が自動的に分析されます。
 
 ユーザーは、タスク マネージャーを使用して、アプリのスタートアップ タスクを手動で無効にすることができます。 ユーザーがタスクを無効にした場合、プログラムでタスクを再度有効にすることはできません。
 
@@ -996,7 +996,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 |-------|-------------|
 |Category |常に ``windows.startupTask`` です。|
 |Executable |起動する実行可能ファイルへの相対パス。 |
-|TaskId |タスクの一意の識別子。 この識別子を使用して、アプリケーションはプログラムによって有効またはスタートアップ タスクを無効にする[Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask)クラスで Api を呼び出すことができます。 |
+|TaskId |タスクの一意の識別子。 この識別子を使用して、アプリケーションをプログラムで有効にするか、スタートアップ タスクを無効にする[Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask)クラスで Api を呼び出すことができます。 |
 |有効 |初めて起動したタスクを有効にするか、無効にするかを指定します。 有効になっているタスクは、(ユーザーが無効にしていない限り) 次回ユーザーがログオンするときに実行されます。 |
 |DisplayName |タスク マネージャーに表示されるタスクの名前。 この文字列は、```ms-resource``` を使用してローカライズできます。 |
 
@@ -1025,9 +1025,9 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 ```
 <a id="autoplay" />
 
-### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>デバイスを PC に接続するときに、アプリケーションを起動できるようにします。
+### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>ユーザーが自分の PC にデバイスを接続するときに、アプリケーションを起動を有効にします。
 
-自動再生は、ユーザーがデバイスを PC に接続するときにオプションとして、アプリケーションを表示できます。
+自動再生は、ユーザーがデバイスを自分の PC に接続するときにオプションとして、アプリケーションを表示できます。
 
 #### <a name="xml-namespace"></a>XML 名前空間
 
@@ -1053,7 +1053,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |ActionDisplayName |ユーザーが PC に接続したときにデバイスで実行できるアクションを表す文字列 (例: "ファイルのインポート" や "ビデオの再生")。 |
 |ProviderDisplayName | アプリケーションまたはサービスを表す文字列 (例:「Contoso ビデオ プレーヤー」)。 |
 |ContentEvent |ユーザーに ``ActionDisplayName`` と ``ProviderDisplayName`` をプロンプト表示する原因となるコンテンツ イベントの名前。 コンテンツ イベントは、カメラのメモリ カード、サム ドライブ、DVD などのボリューム デバイスが PC に挿入されたときに発生します。 これらのイベントの詳しい一覧については、[ここ](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)をご覧ください。  |
-|動詞 |[動詞] 設定では、選択したオプションのアプリケーションに渡される値を識別します。 自動再生のイベントの起動アクションは複数指定できます。また、[動詞] 設定を使って、ユーザーがアプリで選んだアクションを確認できます。 アプリに渡される起動イベント引数の verb プロパティを調べることでユーザーが選んだオプションを確認できます。 [動詞] 設定には任意の値を使うことができます。ただし、予約されている open を除きます。 |
+|動詞 |[動詞] 設定は、選択したオプションのアプリケーションに渡される値を指定します。 自動再生のイベントの起動アクションは複数指定できます。また、[動詞] 設定を使って、ユーザーがアプリで選んだアクションを確認できます。 アプリに渡される起動イベント引数の verb プロパティを調べることでユーザーが選んだオプションを確認できます。 [動詞] 設定には任意の値を使うことができます。ただし、予約されている open を除きます。 |
 |DropTargetHandler |[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)インターフェイスを実装するアプリケーションのクラス ID。 リムーバブル メディアのファイルは、[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 実装の [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) メソッドに渡されます。  |
 |パラメーター |すべてのコンテンツ イベントで [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) インターフェイスを実装する必要はありません。 どのコンテンツ イベントにも、[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) インターフェイスを実装する代わりにコマンド ライン パラメーターを指定することができます。 これらのイベントでは、自動再生がこれらのコマンド ライン パラメーターを使用してアプリケーションを起動します。 アプリの初期化コードでそれらのパラメーターを解析して、自動再生によって起動したかどうかを判断し、カスタム実装を提供することができます。 |
 |DeviceEvent |ユーザーに ``ActionDisplayName`` と ``ProviderDisplayName`` をプロンプト表示する原因となるデバイス イベントの名前。 デバイス イベントは、デバイスが PC に接続されると発生します。 デバイス イベントの先頭は文字列 ``WPD`` です。一覧については[ここ](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)をご覧ください。 |
@@ -1088,18 +1088,18 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 ユーザーを更新プログラムをインストールするときに、アプリケーションが開いている場合は、アプリケーションを閉じます。
 
-更新の完了後に再起動するようにアプリケーションを設定する場合は、再起動するすべてのプロセスで[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)関数を呼び出します。
+更新の完了後に再起動するようにアプリケーションを設定する場合は、再起動するすべてのプロセスで、 [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)関数を呼び出します。
 
-各アクティブ ウィンドウで、アプリケーションは、 [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)メッセージを受け取ります。 この時点で、アプリケーションでは、必要な場合は、コマンド ラインを更新するには、もう一度[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)関数を呼び出すことができます。
+アプリケーションの各アクティブ ウィンドウでは、 [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)メッセージを受け取ります。 この時点で、アプリケーションは、必要に応じて、コマンド ラインを更新するには、もう一度[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)関数を呼び出すことができます。
 
-[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)メッセージを受信すると、アプリケーションの各アクティブ ウィンドウ アプリケーションする必要がありますデータを保存して、シャット ダウンします。
+アプリケーションの各アクティブ ウィンドウでは、 [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)メッセージを受信したとき、アプリケーションがデータを保存する、シャット ダウンする必要があります。
 
 >[!NOTE]
 アクティブ ウィンドウは、アプリケーションが[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)メッセージを処理しない場合にも[WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx)メッセージを受け取ります。
 
-この時点で、アプリケーション 30 秒間、独自のプロセスを終了するか、または終了しなければ、プラットフォームです。
+この時点で、アプリケーション 30 秒、独自のプロセスを終了するか、または終了しなければ、プラットフォームです。
 
-更新が完了したら、アプリケーションを再起動します。
+更新が完了したら、アプリを再起動します。
 
 ## <a name="work-with-other-applications"></a>他のアプリケーションと連携する
 
@@ -1137,7 +1137,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 |-------|-------------|
 |Category |常に ``windows.appPrinter`` です。
 |DisplayName |アプリの印刷先一覧に表示する名前。 |
-|パラメーター |要求の処理を適切に、アプリケーションが必要なパラメーターです。 |
+|パラメーター |アプリケーションが要求を適切に処理に必要とするパラメーター。 |
 
 #### <a name="example"></a>例
 
@@ -1260,9 +1260,9 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
 </Package>
 ```
-この拡張機能をすべてのデバイスで実行されるユニバーサル Windows プラットフォームのユーザー インターフェイスを作成する場合に役立つことがありますが、完全信頼で実行を続ける Win32 アプリケーションのコンポーネントが必要な。
+この拡張機能はすべてのデバイスで実行できるユニバーサル Windows プラットフォームのユーザー インターフェイスを作成する場合に便利ですかもしれませんが、完全信頼で実行を続ける、Win32 アプリケーションのコンポーネントをします。
 
-同様、Win32 アプリの Windows アプリ パッケージを作成します。 そのうえで、この拡張機能を UWP アプリのパッケージ ファイルに追加してください。 この拡張機能では、Windows アプリ パッケージで実行可能ファイルを開始することを示します。  UWP アプリと Win32 アプリの間でやり取りを行うには、1 つまたは複数の[アプリ サービス](../launch-resume/app-services.md)を設定します。 このシナリオについては詳しくは、[こちら](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)をご覧ください。
+Win32 アプリの Windows アプリ パッケージの作成だけです。 そのうえで、この拡張機能を UWP アプリのパッケージ ファイルに追加してください。 この拡張機能は、Windows アプリ パッケージで実行可能ファイルを開始することを示します。  UWP アプリと Win32 アプリの間でやり取りを行うには、1 つまたは複数の[アプリ サービス](../launch-resume/app-services.md)を設定します。 このシナリオについては詳しくは、[こちら](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)をご覧ください。
 
 ## <a name="next-steps"></a>次のステップ
 

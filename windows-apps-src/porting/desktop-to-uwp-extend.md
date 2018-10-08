@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4384101"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4414842"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張
 
@@ -24,7 +24,7 @@ ms.locfileid: "4384101"
 多くの場合、デスクトップ アプリケーションから UWP API を直接呼び出すことができます。そのため、このガイドを確認する前に、「[Windows 10 のための拡張](desktop-to-uwp-enhance.md)」をご覧ください。
 
 >[!NOTE]
->このガイドでは、デスクトップ アプリケーションの Windows アプリ パッケージを作成したことを前提としています。 このまだ完了していない、[デスクトップ アプリケーションのパッケージ](desktop-to-uwp-root.md)を参照してください。
+>このガイドでは、デスクトップ アプリケーションの Windows アプリ パッケージを作成したことを前提としています。 いないまだ行っていない場合、[デスクトップ アプリケーションのパッケージ](desktop-to-uwp-root.md)を参照してください。
 
 準備ができたら始めましょう。
 
@@ -85,7 +85,7 @@ UWP プロジェクトとランタイム コンポーネントで行うことが
 ![アダプティブ デザイン](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->この例では、UWP プロジェクトをソリューションに追加することで、XAML UI を示しています。 デスクトップ アプリケーションでの XAML Ui の表示を安定したサポートされているアプローチです。 代わりに、この方法では、XAML 島を使用して、デスクトップ アプリケーションに直接 UWP XAML コントロールを追加します。 XAML 諸島現在利用可能な開発者プレビューとしてします。 それらプロトタイプ コードで今すぐ試すをお勧めしますがないことで使う運用コードこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟して、今後のリリースの Windows に安定します。 XAML 諸島について詳しくは、[デスクトップ アプリケーションで UWP コントロール](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)を参照してください。
+>この例では、UWP プロジェクトをソリューションに追加することで、XAML UI を示しています。 デスクトップ アプリケーションでの XAML Ui を表示する安定したサポートされているアプローチです。 このアプローチを代わりに、XAML 島を使用して、デスクトップ アプリケーションに直接 UWP XAML コントロールを追加することです。 XAML 諸島現在利用可能な開発者プレビューとしてします。 それらプロトタイプ コードで今すぐ試すをお勧めしますがない使用することに運用コードでこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟し、今後の Windows のリリースを安定させます。 XAML 諸島について詳しくは、[デスクトップ アプリケーションで UWP コントロール](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)を参照してください。
 
 ### <a name="the-design-pattern"></a>設計パターン
 
@@ -316,7 +316,7 @@ public sealed class AppServiceTask : IBackgroundTask
 
 ### <a name="add-an-app-service-extension-to-the-packaging-project"></a>アプリ サービスの拡張機能をパッケージ プロジェクトに追加します。
 
-パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、アプリ サービスの拡張機能の追加、``<Application>``要素です。
+パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、アプリ サービスの拡張機能を追加、``<Application>``要素です。
 
 ```xml
 <Extensions>
@@ -379,7 +379,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 デスクトップ アプリケーションを共有ターゲットにすることで、共有をサポートしている他のアプリのデータ (画像など) をユーザーが簡単に共有できるようになります。
 
-たとえば、ユーザーは、Microsoft Edge、フォト アプリから画像を共有するアプリケーションを選択できます。 そのような機能を WPF サンプル アプリケーションを以下に示します。
+たとえば、ユーザーは、Microsoft Edge、フォト アプリから画像を共有するアプリケーションを選択できます。 その機能を備えている WPF サンプル アプリケーションを次に示します。
 
 ![共有ターゲット](images/desktop-to-uwp/share-target.png)
 
@@ -401,7 +401,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>共有ターゲットの拡張機能を追加する
 
-**ソリューション エクスプ ローラー**でソリューションで、パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、拡張機能を追加します。
+**ソリューション エクスプ ローラー**で、ソリューションにパッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、拡張機能を追加します。
 
 ```xml
 <Extensions>
@@ -450,7 +450,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 
 バックグラウンド タスクを追加して、アプリが一時停止されているときでもコードを実行できます。 バックグラウンド タスクは、ユーザーの操作を必要としない小さなタスクに最適です。 たとえば、タスクはメールのダウンロード、受信チャット メッセージに関するトースト通知の表示、システムの状態の変化に対する対応を行うことができます。
 
-バック グラウンド タスクを登録する WPF サンプル アプリケーションを以下に示します。
+バック グラウンド タスクを登録する WPF サンプル アプリケーションを次に示します。
 
 ![バックグラウンド タスク](images/desktop-to-uwp/sample-background-task.png)
 

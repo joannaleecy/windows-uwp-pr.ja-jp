@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ff8e5444ec65de3665d593168e430a64f4d250e
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4385581"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4416165"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>ユニバーサル リソース識別子 (URI) リファレンス
 
@@ -29,11 +29,11 @@ ms.locfileid: "4385581"
 
 [実績 URI](achievements/atoc-reference-achievementsv2.md)
 
-&nbsp;&nbsp;Uri との実績に関連付けられている HTTP メソッドです。
+&nbsp;&nbsp;Uri との実績に関連付けられている HTTP メソッド。
 
 [ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス](gsdk/atoc-gsdk-uri-reference.md)
 
-&nbsp;&nbsp;Uri のクライアントで、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。
+&nbsp;&nbsp;Uri のクライアントが、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。
 
 [ゲーム DVR URI](dvr/atoc-reference-dvr.md)
 
@@ -41,7 +41,7 @@ ms.locfileid: "4385581"
 
 [ゲーマーアイコン URI](gamerpic/atoc-reference-gamerpic.md)
 
-&nbsp;&nbsp;Uri とタイトルによって生成された人々 に関連付けられている HTTP メソッドです。
+&nbsp;&nbsp;タイトルで生成された人々 に関連付けられている HTTP メソッドと Uri。
 
 [ランキング URI](leaderboard/atoc-reference-leaderboard.md)
 
@@ -53,19 +53,19 @@ ms.locfileid: "4385581"
 
 [マーケットプレース URI](marketplace/atoc-reference-marketplace.md)
 
-&nbsp;&nbsp;Uri と Xbox の市場のサービスの HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;Uri と Xbox marketplace サービスの HTTP メソッドが関連付けられています。
 
 [マッチメイキング URI](matchtickets/atoc-reference-matchtickets.md)
 
-&nbsp;&nbsp;Uri とマッチメイ キングに関連付けられている HTTP/REST メソッドです。
+&nbsp;&nbsp;マッチメイ キングに関連付けられている HTTP/REST 方法と Uri。
 
 [People URI](people/atoc-reference-people.md)
 
-&nbsp;&nbsp;Uri と関連付けられている HTTP メソッド people システムです。
+&nbsp;&nbsp;Uri と関連する HTTP メソッド people システムです。
 
 [プレゼンス URI](presence/atoc-reference-presence.md)
 
-&nbsp;&nbsp;Uri とプレゼンスの HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;プレゼンスに関連する HTTP メソッドと Uri。
 
 [プライバシー URI](privacy/atoc-reference-privacyv2.md)
 
@@ -97,11 +97,11 @@ ms.locfileid: "4385581"
 
 [ユーザー URI](users/atoc-reference-users.md)
 
-&nbsp;&nbsp;Uri とユーザーの関連付けの HTTP メソッドです。
+&nbsp;&nbsp;Uri とユーザーの HTTP メソッドが関連付けられています。
 
 [ユーザー統計 URI](userstats/atoc-reference-userstats.md)
 
-&nbsp;&nbsp;Uri とユーザーの統計情報の関連付けの HTTP メソッドです。
+&nbsp;&nbsp;Uri とユーザーの統計情報の HTTP メソッドが関連付けられています。
 
 <a id="ID4E5C"></a>
 

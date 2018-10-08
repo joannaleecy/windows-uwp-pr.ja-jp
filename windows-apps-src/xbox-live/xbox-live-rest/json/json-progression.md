@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a0e534d92e4bcb77565f59de5252afcbbe3eef5
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4384478"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4416675"
 ---
 # <a name="progression-json"></a>Progression (JSON)
 実績をロック解除に向けたユーザーの進行します。 
@@ -25,7 +25,7 @@ ms.locfileid: "4384478"
  
 ## <a name="progression"></a>進行状況
  
-進行状況のオブジェクトには、次の仕様があります。
+進行状況オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

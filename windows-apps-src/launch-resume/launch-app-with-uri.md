@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f801e9093676ec9fbf55c4ec4af7c5c444ed3ead
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4385631"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4419570"
 ---
 # <a name="launch-an-app-with-a-uri"></a>URI を使ったアプリの起動
 
@@ -31,8 +31,8 @@ ms.locfileid: "4385631"
 | [UWP アプリを起動します。](launch-store-app.md) | ここでは、ms-windows-store URI スキームについて説明します。 アプリでこの URI スキームを使って、UWP アプリを起動し、Store 内の特定のページを表示できます。 |
 | [Windows マップ アプリの起動](launch-maps-app.md) | アプリから Windows マップ アプリを起動する方法について説明します。 |
 | [People アプリの起動](launch-people-apps.md) | ここでは、ms-people URI スキームについて説明します。 アプリでこの URI スキームを使って People アプリを起動し、特定のアクションを実行できます。 |
-| [起動画面 snipping](launch-screen-snipping.md) | 新しいの切り取り領域を開くか、切り取り領域とスケッチ アプリを開き、URI スキームを使用する方法について説明します。 |
-| [アプリの URI ハンドラーを使用して web サイト向けアプリを有効にします。](web-to-app-linking.md) | ユーザーを導くアプリと web サイトの機能のアプリをサポートします。 |
+| [起動画面 snipping](launch-screen-snipping.md) | または切り取り領域とスケッチ アプリを開き、新しい切り取り領域を開くには、URI スキームを使用する方法について説明します。 |
+| [アプリの URI ハンドラーを使用して web サイト向けアプリを有効にします。](web-to-app-linking.md) | ユーザーのアプリを促します web サイトの機能の場合、アプリをサポートします。 |
 
 ## <a name="related-topics"></a>関連トピック
 * [リモート デバイスでのアプリの起動](launch-a-remote-app.md)

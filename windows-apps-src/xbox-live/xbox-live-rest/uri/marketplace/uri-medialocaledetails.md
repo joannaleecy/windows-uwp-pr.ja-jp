@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b8dcea7c0987a2bc783adae0398c9579ded2fe8
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4393528"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4416581"
 ---
 # <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/details
-返します提供の詳細とメタデータについての 1 つまたは複数の項目です。 これらの Uri のドメインが`eds.xboxlive.com`します。
+返します提供の詳細とメタデータについての 1 つまたは複数の項目。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
-API は、関連する API と参照 API によって異なります詳細 (とき、ID で passin) 詳細 API には、追加の情報が返されます。 一方、それらの Api は、暗黙的または明示的に fiven ID に関連付けられているその他の項目に関する情報を返す。同じ項目。
+API は、関連する API と参照 API によって異なります詳細 (とき ID で passin) と、追加の情報を返します。 詳細 API が、それらの Api は、暗黙的または明示的に fiven ID に関連付けられているその他の項目に関する情報を返す。同じ項目。
  
-別のメディア項目の種類の複数の Id は、1 つに渡すことができます (限り ProviderContentID - 以下を参照型のわからない)、呼び出しが同じメディア グループに属するすべてする必要があります。 ただし、これには、呼び出し元がメディアのグループを認識しないクライアントのシナリオのいくつかがあります。 API では、これを使用して、次のような状況でのメディアのグループには、"Unknown"の特殊値のことを許可します。
+別のメディア項目の種類の複数の Id は、1 つに渡すことができます (限り ProviderContentID - 下記を参照型のわからない)、呼び出しが同じメディア グループに属するすべてする必要があります。 ただし、これには、呼び出し元がメディアのグループを認識しないクライアントのシナリオのいくつかがあります。 API では、これを使用して、次のような状況でのメディアのグループには、"Unknown"の特殊値のことを許可します。
  
    * idType = XboxHexTitle で、AppType またはゲームの種類のいずれかの項目が生成されます
    * idType = ProviderContentId で、MovieType または TVType 項目が生成されます
@@ -56,7 +56,7 @@ API は、関連する API と参照 API によって異なります詳細 (と�
  
 これは、検索プロバイダーを使用特定 id。 例。 Netflix Id または Hulu id。
  
-IdType ProviderContentId がある場合は、1 つの値のみが受け入れられます。 これは、ProviderContentIds は種類の ID が含まれるだけであるため、'.' 文字です。 '.' 文字を Id 間の区切り文字でも、新機能、delimieter Id 間の間にあいまいさがおよび ID 自体の一部は何です。 API の残りの部分一括検索機能を除く、ProviderContentIds の同じように動作します。
+IdType ProviderContentId がある場合は、1 つの値のみが受け入れられます。 これは、ProviderContentIds は種類の ID が含まれるだけであるため、'.' 文字です。 '.' 文字がする Id 間の区切り文字でも、新機能、delimieter Id 間の間にあいまいさがおよび ID 自体の一部は何です。 API の残りの部分一括検索機能を除く、ProviderContentIds の同じように動作します。
    
 <a id="ID4EUH"></a>
 
@@ -65,7 +65,7 @@ IdType ProviderContentId がある場合は、1 つの値のみが受け入れ�
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
   
 <a id="ID4EWAAC"></a>
 
@@ -74,7 +74,7 @@ IdType ProviderContentId がある場合は、1 つの値のみが受け入れ�
 
 [GET (/media/{marketplaceId}/details)](uri-medialocaledetailsget.md)
 
-&nbsp;&nbsp;返します提供の詳細とメタデータについての 1 つまたは複数の項目です。 
+&nbsp;&nbsp;返します提供の詳細とメタデータについての 1 つまたは複数の項目。 
  
 <a id="ID4EABAC"></a>
 

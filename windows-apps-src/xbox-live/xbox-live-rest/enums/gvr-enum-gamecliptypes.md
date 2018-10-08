@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 99ae66a68eb6dede1d82ef3e071246ccacd33199
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4390563"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4416373"
 ---
 # <a name="gamecliptype-enumeration"></a>GameClipType 列挙型
 GameClipTypes 列挙をについて説明します。 
@@ -29,7 +29,7 @@ GameClipTypes 列挙をについて説明します。
  
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
-| None| ゲーム クリップの種類は、不明なまたは設定されていないです。 (アップロードは無効)| 
+| None| ゲーム クリップの種類は、不明なまたは設定されていないです。 (アップロードでは無効です)| 
 | MetadataOnly| ゲーム クリップには、アセット データ – メタデータのみ含まれません。 (の将来の使用)| 
 | DeveloperInitiated| ゲーム クリップは、開発者/タイトルによって開始されます。| 
   

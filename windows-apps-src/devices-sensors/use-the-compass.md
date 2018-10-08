@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 069f13926fda125ebb383f16bf96eab333a28523
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: f2bddb9ae3adf8ef6cfdf1b6c078db5eb026c93d
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958657"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4420301"
 ---
 # <a name="use-the-compass"></a>コンパスの使用
 
@@ -28,8 +28,6 @@ ms.locfileid: "958657"
 **サンプル**
 
 -   より完全な実装については、[コンパスのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass)をご覧ください。
-
-\[一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
 コンパスを使って現在の方位を検出する方法を説明します。
 

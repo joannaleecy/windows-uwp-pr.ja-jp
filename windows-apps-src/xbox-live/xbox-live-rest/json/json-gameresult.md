@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f5af1639f5348fe20c36c56c1301f723d832f7
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4383031"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4414850"
 ---
 # <a name="gameresult-json"></a>GameResult (JSON)
 ゲーム セッションの結果を示すデータを表す JSON オブジェクト。 
@@ -30,7 +30,7 @@ GameResult JSON オブジェクトには、次のメンバーがあります。
 | --- | --- | --- | 
 | blob| 8 ビットの符号なし整数の配列| タイトルに固有のカスタムの結果データです。| 
 | 結果| string| ゲーム セッションにプレイヤーの参加の結果。 有効な値は"Win"、"Loss"または「結び付けられて」です。 | 
-| スコア| 64 ビットの符号付き整数| このスコア、プレイヤーがゲーム セッションで受信します。| 
+| スコア| 64 ビットの符号付き整数| プレイヤーがゲーム セッションで受信スコアです。| 
 | 時間| 64 ビットの符号付き整数| ゲーム セッションのプレイヤーの時間。| 
 | xuid| 64 ビットの符号なし整数| 結果の適用先のプレイヤーの Xbox ユーザー ID です。| 
   

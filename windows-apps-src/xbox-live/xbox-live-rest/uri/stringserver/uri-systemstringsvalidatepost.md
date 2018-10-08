@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4795b1ee19017e5598655117a41617e348986503
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392594"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4420427"
 ---
 # <a name="post-systemstringsvalidate"></a>POST (/system/strings/validate)
 検証のための文字列の配列を受け取り、同じサイズの結果の配列を返します。 これらの Uri のドメインが`client-strings.xboxlive.com`します。
@@ -34,7 +34,7 @@ ms.locfileid: "4392594"
  
 各結果は、対応する文字列が Xbox live で許容されると、該当する場合、問題のある文字列が含まれて かどうかを示します。
  
-同一の文字列には、常に同一の結果が得られます。 非成功の結果が発生した場合は、結果を分析し、適宜変更して、文字列。
+同一の文字列には、常に同一の結果が得られます。 非成功の結果が発生した場合、結果を分析し、適宜変更して、文字列。
  
  
 
@@ -85,11 +85,11 @@ ms.locfileid: "4392594"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| 200| OK| すべての文字列が正常に処理されます。 これは、必ずしもとすべての文字列が正の値の Hresult。| 
+| 200| OK| すべての文字列が正常に処理されました。 これは、必ずしもとすべての文字列が正の値の Hresult。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden| ユーザーまたはサービスの要求は許可されていません。| 
 | 406| 許容できません。| 不足している<b>コンテンツの種類: アプリケーション/json</b>ヘッダー。| 

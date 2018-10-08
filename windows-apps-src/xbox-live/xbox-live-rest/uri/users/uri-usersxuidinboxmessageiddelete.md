@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4385556"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4416168"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 ユーザーの受信トレイでユーザーのメッセージを削除します。 これらの Uri のドメインが`msg.xboxlive.com`します。
@@ -36,7 +36,7 @@ ms.locfileid: "4385556"
  
 削除操作では、等です。
  
-この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
+この API はサポートのみコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
   
 <a id="ID4ECB"></a>
 
@@ -53,7 +53,7 @@ ms.locfileid: "4385556"
  
 ## <a name="authorization"></a>Authorization 
  
-独自のユーザーがユーザーのメッセージを削除する要求が必要です。
+ユーザーのメッセージを削除する支払い申請、独自のユーザーが必要です。
   
 <a id="ID4E1B"></a>
 
@@ -67,13 +67,13 @@ ms.locfileid: "4385556"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード 
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 説明| 
 | --- | --- | --- | --- | --- | 
 | 204| 成功します。| 
 | 403| XUID に変換することはできませんか、有効な XUID クレームが見つかったことはできません。| 
-| 404| URI のメッセージ ID を解析できませんまたは、XUID が URI ではありません。| 
+| 404| URI 内のメッセージ ID を解析できませんか、XUID が URI にありません。| 
 | 500| サーバー側の一般的なエラーです。| 
   
 <a id="ID4EAE"></a>
@@ -81,11 +81,11 @@ ms.locfileid: "4385556"
  
 ## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答 
  
-エラーの場合、サービスは、サービスの環境から値を含めることができますが全て、errorResponse オブジェクトを返す可能性があります。
+エラーの場合、サービスはサービスの環境からの値が含まれている全て、errorResponse オブジェクトを返す可能性があります。
  
 | プロパティ| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| errorSource| string| エラーの発生元の項目を示します。| 
+| errorSource| string| エラーが発生した場所を指定します。| 
 | errorCode| int| (Null にすることができます) エラーに関連付けられている数値コードです。| 
 | エラー メッセージ| string| 詳細を表示するように構成する場合のエラーの説明します。| 
   

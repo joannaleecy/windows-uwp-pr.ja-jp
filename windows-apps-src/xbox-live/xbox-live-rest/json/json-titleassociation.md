@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c9d42f4285cd20785f5606d3e2ac6094a874acba
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4388634"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4417490"
 ---
 # <a name="titleassociation-json"></a>TitleAssociation (JSON)
 実績に関連付けられているタイトルです。 
@@ -30,7 +30,7 @@ TitleAssociation オブジェクトには、次の仕様があります。
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | name| string| コンテンツのローカライズされた名前です。| 
-| id| string| タイトル Id (32 ビット符号なし整数、10 進数で返されます)。| 
+| id| string| TitleId (32 ビット符号なし整数、10 進数で返されます)。| 
 | version| string| (該当する場合) に関連付けられているタイトルの特定のバージョン。| 
   
 <a id="ID4E4B"></a>

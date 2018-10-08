@@ -11,11 +11,11 @@ keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392825"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4432598"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>UWP アプリの自動ビルドを設定する
 
@@ -258,7 +258,7 @@ CI_MyUWPApp_1.1.2501.0
 
 次に、手動で、または既存のアプリ パッケージ ファイルをアップロードすることで、HockeyApp アプリを作成できます。 詳しくは、[新しいアプリを作成する方法に関するページ](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)をご覧ください。  
 
-既存のアプリ パッケージ ファイルを使用するには、ビルド ステップを追加し、ビルド ステップのバイナリ ファイルのパス パラメーターを設定します。 
+既存のアプリ パッケージ ファイルを使用して、ビルド ステップを追加し、ビルド ステップのバイナリ ファイルのパスのパラメーターを設定します。 
 
 ![HockeyApp を構成する](images/building-screen15.png) 
 

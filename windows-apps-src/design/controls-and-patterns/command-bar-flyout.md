@@ -16,26 +16,26 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: ed17299051ae7da32f238eb57876b81597c8effa
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4390231"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4431134"
 ---
 # <a name="command-bar-flyout"></a>コマンド バーのポップアップ
 
-コマンド バーのポップアップでは、UI のキャンバス上の要素に関連する浮動ツールバーでコマンドを表示することによって一般的なタスクに簡単にアクセスをユーザーに提供できます。
+コマンド バーのポップアップでは、UI のキャンバス上の要素に関連する浮動ツールバーでのコマンドを表示することによって一般的なタスクに簡単にアクセスをユーザーに提供できます。
 
-![展開されたテキスト コマンド バーのポップアップ](images/command-bar-flyout-text-full.png)
+![展開されたテキスト コマンド バー ポップアップ](images/command-bar-flyout-text-full.png)
 
 > 関連する情報は、[ポップアップ](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)[メニューとコンテキスト メニュー](menus.md)、[コマンド バー](app-bars.md)を参照してください。
 
-[CommandBar](app-bars.md)などは CommandBarFlyout に追加のコマンドを使用できます**PrimaryCommands**と**SecondaryCommands**の特徴があります。 コレクション、またはその両方でコマンドを配置することができます。 プライマリとセカンダリ コマンドが表示されるタイミングと方法は、表示モードによって異なります。
+[CommandBar](app-bars.md)などは CommandBarFlyout にコマンドを追加する使用することができます**PrimaryCommands**と**SecondaryCommands**の特徴があります。 コレクション、またはその両方でコマンドを配置することができます。 プライマリとセカンダリ コマンドが表示されるタイミングと方法は、表示モードによって異なります。
 
-コマンド バーのポップアップが 2 つの表示モード:*折りたたまれている*し、*展開*します。
+コマンド バーのポップアップには 2 つの表示モード:*折りたたまれている*し、*展開*します。
 
-- 折りたたまれたモードでは、プライマリ コマンドのみが表示されます。 プライマリおよびセカンダリの両方に、コマンド バーのポップアップがある場合のコマンド、省略記号で表される「詳細」ボタン \ [•] が表示されます。 これにより、ユーザーが拡張モードに移行してセカンダリ コマンドへのアクセスを取得します。
-- 展開時のモードでは、プライマリおよびセカンダリ コマンドの両方が表示されます。 (コントロールのセカンダリ項目のみが表示されます MenuFlyout コントロールと同様の方法で。)
+- 折りたたまれたモードでは、プライマリ コマンドのみが表示されます。 プライマリとセカンダリの両方に、コマンド バーのポップアップがある場合のコマンド、省略記号で表される「詳細」ボタン \ [•] が表示されます。 これにより、拡張モードに移行してセカンダリ コマンドへのアクセスを取得します。
+- 拡張のモードでは、プライマリおよびセカンダリ コマンドの両方が表示されます。 (した場合、コントロールは、セカンダリ項目のみがある、それらが表示 MenuFlyout コントロールと同様の方法。)
 
 | **Windows UI のライブラリを入手します。** |
 | - |
@@ -51,11 +51,11 @@ ms.locfileid: "4390231"
 
 TextCommandBarFlyout では、TextBox、TextBlock、RichEditBox、RichTextBlock、および PasswordBox のコントロールでテキスト コマンドが表示されます。 コマンドは現在のテキストの選択に自動的に適切に構成します。 CommandBarFlyout を使用してテキスト コントロールの既定のテキストのコマンドを置き換えます。
 
-リスト項目でのコマンドをコンテキストを表示するには、[コンテキスト コマンドのコレクションとリストの実行](collection-commanding.md)のガイダンスに従っています。
+コンテキストを表示するには、リスト項目上のコマンドは[コマンドのコレクションとリストの実行コンテキスト](collection-commanding.md)のガイダンスに従います。
 
 ### <a name="commandbarflyout-vs-menuflyout"></a>CommandBarFlyout vs MenuFlyout
 
-コマンドをコンテキスト メニューを表示するには、CommandBarFlyout または MenuFlyout を使用できます。 MenuFlyout よりも多くの機能を提供するため CommandBarFlyout をお勧めします。 セカンダリ コマンドのみを使った CommandBarFlyout を使用して、動作を取得して、MenuFlyout の検索プライマリおよびセカンダリの両方のコマンドで完全なコマンド バーのポップアップを使用することができます。
+コンテキスト メニューにコマンドを表示するには、CommandBarFlyout または MenuFlyout を使用できます。 MenuFlyout よりも多くの機能を提供するため CommandBarFlyout をお勧めします。 動作を取得して、MenuFlyout の検索やプライマリおよびセカンダリの両方のコマンドで完全なコマンド バーのポップアップを使用するセカンダリ コマンドのみを使った CommandBarFlyout を使用することができます。
 
 ## <a name="examples"></a>例
 
@@ -64,7 +64,7 @@ TextCommandBarFlyout では、TextBox、TextBlock、RichEditBox、RichTextBlock�
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリがインストールされている場合は、ここをクリックして<a href="xamlcontrolsgallery:/item/CommandBarFlyout">アプリを開き、操作で CommandBarFlyout を参照してください</a>。</p>
+    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリをインストールした場合ここをクリックして<a href="xamlcontrolsgallery:/item/CommandBarFlyout">アプリを開き、CommandBarFlyout の動作を参照してください</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
@@ -77,9 +77,9 @@ TextCommandBarFlyout では、TextBox、TextBlock、RichEditBox、RichTextBlock�
 
 ポップアップや、UI のキャンバス上の要素に関連付けられているメニューを呼び出すに 2 つの方法は通常:_プロアクティブな呼び出し_および_事後対応型の呼び出しを実行_します。
 
-コマンドは事前対応型の呼び出しでは、ユーザーがコマンドに関連付けられている項目を操作する自動的に表示します。 たとえば、テキストの書式設定コマンド可能性がありますがポップアップ テキスト ボックスで、ユーザーがテキストを選択します。 この例では、コマンド バーのポップアップでは、フォーカスは実行されません。 代わりに、ユーザーと対話して、項目に近い関連するコマンドを表示します。 場合は、ユーザーは、コマンドを操作しない、それらが閉じられます。
+コマンドは事前対応型の呼び出しでは、ユーザーがコマンドに関連付けられている項目を操作する自動的に表示します。 たとえば、テキストの書式設定コマンド可能性がありますがポップアップ、ユーザーがテキスト ボックスのテキストを選択します。 この例では、コマンド バーのポップアップでは、フォーカスは実行されません。 代わりに、適切なコマンドで、ユーザーが操作の項目に近いを表示します。 場合は、ユーザーは、コマンドを操作しない、それらが閉じられます。
 
-事後対応型の呼び出しでコマンドは表示明示的なユーザー操作への応答でコマンドを要求するにはたとえば、右クリックします。 これは、[コンテキスト メニュー](menus.md)の従来の概念に対応します。
+事後対応型の呼び出しでコマンドは表示、明示的なユーザー操作への応答で、コマンドを要求するにはたとえば、右クリックします。 これは、[コンテキスト メニュー](menus.md)の従来の概念に対応します。
 
 により、または 2 つの混合でも CommandBarFlyout を使用することができます。
 
@@ -137,9 +137,9 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 ### <a name="show-commands-proactively"></a>事前にコマンドを表示します。
 
-事前にコンテキスト コマンドを表示すると、プライマリ コマンドのみする必要があります (コマンド バーのポップアップを縮小する必要があります) を既定で表示されます。 プライマリ コマンドのコレクションとセカンダリ コマンドのコレクションには、コンテキスト メニューに移動しますが従来の追加のコマンドで最も重要なコマンドを配置します。
+コンテキスト コマンドをプロアクティブに表示する場合は、既定の (コマンド バーのポップアップを縮小する必要があります) でプライマリ コマンドのみを表示する必要があります。 プライマリ コマンドのコレクションとされる従来のコンテキスト メニューで、セカンダリ コマンドのコレクションに追加のコマンドで最も重要なコマンドを配置します。
 
-コマンドをプロアクティブに表示するには、コマンド バーのポップアップを表示する[] をクリックして](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)または[Tapped](/uwp/api/windows.ui.xaml.uielement.tapped)イベントを処理する通常します。 **一時的な**または**TransientWithDismissOnPointerMoveAway**折りたたまれているモードでフォーカスを移動することがなく、ポップアップを開くには、ポップアップの[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)を設定します。
+コマンドをプロアクティブに表示するには、通常コマンド バーのポップアップを表示する[] をクリックして](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)または[Tapped](/uwp/api/windows.ui.xaml.uielement.tapped)イベントを処理します。 **一時的な**または**TransientWithDismissOnPointerMoveAway**折りたたまれているモードでフォーカスを移動することがなく、ポップアップを開くには、ポップアップの[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)を設定します。
 
 以降、Windows 10 Insider Preview では、テキスト コントロールには、 **SelectionFlyout**プロパティが設定されています。 ポップアップをこのプロパティに割り当てるとテキストが選択されているときに自動的に表示されます。
 
@@ -147,18 +147,18 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 コンテキスト コマンドを事後対応的、コンテキスト メニューとして表示する場合は、既定では (コマンド バーのポップアップを展開する必要があります)、セカンダリ コマンドが表示されます。 この例では、コマンド バーのポップアップには、プライマリおよびセカンダリの両方のコマンド、またはセカンダリ コマンドのみがあります。
 
-コマンドをコンテキスト メニューを表示するには、通常に UI 要素の[ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout)プロパティに、ポップアップを割り当てます。 これによりは、要素によって処理されますが、ポップアップを開くより何もする必要はありません。
+コンテキスト メニューにコマンドを表示するには、通常に UI 要素の[ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout)プロパティに、ポップアップを割り当てます。 これによりは、要素によって処理されますが、ポップアップを開くと、特に何もする必要はありません。
 
-(たとえば、 [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped)イベント) を自分で、ポップアップを示すを処理する場合は、設定、**標準的な**展開モードで、ポップアップを開き、フォーカスを設定するには、ポップアップの[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)します。
+(たとえば、 [RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped)イベント) で自分で、ポップアップの表示を処理する場合は、設定、ポップアップの[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)に**標準**の拡張モードで、ポップアップを開き、フォーカスを設定します。
 
 > [!TIP]
 > ポップアップと、ポップアップの配置を制御する方法を表示するときのオプションについて詳しくは、[ポップアップ](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)を参照してください。
 
 ## <a name="commands-and-content"></a>コマンドとコンテンツ
 
-CommandBarFlyout コントロールは、コマンドとコンテンツを追加する場合に使用できる 2 つのプロパティを持つ: [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands)と[SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands)にします。
+CommandBarFlyout コントロールは、コマンドとコンテンツを追加するに使用できる 2 つのプロパティを持つ: [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands)と[SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands)にします。
 
-既定では、コマンド バーの項目は **PrimaryCommands** コレクションに追加されます。 これらのコマンドは、コマンド バーは表示され、折りたたまれていると、拡張モードの両方に表示されます。 CommandBar とは異なり、プライマリ コマンドは自動的にセカンダリ コマンドにオーバーフローではないと切り詰められている可能性があります。
+既定では、コマンド バーの項目は **PrimaryCommands** コレクションに追加されます。 これらのコマンドは、コマンド バーは表示され、折りたたまれていると、展開時の両方のモードで表示されます。 CommandBar とは異なり、プライマリ コマンドは自動的にセカンダリ コマンドにオーバーフローではないと切り詰められている可能性があります。
 
 コマンドは**SecondaryCommands**コレクションに追加することもできます。 セカンダリ コマンドは、コントロールのメニューの部分では表示され、展開モードでのみ表示されます。
 
@@ -166,22 +166,22 @@ CommandBarFlyout コントロールは、コマンドとコンテンツを追加
 
 PrimaryCommands と SecondaryCommands には、 [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、 [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx)、および[AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx)コントロールを直接設定できます。
 
-アプリ バーのボタン コントロールは、アイコンとテキスト ラベルによって特徴付けられます。 これらのコントロールは、コマンド バーで使用するために最適化されていて、コマンド バーやオーバーフロー メニューで、コントロールを表示するかどうかに応じて外観が変化します。
+アプリ バーのボタン コントロールは、アイコンとテキスト ラベルによって特徴付けられます。 これらのコントロールは、コマンド バーで使用するために最適化されていて、コマンド バーやオーバーフロー メニューにコントロールを表示するかどうかに応じて外観が変化します。
 
-- アプリ バーのボタンがプライマリ コマンドとして使われますが、アイコンのみを含むコマンド バーで表示されます。テキスト ラベルは表示されません。 次のように、コマンドの説明のテキストを表示するヒントを使用することをお勧めします。
+- プライマリ コマンドとして使われるアプリ バーのボタンは、アイコンのみを含むコマンド バーに表示されます。テキスト ラベルは表示されません。 次のように、コマンドの説明のテキストを表示するヒントを使用することをお勧めします。
     ```xaml
     <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
     ```
-- アプリ バーのボタンとしてセカンダリ コマンド使用は、ラベルとアイコンが表示されると、メニューに表示されます。
+- セカンダリ コマンドとして使われるアプリ バーのボタンは、ラベルとアイコンが表示されると、メニューに表示されます。
 
 ### <a name="other-content"></a>その他のコンテンツ
 
-コマンド バーのポップアップに他のコントロールを追加するには、AppBarElementContainer でラップします。 これにより[DropDownButton]() [SplitButton]()などのコントロールを追加したりより複雑な UI を作成するために[StackPanel]()などのコンテナーを追加できます。
+コマンド バーのポップアップを他のコントロールを追加するには、AppBarElementContainer でラップします。 これにより[DropDownButton]() [SplitButton]()などのコントロールを追加したりより複雑な UI を作成するために[StackPanel]()などのコンテナーを追加できます。
 
 > [!NOTE]
-> コマンド バーのポップアップのプライマリまたはセカンダリ コマンドのコレクションに追加するために、要素は[ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement)インターフェイスを実装する必要があります。 AppBarElementContainer は、インターフェイス自体を実装していない場合でも、コマンド バーに要素を追加できるように、このインターフェイスを実装するラッパーです。
+> 要素は、コマンド バーのポップアップのプライマリまたはセカンダリ コマンドのコレクションに追加するために、 [ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement)インターフェイスを実装する必要があります。 AppBarElementContainer は、インターフェイス自体を実装していない場合でも、コマンド バーに要素を追加できるように、このインターフェイスを実装するラッパーです。
 
-ここでは、AppBarElementContainer を使用して、コマンド バーのポップアップに余分な要素を追加します。 SplitButton は、色の選択を許可するプライマリ コマンドに追加されます。 StackPanel は、ズーム コントロールのより複雑なレイアウトを許可するセカンダリ コマンドに追加されます。
+ここでは、コマンド バーのポップアップに余分な要素を追加する、AppBarElementContainer が使用されます。 SplitButton は、色の選択を許可するプライマリ コマンドに追加されます。 StackPanel は、ズーム コントロールのより複雑なレイアウトを許可するセカンダリ コマンドに追加されます。
 
 > [!NOTE]
 > この例では、表示されるコマンドのいずれかが実装していないのみ、コマンド バーのポップアップ UI を示しています。 コマンドの実装について詳しくは、[ボタン](buttons.md)や[コマンド設計の基本](../basics/commanding-basics.md)を参照してください。
@@ -266,9 +266,9 @@ PrimaryCommands と SecondaryCommands には、 [AppBarButton](https://msdn.micr
 
 ## <a name="create-a-context-menu-with-secondary-commands-only"></a>セカンダリ コマンドのみでコンテキスト メニューを作成します。
 
-[コンテキスト メニュー](menus.md)MenuFlyout の代わりとして、セカンダリ コマンドのみを使用して、CommandBarFlyout を使用できます。
+[コンテキスト メニュー](menus.md)MenuFlyout の代わりとして、セカンダリ コマンドのみを使った、CommandBarFlyout を使用できます。
 
-![セカンダリ コマンドのみを使ったコマンド バーのポップアップ](images/command-bar-flyout-context-menu.png)
+![セカンダリ コマンドのみで、コマンド バーのポップアップ](images/command-bar-flyout-context-menu.png)
 
 ```xaml
 <Grid>
@@ -310,7 +310,7 @@ PrimaryCommands と SecondaryCommands には、 [AppBarButton](https://msdn.micr
 
 ## <a name="command-bar-flyouts-for-text-controls"></a>テキスト コントロールのコマンド バーのポップアップ
 
-[TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)は、テキスト編集のコマンドを含む特殊なコマンド バーのポップアップです。 各テキスト コントロールは、テキストが選択されている場合や、コンテキスト メニュー (右クリック) として自動的に、TextCommandBarFlyout を示します。 テキストのコマンド バーのポップアップがのみ関連するコマンドを表示するテキストの選択に対応します。
+[TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)は、テキスト編集のコマンドを含む特殊なコマンド バーのポップアップです。 各テキスト コントロールは、テキストが選択されている場合や、コンテキスト メニュー (右クリック) として自動的に、TextCommandBarFlyout を示します。 テキストのコマンド バーのポップアップは、適切なコマンドのみを表示するテキストの選択に適応します。
 
 :::row:::
     :::column:::
@@ -325,14 +325,14 @@ PrimaryCommands と SecondaryCommands には、 [AppBarButton](https://msdn.micr
 
 ### <a name="available-commands"></a>利用可能なコマンド
 
-次の表は、TextCommandBarFlyout と表示されるときに含まれているコマンドを示します。
+表示されているときと、TextCommandBarFlyout に含まれているコマンドを次の表に示します。
 
 | コマンド | 表示される. |
 | ------- | -------- |
 | Bold | テキスト コントロールは読み取り専用 (RichEditBox のみ) ではありません。 |
 | Italic | テキスト コントロールは読み取り専用 (RichEditBox のみ) ではありません。 |
 | Underline | テキスト コントロールは読み取り専用 (RichEditBox のみ) ではありません。 |
-| 証明 | IsSpellCheckEnabled が**true**でのスペルに誤りテキストが選択されます。 |
+| 校正 | IsSpellCheckEnabled が**true**でのスペルに誤りテキストが選択されます。 |
 | 切り取り | テキスト コントロールは読み取り専用ではないとテキストが選択されます。 |
 | コピー | テキストが選択されている場合。 |
 | 貼り付け | テキスト コントロールは読み取り専用ではないとクリップボードがコンテンツです。 |
@@ -341,9 +341,9 @@ PrimaryCommands と SecondaryCommands には、 [AppBarButton](https://msdn.micr
 
 ### <a name="custom-text-command-bar-flyouts"></a>カスタム テキスト コマンド バーのポップアップ
 
-TextCommandBarFlyout では、カスタマイズできませんされ、各テキスト コントロールで自動的に管理されます。 ただし、カスタム コマンドを使った TextCommandBarFlyout 既定値を置き換えることができます。
+TextCommandBarFlyout は、カスタマイズできませんされ、各テキスト コントロールで自動的に管理されます。 ただし、カスタム コマンドを使った TextCommandBarFlyout 既定値を置き換えることができます。
 
-- 既定のテキストの選択に表示される TextCommandBarFlyout を交換するには、カスタム CommandBarFlyout (またはその他のポップアップ型) を作成し、 **SelectionFlyout**プロパティに割り当てます。 SelectionFlyout を**null**に設定すると、選択内容にコマンドは表示されません。
+- TextCommandBarFlyout テキストの選択に表示される既定値を交換するには、カスタム CommandBarFlyout (またはその他のポップアップ型) を作成し、 **SelectionFlyout**プロパティに割り当てます。 SelectionFlyout を**null**に設定すると、選択内容にコマンドは表示されません。
 - 既定のコンテキスト メニューとして表示されている TextCommandBarFlyout を置換するには、テキスト コントロールに**ContextFlyout**プロパティにカスタム CommandBarFlyout (またはその他のポップアップ型) を割り当てます。 ContextFlyout を**null**に設定すると、TextCommandBarFlyout ではなく、テキスト コントロールの以前のバージョンに表示されるメニュー ポップアップが表示されます。
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する

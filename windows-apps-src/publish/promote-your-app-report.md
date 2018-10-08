@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 販売促進, アプリ, キャンペーン, レポート, インストール
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4385239"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4416713"
 ---
 # <a name="ad-campaign-report"></a>広告キャンペーン レポート
 
-Windows デベロッパー センター ダッシュ ボードで**広告キャンペーン**レポートでは、アプリ プロモーション[広告キャンペーン](create-an-ad-campaign-for-your-app.md)の実施状況を確認できます。 レポートを確認するには、左側のナビゲーション メニューで、**ユーザーへのアピール**を展開し、**広告キャンペーン**を選択します。
+Windows デベロッパー センター ダッシュ ボードで**広告キャンペーン**] レポートでは、アプリ プロモーション[広告キャンペーン](create-an-ad-campaign-for-your-app.md)の実施状況を確認できます。 レポートを確認するには、左側のナビゲーション メニューで [**ユーザーへのアピール**を展開し、**広告キャンペーン**を選択します。
 
 ## <a name="definitions"></a>定義
 

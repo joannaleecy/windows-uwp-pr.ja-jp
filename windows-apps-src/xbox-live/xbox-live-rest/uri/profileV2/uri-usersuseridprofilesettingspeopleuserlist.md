@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 44341b5fc8f831e3a500f47a51b94978f587cb8c
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392196"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4418242"
 ---
 # <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/profile/settings/people/{userList}?settings={settings}
-ユーザーのプロファイルへのアクセスやユーザー, People モニカーをサポートします。 これらの Uri のドメインが`profile.xboxlive.com`します。
+People モニカー サポートでのユーザーのプロファイルにアクセスします。 これらの Uri のドメインが`profile.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -31,7 +31,7 @@ ms.locfileid: "4392196"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | ユーザー Id| string| 'Xuid(12345)'、'gt(myGamertag)' の 'me' またはいずれかを指定できます。| 
-| userList| string| 名前付きの設定を取得するユーザーの一覧。 現時点では、ユーザーは、サポートされている唯一の一覧です。| 
+| userList| string| 名前付きの設定を取得するユーザーの一覧。 現時点では、ユーザーは、サポートされている唯一の一覧を示します。| 
   
 <a id="ID4E1B"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "4392196"
 
 [GET (/users/{userId}/profile/settings/people/{userList})](uri-usersuseridprofilesettingspeopleuserlistget.md)
 
-&nbsp;&nbsp;ユーザーのプロファイルを取得またはユーザー, People モニカーをサポートします。
+&nbsp;&nbsp;ユーザーのプロファイルを取得または People モニカーを持つのユーザーをサポートします。
  
 <a id="ID4EEC"></a>
 

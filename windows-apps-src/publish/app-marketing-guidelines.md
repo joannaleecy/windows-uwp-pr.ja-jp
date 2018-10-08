@@ -1,7 +1,7 @@
 ---
 author: jnHs
 Description: Learn how to promote your apps and content in the Microsoft Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
-title: Microsoft Store のアプリのガイドラインをマーケティング
+title: Microsoft Store アプリのガイドラインをマーケティング
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.author: wdg-dev-content
 ms.date: 10/26/2017
@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4388518"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4418744"
 ---
-# <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store のアプリのガイドラインをマーケティング
+# <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store アプリのガイドラインをマーケティング
 
-アプリと Microsoft ストアでコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。
+アプリや、Microsoft Store でコンテンツを昇格する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。
 
 ## <a name="store-badges"></a>ストア バッジ
 
-Microsoft Store でアプリの登録情報をより多くのユーザーを集客するために特別なプロモーション用のバッジを作成しました。 これらのバッジは 44 の言語で利用できます。 これらのイメージを使う場合、特定の要件に従う必要があることに注意してください。これらの要件は、使用例やガイドラインと共に、PDF ファイルでご確認いただけます。
+Microsoft Store でアプリの登録情報をより多くのユーザーを集客するのに役立つに特別なプロモーション用のバッジを作成しました。 これらのバッジは 44 の言語で利用できます。 これらのイメージを使う場合、特定の要件に従う必要があることに注意してください。これらの要件は、使用例やガイドラインと共に、PDF ファイルでご確認いただけます。
 
 [![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769)**Microsoft Store バッジのガイドライン (PDF、英語)**
 
@@ -47,7 +47,7 @@ Microsoft Store でアプリの登録情報をより多くのユーザーを集�
 
 *Microsoft マーク*[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) ] ページで説明されている*Microsoft バッジ*を意味します。 これらのバッジを使うには、以下の作業を行う必要があります。
 
--   アプリまたはその他のコンテンツは利用可能な Microsoft Store であったり、 [Microsoft アフィリ エイト プログラム](http://go.microsoft.com/fwlink/p/?LinkId=624463)の一部であります。
+-   Microsoft Store でアプリまたはその他のコンテンツは利用可能なか、 [Microsoft アフィリ エイト プログラム](http://go.microsoft.com/fwlink/p/?LinkId=624463)の一部となります。
 
 -   デベロッパー センターに登録している場合は、「アプリ開発者契約書」の「[Microsoft マークのライセンス](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)」セクションに準拠する。
 
