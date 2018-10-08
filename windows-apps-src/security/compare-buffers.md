@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 139514166d623dc9a621b533cd3ce4bb7fdea0c5
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4390277"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4418625"
 ---
 # <a name="compare-buffers"></a><span data-ttu-id="f47b1-104">バッファーの比較</span><span class="sxs-lookup"><span data-stu-id="f47b1-104">Compare buffers</span></span>
 

@@ -12,53 +12,53 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f58b4b5f8cf135aaaad5e23095c4c00278dcec83
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4386229"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4416783"
 ---
-# <a name="usersxuidxuidachievementsscidachievementid"></a><span data-ttu-id="5481c-104">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span><span class="sxs-lookup"><span data-stu-id="5481c-104">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span></span>
-<span data-ttu-id="5481c-105">構成済みのメタデータとユーザー固有のデータを含む、実績の詳細を返します。</span><span class="sxs-lookup"><span data-stu-id="5481c-105">Returns details about the achievement, including its configured metadata and user-specific data.</span></span> 
+# <a name="usersxuidxuidachievementsscidachievementid"></a><span data-ttu-id="41013-104">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span><span class="sxs-lookup"><span data-stu-id="41013-104">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span></span>
+<span data-ttu-id="41013-105">構成済みのメタデータとユーザー固有のデータを含む、実績についての詳細を返します。</span><span class="sxs-lookup"><span data-stu-id="41013-105">Returns details about the achievement, including its configured metadata and user-specific data.</span></span> 
 
 > [!NOTE] 
-> <span data-ttu-id="5481c-106">プラットフォームでのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="5481c-106">Only supported for the platform.</span></span> 
+> <span data-ttu-id="41013-106">プラットフォームでのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="41013-106">Only supported for the platform.</span></span> 
 
  
-<span data-ttu-id="5481c-107">これらの Uri のドメインが`achievements.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5481c-107">The domain for these URIs is `achievements.xboxlive.com`.</span></span>
+<span data-ttu-id="41013-107">これらの Uri のドメインが`achievements.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="41013-107">The domain for these URIs is `achievements.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="5481c-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="5481c-108">URI parameters</span></span>](#ID4E2)
+  * [<span data-ttu-id="41013-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="41013-108">URI parameters</span></span>](#ID4E2)
  
 <a id="ID4E2"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="5481c-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="5481c-109">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="41013-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="41013-109">URI parameters</span></span>
  
-| <span data-ttu-id="5481c-110">パラメーター</span><span class="sxs-lookup"><span data-stu-id="5481c-110">Parameter</span></span>| <span data-ttu-id="5481c-111">型</span><span class="sxs-lookup"><span data-stu-id="5481c-111">Type</span></span>| <span data-ttu-id="5481c-112">説明</span><span class="sxs-lookup"><span data-stu-id="5481c-112">Description</span></span>| 
+| <span data-ttu-id="41013-110">パラメーター</span><span class="sxs-lookup"><span data-stu-id="41013-110">Parameter</span></span>| <span data-ttu-id="41013-111">型</span><span class="sxs-lookup"><span data-stu-id="41013-111">Type</span></span>| <span data-ttu-id="41013-112">説明</span><span class="sxs-lookup"><span data-stu-id="41013-112">Description</span></span>| 
 | --- | --- | --- | --- | 
-| <span data-ttu-id="5481c-113">xuid</span><span class="sxs-lookup"><span data-stu-id="5481c-113">xuid</span></span>| <span data-ttu-id="5481c-114">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="5481c-114">64-bit unsigned integer</span></span>| <span data-ttu-id="5481c-115">Xbox ユーザー ID (XUID) がリソースにアクセスしているユーザー。</span><span class="sxs-lookup"><span data-stu-id="5481c-115">Xbox User ID (XUID) of the user whose resource is being accessed.</span></span> <span data-ttu-id="5481c-116">認証されたユーザーの XUID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5481c-116">Must match the XUID of the authenticated user.</span></span>| 
-| <span data-ttu-id="5481c-117">scid</span><span class="sxs-lookup"><span data-stu-id="5481c-117">scid</span></span>| <span data-ttu-id="5481c-118">GUID</span><span class="sxs-lookup"><span data-stu-id="5481c-118">GUID</span></span>| <span data-ttu-id="5481c-119">対象の実績にアクセスしているサービス構成の一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="5481c-119">Unique identifier of the service configuration whose achievement is being accessed.</span></span>| 
-| <span data-ttu-id="5481c-120">achievementid</span><span class="sxs-lookup"><span data-stu-id="5481c-120">achievementid</span></span>| <span data-ttu-id="5481c-121">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="5481c-121">32-bit unsigned integer</span></span>| <span data-ttu-id="5481c-122">アクセスされている実績を (指定された SCID) 内で一意の識別子です。</span><span class="sxs-lookup"><span data-stu-id="5481c-122">Unique (within the specified SCID) identifier of the achievement that is being accessed.</span></span>| 
+| <span data-ttu-id="41013-113">xuid</span><span class="sxs-lookup"><span data-stu-id="41013-113">xuid</span></span>| <span data-ttu-id="41013-114">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="41013-114">64-bit unsigned integer</span></span>| <span data-ttu-id="41013-115">Xbox ユーザー ID (XUID) がリソースにアクセスしているユーザー。</span><span class="sxs-lookup"><span data-stu-id="41013-115">Xbox User ID (XUID) of the user whose resource is being accessed.</span></span> <span data-ttu-id="41013-116">認証されたユーザーの XUID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="41013-116">Must match the XUID of the authenticated user.</span></span>| 
+| <span data-ttu-id="41013-117">scid</span><span class="sxs-lookup"><span data-stu-id="41013-117">scid</span></span>| <span data-ttu-id="41013-118">GUID</span><span class="sxs-lookup"><span data-stu-id="41013-118">GUID</span></span>| <span data-ttu-id="41013-119">その実績にアクセスしているサービス構成の一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="41013-119">Unique identifier of the service configuration whose achievement is being accessed.</span></span>| 
+| <span data-ttu-id="41013-120">achievementid</span><span class="sxs-lookup"><span data-stu-id="41013-120">achievementid</span></span>| <span data-ttu-id="41013-121">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="41013-121">32-bit unsigned integer</span></span>| <span data-ttu-id="41013-122">アクセスされている実績を (指定された SCID) 内で一意の識別子です。</span><span class="sxs-lookup"><span data-stu-id="41013-122">Unique (within the specified SCID) identifier of the achievement that is being accessed.</span></span>| 
   
 <a id="ID4EMC"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="5481c-123">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="5481c-123">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="41013-123">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="41013-123">Valid methods</span></span>
 
-[<span data-ttu-id="5481c-124">GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})</span><span class="sxs-lookup"><span data-stu-id="5481c-124">GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})</span></span>](uri-usersxuidachievementsscidachievementidget.md)
+[<span data-ttu-id="41013-124">GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})</span><span class="sxs-lookup"><span data-stu-id="41013-124">GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})</span></span>](uri-usersxuidachievementsscidachievementidget.md)
 
-<span data-ttu-id="5481c-125">&nbsp;&nbsp;実績の詳細を取得します。</span><span class="sxs-lookup"><span data-stu-id="5481c-125">&nbsp;&nbsp;Gets the details of the Achievement.</span></span>
+<span data-ttu-id="41013-125">&nbsp;&nbsp;実績の詳細を取得します。</span><span class="sxs-lookup"><span data-stu-id="41013-125">&nbsp;&nbsp;Gets the details of the Achievement.</span></span>
  
 <a id="ID4EWC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="5481c-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="5481c-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="41013-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="41013-126">See also</span></span>
  
 <a id="ID4EYC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="5481c-127">Parent</span><span class="sxs-lookup"><span data-stu-id="5481c-127">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="41013-127">Parent</span><span class="sxs-lookup"><span data-stu-id="41013-127">Parent</span></span> 
 
-[<span data-ttu-id="5481c-128">実績 URI</span><span class="sxs-lookup"><span data-stu-id="5481c-128">Achievements URIs</span></span>](atoc-reference-achievementsv2.md)
+[<span data-ttu-id="41013-128">実績 URI</span><span class="sxs-lookup"><span data-stu-id="41013-128">Achievements URIs</span></span>](atoc-reference-achievementsv2.md)
 
    

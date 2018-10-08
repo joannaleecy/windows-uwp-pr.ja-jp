@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, トースト, ヘッダー, トースト ヘッダー, 通知, トーストのグループ化, アクション センター
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b3c92a41832729b5a60411308d010c3cbb4470a
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4394136"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4431144"
 ---
 # <a name="toast-headers"></a><span data-ttu-id="f700e-103">トースト ヘッダー</span><span class="sxs-lookup"><span data-stu-id="f700e-103">Toast headers</span></span>
 

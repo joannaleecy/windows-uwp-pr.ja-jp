@@ -12,73 +12,73 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bfeb225c67567c392615686743828941c02f6d2
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4393486"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4415179"
 ---
-# <a name="matchmaking-uris"></a><span data-ttu-id="26be3-104">マッチメイキング URI</span><span class="sxs-lookup"><span data-stu-id="26be3-104">Matchmaking URIs</span></span>
+# <a name="matchmaking-uris"></a><span data-ttu-id="24bb9-104">マッチメイキング URI</span><span class="sxs-lookup"><span data-stu-id="24bb9-104">Matchmaking URIs</span></span>
  
-<span data-ttu-id="26be3-105">このセクションでは、マッチメイ キング サービス用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="26be3-105">This section provides detail about the Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for the matchmaking service.</span></span> 
+<span data-ttu-id="24bb9-105">このセクションでは、マッチメイ キング サービス用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="24bb9-105">This section provides detail about the Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for the matchmaking service.</span></span> 
  
 <a id="ID4E6"></a>
 
  
-## <a name="domain"></a><span data-ttu-id="26be3-106">ドメイン</span><span class="sxs-lookup"><span data-stu-id="26be3-106">Domain</span></span>
-<span data-ttu-id="26be3-107">momatch.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="26be3-107">momatch.xboxlive.com</span></span>  
+## <a name="domain"></a><span data-ttu-id="24bb9-106">ドメイン</span><span class="sxs-lookup"><span data-stu-id="24bb9-106">Domain</span></span>
+<span data-ttu-id="24bb9-107">momatch.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="24bb9-107">momatch.xboxlive.com</span></span>  
 <a id="ID4EEB"></a>
 
  
-## <a name="service-version"></a><span data-ttu-id="26be3-108">サービスのバージョン</span><span class="sxs-lookup"><span data-stu-id="26be3-108">Service version</span></span>
+## <a name="service-version"></a><span data-ttu-id="24bb9-108">サービスのバージョン</span><span class="sxs-lookup"><span data-stu-id="24bb9-108">Service version</span></span>
  
-<span data-ttu-id="26be3-109">これらの HTTP/REST Uri の呼び出し元渡す必要があります値 103 以降 X の Xbl のコントラクトのバージョン、サービス バージョン エンターテイメント探索サービス (EDS) を指定する HTTP ヘッダー。</span><span class="sxs-lookup"><span data-stu-id="26be3-109">Callers of these HTTP/REST URIs must pass the value 103 or later for X-Xbl-Contract-Version, the HTTP header that specifies the service version of Entertainment Discovery Services (EDS).</span></span> 
+<span data-ttu-id="24bb9-109">これらの HTTP/REST Uri の呼び出し元渡す必要があります値 103 以降 X-Xbl-コントラクトのバージョン、サービスのバージョンのエンターテインメント探索サービス (EDS) を指定する HTTP ヘッダー。</span><span class="sxs-lookup"><span data-stu-id="24bb9-109">Callers of these HTTP/REST URIs must pass the value 103 or later for X-Xbl-Contract-Version, the HTTP header that specifies the service version of Entertainment Discovery Services (EDS).</span></span> 
   
 <a id="ID4ELB"></a>
 
  
-## <a name="system-objects-and-properties"></a><span data-ttu-id="26be3-110">システム オブジェクトとプロパティ</span><span class="sxs-lookup"><span data-stu-id="26be3-110">System objects and properties</span></span>
+## <a name="system-objects-and-properties"></a><span data-ttu-id="24bb9-110">システム オブジェクトとプロパティ</span><span class="sxs-lookup"><span data-stu-id="24bb9-110">System objects and properties</span></span>
  
-<span data-ttu-id="26be3-111">現時点では、マッチメイ キング サービスのすべての構成が発生した手動で、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://partner.microsoft.com/dashboard/windows/overview)のサービス構成部分を使用します。</span><span class="sxs-lookup"><span data-stu-id="26be3-111">Currently, all configuration of the matchmaking service occurs manually, using the service configuration portion of the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com) or the [Windows Dev Center](https://partner.microsoft.com/dashboard/windows/overview).</span></span> <span data-ttu-id="26be3-112">一部のマッチメイ キング情報は、MPSD に定義されたオブジェクトにも反映されます。</span><span class="sxs-lookup"><span data-stu-id="26be3-112">Some matchmaking information is also reflected in the objects defined for the MPSD.</span></span> 
+<span data-ttu-id="24bb9-111">現時点では、マッチメイ キング サービスのすべての構成が発生した手動で、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://partner.microsoft.com/dashboard/windows/overview)のサービス構成部分を使用します。</span><span class="sxs-lookup"><span data-stu-id="24bb9-111">Currently, all configuration of the matchmaking service occurs manually, using the service configuration portion of the [Xbox Developer Portal (XDP)](https://xdp.xboxlive.com) or the [Windows Dev Center](https://partner.microsoft.com/dashboard/windows/overview).</span></span> <span data-ttu-id="24bb9-112">一部のマッチメイ キング情報は、MPSD に定義されたオブジェクトにも反映されます。</span><span class="sxs-lookup"><span data-stu-id="24bb9-112">Some matchmaking information is also reflected in the objects defined for the MPSD.</span></span> 
  
-<span data-ttu-id="26be3-113">マッチメイ キングを構成するために使われるメインの JSON オブジェクトは、 [MatchTicket (JSON)](../../json/json-matchticket.md)と[HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md)で定義されます。</span><span class="sxs-lookup"><span data-stu-id="26be3-113">The main JSON objects used for configuring matchmaking are defined in [MatchTicket (JSON)](../../json/json-matchticket.md) and [HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md).</span></span> <span data-ttu-id="26be3-114">すべてのマッチ チケットがプレイヤーまたは他のユーザーと一致する必要があるプレイヤーが含まれているマルチプレイヤー セッションへの参照を提供する**ticketSessionRef**オブジェクトを定義する必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="26be3-114">Note that all match tickets must define a **ticketSessionRef** object to provide a reference to a multiplayer session containing the player or players who want to be matched with others.</span></span> 
+<span data-ttu-id="24bb9-113">マッチメイ キングを構成するために使われるメインの JSON オブジェクトは、 [MatchTicket (JSON)](../../json/json-matchticket.md)と[HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md)で定義されます。</span><span class="sxs-lookup"><span data-stu-id="24bb9-113">The main JSON objects used for configuring matchmaking are defined in [MatchTicket (JSON)](../../json/json-matchticket.md) and [HopperStatsResults (JSON)](../../json/json-hopperstatsresults.md).</span></span> <span data-ttu-id="24bb9-114">すべてのマッチ チケットが他のユーザーと一致する必要があるプレイヤーが含まれているマルチプレイヤー セッションへの参照を提供する**ticketSessionRef**オブジェクトを定義する必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="24bb9-114">Note that all match tickets must define a **ticketSessionRef** object to provide a reference to a multiplayer session containing the player or players who want to be matched with others.</span></span> 
   
 <a id="ID4EBC"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="26be3-115">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="26be3-115">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="24bb9-115">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="24bb9-115">In this section</span></span>
 
-[<span data-ttu-id="26be3-116">/serviceconfigs/{scid}/hoppers/{hoppername}</span><span class="sxs-lookup"><span data-stu-id="26be3-116">/serviceconfigs/{scid}/hoppers/{hoppername}</span></span>](uri-serviceconfigsscidhoppershoppername.md)
+[<span data-ttu-id="24bb9-116">/serviceconfigs/{scid}/hoppers/{hoppername}</span><span class="sxs-lookup"><span data-stu-id="24bb9-116">/serviceconfigs/{scid}/hoppers/{hoppername}</span></span>](uri-serviceconfigsscidhoppershoppername.md)
 
-<span data-ttu-id="26be3-117">&nbsp;&nbsp;マッチ チケットを作成する POST 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="26be3-117">&nbsp;&nbsp;Supports a POST operation to create match tickets.</span></span> 
+<span data-ttu-id="24bb9-117">&nbsp;&nbsp;マッチ チケットを作成する POST 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="24bb9-117">&nbsp;&nbsp;Supports a POST operation to create match tickets.</span></span> 
 
-[<span data-ttu-id="26be3-118">/serviceconfigs/{scid}/hoppers/{name}/stats</span><span class="sxs-lookup"><span data-stu-id="26be3-118">/serviceconfigs/{scid}/hoppers/{name}/stats</span></span>](uri-serviceconfigsscidhoppershoppernamestats.md)
+[<span data-ttu-id="24bb9-118">/serviceconfigs/{scid}/hoppers/{name}/stats</span><span class="sxs-lookup"><span data-stu-id="24bb9-118">/serviceconfigs/{scid}/hoppers/{name}/stats</span></span>](uri-serviceconfigsscidhoppershoppernamestats.md)
 
-<span data-ttu-id="26be3-119">&nbsp;&nbsp;ホッパーの統計情報を取得するための取得操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="26be3-119">&nbsp;&nbsp;Supports a GET operation for retrieving statistics for a hopper.</span></span>
+<span data-ttu-id="24bb9-119">&nbsp;&nbsp;ホッパーの統計情報を取得するための取得操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="24bb9-119">&nbsp;&nbsp;Supports a GET operation for retrieving statistics for a hopper.</span></span>
 
-[<span data-ttu-id="26be3-120">/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}</span><span class="sxs-lookup"><span data-stu-id="26be3-120">/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}</span></span>](uri-scidhoppernameticketid.md)
+[<span data-ttu-id="24bb9-120">/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}</span><span class="sxs-lookup"><span data-stu-id="24bb9-120">/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}</span></span>](uri-scidhoppernameticketid.md)
 
-<span data-ttu-id="26be3-121">&nbsp;&nbsp;マッチ チケットの削除操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="26be3-121">&nbsp;&nbsp;Supports a DELETE operation for a match ticket.</span></span>
+<span data-ttu-id="24bb9-121">&nbsp;&nbsp;マッチ チケットの削除操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="24bb9-121">&nbsp;&nbsp;Supports a DELETE operation for a match ticket.</span></span>
  
 <a id="ID4ENC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="26be3-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="26be3-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="24bb9-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="24bb9-122">See also</span></span>
  
 <a id="ID4EPC"></a>
 
-   [<span data-ttu-id="26be3-123">MatchTicket (JSON)</span><span class="sxs-lookup"><span data-stu-id="26be3-123">MatchTicket (JSON)</span></span>](../../json/json-matchticket.md)
+   [<span data-ttu-id="24bb9-123">MatchTicket (JSON)</span><span class="sxs-lookup"><span data-stu-id="24bb9-123">MatchTicket (JSON)</span></span>](../../json/json-matchticket.md)
 
- [<span data-ttu-id="26be3-124">HopperStatsResults (JSON)</span><span class="sxs-lookup"><span data-stu-id="26be3-124">HopperStatsResults (JSON)</span></span>](../../json/json-hopperstatsresults.md)
+ [<span data-ttu-id="24bb9-124">HopperStatsResults (JSON)</span><span class="sxs-lookup"><span data-stu-id="24bb9-124">HopperStatsResults (JSON)</span></span>](../../json/json-hopperstatsresults.md)
 
- [<span data-ttu-id="26be3-125">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="26be3-125">Session Directory URIs</span></span>](../sessiondirectory/atoc-reference-sessiondirectory.md)
+ [<span data-ttu-id="24bb9-125">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="24bb9-125">Session Directory URIs</span></span>](../sessiondirectory/atoc-reference-sessiondirectory.md)
 
   
 <a id="ID4E2C"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="26be3-126">Parent</span><span class="sxs-lookup"><span data-stu-id="26be3-126">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="24bb9-126">Parent</span><span class="sxs-lookup"><span data-stu-id="24bb9-126">Parent</span></span> 
 
-[<span data-ttu-id="26be3-127">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="26be3-127">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="24bb9-127">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="24bb9-127">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    
