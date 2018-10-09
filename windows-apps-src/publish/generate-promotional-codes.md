@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, プロモーション コード, promo code, トークン, token
 ms.localizationpriority: medium
 ms.openlocfilehash: 37263794ffed6660f71c5e16195e992588c16d4a
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4416192"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4469678"
 ---
 # <a name="generate-promotional-codes"></a><span data-ttu-id="7ca75-103">プロモーション コードを生成する</span><span class="sxs-lookup"><span data-stu-id="7ca75-103">Generate promotional codes</span></span>
 

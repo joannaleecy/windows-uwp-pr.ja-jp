@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, エラー処理
 ms.localizationpriority: medium
 ms.openlocfilehash: 706a9c7ccaa9188bef046c814cb19e8568fd26b7
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4415808"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4469746"
 ---
 # <a name="winrt-api-error-handling"></a><span data-ttu-id="ebd6a-104">WinRT API のエラー処理</span><span class="sxs-lookup"><span data-stu-id="ebd6a-104">WinRT API error handling</span></span>
 

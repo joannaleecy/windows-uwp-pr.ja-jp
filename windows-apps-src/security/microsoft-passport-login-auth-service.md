@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c69edc018ae01beba50b93b7dd9f4125544a001
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4429065"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4467734"
 ---
 # <a name="create-a-windows-hello-login-service"></a><span data-ttu-id="c4c8c-104">Windows Hello ログイン サービスの作成</span><span class="sxs-lookup"><span data-stu-id="c4c8c-104">Create a Windows Hello login service</span></span>
 

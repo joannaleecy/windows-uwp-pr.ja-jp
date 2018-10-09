@@ -11,11 +11,11 @@ keywords: windows 10, uwp, セキュリティ
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: 2de5c969610aa6b4fa1a3af01af565d35854b5f2
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4415617"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468989"
 ---
 # <a name="web-account-manager"></a><span data-ttu-id="87be5-104">Web アカウント マネージャー</span><span class="sxs-lookup"><span data-stu-id="87be5-104">Web Account Manager</span></span>
 
