@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: b60b0d7c201f172261de1546fc250e40b8cd670f
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4420168"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4462713"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT と C++/CX 間の相互運用
 このトピックでは 2 つのヘルパー関数間の変換に使用できる[、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)と[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)オブジェクト。 これら 2 つの言語プロジェクションを使用するコード間の相互運用機能を使用してできるまたはから、C++ コードを徐々 に移動するには、関数を使用できます/CX を C++/WinRT (を参照してください[C への移行 + C + から WinRT + CX](move-to-winrt-from-cx.md))。

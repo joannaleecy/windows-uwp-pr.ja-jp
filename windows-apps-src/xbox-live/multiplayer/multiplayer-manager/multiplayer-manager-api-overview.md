@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, Multiplayer Manager
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aa975544fb1e53b75fa32b1163086fc4aa77aaa
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4426544"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4463704"
 ---
 # <a name="multiplayer-manager-api-overview"></a>Multiplayer Manager API の概要
 
