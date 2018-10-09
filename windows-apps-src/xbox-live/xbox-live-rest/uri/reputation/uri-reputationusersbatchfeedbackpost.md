@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d62e4f7106f7f0f2c324ca2c68ea8fe476bc7bfb
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4387194"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4426983"
 ---
 # <a name="post-usersbatchfeedback"></a>POST (/users/batchfeedback)
-タイトルのサービスによってタイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するために使用します。 これらの Uri のドメインが`reputation.xboxlive.com`します。
+タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
  
   * [要求本文](#ID4EX)
   * [必要なヘッダー](#ID4E3E)
@@ -31,7 +31,7 @@ ms.locfileid: "4387194"
  
 ## <a name="request-body"></a>要求本文 
  
-呼び出し元は、web 要求オブジェクトの [ClientCertificates] セクションで、要求の証明書を含める必要があります。
+呼び出し元は、その web 要求オブジェクトの [ClientCertificates] セクションで、要求の証明書を含める必要があります。
  
 <a id="ID4EBB"></a>
 
@@ -95,9 +95,9 @@ ms.locfileid: "4387194"
 | items| array| フィードバックの JSON ドキュメントのコレクションです。| 
 | targetXuid| string| ターゲット ユーザーの XUID| 
 | titleId| string| このフィードバックから送信されたタイトルまたは NULL。| 
-| sessionRef| object| MPSD セッションを表すオブジェクトです。 このフィードバックが関連する、または NULL。| 
+| sessionRef| object| MPSD セッションを表すオブジェクトです。 このフィードバックが関連して、または NULL。| 
 | feedbackType| string| FeedbackType 列挙体の値の文字列バージョン。| 
-| textReason| string| 送信者の追加される可能性が送信されたフィードバックに関する詳細を提供するパートナー製のテキストです。| 
+| textReason| string| 送信者に送信されたフィードバックの詳細情報が追加されるパートナーが指定したテキストです。| 
 | evidenceId| string| 送信されたフィードバックの証拠として使用できるリソースの ID です。 例: ビデオ ファイルの ID です。| 
    
 <a id="ID4E3E"></a>
@@ -105,10 +105,10 @@ ms.locfileid: "4387194"
  
 ## <a name="required-headers"></a>必要なヘッダー
  
-Xbox Live サービス要求を行うときは、次のヘッダーを必要があります。 
+次のヘッダーは、Xbox Live サービス要求を行ったとき必要があります。 
 
 > [!NOTE] 
-> パートナーの要求の証明書は、バッチ フィードバックを送信するために要求送信する必要があります。 
+> パートナーの要求の証明書は、バッチ フィードバックを送信するために、要求と共に送信する必要があります。 
 
 
  
@@ -116,15 +116,15 @@ Xbox Live サービス要求を行うときは、次のヘッダーを必要が�
 | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl コントラクト バージョン| 101| API コントラクト バージョンです。| 
 | Content-Type| application/json| 送信されたデータの種類です。| 
-| Authorization| "XBL3.0 x =&lt;userhash > です。&lt;トークン >"| HTTP の認証の資格情報を認証します。| 
-| X RequestedServiceVersion| 101| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。| 
+| Authorization| "XBL3.0 x =&lt;userhash > です。&lt;トークン >"| HTTP 認証の資格情報を認証します。| 
+| X RequestedServiceVersion| 101| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。| 
   
 <a id="ID4EWG"></a>
 
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 

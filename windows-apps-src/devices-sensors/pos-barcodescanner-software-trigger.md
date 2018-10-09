@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: ddd8ec979cb6d5a72b48b9b8b6a60adb73c35657
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4383511"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4428873"
 ---
 # <a name="use-a-software-trigger"></a>ソフトウェア トリガーの使用
 
@@ -33,7 +33,7 @@ ms.locfileid: "4383511"
 > [!Important]
 > まず、[IsSoftwareTriggerSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannercapabilities.issoftwaretriggersupported#Windows_Devices_PointOfService_BarcodeScannerCapabilities_IsSoftwareTriggerSupported) プロパティを調べることによって、バーコード スキャナーがソフトウェア トリガーの使用をサポートしていることを確認します。
 
-次の例では、1 つのバーコードをスキャン後にスキャンを停止、ソフトウェアのトリガーを使用してスキャンを開始する方法を示します。
+次の例では、バーコードを 1 つのスキャン後にスキャンを停止、ソフトウェアのトリガーを使用してスキャンを開始する方法を示します。
 
 ```cs
 private void SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanner claimedBarcodeScanner) 
