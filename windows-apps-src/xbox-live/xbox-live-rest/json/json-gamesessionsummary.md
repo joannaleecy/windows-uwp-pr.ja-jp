@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 610f771641352447f9d38fc4217231ba3230e6fb
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389840"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4429888"
 ---
 # <a name="gamesessionsummary-json"></a>GameSessionSummary (JSON)
 ゲーム セッションの集計データを表す JSON オブジェクト。 
@@ -28,7 +28,7 @@ GameSessionSummary JSON オブジェクトには、次の仕様があります�
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| creationTime| DateTime| 日付と時刻とき、セッションが作成された、UTC でします。 | 
+| creationTime| DateTime| 日付と、セッションが作成された、UTC で。 | 
 | customData| 8 ビットの符号なし整数の配列| ゲーム固有のセッション データの 1024 バイトです。 この値は、サーバーに不透明です。 | 
 | displayName| string| 表示名ゲームのセッション 128 文字の最大長を持つ。 この値は、サーバーに不透明です。 | 
 | hasEnded| ブール値| セッションが終了した場合は true、それ以外の場合。 さらにデータがセッションに送信されているように true マーク読み取り専用とゲーム セッションにこのフィールドを設定します。 | 

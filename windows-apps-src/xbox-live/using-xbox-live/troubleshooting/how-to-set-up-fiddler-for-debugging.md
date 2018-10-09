@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, fiddler, サービス呼び出し, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 9eaa21ca792ab3071cb06a9e564f7ad1826782b4
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4393652"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4430191"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a>Fiddler を使用した Xbox Live のトラブルシューティング
 
@@ -43,7 +43,7 @@ Fiddler は、デバイスとインターネットの間のすべての HTTP お
 
 ## <a name="for-xbox-one-uwp-based-projects"></a>Xbox One UWP ベースのプロジェクトの場合
 
-次の手順に従います[https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler)
+ここに示す手順に従います[https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler)
 
 ## <a name="for-xbox-one-xdk-based-projects"></a>Xbox One XDK ベースのプロジェクトの場合
 

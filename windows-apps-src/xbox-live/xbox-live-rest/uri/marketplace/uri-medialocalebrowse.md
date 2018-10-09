@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 776db1cf795ae964621d751d6b4b72d22ba82c2d
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4387191"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4429992"
 ---
 # <a name="mediamarketplaceidbrowse"></a>/media/{marketplaceId}/browse
 1 つのメディア グループ内の項目を参照できます。 参照 API は、クライアントから 1 つのメディア グループ内の項目を参照できます。 非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してデータのページにアクセスできます。
  
-この API では、特定の項目の子内で参照できます。 たとえば、Xbox 360 ゲームの ID と MediaItemType パラメーターに渡して、これにより、閲覧、diltering アバター項目や、ゲームの DLC など、その項目の子にします。
+この API では、指定した項目の子内で参照できます。 たとえば、Xbox 360 ゲームの ID と MediaItemType パラメーターに渡して、これにより、閲覧、diltering アバター項目やゲームの DLC など、その項目の子にします。
  
-この API は、クエリの絞り込み条件を受け取ります。
+この API は、クエリの絞り込み条件を受け入れます。
  
 子を取得するためのいくつかのシナリオは次のとおりです。
  
@@ -32,7 +32,7 @@ ms.locfileid: "4387191"
    * エピソードする時期
    * 音楽ビデオへの追跡します。
    * アルバムのアーティスト
-   * ゲームのアドオン (DLC、アバター、テーマなど) へのゲーム
+   * ゲームのアドオン (DLC、アバター、テーマなど) にゲーム
   
 これらの Uri のドメインが`eds.xboxlive.com`します。
  
@@ -45,7 +45,7 @@ ms.locfileid: "4387191"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
   
 <a id="ID4ENC"></a>
 

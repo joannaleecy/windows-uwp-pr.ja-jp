@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 72b4a7b971647304e08fe52e7696be9fcd39e584
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4383333"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4430476"
 ---
 # <a name="updatemetadatarequest-json"></a>UpdateMetadataRequest (JSON)
-このメタデータ クリップを更新する必要があります。 
+このメタデータは、クリップを更新する必要があります。 
 <a id="ID4EN"></a>
 
  
@@ -38,7 +38,7 @@ UpdateMetadataRequest オブジェクトには、次の仕様があります。
  
 ## <a name="sample-json-syntax"></a>JSON 構文の例
  
-ユーザーのクリップの名前を変更して表示します。
+ユーザーのクリップ名と認知度を変更します。
  
 
 ```json

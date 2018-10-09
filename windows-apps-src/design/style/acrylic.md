@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bf91725a62c8d03c37448ddf69b072461288f11
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4384154"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4430547"
 ---
 # <a name="acrylic-material"></a>アクリル素材
 
@@ -79,19 +79,19 @@ ms.locfileid: "4384154"
 * NavigationView またはインラインのコマンド実行要素などの UI をサポートするためには、アプリ内アクリルを使用します。 
 * コンテキスト メニューのポップアップ、および光 dimsissable UI などの一時的な UI 要素の背景アクリルを使用します。<br />一時的なシナリオでアクリルを使用すると、一時的な UI をトリガーしたコンテンツと視覚的な関係を維持できます。
 
-ナビゲーションのサーフェスをアプリ内アクリルを使用している場合は、アプリのフローを向上させるために、アクリル ウィンドウの下にあるコンテンツを拡張することを検討します。 NavigationView を使用して、これを自動的にします。 ただし、ストライプ効果の作成を回避するため、複数のアクリルのエッジの部分を配置しないでくださいぼやけたの 2 つのサーフェスの間、望ましくない継ぎ目を作成このことができます。 アクリルは、デザインを視覚的な調和を移植するためのツールが適切に使用できますノイズの。
+ナビゲーションのサーフェスをアプリ内アクリルを使用している場合をアプリのフローを向上させるためのアクリル ウィンドウの下にあるコンテンツを拡張することを検討します。 NavigationView を使用して、これは、自動的にします。 ただし、ストライプ効果の作成を回避するため、複数のアクリルのエッジ - を配置しないでくださいぼやけたの 2 つのサーフェスの間、望ましくない継ぎ目を作成このことができます。 アクリルをするために視覚的に適合するように設計ツールしますが、適切に使用できますノイズ。
 
 アクリルをアプリに組み込むに最適な方法を決定する次の使用パターンを検討してください。
 
 ### <a name="horizontal-navigation-or-commanding"></a>水平方向のナビゲーションやコマンド実行
 
-アプリは、NavigationView を利用することはできません、独自にアクリルを追加する場合は、60% の濃淡の不透明度で比較的半透明のアクリルの使用をお勧めします。
+アプリは NavigationView を活用することはできません、独自にアクリルを追加する場合は、60% の濃淡の不透明度で比較的半透明のアクリルの使用をお勧めします。
  - ウィンドウが他のアプリ コンテンツ上でオーバーレイとして開くときは、[60% のアプリ内アクリル](#acrylic-theme-resources)にする必要があります
  - ウィンドウがメイン アプリ コンテンツと並んで開かれるときは、[60% の背景アクリル](#acrylic-theme-resources)にする必要があります
 
-![アプリ内の水平方向コマンド実行を使ったマップ アプリ](images/Maps_In_App_Acrylic_1.png)
+![アプリ内の水平方向のによるコマンド実行を使ったマップ アプリ](images/Maps_In_App_Acrylic_1.png)
 
-さらに、最上部に、コンテンツの拡張または、アクリルの下にスクロールをことにより、アプリより没入型とシームレスなエクスペリエンスします。
+さらに、上部に、コンテンツの拡張または、アクリルの下にスクロールをことにより、アプリより没入型とシームレスなエクスペリエンスします。
 
 ### <a name="vertical-panes"></a>垂直方向のウィンドウ
 
@@ -99,14 +99,14 @@ ms.locfileid: "4384154"
 
 ### <a name="transient-surfaces"></a>一時的なサーフェス
 
-メニュー ポップアップ、非モーダル ポップアップでは、アプリのウィンドウでは、簡易または背景アクリルを使用することをお勧めします。
+メニュー ポップアップ、非モーダル ポップアップでは、アプリのウィンドウ、簡易または背景アクリルを使用することをお勧めします。
 
 ![情報のポップアップを使用してメール アプリのパターン](images/Mail_TransientContextMenu.png)
 
-アクリルを使用して、既定では、コントロールの多くはします。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[コンボ ボックス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)などの光 dimiss ポップアップを持つコントロールはすべてを使用して一時的なアクリルときに呼び出されます。
+アクリルは、既定では多くのコントロールの使用されます。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[コンボ ボックス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)などの光 dimiss ポップアップを持つコントロールはすべてを使用して一時的なアクリルときに呼び出されます。
 
 > [!Note]
-> アクリル サーフェスのレンダリングでは GPU を多用すると、デバイスの電力消費量を増やすし、バッテリーの寿命を短くことができます。 アクリルの効果は自動的に無効にデバイスがバッテリー節約機能モードを入力し、ユーザーには、すべてのアプリでアクリルの効果が無効にすることが選択した場合。
+> アクリル サーフェスのレンダリングでは GPU を多用するデバイスの電力消費量を増やすし、バッテリーの寿命を短くことができます。 アクリルの効果は自動的に無効にデバイスがバッテリー節約機能モードを入力し、ユーザーは、すべてのアプリでアクリルの効果を無効にできますを選択した場合。
 
 ## <a name="usability-and-adaptability"></a>使いやすさと適応性
 アクリルの外観は、さまざまなデバイスやコンテキストに合うように自動的に対応します。
@@ -116,7 +116,7 @@ ms.locfileid: "4384154"
  - バッテリー節約機能モードがアクティブ化されます。
  - アプリがローエンド ハードウェアで実行されている場合
 
-さらに、背景アクリルのみがその透明度とテクスチャを置き換える単色。
+さらに、背景アクリルのみ、その透明度とテクスチャを置き換える単色。
  - アプリ ウィンドウがデスクトップで非アクティブ化されている場合
  - UWP アプリが、電話、Xbox、HoloLens、またはタブレット モードで実行されている場合
 
@@ -150,7 +150,7 @@ ms.locfileid: "4384154"
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>推奨する使用方法:</b>アプリでは、テキストのサイズが 18 ピクセル以上で AltMedium 色のセカンダリ テキストを使用している場合は、これらより半透明 70% のテキストの背景アクリル リソースを配置できます。 これらのリソースは、アプリの最上部にある水平方向のナビゲーション領域やコマンド実行領域で使用することをお勧めします。  </td>
+        <td> <b>推奨する使用方法:</b>アプリでは、テキストのサイズが 18 ピクセル以上で AltMedium 色のセカンダリ テキストを使用している場合は、これら以上半透明 70% のテキストの背景アクリル リソースを配置できます。 これらのリソースは、アプリの最上部にある水平方向のナビゲーション領域やコマンド実行領域で使用することをお勧めします。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush、SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush、SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush、SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush、SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush、SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush、SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -318,14 +318,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>推奨と非推奨
 * アクリルは、ナビゲーション ウィンドウなど、アプリのプライマリ サーフェス以外のサーフェスで背景素材として使用してください。
 * シームレスなエクスペリエンスを実現するには、アプリの周囲とわずかにブレンドするようにして、アクリルをアプリの 1 つ以上の端にまで拡張してください。
-* アプリのバック グラウンドの大規模なサーフェス上のデスクトップ arylic を配置しないように - この一時的なサーフェスに主に使用されているアクリルの概念的モデルを中断します。
+* アプリのバック グラウンドの大規模なサーフェスにデスクトップ arylic を配置しないでください - この一時的なサーフェスに主に使用されているアクリルの概念的モデルを中断します。
 * アプリ内アクリルと背景アクリルは、継ぎ目部分での視覚的なテンションを回避するために、隣接するようには配置しないでください。
 * 複数のアクリル ウィンドウを、同じ濃淡や不透明度で隣接するように配置しないでください。このようにすると、望ましくない継ぎ目が表示されます。
 * アクリル サーフェスの上には、アクセント カラーのテキストを配置しないでください。
 
 ## <a name="how-we-designed-acrylic"></a>アクリルをどのように設計したか
 
-アクリルの主要なコンポーネントを微調整して、ユニークな外観とプロパティを作成しました。 透明度、ぼかし、ノイズ平坦なサーフェスに視覚的な奥行きとディメンションを追加すると開始します。 除外ブレンド モード レイヤーを追加して、アクリルの背景に配置される UI のコントラストと見やすさを確保しました。 最後に、ユーザーの個性を反映できるように、色の濃淡を追加しました。 次のレイヤーを組み合わせることで、新しくて使いやすい素材が生みだされます。
+アクリルの主要なコンポーネントを微調整して、ユニークな外観とプロパティを作成しました。 透明度、ぼかし、ノイズ平坦なサーフェスに視覚的な奥行きとディメンションを追加するを利用しました。 除外ブレンド モード レイヤーを追加して、アクリルの背景に配置される UI のコントラストと見やすさを確保しました。 最後に、ユーザーの個性を反映できるように、色の濃淡を追加しました。 次のレイヤーを組み合わせることで、新しくて使いやすい素材が生みだされます。
 
 ![アクリルのレシピ](images/AcrylicRecipe_Diagram.jpg)
 <br/>アクリルのレシピ: 背景、ぼかし、除外ブレンド、色/濃淡のオーバーレイ、ノイズ

@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a2c8ca1cdac0b6a2ad2f981d2a57d926cf4e1f5
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392552"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4430600"
 ---
 # <a name="leaderboards-uris"></a>ランキング URI
 
-このセクションでは、*ランキング*用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*ランキング*用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドの詳細を提供します。
 
 これらの Uri のドメインは、leaderboards.xboxlive.com です。
 

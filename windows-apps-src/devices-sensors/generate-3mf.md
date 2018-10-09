@@ -13,23 +13,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c48e054a0b00300df10a676b5d185411de06b505
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 02eb6442b4769e92bec2b41ed9ab0e91a6a98a7f
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "301786"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4430276"
 ---
 # <a name="generate-a-3mf-package"></a>3MF パッケージの生成
-
-
-
 
 **重要な API**
 
 -   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
-
-\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
 このガイドでは、3D Manufacturing Format (3MF) ドキュメントの構造について説明し、その作成方法と [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API による操作について説明します。
 
