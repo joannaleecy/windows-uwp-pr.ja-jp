@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス呼び出し, テスト, trace analyzer
 ms.localizationpriority: medium
 ms.openlocfilehash: 196505a9ed3fb62ef609415c292e98850588102f
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4390687"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4427346"
 ---
 # <a name="xbox-live-trace-analyzer"></a><span data-ttu-id="9bde2-104">Xbox Live Trace Analyzer</span><span class="sxs-lookup"><span data-stu-id="9bde2-104">Xbox Live Trace Analyzer</span></span>
 

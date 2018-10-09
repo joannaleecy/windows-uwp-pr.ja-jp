@@ -12,45 +12,45 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ce98786b9ef3702ae0aa1208cb04a9bd530a938
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4393134"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4421665"
 ---
-# <a name="usersmegroupsmoniker"></a><span data-ttu-id="47cff-104">/users/me/groups/{moniker}</span><span class="sxs-lookup"><span data-stu-id="47cff-104">/users/me/groups/{moniker}</span></span>
-<span data-ttu-id="47cff-105">[グループの PresenceRecord にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="47cff-105">Accesses the PresenceRecord for my group.</span></span> <span data-ttu-id="47cff-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="47cff-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
+# <a name="usersmegroupsmoniker"></a><span data-ttu-id="5d607-104">/users/me/groups/{moniker}</span><span class="sxs-lookup"><span data-stu-id="5d607-104">/users/me/groups/{moniker}</span></span>
+<span data-ttu-id="5d607-105">[グループの PresenceRecord にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="5d607-105">Accesses the PresenceRecord for my group.</span></span> <span data-ttu-id="5d607-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5d607-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="47cff-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="47cff-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="5d607-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="5d607-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="47cff-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="47cff-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="5d607-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="5d607-108">URI parameters</span></span>
  
-| <span data-ttu-id="47cff-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="47cff-109">Parameter</span></span>| <span data-ttu-id="47cff-110">型</span><span class="sxs-lookup"><span data-stu-id="47cff-110">Type</span></span>| <span data-ttu-id="47cff-111">説明</span><span class="sxs-lookup"><span data-stu-id="47cff-111">Description</span></span>| 
+| <span data-ttu-id="5d607-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="5d607-109">Parameter</span></span>| <span data-ttu-id="5d607-110">型</span><span class="sxs-lookup"><span data-stu-id="5d607-110">Type</span></span>| <span data-ttu-id="5d607-111">説明</span><span class="sxs-lookup"><span data-stu-id="5d607-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="47cff-112">モニカー</span><span class="sxs-lookup"><span data-stu-id="47cff-112">moniker</span></span>| <span data-ttu-id="47cff-113">string</span><span class="sxs-lookup"><span data-stu-id="47cff-113">string</span></span>| <span data-ttu-id="47cff-114">ユーザーのグループを定義する文字列です。</span><span class="sxs-lookup"><span data-stu-id="47cff-114">String defining the group of users.</span></span> <span data-ttu-id="47cff-115">現時点では受け入れられるだけモニカーでは、'P' の首都を"People"でです。</span><span class="sxs-lookup"><span data-stu-id="47cff-115">The only accepted moniker at present is "People", with a capital 'P'.</span></span>| 
+| <span data-ttu-id="5d607-112">モニカー</span><span class="sxs-lookup"><span data-stu-id="5d607-112">moniker</span></span>| <span data-ttu-id="5d607-113">string</span><span class="sxs-lookup"><span data-stu-id="5d607-113">string</span></span>| <span data-ttu-id="5d607-114">ユーザーのグループを定義する文字列です。</span><span class="sxs-lookup"><span data-stu-id="5d607-114">String defining the group of users.</span></span> <span data-ttu-id="5d607-115">現時点では受け入れられるだけモニカーでは、大文字の 'P'"People"でです。</span><span class="sxs-lookup"><span data-stu-id="5d607-115">The only accepted moniker at present is "People", with a capital 'P'.</span></span>| 
   
 <a id="ID4ERB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="47cff-116">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="47cff-116">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="5d607-116">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="5d607-116">Valid methods</span></span>
 
-[<span data-ttu-id="47cff-117">GET (/users/me/groups/{moniker} )</span><span class="sxs-lookup"><span data-stu-id="47cff-117">GET (/users/me/groups/{moniker} )</span></span>](uri-usersmegroupsmonikerget.md)
+[<span data-ttu-id="5d607-117">GET (/users/me/groups/{moniker} )</span><span class="sxs-lookup"><span data-stu-id="5d607-117">GET (/users/me/groups/{moniker} )</span></span>](uri-usersmegroupsmonikerget.md)
 
-<span data-ttu-id="47cff-118">&nbsp;&nbsp;グループの PresenceRecord を取得します。</span><span class="sxs-lookup"><span data-stu-id="47cff-118">&nbsp;&nbsp;Gets the PresenceRecord for my group.</span></span>
+<span data-ttu-id="5d607-118">&nbsp;&nbsp;自分のグループの PresenceRecord を取得します。</span><span class="sxs-lookup"><span data-stu-id="5d607-118">&nbsp;&nbsp;Gets the PresenceRecord for my group.</span></span>
  
 <a id="ID4E2B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="47cff-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="47cff-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5d607-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="5d607-119">See also</span></span>
  
 <a id="ID4E4B"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="47cff-120">Parent</span><span class="sxs-lookup"><span data-stu-id="47cff-120">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="5d607-120">Parent</span><span class="sxs-lookup"><span data-stu-id="5d607-120">Parent</span></span> 
 
-[<span data-ttu-id="47cff-121">プレゼンス URI</span><span class="sxs-lookup"><span data-stu-id="47cff-121">Presence URIs</span></span>](atoc-reference-presence.md)
+[<span data-ttu-id="5d607-121">プレゼンス URI</span><span class="sxs-lookup"><span data-stu-id="5d607-121">Presence URIs</span></span>](atoc-reference-presence.md)
 
    

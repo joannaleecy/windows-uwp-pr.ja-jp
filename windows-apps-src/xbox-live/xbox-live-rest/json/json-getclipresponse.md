@@ -12,29 +12,29 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 90b8c498c981ddddb10d28317c260c707ca1e897
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4388975"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4427504"
 ---
-# <a name="getclipresponse-json"></a><span data-ttu-id="67c99-104">GetClipResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="67c99-104">GetClipResponse (JSON)</span></span>
-<span data-ttu-id="67c99-105">ゲーム クリップをラップします。</span><span class="sxs-lookup"><span data-stu-id="67c99-105">Wraps the game clip.</span></span> 
+# <a name="getclipresponse-json"></a><span data-ttu-id="b0b7a-104">GetClipResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="b0b7a-104">GetClipResponse (JSON)</span></span>
+<span data-ttu-id="b0b7a-105">ゲーム クリップをラップします。</span><span class="sxs-lookup"><span data-stu-id="b0b7a-105">Wraps the game clip.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="getclipresponse"></a><span data-ttu-id="67c99-106">GetClipResponse</span><span class="sxs-lookup"><span data-stu-id="67c99-106">GetClipResponse</span></span>
+## <a name="getclipresponse"></a><span data-ttu-id="b0b7a-106">GetClipResponse</span><span class="sxs-lookup"><span data-stu-id="b0b7a-106">GetClipResponse</span></span>
  
-<span data-ttu-id="67c99-107">GetClipResponse オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="67c99-107">The GetClipResponse object has the following specification.</span></span>
+<span data-ttu-id="b0b7a-107">GetClipResponse オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="b0b7a-107">The GetClipResponse object has the following specification.</span></span>
  
-| <span data-ttu-id="67c99-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="67c99-108">Member</span></span>| <span data-ttu-id="67c99-109">種類</span><span class="sxs-lookup"><span data-stu-id="67c99-109">Type</span></span>| <span data-ttu-id="67c99-110">説明</span><span class="sxs-lookup"><span data-stu-id="67c99-110">Description</span></span>| 
+| <span data-ttu-id="b0b7a-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="b0b7a-108">Member</span></span>| <span data-ttu-id="b0b7a-109">種類</span><span class="sxs-lookup"><span data-stu-id="b0b7a-109">Type</span></span>| <span data-ttu-id="b0b7a-110">説明</span><span class="sxs-lookup"><span data-stu-id="b0b7a-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="67c99-111">gameClip</span><span class="sxs-lookup"><span data-stu-id="67c99-111">gameClip</span></span>| [<span data-ttu-id="67c99-112">GameClip</span><span class="sxs-lookup"><span data-stu-id="67c99-112">GameClip</span></span>](json-gameclip.md)| <span data-ttu-id="67c99-113">問題がなければ、クエリを 1 つのゲーム クリップします。</span><span class="sxs-lookup"><span data-stu-id="67c99-113">A single game clip that satisfied the query.</span></span>| 
+| <span data-ttu-id="b0b7a-111">gameClip</span><span class="sxs-lookup"><span data-stu-id="b0b7a-111">gameClip</span></span>| [<span data-ttu-id="b0b7a-112">GameClip</span><span class="sxs-lookup"><span data-stu-id="b0b7a-112">GameClip</span></span>](json-gameclip.md)| <span data-ttu-id="b0b7a-113">問題がなければ、クエリを 1 つのゲーム クリップ。</span><span class="sxs-lookup"><span data-stu-id="b0b7a-113">A single game clip that satisfied the query.</span></span>| 
   
 <a id="ID4ELB"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="67c99-114">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="67c99-114">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="b0b7a-114">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="b0b7a-114">Sample JSON syntax</span></span>
  
 
 ```json
@@ -89,13 +89,13 @@ ms.locfileid: "4388975"
 <a id="ID4EUB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="67c99-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="67c99-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b0b7a-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="b0b7a-115">See also</span></span>
  
 <a id="ID4EWB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="67c99-116">Parent</span><span class="sxs-lookup"><span data-stu-id="67c99-116">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="b0b7a-116">Parent</span><span class="sxs-lookup"><span data-stu-id="b0b7a-116">Parent</span></span> 
 
-[<span data-ttu-id="67c99-117">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="67c99-117">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="b0b7a-117">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="b0b7a-117">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

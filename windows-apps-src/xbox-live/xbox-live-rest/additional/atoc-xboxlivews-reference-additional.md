@@ -12,83 +12,83 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8203420b0eed584a0d8b4131b419bf667a4b56a0
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4388064"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4425496"
 ---
-# <a name="additional-reference"></a><span data-ttu-id="2f937-104">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="2f937-104">Additional Reference</span></span>
+# <a name="additional-reference"></a><span data-ttu-id="759ec-104">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="759ec-104">Additional Reference</span></span>
 
-<span data-ttu-id="2f937-105">このセクションのトピックでは、Xbox Live サービスとエンターテイメント検出サービス (EDS) に関する補足のリファレンス情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="2f937-105">The topics in this section provide supplementary reference material for Xbox Live Services and Entertainment Discover Services (EDS).</span></span>
+<span data-ttu-id="759ec-105">このセクションのトピックでは、Xbox Live サービスとエンターテイメント検出サービス (EDS) に関する補足リファレンス情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="759ec-105">The topics in this section provide supplementary reference material for Xbox Live Services and Entertainment Discover Services (EDS).</span></span>
 
 <a id="ID4EZ"></a>
 
 
-## <a name="in-this-section"></a><span data-ttu-id="2f937-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="2f937-106">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="759ec-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="759ec-106">In this section</span></span>
 
-[<span data-ttu-id="2f937-107">承認のタイプ</span><span class="sxs-lookup"><span data-stu-id="2f937-107">Authorization Types</span></span>](authorizationtypes.md)
+[<span data-ttu-id="759ec-107">承認のタイプ</span><span class="sxs-lookup"><span data-stu-id="759ec-107">Authorization Types</span></span>](authorizationtypes.md)
 
-<span data-ttu-id="2f937-108">&nbsp;&nbsp;Xbox Live サービスで使用される標準の承認の種類について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f937-108">&nbsp;&nbsp;Describes the standard authorization types used by Xbox Live Services.</span></span>
+<span data-ttu-id="759ec-108">&nbsp;&nbsp;Xbox Live サービスで使用される標準の承認の種類について説明します。</span><span class="sxs-lookup"><span data-stu-id="759ec-108">&nbsp;&nbsp;Describes the standard authorization types used by Xbox Live Services.</span></span>
 
-[<span data-ttu-id="2f937-109">データ型の概要</span><span class="sxs-lookup"><span data-stu-id="2f937-109">Data Type Overview</span></span>](datatypeoverview.md)
+[<span data-ttu-id="759ec-109">データ型の概要</span><span class="sxs-lookup"><span data-stu-id="759ec-109">Data Type Overview</span></span>](datatypeoverview.md)
 
-<span data-ttu-id="2f937-110">&nbsp;&nbsp;Xbox Live サービスで使用される標準の識別に関連するデータの種類について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f937-110">&nbsp;&nbsp;Describes the standard identification-related data types used by Xbox Live Services.</span></span>
+<span data-ttu-id="759ec-110">&nbsp;&nbsp;Xbox Live サービスで使用される標準の識別に関連するデータの種類について説明します。</span><span class="sxs-lookup"><span data-stu-id="759ec-110">&nbsp;&nbsp;Describes the standard identification-related data types used by Xbox Live Services.</span></span>
 
-[<span data-ttu-id="2f937-111">EDS の補助 API</span><span class="sxs-lookup"><span data-stu-id="2f937-111">Auxiliary EDS APIs</span></span>](eds-apis.md)
+[<span data-ttu-id="759ec-111">EDS の補助 API</span><span class="sxs-lookup"><span data-stu-id="759ec-111">Auxiliary EDS APIs</span></span>](eds-apis.md)
 
-<span data-ttu-id="2f937-112">&nbsp;&nbsp;EDS の補助の Api について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f937-112">&nbsp;&nbsp;Describes the auxiliary EDS APIs.</span></span>
+<span data-ttu-id="759ec-112">&nbsp;&nbsp;EDS の補助の Api について説明します。</span><span class="sxs-lookup"><span data-stu-id="759ec-112">&nbsp;&nbsp;Describes the auxiliary EDS APIs.</span></span>
 
-[<span data-ttu-id="2f937-113">EDS 承認</span><span class="sxs-lookup"><span data-stu-id="2f937-113">EDS Authorization</span></span>](edsauthorization.md)
+[<span data-ttu-id="759ec-113">EDS 承認</span><span class="sxs-lookup"><span data-stu-id="759ec-113">EDS Authorization</span></span>](edsauthorization.md)
 
-[<span data-ttu-id="2f937-114">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="2f937-114">EDS Common Headers</span></span>](edscommonheaders.md)
+[<span data-ttu-id="759ec-114">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="759ec-114">EDS Common Headers</span></span>](edscommonheaders.md)
 
-<span data-ttu-id="2f937-115">&nbsp;&nbsp;EDS Api の多くに共通の要求と応答ヘッダーをについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2f937-115">&nbsp;&nbsp;Describes the request and response headers common to many EDS APIs.</span></span>
+<span data-ttu-id="759ec-115">&nbsp;&nbsp;EDS Api の多くに共通の要求と応答ヘッダーをについて説明します。</span><span class="sxs-lookup"><span data-stu-id="759ec-115">&nbsp;&nbsp;Describes the request and response headers common to many EDS APIs.</span></span>
 
-[<span data-ttu-id="2f937-116">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="2f937-116">EDS Parameters</span></span>](edsparameters.md)
+[<span data-ttu-id="759ec-116">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="759ec-116">EDS Parameters</span></span>](edsparameters.md)
 
-<span data-ttu-id="2f937-117">&nbsp;&nbsp;EDS Api の多くに共通するパラメーターをについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2f937-117">&nbsp;&nbsp;Describes the parameters common to many EDS APIs.</span></span>
+<span data-ttu-id="759ec-117">&nbsp;&nbsp;EDS Api の多くに共通するパラメーターをについて説明します。</span><span class="sxs-lookup"><span data-stu-id="759ec-117">&nbsp;&nbsp;Describes the parameters common to many EDS APIs.</span></span>
 
-[<span data-ttu-id="2f937-118">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="2f937-118">EDS Query Refiners</span></span>](edsqueryrefiners.md)
+[<span data-ttu-id="759ec-118">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="759ec-118">EDS Query Refiners</span></span>](edsqueryrefiners.md)
 
-<span data-ttu-id="2f937-119">&nbsp;&nbsp;EDS Api の多くに共通のクエリの絞り込み条件をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2f937-119">&nbsp;&nbsp;Describes the query refiners common to many EDS APIs.</span></span>
+<span data-ttu-id="759ec-119">&nbsp;&nbsp;EDS Api の多くに共通のクエリの絞り込み条件をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="759ec-119">&nbsp;&nbsp;Describes the query refiners common to many EDS APIs.</span></span>
 
-[<span data-ttu-id="2f937-120">ビデオの EDS 逆引き参照</span><span class="sxs-lookup"><span data-stu-id="2f937-120">EDS Reverse Lookup for Video</span></span>](edsreverselookup.md)
+[<span data-ttu-id="759ec-120">ビデオの EDS 逆引き参照</span><span class="sxs-lookup"><span data-stu-id="759ec-120">EDS Reverse Lookup for Video</span></span>](edsreverselookup.md)
 
-<span data-ttu-id="2f937-121">&nbsp;&nbsp;逆のデータに基づいてビデオを検索します。</span><span class="sxs-lookup"><span data-stu-id="2f937-121">&nbsp;&nbsp;Looking up videos based on reverse data.</span></span>
+<span data-ttu-id="759ec-121">&nbsp;&nbsp;データの逆に基づくビデオを検索します。</span><span class="sxs-lookup"><span data-stu-id="759ec-121">&nbsp;&nbsp;Looking up videos based on reverse data.</span></span>
 
-[<span data-ttu-id="2f937-122">EDS の表</span><span class="sxs-lookup"><span data-stu-id="2f937-122">EDS Tables</span></span>](edstables.md)
+[<span data-ttu-id="759ec-122">EDS の表</span><span class="sxs-lookup"><span data-stu-id="759ec-122">EDS Tables</span></span>](edstables.md)
 
-<span data-ttu-id="2f937-123">&nbsp;&nbsp;さまざまなテーブルと EDS API に関連付けられているリストが含まれています。</span><span class="sxs-lookup"><span data-stu-id="2f937-123">&nbsp;&nbsp;Contains various tables and lists associated with the EDS API.</span></span>
+<span data-ttu-id="759ec-123">&nbsp;&nbsp;さまざまなテーブルと EDS API に関連付けられているリストが含まれています。</span><span class="sxs-lookup"><span data-stu-id="759ec-123">&nbsp;&nbsp;Contains various tables and lists associated with the EDS API.</span></span>
 
-[<span data-ttu-id="2f937-124">ページング パラメーター</span><span class="sxs-lookup"><span data-stu-id="2f937-124">Paging Parameters</span></span>](pagingparameters.md)
+[<span data-ttu-id="759ec-124">ページング パラメーター</span><span class="sxs-lookup"><span data-stu-id="759ec-124">Paging Parameters</span></span>](pagingparameters.md)
 
-<span data-ttu-id="2f937-125">&nbsp;&nbsp;Xbox Live サービス要求を作成するときに使われるページングのパラメーターについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2f937-125">&nbsp;&nbsp;Describes the paging parameters that may be used when making Xbox Live Services requests.</span></span>
+<span data-ttu-id="759ec-125">&nbsp;&nbsp;Xbox Live サービス要求を作成するときに使われるページングのパラメーターについて説明します。</span><span class="sxs-lookup"><span data-stu-id="759ec-125">&nbsp;&nbsp;Describes the paging parameters that may be used when making Xbox Live Services requests.</span></span>
 
-[<span data-ttu-id="2f937-126">標準の HTTP 要求および応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="2f937-126">Standard HTTP Request and Response Headers</span></span>](httpstandardheaders.md)
+[<span data-ttu-id="759ec-126">標準の HTTP 要求および応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="759ec-126">Standard HTTP Request and Response Headers</span></span>](httpstandardheaders.md)
 
-<span data-ttu-id="2f937-127">&nbsp;&nbsp;Xbox Live サービス要求を作成するときに使用する標準的な HTTP ヘッダーをについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2f937-127">&nbsp;&nbsp;Describes the standard HTTP headers used when making Xbox Live Services requests.</span></span>
+<span data-ttu-id="759ec-127">&nbsp;&nbsp;Xbox Live サービス要求を作成するときに使用する標準的な HTTP ヘッダーを説明します。</span><span class="sxs-lookup"><span data-stu-id="759ec-127">&nbsp;&nbsp;Describes the standard HTTP headers used when making Xbox Live Services requests.</span></span>
 
-[<span data-ttu-id="2f937-128">標準の HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="2f937-128">Standard HTTP status codes</span></span>](httpstatuscodes.md)
+[<span data-ttu-id="759ec-128">標準の HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="759ec-128">Standard HTTP status codes</span></span>](httpstatuscodes.md)
 
-<span data-ttu-id="2f937-129">&nbsp;&nbsp;サービスによって返される標準の HTTP ステータス コードをについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2f937-129">&nbsp;&nbsp;Describes the standard HTTP status codes that are returned by the service.</span></span>
+<span data-ttu-id="759ec-129">&nbsp;&nbsp;サービスによって返される標準の HTTP ステータス コードをについて説明します。</span><span class="sxs-lookup"><span data-stu-id="759ec-129">&nbsp;&nbsp;Describes the standard HTTP status codes that are returned by the service.</span></span>
 
 <a id="ID4ECC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="2f937-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="2f937-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="759ec-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="759ec-130">See also</span></span>
 
 <a id="ID4EEC"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="2f937-131">Parent</span><span class="sxs-lookup"><span data-stu-id="2f937-131">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="759ec-131">Parent</span><span class="sxs-lookup"><span data-stu-id="759ec-131">Parent</span></span>
 
- [<span data-ttu-id="2f937-132">Xbox Live サービス RESTful リファレンス</span><span class="sxs-lookup"><span data-stu-id="2f937-132">Xbox Live Services RESTful Reference</span></span>](../atoc-xboxlivews-reference.md)
+ [<span data-ttu-id="759ec-132">Xbox Live サービス RESTful リファレンス</span><span class="sxs-lookup"><span data-stu-id="759ec-132">Xbox Live Services RESTful Reference</span></span>](../atoc-xboxlivews-reference.md)
 
 
 <a id="ID4EOC"></a>
 
 
-##### <a name="further-information"></a><span data-ttu-id="2f937-133">詳細情報</span><span class="sxs-lookup"><span data-stu-id="2f937-133">Further Information</span></span>
+##### <a name="further-information"></a><span data-ttu-id="759ec-133">詳細情報</span><span class="sxs-lookup"><span data-stu-id="759ec-133">Further Information</span></span>
 
- [<span data-ttu-id="2f937-134">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="2f937-134">Marketplace URIs</span></span>](../uri/marketplace/atoc-reference-marketplace.md)
+ [<span data-ttu-id="759ec-134">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="759ec-134">Marketplace URIs</span></span>](../uri/marketplace/atoc-reference-marketplace.md)
