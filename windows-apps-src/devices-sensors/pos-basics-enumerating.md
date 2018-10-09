@@ -3,18 +3,18 @@ author: TerryWarwick
 title: PointOfService デバイスの列挙
 description: PointOfService デバイスを列挙する方法の詳細
 ms.author: jken
-ms.date: 08/30/2018
+ms.date: 10/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e42ebb2eba7b6465be271e6095100c03798826f
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.openlocfilehash: 8796b2ea025a00015881d39449f2dd99d57121f8
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4445620"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468711"
 ---
 # <a name="enumerating-point-of-service-devices"></a>POS デバイスの列挙
 このセクションでは、システムが利用できるデバイスを照会するために使用する[デバイス セレクターを定義](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)し、次のいずれかの方法でこのセレクターを使用して POS デバイスを列挙する方法について説明します。
@@ -60,9 +60,6 @@ string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);
 > より高度なセレクター文字列のビルドについては、「[デバイス セレクターのビルド](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)」を参照してください。
 
 ## <a name="method-1-use-a-device-picker"></a>方法 1: デバイス ピッカーを使用します。
-
-> [!NOTE]
-> このメソッドでは、最新の[Windows SDK Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)が必要です。
 
 [DevicePicker](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker)クラスでは、ユーザーから選択するためのデバイスの一覧が含まれているピッカーのポップアップを表示することができます。 [フィルター](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.filter)のプロパティを使用すると、ピッカーを表示するのにデバイスの種類を選択します。 このプロパティは、種類[DevicePickerFilter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter)です。 デバイスの種類は、 [SupportedDeviceClasses](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses)または[SupportedDeviceSelectors](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors)プロパティを使用してフィルターを追加できます。
 

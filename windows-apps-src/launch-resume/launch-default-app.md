@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cdfc2beabb640764f85a5ee9f1b24e390b2f87a
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: dff7b641cad99407ce22e7a4d4b58c10e0ae94d1
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664072"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4470002"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>URI に応じた既定のアプリの起動
 
@@ -45,6 +45,7 @@ URI スキームでは、ハイパーリンクをクリックしてアプリを�
 |[ms-store:](#store-app-uri-scheme)  | ストア アプリ |
 |[ms-tonepicker:](#tone-picker-uri-scheme) | トーンの選択コントロール |
 |[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | 近隣の施設検索アプリ |
+|[msnweather:](#weather-app-uri-scheme) | 天気予報アプリ |
 
 <br>
 たとえば、次の URI は既定のブラウザーを開き、Bing の Web サイトを表示します。
@@ -240,3 +241,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 `ms-windows-store://home/`
 
 詳しくは、「[UWP アプリの起動](launch-store-app.md)」をご覧ください。
+
+### <a name="weather-app-uri-scheme"></a>天気予報アプリの URI スキーム
+
+使用して、 **msnweather:** 天気予報アプリを起動する URI スキームします。
+
+| URI スキーム | 結果 |
+|------------|---------|
+| msnweather://forecast?la= \[latitude\] & lo = \ [longitude\] | 場所の地理的な座標に基づく予測ページの天気予報アプリを起動します。<br>`latitude` 場所の緯度を指します。<br> `longitude` 場所の経度を指します。<br> |

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ec6cf478097a6cd00af85d52112555650db35f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817147"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468751"
 ---
 # <a name="launch-the-windows-settings-app"></a>Windows 設定アプリの起動
 
@@ -70,12 +70,13 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 |［設定］ページ| URI |
 |-------------|-----|
-|職場または学校にアクセスする | ms-settings:workplace |
-|メール & アプリのアカウント  | ms-settings:emailandaccounts |
-|家族とその他のユーザー | ms-settings:otherusers |
-|サインイン オプション | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
-|設定の同期 | ms-settings:sync |
-|ユーザーの情報 | ms-settings:yourinfo |
+| 職場または学校にアクセスする | ms-settings:workplace |
+| メール & アプリのアカウント  | ms-settings:emailandaccounts |
+| 家族とその他のユーザー | ms-settings:otherusers |
+| サインイン オプション | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
+| 設定の同期 | ms-settings:sync |
+| Windows Hello セットアップ | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| お使いのアカウント | ms-settings:yourinfo |
 
 ## <a name="apps"></a>Apps
 
@@ -86,16 +87,21 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | Web サイト用のアプリ | ms-settings:appsforwebsites |
 | 既定のアプリ | ms-settings:defaultapps |
 | オプション機能の管理 | ms-settings:optionalfeatures |
+| オフライン マップ | ms-settings:maps |
 | スタートアップ アプリ | ms-settings:startupapps |
+| ビデオ再生 | ms-settings:videoplayback |
 
 ## <a name="cortana"></a>Cortana
 
 |[設定] ページ| URI |
 |-------------|-----|
-| Cortana のアクセス許可と履歴 | ms-settings:cortana-permissions |
+| アクセス許可と履歴 | ms-settings:cortana-permissions |
 | 詳細 | ms-settings:cortana-moredetails |
-| 通知 | ms-settings:cortana-notifications |
+| 自分のデバイス間での Cortana | ms-settings:cortana-notifications |
 | Cortana に話す | ms-settings:cortana-language |
+
+> [!NOTE] 
+> デスクトップでは、この設定セクションときに呼び出される検索 PC は、Cortana が現在利用可能でない場所や、Cortana は無効になっている領域に設定されます。 この場合、Cortana に固有のページ (自分のデバイス間での Cortana) と Cortana に話すは表示されません。 
 
 ## <a name="devices"></a>デバイス
 
@@ -158,7 +164,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | 設定ホーム ページ | ms-settings: |
 
 
-## <a name="network-wireless--internet"></a>ネットワーク、無線およびインターネット
+## <a name="network--internet"></a>ネットワークとインターネット
 
 |[設定] ページ| URI |
 |-------------|-----|
@@ -189,11 +195,16 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | ナビゲーション バー | ms-settings:personalization-navbar |
 | 個人用設定 (カテゴリ) | ms-settings:personalization |
 | スタート | ms-settings:personalization-start |
-| サウンド | ms-settings:sounds |
 | タスク バー | ms-settings:taskbar |
 | テーマ | ms-settings:themes |
 
-## <a name="privacy"></a>プライバシー
+## <a name="phone"></a>Phone
+
+|[設定] ページ| URI |
+|-------------|-----|
+| 同期電話 | ms-settings:mobile-devices  |
+
+## <a name="privacy"></a>Privacy
 
 |[設定] ページ| URI |
 |-------------|-----|
@@ -257,8 +268,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | メッセージング | ms-settings:messaging |
 | マルチタスク | ms-settings:multitasking |
 | 夜間モード設定 | ms-settings:nightlight |
-| オフライン マップ | ms-settings:maps |
-| スマートフォン | ms-settings:phone-defaultapps |
+| Phone | ms-settings:phone-defaultapps |
 | この PC へのプロジェクション | ms-settings:project |
 | 共有エクスペリエンス | ms-settings:crossdevice |
 | タブレット モード | ms-settings:tabletmode |
@@ -267,11 +277,11 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | リモート デスクトップ | ms-settings:remotedesktop |
 | スマートフォン | ms-settings:phone |
 | 電源とスリープ | ms-settings:powersleep |
-| ストレージ | ms-settings:storagesense |
+| サウンド | ms-settings:sounds |
+| Storage | ms-settings:storagesense |
 | ストレージ センサー | ms-settings:storagepolicies |
-| ビデオ再生 | ms-settings:videoplayback |
 
-## <a name="time-and-language"></a>Time and language (時刻と言語)
+## <a name="time-and-language"></a>時刻と言語
 
 |[設定] ページ| URI |
 |-------------|-----|
@@ -290,21 +300,15 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | バックアップ | ms-settings:backup |
 | 配信の最適化 | ms-settings:delivery-optimization |
 | デバイスの検索 | ms-settings:findmydevice |
+| 開発者向け | ms-settings:developers |
 | 回復 | ms-settings:recovery |
 | トラブルシューティング | ms-settings:troubleshoot |
-| Windows Defender | ms-settings:windowsdefender |
-| Windows Hello セットアップ | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| Windows のセキュリティ | ms-settings:windowsdefender |
 | Windows Insider Program | ms-settings:windowsinsider(ユーザーが WIP に登録されている場合にのみ存在) |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update - 詳細オプション | ms-settings:windowsupdate-options |
 | Windows Update - 再起動オプション | ms-settings:windowsupdate-restartoptions |
 | Windows Update - 更新履歴の表示 | ms-settings:windowsupdate-history |
-
-## <a name="developers"></a>開発者向け
-
-|［設定］ページ| URI |
-|-------------|-----|
-| 開発者向け | ms-settings:developers |
 
 ## <a name="user--accounts"></a>ユーザー アカウント
 
