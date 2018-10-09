@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c03d99781114c4fefff04cc25930748ec16182f
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4428793"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4467531"
 ---
 # <a name="storyboarded-animations"></a><span data-ttu-id="093d3-104">ストーリーボードに設定されたアニメーション</span><span class="sxs-lookup"><span data-stu-id="093d3-104">Storyboarded animations</span></span>
 

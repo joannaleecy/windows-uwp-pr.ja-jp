@@ -10,11 +10,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: a0c30014c3688695847a5734adfa7cbc7498ba4a
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4415699"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4464627"
 ---
 # <a name="windows-dev-center-service-configuration"></a><span data-ttu-id="7bb22-104">Windows デベロッパー センターのサービス構成</span><span class="sxs-lookup"><span data-stu-id="7bb22-104">Windows Dev Center service configuration</span></span>
 

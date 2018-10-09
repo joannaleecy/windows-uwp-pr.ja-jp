@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP、セカンダリ タイル、ピン留め、クイック スタート、コード サンプル、例
 ms.localizationpriority: medium
 ms.openlocfilehash: 437d149e22f035fdd0cb1f5251a114b6dd4765e4
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4428806"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4464758"
 ---
 # <a name="pin-secondary-tiles"></a><span data-ttu-id="bfee5-103">セカンダリ タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="bfee5-103">Pin secondary tiles</span></span>
 

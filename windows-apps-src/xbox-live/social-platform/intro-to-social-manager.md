@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e022a2d2cdc9eb73877cafaa05d7b55c7e79c744
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4425687"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4465341"
 ---
 # <a name="introduction-to-social-manager"></a><span data-ttu-id="45d7e-104">Social Manager の概要</span><span class="sxs-lookup"><span data-stu-id="45d7e-104">Introduction to Social Manager</span></span>
 

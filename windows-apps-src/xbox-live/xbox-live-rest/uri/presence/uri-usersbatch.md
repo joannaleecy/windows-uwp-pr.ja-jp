@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a4c7f178d729e1e35a7e9bec922a7f969324322
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4421977"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4463663"
 ---
 # <a name="usersbatch"></a><span data-ttu-id="d3692-104">/users/batch</span><span class="sxs-lookup"><span data-stu-id="d3692-104">/users/batch</span></span>
 <span data-ttu-id="d3692-105">ユーザーのバッチのプレゼンスをアクセスします。</span><span class="sxs-lookup"><span data-stu-id="d3692-105">Access presence for a batch of users.</span></span> <span data-ttu-id="d3692-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="d3692-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>

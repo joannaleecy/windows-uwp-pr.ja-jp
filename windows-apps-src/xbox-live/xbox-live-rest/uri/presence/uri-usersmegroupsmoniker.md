@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ce98786b9ef3702ae0aa1208cb04a9bd530a938
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4421665"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4465128"
 ---
 # <a name="usersmegroupsmoniker"></a><span data-ttu-id="5d607-104">/users/me/groups/{moniker}</span><span class="sxs-lookup"><span data-stu-id="5d607-104">/users/me/groups/{moniker}</span></span>
 <span data-ttu-id="5d607-105">[グループの PresenceRecord にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="5d607-105">Accesses the PresenceRecord for my group.</span></span> <span data-ttu-id="5d607-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5d607-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>

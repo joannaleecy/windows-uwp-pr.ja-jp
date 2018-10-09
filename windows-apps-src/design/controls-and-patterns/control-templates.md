@@ -16,11 +16,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ae344e9f10c5d1dbfd530950851e402da4bc2a0d
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4429519"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4465190"
 ---
 # <a name="control-templates"></a><span data-ttu-id="9f4c3-103">コントロール テンプレート</span><span class="sxs-lookup"><span data-stu-id="9f4c3-103">Control templates</span></span>
 

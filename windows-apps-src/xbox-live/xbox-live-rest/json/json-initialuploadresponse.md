@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a643775f835a87b4c1287b0954f698c4c987c10
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4422662"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4463179"
 ---
 # <a name="initialuploadresponse-json"></a><span data-ttu-id="ad78a-104">InitialUploadResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="ad78a-104">InitialUploadResponse (JSON)</span></span>
  

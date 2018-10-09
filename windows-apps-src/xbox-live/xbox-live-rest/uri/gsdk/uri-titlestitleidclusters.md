@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fa44c721c4dffc318270a563e0686318ce80d437
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4416924"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4465177"
 ---
 # <a name="titlestitleidclusters"></a><span data-ttu-id="69ed8-104">/titles/{titleId}/clusters</span><span class="sxs-lookup"><span data-stu-id="69ed8-104">/titles/{titleId}/clusters</span></span>
 <span data-ttu-id="69ed8-105">により、クライアントは、タイトルの Xbox Live Compute サーバー インスタンスを作成する URI。</span><span class="sxs-lookup"><span data-stu-id="69ed8-105">URI that allows a client to create an Xbox Live Compute server instance for a title.</span></span> <span data-ttu-id="69ed8-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="69ed8-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>

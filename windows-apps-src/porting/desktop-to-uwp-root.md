@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.openlocfilehash: e11bae84c7cb88ef89f8b627cc2109fc56e43163
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4415569"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4462361"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a><span data-ttu-id="d8fb0-103">デスクトップ アプリケーションをパッケージ化 (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="d8fb0-103">Package desktop applications (Desktop Bridge)</span></span>
 
