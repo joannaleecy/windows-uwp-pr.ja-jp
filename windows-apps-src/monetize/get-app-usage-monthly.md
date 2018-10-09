@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, 使用状況
 ms.localizationpriority: medium
 ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389848"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4426059"
 ---
 # <a name="get-monthly-app-usage"></a>アプリの使用状況 (月単位) の取得
 
@@ -93,11 +93,11 @@ Authorization: Bearer <your access token>
 | deviceType                | string  | 次の文字列のいずれかを指定する使用状況が発生したデバイスの種類。<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablet**</li><li>**IoT**</li><li>**Server**</li><li>**Holographic**</li><li>**Unknown**</li></ul>                                                                                                                           |
 | subscriptionName          | string  | Xbox Game Pass を通じて使用量があったかどうかを示します。                                              |
 | monthlySessionCount       | long    | その月の間のユーザー セッションの数です。                                              |
-| engagementDurationMinutes | double  | ユーザーが積極的に個別のアプリを起動したときに始まり期間によって測定アプリ (プロセスが開始) を使用して終了 (プロセスの終了) または後に一定の期間の終了位置分です。                               |
-| monthlyActiveUsers        | long    | アプリをその月を使っているユーザーの数。                                           |
-| monthlyActiveDevices      | long    | 一定の期間後または時間、アプリを起動したときに始まり (プロセスが開始) の個別の期間のアプリを実行していると、終了 (プロセスの終了) を終了するデバイスの数。                                                        |
+| engagementDurationMinutes | double  | ユーザーがアクティブに個別のアプリを起動したときに始まり、時間の期間で測定されたアプリ (プロセスが開始) を使用してと終了 (プロセスの終了) または後に一定の期間の終了位置分。                               |
+| monthlyActiveUsers        | long    | アプリがその月を使ってユーザーの数。                                           |
+| monthlyActiveDevices      | long    | 一定の期間後または時間、アプリを起動したときに始まり (プロセスが開始) の個別の期間のアプリを実行していると、終了 (プロセスの終了) したときに終了のデバイスの数。                                                        |
 | monthlyNewUsers           | long    | その月の初めてのアプリを使用したユーザーの数。                    |
-| averageDailyActiveUsers   | double  | 日常的に、アプリを使っているユーザーの平均数です。                             |
+| averageDailyActiveUsers   | double  | 毎日のように、アプリを使っているユーザーの平均数です。                             |
 | averageDailyActiveDevices | double  | 日常的にすべてのユーザーがアプリを操作するために使用するデバイスの平均数です。 |
 
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a43f3b4c5684d93ea6986c4d1f1e4dae46c1a959
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392171"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4426356"
 ---
 # <a name="guidance-for-app-package-management"></a>アプリ パッケージ管理のガイダンス
 
@@ -77,7 +77,7 @@ ms.locfileid: "4392171"
 |--------------------------------------|----------------------------------------------|
 | Windows 10 (ユニバーサル デバイス ファミリ) | Windows 10 (すべてのデバイス ファミリ)             |
 
-アプリ例 4 では、Windows 10 を実行しているデバイスではアプリを入手することができますが、以前の OS バージョンのユーザーは利用できません。 UWP パッケージがユニバーサル デバイス ファミリを対象としているために、任意の Windows 10 デバイス ([デバイス ファミリの利用可否選択](device-family-availability.md)) ごとに利用可能ななります。
+アプリ例 4 では、Windows 10 を実行しているデバイスではアプリを入手することができますが、以前の OS バージョンのユーザーは利用できません。 UWP パッケージがユニバーサル デバイス ファミリを対象としているために、すべての Windows 10 デバイス (ごとに、[デバイス ファミリの利用可否選択](device-family-availability.md)) を利用可能ななります。
 
 
 ## <a name="removing-an-app-from-the-store"></a>アプリをストアから削除する
@@ -99,7 +99,7 @@ ms.locfileid: "4392171"
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>これまでサポートされていたデバイス ファミリ用のパッケージを削除する
 
-場合は、特定の[デバイス ファミリ](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)アプリ以前サポートされている、ように求められます**パッケージ**] ページで、変更を保存する前に、意図は、このことを確認するためのすべてのパッケージを削除します。
+場合は、特定の[デバイス ファミリ](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)アプリ以前サポートされている、ように求められますことを確認するこれによって、意図**パッケージ**] ページで、変更を保存する前にすべてのパッケージを削除します。
 
 すべてのアプリが以前にサポートされているデバイス ファミリで実行できるパッケージを削除する申請を公開するときは、新しいユーザーはそのデバイス ファミリでアプリを入手できません。 そのデバイス ファミリ向けのパッケージを提供するための別の更新プログラムは、後でいつでも公開することができます。
 
@@ -110,11 +110,11 @@ ms.locfileid: "4392171"
 
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>以前に公開したアプリに Windows 10 用のパッケージを追加する
 
-のみのパッケージを Windows に含まれてストアでアプリがあるかどうかは 8.x や Windows Phone 8.x し、Windows 10 向けアプリの更新プログラム、新しい申請を作成および[パッケージ](upload-app-packages.md)手順中に、UWP の .msixupload または .appxupload パッケージを追加します。 アプリは、認定プロセスが、UWP パッケージは Windows 10 のユーザーが新規取得用に利用可能なあります。
+For Windows パッケージのみ含まれているストアにアプリがあるかどうかは 8.x や Windows Phone 8.x をし、Windows 10 向けアプリの更新プログラム、新しい申請を作成および[パッケージ](upload-app-packages.md)手順中に、UWP の .msixupload または .appxupload パッケージを追加します。 アプリが認定プロセスが、UWP パッケージは Windows 10 のユーザーが新規取得用に利用可能なあります。
 
 > [!NOTE]
 > Windows 10 のユーザーが UWP パッケージを入手した場合、以前の OS バージョン用のパッケージを使うようにそのユーザーをロールバックすることはできません。 
 
-使用した Windows 8 や Windows 8.1、Windows Phone 8.1 のパッケージよりも高い Windows 10 パッケージのバージョン番号である必要がありますに注意してください。 詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。
+使用した Windows 8、Windows 8.1、または Windows Phone 8.1 のパッケージよりも高い Windows 10 パッケージのバージョン番号である必要がありますに注意してください。 詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。
 
 Microsoft Store 用の UWP アプリのパッケージ化について詳しくは、「[アプリのパッケージ化](../packaging/index.md)」をご覧ください。

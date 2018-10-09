@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c365760f68aa7c87422e747606175ae9a12f0574
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4384459"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4425499"
 ---
 # <a name="presencerecord-json"></a>PresenceRecord (JSON)
-1 人のユーザーのオンライン プレゼンスに関するデータです。
+1 人のユーザーのオンライン プレゼンスに関するデータ。
 <a id="ID4EN"></a>
 
 
@@ -32,7 +32,7 @@ PresenceRecord オブジェクトには、次の仕様があります。
 | xuid| string| Xbox ユーザー ID (XUID) 対象ユーザーのします。 このユーザーはプレゼンス データが提供されます。|
 | devices| [DeviceRecord](json-devicerecord.md)の配列| ユーザーのデバイスのレコードの一覧です。|
 | 状態| string| Xbox live ユーザーのアクティビティ。 設定可能な値: <ul><li>オンライン: ユーザーは、少なくとも 1 つのデバイスのレコードを持っています。</li><li>離れた: ユーザーが Xbox LIVE にサインインした任意のタイトルでアクティブではありません。</li><li>オフライン: ユーザーは任意のデバイスに存在するではありません。</li></ul> | 
-| lastSeen| [LastSeenRecord](json-lastseenrecord.md)| 最後に検出された情報を利用可能なは、ユーザーには、有効な DeviceRecords があるない場合だけです。 オブジェクトは、キャッシュから削除された場合、データが返されません、永続的なストアがないためです。|
+| lastSeen| [LastSeenRecord](json-lastseenrecord.md)| 最後に見られる情報は、ユーザーの有効な DeviceRecords があるない場合のみ利用できます。 オブジェクトは、キャッシュから削除された場合、データが返されません、永続的なストアがないためです。|
 
 <a id="ID4E2C"></a>
 

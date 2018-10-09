@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4384788"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4423661"
 ---
 # <a name="controls-by-function"></a>機能別コントロール
 
@@ -30,7 +30,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリがインストールされている場合は、ここをクリックして<a href="xamlcontrolsgallery:/item/NavigationView">、アプリを開き NavigationView の動作を参照してください。</a> </p>
+    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリがインストールされた場合は、ここをクリックして<a href="xamlcontrolsgallery:/item/NavigationView">アプリを開き NavigationView の動作をご覧ください。</a> </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
@@ -299,7 +299,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 リファレンス: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-デザインと使い方:[ダイアログ](dialogs-and-flyouts/dialogs.md) 
+デザインと使い方:[ダイアログ ボックス](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>ヒント
 要素についての情報を表示するポップアップ ウィンドウ。 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d57a6620115d5f009c054210a50548c3da7e47d5
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389821"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4424985"
 ---
 # <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
-ユーザーのプロファイルを取得またはユーザー, People モニカーをサポートします。 これらの Uri のドメインが`profile.xboxlive.com`します。
+ユーザーのプロファイルを取得または People モニカーを持つのユーザーをサポートします。 これらの Uri のドメインが`profile.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EKB)
@@ -32,7 +32,7 @@ ms.locfileid: "4389821"
  
 ## <a name="remarks"></a>注釈
  
-**userList**と**ユーザー Id**は、相互に排他的なパラメーターです。 いずれかまたは両方が指定されている場合は、 **BadRequest**をもう一度表示されます。 **userList**は、複数の名前付きリストが要求に便利なシナリオで将来の配列です。 **ユーザー Id**は Xuid の 10 進数の文字列の構成 - JSON は 64 ビットの符号なし整数をシリアル化するのには不適切です。 最後に、Xbox One での設定の名前は、通常のわかりやすい名前ではなく 64 ビットの符号なし整数または**XONLINE_PROFILE_ASDF**などあいまいな定数の設定になります。
+**userList**と**ユーザー Id**は、相互に排他的なパラメーターです。 いずれかまたは両方が指定されている場合は、戻る**BadRequest**が表示されます。 **userList**は、複数の名前付きリストが要求に便利なシナリオで将来の配列です。 **ユーザー Id**は Xuid の 10 進数の文字列の構成 - JSON は 64 ビットの符号なし整数をシリアル化するのには不適切です。 最後に、Xbox One での設定の名前は、通常のわかりやすい名前ではなく 64 ビットの符号なし整数またはあいまいな定数**XONLINE_PROFILE_ASDF**などの設定になります。
   
 <a id="ID4EKB"></a>
 
@@ -42,7 +42,7 @@ ms.locfileid: "4389821"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | ユーザー Id| string| 'Xuid(12345)'、'gt(myGamertag)' の 'me' またはいずれかを指定できます。| 
-| userList| string| 名前付きの設定を取得するユーザーの一覧。 現時点では、ユーザーは、サポートされている唯一の一覧です。| 
+| userList| string| 名前付きの設定を取得するユーザーの一覧。 現時点では、ユーザーは、サポートされている唯一の一覧を示します。| 
   
 <a id="ID4EVB"></a>
 
@@ -51,7 +51,7 @@ ms.locfileid: "4389821"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| settings| string| 設定名のコンマ区切りリスト。| 
+| settings| string| 設定名のコンマ区切りの一覧。| 
   
 <a id="ID4EQC"></a>
 

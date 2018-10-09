@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a643775f835a87b4c1287b0954f698c4c987c10
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4386195"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4422662"
 ---
 # <a name="initialuploadresponse-json"></a>InitialUploadResponse (JSON)
  
@@ -31,8 +31,8 @@ InitialUploadResponse オブジェクトには、次の仕様があります。
 | --- | --- | --- | 
 | <b>gameClipId</b>| string| アップロードのデータ要求に割り当てられている ID。| 
 | <b>uploadUri</b>| URI| 場所は、ゲーム クリップをアップロードする必要があります。| 
-| <b>largeThumbnailUri</b>| URI| 省略可能。 場所は、大きなサムネイルをアップロードする必要があります。 このフィールドの有無については、(アップロードが指定されているときになります) <b>InitialUploadRequest</b> [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)の値によって決まります。| 
-| <b>smallThumbnailUri</b>| URI| 省略可能。 場所は、小さなサムネイルをアップロードする必要があります。 このフィールドの有無については、(アップロードが指定されているときになります) <b>InitialUploadRequest</b> [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)の値によって決まります。| 
+| <b>largeThumbnailUri</b>| URI| 省略可能。 場所は、大きなサムネイルをアップロードする必要があります。 このフィールドの有無については、(存在するは、アップロードが指定されているときになります) <b>InitialUploadRequest</b> [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)の値によって決まります。| 
+| <b>smallThumbnailUri</b>| URI| 省略可能。 小さなサムネイルのアップロード先の場所です。 このフィールドの有無については、(存在するは、アップロードが指定されているときになります) <b>InitialUploadRequest</b> [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)の値によって決まります。| 
   
 <a id="ID4EYC"></a>
 

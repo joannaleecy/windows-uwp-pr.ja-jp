@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4393690"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4445551"
 ---
 # <a name="custom-dependency-properties"></a>カスタム依存関係プロパティ
 
@@ -170,14 +170,14 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> C++/cli CX コード, 理由は、プライベート フィールドがある理由と、サーフェスの[**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)パブリック読み取り専用プロパティは依存関係プロパティを使用している他の呼び出し元を必要とするプロパティ システム ユーティリティ Api も使用できるように、公開する識別子です。 識別子をプライベートのままにした場合、他のユーザーはこれらのユーティリティ API を使うことができません。 このような API とシナリオの例には、[**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)、任意の [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)、および [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836) があります。 Windows ランタイム メタデータの規則ではパブリック フィールドが許可されないため、これにパブリック フィールドを使うことはできません。
+> C++/cli CX コード, 理由は、プライベート フィールドがある理由と、サーフェスの[**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)パブリック読み取り専用プロパティは依存関係プロパティを使用している他の呼び出し元を必要とするプロパティ システム ユーティリティ Api も使用できるようにします公開する識別子です。 識別子をプライベートのままにした場合、他のユーザーはこれらのユーティリティ API を使うことができません。 このような API とシナリオの例には、[**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)、任意の [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)、および [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836) があります。 Windows ランタイム メタデータの規則ではパブリック フィールドが許可されないため、これにパブリック フィールドを使うことはできません。
 
 ## <a name="dependency-property-name-conventions"></a>依存関係プロパティの命名規則
 
 依存関係プロパティには命名規則があります。例外的な状況を除き、これに従ってください。 依存関係プロパティ自体には、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の最初のパラメーターとして与えられる基本的な名前 (前の例では "Label") があります。 名前は登録の種類ごとに一意である必要があり、一意性の要件は継承されるメンバーにも適用されます。 基本型を通じて継承された依存関係プロパティは、既に登録型の一部と見なされます。継承されたプロパティの名前を再び登録することはできません。
 
 > [!WARNING]
-> 任意の文字列識別子は、ここで指定した名前では任意の言語のプログラミングで有効に、通常する XAML でも、依存関係プロパティを設定することができます。 XAML で設定するには、選ぶプロパティが有効な XAML 名である必要があります。 詳しくは、「[XAML の概要](xaml-overview.md)」をご覧ください。
+> 任意の文字列識別子は、ここで指定した名前では、任意の言語のプログラミングでは有効なを通常するすぎる XAML で依存関係プロパティを設定することができます。 XAML で設定するには、選ぶプロパティが有効な XAML 名である必要があります。 詳しくは、「[XAML の概要](xaml-overview.md)」をご覧ください。
 
 識別子プロパティを作る場合は、登録したプロパティの名前にサフィックス "Property" を結合します ("LabelProperty" など)。 このプロパティは依存関係プロパティの識別子であり、独自のプロパティ ラッパーで呼び出す [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) と [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) の入力として使われます。 プロパティ システムや、[ **{x:bind}:**](x-bind-markup-extension.md) などの他の XAML プロセッサによっても使われます。
 

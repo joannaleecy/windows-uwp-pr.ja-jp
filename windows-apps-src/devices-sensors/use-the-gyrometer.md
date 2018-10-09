@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 42b0d2ccb2eb00c9b4ca1e69d15ce12ca08d9f89
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 25be2cfab15378f14aed61dcaae1e7e85159f36e
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958687"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4423236"
 ---
 # <a name="use-the-gyrometer"></a>ジャイロメーターの使用
 
@@ -28,8 +28,6 @@ ms.locfileid: "958687"
 **サンプル**
 
 -   より完全な実装については、[ジャイロメーターのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer)をご覧ください。
-
-\[一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
 ジャイロメーターを使ってユーザーの動きの変化を検出する方法を説明します。
 

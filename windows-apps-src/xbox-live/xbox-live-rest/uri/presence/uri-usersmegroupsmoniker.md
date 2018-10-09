@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ce98786b9ef3702ae0aa1208cb04a9bd530a938
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4393134"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4421665"
 ---
 # <a name="usersmegroupsmoniker"></a>/users/me/groups/{moniker}
 [グループの PresenceRecord にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
@@ -30,7 +30,7 @@ ms.locfileid: "4393134"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるだけモニカーでは、'P' の首都を"People"でです。| 
+| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるだけモニカーでは、大文字の 'P'"People"でです。| 
   
 <a id="ID4ERB"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "4393134"
 
 [GET (/users/me/groups/{moniker} )](uri-usersmegroupsmonikerget.md)
 
-&nbsp;&nbsp;グループの PresenceRecord を取得します。
+&nbsp;&nbsp;自分のグループの PresenceRecord を取得します。
  
 <a id="ID4E2B"></a>
 

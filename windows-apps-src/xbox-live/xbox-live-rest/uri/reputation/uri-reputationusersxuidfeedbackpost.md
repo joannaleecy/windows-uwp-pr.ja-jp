@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb56b51e2d558b2a4ef05d117244d464756e6ec
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4388290"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4423958"
 ---
 # <a name="post-usersxuidxuidfeedback"></a>POST (/users/xuid({xuid})/feedback)
 シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
@@ -36,7 +36,7 @@ ms.locfileid: "4388290"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| ulong| Xbox ユーザー ID (XUID) のユーザーを報告します。| 
+| xuid| ulong| Xbox ユーザー ID (XUID) の報告されているユーザー。| 
   
 <a id="ID4EEB"></a>
 
@@ -45,8 +45,8 @@ ms.locfileid: "4388290"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
+| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
   
 <a id="ID4ENC"></a>
 
@@ -96,7 +96,7 @@ ms.locfileid: "4388290"
  
 ## <a name="required-headers"></a>必要なヘッダー
  
-Xbox Live サービス要求を行うときは、次のヘッダーを必要があります。
+次のヘッダーは、Xbox Live サービス要求を行ったとき必要があります。
  
 | <b>ヘッダー</b>| <b>値</b>| <b>Deacription</b>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -111,14 +111,14 @@ application/json|
  
 ## <a name="authorization"></a>Authorization
  
-要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは、403 Forbidden コードを返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていないコードを返します。
+要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは、403 Forbidden コードを返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていないコードを返します。
   
 <a id="ID4EEG"></a>
 
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 

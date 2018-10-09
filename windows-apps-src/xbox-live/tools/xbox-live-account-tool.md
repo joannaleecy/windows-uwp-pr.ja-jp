@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, テスト, テスト アカウント
 ms.localizationpriority: medium
 ms.openlocfilehash: 55e2d46f59a8ecd2d8bac77e8ce61834a4249a88
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4386409"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4421241"
 ---
 # <a name="xbox-live-account-tool"></a>Xbox Live Account Tool
 
@@ -25,7 +25,7 @@ Xbox Live Account Tool は、タイトル デベロッパーが既存のデベ�
 ## <a name="what-can-i-do-with-xbox-live-account-tool"></a>Xbox Live Account Tool の機能
 以下が可能です。
   1. ユーザーのプロフィール設定、XUID、アクティブな権限を表示する
-  2. フォロワーのリストをテキスト ファイルまたは Xbox 開発者向けプラットフォーム csv からユーザーのソーシャル グラフに追加します。
+  2. フォロワーのリストをテキスト ファイルまたは、Xbox 開発者向けプラットフォーム csv からユーザーのソーシャル グラフに追加します。
   3. ユーザーのフレンド リストを管理する: フォローしているユーザーのお気に入り登録、お気に入り解除、ブロック、ブロック解除、およびそのユーザーにフォローされているかどうかの確認
   4. 開発ユーザーの評判を変更する (および、未処理の評判統計値をすぐに表示する)
   5. ユーザーのゲーマータグを変更する

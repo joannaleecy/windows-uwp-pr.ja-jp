@@ -9,16 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML、コントロール、バインド、コレクション
 ms.localizationpriority: medium
-ms.openlocfilehash: bdae6ca018670109120c85945d78806158b6c1b7
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.openlocfilehash: 22594c1cfc503b28163d9fca1f46a6861a4f59ad
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4391662"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4445587"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML アイテム コントロール: C++/WinRT コレクションへのバインド
 
-XAML アイテム コントロールに効果的にバインドできるコレクションは、*監視可能な*コレクションと呼ばれます。 この概念は、*オブザーバー パターン*と呼ばれるソフトウェアの設計パターンに基づいています。 このトピックで監視可能なコレクションを実装する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、XAML にバインドする方法をコントロールの項目とします。
+XAML アイテム コントロールに効果的にバインドできるコレクションは、*監視可能な*コレクションと呼ばれます。 この概念は、*オブザーバー パターン*と呼ばれるソフトウェアの設計パターンに基づいています。 このトピックで監視可能なコレクションを実装する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、そして項目にコントロールを XAML にバインドする方法。
 
 このチュートリアルでは、「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」で作成したプロジェクトをビルドし、そのトピックで説明する概念に追加します。
 
@@ -33,10 +33,10 @@ XAML アイテム コントロールに効果的にバインドできるコレ�
 
 ## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>**BookSkus** コレクションを **BookstoreViewModel** に追加する
 
-「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」では、**BookSku** 型のプロパティをメイン ビュー モデルに追加しました。 この手順で使います[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)ファクトリ関数テンプレートを同じビュー モデルで**BookSku**の監視可能なコレクションを実装できるようにします。
+「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」では、**BookSku** 型のプロパティをメイン ビュー モデルに追加しました。 この手順でテンプレートを使用します、 [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)ファクトリ関数を同じビュー モデルの**BookSku**の監視可能なコレクションを実装できるようにします。
 
 > [!NOTE]
-> 場合する Windows SDK バージョン 10.0.17763.0 (Windows 10、バージョン 1809) をインストールしていないまたは後で、し、表示[、Windows SDK の以前のバージョンがある場合](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) **winrt::single_ の代わりに使用できる、監視可能なベクター テンプレートの一覧についてthreaded_observable_vector**します。
+> 場合する Windows SDK バージョン 10.0.17763.0 (Windows 10、バージョン 1809) をインストールしていないまたは後で、その後表示[Windows SDK の以前のバージョンがある場合](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) **winrt::single_ の代わりに使用できる、監視可能なベクター テンプレートの一覧についてはthreaded_observable_vector**します。
 
 `BookstoreViewModel.idl` で新しいプロパティを宣言します。
 
@@ -46,20 +46,18 @@ XAML アイテム コントロールに効果的にバインドできるコレ�
 runtimeclass BookstoreViewModel
 {
     BookSku BookSku{ get; };
-    Windows.Foundation.Collections.IVector<IInspectable> BookSkus{ get; };
+    Windows.Foundation.Collections.IObservableVector<IInspectable> BookSkus{ get; };
 }
 ...
 ```
 
 > [!IMPORTANT]
-> 上記の MIDL 3.0 一覧で [ **BookSkus**プロパティの型が[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)の注意してください。 このトピックの次のセクションでは**BookSkus**に[**リスト ボックス**](/uwp/api/windows.ui.xaml.controls.listbox)の項目のソース バインドするされます。 リスト ボックスは、項目コントロールと[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)プロパティを正しく設定するには、型の**IVector** **IInspectable**、または[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)など、相互運用性の種類の値に設定する必要があります。
+> 上記の MIDL 3.0 一覧で [ **BookSkus**プロパティの型が[**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)の[**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_)注意してください。 このトピックの次のセクションでは**BookSkus**に[**リスト ボックス**](/uwp/api/windows.ui.xaml.controls.listbox)の項目のソース バインドするされます。 リスト ボックスは、項目コントロールと[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)プロパティを正しく設定する必要がある**IObservableVector**型の値に (または**IVector**) を設定**IInspectable**、または[**などの種類の相互運用性のIBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)します。
 
 保存してビルドします。 `Generated Files` フォルダーの `BookstoreViewModel.h` と `BookstoreViewModel.cpp` からアクセサー スタブをコピーし、それらを実装します。
 
 ```cppwinrt
 // BookstoreViewModel.h
-...
-#include "single_threaded_observable_vector.h"
 ...
 struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
 {
@@ -67,11 +65,11 @@ struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
 
     Bookstore::BookSku BookSku();
 
-    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookSkus();
+    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookSkus();
 
 private:
     Bookstore::BookSku m_bookSku{ nullptr };
-    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> m_bookSkus;
+    Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> m_bookSkus;
 };
 ...
 ```
@@ -81,7 +79,7 @@ private:
 ...
 BookstoreViewModel::BookstoreViewModel()
 {
-    m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
+    m_bookSku = winrt::make<Bookstore::implementation::BookSku>(L"Atticus");
     m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
     m_bookSkus.Append(m_bookSku);
 }
@@ -91,7 +89,7 @@ Bookstore::BookSku BookstoreViewModel::BookSku()
     return m_bookSku;
 }
 
-Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
+Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
 {
     return m_bookSkus;
 }
@@ -119,7 +117,7 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Boo
 void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 {
     MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
-    MainViewModel().BookSkus().Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
+    MainViewModel().BookSkus().Append(winrt::make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 }
 ...
 ```

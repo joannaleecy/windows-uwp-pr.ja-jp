@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 03a96c69415a8ad13bdafaa821df66a919296f61
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392110"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4425582"
 ---
 # <a name="people-uris"></a>People URI
  
-このセクションでは、 *people*システムの Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、 *people*システム用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
  
 Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームのみでは、このサービスを使用できます。
  
@@ -41,7 +41,7 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/users/{ownerId}/people/xuids](uri-usersowneridpeoplexuids.md)
 
-&nbsp;&nbsp;XUID によってユーザーを呼び出し元のユーザーのコレクションからアクセスします。
+&nbsp;&nbsp;XUID によって people を呼び出し元のユーザーのコレクションからアクセスします。
 
 [/users/{ownerId}/summary](uri-usersowneridsummary.md)
 

@@ -15,11 +15,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4393902"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4427875"
 ---
 # <a name="attached-properties-overview"></a>添付プロパティの概要
 
@@ -129,7 +129,7 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 > [!WARNING]
 > Windows ランタイム XAML 実装の既存の制限は、カスタム添付プロパティをアニメーション化することはできません。
 
-- 添付プロパティをリソース ファイルから **x:Uid** へのリソース参照のターゲット プロパティとして指定するには、コードスタイルの完全に修飾された **using:** 宣言を角かっこ ("\[\]") で囲む特別な構文を使って、故意にスコープ ブレークを作成します。 たとえば、要素が存在すると想定して`<TextBlock x:Uid="Title" />`、そのインスタンス**Canvas.Top**値をターゲットとするリソース ファイル内のリソース キーは"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"です。 リソース ファイルと XAML について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
+- 添付プロパティをリソース ファイルから **x:Uid** へのリソース参照のターゲット プロパティとして指定するには、コードスタイルの完全に修飾された **using:** 宣言を角かっこ ("\[\]") で囲む特別な構文を使って、故意にスコープ ブレークを作成します。 たとえば、要素が存在すると想定して`<TextBlock x:Uid="Title" />`、そのインスタンス**Canvas.Top**値をターゲットとするリソース ファイル内のリソース キーは"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top"。 リソース ファイルと XAML について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 

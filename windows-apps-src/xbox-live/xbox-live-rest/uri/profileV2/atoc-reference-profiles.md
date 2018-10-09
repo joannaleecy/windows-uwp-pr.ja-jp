@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: bcae059476cd5e55d95cbbbc7c4b479c359e46fe
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4390201"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4424006"
 ---
 # <a name="profiles-uris"></a>プロフィール URI
  
-このセクションでは、*プロファイル*用の Xbox Live サービスからプロファイル ユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*プロファイル*の Xbox Live サービスからプロファイル ユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
  
 のみ Windows 8 で実行されるゲームでは、Xbox 360、または Windows Phone デバイスこのサービスを使用します。
  
@@ -37,7 +37,7 @@ ms.locfileid: "4390201"
 
 [/users/{userId}/profile/settings/people/{userList}?settings={settings}](uri-usersuseridprofilesettingspeopleuserlist.md)
 
-&nbsp;&nbsp;ユーザーのプロファイルへのアクセスやユーザー, People モニカーをサポートします。
+&nbsp;&nbsp;People モニカー サポートでのユーザーのプロファイルにアクセスします。
  
 <a id="ID4EYB"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7070d829000821cb48d8fcbaa4fde1d6f393b16a
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4388222"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4424556"
 ---
 # <a name="user-json"></a>User (JSON)
 ユーザーのランキング データが含まれています。 
@@ -29,7 +29,7 @@ ms.locfileid: "4388222"
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| ゲーマータグ| string| (最大で 15 文字の) プレイヤーのゲーマータグです。 クライアントは、プレイヤーを識別するため、UI でこの値を使用する必要があります。| 
+| ゲーマータグ| string| (最大で 15 文字の) プレイヤーのゲーマータグです。 クライアントは、プレイヤーを識別するために、UI でこの値を使用する必要があります。| 
 | ランク| 32 ビット符号付き整数| ランキング データを要求しているユーザーを基準としたユーザーのランク。| 
 | rating| string| ユーザーの評価です。| 
 | xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) ユーザーのします。| 

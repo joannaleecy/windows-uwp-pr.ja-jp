@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d1158832623b88efb0a614680f0c0fb579f79d4
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4393010"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4422826"
 ---
 # <a name="richpresencerequest-json"></a>RichPresenceRequest (JSON)
 リッチ プレゼンス情報の使用に関する情報を要求します。 
@@ -30,7 +30,7 @@ RichPresenceRequest オブジェクトには、次の仕様があります。
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | id| string| 使用するリッチ プレゼンス文字列の<b>フレンドリ名</b>。| 
-| scid| string| リッチ プレゼンス文字列を定義する場所を示す Scid です。| 
+| scid| string| リッチ プレゼンス文字列が定義されているを示す Scid です。| 
 | パラメーター| 文字列の配列| リッチ プレゼンス文字列を完了するための<b>フレンドリ名</b>の文字列の配列です。 列挙フレンドリ名を指定する必要があります、統計ではありません。この空のまま、以前の値が削除されます。| 
   
 <a id="ID4EDC"></a>

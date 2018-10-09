@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392421"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4445653"
 ---
 # <a name="windows-app-certification-kit"></a>Windows アプリ認定キット
 
@@ -46,7 +46,7 @@ ms.locfileid: "4392421"
 
 3.  テストするアプリを入力するか選択したら **[次へ]** をクリックします。
 
-4.  次の画面からは、テストするアプリの種類に合ったテスト ワークフローが表示されます。 一覧でテストが淡色されている場合、お使いの環境にはそのテストが適用されません。 たとえば、Windows 7 で Windows 10 アプリをテストする場合、静的テストのみがワークフローに適用されます。 Microsoft Store がこのワークフローからすべてのテストを適用可能性がありますされることに注意してください。 実行するテストを選んで **[次へ]** をクリックします。
+4.  次の画面からは、テストするアプリの種類に合ったテスト ワークフローが表示されます。 一覧でテストが淡色されている場合、お使いの環境にはそのテストが適用されません。 たとえば、Windows 7 で Windows 10 アプリをテストする場合、静的テストのみがワークフローに適用されます。 Microsoft Store がこのワークフローからすべてのテストを適用可能性があることに注意してください。 実行するテストを選んで **[次へ]** をクリックします。
 
     Windows アプリ認定キットによってアプリの検証が開始されます。
 
@@ -90,7 +90,7 @@ ms.locfileid: "4392421"
 
 Windows アプリ認定キットで使用するパフォーマンス テストのしきい値は、低電力コンピューターのパフォーマンスに基づいて設定します。
 
-テストを実行するコンピューターの特性がテスト結果に影響することがあります。 調べるには、アプリのパフォーマンスが[Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を満たしているかどうか、お勧めします Intel Atom プロセッサ ベースのコンピューターと 1366 x 768 以上) の画面の解像度、回転式ハードなどの低電力コンピューターでアプリをテストします。(、ソリッド ステート ハード ドライブ) ではなくドライブです。
+テストを実行するコンピューターの特性がテスト結果に影響することがあります。 調べるには、アプリのパフォーマンスが[Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を満たしているかどうか、お勧めします Intel Atom プロセッサ ベースのコンピューターと 1366 x 768 以上) の画面の解像度、回転式ハードなどの低電力コンピューターでアプリをテストします。(ソリッド ステート ハード ドライブ) ではなくドライブです。
 
 低電力コンピューターの進化に伴い、パフォーマンスの特性が時間の経過と共に変化する可能性があります。 最新の[Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を参照し、アプリが最新のパフォーマンス要件に準拠しているかどうかを確認するには、Windows アプリ認定キットの最新バージョンでアプリをテストします。
 

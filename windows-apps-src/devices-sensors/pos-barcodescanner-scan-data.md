@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 0992ea54092063ba53f23871599905e58f1b456e
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4383828"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4422543"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>バーコード データの取得と理解
 
-バーコード スキャナーをセットアップした後は、もちろんをスキャンするデータを理解するための手段必要があります。 バーコードをスキャンする[DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived)イベントが発生します。 [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)は、このイベントをサブスクライブする必要があります。 **DataReceived**イベントは、バーコード データにアクセスするために使用できる[BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)オブジェクトを渡します。
+バーコード スキャナーをセットアップした後は、もちろんをスキャンするデータを理解するための手段必要があります。 バーコードをスキャンする[DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived)イベントが発生します。 [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)は、このイベントをサブスクライブする必要があります。 **DataReceived**イベントは、バーコード データにアクセスするために使用できる、 [BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)オブジェクトを渡します。
 
 ## <a name="subscribe-to-the-datareceived-event"></a>DataReceived イベントをサブスクライブします。
 
@@ -39,11 +39,11 @@ private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner send
 
 ## <a name="get-the-data"></a>データを取得します。
 
-**BarcodeScannerReport**したらにアクセスし、バーコード データを解析できます。 **BarcodeScannerReport**では、3 つのプロパティがあります。
+**BarcodeScannerReport**したらにアクセスし、バーコード データを解析できます。 **BarcodeScannerReport**には、3 つのプロパティがあります。
 
 * [ScanData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata): 完全な生のバーコード データ。
-* [ScanDataLabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel): バーコードがデコードのラベル、ヘッダー、チェックサム、およびその他の情報は含まれません。
-* [ScanDataType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype): バーコードがデコードされたラベルの種類。 使用可能な値は、 [BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)クラスで定義されます。
+* [ScanDataLabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel): ヘッダー、チェックサム、およびその他の情報が含まれていないデコードされたバーコード ラベル。
+* [ScanDataType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype): バーコードがデコードされたラベルの種類。 設定可能な値は、 [BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)クラスで定義されます。
 
 **ScanDataLabel**または**ScanDataType**のいずれかにアクセスする場合は、 **true**を[IsDecodeDataEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled)を設定する必要があります。
 
@@ -53,7 +53,7 @@ claimedBarcodeScanner.IsDecodeDataEnabled = true;
 
 ### <a name="get-the-scan-data-type"></a>スキャン データの種類を取得します。
 
-デコードされたバーコード ラベルの種類を取得するは非常に単純な&mdash; **ScanDataType**で[GetName](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)を呼び出すことだけです。
+デコードされたバーコード ラベルの種類を取得することは非常に単純な&mdash; **ScanDataType**で[GetName](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)を呼び出すことだけです。
 
 ```cs
 private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
@@ -64,7 +64,7 @@ private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
 
 ### <a name="get-the-scan-data-label"></a>スキャン データのラベルを取得します。
 
-デコードされたバーコード ラベルを取得するのには、いくつかことに注意する必要があります。 特定のデータ型のみでは、シンボル体系を文字列に変換できるし、 **ScanDataLabel**から utf-8 エンコードされた文字列を取得するバッファーを変換かどうかをまず確認する必要がありますのでエンコードのテキストが含まれます。
+デコードされたバーコード ラベルを取得するのには、いくつかことに注意する必要があるがあります。 特定のデータ型のみはエンコードされたテキストを含めるためかどうか、シンボルは、文字列に変換することができ、utf-8 エンコードされた文字列を**ScanDataLabel**から入手して、バッファーを変換を最初に確認する必要があります。
 
 ```cs
 private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
@@ -104,7 +104,7 @@ private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
 
 ### <a name="get-the-raw-scan-data"></a>スキャンの生データを取得します。
 
-"完全"を取得するには、バーコードから生データだけ変換、バッファーの文字列に**ScanData**から取得しますします。
+"完全"を取得するには、バーコードから生データ単に変換、バッファーの文字列に**ScanData**から取得しますします。
 
 ```cs
 private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
@@ -123,17 +123,17 @@ private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
 }
 ```
 
-これらのデータには、一般に、スキャナーから配信される、形式です。 メッセージのヘッダーとトレーラーは削除されます。 ただし、スキャナーに固有のする可能性がありますが、アプリケーションに関する有用な情報が含まれていないため。
+これらのデータには、一般に、スキャナーから配布の形式です。 メッセージのヘッダーとトレーラーの情報削除されます。 ただし、アプリケーションに役立つ情報が含まれていないされ、スキャナーに固有のする可能性があります。
 
 一般的なヘッダー情報は、(STX 文字の場合) などのプレフィックス文字です。 一般的なトレーラー情報は、(ETX または変更リクエストの文字では) などの終端文字とブロック チェック文字場合は、スキャナーでいずれかが生成されます。
 
-いずれかがスキャナーで返された場合、このプロパティはシンボル体系の文字を含める必要があります (ため **、** たとえば、UPC A)。 ラベルに存在する場合も、チェック桁の数字を含める必要があり、スキャナーで返されます。 (シンボル体系文字とチェック ディジットの両方がありますか、できない可能性がある存在する場合は、スキャナーの構成によってに注意してください。 スキャナーが戻す場合は、表示しますが、生成またはされませんこれらが存在しない場合は、それらを計算します)。
+このプロパティはいずれかがスキャナーで返された場合のシンボル体系の文字を含める必要があります (の**A**たとえば、UPC A)。 ラベルに存在する場合は、チェック桁の数字を含める必要があり、スキャナーで返されます。 (するシンボル体系文字とチェック ディジットの両方かできない可能性がある存在する場合は、スキャナーの構成によってに注意してください。 スキャナーが返されますしている場合、表示しますが、生成またはされませんこれらが存在しない場合は、それらを計算します)。
 
-補足的なバーコードでは、いくつかの商品をマークすることがあります。 このバーコードは、通常、メインのバーコードの右側に配置し、情報の追加 2 または 5 文字で構成されます。 スキャナーは、商品を読み取る場合は、バーコード メインと補足の両方にはが含まれていると補足的な文字は、メインの文字に追加されます。 結果は、アプリケーションを 1 つのラベルとに配信されます。 (メモ、スキャナーがまたは補足的なコードの読み取りを無効にする構成をサポート可能性があります)。
+補足的なバーコードでは、いくつかの商品をマークすることがあります。 このバーコードは、通常、メインのバーコードの右側に配置し、情報の追加 2 または 5 文字で構成されます。 スキャナーが商品を読み取る場合は、バーコード メインと補助の両方にはが含まれていると補足的な文字は、メインの文字に追加されます。 結果は、アプリケーションを 1 つのラベルとに配信されます。 (メモ スキャナーがまたは補足的なコードの読み取り値を無効にする構成をサポート可能性があります)。
 
-一部の商品は、 *multisymbol ラベル*または*階層型のラベル*とも呼ばれる、複数のラベルでマークすることがあります。 バーコードは、垂直方向に配置されて通常と同じまたは別のシンボル体系の可能性があります。 スキャナーは、複数のラベルが含まれている商品を読み取り、各バーコードは別のラベルとしてアプリケーションに配信されます。 現在のこれらバーコードの種類の標準化不足しているのために必要です。 個々 のバーコード データに基づいてすべてのバリエーションを特定することがあります。 アプリケーションでは、複数のラベル バーコードがされて読み取り時から返されるデータに基づいて判断する必要があります。 (詳しくは、スキャナーが場合も、複数のラベルの読み取りをサポートしていませんを注意してください)。
+一部の商品は、 *multisymbol ラベル*または*階層型のラベル*とも呼ばれる、複数のラベルでマークすることがあります。 バーコードが垂直方向に配置されて通常と同じまたは別のシンボル体系の場合があります。 スキャナーは、複数のラベルが含まれている商品を読み取り、各バーコードは個別のラベルとしてアプリケーションに配信されます。 現在のこれらバーコードの種類の標準化不足しているのために必要です。 個々 のバーコード データに基づいてすべてのバリエーションを特定することがあります。 アプリケーションでは、タイミング、複数のラベル バーコードが読み取らから返されるデータに基づいて判断する必要があります。 (詳しくは、スキャナーが可能性がありますか、複数のラベルの読み取りをサポートしていませんを注意してください)。
 
-この値は、アプリケーションに発生する**DataReceived**イベントの前に設定されます。
+この値は、アプリケーションに発生している**DataReceived**イベントの前に設定されます。
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]
 

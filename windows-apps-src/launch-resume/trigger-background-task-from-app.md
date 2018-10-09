@@ -7,30 +7,30 @@ ms.date: 07/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: バック グラウンド タスク トリガーのバック グラウンド タスク
+keywords: バック グラウンド タスクのトリガー、バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ccd171f53795ef71830ffb022d0468facb3ac4f
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4385681"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4423944"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>アプリ内からのバックグラウンド タスクのトリガー
 
 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) を使ってアプリ内からバックグラウンド タスクをアクティブ化する方法について説明します。
 
-アプリケーション トリガーを作成する方法の例では、次の[例](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs)を参照してください。
+なアプリケーションのトリガーを作成する方法の例では、次の[例](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs)を参照してください。
 
-このトピックでは、アプリケーションからライセンス認証を実行するバック グラウンド タスクがあることを前提としています。 バック グラウンド タスクがまだしていない場合は、バック グラウンド タスクのサンプルでは[BackgroundActivity.cs です](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)。 または[の作成と登録アウト プロセス バック グラウンド タスク](create-and-register-a-background-task.md)を作成する 1 つの手順に従います。
+このトピックでは、アプリケーションからライセンス認証を実行するバック グラウンド タスクがあることを前提としています。 バック グラウンド タスクがまだしていない場合は、バック グラウンド タスクのサンプルでは[BackgroundActivity.cs です](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)。 または[の作成と登録、アウト プロセス バック グラウンド タスク](create-and-register-a-background-task.md)を作成する 1 つの手順に従います。
 
-## <a name="why-use-an-application-trigger"></a>アプリケーション トリガーを使用する理由
+## <a name="why-use-an-application-trigger"></a>アプリケーション、トリガーを使用する理由
 
-フォア グラウンド アプリから別のプロセスでコードを実行するのに、 **ApplicationTrigger**を使用します。 **ApplicationTrigger**は、ユーザーがフォア グラウンド アプリを閉じた場合でも、- バック グラウンドで実行する必要がある作業は、アプリが場合に適しています。 バック グラウンドの作業を停止する必要があるとき、アプリが閉じられたか[延長実行](run-minimized-with-extended-execution.md)する必要がありますが、代わりに使用し、フォア グラウンド プロセスの状態に関連付けられてする必要があります。
+フォア グラウンド アプリから別のプロセスでコードを実行するのに、 **ApplicationTrigger**を使用します。 **ApplicationTrigger**は、ユーザーがフォア グラウンド アプリを閉じた場合でも、- バック グラウンドで実行する必要がある作業は、アプリがいる場合に適しています。 バック グラウンドの作業を停止する必要があるとき、アプリが閉じられたか[延長実行](run-minimized-with-extended-execution.md)を使用して代わりにし、フォア グラウンド プロセスの状態に関連付けられてする必要があります。
 
-## <a name="create-an-application-trigger"></a>アプリケーション トリガーを作成します。
+## <a name="create-an-application-trigger"></a>なアプリケーションのトリガーを作成します。
 
-新しい[ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)を作成します。 次のスニペットで実行される、フィールドにそれを格納可能性があります。 これは便利なしますが、トリガーを通知するとき、後で新しいインスタンスを作成する必要があるないようにします。 トリガーを通知する任意の**ApplicationTrigger**インスタンスを使用することができます。
+新しい[ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)を作成します。 次のスニペットで実行される、フィールドにそれを格納可能性があります。 これは便利なできるように、トリガーを通知するとき、後で新しいインスタンスを作成する必要はありません。 ただし、トリガーを通知する任意の**ApplicationTrigger**インスタンスを使用することができます。
 
 ```csharp
 // _AppTrigger is an ApplicationTrigger field defined at a scope that will keep it alive
@@ -58,9 +58,9 @@ ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger();
 
 ## <a name="optional-add-a-condition"></a>(省略可能) 条件の追加
 
-タスクが実行されている場合は、コントロールにバック グラウンド タスクの条件を作成できます。 条件を指定すると、バック グラウンド タスクが、条件が満たされるまでを実行できなくなります。 詳細については、[バック グラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)を参照してください。
+タスクの実行時に、コントロールにバック グラウンド タスクの条件を作成できます。 条件では、バック グラウンド タスクが、条件が満たされるまで実行できなくなります。 詳細については、[バック グラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)を参照してください。
 
-タスクの条件が**InternetAvailable**に設定されているため、1 回のトリガーこの例では、インターネット アクセスが利用可能ながのみ実行できます。 指定できる条件の一覧については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
+この例では、条件が**InternetAvailable**に設定されているため、1 回のトリガーで、のみが 1 回実行インターネット アクセスが利用できます。 指定できる条件の一覧については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -79,7 +79,7 @@ SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionTyp
 
 ##  <a name="call-requestaccessasync"></a>RequestAccessAsync() の呼び出し
 
-**ApplicationTrigger**バック グラウンド タスクを登録する前に、ユーザーにより、ユーザーがアプリのバック グラウンド アクティビティを無効にしたため、バック グラウンド アクティビティのレベルを決定する[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)を呼び出します。 表示方法のユーザーの詳細については、[バック グラウンド アクティビティの最適化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)は、バック グラウンド アクティビティの設定を制御できます。
+**ApplicationTrigger**バック グラウンド タスクを登録する前に、ユーザーは、ユーザーがアプリのバック グラウンド アクティビティを無効にいるため、バック グラウンド アクティビティのレベルを決定する[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)を呼び出します。 表示方法のユーザーの詳細については、[バック グラウンド アクティビティの最適化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)は、バック グラウンド アクティビティの設定を制御できます。
 
 ```csharp
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -94,7 +94,7 @@ if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
 
 バックグラウンド タスクの登録関数を呼び出してバックグラウンド タスクを登録します。 詳細については、バック グラウンド タスクの登録にし、次のサンプル コードで**RegisterBackgroundTask()** メソッドの定義を参照する、[バック グラウンド タスクの登録](register-a-background-task.md)を参照してください。
 
-アプリケーション トリガーを使用して、フォア グラウンド プロセスの有効期間を拡張するを検討している場合は、代わりに、[延長実行](run-minimized-with-extended-execution.md)を使用することを検討します。 Application Trigger は個別にホストされているプロセスを作成するため作業を実行する設計されています。 次のコード スニペットは、アウト プロセス バック グラウンド トリガーを登録します。
+アプリケーション トリガーを使用して、フォア グラウンド プロセスの有効期間を拡張するを検討している場合は、[延長実行](run-minimized-with-extended-execution.md)を代わりに使用することを検討します。 アプリケーションのため、トリガー個別にホストされているプロセスを作成するための処理を実行します。 次のコード スニペットは、アウト プロセス バック グラウンド トリガーを登録します。
 
 ```csharp
 string entryPoint = "Tasks.ExampleBackgroundTaskClass";
@@ -124,11 +124,11 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 バック グラウンド タスクをトリガーする前に、 [BackgroundTaskRegistration](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)を使用して、バック グラウンド タスクが登録されていることを確認します。 すべてのバック グラウンド タスクが登録されていることを確認する良い機会は、アプリの起動中にです。
 
-[ApplicationTrigger.RequestAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger)を呼び出すことによって、バック グラウンド タスクをトリガーします。 任意の**ApplicationTrigger**インスタンスが実行されます。
+[ApplicationTrigger.RequestAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger)を呼び出すことによって、バック グラウンド タスクをトリガーします。 **ApplicationTrigger**インスタンスが実行されます。
 
-自体には、バック グラウンド タスクから、または、アプリがバック グラウンドの実行状態に**ApplicationTrigger.RequestAsync**を呼び出すことができないことに注意してください (アプリケーションの状態の詳細については、[アプリのライフ サイクル](app-lifecycle.md)をご覧ください)。
-[DisabledByPolicy](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult)は、アプリがバック グラウンド アクティビティを実行するを防ぐエネルギーまたはプライバシーのポリシーを設定している場合に返すことがあります。
-また、一度に 1 つだけ AppTrigger を実行できます。 別が既に実行されているときに、AppTrigger を実行しようとすると、この関数は[助けます](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult)を返します。
+自体には、バック グラウンド タスクから、またはアプリがバック グラウンドの実行状態で**ApplicationTrigger.RequestAsync**を呼び出すことができないことに注意してください (アプリケーションの状態の詳細については、[アプリのライフ サイクル](app-lifecycle.md)をご覧ください)。
+[DisabledByPolicy](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult)は、アプリがバック グラウンド アクティビティを実行することを防ぐエネルギーまたはプライバシーのポリシーを設定している場合に返すことがあります。
+また、一度に 1 つだけ AppTrigger を実行できます。 別が既に実行されている間に、AppTrigger を実行しようとすると、この関数は[助けます](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult)を返します。
 
 ```csharp
 var result = await _AppTrigger.RequestAsync();
@@ -139,7 +139,7 @@ var result = await _AppTrigger.RequestAsync();
 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) を使用して、アプリのバックグラウンド アクティビティを制限するようにユーザーが設定しているかどうかを確認します。 バッテリー使用量を注意し、ユーザーが望む操作を完了するために必要な場合にのみ、バックグラウンドで実行するようにしてください。 表示方法のユーザーの詳細については、[バック グラウンド アクティビティの最適化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)は、バック グラウンド アクティビティの設定を制御できます。  
 
 - メモリ: アプリのメモリや電力使用を調整、オペレーティング システムで実行するバック グラウンド タスクを許可することを保証するキーです。 [メモリ管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)を使用すると、バック グラウンド タスクを使用してメモリの量を参照してください。 多くのメモリ、バック グラウンド タスクを使用して、状態を維持が、別のアプリをフォア グラウンドで実行されている OS がは難しくなります。 アプリが実行できるすべてのバックグラウンド アクティビティについて、最終的に管理できるのはユーザーです。また、ユーザーは、アプリがどの程度バッテリー消費に影響しているかを確認できます。  
-- CPU 時間: バック グラウンド タスクがトリガーの種類に基づいて取得するウォールク ロック時間の使用状況の時間の長さによって制限されます。 Application trigger によってトリガーされるバック グラウンド タスクは、約 10 分間に制限されます。
+- CPU 時間: バック グラウンド タスクがトリガーの種類に基づいて取得するウォールク ロック時間の使用量の時間の長さによって制限されます。 Application trigger によってトリガーされるバック グラウンド タスクは、約 10 分間に制限されます。
 
 バックグラウンド タスクに適用されるリソースの制約については、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 

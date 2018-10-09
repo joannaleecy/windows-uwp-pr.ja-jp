@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389112"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4424183"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
-その sessionId で識別される sessionhost の割り当ての状態を返します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+その sessionId で識別される sessionhost の割り当てを取得します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [必要な要求ヘッダー](#ID4E4)
   * [必要な応答ヘッダー](#ID4EEB)
@@ -50,8 +50,8 @@ ms.locfileid: "4389112"
 | --- | --- | 
 | description| 空の文字列 (左での下位互換性) を返します。| 
 | clusterId| 空の文字列 (左での下位互換性) を返します。| 
-| ホスト名| セッション ホストの URL です。| 
-| status| キューに入れ、満たされると、または中止いずれかを示します。| 
+| ホスト名| セッション ホストの URL。| 
+| status| キューに入れ、満たされると、または中止されたことを示します。| 
 | sessionHostId| セッション ホストの id。| 
 | sessionId| (割り当て時) に提供されるクライアント セッション id。| 
 | secureContext| セキュア デバイス アドレスです。| 
@@ -104,7 +104,7 @@ ms.locfileid: "4389112"
  
 ### <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しを再試行のみする必要があります。
+次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
  
    * 200-成功 
    * 400-要求が無効なパラメーターが含まれています 

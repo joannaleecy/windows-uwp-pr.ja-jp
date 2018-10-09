@@ -4,7 +4,7 @@ Description: Build UWP apps and custom/templated controls that support platform 
 title: テキストのスケーリング
 label: Text scaling
 template: detail.hbs
-keywords: UWP, テキスト、スケーリング、アクセシビリティ、「簡単」、表示、「するテキストがより大きく」, ユーザーの操作, 入力
+keywords: UWP, テキスト、スケーリング、アクセシビリティ、「簡単操作へのアクセスの」を表示する「するテキストがより大きく」, ユーザーの操作, 入力
 ms.author: kbridge
 ms.date: 08/02/2018
 ms.topic: article
@@ -12,11 +12,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 885ccc89fcbd4315eeed40c3546ef485c515294e
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4390132"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4428641"
 ---
 # <a name="text-scaling"></a>テキストのスケーリング
 
@@ -27,28 +27,28 @@ ms.locfileid: "4390132"
 
 (モバイル デバイスから Surface Hub の大きな画面にデスクトップのモニターにラップトップ) コンピューターの画面上のテキストの読み取りは、多くの人にとって困難なことができます。 逆に、一部のユーザーは、アプリや web サイトで必要以上にするために使用するフォント サイズを検索します。
 
-テキストはを幅広いユーザーできるだけ読みやすいことを確認するには、Windows には、ユーザーが OS と個々 のアプリケーションの両方の間での相対的なフォント サイズを変更する機能が用意されています。 拡大鏡アプリ (これ通常だけ、画面の領域内のすべてを拡大し、独自の操作性の問題が導入されています) を使って、ディスプレイの解像度を変更または DPI スケーリングのサイズを変更の表示と一般的な表示に基づくすべての証明書利用者ではなく距離)、ユーザーは、テキストだけで、100% (既定のサイズ) からの範囲のサイズを変更する設定にすばやくアクセスできる最大 225% です。
+テキストはを幅広いユーザーできるだけ読みやすいことを確認するには、Windows には、ユーザーが OS と個々 のアプリケーションの両方の間での相対的なフォント サイズを変更する機能が用意されています。 (これ通常だけ、画面の領域内のすべてを拡大し、独自の操作性の問題が導入されています) 拡大鏡アプリを使用して、ディスプレイの解像度を変更または DPI スケーリングのサイズを変更の表示と一般的な表示に基づくすべての情報に依存するのではなく距離)、ユーザーは、テキストだけで、100% (既定のサイズ) からの範囲のサイズを変更する設定にすばやくアクセスできる最大 225% です。
 
 ## <a name="support"></a>サポート
 
 ユニバーサル Windows アプリケーション (両方の標準と PWA)、既定でスケーリング テキストをサポートします。
 
-UWP アプリケーションには、カスタム コントロール、カスタム テキスト サーフェス、ハード コードされたコントロールの高さ、古いフレームワークは、またはサード パーティのフレームワークが含まれている場合は、ことをユーザーに一貫性があり、便利なエクスペリエンスを確保するいくつかの更新がある可能性があります。  
+カスタム コントロール、カスタム テキスト サーフェス、ハード コードされたコントロールの高さ、古いフレームワークは、またはサード パーティのフレームワークで、UWP アプリケーションが含まれる場合可能性を加えることがいくつかの更新、ユーザーの一貫性のあると便利なエクスペリエンスを確保します。  
 
-DirectWrite、GDI、および XAML SwapChainPanels ネイティブでサポートしていませんテキストのスケーリング、Win32 のサポートは、メニューのアイコン、およびツールバーに制限されますが。  
+DirectWrite、GDI、および XAML SwapChainPanels ネイティブにサポートしませんテキストのスケーリングで Win32 のサポートは、メニューのアイコン、およびツールバーに制限されています。  
 
 <!-- If you want to support text scaling in your application with these frameworks, you’ll need to support the text scaling change event outlined below and provide alternative sizes for your UI and content.   -->
 
 ## <a name="user-experience"></a>ユーザーによるインストール
 
-ユーザーがテキストの倍率を調整できる設定に大きなスライダー]-> [テキストにすると簡単ビジョン/ディスプレイの画面]-> [します。
+ユーザーがテキストの倍率を調整できるテキストに]-> [設定のスライダーを大きくすると簡単ビジョン/ディスプレイの画面]-> [します。
 
 ![テキストの 100% に 225% のスケーリングの例](images/coretext/text-scaling-settings-100-small.png)  
-*設定の設定からテキスト スケール簡単]-> [ビジョン/ディスプレイの画面]-> [*
+*設定から設定テキスト スケール簡単]-> [ビジョン/ディスプレイの画面]-> [*
 
 ## <a name="ux-guidance"></a>UX ガイダンス
 
-テキストのサイズが変更されたコントロールとコンテナーする必要がありますもサイズを変更して、テキストとその新しいレイアウトに対応するために再配置されます。 によって、アプリ、フレームワーク、およびプラットフォームでは、以前は、既に説明したようこの作業の大半に行われます。 次の UX ガイダンスでは、このようなことがない場合について説明します。
+テキストのサイズが変更されたコントロールとコンテナーする必要がありますもサイズを変更して、テキストとその新しいレイアウトに対応するために再配置されます。 アプリ、フレームワーク、およびプラットフォームに応じて以前は、既に説明したようこの作業の大半に行われます。 次の UX ガイダンスでは、このようなことがない場合について説明します。
 
 ### <a name="use-the-platform-controls"></a>プラットフォーム コントロールを使う
 
@@ -56,7 +56,7 @@ DirectWrite、GDI、および XAML SwapChainPanels ネイティブでサポー�
 
 たとえば、すべての UWP テキスト コントロールは、テンプレート化やカスタマイズを加えなくてもエクスペリエンスをスケーリングする完全なテキストをサポートします。
 
-基本的な UWP アプリを含む、いくつかの標準的なテキスト コントロールのスニペットを次に示します。
+次に、いくつか標準的なテキスト コントロールにはが含まれている基本的な UWP アプリのスニペットを示します。
 
 ``` xaml
 <Grid>
@@ -99,11 +99,11 @@ DirectWrite、GDI、および XAML SwapChainPanels ネイティブでサポー�
 ![アニメーション化されたテキストが 100% に 225% のスケーリング](images/coretext/text-scaling.gif)  
 *アニメーション化されたテキストのスケーリング*
 
-### <a name="use-auto-sizing"></a>自動サイズ変更を使用します。
+### <a name="use-auto-sizing"></a>自動サイズ変更を使う
 
-コントロールの絶対サイズを指定しないでください。 可能であれば、[プラットフォームのユーザーとデバイスの設定に基づいて自動的に、コントロールのサイズを変更することができます。  
+コントロールの絶対サイズを指定しないでください。 可能であれば、ユーザーとデバイスの設定に基づいて自動的に、コントロールのサイズを変更するプラットフォームを使用できます。  
 
-前の例からのこのスニペットで使用して、`Auto`と`*`一連の列のグリッドとできるように、プラットフォームの幅の値は、グリッド内に含まれる要素のサイズに基づくアプリのレイアウトを調整します。
+前の例からのこのスニペットで使用して、`Auto`と`*`一連のグリッドの列とできるように、プラットフォームの幅の値が、グリッド内に含まれる要素のサイズに基づくアプリのレイアウトを調整します。
 
 ``` xaml
 <Grid.ColumnDefinitions>
@@ -131,7 +131,7 @@ DirectWrite、GDI、および XAML SwapChainPanels ネイティブでサポー�
 
 ### <a name="specify-text-trimming-behavior"></a>テキストのトリミングの動作を指定します。
 
-テキストの折り返しが優先される動作でない場合は、ほとんどのテキスト コントロールには、テキストをクリップまたはテキスト トリミングの動作の省略記号を指定することができます。 クリッピングは自身の領域を占有省略記号の省略記号を優先します。
+テキストの折り返しが優先される動作でない場合は、ほとんどのテキスト コントロールには、テキストをクリップまたはテキスト トリミングの動作の省略記号を指定のいずれかことができます。 クリッピングは自身の領域を占有省略記号の省略記号を優先します。
 
 > [!NOTE]
 > テキストをクリップする必要がある場合は、開始しない、文字列の末尾をクリップできます。
@@ -147,7 +147,7 @@ DirectWrite、GDI、および XAML SwapChainPanels ネイティブでサポー�
 ![テキストとテキストがクリッピングされて 225% に 100% のスケーリング](images/coretext/text-scaling-clipping-small.png)  
 *テキストとテキストがクリッピングされてスケーリング*
 
-### <a name="use-a-tooltip"></a>ヒントを使用します。
+### <a name="use-a-tooltip"></a>Tooltip します。
 
 テキストをクリップする場合は、完全なテキストをユーザーに提供するヒントを使用します。
 
@@ -162,15 +162,15 @@ DirectWrite、GDI、および XAML SwapChainPanels ネイティブでサポー�
 </TextBlock>
 ```
 
-### <a name="dont-scale-font-based-icons-or-symbols"></a>フォント ベースのアイコンや記号を拡大縮小されません。
+### <a name="dont-scale-font-based-icons-or-symbols"></a>フォント ベースのアイコンや記号、拡大縮小されません。
 
 フォント ベースのアイコンを強調または装飾を使用する場合は、これらの文字でのスケーリングを無効にします。
 
-[IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)プロパティを設定する`false`ほとんどの XAML コントロールです。
+[IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)プロパティを設定する`false`ほとんどの XAML を制御します。
 
 ### <a name="support-text-scaling-natively"></a>スケーリングをネイティブにサポート テキスト
 
-コントロール、カスタムのフレームワークで[TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings システム イベントを処理します。 このイベントは、ユーザーがシステムにテキストの倍率を設定するたびにします。
+カスタム フレームワークやコントロールで[TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings システム イベントを処理します。 このイベントは、ユーザーがシステムにテキストの倍率を設定するたびにします。
 
 ## <a name="summary"></a>要約
 

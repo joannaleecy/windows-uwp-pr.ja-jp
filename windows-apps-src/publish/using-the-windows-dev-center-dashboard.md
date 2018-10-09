@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, ダッシュボード, デベロッパー センター, 開発センター
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4394267"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4426369"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>Windows デベロッパー センター ダッシュボードの使用
 
@@ -37,7 +37,7 @@ ms.locfileid: "4394267"
 
 [アドオン (アプリ内製品)](add-on-submissions.md)は、アプリの申請とは別に管理されます。 これにより、IAP をさらに柔軟に変更できるようになります。
 
-Windows デベロッパー センター機能も提供[複数ユーザーの追加](manage-account-users.md)、[アプリの管理とサービスの構成](app-management-and-services.md)、[分析データの確認](analytics.md)、[支払いレポート](payout-summary.md)[アプリの宣伝](attract-customers-and-promote-your-apps.md)、[エンゲージメントによる、顧客](engage-with-your-customers.md)、[ベータ テスト](beta-testing-and-targeted-distribution.md)、[企業に LOB アプリの配布](distribute-lob-apps-to-enterprises.md)、およびその他さまざまなします。
+Windows デベロッパー センター機能も提供[複数ユーザーの追加](manage-account-users.md)、[アプリの管理とサービスの構成](app-management-and-services.md)、[分析データの確認](analytics.md)、[支払いレポート](payout-summary.md)[アプリの宣伝](attract-customers-and-promote-your-apps.md)、[エンゲージメントによる、顧客](engage-with-your-customers.md)、[ベータ テスト](beta-testing-and-targeted-distribution.md)、 [LOB アプリの企業へ配布](distribute-lob-apps-to-enterprises.md)、およびその他さまざまなします。
 
 できる限り最高の機能とエクスペリエンスを開発するためには、皆様のフィードバックが重要です。 ダッシュ ボードで作業するときを使用して、**フィードバック**リンク、ダッシュ ボードの右上隅にある感想やご提案を共有します。
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 66d32e448f7db8558ea6ef02714b6112e230e711
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4383871"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4425161"
 ---
 # <a name="post-usersbatchprofilesettings"></a>POST (/users/batch/profile/settings)
 ユーザーまたはユーザーのプロファイルを取得します。 これらの Uri のドメインが`profile.xboxlive.com`します。
@@ -32,14 +32,14 @@ ms.locfileid: "4383871"
  
 ## <a name="remarks"></a>注釈
  
-これは、URL では、のみ完全に修飾されたプロファイルで許可されています。 クライアントからその他のすべてのプロファイル Api がブロックされます。
+これで許可されているのみ完全修飾プロファイル URL です。 クライアントからその他のすべてのプロファイル Api がブロックされます。
   
 <a id="ID4EFB"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-プロファイルにアクセスするには、通常の認証トークンと要求のみが必要です。
+プロファイルにアクセスするに通常の認証トークンと要求のみが必要です。
   
 <a id="ID4EOB"></a>
 
@@ -48,7 +48,7 @@ ms.locfileid: "4383871"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | 
-| x xbl コントラクト バージョン| 32 ビット符号なし整数| コントラクト バージョンは、Xbox 360 の API 呼び出しは、このを区別するために 2 に設定する必要があります。| 
+| x xbl コントラクト バージョン| 32 ビット符号なし整数| コントラクト バージョンは、Xbox 360 API 呼び出しは、このを区別するために 2 に設定する必要があります。| 
 | コンテンツの種類| string| 値 = <code>application/json</code>| 
   
 <a id="ID4EZC"></a>

@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows アプリ認定キットのテスト
-description: Windows アプリ認定キットには、アプリが Microsoft Store に公開する準備ができていることを確認に役立つテストの数が含まれています。
+description: Windows アプリ認定キットには、多くアプリが Microsoft Store に公開する準備ができていることを確認できるテストにはが含まれています。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389696"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4422745"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
 
 
-[Windows アプリ認定キット](windows-app-certification-kit.md)には、Microsoft Store に公開する準備ができたらようにテストの数が含まれています。 テストは、条件の詳細については、次の一覧し、アクションが失敗した場合の推奨します。
+[Windows アプリ認定キット](windows-app-certification-kit.md)には、ヘルプ、アプリを Microsoft Store に公開する準備ができているテストの数が含まれています。 テストは、条件の詳細については、次の一覧し、アクションが失敗した場合の推奨します。
 
 ## <a name="deployment-and-launch-tests"></a>展開と起動のテスト
 
@@ -309,22 +309,22 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 ### <a name="background"></a>背景
 
-アプリでは、UWP アプリ (Windows ランタイムまたはサポートされている Win32 Api)、Microsoft Store の認定を受けるの Api を使用する必要があります。 このテストでは、管理されたバイナリが承認済みのプロファイル外部の機能に依存している状況も特定されます。
+アプリでは、UWP アプリ (Windows ランタイムまたはサポートされている Win32 Api)、Microsoft ストアの認定を受けるの Api を使用する必要があります。 このテストでは、管理されたバイナリが承認済みのプロファイル外部の機能に依存している状況も特定されます。
 
 ### <a name="test-details"></a>テストの詳細
 
--   アプリ パッケージ内の各バイナリがバイナリのインポート アドレス テーブルをチェックすることによって、UWP アプリ開発のサポートされていない Win32 API に依存関係がないを確認します。
+-   で、アプリ パッケージ内の各バイナリ依存していないバイナリのインポート アドレス テーブルをチェックすることによって、UWP アプリ開発のサポートされていない Win32 api を確認します。
 -   アプリ パッケージ内の管理された各バイナリが承認済みのプロファイル外部の機能に依存していないことを確認します。
 
 ### <a name="corrective-actions"></a>問題への対応
 
 アプリが、デバッグ用のビルドではなくリリース用ビルドとしてコンパイルされていることを確認します。
 
-> **注:** アプリが[UWP アプリ用の Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のみを使っている場合でも、アプリのデバッグ ビルドにはこのテストは失敗します。
+> **注:** アプリが[UWP アプリ用 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のみを使っている場合でも、デバッグ用ビルドのアプリにはこのテストは失敗します。
 
 [UWP アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)ではないアプリを使用して、API を識別するエラー メッセージを確認します。
 
-> **注:** 構成が UWP アプリのみ Windows SDK の Api を使っている場合でも、デバッグ構成で構築された C++ アプリにはこのテストは失敗します。 詳しくは、 [UWP アプリでの Windows api の代替手段](http://go.microsoft.com/fwlink/p/?LinkID=244022)を表示します。
+> **注:** 構成が UWP アプリのみ Windows SDK の Api を使っている場合でも、デバッグ構成で構築された C++ アプリにはこのテストは失敗します。 詳しくはの[UWP アプリでの Windows api の代替手段](http://go.microsoft.com/fwlink/p/?LinkID=244022)を表示します。
 
 ## <a name="performance-tests"></a>パフォーマンスのテスト
 
@@ -502,7 +502,7 @@ UWP アプリ完成していて完全に機能することが期待されます�
 
 ### <a name="background"></a>背景
 
-Microsoft Store の認定を受けるアプリする必要がありますいないにコンパイル デバッグされ実行可能ファイルのデバッグ バージョンを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
+Microsoft ストアの認定を受けるアプリする必要がありますいないにコンパイル デバッグされ実行可能ファイルのデバッグ バージョンを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -538,7 +538,7 @@ Microsoft Direct3D アプリをテストして、以前のグラフィックス 
 
 ### <a name="background"></a>背景
 
-Microsoft Store では、すべてのアプリケーションが Direct3D を使用して正しくレンダリングされるか、機能レベル 9 \-1 グラフィックス カードで適切に失敗する必要があります。
+Microsoft Store では、Direct3D を使用して正しくレンダリングされるか、機能レベル 9 \-1 グラフィックス カードで適切に失敗するすべてのアプリケーションが必要です。
 
 アプリのインストール後にユーザーのデバイスのグラフィックス ハードウェアがユーザーによって変更されることもあるため、最小機能レベルを 9\-1 よりも高くする場合は、現在のハードウェアが最小要件を満たしているかどうかをアプリの起動時に検出するようにしなければなりません。 最小要件が満たされていない場合は、アプリでは Direct3D の要件に関する詳しいメッセージをユーザーに表示する必要があります。 また、アプリが互換性のないデバイスでダウンロードされた場合は、起動時にそれを検出し、要件について説明するメッセージをユーザーに表示する必要もあります。
 
@@ -552,7 +552,7 @@ Microsoft Store では、すべてのアプリケーションが Direct3D を使
 
 ### <a name="direct3d-trim-after-suspend"></a>中断後の Direct3D トリミング
 
-> **注:** このテストは、Windows 8.1 以降を開発する UWP アプリにのみ適用されます。
+> **注:** このテストは、Windows 8.1 以降に開発された UWP アプリにのみ適用されます。
 
 ### <a name="background"></a>背景
 

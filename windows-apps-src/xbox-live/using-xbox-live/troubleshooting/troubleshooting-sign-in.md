@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, サインイン, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 00f09889971cab58917fd898506b635cc66dcaf2
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4391596"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4423357"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live サインインのトラブルシューティング
 
@@ -33,7 +33,7 @@ ms.locfileid: "4391596"
 
 #### <a name="developer-account-doesnt-have-access-to-the-right-sandbox-for-run-time-access"></a>開発者アカウントでは実行時アクセス用の正しいサンドボックスにアクセスできない
 
-* テスト アカウント (開発アカウントとも呼ばれます) または承認された開発者アカウントは、開発中のタイトルにサインインに使用する必要があります。  1 つを使用してサインインしようとしているか、他のテスト アカウントが XDP で作成されたことを確認[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)します。 Windows デベロッパー センターでの xbox live の関連付けられている開発者アカウントを承認します。[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
+* テスト アカウント (開発アカウントとも呼ばれます)、または承認された開発者アカウントは、開発中のタイトルにサインインに使用する必要があります。  1 つを使用してサインインしようとしている、またはその他のテスト アカウントは XDP で上に作成してください[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)します。 Windows デベロッパー センターでの xbox live の関連付けられている開発者アカウントを承認します。[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
 * アカウントには、タイトルが公開サンド ボックスへのアクセスを持っていることを確認します。  XDP で作成したテスト アカウントは、それを作成した XDP アカウントのアクセス許可を継承します。
 
 #### <a name="your-device-is-not-on-the-correct-sandbox"></a>デバイスが正しいサンドボックス上にない
@@ -42,7 +42,7 @@ ms.locfileid: "4391596"
 
 #### <a name="your-titles-service-configuration-is-not-published-to-the-correct-development-sandbox"></a>タイトルのサービス構成が正しい開発サンドボックスに発行されていない
 
-タイトルのサービス構成が開発サンドボックスに発行されていることを確認します。  タイトルが同じサンドボックスに発行されていない場合、タイトルの特定の開発サンドボックスの Xbox Live にサインインできません。  詳細な方法については、[XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)を参照してください。 Windows デベロッパー センター構成を公開する方法については[デベロッパー センターのドキュメント](../../get-started-with-creators/xbox-live-service-configuration-creators.md#publish-your-xbox-live-service-configuration)を読み取ることができます。
+タイトルのサービス構成が開発サンドボックスに発行されていることを確認します。  タイトルが同じサンドボックスに発行されていない場合、タイトルの特定の開発サンドボックスの Xbox Live にサインインできません。  詳細な方法については、[XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)を参照してください。 Windows デベロッパー センターの構成を公開する方法については[デベロッパー センターのドキュメント](../../get-started-with-creators/xbox-live-service-configuration-creators.md#publish-your-xbox-live-service-configuration)を読み取ることができます。
 
 ### <a name="ids-configured-incorrectly"></a>ID が正しく構成されていない
 

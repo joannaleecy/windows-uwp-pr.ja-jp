@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b03c55b827b083c050451c12c1fe48834d7ae186
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4382850"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4426390"
 ---
 # <a name="session-directory-uris"></a>セッション ディレクトリ URI
 
-このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) からユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) からユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
 
 
 > [!NOTE] 
@@ -42,14 +42,14 @@ sessiondirectory.xboxlive.com
 
 ## <a name="service-version"></a>サービスのバージョン
 
-これらの Uri の残りの部分の呼び出し元渡す必要があります値 104/105 以降 X の Xbl のコントラクトのバージョン、サービス バージョン エンターテイメント探索サービス (EDS) を指定する HTTP ヘッダー。
+これらの残りの部分の Uri の呼び出し元渡す必要があります値 104/105 以降 X-Xbl-コントラクトのバージョン、サービスのバージョンのエンターテインメント探索サービス (EDS) を指定する HTTP ヘッダー。
 
 <a id="ID4EAC"></a>
 
 
 ## <a name="system-objects-and-properties"></a>システム オブジェクトとプロパティ
 
-セッションとテンプレートを構成する、MPSD は、ディレクトリの強制し、解釈される固定のスキーマに準拠しているセッションの JSON オブジェクトの数を使用します。 さまざまなセッション ディレクトリ Uri でサポートされているメソッドの呼び出し時にこれらのオブジェクトは検証し結合に基づいて、サポートされているスキーマです。 マルチプレイヤーの構成に関連付けられている主な JSON オブジェクトは次のとおりです。
+セッションとテンプレートを構成する、MPSD は、ディレクトリは強制し、解釈される固定のスキーマに準拠したセッションの JSON オブジェクトの数を使用します。 さまざまなセッション ディレクトリ Uri でサポートされているメソッドの呼び出し時にこれらのオブジェクトは検証およびマージに基づいて、サポートされているスキーマ。 マルチプレイヤーの構成に関連付けられている主な JSON オブジェクトは次のとおりです。
 
    *  [MultiplayerActivityDetails (JSON)](../../json/json-multiplayeractivitydetails.md)
    *  [MultiplayerSession (JSON)](../../json/json-multiplayersession.md)
@@ -57,7 +57,7 @@ sessiondirectory.xboxlive.com
    *  [MultiplayerSessionRequest (JSON)](../../json/json-multiplayersessionrequest.md)
 
 
-ゲームに具体的には関係が関連付けられている JSON オブジェクトは次のとおりです。
+ゲームで具体的には関係している関連付けられている JSON オブジェクトは次のとおりです。
 
    *  [GameMessage (JSON)](../../json/json-gamemessage.md)
    *  [GameResult (JSON)](../../json/json-gameresult.md)
@@ -70,7 +70,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="handles"></a>ハンドル
 
-2015 マルチプレイヤーの場合のみ、セッションはセッション ハンドルを通じてアクセスできます。 ハンドルをサポートする機能を提供する、いくつかの Uri が追加されました。  
+2015 マルチプレイヤーの場合のみ、セッションはセッション ハンドルを通じてアクセスできます。 ハンドルをサポートする機能を提供するのには、いくつかの Uri が追加されました。  
 <a id="ID4EFE"></a>
 
 
@@ -82,7 +82,7 @@ sessiondirectory.xboxlive.com
 
 [/handles/{handleId}](uri-handleshandleid.md)
 
-&nbsp;&nbsp;識別子により指定されたセッション ハンドルを削除または取得の操作をサポートしています。
+&nbsp;&nbsp;識別子により指定されたセッション ハンドルを削除または GET の操作をサポートしています。
 
 [/handles/{handleId}/session](uri-handleshandleidsession.md)
 
@@ -118,7 +118,7 @@ sessiondirectory.xboxlive.com
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md)
 
-&nbsp;&nbsp;PUT と取得の操作を作成してセッションを取得をサポートしています。
+&nbsp;&nbsp;作成してセッションを取得する PUT と取得の操作をサポートしています。
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md)
 

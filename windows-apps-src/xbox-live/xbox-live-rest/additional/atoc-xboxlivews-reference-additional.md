@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8203420b0eed584a0d8b4131b419bf667a4b56a0
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4388064"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4425496"
 ---
 # <a name="additional-reference"></a>その他の参照情報
 
-このセクションのトピックでは、Xbox Live サービスとエンターテイメント検出サービス (EDS) に関する補足のリファレンス情報を提供します。
+このセクションのトピックでは、Xbox Live サービスとエンターテイメント検出サービス (EDS) に関する補足リファレンス情報を提供します。
 
 <a id="ID4EZ"></a>
 
@@ -55,7 +55,7 @@ ms.locfileid: "4388064"
 
 [ビデオの EDS 逆引き参照](edsreverselookup.md)
 
-&nbsp;&nbsp;逆のデータに基づいてビデオを検索します。
+&nbsp;&nbsp;データの逆に基づくビデオを検索します。
 
 [EDS の表](edstables.md)
 
@@ -67,7 +67,7 @@ ms.locfileid: "4388064"
 
 [標準の HTTP 要求および応答ヘッダー](httpstandardheaders.md)
 
-&nbsp;&nbsp;Xbox Live サービス要求を作成するときに使用する標準的な HTTP ヘッダーをについて説明します。
+&nbsp;&nbsp;Xbox Live サービス要求を作成するときに使用する標準的な HTTP ヘッダーを説明します。
 
 [標準の HTTP 状態コード](httpstatuscodes.md)
 

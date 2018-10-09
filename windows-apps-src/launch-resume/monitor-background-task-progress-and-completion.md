@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ef57c6293b37f91653b5f825881b1446e38a824b
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4394443"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4426108"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>バックグラウンド タスクの進捗状況と完了の監視
 
@@ -38,7 +38,7 @@ ms.locfileid: "4394443"
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>完了したバックグラウンド タスクを処理するイベント ハンドラーの作成
 
 ### <a name="step-1"></a>手順 1.
-完了したバックグラウンド タスクを処理するイベント ハンドラー関数を作ります。 このコードは、 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803)オブジェクトと[**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)オブジェクトを受け取る特定のフット プリントに従う必要があります。
+完了したバックグラウンド タスクを処理するイベント ハンドラー関数を作ります。 このコードは、 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803)オブジェクトと[**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)オブジェクトを受け取る特定のフット プリントに従って必要があります。
 
 **OnCompleted**バック グラウンド タスク イベント ハンドラー メソッドには、次のフット プリントを使います。
 

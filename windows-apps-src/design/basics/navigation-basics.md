@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389158"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4422484"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
 
@@ -58,7 +58,7 @@ ms.locfileid: "4389158"
 
 ### <a name="consistency"></a>一貫性
 
-ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準的なコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、およびスタイルができるナビゲーション予測可能な直感的なユーザー向け。
+ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準のコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、およびスタイル設定と、ナビゲーション予測可能なおよび直感的なユーザー向け。
 
 ![ページ コンポーネントのイメージ](images/nav/page-components.svg)
 
@@ -191,7 +191,7 @@ ms.locfileid: "4389158"
         - アプリのコンテンツを追加する領域がしたいです。
         - アイコンは、ナビゲーションのカテゴリを明確に記述ことはできません。
         
-        ときにタブを使用します。
+        タイミング タブを使用します。
 
         - ナビゲーション履歴とページの状態を保持します。
         - ユーザーがタブを頻繁に切り替えることが予想されます。

@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind マークアップ拡張には、バインド、高パフォーマンス代わりです。 xBind - Windows 10 の新規の短時間でおよび少ないメモリ動作バインディングとデバッグの向上をサポートしています。
+description: XBind マークアップ拡張には、バインド、高パフォーマンス代わりです。 xBind - Windows 10 の新規の実行および少ないメモリのバインドとデバッグの向上をサポートしていますよりも短い時間でされます。
 title: xBind マークアップ拡張
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4387894"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4422918"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} マークアップ拡張
 
 **注**  **{x:Bind}** によりアプリでデータ バインディングを使う方法に関する一般的な情報 (および **{x:Bind}** と **{Binding}** の全体的な比較) については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
-Windows 10 では、**{Binding}** に代わり、**{x:Bind}** マークアップ拡張が新たに提供されています。 **{X:bind}** は、および少ないメモリ **{Binding}** して適切なデバッグをサポートするよりも短い時間で実行されます。
+Windows 10 では、**{Binding}** に代わり、**{x:Bind}** マークアップ拡張が新たに提供されています。 **{X:bind}** は、および少ないメモリ **{Binding}** と適切なデバッグをサポートしていますよりも短い時間で実行されます。
 
 XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロパティから値を取得してマークアップで指定されたプロパティに設定するコードに変換されます。 必要な場合、バインディング オブジェクトは、データ ソース プロパティの値の変化を監視し、その変化に基づいて自分自身を更新するように構成できます (`Mode="OneWay"`)。 また、その独自の値の変化をソース プロパティにプッシュするように構成することもできます (`Mode="TwoWay"`)。
 
@@ -89,7 +89,7 @@ XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロ�
 
 C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプライベート フィールドおよびプロパティにバインドできません。バインドできるようにするには、パブリック プロパティが必要です。 バインディング用のサーフェス領域を CX クラス/インターフェイスとして公開し、関連するメタデータを取得できるようにする必要があります。 **\[Bindable\]** 属性は必要ありません。
 
-**x:Bind** では、**ElementName=xxx** をバインド式の一部として使用する必要はありません。 代わりに、名前付きの要素が、ルート バインディング ソースを表すページまたはユーザー コントロール内のフィールドになるためには、バインディングのパスの最初の部分として、要素の名前を使用することができます。 
+**x:Bind** では、**ElementName=xxx** をバインド式の一部として使用する必要はありません。 代わりに、名前付き要素が、ルート バインディング ソースを表すページまたはユーザー コントロール内のフィールドになるためには、バインディングのパスの最初の部分として、要素の名前を使用することができます。 
 
 
 ### <a name="collections"></a>コレクション

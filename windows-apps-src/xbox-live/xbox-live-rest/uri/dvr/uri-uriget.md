@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b70c87b848cec5f9bbe3ad4a4b3fdf224c84c1dc
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4384732"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4428001"
 ---
 # <a name="get-uri"></a>GET (/{uri})
-ゲーム クリップをダウンロードします。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`対象の URI の機能に応じて、します。
+ゲーム クリップをダウンロードします。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に問題の URI の機能に依存します。
  
   * [注釈](#ID4EX)
   * [URI パラメーター](#ID4EDB)
@@ -36,7 +36,7 @@ ms.locfileid: "4384732"
  
 ## <a name="remarks"></a>注釈
  
-クライアントは、クリップや公開済みの状態に達したと**GameClipUri**オブジェクトで指定されている、ダウンロード可能な型のサムネイルをダウンロードできます。 ユーザーやパブリック クリップの一覧を取得するときに、応答本文で、ファイルを要求の URI が含まれています。
+クライアントには、任意のクリップまたは公開済みの状態に達したと**GameClipUri**オブジェクトで指定されている、ダウンロード可能な型のサムネイルをダウンロードできます。 ユーザーやパブリック クリップの一覧を取得するときに、応答本文で、ファイルを要求の URI が含まれています。
   
 <a id="ID4EDB"></a>
 
@@ -54,11 +54,11 @@ ms.locfileid: "4384732"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
 | Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
 | Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
-| キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。| 
+| キャッシュ コントロール| string| キャッシュ動作を指定する正し要求します。| 
   
 <a id="ID4EQE"></a>
 
@@ -68,7 +68,7 @@ ms.locfileid: "4384732"
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、身元を圧縮します。| 
-| ETag| string| キャッシュの最適化のために使用します。 値の例:"686897696a7c876b7e"です。| 
+| ETag| string| キャッシュの最適化のために使用します。 値の例:"686897696a7c876b7e"。| 
   
 <a id="ID4EZF"></a>
 
@@ -84,9 +84,9 @@ ms.locfileid: "4384732"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。| 
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
 | Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
-| キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。| 
+| キャッシュ コントロール| string| キャッシュ動作を指定する正し要求します。| 
 | Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
 | Retry-after| string| クライアントが利用できないサーバーの場合、後で再試行するように指示します。| 
 | 異なる| string| 下位のプロキシ応答をキャッシュする方法を指示します。| 
@@ -96,7 +96,7 @@ ms.locfileid: "4384732"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -118,7 +118,7 @@ ms.locfileid: "4384732"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Etag| string| キャッシュの最適化のために使用します。 例:"686897696a7c876b7e"です。| 
+| Etag| string| キャッシュの最適化のために使用します。 例:"686897696a7c876b7e"。| 
   
 <a id="ID4EOGAC"></a>
 

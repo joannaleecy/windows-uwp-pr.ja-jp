@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: db832032a40b40d4b3a774a56487f7065d9cd8ff
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4386391"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4425003"
 ---
 # <a name="post-batch"></a>POST (/batch)
-POST メソッドは、複数のタイトルに複数のプレイヤーの統計情報の複雑なバッチ要求の GET メソッドとして機能します。 これらの Uri のドメインが`userstats.xboxlive.com`します。
+POST メソッドは複数のタイトルに複数のプレイヤーの統計情報の複雑なバッチ要求の GET メソッドとして機能します。 これらの Uri のドメインが`userstats.xboxlive.com`します。
  
 <a id="ID4ET"></a>
 
@@ -44,16 +44,16 @@ POST メソッドは、複数のタイトルに複数のプレイヤーの統計
  
 呼び出し元では、ユーザー、サービス構成 Id (Scid)、およびそれらの統計情報を取得するための Scid ごとの統計情報名の一覧の配列でメッセージの本文が提供されます。
  
-詳しくは、見つけることがある前に[GET](uri-usersxuidscidsscidstatsget.md)メソッド読み取りより複雑なこのバッチ モード ページ、単純な単一統計情報を確認すると便利です。
+詳しくは、見つけることがある前に[GET](uri-usersxuidscidsscidstatsget.md)メソッド読み取りより複雑なこのバッチ モード ページ、シンプルな単一統計情報を確認すると便利です。
   
 <a id="ID4EUB"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-承認ロジックがコンテンツ分離とアクセス制御のシナリオの実装があります。
+コンテンツ分離とアクセス制御のシナリオ向けに実装承認ロジックがあります。
  
-   * ランキング、およびユーザーの両方の統計情報は、呼び出し元が要求に有効な XSTS トークンを送信するに、すべてのプラットフォーム上のクライアントから読み取ることができます。 書き込みはでサポートされているクライアントに明らかに制限します。
+   * ランキング、およびユーザーの両方の統計情報は、呼び出し元が要求に有効な XSTS トークンを送信している、任意のプラットフォーム上のクライアントから読み取ることができます。 書き込みはでサポートされているクライアントに明らかに制限します。
    * タイトル デベロッパーは、open または XDP またはデベロッパー センターで制限付きの統計情報をマークできます。 ランキングは、統計を開くです。 開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。 サンド ボックスへのユーザーの承認は XDP またはデベロッパー センターで管理されます。
   
 次の例では、チェックの擬似コードを示します。
@@ -77,7 +77,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"です。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
   
 <a id="ID4E3D"></a>
 
@@ -86,7 +86,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
+| X RequestedServiceVersion|  | この要求を送信する必要があります、サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
   
 <a id="ID4EAF"></a>
 
@@ -98,7 +98,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 ### <a name="sample-request"></a>要求の例
  
-次の投稿の本文には、2 つの異なるユーザーに対する 2 つの異なる Scid から 4 つの統計情報が要求されているサービスが通知されます。
+次の POST 本文には、2 つの異なるユーザーに対する 2 つの異なる Scid から 4 つの統計情報が要求されているサービスが通知されます。
  
 
 ```cpp
@@ -133,7 +133,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -144,7 +144,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 | 403| Forbidden| ユーザーまたはサービスの要求は許可されていません。| 
 | 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
 | 406| 許容できません。| リソースのバージョンがサポートされていません。| 
-| 408| 要求のタイムアウト| リソースのバージョンがサポートされていません。MVC レイヤーによって拒否する必要があります。| 
+| 408| 要求のタイムアウト| リソースのバージョンはサポートされていません。MVC レイヤーによって拒否する必要があります。| 
   
 <a id="ID4ENBAC"></a>
 

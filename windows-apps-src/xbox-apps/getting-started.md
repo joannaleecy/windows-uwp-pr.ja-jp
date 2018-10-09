@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: da260b4f9f5f50d97d39af883217dfbae91a566e
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4390160"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4428479"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Xbox One の UWP アプリ開発の概要
 
@@ -35,9 +35,9 @@ ms.locfileid: "4390160"
 
 1.  Visual Studio 2015 Update 3 または Visual Studio 2017 をインストールします。
 
-    Visual Studio 2015 Update 3 をインストールしている場合は、既定のインストールの一部ではないこと:**カスタム**インストールを選択して、**ユニバーサル Windows アプリ開発ツール**のチェック ボックスをオンを確認します。 C++ 開発者の場合は、**カスタム インストール**と **C++** を選択してください。
+    Visual Studio 2015 Update 3 をインストールする場合は、既定のインストールの一部ではないこと:**カスタム**インストールを選択して、**ユニバーサル Windows アプリ開発ツール**のチェック ボックスをオンを確認します。 C++ 開発者の場合は、**カスタム インストール**と **C++** を選択してください。
 
-    Visual Studio 2017 をインストールする場合、必ず**ユニバーサル Windows プラットフォーム開発**ワークロードを選択してください。 場合は、右側の [**概要**] ウィンドウでの C++ 開発者 [**ユニバーサル Windows プラットフォーム開発**、確認**C++ ユニバーサル Windows プラットフォーム ツール**のチェック ボックスを選択します。 既定のインストールの一部ではありません。
+    Visual Studio 2017 をインストールする場合、必ず**ユニバーサル Windows プラットフォーム開発**ワークロードを選択してください。 、右側の [**概要**] ウィンドウでの C++ 開発者場合 [**ユニバーサル Windows プラットフォーム開発**、確認**C++ ユニバーサル Windows プラットフォーム ツール**のチェック ボックスを選択します。 既定のインストールの一部ではありません。
 
     詳細については、 [UWP Xbox の開発環境をセットアップ](development-environment-setup.md)を参照してください。
 
@@ -52,7 +52,7 @@ ms.locfileid: "4390160"
 
 ## <a name="setting-up-your-xbox-one-console"></a>Xbox One 本体の設定
 
-1.  Xbox One の開発者モードを有効にします。 アプリをダウンロード、アクティブ化コードを取得し、デベロッパー センター アカウントに[Xbox One 本体の管理](https://partner.microsoft.com/xboxactivate)ページに入力します。 詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-activation.md)」をご覧ください。 
+1.  Xbox One の開発者モードを有効にします。 アプリをダウンロード、アクティブ化コードを取得し、デベロッパー センター アカウントでの[Xbox One 本体の管理](https://partner.microsoft.com/xboxactivate)ページを入力します。 詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-activation.md)」をご覧ください。 
 
 2.  **開発者モードのアクティブ化用**アプリを開き、**切り替えと再起動**を選択します。 これで Xbox One は開発者モードとなりました。
   
@@ -70,9 +70,9 @@ ms.locfileid: "4390160"
 
     本体で Dev Home (ホーム画面の右側の大きなタイル) を開始すると、左上隅に Xbox One の IP アドレスが表示されます。 Dev Home について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。  
 
-2.  **C++ と Html/javascript プロジェクト**: と同様のパスを実行する c# プロジェクトの場合は、プロジェクトのプロパティで、[**デバッグ**] タブに移動、ドロップダウン リストを開き、IP アドレスまたはホスト名の入力をデバッガーで**リモート コンピューター**を選択します**コンピューター名**] と [**ユニバーサル (暗号化されていないプロトコル)** **認証の種類**のフィールドに本体です。
+2.  **C++ と Html/javascript プロジェクト**: と同様のパスを実行する c# プロジェクトの場合、プロジェクトのプロパティで、[**デバッグ**] タブに移動、ドロップダウン リストを開き、IP アドレスまたはホスト名の入力にデバッガーで**リモート コンピューター**を選択します**コンピューター名**] と [**ユニバーサル (暗号化されていないプロトコル)** **認証の種類**のフィールドに本体です。
 
-3. 上部のメニュー バーで、緑色の再生ボタンの左側のドロップダウン リストから**x64**を選びます。
+3. 上部のメニュー バーの緑色の再生ボタンの左側のドロップダウン リストから**x64**を選びます。
    
 4.  F5 キーを押してアプリをビルドして、Xbox One での展開を開始します。
   

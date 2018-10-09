@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 開発者アカウント, 個人, 会社, ビジネス
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4392391"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4424236"
 ---
 # <a name="account-types-locations-and-fees"></a>アカウントの種類、場所、料金
 
@@ -37,7 +37,7 @@ ms.locfileid: "4392391"
 |--------------------|-----------------|
 | <ul><li>約 19 米ドルの費用がかかる (1 回限りの登録料。正確な金額は、国または地域によって異なる)</li><li>短いアカウント検証プロセス</li></ul> | <ul><li>約 99 米ドルの費用がかかる (1 回限りの登録料。正確な金額は、国または地域によって異なる)</li><li>より厳格なアカウントの確認が必要になる</li><li>所在地の国または地域で、その会社が会社として認識されている必要がある</li><li>機能が制限されたアプリを提出できる ([Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)の説明に従う)</li></ul> |
 
-会社のアカウントの方が費用が少し高くなる主な原因は、会社を代表してアカウントをセットアップする権限がユーザーにあることを確かめるために追加の手続きが必要になることにあります。 [ストアのポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)、特定の機能を備えたアプリあたりなど財務アカウントにアクセスする情報を必要と認証 (使用せずに、セキュリティで保護された専用のサード パーティ認証プロバイダー)、主要な機能にアクセスするには会社のアカウントでのみ公開されることができます。
+会社のアカウントの方が費用が少し高くなる主な原因は、会社を代表してアカウントをセットアップする権限がユーザーにあることを確かめるために追加の手続きが必要になることにあります。 [ストアのポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)、特定の機能を使ったアプリあたりなど財務アカウントにアクセスする情報を必要と認証 (セキュリティで保護された専用のサード パーティ認証プロバイダーを使用する) ことがなく主な機能にアクセスするには会社のアカウントでのみ公開されることができます。
 
 ## <a name="account-verification"></a>アカウントの検証
 
