@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 068ae15566d73dfc4610f8540972b7e80329de8e
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4428610"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4460755"
 ---
 # <a name="usertitle-json"></a><span data-ttu-id="f5f44-104">UserTitle (JSON)</span><span class="sxs-lookup"><span data-stu-id="f5f44-104">UserTitle (JSON)</span></span>
 <span data-ttu-id="f5f44-105">タイトルのユーザー データが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f5f44-105">Contains user title data.</span></span> 

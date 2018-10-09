@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Xbox One, XDK, 対象パートナー, サンドボックス, コンテンツの分離
 ms.localizationpriority: medium
 ms.openlocfilehash: 02817869aeba78ad1b86e12d4bbd31a1107d3195
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4417686"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4460663"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a><span data-ttu-id="3b7db-104">高度な Xbox Live のサンドボックス</span><span class="sxs-lookup"><span data-stu-id="3b7db-104">Advanced Xbox Live sandboxes</span></span>
 

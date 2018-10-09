@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b049965d619a7c25108e2b6308b18f1e402fecab
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4415056"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4462302"
 ---
 # <a name="eds-query-refiners"></a><span data-ttu-id="220dd-104">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="220dd-104">EDS Query Refiners</span></span>
  

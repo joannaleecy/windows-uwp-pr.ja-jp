@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 512880b7a7ea955a45697762cbbdb7f74ac70102
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4418148"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4461474"
 ---
 # <a name="makepriexe-configuration-file"></a><span data-ttu-id="e290b-103">MakePri.exe 構成ファイル</span><span class="sxs-lookup"><span data-stu-id="e290b-103">MakePri.exe configuration file</span></span>
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、アジャイル、オブジェクト、アジリティ、IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 9af1fb0a9d23727924ae3c165bc8977fb9cc7774
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4423410"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4461307"
 ---
 # <a name="agile-objects-in-cwinrt"></a><span data-ttu-id="82a5c-105">C++/WinRT におけるアジャイル オブジェクト</span><span class="sxs-lookup"><span data-stu-id="82a5c-105">Agile objects in C++/WinRT</span></span>
 <span data-ttu-id="82a5c-106">ほとんどの場合、Windows ランタイム クラスのインスタンス (標準 C++ オブジェクトなど) は任意のスレッドからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="82a5c-106">In the vast majority of cases, an instance of a Windows Runtime class&mdash;like a standard C++ object&mdash;can be accessed from any thread.</span></span> <span data-ttu-id="82a5c-107">このようなクラスは*アジャイル*です。</span><span class="sxs-lookup"><span data-stu-id="82a5c-107">Such a class is *agile*.</span></span> <span data-ttu-id="82a5c-108">Windows に組み込まれている Windows ランタイム クラスのうち少数はアジャイル以外ですが、それらを使用するときに、スレッド モデルおよびマーシャリング動作を考慮する必要があります (マーシャリングではスレッドまたはプロセスの境界を越えてデータが渡されます)。</span><span class="sxs-lookup"><span data-stu-id="82a5c-108">Only a small number of Windows Runtime classes that ship with Windows are non-agile, but when you consume them you need to take into consideration their threading model and marshaling behavior (marshaling is passing data across a thread or process boundary).</span></span> <span data-ttu-id="82a5c-109">アジャイルであるすべての Windows ランタイム オブジェクトの値として適切なため、独自[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)の種類は既定でアジャイルです。</span><span class="sxs-lookup"><span data-stu-id="82a5c-109">It's a good default for every Windows Runtime object to be agile, so your own [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) types are agile by default.</span></span>
