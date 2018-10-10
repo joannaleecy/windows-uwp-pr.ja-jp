@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 635f11677997523fe952de04b8398410efc503d2
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469426"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502250"
 ---
 # <a name="usersowneridpeopleavoid"></a>/users/{ownerId}/people/avoid
 ユーザーの回避一覧にアクセスします。

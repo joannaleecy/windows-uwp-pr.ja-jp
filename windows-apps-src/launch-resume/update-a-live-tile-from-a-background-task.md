@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469032"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503258"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>バックグラウンド タスクによるライブ タイルの更新
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a215e9e1abb6daad2c011f38d56c2e501bd16e40
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464612"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500547"
 ---
 # <a name="get-usersowneridclips"></a>GET (/users/{ownerId}/clips)
 ユーザーのクリップの一覧を取得します。

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 対象のプラン, プラン, 販売, 通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 727c438bacf51fd2ead03df72421363116c4701b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462533"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509464"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>対象のプランによるエンゲージメントとコンバージョンの最大化
 

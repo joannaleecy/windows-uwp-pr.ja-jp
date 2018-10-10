@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、レビュー、コメント、レビュー担当者
 ms.localizationpriority: medium
 ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471325"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499883"
 ---
 # <a name="reviews-report"></a>レビュー レポート
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 87aafe36d05298a8fa157426e39c530190f98908
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462643"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509306"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート
 

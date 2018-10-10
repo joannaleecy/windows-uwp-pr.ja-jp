@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 910e2e46725c8628d6984983c808bf5fc9937f9f
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464154"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498354"
 ---
 # <a name="post-itemid"></a>POST ({itemID})
 または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント、コンシューマブルを要求した量の数量。

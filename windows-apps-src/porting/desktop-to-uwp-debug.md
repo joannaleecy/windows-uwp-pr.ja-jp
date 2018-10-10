@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: b5110eebde087593f07704e89c2e4708b2fcbb8b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463513"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501468"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>実行、デバッグ、およびデスクトップ アプリケーションをパッケージ化されたテスト
 

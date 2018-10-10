@@ -14,11 +14,11 @@ design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e940c87626a05ee6911d3ffda36ab8dfd3fad0
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461741"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509524"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>UWP アプリ用の接続型アニメーション
 

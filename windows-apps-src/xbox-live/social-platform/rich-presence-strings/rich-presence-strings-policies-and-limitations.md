@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス, ポリシー
 ms.localizationpriority: medium
 ms.openlocfilehash: 02c5a39dadd50326b7008d73ff6f47e1b4faeb7b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466843"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4501189"
 ---
 # <a name="rich-presence-policies-and-limitations"></a>リッチ プレゼンスのポリシーと制限
 
