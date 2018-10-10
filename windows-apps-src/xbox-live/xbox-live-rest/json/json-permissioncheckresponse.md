@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f04da7d375b404a5d05dcf5d5e9905b00b7545d9
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469260"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4497709"
 ---
 # <a name="permissioncheckresponse-json"></a><span data-ttu-id="91b08-104">PermissionCheckResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="91b08-104">PermissionCheckResponse (JSON)</span></span>
 <span data-ttu-id="91b08-105">1 つのターゲットのユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからのチェックの結果。</span><span class="sxs-lookup"><span data-stu-id="91b08-105">The results of a check from a single user for a single permission setting against a single target user.</span></span> 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 90b8c498c981ddddb10d28317c260c707ca1e897
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465134"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500522"
 ---
 # <a name="getclipresponse-json"></a><span data-ttu-id="b0b7a-104">GetClipResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="b0b7a-104">GetClipResponse (JSON)</span></span>
 <span data-ttu-id="b0b7a-105">ゲーム クリップをラップします。</span><span class="sxs-lookup"><span data-stu-id="b0b7a-105">Wraps the game clip.</span></span> 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fe1129db6154d842cbadf0e7918d2fe460166ba1
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469887"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504311"
 ---
 # <a name="usersxuidxuiddeleteuserdata"></a><span data-ttu-id="b515a-104">/users/xuid({xuid})/deleteuserdata</span><span class="sxs-lookup"><span data-stu-id="b515a-104">/users/xuid({xuid})/deleteuserdata</span></span>
 <span data-ttu-id="b515a-105">テスト ユーザーの評判のデータを完全にリセットします。</span><span class="sxs-lookup"><span data-stu-id="b515a-105">Completely resets the reputation data for a test user.</span></span> <span data-ttu-id="b515a-106">テストのみです。</span><span class="sxs-lookup"><span data-stu-id="b515a-106">For testing only.</span></span> <span data-ttu-id="b515a-107">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="b515a-107">The domain for these URIs is `reputation.xboxlive.com`.</span></span> <span data-ttu-id="b515a-108">この URI は、常にポート 10443 で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="b515a-108">This URI is always called on port 10443.</span></span>

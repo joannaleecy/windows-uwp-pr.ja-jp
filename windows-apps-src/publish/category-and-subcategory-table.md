@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, カテゴリ, サブカテゴリ, ジャンル, 分類, ジャンル
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f43ae7c70a9471f279927d87c9d55aac8519d6a
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467203"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509474"
 ---
 # <a name="category-and-subcategory-table"></a><span data-ttu-id="048f0-103">カテゴリとサブカテゴリの一覧</span><span class="sxs-lookup"><span data-stu-id="048f0-103">Category and subcategory table</span></span>
 

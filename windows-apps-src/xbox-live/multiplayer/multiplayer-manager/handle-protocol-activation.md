@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, プロトコルのアクティブ化
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b0cd9dbde739079fc72a0ee4a7be018afc427ed
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464286"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500510"
 ---
 # <a name="handle-protocol-activation"></a><span data-ttu-id="78356-104">プロトコルのアクティブ化を処理する</span><span class="sxs-lookup"><span data-stu-id="78356-104">Handle protocol activation</span></span>
 

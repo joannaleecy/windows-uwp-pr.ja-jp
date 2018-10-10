@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d27ed6fa81bfd8618f19938c97a56361c16c009
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469139"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499162"
 ---
 # <a name="get-usersxuidxuidinbox"></a><span data-ttu-id="73a5b-104">GET (/users/xuid({xuid})/inbox)</span><span class="sxs-lookup"><span data-stu-id="73a5b-104">GET (/users/xuid({xuid})/inbox)</span></span>
 <span data-ttu-id="73a5b-105">サービスから指定したメッセージの概要をユーザー数を取得します。</span><span class="sxs-lookup"><span data-stu-id="73a5b-105">Retrieves a specified number of user message summaries from the service.</span></span>

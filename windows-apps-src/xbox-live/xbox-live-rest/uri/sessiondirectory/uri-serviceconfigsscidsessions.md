@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 04176c4b2d2839df07fb55eceb5bb752c61d9c65
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470797"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499159"
 ---
 # <a name="serviceconfigsscidsessions"></a><span data-ttu-id="236a9-104">/serviceconfigs/{scid}/sessions</span><span class="sxs-lookup"><span data-stu-id="236a9-104">/serviceconfigs/{scid}/sessions</span></span>
 <span data-ttu-id="236a9-105">セッション ドキュメントのセットを取得する GET 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="236a9-105">Supports a GET operation to retrieve a set of session documents.</span></span> 
