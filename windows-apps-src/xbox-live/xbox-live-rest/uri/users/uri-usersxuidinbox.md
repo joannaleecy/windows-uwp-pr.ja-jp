@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 944b2c9f0e5758444295ef9ec189d84728a3845d
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4445514"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4471789"
 ---
 # <a name="usersxuidxuidinbox"></a><span data-ttu-id="54ae1-104">/users/xuid({xuid})/inbox</span><span class="sxs-lookup"><span data-stu-id="54ae1-104">/users/xuid({xuid})/inbox</span></span>
 <span data-ttu-id="54ae1-105">ユーザーへのアクセスの Xbox LIVE サービスの受信トレイのメッセージを提供します。</span><span class="sxs-lookup"><span data-stu-id="54ae1-105">Provides access to a user's messaging inbox for Xbox LIVE Services.</span></span> <span data-ttu-id="54ae1-106">これらの Uri のドメインが`msg.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="54ae1-106">The domain for these URIs is `msg.xboxlive.com`.</span></span>
