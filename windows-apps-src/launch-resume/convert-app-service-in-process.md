@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10, uwp, アプリ サービス
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
-ms.openlocfilehash: a77ea3cefcc423e710ab0afebb3fa064e61507ec
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.openlocfilehash: d259df2a65046acb1c34dd2958ab4513bc31f43b
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4425414"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4471368"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する
 
@@ -47,6 +47,8 @@ ms.locfileid: "4425414"
 2 つ目の変更として、サービス ロジックを別個のバックグラウンド タスク プロジェクトから、**OnBackgroundActivated()** によって呼び出すことができるメソッドに移動します。
 
 これで、アプリケーションがアプリ サービスを直接実行できるようになります。 たとえば、App.xaml.cs: 内
+
+[!NOTE] 次のコードは、例 1 (アウト プロセス サービス) に提供されるものよりも異なります。 次のコードは提供のみを目的と、(インプロセス サービス) 例 2 の一部としては使用する必要があります。  例からの資料の移行を続行するには、は、例 2 (インプロセス サービス) に 1 (アウト プロセス サービス) 引き続き、次の例のコードではなく例 1 の提供されているコードを使用します。
 
 ``` cs
 using Windows.ApplicationModel.AppService;
