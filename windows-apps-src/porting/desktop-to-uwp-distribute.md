@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: c81e8d07efa04e93128089eaec78fb83b822a4b9
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461107"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504943"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a><span data-ttu-id="5a126-103">デスクトップ アプリケーションのパッケージを配布します。</span><span class="sxs-lookup"><span data-stu-id="5a126-103">Distribute a packaged desktop application</span></span>
 
