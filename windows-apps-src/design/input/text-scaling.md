@@ -12,11 +12,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 885ccc89fcbd4315eeed40c3546ef485c515294e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461867"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508692"
 ---
 # <a name="text-scaling"></a><span data-ttu-id="d7aa2-103">テキストのスケーリング</span><span class="sxs-lookup"><span data-stu-id="d7aa2-103">Text scaling</span></span>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0742ad87e68f7d0c6ed6346873aa3dd6c56edee0
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463157"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505284"
 ---
 # <a name="serviceconfigsscidhoppersnamestats"></a><span data-ttu-id="90b11-104">/serviceconfigs/{scid}/hoppers/{name}/stats</span><span class="sxs-lookup"><span data-stu-id="90b11-104">/serviceconfigs/{scid}/hoppers/{name}/stats</span></span>
 

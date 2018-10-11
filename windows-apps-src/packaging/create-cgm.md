@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, コンテンツ グループ マップ, ストリーミング インストール, UWP アプリ ストリーミング インストール, ソース コンテンツ グループ マップ
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ce32958d5a99dc9f3f772d6272450a4f2b0f81b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461412"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507642"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a><span data-ttu-id="d912c-105">ソース コンテンツ グループ マップの作成と変換</span><span class="sxs-lookup"><span data-stu-id="d912c-105">Create and convert a source content group map</span></span>
 

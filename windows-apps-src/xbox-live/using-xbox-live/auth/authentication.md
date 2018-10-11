@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 認証, サインイン
 ms.localizationpriority: medium
 ms.openlocfilehash: 61a4b0ef33d346b8ed4d3e0b8e074ede1edeba23
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467815"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506604"
 ---
 # <a name="authentication"></a><span data-ttu-id="43857-104">認証</span><span class="sxs-lookup"><span data-stu-id="43857-104">Authentication</span></span>
 
