@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4504537"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4529284"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a><span data-ttu-id="1bd97-104">新機能、Windows 開発者向けドキュメントの 2018 年 5 月</span><span class="sxs-lookup"><span data-stu-id="1bd97-104">What's New in the Windows Developer Docs in May 2018</span></span>
 

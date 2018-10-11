@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, フライティング
 ms.localizationpriority: medium
 ms.openlocfilehash: d5f43173c85bc8a696d7dbc9967e704f79db2b3f
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4499696"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4530981"
 ---
 # <a name="package-flights"></a><span data-ttu-id="24432-103">パッケージ フライト</span><span class="sxs-lookup"><span data-stu-id="24432-103">Package flights</span></span>
 

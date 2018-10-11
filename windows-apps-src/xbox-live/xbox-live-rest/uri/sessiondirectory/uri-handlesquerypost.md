@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a5caed8863133129c7bc2f0ee3dcb87f1c4a935e
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4504653"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4534813"
 ---
 # <a name="post-handlesquery"></a><span data-ttu-id="0640b-104">POST (/handles/query)</span><span class="sxs-lookup"><span data-stu-id="0640b-104">POST (/handles/query)</span></span>
 <span data-ttu-id="0640b-105">セッション ハンドルに対するクエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="0640b-105">Creates queries for session handles.</span></span>

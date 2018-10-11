@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: e70ab7c7fba8b8da9a0115a86a13f08e4ef3ebe2
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4506077"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4535489"
 ---
 # <a name="device-portal-for-hololens"></a><span data-ttu-id="56ac9-104">HoloLens 用 Device Portal</span><span class="sxs-lookup"><span data-stu-id="56ac9-104">Device Portal for HoloLens</span></span>
 

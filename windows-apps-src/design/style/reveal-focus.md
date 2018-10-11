@@ -14,11 +14,11 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5fa84efbe20368be55a50ce20c8e6e5d1fe439
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4504661"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4534259"
 ---
 # <a name="reveal-focus"></a><span data-ttu-id="fee46-104">表示フォーカス</span><span class="sxs-lookup"><span data-stu-id="fee46-104">Reveal Focus</span></span>
 
