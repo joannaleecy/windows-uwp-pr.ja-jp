@@ -1,12 +1,12 @@
 ---
-author: QuinnRadich
+author: Jwmsft
 Description: Learn how to enable peer-to-peer navigation between two basic pages in an Universal Windows Platform (UWP) app.
 title: 2 ページ間でのピア ツー ピアのナビゲーション
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
-ms.author: quradic
+ms.author: jimwalk
 ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
@@ -17,12 +17,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 02b2c0d24c3f963025774c87c0c0a1c588c8a249
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.openlocfilehash: 359c6527c341a08eca23aa6dd28acd27ddb19205
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4507896"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4534434"
 ---
 # <a name="implement-navigation-between-two-pages"></a>2 ページ間でのナビゲーションを実装する
 

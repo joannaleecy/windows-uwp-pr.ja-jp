@@ -1,23 +1,23 @@
 ---
-author: QuinnRadich
+author: Jwmsft
 Description: The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
 title: マスター/詳細
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
-ms.author: quradic
+ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 28a6160019fd3bf64dd1f75bc5c6df29cd3165ad
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.openlocfilehash: f1236c2ade0423f6e092024e786741f3f3bf6d11
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4504648"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4532676"
 ---
 # <a name="masterdetails-pattern"></a>マスター/詳細パターン
 

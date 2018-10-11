@@ -1,21 +1,21 @@
 ---
-author: mithom
+author: eliotcowley
 title: UI ナビゲーション コントローラー
 description: Windows.Gaming.Input UI ナビゲーション コントローラー API を使うと、UI ナビゲーション用のさまざまな種類の入力デバイスを検出して読み取ることができます。
 ms.assetid: 5A14926D-8C2E-4DE8-AAFB-BEEB9BFE91A5
-ms.author: wdg-dev-content
+ms.author: elcowle
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, UI, ナビゲーション
 ms.localizationpriority: medium
-ms.openlocfilehash: cae9d515ba5925ce81c90dfe5eb3785491128010
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 4f95094ebf31c4b80ee8858ad849da33ff16434a
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656137"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4535086"
 ---
 # <a name="ui-navigation-controller"></a>UI ナビゲーション コントローラー
 
@@ -215,7 +215,7 @@ if (OptionalUINavigationButtons::Context1 == (reading.OptionalButtons & Optional
 
 ## <a name="run-the-ui-navigation-controller-sample"></a>UI ナビゲーション コントローラーのサンプルを実行
 
-[InputInterfacingUWP サンプル _(GitHub)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) は、さまざまな入力デバイスが UI ナビゲーション コントローラーとしてどのように動作するかを示します。
+[InputInterfacingUWP サンプル _(GitHub)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/InputInterfacingUWP) は、さまざまな入力デバイスが UI ナビゲーション コントローラーとしてどのように動作するかを示します。
 
 ## <a name="see-also"></a>関連項目
 [Windows.Gaming.Input.Gamepad][]

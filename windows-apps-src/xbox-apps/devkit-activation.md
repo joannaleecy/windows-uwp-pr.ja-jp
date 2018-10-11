@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
 ms.openlocfilehash: 730c345fe1746bf3284f9c0ce2c9bbeaa7ab0501
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4505973"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4532534"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Xbox One 開発者モードのアクティブ化
 

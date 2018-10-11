@@ -4,18 +4,18 @@ keywords: UWP アプリのレイアウト, UI, ユーザー インターフェ�
 title: UWP アプリ用の設計ツールキットとサンプル
 author: mijacobs
 ms.author: mijacobs
-ms.date: 10/12/2017
+ms.date: 10/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.openlocfilehash: e829883ec33b5e221d0947b6f39cf6ac091a0b4a
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4502743"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4536015"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>UWP アプリ用の設計ツールキットとサンプル
  
@@ -29,26 +29,32 @@ ms.locfileid: "4502743"
 
 :::row:::
     :::column:::
+        ![hero image](images/figma.png)
+        <b>Figma toolkit</b><br>
+        v1810, October 2018<br>
+        <a href="https://aka.ms/figmatoolkit">Download</a>
+    :::column-end:::
+    :::column:::
+        ![hero image](images/sketch.png)
+        <b>Sketch toolkit</b><br>
+        v1810, October 2018<br>
+        <a href="https://aka.ms/sketchtoolkit">Download</a>
+    :::column-end:::    
+    :::column:::
         ![hero image](images/adobe-xd.png)
         <b>Adobe XD toolkit</b><br>
         v1806, June 2018<br>
         <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
         ![hero image](images/adobe-illustrator.png)
         <b>Adobe Illustrator toolkit</b><br>
         v1806, June 2018<br>
         <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
     :::column-end:::
-    :::column:::
-        ![hero image](images/sketch.png)
-        <b>Sketch</b><br>
-        v1803, March 2018<br>
-        <a href="https://aka.ms/sketchtoolkit">Download</a>
-    :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
         ![hero image](images/adobe-photoshop.png)
         <b>Adobe Photoshop toolkit</b><br>
@@ -60,8 +66,6 @@ ms.locfileid: "4502743"
         <b>Framer toolkit</b><br>
         v1806, June 2018<br>
         <a href="https://aka.ms/framertoolkit">Download</a>
-    :::column-end:::
-    :::column:::
     :::column-end:::
 :::row-end:::
 
