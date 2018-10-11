@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 301d646b421e77044f613244ccab987f1cb40dc6
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470419"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507968"
 ---
 # <a name="compile-the-xbox-developer-kit-xdk-xbox-live-api-source"></a>Xbox 開発キット (XDK) に付属する Xbox Live API のソースをコンパイルする
 
