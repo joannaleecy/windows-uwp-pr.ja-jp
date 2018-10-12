@@ -12,30 +12,30 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a3b7f63e7a991420ee594cf45acf2f9952bcf74
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4537917"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4564374"
 ---
-# <a name="permissioncheckbatchrequest-json"></a><span data-ttu-id="ee060-104">PermissionCheckBatchRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="ee060-104">PermissionCheckBatchRequest (JSON)</span></span>
-<span data-ttu-id="ee060-105">PermissionCheckBatchRequest オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="ee060-105">Collection of PermissionCheckBatchRequest objects.</span></span> 
+# <a name="permissioncheckbatchrequest-json"></a><span data-ttu-id="c3e01-104">PermissionCheckBatchRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="c3e01-104">PermissionCheckBatchRequest (JSON)</span></span>
+<span data-ttu-id="c3e01-105">PermissionCheckBatchRequest オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="c3e01-105">Collection of PermissionCheckBatchRequest objects.</span></span> 
 <a id="ID4EP"></a>
 
  
-## <a name="permissioncheckbatchrequest"></a><span data-ttu-id="ee060-106">PermissionCheckBatchRequest</span><span class="sxs-lookup"><span data-stu-id="ee060-106">PermissionCheckBatchRequest</span></span>
+## <a name="permissioncheckbatchrequest"></a><span data-ttu-id="c3e01-106">PermissionCheckBatchRequest</span><span class="sxs-lookup"><span data-stu-id="c3e01-106">PermissionCheckBatchRequest</span></span>
  
-<span data-ttu-id="ee060-107">PermissionCheckBatchRequest オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="ee060-107">The PermissionCheckBatchRequest object has the following specification.</span></span>
+<span data-ttu-id="c3e01-107">PermissionCheckBatchRequest オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="c3e01-107">The PermissionCheckBatchRequest object has the following specification.</span></span>
  
-| <span data-ttu-id="ee060-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="ee060-108">Member</span></span>| <span data-ttu-id="ee060-109">種類</span><span class="sxs-lookup"><span data-stu-id="ee060-109">Type</span></span>| <span data-ttu-id="ee060-110">説明</span><span class="sxs-lookup"><span data-stu-id="ee060-110">Description</span></span>| 
+| <span data-ttu-id="c3e01-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="c3e01-108">Member</span></span>| <span data-ttu-id="c3e01-109">種類</span><span class="sxs-lookup"><span data-stu-id="c3e01-109">Type</span></span>| <span data-ttu-id="c3e01-110">説明</span><span class="sxs-lookup"><span data-stu-id="c3e01-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="ee060-111">Users</span><span class="sxs-lookup"><span data-stu-id="ee060-111">Users</span></span>| <span data-ttu-id="ee060-112">ユーザーの配列</span><span class="sxs-lookup"><span data-stu-id="ee060-112">Array of Users</span></span>| <span data-ttu-id="ee060-113">必須。</span><span class="sxs-lookup"><span data-stu-id="ee060-113">Required.</span></span> <span data-ttu-id="ee060-114">に対するアクセス許可を確認する対象の配列です。</span><span class="sxs-lookup"><span data-stu-id="ee060-114">Array of targets to check permission against.</span></span> <span data-ttu-id="ee060-115">この配列内の各エントリは、Xbox ユーザー ID (XUID) またはクロス ネットワークのシナリオの匿名のネットワークに接続してユーザーのいずれか (「匿名」:"allUsers")。</span><span class="sxs-lookup"><span data-stu-id="ee060-115">Each entry in this array is either an Xbox User ID (XUID) or an anonymous off-network user for cross-network scenarios ("anonymousUser":"allUsers").</span></span> | 
-| <span data-ttu-id="ee060-116">アクセス許可</span><span class="sxs-lookup"><span data-stu-id="ee060-116">Permissions</span></span>| <span data-ttu-id="ee060-117">[PermissionId 列挙型](../enums/privacy-enum-permissionid.md)の配列</span><span class="sxs-lookup"><span data-stu-id="ee060-117">Array of [PermissionId Enumeration](../enums/privacy-enum-permissionid.md)</span></span>| <span data-ttu-id="ee060-118">必須。</span><span class="sxs-lookup"><span data-stu-id="ee060-118">Required.</span></span> <span data-ttu-id="ee060-119">各ユーザーに照らしてチェックするアクセス許可。</span><span class="sxs-lookup"><span data-stu-id="ee060-119">The permissions to check against each user.</span></span>| 
+| <span data-ttu-id="c3e01-111">Users</span><span class="sxs-lookup"><span data-stu-id="c3e01-111">Users</span></span>| <span data-ttu-id="c3e01-112">ユーザーの配列</span><span class="sxs-lookup"><span data-stu-id="c3e01-112">Array of Users</span></span>| <span data-ttu-id="c3e01-113">必須。</span><span class="sxs-lookup"><span data-stu-id="c3e01-113">Required.</span></span> <span data-ttu-id="c3e01-114">に対するアクセス許可を確認する対象の配列です。</span><span class="sxs-lookup"><span data-stu-id="c3e01-114">Array of targets to check permission against.</span></span> <span data-ttu-id="c3e01-115">この配列内の各エントリは、Xbox ユーザー ID (XUID) またはクロス ネットワークのシナリオの匿名のネットワークに接続してユーザーのいずれか (「匿名」:"allUsers")。</span><span class="sxs-lookup"><span data-stu-id="c3e01-115">Each entry in this array is either an Xbox User ID (XUID) or an anonymous off-network user for cross-network scenarios ("anonymousUser":"allUsers").</span></span> | 
+| <span data-ttu-id="c3e01-116">アクセス許可</span><span class="sxs-lookup"><span data-stu-id="c3e01-116">Permissions</span></span>| <span data-ttu-id="c3e01-117">[PermissionId 列挙型](../enums/privacy-enum-permissionid.md)の配列</span><span class="sxs-lookup"><span data-stu-id="c3e01-117">Array of [PermissionId Enumeration](../enums/privacy-enum-permissionid.md)</span></span>| <span data-ttu-id="c3e01-118">必須。</span><span class="sxs-lookup"><span data-stu-id="c3e01-118">Required.</span></span> <span data-ttu-id="c3e01-119">各ユーザーに照らしてチェックするアクセス許可。</span><span class="sxs-lookup"><span data-stu-id="c3e01-119">The permissions to check against each user.</span></span>| 
   
 <a id="ID4E3B"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="ee060-120">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="ee060-120">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="c3e01-120">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="c3e01-120">Sample JSON syntax</span></span>
  
 
 ```json
@@ -58,13 +58,13 @@ ms.locfileid: "4537917"
 <a id="ID4EFC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="ee060-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="ee060-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c3e01-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="c3e01-121">See also</span></span>
  
 <a id="ID4EHC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="ee060-122">Parent</span><span class="sxs-lookup"><span data-stu-id="ee060-122">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="c3e01-122">Parent</span><span class="sxs-lookup"><span data-stu-id="c3e01-122">Parent</span></span> 
 
-[<span data-ttu-id="ee060-123">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="ee060-123">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="c3e01-123">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="c3e01-123">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

@@ -12,86 +12,86 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4087c9857e657bd2621ab1fdb85d06abbfd8f5ef
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4538553"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4565610"
 ---
-# <a name="get-globalscidsscid"></a><span data-ttu-id="bae65-104">GET (/global/scids/{scid})</span><span class="sxs-lookup"><span data-stu-id="bae65-104">GET (/global/scids/{scid})</span></span>
-<span data-ttu-id="bae65-105">このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="bae65-105">Retrieves quota information for this storage type.</span></span> <span data-ttu-id="bae65-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="bae65-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
+# <a name="get-globalscidsscid"></a><span data-ttu-id="a8a36-104">GET (/global/scids/{scid})</span><span class="sxs-lookup"><span data-stu-id="a8a36-104">GET (/global/scids/{scid})</span></span>
+<span data-ttu-id="a8a36-105">このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="a8a36-105">Retrieves quota information for this storage type.</span></span> <span data-ttu-id="a8a36-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a8a36-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="bae65-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="bae65-107">URI parameters</span></span>](#ID4EX)
-  * [<span data-ttu-id="bae65-108">Authorization</span><span class="sxs-lookup"><span data-stu-id="bae65-108">Authorization</span></span>](#ID4ECB)
-  * [<span data-ttu-id="bae65-109">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="bae65-109">Required Request Headers</span></span>](#ID4ENB)
-  * [<span data-ttu-id="bae65-110">要求本文</span><span class="sxs-lookup"><span data-stu-id="bae65-110">Request body</span></span>](#ID4EWC)
-  * [<span data-ttu-id="bae65-111">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="bae65-111">HTTP status codes</span></span>](#ID4EBD)
-  * [<span data-ttu-id="bae65-112">応答本文</span><span class="sxs-lookup"><span data-stu-id="bae65-112">Response body</span></span>](#ID4EUAAC)
+  * [<span data-ttu-id="a8a36-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a8a36-107">URI parameters</span></span>](#ID4EX)
+  * [<span data-ttu-id="a8a36-108">Authorization</span><span class="sxs-lookup"><span data-stu-id="a8a36-108">Authorization</span></span>](#ID4ECB)
+  * [<span data-ttu-id="a8a36-109">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a8a36-109">Required Request Headers</span></span>](#ID4ENB)
+  * [<span data-ttu-id="a8a36-110">要求本文</span><span class="sxs-lookup"><span data-stu-id="a8a36-110">Request body</span></span>](#ID4EWC)
+  * [<span data-ttu-id="a8a36-111">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="a8a36-111">HTTP status codes</span></span>](#ID4EBD)
+  * [<span data-ttu-id="a8a36-112">応答本文</span><span class="sxs-lookup"><span data-stu-id="a8a36-112">Response body</span></span>](#ID4EUAAC)
  
 <a id="ID4EX"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="bae65-113">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="bae65-113">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="a8a36-113">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a8a36-113">URI parameters</span></span>
  
-| <span data-ttu-id="bae65-114">パラメーター</span><span class="sxs-lookup"><span data-stu-id="bae65-114">Parameter</span></span>| <span data-ttu-id="bae65-115">型</span><span class="sxs-lookup"><span data-stu-id="bae65-115">Type</span></span>| <span data-ttu-id="bae65-116">説明</span><span class="sxs-lookup"><span data-stu-id="bae65-116">Description</span></span>| 
+| <span data-ttu-id="a8a36-114">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a8a36-114">Parameter</span></span>| <span data-ttu-id="a8a36-115">型</span><span class="sxs-lookup"><span data-stu-id="a8a36-115">Type</span></span>| <span data-ttu-id="a8a36-116">説明</span><span class="sxs-lookup"><span data-stu-id="a8a36-116">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="bae65-117">scid</span><span class="sxs-lookup"><span data-stu-id="bae65-117">scid</span></span>| <span data-ttu-id="bae65-118">guid</span><span class="sxs-lookup"><span data-stu-id="bae65-118">guid</span></span>| <span data-ttu-id="bae65-119">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="bae65-119">the ID of the service config to look up.</span></span>| 
+| <span data-ttu-id="a8a36-117">scid</span><span class="sxs-lookup"><span data-stu-id="a8a36-117">scid</span></span>| <span data-ttu-id="a8a36-118">guid</span><span class="sxs-lookup"><span data-stu-id="a8a36-118">guid</span></span>| <span data-ttu-id="a8a36-119">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="a8a36-119">the ID of the service config to look up.</span></span>| 
   
 <a id="ID4ECB"></a>
 
  
-## <a name="authorization"></a><span data-ttu-id="bae65-120">Authorization</span><span class="sxs-lookup"><span data-stu-id="bae65-120">Authorization</span></span>
+## <a name="authorization"></a><span data-ttu-id="a8a36-120">Authorization</span><span class="sxs-lookup"><span data-stu-id="a8a36-120">Authorization</span></span>
  
-<span data-ttu-id="bae65-121">要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="bae65-121">The request must include a valid Xbox LIVE authorization header.</span></span> <span data-ttu-id="bae65-122">呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは 403 Forbidden 応答を返します。</span><span class="sxs-lookup"><span data-stu-id="bae65-122">If caller is not allowed to access this resource, the service will return a 403 Forbidden response.</span></span> <span data-ttu-id="bae65-123">ヘッダーが見つからないか無効な場合は、サービスは 401 承認されていない応答を返します。</span><span class="sxs-lookup"><span data-stu-id="bae65-123">If the header is invalid or missing, the service will return a 401 Unauthorized response.</span></span> 
+<span data-ttu-id="a8a36-121">要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="a8a36-121">The request must include a valid Xbox LIVE authorization header.</span></span> <span data-ttu-id="a8a36-122">呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは 403 Forbidden 応答を返します。</span><span class="sxs-lookup"><span data-stu-id="a8a36-122">If caller is not allowed to access this resource, the service will return a 403 Forbidden response.</span></span> <span data-ttu-id="a8a36-123">ヘッダーが見つからないか無効な場合は、サービスは 401 承認されていない応答を返します。</span><span class="sxs-lookup"><span data-stu-id="a8a36-123">If the header is invalid or missing, the service will return a 401 Unauthorized response.</span></span> 
   
 <a id="ID4ENB"></a>
 
  
-## <a name="required-request-headers"></a><span data-ttu-id="bae65-124">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="bae65-124">Required Request Headers</span></span>
+## <a name="required-request-headers"></a><span data-ttu-id="a8a36-124">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a8a36-124">Required Request Headers</span></span>
  
-| <span data-ttu-id="bae65-125">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="bae65-125">Header</span></span>| <span data-ttu-id="bae65-126">設定値</span><span class="sxs-lookup"><span data-stu-id="bae65-126">Value</span></span>| <span data-ttu-id="bae65-127">説明</span><span class="sxs-lookup"><span data-stu-id="bae65-127">Description</span></span>| 
+| <span data-ttu-id="a8a36-125">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a8a36-125">Header</span></span>| <span data-ttu-id="a8a36-126">設定値</span><span class="sxs-lookup"><span data-stu-id="a8a36-126">Value</span></span>| <span data-ttu-id="a8a36-127">説明</span><span class="sxs-lookup"><span data-stu-id="a8a36-127">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="bae65-128">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="bae65-128">x-xbl-contract-version</span></span>| <span data-ttu-id="bae65-129">1</span><span class="sxs-lookup"><span data-stu-id="bae65-129">1</span></span>| <span data-ttu-id="bae65-130">API コントラクト バージョンです。</span><span class="sxs-lookup"><span data-stu-id="bae65-130">API contract version.</span></span>| 
-| <span data-ttu-id="bae65-131">Authorization</span><span class="sxs-lookup"><span data-stu-id="bae65-131">Authorization</span></span>| <span data-ttu-id="bae65-132">XBL3.0 x = [ハッシュ]。[トークン]</span><span class="sxs-lookup"><span data-stu-id="bae65-132">XBL3.0 x=[hash];[token]</span></span>| <span data-ttu-id="bae65-133">STS 認証トークンです。</span><span class="sxs-lookup"><span data-stu-id="bae65-133">STS authentication token.</span></span> <span data-ttu-id="bae65-134">STSTokenString は認証要求によって返されるトークンで置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="bae65-134">STSTokenString is replaced by the token returned by the authentication request.</span></span> <span data-ttu-id="bae65-135">STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証と Xbox LIVE サービス要求の承認を参照してください。</span><span class="sxs-lookup"><span data-stu-id="bae65-135">See Authenticating and Authorizing Xbox LIVE Services Requests for additional information about retrieving an STS token and creating an authorization header.</span></span>| 
+| <span data-ttu-id="a8a36-128">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="a8a36-128">x-xbl-contract-version</span></span>| <span data-ttu-id="a8a36-129">1</span><span class="sxs-lookup"><span data-stu-id="a8a36-129">1</span></span>| <span data-ttu-id="a8a36-130">API コントラクト バージョンです。</span><span class="sxs-lookup"><span data-stu-id="a8a36-130">API contract version.</span></span>| 
+| <span data-ttu-id="a8a36-131">Authorization</span><span class="sxs-lookup"><span data-stu-id="a8a36-131">Authorization</span></span>| <span data-ttu-id="a8a36-132">XBL3.0 x = [ハッシュ]。[トークン]</span><span class="sxs-lookup"><span data-stu-id="a8a36-132">XBL3.0 x=[hash];[token]</span></span>| <span data-ttu-id="a8a36-133">STS 認証トークンです。</span><span class="sxs-lookup"><span data-stu-id="a8a36-133">STS authentication token.</span></span> <span data-ttu-id="a8a36-134">STSTokenString は認証要求によって返されるトークンで置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="a8a36-134">STSTokenString is replaced by the token returned by the authentication request.</span></span> <span data-ttu-id="a8a36-135">STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証と Xbox LIVE サービス要求の承認を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a8a36-135">See Authenticating and Authorizing Xbox LIVE Services Requests for additional information about retrieving an STS token and creating an authorization header.</span></span>| 
   
 <a id="ID4EWC"></a>
 
  
-## <a name="request-body"></a><span data-ttu-id="bae65-136">要求本文</span><span class="sxs-lookup"><span data-stu-id="bae65-136">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="a8a36-136">要求本文</span><span class="sxs-lookup"><span data-stu-id="a8a36-136">Request body</span></span>
  
-<span data-ttu-id="bae65-137">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="bae65-137">No objects are sent in the body of this request.</span></span>
+<span data-ttu-id="a8a36-137">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="a8a36-137">No objects are sent in the body of this request.</span></span>
   
 <a id="ID4EBD"></a>
 
  
-## <a name="http-status-codes"></a><span data-ttu-id="bae65-138">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="bae65-138">HTTP status codes</span></span> 
+## <a name="http-status-codes"></a><span data-ttu-id="a8a36-138">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="a8a36-138">HTTP status codes</span></span> 
  
-<span data-ttu-id="bae65-139">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="bae65-139">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="bae65-140">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="bae65-140">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
+<span data-ttu-id="a8a36-139">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="a8a36-139">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="a8a36-140">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a8a36-140">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
  
-| <span data-ttu-id="bae65-141">コード</span><span class="sxs-lookup"><span data-stu-id="bae65-141">Code</span></span>| <span data-ttu-id="bae65-142">理由フレーズ</span><span class="sxs-lookup"><span data-stu-id="bae65-142">Reason phrase</span></span>| <span data-ttu-id="bae65-143">説明</span><span class="sxs-lookup"><span data-stu-id="bae65-143">Description</span></span>| 
+| <span data-ttu-id="a8a36-141">コード</span><span class="sxs-lookup"><span data-stu-id="a8a36-141">Code</span></span>| <span data-ttu-id="a8a36-142">理由フレーズ</span><span class="sxs-lookup"><span data-stu-id="a8a36-142">Reason phrase</span></span>| <span data-ttu-id="a8a36-143">説明</span><span class="sxs-lookup"><span data-stu-id="a8a36-143">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="bae65-144">200</span><span class="sxs-lookup"><span data-stu-id="bae65-144">200</span></span>| <span data-ttu-id="bae65-145">OK</span><span class="sxs-lookup"><span data-stu-id="bae65-145">OK</span></span> | <span data-ttu-id="bae65-146">要求が成功しました。</span><span class="sxs-lookup"><span data-stu-id="bae65-146">The request was successful.</span></span>| 
-| <span data-ttu-id="bae65-147">201</span><span class="sxs-lookup"><span data-stu-id="bae65-147">201</span></span>| <span data-ttu-id="bae65-148">Created</span><span class="sxs-lookup"><span data-stu-id="bae65-148">Created</span></span> | <span data-ttu-id="bae65-149">エンティティが作成されました。</span><span class="sxs-lookup"><span data-stu-id="bae65-149">The entity was created.</span></span>| 
-| <span data-ttu-id="bae65-150">400</span><span class="sxs-lookup"><span data-stu-id="bae65-150">400</span></span>| <span data-ttu-id="bae65-151">Bad Request</span><span class="sxs-lookup"><span data-stu-id="bae65-151">Bad Request</span></span> | <span data-ttu-id="bae65-152">サービスは、形式が正しくない要求を理解していない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bae65-152">Service could not understand malformed request.</span></span> <span data-ttu-id="bae65-153">通常、無効なパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="bae65-153">Typically an invalid parameter.</span></span>| 
-| <span data-ttu-id="bae65-154">401</span><span class="sxs-lookup"><span data-stu-id="bae65-154">401</span></span>| <span data-ttu-id="bae65-155">権限がありません</span><span class="sxs-lookup"><span data-stu-id="bae65-155">Unauthorized</span></span> | <span data-ttu-id="bae65-156">要求には、ユーザー認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="bae65-156">The request requires user authentication.</span></span>| 
-| <span data-ttu-id="bae65-157">403</span><span class="sxs-lookup"><span data-stu-id="bae65-157">403</span></span>| <span data-ttu-id="bae65-158">Forbidden</span><span class="sxs-lookup"><span data-stu-id="bae65-158">Forbidden</span></span> | <span data-ttu-id="bae65-159">ユーザーまたはサービスの要求は許可されていません。</span><span class="sxs-lookup"><span data-stu-id="bae65-159">The request is not allowed for the user or service.</span></span>| 
-| <span data-ttu-id="bae65-160">404</span><span class="sxs-lookup"><span data-stu-id="bae65-160">404</span></span>| <span data-ttu-id="bae65-161">Not Found します。</span><span class="sxs-lookup"><span data-stu-id="bae65-161">Not Found</span></span> | <span data-ttu-id="bae65-162">指定されたリソースは見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="bae65-162">The specified resource could not be found.</span></span>| 
-| <span data-ttu-id="bae65-163">406</span><span class="sxs-lookup"><span data-stu-id="bae65-163">406</span></span>| <span data-ttu-id="bae65-164">許容できません。</span><span class="sxs-lookup"><span data-stu-id="bae65-164">Not Acceptable</span></span> | <span data-ttu-id="bae65-165">リソースのバージョンがサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="bae65-165">Resource version is not supported.</span></span>| 
-| <span data-ttu-id="bae65-166">408</span><span class="sxs-lookup"><span data-stu-id="bae65-166">408</span></span>| <span data-ttu-id="bae65-167">要求のタイムアウト</span><span class="sxs-lookup"><span data-stu-id="bae65-167">Request Timeout</span></span> | <span data-ttu-id="bae65-168">要求にかかった時間が長すぎます。</span><span class="sxs-lookup"><span data-stu-id="bae65-168">The request took too long to complete.</span></span>| 
-| <span data-ttu-id="bae65-169">500</span><span class="sxs-lookup"><span data-stu-id="bae65-169">500</span></span>| <span data-ttu-id="bae65-170">内部サーバー エラー</span><span class="sxs-lookup"><span data-stu-id="bae65-170">Internal Server Error</span></span> | <span data-ttu-id="bae65-171">サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。</span><span class="sxs-lookup"><span data-stu-id="bae65-171">The server encountered an unexpected condition which prevented it from fulfilling the request.</span></span>| 
-| <span data-ttu-id="bae65-172">503</span><span class="sxs-lookup"><span data-stu-id="bae65-172">503</span></span>| <span data-ttu-id="bae65-173">Service Unavailable</span><span class="sxs-lookup"><span data-stu-id="bae65-173">Service Unavailable</span></span> | <span data-ttu-id="bae65-174">要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度やり直してください。</span><span class="sxs-lookup"><span data-stu-id="bae65-174">Request has been throttled, try the request again after the client-retry value in seconds (e.g. 5 seconds later).</span></span>| 
+| <span data-ttu-id="a8a36-144">200</span><span class="sxs-lookup"><span data-stu-id="a8a36-144">200</span></span>| <span data-ttu-id="a8a36-145">OK</span><span class="sxs-lookup"><span data-stu-id="a8a36-145">OK</span></span> | <span data-ttu-id="a8a36-146">要求が成功しました。</span><span class="sxs-lookup"><span data-stu-id="a8a36-146">The request was successful.</span></span>| 
+| <span data-ttu-id="a8a36-147">201</span><span class="sxs-lookup"><span data-stu-id="a8a36-147">201</span></span>| <span data-ttu-id="a8a36-148">Created</span><span class="sxs-lookup"><span data-stu-id="a8a36-148">Created</span></span> | <span data-ttu-id="a8a36-149">エンティティが作成されました。</span><span class="sxs-lookup"><span data-stu-id="a8a36-149">The entity was created.</span></span>| 
+| <span data-ttu-id="a8a36-150">400</span><span class="sxs-lookup"><span data-stu-id="a8a36-150">400</span></span>| <span data-ttu-id="a8a36-151">Bad Request</span><span class="sxs-lookup"><span data-stu-id="a8a36-151">Bad Request</span></span> | <span data-ttu-id="a8a36-152">サービスは、形式が正しくない要求を理解していない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a8a36-152">Service could not understand malformed request.</span></span> <span data-ttu-id="a8a36-153">通常、無効なパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="a8a36-153">Typically an invalid parameter.</span></span>| 
+| <span data-ttu-id="a8a36-154">401</span><span class="sxs-lookup"><span data-stu-id="a8a36-154">401</span></span>| <span data-ttu-id="a8a36-155">権限がありません</span><span class="sxs-lookup"><span data-stu-id="a8a36-155">Unauthorized</span></span> | <span data-ttu-id="a8a36-156">要求には、ユーザー認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="a8a36-156">The request requires user authentication.</span></span>| 
+| <span data-ttu-id="a8a36-157">403</span><span class="sxs-lookup"><span data-stu-id="a8a36-157">403</span></span>| <span data-ttu-id="a8a36-158">Forbidden</span><span class="sxs-lookup"><span data-stu-id="a8a36-158">Forbidden</span></span> | <span data-ttu-id="a8a36-159">ユーザーまたはサービスの要求は許可されていません。</span><span class="sxs-lookup"><span data-stu-id="a8a36-159">The request is not allowed for the user or service.</span></span>| 
+| <span data-ttu-id="a8a36-160">404</span><span class="sxs-lookup"><span data-stu-id="a8a36-160">404</span></span>| <span data-ttu-id="a8a36-161">Not Found します。</span><span class="sxs-lookup"><span data-stu-id="a8a36-161">Not Found</span></span> | <span data-ttu-id="a8a36-162">指定されたリソースは見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="a8a36-162">The specified resource could not be found.</span></span>| 
+| <span data-ttu-id="a8a36-163">406</span><span class="sxs-lookup"><span data-stu-id="a8a36-163">406</span></span>| <span data-ttu-id="a8a36-164">許容できません。</span><span class="sxs-lookup"><span data-stu-id="a8a36-164">Not Acceptable</span></span> | <span data-ttu-id="a8a36-165">リソースのバージョンがサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="a8a36-165">Resource version is not supported.</span></span>| 
+| <span data-ttu-id="a8a36-166">408</span><span class="sxs-lookup"><span data-stu-id="a8a36-166">408</span></span>| <span data-ttu-id="a8a36-167">要求のタイムアウト</span><span class="sxs-lookup"><span data-stu-id="a8a36-167">Request Timeout</span></span> | <span data-ttu-id="a8a36-168">要求にかかった時間が長すぎます。</span><span class="sxs-lookup"><span data-stu-id="a8a36-168">The request took too long to complete.</span></span>| 
+| <span data-ttu-id="a8a36-169">500</span><span class="sxs-lookup"><span data-stu-id="a8a36-169">500</span></span>| <span data-ttu-id="a8a36-170">内部サーバー エラー</span><span class="sxs-lookup"><span data-stu-id="a8a36-170">Internal Server Error</span></span> | <span data-ttu-id="a8a36-171">サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。</span><span class="sxs-lookup"><span data-stu-id="a8a36-171">The server encountered an unexpected condition which prevented it from fulfilling the request.</span></span>| 
+| <span data-ttu-id="a8a36-172">503</span><span class="sxs-lookup"><span data-stu-id="a8a36-172">503</span></span>| <span data-ttu-id="a8a36-173">Service Unavailable</span><span class="sxs-lookup"><span data-stu-id="a8a36-173">Service Unavailable</span></span> | <span data-ttu-id="a8a36-174">要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度やり直してください。</span><span class="sxs-lookup"><span data-stu-id="a8a36-174">Request has been throttled, try the request again after the client-retry value in seconds (e.g. 5 seconds later).</span></span>| 
   
 <a id="ID4EUAAC"></a>
 
  
-## <a name="response-body"></a><span data-ttu-id="bae65-175">応答本文</span><span class="sxs-lookup"><span data-stu-id="bae65-175">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="a8a36-175">応答本文</span><span class="sxs-lookup"><span data-stu-id="a8a36-175">Response body</span></span>
  
-<span data-ttu-id="bae65-176">呼び出しが成功した場合は、サービスは[quotaInfo](../../json/json-quota.md)オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="bae65-176">If the call is successful, the service will return a [quotaInfo](../../json/json-quota.md) object.</span></span> 
+<span data-ttu-id="a8a36-176">呼び出しが成功した場合は、サービスは[quotaInfo](../../json/json-quota.md)オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="a8a36-176">If the call is successful, the service will return a [quotaInfo](../../json/json-quota.md) object.</span></span> 
  
 <a id="ID4ECBAC"></a>
 
  
-### <a name="sample-response"></a><span data-ttu-id="bae65-177">応答の例</span><span class="sxs-lookup"><span data-stu-id="bae65-177">Sample response</span></span>
+### <a name="sample-response"></a><span data-ttu-id="a8a36-177">応答の例</span><span class="sxs-lookup"><span data-stu-id="a8a36-177">Sample response</span></span>
  
 
 ```cpp
@@ -109,21 +109,21 @@ ms.locfileid: "4538553"
 <a id="ID4EOBAC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="bae65-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="bae65-178">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a8a36-178">関連項目</span><span class="sxs-lookup"><span data-stu-id="a8a36-178">See also</span></span>
  
 <a id="ID4EQBAC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="bae65-179">Parent</span><span class="sxs-lookup"><span data-stu-id="bae65-179">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="a8a36-179">Parent</span><span class="sxs-lookup"><span data-stu-id="a8a36-179">Parent</span></span> 
 
-[<span data-ttu-id="bae65-180">/global/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="bae65-180">/global/scids/{scid}</span></span>](uri-globalscidsscid.md)
+[<span data-ttu-id="a8a36-180">/global/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="a8a36-180">/global/scids/{scid}</span></span>](uri-globalscidsscid.md)
 
   
 <a id="ID4E1BAC"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="bae65-181">リファレンス</span><span class="sxs-lookup"><span data-stu-id="bae65-181">Reference</span></span> 
+##### <a name="reference"></a><span data-ttu-id="a8a36-181">リファレンス</span><span class="sxs-lookup"><span data-stu-id="a8a36-181">Reference</span></span> 
 
-[<span data-ttu-id="bae65-182">quotaInfo (JSON)</span><span class="sxs-lookup"><span data-stu-id="bae65-182">quotaInfo (JSON)</span></span>](../../json/json-quota.md)
+[<span data-ttu-id="a8a36-182">quotaInfo (JSON)</span><span class="sxs-lookup"><span data-stu-id="a8a36-182">quotaInfo (JSON)</span></span>](../../json/json-quota.md)
 
    

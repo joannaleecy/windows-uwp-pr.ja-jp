@@ -12,32 +12,32 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 520861dfa512ae301cce9d75e1c314feacf7d6b9
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4537585"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4568658"
 ---
-# <a name="multiplayersession-json"></a><span data-ttu-id="5d3f3-104">MultiplayerSession (JSON)</span><span class="sxs-lookup"><span data-stu-id="5d3f3-104">MultiplayerSession (JSON)</span></span>
-<span data-ttu-id="5d3f3-105">**MultiplayerSession**を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-105">A JSON object representing the **MultiplayerSession**.</span></span> 
+# <a name="multiplayersession-json"></a><span data-ttu-id="056da-104">MultiplayerSession (JSON)</span><span class="sxs-lookup"><span data-stu-id="056da-104">MultiplayerSession (JSON)</span></span>
+<span data-ttu-id="056da-105">**MultiplayerSession**を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="056da-105">A JSON object representing the **MultiplayerSession**.</span></span> 
 <a id="ID4EQ"></a>
 
   
  
-<span data-ttu-id="5d3f3-106">MultiplayerSession JSON オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-106">The MultiplayerSession JSON object has the following specification.</span></span>
+<span data-ttu-id="056da-106">MultiplayerSession JSON オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="056da-106">The MultiplayerSession JSON object has the following specification.</span></span>
  
-| <span data-ttu-id="5d3f3-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="5d3f3-107">Member</span></span>| <span data-ttu-id="5d3f3-108">種類</span><span class="sxs-lookup"><span data-stu-id="5d3f3-108">Type</span></span>| <span data-ttu-id="5d3f3-109">説明</span><span class="sxs-lookup"><span data-stu-id="5d3f3-109">Description</span></span>| 
+| <span data-ttu-id="056da-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="056da-107">Member</span></span>| <span data-ttu-id="056da-108">種類</span><span class="sxs-lookup"><span data-stu-id="056da-108">Type</span></span>| <span data-ttu-id="056da-109">説明</span><span class="sxs-lookup"><span data-stu-id="056da-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="5d3f3-110">定数</span><span class="sxs-lookup"><span data-stu-id="5d3f3-110">constants</span></span>| <span data-ttu-id="5d3f3-111">object</span><span class="sxs-lookup"><span data-stu-id="5d3f3-111">object</span></span>| <span data-ttu-id="5d3f3-112">セッションの定数を生成するセッション テンプレートと結合された読み取り専用の設定。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-112">Read-only settings that are merged with the session template to produce the constants for the session.</span></span> | 
-| <span data-ttu-id="5d3f3-113">プロパティ</span><span class="sxs-lookup"><span data-stu-id="5d3f3-113">properties</span></span> | <span data-ttu-id="5d3f3-114">object</span><span class="sxs-lookup"><span data-stu-id="5d3f3-114">object</span></span> | <span data-ttu-id="5d3f3-115">セッションのプロパティへの結合を変更します。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-115">Changes to be merged into the session properties.</span></span>| 
-| <span data-ttu-id="5d3f3-116">members.me</span><span class="sxs-lookup"><span data-stu-id="5d3f3-116">members.me</span></span> | <span data-ttu-id="5d3f3-117">object</span><span class="sxs-lookup"><span data-stu-id="5d3f3-117">object</span></span>| <span data-ttu-id="5d3f3-118">定数および機能もプロパティなどのトップレベルの対応します。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-118">Constants and properties that work much like their top-level counterparts.</span></span> <span data-ttu-id="5d3f3-119">PUT メソッドでは、ユーザーが、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-119">Any PUT method requires the user to be a member of the session, and adds the user if necessary.</span></span> <span data-ttu-id="5d3f3-120">Null として"me"を指定する場合は、要求を行っているメンバーがセッションから削除されます。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-120">If "me" is specified as null, the member making the request is removed from the session.</span></span> | 
-| <span data-ttu-id="5d3f3-121">メンバー</span><span class="sxs-lookup"><span data-stu-id="5d3f3-121">members</span></span> | <span data-ttu-id="5d3f3-122">object</span><span class="sxs-lookup"><span data-stu-id="5d3f3-122">object</span></span>| <span data-ttu-id="5d3f3-123">0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-123">Other objects that represent users to add to the session, keyed by a zero-based index.</span></span> <span data-ttu-id="5d3f3-124">要求のメンバー数常に 0 から始まり、場合でも、既にセッションにはメンバーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-124">The number of members in a request always starts with 0, even if the session already contains members.</span></span> <span data-ttu-id="5d3f3-125">要求で表示される順序でセッションにメンバーが追加されます。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-125">Members are added to the session in the order in which they appear in the request.</span></span> <span data-ttu-id="5d3f3-126">メンバーのプロパティは、先に属しているユーザーでのみ設定できます。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-126">Member properties can only be set by the user to whom they belong.</span></span> | 
-| <span data-ttu-id="5d3f3-127">サーバー</span><span class="sxs-lookup"><span data-stu-id="5d3f3-127">servers</span></span> | <span data-ttu-id="5d3f3-128">object</span><span class="sxs-lookup"><span data-stu-id="5d3f3-128">object</span></span>| <span data-ttu-id="5d3f3-129">関連付けられているサーバーの参加者のセットに更新プログラムと、セッションに追加されたことを示す値。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-129">Values indicating updates and additions to the session's set of associated server participants.</span></span> <span data-ttu-id="5d3f3-130">サーバーが null として指定されている場合、そのサーバーのエントリは、セッションから削除されます。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-130">If a server is specified as null, that server entry is removed from the session.</span></span> | 
+| <span data-ttu-id="056da-110">定数</span><span class="sxs-lookup"><span data-stu-id="056da-110">constants</span></span>| <span data-ttu-id="056da-111">object</span><span class="sxs-lookup"><span data-stu-id="056da-111">object</span></span>| <span data-ttu-id="056da-112">セッションの定数を生成するセッション テンプレートと結合された読み取り専用の設定。</span><span class="sxs-lookup"><span data-stu-id="056da-112">Read-only settings that are merged with the session template to produce the constants for the session.</span></span> | 
+| <span data-ttu-id="056da-113">プロパティ</span><span class="sxs-lookup"><span data-stu-id="056da-113">properties</span></span> | <span data-ttu-id="056da-114">object</span><span class="sxs-lookup"><span data-stu-id="056da-114">object</span></span> | <span data-ttu-id="056da-115">セッションのプロパティへの結合を変更します。</span><span class="sxs-lookup"><span data-stu-id="056da-115">Changes to be merged into the session properties.</span></span>| 
+| <span data-ttu-id="056da-116">members.me</span><span class="sxs-lookup"><span data-stu-id="056da-116">members.me</span></span> | <span data-ttu-id="056da-117">object</span><span class="sxs-lookup"><span data-stu-id="056da-117">object</span></span>| <span data-ttu-id="056da-118">定数および機能もプロパティなどのトップレベルの対応します。</span><span class="sxs-lookup"><span data-stu-id="056da-118">Constants and properties that work much like their top-level counterparts.</span></span> <span data-ttu-id="056da-119">PUT メソッドでは、ユーザーが、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。</span><span class="sxs-lookup"><span data-stu-id="056da-119">Any PUT method requires the user to be a member of the session, and adds the user if necessary.</span></span> <span data-ttu-id="056da-120">Null として"me"を指定する場合は、要求を行っているメンバーがセッションから削除されます。</span><span class="sxs-lookup"><span data-stu-id="056da-120">If "me" is specified as null, the member making the request is removed from the session.</span></span> | 
+| <span data-ttu-id="056da-121">メンバー</span><span class="sxs-lookup"><span data-stu-id="056da-121">members</span></span> | <span data-ttu-id="056da-122">object</span><span class="sxs-lookup"><span data-stu-id="056da-122">object</span></span>| <span data-ttu-id="056da-123">0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="056da-123">Other objects that represent users to add to the session, keyed by a zero-based index.</span></span> <span data-ttu-id="056da-124">要求のメンバー数常に 0 から始まり、場合でも、既にセッションにはメンバーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="056da-124">The number of members in a request always starts with 0, even if the session already contains members.</span></span> <span data-ttu-id="056da-125">要求で表示される順序でセッションにメンバーが追加されます。</span><span class="sxs-lookup"><span data-stu-id="056da-125">Members are added to the session in the order in which they appear in the request.</span></span> <span data-ttu-id="056da-126">メンバーのプロパティは、先に属しているユーザーでのみ設定できます。</span><span class="sxs-lookup"><span data-stu-id="056da-126">Member properties can only be set by the user to whom they belong.</span></span> | 
+| <span data-ttu-id="056da-127">サーバー</span><span class="sxs-lookup"><span data-stu-id="056da-127">servers</span></span> | <span data-ttu-id="056da-128">object</span><span class="sxs-lookup"><span data-stu-id="056da-128">object</span></span>| <span data-ttu-id="056da-129">関連付けられているサーバーの参加者のセットに更新プログラムと、セッションに追加されたことを示す値。</span><span class="sxs-lookup"><span data-stu-id="056da-129">Values indicating updates and additions to the session's set of associated server participants.</span></span> <span data-ttu-id="056da-130">サーバーが null として指定されている場合、そのサーバーのエントリは、セッションから削除されます。</span><span class="sxs-lookup"><span data-stu-id="056da-130">If a server is specified as null, that server entry is removed from the session.</span></span> | 
   
 <a id="ID4EZ"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="5d3f3-131">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="5d3f3-131">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="056da-131">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="056da-131">Sample JSON syntax</span></span>
  
 
 ```json
@@ -89,12 +89,12 @@ ms.locfileid: "4537585"
 <a id="ID4EHB"></a>
 
  
-## <a name="request-structure"></a><span data-ttu-id="5d3f3-132">要求の構造</span><span class="sxs-lookup"><span data-stu-id="5d3f3-132">Request Structure</span></span>
-<span data-ttu-id="5d3f3-133">この JSON 仕様に関連付けられている要求の構造、 [MultiplayerSessionRequest (JSON)](json-multiplayersessionrequest.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5d3f3-133">For the request structure associated with this JSON specification, see [MultiplayerSessionRequest (JSON)](json-multiplayersessionrequest.md).</span></span>  
+## <a name="request-structure"></a><span data-ttu-id="056da-132">要求の構造</span><span class="sxs-lookup"><span data-stu-id="056da-132">Request Structure</span></span>
+<span data-ttu-id="056da-133">この JSON 仕様に関連付けられている要求の構造、 [MultiplayerSessionRequest (JSON)](json-multiplayersessionrequest.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="056da-133">For the request structure associated with this JSON specification, see [MultiplayerSessionRequest (JSON)](json-multiplayersessionrequest.md).</span></span>  
 <a id="ID4EPB"></a>
 
  
-## <a name="response-structure"></a><span data-ttu-id="5d3f3-134">応答構造</span><span class="sxs-lookup"><span data-stu-id="5d3f3-134">Response Structure</span></span>
+## <a name="response-structure"></a><span data-ttu-id="056da-134">応答構造</span><span class="sxs-lookup"><span data-stu-id="056da-134">Response Structure</span></span>
  
 
 ```json
@@ -195,13 +195,13 @@ ms.locfileid: "4537585"
 <a id="ID4EWB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="5d3f3-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="5d3f3-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="056da-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="056da-135">See also</span></span>
  
 <a id="ID4EYB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="5d3f3-136">Parent</span><span class="sxs-lookup"><span data-stu-id="5d3f3-136">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="056da-136">Parent</span><span class="sxs-lookup"><span data-stu-id="056da-136">Parent</span></span> 
 
-[<span data-ttu-id="5d3f3-137">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="5d3f3-137">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="056da-137">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="056da-137">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

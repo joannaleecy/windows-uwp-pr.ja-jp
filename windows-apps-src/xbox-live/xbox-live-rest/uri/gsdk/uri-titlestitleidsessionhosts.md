@@ -12,41 +12,41 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a93e134dba9ce66b8b6b547308f926112f6a577f
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4537634"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4567535"
 ---
-# <a name="titlestitleidsessionhosts"></a><span data-ttu-id="79055-104">/titles/{titleId}/sessionhosts</span><span class="sxs-lookup"><span data-stu-id="79055-104">/titles/{titleId}/sessionhosts</span></span>
-<span data-ttu-id="79055-105">指定されたタイトル id に割り当てられる Xbox Live Compute sessionhost を要求します。これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="79055-105">Requests a Xbox Live Compute sessionhost to be allocated for a given title id. The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
+# <a name="titlestitleidsessionhosts"></a><span data-ttu-id="6707c-104">/titles/{titleId}/sessionhosts</span><span class="sxs-lookup"><span data-stu-id="6707c-104">/titles/{titleId}/sessionhosts</span></span>
+<span data-ttu-id="6707c-105">指定されたタイトル id に割り当てられる Xbox Live Compute sessionhost を要求します。これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="6707c-105">Requests a Xbox Live Compute sessionhost to be allocated for a given title id. The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="79055-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="79055-106">URI Parameters</span></span>](#ID4EU)
-  * [<span data-ttu-id="79055-107">ホスト名</span><span class="sxs-lookup"><span data-stu-id="79055-107">Host Name</span></span>](#ID4EIB)
-  * [<span data-ttu-id="79055-108">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="79055-108">Valid Methods</span></span>](#ID4EPB)
+  * [<span data-ttu-id="6707c-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="6707c-106">URI Parameters</span></span>](#ID4EU)
+  * [<span data-ttu-id="6707c-107">ホスト名</span><span class="sxs-lookup"><span data-stu-id="6707c-107">Host Name</span></span>](#ID4EIB)
+  * [<span data-ttu-id="6707c-108">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="6707c-108">Valid Methods</span></span>](#ID4EPB)
  
 <a id="ID4EU"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="79055-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="79055-109">URI Parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="6707c-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="6707c-109">URI Parameters</span></span>
  
-| <span data-ttu-id="79055-110">パラメーター</span><span class="sxs-lookup"><span data-stu-id="79055-110">Parameter</span></span>| <span data-ttu-id="79055-111">説明</span><span class="sxs-lookup"><span data-stu-id="79055-111">Description</span></span>| 
+| <span data-ttu-id="6707c-110">パラメーター</span><span class="sxs-lookup"><span data-stu-id="6707c-110">Parameter</span></span>| <span data-ttu-id="6707c-111">説明</span><span class="sxs-lookup"><span data-stu-id="6707c-111">Description</span></span>| 
 | --- | --- | 
-| <span data-ttu-id="79055-112">titleId</span><span class="sxs-lookup"><span data-stu-id="79055-112">titleId</span></span>| <span data-ttu-id="79055-113">要求の操作のタイトルの ID です。</span><span class="sxs-lookup"><span data-stu-id="79055-113">ID of the title that the request should operate on.</span></span>| 
+| <span data-ttu-id="6707c-112">titleId</span><span class="sxs-lookup"><span data-stu-id="6707c-112">titleId</span></span>| <span data-ttu-id="6707c-113">要求の操作のタイトルの ID です。</span><span class="sxs-lookup"><span data-stu-id="6707c-113">ID of the title that the request should operate on.</span></span>| 
   
 <a id="ID4EIB"></a>
 
  
-## <a name="host-name"></a><span data-ttu-id="79055-114">ホスト名</span><span class="sxs-lookup"><span data-stu-id="79055-114">Host Name</span></span>
+## <a name="host-name"></a><span data-ttu-id="6707c-114">ホスト名</span><span class="sxs-lookup"><span data-stu-id="6707c-114">Host Name</span></span>
  
-<span data-ttu-id="79055-115">gameserverms.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="79055-115">gameserverms.xboxlive.com</span></span>
+<span data-ttu-id="6707c-115">gameserverms.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="6707c-115">gameserverms.xboxlive.com</span></span>
   
 <a id="ID4EPB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="79055-116">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="79055-116">Valid Methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="6707c-116">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="6707c-116">Valid Methods</span></span>
   
-[<span data-ttu-id="79055-117">POST</span><span class="sxs-lookup"><span data-stu-id="79055-117">POST</span></span>](uri-titlestitleidsessionhosts-post.md)
+[<span data-ttu-id="6707c-117">POST</span><span class="sxs-lookup"><span data-stu-id="6707c-117">POST</span></span>](uri-titlestitleidsessionhosts-post.md)
  
-<span data-ttu-id="79055-118">&nbsp;&nbsp;新しいクラスターの要求を作成します。</span><span class="sxs-lookup"><span data-stu-id="79055-118">&nbsp;&nbsp;Create new cluster request.</span></span>
+<span data-ttu-id="6707c-118">&nbsp;&nbsp;新しいクラスターの要求を作成します。</span><span class="sxs-lookup"><span data-stu-id="6707c-118">&nbsp;&nbsp;Create new cluster request.</span></span>
    
