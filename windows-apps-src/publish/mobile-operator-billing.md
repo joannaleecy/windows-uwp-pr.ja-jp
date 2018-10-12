@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 携帯電話会社, 携帯電話への課金, 携帯電話会社による課金
 ms.localizationpriority: medium
 ms.openlocfilehash: da08e63cc42987f1a3876e13a713d670a80cf9ba
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4529214"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4564826"
 ---
 # <a name="mobile-operator-billing"></a>携帯電話会社による課金
 
@@ -51,7 +51,7 @@ Microsoft Store では、Windows 10 を実行するデバイス、Windows 10 Mob
 | スペイン           | Orange                           |
 | スウェーデン          | Telenor、3                       |
 | スイス     | Swisscom、Sunrise                |
-| Taiwan          | FarEasTone                       |
+| 台湾          | FarEasTone                       |
 | トルコ          | Turkcell                         |
 | アラブ首長国連邦 | Etisalat                    |
 | 米国   | Sprint、Verizon                  |

@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a7428b9278e4fc3264f652030f0409cab056d31
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4541094"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4565967"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>支払しきい値、方法、期間
 
@@ -956,7 +956,7 @@ ms.locfileid: "4541094"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
+    <td>台湾</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>25 USD</td>
@@ -2018,7 +2018,7 @@ ms.locfileid: "4541094"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
+    <td>台湾</td>
     <td>50 USD</td>
     <td>電信送金</td>
     <td>50 USD</td>
@@ -3066,7 +3066,7 @@ ms.locfileid: "4541094"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>Taiwan</td>
+    <td>台湾</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>25 USD</td>
@@ -4057,7 +4057,7 @@ ms.locfileid: "4541094"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
+    <td>台湾</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>25 USD</td>

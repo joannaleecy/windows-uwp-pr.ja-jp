@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 開発者アカウント, 個人, 会社, ビジネス
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4530136"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4565213"
 ---
 # <a name="account-types-locations-and-fees"></a>アカウントの種類、場所、料金
 
@@ -230,7 +230,7 @@ ms.locfileid: "4530136"
 |  スワジランド | 19 USD | 99 USD | 支払の受け取りなし | × | 
 |  スウェーデン | 123 SEK | 700 SEK | 銀行 (SEK) | ○ | 
 |  スイス | 17 CHF | 90 CHF | 銀行 (CHF) | ○ | 
-|  Taiwan | 568 TWD | 2,840 TWD | 銀行 (USD) | ○ | 
+|  台湾 | 568 TWD | 2,840 TWD | 銀行 (USD) | ○ | 
 |  タジキスタン | 19 USD | 99 USD | 銀行 (USD) | × | 
 |  タンザニア | 19 USD | 99 USD | 銀行 (TZS) | × | 
 |  タイ | 601 THB | 3,000 THB | 銀行 (THB) | ○ | 
