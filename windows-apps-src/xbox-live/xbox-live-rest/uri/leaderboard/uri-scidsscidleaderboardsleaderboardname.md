@@ -12,52 +12,52 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 797a557b4bb7d443ecfdce1f136f5db2079b1990
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4535946"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4562865"
 ---
-# <a name="scidsscidleaderboardsleaderboardname"></a><span data-ttu-id="1bc29-104">/scids/{scid}/leaderboards/{leaderboardname}</span><span class="sxs-lookup"><span data-stu-id="1bc29-104">/scids/{scid}/leaderboards/{leaderboardname}</span></span>
-<span data-ttu-id="1bc29-105">定義済みグローバル ランキングにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="1bc29-105">Accesses a predefined global leaderboard.</span></span> <span data-ttu-id="1bc29-106">これらの Uri のドメインが`leaderboards.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="1bc29-106">The domain for these URIs is `leaderboards.xboxlive.com`.</span></span>
+# <a name="scidsscidleaderboardsleaderboardname"></a><span data-ttu-id="8e366-104">/scids/{scid}/leaderboards/{leaderboardname}</span><span class="sxs-lookup"><span data-stu-id="8e366-104">/scids/{scid}/leaderboards/{leaderboardname}</span></span>
+<span data-ttu-id="8e366-105">定義済みグローバル ランキングにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="8e366-105">Accesses a predefined global leaderboard.</span></span> <span data-ttu-id="8e366-106">これらの Uri のドメインが`leaderboards.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="8e366-106">The domain for these URIs is `leaderboards.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="1bc29-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="1bc29-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="8e366-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="8e366-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="1bc29-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="1bc29-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="8e366-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="8e366-108">URI parameters</span></span>
  
-| <span data-ttu-id="1bc29-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="1bc29-109">Parameter</span></span>| <span data-ttu-id="1bc29-110">型</span><span class="sxs-lookup"><span data-stu-id="1bc29-110">Type</span></span>| <span data-ttu-id="1bc29-111">説明</span><span class="sxs-lookup"><span data-stu-id="1bc29-111">Description</span></span>| 
+| <span data-ttu-id="8e366-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="8e366-109">Parameter</span></span>| <span data-ttu-id="8e366-110">型</span><span class="sxs-lookup"><span data-stu-id="8e366-110">Type</span></span>| <span data-ttu-id="8e366-111">説明</span><span class="sxs-lookup"><span data-stu-id="8e366-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="1bc29-112">scid</span><span class="sxs-lookup"><span data-stu-id="1bc29-112">scid</span></span>| <span data-ttu-id="1bc29-113">GUID</span><span class="sxs-lookup"><span data-stu-id="1bc29-113">GUID</span></span>| <span data-ttu-id="1bc29-114">アクセス対象のリソースが含まれているサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="1bc29-114">Identifier of the service configuration which contains the resource being accessed.</span></span>| 
-| <span data-ttu-id="1bc29-115">leaderboardname</span><span class="sxs-lookup"><span data-stu-id="1bc29-115">leaderboardname</span></span>| <span data-ttu-id="1bc29-116">string</span><span class="sxs-lookup"><span data-stu-id="1bc29-116">string</span></span>| <span data-ttu-id="1bc29-117">アクセス対象の定義済みのランキング リソースの一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="1bc29-117">Unique identifier of the predefined leaderboard resource being accessed.</span></span>| 
+| <span data-ttu-id="8e366-112">scid</span><span class="sxs-lookup"><span data-stu-id="8e366-112">scid</span></span>| <span data-ttu-id="8e366-113">GUID</span><span class="sxs-lookup"><span data-stu-id="8e366-113">GUID</span></span>| <span data-ttu-id="8e366-114">アクセス対象のリソースが含まれているサービス構成の識別子です。</span><span class="sxs-lookup"><span data-stu-id="8e366-114">Identifier of the service configuration which contains the resource being accessed.</span></span>| 
+| <span data-ttu-id="8e366-115">leaderboardname</span><span class="sxs-lookup"><span data-stu-id="8e366-115">leaderboardname</span></span>| <span data-ttu-id="8e366-116">string</span><span class="sxs-lookup"><span data-stu-id="8e366-116">string</span></span>| <span data-ttu-id="8e366-117">アクセス対象の定義済みのランキング リソースの一意の識別子。</span><span class="sxs-lookup"><span data-stu-id="8e366-117">Unique identifier of the predefined leaderboard resource being accessed.</span></span>| 
   
 <a id="ID4E3B"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="1bc29-118">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="1bc29-118">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="8e366-118">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="8e366-118">Valid methods</span></span>
 
-[<span data-ttu-id="1bc29-119">GET</span><span class="sxs-lookup"><span data-stu-id="1bc29-119">GET</span></span>](uri-scidsscidleaderboardsleaderboardnameget.md)
+[<span data-ttu-id="8e366-119">GET</span><span class="sxs-lookup"><span data-stu-id="8e366-119">GET</span></span>](uri-scidsscidleaderboardsleaderboardnameget.md)
 
-<span data-ttu-id="1bc29-120">&nbsp;&nbsp;&nbsp;&nbsp;定義済みグローバル ランキングを取得します。</span><span class="sxs-lookup"><span data-stu-id="1bc29-120">&nbsp;&nbsp; &nbsp;&nbsp;Gets a predefined global leaderboard.</span></span>
+<span data-ttu-id="8e366-120">&nbsp;&nbsp;&nbsp;&nbsp;定義済みグローバル ランキングを取得します。</span><span class="sxs-lookup"><span data-stu-id="8e366-120">&nbsp;&nbsp; &nbsp;&nbsp;Gets a predefined global leaderboard.</span></span>
 
 
-[<span data-ttu-id="1bc29-121">値のメタデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="1bc29-121">GET with value metadata</span></span>](uri-scidsscidleaderboardsleaderboardnamegetvaluemetadata.md)
+[<span data-ttu-id="8e366-121">値のメタデータを取得します。</span><span class="sxs-lookup"><span data-stu-id="8e366-121">GET with value metadata</span></span>](uri-scidsscidleaderboardsleaderboardnamegetvaluemetadata.md)
 
-<span data-ttu-id="1bc29-122">&nbsp;&nbsp;&nbsp;&nbsp;ランキングの値に関連付けられたメタデータと共に定義済みグローバル ランキングを取得します。</span><span class="sxs-lookup"><span data-stu-id="1bc29-122">&nbsp;&nbsp; &nbsp;&nbsp;Gets a predefined global leaderboard along with any metadata associated with the leaderboard values.</span></span>
+<span data-ttu-id="8e366-122">&nbsp;&nbsp;&nbsp;&nbsp;ランキングの値に関連付けられたメタデータと共に定義済みグローバル ランキングを取得します。</span><span class="sxs-lookup"><span data-stu-id="8e366-122">&nbsp;&nbsp; &nbsp;&nbsp;Gets a predefined global leaderboard along with any metadata associated with the leaderboard values.</span></span>
 
  
 <a id="ID4EJC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="1bc29-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="1bc29-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8e366-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="8e366-123">See also</span></span>
  
 <a id="ID4ELC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="1bc29-124">Parent</span><span class="sxs-lookup"><span data-stu-id="1bc29-124">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="8e366-124">Parent</span><span class="sxs-lookup"><span data-stu-id="8e366-124">Parent</span></span> 
 
-[<span data-ttu-id="1bc29-125">ランキング URI</span><span class="sxs-lookup"><span data-stu-id="1bc29-125">Leaderboards URIs</span></span>](atoc-reference-leaderboard.md)
+[<span data-ttu-id="8e366-125">ランキング URI</span><span class="sxs-lookup"><span data-stu-id="8e366-125">Leaderboards URIs</span></span>](atoc-reference-leaderboard.md)
 
    

@@ -12,122 +12,122 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dd1b1859de81724a97fa40d9acdc3a1847d9421
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4534900"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4563355"
 ---
-# <a name="post-usersbatch"></a><span data-ttu-id="f4dc2-104">POST (/users/batch)</span><span class="sxs-lookup"><span data-stu-id="f4dc2-104">POST (/users/batch)</span></span>
-<span data-ttu-id="f4dc2-105">ユーザーのバッチのプレゼンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-105">Get presence for a batch of users.</span></span>
-<span data-ttu-id="f4dc2-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
+# <a name="post-usersbatch"></a><span data-ttu-id="a79ee-104">POST (/users/batch)</span><span class="sxs-lookup"><span data-stu-id="a79ee-104">POST (/users/batch)</span></span>
+<span data-ttu-id="a79ee-105">ユーザーのバッチのプレゼンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-105">Get presence for a batch of users.</span></span>
+<span data-ttu-id="a79ee-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
 
-  * [<span data-ttu-id="f4dc2-107">注釈</span><span class="sxs-lookup"><span data-stu-id="f4dc2-107">Remarks</span></span>](#ID4EV)
-  * [<span data-ttu-id="f4dc2-108">Authorization</span><span class="sxs-lookup"><span data-stu-id="f4dc2-108">Authorization</span></span>](#ID4EAB)
-  * [<span data-ttu-id="f4dc2-109">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="f4dc2-109">Effect of privacy settings on resource</span></span>](#ID4EDC)
-  * [<span data-ttu-id="f4dc2-110">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-110">Required Request Headers</span></span>](#ID4EYF)
-  * [<span data-ttu-id="f4dc2-111">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-111">Optional Request Headers</span></span>](#ID4EGAAC)
-  * [<span data-ttu-id="f4dc2-112">要求本文</span><span class="sxs-lookup"><span data-stu-id="f4dc2-112">Request body</span></span>](#ID4EGBAC)
-  * [<span data-ttu-id="f4dc2-113">応答本文</span><span class="sxs-lookup"><span data-stu-id="f4dc2-113">Response body</span></span>](#ID4ESEAC)
+  * [<span data-ttu-id="a79ee-107">注釈</span><span class="sxs-lookup"><span data-stu-id="a79ee-107">Remarks</span></span>](#ID4EV)
+  * [<span data-ttu-id="a79ee-108">Authorization</span><span class="sxs-lookup"><span data-stu-id="a79ee-108">Authorization</span></span>](#ID4EAB)
+  * [<span data-ttu-id="a79ee-109">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="a79ee-109">Effect of privacy settings on resource</span></span>](#ID4EDC)
+  * [<span data-ttu-id="a79ee-110">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a79ee-110">Required Request Headers</span></span>](#ID4EYF)
+  * [<span data-ttu-id="a79ee-111">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a79ee-111">Optional Request Headers</span></span>](#ID4EGAAC)
+  * [<span data-ttu-id="a79ee-112">要求本文</span><span class="sxs-lookup"><span data-stu-id="a79ee-112">Request body</span></span>](#ID4EGBAC)
+  * [<span data-ttu-id="a79ee-113">応答本文</span><span class="sxs-lookup"><span data-stu-id="a79ee-113">Response body</span></span>](#ID4ESEAC)
 
 <a id="ID4EV"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="f4dc2-114">注釈</span><span class="sxs-lookup"><span data-stu-id="f4dc2-114">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="a79ee-114">注釈</span><span class="sxs-lookup"><span data-stu-id="a79ee-114">Remarks</span></span>
 
-<span data-ttu-id="f4dc2-115">このメソッドは、任意クライアント、サービス、またはユーザーのバッチのプレゼンス情報についてはしようとしているタイトルで使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-115">This method should be used by any client, service, or title wanting to learn presence information for a batch of users.</span></span>
+<span data-ttu-id="a79ee-115">このメソッドは、任意クライアント、サービス、またはユーザーのバッチのプレゼンス情報についてはしようとしているタイトルで使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a79ee-115">This method should be used by any client, service, or title wanting to learn presence information for a batch of users.</span></span>
 
-<span data-ttu-id="f4dc2-116">このバッチ要求の応答は、深度とパスによってフィルターできます。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-116">The responses for this batch request can be filters by depth and path.</span></span> <span data-ttu-id="f4dc2-117">消費者は、これを使用について説明し、一連のユーザーのプレゼンスを表示できます。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-117">Consumers can use this to find out and display the presence about a set of users.</span></span> <span data-ttu-id="f4dc2-118">この API のフィルターでは、プロパティの間では、プロパティで And で Or として動作します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-118">The filters on this API work as ORs in a property, but ANDs across properties.</span></span>
+<span data-ttu-id="a79ee-116">このバッチ要求の応答は、深度とパスによってフィルターできます。</span><span class="sxs-lookup"><span data-stu-id="a79ee-116">The responses for this batch request can be filters by depth and path.</span></span> <span data-ttu-id="a79ee-117">消費者は、これを使用について説明し、一連のユーザーのプレゼンスを表示できます。</span><span class="sxs-lookup"><span data-stu-id="a79ee-117">Consumers can use this to find out and display the presence about a set of users.</span></span> <span data-ttu-id="a79ee-118">この API のフィルターでは、プロパティの間では、プロパティで And で Or として動作します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-118">The filters on this API work as ORs in a property, but ANDs across properties.</span></span>
 
 <a id="ID4EAB"></a>
 
 
-## <a name="authorization"></a><span data-ttu-id="f4dc2-119">Authorization</span><span class="sxs-lookup"><span data-stu-id="f4dc2-119">Authorization</span></span>
+## <a name="authorization"></a><span data-ttu-id="a79ee-119">Authorization</span><span class="sxs-lookup"><span data-stu-id="a79ee-119">Authorization</span></span>
 
-| <span data-ttu-id="f4dc2-120">型</span><span class="sxs-lookup"><span data-stu-id="f4dc2-120">Type</span></span>| <span data-ttu-id="f4dc2-121">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="f4dc2-121">Required</span></span>| <span data-ttu-id="f4dc2-122">説明</span><span class="sxs-lookup"><span data-stu-id="f4dc2-122">Description</span></span>| <span data-ttu-id="f4dc2-123">不足している場合、応答</span><span class="sxs-lookup"><span data-stu-id="f4dc2-123">Response if missing</span></span>|
+| <span data-ttu-id="a79ee-120">型</span><span class="sxs-lookup"><span data-stu-id="a79ee-120">Type</span></span>| <span data-ttu-id="a79ee-121">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="a79ee-121">Required</span></span>| <span data-ttu-id="a79ee-122">説明</span><span class="sxs-lookup"><span data-stu-id="a79ee-122">Description</span></span>| <span data-ttu-id="a79ee-123">不足している場合、応答</span><span class="sxs-lookup"><span data-stu-id="a79ee-123">Response if missing</span></span>|
 | --- | --- | --- | --- |
-| <span data-ttu-id="f4dc2-124">XUID</span><span class="sxs-lookup"><span data-stu-id="f4dc2-124">XUID</span></span>| <span data-ttu-id="f4dc2-125">はい</span><span class="sxs-lookup"><span data-stu-id="f4dc2-125">Yes</span></span>| <span data-ttu-id="f4dc2-126">呼び出し元の Xbox ユーザー ID (XUID)</span><span class="sxs-lookup"><span data-stu-id="f4dc2-126">Xbox User ID (XUID) of the caller</span></span>| <span data-ttu-id="f4dc2-127">403 Forbidden</span><span class="sxs-lookup"><span data-stu-id="f4dc2-127">403 Forbidden</span></span>|
+| <span data-ttu-id="a79ee-124">XUID</span><span class="sxs-lookup"><span data-stu-id="a79ee-124">XUID</span></span>| <span data-ttu-id="a79ee-125">はい</span><span class="sxs-lookup"><span data-stu-id="a79ee-125">Yes</span></span>| <span data-ttu-id="a79ee-126">呼び出し元の Xbox ユーザー ID (XUID)</span><span class="sxs-lookup"><span data-stu-id="a79ee-126">Xbox User ID (XUID) of the caller</span></span>| <span data-ttu-id="a79ee-127">403 Forbidden</span><span class="sxs-lookup"><span data-stu-id="a79ee-127">403 Forbidden</span></span>|
 
 <a id="ID4EDC"></a>
 
 
-## <a name="effect-of-privacy-settings-on-resource"></a><span data-ttu-id="f4dc2-128">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="f4dc2-128">Effect of privacy settings on resource</span></span>
+## <a name="effect-of-privacy-settings-on-resource"></a><span data-ttu-id="a79ee-128">リソースのプライバシーの設定の効果</span><span class="sxs-lookup"><span data-stu-id="a79ee-128">Effect of privacy settings on resource</span></span>
 
-<span data-ttu-id="f4dc2-129">このメソッドは常に、200 を返します。 がコンテンツを応答本文で返されない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-129">This method always returns 200 OK, but might not return content in the response body.</span></span>
+<span data-ttu-id="a79ee-129">このメソッドは常に、200 を返します。 がコンテンツを応答本文で返されない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a79ee-129">This method always returns 200 OK, but might not return content in the response body.</span></span>
 
-| <span data-ttu-id="f4dc2-130">ユーザーを要求します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-130">Requesting User</span></span>| <span data-ttu-id="f4dc2-131">ターゲット ユーザーのプライバシー設定</span><span class="sxs-lookup"><span data-stu-id="f4dc2-131">Target User's Privacy Setting</span></span>| <span data-ttu-id="f4dc2-132">動作</span><span class="sxs-lookup"><span data-stu-id="f4dc2-132">Behavior</span></span>|
+| <span data-ttu-id="a79ee-130">ユーザーを要求します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-130">Requesting User</span></span>| <span data-ttu-id="a79ee-131">ターゲット ユーザーのプライバシー設定</span><span class="sxs-lookup"><span data-stu-id="a79ee-131">Target User's Privacy Setting</span></span>| <span data-ttu-id="a79ee-132">動作</span><span class="sxs-lookup"><span data-stu-id="a79ee-132">Behavior</span></span>|
 | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="f4dc2-133">me</span><span class="sxs-lookup"><span data-stu-id="f4dc2-133">me</span></span>| -| <span data-ttu-id="f4dc2-134">200 OK</span><span class="sxs-lookup"><span data-stu-id="f4dc2-134">200 OK</span></span>|
-| <span data-ttu-id="f4dc2-135">フレンド登録の依頼</span><span class="sxs-lookup"><span data-stu-id="f4dc2-135">friend</span></span>| <span data-ttu-id="f4dc2-136">すべてのユーザー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-136">everyone</span></span>| <span data-ttu-id="f4dc2-137">200 OK</span><span class="sxs-lookup"><span data-stu-id="f4dc2-137">200 OK</span></span>|
-| <span data-ttu-id="f4dc2-138">フレンド登録の依頼</span><span class="sxs-lookup"><span data-stu-id="f4dc2-138">friend</span></span>| <span data-ttu-id="f4dc2-139">フレンドのみ</span><span class="sxs-lookup"><span data-stu-id="f4dc2-139">friends only</span></span>| <span data-ttu-id="f4dc2-140">200 OK</span><span class="sxs-lookup"><span data-stu-id="f4dc2-140">200 OK</span></span>|
-| <span data-ttu-id="f4dc2-141">フレンド登録の依頼</span><span class="sxs-lookup"><span data-stu-id="f4dc2-141">friend</span></span>| <span data-ttu-id="f4dc2-142">ブロックされています。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-142">blocked</span></span>| <span data-ttu-id="f4dc2-143">200 OK</span><span class="sxs-lookup"><span data-stu-id="f4dc2-143">200 OK</span></span>|
-| <span data-ttu-id="f4dc2-144">フレンド以外のユーザー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-144">non-friend user</span></span>| <span data-ttu-id="f4dc2-145">すべてのユーザー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-145">everyone</span></span>| <span data-ttu-id="f4dc2-146">200 OK</span><span class="sxs-lookup"><span data-stu-id="f4dc2-146">200 OK</span></span>|
-| <span data-ttu-id="f4dc2-147">フレンド以外のユーザー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-147">non-friend user</span></span>| <span data-ttu-id="f4dc2-148">フレンドのみ</span><span class="sxs-lookup"><span data-stu-id="f4dc2-148">friends only</span></span>| <span data-ttu-id="f4dc2-149">200 OK</span><span class="sxs-lookup"><span data-stu-id="f4dc2-149">200 OK</span></span>|
-| <span data-ttu-id="f4dc2-150">フレンド以外のユーザー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-150">non-friend user</span></span>| <span data-ttu-id="f4dc2-151">ブロックされています。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-151">blocked</span></span>| <span data-ttu-id="f4dc2-152">200 OK</span><span class="sxs-lookup"><span data-stu-id="f4dc2-152">200 OK</span></span>|
-| <span data-ttu-id="f4dc2-153">サード パーティのサイト</span><span class="sxs-lookup"><span data-stu-id="f4dc2-153">third-party site</span></span>| <span data-ttu-id="f4dc2-154">すべてのユーザー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-154">everyone</span></span>| <span data-ttu-id="f4dc2-155">200 OK</span><span class="sxs-lookup"><span data-stu-id="f4dc2-155">200 OK</span></span>|
-| <span data-ttu-id="f4dc2-156">サード パーティのサイト</span><span class="sxs-lookup"><span data-stu-id="f4dc2-156">third-party site</span></span>| <span data-ttu-id="f4dc2-157">フレンドのみ</span><span class="sxs-lookup"><span data-stu-id="f4dc2-157">friends only</span></span>| <span data-ttu-id="f4dc2-158">200 OK</span><span class="sxs-lookup"><span data-stu-id="f4dc2-158">200 OK</span></span>|
-| <span data-ttu-id="f4dc2-159">サード パーティのサイト</span><span class="sxs-lookup"><span data-stu-id="f4dc2-159">third-party site</span></span>| <span data-ttu-id="f4dc2-160">ブロックされています。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-160">blocked</span></span>| <span data-ttu-id="f4dc2-161">200 OK</span><span class="sxs-lookup"><span data-stu-id="f4dc2-161">200 OK</span></span>|
+| <span data-ttu-id="a79ee-133">me</span><span class="sxs-lookup"><span data-stu-id="a79ee-133">me</span></span>| -| <span data-ttu-id="a79ee-134">200 OK</span><span class="sxs-lookup"><span data-stu-id="a79ee-134">200 OK</span></span>|
+| <span data-ttu-id="a79ee-135">フレンド登録の依頼</span><span class="sxs-lookup"><span data-stu-id="a79ee-135">friend</span></span>| <span data-ttu-id="a79ee-136">すべてのユーザー</span><span class="sxs-lookup"><span data-stu-id="a79ee-136">everyone</span></span>| <span data-ttu-id="a79ee-137">200 OK</span><span class="sxs-lookup"><span data-stu-id="a79ee-137">200 OK</span></span>|
+| <span data-ttu-id="a79ee-138">フレンド登録の依頼</span><span class="sxs-lookup"><span data-stu-id="a79ee-138">friend</span></span>| <span data-ttu-id="a79ee-139">フレンドのみ</span><span class="sxs-lookup"><span data-stu-id="a79ee-139">friends only</span></span>| <span data-ttu-id="a79ee-140">200 OK</span><span class="sxs-lookup"><span data-stu-id="a79ee-140">200 OK</span></span>|
+| <span data-ttu-id="a79ee-141">フレンド登録の依頼</span><span class="sxs-lookup"><span data-stu-id="a79ee-141">friend</span></span>| <span data-ttu-id="a79ee-142">ブロックされています。</span><span class="sxs-lookup"><span data-stu-id="a79ee-142">blocked</span></span>| <span data-ttu-id="a79ee-143">200 OK</span><span class="sxs-lookup"><span data-stu-id="a79ee-143">200 OK</span></span>|
+| <span data-ttu-id="a79ee-144">フレンド以外のユーザー</span><span class="sxs-lookup"><span data-stu-id="a79ee-144">non-friend user</span></span>| <span data-ttu-id="a79ee-145">すべてのユーザー</span><span class="sxs-lookup"><span data-stu-id="a79ee-145">everyone</span></span>| <span data-ttu-id="a79ee-146">200 OK</span><span class="sxs-lookup"><span data-stu-id="a79ee-146">200 OK</span></span>|
+| <span data-ttu-id="a79ee-147">フレンド以外のユーザー</span><span class="sxs-lookup"><span data-stu-id="a79ee-147">non-friend user</span></span>| <span data-ttu-id="a79ee-148">フレンドのみ</span><span class="sxs-lookup"><span data-stu-id="a79ee-148">friends only</span></span>| <span data-ttu-id="a79ee-149">200 OK</span><span class="sxs-lookup"><span data-stu-id="a79ee-149">200 OK</span></span>|
+| <span data-ttu-id="a79ee-150">フレンド以外のユーザー</span><span class="sxs-lookup"><span data-stu-id="a79ee-150">non-friend user</span></span>| <span data-ttu-id="a79ee-151">ブロックされています。</span><span class="sxs-lookup"><span data-stu-id="a79ee-151">blocked</span></span>| <span data-ttu-id="a79ee-152">200 OK</span><span class="sxs-lookup"><span data-stu-id="a79ee-152">200 OK</span></span>|
+| <span data-ttu-id="a79ee-153">サード パーティのサイト</span><span class="sxs-lookup"><span data-stu-id="a79ee-153">third-party site</span></span>| <span data-ttu-id="a79ee-154">すべてのユーザー</span><span class="sxs-lookup"><span data-stu-id="a79ee-154">everyone</span></span>| <span data-ttu-id="a79ee-155">200 OK</span><span class="sxs-lookup"><span data-stu-id="a79ee-155">200 OK</span></span>|
+| <span data-ttu-id="a79ee-156">サード パーティのサイト</span><span class="sxs-lookup"><span data-stu-id="a79ee-156">third-party site</span></span>| <span data-ttu-id="a79ee-157">フレンドのみ</span><span class="sxs-lookup"><span data-stu-id="a79ee-157">friends only</span></span>| <span data-ttu-id="a79ee-158">200 OK</span><span class="sxs-lookup"><span data-stu-id="a79ee-158">200 OK</span></span>|
+| <span data-ttu-id="a79ee-159">サード パーティのサイト</span><span class="sxs-lookup"><span data-stu-id="a79ee-159">third-party site</span></span>| <span data-ttu-id="a79ee-160">ブロックされています。</span><span class="sxs-lookup"><span data-stu-id="a79ee-160">blocked</span></span>| <span data-ttu-id="a79ee-161">200 OK</span><span class="sxs-lookup"><span data-stu-id="a79ee-161">200 OK</span></span>|
 
 <a id="ID4EYF"></a>
 
 
-## <a name="required-request-headers"></a><span data-ttu-id="f4dc2-162">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-162">Required Request Headers</span></span>
+## <a name="required-request-headers"></a><span data-ttu-id="a79ee-162">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a79ee-162">Required Request Headers</span></span>
 
-| <span data-ttu-id="f4dc2-163">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-163">Header</span></span>| <span data-ttu-id="f4dc2-164">型</span><span class="sxs-lookup"><span data-stu-id="f4dc2-164">Type</span></span>| <span data-ttu-id="f4dc2-165">説明</span><span class="sxs-lookup"><span data-stu-id="f4dc2-165">Description</span></span>|
+| <span data-ttu-id="a79ee-163">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a79ee-163">Header</span></span>| <span data-ttu-id="a79ee-164">型</span><span class="sxs-lookup"><span data-stu-id="a79ee-164">Type</span></span>| <span data-ttu-id="a79ee-165">説明</span><span class="sxs-lookup"><span data-stu-id="a79ee-165">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="f4dc2-166">Authorization</span><span class="sxs-lookup"><span data-stu-id="f4dc2-166">Authorization</span></span>| <span data-ttu-id="f4dc2-167">string</span><span class="sxs-lookup"><span data-stu-id="f4dc2-167">string</span></span>| <span data-ttu-id="f4dc2-168">HTTP 認証の資格情報を認証します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-168">Authentication credentials for HTTP authentication.</span></span> <span data-ttu-id="f4dc2-169">値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-169">Example value: "XBL3.0 x=&lt;userhash>;&lt;token>".</span></span>|
-| <span data-ttu-id="f4dc2-170">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="f4dc2-170">x-xbl-contract-version</span></span>| <span data-ttu-id="f4dc2-171">string</span><span class="sxs-lookup"><span data-stu-id="f4dc2-171">string</span></span>| <span data-ttu-id="f4dc2-172">この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-172">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="f4dc2-173">要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-173">The request will only be routed to that service after verifying the validity of the header, the claims in the auth token, and so on.</span></span> <span data-ttu-id="f4dc2-174">値の例: 3, vnext します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-174">Example values: 3, vnext.</span></span>|
-| <span data-ttu-id="f4dc2-175">Accept</span><span class="sxs-lookup"><span data-stu-id="f4dc2-175">Accept</span></span>| <span data-ttu-id="f4dc2-176">string</span><span class="sxs-lookup"><span data-stu-id="f4dc2-176">string</span></span>| <span data-ttu-id="f4dc2-177">コンテンツの種類の受け入れられる。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-177">Content-Types that are acceptable.</span></span> <span data-ttu-id="f4dc2-178">プレゼンスでサポートされている 1 つのみがアプリケーション/json がヘッダーで指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-178">The only one supported by Presence is application/json, but it must be specified in the header.</span></span>|
-| <span data-ttu-id="f4dc2-179">受け入れる言語</span><span class="sxs-lookup"><span data-stu-id="f4dc2-179">Accept-Language</span></span>| <span data-ttu-id="f4dc2-180">string</span><span class="sxs-lookup"><span data-stu-id="f4dc2-180">string</span></span>| <span data-ttu-id="f4dc2-181">応答には、内の文字列の許容ロケールです。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-181">Acceptable locale for strings in the response.</span></span> <span data-ttu-id="f4dc2-182">値の例: EN-US にします。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-182">Example values: en-US.</span></span>|
-| <span data-ttu-id="f4dc2-183">Host</span><span class="sxs-lookup"><span data-stu-id="f4dc2-183">Host</span></span>| <span data-ttu-id="f4dc2-184">string</span><span class="sxs-lookup"><span data-stu-id="f4dc2-184">string</span></span>| <span data-ttu-id="f4dc2-185">サーバーのドメイン名。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-185">Domain name of the server.</span></span> <span data-ttu-id="f4dc2-186">値の例: presencebeta.xboxlive.com します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-186">Example value: presencebeta.xboxlive.com.</span></span>|
-| <span data-ttu-id="f4dc2-187">Content-Length</span><span class="sxs-lookup"><span data-stu-id="f4dc2-187">Content-Length</span></span>| <span data-ttu-id="f4dc2-188">string</span><span class="sxs-lookup"><span data-stu-id="f4dc2-188">string</span></span>| <span data-ttu-id="f4dc2-189">要求の本文の長さ。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-189">The length of the request body.</span></span> <span data-ttu-id="f4dc2-190">値の例: 312 します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-190">Example value: 312.</span></span>|
+| <span data-ttu-id="a79ee-166">Authorization</span><span class="sxs-lookup"><span data-stu-id="a79ee-166">Authorization</span></span>| <span data-ttu-id="a79ee-167">string</span><span class="sxs-lookup"><span data-stu-id="a79ee-167">string</span></span>| <span data-ttu-id="a79ee-168">HTTP 認証の資格情報を認証します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-168">Authentication credentials for HTTP authentication.</span></span> <span data-ttu-id="a79ee-169">値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。</span><span class="sxs-lookup"><span data-stu-id="a79ee-169">Example value: "XBL3.0 x=&lt;userhash>;&lt;token>".</span></span>|
+| <span data-ttu-id="a79ee-170">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="a79ee-170">x-xbl-contract-version</span></span>| <span data-ttu-id="a79ee-171">string</span><span class="sxs-lookup"><span data-stu-id="a79ee-171">string</span></span>| <span data-ttu-id="a79ee-172">この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="a79ee-172">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="a79ee-173">要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。</span><span class="sxs-lookup"><span data-stu-id="a79ee-173">The request will only be routed to that service after verifying the validity of the header, the claims in the auth token, and so on.</span></span> <span data-ttu-id="a79ee-174">値の例: 3, vnext します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-174">Example values: 3, vnext.</span></span>|
+| <span data-ttu-id="a79ee-175">Accept</span><span class="sxs-lookup"><span data-stu-id="a79ee-175">Accept</span></span>| <span data-ttu-id="a79ee-176">string</span><span class="sxs-lookup"><span data-stu-id="a79ee-176">string</span></span>| <span data-ttu-id="a79ee-177">コンテンツの種類の受け入れられる。</span><span class="sxs-lookup"><span data-stu-id="a79ee-177">Content-Types that are acceptable.</span></span> <span data-ttu-id="a79ee-178">プレゼンスでサポートされている 1 つのみがアプリケーション/json がヘッダーで指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a79ee-178">The only one supported by Presence is application/json, but it must be specified in the header.</span></span>|
+| <span data-ttu-id="a79ee-179">受け入れる言語</span><span class="sxs-lookup"><span data-stu-id="a79ee-179">Accept-Language</span></span>| <span data-ttu-id="a79ee-180">string</span><span class="sxs-lookup"><span data-stu-id="a79ee-180">string</span></span>| <span data-ttu-id="a79ee-181">応答には、内の文字列の許容ロケールです。</span><span class="sxs-lookup"><span data-stu-id="a79ee-181">Acceptable locale for strings in the response.</span></span> <span data-ttu-id="a79ee-182">値の例: EN-US にします。</span><span class="sxs-lookup"><span data-stu-id="a79ee-182">Example values: en-US.</span></span>|
+| <span data-ttu-id="a79ee-183">Host</span><span class="sxs-lookup"><span data-stu-id="a79ee-183">Host</span></span>| <span data-ttu-id="a79ee-184">string</span><span class="sxs-lookup"><span data-stu-id="a79ee-184">string</span></span>| <span data-ttu-id="a79ee-185">サーバーのドメイン名。</span><span class="sxs-lookup"><span data-stu-id="a79ee-185">Domain name of the server.</span></span> <span data-ttu-id="a79ee-186">値の例: presencebeta.xboxlive.com します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-186">Example value: presencebeta.xboxlive.com.</span></span>|
+| <span data-ttu-id="a79ee-187">Content-Length</span><span class="sxs-lookup"><span data-stu-id="a79ee-187">Content-Length</span></span>| <span data-ttu-id="a79ee-188">string</span><span class="sxs-lookup"><span data-stu-id="a79ee-188">string</span></span>| <span data-ttu-id="a79ee-189">要求の本文の長さ。</span><span class="sxs-lookup"><span data-stu-id="a79ee-189">The length of the request body.</span></span> <span data-ttu-id="a79ee-190">値の例: 312 します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-190">Example value: 312.</span></span>|
 
 <a id="ID4EGAAC"></a>
 
 
-## <a name="optional-request-headers"></a><span data-ttu-id="f4dc2-191">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-191">Optional Request Headers</span></span>
+## <a name="optional-request-headers"></a><span data-ttu-id="a79ee-191">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a79ee-191">Optional Request Headers</span></span>
 
-| <span data-ttu-id="f4dc2-192">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-192">Header</span></span>| <span data-ttu-id="f4dc2-193">型</span><span class="sxs-lookup"><span data-stu-id="f4dc2-193">Type</span></span>| <span data-ttu-id="f4dc2-194">説明</span><span class="sxs-lookup"><span data-stu-id="f4dc2-194">Description</span></span>|
+| <span data-ttu-id="a79ee-192">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a79ee-192">Header</span></span>| <span data-ttu-id="a79ee-193">型</span><span class="sxs-lookup"><span data-stu-id="a79ee-193">Type</span></span>| <span data-ttu-id="a79ee-194">説明</span><span class="sxs-lookup"><span data-stu-id="a79ee-194">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="f4dc2-195">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="f4dc2-195">X-RequestedServiceVersion</span></span>|  | <span data-ttu-id="f4dc2-196">この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-196">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="f4dc2-197">要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-197">The request will only be routed to that service after verifying the validity of the header, the claims in the auth token, and so on.</span></span> <span data-ttu-id="f4dc2-198">既定値: 1 です。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-198">Default value: 1.</span></span>|
+| <span data-ttu-id="a79ee-195">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="a79ee-195">X-RequestedServiceVersion</span></span>|  | <span data-ttu-id="a79ee-196">この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="a79ee-196">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="a79ee-197">要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。</span><span class="sxs-lookup"><span data-stu-id="a79ee-197">The request will only be routed to that service after verifying the validity of the header, the claims in the auth token, and so on.</span></span> <span data-ttu-id="a79ee-198">既定値: 1 です。</span><span class="sxs-lookup"><span data-stu-id="a79ee-198">Default value: 1.</span></span>|
 
 <a id="ID4EGBAC"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="f4dc2-199">要求本文</span><span class="sxs-lookup"><span data-stu-id="f4dc2-199">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="a79ee-199">要求本文</span><span class="sxs-lookup"><span data-stu-id="a79ee-199">Request body</span></span>
 
 <a id="ID4EMBAC"></a>
 
 
-### <a name="required-members"></a><span data-ttu-id="f4dc2-200">必要なメンバー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-200">Required members</span></span>
+### <a name="required-members"></a><span data-ttu-id="a79ee-200">必要なメンバー</span><span class="sxs-lookup"><span data-stu-id="a79ee-200">Required members</span></span>
 
-| <span data-ttu-id="f4dc2-201">メンバー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-201">Member</span></span>| <span data-ttu-id="f4dc2-202">説明</span><span class="sxs-lookup"><span data-stu-id="f4dc2-202">Description</span></span>|
+| <span data-ttu-id="a79ee-201">メンバー</span><span class="sxs-lookup"><span data-stu-id="a79ee-201">Member</span></span>| <span data-ttu-id="a79ee-202">説明</span><span class="sxs-lookup"><span data-stu-id="a79ee-202">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="f4dc2-203">ユーザー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-203">users</span></span>| <span data-ttu-id="f4dc2-204">については、一度に 1100 Xuid の最大プレゼンスがユーザーの Xuid をリストします。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-204">List XUIDs of users whose presence you want to learn, with a maximum of 1100 XUIDs at a time.</span></span>|
+| <span data-ttu-id="a79ee-203">ユーザー</span><span class="sxs-lookup"><span data-stu-id="a79ee-203">users</span></span>| <span data-ttu-id="a79ee-204">については、一度に 1100 Xuid の最大プレゼンスがユーザーの Xuid をリストします。</span><span class="sxs-lookup"><span data-stu-id="a79ee-204">List XUIDs of users whose presence you want to learn, with a maximum of 1100 XUIDs at a time.</span></span>|
 
 <a id="ID4EHCAC"></a>
 
 
-### <a name="optional-members"></a><span data-ttu-id="f4dc2-205">省略可能なメンバー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-205">Optional members</span></span>
+### <a name="optional-members"></a><span data-ttu-id="a79ee-205">省略可能なメンバー</span><span class="sxs-lookup"><span data-stu-id="a79ee-205">Optional members</span></span>
 
-| <span data-ttu-id="f4dc2-206">メンバー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-206">Member</span></span>| <span data-ttu-id="f4dc2-207">説明</span><span class="sxs-lookup"><span data-stu-id="f4dc2-207">Description</span></span>|
+| <span data-ttu-id="a79ee-206">メンバー</span><span class="sxs-lookup"><span data-stu-id="a79ee-206">Member</span></span>| <span data-ttu-id="a79ee-207">説明</span><span class="sxs-lookup"><span data-stu-id="a79ee-207">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="f4dc2-208">deviceTypes</span><span class="sxs-lookup"><span data-stu-id="f4dc2-208">deviceTypes</span></span>| <span data-ttu-id="f4dc2-209">について知りたいユーザーに使用されるデバイスの種類の一覧です。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-209">List of device types used by the users you want to know about.</span></span> <span data-ttu-id="f4dc2-210">空の配列の場合、既定値はすべての可能なデバイスの種類 (つまり、none が除外されます)。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-210">If the array is left empty, it defaults to all possible device types (that is, none are filtered out).</span></span>|
-| <span data-ttu-id="f4dc2-211">タイトル</span><span class="sxs-lookup"><span data-stu-id="f4dc2-211">titles</span></span>| <span data-ttu-id="f4dc2-212">デバイスの一覧について理解していることをユーザーを種類します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-212">List of device types whose users you want to know about.</span></span> <span data-ttu-id="f4dc2-213">空の配列の場合、既定値はすべての可能なタイトル (つまり、none が除外されます)。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-213">If the array is left empty, it defaults to all possible titles (that is, none are filtered out).</span></span>|
-| <span data-ttu-id="f4dc2-214">level</span><span class="sxs-lookup"><span data-stu-id="f4dc2-214">level</span></span>| <span data-ttu-id="f4dc2-215">設定可能な値:</span><span class="sxs-lookup"><span data-stu-id="f4dc2-215">Possible values:</span></span> <ul><li><span data-ttu-id="f4dc2-216">ユーザーのユーザーのノードを入手します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-216">user - get user nodes</span></span></li><li><span data-ttu-id="f4dc2-217">デバイスの get ユーザーとデバイス ノード</span><span class="sxs-lookup"><span data-stu-id="f4dc2-217">device - get user and device nodes</span></span></li><li><span data-ttu-id="f4dc2-218">タイトルのタイトルの基本的なレベルの情報の取得</span><span class="sxs-lookup"><span data-stu-id="f4dc2-218">title - get basic title level information</span></span></li><li><span data-ttu-id="f4dc2-219">リッチ プレゼンス情報やメディアについては、すべてを取得します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-219">all - get rich presence information, media information, or both</span></span></li></ul><br> <span data-ttu-id="f4dc2-220">既定値は、「タイトル」です。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-220">The default is "title".</span></span>|
-| <span data-ttu-id="f4dc2-221">ガジェットの onlineOnly</span><span class="sxs-lookup"><span data-stu-id="f4dc2-221">onlineOnly</span></span>| <span data-ttu-id="f4dc2-222">このプロパティが true の場合は、オフラインのユーザーが (回答が決まるものを含む) のレコードを除外バッチ操作されます。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-222">If this property is true, the batch operation will filter out records for offline users (including cloaked ones).</span></span> <span data-ttu-id="f4dc2-223">指定されていない場合は、オンラインとオフライン両方のユーザーが返されます。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-223">If it is not supplied, both online and offline users will be returned.</span></span>|
+| <span data-ttu-id="a79ee-208">deviceTypes</span><span class="sxs-lookup"><span data-stu-id="a79ee-208">deviceTypes</span></span>| <span data-ttu-id="a79ee-209">について知りたいユーザーに使用されるデバイスの種類の一覧です。</span><span class="sxs-lookup"><span data-stu-id="a79ee-209">List of device types used by the users you want to know about.</span></span> <span data-ttu-id="a79ee-210">空の配列の場合、既定値はすべての可能なデバイスの種類 (つまり、none が除外されます)。</span><span class="sxs-lookup"><span data-stu-id="a79ee-210">If the array is left empty, it defaults to all possible device types (that is, none are filtered out).</span></span>|
+| <span data-ttu-id="a79ee-211">タイトル</span><span class="sxs-lookup"><span data-stu-id="a79ee-211">titles</span></span>| <span data-ttu-id="a79ee-212">デバイスの一覧について理解していることをユーザーを種類します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-212">List of device types whose users you want to know about.</span></span> <span data-ttu-id="a79ee-213">空の配列の場合、既定値はすべての可能なタイトル (つまり、none が除外されます)。</span><span class="sxs-lookup"><span data-stu-id="a79ee-213">If the array is left empty, it defaults to all possible titles (that is, none are filtered out).</span></span>|
+| <span data-ttu-id="a79ee-214">level</span><span class="sxs-lookup"><span data-stu-id="a79ee-214">level</span></span>| <span data-ttu-id="a79ee-215">設定可能な値:</span><span class="sxs-lookup"><span data-stu-id="a79ee-215">Possible values:</span></span> <ul><li><span data-ttu-id="a79ee-216">ユーザーのユーザーのノードを入手します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-216">user - get user nodes</span></span></li><li><span data-ttu-id="a79ee-217">デバイスの get ユーザーとデバイス ノード</span><span class="sxs-lookup"><span data-stu-id="a79ee-217">device - get user and device nodes</span></span></li><li><span data-ttu-id="a79ee-218">タイトルのタイトルの基本的なレベルの情報の取得</span><span class="sxs-lookup"><span data-stu-id="a79ee-218">title - get basic title level information</span></span></li><li><span data-ttu-id="a79ee-219">リッチ プレゼンス情報やメディアについては、すべてを取得します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-219">all - get rich presence information, media information, or both</span></span></li></ul><br> <span data-ttu-id="a79ee-220">既定値は、「タイトル」です。</span><span class="sxs-lookup"><span data-stu-id="a79ee-220">The default is "title".</span></span>|
+| <span data-ttu-id="a79ee-221">ガジェットの onlineOnly</span><span class="sxs-lookup"><span data-stu-id="a79ee-221">onlineOnly</span></span>| <span data-ttu-id="a79ee-222">このプロパティが true の場合は、オフラインのユーザーが (回答が決まるものを含む) のレコードを除外バッチ操作されます。</span><span class="sxs-lookup"><span data-stu-id="a79ee-222">If this property is true, the batch operation will filter out records for offline users (including cloaked ones).</span></span> <span data-ttu-id="a79ee-223">指定されていない場合は、オンラインとオフライン両方のユーザーが返されます。</span><span class="sxs-lookup"><span data-stu-id="a79ee-223">If it is not supplied, both online and offline users will be returned.</span></span>|
 
 <a id="ID4E4DAC"></a>
 
 
-### <a name="prohibited-members"></a><span data-ttu-id="f4dc2-224">禁止されているメンバー</span><span class="sxs-lookup"><span data-stu-id="f4dc2-224">Prohibited members</span></span>
+### <a name="prohibited-members"></a><span data-ttu-id="a79ee-224">禁止されているメンバー</span><span class="sxs-lookup"><span data-stu-id="a79ee-224">Prohibited members</span></span>
 
-<span data-ttu-id="f4dc2-225">要求では、その他のすべてのメンバーが禁止されています。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-225">All other members are prohibited in a request.</span></span>
+<span data-ttu-id="a79ee-225">要求では、その他のすべてのメンバーが禁止されています。</span><span class="sxs-lookup"><span data-stu-id="a79ee-225">All other members are prohibited in a request.</span></span>
 
 <a id="ID4EIEAC"></a>
 
 
-### <a name="sample-request"></a><span data-ttu-id="f4dc2-226">要求の例</span><span class="sxs-lookup"><span data-stu-id="f4dc2-226">Sample request</span></span>
+### <a name="sample-request"></a><span data-ttu-id="a79ee-226">要求の例</span><span class="sxs-lookup"><span data-stu-id="a79ee-226">Sample request</span></span>
 
 
 ```cpp
@@ -146,14 +146,14 @@ ms.locfileid: "4534900"
 <a id="ID4ESEAC"></a>
 
 
-## <a name="response-body"></a><span data-ttu-id="f4dc2-227">応答本文</span><span class="sxs-lookup"><span data-stu-id="f4dc2-227">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="a79ee-227">応答本文</span><span class="sxs-lookup"><span data-stu-id="a79ee-227">Response body</span></span>
 
 <a id="ID4E1EAC"></a>
 
 
-### <a name="sample-response"></a><span data-ttu-id="f4dc2-228">応答の例</span><span class="sxs-lookup"><span data-stu-id="f4dc2-228">Sample response</span></span>
+### <a name="sample-response"></a><span data-ttu-id="a79ee-228">応答の例</span><span class="sxs-lookup"><span data-stu-id="a79ee-228">Sample response</span></span>
 
-<span data-ttu-id="f4dc2-229">このメソッドは、 [PresenceRecord](../../json/json-presencerecord.md)を返します。</span><span class="sxs-lookup"><span data-stu-id="f4dc2-229">This method returns a [PresenceRecord](../../json/json-presencerecord.md).</span></span>
+<span data-ttu-id="a79ee-229">このメソッドは、 [PresenceRecord](../../json/json-presencerecord.md)を返します。</span><span class="sxs-lookup"><span data-stu-id="a79ee-229">This method returns a [PresenceRecord](../../json/json-presencerecord.md).</span></span>
 
 
 ```cpp
@@ -210,11 +210,11 @@ ms.locfileid: "4534900"
 <a id="ID4EKFAC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="f4dc2-230">関連項目</span><span class="sxs-lookup"><span data-stu-id="f4dc2-230">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a79ee-230">関連項目</span><span class="sxs-lookup"><span data-stu-id="a79ee-230">See also</span></span>
 
 <a id="ID4EMFAC"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="f4dc2-231">Parent</span><span class="sxs-lookup"><span data-stu-id="f4dc2-231">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="a79ee-231">Parent</span><span class="sxs-lookup"><span data-stu-id="a79ee-231">Parent</span></span>
 
-[<span data-ttu-id="f4dc2-232">/users/batch</span><span class="sxs-lookup"><span data-stu-id="f4dc2-232">/users/batch</span></span>](uri-usersbatch.md)
+[<span data-ttu-id="a79ee-232">/users/batch</span><span class="sxs-lookup"><span data-stu-id="a79ee-232">/users/batch</span></span>](uri-usersbatch.md)
