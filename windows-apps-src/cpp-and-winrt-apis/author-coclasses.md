@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、作成者、COM、コンポーネント
 ms.localizationpriority: medium
 ms.openlocfilehash: 94f59833f4c657445b7135b1158974d8a553813f
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4506981"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4537460"
 ---
 # <a name="author-com-components-with-cwinrt"></a>C++/WinRT での COM コンポーネントの作成
 
@@ -169,7 +169,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 
 上記のコードでコクラスは、 **INotificationActivationCallback::Activate**メソッドは、ユーザーがトースト通知をコールバック ボタンをクリックしたときに呼び出される関数を実装します。 コクラスのインスタンスを作成する必要があるし、 **IClassFactory::CreateInstance**関数のジョブは前に、この関数を呼び出すことができます。
 
-実装しましたコクラス、通知の場合、 *COM アクティベーター*と呼ばれ、そのクラス id (CLSID) の形式では、`callback_guid`種類の識別子 ( **GUID**) 上に表示されます。 We'll be using that identifier later, in the form of a Start menu shortcut and a Windows Registry entry. COM アクティベーター CLSID、およびその関連付けられている COM サーバー (ここで開発中の実行可能ファイルへのパス) へのパスは、トースト通知が、コールバックのボタンがクリックされたときのインスタンスを作成するクラスを認識するためのメカニズム (かどうか、通知がクリックされたアクション センターにまたはされません)。
+実装しましたコクラス、通知の場合、 *COM アクティベーター*と呼ばれ、そのクラス id (CLSID) の形式では、`callback_guid`種類の識別子 ( **GUID**) 上に表示されます。 使用しますその識別子後で、スタート メニューのショートカット、Windows レジストリ エントリの形式でします。 COM アクティベーター CLSID、およびその関連付けられている COM サーバー (ここで開発中の実行可能ファイルへのパス) へのパスは、トースト通知が、コールバックのボタンがクリックされたときのインスタンスを作成するクラスを認識するためのメカニズム (かどうか、通知がクリックされたアクション センターにまたはされません)。
 
 ## <a name="best-practices-for-implementing-com-methods"></a>COM メソッドを実装するためのベスト プラクティス
 

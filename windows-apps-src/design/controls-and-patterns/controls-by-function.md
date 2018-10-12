@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4504126"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4540142"
 ---
 # <a name="controls-by-function"></a>機能別コントロール
 

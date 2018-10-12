@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クリエーター
 ms.localizationpriority: medium
 ms.openlocfilehash: 28f9da245d3fae23241058d7a83fe8c397a415d2
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4498286"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4537785"
 ---
 # <a name="get-started-developing-an-xbox-live-creators-program-title-with-the-unity-game-engine"></a>Unity ゲーム エンジンを使用して、Xbox Live クリエーターズ プログラムのタイトルの開発を開始する
 

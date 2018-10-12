@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ac24fb580696f1524ce7a6cf09dc1e492e9d2378
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4504737"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4539151"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
 ユーザーのプレゼンスでタイトルを更新します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。

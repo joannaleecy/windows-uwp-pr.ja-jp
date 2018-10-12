@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, エラー, 処理, 例外
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a4cf60fea70722e66eb44d52542be248e9ad01c
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4503730"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4539046"
 ---
 # <a name="error-handling-with-cwinrt"></a>C++/WinRT でのエラー処理
 

@@ -51,7 +51,7 @@ Microsoft Store では、Windows 10 を実行するデバイス、Windows 10 Mob
 | スペイン           | Orange                           |
 | スウェーデン          | Telenor、3                       |
 | スイス     | Swisscom、Sunrise                |
-| 台湾          | FarEasTone                       |
+| Taiwan          | FarEasTone                       |
 | トルコ          | Turkcell                         |
 | アラブ首長国連邦 | Etisalat                    |
 | 米国   | Sprint、Verizon                  |

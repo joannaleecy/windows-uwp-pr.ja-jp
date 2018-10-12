@@ -230,7 +230,7 @@ ms.locfileid: "4530136"
 |  スワジランド | 19 USD | 99 USD | 支払の受け取りなし | × | 
 |  スウェーデン | 123 SEK | 700 SEK | 銀行 (SEK) | ○ | 
 |  スイス | 17 CHF | 90 CHF | 銀行 (CHF) | ○ | 
-|  台湾 | 568 TWD | 2,840 TWD | 銀行 (USD) | ○ | 
+|  Taiwan | 568 TWD | 2,840 TWD | 銀行 (USD) | ○ | 
 |  タジキスタン | 19 USD | 99 USD | 銀行 (USD) | × | 
 |  タンザニア | 19 USD | 99 USD | 銀行 (TZS) | × | 
 |  タイ | 601 THB | 3,000 THB | 銀行 (THB) | ○ | 
