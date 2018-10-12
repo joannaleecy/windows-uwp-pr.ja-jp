@@ -17,11 +17,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a61b8bdcfcfad490528cdceed5e732a6f5f3a89
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4508556"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4536132"
 ---
 # <a name="tooltips"></a><span data-ttu-id="733ad-103">ヒント</span><span class="sxs-lookup"><span data-stu-id="733ad-103">Tooltips</span></span>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 681a269cd861f741e2bbde3554acc1b25104d90d
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4504170"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4536899"
 ---
 # <a name="gameclipthumbnail-json"></a><span data-ttu-id="a0813-104">GameClipThumbnail (JSON)</span><span class="sxs-lookup"><span data-stu-id="a0813-104">GameClipThumbnail (JSON)</span></span>
 <span data-ttu-id="a0813-105">個々 のサムネイルに関連する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a0813-105">Contains the information related to an individual thumbnail.</span></span> <span data-ttu-id="a0813-106">1 つのクリップを複数のサイズが存在することができ、表示用の適切なものを選択するクライアントがします。</span><span class="sxs-lookup"><span data-stu-id="a0813-106">There can be multiple sizes per clip, and it is up to the client to select the proper one for display.</span></span> 

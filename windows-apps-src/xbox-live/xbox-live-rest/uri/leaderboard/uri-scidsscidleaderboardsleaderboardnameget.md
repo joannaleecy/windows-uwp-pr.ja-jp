@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 961351e79ca04988c78c8e0be723435b39e5bae8
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4503676"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4535943"
 ---
 # <a name="get-scidsscidleaderboardsleaderboardname"></a><span data-ttu-id="cdb0e-104">GET (/scids/{scid}/leaderboards/{leaderboardname})</span><span class="sxs-lookup"><span data-stu-id="cdb0e-104">GET (/scids/{scid}/leaderboards/{leaderboardname})</span></span>
  

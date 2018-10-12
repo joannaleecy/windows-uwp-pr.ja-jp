@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 17d037e05e7d0817d51d2c63beaf00ae91d10567
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4504634"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4539093"
 ---
 # <a name="post-untrustedplatformusersbatchscidssciddatapathandfilenametype"></a><span data-ttu-id="9905f-104">POST (/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type})</span><span class="sxs-lookup"><span data-stu-id="9905f-104">POST (/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type})</span></span>
 <span data-ttu-id="9905f-105">同じファイル名を持つ複数のユーザーから複数のファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="9905f-105">Downloads multiple files from multiple users with the same filename.</span></span> <span data-ttu-id="9905f-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="9905f-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

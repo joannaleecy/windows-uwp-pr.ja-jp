@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4508455"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4541034"
 ---
 # <a name="windows-device-portal-overview"></a><span data-ttu-id="0b24b-104">Windows Device Portal の概要</span><span class="sxs-lookup"><span data-stu-id="0b24b-104">Windows Device Portal overview</span></span>
 

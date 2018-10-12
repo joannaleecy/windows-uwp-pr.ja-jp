@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4499757"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4540551"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a><span data-ttu-id="ba4bb-104">Windows 10 ビルド 17134 の開発者向け新着情報</span><span class="sxs-lookup"><span data-stu-id="ba4bb-104">What's New in Windows 10 for developers, build 17134</span></span>
 

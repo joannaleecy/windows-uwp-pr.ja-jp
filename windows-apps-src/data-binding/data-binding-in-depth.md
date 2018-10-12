@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 906fb2d0d5d466f4fd691afd35ed96198929225c
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4503327"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4540050"
 ---
 # <a name="data-binding-in-depth"></a><span data-ttu-id="d92e1-104">データ バインディングの詳細</span><span class="sxs-lookup"><span data-stu-id="d92e1-104">Data binding in depth</span></span>
 

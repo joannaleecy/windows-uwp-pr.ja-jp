@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: 684850d472d02463501f29b62e771744bf621e72
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4501303"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4537375"
 ---
 # <a name="multiplayer-manager-flowcharts"></a><span data-ttu-id="b70f1-104">Multiplayer Manager のフローチャート</span><span class="sxs-lookup"><span data-stu-id="b70f1-104">Multiplayer manager flowcharts</span></span>
 
