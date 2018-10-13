@@ -12,58 +12,58 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4540498"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4572273"
 ---
-# <a name="get-titlestitleidsessionssessionidallocationstatus"></a><span data-ttu-id="69696-104">GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)</span><span class="sxs-lookup"><span data-stu-id="69696-104">GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)</span></span>
-<span data-ttu-id="69696-105">その sessionId で識別される sessionhost の割り当てを取得します。</span><span class="sxs-lookup"><span data-stu-id="69696-105">Returns the allocation status of the sessionhost identified by its sessionId.</span></span> <span data-ttu-id="69696-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="69696-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
+# <a name="get-titlestitleidsessionssessionidallocationstatus"></a><span data-ttu-id="a3a04-104">GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)</span><span class="sxs-lookup"><span data-stu-id="a3a04-104">GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)</span></span>
+<span data-ttu-id="a3a04-105">その sessionId で識別される sessionhost の割り当てを取得します。</span><span class="sxs-lookup"><span data-stu-id="a3a04-105">Returns the allocation status of the sessionhost identified by its sessionId.</span></span> <span data-ttu-id="a3a04-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a3a04-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="69696-107">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="69696-107">Required Request Headers</span></span>](#ID4E4)
-  * [<span data-ttu-id="69696-108">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="69696-108">Required Response Headers</span></span>](#ID4EEB)
-  * [<span data-ttu-id="69696-109">応答本文</span><span class="sxs-lookup"><span data-stu-id="69696-109">Response Body</span></span>](#ID4ELB)
+  * [<span data-ttu-id="a3a04-107">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a3a04-107">Required Request Headers</span></span>](#ID4E4)
+  * [<span data-ttu-id="a3a04-108">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a3a04-108">Required Response Headers</span></span>](#ID4EEB)
+  * [<span data-ttu-id="a3a04-109">応答本文</span><span class="sxs-lookup"><span data-stu-id="a3a04-109">Response Body</span></span>](#ID4ELB)
  
 <a id="ID4E4"></a>
 
  
-## <a name="required-request-headers"></a><span data-ttu-id="69696-110">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="69696-110">Required Request Headers</span></span>
+## <a name="required-request-headers"></a><span data-ttu-id="a3a04-110">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a3a04-110">Required Request Headers</span></span>
  
-<span data-ttu-id="69696-111">なし。</span><span class="sxs-lookup"><span data-stu-id="69696-111">None.</span></span>
+<span data-ttu-id="a3a04-111">なし。</span><span class="sxs-lookup"><span data-stu-id="a3a04-111">None.</span></span>
   
 <a id="ID4EEB"></a>
 
  
-## <a name="required-response-headers"></a><span data-ttu-id="69696-112">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="69696-112">Required Response Headers</span></span>
+## <a name="required-response-headers"></a><span data-ttu-id="a3a04-112">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a3a04-112">Required Response Headers</span></span>
  
-<span data-ttu-id="69696-113">なし。</span><span class="sxs-lookup"><span data-stu-id="69696-113">None.</span></span>
+<span data-ttu-id="a3a04-113">なし。</span><span class="sxs-lookup"><span data-stu-id="a3a04-113">None.</span></span>
   
 <a id="ID4ELB"></a>
 
  
-## <a name="response-body"></a><span data-ttu-id="69696-114">応答本文</span><span class="sxs-lookup"><span data-stu-id="69696-114">Response Body</span></span>
+## <a name="response-body"></a><span data-ttu-id="a3a04-114">応答本文</span><span class="sxs-lookup"><span data-stu-id="a3a04-114">Response Body</span></span>
  
-<span data-ttu-id="69696-115">呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="69696-115">If the call is successful, the service will return a JSON object with the following members.</span></span>
+<span data-ttu-id="a3a04-115">呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="a3a04-115">If the call is successful, the service will return a JSON object with the following members.</span></span>
  
-| <span data-ttu-id="69696-116">メンバー</span><span class="sxs-lookup"><span data-stu-id="69696-116">Member</span></span>| <span data-ttu-id="69696-117">説明</span><span class="sxs-lookup"><span data-stu-id="69696-117">Description</span></span>| 
+| <span data-ttu-id="a3a04-116">メンバー</span><span class="sxs-lookup"><span data-stu-id="a3a04-116">Member</span></span>| <span data-ttu-id="a3a04-117">説明</span><span class="sxs-lookup"><span data-stu-id="a3a04-117">Description</span></span>| 
 | --- | --- | 
-| <span data-ttu-id="69696-118">description</span><span class="sxs-lookup"><span data-stu-id="69696-118">description</span></span>| <span data-ttu-id="69696-119">空の文字列 (左での下位互換性) を返します。</span><span class="sxs-lookup"><span data-stu-id="69696-119">Returns empty string (left in for backwards compatibility).</span></span>| 
-| <span data-ttu-id="69696-120">clusterId</span><span class="sxs-lookup"><span data-stu-id="69696-120">clusterId</span></span>| <span data-ttu-id="69696-121">空の文字列 (左での下位互換性) を返します。</span><span class="sxs-lookup"><span data-stu-id="69696-121">Returns empty string (left in for backwards compatibility).</span></span>| 
-| <span data-ttu-id="69696-122">ホスト名</span><span class="sxs-lookup"><span data-stu-id="69696-122">hostName</span></span>| <span data-ttu-id="69696-123">セッション ホストの URL。</span><span class="sxs-lookup"><span data-stu-id="69696-123">The URL of the session host.</span></span>| 
-| <span data-ttu-id="69696-124">status</span><span class="sxs-lookup"><span data-stu-id="69696-124">status</span></span>| <span data-ttu-id="69696-125">キューに入れ、満たされると、または中止されたことを示します。</span><span class="sxs-lookup"><span data-stu-id="69696-125">Indicates either Queued, Fulfilled, or Aborted.</span></span>| 
-| <span data-ttu-id="69696-126">sessionHostId</span><span class="sxs-lookup"><span data-stu-id="69696-126">sessionHostId</span></span>| <span data-ttu-id="69696-127">セッション ホストの id。</span><span class="sxs-lookup"><span data-stu-id="69696-127">The session host ID.</span></span>| 
-| <span data-ttu-id="69696-128">sessionId</span><span class="sxs-lookup"><span data-stu-id="69696-128">sessionId</span></span>| <span data-ttu-id="69696-129">(割り当て時) に提供されるクライアント セッション id。</span><span class="sxs-lookup"><span data-stu-id="69696-129">The client provided (at allocation time) session ID.</span></span>| 
-| <span data-ttu-id="69696-130">secureContext</span><span class="sxs-lookup"><span data-stu-id="69696-130">secureContext</span></span>| <span data-ttu-id="69696-131">セキュア デバイス アドレスです。</span><span class="sxs-lookup"><span data-stu-id="69696-131">The secure device address.</span></span>| 
-| <span data-ttu-id="69696-132">portMappings</span><span class="sxs-lookup"><span data-stu-id="69696-132">portMappings</span></span>| <span data-ttu-id="69696-133">インスタンスのポート マッピングします。</span><span class="sxs-lookup"><span data-stu-id="69696-133">The port mappings for the instance.</span></span>| 
-| <span data-ttu-id="69696-134">地域</span><span class="sxs-lookup"><span data-stu-id="69696-134">region</span></span>| <span data-ttu-id="69696-135">インスタンスの場所です。</span><span class="sxs-lookup"><span data-stu-id="69696-135">The location of the instance.</span></span>| 
-| <span data-ttu-id="69696-136">ticketId</span><span class="sxs-lookup"><span data-stu-id="69696-136">ticketId</span></span>| <span data-ttu-id="69696-137">現在のセッション ID です (左での下位互換性)。</span><span class="sxs-lookup"><span data-stu-id="69696-137">The current session ID (left in for backwards compatibility).</span></span>| 
-| <span data-ttu-id="69696-138">gameHostId</span><span class="sxs-lookup"><span data-stu-id="69696-138">gameHostId</span></span>| <span data-ttu-id="69696-139">(左での下位互換性) 現在 sessionHostId します。</span><span class="sxs-lookup"><span data-stu-id="69696-139">The current sessionHostId (left in for backwards compatibility).</span></span>| 
+| <span data-ttu-id="a3a04-118">description</span><span class="sxs-lookup"><span data-stu-id="a3a04-118">description</span></span>| <span data-ttu-id="a3a04-119">空の文字列 (左での下位互換性) を返します。</span><span class="sxs-lookup"><span data-stu-id="a3a04-119">Returns empty string (left in for backwards compatibility).</span></span>| 
+| <span data-ttu-id="a3a04-120">clusterId</span><span class="sxs-lookup"><span data-stu-id="a3a04-120">clusterId</span></span>| <span data-ttu-id="a3a04-121">空の文字列 (左での下位互換性) を返します。</span><span class="sxs-lookup"><span data-stu-id="a3a04-121">Returns empty string (left in for backwards compatibility).</span></span>| 
+| <span data-ttu-id="a3a04-122">ホスト名</span><span class="sxs-lookup"><span data-stu-id="a3a04-122">hostName</span></span>| <span data-ttu-id="a3a04-123">セッション ホストの URL。</span><span class="sxs-lookup"><span data-stu-id="a3a04-123">The URL of the session host.</span></span>| 
+| <span data-ttu-id="a3a04-124">status</span><span class="sxs-lookup"><span data-stu-id="a3a04-124">status</span></span>| <span data-ttu-id="a3a04-125">キューに入れ、満たされると、または中止されたことを示します。</span><span class="sxs-lookup"><span data-stu-id="a3a04-125">Indicates either Queued, Fulfilled, or Aborted.</span></span>| 
+| <span data-ttu-id="a3a04-126">sessionHostId</span><span class="sxs-lookup"><span data-stu-id="a3a04-126">sessionHostId</span></span>| <span data-ttu-id="a3a04-127">セッション ホストの id。</span><span class="sxs-lookup"><span data-stu-id="a3a04-127">The session host ID.</span></span>| 
+| <span data-ttu-id="a3a04-128">sessionId</span><span class="sxs-lookup"><span data-stu-id="a3a04-128">sessionId</span></span>| <span data-ttu-id="a3a04-129">(割り当て時) に提供されるクライアント セッション id。</span><span class="sxs-lookup"><span data-stu-id="a3a04-129">The client provided (at allocation time) session ID.</span></span>| 
+| <span data-ttu-id="a3a04-130">secureContext</span><span class="sxs-lookup"><span data-stu-id="a3a04-130">secureContext</span></span>| <span data-ttu-id="a3a04-131">セキュア デバイス アドレスです。</span><span class="sxs-lookup"><span data-stu-id="a3a04-131">The secure device address.</span></span>| 
+| <span data-ttu-id="a3a04-132">portMappings</span><span class="sxs-lookup"><span data-stu-id="a3a04-132">portMappings</span></span>| <span data-ttu-id="a3a04-133">インスタンスのポート マッピングします。</span><span class="sxs-lookup"><span data-stu-id="a3a04-133">The port mappings for the instance.</span></span>| 
+| <span data-ttu-id="a3a04-134">地域</span><span class="sxs-lookup"><span data-stu-id="a3a04-134">region</span></span>| <span data-ttu-id="a3a04-135">インスタンスの場所です。</span><span class="sxs-lookup"><span data-stu-id="a3a04-135">The location of the instance.</span></span>| 
+| <span data-ttu-id="a3a04-136">ticketId</span><span class="sxs-lookup"><span data-stu-id="a3a04-136">ticketId</span></span>| <span data-ttu-id="a3a04-137">現在のセッション ID です (左での下位互換性)。</span><span class="sxs-lookup"><span data-stu-id="a3a04-137">The current session ID (left in for backwards compatibility).</span></span>| 
+| <span data-ttu-id="a3a04-138">gameHostId</span><span class="sxs-lookup"><span data-stu-id="a3a04-138">gameHostId</span></span>| <span data-ttu-id="a3a04-139">(左での下位互換性) 現在 sessionHostId します。</span><span class="sxs-lookup"><span data-stu-id="a3a04-139">The current sessionHostId (left in for backwards compatibility).</span></span>| 
  
 <a id="ID4EGD"></a>
 
  
-### <a name="sample-response"></a><span data-ttu-id="69696-140">応答の例</span><span class="sxs-lookup"><span data-stu-id="69696-140">Sample Response</span></span>
+### <a name="sample-response"></a><span data-ttu-id="a3a04-140">応答の例</span><span class="sxs-lookup"><span data-stu-id="a3a04-140">Sample Response</span></span>
  
 
 ```cpp
@@ -102,13 +102,13 @@ ms.locfileid: "4540498"
 <a id="remarks"></a>
 
  
-### <a name="remarks"></a><span data-ttu-id="69696-141">注釈</span><span class="sxs-lookup"><span data-stu-id="69696-141">Remarks</span></span>
+### <a name="remarks"></a><span data-ttu-id="a3a04-141">注釈</span><span class="sxs-lookup"><span data-stu-id="a3a04-141">Remarks</span></span>
  
-<span data-ttu-id="69696-142">次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="69696-142">A title should only retry the call to the service when the following response codes are received:</span></span>
+<span data-ttu-id="a3a04-142">次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a3a04-142">A title should only retry the call to the service when the following response codes are received:</span></span>
  
-   * <span data-ttu-id="69696-143">200-成功</span><span class="sxs-lookup"><span data-stu-id="69696-143">200—Success</span></span> 
-   * <span data-ttu-id="69696-144">400-要求が無効なパラメーターが含まれています</span><span class="sxs-lookup"><span data-stu-id="69696-144">400—Request contains invalid parameters</span></span> 
-   * <span data-ttu-id="69696-145">401: Unauthorized</span><span class="sxs-lookup"><span data-stu-id="69696-145">401—Unauthorized</span></span> 
-   * <span data-ttu-id="69696-146">404-チケット ID、タイトル ID が無効であるか、または見つかりません。</span><span class="sxs-lookup"><span data-stu-id="69696-146">404—The title ID or ticket ID was invalid or not found</span></span> 
-   * <span data-ttu-id="69696-147">500-予期しないサーバー エラー。</span><span class="sxs-lookup"><span data-stu-id="69696-147">500—Unexpected server error.</span></span> 
+   * <span data-ttu-id="a3a04-143">200-成功</span><span class="sxs-lookup"><span data-stu-id="a3a04-143">200—Success</span></span> 
+   * <span data-ttu-id="a3a04-144">400-要求が無効なパラメーターが含まれています</span><span class="sxs-lookup"><span data-stu-id="a3a04-144">400—Request contains invalid parameters</span></span> 
+   * <span data-ttu-id="a3a04-145">401: Unauthorized</span><span class="sxs-lookup"><span data-stu-id="a3a04-145">401—Unauthorized</span></span> 
+   * <span data-ttu-id="a3a04-146">404-チケット ID、タイトル ID が無効であるか、または見つかりません。</span><span class="sxs-lookup"><span data-stu-id="a3a04-146">404—The title ID or ticket ID was invalid or not found</span></span> 
+   * <span data-ttu-id="a3a04-147">500-予期しないサーバー エラー。</span><span class="sxs-lookup"><span data-stu-id="a3a04-147">500—Unexpected server error.</span></span> 
     

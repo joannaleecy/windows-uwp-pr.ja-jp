@@ -12,46 +12,46 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b091f3bbb5e03808d04a255b204c13eee93f7fdb
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4540807"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4570296"
 ---
-# <a name="globalscidssciddatapath"></a><span data-ttu-id="731db-104">/global/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="731db-104">/global/scids/{scid}/data/{path}</span></span>
-<span data-ttu-id="731db-105">指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="731db-105">Lists file information at a specified path.</span></span> <span data-ttu-id="731db-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="731db-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
+# <a name="globalscidssciddatapath"></a><span data-ttu-id="d3f6e-104">/global/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="d3f6e-104">/global/scids/{scid}/data/{path}</span></span>
+<span data-ttu-id="d3f6e-105">指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="d3f6e-105">Lists file information at a specified path.</span></span> <span data-ttu-id="d3f6e-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="d3f6e-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="731db-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="731db-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="d3f6e-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="d3f6e-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="731db-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="731db-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="d3f6e-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="d3f6e-108">URI parameters</span></span>
  
-| <span data-ttu-id="731db-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="731db-109">Parameter</span></span>| <span data-ttu-id="731db-110">型</span><span class="sxs-lookup"><span data-stu-id="731db-110">Type</span></span>| <span data-ttu-id="731db-111">説明</span><span class="sxs-lookup"><span data-stu-id="731db-111">Description</span></span>| 
+| <span data-ttu-id="d3f6e-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="d3f6e-109">Parameter</span></span>| <span data-ttu-id="d3f6e-110">型</span><span class="sxs-lookup"><span data-stu-id="d3f6e-110">Type</span></span>| <span data-ttu-id="d3f6e-111">説明</span><span class="sxs-lookup"><span data-stu-id="d3f6e-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="731db-112">scid</span><span class="sxs-lookup"><span data-stu-id="731db-112">scid</span></span>| <span data-ttu-id="731db-113">guid</span><span class="sxs-lookup"><span data-stu-id="731db-113">guid</span></span>| <span data-ttu-id="731db-114">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="731db-114">the ID of the service config to look up.</span></span>| 
-| <span data-ttu-id="731db-115">path</span><span class="sxs-lookup"><span data-stu-id="731db-115">path</span></span>| <span data-ttu-id="731db-116">string</span><span class="sxs-lookup"><span data-stu-id="731db-116">string</span></span>| <span data-ttu-id="731db-117">返されるデータ項目へのパス。</span><span class="sxs-lookup"><span data-stu-id="731db-117">The path to the data items to return.</span></span> <span data-ttu-id="731db-118">一致するすべてのディレクトリとサブディレクトリを取得する返されます。</span><span class="sxs-lookup"><span data-stu-id="731db-118">All matching directories and subdirectories get returned.</span></span> <span data-ttu-id="731db-119">有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、およびスラッシュ (/) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="731db-119">Valid characters include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), and forward slash (/).</span></span> <span data-ttu-id="731db-120">空にすることがあります。</span><span class="sxs-lookup"><span data-stu-id="731db-120">May be empty.</span></span> <span data-ttu-id="731db-121">256 の最大の長さ。</span><span class="sxs-lookup"><span data-stu-id="731db-121">Max length of 256.</span></span>| 
+| <span data-ttu-id="d3f6e-112">scid</span><span class="sxs-lookup"><span data-stu-id="d3f6e-112">scid</span></span>| <span data-ttu-id="d3f6e-113">guid</span><span class="sxs-lookup"><span data-stu-id="d3f6e-113">guid</span></span>| <span data-ttu-id="d3f6e-114">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="d3f6e-114">the ID of the service config to look up.</span></span>| 
+| <span data-ttu-id="d3f6e-115">path</span><span class="sxs-lookup"><span data-stu-id="d3f6e-115">path</span></span>| <span data-ttu-id="d3f6e-116">string</span><span class="sxs-lookup"><span data-stu-id="d3f6e-116">string</span></span>| <span data-ttu-id="d3f6e-117">返されるデータ項目へのパス。</span><span class="sxs-lookup"><span data-stu-id="d3f6e-117">The path to the data items to return.</span></span> <span data-ttu-id="d3f6e-118">一致するすべてのディレクトリとサブディレクトリを取得する返されます。</span><span class="sxs-lookup"><span data-stu-id="d3f6e-118">All matching directories and subdirectories get returned.</span></span> <span data-ttu-id="d3f6e-119">有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、およびスラッシュ (/) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="d3f6e-119">Valid characters include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), and forward slash (/).</span></span> <span data-ttu-id="d3f6e-120">空にすることがあります。</span><span class="sxs-lookup"><span data-stu-id="d3f6e-120">May be empty.</span></span> <span data-ttu-id="d3f6e-121">256 の最大の長さ。</span><span class="sxs-lookup"><span data-stu-id="d3f6e-121">Max length of 256.</span></span>| 
   
 <a id="ID4E3B"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="731db-122">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="731db-122">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="d3f6e-122">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="d3f6e-122">Valid methods</span></span>
 
-[<span data-ttu-id="731db-123">GET</span><span class="sxs-lookup"><span data-stu-id="731db-123">GET</span></span>](uri-globalscidssciddatapath-get.md)
+[<span data-ttu-id="d3f6e-123">GET</span><span class="sxs-lookup"><span data-stu-id="d3f6e-123">GET</span></span>](uri-globalscidssciddatapath-get.md)
 
-<span data-ttu-id="731db-124">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="731db-124">&nbsp;&nbsp;Lists file information at a specified path.</span></span>
+<span data-ttu-id="d3f6e-124">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="d3f6e-124">&nbsp;&nbsp;Lists file information at a specified path.</span></span>
  
 <a id="ID4EGC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="731db-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="731db-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d3f6e-125">関連項目</span><span class="sxs-lookup"><span data-stu-id="d3f6e-125">See also</span></span>
  
 <a id="ID4EIC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="731db-126">Parent</span><span class="sxs-lookup"><span data-stu-id="731db-126">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="d3f6e-126">Parent</span><span class="sxs-lookup"><span data-stu-id="d3f6e-126">Parent</span></span> 
 
-[<span data-ttu-id="731db-127">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="731db-127">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
+[<span data-ttu-id="d3f6e-127">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="d3f6e-127">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
 
    

@@ -12,34 +12,34 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a4c7f178d729e1e35a7e9bec922a7f969324322
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4537804"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4572429"
 ---
-# <a name="usersbatch"></a><span data-ttu-id="d3692-104">/users/batch</span><span class="sxs-lookup"><span data-stu-id="d3692-104">/users/batch</span></span>
-<span data-ttu-id="d3692-105">ユーザーのバッチのプレゼンスをアクセスします。</span><span class="sxs-lookup"><span data-stu-id="d3692-105">Access presence for a batch of users.</span></span> <span data-ttu-id="d3692-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="d3692-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
+# <a name="usersbatch"></a><span data-ttu-id="d98d9-104">/users/batch</span><span class="sxs-lookup"><span data-stu-id="d98d9-104">/users/batch</span></span>
+<span data-ttu-id="d98d9-105">ユーザーのバッチのプレゼンスをアクセスします。</span><span class="sxs-lookup"><span data-stu-id="d98d9-105">Access presence for a batch of users.</span></span> <span data-ttu-id="d98d9-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="d98d9-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
   
 <a id="ID4EV"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="d3692-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="d3692-107">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="d98d9-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="d98d9-107">Valid methods</span></span>
 
-[<span data-ttu-id="d3692-108">POST (/users/batch)</span><span class="sxs-lookup"><span data-stu-id="d3692-108">POST (/users/batch)</span></span>](uri-usersbatchpost.md)
+[<span data-ttu-id="d98d9-108">POST (/users/batch)</span><span class="sxs-lookup"><span data-stu-id="d98d9-108">POST (/users/batch)</span></span>](uri-usersbatchpost.md)
 
-<span data-ttu-id="d3692-109">&nbsp;&nbsp;ユーザーのバッチのプレゼンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="d3692-109">&nbsp;&nbsp;Get presence for a batch of users.</span></span>
+<span data-ttu-id="d98d9-109">&nbsp;&nbsp;ユーザーのバッチのプレゼンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="d98d9-109">&nbsp;&nbsp;Get presence for a batch of users.</span></span>
  
 <a id="ID4E6"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="d3692-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="d3692-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d98d9-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="d98d9-110">See also</span></span>
  
 <a id="ID4EBB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="d3692-111">Parent</span><span class="sxs-lookup"><span data-stu-id="d3692-111">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="d98d9-111">Parent</span><span class="sxs-lookup"><span data-stu-id="d98d9-111">Parent</span></span> 
 
-[<span data-ttu-id="d3692-112">プレゼンス URI</span><span class="sxs-lookup"><span data-stu-id="d3692-112">Presence URIs</span></span>](atoc-reference-presence.md)
+[<span data-ttu-id="d98d9-112">プレゼンス URI</span><span class="sxs-lookup"><span data-stu-id="d98d9-112">Presence URIs</span></span>](atoc-reference-presence.md)
 
    

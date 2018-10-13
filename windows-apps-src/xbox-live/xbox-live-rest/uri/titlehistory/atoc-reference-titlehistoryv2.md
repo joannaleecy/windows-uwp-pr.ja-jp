@@ -12,37 +12,37 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 82d6dc051911ea04b685ffaeb21f821241bec77d
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4531646"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4571720"
 ---
-# <a name="achievement-title-history-uris"></a><span data-ttu-id="8c2b9-104">実績タイトル履歴 URI</span><span class="sxs-lookup"><span data-stu-id="8c2b9-104">Achievement Title History URIs</span></span>
+# <a name="achievement-title-history-uris"></a><span data-ttu-id="ec863-104">実績タイトル履歴 URI</span><span class="sxs-lookup"><span data-stu-id="ec863-104">Achievement Title History URIs</span></span>
  
-<span data-ttu-id="8c2b9-105">このセクションでは、実績に関連する*タイトル履歴*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドの詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="8c2b9-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for achievements-related *title history*.</span></span> <span data-ttu-id="8c2b9-106">すべてのプラットフォームで実行されるゲームには、この履歴情報を読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="8c2b9-106">Games running on all platforms can read this historical information.</span></span>
+<span data-ttu-id="ec863-105">このセクションでは、実績に関連する*タイトル履歴*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドの詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="ec863-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for achievements-related *title history*.</span></span> <span data-ttu-id="ec863-106">すべてのプラットフォームで実行されるゲームには、この履歴情報を読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="ec863-106">Games running on all platforms can read this historical information.</span></span>
  
-<span data-ttu-id="8c2b9-107">これらの Uri のドメインは、achievements.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="8c2b9-107">The domain for these URIs is achievements.xboxlive.com.</span></span>
+<span data-ttu-id="ec863-107">これらの Uri のドメインは、achievements.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="ec863-107">The domain for these URIs is achievements.xboxlive.com.</span></span>
  
 <a id="ID4EGB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="8c2b9-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="8c2b9-108">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="ec863-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="ec863-108">In this section</span></span>
 
-[<span data-ttu-id="8c2b9-109">/users/xuid({xuid})/history/titles</span><span class="sxs-lookup"><span data-stu-id="8c2b9-109">/users/xuid({xuid})/history/titles</span></span>](uri-titlehistoryusersxuidhistorytitlesv2.md)
+[<span data-ttu-id="ec863-109">/users/xuid({xuid})/history/titles</span><span class="sxs-lookup"><span data-stu-id="ec863-109">/users/xuid({xuid})/history/titles</span></span>](uri-titlehistoryusersxuidhistorytitlesv2.md)
 
-<span data-ttu-id="8c2b9-110">&nbsp;&nbsp;ユーザーの実績に関連するタイトル履歴へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="8c2b9-110">&nbsp;&nbsp;Provides access to a user's Achievement-related title history.</span></span>
+<span data-ttu-id="ec863-110">&nbsp;&nbsp;ユーザーの実績に関連するタイトル履歴へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="ec863-110">&nbsp;&nbsp;Provides access to a user's Achievement-related title history.</span></span>
  
 <a id="ID4EMB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="8c2b9-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="8c2b9-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ec863-111">関連項目</span><span class="sxs-lookup"><span data-stu-id="ec863-111">See also</span></span>
  
 <a id="ID4EOB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="8c2b9-112">Parent</span><span class="sxs-lookup"><span data-stu-id="8c2b9-112">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="ec863-112">Parent</span><span class="sxs-lookup"><span data-stu-id="ec863-112">Parent</span></span> 
 
-[<span data-ttu-id="8c2b9-113">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="8c2b9-113">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="ec863-113">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="ec863-113">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

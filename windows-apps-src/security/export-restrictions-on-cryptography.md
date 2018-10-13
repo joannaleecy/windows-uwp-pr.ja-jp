@@ -11,56 +11,56 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 842d26a2bb257dd182813832c5e6480237a9f220
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4535747"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4570989"
 ---
-# <a name="export-restrictions-on-cryptography"></a><span data-ttu-id="d7153-104">暗号化に関する輸出制限の順守</span><span class="sxs-lookup"><span data-stu-id="d7153-104">Export restrictions on cryptography</span></span>
+# <a name="export-restrictions-on-cryptography"></a><span data-ttu-id="eb01a-104">暗号化に関する輸出制限の順守</span><span class="sxs-lookup"><span data-stu-id="eb01a-104">Export restrictions on cryptography</span></span>
 
 
 
-<span data-ttu-id="d7153-105">アプリでの暗号化が、Microsoft Store に登録されない可能性がある方法で使われていないかどうかを判断する場合に、この情報を利用してください。</span><span class="sxs-lookup"><span data-stu-id="d7153-105">Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Microsoft Store.</span></span>
+<span data-ttu-id="eb01a-105">アプリでの暗号化が、Microsoft Store に登録されない可能性がある方法で使われていないかどうかを判断する場合に、この情報を利用してください。</span><span class="sxs-lookup"><span data-stu-id="eb01a-105">Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Microsoft Store.</span></span>
 
-<span data-ttu-id="d7153-106">米国商務省産業安全保障局は、一部の種類の暗号化を使う技術の輸出を規制しています。</span><span class="sxs-lookup"><span data-stu-id="d7153-106">The Bureau of Industry and Security in the United States Department of Commerce regulates the export of technology that uses certain types of encryption.</span></span> <span data-ttu-id="d7153-107">アプリ ファイルは米国内に保存することができるため、Microsoft Store に登録されているすべてのアプリはこれらの法律と規制に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="d7153-107">All apps listed in the Microsoft Store must comply with these laws and regulations because the app files can be stored in the United States.</span></span> <span data-ttu-id="d7153-108">米国以外の国で配布することを目的として他の国からアプリ開発者によってアップロードされたアプリについても、これらの規制に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="d7153-108">Even apps that are uploaded by app developers from other countries for distribution outside of the United States must comply with these regulations.</span></span> <span data-ttu-id="d7153-109">このため、アプリを Microsoft Store に提出する場合、すべてのアプリ開発者はこれらの規制で制限されている技術がアプリに含まれていないことを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d7153-109">Consequently, when submitting an app to the Microsoft Store, all app developers must make sure that their apps don't contain any technology that is restricted by these regulations.</span></span>
+<span data-ttu-id="eb01a-106">米国商務省産業安全保障局は、一部の種類の暗号化を使う技術の輸出を規制しています。</span><span class="sxs-lookup"><span data-stu-id="eb01a-106">The Bureau of Industry and Security in the United States Department of Commerce regulates the export of technology that uses certain types of encryption.</span></span> <span data-ttu-id="eb01a-107">アプリ ファイルは米国内に保存することができるため、Microsoft Store に登録されているすべてのアプリはこれらの法律と規制に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="eb01a-107">All apps listed in the Microsoft Store must comply with these laws and regulations because the app files can be stored in the United States.</span></span> <span data-ttu-id="eb01a-108">米国以外の国で配布することを目的として他の国からアプリ開発者によってアップロードされたアプリについても、これらの規制に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="eb01a-108">Even apps that are uploaded by app developers from other countries for distribution outside of the United States must comply with these regulations.</span></span> <span data-ttu-id="eb01a-109">このため、アプリを Microsoft Store に提出する場合、すべてのアプリ開発者はこれらの規制で制限されている技術がアプリに含まれていないことを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="eb01a-109">Consequently, when submitting an app to the Microsoft Store, all app developers must make sure that their apps don't contain any technology that is restricted by these regulations.</span></span>
 
-> <span data-ttu-id="d7153-110">**注**  ここに記載された情報をガイドとして利用できますが、適用されるすべての法律と規制をアプリが順守していることの確認は、Microsoft Store でアプリを公開するアプリ開発者の責任で行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="d7153-110">**Note**  The information provided here provides some guidance, but it is your responsibility as the app developer who is publishing apps in the Microsoft Store to make sure that your app complies with all applicable laws and regulations.</span></span>
+> <span data-ttu-id="eb01a-110">**注**  ここに記載された情報をガイドとして利用できますが、適用されるすべての法律と規制をアプリが順守していることの確認は、Microsoft Store でアプリを公開するアプリ開発者の責任で行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="eb01a-110">**Note**  The information provided here provides some guidance, but it is your responsibility as the app developer who is publishing apps in the Microsoft Store to make sure that your app complies with all applicable laws and regulations.</span></span>
 
  
 
-<span data-ttu-id="d7153-111">米国商務省と産業安全保障局の詳しい情報については、[産業安全保障局の Web サイト](http://go.microsoft.com/fwlink/p/?LinkID=245644)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7153-111">For more info about the U.S. Department of Commerce and the Bureau of Industry and Security, see [About the Bureau of Industry and Security](http://go.microsoft.com/fwlink/p/?LinkID=245644).</span></span>
+<span data-ttu-id="eb01a-111">米国商務省と産業安全保障局の詳しい情報については、[産業安全保障局の Web サイト](http://go.microsoft.com/fwlink/p/?LinkID=245644)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="eb01a-111">For more info about the U.S. Department of Commerce and the Bureau of Industry and Security, see [About the Bureau of Industry and Security](http://go.microsoft.com/fwlink/p/?LinkID=245644).</span></span>
 
-<span data-ttu-id="d7153-112">暗号化を含む技術の輸出を管理する輸出管理規制 (EAR) の情報については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7153-112">For info about the Export Administration Regulations (EAR) that govern the export of technology that includes encryption, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).</span></span>
+<span data-ttu-id="eb01a-112">暗号化を含む技術の輸出を管理する輸出管理規制 (EAR) の情報については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="eb01a-112">For info about the Export Administration Regulations (EAR) that govern the export of technology that includes encryption, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).</span></span>
 
-## <a name="governed-uses"></a><span data-ttu-id="d7153-113">管理対象の使用</span><span class="sxs-lookup"><span data-stu-id="d7153-113">Governed uses</span></span>
+## <a name="governed-uses"></a><span data-ttu-id="eb01a-113">管理対象の使用</span><span class="sxs-lookup"><span data-stu-id="eb01a-113">Governed uses</span></span>
 
-<span data-ttu-id="d7153-114">まず、輸出管理規制の対象となる暗号化の種類をアプリが使っているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="d7153-114">First, determine if your app uses a type of cryptography that is governed by the Export Administration Regulations.</span></span> <span data-ttu-id="d7153-115">この質問には、ここで一覧に示している例も含まれていますが、この一覧が暗号化の応用のすべてではないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="d7153-115">The question includes the examples shown in the list here; but remember that this list doesn't include every possible application of cryptography.</span></span>
+<span data-ttu-id="eb01a-114">まず、輸出管理規制の対象となる暗号化の種類をアプリが使っているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="eb01a-114">First, determine if your app uses a type of cryptography that is governed by the Export Administration Regulations.</span></span> <span data-ttu-id="eb01a-115">この質問には、ここで一覧に示している例も含まれていますが、この一覧が暗号化の応用のすべてではないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="eb01a-115">The question includes the examples shown in the list here; but remember that this list doesn't include every possible application of cryptography.</span></span>
 
-> <span data-ttu-id="d7153-116">**重要** アプリ用に自分で記述したコードだけでなく、アプリに含まれたりリンクされたりしているすべてのソフトウェア ライブラリ、ユーティリティ、オペレーティング システム コンポーネントについても考慮してください。</span><span class="sxs-lookup"><span data-stu-id="d7153-116">**Important**  Consider not only the code you wrote for your app, but also all the software libraries, utilities and operating system components that your app includes or links to.</span></span>
+> <span data-ttu-id="eb01a-116">**重要** アプリ用に自分で記述したコードだけでなく、アプリに含まれたりリンクされたりしているすべてのソフトウェア ライブラリ、ユーティリティ、オペレーティング システム コンポーネントについても考慮してください。</span><span class="sxs-lookup"><span data-stu-id="eb01a-116">**Important**  Consider not only the code you wrote for your app, but also all the software libraries, utilities and operating system components that your app includes or links to.</span></span>
 
--   <span data-ttu-id="d7153-117">認証、整合性チェックなどの、デジタル署名の使用</span><span class="sxs-lookup"><span data-stu-id="d7153-117">Any use of a digital signature, such as authentication or integrity checking</span></span>
--   <span data-ttu-id="d7153-118">アプリが使ったりアクセスしたりするデータまたはファイルの暗号化</span><span class="sxs-lookup"><span data-stu-id="d7153-118">Encryption of any data or files that your app uses or accesses</span></span>
--   <span data-ttu-id="d7153-119">キー管理、証明書管理、または公開キー インフラストラクチャとやり取りのある操作</span><span class="sxs-lookup"><span data-stu-id="d7153-119">Key management, certificate management, or anything that interacts with a public key infrastructure</span></span>
--   <span data-ttu-id="d7153-120">NTLM、Kerberos、Secure Sockets Layer (SSL)、トランスポート層セキュリティ (TLS) などの、セキュリティで保護された通信チャネルの使用</span><span class="sxs-lookup"><span data-stu-id="d7153-120">Using a secure communication channel such as NTLM, Kerberos, Secure Sockets Layer (SSL), or Transport Layer Security (TLS)</span></span>
--   <span data-ttu-id="d7153-121">暗号化パスワードなどによる情報セキュリティ</span><span class="sxs-lookup"><span data-stu-id="d7153-121">Encrypting passwords or other forms of information security</span></span>
--   <span data-ttu-id="d7153-122">コピー防止やデジタル著作権管理 (DRM)</span><span class="sxs-lookup"><span data-stu-id="d7153-122">Copy protection or digital rights management (DRM)</span></span>
--   <span data-ttu-id="d7153-123">ウイルス対策機能</span><span class="sxs-lookup"><span data-stu-id="d7153-123">Antivirus protection</span></span>
+-   <span data-ttu-id="eb01a-117">認証、整合性チェックなどの、デジタル署名の使用</span><span class="sxs-lookup"><span data-stu-id="eb01a-117">Any use of a digital signature, such as authentication or integrity checking</span></span>
+-   <span data-ttu-id="eb01a-118">アプリが使ったりアクセスしたりするデータまたはファイルの暗号化</span><span class="sxs-lookup"><span data-stu-id="eb01a-118">Encryption of any data or files that your app uses or accesses</span></span>
+-   <span data-ttu-id="eb01a-119">キー管理、証明書管理、または公開キー インフラストラクチャとやり取りのある操作</span><span class="sxs-lookup"><span data-stu-id="eb01a-119">Key management, certificate management, or anything that interacts with a public key infrastructure</span></span>
+-   <span data-ttu-id="eb01a-120">NTLM、Kerberos、Secure Sockets Layer (SSL)、トランスポート層セキュリティ (TLS) などの、セキュリティで保護された通信チャネルの使用</span><span class="sxs-lookup"><span data-stu-id="eb01a-120">Using a secure communication channel such as NTLM, Kerberos, Secure Sockets Layer (SSL), or Transport Layer Security (TLS)</span></span>
+-   <span data-ttu-id="eb01a-121">暗号化パスワードなどによる情報セキュリティ</span><span class="sxs-lookup"><span data-stu-id="eb01a-121">Encrypting passwords or other forms of information security</span></span>
+-   <span data-ttu-id="eb01a-122">コピー防止やデジタル著作権管理 (DRM)</span><span class="sxs-lookup"><span data-stu-id="eb01a-122">Copy protection or digital rights management (DRM)</span></span>
+-   <span data-ttu-id="eb01a-123">ウイルス対策機能</span><span class="sxs-lookup"><span data-stu-id="eb01a-123">Antivirus protection</span></span>
 
-<span data-ttu-id="d7153-124">暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7153-124">For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).</span></span>
+<span data-ttu-id="eb01a-124">暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="eb01a-124">For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).</span></span>
 
-## <a name="non-restricted-uses"></a><span data-ttu-id="d7153-125">制限なしの使用</span><span class="sxs-lookup"><span data-stu-id="d7153-125">Non-restricted uses</span></span>
+## <a name="non-restricted-uses"></a><span data-ttu-id="eb01a-125">制限なしの使用</span><span class="sxs-lookup"><span data-stu-id="eb01a-125">Non-restricted uses</span></span>
 
-<span data-ttu-id="d7153-126">一部の暗号化の適用は制限されていません。</span><span class="sxs-lookup"><span data-stu-id="d7153-126">Note that some of the applications of cryptography are not restricted.</span></span> <span data-ttu-id="d7153-127">次のタスクは、制限を受けません。</span><span class="sxs-lookup"><span data-stu-id="d7153-127">Here are the unrestricted tasks:</span></span>
+<span data-ttu-id="eb01a-126">一部の暗号化の適用は制限されていません。</span><span class="sxs-lookup"><span data-stu-id="eb01a-126">Note that some of the applications of cryptography are not restricted.</span></span> <span data-ttu-id="eb01a-127">次のタスクは、制限を受けません。</span><span class="sxs-lookup"><span data-stu-id="eb01a-127">Here are the unrestricted tasks:</span></span>
 
--   <span data-ttu-id="d7153-128">パスワードの暗号化</span><span class="sxs-lookup"><span data-stu-id="d7153-128">Password encryption</span></span>
--   <span data-ttu-id="d7153-129">コピー防止</span><span class="sxs-lookup"><span data-stu-id="d7153-129">Copy protection</span></span>
--   <span data-ttu-id="d7153-130">認証</span><span class="sxs-lookup"><span data-stu-id="d7153-130">Authentication</span></span>
--   <span data-ttu-id="d7153-131">デジタル著作権管理</span><span class="sxs-lookup"><span data-stu-id="d7153-131">Digital rights management</span></span>
--   <span data-ttu-id="d7153-132">デジタル署名の使用</span><span class="sxs-lookup"><span data-stu-id="d7153-132">Using digital signatures</span></span>
+-   <span data-ttu-id="eb01a-128">パスワードの暗号化</span><span class="sxs-lookup"><span data-stu-id="eb01a-128">Password encryption</span></span>
+-   <span data-ttu-id="eb01a-129">コピー防止</span><span class="sxs-lookup"><span data-stu-id="eb01a-129">Copy protection</span></span>
+-   <span data-ttu-id="eb01a-130">認証</span><span class="sxs-lookup"><span data-stu-id="eb01a-130">Authentication</span></span>
+-   <span data-ttu-id="eb01a-131">デジタル著作権管理</span><span class="sxs-lookup"><span data-stu-id="eb01a-131">Digital rights management</span></span>
+-   <span data-ttu-id="eb01a-132">デジタル署名の使用</span><span class="sxs-lookup"><span data-stu-id="eb01a-132">Using digital signatures</span></span>
 
-<span data-ttu-id="d7153-133">暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7153-133">For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).</span></span>
+<span data-ttu-id="eb01a-133">暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="eb01a-133">For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).</span></span>
 
-<span data-ttu-id="d7153-134">アプリがこの一覧に含まれないタスクについて暗号化を呼び出す、サポートする、組み込む、または使う場合は、輸出規制品目番号 (ECCN) が必要です。</span><span class="sxs-lookup"><span data-stu-id="d7153-134">If your app calls, supports, contains, or uses cryptography or encryption for any task that is not in this list, it needs an Export Commodity Classification Number (ECCN).</span></span>
+<span data-ttu-id="eb01a-134">アプリがこの一覧に含まれないタスクについて暗号化を呼び出す、サポートする、組み込む、または使う場合は、輸出規制品目番号 (ECCN) が必要です。</span><span class="sxs-lookup"><span data-stu-id="eb01a-134">If your app calls, supports, contains, or uses cryptography or encryption for any task that is not in this list, it needs an Export Commodity Classification Number (ECCN).</span></span>
 
-<span data-ttu-id="d7153-135">ECCN を持っていない場合は、[ECCN についての質問とその回答が掲載された Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245646)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7153-135">If you don't have an ECCN, see [ECCN Questions and Answers](http://go.microsoft.com/fwlink/p/?LinkID=245646).</span></span>
+<span data-ttu-id="eb01a-135">ECCN を持っていない場合は、[ECCN についての質問とその回答が掲載された Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245646)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="eb01a-135">If you don't have an ECCN, see [ECCN Questions and Answers](http://go.microsoft.com/fwlink/p/?LinkID=245646).</span></span>

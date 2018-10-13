@@ -12,45 +12,45 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fe1129db6154d842cbadf0e7918d2fe460166ba1
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4533550"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4573127"
 ---
-# <a name="usersxuidxuiddeleteuserdata"></a><span data-ttu-id="b515a-104">/users/xuid({xuid})/deleteuserdata</span><span class="sxs-lookup"><span data-stu-id="b515a-104">/users/xuid({xuid})/deleteuserdata</span></span>
-<span data-ttu-id="b515a-105">テスト ユーザーの評判のデータを完全にリセットします。</span><span class="sxs-lookup"><span data-stu-id="b515a-105">Completely resets the reputation data for a test user.</span></span> <span data-ttu-id="b515a-106">テストのみです。</span><span class="sxs-lookup"><span data-stu-id="b515a-106">For testing only.</span></span> <span data-ttu-id="b515a-107">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="b515a-107">The domain for these URIs is `reputation.xboxlive.com`.</span></span> <span data-ttu-id="b515a-108">この URI は、常にポート 10443 で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="b515a-108">This URI is always called on port 10443.</span></span>
+# <a name="usersxuidxuiddeleteuserdata"></a><span data-ttu-id="37074-104">/users/xuid({xuid})/deleteuserdata</span><span class="sxs-lookup"><span data-stu-id="37074-104">/users/xuid({xuid})/deleteuserdata</span></span>
+<span data-ttu-id="37074-105">テスト ユーザーの評判のデータを完全にリセットします。</span><span class="sxs-lookup"><span data-stu-id="37074-105">Completely resets the reputation data for a test user.</span></span> <span data-ttu-id="37074-106">テストのみです。</span><span class="sxs-lookup"><span data-stu-id="37074-106">For testing only.</span></span> <span data-ttu-id="37074-107">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="37074-107">The domain for these URIs is `reputation.xboxlive.com`.</span></span> <span data-ttu-id="37074-108">この URI は、常にポート 10443 で呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="37074-108">This URI is always called on port 10443.</span></span>
  
-  * [<span data-ttu-id="b515a-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b515a-109">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="37074-109">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="37074-109">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="b515a-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b515a-110">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="37074-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="37074-110">URI parameters</span></span>
  
-| <span data-ttu-id="b515a-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="b515a-111">Parameter</span></span>| <span data-ttu-id="b515a-112">型</span><span class="sxs-lookup"><span data-stu-id="b515a-112">Type</span></span>| <span data-ttu-id="b515a-113">説明</span><span class="sxs-lookup"><span data-stu-id="b515a-113">Description</span></span>| 
+| <span data-ttu-id="37074-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="37074-111">Parameter</span></span>| <span data-ttu-id="37074-112">型</span><span class="sxs-lookup"><span data-stu-id="37074-112">Type</span></span>| <span data-ttu-id="37074-113">説明</span><span class="sxs-lookup"><span data-stu-id="37074-113">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="b515a-114">xuid</span><span class="sxs-lookup"><span data-stu-id="b515a-114">xuid</span></span>| <span data-ttu-id="b515a-115">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="b515a-115">64-bit unsigned integer</span></span>| <span data-ttu-id="b515a-116">Xbox ユーザー ID (XUID)、ユーザーがデータを削除しています。</span><span class="sxs-lookup"><span data-stu-id="b515a-116">Xbox User ID (XUID) of the user whose data is being deleted.</span></span>| 
+| <span data-ttu-id="37074-114">xuid</span><span class="sxs-lookup"><span data-stu-id="37074-114">xuid</span></span>| <span data-ttu-id="37074-115">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="37074-115">64-bit unsigned integer</span></span>| <span data-ttu-id="37074-116">Xbox ユーザー ID (XUID)、ユーザーがデータを削除しています。</span><span class="sxs-lookup"><span data-stu-id="37074-116">Xbox User ID (XUID) of the user whose data is being deleted.</span></span>| 
   
 <a id="ID4EYB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="b515a-117">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="b515a-117">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="37074-117">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="37074-117">Valid methods</span></span>
 
-[<span data-ttu-id="b515a-118">POST (/users/xuid({xuid})/deleteuserdata)</span><span class="sxs-lookup"><span data-stu-id="b515a-118">POST (/users/xuid({xuid})/deleteuserdata)</span></span>](uri-usersxuiddeleteuserdatapost.md)
+[<span data-ttu-id="37074-118">POST (/users/xuid({xuid})/deleteuserdata)</span><span class="sxs-lookup"><span data-stu-id="37074-118">POST (/users/xuid({xuid})/deleteuserdata)</span></span>](uri-usersxuiddeleteuserdatapost.md)
 
-<span data-ttu-id="b515a-119">&nbsp;&nbsp;テスト ユーザーの評判のデータを完全にリセットします。</span><span class="sxs-lookup"><span data-stu-id="b515a-119">&nbsp;&nbsp;Completely resets the reputation data for a test user.</span></span> <span data-ttu-id="b515a-120">テストのみです。</span><span class="sxs-lookup"><span data-stu-id="b515a-120">For testing only.</span></span>
+<span data-ttu-id="37074-119">&nbsp;&nbsp;テスト ユーザーの評判のデータを完全にリセットします。</span><span class="sxs-lookup"><span data-stu-id="37074-119">&nbsp;&nbsp;Completely resets the reputation data for a test user.</span></span> <span data-ttu-id="37074-120">テストのみです。</span><span class="sxs-lookup"><span data-stu-id="37074-120">For testing only.</span></span>
  
 <a id="ID4ECC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="b515a-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="b515a-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="37074-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="37074-121">See also</span></span>
  
 <a id="ID4EEC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="b515a-122">Parent</span><span class="sxs-lookup"><span data-stu-id="b515a-122">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="37074-122">Parent</span><span class="sxs-lookup"><span data-stu-id="37074-122">Parent</span></span> 
 
-[<span data-ttu-id="b515a-123">評判 URI</span><span class="sxs-lookup"><span data-stu-id="b515a-123">Reputation URIs</span></span>](atoc-reference-reputation.md)
+[<span data-ttu-id="37074-123">評判 URI</span><span class="sxs-lookup"><span data-stu-id="37074-123">Reputation URIs</span></span>](atoc-reference-reputation.md)
 
    

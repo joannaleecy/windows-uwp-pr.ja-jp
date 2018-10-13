@@ -12,30 +12,30 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 17b6bf856dd87abc72a000cb92724baf91452d73
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4537106"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4572662"
 ---
-# <a name="hopperstatsresults-json"></a><span data-ttu-id="625bb-104">HopperStatsResults (JSON)</span><span class="sxs-lookup"><span data-stu-id="625bb-104">HopperStatsResults (JSON)</span></span>
-<span data-ttu-id="625bb-105">ホッパーの統計情報を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="625bb-105">A JSON object representing the statistics for a hopper.</span></span> 
+# <a name="hopperstatsresults-json"></a><span data-ttu-id="98f0a-104">HopperStatsResults (JSON)</span><span class="sxs-lookup"><span data-stu-id="98f0a-104">HopperStatsResults (JSON)</span></span>
+<span data-ttu-id="98f0a-105">ホッパーの統計情報を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="98f0a-105">A JSON object representing the statistics for a hopper.</span></span> 
 <a id="ID4EN"></a>
 
   
  
-<span data-ttu-id="625bb-106">HopperStatsResults JSON オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="625bb-106">The HopperStatsResults JSON object has the following specification.</span></span>
+<span data-ttu-id="98f0a-106">HopperStatsResults JSON オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="98f0a-106">The HopperStatsResults JSON object has the following specification.</span></span>
  
-| <span data-ttu-id="625bb-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="625bb-107">Member</span></span>| <span data-ttu-id="625bb-108">種類</span><span class="sxs-lookup"><span data-stu-id="625bb-108">Type</span></span>| <span data-ttu-id="625bb-109">説明</span><span class="sxs-lookup"><span data-stu-id="625bb-109">Description</span></span>| 
+| <span data-ttu-id="98f0a-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="98f0a-107">Member</span></span>| <span data-ttu-id="98f0a-108">種類</span><span class="sxs-lookup"><span data-stu-id="98f0a-108">Type</span></span>| <span data-ttu-id="98f0a-109">説明</span><span class="sxs-lookup"><span data-stu-id="98f0a-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="625bb-110">hopperName</span><span class="sxs-lookup"><span data-stu-id="625bb-110">hopperName</span></span>| <span data-ttu-id="625bb-111">string</span><span class="sxs-lookup"><span data-stu-id="625bb-111">string</span></span>| <span data-ttu-id="625bb-112">選択したホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="625bb-112">The name of the selected hopper.</span></span>| 
-| <span data-ttu-id="625bb-113">待機時間</span><span class="sxs-lookup"><span data-stu-id="625bb-113">waitTime</span></span>| <span data-ttu-id="625bb-114">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="625bb-114">32-bit signed integer</span></span>| <span data-ttu-id="625bb-115">照合時間 (秒の整数)、ホッパーの平均です。</span><span class="sxs-lookup"><span data-stu-id="625bb-115">Average matching time for the hopper (an integral number of seconds).</span></span> | 
-| <span data-ttu-id="625bb-116">カタログの作成</span><span class="sxs-lookup"><span data-stu-id="625bb-116">population</span></span>| <span data-ttu-id="625bb-117">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="625bb-117">32-bit signed integer</span></span>| <span data-ttu-id="625bb-118">一致するものをホッパーで待機しているユーザーの数。</span><span class="sxs-lookup"><span data-stu-id="625bb-118">The number of people waiting for matches in the hopper.</span></span>| 
+| <span data-ttu-id="98f0a-110">hopperName</span><span class="sxs-lookup"><span data-stu-id="98f0a-110">hopperName</span></span>| <span data-ttu-id="98f0a-111">string</span><span class="sxs-lookup"><span data-stu-id="98f0a-111">string</span></span>| <span data-ttu-id="98f0a-112">選択したホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="98f0a-112">The name of the selected hopper.</span></span>| 
+| <span data-ttu-id="98f0a-113">待機時間</span><span class="sxs-lookup"><span data-stu-id="98f0a-113">waitTime</span></span>| <span data-ttu-id="98f0a-114">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="98f0a-114">32-bit signed integer</span></span>| <span data-ttu-id="98f0a-115">照合時間 (秒の整数)、ホッパーの平均です。</span><span class="sxs-lookup"><span data-stu-id="98f0a-115">Average matching time for the hopper (an integral number of seconds).</span></span> | 
+| <span data-ttu-id="98f0a-116">カタログの作成</span><span class="sxs-lookup"><span data-stu-id="98f0a-116">population</span></span>| <span data-ttu-id="98f0a-117">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="98f0a-117">32-bit signed integer</span></span>| <span data-ttu-id="98f0a-118">一致するものをホッパーで待機しているユーザーの数。</span><span class="sxs-lookup"><span data-stu-id="98f0a-118">The number of people waiting for matches in the hopper.</span></span>| 
   
 <a id="ID4EW"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="625bb-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="625bb-119">Sample JSON syntax</span></span> 
+## <a name="sample-json-syntax"></a><span data-ttu-id="98f0a-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="98f0a-119">Sample JSON syntax</span></span> 
  
 
 ```json
@@ -52,21 +52,21 @@ ms.locfileid: "4537106"
 <a id="ID4EGB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="625bb-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="625bb-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="98f0a-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="98f0a-120">See also</span></span>
  
 <a id="ID4EIB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="625bb-121">Parent</span><span class="sxs-lookup"><span data-stu-id="625bb-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="98f0a-121">Parent</span><span class="sxs-lookup"><span data-stu-id="98f0a-121">Parent</span></span> 
 
-[<span data-ttu-id="625bb-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="625bb-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="98f0a-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="98f0a-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EUB"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="625bb-123">リファレンス</span><span class="sxs-lookup"><span data-stu-id="625bb-123">Reference</span></span> 
+##### <a name="reference"></a><span data-ttu-id="98f0a-123">リファレンス</span><span class="sxs-lookup"><span data-stu-id="98f0a-123">Reference</span></span> 
 
-[<span data-ttu-id="625bb-124">GET (/serviceconfigs/{scid}/hoppers/{name}/stats)</span><span class="sxs-lookup"><span data-stu-id="625bb-124">GET (/serviceconfigs/{scid}/hoppers/{name}/stats)</span></span>](../uri/matchtickets/uri-serviceconfigsscidhoppershoppernamestatsget.md)
+[<span data-ttu-id="98f0a-124">GET (/serviceconfigs/{scid}/hoppers/{name}/stats)</span><span class="sxs-lookup"><span data-stu-id="98f0a-124">GET (/serviceconfigs/{scid}/hoppers/{name}/stats)</span></span>](../uri/matchtickets/uri-serviceconfigsscidhoppershoppernamestatsget.md)
 
    
