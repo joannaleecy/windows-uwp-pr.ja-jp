@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: df924f8665424bf540eb1651cfa69737080588d5
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4534706"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4571300"
 ---
 # <a name="put-sessionssessionidscidssciddatapathandfilenametype"></a>PUT (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})
 ファイルをアップロードします。 データやメタデータが送信される 1 つのメッセージで、または一連の小さいブロックのデータやメタデータが送信される複数のブロック アップロードとして完全なアップロードでは、データをアップロードできます。 1 つのメッセージとしては 4 メガバイトよりも小さいファイルのみを送信できます。 Json の種類のデータの複数のブロックのアップロードはサポートされていません。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

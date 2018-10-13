@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, パッケージ化
 ms.localizationpriority: medium
 ms.openlocfilehash: fcd6d937c7261b5cfa8af954eb5d2ec2869d8afd
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4505184"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4571376"
 ---
 # <a name="manual-app-packaging"></a>手動でのアプリのパッケージ化
 

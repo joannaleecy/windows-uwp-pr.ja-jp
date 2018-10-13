@@ -14,11 +14,11 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ce80206823694f06e4aa5c3480b4dcb30c4f95c
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4529764"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4571919"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Visual Studio で UWP アプリをパッケージ化する
 

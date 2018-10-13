@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 308ecbddb5d62ae98d576f56af4cd3f7363c2c5a
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4534322"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4568855"
 ---
 # <a name="get-usersxuidxuid"></a>GET (/users/xuid({xuid}))
 別のユーザーまたはクライアントの有無を検出します。

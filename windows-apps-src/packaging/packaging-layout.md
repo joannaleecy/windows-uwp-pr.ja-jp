@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, パッケージ化, パッケージ レイアウト, アセット パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f8cbb3989b58b726336b4bd757902bd9ea3f8c0
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4540892"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4574334"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>パッケージ レイアウトを使ったパッケージの作成  
 

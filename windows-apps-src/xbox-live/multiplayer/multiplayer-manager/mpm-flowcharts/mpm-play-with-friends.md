@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: d0b48d529894511f4e2ef43b8ec76dde44ce5c50
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4539177"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4572857"
 ---
 # <a name="flowchart---play-a-multiplayerco-op-game-with-friends"></a>フローチャート - フレンドとマルチプレイヤー/協力型ゲームをプレイする
 

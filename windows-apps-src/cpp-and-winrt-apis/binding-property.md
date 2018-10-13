@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, XAML, コントロール, バインド, プロパティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 2caec1c245514f7c1596d2a40749e974998fadcd
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4533789"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4574002"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML コントロール: C++/WinRT プロパティへのバインド
 XAML コントロールに効果的にバインドできるプロパティは、*監視可能な*プロパティと呼ばれます。 この概念は、*オブザーバー パターン*と呼ばれるソフトウェアの設計パターンに基づいています。 このトピックでは、監視可能なプロパティを実装する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、および XAML コントロールをバインドする方法について説明します。

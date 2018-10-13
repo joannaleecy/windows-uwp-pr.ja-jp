@@ -11,11 +11,11 @@ keywords: Windows 10, UWP, パッケージ化
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.openlocfilehash: dbde8f2f11276ded6ad0994a1cd52f7f12de229e
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4530440"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4571337"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>MakeAppx.exe ツールを使ったアプリ パッケージの作成
 

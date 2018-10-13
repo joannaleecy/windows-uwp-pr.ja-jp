@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、投影、プロジェクション、実装、ランタイム クラス、ライセンス認証
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b1cd05f974bf9193e84919a5e679ef996746d7e
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4536865"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4571324"
 ---
 # <a name="consume-apis-with-cwinrt"></a>C++/WinRT での API の使用
 

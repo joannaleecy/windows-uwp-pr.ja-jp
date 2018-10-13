@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 47b487a4708e42ee66f293bfa020ba51cfad82a9
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4531497"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4573936"
 ---
 # <a name="system-strings-validatation-uris"></a>システム文字列の検証 URI
  

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ed26a509d75ea7b62705023b0e31850581adc66a
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4555407"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4571278"
 ---
 # <a name="get-usersxuidxuidachievements"></a>GET (/users/xuid({xuid})/achievements)
 タイトル、進行中のユーザーが持っているまたは、ユーザーがロックを解除するもので定義されている実績の一覧を取得します。 これらの Uri のドメインが`achievements.xboxlive.com`します。

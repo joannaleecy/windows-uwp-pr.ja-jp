@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
 ms.openlocfilehash: c238855f4f018e8e3142509842221c6b9d97fae3
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4532035"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4574961"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>SignTool を使ってアプリ パッケージに署名する
 

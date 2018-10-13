@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 933169945c865fc6bc6f7b8b7ba7872fff98d1b8
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4529120"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4573140"
 ---
 # <a name="paginginfo-json"></a>PagingInfo (JSON)
 データのページで返される結果のページング情報が含まれています。 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a919af3cb532ce19427967f305cb03adc149a1
-ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
+ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "4531203"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "4571927"
 ---
 # <a name="debugging-testing-and-performance"></a>デバッグ、テスト、パフォーマンス
 
