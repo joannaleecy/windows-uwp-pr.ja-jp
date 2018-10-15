@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a5a56b524dbf88d96a34f769f7a25bed7bca8a1d
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566108"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612599"
 ---
 # <a name="mediaasset-json"></a>MediaAsset (JSON)
 実績やそのリワードに関連付けられているメディア アセット。
@@ -25,11 +25,11 @@ ms.locfileid: "4566108"
 
 ## <a name="mediaasset"></a>MediaAsset
 
-MediaAsset オブジェクトには、次の仕様があります。
+MediaAsset オブジェクトでは、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
-| name| string| "Tile01"など、MediaAsset の名前です。|
+| name| string| "Tile01"など、MediaAsset の名前。|
 | type| MediaAssetType 列挙型| メディア アセットの種類。 <ul><li>アイコン (0): 実績アイコンです。</li><li>アート (1): デジタル アート アセット。</li></ul> | 
 | url| string| MediaAsset の URL。|
 

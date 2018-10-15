@@ -1,28 +1,28 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: アプリのレビューに返信を送るには、Microsoft Store レビュー API の以下のメソッドを使います。
 title: レビューに対する返信の送信
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store レビュー API, アドオンの入手数
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a757743bec947a5e8b0edf8c7a0d02e7c00942d
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 4ec6661ec0ef65174b6218957450540edceaa5a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662602"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614829"
 ---
 # <a name="submit-responses-to-reviews"></a>レビューに対する返信の送信
 
 
 アプリのレビューにプログラムで返信するには、Microsoft Store レビュー API の以下のメソッドを使います。 このメソッドを呼び出すときは、返信するレビューの ID を指定する必要があります。 レビュー ID は、Microsoft Store 分析 API の[アプリのレビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で取得できます。
 
-顧客はレビューを送信するときに、レビューへの返信を受け取らないことを選択できます。 顧客が返信を受け取らないように指定しているレビューに返信すると、このメソッドの返信の本文には、返信ができなかったことが示されます。 このメソッドを呼び出す前に、必要に応じて[アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)メソッドを使って、特定のレビューへの返信が許可されているかどうかを確認できます。
+顧客はレビューを送信するときに、レビューへの返信を受け取らないことを選択できます。 顧客が返信を受け取らないように指定しているレビューに返信すると、このメソッドの返信の本文には、返信ができなかったことが示されます。 このメソッドを呼び出す前に、任意で、[アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)メソッドを使用して、特定のレビューへの返信が許可されているかどうかを確認できます。
 
 > [!NOTE]
 > このメソッドを使ってプログラムでレビューに返信する以外に、[Windows デベロッパー センター ダッシュボード](../publish/respond-to-customer-reviews.md)を使ってレビューに返信することもできます。
@@ -48,7 +48,7 @@ ms.locfileid: "1662602"
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 文字列 | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 
 ### <a name="request-parameters"></a>要求パラメーター
@@ -73,7 +73,7 @@ ms.locfileid: "1662602"
 | ReviewId | string |  返信するレビューの ID です (これは GUID です)。 レビュー ID は、Microsoft Store 分析 API の[アプリのレビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で取得できます。   |  ○  |
 | ResponseText | string | 提出する返信です。 返信は、[こちらのガイドライン](../publish/respond-to-customer-reviews.md#guidelines-for-responses)に従う必要があります。   |  ○  |
 | SupportEmail | string | アプリのサポート メール アドレスです。顧客はこのアドレスを使用して、直接連絡できます。 したがって、有効なメール アドレスである必要があります。     |  ○  |
-| IsPublic | Boolean |  値が **true** の場合、返信はアプリのストア登録情報の顧客のレビューのすぐ下に表示され、すべての顧客から見える状態になることを示します。 値が **false** の場合は、返信はメールで顧客に送信され、アプリのストア登録情報内で他の顧客には見える状態でないことを示します。     |  ○  |
+| IsPublic | Boolean |  **True**を指定する場合、返信は、アプリのストア登録情報、顧客のレビューのすぐ下に表示され、すべてのユーザーに表示されます。 **False**と、ユーザーがメールへの返信オプトアウトしていないを指定する場合、返信がメールで顧客に送信され、アプリのストア登録情報で他のユーザーに表示されません。 メールへの返信**false**と、ユーザーが選択されている、指定した場合は、エラーが返されます。   |  はい  |
 
 
 ### <a name="request-example"></a>要求の例
@@ -104,7 +104,7 @@ Content-Type: application/json
 }
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a>返信
 
 ### <a name="response-body"></a>応答本文
 
@@ -123,7 +123,7 @@ Content-Type: application/json
 | FailureReason | string | **Successful** が **false** の場合、この値には失敗の理由が含まれます。 **Successful** が **true** の場合、この値は空です。      |
 
 
-### <a name="response-example"></a>応答の例
+### <a name="response-example"></a>返信の例
 
 この要求の JSON 応答の本文の例を次に示します。
 

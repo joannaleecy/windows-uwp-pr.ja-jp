@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, スロットリング, レート制限
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aa06e65dcb17fd9bb751680f0d3f4717c0fc098
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564037"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612315"
 ---
 # <a name="xbox-live-fine-grained-rate-limiting"></a>Xbox Live のきめ細かなレート制限
 
@@ -95,7 +95,7 @@ ms.locfileid: "4564037"
 
 ## <a name="implemented-limits"></a>実装された制限
 
-以下のサービスは FGRL 制限を実装しており、これらの制限は **2016 年 5 月**以降適用されています。 繰り返しますが、これらの制限はすべてのサンドボックスおよびタイトルに共通です。 **Xbox 開発者向けプラットフォームまたはデベロッパー センター経由で公開され、2016 年前に出荷された任意のタイトルはレガシーし、したがって除外します。**
+以下のサービスは FGRL 制限を実装しており、これらの制限は **2016 年 5 月**以降適用されています。 繰り返しますが、これらの制限はすべてのサンドボックスおよびタイトルに共通です。 **Xbox 開発者向けプラットフォームまたはデベロッパー センター経由で公開され、2016 年前に出荷されたタイトルはレガシーし、したがって除外します。**
 
 | **名前** | **バースト制限** (15 秒間、1 ユーザーおよび 1 タイトルあたり) | **サステイン制限** (300 秒間、1 ユーザーおよび 1 タイトルあたり) | **認定制限** (10x サステイン、300 秒間、1 ユーザーおよび 1 タイトルあたり) |
 |----------------------------|---------------------------|----------------------------|----------------------------|

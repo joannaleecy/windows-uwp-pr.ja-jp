@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
-description: 月次請求のアプリの使用状況データを取得する特定の日付範囲やその他のオプション フィルターを Microsoft Store 分析 API でこのメソッドを使います。
+description: 特定の日付範囲やその他のオプション フィルターの月次請求のアプリの使用状況データを取得するのに、Microsoft Store 分析 API の以下のメソッドを使用します。
 title: アプリの使用状況 (月単位) の取得
 ms.author: mhopkins
 ms.date: 08/15/2018
@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, 使用状況
 ms.localizationpriority: medium
 ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574083"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611354"
 ---
 # <a name="get-monthly-app-usage"></a>アプリの使用状況 (月単位) の取得
 
-(過去 90 日間のみ) 特定の日付範囲やその他のオプション フィルターを使って、アプリケーションに関する JSON 形式で (Xbox マルチプレイヤーは含まない) 集計の使用状況データを取得するのに、Microsoft Store 分析 api の以下のメソッドを使用します。 この情報も[使用状況] レポート](../publish/usage-report.md)では、Windows デベロッパー センター ダッシュ ボードで使用できます。
+(過去 90 日間のみ) 特定の日付範囲やその他のオプション フィルターを使って、アプリケーションに関する JSON 形式で (Xbox のマルチプレイヤーは含まない) 集計の使用状況データを取得するのに、Microsoft Store 分析 api の以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュ ボードでの[使用状況] レポート](../publish/usage-report.md)で利用可能なもできます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -88,15 +88,15 @@ Authorization: Bearer <your access token>
 | date                      | string  | 使用状況データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。                          |
 | applicationId             | string  | 使用状況データを取得するアプリのストア ID です。                            |
 | applicationName           | string  | アプリの表示名です。                                                                |
-| market                    | string  | お客様がアプリを使用する市場の ISO 3166 国コードです。                   |
+| market                    | string  | 顧客にアプリが使用されている市場の ISO 3166 国コードです。                   |
 | packageVersion            | string  | 使用状況が発生したパッケージのバージョン。                                            |
 | deviceType                | string  | 次の文字列のいずれかを指定する使用状況が発生したデバイスの種類。<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablet**</li><li>**IoT**</li><li>**Server**</li><li>**Holographic**</li><li>**Unknown**</li></ul>                                                                                                                           |
 | subscriptionName          | string  | Xbox Game Pass を通じて使用量があったかどうかを示します。                                              |
-| monthlySessionCount       | long    | その月の間のユーザー セッションの数です。                                              |
-| engagementDurationMinutes | double  | ユーザーがアクティブに個別のアプリを起動したときに始まり、時間の期間で測定されたアプリ (プロセスが開始) を使用してと終了 (プロセスの終了) または後に一定の期間の終了位置分。                               |
-| monthlyActiveUsers        | long    | アプリがその月を使ってユーザーの数。                                           |
-| monthlyActiveDevices      | long    | 一定の期間後または時間、アプリを起動したときに始まり (プロセスが開始) の個別の期間のアプリを実行していると、終了 (プロセスの終了) したときに終了のデバイスの数。                                                        |
-| monthlyNewUsers           | long    | その月の初めてのアプリを使用したユーザーの数。                    |
+| monthlySessionCount       | long    | その月の間のユーザー セッションの数。                                              |
+| engagementDurationMinutes | double  | ユーザーがアクティブに個別のアプリを起動したときに始まり、時間の期間で測定されたアプリ (プロセスが開始) を使用して終了 (プロセスの終了) または一定の期間後、分。                               |
+| monthlyActiveUsers        | long    | アプリをその月を使っているユーザーの数。                                           |
+| monthlyActiveDevices      | long    | 一定の期間後または時間、アプリを起動したときに始まり (プロセスが開始) の個別の期間のアプリを実行していると、終了 (プロセスの終了) を終了のデバイスの数。                                                        |
+| monthlyNewUsers           | long    | 最初にその月にアプリを使用したユーザーの数。                    |
 | averageDailyActiveUsers   | double  | 毎日のように、アプリを使っているユーザーの平均数です。                             |
 | averageDailyActiveDevices | double  | 日常的にすべてのユーザーがアプリを操作するために使用するデバイスの平均数です。 |
 
@@ -149,7 +149,7 @@ Authorization: Bearer <your access token>
 ## <a name="related-topics"></a>関連トピック
 
 * [Microsoft Store サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
-* [アプリの 1 日あたり ussage を取得します。](get-app-usage-daily.md)
+* [毎日アプリ ussage を取得します。](get-app-usage-daily.md)
 * [アプリの入手数の取得](get-app-acquisitions.md)
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)
 * [エラー報告データの取得](get-error-reporting-data.md)

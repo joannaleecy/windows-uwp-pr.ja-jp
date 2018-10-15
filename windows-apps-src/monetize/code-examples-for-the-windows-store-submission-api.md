@@ -1,27 +1,28 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 14C23FE6-3EAF-445E-85C1-DF188A7822CA
-description: このセクションのコード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。
+description: Microsoft Store 申請 API の使用について詳しくは、このセクションのコード例を使用します。
 title: 申請 API 用のコード例
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP, Windows ストア申請 API, コード例
-ms.openlocfilehash: c5344667922a7445ad7694f36a542b3ff35c4bdb
-ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+keywords: windows 10, uwp, Microsoft Store 申請 API, コード例
+ms.localizationpriority: medium
+ms.openlocfilehash: f728a17d98d53cf1783452ddfd543c1062156200
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2017
-ms.locfileid: "772305"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615500"
 ---
 # <a name="code-examples-for-the-submission-api"></a>申請 API 用のコード例
 
-このセクションでは、さまざまなプログラミング言語で [Windows ストア申請 API](create-and-manage-submissions-using-windows-store-services.md) を使用するためのコード例を紹介します。
+このセクションでは、さまざまなプログラミング言語で、 [Microsoft Store 申請 API](create-and-manage-submissions-using-windows-store-services.md)を使用するためのコード例を示します。
 
 > [!NOTE]
-> 以下に示したコード例に加えて、Windows ストア申請 API の上にコマンド ライン インターフェイスを実装するオープンソースの PowerShell モジュールも用意しています。 このモジュールは、[StoreBroker](https://aka.ms/storebroker) と呼ばれています。 このモジュールを使うと、Windows ストア申請 API を直接呼び出さずにコマンド ラインからアプリ、フライト、アドオンの申請を管理できます。または、ソースをそのまま参照して、この API を呼び出す方法の他の例を確認できます。 StoreBroker モジュールは、Microsoft 社内でも、多くのファースト パーティ アプリケーションをストアに申請する主要な方法として積極的に使用されています。 詳しくは、[GitHub の StoreBroker に関するページ](https://aka.ms/storebroker)をご覧ください。
+> 以下に示したコード例、だけでなく、Microsoft Store 申請 API の上にコマンド ライン インターフェイスを実装するオープン ソースの PowerShell モジュールも提供します。 このモジュールは、[StoreBroker](https://aka.ms/storebroker) と呼ばれています。 このモジュールを使うと、Microsoft Store 申請 API を直接呼び出さずに、コマンド ラインからアプリ、フライト、アドオンの申請を管理できます。また、ソースを参照して、この API を呼び出す方法の例を確認することもできます。 StoreBroker モジュールは、多くのファースト パーティ アプリケーションをストアに申請する主要な方法として Microsoft 内で積極的に使っています。 詳しくは、[GitHub の StoreBroker に関するページ](https://aka.ms/storebroker)をご覧ください。
 
 ## <a name="app-submissions-add-on-submissions-and-package-flight-submissions"></a>アプリの申請、アドオンの申請、パッケージ フライトの申請
 
@@ -41,4 +42,4 @@ ms.locfileid: "772305"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)

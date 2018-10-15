@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: UWP アプリにネイティブ広告を追加する方法について説明します。
 title: ネイティブ広告
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 広告, Advertising, 広告コントロール, ネイティブ広告
 ms.localizationpriority: medium
-ms.openlocfilehash: 5479efef22d31c5a23086b7e596553542e6e9e51
-ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.openlocfilehash: 4a529cc360d6a357cf4ff6aa36370c4339b37ed6
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "1881113"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614305"
 ---
 # <a name="native-ads"></a>ネイティブ広告
 
@@ -49,7 +49,7 @@ ms.locfileid: "1881113"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
-5.  アプリの適切な場所 (たとえば、```MainPage``` またはその他のページ) で、**NativeAdsManagerV2**オブジェクトと、ネイティブ広告のアプリケーション ID および広告ユニット ID を表す複数の文字列フィールドを宣言します。 次のコード例では、`myAppId` フィールドと `myAdUnitId` フィールドをネイティブ広告の[テスト値](set-up-ad-units-in-your-app.md#test-ad-units)に割り当てています。
+5.  アプリの適切な場所 (たとえば、```MainPage``` またはその他のページ) で、[NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2)オブジェクトと、ネイティブ広告のアプリケーション ID および広告ユニット ID を表す複数の文字列フィールドを宣言します。 次のコード例では、`myAppId` フィールドと `myAdUnitId` フィールドをネイティブ広告の[テスト値](set-up-ad-units-in-your-app.md#test-ad-units)に割り当てています。
     > [!NOTE]
     > 各 **NativeAdsManagerV2** に、対応する*広告ユニット*があります。広告ユニットは、ネイティブ広告コントロールに広告を提供するためにサービスで使われます。すべての広告ユニットは、*広告ユニット ID* と*アプリケーション ID* で構成されます。 ここでは、広告ユニット ID とアプリケーション ID のテスト値をコントロールに割り当てます。 これらのテスト値は、テスト バージョンのアプリでのみ使用できます。 Microsoft Store にアプリを公開する前に、[これらのテスト値を Windows デベロッパー センターから取得した実際の値に置き換える](#release)必要があります。
 
@@ -63,7 +63,7 @@ ms.locfileid: "1881113"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
 
-8.  アプリ用にネイティブ広告の準備ができたら、**AdReady** イベント ハンドラーが呼び出され、ネイティブ広告を表す **NativeAdV2** オブジェクトが *e* パラメーターに渡されます。 **NativeAdV2** プロパティを使ってネイティブ広告の各要素を取得し、ページ上にそれらの要素を表示します。 また、**RegisterAdContainer** メソッドを呼び出して、ネイティブ広告のコンテナーとして機能する UI 要素を登録してください。広告インプレッションと広告クリックを適切に追跡するために必要です。
+8.  アプリ用にネイティブ広告の準備ができたら、[AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.adready) イベント ハンドラーが呼び出され、ネイティブ広告を表す [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) オブジェクトが *e* パラメーターに渡されます。 **NativeAdV2** プロパティを使ってネイティブ広告の各要素を取得し、ページ上にそれらの要素を表示します。 また、**RegisterAdContainer** メソッドを呼び出して、ネイティブ広告のコンテナーとして機能する UI 要素を登録してください。広告インプレッションと広告クリックを適切に追跡するために必要です。
     > [!NOTE]
     > ネイティブ広告の一部の要素は必須であり、アプリに常に表示する必要があります。 詳しくは、「[ネイティブ広告のガイドライン](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)」をご覧ください。
 
@@ -119,7 +119,7 @@ ms.locfileid: "1881113"
 
 3. 必要に応じて、[[アプリ内広告]](../publish/in-app-ads.md) ページの [[仲介設定]](../publish/in-app-ads.md#mediation) セクションで設定を構成することで、ネイティブ広告の広告仲介を有効にできます。 広告仲介を利用すると、複数の広告ネットワークから広告を表示して、広告収益とアプリ プロモーションの機能を最大限に引き出すことができます。
 
-4.  コードで、広告ユニットのテスト値 (**NativeAdsManagerV2** コンストラクターの *applicationId* パラメーターと *adUnitId* パラメーター) を、デベロッパー センターで生成した実際の値に置き換えます。
+4.  コードで、広告ユニットのテスト値 ([NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) コンストラクターの *applicationId* パラメーターと *adUnitId* パラメーター) を、デベロッパー センターで生成した実際の値に置き換えます。
 
 5.  デベロッパー センター ダッシュボードを使用して、ストアに[アプリを申請](../publish/app-submissions.md)します。
 

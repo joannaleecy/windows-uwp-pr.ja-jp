@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b8dcea7c0987a2bc783adae0398c9579ded2fe8
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568832"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624030"
 ---
 # <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/details
-返します提供の詳細とメタデータについての 1 つまたは複数の項目。 これらの Uri のドメインが`eds.xboxlive.com`します。
+返しますの詳細とメタデータを提供する方法の 1 つまたは複数の項目。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
-API は、関連する API と参照 API によって異なります詳細 (とき ID で passin) と、追加の情報を返します。 詳細 API が、それらの Api は、暗黙的または明示的に fiven ID に関連付けられているその他の項目に関する情報を返す。同じ項目。
+API は、関連する API と参照 API によって異なります詳細 (とき、ID で passin) 詳細 API には、追加の情報が返されますが、それらの Api は、暗黙的または明示的に fiven ID に関連付けられているその他の項目に関する情報を返すよう。同じ項目。
  
-別のメディア項目の種類の複数の Id は、1 つに渡すことができます (限り ProviderContentID - 下記を参照型のわからない)、呼び出しが同じメディア グループに属するすべてする必要があります。 ただし、これには、呼び出し元がメディアのグループを認識しないクライアントのシナリオのいくつかがあります。 API では、これを使用して、次のような状況でのメディアのグループには、"Unknown"の特殊値のことを許可します。
+別のメディア項目の種類の複数の Id は、1 つに渡すことができます (だけの時間とは違う型 ProviderContentID - 以下を参照してください)、呼び出しが同じメディア グループに属するすべてする必要があります。 ただし、これには、呼び出し元がメディアのグループを認識しないクライアントのシナリオのいくつかがあります。 API では、これを使用して、次のような状況でのメディアのグループには、"Unknown"の特殊値のことを許可します。
  
-   * idType = XboxHexTitle で、AppType またはゲームの種類のいずれかの項目が生成されます
+   * idType = XboxHexTitle、AppType またはゲームの種類のいずれかの項目を生成します。
    * idType = ProviderContentId で、MovieType または TVType 項目が生成されます
   
 次の図は、どのメディア グループと ID の種類を指定できます全体のマッピングをまとめたものです。
@@ -56,7 +56,7 @@ API は、関連する API と参照 API によって異なります詳細 (と�
  
 これは、検索プロバイダーを使用特定 id。 例。 Netflix Id または Hulu id。
  
-IdType ProviderContentId がある場合は、1 つの値のみが受け入れられます。 これは、ProviderContentIds は種類の ID が含まれるだけであるため、'.' 文字です。 '.' 文字がする Id 間の区切り文字でも、新機能、delimieter Id 間の間にあいまいさがおよび ID 自体の一部は何です。 API の残りの部分一括検索機能を除く、ProviderContentIds の同じように動作します。
+IdType ProviderContentId がある場合は、1 つの値のみが受け入れられます。 これは、ProviderContentIds は種類の ID が含まれるだけであるため、'.' 文字です。 '.' 文字もする Id 間の区切り文字は Id 間 delimieter 間にあいまいさが、新機能自体 ID の一部です。 API の残りの部分一括検索機能を除く、ProviderContentIds の同じように動作します。
    
 <a id="ID4EUH"></a>
 
@@ -74,7 +74,7 @@ IdType ProviderContentId がある場合は、1 つの値のみが受け入れ�
 
 [GET (/media/{marketplaceId}/details)](uri-medialocaledetailsget.md)
 
-&nbsp;&nbsp;返します提供の詳細とメタデータについての 1 つまたは複数の項目。 
+&nbsp;&nbsp;返しますの詳細とメタデータを提供する方法の 1 つまたは複数の項目。 
  
 <a id="ID4EABAC"></a>
 

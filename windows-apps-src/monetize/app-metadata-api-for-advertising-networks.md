@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: アプリのメタデータ REST API を使用して、アプリの特定の種類のメタデータにアクセスする方法について説明します。 この API は、広告ネットワークで使用することにより、Microsoft Store 内のアプリに関する情報を取得し、広告主への広告スペースの販売を向上させることを目的としています。
 title: 広告ネットワーク用のアプリのメタデータ API
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10、UWP、広告ネットワーク、アプリのメタデータ
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
-ms.openlocfilehash: bc5cb5bed964528b34339742e34b5d2761de2b95
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 16603bfe8c3fe0bfeaef1e19018798d0c6477b85
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654741"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613543"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>広告ネットワーク用のアプリのメタデータ API
 

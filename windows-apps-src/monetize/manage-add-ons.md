@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
 description: Windows デベロッパー センター アカウントに登録されているアプリのアドオンを管理するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: アドオンの管理
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d603ab8901eae16da92365042e3244202539586
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: be0d383fc271084fe20a958d20f6fa3a340da187
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663052"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610454"
 ---
 # <a name="manage-add-ons"></a>アドオンの管理
 
@@ -166,6 +166,6 @@ Microsoft Store 申請 API に関するすべての[前提条件](create-and-man
 * [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [Microsoft Store 申請 API を使用したアドオンの申請の管理](manage-add-on-submissions.md)
 * [すべてのアドオンの取得](get-all-add-ons.md)
-* [アドオンの取得](get-an-add-on.md)
+* [アドオンの入手](get-an-add-on.md)
 * [アドオンの作成](create-an-add-on.md)
 * [アドオンの削除](delete-an-add-on.md)

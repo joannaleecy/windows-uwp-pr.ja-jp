@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Microsoft Store のキーを更新するには、以下のメソッドを使います。
 title: Microsoft Store ID キーの更新
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, Microsoft Store ID キー, 更新
 ms.localizationpriority: medium
-ms.openlocfilehash: 430eaaa040e731e429eba15d58f554e41349a959
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 70bda5022e52c0b18a43563a0492bd56d09b88a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664825"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612446"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>Microsoft Store ID キーの更新
 
@@ -56,7 +56,7 @@ Microsoft Store のキーを更新するには、以下のメソッドを使い�
 | パラメーター     | 型   | 説明                       | 必須かどうか |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | string | Azure AD アクセス トークン。        | 必須      |
-| key           | string | 有効期限が切れた Microsoft Store ID キー。 | 必須ではない       |
+| key           | string | 有効期限が切れた Microsoft Store ID キー。 | はい       |
 
 
 ### <a name="request-example"></a>要求の例
@@ -78,9 +78,9 @@ Host: collections.mp.microsoft.com
 
 ### <a name="response-body"></a>応答本文
 
-| パラメーター | 型   | 説明                                                                                                            | 必須かどうか |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
-| key       | string | 以降の Microsoft Store コレクション API または Microsoft Store 購入 API の呼び出しで使用できる、更新された Microsoft Store のキー。 | 必須ではない       |
+| パラメーター | 型   | 説明                                                                                                            |
+|-----------|--------|------------------------------------------------------------------------------------------------------------------------|
+| key       | string | 以降の Microsoft Store コレクション API または Microsoft Store 購入 API の呼び出しで使用できる、更新された Microsoft Store のキー。 |
 
 
 ### <a name="response-example"></a>応答の例
@@ -103,8 +103,8 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 ## <a name="error-codes"></a>エラー コード
 
 
-| コード | エラー        | 内部エラー コード           | 説明                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| コード | エラー        | 内部エラー コード           | 説明   |
+|------|--------------|----------------------------|---------------|
 | 401  | 権限がありません | AuthenticationTokenInvalid | Azure AD アクセス トークンが無効です。 場合によっては、ServiceError の詳細に追加情報が含まれていることがあります (トークンの有効期限切れや *appid* 要求の欠落など)。 |
 | 401  | 権限がありません | InconsistentClientId       | Microsoft Store ID キーの *clientId* 要求と Azure AD アクセス トークンの *appid* 要求が一致しません。                                                                     |
 
@@ -112,7 +112,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 ## <a name="related-topics"></a>関連トピック
 
 
-* [サービスによる製品の権利の管理](view-and-grant-products-from-a-service.md)
+* [サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)
 * [製品の照会](query-for-products.md)
-* [コンシューマブルな製品のフルフィルメント完了の報告](report-consumable-products-as-fulfilled.md)
+* [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
 * [無料の製品の付与](grant-free-products.md)

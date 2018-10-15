@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d62e4f7106f7f0f2c324ca2c68ea8fe476bc7bfb
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568592"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611980"
 ---
 # <a name="post-usersbatchfeedback"></a>POST (/users/batchfeedback)
 タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
@@ -31,7 +31,7 @@ ms.locfileid: "4568592"
  
 ## <a name="request-body"></a>要求本文 
  
-呼び出し元は、その web 要求オブジェクトの [ClientCertificates] セクションで、要求の証明書を含める必要があります。
+呼び出し元では、その web 要求のオブジェクトの [ClientCertificates] セクションで、要求の証明書を含める必要があります。
  
 <a id="ID4EBB"></a>
 
@@ -45,7 +45,7 @@ ms.locfileid: "4568592"
  
 ### <a name="prohibited-members"></a>禁止されているメンバー 
  
-要求では、その他のすべてのメンバーが禁止されています。
+要求では、他のすべてのメンバーが禁止されています。
   
 <a id="ID4E3B"></a>
 
@@ -95,9 +95,9 @@ ms.locfileid: "4568592"
 | items| array| フィードバックの JSON ドキュメントのコレクションです。| 
 | targetXuid| string| ターゲット ユーザーの XUID| 
 | titleId| string| このフィードバックから送信されたタイトルまたは NULL。| 
-| sessionRef| object| MPSD セッションを表すオブジェクトです。 このフィードバックが関連して、または NULL。| 
+| sessionRef| object| MPSD セッションを表すオブジェクトです。 このフィードバックが関連する、または NULL。| 
 | feedbackType| string| FeedbackType 列挙体の値の文字列バージョン。| 
-| textReason| string| 送信者に送信されたフィードバックの詳細情報が追加されるパートナーが指定したテキストです。| 
+| textReason| string| 送信者は、提出されたフィードバックに関する詳細を提供する追加される可能性パートナー製のテキストです。| 
 | evidenceId| string| 送信されたフィードバックの証拠として使用できるリソースの ID です。 例: ビデオ ファイルの ID です。| 
    
 <a id="ID4E3E"></a>
@@ -105,7 +105,7 @@ ms.locfileid: "4568592"
  
 ## <a name="required-headers"></a>必要なヘッダー
  
-次のヘッダーは、Xbox Live サービス要求を行ったとき必要があります。 
+Xbox Live サービス要求を行うときは、次のヘッダーを必要があります。 
 
 > [!NOTE] 
 > パートナーの要求の証明書は、バッチ フィードバックを送信するために、要求と共に送信する必要があります。 
@@ -116,23 +116,23 @@ ms.locfileid: "4568592"
 | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl コントラクト バージョン| 101| API コントラクト バージョンです。| 
 | Content-Type| application/json| 送信されたデータの種類です。| 
-| Authorization| "XBL3.0 x =&lt;userhash > です。&lt;トークン >"| HTTP 認証の資格情報を認証します。| 
-| X RequestedServiceVersion| 101| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。| 
+| Authorization| "XBL3.0 x =&lt;userhash > です。&lt;トークン >"| HTTP の認証の資格情報を認証します。| 
+| X RequestedServiceVersion| 101| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。| 
   
 <a id="ID4EWG"></a>
 
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
-| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
+| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。| 
 | 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable| 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度やり直してください。| 
+| 503| Service Unavailable| 要求がスロット リングされて、秒 (例: 5 秒後) のクライアント再試行値後にもう一度やり直してください。| 
   
 <a id="ID4EDAAC"></a>
 

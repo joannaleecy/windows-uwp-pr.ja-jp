@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: Windows デベロッパー センター アカウントに登録されているアプリの申請をプログラムで作成および管理するには、Microsoft Store 申請 API を使います。
 title: 申請の作成と管理
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bd8d2f800969102d6957cafa92e04f482323611
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: a6ba5678fc7b66e15d0e189cd75792f97c2353db
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976467"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614126"
 ---
 # <a name="create-and-manage-submissions"></a>申請の作成と管理
 

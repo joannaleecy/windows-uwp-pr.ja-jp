@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ad1700d58ab3568aa3aefa46b5950d0a8bf3c320
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565661"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612145"
 ---
 # <a name="toast-content-schema"></a>トーストのコンテンツのスキーマ
 

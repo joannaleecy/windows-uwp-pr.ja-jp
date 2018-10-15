@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b945427118122e3b6d52210efc5e1de84a8c8d68
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573465"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614960"
 ---
 # <a name="get-publicscidsscidclips"></a>GET (/public/scids/{scid}/clips)
 パブリック クリップを一覧表示します。 この URI のドメインが`gameclipsmetadata.xboxlive.com`します。
@@ -32,9 +32,9 @@ ms.locfileid: "4573465"
  
 この API は、さまざまな方法は、パブリック一覧クリップにできます。 クリップの一覧に基づいて返されたプライバシー チェックと要求元の XUID に対してコンテンツの分離チェックします。
  
-クエリは、サービス構成 id (SCID) ごとに最適化されます。 さらにフィルターを使ってまたは以下に示す既定値以外の並べ替え順序を指定するいくつかの状況で長い時間がかかるに戻ります。 これは、ビデオのセットの大規模なより明確です。 クエリでは、昇順の並べ替え順序を指定できません。
+クエリは、サービス構成 id (SCID) ごとに最適化されます。 さらにフィルターを使ってまたは以下に示す既定値以外の並べ替え順序を指定するいくつかの状況で長い時間がかかるに戻ります。 これは、ビデオのセットの大規模なより明確です。 クエリでは、順の並べ替え順序を指定できません。
  
-修飾子は、公開のクリップを特定のコレクションを取得する必要があります。 要求元のユーザーには、要求された SCID へのアクセスが必要、そうしないと http/403 が返されます。
+修飾子は、特定のコレクションの公開クリップを取得する必要があります。 要求元のユーザーには、要求された SCID へのアクセスが必要、そうしないと http/403 が返されます。
   
 <a id="ID4ECB"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "4573465"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| scid| string| パブリック クリップの主要なサービス構成の識別子です。| 
+| scid| string| パブリック クリップのプライマリのサービス構成 id。| 
 | タイトル id| string| パブリック クリップのタイトル Id。 SCID と同じ URI で指定することはできません。 指定した場合はプライマリー SCID を検索するために使用されます。| 
   
 <a id="ID4ENB"></a>
@@ -53,9 +53,9 @@ ms.locfileid: "4573465"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| <b>? achievementId = {achievementId}</b>| 最新のクリップが指定した<b>achievementId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
-| <b>? greatestMomentId = {greatestMomentId}</b>| 最新のクリップが指定した<b>greatestMomentId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
-| <b>? 修飾子 = 作成 </b>| Most Recent| 必須。| 
+| <b>かどうか achievementId = {achievementId}。</b>| 最新のクリップが指定した<b>achievementId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
+| <b>かどうか greatestMomentId = {greatestMomentId}。</b>| 最新のクリップが指定した<b>greatestMomentId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
+| <b>かどうか修飾子 = 作成。 </b>| 最新| 必須。| 
   
 <a id="ID4EDD"></a>
 

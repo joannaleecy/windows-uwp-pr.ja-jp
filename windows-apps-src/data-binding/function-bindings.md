@@ -1,7 +1,7 @@
 ---
 author: jwmsft
-description: XBind マークアップ拡張は、マークアップで使用する機能を許可します。
-title: X:bind 内の関数
+description: XBind マークアップ拡張は、マークアップで使用する機能を使用します。
+title: X:bind の関数
 ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4575311"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613467"
 ---
-# <a name="functions-in-xbind"></a>X:bind 内の関数
+# <a name="functions-in-xbind"></a>X:bind の関数
 
 **注**  **{x:Bind}** によりアプリでデータ バインディングを使う方法に関する一般的な情報 (および **{x:Bind}** と **{Binding}** の全体的な比較) については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
@@ -88,7 +88,7 @@ public class MyPage : Page
 }
 ```
 
-たとえば日付の書式設定、テキストの書式設定、テキストの連結などのような単純なシナリオを実行するためにマークアップで直接システム機能を使用することもできます。
+たとえば日付の書式設定、テキストの書式設定、テキストの連結などのような単純なシナリオを実現するのにマークアップで直接システム機能を使用することもできます。
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -177,7 +177,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>双方向の関数バインド
 
-双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、**バインド バック**バインド プロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
+双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、 **BindBack**バインド プロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```

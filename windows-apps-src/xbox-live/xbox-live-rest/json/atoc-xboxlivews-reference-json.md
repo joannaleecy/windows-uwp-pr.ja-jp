@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e65936d20923ecbdc2d9cfb0a0ec52bb7504b885
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563239"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610574"
 ---
 # <a name="javascript-object-notation-json-object-reference"></a>JavaScript Object Notation (JSON) オブジェクト リファレンス
  
@@ -53,7 +53,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [DeviceRecord (JSON)](json-devicerecord.md)
 
-&nbsp;&nbsp;その型とそれに対するアクティブなタイトルを含む、デバイスに関する情報。
+&nbsp;&nbsp;その型にアクティブなタイトルなど、デバイスに関する情報。
 
 [Feedback (JSON)](json-feedback.md)
 
@@ -67,7 +67,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [GameClipThumbnail (JSON)](json-gameclipthumbnail.md)
 
-&nbsp;&nbsp;個々 のサムネイルに関連する情報が含まれています。 1 つのクリップを複数のサイズが存在することができ、表示用の適切なものを選択するクライアントがします。
+&nbsp;&nbsp;個々 のサムネイルに関連する情報が含まれています。 1 つのクリップを複数のサイズが存在することができ、表示用の適切なものを選択するクライアントが。
 
 [GameClipUri (JSON)](json-gameclipuri.md)
 
@@ -103,11 +103,11 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [inventoryItem (JSON)](json-inventoryitem.md)
 
-&nbsp;&nbsp;コア インベントリ項目は、標準的なアイテムの権利を付与できるを表します。
+&nbsp;&nbsp;コア インベントリ項目の権利を付与できる標準の項目を表します。
 
 [LastSeenRecord (JSON)](json-lastseenrecord.md)
 
-&nbsp;&nbsp;利用できるは、ユーザーには、有効な DeviceRecord があるないと、ユーザーが最後、システムに表示されていた場合について説明します。
+&nbsp;&nbsp;利用できるは、ユーザーには、有効な DeviceRecord があるないと、ユーザーが最後システムに表示されていた場合について説明します。
 
 [MatchTicket (JSON)](json-matchticket.md)
 
@@ -155,15 +155,15 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [PermissionCheckBatchUserResponse (JSON)](json-permissioncheckbatchuserresponse.md)
 
-&nbsp;&nbsp;バッチのアクセス許可の理由は、1 つのターゲット ユーザーのアクセス許可の値の一覧を確認します。
+&nbsp;&nbsp;バッチのアクセス許可の理由は、単一のターゲット ユーザーのアクセス許可の値の一覧を確認します。
 
 [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)
 
-&nbsp;&nbsp;1 つのターゲットのユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからのチェックの結果。
+&nbsp;&nbsp;1 つの対象ユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからチェックの結果。
 
 [PermissionCheckResult (JSON)](json-permissioncheckresult.md)
 
-&nbsp;&nbsp;1 つのターゲットのユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからのチェックの結果。
+&nbsp;&nbsp;1 つの対象ユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからチェックの結果。
 
 [Person (JSON)](json-person.md)
 
@@ -179,7 +179,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [PresenceRecord (JSON)](json-presencerecord.md)
 
-&nbsp;&nbsp;1 人のユーザーのオンライン プレゼンスに関するデータ。
+&nbsp;&nbsp;1 人のユーザーのオンラインかどうかに関するデータ。
 
 [Profile (JSON)](json-profile.md)
 
@@ -203,7 +203,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [Requirement (JSON)](json-requirement.md)
 
-&nbsp;&nbsp;実績とそれらに対応するため、ユーザーは、どのくらいのロック解除条件。
+&nbsp;&nbsp;実績とそれらに対応するため、ユーザーは、どのくらいのロック解除基準します。
 
 [ResetReputation (JSON)](json-resetreputation.md)
 
@@ -211,7 +211,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [Reward (JSON)](json-reward.md)
 
-&nbsp;&nbsp;実績に関連付けられているリワードです。
+&nbsp;&nbsp;実績に関連付けられたリワードです。
 
 [RichPresenceRequest (JSON)](json-richpresencerequest.md)
 
@@ -223,11 +223,11 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [ServiceErrorResponse (JSON)](json-serviceerrorresponse.md)
 
-&nbsp;&nbsp;サービスのエラーが発生した場合は、適切な HTTP エラー コードが返されます。 必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下に定義されています。 運用環境での低いデータを含めることができます。
+&nbsp;&nbsp;サービスのエラーが発生した場合は、適切な HTTP エラー コードが返されます。 必要に応じて、以下に定義されている、サービスは ServiceErrorResponse オブジェクトを含めるも可能性があります。 運用環境での低いデータを含めることができます。
 
 [SessionEntry (JSON)](json-sessionentry.md)
 
-&nbsp;&nbsp;フィットネス セッションのデータが含まれています。
+&nbsp;&nbsp;フィットネス セッションには、データが含まれています。
 
 [TitleAssociation (JSON)](json-titleassociation.md)
 
@@ -235,7 +235,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [TitleBlob (JSON)](json-titleblob.md)
 
-&nbsp;&nbsp;記憶域からのタイトルに関する情報が含まれています。
+&nbsp;&nbsp;記憶域からタイトルについてを説明します。
 
 [TitleRecord (JSON)](json-titlerecord.md)
 
@@ -267,7 +267,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [UserTitle (JSON)](json-usertitlev2.md)
 
-&nbsp;&nbsp;タイトルのユーザー データが含まれています。
+&nbsp;&nbsp;ユーザーのタイトル データが含まれています。
 
 [VerifyStringResult (JSON)](json-verifystringresult.md)
 
@@ -275,7 +275,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [XuidList (JSON)](json-xuidlist.md)
 
-&nbsp;&nbsp;操作を実行するに Xuid のリスト。
+&nbsp;&nbsp;操作を実行する Xuid のリスト。
  
 <a id="ID4ENH"></a>
 

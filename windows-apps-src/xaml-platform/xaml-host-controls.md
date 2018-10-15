@@ -1,33 +1,33 @@
 ---
-author: normesta
+author: mcleanbyron
 description: このガイドは、WPF および Windows フォーム アプリケーションで直接 Fluent ベースの UWP UI を作成するのに役立ちます。
 title: デスクトップ アプリケーションで UWP コントロール
-ms.author: normesta
+ms.author: mcleans
 ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows, フォーム, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 67669dd30f376df823f2f9ad08ad69c193cdb602
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: b9757466502283c673c7b2106b4a7775be412faf
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571476"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610250"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>デスクトップ アプリケーションで UWP コントロール
 
 > [!NOTE]
-> Api やこの記事で説明するコントロールは、開発者プレビューとして現在利用可能ながします。 それらプロトタイプ コードで今すぐ試すをお勧めしますがない使用することに運用コードでこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟し、今後の Windows のリリースを安定させます。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
+> Api やこの記事で説明するコントロールは、開発者プレビューとして現在利用可能ながします。 それらプロトタイプ コードで今すぐ試すをお勧めしますがない使用することに運用コードでこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟して、今後の Windows リリースに安定します。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
 
-これで、Windows 10 を使用すると、外観、や、最新の Windows 10 の UI 機能のみで利用可能な UWP コントロールは、既存のデスクトップ アプリケーションの機能を高めることができるように、UWP 以外のデスクトップ アプリケーションで UWP コントロールを使用できます。 つまり、 [Windows Ink](../design/input/pen-and-stylus-interactions.md)と、既存の WPF、Windows フォーム、および C++ Win32 アプリケーションで、 [Fluent Design System](../design/fluent-design-system/index.md)をサポートするコントロールなどの UWP 機能を使用することができます。 この開発者シナリオは、 *XAML 諸島*と呼ばれます。
+これで、Windows 10 を使用すると、外観、や、既存のデスクトップ アプリケーション、最新の Windows 10 の UI 機能のみで利用可能な UWP コントロールの機能を高めることができるように、UWP 以外のデスクトップ アプリケーションで UWP コントロールを使用できます。 つまり、 [Windows Ink](../design/input/pen-and-stylus-interactions.md)と、既存の WPF、Windows フォーム、および C++ Win32 アプリケーションで、 [Fluent Design System](../design/fluent-design-system/index.md)をサポートするコントロールなどの UWP 機能を使用することができます。 このシナリオは、 *XAML 諸島*と呼ばれます。
 
-テクノロジやを使用しているフレームワークによって、WPF、Windows フォーム、および C++ の Win32 アプリケーションで XAML 諸島を使用する方法をいくつか用意されています。
+テクノロジやを使用しているフレームワークによって、WPF、Windows フォーム、および C++ Win32 アプリケーションで XAML 諸島を使用する方法をいくつか用意されています。
 
 ## <a name="wrapped-controls"></a>ラップされたコントロール
 
-WPF および Windows フォーム アプリケーションでは、 [Windows コミュニティ ツールキット](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)でラップされた UWP のコントロールの選択項目を使用できます。 これらのコントロールといいます*コントロールをラップ*インターフェイスと特定の UWP コントロールの機能をラップするためです。 直接 WPF または Windows フォーム プロジェクトのデザイン サーフェイスにこれらのコントロールを追加して、デザイナーで、他の WPF または Windows フォームなどのコントロールと同様に使用できます。
+WPF および Windows フォーム アプリケーションでは、 [Windows コミュニティ ツールキット](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)でラップされた UWP コントロールの選択を使用できます。 これらのコントロールといいます*コントロールをラップ*インターフェイスと特定の UWP コントロールの機能をラップするためです。 直接 WPF または Windows フォーム プロジェクトのデザイン サーフェイスにこれらのコントロールを追加でき、デザイナーで、他の WPF または Windows フォームなどのコントロールと同様に使用することができます。
 
 > [!NOTE]
 > C++ Win32 デスクトップ アプリケーションにラップされたコントロールが利用できません。 この種類のアプリケーションでは、 [API をホストしている UWP XAML](#uwp-xaml-hosting-api)を使う必要があります。
@@ -37,13 +37,13 @@ WPF および Windows フォーム アプリケーションでは、 [Windows �
 | コントロール | サポートされる最小の OS | 説明 |
 |-----------------|-------------------------------|-------------|
 | [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10 バージョン 1803 | Web コンテンツを表示するのにには、Microsoft Edge レンダリング エンジンを使用します。 |
-| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 多くの OS バージョンと互換性がある**WebView**のバージョンを提供します。 このコントロールを Windows 10 バージョン 1803 以降で web コンテンツを表示する Microsoft Edge レンダリング エンジンと以前のバージョンの Windows 10、Windows 上の web コンテンツを表示する Internet Explorer のレンダリング エンジンを使用して、8.x と Windows 7 です。 |
-| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 Insider Preview SDK ビルド 17709 | Windows フォームや WPF デスクトップ アプリケーションの Windows Ink ベースのユーザーの対話式操作をサーフェスと関連するツールバーを提供します。 |
+| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 複数の OS バージョンと互換性がある**WebView**のバージョンを提供します。 このコントロールは、Microsoft Edge レンダリング エンジンを Windows 10 バージョン 1803 以降で web コンテンツを表示して、Internet Explorer のレンダリング エンジンを以前のバージョンの Windows 10、Windows 上の web コンテンツを表示する使用 8.x と Windows 7 です。 |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 Insider Preview SDK ビルド 17709 | Windows フォームや WPF デスクトップ アプリケーションでの Windows Ink ベースのユーザー操作のサーフェスと関連するツールバーを提供します。 |
 | [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 Insider Preview SDK ビルド 17709 | ストリームし、Windows フォームや WPF デスクトップ アプリケーションのビデオなどのメディア コンテンツをレンダリングするビューを埋め込みます。 |
 
-## <a name="host-controls"></a>コントロールをホストします。
+## <a name="host-controls"></a>ホスト コントロール
 
-利用可能なラップされたコントロールで対応できない場合、WPF および Windows フォーム アプリケーションは[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)コントロールを[Windows コミュニティ ツールキット](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)で使用することもできます。 このコントロールは、 [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)、Windows SDK とカスタム ユーザー コントロールによって提供されるすべての UWP コントロールを含むから派生したすべての UWP コントロールをホストできます。 このコントロールには、Windows 10 Insider Preview SDK ビルドの 17709 とそれ以降のリリースがサポートしています。
+利用可能なラップされたコントロールで対応できない場合、WPF および Windows フォーム アプリケーションは[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)コントロールを[Windows コミュニティ ツールキット](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)で使用することもできます。 このコントロールは、 [**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)、Windows SDK とカスタム ユーザー コントロールによって提供されるすべての UWP コントロールを含むから派生したすべての UWP コントロールをホストできます。 このコントロールには、Windows 10 Insider Preview SDK ビルド 17709 以降のリリースがサポートされています。
 
 > [!NOTE]
 > C++ Win32 デスクトップ アプリケーションのホスト コントロールが利用できません。 この種類のアプリケーションでは、 [API をホストしている UWP XAML](#uwp-xaml-hosting-api)を使う必要があります。

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 23be9758a587644bc834236abd6961d4ac120d50
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569830"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4609971"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高度な Xbox Live のサンドボックス
 
@@ -171,7 +171,7 @@ Xbox One では、すべてのコンテンツ (プレリリース版および製
 
 サンドボックス ID は、タイトル、製品、サービス構成に関するデータのパーティション分割単位を表します。複数のタイトルが同じサンドボックス内に共存することができます。これは、それらのタイトルがサービス構成データを共有するための前提条件となります。
 
-(大文字と小文字のサンド ボックス ID は、次の形式で文字列: &lt;PublisherMoniker&gt;します。*n*があります。 XLDP.5 というサンドボックス ID の例について、次に説明します。
+(大文字と小文字が区別) サンド ボックス ID は、次の形式で文字列: &lt;PublisherMoniker&gt;します。*n*します。 XLDP.5 というサンドボックス ID の例について、次に説明します。
 
 -   *パブリッシャー モニカー*はすべての公開元の間で一意です。 したがって、"XLPD" はこの特定の公開元のパブリッシャー モニカーとなります。 パブリッシャー モニカーは、開発者アカウント情報マネージャーによって公開元が XDP 内で "アクティブ化" されるときに作成されます。
 

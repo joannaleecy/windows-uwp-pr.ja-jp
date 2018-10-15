@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
 description: Windows デベロッパー センター アカウントに登録されているアプリのアプリ内購入に関する情報を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: アプリのアドオンの取得
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e829d497a62a55fb56462a669f4e3545740975c
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 9b450636db1896de32b0b3c0d2822b37624de10b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663202"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612486"
 ---
 # <a name="get-add-ons-for-an-app"></a>アプリのアドオンの取得
 
@@ -120,5 +120,5 @@ Authorization: Bearer <your access token>
 
 * [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [すべてのアプリの取得](get-all-apps.md)
-* [アプリの取得](get-an-app.md)
-* [アプリのパッケージ フライトの取得](get-flights-for-an-app.md)
+* [アプリの入手](get-an-app.md)
+* [アプリのパッケージ フライトの入手](get-flights-for-an-app.md)

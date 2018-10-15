@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2db953d711bcb423f02aebfd3579cddea717826b
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569409"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611172"
 ---
 # <a name="authorization-types"></a>承認のタイプ
  
@@ -24,7 +24,7 @@ Xbox Live サービスは、要求と承認のタイプの数を使用します�
  
 | 種類| 説明| 
 | --- | --- | 
-| ユーザー | 呼び出し元は、承認された Xbox Live ユーザーです。 | 
+| ユーザー | 呼び出し元が、承認された Xbox Live ユーザーです。 | 
 | Title (タイトル) | 呼び出し元が、信頼されたプラットフォーム上のタイトルです。| 
  
 <a id="ID4EGC"></a>

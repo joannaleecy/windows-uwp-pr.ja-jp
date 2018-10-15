@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572273"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611500"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
-その sessionId で識別される sessionhost の割り当てを取得します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+その sessionId によって識別 sessionhost の割り当てを取得します。 これらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [必要な要求ヘッダー](#ID4E4)
   * [必要な応答ヘッダー](#ID4EEB)
@@ -57,7 +57,7 @@ ms.locfileid: "4572273"
 | secureContext| セキュア デバイス アドレスです。| 
 | portMappings| インスタンスのポート マッピングします。| 
 | 地域| インスタンスの場所です。| 
-| ticketId| 現在のセッション ID です (左での下位互換性)。| 
+| ticketId| (左での下位互換性) の現在のセッション ID。| 
 | gameHostId| (左での下位互換性) 現在 sessionHostId します。| 
  
 <a id="ID4EGD"></a>
@@ -104,10 +104,10 @@ ms.locfileid: "4572273"
  
 ### <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
+次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しを再試行のみする必要があります。
  
-   * 200-成功 
-   * 400-要求が無効なパラメーターが含まれています 
+   * 200、成功した場合 
+   * 400-要求には、無効なパラメーターが含まれています。 
    * 401: Unauthorized 
    * 404-チケット ID、タイトル ID が無効であるか、または見つかりません。 
    * 500-予期しないサーバー エラー。 

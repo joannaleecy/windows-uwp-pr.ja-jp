@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567752"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610770"
 ---
 # <a name="handle-a-cancelled-background-task"></a>取り消されたバックグラウンド タスクの処理
 
@@ -40,7 +40,7 @@ ms.locfileid: "4567752"
 取り消しイベントを処理するメソッドを作ります。
 
 > [!NOTE]
-> デスクトップ以外のすべてのデバイス ファミリでは、デバイスのメモリが少なくなった場合、バックグラウンド タスクが終了することがあります。 場合は、メモリ不足の例外はされないか、アプリが処理されない、後にバック グラウンド タスクは、警告と OnCanceled イベントの発生せず、終了されます。 こうすることで、フォアグラウンドのアプリのユーザー エクスペリエンスが保証されます。 バックグラウンド タスクは、このシナリオを処理できるように設計する必要があります。
+> デスクトップ以外のすべてのデバイス ファミリでは、デバイスのメモリが少なくなった場合、バックグラウンド タスクが終了することがあります。 場合は、メモリ不足の例外はされないか、アプリが処理されない、後に警告と OnCanceled イベントの発生せず、バック グラウンド タスクが終了されます。 こうすることで、フォアグラウンドのアプリのユーザー エクスペリエンスが保証されます。 バックグラウンド タスクは、このシナリオを処理できるように設計する必要があります。
 
 次のように **OnCanceled** という名前のメソッドを作成します。 このメソッドは、バックグラウンド タスクに対して取り消し要求が出されると、Windows ランタイムによって呼び出されるエントリ ポイントです。
 
@@ -89,7 +89,7 @@ private:
 
 手順 1 で作成した**OnCanceled**メソッドでフラグ変数**\_CancelRequested**を**true**に設定します。
 
-完全な[バック グラウンド タスクのサンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**メソッドでは、 **\_CancelRequested**を**true**に設定し、可能性のある有用なデバッグ出力に書き込みます。
+完全な[バック グラウンド タスクのサンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**メソッドでは、 **\_CancelRequested**を**true**に設定し、可能性のある有用なデバッグ出力を書き込みます。
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -135,11 +135,11 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 ## <a name="handle-cancellation-by-exiting-your-background-task"></a>バックグラウンド タスクを終了することによって、取り消しを処理します。
 
-バックグラウンド処理を実行しているメソッドは、**\_cancelRequested** が **true** に設定されたタイミングを認識し、処理を停止して終了する必要があります。 インプロセス バック グラウンド タスクの場合、 **OnBackgroundActivated**メソッドから戻ることを意味します。 アウト プロセス バック グラウンド タスクの場合、 **Run**メソッドから戻ることを意味します。
+バックグラウンド処理を実行しているメソッドは、**\_cancelRequested** が **true** に設定されたタイミングを認識し、処理を停止して終了する必要があります。 インプロセス バック グラウンド タスクの場合、 **OnBackgroundActivated**メソッドから戻ることを意味します。 アウト プロセス バック グラウンド タスクの場合、これは、 **Run**メソッドから戻ることを意味します。
 
-バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。 **\_CancelRequested**になる続行 true に設定場合します。
+バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。 **\_CancelRequested**になる続行から true に設定場合します。
 
-[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)には、バック グラウンド タスクが取り消された場合、定期タイマーのコールバックを停止することを確認するが含まれています。
+[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、バック グラウンド タスクが取り消された場合、定期タイマーのコールバックを停止することを確認するが含まれます。
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -265,7 +265,7 @@ else
 
 ## <a name="run-method-example"></a>メソッド例を実行します。
 
-**Run**メソッドとタイマーのコールバック コード一式、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から次のとおりのコンテキスト。
+**Run**メソッドとタイマーのコールバック コードを完了、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から次のとおりのコンテキスト。
 
 ```csharp
 // The Run method is the entry point of a background task.

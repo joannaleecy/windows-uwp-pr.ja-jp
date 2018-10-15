@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: デスクトップ アプリケーションのインサイト データを取得するのに、Microsoft Store 分析 API の以下のメソッドを使用します。
 title: デスクトップ アプリケーションのインサイト データの取得
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/31/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, インサイト
 ms.localizationpriority: medium
-ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: 0b4390fba26922372a74de76d09844a7243bce73
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563681"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624330"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>デスクトップ アプリケーションのインサイト データの取得
 
@@ -55,7 +55,7 @@ ms.locfileid: "4563681"
 
 ### <a name="request-example"></a>要求の例
 
-次の例では、インサイト データを取得する要求を示します。 *ApplicationId*値、デスクトップ アプリケーションの適切な値に置き換えます。
+次の例では、インサイト データを取得する要求を示します。 *ApplicationId*値をデスクトップ アプリケーションの適切な値に置き換えます。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/insights?applicationId=10238467886765136388&startDate=6/1/2018&endDate=6/15/2018&filter=dataType eq 'health' HTTP/1.1
@@ -72,16 +72,16 @@ Authorization: Bearer <your access token>
 | TotalCount | int    | クエリの結果データ内の行の総数です。                 |
 
 
-### <a name="insight-values"></a>Insight 値
+### <a name="insight-values"></a>洞察値
 
 *Value* 配列の要素には、次の値が含まれます。
 
 | 値               | 型   | 説明                           |
 |---------------------|--------|-------------------------------------------|
 | applicationId       | string | インサイト データを取得したデスクトップ アプリケーションの製品 ID です。     |
-| insightDate                | string | 特定のメトリックの変更を特定しました日です。 この日付またはそれより前に、の週との比較メトリックの短縮を大幅に増加を検出しました週の終わりを表します。 |
-| データ型     | string | この情報に通知する一般的な分析領域を指定する文字列。 現時点では、このメソッドでは、**正常性**をのみがサポートされます。    |
-| insightDetail          | array | 1 つまたは複数[InsightDetail 値](#insightdetail-values)を表す現在インサイトの詳細をします。    |
+| insightDate                | string | 特定のメトリックの変更を特定しました日です。 この日付は、大幅に増加を検出しました週の終わりを表す、メトリックがそれより前に、の週との比較の増減します。 |
+| データ型     | string | この情報は、通知の一般的な分析領域を指定する文字列。 現時点では、このメソッドでは、**正常性**をのみがサポートされます。    |
+| insightDetail          | array | 1 つまたは複数[InsightDetail 値](#insightdetail-values)を表す現在インサイトの詳細情報。    |
 
 
 ### <a name="insightdetail-values"></a>InsightDetail 値
@@ -91,9 +91,9 @@ Authorization: Bearer <your access token>
 | FactName           | string | 現在の洞察または現在のディメンションを説明するメトリックを示す文字列です。 現時点では、このメソッドでは、**ヒット数**の値のみがサポートされます。  |
 | SubDimensions         | array |  情報を得ることの 1 つのメトリックを記述する 1 つまたは複数のオブジェクトです。   |
 | PercentChange            | string |  メトリックは、全体の顧客ベースの間で変更された割合。  |
-| DimensionName           | string |  現在のディメンションで説明されているメトリックの名前です。 例についてには、**イベントの種類**、**市場**、 **DeviceType**、および**PackageVersion**が含まれます。   |
+| DimensionName           | string |  現在の次元で説明されているメトリックの名前。 例としては、**イベントの種類**、**市場**、 **DeviceType**、 **PackageVersion**です。   |
 | DimensionValue              | string | 現在のディメンションに記載されているメトリックの値。 たとえば、 **DimensionName**が**イベントの種類**である場合は、**クラッシュ**や**ハング**が**DimensionValue**することがあります。   |
-| FactValue     | string | 情報を得ることが検出された日付のメトリックの絶対値。  |
+| FactValue     | string | 情報を得ることが検出された日付のメトリックの絶対値します。  |
 | Direction | string |  (**正**または**負**) の変更の方向です。   |
 | Date              | string |  現在の洞察または現在のディメンションに関連する変更を特定しました日です。   |
 

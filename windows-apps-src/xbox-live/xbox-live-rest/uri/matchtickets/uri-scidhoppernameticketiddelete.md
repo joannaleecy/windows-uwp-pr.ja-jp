@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3780fb9f69a97d4e2522aa17a806b1fb4917a9f7
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566823"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624039"
 ---
 # <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})
 
 マッチ チケットを削除します。
 
 > [!IMPORTANT]
-> このメソッドはコントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダー要素が必要です: 103 または後ですべての要求します。
+> このメソッドはコントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4E2)
@@ -46,7 +46,7 @@ ms.locfileid: "4566823"
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
 | scid| GUID| セッションのサービス構成 id (SCID)。|
-| name| string| ホッパーの名前です。|
+| name| string| ホッパーの名前。|
 | ticketId| GUID| チケットの id。|
 
 <a id="ID4EGB"></a>
@@ -56,15 +56,15 @@ ms.locfileid: "4566823"
 
 | 型| 必須かどうか| 説明| 不足している場合、応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (ユーザー ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。| 403|
-| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには主張のマルチプレイヤー権限を持つユーザーのみが許可されています。| 403|
+| XUID (ユーザーの ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。| 403|
+| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しは、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。| 403|
 
 <a id="ID4EOC"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
 <a id="ID4EXC"></a>
 
 

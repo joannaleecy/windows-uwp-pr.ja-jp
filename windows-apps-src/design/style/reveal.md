@@ -15,22 +15,22 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574363"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611443"
 ---
 # <a name="reveal-highlight"></a>表示ハイライト
 
 ![ヒーロー イメージ](images/header-reveal-highlight.svg)
 
-表示ハイライトは、ユーザーがポインターを近付けたときに、コマンド バーなどの対話型要素を強調する発光効果。 
+表示ハイライトは、ユーザーがポインターを近付けたときに、コマンド バーなどの対話型要素を強調表示する発光効果。 
 
 > **重要な API**: [RevealBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、[VisualState クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>動作の仕組み
-表示ハイライト注意が対話型要素にポインターがこの図で示すように、近くにあるときに要素のコンテナーを公開しています。
+表示ハイライト注意が対話型要素にポインターが次の図に示すように、近くにあるときに、要素のコンテナーを公開しています。
 
 ![表示のビジュアル効果](images/Nav_Reveal_Animation.gif)
 
@@ -58,7 +58,7 @@ ms.locfileid: "4574363"
 
 ## <a name="how-to-use-it"></a>使用方法
 
-表示効果は、一部のコントロールでは自動的に動作します。 この記事の[他のコントロールで表示効果を有効にして](#enabling-reveal-on-other-controls)、[カスタム コントロールで表示効果を有効にすると](#enabling-reveal-on-custom-controls)セクションで説明したよう、他のコントロールは、コントロールに特別なスタイルを割り当てることにより表示効果を有効にできます。
+表示効果は、一部のコントロールでは自動的に動作します。 他のコントロールでは、この記事の[他のコントロールで表示効果を有効にして](#enabling-reveal-on-other-controls)、[カスタム コントロールで表示効果を有効にすると](#enabling-reveal-on-custom-controls)セクションで説明するよう、コントロールに特別なスタイルを割り当てることにより表示効果を有効にできます。
 
 ## <a name="controls-that-automatically-use-reveal"></a>表示効果が自動的に使用されるコントロール
 
@@ -135,7 +135,7 @@ ms.locfileid: "4574363"
 
 これらの効果は、次の 2 つのブラシによって定義されます。 
 * 境界線による表示は、 **RevealBorderBrush**によって定義します。
-* 表示効果のホバーが**RevealBackgroundBrush**によって定義されました。
+* ホバーによる表示は**RevealBackgroundBrush**によって定義されます。
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>

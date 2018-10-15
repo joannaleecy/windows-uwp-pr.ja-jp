@@ -1,25 +1,25 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: Microsoft Advertising SDK は、アプリに広告を表示して収益を得るためのいくつかの方法を提供します。
 title: Microsoft Advertising SDK を使用したアプリでの広告の表示
-ms.author: mcleans
-ms.date: 05/02/2018
+ms.author: mhopkins
+ms.date: 06/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, バナー, 広告コントロール, スポット広告
 ms.localizationpriority: medium
-ms.openlocfilehash: 601f3fe67d6ed44403c65427af75042456bdfddb
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: c0dde67e3f7ab43734ffb0bf2a5826cc54691e17
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843022"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613563"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Microsoft Advertising SDK を使用したアプリでの広告の表示
 
-Microsoft Advertising SDK を使用して、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリに広告を配置することで、収益機会を増やせます。 マイクロソフトの広告の収益化プラットフォームは、さまざまな種類の広告を提供し、人気のある多くの広告ネットワークとの仲介をサポートします。
+Microsoft Advertising SDK を使用して、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリに広告を配置することで、収益機会を増やせます。 広告の収益化プラットフォームでは、さまざまな多くの一般的な広告ネットワークと、アプリとサポートの仲介にシームレスに統合できる広告形式を提供します。 プラットフォームは OpenRTB、膨大な 2.x、MRAID 2、および VPAID 3 標準に準拠していると互換性が堀と IAS します。 
 
 <br/>
 
@@ -121,7 +121,7 @@ Microsoft Advertising SDK の使用に関するその他のヘルプについて
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Windows8.1 と Windows Phone 8.x のアプリ
 
-Windows 8.1 および Windows Phone 8.x 用のアプリについては、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) を提供しています。 Windows 8.1 または Windows Phone 8.x アプリでこの SDK を使用して広告を表示する方法について詳しくは、[この記事](https://msdn.microsoft.com/library/windows/apps/xaml/dn792120.aspx)をご覧ください。
+Windows 8.1 および Windows Phone 8.x 用のアプリについては、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) を提供しています。 Windows 8.1 または Windows Phone 8.x アプリでこの SDK を使用して広告を表示する方法について詳しくは、[この記事](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10))をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 

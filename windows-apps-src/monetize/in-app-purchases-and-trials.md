@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: UWP アプリのアプリ内購入と試用版を有効にする方法を説明します。
 title: アプリ内購入と試用版
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 05/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, 試用版, コンシューマブル, 永続的, サブスクリプション
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b5b889dfd1dae69cbe4234bf0606127c1190522
-ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
-ms.translationtype: HT
+ms.openlocfilehash: d35e2469fa303a40967cf4c15800786eb2d17aca
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1874300"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615662"
 ---
 # <a name="in-app-purchases-and-trials"></a>アプリ内購入と試用版
 

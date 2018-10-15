@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570261"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614879"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} マークアップ拡張
 
@@ -65,7 +65,7 @@ XAML の [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/b
 
 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType)プロパティが必要です (オプションではなく) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) **X:bind**を使用する場合にします。
 
-**X:bind**のサポートできるようになりましたとして使用できますどちらの[関数のバインディング](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)でも、双方向のバインド
+**X:bind**のサポートできるようになりましたとして使用できますどちらの[関数バインド](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)でも、双方向のバインド
 
 次の例では、TextBlock.Text Button.Content.ToString() と評価されます。 ControlTemplate で TargetType では、データ ソースとして機能し、親に TemplateBinding と同じ結果を実現します。
 

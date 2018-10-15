@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, パッケージ, アップロード, デバイス ファミリの利用可否
 ms.localizationpriority: medium
 ms.openlocfilehash: e86b56c09f907e45655a0ef9b94fad30a4959b59
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571402"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615130"
 ---
 # <a name="device-family-availability"></a>デバイス ファミリの利用可否
 
@@ -55,7 +55,7 @@ Windows 10 IoT Core の UWP アプリを申請する場合、パッケージを�
 **Windows 8/8.1** および **Windows Phone 8.x 以前**で実行できるパッケージが申請に含まれている場合は、これらのパッケージはテーブルに示されているとおりにユーザーに提供されます。 これらの OS バージョンのチェック ボックスはありません。 これらのユーザーへのアプリ提供を停止するには、対応するパッケージを申請から削除する必要があります。
 
 > [!IMPORTANT]
-> 申請の取得から完全に特定の Windows 10 デバイス ファミリを防ぐためには、更新をサポートするデバイス ファミリのみを対象に、マニフェストで[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)要素 (つまり、Windows.Mobile または Windows.Desktop) ではなくまま Windows.Universal 値 (ユニバーサル デバイス ファミリ用) するよりも Microsoft Visual Studio が既定では、マニフェストに含まれます。
+> 申請の取得から完全に特定の Windows 10 デバイス ファミリを防ぐためには、更新をサポートするデバイス ファミリのみを対象とするマニフェスト[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)要素 (Windows.Mobile または Windows.Desktop など) ではなくまま Windows.Universal 値 (ユニバーサル デバイス ファミリ用) するよりも Microsoft Visual Studio が既定では、マニフェストに含まれます。
 
 **[デバイス ファミリの利用可否]** セクションで行った選択は新しい取得のみに適用されることにも注意することが重要です。 ここでデバイス ファミリを削除した場合でも、アプリを既に持っているユーザーは使い続けることができ、提出された更新プログラムを取得します。 これは、Windows 10 にアップグレードする前にアプリを取得したユーザーにも当てはまります。 たとえば、Windows Phone 8.1 パッケージで公開したアプリがあり、ユニバーサル デバイス ファミリを対象とする同じアプリに Windows 10 (UWP) パッケージを後で追加する場合、**[Windows 10 Mobile]** チェック ボックスをオフにしていた場合でも、Windows Phone 8.1 パッケージを持っていた Windows 10 Mobile ユーザーにはこの Windows 10 (UWP) パッケージに対する更新プログラムが提供されます (これは新しい取得ではなく更新プログラムであるため)。 ただし、ユニバーサルまたはモバイル デバイス ファミリを対象とする Windows 10 (UWP) パッケージを一切提供しない場合は、Windows 10 モバイル ユーザーは Windows Phone 8.1 パッケージのままになります。
 

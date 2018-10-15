@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e82306119e428dd9279e26d1497d44b371b9587e
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568581"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623901"
 ---
 # <a name="achievement-json"></a>Achievement (JSON)
 実績オブジェクト (バージョン 2)。
@@ -25,29 +25,29 @@ ms.locfileid: "4568581"
 
 ## <a name="achievement"></a>実績
 
-実績オブジェクトには、次の仕様があります。 すべてのメンバーが必要です。
+実績のオブジェクトでは、次の仕様があります。 すべてのメンバーは、必要があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
 | id| string| リソース識別子です。|
 | serviceConfigId| string| このリソースの SCID です。 この実績の関連するタイトルを識別します。 |
-| name| string| ローカライズされた実績の名前。|
+| name| string| ローカライズされた実績の名前です。|
 | titleAssociations| [TitleAssociation](json-titleassociation.md)の配列| TitleAssociation の配列です。|
-| progressState| **ProgressState**列挙型| 進行状況の状態。 <ul><li>無効 (0): 実績の進行状況が不明な状態です。</li><li>(1) を実現: 実績がロック解除されました。</li><li>inProgress (2): 実績がロックされているが、それをロック解除に向けた進行状況をユーザーが行ったします。</li><li>未開始 (3): 実績がロックされているし、ユーザーは、ロック解除に向けた任意の進行状況を行ったされません。</li></ul> | 
+| progressState| **ProgressState**列挙型| 進行状況の状態。 <ul><li>無効 (0): 実績の進行状況が不明な状態。</li><li>(1) を実現します。 実績がロック解除されました。</li><li>inProgress (2): 実績がロックされているが、それをロック解除に向けた進行状況をユーザーが行ったします。</li><li>未開始 (3): 実績がロックされているし、ユーザーは、ロック解除に向けた任意の進行状況を行ったされません。</li></ul> | 
 | 進行状況| [進行状況](json-progression.md)| 実績内で、ユーザーの進行します。|
 | mediaAssets| [MediaAsset](json-mediaasset.md)の配列| 画像の Id など、実績に関連付けられているメディア アセット。 |
 | プラットフォーム| string| プラットフォーム、実績を獲得します。|
 | isSecret| ブール値| 実績が秘密かどうか。|
 | description| string| 実績のロックを解除するときの説明です。|
-| lockedDescription| string| 実績がロック解除する前の説明です。|
+| lockedDescription| string| 実績がロック解除する前に説明します。|
 | productId| string| ProductId 実績でリリースされました。|
-| achievementType| **AchievementType**列挙型| 実績 (しないと同じレガシ実績の以前の種類) の種類。 <ul><li>無効 (0): 不明なおよびサポートされていない実績の種類。</li><li>永続的な (1): 実績を終了日を持たず、いつでもでもロックできます。</li><li>チャレンジ (2): をする時に、ロック解除することの特定の時間枠を持つ実績します。</li></ul> |
+| achievementType| **AchievementType**列挙型| 実績 (しないと同じ従来の実績の以前の種類) の種類。 <ul><li>無効 (0): 不明なおよびサポートされていない実績型です。</li><li>永続的な (1): 実績終了日を持たない、いつでもでもロックできます。</li><li>チャレンジ (2): をする時に、ロック解除すること特定の時間枠を持つ実績します。</li></ul> |
 | participationType| **ParticipationType**列挙型| 実績の参加の種類。 有効な値は、個人またはグループはします。|
-| 時間| 時間| 時に、実績がロックを解除する時間枠です。 課題用のみサポートされます。|
+| 時間| 時間| によって、実績がありますロックされている時間枠です。 課題にのみサポートされます。|
 | リワード| [リワード](json-reward.md)の配列| リワードのロックを解除するときの原因のコレクションです。|
 | estimatedTime| TimeSpan| 推定時間を獲得実績になります。|
 | deeplink| string| タイトルに deeplink します。|
-| isRevoked| ブール値| かどうかの実施によって、実績が失効します。|
+| isRevoked| ブール値| かどうか、実績が実施で失効します。|
 
 <a id="ID4EIAAC"></a>
 

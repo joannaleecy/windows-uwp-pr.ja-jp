@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: c5246681-82c7-44df-87e1-a84a926e6496
 description: プロモーション用の広告キャンペーンのクリエイティブを管理するには、Microsoft Store プロモーション API の以下のメソッドを使います。
 title: クリエイティブの管理
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
-ms.openlocfilehash: f29920bba22be689c79f2264836ebcee6d8dfe5c
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 838329101695c21abfb7ac89dd9c83330b7bd26b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664022"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614058"
 ---
 # <a name="manage-creatives"></a>クリエイティブの管理
 
@@ -31,7 +31,7 @@ ms.locfileid: "1664022"
 これらのメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store プロモーション API に関するすべての[前提条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
 
 ## <a name="request"></a>要求
@@ -49,9 +49,9 @@ ms.locfileid: "1664022"
 
 ### <a name="header"></a>Header
 
-| Header        | 型   | 説明         |
+| ヘッダー        | 型   | 説明         |
 |---------------|--------|---------------------|
-| Authorization | 文字列 | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 | 追跡 ID   | GUID   | 省略可能。 呼び出しフローを追跡する ID。                                  |
 
 
@@ -144,5 +144,5 @@ Authorization: Bearer <your access token>
 * [Microsoft Store サービスを使用した広告キャンペーンの実行](run-ad-campaigns-using-windows-store-services.md)
 * [広告キャンペーンの管理](manage-ad-campaigns.md)
 * [広告キャンペーンの配信ラインの管理](manage-delivery-lines-for-ad-campaigns.md)
-* [広告キャンペーンのターゲット プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)
+* [広告キャンペーンの対象プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)
 * [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)

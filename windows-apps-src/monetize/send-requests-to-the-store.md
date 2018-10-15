@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: You can use the SendRequestAsync method to send requests to the Microsoft Store for operations that do not yet have an API available in the Windows SDK.
 title: Microsoft Store に要求を送信する
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: 95df34db24a90e9f470b0e32ed9431d66b1bad09
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 6463f6eee6d3f5ec82122cef532db8d0e9a26dc6
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690468"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614545"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Microsoft Store に要求を送信する
 

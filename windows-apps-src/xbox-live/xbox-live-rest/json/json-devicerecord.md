@@ -12,24 +12,24 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae61df42706ea3ff3f52678feef8510974b5534
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563765"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612400"
 ---
 # <a name="devicerecord-json"></a>DeviceRecord (JSON)
-その型とそれに対するアクティブなタイトルを含む、デバイスに関する情報。 
+その型にアクティブなタイトルなど、デバイスに関する情報。 
 <a id="ID4EN"></a>
 
  
 ## <a name="devicerecord"></a>DeviceRecord
  
-DeviceRecord オブジェクトには、次の仕様があります。
+DeviceRecord オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| type| 文字列| デバイスのデバイスの種類。 可能性には、"D"、"Xbox360"、"MoLIVE"(Windows)、"WindowsPhone"、"WindowsPhone7"、"PC"(G4WL) が含まれます。 型が (例 iOS、Android、または web ブラウザーに埋め込まれているタイトル) の既知の場合は、"Web"が返されます。| 
+| type| 文字列| デバイスのデバイスの種類。 可能性には、"D"、"Xbox360"、"MoLIVE"(Windows)、"WindowsPhone"、"WindowsPhone7"、"PC"(G4WL) が含まれます。 型が (例 iOS、Android、または web ブラウザーに埋め込まれているタイトル) の不明な場合は、"Web"が返されます。| 
 | タイトル| [TitleRecord](json-titlerecord.md)の配列| このデバイス上でアクティブなタイトルの一覧。| 
   
 <a id="ID4EWB"></a>

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ff8e5444ec65de3665d593168e430a64f4d250e
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572369"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613049"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>ユニバーサル リソース識別子 (URI) リファレンス
 
@@ -33,7 +33,7 @@ ms.locfileid: "4572369"
 
 [ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス](gsdk/atoc-gsdk-uri-reference.md)
 
-&nbsp;&nbsp;Uri のクライアントが、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。
+&nbsp;&nbsp;Uri がクライアントで、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。
 
 [ゲーム DVR URI](dvr/atoc-reference-dvr.md)
 
@@ -41,7 +41,7 @@ ms.locfileid: "4572369"
 
 [ゲーマーアイコン URI](gamerpic/atoc-reference-gamerpic.md)
 
-&nbsp;&nbsp;タイトルで生成された人々 に関連付けられている HTTP メソッドと Uri。
+&nbsp;&nbsp;タイトルで生成された人々 に関連する HTTP メソッドと Uri。
 
 [ランキング URI](leaderboard/atoc-reference-leaderboard.md)
 
@@ -53,11 +53,11 @@ ms.locfileid: "4572369"
 
 [マーケットプレース URI](marketplace/atoc-reference-marketplace.md)
 
-&nbsp;&nbsp;Uri と Xbox marketplace サービスの HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;Uri と Xbox の市場のサービスの HTTP メソッドが関連付けられています。
 
 [マッチメイキング URI](matchtickets/atoc-reference-matchtickets.md)
 
-&nbsp;&nbsp;マッチメイ キングに関連付けられている HTTP/REST 方法と Uri。
+&nbsp;&nbsp;Uri とマッチメイ キングに関連する HTTP/REST メソッドです。
 
 [People URI](people/atoc-reference-people.md)
 
@@ -65,11 +65,11 @@ ms.locfileid: "4572369"
 
 [プレゼンス URI](presence/atoc-reference-presence.md)
 
-&nbsp;&nbsp;プレゼンスに関連する HTTP メソッドと Uri。
+&nbsp;&nbsp;Uri とプレゼンスの HTTP メソッドが関連付けられています。
 
 [プライバシー URI](privacy/atoc-reference-privacyv2.md)
 
-&nbsp;&nbsp;Uri とプライバシーの HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;Uri とプライバシーの関連付けの HTTP メソッドです。
 
 [プロフィール URI](profileV2/atoc-reference-profiles.md)
 
@@ -81,7 +81,7 @@ ms.locfileid: "4572369"
 
 [セッション ディレクトリ URI](sessiondirectory/atoc-reference-sessiondirectory.md)
 
-&nbsp;&nbsp;Uri と関連付けられている HTTP メソッドのマルチプレイヤー セッション ディレクトリ (MPSD)。
+&nbsp;&nbsp;Uri と関連する HTTP メソッドのマルチプレイヤー セッション ディレクトリ (MPSD)。
 
 [実績タイトル履歴 URI](titlehistory/atoc-reference-titlehistoryv2.md)
 
@@ -97,11 +97,11 @@ ms.locfileid: "4572369"
 
 [ユーザー URI](users/atoc-reference-users.md)
 
-&nbsp;&nbsp;Uri とユーザーの HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;Uri とユーザーの関連付けの HTTP メソッドです。
 
 [ユーザー統計 URI](userstats/atoc-reference-userstats.md)
 
-&nbsp;&nbsp;Uri とユーザーの統計情報の HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;Uri とユーザーの統計情報の関連付けの HTTP メソッドです。
 
 <a id="ID4E5C"></a>
 

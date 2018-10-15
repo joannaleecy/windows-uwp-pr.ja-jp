@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
 description: Windows デベロッパー センター アカウントに登録されているすべてのアプリのすべてのアドオンに関するデータを取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: すべてのアドオンの取得
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 69ec59a39c91152788f757beb56afc75e7191922
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: c711e2443de4607d2266dcddf513a48ff11522a7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663122"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614035"
 ---
 # <a name="get-all-add-ons"></a>すべてのアドオンの取得
 
@@ -156,6 +156,6 @@ Authorization: Bearer <your access token>
 
 * [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [アドオンの申請の管理](manage-add-on-submissions.md)
-* [アドオンの取得](get-an-add-on.md)
+* [アドオンの入手](get-an-add-on.md)
 * [アドオンの作成](create-an-add-on.md)
 * [アドオンの削除](delete-an-add-on.md)

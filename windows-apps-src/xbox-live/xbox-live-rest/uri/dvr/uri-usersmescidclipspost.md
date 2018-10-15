@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e6cee1adbe9e9401bec2ce578ab0d04da921170
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566680"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613992"
 ---
 # <a name="post-usersmescidsscidclips"></a>POST (/users/me/scids/{scid}/clips)
-初期のアップロード要求を実行します。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に問題の URI の機能に依存します。
+初期のアップロード要求を実行します。 これらの Uri のドメイン`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
  
   * [注釈](#ID4EX)
   * [URI パラメーター](#ID4EFB)
@@ -37,9 +37,9 @@ ms.locfileid: "4566680"
  
 ## <a name="remarks"></a>注釈
  
-これは、GameClip アップロード プロセスの最初の部分です。 ビデオのキャプチャ時にサービスを呼び出して、GameClips のビット、アップロードの ID と URI を取得するには、すぐをすぐに開始アップロードがスケジュールされていない場合でも、お勧めします。 この呼び出しは、ユーザーのクォータ チェックとその他のチェックにして、ビデオがする必要があります、クライアントによってアップロードもスケジュールするかどうかのプライバシーに関するコンテンツの分離による実行されます。 この呼び出しからの正の応答では、サービスが許容アップロード用のビデオ クリップを示します。 アップロードされたすべてのクリップを承諾するのには、システムと、(SCID) を通じて、特定のタイトルに関連付けられたする必要があります。
+これは、GameClip アップロード プロセスの最初の部分です。 ビデオのキャプチャ時をすぐに開始アップロードがスケジュールされていない場合でも、ビットのアップロードの ID と URI を取得するには、すぐに GameClips サービスを呼び出すことお勧めします。 この呼び出しは、ユーザーのクォータ チェックとその他のチェックにして、ビデオがする必要がありますクライアントによってアップロードもスケジュールするかどうかは、プライバシー、コンテンツの分離を通じて実行されます。 この呼び出しからの正の応答では、サービスが許容アップロード用のビデオ クリップを示します。 アップロードされたすべてのクリップを承諾するのには、システムと、(SCID) を通じて、特定のタイトルに関連付けられたする必要があります。
  
-この呼び出しでない等です。後続の呼び出しと、別の Id と Uri が発行されます。 エラー発生時における再試行は、標準的なクライアント側バックオフ動作に従う必要があります。
+この呼び出しでない等です。後続の呼び出しには、別の Id と Uri が発行されるが発生します。 エラー発生時における再試行は、標準的なクライアント側バックオフ動作に従う必要があります。
   
 <a id="ID4EFB"></a>
 
@@ -58,7 +58,7 @@ ms.locfileid: "4566680"
 次の要求は、このメソッドでは必要があります。
  
    * Xuid
-   * DeviceType - デバイスをアップロードする必要があります。
+   * DeviceType - デバイスにアップロードする必要があります。
    * DeviceId
    * TitleId
    * TitleSandboxId
@@ -70,8 +70,8 @@ ms.locfileid: "4566680"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP 認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
+| X RequestedServiceVersion| string| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。| 
 | Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
 | Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
   
@@ -82,7 +82,7 @@ ms.locfileid: "4566680"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、身元を圧縮します。| 
+| Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、圧縮の id。| 
   
 <a id="ID4ENF"></a>
 
@@ -124,12 +124,12 @@ ms.locfileid: "4566680"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| OK| セッションが正常に取得されました。| 
-| 400| Bad Request| 要求の本文でエラーが発生しましたまたはユーザーがそのクォータを超えています。| 
+| 400| Bad Request| 要求本文でエラーが発生しましたまたはユーザーがそのクォータを超えています。| 
 | 401| 権限がありません| 要求の認証トークンの形式で問題があります。| 
 | 403| Forbidden| 一部の必須の要求がないか、または DeviceType はありません。| 
 | 503| 許容できません。| サービスまたは一部ダウン ストリームの依存関係ダウンしています。 標準的なバックオフ動作を指定して再試行します。| 

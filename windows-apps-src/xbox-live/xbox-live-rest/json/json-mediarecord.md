@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f43dfe64f515772509c5c304b728a896a58f5076
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564471"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4609793"
 ---
 # <a name="mediarecord-json"></a>MediaRecord (JSON)
  
@@ -25,13 +25,13 @@ ms.locfileid: "4564471"
  
 ## <a name="mediarecord"></a>MediaRecord
  
-MediaRecord オブジェクトには、次の仕様があります。
+MediaRecord オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| id| string| Bing カタログまたはプロバイダー カタログで使われるメディアの識別子です。| 
-| idType| string| メディアの識別子を解釈する方法について説明します。 設定可能な値には、"bing"および「プロバイダー」が含まれます。| 
-| name| string| メディア コンテンツのローカライズされた名前です。| 
+| id| string| Bing カタログまたはプロバイダー カタログで使用されるメディアの識別子です。| 
+| idType| string| メディアの識別子を解釈する方法。 使用可能な値には、"bing"および「プロバイダー」が含まれます。| 
+| name| string| ローカライズされたメディア コンテンツの名前。| 
   
 <a id="ID4ECC"></a>
 

@@ -10,29 +10,29 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 8796b2ea025a00015881d39449f2dd99d57121f8
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571993"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610930"
 ---
 # <a name="enumerating-point-of-service-devices"></a>POS デバイスの列挙
 このセクションでは、システムが利用できるデバイスを照会するために使用する[デバイス セレクターを定義](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)し、次のいずれかの方法でこのセレクターを使用して POS デバイスを列挙する方法について説明します。
 
 **方法 1:**[デバイスの選択コントロールの使用](#method-1:-use-a-device-picker)
 <br/>
-デバイス ピッカー UI を表示して、ユーザーが接続されているデバイスを選択しています。 このメソッドは、デバイスが接続され、削除、一覧の更新を処理し、方が簡単かつ他の方法より安全です。
+デバイス ピッカー UI を表示し、ユーザーに接続されているデバイスを選択します。 このメソッドは、デバイスが接続され、削除、一覧の更新を処理し、方が簡単かつ他の方法より安全です。
 
-**方法 2:**[最初に利用可能なデバイスを取得します。](#Method-1:-get-first-available-device)<br />[GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync)を使用して、特定の Point of Service デバイス クラスで最初に利用可能なデバイスにアクセスします。
+**方法 2:**[最初に利用可能なデバイスを取得します。](#Method-1:-get-first-available-device)<br />[GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync)を使用して、特定のポイントのサービス デバイス クラスで最初に利用可能なデバイスにアクセスします。
 
-**方法 3:**[デバイスのスナップショット](#Method-2:-Snapshot-of-devices)<br />時間内の特定の時点でシステムに存在する Point of Service デバイスのスナップショットを列挙します。 これは、独自の UI を作成する場合や、ユーザーに UI を表示せずにデバイスを列挙する場合に役立ちます。 [Findallasync で結果列挙が完了するまでです。](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)
+**方法 3:**[デバイスのスナップショット](#Method-2:-Snapshot-of-devices)<br />時間で特定の時点でシステムに存在する Point of Service デバイスのスナップショットを列挙します。 これは、独自の UI を作成する場合や、ユーザーに UI を表示せずにデバイスを列挙する場合に役立ちます。 [Findallasync で結果列挙が完了するまでです。](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)
 
 **方法 4:**[列挙と監視](#Method-3:-Enumerate-and-watch)<br />[DeviceWatcher](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)は、現在存在するデバイスを列挙し、デバイスが追加されるか、システムから削除された場合に通知を受け取ることもできる強力かつ柔軟な列挙モデルです。  これは、スナップショットが発生するのを待機するのではなく、UI で表示するためにバックグラウンドでデバイスの現在の一覧を維持する場合に役立ちます。
 
 ## <a name="define-a-device-selector"></a>デバイス セレクターの定義
 デバイス セレクターにより、デバイスを列挙するときに、検索するデバイスを絞り込むことができるようになります。  これは、オプションを選択するのみ関連する結果を取得し、目的のデバイスを列挙するのにかかる時間を短縮することができます。
 
-その種類のデバイス セレクターを取得するのに探しているデバイスの種類の**GetDeviceSelector**メソッドを使用することができます。 たとえば、 [PosPrinter.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector)を使用するには、USB、ネットワークおよび Bluetooth POS プリンターなど、システムに接続されているすべての[PosPrinters](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter)を列挙するセレクターが提供されます。
+その種類のデバイス セレクターを取得するのに探しているデバイスの種類は、 **GetDeviceSelector**メソッドを使用できます。 たとえば、 [PosPrinter.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector)を使用するには、USB、ネットワークおよび Bluetooth POS プリンターなど、システムに接続されているすべての[PosPrinters](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter)を列挙するセレクターが提供されます。
 
 ```Csharp
 using Windows.Devices.PointOfService;
@@ -48,7 +48,7 @@ string selector = POSPrinter.GetDeviceSelector();
 * [MagneticStripeReader.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.getdeviceselector)
 * [PosPrinter.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector)
 
-[PosConnectionTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posconnectiontypes)値をパラメーターとして受け取る**GetDeviceSelector**メソッドを使用して、制限できます、セレクターを列挙するローカル、ネットワーク、または、Bluetooth で接続されている POS デバイス、クエリを完了するのにかかる時間を短縮します。  次のサンプルでは、ローカルでのみをサポートするセレクターを定義するには、このメソッドを使用して POS プリンターの接続を示します。
+[PosConnectionTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posconnectiontypes)値をパラメーターとして受け取る**GetDeviceSelector**メソッドを使用して、制限できます、セレクターを列挙するローカル、ネットワーク、または Bluetooth で接続されている POS デバイスの場合は、クエリを完了するまでの時間を削減します。  次のサンプルでは、ローカルでのみをサポートするセレクターを定義するには、このメソッドを使用して POS プリンターの接続を示します。
 
  ```Csharp
 using Windows.Devices.PointOfService;
@@ -59,13 +59,13 @@ string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);
 > [!TIP]
 > より高度なセレクター文字列のビルドについては、「[デバイス セレクターのビルド](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)」を参照してください。
 
-## <a name="method-1-use-a-device-picker"></a>方法 1: デバイス ピッカーを使用します。
+## <a name="method-1-use-a-device-picker"></a>方法 1: デバイスの選択コントロールを使用します。
 
 [DevicePicker](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker)クラスでは、ユーザーから選択するためのデバイスの一覧が含まれているピッカーのポップアップを表示することができます。 [フィルター](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.filter)のプロパティを使用すると、ピッカーを表示するのにデバイスの種類を選択します。 このプロパティは、種類[DevicePickerFilter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter)です。 デバイスの種類は、 [SupportedDeviceClasses](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses)または[SupportedDeviceSelectors](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors)プロパティを使用してフィルターを追加できます。
 
-デバイス ピッカーを表示する準備ができたら、ピッカー UI を表示し、選択したデバイスを返す[PickSingleDeviceAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.picksingledeviceasync)メソッドを呼び出すことができます。 ポップアップが表示される場所を決定する[Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect)を指定する必要があります。 このメソッドは、Api を使用することでポイントのサービスの[DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)オブジェクトを返します、する特定のデバイス クラスに**FromIdAsync**メソッドを使用する必要があります。 メソッドの*deviceId*パラメーターとして[DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)プロパティを渡すし、戻り値としてデバイス クラスのインスタンスを取得します。
+デバイス ピッカーを表示する準備ができたら、ピッカー UI を表示され、選択したデバイスを返す[PickSingleDeviceAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.picksingledeviceasync)メソッドを呼び出すことができます。 ポップアップが表示される場所を決定するための[Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect)を指定する必要があります。 このメソッドは、Api を使用することで、ポイントのサービスの[DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)オブジェクトを返します、する特定のデバイス クラスに**FromIdAsync**メソッドを使用する必要があります。 メソッドの*deviceId*パラメーターとして[DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)プロパティを渡すし、戻り値としてデバイス クラスのインスタンスを取得します。
 
-次のコード スニペットは、 **DevicePicker**を作成、追加のバーコード スキャナーにフィルターをユーザーの選択、デバイスがあり、デバイス ID に基づいて**BarcodeScanner**オブジェクトが作成されます。
+次のコード スニペットでは、 **DevicePicker**を作成、バーコード スキャナーにフィルターをユーザーの選択、デバイスがあり、デバイス ID に基づいて**BarcodeScanner**オブジェクトを作成を追加します。
 
 ```cs
 private async Task<BarcodeScanner> GetBarcodeScanner()
@@ -92,10 +92,10 @@ BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
 ```
 
 > [!CAUTION]
-> **GetDefaultAsync**は、次には 1 つのセッションからさまざまなデバイスを返すことがあります、注意して使用する必要があります。 多くのイベントがこの列挙に影響を与え、次のように最初に利用できるデバイスが異なる結果になる場合があります。 
+> **GetDefaultAsync**は、次には 1 つのセッションからさまざまなデバイスを返すことがあります注意して使用する必要があります。 多くのイベントがこの列挙に影響を与え、次のように最初に利用できるデバイスが異なる結果になる場合があります。 
 > - コンピューターに接続されているカメラの変更 
-> - お使いのコンピューターに接続されているデバイスのサービスのインポイントを変更します。
-> - ネットワークで接続されている Point of Service デバイスのネットワークで利用可能なの変更します。
+> - お使いのコンピューターに接続されているデバイスのサービスのインポイント変更します。
+> - ネットワークで利用可能なの [Point of Service デバイスのネットワーク接続の変更します。
 > - コンピューターの範囲内での Bluetooth Point of Service デバイスの変更します。 
 > - Point of Service 構成の変更 
 > - ドライバーまたは OPOS サービス オブジェクトのインストール
@@ -107,7 +107,7 @@ BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
 シナリオによっては、独自の UI を作成する場合や、ユーザーに UI を表示せずにデバイスを列挙する場合などが考えられます。  このような場合は、[DeviceInformation.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) を使用して現在接続されている、またはシステムとペアリングされているデバイスのスナップショットを列挙する可能性があります。  この方法では列挙がすべて完了するまで結果が表示されません。
 
 > [!TIP]
-> **FindAllAsync**を使用して、クエリを目的の接続の種類に制限する場合に、 **GetDeviceSelector**メソッドを**PosConnectionTypes**パラメーターを使用することをお勧めします。  ネットワークおよび Bluetooth 接続できるため、結果遅延**FindAllAsync**結果が返される前に、その列挙体が完了する必要があります。
+> **FindAllAsync**を使用して、クエリを目的の接続の種類に制限する場合に、 **GetDeviceSelector**メソッドを**PosConnectionTypes**パラメーターを使用することをお勧めします。  ネットワークおよび Bluetooth 接続は、 **FindAllAsync**結果が返される前に、列挙が完了する必要があります、結果を延期することができます。
 
 > [!CAUTION] 
 > **FindAllAsync**では、デバイスの配列を返します。  この配列の順序はセッションごとに変わる可能性があるため、配列にハードコードされたインデックスを使用することで特定の順序に依存しないことをお勧めします。  [DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)プロパティを使用して、結果をフィルター処理またはユーザーから選択するための UI を提供します。
@@ -126,13 +126,13 @@ foreach (DeviceInformation devInfo in deviceCollection)
 ```
 
 > [!TIP] 
-> [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) API を操作する場合は、[DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation) オブジェクトを頻繁に使用して特定のデバイスに関する情報を取得する必要があります。 たとえば、 [DeviceInformation.ID](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)プロパティに回復して、今後のセッションで利用可能なし、 [DeviceInformation.Name](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.name)プロパティは、アプリで表示目的で使用できますである場合は、同じデバイスを再使用できます。  利用可能なその他のプロパティについては、「[DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)」リファレンス ページを参照してください。
+> [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) API を操作する場合は、[DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation) オブジェクトを頻繁に使用して特定のデバイスに関する情報を取得する必要があります。 たとえば、 [DeviceInformation.ID](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)プロパティに回復して、今後のセッションで使用可能になるし、 [DeviceInformation.Name](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.name)プロパティは、アプリで表示目的で使用できますである場合は、同じデバイスを再使用できます。  利用可能なその他のプロパティについては、「[DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)」リファレンス ページを参照してください。
 
 ## <a name="method-4-enumerate-and-watch"></a>方法 4: 列挙し、監視
 
 デバイスをより強力かつ柔軟な方法で列挙するには、[DeviceWatcher](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) を作成します。  デバイス ウォッチャーはデバイスを動的に列挙します。これにより、初回の列挙が完了した後にデバイスが追加、削除、変更された場合、アプリケーションが通知を受け取ることができます。  **DeviceWatcher**には、ネットワークに接続されているデバイスがオンラインになったときに検出することが、Bluetooth デバイスが範囲、ローカル接続されたデバイスが接続されていないため、アプリケーション内で適切なアクションを実行できる場合と同様です。
 
-このサンプル**DeviceWatcher**を作成する上で定義されたセレクターを使用するほか、 [Added](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added) [Removed](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.removed)、 [Updated](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.updated)通知用のイベント ハンドラーを定義します。 各通知で実行するアクションの詳細を記入する必要があります。
+このサンプル**DeviceWatcher**を作成する上で定義されたセレクターを使用するほか、 [Added](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added) [Removed](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.removed)、 [Updated](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.updated)通知のイベント ハンドラーを定義します。 各通知で実行するアクションの詳細を記入する必要があります。
 
 ```Csharp
 using Windows.Devices.Enumeration;

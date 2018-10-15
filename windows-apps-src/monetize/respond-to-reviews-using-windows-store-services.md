@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: c92c0ea8-f742-4fc1-a3d7-e90aac11953e
 description: Store のアプリのレビューにプログラムで返信を送るには、Microsoft Store レビュー API を使います。
 title: ストアのサービスを使用してレビューに返信する
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store レビュー API, レビューに返信
 ms.localizationpriority: medium
-ms.openlocfilehash: ba921b03011b36507c9cc9f0f05ecda126a2ace5
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 004688612a7cdbebaa904acf7069a8d792f625da
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976437"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610230"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>ストアのサービスを使用してレビューに返信する
 

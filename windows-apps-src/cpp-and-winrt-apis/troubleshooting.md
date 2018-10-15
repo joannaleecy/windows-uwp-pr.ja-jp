@@ -10,20 +10,20 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、トラブルシューティング、HRESULT、エラー
 ms.localizationpriority: medium
 ms.openlocfilehash: 05542a42e362f024e92547d9eb496b936b85236c
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572536"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611546"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>C++/WinRT に関する問題のトラブルシューティング
 
 > [!NOTE]
-> インストールと使用方法については、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートと同様、C++ を提供する//winrt MSBuild プロパティとターゲット) を参照してください[、C++、Visual Studio サポート +/winrt と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)します。
+> インストールと使用については、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートと同様、C++ を提供する//winrt MSBuild プロパティとターゲット) を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)します。
 
 このトピックは、すぐに認識していただくための先行情報です。まだ必要としていない場合も同様です。 以下の症状のトラブルシューティングおよび対処法に関する表は、新しいコードを作成しているか既存のアプリを移植しているかにはかかわらず役立つ可能性があります。 移植中であり、進展させてプロジェクトのビルドおよび実行の段階に達することを急いでいる場合は、問題を引き起こしている重要でないコードにコメントアウトまたはスタブ挿入を適用して、一時的に進展させることができます。その後、元に戻ってその借りを解消することになります。
 
-よく寄せられる質問の一覧は、[よく寄せられる質問](faq.md)を参照してください。
+よく寄せられる質問の一覧では、[よく寄せられる質問](faq.md)を参照してください。
 
 ## <a name="tracking-down-xaml-issues"></a>XAML に関する問題の検出
 XAML 解析例外は診断が難しい場合があります。特に、わかりやすいエラー メッセージが例外に含まれていない場合は、診断が難しくなります。 デバッガーが初回例外をキャッチするように構成されていることを確してください (早い段階で解析例外のキャッチを試行するため)。 デバッガーで例外変数を調べて、HRESULT やメッセージ内に役立つ情報が含まれているかどうかを確認できます。 また、XAML パーサーを使って、Visual Studio の出力ウィンドウを調べ、エラー メッセージの出力を確認することもできます。
@@ -46,14 +46,14 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 | C++ コンパイラーが、EventHandler または TypedEventHandler のデリゲート特殊化に関して "*WinRT 型である必要があります*" というエラーを生成します。|代わりに **winrt::delegate&lt;...T&gt;** を使用することを考慮してください。 「[C++/WinRT でのイベントの作成](author-events.md)」を参照してください。|
 | C++ コンパイラーが、Windows ランタイムの非同期操作の特殊化に関して "*WinRT 型である必要があります*" というエラーを生成します。|代わりに並列パターン ライブラリ (PPL) の [**task**](https://msdn.microsoft.com/library/hh750113) を返すことを考慮してください。 「[同時実行操作と非同期操作](concurrency.md)」を参照してください。|
 | C++ コンパイラーが、"*エラー C2220: 警告がエラーとして扱われました - 'オブジェクト' ファイルは生成されませんでした*" を生成します。|警告を解決するか、または **[C/C++]** > **[全般]** > **[警告をエラーとして扱う]** を **[いいえ (/WX-)]** に設定します。|
-| オブジェクトが破棄された後で C++/WinRT オブジェクトのイベント ハンドラーが呼び出されるため、アプリがクラッシュします。|[安全なイベント処理デリゲートを使用して*この*ポインターへのアクセス](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)を参照してください。|
+| オブジェクトが破棄された後で C++/WinRT オブジェクトのイベント ハンドラーが呼び出されるため、アプリがクラッシュします。|[イベント処理デリゲートを使用して*この*ポインターを安全にアクセスする](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)を参照してください。|
 | C++ コンパイラーが "*エラー C2338: これは弱参照サポート専用です*" を生成します。|**テンプレート引数として winrt::no_weak_ref** マーカー構造体を基底クラスに渡した型の、弱参照を要求しています。 [弱参照サポートの除外](weak-references.md#opting-out-of-weak-reference-support)を参照してください。|
-| C++ リンカーを生成"*エラー lnk 2019: 外部シンボルは未解決です*"|参照してください[理由は、リンカー入力すると、"lnk 2019: 外部シンボルは未解決です"エラーかどうか。](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)します。|
-| LLVM および Clang ツール チェーンは、C++ で使用する場合のエラーを生成/WinRT します。|LLVM および Clang ツール チェーンは、C++ サポートしていません/WinRT の使用方法、内部をエミュレートする必要がある場合は後、は、いずれかで説明されているように、実験に試すことができます[において、C++ をコンパイルする Llvm/clang を使用できる/WinRT かどうか。](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)します。|
-| C++ コンパイラーは、投影された型の「*適切な既定コンス トラクターがありません利用可能な*」を生成します。 | ランタイム クラスのオブジェクトの初期化を遅延するまたはを消費し、同じプロジェクト内のランタイム クラスを実装するかどうかを呼び出す必要があります、`nullptr_t`コンス トラクター。 詳細については、「[C++/WinRT での API の使用](consume-apis.md)」を参照してください。 |
+| C++ リンカーを生成"*エラー lnk 2019: 外部シンボルは未解決*"|参照してください[理由は、リンカー入力すると、"lnk 2019: 外部シンボルは未解決です"エラーかどうか。](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)します。|
+| LLVM および Clang ツール チェーンは、C++ を使用するとエラーを生成/WinRT します。|LLVM および Clang ツール チェーンは、C++ サポートしていません/の使用方法、内部をエミュレートする必要がある場合は、WinRT 後は、いずれかで説明されているように、実験に試すことができます[において、C++ をコンパイルする Llvm/clang を使用できる/WinRT かどうか。](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)します。|
+| C++ コンパイラーは、投影された型の「*適切な既定コンス トラクターがありません利用可能な*」を生成します。 | ランタイム クラスのオブジェクトの初期化を遅延するまたはを消費し、同じプロジェクトにランタイム クラスを実装するかどうかを呼び出す必要があります、`nullptr_t`コンス トラクター。 詳細については、「[C++/WinRT での API の使用](consume-apis.md)」を参照してください。 |
 | C++ コンパイラーが"*エラー C3861: 'from_abi': 識別子が見つかりません*"、および*base.h*で発生したエラー。 Visual Studio 2017 を使用している場合にこのエラーが表示することがあります (バージョン 15.8.0 以上)、Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803) を対象とするとします。 | 以降 (詳しく準拠) をターゲットにするかのバージョンの Windows SDK、またはプロジェクトのプロパティを設定する**C/C++** > **言語** > **Conformance mode: いいえ**(また場合、 **/制限解除-** **C/C++**  > **言語** > **コマンド ライン**[**その他のオプション**を削除します)。 |
 | C++ コンパイラーが"*エラー C2039: 'IUnknown': のメンバーではない '\'global 名前空間'*"。 | 参照してください[c++ ターゲットを変更する方法/WinRT プロジェクトを Windows SDK のそれ以降のバージョンを](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)します。 |
-| C++ リンカーを生成"*エラー lnk 2019: 外部シンボルは未解決です_WINRT_CanUnloadNow@0関数で参照されている_VSDesignerCanUnloadNow@0*" | 参照してください[c++ ターゲットを変更する方法/WinRT プロジェクトを Windows SDK のそれ以降のバージョンを](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)します。 |
+| C++ リンカーを生成"*エラー lnk 2019: 外部シンボルは未解決_WINRT_CanUnloadNow@0関数で参照されている_VSDesignerCanUnloadNow@0*" | 参照してください[c++ ターゲットを変更する方法/WinRT プロジェクトを Windows SDK のそれ以降のバージョンを](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)します。 |
 
 > [!NOTE]
-> このトピックでは、質問に回答していないかどうかは、 [Visual Studio C 開発者コミュニティ](https://developercommunity.visualstudio.com/spaces/62/index.html)にアクセスするかを使用して、ヘルプ情報を見つけることがあります、 [ `c++-winrt` Stack Overflow でタグを付ける](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)します。
+> このトピックでは、質問に回答していないかどうかは、 [Visual Studio C 開発者コミュニティ](https://developercommunity.visualstudio.com/spaces/62/index.html)にアクセスするかを使用してヘルプ情報を見つけることがあります、 [ `c++-winrt` Stack Overflow でタグ](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)します。

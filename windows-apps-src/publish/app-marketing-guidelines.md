@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570738"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613977"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store アプリのガイドラインをマーケティング
 
-アプリや、Microsoft Store でコンテンツを昇格する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。
+アプリや、Microsoft Store でのコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。
 
 ## <a name="store-badges"></a>ストア バッジ
 
@@ -45,9 +45,9 @@ Microsoft Store でアプリの登録情報をより多くのユーザーを集�
 
 ## <a name="license-to-microsoft-marks"></a>Microsoft マークのライセンス
 
-*Microsoft マーク*[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) ] ページで説明されている*Microsoft バッジ*を意味します。 これらのバッジを使うには、以下の作業を行う必要があります。
+*Microsoft マーク*は、[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) ] ページで説明されている*Microsoft バッジ*を意味します。 これらのバッジを使うには、以下の作業を行う必要があります。
 
--   Microsoft Store でアプリまたはその他のコンテンツは利用可能なか、 [Microsoft アフィリ エイト プログラム](http://go.microsoft.com/fwlink/p/?LinkId=624463)の一部となります。
+-   Microsoft Store でアプリまたはその他のコンテンツは利用可能なか、 [Microsoft アフィリ エイト プログラム](http://go.microsoft.com/fwlink/p/?LinkId=624463)の一部であります。
 
 -   デベロッパー センターに登録している場合は、「アプリ開発者契約書」の「[Microsoft マークのライセンス](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)」セクションに準拠する。
 

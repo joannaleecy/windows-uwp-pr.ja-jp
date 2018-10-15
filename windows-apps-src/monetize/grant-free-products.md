@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: 無料のアプリまたはアドオンを特定のユーザーに付与するには、Microsoft Store 購入 API の以下のメソッドを使います。
 title: 無料の製品の付与
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 購入 API, 製品の付与
 ms.localizationpriority: medium
-ms.openlocfilehash: c1ecb1f7db755fd21014ebc7edf979e7a25e7c7f
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 432d5976cb018148ba0f53aae6446a046f0a3b2f
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1665028"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610598"
 ---
 # <a name="grant-free-products"></a>無料の製品の付与
 
@@ -46,7 +46,7 @@ ms.locfileid: "1665028"
 
 | ヘッダー         | 型   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | 文字列 | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。                           |
+| Authorization  | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。                           |
 | Host           | string | 値 **purchase.mp.microsoft.com** に設定する必要があります。                                            |
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
@@ -233,7 +233,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 ## <a name="related-topics"></a>関連トピック
 
-* [サービスによる製品の権利の管理](view-and-grant-products-from-a-service.md)
+* [サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)
 * [製品の照会](query-for-products.md)
 * [コンシューマブルな製品のフルフィルメント完了の報告](report-consumable-products-as-fulfilled.md)
 * [Microsoft Store ID キーの更新](renew-a-windows-store-id-key.md)

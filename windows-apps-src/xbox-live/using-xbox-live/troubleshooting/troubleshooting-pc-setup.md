@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 3eabd83f9fc42f86fb1ec35bbce7d8b7b2359e0e
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4562986"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613661"
 ---
 # <a name="troubleshooting-xbox-live-setup-on-windows-pc"></a>Windows PC での Xbox Live セットアップのトラブルシューティング
 
-Windows 10 PC で、コンピューターは、次の手順を使用して正しくセットアップを確保できます。
+Windows 10 PC では、コンピューターは、次の手順を使用して正しくセットアップを確保できます。
 
-1. コンピューターにサンプルを実行するもので、XDKS.1 サンド ボックスを変更します。  それには次のスクリプトを実行します。
+1. サンプルを実行するもので、XDKS.1 サンド ボックスに、コンピューターを変更します。  それには次のスクリプトを実行します。
 
         {*SDK source root*}\Tools\SwitchSandbox.cmd XDKS.1
 

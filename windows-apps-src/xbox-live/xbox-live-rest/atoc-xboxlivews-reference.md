@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a6d5460d4021de8daa6af344e2da920e55dbba5
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566368"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612966"
 ---
 # <a name="xbox-live-services-restful-reference"></a>Xbox Live サービス RESTful リファレンス
 
@@ -33,7 +33,7 @@ Xbox Live サービスでは、一連のゲームとプレイヤーの情報を�
 
 [JavaScript Object Notation (JSON) オブジェクト リファレンス](json/atoc-xboxlivews-reference-json.md)
 
-&nbsp;&nbsp;Xbox Live サービスで使われる JavaScript Object Notation (JSON) オブジェクトのリファレンスを提供します。
+&nbsp;&nbsp;Xbox Live サービスを使用する JavaScript Object Notation (JSON) オブジェクトのリファレンスを提供します。
 
 [JavaScript Object Notation (JSON) オブジェクトで使用される列挙型](enums/atoc-xboxlivews-reference-enums.md)
 

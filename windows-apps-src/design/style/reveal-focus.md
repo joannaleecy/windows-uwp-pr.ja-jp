@@ -1,6 +1,6 @@
 ---
 author: cphilippona
-description: 表示フォーカスに、ユーザーがゲームパッドやキーボードのフォーカスを移動すると、フォーカス可能な要素の境界線をアニメーション化する発光効果。
+description: 表示フォーカスにユーザーがゲームパッドやキーボードのフォーカスを移動すると、フォーカス可能な要素の境界線をアニメーション化する発光効果。
 title: 表示フォーカス
 template: detail.hbs
 ms.author: mijacobs
@@ -14,11 +14,11 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5fa84efbe20368be55a50ce20c8e6e5d1fe439
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565856"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610540"
 ---
 # <a name="reveal-focus"></a>表示フォーカス
 
@@ -32,11 +32,11 @@ ms.locfileid: "4565856"
 > **重要な API**: [Application.FocusVisualKind プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)、[FocusVisualKind 列挙](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals プロパティ](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>動作の仕組み
-フォーカスが置かれた要素にフォーカス注意を表示するには、要素の境界線をアニメーション化されたグローを追加します。
+フォーカスのある要素にフォーカス注意を表示するには、要素の境界線のアニメーション化されたグロー部分を追加します。
 
 ![表示のビジュアル効果](images/traveling-focus-fullscreen-light-rf.gif)
 
-これは、機能は、場所、ユーザーがありますが注意を払っていないテレビ画面全体を 10 フィート シナリオで特に便利です。 
+これは、機能は、場所、ユーザーがする注意を払っていないテレビ画面全体を 10 フィート シナリオで特に便利です。 
 
 ## <a name="examples"></a>例
 
@@ -67,20 +67,20 @@ ms.locfileid: "4565856"
     }
 ```
 
-**FocusVisualKind**プロパティを設定した後、表示フォーカス効果は自動的に[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)プロパティ設定されている**場合は True** (ほとんどのコントロールの既定値) にすべてのコントロールに適用されます。 
+**FocusVisualKind**プロパティを設定した後、表示フォーカス効果は自動的に[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)プロパティが**True** (ほとんどのコントロールの既定値) に設定されてすべてのコントロールに適用されます。 
 
 ## <a name="why-isnt-reveal-focus-on-by-default"></a>既定で表示効果のフォーカスをできない理由かどうか。 
-ご覧のように、Xbox で実行されているアプリを検出すると、フォーカスの表示をオンにする非常に簡単です。 それでは、システムによって自動的に有効にならないのはなぜでしょうか。 表示フォーカスには、フォーカス表示のサイズが増加するため、UI レイアウトに問題が発生する可能性があります。 場合によっては、アプリに合わせて最適化表示フォーカス効果をカスタマイズします。
+ご覧のように、Xbox で実行されているアプリを検出すると、フォーカスの表示をオンにする非常に簡単です。 それでは、システムによって自動的に有効にならないのはなぜでしょうか。 表示フォーカスには、フォーカス表示のサイズが増加するため、UI レイアウトに問題が発生する可能性があります。 場合によっては、アプリを最適化するために、表示フォーカス効果をカスタマイズするされます。
 
 ## <a name="customizing-reveal-focus"></a>表示フォーカスのカスタマイズ
 
 各コントロールのフォーカス視覚効果プロパティを変更することによって、表示フォーカス効果をカスタマイズすることができます: [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)、 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)、および[FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)します。 これらのプロパティでは、フォーカスの四角形の色と太さをカスタマイズできます。 (これらは、[視認性の高いフォーカスの視覚効果](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)を作成する場合と同じプロパティです。) 
 
-カスタマイズを開始する前に、そのことは、それに関する表示効果のフォーカスを構成するコンポーネントについてもう少し詳しく知っておくと便利です。
+カスタマイズを開始する前に、それが表示フォーカスを構成するコンポーネントについてもう少し詳しく知っておくと便利です。
 
-既定の表示効果のフォーカス視覚効果は次の 3 つの部分で構成されて: プライマリ境界線、セカンダリ境界線およびグロー表示します。 プライマリ境界線は、**2 px** の幅があり、セカンダリ境界線の*外側*に描画されます。 セカンダリ境界線は、**1 px** の幅があり、プライマリ境界線の*内側*に描画されます。 表示効果のフォーカスのグロー部分、プライマリ境界線の太さに比例があり、*外部*プライマリ境界線の周囲を実行します。
+既定の表示効果のフォーカス視覚効果は次の 3 つの部分で構成されて: プライマリ境界線、セカンダリ境界線およびグロー表示します。 プライマリ境界線は、**2 px** の幅があり、セカンダリ境界線の*外側*に描画されます。 セカンダリ境界線は、**1 px** の幅があり、プライマリ境界線の*内側*に描画されます。 表示効果のフォーカスのグロー部分には、プライマリ境界線の幅に比例があり、*外部*プライマリ境界線の周囲を実行します。
 
-だけでなく、静的な要素表示効果のフォーカスの視覚効果機能は、アニメーション化された光に置いたときに停止中は鼓動し、フォーカスを移動するときにフォーカスの方向に移動します。
+だけでなく、静的な要素は、表示フォーカスの視覚効果は、置いたときに停止中は鼓動し、フォーカスを移動するときに、フォーカスの方向に移動するためのアニメーション化された光を機能です。
 
 ![表示フォーカス レイヤー](images/reveal-breakdown.svg)
 
@@ -112,7 +112,7 @@ ms.locfileid: "4565856"
 
 ## <a name="customize-the-color"></a>色のカスタマイズ
 
-表示効果のフォーカス表示の色を変更するには、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)と[FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)プロパティを使います。
+表示フォーカス表示の色を変更するには、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)と[FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)プロパティを使用します。
 
 | プロパティ | 既定のリソース | 既定のリソースの値 |
 | ---- | ---- | --- | 

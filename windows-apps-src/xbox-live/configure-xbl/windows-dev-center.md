@@ -10,25 +10,25 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: a0c30014c3688695847a5734adfa7cbc7498ba4a
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567590"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611020"
 ---
 # <a name="windows-dev-center-service-configuration"></a>Windows デベロッパー センターのサービス構成
 
-[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で公開され、Xbox Live の機能の完全なセットを使用するゲームでは、デベロッパー センターで、Xbox Live サービスを構成できます。
+[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で公開して、Xbox Live の機能の完全なセットを使用するゲームでは、デベロッパー センターで、Xbox Live サービスを構成できます。
 
 > [!IMPORTANT]
 > これらのトピックは、Xbox Live クリエーターズ プログラムのタイトルには適用されません。
 
-設定ページにアクセスするために、ゲームを Xbox Live のフル アクセスに対して有効にする必要があります。
+ゲームは、設定ページにアクセスするために Xbox Live のフル アクセスを有効にする必要があります。
 
 Xbox Live 構成にアクセスするページ、 [Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)でタイトルを選択した後に移動**サービス** > **Xbox Live**します。
 
 
-次のトピックでは、Windows デベロッパー センターを使用して、Xbox Live を構成する方法について説明します。
+次のトピックでは、Windows デベロッパー センターを使用して Xbox Live を構成する方法について説明します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

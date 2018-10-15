@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: 新しいパッケージ フライトの申請または更新されたパッケージ フライトの申請を Windows デベロッパー センターにコミットするには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: パッケージ フライトの申請のコミット
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請のコミット
 ms.localizationpriority: medium
-ms.openlocfilehash: 60eac407d8f5ad82b9984b5ea3bad36261579ead
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: e3a52bc3a7a815bfde8a4fa8c12b73ab8932e2df
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815837"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610310"
 ---
 # <a name="commit-a-package-flight-submission"></a>パッケージ フライトの申請のコミット
 

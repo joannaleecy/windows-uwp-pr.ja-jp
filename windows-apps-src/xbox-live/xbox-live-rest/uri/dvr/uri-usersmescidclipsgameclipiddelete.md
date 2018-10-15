@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a68d765cfdec81da064b0522ea2ff9a4be12bafb
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573115"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4609871"
 ---
 # <a name="delete-usersmescidsscidclipsgameclipid"></a>DELETE (/users/me/scids/{scid}/clips/{gameClipId})
-これらの Uri のドメインは、ゲーム クリップを削除`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に問題の URI の機能に依存します。
+これらの Uri のドメインは、ゲーム クリップを削除`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
  
   * [注釈](#ID4EX)
   * [URI パラメーター](#ID4ECB)
@@ -40,7 +40,7 @@ ms.locfileid: "4573115"
 GameClips サービスからユーザーのビデオを削除するためのメカニズムを提供します。 削除、時にすべてのメタデータと実際のビデオ アセット (生成されると元) は、システムから削除されます。 これは、永続的な操作です。 
 
 > [!NOTE] 
-> 指定された所有者 ID は、呼び出し元に正常に削除要求の認証トークンと一致する必要があります。 
+> 指定された所有者 ID は、正常に削除要求の承認トークンで呼び出し元と一致する必要があります。 
 
 
   
@@ -68,11 +68,11 @@ Xuid クレームだけでは、このメソッドでは必要があります。
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP 認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
+| X RequestedServiceVersion| string| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。| 
 | Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
 | Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
-| キャッシュ コントロール| string| キャッシュ動作を指定する正し要求します。| 
+| キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。| 
   
 <a id="ID4EEE"></a>
 
@@ -81,7 +81,7 @@ Xuid クレームだけでは、このメソッドでは必要があります。
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、身元を圧縮します。| 
+| Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、圧縮の id。| 
 | ETag| string| キャッシュの最適化のために使用します。 値の例:"686897696a7c876b7e"。| 
   
 <a id="ID4ENF"></a>
@@ -96,14 +96,14 @@ Xuid クレームだけでは、このメソッドでは必要があります。
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 204| OK| クリップが正常に削除します。| 
 | 401| 権限がありません| 要求の認証トークンの形式で問題があります。| 
 | 403| Forbidden| 一部の必須の要求は含まれていません。| 
-| 404| Not Found します。| URL で指定されたクリップが存在しませんでした (または 2 つ目の時間が削除されました)。| 
+| 404| 見つかりません。| URL で指定されているクリップが存在しませんでした (または 2 つ目の時間が削除されました)。| 
 | 503| 許容できません。| サービスまたは一部ダウン ストリームの依存関係ダウンしています。 標準的なバックオフ動作を指定して再試行します。| 
   
 <a id="ID4EIAAC"></a>
@@ -113,12 +113,12 @@ Xuid クレームだけでは、このメソッドでは必要があります。
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
+| X RequestedServiceVersion| string| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。| 
 | Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
-| キャッシュ コントロール| string| キャッシュ動作を指定する正し要求します。| 
+| キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。| 
 | Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
 | Retry-after| string| クライアントが利用できないサーバーの場合、後で再試行するように指示します。| 
-| 異なる| string| 下位のプロキシ応答をキャッシュする方法を指示します。| 
+| 異なる| string| 下位のプロキシの応答をキャッシュする方法を指示します。| 
   
 <a id="ID4E2CAC"></a>
 
@@ -134,7 +134,7 @@ Xuid クレームだけでは、このメソッドでは必要があります。
  
 ## <a name="response-body"></a>応答本文
  
-サービスが 204 (内容なし)、成功時の HTTP ステータス コードを使って応答します。 しようとして、同じオブジェクトを削除するか、存在しないオブジェクトは 404 を返します。
+サービスが 204 (内容なし)、成功時の HTTP ステータス コードを使って応答します。 しようとして、同じオブジェクトを削除するか、存在しないオブジェクトには、404 が返されます。
  
 エラー発生時**ServiceErrorResponse**オブジェクトが返されます。
   
