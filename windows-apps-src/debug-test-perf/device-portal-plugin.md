@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bf511a910a266877d54a014f087c1748ff25838
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564720"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611687"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a><span data-ttu-id="14733-104">Device Portal 用のカスタム プラグインの作成</span><span class="sxs-lookup"><span data-stu-id="14733-104">Write a custom plugin for Device Portal</span></span>
 

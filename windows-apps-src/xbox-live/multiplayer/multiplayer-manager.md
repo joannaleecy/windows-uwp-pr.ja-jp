@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: bf931a2811a9a627c40a7dc45178688236437fa8
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570643"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614740"
 ---
 # <a name="multiplayer-manager"></a><span data-ttu-id="93b79-104">Multiplayer Manager</span><span class="sxs-lookup"><span data-stu-id="93b79-104">Multiplayer Manager</span></span>
 

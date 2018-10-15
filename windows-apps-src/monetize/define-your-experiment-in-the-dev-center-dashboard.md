@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in the Dev Center dashboard.
 title: ダッシュボードで実験を定義する
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験
 ms.localizationpriority: medium
-ms.openlocfilehash: f690aaede800f76b2eb006355e982ea6b3509b78
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: 1498c532717a23e1fe6332a47bc2ca8abaca4afb
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569753"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614048"
 ---
 # <a name="define-your-experiment-in-the-dashboard"></a><span data-ttu-id="140ff-103">ダッシュボードで実験を定義する</span><span class="sxs-lookup"><span data-stu-id="140ff-103">Define your experiment in the dashboard</span></span>
 

@@ -12,59 +12,59 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 052a83f47dc2d5b692c811850e41381c4745815c
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569745"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615214"
 ---
-# <a name="usersxuidxuidlistspinslistname"></a><span data-ttu-id="e8421-104">/users/xuid(xuid)/lists/PINS/{listname}</span><span class="sxs-lookup"><span data-stu-id="e8421-104">/users/xuid(xuid)/lists/PINS/{listname}</span></span>
-<span data-ttu-id="e8421-105">リストの項目にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="e8421-105">Accesses items in a list.</span></span> <span data-ttu-id="e8421-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="e8421-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>
+# <a name="usersxuidxuidlistspinslistname"></a><span data-ttu-id="4669c-104">/users/xuid(xuid)/lists/PINS/{listname}</span><span class="sxs-lookup"><span data-stu-id="4669c-104">/users/xuid(xuid)/lists/PINS/{listname}</span></span>
+<span data-ttu-id="4669c-105">リストの項目にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="4669c-105">Accesses items in a list.</span></span> <span data-ttu-id="4669c-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="4669c-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="e8421-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="e8421-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="4669c-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="4669c-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="e8421-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="e8421-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="4669c-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="4669c-108">URI parameters</span></span>
  
-| <span data-ttu-id="e8421-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="e8421-109">Parameter</span></span>| <span data-ttu-id="e8421-110">型</span><span class="sxs-lookup"><span data-stu-id="e8421-110">Type</span></span>| <span data-ttu-id="e8421-111">説明</span><span class="sxs-lookup"><span data-stu-id="e8421-111">Description</span></span>| 
+| <span data-ttu-id="4669c-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="4669c-109">Parameter</span></span>| <span data-ttu-id="4669c-110">型</span><span class="sxs-lookup"><span data-stu-id="4669c-110">Type</span></span>| <span data-ttu-id="4669c-111">説明</span><span class="sxs-lookup"><span data-stu-id="4669c-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="e8421-112">xuid</span><span class="sxs-lookup"><span data-stu-id="e8421-112">xuid</span></span>| <span data-ttu-id="e8421-113">string</span><span class="sxs-lookup"><span data-stu-id="e8421-113">string</span></span>| <span data-ttu-id="e8421-114">Xbox ユーザー ID (XUID) です。</span><span class="sxs-lookup"><span data-stu-id="e8421-114">Xbox User ID (XUID).</span></span>| 
-| <span data-ttu-id="e8421-115">listtype</span><span class="sxs-lookup"><span data-stu-id="e8421-115">listtype</span></span>| <span data-ttu-id="e8421-116">string</span><span class="sxs-lookup"><span data-stu-id="e8421-116">string</span></span>| <span data-ttu-id="e8421-117">(その使用方法と動作) の一覧の種類です。</span><span class="sxs-lookup"><span data-stu-id="e8421-117">Type of the list (how it is used and how it acts).</span></span> <span data-ttu-id="e8421-118">常に「ピン」これらのメソッドに関連します。</span><span class="sxs-lookup"><span data-stu-id="e8421-118">Always "PINS" for these related methods.</span></span>| 
-| <span data-ttu-id="e8421-119">リスト</span><span class="sxs-lookup"><span data-stu-id="e8421-119">listname</span></span>| <span data-ttu-id="e8421-120">string</span><span class="sxs-lookup"><span data-stu-id="e8421-120">string</span></span>| <span data-ttu-id="e8421-121">リストの名前 (際に指定された listtype の一覧がどの)。</span><span class="sxs-lookup"><span data-stu-id="e8421-121">Name of the list (which list of a given listtype to act on).</span></span> <span data-ttu-id="e8421-122">常に"XBLPins"のアイテムを Pin にします。</span><span class="sxs-lookup"><span data-stu-id="e8421-122">Always "XBLPins" for items in Pins.</span></span>| 
+| <span data-ttu-id="4669c-112">xuid</span><span class="sxs-lookup"><span data-stu-id="4669c-112">xuid</span></span>| <span data-ttu-id="4669c-113">string</span><span class="sxs-lookup"><span data-stu-id="4669c-113">string</span></span>| <span data-ttu-id="4669c-114">Xbox ユーザー ID (XUID) です。</span><span class="sxs-lookup"><span data-stu-id="4669c-114">Xbox User ID (XUID).</span></span>| 
+| <span data-ttu-id="4669c-115">listtype</span><span class="sxs-lookup"><span data-stu-id="4669c-115">listtype</span></span>| <span data-ttu-id="4669c-116">string</span><span class="sxs-lookup"><span data-stu-id="4669c-116">string</span></span>| <span data-ttu-id="4669c-117">(その使用方法と動作) の一覧の種類です。</span><span class="sxs-lookup"><span data-stu-id="4669c-117">Type of the list (how it is used and how it acts).</span></span> <span data-ttu-id="4669c-118">常に「ピン」これらのメソッドに関連します。</span><span class="sxs-lookup"><span data-stu-id="4669c-118">Always "PINS" for these related methods.</span></span>| 
+| <span data-ttu-id="4669c-119">リスト</span><span class="sxs-lookup"><span data-stu-id="4669c-119">listname</span></span>| <span data-ttu-id="4669c-120">string</span><span class="sxs-lookup"><span data-stu-id="4669c-120">string</span></span>| <span data-ttu-id="4669c-121">リストの名前 (際に指定された listtype の一覧がどの)。</span><span class="sxs-lookup"><span data-stu-id="4669c-121">Name of the list (which list of a given listtype to act on).</span></span> <span data-ttu-id="4669c-122">常に"XBLPins"の項目のピン留めします。</span><span class="sxs-lookup"><span data-stu-id="4669c-122">Always "XBLPins" for items in Pins.</span></span>| 
   
 <a id="ID4EGC"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="e8421-123">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="e8421-123">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="4669c-123">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="4669c-123">Valid methods</span></span>
 
-[<span data-ttu-id="e8421-124">DELETE</span><span class="sxs-lookup"><span data-stu-id="e8421-124">DELETE</span></span>](uri-usersxuidlistspinslistnamedelete.md)
+[<span data-ttu-id="4669c-124">DELETE</span><span class="sxs-lookup"><span data-stu-id="4669c-124">DELETE</span></span>](uri-usersxuidlistspinslistnamedelete.md)
 
-<span data-ttu-id="e8421-125">&nbsp;&nbsp;一覧から項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="e8421-125">&nbsp;&nbsp;Removes items from a list.</span></span>
+<span data-ttu-id="4669c-125">&nbsp;&nbsp;一覧から項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="4669c-125">&nbsp;&nbsp;Removes items from a list.</span></span>
 
-[<span data-ttu-id="e8421-126">GET</span><span class="sxs-lookup"><span data-stu-id="e8421-126">GET</span></span>](uri-usersxuidlistspinslistnameget.md)
+[<span data-ttu-id="4669c-126">GET</span><span class="sxs-lookup"><span data-stu-id="4669c-126">GET</span></span>](uri-usersxuidlistspinslistnameget.md)
 
-<span data-ttu-id="e8421-127">&nbsp;&nbsp;リストの内容を返します。</span><span class="sxs-lookup"><span data-stu-id="e8421-127">&nbsp;&nbsp;Returns the contents of a list.</span></span>
+<span data-ttu-id="4669c-127">&nbsp;&nbsp;リストの内容を返します。</span><span class="sxs-lookup"><span data-stu-id="4669c-127">&nbsp;&nbsp;Returns the contents of a list.</span></span>
 
-[<span data-ttu-id="e8421-128">POST</span><span class="sxs-lookup"><span data-stu-id="e8421-128">POST</span></span>](uri-usersxuidlistspinslistnamepost.md)
+[<span data-ttu-id="4669c-128">POST</span><span class="sxs-lookup"><span data-stu-id="4669c-128">POST</span></span>](uri-usersxuidlistspinslistnamepost.md)
 
-<span data-ttu-id="e8421-129">&nbsp;&nbsp;クエリ文字列パラメーター **insertIndex**に基づいてインデックスの一覧に項目を挿入します。</span><span class="sxs-lookup"><span data-stu-id="e8421-129">&nbsp;&nbsp;Inserts items into the list at the index based on the query string parameter **insertIndex**.</span></span>
+<span data-ttu-id="4669c-129">&nbsp;&nbsp;クエリ文字列パラメーター **insertIndex**に基づいてインデックスの一覧に項目を挿入します。</span><span class="sxs-lookup"><span data-stu-id="4669c-129">&nbsp;&nbsp;Inserts items into the list at the index based on the query string parameter **insertIndex**.</span></span>
 
-[<span data-ttu-id="e8421-130">PUT</span><span class="sxs-lookup"><span data-stu-id="e8421-130">PUT</span></span>](uri-usersxuidlistspinslistnameput.md)
+[<span data-ttu-id="4669c-130">PUT</span><span class="sxs-lookup"><span data-stu-id="4669c-130">PUT</span></span>](uri-usersxuidlistspinslistnameput.md)
 
-<span data-ttu-id="e8421-131">&nbsp;&nbsp;要求の本文内の各項目に指定されたインデックスに従ってリスト内の項目を更新します。</span><span class="sxs-lookup"><span data-stu-id="e8421-131">&nbsp;&nbsp;Updates the items in a list according to the indexes specified for each item in the request body.</span></span>
+<span data-ttu-id="4669c-131">&nbsp;&nbsp;要求本文内の各項目に指定されたインデックスに従ってリスト内の項目を更新します。</span><span class="sxs-lookup"><span data-stu-id="4669c-131">&nbsp;&nbsp;Updates the items in a list according to the indexes specified for each item in the request body.</span></span>
  
 <a id="ID4EZC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="e8421-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="e8421-132">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4669c-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="4669c-132">See also</span></span>
  
 <a id="ID4E2C"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="e8421-133">Parent</span><span class="sxs-lookup"><span data-stu-id="e8421-133">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="4669c-133">Parent</span><span class="sxs-lookup"><span data-stu-id="4669c-133">Parent</span></span> 
 
-[<span data-ttu-id="e8421-134">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="e8421-134">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="4669c-134">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="4669c-134">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

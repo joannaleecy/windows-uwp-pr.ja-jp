@@ -1,54 +1,54 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
 description: JavaScript/HTML. を使ってスポット広告を起動する方法について説明します。
 title: JavaScript を使ったスポット広告のサンプル コード
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP, 広告, Advertising, スポット, JavaScript, サンプルコード
 ms.localizationpriority: medium
-ms.openlocfilehash: f0cd50a8d3a08053f04dd0e6e8afbfafc8ef34dd
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 894053298428818c2f3304220f14afb6c44ba2af
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690348"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611932"
 ---
-# <a name="interstitial-ad-sample-code-in-javascript"></a><span data-ttu-id="13e91-104">JavaScript を使ったスポット広告のサンプル コード</span><span class="sxs-lookup"><span data-stu-id="13e91-104">Interstitial ad sample code in JavaScript</span></span>
+# <a name="interstitial-ad-sample-code-in-javascript"></a><span data-ttu-id="9b58a-104">JavaScript を使ったスポット広告のサンプル コード</span><span class="sxs-lookup"><span data-stu-id="9b58a-104">Interstitial ad sample code in JavaScript</span></span>
 
-<span data-ttu-id="13e91-105">このトピックでは、スポット広告を表示する基本的な JavaScript と HTML のユニバーサル Windows プラットフォーム (UWP) アプリの完全なサンプル コードを示します。</span><span class="sxs-lookup"><span data-stu-id="13e91-105">This topic provides the complete sample code for a basic JavaScript and HTML Universal Windows Platform (UWP) app that shows an interstitial ad.</span></span> <span data-ttu-id="13e91-106">このコードを使うためのプロジェクトの詳しい構成手順については、「[スポット広告](interstitial-ads.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="13e91-106">For step-by-step instructions that show how to configure your project to use this code, see [Interstitial ads](interstitial-ads.md).</span></span> <span data-ttu-id="13e91-107">完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="13e91-107">For a complete sample project, see the [advertising samples on GitHub](http://aka.ms/githubads).</span></span>
+<span data-ttu-id="9b58a-105">このトピックでは、スポット広告を表示する基本的な JavaScript と HTML のユニバーサル Windows プラットフォーム (UWP) アプリの完全なサンプル コードを示します。</span><span class="sxs-lookup"><span data-stu-id="9b58a-105">This topic provides the complete sample code for a basic JavaScript and HTML Universal Windows Platform (UWP) app that shows an interstitial ad.</span></span> <span data-ttu-id="9b58a-106">このコードを使うためのプロジェクトの詳しい構成手順については、「[スポット広告](interstitial-ads.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9b58a-106">For step-by-step instructions that show how to configure your project to use this code, see [Interstitial ads](interstitial-ads.md).</span></span> <span data-ttu-id="9b58a-107">完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9b58a-107">For a complete sample project, see the [advertising samples on GitHub](http://aka.ms/githubads).</span></span>
 
-## <a name="code-example"></a><span data-ttu-id="13e91-108">コードの例</span><span class="sxs-lookup"><span data-stu-id="13e91-108">Code example</span></span>
+## <a name="code-example"></a><span data-ttu-id="9b58a-108">コードの例</span><span class="sxs-lookup"><span data-stu-id="9b58a-108">Code example</span></span>
 
-<span data-ttu-id="13e91-109">このセクションでは、スポット広告を表示する基本的なアプリの HTML と JavaScript ファイルの内容を示します。</span><span class="sxs-lookup"><span data-stu-id="13e91-109">This section shows the contents of the HTML and JavaScript files in a basic app that shows an interstitial ad.</span></span> <span data-ttu-id="13e91-110">これらの例を使用するには、コードを Visual Studio の JavaScript の **WinJS アプリ (ユニバーサル Windows)** プロジェクトにコピーします。</span><span class="sxs-lookup"><span data-stu-id="13e91-110">To use these examples, copy this code into a JavaScript **WinJS App (Universal Windows)** project in Visual Studio.</span></span>
+<span data-ttu-id="9b58a-109">このセクションでは、スポット広告を表示する基本的なアプリの HTML と JavaScript ファイルの内容を示します。</span><span class="sxs-lookup"><span data-stu-id="9b58a-109">This section shows the contents of the HTML and JavaScript files in a basic app that shows an interstitial ad.</span></span> <span data-ttu-id="9b58a-110">これらの例を使用するには、コードを Visual Studio の JavaScript の **WinJS アプリ (ユニバーサル Windows)** プロジェクトにコピーします。</span><span class="sxs-lookup"><span data-stu-id="9b58a-110">To use these examples, copy this code into a JavaScript **WinJS App (Universal Windows)** project in Visual Studio.</span></span>
 
-<span data-ttu-id="13e91-111">このサンプル アプリでは 2 つのボタンを使用して、スポット広告を要求して起動します。</span><span class="sxs-lookup"><span data-stu-id="13e91-111">This sample app uses two buttons to request and then launch an interstitial ad.</span></span> <span data-ttu-id="13e91-112">Visual Studio によって生成された main.js ファイルと index.html ファイルは変更されています。これらのファイルを次に示します。</span><span class="sxs-lookup"><span data-stu-id="13e91-112">The main.js and index.html files generated by Visual Studio have been modified and are shown below.</span></span> <span data-ttu-id="13e91-113">次に示す script.js ファイルには、サンプルのコードの大半が含まれています。このファイルは **js** フォルダーのプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="13e91-113">The script.js file shown below contains most of the code in the sample, and you should add this file to the **js** folder in your project.</span></span>
+<span data-ttu-id="9b58a-111">このサンプル アプリでは 2 つのボタンを使用して、スポット広告を要求して起動します。</span><span class="sxs-lookup"><span data-stu-id="9b58a-111">This sample app uses two buttons to request and then launch an interstitial ad.</span></span> <span data-ttu-id="9b58a-112">Visual Studio によって生成された main.js ファイルと index.html ファイルは変更されています。これらのファイルを次に示します。</span><span class="sxs-lookup"><span data-stu-id="9b58a-112">The main.js and index.html files generated by Visual Studio have been modified and are shown below.</span></span> <span data-ttu-id="9b58a-113">次に示す script.js ファイルには、サンプルのコードの大半が含まれています。このファイルは **js** フォルダーのプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="9b58a-113">The script.js file shown below contains most of the code in the sample, and you should add this file to the **js** folder in your project.</span></span>
 
-<span data-ttu-id="13e91-114">Microsoft Store にアプリを提出する前に、```applicationId``` 変数と ```adUnitId``` 変数の値を Windows デベロッパー センターから取得した実際の値に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="13e91-114">Replace the values of the ```applicationId``` and ```adUnitId``` variables with live values from Windows Dev Center before submitting your app to the Store.</span></span> <span data-ttu-id="13e91-115">詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="13e91-115">For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).</span></span>
+<span data-ttu-id="9b58a-114">Microsoft Store にアプリを提出する前に、```applicationId``` 変数と ```adUnitId``` 変数の値を Windows デベロッパー センターから取得した実際の値に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9b58a-114">Replace the values of the ```applicationId``` and ```adUnitId``` variables with live values from Windows Dev Center before submitting your app to the Store.</span></span> <span data-ttu-id="9b58a-115">詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9b58a-115">For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="13e91-116">ビデオ スポット広告ではなくバナー スポット広告を表示するようにこの例を変更するには、[RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) メソッドの最初のパラメーターとして、**InterstitialAdType.video** の代わりに値 **InterstitialAdType.display** を渡します。</span><span class="sxs-lookup"><span data-stu-id="13e91-116">To alter this example to show an interstitial banner ad instead of an interstitial video ad, pass the value **InterstitialAdType.display** to the first parameter of the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method instead of **InterstitialAdType.video**.</span></span> <span data-ttu-id="13e91-117">詳しくは、「[スポット広告](interstitial-ads.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="13e91-117">For more information, see [Interstitial ads](interstitial-ads.md).</span></span>
+> <span data-ttu-id="9b58a-116">ビデオ スポット広告ではなくバナー スポット広告を表示するようにこの例を変更するには、[RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) メソッドの最初のパラメーターとして、**InterstitialAdType.video** の代わりに値 **InterstitialAdType.display** を渡します。</span><span class="sxs-lookup"><span data-stu-id="9b58a-116">To alter this example to show an interstitial banner ad instead of an interstitial video ad, pass the value **InterstitialAdType.display** to the first parameter of the [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) method instead of **InterstitialAdType.video**.</span></span> <span data-ttu-id="9b58a-117">詳しくは、「[スポット広告](interstitial-ads.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9b58a-117">For more information, see [Interstitial ads](interstitial-ads.md).</span></span>
 
-### <a name="indexhtml"></a><span data-ttu-id="13e91-118">index.html</span><span class="sxs-lookup"><span data-stu-id="13e91-118">index.html</span></span>
+### <a name="indexhtml"></a><span data-ttu-id="9b58a-118">index.html</span><span class="sxs-lookup"><span data-stu-id="9b58a-118">index.html</span></span>
 
 > [!div class="tabbedCodeSnippets"]
 [!code-html[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/index.html#L1-L21)]
 
-### <a name="scriptjs"></a><span data-ttu-id="13e91-119">script.js</span><span class="sxs-lookup"><span data-stu-id="13e91-119">script.js</span></span>
+### <a name="scriptjs"></a><span data-ttu-id="9b58a-119">script.js</span><span class="sxs-lookup"><span data-stu-id="9b58a-119">script.js</span></span>
 
 > [!div class="tabbedCodeSnippets"]
 [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#script)]
 
-### <a name="mainjs"></a><span data-ttu-id="13e91-120">main.js</span><span class="sxs-lookup"><span data-stu-id="13e91-120">main.js</span></span>
+### <a name="mainjs"></a><span data-ttu-id="9b58a-120">main.js</span><span class="sxs-lookup"><span data-stu-id="9b58a-120">main.js</span></span>
 
 > [!div class="tabbedCodeSnippets"]
 [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/main.js#main)]
 
-## <a name="related-topics"></a><span data-ttu-id="13e91-121">関連トピック</span><span class="sxs-lookup"><span data-stu-id="13e91-121">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="9b58a-121">関連トピック</span><span class="sxs-lookup"><span data-stu-id="9b58a-121">Related topics</span></span>
 
-* [<span data-ttu-id="13e91-122">GitHub の広告サンプル</span><span class="sxs-lookup"><span data-stu-id="13e91-122">Advertising samples on GitHub</span></span>](http://aka.ms/githubads)
+* [<span data-ttu-id="9b58a-122">GitHub の広告サンプル</span><span class="sxs-lookup"><span data-stu-id="9b58a-122">Advertising samples on GitHub</span></span>](http://aka.ms/githubads)
 
  

@@ -1,79 +1,79 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: ''
 description: アプリのエラーの CAB ファイルをダウンロードするには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: アプリのエラーの CAB ファイルをダウンロードする
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 分析 API, CAB のダウンロード
 ms.localizationpriority: medium
-ms.openlocfilehash: a74a72e1d02a73d2b930179d9d2cb99ea09c7c40
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 671c5c1b187ac48c12988a00d66acb366cae72f1
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662062"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612708"
 ---
-# <a name="download-the-cab-file-for-an-error-in-your-app"></a><span data-ttu-id="259f6-104">アプリのエラーの CAB ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="259f6-104">Download the CAB file for an error in your app</span></span>
+# <a name="download-the-cab-file-for-an-error-in-your-app"></a><span data-ttu-id="839fc-104">アプリのエラーの CAB ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="839fc-104">Download the CAB file for an error in your app</span></span>
 
-<span data-ttu-id="259f6-105">デベロッパー センターに報告された、アプリの特定のエラーに関連付けられている CAB ファイルをダウンロードするには、Microsoft Store 分析 API の以下のメソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="259f6-105">Use this method in the Microsoft Store analytics API to download the CAB file that is associated with a particular error in your app that was reported to Dev Center.</span></span> <span data-ttu-id="259f6-106">このメソッドでダウンロードできるのは、過去 30 日以内に発生したアプリのエラーに関する CAB ファイルのみです。</span><span class="sxs-lookup"><span data-stu-id="259f6-106">This method can only download the CAB file for an app error that occurred in the last 30 days.</span></span> <span data-ttu-id="259f6-107">CAB ファイルのダウンロードは、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションでも確認できます。</span><span class="sxs-lookup"><span data-stu-id="259f6-107">CAB file downloads are also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.</span></span>
+<span data-ttu-id="839fc-105">デベロッパー センターに報告された、アプリの特定のエラーに関連付けられている CAB ファイルをダウンロードするには、Microsoft Store 分析 API の以下のメソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="839fc-105">Use this method in the Microsoft Store analytics API to download the CAB file that is associated with a particular error in your app that was reported to Dev Center.</span></span> <span data-ttu-id="839fc-106">このメソッドでダウンロードできるのは、過去 30 日以内に発生したアプリのエラーに関する CAB ファイルのみです。</span><span class="sxs-lookup"><span data-stu-id="839fc-106">This method can only download the CAB file for an app error that occurred in the last 30 days.</span></span> <span data-ttu-id="839fc-107">CAB ファイルのダウンロードは、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションでも確認できます。</span><span class="sxs-lookup"><span data-stu-id="839fc-107">CAB file downloads are also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.</span></span>
 
-<span data-ttu-id="259f6-108">このメソッドを使うには、事前に 「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」のメソッドを使用し、ダウンロードする CAB ファイルの ID を取得しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="259f6-108">Before you can use this method, you must first use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve the ID of the CAB file you want to download.</span></span>
+<span data-ttu-id="839fc-108">このメソッドを使うには、事前に 「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」のメソッドを使用し、ダウンロードする CAB ファイルの ID を取得しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="839fc-108">Before you can use this method, you must first use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve the ID of the CAB file you want to download.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="259f6-109">前提条件</span><span class="sxs-lookup"><span data-stu-id="259f6-109">Prerequisites</span></span>
-
-
-<span data-ttu-id="259f6-110">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="259f6-110">To use this method, you need to first do the following:</span></span>
-
-* <span data-ttu-id="259f6-111">Microsoft Store 分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="259f6-111">If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.</span></span>
-* <span data-ttu-id="259f6-112">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="259f6-112">[Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="259f6-113">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="259f6-113">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="259f6-114">トークンの有効期限が切れたら、新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="259f6-114">After the token expires, you can obtain a new one.</span></span>
-* <span data-ttu-id="259f6-115">ダウンロードする CAB ファイルの ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="259f6-115">Get the ID of the CAB file you want to download.</span></span> <span data-ttu-id="259f6-116">この ID を取得するには、「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」のメソッドを使って、アプリの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文で **cabId** 値を使います。</span><span class="sxs-lookup"><span data-stu-id="259f6-116">To get this ID, use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method.</span></span>
-
-## <a name="request"></a><span data-ttu-id="259f6-117">要求</span><span class="sxs-lookup"><span data-stu-id="259f6-117">Request</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="839fc-109">前提条件</span><span class="sxs-lookup"><span data-stu-id="839fc-109">Prerequisites</span></span>
 
 
-### <a name="request-syntax"></a><span data-ttu-id="259f6-118">要求の構文</span><span class="sxs-lookup"><span data-stu-id="259f6-118">Request syntax</span></span>
+<span data-ttu-id="839fc-110">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="839fc-110">To use this method, you need to first do the following:</span></span>
 
-| <span data-ttu-id="259f6-119">メソッド</span><span class="sxs-lookup"><span data-stu-id="259f6-119">Method</span></span> | <span data-ttu-id="259f6-120">要求 URI</span><span class="sxs-lookup"><span data-stu-id="259f6-120">Request URI</span></span>                                                          |
+* <span data-ttu-id="839fc-111">Microsoft Store 分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="839fc-111">If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.</span></span>
+* <span data-ttu-id="839fc-112">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="839fc-112">[Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="839fc-113">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="839fc-113">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="839fc-114">トークンの有効期限が切れたら、新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="839fc-114">After the token expires, you can obtain a new one.</span></span>
+* <span data-ttu-id="839fc-115">ダウンロードする CAB ファイルの ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="839fc-115">Get the ID of the CAB file you want to download.</span></span> <span data-ttu-id="839fc-116">この ID を取得するには、「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」のメソッドを使って、アプリの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文で **cabId** 値を使います。</span><span class="sxs-lookup"><span data-stu-id="839fc-116">To get this ID, use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method.</span></span>
+
+## <a name="request"></a><span data-ttu-id="839fc-117">要求</span><span class="sxs-lookup"><span data-stu-id="839fc-117">Request</span></span>
+
+
+### <a name="request-syntax"></a><span data-ttu-id="839fc-118">要求の構文</span><span class="sxs-lookup"><span data-stu-id="839fc-118">Request syntax</span></span>
+
+| <span data-ttu-id="839fc-119">メソッド</span><span class="sxs-lookup"><span data-stu-id="839fc-119">Method</span></span> | <span data-ttu-id="839fc-120">要求 URI</span><span class="sxs-lookup"><span data-stu-id="839fc-120">Request URI</span></span>                                                          |
 |--------|----------------------------------------------------------------------|
-| <span data-ttu-id="259f6-121">GET</span><span class="sxs-lookup"><span data-stu-id="259f6-121">GET</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/cabdownload``` |
+| <span data-ttu-id="839fc-121">GET</span><span class="sxs-lookup"><span data-stu-id="839fc-121">GET</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/cabdownload``` |
 
 
-### <a name="request-header"></a><span data-ttu-id="259f6-122">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="259f6-122">Request header</span></span>
+### <a name="request-header"></a><span data-ttu-id="839fc-122">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="839fc-122">Request header</span></span>
 
-| <span data-ttu-id="259f6-123">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="259f6-123">Header</span></span>        | <span data-ttu-id="259f6-124">型</span><span class="sxs-lookup"><span data-stu-id="259f6-124">Type</span></span>   | <span data-ttu-id="259f6-125">説明</span><span class="sxs-lookup"><span data-stu-id="259f6-125">Description</span></span>                                                                 |
+| <span data-ttu-id="839fc-123">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="839fc-123">Header</span></span>        | <span data-ttu-id="839fc-124">型</span><span class="sxs-lookup"><span data-stu-id="839fc-124">Type</span></span>   | <span data-ttu-id="839fc-125">説明</span><span class="sxs-lookup"><span data-stu-id="839fc-125">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| <span data-ttu-id="259f6-126">Authorization</span><span class="sxs-lookup"><span data-stu-id="259f6-126">Authorization</span></span> | <span data-ttu-id="259f6-127">string</span><span class="sxs-lookup"><span data-stu-id="259f6-127">string</span></span> | <span data-ttu-id="259f6-128">必須。</span><span class="sxs-lookup"><span data-stu-id="259f6-128">Required.</span></span> <span data-ttu-id="259f6-129">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="259f6-129">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
+| <span data-ttu-id="839fc-126">Authorization</span><span class="sxs-lookup"><span data-stu-id="839fc-126">Authorization</span></span> | <span data-ttu-id="839fc-127">string</span><span class="sxs-lookup"><span data-stu-id="839fc-127">string</span></span> | <span data-ttu-id="839fc-128">必須。</span><span class="sxs-lookup"><span data-stu-id="839fc-128">Required.</span></span> <span data-ttu-id="839fc-129">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="839fc-129">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
 
 
-### <a name="request-parameters"></a><span data-ttu-id="259f6-130">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="259f6-130">Request parameters</span></span>
+### <a name="request-parameters"></a><span data-ttu-id="839fc-130">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="839fc-130">Request parameters</span></span>
 
-| <span data-ttu-id="259f6-131">パラメーター</span><span class="sxs-lookup"><span data-stu-id="259f6-131">Parameter</span></span>        | <span data-ttu-id="259f6-132">型</span><span class="sxs-lookup"><span data-stu-id="259f6-132">Type</span></span>   |  <span data-ttu-id="259f6-133">説明</span><span class="sxs-lookup"><span data-stu-id="259f6-133">Description</span></span>      |  <span data-ttu-id="259f6-134">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="259f6-134">Required</span></span>  |
+| <span data-ttu-id="839fc-131">パラメーター</span><span class="sxs-lookup"><span data-stu-id="839fc-131">Parameter</span></span>        | <span data-ttu-id="839fc-132">型</span><span class="sxs-lookup"><span data-stu-id="839fc-132">Type</span></span>   |  <span data-ttu-id="839fc-133">説明</span><span class="sxs-lookup"><span data-stu-id="839fc-133">Description</span></span>      |  <span data-ttu-id="839fc-134">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="839fc-134">Required</span></span>  |
 |---------------|--------|---------------|------|
-| <span data-ttu-id="259f6-135">applicationId</span><span class="sxs-lookup"><span data-stu-id="259f6-135">applicationId</span></span> | <span data-ttu-id="259f6-136">string</span><span class="sxs-lookup"><span data-stu-id="259f6-136">string</span></span> | <span data-ttu-id="259f6-137">CAB ファイルをダウンロードするアプリのストア ID です。</span><span class="sxs-lookup"><span data-stu-id="259f6-137">The Store ID of the app for which you want to download a CAB file.</span></span> <span data-ttu-id="259f6-138">ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。</span><span class="sxs-lookup"><span data-stu-id="259f6-138">The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard.</span></span> <span data-ttu-id="259f6-139">ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。</span><span class="sxs-lookup"><span data-stu-id="259f6-139">An example Store ID is 9WZDNCRFJ3Q8.</span></span> |  <span data-ttu-id="259f6-140">必須</span><span class="sxs-lookup"><span data-stu-id="259f6-140">Yes</span></span>  |
-| <span data-ttu-id="259f6-141">cabId</span><span class="sxs-lookup"><span data-stu-id="259f6-141">cabId</span></span> | <span data-ttu-id="259f6-142">string</span><span class="sxs-lookup"><span data-stu-id="259f6-142">string</span></span> | <span data-ttu-id="259f6-143">ダウンロードする CAB ファイルの一意の ID です。</span><span class="sxs-lookup"><span data-stu-id="259f6-143">The unique ID of the CAB file you want to download.</span></span> <span data-ttu-id="259f6-144">この ID を取得するには、「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」のメソッドを使って、アプリの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文で **cabId** 値を使います。</span><span class="sxs-lookup"><span data-stu-id="259f6-144">To get this ID, use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method.</span></span> |  <span data-ttu-id="259f6-145">必須</span><span class="sxs-lookup"><span data-stu-id="259f6-145">Yes</span></span>  |
+| <span data-ttu-id="839fc-135">applicationId</span><span class="sxs-lookup"><span data-stu-id="839fc-135">applicationId</span></span> | <span data-ttu-id="839fc-136">string</span><span class="sxs-lookup"><span data-stu-id="839fc-136">string</span></span> | <span data-ttu-id="839fc-137">CAB ファイルをダウンロードするアプリのストア ID です。</span><span class="sxs-lookup"><span data-stu-id="839fc-137">The Store ID of the app for which you want to download a CAB file.</span></span> <span data-ttu-id="839fc-138">ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。</span><span class="sxs-lookup"><span data-stu-id="839fc-138">The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard.</span></span> <span data-ttu-id="839fc-139">ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。</span><span class="sxs-lookup"><span data-stu-id="839fc-139">An example Store ID is 9WZDNCRFJ3Q8.</span></span> |  <span data-ttu-id="839fc-140">必須</span><span class="sxs-lookup"><span data-stu-id="839fc-140">Yes</span></span>  |
+| <span data-ttu-id="839fc-141">cabId</span><span class="sxs-lookup"><span data-stu-id="839fc-141">cabId</span></span> | <span data-ttu-id="839fc-142">string</span><span class="sxs-lookup"><span data-stu-id="839fc-142">string</span></span> | <span data-ttu-id="839fc-143">ダウンロードする CAB ファイルの一意の ID です。</span><span class="sxs-lookup"><span data-stu-id="839fc-143">The unique ID of the CAB file you want to download.</span></span> <span data-ttu-id="839fc-144">この ID を取得するには、「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」のメソッドを使って、アプリの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文で **cabId** 値を使います。</span><span class="sxs-lookup"><span data-stu-id="839fc-144">To get this ID, use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method.</span></span> |  <span data-ttu-id="839fc-145">必須</span><span class="sxs-lookup"><span data-stu-id="839fc-145">Yes</span></span>  |
 
  
-### <a name="request-example"></a><span data-ttu-id="259f6-146">要求の例</span><span class="sxs-lookup"><span data-stu-id="259f6-146">Request example</span></span>
+### <a name="request-example"></a><span data-ttu-id="839fc-146">要求の例</span><span class="sxs-lookup"><span data-stu-id="839fc-146">Request example</span></span>
 
-<span data-ttu-id="259f6-147">次の例は、このメソッドを使って CAB ファイルをダウンロードする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="259f6-147">The following example demonstrates how to download a CAB file using this method.</span></span> <span data-ttu-id="259f6-148">*applicationId* および *cabId* パラメーターを、アプリの適切な値に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="259f6-148">Replace the *applicationId* and *cabId* parameters with the appropriate values for your app.</span></span>
+<span data-ttu-id="839fc-147">次の例は、このメソッドを使って CAB ファイルをダウンロードする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="839fc-147">The following example demonstrates how to download a CAB file using this method.</span></span> <span data-ttu-id="839fc-148">*applicationId* および *cabId* パラメーターを、アプリの適切な値に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="839fc-148">Replace the *applicationId* and *cabId* parameters with the appropriate values for your app.</span></span>
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/cabdownload?applicationId=9NBLGGGZ5QDR&cabId=1336373323853 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a><span data-ttu-id="259f6-149">応答</span><span class="sxs-lookup"><span data-stu-id="259f6-149">Response</span></span>
+## <a name="response"></a><span data-ttu-id="839fc-149">応答</span><span class="sxs-lookup"><span data-stu-id="839fc-149">Response</span></span>
 
-<span data-ttu-id="259f6-150">このメソッドは 302 (リダイレクト) 応答コードを返します。また、応答に含まれる **Location** ヘッダーは、CAB ファイルの Shared Access Signature (SAS) URI に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="259f6-150">This method returns a 302 (redirect) response code, and the **Location** header in the response is assigned to the shared access signature (SAS) URI of the CAB file.</span></span> <span data-ttu-id="259f6-151">呼び出し元はこの URI にリダイレクトされ、CAB ファイルが自動的にダウンロードされます。</span><span class="sxs-lookup"><span data-stu-id="259f6-151">The caller is redirected to this URI to automatically download the CAB file.</span></span>
+<span data-ttu-id="839fc-150">このメソッドは 302 (リダイレクト) 応答コードを返します。また、応答に含まれる **Location** ヘッダーは、CAB ファイルの Shared Access Signature (SAS) URI に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="839fc-150">This method returns a 302 (redirect) response code, and the **Location** header in the response is assigned to the shared access signature (SAS) URI of the CAB file.</span></span> <span data-ttu-id="839fc-151">呼び出し元はこの URI にリダイレクトされ、CAB ファイルが自動的にダウンロードされます。</span><span class="sxs-lookup"><span data-stu-id="839fc-151">The caller is redirected to this URI to automatically download the CAB file.</span></span>
 
-## <a name="related-topics"></a><span data-ttu-id="259f6-152">関連トピック</span><span class="sxs-lookup"><span data-stu-id="259f6-152">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="839fc-152">関連トピック</span><span class="sxs-lookup"><span data-stu-id="839fc-152">Related topics</span></span>
 
-* [<span data-ttu-id="259f6-153">状態レポート</span><span class="sxs-lookup"><span data-stu-id="259f6-153">Health report</span></span>](../publish/health-report.md)
-* [<span data-ttu-id="259f6-154">Microsoft Store サービスを使った分析データへのアクセス</span><span class="sxs-lookup"><span data-stu-id="259f6-154">Access analytics data using Microsoft Store services</span></span>](access-analytics-data-using-windows-store-services.md)
-* [<span data-ttu-id="259f6-155">エラー報告データの取得</span><span class="sxs-lookup"><span data-stu-id="259f6-155">Get error reporting data</span></span>](get-error-reporting-data.md)
-* [<span data-ttu-id="259f6-156">アプリのエラーに関する詳細情報の取得</span><span class="sxs-lookup"><span data-stu-id="259f6-156">Get details for an error in your app</span></span>](get-details-for-an-error-in-your-app.md)
-* [<span data-ttu-id="259f6-157">アプリのエラーに関するスタック トレースの取得</span><span class="sxs-lookup"><span data-stu-id="259f6-157">Get the stack trace for an error in your app</span></span>](get-the-stack-trace-for-an-error-in-your-app.md)
+* [<span data-ttu-id="839fc-153">[正常性] レポート</span><span class="sxs-lookup"><span data-stu-id="839fc-153">Health report</span></span>](../publish/health-report.md)
+* [<span data-ttu-id="839fc-154">Microsoft Store サービスを使った分析データへのアクセス</span><span class="sxs-lookup"><span data-stu-id="839fc-154">Access analytics data using Microsoft Store services</span></span>](access-analytics-data-using-windows-store-services.md)
+* [<span data-ttu-id="839fc-155">エラー報告データの取得</span><span class="sxs-lookup"><span data-stu-id="839fc-155">Get error reporting data</span></span>](get-error-reporting-data.md)
+* [<span data-ttu-id="839fc-156">アプリのエラーに関する詳細情報の取得</span><span class="sxs-lookup"><span data-stu-id="839fc-156">Get details for an error in your app</span></span>](get-details-for-an-error-in-your-app.md)
+* [<span data-ttu-id="839fc-157">アプリのエラーに関するスタック トレースの取得</span><span class="sxs-lookup"><span data-stu-id="839fc-157">Get the stack trace for an error in your app</span></span>](get-the-stack-trace-for-an-error-in-your-app.md)

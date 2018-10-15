@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML、コントロール、ボックス化、スカラー、値
 ms.localizationpriority: medium
 ms.openlocfilehash: 7496725d84339de5e318ee6c00aebefb204af751
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570205"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614379"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a><span data-ttu-id="4bf74-105">C++/WinRT を使用した IInspectable へのスカラー値のボックス化とボックス化解除</span><span class="sxs-lookup"><span data-stu-id="4bf74-105">Boxing and unboxing scalar values to IInspectable with C++/WinRT</span></span>
  

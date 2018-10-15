@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クリエーター
 ms.localizationpriority: medium
 ms.openlocfilehash: bca840455af68b8584901476de2e8e26973b9b0f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573197"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614076"
 ---
 # <a name="step-by-step-guide-to-integrate-xbox-live-creators-program"></a><span data-ttu-id="10a1e-104">Xbox Live クリエーターズ プログラムを統合するためのステップ バイ ステップ ガイド</span><span class="sxs-lookup"><span data-stu-id="10a1e-104">Step by step guide to integrate Xbox Live Creators Program</span></span>
 

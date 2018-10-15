@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 日付範囲やその他のオプション フィルターを指定して、デスクトップ アプリケーションに関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: デスクトップ アプリケーションのエラー報告データの取得
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, デスクトップ アプリケーション
 ms.localizationpriority: medium
-ms.openlocfilehash: 66594fd6f59281011fccab21ad5618827db322dd
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: d3f966d2026d32276fee2ed43a353c4a2898d6a1
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573826"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613447"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a><span data-ttu-id="d9c20-104">デスクトップ アプリケーションのエラー報告データの取得</span><span class="sxs-lookup"><span data-stu-id="d9c20-104">Get error reporting data for your desktop application</span></span>
 

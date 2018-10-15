@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK、Microsoft Store は、アプリによる収益の向上と顧客エンゲージメントによるユーザー獲得のための多くの機能を提供します。
 title: 収益化、エンゲージメント、ストア サービス
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 11/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 収益化, エンゲージメント, プロモーション, ストア サービス
 ms.localizationpriority: medium
-ms.openlocfilehash: 02ef073e319af3fe2cf3bdd7906a7027200c4854
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: abd6c772ed84934a54c1755b5d55d398e34fbad9
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573733"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610490"
 ---
 # <a name="monetization-engagement-and-store-services"></a><span data-ttu-id="e0d3a-104">収益化、エンゲージメント、ストア サービス</span><span class="sxs-lookup"><span data-stu-id="e0d3a-104">Monetization, engagement, and Store services</span></span>
 

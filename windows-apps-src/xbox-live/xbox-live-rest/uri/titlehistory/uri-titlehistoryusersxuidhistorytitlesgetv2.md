@@ -12,89 +12,89 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 966ff94004d6fd6bfc404800c5ea6561ae3a3864
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570537"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613323"
 ---
-# <a name="get-usersxuidxuidhistorytitles"></a><span data-ttu-id="99c5f-104">GET (/users/xuid({xuid})/history/titles)</span><span class="sxs-lookup"><span data-stu-id="99c5f-104">GET (/users/xuid({xuid})/history/titles)</span></span>
-<span data-ttu-id="99c5f-105">タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="99c5f-105">Gets a list of titles for which the user has unlocked or made progress on its achievements.</span></span> <span data-ttu-id="99c5f-106">この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。</span><span class="sxs-lookup"><span data-stu-id="99c5f-106">This API does not return a user's full history of titles played or launched.</span></span> <span data-ttu-id="99c5f-107">これらの Uri のドメインが`achievements.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="99c5f-107">The domain for these URIs is `achievements.xboxlive.com`.</span></span>
+# <a name="get-usersxuidxuidhistorytitles"></a><span data-ttu-id="d665a-104">GET (/users/xuid({xuid})/history/titles)</span><span class="sxs-lookup"><span data-stu-id="d665a-104">GET (/users/xuid({xuid})/history/titles)</span></span>
+<span data-ttu-id="d665a-105">タイトルは、ユーザーがロックを解除またはその実績の進行状況を行ったの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="d665a-105">Gets a list of titles for which the user has unlocked or made progress on its achievements.</span></span> <span data-ttu-id="d665a-106">この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。</span><span class="sxs-lookup"><span data-stu-id="d665a-106">This API does not return a user's full history of titles played or launched.</span></span> <span data-ttu-id="d665a-107">これらの Uri のドメインが`achievements.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="d665a-107">The domain for these URIs is `achievements.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="99c5f-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="99c5f-108">URI parameters</span></span>](#ID4EY)
-  * [<span data-ttu-id="99c5f-109">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="99c5f-109">Query string parameters</span></span>](#ID4EDB)
-  * [<span data-ttu-id="99c5f-110">Authorization</span><span class="sxs-lookup"><span data-stu-id="99c5f-110">Authorization</span></span>](#ID4EFD)
-  * [<span data-ttu-id="99c5f-111">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="99c5f-111">Optional Request Headers</span></span>](#ID4EGE)
-  * [<span data-ttu-id="99c5f-112">要求本文</span><span class="sxs-lookup"><span data-stu-id="99c5f-112">Request body</span></span>](#ID4ERF)
+  * [<span data-ttu-id="d665a-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="d665a-108">URI parameters</span></span>](#ID4EY)
+  * [<span data-ttu-id="d665a-109">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="d665a-109">Query string parameters</span></span>](#ID4EDB)
+  * [<span data-ttu-id="d665a-110">Authorization</span><span class="sxs-lookup"><span data-stu-id="d665a-110">Authorization</span></span>](#ID4EFD)
+  * [<span data-ttu-id="d665a-111">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="d665a-111">Optional Request Headers</span></span>](#ID4EGE)
+  * [<span data-ttu-id="d665a-112">要求本文</span><span class="sxs-lookup"><span data-stu-id="d665a-112">Request body</span></span>](#ID4ERF)
  
 <a id="ID4EY"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="99c5f-113">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="99c5f-113">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="d665a-113">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="d665a-113">URI parameters</span></span>
  
-| <span data-ttu-id="99c5f-114">パラメーター</span><span class="sxs-lookup"><span data-stu-id="99c5f-114">Parameter</span></span>| <span data-ttu-id="99c5f-115">型</span><span class="sxs-lookup"><span data-stu-id="99c5f-115">Type</span></span>| <span data-ttu-id="99c5f-116">説明</span><span class="sxs-lookup"><span data-stu-id="99c5f-116">Description</span></span>| 
+| <span data-ttu-id="d665a-114">パラメーター</span><span class="sxs-lookup"><span data-stu-id="d665a-114">Parameter</span></span>| <span data-ttu-id="d665a-115">型</span><span class="sxs-lookup"><span data-stu-id="d665a-115">Type</span></span>| <span data-ttu-id="d665a-116">説明</span><span class="sxs-lookup"><span data-stu-id="d665a-116">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="99c5f-117">xuid</span><span class="sxs-lookup"><span data-stu-id="99c5f-117">xuid</span></span>| <span data-ttu-id="99c5f-118">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="99c5f-118">64-bit unsigned integer</span></span>| <span data-ttu-id="99c5f-119">Xbox ユーザー ID (XUID) がタイトル履歴にアクセスしているユーザー。</span><span class="sxs-lookup"><span data-stu-id="99c5f-119">Xbox User ID (XUID) of the user whose title history is being accessed.</span></span>| 
+| <span data-ttu-id="d665a-117">xuid</span><span class="sxs-lookup"><span data-stu-id="d665a-117">xuid</span></span>| <span data-ttu-id="d665a-118">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="d665a-118">64-bit unsigned integer</span></span>| <span data-ttu-id="d665a-119">Xbox ユーザー ID (XUID) がタイトル履歴にアクセスしているユーザーのです。</span><span class="sxs-lookup"><span data-stu-id="d665a-119">Xbox User ID (XUID) of the user whose title history is being accessed.</span></span>| 
   
 <a id="ID4EDB"></a>
 
  
-## <a name="query-string-parameters"></a><span data-ttu-id="99c5f-120">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="99c5f-120">Query string parameters</span></span>
+## <a name="query-string-parameters"></a><span data-ttu-id="d665a-120">クエリ文字列パラメーター</span><span class="sxs-lookup"><span data-stu-id="d665a-120">Query string parameters</span></span>
  
-| <span data-ttu-id="99c5f-121">パラメーター</span><span class="sxs-lookup"><span data-stu-id="99c5f-121">Parameter</span></span>| <span data-ttu-id="99c5f-122">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="99c5f-122">Required</span></span>| <span data-ttu-id="99c5f-123">種類</span><span class="sxs-lookup"><span data-stu-id="99c5f-123">Type</span></span>| <span data-ttu-id="99c5f-124">説明</span><span class="sxs-lookup"><span data-stu-id="99c5f-124">Description</span></span>| 
+| <span data-ttu-id="d665a-121">パラメーター</span><span class="sxs-lookup"><span data-stu-id="d665a-121">Parameter</span></span>| <span data-ttu-id="d665a-122">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="d665a-122">Required</span></span>| <span data-ttu-id="d665a-123">種類</span><span class="sxs-lookup"><span data-stu-id="d665a-123">Type</span></span>| <span data-ttu-id="d665a-124">説明</span><span class="sxs-lookup"><span data-stu-id="d665a-124">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="99c5f-125">skipItems</span><span class="sxs-lookup"><span data-stu-id="99c5f-125">skipItems</span></span>| <span data-ttu-id="99c5f-126">いいえ</span><span class="sxs-lookup"><span data-stu-id="99c5f-126">No</span></span>| <span data-ttu-id="99c5f-127">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="99c5f-127">32-bit signed integer</span></span>| <span data-ttu-id="99c5f-128">特定の項目数後から始まって項目を返します。</span><span class="sxs-lookup"><span data-stu-id="99c5f-128">Return items beginning after the given number of items.</span></span> <span data-ttu-id="99c5f-129">たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。</span><span class="sxs-lookup"><span data-stu-id="99c5f-129">For example, <b>skipItems="3"</b> will retrieve items beginning with the fourth item retrieved.</span></span> | 
-| <span data-ttu-id="99c5f-130">continuationToken</span><span class="sxs-lookup"><span data-stu-id="99c5f-130">continuationToken</span></span>| <span data-ttu-id="99c5f-131">いいえ</span><span class="sxs-lookup"><span data-stu-id="99c5f-131">No</span></span>| <span data-ttu-id="99c5f-132">string</span><span class="sxs-lookup"><span data-stu-id="99c5f-132">string</span></span>| <span data-ttu-id="99c5f-133">特定の継続トークンで始まる項目を返します。</span><span class="sxs-lookup"><span data-stu-id="99c5f-133">Return the items starting at the given continuation token.</span></span> | 
-| <span data-ttu-id="99c5f-134">maxItems</span><span class="sxs-lookup"><span data-stu-id="99c5f-134">maxItems</span></span>| <span data-ttu-id="99c5f-135">いいえ</span><span class="sxs-lookup"><span data-stu-id="99c5f-135">No</span></span>| <span data-ttu-id="99c5f-136">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="99c5f-136">32-bit signed integer</span></span>| <span data-ttu-id="99c5f-137"><b>SkipItems</b>と項目の範囲を返す<b>continuationToken</b>と組み合わせることができるコレクションから返される項目の最大数。</span><span class="sxs-lookup"><span data-stu-id="99c5f-137">Maximum number of items to return from the collection, which can be combined with <b>skipItems</b> and <b>continuationToken</b> to return a range of items.</span></span> <span data-ttu-id="99c5f-138">サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。</span><span class="sxs-lookup"><span data-stu-id="99c5f-138">The service may provide a default value if <b>maxItems</b> is not present, and may return fewer than <b>maxItems</b>, even if the last page of results has not yet been returned.</span></span> | 
+| <span data-ttu-id="d665a-125">skipItems</span><span class="sxs-lookup"><span data-stu-id="d665a-125">skipItems</span></span>| <span data-ttu-id="d665a-126">いいえ</span><span class="sxs-lookup"><span data-stu-id="d665a-126">No</span></span>| <span data-ttu-id="d665a-127">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="d665a-127">32-bit signed integer</span></span>| <span data-ttu-id="d665a-128">特定の項目数後から始まって項目を返します。</span><span class="sxs-lookup"><span data-stu-id="d665a-128">Return items beginning after the given number of items.</span></span> <span data-ttu-id="d665a-129">たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。</span><span class="sxs-lookup"><span data-stu-id="d665a-129">For example, <b>skipItems="3"</b> will retrieve items beginning with the fourth item retrieved.</span></span> | 
+| <span data-ttu-id="d665a-130">continuationToken</span><span class="sxs-lookup"><span data-stu-id="d665a-130">continuationToken</span></span>| <span data-ttu-id="d665a-131">いいえ</span><span class="sxs-lookup"><span data-stu-id="d665a-131">No</span></span>| <span data-ttu-id="d665a-132">string</span><span class="sxs-lookup"><span data-stu-id="d665a-132">string</span></span>| <span data-ttu-id="d665a-133">特定の継続トークンから項目を返します。</span><span class="sxs-lookup"><span data-stu-id="d665a-133">Return the items starting at the given continuation token.</span></span> | 
+| <span data-ttu-id="d665a-134">maxItems</span><span class="sxs-lookup"><span data-stu-id="d665a-134">maxItems</span></span>| <span data-ttu-id="d665a-135">いいえ</span><span class="sxs-lookup"><span data-stu-id="d665a-135">No</span></span>| <span data-ttu-id="d665a-136">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="d665a-136">32-bit signed integer</span></span>| <span data-ttu-id="d665a-137"><b>SkipItems</b>と項目の範囲を返す<b>continuationToken</b>と組み合わせることができるコレクションから返される項目の最大数。</span><span class="sxs-lookup"><span data-stu-id="d665a-137">Maximum number of items to return from the collection, which can be combined with <b>skipItems</b> and <b>continuationToken</b> to return a range of items.</span></span> <span data-ttu-id="d665a-138">サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d665a-138">The service may provide a default value if <b>maxItems</b> is not present, and may return fewer than <b>maxItems</b>, even if the last page of results has not yet been returned.</span></span> | 
   
 <a id="ID4EFD"></a>
 
  
-## <a name="authorization"></a><span data-ttu-id="99c5f-139">Authorization</span><span class="sxs-lookup"><span data-stu-id="99c5f-139">Authorization</span></span>
+## <a name="authorization"></a><span data-ttu-id="d665a-139">Authorization</span><span class="sxs-lookup"><span data-stu-id="d665a-139">Authorization</span></span>
  
-| <span data-ttu-id="99c5f-140">要求</span><span class="sxs-lookup"><span data-stu-id="99c5f-140">Claim</span></span>| <span data-ttu-id="99c5f-141">必須?</span><span class="sxs-lookup"><span data-stu-id="99c5f-141">Required?</span></span>| <span data-ttu-id="99c5f-142">説明</span><span class="sxs-lookup"><span data-stu-id="99c5f-142">Description</span></span>| <span data-ttu-id="99c5f-143">不足している場合の動作</span><span class="sxs-lookup"><span data-stu-id="99c5f-143">Behavior if missing</span></span>| 
+| <span data-ttu-id="d665a-140">要求</span><span class="sxs-lookup"><span data-stu-id="d665a-140">Claim</span></span>| <span data-ttu-id="d665a-141">必須?</span><span class="sxs-lookup"><span data-stu-id="d665a-141">Required?</span></span>| <span data-ttu-id="d665a-142">説明</span><span class="sxs-lookup"><span data-stu-id="d665a-142">Description</span></span>| <span data-ttu-id="d665a-143">不足している場合の動作</span><span class="sxs-lookup"><span data-stu-id="d665a-143">Behavior if missing</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="99c5f-144">ユーザー</span><span class="sxs-lookup"><span data-stu-id="99c5f-144">User</span></span>| <span data-ttu-id="99c5f-145">呼び出し元は、承認された Xbox LIVE ユーザーです。</span><span class="sxs-lookup"><span data-stu-id="99c5f-145">Caller is an authorized Xbox LIVE user.</span></span>| <span data-ttu-id="99c5f-146">呼び出し元は、Xbox LIVE で有効なユーザーをする必要があります。</span><span class="sxs-lookup"><span data-stu-id="99c5f-146">The caller needs to be a valid user on Xbox LIVE.</span></span>| <span data-ttu-id="99c5f-147">403 Forbidden</span><span class="sxs-lookup"><span data-stu-id="99c5f-147">403 Forbidden</span></span>| 
+| <span data-ttu-id="d665a-144">ユーザー</span><span class="sxs-lookup"><span data-stu-id="d665a-144">User</span></span>| <span data-ttu-id="d665a-145">呼び出し元が、承認された Xbox LIVE ユーザーです。</span><span class="sxs-lookup"><span data-stu-id="d665a-145">Caller is an authorized Xbox LIVE user.</span></span>| <span data-ttu-id="d665a-146">呼び出し元は、Xbox LIVE で有効なユーザーをする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d665a-146">The caller needs to be a valid user on Xbox LIVE.</span></span>| <span data-ttu-id="d665a-147">403 Forbidden</span><span class="sxs-lookup"><span data-stu-id="d665a-147">403 Forbidden</span></span>| 
   
 <a id="ID4EGE"></a>
 
  
-## <a name="optional-request-headers"></a><span data-ttu-id="99c5f-148">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="99c5f-148">Optional Request Headers</span></span>
+## <a name="optional-request-headers"></a><span data-ttu-id="d665a-148">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="d665a-148">Optional Request Headers</span></span>
  
-| <span data-ttu-id="99c5f-149">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="99c5f-149">Header</span></span>| <span data-ttu-id="99c5f-150">型</span><span class="sxs-lookup"><span data-stu-id="99c5f-150">Type</span></span>| <span data-ttu-id="99c5f-151">説明</span><span class="sxs-lookup"><span data-stu-id="99c5f-151">Description</span></span>| 
+| <span data-ttu-id="d665a-149">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="d665a-149">Header</span></span>| <span data-ttu-id="d665a-150">型</span><span class="sxs-lookup"><span data-stu-id="d665a-150">Type</span></span>| <span data-ttu-id="d665a-151">説明</span><span class="sxs-lookup"><span data-stu-id="d665a-151">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <b><span data-ttu-id="99c5f-152">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="99c5f-152">X-RequestedServiceVersion</span></span></b>| <span data-ttu-id="99c5f-153">string</span><span class="sxs-lookup"><span data-stu-id="99c5f-153">string</span></span>| <span data-ttu-id="99c5f-154">この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="99c5f-154">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="99c5f-155">要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。</span><span class="sxs-lookup"><span data-stu-id="99c5f-155">The request will only be routed to that service after verifying the validity of the header, the claims in the auth token, etc.</span></span>| 
-| <b><span data-ttu-id="99c5f-156">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="99c5f-156">x-xbl-contract-version</span></span></b>| <span data-ttu-id="99c5f-157">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="99c5f-157">32-bit unsigned integer</span></span>| <span data-ttu-id="99c5f-158">存在する場合、2 に設定すると、この API の V2 バージョンが使用されます。</span><span class="sxs-lookup"><span data-stu-id="99c5f-158">If present and set to 2, the V2 version of this API will be used.</span></span> <span data-ttu-id="99c5f-159">それ以外の場合、V1 します。</span><span class="sxs-lookup"><span data-stu-id="99c5f-159">Otherwise, V1.</span></span>| 
+| <b><span data-ttu-id="d665a-152">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="d665a-152">X-RequestedServiceVersion</span></span></b>| <span data-ttu-id="d665a-153">string</span><span class="sxs-lookup"><span data-stu-id="d665a-153">string</span></span>| <span data-ttu-id="d665a-154">この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="d665a-154">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="d665a-155">要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。</span><span class="sxs-lookup"><span data-stu-id="d665a-155">The request will only be routed to that service after verifying the validity of the header, the claims in the auth token, etc.</span></span>| 
+| <b><span data-ttu-id="d665a-156">x xbl コントラクト バージョン</span><span class="sxs-lookup"><span data-stu-id="d665a-156">x-xbl-contract-version</span></span></b>| <span data-ttu-id="d665a-157">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="d665a-157">32-bit unsigned integer</span></span>| <span data-ttu-id="d665a-158">存在する場合、2 に設定すると、この API の V2 バージョンが使用されます。</span><span class="sxs-lookup"><span data-stu-id="d665a-158">If present and set to 2, the V2 version of this API will be used.</span></span> <span data-ttu-id="d665a-159">それ以外の場合、V1 します。</span><span class="sxs-lookup"><span data-stu-id="d665a-159">Otherwise, V1.</span></span>| 
   
 <a id="ID4ERF"></a>
 
  
-## <a name="request-body"></a><span data-ttu-id="99c5f-160">要求本文</span><span class="sxs-lookup"><span data-stu-id="99c5f-160">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="d665a-160">要求本文</span><span class="sxs-lookup"><span data-stu-id="d665a-160">Request body</span></span>
  
-<span data-ttu-id="99c5f-161">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="99c5f-161">No objects are sent in the body of this request.</span></span>
+<span data-ttu-id="d665a-161">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="d665a-161">No objects are sent in the body of this request.</span></span>
   
 <a id="ID4EDG"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="99c5f-162">関連項目</span><span class="sxs-lookup"><span data-stu-id="99c5f-162">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d665a-162">関連項目</span><span class="sxs-lookup"><span data-stu-id="d665a-162">See also</span></span>
  
 <a id="ID4EFG"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="99c5f-163">Parent</span><span class="sxs-lookup"><span data-stu-id="99c5f-163">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="d665a-163">Parent</span><span class="sxs-lookup"><span data-stu-id="d665a-163">Parent</span></span> 
 
-[<span data-ttu-id="99c5f-164">/users/xuid({xuid})/history/titles</span><span class="sxs-lookup"><span data-stu-id="99c5f-164">/users/xuid({xuid})/history/titles</span></span>](uri-titlehistoryusersxuidhistorytitlesv2.md)
+[<span data-ttu-id="d665a-164">/users/xuid({xuid})/history/titles</span><span class="sxs-lookup"><span data-stu-id="d665a-164">/users/xuid({xuid})/history/titles</span></span>](uri-titlehistoryusersxuidhistorytitlesv2.md)
 
   
 <a id="ID4EPG"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="99c5f-165">リファレンス</span><span class="sxs-lookup"><span data-stu-id="99c5f-165">Reference</span></span> 
+##### <a name="reference"></a><span data-ttu-id="d665a-165">リファレンス</span><span class="sxs-lookup"><span data-stu-id="d665a-165">Reference</span></span> 
 
-[<span data-ttu-id="99c5f-166">UserTitle (JSON)</span><span class="sxs-lookup"><span data-stu-id="99c5f-166">UserTitle (JSON)</span></span>](../../json/json-usertitlev2.md)
+[<span data-ttu-id="d665a-166">UserTitle (JSON)</span><span class="sxs-lookup"><span data-stu-id="d665a-166">UserTitle (JSON)</span></span>](../../json/json-usertitlev2.md)
 
- [<span data-ttu-id="99c5f-167">PagingInfo (JSON)</span><span class="sxs-lookup"><span data-stu-id="99c5f-167">PagingInfo (JSON)</span></span>](../../json/json-paginginfo.md)
+ [<span data-ttu-id="d665a-167">PagingInfo (JSON)</span><span class="sxs-lookup"><span data-stu-id="d665a-167">PagingInfo (JSON)</span></span>](../../json/json-paginginfo.md)
 
- [<span data-ttu-id="99c5f-168">ページング パラメーター</span><span class="sxs-lookup"><span data-stu-id="99c5f-168">Paging Parameters</span></span>](../../additional/pagingparameters.md)
+ [<span data-ttu-id="d665a-168">ページング パラメーター</span><span class="sxs-lookup"><span data-stu-id="d665a-168">Paging Parameters</span></span>](../../additional/pagingparameters.md)
 
    

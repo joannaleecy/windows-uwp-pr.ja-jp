@@ -12,31 +12,31 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 681a269cd861f741e2bbde3554acc1b25104d90d
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563456"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611823"
 ---
-# <a name="gameclipthumbnail-json"></a><span data-ttu-id="867ab-104">GameClipThumbnail (JSON)</span><span class="sxs-lookup"><span data-stu-id="867ab-104">GameClipThumbnail (JSON)</span></span>
-<span data-ttu-id="867ab-105">個々 のサムネイルに関連する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="867ab-105">Contains the information related to an individual thumbnail.</span></span> <span data-ttu-id="867ab-106">1 つのクリップを複数のサイズが存在することができ、表示用の適切なものを選択するクライアントがします。</span><span class="sxs-lookup"><span data-stu-id="867ab-106">There can be multiple sizes per clip, and it is up to the client to select the proper one for display.</span></span> 
+# <a name="gameclipthumbnail-json"></a><span data-ttu-id="82df1-104">GameClipThumbnail (JSON)</span><span class="sxs-lookup"><span data-stu-id="82df1-104">GameClipThumbnail (JSON)</span></span>
+<span data-ttu-id="82df1-105">個々 のサムネイルに関連する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="82df1-105">Contains the information related to an individual thumbnail.</span></span> <span data-ttu-id="82df1-106">1 つのクリップを複数のサイズが存在することができ、表示用の適切なものを選択するクライアントが。</span><span class="sxs-lookup"><span data-stu-id="82df1-106">There can be multiple sizes per clip, and it is up to the client to select the proper one for display.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="gameclipthumbnail"></a><span data-ttu-id="867ab-107">GameClipThumbnail</span><span class="sxs-lookup"><span data-stu-id="867ab-107">GameClipThumbnail</span></span>
+## <a name="gameclipthumbnail"></a><span data-ttu-id="82df1-107">GameClipThumbnail</span><span class="sxs-lookup"><span data-stu-id="82df1-107">GameClipThumbnail</span></span>
  
-<span data-ttu-id="867ab-108">GameClipThumbnail オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="867ab-108">The GameClipThumbnail object has the following specification.</span></span>
+<span data-ttu-id="82df1-108">GameClipThumbnail オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="82df1-108">The GameClipThumbnail object has the following specification.</span></span>
  
-| <span data-ttu-id="867ab-109">メンバー</span><span class="sxs-lookup"><span data-stu-id="867ab-109">Member</span></span>| <span data-ttu-id="867ab-110">種類</span><span class="sxs-lookup"><span data-stu-id="867ab-110">Type</span></span>| <span data-ttu-id="867ab-111">説明</span><span class="sxs-lookup"><span data-stu-id="867ab-111">Description</span></span>| 
+| <span data-ttu-id="82df1-109">メンバー</span><span class="sxs-lookup"><span data-stu-id="82df1-109">Member</span></span>| <span data-ttu-id="82df1-110">種類</span><span class="sxs-lookup"><span data-stu-id="82df1-110">Type</span></span>| <span data-ttu-id="82df1-111">説明</span><span class="sxs-lookup"><span data-stu-id="82df1-111">Description</span></span>| 
 | --- | --- | --- | 
-| <b><span data-ttu-id="867ab-112">uri</span><span class="sxs-lookup"><span data-stu-id="867ab-112">uri</span></span></b>| <span data-ttu-id="867ab-113">string</span><span class="sxs-lookup"><span data-stu-id="867ab-113">string</span></span>| <span data-ttu-id="867ab-114">サムネイル画像の URI。</span><span class="sxs-lookup"><span data-stu-id="867ab-114">The URI for the thumbnail image.</span></span>| 
-| <b><span data-ttu-id="867ab-115">fileSize</span><span class="sxs-lookup"><span data-stu-id="867ab-115">fileSize</span></span></b>| <span data-ttu-id="867ab-116">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="867ab-116">32-bit unsigned integer</span></span>| <span data-ttu-id="867ab-117">サムネイル画像の合計ファイル サイズ。</span><span class="sxs-lookup"><span data-stu-id="867ab-117">The total file size of the thumbnail image.</span></span>| 
-| <b><span data-ttu-id="867ab-118">thumbnailType</span><span class="sxs-lookup"><span data-stu-id="867ab-118">thumbnailType</span></span></b>| <span data-ttu-id="867ab-119">ThumbnailType</span><span class="sxs-lookup"><span data-stu-id="867ab-119">ThumbnailType</span></span>| <span data-ttu-id="867ab-120">サムネイル画像の種類です。</span><span class="sxs-lookup"><span data-stu-id="867ab-120">The type of thumbnail image.</span></span>| 
+| <b><span data-ttu-id="82df1-112">uri</span><span class="sxs-lookup"><span data-stu-id="82df1-112">uri</span></span></b>| <span data-ttu-id="82df1-113">string</span><span class="sxs-lookup"><span data-stu-id="82df1-113">string</span></span>| <span data-ttu-id="82df1-114">サムネイル画像の URI。</span><span class="sxs-lookup"><span data-stu-id="82df1-114">The URI for the thumbnail image.</span></span>| 
+| <b><span data-ttu-id="82df1-115">fileSize</span><span class="sxs-lookup"><span data-stu-id="82df1-115">fileSize</span></span></b>| <span data-ttu-id="82df1-116">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="82df1-116">32-bit unsigned integer</span></span>| <span data-ttu-id="82df1-117">サムネイル画像の合計ファイル サイズ。</span><span class="sxs-lookup"><span data-stu-id="82df1-117">The total file size of the thumbnail image.</span></span>| 
+| <b><span data-ttu-id="82df1-118">thumbnailType</span><span class="sxs-lookup"><span data-stu-id="82df1-118">thumbnailType</span></span></b>| <span data-ttu-id="82df1-119">ThumbnailType</span><span class="sxs-lookup"><span data-stu-id="82df1-119">ThumbnailType</span></span>| <span data-ttu-id="82df1-120">サムネイル画像の種類です。</span><span class="sxs-lookup"><span data-stu-id="82df1-120">The type of thumbnail image.</span></span>| 
   
 <a id="ID4EAC"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="867ab-121">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="867ab-121">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="82df1-121">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="82df1-121">Sample JSON syntax</span></span>
  
 
 ```json
@@ -53,13 +53,13 @@ ms.locfileid: "4563456"
 <a id="ID4EJC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="867ab-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="867ab-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="82df1-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="82df1-122">See also</span></span>
  
 <a id="ID4ELC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="867ab-123">Parent</span><span class="sxs-lookup"><span data-stu-id="867ab-123">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="82df1-123">Parent</span><span class="sxs-lookup"><span data-stu-id="82df1-123">Parent</span></span> 
 
-[<span data-ttu-id="867ab-124">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="867ab-124">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="82df1-124">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="82df1-124">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

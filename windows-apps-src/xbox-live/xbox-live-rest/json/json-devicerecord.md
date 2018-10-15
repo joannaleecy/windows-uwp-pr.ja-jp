@@ -12,30 +12,30 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae61df42706ea3ff3f52678feef8510974b5534
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563765"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612400"
 ---
-# <a name="devicerecord-json"></a><span data-ttu-id="3dfd5-104">DeviceRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="3dfd5-104">DeviceRecord (JSON)</span></span>
-<span data-ttu-id="3dfd5-105">その型とそれに対するアクティブなタイトルを含む、デバイスに関する情報。</span><span class="sxs-lookup"><span data-stu-id="3dfd5-105">Information about a device, including its type and the titles active on it.</span></span> 
+# <a name="devicerecord-json"></a><span data-ttu-id="b4b81-104">DeviceRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="b4b81-104">DeviceRecord (JSON)</span></span>
+<span data-ttu-id="b4b81-105">その型にアクティブなタイトルなど、デバイスに関する情報。</span><span class="sxs-lookup"><span data-stu-id="b4b81-105">Information about a device, including its type and the titles active on it.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="devicerecord"></a><span data-ttu-id="3dfd5-106">DeviceRecord</span><span class="sxs-lookup"><span data-stu-id="3dfd5-106">DeviceRecord</span></span>
+## <a name="devicerecord"></a><span data-ttu-id="b4b81-106">DeviceRecord</span><span class="sxs-lookup"><span data-stu-id="b4b81-106">DeviceRecord</span></span>
  
-<span data-ttu-id="3dfd5-107">DeviceRecord オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="3dfd5-107">The DeviceRecord object has the following specification.</span></span>
+<span data-ttu-id="b4b81-107">DeviceRecord オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="b4b81-107">The DeviceRecord object has the following specification.</span></span>
  
-| <span data-ttu-id="3dfd5-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="3dfd5-108">Member</span></span>| <span data-ttu-id="3dfd5-109">種類</span><span class="sxs-lookup"><span data-stu-id="3dfd5-109">Type</span></span>| <span data-ttu-id="3dfd5-110">説明</span><span class="sxs-lookup"><span data-stu-id="3dfd5-110">Description</span></span>| 
+| <span data-ttu-id="b4b81-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="b4b81-108">Member</span></span>| <span data-ttu-id="b4b81-109">種類</span><span class="sxs-lookup"><span data-stu-id="b4b81-109">Type</span></span>| <span data-ttu-id="b4b81-110">説明</span><span class="sxs-lookup"><span data-stu-id="b4b81-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="3dfd5-111">type</span><span class="sxs-lookup"><span data-stu-id="3dfd5-111">type</span></span>| <span data-ttu-id="3dfd5-112">文字列</span><span class="sxs-lookup"><span data-stu-id="3dfd5-112">string</span></span>| <span data-ttu-id="3dfd5-113">デバイスのデバイスの種類。</span><span class="sxs-lookup"><span data-stu-id="3dfd5-113">The device type of the device.</span></span> <span data-ttu-id="3dfd5-114">可能性には、"D"、"Xbox360"、"MoLIVE"(Windows)、"WindowsPhone"、"WindowsPhone7"、"PC"(G4WL) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="3dfd5-114">Possibilities include "D", "Xbox360", "MoLIVE" (Windows), "WindowsPhone", "WindowsPhone7", and "PC" (G4WL).</span></span> <span data-ttu-id="3dfd5-115">型が (例 iOS、Android、または web ブラウザーに埋め込まれているタイトル) の既知の場合は、"Web"が返されます。</span><span class="sxs-lookup"><span data-stu-id="3dfd5-115">If the type is unknown (for example iOS, Android, or a title embedded in a web browser), "Web" is returned .</span></span>| 
-| <span data-ttu-id="3dfd5-116">タイトル</span><span class="sxs-lookup"><span data-stu-id="3dfd5-116">titles</span></span>| <span data-ttu-id="3dfd5-117">[TitleRecord](json-titlerecord.md)の配列</span><span class="sxs-lookup"><span data-stu-id="3dfd5-117">array of [TitleRecord](json-titlerecord.md)</span></span>| <span data-ttu-id="3dfd5-118">このデバイス上でアクティブなタイトルの一覧。</span><span class="sxs-lookup"><span data-stu-id="3dfd5-118">The list of titles active on this device.</span></span>| 
+| <span data-ttu-id="b4b81-111">type</span><span class="sxs-lookup"><span data-stu-id="b4b81-111">type</span></span>| <span data-ttu-id="b4b81-112">文字列</span><span class="sxs-lookup"><span data-stu-id="b4b81-112">string</span></span>| <span data-ttu-id="b4b81-113">デバイスのデバイスの種類。</span><span class="sxs-lookup"><span data-stu-id="b4b81-113">The device type of the device.</span></span> <span data-ttu-id="b4b81-114">可能性には、"D"、"Xbox360"、"MoLIVE"(Windows)、"WindowsPhone"、"WindowsPhone7"、"PC"(G4WL) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="b4b81-114">Possibilities include "D", "Xbox360", "MoLIVE" (Windows), "WindowsPhone", "WindowsPhone7", and "PC" (G4WL).</span></span> <span data-ttu-id="b4b81-115">型が (例 iOS、Android、または web ブラウザーに埋め込まれているタイトル) の不明な場合は、"Web"が返されます。</span><span class="sxs-lookup"><span data-stu-id="b4b81-115">If the type is unknown (for example iOS, Android, or a title embedded in a web browser), "Web" is returned .</span></span>| 
+| <span data-ttu-id="b4b81-116">タイトル</span><span class="sxs-lookup"><span data-stu-id="b4b81-116">titles</span></span>| <span data-ttu-id="b4b81-117">[TitleRecord](json-titlerecord.md)の配列</span><span class="sxs-lookup"><span data-stu-id="b4b81-117">array of [TitleRecord](json-titlerecord.md)</span></span>| <span data-ttu-id="b4b81-118">このデバイス上でアクティブなタイトルの一覧。</span><span class="sxs-lookup"><span data-stu-id="b4b81-118">The list of titles active on this device.</span></span>| 
   
 <a id="ID4EWB"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="3dfd5-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="3dfd5-119">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="b4b81-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="b4b81-119">Sample JSON syntax</span></span>
  
 
 ```json
@@ -72,17 +72,17 @@ ms.locfileid: "4563765"
 <a id="ID4E6B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="3dfd5-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="3dfd5-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b4b81-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="b4b81-120">See also</span></span>
  
 <a id="ID4EBC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="3dfd5-121">Parent</span><span class="sxs-lookup"><span data-stu-id="3dfd5-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="b4b81-121">Parent</span><span class="sxs-lookup"><span data-stu-id="b4b81-121">Parent</span></span> 
 
-[<span data-ttu-id="3dfd5-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="3dfd5-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="b4b81-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="b4b81-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4ENC"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="3dfd5-123">リファレンス</span><span class="sxs-lookup"><span data-stu-id="3dfd5-123">Reference</span></span>   
+##### <a name="reference"></a><span data-ttu-id="b4b81-123">リファレンス</span><span class="sxs-lookup"><span data-stu-id="b4b81-123">Reference</span></span>   
