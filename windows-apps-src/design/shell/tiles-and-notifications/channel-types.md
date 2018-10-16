@@ -9,18 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 88040d6eb1c5d198de0a446348e114b7e59a2dad
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d6607f6464cc938e7edde7ab0317809fabfeee65
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654901"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4688525"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>適切なプッシュ通知チャネルの種類を選択する
 
 この記事では、アプリのコンテンツの提供に役立つ、3 つの種類の UWP プッシュ通知 (プライマリ、セカンダリ、および代替) について説明します。 
 
-(プッシュ通知の作成について詳しくは、「[Windows プッシュ通知サービス (WNS) の概要](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)」をご覧ください。) 
+(プッシュ通知を作成する方法について詳しくは、 [Windows プッシュ通知サービス (WNS) の概要](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)を参照してください)。 
 
 ## <a name="types-of-push-channels"></a>プッシュ チャネルの種類 
 
@@ -125,12 +125,12 @@ PushNotificationChannel webChannel =
 
 <tr class="odd">
 <td align="left">プライマリ</td>
-<td align="left">〇</td>
+<td align="left">はい</td>
 <td align="left">〇 - プライマリ タイルのみ</td>
-<td align="left">〇</td>
+<td align="left">はい</td>
 <td align="left">OAuth</td>
 <td align="left">WNS REST API</td>
-<td align="left">〇</td>
+<td align="left">はい</td>
 <td align="left">アプリごとに 1 つ</td>
 <td align="left">転送中</td>
 </tr>
@@ -141,7 +141,7 @@ PushNotificationChannel webChannel =
 <td align="left">X</td>
 <td align="left">OAuth</td>
 <td align="left">WNS REST API</td>
-<td align="left">〇</td>
+<td align="left">はい</td>
 <td align="left">セカンダリ タイルごとに 1 つ</td>
 <td align="left">転送中</td>
 </tr>
@@ -149,7 +149,7 @@ PushNotificationChannel webChannel =
 <td align="left">代替</td>
 <td align="left">X</td>
 <td align="left">いいえ</td>
-<td align="left">〇</td>
+<td align="left">はい</td>
 <td align="left">VAPID</td>
 <td align="left">WebPush W3C 標準</td>
 <td align="left">X</td>

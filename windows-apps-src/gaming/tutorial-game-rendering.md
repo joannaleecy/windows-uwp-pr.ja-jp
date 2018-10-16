@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
-ms.openlocfilehash: 42662d7ecfa415f9528f0acd3e4d4b7ce25cf40a
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 4bf880e498d9f3d44778493b33c480cd0d3c01ce
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396981"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4683589"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>レンダリング フレームワーク II: ゲームのレンダリング
 
@@ -585,7 +585,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ## <a name="createwindowsizedependentresource-method"></a>CreateWindowSizeDependentResource メソッド
 
-CreateWindowSizeDependentResources メソッドは、ウィンドウのサイズ、向き、ステレオに対応したレンダリング、解像度を変更するたびに呼び出されます。 サンプル ゲームでは、__ConstantBufferChangeOnResize__ でプロジェクション マトリックスを更新します。
+CreateWindowSizeDependentResources メソッドは、ウィンドウのサイズ、向き、ステレオに対応したレンダリング、解像度を変更するたびに呼び出されます。 サンプル ゲームでは、 __ConstantBufferChangeOnResize__でプロジェクション マトリックスを更新します。
 
 ウィンドウ サイズのリソースは、次の方法で更新されます。 
 * アプリ フレームワークが、ウィンドウの状態の変更を表すいくつかの考えられるイベントのいずれかを取得します。 
