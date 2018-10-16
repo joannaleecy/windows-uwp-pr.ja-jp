@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 9278ee433852bf3ef1eec2570340ef9cb7d64c92
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4611594"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4689203"
 ---
 # <a name="porting-xbox-live-code-from-the-xbox-developer-kit-xdk-to-universal-windows-platform-uwp"></a><span data-ttu-id="b15f8-104">Xbox 開発キット (XDK) からユニバーサル Windows プラットフォーム (UWP) への Xbox Live コード移植</span><span class="sxs-lookup"><span data-stu-id="b15f8-104">Porting Xbox Live code from the Xbox Developer Kit (XDK) to Universal Windows Platform (UWP)</span></span>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b945427118122e3b6d52210efc5e1de84a8c8d68
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4614960"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4686956"
 ---
 # <a name="get-publicscidsscidclips"></a><span data-ttu-id="5dc1f-104">GET (/public/scids/{scid}/clips)</span><span class="sxs-lookup"><span data-stu-id="5dc1f-104">GET (/public/scids/{scid}/clips)</span></span>
 <span data-ttu-id="5dc1f-105">パブリック クリップを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="5dc1f-105">List public clips.</span></span> <span data-ttu-id="5dc1f-106">この URI のドメインが`gameclipsmetadata.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5dc1f-106">The domain for this URI is `gameclipsmetadata.xboxlive.com`.</span></span>

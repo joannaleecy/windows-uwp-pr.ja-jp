@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4618634"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4687948"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a><span data-ttu-id="51d81-104">GET (/users/xuid({xuid})/inbox/{messageId})</span><span class="sxs-lookup"><span data-stu-id="51d81-104">GET (/users/xuid({xuid})/inbox/{messageId})</span></span>
 <span data-ttu-id="51d81-105">サービスのマーキング、特定のユーザー メッセージの詳細なメッセージ テキストを取得します。</span><span class="sxs-lookup"><span data-stu-id="51d81-105">Retrieves the detailed message text for a particular user message, marking it as read on the service.</span></span>

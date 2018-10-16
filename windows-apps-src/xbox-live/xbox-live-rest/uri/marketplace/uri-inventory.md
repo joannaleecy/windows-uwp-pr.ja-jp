@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e27eada890bd616fb764ebea7bb43890df1eeb0
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4619791"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4688832"
 ---
 # <a name="usersmeinventory"></a><span data-ttu-id="30719-104">/users/me/inventory</span><span class="sxs-lookup"><span data-stu-id="30719-104">/users/me/inventory</span></span>
 <span data-ttu-id="30719-105">指定されたユーザーに関連付けられているインベントリのセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="30719-105">Accesses the set of inventory currently associated with the provided user.</span></span> <span data-ttu-id="30719-106">これらの Uri のドメインが`inventory.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="30719-106">The domain for these URIs is `inventory.xboxlive.com`.</span></span>

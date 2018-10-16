@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, ゲーム オプション, トレーラー, 詳細な登録情報, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: e22081435bea8c73f509719aec1ce31d9157a315
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4614780"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4690492"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a><span data-ttu-id="fc675-104">C# のコード例 : ゲーム オプションおよびトレーラーを含むアプリの申請</span><span class="sxs-lookup"><span data-stu-id="fc675-104">C\# sample: app submission with game options and trailers</span></span>
 
