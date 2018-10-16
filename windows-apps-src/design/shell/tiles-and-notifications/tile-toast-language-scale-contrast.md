@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 87aafe36d05298a8fa157426e39c530190f98908
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565846"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621372"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート
 
-タイルやトーストで、表示言語、[表示倍率](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、ハイ コントラスト、その他の実行時のコンテキストに合わせた文字列や画像を読み込むことができます。 リソース ファイルの名前に修飾子を使用する方法に関する背景、[言語、スケール、その他の修飾子用にリソースを調整して](../../../app-resources/tailor-resources-lang-scale-contrast.md)、[アプリのアイコンとロゴ](/windows/uwp/design/style/app-icons-and-logos)を参照してください。
+タイルやトーストで、表示言語、[表示倍率](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、ハイ コントラスト、その他の実行時のコンテキストに合わせた文字列や画像を読み込むことができます。 リソース ファイルの名前に修飾子を使用する方法にバック グラウンド、[言語、スケール、その他の修飾子用にリソースを調整して](../../../app-resources/tailor-resources-lang-scale-contrast.md)、[アプリのアイコンとロゴ](/windows/uwp/design/style/app-icons-and-logos)を参照してください。
 
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../../globalizing/globalizing-portal.md)」をご覧ください。
 

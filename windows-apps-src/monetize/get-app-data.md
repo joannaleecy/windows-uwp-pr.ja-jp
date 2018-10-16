@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: Windows デベロッパー センター アカウントに登録されているアプリのデータを取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: アプリ データの取得
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ データ
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c8029ca9481761ac4313b24607567f20b3a301c
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 6940c1079c7973bc4fd639345c5d5e3f33b0221f
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663312"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618586"
 ---
 # <a name="get-app-data"></a>アプリ データの取得
 
@@ -50,12 +50,12 @@ ms.locfileid: "1663312"
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts</td>
-<td align="left"><a href="get-add-ons-for-an-app.md">アプリのアドオンの取得</a></td>
+<td align="left"><a href="get-add-ons-for-an-app.md">アプリのアドオンの入手</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights</td>
-<td align="left"><a href="get-flights-for-an-app.md">アプリのパッケージ フライトの取得</a></td>
+<td align="left"><a href="get-flights-for-an-app.md">アプリのパッケージ フライトの入手</a></td>
 </tr>
 </tbody>
 </table>
@@ -196,6 +196,6 @@ Microsoft Store 申請 API に関するすべての[前提条件](create-and-man
 * [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [Microsoft Store 申請 API を使用したアプリの申請の管理](manage-app-submissions.md)
 * [すべてのアプリの取得](get-all-apps.md)
-* [アプリの取得](get-an-app.md)
-* [アプリのアドオンの取得](get-add-ons-for-an-app.md)
-* [アプリのパッケージ フライトの取得](get-flights-for-an-app.md)
+* [アプリの入手](get-an-app.md)
+* [アプリのアドオンの入手](get-add-ons-for-an-app.md)
+* [アプリのパッケージ フライトの入手](get-flights-for-an-app.md)

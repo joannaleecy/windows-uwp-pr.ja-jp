@@ -1,25 +1,25 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: サポートされているバナー広告のサイズについて説明します。
 title: サポートされているバナー広告のサイズ
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP, 広告, Advertising, サイズ, バナー
 ms.localizationpriority: medium
-ms.openlocfilehash: baeed2fd1bce779a2d7bb08d808e868eb3ababed
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a438f6df66b064004ad9664ce46280475dad83c6
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "927419"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616064"
 ---
 # <a name="supported-banner-ad-sizes"></a>サポートされているバナー広告のサイズ
 
-次のバナー広告のサイズは、どこからでも Windows プラットフォーム (UWP) アプリケーションでのみサポートされます。 アプリで**AdControl**オブジェクトのインスタンスを作成するときにサポートされているサイズは次のいずれかに一致するように、高さと幅のプロパティを設定することを確認します。
+ユニバーサル Windows プラットフォーム (UWP) アプリの場合は、次のバナー広告のサイズがサポートされています。 アプリで**AdControl**オブジェクトをインスタンス化するときのこれらのサイズのサポートされているいずれかに一致するように高さと幅のプロパティを設定することを確認します。
 
 * 160 x 600
 * 300 x 50
@@ -30,9 +30,9 @@ ms.locfileid: "927419"
 * 728 x 90
 
 > [!NOTE]
-> 最適な操作をお勧め Windows 10 のモバイル デバイスで、次のサイズを使用する: 300 x 50、320 x 50、および 640 x 100 します。
+> 最適なエクスペリエンスをお勧めします Windows 10 Mobile のデバイスで、次のサイズを使用して: 300 x 50、320 x 50、および 640 x 100 です。
 
-次の表は、各バナー広告のサイズを示す例を示します。
+次の表では、各バナー広告のサイズを示す例を示します。
 
 <table>
 <colgroup>

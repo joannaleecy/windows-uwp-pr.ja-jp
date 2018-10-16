@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: パッケージ フライトに関するパッケージのロールアウトを停止するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: フライトに関するロールアウトを停止する
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロールアウト, フライトの申請, 停止
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
-ms.openlocfilehash: c18acc5f4fd21021cff35e06561517f9b9c45ba1
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 983cd2f2f849c28a4f3f3cae25efb0b93bec3f41
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816477"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621918"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>フライトに関するロールアウトを停止する
 

@@ -1,24 +1,24 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: アプリのインサイト データを取得するのに、Microsoft Store 分析 API の以下のメソッドを使用します。
 title: インサイト データを取得します。
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/31/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, インサイト
 ms.localizationpriority: medium
-ms.openlocfilehash: 53fbd91437e5dc702f8672c6cbadeea32a8a96bf
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: 30b9303fc44f557210c9ba80a2a135f77909dc10
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574769"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617565"
 ---
 # <a name="get-insights-data"></a>インサイト データを取得します。
 
-特定の日付範囲やその他のオプション フィルター、取得、正常性, アプリの使用状況のメトリックに関連するインサイト データを取得するには、Microsoft Store 分析 API の以下のメソッドを使用します。 この情報も[インサイト レポート](../publish/insights-report.md)では、Windows デベロッパー センター ダッシュ ボードで使用できます。
+特定の日付範囲やその他のオプション フィルターを使って取得数、状態、およびアプリの使用状況のメトリックを関連のインサイト データを取得するには、Microsoft Store 分析 API の以下のメソッドを使用します。 この情報も[インサイト レポート](../publish/insights-report.md)では、Windows デベロッパー センター ダッシュ ボードで使用できます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -73,28 +73,28 @@ Authorization: Bearer <your access token>
 | TotalCount | int    | クエリの結果データ内の行の総数です。                 |
 
 
-### <a name="insight-values"></a>Insight 値
+### <a name="insight-values"></a>洞察値
 
 *Value* 配列の要素には、次の値が含まれます。
 
 | 値               | 型   | 説明                           |
 |---------------------|--------|-------------------------------------------|
 | applicationId       | string | インサイト データを取得するアプリのストア ID です。     |
-| insightDate                | string | 特定のメトリックの変更を特定しました日です。 この日付またはそれより前に、の週との比較メトリックの短縮を大幅に増加を検出しました週の終わりを表します。 |
+| insightDate                | string | 特定のメトリックの変更を特定しました日です。 この日付は、大幅に増加を検出しました週の終わりを表す、メトリックがそれより前に、の週との比較の増減します。 |
 | データ型     | string | この情報を記述する一般的な分析領域を指定する次の文字列のいずれか。<p/><ul><li><strong>入手</strong></li><li><strong>正常性</strong></li><li><strong>使用状況</strong></li></ul>   |
-| insightDetail          | array | 1 つまたは複数[InsightDetail 値](#insightdetail-values)を表す現在インサイトの詳細をします。    |
+| insightDetail          | array | 1 つまたは複数[InsightDetail 値](#insightdetail-values)を表す現在インサイトの詳細情報。    |
 
 
 ### <a name="insightdetail-values"></a>InsightDetail 値
 
 | 値               | 型   | 説明                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | string | 現在の洞察または現在のディメンションを記述するメトリックを示す次の値のいずれかの**データ型**の値に基づいています。<ul><li>**正常性**、この値は常に値が**ヒット数です**。</li><li>**入手**、この値は常に値が**AcquisitionQuantity です**。</li><li>**使用状況**は、この値は、次の文字列のいずれかであることができます。<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
+| FactName           | string | 現在の洞察または現在のディメンションを記述するメトリックを示す次の値のいずれかの**データ型**の値に基づいています。<ul><li>**正常性**、この値は常に値が**ヒット数です**。</li><li>**入手**、この値は常に値が**AcquisitionQuantity**します。</li><li>**使用状況**、この値は、次の文字列のいずれかを指定ことができます。<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
 | SubDimensions         | array |  情報を得ることの 1 つのメトリックを記述する 1 つまたは複数のオブジェクトです。   |
 | PercentChange            | string |  メトリックは、全体の顧客ベースの間で変更された割合。  |
-| DimensionName           | string |  現在のディメンションで説明されているメトリックの名前です。 例には、**イベントの種類**、**市場**、 **DeviceType**、 **PackageVersion**、 **AcquisitionType**、 **AgeGroup** 、**性別**が含まれます。   |
+| DimensionName           | string |  現在の次元で説明されているメトリックの名前。 例には、**イベントの種類**、**市場**、 **DeviceType**、 **PackageVersion**、 **AcquisitionType**、 **AgeGroup** 、**性別**が含まれます。   |
 | DimensionValue              | string | 現在のディメンションに記載されているメトリックの値。 たとえば、 **DimensionName**が**イベントの種類**である場合は、**クラッシュ**や**ハング**が**DimensionValue**することがあります。   |
-| FactValue     | string | 情報を得ることが検出された日付のメトリックの絶対値。  |
+| FactValue     | string | 情報を得ることが検出された日付のメトリックの絶対値します。  |
 | Direction | string |  (**正**または**負**) の変更の方向です。   |
 | Date              | string |  現在の洞察または現在のディメンションに関連する変更を特定しました日です。   |
 

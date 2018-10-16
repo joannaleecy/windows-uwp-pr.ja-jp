@@ -10,14 +10,14 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: b60b0d7c201f172261de1546fc250e40b8cd670f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566195"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618596"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT と C++/CX 間の相互運用
-このトピックでは 2 つのヘルパー関数間の変換に使用できる[、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)と[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)オブジェクト。 これら 2 つの言語プロジェクションを使用するコード間の相互運用機能を使用してできるまたはから、C++ コードを徐々 に移動するには、関数を使用できます/CX を C++/WinRT (を参照してください[C への移行 + C + から WinRT + CX](move-to-winrt-from-cx.md))。
+このトピックでは間の変換に使用できる 2 つのヘルパー関数[、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)と[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)オブジェクト。 それらを使用するには、2 つの言語プロジェクションを使用するコード間で相互運用機能または関数を使用するには、C + からコードを徐々 に移動すると/CX を C++/WinRT (を参照してください[C への移行 + C + から WinRT/CX](move-to-winrt-from-cx.md))。
 
 ## <a name="fromcx-and-tocx-functions"></a>from_cx and to_cx 関数
 以下のヘルパー関数では、C++/CX オブジェクトを同等の C++/WinRT オブジェクトに変換します。 この関数は、C++/CX オブジェクトを基礎となる [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) インターフェイス ポインターにキャストします。 次に、このポインター上で [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) を呼び出し、C++/WinRT オブジェクトの既定のインターフェイスを照会します。 **QueryInterface**は、C++/CX safe_cast 拡張と同等の Windows ランタイム アプリケーション バイナリ インターフェイス (ABI) です。 [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 関数は、別の値に設定できるように C++/WinRT オブジェクトの基礎となる **IUnknown** インターフェイス ポインターのアドレスを取得します。

@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: デバッグ、テスト、パフォーマンス
-description: Microsoft Visual Studio とその他のツールを使ってデバッグしアプリをテストして、Microsoft Store の認定プロセスを準備します。
+description: デバッグしアプリをテストして、Microsoft Store の認定プロセスを準備するには、Microsoft Visual Studio とその他のツールを使用します。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a919af3cb532ce19427967f305cb03adc149a1
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571927"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619293"
 ---
 # <a name="debugging-testing-and-performance"></a>デバッグ、テスト、パフォーマンス
 
 
-このセクションでは、Microsoft Visual Studio を使用して、デバッグ、テスト、およびアプリを最適化する方法を示します。 (デバイスの監視と構成の) 用 Windows Device Portal や、Windows アプリ認定キット (Microsoft ストアのアプリを準備する) になどのツールも含まれています。
+このセクションでは、Microsoft Visual Studio を使用して、デバッグ、テスト、およびアプリを最適化する方法を示します。 (Microsoft ストアのアプリを準備) するには、(デバイスの監視と構成の) 用 Windows Device Portal や、Windows アプリ認定キットなどのツールも含まれています。
 
 | トピック | 説明 |
 |-------|-------------|

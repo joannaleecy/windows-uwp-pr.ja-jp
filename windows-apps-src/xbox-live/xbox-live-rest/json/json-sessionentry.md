@@ -12,29 +12,29 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6076f4dfbef0f926563f4696f8ee0e2660d0fc24
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564331"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616758"
 ---
 # <a name="sessionentry-json"></a>SessionEntry (JSON)
-フィットネス セッションのデータが含まれています。 
+フィットネス セッションには、データが含まれています。 
 <a id="ID4EN"></a>
 
  
 ## <a name="sessionentry"></a>SessionEntry
  
-SessionEntry オブジェクトには、次の仕様があります。
+SessionEntry オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | durationInSeconds| 32 ビット符号付き整数 | 継続時間-秒単位で、セッションのします。 | 
 | コンセント| 32 ビット符号付き整数 | エネルギー-コンセントで-セッションに書き込みます。 | 
-| 満たされています。| 単精度浮動小数点数| 平均では、セッションの期間にわたって値が満たされています。 MET 値は、アクティビティを残りの部分で個人の代謝レートを基準とした時に、個々 の代謝レートの比率です。 静止の代謝レートは、個々 の太さに関係なく 1.0 MET 値は、個々 のユーザーの静止代謝レートを基準としたためは、さまざまな重みの人の従業員が実行しているアクティビティの強さを比較する使用できます。| 
+| 満たされています。| 単精度浮動小数点数| 平均には、セッションの期間の値が満たされています。 MET 値は、アクティビティを残りの部分で個人の代謝レートを基準とした時に、個々 の代謝レートの比率です。 静止の代謝レートは、個人の太さに関係なく 1.0 MET 値は、個々 のユーザーの静止代謝レートを基準としたためは、さまざまな重みの人の従業員が実行しているアクティビティの強さを比較を使用できます。| 
 | serverTimestamp| DateTime| 時間: UTC に基づいて-エントリは、サーバーで入力されたものです。 | 
 | ソース| 8 ビットの符号なし整数| セッションのソース。| 
-| タイムスタンプ| DateTime| 時間: 協定世界時 (UTC) に基づく-エントリがクライアントで作成します。 | 
+| タイムスタンプ| DateTime| 時間: 協定世界時 (UTC) に基づく-エントリが、クライアントで作成します。 | 
 | titleId| 64 ビットの符号なし整数| タイトル: 10 進数で、エントリを作成します。| 
   
 <a id="ID4EFE"></a>

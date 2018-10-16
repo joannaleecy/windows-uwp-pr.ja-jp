@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: af9f52e04a163e0839017e1d051653d968df816d
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574616"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616958"
 ---
 # <a name="get-usersowneridpeoplemute"></a>GET (/users/{ownerId}/people/mute)
 ユーザーのミュートの一覧を取得します。
@@ -36,7 +36,7 @@ ms.locfileid: "4574616"
 
 ## <a name="remarks"></a>注釈
 
-ターゲットを指定すると場合、この URI は、ユーザーがない場合、ユーザーがミュートの一覧に、空の場合、そのユーザーのみを返します。
+ターゲットを指定すると場合、この URI は、ユーザーがない場合、ユーザーがミュートの一覧で、空の場合、そのユーザーのみを返します。
 
 <a id="ID4EZ"></a>
 
@@ -70,9 +70,9 @@ ms.locfileid: "4574616"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization | string| HTTP 認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: <code>1</code>、<code>vnext</code>します。 最大サイズ: なし。|
-| Accept| string| コンテンツの種類の受け入れられる。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
+| Authorization | string| HTTP の認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
+| X RequestedServiceVersion| string| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: <code>1</code>、<code>vnext</code>します。 最大サイズ: なし。|
+| Accept| string| コンテンツの種類の受け入れられるします。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
 
 <a id="ID4EPE"></a>
 
@@ -86,14 +86,14 @@ ms.locfileid: "4574616"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| OK| ミュート リストの要求が成功した場合。|
 | 400| Bad Request| URI で指定されたターゲット ID が正しくありません。|
 | 403| Forbidden| URI で指定された所有者は、認証されたユーザーではありません。|
-| 404| Not Found します。| URI で指定された所有者は存在しません。|
+| 404| 見つかりません。| URI で指定された所有者は存在しません。|
 
 <a id="ID4E3G"></a>
 
@@ -104,7 +104,7 @@ ms.locfileid: "4574616"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| string| 要求の本文の MIME タイプ。 値の例: <code>application/json</code>|
 | Content-Length| string| 応答に送信されるバイト数。 値の例: 34|
-| キャッシュ コントロール| string| キャッシュ動作を指定するサーバーから正し要求します。 例: <code>no-cache, no-store</code>|
+| キャッシュ コントロール| string| キャッシュ動作を指定するサーバーからていねい要求します。 例: <code>no-cache, no-store</code>|
 
 <a id="ID4ETAAC"></a>
 

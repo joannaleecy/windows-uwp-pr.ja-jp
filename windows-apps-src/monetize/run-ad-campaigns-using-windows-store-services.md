@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 8e6c3d3d-0120-40f4-9f90-0b0518188a1a
 description: Microsoft Store プロモーション API を使うと、自分または自分の組織の Windows デベロッパー センター アカウントに登録されているアプリのプロモーション用の広告キャンペーンをプログラムで管理できます。
 title: ストア サービスを使用した広告キャンペーンの実行
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
-ms.openlocfilehash: 45869b96d17fa51fbdf22e417c7e7f43a8c90a9b
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 6a1f08dbd70904284179c90fa00d2abd9acf4b97
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976227"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620476"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>ストア サービスを使用した広告キャンペーンの実行
 
@@ -85,7 +85,7 @@ POST URI の *tenant\_id* の値と *client \_id* および *client \_secret* �
 
 Azure AD アクセス トークンを取得したら、Microsoft Store プロモーション API を呼び出すことができます。 各メソッドの **Authorization** ヘッダーにアクセス トークンを渡す必要があります。
 
-Microsoft Store プロモーション API では、キャンペーンについての概要情報を保持する*キャンペーン* オブジェクトと、広告キャンペーンの*配信ライン*、*ターゲット プロファイル*、および*クリエイティブ*を表すその他のオブジェクトで構成されるものを広告キャンペーンとします。 この API には、これらのオブジェクトの種類ごとにグループ化されたメソッドのセットが含まれます。 キャンペーンを作成するには、通常、これらのオブジェクトごとに別の POST メソッドを呼び出します。 この API には、任意のオブジェクトの取得に使用できる GET メソッドと、キャンペーン、配信ライン、およびターゲット プロファイル オブジェクトの編集に使用できる PUT メソッドも用意されています。
+Microsoft Store プロモーション API では、キャンペーンについての概要情報を保持する*キャンペーン* オブジェクトと、広告キャンペーンの*配信ライン*、*ターゲット プロファイル*、および*クリエイティブ*を表すその他のオブジェクトで構成されるものを広告キャンペーンとします。 この API には、これらのオブジェクトの種類ごとにグループ化されたメソッドのセットが含まれます。 キャンペーンを作成するには、通常、これらのオブジェクトごとに別の POST メソッドを呼び出します。 この API には、任意のオブジェクトの取得に使用できる GET メソッドと、キャンペーン、配信ライン、および対象プロファイル オブジェクトの編集に使用できる PUT メソッドも用意されています。
 
 これらオブジェクトと関連するメソッドについての詳細は、以下の表を参照してください。
 
@@ -94,11 +94,11 @@ Microsoft Store プロモーション API では、キャンペーンについ�
 |---------------|-----------------|
 | キャンペーン |  このオブジェクトは広告キャンペーンを表し、広告キャンペーンのオブジェクト モデル階層の最上位に置かれます。 このオブジェクトは、実行するキャンペーンの種類 (有料、自社、またはコミュニティ)、キャンペーン目標、広告キャンペーンの配信ライン、その他の詳細情報を示します。 1 つのキャンペーンに関連づけることができるのは、1 つのアプリのみです。<br/><br/>このオブジェクトについて詳しくは、「[広告キャンペーンの管理](manage-ad-campaigns.md)」をご覧ください。<br/><br/>**注**&nbsp;&nbsp;広告キャンペーンの作成後は、[Microsoft Store 分析 API](access-analytics-data-using-windows-store-services.md) の[広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)メソッドを使って、キャンペーンのパフォーマンス データを取得できます。  |
 | 配信ライン | キャンペーンごとに、インベントリの購入と広告の配信に使用する配信ラインが 1 つ以上あります。 配信ラインごとに、ターゲットと入札額を設定できます。また、予算と使用したいクリエイティブへのリンクを設定することで、支払い額を決定できます。<br/><br/>このオブジェクトについて詳しくは、「[広告キャンペーンの配信ラインの管理](manage-delivery-lines-for-ad-campaigns.md)」をご覧ください。 |
-| ターゲット プロファイル | 配信ラインごとに、1 つのターゲット プロファイルを用意します。ターゲット プロファイルでは、対象にするユーザー、地域、およびインベントリの種類を指定します。 ターゲット プロファイルは、テンプレートとして作成し、複数の配信ライン間で共有できます。<br/><br/>このオブジェクトについて詳しくは、「[広告キャンペーンのターゲット プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)」をご覧ください。 |
+| 対象プロファイル | 配信ラインごとに、1 つの対象プロファイルを用意します。対象プロファイルでは、対象にするユーザー、地域、およびインベントリの種類を指定します。 対象プロファイルは、テンプレートとして作成し、複数の配信ライン間で共有できます。<br/><br/>このオブジェクトについて詳しくは、「[広告キャンペーンの対象プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)」をご覧ください。 |
 | クリエイティブ | 配信ラインごとに、キャンペーンの一環でお客様に表示される広告を表すクリエイティブが 1 つ以上あります。 クリエイティブは、常に同じアプリを表す場合は、同一の広告キャンペーンでなくても、1 つ以上の配信ラインに関連付けることができます。<br/><br/>このオブジェクトについて詳しくは、「[広告キャンペーンのクリエイティブの管理](manage-creatives-for-ad-campaigns.md)」をご覧ください。 |
 
 
-次の図は、キャンペーン、配信ライン、ターゲット プロファイル、クリエイティブ間の関係を表しています。
+次の図は、キャンペーン、配信ライン、対象プロファイル、クリエイティブ間の関係を表しています。
 
 ![広告キャンペーンの階層](images/ad-campaign-hierarchy.png)
 
@@ -112,7 +112,7 @@ Microsoft Store プロモーション API では、キャンペーンについ�
 
 * [広告キャンペーンの管理](manage-ad-campaigns.md)
 * [広告キャンペーンの配信ラインの管理](manage-delivery-lines-for-ad-campaigns.md)
-* [広告キャンペーンのターゲット プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)
+* [広告キャンペーンの対象プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)
 * [広告キャンペーンのクリエイティブの管理](manage-creatives-for-ad-campaigns.md)
 * [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
 

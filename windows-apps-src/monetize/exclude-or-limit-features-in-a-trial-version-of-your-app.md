@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period.
 title: 試用版での機能の除外または制限
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
 keywords: Windows 10, UWP, 試用, アプリ内購入, IAP, Windows.ApplicationModel.Store
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f382f6ddb2666fe546ba2180e56fb8cd028253ec
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 18d9fb3ba5b0fbd1e964450a75d8e0e417265e7f
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690458"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621939"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>試用版での機能の除外または制限
 

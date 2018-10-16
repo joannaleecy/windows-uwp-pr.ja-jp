@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
 description: Windows デベロッパー センター アカウントに登録されている特定のアプリに関する情報を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: アプリの取得
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ
 ms.localizationpriority: medium
-ms.openlocfilehash: 87995e0ee50b762f4b626be0b3796cc10390a02d
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: ce52e2d3b844052103f1055674869c19850ef59f
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1661952"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622056"
 ---
 # <a name="get-an-app"></a>アプリの取得
 
@@ -102,5 +102,5 @@ Authorization: Bearer <your access token>
 
 * [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [すべてのアプリの取得](get-all-apps.md)
-* [アプリのパッケージ フライトの取得](get-flights-for-an-app.md)
-* [アプリのアドオンの取得](get-add-ons-for-an-app.md)
+* [アプリのパッケージ フライトの入手](get-flights-for-an-app.md)
+* [アプリのアドオンの入手](get-add-ons-for-an-app.md)

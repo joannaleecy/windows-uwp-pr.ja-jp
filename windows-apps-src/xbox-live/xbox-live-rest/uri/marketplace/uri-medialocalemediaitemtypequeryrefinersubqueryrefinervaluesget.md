@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 036a64f893ab1581d42f1601204b383968c607e3
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4562900"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622028"
 ---
 # <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefinersqueryrefinersubqueryrefinervalues"></a>GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues)
 指定されたクエリの絞り込み条件値 ("subgenres には、指定されたジャンル"など) のサブ値の一覧を取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
@@ -29,7 +29,7 @@ ms.locfileid: "4562900"
  
 ## <a name="remarks"></a>注釈
  
-クエリの絞り込み条件値で**queryRefinerValue**クエリに渡される URI 語幹で禁止されている文字の絞り込み条件値を許可する動作を行うという名前のクエリ文字列パラメーターとして渡されます。
+クエリの絞り込み条件値で**queryRefinerValue**、渡される URI 語幹で禁止されている文字の絞り込み条件値クエリを許可するのにはこれをという名前のクエリ文字列パラメーターとして渡されます。
  
 この API は、音楽ののみサポートされます。
   

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
 description: Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを管理するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: パッケージ フライトの管理
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライト
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b5e3c100ece6ec79abad0efbf4797b0102959cb
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 6a761edf50888fb7f3130886a2c7e6e65b7c0a1d
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1661872"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621139"
 ---
 # <a name="manage-package-flights"></a>パッケージ フライトの管理
 

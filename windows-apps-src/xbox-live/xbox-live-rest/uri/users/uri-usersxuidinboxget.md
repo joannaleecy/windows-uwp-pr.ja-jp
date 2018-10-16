@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d27ed6fa81bfd8618f19938c97a56361c16c009
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573054"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620685"
 ---
 # <a name="get-usersxuidxuidinbox"></a>GET (/users/xuid({xuid})/inbox)
-サービスから指定したメッセージの概要をユーザー数を取得します。
+サービスから指定されたユーザー メッセージ概要数を取得します。
 これらの Uri のドメインが`msg.xboxlive.com`します。
 
   * [注釈](#ID4EV)
@@ -39,7 +39,7 @@ ms.locfileid: "4573054"
 
 メッセージが送信された注文の逆の順序で返されますつまり、新しいメッセージは、最初に返されます。
 
-この API はサポートのみコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
+この API は、サポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
 
 <a id="ID4EEB"></a>
 
@@ -48,7 +48,7 @@ ms.locfileid: "4573054"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。|
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 要求を行っているプレイヤーのします。|
 
 <a id="ID4EIC"></a>
 
@@ -58,8 +58,8 @@ ms.locfileid: "4573054"
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- | --- | --- | --- |
 | maxItems| int| 100| メッセージの最大数が返されます。|
-| continuationToken| string|  | 以前の列挙呼び出し; で返される文字列列挙値を続行するために使用します。|
-| skipItems| int| 100| をスキップするメッセージの数continuationToken が存在する場合は無視されます。|
+| continuationToken| string|  | 以前の列挙呼び出し; で返される文字列列挙体を続行するために使用します。|
+| skipItems| int| 100| これを省略すると、メッセージの最大数continuationToken が存在する場合は無視されます。|
 
 <a id="ID4EGE"></a>
 
@@ -80,7 +80,7 @@ ms.locfileid: "4573054"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -88,7 +88,7 @@ ms.locfileid: "4573054"
 | 400| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。|
 | 403| ユーザーまたはサービスの要求は許可されていません。|
 | 404| 有効な XUID が URI ではありません。|
-| 409| 基になるコレクションでは、渡された継続トークンに基づいて変更されます。|
+| 409| 基になるコレクションでは、渡された継続トークンをに基づいて変更されます。|
 | 416| スキップされる項目の数は、利用可能な項目の数を超えています。|
 | 500| サーバー側の一般的なエラーです。|
 
@@ -97,7 +97,7 @@ ms.locfileid: "4573054"
 
 ## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答
 
-正常に呼び出されると、サービスは結果データを JSON 形式で返します。
+正常に呼び出されると、サービスは、JSON 形式での結果データを返します。
 
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- |
@@ -123,7 +123,7 @@ ms.locfileid: "4573054"
 | senderXuid| ulong|  | 送信者の XUID です。|
 | 送信者| string| 15| 送信者のゲーマータグです。|
 | hasAudio| bool|  | かどうか、メッセージには、オーディオ (声) 添付ファイルがあります。|
-| hasPhoto| bool|  | メッセージに写真の添付ファイルがあるかどうか。|
+| hasPhoto| bool|  | メッセージに写真の添付ファイルかどうか。|
 | hasText| bool|  | かどうか、メッセージには、テキストが含まれています。|
 
 #### <a name="paging-info"></a>ページング情報
@@ -168,7 +168,7 @@ ms.locfileid: "4573054"
 
 #### <a name="error-response"></a>エラー応答
 
-エラーの場合、サービスはサービスの環境からの値が含まれている全て、errorResponse オブジェクトを返す可能性があります。
+サービスは、エラーが発生した場合、サービスの環境から値を含めることができます全て、errorResponse オブジェクトを取得するを取得することがあります。
 
 | プロパティ| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

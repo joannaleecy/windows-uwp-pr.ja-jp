@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e4df0894cc2c8ab214e129193a37b68f408194f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564611"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618929"
 ---
 # <a name="xbox-arena"></a>Xbox アリーナ
 
@@ -78,7 +78,7 @@ Xbox アリーナの役割 (トーナメントの設定)   | タイトルの役�
 --- | ---
 [アリーナ タイトル統合ガイド](arena-title-integration.md) | Xbox アリーナのサポートをタイトルに統合する方法について説明します。
 
-## <a name="operations-guidance"></a>操作のガイダンス
+## <a name="operations-guidance"></a>運用ガイド
 
 記事 | description
 --- | ---

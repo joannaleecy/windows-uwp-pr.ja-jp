@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: Windows デベロッパー センター アカウントに登録されているアプリの新しい申請を作成するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: アプリの申請の作成
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請の作成
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cdcba307fdfb76afdf8d5df18150859d580e2ca
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 02aa06359f4f15d8763d75d0ab5381ce890ede4a
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664392"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617932"
 ---
 # <a name="create-an-app-submission"></a>アプリの申請の作成
 

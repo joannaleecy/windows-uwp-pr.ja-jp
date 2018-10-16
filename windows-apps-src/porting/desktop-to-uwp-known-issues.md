@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563605"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622263"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>パッケージ デスクトップ アプリケーションに関する既知の問題
 
@@ -38,7 +38,7 @@ ms.locfileid: "4563605"
 
 この問題を解決するには、管理者特権で開いたコマンド プロンプトで `Netsh int ipv4 reset` コマンドを実行して、コンピューターを再起動します。
 
-### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET アプリケーションが"AnyCPU"ビルド オプションでコンパイルし、インストールに失敗するには
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET アプリが"AnyCPU"ビルド オプションでコンパイルし、インストールに失敗するには
 
 この問題は、メインの実行可能ファイルまたは何らかの依存ファイルが、**Program Files** または **Windows\System32** のフォルダー階層に配置された場合に発生することがあります。
 
@@ -56,7 +56,7 @@ ms.locfileid: "4563605"
 
 この問題は、アプリケーションに含まれる実行可能ファイルの **.EXE** 拡張子が大文字になっている場合に発生することがあります。 ただし、この拡張機能の大文字小文字の区別しないように、アプリケーションを実行するかどうかに影響を与える、これにより、このエラーを生成するように DAC に。
 
-この問題を解決するには、パッケージ化を行うときに **-AppExecutable** フラグを指定し、メインの実行可能ファイルの拡張子として小文字の ".exe" を使用してみてください (例: MYAPP.exe)。    代わりに大文字小文字から、アプリケーションですべての実行可能ファイルの大文字と小文字を変更できます (例: からです。EXE を .exe) します。
+この問題を解決するには、パッケージ化を行うときに **-AppExecutable** フラグを指定し、メインの実行可能ファイルの拡張子として小文字の ".exe" を使用してみてください (例: MYAPP.exe)。    代わりに大文字小文字のアプリケーションですべての実行可能ファイルの大文字と小文字を変更できます (例: からです。EXE を .exe) します。
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>Authenticode 署名が破損しているか、形式が正しくない
 
@@ -95,7 +95,7 @@ Microsoft Store のアプリをインストールまたは起動した後、予�
 
 更新しても問題が解決しない場合や、PC を回復する方法がわからない場合は、[Microsoft サポート](https://support.microsoft.com/contactus/)にお問い合わせください。
 
-開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 この操作を行うアプリケーションを更新プログラムをインストールしていないユーザーに利用できなくなることに注意します。 この更新プログラムをインストールしているユーザーに、アプリケーションの可用性を制限するため、AppxManifest.xml ファイルに次のように変更します。
+開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 注意アプリをこれにより、更新プログラムをインストールしていないユーザーに利用できなくなります。 この更新プログラムをインストールしているユーザーに、アプリケーションの可用性を制限するには、次のように、AppxManifest.xml ファイルを変更します。
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -131,9 +131,9 @@ certutil -dump <cert_file.pfx>
 
 <a id="bad-pe-cert" />
 
-### <a name="bad-pe-certificate-0x800700c1"></a>不適切な PE 証明書 (番号: 0x800700C1)
+### <a name="bad-pe-certificate-0x800700c1"></a>PE 証明書が正しくありません (番号: 0x800700C1)
 
-これは、パッケージには、破損した証明書を持つバイナリが含まれている場合に発生します。 これは、発生理由理由の一部を次に示します。
+これは、パッケージには、破損している証明書を持つバイナリが含まれている場合に発生します。 これは、発生理由理由の一部を次に示します。
 
 * 証明書のスタート画面は画像の終了時にありません。  
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 392f8166e16c028a57bc9e27039a9884f1d9714a
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572023"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620768"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Windows 10 向けのデスクトップ アプリを強化する
 
@@ -78,7 +78,7 @@ UWP API を使用するには、プロジェクトにいくつかの変更を加
 
 :white_check_mark: **追加するエクスペリエンスを最初に決定する**
 
-選択肢はたくさんあります。 たとえば、またはを使用して収益化 Api をアプリケーションに注目を別のユーザーが投稿した新しい写真など共有に興味深いコンテンツがある場合、発注フローを簡略化できます。
+選択肢はたくさんあります。 たとえば、収益化 Api、別のユーザーが投稿した新しい写真など共有興味深いコンテンツがある場合は、アプリケーションに注目を使用して、発注フローを簡略化できます。
 
 ![トースト](images/desktop-to-uwp/toast.png)
 

@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566357"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617701"
 ---
 # <a name="package-a-desktop-application-manually"></a>デスクトップ アプリケーションを手動でパッケージ化します。
 
@@ -29,11 +29,11 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
 インストーラーによってどのような変更がシステムに加えられるのかわからない場合や、自動化ツールを使用してパッケージ マニフェストを生成する場合は、[こちら](desktop-to-uwp-root.md#convert)のオプションのいずれかを検討してください。
 
 >[!IMPORTANT]
->デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (、デスクトップ ブリッジとも呼ばれるを Windows 10 バージョン 1607 で導入されたそれ以外の場合と、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
+>デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (デスクトップ ブリッジとも呼ばれるを Windows 10 バージョン 1607 で導入されたそれ以外の場合と、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
 
 ## <a name="first-prepare-your-application"></a>まず、アプリケーションを準備します
 
-アプリケーションのパッケージの作成を開始する前に、このガイドを確認:[デスクトップ アプリケーションのパッケージを準備](desktop-to-uwp-prepare.md)します。
+アプリケーションのパッケージの作成を開始する前に、このガイドを確認します。[デスクトップ アプリケーションのパッケージを準備](desktop-to-uwp-prepare.md)します。
 
 ## <a name="create-a-package-manifest"></a>パッケージ マニフェストを作成する
 
@@ -87,11 +87,11 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> Windows ストアでアプリケーション名を予約済み、Windows デベロッパー センター ダッシュ ボードを使用して、名前と発行元を取得できます。 他のシステムにアプリケーションをサイドローディングする場合は、アプリに署名証明書の名前と一致を選択する発行元名を使用する限り、独自の名前を提供できます。
+> Windows ストアでアプリケーション名を予約済み場合、は、Windows デベロッパー センター ダッシュ ボードを使用して、名前と発行元を取得できます。 他のシステムにアプリケーションをサイドローディングする場合、アプリに署名証明書の名前と一致を選択する発行元名を使用する限り、独自の名前を提供することができます。
 
 ### <a name="properties"></a>プロパティ
 
-[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 要素には、必須の子要素が 3 つあります。 次に示すのは、**Properties** ノードの例です。要素はプレースホルダー テキストが指定されています。 **表示名**は、ストアにアップロードされたアプリの場合、ストアで予約するアプリケーションの名前です。
+[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 要素には、必須の子要素が 3 つあります。 次に示すのは、**Properties** ノードの例です。要素はプレースホルダー テキストが指定されています。 **表示名**は、ストアにアップロードするアプリに対して、ストアで予約するアプリケーションの名前です。
 
 ```XML
 <Properties>
@@ -112,7 +112,7 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
 ```
 ### <a name="dependencies"></a>依存関係
 
-常に設定用のパッケージを作成するデスクトップ アプリの場合、``Name``属性を``Windows.Desktop``します。
+常に設定するパッケージを作成するデスクトップ アプリの場合、``Name``属性を``Windows.Desktop``します。
 
 ```XML
 <Dependencies>
@@ -208,7 +208,7 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
 アプリの .exe または .dll ファイルを更新するには、パッケージ内の既存のファイルを新しいファイルに置き換え、AppxManifest.xml のバージョン番号を繰り上げて、上記のコマンドをもう一度実行します。
 
 > [!NOTE]
-> パッケージ化されたアプリケーションでは、常には、対話ユーザーとして実行されにパッケージ化されたアプリケーションをインストールするすべてのドライブを NTFS 形式にフォーマットする必要があります。
+> パッケージ化されたアプリケーションでは、常には、対話ユーザーとして実行してにパッケージ化されたアプリケーションをインストールするすべてのドライブを NTFS 形式にフォーマットする必要があります。
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f9f5cb3f4dc0565cafc073cea35e3e6e00d273f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564599"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622726"
 ---
 # <a name="serviceerror-json"></a>ServiceError (JSON)
 サービスに呼び出しが失敗したときに返されるエラーに関する情報が含まれています。 
@@ -25,12 +25,12 @@ ms.locfileid: "4564599"
  
 ## <a name="serviceerror"></a>ServiceError
  
-ServiceError オブジェクトには、次の仕様があります。
+ServiceError オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| code| 32 ビット符号付き整数 | エラーの種類です。 設定可能な値は、以下の表をご覧ください。 | 
-| ソース| string | エラーが発生したサービスの名前です。 たとえば、値の<code>ReputationFD</code>評判サービスでエラーがあったことを示します。 | 
+| code| 32 ビット符号付き整数 | エラーの種類です。 使用可能な値は、以下の表をご覧ください。 | 
+| ソース| string | エラーが発生したサービスの名前。 たとえば、値の<code>ReputationFD</code>評判サービスでエラーがあったことを示します。 | 
 | description| string| エラーの説明です。 | 
  
 <a id="ID4EBC"></a>
@@ -41,10 +41,10 @@ ServiceError オブジェクトには、次の仕様があります。
 | 値| 説明| 
 | --- | --- | --- | --- | --- | 
 | 0| 成功エラーなし| 
-| 4000| POST 要求に失敗しました検証で送信される要求本文 JSON ドキュメントが無効です。 詳細については説明フィールドを参照してください。 | 
+| 4000| POST 要求に失敗しました検証で送信される要求本文の JSON ドキュメントが無効です。 詳細については説明フィールドを参照してください。 | 
 | 4100| ユーザーがいない存在、XUID 要求 URI に含まれているは XBOX Live で有効なユーザーにはありません。| 
 | 4500| 承認エラー、呼び出し元は、要求された操作を実行する権限がありません。| 
-| 5000| サービスのエラーがあった、サービスの内部エラー| 
+| 5000| サービスのエラーがあった内部サービス エラー| 
 | 5300| サービス提供を停止、サービスは利用できません。| 
    
 <a id="ID4EQE"></a>

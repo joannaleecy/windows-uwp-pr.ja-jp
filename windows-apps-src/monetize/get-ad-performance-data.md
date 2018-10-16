@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 235EBA39-8F64-4499-9833-4CCA9C737477
 description: 日付範囲やその他のオプション フィルターを指定して、アプリケーションの広告のパフォーマンスに関する集計データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: 広告のパフォーマンス データの取得
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 広告, パフォーマンス
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7439b8602f8b6900b747d26add2914f8685526
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: e4800a0021288f4d0081946c1fad20099aa4cd77
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663604"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622957"
 ---
 # <a name="get-ad-performance-data"></a>広告のパフォーマンス データの取得
 
@@ -48,7 +48,7 @@ ms.locfileid: "1663604"
 
 | ヘッダー        | 型   | 説明           |
 |---------------|--------|--------------------------------|
-| Authorization | 文字列 | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 
 ### <a name="request-parameters"></a>要求パラメーター

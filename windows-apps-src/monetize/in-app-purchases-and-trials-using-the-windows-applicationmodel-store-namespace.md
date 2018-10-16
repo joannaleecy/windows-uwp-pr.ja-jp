@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: Windows 10 バージョン 1607 より前のリリースを対象とする UWP アプリでのアプリ内購入と試用版を有効にする方法を説明します。
 title: Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: UWP, アプリ内購入, IAP, アドオン, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: ccefb07b5eb0881979d91b656159f82ef050ac91
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: bb2c242ea4b7e3881751874c096165279854aa5e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691201"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619306"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版
 

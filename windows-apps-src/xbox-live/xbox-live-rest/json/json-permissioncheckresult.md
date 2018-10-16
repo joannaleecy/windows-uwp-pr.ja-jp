@@ -12,25 +12,25 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 308301b41b407291ffad74337172c5be8f4d2c59
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570942"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622136"
 ---
 # <a name="permissioncheckresult-json"></a>PermissionCheckResult (JSON)
-1 つのターゲットのユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからのチェックの結果。 
+1 つの対象ユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからチェックの結果。 
 <a id="ID4EP"></a>
 
  
 ## <a name="permissioncheckresult"></a>PermissionCheckResult
  
-PermissionCheckResult オブジェクトには、次の仕様があります。
+PermissionCheckResult オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | 理由| string| 省略可能。 アクセス許可が拒否された理由を示す<b>PermissionResultCode</b>値<b>どう</b>が false の場合。| 
-| restrictedSetting| string| 省略可能。 <b>理由</b>メンバーの<b>PermissionResultCode</b>値は、要求元の特権のチェックが失敗したことを示している場合は、どの特権が失敗したを示します。| 
+| restrictedSetting| string| 省略可能。 <b>理由</b>メンバーの<b>PermissionResultCode</b>値は、要求元の特権チェックが失敗したことを示している場合は、どの特権が失敗したを示します。| 
   
 <a id="ID4E6B"></a>
 

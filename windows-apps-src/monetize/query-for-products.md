@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Azure AD クライアント ID に関連付けられているアプリでユーザーが所有しているすべての製品を取得するには、Microsoft Store コレクション API の以下のメソッドを使います。 スコープを指定して特定の製品を照会したり、その他のフィルターを使用したりできます。
 title: 製品の照会
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store コレクション API, 製品の表示
 ms.localizationpriority: medium
-ms.openlocfilehash: 696d2c0ca4f8d0d92bef66efb9d551a2f19d2aa3
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 066660c307be9f3592aa38cb21a6e00cd960aa73
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664968"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618837"
 ---
 # <a name="query-for-products"></a>製品の照会
 
@@ -47,7 +47,7 @@ Azure AD クライアント ID に関連付けられているアプリでユー�
 
 | ヘッダー         | 型   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | 文字列 | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。                           |
+| Authorization  | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。                           |
 | Host           | string | 値 **collections.mp.microsoft.com** に設定する必要があります。                                            |
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
@@ -76,7 +76,7 @@ UserIdentity オブジェクトには以下のパラメーターが含まれて�
 | localTicketReference | string | 返された製品で必要な識別子。 応答本文で返された項目には、一致する *localTicketReference* があります。 Microsoft Store ID キーの *userId* 要求と同じ値を使用することをお勧めします。 | 必須      |
 
 
-ProductSkuId オブジェクトには、次のパラメーターが含まれています。
+ProductSkuId オブジェクトには以下のパラメーターが含まれています。
 
 | パラメーター | 型   | 説明          | 必須かどうか |
 |-----------|--------|----------------------|----------|
@@ -145,7 +145,7 @@ CollectionItemContractV6 オブジェクトには以下のパラメーターが�
 | ownershipType        | string             | 文字列 *OwnedByBeneficiary*。   | 必須      |
 | productId            | string             | Microsoft Store カタログ内の[製品](in-app-purchases-and-trials.md#products-skus-and-availabilities)の [Store ID](in-app-purchases-and-trials.md#store-ids)。 製品の Store ID の例は、9NBLGGH42CFD です。          | 必須      |
 | productType          | string             | **Application**、**Durable**、および **UnmanagedConsumable** の製品タイプのいずれか。        | 必須      |
-| purchasedCountry     | string             | 該当なし。   | 省略可能       |
+| purchasedCountry     | string             | 該当なし   | 省略可能       |
 | purchaser            | IdentityContractV6 | 存在する場合、項目の購入者の ID を表します。 下記に示すこのオブジェクトの詳細を参照してください。        | 省略可能       |
 | quantity             | number             | 項目の数量。 現在、これは常に 1 になります。      | 省略可能       |
 | skuId                | string             | Microsoft Store カタログ内の製品の [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) の [Store ID](in-app-purchases-and-trials.md#store-ids)。 SKU の Store ID の例は、0010 です。     | 必須      |
@@ -208,7 +208,7 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 ## <a name="related-topics"></a>関連トピック
 
-* [サービスによる製品の権利の管理](view-and-grant-products-from-a-service.md)
-* [コンシューマブルな製品のフルフィルメント完了の報告](report-consumable-products-as-fulfilled.md)
+* [サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)
+* [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
 * [無料の製品の付与](grant-free-products.md)
 * [Microsoft Store ID キーの更新](renew-a-windows-store-id-key.md)

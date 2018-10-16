@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b388a196e1f5fa6649ac1fb072c80d01bba45e20
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4575331"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620791"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
 
@@ -191,7 +191,7 @@ ms.locfileid: "4575331"
         - アプリのコンテンツを追加する領域がしたいです。
         - アイコンは、ナビゲーションのカテゴリを明確に記述ことはできません。
         
-        タイミング タブを使用します。
+        ときにタブを使用します。
 
         - ナビゲーション履歴とページの状態を保持します。
         - ユーザーがタブを頻繁に切り替えることが予想されます。

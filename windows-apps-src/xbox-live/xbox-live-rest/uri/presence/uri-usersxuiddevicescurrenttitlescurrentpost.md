@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ac24fb580696f1524ce7a6cf09dc1e492e9d2378
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570945"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619298"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
 ユーザーのプレゼンスでタイトルを更新します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
@@ -34,9 +34,9 @@ ms.locfileid: "4570945"
  
 ## <a name="remarks"></a>注釈
  
-この URI は、コンソール以外のプラットフォームですべてのタイトルを追加し、プレゼンス、リッチ プレゼンス、およびタイトルのメディアのプレゼンス データを更新するために使用できます。
+この URI は、コンソール以外のプラットフォームでのすべてのタイトルを追加し、プレゼンス、リッチ プレゼンスは、タイトルのメディアのプレゼンス データを更新するために使用できます。
  
-**SandboxId**は今すぐ、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合のエンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
+**SandboxId**はここで、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
   
 <a id="ID4EEB"></a>
 
@@ -45,7 +45,7 @@ ms.locfileid: "4570945"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのします。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのです。| 
   
 <a id="ID4EPB"></a>
 
@@ -54,7 +54,7 @@ ms.locfileid: "4570945"
  
 | 型| 必須かどうか| 説明| 不足している場合、応答| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| XUID| はい| 呼び出し元の Xbox ユーザー ID (XUID)| 403 Forbidden| 
+| XUID| はい| 呼び出し元のように、Xbox ユーザー ID (XUID)| 403 Forbidden| 
 | titleId| はい| タイトルのタイトル Id| 403 Forbidden| 
 | deviceId| Windows と Web 以外のすべての [はい] します。| 呼び出し元の deviceId| 403 Forbidden| 
 | deviceType| Web 以外のすべての [はい]| 呼び出し元の deviceType| 403 Forbidden| 
@@ -67,8 +67,8 @@ ms.locfileid: "4570945"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
-| x xbl コントラクト バージョン| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3, vnext します。| 
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
+| x xbl コントラクト バージョン| string| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3, vnext します。| 
 | Content-Type| string| 値の例の要求の本文の mime タイプ: アプリケーション/json します。| 
 | Content-Length| string| 要求の本文の長さ。 値の例: 312 します。| 
 | Host| string| サーバーのドメイン名。 値の例: presencebeta.xboxlive.com します。| 
@@ -80,14 +80,14 @@ ms.locfileid: "4570945"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
+| X RequestedServiceVersion|  | この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
   
 <a id="ID4ERH"></a>
 
  
 ## <a name="request-body"></a>要求本文
  
-要求は、 [TitleRequest](../../json/json-titlerequest.md)です。 本体で実際に存在するプロパティのみが更新されます。 任意のプロパティは、本文の一部ではないが、上に存在するサーバーは変更されません。
+要求、 [TitleRequest](../../json/json-titlerequest.md)です。 本体で実際に存在するプロパティのみが更新されます。 任意のプロパティは、本文の一部ではないが、上に存在するサーバーは変更されません。
  
 <a id="ID4EAAAC"></a>
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: Microsoft Advertising SDK の現在のリリースにおける既知の問題について説明します。
 title: アプリ内広告の既知の問題とトラブルシューティング
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 広告, Advertising, 既知の問題, トラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: aaf2db68df9de3f397a0cbc677e18f4ed544cf4b
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 1ca7949b3092b03500f25249ce1af3832a9e61ba
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817533"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622144"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>アプリ内広告の既知の問題とトラブルシューティング
 
@@ -26,7 +26,7 @@ ms.locfileid: "1817533"
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>XAML での不明な AdControl インターフェイス
 
-[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) の XAML マークアップに、そのインターフェイスが不明であることを示す青い破線が表示される場合があります。 これは、x86 をターゲットとして設定している場合にのみ発生するもので、無視してかまいません。
+[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) の XAML マークアップに、そのインターフェイスが不明であることを示す青い破線が表示される場合があります。 これは、x86 をターゲットとして設定している場合にのみ発生するもので、無視してかまいません。
 
 ## <a name="lasterror-from-previous-ad-request"></a>以前の広告要求からの lastError
 

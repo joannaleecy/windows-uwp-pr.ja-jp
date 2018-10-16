@@ -12,27 +12,27 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ddecacdf77305b6c9449bd5e903a5e4c0fa74d7
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574297"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618036"
 ---
 # <a name="reward-json"></a>Reward (JSON)
-実績に関連付けられているリワードです。
+実績に関連付けられたリワードです。
 <a id="ID4EN"></a>
 
 
 ## <a name="reward"></a>リワード
 
-リワード オブジェクトには、次の仕様があります。
+リワード オブジェクトでは、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
-| name| string| ユーザーに表示されるリワードの名前です。|
+| name| string| リワードのユーザーに表示される名前です。|
 | description| string| ユーザーに表示されるリワードの説明です。|
 | value| string| リワードの値。|
-| type| RewardType 列挙型| リワードの種類: <ul><li>無効 (0): 不明なおよびサポートされていないリワードの種類が構成されています。</li><li>(1): ゲーマー スコア リワードでは、プレイヤーのゲーマー スコアにポイントを追加します。</li><li>inApp (2): リワードが定義されているし、タイトルによって配信します。</li><li>アート (3): リワードは、デジタル資産です。</li></ul> | 
+| type| RewardType 列挙型| リワードの種類: <ul><li>無効 (0): 不明なおよびサポートされていないリワード型が構成されています。</li><li>(1): ゲーマー スコア リワードでは、プレイヤーのゲーマー スコアにポイントを追加します。</li><li>inApp (2): リワードが定義されているし、タイトルによって配信します。</li><li>アート (3): リワードは、デジタル資産です。</li></ul> | 
 | valueType| ProgressValueDataType 列挙型| 値の種類です。 詳細については、[要件 (JSON)](json-requirement.md)を参照してください。|
 
 <a id="ID4EBD"></a>

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569799"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618863"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Microsoft Emulator for Windows 10 Mobile を使ったテスト
 
@@ -68,7 +68,7 @@ Microsoft Emulator for Windows 10 Mobile をアンインストールしても、
 
 ### <a name="running"></a>Running
 
-エミュレーターでアプリを実行するには、だけで、Visual Studio の [**実行**] ドロップダウン メニューからエミュレートされたデバイスを選択します。
+エミュレーターでアプリを実行するには、Visual Studio の [**実行**] ドロップダウン メニューからエミュレートされたデバイスを単に選択します。
 
 ![解像度、サイズ、メモリに使うことができるエミュレーター](images/em-list.png)
 

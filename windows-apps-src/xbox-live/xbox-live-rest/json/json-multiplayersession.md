@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 520861dfa512ae301cce9d75e1c314feacf7d6b9
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568658"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621755"
 ---
 # <a name="multiplayersession-json"></a>MultiplayerSession (JSON)
 **MultiplayerSession**を表す JSON オブジェクト。 
@@ -24,14 +24,14 @@ ms.locfileid: "4568658"
 
   
  
-MultiplayerSession JSON オブジェクトには、次の仕様があります。
+MultiplayerSession JSON オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | 定数| object| セッションの定数を生成するセッション テンプレートと結合された読み取り専用の設定。 | 
 | プロパティ | object | セッションのプロパティへの結合を変更します。| 
-| members.me | object| 定数および機能もプロパティなどのトップレベルの対応します。 PUT メソッドでは、ユーザーが、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。 Null として"me"を指定する場合は、要求を行っているメンバーがセッションから削除されます。 | 
-| メンバー | object| 0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクト。 要求のメンバー数常に 0 から始まり、場合でも、既にセッションにはメンバーが含まれています。 要求で表示される順序でセッションにメンバーが追加されます。 メンバーのプロパティは、先に属しているユーザーでのみ設定できます。 | 
+| members.me | object| 定数および機能もプロパティなどの最上位の対応します。 PUT メソッドでは、ユーザーが、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。 Null として"me"を指定する場合は、要求を行っているメンバーがセッションから削除されます。 | 
+| メンバー | object| 0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクト。 既にセッションには、メンバーが含まれている場合でも、要求のメンバーの数は常に 0 で始まります。 メンバーは、要求で表示される順序でセッションに追加されます。 メンバーのプロパティは、先に属しているユーザーでのみ設定できます。 | 
 | サーバー | object| 関連付けられているサーバーの参加者のセットに更新プログラムと、セッションに追加されたことを示す値。 サーバーが null として指定されている場合、そのサーバーのエントリは、セッションから削除されます。 | 
   
 <a id="ID4EZ"></a>

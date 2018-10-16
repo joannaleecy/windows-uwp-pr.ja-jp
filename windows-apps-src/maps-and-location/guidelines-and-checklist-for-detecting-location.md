@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 位置, 地図, 位置情報
 ms.localizationpriority: medium
 ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566770"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623204"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置認識アプリのガイドライン
 
@@ -51,7 +51,7 @@ ms.locfileid: "4566770"
 
     ユーザーが設定を使って位置情報へのアクセスをオフにした場合に、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを解放します。 すると、アプリは、あらゆる位置情報 API 呼び出しの結果として **ACCESS\_DENIED** を受け取ります。 アプリで位置データを保存またはキャッシュしている場合は、ユーザーが位置情報へのアクセスを無効にするときにすべてのキャッシュ データをクリアします。 位置情報サービス経由で位置データを利用できないときに位置情報を手動で入力するための代替手段を用意してください。
 
--   位置情報サービスを再び有効にするための UI を用意します。 たとえば、 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)オブジェクトを再し、もう一度位置情報の取得を試みます更新ボタンを提供します。
+-   位置情報サービスを再び有効にするための UI を用意します。 たとえば、 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)オブジェクトを再をもう一度位置情報の取得を試みます更新ボタンを提供します。
 
     位置情報サービスを再び有効にするための UI を提供する—
 

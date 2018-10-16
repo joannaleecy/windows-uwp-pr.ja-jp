@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f295c1f1b432f90e12d3e628cd35a54412812ec
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567359"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617654"
 ---
 # <a name="introduction-to-xbox-live-apis"></a>Xbox Live API の概要
 
@@ -47,9 +47,9 @@ Xbox Live Services API (**XSAPI**) は、次の 3 つのセットのクライア
 
 - [XSAPI WinRT API](#xsapi-winrt-based-api)
 - [XSAPI C++11 ベース API](#xsapi-c++11-based-api)
-- [XSAPI C ベース API](#xsapi-c-based-api)(**2018 6 月の時点で新しい**)
+- [XSAPI C ベース API](#xsapi-c-based-api)(**2018 6 月の新しい日現在**)
 
-Api を比較するには。
+Api を比較します。
 
 ### <a name="xsapi-winrt-based-api"></a>XSAPI WinRT ベース API
 
@@ -57,7 +57,7 @@ Api を比較するには。
     - C++/CX はマイクロソフトの C++ 拡張であり、^ を WinRT ポインターとして使用するなど、WinRT プログラミングを容易にします。
 - Xbox One XDK プラットフォーム、および x86、x64、ARM の各アーキテクチャのユニバーサル Windows プラットフォーム (UWP) をターゲットにしたアプリケーションをサポートします。
 - C++/CX を含むすべての言語で、エラーは例外を使用して処理されます。
-- C++/WinRT もサポートされます。  詳細については、C++/cli で WinRT を入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
+- C++/WinRT もサポートされます。  詳細については、C++ について/で WinRT を入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
 C++/WinRT を使用する XSAPI WinRT API の呼び出しの例を次に示します。
 
@@ -91,7 +91,7 @@ winrt::Microsoft::Xbox::Services::XboxLiveContext xblContext(cppWinrtUser);
 #include "xsapi\services.h"
 ```
 
-- C++/WinRT もサポートされます。  詳細については、C++/cli で WinRT を入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
+- C++/WinRT もサポートされます。  詳細については、C++ について/で WinRT を入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
 C++/WinRT と XSAPI C++ API を使うには、XSAPI ヘッダーをインクルードする前に XSAPI_CPPWINRT を定義します。  次に、例を示します。
 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a10b8704de47ef62a283c1b634b4a5212623e5c
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574532"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620268"
 ---
 # <a name="get-usersme"></a>GET (/users/me)
-ユーザーの XUID を把握することがなく、現在のユーザーの[PresenceRecord](../../json/json-presencerecord.md)を取得します。
+ユーザーの XUID を確認することがなく、現在のユーザーの[PresenceRecord](../../json/json-presencerecord.md)を取得します。
 これらの Uri のドメインが`userpresence.xboxlive.com`します。
 
   * [クエリ文字列パラメーター](#ID4EZ)
@@ -36,7 +36,7 @@ ms.locfileid: "4574532"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| level| string| 省略可能。 <ul><li><b>ユーザー</b>: ユーザーのノードのみを返します。</li><li><b>デバイス</b>: ユーザーのノードとデバイス ノードを返します。</li><li><b>タイトル</b>: 既定値します。 アクティビティ除いてツリー全体を返します。</li><li><b>すべて</b>: アクティビティ レベルのプレゼンスを含むツリー全体を返します。</li></ul> | 
+| level| string| 省略可能。 <ul><li><b>ユーザー</b>: ユーザー ノードのみを返します。</li><li><b>デバイス</b>: ユーザー ノードとデバイス ノードを返します。</li><li><b>タイトル</b>: 既定値します。 アクティビティを除くツリー全体を返します。</li><li><b>すべて</b>: アクティビティ レベルのプレゼンスを含むツリー全体を返します。</li></ul> | 
 
 <a id="ID4EIC"></a>
 
@@ -45,7 +45,7 @@ ms.locfileid: "4574532"
 
 | 型| 必須かどうか| 説明| 不足している場合、応答|
 | --- | --- | --- | --- | --- | --- | --- |
-| XUID| はい| 呼び出し元の Xbox ユーザー ID (XUID)| 403 Forbidden|
+| XUID| はい| 呼び出し元のように、Xbox ユーザー ID (XUID)| 403 Forbidden|
 
 <a id="ID4ELD"></a>
 
@@ -54,10 +54,10 @@ ms.locfileid: "4574532"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。|
-| x xbl コントラクト バージョン| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3, vnext します。|
-| Accept| string| コンテンツの種類の受け入れられる。 プレゼンスでサポートされている 1 つのみがアプリケーション/json がヘッダーで指定する必要があります。|
-| 受け入れる言語| string| 応答には、内の文字列の許容ロケールです。 値の例: EN-US にします。|
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。|
+| x xbl コントラクト バージョン| string| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3, vnext します。|
+| Accept| string| コンテンツの種類の受け入れられるします。 プレゼンスでサポートされている 1 つだけがアプリケーション/json がヘッダーで指定する必要があります。|
+| 同意言語| string| 応答で文字列を許容できるロケールです。 値の例: EN-US にします。|
 | Host| string| サーバーのドメイン名。 値の例: presencebeta.xboxlive.com します。|
 
 <a id="ID4EPF"></a>
@@ -67,7 +67,7 @@ ms.locfileid: "4574532"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。|
+| X RequestedServiceVersion|  | この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。|
 
 <a id="ID4EPG"></a>
 

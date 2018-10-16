@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: Microsoft Advertising ライブラリのリリース ノートを確認します。
 title: Advertising ライブラリのリリース ノート
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, リリース ノート
 ms.localizationpriority: medium
-ms.openlocfilehash: 41966827b02f95b8c34b4c13158c542e04b0c09f
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 37a5cafcc5f768e90d4ee3997f92a62a9903fc9a
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690228"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622046"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising ライブラリのリリース ノート
 

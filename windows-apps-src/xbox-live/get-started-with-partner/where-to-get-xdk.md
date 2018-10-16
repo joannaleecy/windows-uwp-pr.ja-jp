@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 604fcf1e77a1ca4666c14216be5c690362c9048b
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570272"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617322"
 ---
 # <a name="how-to-get-the-xbox-development-kit-xdk"></a>Xbox 開発キット (XDK) を取得する方法
 
-Xbox 開発キット (XDK) は一般に公開されません。 2 つのグループでは、対象パートナーとID@Xbox、開発者は、XDK へのアクセスを許可し、開発に関するリソースのドキュメントとミドルウェア ツールと同様に関連付けられています。 XDK は、[ソフトウェアのダウンロード ページ](https://developer.microsoft.com/en-us/games/xbox/partner/resources-softwaredownloads)で、developer.microsoft.com サイトからダウンロードできます。
+Xbox 開発キット (XDK) はパブリックではないです。 2 つのグループでは、対象パートナーとID@Xbox、開発者のドキュメントとミドルウェア ツールなどの開発に関するリソースの関連して、XDK へのアクセスを許可します。 XDK は、[ソフトウェアのダウンロード ページ](https://developer.microsoft.com/en-us/games/xbox/partner/resources-softwaredownloads)で、developer.microsoft.com サイトからダウンロードできます。
 
-サイトにアクセスできない場合をダウンロードまたは XDK を使用できません。 お持ちでないでない場合へのアクセスには、担当のアカウント マネージャーがお問い合わせください。
+サイトにアクセスできない場合は、ダウンロードまたは XDK を使用することはできません。 アクセスのアカウント マネージャーに問い合わせていいえできない場合はします。
 
 XDK アクセスすることができます条件を満たすために[申し込む、ID@Xbox開発者](https://www.xbox.com/en-us/Developers/id)します。
 [ここをクリックして](../developer-program-overview.md)について詳しくはして、ID@Xboxプログラムとその他の開発者層します。
@@ -44,7 +44,7 @@ XDK アクセスすることができます条件を満たすために[申し込
 XDK へのアクセスはの指示に従って、その使用されているリソースへのアクセスを与えます。 これらのリソースはパブリックないとのみが利用 XDK と同様にID@Xboxマネージ パートナー開発者とします。
 
 - Xbox Live 開発キットを使用して、 [XDK ドキュメント](https://developer.microsoft.com/en-us/games/xbox/partner/development-documentation)の最新情報の詳細を表示します。
-- 追加のヘルプのコミュニティの詳細については、[開発者フォーラム](https://forums.xboxlive.com/index.html)を参照してください。 またはアカウント マネージャーに連絡できます。
+- 追加のヘルプは、コミュニティの詳細については、[開発者フォーラム](https://forums.xboxlive.com/index.html)を参照してくださいしたり、アカウント マネージャーに連絡できます。
 
 ## <a name="install-the-xdk"></a>XDK のインストール
 

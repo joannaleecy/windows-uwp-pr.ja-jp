@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 260d55104a2083270b1f5c2d2892826cc7b3d6ed
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572525"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622883"
 ---
 # <a name="post-usersxuidxuidoutbox"></a>POST (/users/xuid({xuid})/outbox)
 受信者の一覧に指定されたメッセージを送信します。
@@ -35,7 +35,7 @@ ms.locfileid: "4572525"
 
 ## <a name="remarks"></a>注釈
 
-この API はサポートのみコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
+この API は、サポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
 
 <a id="ID4EAB"></a>
 
@@ -44,14 +44,14 @@ ms.locfileid: "4572525"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 |
+| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) 要求を行っているプレイヤーのします。 |
 
 <a id="ID4ENB"></a>
 
 
 ## <a name="authorization"></a>Authorization
 
-ユーザーのメッセージを送信するには、ユーザー要求と有効なゴールド サブスクリプションが必要です。
+ユーザーのメッセージを送信するには、ユーザーの要求と有効なゴールド サブスクリプションが必要です。
 
 <a id="ID4EYB"></a>
 
@@ -72,13 +72,13 @@ ms.locfileid: "4572525"
 | me| -| 前述のようにします。|
 | フレンド登録の依頼| すべてのユーザー| 200 OK|
 | フレンド登録の依頼| フレンドのみ| 200 OK|
-| フレンド登録の依頼| ブロックされています。| 200 OK|
+| フレンド登録の依頼| ブロック| 200 OK|
 | フレンド以外のユーザー| すべてのユーザー| 200 OK|
 | フレンド以外のユーザー| フレンドのみ| 200 OK|
-| フレンド以外のユーザー| ブロックされています。| 200 OK|
+| フレンド以外のユーザー| ブロック| 200 OK|
 | サード パーティのサイト| すべてのユーザー| 200 OK|
 | サード パーティのサイト| フレンドのみ| 200 OK|
-| サード パーティのサイト| ブロックされています。| 200 OK|
+| サード パーティのサイト| ブロック| 200 OK|
 
 <a id="ID4E3F"></a>
 
@@ -124,7 +124,7 @@ ms.locfileid: "4572525"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

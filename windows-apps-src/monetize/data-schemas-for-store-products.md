@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: ストア製品向けに Windows.Services.Store 名前空間の拡張 JSON データ スキーマについて説明します。
 title: Store 製品のデータ スキーマ
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 09/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, ExtendedJsonData, Store 製品, スキーマ
 ms.localizationpriority: medium
-ms.openlocfilehash: 053391e78b4356e7e8042ba7864d99f1c95b2aad
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 77faa88524f348736c4c997dcd18ded200e9fd86
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673829"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621609"
 ---
 # <a name="data-schemas-for-store-products"></a>Store 製品のデータ スキーマ
 

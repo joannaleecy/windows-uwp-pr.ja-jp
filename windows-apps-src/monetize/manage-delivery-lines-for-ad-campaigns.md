@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: dc632a4c-ce48-400b-8e6e-1dddbd13afff
 description: プロモーション用の広告キャンペーンの配信ラインを管理するには、Microsoft Store プロモーション API の以下のメソッドを使います。
 title: 配信ラインの管理
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
-ms.openlocfilehash: a7dca49ee1ecaeb675127ea19191a028f6f7846f
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 387b5ccf999452780b89aa7edcc9b58bcc35ea8a
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664102"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622737"
 ---
 # <a name="manage-delivery-lines"></a>配信ラインの管理
 
@@ -34,7 +34,7 @@ ms.locfileid: "1664102"
   > [!NOTE]
   > 前提条件の一部として、[デベロッパー センター ダッシュボードで有料の広告キャンペーンを少なくとも 1 つ作成する](../publish/create-an-ad-campaign-for-your-app.md)必要があります。また、ダッシュボードで、広告キャンペーンの支払い方法を少なくとも 1 つ追加する必要があります。 この API を使用して作成した配信ラインでは、ダッシュ ボードの **[アプリの宣伝]** ページで選んだ既定の支払い方法に対して自動的に請求が行われます。
 
-* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -51,7 +51,7 @@ ms.locfileid: "1664102"
 
 | ヘッダー        | 型   | 説明         |
 |---------------|--------|---------------------|
-| Authorization | 文字列 | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 | 追跡 ID   | GUID   | 省略可能。 呼び出しフローを追跡する ID。                                  |
 
 
@@ -153,7 +153,7 @@ Authorization: Bearer <your access token>
 |  bidAmount   |  10 進数   |  広告要求の入札に使う入札額です。      |    ×   |  対象市場に基づく平均 CPM 値です (この値は定期的に変更されます)。    |    ×    |  
 |  dailyBudget   |  10 進数   |  配信ラインの 1 日あたりの予算です。 *dailyBudget* または *lifetimeBudget* を設定する必要があります。      |    ×   |      |   POST、PUT (*lifetimeBudget* が設定されていない場合)       |
 |  lifetimeBudget   |  10 進数   |   配信ラインの全体予算です。 lifetimeBudget* または *dailyBudget* を設定する必要があります。      |    ×   |      |   POST、PUT (*dailyBudget* が設定されていない場合)    |
-|  targetingProfileId   |  オブジェクト   |  この配信ラインを対象にするユーザー、地域、およびインベントリの種類を指定する[ターゲット プロファイル](manage-targeting-profiles-for-ad-campaigns.md#targeting-profile)を識別するオブジェクトです。 このオブジェクトは、ターゲット プロファイルの ID を指定する単一の *id* フィールドで構成されます。     |    ×   |      |  ×      |  
+|  targetingProfileId   |  オブジェクト   |  この配信ラインを対象にするユーザー、地域、およびインベントリの種類を指定する[対象プロファイル](manage-targeting-profiles-for-ad-campaigns.md#targeting-profile)を識別するオブジェクトです。 このオブジェクトは、対象プロファイルの ID を指定する単一の *id* フィールドで構成されます。     |    ×   |      |  ×      |  
 |  creatives   |  配列   |  配信ラインに関連づけられた[クリエイティブ](manage-creatives-for-ad-campaigns.md#creative)を表す 1 つ以上のオブジェクトです。 このフィールド内の各オブジェクトは、クリエイティブの ID を指定する単一の *id* フィールドで構成されます。      |    ×   |      |   ×     |  
 |  campaignId   |  整数   |  親広告キャンペーンの ID です。      |    ×   |      |   ×     |  
 |  minMinutesPerImp   |  整数   |  この配信ラインから同じユーザーに表示される 2 つのインプレッション間の間隔 (分単位) を指定します。      |    ×   |  4000    |  ×      |  
@@ -165,6 +165,6 @@ Authorization: Bearer <your access token>
 
 * [Microsoft Store サービスを使用した広告キャンペーンの実行](run-ad-campaigns-using-windows-store-services.md)
 * [広告キャンペーンの管理](manage-ad-campaigns.md)
-* [広告キャンペーンのターゲット プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)
+* [広告キャンペーンの対象プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)
 * [広告キャンペーンのクリエイティブの管理](manage-creatives-for-ad-campaigns.md)
 * [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)

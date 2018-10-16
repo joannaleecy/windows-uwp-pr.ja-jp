@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: アプリ内広告の UI とユーザー エクスペリエンスのガイドラインについて説明します。
 title: 広告の UI とユーザー エクスペリエンスのガイドライン
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, ガイドライン, ベスト プラクティス
 ms.localizationpriority: medium
-ms.openlocfilehash: 026ec28c609d62f59958f6ca804c67bb9ca3e109
-ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.openlocfilehash: c7f5e762593773e529610989741274d9fb5b9be7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "1881073"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616921"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>広告の UI とユーザー エクスペリエンスのガイドライン
 
@@ -37,7 +37,7 @@ ms.locfileid: "1881073"
 
 ## <a name="guidelines-for-banner-ads"></a>バナー広告のガイドライン
 
-以下のセクションでは、[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) を使ってアプリ内で[バナー広告](banner-ads.md)を実装する場合の推奨事項と、Microsoft Store ポリシーの[ポリシー 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) に違反する実装の例を紹介します。
+以下のセクションでは、[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) を使ってアプリ内で[バナー広告](banner-ads.md)を実装する場合の推奨事項と、Microsoft Store ポリシーの[ポリシー 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) に違反する実装の例を紹介します。
 
 ### <a name="best-practices"></a>ベスト プラクティス
 
@@ -53,7 +53,7 @@ ms.locfileid: "1881073"
 
 * 広告を利用できない場合の対応を計画します。 広告がアプリに送信されないタイミングがあります。 ページに広告が表示される場合も、表示されない場合も、適切に表示されるようにページをレイアウトします。 詳しくは、「[広告のエラー処理](error-handling-with-advertising-libraries.md)」をご覧ください。
 
-* オーバーレイを使って最も効果的に対応できるユーザーへの通知シナリオがある場合、オーバーレイを表示しながら [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) を呼び出し、通知シナリオが完了したら [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx) を呼び出します。
+* オーバーレイを使って最も効果的に対応できるユーザーへの通知シナリオがある場合、オーバーレイを表示しながら [AdControl.Suspend](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend) を呼び出し、通知シナリオが完了したら [AdControl.Resume](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.resume) を呼び出します。
 
 ### <a name="practices-to-avoid"></a>避けるプラクティス
 
@@ -69,11 +69,11 @@ ms.locfileid: "1881073"
 
 このセクションでは、Microsoft Store ポリシーの[ポリシー 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) に違反するバナー広告シナリオの例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、説明目的にのみ提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、ポリシー 10.10.1 に違反する例は多数存在する可能性があります。
 
-* [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) の不透明度を変更したり、(最初に [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) を呼び出さずに) **AdControl**の上に他のコントロールを配置するなど、バナー広告をユーザーが表示する能力を妨げる操作を行う。
+* [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) の不透明度を変更したり、(最初に [AdControl.Suspend](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend) を呼び出さずに) **AdControl**の上に他のコントロールを配置するなど、バナー広告をユーザーが表示する能力を妨げる操作を行う。
 
 * ユーザーがアプリでタスクを実行するにはバナーをクリックする必要がある。またはアプリの設計結果として、ユーザーにバナー広告を強制的にクリックさせる。
 
-* [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) オブジェクトのスワップ、またはユーザー操作を伴わない強制的なページ更新など、任意の手段でバナー広告の組み込み最短更新タイマーを回避する。
+* [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) オブジェクトのスワップ、またはユーザー操作を伴わない強制的なページ更新など、任意の手段でバナー広告の組み込み最短更新タイマーを回避する。
 
 * 開発およびテスト中、またはエミュレーターでライブ広告ユニット (つまり、Windows デベロッパー センター ダッシュボードから取得した広告ユニット) を使用する。
 
@@ -87,7 +87,7 @@ ms.locfileid: "1881073"
 
 洗練された方法で[スポット広告](interstitial-ads.md)を使うと、ユーザー満足度を損なうことなく、アプリの収益を飛躍的に向上させることができます。 使い方が不適切だと、スポット広告は逆効果になる可能性があります。
 
-以下のセクションでは、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) を使ってアプリにビデオ スポット広告やバナー スポット広告を実装する場合の推奨事項と、Microsoft Store ポリシーの[ポリシー 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) に違反する実装の例を紹介します。 ポリシーに関連する問題を除き、アプリについて最もよく理解しているのは開発者の皆様であるため、ベスト プラクティスに関する最終的な判断は開発者の皆様に委ねています。 留意する最も重要な点は、アプリの評価と収益が密接に結びついていることです。
+以下のセクションでは、[InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) を使ってアプリにビデオ スポット広告やバナー スポット広告を実装する場合の推奨事項と、Microsoft Store ポリシーの[ポリシー 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) に違反する実装の例を紹介します。 ポリシーに関連する問題を除き、アプリについて最もよく理解しているのは開発者の皆様であるため、ベスト プラクティスに関する最終的な判断は開発者の皆様に委ねています。 留意する最も重要な点は、アプリの評価と収益が密接に結びついていることです。
 
 ### <a name="best-practices"></a>ベスト プラクティス
 
@@ -105,9 +105,9 @@ ms.locfileid: "1881073"
 
 * アプリでビデオ スポット広告を最後まで視聴することを要求する場合は、ユーザーが閉じるボタンを押したときにエラー メッセージに驚かないように、事前にルールを説明しておきます。
 
-* 可能であれば広告の表示が必要になる 30 ～ 60 秒前に ([InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) を呼び出して) 広告を事前に取得しておきます。
+* 可能であれば広告の表示が必要になる 30 ～ 60 秒前に ([InterstitialAd.RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) を呼び出して) 広告を事前に取得しておきます。
 
-* [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスで公開されている 4 つのイベント (**Canceled**、**Completed**、**AdReady**、**ErrorOccurred**) をすべてサブスクライブし、それらを使用して、アプリに適切な意思決定を行います。
+* [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) クラスで公開されている 4 つのイベント (**Canceled**、**Completed**、**AdReady**、**ErrorOccurred**) をすべてサブスクライブし、それらを使用して、アプリに適切な意思決定を行います。
 
 * サーバーが提供する広告の代わりに使用する機能をあらかじめ用意しておきます。 これは次のようなシナリオで役に立ちます。
 
@@ -135,11 +135,11 @@ ms.locfileid: "1881073"
 
 * 2 つ以上のスポット広告を連続して表示しないでください。 ユーザーは広告の進行状況バーが開始点にリセットされるのを見ると苛立ちを感じます。 多くのユーザーは、これがコーディングまたは広告提供のバグであると考えます。
 
-* [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) を呼び出す 5 分以上前にビデオ スポット広告を取得しないでください。 適切なインベントリでは、事前に取得された広告から請求可能なインプレッションへのコンバージョンが最大化されます。
+* [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) を呼び出す 5 分以上前にビデオ スポット広告を取得しないでください。 適切なインベントリでは、事前に取得された広告から請求可能なインプレッションへのコンバージョンが最大化されます。
 
 * 利用可能な広告がないなど、広告を提供できなかった場合に、ユーザーに不利益をもたらさないようにしてください。 たとえば、[広告を視聴して *xxx* を取得する] という UI オプションを表示する場合、ユーザーが責任を果たしたら、*xxx* を提供する必要があります。 2 つのオプションを検討してください。
 
-    * [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) イベントが発生するまでこのオプションを表示しない。
+    * [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) イベントが発生するまでこのオプションを表示しない。
 
     * 実際の広告と同じ利点が得られるように、あらかじめ用意された機能をアプリに含める。
 
@@ -151,13 +151,13 @@ ms.locfileid: "1881073"
 
 * スポット広告コンテナー上に UI 要素を配置する。
 
-* ユーザーがアプリを使用している間に [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) を呼び出す。
+* ユーザーがアプリを使用している間に [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) を呼び出す。
 
 * スポット広告を使って、通貨として消費できるものや、他のユーザーと取引できるものを取得できるようにする。
 
-* [InterstitialAd.ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) イベントのイベント ハンドラーのコンテキストで新しいスポット広告を要求する。 これにより、無限ループが発生して、広告サービスの操作上の問題の原因となります。
+* [InterstitialAd.ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.erroroccurred) イベントのイベント ハンドラーのコンテキストで新しいスポット広告を要求する。 これにより、無限ループが発生して、広告サービスの操作上の問題の原因となります。
 
-* 連鎖的な広告の単なるバックアップとして、スポット広告を要求する。 スポット広告を要求し、[InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) イベントを受信した場合、アプリに表示できる次のスポット広告は、[InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) メソッド経由で表示できる必要があります。
+* 連鎖的な広告の単なるバックアップとして、スポット広告を要求する。 スポット広告を要求し、[InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) イベントを受信した場合、アプリに表示できる次のスポット広告は、[InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) メソッド経由で表示できる必要があります。
 
 * 開発およびテスト中、またはエミュレーターでライブ広告ユニット (つまり、Windows デベロッパー センター ダッシュボードから取得した広告ユニット) を使用する。
 
@@ -171,7 +171,7 @@ ms.locfileid: "1881073"
 
 ### <a name="register-the-container-for-your-native-ad"></a>ネイティブ広告のコンテナーを登録する
 
-コードで、**NativeAdV2** オブジェクトの [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) メソッドを呼び出して、ネイティブ広告のコンテナーとして機能する UI 要素と、必要に応じて広告のクリック可能なターゲットとして登録する特定のコントロールを登録する必要があります。 これは、広告インプレッションと広告クリックを適切に追跡するために必要です。
+コードで、[NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) オブジェクトの [RegisterAdContainer](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2.registeradcontainer) メソッドを呼び出して、ネイティブ広告のコンテナーとして機能する UI 要素と、必要に応じて広告のクリック可能なターゲットとして登録する特定のコントロールを登録する必要があります。 これは、広告インプレッションと広告クリックを適切に追跡するために必要です。
 
 **RegisterAdContainer** メソッドには、次の 2 つのオーバーロードを使用できます。
 
@@ -181,7 +181,7 @@ ms.locfileid: "1881073"
 
 ### <a name="required-native-ad-elements"></a>必須のネイティブ広告要素
 
-少なくとも、ネイティブ広告デザインで、ユーザーに **NativeAdV2** オブジェクトのプロパティで提供される次のネイティブ広告要素を常に表示する必要があります。 これらの要素を含めておかないと、広告ユニットのパフォーマンスが低下し収益が少なくなることがあります。
+少なくとも、ネイティブ広告デザインで、ユーザーに [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) オブジェクトのプロパティで提供される次のネイティブ広告要素を常に表示する必要があります。 これらの要素を含めておかないと、広告ユニットのパフォーマンスが低下し収益が少なくなることがあります。
 
 1. ネイティブ広告のタイトルを常に表示します (**Title** プロパティで使用できます)。 25 文字以上表示できる十分な領域を用意します。 タイトルがそれ以上長い場合は、その分のテキストを省略記号で置き換えます。
 2. 次の要素のうち少なくとも 1 つを常に表示して、ネイティブ広告のエクスペリエンスをアプリの残りの部分と区別し、コンテンツが広告主によって提供されていることを明確に示します。

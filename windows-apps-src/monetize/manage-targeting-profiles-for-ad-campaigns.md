@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
 description: プロモーション用の広告キャンペーンのターゲット プロファイルを管理するには、Microsoft Store プロモーション API の以下のメソッドを使います。
 title: ターゲット プロファイルの管理
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
-ms.openlocfilehash: 692da5c2cc45e64d3feeab6136c1e50c72a7b0b0
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 8fa142f1df672703d2f14dc185481bb248efe07b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664192"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619154"
 ---
 # <a name="manage-targeting-profiles"></a>ターゲット プロファイルの管理
 
@@ -29,7 +29,7 @@ ms.locfileid: "1664192"
 これらのメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store プロモーション API に関するすべての[前提条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -37,27 +37,27 @@ ms.locfileid: "1664192"
 
 | メソッドの種類 | 要求 URI                                                      |  説明  |
 |--------|------------------------------------------------------------------|---------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile``` |  新しいターゲット プロファイルを作成します。  |
-| PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  *targetingProfileId* により指定されたターゲット プロファイルを編集します。  |
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  *targetingProfileId* により指定されたターゲット プロファイルを取得します。  |
+| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile``` |  新しい対象プロファイルを作成します。  |
+| PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  *targetingProfileId* により指定された対象プロファイルを編集します。  |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  *targetingProfileId* により指定された対象プロファイルを取得します。  |
 
 
 ### <a name="header"></a>ヘッダー
 
 | ヘッダー        | 型   | 説明         |
 |---------------|--------|---------------------|
-| Authorization | 文字列 | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 | 追跡 ID   | GUID   | 省略可能。 呼び出しフローを追跡する ID。                                  |
 
 
 ### <a name="request-body"></a>要求本文
 
-POST メソッドと PUT メソッドには、[ターゲット プロファイル](#targeting-profile) オブジェクトの必須フィールドと設定または変更する追加フィールドを持つ JSON 要求本文が必要です。
+POST メソッドと PUT メソッドには、[対象プロファイル](#targeting-profile) オブジェクトの必須フィールドと設定または変更する追加フィールドを持つ JSON 要求本文が必要です。
 
 
 ### <a name="request-examples"></a>要求の例
 
-次の例は、POST メソッドを呼び出してターゲット プロファイルを作成する方法を示しています。
+次の例は、POST メソッドを呼び出して対象プロファイルを作成する方法を示しています。
 
 ```json
 POST https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile HTTP/1.1
@@ -88,7 +88,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-次の例は、GET メソッドを呼び出してターゲット プロファイルを取得する方法を示しています。
+次の例は、GET メソッドを呼び出して対象プロファイルを取得する方法を示しています。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/310023951  HTTP/1.1
@@ -99,7 +99,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>応答
 
-これらのメソッドは、作成、更新、または取得されたターゲット プロファイルに関する情報を含む[ターゲット プロファイル](#targeting-profile) オブジェクトを持つ JSON 応答本文を返します。 これらのメソッドの応答本文を次の例に示します。
+これらのメソッドは、作成、更新、または取得された対象プロファイルに関する情報を含む[対象プロファイル](#targeting-profile) オブジェクトを持つ JSON 応答本文を返します。 これらのメソッドの応答本文を次の例に示します。
 
 ```json
 {
@@ -139,15 +139,15 @@ Authorization: Bearer <your access token>
 
 <span id="targeting-profile"/>
 
-## <a name="targeting-profile-object"></a>ターゲット プロファイル オブジェクト
+## <a name="targeting-profile-object"></a>対象プロファイル オブジェクト
 
 これらのメソッドの要求本文と応答本文には、次のフィールドが含まれています。 この表は、読み取り専用のフィールド (つまり、PUT メソッドで変更できない) と POST メソッドの要求本文で必須のフィールドを示しています。
 
 | フィールド        | 型   |  説明      |  読み取り専用かどうか  | 既定値  | POST に必須かどうか |  
 |--------------|--------|---------------|------|-------------|------------|
-|  id   |  整数   |  ターゲット プロファイルの ID。     |   ○    |       |   ×      |       
-|  name   |  文字列   |   ターゲット プロファイルの名前。    |    ×   |      |  ○     |       
-|  targetingType   |  文字列   |  次のいずれかの値です。 <ul><li>**Auto**: デベロッパー センターでのアプリの設定に基づいて Microsoft がターゲット プロファイルを選択できるようにする場合は、この値を指定します。</li><li>**Manual**: 独自のターゲット プロファイルを定義する場合は、この値を指定します。</li></ul>     |  ×     |  Auto    |   ○    |       
+|  id   |  整数   |  対象プロファイルの ID。     |   ○    |       |   ×      |       
+|  name   |  文字列   |   対象プロファイルの名前。    |    ×   |      |  ○     |       
+|  targetingType   |  文字列   |  次のいずれかの値です。 <ul><li>**Auto**: デベロッパー センターでのアプリの設定に基づいて Microsoft が対象プロファイルを選択できるようにする場合は、この値を指定します。</li><li>**Manual**: 独自の対象プロファイルを定義する場合は、この値を指定します。</li></ul>     |  ×     |  Auto    |   ○    |       
 |  age   |  配列   |   対象とするユーザーの年齢範囲を識別する 1 つ以上の整数です。 整数の詳しい一覧については、この記事の「[年齢の値](#age-values)」をご覧ください。    |    ×    |  null    |     ×    |       
 |  gender   |  配列   |  対象とするユーザーの性別を識別する 1 つ以上の整数です。 整数の詳しい一覧については、この記事の「[性別の値](#gender-values)」をご覧ください。       |  ×    |  null    |     ×    |       
 |  country   |  配列   |  対象とするユーザーの国コードを識別する 1 つ以上の整数です。 整数の詳しい一覧については、この記事の「[国コードの値](#country-code-values)」をご覧ください。    |  ×    |  null   |      ×   |       
@@ -345,7 +345,7 @@ Authorization: Bearer <your access token>
 |  *country* フィールドの整数値  |  対応する国コード  |  
 |-------------------------------------|------------------------------|
 |     1      |            US                  |
-|     2 で保護されたプロセスとして起動されました      |            AU                  |
+|     2      |            AU                  |
 |     3      |            AT                  |
 |     4      |            BE                  |
 |     5      |            BR                  |

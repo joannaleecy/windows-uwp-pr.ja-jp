@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4be83e2d4301a708a705a8bec0a1d975b6435bc5
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566998"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618693"
 ---
 # <a name="marketplace-uris"></a>マーケットプレース URI
 
@@ -24,7 +24,7 @@ ms.locfileid: "4566998"
 
 Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームのみでは、このサービスを使用できます。
 
-これらの Uri のドメインとは、eds.xboxlive.com と inventory.xboxlive.com です。
+これらの Uri ドメイン eds.xboxlive.com、inventory.xboxlive.com です。
 
 <a id="ID4EPB"></a>
 
@@ -45,7 +45,7 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/media/{marketplaceId}/crossMediaGroupSearch](uri-localecrossmediagroupsearch.md)
 
-&nbsp;&nbsp;いくつかの異なるメディア グループからの項目にアクセスします。
+&nbsp;&nbsp;いくつかの異なるメディア グループからの項目をアクセスします。
 
 [/media/{marketplaceId}/browse](uri-medialocalebrowse.md)
 
@@ -57,7 +57,7 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/media/{marketplaceId}/details](uri-medialocaledetails.md)
 
-&nbsp;&nbsp;返します提供の詳細とメタデータについての 1 つまたは複数の項目。
+&nbsp;&nbsp;返しますの詳細とメタデータを提供する方法の 1 つまたは複数の項目。
 
 [/media/{marketplaceId}/fields](uri-medialocalefields.md)
 
@@ -81,7 +81,7 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}](uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinername.md)
 
-&nbsp;&nbsp;指定されたクエリの絞り込み条件名と、特定のメディア項目の種類に利用可能な値にアクセスします。
+&nbsp;&nbsp;指定されたクエリの絞り込み条件名、およびメディア項目の種類に利用可能な値にアクセスします。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues](uri-medialocalemediaitemtypequeryrefinersubqueryrefinervalues.md)
 
@@ -93,7 +93,7 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders](uri-medialocalemetadatamediaitemtypesortorders.md)
 
-&nbsp;&nbsp;利用可能なアクセスでは、指定された mediaitem 型と指定したバージョン EDS の注文を並べ替えます。
+&nbsp;&nbsp;利用可能なアクセスは、指定された mediaitem 型と指定したバージョン EDS の注文を並べ替えます。
 
 [/media/{marketplaceId}/singleMediaGroupSearch](uri-medialocalesinglemediagroupsearch.md)
 

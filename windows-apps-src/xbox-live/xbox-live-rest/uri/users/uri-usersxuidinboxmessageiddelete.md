@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566846"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615687"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 ユーザーの受信トレイでユーザーのメッセージを削除します。 これらの Uri のドメインが`msg.xboxlive.com`します。
@@ -36,7 +36,7 @@ ms.locfileid: "4566846"
  
 削除操作では、等です。
  
-この API はサポートのみコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
+この API は、サポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
   
 <a id="ID4ECB"></a>
 
@@ -45,7 +45,7 @@ ms.locfileid: "4566846"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 | 
+| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) 要求を行っているプレイヤーのします。 | 
 | メッセージ Id | 文字列 [50] | 取得または削除されるメッセージの ID です。 | 
   
 <a id="ID4EPB"></a>
@@ -53,7 +53,7 @@ ms.locfileid: "4566846"
  
 ## <a name="authorization"></a>Authorization 
  
-ユーザーのメッセージを削除する支払い申請、独自のユーザーが必要です。
+独自のユーザーがユーザーのメッセージを削除する要求が必要です。
   
 <a id="ID4E1B"></a>
 
@@ -67,13 +67,13 @@ ms.locfileid: "4566846"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード 
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 説明| 
 | --- | --- | --- | --- | --- | 
 | 204| 成功します。| 
 | 403| XUID に変換することはできませんか、有効な XUID クレームが見つかったことはできません。| 
-| 404| URI 内のメッセージ ID を解析できませんか、XUID が URI にありません。| 
+| 404| URI のメッセージ ID を解析できませんか、XUID が URI にありません。| 
 | 500| サーバー側の一般的なエラーです。| 
   
 <a id="ID4EAE"></a>
@@ -81,7 +81,7 @@ ms.locfileid: "4566846"
  
 ## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答 
  
-エラーの場合、サービスはサービスの環境からの値が含まれている全て、errorResponse オブジェクトを返す可能性があります。
+サービスは、エラーが発生した場合、サービスの環境から値を含めることができます全て、errorResponse オブジェクトを取得するを取得することがあります。
  
 | プロパティ| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -94,7 +94,7 @@ ms.locfileid: "4566846"
  
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果 
  
-のみ、独自のユーザー メッセージを削除することができます。 
+だけユーザー メッセージを削除することができます。 
   
 <a id="ID4EDG"></a>
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: アプリのエラーに関するスタック トレースを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: アプリのエラーに関するスタック トレースの取得
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, スタック トレース, エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: 902bf87f1650cc5b9f4aeabd8539da4a774dce75
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: 54c39d157bc2fcab6a67bd273f5d00eedd80be54
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989536"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617229"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>アプリのエラーに関するスタック トレースの取得
 
@@ -124,7 +124,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>関連トピック
 
-* [状態レポート](../publish/health-report.md)
+* [[正常性] レポート](../publish/health-report.md)
 * [Microsoft Store サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
 * [アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)

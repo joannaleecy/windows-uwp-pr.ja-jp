@@ -17,11 +17,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a61b8bdcfcfad490528cdceed5e732a6f5f3a89
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564893"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615858"
 ---
 # <a name="tooltips"></a>ヒント
 
@@ -129,7 +129,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-場合は、ヒントを参照しているコンテンツを覆い隠す、正確に新しい**PlacementRect**プロパティを使用して配置を調整できます。 PlacementRect は、ツールヒントの位置を固定して、この領域の外側のヒントを描画するための十分な画面領域が提供されるヒントが見えなくなります、領域としても機能します。 ToolTip の所有者、および高さを基準とした四角形の原点と除外領域の幅を指定することができます。 ヒントは、上、左、下、または、PlacementRect の右を描画する必要がある場合、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティを定義します。 
+ヒントを参照しているコンテンツを覆い隠す、正確にプロパティを使って、新しい**PlacementRect**の配置を調整できます。 PlacementRect では、ヒントの位置を固定して、この領域の外部のヒントを描画するための十分な画面領域が提供されるヒントが見えなくは、領域としても機能します。 ToolTip の所有者、および高さを基準とした四角形の原点と除外領域の幅を指定することができます。 ヒントは、上、左、下、または、PlacementRect の右を描画する必要がある場合、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティを定義します。 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->

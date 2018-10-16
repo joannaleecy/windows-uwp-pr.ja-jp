@@ -10,18 +10,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 作成者, イベント
 ms.localizationpriority: medium
 ms.openlocfilehash: 82239436acfe82bf99cd1e665cca14592bbcef74
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574212"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619104"
 ---
 # <a name="author-events-in-cwinrt"></a>C++/WinRT でのイベントの作成
 
 このトピックでは、その残高が借方に入るときにイベントを発生させる、銀行口座を表すランタイム クラスを含む Windows ランタイム コンポーネントを作成する方法を示します。 銀行口座ランタイム クラスを使用し、関数を呼び出して残高を調整して、発生するイベントを処理するコア アプリも示します。
 
 > [!NOTE]
-> インストールと使用方法については、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートと同様、C++ を提供する//winrt MSBuild プロパティとターゲット) を参照してください[、C++、Visual Studio サポート +/winrt と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)します。
+> インストールと使用については、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートと同様、C++ を提供する//winrt MSBuild プロパティとターゲット) を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)します。
 
 > [!IMPORTANT]
 > C++/WinRT でランタイム クラスを使用および作成する方法についての理解をサポートするために重要な概念と用語については、「[C++/WinRT での API の使用](consume-apis.md)」と「[C++/WinRT での作成者 API](author-apis.md)」を参照してください。
@@ -30,7 +30,7 @@ ms.locfileid: "4574212"
 
 まず、Microsoft Visual Studio で、新しいプロジェクトを作成します。 **Visual C**を作成 > **Windows ユニバーサル** > **Windows ランタイム コンポーネント (、C++/WinRT)** プロジェクト、および名前を付けます*BankAccountWRC* (「銀行口座 Windows ランタイム コンポーネント")。
 
-新しく作成したプロジェクトには、`Class.idl` という名前のファイルが含まれています。 そのファイルの名前を変更`BankAccount.idl`(名前を変更する、`.idl`ファイル依存ファイルの名前を自動的に変更する`.h`と`.cpp`ファイル、すぎます)。 内容を置き換える`BankAccount.idl`以下のリストとします。
+新しく作成したプロジェクトには、`Class.idl` という名前のファイルが含まれています。 そのファイルの名前を変更`BankAccount.idl`(名前を変更する、`.idl`ファイル、依存の名前を自動的に変更する`.h`と`.cpp`ファイル、すぎます)。 内容を置き換える`BankAccount.idl`以下のリストとします。
 
 ```idl
 // BankAccountWRC.idl
@@ -45,9 +45,9 @@ namespace BankAccountWRC
 }
 ```
 
-ファイルを保存します。 現時点で完了するまで、プロジェクトのビルドはありませんが、 **BankAccount**のランタイム クラスを実装するが、ソース コード ファイルが生成されますので、有用なことは、構築できるようになりました。 ように指示して構築できるようになりました (この段階で確認するビルド エラーの処理が必要な`Class.h`と`Class.g.h`が見つかりません。)。 ビルド プロセス中に、`midl.exe`ツールが実行され、コンポーネントの Windows ランタイム メタデータ ファイルを作成する (これは`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`)。 次に、`cppwinrt.exe` ツールが (`-component` オプションで) 実行され、コンポーネントの作成をサポートするソース コード ファイルが生成されます。 これらのファイルには、IDL で宣言した**BankAccount**のランタイム クラスの実装を開始するためのスタブが含まれます。 これらのスタブは `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` と `BankAccount.cpp` です。
+ファイルを保存します。 現時点で完了するまで、プロジェクトのビルドはありませんが、 **BankAccount**のランタイム クラスを実装するが、ソース コード ファイルを生成するためのために有用なことは、構築できるようになりました。 ように指示してビルドできるようになりました (この段階で表示すると、ビルド エラーと処理が必要な`Class.h`と`Class.g.h`が見つかりません。)。 ビルド プロセス中に、`midl.exe`ツールが実行され、コンポーネントの Windows ランタイム メタデータ ファイルを作成する (これは`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`)。 次に、`cppwinrt.exe` ツールが (`-component` オプションで) 実行され、コンポーネントの作成をサポートするソース コード ファイルが生成されます。 これらのファイルには、IDL で宣言した**BankAccount**のランタイム クラスの実装を開始するためのスタブが含まれます。 これらのスタブは `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` と `BankAccount.cpp` です。
 
-エクスプ ローラーでスタブ ファイルをコピー`BankAccount.h`と`BankAccount.cpp`フォルダーから`\BankAccountWRC\BankAccountWRC\Generated Files\sources\`、プロジェクト ファイルが含まれているフォルダーにある`\BankAccountWRC\BankAccountWRC\`、コピー先のファイルを置き換えます。 ここで、`BankAccount.h` と `BankAccount.cpp` を開いてランタイム クラスを実装してみましょう。 `BankAccount.h` で、BankAccount の実装 (ファクトリの実装*ではありません*) に 2 つのプライベート メンバーを追加します。
+エクスプ ローラーでスタブ ファイルをコピー`BankAccount.h`と`BankAccount.cpp`フォルダーから`\BankAccountWRC\BankAccountWRC\Generated Files\sources\`プロジェクト ファイルを含むフォルダーにある`\BankAccountWRC\BankAccountWRC\`、コピー先のファイルを置き換えます。 ここで、`BankAccount.h` と `BankAccount.cpp` を開いてランタイム クラスを実装してみましょう。 `BankAccount.h` で、BankAccount の実装 (ファクトリの実装*ではありません*) に 2 つのプライベート メンバーを追加します。
 
 ```cppwinrt
 // BankAccount.h
@@ -97,13 +97,13 @@ namespace winrt::BankAccountWRC::implementation
 
 また、**AdjustBalance** 関数の実装によって、残高が負の値になった場合でも **AccountIsInDebit** イベントが発生することを上で確認できます。
 
-警告がビルドを妨げる場合、し、それを解決か**C/C++** プロジェクトのプロパティを設定 > **一般的な** > に**警告をエラーとして扱う****いいえ (/WX-)**、もう一度プロジェクトをビルドします。
+任意の警告がビルドを妨げる場合、それを解決または**C/C++** プロジェクトのプロパティを設定 > **一般的な** > に**警告をエラーとして扱う****いいえ (/WX-)**、もう一度プロジェクトをビルドします。
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>コア アプリ (BankAccountCoreApp) を作成して Windows ランタイム コンポーネントをテストします。
 
 ここで (`BankAccountWRC` ソリューション、または新しいソリューションのいずれかに) 新しいプロジェクトを作成します。 **Visual C**を作成 > **Windows ユニバーサル** > **コア アプリ (、C++/WinRT)** プロジェクト、および*BankAccountCoreApp*名前を付けます。
 
-参照を追加しを参照`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`(または、プロジェクト間の参照を追加する 2 つのプロジェクトが同じソリューション内にある場合)。 **[追加]** をクリックして **[OK]** をクリックします。 ここで BankAccountCoreApp をビルドします。 万一エラーが表示されるペイロード ファイル`readme.txt`が存在する Windows ランタイム コンポーネント プロジェクトからそのファイルを除外する、してから、BankAccountCoreApp を再構築します。
+参照を追加し、参照`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`(または 2 つのプロジェクトが同じソリューション内にある場合、プロジェクト間の参照を追加)。 **[追加]** をクリックして **[OK]** をクリックします。 ここで BankAccountCoreApp をビルドします。 エラーが表示される万一をペイロード ファイル`readme.txt`しない存在 Windows ランタイム コンポーネント プロジェクトからそのファイルを除外する、してから、BankAccountCoreApp を再構築します。
 
 ビルド プロセス中に、`cppwinrt.exe` ツールが実行され、参照されている `.winmd` ファイルを投影型を含むソース コード ファイルに処理して、コンポーネントの使用をサポートします。 コンポーネントのランタイム クラス (`BankAccountWRC.h`という名前) の投影型のヘッダーは、フォルダー `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\` 内に生成されます。
 
@@ -148,11 +148,11 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ウィンドウをクリックするたびに、銀行口座の残高から 1 を減算します。 期待どおりにイベントが発生することを示すためには、 **AccountIsInDebit**イベントを処理するラムダ式内にブレークポイントを配置、アプリを実行して、ウィンドウ内をクリックします。
 
-## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>デリゲートはパラメーター化されたと ABI 間での単純な信号
+## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>パラメーターのデリゲートと ABI 間での単純な信号
 
-イベントをアプリケーション バイナリ インターフェイス (ABI) の間でアクセスできる必要があるかどうか&mdash;コンポーネントとその使用中のアプリケーション間など&mdash;し、イベントは、Windows ランタイムのデリゲート型を使う必要があります。 上記の例では、Windows ランタイムの[**Windows::Foundation::EventHandler\ < t \ >**](/uwp/api/windows.foundation.eventhandler)のデリゲート型を使用します。 [**TypedEventHandler\ < TSender, TResult\ >**](/uwp/api/windows.foundation.eventhandler)は、Windows ランタイムのデリゲート型の別の例を示します。
+イベントをアプリケーション バイナリ インターフェイス (ABI) の間でアクセスできる必要があるかどうか&mdash;コンポーネントとその使用中のアプリケーション間など&mdash;イベントは、Windows ランタイムのデリゲート型を使用する必要があります。 上記の例では、Windows ランタイムの[**Windows::Foundation::EventHandler\ < t \ >**](/uwp/api/windows.foundation.eventhandler)のデリゲート型を使用します。 [**TypedEventHandler\ < TSender, TResult\ >**](/uwp/api/windows.foundation.eventhandler)は、Windows ランタイムのデリゲート型の別の例を示します。
 
-それらの 2 つのデリゲート型の型のパラメーターは、型のパラメーターは Windows ランタイム型をもする必要がありますので、ABI を通過する必要があります。 数字と文字列などのプリミティブ型と同様に、ファーストおよびサード パーティ製のランタイム クラスが含まれています。 コンパイラは、"*WinRT 型である必要がある*"エラーに制約を忘れた場合するように役立ちます。
+これら 2 つのデリゲート型の型のパラメーターは、型のパラメーターでは、Windows ランタイム型をもする必要がありますので、ABI を通過する必要があります。 数字と文字列などのプリミティブ型と同様に、ファーストおよびサード パーティ製のランタイム クラスが含まれています。 コンパイラは、"*WinRT 型である必要がある*"エラーに制約を忘れた場合するように役立ちます。
 
 任意のパラメーターやイベントの引数を渡す必要があるしない、独自の単純な Windows ランタイム デリゲート型を定義できます。 次の例は、 **BankAccount**のランタイム クラスの簡易バージョンを示しています。 **SignalDelegate**をという名前のデリゲート型を宣言し、それを使用しているパラメーターを持つイベントではなく信号の種類のイベントを発生させます。
 
@@ -246,11 +246,11 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>デリゲートをパラメーター化された、シンプルな信号は、プロジェクト内でコールバック
+## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>デリゲートをパラメーター化された、単純な信号は、プロジェクト内でコールバック
 
-イベントが内部でのみ使われる場合内で c++/cli [**winrt::event**](/uwp/cpp-ref-for-winrt/event)構造体のテンプレートを使用するが、c++ パラメーター化し、(バイナリ) ではなくプロジェクトの WinRT/WinRT の Windows ランタイム[**winrt::delegate&lt;.T&gt; **](/uwp/cpp-ref-for-winrt/delegate) 、効率的で参照カウントのデリゲートは構造体テンプレート。 任意の数のパラメーターには、サポートしていると、Windows ランタイム型に制限はないです。
+イベントが内部でのみ使われる場合内で c++/cli [**winrt::event**](/uwp/cpp-ref-for-winrt/event)構造体のテンプレートを使用するが、c++ パラメーター化し、(バイナリ) ではなくプロジェクトの WinRT/WinRT のない Windows ランタイム[**winrt::delegate&lt;.T&gt; **](/uwp/cpp-ref-for-winrt/delegate) 、効率的で参照カウントのデリゲートは、構造体のテンプレートです。 任意の数のパラメーターをサポートしていると、Windows ランタイム型に制限はないです。
 
-次の例は、(本質的には、単純な信号)、パラメーターを伴わない署名と文字列をいずれかに最初にデリゲートを示します。
+次の例は、パラメーター (本質的には、単純な信号) を実行しない署名し、文字列をいずれかに最初にデリゲートを示します。
 
 ```cppwinrt
 winrt::event<winrt::delegate<>> signal;
@@ -264,7 +264,7 @@ log.add([](std::wstring const& message) { Persist(message); });
 log(L"Hello, World!");
 ```
 
-追加する方法、イベントに必要なだけ多くのサブスクライブするデリゲートに注目してください。 ただし、これにはイベントに関連付けられているいくつかのオーバーヘッドがあります。 デリゲートを使用したのみ単一サブスクライブする、シンプルなコールバックが必要なすべてのかどうか、 [**winrt::delegate を使用する&lt;.T&gt;**](/uwp/cpp-ref-for-winrt/delegate)独自にします。
+追加する方法、イベントに必要な多くのサブスクライブするデリゲートに注意してください。 ただし、これには、イベントに関連付けられているいくつかのオーバーヘッドがあります。 デリゲートを使用したのみ単一サブスクライブする、シンプルなコールバックが必要なすべてのかどうか、 [**winrt::delegate を使用する&lt;.T&gt;**](/uwp/cpp-ref-for-winrt/delegate)独自にします。
 
 ```cppwinrt
 winrt::delegate<> signalCallback;
@@ -276,15 +276,15 @@ logCallback = [](std::wstring const& message) { std::wcout << message.c_str() <<
 logCallback(L"Hello, World!");
 ```
 
-C++ から移植している場合 +/CX コードベースし、場所、プロジェクト内にイベントとデリゲートが内部的に使用される、 **winrt::delegate**に役立つ、C++ でそのパターンをレプリケートする/WinRT します。
+C++ から移植している場合 +/CX コードベース場所、プロジェクト内にイベントとデリゲートが内部的に使用されるし、C++ でそのパターンをレプリケートするため**winrt::delegate** /WinRT します。
 
 ## <a name="design-guidelines"></a>設計ガイドライン
 
-イベント、およびいないのデリゲートを関数パラメーターとして渡すことをお勧めします。 [**Winrt::event**](/uwp/cpp-ref-for-winrt/event)の関数を**追加**は 1 つの例外は、その場合はデリゲートを渡す必要があります。 このガイドラインの理由デリゲートは、さまざまな形式が (の観点からするかどうか 1 つのクライアントの登録、または複数のサポート) Windows ランタイム言語が異なるためにです。 イベント、複数のサブスクライバー モデルでは、予測可能で一貫性のあるオプションを構成します。
+イベント、およびいないのデリゲートを関数パラメーターとして渡すことをお勧めします。 [**Winrt::event**](/uwp/cpp-ref-for-winrt/event)の関数を**追加**では、その場合はデリゲートを渡す必要がありますので、1 つの例外です。 このガイドラインの理由デリゲートが (の観点からするかどうか 1 つのクライアントの登録、または複数のサポート) のさまざまな Windows ランタイム言語間で異なる形式を実行できるためです。 複数のサブスクライバー モデルでのイベントは、予測可能で一貫性のあるオプションを構成します。
 
-イベント ハンドラー デリゲートの署名がの 2 つのパラメーターで構成する必要があります:*送信者*(**IInspectable**) と*引数*(一部イベント引数の型、 [**RoutedEventArgs**](/uwp/api/windows.ui.xaml.routedeventargs)など)。
+イベント ハンドラー デリゲートの署名は、2 つのパラメーターので構成する必要があります:*送信者*(**IInspectable**) と*引数*(一部イベント引数の型、 [**RoutedEventArgs**](/uwp/api/windows.ui.xaml.routedeventargs)など)。
 
-内部の API を設計している場合、これらのガイドラインを適用必ずしもしないことに注意します。 ただし、内部 Api は通常なるパブリック時間の経過と共に。
+内部 API を設計している場合、次のガイドラインを適用必ずしもしないことに注意します。 ただし、内部の Api は通常なるパブリック時間の経過と共に。
 
 ## <a name="related-topics"></a>関連トピック
 * [C++/WinRT での API の作成](author-apis.md)

@@ -8,14 +8,14 @@ ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, 3dprinting、3 d 印刷
+keywords: windows 10, uwp, 3dprinting、3d 印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: acf0c9856328e26f8c39adf3f062a3516e7189e2
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565977"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620519"
 ---
 # <a name="3d-printing"></a>3D 印刷
 
@@ -33,7 +33,7 @@ ms.locfileid: "4565977"
 
 * [Windows 10 による 3D 印刷 (ハードウェア デベロッパー センター)](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)
 * [Windows.Graphics.Printing3D 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
-* [3 D 印刷サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
+* [3D 印刷サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
 * [Unity サンプルからの 3D 印刷](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
 
  

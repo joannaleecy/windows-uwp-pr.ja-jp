@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f774f603d89e29f5233fb0866303bab4577ca3d2
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570281"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622204"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
 [/System/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)に送信された各文字列に対応する結果コード。
@@ -25,7 +25,7 @@ ms.locfileid: "4570281"
 
 ## <a name="verifystringresult"></a>VerifyStringResult
 
-VerifyStringResult オブジェクトには、次の仕様があります。
+VerifyStringResult オブジェクトでは、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
@@ -54,7 +54,7 @@ VerifyStringResult オブジェクトには、次の仕様があります。
 
 #### <a name="common-hresult-values"></a>一般的な HResult 値
 
-| 値| エラーの名前|
+| 値| エラー名|
 | --- | --- | --- | --- | --- |
 | 0| 成功|
 | 1| 不快感を与える文字列|

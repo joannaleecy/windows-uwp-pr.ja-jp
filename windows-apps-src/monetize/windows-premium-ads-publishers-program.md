@@ -1,52 +1,52 @@
 ---
-author: mcleanbyron
-description: 高利回りの広告の広告を有効にした、premium で ad ネットワークのパートナーを対象とするアプリの curated コレクション premium 広告の発行元のプログラムで、Windows このプログラムでのアプリは、使用、契約およびエクスペリエンス クラスに最適です。
+author: Xansky
+description: 高収益の広告の premium の場合、パートナーの広告ネットワークを対象とする広告対応アプリの整理されたコレクション premium 広告の発行元のプログラムで、Windows このプログラムでのアプリは、使用状況、エンゲージメントとエクスペリエンスの観点からのクラスに最適です。
 title: Windows Premium Ads Publishers Program
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 09/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 広告, Advertising
 ms.localizationpriority: medium
-ms.openlocfilehash: b148109e2a33fe7c481c87bb3d8f3f2cd7a67657
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 310b48e4a659ccf6c159b7768ae8984da74b1c61
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1070926"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620588"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Windows Premium Ads Publishers Program
 
-継続的な取り組み貨幣広告を通じて、アプリ開発者が Windows の一部として、 [Windows Premium 広告発行元のプログラム](http://www.windowspremiumapps.com)を提供しています。 これは、広告を有効にしたアプリと利用状況、契約とエクスペリエンスはクラスで最適なゲームの curated コレクションです。 これらのアプリとゲーム、見やすさが認められて高いを行っている特定のユーザーのグローバルに分散を増やします。
+Windows 開発者が広告を経由してアプリの収益を得るには、次の継続的な取り組みの一環として、 [Windows Premium Ads Publishers Program](http://www.windowspremiumapps.com)を提供しています。 これは、広告対応アプリと使用状況、エンゲージメントとエクスペリエンスの観点からのクラスで最適なゲームの整理されたコレクションです。 これらのアプリとゲームの視認性は、認定して、高度を行っている特定のユーザーのグローバルに分散対象ユーザー
 
-広告、パートナー ad ネットワークからでは、これらのアプリを個別に識別でき、そのキャンペーンの投資に最高利益にこれらのアプリを排他モードでのプレミアム、高利回り広告を提供することができます。 開発者は、このプログラムの一部のアプリが広告収益のロゴを取得することになります。
+マイクロソフト パートナーの広告ネットワークから広告では、これらのアプリを個別に識別でき、そのキャンペーンの投資の最大の収益のこれらのアプリに排他的にプレミアム、高収益の広告を提供することができます。 つまり、開発者の場合、このプログラムの一部であるアプリが複数の広告の収益を獲得できます。
 
-## <a name="how-does-microsoft-add-apps-to-this-program"></a>Microsoft アプリの追加方法には、このプログラムですか。 
+## <a name="how-does-microsoft-add-apps-to-this-program"></a>Microsoft では、方法はこのプログラムには、アプリして追加のかどうか。 
 
-継続的に[抽出条件の対象](#what-are-the-criteria-for-apps-in-the-program)に照らしてストア内のアプリを確認します。 厳格な手作業で確認のプロセスを明確に定義された滑らかなユーザーの操作性をチェックして、意図しないクリックを防ぐために、広告がも配置されているかどうかを確認する対象の検索条件に一致するアプリが配置されます。 自動および手動プロセスのスクリーンの両方をオフにするアプリのプログラムに追加されます。
+[正規の条件](#what-are-the-criteria-for-apps-in-the-program)にストアのアプリを継続的に確認します。 厳格な手動レビュー プロセスを明確に定義されたスムーズなユーザー エクスペリエンスを確認して、広告がクリックの意図を回避するために配置適切かどうかを確認する条件を満たすの条件を満たすアプリが配置されます。 自動と手動プロセスをスクリーン処理の両方をオフにするアプリは、プログラムに追加されます。
 
-これは、招待専用のプログラムで、現在し、会議だけで対象の抽出条件はない自動的に entitle premium プログラムの一部になるには、アプリします。 プログラムの適用対象に、アプリの機能向上に関するさらに詳しく調べ場合は、くださいしたメッセージの送信にお問い合わせにaiacare@microsoft.comします。
+これは、招待のみのプログラムでは、現在とだけで会議正規の条件がない自動的に entitle premium プログラムの一部としてアプリをします。 資格を得るため、プログラムでアプリのエクスペリエンスを向上させることについて詳しく知りたい場合にお問い合わせくださいでお知らせaiacare@microsoft.comします。
 
-## <a name="what-are-the-criteria-for-apps-in-the-program"></a>プログラムのアプリの抽出条件とは
+## <a name="what-are-the-criteria-for-apps-in-the-program"></a>プログラムでのアプリの基準を教えてください。
 
 このプログラムでのアプリでは、次の条件を満たす必要があります。
 
-* 最小では、毎日の ad 要求ボリュームを保証します。 
-* 印象に対する見やすさが高いです。 
-* 高品質では、すべての ad フォーマットにわたって、最小値] をクリックからの単価の原因をクリックします。 
-* 対話型広告事務所 (IAB) 標準の広告のサイズと配置メソッドを実行します。 非表示広告はありません。
-* バナーのクリーンアップの位置 (たとえば、広告に隣接していない各)。
-* Ad 単位は、複数のアプリケーションでは使用されません。
-* 場所やビデオ スポットのバナー ad ポイントに[フローの定義済みのユーザーがクリア](https://blogs.windows.com/buildingapps/2017/08/31/best-practices-using-video-ads-windows-apps/)が表示されます。 ビデオ広告は事前キャッシュされません。 
-* 仲介サーバーから返される広告を常に再生されるように、ad 更新の動作を制御します。
-* 大ストア プレゼンスをオフにアプリの説明、再現性の高いのスクリーン ショット アイコン ストアにアップロードします。 ビデオの予告を強くお勧めします。
-* 不正アクティビティはありません。
+* 最小値には、1 日あたりの広告要求のボリュームが保証されています。 
+* インプレッションに対する視認性の高いレートです。 
+* 高品質では、すべての広告形式で、最小クリック ・を通じてレートへの投稿をクリックします。 
+* Interactive Advertising Bureau (IAB) の標準的な広告サイズの配置方法に従ってください。 非表示広告はありません。
+* バナー広告の配置をクリーン (たとえば、広告は相互に隣接する)。
+* 広告ユニットは、複数のアプリ間では使用されません。
+* 場所やビデオ (スポット) は、バナー広告、ポイントに[明確に定義されたユーザー フロー](https://blogs.windows.com/buildingapps/2017/08/31/best-practices-using-video-ads-windows-apps/)が表示されます。 ビデオ広告が事前にキャッシュされません。 
+* 仲介サーバーから返される広告が常に再生されるように ad 更新動作を制御します。
+* プレゼンスを適切にストアでは、アプリの説明、忠実度の高いスクリーン ショット、ストアにアップロード アイコンをクリアします。 ビデオ トレーラーを強くお勧めします。
+* 不正行為がありません。
 
-## <a name="can-apps-get-removed-from-the-program"></a>プログラムからアプリを削除することができますか
+## <a name="can-apps-get-removed-from-the-program"></a>アプリは、プログラムから削除を取得することができますか。
 
-頻繁に常に対象の検索条件に一致するようにプログラムでアプリを監視します。 最小毎日 ad 要求の量を維持するために、時間経過、アプリの使用が大幅にドロップいないになっていることを確認します。 これを行うの優れた方法は、[通常のプロモーション キャンペーンを実行](https://developer.microsoft.com/en-us/store/promote-your-apps)してです。
+頻繁に常に条件を満たす条件を満たすことを確認するには、プログラムでのアプリが監視されます。 最小毎日広告要求の量を維持するために、時間の経過と共に、アプリの使用量が大幅にドロップされませんを確認します。 これを行うする優れた方法は、[正規のプロモーション キャンペーンを実行している](https://developer.microsoft.com/en-us/store/promote-your-apps)ことです。
 
-## <a name="can-i-provide-additional-marketing-material-to-showcase-my-app-in-the-program"></a>プログラムでアプリのように、その他のマーケティング資料を提供することができますか。 
+## <a name="can-i-provide-additional-marketing-material-to-showcase-my-app-in-the-program"></a>追加のマーケティング マテリアルをプログラムでアプリを広く告知を提供することができますか。 
 
-すべての内容をストア送信の一部としてアップロードが premium アプリのように自動的に使用します。 また、その他のアプリまたはゲームのスクリーン ショット、ゲーム予告と豊富な説明を使用する場合は、くださいしたメッセージの送信にお問い合わせにaiacare@microsoft.comします。
+ストアの申請の一部としてアップロード任意のコンテンツが自動的に有料アプリを使用します。 さらに、複数のアプリまたはゲームのスクリーン ショット、ゲーム トレーラーやリッチな説明を使用したい場合にお問い合わせくださいでお知らせaiacare@microsoft.comします。

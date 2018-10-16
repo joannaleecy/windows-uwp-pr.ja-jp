@@ -11,11 +11,11 @@ keywords: Windows 10, UWP, パッケージ化
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.openlocfilehash: dbde8f2f11276ded6ad0994a1cd52f7f12de229e
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571337"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616727"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>MakeAppx.exe ツールを使ったアプリ パッケージの作成
 
@@ -27,10 +27,10 @@ ms.locfileid: "4571337"
 
 **MakeAppx.exe** では .appxupload ファイルを作成できないことに注意してください。 .Appxupload ファイルは、Visual Studio のパッケージ化プロセスの一部として作成され、その他の 2 つのファイルが含まれています: .msix または .appx と .appxsym します。 .appxsym ファイルは、アプリのパブリック シンボルが格納された圧縮 .pdb ファイルです。これらのパブリック シンボルは、Windows デベロッパー センターでの[クラッシュ分析](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)に使われます。 通常の .appx ファイルもストアに提出できますが、クラッシュ分析やデバッグ情報を行うことはできません。 ストアにパッケージを提出する方法について詳しくは、「[アプリ パッケージのアップロード](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)」をご覧ください。 
 
- 最新バージョンの Windows 10 では、このツールの更新プログラムでは、.appx パッケージの使用量は影響しません。 .Appx パッケージでは、このツールの使用を続行したり、次の説明に従って .msix パッケージのサポート ツールを使用できます。
+ 最新バージョンの Windows 10 では、このツールの更新プログラムでは、.appx パッケージの使用量は影響しません。 .Appx パッケージでは、このツールの使用を続行したり、以下のように .msix パッケージのサポートとツールを使用することができます。
 
 .appxupload ファイルを手動で作成するには:
-- フォルダーに、.msix と .appxsym を配置します。
+- フォルダーで、.msix と .appxsym を配置します。
 - ファイルが入ったフォルダーを zip 圧縮する
 - zip 圧縮したフォルダーの拡張指名を .zip から .appxupload に変更する
 

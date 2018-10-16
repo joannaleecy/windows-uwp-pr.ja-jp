@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, NuGet
 ms.localizationpriority: medium
 ms.openlocfilehash: 84d3ce8b56e5d1bf921eef48499d54b1d3fc4c22
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4562868"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616265"
 ---
 # <a name="add-xbox-live-apis-binary-package-to-your-uwp-project"></a>Xbox Live API のバイナリ パッケージを UWP プロジェクトに追加する
 
 ## <a name="requirements"></a>要件
 
 2. **[Windows 10](https://microsoft.com/windows)**。
-3. **[Visual Studio](https://www.visualstudio.com/)**。 Visual Studio 2015 Update 3 以降、UWP アプリを構築できます。 開発者とセキュリティ更新プログラムの最新リリースの Visual Studio を使用することをお勧めします。
+3. **[Visual Studio](https://www.visualstudio.com/)**。 Visual Studio 2015 Update 3 以降、UWP アプリを構築できます。 開発者とセキュリティ更新プログラムは、Visual Studio の最新リリースを使用することをお勧めします。
 4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** 以降。
 
 ## <a name="add-the-binary-package-via-nuget"></a>NuGet を使ったバイナリ パッケージの追加

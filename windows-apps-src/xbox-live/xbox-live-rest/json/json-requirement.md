@@ -12,28 +12,28 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f13edfbe5858a5fc3c4f24d22b31eb25f8386e25
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573022"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619826"
 ---
 # <a name="requirement-json"></a>Requirement (JSON)
-実績とそれらに対応するため、ユーザーは、どのくらいのロック解除条件。 
+実績とそれらに対応するため、ユーザーは、どのくらいのロック解除基準します。 
 <a id="ID4EN"></a>
 
  
 ## <a name="requirement"></a>要件
  
-要件オブジェクトには、次の仕様があります。
+要件オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | id| string| 要件の ID です。| 
-| 現在の| string| 要件に向けた進行状況の現在の値。| 
+| 現在の| string| 要件に進行状況の現在の値。| 
 | ターゲット| string| 要件のターゲットの値。| 
 | 入力| string| 要件の操作の種類。 有効な値は、合計、最小、最大値はします。| 
-| ruleParticipationType| string| 要件の参加の種類。 有効な値は、個人のグループです。| 
+| ruleParticipationType| string| 要件の参加の種類。 有効な値は、ユーザー、グループです。| 
   
 <a id="ID4ETC"></a>
 

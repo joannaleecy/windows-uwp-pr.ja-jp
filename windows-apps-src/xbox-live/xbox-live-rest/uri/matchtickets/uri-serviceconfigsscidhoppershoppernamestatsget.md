@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 242a3bd3a2e6112436ec3f7aa3dad60c05619314
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569594"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618414"
 ---
 # <a name="get-serviceconfigsscidhoppersnamestats"></a>GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 
 ホッパーの統計情報を取得します。
 
 > [!IMPORTANT]
-> このメソッドはコントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダー要素が必要です: 103 または後ですべての要求します。
+> このメソッドはコントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4E5)
@@ -45,7 +45,7 @@ ms.locfileid: "4569594"
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
 | scid| GUID| セッションのサービス構成 id (SCID)。|
-| name| string| ホッパーの名前です。|
+| name| string| ホッパーの名前。|
 
 <a id="ID4EJB"></a>
 
@@ -54,15 +54,15 @@ ms.locfileid: "4569594"
 
 | 型| 必須かどうか| 説明| 不足している場合、応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (ユーザー ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。 | 403|
-| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには主張のマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
+| XUID (ユーザーの ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。 | 403|
+| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しは、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
 | タイトル ID/実証購入/デバイスの種類| 必須| タイトルに一致するには、指定されたタイトルの要求、デバイスの種類の組み合わせのマッチメイ キングを許可する必要があります。 | 403|
 
 <a id="ID4E3C"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
 <a id="ID4EFD"></a>
 
 
@@ -77,7 +77,7 @@ ms.locfileid: "4569594"
 
 | メンバー| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| hopperName| string| 選択したホッパーの名前です。|
+| hopperName| string| 選択したホッパーの名前。|
 | 待機時間| 32 ビット符号付き整数| 照合時間 (秒の整数)、ホッパーの平均です。 |
 | カタログの作成| 32 ビット符号付き整数| 一致するものをホッパーで待機しているユーザーの数。|
 
