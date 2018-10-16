@@ -1,6 +1,6 @@
 ---
 title: 入門チュートリアル - 3D UWP ゲーム (JavaScript)
-description: JavaScript と three.js で記述された Windows ストア向けの UWP ゲーム
+description: JavaScript と three.js で記述された Microsoft Store 向けの UWP ゲーム
 author: abbycar
 ms.author: abigailc
 ms.date: 03/06/2017
@@ -9,11 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
-ms.openlocfilehash: bb72e7787764fd549891651df47794dfe1948247
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: fa3722c5b011d16ca793b3541efe124b7c255dfd
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246871"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4694649"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>hree.js を使用して 3D JavaScript ゲームを作成する
 
@@ -26,18 +28,18 @@ Web 開発者や JavaScript 作者にとって、JavaScript で UWP アプリを
 
 先に進む前に、これから作成するアプリを見ておきましょう。 CodePen で確認してください。
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="NpKejy" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Dino game final" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/NpKejy/">Dino game final</a>) をご覧ください。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Game final' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpKejy/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a> で、Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) による Pen (<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpKejy/'>Dino game final</a>) をご覧ください。
+</iframe>
 
 > [!NOTE] 
-> これはアプリを Windows ストアに公開できる状態にするために、JavaScript やサード パーティのライブラリの使用方法を示すことを目的としたものであり、完全なゲームではありません。
+> ない、完全なゲームです。JavaScript やサード パーティのライブラリを使用してアプリを Microsoft Store に公開する準備が方法を示すために設計されています。
 
 
 ## <a name="requirements"></a>要件
 
 このプロジェクトを操作するには、以下が必要になります。
--    現在のバージョンの Windows 10 を実行する Windows コンピューター (または仮想マシン)。
--    Visual Studio。 無料の Visual Studio Community Edition は、[Visual Studio ホームページ](http://visualstudio.com/)からダウンロードできます。
+-   現在のバージョンの Windows 10 を実行する Windows コンピューター (または仮想マシン)。
+-   Visual Studio。 無料の Visual Studio Community Edition は、[Visual Studio ホームページ](http://visualstudio.com/)からダウンロードできます。
 このプロジェクトでは、**three.js** という JavaScript ライブラリを使用します。 **three.js** は、MIT ライセンスの下でリリースされています。 このライブラリは、プロジェクト内に既に存在します (ソリューション エクスプローラー ビューで `js/libs` を探してください)。 このライブラリについて詳しくは、[**three.js**](https://threejs.org/) のホーム ページをご覧ください。
 
 ## <a name="getting-started"></a>はじめに
@@ -50,11 +52,11 @@ Web 開発者や JavaScript 作者にとって、JavaScript で UWP アプリを
 
 プロジェクトを複製しない場合は、zip ファイルとしてダウンロードすることもできます。
 ソリューションを Visual Studio に読み込むと、次のようなファイルが表示されます。
--    Images/ - UWP アプリに必要なさまざまなアイコンが含まれるフォルダー。
+-   Images/ - UWP アプリに必要なさまざまなアイコンが含まれるフォルダー。
 - css/ - 使用する CSS が含まれるフォルダー。
--    js/ - JavaScript ファイルが含まれるフォルダー。 main.js ファイルはゲームで、他のファイルはサード パーティ製ライブラリです。
--    models/ - 3D モデルが含まれるフォルダー。 このゲームでは、恐竜を 1 匹のみ使用します。
--    Index.html - ゲームのレンダラーをホストする Web ページです。
+-   js/ - JavaScript ファイルが含まれるフォルダー。 main.js ファイルはゲームで、他のファイルはサード パーティ製ライブラリです。
+-   models/ - 3D モデルが含まれるフォルダー。 このゲームでは、恐竜を 1 匹のみ使用します。
+-   Index.html - ゲームのレンダラーをホストする Web ページです。
 
 これでゲームを実行できます。
 
@@ -65,7 +67,7 @@ F5 キーを押してアプリを起動します。 ウィンドウが開き、�
 
 ## <a name="walkthrough"></a>チュートリアル
 
-このゲームを開始すると、画面上をクリックするよう求めるメッセージが表示されます。 マウスで位置を探すことができるように、[Pointer Lock API]([Pointer Lock API](https://docs.microsoft.com/microsoft-edge/dev-guide/dom/pointer-lock)) が使用されています。 移動は、W キー、A キー、S キー、D キー、方向キーを押すことで操作できます。
+このゲームを開始すると、画面上をクリックするよう求めるメッセージが表示されます。 マウスで位置を探すことができるように、[Pointer Lock API](https://developer.mozilla.org/docs/Web/API/Pointer_Lock_API) が使用されています。 移動は、W キー、A キー、S キー、D キー、方向キーを押すことで操作できます。
 このゲームの目的は、恐竜から常に離れていることです。 恐竜は、十分近くなると、圏外に出るか近付きすぎてゲームに負けるまで、プレイヤーを追いかけ始めます。
 
 ### <a name="1-setting-up-your-initial-html-file"></a>1. 初期 HTML ファイルをセットアップする
@@ -258,8 +260,8 @@ ___
 
 問題が発生した場合や、光源の調整または色の変更を行う場合は、この CodePen で提供されている JavaScript をすべてコピーして貼り付けることで、対処できます。 
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="648faf11da72fb302b1396ec14e19cfe" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Cube and player camera" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/648faf11da72fb302b1396ec14e19cfe/">Cube and player camera</a>) をご覧ください。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='ライト、カメラ、立方体です。' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>ペンを参照してください<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>ライト、カメラ、立方体!</a> Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) <a href='https://codepen.io'>CodePen</a>でします。
+</iframe>
 
 
 ### <a name="3-making-the-maze"></a>3. 迷路を作成する
@@ -352,7 +354,7 @@ function createGround() {
 
     var ground = new THREE.Mesh(groundGeo, groundMat);
     ground.position.set(0, 1, 0);
-    // Rotate the place to to ground level
+    // Rotate the place to ground level
     ground.rotation.x = degreesToRadians(90);
     scene.add(ground);
 }
@@ -401,8 +403,8 @@ ___
 CodePen を使うと、立方体の色を変更したり、`init()` 関数の `createGround()` をコメントアウトして地面を削除するなど、さまざまなテストを行うことができます。
 
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="b3d668e78b6c8e1a5130d3276ecb054f" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Maze building" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/b3d668e78b6c8e1a5130d3276ecb054f/">Maze building</a>) をご覧ください。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='迷路の構築' src='//codepen.io/MicrosoftEdgeDocumentation/embed/JWKYzG/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a> で、Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) による Pen (<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/JWKYzG/'>Maze building</a>) をご覧ください。
+</iframe>
 
 ### <a name="4-allowing-the-player-to-look-around"></a>4. プレイヤーによる探検を可能にする
 
@@ -488,8 +490,8 @@ animate();
 
 これで、周囲を**見回す**ことができますが、実際には**動き回る**機能が欲しいところです。 ベクトルなど、少し数学的な説明になりますが、3D グラフィックスの動作には数学が不可欠です。
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="7672409f7218b18e13adb370fd2cf61d" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Look around" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/7672409f7218b18e13adb370fd2cf61d/">Look around</a>) をご覧ください。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='探検します。' src='//codepen.io/MicrosoftEdgeDocumentation/embed/gmwbMo/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a> で、Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) による Pen (<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/gmwbMo/'>Look around</a>) をご覧ください。
+</iframe>
 
 
 ### <a name="5-adding-player-movement"></a>5. プレイヤーの動きを追加する
@@ -642,8 +644,8 @@ function animatePlayer(delta) {
 
 これで、 プレイヤーによって制御されるカメラで、自由に見回し、動き回ることができます。 まだ、壁に入り込むことができますが、これについては後で考えましょう。 次は、恐竜を追加します。
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="ab804473fa3545d1153061a6078b346d" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Player movement" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/ab804473fa3545d1153061a6078b346d">Player movement</a>) をご覧ください。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='移動します。' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>ペン<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>の移動</a>で Microsoft Edge Docs を参照してください (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) <a href='https://codepen.io'>CodePen</a>でします。
+</iframe>
 
 > [!NOTE]
 > UWP アプリでこれらのコントロールを使用する場合、動きの遅延や `keyUp` イベントの未登録エラーが発生することがあります。 この問題については調査中であり、サンプルの該当部分も間もなく修正される予定です。
@@ -700,8 +702,8 @@ var instructions = document.getElementById('instructions');
 
 これで、恐竜モデルが読み込まれました。 ご確認ください。
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="a90ba279ace9773635870d47c80400c4" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Adding the dino" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/a90ba279ace9773635870d47c80400c4/">Adding the dino</a>) をご覧ください。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='恐竜を追加します。' src='//codepen.io/MicrosoftEdgeDocumentation/embed/xqOwBw/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a> で、Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) による Pen (<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/xqOwBw/'>Adding the dino</a>) をご覧ください。
+</iframe>
 
 ### <a name="7-move-that-dino"></a>7. 恐竜を動かす
 
@@ -731,8 +733,8 @@ function animateDino(delta) {
 
 このままでは恐竜が消えるのを見守るだけですが、衝突検出機能を追加すると、もう少しおもしろくなります。
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="65245a3abd2232ec0dbbfa153f309e7d" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Moving the dino - no collision" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/65245a3abd2232ec0dbbfa153f309e7d/">Moving the dino - no collision</a>) をご覧ください。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Moving、なし' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/jBMbbL/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a> で、Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) による Pen (<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/jBMbbL/'>Moving the dino - no collision</a>) をご覧ください。
+</iframe>
 
 ### <a name="8-collision-detection-for-the-player"></a>8. プレイヤーの衝突を検出する
 
@@ -846,8 +848,8 @@ function animatePlayer(delta) {
 
 プレイヤーの衝突も検出できるので、何か所かの壁に突き当たってみてください。
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="106301953a2128c02283532026be9ab4" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Moving the player - collision" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/106301953a2128c02283532026be9ab4/">Moving the player - collision</a>) をご覧ください。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='プレイヤーの衝突の移行' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/qraOeO/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a> で、Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) による Pen (<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qraOeO/'>Moving the player - collision</a>) をご覧ください。
+</iframe>
 
 
 ### <a name="9-collision-detection-and-animation-for-dino"></a>9. 衝突の検出と恐竜のアニメーション
@@ -933,8 +935,8 @@ function getRandomInt(min, max) {
 
 これで、 AI を持った恐竜が、迷路を動き回るようになりました。
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="dd6e3a8f7df08851034aa470fea5d208" data-default-tab="js,result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Moving the dino - collision and animation" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/dd6e3a8f7df08851034aa470fea5d208/">Moving the dino - collision and animation</a>) をご覧ください。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='Moving、' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/bqwMXZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>ペン<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/bqwMXZ/'>Moving the -</a>で、Microsoft Edge Docs を参照してください (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) <a href='https://codepen.io'>CodePen</a>でします。
+</iframe>
 
 ### <a name="10-starting-the-chase"></a>10. 追随を開始する
 
@@ -1001,8 +1003,8 @@ dinoAlert.style.display = 'none';
 今の時点では、気の荒い恐竜はプレイヤーが近くなると追随を始め、プレイヤーの位置になるまで止まりません。
 最後の手順では、恐竜までの距離が `CATCHOFFSET` 単位になったらゲーム オーバー状態を追加します。
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="fa75ffb13070dd4245cc152cb513509a" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="The chase" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/fa75ffb13070dd4245cc152cb513509a/">The chase</a>) をご覧ください。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height='300' scrolling='no' title='追随' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/NpRBqR/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a> で、Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) による Pen (<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/NpRBqR/'>The chase</a>) をご覧ください。
+</iframe>
 
 
 ### <a name="11-ending-the-game"></a>11. ゲームを終了する
@@ -1082,11 +1084,11 @@ function lockChange() {
 [最終的な CodePen](#introduction) は、ページの上部から確認できます。
 
 
-## <a name="publishing-to-the-windows-store"></a>Windows ストアへの公開
-UWP アプリを作成できたため、(もう少し改善すれば) Windows ストアに公開することもできます。このプロセスにはいくつかの手順が必要になります。
+## <a name="publishing-to-the-microsoft-store"></a>Microsoft Store への公開
+UWP アプリがある場合は、これは、(もう少し改善が最初に!)、Microsoft Store に公開することもできます。プロセスにいくつかの手順があります。
 
-1.    Windows 開発者として[登録](https://developer.microsoft.com/store/register)する必要があります。
-2.    アプリの申請[チェックリスト](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)を使用する必要があります。
-3.    [認定](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)を受けるために、アプリを提出する必要があります。
-詳しくは、「[Windows ストア アプリの公開](https://developer.microsoft.com/store/publish-apps)」をご覧ください。
+1.  Windows 開発者として[登録](https://developer.microsoft.com/store/register)する必要があります。
+2.  アプリの申請[チェックリスト](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)を使用する必要があります。
+3.  [認定](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)を受けるために、アプリを提出する必要があります。
+詳細については、 [UWP アプリの公開](https://developer.microsoft.com/store/publish-apps)を参照してください。
 

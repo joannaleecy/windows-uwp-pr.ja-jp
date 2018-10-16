@@ -8,16 +8,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: bedd4ce683622935488f9cc210d71f568a167f51
-ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.localizationpriority: medium
+ms.openlocfilehash: f14f241eb6a1a39b29216fe703c3804b34f8a3bc
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2017
-ms.locfileid: "887952"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680034"
 ---
 # <a name="app-analysis-overview"></a>アプリの分析の概要
 
-アプリの分析は、パフォーマンスの問題を開発者に通知するツールです。 このツールでは、アプリのコードが実行され、一連のパフォーマンス ガイドラインとベスト プラクティスへの準拠が確認されます。
+App Analysis は、パフォーマンスの問題を開発者に通知するツールです。 このツールでは、アプリのコードが実行され、一連のパフォーマンス ガイドラインとベスト プラクティスへの準拠が確認されます。
 
 App Analysis は、アプリで発生する一般的なパフォーマンスの問題から成る規則セットに基づいて問題を特定します。 また必要に応じて、調査の助けとなる Visual Studio のタイムライン ツール、ソース情報、ドキュメントを示します。
 
@@ -63,7 +64,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-例 2 分離コード (悪い例): BitmapImage の UriSource を設定した後に、ツリーに BitmapImage を接続。
+例 2 分離コード (悪い例): ツリーに接続する前に、BitmapImage の UriSource を設定します。
 
 ```vb
 var bitmapImage = new BitmapImage();

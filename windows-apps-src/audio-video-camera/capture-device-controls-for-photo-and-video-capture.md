@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d0d7a429cf702455d969e1ac1c62def6181e8dd0
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+ms.localizationpriority: medium
+ms.openlocfilehash: 4bed72b17ea59494a7eee6850d1ff4be2172c694
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "247149"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681763"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>写真とビデオのキャプチャのための手動カメラ制御
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 この記事では、光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、手動デバイス制御を使う方法について説明します。
@@ -268,7 +269,7 @@ OIS を有効または無効にするには、[**OpticalImageStabilizationContro
 ## <a name="powerline-frequency"></a>電源周波数
 一部のカメラ デバイスでは、現在の環境の AC 電源周波数を認識し、それに応じたアンチフリッカー処理をサポートします。 電源周波数の自動認識をサポートするデバイスもあれば、周波数を手動で設定する必要があるデバイスもあります。 次のコード例は、デバイスの電源周波数のサポートを判別し、必要に応じて、周波数を手動で設定する方法を示します。 
 
-まず [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 型の出力パラメーターを渡して **VideoDeviceController** メソッド [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898) を呼び出します。この呼び出しが失敗した場合、現在のデバイスでは電源周波数の制御がサポートされていません。 機能がサポートされている場合、自動モードの設定を試みることで、自動モードがサポートされているかどうかを確認できます。 これを行うには、値 **Auto ** を渡して [**TrySetPowerlineFrequency** ](https://msdn.microsoft.com/library/windows/apps/br206899) を呼び出します。 呼び出しに成功した場合、自動電源周波数機能がサポートされています。 デバイスで電源周波数の制御はサポートされているが、周波数の自動検出はサポートされていない場合、**TrySetPowerlineFrequency** を使って周波数を手動で設定できます。 次の例で、**MyCustomFrequencyLookup** は、デバイスの現在の場所における正しい周波数を判定するために実装するカスタム メソッドです。 
+まず [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 型の出力パラメーターを渡して **VideoDeviceController** メソッド [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898) を呼び出します。この呼び出しが失敗した場合、現在のデバイスでは電源周波数の制御がサポートされていません。 機能がサポートされている場合、自動モードの設定を試みることで、自動モードがサポートされているかどうかを確認できます。 これは、 [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899)を呼び出すと、**自動**の値を渡します。呼び出しが成功した場合を自動電源周波数がサポートされていることを意味します。 デバイスで電源周波数の制御はサポートされているが、周波数の自動検出はサポートされていない場合、**TrySetPowerlineFrequency** を使って周波数を手動で設定できます。 次の例で、**MyCustomFrequencyLookup** は、デバイスの現在の場所における正しい周波数を判定するために実装するカスタム メソッドです。 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
@@ -338,7 +339,7 @@ OIS を有効または無効にするには、[**OpticalImageStabilizationContro
 
 **ManipulationDelta** イベント用のハンドラーでは、ユーザーのピンチ ジェスチャの変化に基づいてズーム倍率を更新します。 [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 値は、ピンチ ジェスチャによるズーム倍率の変化を表します。たとえば、ピンチ サイズがわずかに大きくなった場合は 1.0 よりわずかに大きい数値、ピンチ サイズがわずかに小さくなった場合は 1.0 よりわずかに小さい数値になります。 この例では、ズーム コントロールの現在の値にスケール デルタを掛けています。
 
-ズーム倍率を設定する前に、デバイスでサポートされている ([**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) プロパティで示されている) 最小値より小さい値になっていないか確認する必要があります。 また、値が [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 値以下であることを確認します。 最後に、ズーム倍率が、デバイスでサポートされている ([**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) プロパティで示されている) ズーム ステップ サイズの倍数になっていることを確認する必要があります。 ズーム倍率がこれらの要件を満たしていない場合は、キャプチャ デバイスでズーム レベルを設定しようとすると、例外がスローされます。
+ズーム倍率を設定する前に、デバイスでサポートされている ([**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) プロパティで示されている) 最小値より小さい値になっていないか確認する必要があります。 また、値が [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 値以下であることを確認します。 最後に、ズーム倍率が[**手順**](https://msdn.microsoft.com/library/windows/apps/dn633818)プロパティで示されているデバイスでサポートされるズーム ステップ サイズの倍数であることを確認を行う必要があります。 ズーム倍率がこれらの要件を満たしていない場合は、キャプチャ デバイスでズーム レベルを設定しようとすると、例外がスローされます。
 
 キャプチャ デバイスでズーム レベルを設定するには、新しい [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) オブジェクトを作成します。 [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) プロパティを [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726) に設定し、[**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) プロパティを目的のズーム倍率に設定します。 最後に、[**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) を呼び出して、デバイスの新しいズーム値を設定します。 デバイスは新しいズーム値への切り替えをスムーズに行います。
 

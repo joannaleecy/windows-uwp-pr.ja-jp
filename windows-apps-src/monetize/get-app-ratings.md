@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 評価
 ms.localizationpriority: medium
-ms.openlocfilehash: d3d09aa395f9c0924951a44f5b0abaf9c99cb32e
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 0671015ead96b57515b4b451a06ff3c9cf1a94cb
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4620844"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4694629"
 ---
 # <a name="get-app-ratings"></a>アプリの評価の取得
 
@@ -106,20 +106,20 @@ Authorization: Bearer <your access token>
 
 *Value* 配列の要素には、次の値が含まれます。
 
-| 値           | 型    | 説明                                                                                                                                                                                                                          |
-|-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 値           | 型    | 説明       |
+|-----------------|---------|-------------------|
 | date            | string  | 評価データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
-| applicationId   | string  | 評価データを取得するアプリのストア ID です。                                                                                                                                                                 |
-| applicationName | string  | アプリの表示名です。                                                                                                                                                                                                         |
-| market          | string  | 評価が送信された市場の ISO 3166 国コードです。                                                                                                                                                              |
-| osVersion       | string  | 評価が送信された OS バージョンです。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                               |
-| deviceType      | string  | 評価が送信されたデバイスの種類です。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                           |
-| isRevised       | Boolean | 値 **true** は、評価が更新済みであることを示します。それ以外の場合は **false** です。                                                                                                                                                       |
-| oneStar         | number  | 1 つ星評価の数です。                                                                                                                                                                                                      |
-| twoStars        | number  | 2 つ星評価の数です。                                                                                                                                                                                                      |
-| threeStars      | number  | 3 つ星評価の数です。                                                                                                                                                                                                    |
-| fourStars       | number  | 4 つ星評価の数です。                                                                                                                                                                                                     |
-| fiveStars       | number  | 5 つ星評価の数です。            |
+| applicationId   | string  | 評価データを取得するアプリのストア ID です。         |
+| applicationName | string  | アプリの表示名です。    |
+| market          | string  | 評価が送信された市場の ISO 3166 国コードです。        |
+| osVersion       | string  | 評価が送信された OS バージョンです。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。            |
+| deviceType      | string  | 評価が送信されたデバイスの種類です。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。            |
+| isRevised       | Boolean | 値 **true** は、評価が更新済みであることを示します。それ以外の場合は **false** です。   |
+| oneStar         | number  | 1 つ星評価の数です。        |
+| twoStars        | number  | 2 つ星評価の数です。    |
+| threeStars      | number  | 3 つ星評価の数です。   |
+| fourStars       | number  | 4 つ星評価の数です。    |
+| fiveStars       | number  | 5 つ星評価の数です。    |
 
 
 ### <a name="response-example"></a>応答の例

@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 09dcf1ace7c5d00509e54cd6fa936a2aa5ef7820
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 79873d014c5ee735a509328d4a123f839831325b
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653881"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4682524"
 ---
 # <a name="accessing-homegroup-content"></a>ホームグループ コンテンツへのアクセス
 
@@ -56,7 +56,7 @@ ms.locfileid: "1653881"
 
     [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使ってファイル ピッカーを作成し、ピッカーの [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) を [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890) に設定します。 または、ユーザーとアプリに関連するその他のプロパティを設定します。 ファイル ピッカーのカスタマイズ方法を判断するためのガイドラインについては、「[ファイル ピッカーのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465182)」をご覧ください。
 
-    次の例では、ホームグループで開かれ、すべての種類のファイルを含み、ファイルをサムネイル画像として表示するファイル ピッカーを作成しています。
+    次の例では、ホームグループで開かれ、すべての種類のファイルを含み、ファイルをサムネイル イメージとして表示するファイル ピッカーを作成しています。
     ```cs
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -197,7 +197,7 @@ ms.locfileid: "1653881"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **ユーザーが選んだファイルを読み取りアクセスで開き、ファイル ストリームを** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) のソースとして設定して、ファイルを再生します。
+3.  **読み取りアクセス権のユーザーのファイルの選択内容を開き、ファイル ストリームをソースとして設定、**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)、し、プレイ ファイル。
     ```cs
     if (file != null)
     {

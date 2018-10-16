@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム,
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d747128dcd85a16c5250997e9431b279203ae0
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 8d862114f95a3b6f1e9c519f37f2d3eacc32de4d
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4618868"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680655"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI フラット C レイヤーの非同期呼び出しの呼び出しパターン
 
@@ -80,7 +80,7 @@ typedef struct AsyncBlock
 * **GetAsyncStatus** を呼び出して、true の場合は非同期タスクが完了するまで待機する。
 * **AsyncBlock** で waitEvent を設定し、このイベントが通知されるまで待機する。
 
-**GetAsyncStatus** と waitEvent では、**非同期タスク** は、AsyncBlock の**完了コールバック**が実行された後、完了したと見なされますが、AsyncBlock の**完了コールバック**は省略可能です。
+**GetAsyncStatus**と waitEvent では、**非同期タスク**と見なされます完了、AsyncBlock の**完了コールバック**を実行した後ただし、AsyncBlock の**完了コールバック**は省略可能です。
 
 **非同期タスク**が完了したら、結果を取得できます。
 
