@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a5a56b524dbf88d96a34f769f7a25bed7bca8a1d
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4612599"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681346"
 ---
 # <a name="mediaasset-json"></a><span data-ttu-id="793b6-104">MediaAsset (JSON)</span><span class="sxs-lookup"><span data-stu-id="793b6-104">MediaAsset (JSON)</span></span>
 <span data-ttu-id="793b6-105">実績やそのリワードに関連付けられているメディア アセット。</span><span class="sxs-lookup"><span data-stu-id="793b6-105">The media assets associated with the achievement or its rewards.</span></span>

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, エラー処理, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e25de40c7fd28cb43c308bd0361b400e7bf6909
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4619834"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4679435"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a><span data-ttu-id="84b7a-104">JavaScript ウォークスルーでのエラー処理</span><span class="sxs-lookup"><span data-stu-id="84b7a-104">Error handling in JavaScript walkthrough</span></span>
 

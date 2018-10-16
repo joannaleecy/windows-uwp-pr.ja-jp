@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bf04632c4c99f2d58e3cd936e678af168750ff0
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622212"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4694609"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a><span data-ttu-id="925cb-104">アプリとアドオンのアプリ内購入の有効化</span><span class="sxs-lookup"><span data-stu-id="925cb-104">Enable in-app purchases of apps and add-ons</span></span>
 
