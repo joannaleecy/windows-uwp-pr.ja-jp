@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d104a92a7245e008c3ac579a49220db42713675c
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4617119"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4684763"
 ---
 # <a name="multiplayer-scenarios"></a><span data-ttu-id="2f525-104">マルチプレイヤー シナリオ</span><span class="sxs-lookup"><span data-stu-id="2f525-104">Multiplayer scenarios</span></span>
 <span data-ttu-id="2f525-105">マルチプレイヤー シナリオには多くの種類があります。適切なシナリオを選択することで、プレイヤーのエンゲージメントを高め、ゲームのプレイヤー ベースを拡大することができます。これは、ゲームがアクティブにプレイされる期間をできるだけ長くするために有効です。</span><span class="sxs-lookup"><span data-stu-id="2f525-105">There are many different types of multiplayer scenarios, and choosing the right scenario can increase player engagement and the player base for your game, which in turn helps extend the active life of your game for as long as possible.</span></span>

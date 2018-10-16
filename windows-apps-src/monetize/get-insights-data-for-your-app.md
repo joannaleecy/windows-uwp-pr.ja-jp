@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, インサイト
 ms.localizationpriority: medium
 ms.openlocfilehash: 30b9303fc44f557210c9ba80a2a135f77909dc10
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4617565"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4685700"
 ---
 # <a name="get-insights-data"></a><span data-ttu-id="108e6-104">インサイト データを取得します。</span><span class="sxs-lookup"><span data-stu-id="108e6-104">Get insights data</span></span>
 

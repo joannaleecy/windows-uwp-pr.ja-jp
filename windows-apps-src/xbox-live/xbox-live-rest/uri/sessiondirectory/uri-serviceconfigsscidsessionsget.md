@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ada5040c97dcb283146cb528cf2107294b9b88b
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4615070"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4688299"
 ---
 # <a name="get-serviceconfigsscidsessions"></a><span data-ttu-id="9e465-104">GET (/serviceconfigs/{scid}/sessions)</span><span class="sxs-lookup"><span data-stu-id="9e465-104">GET (/serviceconfigs/{scid}/sessions)</span></span>
 <span data-ttu-id="9e465-105">指定したセッション情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="9e465-105">Retrieves specified session information.</span></span>
