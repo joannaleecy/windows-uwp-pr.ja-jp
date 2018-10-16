@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 731d449d779806fbd4104787b692d3b7d0408036
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622263"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4688683"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>パッケージ デスクトップ アプリケーションに関する既知の問題
 
@@ -123,7 +123,7 @@ Windows アプリ パッケージ マニフェストの発行元エントリは�
 
 **オプション3: CertUtil**
 
-コマンドラインから PFX ファイルに **certutil** を実行し、出力から *[サブジェクト]* フィールドをコピーします。
+**Certutil**をコマンドラインから PFX ファイルを実行し、出力から*の件名*をコピーします。
 
 ```cmd
 certutil -dump <cert_file.pfx>

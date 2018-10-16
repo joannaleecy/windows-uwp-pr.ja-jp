@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成
 ms.localizationpriority: medium
-ms.openlocfilehash: e36e37802855747426184aa9d8cec0e6db77acd7
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: e1d3b21f98528afec5e97cac6f645c7835b6362a
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4621410"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4689954"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live サービス構成
 
@@ -114,7 +114,7 @@ Xbox One 用のタイトルおよびアプリケーションの開発には、�
 
 **XDP**
 
-XDP でタイトルを構成する場合、以下に示すプロダクトの概要ページでサンドボックス ID を取得します。
+XDP でタイトルを構成する場合、概要ページで次に示すように、製品のサンド ボックス ID を取得します。
 
 ![](images/getting_started/xdp_sandbox_id.png)
 
