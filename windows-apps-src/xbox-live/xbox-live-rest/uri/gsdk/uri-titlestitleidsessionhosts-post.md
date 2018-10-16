@@ -12,68 +12,68 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 147df5a3032aa950b7b301f7990c5456db200d2c
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572347"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619279"
 ---
-# <a name="post-titlestitle-idsessionhosts"></a><span data-ttu-id="64349-104">POST (/titles/{Title Id}/sessionhosts)</span><span class="sxs-lookup"><span data-stu-id="64349-104">POST (/titles/{Title Id}/sessionhosts)</span></span>
-<span data-ttu-id="64349-105">新しいクラスターの要求を作成します。</span><span class="sxs-lookup"><span data-stu-id="64349-105">Create new cluster request.</span></span> <span data-ttu-id="64349-106">これらの Uri のドメインが`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="64349-106">The domain for these URIs is `gameserverms.xboxlive.com`.</span></span>
+# <a name="post-titlestitle-idsessionhosts"></a><span data-ttu-id="af3a1-104">POST (/titles/{Title Id}/sessionhosts)</span><span class="sxs-lookup"><span data-stu-id="af3a1-104">POST (/titles/{Title Id}/sessionhosts)</span></span>
+<span data-ttu-id="af3a1-105">新しいクラスターの要求を作成します。</span><span class="sxs-lookup"><span data-stu-id="af3a1-105">Create new cluster request.</span></span> <span data-ttu-id="af3a1-106">これらの Uri のドメインが`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="af3a1-106">The domain for these URIs is `gameserverms.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="64349-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="64349-107">URI Parameters</span></span>](#ID4EX)
-  * [<span data-ttu-id="64349-108">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="64349-108">Required Request Headers</span></span>](#ID4EGB)
-  * [<span data-ttu-id="64349-109">要求本文</span><span class="sxs-lookup"><span data-stu-id="64349-109">Request Body</span></span>](#ID4E5B)
-  * [<span data-ttu-id="64349-110">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="64349-110">Required Response Headers</span></span>](#ID4ELD)
-  * [<span data-ttu-id="64349-111">応答本文</span><span class="sxs-lookup"><span data-stu-id="64349-111">Response Body</span></span>](#ID4ESD)
+  * [<span data-ttu-id="af3a1-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="af3a1-107">URI Parameters</span></span>](#ID4EX)
+  * [<span data-ttu-id="af3a1-108">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="af3a1-108">Required Request Headers</span></span>](#ID4EGB)
+  * [<span data-ttu-id="af3a1-109">要求本文</span><span class="sxs-lookup"><span data-stu-id="af3a1-109">Request Body</span></span>](#ID4E5B)
+  * [<span data-ttu-id="af3a1-110">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="af3a1-110">Required Response Headers</span></span>](#ID4ELD)
+  * [<span data-ttu-id="af3a1-111">応答本文</span><span class="sxs-lookup"><span data-stu-id="af3a1-111">Response Body</span></span>](#ID4ESD)
  
 <a id="ID4EX"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="64349-112">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="64349-112">URI Parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="af3a1-112">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="af3a1-112">URI Parameters</span></span>
  
-| <span data-ttu-id="64349-113">パラメーター</span><span class="sxs-lookup"><span data-stu-id="64349-113">Parameter</span></span>| <span data-ttu-id="64349-114">説明</span><span class="sxs-lookup"><span data-stu-id="64349-114">Description</span></span>| 
+| <span data-ttu-id="af3a1-113">パラメーター</span><span class="sxs-lookup"><span data-stu-id="af3a1-113">Parameter</span></span>| <span data-ttu-id="af3a1-114">説明</span><span class="sxs-lookup"><span data-stu-id="af3a1-114">Description</span></span>| 
 | --- | --- | 
-| <span data-ttu-id="64349-115">titleId</span><span class="sxs-lookup"><span data-stu-id="64349-115">titleId</span></span>| <span data-ttu-id="64349-116">要求の操作のタイトルの ID です。</span><span class="sxs-lookup"><span data-stu-id="64349-116">ID of the title that the request should operate on.</span></span>| 
+| <span data-ttu-id="af3a1-115">titleId</span><span class="sxs-lookup"><span data-stu-id="af3a1-115">titleId</span></span>| <span data-ttu-id="af3a1-116">要求の操作のタイトルの ID です。</span><span class="sxs-lookup"><span data-stu-id="af3a1-116">ID of the title that the request should operate on.</span></span>| 
   
 <a id="ID5EG"></a>
 
  
-## <a name="host-name"></a><span data-ttu-id="64349-117">ホスト名</span><span class="sxs-lookup"><span data-stu-id="64349-117">Host Name</span></span>
+## <a name="host-name"></a><span data-ttu-id="af3a1-117">ホスト名</span><span class="sxs-lookup"><span data-stu-id="af3a1-117">Host Name</span></span>
 
-<span data-ttu-id="64349-118">gameserverms.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="64349-118">gameserverms.xboxlive.com</span></span>
+<span data-ttu-id="af3a1-118">gameserverms.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="af3a1-118">gameserverms.xboxlive.com</span></span>
  
 <a id="ID4EGB"></a>
 
  
-## <a name="required-request-headers"></a><span data-ttu-id="64349-119">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="64349-119">Required Request Headers</span></span>
+## <a name="required-request-headers"></a><span data-ttu-id="af3a1-119">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="af3a1-119">Required Request Headers</span></span>
  
-<span data-ttu-id="64349-120">要求を行う場合、次の表に示すようにヘッダーは必要です。</span><span class="sxs-lookup"><span data-stu-id="64349-120">When making a request, the headers shown in the following table are required.</span></span>
+<span data-ttu-id="af3a1-120">要求を行う場合、次の表に示すようにヘッダーは、必要があります。</span><span class="sxs-lookup"><span data-stu-id="af3a1-120">When making a request, the headers shown in the following table are required.</span></span>
  
-| <span data-ttu-id="64349-121">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="64349-121">Header</span></span>| <span data-ttu-id="64349-122">設定値</span><span class="sxs-lookup"><span data-stu-id="64349-122">Value</span></span>| <span data-ttu-id="64349-123">説明</span><span class="sxs-lookup"><span data-stu-id="64349-123">Description</span></span>| 
+| <span data-ttu-id="af3a1-121">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="af3a1-121">Header</span></span>| <span data-ttu-id="af3a1-122">設定値</span><span class="sxs-lookup"><span data-stu-id="af3a1-122">Value</span></span>| <span data-ttu-id="af3a1-123">説明</span><span class="sxs-lookup"><span data-stu-id="af3a1-123">Description</span></span>| 
 | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="64349-124">Content-Type</span><span class="sxs-lookup"><span data-stu-id="64349-124">Content-Type</span></span>| <span data-ttu-id="64349-125">application/json</span><span class="sxs-lookup"><span data-stu-id="64349-125">application/json</span></span>| <span data-ttu-id="64349-126">送信されたデータの種類です。</span><span class="sxs-lookup"><span data-stu-id="64349-126">Type of data being submitted.</span></span>| 
+| <span data-ttu-id="af3a1-124">Content-Type</span><span class="sxs-lookup"><span data-stu-id="af3a1-124">Content-Type</span></span>| <span data-ttu-id="af3a1-125">application/json</span><span class="sxs-lookup"><span data-stu-id="af3a1-125">application/json</span></span>| <span data-ttu-id="af3a1-126">送信されたデータの種類です。</span><span class="sxs-lookup"><span data-stu-id="af3a1-126">Type of data being submitted.</span></span>| 
   
 <a id="ID4E5B"></a>
 
  
-## <a name="request-body"></a><span data-ttu-id="64349-127">要求本文</span><span class="sxs-lookup"><span data-stu-id="64349-127">Request Body</span></span>
+## <a name="request-body"></a><span data-ttu-id="af3a1-127">要求本文</span><span class="sxs-lookup"><span data-stu-id="af3a1-127">Request Body</span></span>
  
-<span data-ttu-id="64349-128">要求は、次のメンバーを含む JSON オブジェクトを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="64349-128">The request must contain a JSON object with the following members.</span></span>
+<span data-ttu-id="af3a1-128">要求は、次のメンバーを含む JSON オブジェクトを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="af3a1-128">The request must contain a JSON object with the following members.</span></span>
  
-| <span data-ttu-id="64349-129">メンバー</span><span class="sxs-lookup"><span data-stu-id="64349-129">Member</span></span>| <span data-ttu-id="64349-130">説明</span><span class="sxs-lookup"><span data-stu-id="64349-130">Description</span></span>| 
+| <span data-ttu-id="af3a1-129">メンバー</span><span class="sxs-lookup"><span data-stu-id="af3a1-129">Member</span></span>| <span data-ttu-id="af3a1-130">説明</span><span class="sxs-lookup"><span data-stu-id="af3a1-130">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="64349-131">sessionId</span><span class="sxs-lookup"><span data-stu-id="64349-131">sessionId</span></span>| <span data-ttu-id="64349-132">これは、指定した呼び出し元の識別子。</span><span class="sxs-lookup"><span data-stu-id="64349-132">This is the caller specified identifier.</span></span> <span data-ttu-id="64349-133">割り当てられ、返されるセッション ホストに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="64349-133">It is assigned to the session host that is allocated and returned.</span></span> <span data-ttu-id="64349-134">後でこの識別子を特定 sessionhost を参照できます。</span><span class="sxs-lookup"><span data-stu-id="64349-134">Later on you can reference the specific sessionhost by this identifier.</span></span> <span data-ttu-id="64349-135">グローバルに一意である必要があります (つまり GUID)。</span><span class="sxs-lookup"><span data-stu-id="64349-135">It must be globally unique (i.e. GUID).</span></span>| 
-| <span data-ttu-id="64349-136">SandboxId</span><span class="sxs-lookup"><span data-stu-id="64349-136">SandboxId</span></span>| <span data-ttu-id="64349-137">サンド ボックスで割り当てられるセッション ホストをします。</span><span class="sxs-lookup"><span data-stu-id="64349-137">The sandbox you wish the session host to be allocated in.</span></span>| 
-| <span data-ttu-id="64349-138">cloudGameId</span><span class="sxs-lookup"><span data-stu-id="64349-138">cloudGameId</span></span>| <span data-ttu-id="64349-139">クラウド ゲームの識別子です。</span><span class="sxs-lookup"><span data-stu-id="64349-139">The cloud game identifier.</span></span>| 
-| <span data-ttu-id="64349-140">場所</span><span class="sxs-lookup"><span data-stu-id="64349-140">locations</span></span>| <span data-ttu-id="64349-141">優先する場所の順序指定された一覧から割り当てられるセッションたいです。</span><span class="sxs-lookup"><span data-stu-id="64349-141">The ordered list of preferred locations you would like the session to be allocated from.</span></span>| 
-| <span data-ttu-id="64349-142">sessionCookie</span><span class="sxs-lookup"><span data-stu-id="64349-142">sessionCookie</span></span>| <span data-ttu-id="64349-143">これは、呼び出し元が指定されている不透明な文字列です。</span><span class="sxs-lookup"><span data-stu-id="64349-143">This is a caller specified opaque string.</span></span> <span data-ttu-id="64349-144">関連付け、sessionhost られているし、ゲームのコードで参照できます。</span><span class="sxs-lookup"><span data-stu-id="64349-144">It is associated with the sessionhost and can be referenced in your game code.</span></span> <span data-ttu-id="64349-145">このメンバーを使用して、クライアントから少量の情報を (最大サイズは 4 KB) サーバーに渡します。</span><span class="sxs-lookup"><span data-stu-id="64349-145">Use this member to pass a small amount of information from the client to the server (Max size is 4KB).</span></span>| 
-| <span data-ttu-id="64349-146">gameModelId</span><span class="sxs-lookup"><span data-stu-id="64349-146">gameModelId</span></span>| <span data-ttu-id="64349-147">ゲーム モードの識別子です。</span><span class="sxs-lookup"><span data-stu-id="64349-147">The game mode identifier.</span></span>| 
+| <span data-ttu-id="af3a1-131">sessionId</span><span class="sxs-lookup"><span data-stu-id="af3a1-131">sessionId</span></span>| <span data-ttu-id="af3a1-132">これは、指定した呼び出し元の識別子。</span><span class="sxs-lookup"><span data-stu-id="af3a1-132">This is the caller specified identifier.</span></span> <span data-ttu-id="af3a1-133">割り当てられ、返されるセッション ホストに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="af3a1-133">It is assigned to the session host that is allocated and returned.</span></span> <span data-ttu-id="af3a1-134">後でこの識別子を特定 sessionhost を参照できます。</span><span class="sxs-lookup"><span data-stu-id="af3a1-134">Later on you can reference the specific sessionhost by this identifier.</span></span> <span data-ttu-id="af3a1-135">グローバルに一意である必要があります (つまり GUID)。</span><span class="sxs-lookup"><span data-stu-id="af3a1-135">It must be globally unique (i.e. GUID).</span></span>| 
+| <span data-ttu-id="af3a1-136">SandboxId</span><span class="sxs-lookup"><span data-stu-id="af3a1-136">SandboxId</span></span>| <span data-ttu-id="af3a1-137">サンド ボックスで割り当てられるセッション ホストをします。</span><span class="sxs-lookup"><span data-stu-id="af3a1-137">The sandbox you wish the session host to be allocated in.</span></span>| 
+| <span data-ttu-id="af3a1-138">cloudGameId</span><span class="sxs-lookup"><span data-stu-id="af3a1-138">cloudGameId</span></span>| <span data-ttu-id="af3a1-139">クラウド ゲームの識別子です。</span><span class="sxs-lookup"><span data-stu-id="af3a1-139">The cloud game identifier.</span></span>| 
+| <span data-ttu-id="af3a1-140">場所</span><span class="sxs-lookup"><span data-stu-id="af3a1-140">locations</span></span>| <span data-ttu-id="af3a1-141">優先する場所の順序指定された一覧から割り当てられるセッションたいです。</span><span class="sxs-lookup"><span data-stu-id="af3a1-141">The ordered list of preferred locations you would like the session to be allocated from.</span></span>| 
+| <span data-ttu-id="af3a1-142">sessionCookie</span><span class="sxs-lookup"><span data-stu-id="af3a1-142">sessionCookie</span></span>| <span data-ttu-id="af3a1-143">これは、呼び出し元が指定されている不透明な文字列です。</span><span class="sxs-lookup"><span data-stu-id="af3a1-143">This is a caller specified opaque string.</span></span> <span data-ttu-id="af3a1-144">Sessionhost に関連付けられているし、ゲームのコードで参照できます。</span><span class="sxs-lookup"><span data-stu-id="af3a1-144">It is associated with the sessionhost and can be referenced in your game code.</span></span> <span data-ttu-id="af3a1-145">このメンバーを使用して、クライアントから少量の情報を (最大サイズは 4 KB) サーバーに渡します。</span><span class="sxs-lookup"><span data-stu-id="af3a1-145">Use this member to pass a small amount of information from the client to the server (Max size is 4KB).</span></span>| 
+| <span data-ttu-id="af3a1-146">gameModelId</span><span class="sxs-lookup"><span data-stu-id="af3a1-146">gameModelId</span></span>| <span data-ttu-id="af3a1-147">ゲーム モードの識別子です。</span><span class="sxs-lookup"><span data-stu-id="af3a1-147">The game mode identifier.</span></span>| 
  
 <a id="ID4EDD"></a>
 
  
-### <a name="sample-request"></a><span data-ttu-id="64349-148">要求の例</span><span class="sxs-lookup"><span data-stu-id="64349-148">Sample Request</span></span>
+### <a name="sample-request"></a><span data-ttu-id="af3a1-148">要求の例</span><span class="sxs-lookup"><span data-stu-id="af3a1-148">Sample Request</span></span>
  
 
 ```cpp
@@ -96,28 +96,28 @@ ms.locfileid: "4572347"
 <a id="ID4ELD"></a>
 
  
-## <a name="required-response-headers"></a><span data-ttu-id="64349-149">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="64349-149">Required Response Headers</span></span>
+## <a name="required-response-headers"></a><span data-ttu-id="af3a1-149">必要な応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="af3a1-149">Required Response Headers</span></span>
  
-<span data-ttu-id="64349-150">なし。</span><span class="sxs-lookup"><span data-stu-id="64349-150">None.</span></span>
+<span data-ttu-id="af3a1-150">なし。</span><span class="sxs-lookup"><span data-stu-id="af3a1-150">None.</span></span>
   
 <a id="ID4ESD"></a>
 
  
-## <a name="response-body"></a><span data-ttu-id="64349-151">応答本文</span><span class="sxs-lookup"><span data-stu-id="64349-151">Response Body</span></span>
+## <a name="response-body"></a><span data-ttu-id="af3a1-151">応答本文</span><span class="sxs-lookup"><span data-stu-id="af3a1-151">Response Body</span></span>
  
-<span data-ttu-id="64349-152">呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="64349-152">If the call is successful, the service will return a JSON object with the following members.</span></span>
+<span data-ttu-id="af3a1-152">呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="af3a1-152">If the call is successful, the service will return a JSON object with the following members.</span></span>
  
-| <span data-ttu-id="64349-153">メンバー</span><span class="sxs-lookup"><span data-stu-id="64349-153">Member</span></span>| <span data-ttu-id="64349-154">説明</span><span class="sxs-lookup"><span data-stu-id="64349-154">Description</span></span>| 
+| <span data-ttu-id="af3a1-153">メンバー</span><span class="sxs-lookup"><span data-stu-id="af3a1-153">Member</span></span>| <span data-ttu-id="af3a1-154">説明</span><span class="sxs-lookup"><span data-stu-id="af3a1-154">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="64349-155">ホスト名</span><span class="sxs-lookup"><span data-stu-id="64349-155">hostName</span></span>| <span data-ttu-id="64349-156">インスタンスのホスト名。</span><span class="sxs-lookup"><span data-stu-id="64349-156">The host name of the instance.</span></span>| 
-| <span data-ttu-id="64349-157">portMappings</span><span class="sxs-lookup"><span data-stu-id="64349-157">portMappings</span></span>| <span data-ttu-id="64349-158">ポートのマッピングです。</span><span class="sxs-lookup"><span data-stu-id="64349-158">The port mappings.</span></span>| 
-| <span data-ttu-id="64349-159">地域</span><span class="sxs-lookup"><span data-stu-id="64349-159">region</span></span>| <span data-ttu-id="64349-160">地域のインスタンスがでホストされています。</span><span class="sxs-lookup"><span data-stu-id="64349-160">Region the instance is hosted in.</span></span>| 
-| <span data-ttu-id="64349-161">secureContext</span><span class="sxs-lookup"><span data-stu-id="64349-161">secureContext</span></span>| <span data-ttu-id="64349-162">セキュア デバイス アドレスです。</span><span class="sxs-lookup"><span data-stu-id="64349-162">The secure device address.</span></span>| 
+| <span data-ttu-id="af3a1-155">ホスト名</span><span class="sxs-lookup"><span data-stu-id="af3a1-155">hostName</span></span>| <span data-ttu-id="af3a1-156">インスタンスのホスト名。</span><span class="sxs-lookup"><span data-stu-id="af3a1-156">The host name of the instance.</span></span>| 
+| <span data-ttu-id="af3a1-157">portMappings</span><span class="sxs-lookup"><span data-stu-id="af3a1-157">portMappings</span></span>| <span data-ttu-id="af3a1-158">ポートのマッピングします。</span><span class="sxs-lookup"><span data-stu-id="af3a1-158">The port mappings.</span></span>| 
+| <span data-ttu-id="af3a1-159">地域</span><span class="sxs-lookup"><span data-stu-id="af3a1-159">region</span></span>| <span data-ttu-id="af3a1-160">地域のインスタンスがでホストされています。</span><span class="sxs-lookup"><span data-stu-id="af3a1-160">Region the instance is hosted in.</span></span>| 
+| <span data-ttu-id="af3a1-161">secureContext</span><span class="sxs-lookup"><span data-stu-id="af3a1-161">secureContext</span></span>| <span data-ttu-id="af3a1-162">セキュア デバイス アドレスです。</span><span class="sxs-lookup"><span data-stu-id="af3a1-162">The secure device address.</span></span>| 
  
 <a id="ID4ESE"></a>
 
  
-### <a name="sample-response"></a><span data-ttu-id="64349-163">応答の例</span><span class="sxs-lookup"><span data-stu-id="64349-163">Sample Response</span></span>
+### <a name="sample-response"></a><span data-ttu-id="af3a1-163">応答の例</span><span class="sxs-lookup"><span data-stu-id="af3a1-163">Sample Response</span></span>
  
 
 ```cpp
@@ -149,22 +149,22 @@ ms.locfileid: "4572347"
 <a id="remarks"></a>
 
  
-## <a name="remarks"></a><span data-ttu-id="64349-164">注釈</span><span class="sxs-lookup"><span data-stu-id="64349-164">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="af3a1-164">注釈</span><span class="sxs-lookup"><span data-stu-id="af3a1-164">Remarks</span></span>
  
-<span data-ttu-id="64349-165">次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="64349-165">A title should only retry the call to the service when the following response codes are received:</span></span>
+<span data-ttu-id="af3a1-165">次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しを再試行のみする必要があります。</span><span class="sxs-lookup"><span data-stu-id="af3a1-165">A title should only retry the call to the service when the following response codes are received:</span></span>
  
-   * <span data-ttu-id="64349-166">200-成功の応答が返されます。</span><span class="sxs-lookup"><span data-stu-id="64349-166">200—Success - response returned.</span></span>
-   * <span data-ttu-id="64349-167">400-無効なパラメーターまたは形式が正しくない要求本文。</span><span class="sxs-lookup"><span data-stu-id="64349-167">400—Invalid parameters or malformed request body.</span></span>
-   * <span data-ttu-id="64349-168">401: Unauthorized</span><span class="sxs-lookup"><span data-stu-id="64349-168">401—Unauthorized</span></span>
-   * <span data-ttu-id="64349-169">404-タイトル id を割り当てられているすべてのサブスクリプションはありません。</span><span class="sxs-lookup"><span data-stu-id="64349-169">404—Title id doesnt have any subscriptions assigned to it.</span></span>
-   * <span data-ttu-id="64349-170">409-この応答が可能な場合、同じ要求が同時にほぼで (同じ sessionId) に加えられたします。</span><span class="sxs-lookup"><span data-stu-id="64349-170">409—When identical request are made (same sessionId) at roughly the same time, this response is possible.</span></span> <span data-ttu-id="64349-171">セッションのホストが既に指定した sessionId しアクティブになって、割り当て要求が行われた場合はその sessionhost に関する詳細情報が返されます。</span><span class="sxs-lookup"><span data-stu-id="64349-171">If an allocate request is made and a session host already has the specified sessionId AND it is already Active we will return information detailing that sessionhost.</span></span> <span data-ttu-id="64349-172">セッション ホストただしがない場合アクティブなは、まだ、競合が表示されます。</span><span class="sxs-lookup"><span data-stu-id="64349-172">If the session host however, is NOT Active yet, you will receive a Conflict.</span></span>
-   * <span data-ttu-id="64349-173">500-予期しないサーバー エラー。</span><span class="sxs-lookup"><span data-stu-id="64349-173">500—Unexpected server error.</span></span>
-   * <span data-ttu-id="64349-174">503-なし sessionhosts StandingBy します。</span><span class="sxs-lookup"><span data-stu-id="64349-174">503—No sessionhosts StandingBy.</span></span> <span data-ttu-id="64349-175">これらのリソースの一部は無料ときは、要求を再試行します。</span><span class="sxs-lookup"><span data-stu-id="64349-175">Retry the request when some of these resources are free.</span></span>
+   * <span data-ttu-id="af3a1-166">200、成功の応答が返されます。</span><span class="sxs-lookup"><span data-stu-id="af3a1-166">200—Success - response returned.</span></span>
+   * <span data-ttu-id="af3a1-167">400-無効なパラメーターまたは形式が正しくない要求本文。</span><span class="sxs-lookup"><span data-stu-id="af3a1-167">400—Invalid parameters or malformed request body.</span></span>
+   * <span data-ttu-id="af3a1-168">401: Unauthorized</span><span class="sxs-lookup"><span data-stu-id="af3a1-168">401—Unauthorized</span></span>
+   * <span data-ttu-id="af3a1-169">404-タイトル id を割り当てられているすべてのサブスクリプションはありません。</span><span class="sxs-lookup"><span data-stu-id="af3a1-169">404—Title id doesnt have any subscriptions assigned to it.</span></span>
+   * <span data-ttu-id="af3a1-170">409-この応答が可能な場合、同じ要求が同時にほぼで (同じ sessionId) に加えられたします。</span><span class="sxs-lookup"><span data-stu-id="af3a1-170">409—When identical request are made (same sessionId) at roughly the same time, this response is possible.</span></span> <span data-ttu-id="af3a1-171">割り当て要求が行われた、セッションのホストが既に指定した sessionId とアクティブになっている場合はその sessionhost に関する詳しい情報が返されます。</span><span class="sxs-lookup"><span data-stu-id="af3a1-171">If an allocate request is made and a session host already has the specified sessionId AND it is already Active we will return information detailing that sessionhost.</span></span> <span data-ttu-id="af3a1-172">セッション ホストただしがない場合アクティブなは、まだ、競合が表示されます。</span><span class="sxs-lookup"><span data-stu-id="af3a1-172">If the session host however, is NOT Active yet, you will receive a Conflict.</span></span>
+   * <span data-ttu-id="af3a1-173">500-予期しないサーバー エラー。</span><span class="sxs-lookup"><span data-stu-id="af3a1-173">500—Unexpected server error.</span></span>
+   * <span data-ttu-id="af3a1-174">503-sessionhosts StandingBy しません。</span><span class="sxs-lookup"><span data-stu-id="af3a1-174">503—No sessionhosts StandingBy.</span></span> <span data-ttu-id="af3a1-175">これらのリソースの一部は無料ときは、要求を再試行します。</span><span class="sxs-lookup"><span data-stu-id="af3a1-175">Retry the request when some of these resources are free.</span></span>
    
 <a id="ID4EFG"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="64349-176">関連項目</span><span class="sxs-lookup"><span data-stu-id="64349-176">See also</span></span>
- [<span data-ttu-id="64349-177">/titles/{titleId}/sessionhosts</span><span class="sxs-lookup"><span data-stu-id="64349-177">/titles/{titleId}/sessionhosts</span></span>](uri-titlestitleidsessionhosts.md)
+## <a name="see-also"></a><span data-ttu-id="af3a1-176">関連項目</span><span class="sxs-lookup"><span data-stu-id="af3a1-176">See also</span></span>
+ [<span data-ttu-id="af3a1-177">/titles/{titleId}/sessionhosts</span><span class="sxs-lookup"><span data-stu-id="af3a1-177">/titles/{titleId}/sessionhosts</span></span>](uri-titlestitleidsessionhosts.md)
 
   

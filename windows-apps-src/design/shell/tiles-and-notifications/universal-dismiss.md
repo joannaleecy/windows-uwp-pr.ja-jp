@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, トースト, クラウド環境にあるアクション センター, ユニバーサル無視, 通知, クロス デバイス, 一括承諾
 ms.localizationpriority: medium
 ms.openlocfilehash: 90ad60949504d4478341ff9455fe0f7da90d78a9
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565104"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621637"
 ---
 # <a name="universal-dismiss"></a><span data-ttu-id="8cb64-103">ユニバーサル無視</span><span class="sxs-lookup"><span data-stu-id="8cb64-103">Universal Dismiss</span></span>
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: After you define your experiment in the Dev Center dashboard and code your experiment in your app, you are ready to active your experiment and use the Dev Center dashboard to review the results of your experiment.
 title: ダッシュボードで実験を管理する
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
 ms.localizationpriority: medium
-ms.openlocfilehash: 073d5ec67bb012cbfe21c279ee97ec3c50b8458f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: 0a5f48c1b5aeed1cd5e02a60c6ed1b55c4b02a92
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568018"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616901"
 ---
 # <a name="manage-your-experiment-in-the-dashboard"></a><span data-ttu-id="14ae3-103">ダッシュボードで実験を管理する</span><span class="sxs-lookup"><span data-stu-id="14ae3-103">Manage your experiment in the dashboard</span></span>
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, サインアップ, 開発者アカウント
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ed54f1df2ace18d06f9273fb9e26459907f8542
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568717"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618776"
 ---
 # <a name="create-a-developer-account"></a><span data-ttu-id="81029-104">開発者アカウントを作る</span><span class="sxs-lookup"><span data-stu-id="81029-104">Create a developer account</span></span>
 

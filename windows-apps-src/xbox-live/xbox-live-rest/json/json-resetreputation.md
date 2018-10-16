@@ -12,31 +12,31 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 494f4a8977a298265c264b050d6a222bd2bdd7d2
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565577"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621842"
 ---
-# <a name="resetreputation-json"></a><span data-ttu-id="526ca-104">ResetReputation (JSON)</span><span class="sxs-lookup"><span data-stu-id="526ca-104">ResetReputation (JSON)</span></span>
-<span data-ttu-id="526ca-105">ユーザーの既存のスコアを変更する必要があります新しい基本評判スコアが含まれています。</span><span class="sxs-lookup"><span data-stu-id="526ca-105">Contains the new base Reputation scores to which a user's existing scores should be changed.</span></span> 
+# <a name="resetreputation-json"></a><span data-ttu-id="5ed74-104">ResetReputation (JSON)</span><span class="sxs-lookup"><span data-stu-id="5ed74-104">ResetReputation (JSON)</span></span>
+<span data-ttu-id="5ed74-105">ユーザーの既存のスコアを変更する必要があります新しい基本評判スコアが含まれています。</span><span class="sxs-lookup"><span data-stu-id="5ed74-105">Contains the new base Reputation scores to which a user's existing scores should be changed.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="resetreputation"></a><span data-ttu-id="526ca-106">ResetReputation</span><span class="sxs-lookup"><span data-stu-id="526ca-106">ResetReputation</span></span>
+## <a name="resetreputation"></a><span data-ttu-id="5ed74-106">ResetReputation</span><span class="sxs-lookup"><span data-stu-id="5ed74-106">ResetReputation</span></span>
  
-<span data-ttu-id="526ca-107">ResetReputation オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="526ca-107">The ResetReputation object has the following specification.</span></span>
+<span data-ttu-id="5ed74-107">ResetReputation オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="5ed74-107">The ResetReputation object has the following specification.</span></span>
  
-| <span data-ttu-id="526ca-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="526ca-108">Member</span></span>| <span data-ttu-id="526ca-109">種類</span><span class="sxs-lookup"><span data-stu-id="526ca-109">Type</span></span>| <span data-ttu-id="526ca-110">説明</span><span class="sxs-lookup"><span data-stu-id="526ca-110">Description</span></span>| 
+| <span data-ttu-id="5ed74-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="5ed74-108">Member</span></span>| <span data-ttu-id="5ed74-109">種類</span><span class="sxs-lookup"><span data-stu-id="5ed74-109">Type</span></span>| <span data-ttu-id="5ed74-110">説明</span><span class="sxs-lookup"><span data-stu-id="5ed74-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="526ca-111">fairplayReputation</span><span class="sxs-lookup"><span data-stu-id="526ca-111">fairplayReputation</span></span>| <span data-ttu-id="526ca-112">number</span><span class="sxs-lookup"><span data-stu-id="526ca-112">number</span></span>| <span data-ttu-id="526ca-113">目的の基本 (有効な範囲 0 ~ 75) のユーザーのフェアプレイ評判スコア。</span><span class="sxs-lookup"><span data-stu-id="526ca-113">The desired new base Fairplay Reputation score for the user (valid range 0 to 75).</span></span>| 
-| <span data-ttu-id="526ca-114">commsReputation</span><span class="sxs-lookup"><span data-stu-id="526ca-114">commsReputation</span></span>| <span data-ttu-id="526ca-115">number</span><span class="sxs-lookup"><span data-stu-id="526ca-115">number</span></span>| <span data-ttu-id="526ca-116">目的の基本 (有効な範囲 0 ~ 75) のユーザーの通信の評判スコア。</span><span class="sxs-lookup"><span data-stu-id="526ca-116">The desired new base Comms Reputation score for the user (valid range 0 to 75).</span></span>| 
-| <span data-ttu-id="526ca-117">userContentReputation</span><span class="sxs-lookup"><span data-stu-id="526ca-117">userContentReputation</span></span>| <span data-ttu-id="526ca-118">number</span><span class="sxs-lookup"><span data-stu-id="526ca-118">number</span></span>| <span data-ttu-id="526ca-119">必要な基本 UserContent 評判スコアのユーザー (有効な範囲 0 ~ 75)。</span><span class="sxs-lookup"><span data-stu-id="526ca-119">The desired new base UserContent Reputation score for the user (valid range 0 to 75).</span></span>| 
+| <span data-ttu-id="5ed74-111">fairplayReputation</span><span class="sxs-lookup"><span data-stu-id="5ed74-111">fairplayReputation</span></span>| <span data-ttu-id="5ed74-112">number</span><span class="sxs-lookup"><span data-stu-id="5ed74-112">number</span></span>| <span data-ttu-id="5ed74-113">必要な基本フェアプレイ評判スコアのユーザー (有効な範囲 0 ~ 75)。</span><span class="sxs-lookup"><span data-stu-id="5ed74-113">The desired new base Fairplay Reputation score for the user (valid range 0 to 75).</span></span>| 
+| <span data-ttu-id="5ed74-114">commsReputation</span><span class="sxs-lookup"><span data-stu-id="5ed74-114">commsReputation</span></span>| <span data-ttu-id="5ed74-115">number</span><span class="sxs-lookup"><span data-stu-id="5ed74-115">number</span></span>| <span data-ttu-id="5ed74-116">目的の基本 (有効な範囲 0 ~ 75) のユーザーの通信の評判スコア。</span><span class="sxs-lookup"><span data-stu-id="5ed74-116">The desired new base Comms Reputation score for the user (valid range 0 to 75).</span></span>| 
+| <span data-ttu-id="5ed74-117">userContentReputation</span><span class="sxs-lookup"><span data-stu-id="5ed74-117">userContentReputation</span></span>| <span data-ttu-id="5ed74-118">number</span><span class="sxs-lookup"><span data-stu-id="5ed74-118">number</span></span>| <span data-ttu-id="5ed74-119">必要な基本 UserContent 評判スコアのユーザー (有効な範囲 0 ~ 75)。</span><span class="sxs-lookup"><span data-stu-id="5ed74-119">The desired new base UserContent Reputation score for the user (valid range 0 to 75).</span></span>| 
   
 <a id="ID4E4B"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="526ca-120">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="526ca-120">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="5ed74-120">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="5ed74-120">Sample JSON syntax</span></span>
  
 
 ```json
@@ -52,13 +52,13 @@ ms.locfileid: "4565577"
 <a id="ID4EGC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="526ca-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="526ca-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5ed74-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="5ed74-121">See also</span></span>
  
 <a id="ID4EIC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="526ca-122">Parent</span><span class="sxs-lookup"><span data-stu-id="526ca-122">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="5ed74-122">Parent</span><span class="sxs-lookup"><span data-stu-id="5ed74-122">Parent</span></span> 
 
-[<span data-ttu-id="526ca-123">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="526ca-123">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="5ed74-123">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="5ed74-123">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

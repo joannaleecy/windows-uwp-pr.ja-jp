@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 7adfecbe216dce25d0f80eb3ef1f528196299db4
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4569570"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621961"
 ---
 # <a name="guidelines-for-background-tasks"></a><span data-ttu-id="9100e-104">バックグラウンド タスクのガイドライン</span><span class="sxs-lookup"><span data-stu-id="9100e-104">Guidelines for background tasks</span></span>
 

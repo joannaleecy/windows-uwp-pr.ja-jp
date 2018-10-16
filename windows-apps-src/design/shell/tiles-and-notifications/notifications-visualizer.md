@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: af8b2489346e1ef81c5cae304802814b79b8b950
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4575141"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616461"
 ---
 # <a name="notifications-visualizer"></a><span data-ttu-id="ab35f-103">Notifications Visualizer</span><span class="sxs-lookup"><span data-stu-id="ab35f-103">Notifications Visualizer</span></span>
 

@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, タイル, タイル通知, タイルのコンテンツ, スキーマ, タイルのペイロード
 ms.localizationpriority: medium
 ms.openlocfilehash: d2baa2e2d7b8d68505159eb480ea3be78750f507
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572414"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620824"
 ---
 # <a name="tile-content-schema"></a><span data-ttu-id="58e51-103">タイルのコンテンツのスキーマ</span><span class="sxs-lookup"><span data-stu-id="58e51-103">Tile content schema</span></span>
 

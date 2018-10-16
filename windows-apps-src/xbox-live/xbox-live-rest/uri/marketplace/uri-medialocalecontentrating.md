@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 632d49e0fa7dbb99f9096e70f790d0c9a3f31e0c
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570678"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617621"
 ---
 # <a name="mediamarketplaceidcontentrating"></a><span data-ttu-id="042f8-104">/media/{marketplaceId}/contentRating</span><span class="sxs-lookup"><span data-stu-id="042f8-104">/media/{marketplaceId}/contentRating</span></span>
 <span data-ttu-id="042f8-105">コンテンツの規制トークンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="042f8-105">Access the content rating token.</span></span> <span data-ttu-id="042f8-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="042f8-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>

@@ -1,38 +1,38 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: サポートされているバナー広告のサイズについて説明します。
 title: サポートされているバナー広告のサイズ
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP, 広告, Advertising, サイズ, バナー
 ms.localizationpriority: medium
-ms.openlocfilehash: baeed2fd1bce779a2d7bb08d808e868eb3ababed
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a438f6df66b064004ad9664ce46280475dad83c6
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "927419"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616064"
 ---
-# <a name="supported-banner-ad-sizes"></a><span data-ttu-id="58cb8-104">サポートされているバナー広告のサイズ</span><span class="sxs-lookup"><span data-stu-id="58cb8-104">Supported banner ad sizes</span></span>
+# <a name="supported-banner-ad-sizes"></a><span data-ttu-id="492bb-104">サポートされているバナー広告のサイズ</span><span class="sxs-lookup"><span data-stu-id="492bb-104">Supported banner ad sizes</span></span>
 
-<span data-ttu-id="58cb8-105">次のバナー広告のサイズは、どこからでも Windows プラットフォーム (UWP) アプリケーションでのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="58cb8-105">The following banner ad sizes are supported for Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="58cb8-106">アプリで**AdControl**オブジェクトのインスタンスを作成するときにサポートされているサイズは次のいずれかに一致するように、高さと幅のプロパティを設定することを確認します。</span><span class="sxs-lookup"><span data-stu-id="58cb8-106">When you instantiate your **AdControl** object in your app, make sure you set the height and width properties to match one of these supported sizes.</span></span>
+<span data-ttu-id="492bb-105">ユニバーサル Windows プラットフォーム (UWP) アプリの場合は、次のバナー広告のサイズがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="492bb-105">The following banner ad sizes are supported for Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="492bb-106">アプリで**AdControl**オブジェクトをインスタンス化するときのこれらのサイズのサポートされているいずれかに一致するように高さと幅のプロパティを設定することを確認します。</span><span class="sxs-lookup"><span data-stu-id="492bb-106">When you instantiate your **AdControl** object in your app, make sure you set the height and width properties to match one of these supported sizes.</span></span>
 
-* <span data-ttu-id="58cb8-107">160 x 600</span><span class="sxs-lookup"><span data-stu-id="58cb8-107">160x600</span></span>
-* <span data-ttu-id="58cb8-108">300 x 50</span><span class="sxs-lookup"><span data-stu-id="58cb8-108">300x50</span></span>
-* <span data-ttu-id="58cb8-109">300 x 250</span><span class="sxs-lookup"><span data-stu-id="58cb8-109">300x250</span></span>
-* <span data-ttu-id="58cb8-110">300 x 600</span><span class="sxs-lookup"><span data-stu-id="58cb8-110">300x600</span></span>
-* <span data-ttu-id="58cb8-111">320 x 50</span><span class="sxs-lookup"><span data-stu-id="58cb8-111">320x50</span></span>
-* <span data-ttu-id="58cb8-112">640 x 100</span><span class="sxs-lookup"><span data-stu-id="58cb8-112">640x100</span></span>
-* <span data-ttu-id="58cb8-113">728 x 90</span><span class="sxs-lookup"><span data-stu-id="58cb8-113">728x90</span></span>
+* <span data-ttu-id="492bb-107">160 x 600</span><span class="sxs-lookup"><span data-stu-id="492bb-107">160x600</span></span>
+* <span data-ttu-id="492bb-108">300 x 50</span><span class="sxs-lookup"><span data-stu-id="492bb-108">300x50</span></span>
+* <span data-ttu-id="492bb-109">300 x 250</span><span class="sxs-lookup"><span data-stu-id="492bb-109">300x250</span></span>
+* <span data-ttu-id="492bb-110">300 x 600</span><span class="sxs-lookup"><span data-stu-id="492bb-110">300x600</span></span>
+* <span data-ttu-id="492bb-111">320 x 50</span><span class="sxs-lookup"><span data-stu-id="492bb-111">320x50</span></span>
+* <span data-ttu-id="492bb-112">640 x 100</span><span class="sxs-lookup"><span data-stu-id="492bb-112">640x100</span></span>
+* <span data-ttu-id="492bb-113">728 x 90</span><span class="sxs-lookup"><span data-stu-id="492bb-113">728x90</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="58cb8-114">最適な操作をお勧め Windows 10 のモバイル デバイスで、次のサイズを使用する: 300 x 50、320 x 50、および 640 x 100 します。</span><span class="sxs-lookup"><span data-stu-id="58cb8-114">For the best experience, we recommend using the following sizes on Windows 10 Mobile devices: 300x50, 320x50, and 640x100.</span></span>
+> <span data-ttu-id="492bb-114">最適なエクスペリエンスをお勧めします Windows 10 Mobile のデバイスで、次のサイズを使用して: 300 x 50、320 x 50、および 640 x 100 です。</span><span class="sxs-lookup"><span data-stu-id="492bb-114">For the best experience, we recommend using the following sizes on Windows 10 Mobile devices: 300x50, 320x50, and 640x100.</span></span>
 
-<span data-ttu-id="58cb8-115">次の表は、各バナー広告のサイズを示す例を示します。</span><span class="sxs-lookup"><span data-stu-id="58cb8-115">The following table provides examples that illustrate each banner ad size.</span></span>
+<span data-ttu-id="492bb-115">次の表では、各バナー広告のサイズを示す例を示します。</span><span class="sxs-lookup"><span data-stu-id="492bb-115">The following table provides examples that illustrate each banner ad size.</span></span>
 
 <table>
 <colgroup>
@@ -41,37 +41,37 @@ ms.locfileid: "927419"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><span data-ttu-id="58cb8-116">広告サイズ</span><span class="sxs-lookup"><span data-stu-id="58cb8-116">Ad size</span></span></th>
-<th align="left"><span data-ttu-id="58cb8-117">例</span><span class="sxs-lookup"><span data-stu-id="58cb8-117">Example</span></span></th>
+<th align="left"><span data-ttu-id="492bb-116">広告サイズ</span><span class="sxs-lookup"><span data-stu-id="492bb-116">Ad size</span></span></th>
+<th align="left"><span data-ttu-id="492bb-117">例</span><span class="sxs-lookup"><span data-stu-id="492bb-117">Example</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="even">
-<td align="left"><p><span data-ttu-id="58cb8-118">160 x 600</span><span class="sxs-lookup"><span data-stu-id="58cb8-118">160x600</span></span></p></td>
+<td align="left"><p><span data-ttu-id="492bb-118">160 x 600</span><span class="sxs-lookup"><span data-stu-id="492bb-118">160x600</span></span></p></td>
 <td align="left"><img src="images/13-ab104187-3ba9-4c13-a510-6fa4c9bd8330.jpg" alt="AdSizesWindows160x600" /></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span data-ttu-id="58cb8-119">300 x 250</span><span class="sxs-lookup"><span data-stu-id="58cb8-119">300x250</span></span></p></td>
+<td align="left"><p><span data-ttu-id="492bb-119">300 x 250</span><span class="sxs-lookup"><span data-stu-id="492bb-119">300x250</span></span></p></td>
 <td align="left"><img src="images/13-dff5785a-5355-47db-bb46-e2f41564b87c.jpg" alt="AdSizesWindows300x250" /></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span data-ttu-id="58cb8-120">300 x 600</span><span class="sxs-lookup"><span data-stu-id="58cb8-120">300x600</span></span></p></td>
+<td align="left"><p><span data-ttu-id="492bb-120">300 x 600</span><span class="sxs-lookup"><span data-stu-id="492bb-120">300x600</span></span></p></td>
 <td align="left"><img src="images/13-826a12c0-f3ee-4ea4-a9f9-aa5ed0e87490.jpg" alt="AdSizesWindows300x600" /></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span data-ttu-id="58cb8-121">728 x 90</span><span class="sxs-lookup"><span data-stu-id="58cb8-121">728x90</span></span></p></td>
+<td align="left"><p><span data-ttu-id="492bb-121">728 x 90</span><span class="sxs-lookup"><span data-stu-id="492bb-121">728x90</span></span></p></td>
 <td align="left"><img src="images/13-3071078f-228b-4336-97d3-5b783b163f9a.jpg" alt="AdSizesWindows728x90" /></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span data-ttu-id="58cb8-122">300 x 50</span><span class="sxs-lookup"><span data-stu-id="58cb8-122">300x50</span></span></p></td>
+<td align="left"><p><span data-ttu-id="492bb-122">300 x 50</span><span class="sxs-lookup"><span data-stu-id="492bb-122">300x50</span></span></p></td>
 <td align="left"><img src="images/13-ce34c5cf-3e7d-4dd4-a094-4fad5e95d5cf.jpg" alt="AdSizesPhone300x50" /></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span data-ttu-id="58cb8-123">320 x 50</span><span class="sxs-lookup"><span data-stu-id="58cb8-123">320x50</span></span></p></td>
+<td align="left"><p><span data-ttu-id="492bb-123">320 x 50</span><span class="sxs-lookup"><span data-stu-id="492bb-123">320x50</span></span></p></td>
 <td align="left"><img src="images/13-f6f413da-ddde-4424-9364-41d8ba536d21.jpg" alt="AdSizesPhone320x50" /></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span data-ttu-id="58cb8-124">640 x 100</span><span class="sxs-lookup"><span data-stu-id="58cb8-124">640x100</span></span></p></td>
+<td align="left"><p><span data-ttu-id="492bb-124">640 x 100</span><span class="sxs-lookup"><span data-stu-id="492bb-124">640x100</span></span></p></td>
 <td align="left"><img src="images/13-2bf69508-7c98-422d-9837-ed8bdca33c5a.jpg" alt="AdSizesPhone640x100" /></td>
 </tr>
 </tbody>

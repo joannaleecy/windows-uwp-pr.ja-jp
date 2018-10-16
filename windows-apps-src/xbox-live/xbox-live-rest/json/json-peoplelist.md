@@ -12,30 +12,30 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 44102cb2ee1c996be9d0b42626f11a64ffb5c377
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565477"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621432"
 ---
-# <a name="peoplelist-json"></a><span data-ttu-id="8136f-104">PeopleList (JSON)</span><span class="sxs-lookup"><span data-stu-id="8136f-104">PeopleList (JSON)</span></span>
-<span data-ttu-id="8136f-105">[Person](json-person.md)オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="8136f-105">Collection of [Person](json-person.md) objects.</span></span> 
+# <a name="peoplelist-json"></a><span data-ttu-id="b130d-104">PeopleList (JSON)</span><span class="sxs-lookup"><span data-stu-id="b130d-104">PeopleList (JSON)</span></span>
+<span data-ttu-id="b130d-105">[Person](json-person.md)オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="b130d-105">Collection of [Person](json-person.md) objects.</span></span> 
 <a id="ID4ER"></a>
 
  
-## <a name="peoplelist"></a><span data-ttu-id="8136f-106">PeopleList</span><span class="sxs-lookup"><span data-stu-id="8136f-106">PeopleList</span></span>
+## <a name="peoplelist"></a><span data-ttu-id="b130d-106">PeopleList</span><span class="sxs-lookup"><span data-stu-id="b130d-106">PeopleList</span></span>
  
-<span data-ttu-id="8136f-107">PeopleList オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="8136f-107">The PeopleList object has the following specification.</span></span>
+<span data-ttu-id="b130d-107">PeopleList オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="b130d-107">The PeopleList object has the following specification.</span></span>
  
-| <span data-ttu-id="8136f-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="8136f-108">Member</span></span>| <span data-ttu-id="8136f-109">種類</span><span class="sxs-lookup"><span data-stu-id="8136f-109">Type</span></span>| <span data-ttu-id="8136f-110">説明</span><span class="sxs-lookup"><span data-stu-id="8136f-110">Description</span></span>| 
+| <span data-ttu-id="b130d-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="b130d-108">Member</span></span>| <span data-ttu-id="b130d-109">種類</span><span class="sxs-lookup"><span data-stu-id="b130d-109">Type</span></span>| <span data-ttu-id="b130d-110">説明</span><span class="sxs-lookup"><span data-stu-id="b130d-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="8136f-111">People</span><span class="sxs-lookup"><span data-stu-id="8136f-111">people</span></span>| <span data-ttu-id="8136f-112">[ユーザー](json-person.md)の配列</span><span class="sxs-lookup"><span data-stu-id="8136f-112">array of [Person](json-person.md)</span></span>| <span data-ttu-id="8136f-113">ユーザーのリストを構成する[Person](json-person.md)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="8136f-113">The [Person](json-person.md) objects that make up the people list.</span></span>| 
-| <span data-ttu-id="8136f-114">totalCount</span><span class="sxs-lookup"><span data-stu-id="8136f-114">totalCount</span></span>| <span data-ttu-id="8136f-115">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="8136f-115">32-bit unsigned integer</span></span>| <span data-ttu-id="8136f-116">セットで利用可能な[Person](json-person.md)オブジェクトの合計数。</span><span class="sxs-lookup"><span data-stu-id="8136f-116">Total number of [Person](json-person.md) objects available in the set.</span></span> <span data-ttu-id="8136f-117">この値は、全体のセットだけでなく、最新の応答のサイズを表すためにのページングのクライアントで使用できます。</span><span class="sxs-lookup"><span data-stu-id="8136f-117">This value can be used by clients for paging because it represents the size of the whole set, not just the most recent response.</span></span> <span data-ttu-id="8136f-118">値の例: 680 します。</span><span class="sxs-lookup"><span data-stu-id="8136f-118">Example value: 680.</span></span>| 
+| <span data-ttu-id="b130d-111">People</span><span class="sxs-lookup"><span data-stu-id="b130d-111">people</span></span>| <span data-ttu-id="b130d-112">[ユーザー](json-person.md)の配列</span><span class="sxs-lookup"><span data-stu-id="b130d-112">array of [Person](json-person.md)</span></span>| <span data-ttu-id="b130d-113">ユーザーのリストを構成する[Person](json-person.md)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="b130d-113">The [Person](json-person.md) objects that make up the people list.</span></span>| 
+| <span data-ttu-id="b130d-114">totalCount</span><span class="sxs-lookup"><span data-stu-id="b130d-114">totalCount</span></span>| <span data-ttu-id="b130d-115">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="b130d-115">32-bit unsigned integer</span></span>| <span data-ttu-id="b130d-116">セットで利用できる[ユーザー](json-person.md)オブジェクトの合計数。</span><span class="sxs-lookup"><span data-stu-id="b130d-116">Total number of [Person](json-person.md) objects available in the set.</span></span> <span data-ttu-id="b130d-117">この値は、全体のセットだけでなく、最新の応答のサイズを表すためにのページングのクライアントで使用できます。</span><span class="sxs-lookup"><span data-stu-id="b130d-117">This value can be used by clients for paging because it represents the size of the whole set, not just the most recent response.</span></span> <span data-ttu-id="b130d-118">値の例: 680 します。</span><span class="sxs-lookup"><span data-stu-id="b130d-118">Example value: 680.</span></span>| 
   
 <a id="ID4EAC"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="8136f-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="8136f-119">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="b130d-119">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="b130d-119">Sample JSON syntax</span></span>
  
 
 ```json
@@ -68,23 +68,23 @@ ms.locfileid: "4565477"
 <a id="ID4EJC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="8136f-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="8136f-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b130d-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="b130d-120">See also</span></span>
  
 <a id="ID4ELC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="8136f-121">Parent</span><span class="sxs-lookup"><span data-stu-id="8136f-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="b130d-121">Parent</span><span class="sxs-lookup"><span data-stu-id="b130d-121">Parent</span></span> 
 
-[<span data-ttu-id="8136f-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="8136f-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="b130d-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="b130d-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EVC"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="8136f-123">リファレンス</span><span class="sxs-lookup"><span data-stu-id="8136f-123">Reference</span></span> 
+##### <a name="reference"></a><span data-ttu-id="b130d-123">リファレンス</span><span class="sxs-lookup"><span data-stu-id="b130d-123">Reference</span></span> 
 
-[<span data-ttu-id="8136f-124">GET (/users/{ownerId}/people)</span><span class="sxs-lookup"><span data-stu-id="8136f-124">GET (/users/{ownerId}/people)</span></span>](../uri/people/uri-usersowneridpeopleget.md)
+[<span data-ttu-id="b130d-124">GET (/users/{ownerId}/people)</span><span class="sxs-lookup"><span data-stu-id="b130d-124">GET (/users/{ownerId}/people)</span></span>](../uri/people/uri-usersowneridpeopleget.md)
 
- [<span data-ttu-id="8136f-125">POST (/users/{ownerId}/people/xuids)</span><span class="sxs-lookup"><span data-stu-id="8136f-125">POST (/users/{ownerId}/people/xuids)</span></span>](../uri/people/uri-usersowneridpeoplexuidspost.md)
+ [<span data-ttu-id="b130d-125">POST (/users/{ownerId}/people/xuids)</span><span class="sxs-lookup"><span data-stu-id="b130d-125">POST (/users/{ownerId}/people/xuids)</span></span>](../uri/people/uri-usersowneridpeoplexuidspost.md)
 
    
