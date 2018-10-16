@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 日付範囲やその他のオプション フィルターを指定して、アドオンに関するチャネルごとの集計コンバージョン データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: チャネルごとのアドオンのコンバージョンの取得
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アドオンのコンバージョン, チャネル
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c32cc30d65c798c09592ac46d64c2c1c550b64
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: af29c790df5508a22c545cdc5a2ca2faac15e134
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663422"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623996"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>チャネルごとのアドオンのコンバージョンの取得
 
@@ -30,7 +30,7 @@ ms.locfileid: "1663422"
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -102,7 +102,7 @@ Authorization: Bearer <your access token>
 | appType          | string |  コンバージョン データを取得する製品の種類です。 このメソッドでは、サポートされている唯一の値は **Add-On** です。            |
 | customCampaignId           | string |  アプリに関連付けられている[カスタム アプリ プロモーション キャンペーン](../publish/create-a-custom-app-promotion-campaign.md)の ID 文字列です。   |
 | referrerUriDomain           | string |  カスタム アプリ プロモーション キャンペーン ID を含むアプリの登録情報がアクティブ化されたドメインを指定します。   |
-| channelType           | string |  コンバージョンのチャネルを指定する次のいずれかの文字列です。<ul><li><strong>CustomCampaignId</strong></li><li><strong>ストアのトラフィック</strong></li><li><strong>Other</strong></li></ul>    |
+| channelType           | string |  コンバージョンのチャネルを指定する次のいずれかの文字列です。<ul><li><strong>CustomCampaignId</strong></li><li><strong>Store Traffic</strong></li><li><strong>Other</strong></li></ul>    |
 | storeClient         | string | コンバージョンが発生したストアのバージョンです。 現時点では、サポートされている唯一の値は **SFC** です。    |
 | deviceType          | string | 次のいずれかの文字列です。<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>            |
 | market              | string | コンバージョンが発生した市場の ISO 3166 国コードです。    |
@@ -141,6 +141,6 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アドオン取得レポート](../publish/add-on-acquisitions-report.md)
+* [[アドオン取得] レポート](../publish/add-on-acquisitions-report.md)
 * [Microsoft Store サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)

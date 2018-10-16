@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bceb1d2cc6682698d0ad06ed4b1865f3d6510442
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563750"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623801"
 ---
 # <a name="feedback-report"></a>フィードバック レポート
 
@@ -31,7 +31,7 @@ Windows デベロッパー センターのダッシュボードの**フィード
 また、[パッケージ フライト](package-flights.md)を使っている場合にもフィードバックは有効です。各ユーザーがデバイスにインストールした特定のパッケージが [フィードバック] レポートに表示されるためです。
 
 > [!TIP]
-> 過去 30 日以内にレビュー、評価、およびすべてのアプリの間でユーザーからのフィードバックの概要について、左側のナビゲーション メニューで**利用率の引き上げ**を展開し、選択**レビューとフィードバック**。 
+> 過去 30 日以内にレビュー、評価、およびすべてのアプリの間でユーザーからのフィードバックの概要を確認、左側のナビゲーション メニューの**利用率の引き上げ**を展開し、選択**レビューとフィードバック**。 
 
 
 ## <a name="apply-filters"></a>フィルターの適用

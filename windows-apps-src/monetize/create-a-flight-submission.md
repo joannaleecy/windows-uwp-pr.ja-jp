@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: Windows デベロッパー センター アカウントに登録されているアプリの新しいパッケージ フライトの申請を作成するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: パッケージ フライトの申請の作成
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請の作成
 ms.localizationpriority: medium
-ms.openlocfilehash: 807fef9170af5c18561d2e1ee0160b9029f77514
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 87e544c2d9d04e62f324fe14cd7aab3e1b7ee500
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664442"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624400"
 ---
 # <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 

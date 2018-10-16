@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0742ad87e68f7d0c6ed6346873aa3dd6c56edee0
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568496"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623372"
 ---
 # <a name="serviceconfigsscidhoppersnamestats"></a>/serviceconfigs/{scid}/hoppers/{name}/stats
 
 ホッパーの統計情報を取得するための取得操作をサポートしています。
 
 > [!IMPORTANT]
-> この URI はコントラクト 103 以降で使用するため、X Xbl コントラクト バージョンのヘッダー要素が必要です: 103 または後ですべての要求します。
+> この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
 
 <a id="ID4ER"></a>
 
@@ -34,7 +34,7 @@ momatch.xboxlive.com
 
 
 ## <a name="remarks"></a>注釈
-この URI は、対象ユーザーの構成では所有者識別子の値の xuid、gt、および me をサポートしています。 チケットの作成者だけでは、チケットを削除したり、URI の状態を取得することができます。  
+この URI は、対象ユーザーの構成では所有者識別子の値の xuid、gt、および me をサポートします。 チケットの作成者だけでは、チケットを削除したり、URI の状態を取得することができます。  
 <a id="ID4E6"></a>
 
 
@@ -43,7 +43,7 @@ momatch.xboxlive.com
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
 | scid| GUID| セッションのサービス構成 id (SCID)。|
-| name| string| ホッパーの名前です。|
+| name| string| ホッパーの名前。|
 
 <a id="ID4EEC"></a>
 

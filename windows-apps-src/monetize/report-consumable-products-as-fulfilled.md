@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: 特定のユーザーについてコンシューマブルな製品をフルフィルメント完了として報告するには、Microsoft Store コレクション API の以下のメソッドを使います。 ユーザーがコンシューマブルな製品を再購入するには、アプリまたはサービスが、そのユーザーについてコンシューマブルな製品をフルフィルメント完了と報告している必要があります。
 title: コンシューマブルな製品のフルフィルメント完了の報告
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store コレクション API, フルフィルメント, コンシューマブル
 ms.localizationpriority: medium
-ms.openlocfilehash: cd3b060961271d834a165a8cc8fa4ca8beba047c
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 2cbacd35a25e8eaf9673d118fcbece835572e289
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690108"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623931"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>コンシューマブルな製品のフルフィルメント完了の報告
 
@@ -50,7 +50,7 @@ ms.locfileid: "1690108"
 
 | ヘッダー         | 型   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | 文字列 | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。                           |
+| Authorization  | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。                           |
 | Host           | string | 値 **collections.mp.microsoft.com** に設定する必要があります。                                            |
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
@@ -148,7 +148,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 ## <a name="related-topics"></a>関連トピック
 
-* [サービスによる製品の権利の管理](view-and-grant-products-from-a-service.md)
+* [サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)
 * [製品の照会](query-for-products.md)
 * [無料の製品の付与](grant-free-products.md)
 * [Microsoft Store ID キーの更新](renew-a-windows-store-id-key.md)

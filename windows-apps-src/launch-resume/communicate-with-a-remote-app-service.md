@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト、バック グラウンド タスク、アプリ サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 72a8a02d14a4fa9287c987150a526745b294b65f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565242"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624250"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>リモート アプリ サービスとの通信
 
@@ -24,7 +24,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 ## <a name="set-up-the-app-service-on-the-host-device"></a>ホスト デバイスでアプリ サービスをセットアップする
 リモート デバイスでアプリ サービスを実行するには、アプリ サービスのプロバイダーが既にそのデバイスにインストールされている必要があります。 このガイドでは、[ユニバーサル Windows アプリ サンプルのリポジトリ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)で入手可能な[乱数ジェネレーター アプリ サービス](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)の CSharp バージョンを使います。 独自のアプリ サービスを記述する方法については、「[アプリ サービスの作成と利用](how-to-create-and-consume-an-app-service.md)」をご覧ください。
 
-既製のアプリ サービスを使うか独自のアプリ サービスを記述するかにかかわらず、リモート システムとの互換性を確保するにはいくらかの編集を行う必要があります。 Visual Studio で、アプリ サービス プロバイダーのプロジェクト (サンプルでは「AppServicesProvider」と呼ばれます) に移動し、その _Package.appxmanifest_ ファイルを選びます。 右クリックして **[コードの表示]** を選び、ファイルの全内容を表示します。 メイン**アプリケーション**要素内で**拡張機能**要素を作成 (または、既に存在している場合)。 アプリ サービスとして、プロジェクトを定義し、その親プロジェクトを参照する**拡張機能**を作成します。
+既製のアプリ サービスを使うか独自のアプリ サービスを記述するかにかかわらず、リモート システムとの互換性を確保するにはいくらかの編集を行う必要があります。 Visual Studio で、アプリ サービス プロバイダーのプロジェクト (サンプルでは「AppServicesProvider」と呼ばれます) に移動し、その _Package.appxmanifest_ ファイルを選びます。 右クリックして **[コードの表示]** を選び、ファイルの全内容を表示します。 メインの**Application**要素内で**拡張機能**要素を作成 (または、既に存在している場合)。 アプリ サービスとして、プロジェクトを定義し、その親プロジェクトを参照する**拡張機能**を作成します。
 
 ``` xml
 ...
@@ -36,7 +36,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 ...
 ```
 
-**AppService**の要素の横にある**SupportsRemoteSystems**属性を追加します。
+**AppService**要素の横にある**SupportsRemoteSystems**属性を追加します。
 
 ``` xml
 ...
@@ -44,7 +44,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 ...
 ```
 
-この**uap3**名前空間の要素を使用するためにいない場合があります、マニフェスト ファイルの先頭に名前空間の定義を追加する必要があります。
+いない場合があります要素をこの**uap3**名前空間を使用するのには、マニフェスト ファイルの先頭に名前空間の定義を追加する必要があります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
