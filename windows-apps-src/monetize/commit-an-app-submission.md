@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請のコミット
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e720e017eb77aad4a2696039b9fd076daf3db9e
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4689972"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4742791"
 ---
 # <a name="commit-an-app-submission"></a><span data-ttu-id="30ca7-104">アプリの申請のコミット</span><span class="sxs-lookup"><span data-stu-id="30ca7-104">Commit an app submission</span></span>
 

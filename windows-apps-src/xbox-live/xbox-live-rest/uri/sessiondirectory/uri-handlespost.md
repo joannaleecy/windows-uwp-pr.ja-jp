@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eaddef523fcfa3b794c421acbe6c1aac4785b68
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4682090"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4755505"
 ---
 # <a name="post-handles"></a><span data-ttu-id="e7c62-104">POST (/handles)</span><span class="sxs-lookup"><span data-stu-id="e7c62-104">POST (/handles)</span></span>
 <span data-ttu-id="e7c62-105">ユーザーの現在のアクティビティのマルチプレイヤー セッションを設定し、必要な場合は、セッション メンバーを招待します。</span><span class="sxs-lookup"><span data-stu-id="e7c62-105">Sets the multiplayer session for the user's current activity, and invites session members if required.</span></span>

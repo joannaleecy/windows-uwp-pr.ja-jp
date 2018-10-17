@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, テスト アカウント
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ba24c02d59a992ecacf0be89197511c5e133c59
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691312"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4740524"
 ---
 # <a name="xbox-live-test-accounts"></a><span data-ttu-id="408fe-104">Xbox Live テスト アカウント</span><span class="sxs-lookup"><span data-stu-id="408fe-104">Xbox Live test accounts</span></span>
 

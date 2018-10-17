@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, スタック トレース, エラー
 ms.localizationpriority: medium
 ms.openlocfilehash: 54c39d157bc2fcab6a67bd273f5d00eedd80be54
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690058"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4755893"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a><span data-ttu-id="ff826-104">アプリのエラーに関するスタック トレースの取得</span><span class="sxs-lookup"><span data-stu-id="ff826-104">Get the stack trace for an error in your app</span></span>
 

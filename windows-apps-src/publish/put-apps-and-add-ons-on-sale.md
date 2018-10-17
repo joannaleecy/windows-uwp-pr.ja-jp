@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a25980c964e399931a088e281e959df3095ffe9a
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4684074"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741252"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a><span data-ttu-id="41181-103">アプリとアドオンの販売</span><span class="sxs-lookup"><span data-stu-id="41181-103">Put apps and add-ons on sale</span></span>
 

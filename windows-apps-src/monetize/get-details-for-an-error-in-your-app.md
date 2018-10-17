@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細
 ms.localizationpriority: medium
 ms.openlocfilehash: ef523619d5c0be297223b34d480d2582f5605ec8
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4680044"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4756093"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a><span data-ttu-id="5f1ef-104">アプリのエラーに関する詳細情報の取得</span><span class="sxs-lookup"><span data-stu-id="5f1ef-104">Get details for an error in your app</span></span>
 

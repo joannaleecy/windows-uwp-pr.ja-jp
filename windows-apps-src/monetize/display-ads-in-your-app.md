@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, バナー, 広告コントロール, スポット広告
 ms.localizationpriority: medium
 ms.openlocfilehash: c0dde67e3f7ab43734ffb0bf2a5826cc54691e17
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4685026"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4743699"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a><span data-ttu-id="a1230-104">Microsoft Advertising SDK を使用したアプリでの広告の表示</span><span class="sxs-lookup"><span data-stu-id="a1230-104">Display ads in your app with the Microsoft Advertising SDK</span></span>
 
