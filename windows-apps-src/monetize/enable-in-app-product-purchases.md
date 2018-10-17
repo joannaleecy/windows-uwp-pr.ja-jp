@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dcdedda655011cf700df2548140b312f4b0f817d
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688657"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4747221"
 ---
 # <a name="enable-in-app-product-purchases"></a><span data-ttu-id="472fc-103">アプリ内製品購入の有効化</span><span class="sxs-lookup"><span data-stu-id="472fc-103">Enable in-app product purchases</span></span>
 

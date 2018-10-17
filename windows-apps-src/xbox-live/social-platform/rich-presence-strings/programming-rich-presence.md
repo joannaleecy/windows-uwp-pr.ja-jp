@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
 ms.openlocfilehash: bd39074e67c58e20154083be66211dbefc9f782d
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691276"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4744294"
 ---
 # <a name="programming-rich-presence"></a><span data-ttu-id="d57f1-104">リッチ プレゼンスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="d57f1-104">Programming Rich Presence</span></span>
 

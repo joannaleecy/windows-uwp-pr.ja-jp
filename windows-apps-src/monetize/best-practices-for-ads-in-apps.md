@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, Advertising, チュートリアル
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1974618c65dd057c4c8152d9c4c9556869a3ef
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679561"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745608"
 ---
 # <a name="best-practices-for-ads-in-apps"></a><span data-ttu-id="9f79f-104">アプリ内の広告のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="9f79f-104">Best practices for ads in apps</span></span>
 

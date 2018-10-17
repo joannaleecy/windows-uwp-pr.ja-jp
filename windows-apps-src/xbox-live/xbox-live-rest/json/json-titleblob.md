@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 91423df8367c275f40cd7f856a60070e1a46ad40
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691625"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4749143"
 ---
 # <a name="titleblob-json"></a><span data-ttu-id="ddbb3-104">TitleBlob (JSON)</span><span class="sxs-lookup"><span data-stu-id="ddbb3-104">TitleBlob (JSON)</span></span>
 <span data-ttu-id="ddbb3-105">記憶域からタイトルについてを説明します。</span><span class="sxs-lookup"><span data-stu-id="ddbb3-105">Contains information about a title from storage.</span></span> 

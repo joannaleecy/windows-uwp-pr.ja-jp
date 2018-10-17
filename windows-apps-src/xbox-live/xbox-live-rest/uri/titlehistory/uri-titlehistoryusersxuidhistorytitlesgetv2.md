@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 966ff94004d6fd6bfc404800c5ea6561ae3a3864
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686834"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745470"
 ---
 # <a name="get-usersxuidxuidhistorytitles"></a><span data-ttu-id="d665a-104">GET (/users/xuid({xuid})/history/titles)</span><span class="sxs-lookup"><span data-stu-id="d665a-104">GET (/users/xuid({xuid})/history/titles)</span></span>
 <span data-ttu-id="d665a-105">タイトルは、ユーザーがロックを解除またはその実績の進行状況を行ったの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="d665a-105">Gets a list of titles for which the user has unlocked or made progress on its achievements.</span></span> <span data-ttu-id="d665a-106">この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。</span><span class="sxs-lookup"><span data-stu-id="d665a-106">This API does not return a user's full history of titles played or launched.</span></span> <span data-ttu-id="d665a-107">これらの Uri のドメインが`achievements.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="d665a-107">The domain for these URIs is `achievements.xboxlive.com`.</span></span>
