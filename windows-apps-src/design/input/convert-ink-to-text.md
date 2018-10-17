@@ -12,12 +12,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 58c654c6b35b9e7e27cc201ac71e70a92a920b79
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: de14d35b7a39776f43feeefc94ebe77af0c97373
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895337"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4693536"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>Windows Ink のストロークをテキストおよび図形として認識する
 
@@ -212,7 +212,7 @@ private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
         }
     }
 ```
-6. 認識キャンバスに TextBlock を描画するための関数を以下に示します。 TextBlock の位置とフォント サイズを設定するには、インク キャンバスで関連付けられたインク ストロークの境界の四角形を使います。
+6. 認識キャンバスに TextBlock を描画するための関数を以下に示します。 位置と、TextBlock のフォント サイズを設定するのにには、インク キャンバスで関連付けられたインク ストロークの境界の四角形を使用します。
 ```csharp
 /// <summary>
 /// Draw ink recognition text string on the recognitionCanvas.
@@ -231,7 +231,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
     recognitionCanvas.Children.Add(text);
 }
 ```
-7. 認識キャンバスに楕円と多角形を描画するための関数を以下に示します。 図形の位置とフォント サイズを設定するには、インク キャンバスで関連付けられたインク ストロークの境界の四角形を使います。
+7. 認識キャンバスに楕円と多角形を描画するための関数を以下に示します。 図形のフォント サイズと位置を設定するのには、インク キャンバスで関連付けられたインク ストロークの境界の四角形を使用します。
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
     private void DrawEllipse(InkAnalysisInkDrawing shape)

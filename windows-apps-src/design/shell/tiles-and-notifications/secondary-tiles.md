@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, セカンダリ タイル
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f11ca4d29f22daf953ce03436c3b786c70a9e04
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: d8d6a79ddd497bc3ada777af25791e9938355c79
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622878"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4692878"
 ---
 # <a name="secondary-tiles"></a>セカンダリ タイル
 
@@ -70,7 +70,7 @@ ms.locfileid: "4622878"
 * ユーザーは親アプリを削除することなくいつでもセカンダリ タイルを削除できます。
 * セカンダリ タイルは実行時に作成できます。 アプリ タイルはインストール時にしか作成できません。
 * セカンダリ タイルを追加する前に、ポップアップでユーザーへの確認が行われます。
-* プログラムでユーザーへの要求を使ってロック画面にセカンダリ タイルを選択することはできません。 セカンダリ タイルは、ユーザーが [PC 設定] の [パーソナル設定] ページを使って手動で追加する必要があります。
+* プログラムでユーザーへの要求を使ってロック画面にセカンダリ タイルを選択することはできません。 ユーザーは、PC の設定でパーソナル設定] ページで、セカンダリ タイルを手動で追加する必要があります。
 
 通知の送信のため、セカンダリ タイルで使われるタイル/バッジ アップデーターとプッシュ通知チャネル用に特定のメソッドが用意されています。 これらは、プライマリ タイルで使われるバージョンと似ています。 たとえば、CreateBadgeUpdaterForApplication に対して CreateBadgeUpdaterForSecondaryTile があります。
 

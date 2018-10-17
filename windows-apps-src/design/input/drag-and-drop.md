@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 48462623d17c612d716300acc3a64057738e72c9
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: a4685a891facab39cb984f0b2d5f697e22477233
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707939"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4694669"
 ---
 # <a name="drag-and-drop"></a>ドラッグ アンド ドロップ
 
@@ -102,7 +102,7 @@ UI をカスタマイズする場合 (この記事の後半で説明します) �
 
 ## <a name="implementing-custom-drag-and-drop"></a>カスタムのドラッグ アンド ドロップを実装する
 
-[UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) クラスは、ドラッグ アンド ドロップを実装するためのほとんどの処理を自動的に実行します。 ただし必要に応じて、独自のバージョンのドラッグ アンド ドロップを実装することもできます。そのためには、[Windows.ApplicationModel.DataTransfer.DragDrop.Core 名前空間](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core)の API を使います。
+[UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) クラスは、ドラッグ アンド ドロップを実装するためのほとんどの処理を自動的に実行します。 する場合は、 [Windows.ApplicationModel.DataTransfer.DragDrop.Core 名前空間](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core)の Api を使用して、独自のバージョンを実装することができます。
 
 | 機能 | WinRT API |
 | --- | --- |

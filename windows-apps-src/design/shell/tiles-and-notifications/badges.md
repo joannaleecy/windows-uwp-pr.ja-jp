@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a3348eb6c5355ba025745efecee8629f381778b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: fc09e7a9d98d04c53aac0d76293b9d8e4dc6ed91
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653621"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4691678"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>UWP アプリ向けのバッジ通知
 
@@ -132,7 +132,7 @@ ms.locfileid: "1653621"
 
 ## <a name="create-a-badge"></a>バッジの作成
 
-以降の例で、バッジの更新を作成する方法を示します。
+これらの例では、バッジの更新プログラムを作成する方法を説明します。
 
 ### <a name="create-a-numeric-badge"></a>数値バッジの作成
 

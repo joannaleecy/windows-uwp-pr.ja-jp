@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: 概要, uwp, windows 10, 学習トラック, ファイル, ファイル io, ファイルの読み取り, ファイルの書き込み, ファイルの作成, テキストの書き込み, テキストの読み取り
 ms.localizationpriority: medium
-ms.openlocfilehash: d5a6400a265cdf0bfe78a6982874dcc6747d662b
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: ae89b5c0e072eceec155009c07b3b3a7cf563a20
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895264"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4693317"
 ---
 # <a name="work-with-files"></a>ファイルの操作
 
@@ -64,7 +64,7 @@ await Windows.Storage.FileIO.AppendLinesAsync(file, listOfStrings); // each entr
 
 ## <a name="read-text-from-a-file"></a>ファイルからのテキストの読み取り
 
-ファイルの書き込みと同様に、ファイルの読み取りは、ファイルの場所を指定することから始めます。 上の例と同じ場所を使用します。 次に、**FileIO** クラスを使用してファイルの内容を読み取ります。
+ファイルの書き込みと同様に、ファイルの読み取りは、ファイルの場所を指定することから始めます。 上の例と同じ場所を使用します。 その内容を読み取る**FileIO**クラスを使用します。
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;

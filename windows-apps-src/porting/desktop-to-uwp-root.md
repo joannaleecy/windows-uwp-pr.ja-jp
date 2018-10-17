@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.openlocfilehash: e11bae84c7cb88ef89f8b627cc2109fc56e43163
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4624370"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4691806"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>デスクトップ アプリケーションをパッケージ化 (デスクトップ ブリッジ)
 
@@ -34,7 +34,7 @@ Windows 10 エクスペリエンスを実現するために使用するコード
 > [!NOTE]
 > Microsoft Virtual Academy から公開されている、<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">このシリーズ</a>の短いビデオをご覧ください。 これらのビデオでは、デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) の移行の処理全体について説明します。
 
-## <a name="benefits"></a>利点
+## <a name="benefits"></a>特典
 
 以下に、デスクトップ アプリケーションの Windows アプリ パッケージを作成する理由を示します。
 
