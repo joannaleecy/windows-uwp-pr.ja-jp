@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f13edfbe5858a5fc3c4f24d22b31eb25f8386e25
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4619826"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4692796"
 ---
 # <a name="requirement-json"></a><span data-ttu-id="87916-104">Requirement (JSON)</span><span class="sxs-lookup"><span data-stu-id="87916-104">Requirement (JSON)</span></span>
 <span data-ttu-id="87916-105">実績とそれらに対応するため、ユーザーは、どのくらいのロック解除基準します。</span><span class="sxs-lookup"><span data-stu-id="87916-105">The unlock criteria for the Achievement and how far the user is toward meeting them.</span></span> 
