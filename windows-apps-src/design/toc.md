@@ -24,79 +24,106 @@
 ## レイアウト パネル
 ### [概要](layout/layout-panels.md)
 ### [チュートリアル: レイアウト パネルの使用](layout/grid-tutorial.md)
+### [分割ビュー](controls-and-patterns/split-view.md)
 ### [カスタム パネル](layout/custom-panels-overview.md)
 ### [カスタム パネルの例: BoxPanel](layout/boxpanel-example-custom-panel.md)
 ## 変換
 ### [概要](layout/transforms.md)
 ### [3-D 遠近効果](layout/3-d-perspective-effects.md)
+## [Z 深度とシャドウ](layout/depth-shadow.md)
 
 # コントロール
 ## [概要](controls-and-patterns/index.md)
 ## [コントロールとイベントの概要](controls-and-patterns/controls-and-events-intro.md)
 ## [機能別コントロールのインデックス](controls-and-patterns/controls-by-function.md)
-## [アプリ バーとコマンド バー](controls-and-patterns/app-bars.md)
-## [自動提案ボックス](controls-and-patterns/auto-suggest-box.md)
-## [ボタン](controls-and-patterns/buttons.md)
-## [チェック ボックス](controls-and-patterns/checkbox.md)
-## [カラー ピッカー](controls-and-patterns/color-picker.md)
-## [コマンド バーのポップアップ](controls-and-patterns/command-bar-flyout.md)
-## [連絡先カード](controls-and-patterns/contact-card.md)
-## [日付と時刻](controls-and-patterns/date-and-time.md)
-### [カレンダーの日付の選択コントロール](controls-and-patterns/calendar-date-picker.md)
-### [カレンダー ビュー](controls-and-patterns/calendar-view.md)
-### [日付の選択コントロール](controls-and-patterns/date-picker.md)
-### [時刻の選択コントロール](controls-and-patterns/time-picker.md)
-## ダイアログとポップアップ
-### [概要](controls-and-patterns/dialogs-and-flyouts/index.md)
-### [ダイアログ](controls-and-patterns/dialogs-and-flyouts/dialogs.md)
-### [ポップアップ](controls-and-patterns/dialogs-and-flyouts/flyouts.md)
-## [フリップ ビュー](controls-and-patterns/flipview.md)
-## [フォーム](controls-and-patterns/forms.md)
-## [Hub](controls-and-patterns/hub.md)
-## [ハイパーリンク](controls-and-patterns/hyperlinks.md)
-## [画像とイメージ ブラシ](controls-and-patterns/images-imagebrushes.md)
-## [インク コントロール](controls-and-patterns/inking-controls.md)
-## [リスト](controls-and-patterns/lists.md)
+
+## 基本入力
+### [ボタン](controls-and-patterns/buttons.md)
+### [チェック ボックス](controls-and-patterns/checkbox.md)
 ### [コンボ ボックス](controls-and-patterns/combo-box.md)
+### [ハイパーリンク](controls-and-patterns/hyperlinks.md)
+### [ラジオ ボタン](controls-and-patterns/radio-button.md)
+### [評価コントロール](controls-and-patterns/rating.md)
+### [スライダー](controls-and-patterns/slider.md)
+### [トグル](controls-and-patterns/toggles.md)
+
+## コレクション
+### [概要](controls-and-patterns/lists.md)
+### [フリップ ビュー](controls-and-patterns/flipview.md)
 ### [リスト ビューとグリッド ビュー](controls-and-patterns/listview-and-gridview.md)
-### [項目コンテナーやテンプレート](controls-and-patterns/item-containers-templates.md)
-### [リスト ビューの項目テンプレート](controls-and-patterns/item-templates-listview.md)
-### [グリッド ビューの項目テンプレート](controls-and-patterns/item-templates-gridview.md)
+#### [項目コンテナーやテンプレート](controls-and-patterns/item-containers-templates.md)
+#### [リスト ビューの項目テンプレート](controls-and-patterns/item-templates-listview.md)
+#### [グリッド ビューの項目テンプレート](controls-and-patterns/item-templates-gridview.md)
 ### [反転リスト](controls-and-patterns/inverted-lists.md)
 ### [引っ張って更新](controls-and-patterns/pull-to-refresh.md)
 ### [入れ子になった UI](controls-and-patterns/nested-ui.md)
 ### [コレクションのコマンド実行](controls-and-patterns/collection-commanding.md)
-## [マスター/詳細](controls-and-patterns/master-details.md)
-## [メディア再生](controls-and-patterns/media-playback.md)
-### [カスタム トランスポート コントロール](controls-and-patterns/custom-transport-controls.md)
-## [メニューとコンテキスト メニュー](controls-and-patterns/menus.md)
-## [ナビゲーション ビュー](controls-and-patterns/navigationview.md)
-## [ユーザー画像](controls-and-patterns/person-picture.md)
-## [ピボット](controls-and-patterns/pivot.md)
-## [進行状況](controls-and-patterns/progress-controls.md)
-## [ラジオ ボタン](controls-and-patterns/radio-button.md)
-## [評価コントロール](controls-and-patterns/rating.md)
-## [スクロール コントロールとパン コントロール](controls-and-patterns/scroll-controls.md)
-## [検索](controls-and-patterns/search.md)
-## [セマンティック ズーム](controls-and-patterns/semantic-zoom.md)
-## [図形](controls-and-patterns/shapes.md)
-## [Slider](controls-and-patterns/slider.md)
-## [分割ビュー](controls-and-patterns/split-view.md)
-## [スワイプ](controls-and-patterns/swipe.md)
-## [テキスト](controls-and-patterns/text-controls.md)
-### [コンテンツ リンク](controls-and-patterns/content-links.md)
-### [ラベル](controls-and-patterns/labels.md)
-### [パスワード ボックス](controls-and-patterns/password-box.md)
-### [リッチ エディット ボックス](controls-and-patterns/rich-edit-box.md)
-### [リッチ テキスト ブロック](controls-and-patterns/rich-text-block.md)
-### [テキスト ブロック](controls-and-patterns/text-block.md)
-### [テキスト ボックス](controls-and-patterns/text-box.md)
-## [トグル](controls-and-patterns/toggles.md)
-## [ヒント](controls-and-patterns/tooltips.md)
-## [ツリー ビュー ](controls-and-patterns/tree-view.md)
-## [Web ビュー](controls-and-patterns/web-view.md)
+### [スワイプ](controls-and-patterns/swipe.md)
+### [ツリー ビュー ](controls-and-patterns/tree-view.md)
 
-# スタイル
+## ダイアログとポップアップ
+### [概要](controls-and-patterns/dialogs-and-flyouts/index.md)
+### [ダイアログ](controls-and-patterns/dialogs-and-flyouts/dialogs.md)
+### [ポップアップ](controls-and-patterns/dialogs-and-flyouts/flyouts.md)
+
+## [フォーム](controls-and-patterns/forms.md)
+
+## メディア、グラフィックス、図形
+### [画像とイメージ ブラシ](controls-and-patterns/images-imagebrushes.md)
+### [インク](controls-and-patterns/inking-controls.md)
+### [メディア再生](controls-and-patterns/media-playback.md)
+### [カスタム トランスポート コントロール](controls-and-patterns/custom-transport-controls.md)
+### [図形](controls-and-patterns/shapes.md)
+### [Web ビュー](controls-and-patterns/web-view.md)
+
+## メニューとツール バー
+### [アプリ バーとコマンド バー](controls-and-patterns/app-bars.md)
+### [コマンド バーのポップアップ](controls-and-patterns/command-bar-flyout.md)
+### [メニューとコンテキスト メニュー](controls-and-patterns/menus.md)
+
+## ナビゲーション
+### [ハブ](controls-and-patterns/hub.md)
+### [マスター/詳細](controls-and-patterns/master-details.md)
+### [ナビゲーション ビュー](controls-and-patterns/navigationview.md)
+### [ピボット](controls-and-patterns/pivot.md)
+
+## People
+### [連絡先カード](controls-and-patterns/contact-card.md)
+### [ユーザー画像](controls-and-patterns/person-picture.md)
+
+## ピッカー
+### [カラー ピッカー](controls-and-patterns/color-picker.md)
+### [日付と時刻コントロール](controls-and-patterns/date-and-time.md)
+### [カレンダーの日付の選択コントロール](controls-and-patterns/calendar-date-picker.md)
+### [カレンダー ビュー](controls-and-patterns/calendar-view.md)
+### [日付の選択コントロール](controls-and-patterns/date-picker.md)
+### [時刻の選択](controls-and-patterns/time-picker.md)
+
+## スクロール
+### [スクロール コントロールとパン コントロール](controls-and-patterns/scroll-controls.md)
+### [セマンティック ズーム](controls-and-patterns/semantic-zoom.md)
+
+## [検索](controls-and-patterns/search.md)
+
+## 状態と情報
+### [進行状況](controls-and-patterns/progress-controls.md)
+### [ヒント](controls-and-patterns/tooltips.md)
+
+## テキスト
+### [概要](controls-and-patterns/text-controls.md)
+### [自動提案ボックス](controls-and-patterns/auto-suggest-box.md)
+### [テキスト ブロック](controls-and-patterns/text-block.md)
+### [リッチ テキスト ブロック](controls-and-patterns/rich-text-block.md)
+### [テキスト ボックス](controls-and-patterns/text-box.md)
+### [リッチ エディット ボックス](controls-and-patterns/rich-edit-box.md)
+### [パスワード ボックス](controls-and-patterns/password-box.md)
+### [ラベル](controls-and-patterns/labels.md)
+### [コンテンツ リンク](controls-and-patterns/content-links.md)
+### [手書きビュー](controls-and-patterns/text-handwriting-view.md)
+
+
+
+# 形式
 ## [概要](style/index.md)
 ## [色](style/color.md)
 ## [文字体裁](style/typography.md)
@@ -124,6 +151,7 @@
 ## [接続型アニメーション](motion/connected-animation.md)
 ## [視差](motion/parallax.md)
 ## [XAML でのアニメーション](motion/xaml-animation.md)
+### [プロパティ アニメーション](motion/xaml-property-animations.md)
 ### [ストーリーボードに設定されたアニメーション](motion/storyboarded-animations.md)
 ### [キー フレームとイージング関数のアニメーション](motion/key-frame-and-easing-function-animations.md)
 
@@ -217,6 +245,7 @@
 ## [入力の挿入](input/input-injection.md)
 ## [入力デバイスの識別](input/identify-input-devices.md)
 ## [カスタム テキスト入力](input/custom-text-input.md)
+## [テキストの拡大縮小](input/text-scaling.md)
 ## [ドラッグ アンド ドロップ](input/drag-and-drop.md)
 ## [光学式ズームとサイズ変更](input/guidelines-for-optical-zoom.md)
 ## [パン](input/guidelines-for-panning.md)
