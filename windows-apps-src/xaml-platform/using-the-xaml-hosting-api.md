@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows 10、uwp、windows フォーム、wpf、win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 59072374e19da1c5c7e6e6a5e6a7b8c172d74052
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686564"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741976"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>デスクトップ アプリケーションで API をホストしている UWP XAML を使う
 
@@ -317,4 +317,4 @@ API をホストしている XAML では、Windows 10 の他のすべての種�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [デスクトップ アプリケーションで UWP コントロール](xaml-host-controls.md)
+* [デスクトップ アプリケーションの UWP コントロール](xaml-host-controls.md)

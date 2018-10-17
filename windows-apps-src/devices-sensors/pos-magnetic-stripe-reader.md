@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 店舗販売時点サービス、pos、磁気ストライプ リーダー
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ce34623a0af9de6e0d678052719fb02f2a9672b
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679485"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741999"
 ---
 # <a name="magnetic-stripe-reader"></a>磁気ストライプ リーダー
 
@@ -28,4 +28,4 @@ ms.locfileid: "4679485"
 
 | トピック | 説明 |
 |-------|-------------|
-| [取得し、磁気ストライプ データを理解します。](../devices-sensors/pos-magnetic-stripe-reader-data.md) | 取得して、磁気ストライプからデータを解釈する方法について説明します。 |
+| [磁気ストライプ データの取得と理解](../devices-sensors/pos-magnetic-stripe-reader-data.md) | 取得して、磁気ストライプからデータを解釈する方法について説明します。 |

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox One ゲームの入手数
 ms.localizationpriority: medium
-ms.openlocfilehash: a175096860fe2d2e73259ab9e82cbd5c33b8b889
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.openlocfilehash: 39d932a49e573d55a0ccb9cb69568006feede8a7
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686594"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741689"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Xbox One ゲームの入手数の取得
 
@@ -93,7 +93,7 @@ Authorization: Bearer <your access token>
 | date                | string | 入手データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
 | applicationId       | string | 入手データを取得する Xbox One ゲームの製品 ID です。 |
 | applicationName     | string | ゲームの表示名です。       |
-| acquisitionType     | string | 入手の種類を示す、以下のいずれかの文字列です。<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Pre-order</strong></li><li>**Xbox Game Pass** (または、2018 年 3 月 23 日より前のデータを照会した場合は **Game Pass**)</li><li><strong>Disk</strong></li><li><strong>Prepaid Code</strong></li></ul>    |
+| acquisitionType     | string | 入手の種類を示す、以下のいずれかの文字列です。<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li><li><strong>サブスクリプション Iap</strong></li><li><strong>プライベート対象ユーザー</strong></li><li><strong>前の順序</strong></li><li><strong>Xbox Game Pass</strong> (または、2018 年 3 月 23 日より前のデータを照会した場合は <strong>Game Pass</strong>)</li><li><strong>Disk</strong></li><li><strong>Prepaid Code</strong></li><li><strong>充電より前の順序</strong></li><li><strong>キャンセル前の順序</strong></li><li><strong>障害が発生した以前の順序</strong></li></ul>    |
 | ageGroup            | string | 入手したユーザーの年齢グループを示す、以下のいずれかの文字列です。<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |
 | deviceType          | string | 入手が完了したデバイスの種類を指定する、以下のいずれかの文字列です。<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Server</strong></li><li><strong>Tablet</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>  |
 | gender              | string | 入手したユーザーの性別を指定する、以下のいずれかの文字列です。<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>     |
