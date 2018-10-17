@@ -1,6 +1,6 @@
 ---
 author: eliotcowley
-title: 取得し、磁気ストライプ データを理解します。
+title: 磁気ストライプ データの取得と理解
 description: 取得して、磁気ストライプからデータを解釈する方法について説明します。
 ms.author: elcowle
 ms.date: 10/04/2018
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10, uwp, 店舗販売時点サービス、pos、磁気ストライプ リーダー
 ms.localizationpriority: medium
 ms.openlocfilehash: ad954e8c03d92307fa72ead236d5428ac2bdddab
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690091"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4749903"
 ---
-# <a name="obtain-and-understand-magnetic-stripe-data"></a>取得し、磁気ストライプ データを理解します。
+# <a name="obtain-and-understand-magnetic-stripe-data"></a>磁気ストライプ データの取得と理解
 
 [Point of Service の概要](pos-basics.md)で説明する手順を使用して、アプリケーションで、磁気ストライプ リーダーをセットアップした後からデータを取得を開始する準備ができました。
 

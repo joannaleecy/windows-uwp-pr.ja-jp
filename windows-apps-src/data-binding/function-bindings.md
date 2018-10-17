@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 description: XBind マークアップ拡張は、マークアップで使用する機能を使用します。
-title: X:bind の関数
+title: x:Bind の関数
 ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691959"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4747020"
 ---
-# <a name="functions-in-xbind"></a>X:bind の関数
+# <a name="functions-in-xbind"></a>x:Bind の関数
 
 **注**  **{x:Bind}** によりアプリでデータ バインディングを使う方法に関する一般的な情報 (および **{x:Bind}** と **{Binding}** の全体的な比較) については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 

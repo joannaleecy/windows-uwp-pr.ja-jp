@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: このガイドは、WPF および Windows フォーム アプリケーションで直接 Fluent ベースの UWP UI を作成するのに役立ちます。
-title: デスクトップ アプリケーションで UWP コントロール
+title: デスクトップ アプリケーションの UWP コントロール
 ms.author: mcleans
 ms.date: 09/21/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows, フォーム, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: b9757466502283c673c7b2106b4a7775be412faf
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688535"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4746835"
 ---
-# <a name="uwp-controls-in-desktop-applications"></a>デスクトップ アプリケーションで UWP コントロール
+# <a name="uwp-controls-in-desktop-applications"></a>デスクトップ アプリケーションの UWP コントロール
 
 > [!NOTE]
 > Api やこの記事で説明するコントロールは、開発者プレビューとして現在利用可能ながします。 それらプロトタイプ コードで今すぐ試すをお勧めしますがない使用することに運用コードでこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟して、今後の Windows リリースに安定します。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。

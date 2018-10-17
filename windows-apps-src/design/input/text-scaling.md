@@ -1,7 +1,7 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: Build UWP apps and custom/templated controls that support platform text scaling.
-title: テキストのスケーリング
+title: テキストの拡大縮小
 label: Text scaling
 template: detail.hbs
 keywords: UWP, テキスト、スケーリング、アクセシビリティ、「簡単」、表示、「するテキストがより大きく」, ユーザーの操作, 入力
@@ -12,13 +12,13 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 885ccc89fcbd4315eeed40c3546ef485c515294e
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/17/2018
-ms.locfileid: "4693688"
+ms.locfileid: "4745713"
 ---
-# <a name="text-scaling"></a>テキストのスケーリング
+# <a name="text-scaling"></a>テキストの拡大縮小
 
 ![テキストの 100% に 225% のスケーリングの例](images/coretext/text-scaling-news-hero-small.png)  
 *Windows 10 (100% に 225%) でスケーリング テキストの例*

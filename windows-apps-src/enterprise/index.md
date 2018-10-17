@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4680515"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745075"
 ---
 # <a name="enterprise"></a>Enterprise
 
@@ -36,7 +36,7 @@ ms.locfileid: "4680515"
 > * [コントロールをデスクトップ スタイルの Ui を作成するには](#desktop-style-UI)
 > * [エンタープライズ シナリオをサポートするコントロール](#enterprise)
 > * [Windows UI ライブラリ](#UI-library)
-> * [デスクトップ アプリケーションで UWP コントロール](#xaml-islands)
+> * [デスクトップ アプリケーションの UWP コントロール](#xaml-islands)
 > * [.NET Standard 2.0](#standard)
 > * [SQL Server の接続](#sql-server)
 > * [MSIX 展開](#MSIX)
@@ -82,7 +82,7 @@ Windows UI のライブラリでは、UWP アプリのコントロールとそ�
 
 <a id="xaml-islands" />
 
-### <a name="uwp-controls-in-desktop-applications"></a>デスクトップ アプリケーションで UWP コントロール
+### <a name="uwp-controls-in-desktop-applications"></a>デスクトップ アプリケーションの UWP コントロール
 
 これで、Windows 10 では、WPF、Windows フォーム、および C++ Win32 デスクトップ アプリケーションで UWP コントロールを使用できます。 つまり、外観、や、既存のデスクトップ アプリケーション、最新の Windows 10 の UI 機能のみで利用可能な Windows Ink と Fluent Design System をサポートするコントロールなどの UWP コントロールの機能を強化することができます。 この機能は、XAML 諸島と呼ばれます。
 
@@ -120,7 +120,7 @@ MSIX 安全性と信頼性の高い、セキュリティで保護されたに組
 
 <a id="distribution" />
 
-## <a name="security"></a>Security
+## <a name="security"></a>セキュリティ
 
 Windows 10 では、一連のアプリ開発者の id、ユーザー、企業のネットワークのセキュリティやデバイスに保存されている任意のビジネス データを保護するためのセキュリティ機能を提供します。 新しい Windows 10 は Microsoft Passport、PIN を使用して、アクセス可能な 2 要素のパスワードの導入が容易な代替または Windows こんにちは、エンタープライズ レベルのセキュリティを提供し、指紋、顔をサポートする、ベース虹彩認識です。
 
@@ -128,7 +128,7 @@ Windows 10 では、一連のアプリ開発者の id、ユーザー、企業の
 |-------|-------------|
 | [安全な Windows アプリの開発について](https://msdn.microsoft.com/library/windows/apps/mt622741) | この概要記事では、認証、フライトのデータ、およびデータの保存の各ステージ間でさまざまな Windows のセキュリティ機能について説明します。 また、これらの段階をアプリに統合する方法も説明します。 トピックの大規模な範囲し、目的はアプリの設計者が迅速かつ簡単に作成するユニバーサル Windows プラットフォーム アプリを構成する Windows の機能を理解の支援、主にします。 |
 | [認証とユーザー ID](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP アプリでは、この記事に記載されているユーザー認証のためのいくつかのオプションがあります。 企業の Microsoft Passport の新機能は強くお勧めします。 Microsoft Passport は、パスワードを強力な 2 要素認証 (2 fa) に既存の資格情報を確認することで置き換え、デバイス固有の資格情報を作成して、生体認証または PIN ベースのユーザーのジェスチャ保護、その両方便利な結果と高度安全なエクスペリエンスです。 |
-| [Cryptography](https://msdn.microsoft.com/library/windows/apps/mt270191) | 暗号化」セクションでは、UWP アプリで利用できる暗号化機能の概要を示します。 入門チュートリアルを簡単に暗号化キーを操作して、Mac、ハッシュ、署名操作などの高度なトピックに高度なビジネス上の機密データを暗号化する方法に関する記事範囲です。 |
+| [暗号化](https://msdn.microsoft.com/library/windows/apps/mt270191) | 暗号化」セクションでは、UWP アプリで利用できる暗号化機能の概要を示します。 入門チュートリアルを簡単に暗号化キーを操作して、Mac、ハッシュ、署名操作などの高度なトピックに高度なビジネス上の機密データを暗号化する方法に関する記事範囲です。 |
 | [Windows 情報保護 (WIP)](wip-hub.md) | ここでは、Windows 情報保護 (WIP) と、ファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係について、開発者向けに全体像を説明します。 |
 
 ## <a name="data-binding-and-databases"></a>データ バインディングとデータベース

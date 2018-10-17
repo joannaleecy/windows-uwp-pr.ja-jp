@@ -15,12 +15,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ad7326acf728aef66f10c72ee04461fd90e5f775
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.openlocfilehash: 2cd5f7e7022f246fce3d08286fe77c74503ddc5d
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691522"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4744877"
 ---
 # <a name="text-controls"></a>テキスト コントロール
 
@@ -125,7 +125,7 @@ TextBox を読み取り専用にすることはできますが、これは一時
 
 Windows 10 バージョン 1803 以降では、XAML テキスト入力ボックスは、[Windows Ink](../input/pen-and-stylus-interactions.md) を使用したペン入力の埋め込みをサポートしています。 ユーザーが Windows ペンを使用してテキスト入力ボックスでタップすると、テキスト ボックスは変換され、ユーザーは別の入力パネルを開かなくても、ペンを使用して直接書き込むことができます。
 
-![ペンでタップするとテキスト ボックスが展開する](images/pen-input-expand.gif)
+![ペンでタップするとテキスト ボックスが展開する](images/handwritingview/handwritingview2.gif)
 
 詳しくは、[手書きのビューでのテキスト入力](text-handwriting-view.md)を参照してください。
 
