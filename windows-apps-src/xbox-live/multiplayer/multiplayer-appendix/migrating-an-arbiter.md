@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アービター, マルチプレイヤー 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: 073f189d8571a93eb0d5b6ac4ec536e29e6a80e3
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690767"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4754507"
 ---
 # <a name="migrating-an-arbiter"></a><span data-ttu-id="9c927-104">アービターの移行</span><span class="sxs-lookup"><span data-stu-id="9c927-104">Migrating an arbiter</span></span>
 
