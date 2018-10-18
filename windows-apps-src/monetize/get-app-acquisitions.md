@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アプリの入手数
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b712c41f8288502e9e2abd1f05396ef1720390e
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.openlocfilehash: 997f4e088edfced94189c2c0977bcfff60166059
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690071"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753707"
 ---
 # <a name="get-app-acquisitions"></a>アプリの入手数の取得
 
@@ -101,7 +101,7 @@ Authorization: Bearer <your access token>
 | market              | string | 入手が発生した市場の ISO 3166 国コードです。  |
 | gender              | string | 入手したユーザーの性別を指定する、以下のいずれかの文字列です。<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>    |
 | ageGroup            | string | 入手したユーザーの年齢グループを指定する、以下のいずれかの文字列です。<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>  |
-| acquisitionType     | string | 入手の種類を示す、以下のいずれかの文字列です。<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li></ul>   |
+| acquisitionType     | string | 入手の種類を示す、以下のいずれかの文字列です。<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li><li><strong>サブスクリプション Iap</strong></li><li><strong>プライベート対象ユーザー</strong></li><li><strong>前の順序</strong></li><li><strong>Xbox Game Pass</strong> (または、2018 年 3 月 23 日より前のデータを照会した場合は <strong>Game Pass</strong>)</li><li><strong>Disk</strong></li><li><strong>Prepaid Code</strong></li></ul>   |
 | acquisitionQuantity | number | 指定された集計レベルで発生した入手の数です。    |
 
 
