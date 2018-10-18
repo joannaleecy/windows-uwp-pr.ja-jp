@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ada2e0610e81e986deba3ddab5e87547e05fe108
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4692552"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4754001"
 ---
 # <a name="about-community-ads"></a><span data-ttu-id="b3fb7-103">コミュニティ広告について</span><span class="sxs-lookup"><span data-stu-id="b3fb7-103">About community ads</span></span>
 

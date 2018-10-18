@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 3dprinting、3d 印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: ae573fe87e6821555509467336e9a425fb082811
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679961"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753032"
 ---
 # <a name="3d-printing-from-your-app"></a><span data-ttu-id="5b9c5-105">アプリからの 3D 印刷</span><span class="sxs-lookup"><span data-stu-id="5b9c5-105">3D printing from your app</span></span>
 

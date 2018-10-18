@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b450636db1896de32b0b3c0d2822b37624de10b
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4684478"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4752045"
 ---
 # <a name="get-add-ons-for-an-app"></a><span data-ttu-id="14803-104">アプリのアドオンの取得</span><span class="sxs-lookup"><span data-stu-id="14803-104">Get add-ons for an app</span></span>
 

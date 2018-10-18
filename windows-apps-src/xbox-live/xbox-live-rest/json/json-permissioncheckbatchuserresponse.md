@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 36726153d1364f384358471324452422f67741d2
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4683240"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4754954"
 ---
 # <a name="permissioncheckbatchuserresponse-json"></a><span data-ttu-id="ab235-104">PermissionCheckBatchUserResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="ab235-104">PermissionCheckBatchUserResponse (JSON)</span></span>
 <span data-ttu-id="ab235-105">バッチのアクセス許可の理由は、単一のターゲット ユーザーのアクセス許可の値の一覧を確認します。</span><span class="sxs-lookup"><span data-stu-id="ab235-105">The reasons of a batch permission check for list of permission values for a single target user.</span></span> 
