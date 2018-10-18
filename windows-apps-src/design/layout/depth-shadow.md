@@ -13,11 +13,11 @@ pm-contact: chigy
 design-contact: balrayit
 ms.localizationpriority: medium
 ms.openlocfilehash: a1433b131b994ee2b1323909bc7c195e00f43cde
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4748514"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4969050"
 ---
 # <a name="z-depth-and-shadow"></a>Z 深度とシャドウ
 
@@ -65,7 +65,7 @@ Z 深さは 2 つのサーフェスの z 軸に沿って間の距離と、オブ
 
 ## <a name="what-is-shadow"></a>シャドウとは何ですか。
 
-![シャドウ](images/elevation-shadow/shadow.svg)
+![shadow](images/elevation-shadow/shadow.svg)
 
 シャドウは、昇格を認識する方法です。 管理者特権でのオブジェクトの上のライトがある場合は、次のサーフェスが影がします。 オブジェクトが大きいほどより大きなおよび柔らかい影になります。 管理者特権でのオブジェクトは、シャドウを持つ必要はありませんが、シャドウは昇格を示すために注意してください。
 
