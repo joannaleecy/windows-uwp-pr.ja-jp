@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4952006"
+ms.locfileid: "5131570"
 ---
 # <a name="custom-dependency-properties"></a><span data-ttu-id="ffda3-104">カスタム依存関係プロパティ</span><span class="sxs-lookup"><span data-stu-id="ffda3-104">Custom dependency properties</span></span>
 

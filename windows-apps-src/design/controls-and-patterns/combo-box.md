@@ -15,11 +15,11 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 518ce49ddb631e3e914a6c7662b4e74de247c29c
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5126719"
+ms.locfileid: "5158794"
 ---
 # <a name="combo-box"></a><span data-ttu-id="f12c9-103">コンボ ボックス</span><span class="sxs-lookup"><span data-stu-id="f12c9-103">Combo box</span></span>
 

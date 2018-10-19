@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請
 ms.localizationpriority: medium
 ms.openlocfilehash: f0edcde4916311a629d248b800320f6e1c596600
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4962337"
+ms.locfileid: "5161346"
 ---
 # <a name="manage-app-submissions"></a><span data-ttu-id="6b2de-104">アプリの申請の管理</span><span class="sxs-lookup"><span data-stu-id="6b2de-104">Manage app submissions</span></span>
 

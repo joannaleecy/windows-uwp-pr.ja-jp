@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ms.openlocfilehash: 6463f6eee6d3f5ec82122cef532db8d0e9a26dc6
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4955436"
+ms.locfileid: "5135042"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a><span data-ttu-id="3d76f-103">Microsoft Store に要求を送信する</span><span class="sxs-lookup"><span data-stu-id="3d76f-103">Send requests to the Microsoft Store</span></span>
 

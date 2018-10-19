@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, スケジュール, リリース日, 日付, 公開
 ms.localizationpriority: medium
 ms.openlocfilehash: 84466f907bad7e38506e1bf81b89eb631675093c
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4958415"
+ms.locfileid: "5157988"
 ---
 # <a name="configure-precise-release-scheduling"></a><span data-ttu-id="188f2-103">正確なリリース スケジュールの構成</span><span class="sxs-lookup"><span data-stu-id="188f2-103">Configure precise release scheduling</span></span>
 

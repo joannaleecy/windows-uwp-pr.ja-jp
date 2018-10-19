@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, 使用状況
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4958519"
+ms.locfileid: "5131155"
 ---
 # <a name="get-daily-app-usage"></a><span data-ttu-id="d98bc-104">アプリの使用状況 (日単位) の取得</span><span class="sxs-lookup"><span data-stu-id="d98bc-104">Get daily app usage</span></span>
 

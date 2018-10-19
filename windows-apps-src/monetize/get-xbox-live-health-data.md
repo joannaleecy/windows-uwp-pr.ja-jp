@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, 正常性, クライアント エラー
 ms.localizationpriority: medium
 ms.openlocfilehash: e7802db965ee4d1515090270125430871544d9f1
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4961231"
+ms.locfileid: "5133155"
 ---
 # <a name="get-xbox-live-health-data"></a><span data-ttu-id="25203-104">Xbox Live の正常性データの取得</span><span class="sxs-lookup"><span data-stu-id="25203-104">Get Xbox Live health data</span></span>
 

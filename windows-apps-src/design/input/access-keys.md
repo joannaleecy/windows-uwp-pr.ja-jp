@@ -16,11 +16,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e842d6c5b8e62a9c043c97849fdf17f524ccfc7
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4959257"
+ms.locfileid: "5134017"
 ---
 # <a name="access-keys"></a><span data-ttu-id="b4a5b-103">アクセス キー</span><span class="sxs-lookup"><span data-stu-id="b4a5b-103">Access keys</span></span>
 
