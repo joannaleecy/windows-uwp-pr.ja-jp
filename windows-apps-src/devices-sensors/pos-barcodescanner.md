@@ -10,24 +10,24 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cd6f8391de9375ddd1c20471dd10c37e99f782f
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4744828"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4946039"
 ---
-# <a name="barcode-scanner"></a><span data-ttu-id="2aacc-104">バーコード スキャナー</span><span class="sxs-lookup"><span data-stu-id="2aacc-104">Barcode scanner</span></span>
+# <a name="barcode-scanner"></a><span data-ttu-id="2d380-104">バーコード スキャナー</span><span class="sxs-lookup"><span data-stu-id="2d380-104">Barcode scanner</span></span>
 
-<span data-ttu-id="2aacc-105">このセクションでは、バーコード スキャナーを使用するユニバーサル Windows プラットフォーム (UWP) アプリを作成するための指針を示します。</span><span class="sxs-lookup"><span data-stu-id="2aacc-105">This section provides guidance for creating Universal Windows Platform (UWP) apps that use a barcode scanner.</span></span>
+<span data-ttu-id="2d380-105">このセクションでは、バーコード スキャナーを使用するユニバーサル Windows プラットフォーム (UWP) アプリを作成するための指針を示します。</span><span class="sxs-lookup"><span data-stu-id="2d380-105">This section provides guidance for creating Universal Windows Platform (UWP) apps that use a barcode scanner.</span></span>
 
-## <a name="in-this-section"></a><span data-ttu-id="2aacc-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="2aacc-106">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="2d380-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="2d380-106">In this section</span></span>
 
-|<span data-ttu-id="2aacc-107">トピック</span><span class="sxs-lookup"><span data-stu-id="2aacc-107">Topic</span></span> |<span data-ttu-id="2aacc-108">説明</span><span class="sxs-lookup"><span data-stu-id="2aacc-108">Description</span></span> |
+|<span data-ttu-id="2d380-107">トピック</span><span class="sxs-lookup"><span data-stu-id="2d380-107">Topic</span></span> |<span data-ttu-id="2d380-108">説明</span><span class="sxs-lookup"><span data-stu-id="2d380-108">Description</span></span> |
 |------|------------|
-| [<span data-ttu-id="2aacc-109">バーコード スキャナーの構成</span><span class="sxs-lookup"><span data-stu-id="2aacc-109">Configure a barcode scanner</span></span>](../devices-sensors/pos-barcodescanner-configure.md)  | <span data-ttu-id="2aacc-110">目的の用途のバーコード スキャナーを構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2aacc-110">Learn how to configure a barcode scanner for the intended application.</span></span> |
-| [<span data-ttu-id="2aacc-111">ソフトウェア トリガーの使用</span><span class="sxs-lookup"><span data-stu-id="2aacc-111">Use a software trigger</span></span>](../devices-sensors/pos-barcodescanner-software-trigger.md) | <span data-ttu-id="2aacc-112">ソフトウェアからスキャンの動作を制御する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2aacc-112">Learn how to control the act of scanning from software.</span></span> |
-| [<span data-ttu-id="2aacc-113">シンボル体系の操作</span><span class="sxs-lookup"><span data-stu-id="2aacc-113">Working with symbologies</span></span>](pos-barcodescanner-symbologies.md) | <span data-ttu-id="2aacc-114">バーコード スキャナーがサポートするバーコードの種類を特定し、アプリケーションからバーコード スキャナーで認識されるバーコードの種類を制御する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2aacc-114">Learn how to determine the  barcode types a barcode scanner supports and control which barcode types are recognized by the barcode scanner from your application.</span></span> |
-| [<span data-ttu-id="2aacc-115">バーコード データの取得と理解</span><span class="sxs-lookup"><span data-stu-id="2aacc-115">Obtain and understand barcode data</span></span>](pos-barcodescanner-scan-data.md) | <span data-ttu-id="2aacc-116">取得して、スキャンするバーコード データを解釈する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2aacc-116">Learn how to obtain and interpret the barcode data that you scan.</span></span> |
-| [<span data-ttu-id="2aacc-117">カメラ バーコード スキャナー</span><span class="sxs-lookup"><span data-stu-id="2aacc-117">Camera Barcode Scanner</span></span>](pos-camerabarcode.md) | <span data-ttu-id="2aacc-118">ユニバーサル Windows プラットフォーム アプリケーションから標準のカメラ レンズでバーコードを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="2aacc-118">Read barcodes through a standard camera lens from a Universal Windows Platform application.</span></span> <span data-ttu-id="2aacc-119">Windows 10 April 2018 Update (ビルド 17134 以降) が必要です。</span><span class="sxs-lookup"><span data-stu-id="2aacc-119">Requires Windows 10 April 2018 Update (build 17134 or later).</span></span> |
+| [<span data-ttu-id="2d380-109">バーコード スキャナーの構成</span><span class="sxs-lookup"><span data-stu-id="2d380-109">Configure a barcode scanner</span></span>](../devices-sensors/pos-barcodescanner-configure.md)  | <span data-ttu-id="2d380-110">目的の用途のバーコード スキャナーを構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2d380-110">Learn how to configure a barcode scanner for the intended application.</span></span> |
+| [<span data-ttu-id="2d380-111">ソフトウェア トリガーの使用</span><span class="sxs-lookup"><span data-stu-id="2d380-111">Use a software trigger</span></span>](../devices-sensors/pos-barcodescanner-software-trigger.md) | <span data-ttu-id="2d380-112">ソフトウェアからスキャンの動作を制御する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2d380-112">Learn how to control the act of scanning from software.</span></span> |
+| [<span data-ttu-id="2d380-113">シンボル体系の操作</span><span class="sxs-lookup"><span data-stu-id="2d380-113">Working with symbologies</span></span>](pos-barcodescanner-symbologies.md) | <span data-ttu-id="2d380-114">バーコード スキャナーがサポートするバーコードの種類を特定し、アプリケーションからバーコード スキャナーで認識されるバーコードの種類を制御する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2d380-114">Learn how to determine the  barcode types a barcode scanner supports and control which barcode types are recognized by the barcode scanner from your application.</span></span> |
+| [<span data-ttu-id="2d380-115">バーコード データの取得と理解</span><span class="sxs-lookup"><span data-stu-id="2d380-115">Obtain and understand barcode data</span></span>](pos-barcodescanner-scan-data.md) | <span data-ttu-id="2d380-116">取得して、スキャンするバーコード データを解釈する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2d380-116">Learn how to obtain and interpret the barcode data that you scan.</span></span> |
+| [<span data-ttu-id="2d380-117">カメラ バーコード スキャナー</span><span class="sxs-lookup"><span data-stu-id="2d380-117">Camera Barcode Scanner</span></span>](pos-camerabarcode.md) | <span data-ttu-id="2d380-118">ユニバーサル Windows プラットフォーム アプリケーションから標準のカメラ レンズでバーコードを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="2d380-118">Read barcodes through a standard camera lens from a Universal Windows Platform application.</span></span> <span data-ttu-id="2d380-119">Windows 10 April 2018 Update (ビルド 17134 以降) が必要です。</span><span class="sxs-lookup"><span data-stu-id="2d380-119">Requires Windows 10 April 2018 Update (build 17134 or later).</span></span> |
 |
  
