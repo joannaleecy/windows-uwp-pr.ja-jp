@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, 試用版, コンシューマブル, 永続的, サブスクリプション
 ms.localizationpriority: medium
-ms.openlocfilehash: d35e2469fa303a40967cf4c15800786eb2d17aca
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.openlocfilehash: b116e4794f024ecc5cf44d73e22c09ab8ee33ff4
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4750194"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4953170"
 ---
 # <a name="in-app-purchases-and-trials"></a>アプリ内購入と試用版
 
@@ -162,7 +162,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 
 アプリで **Windows.Services.Store** 名前空間の API を使用してアプリ内購入や試用版機能を実装する場合は、アプリを Store に公開してからそのアプリを開発デバイスにダウンロードし、そのライセンスを使用してテストを行う必要があります。 コードをテストするには次のプロセスに従います。
 
-1. アプリがまだ公開されておらず、Microsoft Store で利用できない場合、アプリが [Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)の最低限の要件を満たしていることを確認し、Windows デベロッパー センター ダッシュボードに[そのアプリを申請](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)します。その後で、アプリが認定プロセスに合格したことを確認します。 テスト中に[ストアでアプリを検索できないようにアプリを構成する](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)ことも可能です。
+1. アプリがまだ公開されておらず、Microsoft Store で利用できない場合、アプリが [Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)の最低限の要件を満たしていることを確認し、Windows デベロッパー センター ダッシュボードに[そのアプリを申請](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)します。その後で、アプリが認定プロセスに合格したことを確認します。 テスト中に[ストアでアプリを検索できないようにアプリを構成する](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)ことも可能です。 [パッケージ フライト](../publish/package-flights.md)の適切な構成に注意してください。 正しく構成されているパッケージをフライト可能性がありますできませんをダウンロードします。
 
 2. 次に、以下の操作が完了していることを確認します。
 

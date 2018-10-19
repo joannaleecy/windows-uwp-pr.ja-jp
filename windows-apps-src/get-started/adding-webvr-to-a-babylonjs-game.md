@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: WebVR、Edge、Web 開発、Babylon、Babylonjs、Babylon.js、JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 97ef659a178a4c3f40d464fd958e5493454afef7
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4746977"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4949865"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>3D Babylon.js ゲームに WebVR サポートを追加します。
 

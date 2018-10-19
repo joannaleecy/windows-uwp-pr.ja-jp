@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 392f8166e16c028a57bc9e27039a9884f1d9714a
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4742478"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4948721"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Windows 10 向けのデスクトップ アプリを強化する
 

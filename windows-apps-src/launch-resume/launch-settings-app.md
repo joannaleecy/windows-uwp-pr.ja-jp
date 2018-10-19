@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4754930"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4951806"
 ---
 # <a name="launch-the-windows-settings-app"></a>Windows 設定アプリの起動
 
@@ -278,7 +278,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | スマートフォン | ms-settings:phone |
 | 電源とスリープ | ms-settings:powersleep |
 | サウンド | ms-settings:sounds |
-| Storage | ms-settings:storagesense |
+| 記憶域 | ms-settings:storagesense |
 | ストレージ センサー | ms-settings:storagepolicies |
 
 ## <a name="time-and-language"></a>時刻と言語

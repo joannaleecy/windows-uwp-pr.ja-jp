@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4747020"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4950291"
 ---
 # <a name="functions-in-xbind"></a>x:Bind の関数
 
