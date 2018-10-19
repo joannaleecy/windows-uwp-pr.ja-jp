@@ -15,11 +15,11 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 3117cde7b8b00973c135fbc759fa99b6a48ec6ac
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4955102"
+ms.locfileid: "5128573"
 ---
 # <a name="text-input-with-the-handwriting-view"></a><span data-ttu-id="4131f-103">手書きのビューでのテキスト入力</span><span class="sxs-lookup"><span data-stu-id="4131f-103">Text input with the handwriting view</span></span>
 

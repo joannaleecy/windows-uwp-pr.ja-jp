@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 160a4ab0ff5bdc40ea46ff6d8fb9fd8e47f560e3
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4962665"
+ms.locfileid: "5127946"
 ---
 # <a name="hardware-drm"></a><span data-ttu-id="fefdf-104">ハードウェア DRM</span><span class="sxs-lookup"><span data-stu-id="fefdf-104">Hardware DRM</span></span>
 

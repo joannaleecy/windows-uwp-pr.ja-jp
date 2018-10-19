@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 概要, uwp, windows 10, 学習トラック, レイアウト, フォーム
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4954793"
+ms.locfileid: "5141342"
 ---
 # <a name="create-and-customize-a-form"></a><span data-ttu-id="7c093-104">フォームを作成してカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="7c093-104">Create and customize a form</span></span>
 

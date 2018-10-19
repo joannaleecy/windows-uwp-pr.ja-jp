@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 378544282981c62d7a57f9abc3f666e8964b7117
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4956871"
+ms.locfileid: "5125867"
 ---
 # <a name="get-set-up"></a><span data-ttu-id="0aee3-105">準備</span><span class="sxs-lookup"><span data-stu-id="0aee3-105">Get set up</span></span>
 
