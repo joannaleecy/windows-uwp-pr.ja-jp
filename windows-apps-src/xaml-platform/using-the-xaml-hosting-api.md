@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows 10、uwp、windows フォーム、wpf、win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 59072374e19da1c5c7e6e6a5e6a7b8c172d74052
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4958993"
+ms.locfileid: "5133046"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>デスクトップ アプリケーションで API をホストしている UWP XAML を使う
 
@@ -202,11 +202,11 @@ API をホストしている UWP XAML では、これらのタスクを達成す
 
 親の UI 要素のサイズを変更するときは、期待どおりに表示、UWP コントロールを確認するために必要なレイアウト変更を処理する必要があります。 考慮すべきいくつかの重要なシナリオを次に示します。
 
-1. 親の UI 要素は、四角形の領域に合わせて**DesktopWindowXamlSource**をホストしている**Windows.UI.Xaml.UIElement の**ために必要なサイズを取得する必要がある場合は、 **Windows.UI.Xaml.UIElement の[**測定**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)メソッドを呼び出す**. 例:
+1. 親の UI 要素は、四角形の領域に合わせて**DesktopWindowXamlSource**をホストしている**Windows.UI.Xaml.UIElement の**ために必要なサイズを取得する必要がある場合は、 **Windows.UI.Xaml.UIElement の[**測定**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure)メソッドを呼び出す**. 以下に例を示します。
     * WPF アプリケーションで**DesktopWindowXamlSource**をホストしている[**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)の[**MeasureOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride)メソッドから実行する可能性があります。
     * Windows フォーム アプリケーションで**DesktopWindowXamlSource**をホストしている[**コントロール**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)の[**推奨**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize)メソッドから実行する可能性があります。
 
-2. 親の UI 要素の変更、サイズ、[**配置**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange)のメソッドを呼び出してルート**Windows.UI.Xaml.UIElement**するときは、 **DesktopWindowXamlSource**でホストしています。 例:
+2. 親の UI 要素の変更、サイズ、[**配置**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange)のメソッドを呼び出してルート**Windows.UI.Xaml.UIElement**するときは、 **DesktopWindowXamlSource**でホストしています。 以下に例を示します。
     * WPF アプリケーションで**DesktopWindowXamlSource**をホストしている[**HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)オブジェクトの[**ArrangeOverride**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride)メソッドから実行する可能性があります。
     * Windows フォーム アプリケーションでこれを行います[**コントロール**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)の[**SizeChanged**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged)イベント ハンドラーから**DesktopWindowXamlSource**をホストしています。
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: be4338c7b7e7b3861c206a6d7d63e9e417e6cd0d
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4953422"
+ms.locfileid: "5157874"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張
 
@@ -41,6 +41,12 @@ UWP プロジェクトとランタイム コンポーネントを 1 つ以上ソ
 ![開始プロジェクトを拡張する](images/desktop-to-uwp/extend-start-project.png)
 
 ソリューションにパッケージ プロジェクトがない場合は、 [Visual Studio を使ってデスクトップ アプリケーションのパッケージ](desktop-to-uwp-packaging-dot-net.md)を参照してください。
+
+### <a name="configure-the-desktop-application"></a>デスクトップ アプリケーションを構成します。
+
+デスクトップ アプリケーションを Windows ランタイム Api を呼び出す必要があるファイルへの参照があることを確認してください。
+
+これを行うには、 [Windows 10 のデスクトップ アプリケーションの効果を高める](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)トピックの[最初に、プロジェクトをセットアップ](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)セクションをご覧ください。
 
 ### <a name="add-a-uwp-project"></a>UWP プロジェクトを追加する
 
@@ -71,6 +77,12 @@ UWP プロジェクトとランタイム コンポーネントを 1 つ以上ソ
 次に、UWP プロジェクトからランタイム コンポーネントに参照を追加します。 ソリューションは次のようになります。
 
 ![ランタイム コンポーネント参照](images/desktop-to-uwp/runtime-component-reference.png)
+
+### <a name="build-your-solution"></a>ソリューションをビルドします。
+
+エラーが表示されないことを確認するソリューションをビルドします。 エラーが発生した場合は、**構成マネージャー**を開き、プロジェクトが同じプラットフォームを対象とすることを確認します。
+
+![構成マネージャー](images/desktop-to-uwp/config-manager.png)
 
 UWP プロジェクトとランタイム コンポーネントで行うことができる操作をいくつか見てみましょう。
 
@@ -211,7 +223,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-``OnNavigatedTo`` メソッドを上書きして、ページに渡されるパラメーターを使用します。 この場合、このページに渡された緯度と経度を使用してマップに場所を表示します。
+コードでは、XAML ページの背後にある、オーバーライド、``OnNavigatedTo``ページに渡されるパラメーターを使用する方法。 この場合、このページに渡された緯度と経度を使用してマップに場所を表示します。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -238,156 +250,15 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
  }
 ```
 
-### <a name="similar-samples"></a>類似のサンプル
-
-[VB6 アプリケーションへの UWP XAML ユーザー エクスペリエンスの追加](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml)
-
-[Northwind サンプル: UWA UI および Win32 レガシ コードのエンド ツー エンドの例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/NorthwindSample)
-
-[Northwind サンプル: SQL Server に接続する UWP アプリ](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SQLServer)
-
-## <a name="provide-services-to-other-apps"></a>サービスを他のアプリに提供する
-
-他のアプリで利用できるサービスを追加します。 たとえば、アプリの背後でデータベースが実行されている場合に、そのデータベースへの制御されたアクセスを他のアプリに提供するサービスを追加できます。 バック グラウンド タスクを実装すると、アプリは、デスクトップ アプリケーションが実行されていない場合でもサービスをアクセスできることができます。
-
-これを実行するサンプルを次に示します。
-
-![アダプティブ デザイン](images/desktop-to-uwp/winforms-app-service.png)
-
-### <a name="have-a-closer-look-at-this-app"></a>このアプリを詳しく確認する
-
-:heavy_check_mark: [アプリを入手する](https://www.microsoft.com/en-us/store/p/winforms-appservice/9p7d9b6nk5tn)
-
-:heavy_check_mark: [コードを参照する](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinformsAppService)
-
-### <a name="the-design-pattern"></a>設計パターン
-
-サービスの提供を示すには、以下の手順を実行します。
-
-:1: [アプリ サービスを実装する](#appservice)
-
-:2: [アプリ サービスの拡張機能を追加する](#extension)
-
-:3: [アプリ サービスをテストする](#test)
-
-<a id="appservice" />
-
-### <a name="implement-the-app-service"></a>アプリ サービスを実装する
-
-以下では、他のアプリからの要求を検証して処理します。 ソリューションで Windows ランタイム コンポーネントにこのコードを追加します。
-
-```csharp
-public sealed class AppServiceTask : IBackgroundTask
-{
-    private BackgroundTaskDeferral backgroundTaskDeferral;
- 
-    public void Run(IBackgroundTaskInstance taskInstance)
-    {
-        this.backgroundTaskDeferral = taskInstance.GetDeferral();
-        taskInstance.Canceled += OnTaskCanceled;
-        var details = taskInstance.TriggerDetails as AppServiceTriggerDetails;
-        details.AppServiceConnection.RequestReceived += OnRequestReceived;
-    }
- 
-    private async void OnRequestReceived(AppServiceConnection sender,
-                                         AppServiceRequestReceivedEventArgs args)
-    {
-        var messageDeferral = args.GetDeferral();
-        ValueSet message = args.Request.Message;
-        string id = message["ID"] as string;
-        ValueSet returnData = DataBase.GetData(id);
-        await args.Request.SendResponseAsync(returnData);
-        messageDeferral.Complete();
-    }
- 
- 
-    private void OnTaskCanceled(IBackgroundTaskInstance sender,
-                                BackgroundTaskCancellationReason reason)
-    {
-        if (this.backgroundTaskDeferral != null)
-        {
-            this.backgroundTaskDeferral.Complete();
-        }
-    }
-}
-```
-
-<a id="extension" />
-
-### <a name="add-an-app-service-extension-to-the-packaging-project"></a>アプリ サービスの拡張機能をパッケージ プロジェクトに追加します。
-
-パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、アプリ サービスの拡張機能の追加、``<Application>``要素です。
-
-```xml
-<Extensions>
-      <uap:Extension
-          Category="windows.appService"
-          EntryPoint="AppServiceComponent.AppServiceTask">
-        <uap:AppService Name="com.microsoft.samples.winforms" />
-      </uap:Extension>
-    </Extensions>    
-```
-そのアプリ サービスに名前を付けて、エントリ ポイント クラスの名前を指定します。 これは、サービスを実装したクラスです。
-
-<a id="test" />
-
-### <a name="test-the-app-service"></a>アプリ サービスをテストする
-
-別のアプリからサービスを呼び出すことにより、サービスをテストします。 このコードは、Windows フォーム アプリケーションまたは別の UWP アプリなどのデスクトップ アプリケーションにすることができます。
-
-> [!NOTE]
-> このコードは、``AppServiceConnection`` クラスの ``PackageFamilyName`` プロパティを適切に設定した場合のみ動作します。 その名前を取得するには、UWP プロジェクトで ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` を呼び出します。 「[App Service の作成と利用](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)」をご覧ください。
-
-```csharp
-private async void button_Click(object sender, RoutedEventArgs e)
-{
-    AppServiceConnection dataService = new AppServiceConnection();
-    dataService.AppServiceName = "com.microsoft.samples.winforms";
-    dataService.PackageFamilyName = "Microsoft.SDKSamples.WinformWithAppService";
- 
-    var status = await dataService.OpenAsync();
-    if (status == AppServiceConnectionStatus.Success)
-    {
-        string id = int.Parse(textBox.Text);
-        var message = new ValueSet();
-        message.Add("ID", id);
-        AppServiceResponse response = await dataService.SendMessageAsync(message);
- 
-        if (response.Status == AppServiceResponseStatus.Success)
-        {
-            if (response.Message["Status"] as string == "OK")
-            {
-                DisplayResult(response.Message["Result"]);
-            }
-        }
-    }
-}
-```
-
-アプリ サービスについて詳しくは、「[アプリ サービスの作成と利用](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)」をご覧ください。
-
-### <a name="similar-samples"></a>類似のサンプル
-
-[アプリ サービス ブリッジのサンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/AppServiceBridgeSample)
-
-[C++ Win32 アプリを使ったアプリ サービス ブリッジのサンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/AppServiceBridgeSample_C%2B%2B)
-
-[プッシュ通知を受け取る MFC アプリケーション](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/MFCwithPush)
-
-
 ## <a name="making-your-desktop-application-a-share-target"></a>デスクトップ アプリケーションを共有ターゲットにする
 
 デスクトップ アプリケーションを共有ターゲットにすることで、共有をサポートしている他のアプリのデータ (画像など) をユーザーが簡単に共有できるようになります。
 
 たとえば、ユーザーは、Microsoft Edge やフォト アプリから画像を共有するアプリケーションを選択できます。 WPF サンプル アプリケーションを持つその機能を次に示します。
 
-![共有ターゲット](images/desktop-to-uwp/share-target.png)
+![共有ターゲット](images/desktop-to-uwp/share-target.png).
 
-### <a name="have-a-closer-look-at-this-app"></a>このアプリを詳しく確認する
-
-:heavy_check_mark: [アプリを入手する](https://www.microsoft.com/en-us/store/p/wpf-app-as-sharetarget/9pjcjljlck37)
-
-:heavy_check_mark: [コードを参照する](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WPFasShareTarget)
+完全なサンプルを参照してください[ここで](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)。
 
 ### <a name="the-design-pattern"></a>設計パターン
 
@@ -395,20 +266,28 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 :1: [共有ターゲットの拡張機能を追加する](#share-extension)
 
-:2: [OnNavigatedTo イベント ハンドラーをオーバーライドする](#override)
+: 2: [OnShareTargetActivated イベント ハンドラーをオーバーライド](#override)
+
+: 3:[デスクトップ拡張機能を UWP プロジェクトに追加](#desktop-extensions)
+
+: 4:[完全な信頼プロセスの拡張機能の追加](#full-trust)
+
+: 5:[変更、共有ファイルを取得するデスクトップ アプリケーション](#modify-desktop)
 
 <a id="share-extension" />
 
+次の手順  
+
 ### <a name="add-a-share-target-extension"></a>共有ターゲットの拡張機能を追加する
 
-**ソリューション エクスプ ローラー**で、ソリューションにパッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、拡張機能を追加します。
+**ソリューション エクスプ ローラー**で、ソリューションにパッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、共有ターゲットの拡張機能を追加します。
 
 ```xml
 <Extensions>
       <uap:Extension
           Category="windows.shareTarget"
           Executable="ShareTarget.exe"
-          EntryPoint="ShareTarget.App">
+          EntryPoint="App">
         <uap:ShareTarget>
           <uap:SupportedFileTypes>
             <uap:SupportsAnyFileType />
@@ -419,31 +298,99 @@ private async void button_Click(object sender, RoutedEventArgs e)
 </Extensions>  
 ```
 
-UWP プロジェクトによって生成された実行可能ファイルの名前と、エントリ ポイント クラスの名前を指定します。 アプリとの間で共有できるようにするファイルの種類を指定することも必要です。
+UWP プロジェクトによって生成された実行可能ファイルの名前と、エントリ ポイント クラスの名前を指定します。 このマークアップは、UWP アプリの実行可能ファイルの名前が前提としています。`ShareTarget.exe`します。
+
+アプリとの間で共有できるようにするファイルの種類を指定することも必要です。 この例では行う[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)デスクトップ アプリケーションを共有ターゲット ビットマップ画像を指定するための`Bitmap`のサポートされているファイルの種類。
 
 <a id="override" />
 
-### <a name="override-the-onnavigatedto-event-handler"></a>OnNavigatedTo イベント ハンドラーをオーバーライドする
+### <a name="override-the-onsharetargetactivated-event-handler"></a>OnShareTargetActivated イベント ハンドラーをオーバーライドします。
 
-UWP プロジェクトの **App** クラスで、**OnNavigatedTo** イベント ハンドラーをオーバーライドします。
+UWP プロジェクトの**アプリ**のクラスで**OnShareTargetActivated**イベント ハンドラーをオーバーライドします。
 
 このイベント ハンドラーは、ユーザーがファイルを共有するためにアプリを選択するときに呼び出されます。
 
 ```csharp
-protected override async void OnNavigatedTo(NavigationEventArgs e)
+
+protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
 {
-  this.shareOperation = (ShareOperation)e.Parameter;
-  if (this.shareOperation.Data.Contains(StandardDataFormats.StorageItems))
-  {
-      this.sharedStorageItems =
-        await this.shareOperation.Data.GetStorageItemsAsync();
-       
-      foreach (StorageFile item in this.sharedStorageItems)
-      {
-          ProcessSharedFile(item);
-      }
-  }
+    shareWithDesktopApplication(args.ShareOperation);
 }
+
+private async void shareWithDesktopApplication(ShareOperation shareOperation)
+{
+    if (shareOperation.Data.Contains(StandardDataFormats.StorageItems))
+    {
+        var items = await shareOperation.Data.GetStorageItemsAsync();
+        StorageFile file = items[0] as StorageFile;
+        IRandomAccessStreamWithContentType stream = await file.OpenReadAsync();
+
+        await file.CopyAsync(ApplicationData.Current.LocalFolder);
+            shareOperation.ReportCompleted();
+
+        await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+    }
+}
+```
+このコードは、アプリのローカル ストレージ フォルダーに、ユーザーが共有されているイメージを保存します。 その後、その同じフォルダーからイメージをプルするデスクトップ アプリケーションを変更します。 UWP アプリとして、同じパッケージに含まれているために、デスクトップ アプリケーションはことで実現できます。
+
+<a id="desktop-extensions" />
+
+### <a name="add-desktop-extensions-to-the-uwp-project"></a>デスクトップ拡張機能を UWP プロジェクトに追加します。
+
+**Windows Desktop Extensions for UWP**拡張機能を UWP アプリ プロジェクトに追加します。
+
+![デスクトップ拡張機能](images/desktop-to-uwp/desktop-extensions.png)
+
+<a id="full-trust" />
+
+### <a name="add-the-full-trust-process-extension"></a>完全な信頼プロセスの拡張機能を追加します。
+
+**ソリューション エクスプ ローラー**で、ソリューションにパッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、以前このファイルを追加する共有ターゲットの拡張機能の横にある完全な信頼プロセスの拡張機能を追加します。
+
+```xml
+<Extensions>
+  ...
+      <desktop:Extension Category="windows.fullTrustProcess" Executable="PhotoStoreDemo\PhotoStoreDemo.exe" />
+  ...
+</Extensions>  
+```
+
+この拡張機能は、ファイル共有を希望するデスクトップ アプリケーションを起動する UWP アプリを有効になります。 例では、 [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)デスクトップ アプリケーションの実行可能ファイルを参照してください。
+
+<a id="modify-desktop" />
+
+### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>共有ファイルを取得するデスクトップ アプリケーションを変更します。
+
+検索し、共有ファイルを処理するデスクトップ アプリケーションを変更します。 この例では、UWP アプリには、ローカル アプリ データ フォルダーに共有ファイルが格納されます。 そのため、そのフォルダーからプル写真に[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)デスクトップ アプリケーションを変更しますします。
+
+```csharp
+Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
+```
+をユーザーが既にいるデスクトップ アプリケーションのインスタンスを開くためも[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)イベントを処理するを、ファイルの場所にパスを渡すことがあります。 これにより、開いているデスクトップ アプリケーションのインスタンスに、共有の写真が表示されます。
+
+```csharp
+...
+
+   FileSystemWatcher watcher = new FileSystemWatcher(Photos.Path);
+
+...
+
+private void Watcher_Created(object sender, FileSystemEventArgs e)
+{
+    // new file got created, adding it to the list
+    Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() =>
+    {
+        if (File.Exists(e.FullPath))
+        {
+            ImageFile item = new ImageFile(e.FullPath);
+            Photos.Insert(0, item);
+            PhotoListBox.SelectedIndex = 0;
+            CurrentPhoto.Source = (BitmapSource)item.Image;
+        }
+    }));
+}
+
 ```
 
 ## <a name="create-a-background-task"></a>バックグラウンド タスクを作成する
@@ -456,9 +403,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 
 タスクは http 要求を行い、要求が応答を返すのにかかる時間を測定します。 タスクはさらに興味深いものと考えられますが、このサンプルはバックグラウンド タスクの基本的なしくみを学習するのに適しています。
 
-### <a name="have-a-closer-look-at-this-app"></a>このアプリを詳しく確認する
-
-:heavy_check_mark: [コードを参照する](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)
+完全なサンプルを参照してください。[次に](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)します。
 
 ### <a name="the-design-pattern"></a>設計パターン
 
