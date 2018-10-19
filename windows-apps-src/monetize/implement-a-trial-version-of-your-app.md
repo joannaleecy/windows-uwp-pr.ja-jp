@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 50eced0042cf9c166a7c0c8f73305dec3c1df12d
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4740813"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4957932"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>アプリの試用版の実装
 
