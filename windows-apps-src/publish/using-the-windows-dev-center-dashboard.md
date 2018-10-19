@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, ダッシュボード, デベロッパー センター, 開発センター
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4749013"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4965657"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>Windows デベロッパー センター ダッシュボードの使用
 
