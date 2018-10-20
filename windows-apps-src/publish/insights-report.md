@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、インサイト、トレンド、異常、異常、データの変更
 ms.localizationpriority: medium
 ms.openlocfilehash: be70dccbb7a12b65b9e7bbd07f27ae7ea3a578ff
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5130938"
+ms.locfileid: "5159340"
 ---
 # <a name="insights-report"></a><span data-ttu-id="12faf-103">インサイト レポート</span><span class="sxs-lookup"><span data-stu-id="12faf-103">Insights report</span></span>
 

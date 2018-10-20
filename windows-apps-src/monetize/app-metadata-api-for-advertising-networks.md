@@ -11,11 +11,11 @@ keywords: Windows 10、UWP、広告ネットワーク、アプリのメタデー
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
 ms.openlocfilehash: 16603bfe8c3fe0bfeaef1e19018798d0c6477b85
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4959630"
+ms.locfileid: "5165778"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a><span data-ttu-id="aa39f-105">広告ネットワーク用のアプリのメタデータ API</span><span class="sxs-lookup"><span data-stu-id="aa39f-105">App metadata API for advertising networks</span></span>
 

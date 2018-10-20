@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4965134"
+ms.locfileid: "5163036"
 ---
 # <a name="keyboard-accelerators"></a><span data-ttu-id="fcd0b-103">キーボード アクセラレータ</span><span class="sxs-lookup"><span data-stu-id="fcd0b-103">Keyboard accelerators</span></span>
 

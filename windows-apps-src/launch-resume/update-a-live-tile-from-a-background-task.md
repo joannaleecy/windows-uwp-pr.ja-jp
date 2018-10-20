@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5135586"
+ms.locfileid: "5161525"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a><span data-ttu-id="4c9bb-104">バックグラウンド タスクによるライブ タイルの更新</span><span class="sxs-lookup"><span data-stu-id="4c9bb-104">Update a live tile from a background task</span></span>
 

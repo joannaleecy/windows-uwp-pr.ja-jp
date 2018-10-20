@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, ガイドライン, ベスト プラクティス
 ms.localizationpriority: medium
 ms.openlocfilehash: c7f5e762593773e529610989741274d9fb5b9be7
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5130826"
+ms.locfileid: "5164675"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a><span data-ttu-id="fac7e-104">広告の UI とユーザー エクスペリエンスのガイドライン</span><span class="sxs-lookup"><span data-stu-id="fac7e-104">UI and user experience guidelines for ads</span></span>
 

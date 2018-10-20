@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 0992ea54092063ba53f23871599905e58f1b456e
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5128041"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5166308"
 ---
 # <a name="obtain-and-understand-barcode-data"></a><span data-ttu-id="fe3d9-104">バーコード データの取得と理解</span><span class="sxs-lookup"><span data-stu-id="fe3d9-104">Obtain and understand barcode data</span></span>
 

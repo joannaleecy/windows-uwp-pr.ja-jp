@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c60fcd705acf2d0d1e3162e80bc1d85095aa0fb4
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5132248"
+ms.locfileid: "5160945"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a><span data-ttu-id="cf421-104">オーディオ状態の変化の検出と対応</span><span class="sxs-lookup"><span data-stu-id="cf421-104">Detect and respond to audio state changes</span></span>
 <span data-ttu-id="cf421-105">Windows 10、バージョン 1803 以降では、アプリが使用するオーディオ ストリームのオーディオ レベルが、システムによって低下した場合やミュートされた場合に、アプリがそれを検出できます。</span><span class="sxs-lookup"><span data-stu-id="cf421-105">Starting with Windows 10, version 1803, your app can detect when the system lowers or mutes the audio level of an audio stream your app is using.</span></span> <span data-ttu-id="cf421-106">特定のオーディオ デバイスとオーディオ カテゴリでは、キャプチャ ストリームとレンダリング ストリームについて通知を受け取ることができます。また [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) オブジェクトは、アプリがメディア再生のために使用します。</span><span class="sxs-lookup"><span data-stu-id="cf421-106">You can receive notifications for capture and render streams, for a particular audio device and audio category, or for a [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) object your app is using for media playback.</span></span> <span data-ttu-id="cf421-107">たとえば、アラームが鳴っているときに、システムがオーディオ再生レベルを下げることがあります ("ダッキング" と呼ばれます)。</span><span class="sxs-lookup"><span data-stu-id="cf421-107">For example, the system may lower, or "duck", the audio playback level when an alarm is ringing.</span></span> <span data-ttu-id="cf421-108">アプリ マニフェストで *backgroundMediaPlayback* 機能が宣言されていない場合、アプリがバックグラウンドに移動すると、システムによってアプリがミュートされます。</span><span class="sxs-lookup"><span data-stu-id="cf421-108">The system will mute your app when it goes into the background if your app has not declared the *backgroundMediaPlayback* capability in the app manifest.</span></span> 

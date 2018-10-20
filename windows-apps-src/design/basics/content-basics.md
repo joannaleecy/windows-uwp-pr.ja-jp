@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 91187b176d32fcc53b51faa7e8c42a10fd4908b8
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5126076"
+ms.locfileid: "5161449"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a><span data-ttu-id="2b5a9-103">UWP アプリのコンテンツ デザインの基本</span><span class="sxs-lookup"><span data-stu-id="2b5a9-103">Content design basics for UWP apps</span></span>
 

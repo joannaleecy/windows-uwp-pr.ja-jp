@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, パッケージ, アップロード, パッケージのアップロード
 ms.localizationpriority: medium
 ms.openlocfilehash: d966688110870b669bdd296ec14e145a5d77b74e
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5131718"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5170440"
 ---
 # <a name="upload-app-packages"></a><span data-ttu-id="f45cd-103">アプリ パッケージのアップロード</span><span class="sxs-lookup"><span data-stu-id="f45cd-103">Upload app packages</span></span>
 

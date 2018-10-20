@@ -17,11 +17,11 @@ dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: cde4b5d95a0c978faa647fcc108d74874ff52c40
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5126064"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5167736"
 ---
 # <a name="split-view-control"></a><span data-ttu-id="03a5a-104">分割ビュー コントロール</span><span class="sxs-lookup"><span data-stu-id="03a5a-104">Split view control</span></span>
 

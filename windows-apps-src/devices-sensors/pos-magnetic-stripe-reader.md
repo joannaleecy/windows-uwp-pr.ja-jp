@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 店舗販売時点サービス、pos、磁気ストライプ リーダー
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ce34623a0af9de6e0d678052719fb02f2a9672b
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5127179"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5168828"
 ---
 # <a name="magnetic-stripe-reader"></a><span data-ttu-id="8e6ae-104">磁気ストライプ リーダー</span><span class="sxs-lookup"><span data-stu-id="8e6ae-104">Magnetic stripe reader</span></span>
 
