@@ -12,11 +12,11 @@ keywords: windows 10, uwp, タイトル バー
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c3e0e6ec7331e860c9153e2a2e29a51fb5848bd
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5128583"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5171179"
 ---
 # <a name="designing-for-sets"></a><span data-ttu-id="20004-104">Sets の設計</span><span class="sxs-lookup"><span data-stu-id="20004-104">Designing for Sets</span></span>
 
