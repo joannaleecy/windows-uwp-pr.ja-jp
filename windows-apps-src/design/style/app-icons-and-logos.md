@@ -13,11 +13,11 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 04263122c1a96aadc5e4d0ad8f804730d3a2a20f
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "4950893"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5169721"
 ---
 # <a name="app-icons-and-logos"></a>アプリのアイコンとロゴ 
 
@@ -170,9 +170,9 @@ Visual Studio では、**マニフェスト デザイナー**と呼ばれる、�
 1. **ソース**フィールドの横にある **...** ] をクリックし、使用するイメージを選択します。 ビットマップ画像を使用している場合は、鋭い結果を取得するため、400 ピクセル以上 400 を確認します。 ベクター ベースのイメージが最適です。Visual Studio では、AI (Adobe Illustrator) と PDF ファイルを使用することができます。 
 2. (省略可能)**ディスプレイの設定**] セクションでは、これらのオプションを構成します。
 
-    a.  **短い名前**: アプリの短い名前を指定します。
+    a.   **短い名前**: アプリの短い名前を指定します。
 
-    b.  **表示名**: 中、ワイド、または大きいタイルの短い名前を表示するかどうかを示します。 
+    b.   **表示名**: 中、ワイド、または大きいタイルの短い名前を表示するかどうかを示します。 
 
     c. **バック グラウンドのタイル**: 16 進値またはタイルの背景色の色の名前を指定します。 たとえば、`#464646` と記述します。 既定値は、`transparent` です。
 

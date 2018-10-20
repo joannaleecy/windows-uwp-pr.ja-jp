@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: 091782d926949b87db9b29c08ec8cf98f485f0df
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4967564"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5169091"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Visual Studio を使ってデスクトップ アプリケーションをパッケージ化します。
 
@@ -62,7 +62,9 @@ Visual Studio を使用して、デスクトップ アプリのパッケージ�
 
    ![エントリ ポイントの設定](images/desktop-to-uwp/entry-point-set.png)
 
-6. パッケージ プロジェクトをビルドし、エラーが表示されないことを確認します。
+6. パッケージ プロジェクトをビルドし、エラーが表示されないことを確認します。  エラーが発生した場合は、**構成マネージャー**を開き、プロジェクトが同じプラットフォームを対象とすることを確認します。
+
+   ![構成マネージャー](images/desktop-to-uwp/config-manager.png)
 
 7. [アプリ パッケージの作成](../packaging/packaging-uwp-apps.md)ウィザードを使って、appxupload ファイルを生成します。
 

@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 731d449d779806fbd4104787b692d3b7d0408036
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4949018"
+ms.locfileid: "5161472"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>パッケージ デスクトップ アプリケーションに関する既知の問題
 
@@ -149,13 +149,13 @@ certutil -dump <cert_file.pfx>
 set APPXSIP_LOG=1
 ```
 
-次に、**コマンド プロンプト**で、もう一度アプリケーションに署名します。 例:
+次に、**コマンド プロンプト**で、もう一度アプリケーションに署名します。 以下に例を示します。
 
 ```
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-無効な PE 証明書を含むファイルに関する情報は、**コンソール ウィンドウ**に表示されます。 例:
+無効な PE 証明書を含むファイルに関する情報は、**コンソール ウィンドウ**に表示されます。 以下に例を示します。
 
 ```
 ...
