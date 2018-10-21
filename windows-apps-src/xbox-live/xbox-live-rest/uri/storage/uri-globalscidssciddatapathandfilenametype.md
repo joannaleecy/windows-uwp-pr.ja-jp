@@ -12,47 +12,47 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cd4323f8d4f929a46f0636facbc52e451b7a582e
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4744146"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5170755"
 ---
-# <a name="globalscidssciddatapathandfilenametype"></a><span data-ttu-id="abeed-104">/global/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="abeed-104">/global/scids/{scid}/data/{pathAndFileName},{type}</span></span>
-<span data-ttu-id="abeed-105">ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="abeed-105">Downloads a file.</span></span> <span data-ttu-id="abeed-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="abeed-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
+# <a name="globalscidssciddatapathandfilenametype"></a><span data-ttu-id="b717e-104">/global/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="b717e-104">/global/scids/{scid}/data/{pathAndFileName},{type}</span></span>
+<span data-ttu-id="b717e-105">ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="b717e-105">Downloads a file.</span></span> <span data-ttu-id="b717e-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="b717e-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="abeed-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="abeed-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="b717e-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b717e-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="abeed-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="abeed-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="b717e-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b717e-108">URI parameters</span></span>
  
-| <span data-ttu-id="abeed-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="abeed-109">Parameter</span></span>| <span data-ttu-id="abeed-110">型</span><span class="sxs-lookup"><span data-stu-id="abeed-110">Type</span></span>| <span data-ttu-id="abeed-111">説明</span><span class="sxs-lookup"><span data-stu-id="abeed-111">Description</span></span>| 
+| <span data-ttu-id="b717e-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="b717e-109">Parameter</span></span>| <span data-ttu-id="b717e-110">型</span><span class="sxs-lookup"><span data-stu-id="b717e-110">Type</span></span>| <span data-ttu-id="b717e-111">説明</span><span class="sxs-lookup"><span data-stu-id="b717e-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="abeed-112">scid</span><span class="sxs-lookup"><span data-stu-id="abeed-112">scid</span></span>| <span data-ttu-id="abeed-113">guid</span><span class="sxs-lookup"><span data-stu-id="abeed-113">guid</span></span>| <span data-ttu-id="abeed-114">検索するサービス構成の ID。</span><span class="sxs-lookup"><span data-stu-id="abeed-114">the ID of the service config to look up.</span></span>| 
-| <span data-ttu-id="abeed-115">pathAndFileName</span><span class="sxs-lookup"><span data-stu-id="abeed-115">pathAndFileName</span></span>| <span data-ttu-id="abeed-116">string</span><span class="sxs-lookup"><span data-stu-id="abeed-116">string</span></span>| <span data-ttu-id="abeed-117">アクセスできる項目のパスとファイルの名前です。</span><span class="sxs-lookup"><span data-stu-id="abeed-117">Path and file name for the item to be accessed.</span></span> <span data-ttu-id="abeed-118">パスの部分 (となどを含む最終的なスラッシュ) の有効な文字は大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。</span><span class="sxs-lookup"><span data-stu-id="abeed-118">Valid characters for the path portion (up to and including the final forward slash) include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), and forward slash (/). The path portion may be empty. Valid characters for the file name portion (everything after the final forward slash) include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), period (.), and hyphen (-).</span></span> <span data-ttu-id="abeed-119">ファイル名を空にする可能性がありますはいない期間の終了または 2 つの連続したピリオドは。</span><span class="sxs-lookup"><span data-stu-id="abeed-119">The file name may not be empty, end in a period or contain two consecutive periods.</span></span>| 
-| <span data-ttu-id="abeed-120">type</span><span class="sxs-lookup"><span data-stu-id="abeed-120">type</span></span>| <span data-ttu-id="abeed-121">文字列</span><span class="sxs-lookup"><span data-stu-id="abeed-121">string</span></span>| <span data-ttu-id="abeed-122">データの形式です。</span><span class="sxs-lookup"><span data-stu-id="abeed-122">The format of the data.</span></span> <span data-ttu-id="abeed-123">使用可能な値: バイナリ、config または json します。</span><span class="sxs-lookup"><span data-stu-id="abeed-123">Possible values are: binary, config or json.</span></span>| 
+| <span data-ttu-id="b717e-112">scid</span><span class="sxs-lookup"><span data-stu-id="b717e-112">scid</span></span>| <span data-ttu-id="b717e-113">guid</span><span class="sxs-lookup"><span data-stu-id="b717e-113">guid</span></span>| <span data-ttu-id="b717e-114">検索するサービス構成の ID。</span><span class="sxs-lookup"><span data-stu-id="b717e-114">the ID of the service config to look up.</span></span>| 
+| <span data-ttu-id="b717e-115">pathAndFileName</span><span class="sxs-lookup"><span data-stu-id="b717e-115">pathAndFileName</span></span>| <span data-ttu-id="b717e-116">string</span><span class="sxs-lookup"><span data-stu-id="b717e-116">string</span></span>| <span data-ttu-id="b717e-117">アクセスできる項目のパスとファイルの名前です。</span><span class="sxs-lookup"><span data-stu-id="b717e-117">Path and file name for the item to be accessed.</span></span> <span data-ttu-id="b717e-118">パスの部分 (となどを含む最終的なスラッシュ) の有効な文字は大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。</span><span class="sxs-lookup"><span data-stu-id="b717e-118">Valid characters for the path portion (up to and including the final forward slash) include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), and forward slash (/). The path portion may be empty. Valid characters for the file name portion (everything after the final forward slash) include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), period (.), and hyphen (-).</span></span> <span data-ttu-id="b717e-119">ファイル名を空にする可能性がありますはいない期間の終了または 2 つの連続したピリオドは。</span><span class="sxs-lookup"><span data-stu-id="b717e-119">The file name may not be empty, end in a period or contain two consecutive periods.</span></span>| 
+| <span data-ttu-id="b717e-120">type</span><span class="sxs-lookup"><span data-stu-id="b717e-120">type</span></span>| <span data-ttu-id="b717e-121">文字列</span><span class="sxs-lookup"><span data-stu-id="b717e-121">string</span></span>| <span data-ttu-id="b717e-122">データの形式です。</span><span class="sxs-lookup"><span data-stu-id="b717e-122">The format of the data.</span></span> <span data-ttu-id="b717e-123">使用可能な値: バイナリ、config または json します。</span><span class="sxs-lookup"><span data-stu-id="b717e-123">Possible values are: binary, config or json.</span></span>| 
   
 <a id="ID4EFC"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="abeed-124">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="abeed-124">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="b717e-124">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="b717e-124">Valid methods</span></span>
 
-[<span data-ttu-id="abeed-125">GET</span><span class="sxs-lookup"><span data-stu-id="abeed-125">GET</span></span>](uri-globalscidssciddatapathandfilenametype-get.md)
+[<span data-ttu-id="b717e-125">GET</span><span class="sxs-lookup"><span data-stu-id="b717e-125">GET</span></span>](uri-globalscidssciddatapathandfilenametype-get.md)
 
-<span data-ttu-id="abeed-126">&nbsp;&nbsp;ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="abeed-126">&nbsp;&nbsp;Downloads a file.</span></span>
+<span data-ttu-id="b717e-126">&nbsp;&nbsp;ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="b717e-126">&nbsp;&nbsp;Downloads a file.</span></span>
  
 <a id="ID4EPC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="abeed-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="abeed-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b717e-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="b717e-127">See also</span></span>
  
 <a id="ID4ERC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="abeed-128">Parent</span><span class="sxs-lookup"><span data-stu-id="abeed-128">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="b717e-128">Parent</span><span class="sxs-lookup"><span data-stu-id="b717e-128">Parent</span></span> 
 
-[<span data-ttu-id="abeed-129">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="abeed-129">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
+[<span data-ttu-id="b717e-129">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="b717e-129">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
 
    
