@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 604fcf1e77a1ca4666c14216be5c690362c9048b
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5141073"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5156491"
 ---
 # <a name="how-to-get-the-xbox-development-kit-xdk"></a><span data-ttu-id="dbe67-104">Xbox 開発キット (XDK) を取得する方法</span><span class="sxs-lookup"><span data-stu-id="dbe67-104">How to get the Xbox Development Kit (XDK)</span></span>
 

@@ -12,55 +12,55 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b869f87760498dc6a2224809a42380f1b8f5930b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4745544"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5157866"
 ---
-# <a name="reputation-uris"></a><span data-ttu-id="6ab89-104">評判 URI</span><span class="sxs-lookup"><span data-stu-id="6ab89-104">Reputation URIs</span></span>
+# <a name="reputation-uris"></a><span data-ttu-id="8030c-104">評判 URI</span><span class="sxs-lookup"><span data-stu-id="8030c-104">Reputation URIs</span></span>
  
-<span data-ttu-id="6ab89-105">このセクションでは、 **Microsoft.Xbox.Services.Social.ReputationService**用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドの詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="6ab89-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for the **Microsoft.Xbox.Services.Social.ReputationService**.</span></span> <span data-ttu-id="6ab89-106">評判 Uri のドメインは、reputation.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="6ab89-106">The domain for the reputation URIs is reputation.xboxlive.com.</span></span> <span data-ttu-id="6ab89-107">一般的な URI 形式がありますhttps://reputation.xboxlive.com/users/xuid(2533274790412952)/feedbackします。</span><span class="sxs-lookup"><span data-stu-id="6ab89-107">A typical URI representation might be https://reputation.xboxlive.com/users/xuid(2533274790412952)/feedback.</span></span> 
+<span data-ttu-id="8030c-105">このセクションでは、 **Microsoft.Xbox.Services.Social.ReputationService**用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドの詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="8030c-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for the **Microsoft.Xbox.Services.Social.ReputationService**.</span></span> <span data-ttu-id="8030c-106">評判 Uri のドメインは、reputation.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="8030c-106">The domain for the reputation URIs is reputation.xboxlive.com.</span></span> <span data-ttu-id="8030c-107">一般的な URI 形式がありますhttps://reputation.xboxlive.com/users/xuid(2533274790412952)/feedbackします。</span><span class="sxs-lookup"><span data-stu-id="8030c-107">A typical URI representation might be https://reputation.xboxlive.com/users/xuid(2533274790412952)/feedback.</span></span> 
  
-<span data-ttu-id="6ab89-108">評判サービスで使用してフィードバックを[フィードバック (JSON)](../../json/json-feedback.md)、評判スコアを計算します。</span><span class="sxs-lookup"><span data-stu-id="6ab89-108">The reputation service uses feedback, as described in [Feedback (JSON)](../../json/json-feedback.md), to calculate a reputation score.</span></span> <span data-ttu-id="6ab89-109">このスコアは、ReputationOverall キーの下で、ユーザーの統計情報の領域に保存されます。</span><span class="sxs-lookup"><span data-stu-id="6ab89-109">This score is saved in the statistics area for the user under the key ReputationOverall.</span></span> <span data-ttu-id="6ab89-110">ユーザーの統計情報の取得について詳しくは、以下を参照してください。[を取得する (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md)します。</span><span class="sxs-lookup"><span data-stu-id="6ab89-110">For more information about retrieving user statistics, see [GET (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md).</span></span> 
+<span data-ttu-id="8030c-108">評判サービスで使用してフィードバックを[フィードバック (JSON)](../../json/json-feedback.md)、評判スコアを計算します。</span><span class="sxs-lookup"><span data-stu-id="8030c-108">The reputation service uses feedback, as described in [Feedback (JSON)](../../json/json-feedback.md), to calculate a reputation score.</span></span> <span data-ttu-id="8030c-109">このスコアは、ReputationOverall キーの下で、ユーザーの統計情報の領域に保存されます。</span><span class="sxs-lookup"><span data-stu-id="8030c-109">This score is saved in the statistics area for the user under the key ReputationOverall.</span></span> <span data-ttu-id="8030c-110">ユーザーの統計情報の取得について詳しくは、以下を参照してください。[を取得する (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md)します。</span><span class="sxs-lookup"><span data-stu-id="8030c-110">For more information about retrieving user statistics, see [GET (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md).</span></span> 
  
-<span data-ttu-id="6ab89-111">すべてのプラットフォームでのゲームでは、評判サービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="6ab89-111">Games on all platforms can use the reputation service.</span></span>
+<span data-ttu-id="8030c-111">すべてのプラットフォームでのゲームでは、評判サービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="8030c-111">Games on all platforms can use the reputation service.</span></span>
  
 <a id="ID4EMB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="6ab89-112">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="6ab89-112">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="8030c-112">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="8030c-112">In this section</span></span>
 
-[<span data-ttu-id="6ab89-113">/users/xuid({xuid})/feedback</span><span class="sxs-lookup"><span data-stu-id="6ab89-113">/users/xuid({xuid})/feedback</span></span>](uri-reputationusersxuidfeedback.md)
+[<span data-ttu-id="8030c-113">/users/xuid({xuid})/feedback</span><span class="sxs-lookup"><span data-stu-id="8030c-113">/users/xuid({xuid})/feedback</span></span>](uri-reputationusersxuidfeedback.md)
 
-<span data-ttu-id="6ab89-114">&nbsp;&nbsp;シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。</span><span class="sxs-lookup"><span data-stu-id="6ab89-114">&nbsp;&nbsp;Used from your title if you desire to add a feedback option in your game, as opposed to using the shell.</span></span>
+<span data-ttu-id="8030c-114">&nbsp;&nbsp;シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。</span><span class="sxs-lookup"><span data-stu-id="8030c-114">&nbsp;&nbsp;Used from your title if you desire to add a feedback option in your game, as opposed to using the shell.</span></span>
 
-[<span data-ttu-id="6ab89-115">/users/batchfeedback</span><span class="sxs-lookup"><span data-stu-id="6ab89-115">/users/batchfeedback</span></span>](uri-reputationusersbatchfeedback.md)
+[<span data-ttu-id="8030c-115">/users/batchfeedback</span><span class="sxs-lookup"><span data-stu-id="8030c-115">/users/batchfeedback</span></span>](uri-reputationusersbatchfeedback.md)
 
-<span data-ttu-id="6ab89-116">&nbsp;&nbsp;タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="6ab89-116">&nbsp;&nbsp;Used by your title's service to send feedback in batch form outside of your title's interface.</span></span>
+<span data-ttu-id="8030c-116">&nbsp;&nbsp;タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。</span><span class="sxs-lookup"><span data-stu-id="8030c-116">&nbsp;&nbsp;Used by your title's service to send feedback in batch form outside of your title's interface.</span></span>
 
-[<span data-ttu-id="6ab89-117">/users/me/resetreputation</span><span class="sxs-lookup"><span data-stu-id="6ab89-117">/users/me/resetreputation</span></span>](uri-usersmeresetreputation.md)
+[<span data-ttu-id="8030c-117">/users/me/resetreputation</span><span class="sxs-lookup"><span data-stu-id="8030c-117">/users/me/resetreputation</span></span>](uri-usersmeresetreputation.md)
 
-<span data-ttu-id="6ab89-118">&nbsp;&nbsp;現在のユーザーの評判スコアにアクセスするに執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="6ab89-118">&nbsp;&nbsp;Enables the Enforcement team to access the current user's Reputation scores.</span></span>
+<span data-ttu-id="8030c-118">&nbsp;&nbsp;現在のユーザーの評判スコアにアクセスするに執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="8030c-118">&nbsp;&nbsp;Enables the Enforcement team to access the current user's Reputation scores.</span></span>
 
-[<span data-ttu-id="6ab89-119">/users/xuid({xuid})/deleteuserdata</span><span class="sxs-lookup"><span data-stu-id="6ab89-119">/users/xuid({xuid})/deleteuserdata</span></span>](uri-usersxuiddeleteuserdata.md)
+[<span data-ttu-id="8030c-119">/users/xuid({xuid})/deleteuserdata</span><span class="sxs-lookup"><span data-stu-id="8030c-119">/users/xuid({xuid})/deleteuserdata</span></span>](uri-usersxuiddeleteuserdata.md)
 
-<span data-ttu-id="6ab89-120">&nbsp;&nbsp;テスト ユーザーの評判のデータを完全にリセットします。</span><span class="sxs-lookup"><span data-stu-id="6ab89-120">&nbsp;&nbsp;Completely resets the reputation data for a test user.</span></span> <span data-ttu-id="6ab89-121">テストのみです。</span><span class="sxs-lookup"><span data-stu-id="6ab89-121">For testing only.</span></span>
+<span data-ttu-id="8030c-120">&nbsp;&nbsp;テスト ユーザーの評判のデータを完全にリセットします。</span><span class="sxs-lookup"><span data-stu-id="8030c-120">&nbsp;&nbsp;Completely resets the reputation data for a test user.</span></span> <span data-ttu-id="8030c-121">テストのみです。</span><span class="sxs-lookup"><span data-stu-id="8030c-121">For testing only.</span></span>
 
-[<span data-ttu-id="6ab89-122">/users/xuid({xuid})/resetreputation</span><span class="sxs-lookup"><span data-stu-id="6ab89-122">/users/xuid({xuid})/resetreputation</span></span>](uri-usersxuidresetreputation.md)
+[<span data-ttu-id="8030c-122">/users/xuid({xuid})/resetreputation</span><span class="sxs-lookup"><span data-stu-id="8030c-122">/users/xuid({xuid})/resetreputation</span></span>](uri-usersxuidresetreputation.md)
 
-<span data-ttu-id="6ab89-123">&nbsp;&nbsp;指定したユーザーの評判スコアにアクセスするに執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="6ab89-123">&nbsp;&nbsp;Enables the Enforcement team to access the specified user's Reputation scores.</span></span>
+<span data-ttu-id="8030c-123">&nbsp;&nbsp;指定したユーザーの評判スコアにアクセスするに執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="8030c-123">&nbsp;&nbsp;Enables the Enforcement team to access the specified user's Reputation scores.</span></span>
  
 <a id="ID4E5B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="6ab89-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="6ab89-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8030c-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="8030c-124">See also</span></span>
  
 <a id="ID4EAC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="6ab89-125">Parent</span><span class="sxs-lookup"><span data-stu-id="6ab89-125">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="8030c-125">Parent</span><span class="sxs-lookup"><span data-stu-id="8030c-125">Parent</span></span> 
 
-[<span data-ttu-id="6ab89-126">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="6ab89-126">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="8030c-126">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="8030c-126">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    
