@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d1bacb3cf6a97cf72b03df10096f3ebf779b045b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4754646"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5159580"
 ---
 # <a name="post-usersxuidxuidlistspinslistnamecontainsitems"></a>POST /users/xuid(xuid)/lists/PINS/{listname}/ContainsItems
 全体の一覧を取得することがなく、一連項目 (itemId により指定) にはが一覧に含まれて かどうかを決定します。 これらの Uri のドメインが`eplists.xboxlive.com`します。

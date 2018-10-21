@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efe0e93527560e31a471fce2c74b1cc254101ad
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4750773"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5162300"
 ---
 # <a name="queryclipsresponse-json"></a>QueryClipsResponse (JSON)
 一覧のページング情報と共にゲーム クリップの戻り値の一覧をラップします。 

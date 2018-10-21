@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c62703d43197962e313e364df2cdc3650bd2a792
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4752183"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5159552"
 ---
 # <a name="get-usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>GET (/users/xuid({xuid})/scids/{scid}/stats/{statname}/people/{all|favorite})
 ランキング、統計値は、すべての既知の連絡先の現在のユーザーや、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア)、ソーシャル ランキングを返します。
@@ -66,7 +66,7 @@ ms.locfileid: "4752183"
 | skipToRank| 32 ビット符号なし整数| ページの指定のランキング順位から始まる結果を返します。 結果の残りの部分は、並べ替え順序をランク順になります。 このクエリ文字列は、次の「ページ」結果を取得する後続のクエリに取り込むことができる継続トークンを返すことができます。 |
 | skipToUser| string| ページのユーザーのランクまたはスコアに関係なく、指定されたゲーマーの xuid の周囲のランキング結果を返します。 ページは、定義済みのビューのページの最後の位置や統計ランキング ビューの中央で指定したユーザーと位ランクによって並べ替えられます。 この種類のクエリに対して提供される<b>continuationToken</b>はありません。 |
 | continuationToken| string| 前の呼び出しには、 <b>continuationToken</b>が返される、呼び出し元渡すことが戻る現状有姿トークンの結果の次のページを取得するクエリ文字列に。 |
-| 並べ替え| string| 高-低値 (「降順」) の順序または低-高値の順序 (「昇順」) からのプレイヤーの一覧をランク付けするかどうかを指定します。 これは、オプションのパラメーターです。既定値は降順です。|
+| sort| string| 高-低値 (「降順」) の順序または低-高値の順序 (「昇順」) からのプレイヤーの一覧をランク付けするかどうかを指定します。 これは、オプションのパラメーターです。既定値は降順です。|
 
 <a id="ID4EQD"></a>
 

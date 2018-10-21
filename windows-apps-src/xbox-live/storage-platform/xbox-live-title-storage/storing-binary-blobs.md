@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, タイトル ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: b74dd1943764b7dcfc7a635e569ed9bbd5d8e24b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4740448"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5157843"
 ---
 # <a name="storing-a-binary-blob-in-xbox-live-title-storage"></a>Xbox Live タイトル ストレージへのバイナリ BLOB の保存
 

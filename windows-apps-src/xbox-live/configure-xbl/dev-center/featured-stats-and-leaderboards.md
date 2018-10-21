@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, uwp, windows 10, Xbox one, 注目の統計とランキング, ランキング, 統計 2017, Windows デベロッパー センター
-ms.openlocfilehash: ed965c4d7e2c15e76494fd197808c7f47db2d584
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.openlocfilehash: dcd73b7b1ea26cd929750ffed325896dfaf2c593
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4745235"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5157804"
 ---
 # <a name="configuring-featured-stats-and-leaderboards-2017-on-windows-dev-center"></a>Windows デベロッパー センターで注目の統計とランキング 2017 を構成する
 
@@ -30,7 +30,7 @@ Windows デベロッパー センターを使うと、ゲームに関連付け�
 1. **[サービス]** > **[Xbox Live]** > **[Featured stats and leaderboards]** (注目の統計とランキング) にある、タイトルの **[Featured stats and leaderboards]** (注目の統計とランキング) セクションに移動します。
 2. **[新規作成]** ボタンをクリックすると、モーダル フォームで開きます。 入力したら、**[保存]** をクリックします。
 
-![新しい注目の統計/ランキング ダイアログの画像](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-1.png)
+![新しい注目の統計/ランキング ダイアログの画像](../../images/dev-center/featured-stats-and-leaderboards/featured-stats.png)
 
 **[表示名]** フィールドは、ゲーム ハブでユーザーに表示される内容です。 この文字列は、Xbox Live サービス構成の **[Localize strings]** (文字列のローカライズ) でローカライズすることができます。
 
