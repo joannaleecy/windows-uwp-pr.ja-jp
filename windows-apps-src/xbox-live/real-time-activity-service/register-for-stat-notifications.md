@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, rta, 統計情報, 通知
 ms.localizationpriority: medium
 ms.openlocfilehash: d2d5656af1d37ce45cabb3c8e86e1b40ca38ea14
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4753597"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5166703"
 ---
-# <a name="how-to-register-for-stat-change-notifications"></a><span data-ttu-id="94abf-104">統計情報の変更通知の登録方法</span><span class="sxs-lookup"><span data-stu-id="94abf-104">How to register for Stat change notifications</span></span>
+# <a name="how-to-register-for-stat-change-notifications"></a><span data-ttu-id="3f1d3-104">統計情報の変更通知の登録方法</span><span class="sxs-lookup"><span data-stu-id="3f1d3-104">How to register for Stat change notifications</span></span>
 
-<span data-ttu-id="94abf-105">統計のリアルタイム アクティビティ (RTA) は Xbox Live サービス構成で有効になっています。</span><span class="sxs-lookup"><span data-stu-id="94abf-105">Real-Time Activity (RTA) is enabled for statistics via the Xbox Live Service Configuration.</span></span>
+<span data-ttu-id="3f1d3-105">統計のリアルタイム アクティビティ (RTA) は Xbox Live サービス構成で有効になっています。</span><span class="sxs-lookup"><span data-stu-id="3f1d3-105">Real-Time Activity (RTA) is enabled for statistics via the Xbox Live Service Configuration.</span></span>
 
-<span data-ttu-id="94abf-106">Microsoft デベロッパー ダッシュボードでサービス構成を構成した場合、**[サービス] > [Xbox Live] > [プレイヤーの統計] > [統計情報の変更通知]** で統計情報の変更通知に登録できます。</span><span class="sxs-lookup"><span data-stu-id="94abf-106">If you have configured your service configuration in the Microsoft Developer dashboard, you can register for stat change notifications under **Services > Xbox Live > Player stats > Stat change notifications**.</span></span>
+<span data-ttu-id="3f1d3-106">Microsoft デベロッパー ダッシュボードでサービス構成を構成した場合、**[サービス] > [Xbox Live] > [プレイヤーの統計] > [統計情報の変更通知]** で統計情報の変更通知に登録できます。</span><span class="sxs-lookup"><span data-stu-id="3f1d3-106">If you have configured your service configuration in the Microsoft Developer dashboard, you can register for stat change notifications under **Services > Xbox Live > Player stats > Stat change notifications**.</span></span>
 
- <span data-ttu-id="94abf-107">Xbox デベロッパー ポータル (XDP) でサービス構成を構成した場合、XDP ドキュメントをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="94abf-107">If you have configured your service configuration in the Xbox Developer Portal (XDP), consult the XDP documentation.</span></span>
+ <span data-ttu-id="3f1d3-107">Xbox デベロッパー ポータル (XDP) でサービス構成を構成した場合、XDP ドキュメントをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3f1d3-107">If you have configured your service configuration in the Xbox Developer Portal (XDP), consult the XDP documentation.</span></span>
 
- <span data-ttu-id="94abf-108">プレゼンス データと実績データは、RTA に対して自動的に有効になります。</span><span class="sxs-lookup"><span data-stu-id="94abf-108">Presence data and achievements data are automatically enabled for RTA.</span></span>
+ <span data-ttu-id="3f1d3-108">プレゼンス データと実績データは、RTA に対して自動的に有効になります。</span><span class="sxs-lookup"><span data-stu-id="3f1d3-108">Presence data and achievements data are automatically enabled for RTA.</span></span>

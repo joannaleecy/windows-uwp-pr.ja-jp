@@ -12,30 +12,30 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dfa27115e1c7ebc9be657ff4fb3f6946406dd8b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4749127"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5170108"
 ---
-# <a name="multiplayersessionreference-json"></a><span data-ttu-id="f8ec6-104">MultiplayerSessionReference (JSON)</span><span class="sxs-lookup"><span data-stu-id="f8ec6-104">MultiplayerSessionReference (JSON)</span></span>
-<span data-ttu-id="f8ec6-105">**MultiplayerSessionReference**を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="f8ec6-105">A JSON object representing the **MultiplayerSessionReference**.</span></span> 
+# <a name="multiplayersessionreference-json"></a><span data-ttu-id="a72cd-104">MultiplayerSessionReference (JSON)</span><span class="sxs-lookup"><span data-stu-id="a72cd-104">MultiplayerSessionReference (JSON)</span></span>
+<span data-ttu-id="a72cd-105">**MultiplayerSessionReference**を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="a72cd-105">A JSON object representing the **MultiplayerSessionReference**.</span></span> 
 <a id="ID4EQ"></a>
 
   
  
-<span data-ttu-id="f8ec6-106">MultiplayerSessionReference JSON オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="f8ec6-106">The MultiplayerSessionReference JSON object has the following specification.</span></span>
+<span data-ttu-id="a72cd-106">MultiplayerSessionReference JSON オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="a72cd-106">The MultiplayerSessionReference JSON object has the following specification.</span></span>
  
-| <span data-ttu-id="f8ec6-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="f8ec6-107">Member</span></span>| <span data-ttu-id="f8ec6-108">種類</span><span class="sxs-lookup"><span data-stu-id="f8ec6-108">Type</span></span>| <span data-ttu-id="f8ec6-109">説明</span><span class="sxs-lookup"><span data-stu-id="f8ec6-109">Description</span></span>| 
+| <span data-ttu-id="a72cd-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="a72cd-107">Member</span></span>| <span data-ttu-id="a72cd-108">種類</span><span class="sxs-lookup"><span data-stu-id="a72cd-108">Type</span></span>| <span data-ttu-id="a72cd-109">説明</span><span class="sxs-lookup"><span data-stu-id="a72cd-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="f8ec6-110">scid</span><span class="sxs-lookup"><span data-stu-id="f8ec6-110">scid</span></span>| <span data-ttu-id="f8ec6-111">GUID</span><span class="sxs-lookup"><span data-stu-id="f8ec6-111">GUID</span></span>| <span data-ttu-id="f8ec6-112">サービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="f8ec6-112">Service configuration identifier (SCID).</span></span> <span data-ttu-id="f8ec6-113">セッション識別子のパート 1 です。</span><span class="sxs-lookup"><span data-stu-id="f8ec6-113">Part 1 of the session identifier.</span></span>| 
-| <span data-ttu-id="f8ec6-114">templateName</span><span class="sxs-lookup"><span data-stu-id="f8ec6-114">templateName</span></span> | <span data-ttu-id="f8ec6-115">string</span><span class="sxs-lookup"><span data-stu-id="f8ec6-115">string</span></span> | <span data-ttu-id="f8ec6-116">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="f8ec6-116">Name of the current instance of the session template.</span></span> <span data-ttu-id="f8ec6-117">セッション識別子のパート 2 です。</span><span class="sxs-lookup"><span data-stu-id="f8ec6-117">Part 2 of the session identifier.</span></span> | 
-| <span data-ttu-id="f8ec6-118">name</span><span class="sxs-lookup"><span data-stu-id="f8ec6-118">name</span></span> | <span data-ttu-id="f8ec6-119">string</span><span class="sxs-lookup"><span data-stu-id="f8ec6-119">string</span></span> | <span data-ttu-id="f8ec6-120">セッションの名前です。</span><span class="sxs-lookup"><span data-stu-id="f8ec6-120">Name of the session.</span></span> <span data-ttu-id="f8ec6-121">セッション識別子のパート 3 です。</span><span class="sxs-lookup"><span data-stu-id="f8ec6-121">Part 3 of the session identifier.</span></span> | 
+| <span data-ttu-id="a72cd-110">scid</span><span class="sxs-lookup"><span data-stu-id="a72cd-110">scid</span></span>| <span data-ttu-id="a72cd-111">GUID</span><span class="sxs-lookup"><span data-stu-id="a72cd-111">GUID</span></span>| <span data-ttu-id="a72cd-112">サービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="a72cd-112">Service configuration identifier (SCID).</span></span> <span data-ttu-id="a72cd-113">セッション識別子のパート 1 です。</span><span class="sxs-lookup"><span data-stu-id="a72cd-113">Part 1 of the session identifier.</span></span>| 
+| <span data-ttu-id="a72cd-114">templateName</span><span class="sxs-lookup"><span data-stu-id="a72cd-114">templateName</span></span> | <span data-ttu-id="a72cd-115">string</span><span class="sxs-lookup"><span data-stu-id="a72cd-115">string</span></span> | <span data-ttu-id="a72cd-116">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="a72cd-116">Name of the current instance of the session template.</span></span> <span data-ttu-id="a72cd-117">セッション識別子のパート 2 です。</span><span class="sxs-lookup"><span data-stu-id="a72cd-117">Part 2 of the session identifier.</span></span> | 
+| <span data-ttu-id="a72cd-118">name</span><span class="sxs-lookup"><span data-stu-id="a72cd-118">name</span></span> | <span data-ttu-id="a72cd-119">string</span><span class="sxs-lookup"><span data-stu-id="a72cd-119">string</span></span> | <span data-ttu-id="a72cd-120">セッションの名前です。</span><span class="sxs-lookup"><span data-stu-id="a72cd-120">Name of the session.</span></span> <span data-ttu-id="a72cd-121">セッション識別子のパート 3 です。</span><span class="sxs-lookup"><span data-stu-id="a72cd-121">Part 3 of the session identifier.</span></span> | 
   
 <a id="ID4EZ"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="f8ec6-122">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="f8ec6-122">Sample JSON syntax</span></span> 
+## <a name="sample-json-syntax"></a><span data-ttu-id="a72cd-122">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="a72cd-122">Sample JSON syntax</span></span> 
  
 
 ```json
@@ -52,21 +52,21 @@ ms.locfileid: "4749127"
 <a id="ID4EJB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="f8ec6-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="f8ec6-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a72cd-123">関連項目</span><span class="sxs-lookup"><span data-stu-id="a72cd-123">See also</span></span>
  
 <a id="ID4ELB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="f8ec6-124">Parent</span><span class="sxs-lookup"><span data-stu-id="f8ec6-124">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="a72cd-124">Parent</span><span class="sxs-lookup"><span data-stu-id="a72cd-124">Parent</span></span> 
 
-[<span data-ttu-id="f8ec6-125">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="f8ec6-125">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="a72cd-125">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="a72cd-125">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EVB"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="f8ec6-126">リファレンス</span><span class="sxs-lookup"><span data-stu-id="f8ec6-126">Reference</span></span> 
+##### <a name="reference"></a><span data-ttu-id="a72cd-126">リファレンス</span><span class="sxs-lookup"><span data-stu-id="a72cd-126">Reference</span></span> 
 
-[<span data-ttu-id="f8ec6-127">MultiplayerSession (JSON)</span><span class="sxs-lookup"><span data-stu-id="f8ec6-127">MultiplayerSession (JSON)</span></span>](json-multiplayersession.md)
+[<span data-ttu-id="a72cd-127">MultiplayerSession (JSON)</span><span class="sxs-lookup"><span data-stu-id="a72cd-127">MultiplayerSession (JSON)</span></span>](json-multiplayersession.md)
 
    

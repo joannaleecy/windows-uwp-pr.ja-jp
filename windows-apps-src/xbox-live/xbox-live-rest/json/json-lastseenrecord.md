@@ -12,32 +12,32 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: de0ffd7c9c6c42f2a0ebf633ebcbba8a89a1b8b8
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4754897"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5168557"
 ---
-# <a name="lastseenrecord-json"></a><span data-ttu-id="2f84e-104">LastSeenRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="2f84e-104">LastSeenRecord (JSON)</span></span>
-<span data-ttu-id="2f84e-105">利用できるは、ユーザーには、有効な DeviceRecord があるないと、ユーザーが最後システムに表示されていた場合について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f84e-105">Information about when the system last saw a user, available when the user has no valid DeviceRecord.</span></span> 
+# <a name="lastseenrecord-json"></a><span data-ttu-id="0b353-104">LastSeenRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="0b353-104">LastSeenRecord (JSON)</span></span>
+<span data-ttu-id="0b353-105">利用できるは、ユーザーには、有効な DeviceRecord があるないと、ユーザーが最後システムに表示されていた場合について説明します。</span><span class="sxs-lookup"><span data-stu-id="0b353-105">Information about when the system last saw a user, available when the user has no valid DeviceRecord.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="lastseenrecord"></a><span data-ttu-id="2f84e-106">LastSeenRecord</span><span class="sxs-lookup"><span data-stu-id="2f84e-106">LastSeenRecord</span></span>
+## <a name="lastseenrecord"></a><span data-ttu-id="0b353-106">LastSeenRecord</span><span class="sxs-lookup"><span data-stu-id="0b353-106">LastSeenRecord</span></span>
  
-<span data-ttu-id="2f84e-107">LastSeenRecord オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="2f84e-107">The LastSeenRecord object has the following specification.</span></span>
+<span data-ttu-id="0b353-107">LastSeenRecord オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="0b353-107">The LastSeenRecord object has the following specification.</span></span>
  
-| <span data-ttu-id="2f84e-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="2f84e-108">Member</span></span>| <span data-ttu-id="2f84e-109">種類</span><span class="sxs-lookup"><span data-stu-id="2f84e-109">Type</span></span>| <span data-ttu-id="2f84e-110">説明</span><span class="sxs-lookup"><span data-stu-id="2f84e-110">Description</span></span>| 
+| <span data-ttu-id="0b353-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="0b353-108">Member</span></span>| <span data-ttu-id="0b353-109">種類</span><span class="sxs-lookup"><span data-stu-id="0b353-109">Type</span></span>| <span data-ttu-id="0b353-110">説明</span><span class="sxs-lookup"><span data-stu-id="0b353-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="2f84e-111">deviceType</span><span class="sxs-lookup"><span data-stu-id="2f84e-111">deviceType</span></span>| <span data-ttu-id="2f84e-112">string</span><span class="sxs-lookup"><span data-stu-id="2f84e-112">string</span></span>| <span data-ttu-id="2f84e-113">ユーザーが過去の現在のデバイスの種類。</span><span class="sxs-lookup"><span data-stu-id="2f84e-113">The type of the device on which the user was last present.</span></span>| 
-| <span data-ttu-id="2f84e-114">titleId</span><span class="sxs-lookup"><span data-stu-id="2f84e-114">titleId</span></span>| <span data-ttu-id="2f84e-115">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="2f84e-115">32-bit unsigned integer</span></span>| <span data-ttu-id="2f84e-116">ユーザーが過去の現在のタイトルの識別子です。</span><span class="sxs-lookup"><span data-stu-id="2f84e-116">The identifier of the title on which the user was last present.</span></span>| 
-| <span data-ttu-id="2f84e-117">titleName</span><span class="sxs-lookup"><span data-stu-id="2f84e-117">titleName</span></span>| <span data-ttu-id="2f84e-118">string</span><span class="sxs-lookup"><span data-stu-id="2f84e-118">string</span></span>| <span data-ttu-id="2f84e-119">ユーザーが最後の存在をでしたタイトルの名前。</span><span class="sxs-lookup"><span data-stu-id="2f84e-119">The name of the title on which the user was last present.</span></span>| 
-| <span data-ttu-id="2f84e-120">タイムスタンプ</span><span class="sxs-lookup"><span data-stu-id="2f84e-120">timestamp</span></span>| <span data-ttu-id="2f84e-121">DateTime</span><span class="sxs-lookup"><span data-stu-id="2f84e-121">DateTime</span></span>| <span data-ttu-id="2f84e-122">Utc 形式のユーザーが過去の存在を示すタイムスタンプ。</span><span class="sxs-lookup"><span data-stu-id="2f84e-122">UTC timestamp indicating when the user was last present.</span></span>| 
+| <span data-ttu-id="0b353-111">deviceType</span><span class="sxs-lookup"><span data-stu-id="0b353-111">deviceType</span></span>| <span data-ttu-id="0b353-112">string</span><span class="sxs-lookup"><span data-stu-id="0b353-112">string</span></span>| <span data-ttu-id="0b353-113">ユーザーが過去の現在のデバイスの種類。</span><span class="sxs-lookup"><span data-stu-id="0b353-113">The type of the device on which the user was last present.</span></span>| 
+| <span data-ttu-id="0b353-114">titleId</span><span class="sxs-lookup"><span data-stu-id="0b353-114">titleId</span></span>| <span data-ttu-id="0b353-115">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="0b353-115">32-bit unsigned integer</span></span>| <span data-ttu-id="0b353-116">ユーザーが過去の現在のタイトルの識別子です。</span><span class="sxs-lookup"><span data-stu-id="0b353-116">The identifier of the title on which the user was last present.</span></span>| 
+| <span data-ttu-id="0b353-117">titleName</span><span class="sxs-lookup"><span data-stu-id="0b353-117">titleName</span></span>| <span data-ttu-id="0b353-118">string</span><span class="sxs-lookup"><span data-stu-id="0b353-118">string</span></span>| <span data-ttu-id="0b353-119">ユーザーが最後の存在をでしたタイトルの名前。</span><span class="sxs-lookup"><span data-stu-id="0b353-119">The name of the title on which the user was last present.</span></span>| 
+| <span data-ttu-id="0b353-120">タイムスタンプ</span><span class="sxs-lookup"><span data-stu-id="0b353-120">timestamp</span></span>| <span data-ttu-id="0b353-121">DateTime</span><span class="sxs-lookup"><span data-stu-id="0b353-121">DateTime</span></span>| <span data-ttu-id="0b353-122">Utc 形式のユーザーが過去の存在を示すタイムスタンプ。</span><span class="sxs-lookup"><span data-stu-id="0b353-122">UTC timestamp indicating when the user was last present.</span></span>| 
   
 <a id="ID4EHC"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="2f84e-123">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="2f84e-123">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="0b353-123">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="0b353-123">Sample JSON syntax</span></span>
  
 
 ```json
@@ -54,17 +54,17 @@ ms.locfileid: "4754897"
 <a id="ID4EQC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="2f84e-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="2f84e-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0b353-124">関連項目</span><span class="sxs-lookup"><span data-stu-id="0b353-124">See also</span></span>
  
 <a id="ID4ESC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="2f84e-125">Parent</span><span class="sxs-lookup"><span data-stu-id="2f84e-125">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="0b353-125">Parent</span><span class="sxs-lookup"><span data-stu-id="0b353-125">Parent</span></span> 
 
-[<span data-ttu-id="2f84e-126">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="2f84e-126">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="0b353-126">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="0b353-126">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E5C"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="2f84e-127">リファレンス</span><span class="sxs-lookup"><span data-stu-id="2f84e-127">Reference</span></span>   
+##### <a name="reference"></a><span data-ttu-id="0b353-127">リファレンス</span><span class="sxs-lookup"><span data-stu-id="0b353-127">Reference</span></span>   

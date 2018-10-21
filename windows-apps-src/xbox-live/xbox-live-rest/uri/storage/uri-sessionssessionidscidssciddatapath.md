@@ -12,47 +12,47 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d6089bd7d758dffb75759ca2f079ee944dcb692
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4749273"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5164439"
 ---
-# <a name="sessionssessionidscidssciddatapath"></a><span data-ttu-id="63936-104">/sessions/{sessionId}/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="63936-104">/sessions/{sessionId}/scids/{scid}/data/{path}</span></span>
-<span data-ttu-id="63936-105">指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="63936-105">Lists file information at a specified path.</span></span> <span data-ttu-id="63936-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="63936-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
+# <a name="sessionssessionidscidssciddatapath"></a><span data-ttu-id="4e450-104">/sessions/{sessionId}/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="4e450-104">/sessions/{sessionId}/scids/{scid}/data/{path}</span></span>
+<span data-ttu-id="4e450-105">指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="4e450-105">Lists file information at a specified path.</span></span> <span data-ttu-id="4e450-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="4e450-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="63936-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="63936-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="4e450-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="4e450-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="63936-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="63936-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="4e450-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="4e450-108">URI parameters</span></span>
  
-| <span data-ttu-id="63936-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="63936-109">Parameter</span></span>| <span data-ttu-id="63936-110">型</span><span class="sxs-lookup"><span data-stu-id="63936-110">Type</span></span>| <span data-ttu-id="63936-111">説明</span><span class="sxs-lookup"><span data-stu-id="63936-111">Description</span></span>| 
+| <span data-ttu-id="4e450-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="4e450-109">Parameter</span></span>| <span data-ttu-id="4e450-110">型</span><span class="sxs-lookup"><span data-stu-id="4e450-110">Type</span></span>| <span data-ttu-id="4e450-111">説明</span><span class="sxs-lookup"><span data-stu-id="4e450-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="63936-112">sessionId</span><span class="sxs-lookup"><span data-stu-id="63936-112">sessionId</span></span>| <span data-ttu-id="63936-113">string</span><span class="sxs-lookup"><span data-stu-id="63936-113">string</span></span>| <span data-ttu-id="63936-114">検索するセッションの ID。</span><span class="sxs-lookup"><span data-stu-id="63936-114">the ID of the session to look up.</span></span>| 
-| <span data-ttu-id="63936-115">scid</span><span class="sxs-lookup"><span data-stu-id="63936-115">scid</span></span>| <span data-ttu-id="63936-116">guid</span><span class="sxs-lookup"><span data-stu-id="63936-116">guid</span></span>| <span data-ttu-id="63936-117">検索するサービス構成の ID。</span><span class="sxs-lookup"><span data-stu-id="63936-117">The ID of the service config to look up.</span></span>| 
-| <span data-ttu-id="63936-118">path</span><span class="sxs-lookup"><span data-stu-id="63936-118">path</span></span>| <span data-ttu-id="63936-119">string</span><span class="sxs-lookup"><span data-stu-id="63936-119">string</span></span>| <span data-ttu-id="63936-120">返されるデータ項目へのパス。</span><span class="sxs-lookup"><span data-stu-id="63936-120">The path to the data items to return.</span></span> <span data-ttu-id="63936-121">一致するすべてのディレクトリとサブディレクトリを取得する返されます。</span><span class="sxs-lookup"><span data-stu-id="63936-121">All matching directories and subdirectories get returned.</span></span> <span data-ttu-id="63936-122">有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、およびスラッシュ (/) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="63936-122">Valid characters include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), and forward slash (/).</span></span> <span data-ttu-id="63936-123">空にすることがあります。</span><span class="sxs-lookup"><span data-stu-id="63936-123">May be empty.</span></span> <span data-ttu-id="63936-124">256 の最大の長さ。</span><span class="sxs-lookup"><span data-stu-id="63936-124">Max length of 256.</span></span>| 
+| <span data-ttu-id="4e450-112">sessionId</span><span class="sxs-lookup"><span data-stu-id="4e450-112">sessionId</span></span>| <span data-ttu-id="4e450-113">string</span><span class="sxs-lookup"><span data-stu-id="4e450-113">string</span></span>| <span data-ttu-id="4e450-114">検索するセッションの ID。</span><span class="sxs-lookup"><span data-stu-id="4e450-114">the ID of the session to look up.</span></span>| 
+| <span data-ttu-id="4e450-115">scid</span><span class="sxs-lookup"><span data-stu-id="4e450-115">scid</span></span>| <span data-ttu-id="4e450-116">guid</span><span class="sxs-lookup"><span data-stu-id="4e450-116">guid</span></span>| <span data-ttu-id="4e450-117">検索するサービス構成の ID。</span><span class="sxs-lookup"><span data-stu-id="4e450-117">The ID of the service config to look up.</span></span>| 
+| <span data-ttu-id="4e450-118">path</span><span class="sxs-lookup"><span data-stu-id="4e450-118">path</span></span>| <span data-ttu-id="4e450-119">string</span><span class="sxs-lookup"><span data-stu-id="4e450-119">string</span></span>| <span data-ttu-id="4e450-120">返されるデータ項目へのパス。</span><span class="sxs-lookup"><span data-stu-id="4e450-120">The path to the data items to return.</span></span> <span data-ttu-id="4e450-121">一致するすべてのディレクトリとサブディレクトリを取得する返されます。</span><span class="sxs-lookup"><span data-stu-id="4e450-121">All matching directories and subdirectories get returned.</span></span> <span data-ttu-id="4e450-122">有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、およびスラッシュ (/) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="4e450-122">Valid characters include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), and forward slash (/).</span></span> <span data-ttu-id="4e450-123">空にすることがあります。</span><span class="sxs-lookup"><span data-stu-id="4e450-123">May be empty.</span></span> <span data-ttu-id="4e450-124">256 の最大の長さ。</span><span class="sxs-lookup"><span data-stu-id="4e450-124">Max length of 256.</span></span>| 
   
 <a id="ID4EFC"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="63936-125">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="63936-125">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="4e450-125">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="4e450-125">Valid methods</span></span>
 
-[<span data-ttu-id="63936-126">GET</span><span class="sxs-lookup"><span data-stu-id="63936-126">GET</span></span>](uri-sessionssessionidscidssciddatapath-get.md)
+[<span data-ttu-id="4e450-126">GET</span><span class="sxs-lookup"><span data-stu-id="4e450-126">GET</span></span>](uri-sessionssessionidscidssciddatapath-get.md)
 
-<span data-ttu-id="63936-127">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="63936-127">&nbsp;&nbsp;Lists file information at a specified path.</span></span>
+<span data-ttu-id="4e450-127">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="4e450-127">&nbsp;&nbsp;Lists file information at a specified path.</span></span>
  
 <a id="ID4EPC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="63936-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="63936-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4e450-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="4e450-128">See also</span></span>
  
 <a id="ID4ERC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="63936-129">Parent</span><span class="sxs-lookup"><span data-stu-id="63936-129">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="4e450-129">Parent</span><span class="sxs-lookup"><span data-stu-id="4e450-129">Parent</span></span> 
 
-[<span data-ttu-id="63936-130">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="63936-130">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
+[<span data-ttu-id="4e450-130">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="4e450-130">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
 
    

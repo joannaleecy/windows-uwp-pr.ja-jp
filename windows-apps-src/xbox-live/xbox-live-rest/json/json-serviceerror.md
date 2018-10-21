@@ -12,45 +12,45 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f9f5cb3f4dc0565cafc073cea35e3e6e00d273f
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4744882"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5165454"
 ---
-# <a name="serviceerror-json"></a><span data-ttu-id="6eed7-104">ServiceError (JSON)</span><span class="sxs-lookup"><span data-stu-id="6eed7-104">ServiceError (JSON)</span></span>
-<span data-ttu-id="6eed7-105">サービスに呼び出しが失敗したときに返されるエラーに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="6eed7-105">Contains information about an error returned when a call to the service failed.</span></span> 
+# <a name="serviceerror-json"></a><span data-ttu-id="9fb4b-104">ServiceError (JSON)</span><span class="sxs-lookup"><span data-stu-id="9fb4b-104">ServiceError (JSON)</span></span>
+<span data-ttu-id="9fb4b-105">サービスに呼び出しが失敗したときに返されるエラーに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-105">Contains information about an error returned when a call to the service failed.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="serviceerror"></a><span data-ttu-id="6eed7-106">ServiceError</span><span class="sxs-lookup"><span data-stu-id="6eed7-106">ServiceError</span></span>
+## <a name="serviceerror"></a><span data-ttu-id="9fb4b-106">ServiceError</span><span class="sxs-lookup"><span data-stu-id="9fb4b-106">ServiceError</span></span>
  
-<span data-ttu-id="6eed7-107">ServiceError オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="6eed7-107">The ServiceError object has the following specification.</span></span>
+<span data-ttu-id="9fb4b-107">ServiceError オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-107">The ServiceError object has the following specification.</span></span>
  
-| <span data-ttu-id="6eed7-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="6eed7-108">Member</span></span>| <span data-ttu-id="6eed7-109">種類</span><span class="sxs-lookup"><span data-stu-id="6eed7-109">Type</span></span>| <span data-ttu-id="6eed7-110">説明</span><span class="sxs-lookup"><span data-stu-id="6eed7-110">Description</span></span>| 
+| <span data-ttu-id="9fb4b-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="9fb4b-108">Member</span></span>| <span data-ttu-id="9fb4b-109">種類</span><span class="sxs-lookup"><span data-stu-id="9fb4b-109">Type</span></span>| <span data-ttu-id="9fb4b-110">説明</span><span class="sxs-lookup"><span data-stu-id="9fb4b-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="6eed7-111">code</span><span class="sxs-lookup"><span data-stu-id="6eed7-111">code</span></span>| <span data-ttu-id="6eed7-112">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="6eed7-112">32-bit signed integer</span></span> | <span data-ttu-id="6eed7-113">エラーの種類です。</span><span class="sxs-lookup"><span data-stu-id="6eed7-113">The type of error.</span></span> <span data-ttu-id="6eed7-114">使用可能な値は、以下の表をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6eed7-114">See the table below for possible values.</span></span> | 
-| <span data-ttu-id="6eed7-115">ソース</span><span class="sxs-lookup"><span data-stu-id="6eed7-115">source</span></span>| <span data-ttu-id="6eed7-116">string</span><span class="sxs-lookup"><span data-stu-id="6eed7-116">string</span></span> | <span data-ttu-id="6eed7-117">エラーが発生したサービスの名前。</span><span class="sxs-lookup"><span data-stu-id="6eed7-117">The name of the service that raised the error.</span></span> <span data-ttu-id="6eed7-118">たとえば、値の<code>ReputationFD</code>評判サービスでエラーがあったことを示します。</span><span class="sxs-lookup"><span data-stu-id="6eed7-118">For example, a value of <code>ReputationFD</code> indicates that the error was in the reputation service.</span></span> | 
-| <span data-ttu-id="6eed7-119">description</span><span class="sxs-lookup"><span data-stu-id="6eed7-119">description</span></span>| <span data-ttu-id="6eed7-120">string</span><span class="sxs-lookup"><span data-stu-id="6eed7-120">string</span></span>| <span data-ttu-id="6eed7-121">エラーの説明です。</span><span class="sxs-lookup"><span data-stu-id="6eed7-121">A description of the error.</span></span> | 
+| <span data-ttu-id="9fb4b-111">code</span><span class="sxs-lookup"><span data-stu-id="9fb4b-111">code</span></span>| <span data-ttu-id="9fb4b-112">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="9fb4b-112">32-bit signed integer</span></span> | <span data-ttu-id="9fb4b-113">エラーの種類です。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-113">The type of error.</span></span> <span data-ttu-id="9fb4b-114">使用可能な値は、以下の表をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-114">See the table below for possible values.</span></span> | 
+| <span data-ttu-id="9fb4b-115">ソース</span><span class="sxs-lookup"><span data-stu-id="9fb4b-115">source</span></span>| <span data-ttu-id="9fb4b-116">string</span><span class="sxs-lookup"><span data-stu-id="9fb4b-116">string</span></span> | <span data-ttu-id="9fb4b-117">エラーが発生したサービスの名前。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-117">The name of the service that raised the error.</span></span> <span data-ttu-id="9fb4b-118">たとえば、値の<code>ReputationFD</code>評判サービスでエラーがあったことを示します。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-118">For example, a value of <code>ReputationFD</code> indicates that the error was in the reputation service.</span></span> | 
+| <span data-ttu-id="9fb4b-119">description</span><span class="sxs-lookup"><span data-stu-id="9fb4b-119">description</span></span>| <span data-ttu-id="9fb4b-120">string</span><span class="sxs-lookup"><span data-stu-id="9fb4b-120">string</span></span>| <span data-ttu-id="9fb4b-121">エラーの説明です。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-121">A description of the error.</span></span> | 
  
 <a id="ID4EBC"></a>
 
  
-### <a name="error-codes"></a><span data-ttu-id="6eed7-122">エラー コード</span><span class="sxs-lookup"><span data-stu-id="6eed7-122">Error Codes</span></span>
+### <a name="error-codes"></a><span data-ttu-id="9fb4b-122">エラー コード</span><span class="sxs-lookup"><span data-stu-id="9fb4b-122">Error Codes</span></span>
  
-| <span data-ttu-id="6eed7-123">値</span><span class="sxs-lookup"><span data-stu-id="6eed7-123">Value</span></span>| <span data-ttu-id="6eed7-124">説明</span><span class="sxs-lookup"><span data-stu-id="6eed7-124">Description</span></span>| 
+| <span data-ttu-id="9fb4b-123">値</span><span class="sxs-lookup"><span data-stu-id="9fb4b-123">Value</span></span>| <span data-ttu-id="9fb4b-124">説明</span><span class="sxs-lookup"><span data-stu-id="9fb4b-124">Description</span></span>| 
 | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="6eed7-125">0</span><span class="sxs-lookup"><span data-stu-id="6eed7-125">0</span></span>| <span data-ttu-id="6eed7-126">成功エラーなし</span><span class="sxs-lookup"><span data-stu-id="6eed7-126">Success No error</span></span>| 
-| <span data-ttu-id="6eed7-127">4000</span><span class="sxs-lookup"><span data-stu-id="6eed7-127">4000</span></span>| <span data-ttu-id="6eed7-128">POST 要求に失敗しました検証で送信される要求本文の JSON ドキュメントが無効です。</span><span class="sxs-lookup"><span data-stu-id="6eed7-128">Invalid Request Body The JSON document submitted with a POST request failed validation.</span></span> <span data-ttu-id="6eed7-129">詳細については説明フィールドを参照してください。</span><span class="sxs-lookup"><span data-stu-id="6eed7-129">See the description field for details.</span></span> | 
-| <span data-ttu-id="6eed7-130">4100</span><span class="sxs-lookup"><span data-stu-id="6eed7-130">4100</span></span>| <span data-ttu-id="6eed7-131">ユーザーがいない存在、XUID 要求 URI に含まれているは XBOX Live で有効なユーザーにはありません。</span><span class="sxs-lookup"><span data-stu-id="6eed7-131">User Does Not Exist The XUID contained in the request URI does not represent a valid user on XBOX Live.</span></span>| 
-| <span data-ttu-id="6eed7-132">4500</span><span class="sxs-lookup"><span data-stu-id="6eed7-132">4500</span></span>| <span data-ttu-id="6eed7-133">承認エラー、呼び出し元は、要求された操作を実行する権限がありません。</span><span class="sxs-lookup"><span data-stu-id="6eed7-133">Authorization Error The caller is not authorized to perform the requested operation.</span></span>| 
-| <span data-ttu-id="6eed7-134">5000</span><span class="sxs-lookup"><span data-stu-id="6eed7-134">5000</span></span>| <span data-ttu-id="6eed7-135">サービスのエラーがあった内部サービス エラー</span><span class="sxs-lookup"><span data-stu-id="6eed7-135">Service Error There was an internal error in the service</span></span>| 
-| <span data-ttu-id="6eed7-136">5300</span><span class="sxs-lookup"><span data-stu-id="6eed7-136">5300</span></span>| <span data-ttu-id="6eed7-137">サービス提供を停止、サービスは利用できません。</span><span class="sxs-lookup"><span data-stu-id="6eed7-137">Service Unavailable The service is unavailable.</span></span>| 
+| <span data-ttu-id="9fb4b-125">0</span><span class="sxs-lookup"><span data-stu-id="9fb4b-125">0</span></span>| <span data-ttu-id="9fb4b-126">成功エラーなし</span><span class="sxs-lookup"><span data-stu-id="9fb4b-126">Success No error</span></span>| 
+| <span data-ttu-id="9fb4b-127">4000</span><span class="sxs-lookup"><span data-stu-id="9fb4b-127">4000</span></span>| <span data-ttu-id="9fb4b-128">POST 要求に失敗しました検証で送信される要求本文の JSON ドキュメントが無効です。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-128">Invalid Request Body The JSON document submitted with a POST request failed validation.</span></span> <span data-ttu-id="9fb4b-129">詳細については説明フィールドを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-129">See the description field for details.</span></span> | 
+| <span data-ttu-id="9fb4b-130">4100</span><span class="sxs-lookup"><span data-stu-id="9fb4b-130">4100</span></span>| <span data-ttu-id="9fb4b-131">ユーザーがいない存在、XUID 要求 URI に含まれているは XBOX Live で有効なユーザーにはありません。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-131">User Does Not Exist The XUID contained in the request URI does not represent a valid user on XBOX Live.</span></span>| 
+| <span data-ttu-id="9fb4b-132">4500</span><span class="sxs-lookup"><span data-stu-id="9fb4b-132">4500</span></span>| <span data-ttu-id="9fb4b-133">承認エラー、呼び出し元は、要求された操作を実行する権限がありません。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-133">Authorization Error The caller is not authorized to perform the requested operation.</span></span>| 
+| <span data-ttu-id="9fb4b-134">5000</span><span class="sxs-lookup"><span data-stu-id="9fb4b-134">5000</span></span>| <span data-ttu-id="9fb4b-135">サービスのエラーがあった内部サービス エラー</span><span class="sxs-lookup"><span data-stu-id="9fb4b-135">Service Error There was an internal error in the service</span></span>| 
+| <span data-ttu-id="9fb4b-136">5300</span><span class="sxs-lookup"><span data-stu-id="9fb4b-136">5300</span></span>| <span data-ttu-id="9fb4b-137">サービス提供を停止、サービスは利用できません。</span><span class="sxs-lookup"><span data-stu-id="9fb4b-137">Service Unavailable The service is unavailable.</span></span>| 
    
 <a id="ID4EQE"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="6eed7-138">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="6eed7-138">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="9fb4b-138">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="9fb4b-138">Sample JSON syntax</span></span>
  
 
 ```json
@@ -66,13 +66,13 @@ ms.locfileid: "4744882"
 <a id="ID4EZE"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="6eed7-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="6eed7-139">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9fb4b-139">関連項目</span><span class="sxs-lookup"><span data-stu-id="9fb4b-139">See also</span></span>
  
 <a id="ID4E2E"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="6eed7-140">Parent</span><span class="sxs-lookup"><span data-stu-id="6eed7-140">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="9fb4b-140">Parent</span><span class="sxs-lookup"><span data-stu-id="9fb4b-140">Parent</span></span> 
 
-[<span data-ttu-id="6eed7-141">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="6eed7-141">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="9fb4b-141">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="9fb4b-141">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

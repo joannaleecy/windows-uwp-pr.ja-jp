@@ -12,76 +12,76 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ada5040c97dcb283146cb528cf2107294b9b88b
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4741137"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5167819"
 ---
-# <a name="get-serviceconfigsscidsessions"></a><span data-ttu-id="9e465-104">GET (/serviceconfigs/{scid}/sessions)</span><span class="sxs-lookup"><span data-stu-id="9e465-104">GET (/serviceconfigs/{scid}/sessions)</span></span>
-<span data-ttu-id="9e465-105">指定したセッション情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="9e465-105">Retrieves specified session information.</span></span>
+# <a name="get-serviceconfigsscidsessions"></a><span data-ttu-id="e3c14-104">GET (/serviceconfigs/{scid}/sessions)</span><span class="sxs-lookup"><span data-stu-id="e3c14-104">GET (/serviceconfigs/{scid}/sessions)</span></span>
+<span data-ttu-id="e3c14-105">指定したセッション情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="e3c14-105">Retrieves specified session information.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="9e465-106">このメソッドが X Xbl コントラクト バージョンのヘッダーの要素が必要になりました。 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="9e465-106">This method now requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
+> <span data-ttu-id="e3c14-106">このメソッドが X Xbl コントラクト バージョンのヘッダーの要素が必要になりました。 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="e3c14-106">This method now requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
 
-  * [<span data-ttu-id="9e465-107">注釈</span><span class="sxs-lookup"><span data-stu-id="9e465-107">Remarks</span></span>](#ID4ET)
-  * [<span data-ttu-id="9e465-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9e465-108">URI parameters</span></span>](#ID4EKB)
-  * [<span data-ttu-id="9e465-109">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="9e465-109">HTTP status codes</span></span>](#ID4EXB)
-  * [<span data-ttu-id="9e465-110">要求本文</span><span class="sxs-lookup"><span data-stu-id="9e465-110">Request body</span></span>](#ID4EAC)
-  * [<span data-ttu-id="9e465-111">応答本文</span><span class="sxs-lookup"><span data-stu-id="9e465-111">Response body</span></span>](#ID4ELC)
+  * [<span data-ttu-id="e3c14-107">注釈</span><span class="sxs-lookup"><span data-stu-id="e3c14-107">Remarks</span></span>](#ID4ET)
+  * [<span data-ttu-id="e3c14-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="e3c14-108">URI parameters</span></span>](#ID4EKB)
+  * [<span data-ttu-id="e3c14-109">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="e3c14-109">HTTP status codes</span></span>](#ID4EXB)
+  * [<span data-ttu-id="e3c14-110">要求本文</span><span class="sxs-lookup"><span data-stu-id="e3c14-110">Request body</span></span>](#ID4EAC)
+  * [<span data-ttu-id="e3c14-111">応答本文</span><span class="sxs-lookup"><span data-stu-id="e3c14-111">Response body</span></span>](#ID4ELC)
 
 <a id="ID4ET"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="9e465-112">注釈</span><span class="sxs-lookup"><span data-stu-id="9e465-112">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="e3c14-112">注釈</span><span class="sxs-lookup"><span data-stu-id="e3c14-112">Remarks</span></span>
 
-<span data-ttu-id="9e465-113">この HTTP/REST メソッドは、指定されたフィルターのセッション情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="9e465-113">This HTTP/REST method retrieves session information for the supplied filters.</span></span> <span data-ttu-id="9e465-114">このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsAsync**でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="9e465-114">This method can be wrapped by **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsAsync**.</span></span>
-
-
-> [!NOTE] 
-> <span data-ttu-id="9e465-115">2015 マルチプレイヤーでは、このメソッドは<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsForUsersFilterAsync</b>によって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="9e465-115">For 2015 Multiplayer, this method is called by <b>Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsForUsersFilterAsync</b>.</span></span>  
-
+<span data-ttu-id="e3c14-113">この HTTP/REST メソッドは、指定されたフィルターのセッション情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="e3c14-113">This HTTP/REST method retrieves session information for the supplied filters.</span></span> <span data-ttu-id="e3c14-114">このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsAsync**でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="e3c14-114">This method can be wrapped by **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsAsync**.</span></span>
 
 
 > [!NOTE] 
-> <span data-ttu-id="9e465-116">このメソッドを呼び出すたびには、キーワード、Xbox ユーザー ID のフィルター、またはその両方を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="9e465-116">Every call to this method must include either a keyword, an Xbox user ID filter, or both.</span></span> <span data-ttu-id="9e465-117">呼び出し元が、<i>プライベート</i>と<i>予約</i>のパラメーターの適切なアクセス許可を持たない場合、メソッドは、そのようなセッションが実際に存在するかどうか、403 Forbidden のエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="9e465-117">If the caller does not have correct permissions for the <i>private</i> and <i>reservations</i> parameters, the method returns an error code of 403 Forbidden, whether or not any such sessions actually exist.</span></span>  
+> <span data-ttu-id="e3c14-115">2015 マルチプレイヤーでは、このメソッドは<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsForUsersFilterAsync</b>によって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="e3c14-115">For 2015 Multiplayer, this method is called by <b>Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsForUsersFilterAsync</b>.</span></span>  
+
+
+
+> [!NOTE] 
+> <span data-ttu-id="e3c14-116">このメソッドを呼び出すたびには、キーワード、Xbox ユーザー ID のフィルター、またはその両方を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="e3c14-116">Every call to this method must include either a keyword, an Xbox user ID filter, or both.</span></span> <span data-ttu-id="e3c14-117">呼び出し元が、<i>プライベート</i>と<i>予約</i>のパラメーターの適切なアクセス許可を持たない場合、メソッドは、そのようなセッションが実際に存在するかどうか、403 Forbidden のエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="e3c14-117">If the caller does not have correct permissions for the <i>private</i> and <i>reservations</i> parameters, the method returns an error code of 403 Forbidden, whether or not any such sessions actually exist.</span></span>  
 
 
 <a id="ID4EKB"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="9e465-118">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9e465-118">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="e3c14-118">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="e3c14-118">URI parameters</span></span>
 
-| <span data-ttu-id="9e465-119">パラメーター</span><span class="sxs-lookup"><span data-stu-id="9e465-119">Parameter</span></span>| <span data-ttu-id="9e465-120">型</span><span class="sxs-lookup"><span data-stu-id="9e465-120">Type</span></span>| <span data-ttu-id="9e465-121">説明</span><span class="sxs-lookup"><span data-stu-id="9e465-121">Description</span></span>|
+| <span data-ttu-id="e3c14-119">パラメーター</span><span class="sxs-lookup"><span data-stu-id="e3c14-119">Parameter</span></span>| <span data-ttu-id="e3c14-120">型</span><span class="sxs-lookup"><span data-stu-id="e3c14-120">Type</span></span>| <span data-ttu-id="e3c14-121">説明</span><span class="sxs-lookup"><span data-stu-id="e3c14-121">Description</span></span>|
 | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="9e465-122">scid</span><span class="sxs-lookup"><span data-stu-id="9e465-122">scid</span></span>| <span data-ttu-id="9e465-123">GUID</span><span class="sxs-lookup"><span data-stu-id="9e465-123">GUID</span></span>| <span data-ttu-id="9e465-124">サービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="9e465-124">Service configuration identifier (SCID).</span></span> <span data-ttu-id="9e465-125">パート 1 セッションの id。</span><span class="sxs-lookup"><span data-stu-id="9e465-125">Part 1 of the session ID.</span></span>|
-| <span data-ttu-id="9e465-126">キーワード</span><span class="sxs-lookup"><span data-stu-id="9e465-126">keyword</span></span>| <span data-ttu-id="9e465-127">string</span><span class="sxs-lookup"><span data-stu-id="9e465-127">string</span></span>| <span data-ttu-id="9e465-128">その文字列で識別されるだけのセッションに結果をフィルター処理するためのキーワードです。</span><span class="sxs-lookup"><span data-stu-id="9e465-128">A keyword used to filter results to just sessions identified with that string.</span></span>|
-| <span data-ttu-id="9e465-129">xuid</span><span class="sxs-lookup"><span data-stu-id="9e465-129">xuid</span></span>| <span data-ttu-id="9e465-130">GUID</span><span class="sxs-lookup"><span data-stu-id="9e465-130">GUID</span></span>| <span data-ttu-id="9e465-131">セッションを取得する対象のユーザーの Xbox ユーザー Id。</span><span class="sxs-lookup"><span data-stu-id="9e465-131">Xbox user IDs for the users for whom to retrieve sessions.</span></span> <span data-ttu-id="9e465-132">ユーザーは、セッション内でアクティブである必要があります。</span><span class="sxs-lookup"><span data-stu-id="9e465-132">The users must be active in the sessions.</span></span>|
-| <span data-ttu-id="9e465-133">予約</span><span class="sxs-lookup"><span data-stu-id="9e465-133">reservations</span></span>| <span data-ttu-id="9e465-134">string</span><span class="sxs-lookup"><span data-stu-id="9e465-134">string</span></span>| <span data-ttu-id="9e465-135">示す値をユーザーが持っていないセッションのリストが含まれている場合は受け入れ。</span><span class="sxs-lookup"><span data-stu-id="9e465-135">Value indicating if the list of sessions includes those that the users have not accepted.</span></span> <span data-ttu-id="9e465-136">このパラメーターを設定することのみを true に設定します。</span><span class="sxs-lookup"><span data-stu-id="9e465-136">This parameter can only be set to true.</span></span> <span data-ttu-id="9e465-137">この設定は、呼び出し元が、セッションにサーバー レベルのアクセスを必要と、または Xbox ユーザー ID フィルターに一致するように、呼び出し元の XUID を要求します。</span><span class="sxs-lookup"><span data-stu-id="9e465-137">This setting requires the caller to have server-level access to the session, or the caller's XUID claim to match the Xbox user ID filter.</span></span> |
-| <span data-ttu-id="9e465-138">非アクティブ</span><span class="sxs-lookup"><span data-stu-id="9e465-138">inactive</span></span>| <span data-ttu-id="9e465-139">string</span><span class="sxs-lookup"><span data-stu-id="9e465-139">string</span></span>| <span data-ttu-id="9e465-140">セッションのリストが含まれますをユーザーが受け入れられますがアクティブにプレイしていないかどうかを示す値。</span><span class="sxs-lookup"><span data-stu-id="9e465-140">Value indicating if the list of sessions includes those that the users have accepted but are not actively playing.</span></span> <span data-ttu-id="9e465-141">このパラメーターを設定することのみを true に設定します。</span><span class="sxs-lookup"><span data-stu-id="9e465-141">This parameter can only be set to true.</span></span>|
-| <span data-ttu-id="9e465-142">プライベート</span><span class="sxs-lookup"><span data-stu-id="9e465-142">private</span></span>| <span data-ttu-id="9e465-143">string</span><span class="sxs-lookup"><span data-stu-id="9e465-143">string</span></span>| <span data-ttu-id="9e465-144">プライベート セッション、セッションの一覧を示す値。</span><span class="sxs-lookup"><span data-stu-id="9e465-144">Value indicating if the list of sessions includes private sessions.</span></span> <span data-ttu-id="9e465-145">このパラメーターを設定することのみを true に設定します。</span><span class="sxs-lookup"><span data-stu-id="9e465-145">This parameter can only be set to true.</span></span> <span data-ttu-id="9e465-146">独自のセッションをクエリするときにのみ、またはサーバー間を照会すると、無効です。</span><span class="sxs-lookup"><span data-stu-id="9e465-146">It is valid only when querying your own sessions, or when querying server-to-server.</span></span> <span data-ttu-id="9e465-147">セッションへのサーバー レベルのアクセスが呼び出し元を true にこのパラメーターを設定する必要があります、または Xbox ユーザー ID フィルターに一致するように、呼び出し元の XUID を要求します。</span><span class="sxs-lookup"><span data-stu-id="9e465-147">Setting this parameter to true requires the caller to have server-level access to the session, or the caller's XUID claim to match the Xbox user ID filter.</span></span> |
-| <span data-ttu-id="9e465-148">visibility</span><span class="sxs-lookup"><span data-stu-id="9e465-148">visibility</span></span>| <span data-ttu-id="9e465-149">string</span><span class="sxs-lookup"><span data-stu-id="9e465-149">string</span></span>| <span data-ttu-id="9e465-150">結果のフィルタ リングで使われる表示状態を示す列挙値。</span><span class="sxs-lookup"><span data-stu-id="9e465-150">An enumeration value indicating visibility status used in filtering results.</span></span> <span data-ttu-id="9e465-151">現在このパラメーターのみに設定できます開くを開いているセッションを含めます。</span><span class="sxs-lookup"><span data-stu-id="9e465-151">Currently this parameter can only be set to Open to include open sessions.</span></span> <span data-ttu-id="9e465-152"><b>MultiplayerSessionVisibility</b>を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9e465-152">See <b>MultiplayerSessionVisibility</b>.</span></span>|
-| <span data-ttu-id="9e465-153">version</span><span class="sxs-lookup"><span data-stu-id="9e465-153">version</span></span>| <span data-ttu-id="9e465-154">string</span><span class="sxs-lookup"><span data-stu-id="9e465-154">string</span></span>| <span data-ttu-id="9e465-155">正の整数を示すセッションのメジャー バージョンまたはセッションの下に含めます。</span><span class="sxs-lookup"><span data-stu-id="9e465-155">A positive integer indicating the major session version or lower of the sessions to include.</span></span> <span data-ttu-id="9e465-156">値は 100 モジュロ要求のコントラクト バージョン以下である必要があります。</span><span class="sxs-lookup"><span data-stu-id="9e465-156">The value must be less than or equal to the request's contract version modulo 100.</span></span>|
-| <span data-ttu-id="9e465-157">アプリでは</span><span class="sxs-lookup"><span data-stu-id="9e465-157">take</span></span>| <span data-ttu-id="9e465-158">string</span><span class="sxs-lookup"><span data-stu-id="9e465-158">string</span></span>| <span data-ttu-id="9e465-159">正の整数セッションの最大数を示すを取得します。</span><span class="sxs-lookup"><span data-stu-id="9e465-159">A positive integer indicating the maximum number of sessions to retrieve.</span></span>|
+| <span data-ttu-id="e3c14-122">scid</span><span class="sxs-lookup"><span data-stu-id="e3c14-122">scid</span></span>| <span data-ttu-id="e3c14-123">GUID</span><span class="sxs-lookup"><span data-stu-id="e3c14-123">GUID</span></span>| <span data-ttu-id="e3c14-124">サービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="e3c14-124">Service configuration identifier (SCID).</span></span> <span data-ttu-id="e3c14-125">パート 1 セッションの id。</span><span class="sxs-lookup"><span data-stu-id="e3c14-125">Part 1 of the session ID.</span></span>|
+| <span data-ttu-id="e3c14-126">キーワード</span><span class="sxs-lookup"><span data-stu-id="e3c14-126">keyword</span></span>| <span data-ttu-id="e3c14-127">string</span><span class="sxs-lookup"><span data-stu-id="e3c14-127">string</span></span>| <span data-ttu-id="e3c14-128">その文字列で識別されるだけのセッションに結果をフィルター処理するためのキーワードです。</span><span class="sxs-lookup"><span data-stu-id="e3c14-128">A keyword used to filter results to just sessions identified with that string.</span></span>|
+| <span data-ttu-id="e3c14-129">xuid</span><span class="sxs-lookup"><span data-stu-id="e3c14-129">xuid</span></span>| <span data-ttu-id="e3c14-130">GUID</span><span class="sxs-lookup"><span data-stu-id="e3c14-130">GUID</span></span>| <span data-ttu-id="e3c14-131">セッションを取得する対象のユーザーの Xbox ユーザー Id。</span><span class="sxs-lookup"><span data-stu-id="e3c14-131">Xbox user IDs for the users for whom to retrieve sessions.</span></span> <span data-ttu-id="e3c14-132">ユーザーは、セッション内でアクティブである必要があります。</span><span class="sxs-lookup"><span data-stu-id="e3c14-132">The users must be active in the sessions.</span></span>|
+| <span data-ttu-id="e3c14-133">予約</span><span class="sxs-lookup"><span data-stu-id="e3c14-133">reservations</span></span>| <span data-ttu-id="e3c14-134">string</span><span class="sxs-lookup"><span data-stu-id="e3c14-134">string</span></span>| <span data-ttu-id="e3c14-135">示す値をユーザーが持っていないセッションのリストが含まれている場合は受け入れ。</span><span class="sxs-lookup"><span data-stu-id="e3c14-135">Value indicating if the list of sessions includes those that the users have not accepted.</span></span> <span data-ttu-id="e3c14-136">このパラメーターを設定することのみを true に設定します。</span><span class="sxs-lookup"><span data-stu-id="e3c14-136">This parameter can only be set to true.</span></span> <span data-ttu-id="e3c14-137">この設定は、呼び出し元が、セッションにサーバー レベルのアクセスを必要と、または Xbox ユーザー ID フィルターに一致するように、呼び出し元の XUID を要求します。</span><span class="sxs-lookup"><span data-stu-id="e3c14-137">This setting requires the caller to have server-level access to the session, or the caller's XUID claim to match the Xbox user ID filter.</span></span> |
+| <span data-ttu-id="e3c14-138">非アクティブ</span><span class="sxs-lookup"><span data-stu-id="e3c14-138">inactive</span></span>| <span data-ttu-id="e3c14-139">string</span><span class="sxs-lookup"><span data-stu-id="e3c14-139">string</span></span>| <span data-ttu-id="e3c14-140">セッションのリストが含まれますをユーザーが受け入れられますがアクティブにプレイしていないかどうかを示す値。</span><span class="sxs-lookup"><span data-stu-id="e3c14-140">Value indicating if the list of sessions includes those that the users have accepted but are not actively playing.</span></span> <span data-ttu-id="e3c14-141">このパラメーターを設定することのみを true に設定します。</span><span class="sxs-lookup"><span data-stu-id="e3c14-141">This parameter can only be set to true.</span></span>|
+| <span data-ttu-id="e3c14-142">プライベート</span><span class="sxs-lookup"><span data-stu-id="e3c14-142">private</span></span>| <span data-ttu-id="e3c14-143">string</span><span class="sxs-lookup"><span data-stu-id="e3c14-143">string</span></span>| <span data-ttu-id="e3c14-144">プライベート セッション、セッションの一覧を示す値。</span><span class="sxs-lookup"><span data-stu-id="e3c14-144">Value indicating if the list of sessions includes private sessions.</span></span> <span data-ttu-id="e3c14-145">このパラメーターを設定することのみを true に設定します。</span><span class="sxs-lookup"><span data-stu-id="e3c14-145">This parameter can only be set to true.</span></span> <span data-ttu-id="e3c14-146">独自のセッションをクエリするときにのみ、またはサーバー間を照会すると、無効です。</span><span class="sxs-lookup"><span data-stu-id="e3c14-146">It is valid only when querying your own sessions, or when querying server-to-server.</span></span> <span data-ttu-id="e3c14-147">セッションへのサーバー レベルのアクセスが呼び出し元を true にこのパラメーターを設定する必要があります、または Xbox ユーザー ID フィルターに一致するように、呼び出し元の XUID を要求します。</span><span class="sxs-lookup"><span data-stu-id="e3c14-147">Setting this parameter to true requires the caller to have server-level access to the session, or the caller's XUID claim to match the Xbox user ID filter.</span></span> |
+| <span data-ttu-id="e3c14-148">visibility</span><span class="sxs-lookup"><span data-stu-id="e3c14-148">visibility</span></span>| <span data-ttu-id="e3c14-149">string</span><span class="sxs-lookup"><span data-stu-id="e3c14-149">string</span></span>| <span data-ttu-id="e3c14-150">結果のフィルタ リングで使われる表示状態を示す列挙値。</span><span class="sxs-lookup"><span data-stu-id="e3c14-150">An enumeration value indicating visibility status used in filtering results.</span></span> <span data-ttu-id="e3c14-151">現在このパラメーターのみに設定できます開くを開いているセッションを含めます。</span><span class="sxs-lookup"><span data-stu-id="e3c14-151">Currently this parameter can only be set to Open to include open sessions.</span></span> <span data-ttu-id="e3c14-152"><b>MultiplayerSessionVisibility</b>を参照してください。</span><span class="sxs-lookup"><span data-stu-id="e3c14-152">See <b>MultiplayerSessionVisibility</b>.</span></span>|
+| <span data-ttu-id="e3c14-153">version</span><span class="sxs-lookup"><span data-stu-id="e3c14-153">version</span></span>| <span data-ttu-id="e3c14-154">string</span><span class="sxs-lookup"><span data-stu-id="e3c14-154">string</span></span>| <span data-ttu-id="e3c14-155">正の整数を示すセッションのメジャー バージョンまたはセッションの下に含めます。</span><span class="sxs-lookup"><span data-stu-id="e3c14-155">A positive integer indicating the major session version or lower of the sessions to include.</span></span> <span data-ttu-id="e3c14-156">値は 100 モジュロ要求のコントラクト バージョン以下である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e3c14-156">The value must be less than or equal to the request's contract version modulo 100.</span></span>|
+| <span data-ttu-id="e3c14-157">アプリでは</span><span class="sxs-lookup"><span data-stu-id="e3c14-157">take</span></span>| <span data-ttu-id="e3c14-158">string</span><span class="sxs-lookup"><span data-stu-id="e3c14-158">string</span></span>| <span data-ttu-id="e3c14-159">正の整数セッションの最大数を示すを取得します。</span><span class="sxs-lookup"><span data-stu-id="e3c14-159">A positive integer indicating the maximum number of sessions to retrieve.</span></span>|
 
 <a id="ID4EXB"></a>
 
 
-## <a name="http-status-codes"></a><span data-ttu-id="9e465-160">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="9e465-160">HTTP status codes</span></span>
-<span data-ttu-id="9e465-161">サービスは、MPSD に適用される、HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="9e465-161">The service returns an HTTP status code as it applies to MPSD.</span></span>  
+## <a name="http-status-codes"></a><span data-ttu-id="e3c14-160">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="e3c14-160">HTTP status codes</span></span>
+<span data-ttu-id="e3c14-161">サービスは、MPSD に適用される、HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="e3c14-161">The service returns an HTTP status code as it applies to MPSD.</span></span>  
 <a id="ID4EAC"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="9e465-162">要求本文</span><span class="sxs-lookup"><span data-stu-id="9e465-162">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="e3c14-162">要求本文</span><span class="sxs-lookup"><span data-stu-id="e3c14-162">Request body</span></span>
 
-<span data-ttu-id="9e465-163">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="9e465-163">No objects are sent in the body of this request.</span></span>
+<span data-ttu-id="e3c14-163">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="e3c14-163">No objects are sent in the body of this request.</span></span>
 
 <a id="ID4ELC"></a>
 
 
-## <a name="response-body"></a><span data-ttu-id="9e465-164">応答本文</span><span class="sxs-lookup"><span data-stu-id="9e465-164">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="e3c14-164">応答本文</span><span class="sxs-lookup"><span data-stu-id="e3c14-164">Response body</span></span>
 
-<span data-ttu-id="9e465-165">このメソッドからの戻り値は、いくつかのセッション データが含まれているインラインでのセッション参照の JSON 配列です。</span><span class="sxs-lookup"><span data-stu-id="9e465-165">The return from this method is a JSON array of session references, with some session data included inline.</span></span>
+<span data-ttu-id="e3c14-165">このメソッドからの戻り値は、いくつかのセッション データが含まれているインラインでのセッション参照の JSON 配列です。</span><span class="sxs-lookup"><span data-stu-id="e3c14-165">The return from this method is a JSON array of session references, with some session data included inline.</span></span>
 
 
 ```cpp
@@ -110,11 +110,11 @@ ms.locfileid: "4741137"
 <a id="ID4EWC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="9e465-166">関連項目</span><span class="sxs-lookup"><span data-stu-id="9e465-166">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e3c14-166">関連項目</span><span class="sxs-lookup"><span data-stu-id="e3c14-166">See also</span></span>
 
 <a id="ID4EYC"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="9e465-167">Parent</span><span class="sxs-lookup"><span data-stu-id="9e465-167">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="e3c14-167">Parent</span><span class="sxs-lookup"><span data-stu-id="e3c14-167">Parent</span></span>
 
-[<span data-ttu-id="9e465-168">/serviceconfigs/{scid}/sessions</span><span class="sxs-lookup"><span data-stu-id="9e465-168">/serviceconfigs/{scid}/sessions</span></span>](uri-serviceconfigsscidsessions.md)
+[<span data-ttu-id="e3c14-168">/serviceconfigs/{scid}/sessions</span><span class="sxs-lookup"><span data-stu-id="e3c14-168">/serviceconfigs/{scid}/sessions</span></span>](uri-serviceconfigsscidsessions.md)
