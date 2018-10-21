@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: a0c30014c3688695847a5734adfa7cbc7498ba4a
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.openlocfilehash: 8bf9401650b2f769a401a5226853f7f5ef4942d8
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4741724"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5165266"
 ---
 # <a name="windows-dev-center-service-configuration"></a>Windows デベロッパー センターのサービス構成
 
@@ -32,6 +32,8 @@ Xbox Live 構成にアクセスするページ、 [Windows デベロッパー �
 
 ## <a name="in-this-section"></a>このセクションの内容
 
+* [要約](dev-center/summary.md)
+
 * [Xbox Live のセットアップ](dev-center/xbox-live-setup.md)
 
 * [Achievements 2017](dev-center/achievements-in-udc.md)
@@ -48,9 +50,7 @@ Xbox Live 構成にアクセスするページ、 [Windows デベロッパー �
 
 * [タイトル ストレージ](dev-center/title-storage.md)
 
-* [データの共有](dev-center/data-sharing-udc.md)
-
-* [ローカライズされた文字列](dev-center/localized-strings.md)
+* [アクセス ポリシー](dev-center/access-policies-udc.md)
 
 * [シングル サインオン](dev-center/single-sign-on.md)
 
