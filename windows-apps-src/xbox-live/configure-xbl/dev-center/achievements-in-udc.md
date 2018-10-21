@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: 108d022909afc9a118cc1f011acf100972576841
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.openlocfilehash: 80bd83fed60c17f0c575f0b5e3847c902a6c0e62
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4751609"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "5167884"
 ---
 # <a name="configure-achievements-2017-on-dev-center"></a>デベロッパー センターでの Achievements 2017 の構成
 
@@ -27,7 +27,7 @@ ms.locfileid: "4751609"
 1. **[Services]** > **Xbox Live** > **[Achievements]** の順に選択して、タイトルの実績セクションに移動します。
 2. **[New Achievement]** ボタンをクリックし、フォームに記入します。  完了したら、**[Save]** をクリックします。
 
-![Microsoft デベロッパー センターで新しい実績を作成するスクリーンショット](../../images/dev-center/achievements-1.png)
+![Microsoft デベロッパー センターで新しい実績を作成するスクリーンショット](../../images/dev-center/achievement-table.png)
 
 ## <a name="description"></a>説明
 説明セクションに、名前やロック状態/ロック解除状態での説明など、実績の基本情報を入力します。 [Microsoft デベロッパー センター](https://developer.microsoft.com/dashboard) で **[Localized strings]** サービス構成セクションにアクセスして、実績にローカライゼーション サポートを追加することができます。
@@ -63,7 +63,7 @@ ms.locfileid: "4751609"
 
 新しいリワードを作成するには、**[Additional Rewards]** セクションの **[Add Reward]** ボタンをクリックし、フォームに記入します。
 
-![Microsoft デベロッパー センターで実績にリワードを追加するスクリーンショット](../../images/dev-center/achievements-4.png)
+![Microsoft デベロッパー センターで実績にリワードを追加するスクリーンショット](../../images/dev-center/achievement-reward.png)
 
 ### <a name="reward-details"></a>Reward Details (リワードの詳細)
 [Reward Details] に記入して、新しいリワードを関連付けます。 完了したら、**[Add]** をクリックします。
