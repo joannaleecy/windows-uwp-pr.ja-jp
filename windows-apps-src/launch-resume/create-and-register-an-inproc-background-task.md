@@ -11,11 +11,11 @@ keywords: バック グラウンド タスクの windows 10, uwp,
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 5879977662dc2bd609d09e5fe53fc2a2f0b9180f
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5170516"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5398918"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a><span data-ttu-id="8c39b-104">インプロセス バックグラウンド タスクの作成と登録</span><span class="sxs-lookup"><span data-stu-id="8c39b-104">Create and register an in-process background task</span></span>
 

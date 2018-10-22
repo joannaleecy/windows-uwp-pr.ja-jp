@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d6833309ce990aee72fd07deab9ecde04eca3b0e
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5156715"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410434"
 ---
 # <a name="handles"></a><span data-ttu-id="517fa-104">/handles</span><span class="sxs-lookup"><span data-stu-id="517fa-104">/handles</span></span>
 <span data-ttu-id="517fa-105">Xbox One ダッシュ ボードのユーザー エクスペリエンスに表示されると、必要な場合は、セッション メンバーを招待するユーザーの現在のアクティビティのセッションを設定する POST 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="517fa-105">Supports a POST operation to set the session for the user's current activity to be displayed in Xbox One dashboard user experience, and to invite session members if required.</span></span> 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 申請 API, コード例
 ms.localizationpriority: medium
 ms.openlocfilehash: f728a17d98d53cf1783452ddfd543c1062156200
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169582"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5404593"
 ---
 # <a name="code-examples-for-the-submission-api"></a><span data-ttu-id="63d92-104">申請 API 用のコード例</span><span class="sxs-lookup"><span data-stu-id="63d92-104">Code examples for the submission API</span></span>
 

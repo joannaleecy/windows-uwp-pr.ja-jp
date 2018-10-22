@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト
 ms.localizationpriority: medium
 ms.openlocfilehash: 02d04074ece0033da8c3454a95bc35af201903f3
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5170312"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5404606"
 ---
 # <a name="discover-remote-devices"></a><span data-ttu-id="1c6b3-104">リモート デバイスの検出</span><span class="sxs-lookup"><span data-stu-id="1c6b3-104">Discover remote devices</span></span>
 <span data-ttu-id="1c6b3-105">アプリは、ワイヤレス ネットワーク、Bluetooth、およびクラウド接続を使って、検出側デバイスと同じ Microsoft アカウントでサインインしている Windows デバイスを検出できます。</span><span class="sxs-lookup"><span data-stu-id="1c6b3-105">Your app can use the wireless network, Bluetooth, and cloud connection to discover Windows devices that are signed on with the same Microsoft account as the discovering device.</span></span> <span data-ttu-id="1c6b3-106">リモート デバイスを検出するために特別なソフトウェアをインストールする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="1c6b3-106">The remote devices do not need to have any special software installed in order to be discoverable.</span></span>

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10 では、ネイティブ イメージ コンパイラ
 ms.localizationpriority: medium
 ms.openlocfilehash: d98b576fb51a8f9507802796ab359d0d00d21998
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158685"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5397401"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a><span data-ttu-id="db3d3-103">ネイティブ イメージを使って、.NET デスクトップ アプリを最適化します。</span><span class="sxs-lookup"><span data-stu-id="db3d3-103">Optimize your .NET Desktop apps with native images</span></span>
 

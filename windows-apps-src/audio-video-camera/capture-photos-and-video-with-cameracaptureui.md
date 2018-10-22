@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ba33a1e79a2447c5dac546ce0f1caeaf16929a3
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5168971"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5403264"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a><span data-ttu-id="de7fd-104">Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ</span><span class="sxs-lookup"><span data-stu-id="de7fd-104">Capture photos and video with Windows built-in camera UI</span></span>
 
