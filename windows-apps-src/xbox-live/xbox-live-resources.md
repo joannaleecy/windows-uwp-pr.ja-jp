@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, UWP, ゲーム, Xbox, Xbox Live, リソース, API, リファレンス
 ms.localizationpriority: medium
 ms.openlocfilehash: ee6dd97d2c49c292bb3390f879368bcb76790bbb
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5169693"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5409283"
 ---
 # <a name="xbox-live-resources"></a><span data-ttu-id="ba35e-104">Xbox Live リソース</span><span class="sxs-lookup"><span data-stu-id="ba35e-104">Xbox Live resources</span></span>
 

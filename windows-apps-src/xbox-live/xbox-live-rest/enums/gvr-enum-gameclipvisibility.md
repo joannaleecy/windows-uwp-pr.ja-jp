@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 85d7390f16d2cc8f61d76f51713c2903a6fd2c9c
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5163397"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5409466"
 ---
 # <a name="gameclipvisibility-enumeration"></a><span data-ttu-id="c6440-104">GameClipVisibility 列挙型</span><span class="sxs-lookup"><span data-stu-id="c6440-104">GameClipVisibility Enumeration</span></span>
 <span data-ttu-id="c6440-105">GameClipVisibility 列挙型をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="c6440-105">Details the GameClipVisibility enumeration.</span></span> 
