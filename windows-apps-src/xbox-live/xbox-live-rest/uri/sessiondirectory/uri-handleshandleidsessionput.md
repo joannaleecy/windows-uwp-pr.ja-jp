@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 89572da87f4975aeeaa1ae7506a34f2b9cb4e72a
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5158130"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5401825"
 ---
 # <a name="put-handleshandle-idsession"></a><span data-ttu-id="dab29-104">PUT (/handles/{handle-id}/session)</span><span class="sxs-lookup"><span data-stu-id="dab29-104">PUT (/handles/{handle-id}/session)</span></span>
 <span data-ttu-id="dab29-105">作成またはハンドルを逆参照によってセッションを更新します。</span><span class="sxs-lookup"><span data-stu-id="dab29-105">Creates or updates a session by dereferencing a handle.</span></span>
