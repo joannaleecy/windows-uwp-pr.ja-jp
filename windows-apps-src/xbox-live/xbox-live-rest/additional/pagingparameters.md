@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e1ed654e4dc1c0f1233ecdedf5d4af66da868bff
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5164858"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5396621"
 ---
 # <a name="paging-parameters"></a><span data-ttu-id="ad831-104">ページング パラメーター</span><span class="sxs-lookup"><span data-stu-id="ad831-104">Paging Parameters</span></span>
  

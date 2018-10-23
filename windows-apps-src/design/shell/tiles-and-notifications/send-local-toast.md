@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, トースト通知の送信, 通知, 通知の送信, トースト通知, 方法, クイックスタート, 作業の開始, コード サンプル, チュートリアル
 ms.localizationpriority: medium
 ms.openlocfilehash: 656e6123db1fc9ea0f3d8c6b6fb106864200e431
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5171506"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5404136"
 ---
 # <a name="send-a-local-toast-notification"></a><span data-ttu-id="84151-103">ローカル トースト通知の送信</span><span class="sxs-lookup"><span data-stu-id="84151-103">Send a local toast notification</span></span>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e91d4bd481188f4d29af68af2c4572b26d446ae
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5157950"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408899"
 ---
 # <a name="send-a-local-tile-notification"></a><span data-ttu-id="287e3-103">ローカル タイル通知の送信</span><span class="sxs-lookup"><span data-stu-id="287e3-103">Send a local tile notification</span></span>
  

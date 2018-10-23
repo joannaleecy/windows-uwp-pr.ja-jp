@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, ExtendedJsonData, Store 製品, スキーマ
 ms.localizationpriority: medium
 ms.openlocfilehash: 77faa88524f348736c4c997dcd18ded200e9fd86
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5164092"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406644"
 ---
 # <a name="data-schemas-for-store-products"></a><span data-ttu-id="1c9c8-104">Store 製品のデータ スキーマ</span><span class="sxs-lookup"><span data-stu-id="1c9c8-104">Data schemas for Store products</span></span>
 

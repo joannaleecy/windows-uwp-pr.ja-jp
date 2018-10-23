@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f5af1639f5348fe20c36c56c1301f723d832f7
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "5171050"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5397458"
 ---
 # <a name="gameresult-json"></a><span data-ttu-id="1b831-104">GameResult (JSON)</span><span class="sxs-lookup"><span data-stu-id="1b831-104">GameResult (JSON)</span></span>
 <span data-ttu-id="1b831-105">ゲーム セッションの結果を示すデータを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="1b831-105">A JSON object representing data that describes the results of a game session.</span></span> 
