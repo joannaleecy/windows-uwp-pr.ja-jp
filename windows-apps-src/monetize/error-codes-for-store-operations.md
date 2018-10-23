@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, アプリ内購入, Iap, アドオン, エラー コード
 ms.localizationpriority: medium
 ms.openlocfilehash: bc2d3a4562be403172520f8377afb16c782a49c0
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397657"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5432916"
 ---
 # <a name="error-codes-for-store-operations"></a><span data-ttu-id="9f3df-104">Microsoft Store の操作のエラー コード</span><span class="sxs-lookup"><span data-stu-id="9f3df-104">Error codes for Store operations</span></span>
 

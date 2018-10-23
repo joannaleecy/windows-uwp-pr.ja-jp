@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a4685a891facab39cb984f0b2d5f697e22477233
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398423"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5445889"
 ---
 # <a name="drag-and-drop"></a><span data-ttu-id="dd133-104">ドラッグ アンド ドロップ</span><span class="sxs-lookup"><span data-stu-id="dd133-104">Drag and drop</span></span>
 

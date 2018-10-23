@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請のコミット, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d20bffe2be163db568af0b16bdfef8cd600271
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5409801"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5430823"
 ---
 # <a name="commit-an-add-on-submission"></a><span data-ttu-id="d8ff2-104">アドオンの申請のコミット</span><span class="sxs-lookup"><span data-stu-id="d8ff2-104">Commit an add-on submission</span></span>
 
