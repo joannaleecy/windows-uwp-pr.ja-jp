@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、作成者、COM、コンポーネント
 ms.localizationpriority: medium
-ms.openlocfilehash: 94f59833f4c657445b7135b1158974d8a553813f
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.openlocfilehash: 24fd024ee25a6868b8c25b77ce31edc6662bbb6d
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5160024"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408385"
 ---
 # <a name="author-com-components-with-cwinrt"></a>C++/WinRT での COM コンポーネントの作成
 
@@ -423,29 +423,7 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 Microsoft Visual Studio で新しいプロジェクトを作成して、プロセス内での COM サーバーを作成するタスクを開始することができます。 **Visual C**を作成 > **Windows デスクトップ** > **ダイナミック リンク ライブラリ (DLL)** プロジェクトです。
 
-### <a name="set-project-properties"></a>プロジェクトのプロパティを設定します。
-
-**一般的な**プロパティをプロジェクトに移動 \> **Windows SDK バージョン**、および選択の**すべての構成**と**すべてのプラットフォーム**です。 *10.0.17134.0 (Windows 10、バージョン 1803)*、またはそれ以降は、 **Windows SDK バージョン**を設定します。
-
-C++、Visual Studio サポートを追加する/プロジェクトに WinRT の編集、`.vcxproj`ファイルを検索`<PropertyGroup Label="Globals">`と、そのプロパティ グループ内でプロパティを設定`<CppWinRTEnabled>true</CppWinRTEnabled>`します。
-
-C++/WinRT の c++ 17 標準から機能を使用して、プロジェクト プロパティ**C/C++** 設定 > **言語** > **標準的な C++ 言語**に*ISO C 17 標準 (//std:c では 17)* します。
-
-### <a name="the-precompiled-header"></a>プリコンパイル済みヘッダー
-
-名前を変更、`stdafx.h`と`stdafx.cpp`に`pch.h`と`pch.cpp`、それぞれします。 **C/C++** プロジェクトのプロパティを設定 > **プリコンパイル済みヘッダー** >  *pch.h*を**プリコンパイル済みヘッダー ファイル**です。
-
-検索し、置換すべて`#include "stdafx.h"`と`#include "pch.h"`します。
-
-`pch.h`、含める`winrt/base.h`します。
-
-```cppwinrt
-// pch.h
-...
-#include <winrt/base.h>
-```
-
-発生していないを確認[新しいプロジェクトがコンパイルされませんなぜかどうか。](/windows/uwp/cpp-and-winrt-apis/faq)します。
+C + を追加する//winrt サポート、新しいプロジェクトを説明した手順をで[を追加するには、C++ の Windows デスクトップ アプリケーション プロジェクトを変更する/WinRT サポート](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)します。
 
 ### <a name="implement-the-coclass-class-factory-and-in-proc-server-exports"></a>コクラス、クラスの出荷時のインプロセス サーバーのエクスポートを実装します。
 
