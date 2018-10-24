@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: aa01cc3d70db7a94667e944d1a1739e911f94b0c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439151"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469771"
 ---
 # <a name="cryptography"></a>暗号化
 
@@ -46,7 +46,7 @@ ms.locfileid: "5439151"
 | キー ストレージ プロバイダー        | キー マテリアルを格納するコンテナー。 現在、キーはソフトウェア、スマート カード、またはトラステッド プラットフォーム モジュール (TPM) に格納できます。                                                                   |
 | X.509 証明書           | 個人、システム、またはエンティティをその他の関係者に識別させるために、通常、証明機関によって発行されるデジタル ドキュメント。                                            |
 
- 
+ 
 ## <a name="namespaces"></a>名前空間
 
 アプリでは、以下の名前空間を使うことができます。
@@ -152,4 +152,4 @@ SDK では、パスワードベースのデータ保護を行うのための簡�
 | [暗号化に関する輸出制限の順守](export-restrictions-on-cryptography.md) | アプリでの暗号化が、Microsoft Store に登録されない可能性がある方法で使われていないかどうかを判断する場合に、この情報を利用してください。                                                                                                                                                                                                                                                                                                                                                                                            |
 | [一般的な暗号化タスク](common-cryptography-tasks.md)                     | これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなど、一般的な UWP 暗号化タスクのコード例が示されています。                                                                                                                                                                                                                                                                                    |
 
- 
+ 

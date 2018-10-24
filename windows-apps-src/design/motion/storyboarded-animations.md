@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c03d99781114c4fefff04cc25930748ec16182f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434503"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470400"
 ---
 # <a name="storyboarded-animations"></a>ストーリーボードに設定されたアニメーション
 
@@ -153,7 +153,7 @@ Windows ランタイムのアニメーション システムには、ストー�
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By では null が許容される
 
-**From**、**To**、または **By** は省略でき、省略した値の代わりにアニメーション化されない現在の値を使うことができると説明しました。 アニメーションの **From**、**To**、**By** の各プロパティは、想定した型ではない場合があります。 たとえば、[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) プロパティの型は [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) ではなく、 **Double** に対しては [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) です。 既定値は 0 ではなく **null** です。 **null** 値により、アニメーション システムは、**From**、**To**、または **By** プロパティの値が明示的に設定されていないことを識別します。 Visual C++ コンポーネント拡張機能 (C++/CX) には **Nullable** 型がないため、代わりに [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864) を使います。
+**From**、**To**、または **By** は省略でき、省略した値の代わりにアニメーション化されない現在の値を使うことができると説明しました。 アニメーションの **From**、**To**、**By** の各プロパティは、想定した型ではない場合があります。 たとえば、[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) プロパティの型は [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) ではなく、 **Double** に対しては [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) です。 既定値は 0 ではなく **null** です。 **null** 値により、アニメーション システムは、**From**、**To**、または **By** プロパティの値が明示的に設定されていないことを識別します。 VisualC ではコンポーネント拡張機能 (、C++/cli CX) [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864)を代わりに使用するため、 **null 値**の種類はありません。
 
 ### <a name="other-properties-of-an-animation"></a>アニメーションのその他のプロパティ
 
@@ -314,7 +314,7 @@ myStoryBoard.Begin()
 > [!TIP]
 > アプリ コードからアニメーションを開始するアプリのシナリオを実現するためにコードを記述している際に、アニメーションや切り替えが、独自の UI シナリオのためのアニメーション ライブラリに既に存在するかどうかをもう一度確かめたい場合があります。 ライブラリ アニメーションは使いやすいうえ、すべての Windows ランタイム アプリで UI エクスペリエンスの一貫性を高めるのに役立ちます。
 
- 
+ 
 
 ### <a name="animations-for-visual-states"></a>表示状態用のアニメーション
 
@@ -341,9 +341,9 @@ XAML で完全に宣言できるアニメーションをある方法で開始で
 * [コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/Mt210948)
 * [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
- 
+ 
 
- 
+ 
 
 
 

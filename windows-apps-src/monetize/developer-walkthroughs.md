@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, Advertising, チュートリアル
 ms.localizationpriority: medium
 ms.openlocfilehash: d54a70b01f0885ccabfe90c78330a63dc98a4d23
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434480"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470711"
 ---
 # <a name="implement-ads-in-your-app"></a>アプリでの広告の実装
 
@@ -32,6 +32,6 @@ ms.locfileid: "5434480"
 
 
 
- 
+ 
 
- 
+ 

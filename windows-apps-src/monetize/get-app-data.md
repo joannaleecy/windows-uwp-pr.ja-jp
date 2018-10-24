@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ データ
 ms.localizationpriority: medium
 ms.openlocfilehash: 6940c1079c7973bc4fd639345c5d5e3f33b0221f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442772"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474781"
 ---
 # <a name="get-app-data"></a>アプリ データの取得
 
@@ -188,7 +188,7 @@ Microsoft Store 申請 API に関するすべての[前提条件](create-and-man
 |-----------------|---------|------------------------------|
 | id            | string  | 申請 ID。    |
 | resourceLocation   | string  | 申請の完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。            |
- 
+ 
 <span/>
 
 ## <a name="related-topics"></a>関連トピック

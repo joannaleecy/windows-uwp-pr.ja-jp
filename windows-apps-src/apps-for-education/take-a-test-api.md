@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
 ms.openlocfilehash: 38596ad12ac309db5dc60e4a5183eee9bf8c7b7c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441784"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469927"
 ---
 # <a name="take-a-test-javascript-api"></a>テスト JavaScript API
 
@@ -32,7 +32,7 @@ ms.locfileid: "5441784"
 
 ### <a name="security-namespace"></a>セキュリティ名前空間
 
-セキュリティ名前空間を使用すると、デバイスをロックダウン、ユーザーとシステム プロセスの一覧の確認、MAC および IP アドレスの取得およびキャッシュされている web リソースをクリアできます。
+セキュリティ名前空間を使用すると、デバイスをロックダウン、ユーザーとシステム プロセスの一覧の確認、MAC および IP アドレスの取得およびキャッシュされている web リソースのクリアできます。
 
 | メソッド | 説明   |
 |--------|---------------|

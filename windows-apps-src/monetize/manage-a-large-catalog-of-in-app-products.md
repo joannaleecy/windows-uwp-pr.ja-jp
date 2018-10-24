@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, カタログ, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: fad186ed63557024fb71a6ec3c6997833afb7f4c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432590"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473355"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>アプリ内製品の大規模なカタログの管理
 
-アプリ内製品のカタログが大きくなる場合、カタログを管理するためにこのトピックで説明するプロセスを採用できます。 Windows 10 より前のリリースでは、開発者アカウントごとに 200 製品の表示制限があり、このトピックで説明するプロセスを使ってこの制限を回避できます。 Windows 10 以降では、開発者アカウントごとに表示されるストアの製品数に制限がないため、この記事で説明されているプロセスは必要ありません。
+アプリ内製品のカタログが大きくなる場合、カタログを管理するためにこのトピックで説明するプロセスを採用できます。 Windows 10 より前のリリースでは、開発者アカウントごとに 200 製品の表示制限があり、このトピックで説明するプロセスを使ってこの制限を回避できます。 Windows 10 以降、ストアには、開発者アカウントごとの製品一覧の数に制限がないと、この記事で説明するプロセスは必要はなくなりました。
 
 > [!IMPORTANT]
 > この記事では、[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーの使用方法について説明します。 この名前空間は更新されなくなり、新機能も追加されないため、代わりに [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間を使用することをお勧めします。 **Windows.Services.Store** 名前空間は、Microsoft Store で管理されるコンシューマブルなアドオンやサブスクリプションなど、最新の種類のアドオンをサポートしており、Windows デベロッパー センターと Microsoft Store で今後サポートされる製品および機能の種類と互換性を持つように設計されています。 **Windows.Services.Store** 名前空間は、Windows 10 バージョン 1607 で導入され、Visual Studio で、**Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするプロジェクトでのみ使用できます。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md)」をご覧ください。

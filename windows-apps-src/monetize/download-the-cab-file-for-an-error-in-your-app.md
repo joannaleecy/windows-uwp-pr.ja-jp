@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 分析 API, CAB のダウンロード
 ms.localizationpriority: medium
 ms.openlocfilehash: 671c5c1b187ac48c12988a00d66acb366cae72f1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438412"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470347"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>アプリのエラーの CAB ファイルをダウンロードする
 
@@ -56,7 +56,7 @@ ms.locfileid: "5438412"
 | applicationId | string | CAB ファイルをダウンロードするアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。 |  必須  |
 | cabId | string | ダウンロードする CAB ファイルの一意の ID です。 この ID を取得するには、「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」のメソッドを使って、アプリの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文で **cabId** 値を使います。 |  必須  |
 
- 
+ 
 ### <a name="request-example"></a>要求の例
 
 次の例は、このメソッドを使って CAB ファイルをダウンロードする方法を示しています。 *applicationId* および *cabId* パラメーターを、アプリの適切な値に置き換えてください。

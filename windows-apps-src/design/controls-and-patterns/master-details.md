@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f1236c2ade0423f6e092024e786741f3f3bf6d11
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443187"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470090"
 ---
 # <a name="masterdetails-pattern"></a>マスター/詳細パターン
 
@@ -46,7 +46,7 @@ ms.locfileid: "5443187"
 | 320 epx ～ 640 epx        | スタック           |
 | 641 epx 以上       | 左右に並べる      |
 
- 
+ 
 ## <a name="stacked-style"></a>スタック スタイル
 
 スタック スタイルでは、マスター ウィンドウと詳細ウィンドウのうち 1 つのウィンドウだけが一度に表示されます。

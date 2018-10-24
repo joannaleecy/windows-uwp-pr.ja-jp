@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 携帯電話会社, 携帯電話への課金, 携帯電話会社による課金
 ms.localizationpriority: medium
 ms.openlocfilehash: da08e63cc42987f1a3876e13a713d670a80cf9ba
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432646"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471854"
 ---
 # <a name="mobile-operator-billing"></a>携帯電話会社による課金
 
@@ -23,7 +23,7 @@ ms.locfileid: "5432646"
 Microsoft Store では、Windows 10 を実行するデバイス、Windows 10 Mobile を実行するスマートフォン、Xbox One 本体用の支払い方法として、携帯電話会社による課金を提供しています。 ユーザーの携帯電話会社でこの機能がサポートされている場合、ユーザーは支払い方法として携帯電話会社による課金を追加し、この支払い方法を使用してモバイル アカウントによる Microsoft Store での購入を行うことができます。
 
 > [!TIP]
->  ユーザーの携帯電話会社が携帯電話会社による課金を提供していても、ユーザーのデバイスにこのオプションがない場合は、こちらの[手順](http://go.microsoft.com/fwlink/p/?LinkId=523993)をご覧ください。
+>  ユーザーの携帯電話会社が携帯電話会社による課金を提供していても、ユーザーのデバイスにこのオプションがない場合は、こちらの[手順](http://go.microsoft.com/fwlink/p/?LinkId=523993)をご覧ください。
 
 弊社は、定期的に携帯電話会社と協力して、この支払方法の機能を拡張しています。 以下のリストにない携帯電話会社を案内したい場合は、その携帯電話会社に連絡し、この支払い方法を追加するよう要請してください。
 
@@ -57,16 +57,16 @@ Microsoft Store では、Windows 10 を実行するデバイス、Windows 10 Mob
 | 米国   | Sprint、Verizon                  |
 | イギリス  | O2、3 UK、EE                     |
 
- 
+ 
 
 
 
- 
+ 
 
 
- 
+ 
 
- 
+ 
 
 
 

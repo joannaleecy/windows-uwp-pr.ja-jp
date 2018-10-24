@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, Advertising, AdControl, 広告コントロール, JavaScript, HTML
 ms.localizationpriority: medium
 ms.openlocfilehash: 37f7754e8f88e61df571fe561ae94dc4b71468ed
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435527"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469600"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 および JavaScript の AdControl
 

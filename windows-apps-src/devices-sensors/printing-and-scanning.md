@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, 印刷、3dprinting、3d 印刷
+keywords: windows 10, uwp, 印刷、3dprinting、3 d 印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c4ada5d58743bf19ed27dfbdd2676f2a267129f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445659"
+ms.locfileid: "5473814"
 ---
 # <a name="printing-and-scanning"></a>印刷とスキャン
 
@@ -34,5 +34,5 @@ ms.locfileid: "5445659"
 * [印刷のガイドラインの設計](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Build 2015 のビデオ: Windows 10 で印刷するアプリの開発](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619984)
- 
+ 
 

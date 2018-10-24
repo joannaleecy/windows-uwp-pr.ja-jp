@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, フィードバック Hub, 起動
 ms.localizationpriority: medium
 ms.openlocfilehash: 6617c3d5901fbb1a1e9a7f271f4c80d4f38e41f6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438329"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473825"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>アプリからのフィードバック Hub の起動
 

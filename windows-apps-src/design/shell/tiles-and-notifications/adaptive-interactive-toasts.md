@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, トースト通知, 対話型トースト, アダプティブ トースト, トーストのコンテンツ, トースト ペイロード
 ms.localizationpriority: medium
 ms.openlocfilehash: de999528d07e6bd7d243e53708e9afc465004af7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435924"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479131"
 ---
 # <a name="toast-content"></a>トーストのコンテンツ
 
@@ -26,7 +26,7 @@ ms.locfileid: "5435924"
 > **重要な API**: [UWP Community Toolkit Notifications NuGet パッケージ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Windows 8.1 や Windows Phone 8.1 の従来のテンプレートについては、「[トースト テンプレート カタログ (Windows ランタイム アプリ)](https://msdn.microsoft.com/library/windows/apps/hh761494)」をご覧ください。
+> Windows8.1 と Windows Phone 8.1 の従来のテンプレートについては、[レガシ トースト テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761494)を参照してください。
 
 
 ## <a name="getting-started"></a>概要
@@ -56,33 +56,33 @@ ms.locfileid: "5435924"
 ```csharp
 ToastContent content = new ToastContent()
 {
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric() { ... }
-    },
- 
-    Actions = new ToastActionsCustom() { ... },
- 
-    Audio = new ToastAudio() { ... }
+    Launch = "app-defined-string",
+ 
+    Visual = new ToastVisual()
+    {
+        BindingGeneric = new ToastBindingGeneric() { ... }
+    },
+ 
+    Actions = new ToastActionsCustom() { ... },
+ 
+    Audio = new ToastAudio() { ... }
 };
 ```
 
 ```xml
 <toast launch="app-defined-string">
 
-  <visual>
-    <binding template="ToastGeneric">
-      ...
-    </binding>
-  </visual>
+  <visual>
+    <binding template="ToastGeneric">
+      ...
+    </binding>
+  </visual>
 
-  <actions>
-    ...
-  </actions>
+  <actions>
+    ...
+  </actions>
 
-  <audio src="ms-winsoundevent:Notification.Reminder"/>
+  <audio src="ms-winsoundevent:Notification.Reminder"/>
 
 </toast>
 ```
@@ -286,14 +286,14 @@ new ToastBindingGeneric()
 ```csharp
 ToastContent toastContent = new ToastContent()
 {
-    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
-    ...
+    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
+    ...
 };
 ```
 
 ```xml
 <toast displayTimestamp="2017-04-15T19:45:00Z">
-  ...
+  ...
 </toast>
 ```
 
@@ -759,40 +759,40 @@ ToastContent content = new ToastContent()
             }
         },
 
-        Buttons =
-        {
-            new ToastButtonSnooze()
-            {
-                SelectionBoxId = "snoozeTime"
-            },
- 
-            new ToastButtonDismiss()
-        }
+        Buttons =
+        {
+            new ToastButtonSnooze()
+            {
+                SelectionBoxId = "snoozeTime"
+            },
+ 
+            new ToastButtonDismiss()
+        }
     }
 };
 ```
 
 ```xml
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
-   
-  ...
- 
-  <actions>
-     
-    <input id="snoozeTime" type="selection" defaultInput="15">
-      <selection id="1" content="1 minute"/>
-      <selection id="15" content="15 minutes"/>
-      <selection id="60" content="1 hour"/>
-      <selection id="240" content="4 hours"/>
-      <selection id="1440" content="1 day"/>
-    </input>
- 
-    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
- 
-    <action activationType="system" arguments="dismiss" content=""/>
-     
-  </actions>
-   
+   
+  ...
+ 
+  <actions>
+     
+    <input id="snoozeTime" type="selection" defaultInput="15">
+      <selection id="1" content="1 minute"/>
+      <selection id="15" content="15 minutes"/>
+      <selection id="60" content="1 hour"/>
+      <selection id="240" content="4 hours"/>
+      <selection id="1440" content="1 day"/>
+    </input>
+ 
+    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+ 
+    <action activationType="system" arguments="dismiss" content=""/>
+     
+  </actions>
+   
 </toast>
 ```
 
@@ -880,7 +880,7 @@ ToastContent content = new ToastContent()
 
 ## <a name="handling-activation"></a>アクティブ化の処理
 トーストのアクティブ化を処理する方法 (ユーザーがトーストをクリックするか、トースト上のボタンをクリックする) については、「[ローカル トースト通知の送信](send-local-toast.md)」をご覧ください。
- 
+ 
 ## <a name="related-topics"></a>関連トピック
 
 * [ローカル トースト通知の送信](send-local-toast.md)

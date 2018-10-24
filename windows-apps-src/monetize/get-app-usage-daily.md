@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 99DB5622-3700-4FB2-803B-DA447A1FD7B7
-description: 特定の日付範囲やその他のオプション フィルターを使って毎日のアプリの使用状況データを取得するのに、Microsoft Store 分析 API の以下のメソッドを使用します。
+description: 1 日あたりのアプリの使用状況データを取得する特定の日付範囲やその他のオプション フィルターを Microsoft Store 分析 API でこのメソッドを使います。
 title: アプリの使用状況 (日単位) の取得
 ms.author: mhopkins
 ms.date: 08/15/2018
@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, 使用状況
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443967"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469738"
 ---
 # <a name="get-daily-app-usage"></a>アプリの使用状況 (日単位) の取得
 
-(過去 90 日間のみ) 特定の日付範囲やその他のオプション フィルターを使って、アプリケーションに関する JSON 形式で (Xbox のマルチプレイヤーは含まない) 集計の使用状況データを取得するのに、Microsoft Store 分析 api の以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュ ボードでの[使用状況] レポート](../publish/usage-report.md)で利用可能なもできます。
+(過去 90 日間のみ) 特定の日付範囲やその他のオプション フィルターを使って、アプリケーションに関する JSON 形式で (Xbox のマルチプレイヤーは含まない) 集計の使用状況データを取得するのに、Microsoft Store 分析 api の以下のメソッドを使用します。 この情報も[使用状況] レポート](../publish/usage-report.md)では、Windows デベロッパー センター ダッシュ ボードで使用できます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -79,7 +79,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターを 10000 に設定した場合、クエリに適合するレビュー データが 10,000 行を超えると、この値が返されます。                 |
 | TotalCount | int    | クエリの結果データ内の行の総数です。                                                                          |
 
- 
+ 
 ### <a name="usage-values"></a>使用率の値
 
 *Value* 配列の要素には、次の値が含まれます。
@@ -89,18 +89,18 @@ Authorization: Bearer <your access token>
 | date                      | string  | 使用状況データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。        |
 | applicationId             | string  | 使用状況データを取得するアプリのストア ID です。          |
 | applicationName           | string  | アプリの表示名です。                                              |
-| deviceType                | string  | 次の文字列のいずれかを指定する使用状況が発生したデバイスの種類。<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablet**</li><li>**IoT**</li><li>**Server**</li><li>**Holographic**</li><li>**Unknown**</li></ul>                                                                                                         |
+| deviceType                | string  | 次の文字列のいずれかを指定する、使用状況が発生したデバイスの種類。<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablet**</li><li>**IoT**</li><li>**Server**</li><li>**Holographic**</li><li>**Unknown**</li></ul>                                                                                                         |
 | packageVersion            | string  | 使用状況が発生したパッケージのバージョン。                          |
 | market                    | string  | 顧客にアプリが使用されている市場の ISO 3166 国コードです。 |
 | subscriptionName          | string  | Xbox Game Pass を通じて使用量があったかどうかを示します。                            |
-| dailySessionCount         | long    | その日のユーザー セッションの数。                                  |
-| engagementDurationMinutes | double  | ユーザーがアクティブに個別のアプリを起動したときに始まり、時間の期間で測定されたアプリ (プロセスが開始) を使用して終了 (プロセスの終了) または一定の期間後、分。             |
+| dailySessionCount         | long    | その日上のユーザー セッションの数。                                  |
+| engagementDurationMinutes | double  | ユーザーが積極的に個別のアプリを起動したときに始まり、時間の期間で測定されたアプリ (プロセスが開始) を使用して終了 (プロセスの終了) または後に一定の期間の終了位置分。             |
 | dailyActiveUsers          | long    | その日にアプリを使用しているユーザーの数。                           |
 | dailyActiveDevices        | long    | すべてのユーザーがアプリを操作するために使用 1 日あたりのデバイスの数。  |
 | dailyNewUsers             | long    | 最初にその日にアプリを使用したユーザーの数。    |
 | monthlyActiveUsers        | long    | アプリをその月を使っているユーザーの数。                         |
-| monthlyActiveDevices      | long    | 一定の期間後または時間、アプリを起動したときに始まり (プロセスが開始) の個別の期間のアプリを実行していると、終了 (プロセスの終了) を終了のデバイスの数。                                      |
-| monthlyNewUsers           | long    | 最初にその月にアプリを使用したユーザーの数。  |
+| monthlyActiveDevices      | long    | または一定の期間後にデバイスを個別の期間、アプリを起動したときに始まり (プロセスが開始) のアプリを実行していると、終了 (プロセスの終了) したときに終了の数です。                                      |
+| monthlyNewUsers           | long    | その月を初めてアプリを使用したユーザーの数。  |
 
 
 ### <a name="response-example"></a>応答の例
@@ -170,7 +170,7 @@ Authorization: Bearer <your access token>
 ## <a name="related-topics"></a>関連トピック
 
 * [Microsoft Store サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
-* [月次請求のアプリ ussage を取得します。](get-app-usage-monthly.md)
+* [毎月アプリ ussage を取得します。](get-app-usage-monthly.md)
 * [アプリの入手数の取得](get-app-acquisitions.md)
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)
 * [エラー報告データの取得](get-error-reporting-data.md)

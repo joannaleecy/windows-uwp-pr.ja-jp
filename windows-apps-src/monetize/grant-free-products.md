@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 購入 API, 製品の付与
 ms.localizationpriority: medium
 ms.openlocfilehash: 432d5976cb018148ba0f53aae6446a046f0a3b2f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441765"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474888"
 ---
 # <a name="grant-free-products"></a>無料の製品の付与
 
@@ -229,7 +229,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 | 401  | 権限がありません | InconsistentClientId       | 要求本文の Microsoft Store ID の *clientId* 要求と承認ヘッダーの Azure AD アクセス トークンの *appid* 要求が一致しません。       |
 | 400  | BadRequest   | InvalidParameter           | 詳細情報に、要求の本文と無効な値を含むフィールドに関する情報が含まれます。           |
 
-<span/> 
+<span/> 
 
 ## <a name="related-topics"></a>関連トピック
 

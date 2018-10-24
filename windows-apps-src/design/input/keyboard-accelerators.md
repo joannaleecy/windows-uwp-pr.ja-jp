@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435989"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468795"
 ---
 # <a name="keyboard-accelerators"></a>キーボード アクセラレータ
 
@@ -39,7 +39,7 @@ ms.locfileid: "5435989"
 > [!NOTE]
 > UWP プラットフォームのコントロールには、組み込みのキーボード アクセラレータが用意されています。 たとえば、ListView では Ctrl + A (一覧のすべての項目を選択する) がサポートされ、RichEditBox では Ctrl + Tab (テキスト ボックスにタブを挿入する) がサポートされています。 これらの組み込みキーボード アクセラレータは、**コントロール アクセラレータ**と呼ばれ、要素またはその子にフォーカスがある場合にのみ実行されます。 ここで説明するキーボード アクセラレータ API を使用して定義するアクセラレータは、**アプリ アクセラレータ**と呼ばれます。
 
-キーボード アクセラレータは、すべてのアクションに用意されるのではなく、多くの場合はメニューで公開されているコマンドに関連付けられています (メニュー項目コンテンツにも示されています)。 アクセラレータは、対応するメニュー項目がない操作に関連付けることもできます。 ただし、ユーザーはアプリケーションのメニューを使用して、利用可能なコマンド セットを見つけ、その機能を理解するため、アクセラレータができるだけ簡単に検出されるようにする必要があります (ラベルの使用や、決まったパターンの使用が役立ちます)。
+キーボード アクセラレータは、すべてのアクションに用意されるのではなく、多くの場合はメニューで公開されているコマンドに関連付けられています (メニュー項目コンテンツにも示されています)。アクセラレータは、対応するメニュー項目がない操作に関連付けることもできます。 ただし、ユーザーはアプリケーションのメニューを使用して、利用可能なコマンド セットを見つけ、その機能を理解するため、アクセラレータができるだけ簡単に検出されるようにする必要があります (ラベルの使用や、決まったパターンの使用が役立ちます)。
 
 ![メニュー項目ラベルに示されているキーボード アクセラレータ](images/accelerators/accelerators_menuitemlabel.png)  
 *メニュー項目ラベルに示されているキーボード アクセラレータ*
@@ -48,11 +48,11 @@ ms.locfileid: "5435989"
 
 UI に適切な場合は必ずキーボード アクセラレータを指定し、すべてのカスタム コントロールでアクセラレータをサポートすることをお勧めします。
 
-- 一度に押せるキーが 1 つに限定されるユーザーや、マウスを使うのが困難なユーザーなど、運動障碍を持つユーザーにとっては、キーボード アクセラレータによりアプリのアクセシビリティが高まります。**
+- キーボード アクセラレータによりアプリのさらに、一度に 1 つだけのキーを押してまたはが難しい押せる * を使用しているユーザーはそれらを含む、運動障碍を持つ accessiblefor ユーザー
 
   適切に設計されたキーボード UI はソフトウェアのアクセシビリティの重要な要素であり、 視覚に障碍のあるユーザーや特定の運動障碍のあるユーザーによるアプリ内の移動や、その機能の操作を実現します。 このようなユーザーはマウスを操作できない場合があるため、代わりにさまざまな支援技術 (キーボード強化ツール、スクリーン キーボード、スクリーン拡大機能、スクリーン リーダー、音声入力ユーティリティなど) が不可欠になる可能性があります。 このようなユーザーにとっては、コマンドを包括的にカバーすることが重要です。
 
-- キーボードを使った操作を好むパワー ユーザーにとっては、キーボード アクセラレータによりアプリが使いやすくなります。
+- キーボード アクセラレータは、複数 usablefor 好むパワー ユーザーにとって、キーボードを使った操作をアプリを行います。
 
   多くの経験豊富なユーザーには、キーボードの使用の方がはるかに好まれます。キーボード ベースのコマンドであれば、すばやく入力することができ、キーボードから手を離す必要がないためです。 このようなユーザーにとっては、効率性と一貫性が重要です。包括性が重要になるのは、特に頻繁に使用するコマンドに対してのみです。
 
@@ -206,7 +206,7 @@ UIA [コントロール パターン] では、一般的なコントロール機
 ``` xaml 
 <Button Content="Save" Click="OnSave">
   <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
+    <KeyboardAccelerator Key="S" Modifiers="Control" />
   </Button.KeyboardAccelerators>
 </Button>
 ```
@@ -215,7 +215,7 @@ UIA [コントロール パターン] では、一般的なコントロール機
 1.  Invoke (Button)
 2.  Toggle (Checkbox)
 3.  Selection (ListView)
-4.  Expand/Collapse (ComboBox) 
+4.  Expand/Collapse (ComboBox) 
 
 一致するコントロール パターンが見つからない場合は、アクセラレータが無効となり、デバッグ メッセージが発行されます ("このコンポーネントのオートメーション パターンが見つかりません。 Invoked イベントに目的の動作をすべて実装してください。 イベント ハンドラーで Handled を true に設定すると、このメッセージは表示されません")。
 
@@ -230,10 +230,10 @@ UIA [コントロール パターン] では、一般的なコントロール機
 ``` xaml
 <ListView x:Name="MyListView">
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
-    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
+    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
+    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
-</ListView>   
+</ListView>   
 ```
 
 ``` csharp
@@ -252,7 +252,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>既定のキーボード動作を上書き
 
-場合によっては、Backspace キーまたは Enter キーなどの特定のキーの既定の動作をオーバーライドする必要があります。 例: 
+場合によっては、Backspace キーや Enter キーなどの特定のキーの既定の動作をオーバーライドする必要があります。 例: 
 
 ## <a name="disable-a-keyboard-accelerator"></a>キーボード アクセラレータを無効にする 
 
@@ -261,7 +261,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 ``` xaml
 <ListView >
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" 
+    <KeyboardAccelerator Key="A" 
       Modifiers="Control"
       Invoked="CustomListViewSelecAllInvoked" />
   </ListView.KeyboardAccelerators>
@@ -269,10 +269,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   <TextBox>
     <TextBox.KeyboardAccelerators>
       <KeyboardAccelerator 
-        Key="A" 
-        Modifiers="Control" 
-        Invoked="CustomTextSelecAllInvoked" 
-        IsEnabled="False" />
+        Key="A" 
+        Modifiers="Control" 
+        Invoked="CustomTextSelecAllInvoked" 
+        IsEnabled="False" />
     </TextBox.KeyboardAccelerators>
   </TextBox>
 
@@ -292,18 +292,18 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   <ListView.KeyboardAccelerators>
 
     <KeyboardAccelerator 
-      Key="A" 
-      Modifiers="Control,Shift" 
-      Invoked="CustomSelectAllInvoked" />
+      Key="A" 
+      Modifiers="Control,Shift" 
+      Invoked="CustomSelectAllInvoked" />
       
     <KeyboardAccelerator 
-      Key="F5" 
-      Modifiers="None" 
-      Invoked="RefreshInvoked" />
+      Key="F5" 
+      Modifiers="None" 
+      Invoked="RefreshInvoked" />
 
   </ListView.KeyboardAccelerators>
 
-</ListView>   
+</ListView>   
 ```
 
 > [!NOTE] 
@@ -342,14 +342,14 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 | **その他の操作** | |
 | ------------- | ----------------------------------- |
-| お気に入りに追加する | Ctrl + D | 
-| 最新の情報に更新する | F5 または Ctrl + R | 
-| 拡大 | Ctrl + + | 
-| 縮小 | Ctrl + - | 
-| 既定の表示倍率に拡大縮小 | Ctrl + 0 | 
-| 上書き保存 | Ctrl + S | 
-| 閉じる | Ctrl + W | 
-| 印刷 | Ctrl + P | 
+| お気に入りに追加する | Ctrl + D | 
+| 最新の情報に更新する | F5 または Ctrl + R | 
+| 拡大 | Ctrl + + | 
+| 縮小 | Ctrl + - | 
+| 既定の表示倍率に拡大縮小 | Ctrl + 0 | 
+| 上書き保存 | Ctrl + S | 
+| 閉じる | Ctrl + W | 
+| 印刷 | Ctrl + P | 
 
 ローカライズされたバージョンの Windows では使用できない組み合わせもあります。 たとえば、スペイン語バージョンの Windows では、太字の指定には Ctrl + B ではなく Ctrl + N が使用されます。 アプリがローカライズされている場合は、ローカライズされたキーボード アクセラレータを用意することをお勧めします。
 
@@ -370,7 +370,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 *ヒントでのアクセラレータ キーの組み合わせ*
 
-[ボタン](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)オブジェクトの場合は、キーボード アクセラレータは、コントロールの既定のヒントに追加されます。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) オブジェクト、キーボード アクセラレータは、ポップアップ テキストで表示されます。
+[ボタン](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)オブジェクトは、キーボード アクセラレータは、コントロールの既定のヒントに追加されます。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) オブジェクト、キーボード アクセラレータは、ポップアップ テキストで表示されます。
 
 > [!NOTE]
 > ヒントを指定する (次の例では Button1 を参照) は、この動作を上書きします。
@@ -626,5 +626,5 @@ public class MyListView : ListView
 * [XAML コントロール ギャラリー (別名 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 
- 
+ 
 

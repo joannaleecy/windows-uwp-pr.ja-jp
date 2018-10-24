@@ -17,11 +17,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 78448081b81e7e28c4b97fcfdd7aa71ae32aeb0c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445400"
+ms.locfileid: "5473837"
 ---
 # <a name="keyboard-events"></a>キーボード イベント
 
@@ -116,7 +116,7 @@ void MyProject::MainPage::Grid_KeyUp(
 > [!NOTE]
 > Alt キーは **VirtualKey.Menu** 値で表されます。
 
- 
+ 
 
 ### <a name="shortcut-keys-example"></a>ショートカット キーの例
 
@@ -283,7 +283,7 @@ End Sub
 >
 > **AutomationProperties.AcceleratorKey** または **AutomationProperties.AccessKey** を設定しても、それだけでは操作は実行されません。 実際にアプリにキーボード ショートカットの動作を実装するには、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベントまたは [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントのハンドラーをアタッチする必要があります。 また、アクセス キーの下線も自動的には追加されません。 UI で下線付きのテキストを表示する場合は、インラインの [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982) 書式設定として、ニーモニックの特定のキーのテキストに明示的に下線を表示する必要があります。
 
- 
+ 
 
 ## <a name="keyboard-routed-events"></a>キーボード ルーティング イベント
 
@@ -329,7 +329,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 特定のコントロールのキー イベント (たとえば [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView) など) をオーバーライドして、キーボードとゲームパッドを含むさまざまな入力デバイスに一貫したフォーカス ナビゲーションを提供できます。
 
-次の例では任意の方向キーが押されたときにコンテンツ サブクラス コントロールと GridView にフォーカスを移動 KeyDown 動作をオーバーライドします。
+次の例では、お任意の方向キーが押されたときにコンテンツ コントロールをサブクラス化し、GridView にフォーカスを移動 KeyDown 動作をオーバーライドします。
 
 ```csharp
 public class CustomGridView : GridView
@@ -405,6 +405,6 @@ UI 要素でコマンド実行を使うことができる場合は、個々の�
 * [入力: タッチ キーボードのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [スクリーン キーボードを表示したときの対応のサンプルのページ](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML テキスト編集のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=251417)
- 
+ 
 
- 
+ 

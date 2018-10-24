@@ -16,11 +16,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ae344e9f10c5d1dbfd530950851e402da4bc2a0d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433501"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478078"
 ---
 # <a name="control-templates"></a>コントロール テンプレート
 
@@ -62,7 +62,7 @@ XAML フレームワークで、コントロール テンプレートを作る�
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) は、コントロール テンプレート内のプロパティの値を、template 宣言されたコントロールのその他の公開されているプロパティの値にリンクする特殊なバインディングです。 XAML では、TemplateBinding は ControlTemplate 定義内でのみ使用できます。 詳しくは、「[TemplateBinding マークアップ拡張](../../xaml-platform/templatebinding-markup-extension.md)」をご覧ください。
 
 > [!NOTE]
-> 次回のメジャー アップデートを Windows 10 以降、 [**X:bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783)マークアップ拡張機能を使うことができますの場所では、 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md)を使用します。 詳しくは、「[TemplateBinding マークアップ拡張](../../xaml-platform/templatebinding-markup-extension.md)」をご覧ください。
+> 次回のメジャー アップデートを Windows 10 以降、 [**X:bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783)マークアップ拡張を使うことができますの場所では、 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md)を使用します。 詳しくは、「[TemplateBinding マークアップ拡張](../../xaml-platform/templatebinding-markup-extension.md)」をご覧ください。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -112,7 +112,7 @@ XAML フレームワークで、コントロール テンプレートを作る�
 | **false**           | `Unchecked`        | 空白。                  |
 | **null**            | `Indeterminate`    | 円を表示。      |
 
- 
+ 
 
 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) オブジェクトを使って、コントロールが特定の状態にあるときの外観を指定します。 **VisualState** には、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 内の要素の外観を変更する [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) または [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053) が含まれています。 コントロールが [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) プロパティで指定された状態になると、**Setter** または [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 内のプロパティの変更が適用されます。 コントロールがこの状態でなくなると、変更は削除されます。 **VisualState** オブジェクトは [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) オブジェクトに追加します。 **ControlTemplate** のルート [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) に設定する [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 添付プロパティに、**VisualStateGroup** オブジェクトを追加します。
 
@@ -188,7 +188,7 @@ XAML フレームワークで、コントロール テンプレートを作る�
 | `Checked` から `Indeterminate`。   | `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 値が適用され、`IndeterminateGlyph` の [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) が 1 となる。 `Checked` **VisualState** の **Setter** 値が削除され、`CheckGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) が 0 となる。 | 円が表示される。                            |
 | `Indeterminate` から `Unchecked`。 | `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 値が削除され、`IndeterminateGlyph` の [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) が 0 となる。                                                                                                                                           | 何も表示されない。                             |
 
- 
+ 
 コントロールの表示状態の作成方法、特に、[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) クラスとアニメーション タイプの使い方について詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)」をご覧ください。
 
 ## <a name="use-tools-to-work-with-themes-easily"></a>ツールを使ってテーマを簡単に操作
@@ -211,11 +211,11 @@ XAML コントロールのスタイルとテンプレートについて説明す
 
 XAML の例を見ると、一部の属性について [{ThemeResource} マークアップ拡張機能](../../xaml-platform/themeresource-markup-extension.md) を使うリソース参照があることがわかるでしょう。 この手法では、現在アクティブであるテーマに応じて値が変わるリソースを 1 つのコントロール テンプレートで使用できます。 この点はブラシと色に特に重要です。システム全体に暗い、明るい、またはハイコントラストのいずれのテーマを適用するかをユーザーが選択できるようにすることが、テーマの主な目的であるためです。 XAML リソース システムを使うアプリはそのテーマに適切な一連のリソースを使用できます。そのため、アプリの UI のテーマの選択にはユーザーのシステム全体のテーマの選択が反映されます。
 
- ## <a name="get-the-sample-code"></a>サンプル コードを入手する
+ # のサンプル コードを入手します。
 * [XAML UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [カスタム テキスト編集コントロールのサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
- 
+ 
 
 
 

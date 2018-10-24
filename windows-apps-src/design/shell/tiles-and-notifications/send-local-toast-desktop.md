@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, win32, デスクトップ, トースト通知, トーストの送信, ローカル トーストの送信, デスクトップ ブリッジ, C#, c シャープ
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bda3e85fd89ef7a8b819fcd809acea4fd9a276b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433913"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472511"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>デスクトップ C# アプリからのローカル トースト通知の送信
 
@@ -70,7 +70,7 @@ Win32 アプリ向けの Windows 10 SDK がまだ有効でない場合は、ま�
 
 ## <a name="step-4-implement-the-activator"></a>手順 4: アクティベーターを実装する
 
-ユーザーは、トーストをクリックすると、アプリが動作できる、トーストのアクティブ化ハンドラーを実装する必要があります。 これは、アクション センターにトーストを継続的に表示するために必要です (トーストは、数日後、アプリが閉じているときにクリックされる可能性があります)。 このクラスは、プロジェクトの任意の位置に指定できます。
+ユーザーがトーストをクリックすると、アプリが動作できるトーストのアクティブ化ハンドラーを実装する必要があります。 これは、アクション センターにトーストを継続的に表示するために必要です (トーストは、数日後、アプリが閉じているときにクリックされる可能性があります)。 このクラスは、プロジェクトの任意の位置に指定できます。
 
 **NotificationActivator** クラスを展開し、以下の 3 つの属性を追加します。任意のオンライン GUID ジェネレーターを使用して、アプリ用に一意の GUID CLSID を作成します。 アクション センターは、この CLSID (クラス識別子) に基づいて、COM アクティブ化するクラスを認識します。
 
@@ -209,21 +209,21 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 // Construct the visuals of the toast (using Notifications library)
 ToastContent toastContent = new ToastContent()
 {
-    // Arguments when the user taps body of toast
-    Launch = "action=viewConversation&conversationId=5",
+    // Arguments when the user taps body of toast
+    Launch = "action=viewConversation&conversationId=5",
 
     Visual = new ToastVisual()
     {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Hello world!"
-                }
+        BindingGeneric = new ToastBindingGeneric()
+        {
+            Children =
+            {
+                new AdaptiveText()
+                {
+                    Text = "Hello world!"
+                }
             }
-        }
+        }
     }
 };
 

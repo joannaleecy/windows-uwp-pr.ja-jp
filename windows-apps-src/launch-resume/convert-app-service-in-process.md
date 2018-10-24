@@ -11,11 +11,11 @@ keywords: windows 10, uwp, アプリ サービス
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: d259df2a65046acb1c34dd2958ab4513bc31f43b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430623"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472308"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する
 
@@ -46,9 +46,9 @@ ms.locfileid: "5430623"
 
 2 つ目の変更として、サービス ロジックを別個のバックグラウンド タスク プロジェクトから、**OnBackgroundActivated()** によって呼び出すことができるメソッドに移動します。
 
-これで、アプリケーションがアプリ サービスを直接実行できるようになります。 たとえば、App.xaml.cs: で
+これで、アプリケーションがアプリ サービスを直接実行できるようになります。 App.xaml.cs: で、
 
-[!NOTE] 次のコードでは、例 1 (アウト プロセス サービス) に使用したものよりも異なります。 次のコードは提供のみを目的と、例 2 の一部であり、(インプロセス サービス) としては使用する必要があります。  例からの資料の移行を続行するには、は、例 2 (インプロセス サービス) に 1 (アウト プロセス サービス) 引き続き、次の例のコードではなく例 1 の提供されているコードを使用します。
+[!NOTE] 次のコードでは、例 1 (アウト プロセスのサービス) に使用したものよりも異なります。 次のコードでは、のみを目的が提供されるして、例 2 の一部であり、(インプロセス サービス) としては使用する必要があります。  記事の切り替えの例を続けるには、例 2 (インプロセス サービス) に 1 (アウト プロセスのサービス) は、次の例のコードではなく 1 の例のコードを使用に進みます。
 
 ``` cs
 using Windows.ApplicationModel.AppService;

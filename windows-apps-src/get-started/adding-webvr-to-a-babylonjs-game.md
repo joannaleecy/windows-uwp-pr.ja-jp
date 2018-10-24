@@ -1,5 +1,5 @@
 ---
-title: 3D Babylon.js ゲームに WebVR サポートを追加します。
+title: 3D Babylon.js ゲームに WebVR サポートを追加
 description: 既存の 3D Babylon.js ゲームに WebVR サポートを追加する方法について説明します。
 author: abbycar
 ms.author: abigailc
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: WebVR、Edge、Web 開発、Babylon、Babylonjs、Babylon.js、JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 97ef659a178a4c3f40d464fd958e5493454afef7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444893"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473980"
 ---
-# <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>3D Babylon.js ゲームに WebVR サポートを追加します。
+# <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>3D Babylon.js ゲームに WebVR サポートを追加
 
 Babylon.js を使って 3D ゲームを作成したことがあり、仮想現実 (VR) をサポートしてみたいと考えている場合には、次の簡単な手順に沿って、実現することができます。
 
@@ -57,7 +57,7 @@ Babylon.js を使って 3D ゲームを作成したことがあり、仮想現�
 -   **モデル/** - 3D モデルが含まれるフォルダー。 このゲームでは、恐竜の 1 つのモデルのみがあります。
 -   **index.html** - ゲームのレンダラーをホストする web ページです。 Microsoft Edge でこのページを開くと、ゲームが起動します。
 
-Microsoft Edge でそれぞれの index.html ファイルを開くことによって、ゲームの両方のバージョンをテストできます。
+Microsoft Edge でそれぞれの index.html ファイルを開くことによって、ゲームの両方のバージョンをテストすることができます。
 
 
 
@@ -77,14 +77,14 @@ Windows Mixed Reality をまだお使いでなく、Windows 10 Creators Update �
 ## <a name="2d-ui-in-a-virtual-world"></a>仮想世界の 2D UI
 
 >[!NOTE]
-> スターター サンプルを取得する[**前に**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)フォルダーを取得します。
+> スターター サンプルを取得[**する前に**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)フォルダーを取得します。
 
-[Babylon.GUI](https://doc.babylonjs.com/how_to/gui) VR フレンドリーなライブラリは、対話ユーザー インターフェイスの VR 適切に動作する単純なを作成して VR で非表示を有効にするとします。
-Babylon.js、拡張機能を`GUI`ライブラリは、throuhout 2D 要素を作成するサンプルを使用します。
+[Babylon.GUI](https://doc.babylonjs.com/how_to/gui) VR フレンドリーなライブラリは、対話ユーザー インターフェイスの VR 適切に動作する単純なを作成して VR 非表示を有効にします。
+Babylon.js、拡張機能を`GUI`ライブラリは throuhout 2D 要素を作成するサンプルを使用します。
 
 
-2D テキスト`GUI`に応じて数の属性を調整する場合、いくつかの行で要素を作成できます。
-次のコード スニペットは既に[**前に、**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)のサンプルではみましょうチュートリアル何が起こっているか。
+2D テキスト`GUI`要素を調整する属性の数に応じて、いくつかの行で作成できます。
+次のコード スニペットは、既にサンプルでは、[**前に**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)、みましょうが何が起こってチュートリアルです。
 最初に行い、[`AdvancedDynamicTexture`](https://doc.babylonjs.com/how_to/gui#advanceddynamictexture)取り上げる GUI を確立するオブジェクトです。 サンプルでは、これを設定`CreateFullScreenUI()`、画面全体を取り上げます UI を意味します。 `AdvancedDynamicTexture`を作成し、行いを使用してゲームの開始時に表示される 2D のテキスト ボックス`GUI.Rectanlge()`と`GUI.TextBlock()`します。
 
 
@@ -108,7 +108,7 @@ startUI.addControl(tex2);
 ```
 
 
-この UI は作成をオンまたはオフを切り替えることが表示されます。`isVisible`によっては、ゲームで何が起こっているか。
+この UI は作成をオンまたはオフを切り替えることが表示されます。`isVisible`によっては、ゲームで何が起こっていたか。
 ```javascript
 startUI.isVisible = false;
 ```
@@ -120,7 +120,7 @@ startUI.isVisible = false;
 VR アプリケーションの 2 種類のカメラを備えて、複数のシナリオをサポートできることをお勧めします。 このゲームでは、ヘッドセットの接続を必要とする 1 つのカメラと、ヘッドセットを使用しないもう 1 つのカメラをサポートします。 ゲームでどちらを使用するかを判断するため、最初にヘッドセットが検出されたかどうかをチェックする必要があります。 そのために使用します[`navigator.getVRDisplays()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getVRDisplays)します。
 
 
-上記の次のコードを追加`window.addEventListener('DOMContentLoaded')` **main.js**にします。
+上記の次のコードを追加`window.addEventListener('DOMContentLoaded')` **main.js**でします。
 ```javascript
 var headset;
 // If a VR headset is connected, get its info
@@ -143,7 +143,7 @@ Babylon.js を使って WebVR すぐに追加できるを使用して、[`WebVRF
 
 フォールバック カメラを使用します、[`UniversalCamera`](https://doc.babylonjs.com/classes/3.1/universalcamera)元のゲームで現在使用されています。
 
-確認、`headset`変数を使用しているかどうかを判断する、`WebVRFreeCamera`カメラ。
+確認、`headset`変数を使っているかどうかを判断する、`WebVRFreeCamera`カメラ。
 
 次のコードで `camera = new BABYLON.UniversalCamera("Camera", new BABYLON.Vector3(0, 18, -45), scene);` を置き換えます。
 ```javascript

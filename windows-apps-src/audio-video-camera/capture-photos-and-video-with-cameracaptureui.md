@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ba33a1e79a2447c5dac546ce0f1caeaf16929a3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434114"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470734"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ
 
@@ -26,7 +26,7 @@ ms.locfileid: "5434114"
 独自のカメラ用 UI を用意する場合、またはキャプチャ操作に対してより堅牢で低レベルな制御が必要な場合は、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトを使用して、独自のキャプチャ操作を実装する必要があります。 詳しくは、「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」をご覧ください。
 
 > [!NOTE]
-> アプリが CameraCaptureUI のみ使用している場合、アプリのマニフェスト ファイルで**web カメラ**または**マイク**機能を指定する必要がありますできません。 指定すると、アプリはデバイスのカメラのプライバシー設定に表示されますが、ユーザーがアプリからのカメラへのアクセスを拒否しても、CameraCaptureUI はメディアをキャプチャできます。 これは、Windows の組み込みのカメラ アプリが、写真、音声、ビデオのキャプチャをボタンを押して開始する必要がある、信頼されているファースト パーティ アプリであるためです。 アプリには、写真のキャプチャの唯一のメカニズムとして CameraCaptureUI を使用するときに、web カメラまたはマイク機能を指定する場合、ストアに提出するときに、Windows アプリケーション認定キット認定が失敗する可能性があります。
+> アプリが CameraCaptureUI のみ使用している場合、アプリのマニフェスト ファイルで**web カメラ**または**マイク**機能を指定する必要がありますできません。 指定すると、アプリはデバイスのカメラのプライバシー設定に表示されますが、ユーザーがアプリからのカメラへのアクセスを拒否しても、CameraCaptureUI はメディアをキャプチャできます。 これは、Windows の組み込みのカメラ アプリが、写真、音声、ビデオのキャプチャをボタンを押して開始する必要がある、信頼されているファースト パーティ アプリであるためです。 アプリには、Windows アプリケーション認定キットの証明書ストアに提出する場合は、写真のキャプチャの唯一のメカニズムとして CameraCaptureUI を使用するときに、web カメラまたはマイク機能を指定するときが失敗する可能性があります。
 > MediaCapture を使用して、音声、写真、またはビデオをプログラムによってキャプチャする場合は、アプリのマニフェスト ファイルで Web カメラまたはマイク機能を指定する必要があります。
 
 ## <a name="capture-a-photo-with-cameracaptureui"></a>CameraCaptureUI を使った写真のキャプチャ
@@ -88,16 +88,16 @@ XAML ページでソフトウェア ビットマップを使用するには、[*
 カメラ キャプチャ UI から返されたビデオ ファイルを使用し、**[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromstoragefile)** を呼び出して、新しい [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) を作成します。 **MediaPlayerElement** に関連付けられている既定の **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** の **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play)** メソッドを呼び出してビデオを再生します。
 
 [!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
- 
+ 
 
 ## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 
- 
+ 
 
- 
+ 
 
 
 

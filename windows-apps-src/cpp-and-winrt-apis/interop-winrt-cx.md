@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: a21255299207bf6de06661e63936e6715c1f41c9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445510"
+ms.locfileid: "5470626"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT と C++/CX 間の相互運用
 
-徐々 にコードを移植するための戦略、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx)プロジェクトを[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)で説明[C への移行/C + から WinRT/CX](move-to-winrt-from-cx.md)します。
+内のコードを徐々 に移植するための戦略、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx)プロジェクトを[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)で説明[C への移行/C + から WinRT/CX](move-to-winrt-from-cx.md)します。
 
 このトピックでは、C++ 間の変換に使用できる 2 つのヘルパー関数 +/CX と C++/cli 同じプロジェクト内の WinRT オブジェクト。 それらを使用するには、2 つの言語プロジェクションを使用するコード間で相互運用機能またはから、C++ コードを移植するには、関数を使用できます/CX を C++/WinRT します。
 
@@ -51,12 +51,12 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 
 ## <a name="example-project-showing-the-two-helper-functions-in-use"></a>使用中の 2 つのヘルパー関数を示す例のプロジェクト
 
-簡単な方法で、c++ のコードを徐々 に移植するシナリオを再現するには + CX プロジェクトを C++/WinRT、c++ のいずれかを使用して Visual Studio で新しいプロジェクトを作成して開始することができます/WinRT プロジェクト テンプレート (c++ [Visual Studio サポートを参照してください/WinRT、と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。
+簡単な方法での c++ コードを徐々 に移植するシナリオを再現するには/CX プロジェクトを C++/cli/winrt では、c++ のいずれかを使用して Visual Studio で新しいプロジェクトを作成して開始することができます/WinRT プロジェクト テンプレート (c++ [Visual Studio サポートを参照してください/WinRT、と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。
 
-この例のプロジェクトも、C++ の間で可能性のある名前空間の競合を処理するために、コードの異なる断片の名前空間のエイリアスを使用する方法を示しています/WinRT プロジェクションと c++/cli/CX プロジェクション。
+この例のプロジェクトも、C++ の間それ以外の場合の潜在的な名前空間の競合を処理するために、コードの異なる断片の名前空間のエイリアスを使用する方法を示しています/WinRT プロジェクションと c++/cli/CX プロジェクション。
 
 - **Visual C**を作成 \> **Windows ユニバーサル** > **コア アプリ (、C++/WinRT)** プロジェクトです。
-- プロジェクトのプロパティで**C/C++** \> **一般的な** \> **Windows ランタイム拡張機能の使用** \> **[はい (/ZW)**。 C++ プロジェクトのサポートを有効にしますこの/CX します。
+- プロジェクトのプロパティで**C/C++** \> **一般的な** \> **Windows ランタイム拡張機能の使用** \> **[はい (/ZW)**。 C++ プロジェクトのサポートを有効にしますこれ/CX します。
 - 内容を置き換える`App.cpp`以下に示すコードに置き換えます。
 
 ```cppwinrt

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 155b8f67b5cd6080554afb889c7c27c921c998f8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439279"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479756"
 ---
 # <a name="about-house-ads"></a>自社広告について
 
@@ -34,7 +34,7 @@ ms.locfileid: "5439279"
 >[!NOTE]
 > 各エンド ユーザーに対して、特定の自社広告が表示されるのは 1 日 5 回までです。
 
- 
+ 
 
 ### <a name="related-topics"></a>関連トピック
 

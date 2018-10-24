@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: be0d383fc271084fe20a958d20f6fa3a340da187
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433075"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475164"
 ---
 # <a name="manage-add-ons"></a>アドオンの管理
 
@@ -158,7 +158,7 @@ Microsoft Store 申請 API に関するすべての[前提条件](create-and-man
 |-----------------|---------|------------------|
 | id            | string  | 申請 ID。    |
 | resourceLocation   | string  | 申請の完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。     |
- 
+ 
 <span/>
 
 ## <a name="related-topics"></a>関連トピック

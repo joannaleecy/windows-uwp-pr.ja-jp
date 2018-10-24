@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b45196a83edf45a69f6b79ab82542cef6817703
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434939"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477050"
 ---
 # <a name="responsive-layouts-with-xaml"></a>XAML でのレスポンシブ レイアウト
 
@@ -236,7 +236,7 @@ Windows 10 以降では、ここで示す簡素化された [**Setter**](https:/
 ```
 
 > [!Important]
-> 前の例では、VisualStateManager.VisualStateGroups 添付プロパティは、 **Grid**要素で設定されます。 StateTriggers を使う場合は、トリガーを自動的に有効にするために、常にルートの最初の子に VisualStateGroups が添付されていることを確認します  (ここでは、**Grid** がルートの **Page** 要素の最初の子です)。
+> 前の例では、VisualStateManager.VisualStateGroups 添付プロパティは**Grid**要素で設定されます。 StateTriggers を使う場合は、トリガーを自動的に有効にするために、常にルートの最初の子に VisualStateGroups が添付されていることを確認します  (ここでは、**Grid** がルートの **Page** 要素の最初の子です)。
 
 ### <a name="attached-property-syntax"></a>添付プロパティの構文
 

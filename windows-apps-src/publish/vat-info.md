@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: eaf9ee9bb6d9c949e34d9095edc7054a3a57a4dc
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439501"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469492"
 ---
 # <a name="vat-info"></a>VAT 情報
 
@@ -249,9 +249,9 @@ Microsoft では税務に関する助言を提供しておらず、次の情報�
 </table>
                                                                                                                                                                   
 
- 
+ 
 
- 
+ 
 
 
 

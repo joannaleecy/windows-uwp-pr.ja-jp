@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 販売促進, アプリ, キャンペーン, レポート, インストール
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445520"
+ms.locfileid: "5469581"
 ---
 # <a name="ad-campaign-report"></a>広告キャンペーン レポート
 
@@ -86,6 +86,6 @@ Windows デベロッパー センター ダッシュ ボードで**広告キャ�
 
 * [アプリ向けの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
 
- 
+ 
 
- 
+ 

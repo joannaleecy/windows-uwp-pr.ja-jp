@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431930"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476923"
 ---
 # <a name="debug-a-background-task"></a>バックグラウンド タスクのデバッグ
 
@@ -105,7 +105,7 @@ ms.locfileid: "5431930"
 -   バックグラウンド タスクがロック画面へのアクセスを必要とする場合は、バックグラウンド タスクをデバッグする前にロック画面にアプリを配置してください。 ロック画面対応アプリのマニフェスト オプションを指定する方法については、「[アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)」をご覧ください。
 -   バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 
-VS を使ってバック グラウンド タスクのデバッグについて詳しくは、以下を参照してください。[をトリガーする方法を中断、再開、および UWP アプリでイベントをバック グラウンド](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)します。
+VS を使って、バック グラウンド タスクのデバッグについて詳しくは、以下を参照してください。[をトリガーする方法を中断、再開、および UWP アプリでイベントをバック グラウンド](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)します。
 
 ## <a name="related-topics"></a>関連トピック
 
@@ -117,6 +117,6 @@ VS を使ってバック グラウンド タスクのデバッグについて詳
 * [トリガーする方法を中断、再開、およびバック グラウンド UWP アプリでのイベント](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [Visual Studio のコード分析による UWP アプリのコードの品質の分析](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
- 
+ 
 
- 
+ 

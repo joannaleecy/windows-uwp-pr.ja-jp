@@ -11,11 +11,11 @@ keywords: windows 10, uwp, セキュリティ
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: 2de5c969610aa6b4fa1a3af01af565d35854b5f2
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439592"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478271"
 ---
 # <a name="web-account-manager"></a>Web アカウント マネージャー
 
@@ -179,7 +179,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * OneDrive のスコープについては、「[OneDrive の認証とサインイン](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)」をご覧ください。 
 
 > [!TIP]
-> 必要に応じて、アプリは、(既定のメール アドレスを持つユーザー フィールドを入力) へのログイン ヒントまたはサインイン エクスペリエンスに関連するその他の特殊なプロパティを使用する場合は、 **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** プロパティの一覧します。 これにより、キャッシュ内のアカウントの不一致を防止する web アカウントをキャッシュする場合は、プロパティを無視するようにシステムです。
+> 必要に応じて、アプリは、(既定のメール アドレスを持つユーザーのフィールドを設定する) にログイン ヒントを表示またはサインイン エクスペリエンスに関連するその他の特殊なプロパティを使用する場合は、 **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** プロパティの一覧します。 これは、結果、システムにより、キャッシュ内のアカウントの不一致が web アカウントをキャッシュする場合、プロパティを無視します。
 
 企業向けのアプリを開発している場合は、Azure Active Directory (AAD) インスタンスに接続し、通常の MSA サービスではなく Microsoft Graph API を使用します。 このシナリオでは、次のコードを代わりに使います。 
 

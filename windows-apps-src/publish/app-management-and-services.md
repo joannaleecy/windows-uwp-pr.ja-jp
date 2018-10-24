@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438952"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472452"
 ---
 # <a name="app-management-and-services"></a>アプリの管理とサービス
 
@@ -44,7 +44,7 @@ Windows デベロッパー センター ダッシュボードで各アプリに�
 Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 **[マップ]** ページの **[サービス]** セクションでこのトークンを取得できます。
 
 > [!NOTE]
-> Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key)」をご覧ください。
+> Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key)」をご覧ください。
 
 詳しくは、「[マップ サービスの使用](use-map-services.md)」をご覧ください。
 
@@ -58,7 +58,7 @@ Microsoft Store コレクション API と、Microsoft Store 購入 API を使�
 
 Azure AD と統合し、管理者の承認を必要とする[アプリケーションのアクセス権やアクセス許可を委任](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)を要求する Api を呼び出して、製品の f では、次に、Azure AD クライアント ID を入力します。 これにより、管理者が組織付与同意を得て、テナントのすべてのユーザーの代理として行為する製品のためにアプリを入手できます。
 
-詳しくは、[全体のテナントの承認を要求する](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)を参照してください。
+詳しくは、[全体のテナントの同意を要求する](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)を参照してください。
 
 ## <a name="app-management"></a>アプリ管理
 
@@ -89,10 +89,10 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
 
 ## <a name="wnsmpns"></a>WNS/MPNS
 
-**WNS/MPNS** 」セクションでは、作成したり、アプリのユーザーに通知を送信するためのオプションが提供されます。 
+**WNS/MPNS** ] セクションでは、作成したり、アプリのユーザーに通知を送信するためのオプションが提供されます。 
 
 > [!TIP]
-> UWP アプリの場合は、ダッシュ ボードで、**通知**のオプションを使用してお勧めします。 この機能では、すべてのアプリのユーザーに通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 ユーザーの対象となるサブセットにします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
+> UWP アプリの場合は、ダッシュ ボードで**の通知**オプションを使用してお勧めします。 この機能では、すべてのアプリのユーザーに通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 ユーザーのターゲットのサブセットにします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
 
 アプリのパッケージの種類とその具体的な要件に応じて、次のオプションのいずれかを使用することも。 
 
@@ -101,6 +101,6 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
 -   **Microsoft Azure Mobile Apps** を使うと、プッシュ通知の送信や、アプリ ユーザーの認証や管理、クラウドでのアプリ データの保存をすることができます。 詳しくは、[モバイル アプリに関するドキュメント](http://go.microsoft.com/fwlink/p/?LinkId=221116)をご覧ください。
 
 -   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone の .xap パッケージと一緒に使うことができます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使用している場合は、 **WNS/MPNS** ] ページで提供されるフィールドに証明書をアップロードする必要があります。 詳しくは、「[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](http://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
- 
+ 
 
- 
+ 

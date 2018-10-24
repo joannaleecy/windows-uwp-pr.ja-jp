@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: d354f0babec3ec2346c6e76fcae8666f40f3f6be
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443052"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473440"
 ---
 # <a name="web-authentication-broker"></a>Web 認証ブローカー
 
@@ -27,7 +27,7 @@ ms.locfileid: "5443052"
 >[!NOTE]
 >動作する完全なコード例が必要な場合は、[GitHub の WebAuthenticationBroker リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=620622)をコピーしてください。
 
- 
+ 
 
 ## <a name="register-your-app-with-your-online-provider"></a>アプリのオンライン プロバイダーへの登録
 
@@ -91,7 +91,7 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) に加え、[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 名前空間には [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) メソッドが含まれています。 このメソッドは呼び出さないでください。 これは Windows Phone 8.1 のみを対象とするアプリ用に設計されたもので、Windows 10 以降では推奨されません。
+>[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) に加え、[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 名前空間には [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) メソッドが含まれています。 このメソッドは呼び出さないでください。 のみ、Windows Phone 8.1 をターゲットとするアプリは設計されており、windows 10 以降は推奨されなくなりました。
 
 ## <a name="connecting-with-single-sign-on-sso"></a>シングル サインオン (SSO) を使った接続
 
@@ -163,7 +163,7 @@ Fiddler Web デバッガーはアプリに対して使うことができます�
 
     **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
-    このレジストリ キーを用意していない場合は、管理者特権でコマンド プロンプトで作成できます。
+    このレジストリ キーを用意していない場合は、管理者特権でコマンド プロンプトで作成することができます。
 
     ```cmd 
     REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f

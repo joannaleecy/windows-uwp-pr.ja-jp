@@ -2,7 +2,7 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "\"Hello, world\" アプリを作成する方法 (XAML)"
-description: Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを Extensible Application Markup Language (XAML) を使って C# で作成します。
+description: C# で Extensible Application Markup Language (XAML) を使用すると、windows 10 の対象とするユニバーサル Windows プラットフォーム (UWP) の単純なこんにちは, world アプリを作成できます。
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: windows 10, uwp, 初めてのアプリ, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 950b2f3fac44c8350a51fd5c1b7071f05c92d746
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434857"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479161"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>"Hello, world" アプリを作成する (XAML)
 
-このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) 向けの単純な "Hello, world" アプリを XAML と C# で作る方法について説明します。 Microsoft Visual Studio プロジェクトを 1 つ開発すれば、あらゆる Windows 10 デバイスで動作するアプリを構築できます。
+このチュートリアルは、XAML と c# を使って、シンプルなを作成する方法を教えて「こんにちは, world」アプリでは、windows 10 ユニバーサル Windows プラットフォーム (UWP) 用です。 Microsoft Visual Studio でプロジェクトを 1 つは、任意の windows 10 デバイスで実行されるアプリをビルドすることができます。
 
 ここでは、次の方法について説明します。
 
--   **Windows 10** と **UWP** を対象とする新しい **Visual Studio 2017** プロジェクトを作る。
+-   **Windows 10**と**UWP**を対象とする新しい**Visual Studio 2017**プロジェクトを作成します。
 -   スタート ページの UI を変更するように XAML を記述する。
 -   Visual Studio のローカル デスクトップでプロジェクトを実行する。
 -   SpeechSynthesizer を使って、ボタンが押されたときにアプリがコンテンツを読み上げるようにする。
@@ -50,7 +50,7 @@ ms.locfileid: "5434857"
 
 2.  **[ファイル**] メニューから選択**新規 > プロジェクト**を*新しいプロジェクト*] ダイアログを開きます。
 
-3.  左側のテンプレートの一覧で、次のように選択します。**インストールされている > Visual C#] > Windows ユニバーサル**UWP プロジェクト テンプレートの一覧を表示します。
+3.  左側のテンプレートの一覧で、選択**インストール済み > Visual C#] > Windows ユニバーサル**UWP プロジェクト テンプレートの一覧を表示します。
 
     ユニバーサル テンプレートが表示されない場合は、UWP アプリを作成するためのコンポーネントがない可能性があります。 インストール プロセスを繰り返して UWP サポートを追加することもできます (*[新しいプロジェクト]* ダイアログで **[Visual Studio インストーラーを開く]** をクリック)。 参照[を取得する設定](get-set-up.md))。
 
@@ -235,7 +235,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>まとめ
 
-これで、Windows 10 と UWP 用の初めてのアプリを作成しました。
+これで、windows 10 と UWP の初めてのアプリを作成しました。
 
 アプリで使うコントロールを XAML によってレイアウトする方法については、[グリッドに関するチュートリアル](../design/layout/grid-tutorial.md)で学習するか、直接[次のステップ](learn-more.md)に進んでください。
 

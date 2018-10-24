@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 00baa088f0cb01068f1d1d78d101e6cd294c77f7
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433045"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476416"
 ---
 # <a name="launch-the-windows-settings-app"></a>Windows 設定アプリの起動
 
@@ -101,7 +101,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | Cortana に話す | ms-settings:cortana-language |
 
 > [!NOTE] 
-> デスクトップでは、この設定セクションときに呼び出される検索場所 Cortana が現在使用可能なはや Cortana は無効になっている領域に PC を設定します。 この場合、Cortana に固有のページ ([デバイス間での Cortana) と Cortana に話すは表示されません。 
+> デスクトップでは、この設定セクションに呼び出される検索 PC が Cortana が現在利用可能でない場所や、Cortana は無効になっている領域に設定します。 この場合、Cortana に固有のページ (自分のデバイス間での Cortana) と Cortana に話すは表示されません。 
 
 ## <a name="devices"></a>デバイス
 
@@ -127,7 +127,8 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 |-------------|-----|
 | オーディオ | ms-settings:easeofaccess-audio |
 | クローズド キャプション | ms-settings:easeofaccess-closedcaptioning |
-| 表示 | ms-settings:easeofaccess-display |
+| カラー フィルター | ms-設定: easeofaccess-colorfilter |
+| Display | ms-settings:easeofaccess-display |
 | 視線制御 | ms-settings:easeofaccess-eyecontrol |
 | フォント | ms-settings:fonts |
 | ハイ コントラスト | ms-settings:easeofaccess-highcontrast |

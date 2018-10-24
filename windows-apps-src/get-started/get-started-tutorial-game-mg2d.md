@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: d38465ce02e0aedf854094ede75fc33701b226a6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440776"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469635"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>MonoGame 2D で UWP ゲームを作成する
 
@@ -35,16 +35,16 @@ MonoGame は、軽量のゲーム開発フレームワークです。 このチ�
 +   オプションとして、クラス、メソッド、変数など、基本的なコンピューター サイエンスの概念に関する知識。
 
 ## <a name="why-monogame"></a>MonoGame を使用する理由
-ゲームの開発環境には、今や十分すぎるほどの選択肢が存在します。 Unity などフル機能を備えたエンジンから DirectX など包括的で複雑なマルチメディア API まで、どこから始めるべきか迷います。 MonoGame は、複雑さのレベルがゲーム エンジンと DirectX などの基本 API の中間に分類されるツールのセットです。 MonoGame では、使いやすいコンテンツ パイプラインと、多様なプラットフォームで動作する軽量のゲームを作成するために必要なすべての機能が提供されています。 大切な MonoGame のアプリは純粋な c# で記述され、Microsoft Store やその他の同様の配布プラットフォームを通じて迅速の配布にできます。
+ゲームの開発環境には、今や十分すぎるほどの選択肢が存在します。 Unity などフル機能を備えたエンジンから DirectX など包括的で複雑なマルチメディア API まで、どこから始めるべきか迷います。 MonoGame は、複雑さのレベルがゲーム エンジンと DirectX などの基本 API の中間に分類されるツールのセットです。 MonoGame では、使いやすいコンテンツ パイプラインと、多様なプラットフォームで動作する軽量のゲームを作成するために必要なすべての機能が提供されています。 MonoGame のアプリは純粋な c# で記述してに配布できる迅速に、Microsoft Store やその他の同様の配布プラットフォームを通じて、すべての最適なします。
 
 ## <a name="get-the-code"></a>コードを入手する
 段階を追ってチュートリアルを進めるのではなく、MonoGame の動作を確認するには、[こちらをクリックして完成したアプリを入手してください](https://github.com/Microsoft/Windows-appsample-get-started-mg2d)。
 
-Visual Studio 2017 でプロジェクトを開き、サンプルを実行する、 **F5**キーを押します。 初めての実行時には、インストールに含まれていない NuGet パッケージを Visual Studio が取得する必要があるため、少し時間がかかることがあります。
+Visual Studio 2017 で、プロジェクトを開き、サンプルを実行する、 **F5**キーを押します。 初めての実行時には、インストールに含まれていない NuGet パッケージを Visual Studio が取得する必要があるため、少し時間がかかることがあります。
 
 これを行った場合は、MonoGame のセットアップに関する次のセクションをスキップして、順を追ったコードのウォークスルーに進むことができます。
 
-**注:** このサンプルで作成するゲームは、完全なゲームではなく、おもしろい内容でもありません。 そのだけを目的では、MonoGame での 2D 開発のすべての主要な概念を示します。 このコードを基にして、より優れたゲームを作成することも、基礎を習得して 1 から始めることもできます。
+**注:** このサンプルで作成するゲームは、完全なゲームではなく、おもしろい内容でもありません。 その唯一の目的は、MonoGame での 2D 開発の主要概念をすべての方法を示すためです。 このコードを基にして、より優れたゲームを作成することも、基礎を習得して 1 から始めることもできます。
 
 ## <a name="set-up-monogame-project"></a>MonoGame プロジェクトのセットアップ
 1. [MonoGame.net](http://www.monogame.net/) から、**MonoGame 3.6** for Visual Studio をインストールします。
@@ -383,7 +383,7 @@ public void StartGame()
 ```
 
 ### <a name="7-handle-keyboard-input"></a>7. キーボード入力を処理します。
-次に、キーボード経由でのユーザー入力を処理する新しいメソッドが必要です。 このメソッドを **Game1.cs** に追加します。
+次に、キーボード経由でのユーザー入力を処理する新しいメソッド必要があります。 このメソッドを **Game1.cs** に追加します。
 
 ```CSharp
 void KeyboardHandler()

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, スレッド, スレッド プール
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d7fc361e446207c8e14f83ca3f663bd5072e6e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435300"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478150"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>スレッド プールへの作業項目の送信
 
@@ -354,11 +354,11 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>要約と次の手順
 
-詳しくは、Windows 8.1 用に記述された[スレッド プール作業項目のサンプルの作成に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=328569)でこのクイックスタートのコードをダウンロードし、win\_unap Windows 10 アプリでソース コードを再利用してください。
+このクイック スタートの中で、[項目のサンプルを使用して、スレッド プールを作成](http://go.microsoft.com/fwlink/p/?LinkID=328569)、Windows8.1 向けに書かれたからのコードをダウンロードすることの詳細については、および、win \_unap windows 10 アプリでソース コードを再利用します。
 
 ## <a name="related-topics"></a>関連トピック
 
 * [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)
 * [スレッド プールを使うためのベスト プラクティス](best-practices-for-using-the-thread-pool.md)
 * [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)
- 
+ 

@@ -16,18 +16,18 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cd5f7e7022f246fce3d08286fe77c74503ddc5d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444026"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471375"
 ---
 # <a name="text-controls"></a>テキスト コントロール
 
 テキスト コントロールは、テキスト入力ボックス、パスワード ボックス、自動提案ボックス、テキスト ブロックで構成されています。 XAML フレームワークには、テキストのレンダリング、入力、編集用のいくつかのコントロールと、テキストの書式設定用のプロパティのセットが用意されています。
 
 - 読み取り専用テキストを表示するためのコントロールは、[TextBlock](text-block.md) および [RichTextBlock](rich-text-block.md) です。
-- テキスト入力と編集用のコントロールは: [TextBox](text-box.md)、 [RichEditBox](rich-edit-box.md)、 [AutoSuggestBox](auto-suggest-box.md)、および[PasswordBox](password-box.md)します。
+- テキスト入力と編集用のコントロールは、: [TextBox](text-box.md)、 [RichEditBox](rich-edit-box.md)、 [AutoSuggestBox](auto-suggest-box.md)、および[PasswordBox](password-box.md)します。
 
 > **重要な Api**: [TextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、 [RichTextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、 [TextBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、 [RichEditBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、 [AutoSuggestBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、 [PasswordBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
@@ -127,7 +127,7 @@ Windows 10 バージョン 1803 以降では、XAML テキスト入力ボック�
 
 ![ペンでタップするとテキスト ボックスが展開する](images/handwritingview/handwritingview2.gif)
 
-詳しくは、[手書きのビューでのテキスト入力](text-handwriting-view.md)を参照してください。
+詳しくは、[テキスト入力では、手書きのビュー](text-handwriting-view.md)を参照してください。
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>テキスト コントロールに適切なキーボードの選択
 

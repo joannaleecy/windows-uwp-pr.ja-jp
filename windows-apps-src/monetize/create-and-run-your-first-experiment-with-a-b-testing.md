@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
 ms.localizationpriority: medium
 ms.openlocfilehash: ac97b8d34ec0f5dbfc42022fc54911f04f09ba3b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438352"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477758"
 ---
 # <a name="create-and-run-your-first-experiment"></a>最初の実験を作成して実行する
 
@@ -48,7 +48,7 @@ ms.locfileid: "5438352"
 
 ## <a name="code-the-experiment-in-your-app"></a>アプリで実験のコードを記述する
 
-1. Visual Studio では、Visual c# を使用して、新しいユニバーサル Windows プラットフォーム プロジェクトを作成します。 プロジェクトに「**SampleExperiment**」という名前を付けます。
+1. Visual Studio では、Visual C#] を使用して新しいユニバーサル Windows プラットフォーム プロジェクトを作成します。 プロジェクトに「**SampleExperiment**」という名前を付けます。
 2. ソリューション エクスプローラーで、プロジェクト ノードを展開し、**[参照設定]** を右クリックして **[参照の追加]** をクリックします。
 3. **[参照マネージャー]** で、**[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。
 4. SDK の一覧で、**[Microsoft Engagement Framework]** の横にあるチェック ボックスをオンにして、**[OK]** をクリックします。

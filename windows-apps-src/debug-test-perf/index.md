@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: デバッグ、テスト、パフォーマンス
-description: デバッグしアプリをテストして、Microsoft Store の認定プロセスを準備するには、Microsoft Visual Studio とその他のツールを使用します。
+description: Microsoft Visual Studio とその他のツールを使ってデバッグしアプリをテストして、Microsoft Store の認定プロセスを準備します。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a919af3cb532ce19427967f305cb03adc149a1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431832"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480581"
 ---
 # <a name="debugging-testing-and-performance"></a>デバッグ、テスト、パフォーマンス
 
 
-このセクションでは、Microsoft Visual Studio を使用して、デバッグ、テスト、およびアプリを最適化する方法を示します。 (Microsoft ストアのアプリを準備) するには、(デバイスの監視と構成の) 用 Windows Device Portal や、Windows アプリ認定キットなどのツールも含まれています。
+このセクションでは、Microsoft Visual Studio を使用して、デバッグ、テスト、およびアプリを最適化する方法を示します。 (デバイスの監視と構成の) 用 Windows Device Portal や、Windows アプリ認定キット (アプリを準備する、Microsoft Store 向け) などのツールも含まれています。
 
 | トピック | 説明 |
 |-------|-------------|
@@ -28,7 +28,7 @@ ms.locfileid: "5431832"
 | [プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール](testing-debugging-plm.md) | アプリとプロセス ライフタイム管理がどのように連携するかをデバッグしてテストするためのツールと手法を紹介します。 |
 | [Microsoft Emulator for Windows 10 Mobile を使ったテスト](test-with-the-emulator.md) | Microsoft Emulator for Windows 10 Mobile に用意されているツールを使って、デバイスでの実際の操作をシミュレートし、アプリの機能をテストします。 エミュレーターは、Windows 10 を実行するモバイル デバイスをエミュレートするデスクトップ アプリケーションです。 このアプリケーションを使用すると、仮想化された環境が提供されるため、物理デバイスを使用せずに Windows アプリのデバッグとテストを実行できます。 また、アプリケーションのプロトタイプのための隔離環境としても使用できます。 |
 | [Visual Studio を使った Surface Hub アプリのテスト](test-surface-hub-apps-using-visual-studio.md) | Visual Studio シミュレーターは、ユニバーサル Windows プラットフォーム (UWP) アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Microsoft Surface Hub 用に作成されたアプリを含みます。 シミュレーターでは、Surface Hub と同じユーザー インターフェイスは使用できませんが、Surface Hub の画面サイズと解像度でのアプリの外観と動作をテストするために有用です。 |
-| [ルーズ ファイルの登録をアプリを展開します。](loose-file-registration.md) | このガイドでは、ルーズ ファイルのレイアウトの検証し、Windows 10 アプリをパッケージ化することがなく共有を使用する方法を示します。 |
+| [ルーズ ファイルの登録によるアプリを展開します。](loose-file-registration.md) | このガイドでは、ルーズ ファイルのレイアウトの検証し、Windows 10 アプリをパッケージ化することがなく共有を使用する方法を示します。 |
 | [ベータ テスト](beta-testing.md) | **ベータ テスト**を行うと、まだリリースされていないアプリをアプリ開発チームの外部の人に自分のデバイスで試してもらい、その人たちからのフィードバックに基づいてアプリを改善することができます。 |
 | [Windows Device Portal](device-portal.md) | Windows Device Portal では、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行えます。 |
 | [Windows アプリ認定キット](windows-app-certification-kit.md) | アプリに、Microsoft Store で公開されているの最適な機会を提供したり、Windows が認定の検証し認定のために提出する前にローカルでテストします。 このトピックでは、Windows アプリ認定キットのインストール方法と実行方法について説明します。 |

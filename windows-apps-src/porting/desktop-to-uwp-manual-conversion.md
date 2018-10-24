@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440995"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470048"
 ---
 # <a name="package-a-desktop-application-manually"></a>デスクトップ アプリケーションを手動でパッケージ化します。
 
@@ -24,12 +24,12 @@ ms.locfileid: "5440995"
 
 アプリを手動でパッケージ化するには、パッケージ マニフェスト ファイルを作成してから、Windows アプリ パッケージを生成するコマンド ライン ツールを実行します。
 
-Xcopy コマンドを使用して、アプリケーションをインストールするか、アプリのインストーラーによるシステムへの変更を熟知している場合、手動によるパッケージ化を検討し、プロセスをさらに細かく制御します。
+Xcopy コマンドを使用して、アプリケーションをインストールするか、アプリのインストーラーによるシステムへの変更に慣れている場合は、手動によるパッケージ化を検討し、プロセスをさらに細かく制御すます。
 
 インストーラーによってどのような変更がシステムに加えられるのかわからない場合や、自動化ツールを使用してパッケージ マニフェストを生成する場合は、[こちら](desktop-to-uwp-root.md#convert)のオプションのいずれかを検討してください。
 
 >[!IMPORTANT]
->デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (デスクトップ ブリッジとも呼ばれるを Windows 10 バージョン 1607 で導入されたそれ以外の場合と、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
+>デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (それ以外の場合、デスクトップ ブリッジとも呼ばれるは Windows 10 バージョン 1607 で導入されましたし、Windows 10 Anniversary Update (10.0 をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
 
 ## <a name="first-prepare-your-application"></a>まず、アプリケーションを準備します
 
@@ -87,11 +87,11 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> Windows ストアでアプリケーション名を予約済み場合、は、Windows デベロッパー センター ダッシュ ボードを使用して、名前と発行元を取得できます。 他のシステムにアプリケーションをサイドローディングする場合、アプリに署名証明書の名前と一致を選択する発行元名を使用する限り、独自の名前を提供することができます。
+> Windows ストアでアプリケーション名を予約済み、Windows デベロッパー センター ダッシュ ボードを使用して、名前と発行元を取得できます。 他のシステムにアプリケーションをサイドローディングする場合は、アプリに署名証明書の名前と一致を選択する発行元名を使用する限り、独自の名前を提供できます。
 
 ### <a name="properties"></a>プロパティ
 
-[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 要素には、必須の子要素が 3 つあります。 次に示すのは、**Properties** ノードの例です。要素はプレースホルダー テキストが指定されています。 **表示名**は、ストアにアップロードするアプリに対して、ストアで予約するアプリケーションの名前です。
+[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 要素には、必須の子要素が 3 つあります。 次に示すのは、**Properties** ノードの例です。要素はプレースホルダー テキストが指定されています。 **表示名**は、ストアにアップロードされたアプリの場合、ストアで予約するアプリケーションの名前です。
 
 ```XML
 <Properties>
@@ -134,7 +134,7 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
 
 ### <a name="application-element"></a>Application 要素
 
-デスクトップ アプリで、パッケージを作成する、 ``EntryPoint`` Application 要素の属性は常に``Windows.FullTrustApplication``します。
+デスクトップ アプリで、パッケージを作成する、 ``EntryPoint`` 、Application 要素の属性は常に``Windows.FullTrustApplication``します。
 
 ```XML
 <Applications>
@@ -187,7 +187,7 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
 
 5.  コマンド ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml`` を使用して、resources.pri ファイルを作成します。
 
-    たとえば、アプリケーションのコマンドが、これのようになります。:``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``します。
+    たとえば、アプリのコマンドが、これのようになります。:``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``します。
 
 6.  次の手順の説明に従って Windows アプリ パッケージをパッケージ化します。
 

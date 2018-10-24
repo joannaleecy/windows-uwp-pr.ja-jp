@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング
 ms.localizationpriority: medium
 ms.openlocfilehash: e94eb0e819796dda456899bb877057e4532f5ce9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442310"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475970"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>アプリ インストーラー ファイルを使ったインストールに関する問題のトラブルシューティング
 
@@ -76,7 +76,7 @@ HTTP エンドポイントからインストールする場合、すべてのフ
 
 ### <a name="verify-app-package-file-installation"></a>アプリ パッケージ ファイルのインストールを確認します。
 
-- アプリのパッケージ ファイルをローカル フォルダーにダウンロードし、 [Add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell コマンドを使用してインストールしようとしてください。
+- ローカル フォルダーに、アプリ パッケージ ファイルをダウンロードし、 [Add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell コマンドを使用してインストールしてみます。
 
 - `.appinstaller` ファイルをローカル フォルダーにダウンロードし、`Add-AppxPackage -Appinstaller` PowerShell コマンドを使ってインストールしてみます。
 

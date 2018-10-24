@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 7adfecbe216dce25d0f80eb3ef1f528196299db4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440796"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470636"
 ---
 # <a name="guidelines-for-background-tasks"></a>バックグラウンド タスクのガイドライン
 
@@ -63,7 +63,7 @@ ms.locfileid: "5440796"
 
 **バックグラウンド タスクを実行する要求:**
 
-> **重要**  Windows 10 以降、バックグラウンド タスクを実行する前提条件として、アプリをロック画面に配置する必要はなくなりました。
+> **重要な**以降 windows 10 では、アプリはしなくなったに必要なバック グラウンド タスクを実行するための前提条件として、ロック画面上に存在します。
 
 ユニバーサル Windows プラットフォーム (UWP) アプリは、ロック画面にピン留めしなくても、サポートされているすべての種類のタスクを実行できます。 ただし、どの種類のバックグラウンド タスクを登録する場合でも、その前にアプリが [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。 ユーザーがデバイス設定でバックグラウンド タスクに対するアプリのアクセス許可を明示的に拒否した場合、このメソッドは [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439) を返します。 バックグラウンド アクティビティとバッテリー節約機能についてのユーザーの選択について詳しくは、「[バックグラウンド アクティビティの最適化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)」をご覧ください。 
 ## <a name="background-task-checklist"></a>バックグラウンド タスクのチェック リスト
@@ -109,6 +109,6 @@ ms.locfileid: "5440796"
 * [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
 * [UWP アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
- 
+ 
 
- 
+ 

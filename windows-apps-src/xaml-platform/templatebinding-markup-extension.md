@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437685"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475317"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} マークアップ拡張
 
@@ -57,17 +57,17 @@ XAML の [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/b
 
 **TemplateBinding** はマークアップ拡張です。 通常、マークアップ拡張は、属性値をリテラル値やハンドラー名以外にエスケープする必要があり、特定の型やプロパティに対して型コンバーターを指定するのではなく、よりグローバルにその必要がある場合に実装します。 XAML のすべてのマークアップ拡張では、それぞれの属性構文で "{" と "}" の文字を使います。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張で属性を処理する必要があることを認識します。
 
-**注**  Windows ランタイム XAML プロセッサの実装では、**TemplateBinding** のバッキング クラス表現はありません。 **TemplateBinding** は、XAML マークアップでのみ使用できます。 コードの動作を再現する方法には単純なものがありません。
+**注:** Windows ランタイム XAML プロセッサの実装で、 **TemplateBinding**のバッキング クラス表現はありません。 **TemplateBinding** は、XAML マークアップでのみ使用できます。 コードの動作を再現する方法には単純なものがありません。
 
 ### <a name="xbind-in-controltemplate"></a>ControlTemplate で X:bind
 
-次回のメジャー アップデートを Windows 10 以降、 **X:bind**マークアップ拡張を使用することができます[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)で**TemplateBinding**を使用した任意の場所。 
+次回のメジャー アップデートを Windows 10 以降、 **X:bind**マークアップ拡張を使用することができます[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)で**TemplateBinding**を使用した任意の場所です。 
 
 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType)プロパティが必要です (オプションではなく) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) **X:bind**を使用する場合にします。
 
-**X:bind**のサポートできるようになりましたとして使用できますどちらの[関数バインド](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)でも、双方向のバインド
+**X:bind**をサポートできるようになりましたとして使用できますどちらの[関数のバインディング](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)でも、双方向バインディング
 
-次の例では、TextBlock.Text Button.Content.ToString() と評価されます。 ControlTemplate で TargetType では、データ ソースとして機能し、親に TemplateBinding と同じ結果を実現します。
+次の例では、TextBlock.Text Button.Content.ToString() と評価されます。 ControlTemplate で TargetType では、データ ソースとして機能し、親の TemplateBinding と同じ結果を実現します。
 
 ```xaml
 <ControlTemplate TargetType="Button">
@@ -84,5 +84,5 @@ XAML の [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/b
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
 * [XAML の概要](xaml-overview.md)
 * [依存関係プロパティの概要](dependency-properties-overview.md)
- 
+ 
 

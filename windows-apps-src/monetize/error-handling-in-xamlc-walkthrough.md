@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, エラー処理, XAML, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: e4387ccb8ef7eb02cb0043530a4e683f7917f421
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434919"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473492"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>XAML/C# ウォークスルーでのエラー処理
 

@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind マークアップ拡張では、高パフォーマンスの代わりのバインディングにです。 xBind - Windows 10 での新しい短時間でおよび少ないメモリ動作バインディングとデバッグの向上をサポートしています。
+description: XBind マークアップ拡張には、バインド、高パフォーマンス代わりです。 xBind - Windows 10 の新規の短時間でおよび少ないメモリ動作バインディングとデバッグの向上をサポートしています。
 title: xBind マークアップ拡張
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5445909"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477368"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} マークアップ拡張
 
-**注**  **{x:Bind}** によりアプリでデータ バインディングを使う方法に関する一般的な情報 (および **{x:Bind}** と **{Binding}** の全体的な比較) については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
+**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}**、全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
-Windows 10 では、**{Binding}** に代わり、**{x:Bind}** マークアップ拡張が新たに提供されています。 **{X:bind}** は、および少ないメモリ **{Binding}** して適切なデバッグをサポートするよりも短い時間で実行されます。
+**{X:bind}** マークアップ拡張機能: windows 10 の新機能: **{Binding}** に代わます。 **{X:bind}** は、および少ないメモリ **{Binding}** して適切なデバッグをサポートするよりも短い時間で実行されます。
 
 XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロパティから値を取得してマークアップで指定されたプロパティに設定するコードに変換されます。 必要な場合、バインディング オブジェクトは、データ ソース プロパティの値の変化を監視し、その変化に基づいて自分自身を更新するように構成できます (`Mode="OneWay"`)。 また、その独自の値の変化をソース プロパティにプッシュするように構成することもできます (`Mode="TwoWay"`)。
 
@@ -151,7 +151,7 @@ Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスの�
 
 > [!NOTE]
 > マークアップを **{Binding}** から **{x:Bind}** に変換する場合は、**Mode** プロパティの既定値の違いに注意してください。
- 
+ 
 > マークアップ ツリーの特定のセグメントで x:Bind の既定のモードを変更するには、[**x:DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) を使用できます。 選択されたモードは、バインドの一部として明示的にモードが指定されている場合を除いて、対象の要素とその子に対するすべての x:Bind 式に適用されます。 OneTime は、OneWay より重要です。OneWay を使うと、接続して変更検出を処理するために生成されるコードが多くなるためです。
 
 ## <a name="remarks"></a>注釈
@@ -171,7 +171,7 @@ Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスの�
 > [!NOTE]
 > Windows 10、バージョン1607 以降では、XAML フレームワークにブール値と Visibility 値のコンバーターが組み込まれています。 コンバーターは、**Visible** 列挙値に対して **true** を、**Collapsed** に対して **false** をマッピングします。これにより、コンバーターを作成せずに Visibility プロパティをブール値にバインドできます。 これは、関数バインドの機能ではないことに注意してください。プロパティのバインドにすぎません。 組み込みのコンバーターを使用するには、アプリの最小のターゲット SDK バージョンが 14393 以降である必要があります。 アプリがそれよりも前のバージョンの Windows 10 をターゲットとしている場合は使うことができません。 ターゲット バージョンについて詳しくは、「[バージョン アダプティブ コード](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)」をご覧ください。
 
-**ヒント:** [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) や [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) のように、値に 1 つの中かっこを指定する必要がある場合は、`\{` のように円記号 (バックスラッシュ) を中かっこの前に付けます。 別の方法として、エスケープする必要がある中かっこを含む文字列全体を `ConverterParameter='{Mix}'` のように別の種類の引用符で囲みます。
+**ヒント:** の値を 1 つの中かっこを指定する必要がある場合など、[**パス**](https://msdn.microsoft.com/library/windows/apps/br209830)または[**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)、前に付けますバック スラッシュ:`\{`します。 別の方法として、エスケープする必要がある中かっこを含む文字列全体を `ConverterParameter='{Mix}'` のように別の種類の引用符で囲みます。
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)、**ConverterLanguage** はいずれも、バインド ソースの値または型を、バインディング ターゲットのプロパティと互換性のある型または値に変換するシナリオに関係があります。 例や詳しい情報については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」の「データの変換」をご覧ください。
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f99396b117efcf7c3bed3cb64f24b519734cc858
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441200"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471571"
 ---
 # <a name="trademark-and-copyright-protection"></a>商標と著作権の保護
 
@@ -67,9 +67,9 @@ Microsoft では、使用しないように強くお願いします。 ただし
 
 Microsoft からの通知を注意深く読み、指示に従ってください。 Microsoft からの通知には、問題を修正するために行った処置、申立人への不合意、ストアへのアプリの再申請の要求を通知するために従う具体的な手順が記載されていることがあります。
 
- 
+ 
 
- 
+ 
 
 
 

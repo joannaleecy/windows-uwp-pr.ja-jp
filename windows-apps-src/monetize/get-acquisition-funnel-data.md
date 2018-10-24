@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 入手, ファネル
 ms.localizationpriority: medium
 ms.openlocfilehash: 362bcc956fa5945f9685aac7d6351b9fda7690de
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443138"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479655"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>アプリの入手に関するファネル データの取得
 
@@ -54,7 +54,7 @@ ms.locfileid: "5443138"
 | endDate | date | 取得する入手に関するファネル データの日付範囲終了日です。 既定値は現在の日付です。 |  必須ではない  |
 | filter | string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。 | 必須ではない   |
 
- 
+ 
 ### <a name="filter-fields"></a>フィルター フィールド
 
 要求の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。

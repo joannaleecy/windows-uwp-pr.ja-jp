@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, win32, デスクトップ, トースト通知, トーストの送信, ローカル トーストの送信, デスクトップ ブリッジ, C++, cpp, c プラスプラス, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: a6134e65a27563f96c03880dea026bed11f46641
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430928"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476904"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>デスクトップ C++ WRL アプリからのローカル トースト通知の送信
 
@@ -426,7 +426,7 @@ Windows 8.1 以下をサポートする場合は、実行時に Windows 10 を�
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 | サポート対象 | サポート対象 | サポート対象 (ただし COM サーバーをアクティブ化しない) |
 | Windows 8.1 / 8 | 該当せず | 該当せず | サポート対象 |
-| Windows 7 以下 | 該当せず | なし | 該当せず |
+| Windows 7 以下 | 該当せず | 該当なし | 該当せず |
 
 Windows 10 で実行しているかどうかを確認するには、`<VersionHelpers.h>` ヘッダーをインクルードし、**IsWindows10OrGreater** メソッドを確認します。 これが true を返す場合は、続いてこのドキュメントで説明されているすべてのメソッドを呼び出してください。 
 

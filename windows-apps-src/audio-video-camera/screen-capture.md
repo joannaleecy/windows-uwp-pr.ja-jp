@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 画面キャプチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: 3be1312b5dcc716d29bf15a8e16a2647ada68d49
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444078"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471972"
 ---
 # <a name="screen-capture"></a>画面キャプチャ
 
@@ -28,7 +28,7 @@ Windows 10、バージョン 1803 以降では、[Windows.Graphics.Capture](http
 
 ## <a name="add-the-screen-capture-capability"></a>画面キャプチャ機能を追加する
 
-**Windows.Graphics.Capture**名前空間の Api には、アプリケーションのマニフェストで宣言する一般的な機能が必要です。
+**Windows.Graphics.Capture**名前空間の Api では、アプリケーションのマニフェストで宣言する一般的な機能が必要です。
     
 1. **ソリューション エクスプ ローラー**で、 **Package.appxmanifest**を開きます。
 2. **[機能]** タブをクリックします。
@@ -72,7 +72,7 @@ public async Task StartCaptureAsync()
 }
 ```
 
-これは UI コードであるため、UI スレッドで呼び出される必要があります。 ( **MainPage.xaml.cs**) のようなアプリのページの分離コードから呼び出すしている場合これを自動的に場合、強制的に実行できます次のコードで、UI スレッドで実行されるが。
+これは UI コードであるため、UI スレッドで呼び出される必要があります。 ( **MainPage.xaml.cs**) のように、アプリケーションのページの分離コードから呼び出すしている場合これを自動的に場合は、強制的に実行できます次のコードで、UI スレッドで実行されるが。
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -167,10 +167,10 @@ UI スレッドで **FrameArrived** を使用することはできれば避け�
 
 ## <a name="putting-it-all-together"></a>完成したコードの例
 
-次のコード スニペットは、UWP アプリケーションで画面キャプチャを実装する方法のエンド ツー エンド例を示します。 このサンプルでは、フロント エンドにボタンがある、クリックすると、 **Button_ClickAsync**メソッドを呼び出します。
+次のコード スニペットは、UWP アプリケーションで画面キャプチャを実装する方法のエンド ツー エンド例を示します。 このサンプルで、フロント エンドにボタンがある、クリックされると、 **Button_ClickAsync**メソッドを呼び出します。
 
 > [!NOTE]
-> このスニペットでは、 [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)を 2D グラフィックス レンダリング用のライブラリを使用します。 プロジェクトに設定する方法については、ドキュメントを参照してください。
+> このスニペットでは、 [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)を 2D グラフィックス レンダリング用のライブラリを使用します。 プロジェクトを設定する方法については、ドキュメントをご覧ください。
 
 ```cs
 using Microsoft.Graphics.Canvas;

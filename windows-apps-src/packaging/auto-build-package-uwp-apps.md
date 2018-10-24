@@ -11,11 +11,11 @@ keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431907"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472521"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>UWP アプリの自動ビルドを設定する
 
@@ -81,7 +81,7 @@ VSTS で最初のビルド定義を作成するには、[ビルド] タブに移
 
 #### <a name="configure-the-build-solution-build-task"></a>ソリューションのビルドのビルド タスクを構成する
 
-このタスクは、バイナリに作業フォルダー内では出力アプリ パッケージ ファイルを生成したすべてのソリューションをコンパイルします。 このタスクでは、MSBuild の引数を使用します。  これらの引数の値を指定する必要があります。 次の表をガイドとして使用してください。 
+このタスクは、バイナリに作業フォルダー内では出力アプリ パッケージのファイルを生成したすべてのソリューションをコンパイルします。 このタスクでは、MSBuild の引数を使用します。  これらの引数の値を指定する必要があります。 次の表をガイドとして使用してください。 
 
 |**MSBuild の引数**|**値**|**説明**|
 |--------------------|---------|---------------|
@@ -111,7 +111,7 @@ $() 構文で定義されたパラメーターは、ビルド定義で定義さ�
 
 ![成果物](images/building-screen6.png)
 
-ここでは、`UapAppxPackageBuildMode` プロパティを `StoreUpload` に設定しているため、成果物フォルダーには、ストアへの提出に推奨されるパッケージ (.appxupload) が含まれます。 提出できることも通常のアプリ パッケージ (.appx/.msix) またはアプリ バンドル (.appxbundle/.msixbundle) ストアに注意してください。 この資料の目的上、.appxupload ファイルを使います。
+ここでは、`UapAppxPackageBuildMode` プロパティを `StoreUpload` に設定しているため、成果物フォルダーには、ストアへの提出に推奨されるパッケージ (.appxupload) が含まれます。 提出できることも、通常のアプリ パッケージ (.appx/.msix) やアプリ バンドル (.appxbundle/.msixbundle) ストアに注意してください。 この資料の目的上、.appxupload ファイルを使います。
 
 
 >[!NOTE]
@@ -258,7 +258,7 @@ CI_MyUWPApp_1.1.2501.0
 
 次に、手動で、または既存のアプリ パッケージ ファイルをアップロードすることで、HockeyApp アプリを作成できます。 詳しくは、[新しいアプリを作成する方法に関するページ](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)をご覧ください。  
 
-既存のアプリ パッケージ ファイルを使用するには、ビルド ステップを追加し、ビルド ステップのバイナリ ファイルのパス パラメーターを設定します。 
+既存のアプリ パッケージ ファイルを使用するには、ビルド ステップを追加し、ビルド ステップのバイナリ ファイルのパスのパラメーターを設定します。 
 
 ![HockeyApp を構成する](images/building-screen15.png) 
 
@@ -316,7 +316,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 ストアに公開せずに、アプリを配布する場合は、直接デバイスにアプリをサイドロードできます。ただし、それらのデバイスは、アプリ パッケージの署名に使用された証明書を信頼している必要があります。 
 
-`Add-AppDevPackage.ps1` PowerShell スクリプトを使用してアプリをインストールします。 このスクリプトは、証明書を追加して、ローカル コンピューターの信頼されたルート証明セクションにをインストールするかアプリのパッケージ ファイルを更新します。
+`Add-AppDevPackage.ps1` PowerShell スクリプトを使用してアプリをインストールします。 このスクリプトは、証明書を追加して、ローカル コンピューターの信頼されたルート証明セクションにをインストールするか、アプリ パッケージ ファイルを更新します。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Windows 10 Anniversary Update でのアプリのサイドロード
 Windows 10 Anniversary update では、アプリのパッケージ ファイルをダブルクリックし、ダイアログ ボックスで [インストール] ボタンを選択してアプリをインストールできます。 
@@ -326,7 +326,7 @@ Windows 10 Anniversary update では、アプリのパッケージ ファイル�
 >[!NOTE]
 > この方法では、証明書や関連付けられている依存関係はインストールされません。
 
-VSTS や HockeyApp などの web サイトから Windows アプリ パッケージを配布する場合は、そのサイトをブラウザーで信頼済みサイトの一覧に追加する必要があります。 そうしないと、Windows は、ファイルがロックされているものとしてマークします。 
+VSTS や HockeyApp などの web サイトから Windows アプリ パッケージを配布する場合は、お使いのブラウザーで信頼済みサイトの一覧にそのサイトを追加する必要があります。 そうしないと、Windows は、ファイルがロックされているものとしてマークします。 
 
 <span id="certificates-best-practices"/>
 

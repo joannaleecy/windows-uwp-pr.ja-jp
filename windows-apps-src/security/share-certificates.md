@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 863658438ce53f2c74faddb845a7d17c6ec3130c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443478"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470857"
 ---
 # <a name="share-certificates-between-apps"></a>アプリ間での証明書の共有
 
@@ -78,9 +78,9 @@ ms.locfileid: "5443478"
 
 使用できるクライアント証明書がない場合は、ユーザーが証明書ストアに証明書を追加する必要があります。 そこで、クライアント証明書の PFX ファイルをユーザーに選んでもらい、その証明書をクライアント証明書ストアにインポートするコードをアプリに含めることができます。
 
-**ヒント** makecert.exe を使うと、このクイック スタートで使うことのできる PFX ファイルを作成できます。 makecert.exe の使い方の詳細については、「[MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)」を参照してください。
+**ヒント:** makecert.exe を使用してこのクイック スタートで使用する PFX ファイルを作成することができます。 makecert.exe の使い方の詳細については、「[MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)」を参照してください。
 
- 
+ 
 
 1.  Visual Studio を開き、スタート ページで新しいプロジェクトを作成します。 新しいプロジェクトに "FirstContosoBankApp" という名前を付けます。 **[OK]** をクリックして新しいプロジェクトを作成します。
 2.  MainPage.xaml ファイルで、次の XAML を既定の **Grid** 要素に追加します。 この XAML には、インポートする PFX ファイルを参照するボタン、PFX ファイルがパスワードで保護されている場合にパスワードを入力するテキスト ボックス、選んだ PFX ファイルをインポートするボタン、セキュリティで保護された Web サービスにログインするボタン、現在の操作の状態を表示するテキスト ブロックが含まれています。

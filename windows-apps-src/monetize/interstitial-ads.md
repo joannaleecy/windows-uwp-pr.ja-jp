@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, 広告コントロール, スポット
 ms.localizationpriority: medium
 ms.openlocfilehash: 547a582064262d18467df4868df17a08e73b279c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436850"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477712"
 ---
 # <a name="interstitial-ads"></a>スポット広告
 
@@ -163,7 +163,7 @@ ms.locfileid: "5436850"
 ### <a name="c-directx-interop"></a>C++ (DirectX Interop)
 
 このサンプルでは、Visual Studio で C++ **DirectX および XAML アプリ (ユニバーサル Windows)** プロジェクトを作成済みであり、特定の CPU アーキテクチャをターゲットとしているものと想定しています。
- 
+ 
 1. Visual Studio でプロジェクトを開きます。
 
 3. プロジェクトで Microsoft Advertising SDK への参照を追加します。

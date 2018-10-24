@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f4fc4cd9701778b3919896cf90929272e6b0923
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442844"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477381"
 ---
 # <a name="page-transitions"></a>ページ切り替え効果
 
@@ -59,7 +59,7 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="horizontal-slide"></a>水平方向のスライド
 
-水平方向のスライドを使用して、兄弟ページに並べて表示されることを示します。 [NavigationView](../controls-and-patterns/navigationview.md)コントロールは自動的に、上部のナビゲーションのこのアニメーションを使用が水平方向のナビゲーション エクスペリエンスを構築する場合するを実装できます SlideNavigationTransitionInfo と水平方向にスライドします。
+水平方向のスライドを使用して、兄弟のページに並べて表示されることを示します。 [NavigationView](../controls-and-patterns/navigationview.md)コントロールは自動的に、上部のナビゲーションのこのアニメーションを使用が水平方向のナビゲーション エクスペリエンスを構築する場合するを実装できます SlideNavigationTransitionInfo と水平方向にスライドします。
 
 持てるでは、ユーザーが相互の横にあるページ間で移動することです。 
 

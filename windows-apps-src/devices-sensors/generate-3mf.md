@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 02eb6442b4769e92bec2b41ed9ab0e91a6a98a7f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443520"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475960"
 ---
 # <a name="generate-a-3mf-package"></a>3MF パッケージの生成
 
@@ -32,7 +32,7 @@ ms.locfileid: "5443520"
 
 3D Manufacturing Format (3MF) は、製造 (3D 印刷) 目的のために、XML を使って 3D モデルの外観と構造を記述するための規則のセットです。 3MF ではパーツ (必須なパーツとオプションのパーツがあります) のセットとそのリレーションシップを定義しています。そのねらいは 3D 製造デバイスのために必要なすべての情報を提供することです。 3MF に準拠したデータセットは .3mf 拡張子を持つファイルとして保存できます。
 
-Windows 10 では、**Windows.Graphics.Printing3D** 名前空間の [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) クラスが 1 つの .3mf ファイルに相当し、他のクラスはファイル内の特定の XML 要素にマップされます。 このガイドでは、3MF ドキュメントの主なパーツのそれぞれの作成方法とプログラムによる設定方法、3MF の素材の拡張の利用方法、**Printing3D3MFPackage** オブジェクトを変換して .3mf ファイルとして保存する方法について説明します。 3MF および 3MF 素材の拡張の標準について詳しくは、「[3MF の仕様](http://3mf.io/what-is-3mf/3mf-specification/)」をご覧ください。
+Windows 10、 **Windows.Graphics.Printing3D**名前空間で[**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx)クラスは、1 つの .3mf ファイルに似ています、他のクラスは、ファイル内の特定の XML 要素にマップします。 このガイドでは、3MF ドキュメントの主なパーツのそれぞれの作成方法とプログラムによる設定方法、3MF の素材の拡張の利用方法、**Printing3D3MFPackage** オブジェクトを変換して .3mf ファイルとして保存する方法について説明します。 3MF および 3MF 素材の拡張の標準について詳しくは、「[3MF の仕様](http://3mf.io/what-is-3mf/3mf-specification/)」をご覧ください。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -87,7 +87,7 @@ Printing3DMesh オブジェクトが頂点と三角形の有効なセットを�
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
 > [!NOTE]
-> 3D 製造デバイスは、利用可能な物理素材と、3MF に保存されている仮想素材要素のマップを決定します。 素材のマッピングは 1:1 とは限りません。3D プリンターが 1 つの素材のみを使用できる場合、オブジェクトや表面が別の素材に割り当てられている場合でも、全モデルをその素材で印刷します。
+> 3D 製造デバイスは、利用可能な物理素材と、3MF に保存されている仮想素材要素のマップを決定します。 素材のマッピングは 1:1 とは限りません。3D プリンターが 1 つの素材のみを使用できる場合、オブジェクトや表面が別の素材に割り当てられている場合でも、全モデルをその素材で印刷します。
 
 ### <a name="color-materials"></a>Color Materials
 
@@ -145,8 +145,8 @@ Component 構造体により、ユーザーは印刷可能な 3D モデルに複
 
 [アプリからの 3D 印刷](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
 [3D 印刷の UWP サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
- 
+ 
 
- 
+ 
 
- 
+ 

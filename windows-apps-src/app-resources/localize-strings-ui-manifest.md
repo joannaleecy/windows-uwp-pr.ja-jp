@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436209"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475708"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)」をご覧ください。
@@ -32,12 +32,12 @@ ms.locfileid: "5436209"
 1. アプリの既定の言語を設定します。
     1. Visual Studio でソリューションを開いた状態で、`Package.appxmanifest` を開きます。
     2. [アプリケーション] タブで、既定の言語が適切に設定されている ("en"や "en-us" など) ことを確認します。 残りの手順では、既定の言語を "en-US" に設定していることを前提としています。
-    <br>**注:** 最低でも、この既定の言語のローカライズされた文字列リソースを提供する必要があります。 これらは、ユーザーの優先する言語や表示言語の設定に一致するものが見つからない場合に読み込まれるリソースです。
+    <br>**注:** 少なくとも、この既定の言語のローカライズされた文字列リソースを提供する必要があります。 これらは、ユーザーの優先する言語や表示言語の設定に一致するものが見つからない場合に読み込まれるリソースです。
 2. 既定の言語のリソース ファイル (.resw) を作成します。
     1. プロジェクト ノードで、新しいフォルダーを作成し、"Strings" という名前を付けます。
     2. `Strings` で、新しいサブフォルダーを作成し、"en-US" という名前を付けます。
     3. `en-US` で、新しいリソース ファイル (.resw) を作成し、その名前が "Resources.resw" になっていることを確認します。
-    <br>**注:** .NET リソース ファイル (.resx) を移植する場合は、「[XAML と UI の移植](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)」をご覧ください。
+    <br>**注:**[移植 XAML と UI の](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)移植する .NET リソース ファイル (.resx) を使っている場合を参照してください。
 3.  `Resources.resw` を開き、次の文字列リソースを追加します。
 
     `Strings/en-US/Resources.resw`
@@ -63,7 +63,7 @@ XAML 要素に文字列リソース識別子を割り当てるときには、そ
 
 リソース ファイルから **Width** を設定する代わりに、コンテンツに合わせてコントロールのサイズを動的に変更できるようにすることが必要になる場合があります。
 
-**注** [添付プロパティ](../xaml-platform/attached-properties-overview.md)の場合、.resw ファイルの [名前] 列で特別な構文が必要です。 たとえば、"Greeting" 識別子用に [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 添付プロパティの値を設定するには、これが [名前] 列に入力する内容です。
+**注:**[添付プロパティ](../xaml-platform/attached-properties-overview.md)を、.resw ファイルの名前] 列で特別な構文が必要です。 たとえば、"Greeting" 識別子用に [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 添付プロパティの値を設定するには、これが [名前] 列に入力する内容です。
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -120,7 +120,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ## <a name="localize-the-string-resources"></a>文字列リソースをローカライズする
 1. 別の言語用にリソース ファイル (.resw) のコピーを作成します。
     1. "Strings" の下に新しいサブフォルダーを作成し、Deutsch (Deutschland) を表す "de-DE" という名前を付けます。
-   <br>**注** フォルダー名には、任意の [BCP 47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302)を使用できます。 言語修飾子の詳しい情報と共通の言語タグの一覧は、「[言語、スケール、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)」をご覧ください。
+   <br>**注:** フォルダー名には、任意の[bcp-47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302)を使用することができます。 言語修飾子の詳しい情報と共通の言語タグの一覧は、「[言語、スケール、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)」をご覧ください。
    2. `Strings/de-DE` フォルダー内に `Strings/en-US/Resources.resw` のコピーを作成します。
 2. 文字列に変換します。
     1. `Strings/de-DE/Resources.resw` を開き、[値] 列の値を翻訳します。 コメントを翻訳する必要はありません。
@@ -175,7 +175,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 "AppDisplayName" リソースを `Resources.resw` から `ManifestResources.resw` に移動する場合は、アプリ パッケージ マニフェストで `ms-resource:AppDisplayName` を `ms-resource:/ManifestResources/AppDisplayName` に変更します。
 
-リソース ファイル名がセグメント化されている場合 (が含まれている"."の文字) を参照する場合に名前にドットを終了します。 文字をスラッシュ (「/」)、リソース名のと同じようにドットを置き換える**しないでください**。
+リソース ファイルの名前がセグメント化されている場合 (が含まれている"."の文字) を参照する場合に名前にドットを終了します。 スラッシュ (「/」) 文字、リソース名のと同じようにドットを置き換える**しないでください**。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
@@ -281,7 +281,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>他のパッケージから文字列を読み込む
-アプリ パッケージのためのリソースの管理し、パッケージのを通じてアクセス現在[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)からアクセス可能な最上位レベルの[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)を所有します。 各パッケージ内では、さまざまなコンポーネントが独自の ResourceMap サブツリーを持つことができます。これらは、[**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) によってアクセスできます。
+アプリ パッケージのためのリソースが管理され、パッケージのを通じてアクセス現在[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)からアクセス可能な最上位[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)を所有します。 各パッケージ内でさまざまなコンポーネントが ownResourceMapsubtrees では、 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)経由でアクセスできることができます。
 
 フレームワーク パッケージは、絶対リソース識別子 URI を使って独自のリソースにアクセスできます。 「[URI スキーム](uri-schemes.md)」もご覧ください。
 

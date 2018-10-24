@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e7b249e5b23c301ba8ec0ad387b9fa38dde2ed0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443841"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478362"
 ---
 # <a name="access-analytics-data-using-store-services"></a>ストア サービスを使った分析データへのアクセス
 
@@ -84,7 +84,7 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 分析 AP
 
 | シナリオ       | メソッド      |
 |---------------|--------------------|
-| 入手、コンバージョン、インストール、および使用状況 |  <ul><li>[アプリの取得数の取得](get-app-acquisitions.md)</li><li>[アプリの入手に関するファネル データの取得](get-acquisition-funnel-data.md)</li><li>[チャネルごとのアプリのコンバージョンの取得](get-app-conversions-by-channel.md)</li><li>[アドオンの入手数の取得](get-in-app-acquisitions.md)</li><li>[サブスクリプション アドオンの入手数の取得](get-subscription-acquisitions.md)</li><li>[チャネルごとのアドオンのコンバージョンの取得](get-add-on-conversions-by-channel.md)</li><li>[アプリのインストール数の取得](get-app-installs.md)</li><li>[アプリの使用状況 (日単位) の取得](get-app-usage-daily.md)</li><li>[アプリの使用状況 (月単位) の取得](get-app-usage-monthly.md)</li></ul> |
+| 入手、コンバージョン、インストール数、および使用状況 |  <ul><li>[アプリの取得数の取得](get-app-acquisitions.md)</li><li>[アプリの入手に関するファネル データの取得](get-acquisition-funnel-data.md)</li><li>[チャネルごとのアプリのコンバージョンの取得](get-app-conversions-by-channel.md)</li><li>[アドオンの入手数の取得](get-in-app-acquisitions.md)</li><li>[サブスクリプション アドオンの入手数の取得](get-subscription-acquisitions.md)</li><li>[チャネルごとのアドオンのコンバージョンの取得](get-add-on-conversions-by-channel.md)</li><li>[アプリのインストール数の取得](get-app-installs.md)</li><li>[アプリの使用状況 (日単位) の取得](get-app-usage-daily.md)</li><li>[アプリの使用状況 (月単位) の取得](get-app-usage-monthly.md)</li></ul> |
 | アプリのエラー | <ul><li>[エラー報告データの取得](get-error-reporting-data.md)</li><li>[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)</li><li>[アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[アプリのエラーの CAB ファイルをダウンロードする](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
 | インサイト | <ul><li>[アプリのインサイト データの取得](get-insights-data-for-your-app.md)</li></ul>  |
 | 評価とレビュー | <ul><li>[アプリの評価の取得](get-app-ratings.md)</li><li>[アプリのレビューの取得](get-app-reviews.md)</li></ul> |
@@ -121,7 +121,7 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 分析 AP
 
 ### <a name="methods-for-hardware-and-drivers"></a>ハードウェアとドライバー向けのメソッド
 
-[Windows ハードウェア デベロッパー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでは、追加のハードウェアとドライバーの分析データを取得するためのメソッドのセットにアクセスします。 詳細については、[ハードウェア ダッシュ ボード API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)を参照してください。
+[Windows ハードウェア デベロッパー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントでは、追加のハードウェアとドライバーの分析データを取得するためのメソッドのセットへのアクセスがあります。 詳細については、[ハードウェア ダッシュ ボード API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)を参照してください。
 
 ## <a name="code-example"></a>コードの例
 

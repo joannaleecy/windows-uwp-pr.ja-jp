@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a92be54e55e06b4e7ffd61b1526425920ea80f96
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433475"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470747"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ
 =============================================================================================
 
 
 
-**注**  サンプル データの必要性 (および有用性) は、バインドで [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)と [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)のどちらを使うかによって決まります。 ここで説明する手法は [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) の使用に基づいているため、この手法が適しているのは **{Binding}** のみですが、 **{x:Bind}** を使う場合は、バインドで少なくともプレースホルダー値がデザイン サーフェイスに表示されるため (項目コントロールの場合でも)、サンプル データの必要性は比較的低くなります。
+**注:** 度のサンプル データする必要があります: し、どの程度するに役立ちます-、バインディングが[{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)または[{X:bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)を使用するかどうかによって異なります。 ここで説明する手法は [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) の使用に基づいているため、この手法が適しているのは **{Binding}** のみですが、 **{x:Bind}** を使う場合は、バインドで少なくともプレースホルダー値がデザイン サーフェイスに表示されるため (項目コントロールの場合でも)、サンプル データの必要性は比較的低くなります。
 
 アプリで Microsoft Visual Studio や Blend for Visual Studio のデザイン サーフェイスにライブ データを表示できない場合や、プライバシーやパフォーマンスなどの理由で表示するのが望ましくない場合に、 アプリのレイアウト、テンプレート、その他の視覚的なプロパティを操作するためにコントロールにデータを設定するには、さまざまな方法で設計時のサンプル データを使うことができます。 サンプル データは、スケッチ (プロトタイプ) アプリを開発する場合にも便利で、時間の節約になります。 スケッチやプロトタイプで実行時にサンプル データを使うと、実際のライブ データに接続しなくてもアイデアを実証できます。
 
@@ -143,7 +143,7 @@ XAML ではなく JSON のサンプル データ ファイルを使う場合は�
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-**IsDesignTimeCreatable** プロパティは、デザイン ツールがこのクラスのインタンスを実際に作成する必要があることを示します。したがって、このクラスにはパブリックの既定のコンストラクターがあり、そのコンストラクターにデータ (実際のデータかサンプル データ) が設定されることがわかります。 **IsDesignTimeCreatable** を設定しない場合 (または **False** に設定した場合) は、デザイン サーフェイスに表示されるサンプル データは取得されません。 デザイン ツールでは、その場合は、バインド可能なプロパティのクラスを解析し、**データ**パネルで、**データ バインディングの作成**] ダイアログ ボックスが表示することだけです。
+**IsDesignTimeCreatable** プロパティは、デザイン ツールがこのクラスのインタンスを実際に作成する必要があることを示します。したがって、このクラスにはパブリックの既定のコンストラクターがあり、そのコンストラクターにデータ (実際のデータかサンプル データ) が設定されることがわかります。 **IsDesignTimeCreatable** を設定しない場合 (または **False** に設定した場合) は、デザイン サーフェイスに表示されるサンプル データは取得されません。 デザイン ツールでは、その場合は、そのバインド可能なプロパティのクラスを解析し、**データ**パネルで、**データ バインディングの作成**] ダイアログ ボックスが表示することだけです。
 
 <a name="sample-data-for-prototyping"></a>プロトタイプを作るためのサンプル データ
 --------------------------------------------------------

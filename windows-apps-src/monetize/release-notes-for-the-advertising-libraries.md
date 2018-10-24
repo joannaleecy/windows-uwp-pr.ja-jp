@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, リリース ノート
 ms.localizationpriority: medium
 ms.openlocfilehash: 37a5cafcc5f768e90d4ee3997f92a62a9903fc9a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435628"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480561"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising ライブラリのリリース ノート
 
 
 
 
-このセクションでは、Microsoft Advertising ライブラリの現在のリリースのリリース ノートを示します。 これらのライブラリは、Windows 10、Windows 8.1、Windows Phone 8.1、Windows Phone 8 用の XAML アプリと JavaScript/HTML アプリをサポートします。
+このセクションでは、Microsoft Advertising ライブラリの現在のリリースのリリース ノートを示します。 これらのライブラリでは、windows 10、Windows8.1、Windows Phone 8.1 および WindowsPhone8 の XAML アプリと JAVASCRIPT/HTML アプリをサポートします。
 
 ## <a name="installation"></a>インストール
 
@@ -50,6 +50,6 @@ Microsoft Advertising ライブラリ (**AdControl** クラスと **Interstitial
 **AdControl**クラスに、UWP アプリ用の **Latitude** プロパティと **Longitude** プロパティは含まれなくなりました。 代わりに、広告コントロールに組み込まれているコードが、アプリに代わってこれらの値を検出し、広告サーバーに送信します。
 
 
- 
+ 
 
- 
+ 

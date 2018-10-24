@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: cff96c0b8daf9f3ef32815437b510a5b94641527
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443355"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468831"
 ---
 # <a name="print-from-your-app"></a>アプリからの印刷
 
@@ -30,14 +30,14 @@ ms.locfileid: "5443355"
 ユニバーサル Windows アプリからドキュメントを印刷する方法について説明します。 また、このトピックでは特定のページを印刷する方法も示します。 印刷プレビュー UI の高度な変更については、「[印刷プレビュー UI のカスタマイズ](customize-the-print-preview-ui.md)」を参照してください。
 
 > [!TIP]
-> このトピックに含まれる例のほとんどは、印刷サンプルを基盤としています。 完全なコードを確認するには、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619984)から[ユニバーサル Windows プラットフォーム (UWP) 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619979)をダウンロードしてください。
+> このトピックに含まれる例のほとんどは、印刷サンプルを基盤としています。 完全なコードを確認するには、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619984)から[ユニバーサル Windows プラットフォーム (UWP) 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619979)をダウンロードしてください。
 
 ## <a name="register-for-printing"></a>印刷の登録
 
 アプリに印刷機能を追加する最初の手順は、印刷コントラクトへの登録です。 アプリは、ユーザーによる印刷を可能にするすべての画面でこの処理を行う必要があります。 ユーザーに表示される画面のみ、印刷登録を行うことができます。 アプリの画面を印刷登録した場合は、画面終了時に印刷登録を解除する必要があります。 別の画面で置き換えられる場合は、その画面が開いたときに画面を新しい印刷コントラクトに登録する必要があります。
 
 > [!TIP]
-> アプリで複数ページからの印刷をサポートする必要がある場合は、この印刷コードを共通の基底ヘルパー クラスに入れ、アプリ ページでそれを再利用させることができます。 この方法の例については、[UWP 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619984)に挙げられている `PrintHelper` クラスをご覧ください。
+> アプリで複数ページからの印刷をサポートする必要がある場合は、この印刷コードを共通の基底ヘルパー クラスに入れ、アプリ ページでそれを再利用させることができます。 この方法の例については、[UWP 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619984)に挙げられている `PrintHelper` クラスをご覧ください。
 
 まず、[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) と [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) を宣言します。 他の Windows 印刷機能をサポートするタイプと共に、**PrintManager** タイプが [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489) 名前空間内に指定されています。 XAML コンテンツの印刷準備をサポートする他のタイプと共に、**PrintDocument** タイプが [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325) 名前空間内に指定されています。 次の **using** ステートメントまたは **Imports** ステートメントをページに追加することで、印刷コードを簡単に記述できます。
 
@@ -172,7 +172,7 @@ protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequeste
 印刷タスクが作られた後、[**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) は [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) イベントを発生させることによって、印刷プレビュー UI に表示するために印刷ページのコレクションを要求します。 これは、**IPrintPreviewPageCollection** インターフェイスの **Paginate** メソッドに対応します。 登録時に作成したイベント ハンドラーは、この時点で呼び出されます。
 
 > [!IMPORTANT]
-> ユーザーが印刷設定を変更すると、ページ設定イベント ハンドラーがもう一度呼び出されてコンテンツを再配置できます。 優良なユーザー エクスペリエンスのため、マイクロソフトではコンテンツを再配置する前に設定を確認し、ページ付けされたコンテンツの不必要な再初期化を避けることをお勧めします。
+> ユーザーが印刷設定を変更すると、ページ設定イベント ハンドラーがもう一度呼び出されてコンテンツを再配置できます。 優良なユーザー エクスペリエンスのため、マイクロソフトではコンテンツを再配置する前に設定を確認し、ページ付けされたコンテンツの不必要な再初期化を避けることをお勧めします。
 
 [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) イベント ハンドラー ([UWP 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619984)内の `CreatePrintPreviewPages` メソッド) で、印刷プレビュー UI に表示されてプリンターに送信されるページを作ります。 アプリのコンテンツの印刷準備のために使うコードは、アプリと印刷するコンテンツに固有です。 コンテンツを印刷用に書式設定する方法については、[UWP 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619984)のソース コードを参照してください。
 
@@ -271,7 +271,7 @@ PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrin
 印刷プレビュー UI に表示されるオプションの一覧をクリアし、ユーザーがアプリから印刷する場合に表示するオプションを追加します。
 
 > [!NOTE]
-> オプションは、追加された順番で印刷プレビュー UI に表示されます。したがって、最初のオプションがウィンドウの最上部に表示されます。
+> オプションは、追加された順番で印刷プレビュー UI に表示されます。したがって、最初のオプションがウィンドウの最上部に表示されます。
 
 ```csharp
 IList<string> displayedOptions = printDetailedOptions.DisplayedOptions;
@@ -388,7 +388,7 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 ```
 
 > [!TIP]
-> [Range] ボックスにユーザーが入力したページ範囲を解析する方法について詳しくは、[UWP 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619984)の `GetPagesInRange` メソッドをご覧ください。
+> [Range] ボックスにユーザーが入力したページ範囲を解析する方法について詳しくは、[UWP 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619984)の `GetPagesInRange` メソッドをご覧ください。
 
 ## <a name="preview-selected-pages"></a>選んだページのプレビュー
 

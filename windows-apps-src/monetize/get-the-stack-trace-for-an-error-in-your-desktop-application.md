@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, スタック トレース, エラー, デスクトップ アプリケーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 60f4ed7251fa934190a96e8c7d6f0edd21520980
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440138"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472165"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>デスクトップ アプリケーションのエラーに関するスタック トレースの取得
 
@@ -46,7 +46,7 @@ ms.locfileid: "5440138"
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
- 
+ 
 
 ### <a name="request-parameters"></a>要求パラメーター
 
@@ -55,7 +55,7 @@ ms.locfileid: "5440138"
 | applicationId | string | スタック トレースを取得するデスクトップ アプリケーションの製品 ID です。 デスクトップ アプリケーションの製品 ID を取得するには、[デベロッパー センターでデスクトップ アプリケーションの分析レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)のいずれか (**正常性レポート**など) を開き、URL から製品 ID を取得します。 |  必須  |
 | cabIdHash | string | スタック トレースを取得するエラーに関連付けられた CAB ファイルの一意の ID ハッシュです。 この値を取得するには、「[デスクトップ アプリケーションのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-desktop-application.md)」のメソッドを使ってアプリケーションの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文に含まれる **cabIdHash** 値を使用します。 |  必須  |
 
- 
+ 
 ### <a name="request-example"></a>要求の例
 
 次の例は、このメソッドを使ってスタック トレースを取得する方法を示しています。 *applicationId* パラメーターと *cabIdHash* パラメーターは、デスクトップ アプリケーションに合わせて適切な値に置き換えてください。

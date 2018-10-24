@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 965ef217fa00131504841ef2209dbe6aa54f50af
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442739"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478477"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>アプリ インストーラー ファイルを使用して関連セットをインストールする
 
@@ -91,7 +91,7 @@ Windows 10 Fall Creators Update では、関連セットをアプリ インス�
 ```
 
 ### <a name="step-3-add-the-main-package-information"></a>手順 3: メイン パッケージ情報の追加 
-メイン アプリ パッケージが .appxbundle または .msixbundle ファイルの場合は使用し、`<MainBundle>`の下に表示します。 メイン アプリ パッケージが .appx または .msix ファイルの場合は使用し、`<MainPackage>`の代わりに`<MainBundle>`スニペットではします。 
+メイン アプリ パッケージが .appxbundle または .msixbundle ファイル場合を使用して、`<MainBundle>`の下に表示します。 使用して、メイン アプリ パッケージが .appx または .msix ファイルの場合は、`<MainPackage>`の代わりに`<MainBundle>`スニペットにします。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

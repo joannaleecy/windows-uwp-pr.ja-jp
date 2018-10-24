@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fb273b6a37cb2f6322b0c9e3842b69676f82c616
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433564"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473990"
 ---
 # <a name="background-transfers"></a>バックグラウンド転送
 ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。 バックグラウンド転送 API には、アプリの一時停止中はバックグラウンドで実行され、アプリの終了後も実行が続行される高度なアップロード機能とダウンロード機能があります。 この API は、ネットワークの状態を監視し、接続が失われたときに転送の中断と再開を自動的に実行します。転送ではデータ センサーとバッテリー セーバーにも対応し、ダウンロード アクティビティは現在の接続とデバイスのバッテリー状態に基づいて調整されます。 この API は、アップロード HTTP(S) を使った大きなファイルのアップロードとダウンロードに適しています。 FTP もサポートされますが、その対象はダウンロードのみです。
@@ -32,7 +32,7 @@ ms.locfileid: "5433564"
 > [!NOTE]
 > アプリごとのリソースの制約により、常にアプリに 200 を超える転送 (DownloadOperations および UploadOperations) を含めてはなりません。 この制限を超過すると、アプリの転送キューが回復不能な状態になる可能性があります。
 
-アプリケーションを起動すると、既存[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)と[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)オブジェクトがすべての[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)に呼び出す必要があります。 そうしない既に完了転送のリークが発生し、最終的にレンダリング バック グラウンド転送機能の使用役に立ちません。
+アプリケーションを起動すると、既存[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)と[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)オブジェクトがすべての[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)が呼び出す必要があります。 これを行わない既に完了転送のリークが発生しは最終的にレンダリング バック グラウンド転送機能の使用役に立ちません。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>バックグラウンド転送での認証されたファイル要求の実行
 バックグラウンド転送では、基本サーバーとプロキシの資格情報、Cookie をサポートするメソッドが用意されており、それぞれの転送操作で ([**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) を介して) カスタム HTTP ヘッダーを使うこともできます。
@@ -44,7 +44,7 @@ ms.locfileid: "5433564"
 
 バックグラウンド転送機能にはネットワーク ステータスの変化に対応する独自のメカニズムがありますが、ネットワーク接続されたアプリには他にも一般的な接続の考慮事項があります。 詳しくは、「[利用できるネットワーク接続情報の活用](https://msdn.microsoft.com/library/windows/apps/hh452983)」をご覧ください。
 
-> **注:** モバイル デバイスで実行されるアプリでは、接続の種類、ローミング ステータス、ユーザーのデータ通信プランに基づいて転送されるデータの量を、ユーザーが監視および制限できる機能が用意されています。 このため、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) が転送が継続中であることを示す場合でも、電話でバックグラウンド転送が一時停止される可能性があります。
+> **注:** モバイル デバイスで実行されているアプリの場合は、ユーザーを監視し、接続、ローミング ステータスの種類に基づいて転送されるデータの量を制限することができる機能と、ユーザーのデータを計画します。 このため、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) が転送が継続中であることを示す場合でも、電話でバックグラウンド転送が一時停止される可能性があります。
 
 次の表に、電話の現在の状態に応じて、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) の各値に対して、電話でバックグラウンド転送が許可されるかどうかを示します。 [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) クラスを使って、電話の現在の状態を判断できます。
 
@@ -203,7 +203,7 @@ promise = download.startAsync().then(complete, error, progress);
 1.  これで、返された値の一覧を使って、保留中の操作を再開できます。
 
 ## <a name="post-processing"></a>後処理
-Windows 10 の新機能は、アプリが実行されていない場合でも、バックグラウンド転送の完了時にアプリケーション コードを実行できる機能です。 たとえば、アプリが開始されるたびに新しいムービーをスキャンするのではなく、ムービーのダウンロードが完了した後で利用可能な映画の一覧を更新できます。 または、アプリでファイル転送が失敗した場合に、別のサーバーまたはポートを使ってもう一度転送し直すことができます。 後処理は成功した転送と失敗した転送の両方で呼び出されるため、これを使って、カスタム エラー処理と再試行ロジックを実装できます。
+Windows 10 の新機能は、アプリが実行されていない場合でも、バック グラウンド転送の完了時にアプリケーション コードを実行する機能です。 たとえば、アプリが開始されるたびに新しいムービーをスキャンするのではなく、ムービーのダウンロードが完了した後で利用可能な映画の一覧を更新できます。 または、アプリでファイル転送が失敗した場合に、別のサーバーまたはポートを使ってもう一度転送し直すことができます。 後処理は成功した転送と失敗した転送の両方で呼び出されるため、これを使って、カスタム エラー処理と再試行ロジックを実装できます。
 
 後処理では、既存のバックグラウンド タスク インフラストラクチャを使います。 転送を開始する前に、バックグラウンド タスクを作成して転送に関連付けます。 転送はバックグラウンドで実行され、完了時にバックグラウンド タスクが呼び出されて後処理が実行されます。
 
@@ -264,7 +264,7 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 -   接続が確立された後、2 分以内で応答を受け取らなかった HTTP 要求メッセージは中止されます。
 
-> **注:** どちらのシナリオにおいても、バックグラウンド転送はインターネット接続があることを前提に、最高 3 回まで自動的に要求を再試行します。 インターネット接続が検出されないと、検出されるまで別の要求は待機します。
+> **注:** どちらのシナリオでは、インターネット接続があると想定するとバック グラウンド転送は要求 3 回まで自動的に再試行します。 インターネット接続が検出されないと、検出されるまで別の要求は待機します。
 
 ## <a name="debugging-guidance"></a>デバッグのガイダンス
 Microsoft Visual Studio でデバッグ セッションを停止することは、アプリを閉じることに相当します。PUT によるアップロードは一時停止され、POST によるアップロードは終了されます。 デバッグ時であっても、アプリでは、持続しているアップロードを列挙し、再実行や取り消しを行うことができる必要があります。 たとえば、そのデバッグ セッションで以前の操作が重要ではない場合、アプリの起動時に、列挙された持続しているアップロード操作をアプリで取り消すことができます。

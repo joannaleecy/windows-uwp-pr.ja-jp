@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 地図, 位置情報, マップ コントロール, マップ ビュー
 ms.localizationpriority: medium
 ms.openlocfilehash: ba03d430031ad2bdad6959e2c59500dc6f2d2666
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434464"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476561"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>2D、3D、Streetside ビューでの地図の表示
 
@@ -153,7 +153,7 @@ pageGrid.Children.Add(MapControl2);
 > [!NOTE]
 > 文字列は [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675) に変換できないため、データ バインディングを使わない限り、XAML マークアップで [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) プロパティに対する値を指定できません。 (この制限は、[**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264) 添付プロパティにも適用されます)。
 
- 
+ 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
@@ -327,9 +327,9 @@ Streetside ビューを表示するには
 
 次の例は、前掲の画像に似た Streetside ビューを表示する方法を示しています。
 
-**注**  マップ コントロールのサイズが小さすぎる場合は、概観の地図は表示されません。
+**注:** マップ コントロールのサイズが小さすぎる場合、地図は表示されません。
 
- 
+ 
 
 ```csharp
 private async void showStreetsideView()

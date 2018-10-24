@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 283856ad163d2e67078c61559f6f8ec667e92b87
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435585"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475069"
 ---
 # <a name="avoid-common-certification-failures"></a>一般的な認定エラーの回避
 
@@ -35,7 +35,7 @@ ms.locfileid: "5435585"
 
 -   テスト アカウントのユーザー名とパスワード (ユーザーがサービスにログインする必要のあるアプリの場合) や、非表示の機能やロックされている機能へのアクセスに必要な手順など、アプリを使うために [必要な情報を提供](notes-for-certification.md) してください。
 
--   アプリが何かしらの方法で個人情報にアクセスする、または法律で義務付けられている場合など、アプリに[プライバシー ポリシー](create-app-store-listings.md#privacy-policy)が必要な場合は提供してください。 アプリにプライバシー ポリシーが必要とかどうかを判断するためには、[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)と[Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies)を確認します。
+-   アプリが何かしらの方法で個人情報にアクセスする、または法律で義務付けられている場合など、アプリに[プライバシー ポリシー](create-app-store-listings.md#privacy-policy)が必要な場合は提供してください。 プライバシー ポリシーが、アプリに必要なかどうかを判断するためには、[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)と[Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies)を確認します。
 
 -   アプリの内容を明確に表せるように、アプリの説明はできるだけ詳しく記載します。 ヘルプが必要な場合は、[アプリに関する優れた説明を記載する](write-a-great-app-description.md) ためのガイダンスをご覧ください。
 
@@ -46,9 +46,9 @@ ms.locfileid: "5435585"
 -   アプリが [**Windows.ApplicationModel.Store**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) 名前空間から商取引 API を使う場合、アプリを必ずテストして、一般的な例外が処理されることを確認します。 また、アプリがテスト用途のみの [**CurrentAppSimulator**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) クラスではなく、[**CurrentApp**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) クラスを使っていることも確認してください。 (アプリが Windows 10 バージョン 1607 以降のバージョンをターゲットにする場合は、Windows.ApplicationModel.Store 名前空間ではなく、[Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 名前空間を使用することをお勧めします)。
 
 
- 
+ 
 
- 
+ 
 
 
 

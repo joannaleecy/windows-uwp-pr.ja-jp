@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP、セカンダリ タイル、ガイダンス、ガイドライン、ベスト プラクティス
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e3d31376b9ac155dab6bffa7739cb880af1cff9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431767"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476036"
 ---
 # <a name="secondary-tile-guidance"></a>セカンダリ タイルのガイダンス
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 39b3ba05b06b6d484804999a935accc7223b5c60
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437923"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471536"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする
 

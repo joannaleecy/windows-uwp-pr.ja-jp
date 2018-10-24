@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 購入 API, サブスクリプション
 ms.localizationpriority: medium
 ms.openlocfilehash: c08964b991b0cecaef6d994d399ce97301a7e8e7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431917"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477224"
 ---
 # <a name="get-subscriptions-for-a-user"></a>ユーザーのサブスクリプションの取得
 
@@ -118,7 +118,7 @@ Host: https://purchase.mp.microsoft.com
 | autoRenew | ブール値 |  現在のサブスクリプション期間の終了時にサブスクリプションが自動的に更新されるように構成されているかどうかを示します。   |
 | beneficiary | string |  このサブスクリプションに関連付けられている権利の受益者 ID。   |
 | expirationTime | string | サブスクリプションの有効期限が切れる日時 (ISO 8601形式)。 このフィールドは、サブスクリプションが特定の状態のときのみ利用可能です。 有効期限は通常、現在の状態の有効期限がいつ切れるかを示します。 たとえば、アクティブなサブスクリプションの場合、有効期限日は次の自動更新がいつ行われるかを示します。    |
-| expirationTimeWithGrace | string | 日付と時刻 ISO 8601 形式で、猶予期間を含む、サブスクリプションは期限切れします。 この値は、とき、ユーザーが失われますサブスクリプションへのアクセス、サブスクリプションが自動的に更新に失敗した後を示します。    |
+| expirationTimeWithGrace | string | 日付と時刻 ISO 8601 形式で、猶予期間を含む、サブスクリプションは期限切れ。 この値は、とき、ユーザーが失われますサブスクリプションへのアクセス、サブスクリプションが自動的に更新に失敗した後を示します。    |
 | id | string |  サブスクリプションの ID。 [ユーザーのサブスクリプションの請求状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)メソッドを呼び出すときに変更するサブスクリプションを指定するには、この値を使います。    |
 | isTrial | ブール値 |  サブスクリプションが試用版であるかどうかを示します。     |
 | lastModified | string |  サブスクリプションが前回変更された日時 (ISO 8601形式)。      |

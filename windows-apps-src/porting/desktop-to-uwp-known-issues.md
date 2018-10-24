@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 731d449d779806fbd4104787b692d3b7d0408036
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431802"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476550"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>パッケージ デスクトップ アプリケーションに関する既知の問題
 
@@ -38,7 +38,7 @@ ms.locfileid: "5431802"
 
 この問題を解決するには、管理者特権で開いたコマンド プロンプトで `Netsh int ipv4 reset` コマンドを実行して、コンピューターを再起動します。
 
-### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET アプリが"AnyCPU"ビルド オプションでコンパイルし、インストールに失敗するには
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET アプリケーションが"AnyCPU"ビルド オプションでコンパイルされ、インストールに失敗するには
 
 この問題は、メインの実行可能ファイルまたは何らかの依存ファイルが、**Program Files** または **Windows\System32** のフォルダー階層に配置された場合に発生することがあります。
 
@@ -54,7 +54,7 @@ ms.locfileid: "5431802"
 
 ### <a name="error-found-in-xml-the-executable-attribute-is-invalid---the-value-myappexe-is-invalid-according-to-its-datatype"></a>XML にエラーが見つかり、 'Executable' 属性が無効 - 'MyApp.EXE' の値がデータ型に対して無効
 
-この問題は、アプリケーションに含まれる実行可能ファイルの **.EXE** 拡張子が大文字になっている場合に発生することがあります。 ただし、この拡張機能の大文字小文字の区別しないように、アプリケーションを実行するかどうかに影響を与える、これにより、このエラーを生成するように DAC に。
+この問題は、アプリケーションに含まれる実行可能ファイルの **.EXE** 拡張子が大文字になっている場合に発生することがあります。 ただし、この拡張機能の大文字小文字の区別しないように、アプリケーションを実行するかどうかに影響を与える、原因にこのエラーを生成するように DAC になります。
 
 この問題を解決するには、パッケージ化を行うときに **-AppExecutable** フラグを指定し、メインの実行可能ファイルの拡張子として小文字の ".exe" を使用してみてください (例: MYAPP.exe)。    代わりに大文字小文字のアプリケーションですべての実行可能ファイルの大文字と小文字を変更できます (例: からです。EXE を .exe) します。
 
@@ -95,7 +95,7 @@ Microsoft Store のアプリをインストールまたは起動した後、予�
 
 更新しても問題が解決しない場合や、PC を回復する方法がわからない場合は、[Microsoft サポート](https://support.microsoft.com/contactus/)にお問い合わせください。
 
-開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 注意アプリをこれにより、更新プログラムをインストールしていないユーザーに利用できなくなります。 この更新プログラムをインストールしているユーザーに、アプリケーションの可用性を制限するには、次のように、AppxManifest.xml ファイルを変更します。
+開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 注意アプリをこれにより、更新プログラムをインストールしていないユーザーに利用できなくなります。 この更新プログラムをインストールしているユーザーに、アプリケーションの可用性を制限するため、AppxManifest.xml ファイルに次のように変更します。
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -123,7 +123,7 @@ Windows アプリ パッケージ マニフェストの発行元エントリは�
 
 **オプション3: CertUtil**
 
-**Certutil**をコマンドラインから PFX ファイルを実行し、出力から*の件名*をコピーします。
+**Certutil**をコマンドラインから PFX ファイルで実行し、出力から*の件名*をコピーします。
 
 ```cmd
 certutil -dump <cert_file.pfx>

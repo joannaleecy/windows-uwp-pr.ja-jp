@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 支払い, アプリの販売, アプリの収益, 受け取り, Microsoft Store の手数料, 支払い保留, パーセント
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c128bedd1c889f4c2dcf0565c7c10575eb75013
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438196"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478703"
 ---
 # <a name="getting-paid"></a>支払いの受け取り
 ここでは、アプリ、アドオン、広告収益の支払いを受け取るために確認する必要のある重要な情報について説明します。
@@ -70,9 +70,9 @@ Windows デベロッパー センター ダッシュ ボードの **[支払の�
 > **[支払い保留状態]** セクションは、Windows デベロッパー センターを通じて支払われる**すべて**の収益源 (Microsoft Store、広告、Azure Marketplace など) に適用されます。 収益源ごとに異なる保留状態を選択することはできません。
 
 
- 
+ 
 
- 
+ 
 
 
 

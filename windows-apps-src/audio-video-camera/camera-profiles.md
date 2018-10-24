@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ead9efdd0a1d37a051f24e94b40a7c61212f6b19
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444808"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472550"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>カメラ プロファイルを使用したカメラ機能の検出と選択
 
@@ -26,7 +26,7 @@ ms.locfileid: "5444808"
 > [!NOTE] 
 > この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
 
- 
+ 
 
 ## <a name="about-camera-profiles"></a>カメラ プロファイルについて
 
@@ -77,7 +77,7 @@ Windows 10、バージョン 1803 以降では、[**MediaFrameSourceGroup**](htt
 > [!NOTE] 
 > このセクションで説明されている API は、Windows 10、バージョン 1803 以降では非推奨です。 上記の「**メディア フレーム ソース グループを使用してプロファイルを取得する**」をご覧ください。
 
-HDR をサポートするプロファイルの選択も、他のシナリオと同じように始まります。 キャプチャ デバイス ID を格納するには、 **MediaCaptureInitializationSettings**と文字列を作成します。 HDR ビデオがサポートされているかどうかを追跡するためのブール変数を追加します。
+HDR をサポートするプロファイルの選択も、他のシナリオと同じように始まります。 キャプチャ デバイス ID を保持するために、 **MediaCaptureInitializationSettings**と文字列を作成します。 HDR ビデオがサポートされているかどうかを追跡するためのブール変数を追加します。
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 
@@ -103,9 +103,9 @@ HDR をサポートするプロファイルの選択も、他のシナリオと�
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
+ 
 
- 
+ 
 
 
 

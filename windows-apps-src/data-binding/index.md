@@ -11,20 +11,20 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: edc3dc53a7cf536bbabce108647cf54693c3ab05
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445470"
+ms.locfileid: "5472233"
 ---
 # <a name="data-binding"></a>データ バインディング
 
-データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。 データ バインディングによって、UI の問題からデータの問題を切り離すことができるため、概念的なモデルが簡素化されると共に、アプリの読みやすさ、テストの容易性、保守容易性が向上します。 マークアップでは、 [{X:bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)または[{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)のいずれかを使用できます。 また、同じアプリや同じ UI 要素で、この 2 つを組み合わせて使うこともできます。 {x:Bind} は Windows 10 の新機能で、パフォーマンスが向上しています。
+データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。 データ バインディングによって、UI の問題からデータの問題を切り離すことができるため、概念的なモデルが簡素化されると共に、アプリの読みやすさ、テストの容易性、保守容易性が向上します。 マークアップでは、 [{X:bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)または[{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)の使用を選択できます。 また、同じアプリや同じ UI 要素で、この 2 つを組み合わせて使うこともできます。 {X:bind} は windows 10 の新機能であり、パフォーマンスが向上します。
 
 | トピック | 説明 |
 |-------|-------------|
 | [データ バインディングの概要](data-binding-quickstart.md) | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。 また、項目のレンダリングを制御する方法、選択内容に基づいて詳細ビューを実装する方法、表示するデータを変換する方法も紹介します。 詳しくは、「[データ バインディングの詳細](data-binding-in-depth.md)」をご覧ください。 | 
 | [データ バインディングの詳細](data-binding-in-depth.md) | このトピックでは、データ バインディングの機能について詳しく説明します。 |
-| [デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ](displaying-data-in-the-designer.md) | コントロールが (アプリのレイアウト、テンプレート、およびその他のビジュアルのプロパティで使用できます) するために、Visual Studio デザイナーでのデータを格納するために、さまざまな方法で設計時のサンプル データを使用することができます。 サンプル データは、スケッチ (プロトタイプ) アプリを開発する場合にも便利で、時間の節約になります。 スケッチやプロトタイプで実行時にサンプル データを使うと、実際のライブ データに接続しなくてもアイデアを実証できます。 |
+| [デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ](displaying-data-in-the-designer.md) | コントロールが、(アプリのレイアウト、テンプレート、およびその他のビジュアルのプロパティで使用できます) するため、Visual Studio デザイナーでのデータを設定するために、さまざまな方法で設計時のサンプル データを使用することができます。 サンプル データは、スケッチ (プロトタイプ) アプリを開発する場合にも便利で、時間の節約になります。 スケッチやプロトタイプで実行時にサンプル データを使うと、実際のライブ データに接続しなくてもアイデアを実証できます。 |
 | [階層データをバインドしてマスター/詳細ビューを作る方法](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md) | チェーン内でバインドされた [<strong>CollectionViewSource</strong>](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスに項目コントロールをバインドすることによって、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。 |
-| [データ バインディングと MVVM](data-binding-and-mvvm.md) | このトピックでは、モデル-ビュー-ビューモデル (MVVM) UI のアーキテクチャの設計パターンについて説明します。 データ バインディング、MVVM の中心では、でき、UI と非 UI コード間で疎結合します。 |
+| [データ バインディングと MVVM](data-binding-and-mvvm.md) | このトピックでは、モデル-ビュー-ビューモデル (MVVM) UI のアーキテクチャの設計パターンについて説明します。 データ バインディングは、MVVM の中心ではあり、UI と、以外の UI コード間で疎結合をできます。 |

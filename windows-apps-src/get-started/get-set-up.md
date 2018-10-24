@@ -2,7 +2,7 @@
 author: QuinnRadich
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 準備
-description: 準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。
+description: 準備は、思っているよりも簡単です。 次の手順に従って、windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始します。
 ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 378544282981c62d7a57f9abc3f666e8964b7117
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445619"
+ms.locfileid: "5474761"
 ---
 # <a name="get-set-up"></a>準備
 
 ![Visual Studio を使用する準備を行う](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。
+準備は、思っているよりも簡単です。 次の手順に従って、windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始します。
 
 ## <a name="1-download-or-update-visual-studio"></a>1. Visual Studio のダウンロードまたは更新
 
-Microsoft Visual Studio 2017 は、アプリの設計、コード化、テスト、デバッグに役立ちます。
+Microsoft Visual Studio2017 設計、コード、テスト、およびアプリをデバッグするのに役立ちます。
 
-Visual Studio 2017 をまだお持ちでない場合は、Microsoft Visual Studio Community 2017 を無料でインストールできます。 このダウンロードには、アプリのテスト用としてデバイスのシミュレーターが含まれています。
+Visual Studio2017 がまだしていない場合は、無料 Microsoft Visual Studio Community2017 をインストールできます。 このダウンロードには、アプリのテスト用としてデバイスのシミュレーターが含まれています。
 
 -   [Windows 10 開発者ツールをダウンロードする](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 

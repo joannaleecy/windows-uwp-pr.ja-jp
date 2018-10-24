@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432481"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478441"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>受取りアカウントの設定と税関連の書類
 
 
-Microsoft Store でアプリの売上から収益を受け取るには、受取りアカウントを設定して税関連の必要があります。
+Microsoft Store でアプリの売上から収益を受け取るには、受取りアカウントを設定し、税関連の必要があります。
 
 無料アプリのみを公開する (かつアプリ内購入の提供や Microsoft Advertising を使用しない) 場合は、受取りアカウントを設定する必要も、税関連の書類を入力する必要もありません。 変わったり、後で変更し、アプリ (またはアドオン) を販売するかを決定する場合は、受取りアカウントを設定し、その時点で、税関連の書類を記入します。 受け取りアカウントと税プロファイルの設定が完了するまで、有料アプリまたはアドオンを申請することはできません。
 
@@ -33,8 +33,8 @@ Microsoft Store でアプリの売上から収益を受け取るには、受取�
 -   [税関連の書類の入力](#tax-forms)
 
 > [!NOTE]
-> アプリの収益を受け取る方法とタイミングについて詳しくは、「[支払いの受け取り](getting-paid-apps.md)」をご覧ください。
- 
+> アプリの収益を受け取る方法とタイミングについて詳しくは、「[支払いの受け取り](getting-paid-apps.md)」をご覧ください。
+ 
 
 ## <a name="payout-account"></a>受取りアカウント
 
@@ -43,7 +43,7 @@ Microsoft Store でアプリの売上から収益を受け取るには、受取�
 > [!NOTE]
 > 一部の市場では、受取りアカウントに PayPal を使用できます。 特定の市場で PayPal がサポートされているかどうかについては、「[アカウントの種類、場所、料金](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)」をご覧ください。詳しくは、この後の「[PayPal 情報](#paypal-info)」をお読みください。
 
- 
+ 
 **受取りアカウントを設定するには**
 
 1.  Windows デベロッパー センター ダッシュボードで、右上隅にあるアイコンを選んで **[アカウント設定]** に移動します。
@@ -63,7 +63,7 @@ Microsoft Store でアプリの売上から収益を受け取るには、受取�
 
 > [!IMPORTANT]
 > 受取りアカウントを変更すると、最長で支払いサイクル 1 回分、支払いが遅れる可能性があります。 この遅れが発生するのは、受取りアカウントが初めて設定された時と同じように、アカウント変更を検証する必要があるためです。 アカウントの検証後、全額が支払われます。現在の支払いサイクルで未払いの額は、次回のサイクル分に加算されます。 詳しくは、「[支払いの受け取り](getting-paid-apps.md)」をご覧ください。
- 
+ 
 
 ### <a name="paypal-info"></a>PayPal 情報
 
@@ -125,7 +125,7 @@ Microsoft は、支払いの初回実行時に 3 つの書類をすべてお送�
 
 ## <a name="tax-forms"></a>税関連の書類
 
-[受取りアカウント](#payout-account)の設定し[、開発者アカウントに登録されている](opening-a-developer-account.md)が、次の手順を実行して、Microsoft Store の*税務プロファイル*を作成できます。
+[受取りアカウント](#payout-account)の設定し[、開発者アカウントに登録されている](opening-a-developer-account.md)が、次の手順を完了して、Microsoft Store の*税務プロファイル*を作成できます。
 
 -   住所と国籍がある国を指定する
 -   該当する税関連の書類を入力する
@@ -135,7 +135,7 @@ Microsoft は、支払いの初回実行時に 3 つの書類をすべてお送�
 > [!IMPORTANT]
 > 税の要件は、国や地域によって異なります。 納める必要がある税金の正確な額は、アプリを販売する国と地域によって異なります。 Microsoft がお客様に代わって売上税と使用税を支払う国については、「[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」をご覧ください。 その他の国の場合、登録した国によっては、アプリの販売に関する売上税と使用税を該当する課税当局にお客様が直接支払う必要がある可能性があります。 また、お客様が受け取るアプリの売り上げ収益が、所得として課税対象になることもあります。 強く、機関に問い合わせ、関連する国または地域最適に役立つ Microsoft ストア開発者アクティビティの適切な税情報をお勧めします。
 
- 
+ 
 **税務プロファイルを作成するには**
 
 1.  Windows デベロッパー センター ダッシュボードで、右上隅にある **[アカウント設定]** アイコンをクリックします。
@@ -160,9 +160,9 @@ Microsoft から支払いを受ける場合や、租税条約上の権利を申�
 
 米国外の開発者の場合、租税条約上の権利を利用できる可能性があります。 これらの利点は、国によって異なるし、Microsoft Store 源泉税金の量を削減することができます。 W-8BEN の書類の Part II に入力することにより、租税条約上の権利を申し立てることができます。 お住まいの国または地域の妥当な機関に問い合わせ、この権利が適用されるかどうかを確認することをお勧めします。
 
- 
+ 
 
- 
+ 
 
 
 

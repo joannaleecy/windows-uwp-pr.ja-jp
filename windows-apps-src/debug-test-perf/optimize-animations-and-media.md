@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eebb967a7bf11163dc2e0ba502b40495901b39b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432990"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476452"
 ---
 # <a name="optimize-animations-media-and-images"></a>アニメーション、メディア、画像の最適化
 
@@ -58,7 +58,7 @@ XAML フレームワーク内のほぼすべてのアニメーションは、既
 
 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) のアニメーション化も同様に適切ではない方法です。 パフォーマンスが低下するだけでなく、再生中のビデオ コンテンツに裂け目のようなアーティファクトが発生することがあります。
 
-> **注**   この記事の **MediaPlayerElement** に関する推奨事項は、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) にも適用されます。 **MediaPlayerElement** は Windows 10 バージョン 1607 でのみ利用できます。以前のバージョンの Windows 用のアプリを作成する場合は、**MediaElement** を使う必要があります。
+> **注:**  **MediaPlayerElement**に関するこの記事で推奨事項は、 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)にも適用されます。 **MediaPlayerElement** は Windows 10 バージョン 1607 でのみ利用できます。以前のバージョンの Windows 用のアプリを作成する場合は、**MediaElement** を使う必要があります。
 
 ### <a name="use-infinite-animations-sparingly"></a>無限アニメーションは慎重に使う
 
@@ -70,7 +70,7 @@ XAML フレームワーク内のほぼすべてのアニメーションは、既
 
 [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) 名前空間には、他の Windows アニメーションとの一貫性を備えた外観を持つ、高パフォーマンスかつスムーズなアニメーションのライブラリが含まれています。 関連クラスは名前に "Theme" が含まれています。関連クラスについては、「[アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/Mt187350)」をご覧ください。 このライブラリは、アプリの最初の表示や、状態とコンテンツの切り替えにアニメーションを設定するなど、一般的なアニメーション シナリオの多くに対応しています。 パフォーマンスを高め UWP UI との一貫性を強化するために、できるだけこのアニメーション ライブラリを使うことをお勧めします。
 
-> **注**   アニメーション ライブラリは、利用可能なすべてのプロパティをアニメーション化できるわけではありません。 アニメーション ライブラリが適用されない XAML シナリオについては、「[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/Mt187354)」を参照してください。
+> **注:** アニメーション ライブラリには、すべてのプロパティがアニメーション化することはできません。 アニメーション ライブラリが適用されない XAML シナリオについては、「[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/Mt187354)」を参照してください。
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>CompositeTransform3D のプロパティを個別にアニメーション化する

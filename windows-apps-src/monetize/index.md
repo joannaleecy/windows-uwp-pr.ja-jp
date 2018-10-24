@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 収益化, エンゲージメント, プロモーション, ストア サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: abd6c772ed84934a54c1755b5d55d398e34fbad9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431878"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476046"
 ---
 # <a name="monetization-engagement-and-store-services"></a>収益化、エンゲージメント、ストア サービス
 
@@ -36,7 +36,7 @@ Microsoft Store の手数料に関する説明とアプリの収益を受け取�
 | [デベロッパー センターのカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)  | UWP アプリからのカスタム イベントをログに記録し、デベロッパー センター ダッシュボードの[利用状況レポート](../publish/usage-report.md)のイベントを確認します。 この機能を使うには、Microsoft Store Services SDK が必要です。 |
 | [評価とレビューを求める](request-ratings-and-reviews.md) |  プログラムで評価とレビュー UI を表示して、ユーザーにアプリの評価やレビューを求めます。  |
 | [Microsoft Store サービス](using-windows-store-services.md)    |  RESTful API を使用して、ストアへの申請の自動化、アプリの分析データへのアクセス、ストアに関連するその他のタスクの自動化を行う方法を説明します。    |
-| [市販デモ (RDX) 機能をアプリに追加します。](retail-demo-experience.md)        |  Pc やデバイス販売フロアに試すお客様にすぐに、Windows アプリで市販デモ モードが含まれます。  |
+| [市販デモ (RDX) 機能をアプリに追加します。](retail-demo-experience.md)        |  Pc やデバイス販売フロアに試すお客様にすぐに、Windows アプリで、市販デモ モードが含まれます。  |
 
 ## <a name="related-topics"></a>関連トピック
 

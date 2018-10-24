@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, トースト, ヘッダー, トースト ヘッダー, 通知, トーストのグループ化, アクション センター
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b3c92a41832729b5a60411308d010c3cbb4470a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439643"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470067"
 ---
 # <a name="toast-headers"></a>トースト ヘッダー
 
@@ -86,11 +86,11 @@ ToastContent toastContent = new ToastContent()
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
 {
-    // Handle toast activation
-    if (e is ToastNotificationActivatedEventArgs)
-    {
+    // Handle toast activation
+    if (e is ToastNotificationActivatedEventArgs)
+    {
         // Arguments specified from the header
-        string arguments = (e as ToastNotificationActivatedEventArgs).Argument;
+        string arguments = (e as ToastNotificationActivatedEventArgs).Argument;
     }
 }
 ```

@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML、コントロール、バインド、コレクション
 ms.localizationpriority: medium
 ms.openlocfilehash: 22594c1cfc503b28163d9fca1f46a6861a4f59ad
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431151"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474709"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML アイテム コントロール: C++/WinRT コレクションへのバインド
 
-XAML アイテム コントロールに効果的にバインドできるコレクションは、*監視可能な*コレクションと呼ばれます。 この概念は、*オブザーバー パターン*と呼ばれるソフトウェアの設計パターンに基づいています。 このトピックで監視可能なコレクションを実装する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、項目にコントロールを XAML にバインドする方法とします。
+XAML アイテム コントロールに効果的にバインドできるコレクションは、*監視可能な*コレクションと呼ばれます。 この概念は、*オブザーバー パターン*と呼ばれるソフトウェアの設計パターンに基づいています。 このトピックで監視可能なコレクションを実装する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、XAML にバインドする方法をコントロールの項目とします。
 
 このチュートリアルでは、「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」で作成したプロジェクトをビルドし、そのトピックで説明する概念に追加します。
 
@@ -33,10 +33,10 @@ XAML アイテム コントロールに効果的にバインドできるコレ�
 
 ## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>**BookSkus** コレクションを **BookstoreViewModel** に追加する
 
-「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」では、**BookSku** 型のプロパティをメイン ビュー モデルに追加しました。 この手順でを同じビュー モデルの**BookSku**の監視可能なコレクションを実装を支援する、 [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)ファクトリ関数テンプレートを使います。
+「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」では、**BookSku** 型のプロパティをメイン ビュー モデルに追加しました。 この手順で使います[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)ファクトリ関数テンプレートを同じビュー モデルの**BookSku**の監視可能なコレクションを実装できるようにします。
 
 > [!NOTE]
-> 場合する Windows SDK バージョン 10.0.17763.0 (Windows 10、バージョン 1809) をインストールしていないまたは後で、し、表示[、Windows SDK の以前のバージョンがある場合](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) **winrt::single_ の代わりに使用できる、監視可能なベクター テンプレートの一覧についてthreaded_observable_vector**します。
+> Windows SDK バージョン 10.0.17763.0 (Windows 10、バージョン 1809) をインストールしていないかが後で、し、表示場合[Windows SDK の以前のバージョンがある場合](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) **winrt::single_ の代わりに使用できる、監視可能なベクター テンプレートの一覧についてはthreaded_observable_vector**します。
 
 `BookstoreViewModel.idl` で新しいプロパティを宣言します。
 
@@ -52,7 +52,7 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!IMPORTANT]
-> 上記の MIDL 3.0 一覧で [ **BookSkus**プロパティの型が[**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)の注意してください。 このトピックの次のセクションでは**BookSkus**に[**リスト ボックス**](/uwp/api/windows.ui.xaml.controls.listbox)の項目ソース バインドするされます。 リスト ボックスは、項目コントロールと[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)プロパティを正しく設定する必要があります**IObservableVector**型の値に (または**IVector**) を設定する**IInspectable**、または[**など、相互運用性の種類のIBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)します。
+> 上記の MIDL 3.0 一覧で [ **BookSkus**プロパティの型が[**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)の注意してください。 このトピックの次のセクションでは**BookSkus**に[**リスト ボックス**](/uwp/api/windows.ui.xaml.controls.listbox)の項目ソースしますバインドするされます。 リスト ボックスは、項目コントロールと正しく[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)プロパティを設定する必要があります**IObservableVector**型の値に (または**IVector**) を設定する**IInspectable**、または[**など、相互運用性の種類のIBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)します。
 
 保存してビルドします。 `Generated Files` フォルダーの `BookstoreViewModel.h` と `BookstoreViewModel.cpp` からアクセサー スタブをコピーし、それらを実装します。
 

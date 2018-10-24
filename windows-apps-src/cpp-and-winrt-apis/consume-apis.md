@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、投影、プロジェクション、実装、ランタイム クラス、ライセンス認証
 ms.localizationpriority: medium
 ms.openlocfilehash: dbd657c966cac2310a1078c889ff31b8147c3a59
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439974"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475396"
 ---
 # <a name="consume-apis-with-cwinrt"></a>C++/WinRT での API の使用
 
@@ -180,7 +180,7 @@ MainPage::MainPage()
 詳細、コード、および使用中のプロジェクトに実装するランタイム クラスの使用に関するチュートリアルについては、「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)」をご覧ください。
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>投影された型とインターフェイスをインスタンス化して返す
-次に、使用中のプロジェクトで投影された型とインターフェイスの例を示します。 (など、いずれかの例ではこの)、投影された型ツールで生成されたは、作成することは自分で何かを注意してください。
+次に、使用中のプロジェクトで投影された型とインターフェイスの例を示します。 (など、この例では)、投影された型ツールで生成されたは、作成することは自分で何かを注意してください。
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,

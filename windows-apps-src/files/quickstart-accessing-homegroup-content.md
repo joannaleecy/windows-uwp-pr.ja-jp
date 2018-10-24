@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 79873d014c5ee735a509328d4a123f839831325b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440128"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476056"
 ---
 # <a name="accessing-homegroup-content"></a>ホームグループ コンテンツへのアクセス
 
@@ -38,7 +38,7 @@ ms.locfileid: "5440128"
     ホームグループ コンテンツにアクセスするには、ユーザーのコンピューターにホームグループがセットアップされ、アプリに **picturesLibrary**、**musicLibrary**、**videosLibrary** のうちの少なくとも 1 つの機能が備わっている必要があります。 アプリは、ホームグループ フォルダーにアクセスすると、アプリのマニフェストで宣言されている機能に対応するライブラリだけを参照します。 詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
 
     > [!NOTE]
-    >  ホームグループのドキュメント ライブラリのコンテンツは、アプリのマニフェストで宣言されている機能や、ユーザーの共有設定にかかわらず、アプリからは参照できません。     
+    >  ホームグループのドキュメント ライブラリのコンテンツは、アプリのマニフェストで宣言されている機能や、ユーザーの共有設定にかかわらず、アプリからは参照できません。     
 
 -   **ファイル ピッカーの使い方についての理解**
 
@@ -197,7 +197,7 @@ ms.locfileid: "5440128"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **読み取りアクセス権のユーザーのファイルの選択内容を開き、ファイル ストリームをソースとして設定、**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)、し、プレイ ファイル。
+3.  **、読み取りアクセスのユーザーのファイルの選択内容を開き、ファイル ストリームをソースとして設定、**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)、し、プレイ ファイル。
     ```cs
     if (file != null)
     {

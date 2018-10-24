@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 公開の保留, 公開日, 申請を送信して公開, 制限付き機能の承認
 ms.localizationpriority: medium
 ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443884"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470482"
 ---
 # <a name="manage-submission-options"></a>申請オプションの管理
 
@@ -30,19 +30,19 @@ ms.locfileid: "5443884"
 
 **[Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)]** (認定後すぐに (または [スケジュール] セクションで選択した日付に) この申請を公開) は既定でオンになっています。つまり、申請が認定に合格するとすぐに公開プロセスが始まることを意味します。ただし、**[価格と使用可能状況]** ページの [[スケジュール]](configure-precise-release-scheduling.md) セクションで日付を構成した場合を除きます。   
 
-ほとんどの申請では、**[Publishing hold options]** (公開の保留オプション) セクションをこのオプションに設定したままにすることをお勧めします。 申請を公開する特定の日付を指定する場合、**[Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)]** (認定後すぐに (または [スケジュール] セクションで選択した日付に) この申請を公開) を使います。 このセクションを既定のオプションのままにすると、**[スケジュール]** セクションで設定した日付より前に申請が公開されることはありません。 **スケジュール**] セクションで選択した日付は、製品がストア内のユーザーに利用可能になったときの決定に使用されます。
+ほとんどの申請では、**[Publishing hold options]** (公開の保留オプション) セクションをこのオプションに設定したままにすることをお勧めします。 申請を公開する特定の日付を指定する場合、**[Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)]** (認定後すぐに (または [スケジュール] セクションで選択した日付に) この申請を公開) を使います。 このセクションを既定のオプションのままにすると、**[スケジュール]** セクションで設定した日付より前に申請が公開されることはありません。 **スケジュール**] セクションで選択した日付は、製品をユーザーがストアで利用可能になったらを決定に使用されます。
 
 
 ### <a name="publish-your-submission-manually"></a>手動で申請を公開する
 
-まだリリース日を設定せず、手動で公開プロセスを開始するまで申請を非公開のままにする場合は、**[[今すぐ公開] を選ぶまで、この申請を公開しません]** を選択できます。 このオプションを選択した場合、開発者が指示するまで申請は公開されません。 申請のパスの認定後、認定のステータス ページで**公開できるようになりました**を選択するか、以下のように、同じ方法で特定の日付を選択することによって公開できます。
+まだリリース日を設定せず、手動で公開プロセスを開始するまで申請を非公開のままにする場合は、**[[今すぐ公開] を選ぶまで、この申請を公開しません]** を選択できます。 このオプションを選択した場合、開発者が指示するまで申請は公開されません。 申請パスの認定後、認定のステータス ページで**公開できるようになりました**を選択するか、以下のように、同じ方法で特定の日付を選択することによって公開できます。
 
 
 ### <a name="start-publishing-your-submission-on-a-certain-date"></a>特定の日に申請の公開を開始する
 
 申請が特定の日付まで公開されないようにするには、**[この申請の公開を開始する日付]** を選びます。 このオプションを選ぶと、申請は指定された日付の当日またはその日以降に、できるだけ早くリリースされます。 日付は 24 時間以上先の日付にする必要があります。 日付と同時に、申請を公開し始める時刻を指定することもできます。 
 
-まだ公開] ステップに入力していない限り、製品の提出後に、このリリース日を変更できます。 
+まだ公開] ステップに入る限り、製品の提出後に、このリリース日を変更することができます。 
  
 前述のように、申請が公開される特定の日付を指定する場合、**[Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)]** (認定後すぐに (または [スケジュール] セクションで選択した日付に) この申請を公開) を使い、**[Publishing hold options]** (公開の保留オプション) を既定の選択に設定したままにします。 **[この申請の公開を開始する日付]** オプションを使うと、その日まで公開プロセスが開始されませんが、認定や公開が遅れると実際のリリース日が選択した日付より後になる可能性があります。 
 

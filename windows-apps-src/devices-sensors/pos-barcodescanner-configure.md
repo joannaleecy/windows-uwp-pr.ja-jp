@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: b33c1d33fe88a09de36e8f80a3034b915d338861
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431691"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477156"
 ---
 # <a name="configure-a-barcode-scanner"></a>バーコード スキャナーの構成
 
@@ -30,8 +30,8 @@ USB 接続されたバーコード スキャナーは、Windows に含まれて�
 ## <a name="bluetooth-barcode-scanner"></a>Bluetooth バーコード スキャナー
 Bluetooth で接続されているスキャナーで UWP バーコード スキャナー API を使用するには、バーコード スキャナーを **Serial Port Protocol - Simple Serial Interface (SPP-SSI)** モードで構成する必要があります。  **SPP-SSI モード**を有効にする手順については、バーコード スキャナーの説明書を参照するか、バーコード スキャナーの製造元にお問い合わせください。
 
-Bluetooth バーコード スキャナーを使用する前を使用してをペアリングする必要があります**の設定 > デバイス > Bluetooth とその他のデバイス > [Bluetooth またはその他のデバイス**します。
+使用してペアリングする必要があります、Bluetooth バーコード スキャナーを使用する前に**設定 > デバイス > Bluetooth とその他のデバイス > [Bluetooth またはその他のデバイス**します。
 
-開始し、 [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration)名前空間を使用して、ペアリング プロセスを制御できます。  詳細については、「[デバイスのペアリング](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices)」を参照してください。
+開始および[Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration)名前空間を使用して、ペアリング プロセスを制御することができます。  詳細については、「[デバイスのペアリング](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices)」を参照してください。
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]

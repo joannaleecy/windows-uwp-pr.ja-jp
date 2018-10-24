@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, UWP, 広告, Advertising, スポット, JavaScript, サンプルコード
 ms.localizationpriority: medium
 ms.openlocfilehash: 894053298428818c2f3304220f14afb6c44ba2af
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435313"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477166"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>JavaScript を使ったスポット広告のサンプル コード
 
@@ -51,4 +51,4 @@ Microsoft Store にアプリを提出する前に、```applicationId``` 変数�
 
 * [GitHub の広告サンプル](http://aka.ms/githubads)
 
- 
+ 

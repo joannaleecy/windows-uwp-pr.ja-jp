@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: b81bf3c55b493d8e36f186ec56b68367c6245cc7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434061"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478189"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -451,7 +451,7 @@ Windows 10 には、簡単に実現できる、高いレベルのセキュリテ
 | TPM                 | トラステッド プラットフォーム モジュール (TPM) を使って、暗号化された公開/秘密キーのペアを作成できます。作成された秘密キーは、TPM の外部で公開されたり、使われたりすることは決してありません (つまり、キーは移行できません)。                                                                                                                                                                                                                                                                                                               |
 | TPM キーの構成証明 | キーが TPM にバインドされていることを暗号で証明するプロトコルです。 この種類の構成証明を使うことで、特定の暗号化操作が特定のコンピューターの TPM で行われたことを保証できます。                                                                                                                                                                                                                                                                                                                       |
 
- 
+ 
 
 ## <a name="related-topics"></a>関連トピック
 

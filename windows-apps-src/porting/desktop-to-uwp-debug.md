@@ -12,15 +12,15 @@ keywords: Windows 10, UWP
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: b5110eebde087593f07704e89c2e4708b2fcbb8b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443177"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470822"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>実行、デバッグ、およびデスクトップ アプリケーションのパッケージのテスト
 
-パッケージ化されたアプリケーションを実行し、それに署名することがなくの外観を確認します。 その後、ブレークポイントを設定し、コード全体をステップ実行します。 実稼働環境でアプリをテストする準備ができたら、アプリケーションに署名し、それをインストールします。 このトピックでは、これらの作業を行う方法について説明します。
+パッケージ化されたアプリケーションを実行し、それに署名することがなくの外観を確認します。 その後、ブレークポイントを設定し、コード全体をステップ実行します。 実稼働環境でアプリケーションをテストする準備ができたら、アプリケーションに署名し、それをインストールします。 このトピックでは、これらの作業を行う方法について説明します。
 
 <a id="run-app" />
 
@@ -68,11 +68,11 @@ Visual Studio 2017 リリース 15.4 で使用可能な[新しいパッケージ
 
 #### <a name="modify-your-application-in-between-debug-sessions"></a>デバッグ セッションの間に、アプリケーションを変更します。
 
-バグを修正するアプリケーションに変更を加えた場合は、MakeAppx ツールを使用して再パッケージ化します。 「[MakeAppx ツールを実行する](desktop-to-uwp-manual-conversion.md#make-appx)」をご覧ください。
+バグを修正するアプリケーションに、変更を加えた場合は、MakeAppx ツールを使用して再パッケージ化します。 「[MakeAppx ツールを実行する](desktop-to-uwp-manual-conversion.md#make-appx)」をご覧ください。
 
 ### <a name="debug-the-entire-application-lifecycle"></a>全体のアプリケーションのライフ サイクルをデバッグします。
 
-場合によっては、開始する前に、アプリをデバッグする機能など、デバッグ プロセスきめ細かい制御を必要があります。
+場合によっては、開始する前に、アプリをデバッグする機能など、デバッグ プロセスを細かくきめ細かい制御を必要があります。
 
 [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)を使用するには、中断、再開、および終了など、アプリケーションのライフ サイクルの完全な制御を取得します。
 
@@ -80,15 +80,15 @@ Visual Studio 2017 リリース 15.4 で使用可能な[新しいパッケージ
 
 ## <a name="test-your-app"></a>アプリのテスト
 
-配布用に準備する現実的な設定でアプリをテストするには、アプリケーションに署名し、インストールすることをお勧めします。
+配布用に準備する現実的な設定で、アプリケーションをテストするには、アプリケーションに署名し、それをインストールすることをお勧めします。
 
 ### <a name="test-an-application-that-you-packaged-by-using-visual-studio"></a>Visual Studio を使ってパッケージ化されたアプリケーションをテストします。
 
-Visual Studio では、テスト証明書を使って、アプリケーションが署名します。 その証明書は、**アプリ パッケージの作成**ウィザードにより生成される出力フォルダーに置かれます。 証明書ファイルには、 *.cer*拡張機能と、アプリケーションでテストする PC 上の**信頼されたルート証明機関**ストアにその証明書をインストールする必要があります。 「[アプリ パッケージをサイドローディングする](../packaging/packaging-uwp-apps.md#sideload-your-app-package)」をご覧ください。
+Visual Studio では、テスト証明書を使用して、アプリケーションが署名します。 その証明書は、**アプリ パッケージの作成**ウィザードにより生成される出力フォルダーに置かれます。 証明書ファイルには、 *.cer*拡張機能と、アプリケーションでテストする PC 上の**信頼されたルート証明機関**ストアにその証明書をインストールする必要があります。 「[アプリ パッケージをサイドローディングする](../packaging/packaging-uwp-apps.md#sideload-your-app-package)」をご覧ください。
 
 ### <a name="test-an-application-that-you-packaged-by-using-the-desktop-app-converter-dac"></a>Desktop App Converter (DAC) を使用してパッケージ化されたアプリケーションをテストします。
 
-Desktop App Converter を使用して、アプリケーションをパッケージ化する場合は、使用、``sign``パラメーターを自動的に生成された証明書を使って、アプリケーションに署名します。 その証明書をインストールしてから、アプリをインストールする必要があります。 「[パッケージ アプリを実行する](desktop-to-uwp-run-desktop-app-converter.md#run-app)」をご覧ください。   
+使える Desktop App Converter を使用して、アプリケーションをパッケージ化する場合、``sign``パラメーターを自動的に生成された証明書を使って、アプリケーションに署名します。 その証明書をインストールしてから、アプリをインストールする必要があります。 「[パッケージ アプリを実行する](desktop-to-uwp-run-desktop-app-converter.md#run-app)」をご覧ください。   
 
 
 ### <a name="manually-sign-apps-optional"></a>アプリに手動で署名する (省略可能)
@@ -109,7 +109,7 @@ Desktop App Converter を使用して、アプリケーションをパッケー�
     [SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
 
 
-### <a name="test-your-application-for-windows-10-s"></a>アプリケーションを Windows 10 S をテストします。
+### <a name="test-your-application-for-windows-10-s"></a>Windows 10 S のアプリケーションをテストします。
 
 アプリを公開する前に Windows 10 秒を実行するデバイスで正しく動作すること確認します。実際には、Microsoft Store にアプリを公開する場合は、必要がありますこれを行うストア要件があるためです。 Windows 10 S を実行するデバイスで正しく動作しないアプリは認定されません。
 

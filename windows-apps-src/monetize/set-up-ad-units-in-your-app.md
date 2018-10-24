@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, Advertising, 広告ユニット, テスト
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7257e6cae518458c5c0bbc525d8013708717e5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444374"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468503"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>アプリの広告ユニットをセットアップする
 
@@ -87,6 +87,6 @@ UWP アプリのテストが終了し、Windows デベロッパー センター�
 * [ネイティブ広告](native-ads.md)
 
 
- 
+ 
 
- 
+ 

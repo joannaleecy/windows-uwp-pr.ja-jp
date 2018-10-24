@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox One ゲームの入手数
 ms.localizationpriority: medium
 ms.openlocfilehash: aac2bd45cf102816db8ba1f434be5743dead48e3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433870"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475141"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Xbox One ゲームの入手数の取得
 
@@ -93,7 +93,7 @@ Authorization: Bearer <your access token>
 | date                | string | 入手データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
 | applicationId       | string | 入手データを取得する Xbox One ゲームの製品 ID です。 |
 | applicationName     | string | ゲームの表示名です。       |
-| acquisitionType     | string | 入手の種類を示す、以下のいずれかの文字列です。<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li><li><strong>サブスクリプション Iap</strong></li><li><strong>プライベート対象ユーザー</strong></li><li><strong>前の順序</strong></li><li><strong>Xbox Game Pass</strong> (または、2018 年 3 月 23 日より前のデータを照会した場合は <strong>Game Pass</strong>)</li><li><strong>Disk</strong></li><li><strong>Prepaid Code</strong></li><li><strong>充電より前の順序</strong></li><li><strong>キャンセル前の順序</strong></li><li><strong>障害が発生した以前の順序</strong></li></ul>    |
+| acquisitionType     | string | 入手の種類を示す、以下のいずれかの文字列です。<ul><li><strong>Free</strong></li><li><strong>Trial</strong></li><li><strong>Paid</strong></li><li><strong>Promotional code</strong></li><li><strong>Iap</strong></li><li><strong>サブスクリプション Iap</strong></li><li><strong>プライベート対象ユーザー</strong></li><li><strong>前の順序</strong></li><li><strong>Xbox Game Pass</strong> (または、2018 年 3 月 23 日より前のデータを照会した場合は <strong>Game Pass</strong>)</li><li><strong>Disk</strong></li><li><strong>Prepaid Code</strong></li><li><strong>充電より前の順序</strong></li><li><strong>取り消されたより前の順序</strong></li><li><strong>障害が発生した以前の順序</strong></li></ul>    |
 | age                 | string | 入手したユーザーの年齢グループを示す、以下のいずれかの文字列です。<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |
 | deviceType          | string | 入手が完了したデバイスの種類を指定する、以下のいずれかの文字列です。<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Server</strong></li><li><strong>Tablet</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>  |
 | gender              | string | 入手したユーザーの性別を指定する、以下のいずれかの文字列です。<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>     |

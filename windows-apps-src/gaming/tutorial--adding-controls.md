@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, コントロール, 入力
 ms.localizationpriority: medium
 ms.openlocfilehash: 563ca17864f95cfa98313608f5a5c32e64f44a16
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436351"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472892"
 ---
 # <a name="add-controls"></a>コントロールの追加
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
-優れた ユニバーサル Windows プラットフォーム (UWP) ゲームは、幅広いインターフェイスをサポートしています。 潜在的なプレイヤーが持っているのは、Windows 10 搭載で物理的なボタンのないタブレット、Xbox コントローラー付属の PC、または高性能マウス/ゲーム キーボード付属の最新デスクトップ ゲーム機かもしれません。 このゲームでは、コントロールは [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) クラスで実装されます。 このクラスは、3 種類のすべての入力 (マウスとキーボード、タッチ、ゲームパッド) を 1 つのコントローラーのに集約します。 最終的には、一人称視点のシューティング ゲームで使用するジャンル標準のムーブ/ルック コントロールが、複数のデバイスで利用できるようになります。
+優れた ユニバーサル Windows プラットフォーム (UWP) ゲームは、幅広いインターフェイスをサポートしています。 潜在的なプレイヤーが windows 10 を持っている搭載で物理的なボタンのない、PC、Xbox コント ローラー、タブレット、または高性能マウス/ゲーム キーボード付属の最新デスクトップ ゲーム機かもしれません。 このゲームでは、コントロールは [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) クラスで実装されます。 このクラスは、3 種類のすべての入力 (マウスとキーボード、タッチ、ゲームパッド) を 1 つのコントローラーのに集約します。 最終的には、一人称視点のシューティング ゲームで使用するジャンル標準のムーブ/ルック コントロールが、複数のデバイスで利用できるようになります。
 
 > [!NOTE]
 > コントロールの詳細ついては、「[ゲームのムーブ/ルック コントロール](tutorial--adding-move-look-controls-to-your-directx-game.md)」と「[ゲームのタッチ コントロール](tutorial--adding-touch-controls-to-your-directx-game.md)」を参照してください。
@@ -99,7 +99,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 ゲームが一時停止されると、ゲームは **WaitForInput** 状態になります。 これは、プレイヤーがゲームのメイン ウィンドウの外にポインターを動かすか、一時停止ボタン (P キーまたはゲームパッドの**スタート** ボタン) を押したときに発生します。 **MoveLookController** は、この押し操作を登録し、[**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127) メソッドを呼び出すときにゲーム ループに通知します。 その時点で、**IsPauseRequested** が **true** を返すと、ゲーム ループは **MoveLookController** の **WaitForPress** を呼び出して、コントローラーを **WaitForInput** 状態にします。 
 
 
-**WaitForInput** 状態になると、ゲームは、**Active**状態 に戻るまで、ほぼすべてのゲームプレイ入力イベントの処理を停止します。 一時停止ボタンは例外で、このボタンを押すと、ゲームはアクティブ状態に戻ります。 一時停止ボタン以外の**アクティブな**状態に戻るには、ゲーム プレイヤー必要がメニュー項目を選択します。 ある 
+**WaitForInput** 状態になると、ゲームは、**Active**状態 に戻るまで、ほぼすべてのゲームプレイ入力イベントの処理を停止します。 一時停止ボタンは例外で、このボタンを押すと、ゲームはアクティブ状態に戻ります。 一時停止ボタン以外は**アクティブ**状態に戻るには、ゲームの順序で、プレイヤーする必要があるメニュー項目を選択します。 
 
 
 
@@ -815,11 +815,11 @@ void MoveLookController::Update()
 
 これで、コントロールが追加されましたが、臨場感のあるゲームを作成するためにもう 1 つ追加しなければならない機能として、サウンドがあります。
 ミュージックとサウンド効果はどのゲームでも重要であるため、次の「[サウンドの追加](tutorial--adding-sound.md)」で詳しく説明します。
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

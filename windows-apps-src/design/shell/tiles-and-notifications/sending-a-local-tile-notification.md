@@ -12,23 +12,23 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e91d4bd481188f4d29af68af2c4572b26d446ae
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432613"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478522"
 ---
 # <a name="send-a-local-tile-notification"></a>ローカル タイル通知の送信
  
 
-Windows 10 では、アプリのプライマリ タイルはアプリ マニフェストで定義されます。これに対して、セカンダリ タイルはプログラムによって作成され、アプリ コードで定義されます。 この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します  (ローカル通知とは、Web サーバーからプッシュまたはプルされる通知ではなく、アプリ コードから送信される通知です)。
+Windows 10 でのアプリのプライマリ タイルは、セカンダリ タイルをプログラムで作成し、アプリ コードで定義されているときに、アプリ マニフェストで定義されます。 この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します  (ローカル通知とは、Web サーバーからプッシュまたはプルされる通知ではなく、アプリ コードから送信される通知です)。
 
 ![既定のタイルと通知を含んだタイル](images/sending-local-tile-01.png)
 
 > [!NOTE] 
 >詳しくは「[アダプティブ タイルの作成](create-adaptive-tiles.md)」と「[タイルのコンテンツのスキーマ](../tiles-and-notifications/tile-schema.md)」をご覧ください。
 
- 
+ 
 
 ## <a name="install-the-nuget-package"></a>NuGet パッケージをインストールする
 
@@ -50,7 +50,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>タイル通知のコンテンツを作成する
 
 
-Windows 10 では、アダプティブ タイル テンプレートを使ってタイルのペイロードが定義されます。これにより、通知に合わせたカスタムの視覚的なレイアウトを作成できます  (アダプティブ タイルの活用方法について詳しくは、「[アダプティブ タイルの作成](create-adaptive-tiles.md)」をご覧ください)。
+Windows 10 では、タイルのペイロードを定義できるように、通知にカスタムの視覚的なレイアウトを作成する、アダプティブ タイル テンプレートを使用します。 (アダプティブ タイルの活用方法について詳しくは、「[アダプティブ タイルの作成](create-adaptive-tiles.md)」をご覧ください)。
 
 次のコード例では、普通サイズのタイルおよびワイド タイル用にアダプティブ タイルのコンテンツを作成します。
 
@@ -297,9 +297,9 @@ var notification = new TileNotification(doc);
 * [**Windows.UI.Notifications 名前空間**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
 * [通知キューの使用方法 (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
 * [通知の配信](choosing-a-notification-delivery-method.md)
- 
+ 
 
- 
+ 
 
 
 

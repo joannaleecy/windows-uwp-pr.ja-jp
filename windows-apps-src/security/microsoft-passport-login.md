@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 106ea458502a95c53ecbf02d9118f3c31ff43978
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434332"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479038"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Windows Hello ログイン アプリの作成
 
@@ -28,7 +28,7 @@ ms.locfileid: "5434332"
 ## <a name="get-started"></a>開始
 
 
-このプロジェクトを作成するには、C# と XAML の経験がいくらか必要です。 Visual Studio 2015 を使用する必要もあります (Community Edition 以上)、Windows 10 コンピューターで、Visual Studio の以降のリリース。 Visual Studio 2015 には、必要な最小バージョンが、最新の開発者とセキュリティ更新プログラムの最新バージョンの Visual Studio を使用することをお勧めします。
+このプロジェクトを作成するには、C# と XAML の経験がいくらか必要です。 Visual Studio 2015 を使用する必要もあります (Community Edition 以上)、Windows 10 コンピューターで、Visual Studio の以降のリリースです。 Visual Studio 2015 には、必要な最小バージョンが、最新の開発者とセキュリティ更新プログラムの最新バージョンの Visual Studio を使用することをお勧めします。
 
 -   Visual Studio を開き、ファイルを選択 > 新規 > プロジェクトです。
 -   [新しいプロジェクト] ウィンドウが開きます。 [テンプレート]、[Visual C#] の順に移動します。

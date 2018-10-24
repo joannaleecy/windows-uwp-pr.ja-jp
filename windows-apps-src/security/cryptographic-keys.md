@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f41ac858e73041e5afb4db596ce52b7d9bf4d8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436771"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471897"
 ---
 # <a name="cryptographic-keys"></a>暗号化キー
 
@@ -79,4 +79,4 @@ CBC などの一部のモードでは、最初の暗号テキスト ブロック
 | [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | カウンター モードのハッシュベース メッセージ認証コード (HMAC) キー派生関数で使う KeyDerivationParameters オブジェクトを作成します。 |
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | SP800-56A キー派生関数で使う KeyDerivationParameters オブジェクトを作成します。                                                 |
 
- 
+ 

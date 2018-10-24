@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0473ee984461bf46be4ebf866a564f0d51e0cfc5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440919"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471627"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>ブラシを使用して背景、前景、輪郭を描画する
 
@@ -41,7 +41,7 @@ ms.locfileid: "5440919"
 
 ### <a name="predefined-color-names"></a>定義済みの色の名前
 
-[**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx)、[**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx) など、定義済みの色の名前を使うことができます。 名前付きの色は 256 個存在します。 XAML パーサーは、色の名前を、正しいカラー チャネルを持つ [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 構造体に変換します。 256 個の名前付きの色は、カスケード スタイル シート レベル 3 (CSS3) 仕様の *X11* の色名が基になっているため、過去に Web 開発や Web デザインの経験があれば、この一連の色について既にご存じの方も多いと思います。
+[**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx)、[**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx) など、定義済みの色の名前を使うことができます。 名前付きの色は 256 個存在します。 XAML パーサーは、色の名前を、正しいカラー チャネルを持つ [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 構造体に変換します。 256 名前付きの色は、カスケード スタイル シート レベル 3 から*X11*色の名前、基づいているため、既に名前付きの色の一覧を使い慣れて web 開発やデザインの経験がある場合は、(CSS3) 仕様です。
 
 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) プロパティを定義済みの色 [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx) に設定する例を次に示します。
 
@@ -198,9 +198,9 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 -   [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) については、[**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) プロパティを最近リセットした場合、または [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) のコンテンツをコードを使って変更した場合に、[**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx) を呼び出す必要があります。
 
 コードの例については、[**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703)、[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101)、[**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) のリファレンス ページをご覧ください。
- 
+ 
 
- 
+ 
 
 
 

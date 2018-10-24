@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: af0f7670f2b131671ce82708d2b0a826db0fcfb1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5445195"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475833"
 ---
 # <a name="run-in-the-background-indefinitely"></a>バックグラウンドで無期限に実行する
 
@@ -27,7 +27,7 @@ ms.locfileid: "5445195"
 
 フォアグラウンドで実行されていない UWP アプリは一時停止状態になります。 デスクトップでは、ユーザーがアプリを最小化すると、この状態になります。 最小化状態でもアプリの実行を継続するには、延長実行セッションを使用します。 Microsoft Store で承認されている延長実行 API については、「[延長実行を使ってアプリの中断を延期する](https://docs.microsoft.com/windows/uwp/launch-resume/run-minimized-with-extended-execution)」をご覧ください。
 
-開発中のアプリを Microsoft Store に提出する予定がない場合は、制限された機能 `extendedExecutionUnconstrained` を指定して [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) を使用できます。これにより、アプリはデバイスの電力状態を問わず、最小化状態でも実行を継続します。  
+開発中のアプリを Microsoft Store に提出する予定がない場合は、制限された機能 `extendedExecutionUnconstrained` を指定して [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) を使用できます。これにより、アプリはデバイスの電力状態を問わず、最小化状態でも実行を継続します。  
 
 `extendedExecutionUnconstrained` 機能は、制限された機能としてアプリのマニフェストに追加されます。 制限された機能について詳しくは、「[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)」をご覧ください。
 
@@ -35,30 +35,30 @@ _Package.appxmanifest_
 ```xml
 <Package ...>
 ...
-  <Capabilities>  
-    <rescap:Capability Name="extendedExecutionUnconstrained"/>  
-  </Capabilities>  
+  <Capabilities>  
+    <rescap:Capability Name="extendedExecutionUnconstrained"/>  
+  </Capabilities>  
 </Package>
 ```
 
 `extendedExecutionUnconstrained` 機能を使用する場合は、[ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) と [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) ではなく [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) と [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) が使用されます。 この場合も、セッションの作成、メンバーの設定、非同期的な延長要求は同じパターンになります。 
 
 ```cs
-var newSession = new ExtendedExecutionForegroundSession();  
-newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;  
-newSession.Description = "Long Running Processing";  
-newSession.Revoked += SessionRevoked;  
-ExtendedExecutionResult result = await newSession.RequestExtensionAsync();  
-switch (result)  
-{  
-    case ExtendedExecutionResult.Allowed:  
-        DoLongRunningWork();  
-        break;  
+var newSession = new ExtendedExecutionForegroundSession();  
+newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;  
+newSession.Description = "Long Running Processing";  
+newSession.Revoked += SessionRevoked;  
+ExtendedExecutionResult result = await newSession.RequestExtensionAsync();  
+switch (result)  
+{  
+    case ExtendedExecutionResult.Allowed:  
+        DoLongRunningWork();  
+        break;  
 
-    default:  
-    case ExtendedExecutionResult.Denied:  
-        DoShortRunningWork();  
-        break;  
+    default:  
+    case ExtendedExecutionResult.Denied:  
+        DoShortRunningWork();  
+        break;  
 }
 ```
 
@@ -73,9 +73,9 @@ switch (result) 
 _Package.appxmanifest_
 ```xml
 <Package ...>
-   <Capabilities>  
-       <rescap:Capability Name="extendedBackgroundTaskTime"/>  
-   </Capabilities>  
+   <Capabilities>  
+       <rescap:Capability Name="extendedBackgroundTaskTime"/>  
+   </Capabilities>  
 </Package>
 ```
 

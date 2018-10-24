@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP、DirectX、アプリ オブジェクト
 ms.localizationpriority: medium
 ms.openlocfilehash: fcbe68516e3ad8b2643faf68900e3305f18e8bbf
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444298"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475056"
 ---
 # <a name="the-app-object-and-directx"></a>アプリ オブジェクトと DirectX
 
@@ -23,7 +23,7 @@ ms.locfileid: "5444298"
 
 DirectX を使ったユニバーサル Windows プラットフォーム (UWP) ゲームでは、Windows UI ユーザー インターフェイスの要素とオブジェクトの多くが使われません。 逆に、それらのアプリは Windows ランタイム スタックの下位レベルで実行されることから、アプリ オブジェクトに直接アクセスして相互運用するという基本的な方法でユーザー インターフェイス フレームワークと相互運用する必要があります。 ここでは、この相互運用をいつどのように行うかと、DirectX 開発者が UWP アプリの開発でこのモデルを効果的に使う方法を説明します。
 
-グラフィックスなじみのない用語や読み取り中に発生する概念についての[Direct3D グラフィックスの用語集](../graphics-concepts/index.md)を参照してください。
+[Direct3D グラフィックスの用語集](../graphics-concepts/index.md)グラフィックスなじみのない用語や読み取り中に発生する概念について参照してください。
 
 ## <a name="the-important-core-user-interface-namespaces"></a>重要なコア ユーザー インターフェイスの名前空間
 
@@ -36,9 +36,9 @@ DirectX を使ったユニバーサル Windows プラットフォーム (UWP) �
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **注:** UWP アプリを開発していない場合は、これらの名前空間で提供されている型ではなく、JavaScript または XAML 専用のライブラリと名前空間で提供されているユーザー インターフェイス コンポーネントを使ってください。
+> **注:**  UWP アプリを開発していない場合は、JavaScript または XAML 専用のライブラリとこれらの名前空間で提供される型ではなく、名前空間で提供されるユーザー インターフェイス コンポーネントを使用します。
 
- 
+ 
 
 ## <a name="the-windows-runtime-app-object"></a>Windows ランタイム アプリ オブジェクト
 
@@ -114,7 +114,7 @@ Windows ランタイムには、他にも次のような便利なコア ユー�
 | [**CoreProcessEventsOption.ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217)        | 新しいイベントを待ち、発生したイベントをすべてディスパッチします。 この動作を、ウィンドウが閉じられるか、アプリが [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスで [**Close**](https://msdn.microsoft.com/library/windows/apps/br208260) メソッドを呼び出すまで継続します。 |
 | [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | 現在キューに入っているすべてのイベントをディスパッチします。 保留中のイベントがない場合は、直ちに制御を返します。                                                                                                                                          |
 
- 
+ 
 
 DirectX を使った UWP アプリでは、[**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) オプションを使って、グラフィックスの更新を中断する可能性があるブロック動作を防ぐ必要があります。
 
@@ -155,9 +155,9 @@ ASTA スレッドで実行するために元のコードを移植している場
 
 全体的に見れば、UWP アプリをデザインする場合、自分で MTA スレッドを作って管理しようとするのではなく、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) の [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) と [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を使ってすべての UI スレッドを処理します。 **CoreDispatcher** で処理できない個別のスレッドが必要な場合、非同期パターンを使い、再入の問題を回避するために前のガイドに従います。
 
- 
+ 
 
- 
+ 
 
 
 

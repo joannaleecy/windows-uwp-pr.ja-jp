@@ -12,13 +12,13 @@ keywords: Windows 10, UWP
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: c81e8d07efa04e93128089eaec78fb83b822a4b9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436715"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476350"
 ---
-# <a name="distribute-a-packaged-desktop-application"></a>デスクトップ アプリケーションのパッケージを配布します。
+# <a name="distribute-a-packaged-desktop-application"></a>デスクトップ アプリケーションのパッケージの配布します。
 
 Windows ストアまたはサイドローディングをパッケージ化されたデスクトップ アプリケーションを公開して 1 つまたは複数のデバイスにします。  
 
@@ -36,13 +36,13 @@ Microsoft Store への公開を計画している場合は、申請プロセス�
 ストアに提出する前に、アプリケーションに署名する必要はありません。
 
 >[!IMPORTANT]
-> Microsoft Store にアプリを公開する場合は、アプリが Windows 10 秒を実行しているデバイスで正しく動作することを確認します。これは、ストア要件です。 「[Windows アプリの Windows 10 S 対応をテストする](desktop-to-uwp-test-windows-s.md)」をご覧ください。
+> Microsoft Store にアプリを公開する場合は、Windows 10 秒を実行しているデバイスで、アプリケーションが正しく動作することを確認します。これは、ストア要件です。 「[Windows アプリの Windows 10 S 対応をテストする](desktop-to-uwp-test-windows-s.md)」をご覧ください。
 
 <a id="side-load" />
 
-## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Microsoft Store に掲載せずにアプリを配布します。
+## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Microsoft Store に掲載せずに、アプリケーションを配布します。
 
-配布するアプリのストアを使用せず場合、は、1 つまたは複数のデバイスにアプリを手動で配布できます。
+配布するアプリケーション ストアを使用することがなく場合、は、1 つまたは複数のデバイスにアプリを手動で配布できます。
 
 この方法は、配布エクスペリエンスをきめ細かく制御する必要がある場合や、Microsoft Store の認定プロセスへの関与が望ましくない場合などに有効です。
 
@@ -57,9 +57,9 @@ Windows 10 S を実行しているデバイスにアプリを配布する場合�
 > [!IMPORTANT]
 > 証明書の発行元名がアプリの発行者名と一致することを確認してください。
 
-証明書を使用して、アプリケーションの署名、 [SignTool を使用する記号アプリケーション パッケージ](../packaging/sign-app-package-using-signtool.md)を参照してください。
+証明書を使って、アプリケーションの署名、 [SignTool を使用する記号アプリケーション パッケージ](../packaging/sign-app-package-using-signtool.md)を参照してください。
 
-サイドローディングは、他のデバイスにアプリには、 [LOB アプリのサイドローディングでは、Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)が参照してください。
+サイドローディングは、他のデバイスに、アプリケーションには、 [LOB アプリのサイドローディングでは、Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)が参照してください。
 
 **ビデオ**
 
@@ -75,7 +75,7 @@ Windows 10 S を実行しているデバイスにアプリを配布する場合�
 
 * 既存のスタート タイルとタスク バー ボタンの参照先をパッケージ アプリに設定する。
 * パッケージ アプリを一連のファイルの種類に関連付けます。
-* 既定では特定の種類のファイルを開き、パッケージ化されたアプリケーションを作成します。
+* 既定では、特定の種類のファイルを開き、パッケージ化されたアプリケーションを作成します。
 
 拡張機能の完全な一覧と使用方法のガイダンスについては、「[アプリにユーザーを移行する](desktop-to-uwp-extensions.md#transition-users-to-your-app)」を参照してください。
 
@@ -151,7 +151,7 @@ private void RemoveDesktopApp()
 
         if (uninstallResult.Equals(DialogResult.Yes))
         {
-                    string[] uninstallArgs = uninstallString.Split(' ');
+                    string[] uninstallArgs = uninstallString.Split(' ');
 
             Process process = new Process();
             process.StartInfo.FileName = uninstallArgs[0];
