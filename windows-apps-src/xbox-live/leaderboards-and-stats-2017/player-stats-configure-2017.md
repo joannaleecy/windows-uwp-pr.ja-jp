@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b2516987d1f56ba1da482854b6c6a390e1001db
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396138"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5438502"
 ---
 # <a name="configuring-featured-stats-or-leaderboards-on-universal-dev-center-with-data-platform-2017"></a><span data-ttu-id="08e0d-104">データ プラットフォーム 2017 を使用した、ユニバーサル デベロッパー センターでの注目の統計とランキングの構成</span><span class="sxs-lookup"><span data-stu-id="08e0d-104">Configuring Featured Stats or Leaderboards on Universal Dev Center with Data Platform 2017</span></span>
 

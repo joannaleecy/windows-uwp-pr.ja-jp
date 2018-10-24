@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 53126e185b9d94c911abab8999e3ca1da8691c7c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403335"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5439246"
 ---
 # <a name="configure-your-xbox-development-console"></a><span data-ttu-id="cdfb7-104">Xbox 開発機本体を構成する</span><span class="sxs-lookup"><span data-stu-id="cdfb7-104">Configure your Xbox development console</span></span>
 

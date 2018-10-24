@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efe0e93527560e31a471fce2c74b1cc254101ad
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405584"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5437309"
 ---
 # <a name="queryclipsresponse-json"></a><span data-ttu-id="1bef1-104">QueryClipsResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="1bef1-104">QueryClipsResponse (JSON)</span></span>
 <span data-ttu-id="1bef1-105">一覧のページング情報と共にゲーム クリップの戻り値の一覧をラップします。</span><span class="sxs-lookup"><span data-stu-id="1bef1-105">Wraps the list of return game clips along with paging information for the list.</span></span> 

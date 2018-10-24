@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eb16d6052d07ed90d99c327b4955b5d8bedabff
-ms.sourcegitcommit: 20abf751a7d2f483826e54809f2417c90d0aecb0
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5429538"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5440101"
 ---
 # <a name="get-mediamarketplaceidmetadatamediaitemtypes"></a><span data-ttu-id="eb7bb-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes)</span><span class="sxs-lookup"><span data-stu-id="eb7bb-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes)</span></span>
 <span data-ttu-id="eb7bb-105">EDS の特定のバージョンのサポートされているすべての mediaItemTypes の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="eb7bb-105">Lists all supported mediaItemTypes for the given EDS version.</span></span> <span data-ttu-id="eb7bb-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="eb7bb-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>

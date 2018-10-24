@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e8f71a565b253a9601a61488948920f75d0444f
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399509"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5440693"
 ---
 # <a name="usersmegamerpic"></a><span data-ttu-id="77e65-104">/users/me/gamerpic</span><span class="sxs-lookup"><span data-stu-id="77e65-104">/users/me/gamerpic</span></span>
 <span data-ttu-id="77e65-105">1080 x 1080 ゲーマー アイコンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="77e65-105">Accesses a 1080x1080 gamerpic.</span></span>  

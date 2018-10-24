@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, rta, 統計情報, 通知
 ms.localizationpriority: medium
 ms.openlocfilehash: d2d5656af1d37ce45cabb3c8e86e1b40ca38ea14
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399516"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5437078"
 ---
 # <a name="how-to-register-for-stat-change-notifications"></a><span data-ttu-id="3f1d3-104">統計情報の変更通知の登録方法</span><span class="sxs-lookup"><span data-stu-id="3f1d3-104">How to register for Stat change notifications</span></span>
 

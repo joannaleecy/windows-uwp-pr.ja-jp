@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス, ベスト プラクティス
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d9266bc4416443a3f6e78d4d0fedb9886f10044
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397500"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5441313"
 ---
 # <a name="rich-presence-best-practices"></a><span data-ttu-id="d08e3-104">リッチ プレゼンスのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="d08e3-104">Rich Presence best practices</span></span>
 

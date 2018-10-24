@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store ターゲット オファー API, ターゲット オファー
 ms.localizationpriority: medium
 ms.openlocfilehash: cb3000e8d791f997267166505a190ddc7c9b4d34
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5406914"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5441889"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a><span data-ttu-id="2bfa4-104">ストア サービスを使ってターゲット オファーを管理する</span><span class="sxs-lookup"><span data-stu-id="2bfa4-104">Manage targeted offers using Store services</span></span>
 

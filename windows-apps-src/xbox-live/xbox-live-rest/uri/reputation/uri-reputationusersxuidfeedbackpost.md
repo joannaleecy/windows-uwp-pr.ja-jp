@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cb56b51e2d558b2a4ef05d117244d464756e6ec
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5410276"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5436016"
 ---
 # <a name="post-usersxuidxuidfeedback"></a><span data-ttu-id="d8526-104">POST (/users/xuid({xuid})/feedback)</span><span class="sxs-lookup"><span data-stu-id="d8526-104">POST (/users/xuid({xuid})/feedback)</span></span>
 <span data-ttu-id="d8526-105">シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。</span><span class="sxs-lookup"><span data-stu-id="d8526-105">Used from your title if you desire to add a feedback option in your game, as opposed to using the shell.</span></span> <span data-ttu-id="d8526-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="d8526-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>

@@ -10,11 +10,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, リッチ プレゼンス文字列, Windows デベロッパー センター
 ms.openlocfilehash: 125d14fe0bf261caf9177a8ef5fa4cdb72b7952b
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5401545"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5439609"
 ---
 # <a name="configure-rich-presence-on-windows-dev-center"></a><span data-ttu-id="f5c20-104">Windows デベロッパー センターでのリッチ プレゼンスの構成</span><span class="sxs-lookup"><span data-stu-id="f5c20-104">Configure Rich Presence on Windows Dev Center</span></span>
 

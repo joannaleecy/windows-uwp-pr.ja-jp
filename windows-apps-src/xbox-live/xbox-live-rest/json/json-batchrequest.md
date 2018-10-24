@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6271cdf3d94f194adee5087136c1d87ad9f214b5
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5406225"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5431632"
 ---
 # <a name="batchrequest-json"></a><span data-ttu-id="f55de-104">BatchRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="f55de-104">BatchRequest (JSON)</span></span>
 <span data-ttu-id="f55de-105">ユーザー、デバイス、およびタイトルなどのプレゼンス情報をフィルター処理するためのプロパティの配列です。</span><span class="sxs-lookup"><span data-stu-id="f55de-105">An array of properties with which to filter presence information, such as users, devices, and titles.</span></span>

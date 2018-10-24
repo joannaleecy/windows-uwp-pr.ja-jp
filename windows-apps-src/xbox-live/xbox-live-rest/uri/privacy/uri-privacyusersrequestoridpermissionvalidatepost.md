@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: edffbbff7fb9cd5fc4e471a6af1f494f4a35ea57
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5402769"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5438430"
 ---
 # <a name="post-usersrequestoridpermissionvalidate"></a><span data-ttu-id="9e3ad-104">POST (/users/{requestorId}/permission/validate)</span><span class="sxs-lookup"><span data-stu-id="9e3ad-104">POST (/users/{requestorId}/permission/validate)</span></span>
 <span data-ttu-id="9e3ad-105">一連の対象ユーザーのセットを指定した操作を実行するユーザーを許可するかどうかに関するはいまたは no に対する回答を取得します。</span><span class="sxs-lookup"><span data-stu-id="9e3ad-105">Gets a set of yes-or-no answers about whether the user is allowed to perform specified actions with a set of target users.</span></span>

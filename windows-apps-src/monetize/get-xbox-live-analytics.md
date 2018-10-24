@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析
 ms.localizationpriority: medium
 ms.openlocfilehash: 68bc3389276acc910272d57e9cc859a7e8ffd6c7
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400443"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443691"
 ---
 # <a name="get-xbox-live-analytics-data"></a><span data-ttu-id="abbe4-104">Xbox Live の分析データの取得</span><span class="sxs-lookup"><span data-stu-id="abbe4-104">Get Xbox Live analytics data</span></span>
 

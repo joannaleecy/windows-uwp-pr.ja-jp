@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 72b4a7b971647304e08fe52e7696be9fcd39e584
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400383"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5435094"
 ---
 # <a name="updatemetadatarequest-json"></a><span data-ttu-id="f97ff-104">UpdateMetadataRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="f97ff-104">UpdateMetadataRequest (JSON)</span></span>
 <span data-ttu-id="f97ff-105">このメタデータは、クリップを更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f97ff-105">The metadata that should be updated for a clip.</span></span> 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9201f6244db108d548ebb9e484380b7d0eb38e3a
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399449"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5441634"
 ---
 # <a name="matchticket-json"></a><span data-ttu-id="c88d9-104">MatchTicket (JSON)</span><span class="sxs-lookup"><span data-stu-id="c88d9-104">MatchTicket (JSON)</span></span>
 <span data-ttu-id="c88d9-105">プレイヤーがマルチプレイヤー セッション ディレクトリ (MPSD) を通じて他のプレイヤーを検索に使用するマッチ チケットを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c88d9-105">A JSON object representing a match ticket, used by players to locate other players through the multiplayer session directory (MPSD).</span></span> 

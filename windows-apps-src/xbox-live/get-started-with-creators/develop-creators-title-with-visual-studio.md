@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Live クリエーターズ, Visual Studio
 ms.localizationpriority: medium
 ms.openlocfilehash: 19ee781a7143c0da5b1549776646ab5b133a9667
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405062"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5437425"
 ---
 # <a name="get-started-developing-an-xbox-live-creators-program-title-with-visual-studio"></a><span data-ttu-id="aa106-104">Visual Studio を使用して、Xbox Live クリエーターズ プログラムのタイトルの開発を開始する</span><span class="sxs-lookup"><span data-stu-id="aa106-104">Get started developing an Xbox Live Creators Program title with Visual Studio</span></span>
 

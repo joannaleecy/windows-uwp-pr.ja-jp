@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ed9a461b630f1ec277190c43efa99aa74492b0e
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404729"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5442381"
 ---
 # <a name="post-serviceconfigsscidsessiontemplatessessiontemplatenamebatch"></a><span data-ttu-id="7e588-104">POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch)</span><span class="sxs-lookup"><span data-stu-id="7e588-104">POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch)</span></span>
 <span data-ttu-id="7e588-105">複数の Xbox ユーザー Id には、バッチ クエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="7e588-105">Creates a batch query on multiple Xbox user IDs.</span></span>

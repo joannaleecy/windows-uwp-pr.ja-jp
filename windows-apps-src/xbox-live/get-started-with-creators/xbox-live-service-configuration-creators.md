@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f42379b5225553f03b9b9af8149d6cb888377a36
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5406616"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5437702"
 ---
 # <a name="xbox-live-service-configuration-for-the-creators-program"></a><span data-ttu-id="18576-104">クリエーターズ プログラムの Xbox Live サービス構成</span><span class="sxs-lookup"><span data-stu-id="18576-104">Xbox Live service configuration for the Creators Program</span></span>
 

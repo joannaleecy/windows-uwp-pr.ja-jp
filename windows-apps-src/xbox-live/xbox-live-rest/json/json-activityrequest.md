@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a3d1560c7bb8c6a6eb4fe9e4786f0378d74aeca2
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5401730"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5431479"
 ---
 # <a name="activityrequest-json"></a><span data-ttu-id="5151a-104">ActivityRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="5151a-104">ActivityRequest (JSON)</span></span>
 <span data-ttu-id="5151a-105">1 つまたは複数のユーザーのリッチ プレゼンスに関する情報を要求します。</span><span class="sxs-lookup"><span data-stu-id="5151a-105">A request for information about one or more users' rich presence.</span></span> 
