@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 概要, uwp, windows 10, 学習トラック, ファイル, ファイル io, ファイルの読み取り, ファイルの書き込み, ファイルの作成, テキストの書き込み, テキストの読み取り
 ms.localizationpriority: medium
 ms.openlocfilehash: ae89b5c0e072eceec155009c07b3b3a7cf563a20
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399558"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5432043"
 ---
 # <a name="work-with-files"></a>ファイルの操作
 

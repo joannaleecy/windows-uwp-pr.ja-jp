@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.openlocfilehash: 4a9e55de039087ce3fdaae6a003293a50938af90
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400083"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5430988"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 5 月
 
@@ -99,7 +99,7 @@ Project Rome チームは、iOS と Android Sdk、ユーザー アクティビ�
 
 ### <a name="sets"></a>セット
 
-Sets 機能は、Windows Insider preview ビルドで利用できます。 Sets 機能を使用する場合は、タイトル バーに専用のタブを持つ各アプリと他のアプリと共有される可能性があるウィンドウにするアプリが描画されます。 [Sets の設計](../design/shell/design-for-sets.md)は設定 UI で最適なエクスペリエンスを提供するアプリを最適化する方法に関するガイダンスがあります。
+Sets 機能は、Windows Insider preview ビルドで利用できます。 Sets 機能を使用する場合は、タイトル バーに専用のタブを持つ各アプリと他のアプリと共有される可能性があるウィンドウにするアプリが描画されます。 
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
