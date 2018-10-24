@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 課税, irs, 米国内国歳入庁, 税, 所得税, 1
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
 ms.openlocfilehash: ffefc1d645a79296989e95c2fa033b8848e91c3b
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405430"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5437592"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a><span data-ttu-id="bea10-103">マイクロソフトが発行する IRS の税関連の書類について</span><span class="sxs-lookup"><span data-stu-id="bea10-103">Understand IRS tax forms issued by Microsoft</span></span>
 

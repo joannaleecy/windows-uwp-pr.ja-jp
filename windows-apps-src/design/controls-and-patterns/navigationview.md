@@ -15,11 +15,11 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c9f44f13df05aa408757a0766b2a652037707d1
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5407013"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435869"
 ---
 # <a name="navigation-view-preview-version"></a><span data-ttu-id="fcc5f-103">ナビゲーション ビュー (プレビュー版)</span><span class="sxs-lookup"><span data-stu-id="fcc5f-103">Navigation view (Preview version)</span></span>
 

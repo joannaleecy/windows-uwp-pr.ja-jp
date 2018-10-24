@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: fe4086cc87699083304594eb4ccc8e7bb137b19f
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396804"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5432073"
 ---
 # <a name="customize-the-print-preview-ui"></a><span data-ttu-id="4eabf-104">印刷プレビュー UI のカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="4eabf-104">Customize the print preview UI</span></span>
 
