@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3575d4d30515a3c26bf99e1cc37afa3b98f4e7dc
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5410740"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435947"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a><span data-ttu-id="10d21-104">アプリのサブスクリプション アドオンの有効化</span><span class="sxs-lookup"><span data-stu-id="10d21-104">Enable subscription add-ons for your app</span></span>
 

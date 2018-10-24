@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: aa01cc3d70db7a94667e944d1a1739e911f94b0c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5409939"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439151"
 ---
 # <a name="cryptography"></a><span data-ttu-id="ded82-105">暗号化</span><span class="sxs-lookup"><span data-stu-id="ded82-105">Cryptography</span></span>
 

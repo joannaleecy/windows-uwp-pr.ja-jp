@@ -15,11 +15,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5409781"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436908"
 ---
 # <a name="attached-properties-overview"></a><span data-ttu-id="ced0c-104">添付プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="ced0c-104">Attached properties overview</span></span>
 

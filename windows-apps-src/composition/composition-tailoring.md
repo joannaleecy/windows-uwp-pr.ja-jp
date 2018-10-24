@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 66384c4df3195ae0fff35ae5dd7e1b1983204068
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5407754"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440158"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a><span data-ttu-id="3ef68-104">効果と Windows UI を使用して、エクスペリエンスを調整します。</span><span class="sxs-lookup"><span data-stu-id="3ef68-104">Tailoring effects & experiences using Windows UI</span></span>
 

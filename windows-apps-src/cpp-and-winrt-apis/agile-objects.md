@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、アジャイル、オブジェクト、アジリティ、IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cc8ebb24eb051cd8e9b141f361f47041b122d5c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5401927"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436647"
 ---
 # <a name="agile-objects-in-cwinrt"></a><span data-ttu-id="d5b87-105">C++/WinRT におけるアジャイル オブジェクト</span><span class="sxs-lookup"><span data-stu-id="d5b87-105">Agile objects in C++/WinRT</span></span>
 
