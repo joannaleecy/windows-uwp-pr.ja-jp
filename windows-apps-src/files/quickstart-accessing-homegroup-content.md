@@ -11,52 +11,52 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 79873d014c5ee735a509328d4a123f839831325b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440128"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476056"
 ---
-# <a name="accessing-homegroup-content"></a><span data-ttu-id="b35f4-104">ホームグループ コンテンツへのアクセス</span><span class="sxs-lookup"><span data-stu-id="b35f4-104">Accessing HomeGroup content</span></span>
+# <a name="accessing-homegroup-content"></a><span data-ttu-id="36e5e-104">ホームグループ コンテンツへのアクセス</span><span class="sxs-lookup"><span data-stu-id="36e5e-104">Accessing HomeGroup content</span></span>
 
 
 
-**<span data-ttu-id="b35f4-105">重要な API</span><span class="sxs-lookup"><span data-stu-id="b35f4-105">Important APIs</span></span>**
+**<span data-ttu-id="36e5e-105">重要な API</span><span class="sxs-lookup"><span data-stu-id="36e5e-105">Important APIs</span></span>**
 
--   [**<span data-ttu-id="b35f4-106">Windows.Storage.KnownFolders クラス</span><span class="sxs-lookup"><span data-stu-id="b35f4-106">Windows.Storage.KnownFolders class</span></span>**](https://msdn.microsoft.com/library/windows/apps/br227151)
+-   [**<span data-ttu-id="36e5e-106">Windows.Storage.KnownFolders クラス</span><span class="sxs-lookup"><span data-stu-id="36e5e-106">Windows.Storage.KnownFolders class</span></span>**](https://msdn.microsoft.com/library/windows/apps/br227151)
 
-<span data-ttu-id="b35f4-107">ユーザーのホームグループ フォルダーに格納されているコンテンツ (画像、音楽、ビデオなど) にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="b35f4-107">Access content stored in the user's HomeGroup folder, including pictures, music, and videos.</span></span>
+<span data-ttu-id="36e5e-107">ユーザーのホームグループ フォルダーに格納されているコンテンツ (画像、音楽、ビデオなど) にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="36e5e-107">Access content stored in the user's HomeGroup folder, including pictures, music, and videos.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="b35f4-108">前提条件</span><span class="sxs-lookup"><span data-stu-id="b35f4-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="36e5e-108">前提条件</span><span class="sxs-lookup"><span data-stu-id="36e5e-108">Prerequisites</span></span>
 
--   **<span data-ttu-id="b35f4-109">ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解</span><span class="sxs-lookup"><span data-stu-id="b35f4-109">Understand async programming for Universal Windows Platform (UWP) apps</span></span>**
+-   **<span data-ttu-id="36e5e-109">ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解</span><span class="sxs-lookup"><span data-stu-id="36e5e-109">Understand async programming for Universal Windows Platform (UWP) apps</span></span>**
 
-    <span data-ttu-id="b35f4-110">C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b35f4-110">You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337).</span></span> <span data-ttu-id="b35f4-111">C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b35f4-111">To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).</span></span>
+    <span data-ttu-id="36e5e-110">C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="36e5e-110">You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337).</span></span> <span data-ttu-id="36e5e-111">C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="36e5e-111">To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).</span></span>
 
--   **<span data-ttu-id="b35f4-112">アプリ機能の宣言</span><span class="sxs-lookup"><span data-stu-id="b35f4-112">App capabilty declarations</span></span>**
+-   **<span data-ttu-id="36e5e-112">アプリ機能の宣言</span><span class="sxs-lookup"><span data-stu-id="36e5e-112">App capabilty declarations</span></span>**
 
-    <span data-ttu-id="b35f4-113">ホームグループ コンテンツにアクセスするには、ユーザーのコンピューターにホームグループがセットアップされ、アプリに **picturesLibrary**、**musicLibrary**、**videosLibrary** のうちの少なくとも 1 つの機能が備わっている必要があります。</span><span class="sxs-lookup"><span data-stu-id="b35f4-113">To access HomeGroup content, the user's machine must have a HomeGroup set up and your app must have at least one of the following capabilities: **picturesLibrary**, **musicLibrary**, or **videosLibrary**.</span></span> <span data-ttu-id="b35f4-114">アプリは、ホームグループ フォルダーにアクセスすると、アプリのマニフェストで宣言されている機能に対応するライブラリだけを参照します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-114">When your app accesses the HomeGroup folder, it will see only the libraries that correspond to the capabilities declared in your app's manifest.</span></span> <span data-ttu-id="b35f4-115">詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b35f4-115">To learn more, see [File access permissions](file-access-permissions.md).</span></span>
+    <span data-ttu-id="36e5e-113">ホームグループ コンテンツにアクセスするには、ユーザーのコンピューターにホームグループがセットアップされ、アプリに **picturesLibrary**、**musicLibrary**、**videosLibrary** のうちの少なくとも 1 つの機能が備わっている必要があります。</span><span class="sxs-lookup"><span data-stu-id="36e5e-113">To access HomeGroup content, the user's machine must have a HomeGroup set up and your app must have at least one of the following capabilities: **picturesLibrary**, **musicLibrary**, or **videosLibrary**.</span></span> <span data-ttu-id="36e5e-114">アプリは、ホームグループ フォルダーにアクセスすると、アプリのマニフェストで宣言されている機能に対応するライブラリだけを参照します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-114">When your app accesses the HomeGroup folder, it will see only the libraries that correspond to the capabilities declared in your app's manifest.</span></span> <span data-ttu-id="36e5e-115">詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="36e5e-115">To learn more, see [File access permissions](file-access-permissions.md).</span></span>
 
     > [!NOTE]
-    >  <span data-ttu-id="b35f4-116">ホームグループのドキュメント ライブラリのコンテンツは、アプリのマニフェストで宣言されている機能や、ユーザーの共有設定にかかわらず、アプリからは参照できません。</span><span class="sxs-lookup"><span data-stu-id="b35f4-116">Content in the Documents library of a HomeGroup isn't visible to your app regardless of the capabilities declared in your app's manifest and regardless of the user's sharing settings.</span></span>     
+    >  <span data-ttu-id="36e5e-116">ホームグループのドキュメント ライブラリのコンテンツは、アプリのマニフェストで宣言されている機能や、ユーザーの共有設定にかかわらず、アプリからは参照できません。</span><span class="sxs-lookup"><span data-stu-id="36e5e-116">Content in the Documents library of a HomeGroup isn't visible to your app regardless of the capabilities declared in your app's manifest and regardless of the user's sharing settings.</span></span>     
 
--   **<span data-ttu-id="b35f4-117">ファイル ピッカーの使い方についての理解</span><span class="sxs-lookup"><span data-stu-id="b35f4-117">Understand how to use file pickers</span></span>**
+-   **<span data-ttu-id="36e5e-117">ファイル ピッカーの使い方についての理解</span><span class="sxs-lookup"><span data-stu-id="36e5e-117">Understand how to use file pickers</span></span>**
 
-    <span data-ttu-id="b35f4-118">ホームグループのファイルやフォルダーにアクセスするには、通常、ファイル ピッカーを使います。</span><span class="sxs-lookup"><span data-stu-id="b35f4-118">You typically use the file picker to access files and folders in the HomeGroup.</span></span> <span data-ttu-id="b35f4-119">ファイル ピッカーの使い方については、「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b35f4-119">To learn how to use the file picker, see [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).</span></span>
+    <span data-ttu-id="36e5e-118">ホームグループのファイルやフォルダーにアクセスするには、通常、ファイル ピッカーを使います。</span><span class="sxs-lookup"><span data-stu-id="36e5e-118">You typically use the file picker to access files and folders in the HomeGroup.</span></span> <span data-ttu-id="36e5e-119">ファイル ピッカーの使い方については、「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="36e5e-119">To learn how to use the file picker, see [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).</span></span>
 
--   **<span data-ttu-id="b35f4-120">ファイルとフォルダーのクエリについての理解</span><span class="sxs-lookup"><span data-stu-id="b35f4-120">Understand file and folder queries</span></span>**
+-   **<span data-ttu-id="36e5e-120">ファイルとフォルダーのクエリについての理解</span><span class="sxs-lookup"><span data-stu-id="36e5e-120">Understand file and folder queries</span></span>**
 
-    <span data-ttu-id="b35f4-121">ホームグループのファイルやフォルダーを列挙するには、クエリを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="b35f4-121">You can use queries to enumerate files and folders in the HomeGroup.</span></span> <span data-ttu-id="b35f4-122">ファイルとフォルダーのクエリについて詳しくは、「[ファイルとフォルダーの列挙と照会](quickstart-listing-files-and-folders.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b35f4-122">To learn about file and folder queries, see [Enumerating and querying files and folders](quickstart-listing-files-and-folders.md).</span></span>
+    <span data-ttu-id="36e5e-121">ホームグループのファイルやフォルダーを列挙するには、クエリを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="36e5e-121">You can use queries to enumerate files and folders in the HomeGroup.</span></span> <span data-ttu-id="36e5e-122">ファイルとフォルダーのクエリについて詳しくは、「[ファイルとフォルダーの列挙と照会](quickstart-listing-files-and-folders.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="36e5e-122">To learn about file and folder queries, see [Enumerating and querying files and folders](quickstart-listing-files-and-folders.md).</span></span>
 
-## <a name="open-the-file-picker-at-the-homegroup"></a><span data-ttu-id="b35f4-123">ホームグループでファイル ピッカーを開く</span><span class="sxs-lookup"><span data-stu-id="b35f4-123">Open the file picker at the HomeGroup</span></span>
+## <a name="open-the-file-picker-at-the-homegroup"></a><span data-ttu-id="36e5e-123">ホームグループでファイル ピッカーを開く</span><span class="sxs-lookup"><span data-stu-id="36e5e-123">Open the file picker at the HomeGroup</span></span>
 
-<span data-ttu-id="b35f4-124">以下の手順に従って、ユーザーがホームグループのファイルとフォルダーを選ぶことができるファイル ピッカーのインスタンスを開きます。</span><span class="sxs-lookup"><span data-stu-id="b35f4-124">Follow these steps to open an instance of the file picker that lets the user pick files and folders from the HomeGroup:</span></span>
+<span data-ttu-id="36e5e-124">以下の手順に従って、ユーザーがホームグループのファイルとフォルダーを選ぶことができるファイル ピッカーのインスタンスを開きます。</span><span class="sxs-lookup"><span data-stu-id="36e5e-124">Follow these steps to open an instance of the file picker that lets the user pick files and folders from the HomeGroup:</span></span>
 
-1.  **<span data-ttu-id="b35f4-125">ファイル ピッカーを作成してカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="b35f4-125">Create and customize the file picker</span></span>**
+1.  **<span data-ttu-id="36e5e-125">ファイル ピッカーを作成してカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="36e5e-125">Create and customize the file picker</span></span>**
 
-    <span data-ttu-id="b35f4-126">[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使ってファイル ピッカーを作成し、ピッカーの [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) を [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890) に設定します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-126">Use [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to create the file picker, and then set the picker's [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890).</span></span> <span data-ttu-id="b35f4-127">または、ユーザーとアプリに関連するその他のプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-127">Or, set other properties that are relevant to your users and your app.</span></span> <span data-ttu-id="b35f4-128">ファイル ピッカーのカスタマイズ方法を判断するためのガイドラインについては、「[ファイル ピッカーのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465182)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b35f4-128">For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182)</span></span>
+    <span data-ttu-id="36e5e-126">[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使ってファイル ピッカーを作成し、ピッカーの [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) を [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890) に設定します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-126">Use [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to create the file picker, and then set the picker's [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890).</span></span> <span data-ttu-id="36e5e-127">または、ユーザーとアプリに関連するその他のプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-127">Or, set other properties that are relevant to your users and your app.</span></span> <span data-ttu-id="36e5e-128">ファイル ピッカーのカスタマイズ方法を判断するためのガイドラインについては、「[ファイル ピッカーのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465182)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="36e5e-128">For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182)</span></span>
 
-    <span data-ttu-id="b35f4-129">次の例では、ホームグループで開かれ、すべての種類のファイルを含み、ファイルをサムネイル イメージとして表示するファイル ピッカーを作成しています。</span><span class="sxs-lookup"><span data-stu-id="b35f4-129">This example creates a file picker that opens at the HomeGroup, includes files of any type, and displays the files as thumbnail images:</span></span>
+    <span data-ttu-id="36e5e-129">次の例では、ホームグループで開かれ、すべての種類のファイルを含み、ファイルをサムネイル イメージとして表示するファイル ピッカーを作成しています。</span><span class="sxs-lookup"><span data-stu-id="36e5e-129">This example creates a file picker that opens at the HomeGroup, includes files of any type, and displays the files as thumbnail images:</span></span>
     ```cs
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -65,11 +65,11 @@ ms.locfileid: "5440128"
     picker.FileTypeFilter.Add("*");
     ```
 
-2.  **<span data-ttu-id="b35f4-130">ファイル ピッカーを表示して、選ばれたファイルを処理する</span><span class="sxs-lookup"><span data-stu-id="b35f4-130">Show the file picker and process the picked file.</span></span>**
+2.  **<span data-ttu-id="36e5e-130">ファイル ピッカーを表示して、選ばれたファイルを処理する</span><span class="sxs-lookup"><span data-stu-id="36e5e-130">Show the file picker and process the picked file.</span></span>**
 
-    <span data-ttu-id="b35f4-131">ファイル ピッカーを作成してカスタマイズしたら、ユーザーが 1 つのファイルを選べるように [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) を呼び出すか、複数のファイルを選べるように [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-131">After you create and customize the file picker, let the user pick one file by calling [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), or multiple files by calling [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).</span></span>
+    <span data-ttu-id="36e5e-131">ファイル ピッカーを作成してカスタマイズしたら、ユーザーが 1 つのファイルを選べるように [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) を呼び出すか、複数のファイルを選べるように [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-131">After you create and customize the file picker, let the user pick one file by calling [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), or multiple files by calling [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).</span></span>
 
-    <span data-ttu-id="b35f4-132">次の例では、ファイル ピッカーを表示して、ユーザーが 1 つのファイルを選べるようにしています。</span><span class="sxs-lookup"><span data-stu-id="b35f4-132">This example displays the file picker to let the user pick one file:</span></span>
+    <span data-ttu-id="36e5e-132">次の例では、ファイル ピッカーを表示して、ユーザーが 1 つのファイルを選べるようにしています。</span><span class="sxs-lookup"><span data-stu-id="36e5e-132">This example displays the file picker to let the user pick one file:</span></span>
     ```cs
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
 
@@ -83,22 +83,22 @@ ms.locfileid: "5440128"
     }   
     ```
 
-## <a name="search-the-homegroup-for-files"></a><span data-ttu-id="b35f4-133">ホームグループでファイルを検索する</span><span class="sxs-lookup"><span data-stu-id="b35f4-133">Search the HomeGroup for files</span></span>
+## <a name="search-the-homegroup-for-files"></a><span data-ttu-id="36e5e-133">ホームグループでファイルを検索する</span><span class="sxs-lookup"><span data-stu-id="36e5e-133">Search the HomeGroup for files</span></span>
 
-<span data-ttu-id="b35f4-134">このセクションでは、ユーザーが指定したクエリ語句に一致するホームグループ項目を見つける方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-134">This section shows how to find HomeGroup items that match a query term provided by the user.</span></span>
+<span data-ttu-id="36e5e-134">このセクションでは、ユーザーが指定したクエリ語句に一致するホームグループ項目を見つける方法を示します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-134">This section shows how to find HomeGroup items that match a query term provided by the user.</span></span>
 
-1.  **<span data-ttu-id="b35f4-135">ユーザーからクエリ語句を取得します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-135">Get the query term from the user.</span></span>**
+1.  **<span data-ttu-id="36e5e-135">ユーザーからクエリ語句を取得します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-135">Get the query term from the user.</span></span>**
 
-    <span data-ttu-id="b35f4-136">ここでは、ユーザーが `searchQueryTextBox` という名前の [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) コントロールに入力したクエリ語句を取得します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-136">Here we get a query term that the user has entered into a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) control called `searchQueryTextBox`:</span></span>
+    <span data-ttu-id="36e5e-136">ここでは、ユーザーが `searchQueryTextBox` という名前の [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) コントロールに入力したクエリ語句を取得します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-136">Here we get a query term that the user has entered into a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) control called `searchQueryTextBox`:</span></span>
     ```cs
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
 
-2.  **<span data-ttu-id="b35f4-137">クエリ オプションと検索フィルターを設定します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-137">Set the query options and search filter.</span></span>**
+2.  **<span data-ttu-id="36e5e-137">クエリ オプションと検索フィルターを設定します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-137">Set the query options and search filter.</span></span>**
 
-    <span data-ttu-id="b35f4-138">クエリ オプションは、検索結果をどのように並べ替えるかを決めます。検索フィルターは、どの項目が検索結果に含まれるかを決めます。</span><span class="sxs-lookup"><span data-stu-id="b35f4-138">Query options determine how the search results are sorted, while the search filter determines which items are included in the search results.</span></span>
+    <span data-ttu-id="36e5e-138">クエリ オプションは、検索結果をどのように並べ替えるかを決めます。検索フィルターは、どの項目が検索結果に含まれるかを決めます。</span><span class="sxs-lookup"><span data-stu-id="36e5e-138">Query options determine how the search results are sorted, while the search filter determines which items are included in the search results.</span></span>
 
-    <span data-ttu-id="b35f4-139">次の例は、検索結果をまず関連性で、次に更新日で並べ替えるクエリ オプションを設定します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-139">This example sets query options that sort the search results by relevance and then the date modified.</span></span> <span data-ttu-id="b35f4-140">検索フィルターは、ユーザーが前の手順で入力したクエリ語句です。</span><span class="sxs-lookup"><span data-stu-id="b35f4-140">The search filter is the query term that the user entered in the previous step:</span></span>
+    <span data-ttu-id="36e5e-139">次の例は、検索結果をまず関連性で、次に更新日で並べ替えるクエリ オプションを設定します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-139">This example sets query options that sort the search results by relevance and then the date modified.</span></span> <span data-ttu-id="36e5e-140">検索フィルターは、ユーザーが前の手順で入力したクエリ語句です。</span><span class="sxs-lookup"><span data-stu-id="36e5e-140">The search filter is the query term that the user entered in the previous step:</span></span>
     ```cs
     Windows.Storage.Search.QueryOptions queryOptions =
             new Windows.Storage.Search.QueryOptions
@@ -108,9 +108,9 @@ ms.locfileid: "5440128"
             Windows.Storage.KnownFolders.HomeGroup.CreateFileQueryWithOptions(queryOptions);    
     ```
 
-3.  **<span data-ttu-id="b35f4-141">クエリを実行し、結果を処理します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-141">Run the query and process the results.</span></span>**
+3.  **<span data-ttu-id="36e5e-141">クエリを実行し、結果を処理します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-141">Run the query and process the results.</span></span>**
 
-    <span data-ttu-id="b35f4-142">次の例は、ホームグループで検索クエリを実行し、一致するファイルの名前を文字列の一覧として保存します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-142">The following example runs the search query in the HomeGroup and saves the names of any matching files as a list of strings.</span></span>
+    <span data-ttu-id="36e5e-142">次の例は、ホームグループで検索クエリを実行し、一致するファイルの名前を文字列の一覧として保存します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-142">The following example runs the search query in the HomeGroup and saves the names of any matching files as a list of strings.</span></span>
     ```cs
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files =
         await queryResults.GetFilesAsync();
@@ -126,21 +126,21 @@ ms.locfileid: "5440128"
     ```
 
 
-## <a name="search-the-homegroup-for-a-particular-users-shared-files"></a><span data-ttu-id="b35f4-143">ホームグループで特定のユーザーの共有ファイルを検索する</span><span class="sxs-lookup"><span data-stu-id="b35f4-143">Search the HomeGroup for a particular user's shared files</span></span>
+## <a name="search-the-homegroup-for-a-particular-users-shared-files"></a><span data-ttu-id="36e5e-143">ホームグループで特定のユーザーの共有ファイルを検索する</span><span class="sxs-lookup"><span data-stu-id="36e5e-143">Search the HomeGroup for a particular user's shared files</span></span>
 
-<span data-ttu-id="b35f4-144">このセクションでは、特定のユーザーによって共有されているホームグループ ファイルを見つける方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-144">This section shows you how to find HomeGroup files that are shared by a particular user.</span></span>
+<span data-ttu-id="36e5e-144">このセクションでは、特定のユーザーによって共有されているホームグループ ファイルを見つける方法を示します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-144">This section shows you how to find HomeGroup files that are shared by a particular user.</span></span>
 
-1.  **<span data-ttu-id="b35f4-145">ホームグループ ユーザーのコレクションを取得します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-145">Get a collection of HomeGroup users.</span></span>**
+1.  **<span data-ttu-id="36e5e-145">ホームグループ ユーザーのコレクションを取得します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-145">Get a collection of HomeGroup users.</span></span>**
 
-    <span data-ttu-id="b35f4-146">ホームグループの第 1 レベルのフォルダーは、それぞれが個々のホームグループ ユーザーを表しています。</span><span class="sxs-lookup"><span data-stu-id="b35f4-146">Each of the first-level folders in the HomeGroup represents an individual HomeGroup user.</span></span> <span data-ttu-id="b35f4-147">そのため、ホームグループ ユーザーのコレクションを取得するには、[**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) を呼び出し、第 1 レベルのホームグループ フォルダーを取得します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-147">So, to get the collection of HomeGroup users, call [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) retrieve the top-level HomeGroup folders.</span></span>
+    <span data-ttu-id="36e5e-146">ホームグループの第 1 レベルのフォルダーは、それぞれが個々のホームグループ ユーザーを表しています。</span><span class="sxs-lookup"><span data-stu-id="36e5e-146">Each of the first-level folders in the HomeGroup represents an individual HomeGroup user.</span></span> <span data-ttu-id="36e5e-147">そのため、ホームグループ ユーザーのコレクションを取得するには、[**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) を呼び出し、第 1 レベルのホームグループ フォルダーを取得します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-147">So, to get the collection of HomeGroup users, call [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) retrieve the top-level HomeGroup folders.</span></span>
     ```cs
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
     ```
 
-2.  **<span data-ttu-id="b35f4-148">目的のユーザーのフォルダーを見つけ、そのユーザーのフォルダーをスコープにしたファイル クエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-148">Find the target user's folder, and then create a file query scoped to that user's folder.</span></span>**
+2.  **<span data-ttu-id="36e5e-148">目的のユーザーのフォルダーを見つけ、そのユーザーのフォルダーをスコープにしたファイル クエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-148">Find the target user's folder, and then create a file query scoped to that user's folder.</span></span>**
 
-    <span data-ttu-id="b35f4-149">次の例は、取得したフォルダーを反復処理して、目的のユーザーのフォルダーを見つけます。</span><span class="sxs-lookup"><span data-stu-id="b35f4-149">The following example iterates through the retrieved folders to find the target user's folder.</span></span> <span data-ttu-id="b35f4-150">次に、クエリ オプションを設定して、フォルダー内のすべてのファイルを検索し、まずは関連性で、次に更新日で並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="b35f4-150">Then, it sets query options to find all files in the folder, sorted first by relevance and then by the date modified.</span></span> <span data-ttu-id="b35f4-151">この例では、見つかったファイルの数とファイルの名前を報告する文字列を作成します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-151">The example builds a string that reports the number of files found, along with the names of the files.</span></span>
+    <span data-ttu-id="36e5e-149">次の例は、取得したフォルダーを反復処理して、目的のユーザーのフォルダーを見つけます。</span><span class="sxs-lookup"><span data-stu-id="36e5e-149">The following example iterates through the retrieved folders to find the target user's folder.</span></span> <span data-ttu-id="36e5e-150">次に、クエリ オプションを設定して、フォルダー内のすべてのファイルを検索し、まずは関連性で、次に更新日で並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="36e5e-150">Then, it sets query options to find all files in the folder, sorted first by relevance and then by the date modified.</span></span> <span data-ttu-id="36e5e-151">この例では、見つかったファイルの数とファイルの名前を報告する文字列を作成します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-151">The example builds a string that reports the number of files found, along with the names of the files.</span></span>
     ```cs
     bool userFound = false;
     foreach (Windows.Storage.StorageFolder folder in hgFolders)
@@ -171,22 +171,22 @@ ms.locfileid: "5440128"
     }    
     ```
 
-## <a name="stream-video-from-the-homegroup"></a><span data-ttu-id="b35f4-152">ホームグループからビデオをストリーミングする</span><span class="sxs-lookup"><span data-stu-id="b35f4-152">Stream video from the HomeGroup</span></span>
+## <a name="stream-video-from-the-homegroup"></a><span data-ttu-id="36e5e-152">ホームグループからビデオをストリーミングする</span><span class="sxs-lookup"><span data-stu-id="36e5e-152">Stream video from the HomeGroup</span></span>
 
-<span data-ttu-id="b35f4-153">ホームグループからビデオ コンテンツをストリーミングするには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-153">Follow these steps to stream video content from the HomeGroup:</span></span>
+<span data-ttu-id="36e5e-153">ホームグループからビデオ コンテンツをストリーミングするには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-153">Follow these steps to stream video content from the HomeGroup:</span></span>
 
-1.  **<span data-ttu-id="b35f4-154">アプリに MediaElement を含めます。</span><span class="sxs-lookup"><span data-stu-id="b35f4-154">Include a MediaElement in your app.</span></span>**
+1.  **<span data-ttu-id="36e5e-154">アプリに MediaElement を含めます。</span><span class="sxs-lookup"><span data-stu-id="36e5e-154">Include a MediaElement in your app.</span></span>**
 
-    <span data-ttu-id="b35f4-155">[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) は、アプリのオーディオ コンテンツとビデオ コンテンツを再生します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-155">A [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) lets you play back audio and video content in your app.</span></span> <span data-ttu-id="b35f4-156">オーディオとビデオの再生について詳しくは、「[カスタム トランスポート コントロールを作成する](https://msdn.microsoft.com/library/windows/apps/mt187271)」と「[オーディオ、ビデオ、およびカメラ](https://msdn.microsoft.com/library/windows/apps/mt203788)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b35f4-156">For more information on audio and video playback, see [Create custom transport controls](https://msdn.microsoft.com/library/windows/apps/mt187271) and [Audio, video, and camera](https://msdn.microsoft.com/library/windows/apps/mt203788).</span></span>
+    <span data-ttu-id="36e5e-155">[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) は、アプリのオーディオ コンテンツとビデオ コンテンツを再生します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-155">A [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) lets you play back audio and video content in your app.</span></span> <span data-ttu-id="36e5e-156">オーディオとビデオの再生について詳しくは、「[カスタム トランスポート コントロールを作成する](https://msdn.microsoft.com/library/windows/apps/mt187271)」と「[オーディオ、ビデオ、およびカメラ](https://msdn.microsoft.com/library/windows/apps/mt203788)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="36e5e-156">For more information on audio and video playback, see [Create custom transport controls](https://msdn.microsoft.com/library/windows/apps/mt187271) and [Audio, video, and camera](https://msdn.microsoft.com/library/windows/apps/mt203788).</span></span>
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
     </Grid>    
     ```
 
-2.  **<span data-ttu-id="b35f4-157">ファイル ピッカーをホームグループで開き、アプリでサポートされている形式のビデオ ファイルを含めるフィルターを適用します。</span><span class="sxs-lookup"><span data-stu-id="b35f4-157">Open a file picker at the HomeGroup and apply a filter that includes video files in the formats that your app supports.</span></span>**
+2.  **<span data-ttu-id="36e5e-157">ファイル ピッカーをホームグループで開き、アプリでサポートされている形式のビデオ ファイルを含めるフィルターを適用します。</span><span class="sxs-lookup"><span data-stu-id="36e5e-157">Open a file picker at the HomeGroup and apply a filter that includes video files in the formats that your app supports.</span></span>**
 
-    <span data-ttu-id="b35f4-158">次の例では、ファイル オープン ピッカーに .mp4 ファイルと .wmv ファイルが含まれます。</span><span class="sxs-lookup"><span data-stu-id="b35f4-158">This example includes .mp4 and .wmv files in the file open picker.</span></span>
+    <span data-ttu-id="36e5e-158">次の例では、ファイル オープン ピッカーに .mp4 ファイルと .wmv ファイルが含まれます。</span><span class="sxs-lookup"><span data-stu-id="36e5e-158">This example includes .mp4 and .wmv files in the file open picker.</span></span>
     ```cs
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -197,7 +197,7 @@ ms.locfileid: "5440128"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  <span data-ttu-id="b35f4-159">**読み取りアクセス権のユーザーのファイルの選択内容を開き、ファイル ストリームをソースとして設定、**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)、し、プレイ ファイル。</span><span class="sxs-lookup"><span data-stu-id="b35f4-159">**Open the user's file selection for read access, and set the file stream as the source for the** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), and then play the file.</span></span>
+3.  <span data-ttu-id="36e5e-159">**、読み取りアクセスのユーザーのファイルの選択内容を開き、ファイル ストリームをソースとして設定、**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)、し、プレイ ファイル。</span><span class="sxs-lookup"><span data-stu-id="36e5e-159">**Open the user's file selection for read access, and set the file stream as the source for the** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), and then play the file.</span></span>
     ```cs
     if (file != null)
     {
