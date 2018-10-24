@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fa5d80040aac83e246d89a59086f4ad7e524dbb8
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399438"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445789"
 ---
 # <a name="point-of-service"></a>POS (店舗販売時点管理)
 このセクションには、[Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) を使用して、ユニバーサル Windows アプリケーションから、小売業やホスピタリティ環境で使用される周辺機器を操作する方法に関する記事が含まれています。

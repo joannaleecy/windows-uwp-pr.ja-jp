@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f2bddb9ae3adf8ef6cfdf1b6c078db5eb026c93d
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5409903"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443275"
 ---
 # <a name="use-the-compass"></a>コンパスの使用
 
