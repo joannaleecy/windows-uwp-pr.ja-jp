@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: eda370db8b68232066052cca3d0abfa6e3876167
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5408070"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445739"
 ---
 # <a name="data-binding-and-mvvm"></a><span data-ttu-id="a4805-104">データ バインディングと MVVM</span><span class="sxs-lookup"><span data-stu-id="a4805-104">Data binding and MVVM</span></span>
 

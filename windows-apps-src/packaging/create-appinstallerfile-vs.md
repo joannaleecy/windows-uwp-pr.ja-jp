@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング
 ms.localizationpriority: medium
 ms.openlocfilehash: 6158b804e1d4ece3c76099a3f8d33d5fa562078d
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396655"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444062"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a><span data-ttu-id="09f9d-104">Visual Studio を使ったアプリ インストーラー ファイルの作成</span><span class="sxs-lookup"><span data-stu-id="09f9d-104">Create an App Installer file with Visual Studio</span></span>
 

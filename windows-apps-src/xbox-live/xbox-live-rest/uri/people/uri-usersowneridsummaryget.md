@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ba0cd060b3432de1cbb641a8991283974da192
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5407499"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5443823"
 ---
 # <a name="get-usersowneridsummary"></a><span data-ttu-id="a6e2d-104">GET (/users/{ownerId}/summary)</span><span class="sxs-lookup"><span data-stu-id="a6e2d-104">GET (/users/{ownerId}/summary)</span></span>
 <span data-ttu-id="a6e2d-105">呼び出し元の観点から、所有者に関する集計データを取得します。</span><span class="sxs-lookup"><span data-stu-id="a6e2d-105">Gets summary data about the owner from the caller's perspective.</span></span>

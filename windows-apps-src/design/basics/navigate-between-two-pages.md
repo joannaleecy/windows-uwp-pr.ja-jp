@@ -18,11 +18,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 7df91069615b77ab54745690accc8f9353ff0163
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398968"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443373"
 ---
 # <a name="implement-navigation-between-two-pages"></a><span data-ttu-id="62164-103">2 ページ間でのナビゲーションを実装する</span><span class="sxs-lookup"><span data-stu-id="62164-103">Implement navigation between two pages</span></span>
 
