@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
 ms.openlocfilehash: 3193525316d085e56244d6f03da99e3e07c6539f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442874"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474689"
 ---
 # <a name="troubleshoot-microsoft-take-a-test-with-the-event-viewer"></a>イベント ビューアーを使用して、Microsoft テストをトラブルシューティングします
 

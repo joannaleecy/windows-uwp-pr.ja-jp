@@ -17,11 +17,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 796ee4ffaa551c23286110ec7164f511655d6017
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438487"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468926"
 ---
 # <a name="toggle-switches"></a>トグル スイッチ
 
@@ -71,7 +71,7 @@ ms.locfileid: "5438487"
 - 変更を有効にするためにユーザーが追加の手順を実行する必要があるときは、チェック ボックスを使います。 たとえば、ユーザーが [送信] や [次へ] などのボタンをクリックして変更を適用する必要がある場合は、チェック ボックスを使います。
 - 1 つの設定または機能に関連する複数の項目をユーザーが選択できるようにする場合、チェック ボックスを使います。
 
-## <a name="toggle-switches-in-the-windows-ui"></a>Windows UI のトグル スイッチ
+## <a name="toggle-switches-in-the-windows-ui"></a>Windows UI 内のスイッチを切り替えます。
 
 以下の画像に、Windows UI でのトグル スイッチの使用例を示します。 次に示すのは、スマート ストレージ設定画面でのトグル スイッチの使用例です。
 

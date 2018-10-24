@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 1db3af004831f010a3dd4918898ce5f7cf70bb1a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438121"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468600"
 ---
 # <a name="intro-to-certificates"></a>証明書の概要
 
@@ -26,7 +26,7 @@ ms.locfileid: "5438121"
 
 ### <a name="shared-certificate-stores"></a>共有証明書ストア
 
-UWP アプリは、Windows 8 で導入された新しい分離アプリケーション モデルを使います。 この分離モデルでは、アプリ コンテナーと呼ばれる低レベルのオペレーティング システム構造内で実行し、明示的に許可されない限り、アプリの外にあるリソースやファイルにアクセスすることは禁止されます。 次のセクションでは、これが公開キー基盤 (PKI) に与える影響について説明します。
+UWP アプリでは、Windows8 で導入された新しい分離アプリケーション モデルを使います。 この分離モデルでは、アプリ コンテナーと呼ばれる低レベルのオペレーティング システム構造内で実行し、明示的に許可されない限り、アプリの外にあるリソースやファイルにアクセスすることは禁止されます。 次のセクションでは、これが公開キー基盤 (PKI) に与える影響について説明します。
 
 ### <a name="certificate-storage-per-app-container"></a>アプリ コンテナーごとの証明書ストレージ
 

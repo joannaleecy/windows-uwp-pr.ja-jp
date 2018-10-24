@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e0d63cac488e294629d430c7470dc58ad64059f9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438549"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468378"
 ---
 # <a name="manage-your-ad-campaign"></a>広告キャンペーンの管理
 
@@ -50,9 +50,9 @@ ms.locfileid: "5438549"
 * [自社広告について](about-house-ads.md)
 * [アプリのインストールの広告レポート](app-install-ads-reports.md)
 * [よく寄せられる質問](common-questions.md)
- 
+ 
 
- 
+ 
 
 
 

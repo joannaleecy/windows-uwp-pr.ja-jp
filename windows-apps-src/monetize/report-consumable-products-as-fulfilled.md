@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store コレクション API, フルフィルメント, コンシューマブル
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cbacd35a25e8eaf9673d118fcbece835572e289
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440377"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468404"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>コンシューマブルな製品のフルフィルメント完了の報告
 
@@ -144,7 +144,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 | 401  | 権限がありません | PartnerAadTicketRequired   | Azure AD アクセス トークンが承認ヘッダーでサービスに渡されませんでした。                                                                                                   |
 | 401  | 権限がありません | InconsistentClientId       | 要求本文の Microsoft Store ID の *clientId* 要求と承認ヘッダーの Azure AD アクセス トークンの *appid* 要求が一致しません。                     |
 
-<span/> 
+<span/> 
 
 ## <a name="related-topics"></a>関連トピック
 

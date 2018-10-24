@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439075"
+ms.locfileid: "5483509"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
-その sessionId によって識別 sessionhost の割り当てを取得します。 これらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+そのセッション Id によって識別される sessionhost の割り当てを取得します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`。
  
   * [必要な要求ヘッダー](#ID4E4)
   * [必要な応答ヘッダー](#ID4EEB)
@@ -44,21 +44,21 @@ ms.locfileid: "5439075"
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合、サービスは次のメンバーを含む JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | 
-| description| 空の文字列 (左での下位互換性) を返します。| 
-| clusterId| 空の文字列 (左での下位互換性) を返します。| 
-| ホスト名| セッション ホストの URL。| 
+| description| 返します。 空の文字列を (左での下位互換性)。| 
+| clusterId| 返します。 空の文字列を (左での下位互換性)。| 
+| ホスト名| セッションのホストの URL です。| 
 | status| キューに入れ、満たされると、または中止されたことを示します。| 
 | sessionHostId| セッション ホストの id。| 
-| sessionId| (割り当て時) に提供されるクライアント セッション id。| 
-| secureContext| セキュア デバイス アドレスです。| 
-| portMappings| インスタンスのポート マッピングします。| 
+| セッション Id| 割り当て時に提供されているクライアント セッションの id。| 
+| secureContext| セキュリティで保護されたデバイスのアドレスです。| 
+| portMappings| インスタンスのポートのマッピングです。| 
 | 地域| インスタンスの場所です。| 
-| ticketId| (左での下位互換性) の現在のセッション ID。| 
-| gameHostId| (左での下位互換性) 現在 sessionHostId します。| 
+| ticketId| (左内の下位互換性) 現在のセッション ID です。| 
+| gameHostId| (左内の下位互換性) 現在の sessionHostId です。| 
  
 <a id="ID4EGD"></a>
 
@@ -104,11 +104,11 @@ ms.locfileid: "5439075"
  
 ### <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しを再試行のみする必要があります。
+タイトルがサービスへの呼び出しを再試行するは、次の応答コードを受信したときのみ。
  
-   * 200、成功した場合 
+   * 200-成功 
    * 400-要求には、無効なパラメーターが含まれています。 
-   * 401: Unauthorized 
-   * 404-チケット ID、タイトル ID が無効であるか、または見つかりません。 
-   * 500-予期しないサーバー エラー。 
+   * 401-権限がありません 
+   * 404-タイトル ID やチケットの ID が無効であるか、または見つかりません。 
+   * 500: 予期しないサーバー エラーです。 
     

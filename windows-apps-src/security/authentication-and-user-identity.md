@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f446299dcf1a0bcf93d483d13c926c6e4cd230f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432715"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468316"
 ---
 # <a name="authentication-and-user-identity"></a>認証とユーザー ID
 
@@ -25,7 +25,7 @@ ms.locfileid: "5432715"
 
 Facebook、Twitter、Flickr などのサード パーティ ID プロバイダーのサービスへの定期的なアプリの接続には、[Web 認証ブローカー](web-authentication-broker.md) を使います。 より便利にするには、[資格情報保管ボックス](credential-locker.md) を使って、ユーザーのログイン情報を保存してローミングします。
 
-Windows 10 をご使用の企業では、[Microsoft Passport と Windows Hello](microsoft-passport.md) の使用を考慮することを強くお勧めします。これにより、高度なセキュリティで保護された 2 要素認証が有効になります。 Microsoft Passport を使用できない場合は、[スマート カード](smart-cards.md)と[指紋生体認証](fingerprint-biometrics.md)でセキュリティ層を追加できます。
+Windows 10 を使用する企業使用して[Microsoft Passport と Windows こんにちは](microsoft-passport.md)、高度なセキュリティの 2 要素認証を有効にする強く推奨します。 Microsoft Passport を使用できない場合は、[スマート カード](smart-cards.md)と[指紋生体認証](fingerprint-biometrics.md)でセキュリティ層を追加できます。
 
 <table>
 <tr><th>トピック</th><th>説明</th></tr>

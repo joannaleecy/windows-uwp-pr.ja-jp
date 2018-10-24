@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d6132c2ede9f14cd1f4d29195916c8b484abfe9f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435555"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468362"
 ---
 # <a name="create-add-on-store-listings"></a>アドオンのストア登録情報の作成
 
@@ -50,9 +50,9 @@ ms.locfileid: "5435555"
 
 ユーザーに表示できる画像を指定するオプションもあります。 このアイコンには、300 x 300 ピクセルの .png ファイルを使用する必要があります。
 
- 
+ 
 
- 
+ 
 
 
 

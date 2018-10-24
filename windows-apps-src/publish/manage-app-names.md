@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, アプリの名前, アプリ名, アプリ名の更新、ゲームの名前, 製品名を変更します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 878b105541691834dbbe35b5210f33045afdc47b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438210"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468630"
 ---
 # <a name="manage-app-names"></a>アプリ名の管理
 
@@ -64,9 +64,9 @@ ms.locfileid: "5438210"
 > [!TIP]
 > 用に予約される最初の名前を使用して、ダッシュ ボードで各アプリが表示されます。 アプリの名前を変更する上記の手順に従った、新しい名前を使用して、ダッシュ ボードで表示したい場合は、(**アプリ名の管理**ページの [**削除**] をクリック) で元の名前を削除する必要があります。 
 
- 
+ 
 
- 
+ 
 
 
 
