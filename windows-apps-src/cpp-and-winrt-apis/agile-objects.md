@@ -10,24 +10,24 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、アジャイル、オブジェクト、アジリティ、IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cc8ebb24eb051cd8e9b141f361f47041b122d5c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436647"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474397"
 ---
-# <a name="agile-objects-in-cwinrt"></a><span data-ttu-id="d5b87-105">C++/WinRT におけるアジャイル オブジェクト</span><span class="sxs-lookup"><span data-stu-id="d5b87-105">Agile objects in C++/WinRT</span></span>
+# <a name="agile-objects-in-cwinrt"></a><span data-ttu-id="47d22-105">C++/WinRT におけるアジャイル オブジェクト</span><span class="sxs-lookup"><span data-stu-id="47d22-105">Agile objects in C++/WinRT</span></span>
 
-<span data-ttu-id="d5b87-106">ほとんどの場合に、Windows ランタイム クラスのインスタンスを (最も標準的な C++ オブジェクトことができます) と同様、任意のスレッドからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="d5b87-106">In the vast majority of cases, an instance of a Windows Runtime class can be accessed from any thread (just like most standard C++ objects can).</span></span> <span data-ttu-id="d5b87-107">このような Windows ランタイム クラスは*アジャイルです*。</span><span class="sxs-lookup"><span data-stu-id="d5b87-107">Such a Windows Runtime class is *agile*.</span></span> <span data-ttu-id="d5b87-108">だけで、少数の Windows に付属する Windows ランタイム クラスはアジャイル以外ですが、それらを使用する場合は、スレッド モデルおよびマーシャ リング動作を考慮する必要があります (マーシャ リング データが渡されるアパートメントの境界を越えて)。</span><span class="sxs-lookup"><span data-stu-id="d5b87-108">Only a small number of Windows Runtime classes that ship with Windows are non-agile, but when you consume them you need to take into consideration their threading model and marshaling behavior (marshaling is passing data across an apartment boundary).</span></span> <span data-ttu-id="d5b87-109">アジャイルであるすべての Windows ランタイム オブジェクトの適切な既定値はように独自[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)の種類は既定でアジャイルです。</span><span class="sxs-lookup"><span data-stu-id="d5b87-109">It's a good default for every Windows Runtime object to be agile, so your own [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) types are agile by default.</span></span>
+<span data-ttu-id="47d22-106">ほとんどの場合に、Windows ランタイム クラスのインスタンスを (最も標準的な C++ オブジェクトことができます) と同様、任意のスレッドからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="47d22-106">In the vast majority of cases, an instance of a Windows Runtime class can be accessed from any thread (just like most standard C++ objects can).</span></span> <span data-ttu-id="47d22-107">このような Windows ランタイム クラスは*アジャイルです*。</span><span class="sxs-lookup"><span data-stu-id="47d22-107">Such a Windows Runtime class is *agile*.</span></span> <span data-ttu-id="47d22-108">だけで、少数の Windows に付属する Windows ランタイム クラスはアジャイル以外ですが、それらを使用する場合は、スレッド モデルおよびマーシャ リング動作を考慮する必要があります (マーシャ リング データが渡されるアパートメントの境界を越えて)。</span><span class="sxs-lookup"><span data-stu-id="47d22-108">Only a small number of Windows Runtime classes that ship with Windows are non-agile, but when you consume them you need to take into consideration their threading model and marshaling behavior (marshaling is passing data across an apartment boundary).</span></span> <span data-ttu-id="47d22-109">アジャイルであるすべての Windows ランタイム オブジェクトの適切な既定値はように独自[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)の種類は既定でアジャイルです。</span><span class="sxs-lookup"><span data-stu-id="47d22-109">It's a good default for every Windows Runtime object to be agile, so your own [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) types are agile by default.</span></span>
 
-<span data-ttu-id="d5b87-110">ただしオプトアウトすることができます。たとえば、特定のシングルスレッド アパートメントなど、特別な理由で特定の型のオブジェクトを存在させることが必要な場合があります。</span><span class="sxs-lookup"><span data-stu-id="d5b87-110">But you can opt out. You might have a compelling reason to require an object of your type to reside, for example, in a given single-threaded apartment.</span></span> <span data-ttu-id="d5b87-111">これは通常、再入の要件で行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5b87-111">This typically has to do with reentrancy requirements.</span></span> <span data-ttu-id="d5b87-112">それでもますます、ユーザー インターフェイス (UI) API ではアジャイル オブジェクトを提供するようになっています。</span><span class="sxs-lookup"><span data-stu-id="d5b87-112">But increasingly, even user interface (UI) APIs offer agile objects.</span></span> <span data-ttu-id="d5b87-113">一般に、アジリティは最も単純で最もパフォーマンスの高いオプションです。</span><span class="sxs-lookup"><span data-stu-id="d5b87-113">In general, agility is the simplest and most performant option.</span></span> <span data-ttu-id="d5b87-114">また、アクティベーション ファクトリを実装する際は、対応するランタイム クラスがアジャイルではない場合でもアジャイルにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5b87-114">Also, when you implement an activation factory, it must be agile even if your corresponding runtime class isn't.</span></span>
+<span data-ttu-id="47d22-110">ただしオプトアウトすることができます。たとえば、特定のシングルスレッド アパートメントなど、特別な理由で特定の型のオブジェクトを存在させることが必要な場合があります。</span><span class="sxs-lookup"><span data-stu-id="47d22-110">But you can opt out. You might have a compelling reason to require an object of your type to reside, for example, in a given single-threaded apartment.</span></span> <span data-ttu-id="47d22-111">これは通常、再入の要件で行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="47d22-111">This typically has to do with reentrancy requirements.</span></span> <span data-ttu-id="47d22-112">それでもますます、ユーザー インターフェイス (UI) API ではアジャイル オブジェクトを提供するようになっています。</span><span class="sxs-lookup"><span data-stu-id="47d22-112">But increasingly, even user interface (UI) APIs offer agile objects.</span></span> <span data-ttu-id="47d22-113">一般に、アジリティは最も単純で最もパフォーマンスの高いオプションです。</span><span class="sxs-lookup"><span data-stu-id="47d22-113">In general, agility is the simplest and most performant option.</span></span> <span data-ttu-id="47d22-114">また、アクティベーション ファクトリを実装する際は、対応するランタイム クラスがアジャイルではない場合でもアジャイルにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="47d22-114">Also, when you implement an activation factory, it must be agile even if your corresponding runtime class isn't.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d5b87-115">Windows ランタイムは COM に基づいています。</span><span class="sxs-lookup"><span data-stu-id="d5b87-115">The Windows Runtime is based on COM.</span></span> <span data-ttu-id="d5b87-116">COM の用語では、アジャイル クラスは `ThreadingModel` = *両方*に登録されています。</span><span class="sxs-lookup"><span data-stu-id="d5b87-116">In COM terms, an agile class is registered with `ThreadingModel` = *Both*.</span></span> <span data-ttu-id="d5b87-117">COM スレッド モデル、およびアパートメントについて詳しくは、 [COM スレッド モデルを使用して理解](https://msdn.microsoft.com/library/ms809971)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d5b87-117">For more info about COM threading models, and apartments, see [Understanding and Using COM Threading Models](https://msdn.microsoft.com/library/ms809971).</span></span>
+> <span data-ttu-id="47d22-115">Windows ランタイムは COM に基づいています。</span><span class="sxs-lookup"><span data-stu-id="47d22-115">The Windows Runtime is based on COM.</span></span> <span data-ttu-id="47d22-116">COM の用語では、アジャイル クラスは `ThreadingModel` = *両方*に登録されています。</span><span class="sxs-lookup"><span data-stu-id="47d22-116">In COM terms, an agile class is registered with `ThreadingModel` = *Both*.</span></span> <span data-ttu-id="47d22-117">COM スレッド モデル、およびアパートメントについて詳しくは、 [COM スレッド モデルを使用して理解](https://msdn.microsoft.com/library/ms809971)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="47d22-117">For more info about COM threading models, and apartments, see [Understanding and Using COM Threading Models](https://msdn.microsoft.com/library/ms809971).</span></span>
 
-## <a name="code-examples"></a><span data-ttu-id="d5b87-118">コード例</span><span class="sxs-lookup"><span data-stu-id="d5b87-118">Code examples</span></span>
+## <a name="code-examples"></a><span data-ttu-id="47d22-118">コード例</span><span class="sxs-lookup"><span data-stu-id="47d22-118">Code examples</span></span>
 
-<span data-ttu-id="d5b87-119">みましょうを示すために、ランタイム クラスの実装例を使用する方法、C++/WinRT アジリティをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="d5b87-119">Let's use an example implementation of a runtime class to illustrate how C++/WinRT supports agility.</span></span>
+<span data-ttu-id="47d22-119">みましょうを示すために、ランタイム クラスの実装例を使用する方法、C++/WinRT アジリティをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="47d22-119">Let's use an example implementation of a runtime class to illustrate how C++/WinRT supports agility.</span></span>
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -41,35 +41,35 @@ struct MyType : winrt::implements<MyType, IStringable>
 };
 ```
 
-<span data-ttu-id="d5b87-120">オプトアウトしていないため、この実装はアジャイルです。</span><span class="sxs-lookup"><span data-stu-id="d5b87-120">Because we haven't opted out, this implementation is agile.</span></span> <span data-ttu-id="d5b87-121">[**Winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基本構造体は [**IAgileObject**](https://msdn.microsoft.com/library/windows/desktop/hh802476) と [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal) を実装します。</span><span class="sxs-lookup"><span data-stu-id="d5b87-121">The [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct implements [**IAgileObject**](https://msdn.microsoft.com/library/windows/desktop/hh802476) and [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal).</span></span> <span data-ttu-id="d5b87-122">**IMarshal** 実装は、**IAgileObject** について知らないレガシー コードで適切な処理を行うために **CoCreateFreeThreadedMarshaler** を使用します。</span><span class="sxs-lookup"><span data-stu-id="d5b87-122">The **IMarshal** implementation uses **CoCreateFreeThreadedMarshaler** to do the right thing for legacy code that doesn't know about **IAgileObject**.</span></span>
+<span data-ttu-id="47d22-120">オプトアウトしていないため、この実装はアジャイルです。</span><span class="sxs-lookup"><span data-stu-id="47d22-120">Because we haven't opted out, this implementation is agile.</span></span> <span data-ttu-id="47d22-121">[**Winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基本構造体は [**IAgileObject**](https://msdn.microsoft.com/library/windows/desktop/hh802476) と [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal) を実装します。</span><span class="sxs-lookup"><span data-stu-id="47d22-121">The [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct implements [**IAgileObject**](https://msdn.microsoft.com/library/windows/desktop/hh802476) and [**IMarshal**](/windows/desktop/api/objidl/nn-objidl-imarshal).</span></span> <span data-ttu-id="47d22-122">**IMarshal** 実装は、**IAgileObject** について知らないレガシー コードで適切な処理を行うために **CoCreateFreeThreadedMarshaler** を使用します。</span><span class="sxs-lookup"><span data-stu-id="47d22-122">The **IMarshal** implementation uses **CoCreateFreeThreadedMarshaler** to do the right thing for legacy code that doesn't know about **IAgileObject**.</span></span>
 
-<span data-ttu-id="d5b87-123">このコードでは、オブジェクトのアジリティを確認します。</span><span class="sxs-lookup"><span data-stu-id="d5b87-123">This code checks an object for agility.</span></span> <span data-ttu-id="d5b87-124">`myimpl` がアジャイルではない場合に [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) の呼び出しで例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="d5b87-124">The call to [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) throws an exception if `myimpl` is not agile.</span></span>
+<span data-ttu-id="47d22-123">このコードでは、オブジェクトのアジリティを確認します。</span><span class="sxs-lookup"><span data-stu-id="47d22-123">This code checks an object for agility.</span></span> <span data-ttu-id="47d22-124">`myimpl` がアジャイルではない場合に [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) の呼び出しで例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="47d22-124">The call to [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) throws an exception if `myimpl` is not agile.</span></span>
 
 ```cppwinrt
 winrt::com_ptr<MyType> myimpl{ winrt::make_self<MyType>() };
 winrt::com_ptr<IAgileObject> iagileobject{ myimpl.as<IAgileObject>() };
 ```
 
-<span data-ttu-id="d5b87-125">例外を処理する代わりに、[**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="d5b87-125">Rather than handle an exception, you can call [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) instead.</span></span>
+<span data-ttu-id="47d22-125">例外を処理する代わりに、[**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="47d22-125">Rather than handle an exception, you can call [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function) instead.</span></span>
 
 ```cppwinrt
 winrt::com_ptr<IAgileObject> iagileobject{ myimpl.try_as<IAgileObject>() };
 if (iagileobject) { /* myimpl is agile. */ }
 ```
 
-<span data-ttu-id="d5b87-126">**IAgileObject** には独自のメソッドがないため、これを使用してできることは多くありません。</span><span class="sxs-lookup"><span data-stu-id="d5b87-126">**IAgileObject** has no methods of its own, so you can't do much with it.</span></span> <span data-ttu-id="d5b87-127">この次のバリアントはより一般的です。</span><span class="sxs-lookup"><span data-stu-id="d5b87-127">This next variant, then, is more typical.</span></span>
+<span data-ttu-id="47d22-126">**IAgileObject** には独自のメソッドがないため、これを使用してできることは多くありません。</span><span class="sxs-lookup"><span data-stu-id="47d22-126">**IAgileObject** has no methods of its own, so you can't do much with it.</span></span> <span data-ttu-id="47d22-127">この次のバリアントはより一般的です。</span><span class="sxs-lookup"><span data-stu-id="47d22-127">This next variant, then, is more typical.</span></span>
 
 ```cppwinrt
 if (myimpl.try_as<IAgileObject>()) { /* myimpl is agile. */ }
 ```
 
-<span data-ttu-id="d5b87-128">**IAgileObject** は、*マーカー インターフェイス*です。</span><span class="sxs-lookup"><span data-stu-id="d5b87-128">**IAgileObject** is a *marker interface*.</span></span> <span data-ttu-id="d5b87-129">**IAgileObject** へのクエリの単なる成功または失敗が、それから得られる情報とユーティリティの範囲です。</span><span class="sxs-lookup"><span data-stu-id="d5b87-129">The mere success or failure of querying for **IAgileObject** is the extent of the information and utility you get from it.</span></span>
+<span data-ttu-id="47d22-128">**IAgileObject** は、*マーカー インターフェイス*です。</span><span class="sxs-lookup"><span data-stu-id="47d22-128">**IAgileObject** is a *marker interface*.</span></span> <span data-ttu-id="47d22-129">**IAgileObject** へのクエリの単なる成功または失敗が、それから得られる情報とユーティリティの範囲です。</span><span class="sxs-lookup"><span data-stu-id="47d22-129">The mere success or failure of querying for **IAgileObject** is the extent of the information and utility you get from it.</span></span>
 
-## <a name="opting-out-of-agile-object-support"></a><span data-ttu-id="d5b87-130">アジャイル オブジェクトのサポートのオプトアウト</span><span class="sxs-lookup"><span data-stu-id="d5b87-130">Opting out of agile object support</span></span>
+## <a name="opting-out-of-agile-object-support"></a><span data-ttu-id="47d22-130">アジャイル オブジェクトのサポートのオプトアウト</span><span class="sxs-lookup"><span data-stu-id="47d22-130">Opting out of agile object support</span></span>
 
-<span data-ttu-id="d5b87-131">[**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non_agile) マーカー構造体をテンプレート引数として基底クラスに渡すことによって、アジャイル オブジェクトのサポートを明示的にオプトアウトすることを選択することができます。</span><span class="sxs-lookup"><span data-stu-id="d5b87-131">You can choose explicitly to opt out of agile object support by passing the [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non_agile) marker struct as a template argument to your base class.</span></span>
+<span data-ttu-id="47d22-131">[**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non_agile) マーカー構造体をテンプレート引数として基底クラスに渡すことによって、アジャイル オブジェクトのサポートを明示的にオプトアウトすることを選択することができます。</span><span class="sxs-lookup"><span data-stu-id="47d22-131">You can choose explicitly to opt out of agile object support by passing the [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non_agile) marker struct as a template argument to your base class.</span></span>
 
-<span data-ttu-id="d5b87-132">**winrt::implements** から直接派生する場合。</span><span class="sxs-lookup"><span data-stu-id="d5b87-132">If you derive directly from **winrt::implements**.</span></span>
+<span data-ttu-id="47d22-132">**winrt::implements** から直接派生する場合。</span><span class="sxs-lookup"><span data-stu-id="47d22-132">If you derive directly from **winrt::implements**.</span></span>
 
 ```cppwinrt
 struct MyImplementation: implements<MyImplementation, IStringable, winrt::non_agile>
@@ -78,7 +78,7 @@ struct MyImplementation: implements<MyImplementation, IStringable, winrt::non_ag
 }
 ```
 
-<span data-ttu-id="d5b87-133">ランタイム クラスを作成している場合。</span><span class="sxs-lookup"><span data-stu-id="d5b87-133">If you're authoring a runtime class.</span></span>
+<span data-ttu-id="47d22-133">ランタイム クラスを作成している場合。</span><span class="sxs-lookup"><span data-stu-id="47d22-133">If you're authoring a runtime class.</span></span>
 
 ```cppwinrt
 struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
@@ -87,27 +87,27 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
 }
 ```
 
-<span data-ttu-id="d5b87-134">可変個引数パラメーター パックのどこにマーカー構造体が現れるかは関係ありません。</span><span class="sxs-lookup"><span data-stu-id="d5b87-134">It doesn't matter where in the variadic parameter pack the marker struct appears.</span></span>
+<span data-ttu-id="47d22-134">可変個引数パラメーター パックのどこにマーカー構造体が現れるかは関係ありません。</span><span class="sxs-lookup"><span data-stu-id="47d22-134">It doesn't matter where in the variadic parameter pack the marker struct appears.</span></span>
 
-<span data-ttu-id="d5b87-135">アジリティをオプトアウトするかどうか、 **IMarshal**自分で実装できます。</span><span class="sxs-lookup"><span data-stu-id="d5b87-135">Whether or not you opt out of agility, you can implement **IMarshal** yourself.</span></span> <span data-ttu-id="d5b87-136">たとえば、既定のアジリティの実装を回避するために**winrt::non_agile**マーカーを使用し、自分で**IMarshal**を実装&mdash;値渡しのマーシャ リング セマンティクスをサポートする場合などです。</span><span class="sxs-lookup"><span data-stu-id="d5b87-136">For example, you can use the **winrt::non_agile** marker to avoid the default agility implementation, and implement **IMarshal** yourself&mdash;perhaps to support marshal-by-value semantics.</span></span>
+<span data-ttu-id="47d22-135">アジリティをオプトアウトするかどうか、 **IMarshal**自分で実装できます。</span><span class="sxs-lookup"><span data-stu-id="47d22-135">Whether or not you opt out of agility, you can implement **IMarshal** yourself.</span></span> <span data-ttu-id="47d22-136">たとえば、既定のアジリティの実装を回避するために**winrt::non_agile**マーカーを使用し、自分で**IMarshal**を実装&mdash;値渡しのマーシャ リング セマンティクスをサポートする場合などです。</span><span class="sxs-lookup"><span data-stu-id="47d22-136">For example, you can use the **winrt::non_agile** marker to avoid the default agility implementation, and implement **IMarshal** yourself&mdash;perhaps to support marshal-by-value semantics.</span></span>
 
-## <a name="agile-references-winrtagileref"></a><span data-ttu-id="d5b87-137">アジャイル リファレンス (winrt::agile_ref)</span><span class="sxs-lookup"><span data-stu-id="d5b87-137">Agile references (winrt::agile_ref)</span></span>
+## <a name="agile-references-winrtagileref"></a><span data-ttu-id="47d22-137">アジャイル リファレンス (winrt::agile_ref)</span><span class="sxs-lookup"><span data-stu-id="47d22-137">Agile references (winrt::agile_ref)</span></span>
 
-<span data-ttu-id="d5b87-138">アジャイルではないオブジェクトを使用していて、ただしいくつかの可能性のあるアジャイルのコンテキストでそれを渡す必要がある場合、1 つのオプションは、[**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) 構造体のテンプレートを使用して、非アジャイル型のインスタンス、または非アジャイル オブジェクトのインターフェイスへのアジャイルのリファレンスを取得することです。</span><span class="sxs-lookup"><span data-stu-id="d5b87-138">If you're consuming an object that isn't agile, but you need to pass it around in some potentially agile context, then one option is to use the [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) struct template to get an agile reference to an instance of a non-agile type, or to an interface of a non-agile object.</span></span>
+<span data-ttu-id="47d22-138">アジャイルではないオブジェクトを使用していて、ただしいくつかの可能性のあるアジャイルのコンテキストでそれを渡す必要がある場合、1 つのオプションは、[**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) 構造体のテンプレートを使用して、非アジャイル型のインスタンス、または非アジャイル オブジェクトのインターフェイスへのアジャイルのリファレンスを取得することです。</span><span class="sxs-lookup"><span data-stu-id="47d22-138">If you're consuming an object that isn't agile, but you need to pass it around in some potentially agile context, then one option is to use the [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) struct template to get an agile reference to an instance of a non-agile type, or to an interface of a non-agile object.</span></span>
 
 ```cppwinrt
 NonAgileType nonagile_obj;
 winrt::agile_ref<NonAgileType> agile{ nonagile_obj };
 ```
 
-<span data-ttu-id="d5b87-139">または、[**winrt::make_agile**](/uwp/cpp-ref-for-winrt/make-agile) ヘルパー関数を使用できます。</span><span class="sxs-lookup"><span data-stu-id="d5b87-139">Or, you can use the use the [**winrt::make_agile**](/uwp/cpp-ref-for-winrt/make-agile) helper function.</span></span>
+<span data-ttu-id="47d22-139">または、[**winrt::make_agile**](/uwp/cpp-ref-for-winrt/make-agile) ヘルパー関数を使用できます。</span><span class="sxs-lookup"><span data-stu-id="47d22-139">Or, you can use the use the [**winrt::make_agile**](/uwp/cpp-ref-for-winrt/make-agile) helper function.</span></span>
 
 ```cppwinrt
 NonAgileType nonagile_obj;
 auto agile{ winrt::make_agile(nonagile_obj) };
 ```
 
-<span data-ttu-id="d5b87-140">どちらの場合でも、`agile` を異なるアパートメント内のスレッドに自由に渡して、そこで使用できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="d5b87-140">In either case, `agile` may now be freely passed to a thread in a different apartment, and used there.</span></span>
+<span data-ttu-id="47d22-140">どちらの場合でも、`agile` を異なるアパートメント内のスレッドに自由に渡して、そこで使用できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="47d22-140">In either case, `agile` may now be freely passed to a thread in a different apartment, and used there.</span></span>
 
 ```cppwinrt
 co_await resume_background();
@@ -115,19 +115,19 @@ NonAgileType nonagile_obj_again{ agile.get() };
 winrt::hstring message{ nonagile_obj_again.Message() };
 ```
 
-<span data-ttu-id="d5b87-141">[**Agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agilerefget-function) の呼び出しでは、**get** が呼びだされたスレッド コンテキスト内で安全に使用できるプロキシを返します。</span><span class="sxs-lookup"><span data-stu-id="d5b87-141">The [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agilerefget-function) call returns a proxy that may safely be used within the thread context in which **get** is called.</span></span>
+<span data-ttu-id="47d22-141">[**Agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agilerefget-function) の呼び出しでは、**get** が呼びだされたスレッド コンテキスト内で安全に使用できるプロキシを返します。</span><span class="sxs-lookup"><span data-stu-id="47d22-141">The [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agilerefget-function) call returns a proxy that may safely be used within the thread context in which **get** is called.</span></span>
 
-## <a name="important-apis"></a><span data-ttu-id="d5b87-142">重要な API</span><span class="sxs-lookup"><span data-stu-id="d5b87-142">Important APIs</span></span>
+## <a name="important-apis"></a><span data-ttu-id="47d22-142">重要な API</span><span class="sxs-lookup"><span data-stu-id="47d22-142">Important APIs</span></span>
 
-* [<span data-ttu-id="d5b87-143">IAgileObject インターフェイス</span><span class="sxs-lookup"><span data-stu-id="d5b87-143">IAgileObject interface</span></span>](https://msdn.microsoft.com/library/windows/desktop/hh802476)
-* [<span data-ttu-id="d5b87-144">IMarshal インターフェイス</span><span class="sxs-lookup"><span data-stu-id="d5b87-144">IMarshal interface</span></span>](https://docs.microsoft.com/previous-versions/windows/embedded/ms887993)
-* [<span data-ttu-id="d5b87-145">winrt::agile_ref 構造体テンプレート</span><span class="sxs-lookup"><span data-stu-id="d5b87-145">winrt::agile_ref struct template</span></span>](/uwp/cpp-ref-for-winrt/agile-ref)
-* [<span data-ttu-id="d5b87-146">winrt::implements 構造体テンプレート</span><span class="sxs-lookup"><span data-stu-id="d5b87-146">winrt::implements struct template</span></span>](/uwp/cpp-ref-for-winrt/implements)
-* [<span data-ttu-id="d5b87-147">winrt::make_agile 関数テンプレート</span><span class="sxs-lookup"><span data-stu-id="d5b87-147">winrt::make_agile function template</span></span>](/uwp/cpp-ref-for-winrt/make-agile)
-* [<span data-ttu-id="d5b87-148">winrt::non_agile マーカー構造体</span><span class="sxs-lookup"><span data-stu-id="d5b87-148">winrt::non_agile marker struct</span></span>](/uwp/cpp-ref-for-winrt/non_agile)
-* [<span data-ttu-id="d5b87-149">winrt::Windows::Foundation::IUnknown::as 関数</span><span class="sxs-lookup"><span data-stu-id="d5b87-149">winrt::Windows::Foundation::IUnknown::as function</span></span>](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
-* [<span data-ttu-id="d5b87-150">winrt::Windows::Foundation::IUnknown::try_as 関数</span><span class="sxs-lookup"><span data-stu-id="d5b87-150">winrt::Windows::Foundation::IUnknown::try_as function</span></span>](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
+* [<span data-ttu-id="47d22-143">IAgileObject インターフェイス</span><span class="sxs-lookup"><span data-stu-id="47d22-143">IAgileObject interface</span></span>](https://msdn.microsoft.com/library/windows/desktop/hh802476)
+* [<span data-ttu-id="47d22-144">IMarshal インターフェイス</span><span class="sxs-lookup"><span data-stu-id="47d22-144">IMarshal interface</span></span>](https://docs.microsoft.com/previous-versions/windows/embedded/ms887993)
+* [<span data-ttu-id="47d22-145">winrt::agile_ref 構造体テンプレート</span><span class="sxs-lookup"><span data-stu-id="47d22-145">winrt::agile_ref struct template</span></span>](/uwp/cpp-ref-for-winrt/agile-ref)
+* [<span data-ttu-id="47d22-146">winrt::implements 構造体テンプレート</span><span class="sxs-lookup"><span data-stu-id="47d22-146">winrt::implements struct template</span></span>](/uwp/cpp-ref-for-winrt/implements)
+* [<span data-ttu-id="47d22-147">winrt::make_agile 関数テンプレート</span><span class="sxs-lookup"><span data-stu-id="47d22-147">winrt::make_agile function template</span></span>](/uwp/cpp-ref-for-winrt/make-agile)
+* [<span data-ttu-id="47d22-148">winrt::non_agile マーカー構造体</span><span class="sxs-lookup"><span data-stu-id="47d22-148">winrt::non_agile marker struct</span></span>](/uwp/cpp-ref-for-winrt/non_agile)
+* [<span data-ttu-id="47d22-149">winrt::Windows::Foundation::IUnknown::as 関数</span><span class="sxs-lookup"><span data-stu-id="47d22-149">winrt::Windows::Foundation::IUnknown::as function</span></span>](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [<span data-ttu-id="47d22-150">winrt::Windows::Foundation::IUnknown::try_as 関数</span><span class="sxs-lookup"><span data-stu-id="47d22-150">winrt::Windows::Foundation::IUnknown::try_as function</span></span>](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
 
-## <a name="related-topics"></a><span data-ttu-id="d5b87-151">関連トピック</span><span class="sxs-lookup"><span data-stu-id="d5b87-151">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="47d22-151">関連トピック</span><span class="sxs-lookup"><span data-stu-id="47d22-151">Related topics</span></span>
 
-* [<span data-ttu-id="d5b87-152">COM スレッド モデルの理解と使用</span><span class="sxs-lookup"><span data-stu-id="d5b87-152">Understanding and Using COM Threading Models</span></span>](https://msdn.microsoft.com/library/ms809971)
+* [<span data-ttu-id="47d22-152">COM スレッド モデルの理解と使用</span><span class="sxs-lookup"><span data-stu-id="47d22-152">Understanding and Using COM Threading Models</span></span>](https://msdn.microsoft.com/library/ms809971)
