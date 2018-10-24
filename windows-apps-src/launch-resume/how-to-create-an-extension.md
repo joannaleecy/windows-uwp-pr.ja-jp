@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 424ca52020bd5b9aeab745030dd6eef4cd4430b6
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 548f5f5d1810347527c3c9bfe761a766c4a35c7f
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862421"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445579"
 ---
 # <a name="create-and-host-an-app-extension"></a>アプリ拡張機能の作成とホスト
 
@@ -126,11 +126,11 @@ _MathExtension プロジェクト内の Package.appxmanifest_
 
 |属性|説明|必須かどうか|
 |---------|-----------|:------:|
-|**Name**|これは、拡張機能コントラクト名です。 ホストで宣言されている **Name** と一致すれば、ホストがこの拡張機能を検出できます。|:heavy_check_mark:|
-|**ID**| このアプリを拡張機能を一意に識別します。 複数の拡張機能で同じ拡張機能コントラクト名が使用されることも考えられるため (たとえば、ペイント アプリでは複数の拡張機能がサポートされています)、ID を使用して区別できます。 アプリ拡張機能のホストは、ID を使用して拡張機能の種類を推測できます。 たとえば、1 つ目の拡張機能がデスクトップ用、2 つ目の拡張機能がモバイル用に設計されている場合に、これらを ID で区別できます。 この目的で **Properties** 要素を使用することもできます (以下をご覧ください)。|:heavy_check_mark:|
+|**Name**|これは、拡張機能コントラクト名です。 ホストで宣言されている **Name** と一致すれば、ホストがこの拡張機能を検出できます。| :heavy_check_mark: |
+|**ID**| このアプリを拡張機能を一意に識別します。 複数の拡張機能で同じ拡張機能コントラクト名が使用されることも考えられるため (たとえば、ペイント アプリでは複数の拡張機能がサポートされています)、ID を使用して区別できます。 アプリ拡張機能のホストは、ID を使用して拡張機能の種類を推測できます。 たとえば、1 つ目の拡張機能がデスクトップ用、2 つ目の拡張機能がモバイル用に設計されている場合に、これらを ID で区別できます。 この目的で **Properties** 要素を使用することもできます (以下をご覧ください)。| :heavy_check_mark: |
 |**DisplayName**| ユーザーが拡張機能を識別できるように、ホスト アプリから使用できます。 照会が可能であり、ローカライズ用に[新しいリソース管理システム](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) を使用できます。 ローカライズされたコンテンツは、ホスト アプリからではなく、アプリ拡張機能から読み込まれます。 | |
 |**Description** | ユーザーに対して拡張機能を説明するために、ホスト アプリから使用できます。 照会が可能であり、ローカライズ用に[新しいリソース管理システム](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) を使用できます。 ローカライズされたコンテンツは、ホスト アプリからではなく、アプリ拡張機能から読み込まれます。 | |
-|**PublicFolder**|パッケージのルートを基準としたフォルダーの名前です。このフォルダーでは、コンテンツを拡張機能のホストと共有できます。 この名前は、慣例では "Public" ですが、拡張機能内のフォルダーと一致する名前であれば、任意の名前を使用できます。|:heavy_check_mark:|
+|**PublicFolder**|パッケージのルートを基準としたフォルダーの名前です。このフォルダーでは、コンテンツを拡張機能のホストと共有できます。 この名前は、慣例では "Public" ですが、拡張機能内のフォルダーと一致する名前であれば、任意の名前を使用できます。| :heavy_check_mark: |
 
 `<uap3:Properties>` は、実行時にホストが読み取ることができるカスタム メタデータが含まれた省略可能な要素です。 コード サンプルでは拡張機能がアプリ サービスとして実装されるため、ホストでは、そのアプリ サービスを呼び出すことができるように、名前を取得する方法が必要になります。 アプリ サービスの名前は、<Service> 要素で定義されています (任意の名前を定義できます)。 コード サンプルのホストは、実行時にこのプロパティを探して、アプリ サービスの名前を取得します。
 
