@@ -12,36 +12,36 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d183aeab14103ed0d6730571029076d85e7b004a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5436968"
+ms.locfileid: "5482803"
 ---
-# <a name="usersbatchprofilesettings"></a><span data-ttu-id="b5e6e-104">/users/batch/profile/settings</span><span class="sxs-lookup"><span data-stu-id="b5e6e-104">/users/batch/profile/settings</span></span>
-<span data-ttu-id="b5e6e-105">ユーザーまたはユーザーのプロファイルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="b5e6e-105">Access the profile for a user or users.</span></span> <span data-ttu-id="b5e6e-106">これらの Uri のドメインが`profile.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="b5e6e-106">The domain for these URIs is `profile.xboxlive.com`.</span></span>
+# <a name="usersbatchprofilesettings"></a><span data-ttu-id="7a3df-104">/users/batch/profile/settings</span><span class="sxs-lookup"><span data-stu-id="7a3df-104">/users/batch/profile/settings</span></span>
+<span data-ttu-id="7a3df-105">ユーザーまたはユーザーのプロファイルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="7a3df-105">Access the profile for a user or users.</span></span> <span data-ttu-id="7a3df-106">これらの Uri のドメインが`profile.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="7a3df-106">The domain for these URIs is `profile.xboxlive.com`.</span></span>
   
 <a id="ID4EV"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="b5e6e-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="b5e6e-107">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="7a3df-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="7a3df-107">Valid methods</span></span>
 
-[<span data-ttu-id="b5e6e-108">POST (/users/batch/profile/settings)</span><span class="sxs-lookup"><span data-stu-id="b5e6e-108">POST (/users/batch/profile/settings)</span></span>](uri-usersbatchprofilesettingspost.md)
+[<span data-ttu-id="7a3df-108">POST (/users/batch/profile/settings)</span><span class="sxs-lookup"><span data-stu-id="7a3df-108">POST (/users/batch/profile/settings)</span></span>](uri-usersbatchprofilesettingspost.md)
 
-<span data-ttu-id="b5e6e-109">&nbsp;&nbsp;ユーザーまたはユーザーのプロファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="b5e6e-109">&nbsp;&nbsp;Get the profile for a user or users.</span></span>
+<span data-ttu-id="7a3df-109">&nbsp;&nbsp;ユーザーまたはユーザーのプロファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="7a3df-109">&nbsp;&nbsp;Get the profile for a user or users.</span></span>
  
 <a id="ID4E6"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="b5e6e-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="b5e6e-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7a3df-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="7a3df-110">See also</span></span>
  
 <a id="ID4EBB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="b5e6e-111">Parent</span><span class="sxs-lookup"><span data-stu-id="b5e6e-111">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="7a3df-111">Parent</span><span class="sxs-lookup"><span data-stu-id="7a3df-111">Parent</span></span> 
 
-[<span data-ttu-id="b5e6e-112">プロフィール URI</span><span class="sxs-lookup"><span data-stu-id="b5e6e-112">Profiles URIs</span></span>](atoc-reference-profiles.md)
+[<span data-ttu-id="7a3df-112">プロフィール URI</span><span class="sxs-lookup"><span data-stu-id="7a3df-112">Profiles URIs</span></span>](atoc-reference-profiles.md)
 
- [<span data-ttu-id="b5e6e-113">Profile (JSON)</span><span class="sxs-lookup"><span data-stu-id="b5e6e-113">Profile (JSON)</span></span>](../../json/json-profile.md)
+ [<span data-ttu-id="7a3df-113">Profile (JSON)</span><span class="sxs-lookup"><span data-stu-id="7a3df-113">Profile (JSON)</span></span>](../../json/json-profile.md)
 
    

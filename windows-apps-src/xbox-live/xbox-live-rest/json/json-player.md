@@ -12,33 +12,33 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 25d9262ac16eab3d1c2f35960445321fa3872c30
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437169"
+ms.locfileid: "5479293"
 ---
-# <a name="player-json"></a><span data-ttu-id="9a5c6-104">Player (JSON)</span><span class="sxs-lookup"><span data-stu-id="9a5c6-104">Player (JSON)</span></span>
-<span data-ttu-id="9a5c6-105">ゲーム セッションにプレイヤーのデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="9a5c6-105">Contains data for a player in a game session.</span></span> 
+# <a name="player-json"></a><span data-ttu-id="2bdd6-104">Player (JSON)</span><span class="sxs-lookup"><span data-stu-id="2bdd6-104">Player (JSON)</span></span>
+<span data-ttu-id="2bdd6-105">ゲーム セッションにプレイヤーのデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="2bdd6-105">Contains data for a player in a game session.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="player"></a><span data-ttu-id="9a5c6-106">プレイヤー</span><span class="sxs-lookup"><span data-stu-id="9a5c6-106">Player</span></span>
+## <a name="player"></a><span data-ttu-id="2bdd6-106">プレイヤー</span><span class="sxs-lookup"><span data-stu-id="2bdd6-106">Player</span></span>
  
-<span data-ttu-id="9a5c6-107">プレイヤー オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="9a5c6-107">The Player object has the following specification.</span></span>
+<span data-ttu-id="2bdd6-107">プレイヤー オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="2bdd6-107">The Player object has the following specification.</span></span>
  
-| <span data-ttu-id="9a5c6-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="9a5c6-108">Member</span></span>| <span data-ttu-id="9a5c6-109">種類</span><span class="sxs-lookup"><span data-stu-id="9a5c6-109">Type</span></span>| <span data-ttu-id="9a5c6-110">説明</span><span class="sxs-lookup"><span data-stu-id="9a5c6-110">Description</span></span>| 
+| <span data-ttu-id="2bdd6-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="2bdd6-108">Member</span></span>| <span data-ttu-id="2bdd6-109">種類</span><span class="sxs-lookup"><span data-stu-id="2bdd6-109">Type</span></span>| <span data-ttu-id="2bdd6-110">説明</span><span class="sxs-lookup"><span data-stu-id="2bdd6-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="9a5c6-111">customData</span><span class="sxs-lookup"><span data-stu-id="9a5c6-111">customData</span></span>| <span data-ttu-id="9a5c6-112">8 ビットの符号なし整数の配列</span><span class="sxs-lookup"><span data-stu-id="9a5c6-112">array of 8-bit unsigned integer</span></span>| <span data-ttu-id="9a5c6-113">Base64 1024 バイトは、ゲーム固有のプレイヤーのデータをエンコードします。</span><span class="sxs-lookup"><span data-stu-id="9a5c6-113">1024 bytes of Base64 encoded game-specific player data.</span></span> <span data-ttu-id="9a5c6-114">この値は、サーバーに不透明です。</span><span class="sxs-lookup"><span data-stu-id="9a5c6-114">This value is opaque to the server.</span></span>| 
-| <span data-ttu-id="9a5c6-115">ゲーマータグ</span><span class="sxs-lookup"><span data-stu-id="9a5c6-115">gamertag</span></span>| <span data-ttu-id="9a5c6-116">string</span><span class="sxs-lookup"><span data-stu-id="9a5c6-116">string</span></span>| <span data-ttu-id="9a5c6-117">ゲーマータグ-は最大 15 文字、プレイヤーのします。</span><span class="sxs-lookup"><span data-stu-id="9a5c6-117">Gamertag—a maximum of 15 characters—of the player.</span></span> <span data-ttu-id="9a5c6-118">クライアントは、プレイヤーを識別するために、UI でこの値を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9a5c6-118">The client should use this value in the UI when identifying the player.</span></span> | 
-| <span data-ttu-id="9a5c6-119">isCurrentlyInSession</span><span class="sxs-lookup"><span data-stu-id="9a5c6-119">isCurrentlyInSession</span></span>| <span data-ttu-id="9a5c6-120">ブール値</span><span class="sxs-lookup"><span data-stu-id="9a5c6-120">Boolean value</span></span>| <span data-ttu-id="9a5c6-121">プレイヤーがセッションで現在使用されてか、セッションを抜けたかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="9a5c6-121">Indicates if the player is currently in the session or left the session.</span></span>| 
-| <span data-ttu-id="9a5c6-122">seatIndex</span><span class="sxs-lookup"><span data-stu-id="9a5c6-122">seatIndex</span></span>| <span data-ttu-id="9a5c6-123">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="9a5c6-123">32-bit signed integer</span></span>| <span data-ttu-id="9a5c6-124">セッションにプレイヤーのインデックス。</span><span class="sxs-lookup"><span data-stu-id="9a5c6-124">The index of the player in the session.</span></span>| 
-| <span data-ttu-id="9a5c6-125">xuid</span><span class="sxs-lookup"><span data-stu-id="9a5c6-125">xuid</span></span>| <span data-ttu-id="9a5c6-126">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="9a5c6-126">64-bit unsigned integer</span></span>| <span data-ttu-id="9a5c6-127">Xbox ユーザー ID (XUID)、プレイヤーのします。</span><span class="sxs-lookup"><span data-stu-id="9a5c6-127">The Xbox User ID (XUID) of the player.</span></span>| 
+| <span data-ttu-id="2bdd6-111">customData</span><span class="sxs-lookup"><span data-stu-id="2bdd6-111">customData</span></span>| <span data-ttu-id="2bdd6-112">8 ビットの符号なし整数の配列</span><span class="sxs-lookup"><span data-stu-id="2bdd6-112">array of 8-bit unsigned integer</span></span>| <span data-ttu-id="2bdd6-113">Base64 1024 バイトは、ゲーム固有のプレイヤーのデータをエンコードします。</span><span class="sxs-lookup"><span data-stu-id="2bdd6-113">1024 bytes of Base64 encoded game-specific player data.</span></span> <span data-ttu-id="2bdd6-114">この値は、サーバーに不透明です。</span><span class="sxs-lookup"><span data-stu-id="2bdd6-114">This value is opaque to the server.</span></span>| 
+| <span data-ttu-id="2bdd6-115">ゲーマータグ</span><span class="sxs-lookup"><span data-stu-id="2bdd6-115">gamertag</span></span>| <span data-ttu-id="2bdd6-116">string</span><span class="sxs-lookup"><span data-stu-id="2bdd6-116">string</span></span>| <span data-ttu-id="2bdd6-117">ゲーマータグ-は最大 15 文字、プレイヤーのします。</span><span class="sxs-lookup"><span data-stu-id="2bdd6-117">Gamertag—a maximum of 15 characters—of the player.</span></span> <span data-ttu-id="2bdd6-118">クライアントは、プレイヤーを識別するために、UI でこの値を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2bdd6-118">The client should use this value in the UI when identifying the player.</span></span> | 
+| <span data-ttu-id="2bdd6-119">isCurrentlyInSession</span><span class="sxs-lookup"><span data-stu-id="2bdd6-119">isCurrentlyInSession</span></span>| <span data-ttu-id="2bdd6-120">ブール値</span><span class="sxs-lookup"><span data-stu-id="2bdd6-120">Boolean value</span></span>| <span data-ttu-id="2bdd6-121">プレイヤーがセッションで現在使用されてまたはセッションを抜けたかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="2bdd6-121">Indicates if the player is currently in the session or left the session.</span></span>| 
+| <span data-ttu-id="2bdd6-122">seatIndex</span><span class="sxs-lookup"><span data-stu-id="2bdd6-122">seatIndex</span></span>| <span data-ttu-id="2bdd6-123">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="2bdd6-123">32-bit signed integer</span></span>| <span data-ttu-id="2bdd6-124">セッション内のプレイヤーのインデックス。</span><span class="sxs-lookup"><span data-stu-id="2bdd6-124">The index of the player in the session.</span></span>| 
+| <span data-ttu-id="2bdd6-125">xuid</span><span class="sxs-lookup"><span data-stu-id="2bdd6-125">xuid</span></span>| <span data-ttu-id="2bdd6-126">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="2bdd6-126">64-bit unsigned integer</span></span>| <span data-ttu-id="2bdd6-127">Xbox ユーザー ID (XUID) プレイヤーのします。</span><span class="sxs-lookup"><span data-stu-id="2bdd6-127">The Xbox User ID (XUID) of the player.</span></span>| 
   
 <a id="ID4E3C"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="9a5c6-128">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="9a5c6-128">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="2bdd6-128">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="2bdd6-128">Sample JSON syntax</span></span>
  
 
 ```json
@@ -56,21 +56,21 @@ ms.locfileid: "5437169"
 <a id="ID4EFD"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="9a5c6-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="9a5c6-129">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2bdd6-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="2bdd6-129">See also</span></span>
  
 <a id="ID4EHD"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="9a5c6-130">Parent</span><span class="sxs-lookup"><span data-stu-id="9a5c6-130">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="2bdd6-130">Parent</span><span class="sxs-lookup"><span data-stu-id="2bdd6-130">Parent</span></span> 
 
-[<span data-ttu-id="9a5c6-131">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="9a5c6-131">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="2bdd6-131">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="2bdd6-131">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4ERD"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="9a5c6-132">リファレンス</span><span class="sxs-lookup"><span data-stu-id="9a5c6-132">Reference</span></span> 
+##### <a name="reference"></a><span data-ttu-id="2bdd6-132">リファレンス</span><span class="sxs-lookup"><span data-stu-id="2bdd6-132">Reference</span></span> 
 
-[<span data-ttu-id="9a5c6-133">GameSession (JSON)</span><span class="sxs-lookup"><span data-stu-id="9a5c6-133">GameSession (JSON)</span></span>](json-gamesession.md)
+[<span data-ttu-id="2bdd6-133">GameSession (JSON)</span><span class="sxs-lookup"><span data-stu-id="2bdd6-133">GameSession (JSON)</span></span>](json-gamesession.md)
 
    

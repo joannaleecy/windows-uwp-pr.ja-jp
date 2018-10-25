@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, トラブルシューティング, エラー, ログ
 ms.localizationpriority: medium
 ms.openlocfilehash: dabc6458254c6ceec7995baa466de6dbddd76e18
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5430615"
+ms.locfileid: "5479846"
 ---
-# <a name="troubleshooting-the-xbox-live-apis"></a><span data-ttu-id="e9e78-104">Xbox Live API のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="e9e78-104">Troubleshooting the Xbox Live APIs</span></span>
+# <a name="troubleshooting-the-xbox-live-apis"></a><span data-ttu-id="445b0-104">Xbox Live API のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="445b0-104">Troubleshooting the Xbox Live APIs</span></span>
 
-## <a name="code"></a><span data-ttu-id="e9e78-105">コード</span><span class="sxs-lookup"><span data-stu-id="e9e78-105">Code</span></span>
+## <a name="code"></a><span data-ttu-id="445b0-105">コード</span><span class="sxs-lookup"><span data-stu-id="445b0-105">Code</span></span>
 
-<span data-ttu-id="e9e78-106">Xbox Live Services API レイヤーからのエラーだけを使用して障害を診断することは困難です。</span><span class="sxs-lookup"><span data-stu-id="e9e78-106">It is difficult to diagnose a failure using only the error from the Xbox Live Services API layer.</span></span> <span data-ttu-id="e9e78-107">サーバーでは、すべての RESTful 呼び出しのログなど、他のエラー情報を使用できる場合があります。</span><span class="sxs-lookup"><span data-stu-id="e9e78-107">Extra error information—such as logging of all RESTful calls—could be available to the server.</span></span> <span data-ttu-id="e9e78-108">このデータをリッスンするには、応答ロガーをフックし、デバッグ トレースを有効にします。</span><span class="sxs-lookup"><span data-stu-id="e9e78-108">To listen to this data, hook up the response logger and enable debug tracing.</span></span> <span data-ttu-id="e9e78-109">応答ログを使用すると、HTTP トラフィックや Web サービスの応答コードを確認できます。これは、Fiddler トレースと同じくらい役立つことがよくあります。</span><span class="sxs-lookup"><span data-stu-id="e9e78-109">Response logging allows you to see HTTP traffic and web service response codes, which is often as useful as a Fiddler trace.</span></span>
+<span data-ttu-id="445b0-106">Xbox Live Services API レイヤーからのエラーだけを使用して障害を診断することは困難です。</span><span class="sxs-lookup"><span data-stu-id="445b0-106">It is difficult to diagnose a failure using only the error from the Xbox Live Services API layer.</span></span> <span data-ttu-id="445b0-107">サーバーでは、すべての RESTful 呼び出しのログなど、他のエラー情報を使用できる場合があります。</span><span class="sxs-lookup"><span data-stu-id="445b0-107">Extra error information—such as logging of all RESTful calls—could be available to the server.</span></span> <span data-ttu-id="445b0-108">このデータをリッスンするには、応答ロガーをフックし、デバッグ トレースを有効にします。</span><span class="sxs-lookup"><span data-stu-id="445b0-108">To listen to this data, hook up the response logger and enable debug tracing.</span></span> <span data-ttu-id="445b0-109">応答ログを使用すると、HTTP トラフィックや Web サービスの応答コードを確認できます。これは、Fiddler トレースと同じくらい役立つことがよくあります。</span><span class="sxs-lookup"><span data-stu-id="445b0-109">Response logging allows you to see HTTP traffic and web service response codes, which is often as useful as a Fiddler trace.</span></span>
 
-### <a name="c"></a><span data-ttu-id="e9e78-110">C++</span><span class="sxs-lookup"><span data-stu-id="e9e78-110">C++</span></span>
+### <a name="c"></a><span data-ttu-id="445b0-110">C++</span><span class="sxs-lookup"><span data-stu-id="445b0-110">C++</span></span>
 
-<span data-ttu-id="e9e78-111">以下のコード例では、応答ログを有効にし、デバッグ エラー レベルを Verbose に設定しています (デバッグ エラー レベルは、失敗した呼び出しのトレースのみを表示する Error や、トレースを無効にする Off に設定することもできます)。</span><span class="sxs-lookup"><span data-stu-id="e9e78-111">The following code example enables response logging and sets the debug error level to Verbose (you can also set the debug error level to Error to show only trace failed calls, or to Off to disable tracing).</span></span> <span data-ttu-id="e9e78-112">Visual Studio でプロジェクトを実行すると、結果のデバッグ出力は [出力] ペインに送信されます。</span><span class="sxs-lookup"><span data-stu-id="e9e78-112">The resulting debug output is sent to the Output pane when running your project in Visual Studio.</span></span>  
+<span data-ttu-id="445b0-111">以下のコード例では、応答ログを有効にし、デバッグ エラー レベルを Verbose に設定しています (デバッグ エラー レベルは、失敗した呼び出しのトレースのみを表示する Error や、トレースを無効にする Off に設定することもできます)。</span><span class="sxs-lookup"><span data-stu-id="445b0-111">The following code example enables response logging and sets the debug error level to Verbose (you can also set the debug error level to Error to show only trace failed calls, or to Off to disable tracing).</span></span> <span data-ttu-id="445b0-112">Visual Studio でプロジェクトを実行すると、結果のデバッグ出力は [出力] ペインに送信されます。</span><span class="sxs-lookup"><span data-stu-id="445b0-112">The resulting debug output is sent to the Output pane when running your project in Visual Studio.</span></span>  
 
 ```cpp
 
@@ -35,7 +35,7 @@ ms.locfileid: "5430615"
                 );
 ```
 
-<span data-ttu-id="e9e78-113">次のように、デバッグ出力を独自のログ ファイルにリダイレクトすることもできます。</span><span class="sxs-lookup"><span data-stu-id="e9e78-113">You can also choose to redirect debug output to your own log file like so:</span></span>
+<span data-ttu-id="445b0-113">次のように、デバッグ出力を独自のログ ファイルにリダイレクトすることもできます。</span><span class="sxs-lookup"><span data-stu-id="445b0-113">You can also choose to redirect debug output to your own log file like so:</span></span>
 
 ```cpp
 

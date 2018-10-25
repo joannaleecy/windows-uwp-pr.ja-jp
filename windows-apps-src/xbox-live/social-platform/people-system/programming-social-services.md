@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, social manager, 例
 ms.localizationpriority: medium
 ms.openlocfilehash: e20550e812cbd5d67c57381cde9c7910b20000e5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5432274"
+ms.locfileid: "5483172"
 ---
-# <a name="programming-social-services"></a><span data-ttu-id="cc9a0-104">ソーシャル サービスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="cc9a0-104">Programming Social Services</span></span>
+# <a name="programming-social-services"></a><span data-ttu-id="18aac-104">ソーシャル サービスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="18aac-104">Programming Social Services</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="cc9a0-105">この記事では、API の高度な使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="cc9a0-105">This article demonstrates advanced API usage.</span></span>  <span data-ttu-id="cc9a0-106">まず最初に、開発が大幅に簡素化される [Social Manager API の概要](../intro-to-social-manager.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cc9a0-106">As a starting point, please take a look at the [Introduction to the Social Manager API](../intro-to-social-manager.md) which significantly simplifies development.</span></span>  <span data-ttu-id="cc9a0-107">Social Manager でサポートされていないシナリオが見つかった場合は、担当の DAM までご連絡ください。</span><span class="sxs-lookup"><span data-stu-id="cc9a0-107">Please let your DAM know if you find an unsupported scenario in the Social Manager.</span></span>
+> <span data-ttu-id="18aac-105">この記事では、API の高度な使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="18aac-105">This article demonstrates advanced API usage.</span></span>  <span data-ttu-id="18aac-106">まず最初に、開発が大幅に簡素化される [Social Manager API の概要](../intro-to-social-manager.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="18aac-106">As a starting point, please take a look at the [Introduction to the Social Manager API](../intro-to-social-manager.md) which significantly simplifies development.</span></span>  <span data-ttu-id="18aac-107">Social Manager でサポートされていないシナリオが見つかった場合は、担当の DAM までご連絡ください。</span><span class="sxs-lookup"><span data-stu-id="18aac-107">Please let your DAM know if you find an unsupported scenario in the Social Manager.</span></span>
 
-<span data-ttu-id="cc9a0-108">次のコード例では、Xbox Live とのソーシャル関係を取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="cc9a0-108">The following code example demonstrates how to retrieve a social relationship with Xbox Live.</span></span> <span data-ttu-id="cc9a0-109">コード例は、システム上のすべてのユーザーのリストを生成し、最初のものを取得します。</span><span class="sxs-lookup"><span data-stu-id="cc9a0-109">It generates a list of all users on the system and retrieves the first one.</span></span> <span data-ttu-id="cc9a0-110">次に、ユーザーのソーシャル関係のすべてを取得します。</span><span class="sxs-lookup"><span data-stu-id="cc9a0-110">Next, it retrieves all of that user's social relationships.</span></span> <span data-ttu-id="cc9a0-111">最後に、これらの各関係のパブリック プロパティを表示します。</span><span class="sxs-lookup"><span data-stu-id="cc9a0-111">Finally, it displays the public properties of each of those relationships.</span></span>
+<span data-ttu-id="18aac-108">次のコード例では、Xbox Live とのソーシャル関係を取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="18aac-108">The following code example demonstrates how to retrieve a social relationship with Xbox Live.</span></span> <span data-ttu-id="18aac-109">コード例は、システム上のすべてのユーザーのリストを生成し、最初のものを取得します。</span><span class="sxs-lookup"><span data-stu-id="18aac-109">It generates a list of all users on the system and retrieves the first one.</span></span> <span data-ttu-id="18aac-110">次に、ユーザーのソーシャル関係のすべてを取得します。</span><span class="sxs-lookup"><span data-stu-id="18aac-110">Next, it retrieves all of that user's social relationships.</span></span> <span data-ttu-id="18aac-111">最後に、これらの各関係のパブリック プロパティを表示します。</span><span class="sxs-lookup"><span data-stu-id="18aac-111">Finally, it displays the public properties of each of those relationships.</span></span>
 
 ```cpp
 XboxLiveContext^ xboxLiveContext = NULL;

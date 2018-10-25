@@ -12,49 +12,49 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: eaa7314b2cb2c8459f4bd2aae78794685c277c70
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437217"
+ms.locfileid: "5480310"
 ---
-# <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a><span data-ttu-id="ea58f-104">GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})</span><span class="sxs-lookup"><span data-stu-id="ea58f-104">GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})</span></span>
-<span data-ttu-id="ea58f-105">セッション テンプレートの名前のセットを取得します。</span><span class="sxs-lookup"><span data-stu-id="ea58f-105">Retrieves a set of session template names.</span></span>
+# <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a><span data-ttu-id="a7405-104">GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})</span><span class="sxs-lookup"><span data-stu-id="a7405-104">GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})</span></span>
+<span data-ttu-id="a7405-105">一連のセッション テンプレート名を取得します。</span><span class="sxs-lookup"><span data-stu-id="a7405-105">Retrieves a set of session template names.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="ea58f-106">この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="ea58f-106">This URI method requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
+> <span data-ttu-id="a7405-106">この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="a7405-106">This URI method requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
 
-  * [<span data-ttu-id="ea58f-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ea58f-107">URI parameters</span></span>](#ID4ET)
-  * [<span data-ttu-id="ea58f-108">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="ea58f-108">HTTP status codes</span></span>](#ID4E5)
-  * [<span data-ttu-id="ea58f-109">要求本文</span><span class="sxs-lookup"><span data-stu-id="ea58f-109">Request body</span></span>](#ID4EFB)
-  * [<span data-ttu-id="ea58f-110">応答本文</span><span class="sxs-lookup"><span data-stu-id="ea58f-110">Response body</span></span>](#ID4EQB)
+  * [<span data-ttu-id="a7405-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a7405-107">URI parameters</span></span>](#ID4ET)
+  * [<span data-ttu-id="a7405-108">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="a7405-108">HTTP status codes</span></span>](#ID4E5)
+  * [<span data-ttu-id="a7405-109">要求本文</span><span class="sxs-lookup"><span data-stu-id="a7405-109">Request body</span></span>](#ID4EFB)
+  * [<span data-ttu-id="a7405-110">応答本文</span><span class="sxs-lookup"><span data-stu-id="a7405-110">Response body</span></span>](#ID4EQB)
 
 <a id="ID4ET"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="ea58f-111">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ea58f-111">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="a7405-111">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a7405-111">URI parameters</span></span>
 
-| <span data-ttu-id="ea58f-112">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ea58f-112">Parameter</span></span>| <span data-ttu-id="ea58f-113">型</span><span class="sxs-lookup"><span data-stu-id="ea58f-113">Type</span></span>| <span data-ttu-id="ea58f-114">説明</span><span class="sxs-lookup"><span data-stu-id="ea58f-114">Description</span></span>|
+| <span data-ttu-id="a7405-112">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a7405-112">Parameter</span></span>| <span data-ttu-id="a7405-113">型</span><span class="sxs-lookup"><span data-stu-id="a7405-113">Type</span></span>| <span data-ttu-id="a7405-114">説明</span><span class="sxs-lookup"><span data-stu-id="a7405-114">Description</span></span>|
 | --- | --- | --- | --- |
-| <span data-ttu-id="ea58f-115">scid</span><span class="sxs-lookup"><span data-stu-id="ea58f-115">scid</span></span>| <span data-ttu-id="ea58f-116">GUID</span><span class="sxs-lookup"><span data-stu-id="ea58f-116">GUID</span></span>| <span data-ttu-id="ea58f-117">サービス構成の識別子 (SCID)。</span><span class="sxs-lookup"><span data-stu-id="ea58f-117">Service configuration identifer (SCID).</span></span> <span data-ttu-id="ea58f-118">パート 1 セッションの id。</span><span class="sxs-lookup"><span data-stu-id="ea58f-118">Part 1 of the session ID.</span></span>|
-| <span data-ttu-id="ea58f-119">sessionTemplateName</span><span class="sxs-lookup"><span data-stu-id="ea58f-119">sessionTemplateName</span></span>| <span data-ttu-id="ea58f-120">string</span><span class="sxs-lookup"><span data-stu-id="ea58f-120">string</span></span>| <span data-ttu-id="ea58f-121">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="ea58f-121">Name of the current instance of the session template.</span></span> <span data-ttu-id="ea58f-122">パート 2、セッションの id。</span><span class="sxs-lookup"><span data-stu-id="ea58f-122">Part 2 of the session ID.</span></span> |
+| <span data-ttu-id="a7405-115">scid</span><span class="sxs-lookup"><span data-stu-id="a7405-115">scid</span></span>| <span data-ttu-id="a7405-116">GUID</span><span class="sxs-lookup"><span data-stu-id="a7405-116">GUID</span></span>| <span data-ttu-id="a7405-117">サービス構成の識別子 (SCID)。</span><span class="sxs-lookup"><span data-stu-id="a7405-117">Service configuration identifer (SCID).</span></span> <span data-ttu-id="a7405-118">パート 1 セッションの id。</span><span class="sxs-lookup"><span data-stu-id="a7405-118">Part 1 of the session ID.</span></span>|
+| <span data-ttu-id="a7405-119">sessionTemplateName</span><span class="sxs-lookup"><span data-stu-id="a7405-119">sessionTemplateName</span></span>| <span data-ttu-id="a7405-120">string</span><span class="sxs-lookup"><span data-stu-id="a7405-120">string</span></span>| <span data-ttu-id="a7405-121">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="a7405-121">Name of the current instance of the session template.</span></span> <span data-ttu-id="a7405-122">パート 2、セッションの id。</span><span class="sxs-lookup"><span data-stu-id="a7405-122">Part 2 of the session ID.</span></span> |
 
 <a id="ID4E5"></a>
 
 
-## <a name="http-status-codes"></a><span data-ttu-id="ea58f-123">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="ea58f-123">HTTP status codes</span></span>
-<span data-ttu-id="ea58f-124">サービスは、MPSD に適用される、HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="ea58f-124">The service returns an HTTP status code as it applies to MPSD.</span></span>  
+## <a name="http-status-codes"></a><span data-ttu-id="a7405-123">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="a7405-123">HTTP status codes</span></span>
+<span data-ttu-id="a7405-124">サービスは、MPSD に適用される HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="a7405-124">The service returns an HTTP status code as it applies to MPSD.</span></span>  
 <a id="ID4EFB"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="ea58f-125">要求本文</span><span class="sxs-lookup"><span data-stu-id="ea58f-125">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="a7405-125">要求本文</span><span class="sxs-lookup"><span data-stu-id="a7405-125">Request body</span></span>
 
-<span data-ttu-id="ea58f-126">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="ea58f-126">No objects are sent in the body of this request.</span></span>
+<span data-ttu-id="a7405-126">この要求の本文には、オブジェクトは送信されません。</span><span class="sxs-lookup"><span data-stu-id="a7405-126">No objects are sent in the body of this request.</span></span>
 
 <a id="ID4EQB"></a>
 
 
-## <a name="response-body"></a><span data-ttu-id="ea58f-127">応答本文</span><span class="sxs-lookup"><span data-stu-id="ea58f-127">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="a7405-127">応答本文</span><span class="sxs-lookup"><span data-stu-id="a7405-127">Response body</span></span>
 
 
 ```cpp
@@ -83,11 +83,11 @@ ms.locfileid: "5437217"
 <a id="ID4EZB"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="ea58f-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="ea58f-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a7405-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="a7405-128">See also</span></span>
 
 <a id="ID4E2B"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="ea58f-129">Parent</span><span class="sxs-lookup"><span data-stu-id="ea58f-129">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="a7405-129">Parent</span><span class="sxs-lookup"><span data-stu-id="a7405-129">Parent</span></span>
 
-[<span data-ttu-id="ea58f-130">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}</span><span class="sxs-lookup"><span data-stu-id="ea58f-130">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}</span></span>](uri-serviceconfigsscidsessiontemplatessessiontemplatename.md)
+[<span data-ttu-id="a7405-130">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}</span><span class="sxs-lookup"><span data-stu-id="a7405-130">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}</span></span>](uri-serviceconfigsscidsessiontemplatessessiontemplatename.md)

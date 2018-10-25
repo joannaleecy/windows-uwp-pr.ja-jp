@@ -11,29 +11,29 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: b2fd29f69b919e5a3e700c451f9ecb21ba2c9cdd
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5436871"
+ms.locfileid: "5480893"
 ---
-# <a name="rich-presence-appendix"></a><span data-ttu-id="ffcb9-104">リッチ プレゼンスの付録</span><span class="sxs-lookup"><span data-stu-id="ffcb9-104">Rich Presence appendix</span></span>
+# <a name="rich-presence-appendix"></a><span data-ttu-id="5c23e-104">リッチ プレゼンスの付録</span><span class="sxs-lookup"><span data-stu-id="5c23e-104">Rich Presence appendix</span></span>
 
-## <a name="data-platform"></a><span data-ttu-id="ffcb9-105">データ プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="ffcb9-105">Data Platform</span></span>
+## <a name="data-platform"></a><span data-ttu-id="5c23e-105">データ プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="5c23e-105">Data Platform</span></span>
 
-<span data-ttu-id="ffcb9-106">データ プラットフォームの基本は、サービス イニシアティブとしてのエンターテインメントの一部であることです。</span><span class="sxs-lookup"><span data-stu-id="ffcb9-106">The basics of the data platform are part of the Entertainment as a Service initiative.</span></span> <span data-ttu-id="ffcb9-107">その概念は、ゲームにおけるすべてのことはイベントおよびそれらのイベントに関連付けられた属性として記述できるというものです。</span><span class="sxs-lookup"><span data-stu-id="ffcb9-107">The idea is that everything in a game can be described as events with attributes associated with those events.</span></span> <span data-ttu-id="ffcb9-108">開発者は、サービスにおいて、ゲームのエクスペリエンスにとって重要な統計情報と状態の値を構成できます。</span><span class="sxs-lookup"><span data-stu-id="ffcb9-108">Developers can configure statistics and state values important to the game's experience in the service.</span></span>
+<span data-ttu-id="5c23e-106">データ プラットフォームの基本は、サービス イニシアティブとしてのエンターテインメントの一部であることです。</span><span class="sxs-lookup"><span data-stu-id="5c23e-106">The basics of the data platform are part of the Entertainment as a Service initiative.</span></span> <span data-ttu-id="5c23e-107">その概念は、ゲームにおけるすべてのことはイベントおよびそれらのイベントに関連付けられた属性として記述できるというものです。</span><span class="sxs-lookup"><span data-stu-id="5c23e-107">The idea is that everything in a game can be described as events with attributes associated with those events.</span></span> <span data-ttu-id="5c23e-108">開発者は、サービスにおいて、ゲームのエクスペリエンスにとって重要な統計情報と状態の値を構成できます。</span><span class="sxs-lookup"><span data-stu-id="5c23e-108">Developers can configure statistics and state values important to the game's experience in the service.</span></span>
 
-<span data-ttu-id="ffcb9-109">統計情報の例をいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="ffcb9-109">Some example statistics are:</span></span>
+<span data-ttu-id="5c23e-109">統計情報の例をいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="5c23e-109">Some example statistics are:</span></span>
 
--   <span data-ttu-id="ffcb9-110">倒した数</span><span class="sxs-lookup"><span data-stu-id="ffcb9-110">Number of kills</span></span>
--   <span data-ttu-id="ffcb9-111">完了したサイド クエスト数</span><span class="sxs-lookup"><span data-stu-id="ffcb9-111">Number of side quests completed</span></span>
--   <span data-ttu-id="ffcb9-112">集めたコイン数</span><span class="sxs-lookup"><span data-stu-id="ffcb9-112">Number of coins collected</span></span>
--   <span data-ttu-id="ffcb9-113">進んだマイル数</span><span class="sxs-lookup"><span data-stu-id="ffcb9-113">Number of miles driven</span></span>
+-   <span data-ttu-id="5c23e-110">倒した数</span><span class="sxs-lookup"><span data-stu-id="5c23e-110">Number of kills</span></span>
+-   <span data-ttu-id="5c23e-111">完了したサイド クエスト数</span><span class="sxs-lookup"><span data-stu-id="5c23e-111">Number of side quests completed</span></span>
+-   <span data-ttu-id="5c23e-112">集めたコイン数</span><span class="sxs-lookup"><span data-stu-id="5c23e-112">Number of coins collected</span></span>
+-   <span data-ttu-id="5c23e-113">進んだマイル数</span><span class="sxs-lookup"><span data-stu-id="5c23e-113">Number of miles driven</span></span>
 
-<span data-ttu-id="ffcb9-114">状態データの例をいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="ffcb9-114">Some example state data are:</span></span>
+<span data-ttu-id="5c23e-114">状態データの例をいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="5c23e-114">Some example state data are:</span></span>
 
--   <span data-ttu-id="ffcb9-115">現在のマップ</span><span class="sxs-lookup"><span data-stu-id="ffcb9-115">Current map</span></span>
--   <span data-ttu-id="ffcb9-116">現在の X、Y、Z 座標</span><span class="sxs-lookup"><span data-stu-id="ffcb9-116">Current X, Y, Z coordinates</span></span>
--   <span data-ttu-id="ffcb9-117">現在の武器</span><span class="sxs-lookup"><span data-stu-id="ffcb9-117">Current weapon</span></span>
+-   <span data-ttu-id="5c23e-115">現在のマップ</span><span class="sxs-lookup"><span data-stu-id="5c23e-115">Current map</span></span>
+-   <span data-ttu-id="5c23e-116">現在の X、Y、Z 座標</span><span class="sxs-lookup"><span data-stu-id="5c23e-116">Current X, Y, Z coordinates</span></span>
+-   <span data-ttu-id="5c23e-117">現在の武器</span><span class="sxs-lookup"><span data-stu-id="5c23e-117">Current weapon</span></span>
 
-<span data-ttu-id="ffcb9-118">統計情報の詳細については、「[プレイヤーの統計情報](../../leaderboards-and-stats-2017/player-stats.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ffcb9-118">For more information about stats, see [Player Stats](../../leaderboards-and-stats-2017/player-stats.md).</span></span>
+<span data-ttu-id="5c23e-118">統計情報の詳細については、「[プレイヤーの統計情報](../../leaderboards-and-stats-2017/player-stats.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5c23e-118">For more information about stats, see [Player Stats](../../leaderboards-and-stats-2017/player-stats.md).</span></span>

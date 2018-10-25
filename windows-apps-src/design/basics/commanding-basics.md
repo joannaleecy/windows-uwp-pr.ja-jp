@@ -14,31 +14,31 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 104788b98377b55564fcc204ecc161521d071c6b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443494"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480694"
 ---
-#  <a name="command-design-basics-for-uwp-apps"></a><span data-ttu-id="c113b-103">UWP アプリのコマンド設計の基本</span><span class="sxs-lookup"><span data-stu-id="c113b-103">Command design basics for UWP apps</span></span>
+#  <a name="command-design-basics-for-uwp-apps"></a><span data-ttu-id="f962d-103">UWP アプリのコマンド設計の基本</span><span class="sxs-lookup"><span data-stu-id="f962d-103">Command design basics for UWP apps</span></span>
 
-<span data-ttu-id="c113b-104">ユニバーサル Windows プラットフォーム (UWP) アプリでは、*コマンド要素*は、ユーザーがメール送信、項目の削除、フォームの送信などのアクションを実行できる対話型の UI 要素です。</span><span class="sxs-lookup"><span data-stu-id="c113b-104">In a Universal Windows Platform (UWP) app, *command elements* are interactive UI elements that enable users to perform actions, such as sending an email, deleting an item, or submitting a form.</span></span> <span data-ttu-id="c113b-105">この記事では、一般的なコマンド要素、それらの要素でサポートされる操作、それらの要素をホストするためのコマンド サーフェスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="c113b-105">This article describes common command elements, the interactions they support, and the command surfaces for hosting them.</span></span>
+<span data-ttu-id="f962d-104">ユニバーサル Windows プラットフォーム (UWP) アプリでは、*コマンド要素*は、ユーザーがメール送信、項目の削除、フォームの送信などのアクションを実行できる対話型の UI 要素です。</span><span class="sxs-lookup"><span data-stu-id="f962d-104">In a Universal Windows Platform (UWP) app, *command elements* are interactive UI elements that enable users to perform actions, such as sending an email, deleting an item, or submitting a form.</span></span> <span data-ttu-id="f962d-105">この記事では、一般的なコマンド要素、それらの要素でサポートされる操作、それらの要素をホストするためのコマンド サーフェスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="f962d-105">This article describes common command elements, the interactions they support, and the command surfaces for hosting them.</span></span>
 
-## <a name="provide-the-right-type-of-interactions"></a><span data-ttu-id="c113b-106">適切な種類の操作の提供</span><span class="sxs-lookup"><span data-stu-id="c113b-106">Provide the right type of interactions</span></span>
+## <a name="provide-the-right-type-of-interactions"></a><span data-ttu-id="f962d-106">適切な種類の操作の提供</span><span class="sxs-lookup"><span data-stu-id="f962d-106">Provide the right type of interactions</span></span>
 
-<span data-ttu-id="c113b-107">コマンド インターフェイスを設計する際、最も重要な決定はユーザーが何を実行できる必要があるかという点です。</span><span class="sxs-lookup"><span data-stu-id="c113b-107">When designing a command interface, the most important decision is choosing what users should be able to do.</span></span> <span data-ttu-id="c113b-108">適切な種類の操作を計画するには、アプリに集中して、有効にするユーザー エクスペリエンス、およびユーザーが行う必要がある操作の手順を検討します。</span><span class="sxs-lookup"><span data-stu-id="c113b-108">To plan the right type of interactions, focus on your app - consider the user experiences you want to enable, and what steps users will need to take.</span></span> <span data-ttu-id="c113b-109">ユーザーが実行できる操作を決定したら、それを行うためのツールを提供します。</span><span class="sxs-lookup"><span data-stu-id="c113b-109">Once you decide what you want users to accomplish, then you can provide them the tools to do so.</span></span>
+<span data-ttu-id="f962d-107">コマンド インターフェイスを設計する際、最も重要な決定はユーザーが何を実行できる必要があるかという点です。</span><span class="sxs-lookup"><span data-stu-id="f962d-107">When designing a command interface, the most important decision is choosing what users should be able to do.</span></span> <span data-ttu-id="f962d-108">適切な種類の操作を計画するには、アプリに集中して、有効にするユーザー エクスペリエンス、およびユーザーが行う必要がある操作の手順を検討します。</span><span class="sxs-lookup"><span data-stu-id="f962d-108">To plan the right type of interactions, focus on your app - consider the user experiences you want to enable, and what steps users will need to take.</span></span> <span data-ttu-id="f962d-109">ユーザーが実行できる操作を決定したら、それを行うためのツールを提供します。</span><span class="sxs-lookup"><span data-stu-id="f962d-109">Once you decide what you want users to accomplish, then you can provide them the tools to do so.</span></span>
 
-<span data-ttu-id="c113b-110">アプリで提供する操作には次のものがあります。</span><span class="sxs-lookup"><span data-stu-id="c113b-110">Some interactions you might want to provide your app include:</span></span>
+<span data-ttu-id="f962d-110">アプリで提供する操作には次のものがあります。</span><span class="sxs-lookup"><span data-stu-id="f962d-110">Some interactions you might want to provide your app include:</span></span>
 
-- <span data-ttu-id="c113b-111">情報の送信または提出</span><span class="sxs-lookup"><span data-stu-id="c113b-111">Sending or submiting information</span></span> 
-- <span data-ttu-id="c113b-112">設定とオプションの選択</span><span class="sxs-lookup"><span data-stu-id="c113b-112">Selecting settings and choices</span></span>
-- <span data-ttu-id="c113b-113">コンテンツの検索とフィルター処理</span><span class="sxs-lookup"><span data-stu-id="c113b-113">Searching and filtering content</span></span>
-- <span data-ttu-id="c113b-114">ファイルを開く、保存する、削除する</span><span class="sxs-lookup"><span data-stu-id="c113b-114">Opening, saving, and deleting files</span></span>
-- <span data-ttu-id="c113b-115">コンテンツの編集または作成</span><span class="sxs-lookup"><span data-stu-id="c113b-115">Editing or creating content</span></span>
+- <span data-ttu-id="f962d-111">情報の送信または提出</span><span class="sxs-lookup"><span data-stu-id="f962d-111">Sending or submiting information</span></span> 
+- <span data-ttu-id="f962d-112">設定とオプションの選択</span><span class="sxs-lookup"><span data-stu-id="f962d-112">Selecting settings and choices</span></span>
+- <span data-ttu-id="f962d-113">コンテンツの検索とフィルター処理</span><span class="sxs-lookup"><span data-stu-id="f962d-113">Searching and filtering content</span></span>
+- <span data-ttu-id="f962d-114">ファイルを開く、保存する、削除する</span><span class="sxs-lookup"><span data-stu-id="f962d-114">Opening, saving, and deleting files</span></span>
+- <span data-ttu-id="f962d-115">コンテンツの編集または作成</span><span class="sxs-lookup"><span data-stu-id="f962d-115">Editing or creating content</span></span>
 
-## <a name="use-the-right-command-element-for-the-interaction"></a><span data-ttu-id="c113b-116">操作に適切なコマンド要素を使用</span><span class="sxs-lookup"><span data-stu-id="c113b-116">Use the right command element for the interaction</span></span>
+## <a name="use-the-right-command-element-for-the-interaction"></a><span data-ttu-id="f962d-116">操作に適切なコマンド要素を使用</span><span class="sxs-lookup"><span data-stu-id="f962d-116">Use the right command element for the interaction</span></span>
 
-<span data-ttu-id="c113b-117">適切な要素を使ってコマンド操作を実行することは、直感的で使いやすいアプリとなるか、使いにくくてややこしいアプリとなるかの分かれ目になります。</span><span class="sxs-lookup"><span data-stu-id="c113b-117">Using the right elements to enable command interactions can make the difference between an intuitive, easy-to-use app and a difficult, confusing app.</span></span> <span data-ttu-id="c113b-118">ユニバーサル Windows プラットフォーム (UWP) には、アプリで使うことができる多くのコマンド要素セットが用意されています。</span><span class="sxs-lookup"><span data-stu-id="c113b-118">The Universal Windows Platform (UWP) provides a large set of command elements that you can use in your app.</span></span> <span data-ttu-id="c113b-119">最も一般的ないくつかのコントロールの一覧と、それによって可能になる操作の概要を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="c113b-119">Here's a list of some of the most common controls and a summary of the interactions they can enable.</span></span>
+<span data-ttu-id="f962d-117">適切な要素を使ってコマンド操作を実行することは、直感的で使いやすいアプリとなるか、使いにくくてややこしいアプリとなるかの分かれ目になります。</span><span class="sxs-lookup"><span data-stu-id="f962d-117">Using the right elements to enable command interactions can make the difference between an intuitive, easy-to-use app and a difficult, confusing app.</span></span> <span data-ttu-id="f962d-118">ユニバーサル Windows プラットフォーム (UWP) には、アプリで使うことができる多くのコマンド要素セットが用意されています。</span><span class="sxs-lookup"><span data-stu-id="f962d-118">The Universal Windows Platform (UWP) provides a large set of command elements that you can use in your app.</span></span> <span data-ttu-id="f962d-119">最も一般的ないくつかのコントロールの一覧と、それによって可能になる操作の概要を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="f962d-119">Here's a list of some of the most common controls and a summary of the interactions they can enable.</span></span>
 
 :::row:::
     :::column:::
@@ -90,15 +90,15 @@ ms.locfileid: "5443494"
         Provides suggestions as users type, such as when entering data or performing queries. Examples include <a href="../controls-and-patterns/auto-suggest-box.md">auto-suggest box</a>.<br>
 :::row-end:::
 
-<span data-ttu-id="c113b-120">全一覧については、「[コントロールと UI 要素](../controls-and-patterns/index.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c113b-120">For a complete list, see [Controls and UI elements](../controls-and-patterns/index.md)</span></span>
+<span data-ttu-id="f962d-120">全一覧については、「[コントロールと UI 要素](../controls-and-patterns/index.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f962d-120">For a complete list, see [Controls and UI elements](../controls-and-patterns/index.md)</span></span>
 
-## <a name="place-commands-on-the-right-surface"></a><span data-ttu-id="c113b-121">適切なサーフェスへのコマンドの配置</span><span class="sxs-lookup"><span data-stu-id="c113b-121">Place commands on the right surface</span></span>
+## <a name="place-commands-on-the-right-surface"></a><span data-ttu-id="f962d-121">適切なサーフェスへのコマンドの配置</span><span class="sxs-lookup"><span data-stu-id="f962d-121">Place commands on the right surface</span></span>
 
-<span data-ttu-id="c113b-122">アプリのキャンバスや、コマンド バー、コマンド バーのポップアップ、メニュー バー、およびダイアログなどの特殊なコマンド コンテナーを含む、アプリでの多くのサーフェスにコマンド要素を配置できます。</span><span class="sxs-lookup"><span data-stu-id="c113b-122">You can place command elements on a number of surfaces in your app, including the app canvas or special command containers, such as a command bar, command bar flyout, menu bar, and dialog.</span></span>
+<span data-ttu-id="f962d-122">アプリのキャンバスや、コマンド バー、コマンド バーのポップアップ、メニュー バー、およびダイアログなどの特殊なコマンド コンテナーを含む、アプリでの多くのサーフェスにコマンド要素を配置できます。</span><span class="sxs-lookup"><span data-stu-id="f962d-122">You can place command elements on a number of surfaces in your app, including the app canvas or special command containers, such as a command bar, command bar flyout, menu bar, and dialog.</span></span>
 
-<span data-ttu-id="c113b-123">、可能であれば、する必要があることをユーザーがコンテンツを操作するコマンドを使用してではなく、コンテンツを直接操作に注意してください。</span><span class="sxs-lookup"><span data-stu-id="c113b-123">Note that, whenever possible, you should let users manipulate content directly rather than use commands that act on the content.</span></span> <span data-ttu-id="c113b-124">たとえば、上下に移動するコマンド ボタンを使うのではなく、リスト項目をドラッグ アンド ドロップしてリストを並べ替えることができるようにします。</span><span class="sxs-lookup"><span data-stu-id="c113b-124">For example, allow users to rearrange lists by dragging and dropping list items, rather than using up and down command buttons.</span></span>
+<span data-ttu-id="f962d-123">、可能であれば、する必要があることをユーザーがコンテンツを操作するコマンドを使用してではなく、コンテンツを直接操作に注意してください。</span><span class="sxs-lookup"><span data-stu-id="f962d-123">Note that, whenever possible, you should let users manipulate content directly rather than use commands that act on the content.</span></span> <span data-ttu-id="f962d-124">たとえば、上下に移動するコマンド ボタンを使うのではなく、リスト項目をドラッグ アンド ドロップしてリストを並べ替えることができるようにします。</span><span class="sxs-lookup"><span data-stu-id="f962d-124">For example, allow users to rearrange lists by dragging and dropping list items, rather than using up and down command buttons.</span></span>
 
-<span data-ttu-id="c113b-125">ユーザーが直接コンテンツを操作できない場合は、コマンド要素をアプリのコマンド サーフェスに配置します。</span><span class="sxs-lookup"><span data-stu-id="c113b-125">Otherwise, if users can't manipulate content directly, then place command elements on a command surface in your app.</span></span> <span data-ttu-id="c113b-126">最も一般的ないくつかのコマンド サーフェスの一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c113b-126">Here's a list of some of the most common command surfaces.</span></span>
+<span data-ttu-id="f962d-125">ユーザーが直接コンテンツを操作できない場合は、コマンド要素をアプリのコマンド サーフェスに配置します。</span><span class="sxs-lookup"><span data-stu-id="f962d-125">Otherwise, if users can't manipulate content directly, then place command elements on a command surface in your app.</span></span> <span data-ttu-id="f962d-126">最も一般的ないくつかのコマンド サーフェスの一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f962d-126">Here's a list of some of the most common command surfaces.</span></span>
 
 :::row:::
     :::column:::
@@ -134,11 +134,11 @@ ms.locfileid: "5443494"
         <p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
 :::row-end:::
 
-## <a name="provide-feedback-for-interactions"></a><span data-ttu-id="c113b-127">操作に対するフィードバックの提供</span><span class="sxs-lookup"><span data-stu-id="c113b-127">Provide feedback for interactions</span></span>
+## <a name="provide-feedback-for-interactions"></a><span data-ttu-id="f962d-127">操作に対するフィードバックの提供</span><span class="sxs-lookup"><span data-stu-id="f962d-127">Provide feedback for interactions</span></span>
 
-<span data-ttu-id="c113b-128">フィードバックでコマンドの実行結果を伝えると、ユーザーは実行したことと次に実行できることを把握することができます。</span><span class="sxs-lookup"><span data-stu-id="c113b-128">Feedback communicates the results of commands and allows users to understand what they've done, and what they can do next.</span></span> <span data-ttu-id="c113b-129">フィードバックが UI に自然に統合されていて、ユーザーの介在が不要であるか、どうしても必要な場合以外は他の操作が不要であることが理想的です。</span><span class="sxs-lookup"><span data-stu-id="c113b-129">Ideally, feedback should be integrated naturally in your UI, so users don't have to be interrupted, or take additional action unless absolutely necessary.</span></span> 
+<span data-ttu-id="f962d-128">フィードバックでコマンドの実行結果を伝えると、ユーザーは実行したことと次に実行できることを把握することができます。</span><span class="sxs-lookup"><span data-stu-id="f962d-128">Feedback communicates the results of commands and allows users to understand what they've done, and what they can do next.</span></span> <span data-ttu-id="f962d-129">フィードバックが UI に自然に統合されていて、ユーザーの介在が不要であるか、どうしても必要な場合以外は他の操作が不要であることが理想的です。</span><span class="sxs-lookup"><span data-stu-id="f962d-129">Ideally, feedback should be integrated naturally in your UI, so users don't have to be interrupted, or take additional action unless absolutely necessary.</span></span> 
 
-<span data-ttu-id="c113b-130">アプリでフィードバックを提供する方法をいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="c113b-130">Here are some ways to provide feedback in your app.</span></span>
+<span data-ttu-id="f962d-130">アプリでフィードバックを提供する方法をいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="f962d-130">Here are some ways to provide feedback in your app.</span></span>
 
 :::row:::
     :::column:::
@@ -157,7 +157,7 @@ ms.locfileid: "5443494"
     :::column span="2":::
         <b>Flyouts</b>
 
-       <span data-ttu-id="c113b-131"><a href="../controls-and-patterns/dialogs-and-flyouts/index.md">ポップアップ</a>は、軽量のコンテキストに沿ったポップアップをタップするか、どこかクリックすると、ポップアップの外側で閉じることができます。</span><span class="sxs-lookup"><span data-stu-id="c113b-131"><a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Flyouts</a> are lightweight contextual popups that can be dismissed by tapping or clicking somewhere outside the flyout.</span></span>
+       <span data-ttu-id="f962d-131"><a href="../controls-and-patterns/dialogs-and-flyouts/index.md">ポップアップ</a>は、軽量のコンテキストに沿ったポップアップをタップするか、どこかクリックすると、ポップアップの外側で閉じることができます。</span><span class="sxs-lookup"><span data-stu-id="f962d-131"><a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Flyouts</a> are lightweight contextual popups that can be dismissed by tapping or clicking somewhere outside the flyout.</span></span>
 :::row-end:::
 
 :::row:::
@@ -172,11 +172,11 @@ ms.locfileid: "5443494"
 :::row-end:::
 
 > [!TIP]
-> <span data-ttu-id="c113b-132">アプリで使う確認ダイアログの量に注意してください。ユーザーが間違えたときはとても役に立ちますが、ユーザーが意図的にアクションを実行しようとしているときは邪魔になります。</span><span class="sxs-lookup"><span data-stu-id="c113b-132">Be careful of how much your app uses confirmation dialogs; they can be very helpful when the user makes a mistake, but they are a hindrance whenever the user is trying to perform an action intentionally.</span></span>
+> <span data-ttu-id="f962d-132">アプリで使う確認ダイアログの量に注意してください。ユーザーが間違えたときはとても役に立ちますが、ユーザーが意図的にアクションを実行しようとしているときは邪魔になります。</span><span class="sxs-lookup"><span data-stu-id="f962d-132">Be careful of how much your app uses confirmation dialogs; they can be very helpful when the user makes a mistake, but they are a hindrance whenever the user is trying to perform an action intentionally.</span></span>
 
-### <a name="when-to-confirm-or-undo-actions"></a><span data-ttu-id="c113b-133">アクションを確認または元に戻すタイミング</span><span class="sxs-lookup"><span data-stu-id="c113b-133">When to confirm or undo actions</span></span>
+### <a name="when-to-confirm-or-undo-actions"></a><span data-ttu-id="f962d-133">アクションを確認または元に戻すタイミング</span><span class="sxs-lookup"><span data-stu-id="f962d-133">When to confirm or undo actions</span></span>
 
-<span data-ttu-id="c113b-134">適切に設計されたユーザー インターフェイスであっても、ユーザーがどれほど慎重に作業したとしても、すべてのユーザーは必ず意図しないアクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="c113b-134">No matter how well-designed the user interface is and no matter how careful the user is, at some point, all users will perform an action they wish they hadn't.</span></span> <span data-ttu-id="c113b-135">ユーザーにアクションの確認を求めたり、最近のアクションを元に戻す方法を用意したりして、アプリでこのような状況に対処することができます。</span><span class="sxs-lookup"><span data-stu-id="c113b-135">Your app can help in these situations by requiring the user to confirm an action, or by providing a way of undoing recent actions.</span></span>
+<span data-ttu-id="f962d-134">適切に設計されたユーザー インターフェイスであっても、ユーザーがどれほど慎重に作業したとしても、すべてのユーザーは必ず意図しないアクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="f962d-134">No matter how well-designed the user interface is and no matter how careful the user is, at some point, all users will perform an action they wish they hadn't.</span></span> <span data-ttu-id="f962d-135">ユーザーにアクションの確認を求めたり、最近のアクションを元に戻す方法を用意したりして、アプリでこのような状況に対処することができます。</span><span class="sxs-lookup"><span data-stu-id="f962d-135">Your app can help in these situations by requiring the user to confirm an action, or by providing a way of undoing recent actions.</span></span>
 
 :::row:::
     :::column:::
@@ -199,7 +199,7 @@ ms.locfileid: "5443494"
         -   Renaming a file
 :::row-end:::
 
-##  <a name="optimize-for-specific-input-types"></a><span data-ttu-id="c113b-136">特定の入力タイプの最適化</span><span class="sxs-lookup"><span data-stu-id="c113b-136">Optimize for specific input types</span></span>
+##  <a name="optimize-for-specific-input-types"></a><span data-ttu-id="f962d-136">特定の入力タイプの最適化</span><span class="sxs-lookup"><span data-stu-id="f962d-136">Optimize for specific input types</span></span>
 
-<span data-ttu-id="c113b-137">特定の入力の種類やデバイスを中心としたユーザー エクスペリエンスの最適化について詳しくは、「[操作の基本情報](../input/index.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c113b-137">See the [Interaction primer](../input/index.md) for more detail on optimizing user experiences around a specific input type or device.</span></span>
+<span data-ttu-id="f962d-137">特定の入力の種類やデバイスを中心としたユーザー エクスペリエンスの最適化について詳しくは、「[操作の基本情報](../input/index.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f962d-137">See the [Interaction primer](../input/index.md) for more detail on optimizing user experiences around a specific input type or device.</span></span>
 
