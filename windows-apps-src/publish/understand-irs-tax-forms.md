@@ -3,19 +3,19 @@ author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: マイクロソフトが発行する IRS の税関連の書類について
 ms.author: wdg-dev-content
-ms.date: 03/08/2018
+ms.date: 10/25/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 課税, irs, 米国内国歳入庁, 税, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: ffefc1d645a79296989e95c2fa033b8848e91c3b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: e7f7560d2f069a36d0f6d5837c3282b84840d927
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475471"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5512532"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>マイクロソフトが発行する IRS の税関連の書類について
 
@@ -31,7 +31,25 @@ ms.locfileid: "5475471"
 |1042-S | 米国の源泉徴収税の対象になる開発者への支払いに関連します。 | 書類には **3 月 15 日**までの消印が押されます。また、同時に .pdf コピーがデベロッパー センターで利用可能になります (**[ダッシュボード]、[アカウント設定]、[税プロファイル]** の順に移動します)。 |
 
 > [!NOTE]
-> 注: IRS の税関連書類に記載される住所には、[税プロファイル](setting-up-your-payout-account-and-tax-forms.md#tax-forms)内の住所が利用されます。 住所を変更した場合は、**[税プロファイル]** の住所も変更するようにしてください。
+> IRS の税関連の書類を使用して、アドレスは、[税務プロファイル](setting-up-your-payout-account-and-tax-forms.md#tax-forms)内の住所から取得されます。 住所を変更した場合は、**[税プロファイル]** の住所も変更するようにしてください。
+
+税関連の書類は、次のアドレスからことに送信されます。
+
+**米国人:**
+<table>
+<tr><th>ビジネス グループ</th><th>法人</th><th>Address</th></tr>
+<tr><td>Windows、Office、Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond WA 98052 USA</td></tr>
+<tr><td>広告</td><td>Microsoft Online inc.</td><td>6100 Neil 道路図<br>89511 Reno、NV USA</td></tr>
+<table> 
+
+**非米国人:**
+<table>
+<tr><th>ビジネス グループ</th><th>法人</th><th>Address</th></tr>
+<tr><td>Windows、Office、Azure</td><td>Microsoft アイルランド操作の制限 (支払 Microsoft アイルランド経由で Microsoft Corporation での Microsoft Corporation 修飾仲介として機能する)</td><td>Microsoft の 1 つの場所<br>南&nbsp;郡&nbsp;ビジネス&nbsp;Park<br>Leopardstown、ダブリン 18 アイルランド</td></tr>
+<tr><td>広告 *</td><td>Microsoft アイルランド操作の制限 (支払 Microsoft アイルランド経由で Microsoft Online inc. で Microsoft Online inc. の支払いエージェントとして機能する)</td><td>Microsoft の 1 つの場所<br>南&nbsp;郡&nbsp;ビジネス&nbsp;Park<br>Leopardstown、ダブリン 18 アイルランド</td></tr>
+<tr><td>広告</td><td>Microsoft Online inc.</td><td>6100 Neil 道路図<br>89511 Reno、NV USA</td></tr>
+<tr><td colspan="3">* 広告の収益を獲得する次の国の Microsoft アイルランド操作付きを通じて支払われますオーストリア、ベルギー、ブルガリア、クロアチア、キプロス、チェコ共和国、デンマーク、エストニア、フィンランド、フランス、ドイツ、ギリシャ、ハンガリー、アイルランド、。マン島、イタリア、ラトビア、リヒテンシュタイン、リトアニア、ルクセンブルク、マルタ、モナコ、オランダ、ノルウェー、ポーランド、ポルトガル、ルーマニア、スロバキア、スロベニア、南アフリカ、スペイン、スウェーデン、スイス、英国</td></tr>
+</table>
 
 ## <a name="for-developers-located-in-the-united-states"></a>米国在住の開発者の場合
 
@@ -42,23 +60,15 @@ ms.locfileid: "5475471"
   </tr>
   <tr> 
      <td valign="top">適用される税年度に、<b>アプリの販売数が 200 個を上回り</b>、アプリ販売の合計購入金額が <b>20,000 米国ドルを超えました</b> (Windows 10 の Microsoft Store 経由でブラジルおよび中国で販売された数は<b>含まれません</b>)。</td>
-    <td valign="top"><b>1099-K</b>:<br>
-提出者: Microsoft Corporation<br>
-EIN: \*\*\*\*\*4442<br>
-<br>
-**重要:** フォーム 1099 K には、開発者に支払われた金額ではなく、**仕入総額**が記載されます。</td>
+    <td valign="top"><b>1099-K</b>:<br>提出者: Microsoft Corporation<br>検索: 4442。<br><br><b>重要</b>: フォーム 1099-k しない支払い、<b>総購入</b>金額が含まれています。</td>
   </tr>
   <tr> 
      <td valign="top">(i) Windows 10 の Microsoft Store 経由でブラジルおよび中国で販売したアプリまたは (ii) Minecraft Marketplace マーケットプレースでの売り上げについて、<b>10 ドル以上の支払い額</b>を受け取りました。<br>
 <br>
-**または**<br>
+<b>または</b><br>
 <br>
 適用される税年度に、アプリの売り上げと関連のない 600 ドル以上の支払いをマイクロソフトから受け取りました (インセンティブ支払いや、コンテストまたはプロモーションによる支払いなど)。</td>
-    <td valign="top"><b>1099-MISC</b> :<br>
-支払者: Microsoft Corporation<br>
-EIN: \*\*\*\*\*4442<br>
-<br>
-**重要:** 一部のビジネス エンティティは、マイクロソフトから支払い金額を受け取っているかどうかに関係なく、1099-MISC フォームを受け取りません。  詳細については、税務の専門家にお問い合わせください。</td>
+    <td valign="top"><b>1099-MISC</b> :<br>支払者: Microsoft Corporation<br>検索: 4442。<br><br><b>重要</b>: 特定のビジネス エンティティは Microsoft から受信した支払いの金額に関係なく、1099-MISC フォームを受け取りません。  詳細については、税務の専門家にお問い合わせください。</td>
   </tr>
   <tr>
     <td valign="top">上のいずれの理由も該当しません。</td>
@@ -69,16 +79,12 @@ EIN: \*\*\*\*\*4442<br>
     <td valign="top">&nbsp;</td>
   </tr>
   <tr>
-     <th>米国在住の開発者で有料アプリを販売しており、以下の条件を満たす場合 </th>
+     <th>アプリ内広告がセールス米国在住の開発者のどちらと. </th>
      <th> 以下の書類を受け取る</th>
   </tr>
   <tr> 
      <td valign="top">適用される税年度に、アプリ内広告によって <b>600 ドル以上の支払い</b>を受け取りました。</td>
-    <td valign="top"><b>1099-MISC</b>:<br>
-支払い人: Microsoft Online Inc<br>
-EIN: \*\*\*\*\*0505<br>
-<br>
-**重要:** 一部のビジネス エンティティは、マイクロソフトから支払い金額を受け取っているかどうかに関係なく、1099-MISC フォームを受け取りません。  詳細については、税務の専門家にお問い合わせください。  </td>
+    <td valign="top"><b>1099-MISC</b>:<br>支払い人: Microsoft Online Inc<br>検索: 0505。<br><br><b>重要</b>: 特定のビジネス エンティティは Microsoft から受信した支払いの金額に関係なく、1099-MISC フォームを受け取りません。  詳細については、税務の専門家にお問い合わせください。</td>
   </tr>
   <tr> 
      <td valign="top">適用される税年度に、アプリ内広告によって <b>600 ドル未満の支払い</b>を受け取りました。</td>
@@ -102,11 +108,7 @@ EIN: \*\*\*\*\*0505<br>
     <td valign="top"><b>W8 フォームをすべて記入した際に支払いが源泉徴収されたのはなぜですか。</b></td>
     <td valign="top">税金は次のいずれかの場合に源泉徴収されます。<br>
      1. W8 の租税条約の項がすべて正しく記載されていなかった場合<br>
-     2. 米国との租税条約がない国に在住している場合
-
-     You can visit Dev Center at any time to submit an updated W8 form.<br>
-     <br>
-     **Note:** Not all income is subject to tax withholding.</td>
+     2. 米国との租税条約がない国に在住している場合<br><br>更新した W8 フォームを送信するには、いつでもデベロッパー センターにアクセスすることができます。<br><br><b>注</b>: すべての収益とは、源泉徴収の対象です。</td>
   </tr>
   <tr>
     <td valign="top"><b>適切な条約情報を使って更新した W8 フォームを提出しました。 マイクロソフトは源泉徴収された税金を払い戻してくれますか。</b></td>

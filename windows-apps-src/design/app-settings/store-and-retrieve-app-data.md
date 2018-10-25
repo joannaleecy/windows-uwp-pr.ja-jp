@@ -10,14 +10,14 @@ ms.date: 11/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 47383cd8f89e5da104ac73878b0613c364240459
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: f73a99ea4dc58880f1de517853a05aa0b0d6dd6b
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817300"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5512904"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>設定と他のアプリ データを保存して取得する
 
@@ -172,7 +172,7 @@ async void ReadTimestamp()
 -   デバイス固有のアプリ データをローミングしないでください。 ローカルにあるファイル リソースのパス名など、ローカルのみに関連した情報もあります。 ローカル情報をローミングする場合は、その情報が別のデバイスで無効なときにアプリを回復できることを確認してください。
 -   大量のアプリ データをローミングしないでください。 アプリでローミングできるアプリ データの量には制限があります。この最大値を取得するには、[**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) プロパティを使ってください。 この制限に達した場合、アプリ データのサイズが制限を下回るまで、データはローミングできません。 アプリを設計する際は、この制限を超えないようにサイズの大きいデータをどのように制限するかを検討してください。 たとえば、ゲームの状態を保存するのにそれぞれ 10 KB 必要になる場合は、ユーザーによる保存を 10 ゲームまでに制限したりすると効果的です。
 -   即時同期に依存するデータにローミングを使わないでください。 Windows では即時同期が保証されません。ユーザーがオフラインであったり、待ち時間の長いネットワークを使っている場合、ローミングはかなり遅れる可能性があります。 UI が即時同期に依存しないことを確認してください。
--   頻繁に変更されるデータにローミングを使わないでください。 たとえば、再生中の曲の秒刻みの位置など、頻繁に変更される情報を追跡する場合は、この情報をローミング アプリ データとして保存しないでください。 代わりに、現在再生中の曲など、変更の頻度が少なく、ユーザー エクスペリエンスも損なわないような情報を利用します。
+-   頻繁に変更されるデータのローミングを使用しないでください。 たとえば、再生中の曲の秒刻みの位置など、頻繁に変更される情報を追跡する場合は、この情報をローミング アプリ データとして保存しないでください。 代わりに、現在再生中の曲など、変更の頻度が少なく、ユーザー エクスペリエンスも損なわないような情報を利用します。
 
 ### <a name="roaming-pre-requisites"></a>ローミングの前提条件
 
