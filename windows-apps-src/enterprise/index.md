@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5476614"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5521764"
 ---
 # <a name="enterprise"></a><span data-ttu-id="f0a7d-104">Enterprise</span><span class="sxs-lookup"><span data-stu-id="f0a7d-104">Enterprise</span></span>
 

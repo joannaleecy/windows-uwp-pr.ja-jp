@@ -5,45 +5,45 @@ description: Xbox 開発者モード コンパニオン アプリに関する情
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
-ms.openlocfilehash: 38bafd7c63b101e495748c169a1b566115c2a1e6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 0054b71276eec33f87ff1ae51dff0d58c0efcfce
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246542"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572481"
 ---
-# <a name="xbox-dev-mode-companion"></a><span data-ttu-id="5f206-104">Xbox 開発者モード コンパニオン</span><span class="sxs-lookup"><span data-stu-id="5f206-104">Xbox Dev Mode Companion</span></span>
+# <a name="xbox-dev-mode-companion"></a><span data-ttu-id="77a98-104">Xbox 開発者モード コンパニオン</span><span class="sxs-lookup"><span data-stu-id="77a98-104">Xbox Dev Mode Companion</span></span>
 
-<span data-ttu-id="5f206-105">Xbox 開発者モード コンパニオンを使用すると、Xbox One 本体にリモート接続して制御できます。</span><span class="sxs-lookup"><span data-stu-id="5f206-105">Xbox Dev Mode Companion allows you to remotely connect to an Xbox One console and control it.</span></span> <span data-ttu-id="5f206-106">このツールは、Xbox 開発者モードを使用する開発者のために作成されました。</span><span class="sxs-lookup"><span data-stu-id="5f206-106">This tool was created for developers using Xbox Developer Mode.</span></span>
+<span data-ttu-id="77a98-105">Xbox 開発者モード コンパニオンを使用すると、Xbox One 本体にリモート接続して制御できます。</span><span class="sxs-lookup"><span data-stu-id="77a98-105">Xbox Dev Mode Companion allows you to remotely connect to an Xbox One console and control it.</span></span> <span data-ttu-id="77a98-106">このツールは、Xbox 開発者モードを使用する開発者のために作成されました。</span><span class="sxs-lookup"><span data-stu-id="77a98-106">This tool was created for developers using Xbox Developer Mode.</span></span>
 
-## <a name="how-to-get-the-app"></a><span data-ttu-id="5f206-107">アプリを入手する方法</span><span class="sxs-lookup"><span data-stu-id="5f206-107">How to get the app</span></span>  
-<span data-ttu-id="5f206-108">[Xbox 開発者モード コンパニオン (プレビュー)](https://www.microsoft.com/store/p/xbox-dev-mode-companion/9nblggh519cp) をダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="5f206-108">Download the [Xbox Dev Mode Companion (Preview)](https://www.microsoft.com/store/p/xbox-dev-mode-companion/9nblggh519cp).</span></span>
+## <a name="how-to-get-the-app"></a><span data-ttu-id="77a98-107">アプリを入手する方法</span><span class="sxs-lookup"><span data-stu-id="77a98-107">How to get the app</span></span>  
+<span data-ttu-id="77a98-108">[Xbox 開発者モード コンパニオン (プレビュー)](https://www.microsoft.com/store/p/xbox-dev-mode-companion/9nblggh519cp) をダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="77a98-108">Download the [Xbox Dev Mode Companion (Preview)](https://www.microsoft.com/store/p/xbox-dev-mode-companion/9nblggh519cp).</span></span>
 
-## <a name="how-to-connect"></a><span data-ttu-id="5f206-109">接続する方法</span><span class="sxs-lookup"><span data-stu-id="5f206-109">How to connect</span></span>   
-<span data-ttu-id="5f206-110">本体に接続するには:</span><span class="sxs-lookup"><span data-stu-id="5f206-110">To connect to your console:</span></span>
+## <a name="how-to-connect"></a><span data-ttu-id="77a98-109">接続する方法</span><span class="sxs-lookup"><span data-stu-id="77a98-109">How to connect</span></span>   
+<span data-ttu-id="77a98-110">本体に接続するには:</span><span class="sxs-lookup"><span data-stu-id="77a98-110">To connect to your console:</span></span>
 
-1. <span data-ttu-id="5f206-111">アプリを起動します。</span><span class="sxs-lookup"><span data-stu-id="5f206-111">Launch the app.</span></span>   
-2. <span data-ttu-id="5f206-112">接続ダイアログに本体が表示されない場合は、ダイアログ ボックスの下部にあるテキスト ボックスに本体の IP アドレスを入力し、**[接続]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5f206-112">If you don't see your console listed in the connection dialog, type your console's IP address in the text box at the bottom of the dialog, and then select **Connect**.</span></span>
+1. <span data-ttu-id="77a98-111">アプリを起動します。</span><span class="sxs-lookup"><span data-stu-id="77a98-111">Launch the app.</span></span>   
+2. <span data-ttu-id="77a98-112">接続ダイアログに本体が表示されない場合は、ダイアログ ボックスの下部にあるテキスト ボックスに本体の IP アドレスを入力し、**[接続]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="77a98-112">If you don't see your console listed in the connection dialog, type your console's IP address in the text box at the bottom of the dialog, and then select **Connect**.</span></span>
 
-## <a name="streaming-controls"></a><span data-ttu-id="5f206-113">ストリーミング コントロール</span><span class="sxs-lookup"><span data-stu-id="5f206-113">Streaming controls</span></span>
-<span data-ttu-id="5f206-114">接続した後は、ストリーミング領域の上にマウス ポインターを移動することでストリーミング コントロールにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="5f206-114">After you have connected, you can access the streaming controls by hovering over the streaming area with your mouse.</span></span> <span data-ttu-id="5f206-115">これらのコントロールでは以下のことを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="5f206-115">These controls allow you to:</span></span>
-* <span data-ttu-id="5f206-116">全画面表示とウィンドウ モードを切り替えます。</span><span class="sxs-lookup"><span data-stu-id="5f206-116">Toggle between full screen and windowed mode.</span></span>
-* <span data-ttu-id="5f206-117">Windows Device Portal を起動します。</span><span class="sxs-lookup"><span data-stu-id="5f206-117">Launch the Windows Device Portal.</span></span>
-* <span data-ttu-id="5f206-118">本体のオンとオフを切り替えます。</span><span class="sxs-lookup"><span data-stu-id="5f206-118">Turn the console on and off.</span></span>
-* <span data-ttu-id="5f206-119">切断します。</span><span class="sxs-lookup"><span data-stu-id="5f206-119">Disconnect.</span></span>
+## <a name="streaming-controls"></a><span data-ttu-id="77a98-113">ストリーミング コントロール</span><span class="sxs-lookup"><span data-stu-id="77a98-113">Streaming controls</span></span>
+<span data-ttu-id="77a98-114">接続した後は、ストリーミング領域の上にマウス ポインターを移動することでストリーミング コントロールにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="77a98-114">After you have connected, you can access the streaming controls by hovering over the streaming area with your mouse.</span></span> <span data-ttu-id="77a98-115">これらのコントロールでは以下のことを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="77a98-115">These controls allow you to:</span></span>
+* <span data-ttu-id="77a98-116">全画面表示とウィンドウ モードを切り替えます。</span><span class="sxs-lookup"><span data-stu-id="77a98-116">Toggle between full screen and windowed mode.</span></span>
+* <span data-ttu-id="77a98-117">Windows Device Portal を起動します。</span><span class="sxs-lookup"><span data-stu-id="77a98-117">Launch the Windows Device Portal.</span></span>
+* <span data-ttu-id="77a98-118">本体のオンとオフを切り替えます。</span><span class="sxs-lookup"><span data-stu-id="77a98-118">Turn the console on and off.</span></span>
+* <span data-ttu-id="77a98-119">切断します。</span><span class="sxs-lookup"><span data-stu-id="77a98-119">Disconnect.</span></span>
 
-## <a name="input"></a><span data-ttu-id="5f206-120">入力</span><span class="sxs-lookup"><span data-stu-id="5f206-120">Input</span></span>
-<span data-ttu-id="5f206-121">アプリで本体に入力を送信するには、PC に Xbox One コントローラーを接続します。</span><span class="sxs-lookup"><span data-stu-id="5f206-121">To send input to your console through the app, you can plug in an Xbox One controller to your PC.</span></span>   
+## <a name="input"></a><span data-ttu-id="77a98-120">入力</span><span class="sxs-lookup"><span data-stu-id="77a98-120">Input</span></span>
+<span data-ttu-id="77a98-121">アプリで本体に入力を送信するには、PC に Xbox One コントローラーを接続します。</span><span class="sxs-lookup"><span data-stu-id="77a98-121">To send input to your console through the app, you can plug in an Xbox One controller to your PC.</span></span>   
     
-<span data-ttu-id="5f206-122">キーボードの方向キー、Enter キー、Esc キーを使用して、本体の UI とキーボード ナビゲーションをサポートするアプリの間を移動することもできます。</span><span class="sxs-lookup"><span data-stu-id="5f206-122">You can also use the arrow, enter, and escape keys on the keyboard to navigate console UI and apps that support keyboard navigation.</span></span> <span data-ttu-id="5f206-123">ヘルプ ページにはキーボードの完全なマッピングがあります。</span><span class="sxs-lookup"><span data-stu-id="5f206-123">The Help page has a full keyboard mapping.</span></span>   
+<span data-ttu-id="77a98-122">キーボードの方向キー、Enter キー、Esc キーを使用して、本体の UI とキーボード ナビゲーションをサポートするアプリの間を移動することもできます。</span><span class="sxs-lookup"><span data-stu-id="77a98-122">You can also use the arrow, enter, and escape keys on the keyboard to navigate console UI and apps that support keyboard navigation.</span></span> <span data-ttu-id="77a98-123">ヘルプ ページにはキーボードの完全なマッピングがあります。</span><span class="sxs-lookup"><span data-stu-id="77a98-123">The Help page has a full keyboard mapping.</span></span>   
    
-<span data-ttu-id="5f206-124">最後に、テキスト ボックスにキーボード入力してテキストを本体に送信できます。</span><span class="sxs-lookup"><span data-stu-id="5f206-124">Finally, in text boxes, you can type on your keyboard to send text to the console.</span></span>   
+<span data-ttu-id="77a98-124">最後に、テキスト ボックスにキーボード入力してテキストを本体に送信できます。</span><span class="sxs-lookup"><span data-stu-id="77a98-124">Finally, in text boxes, you can type on your keyboard to send text to the console.</span></span>   
 
-## <a name="help"></a><span data-ttu-id="5f206-125">ヘルプ</span><span class="sxs-lookup"><span data-stu-id="5f206-125">Help</span></span>
-<span data-ttu-id="5f206-126">接続ダイアログまたはコマンド バーにある [?] アイコンをクリックすると、</span><span class="sxs-lookup"><span data-stu-id="5f206-126">You can view the help page by clicking the ?</span></span> <span data-ttu-id="5f206-127">ヘルプ ページを表示できます。</span><span class="sxs-lookup"><span data-stu-id="5f206-127">icon on either the connect dialog or the command bar.</span></span>
+## <a name="help"></a><span data-ttu-id="77a98-125">ヘルプ</span><span class="sxs-lookup"><span data-stu-id="77a98-125">Help</span></span>
+<span data-ttu-id="77a98-126">接続ダイアログまたはコマンド バーにある [?] アイコンをクリックすると、</span><span class="sxs-lookup"><span data-stu-id="77a98-126">You can view the help page by clicking the ?</span></span> <span data-ttu-id="77a98-127">ヘルプ ページを表示できます。</span><span class="sxs-lookup"><span data-stu-id="77a98-127">icon on either the connect dialog or the command bar.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="5f206-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="5f206-128">See also</span></span>
-- [<span data-ttu-id="5f206-129">Xbox One の UWP</span><span class="sxs-lookup"><span data-stu-id="5f206-129">UWP on Xbox One</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="77a98-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="77a98-128">See also</span></span>
+- [<span data-ttu-id="77a98-129">Xbox One の UWP</span><span class="sxs-lookup"><span data-stu-id="77a98-129">UWP on Xbox One</span></span>](index.md)

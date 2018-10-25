@@ -6,16 +6,14 @@ ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
 ms.date: 10/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, カテゴリ, サブカテゴリ, ジャンル, 分類, ジャンル
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f43ae7c70a9471f279927d87c9d55aac8519d6a
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: a4e85542793fff34609817995fb213eb4f3b7d54
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473472"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572221"
 ---
 # <a name="category-and-subcategory-table"></a><span data-ttu-id="afd0a-103">カテゴリとサブカテゴリの一覧</span><span class="sxs-lookup"><span data-stu-id="afd0a-103">Category and subcategory table</span></span>
 

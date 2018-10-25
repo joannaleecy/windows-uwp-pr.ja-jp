@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 93d9c5df33e1131861c3e5caff625c689b8f330c
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468887"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5518670"
 ---
 # <a name="enable-consumable-add-on-purchases"></a><span data-ttu-id="26eb9-104">コンシューマブルなアドオン購入の有効化</span><span class="sxs-lookup"><span data-stu-id="26eb9-104">Enable consumable add-on purchases</span></span>
 
