@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: faa0325a8540e1e3df9674a4acab2ab33e93dceb
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5442078"
+ms.locfileid: "5474909"
 ---
 # <a name="usersrequestoridpermissionvalidate"></a>/users/{requestorId}/permission/validate
  
@@ -29,7 +29,7 @@ ms.locfileid: "5442078"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。| 
+| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。| 
   
 <a id="ID4ETB"></a>
 
@@ -42,7 +42,7 @@ ms.locfileid: "5442078"
 
 [POST (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidatepost.md)
 
-&nbsp;&nbsp;一連の対象ユーザーのセットを指定した操作を実行するユーザーを許可するかどうかに関するはいまたは no に対する回答を取得します。
+&nbsp;&nbsp;一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no に対する回答を取得します。
  
 <a id="ID4EAC"></a>
 

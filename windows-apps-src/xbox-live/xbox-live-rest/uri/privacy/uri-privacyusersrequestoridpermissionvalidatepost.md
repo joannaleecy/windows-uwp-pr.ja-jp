@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: edffbbff7fb9cd5fc4e471a6af1f494f4a35ea57
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5438430"
+ms.locfileid: "5471843"
 ---
 # <a name="post-usersrequestoridpermissionvalidate"></a>POST (/users/{requestorId}/permission/validate)
-一連の対象ユーザーのセットを指定した操作を実行するユーザーを許可するかどうかに関するはいまたは no に対する回答を取得します。
+一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no に対する回答を取得します。
 
   * [注釈](#ID4EQ)
   * [URI パラメーター](#ID4ECB)
@@ -37,7 +37,7 @@ ms.locfileid: "5438430"
 
 要求本文には、ユーザーの一覧と、設定の一覧と、各ユーザーの設定/ペアの許可/ブロックの結果になります。
 
-クロス ネットワーク マルチプレイヤー シナリオ (、プライバシー通信チェックを Xbox ユーザー ID (XUID) を持つユーザーとそうでないネットワークに接続してユーザーの間で実行する必要があります) でユーザーの種類の[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md)を参照してください。
+シナリオではクロス ネットワーク マルチプレイヤー (場所プライバシー通信チェックを Xbox ユーザー ID (XUID) を持つユーザーとそうでないネットワークに接続してユーザーの間で実行する必要があります)、ユーザーの種類の[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md)を参照してください。
 
 <a id="ID4ECB"></a>
 
@@ -46,7 +46,7 @@ ms.locfileid: "5438430"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
+| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
 
 <a id="ID4ENB"></a>
 
@@ -65,7 +65,7 @@ ms.locfileid: "5438430"
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| string| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1 です。|
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1 です。|
 
 <a id="ID4E4D"></a>
 
@@ -102,7 +102,7 @@ ms.locfileid: "5438430"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

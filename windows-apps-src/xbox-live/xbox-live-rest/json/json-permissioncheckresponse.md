@@ -12,25 +12,25 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f04da7d375b404a5d05dcf5d5e9905b00b7545d9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5434324"
+ms.locfileid: "5467986"
 ---
 # <a name="permissioncheckresponse-json"></a>PermissionCheckResponse (JSON)
-1 つの対象ユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからチェックの結果。 
+1 つの対象ユーザーに対して単一のアクセス許可の設定の 1 人のユーザーからのチェックの結果。 
 <a id="ID4EN"></a>
 
  
 ## <a name="permissioncheckresponse"></a>PermissionCheckResponse
  
-PermissionCheckResponse オブジェクトでは、次の仕様があります。
+PermissionCheckResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | どう| ブール値| 必須。 このメンバーは、ターゲット ユーザーと要求された操作を実行する要求元のユーザーが許可されている場合<b>は true</b> 。| 
-| 結果| [PermissionCheckResult (JSON)](json-permissioncheckresult.md)の配列| 省略可能。 <b>どう</b>が false チェックが要求者に関連するものが拒否された場合は、アクセス許可が拒否された理由を示します。| 
+| 結果| [PermissionCheckResult (JSON)](json-permissioncheckresult.md)の配列| 省略可能。 <b>どう</b>が false 要求者に関連するもので、チェックが拒否された場合は、アクセス許可が拒否された理由を示します。| 
   
 <a id="ID4E3B"></a>
 

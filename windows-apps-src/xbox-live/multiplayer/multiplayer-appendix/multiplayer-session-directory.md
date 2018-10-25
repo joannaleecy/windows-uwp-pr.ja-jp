@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, MPSD, マルチプレイヤー セッション ディレクトリ
 ms.localizationpriority: medium
 ms.openlocfilehash: d69867e2ba5d56eb47007732ae7197c9991be4c4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5441239"
+ms.locfileid: "5469274"
 ---
 # <a name="multiplayer-session-directory-mpsd"></a>マルチプレイヤー セッション ディレクトリ (MPSD)
 
@@ -215,7 +215,7 @@ MPSD を呼び出すための推奨方法は、Multiplayer WinRT API および M
 
 ### <a name="using-the-multiplayer-rest-api-to-interact-with-mpsd"></a>Multiplayer REST API を使用した MPSD との対話
 
-タイトル、またはそのサービスでは、Multiplayer REST API および Matchmaking REST API への標準 HTTP 呼び出しを使用できます。 REST の機能を直接利用するとき、呼び出し元は、セッション ディレクトリの URI に対して DELETE、PUT、POST、および GET 呼び出しを発行してほとんどの操作を行います。 PUT 要求では、要求本文は既存のセッションにマージされます。 既存のセッションがない場合は、要求本文は[Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)に保存されているセッション テンプレートと共に、新しいセッションの作成に使用されます。 すべてのフィールドはオプションで、指定する必要があるのは差分だけです。 そのため、{}がゼロの差分で有効な PUT 要求します。
+タイトル、またはそのサービスでは、Multiplayer REST API および Matchmaking REST API への標準 HTTP 呼び出しを使用できます。 REST の機能を直接利用するとき、呼び出し元は、セッション ディレクトリの URI に対して DELETE、PUT、POST、および GET 呼び出しを発行してほとんどの操作を行います。 PUT 要求では、要求本文は既存のセッションにマージされます。 既存のセッションがない場合は、要求本文は、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)に保存されているセッション テンプレートと共に新しいセッションの作成に使用されます。 すべてのフィールドはオプションで、指定する必要があるのは差分だけです。 そのため、{}有効な PUT 要求のゼロの差分を示します。
 
 サーバーのセッションの公式コピーに影響を与えずにマージの結果を返す仮定の PUT 要求を実行するには、クエリ文字列 "?nocommit=true" を PUT 要求に追加できます。
 

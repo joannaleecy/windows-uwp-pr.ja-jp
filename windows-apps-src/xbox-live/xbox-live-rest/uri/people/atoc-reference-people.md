@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 03a96c69415a8ad13bdafaa821df66a919296f61
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431308"
+ms.locfileid: "5473422"
 ---
 # <a name="people-uris"></a>People URI
  
-このセクションでは、 *people*システムの Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドについての詳細を提供します。
+このセクションでは、 *people*システムの Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
  
 Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームのみでは、このサービスを使用できます。
  
@@ -37,7 +37,7 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/users/{ownerId}/people/{targetid}](uri-usersowneridpeopletargetid.md)
 
-&nbsp;&nbsp;呼び出し元のユーザーのコレクションからターゲット ID によってユーザーにアクセスします。
+&nbsp;&nbsp;呼び出し元のユーザーのコレクションからターゲット ID でユーザーにアクセスします。
 
 [/users/{ownerId}/people/xuids](uri-usersowneridpeoplexuids.md)
 
@@ -45,7 +45,7 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/users/{ownerId}/summary](uri-usersowneridsummary.md)
 
-&nbsp;&nbsp;呼び出し元の観点から所有者に関する集計データをアクセスします。
+&nbsp;&nbsp;呼び出し元の観点から所有者に関する集計データにアクセスします。
  
 <a id="ID4E5B"></a>
 

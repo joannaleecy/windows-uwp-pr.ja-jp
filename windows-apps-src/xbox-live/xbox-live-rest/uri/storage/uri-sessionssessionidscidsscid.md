@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b90272b9674e3c16ad48e66a835220575684714
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439156"
+ms.locfileid: "5469293"
 ---
 # <a name="sessionssessionidscidsscid"></a>/sessions/{sessionId}/scids/{scid}
-このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
+このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインは、 `titlestorage.xboxlive.com`。
  
   * [URI パラメーター](#ID4EV)
  
@@ -31,7 +31,7 @@ ms.locfileid: "5439156"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | sessionId| string| 検索するセッションの ID。| 
-| scid| guid| 検索するサービス構成の ID。| 
+| scid| guid| ルックアップ サービス構成の ID です。| 
   
 <a id="ID4E3B"></a>
 

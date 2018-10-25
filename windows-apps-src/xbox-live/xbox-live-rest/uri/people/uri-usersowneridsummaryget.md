@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ba0cd060b3432de1cbb641a8991283974da192
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5443823"
+ms.locfileid: "5476516"
 ---
 # <a name="get-usersowneridsummary"></a>GET (/users/{ownerId}/summary)
-呼び出し元の観点から、所有者に関する集計データを取得します。
+呼び出し元の観点から所有者に関する集計データを取得します。
 
   * [URI パラメーター](#ID4EQ)
   * [Authorization](#ID4E2)
@@ -37,7 +37,7 @@ ms.locfileid: "5443823"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
 
 <a id="ID4E2"></a>
 
@@ -64,7 +64,7 @@ ms.locfileid: "5443823"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| x xbl コントラクト バージョン| string| この要求する必要があります、サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1|
+| x xbl コントラクト バージョン| string| この要求を送信する必要があります、サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1|
 | Accept| string| コンテンツの種類の受け入れられるします。 すべての返信はされます<code>application/json</code>します。|
 
 <a id="ID4EXE"></a>
@@ -79,13 +79,13 @@ ms.locfileid: "5443823"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| OK| セッションが正常に取得されました。|
 | 400| Bad Request| ユーザー Id が正しくありませんでした。|
-| 403| Forbidden| 承認ヘッダーから、XUID クレームを解析できませんでした。|
+| 403| Forbidden| 承認ヘッダーから XUID クレームを解析できませんでした。|
 
 <a id="ID4EZG"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cb093f624d27f28cace771896cf52146059bc332
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431143"
+ms.locfileid: "5469005"
 ---
 # <a name="personsummary-json"></a>PersonSummary (JSON)
 [ユーザー (JSON)](json-person.md)オブジェクトのコレクションです。 
@@ -25,7 +25,7 @@ ms.locfileid: "5431143"
  
 ## <a name="personsummary"></a>PersonSummary
  
-PersonSummary オブジェクトでは、次の仕様があります。
+PersonSummary オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -33,10 +33,10 @@ PersonSummary オブジェクトでは、次の仕様があります。
 | hasCallerMarkedTargetAsKnown| ブール値| かどうか、呼び出し元がターゲット済みとしてマーク呼ばれます。 値の例: true| 
 | isCallerFollowingTarget| ブール値| かどうか、呼び出し元が、ターゲットをフォローします。 値の例: true| 
 | isTargetFollowingCaller| ブール値| かどうか、ターゲットでは、呼び出し元がフォローします。 値の例: true| 
-| legacyFriendStatus| string| 呼び出し元が示すように、ターゲットの従来のフレンドの状態です。 "None"、"MutuallyAccepted"、"OutgoingRequest"または"IncomingRequest"をすることができます。 値の例:"MutuallyAccepted"| 
-| recentChangeCount| 32 ビット符号なし整数| 省略可能。 ターゲットのソーシャル グラフ内の最新の変更の数です。 この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
-| targetFollowerCount| > 32 ビット符号なし整数| 次のターゲットはユーザーの数です。 値の例: 1308| 
-| targetFollowingCount| 32 ビット符号なし整数| ターゲットが次のユーザーの数です。 値の例: 112| 
+| legacyFriendStatus| string| 従来のフレンドのように、呼び出し元のターゲット状態です。 "None"、"MutuallyAccepted"、"OutgoingRequest"または"IncomingRequest"をすることができます。 値の例:"MutuallyAccepted"| 
+| recentChangeCount| 32 ビットの符号なし整数| 省略可能。 ターゲットのソーシャル グラフの最新の変更の数です。 この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
+| targetFollowerCount| > 32 ビットの符号なし整数| 次のターゲットはユーザーの数です。 値の例: 1308| 
+| targetFollowingCount| 32 ビットの符号なし整数| ターゲットは、次のユーザーの数です。 値の例: 112| 
 | 透かし| string| 省略可能。 ターゲットの最新の変更透かしします。 この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
   
 <a id="ID4E4D"></a>

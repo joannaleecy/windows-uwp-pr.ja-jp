@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d9c5f2e4aa27f86069578211c5c3188b2921449a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431159"
+ms.locfileid: "5476210"
 ---
 # <a name="gameclipuri-json"></a>GameClipUri (JSON)
  
@@ -25,12 +25,12 @@ ms.locfileid: "5431159"
  
 ## <a name="gameclipuri"></a>GameClipUri
  
-GameClipUri オブジェクトでは、次の仕様があります。
+GameClipUri オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | <b>uri</b>| string| ビデオのアセットの場所への URI。| 
-| <b>fileSize</b>| 32 ビット符号なし整数| サムネイル画像の合計ファイル サイズ。| 
+| <b>fileSize</b>| 32 ビットの符号なし整数| サムネイル画像の合計ファイル サイズ。| 
 | <b>uriType</b>| GameClipUriType| URI の種類です。| 
 | <b>有効期限</b>| DateTime| この応答に含まれている URI の有効期限の時刻。 URL の場合は、空のまたは再生する前に有効期限切れと見なされ、呼び出し元は RefreshUrl API を呼び出す必要があります。| 
   

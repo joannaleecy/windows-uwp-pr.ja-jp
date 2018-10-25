@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d7e61fe76fc0f322c93d55448d53ee6444ffec5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445058"
+ms.locfileid: "5471161"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me
 セッション メンバーを削除する削除操作をサポートしています。
@@ -30,7 +30,7 @@ sessiondirectory.xboxlive.com
  
 ## <a name="remarks"></a>注釈
 
-セッション メンバーのリソースのすべての操作では、Xbox ユーザー ID (XUID) ユーザーの承認を要求する必要があります。
+セッション メンバー リソースのすべての操作では、Xbox ユーザー ID (XUID)、ユーザー認証を要求する必要があります。
 
 <a id="ID4EAB"></a>
 

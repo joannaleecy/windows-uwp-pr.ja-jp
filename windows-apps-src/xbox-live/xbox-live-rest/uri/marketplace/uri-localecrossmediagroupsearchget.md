@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 430dbce8b3ac2a79709c5f0761124aa7a78cab5e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445263"
+ms.locfileid: "5469268"
 ---
 # <a name="get-mediamarketplaceidcrossmediagroupsearch"></a>GET (/media/{marketplaceId}/crossMediaGroupSearch)
-いくつかの異なるメディア グループから項目を取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
+いくつかの異なるメディア グループから項目を取得します。 これらの Uri のドメインは、 `eds.xboxlive.com`。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EEB)
@@ -33,7 +33,7 @@ ms.locfileid: "5445263"
  
 グループ間の API は、いくつかの異なるメディア グループから項目を検索するクライアントを許可します。 この API では、結果のページングの前方の継続トークンの使用が必要です。 この API は、クエリの絞り込み条件を受け取ります。
  
-**SandboxId**はここで、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
+**SandboxId**はできるようになりました、XToken で要求から取得し、適用します。 **SandboxId**が存在しない場合のエンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
   
 <a id="ID4EEB"></a>
 

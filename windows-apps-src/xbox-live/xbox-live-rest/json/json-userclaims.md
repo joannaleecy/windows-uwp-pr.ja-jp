@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a5ec9878845b7d93cd4db18ff9825d728897a5c0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5444663"
+ms.locfileid: "5470253"
 ---
 # <a name="userclaims-json"></a>UserClaims (JSON)
 現在の認証されたユーザーに関する情報を返します。 
@@ -25,12 +25,12 @@ ms.locfileid: "5444663"
  
 ## <a name="userclaims"></a>UserClaims
  
-UserClaims オブジェクトでは、次の仕様があります。
+UserClaims オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | ゲーマータグ| string| ユーザーのゲーマータグです。| 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーのします。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) ユーザーのします。| 
   
 <a id="ID4EZB"></a>
 

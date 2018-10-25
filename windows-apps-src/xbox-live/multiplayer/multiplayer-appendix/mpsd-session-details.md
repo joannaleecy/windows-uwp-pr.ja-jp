@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015, セッション テンプレート, MPSD
 ms.localizationpriority: medium
 ms.openlocfilehash: a6a9e88582b0d9c411cf4cd32aaf94beb0c5d0d0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5441773"
+ms.locfileid: "5469302"
 ---
 # <a name="mpsd-session-details"></a>MPSD セッションの詳細
 
@@ -33,7 +33,7 @@ ms.locfileid: "5441773"
 
 ## <a name="session-overview"></a>セッションの概要
 
-マルチプレイヤー セッション ディレクトリ (MPSD) セッションはセッション名を持ちがセッションの既定の設定を提供する JSON ドキュメントであるセッション テンプレートのインスタンスとして識別されます。 テンプレートは、サービス構成 id (SCID) でサービス構成の一部は GUID です。 このテンプレートは、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)で見つかんだでき、 [Windows デベロッパー センター](https://partner.microsoft.com/dashboard/windows/overview)のサービス構成は、開発者向けのリソースの取り込み、管理、およびセキュリティ ポリシーを使用します。 セッションを MPSD を介してアクセスすると、XDP または Windows デベロッパー センターを通じてデベロッパーが設定したアクセス ポリシーに従って、サービス構成に対してプリンシパルの承認が実行されます。 サービス構成へのアクセスが承認された後にセッションが読み込まれると、セッションのメンバーシップ検証などのセカンダリー アクセス チェックがセッション レベルで実行されます。
+マルチプレイヤー セッション ディレクトリ (MPSD) セッションはセッションの名前を持つし、は、セッションの既定の設定を提供する JSON ドキュメントは、セッション テンプレートのインスタンスとして識別されます。 テンプレートは、サービス構成 id (SCID) でサービス構成の一部は GUID です。 このテンプレートにある [ [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)と、 [Windows デベロッパー センター](https://partner.microsoft.com/dashboard/windows/overview)サービス構成は、開発者向けリソースの取り込み、管理、およびセキュリティ ポリシーを使用します。 セッションを MPSD を介してアクセスすると、XDP または Windows デベロッパー センターを通じてデベロッパーが設定したアクセス ポリシーに従って、サービス構成に対してプリンシパルの承認が実行されます。 サービス構成へのアクセスが承認された後にセッションが読み込まれると、セッションのメンバーシップ検証などのセカンダリー アクセス チェックがセッション レベルで実行されます。
 
 ここでは、テンプレートでコントラクト バージョン 107 を使用していると仮定します。このコントラクト バージョンは、Xbox One の現在の MPSD で使用されているバージョンです。 コントラクト バージョン 105 (104 と同じ) に基づいてテンプレートを定義した場合は、バージョン 107 をサポートするためにこれらを変更してください。 手順については、「[マルチプレイヤー 2015 での移行における一般的な問題](common-issues-when-adapting-multiplayer.md)」を参照してください。
 

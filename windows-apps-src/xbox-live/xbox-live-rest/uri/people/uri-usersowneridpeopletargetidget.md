@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a0735a65afe8b5748efefce5dec9ad1989a77b4d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5432791"
+ms.locfileid: "5471705"
 ---
 # <a name="get-usersowneridpeopletargetid"></a>GET (/users/{ownerId}/people/{targetid})
 呼び出し元のユーザーのコレクションからターゲット ID でユーザーを取得します。 これらの Uri のドメインが`social.xboxlive.com`します。
@@ -45,8 +45,8 @@ ms.locfileid: "5432791"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。| 
-| targetid| string| 所有者のユーザー リスト、Xbox ユーザー ID (XUID) またはゲーマータグのいずれかからのデータを取得するユーザーの識別子です。 値の例: xuid(2603643534573581)、gt(SomeGamertag) します。| 
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。| 
+| targetid| string| Xbox ユーザー ID (XUID) か、ゲーマータグの所有者のユーザー一覧からのデータを取得するユーザーの識別子です。 値の例: xuid(2603643534573581)、gt(SomeGamertag) します。| 
   
 <a id="ID4EJB"></a>
 
@@ -73,8 +73,8 @@ ms.locfileid: "5432791"
  
 | ヘッダー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。| 
-| Accept| [String]。 コンテンツ タイプを呼び出し元が応答で受け取る。 すべての応答とは、<b>アプリケーション/json</b>です。| 
+| X RequestedServiceVersion| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。| 
+| Accept| [String]。 コンテンツ タイプを呼び出し元が応答で受け取る。 すべての応答は、<b>アプリケーション/json</b>です。| 
   
 <a id="ID4EWE"></a>
 
@@ -88,14 +88,14 @@ ms.locfileid: "5432791"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| OK| 成功します。| 
 | 400| Bad Request| ユーザー Id が正しくありませんでした。| 
-| 403| Forbidden| 承認ヘッダーから、XUID クレームを解析できませんでした。| 
-| 404| 見つかりません。| 対象ユーザーが所有者の People リストに見つかりませんでした。| 
+| 403| Forbidden| 承認ヘッダーから XUID クレームを解析できませんでした。| 
+| 404| Not Found します。| 対象ユーザーが所有者の People リストに見つかりませんでした。| 
   
 <a id="ID4EDH"></a>
 
@@ -104,7 +104,7 @@ ms.locfileid: "5432791"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Content-Length| 32 ビット符号なし整数| バイト単位の長さ、応答本文。 値の例: 22 します。| 
+| Content-Length| 32 ビットの符号なし整数| バイト単位の長さ、応答本文。 値の例: 22 します。| 
 | Content-Type| string| 応答本文の MIME タイプ。 これにより、<b>アプリケーション/json</b>は常になります。| 
   
 <a id="ID4EQAAC"></a>
@@ -112,7 +112,7 @@ ms.locfileid: "5432791"
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、対象のユーザーを返します。 [Person (JSON)](../../json/json-person.md)を参照してください。
+呼び出しが成功した場合、サービスは、対象のユーザーを返します。 [Person (JSON)](../../json/json-person.md)を参照してください。
  
 <a id="ID4E3AAC"></a>
 

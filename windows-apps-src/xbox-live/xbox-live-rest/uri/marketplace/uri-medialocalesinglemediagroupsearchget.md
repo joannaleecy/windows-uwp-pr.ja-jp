@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a66f5b505114eb63f9b62c985c108af6d752334
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439249"
+ms.locfileid: "5474195"
 ---
 # <a name="get-mediamarketplaceidsinglemediagroupsearch"></a>GET (media/{marketplaceId}/singleMediaGroupSearch)
-1 つのメディア グループ内の項目の検索を許可します。 これらの Uri のドメインが`eds.xboxlive.com`します。
+1 つのメディア グループ内の項目を検索をできます。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EEB)
@@ -31,9 +31,9 @@ ms.locfileid: "5439249"
  
 ## <a name="remarks"></a>注釈
  
-この検索から返されるデータのページは、非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してアクセスできます。 この API は、クエリの絞り込み条件を受け取ります。 
+非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してこの検索から返されるデータのページにアクセスできます。 この API は、クエリの絞り込み条件を受け取ります。 
  
-**SandboxId**はここで、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
+**SandboxId**はできるようになりました、XToken で要求から取得し、適用します。 **SandboxId**が存在しない場合のエンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
   
 <a id="ID4EEB"></a>
 
@@ -49,7 +49,7 @@ ms.locfileid: "5439249"
  
 ## <a name="query-string-parameters"></a>クエリ文字列パラメーター
  
-この API は、次のクエリ パラメーターを受け取ります combinedContentRating、desiredMediaItemTypes、フィールド、maxItems、preferredProvider、q、queryRefiners、skipItems、firstPartyOnly、freeOnly、hasTrailer、latestOnly、subscriptionLevel、および topRatedOnly。.
+この API は、次のクエリ パラメーターを受け取る: combinedContentRating、desiredMediaItemTypes、フィールド、maxItems、preferredProvider、q、queryRefiners、skipItems、firstPartyOnly、freeOnly、hasTrailer、latestOnly、subscriptionLevel、および topRatedOnly.
  
 これらのパラメーターについて詳しくは、 [EDS パラメーター](../../additional/edsparameters.md)を参照してください。
   

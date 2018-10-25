@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 273819165e5dcf6b6398cd5b62e99be358e5ae9b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5444862"
+ms.locfileid: "5471207"
 ---
 # <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)
 メンバーをセッションから削除します。
@@ -34,7 +34,7 @@ ms.locfileid: "5444862"
 
 
 ## <a name="remarks"></a>注釈
-すべてのセッション メンバー リソース操作には、Xbox ユーザー ID (XUID) 承認が必要です。  
+すべてのセッション メンバー リソースの操作には、Xbox ユーザー ID (XUID) 承認が必要です。  
 <a id="ID4E3"></a>
 
 
@@ -50,7 +50,7 @@ ms.locfileid: "5444862"
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4ENB"></a>
 
 

@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ece582e46601fd63ba16a99a071ae40ecaff2d4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439066"
+ms.locfileid: "5468302"
 ---
 # <a name="usersxuidxuidachievements"></a>/users/xuid({xuid})/achievements
  
 このユニバーサル リソース識別子 (URI) は、ユーザーの実績へのアクセスを提供します。
  
-これらの Uri のドメインが`achievements.xboxlive.com`します。
+これらの Uri のドメインは、 `achievements.xboxlive.com`。
  
 <a id="ID4E1"></a>
 
@@ -31,12 +31,12 @@ ms.locfileid: "5439066"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) が (リソース) にアクセスしているユーザーのです。 認証されたユーザーの XUID に一致する必要があります。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) が (リソース) にアクセスしているユーザーのします。 認証されたユーザーの XUID が一致する必要があります。| 
   
 <a id="ID4EAC"></a>
 
  
-## <a name="valid-methods"></a>有効なメソッド
+## <a name="valid-methods"></a>有効な方法
 
 [GET](uri-achievementsusersxuidachievementsgetv2.md)
 

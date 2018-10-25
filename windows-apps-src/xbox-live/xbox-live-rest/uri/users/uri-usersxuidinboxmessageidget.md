@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e94396f86b235aafce2e8a65f93eedbdc96f46b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5434349"
+ms.locfileid: "5473587"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
-サービスのマーキング、特定のユーザー メッセージの詳細なメッセージ テキストを取得します。
+サービスでの読み取りとしてマークすること、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。
 これらの Uri のドメインが`msg.xboxlive.com`します。
 
   * [注釈](#ID4EV)
@@ -37,9 +37,9 @@ ms.locfileid: "5434349"
 
 Get 操作は、ユーザー、システム、および FriendRequest メッセージの種類でのみ実行できます。
 
-この URI には、Xbox.com に更新が必要です。 現時点では、ユーザーがサインアウトするまで、およびでもう一度、Xbox 360 は読み取り/未読メの状態を更新されません。
+この URI には、Xbox.com に更新が必要です。 現時点では、Xbox 360 は、状態を更新読み取り/未読メに戻すまで、ユーザーがサインアウトしたとします。
 
-この API は、サポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
+この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
 
 <a id="ID4EEB"></a>
 
@@ -48,7 +48,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) 要求を行っているプレイヤーのします。 |
+| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 |
 | メッセージ Id | 文字列 [50] | 取得または削除されるメッセージの ID です。 |
 
 <a id="ID4ERB"></a>
@@ -70,14 +70,14 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果
 
-のみユーザー メッセージを取得することができます。
+のみ、独自のユーザーのメッセージを取得できます。
 
 <a id="ID4EUC"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 説明|
 | --- | --- | --- | --- | --- |
@@ -92,27 +92,27 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 ## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答
 
-正常に呼び出されると、サービスは、JSON 形式での結果データを返します。 ルート オブジェクトは、UserMessageHeader オブジェクトです。
+正常に呼び出されると、サービスは結果データを JSON 形式で返します。 ルート オブジェクトは、UserMessageHeader オブジェクトです。
 
 #### <a name="usermessageheader"></a>UserMessageHeader
 
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- |
-| header| ヘッダー|  | JSON オブジェクト|
+| header| ヘッダー|  | JSON オブジェクト|
 | メッセージ テキスト| string| 256| UTF-8|
 
 #### <a name="header"></a>ヘッダー
 
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- |
-| 送信| DateTime|  | 日付と時刻は、メッセージが送信されました。 (サービスによって提供されます)。|
-| 有効期限| DateTime|  | 日付と時刻のメッセージの有効期限が切れます。 (すべてのメッセージによって、将来的に決定する、最長有効期間がある)。|
+| 送信| DateTime|  | 日付と時刻は、メッセージが送信されました。 (サービスによって提供されます)。|
+| 有効期限| DateTime|  | 日付と時刻のメッセージの有効期限が切れます。 (すべてのメッセージによって、将来的に決定する、最長有効期間がある)。|
 | メッセージの種類| string| 13| メッセージの種類: ユーザー、システム、FriendRequest します。|
-| senderXuid| ulong|  | 送信者の XUID です。|
+| senderXuid| ulong|  | 送信者の XUID です。|
 | 送信者| string| 15| 送信者のゲーマータグです。|
-| hasAudio| bool|  | かどうか、メッセージには、オーディオ (声) 添付ファイルがあります。|
-| hasPhoto| bool|  | メッセージに写真の添付ファイルかどうか。|
-| hasText| bool|  | かどうか、メッセージには、テキストが含まれています。|
+| hasAudio| bool|  | かどうか、メッセージには、オーディオ (声) 添付ファイルがあります。|
+| hasPhoto| bool|  | メッセージに写真の添付ファイルがあるかどうか。|
+| hasText| bool|  | かどうか、メッセージには、テキストが含まれています。|
 
 #### <a name="sample-response"></a>応答の例
 
@@ -136,12 +136,12 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 #### <a name="error-response"></a>エラー応答
 
-サービスは、エラーが発生した場合、サービスの環境から値を含めることができます全て、errorResponse オブジェクトを取得するを取得することがあります。
+エラーの場合、サービスは、サービスの環境から値を含めることができますが、全て、errorResponse オブジェクトを返すことがあります。
 
 | プロパティ| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | errorSource| string| エラーが発生した場所を指定します。|
-| errorCode| int| (Null にすることができます) エラーに関連付けられている数値コードです。|
+| errorCode| int| (Null にすることができます)、エラーに関連付けられている数値コードです。|
 | エラー メッセージ| string| 詳細を表示するように構成する場合のエラーの説明します。|
 
 <a id="ID4E3DAC"></a>

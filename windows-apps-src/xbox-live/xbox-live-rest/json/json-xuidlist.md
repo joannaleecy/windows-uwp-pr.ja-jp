@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3853140ce5e7c3f7710f489709945fc70b6703b4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5433181"
+ms.locfileid: "5468954"
 ---
 # <a name="xuidlist-json"></a>XuidList (JSON)
-操作を実行する Xuid のリスト。 
+操作を実行するに Xuid のリスト。 
 <a id="ID4EN"></a>
 
  
 ## <a name="xuidlist"></a>XuidList
  
-XuidList オブジェクトでは、次の仕様があります。
+XuidList オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ce98786b9ef3702ae0aa1208cb04a9bd530a938
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5442534"
+ms.locfileid: "5469880"
 ---
 # <a name="usersmegroupsmoniker"></a>/users/me/groups/{moniker}
-[グループの PresenceRecord にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
+[グループの PresenceRecord にアクセスします。 これらの Uri のドメインは、 `userpresence.xboxlive.com`。
  
   * [URI パラメーター](#ID4EV)
  
@@ -30,7 +30,7 @@ ms.locfileid: "5442534"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるだけモニカーでは、大文字の 'P'"People"でです。| 
+| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるモニカーだけでは、大文字の 'P'"People"でです。| 
   
 <a id="ID4ERB"></a>
 

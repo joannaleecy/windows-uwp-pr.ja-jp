@@ -1,5 +1,5 @@
 ---
-title: デベロッパー センターへのアクセス ポリシーを構成します。
+title: デベロッパー センターでのアクセス ポリシーを構成します。
 author: KevinAsgari
 description: その他のアプリ、ゲーム、およびサービスが Xbox Live の設定にアクセスできるようにするデベロッパー センターでアクセス ポリシーを構成する方法について説明します。
 ms.assetid: ''
@@ -11,13 +11,13 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: 8a19c6e116cb6c2f3cd8e2f2d8541516ebf89de9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5433307"
+ms.locfileid: "5472924"
 ---
-# <a name="configure-access-policies-on-dev-center"></a>デベロッパー センターでアクセス ポリシーを構成します。
+# <a name="configure-access-policies-on-dev-center"></a>デベロッパー センターでのアクセス ポリシーを構成します。
 
 [Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)を使うと、他のサービス、ゲーム、アプリがタイトルの Xbox Live 設定とデータにアクセスすることを許可できます。 たとえば、Web サイトでのランキングを Web サービスに表示したり、ゲームのタイトル ストレージにアクセスしてセーブされたゲーム データを表示または変更できる比較アプリを作成したりすることができます。
 

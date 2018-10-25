@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c453dc1800770547623fc4920f6d2c964a4b2f88
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431244"
+ms.locfileid: "5468035"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypesortorders"></a>/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders
-利用可能なアクセスは、指定された mediaitem 型と指定したバージョン EDS の注文を並べ替えます。 これらの Uri のドメインが`eds.xboxlive.com`します。
+利用可能なアクセスは、特定 mediaitem 型と EDS の特定のバージョン向けの注文を並べ替えます。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -31,7 +31,7 @@ ms.locfileid: "5431244"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
-| mediaitemtype| string| 必須。 値のいずれか[GET (/media/{marketplaceId}//metadata/mediagroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)します。| 
+| mediaitemtype| string| 必須。 値のいずれかの[GET (/media/{marketplaceId}//metadata/mediagroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)します。| 
   
 <a id="ID4EBC"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "5431244"
 
 [GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)](uri-medialocalemetadatamediaitemtypesortordersget.md)
 
-&nbsp;&nbsp;指定された mediaitem 型と指定したバージョン EDS の利用可能な並べ替え順序の一覧を示します。
+&nbsp;&nbsp;特定 mediaitem 型と EDS の特定のバージョンで利用可能な並べ替え順の一覧を示します。
  
 <a id="ID4ELC"></a>
 

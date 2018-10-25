@@ -13,11 +13,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: de14d35b7a39776f43feeefc94ebe77af0c97373
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442627"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481371"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>Windows Ink のストロークをテキストおよび図形として認識する
 
@@ -231,7 +231,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
     recognitionCanvas.Children.Add(text);
 }
 ```
-7. 認識キャンバスに楕円と多角形を描画するための関数を以下に示します。 図形のフォント サイズと位置を設定するのには、インク キャンバスで関連付けられたインク ストロークの境界の四角形を使用します。
+7. 認識キャンバスに楕円と多角形を描画するための関数を以下に示します。 図形のフォント サイズと位置を設定するのにには、インク キャンバスで関連付けられたインク ストロークの境界の四角形を使用します。
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
     private void DrawEllipse(InkAnalysisInkDrawing shape)
@@ -477,8 +477,7 @@ Windows のインク プラットフォームに組み込まれている手書�
 
 アプリでは、インストール済みの一連の手書き認識エンジンを照会し、それらのいずれかを使うか、ユーザーが好きな言語を選べるようにできます。
 
-**注意**  
-ユーザーは **[設定]、[時刻と言語]** の順に移動することで、インストール済みの言語の一覧を表示できます。 インストール済みの言語の一覧は **[言語]** に表示されます。
+**注:** に移動してユーザーがインストールされている言語の一覧を表示できます**設定] -&gt;時刻と言語**します。 インストール済みの言語の一覧は **[言語]** に表示されます。
 
 新しい言語パックをインストールし、その言語の手書き認識を有効にするには、次の手順に従ってください。
 
@@ -488,7 +487,7 @@ Windows のインク プラットフォームに組み込まれている手書�
 4.  言語をクリックし、**[オプション]** を選びます。
 5.  **[言語のオプション]** ページで、**手書き認識エンジン**をダウンロードします (完全言語パック、音声認識エンジン、キーボード レイアウトもダウンロードできます)。
 
- 
+ 
 
 ここでは、選ばれた手書き認識エンジンを使って、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) での一連のインク ストロークを解釈する方法を示します。
 
@@ -873,4 +872,4 @@ string str = "Recognition result\n";
 * [Family Notes のサンプル](https://aka.ms/cpubsample-familynotessample)
 
 
- 
+ 

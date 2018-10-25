@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, 大規模なセッション, 最近のプレイヤー
 ms.localizationpriority: medium
 ms.openlocfilehash: cead1a3ca1d56185ef97fe3f3271484bfbc58f18
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5443820"
+ms.locfileid: "5471499"
 ---
 # <a name="large-sessions"></a>大規模なセッション
 
@@ -43,23 +43,23 @@ Xbox Live の機能の 1 つは、Xbox Live プレイヤーがマルチプレイ
 
 ```json
 {
-    "constants": {
-        "system": {
-            "version": 1,
-            "maxMembersCount": 2000,
-            "visibility": "open",
-            "capabilities": {
-                "gameplay": true,
-                "large": true
-            },
-            "timeouts": {
-                "inactive": 0,
-                "ready": 180000,
-                "sessionEmpty": 0
-            }
-        },
-        "custom": { }
-    }
+    "constants": {
+        "system": {
+            "version": 1,
+            "maxMembersCount": 2000,
+            "visibility": "open",
+            "capabilities": {
+                "gameplay": true,
+                "large": true
+            },
+            "timeouts": {
+                "inactive": 0,
+                "ready": 180000,
+                "sessionEmpty": 0
+            }
+        },
+        "custom": { }
+    }
 }
 ```
 
@@ -79,17 +79,17 @@ MPSD から大規模なセッションを取得する場合、応答と共にメ
 
 #### <a name="1-persistent-groups"></a>1. 永続的なグループの場合
 
-ユーザーのグループが継続的に行動を共にしている場合 (ユーザーの参加や退出は可能)、そのグループに名前を付けることができます (通常のセッションについては同じ名前付け規則に従い、guid などを使用します)。  各メンバーがグループに参加またはグループから退出する際には、このグループ名を自身の "groups" プロパティ (文字列の配列) に対して追加または削除する必要があります。
+ユーザーのグループが継続的に行動を共にしている場合 (ユーザーの参加や退出は可能)、そのグループに名前を付けることができます (通常のセッションについては同じ名前付け規則に従い、guid などを使用します)。各メンバーがグループに参加またはグループから退出する際には、このグループ名を自身の "groups" プロパティ (文字列の配列) に対して追加または削除する必要があります。
 
 ```json
 {
     "members": {
         "me": {
-            "properties": {
-                "system": {
-                    "groups": [ "boffins-posse" ]
-                }
-            }
+            "properties": {
+                "system": {
+                    "groups": [ "boffins-posse" ]
+                }
+            }
         }
     }
 }
@@ -101,18 +101,18 @@ MPSD から大規模なセッションを取得する場合、応答と共にメ
 
 ```json
 {
-    "members": {
-        "me": {
-            "properties": {
-                "system": {
-                    "encounters": [ "trade.0c7bbbbf-1e49-40a1-a354-0a9a9e23d26a" ]
-                }
-            }
-        }
-    }
+    "members": {
+        "me": {
+            "properties": {
+                "system": {
+                    "encounters": [ "trade.0c7bbbbf-1e49-40a1-a354-0a9a9e23d26a" ]
+                }
+            }
+        }
+    }
 }
 ```
 
 同じ名前を "groups" と "encounters" の両方に使うことができます。たとえば、1 人のプレイヤーがグループと遭遇した場合、グループ内のユーザーは (グループ名を自身の "groups" に追加していれば) 何もする必要がありません。遭遇した個人のプレイヤーは、グループ名を自身の "encounters" リストにアップロードします。 これで、個人のプレイヤーの [プレイヤーの履歴] に、グループ内のすべてのメンバーが表示されます (その逆も同様)。
 
-遭遇は、30 秒の間グループのメンバーであったとしてカウントされます。 遭遇は偶発的な出来事であると見なされるため、"encounters" 配列は常に即時処理され、セッションからクリアされます。  応答に含まれることはありません   ("groups" 配列は変更または削除されるか、メンバーがセッションから退出するまで存続します)。
+遭遇は、30 秒の間グループのメンバーであったとしてカウントされます。 遭遇は偶発的な出来事であると見なされるため、"encounters" 配列は常に即時処理され、セッションからクリアされます。応答に含まれることはありません ("groups" 配列は変更または削除されるか、メンバーがセッションから退出するまで存続します)。

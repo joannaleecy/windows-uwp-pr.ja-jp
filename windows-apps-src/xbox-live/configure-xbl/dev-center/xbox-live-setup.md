@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Windows デベロッパー センター, Xbox Live セットアップ
 ms.openlocfilehash: ba4ab2b6cad1968c3d223f99e80ed024e085e8e4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431978"
+ms.locfileid: "5470056"
 ---
 # <a name="configure-xbox-live-setup-on-windows-dev-center"></a>Windows デベロッパー センターでの Xbox Live セットアップの構成
 
@@ -37,10 +37,10 @@ ms.locfileid: "5431978"
 ![デベロッパー センターの既定のロケールを選択するドロップダウンの画像](../../images/dev-center/xbox-live-setup/xbox-live-setup-2.png)
 
 ## <a name="product-type"></a>製品の種類
-このドロップダウン メニューでは、製品の種類を変更できます。 既定値は、種類 **[ゲーム]** です。 選択内容は、使用可能な Xbox Live の機能に影響を与えます。 次の 3 つのオプションから選択できます。
-1. アプリ 
-2. ゲーム 
-3. ゲームの体験版 
+このドロップダウン メニューでは、製品の種類を変更できます。 既定値は、種類 **[ゲーム]** です。 使用する XboxLivefeatures 選択内容に影響します。 次の 3 つのオプションから選択できます。
+1. アプリ 
+2. ゲーム 
+3. ゲームの体験版 
 
 ![デベロッパー センターの製品の種類を選択するドロップダウンの画像](../../images/dev-center/xbox-live-setup/xbox-live-setup-3.png)
 

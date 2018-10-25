@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, UWP, ゲーム, Xbox, Xbox Live, リソース, API, リファレンス
 ms.localizationpriority: medium
 ms.openlocfilehash: ee6dd97d2c49c292bb3390f879368bcb76790bbb
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5430597"
+ms.locfileid: "5469205"
 ---
 # <a name="xbox-live-resources"></a>Xbox Live リソース
 
@@ -22,13 +22,13 @@ ms.locfileid: "5430597"
 
 ## <a name="api-reference"></a>API リファレンス
 
-WinRT SDK API リファレンスをご覧オンライン。
+WinRT SDK API リファレンスを参照してオンラインください。
 
 * [Xbox Live WinRT SDK](https://docs.microsoft.com/en-us/dotnet/api/?view=xboxlive-dotnet-2017.11.20171204.01)
 
 C++ SDK は、現在オフラインの形式で利用可能なのみです。
 
-完全な API のリファレンス ドキュメント (を C++ と WinRT を含む) をダウンロードすることができます。
+完全な API のリファレンス ドキュメント (を C++ と WinRT を含む) をダウンロードできます。
 
 * [Xbox Live API リファレンス](https://aka.ms/xboxliveuwpdocs)
 

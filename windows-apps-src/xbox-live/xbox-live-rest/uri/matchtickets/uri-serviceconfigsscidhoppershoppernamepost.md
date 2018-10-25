@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 089aba60b80e629a8068bcf39f009ac97fc6ad66
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5438508"
+ms.locfileid: "5471935"
 ---
 # <a name="post-serviceconfigsscidhoppershoppername"></a>POST (/serviceconfigs/{scid}/hoppers/{hoppername})
 
 指定したマッチ チケットを作成します。
 
 > [!IMPORTANT]
-> このメソッドはコントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> このメソッドは、コントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4E5)
@@ -37,7 +37,7 @@ ms.locfileid: "5438508"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドでは、サービス構成 ID (SCID) レベルでの特定の名前をホッパーのマッチ チケットを作成します。 このメソッドは、 **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.CreateMatchTicketAsync**メソッドでラップすることができます。  
+この HTTP/REST メソッドでは、サービス構成 ID (SCID) レベルで特定の名前をホッパーのマッチ チケットを作成します。 このメソッドは、 **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.CreateMatchTicketAsync**メソッドでラップすることができます。  
 <a id="ID4E5"></a>
 
 
@@ -55,15 +55,15 @@ ms.locfileid: "5438508"
 
 | 型| 必須かどうか| 説明| 不足している場合、応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しは、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
-| デバイスの種類| 必須| とき、ユーザーの deviceType が存在しないか、以外のコンソールに一致するタイトルに設定するには、コンソール専用のタイトルする必要がありますできません。 | 403|
+| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
+| デバイスの種類| 必須| とき、ユーザーの deviceType が省略されてか以外のコンソールに一致するタイトルに設定する必要がありますないコンソール専用のタイトル。 | 403|
 | タイトル ID/実証購入/デバイスの種類| 必須| タイトルに一致するには、指定されたタイトルの要求、デバイスの種類の組み合わせのマッチメイ キングを許可する必要があります。 | 403|
 
 <a id="ID4E3C"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4EFD"></a>
 
 
@@ -79,7 +79,7 @@ ms.locfileid: "5438508"
 | serviceConfig| GUID| セッションの SCID です。|
 | hopperName| string| ホッパーの名前です。|
 | giveUpDuration| 32 ビット符号付き整数| 最大待機時間 (秒の整数)。|
-| preserveSession| 列挙型| かどうかには、セッションに一致するセッションとして再利用を示す値。 可能な値は、「ことはありません」と「常に」です。 |
+| preserveSession| 列挙型| かどうかには、セッションに一致するセッションとして再利用を示す値。 値は、「ことはありません」と"always"します。 |
 | ticketSessionRef| MultiplayerSessionReference| プレイヤーまたはグループは、現在再生中のセッションの MultiplayerSessionReference オブジェクト。 |
 | ticketAttributes| オブジェクトのコレクション| 属性とプレイヤーのグループのユーザーが指定した値です。|
 
@@ -88,14 +88,14 @@ ms.locfileid: "5438508"
 
 ### <a name="prohibited-members"></a>禁止されているメンバー
 
-要求では、他のすべてのメンバーが禁止されています。
+要求では、その他のすべてのメンバーが禁止されています。
 
 <a id="ID4ECG"></a>
 
 
 ### <a name="sample-request"></a>要求の例
 
-マッチ チケットを作成して、セッションは、プレイヤーに固有の属性と共に、一致するプレイヤーを含める必要があります前に、 **ticketSessionRef**オブジェクトによって参照されるセッションを作成する必要があります。 各プレイヤーは、作成またはセッションに関連付けられているマッチ属性を追加する、MPSD からセッションに参加する必要があります。 マッチの属性は、プレイヤーごとに matchAttrs と呼ばれるカスタム プロパティのフィールドに配置されます。
+マッチ チケットを作成して、セッションは、プレイヤーに固有の属性と共に、一致するプレイヤーを含める必要があります前に、 **ticketSessionRef**オブジェクトによって参照されるセッションを作成する必要があります。 各プレイヤーは、作成またはセッションにマッチが関連付けられている属性の追加、MPSD からセッションに参加する必要があります。 マッチの属性は、プレイヤーごとに matchAttrs と呼ばれるカスタム プロパティのフィールドに配置されます。
 
 作成または参加要求を提出する**http://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templatename}/sessions/{sessionname}** し、次のようになります。
 
@@ -128,7 +128,7 @@ ms.locfileid: "5438508"
 
 
 > [!NOTE] 
-> タイトルでは、この呼び出しを再試行するユーザーを有効にすることができますが、再試行しないでください。 それに自動的にデータが失敗した場合。  
+> タイトルでは、この呼び出しを再試行するユーザーを有効にすることができますが、再試行しないでください。 が自動的にデータが失敗した場合。  
 
 
 

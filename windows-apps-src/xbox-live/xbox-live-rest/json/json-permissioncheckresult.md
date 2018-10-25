@@ -12,20 +12,20 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 308301b41b407291ffad74337172c5be8f4d2c59
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5438960"
+ms.locfileid: "5476071"
 ---
 # <a name="permissioncheckresult-json"></a>PermissionCheckResult (JSON)
-1 つの対象ユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからチェックの結果。 
+1 つの対象ユーザーに対して単一のアクセス許可の設定の 1 人のユーザーからのチェックの結果。 
 <a id="ID4EP"></a>
 
  
 ## <a name="permissioncheckresult"></a>PermissionCheckResult
  
-PermissionCheckResult オブジェクトでは、次の仕様があります。
+PermissionCheckResult オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

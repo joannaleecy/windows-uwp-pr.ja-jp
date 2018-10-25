@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
 ms.openlocfilehash: bb2d435bf11cb4c06527090abb4b78f31a339142
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5440107"
+ms.locfileid: "5477619"
 ---
 # <a name="get-started-with-using-visual-studio-for-xdk-based-games"></a>XDK ベースのゲームで Visual Studio を使用する際の概要
 

@@ -12,25 +12,25 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f0eed745b9350bd1bc2f4860cb3db5e5a6b9ad7c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5444428"
+ms.locfileid: "5469183"
 ---
 # <a name="serviceerrorresponse-json"></a>ServiceErrorResponse (JSON)
-サービスのエラーが発生した場合は、適切な HTTP エラー コードが返されます。 必要に応じて、以下に定義されている、サービスは ServiceErrorResponse オブジェクトを含めるも可能性があります。 運用環境での低いデータを含めることができます。 
+サービスのエラーが発生したときは、適切な HTTP エラー コードが返されます。 必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下で定義されています。 運用環境での低いデータを含めることができます。 
 <a id="ID4EN"></a>
 
  
 ## <a name="serviceerrorresponse"></a>ServiceErrorResponse
  
-ServiceErrorResponse オブジェクトでは、次の仕様があります。
+ServiceErrorResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | <b>errorCode</b>| 32 ビット符号付き整数| (Null にすることができます) エラーに関連付けられたコードです。| 
-| <b>エラー メッセージ</b>| string| エラーの詳細を追加します。| 
+| <b>エラー メッセージ</b>| string| エラーに関する詳細を追加します。| 
   
 <a id="ID4EVB"></a>
 

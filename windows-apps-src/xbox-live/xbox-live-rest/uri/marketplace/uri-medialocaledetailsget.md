@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4178eac74e58699f322d004577520893f582f874
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5440236"
+ms.locfileid: "5478007"
 ---
 # <a name="get-mediamarketplaceiddetails"></a>GET (/media/{marketplaceId}/details)
-返しますの詳細とメタデータを提供する方法の 1 つまたは複数の項目。
+返します提供の詳細とメタデータについての 1 つまたは複数の項目です。
 これらの Uri のドメインが`eds.xboxlive.com`します。
 
   * [注釈](#ID4EV)
@@ -32,7 +32,7 @@ ms.locfileid: "5440236"
 
 ## <a name="remarks"></a>注釈
 
-**SandboxId**はここで、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
+**SandboxId**はできるようになりました、XToken で要求から取得し、適用します。 **SandboxId**が存在しない場合のエンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
 
 <a id="ID4ECB"></a>
 
@@ -50,9 +50,9 @@ ms.locfileid: "5440236"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- | --- | --- |
-| id| string[]| 必須。 すべての詳細が返されます (最大 10) の Id。 注:、いずれかの ID には、URL に不正な文字が含まれている (Id は通常、ProviderContentId 型は、完全な Url 自体と、無効な文字を含めるため) <b>URL エンコード エンターテイメント探索サービス (EDS) に正常に送信する必要があります</b>。 こののみできる 1 つの値 ID の種類が ProviderContentId 場合にも注意してください。 1 つ以上の ProviderContentId を使用する場合は、複数の呼び出しを eds でなければなりません。|
+| id| string[]| 必須。 すべての詳細が返されます (最大 10) の Id。 注、いずれかの ID をするには、URL に配置する不正な文字が含まれている (Id は通常、ProviderContentId 型は、完全な Url 自体と、無効な文字を含めるため) <b>URL エンコード エンターテイメント探索サービス (EDS) に正常に送信する必要があります</b>。 これだけできる 1 つの値 ID の種類が ProviderContentId である場合にも注意してください。 1 つ以上の ProviderContentId を使用する場合は、複数の呼び出しを eds でなければなりません。|
 | IdType| string| 省略可能。 'Id' のパラメーターに渡された Id の種類です。 有効な値は次のとおりです。 <ul><li><b>正規</b>(Bing/Marketplace) </li><li><b>ZuneCatalog</b></li><li><b>ZuneMediaInstance</b>(たとえば、1 ~ 32 kb WMA 音楽ファイル) </li><li><b>AMG</b></li><li><b>MediaNet</b>(事前 MusiWave) </li><li><b>XboxHexTitle</b>(アプリ、本体でプレイ) </li></ul>|
-| DesiredMediaItemTypes| string| <b>MediaGroup が渡されないかどうかが必要です。 両方は渡されませんする必要があります。</b> メディア項目の Id の種類。 すべて指定 Id は、同じ型を共有する必要があります。 複数の種類が必要な場合は、IdType 上記で説明したよう使用可能なすべての型に渡します。 この値は、既定では"Unknown"が存在しない場合ができない可能性があるすべての ID の種類の valied します。 |
+| DesiredMediaItemTypes| string| <b>MediaGroup が渡されないかどうかが必要です。 両方は渡されませんする必要があります。</b> メディア項目の Id の種類。 すべて指定 Id は、同じ型を共有する必要があります。 複数の種類が必要な場合は、上記の IdType で説明したよう使用可能なすべての型に渡します。 この値は"Unknown"既定値が存在しない場合ができない可能性があるすべての ID の種類の valied します。 |
 | MediaGroup| string| <b>DesiredMediaItemTypes が渡されないかどうかが必要です。 両方は渡されませんする必要があります。</b>|
 | ConditionSets| string| <b>省略可能です</b>。 クライアントは、条件セットは、このクエリ文字列を使用して指定キー/値ペアに基づく<b>可用性</b>の排除を要求できます。 これらは、使用可能状況の条件セットに一致するように使用されます。 条件セットと一致するために使用できるキーの一覧は次のとおりです。 <ul><li><b>プラットフォーム</b>: 製品が、構築され、再生されることができます。</li><li><b>サブスクリプション</b>: この可用性 (Gold または Silver) のサポートされているサブスクリプションの一覧。</li><li><b>EntitlementIds</b>: ユーザーがゲームを購入後に追跡します。</li></ul> | 
 

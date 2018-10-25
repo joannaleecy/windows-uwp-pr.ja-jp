@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0de1431aea2695d72682fd70f23695d672c465a6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5438511"
+ms.locfileid: "5473305"
 ---
 # <a name="xbox-one-multiplayer-session-directory"></a>Xbox One マルチプレイヤー セッション ディレクトリ
 
-このトピックでは、新しい Xbox One マルチプレイヤー セッション ディレクトリ (MPSD) サービスを使用するマルチプレイヤー セッション作成の概要を示します。 主な対象読者は、セッション テンプレートを Xbox デベロッパー ポータル (XDP) に直接提出する Xbox One タイトル デベロッパーです。 MPSD サービスでは、同様に、Windows デベロッパー センターで構成されていることができますが、この記事で重視されていません。 MPSD の構成に関連する用語と概念、使用方法、およびマルチプレイヤー セッションのトラブルシューティングについて理解を促進することを目的としています。
+このトピックでは、新しい Xbox One マルチプレイヤー セッション ディレクトリ (MPSD) サービスを使用するマルチプレイヤー セッション作成の概要を示します。 主な対象読者は、セッション テンプレートを Xbox デベロッパー ポータル (XDP) に直接提出する Xbox One タイトル デベロッパーです。 MPSD サービスは、同様に、Windows デベロッパー センターで構成できますが、この記事で重視されていません。 MPSD の構成に関連する用語と概念、使用方法、およびマルチプレイヤー セッションのトラブルシューティングについて理解を促進することを目的としています。
 
 ## <a name="revision-summary"></a>改訂のまとめ
 
