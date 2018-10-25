@@ -7,15 +7,15 @@ ms.date: 11/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、uwp、タスクをバック グラウンドします。
+keywords: バック グラウンド タスクの windows 10, uwp,
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 5879977662dc2bd609d09e5fe53fc2a2f0b9180f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483892"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5517261"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>インプロセス バックグラウンド タスクの作成と登録
 
@@ -72,7 +72,7 @@ ms.locfileid: "5483892"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>バックグラウンド アクティビティのコードを OnBackgroundActivated() に配置する
 
-[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)を起動したときに、バック グラウンドのトリガーに応答するには、バック グラウンド アクティビティ コードを配置します。 **OnBackgroundActivated**は、 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)と同じように扱うことができます。 メソッドには、 **Run**メソッドを提供するすべてのものが含まれている[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)パラメーターがあります。 App.xaml.cs: で、
+[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)発生したときに、バック グラウンド トリガーに応答するには、バック グラウンド アクティビティのコードを配置します。 **OnBackgroundActivated**は[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)と同じように扱うことができます。 このメソッドでは、 **Run**メソッドで提供されるすべての情報が含まれている、 [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)パラメーターがあります。 たとえば、App.xaml.cs: で
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -92,7 +92,7 @@ sealed partial class App : Application
 }
 ```
 
-豊富な**OnBackgroundActivated**の例では、[ホスト アプリケーションと同じプロセスで実行するのには、アプリケーション サービスに変換](convert-app-service-in-process.md)を参照してください。
+豊富な**OnBackgroundActivated**の例では、[アプリ サービスを変換するホスト アプリと同じプロセスで実行する](convert-app-service-in-process.md)を参照してください。
 
 ## <a name="handle-background-task-progress-and-completion"></a>バックグラウンド タスクの進捗状況と完了を処理する
 

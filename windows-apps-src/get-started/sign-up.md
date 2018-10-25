@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, サインアップ, 開発者アカウント
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ed54f1df2ace18d06f9273fb9e26459907f8542
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472862"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5515354"
 ---
 # <a name="create-a-developer-account"></a>開発者アカウントを作る
 

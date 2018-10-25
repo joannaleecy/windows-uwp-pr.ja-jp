@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: badaefc406daa5f4500c76262d916f47d82e7a52
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b3afb0cba92e5f3c08de19c926bd5fb949185379
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469946"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5517413"
 ---
 # <a name="buttons"></a>ボタン
 
@@ -36,9 +36,9 @@ XAML フレームワークでは、いくつかの特殊なボタン コント�
 [ボタン](/uwp/api/windows.ui.xaml.controls.button) | 即座にアクションを開始します。 Click イベントまたはコマンドのバインディングを使用できます。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 押されている間に継続的には、Click イベントを発生させるボタンです。
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A ボタンをナビゲーションの使用、ハイパーリンクのようにスタイルが適用されます。 詳しくは、「[ハイパーリンク](hyperlinks.md)」をご覧ください。
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | (プレビュー)添付のポップアップを開く山形記号のボタンです。
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | (プレビュー)2 つの辺ボタンです。 一方の辺の操作を開始して、その他の側にメニューが開きます。
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | (プレビュー)2 つの辺とトグル ボタン。 一方の辺をオン/オフを切り替えます、反対側メニューが開きます。
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 添付のポップアップを開く山形記号のボタンです。
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 2 つの辺ボタンです。 一方の辺の操作を開始して、その他の側にメニューが開きます。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 2 つの辺とトグル ボタン。 一方の辺をオン/オフを切り替えます、反対側メニューが開きます。
 
 | **Windows UI のライブラリを入手します。** |
 | - |
@@ -210,7 +210,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>ドロップダウン ボタンを作成します。
 
-> **プレビュー**: DropDownButton[最新の Windows 10 Insider Preview ビルドと SDK](https://insider.windows.com/for-developers/)または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)が必要です。
+> DropDownButton には、Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) が必要ですか、後で、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton)は、その他のオプションが含まれている添付のポップアップが設定されている視覚的なインジケーターとして、山形記号を表示するボタンです。 ポップアップ; の標準的なボタンと同じ動作があります。外観だけが異なります。
 
@@ -269,7 +269,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-split-button"></a>分割ボタンを作成します。
 
-> **プレビュー**: SplitButton[最新の Windows 10 Insider Preview ビルドと SDK](https://insider.windows.com/for-developers/)または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)が必要です。
+> SplitButton には、Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) が必要ですか、後で、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)は、個別に呼び出すことができる 2 つの部分です。 1 つの部分では、標準的なボタンのように動作し、即座にアクションを呼び出します。 他の部分では、ユーザーが選択できる追加のオプションが含まれているポップアップを呼び出します。
 
@@ -376,7 +376,7 @@ public sealed partial class MainPage : Page
 
 ## <a name="create-a-toggle-split-button"></a>トグル ボタン分割を作成します。
 
-> **プレビュー**: ToggleSplitButton[最新の Windows 10 Insider Preview ビルドと SDK](https://insider.windows.com/for-developers/)または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)が必要です。
+> ToggleSplitButton には、Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) が必要ですか、後で、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)は、個別に呼び出すことができる 2 つの部分です。 1 つの部分は、オンまたはオフにできるトグル ボタンのように動作します。 他の部分では、ユーザーが選択できる追加のオプションが含まれているポップアップを呼び出します。
 
