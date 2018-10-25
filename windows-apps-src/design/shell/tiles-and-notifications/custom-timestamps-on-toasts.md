@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, トースト, カスタム タイムスタンプ, タイムスタンプ, 通知, アクション センター
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ef01feaf422674977dc4549d4cc68a2ca0052c7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443681"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481181"
 ---
 # <a name="custom-timestamps-on-toasts"></a>トーストでのカスタム タイムスタンプの表示
 
@@ -34,14 +34,14 @@ ms.locfileid: "5443681"
 ```csharp
 ToastContent toastContent = new ToastContent()
 {
-    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
-    ...
+    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
+    ...
 };
 ```
 
 ```xml
 <toast displayTimestamp="2017-04-15T19:45:00Z">
-  ...
+  ...
 </toast>
 ```
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, Advertising, 既知の問題, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ca7949b3092b03500f25249ce1af3832a9e61ba
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443405"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481306"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>アプリ内広告の既知の問題とトラブルシューティング
 
@@ -97,6 +97,6 @@ JavaScript/HTML アプリでは、z オーダーの予約済みの MAX-10 の範
 
 最新の既知の問題についての詳細を調べたり、Microsoft Advertising SDK に関連する質問を投稿したりするには、[フォーラム](http://go.microsoft.com/fwlink/p/?LinkId=401266)をご利用ください。
 
- 
+ 
 
- 
+ 

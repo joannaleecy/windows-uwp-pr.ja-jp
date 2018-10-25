@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f5bdcb8b854a8b71f232c8a1cc73cd12bc587015
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5440738"
+ms.locfileid: "5481871"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypefields"></a>/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields
-指定された mediaitemtype と指定したバージョン EDS のために、データを期待いずれかからアクセス フィールド。 これらの Uri のドメインが`eds.xboxlive.com`します。
+指定された mediaitemtype と EDS の特定のバージョンのデータを想定いずれかからアクセス フィールド。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -31,7 +31,7 @@ ms.locfileid: "5440738"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
-| mediaitemtype| string| 必須。 値のいずれか[GET (/media/{marketplaceId}//metadata/mediagroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)します。| 
+| mediaitemtype| string| 必須。 値のいずれかの[GET (/media/{marketplaceId}//metadata/mediagroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)します。| 
   
 <a id="ID4EBC"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "5440738"
 
 [GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields)](uri-medialocalemetadatamediaitemtypefieldsget.md)
 
-&nbsp;&nbsp;指定された mediaitemtype と指定したバージョン EDS のために、データを期待いずれかの元のフィールドの一覧を示します。
+&nbsp;&nbsp;指定された mediaitemtype と EDS の特定のバージョンのデータを想定いずれかからフィールドを示します。
  
 <a id="ID4ELC"></a>
 

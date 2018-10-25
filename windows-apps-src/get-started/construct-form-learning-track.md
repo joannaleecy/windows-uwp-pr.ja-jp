@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 概要, uwp, windows 10, 学習トラック, レイアウト, フォーム
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442640"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482706"
 ---
 # <a name="create-and-customize-a-form"></a>フォームを作成してカスタマイズする
 
@@ -50,7 +50,7 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 各種の [XAML コントロール](../design/controls-and-patterns/controls-and-events-intro.md) を使用してフォームに入力する必要があります。 XAML コントロールは使い慣れているかもしれませんが、思い出す必要がある場合は、自由に目を通してください。 特に、ユーザーがテキストを入力するか、または値の一覧から選択できるようにするコントロールが必要になります。 これは、追加のオプションの基本的なリスト – 外観やしくみを理解するために十分なに関するすべての情報を読み取る必要はありません。
 
-* [テキスト ボックス](../design/controls-and-patterns/text-box.md)には、アプリにユーザーがテキストを入力ことができます。
+* [TextBox](../design/controls-and-patterns/text-box.md)では、アプリにユーザーがテキストを入力できます。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) では、ユーザーが 2 つのオプションから選択できます。
 * [DatePicker](../design/controls-and-patterns/date-picker.md) では、ユーザーが日付値を選択できます。
 * [TimePicker](../design/controls-and-patterns/time-picker.md) では、ユーザーが時刻値を選択できます。
@@ -136,7 +136,7 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 ## <a name="going-further"></a>追加情報
 
-ここではフォームを作成しましたが、レイアウトとコントロールの概念は、作成する可能性のあるすべての XAML UI で適用可能です。 自由に戻ってがある場合、新しい UI 機能を追加して、ユーザー エクスペリエンスを絞り込むフォームの実験し、リンクしたドキュメントです。 さらに詳細なレイアウト機能を使ってのステップ バイ ステップのガイダンスが必要な場合、[アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)をご覧ください。
+ここではフォームを作成しましたが、レイアウトとコントロールの概念は、作成する可能性のあるすべての XAML UI で適用可能です。 自由に戻ってがある場合、新しい UI 機能を追加して、ユーザー エクスペリエンスを絞り込むフォームの実験し、リンクしたドキュメントです。 詳細なレイアウト機能を使ってステップ バイ ステップのガイダンスを設定する場合、[アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)をご覧ください。
 
 また、フォームは真空に存在する必要はありません。一歩進んで、自分のフォームを[マスター/詳細パターン](../design/controls-and-patterns/master-details.md)または[ピボット コントロール](../design/controls-and-patterns/tabs-pivot.md)に組み込むことができます。 または、自分のフォームで分離コードを使用する場合は、[イベントの概要](../xaml-platform/events-and-routed-events-overview.md)を参照して作業を開始することをお勧めします。
 

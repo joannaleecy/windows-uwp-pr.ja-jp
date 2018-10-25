@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, アドオン, プロパティ, サブスクリプション期間, 製品の有効期間, コンテンツの種類, iap, アプリ内購入, アプリ内製品
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a494ea1899f3a764a668ae61c1235808eff1a7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438519"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483529"
 ---
 # <a name="enter-add-on-properties"></a>アドオン プロパティの入力
 
@@ -44,7 +44,7 @@ ms.locfileid: "5438519"
 
 ## <a name="subscription-period"></a>サブスクリプション期間
 
-製品の種類として **[サブスクリプション]** を選んだ場合、**[サブスクリプション期間]** がここに表示されます。 サブスクリプション料を課金する頻度を指定するオプションを選びす。 既定のオプションが**毎月**には、 **3 か月間**、 **6 か月**、**年**、または**24 か月間**を選択することもできます。
+製品の種類として **[サブスクリプション]** を選んだ場合、**[サブスクリプション期間]** がここに表示されます。 サブスクリプション料を課金する頻度を指定するオプションを選びす。 既定のオプションは**毎月**が、 **3 か月**、 **6 か月**、**年**、または**24 か月間**を選択することもできます。
 
 > [!IMPORTANT]
 > アドオンが公開されると、**[サブスクリプション期間]** の指定は変更できません。
@@ -89,7 +89,7 @@ ms.locfileid: "5438519"
 このフィールドを照会するには、[Windows.Services.Store 名前空間](https://docs.microsoft.com/uwp/api/Windows.Services.Store)の [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) プロパティを使用します  (または、[Windows.ApplicationModel.Store 名前空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)を使用している場合は、[ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) プロパティを使用します)。
 
 > [!NOTE]
-> キーワードは、Windows 8 と Windows 8.1 を対象とするパッケージでは使うことができません。
+> キーワードでは、Windows8 と Windows8.1 を対象とするパッケージで使用する利用できません。
 
 <span id="custom-developer-data" />
 
@@ -102,10 +102,10 @@ ms.locfileid: "5438519"
 このフィールドを照会するには、[Windows.Services.Store 名前空間](https://docs.microsoft.com/uwp/api/Windows.Services.Store)の [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) プロパティを使用します  (または、[Windows.ApplicationModel.Store 名前空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)を使用している場合は、[ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) プロパティを使用します)。
 
 > [!NOTE]
-> **[カスタムの開発者データ]** フィールドは、Windows 8 と Windows 8.1 を対象とするパッケージでは使うことができません。
+> **カスタムの開発者データ**フィールドでは、Windows8 と Windows8.1 を対象とするパッケージで使用する利用できません。
 
- 
+ 
 
- 
+ 
 
- 
+ 

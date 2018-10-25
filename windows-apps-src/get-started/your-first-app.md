@@ -2,7 +2,7 @@
 author: QuinnRadich
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: 初めてのアプリの作成
-description: Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリは、好みのプログラミング言語で作成できます。
+description: 好みのプログラミング言語を使用して windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ms.author: quradic
 ms.date: 1/25/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 初めてのアプリ, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: e8e2272ab761e1fa0bc9514f226a73a66a10662b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445829"
+ms.locfileid: "5483141"
 ---
 # <a name="create-your-first-app"></a>初めてのアプリの作成
 
@@ -42,9 +42,9 @@ ms.locfileid: "5445829"
 * [C# と MonoGame で記述された Microsoft Store 向けのシンプルな 2D UWP ゲーム](get-started-tutorial-game-mg2d.md)
 
 
-## <a name="visual-c-component-extensions-ccx-and-xaml"></a>Visual C++ コンポーネント拡張機能 (C++/CX) と XAML
+## <a name="visualc-component-extensions-ccx-and-xaml"></a>VisualC ではコンポーネント拡張機能 (、C++/cli CX) + + と XAML
 
-C++ プログラミングの専門知識を活用し、Visual C++ コンポーネント拡張機能 (C++/CX) と XAML を使ってアプリを作ります。
+VisualC ではコンポーネント拡張機能を使用してアプリをビルドする C++ プログラミングの専門知識を活用 (、C++/cli CX) XAML を使用します。
 
 * [XAML と C++/CX で "Hello, world" アプリを作る](create-a-basic-windows-10-app-in-cpp.md)
 

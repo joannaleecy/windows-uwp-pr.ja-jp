@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 44102cb2ee1c996be9d0b42626f11a64ffb5c377
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5432499"
+ms.locfileid: "5473523"
 ---
 # <a name="peoplelist-json"></a>PeopleList (JSON)
 [Person](json-person.md)オブジェクトのコレクションです。 
@@ -25,12 +25,12 @@ ms.locfileid: "5432499"
  
 ## <a name="peoplelist"></a>PeopleList
  
-PeopleList オブジェクトでは、次の仕様があります。
+PeopleList オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | People| [ユーザー](json-person.md)の配列| ユーザーのリストを構成する[Person](json-person.md)オブジェクト。| 
-| totalCount| 32 ビット符号なし整数| セットで利用できる[ユーザー](json-person.md)オブジェクトの合計数。 この値は、全体のセットだけでなく、最新の応答のサイズを表すためにのページングのクライアントで使用できます。 値の例: 680 します。| 
+| totalCount| 32 ビットの符号なし整数| セットで利用可能な[Person](json-person.md)オブジェクトの合計数。 この値は、ページングすること、最新の応答だけでなく、セット全体のサイズを表すためのクライアントで使用できます。 値の例: 680 します。| 
   
 <a id="ID4EAC"></a>
 

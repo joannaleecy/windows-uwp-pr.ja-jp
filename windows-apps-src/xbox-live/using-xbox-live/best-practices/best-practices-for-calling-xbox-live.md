@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, ベスト プラクティス
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ce22d1571d5e4f96b384d6da914f1d359d78641
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5441254"
+ms.locfileid: "5481685"
 ---
 # <a name="best-practices-for-calling-xbox-live"></a>Xbox Live の呼び出しのベスト プラクティス
 
 Xbox Live サービスは、Xbox Services API (XSAPI) を使用するか、REST エンドポイントを直接呼び出すかの、主に 2 つの方法で呼び出せます。 コードでどのように Xbox Live を呼び出すかにかかわらず、適切な呼び出しパターンと再試行ロジックを備えることが重要です。
 
 適切な再試行ロジックを記述する方法を理解するには、**べき等**と**非べき等**の 2 種類の REST エンドポイントについて知る必要があります。 以下で、それぞれについて説明します。
- 
+ 
 ## <a name="non-idempotent-endpoints"></a>非べき等エンドポイント
 
 繰り返し呼び出しを行うと思わぬ結果が生じる HTTP メソッドは、**非べき等**と見なされます。 これは、たとえばクライアントがエンドポイントを呼び出して、ネットワークのタイムアウトが発生した場合に、リソースが更新されたものの、メソッドが成功したことをネットワークが呼び出し元に通知できなかった可能性があるため、メソッドを再試行するのは安全ではないことを意味します。 エラー発生時には、クライアントは再試行するのではなく、まず、呼び出しが成功したかどうかを確認するためのクエリを発行する必要があります。 呼び出しが失敗であった場合にのみ再試行する必要があります。
@@ -48,7 +48,7 @@ Xbox Services API に含まれる API の一部は、非べき等エンドポイ
 * reputation\_service::submit\_batch\_reputation\_feedback()
 <br>
 * reputation\_service::submit\_reputation\_feedback()
- 
+ 
 
 ## <a name="idempotent-methods"></a>べき等メソッド
 
@@ -83,7 +83,7 @@ UWP 上では、401: Unauthorized は固有の処理が行われます。 この
 ## <a name="error-handling"></a>エラー処理
 
 タイトル デベロッパーは、**すべての**サービス呼び出しに対して**常に**適切なエラー処理を行う必要があり、失敗した応答を適切に処理する必要があります。
- 
+ 
 Xbox Live に対する要求がエラー コードを返す結果になることがある次のような状況は、実際に数多くあります。
 
 1.  ネットワークを利用できない。 たとえば、デバイスが 4G や Wi-Fi の接続を失ったり、ネットワークがダウン状態になった場合。
@@ -101,7 +101,7 @@ XSAPI には 2 種類のエラー処理パターンがあります。 1 つは C
 
 ## <a name="best-calling-patterns"></a>最適な呼び出しパターン
 
-### <a name="use-batching-requests"></a>バッチ処理要求を使用する
+### <a name="usebatching-requests"></a>Usebatching 要求
 
 一部のエンドポイントは、バッチ処理、つまり一連の要求を 1 つの呼び出しに集約することをサポートしています。 たとえば、Xbox Live プロフィール サービスを使用すると、1 人のユーザーのプロフィールまたはユーザー プロフィールのセットを要求できます。 一連のユーザーのユーザー プロフィールが必要な場合、ユーザー プロフィールごとに 1 回エンドポイントや API を呼び出すのは非常に非効率的です。 それぞれの呼び出しで、多くの認証オーバーヘッドが発生します。 そのため何度も API を呼び出すのではなく、情報が必要なすべてのユーザーを一度に API に渡して、エンドポイントがすべてのユーザー プロフィールを同時に処理し、単一の応答を返すことができるようにします。
 
@@ -118,7 +118,7 @@ XSAPI は RTA サービスを、クライアントが使用できるサブスク
 * user\_statistics\_service::subscribe\_to\_statistic\_change
 <br>
 * social\_service::subscribe\_to\_social\_relationship\_change<br>
- 
+ 
 
 ## <a name="use-xbox-live-client-side-managers"></a>Xbox Live クライアント側マネージャーを使用する
 
@@ -162,7 +162,7 @@ XSAPI の使用時には、デベロッパー サンドボックス内でタイ�
 
 > xboxLiveContext-&gt;settings()-&gt;disable\_asserts\_for\_xbox\_live\_throttling\_in\_dev\_sandboxes( xbox\_live\_context\_throttle\_setting::this\_code\_needs\_to\_be\_changed\_to\_avoid\_throttling );
 
-ただし、この API によってタイトルのスロットリングが回避されるわけではないことに注意してください。 タイトルは、変わらずスロットリングされます。 この API は、デベロッパー サンドボックス内でデバッグ ビルドを使用するときにアサートを無効にするだけです。 
+ただし、この API によってタイトルのスロットリングが回避されるわけではないことに注意してください。 タイトルは、変わらずスロットリングされます。 この API は、デベロッパー サンドボックス内でデバッグ ビルドを使用するときにアサートを無効にするだけです。 
 
 ### <a name="xbox-live-trace-analyzer-tool"></a>Xbox Live Trace Analyzer ツール
 

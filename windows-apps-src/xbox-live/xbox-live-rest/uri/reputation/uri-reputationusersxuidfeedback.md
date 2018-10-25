@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4772620a79eed3c66886d5adde716b56f5c7bb9e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437245"
+ms.locfileid: "5477792"
 ---
 # <a name="usersxuidxuidfeedback"></a>/users/xuid({xuid})/feedback
  
@@ -29,7 +29,7 @@ ms.locfileid: "5437245"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| ulong| Xbox ユーザー ID (XUID) が報告されるユーザーのです。| 
+| xuid| ulong| Xbox ユーザー ID (XUID) の報告されているユーザー。| 
   
 <a id="ID4EZB"></a>
 

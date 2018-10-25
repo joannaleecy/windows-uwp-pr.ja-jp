@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP、地図、位置情報、画像、オーバーレイ
 ms.localizationpriority: medium
 ms.openlocfilehash: ba1f7d52a1b16fbb421202229ce724dab384ffa0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433900"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481794"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>地図へのタイル画像のオーバーレイ
 
@@ -29,8 +29,7 @@ ms.locfileid: "5433900"
 
 Nokia Maps や Bing Maps などのマップ サービスでは、迅速な取得と表示のために正方形タイルに地図を切り取ります。 こうしたタイルは 256 ピクセル x 256 ピクセル サイズであり、いくつかの詳細レベルで事前にレンダリングされます。 また、多くのサード パーティ サービスがタイルに切り取られた地図ベースのデータを提供しています。 タイル ソースを使ってサード パーティ製タイルを取得するか、独自のカスタム タイルを作成してそれを [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) に表示された地図上にオーバーレイできます。
 
-**重要**  
-タイル ソースを使う場合、個々のタイルの要求または配置のためにコードを記述する必要はありません。 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) が必要時にタイルを要求します。 各要求では、個々のタイルについて X 座標と Y 座標、ズーム レベルを指定します。 タイルを取得するために使う URI またはファイル名の形式を **UriFormatString** プロパティに指定します。 つまり、各タイルの X 座標、Y 座標、ズーム レベルを渡す場所を示すベース URI またはファイル名に、置き換え可能なパラメーターを挿入します。
+**重要な**を要求する、または個々 のタイルを配置するコードを記述する必要はありませんタイル ソースを使用する場合。 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) が必要時にタイルを要求します。 各要求では、個々のタイルについて X 座標と Y 座標、ズーム レベルを指定します。 タイルを取得するために使う URI またはファイル名の形式を **UriFormatString** プロパティに指定します。 つまり、各タイルの X 座標、Y 座標、ズーム レベルを渡す場所を示すベース URI またはファイル名に、置き換え可能なパラメーターを挿入します。
 
 次に、X 座標、Y 座標、ズーム レベルの置き換え可能なパラメーターを示す [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) の [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) プロパティの例を示します。
 
@@ -196,7 +195,7 @@ void MainPage::AddHttpMapTileSource()
 | ms-appdata:///temp | アプリの一時フォルダーを参照します。 |
 |  | これは、[ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629) プロパティによって参照される場所です。 |
 
- 
+ 
 
 次の例では、`ms-appx:///` プロトコルを使って、アプリのインストール フォルダーにファイルとして格納されたタイルを読み込みます。 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) のコンストラクターで [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) の値を指定しています。 この例では、省略可能な [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) プロパティによって指定された範囲内に地図のズーム レベルがある場合にのみ、タイルが表示されます。
 

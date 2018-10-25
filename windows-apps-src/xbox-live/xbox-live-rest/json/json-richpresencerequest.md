@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d1158832623b88efb0a614680f0c0fb579f79d4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437986"
+ms.locfileid: "5473888"
 ---
 # <a name="richpresencerequest-json"></a>RichPresenceRequest (JSON)
 リッチ プレゼンス情報の使用に関する情報を要求します。 
@@ -25,13 +25,13 @@ ms.locfileid: "5437986"
  
 ## <a name="richpresencerequest"></a>RichPresenceRequest
  
-RichPresenceRequest オブジェクトでは、次の仕様があります。
+RichPresenceRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | id| string| 使用するリッチ プレゼンス文字列の<b>フレンドリ名</b>。| 
-| scid| string| リッチ プレゼンス文字列を定義する場所を示す Scid です。| 
-| パラメーター| 文字列の配列| リッチ プレゼンス文字列を完了するための<b>フレンドリ名</b>の文字列の配列です。 のみ列挙フレンドリ名を指定する必要があります、統計ではありません。この空のまま、以前の値が削除されます。| 
+| scid| string| リッチ プレゼンス文字列が定義されているを示す Scid です。| 
+| パラメーター| 文字列の配列| リッチ プレゼンス文字列を完了するための<b>フレンドリ名</b>の文字列の配列です。 列挙フレンドリ名を指定する必要があります、統計ではありません。この空のまま、以前の値が削除されます。| 
   
 <a id="ID4EDC"></a>
 

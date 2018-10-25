@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 85d7390f16d2cc8f61d76f51713c2903a6fd2c9c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5440494"
+ms.locfileid: "5477193"
 ---
 # <a name="gameclipvisibility-enumeration"></a>GameClipVisibility 列挙型
 GameClipVisibility 列挙型をについて説明します。 
@@ -28,8 +28,8 @@ GameClipVisibility 列挙型をについて説明します。
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
 | None| 可視性が指定されていません。 これは、ほとんどの場合、無効な値です。| 
-| 既定値| ゲーム クリップの可視性が Xbox LIVE のプライバシー設定によって決まります。| 
-| オーナー| ゲーム クリップはそれを作成した元の XUID をできるだけです。| 
+| 既定値| ゲーム クリップの可視性が Xbox LIVE プライバシー設定によって決まります。| 
+| オーナー| ゲーム クリップには、それを作成した元の XUID をできるだけです。| 
 | Title (タイトル)| それを作成した元のタイトルがゲーム クリップにのみです。| 
-| Public| ゲーム クリップはだれでも Xbox LIVE で利用できます。| 
+| Public| ゲーム クリップは、だれでも Xbox LIVE で利用できます。| 
   

@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, 3dprinting、3d 印刷
+keywords: windows 10, uwp, 3dprinting、3 d 印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: ae573fe87e6821555509467336e9a425fb082811
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436482"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483842"
 ---
 # <a name="3d-printing-from-your-app"></a>アプリからの 3D 印刷
 
@@ -138,6 +138,6 @@ UI フィードバック用に **TextBlock** を追加します。
 
 [3MF パッケージの生成](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)  
 [3D 印刷の UWP サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
- 
+ 
 
- 
+ 

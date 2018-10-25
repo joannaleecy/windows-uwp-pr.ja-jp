@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 356afd69483968a3edd836eb9e031bc8fcfafd4c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431068"
+ms.locfileid: "5478540"
 ---
 # <a name="usersxuidxuidgroupsmoniker"></a>/users/xuid({xuid})/groups/{moniker}
 グループの PresenceRecord にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
@@ -30,8 +30,8 @@ ms.locfileid: "5431068"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| string| Xbox ユーザー ID (XUID)、グループ内の Xuid に関連するユーザーのです。| 
-| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるだけモニカーでは、大文字の 'P'"People"でです。| 
+| xuid| string| Xbox ユーザー ID (XUID)、グループ内の Xuid に関連するユーザーのします。| 
+| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるモニカーだけでは、大文字の 'P'"People"でです。| 
   
 <a id="ID4E4B"></a>
 

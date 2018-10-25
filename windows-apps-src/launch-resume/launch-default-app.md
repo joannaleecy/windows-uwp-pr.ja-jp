@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: dff7b641cad99407ce22e7a4d4b58c10e0ae94d1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435595"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480210"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>URI に応じた既定のアプリの起動
 
@@ -123,7 +123,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) を呼び出すソース アプリは、URI の起動後も画面上に留まることを要求できます。 既定では、利用可能なスペース全体がソース アプリと URI を処理するターゲット アプリとで均等に共有されます。 ソース アプリでは、[**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) プロパティを使って、利用可能なスペースをソース アプリのウィンドウがどの程度占めるかをオペレーティング システムに指示できます。 この **DesiredRemainingView** では、URI の起動後にソース アプリが画面上に留まる必要がなく、ターゲット アプリに完全に置き換わっても良いことも示せます。 このプロパティは呼び出し元アプリの優先ウィンドウのサイズだけを指定します。 画面に同時に表示されている可能性のある他のアプリの動作は指定しません。
 
-**注**  ソース アプリの最終的なウィンドウ サイズは、複数の異なる要素が考慮されて決定されます。たとえば、ソース アプリの設定、画面上のアプリの数、画面の向きなどです。 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) を設定しても、ソース アプリの特定のウィンドウ動作が保証されるわけではありません。
+**注:** 考慮複数の異なる要素など、ソース アプリの最終的なウィンドウ サイズを決定する場合、ソース アプリの基本設定、画面、画面の向き、上のアプリの数。 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) を設定しても、ソース アプリの特定のウィンドウ動作が保証されるわけではありません。
 
 ```cs
 // Set the desired remaining view.
@@ -248,4 +248,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI スキーム | 結果 |
 |------------|---------|
-| msnweather://forecast?la= \[latitude\] & lo = \ [longitude\] | 場所の地理的な座標に基づく予測ページの天気予報アプリを起動します。<br>`latitude` 場所の緯度を指します。<br> `longitude` 場所の経度を指します。<br> |
+| msnweather://forecast?la= \[latitude\] & lo = \ [longitude\] | 場所の地理的な座標に基づく予測ページで、天気予報アプリを起動します。<br>`latitude` 場所の緯度を指します。<br> `longitude` 場所の経度を指します。<br> |

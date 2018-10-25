@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f8559ef07f7f88fcc6349c8bea9d9e27bc73f654
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5436054"
+ms.locfileid: "5478573"
 ---
 # <a name="game-session-and-game-party-visibility-and-joinability"></a>ゲーム セッションおよびゲーム パーティーの可視性と参加可能性
 
@@ -41,7 +41,7 @@ Xbox One では、ゲーム セッションに対する*可視性*およびゲ�
 ## <a name="game-session-joinability"></a>ゲーム セッションの参加可能性
 
 
-2 番目のアクセス制御方法は参加可能性です。 参加可能性は、セッションの有効期間の間に動的に設定でき、セッションに参加できるユーザーの種類を決定します。 セッションの参加可能性の値は次のとおりです。
+2 番目のアクセス制御方法は参加可能性です。 参加可能性は、セッションの有効期間の間に動的に設定でき、セッションに参加できるユーザーの種類を決定します。 セッション joinabilityare の値:
 
 -   *なし* (既定値) - セッションに参加できるユーザーに制限はありません。
 

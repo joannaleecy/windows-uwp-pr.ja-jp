@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bf880e498d9f3d44778493b33c480cd0d3c01ce
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437883"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481784"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>レンダリング フレームワーク II: ゲームのレンダリング
 

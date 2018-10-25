@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, サインイン, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 00f09889971cab58917fd898506b635cc66dcaf2
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5433376"
+ms.locfileid: "5477763"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live サインインのトラブルシューティング
 
@@ -33,7 +33,7 @@ ms.locfileid: "5433376"
 
 #### <a name="developer-account-doesnt-have-access-to-the-right-sandbox-for-run-time-access"></a>開発者アカウントでは実行時アクセス用の正しいサンドボックスにアクセスできない
 
-* テスト アカウント (開発アカウントとも呼ばれます) または承認された開発者アカウントは、開発中のタイトルにサインインに使用する必要があります。  1 つを使用してサインインしようとしている、またはその他のテスト アカウントは XDP で上に作成してください[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)します。 Windows デベロッパー センターでの xbox live の関連付けられている開発者アカウントを承認します。[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
+* テスト アカウント (開発者アカウントとも呼ばれます) または承認された開発者アカウントは、開発中のタイトルにサインインに使用する必要があります。  1 つを使用してサインインしようとしている、またはその他のテスト アカウントは XDP 上に作成してください[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)します。 Windows デベロッパー センターでの xbox live の関連付けられている開発者アカウントを承認します。[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
 * アカウントには、タイトルが公開サンド ボックスへのアクセスを持っていることを確認します。  XDP で作成したテスト アカウントは、それを作成した XDP アカウントのアクセス許可を継承します。
 
 #### <a name="your-device-is-not-on-the-correct-sandbox"></a>デバイスが正しいサンドボックス上にない
@@ -94,7 +94,7 @@ Windows デベロッパー センターでアプリをプロビジョニング�
 
 このエラーは、デバイスまたはユーザーに指定されたタイトルへのアクセス権がないことを意味します。
 
-1. テスト アカウントを使用してサインインしていない、またはサインインに使用したサンドボックスへのアクセス権がテスト アカウントにない可能性があります。 Please [XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx)でテスト アカウントを作成する方法を再確認し、[デベロッパー センターのドキュメント](../../xbox-live-test-accounts.md)。 必要な場合は、適切なサンド ボックスへのアクセス権を持つ新しいテスト アカウントを作成します。
+1. テスト アカウントを使用してサインインしていない、またはサインインに使用したサンドボックスへのアクセス権がテスト アカウントにない可能性があります。 [XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx)でテスト アカウントを作成する手順をダブルクリックしてくださいと[デベロッパー センターのドキュメント](../../xbox-live-test-accounts.md)。 必要な場合は、適切なサンド ボックスへのアクセス権を持つ新しいテスト アカウントを作成します。
 
 Windows 10 から古いアカウントを削除することが必要な場合があります。[スタート] メニューから [設定]、[アカウント] の順に選択して削除できます。
 

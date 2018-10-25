@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: 66de8c34857d667b66cdfb091f83106fed777279
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437845"
+ms.locfileid: "5478367"
 ---
 # <a name="updated-flows-for-multiplayer-game-invites"></a>マルチプレイヤー ゲームへの招待に関する更新されたフロー
 
-Xbox One ベータ フィードバックの結果として、2013 年 11 月 6 日にリリースされた Xbox One Recovery Update 24 で、マルチプレイヤー ゲームへの招待のユーザー エクスペリエンス フローが変更されました。 この変更は**ユーザー エクスペリエンス (UX) のみ**に限定され、ゲーム タイトルから見た動作や機能には影響しません。 タイトル デベロッパーがコードを変更する必要はありません。
+Xbox One ベータ フィードバックの結果として、2013 年 11 月 6 日にリリースされた Xbox One Recovery Update 24 で、マルチプレイヤー ゲームへの招待のユーザー エクスペリエンス フローが変更されました。この変更は**ユーザー エクスペリエンス (UX) のみ**に限定され、ゲーム タイトルから見た動作や機能には影響しません。 タイトル デベロッパーがコードを変更する必要はありません。
 
 ## <a name="summary-of-changes"></a>変更の概要
 
@@ -81,8 +81,8 @@ David はマルチプレイヤー ロビーからゲームを開始します。
     <p><br>
 通知センターで、Laura は以下を選択できます。 <ul>
     <li>   <b>[ゲームへの招待を受ける]:</b> ゲームが起動します。
-    <li>   <b>[ゲームへの招待を断る]:</b> ゲームは起動しません。 Laura はまだパーティー内にいて、その後のゲームへの招待を受け取ります。         
-    <li>   <b style="background-color: #FFFF00">[パーティーから出る]: ゲームは起動しません。 Laura はパーティーから削除されます。</b>
+    <li>   <b>[ゲームへの招待を断る]:</b> ゲームは起動しません。Laura はまだパーティー内にいて、その後のゲームへの招待を受け取ります。         
+    <li>   <b style="background-color: #FFFF00">[パーティーから出る]: ゲームは起動しません。Laura はパーティーから削除されます。</b>
     </ul>
     </td>
   </tr>

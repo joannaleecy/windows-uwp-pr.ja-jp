@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 新規事項, may 2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97de20b2d4fb384139b606003c800516151502d3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5442436"
+ms.locfileid: "5479425"
 ---
 # <a name="whats-new-for-the-xbox-live-apis---may-2017"></a>Xbox Live API の新規事項 - May 2017
 

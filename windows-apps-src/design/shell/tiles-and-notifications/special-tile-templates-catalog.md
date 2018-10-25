@@ -12,27 +12,27 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e408509f4cebbc89587237c6e0dc67bc88b1558
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430938"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481335"
 ---
 # <a name="special-tile-templates"></a>特別なタイル テンプレート
  
 
-特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。 特別なタイル テンプレートは、それぞれ Windows 10 用に特別に構築されたテンプレートです。ただし、アイコン タイル テンプレートは、特別に構築されたテンプレートではなく、従来の特別なテンプレートが Windows 10 向けに更新されたものです。 この記事では、3 つの特別なタイル テンプレートである、アイコン タイル テンプレート、フォト タイル テンプレート、および People タイル テンプレートについて取り上げています。
+特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。 各特別なタイル テンプレート具体的には用にビルドした windows 10、アイコン タイル テンプレートを除く従来特別なテンプレートが windows 10 に更新されました。 この記事では、3 つの特別なタイル テンプレートである、アイコン タイル テンプレート、フォト タイル テンプレート、および People タイル テンプレートについて取り上げています。
 
 ## <a name="iconic-tile-template"></a>アイコン タイル テンプレート
 
 
-アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使うと、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートがサポートされています 
+アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使うと、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートをサポートしています。
 
 ![小サイズと普通サイズのメール タイル](images/iconic-template-mail-2sizes.png)
 
 ### <a name="how-to-create-an-iconic-tile"></a>アイコン タイルを作成する方法
 
-次の手順では、Windows 10 のアイコン タイルを作成するために必要なすべての情報について説明します。 大まかに言うと、まずアイコンの画像アセットを用意する必要があります。次に、アイコン テンプレートを使って通知をタイルに送信し、最後に、タイルに表示される番号を指定するバッジ通知を送信します。
+次の手順では、windows 10 のアイコン タイルを作成するために必要なすべてについて説明します。 大まかに言うと、まずアイコンの画像アセットを用意する必要があります。次に、アイコン テンプレートを使って通知をタイルに送信し、最後に、タイルに表示される番号を指定するバッジ通知を送信します。
 
 ![アイコン タイルの開発フロー](images/iconic-template-dev-flow.png)
 
@@ -188,7 +188,7 @@ TileContent content = new TileContent()
 ## <a name="people-tile-template"></a>People タイル テンプレート
 
 
-Windows 10 の People アプリでは、円の中に画像のコレクションを表示する特別なタイル テンプレートを使います。これらの円は、タイル上で垂直方向または水平方向にスライドされます。 このタイル テンプレートは、Windows 10 ビルド 10572 以降で利用でき、すべてのユーザーがアプリで使うことができます。
+Windows 10 の People アプリでは、円の中に画像のコレクションを表示する特別なタイル テンプレートを使います。これらの円は、タイル上で垂直方向または水平方向にスライドされます。 このタイル テンプレートが利用可能な windows 10 ビルド 10572、およびはどなたでも、アプリで使うことです。
 
 People タイル テンプレートは、次のサイズのタイルで動作します。
 
@@ -196,19 +196,19 @@ People タイル テンプレートは、次のサイズのタイルで動作し
 
 ![普通サイズの People タイル](images/people-tile-medium.png)
 
- 
+ 
 
 **ワイド タイル** (TileWide)
 
 ![ワイド People タイル](images/people-tile-wide.png)
 
- 
+ 
 
 **大きいタイル (デスクトップのみ)** (TileLarge)
 
 ![大きい People タイル](images/people-tile-large.png)
 
- 
+ 
 
 [Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)を使っている場合、People タイル テンプレートを利用するために必要な操作は、*TileBinding* コンテンツ用に新しい *TileBindingContentPeople* オブジェクトを作成することだけです。 *TileBindingContentPeople* クラスには、画像を追加するための Images プロパティがあります。
 
@@ -281,9 +281,9 @@ TileContent content = new TileContent()
 * [タイル、バッジ、および通知](index.md)
 * [アダプティブ タイルの作成](create-adaptive-tiles.md)
 * [タイルのコンテンツのスキーマ](../tiles-and-notifications/tile-schema.md)
- 
+ 
 
- 
+ 
 
 
 

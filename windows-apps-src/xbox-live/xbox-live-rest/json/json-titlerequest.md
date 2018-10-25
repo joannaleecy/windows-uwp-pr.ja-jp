@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 98adbf3f170c679452f4a78a18097b83e93faffa
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5436066"
+ms.locfileid: "5482878"
 ---
 # <a name="titlerequest-json"></a>TitleRequest (JSON)
 タイトルに関する情報を要求します。 
@@ -25,14 +25,14 @@ ms.locfileid: "5436066"
  
 ## <a name="titlerequest"></a>TitleRequest
  
-TitleRequest オブジェクトでは、次の仕様があります。
+TitleRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| id| 32 ビット符号なし整数| タイトルの識別子です。| 
+| id| 32 ビットの符号なし整数| タイトルの識別子です。| 
 | activity (アクティビティ)| [ActivityRequest](json-activityrequest.md)| タイトルでの利用可能な場合は、リッチ プレゼンスおよびメディア情報をなどの情報をします。| 
 | 状態| string| かどうか、ユーザーがアクティブか。 ユーザーを非アクティブとしてマークするには、このフィールドが必要です。 既定では「アクティブ」です。| 
-| 配置| string| タイトルの配置モード。 使用可能な値には、「完全」、「入力と」、「スナップ」または"background"が含まれます。 既定値は、「完全」です。| 
+| 配置| string| タイトルの配置モードです。 設定可能な値には、「完全」、「入力と」、「スナップ」または"background"が含まれます。 既定値は、「完全」です。| 
   
 <a id="ID4EJC"></a>
 

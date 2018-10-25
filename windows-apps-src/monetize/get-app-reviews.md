@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, レビュー
 ms.localizationpriority: medium
 ms.openlocfilehash: c14b2ce6dd9fa7058ef3dbcd8e7e7a17a05fe78e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433397"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480937"
 ---
 # <a name="get-app-reviews"></a>アプリのレビューの取得
 
@@ -115,7 +115,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターを 10000 に設定した場合、クエリに適合するレビュー データが 10,000 行を超えると、この値が返されます。 |
 | TotalCount | int    | クエリの結果データ内の行の総数です。  |
 
- 
+ 
 ### <a name="review-values"></a>レビュー値
 
 *Value* 配列の要素には、次の値が含まれます。

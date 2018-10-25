@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 12feca7761faa441023f2f242903d4fec2f0284d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5433767"
+ms.locfileid: "5483185"
 ---
 # <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameserversserver-name"></a>DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})
 指定されたサーバーは、セッションから削除します。
@@ -44,7 +44,7 @@ ms.locfileid: "5433767"
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4EFB"></a>
 
 

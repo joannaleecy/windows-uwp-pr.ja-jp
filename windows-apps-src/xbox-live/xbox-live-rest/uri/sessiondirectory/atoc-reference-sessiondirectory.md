@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b03c55b827b083c050451c12c1fe48834d7ae186
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5443378"
+ms.locfileid: "5479396"
 ---
 # <a name="session-directory-uris"></a>セッション ディレクトリ URI
 
-このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) からユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドについての詳細を提供します。
+このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) からユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
 
 
 > [!NOTE] 
@@ -42,14 +42,14 @@ sessiondirectory.xboxlive.com
 
 ## <a name="service-version"></a>サービスのバージョン
 
-これらの残りの部分の Uri の呼び出し元渡す必要があります値 104/105 以降 X の Xbl のコントラクトのバージョン、サービス バージョンのエンターテインメント探索サービス (EDS) を指定する HTTP ヘッダー。
+これらの残りの部分の Uri の呼び出し元する必要があります値を渡す 104/105 以降 X の Xbl のコントラクトのバージョン、サービス バージョン エンターテイメント探索サービス (EDS) を指定する HTTP ヘッダー。
 
 <a id="ID4EAC"></a>
 
 
 ## <a name="system-objects-and-properties"></a>システム オブジェクトとプロパティ
 
-セッションとテンプレートを構成する、MPSD は、ディレクトリ適用および解釈される固定のスキーマに準拠しているセッションの JSON オブジェクトの数を使用します。 さまざまなセッション ディレクトリ Uri でサポートされているメソッドの呼び出し時にこれらのオブジェクトは検証マージ、サポートされているスキーマに基づいています。 マルチプレイヤーの構成に関連する主な JSON オブジェクトは次のとおりです。
+セッションとテンプレートを構成する、MPSD は、ディレクトリを適用および解釈される固定のスキーマを多数の準拠したセッションの JSON オブジェクトを使用します。 さまざまなセッション ディレクトリ Uri でサポートされているメソッドの呼び出し時にこれらのオブジェクトは検証およびマージに基づいて、サポートされているスキーマ。 マルチプレイヤーの構成に関連付けられている主な JSON オブジェクトは次のとおりです。
 
    *  [MultiplayerActivityDetails (JSON)](../../json/json-multiplayeractivitydetails.md)
    *  [MultiplayerSession (JSON)](../../json/json-multiplayersession.md)
@@ -78,11 +78,11 @@ sessiondirectory.xboxlive.com
 
 [/handles](uri-handles.md)
 
-&nbsp;&nbsp;Xbox One ダッシュ ボードのユーザー エクスペリエンスに表示されると、必要な場合は、セッション メンバーを招待するユーザーの現在のアクティビティのセッションを設定する POST 操作をサポートしています。
+&nbsp;&nbsp;Xbox One ダッシュ ボードのユーザー エクスペリエンスに表示するために必要な場合は、セッション メンバーを招待して、ユーザーの現在のアクティビティのセッションを設定する POST 操作をサポートしています。
 
 [/handles/{handleId}](uri-handleshandleid.md)
 
-&nbsp;&nbsp;識別子により指定されたセッション ハンドルを削除または取得の操作をサポートしています。
+&nbsp;&nbsp;識別子により指定されたセッション ハンドルの削除と取得の操作をサポートしています。
 
 [/handles/{handleId}/session](uri-handleshandleidsession.md)
 
@@ -118,7 +118,7 @@ sessiondirectory.xboxlive.com
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md)
 
-&nbsp;&nbsp;作成してセッションを取得する PUT と取得の操作をサポートしています。
+&nbsp;&nbsp;PUT と取得の操作を作成してセッションを取得をサポートしています。
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindex.md)
 

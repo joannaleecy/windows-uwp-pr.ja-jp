@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445258"
+ms.locfileid: "5480786"
 ---
 # <a name="support-your-app-with-background-tasks"></a>バックグラウンド タスクによるアプリのサポート
 
@@ -28,14 +28,14 @@ Windows 10 バージョン 1607 以降では、バックグラウンドでのオ
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>インプロセスとアウトプロセスのバックグラウンド タスク
 
-バック グラウンド タスクを実装する 2 つの方法があります。
+これにはバック グラウンド タスクを実装する 2 つの方法があります。
 
 * : プロセス内で、アプリとそのバック グラウンド プロセス、同じプロセスで実行します。
 * アウト プロセス: アプリとバック グラウンド プロセスは、個別のプロセスで実行されます。
 
 インプロセス バックグラウンドのサポートは、バックグラウンド タスクの書き込みを簡略化するために、Windows 10 バージョン 1607 で導入されました。 ただし現在でも、アウトプロセスのバックグラウンド タスクを書き込むことはできます。 インプロセスのバックグラウンド タスクとアウトプロセスのバックグラウンド タスクの使い分けに関する推奨事項については、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
 
-アウト プロセス バック グラウンド タスク回復力の強化ダウンのでがバック グラウンド プロセスことはできません、アプリのプロセス問題が発生した場合。 ただし、回復性には、アプリとバック グラウンド タスクの間でプロセス間通信を管理するより複雑な価格。
+アウト プロセス バック グラウンド タスク回復力の強化ダウンのでがバック グラウンド プロセスことはできません、アプリのプロセス問題が発生した場合。 回復性が、アプリとバック グラウンド タスクの間でプロセス間通信を管理するより複雑な価格で取得されます。
 
 アウト プロセス バック グラウンド タスクは、OS が個別のプロセス (backgroundtaskhost.exe) で実行される[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)インターフェイスを実装する、軽量クラスとして実装されます。 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)クラスを使用して、バック グラウンド タスクを登録します。 このクラス名は、バックグラウンド タスクの登録時にエントリ ポイントを指定するために使用されます。
 
@@ -46,7 +46,7 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 アウトプロセス バックグラウンド タスクの概要については、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。
 
 > [!TIP]
-> Windows 10 以降では、バックグラウンド タスクを登録するための前提要件として、アプリをロック画面に配置する必要がなくなりました。
+> Windows 10 以降、する必要がなくなりましたロック画面バック グラウンド タスクを登録するための前提条件として、アプリを配置します。
 
 ## <a name="background-tasks-for-system-events"></a>システム イベントに対するバックグラウンド タスク
 
@@ -77,8 +77,8 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 
 バックグラウンド タスク [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) に **InternetAvailable** 条件を追加して、ネットワーク スタックが実行されるまで、バックグラウンド タスクのトリガーを遅らせます。 この条件は、ネットワークが利用可能になるまで、バック グラウンド タスクが実行されないために、電力を節約します。 この条件では、リアルタイムのアクティブ化は行われません。
 
-バック グラウンド タスクは、ネットワーク接続を必要とする場合は、ネットワークは、バック グラウンド タスクの実行中の応答保つ[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)を設定します。 これによって、デバイスがコネクト スタンバイ モードに入っている場合でも、タスクの実行中はネットワークを稼働状態に保つようにバックグラウンド タスク インフラストラクチャに指示されます。 バック グラウンド タスクが**IsNetworkRequested**を設定していない場合、バック グラウンド タスクはできません (たとえば、電話の画面がになっているとします。) コネクト スタンバイ モードのときにネットワークにアクセスするには
- 
+バック グラウンド タスクは、ネットワーク接続を必要とする場合は、ネットワークは、バック グラウンド タスクの実行中の応答保つ[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)を設定します。 これによって、デバイスがコネクト スタンバイ モードに入っている場合でも、タスクの実行中はネットワークを稼働状態に保つようにバックグラウンド タスク インフラストラクチャに指示されます。 バック グラウンド タスクが**IsNetworkRequested**を設定していない場合、バック グラウンド タスクはできません (たとえば、電話の画面がになっているとき。) コネクト スタンバイ モードのときにネットワークにアクセスするには
+ 
 バック グラウンド タスクの条件について詳しくは、[バック グラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)を参照してください。
 
 ## <a name="application-manifest-requirements"></a>アプリケーション マニフェストの要件
@@ -95,7 +95,7 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 | **タイマー** | バックグラウンド タスクは、15 分おきに実行できます。また、[**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) を使って特定の時刻に実行するように設定することもできます。 詳しくは、「[タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)」をご覧ください。 |
 | **プッシュ通知** | バックグラウンド タスクは、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) に応答して、直接プッシュ通知を受け取ります。 |
 
-**注**  
+**注**  
 
 ユニバーサル Windows アプリは、どの種類のバックグラウンド トリガーを登録する場合でも、先に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。
 
@@ -114,7 +114,7 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 | **ControlChannelReset** | コントロール チャネルがリセットされたら、バックグラウンド タスクがトリガーされます。 |
 | **SessionConnected**    | セッションが接続されたら、バックグラウンド タスクがトリガーされます。   |
 
-   
+   
 以下のシステム イベント トリガーは、ユーザーがアプリをロック画面に配置した場合や、アプリをロック画面から削除した場合に、そのことを通知します。
 
 | トリガー名                     | 説明                                  |
@@ -122,7 +122,7 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 | **LockScreenApplicationAdded**   | アプリのタイルがロック画面に追加されます。     |
 | **LockScreenApplicationRemoved** | アプリのタイルがロック画面から削除されます。 |
 
- 
+ 
 ## <a name="background-task-resource-constraints"></a>バックグラウンド タスク リソースの制限
 
 バックグラウンド タスクは軽量です。 バックグラウンドの実行を最小限に抑えることにより、フォアグラウンド アプリでの最適なユーザー エクスペリエンスとバッテリ寿命が保証されます。 この設定は、リソース制約をバックグラウンド タスクに適用することにより、強制的に適用されます。

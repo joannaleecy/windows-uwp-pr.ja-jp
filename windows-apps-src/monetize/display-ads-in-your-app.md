@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, バナー, 広告コントロール, スポット広告
 ms.localizationpriority: medium
 ms.openlocfilehash: c0dde67e3f7ab43734ffb0bf2a5826cc54691e17
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445699"
+ms.locfileid: "5483504"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Microsoft Advertising SDK を使用したアプリでの広告の表示
 
-Microsoft Advertising SDK を使用して、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリに広告を配置することで、収益機会を増やせます。 広告の収益化プラットフォームでは、さまざまな多くの一般的な広告ネットワークと、アプリとサポートの仲介にシームレスに統合できる広告形式を提供します。 プラットフォームは OpenRTB、膨大な 2.x、MRAID 2、および VPAID 3 標準に準拠していると互換性が堀と IAS します。 
+Microsoft Advertising SDK を使用して、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリに広告を配置することで、収益機会を増やせます。 広告の収益化プラットフォームでは、さまざまな多くの一般的な広告ネットワークと、アプリとがサポートされますメディエーションにシームレスに統合できる広告形式を提供します。 プラットフォームは OpenRTB、膨大な 2.x、MRAID 2、および VPAID 3 標準に準拠していると互換性が堀と IAS します。 
 
 <br/>
 

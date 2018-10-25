@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: eaa7314b2cb2c8459f4bd2aae78794685c277c70
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437217"
+ms.locfileid: "5480310"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
-セッション テンプレートの名前のセットを取得します。
+一連のセッション テンプレート名を取得します。
 
 > [!IMPORTANT]
 > この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
@@ -43,7 +43,7 @@ ms.locfileid: "5437217"
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4EFB"></a>
 
 

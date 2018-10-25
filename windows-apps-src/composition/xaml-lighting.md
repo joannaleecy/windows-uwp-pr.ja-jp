@@ -15,11 +15,11 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: 672efaa0899fa8b63b5ec0fda09a20f4f0ab7d67
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433694"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481774"
 ---
 # <a name="xaml-lighting"></a>XAML の照明
 
@@ -464,7 +464,7 @@ Platform::String^ OrangeSpotLight::GetId()
 任意の XAML UIElement またはブラシに光をこのライトを適用することができます。 この例では、さまざまな潜在的な使用法を示します。
 
 > [!Important]
-> [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、削除が 2 回`local:OrangeSpotLight.IsTarget="True"`次のマークアップからします。 添付プロパティは、コード ビハインドで既に設定されます。
+> [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、削除が 2 回`local:OrangeSpotLight.IsTarget="True"`次のマークアップからです。 添付プロパティは、コード ビハインドで既に設定されます。
 
 ```xaml
 <StackPanel Width="100">

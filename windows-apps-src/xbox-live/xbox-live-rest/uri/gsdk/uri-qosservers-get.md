@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a4787bf6b139d1a638ec783c0293d70a8ee239
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437156"
+ms.locfileid: "5474140"
 ---
 # <a name="get-qosservers"></a>GET (/qosservers)
-URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。 これらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [必要な要求ヘッダー](#ID4EBB)
   * [必要な応答ヘッダー](#ID4EUC)
@@ -37,13 +37,13 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-要求を行う場合、次の表に示すようにヘッダーは、必要があります。
+要求を行う場合、次の表に示すようにヘッダーは必要です。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | 
 | Content-Type| application/json| 送信されたデータの種類です。| 
-| Host| gameserverds.xboxlive.com|  | 
-| Content-Length|  | 要求のオブジェクトの長さ。| 
+| Host| gameserverds.xboxlive.com|  | 
+| Content-Length|  | 要求のオブジェクトの長さ。| 
 | x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
   
 <a id="ID4EUC"></a>
@@ -51,23 +51,23 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答には、常に、次の表に示すようにヘッダーが含まれます。
+応答には常に、次の表に示すようにヘッダーが含まれます。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | 
 | Content-Type| application/json| 応答本文内のデータの種類です。| 
-| Content-Length|  | 応答本文の長さ。| 
+| Content-Length|  | 応答本文の長さ。| 
   
 <a id="ID4EVD"></a>
 
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合、サービスは、次のメンバーを含む JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| qosservers| サーバー情報の配列です。| 
+| qosservers| サーバーの情報の配列です。| 
 | serverFqdn| サーバーの完全修飾ドメイン名。| 
 | serverSecureDeviceAddress| サーバーのセキュア デバイス アドレス。| 
 | targetLocation| サーバーの地理的な場所です。| 

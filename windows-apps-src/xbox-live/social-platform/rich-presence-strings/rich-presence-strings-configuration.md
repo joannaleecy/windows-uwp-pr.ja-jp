@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
 ms.openlocfilehash: 7accd2585b7d1822b99abf03e74a660cbf983cf9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439255"
+ms.locfileid: "5479767"
 ---
 # <a name="rich-presence-configuration"></a>リッチ プレゼンスの構成
 
@@ -148,7 +148,7 @@ multiplayer | 既定 | Playing multiplayer |
  |  | en-US | Playing multiplayer |
  |  | en-GB | Playing multiplayer |
  |  | de | Spielt Mehrspieler |
- |  | など | 
+ |  | など | 
 
 作成できる文字列の数に制限はありませんが、タイトルには少なくとも 1 つの文字列が必要です。
 

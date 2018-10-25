@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, パッケージ要件, パッケージ, パッケージ形式, サポートされているバージョン, 提出
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e294fdf5a9b2d98f09d839fa62499b556de3a5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440086"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481526"
 ---
 # <a name="app-package-requirements"></a>アプリ パッケージの要件
 
@@ -30,21 +30,21 @@ Microsoft Store に申請するために、次のガイドラインに従って�
 開発環境として Microsoft Visual Studio を使っている場合は、アプリ パッケージを迅速かつ簡単に作成するための組み込みツールが既に用意されています。 詳しくは、「[アプリのパッケージ化](../packaging/index.md)」をご覧ください。
 
 > [!NOTE]
-> すべてのファイル名に ANSI を使っていることを確認してください。 
+> すべてのファイル名に ANSI を使っていることを確認してください。 
 
 Visual Studio でパッケージを作るときは、必ず、開発者アカウントに関連付けられている同じアカウントでサインインしてください。 パッケージ マニフェストの一部には、お使いのアカウントに関連する固有の詳細情報が含まれています。 この情報は自動的に検出されて追加されます。 マニフェストにこの追加情報が追加されていない場合、パッケージのアップロードでエラーが発生する可能性があります。 
 
-アプリの UWP パッケージをビルドすると、Visual Studio は、.msix または appx ファイル、または .msixupload または .appxupload ファイルを作成できます。 UWP アプリでは、常に[[パッケージ](upload-app-packages.md)] ページで .msixupload または .appxupload ファイルをアップロードすることをお勧めします。 Microsoft Store 用の UWP アプリのパッケージ化について詳しくは、「[Visual Studio での UWP アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
+アプリの UWP パッケージを作成する場合、Visual Studio は、.msix または appx ファイル、または .msixupload または .appxupload ファイルを作成できます。 UWP アプリでは、常に[[パッケージ](upload-app-packages.md)] ページで、.msixupload または .appxupload ファイルをアップロードすることをお勧めします。 Microsoft Store 用の UWP アプリのパッケージ化について詳しくは、「[Visual Studio での UWP アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
 
 アプリのパッケージに、信頼された証明機関が発行する証明書で署名する必要はありません。
 
 
 ### <a name="app-bundles"></a>アプリ バンドル
 
-UWP アプリでは、Visual Studio は (.msixbundle または .appxbundle) をユーザーがダウンロードするアプリのサイズを減らすために、アプリ バンドルを生成できます。 その利便性が発揮されるのは、言語固有のアセットや多様な画像倍率のアセット、特定バージョンの Microsoft DirectX に適用されるリソースを定義した場合などです。
+UWP アプリでは、Visual Studio は、アプリ バンドル (.msixbundle または .appxbundle)、ユーザーがダウンロードするアプリのサイズを小さくを生成できます。 その利便性が発揮されるのは、言語固有のアセットや多様な画像倍率のアセット、特定バージョンの Microsoft DirectX に適用されるリソースを定義した場合などです。
 
 > [!NOTE]
-> 1 つのアプリ バンドルには、すべてのアーキテクチャ用のパッケージを含めることができます。
+> 1 つのアプリ バンドルには、すべてのアーキテクチャ用のパッケージを含めることができます。
 
 アプリ バンドルが使われている場合、ユーザーは、自分に関係したファイルだけをダウンロードすればよく、すべてのリソースをダウンロードする必要はありません。 アプリ バンドルについて詳しくは、「[アプリのパッケージ化](../packaging/index.md)」と「[Visual Studio で UWP アプリをパッケージ化する](../packaging/packaging-uwp-apps.md)」をご覧ください。
 
@@ -58,13 +58,13 @@ UWP アプリでは、Visual Studio は (.msixbundle または .appxbundle) を�
 マニフェストには、アカウントとアプリに関するいくらかの具体的な情報を含める必要があります。 この情報は、ダッシュボードにあるアプリの概要ページの [**アプリの管理**] セクションで [アプリの ID の詳細情報を表示する](view-app-identity-details.md) ことで確認できます。
 
 > [!NOTE]
-> マニフェスト内の値は、大文字と小文字が区別されます。 スペースや句読点なども一致する必要があります。 注意して入力し、間違いがないか確認してください。
+> マニフェスト内の値は、大文字と小文字が区別されます。 スペースや句読点なども一致する必要があります。 注意して入力し、間違いがないか確認してください。
 
 
-アプリ バンドル (.msixbundle または .appxbundle) は、さまざまなマニフェストを使用します。 アプリ バンドル マニフェストの詳細や要件については、[バンドル マニフェスト](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) に関するドキュメントをご覧ください。 注: .msixbundle や .appxbundle では、それぞれのマニフェスト含まれているパッケージには、同じ[Id](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)要素の**ProcessorArchitecture**属性を除くの属性と要素を使う必要があります。
+アプリ バンドル (.msixbundle または .appxbundle) は、特別なマニフェストを使用します。 アプリ バンドル マニフェストの詳細や要件については、[バンドル マニフェスト](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) に関するドキュメントをご覧ください。 注 .msixbundle や .appxbundle では、それぞれのマニフェスト含まれているパッケージには、同じ[Id](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)要素の**ProcessorArchitecture**属性を除くの属性と要素を使用する必要があります。
 
 > [!TIP]
-> 必ず、[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)を実行してから、パッケージを提出してください。 これによって、認定や提出の失敗の原因となる可能性がある問題がマニフェストに含まれているかどうかを判断できます。
+> 必ず、[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)を実行してから、パッケージを提出してください。 これによって、認定や提出の失敗の原因となる可能性がある問題がマニフェストに含まれているかどうかを判断できます。
 
 
 ## <a name="package-format-requirements"></a>パッケージの形式の要件
@@ -90,9 +90,9 @@ UWP アプリの場合、すべてのパッケージは Microsoft Store によ�
 
 StoreManifest.xml は、必要に応じてアプリ パッケージに含めることのできる構成ファイルです。 その目的は、Microsoft Store デバイス アプリとしてアプリを宣言する機能や、パッケージ マニフェストの対象外となるデバイスに適用される要件を宣言する機能などを有効にすることです。 使用する場合、StoreManifest.xml はアプリ パッケージに送信され、アプリのメイン プロジェクトのルート フォルダーにある必要があります。 詳しくは、「[StoreManifest スキーマ](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)」をご覧ください。
 
- 
+ 
 
- 
+ 
 
 
 

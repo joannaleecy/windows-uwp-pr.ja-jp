@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, ユーザー インターフェイス, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a82958f01530b84276823ea8d025d292bd664ac
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442798"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483542"
 ---
 # <a name="add-a-user-interface"></a>ユーザー インターフェイスの追加
 
 
-ゲームでは、インプレースして 3D の視覚効果を持つ、それは、ゲームは、プレイヤーにゲームの状態に関するフィードバックを提供できるように一部の 2D 要素を追加することに注力します。 これを単純なメニュー オプションを追加することで実現し、ヘッドアップ ディスプレイ コンポーネント上 3-D グラフィックス パイプラインの出力します。
+これで、ゲームの 3D の視覚効果が備わっています、ゲームは、プレイヤーにゲームの状態に関するフィードバックを提供できるように一部の 2D 要素を追加することに注力を勧めします。 これを単純なメニュー オプションを追加することで実現し、ヘッドアップ ディスプレイ コンポーネント上 3-D グラフィックス パイプラインの出力します。
 
 >[!Note]
 >このサンプルの最新ゲーム コードをダウンロードしていない場合は、[Direct3D ゲーム サンプルのページ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)に移動してください。 このサンプルは、UWP 機能のサンプルの大規模なコレクションの一部です。 サンプルをダウンロードする手順については、「[GitHub から UWP のサンプルを取得する](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)」をご覧ください。
@@ -35,40 +35,40 @@ Direct2D を使用して、UWP DirectX ゲームを含むにさまざまなユ�
 ## <a name="the-user-interface-overlay"></a>ユーザー インターフェイスのオーバーレイ
 
 
-DirectX ゲームでテキストやユーザー インターフェイス要素を表示するさまざまな方法がありますを行いましょうフォーカス[Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx)を使用します。 使用します[DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)をのテキスト要素です。
+DirectX ゲームでテキストやユーザー インターフェイス要素を表示するさまざまな方法はありますを行いましょうフォーカス[Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx)を使ってにします。 使用します[DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)をテキスト要素の場合。
 
 
 Direct2D では、ピクセル ベースのプリミティブと効果を描画する描画 2D の Api のセットが使用されます。 Direct2D で起動するときは、簡単にことをお勧めします。 複雑なレイアウトやインターフェイス動作には、時間と計画が必要です。 シミュレーション ゲームや戦略ゲーム、見などの複雑なユーザー インターフェイスがゲームに必要な場合は、代わりに XAML の使用を検討してください。
 
 > [!NOTE]
-> UWP DirectX ゲームで XAML を使ったユーザー インターフェイスの開発について詳しくは、[ゲーム サンプルの紹介](tutorial-resources.md)を参照してください。
+> XAML を使った UWP DirectX ゲームのユーザー インターフェイスの開発について詳しくは、[ゲーム サンプルの紹介](tutorial-resources.md)を参照してください。
 
 Direct2D は、ユーザー インターフェイスや HTML や XAML のようなレイアウトを具体的には設計されていません。 リスト、ボックスやボタンなどのユーザー インターフェイス コンポーネントも提供しません。 Div、テーブル、グリッドなどのレイアウト コンポーネントも提供しません。
 
 
 このゲーム サンプルは、2 つの主要 UI コンポーネントがあります。
 1. スコアとゲーム内のコントロールのヘッドアップ ディスプレイ。
-2. オーバーレイのゲームの状態のテキストと一時停止情報などのオプションを表示するために使用して、レベル開始オプション。
+2. オーバーレイのゲームの状態のテキストと一時停止情報などのオプションを表示するために使用して、レベル開始オプションです。
 
 ### <a name="using-direct2d-for-a-heads-up-display"></a>Direct2D を使ったヘッドアップ ディスプレイ
 
-次の図は、サンプルのゲーム内ヘッドアップ ディスプレイを示しています。 シンプルでっきり、3 D ワールドを移動して、ターゲットを撮影に集中するプレイヤーをお勧めします。 優れたインターフェイスやヘッドアップ ディスプレイを処理し、ゲームのイベントに応答するプレイヤーの機能は複雑ことはありませんする必要があります。
+次の図は、サンプルのゲーム内ヘッドアップ ディスプレイを示しています。 シンプルでっきり、3 D ワールドを移動して、ターゲットを撮影に集中するプレイヤーをお勧めします。 優れたインターフェイスやヘッドアップ ディスプレイする必要があることはありませんが複雑になるを処理し、ゲームのイベントに応答するプレイヤーの機能です。
 
 ![ゲーム オーバーレイのスクリーン ショット](images/simple-dx-game-ui-overlay.png)
 
 オーバーレイは、次の基本的なプリミティブで構成されます。
-- 右上隅のプレイヤーに通知するテキストを[**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038) 
+- [**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038)の右上隅のプレイヤーに通知するテキスト 
     - 成功した場合のヒット数
-    - プレイヤーが行われたショットの数
+    - プレイヤーが行わショットの数
     - レベルの残り時間
     - 現在のレベルの数 
-- 2 つの行セグメント十字を形成するために使用を交差します。
+- 2 つの十字を形成するために使用する行セグメントと交差します。
 - [ムーブ/ルック コント ローラー](tutorial--adding-controls.md)の境界の下隅にある 2 つの四角形です。 
 
 
-オーバーレイのゲーム内ヘッドアップ ディプレイの状態は[**GameHud**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h)クラスの[**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358)メソッドで描画されます。 このメソッド内で UI を表す Direct2D オーバーレイは、時間の残り、およびレベルの数のヒット数の変更を反映するように更新されます。
+オーバーレイのゲーム内ヘッドアップ ディプレイの状態が[**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358) [**GameHud**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h)クラスのメソッドで描画されます。 以下のメソッド内で UI を表すに Direct2D オーバーレイは、時間の残り、およびレベルの数のヒット数の変更を反映するように更新されます。
 
-追加し、ゲームに初期化されているかどうかは`TotalHits()`、 `TotalShots()`、および`TimeRemaining()` [**swprintf_s**](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l)にバッファーし、印刷の形式を指定します。 [**DrawText**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd742848)メソッドを使用してを描画し、ことができます。 行います同じ現在のレベルのインジケーターの空の番号を ➀ などの未完了のレベルを表示して、特定のレベルが完了したことを表示する塗りつぶされた ➊ 番号描画します。
+追加し、ゲームに初期化されているかどうかは`TotalHits()`、 `TotalShots()`、および`TimeRemaining()` [**swprintf_s**](https://docs.microsoft.com/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l)にバッファーし、印刷形式を指定します。 [**DrawText**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd742848)方法を使用してを描画し、ことができます。 行います同じ現在のレベルのインジケーターの空の番号など、➀ 未完了のレベルを表示して、特定のレベルが完了したことを表示する塗りつぶされた ➊ 番号描画します。
 
 
 次のコード スニペットは、 **GameHud::Render**メソッドのプロセスについて説明します 
@@ -175,7 +175,7 @@ void GameHud::Render(_In_ Simple3DGame^ game)
 }
 ```
 
-メソッドを解除、移動さらに、この[**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L320-L358)メソッド描画の下し、 [**ID2D1RenderTarget::DrawRectangle**](https://msdn.microsoft.com/library/windows/desktop/dd371902)と[**ID2D1RenderTarget::DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895)への 2 つの呼び出しを使って十字線用の四角形を起動します。
+メソッドを中断して、移動、さらに、この[**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L320-L358)メソッドの描画の下、ファイアの四角[**ID2D1RenderTarget::DrawRectangle**](https://msdn.microsoft.com/library/windows/desktop/dd371902)と[**ID2D1RenderTarget::DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895)への 2 つの呼び出しを使って十字線。
 
 ```cpp
         // Check if game is playing
@@ -223,44 +223,44 @@ void GameHud::Render(_In_ Simple3DGame^ game)
 auto windowBounds = m_deviceResources->GetLogicalSize();
 ```
 
- ゲームのウィンドウのサイズの取得は、UI プログラミングに不可欠です。 ウィンドウのサイズを DIP は 1/96 インチとして定義されている Dip (デバイス依存しないピクセル) と呼ばれる単位で指定します。 Direct2D 拡大/縮小実際のピクセルに描画単位描画が発生すると、Windows のドット/インチ (DPI) 設定を使用して、そのようにします。 同様に、 [**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038)を使ってテキストを描画するときは、フォントのサイズにポイントではなく Dip を設定します。 DIP は、浮動小数点数として表されます。
+ ゲームのウィンドウのサイズの取得は、UI プログラミングに不可欠です。 ウィンドウのサイズは、Dip (デバイスに依存しないピクセル)、1/96 インチとして、DIP が定義されていると呼ばれる単位で指定します。 Direct2D 拡大/縮小実際のピクセルに描画単位描画が発生すると、Windows のドット/インチ (DPI) 設定を使用してこれを行います。 同様に、 [**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038)を使ってテキストを描画するときは、フォントのサイズにポイントではなく Dip を設定します。 DIP は、浮動小数点数として表されます。
 
- 
+ 
 
 ### <a name="displaying-game-state-info"></a>ゲームの状態情報を表示します。
 
-表示するには、ヘッドアップ ディスプレイ以外は、ゲーム サンプルには、ゲームの 6 つの状態を表すオーバーレイにはします。 すべての状態は、プレイヤーが読むテキスト、大きな黒の四角形のプリミティブを機能です。 アクティブでないこれらの状態であるために、ムーブ/ルック コント ローラーの四角形と十字線は描画されません。
+ヘッドアップ ディスプレイ、ゲーム サンプルにはあり 6 つのゲームの状態を表すオーバーレイします。 すべての状態には、プレイヤーが読むテキスト、大きな黒の四角形のプリミティブが機能します。 アクティブでないこれらの状態であるために、ムーブ/ルック コント ローラーの四角形と十字線は描画されません。
 
-オーバーレイを作成するには、ゲームの状態に合わせて自動的に表示するテキストを切り替えることが協力[**GameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.h)クラスを使用します。
+ゲームの状態に合わせて自動的に表示するテキストを切り替えることが可能、 [**GameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.h)クラスを使用してオーバーレイが作成されます。
 
 ![状態とオーバーレイの動作を確認します。](images/simple-dx-game-ui-finaloverlay.png)
 
-オーバーレイは 2 つのセクションに分割:**状態**と**動作を確認**します。 **状態**のセクションは、**タイトル**と**本文**の四角形にさらに分類されます。 **操作**のセクションには、1 つの四角形にのみです。 それぞれの四角形では、さまざまな目的があります。
+オーバーレイが 2 つのセクションに分割:**状態**と**動作を確認**します。 **状態**のセクションは、**タイトル**と**本文**の四角形にさらに分類されます。 **操作**のセクションには、1 つの四角形にのみです。 それぞれの四角形では、さまざまな目的があります。
 
 -   `titleRectangle` タイトルのテキストが含まれています。
--   `bodyRectangle` 本文テキストが含まれています。
--   `actionRectangle` 特定の操作を実行するプレイヤーを通知するテキストが含まれています。
+-   `bodyRectangle` 本文のテキストが含まれています。
+-   `actionRectangle` 特定の操作を実行するプレイヤーに通知するテキストが含まれています。
 
-ゲームは、設定できる 6 つの状態があります。 伝える、オーバーレイの**状態**の一部を使用して、ゲームの状態。 多くの次の状態に対応するメソッドを使用して**状態**の四角形が更新されます。
+ゲームは、6 つの状態を設定することができます。 伝える、オーバーレイの**状態**の一部を使用して、ゲームの状態。 多くの次の状態に対応するメソッドを使用して**状態**の四角形が更新されます。
 
 - 読み込み中
 - 最初の開始/ハイ スコアの統計
 - レベル開始
 - ゲームが一時停止
 - ゲーム オーバー
-- 受注ゲーム
+- ゲームの終了
 
 
 オーバーレイの**操作**部分を更新するには、次のいずれかに設定するアクションのテキストを許可する[**GameInfoOverlay::SetAction**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564)メソッドを使用します。
 - 「タップして、もう一度プレイ.」
 - 「レベルの読み込み, お待ちください.」
-- 「タップすると、引き続き.」
+- 「タップして続行.」
 - なし
 
 > [!NOTE]
-> どちらの方法が説明されている[ゲームの状態を表す](#representing-game-state)セクションでさらにします。
+> どちらの方法が説明されている[ゲームの状態を表す](#representing-game-state)」で詳しくします。
 
-ゲーム、**状態**と**動作**] セクションで、何が起こってに応じて、テキスト フィールドが調整されます。
+ゲームでは、**状態**および**操作**のセクションで、何が起こってに応じて、テキスト フィールドが調整されます。
 初期化し、これら 6 つの状態のオーバーレイを描画する方法を見てみましょう。
 
 ### <a name="initializing-and-drawing-the-overlay"></a>オーバーレイの初期化と描画
@@ -275,22 +275,22 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
  
 
 #### <a name="gameinfooverlaygameinfooverlay"></a>GameInfoOverlay::GameInfoOverlay
-[**GameInfoOverlay::GameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78)コンス トラクターで、プレイヤーに情報を表示するにはこれを使ってビットマップ サーフェスを維持し、オーバーレイを初期化します。 コンス トラクターは、アプリに渡される、これを使ってオーバーレイ オブジェクト自体には、描画する[**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479)を作成する[**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478)オブジェクトからファクトリを取得します。 [IDWriteFactory::CreateTextFormat](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368203) 
+[**GameInfoOverlay::GameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L30-L78)コンス トラクターにプレイヤーに情報を表示するにはこれを使ってビットマップ サーフェスを維持し、オーバーレイを初期化します。 コンス トラクターは、アプリに渡される、これを使ってオーバーレイ オブジェクト自身に描画することができます[**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479)を作成する[**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478)オブジェクトからファクトリを取得します。 [IDWriteFactory::CreateTextFormat](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368203) 
 
 
 #### <a name="gameinfooverlaycreatedevicedependentresources"></a>Gameinfooverlay::createdevicedependentresources
-[**Gameinfooverlay::createdevicedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104)は、テキストを描画するために使用するブラシを作成するための方法です。 これを行うには、します作成できる[**ID2D1DeviceContext2**](https://msdn.microsoft.com/en-us/library/windows/desktop/dn890789)オブジェクトを取得し、ジオメトリの描画インクとグラデーションなどの機能とメッシュ レンダリングします。 一連の色を folling UI 要素を描画する[**ID2D1SolidColorBrush**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd372207)を使ってブラシを作成します。
+[**Gameinfooverlay::createdevicedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104)は、テキストを描画するために使用するブラシを作成するための方法です。 これを行うには、しますにより、作成する[**ID2D1DeviceContext2**](https://msdn.microsoft.com/en-us/library/windows/desktop/dn890789)オブジェクトを取得し、ジオメトリの描画インクとグラデーションなどの機能とメッシュ レンダリングします。 一連の色を folling UI 要素を描画する[**ID2D1SolidColorBrush**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd372207)を使ってブラシを作成します。
 - 四角形の背景に黒のブラシ
 - 状態のテキストの白のブラシ
 - アクションのテキストのオレンジ色のブラシ
 
 #### <a name="deviceresourcessetdpi"></a>DeviceResources::SetDpi
-[**DeviceResources::SetDpi**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L514-L527)メソッドでは、ウィンドウの 1 インチあたりのドットを設定します。 このメソッドは、DPI が変更されする必要があるときに呼び出されます取得ゲームのウィンドウのサイズが変更されたときの動作を再調整します。 DPI を更新した後、このメソッドは、ウィンドウのサイズが変更されるたびに必要なリソースが再作成かどうかを確認する[**deviceresources::createwindowsizedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L214-L487)を呼び出します。
+[**DeviceResources::SetDpi**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L514-L527)メソッドは、ウィンドウの 1 インチあたりのドットを設定します。 このメソッドは、DPI が変更されする必要があるときに呼び出されます取得ゲームのウィンドウのサイズが変更されたときの動作を再調整します。 このメソッドは、DPI を更新した後、ウィンドウのサイズが変更されるたびに必要なリソースを再作成を確認する[**deviceresources::createwindowsizedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L214-L487)も呼び出します。
 
 
 #### <a name="gameinfooverlaycreatewindowssizedependentresources"></a>GameInfoOverlay::CreateWindowsSizeDependentResources
 [**GameInfoOverlay::CreateWindowsSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L108-L225)メソッドは、すべての描画が行われるです。 メソッドの手順の概要を次に示します。
-- UI のテキスト、**タイトル**、**本文**、および**操作**のテキストは、オフのセクションには、次の 3 つの四角形が作成されます。
+- 次の 3 つの四角形は、セクション**タイトル**、**本文**、および**操作**のテキストの UI テキストを無効に作成されます。
     ```cpp 
     m_titleRectangle = D2D1::RectF(
         GameInfoOverlayConstant::SideMargin,
@@ -312,19 +312,19 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
         );
     ```
 
-- ビットマップは、名前付きが作成`m_levelBitmap`、 **CreateBitmap**を使用して現在の DPI を考慮しています。
+- 名前付きビットマップが作成`m_levelBitmap`、考慮現在 DPI **CreateBitmap**を使用します。
 - `m_levelBitmap` 当社の 2D レンダリング[**ID2D1DeviceContext::SetTarget**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh404533)を使用してターゲットとして設定されます。
 - ビットマップが行われたすべてのピクセルでクリアされると黒の[**ID2D1RenderTarget::Clear**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371772)を使用します。
 - [**ID2D1RenderTarget::BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd371768)は、描画を開始すると呼ばれます。 
-- **DrawText**に格納されているテキストを描画すると呼ばれる`m_titleString`、 `m_bodyString`、および`m_actionString`対応する**ID2D1SolidColorBrush**を使用してされる四角形にします。
-- [**ID2D1RenderTarget::EndDraw**](ID2D1RenderTarget::EndDraw)がですべての描画操作を停止すると呼ばれる`m_levelBitmap`します。
-- **CreateBitmap**という名前を使用して、別のビットマップが作成された`m_tooSmallBitmap`表示の構成は、ゲームに対して小さすぎるかどうかにのみ表示、フォールバックとして使用します。
+- **DrawText**に格納されているテキストを描画すると呼ばれる`m_titleString`、`m_bodyString`と`m_actionString`で対応する**ID2D1SolidColorBrush**を使用してされる四角形です。
+- [**ID2D1RenderTarget::EndDraw**](ID2D1RenderTarget::EndDraw)が上のすべての描画操作を停止すると呼ばれる`m_levelBitmap`します。
+- **CreateBitmap**という名前を使用して別のビットマップを作成`m_tooSmallBitmap`表示の構成は、ゲームに対して小さすぎるかどうかにのみ表示、フォールバックとして使用します。
 - に描画するためのプロセスを繰り返す`m_levelBitmap`の`m_tooSmallBitmap`、今回は、文字列を描画のみ`Paused`本文。
 
 
 
 
-今すぐ 6 つのメソッド、6 つのオーバーレイの状態のテキストを入力する必要があるすべては!
+6 つのメソッドを 6 つのオーバーレイの状態のテキストの入力は必要がありますすべてできるようになりました!
 
 ### <a name="representing-game-state"></a>ゲームの状態を表す
 
@@ -333,19 +333,19 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
 
 以下のメソッドのいずれかを呼び出すことで、オーバーレイの**状態**の一部が設定されています。
 
-ゲームの状態 | メソッドを設定します。 | 状態フィールド
+ゲームの状態 | 状態の set メソッド | 状態フィールド
 :----- | :------- | :---------
 読み込み中 | [GameInfoOverlay::SetGameLoading](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L254-L306) |**Title (タイトル)**</br>リソースの読み込み </br>**本文**</br> 段階的に印刷"."読み込みアクティビティを意味します。
 最初の開始/ハイ スコアの統計 | [Gameinfooverlay::setgamestats](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L310-L354) |**Title (タイトル)**</br>ハイ スコア</br> **本文**</br> レベル完了 # </br>合計ポイント #</br>合計ショット #
 レベル開始 | [GameInfoOverlay::SetLevelStart](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L413-L471) |**Title (タイトル)**</br>レベル</br>**本文**</br>レベルで目的の説明。
 ゲームが一時停止 | [GameInfoOverlay::SetPause](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L475-L502) |**Title (タイトル)**</br>ゲームが一時停止</br>**本文**</br>なし
 ゲーム オーバー | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Title (タイトル)**</br>ゲームは終わりました</br> **本文**</br> レベル完了 # </br>合計ポイント #</br>合計ショット #</br>レベル完了 #</br>ハイ スコア #
-受注ゲーム | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Title (タイトル)**</br>伝えます。</br> **本文**</br> レベル完了 # </br>合計ポイント #</br>合計ショット #</br>レベル完了 #</br>ハイ スコア #
+ゲームの終了 | [GameInfoOverlay::SetGameOver](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L358-L409) |**Title (タイトル)**</br>勝利しました!</br> **本文**</br> レベル完了 # </br>合計ポイント #</br>合計ショット #</br>レベル完了 #</br>ハイ スコア #
 
 
 
 
-[**GameInfoOverlay::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L117-L134)メソッドでは、サンプルは、オーバーレイの特定の地域に対応する 3 つの四角形の領域を宣言します。
+[**GameInfoOverlay::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L117-L134)メソッドでは、サンプルは、オーバーレイの特定の地域に対応する 3 つの四角形領域を宣言します。
 
 
 
@@ -408,7 +408,7 @@ void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
 **GameInfoOverlay**オブジェクトを初期化する Direct2D デバイス コンテキストを使用して、このメソッドは黒い背景ブラシを使用してタイトルと本文の四角形を塗りつぶします。 また、白のテキスト ブラシを使って、"High Score" 文字列用のテキストをタイトルの四角形に描画し、ゲームの状態の最新情報が含まれている文字列を本文の四角形に描画します。
 
 
-[**GameInfoOverlay::SetAction**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564) **GameInfoOverlay::SetAction**によってに対する適切なメッセージを判断するために必要なゲームの状態情報を提供する**GameMain**オブジェクトのメソッドから後続の呼び出しによって操作の四角形を更新しますプレーヤーでは、「タップして、引き続き」などです。
+操作の四角形は、後続の呼び出しで[**GameInfoOverlay::SetAction**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564) **GameInfoOverlay::SetAction**によってに対する適切なメッセージを判断するために必要なゲームの状態情報を提供する**GameMain**オブジェクトのメソッドから更新しますプレーヤーでは、「タップして、引き続き」などです。
 
 特定の状態のオーバーレイは、このような[**GameMain::SetGameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/GameMain.cpp#L606-L661)メソッドで選択されます。
 
@@ -471,7 +471,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 }
 ```
 
-ゲームがゲームの状態に基づいてプレイヤーにテキスト情報をやり取りする方法と、ゲーム全体に表示される内容を切り替える方法が用意されています。
+ゲームがゲームの状態に基づいて、プレイヤーにテキスト情報をやり取りする方法とゲーム全体に表示される内容を切り替える方法が用意されています。
 
 ### <a name="next-steps"></a>次のステップ
 
@@ -479,7 +479,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 
 
 
- 
+ 
 
 
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リアルタイム アクティビティ
 ms.localizationpriority: medium
 ms.openlocfilehash: a80d25ee14ada799bce5d9e341869522e600e6a5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5444303"
+ms.locfileid: "5475237"
 ---
 # <a name="real-time-activity-rta-best-practices"></a>リアルタイム アクティビティ (RTA) のベスト プラクティス
 これらのベスト プラクティスにより、タイトルで RTA を最大限に活用できます。
@@ -34,12 +34,12 @@ RTA は、WebSocket セッションを使用してクライアントとの固定
 
 タイトルは、ユーザーの認証トークンが期限切れになるとサービスによってセッションが終了されることを認識しておく必要があります。 タイトルは、そのようなイベントの発生を検出し、再接続して、それまでサブスクライブしていたすべての統計情報を再度サブスクライブする必要があります。
 
-RTA の接続は、設計上、再接続するクライアントを強制的に 2 時間後閉じられます。 これは、メッセージの帯域幅に保存する接続の認証トークンがキャッシュされるためです。 最終的にトークンの期限が切れます。 接続を閉じると、強制的に再接続してクライアントが強制的に認証トークンを更新します。
+RTA の接続は、設計上、再接続するクライアントを強制的に 2 時間後閉じられます。 これはメッセージの帯域幅に保存する接続の認証トークンがキャッシュされるためです。 最終的にトークンの期限が切れます。 接続を閉じると、強制的に再接続してクライアントが強制的に認証トークンを更新します。
 
 クライアントは、ユーザーの ISP に問題がある場合、またはタイトルのプロセスが一時停止された場合にも切断されることがあります。 この切断が発生した場合は、クライアントに知らせるために WebSocket イベントが発生します。 通常は、サービスから切断を処理できるようにすることが最良の方法です。
 
 > [!WARNING]
-> クライアントがマルチプレイヤー セッションは、RTA を使用して、30 秒間の切断された場合は、[マルチプレイヤー セッション Directory(MPSD)](../multiplayer/multiplayer-appendix/multiplayer-session-directory.md) RTA セッションが閉じられ、セッションからユーザーが開始を検出します。 RTA クライアントが接続が閉じられたときに検出、再接続を開始し、MPSD セッションを終了する前にサブスクライブすることです。
+> クライアントは、マルチプレイヤー セッションは、RTA を使用し、30 秒間の切断された、[マルチプレイヤー セッション Directory(MPSD)](../multiplayer/multiplayer-appendix/multiplayer-session-directory.md) RTA セッションが閉じられ、セッションからユーザーが開始を検出します。 RTA クライアントが接続が閉じられたときに検出、再接続を開始し、MPSD セッションを終了する前にサブスクライブすることです。
 
 ## <a name="managing-subscriptions"></a>サブスクリプションの管理
 

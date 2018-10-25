@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, パッケージ化
 ms.localizationpriority: medium
 ms.openlocfilehash: ce77391fc189ef33aba3002685b0662d7cab1953
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436801"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483458"
 ---
 # <a name="packaging-apps"></a>アプリのパッケージ化
 
@@ -33,7 +33,7 @@ ms.locfileid: "5436801"
 | [オプション パッケージと関連セットの作成](optional-packages.md) | オプション パッケージには、メイン パッケージに統合できるコンテンツが格納されます。 オプション パッケージは、ダウンロード可能なコンテンツ (DLC) 用や、サイズ制約に対応して大規模アプリを分割する場合、元のアプリから分離して追加コンテンツを出荷する場合に便利です。 |
 | [実行可能コードを使用したオプション パッケージ](optional-packages-with-executable-code.md) | Visual Studio を使用して、実行可能コードでオプション パッケージを作成する方法について説明します。 |
 | [アプリ インストーラーで UWP アプリをインストールする](appinstaller-root.md) | アプリ インストーラーを使用すると、アプリ パッケージをダブルクリックして UWP アプリをインストールできます。 |
-| [WinAppDeployCmd.exe ツールを使ったアプリのインストール](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows アプリケーションの展開ツール (WinAppDeployCmd.exe) は、Windows 10 コンピューターから Windows 10 Mobile デバイスに UWP アプリを展開するために使うことができるコマンド ライン ツールです。 このツールを使用すると、デバイスが、Windows 10 Mobile USB で接続されているか同じサブネット上に利用可能なそのアプリの Microsoft Visual Studio やソリューションがなくても、アプリ パッケージを展開します。 この記事では、このツールを使って UWP アプリをインストールする方法について説明します。 |
+| [WinAppDeployCmd.exe ツールを使ったアプリのインストール](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows アプリケーションの展開 (WinAppDeployCmd.exe) は、すべての windows 10 Mobile デバイスを windows 10 コンピューターからの UWP アプリを展開に使用できるコマンド ライン ツールです。 このツールを使用するには、アプリ パッケージを展開するとき、windows 10 Mobile デバイスは USB で接続されているか同じサブネット上に利用可能なしないと、そのアプリ用の Microsoft Visual Studio やソリューションは不要です。 この記事では、このツールを使って UWP アプリをインストールする方法について説明します。 |
 | [UWP アプリの自動ビルドを設定する](auto-build-package-uwp-apps.md) | このトピックでは、自動ビルド プロセスの一環としてアプリをパッケージ化する場合に、Visual Studio Team Services (VSTS) を使用して実行する方法を説明します。 |
 | [アプリ機能の宣言](app-capability-declarations.md) | 特定の API、画像や音楽などのリソース、カメラやマイクなどデバイスにアクセスするには、機能を UWP アプリの[パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)で宣言する必要があります。 |
 | [パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする](self-install-package-updates.md) | UWP アプリでは、プログラムによてパッケージの更新を確認して、インストールできます。 またｈ、Windows デベロッパー センター ダッシュボードで必須としてマークされているパッケージを照会し、必須の更新がインストールされるまで機能を無効にすることもできます。  |

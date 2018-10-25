@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store レビュー API, 返信情報
 ms.localizationpriority: medium
 ms.openlocfilehash: 0212d7457ab85749fd66397876144acecd5dfcf1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437840"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483278"
 ---
 # <a name="get-response-info-for-reviews"></a>レビューへの返信情報の取得
 
@@ -74,7 +74,7 @@ Authorization: Bearer <your access token>
 | CanRespond      | ブール値  | 値が **true** の場合は、指定されたレビューに返信できること、または指定されたアプリのすべてのレビューに返信する権限があることを示します。 それ以外の場合、この値は **false** です。       |
 | DefaultSupportEmail  | string |  アプリのストア登録情報で指定されているアプリの[サポート メール アドレス](../publish/enter-app-properties.md#support-contact-info)です。 サポート メール アドレスを指定しなかった場合、このフィールドは空です。    |
 
- 
+ 
 ### <a name="response-example"></a>応答の例
 
 この要求の JSON 応答の本文の例を次に示します。

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c75a0975179b599201fac91141f8c85ace11790
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431482"
+ms.locfileid: "5477632"
 ---
 # <a name="get-usersrequestoridpermissionvalidate"></a>GET (/users/{requestorId}/permission/validate)
 ユーザーをターゲット ユーザーと、指定されたアクションの実行を許可するかどうかに関するはいまたは no 応答を取得します。
@@ -37,7 +37,7 @@ ms.locfileid: "5431482"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
+| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
 
 <a id="ID4E2"></a>
 
@@ -46,8 +46,8 @@ ms.locfileid: "5431482"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- | --- | --- |
-| 設定| 文字列の列挙| 照らしてチェックする PermissionId 値。 値の例:"CommunicateUsingText"。|
-| ターゲット| string| 実行するユーザーの操作では、ユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>します。 値の例: <code>xuid(0987654321)</code>|
+| 設定| 文字列の列挙| 照らしてチェックする PermissionId 値。 値の例:"CommunicateUsingText"します。|
+| ターゲット| string| 実行するユーザーの操作では、ユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>します。 値の例: <code>xuid(0987654321)</code>|
 
 <a id="ID4EDC"></a>
 
@@ -66,7 +66,7 @@ ms.locfileid: "5431482"
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| string| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1 です。|
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1 です。|
 
 <a id="ID4ETE"></a>
 
@@ -80,7 +80,7 @@ ms.locfileid: "5431482"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

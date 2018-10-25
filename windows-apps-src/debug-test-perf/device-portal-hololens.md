@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: e70ab7c7fba8b8da9a0115a86a13f08e4ef3ebe2
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440959"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480927"
 ---
 # <a name="device-portal-for-hololens"></a>HoloLens 用 Device Portal
 
@@ -51,7 +51,7 @@ ms.locfileid: "5440959"
 3. PC 上の Web ブラウザーから、`http://127.0.0.1:10080` にアクセスします。
 
 > [!IMPORTANT]
-> お使いの PC がデバイスを検出することでない場合、HoloLens デバイスの実際のネットワークの IP アドレスを使用してみてくださいなく`http://127.0.0.1:10080`します。
+> お使いの PC がデバイスを検出することでない場合は、HoloLens デバイスの実際のネットワークの IP アドレスを使用してみてくださいなく`http://127.0.0.1:10080`します。
 
 #### <a name="connect-to-an-emulator"></a>エミュレーターに接続する 
 

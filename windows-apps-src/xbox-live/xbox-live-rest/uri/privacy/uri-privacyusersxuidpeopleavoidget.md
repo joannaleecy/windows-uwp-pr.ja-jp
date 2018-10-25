@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ef50154e1620f7f888db9969929d195b32960134
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5434298"
+ms.locfileid: "5477596"
 ---
 # <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
 ユーザーの回避一覧を取得します。
@@ -34,7 +34,7 @@ ms.locfileid: "5434298"
 
 ## <a name="remarks"></a>注釈
 
-ターゲットを指定するはしている場合に、ブロック、空いないいるかどうかにのみそのユーザーを返します。
+ターゲットを指定するはしている場合、ブロックの一覧に、空いないいるかどうかにのみそのユーザーを返します。
 
 <a id="ID4EZ"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "5434298"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>します。 認証されたユーザーである必要があります。 値の例:<code>xuid(2603643534573581)</code>します。 最大サイズ: なし。 |
+| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>します。 認証されたユーザーである必要があります。 値の例:<code>xuid(2603643534573581)</code>します。 最大サイズ: なし。 |
 
 <a id="ID4EEB"></a>
 
@@ -69,14 +69,14 @@ ms.locfileid: "5434298"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| OK| セッションが正常に取得されました。|
 | 400| Bad Request| URI で指定されたターゲット ID が正しくありません。|
 | 403| Forbidden| URI で指定された所有者は、認証されたユーザーではありません。|
-| 404| 見つかりません。| URI で指定された所有者は存在しません。|
+| 404| Not Found します。| URI で指定された所有者は存在しません。|
 
 <a id="ID4E1F"></a>
 

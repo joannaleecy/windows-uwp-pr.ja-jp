@@ -2,24 +2,24 @@
 title: Xbox Live の新機能
 author: PhillipLucas
 description: Xbox Live SDK の新機能
-ms.author: sthaff
-ms.date: 10/04/2017
+ms.author: aablackm
+ms.date: 10/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d4038441f347a961f4acf57b4712995bf1f75d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 3f199b0efb7ea3071beb1dfa4555fcd0bcf5a36f
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "3881476"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473208"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live の新機能
 [Xbox Live API GitHub コミット履歴](https://github.com/Microsoft/xbox-live-api/commits/master)に関するページで、Xbox Live API に最近加えられたすべてのコード変更について確認することもできます。
 
-#### <a name="in-this-article"></a>この記事の内容
+## <a name="in-this-article"></a>この記事の内容
 
 * [6 月 2018](#june-2018)
 * [2017 年 8 月](#august-2017)
@@ -36,9 +36,9 @@ ms.locfileid: "3881476"
 
 #### <a name="c-api-layer-for-xsapi"></a>Xsapi C API レイヤー
 
-一部の Xbox Live 機能の C++ Api が利用できるようになりました。 新しい API レイヤーでは、カスタムのメモリの管理、非同期タスクの場合、手動のスレッド管理新しい HTTP ライブラリなど、サポートされている機能の多くのメリットを提供します。
+一部の Xbox Live 機能の C++ Api が利用できるようになりました。 新しい API レイヤーでは、カスタムのメモリ管理、手動のスレッド管理の非同期タスクは、新しい HTTP ライブラリなど、サポートされている機能の多くのメリットを提供します。
 
-詳しくは、 [Xbox Live の C++ Api](../xsapi-flat-c.md)を参照してください。
+詳細については、 [Xbox Live C Api](../xsapi-flat-c.md)を参照してください。
 
 ## <a name="august-2017"></a>2017 年 8 月
 
@@ -52,18 +52,15 @@ Xbox Live メンバーは、Xbox コンソール、PC、または iOS/Android �
 
 API を使うと、ゲーム内から直接ゲーム内クラブを作成および管理できます。 これらの API は、xbox::services::clubs 名前空間に存在します。
 
-
 ## <a name="july-2017"></a>2017 年 7 月
 
 ### <a name="xbox-live-features"></a>Xbox Live の機能
-#### <a name="multiplayer-updates"></a>マルチプレイヤーの更新
-
-アクティビティ ハンドルと検索ハンドルの照会の応答にカスタム セッション プロパティが含まれるようになりました。
 
 #### <a name="tournaments"></a>トーナメント
 
 トーナメントをサポートするための新しい API が追加されました。 xbox::services::tournaments::tournament_service クラスを使って、タイトルからトーナメント サービスにアクセスできるようになりました。
 これらの新しいトーナメント API では、以下のシナリオが可能になります。
+
 * サービスをクエリして現在のタイトルの既存トーナメントをすべて検索する。
 * サービスからトーナメントに関する詳細を取得する。
 * サービスをクエリしてトーナメントのチームの一覧を取得する。
@@ -94,7 +91,7 @@ API を使うと、ゲーム内から直接ゲーム内クラブを作成およ�
 
 #### <a name="multiplayer"></a>マルチプレイヤー
 
-* アクティビティ ハンドルと検索ハンドルの照会の応答にカスタム セッション プロパティが含まれるようになりました。
+* 検索ハンドルの照会を今すぐには、応答にカスタム セッション プロパティが含まれています。
 
 #### <a name="bug-fixes"></a>バグ修正
 

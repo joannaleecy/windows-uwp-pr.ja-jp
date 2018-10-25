@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b7c0c664b7fdff7eae607acdc4dd7ef78aeb3caf
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5443673"
+ms.locfileid: "5479431"
 ---
 # <a name="publicscidsscidclips"></a>/public/scids/{scid}/clips
 クリップをパブリックにアクセスします。 この URI に実際にで指定できる 2 つのフォーム`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。 詳しくは、後のセクションをご覧ください。 この URI のドメインが`gameclipsmetadata.xboxlive.com`します。
@@ -30,7 +30,7 @@ ms.locfileid: "5443673"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| scid| string| パブリック クリップのプライマリのサービス構成 id。| 
+| scid| string| パブリック クリップをプライマリー サービス構成の識別子です。| 
 | タイトル id| string| パブリック クリップのタイトル Id。 SCID と同じ URI で指定することはできません。 指定した場合はプライマリー SCID を検索するために使用されます。| 
   
 <a id="ID4E6B"></a>

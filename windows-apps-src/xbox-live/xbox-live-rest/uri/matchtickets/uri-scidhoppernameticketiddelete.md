@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3780fb9f69a97d4e2522aa17a806b1fb4917a9f7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5433739"
+ms.locfileid: "5483088"
 ---
 # <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})
 
 マッチ チケットを削除します。
 
 > [!IMPORTANT]
-> このメソッドはコントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> このメソッドは、コントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4E2)
@@ -37,7 +37,7 @@ ms.locfileid: "5433739"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドでは、サービス構成 ID (SCID) レベルで名前付きのホッパーから、指定されたチケット ID を削除します。 このメソッドは、 **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.DeleteMatchTicketAsync**でラップすることができます。  
+この HTTP/REST メソッドは、サービス構成 ID (SCID) レベルで名前付きのホッパーから、指定されたチケット ID を削除します。 このメソッドは、 **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.DeleteMatchTicketAsync**でラップすることができます。  
 <a id="ID4E2"></a>
 
 
@@ -56,15 +56,15 @@ ms.locfileid: "5433739"
 
 | 型| 必須かどうか| 説明| 不足している場合、応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (ユーザーの ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。| 403|
-| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しは、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。| 403|
+| XUID (ユーザー ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。| 403|
+| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。| 403|
 
 <a id="ID4EOC"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスは、MPSD に適用される、HTTP ステータス コードを返します。  
+サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4EXC"></a>
 
 

@@ -12,17 +12,17 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a48bf9c30370238adc83376a524e9c61abb4af13
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5438417"
+ms.locfileid: "5479908"
 ---
 # <a name="serviceconfigsscidbatch"></a>/serviceconfigs/{scid}/batch
 サービス構成の識別子レベルでバッチ クエリの POST 操作をサポートしています。
 
 > [!IMPORTANT]
-> このメソッドは、2015年マルチプレイヤーで使用し、および後でそのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 104/105 または後ですべての要求します。
+> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 104/105 または後ですべての要求します。
 
 <a id="ID4ER"></a>
 
@@ -45,7 +45,7 @@ sessiondirectory.xboxlive.com
 
 [POST (/serviceconfigs/{scid}/batch)](uri-serviceconfigsscidbatchpost.md)
 
-&nbsp;&nbsp;サービス構成の複数の Xbox ユーザー Id には、バッチ クエリを作成します。
+&nbsp;&nbsp;サービス構成に対して複数の Xbox ユーザー Id には、バッチ クエリを作成します。
 
 <a id="ID4E3B"></a>
 

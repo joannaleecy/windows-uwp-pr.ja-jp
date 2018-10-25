@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ac0b2094b17120af8a0c85505cd03af389f1f4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445440"
+ms.locfileid: "5482354"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 アイコン
 
@@ -47,7 +47,7 @@ Windows 10 のリリースにより、従来の Windows 8/8.1 Segoe UI Symbol �
 また、アイコンの多くは、アラビア語、ペルシア語、ヘブライ語などの右から左に書く文字を使う言語でも利用できるように、左右が反転した形式も作成されています。
 
 ## <a name="using-the-icons"></a>アイコンの使用
-C #/vb/c + と XAML のアプリを開発している場合と[Symbol 列挙値](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)の指定されたグリフを Segoe MDL2 アセットを使用できます。 
+C #/vb/c + + と XAML のアプリを開発している場合は、 [Symbol 列挙値](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)で指定されたグリフを Segoe MDL2 アセットを使用できます。 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>

@@ -11,25 +11,25 @@ ms.technology: uwp
 keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
 ms.localizationpriority: medium
 ms.openlocfilehash: 21c6eab0e021f703c8103462a8459ea190693a10
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444000"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482795"
 ---
 # <a name="code-your-app-for-experimentation"></a>アプリの実験用のコードを記述する
 
-[プロジェクトを作成しデベロッパー センター ダッシュ ボードでリモート変数を定義する](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)の後にユニバーサル Windows プラットフォーム (UWP) アプリのコードを更新する準備ができたら。
+[プロジェクトを作成しデベロッパー センター ダッシュ ボードでリモート変数を定義する](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)の後にユニバーサル Windows プラットフォーム (UWP) アプリでコードを更新する準備ができたら。
 * Windows デベロッパー センターからリモート変数値を受信します。
 * リモート変数を使用して、ユーザー向けのアプリのエクスペリエンスを構成します。
-* デベロッパー センターを示すユーザーの実験を表示および (*変換*とも呼ばれます)、目的の操作を実行したときにイベント ログに記録します。
+* デベロッパー センターを示すユーザーの実験を表示および (*変換*とも呼ばれます) 目的のアクションを実行したときにイベント ログに記録します。
 
 この動作をアプリに追加するには、Microsoft Store Services SDK によって提供される Api を使用します。
 
-次のセクションでは、実験のバリエーションを取得して、デベロッパー センターにイベント ログの記録の一般的なプロセスについて説明します。 後の実験用のアプリのコードは、[デベロッパー センター ダッシュ ボードで実験を定義](define-your-experiment-in-the-dev-center-dashboard.md)できます。 実験の作成および実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
+次のセクションでは、実験のバリエーションを取得して、デベロッパー センターにイベント ログの記録の一般的なプロセスについて説明します。 実験用のアプリのコードのことができる[デベロッパー センター ダッシュ ボードで実験を定義](define-your-experiment-in-the-dev-center-dashboard.md)します。 実験の作成および実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
 > [!NOTE]
-> 実験で、Microsoft Store Services SDK の Api のいくつかは、デベロッパー センターからデータを取得する[の非同期パターン](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)を使います。 これは、これらのメソッドの実行の一部が行われるメソッドが呼び出されると後、ので、アプリの UI は、操作が完了するまで、応答性の高いままを意味します。 非同期パターンには、この記事のコード例で示されているように、Api を呼び出すと、**非同期**キーワードと**await**演算子を使用するアプリが必要です。 慣例により、非同期メソッドを**非同期**で終了します。
+> 実験で、Microsoft Store Services SDK の Api のいくつかは、デベロッパー センターからデータを取得する[の非同期パターン](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)を使います。 つまり、これらのメソッドの実行の一部があります場所メソッドが呼び出されると後、操作が完了するまで、アプリの UI を応答性の高い維持できるようにします。 非同期パターンでは、この記事のコード例で示されているように、Api を呼び出す場合、**非同期**キーワードと**await**演算子を使用するアプリが必要です。 慣例により、非同期メソッドが**非同期**で終了します。
 
 ## <a name="configure-your-project"></a>プロジェクトを構成する
 
@@ -46,7 +46,7 @@ ms.locfileid: "5444000"
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>バリエーション データを取得して、実験のビュー イベントの記録
 
-プロジェクトで実験で変更する機能のコードを見つけます。 バリエーションのデータを取得するコードを追加し、このデータを使用してテストすると、機能の動作を変更し、A には、実験のビュー イベントをログ B は、デベロッパー センターでサービスをテストします。
+プロジェクトで実験で変更する機能のコードを見つけます。 バリエーションのデータを取得するコードを追加し、このデータを使用して、テストしている機能の動作を変更にし、実験のビュー イベントをログ B は、デベロッパー センターでサービスをテストします。
 
 必要な特定のコードは、アプリによって異なりますが、次の例は基本的なプロセスを示しています。 完全なコード例については[を作成および実行すると、最初の実験 B テスト](create-and-run-your-first-experiment-with-a-b-testing.md)します。
 
@@ -54,13 +54,13 @@ ms.locfileid: "5444000"
 
 次の手順では、このプロセスの詳細の重要な部分について説明します。
 
-1. 現在のバリエーションの割り当てを表す[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)オブジェクトとデベロッパー センターにビュー イベントとコンバージョン イベントをログに使用される[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger)オブジェクトを宣言します。
+1. 現在のバリエーションの割り当てを表す[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)オブジェクトと使用をデベロッパー センターにビュー イベントとコンバージョン イベントをログに記録される[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger)オブジェクトを宣言します。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
 2. [プロジェクト ID](run-app-experiments-with-a-b-testing.md#terms)を取得する実験用に割り当てられている文字列変数を宣言します。
     > [!NOTE]
-    > プロジェクトを取得するときの ID [、デベロッパー センター ダッシュ ボードでプロジェクトを作成](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)します。 次に示すプロジェクト ID は、目的にのみで、たとえば。
+    > プロジェクトを取得するときの ID [、デベロッパー センター ダッシュ ボードでプロジェクトを作成](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)します。 たとえば、次に示すプロジェクト ID です目的でのみです。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
 
@@ -68,33 +68,33 @@ ms.locfileid: "5444000"
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet3)]
 
-4. キャッシュされたバリエーションの割り当てをサーバーからリモートのバリエーションの割り当てを更新する必要があるかどうかを判断する[IsStale](htthttps://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.isstale)プロパティを確認します。 更新する必要が場合、は、サーバーから更新されたバリエーション割り当てを確認し、ローカルにキャッシュされたバリエーションを更新する静的[GetRefreshedVariationAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getrefreshedvariationasync)メソッドを呼び出します。
+4. [IsStale](htthttps://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.isstale)プロパティを調べて、キャッシュされたバリエーションの割り当てをサーバーからリモートのバリエーションの割り当てを更新する必要があるかどうかを確認します。 更新する必要は場合、は、サーバーから更新されたバリエーションの割り当ての確認、ローカルにキャッシュされたバリエーションを更新する静的[GetRefreshedVariationAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getrefreshedvariationasync)メソッドを呼び出します。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
 
-5. バリエーションの割り当ての値を取得するのには、 [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)オブジェクトの[GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean)、 [GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble)、 [GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32)、または[GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring)メソッドを使います。 各メソッドの最初のパラメーターが取得するバリエーションの名前 (これは、デベロッパー センター ダッシュ ボードで入力したバリエーションの同じ名前です)。 2 番目のパラメーターは、このメソッドは、になっていない場合 (たとえば、ネットワーク接続がない場合)、デベロッパー センターから指定された値を取得することを返す必要があります既定値とバリエーションのキャッシュされたバージョンは利用できません。
+5. バリエーションの割り当ての値を取得するには、 [GetBoolean](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean)、 [GetDouble](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble)、 [GetInt32](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32)、または[GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)オブジェクトのメソッドを使います。 各メソッドは、最初のパラメーターを取得するバリエーションの名前 (これは、デベロッパー センター ダッシュ ボードで入力したバリエーションの同じ名前です)。 2 番目のパラメーターは、このメソッドは、になっていない場合 (たとえば、ネットワーク接続がない場合)、デベロッパー センターから指定された値を取得することを返す必要がありますされる既定値とバリエーションのキャッシュされたバージョンは利用できません。
 
     次の例では、 [GetString](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring)を使用して、 *buttonText*という名前の変数を取得し、 **Grey Button**の既定の変数値を指定します。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet5)]
 
-6. コードでは、テストしている機能の動作を変更するのに変数の値を使用します。 たとえば、次のコードは、アプリ内のボタンのコンテンツに*buttonText*値を割り当てます。 この例が定義されているこのボタン別の場所で、プロジェクトを前提としています。
+6. コードで、変数の値を使用して、テストしている機能の動作を変更します。 たとえば、次のコードは、アプリ内のボタンのコンテンツに*buttonText*値を割り当てます。 この例が定義されているこのボタン別の場所で、プロジェクトを前提としています。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet6)]
 
-7. 最後に、実験の[ビュー イベント](run-app-experiments-with-a-b-testing.md#terms)を A にログイン B は、デベロッパー センターでサービスをテストします。 初期化、 ```logger``` [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger)オブジェクトにフィールドし、 [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)メソッドを呼び出します。 現在のバリエーションの割り当て (このオブジェクトは、デベロッパー センターにイベントに関するコンテキストを提供) を表す[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)オブジェクトを渡すと、実験のビュー イベントの名前。 ビュー イベント名、デベロッパー センター ダッシュ ボードで実験の入力をこのと一致する必要があります。 コードには、バリエーション実験の一部である、ユーザーが開始するときにビュー イベントを記録する必要があります。
+7. 最後に、実験の[イベントを表示](run-app-experiments-with-a-b-testing.md#terms)しをログに記録 B は、デベロッパー センターでサービスをテストします。 初期化、 ```logger``` [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger)オブジェクトへのフィールドし、 [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)メソッドを呼び出します。 現在のバリエーションの割り当て (このオブジェクトは、デベロッパー センターにイベントに関するコンテキストを提供) を表す[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)オブジェクトを渡すと、実験のビュー イベントの名前。 これは、は、デベロッパー センター ダッシュ ボードで実験用に入力するビュー イベント名と一致する必要があります。 コードをユーザーが開始して、実験の一部であるバリエーションを表示するときに、ビュー イベント ログに記録する必要があります。
 
-    次の例では、という名前の**userViewedButton**ビュー イベントをログに記録する方法を示します。 この例では、実験の目標は、アプリが (この場合は、ボタンのテキスト) で、バリエーション データを取得し、ボタンのコンテンツへの割り当てが後でビュー イベントが記録されますので、アプリでボタンをクリックするユーザーを取得するのには。
+    次の例では、 **userViewedButton**という名前のビュー イベントをログに記録する方法を示します。 この例では、実験の目標は、ビュー イベントは、アプリが (この場合は、ボタンのテキスト) で、バリエーション データを取得し、ボタンのコンテンツへの割り当てが後に記録するために、アプリでボタンをクリックするユーザーを取得するのにはします。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet7)]
 
-## <a name="log-conversion-events-to-dev-center"></a>コンバージョン イベントをデベロッパー センターにログインします。
+## <a name="log-conversion-events-to-dev-center"></a>デベロッパー センターにコンバージョン イベントをログに記録します。
 
 A[コンバージョン イベント](run-app-experiments-with-a-b-testing.md#terms)をログに記録するコードを次に、追加 B は、デベロッパー センターでサービスをテストします。 コードでは、ユーザーが実験の目標に達したときは、コンバージョン イベントを記録する必要があります。 必要な特定のコードは、アプリによって異なりますが、一般的な手順を次に示します。 完全なコード例については[を作成および実行すると、最初の実験 B テスト](create-and-run-your-first-experiment-with-a-b-testing.md)します。
 
-1. ユーザーが、実験の目標の 1 つの目標に達したときに実行されるコードでは、もう一度[LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)メソッドを呼び出すし、 [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)オブジェクトと、実験のコンバージョン イベントの名前を渡します。 これは、デベロッパー センター ダッシュ ボードで実験に入力したコンバージョン イベント名のいずれかに一致する必要があります。
+1. ユーザーが、実験の目標の 1 つの目標に達したときに実行されるコードでは、もう一度[LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)メソッドを呼び出すし、 [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)オブジェクトと、実験のコンバージョン イベントの名前を渡します。 これは、デベロッパー センター ダッシュ ボードで実験用に入力するコンバージョン イベント名のいずれかに一致する必要があります。
 
-    次の例では、ボタンの**クリックして**イベント ハンドラーから**userClickedButton**という名前のコンバージョン イベントを記録します。 この例では、実験の目標は、ボタンをクリックするユーザーを取得するのにはします。
+    次の例では、ボタンの**クリックして**イベント ハンドラーから**userClickedButton**をという名前のコンバージョン イベントを記録します。 この例で、実験の目標は、ボタンをクリックするユーザーを取得するのには。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet8)]
 

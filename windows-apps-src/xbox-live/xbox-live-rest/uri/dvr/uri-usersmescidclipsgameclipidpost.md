@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 28c8b9e20e990c51c6b3d7e56e72f4d5d6551b39
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439751"
+ms.locfileid: "5482819"
 ---
 # <a name="post-usersmescidsscidclipsgameclipid"></a>POST (/users/me/scids/{scid}/clips/{gameClipId})
-ユーザーのデータのゲーム クリップ メタデータを更新します。 これらの Uri のドメイン`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
+ユーザーのデータのゲーム クリップ メタデータを更新します。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
  
   * [注釈](#ID4EX)
   * [URI パラメーター](#ID4EAB)
@@ -36,7 +36,7 @@ ms.locfileid: "5439751"
  
 ## <a name="remarks"></a>注釈
  
-ゲーム クリップ メタデータを更新するための API は、自分自身のゲーム クリップのアクセシビリティとタイトルなどのメタデータを更新し、パブリックの属性 (評価を適用するか、ビュー カウントをインクリメント) などの更新は、2 つのカテゴリに分類されます。 その他のゲーム クリップのします。 URI の XUID が、要求の XUID が一致しない場合は、パブリック データのみを編集できるし、他のデータを編集するすべての要求が拒否されます。 編集する場合は、複数のフィールドがしようとして、それらのいずれかが正しくない要求の全体の要求は失敗します。
+ゲーム クリップ メタデータを更新するための API は、自分自身のゲーム クリップのアクセシビリティと、タイトルなどのメタデータを更新し、パブリックの属性 (評価を適用することや、ビュー カウントをインクリメント) などの更新は、2 つのカテゴリに分類されます。 その他の任意のゲーム クリップのします。 URI の XUID クレームの XUID が一致しない場合は、パブリック データのみを編集できるし、他のデータを編集するすべての要求が拒否されます。 編集する場合は、複数のフィールドがしようとして、それらのいずれかが正しくない要求の全体の要求は失敗します。
   
 <a id="ID4EAB"></a>
 
@@ -45,7 +45,7 @@ ms.locfileid: "5439751"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| scid| string| アクセスされているリソースのサービス構成 ID。 認証されたユーザーの SCID に一致する必要があります。| 
+| scid| string| アクセスされているリソースのサービス構成 ID。 認証されたユーザーの SCID が一致する必要があります。| 
 | gameClipId| string| GameClip にアクセスしているリソースの ID です。| 
   
 <a id="ID4ELB"></a>
@@ -56,7 +56,7 @@ ms.locfileid: "5439751"
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
 | Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| string| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。| 
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
 | Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
 | Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
 | キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。| 
@@ -69,7 +69,7 @@ ms.locfileid: "5439751"
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、圧縮の id。| 
-| ETag| string| キャッシュの最適化のために使用します。 値の例:"686897696a7c876b7e"。| 
+| ETag| string| キャッシュの最適化のために使用します。 値の例:"686897696a7c876b7e"します。| 
   
 <a id="ID4EAF"></a>
 
@@ -78,7 +78,7 @@ ms.locfileid: "5439751"
  
 要求の本文には、JSON 形式で[UpdateMetadataRequest](../../json/json-updatemetadatarequest.md)オブジェクトを使う必要があります。 例:
  
-ユーザーのクリップの名前を変更して表示します。
+ユーザーのクリップ名と認知度を変更します。
  
 
 ```cpp
@@ -90,7 +90,7 @@ ms.locfileid: "5439751"
 ```
 
  
-タイトルのプロパティ (これは、単なる例、このフィールドのスキーマが呼び出し元があるため) だけを変更するには。
+タイトルのプロパティ (これは単なる例、このフィールドのスキーマは、呼び出し元であるため) だけを変更するには。
  
 
 ```cpp
@@ -108,7 +108,7 @@ ms.locfileid: "5439751"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| string| この要求する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。| 
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
 | Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
 | キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。| 
 | Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
@@ -122,7 +122,7 @@ ms.locfileid: "5439751"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Etag| string| キャッシュの最適化のために使用します。 例:"686897696a7c876b7e"。| 
+| Etag| string| キャッシュの最適化のために使用します。 例:"686897696a7c876b7e"します。| 
   
 <a id="ID4EJBAC"></a>
 
@@ -138,11 +138,11 @@ HTTP ステータス コード 200 メタデータの更新が成功時が返さ
  
 ## <a name="related-uris"></a>関連する Uri
  
-次の Uri は、メタデータのパブリック フィールドを更新します。 これらの要求に必要な本文はありません。 HTTP ステータス コード 200 メタデータの更新が成功時が返されます。 それ以外の場合、適切な HTTP 状態コードを JSON 形式で ServiceErrorResponse オブジェクトが返されます。
+次の Uri は、メタデータにパブリック フィールドを更新します。 これらの要求に必要な本文はありません。 HTTP ステータス コード 200 メタデータの更新が成功時が返されます。 それ以外の場合、適切な HTTP 状態コードを JSON 形式で ServiceErrorResponse オブジェクトが返されます。
  
-   * **POST/users/{ownerId} {scid}/scids//clips/{gameClipId}/ratings/{評価値}** のでは、指定したクリップに指定された評価が適用されます。 評価値 1 ~ 5 間整数である必要があります。
-   * **/Users/{ownerId} {scid}/scids//clips/{gameClipId} を投稿/フラグ**- 実施でチェックする可能性のある問題のあるコンテンツを格納するクリップをフラグします。
-   * **POST/users/{ownerId} {scid}/scids//clips/{gameClipId} ビュー/** -指定されたゲーム クリップのビュー カウントをインクリメントします。 これはという名前のない適切な再生の 75%-80% が完了したとき、再生が開始されるをお勧めします。
+   * **POST/users/{ownerId} {scid}/scids//clips/{gameClipId}/ratings/{評価値}** のでは、指定したクリップに指定した評価が適用されます。 評価値 1 ~ 5 間整数である必要があります。
+   * **/Users/{ownerId} {scid}/scids//clips/{gameClipId} を投稿/フラグ**- クリップを強制をチェックする可能性のある問題のあるコンテンツが含まフラグが設定されます。
+   * **POST/users/{ownerId} {scid}/scids//clips/{gameClipId} ビュー/** -指定されたゲーム クリップのビューのカウントをインクリメントします。 これはという名前のない適切な再生の 75%-80% が完了したとき、再生が開始されるをお勧めします。
    
 <a id="ID4EMCAC"></a>
 

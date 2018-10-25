@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 90b8c498c981ddddb10d28317c260c707ca1e897
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5442816"
+ms.locfileid: "5482963"
 ---
 # <a name="getclipresponse-json"></a>GetClipResponse (JSON)
 ゲーム クリップをラップします。 
@@ -25,7 +25,7 @@ ms.locfileid: "5442816"
  
 ## <a name="getclipresponse"></a>GetClipResponse
  
-GetClipResponse オブジェクトでは、次の仕様があります。
+GetClipResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

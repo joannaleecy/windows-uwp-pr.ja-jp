@@ -10,20 +10,20 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444179"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480022"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>マルチインスタンスのユニバーサル Windows アプリの作成
 
 このトピックでは、マルチインスタンスのユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法について説明します。
 
-Windows 10、バージョン 1803 (10.0;ビルド 17134) 以降、UWP アプリできますオプトインする複数のインスタンスをサポートします。 マルチインスタンス UWP アプリのインスタンスが実行されていて、後続のライセンス認証要求が行われた場合、既存のインスタンスはアクティブ化されません。 代わりに、別のプロセスで実行される、新しいインスタンスが作成されます。
+Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリは複数のインスタンスをサポートするためにオプトイン以降、します。 マルチインスタンス UWP アプリのインスタンスが実行されていて、後続のライセンス認証要求が行われた場合、既存のインスタンスはアクティブ化されません。 代わりに、別のプロセスで実行される、新しいインスタンスが作成されます。
 
 > [!IMPORTANT]
-> JavaScript のアプリケーションでは、マルチ インスタンスがサポートされていますが、マルチ インスタンスのリダイレクトはありません。 JavaScript のアプリケーションの複数インスタンスのリダイレクトがサポートされていないため、 [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)クラスはこのようなアプリケーションの便利ではありません。
+> マルチ インスタンスが JavaScript アプリケーションでサポートされているが、マルチ インスタンスのリダイレクトはありません。 JavaScript のアプリケーションの複数インスタンスのリダイレクトがサポートされていないために、 [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)クラスはこのようなアプリケーションの便利ではありません。
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>マルチ インスタンスの動作にオプトインします。
 
@@ -60,9 +60,9 @@ Windows 10、バージョン 1803 (10.0;ビルド 17134) 以降、UWP アプリ�
 
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
-**Multi-Instance Redirection UWP app** テンプレートは、上記のように `SupportsMultipleInstances` を package.appxmanifest ファイルに追加し、さらに `Main()` 関数を含むプロジェクトに **Program.cs** (または、テンプレートの C++ バージョンを使用している場合は **Program.cpp**) を追加します。 アクティブ化をリダイレクトするためのロジックは `Main` 関数にあります。 **Program.cs**用のテンプレートは、次に示します。
+**Multi-Instance Redirection UWP app** テンプレートは、上記のように `SupportsMultipleInstances` を package.appxmanifest ファイルに追加し、さらに `Main()` 関数を含むプロジェクトに **Program.cs** (または、テンプレートの C++ バージョンを使用している場合は **Program.cpp**) を追加します。 アクティブ化をリダイレクトするためのロジックは `Main` 関数にあります。 **Program.cs**のテンプレートは、次に示します。
 
-[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)プロパティは、1 つを使用する必要がある場合にこのライセンス認証要求のシェルに搭載されている優先インスタンスを表します (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合することができることができますライセンス認証そのインスタンスにしたり、リダイレクトを選択した場合に無視することができます。
+[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)プロパティが存在する場合、このライセンス認証要求のシェルが提供優先インスタンスを表します (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合することができることができますライセンス認証そのインスタンスにしたり、リダイレクトを選択した場合に無視することができます。
 
 ``` csharp
 public static class Program
@@ -112,7 +112,7 @@ public static class Program
 }
 ```
 
-`Main()` これは実行する最初のものです。 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)と[**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)の前に実行されます。 これにより、アプリの他の初期化コードが実行される前に、これをアクティブ化するか別のインスタンスをアクティブ化するかを決定できます。
+`Main()` これは実行する最初のものです。 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)と[**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)前に実行します。 これにより、アプリの他の初期化コードが実行される前に、これをアクティブ化するか別のインスタンスをアクティブ化するかを決定できます。
 
 上記のコードは、アプリケーションの既存のインスタンスまたは新しいインスタンスがアクティブになっているかどうかを判断します。 キーを使用して、アクティブ化する既存のインスタンスがあるかどうかを判断します。 たとえば、アプリを起動して [ファイルのアクティブ化の処理](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation) ができる場合は、ファイル名をキーとして使用できます。 次に、アプリのインスタンスがすでにそのキーに登録されているかどうかを確認し、新しいインスタンスを開く代わりにそれをアクティブにすることができます。 これはコード ビハインド アイデアです。 `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 

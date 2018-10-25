@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 評価, レビュー
 ms.localizationpriority: medium
 ms.openlocfilehash: cc3dce673b434673f0e8a72158c2d3a593f02c52
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431411"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483692"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>アプリの評価とレビューを求める
 
@@ -25,7 +25,7 @@ ms.locfileid: "5431411"
 評価とレビューのデータを分析する準備が整ったら、Windows デベロッパー センター ダッシュボードでデータを参照するか、Microsoft Store 分析 API を使ってプログラムでこのデータを取得することができます。
 
 > [!IMPORTANT]
-> アプリ内で評価関数を追加するには、すべてのレビューは星評価選んだに関係なく、ストアの評価のメカニズムをユーザーに送信する必要があります。 ユーザーからのフィードバックやご意見を収集する場合は、明確なは、アプリの評価またはレビュー ストアに関連しないが、アプリの開発者に直接送信されることがあります。 開発者倫理規定[Fraudulent または悪意を持つアクティビティ](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)に関連する詳細情報を参照してください。
+> アプリ内で評価関数を追加するには、すべてのレビューは星評価選んだに関係なく、ストアの評価のメカニズムをユーザーに送信する必要があります。 ユーザーからのフィードバックやご意見を収集する場合は、明確なは、アプリの評価やストアでのレビューに関連しないが、アプリ開発者に直接送信されることがあります。 開発者倫理規定[Fraudulent または悪意を持つアクティビティ](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)に関連する詳細情報を参照してください。
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>アプリ内での評価とレビュー ダイアログの表示
 
@@ -65,8 +65,8 @@ public async Task<bool> ShowRatingReviewDialog()
 次の例は、ユーザーが評価またはレビューを正しく提出した後のこの要求の戻り値を示しています。
 
 ```json
-{ 
-  "status": "success", 
+{ 
+  "status": "success", 
   "data": {
     "updated": false
   },
@@ -77,8 +77,8 @@ public async Task<bool> ShowRatingReviewDialog()
 次の例は、ユーザーが評価またはレビューを提出しなかった後のこの要求の戻り値を示しています。
 
 ```json
-{ 
-  "status": "aborted", 
+{ 
+  "status": "aborted", 
   "errorDetails": "Navigation was unsuccessful"
 }
 ```

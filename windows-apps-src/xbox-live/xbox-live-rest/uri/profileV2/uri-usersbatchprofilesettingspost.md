@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 66d32e448f7db8558ea6ef02714b6112e230e711
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5443509"
+ms.locfileid: "5476287"
 ---
 # <a name="post-usersbatchprofilesettings"></a>POST (/users/batch/profile/settings)
 ユーザーまたはユーザーのプロファイルを取得します。 これらの Uri のドメインが`profile.xboxlive.com`します。
@@ -48,7 +48,7 @@ ms.locfileid: "5443509"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | 
-| x xbl コントラクト バージョン| 32 ビット符号なし整数| コントラクト バージョンは、Xbox 360 API からこの呼び出しを区別するために 2 に設定する必要があります。| 
+| x xbl コントラクト バージョン| 32 ビットの符号なし整数| コントラクト バージョンは、Xbox 360 の API 呼び出しは、このを区別するために 2 に設定する必要があります。| 
 | コンテンツの種類| string| 値 = <code>application/json</code>| 
   
 <a id="ID4EZC"></a>

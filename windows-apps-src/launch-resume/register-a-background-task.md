@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bd0361886181d3c5a3395112c728db3bf57d58f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443148"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481827"
 ---
 # <a name="register-a-background-task"></a>バックグラウンド タスクの登録
 
@@ -32,7 +32,7 @@ ms.locfileid: "5443148"
 
 このトピックは、バックグラウンド タスクを登録するユーティリティ関数の作り方を順に説明します。 このユーティリティ関数は、二重登録による問題を防ぐために、同じタスクが登録されていないかどうかをチェックしたうえでタスクを登録します。バックグラウンド タスクにシステムの条件を適用することができます。 ここで紹介しているユーティリティ関数は、それ自体で完結した実用的なコード例となっています。
 
-**注:**  
+**注:**  
 
 ユニバーサル Windows アプリは、どの種類のバックグラウンド トリガーを登録する場合でも、先に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。
 
@@ -78,7 +78,7 @@ ms.locfileid: "5443148"
 
 同じタスクが登録されているかどうかは、[**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) プロパティを照会し、返された結果を反復処理することで確認できます。 各インスタンスの名前を調べ、登録しようとしているタスクの名前と一致した場合、ループを抜けて、フラグ変数を設定します。このフラグに応じたコード パスが次のステップで選択されます。
 
-> **注** バックグラウンド タスクには、アプリ内で重複しない名前を使ってください。 各バックグラウンド タスクには一意の名前が付いている必要があります。
+> **注:** アプリに固有のものであるバック グラウンド タスクの名前を使用します。 各バックグラウンド タスクには一意の名前が付いている必要があります。
 
 次のコードは、最後の手順で作成した [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) を使ってバックグラウンド タスクを登録します。
 
@@ -151,7 +151,7 @@ ms.locfileid: "5443148"
 
 登録されていない場合は、新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを使ってタスクを登録します。 このコードは、condition パラメーターが null かどうかを確認し、null でない場合は、その condition を登録オブジェクトに追加します。 戻り値は、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドから返された [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) です。
 
-> **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
+> **注:** バック グラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 > **注** アプリと同じプロセスで実行されるバックグラウンド タスクを登録する場合、`String.Empty` または `null` を `taskEntryPoint` パラメーターに送信します。
 
 次の例には、既にあるタスクを返すか、バックグラウンド タスクを登録するコードが追加されています。また、システムの条件 (省略可能) が指定された場合の処理も追加されています。

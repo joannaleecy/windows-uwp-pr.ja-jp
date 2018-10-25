@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store レビュー API, アドオンの入手数
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ec6661ec0ef65174b6218957450540edceaa5a0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438240"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483099"
 ---
 # <a name="submit-responses-to-reviews"></a>レビューに対する返信の送信
 
@@ -73,7 +73,7 @@ ms.locfileid: "5438240"
 | ReviewId | string |  返信するレビューの ID です (これは GUID です)。 レビュー ID は、Microsoft Store 分析 API の[アプリのレビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で取得できます。   |  ○  |
 | ResponseText | string | 提出する返信です。 返信は、[こちらのガイドライン](../publish/respond-to-customer-reviews.md#guidelines-for-responses)に従う必要があります。   |  ○  |
 | SupportEmail | string | アプリのサポート メール アドレスです。顧客はこのアドレスを使用して、直接連絡できます。 したがって、有効なメール アドレスである必要があります。     |  ○  |
-| IsPublic | Boolean |  **True**を指定する場合、返信は、アプリのストア登録情報、顧客のレビューのすぐ下に表示され、すべてのユーザーに表示されます。 **False**と、ユーザーがメールへの返信オプトアウトしていないを指定する場合、返信がメールで顧客に送信され、アプリのストア登録情報で他のユーザーに表示されません。 メールへの返信**false**と、ユーザーが選択されている、指定した場合は、エラーが返されます。   |  はい  |
+| IsPublic | Boolean |  **True**を指定する場合、返信は、アプリのストア登録情報を顧客のレビューのすぐ下に表示され、すべてのユーザーに表示されます。 メールへの返信**false**と、ユーザーが選択されている、指定した場合、返信がメールで顧客に送信され、アプリのストア登録情報で他のユーザーに表示されません。 メールへの返信**false**と、ユーザーが選択されている、指定した場合は、エラーが返されます。   |  はい  |
 
 
 ### <a name="request-example"></a>要求の例

@@ -12,14 +12,14 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a3d2e5c0bcbb0c59eabdffdd148e4b7f013c3f40
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439835"
+ms.locfileid: "5478961"
 ---
 # <a name="usersxuidxuidgroupsmonikerbroadcasting"></a>/users/xuid({xuid})/groups/{moniker}/broadcasting
-URI に表示される XUID に関連するグループ モニカーによって指定されたブロードキャスト ユーザーのプレゼンス レコードをアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
+URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードにアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -30,8 +30,8 @@ URI に表示される XUID に関連するグループ モニカーによって
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| string| Xbox ユーザー ID (XUID)、グループ内の Xuid に関連するユーザーのです。| 
-| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるだけモニカーでは、大文字の 'P'"People"でです。| 
+| xuid| string| Xbox ユーザー ID (XUID)、グループ内の Xuid に関連するユーザーのします。| 
+| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるモニカーだけでは、大文字の 'P'"People"でです。| 
   
 <a id="ID4E4B"></a>
 
@@ -40,7 +40,7 @@ URI に表示される XUID に関連するグループ モニカーによって
 
 [GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )](uri-usersxuidgroupsmonikerbroadcastingget.md)
 
-&nbsp;&nbsp;URI に表示される XUID に関連するグループ モニカーによって指定されたブロードキャスト ユーザーのプレゼンス レコードを取得します。
+&nbsp;&nbsp;URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードを取得します。
  
 <a id="ID4EHC"></a>
 

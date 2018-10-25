@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efe0e93527560e31a471fce2c74b1cc254101ad
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437309"
+ms.locfileid: "5479686"
 ---
 # <a name="queryclipsresponse-json"></a>QueryClipsResponse (JSON)
 一覧のページング情報と共にゲーム クリップの戻り値の一覧をラップします。 
@@ -25,11 +25,11 @@ ms.locfileid: "5437309"
  
 ## <a name="queryclipsresponse"></a>QueryClipsResponse
  
-QueryClipsResponse オブジェクトでは、次の仕様があります。
+QueryClipsResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| <b>ゲーム クリップ</b>| GameClip の配列| 要求の制限 (<b>maxItems</b>) までクエリが満たされるゲーム クリップの配列です。| 
+| <b>ゲーム クリップ</b>| GameClip の配列| 要求の制限 (<b>maxItems</b>) まで、クエリが満たされるゲーム クリップの配列です。| 
 | <b>pagingInfo</b>| PagingInfo| 必要な継続とリストの後続の呼び出しのページングする要求の制限を超える (<b>maxItems</b>) の情報が含まれています。| 
   
 <a id="ID4E2B"></a>

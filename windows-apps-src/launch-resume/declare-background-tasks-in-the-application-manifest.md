@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445649"
+ms.locfileid: "5481493"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>アプリケーション マニフェストでのバックグラウンド タスクの宣言
 
@@ -94,7 +94,7 @@ ms.locfileid: "5445649"
 
 2.  Task Type 属性のリストを、このバックグラウンド タスクで使われるタスク登録の種類を示すように変更します。 バックグラウンド タスクを複数の種類のトリガーで登録する場合は、必要な Task 要素と Type 属性を個々に追加します。
 
-    **注:** 使っているトリガーの各種類を確実に列記してください。そうしないと、バックグラウンド タスクは宣言されていない種類のトリガーには登録されません ([**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドが失敗し、例外がスローされます)。
+    **注:** 必ずトリガーの種類の各リストを使用している、または、宣言されていない種類のトリガー ([**登録**](https://msdn.microsoft.com/library/windows/apps/br224772)メソッドが失敗し、例外がスロー) と、バック グラウンド タスクは登録されません。
 
     次の抜粋例は、システム イベント トリガーとプッシュ通知の使用法を示します。
 

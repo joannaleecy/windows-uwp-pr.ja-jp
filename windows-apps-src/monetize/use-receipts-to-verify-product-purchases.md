@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, アプリ内購入, IAP, 受領通知, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: ee6ca7876588efd8b8a5c86cfc8896d84ede91b9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439547"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479629"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>受領通知を使った製品購入の確認
 
@@ -154,6 +154,6 @@ ms.locfileid: "5439547"
 |  **ProductType**  |    製品の種類を示します。 現在サポートされている値は、**Durable** のみです。          |  
 |  **PurchaseDate**  |    購入した日付です。          |  |
 
- 
+ 
 
- 
+ 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ed278542fa538a1297069b0f7d67d413e180f30
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5435305"
+ms.locfileid: "5481075"
 ---
 # <a name="usersmeconsumablesitemid"></a>/users/me/consumables/{itemID}
 特定のコンシューマブルなインベントリ項目の詳細情報の完全なセットにアクセスします。
@@ -31,7 +31,7 @@ ms.locfileid: "5435305"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| itemID| string| 単一のインベントリ項目の各ユーザーに一意の ID|
+| itemID| string| 単数形インベントリ項目の各ユーザーに一意の ID|
 
 <a id="ID4ERB"></a>
 
@@ -40,7 +40,7 @@ ms.locfileid: "5435305"
 
 [POST ({itemID})](uri-inventoryconsumablesitemurlpost.md)
 
-&nbsp;&nbsp;または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント要求の量によって、コンシューマブルの数量。
+&nbsp;&nbsp;または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント、要求された時間の長さによって、コンシューマブルの数量。
 
 <a id="ID4E4B"></a>
 

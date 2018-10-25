@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, マルチプレイヤー
 ms.localizationpriority: medium
 ms.openlocfilehash: 84255c97186accfcafc561eeb77e0fdb6924b5e9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440581"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481246"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>Xbox Live のマルチプレイヤー データの取得
 

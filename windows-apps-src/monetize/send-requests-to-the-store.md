@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ms.openlocfilehash: 6463f6eee6d3f5ec82122cef532db8d0e9a26dc6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435422"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480405"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Microsoft Store に要求を送信する
 
@@ -38,7 +38,7 @@ public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": \"{ \"flightGroupId\": \"your group ID\" }\" }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": \"{ \"flightGroupId\": \"your group ID\" }\" }");
 
     if (result.ExtendedError == null)
     {
@@ -84,9 +84,9 @@ public async Task<bool> AddUserToFlightGroup()
 次の例は、JSON 形式のデータを *parametersAsJson* に渡す方法を示しています。 *type* フィールドは、文字列 *GetRemoteVariables* に割り当てる必要があります。 Windows デベロッパー センター ダッシュボードでリモート変数を定義したプロジェクトの ID フィールドに *projectId* フィールドを割り当てます。
 
 ```json
-{ 
-    "type": "GetRemoteVariables", 
-    "parameters": "{ \"projectId\": \"your project ID\" }" 
+{ 
+    "type": "GetRemoteVariables", 
+    "parameters": "{ \"projectId\": \"your project ID\" }" 
 }
 ```
 
@@ -101,8 +101,8 @@ public async Task<bool> AddUserToFlightGroup()
 次の例では、この要求の戻り値を示します。
 
 ```json
-{ 
-  "anonymous": false, 
+{ 
+  "anonymous": false, 
   "name": "Insider Slow",
   "settings":
   {
@@ -127,9 +127,9 @@ public async Task<bool> AddUserToFlightGroup()
 次の例は、JSON 形式のデータを *parametersAsJson* に渡す方法を示しています。 *type* フィールドは、文字列 *AddToFlightGroup* に割り当てる必要があります。 *flightGroupId* フィールドを、デバイスまたはユーザーを追加するフライト グループの ID に割り当てます。
 
 ```json
-{ 
-    "type": "AddToFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "AddToFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 
@@ -150,9 +150,9 @@ public async Task<bool> AddUserToFlightGroup()
 次の例は、JSON 形式のデータを *parametersAsJson* に渡す方法を示しています。 *type* フィールドは、文字列 *RemoveFromFlightGroup* に割り当てる必要があります。 *flightGroupId* フィールドを、デバイスまたはユーザーを削除するフライト グループの ID に割り当てます。
 
 ```json
-{ 
-    "type": "RemoveFromFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "RemoveFromFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 

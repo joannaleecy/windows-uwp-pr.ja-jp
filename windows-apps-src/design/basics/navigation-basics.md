@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b388a196e1f5fa6649ac1fb072c80d01bba45e20
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431138"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482746"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
 
@@ -58,7 +58,7 @@ ms.locfileid: "5431138"
 
 ### <a name="consistency"></a>一貫性
 
-ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準のコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、およびスタイル設定と、ナビゲーション予測可能なおよび直感的なユーザー向け。
+ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準のコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、およびスタイルができるナビゲーション予測可能な直感的なユーザー向け。
 
 ![ページ コンポーネントのイメージ](images/nav/page-components.svg)
 

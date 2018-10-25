@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: 091782d926949b87db9b29c08ec8cf98f485f0df
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435073"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483115"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Visual Studio を使ってデスクトップ アプリケーションをパッケージ化します。
 
@@ -25,7 +25,7 @@ Visual Studio を使用して、デスクトップ アプリのパッケージ�
 最新バージョンの Visual Studio には、アプリのパッケージ化に必要であった手動ステップをすべてなくす新しいバージョンのパッケージ プロジェクトが用意されています。 パッケージ プロジェクトを追加して、デスクトップ プロジェクトを参照し、F5 キーを押してアプリをデバッグするだけです。 手動で調整する必要はありません。 この新しい効率化されたエクスペリエンスは、以前のバージョンの Visual Studio のエクスペリエンスから大幅に向上しています。
 
 >[!IMPORTANT]
->デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (デスクトップ ブリッジとも呼ばれるを Windows 10 バージョン 1607 で導入されたそれ以外の場合と、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
+>デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能 (それ以外の場合、デスクトップ ブリッジとも呼ばれるは Windows 10 バージョン 1607 で導入されましたし、Windows 10 Anniversary Update (10.0 をターゲットとするプロジェクトでのみ使用できますビルド 14393) 以降の Visual Studio でリリースされます。
 
 ## <a name="first-prepare-your-application"></a>まず、アプリケーションを準備します
 
@@ -62,7 +62,7 @@ Visual Studio を使用して、デスクトップ アプリのパッケージ�
 
    ![エントリ ポイントの設定](images/desktop-to-uwp/entry-point-set.png)
 
-6. パッケージ プロジェクトをビルドし、エラーが表示されないことを確認します。  エラーが発生した場合は、**構成マネージャー**を開き、プロジェクトが同じプラットフォームを対象とすることを確認します。
+6. パッケージ プロジェクトをビルドし、エラーが表示されないことを確認します。  エラーが発生した場合は、 **Configuration Manager**を開き、プロジェクトが同じプラットフォームを対象とすることを確認します。
 
    ![構成マネージャー](images/desktop-to-uwp/config-manager.png)
 
@@ -85,7 +85,7 @@ Visual Studio を使用して、デスクトップ アプリのパッケージ�
 
 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) のページをご覧ください。
 
-**実行、デバッグ、デスクトップ アプリケーションのテスト**
+**実行、デバッグ、テスト、デスクトップ アプリケーション**
 
 [実行、デバッグ、およびデスクトップ アプリケーションをパッケージ化されたテスト](desktop-to-uwp-debug.md)を参照してください。
 

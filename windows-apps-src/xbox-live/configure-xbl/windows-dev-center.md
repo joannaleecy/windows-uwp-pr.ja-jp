@@ -10,15 +10,15 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: 8bf9401650b2f769a401a5226853f7f5ef4942d8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437036"
+ms.locfileid: "5482016"
 ---
 # <a name="windows-dev-center-service-configuration"></a>Windows デベロッパー センターのサービス構成
 
-[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で公開して、Xbox Live の機能の完全なセットを使用するゲームでは、デベロッパー センターで、Xbox Live サービスを構成できます。
+[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で公開され、Xbox Live の機能の完全なセットを使用するゲームでは、デベロッパー センターで、Xbox Live サービスを構成できます。
 
 > [!IMPORTANT]
 > これらのトピックは、Xbox Live クリエーターズ プログラムのタイトルには適用されません。

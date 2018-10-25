@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 審査担当者へのコメント
 ms.localizationpriority: medium
 ms.openlocfilehash: 741925a3ac49273bd7ba826dfbadd2e18724f307
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441990"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482244"
 ---
 # <a name="notes-for-certification"></a>認定の注意書き
 
@@ -44,9 +44,9 @@ ms.locfileid: "5441990"
 -   **簡潔な表現で、指示をわかりやすく記述してください。** より詳しい説明が必要な場合は、情報のあるページへの URL を含めておきます。 ただし、アプリのユーザーには注意書きが表示されないことを念頭に置いておきましょう。 アプリのテスト用に複雑な指示が必要になると思われる場合は、ユーザー(審査担当者) が使うことを考えてアプリをもっと簡潔にする必要性がないか検討します。
 -   **サービスや外部コンポーネントをオンラインで利用できる状態にしておく必要があります。** アプリが機能するためにサービスに接続する必要がある場合は、そのサービスがオンラインで利用できる状態になっている必要があります。 ログイン情報など、サービスに関して審査担当者が必要とするような情報があれば、すべて含めておいてください。 審査時に必要なサービスに接続できない場合、アプリは認定されない可能性があります。
 
- 
+ 
 
- 
+ 
 
 
 

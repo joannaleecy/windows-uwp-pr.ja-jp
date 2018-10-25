@@ -12,15 +12,15 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1dbfe2cf1e25662f9645649594521bd23193d09d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5436623"
+ms.locfileid: "5477645"
 ---
 # <a name="user-statistics-uris"></a>ユーザー統計 URI
  
-このセクションでは、*ユーザー統計情報*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドの詳細を提供します。
+このセクションでは、*ユーザー統計情報*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
  
 これらの Uri のドメインは、userstats.xboxlive.com です。
  
@@ -35,7 +35,7 @@ ms.locfileid: "5436623"
 
 [/users/xuid({xuid})/scids/{scid}/stats](uri-usersxuidscidsscidstats.md)
 
-&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成にアクセスします。
+&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストで、サービス構成にアクセスします。
  
 <a id="ID4EMB"></a>
 

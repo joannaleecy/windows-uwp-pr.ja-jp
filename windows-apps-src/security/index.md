@@ -1,6 +1,6 @@
 ---
 title: セキュリティ
-description: このセクションには、Windows 10 のユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとして構築する方法に関する記事が含まれています。
+description: このセクションには、windows 10 のセキュリティで保護されたユニバーサル Windows プラットフォーム (UWP) アプリの構築に関する記事が含まれています。
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: msatranjr
 ms.author: misatran
@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: b9858be036732c2894ff3c009233e021b37da040
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438372"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481211"
 ---
 # <a name="security"></a>セキュリティ
 
 
 
-このセクションには、Windows 10 のユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとして構築する方法に関する記事が含まれています。
+このセクションには、windows 10 のセキュリティで保護されたユニバーサル Windows プラットフォーム (UWP) アプリの構築に関する記事が含まれています。
 
-## <a name="introduction"></a>はじめに 
+## <a name="introduction"></a>概要 
 
 Windows または UWP での開発が初めての場合は、最初に「[安全な Windows アプリの開発について](intro-to-secure-windows-app-development.md)」をご覧ください。 この初級レベルの記事では、アプリのセキュリティに関する考慮事項の概要と Windows 10 で使用できるさまざまな機能について説明しています。
 

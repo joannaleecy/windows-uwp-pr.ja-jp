@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 147df5a3032aa950b7b301f7990c5456db200d2c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5431071"
+ms.locfileid: "5476734"
 ---
 # <a name="post-titlestitle-idsessionhosts"></a>POST (/titles/{Title Id}/sessionhosts)
 新しいクラスターの要求を作成します。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
@@ -48,7 +48,7 @@ gameserverms.xboxlive.com
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-要求を行う場合、次の表に示すようにヘッダーは、必要があります。
+要求を行う場合、次の表に示すようにヘッダーは必要です。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | 
@@ -67,7 +67,7 @@ gameserverms.xboxlive.com
 | SandboxId| サンド ボックスで割り当てられるセッション ホストをします。| 
 | cloudGameId| クラウド ゲームの識別子です。| 
 | 場所| 優先する場所の順序指定された一覧から割り当てられるセッションたいです。| 
-| sessionCookie| これは、呼び出し元が指定されている不透明な文字列です。 Sessionhost に関連付けられているし、ゲームのコードで参照できます。 このメンバーを使用して、クライアントから少量の情報を (最大サイズは 4 KB) サーバーに渡します。| 
+| sessionCookie| これは、呼び出し元が指定されている不透明な文字列です。 これは、sessionhost に関連付けられたし、ゲームのコードで参照できます。 このメンバーを使用して、クライアントから少量の情報を (最大サイズは 4 KB) サーバーに渡します。| 
 | gameModelId| ゲーム モードの識別子です。| 
  
 <a id="ID4EDD"></a>
@@ -105,7 +105,7 @@ gameserverms.xboxlive.com
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合、サービスは、次のメンバーを含む JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -151,14 +151,14 @@ gameserverms.xboxlive.com
  
 ## <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しを再試行のみする必要があります。
+次の応答コードを受信したとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
  
    * 200、成功の応答が返されます。
    * 400-無効なパラメーターまたは形式が正しくない要求本文。
    * 401: Unauthorized
    * 404-タイトル id を割り当てられているすべてのサブスクリプションはありません。
-   * 409-この応答が可能な場合、同じ要求が同時にほぼで (同じ sessionId) に加えられたします。 割り当て要求が行われた、セッションのホストが既に指定した sessionId とアクティブになっている場合はその sessionhost に関する詳しい情報が返されます。 セッション ホストただしがない場合アクティブなは、まだ、競合が表示されます。
-   * 500-予期しないサーバー エラー。
+   * 409-この応答が可能な場合、同じ要求が同時にほぼで (同じ sessionId) に加えられたします。 セッションのホストが既に指定した sessionId しアクティブになって、割り当て要求が行われた場合はその sessionhost に関する詳細情報が返されます。 セッション ホストただしがない場合アクティブなは、まだ、競合が表示されます。
+   * 500-サーバーの予期しないエラー。
    * 503-sessionhosts StandingBy しません。 これらのリソースの一部は無料ときは、要求を再試行します。
    
 <a id="ID4EFG"></a>

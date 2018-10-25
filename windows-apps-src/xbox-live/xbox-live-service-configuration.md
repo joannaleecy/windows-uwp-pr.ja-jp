@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成
 ms.localizationpriority: medium
 ms.openlocfilehash: e1d3b21f98528afec5e97cac6f645c7835b6362a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5437261"
+ms.locfileid: "5476581"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live サービス構成
 
@@ -39,7 +39,7 @@ ID@Xbox の開発者である場合、または Microsoft パートナーのパ�
 
 今後のすべてのタイトルでは Windows デベロッパー センターが推奨されますが、機能によっては引き続き XDP を使用することもできます。 このセクションでは、どこでタイトルを構成したらよいかを説明します。
 
-特定のサービス構成ページの情報を確認するには、選択したポータルに応じて。
+選んだポータルに応じて特定のサービス構成ページに関する情報をご覧ください。
 
 * [Windows デベロッパー センターの構成](configure-xbl/windows-dev-center.md)
 * [Xbox デベロッパー ポータルの構成](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/atoc-service-configuration)- このリンクにアクセスすると、Microsoft アカウント (MSA) Xbox Live のフル アクセスが有効になっている必要があります。

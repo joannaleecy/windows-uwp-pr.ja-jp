@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, リンク, windows store プロトコル, アプリにリンクする, アプリへのリンク
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025321aa73a66cc0a976bd347e613de3c3c4765
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445669"
+ms.locfileid: "5482551"
 ---
 # <a name="link-to-your-app"></a>アプリへのリンク
 
 
-お客様が、Microsoft Store でアプリの登録情報にリンクして、アプリを見つけることができます。
+ユーザーが Microsoft Store でアプリの登録情報にリンクして、アプリを検出できます。
 
 ## <a name="getting-the-link-to-your-apps-store-listing"></a>ストアのアプリの内容へのリンク
 
@@ -39,21 +39,21 @@ ms.locfileid: "5445669"
 > 詳細と Microsoft Store バッジの使用に関連する要件については、[アプリのマーケティング ガイドライン](app-marketing-guidelines.md)を参照してください。
 
 
-## <a name="linking-directly-to-your-app-in-the-microsoft-store"></a>Microsoft Store のアプリへの直接リンク
+## <a name="linking-directly-to-your-app-in-the-microsoft-store"></a>Microsoft Store でアプリへの直接リンク
 
-Microsoft Store の起動を使用して、ブラウザーを開かずに、アプリの登録情報ページに直接移動のリンクを作成する、 **ms windows ストア:** URI スキームします。
+Microsoft Store の起動を使用して、ブラウザーを開かずに、アプリの登録情報ページに直接移動リンクを作成する、 **ms-windows ストア:** URI スキームします。
 
 ユーザーが Windows デバイスを使っていることがわかっていて、ストアの登録情報ページにユーザーが直接アクセスできるようにする場合は、このリンクが便利です。 たとえば、ブラウザーのユーザー エージェント文字列を調べてユーザーのオペレーティング システムがストアをサポートしていることを確認した後や、既に UWP アプリを使って通信している場合に、このリンクを利用できます。
 
-アプリのストア登録情報に直接リンクをこの URI スキームを使用するには、このリンクをアプリのストア ID を追加します。
+アプリのストア登録情報に直接リンクをこの URI スキームを使用するには、このリンクに、アプリのストア ID を追加します。
 
 `ms-windows-store://pdp/?ProductId=`
 
 Microsoft ストア プロトコルの使用について詳しくは、 [Microsoft アプリの起動](../launch-resume/launch-store-app.md)を参照してください。
 
- 
+ 
 
- 
+ 
 
 
 

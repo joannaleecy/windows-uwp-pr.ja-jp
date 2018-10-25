@@ -12,33 +12,33 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a7521de7da4ebd31f0a1d8c59bb7c0134eddc08
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439378"
+ms.locfileid: "5481936"
 ---
 # <a name="inventoryitem-json"></a>inventoryItem (JSON)
-コア インベントリ項目の権利を付与できる標準の項目を表します。
+コアのインベントリ項目の権利を付与できる標準の項目を表します。
 <a id="ID4EN"></a>
 
 
 ## <a name="inventoryitem"></a>inventoryItem
 
-InventoryItem オブジェクトでは、次の仕様があります。
+InventoryItem オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
 | url| string| この特定のインベントリ項目の一意の識別子。|
 | itemType| string| 項目の種類です。 現在の値します。 <ul><li><b>Unknown</b></li><li><b>Game</b></li><li><b>映画</b></li><li> <b>TVShow</b></li><li><b>MusicVideo</b></li><li><b>GameTrial</b></li><li><b>ViralVideo</b></li><li><b>TVEpisode</b></li><li><b>TVSeason</b></li><li><b>TVSeries</b></li><li><b>VideoPreview</b></li><li><b>ポスター</b></li><li><b>ポッド キャスト</b></li><li><b>画像</b></li><li><b>BoxArt</b></li><li><b>ArtistPicture</b></li><li><b>GameContent</b></li><li><b>GameDemo</b></li><li><b>Theme</b></li><li><b>XboxOriginalGame</b></li><li><b>GamerTile</b></li><li><b>ArcadeGame</b></li><li><b>GameConsumable</b></li><li><b>アルバム</b></li><li><b>AlbumDisc</b></li><li><b>AlbumArt</b></li><li><b>GameVideo</b></li><li><b>BackgroundArt</b></li><li><b>TVTrailer</b></li><li><b>GameTrailer</b></li><li><b>VideoShort</b></li><li><b>バンドル</b></li><li><b>XnaCommunityGame</b></li><li><b>プロモーション</b></li><li><b>MovieTrailer</b></li><li><b>SlideshowPreviewImage</b></li><li><b>ServerBackedGames</b></li><li><b>Marketplace</b></li><li><b>AvatarItem</b></li><li><b>LiveApp</b></li><li><b>WebGame</b></li><li><b>MobileGame</b></li><li><b>MobilePdlc</b></li><li><b>MobileConsumable</b></li><li><b>App</b></li><li><b>MetroGame</b></li><li><b>MetroGameContent</b></li><li><b>MetroGameConsumable</b></li><li><b>GameLayer</b></li><li><b>GameActivity</b></li><li><b>GameV2</b></li><li><b>SubscriptionV2</b></li><li><b>サブスクリプション</b><br/><br/> **注:** ゲームが**GameV2**によって指定される、コンシューマブルなアドオンです**GameConsumable**、永続的な DLC が**GameContent**します。 |
-  | コンテナー | string | これは、この項目を含む「コンテナー」のセットです。 ユーザーのインベントリは、特定のコンテナーに参加している項目を照会することができます。 これらのコンテナーは、購入して、項目がインベントリに追加されるときに決定されます。 |
+  | コンテナー | string | これは、この項目を含む「コンテナー」のセットです。 特定のコンテナーに参加している項目は、ユーザーのインベントリを照会できます。 これらのコンテナーは、項目に追加されると、インベントリの購入によって決定されます。 |
   | 取得 | DateTime | 日付と時刻の項目は、ユーザーのインベントリに追加されました。 |
   | startDate | DateTime | 日付と時刻になった、または使用可能になります。 |
   | endDate | DateTime | 日付と時刻になった、または使用できなくなります。 |
-  | 状態 | string | 項目の状態。 値は、**有効になっている**、**中断**、**有効期限が切れて**、**キャンセル**、**更新**を許可します。  |
-  | trial | ブール値 | 必須。 この権利が; 試用版である場合は true。それ以外の場合は false です。 権利の試用版を購入し、通常版を購入する場合は、両方が返金されます。 |
+  | 状態 | string | 項目の状態。 値は**有効になっている**、**中断**、**有効期限が切れて**、**キャンセル**、**更新**を許可します。  |
+  | trial | ブール値 | 必須。 この権利が、試用版である場合は true。それ以外の場合は false です。 権利の試用版を購入し、通常版を購入する場合は、両方が表示されます。 |
   | trialTimeRemaining | TimeSpan | Null 許容します。 どのくらいの時間は、分単位で、試用版に残っています。 |
-  | コンシューマブル | array | 項目がコンシューマブルの場合は、その現在の数量と同様に、コンシューマブルなインベントリ項目の一意の識別子 (リンク) をインラインで表したが含まれます。 |
+  | コンシューマブル | array | 項目がコンシューマブルの場合は、その現在の数量と同様に、コンシューマブルなインベントリ項目の一意の識別子 (リンク) の場合は、なインライン表現が含まれます。 |
 
 <a id="ID4EMAAC"></a>
 
@@ -72,7 +72,7 @@ inventoryItem {
 | メンバー| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | url| string| 特定のコンシューマブルなインベントリ項目の一意の識別子。|
-| quantity| 32 ビット符号付き整数| このインベントリ項目の現在の数量。|
+| quantity| 32 ビット符号付き整数| このインベントリ アイテムの現在の数量。|
 
 
 ```json
@@ -104,6 +104,6 @@ consumableInventoryItem {
 
 [/users/me/inventory](../uri/marketplace/uri-inventory.md)
 
- [インベントリの作成/コンシューマブル/{itemID}/](../uri/marketplace/uri-inventoryconsumablesitemurl.md)
+ [インベントリ コンシューマブル/{itemID}/](../uri/marketplace/uri-inventoryconsumablesitemurl.md)
 
  [/inventory/{itemID}](../uri/marketplace/uri-inventoryitemurl.md)

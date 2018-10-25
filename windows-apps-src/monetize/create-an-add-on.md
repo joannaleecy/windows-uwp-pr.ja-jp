@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの作成, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: a24355ca09380c46d8e648899ca2fe96f9e989c7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432942"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481348"
 ---
 # <a name="create-an-add-on"></a>アドオンの作成
 

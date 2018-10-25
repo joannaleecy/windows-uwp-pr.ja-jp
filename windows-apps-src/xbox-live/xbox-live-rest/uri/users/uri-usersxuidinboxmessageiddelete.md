@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e98608f8329407ccb728abb9490eeb341e72aec5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5432087"
+ms.locfileid: "5477504"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 ユーザーの受信トレイでユーザーのメッセージを削除します。 これらの Uri のドメインが`msg.xboxlive.com`します。
@@ -36,7 +36,7 @@ ms.locfileid: "5432087"
  
 削除操作では、等です。
  
-この API は、サポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
+この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
   
 <a id="ID4ECB"></a>
 
@@ -45,7 +45,7 @@ ms.locfileid: "5432087"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) 要求を行っているプレイヤーのします。 | 
+| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 | 
 | メッセージ Id | 文字列 [50] | 取得または削除されるメッセージの ID です。 | 
   
 <a id="ID4EPB"></a>
@@ -67,13 +67,13 @@ ms.locfileid: "5432087"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード 
  
-サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 説明| 
 | --- | --- | --- | --- | --- | 
 | 204| 成功します。| 
 | 403| XUID に変換することはできませんか、有効な XUID クレームが見つかったことはできません。| 
-| 404| URI のメッセージ ID を解析できませんか、XUID が URI にありません。| 
+| 404| URI のメッセージ ID を解析できませんまたは、XUID が URI ではありません。| 
 | 500| サーバー側の一般的なエラーです。| 
   
 <a id="ID4EAE"></a>
@@ -81,12 +81,12 @@ ms.locfileid: "5432087"
  
 ## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答 
  
-サービスは、エラーが発生した場合、サービスの環境から値を含めることができます全て、errorResponse オブジェクトを取得するを取得することがあります。
+エラーの場合、サービスは、サービスの環境から値を含めることができますが、全て、errorResponse オブジェクトを返すことがあります。
  
 | プロパティ| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | errorSource| string| エラーが発生した場所を指定します。| 
-| errorCode| int| (Null にすることができます) エラーに関連付けられている数値コードです。| 
+| errorCode| int| (Null にすることができます)、エラーに関連付けられている数値コードです。| 
 | エラー メッセージ| string| 詳細を表示するように構成する場合のエラーの説明します。| 
   
 <a id="ID4EYF"></a>
@@ -94,7 +94,7 @@ ms.locfileid: "5432087"
  
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果 
  
-だけユーザー メッセージを削除することができます。 
+のみ、独自のユーザーのメッセージを削除することができます。 
   
 <a id="ID4EDG"></a>
 

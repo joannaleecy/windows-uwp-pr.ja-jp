@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a915af43c52aedf67493e05ac9a6595ea28142e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5433761"
+ms.locfileid: "5482976"
 ---
 # <a name="get-untrustedplatformusersxuidxuidscidsscid"></a>GET (/untrustedplatform/users/xuid({xuid})/scids/{scid})
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
@@ -35,15 +35,15 @@ ms.locfileid: "5433761"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID)、プレイヤーの要求を行っているユーザー。| 
-| scid| guid| 検索するサービス構成の ID。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。| 
+| scid| guid| ルックアップ サービス構成の ID です。| 
   
 <a id="ID4ECB"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-要求は、有効な Xbox LIVE の承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは、403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていない応答を返します。 
+要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは、403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていない応答を返します。 
   
 <a id="ID4ENB"></a>
 
@@ -53,7 +53,7 @@ ms.locfileid: "5433761"
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | 
 | x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は、認証要求によって返されるトークンに置き換えられます。 STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証と Xbox LIVE サービス要求の承認を参照してください。| 
+| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は認証要求によって返されるトークンで置き換えられます。 STS トークンを取得して、承認ヘッダーの作成について詳しくは、用いた認証と Xbox LIVE サービス要求の承認を参照してください。| 
   
 <a id="ID4EWC"></a>
 
@@ -67,7 +67,7 @@ ms.locfileid: "5433761"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード 
  
-サービスでは、このリソースには、この方法で行った要求に応答には、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -76,18 +76,18 @@ ms.locfileid: "5433761"
 | 400| Bad Request | サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません | 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden | ユーザーまたはサービスの要求は許可されていません。| 
-| 404| 見つかりません。 | 指定されたリソースは見つかりませんでした。| 
+| 404| Not Found します。 | 指定されたリソースは見つかりませんでした。| 
 | 406| 許容できません。 | リソースのバージョンがサポートされていません。| 
 | 408| 要求のタイムアウト | 要求にかかった時間が長すぎます。| 
 | 500| 内部サーバー エラー | サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable | 要求がスロット リングされて、秒 (例: 5 秒後) のクライアント再試行値後にもう一度やり直してください。| 
+| 503| Service Unavailable | 要求がスロット リングされて、秒 (例: 5 秒後) のクライアント再試行値後にもう一度要求を行ってください。| 
   
 <a id="ID4EUAAC"></a>
 
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは[quotaInfo](../../json/json-quota.md)オブジェクトを返します。
+呼び出しが成功した場合、サービスは[quotaInfo](../../json/json-quota.md)オブジェクトを返します。
  
 <a id="ID4ECBAC"></a>
 

@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5e95befc6611c5905e6efe2bb01a396167626
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5443384"
+ms.locfileid: "5482787"
 ---
 # <a name="profile-json"></a>Profile (JSON)
 ユーザーの個人用プロファイル設定します。 
@@ -25,29 +25,29 @@ ms.locfileid: "5443384"
  
 ## <a name="profile"></a>プロファイル
  
-プロファイル オブジェクトでは、次の仕様があります。
+プロファイル オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | AppDisplayName| string| アプリで表示するための名前です。 これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、アプリに表示するために使用するユーザーの id 文字列を表します。| 
 | GameDisplayName| string| ゲームで表示するための名前です。 これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、ゲームに表示するために使用するユーザーの id 文字列を表します。| 
 | Gamertag| string| ユーザーのゲーマータグです。| 
-| AppDisplayPicRaw| string| 生のアプリの表示 pic URL (下記参照)。| 
+| AppDisplayPicRaw| string| アプリを直接表示 pic URL (下記参照)。| 
 | GameDisplayPicRaw| string| 未加工のゲーム表示 pic URL (下記参照)。| 
 | AccountTier| string| ユーザーには、アカウントの種類はありますか。 ゴールド、シルバー、または FamilyGold かどうか。| 
-| TenureLevel| 32 ビット符号なし整数| ユーザーが Xbox Live とされて数年間がかどうか。| 
-| ゲーマースコア| 32 ビット符号なし整数| ユーザーのゲーマー スコア。| 
+| TenureLevel| 32 ビットの符号なし整数| 数年間ユーザーされた Xbox Live を使用しますか。| 
+| ゲーマースコア| 32 ビットの符号なし整数| ユーザーのゲーマー スコア。| 
   
 
 
 > [!NOTE] 
-> 画像は、ユーザーの '実際の図' またはプライバシーに応じて、XboxOne ゲーマー アイコンであることができます。 これらの設定では、クライアント上に表示するために使用するユーザーの画像の url を表します。 この画像は、(ユーザーが任意の画像を設定していないことを示す) 空にすることがあります。 
+> 画像は、ユーザーの '実際の図' またはプライバシーに応じて、XboxOne ゲーマー アイコンであることができます。 これらの設定では、クライアント上に表示するために使用するユーザーの画像の url を表します。 この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする可能性があります。 
 
 
  
 生の URL は、サイズ変更できる URL です。 サイズし、形式を追加して、次のいずれかを指定するために使用できる`&format={format}&w={width}&h={height}`をその URI:
  
-形式: png
+形式: ピクセルの .png ファイル
  
 サイズ: 64 x 64、208 x 208、424 x 424
  

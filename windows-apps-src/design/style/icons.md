@@ -15,11 +15,11 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 57856872fc664670756c310410223acaf9708bc5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435412"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483622"
 ---
 # <a name="icons-for-uwp-apps"></a>UWP アプリのアイコン
 
@@ -139,7 +139,7 @@ ms.locfileid: "5435412"
 
 ## <a name="make-the-icon-do-something"></a>アイコンで何かを行う
 
-アイコンができたら、次の手順として、それをコマンドやナビゲーション操作に関連付けて、何かを行うようにすることです。 これを行うには、最善の方法では、ボタンやコマンド バーにアイコンを追加します。 
+アイコンができたら、次の手順として、それをコマンドやナビゲーション操作に関連付けて、何かを行うようにすることです。 これを行うには、最善の方法では、ボタンまたはコマンド バーにアイコンを追加します。 
 
 ![コマンド バーのイメージ](images/icons/app-bar-desktop.svg)
 

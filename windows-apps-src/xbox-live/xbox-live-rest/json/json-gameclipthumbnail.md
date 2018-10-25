@@ -12,25 +12,25 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 681a269cd861f741e2bbde3554acc1b25104d90d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5432303"
+ms.locfileid: "5481619"
 ---
 # <a name="gameclipthumbnail-json"></a>GameClipThumbnail (JSON)
-個々 のサムネイルに関連する情報が含まれています。 1 つのクリップを複数のサイズが存在することができ、表示用の適切なものを選択するクライアントが。 
+個々 のサムネイルに関連する情報が含まれています。 1 つのクリップを複数のサイズが存在することができ、表示用の適切なものを選択するクライアントがします。 
 <a id="ID4EN"></a>
 
  
 ## <a name="gameclipthumbnail"></a>GameClipThumbnail
  
-GameClipThumbnail オブジェクトでは、次の仕様があります。
+GameClipThumbnail オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| <b>uri</b>| string| サムネイル画像の URI。| 
-| <b>fileSize</b>| 32 ビット符号なし整数| サムネイル画像の合計ファイル サイズ。| 
+| <b>uri</b>| string| サムネイル画像の URI です。| 
+| <b>fileSize</b>| 32 ビットの符号なし整数| サムネイル画像の合計ファイル サイズ。| 
 | <b>thumbnailType</b>| ThumbnailType| サムネイル画像の種類です。| 
   
 <a id="ID4EAC"></a>

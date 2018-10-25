@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ada2e0610e81e986deba3ddab5e87547e05fe108
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445430"
+ms.locfileid: "5479511"
 ---
 # <a name="about-community-ads"></a>コミュニティ広告について
 
@@ -37,10 +37,10 @@ ms.locfileid: "5445430"
 UWP アプリにコミュニティ広告にオプトイン。
 
 1. **アプリ内広告**] ページで [**仲介設定**] セクションでは、アプリで使っている広告ユニットを選択します。
-2. **[Microsoft が選択のアプリの最適な仲介設定**オプションを選択すると、コミュニティ広告は、広告ユニットに自動的に有効です。 それ以外の場合、**ターゲット**のドロップダウンでベースラインの構成または市場固有の構成を選択し、**他の広告ネットワーク**の一覧で [ **Microsoft コミュニティ広告**] ボックスを確認します。
+2. **[Microsoft が選択のアプリの最適な仲介設定**オプションを選択すると、コミュニティ広告は、広告ユニットに自動的に有効です。 そうしないと、**ターゲット**のドロップダウンで、基本構成または市場固有の構成を選択して、**他の広告ネットワーク**の一覧で、[ **Microsoft コミュニティ広告**ボックスを確認します。
 
     > [!NOTE]
-    > **重み**のフィールドを使用して、有料ネットワークとコミュニティ広告など、他の広告ネットワークから表示する広告の割合を指定することができます。
+    > **重み**のフィールドを使用すると、有料ネットワークやコミュニティ広告など、他の広告ネットワークから表示する広告の割合を指定します。
 
 Windows コミュニティ広告にオプトインする 8.x または Windows Phone 8.x アプリでは、
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リアルタイム アクティビティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 57793a01ebd4c97130df6a476b447a99d78c990e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5439069"
+ms.locfileid: "5477501"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>C++ API を使用したリアルタイム アクティビティ サービスのプログラミング
 
@@ -60,10 +60,10 @@ XDP で統計を作成する方法については、[XDP のドキュメント](
 
 #### <a name="uwp-developers"></a>UWP の開発者
 
-クロスプレイ タイトルではない Windows 10 で UWP を開発している場合は、 [Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で統計を定義します。 デベロッパー センターで統計を構成する方法については、[デベロッパー センターの統計の構成の資料](../leaderboards-and-stats-2017/player-stats-configure-2017.md)を読みます。
+クロスプレイ タイトルではない Windows 10 上の UWP を開発している場合は、 [Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で統計を定義します。 デベロッパー センターで統計を構成する方法については、[デベロッパー センターの統計の構成の資料](../leaderboards-and-stats-2017/player-stats-configure-2017.md)を読みます。
 
 > [!NOTE]
-> 統計 2013年の開発者は、[デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で[統計 2013年構成](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)については、担当の DAM に連絡する必要があります。
+> 統計 2013年の開発者は、[デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で[統計 2013年の構成](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)に関する情報について、担当の DAM に連絡する必要があります。
 
 ### <a name="disconnecting-from-the-real-time-activity-service"></a>リアルタイム アクティビティ サービスからの切断
 
@@ -80,7 +80,7 @@ void Example_RealTimeActivity_Disconnect()
 
 ## <a name="subscribing-to-a-statistic-from-the-real-time-activity"></a>リアルタイム アクティビティからの統計へのサブスクライブ
 
-アプリケーションをリアルタイム アクティビティ (RTA) Xbox デベロッパー ポータル (XDP) または Windows デベロッパー センターで構成された統計情報を変更するときに、更新プログラムを取得するをサブスクライブします。
+アプリケーションをリアルタイム アクティビティ (RTA) Xbox デベロッパー ポータル (XDP) または Windows デベロッパー センターで構成されている統計が変化したときに、更新プログラムを入手するをサブスクライブします。
 
 ### <a name="subscribing-to-a-statistic-from-the-real-time-activity-service"></a>リアルタイム アクティビティ サービスからの統計へのサブスクライブ
 
@@ -135,4 +135,4 @@ void Example_RealTimeActivity_UnsubscribeFromStatisticChangeAsync()
 > [!IMPORTANT]
 > リアルタイム アクティビティ サービスは、2 つの時間の使用後切断は、コードはこれを検出し、まだ必要な場合は、リアルタイム アクティビティ サービスへの接続を再確立できる必要があります。 これは主に、有効期限が認証トークンを更新することです。
 > 
-> クライアントがマルチプレイヤー セッションは、RTA を使用して、30 秒間の切断された場合は、マルチプレイヤー セッション Directory(MPSD)、RTA セッションが閉じられ、セッションからユーザーが開始を検出します。 RTA クライアント接続が閉じられたときを検出し、再接続を開始して MPSD セッションを終了する前にサブスクライブすることです。
+> クライアントは、マルチプレイヤー セッションは、RTA を使用し、30 秒間の切断された、マルチプレイヤー セッション Directory(MPSD)、RTA セッションが閉じられ、セッションからユーザーが開始を検出します。 RTA クライアントが接続が閉じられたときに検出し、再接続を開始 MPSD セッションを終了する前にサブスクライブすることです。

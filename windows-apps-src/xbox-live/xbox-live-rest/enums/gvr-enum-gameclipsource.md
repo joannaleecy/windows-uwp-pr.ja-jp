@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 953ef16ccc7416d68114e2303af89fcebdfb2382
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5441421"
+ms.locfileid: "5477016"
 ---
 # <a name="gameclipsource-enumeration"></a>GameClipSource 列挙型
 GameClipSource 列挙型をについて説明します。 
@@ -27,9 +27,9 @@ GameClipSource 列挙型をについて説明します。
  
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
-| None| ゲーム クリップ ソースは、不明なまたは設定されていないです。 (アップロードでは無効です)| 
-| Console| Xbox コンソール プラットフォームによって作成されたゲーム クリップされます。| 
+| None| ゲーム クリップ ソースは、不明なまたは設定されていないです。 (アップロードは無効)| 
+| Console| Xbox 本体のプラットフォームによって作成されたゲーム クリップされます。| 
 | TitleDirect| タイトルによって作成されたゲーム クリップされます。| 
 | 中間 | ゲーム クリップは、種類の実績を示します。| 
-| UserInitiated | ゲーム クリップ、中間エディターのようなアプリです。| 
+| UserInitiated | ゲーム クリップは、このようなエディター中間アプリからです。| 
   

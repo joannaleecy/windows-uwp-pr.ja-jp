@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 入金状況, ステートメントの, 支払い額, 売り上げ, 入金い, 支払い, 収益
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d9845fdbd9c8dad77c8599a04850a47573858e8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445281"
+ms.locfileid: "5481667"
 ---
 # <a name="payout-summary"></a>入金状況
 
@@ -72,7 +72,7 @@ Azure Marketplace で製品を販売する場合、**[入金状況]** に正常�
 | 履歴残高        | 支払い履歴システムからの支払い残高                                                             |
 | Passin 税              | 韓国での販売に関連する税調整                                                                   |
 
- 
+ 
 
 ## <a name="downloading-payment-transactions"></a>支払いトランザクションのダウンロード
 
@@ -112,11 +112,11 @@ Azure Marketplace で製品を販売する場合、**[入金状況]** に正常�
 | Eligibility Date Time (対象となる日時)   | トランザクションの収益が支払いの対象になる日付と時刻 (UTC)。 支払いが作成されると、支払いには支払い作成日以前の Eligibility Date Time (対象となる日時) を持つトランザクションの収益が含まれます  (**予約済み** の .csv ファイルにのみ含まれます)。                                                                     |
 | 請求額                 | お取引金額の列で集計されたすべての請求額の内訳を表示します  (Azure Marketplace の場合にのみ含まれます。**予約済み** の .csv ファイルには含まれません)。          |
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

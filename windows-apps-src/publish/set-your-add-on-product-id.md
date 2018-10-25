@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, アドオン, iap, 永続的, コンシューマブル, サブスクリプション, 製品の種類, 製品 id, アプリ内購入, アプリ内製品
 ms.localizationpriority: medium
 ms.openlocfilehash: 0673048fc9a1ed8fb7c439607ebc4197039699e9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436725"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483428"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>アドオンの製品の種類と製品 ID を設定する
 
@@ -72,4 +72,4 @@ ms.locfileid: "5436725"
 -   この製品 ID に **&lt; &gt; \* % & : \\ ? + ,** のいずれの文字も含めることはできません。
 -   すべての OS バージョンに対応したアドオンを提供するには、英数字、ピリオド、アンダースコアのみを使う必要があります。 その他の種類の文字を使った場合、Windows Phone 8.1 以前を実行しているお客様はそのアドオンを購入できなくなります。
 -   この製品 ID は Microsoft Store では一意である必要はありませんが、開発者アカウントには一意である必要があります。
- 
+ 

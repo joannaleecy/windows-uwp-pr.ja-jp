@@ -9,14 +9,14 @@ ms.date: 01/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: バック グラウンド タスクの windows 10, uwp,
+keywords: windows 10、uwp、タスクをバック グラウンドします。
 ms.localizationpriority: medium
 ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443435"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482324"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>バックグラウンド タスクによるライブ タイルの更新
 
@@ -156,7 +156,7 @@ namespace BackgroundTasks
 6.  **[アプリケーション UI]** タブをクリックまたはタップします。
 7.  **[ロック画面通知]** を **[バッジとタイル テキスト]** に設定します。
 8.  **[バッジ ロゴ]** フィールドに、24x24 ピクセルのアイコンへのパスを設定します。
-    **重要**  このアイコンには、モノクロで透明のピクセルだけを使ってください。
+    **重要な**このアイコンは、モノクロで透明のピクセルだけを使う必要があります。
 9.  **[小さいロゴ]** フィールドに、30x30 ピクセルのアイコンへのパスを設定します。
 10. **[ワイド ロゴ]** フィールドに、310x150 ピクセルのアイコンへのパスを設定します。
 
@@ -165,8 +165,8 @@ namespace BackgroundTasks
 
 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作って、タスクを登録します。
 
-> **注**  Windows 8.1 以降では、バックグラウンド タスクの登録パラメーターが登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 アプリは、バックグラウンド タスクの登録が失敗するシナリオを処理できる必要があります。たとえば、条件ステートメントを使って登録エラーを確認し、失敗した登録は別のパラメーター値を使ってやり直してみます。
- 
+> **注:** 以降 Windows8.1 では、バック グラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 アプリは、バックグラウンド タスクの登録が失敗するシナリオを処理できる必要があります。たとえば、条件ステートメントを使って登録エラーを確認し、失敗した登録は別のパラメーター値を使ってやり直してみます。
+ 
 
 アプリのメイン ページで、**RegisterBackgroundTask** メソッドを追加し、このメソッドを **OnNavigatedTo** イベント ハンドラーで呼び出します。
 
@@ -266,6 +266,6 @@ namespace ContosoApp
 * [バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)
 * [タイルとバッジのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465403)
 
- 
+ 
 
- 
+ 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 99f853da53302d4080bfa9462da0ec524e8d2064
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436160"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480842"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>バックグラウンド タスクからのセンサーやデバイスへのアクセス
 
@@ -33,7 +33,7 @@ ms.locfileid: "5436160"
 
 アプリがユーザーに表示されなくなると、Windows はメモリと CPU リソースを解放するためにそのアプリを中断または終了します。 こうすることで、他のアプリがフォアグラウンドで実行できるようにし、バッテリの消費量を減らします。 このとき、バックグラウンド タスクの助けがないと、進行中のデータ イベントが失われます。 Windows には、バックグラウンド タスク トリガー [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) があり、アプリが中断状態になっても、各種のデバイスやセンサーでの時間のかかる同期操作や監視操作をバックグラウンドで安全に実行できるようにします。 アプリのライフサイクルについて詳しくは、「[起動、再開、バックグラウンド タスク](index.md)」をご覧ください。 バックグラウンド タスクについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
-**注**  ユニバーサル Windows アプリでは、バックグラウンドでデバイスを同期するために、アプリによるバックグラウンド同期をユーザーが許可する必要があります。 さらに、デバイスを PC に接続して I/O をアクティブにし、最長 10 分のバックグラウンド処理を実行できるようにする必要があります。 ポリシーの適用については、このトピックの後半で詳しく説明します。
+**注:** ユニバーサル Windows アプリでは、バック グラウンドでデバイスの同期、ユーザーが承認されていること、アプリによるバック グラウンド同期が必要です。 さらに、デバイスを PC に接続して I/O をアクティブにし、最長 10 分のバックグラウンド処理を実行できるようにする必要があります。 ポリシーの適用については、このトピックの後半で詳しく説明します。
 
 ### <a name="limitation-critical-device-operations"></a>制限: 重要なデバイス操作
 
@@ -85,10 +85,9 @@ ms.locfileid: "5436160"
 8.  Windows はシステム条件とタスクの実行時間を監視し、必要な条件を満たさなくなった場合はタスクを中止します。
 9.  バックグラウンド タスクが進捗状況や完了を報告する際、登録タスクの進捗状況イベントまたは完了イベントとしてアプリに渡されます。
 
-**重要**  
-[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使う場合は、次の重要なポイントを検討してください。
+**重要な** [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)を使用する場合は、これらの重要な点を検討してください。
 
--   [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うバックグラウンド タスクをプログラムから実行する機能は、Windows 8.1 と Windows Phone 8.1 に初めて導入されたものです。
+-   プログラムで[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)を使うバック グラウンド タスクをトリガーする機能はまず Windows8.1 と Windows Phone 8.1 で導入されました。
 
 -   PC で周辺機器を更新するとき、ユーザーの許可を得るためのポリシーが Windows によって適用されます。
 
@@ -96,8 +95,8 @@ ms.locfileid: "5436160"
 
 -   最大バックグラウンド時間 (実時間) など、所定のポリシー要件を満たさなくなった場合、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使用するバクグラウンド タスクが Windows によって中止される可能性があります。 バックグラウンド タスクを使って周辺機器を操作するときは、これらのポリシー要件を考慮する必要があります。
 
-**ヒント**  サンプルをダウンロードして、これらのバックグラウンド タスクの動作を確認してください。 PC でこれを実行する方法を示す例については、[カスタム USB デバイスのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=301975 ) をご覧ください。 電話の例は、[バックグラウンド センサーのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=393307) に関するページをご覧ください。
- 
+**ヒント:** これらのバック グラウンド タスクの動作を確認するには、サンプルをダウンロードします。 PC でこれを実行する方法を示す例については、[カスタム USB デバイスのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=301975 ) をご覧ください。 電話の例は、[バックグラウンド センサーのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=393307) に関するページをご覧ください。
+ 
 ## <a name="frequency-and-foreground-restrictions"></a>頻度とフォアグランドの制限
 
 アプリが操作を実行する頻度に制限はありません。ただし、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスク操作は一度に 1 つしか実行できません (他の種類のバックグラウンド タスクには影響しません)。また、バックグラウンド タスクを開始できるのは、アプリがフォアグラウンドで動作しているときだけです。 アプリがフォアグラウンドにない場合は、**DeviceUseTrigger** を使うバックグラウンド タスクを開始することはできません。 実行中のバックグラウンド タスクが完了した後でなければ、次の **DeviceUseTrigger** バックグラウンド タスクを開始できません。
