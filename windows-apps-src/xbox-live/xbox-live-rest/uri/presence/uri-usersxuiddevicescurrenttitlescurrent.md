@@ -12,49 +12,49 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fe5e366c48dc5cc7586604584adb6af00207b85
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5434898"
+ms.locfileid: "5471186"
 ---
-# <a name="usersxuidxuiddevicescurrenttitlescurrent"></a><span data-ttu-id="0e8e9-104">/users/xuid({xuid})/devices/current/titles/current</span><span class="sxs-lookup"><span data-stu-id="0e8e9-104">/users/xuid({xuid})/devices/current/titles/current</span></span>
-<span data-ttu-id="0e8e9-105">タイトルまたはタイトルのユーザーの有無にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="0e8e9-105">Access the presence of a title or a title's user.</span></span> <span data-ttu-id="0e8e9-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="0e8e9-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
+# <a name="usersxuidxuiddevicescurrenttitlescurrent"></a><span data-ttu-id="21546-104">/users/xuid({xuid})/devices/current/titles/current</span><span class="sxs-lookup"><span data-stu-id="21546-104">/users/xuid({xuid})/devices/current/titles/current</span></span>
+<span data-ttu-id="21546-105">タイトルまたはタイトルのユーザーの有無にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="21546-105">Access the presence of a title or a title's user.</span></span> <span data-ttu-id="21546-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="21546-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="0e8e9-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="0e8e9-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="21546-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="21546-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="0e8e9-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="0e8e9-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="21546-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="21546-108">URI parameters</span></span>
  
-| <span data-ttu-id="0e8e9-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="0e8e9-109">Parameter</span></span>| <span data-ttu-id="0e8e9-110">型</span><span class="sxs-lookup"><span data-stu-id="0e8e9-110">Type</span></span>| <span data-ttu-id="0e8e9-111">説明</span><span class="sxs-lookup"><span data-stu-id="0e8e9-111">Description</span></span>| 
+| <span data-ttu-id="21546-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="21546-109">Parameter</span></span>| <span data-ttu-id="21546-110">型</span><span class="sxs-lookup"><span data-stu-id="21546-110">Type</span></span>| <span data-ttu-id="21546-111">説明</span><span class="sxs-lookup"><span data-stu-id="21546-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="0e8e9-112">xuid</span><span class="sxs-lookup"><span data-stu-id="0e8e9-112">xuid</span></span>| <span data-ttu-id="0e8e9-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="0e8e9-113">64-bit unsigned integer</span></span>| <span data-ttu-id="0e8e9-114">Xbox ユーザー ID (XUID) 対象ユーザーのです。</span><span class="sxs-lookup"><span data-stu-id="0e8e9-114">Xbox User ID (XUID) of the target user.</span></span>| 
+| <span data-ttu-id="21546-112">xuid</span><span class="sxs-lookup"><span data-stu-id="21546-112">xuid</span></span>| <span data-ttu-id="21546-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="21546-113">64-bit unsigned integer</span></span>| <span data-ttu-id="21546-114">Xbox ユーザー ID (XUID) 対象ユーザーのします。</span><span class="sxs-lookup"><span data-stu-id="21546-114">Xbox User ID (XUID) of the target user.</span></span>| 
   
 <a id="ID4EUB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="0e8e9-115">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="0e8e9-115">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="21546-115">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="21546-115">Valid methods</span></span>
 
-[<span data-ttu-id="0e8e9-116">DELETE (/users/xuid({xuid})/devices/current/titles/current)</span><span class="sxs-lookup"><span data-stu-id="0e8e9-116">DELETE (/users/xuid({xuid})/devices/current/titles/current)</span></span>](uri-usersxuiddevicescurrenttitlescurrentdelete.md)
+[<span data-ttu-id="21546-116">DELETE (/users/xuid({xuid})/devices/current/titles/current)</span><span class="sxs-lookup"><span data-stu-id="21546-116">DELETE (/users/xuid({xuid})/devices/current/titles/current)</span></span>](uri-usersxuiddevicescurrenttitlescurrentdelete.md)
 
-<span data-ttu-id="0e8e9-117">&nbsp;&nbsp;[PresenceRecord](../../json/json-presencerecord.md)有効期限が切れるまで待つの終了タイトルのプレゼンスを削除します。</span><span class="sxs-lookup"><span data-stu-id="0e8e9-117">&nbsp;&nbsp;Remove the presence of a closing title, instead of waiting for the [PresenceRecord](../../json/json-presencerecord.md) to expire.</span></span>
+<span data-ttu-id="21546-117">&nbsp;&nbsp;[PresenceRecord](../../json/json-presencerecord.md)有効期限が切れるのを待っているではなく、終了のタイトルのプレゼンスを削除します。</span><span class="sxs-lookup"><span data-stu-id="21546-117">&nbsp;&nbsp;Remove the presence of a closing title, instead of waiting for the [PresenceRecord](../../json/json-presencerecord.md) to expire.</span></span>
 
-[<span data-ttu-id="0e8e9-118">POST (/users/xuid({xuid})/devices/current/titles/current)</span><span class="sxs-lookup"><span data-stu-id="0e8e9-118">POST (/users/xuid({xuid})/devices/current/titles/current)</span></span>](uri-usersxuiddevicescurrenttitlescurrentpost.md)
+[<span data-ttu-id="21546-118">POST (/users/xuid({xuid})/devices/current/titles/current)</span><span class="sxs-lookup"><span data-stu-id="21546-118">POST (/users/xuid({xuid})/devices/current/titles/current)</span></span>](uri-usersxuiddevicescurrenttitlescurrentpost.md)
 
-<span data-ttu-id="0e8e9-119">&nbsp;&nbsp;ユーザーのプレゼンスでタイトルを更新します。</span><span class="sxs-lookup"><span data-stu-id="0e8e9-119">&nbsp;&nbsp;Update a title with a user's presence.</span></span>
+<span data-ttu-id="21546-119">&nbsp;&nbsp;ユーザーのプレゼンスでは、タイトルを更新します。</span><span class="sxs-lookup"><span data-stu-id="21546-119">&nbsp;&nbsp;Update a title with a user's presence.</span></span>
  
 <a id="ID4EBC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="0e8e9-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="0e8e9-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="21546-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="21546-120">See also</span></span>
  
 <a id="ID4EDC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="0e8e9-121">Parent</span><span class="sxs-lookup"><span data-stu-id="0e8e9-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="21546-121">Parent</span><span class="sxs-lookup"><span data-stu-id="21546-121">Parent</span></span> 
 
-[<span data-ttu-id="0e8e9-122">プレゼンス URI</span><span class="sxs-lookup"><span data-stu-id="0e8e9-122">Presence URIs</span></span>](atoc-reference-presence.md)
+[<span data-ttu-id="21546-122">プレゼンス URI</span><span class="sxs-lookup"><span data-stu-id="21546-122">Presence URIs</span></span>](atoc-reference-presence.md)
 
    

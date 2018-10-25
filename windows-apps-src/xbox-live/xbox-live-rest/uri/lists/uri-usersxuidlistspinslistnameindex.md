@@ -12,47 +12,47 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b1be4ab591a5bea8d7bc70fb7f7dcb29e4f548
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5435112"
+ms.locfileid: "5472950"
 ---
-# <a name="usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a><span data-ttu-id="21e8a-104">/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}</span><span class="sxs-lookup"><span data-stu-id="21e8a-104">/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}</span></span>
-<span data-ttu-id="21e8a-105">一覧内の項目を移動します。</span><span class="sxs-lookup"><span data-stu-id="21e8a-105">Moves an item within a list.</span></span> <span data-ttu-id="21e8a-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="21e8a-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>
+# <a name="usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a><span data-ttu-id="ef1b6-104">/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}</span><span class="sxs-lookup"><span data-stu-id="ef1b6-104">/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}</span></span>
+<span data-ttu-id="ef1b6-105">一覧内の項目を移動します。</span><span class="sxs-lookup"><span data-stu-id="ef1b6-105">Moves an item within a list.</span></span> <span data-ttu-id="ef1b6-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="ef1b6-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="21e8a-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="21e8a-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="ef1b6-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ef1b6-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="21e8a-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="21e8a-108">URI parameters</span></span> 
+## <a name="uri-parameters"></a><span data-ttu-id="ef1b6-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ef1b6-108">URI parameters</span></span> 
  
-| <span data-ttu-id="21e8a-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="21e8a-109">Parameter</span></span>| <span data-ttu-id="21e8a-110">型</span><span class="sxs-lookup"><span data-stu-id="21e8a-110">Type</span></span>| <span data-ttu-id="21e8a-111">説明</span><span class="sxs-lookup"><span data-stu-id="21e8a-111">Description</span></span>| 
+| <span data-ttu-id="ef1b6-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ef1b6-109">Parameter</span></span>| <span data-ttu-id="ef1b6-110">型</span><span class="sxs-lookup"><span data-stu-id="ef1b6-110">Type</span></span>| <span data-ttu-id="ef1b6-111">説明</span><span class="sxs-lookup"><span data-stu-id="ef1b6-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="21e8a-112">XUID</span><span class="sxs-lookup"><span data-stu-id="21e8a-112">XUID</span></span>| <span data-ttu-id="21e8a-113">string</span><span class="sxs-lookup"><span data-stu-id="21e8a-113">string</span></span>| <span data-ttu-id="21e8a-114">ユーザーの XUID です。</span><span class="sxs-lookup"><span data-stu-id="21e8a-114">XUID of the user.</span></span>| 
-| <span data-ttu-id="21e8a-115">リスト</span><span class="sxs-lookup"><span data-stu-id="21e8a-115">listname</span></span>| <span data-ttu-id="21e8a-116">string</span><span class="sxs-lookup"><span data-stu-id="21e8a-116">string</span></span>| <span data-ttu-id="21e8a-117">操作をするリストの名前。</span><span class="sxs-lookup"><span data-stu-id="21e8a-117">Name of the list to manipulate.</span></span>| 
-| <span data-ttu-id="21e8a-118">インデックス</span><span class="sxs-lookup"><span data-stu-id="21e8a-118">index</span></span>| <span data-ttu-id="21e8a-119">string</span><span class="sxs-lookup"><span data-stu-id="21e8a-119">string</span></span>| <span data-ttu-id="21e8a-120">移動する項目の現在のインデックスを指定します。</span><span class="sxs-lookup"><span data-stu-id="21e8a-120">Specifies the current index of the item to be moved.</span></span> <span data-ttu-id="21e8a-121">インデックス値が 0 または正の整数の場合は、これは、項目の現在のインデックスを参照し、呼び出しの要求本文は空にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="21e8a-121">If the index value is zero or a positive integer, this refers to the current index of the item, and the request body of the call should be empty.</span></span> <span data-ttu-id="21e8a-122">ただし、インデックス値が「-1」の場合、ItemId または呼び出しの要求本文には、プロバイダー/ProviderID によって移動する項目を指定してください。</span><span class="sxs-lookup"><span data-stu-id="21e8a-122">However, if the index value is "-1", the item to be moved must be specified by ItemId or Provider/ProviderID in the request body of the call.</span></span> | 
+| <span data-ttu-id="ef1b6-112">XUID</span><span class="sxs-lookup"><span data-stu-id="ef1b6-112">XUID</span></span>| <span data-ttu-id="ef1b6-113">string</span><span class="sxs-lookup"><span data-stu-id="ef1b6-113">string</span></span>| <span data-ttu-id="ef1b6-114">ユーザーの XUID です。</span><span class="sxs-lookup"><span data-stu-id="ef1b6-114">XUID of the user.</span></span>| 
+| <span data-ttu-id="ef1b6-115">リスト</span><span class="sxs-lookup"><span data-stu-id="ef1b6-115">listname</span></span>| <span data-ttu-id="ef1b6-116">string</span><span class="sxs-lookup"><span data-stu-id="ef1b6-116">string</span></span>| <span data-ttu-id="ef1b6-117">操作するリストの名前。</span><span class="sxs-lookup"><span data-stu-id="ef1b6-117">Name of the list to manipulate.</span></span>| 
+| <span data-ttu-id="ef1b6-118">インデックス</span><span class="sxs-lookup"><span data-stu-id="ef1b6-118">index</span></span>| <span data-ttu-id="ef1b6-119">string</span><span class="sxs-lookup"><span data-stu-id="ef1b6-119">string</span></span>| <span data-ttu-id="ef1b6-120">移動する項目の現在のインデックスを指定します。</span><span class="sxs-lookup"><span data-stu-id="ef1b6-120">Specifies the current index of the item to be moved.</span></span> <span data-ttu-id="ef1b6-121">インデックス値が 0 または正の整数の場合は、これは、項目の現在のインデックスを参照し、呼び出しの要求本文は空にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="ef1b6-121">If the index value is zero or a positive integer, this refers to the current index of the item, and the request body of the call should be empty.</span></span> <span data-ttu-id="ef1b6-122">ただし、インデックス値が「-1」の場合は、ItemId または呼び出しの要求本文には、プロバイダー/ProviderID によって移動する項目を指定してください。</span><span class="sxs-lookup"><span data-stu-id="ef1b6-122">However, if the index value is "-1", the item to be moved must be specified by ItemId or Provider/ProviderID in the request body of the call.</span></span> | 
   
 <a id="ID4EHC"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="21e8a-123">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="21e8a-123">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="ef1b6-123">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="ef1b6-123">Valid methods</span></span>
 
-[<span data-ttu-id="21e8a-124">POST</span><span class="sxs-lookup"><span data-stu-id="21e8a-124">POST</span></span>](uri-usersxuidlistspinslistnameindexpost.md)
+[<span data-ttu-id="ef1b6-124">POST</span><span class="sxs-lookup"><span data-stu-id="ef1b6-124">POST</span></span>](uri-usersxuidlistspinslistnameindexpost.md)
 
-<span data-ttu-id="21e8a-125">&nbsp;&nbsp;リスト内の異なる位置に一覧で項目を移動します。</span><span class="sxs-lookup"><span data-stu-id="21e8a-125">&nbsp;&nbsp;Moves an item in a list to a different position within the list.</span></span>
+<span data-ttu-id="ef1b6-125">&nbsp;&nbsp;リスト項目をリスト内の異なる位置に移動します。</span><span class="sxs-lookup"><span data-stu-id="ef1b6-125">&nbsp;&nbsp;Moves an item in a list to a different position within the list.</span></span>
  
 <a id="ID4ERC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="21e8a-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="21e8a-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ef1b6-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="ef1b6-126">See also</span></span>
  
 <a id="ID4ETC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="21e8a-127">Parent</span><span class="sxs-lookup"><span data-stu-id="21e8a-127">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="ef1b6-127">Parent</span><span class="sxs-lookup"><span data-stu-id="ef1b6-127">Parent</span></span> 
 
-[<span data-ttu-id="21e8a-128">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="21e8a-128">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="ef1b6-128">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="ef1b6-128">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

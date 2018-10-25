@@ -1,5 +1,5 @@
 ---
-title: デベロッパー センターへのアクセス ポリシーを構成します。
+title: デベロッパー センターでのアクセス ポリシーを構成します。
 author: KevinAsgari
 description: その他のアプリ、ゲーム、およびサービスが Xbox Live の設定にアクセスできるようにするデベロッパー センターでアクセス ポリシーを構成する方法について説明します。
 ms.assetid: ''
@@ -11,35 +11,35 @@ ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: 8a19c6e116cb6c2f3cd8e2f2d8541516ebf89de9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5433307"
+ms.locfileid: "5472924"
 ---
-# <a name="configure-access-policies-on-dev-center"></a><span data-ttu-id="f5055-104">デベロッパー センターでアクセス ポリシーを構成します。</span><span class="sxs-lookup"><span data-stu-id="f5055-104">Configure access policies on Dev Center</span></span>
+# <a name="configure-access-policies-on-dev-center"></a><span data-ttu-id="08545-104">デベロッパー センターでのアクセス ポリシーを構成します。</span><span class="sxs-lookup"><span data-stu-id="08545-104">Configure access policies on Dev Center</span></span>
 
-<span data-ttu-id="f5055-105">[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)を使うと、他のサービス、ゲーム、アプリがタイトルの Xbox Live 設定とデータにアクセスすることを許可できます。</span><span class="sxs-lookup"><span data-stu-id="f5055-105">You can use [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview) to allow other services, games, and apps to access your title's Xbox Live settings and data.</span></span> <span data-ttu-id="f5055-106">たとえば、Web サイトでのランキングを Web サービスに表示したり、ゲームのタイトル ストレージにアクセスしてセーブされたゲーム データを表示または変更できる比較アプリを作成したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="f5055-106">For example, you may want a web service to display leaderboards on your website, or you may have a companion app that can access the game's title storage to view or modify saved game data.</span></span>
+<span data-ttu-id="08545-105">[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)を使うと、他のサービス、ゲーム、アプリがタイトルの Xbox Live 設定とデータにアクセスすることを許可できます。</span><span class="sxs-lookup"><span data-stu-id="08545-105">You can use [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview) to allow other services, games, and apps to access your title's Xbox Live settings and data.</span></span> <span data-ttu-id="08545-106">たとえば、Web サイトでのランキングを Web サービスに表示したり、ゲームのタイトル ストレージにアクセスしてセーブされたゲーム データを表示または変更できる比較アプリを作成したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="08545-106">For example, you may want a web service to display leaderboards on your website, or you may have a companion app that can access the game's title storage to view or modify saved game data.</span></span>
 
-<span data-ttu-id="f5055-107">既定では、タイトル自体のみが Xbox Live サービスに保存された設定とデータにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="f5055-107">By default, only the title itself can access the settings and data stored on the Xbox Live service.</span></span> <span data-ttu-id="f5055-108">デベロッパー センターでアクセス ポリシーを構成することによって、これを変更することができます。</span><span class="sxs-lookup"><span data-stu-id="f5055-108">You can change this by configuring access policies on the Dev Center.</span></span>
+<span data-ttu-id="08545-107">既定では、タイトル自体のみが Xbox Live サービスに保存された設定とデータにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="08545-107">By default, only the title itself can access the settings and data stored on the Xbox Live service.</span></span> <span data-ttu-id="08545-108">デベロッパー センターでアクセス ポリシーを構成することによって、これを変更することができます。</span><span class="sxs-lookup"><span data-stu-id="08545-108">You can change this by configuring access policies on the Dev Center.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f5055-109">このトピックは、Xbox Live クリエーターズ プログラムのタイトルには適用されません。</span><span class="sxs-lookup"><span data-stu-id="f5055-109">This topic does not apply to titles in the Xbox Live Creators Program.</span></span>
+> <span data-ttu-id="08545-109">このトピックは、Xbox Live クリエーターズ プログラムのタイトルには適用されません。</span><span class="sxs-lookup"><span data-stu-id="08545-109">This topic does not apply to titles in the Xbox Live Creators Program.</span></span>
 
-<span data-ttu-id="f5055-110">次の手順に従って、構成を追加します。</span><span class="sxs-lookup"><span data-stu-id="f5055-110">Add configuration by doing the following:</span></span>
+<span data-ttu-id="08545-110">次の手順に従って、構成を追加します。</span><span class="sxs-lookup"><span data-stu-id="08545-110">Add configuration by doing the following:</span></span>
 
-1. <span data-ttu-id="f5055-111">[デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)でタイトルを選択したら、**[サービス]** > **[Xbox Live]** に移動します。</span><span class="sxs-lookup"><span data-stu-id="f5055-111">After selecting your title in [Dev Center](https://developer.microsoft.com/dashboard/windows/overview), navigate to **Services** > **Xbox Live**.</span></span>
+1. <span data-ttu-id="08545-111">[デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)でタイトルを選択したら、**[サービス]** > **[Xbox Live]** に移動します。</span><span class="sxs-lookup"><span data-stu-id="08545-111">After selecting your title in [Dev Center](https://developer.microsoft.com/dashboard/windows/overview), navigate to **Services** > **Xbox Live**.</span></span>
 
-2. <span data-ttu-id="f5055-112">**アクセス ポリシー**へのリンクをクリックします。</span><span class="sxs-lookup"><span data-stu-id="f5055-112">Click on the link to **access policies**.</span></span>
+2. <span data-ttu-id="08545-112">**アクセス ポリシー**へのリンクをクリックします。</span><span class="sxs-lookup"><span data-stu-id="08545-112">Click on the link to **access policies**.</span></span>
 
-3. <span data-ttu-id="f5055-113">アクセスを許可する設定をクリックし、アプリ/サービスの追加ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="f5055-113">Click on the setting you want to grant access to, and click the Add app/service button.</span></span> <span data-ttu-id="f5055-114">その設定にアクセスできるように構成されたアプリ/サービスの一覧の下に新しい行が追加されます。</span><span class="sxs-lookup"><span data-stu-id="f5055-114">This will add a new row to the bottom of the list of apps/services configured to access that setting.</span></span>
+3. <span data-ttu-id="08545-113">アクセスを許可する設定をクリックし、アプリ/サービスの追加ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="08545-113">Click on the setting you want to grant access to, and click the Add app/service button.</span></span> <span data-ttu-id="08545-114">その設定にアクセスできるように構成されたアプリ/サービスの一覧の下に新しい行が追加されます。</span><span class="sxs-lookup"><span data-stu-id="08545-114">This will add a new row to the bottom of the list of apps/services configured to access that setting.</span></span>
 
-4. <span data-ttu-id="f5055-115">ドロップダウン ボックスでアプリまたはサービスの種類を選択し、詳細ボックスに入力して、データにアクセスするアプリやサービスのアプリ、タイトル ID、サービス ID を指定します。</span><span class="sxs-lookup"><span data-stu-id="f5055-115">Select the type of app or service in the dropdown box, and fill in the detail box to indicate the app, title id, or service id of the app or service that will access the data.</span></span>
+4. <span data-ttu-id="08545-115">ドロップダウン ボックスでアプリまたはサービスの種類を選択し、詳細ボックスに入力して、データにアクセスするアプリやサービスのアプリ、タイトル ID、サービス ID を指定します。</span><span class="sxs-lookup"><span data-stu-id="08545-115">Select the type of app or service in the dropdown box, and fill in the detail box to indicate the app, title id, or service id of the app or service that will access the data.</span></span>
 
-5. <span data-ttu-id="f5055-116">アプリまたはサービスがデータを読み取るだけなのか、データにフル アクセスするのかを選択します。</span><span class="sxs-lookup"><span data-stu-id="f5055-116">Select if the app or service can only read the data, or if it has full access to the data.</span></span>
+5. <span data-ttu-id="08545-116">アプリまたはサービスがデータを読み取るだけなのか、データにフル アクセスするのかを選択します。</span><span class="sxs-lookup"><span data-stu-id="08545-116">Select if the app or service can only read the data, or if it has full access to the data.</span></span>
 
-6. <span data-ttu-id="f5055-117">設定ごと、およびそれらの設定へのアクセスが必要なアプリやサービスごとに繰り返します。</span><span class="sxs-lookup"><span data-stu-id="f5055-117">Repeat for each setting, and for each app or service that needs access to those settings.</span></span> <span data-ttu-id="f5055-118">**[削除]** をクリックすると配列を削除できます。</span><span class="sxs-lookup"><span data-stu-id="f5055-118">You can click **Delete** to remove an entry.</span></span>
+6. <span data-ttu-id="08545-117">設定ごと、およびそれらの設定へのアクセスが必要なアプリやサービスごとに繰り返します。</span><span class="sxs-lookup"><span data-stu-id="08545-117">Repeat for each setting, and for each app or service that needs access to those settings.</span></span> <span data-ttu-id="08545-118">**[削除]** をクリックすると配列を削除できます。</span><span class="sxs-lookup"><span data-stu-id="08545-118">You can click **Delete** to remove an entry.</span></span>
 
-7. <span data-ttu-id="f5055-119">作業が完了したら、**[保存]** ボタンをクリックして変更を保存します。</span><span class="sxs-lookup"><span data-stu-id="f5055-119">When you are finished, click the **Save** button to save your changes.</span></span>
+7. <span data-ttu-id="08545-119">作業が完了したら、**[保存]** ボタンをクリックして変更を保存します。</span><span class="sxs-lookup"><span data-stu-id="08545-119">When you are finished, click the **Save** button to save your changes.</span></span>
 
 ![アクセス ポリシーの追加のアプリまたはサービスの画面](../../images/dev-center/data-sharing-2.png)

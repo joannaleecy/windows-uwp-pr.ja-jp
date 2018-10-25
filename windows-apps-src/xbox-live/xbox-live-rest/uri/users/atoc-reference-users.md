@@ -12,41 +12,41 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e9b51bd6bbaa707f72a83036cfd5a5c43be6dc50
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5444901"
+ms.locfileid: "5468080"
 ---
-# <a name="users-uris"></a><span data-ttu-id="e3bf6-104">ユーザー URI</span><span class="sxs-lookup"><span data-stu-id="e3bf6-104">Users URIs</span></span>
+# <a name="users-uris"></a><span data-ttu-id="4b1ab-104">ユーザー URI</span><span class="sxs-lookup"><span data-stu-id="4b1ab-104">Users URIs</span></span>
  
-<span data-ttu-id="e3bf6-105">このセクションでは、*ユーザー*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) メソッドの詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="e3bf6-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *users*.</span></span>
+<span data-ttu-id="4b1ab-105">このセクションでは、*ユーザー*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="4b1ab-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *users*.</span></span>
  
-<span data-ttu-id="e3bf6-106">これらの Uri のドメインは、msg.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="e3bf6-106">The domain for these URIs is msg.xboxlive.com.</span></span>
+<span data-ttu-id="4b1ab-106">これらの Uri のドメインは、msg.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="4b1ab-106">The domain for these URIs is msg.xboxlive.com.</span></span>
  
 <a id="ID4EFB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="e3bf6-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="e3bf6-107">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="4b1ab-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="4b1ab-107">In this section</span></span>
 
-[<span data-ttu-id="e3bf6-108">/users/xuid({xuid})/inbox</span><span class="sxs-lookup"><span data-stu-id="e3bf6-108">/users/xuid({xuid})/inbox</span></span>](uri-usersxuidinbox.md)
+[<span data-ttu-id="4b1ab-108">/users/xuid({xuid})/inbox</span><span class="sxs-lookup"><span data-stu-id="4b1ab-108">/users/xuid({xuid})/inbox</span></span>](uri-usersxuidinbox.md)
 
-<span data-ttu-id="e3bf6-109">&nbsp;&nbsp;ユーザーへのアクセスの Xbox LIVE サービスの受信トレイのメッセージを提供します。</span><span class="sxs-lookup"><span data-stu-id="e3bf6-109">&nbsp;&nbsp;Provides access to a user's messaging inbox for Xbox LIVE Services.</span></span> 
+<span data-ttu-id="4b1ab-109">&nbsp;&nbsp;ユーザーへのアクセスの Xbox LIVE サービスの受信トレイのメッセージを提供します。</span><span class="sxs-lookup"><span data-stu-id="4b1ab-109">&nbsp;&nbsp;Provides access to a user's messaging inbox for Xbox LIVE Services.</span></span> 
 
-[<span data-ttu-id="e3bf6-110">/users/xuid({xuid})/outbox</span><span class="sxs-lookup"><span data-stu-id="e3bf6-110">/users/xuid({xuid})/outbox</span></span>](uri-usersxuidoutbox.md)
+[<span data-ttu-id="4b1ab-110">/users/xuid({xuid})/outbox</span><span class="sxs-lookup"><span data-stu-id="4b1ab-110">/users/xuid({xuid})/outbox</span></span>](uri-usersxuidoutbox.md)
 
-<span data-ttu-id="e3bf6-111">&nbsp;&nbsp;ユーザーに送信専用アクセスが許可のメッセージは、Xbox LIVE サービスに送信トレイします。</span><span class="sxs-lookup"><span data-stu-id="e3bf6-111">&nbsp;&nbsp;Provides send-only access to a user's messaging outbox for Xbox LIVE Services.</span></span> 
+<span data-ttu-id="4b1ab-111">&nbsp;&nbsp;ユーザーに送信専用アクセスが許可のメッセージは、Xbox LIVE サービスに送信トレイします。</span><span class="sxs-lookup"><span data-stu-id="4b1ab-111">&nbsp;&nbsp;Provides send-only access to a user's messaging outbox for Xbox LIVE Services.</span></span> 
  
 <a id="ID4EOB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="e3bf6-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="e3bf6-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4b1ab-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="4b1ab-112">See also</span></span>
  
 <a id="ID4EQB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="e3bf6-113">Parent</span><span class="sxs-lookup"><span data-stu-id="e3bf6-113">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="4b1ab-113">Parent</span><span class="sxs-lookup"><span data-stu-id="4b1ab-113">Parent</span></span> 
 
-[<span data-ttu-id="e3bf6-114">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="e3bf6-114">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="4b1ab-114">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="4b1ab-114">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

@@ -12,39 +12,39 @@ ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 92cf7ab408b14e74a8f231d6c81e3077a0a40be5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5430600"
+ms.locfileid: "5475404"
 ---
-# <a name="put-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a><span data-ttu-id="61d2c-104">PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})</span><span class="sxs-lookup"><span data-stu-id="61d2c-104">PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})</span></span>
-<span data-ttu-id="61d2c-105">作成、更新、またはセッションに参加します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-105">Creates, updates, or joins a session.</span></span>
+# <a name="put-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a><span data-ttu-id="9fe91-104">PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})</span><span class="sxs-lookup"><span data-stu-id="9fe91-104">PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})</span></span>
+<span data-ttu-id="9fe91-105">作成、更新、またはセッションに参加します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-105">Creates, updates, or joins a session.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="61d2c-106">この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-106">This URI method requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
+> <span data-ttu-id="9fe91-106">この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-106">This URI method requires a header element of X-Xbl-Contract-Version: 104/105 or later on every request.</span></span>
 
-  * [<span data-ttu-id="61d2c-107">注釈</span><span class="sxs-lookup"><span data-stu-id="61d2c-107">Remarks</span></span>](#ID4ET)
-  * [<span data-ttu-id="61d2c-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="61d2c-108">URI parameters</span></span>](#ID4EYB)
-  * [<span data-ttu-id="61d2c-109">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="61d2c-109">HTTP status codes</span></span>](#ID4EFC)
-  * [<span data-ttu-id="61d2c-110">要求本文</span><span class="sxs-lookup"><span data-stu-id="61d2c-110">Request body</span></span>](#ID4EOC)
-  * [<span data-ttu-id="61d2c-111">応答本文</span><span class="sxs-lookup"><span data-stu-id="61d2c-111">Response body</span></span>](#ID4E4C)
+  * [<span data-ttu-id="9fe91-107">注釈</span><span class="sxs-lookup"><span data-stu-id="9fe91-107">Remarks</span></span>](#ID4ET)
+  * [<span data-ttu-id="9fe91-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9fe91-108">URI parameters</span></span>](#ID4EYB)
+  * [<span data-ttu-id="9fe91-109">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="9fe91-109">HTTP status codes</span></span>](#ID4EFC)
+  * [<span data-ttu-id="9fe91-110">要求本文</span><span class="sxs-lookup"><span data-stu-id="9fe91-110">Request body</span></span>](#ID4EOC)
+  * [<span data-ttu-id="9fe91-111">応答本文</span><span class="sxs-lookup"><span data-stu-id="9fe91-111">Response body</span></span>](#ID4E4C)
 
 <a id="ID4ET"></a>
 
 
-## <a name="remarks"></a><span data-ttu-id="61d2c-112">注釈</span><span class="sxs-lookup"><span data-stu-id="61d2c-112">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="9fe91-112">注釈</span><span class="sxs-lookup"><span data-stu-id="9fe91-112">Remarks</span></span>
 
-<span data-ttu-id="61d2c-113">この HTTP/REST メソッドでは、作成すると、参加、または同じ JSON 要求本文のテンプレートのサブセットが送信されるに応じて、セッションを更新します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-113">This HTTP/REST method creates, joins, or updates a session, depending on what subset of the same JSON request body template is sent.</span></span> <span data-ttu-id="61d2c-114">成功した場合、サーバーから返された応答を含む**MultiplayerSession**オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-114">On success, it returns a **MultiplayerSession** object containing the response returned from the server.</span></span> <span data-ttu-id="61d2c-115">その属性は、渡された**MultiplayerSession**オブジェクト内の属性とは異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="61d2c-115">The attributes in it might be different from the attributes in the passed-in **MultiplayerSession** object.</span></span> <span data-ttu-id="61d2c-116">このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="61d2c-116">This method can be wrapped by **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**.</span></span>
+<span data-ttu-id="9fe91-113">この HTTP/REST メソッドでは、作成すると、参加、または同じ JSON 要求本文のテンプレートのサブセットを送信することによって、セッションを更新します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-113">This HTTP/REST method creates, joins, or updates a session, depending on what subset of the same JSON request body template is sent.</span></span> <span data-ttu-id="9fe91-114">成功した場合、サーバーから返された応答を含む**MultiplayerSession**オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-114">On success, it returns a **MultiplayerSession** object containing the response returned from the server.</span></span> <span data-ttu-id="9fe91-115">その属性は、渡された**MultiplayerSession**オブジェクト内の属性から異なる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9fe91-115">The attributes in it might be different from the attributes in the passed-in **MultiplayerSession** object.</span></span> <span data-ttu-id="9fe91-116">このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**でラップすることができます。</span><span class="sxs-lookup"><span data-stu-id="9fe91-116">This method can be wrapped by **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**.</span></span>
 
-<span data-ttu-id="61d2c-117">セッションの作成と更新操作は、適用される変更を表すアプリケーション/json 本文と put メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-117">Session creation and update operations use PUT with an application/json body that represents the changes to apply.</span></span> <span data-ttu-id="61d2c-118">操作は、等は、同様の変更の複数のアプリケーションには追加の効果にありません。</span><span class="sxs-lookup"><span data-stu-id="61d2c-118">The operations are idempotent, that is, multiple applications of the same changes have no additional effect.</span></span>
+<span data-ttu-id="9fe91-117">セッションの作成と更新操作は、適用される変更を表すアプリケーション/json 本文と put メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-117">Session creation and update operations use PUT with an application/json body that represents the changes to apply.</span></span> <span data-ttu-id="9fe91-118">操作は、等は、同様の変更の複数のアプリケーションには追加の効果にありません。</span><span class="sxs-lookup"><span data-stu-id="9fe91-118">The operations are idempotent, that is, multiple applications of the same changes have no additional effect.</span></span>
 
-<span data-ttu-id="61d2c-119">JSON 要求本文には、セッション データ構造体がミラー化します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-119">The JSON request body mirrors the session data structure.</span></span> <span data-ttu-id="61d2c-120">すべてのフィールドとサブ フィールドは省略可能です。</span><span class="sxs-lookup"><span data-stu-id="61d2c-120">All fields and sub-fields are optional.</span></span>
+<span data-ttu-id="9fe91-119">JSON 要求本文は、セッション データ構造体をミラー化します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-119">The JSON request body mirrors the session data structure.</span></span> <span data-ttu-id="9fe91-120">すべてのフィールドとサブ フィールドは省略可能です。</span><span class="sxs-lookup"><span data-stu-id="9fe91-120">All fields and sub-fields are optional.</span></span>
 
-<span data-ttu-id="61d2c-121">PUT メソッドのセッションの作成やモードへの参加ワイヤ形式は、次に示します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-121">The wire format for the PUT method's session creation or joining mode is shown below.</span></span>
+<span data-ttu-id="9fe91-121">PUT メソッドのセッションの作成やモードへの参加ワイヤ形式は、次に示します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-121">The wire format for the PUT method's session creation or joining mode is shown below.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="61d2c-122">このパターンを使用して処理します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-122">Take care using this pattern.</span></span> <span data-ttu-id="61d2c-123">Upates セッションの現在の状態に関係なく無条件に、適用されます。</span><span class="sxs-lookup"><span data-stu-id="61d2c-123">Upates are applied blindly, no matter the current state of the session.</span></span>
+> <span data-ttu-id="9fe91-122">このパターンを使用して処理します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-122">Take care using this pattern.</span></span> <span data-ttu-id="9fe91-123">Upates セッションの現在の状態に関係なく、無条件に適用されます。</span><span class="sxs-lookup"><span data-stu-id="9fe91-123">Upates are applied blindly, no matter the current state of the session.</span></span>
 
 
 
@@ -56,7 +56,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 
 
-<span data-ttu-id="61d2c-124">PUT メソッドのセッション更新のモードのワイヤ形式は、次に示します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-124">The wire format for the PUT method's session update mode is shown below.</span></span>
+<span data-ttu-id="9fe91-124">PUT メソッドのセッション更新のモードのワイヤ形式は、次に示します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-124">The wire format for the PUT method's session update mode is shown below.</span></span>
 
 ```cpp
 PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/00000000-0000-0000-0000-000000000001 HTTP/1.1
@@ -66,7 +66,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 
 
-<span data-ttu-id="61d2c-125">セッションのプロパティを更新する PUT メソッドのワイヤ形式は、次に示します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-125">The wire format for the PUT method to update session properties is shown below.</span></span> <span data-ttu-id="61d2c-126">下にあるオブジェクトがプロパティとしても本文ですセッション URI に PUT 操作に相当します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-126">It is equivalent to a PUT operation to the session URI with a body having nothing but the object below as properties.</span></span> <span data-ttu-id="61d2c-127">違いは、この操作に 404 のエラー コードが返されるセッションが存在しない場合は見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="61d2c-127">The difference is that this operation returns error code 404 Not Found if the session does not exist.</span></span> <span data-ttu-id="61d2c-128">この操作には、If-match ヘッダーがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="61d2c-128">This operation supports the If-Match header.</span></span>
+<span data-ttu-id="9fe91-125">セッションのプロパティを更新する PUT メソッドのワイヤ形式は、次に示します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-125">The wire format for the PUT method to update session properties is shown below.</span></span> <span data-ttu-id="9fe91-126">プロパティとして下にあるオブジェクトが何もしなくて本文ですセッション URI に PUT 操作に相当します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-126">It is equivalent to a PUT operation to the session URI with a body having nothing but the object below as properties.</span></span> <span data-ttu-id="9fe91-127">違いは、この操作に 404 のエラー コードが返されるセッションが存在しない場合に見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="9fe91-127">The difference is that this operation returns error code 404 Not Found if the session does not exist.</span></span> <span data-ttu-id="9fe91-128">この操作は、If-match ヘッダーをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="9fe91-128">This operation supports the If-Match header.</span></span>
 
 ```cpp
 PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/00000000-0000-0000-0000-000000000001/properties HTTP/1.1
@@ -81,33 +81,33 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 <a id="ID4EYB"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="61d2c-129">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="61d2c-129">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="9fe91-129">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9fe91-129">URI parameters</span></span>
 
-| <span data-ttu-id="61d2c-130">パラメーター</span><span class="sxs-lookup"><span data-stu-id="61d2c-130">Parameter</span></span>| <span data-ttu-id="61d2c-131">型</span><span class="sxs-lookup"><span data-stu-id="61d2c-131">Type</span></span>| <span data-ttu-id="61d2c-132">説明</span><span class="sxs-lookup"><span data-stu-id="61d2c-132">Description</span></span>|
+| <span data-ttu-id="9fe91-130">パラメーター</span><span class="sxs-lookup"><span data-stu-id="9fe91-130">Parameter</span></span>| <span data-ttu-id="9fe91-131">型</span><span class="sxs-lookup"><span data-stu-id="9fe91-131">Type</span></span>| <span data-ttu-id="9fe91-132">説明</span><span class="sxs-lookup"><span data-stu-id="9fe91-132">Description</span></span>|
 | --- | --- | --- | --- | --- |
-| <span data-ttu-id="61d2c-133">scid</span><span class="sxs-lookup"><span data-stu-id="61d2c-133">scid</span></span>| <span data-ttu-id="61d2c-134">GUID</span><span class="sxs-lookup"><span data-stu-id="61d2c-134">GUID</span></span>| <span data-ttu-id="61d2c-135">サービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="61d2c-135">Service configuration identifier (SCID).</span></span> <span data-ttu-id="61d2c-136">セッション識別子のパート 1 です。</span><span class="sxs-lookup"><span data-stu-id="61d2c-136">Part 1 of the session identifier.</span></span>|
-| <span data-ttu-id="61d2c-137">sessionTemplateName</span><span class="sxs-lookup"><span data-stu-id="61d2c-137">sessionTemplateName</span></span>| <span data-ttu-id="61d2c-138">string</span><span class="sxs-lookup"><span data-stu-id="61d2c-138">string</span></span>| <span data-ttu-id="61d2c-139">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="61d2c-139">Name of the current instance of the session template.</span></span> <span data-ttu-id="61d2c-140">セッション識別子のパート 2 です。</span><span class="sxs-lookup"><span data-stu-id="61d2c-140">Part 2 of the session identifier.</span></span>|
-| <span data-ttu-id="61d2c-141">セッション名</span><span class="sxs-lookup"><span data-stu-id="61d2c-141">sessionName</span></span>| <span data-ttu-id="61d2c-142">GUID</span><span class="sxs-lookup"><span data-stu-id="61d2c-142">GUID</span></span>| <span data-ttu-id="61d2c-143">セッションの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="61d2c-143">Unique ID of the session.</span></span> <span data-ttu-id="61d2c-144">セッション識別子のパート 3 です。</span><span class="sxs-lookup"><span data-stu-id="61d2c-144">Part 3 of the session identifier.</span></span>|
+| <span data-ttu-id="9fe91-133">scid</span><span class="sxs-lookup"><span data-stu-id="9fe91-133">scid</span></span>| <span data-ttu-id="9fe91-134">GUID</span><span class="sxs-lookup"><span data-stu-id="9fe91-134">GUID</span></span>| <span data-ttu-id="9fe91-135">サービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="9fe91-135">Service configuration identifier (SCID).</span></span> <span data-ttu-id="9fe91-136">セッション識別子のパート 1 です。</span><span class="sxs-lookup"><span data-stu-id="9fe91-136">Part 1 of the session identifier.</span></span>|
+| <span data-ttu-id="9fe91-137">sessionTemplateName</span><span class="sxs-lookup"><span data-stu-id="9fe91-137">sessionTemplateName</span></span>| <span data-ttu-id="9fe91-138">string</span><span class="sxs-lookup"><span data-stu-id="9fe91-138">string</span></span>| <span data-ttu-id="9fe91-139">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="9fe91-139">Name of the current instance of the session template.</span></span> <span data-ttu-id="9fe91-140">セッション識別子のパート 2 です。</span><span class="sxs-lookup"><span data-stu-id="9fe91-140">Part 2 of the session identifier.</span></span>|
+| <span data-ttu-id="9fe91-141">セッション名</span><span class="sxs-lookup"><span data-stu-id="9fe91-141">sessionName</span></span>| <span data-ttu-id="9fe91-142">GUID</span><span class="sxs-lookup"><span data-stu-id="9fe91-142">GUID</span></span>| <span data-ttu-id="9fe91-143">セッションの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="9fe91-143">Unique ID of the session.</span></span> <span data-ttu-id="9fe91-144">セッション識別子のパート 3 です。</span><span class="sxs-lookup"><span data-stu-id="9fe91-144">Part 3 of the session identifier.</span></span>|
 
 <a id="ID4EFC"></a>
 
 
-## <a name="http-status-codes"></a><span data-ttu-id="61d2c-145">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="61d2c-145">HTTP status codes</span></span>
-<span data-ttu-id="61d2c-146">サービスは、MPSD に適用される、HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-146">The service returns an HTTP status code as it applies to MPSD.</span></span>  
+## <a name="http-status-codes"></a><span data-ttu-id="9fe91-145">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="9fe91-145">HTTP status codes</span></span>
+<span data-ttu-id="9fe91-146">サービスは、MPSD に適用される HTTP ステータス コードを返します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-146">The service returns an HTTP status code as it applies to MPSD.</span></span>  
 <a id="ID4EOC"></a>
 
 
-## <a name="request-body"></a><span data-ttu-id="61d2c-147">要求本文</span><span class="sxs-lookup"><span data-stu-id="61d2c-147">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="9fe91-147">要求本文</span><span class="sxs-lookup"><span data-stu-id="9fe91-147">Request body</span></span>
 
-<span data-ttu-id="61d2c-148">以下には、作成またはセッションに参加するためのサンプル要求本文です。</span><span class="sxs-lookup"><span data-stu-id="61d2c-148">Below is a sample request body for creating or joining a session.</span></span> <span data-ttu-id="61d2c-149">要求本文の次のメンバーは省略可能です。</span><span class="sxs-lookup"><span data-stu-id="61d2c-149">The following members of the request body are optional.</span></span> <span data-ttu-id="61d2c-150">要求では、他の可能なすべてのメンバーが禁止されています。</span><span class="sxs-lookup"><span data-stu-id="61d2c-150">All other possible members are prohibited in a request.</span></span>
+<span data-ttu-id="9fe91-148">以下の作成またはセッションに参加するためのサンプル要求本文です。</span><span class="sxs-lookup"><span data-stu-id="9fe91-148">Below is a sample request body for creating or joining a session.</span></span> <span data-ttu-id="9fe91-149">要求本文の次のメンバーは省略可能です。</span><span class="sxs-lookup"><span data-stu-id="9fe91-149">The following members of the request body are optional.</span></span> <span data-ttu-id="9fe91-150">要求では、他の可能なすべてのメンバーが禁止されています。</span><span class="sxs-lookup"><span data-stu-id="9fe91-150">All other possible members are prohibited in a request.</span></span>
 
-| <span data-ttu-id="61d2c-151">メンバー</span><span class="sxs-lookup"><span data-stu-id="61d2c-151">Member</span></span>| <span data-ttu-id="61d2c-152">種類</span><span class="sxs-lookup"><span data-stu-id="61d2c-152">Type</span></span>| <span data-ttu-id="61d2c-153">説明</span><span class="sxs-lookup"><span data-stu-id="61d2c-153">Description</span></span>|
+| <span data-ttu-id="9fe91-151">メンバー</span><span class="sxs-lookup"><span data-stu-id="9fe91-151">Member</span></span>| <span data-ttu-id="9fe91-152">種類</span><span class="sxs-lookup"><span data-stu-id="9fe91-152">Type</span></span>| <span data-ttu-id="9fe91-153">説明</span><span class="sxs-lookup"><span data-stu-id="9fe91-153">Description</span></span>|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| <span data-ttu-id="61d2c-154">定数</span><span class="sxs-lookup"><span data-stu-id="61d2c-154">constants</span></span>| <span data-ttu-id="61d2c-155">object</span><span class="sxs-lookup"><span data-stu-id="61d2c-155">object</span></span>| <span data-ttu-id="61d2c-156">セッションの定数を生成するセッション テンプレートと結合された読み取り専用の設定。</span><span class="sxs-lookup"><span data-stu-id="61d2c-156">Read-only settings that are merged with the session template to produce the constants for the session.</span></span> |
-| <span data-ttu-id="61d2c-157">プロパティ</span><span class="sxs-lookup"><span data-stu-id="61d2c-157">properties</span></span> | <span data-ttu-id="61d2c-158">object</span><span class="sxs-lookup"><span data-stu-id="61d2c-158">object</span></span> | <span data-ttu-id="61d2c-159">セッションのプロパティへの結合を変更します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-159">Changes to be merged into the session properties.</span></span>|
-| <span data-ttu-id="61d2c-160">members.me</span><span class="sxs-lookup"><span data-stu-id="61d2c-160">members.me</span></span> | <span data-ttu-id="61d2c-161">object</span><span class="sxs-lookup"><span data-stu-id="61d2c-161">object</span></span>| <span data-ttu-id="61d2c-162">定数および機能もプロパティなどの最上位の対応します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-162">Constants and properties that work much like their top-level counterparts.</span></span> <span data-ttu-id="61d2c-163">PUT メソッドでは、ユーザーが、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。</span><span class="sxs-lookup"><span data-stu-id="61d2c-163">Any PUT method requires the user to be a member of the session, and adds the user if necessary.</span></span> <span data-ttu-id="61d2c-164">Null として"me"を指定する場合は、要求を行っているメンバーがセッションから削除されます。</span><span class="sxs-lookup"><span data-stu-id="61d2c-164">If "me" is specified as null, the member making the request is removed from the session.</span></span> |
-| <span data-ttu-id="61d2c-165">メンバー</span><span class="sxs-lookup"><span data-stu-id="61d2c-165">members</span></span> | <span data-ttu-id="61d2c-166">object</span><span class="sxs-lookup"><span data-stu-id="61d2c-166">object</span></span>| <span data-ttu-id="61d2c-167">0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="61d2c-167">Other objects that represent users to add to the session, keyed by a zero-based index.</span></span> <span data-ttu-id="61d2c-168">既にセッションには、メンバーが含まれている場合でも、要求のメンバーの数は常に 0 で始まります。</span><span class="sxs-lookup"><span data-stu-id="61d2c-168">The number of members in a request always starts with 0, even if the session already contains members.</span></span> <span data-ttu-id="61d2c-169">メンバーは、要求で表示される順序でセッションに追加されます。</span><span class="sxs-lookup"><span data-stu-id="61d2c-169">Members are added to the session in the order in which they appear in the request.</span></span> <span data-ttu-id="61d2c-170">メンバーのプロパティは、先に属しているユーザーでのみ設定できます。</span><span class="sxs-lookup"><span data-stu-id="61d2c-170">Member properties can only be set by the user to whom they belong.</span></span> |
-| <span data-ttu-id="61d2c-171">サーバー</span><span class="sxs-lookup"><span data-stu-id="61d2c-171">servers</span></span> | <span data-ttu-id="61d2c-172">object</span><span class="sxs-lookup"><span data-stu-id="61d2c-172">object</span></span>| <span data-ttu-id="61d2c-173">関連付けられているサーバーの参加者のセットに更新プログラムと、セッションに追加されたことを示す値。</span><span class="sxs-lookup"><span data-stu-id="61d2c-173">Values indicating updates and additions to the session's set of associated server participants.</span></span> <span data-ttu-id="61d2c-174">サーバーが null として指定されている場合、そのサーバーのエントリは、セッションから削除されます。</span><span class="sxs-lookup"><span data-stu-id="61d2c-174">If a server is specified as null, that server entry is removed from the session.</span></span> |
+| <span data-ttu-id="9fe91-154">定数</span><span class="sxs-lookup"><span data-stu-id="9fe91-154">constants</span></span>| <span data-ttu-id="9fe91-155">object</span><span class="sxs-lookup"><span data-stu-id="9fe91-155">object</span></span>| <span data-ttu-id="9fe91-156">セッションの定数を生成するセッション テンプレートと結合された読み取り専用の設定。</span><span class="sxs-lookup"><span data-stu-id="9fe91-156">Read-only settings that are merged with the session template to produce the constants for the session.</span></span> |
+| <span data-ttu-id="9fe91-157">プロパティ</span><span class="sxs-lookup"><span data-stu-id="9fe91-157">properties</span></span> | <span data-ttu-id="9fe91-158">object</span><span class="sxs-lookup"><span data-stu-id="9fe91-158">object</span></span> | <span data-ttu-id="9fe91-159">セッションのプロパティへの結合を変更します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-159">Changes to be merged into the session properties.</span></span>|
+| <span data-ttu-id="9fe91-160">members.me</span><span class="sxs-lookup"><span data-stu-id="9fe91-160">members.me</span></span> | <span data-ttu-id="9fe91-161">object</span><span class="sxs-lookup"><span data-stu-id="9fe91-161">object</span></span>| <span data-ttu-id="9fe91-162">定数および機能もプロパティなどの最上位の相当します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-162">Constants and properties that work much like their top-level counterparts.</span></span> <span data-ttu-id="9fe91-163">PUT メソッドでは、セッションのメンバーであることをユーザーに要求し、必要に応じて、ユーザーを追加します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-163">Any PUT method requires the user to be a member of the session, and adds the user if necessary.</span></span> <span data-ttu-id="9fe91-164">Null として"me"を指定する場合は、要求を行っているメンバーがセッションから削除されます。</span><span class="sxs-lookup"><span data-stu-id="9fe91-164">If "me" is specified as null, the member making the request is removed from the session.</span></span> |
+| <span data-ttu-id="9fe91-165">メンバー</span><span class="sxs-lookup"><span data-stu-id="9fe91-165">members</span></span> | <span data-ttu-id="9fe91-166">object</span><span class="sxs-lookup"><span data-stu-id="9fe91-166">object</span></span>| <span data-ttu-id="9fe91-167">0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="9fe91-167">Other objects that represent users to add to the session, keyed by a zero-based index.</span></span> <span data-ttu-id="9fe91-168">要求のメンバー数常に 0 から始まり、場合でも、既にセッションにはメンバーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="9fe91-168">The number of members in a request always starts with 0, even if the session already contains members.</span></span> <span data-ttu-id="9fe91-169">要求で表示される順序でセッションにメンバーが追加されます。</span><span class="sxs-lookup"><span data-stu-id="9fe91-169">Members are added to the session in the order in which they appear in the request.</span></span> <span data-ttu-id="9fe91-170">メンバーのプロパティは、先に属しているユーザーでのみ設定できます。</span><span class="sxs-lookup"><span data-stu-id="9fe91-170">Member properties can only be set by the user to whom they belong.</span></span> |
+| <span data-ttu-id="9fe91-171">サーバー</span><span class="sxs-lookup"><span data-stu-id="9fe91-171">servers</span></span> | <span data-ttu-id="9fe91-172">object</span><span class="sxs-lookup"><span data-stu-id="9fe91-172">object</span></span>| <span data-ttu-id="9fe91-173">関連付けられているサーバーの参加者のセットに更新プログラムと、セッションに追加されたことを示す値。</span><span class="sxs-lookup"><span data-stu-id="9fe91-173">Values indicating updates and additions to the session's set of associated server participants.</span></span> <span data-ttu-id="9fe91-174">サーバーが null として指定されている場合、そのサーバーのエントリは、セッションから削除されます。</span><span class="sxs-lookup"><span data-stu-id="9fe91-174">If a server is specified as null, that server entry is removed from the session.</span></span> |
 
 
 
@@ -135,9 +135,9 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 <a id="ID4E4C"></a>
 
 
-## <a name="response-body"></a><span data-ttu-id="61d2c-175">応答本文</span><span class="sxs-lookup"><span data-stu-id="61d2c-175">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="9fe91-175">応答本文</span><span class="sxs-lookup"><span data-stu-id="9fe91-175">Response body</span></span>
 
-<span data-ttu-id="61d2c-176">応答の本文を作成またはセッションに参加するためにサンプル:</span><span class="sxs-lookup"><span data-stu-id="61d2c-176">Sample response body for creating or joining a session:</span></span>
+<span data-ttu-id="9fe91-176">応答本文を作成またはセッションに参加するためにサンプル:</span><span class="sxs-lookup"><span data-stu-id="9fe91-176">Sample response body for creating or joining a session:</span></span>
 
 
 ```cpp
@@ -209,11 +209,11 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 <a id="ID4EID"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="61d2c-177">関連項目</span><span class="sxs-lookup"><span data-stu-id="61d2c-177">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9fe91-177">関連項目</span><span class="sxs-lookup"><span data-stu-id="9fe91-177">See also</span></span>
 
 <a id="ID4EKD"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="61d2c-178">Parent</span><span class="sxs-lookup"><span data-stu-id="61d2c-178">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="9fe91-178">Parent</span><span class="sxs-lookup"><span data-stu-id="9fe91-178">Parent</span></span>
 
-[<span data-ttu-id="61d2c-179">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}</span><span class="sxs-lookup"><span data-stu-id="61d2c-179">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}</span></span>](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md)
+[<span data-ttu-id="9fe91-179">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}</span><span class="sxs-lookup"><span data-stu-id="9fe91-179">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}</span></span>](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname.md)
