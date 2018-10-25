@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 支払い, アプリの販売, アプリの収益, 受け取り, Microsoft Store の手数料, 支払い保留, パーセント
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c128bedd1c889f4c2dcf0565c7c10575eb75013
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478703"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5515914"
 ---
 # <a name="getting-paid"></a><span data-ttu-id="63041-103">支払いの受け取り</span><span class="sxs-lookup"><span data-stu-id="63041-103">Getting paid</span></span>
 <span data-ttu-id="63041-104">ここでは、アプリ、アドオン、広告収益の支払いを受け取るために確認する必要のある重要な情報について説明します。</span><span class="sxs-lookup"><span data-stu-id="63041-104">Here’s some important info you’ll need to ensure that you receive payment for your apps, add-ons, and advertising earnings.</span></span>

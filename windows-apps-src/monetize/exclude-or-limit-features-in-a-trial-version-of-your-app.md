@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18d9fb3ba5b0fbd1e964450a75d8e0e417265e7f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470596"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5514707"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a><span data-ttu-id="f9a62-103">試用版での機能の除外または制限</span><span class="sxs-lookup"><span data-stu-id="f9a62-103">Exclude or limit features in a trial version</span></span>
 

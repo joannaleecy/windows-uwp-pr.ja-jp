@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 教育
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
 ms.openlocfilehash: da03a3c478ca45cc2d2b518988738e510a6c5ea9
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471828"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5514546"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a><span data-ttu-id="c62f7-104">教育機関向けのユニバーサル Windows アプリを開発します。</span><span class="sxs-lookup"><span data-stu-id="c62f7-104">Develop Universal Windows apps for education</span></span>
 ![テスト アプリのスクリーン ショット](images/take-a-test-screen-small.png)
