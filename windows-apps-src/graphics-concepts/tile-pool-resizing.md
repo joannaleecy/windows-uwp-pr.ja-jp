@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fba4197a8d290d7677558b82ed2fcdc28a8dbdf2
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: e676b28750375a353bb41ce8e14ec1d4c3371c4c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043851"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542243"
 ---
 # <a name="tile-pool-resizing"></a>タイル プールのサイズ変更
 
@@ -36,9 +34,9 @@ ms.locfileid: "1043851"
 
 [タイル プールにマッピングされます](mappings-are-into-a-tile-pool.md)
 
- 
+ 
 
- 
+ 
 
 
 

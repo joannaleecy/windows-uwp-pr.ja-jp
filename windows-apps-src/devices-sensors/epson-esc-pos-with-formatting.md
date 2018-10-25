@@ -6,19 +6,17 @@ description: POS プリンターで、ESC/POS コマンド言語を使用して�
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f482f9f44a5f4acb9c5213745da3b8edd3613b62
-ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.localizationpriority: medium
+ms.openlocfilehash: 3ecc1a61b7db339c7c0c46168255d32bfbc241a1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2017
-ms.locfileid: "696097"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572541"
 ---
 # <a name="epson-escpos-with-formatting"></a>書式設定における Epson ESC/POS
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 **重要な API**
 

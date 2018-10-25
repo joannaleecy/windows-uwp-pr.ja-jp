@@ -1,6 +1,6 @@
 ---
 author: QuinnRadich
-title: Windows ドキュメントの最新情報では、2018 年 8 月 - UWP アプリの開発
+title: Windows ドキュメントの最新情報で新 2018 年 8 月 - UWP アプリの開発
 description: 2018 年 8 月の Windows 10 開発者向けドキュメントに、新しい機能、ビデオ、サンプル、および開発者向けガイダンスが追加されました。
 keywords: 新機能, 更新, 機能, 開発者向けガイダンス, Windows 10, 8 月
 ms.author: quradic
@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468699"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5522147"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 8 月
 
@@ -28,21 +28,21 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 次の機能が Insider Preview ビルドの[Windows Insider](https://insider.windows.com/) program で利用できる、Windows に追加されました。
 
-* [Windows UI のライブラリ](https://aka.ms/winui-docs)とは、UWP アプリのコントロールとその他のユーザーの interfact 要素を提供する NuGet パッケージのセットです。 これらのパッケージも以前のバージョンの Windows 10 互換、ユーザーが最新の OS バージョンに存在しない場合でも、アプリが機能するようにします。
+* [Windows UI のライブラリ](https://aka.ms/winui-docs)は、UWP アプリのコントロールとその他のユーザーの interfact 要素を提供する NuGet パッケージのセットです。 これらのパッケージも以前のバージョンの Windows 10 互換、ユーザーが最新の OS バージョンに存在しない場合でも、アプリが動作するようにします。
 
-* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、 [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button)、および[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)は、アプリのユーザー インターフェイスを強化するために特別な機能を備えたボタン コントロールを提供します。
+* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、 [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button)、および[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)は、アプリのユーザー インターフェイスを強化するために特殊な機能を備えたボタン コントロールを提供します。
 
-![フォア グラウンドの色を選択するための分割ボタン](../design/controls-and-patterns/images/split-button-rtb.png)
+![前景色を選択するための分割ボタン](../design/controls-and-patterns/images/split-button-rtb.png)
 
-* NavigationView でするアプリのナビゲーション オプションの数を減らしてがあり、アプリのコンテンツの空き領域が必要な場合、[上部のナビゲーション](../design/controls-and-patterns/navigationview.md)できるようになりました。
+* NavigationView が、アプリのナビゲーション オプションの数を減らしてがあり、アプリのコンテンツの空き領域が必要な場合、[上部のナビゲーション](../design/controls-and-patterns/navigationview.md)をサポートします。
 
 * ツリー ビューがサポートするために拡張されて[データ バインディング、項目テンプレート、ドラッグ アンド ドロップします](../design/controls-and-patterns/tree-view.md)。
 
 ### <a name="package-support-framework"></a>パッケージのサポート フレームワーク
 
-パッケージのサポート フレームワークでは、修正プログラムの適用、win32 アプリケーションをソース コードにアクセスできない場合、MSIX コンテナーで実行できるようにするために役立つオープン ソース キットです。
+パッケージのサポートのフレームワークでは、修正プログラムの適用、win32 アプリケーションをソース コードにアクセスできない場合、MSIX コンテナーで実行できるようにするために役立つ、オープン ソースのキットです。
 
-詳細については、[パッケージのサポートのフレームワークを使用して、MSIX パッケージに適用ランタイムの修正プログラム](../porting/package-support-framework.md)を参照してください。
+詳細については、[パッケージのサポートのフレームワークを使用して、MSIX パッケージを適用ランタイムの修正プログラム](../porting/package-support-framework.md)を参照してください。
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
@@ -52,7 +52,7 @@ Mozilla Developer Network ドキュメントには、ブラウザー間の web �
 
 ### <a name="cwinrt-code-examples"></a>C++/WinRT のコード例
 
-250 が追加されました[、C++/WinRT](../cpp-and-winrt-apis/index.md)付属している既存の C +、当社のドキュメントのトピックへの登録情報をコード/CX コード例を紹介します。
+250 が追加されました[、C++/WinRT](../cpp-and-winrt-apis/index.md)コードで、ドキュメントは、既存の C + に付属するトピックへの登録情報/CX コード例を紹介します。
 
 ### <a name="project-rome"></a>Project Rome
 
@@ -62,15 +62,15 @@ Mozilla Developer Network ドキュメントには、ブラウザー間の web �
 
 ### <a name="xbox-live-unity-plugin"></a>Xbox Live Unity プラグイン
 
-Unity の Xbox Live プラグインには、Xbox Live への署名、統計情報、フレンド リスト、クラウド ストレージ、およびランキングをタイトルに追加するためのサポートが含まれています。 について[は、ビデオ](https://youtu.be/fVQZ-YgwNpY)をし、 [GitHub パッケージをダウンロード](https://aka.ms/UnityPlugin)を開始します。
+Unity の Xbox Live プラグインには、タイトルに Xbox Live への署名、統計情報、フレンド リスト、クラウド ストレージ、およびランキングを追加するためのサポートが含まれています。 について[は、ビデオ](https://youtu.be/fVQZ-YgwNpY)をし、 [GitHub パッケージをダウンロード](https://aka.ms/UnityPlugin)を開始します。
 
 ### <a name="one-dev-question"></a>1 つのデベロッパー質問
 
-1 つのデベロッパー質問のビデオ シリーズの長い Microsoft 開発者は一連の Windows の開発、チームのカルチャと履歴に関する質問について説明します。 お答えした最新の質問を以下に示します。
+デベロッパー質問の 1 つのビデオ シリーズの長い Microsoft 開発者は一連の Windows の開発、チームのカルチャと履歴に関する質問について説明します。 お答えした最新の質問を以下に示します。
 
 Raymond Chen:
 
-* [カーネルを知るビデオ ドライバーを再起動するかどうか。](https://youtu.be/3SNAdyO1l5c)
+* [カーネルか確認する方法をビデオ ドライバーを再起動するタイミング](https://youtu.be/3SNAdyO1l5c)
 
 Larry Osterman:
 

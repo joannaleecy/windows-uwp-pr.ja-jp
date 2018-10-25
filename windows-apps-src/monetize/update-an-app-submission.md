@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請, 更新
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f6797c288f3ee85daba9f90f81a3d1d8aa15562
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477829"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5519956"
 ---
 # <a name="update-an-app-submission"></a>アプリの申請の更新
 

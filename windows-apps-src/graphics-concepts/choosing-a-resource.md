@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e616f5a04e50b400c4bd7a700981396570a6c1d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 8ddac5d69ce0c562129255832adfc49380946510
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044661"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572381"
 ---
 # <a name="choosing-a-resource"></a>リソースの選択
 
@@ -40,7 +38,7 @@ ms.locfileid: "1044661"
 | 出力結合   | 出力    | レンダー ターゲット ビュー     | バッファー、Texture1D、Texture2D、Texture3D |
 | 出力結合   | 出力    | 深度/ステンシル ビュー     | Texture1D、Texture2D                    |
 
- 
+ 
 
 ## <a name="span-ididentifyusagespanspan-ididentifyusagespanspan-ididentifyusagespanidentify-how-each-resource-will-be-used"></a><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>各リソースの使用方法の特定
 
@@ -56,7 +54,7 @@ ms.locfileid: "1044661"
 | ステージング        | GPU                                  | なし                 |
 | 固定      | CPU (リソースの作成時のみ) | なし                 |
 
- 
+ 
 
 CPU によるリソースの更新が低頻度 (フレームごとに 1 回未満) であると予想される場合は、既定の使用方法を選択します。 パフォーマンス低下を避けるため、既定の使用方法では CPU からリソースに直接書き込まないことが理想的です。
 
@@ -75,7 +73,7 @@ CPU によるリソースの更新が比較的高頻度 (フレームごとに 1
 | テクスチャへのレンダリング                     | 既定              |
 | GPU データの CPU アクセス                | ステージング              |
 
- 
+ 
 
 どの使用法を選択すべきかよくわからない場合は、一般的なほとんどのケースに対応可能な既定の使用方法から始めてください。 シェーダー定数バッファーは、常に既定の使用方法にする必要のあるリソース タイプの 1 つです。
 
@@ -95,9 +93,9 @@ CPU によるリソースの更新が比較的高頻度 (フレームごとに 1
 
 [リソース](resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

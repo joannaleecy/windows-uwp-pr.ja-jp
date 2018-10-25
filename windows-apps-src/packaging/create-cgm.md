@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, コンテンツ グループ マップ, ストリーミング インストール, UWP アプリ ストリーミング インストール, ソース コンテンツ グループ マップ
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ce32958d5a99dc9f3f772d6272450a4f2b0f81b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468864"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5519022"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>ソース コンテンツ グループ マップの作成と変換
 
@@ -27,7 +27,7 @@ ms.locfileid: "5468864"
 
 UWP アプリ ストリーミング インストールが適した簡単なシナリオを見てみましょう。 
 
-たとえば、作成した UWP ゲームの最終的なアプリのサイズが 100 GB を超えているとします。 便利なことができる Microsoft Store からダウンロードに時間がかかるする予定です。 UWP アプリ ストリーミング インストールを使用する場合は、アプリのファイルがダウンロードされる順序を指定できます。 必須ファイルから先にダウンロードされるようストアに指定しておくことで、ユーザーは必須ではないファイルをバックグラウンドでダウンロードしながらアプリの使用を早く開始できます。
+たとえば、作成した UWP ゲームの最終的なアプリのサイズが 100 GB を超えているとします。 便利なことができる、Microsoft Store からダウンロードに時間がかかるする予定です。 UWP アプリ ストリーミング インストールを使用する場合は、アプリのファイルがダウンロードされる順序を指定できます。 必須ファイルから先にダウンロードされるようストアに指定しておくことで、ユーザーは必須ではないファイルをバックグラウンドでダウンロードしながらアプリの使用を早く開始できます。
 
 > [!NOTE]
 > UWP アプリ ストリーミング インストールの使用には、アプリのファイル構成が大きく影響します。 アプリのファイル分割を容易にするには、UWP アプリ ストリーミング インストールに合わせてアプリのコンテンツ レイアウトをできるだけ早く検討するようお勧めします。
@@ -170,4 +170,4 @@ MakeAppx convertCGM /s MyApp\SourceAppxContentGroupMap.xml /f MyApp\AppxContentG
 MakeAppx convertCGM /?
 ```
 
-これで、アプリ用に最終的な `AppxContentGroupMap.xml` を準備できました。 ありませんがまだアプリが Microsoft Store の準備が整いますする前に。 UWP アプリ ストリーミング インストールをアプリに追加する完全なプロセスについては、[こちらのブログ記事](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)をご覧ください。
+これで、アプリ用に最終的な `AppxContentGroupMap.xml` を準備できました。 ありませんがまだ前に、アプリが Microsoft Store の準備が整います。 UWP アプリ ストリーミング インストールをアプリに追加する完全なプロセスについては、[こちらのブログ記事](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)をご覧ください。

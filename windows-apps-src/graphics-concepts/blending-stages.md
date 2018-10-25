@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 67143bc21770dd45e9b384d2420d69bcd25078e4
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 84b42460ce5368bdac6ab84a9f9c65d0cb8231a1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044091"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542552"
 ---
 # <a name="blending-stages"></a>ブレンド ステージ
 
@@ -28,9 +26,9 @@ ms.locfileid: "1044091"
 
 [テクスチャ ブレンド](texture-blending.md)
 
- 
+ 
 
- 
+ 
 
 
 

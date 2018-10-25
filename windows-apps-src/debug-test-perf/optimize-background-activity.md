@@ -6,15 +6,14 @@ description: システムと連携して、バッテリー効率の高い方法�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 630f280d54c29aa80bc310bd88ceddd76b07f8bf
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 932dd3c89933eab9baefe6ff2c45359db6efbb14
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894656"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542499"
 ---
 # <a name="optimize-background-activity"></a>バックグラウンド アクティビティの最適化
 

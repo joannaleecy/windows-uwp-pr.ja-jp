@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 73a2a619c32e7d6a7f2fff768c9cec5b7986c3c1
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: eef41642d371f3a8be451c2687eee007608c3b2e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044711"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542296"
 ---
 # <a name="textures-with-alpha-channels"></a>アルファ チャネルを含むテクスチャ
 
@@ -30,7 +28,7 @@ ms.locfileid: "1044711"
 | 3:0          | 透明度ブロック                |
 | 7:4          | 既に説明した 64 ビットのブロック |
 
- 
+ 
 
 ## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>明示的なテクスチャ エンコード
 
@@ -41,9 +39,9 @@ ms.locfileid: "1044711"
 
 ![64 ビットの透明度ブロックの図](images/colors4.png)
 
-**注** Direct3D の圧縮方法では、4 つの最上位ビットを使用します。
+**注:**  Direct3D の圧縮方法で、4 つの最上位ビットを使用します。
 
- 
+ 
 
 次の表に、16 ビット ワードごとにメモリ内のアルファ情報のレイアウト方法を示します。
 
@@ -56,7 +54,7 @@ ms.locfileid: "1044711"
 | 11:8          | \[0\]\[2\] |
 | 15:12 (MSB\*) | \[0\]\[3\] |
 
- 
+ 
 
 \*最下位ビット、最上位ビット (MSB)
 
@@ -69,7 +67,7 @@ ms.locfileid: "1044711"
 | 11:8        | \[1\]\[2\] |
 | 15:12 (MSB) | \[1\]\[3\] |
 
- 
+ 
 
 ワード 2 のレイアウト:
 
@@ -80,7 +78,7 @@ ms.locfileid: "1044711"
 | 11:8        | \[2\]\[2\] |
 | 15:12 (MSB) | \[2\]\[3\] |
 
- 
+ 
 
 ワード 3 のレイアウト:
 
@@ -91,7 +89,7 @@ ms.locfileid: "1044711"
 | 11:8        | \[3\]\[2\] |
 | 15:12 (MSB) | \[3\]\[3\] |
 
- 
+ 
 
 BC1 でテクセルが透明かどうかを判断するために使われる色比較は、この形式では使われません。 色比較を行わない場合、色データは常に 4 カラー モードであるものとして処理されると仮定されます。
 
@@ -139,7 +137,7 @@ else {
 | 6    | \[3\]\[1\] (1 つの MSB)、\[3\]\[0\]、\[2\]\[3\]、\[2\]\[2\] (1 つの LSB) |
 | 7    | \[3\]\[3\]、\[3\]\[2\]、\[3\]\[1\] (2 つの LSB)                    |
 
- 
+ 
 
 BC1 でテクセルが透明かどうかを判断するために使われる色比較は、これらの形式では使われません。 色比較を行わない場合、色データは常に 4 カラー モードであるものとして処理されると仮定されます。
 
@@ -148,9 +146,9 @@ BC1 でテクセルが透明かどうかを判断するために使われる色�
 
 [圧縮テクスチャ リソース](compressed-texture-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

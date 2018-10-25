@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a97afde2314a220465a7c2b840c9959a7edb4030
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: cd5a5308504bda662ae3aff1968122fcfe020ca3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043561"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572561"
 ---
 # <a name="span-iddirect3dconceptssrvbehaviorwithnon-mappedtilesspansrv-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.srv_behavior_with_non-mapped_tiles"></span>マップされていないタイルでの SRV 動作
 
@@ -32,9 +30,9 @@ SRV 内の一連のテクセルから読み取るテクスチャ フィルター
 
 [ストリーミング リソースへのパイプライン アクセス](pipeline-access-to-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

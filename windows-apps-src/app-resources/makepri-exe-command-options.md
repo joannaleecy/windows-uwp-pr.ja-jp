@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 04/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a3892348baff56bbef8d40dd9aade4e612c50d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: c6c71cf98d9720cc5bfea219f565529b3308c49c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468775"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542429"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe のコマンド ライン オプション
 
@@ -417,6 +415,19 @@ MakePri は、インデクサーのメタデータ ファイルにリソース �
 ```
 
 **FILEPATH** は、入力 PRI ファイルまたは PRI スキーマ ファイルの場所を指定するトークンです。
+
+## <a name="47indexoptionsio-option"></a>& #47;IndexOptions(io) オプション
+
+インデックスのオプションを使用する (/io) と`new`、 `resourcepack`、および`versioned`リソース インデクサーの動作の詳細に制御を提供するオプションを指定します。 既定では、インデックスのオプションが無効になります。
+
+```
+/IndexOptions(io) <OPTIONS>
+```
+
+**オプション**は、次のオプションから構成される、コンマ区切りリスト。
+
+- HiddenFiles(hf) +/。 インデックス (+) または (-) を無視するファイルやフォルダーを非表示します。
+- LinkedFiles(lf) +/。 インデックス (+) または (-) を無視するファイルやフォルダーをリンクします。
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) オプション
 

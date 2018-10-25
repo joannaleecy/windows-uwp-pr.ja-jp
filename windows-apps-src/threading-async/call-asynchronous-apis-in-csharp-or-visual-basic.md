@@ -6,19 +6,17 @@ description: ユニバーサル Windows プラットフォーム (UWP) には、
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、C#、Visual Basic、非同期
-ms.openlocfilehash: ad5d3432595761470a679bac690fe14711f9fdba
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 2d9bd5265d72a7a478de8c094cd900072e46a143
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665716"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542223"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>C# または Visual Basic での非同期 API の呼び出し
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。 このトピックでは、C# または Microsoft Visual Basic で UWP の非同期メソッドを使う方法について説明します。
@@ -37,7 +35,8 @@ ms.locfileid: "665716"
 この例では、非同期メソッド [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) を呼び出して、その結果を待機し、ブログから記事の一覧を取得します。
 
 > [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)] [!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
+[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
+[!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
 
 この例には、いくつかの重要なポイントがあります。 まず、`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` の行では、非同期メソッド [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) を呼び出す際に、**await** 演算子が使われています。 **await** 演算子は、非同期メソッドを呼び出していることをコンパイラに伝えていると考えることができます。これにより、コンパイラが追加作業を行うようになります。 もう 1 つは、イベント ハンドラーの宣言に **async** というキーワードが含まれている点です。 **await** 演算子を使うメソッドのメソッド宣言には、このキーワードを含める必要があります。
 
@@ -71,7 +70,7 @@ ms.locfileid: "665716"
 | [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
 | [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)、**IAsyncOperation&lt;UInt32&gt;** を実装するカスタムの結果クラス | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
- 
+ 
 
 「[**UWP アプリの .NET**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx)」で定義されている非同期メソッドの戻り値の型は [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) または [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx) です。 **Task** を返すメソッドは、[**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) を返す UWP の非同期メソッドに似ています。 どちらの場合も、非同期メソッドの結果は **void** です。 戻り値の型 **Task&lt;TResult&gt;** は、タスク実行時の非同期メソッドの結果が `TResult` 型パラメーターと同じ型であるという点で、[**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) に似ています。 **UWP アプリ用 .NET** とタスクの使い方について詳しくは、「[Windows ランタイム アプリ用 .NET の概要](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)」をご覧ください。
 
@@ -82,7 +81,7 @@ ms.locfileid: "665716"
 
 非同期メソッドが他の非同期メソッドを呼び出している場合は、例外が発生した非同期メソッドが外側のメソッドに伝達されます。 つまり、最も外側のメソッドで **try/catch** ブロックを使うと、入れ子になっている非同期メソッドのエラーをキャッチできます。 これも、同期メソッドで例外をキャッチする方法と同様です。 ただし、**catch** ブロックで **await** を使うことはできません。
 
-**ヒント:** Microsoft Visual Studio 2005 の C# 以降では、**catch** ブロックで **await** を使うことができます。
+**ヒント:** 以降では、Microsoft Visual Studio2005 c# では、 **await**で使える**catch**ブロックします。
 
 ## <a name="summary-and-next-steps"></a>要約と次のステップ
 

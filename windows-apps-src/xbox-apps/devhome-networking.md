@@ -1,32 +1,30 @@
 ---
 author: v-angraf
 ms.assetid: 5aeb009c-1f2f-7c04-4477-cbe92c473174
-title: '[ネットワーク] ページ (Dev ホーム)'
-description: Xbox 1 つの開発ホーム アプリの [ネットワーク] ページについて説明します。
+title: '[ネットワーク] ページ (Dev Home)'
+description: Xbox one Dev Home アプリのネットワーク ページについて説明します。
 ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
-ms.openlocfilehash: ae160956f555f691e681abc4992ac21789c387b5
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 5968a2dad76343a1aa589caadf62ec3cd823aed0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1015461"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572581"
 ---
-# <a name="networking-page-dev-home"></a>[ネットワーク] ページ (Dev ホーム)
+# <a name="networking-page-dev-home"></a>[ネットワーク] ページ (Dev Home)
    
   
-**ネットワーク**の開発のホーム ページでは、トラブルシューティングのためのさまざまなネットワークの状態をシミュレートします。 また、パケット、ネットワーク トレースを開始することもできます。   
- ![ネットワーク開発のホーム ページ](images/devhome_networking.png)   
+Dev Home の [**ネットワーク**] ページでは、トラブルシューティングのためのさまざまなネットワーク条件をシミュレートします。 ネットワーク パケットのトレースを開始することもできます。   
+ ![Dev Home のネットワーク ページ](images/devhome_networking.png)   
   
-[**ネットワーク**] ページには、次のウィンドウが含まれています。   
+**ネットワーク**ページには、次のウィンドウが含まれています。   
  
-   *  [ネットワークのシミュレーション](#ID4EEB)  
+   *  [ネットワーク シミュレーション](#ID4EEB)  
    *  [XBTrace (netcap)](#ID4EOB)  
 
  
@@ -34,10 +32,10 @@ ms.locfileid: "1015461"
 
    
 
-## <a name="network-simulation"></a>ネットワークのシミュレーション  
+## <a name="network-simulation"></a>ネットワーク シミュレーション  
    
   
-**ネットワーク シミュレーション**ウィンドウでは、さまざまな帯域幅のプロファイルをテストするネットワーク シミュレーションを実行します。   
+**ネットワーク シミュレーション**ウィンドウは、さまざまな帯域幅のプロファイルに対してテストするネットワーク シミュレーションを実行します。   
   
 <a id="ID4EOB"></a>
 
@@ -46,13 +44,13 @@ ms.locfileid: "1015461"
 ## <a name="xbtrace-netcap"></a>XBTrace (netcap)  
    
   
-**XBTrace (netcap)** ウィンドウを開始またはパケット、ネットワーク トレースを停止します。   
+**XBTrace (netcap)** ウィンドウを開始またはネットワーク パケットのトレースを停止します。   
   
 <a id="ID4E2B"></a>
 
    
 
 ## <a name="see-also"></a>関連項目  
- [コンソール (Dev ホーム) に開発ホーム](dev-home.md)
+ [コンソール (Dev Home) における開発者ホーム](dev-home.md)
 
   

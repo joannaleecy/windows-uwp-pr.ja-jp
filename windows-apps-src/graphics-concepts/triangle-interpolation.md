@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 26705e9481a96d54eff70d04c004bf62fe049091
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 56ce3520248a0fca25230d7ee2a822d827d842a3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044871"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572211"
 ---
 # <a name="triangle-interpolation"></a>三角形の補間
 
@@ -30,7 +28,7 @@ ms.locfileid: "1044871"
 | フラット         | フラット シェーディング モードでは、フォグ係数だけが補間されます。 その他のすべて補間値については、三角形の最初の頂点の色が面全体に適用されます。 |
 | グーロー      | 3 つの頂点すべての間で線形補間が実行されます。                                                                                                               |
 
- 
+ 
 
 拡散色と反射色は、カラー モデルに応じて異なる方法で処理されます。 RGB カラー モデルでは、システムは赤、緑、青の色成分を補間に使用します。
 
@@ -41,9 +39,9 @@ ms.locfileid: "1044871"
 
 [座標系とジオメトリ](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

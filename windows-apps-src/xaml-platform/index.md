@@ -6,21 +6,19 @@ title: XAML プラットフォーム
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 381103fed2d2caca64bf918951fc4fd31623a3a3
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: fe9bad5afabca3ef0b9c782446e581aea61fe4dc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842912"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542522"
 ---
 # <a name="xaml-platform"></a>XAML プラットフォーム
 
 
-このセクションのトピックでは、プログラミング言語として C#、Microsoft Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX) を使い、UI 定義として XAML を使う場合に、作成するアプリ全般に当てはまるプログラミングの概念について説明します。 ここでは、プロパティとイベントの使い方や、ユニバーサル Windows プラットフォーム (UWP) アプリ プログラミングへのその適用法など、基本的なプログラミングの概念について説明します。 ユニバーサル Windows プラットフォーム (UWP) は、依存関係プロパティ システムを追加することで、C#、Visual Basic、C++/CX のプロパティとその値の概念を拡張します。 このセクションのトピックでは、UWP で使われる XAML 言語についても説明し、XAML を使って UWP アプリの UI を定義する方法に関する基本的なシナリオと高度なトピックも取り上げています。
+このセクションでには、c#、Microsoft Visual Basic、または VisualC ではコンポーネント拡張機能を使用している場合、作成するアプリには、通常適用可能なプログラミングの概念を説明するトピックが含まれています (、C++/cli CX) として、プログラミング言語と、UI の XAML定義します。 ここでは、プロパティとイベントの使い方や、ユニバーサル Windows プラットフォーム (UWP) アプリ プログラミングへのその適用法など、基本的なプログラミングの概念について説明します。 ユニバーサル Windows プラットフォーム (UWP) は、依存関係プロパティ システムを追加することで、C#、Visual Basic、C++/CX のプロパティとその値の概念を拡張します。 このセクションのトピックでは、UWP で使われる XAML 言語についても説明し、XAML を使って UWP アプリの UI を定義する方法に関する基本的なシナリオと高度なトピックも取り上げています。
 
 | トピック | 説明 |
 |-------|-------------|
