@@ -7,16 +7,14 @@ description: " PUT (/handles/{handle-id}/session)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 89572da87f4975aeeaa1ae7506a34f2b9cb4e72a
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 45ad0ef031924c0f101ba46b25192265c554ea17
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469627"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571581"
 ---
 # <a name="put-handleshandle-idsession"></a>PUT (/handles/{handle-id}/session)
 作成またはハンドルを逆参照によって、セッションを更新します。
@@ -26,7 +24,7 @@ ms.locfileid: "5469627"
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4ECB)
-  * [HTTP ステータス ・ コード](#ID4ENB)
+  * [HTTP ステータス コード](#ID4ENB)
   * [要求本文](#ID4EUB)
   * [応答本文](#ID4E6B)
 
@@ -51,7 +49,7 @@ ms.locfileid: "5469627"
 <a id="ID4ENB"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス ・ コード
+## <a name="http-status-codes"></a>HTTP ステータス コード
 サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4EUB"></a>
 

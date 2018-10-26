@@ -7,16 +7,14 @@ description: " VerifyStringResult (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f774f603d89e29f5233fb0866303bab4577ca3d2
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b60eb65c5b69addae0509d74095d63b7a367bd97
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469296"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567823"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
 [/System/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)に送信された各文字列に対応する結果コード。
@@ -29,7 +27,7 @@ VerifyStringResult オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
-| resultCode| 32 ビット符号なし整数| 必須。 HResult コードに対応する文字列を送信します。|
+| resultCode| 32 ビットの符号なし整数| 必須。 HResult コードに対応する文字列を送信します。|
 | offendingString| string| 必須。 拒否する文字列の原因となった文字列値。|
 
 <a id="ID4EXB"></a>

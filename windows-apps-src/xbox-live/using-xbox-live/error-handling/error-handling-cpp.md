@@ -6,16 +6,14 @@ ms.assetid: 10b47e68-8b1f-4023-96a4-404f3f6a9850
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, エラー処理
 ms.localizationpriority: medium
-ms.openlocfilehash: 9863ac224e04d48265a05fe56ed484db5dcc3cd8
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 4a9947180764d196579569536ec979fc31f3570d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469854"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568312"
 ---
 # <a name="c-api-error-handling"></a>C++ API のエラー処理
 

@@ -7,16 +7,14 @@ description: " PagingInfo (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 933169945c865fc6bc6f7b8b7ba7872fff98d1b8
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: c9479488961de40ef5019d1ebe067f29dffb16dd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469835"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569408"
 ---
 # <a name="paginginfo-json"></a>PagingInfo (JSON)
 データのページで返される結果のページング情報が含まれています。 
@@ -33,7 +31,7 @@ ms.locfileid: "5469835"
 <a id="ID4E4B"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON の構文の例
+## <a name="sample-json-syntax"></a>JSON 構文の例
  
 
 ```json

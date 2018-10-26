@@ -7,25 +7,23 @@ description: " GET (/trustedplatform/users/xuid({xuid})/scids/{scid})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: bec8c58fcccf5630d69bee28313e004f43d2d5ba
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: fb29661e95bdea54a0aabbf536d5065d6a1baea9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469265"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569602"
 ---
 # <a name="get-trustedplatformusersxuidxuidscidsscid"></a>GET (/trustedplatform/users/xuid({xuid})/scids/{scid})
-このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインは、 `titlestorage.xboxlive.com`。
+このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
   * [Authorization](#ID4ECB)
   * [必要な要求ヘッダー](#ID4ENB)
   * [要求本文](#ID4EWC)
-  * [HTTP ステータス ・ コード](#ID4EBD)
+  * [HTTP ステータス コード](#ID4EBD)
   * [応答本文](#ID4EUAAC)
  
 <a id="ID4EX"></a>
@@ -60,20 +58,20 @@ ms.locfileid: "5469265"
  
 ## <a name="request-body"></a>要求本文
  
-オブジェクトはこの要求の本文に送信されません。
+この要求の本文には、オブジェクトは送信されません。
   
 <a id="ID4EBD"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス ・ コード 
+## <a name="http-status-codes"></a>HTTP ステータス コード 
  
-サービスは、このリソースにこのメソッドを使用して行われた要求への応答では、このセクションのステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧については、[標準的な HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| OK | 要求が成功しました。| 
 | 201| Created | エンティティが作成されました。| 
-| 400| 要求が正しくありません。 | サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
+| 400| Bad Request | サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません | 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden | ユーザーまたはサービスの要求は許可されていません。| 
 | 404| Not Found します。 | 指定されたリソースは見つかりませんでした。| 

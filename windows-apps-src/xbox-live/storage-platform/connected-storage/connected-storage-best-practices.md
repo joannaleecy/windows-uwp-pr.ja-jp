@@ -5,16 +5,14 @@ description: 接続ストレージによってパフォーマンスとエクス�
 ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 936b0333e826d3f9047a6905e7374e1ce9ec47ca
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f8c72ca14ed4bda118994a765cb0624a0e3b190a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471220"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567540"
 ---
 # <a name="connected-storage-best-practices"></a>接続ストレージのベスト プラクティス
 

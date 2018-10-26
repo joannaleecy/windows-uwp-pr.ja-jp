@@ -7,16 +7,14 @@ description: " /media/{marketplaceId}/fields"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4134d808d30f344ec05e52502a5351c9f164cd38
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 5256555ccc81e17b8d0a2cfdfeb26c207e93561f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468305"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562101"
 ---
 # <a name="mediamarketplaceidfields"></a>/media/{marketplaceId}/fields
 フィールド トークンにアクセスします。 これらの Uri のドメインが`eds.xboxlive.com`します。

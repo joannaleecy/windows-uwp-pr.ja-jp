@@ -7,22 +7,20 @@ description: " GET (/scids/{scid}/leaderboards/{leaderboardname}?include=valueme
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 63f5d2967219a909a82e0e638fb9c852670e9749
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: ff98fc1ec6188ae1b31bff36335c914b6f257e28
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468999"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560863"
 ---
 # <a name="get-scidsscidleaderboardsleaderboardnameincludevaluemetadata"></a>GET (/scids/{scid}/leaderboards/{leaderboardname}?include=valuemetadata)
  
 ランキングの値に関連付けられたメタデータと共に定義済みグローバル ランキングを取得します。
  
-これらの Uri のドメインは、 `leaderboards.xboxlive.com`。
+これらの Uri のドメインが`leaderboards.xboxlive.com`します。
  
   * [注釈](#ID4EY)
   * [URI パラメーター](#ID4EHB)
@@ -30,8 +28,8 @@ ms.locfileid: "5468999"
   * [Authorization](#ID4EVD)
   * [リソースのプライバシーの設定の効果](#ID4EQE)
   * [必要な要求ヘッダー](#ID4EZE)
-  * [省略可能な要求ヘッダー](#ID4EOG)
-  * [HTTP ステータス ・ コード](#ID4EOH)
+  * [オプションの要求ヘッダー](#ID4EOG)
+  * [HTTP ステータス コード](#ID4EOH)
   * [応答ヘッダー](#ID4EFDAC)
   * [応答本文](#ID4ECFAC)
  
@@ -46,7 +44,7 @@ ms.locfileid: "5468999"
  
 ランキング Api すべて読み取り専用あり、したがってのみ GET 動詞をサポートします。 ランクのページと並べ替えられた「ページ」は、個々 のユーザーの統計データ プラットフォームによって書き込まれたから派生されたインデックス付きのプレイヤーの統計が反映されます。 完全なランキングのインデックスが大きくなることができ、呼び出し元は完全にいずれかを確認することはありませんが求められます、したがってこの URI は、呼び出し元に表示するランキングを表示する必要があるの種類について具体的に許可するいくつかのクエリ文字列引数をサポートしています。
  
-GET 操作は、1 回または複数回実行された場合は、同じ結果を生成これは、すべてのリソースを変更しません。
+これと同じ結果に 1 回または複数回実行している場合、GET 操作はすべてのリソースを変更しません。
   
 <a id="ID4EHB"></a>
 
@@ -66,8 +64,8 @@ GET 操作は、1 回または複数回実行された場合は、同じ結果�
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
 | 含める = valuemetadata| string| 応答には、ランキング値に関連付けられた値メタデータが含まれていることを示します。| 
-| maxItems| 32 ビット符号なし整数| ランキング結果のページで、返されるレコードの最大数。 指定しない場合、既定の数は (10) 返されます。 MaxItems の最大値は引き続きが大規模なデータ セットを回避する、ため、この値をターゲットにする必要がありますおそらく、最大チューナー呼び出しごと UI を処理します。| 
-| skipToRank| 32 ビット符号なし整数| ページの指定したランキング順位以降の結果を返します。 結果の残りの部分は、並べ替え順序をランク順になります。 このクエリ文字列は、次の「ページ」結果を取得する後続のクエリに戻すことができる継続トークンを返すことができます。| 
+| maxItems| 32 ビットの符号なし整数| ランキング結果のページで、返されるレコードの最大数。 指定しない場合、既定の数は (10) 返されます。 MaxItems の最大値は引き続きが大規模なデータ セットを回避する、ため、この値をターゲットにする必要がありますおそらく、最大チューナー呼び出しごと UI を処理します。| 
+| skipToRank| 32 ビットの符号なし整数| ページの指定したランキング順位以降の結果を返します。 結果の残りの部分は、並べ替え順序をランク順になります。 このクエリ文字列は、次の「ページ」結果を取得する後続のクエリに戻すことができる継続トークンを返すことができます。| 
 | skipToUser| string| ページのユーザーのランクまたはスコアに関係なく、指定されたゲーマーの xuid の周囲のランキング結果が返されます。 ページは、定義済みのビューのページの最後の位置や統計ランキング ビューの中央で指定したユーザーと位ランクで並べ替えられます。 この種類のクエリに対して提供される continuationToken はありません。| 
 | continuationToken| string| 前の呼び出しでは、continuationToken が返される、呼び出し元渡すことが戻る現状有姿トークンの結果の次のページを取得するクエリ文字列に。| 
   
@@ -111,13 +109,13 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Authorization| [String]。 HTTP の認証の資格情報を認証します。 値の例: <b>XBL3.0 x =&lt;userhash >;&lt;トークン ></b>| 
 | X Xbl コントラクト バージョン| [String]。 使用する API のバージョンを示します。 この値は、応答に値のメタデータを含めるために、「3」に設定する必要があります。| 
-| X RequestedServiceVersion| [String]。 Xbox LIVE サービスは、この要求を送信するのには、名または番号を作成します。 要求は、ヘッダー、認証トークンなどの要求の妥当性を確認した後、そのサービスにのみルーティングされます。既定値: 1。| 
+| X RequestedServiceVersion| [String]。 この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。| 
 | Accept| [String]。 コンテンツの種類の受け入れられるします。 値の例:<b>アプリケーション/json</b>| 
   
 <a id="ID4EOG"></a>
 
  
-## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
+## <a name="optional-request-headers"></a>オプションの要求ヘッダー
  
 | ヘッダー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -126,15 +124,15 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 <a id="ID4EOH"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス ・ コード
+## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスは、このリソースにこのメソッドを使用して行われた要求への応答では、このセクションのステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧については、[標準的な HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| OK| セッションが正常に取得されました。| 
 | 304| Not Modified| リソースされていない以降に変更するように要求します。| 
-| 400| 要求が正しくありません。| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
+| 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden| ユーザーまたはサービスの要求は許可されていません。| 
 | 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 

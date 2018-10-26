@@ -7,19 +7,17 @@ description: " /trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFil
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b0c776c3aae1978edb501d41fffccafcc76f799e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: ef8427ec018531a53bd055bb912f5734fea6c960
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483518"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570439"
 ---
 # <a name="trustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a>/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}
-ダウンロード、アップロード、またはファイルを削除します。 これらの Uri のドメインは、 `titlestorage.xboxlive.com`。
+ダウンロード、アップロード、またはファイルを削除します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -30,15 +28,15 @@ ms.locfileid: "5483518"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビット符号なし整数| Xbox ユーザー ID を (XUID) プレーヤーの要求を行っています。| 
-| scid| guid| 検索するサービスの構成の ID です。| 
-| pathAndFileName| string| アクセスするアイテムのパスとファイル名です。 パスの部分と最後のスラッシュを含む) に有効な文字は、大文字の英字 (A-Z)、英小文字 (a から z)、数字 (0-9)、アンダー スコア (_) が含まれます、スラッシュ (/)。パスの部分を空にすることがあります。ファイル名の部分 (最後のスラッシュ以降後のすべて) に含まれている大文字の英字 (A-Z)、英小文字 (a から z)、数字 (0-9)、アンダー スコア文字の有効な (_)、ピリオド (.)、およびハイフン (-) です。 ファイル名可能性がありますいないを空にする、期間の終了または 2 つの連続するピリオドが含まれています。| 
-| type| 文字列| データの形式です。 使用可能な値は、バイナリまたは json です。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。| 
+| scid| guid| ルックアップ サービス構成の ID です。| 
+| pathAndFileName| string| アクセスできる項目のパスとファイルの名前です。 パス部分 (となどを含む最終的なスラッシュ) の有効な文字が大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名を空にする可能性がありますはない期間の終了または 2 つの連続するピリオドが含まれてはします。| 
+| type| 文字列| データの形式です。 可能な値は、バイナリまたは json です。| 
   
 <a id="ID4EOC"></a>
 
  
-## <a name="valid-methods"></a>有効な方法
+## <a name="valid-methods"></a>有効なメソッド
 
 [DELETE](uri-trustedplatformusersxuidscidssciddatapathandfilenametype-delete.md)
 
@@ -50,7 +48,7 @@ ms.locfileid: "5483518"
 
 [PUT](uri-trustedplatformusersxuidscidssciddatapathandfilenametype-put.md)
 
-&nbsp;&nbsp;ファイルをアップロードします。 データは、完全なデータとメタデータが送信される 1 つまたは一連の小さなブロックのデータとメタデータが送信される複数のブロックのアップロードとアップロードでアップロードできます。 4 メガバイト未満のファイルだけは、1 つのメッセージとして送信できます。 型の json のデータには、複数のブロックのアップロードはサポートされていません。 
+&nbsp;&nbsp;ファイルをアップロードします。 データやメタデータが送信される 1 つのメッセージで、または一連の小さいブロックのデータやメタデータが送信される複数のブロック アップロードとして完全なアップロードでは、データをアップロードできます。 1 つのメッセージとしては 4 つのメガバイトよりも小さいファイルのみを送信できます。 Json の種類のデータの複数のブロックのアップロードはサポートされていません。 
  
 <a id="ID4E5C"></a>
 

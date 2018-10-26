@@ -7,16 +7,14 @@ description: " Progression (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a0e534d92e4bcb77565f59de5252afcbbe3eef5
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 52985b27fd25399113b8378a1fa68d24a06a0191
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469883"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563068"
 ---
 # <a name="progression-json"></a>Progression (JSON)
 実績をロック解除に向けたユーザーの進行します。 
@@ -35,7 +33,7 @@ ms.locfileid: "5469883"
 <a id="ID4ETB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON の構文の例
+## <a name="sample-json-syntax"></a>JSON 構文の例
  
 
 ```json

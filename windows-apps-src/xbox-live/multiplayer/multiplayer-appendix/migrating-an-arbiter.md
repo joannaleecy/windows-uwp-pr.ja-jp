@@ -6,16 +6,14 @@ ms.assetid: 9fb5d2c0-d548-4a22-b64e-6b215f78d22e
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アービター, マルチプレイヤー 2015
 ms.localizationpriority: medium
-ms.openlocfilehash: 073f189d8571a93eb0d5b6ac4ec536e29e6a80e3
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f3d4d203b3203b7a1b58bb42062370b45591c135
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472918"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565710"
 ---
 # <a name="migrating-an-arbiter"></a>アービターの移行
 

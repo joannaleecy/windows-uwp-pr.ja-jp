@@ -6,16 +6,14 @@ ms.assetid: 101d059a-e03f-472c-8300-800aa5730ee2
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, social manager, 例
 ms.localizationpriority: medium
-ms.openlocfilehash: e20550e812cbd5d67c57381cde9c7910b20000e5
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: e3d65b55a351073ded99a2ec8d2d1e03f4ab3c34
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483172"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568315"
 ---
 # <a name="programming-social-services"></a>ソーシャル サービスのプログラミング
 

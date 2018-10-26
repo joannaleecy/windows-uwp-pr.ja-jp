@@ -7,19 +7,17 @@ description: " /system/strings/validate"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 136a5563690bba4f8cbea80fb066a887a6a11fa7
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: be40226c13badd5d1052b4ead0f08793d761f820
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469611"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564838"
 ---
 # <a name="systemstringsvalidate"></a>/system/strings/validate
-検証のための文字列の配列にアクセスします。 これらの Uri のドメインは、 `client-strings.xboxlive.com`。
+検証のための文字列の配列にアクセスします。 これらの Uri のドメインが`client-strings.xboxlive.com`します。
   
 <a id="ID4EV"></a>
 
