@@ -6,21 +6,19 @@ description: データ仮想化によって ListView と GridView のパフォ�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: eab90ebf2bcb1912292af6503f833e3bfa334d8b
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 92b81c79eb1be9e21aa7c306ef31b0b3bb62e7d1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894706"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547294"
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>ListView と GridView のデータ仮想化
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-**注**  詳しくは、//build/ セッション「[Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView (ユーザーが GridView と ListView で大量のデータを操作するときのパフォーマンスを大幅に向上させる)](https://channel9.msdn.com/Events/Build/2013/3-158)」をご覧ください。
+**注:** の詳細は、//build/ セッション[大幅に向上させるパフォーマンス大規模な大量のデータを GridView と ListView でユーザーが操作するとき](https://channel9.msdn.com/Events/Build/2013/3-158)を参照してください。
 
 データ仮想化によって [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) のパフォーマンスと起動時間を向上させます。 UI の仮想化、要素の削減、項目の段階的な更新については、「[ListView と GridView の UI の最適化](optimize-gridview-and-listview.md)」をご覧ください。
 
@@ -31,7 +29,7 @@ ms.locfileid: "894706"
 -   データ セットのソース (ローカル ディスク、ネットワーク、またはクラウド)
 -   アプリの総合的なメモリ消費量
 
-**注**  ListView と GridView では、ユーザーがパンやスクロールの操作をすばやく行った場合に一時的なプレースホルダーの視覚効果を表示する機能が既定で有効になることに注意してください。 これらのプレース ホルダーの視覚効果は、データが読み込まれると項目テンプレートに置き換えられます。 この機能は、[**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) を false に設定することによって無効にできますが、その場合は、x:Phase 属性を使って項目テンプレートの要素を段階的にレンダリングすることをお勧めします。 詳しくは、「[GridView と ListView の項目を段階的に更新する](optimize-gridview-and-listview.md#update-items-incrementally)」をご覧ください。
+**注:** ListView と GridView では、ユーザーがパン/スクロールすばやく中に一時的なプレース ホルダーの視覚効果を表示、既定では、機能が有効になっていることに注意してください。 これらのプレース ホルダーの視覚効果は、データが読み込まれると項目テンプレートに置き換えられます。 この機能は、[**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) を false に設定することによって無効にできますが、その場合は、x:Phase 属性を使って項目テンプレートの要素を段階的にレンダリングすることをお勧めします。 詳しくは、「[GridView と ListView の項目を段階的に更新する](optimize-gridview-and-listview.md#update-items-incrementally)」をご覧ください。
 
 以降では、段階的なデータ仮想化とランダム アクセスのデータ仮想化の手法について詳しく説明します。
 
@@ -45,7 +43,7 @@ ms.locfileid: "894706"
 
 このようなデータ ソースは、継続的に拡張できるメモリ内リストです。 項目コントロールは、標準的な [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) インデクサーとカウント プロパティを使って項目を要求します。 カウントは、データセットの実際のサイズではなく、ローカルでの項目の数を表す必要があります。
 
-項目コントロールは、既存のデータの終わりに近づいたときに [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems) を呼び出します。 **true** が返された場合は、アドバタイズされた読み込む項目数を渡す [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) を呼び出します。 データの読み込み元 (ローカル ディスク、ネットワーク、またはクラウド) に応じて、アドバタイズされた項目数とは異なる数の項目を読み込むことができます。 たとえば、サービスは 50 項目のバッチをサポートしているが、項目コントロールは 10 項目のみを要求している場合、50 項目を読み込むことができます。 バックエンドからデータを読み込んでリストに追加した後、[**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 経由で変更通知を発行して、項目コントロールが新しい項目を認識できるようにします。 さらに、実際に読み込んだ項目の数を返します。 アドバタイズされた数よりも少ない項目を読み込むか、項目コントロールが途中でさらにパン/スクロールされた場合は、データ ソースをもう一度呼び出して、さらに項目を読み込むサイクルが続けられます。 詳しくは、Windows 8.1 の [XAML データ バインディングのサンプル](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5)をダウンロードしてご覧ください。また、Windows 10 アプリでソース コードを再利用することもできます。
+項目コントロールは、既存のデータの終わりに近づいたときに [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems) を呼び出します。 **true** が返された場合は、アドバタイズされた読み込む項目数を渡す [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) を呼び出します。 データの読み込み元 (ローカル ディスク、ネットワーク、またはクラウド) に応じて、アドバタイズされた項目数とは異なる数の項目を読み込むことができます。 たとえば、サービスは 50 項目のバッチをサポートしているが、項目コントロールは 10 項目のみを要求している場合、50 項目を読み込むことができます。 バックエンドからデータを読み込んでリストに追加した後、[**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 経由で変更通知を発行して、項目コントロールが新しい項目を認識できるようにします。 さらに、実際に読み込んだ項目の数を返します。 アドバタイズされた数よりも少ない項目を読み込むか、項目コントロールが途中でさらにパン/スクロールされた場合は、データ ソースをもう一度呼び出して、さらに項目を読み込むサイクルが続けられます。 詳細については、Windows8.1 の[XAML データ バインディングのサンプル](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5)をダウンロードして、windows 10 アプリでソース コードを再利用しています。
 
 ## <a name="random-access-data-virtualization"></a>ランダム アクセスのデータ仮想化
 

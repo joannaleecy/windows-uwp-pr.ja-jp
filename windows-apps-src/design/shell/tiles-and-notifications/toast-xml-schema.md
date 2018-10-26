@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b83077f57f484cf26cd2c6d3c0f28b6c8dce3d8
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: bcfc56264ab3063995fd9f2b06bd93e9406cd37e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395791"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543257"
 ---
 # <a name="toast-content-xml-schema"></a>トースト通知のコンテンツの XML スキーマ
 
@@ -31,19 +29,19 @@ ms.locfileid: "1395791"
 
 ```
 <toast launch? duration? activationType? scenario? >
-  <visual lang? baseUri? addImageQuery? >
-    <binding template? lang? baseUri? addImageQuery? >
-      <text lang? hint-maxLines? >content</text>
-      <image src placement? alt? addImageQuery? hint-crop? />
-      <group>
-        <subgroup hint-weight? hint-textStacking? >
-          <text />
-          <image />
-        </subgroup>
-      </group>
-    </binding>
-  </visual>
-  <audio src? loop? silent? />
+  <visual lang? baseUri? addImageQuery? >
+    <binding template? lang? baseUri? addImageQuery? >
+      <text lang? hint-maxLines? >content</text>
+      <image src placement? alt? addImageQuery? hint-crop? />
+      <group>
+        <subgroup hint-weight? hint-textStacking? >
+          <text />
+          <image />
+        </subgroup>
+      </group>
+    </binding>
+  </visual>
+  <audio src? loop? silent? />
 </toast>
 ```
 
@@ -169,15 +167,15 @@ silent?
 
 ```
 <toast>
-  <visual>
-  </visual>
-  <audio />
-  <actions>
-    <input id type title? placeHolderContent? defaultInput? >
-      <selection id content />
-    </input>
-    <action content arguments activationType? imageUri? hint-inputId />
-  </actions>
+  <visual>
+  </visual>
+  <audio />
+  <actions>
+    <input id type title? placeHolderContent? defaultInput? >
+      <selection id content />
+    </input>
+    <action content arguments activationType? imageUri? hint-inputId />
+  </actions>
 </toast>
 ```
 
@@ -257,15 +255,15 @@ hint-inputId
 ## <a name="attributes-for-system-handled-actions"></a>システムによって処理される操作の属性
 
 
-アプリで再通知や通知の再スケジュールをバックグラウンド タスクとして処理しない場合は、システムで、再通知や通知を無視するための操作を処理できます。 システムによって処理される操作は、組み合わせることができます (または個別に指定することもできます)。ただし、無視操作を使わないで再通知の操作を実装することはお勧めしません。
+アプリで再通知や通知の再スケジュールをバックグラウンド タスクとして処理しない場合は、システムで、再通知や通知を閉じるための操作を処理できます。 システムによって処理される操作は、組み合わせることができます (または個別に指定することもできます)。ただし、閉じる操作を使わないで再通知の操作を実装することはお勧めしません。
 
 システム コマンドの組み合わせ: SnoozeAndDismiss
 
 ```
 <toast>
-  <visual>
-  </visual>
-  <actions hint-systemCommands="SnoozeAndDismiss" />
+  <visual>
+  </visual>
+  <actions hint-systemCommands="SnoozeAndDismiss" />
 </toast>
 ```
 
@@ -273,23 +271,23 @@ hint-inputId
 
 ```
 <toast>
-  <visual>
-  </visual>
-  <actions>
-  <input id="snoozeTime" type="selection" defaultInput="10">
-    <selection id="5" content="5 minutes" />
-    <selection id="10" content="10 minutes" />
-    <selection id="20" content="20 minutes" />
-    <selection id="30" content="30 minutes" />
-    <selection id="60" content="1 hour" />
-  </input>
-  <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content=""/>
-  <action activationType="system" arguments="dismiss" content=""/>
-  </actions>
+  <visual>
+  </visual>
+  <actions>
+  <input id="snoozeTime" type="selection" defaultInput="10">
+    <selection id="5" content="5 minutes" />
+    <selection id="10" content="10 minutes" />
+    <selection id="20" content="20 minutes" />
+    <selection id="30" content="30 minutes" />
+    <selection id="60" content="1 hour" />
+  </input>
+  <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content=""/>
+  <action activationType="system" arguments="dismiss" content=""/>
+  </actions>
 </toast>
 ```
 
-再通知操作や無視操作を個別に指定するには、次の手順に従います。
+再通知や閉じる操作を個別に指定するには、次の手順に従います。
 
 -   activationType = "system" を指定します。
 -   arguments = "snooze" または arguments = "dismiss" を指定します。

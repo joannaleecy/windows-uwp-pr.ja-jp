@@ -7,17 +7,15 @@ template: detail.hbs
 ms.author: quradic
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 56afd553-c520-4a28-b63d-2e1b3c1d3606
 ms.localizationpriority: medium
-ms.openlocfilehash: c938eea2e7a161eedc94bbcd75fa567fb2a32025
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 88e6fb03ccefca0e6067db58b9343ee76fa72ba3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1392511"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548333"
 ---
 # <a name="external-help-pages"></a>外部ヘルプ ページ
 

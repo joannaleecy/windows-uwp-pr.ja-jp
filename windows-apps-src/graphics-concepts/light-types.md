@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3dd8397f92137bbd934b2f5835de703f05c2000
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9898a050131813b7b2431f8fc11397eee7c7942c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044681"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548294"
 ---
 # <a name="light-types"></a>光源の種類
 
@@ -85,9 +83,9 @@ ms.locfileid: "1044681"
 
 [照明および素材](lights-and-materials.md)
 
- 
+ 
 
- 
+ 
 
 
 

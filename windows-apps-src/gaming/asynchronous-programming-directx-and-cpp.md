@@ -6,19 +6,18 @@ ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、ゲーム、非同期プログラミング、DirectX
-ms.openlocfilehash: fe3798e475654d4d0ae7773ac26889906d40b3df
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 9f395136ff7f331f58b9c8e0ac1ee9efea296c02
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243226"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547007"
 ---
 # <a name="asynchronous-programming-directx-and-c"></a>非同期プログラミング (DirectX と C++)
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。
 
@@ -39,9 +38,9 @@ DirectX の学習経験や使用経験にかかわらず、グラフィックス
 
 こうしたコンポーネントについては、複数の同時実行スレッド上で処理することができます。 ファイル I/O (特にアセットの読み込み) を非同期で行うと、数メガバイトや数百メガバイトのアセットを読み込んだりストリーミングしたりしている間も、ゲームやアプリのインターフェイスを操作できるようになるため、マルチ スレッド化には非常に大きな意義があります。 これらのスレッドは、[並列パターン ライブラリ](https://msdn.microsoft.com/library/dd492418.aspx) と **task** パターン (PPLTasks.h に定義されている **concurrency** 名前空間) を使って作成、管理するのが最も簡単です。 [並列パターン ライブラリ](https://msdn.microsoft.com/library/dd492418.aspx) は、マルチ コアとハイパースレッディングに対応した CPU の利点をダイレクトに引き出し、体感的な読み込み時間から、CPU 計算やネットワーク処理の集中に伴う滞りや遅延にいたるまで、さまざまな側面を向上させます。
 
-> **注**   ユニバーサル Windows プラットフォーム (UWP) アプリでは、ユーザー インターフェイスは完全にシングルスレッド アパートメント (STA) で実行されます。 DirectX ゲーム用の UI を [XAML の相互運用機能](directx-and-xaml-interop.md) を使って作成する場合、そのコントロールには、STA を使ってのみアクセスできます。
+> **注:** 完全にシングル スレッド アパートメント (STA) で、ユニバーサル Windows プラットフォーム (UWP) アプリ、ユーザー インターフェイスが実行されます。 DirectX ゲーム用の UI を [XAML の相互運用機能](directx-and-xaml-interop.md) を使って作成する場合、そのコントロールには、STA を使ってのみアクセスできます。
 
- 
+ 
 
 ## <a name="multithreading-with-direct3d-devices"></a>Direct3D デバイスでのマルチスレッド化
 
@@ -64,9 +63,9 @@ DirectX の学習経験や使用経験にかかわらず、グラフィックス
 
 * [Direct3D 11 でのマルチスレッドの概要](https://msdn.microsoft.com/library/windows/desktop/ff476891)
 
- 
+ 
 
- 
+ 
 
 
 

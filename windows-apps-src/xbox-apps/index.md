@@ -5,17 +5,15 @@ description: Xbox One でユニバーサル Windows プラットフォーム (UW
 ms.author: mstahl
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: 8baf47929183849ffd282703ec08b414b1e2bbdf
-ms.sourcegitcommit: 43ce38a4789e0a5194069cc3307cbbc20aa0367e
-ms.translationtype: HT
+ms.openlocfilehash: 9b35733978ffbaca00caae2128b799d6cc923542
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "1934515"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549816"
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One の UWP
 

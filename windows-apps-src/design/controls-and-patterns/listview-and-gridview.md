@@ -4,11 +4,9 @@ Description: Use ListView and GridView controls to display and manipulate sets o
 title: リスト ビューとグリッド ビュー
 label: List view and grid view
 template: detail.hbs
-ms.author: mukin
-ms.date: 05/19/2017
+ms.author: jimwalk
+ms.date: 05/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, UWP
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
 pm-contact: predavid
@@ -16,12 +14,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 126fc595a8c010c32849de627b1c341c81a2ba77
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 1ee00a9af23be945ad27ab4b39eec127ec397894
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494109"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546707"
 ---
 # <a name="list-view-and-grid-view"></a>リスト ビューとグリッド ビュー
 
@@ -519,7 +517,7 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 
 ### <a name="drag-and-drop"></a>ドラッグ アンド ドロップ
 
-ListView コントロールと GridView コントロールは、項目内、項目間、および他の ListView コントロールと GridView コントロール間での項目のドラッグ アンド ドロップをサポートします。 ドラッグ アンド ドロップのパターンの実装について詳しくは、「[ドラッグ アンド ドロップ](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)」をご覧ください。 
+ListView コントロールと GridView コントロールは、項目内、項目間、および他の ListView コントロールと GridView コントロール間での項目のドラッグ アンド ドロップをサポートします。 ドラッグ アンド ドロップのパターンの実装について詳しくは、「[ドラッグ アンド ドロップ](https://msdn.microsoft.com/windows/uwp/design/input/drag-and-drop)」をご覧ください。 
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 

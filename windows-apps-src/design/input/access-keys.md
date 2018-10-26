@@ -8,19 +8,17 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 06/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e842d6c5b8e62a9c043c97849fdf17f524ccfc7
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 844e5d8e9442192d75f2aac07a7a2f82dd0196f3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521665"
+ms.locfileid: "5548096"
 ---
 # <a name="access-keys"></a>アクセス キー
 

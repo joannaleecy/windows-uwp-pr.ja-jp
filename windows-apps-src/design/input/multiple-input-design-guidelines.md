@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eff1f2f0443664b18e12be5025f838816ef760c
-ms.sourcegitcommit: 9cfe2df8d200c3172b369adc36a59f8a789407eb
-ms.translationtype: HT
+ms.openlocfilehash: 670caf5c519fcf1b7ff57b47781541d98358aa50
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675747"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545587"
 ---
 # <a name="multiple-inputs"></a>複数の入力
 

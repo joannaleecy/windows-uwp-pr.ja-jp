@@ -9,19 +9,17 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9466ff40194c6aa4ddb1b71e23166300207a7a9d
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: c9e283c8f5c116e300b98d7e4078d91e4dac207e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493829"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543340"
 ---
 # <a name="password-box"></a>パスワード ボックス
 
@@ -35,7 +33,7 @@ ms.locfileid: "1493829"
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
-**PasswordBox** コントロールを使用して、パスワードや、社会保障番号などの機密データを収集できます。
+**PasswordBox** コントロールを使用して、社会保障番号などその他の機密データも収集できます。
 
 適切なテキスト コントロールの選択について詳しくは、「[テキスト コントロール](text-controls.md)」をご覧ください。
 

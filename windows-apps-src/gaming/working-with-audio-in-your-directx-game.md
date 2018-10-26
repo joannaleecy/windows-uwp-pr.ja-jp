@@ -6,16 +6,14 @@ ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, オーディオ, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 2770e48720f3024908835aa26579ea1b4b3d3903
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a0b0ae219ea7fd014b39eb8eb7a09049f7c632a2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654491"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551045"
 ---
 # <a name="audio-for-games"></a>ゲームのオーディオ
 
@@ -109,7 +107,7 @@ XAudio2 は、DirectX 用のオーディオ ミキシング ライブラリで�
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xaudio2-how-to-resources"></a>XAudio2 の操作方法に関するリソース
 
@@ -196,7 +194,7 @@ XAudio2 は、DirectX 用のオーディオ ミキシング ライブラリで�
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="media-foundation-resources"></a>メディア ファンデーションに関するリソース
 
@@ -257,7 +255,7 @@ XAudio2 は、DirectX 用のオーディオ ミキシング ライブラリで�
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="windows-runtime-xaml-media-types"></a>Windows ランタイム XAML メディア タイプ
 
@@ -298,7 +296,7 @@ XAudio2 は、DirectX 用のオーディオ ミキシング ライブラリで�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="reference"></a>辞書/リファレンス
 
@@ -307,16 +305,16 @@ XAudio2 は、DirectX 用のオーディオ ミキシング ライブラリで�
 -   [XAudio2 プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ee415737)
 -   [Microsoft メディア ファンデーションの概要](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 
- 
+ 
 
 ## <a name="related-topics"></a>関連トピック
 
 
 -   [XAudio2 プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ee415737)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ee3948fc4c7ab83657e8bca127306bb037d491a8
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 7c0fcd158dac77b3b3322167b82131e51f62390f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494139"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544248"
 ---
 # <a name="images-and-image-brushes"></a>画像とイメージ ブラシ
 
@@ -26,7 +24,7 @@ ms.locfileid: "1494139"
 > **重要な API**:[Image クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)、[Source プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)、[ImageBrush クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)、[ImageSource プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
 
 ## <a name="are-these-the-right-elements"></a>これらの要素は適切か。
-**Image** 要素を使用して、アプリにスタンドアロンの画像を表示します。
+**画像** 要素を使用して、アプリにスタンドアロンの画像を表示します。
 
 **ImageBrush** を使用して、画像を別のオブジェクトに適用します。 ImageBrush の使用法には、テキストの装飾性を高める効果や、コントロールまたはレイアウト コンテナーの背景などがあります。
 
@@ -60,7 +58,7 @@ ms.locfileid: "1494139"
 
 ![画像要素の例](images/Image_Licorice.jpg)
 
-この例の [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) プロパティは、表示する画像がある場所を指定します。 ソースを設定するには、絶対 URL (http://contoso.com/myPicture.jpg など) を指定するか、アプリのパッケージ化構造を基準とする相対 URL を指定します。 この例では、プロジェクトのルート フォルダーに "licorice.jpg" 画像ファイルを入れ、この画像ファイルをコンテンツとして含めるプロジェクト設定を宣言しています。
+この例の [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) プロパティは、表示する画像がある場所を指定します。 絶対 URL を指定することで、ソースを設定することができます (たとえば、http://contoso.com/myPicture.jpg)や、アプリのパッケージ化構造に対して相対的な URL を指定します。 この例では、プロジェクトのルート フォルダーに "licorice.jpg" 画像ファイルを入れ、この画像ファイルをコンテンツとして含めるプロジェクト設定を宣言しています。
 
 ### <a name="imagebrush"></a>ImageBrush
 

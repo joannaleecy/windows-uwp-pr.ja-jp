@@ -6,23 +6,21 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f90821fdadea0939dbad316ad9be4424b31a926
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
-ms.translationtype: HT
+ms.openlocfilehash: 69d316ad48645d8995e602b270a5615322c8b43f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "1573049"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549179"
 ---
 # <a name="binding-markup-extension"></a>{Binding} マークアップ拡張
 
 
-**注:** Windows 10 では、パフォーマンスと開発者の生産性向上のために最適化された新しいバインド メカニズムが利用できます。 「[{x:Bind} マークアップ拡張](x-bind-markup-extension.md)」をご覧ください。
+**注:** パフォーマンスと開発者の生産性向上のために最適化されている windows 10 の新しいバインド メカニズムで利用できます。 「[{x:Bind} マークアップ拡張](x-bind-markup-extension.md)」をご覧ください。
 
-**注:** **{Binding}** によりアプリでデータ バインディングを使う方法に関する一般的な情報 (および **{x:Bind}** と **{Binding}** の全体的な比較) については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
+**注:** データの使用についての一般的な情報は、バインディングの**バインディング**では {} (、全体的な比較 **{X:bind}** と **{Binding}**)、アプリは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
 **{Binding}** マークアップ拡張は、コントロールのプロパティをコードなどのデータ ソースの値にデータ バインドするために使われます。 **{Binding}** マークアップ拡張は、XAML の読み込み時に [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) クラスのインスタンスに変換されます。 このバインド オブジェクトは、データ ソースのプロパティから値を取得し、その値をコントロールのプロパティにプッシュします。 必要な場合、バインディング オブジェクトは、データ ソース プロパティの値の変化を監視し、その変化に基づいて自分自身を更新するように構成できます。 また、そのコントロールの値の変化をソース プロパティにプッシュするように構成することもできます。 データ バインディングのターゲットとなるプロパティは、依存関係プロパティである必要があります。 詳しくは、「[依存関係プロパティの概要](dependency-properties-overview.md)」をご覧ください。
 
@@ -83,7 +81,7 @@ ms.locfileid: "1573049"
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | ソース値が解決されるが、明示的に **null** である場合に表示する値を設定します。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | バインド ソースの更新のタイミングを指定します。 指定されていない場合は、既定値は **Default** です。 |
 
-**注:** マークアップを **{x:Bind}** から **{Binding}** に変換する場合は、**Mode** プロパティの既定値の違いに注意してください。
+**注:** の相違点が既定の**モード**のプロパティの値から **{X:bind}** **{Binding}** マークアップを変換する場合は注意してください。
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)、**ConverterLanguage** はいずれも、バインド ソースの値または型を、バインディング ターゲットのプロパティと互換性のある型または値に変換するシナリオに関係があります。 例や詳しい情報については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」の「データの変換」をご覧ください。
 
@@ -92,7 +90,7 @@ ms.locfileid: "1573049"
 
 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)、[**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)、[**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) では、バインド ソースを指定します。そのため、これらは相互に排他的です。
 
-**ヒント:** [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) や [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) のように、値に 1 つの中かっこを指定する必要がある場合は、`\{` のように円記号 (バックスラッシュ) を中かっこの前に付けます。 別の方法として、エスケープする必要がある中かっこを含む文字列全体を `ConverterParameter='{Mix}'` のように別の種類の引用符で囲みます。
+**ヒント:** の値を 1 つの中かっこを指定する必要がある場合など、[**パス**](https://msdn.microsoft.com/library/windows/apps/br209830)または[**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)、前に付けますバック スラッシュ:`\{`します。 別の方法として、エスケープする必要がある中かっこを含む文字列全体を `ConverterParameter='{Mix}'` のように別の種類の引用符で囲みます。
 
 ## <a name="examples"></a>例
 
@@ -129,4 +127,4 @@ ms.locfileid: "1573049"
 
 Microsoft Visual Studio の Microsoft IntelliSense では、XAML マークアップ エディターで **{Binding}** を作成している間、データ コンテキストのプロパティが表示されます。 「{Binding」と入力するとすぐに、[**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) に適したデータ コンテキスト プロパティがドロップダウンに表示されます。 IntelliSense は、[**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) の他のプロパティに関しても役立ちます。 これが機能するためには、マークアップ ページにデータ コンテキストまたは設計時のデータ コンテキストを設定する必要があります。 **[定義へ移動]** (F12) は、**{Binding}** でも機能します。 または、データ バインディングのダイアログを使うこともできます。
 
- 
+ 

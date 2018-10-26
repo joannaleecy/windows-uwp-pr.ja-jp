@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 803bdc34301ed05c5edd2d84c6de661e260869bb
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d271d0b9c8e7ce73835457789aca3fa2cb5eda97
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652521"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546128"
 ---
 # <a name="drag-animations"></a>ドラッグ アニメーション
 
@@ -69,7 +67,7 @@ ms.locfileid: "1652521"
 * [**DragOverThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br243180)
 
 
- 
+ 
 
 
 

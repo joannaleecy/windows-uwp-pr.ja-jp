@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f2a17f69ae0353bb7682a1dbfa48d5909f48d4aa
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 0129b44b6f1c6c8b18555e3e0e0b350a695cabe1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652991"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548932"
 ---
 # <a name="streaming-resource-creation-parameters"></a>ストリーミング リソースの作成パラメーター
 
@@ -26,22 +24,22 @@ ms.locfileid: "1652991"
 <span id="Supported-Resource-Type"></span><span id="supported-resource-type"></span><span id="SUPPORTED-RESOURCE-TYPE"></span>**サポートされるリソースの種類**  
 Texture2D\[配列\] (Texture2D\[配列\] のバリアントである TextureCube\[配列\] を含む) またはバッファー。
 
-**サポート外: **Texture1D\[配列\]
+**サポートされていません:** Texture1d \ [配列 \]。
 
 <span id="Supported-Resource-Usage"></span><span id="supported-resource-usage"></span><span id="SUPPORTED-RESOURCE-USAGE"></span>**サポートされるリソースの使用法**  
 既定の使用法。
 
-**サポート外: **動的、ステージング、または不変。
+**サポートされていません:** 動的、ステージング、または不変。
 
 <span id="Supported-Resource-Misc-Flags"></span><span id="supported-resource-misc-flags"></span><span id="SUPPORTED-RESOURCE-MISC-FLAGS"></span>**サポートされるリソースのその他のフラグ**  
 タイル。つまり、(当然ながら) ストリーミング、テクスチャ キューブ、描画の間接的な引数、バッファー許可未加工ビュー、構造バッファー、リソース クランプ、または MIPS の生成が該当します。
 
-**サポート外: **共有、共有キー付きミュー テックス、GDI 互換、共有 NT ハンドル、制限されたコンテンツ、制限共有リソース、制限共有リソース ドライバー、保護、またはタイル プール。
+**サポートされていません:** 共有、共有キー付きミュー テックス、GDI 互換、共有 NT ハンドル、制限されたコンテンツ、制限共有リソース、制限共有リソース ドライバー、保護、またはタイル プール。
 
 <span id="Supported-Bind-Flags"></span><span id="supported-bind-flags"></span><span id="SUPPORTED-BIND-FLAGS"></span>**サポートされるバインド フラグ**  
 シェーダー リソース、レンダー ターゲット、深度ステンシル、または順序指定なしアクセスとしてバインド。
 
-**サポート外: **定数バッファー、頂点バッファー (タイル化されたバッファーの SRV/UAV/RTV としてのバインドはサポートされています)、インデックス バッファー、ストリーム出力、デコーダー、またはビデオ エンコーダーとしてバインド。
+**サポートされていません:** 定数バッファー、頂点バッファー (タイル化されたバッファーとしてのバインド、SRV/UAV/RTV がサポートされている)、インデックスとしてバインド バッファー、ストリーム出力、デコーダー、またはビデオ エンコーダーが開始します。
 
 <span id="Supported-Formats"></span><span id="supported-formats"></span><span id="SUPPORTED-FORMATS"></span>**サポートされる形式**  
 タイル化されるかどうかに関わらず、特定の構成に利用できるすべての形式に、何らかの例外があります。
@@ -76,16 +74,16 @@ Texture2D\[配列\] (Texture2D\[配列\] のバリアントである TextureCube
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [ストリーミング リソースの作成](creating-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,17 +6,15 @@ title: デスクトップ アプリケーションのパッケージ化
 ms.author: normesta
 ms.date: 09/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
-ms.openlocfilehash: e11bae84c7cb88ef89f8b627cc2109fc56e43163
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: e08856006bc3ed6348a6ded69421ef0be9fc69e5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5519072"
+ms.locfileid: "5548436"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>デスクトップ アプリケーションをパッケージ化 (デスクトップ ブリッジ)
 

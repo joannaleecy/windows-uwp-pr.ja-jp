@@ -8,17 +8,15 @@ title: カスタムのビデオ特殊効果
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1f53bb1165561865124a960940fab3f4325061
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 08d861355a235c9217f51ce6f925224a27a562ef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843322"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544758"
 ---
 # <a name="custom-video-effects"></a>カスタムのビデオ特殊効果
 
@@ -99,7 +97,7 @@ ms.locfileid: "1843322"
 > [!NOTE] 
 > **SupportedEncodingProperties** から返される [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) オブジェクトの一覧を空にすると、既定で ARGB32 エンコードが使われます。
 
- 
+ 
 
 ### <a name="supportedmemorytypes-property"></a>SupportedMemoryTypes プロパティ
 
@@ -111,7 +109,7 @@ ms.locfileid: "1843322"
 > [!NOTE]
 > [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822) を指定すると、GPU とシステム メモリのどちらを使うかがパイプラインの効率に基づいて判断されます。 この値を使う場合は、[**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) メソッドで [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) と [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) のどちらにデータが格納されたかをチェックし、それに応じてフレームを処理する必要があります。
 
- 
+ 
 
 ### <a name="timeindependent-property"></a>TimeIndependent プロパティ
 
@@ -154,7 +152,7 @@ ms.locfileid: "1843322"
 > 2.  **[ビルド]** タブを選択します。
 > 3.  **[アンセーフ コードの許可]** チェック ボックスをオンにします。
 
- 
+ 
 
 これで、**ProcessFrame** メソッドの実装を追加できます。 最初に、入力と出力の両方のソフトウェア ビットマップから [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) オブジェクトを取得します。 出力フレームが書き込み用で、入力フレームが読み取り用です。 次に、[**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046) を呼び出して、各バッファーの [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671) を取得します。 その後、実際のデータ バッファーを取得するために、先ほど定義した COM 相互運用機能のインターフェイス (**IMemoryByteAccess**) として **IMemoryBufferReference** オブジェクトをキャストし、**GetBuffer** を呼び出します。
 

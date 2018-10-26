@@ -6,19 +6,18 @@ ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 70ef1ab7bc31fde2f0d4744394c1ae69c8caf7fd
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 6461b6889f110bde8929e1f370f9197caa33e5f3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "244460"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549023"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a>マネージ Windows ランタイム コンポーネントの配布
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 Windows ランタイム コンポーネントは、ファイルをコピーすることで配布できます。 ただし、コンポーネントが多数のファイルで構成されている場合、インストールがユーザーの負担になる可能性があります。 また、ファイルの配置の誤りや、参照設定のエラーが原因で問題が発生する可能性もあります。 複雑なコンポーネントは、Visual Studio 拡張 SDK としてパッケージ化すると、簡単にインストールして使用することができます。 ユーザーは、パッケージ全体で参照を 1 つだけ設定する必要があります。 **[拡張機能と更新プログラム]** ダイアログ ボックスを使用すると、コンポーネントを簡単に配置してインストールできます。詳しくは、MSDN ライブラリの「[Visual Studio 拡張機能の検索と使用](https://msdn.microsoft.com/library/vstudio/dd293638.aspx)」をご覧ください。
 
@@ -42,13 +41,13 @@ For example: Microsoft.Cpp.Build.dll
 
 拡張 SDK は上記の 1 つ以上の条件に当てはまる場合に特に便利です。
 
-> **注:** NuGet パッケージ管理システムでは、複雑なコンポーネント用に、拡張 SDK の代わりとなるオープン ソースが用意されています。 NuGet を使用すると、拡張 SDK と同様にパッケージを作成できるため、複雑なコンポーネントのインストールが簡単にできます。 NuGet パッケージと Visual Studio 拡張 SDK を比較するには、MSDN ライブラリの[NuGet と拡張 SDK を使用して参照を追加する方法に関するページ](https://msdn.microsoft.com/library/jj161096.aspx)をご覧ください。
+> **注:** NuGet パッケージの管理システムは複雑なコンポーネントは、オープン ソースの代わりに拡張 Sdk を提供します。 NuGet を使用すると、拡張 SDK と同様にパッケージを作成できるため、複雑なコンポーネントのインストールが簡単にできます。 NuGet パッケージと Visual Studio 拡張 SDK を比較するには、MSDN ライブラリの[NuGet と拡張 SDK を使用して参照を追加する方法に関するページ](https://msdn.microsoft.com/library/jj161096.aspx)をご覧ください。
 
 ## <a name="distribution-by-file-copy"></a>ファイルのコピーによる配布
 
 コンポーネントが 1 つの .winmd ファイル、または 1 つの .winmd ファイルと 1 つのリソース インデックス (.pri) ファイルで構成されている場合は、.winmd ファイルをユーザーがコピーできるように用意するだけです。 ユーザーは、プロジェクトの任意の場所にファイルを置き、**[既存項目の追加]** ダイアログ ボックスを使用して、.winmd ファイルをプロジェクトに追加してから、[参照マネージャー] ダイアログ ボックスを使用して参照を作成することができます。 .pri ファイルまたは .xml ファイルを含める場合は、.winmd ファイルと共に、それらのファイルを配置するようにユーザーに伝えます。
 
-> **注:** プロジェクトにリソースが含まれていない場合でも、Windows ランタイム コンポーネントをビルドすると、常に Visual Studio によって .pri ファイルが生成されます。 コンポーネントにテスト アプリが含まれる場合、bin\\debug\\AppX フォルダーでアプリ パッケージの内容を調べると、.pri ファイルを使用するかどうかを確認できます。 コンポーネントの .pri ファイルがそこにない場合は、.pri ファイルを配布する必要はありません。 または、[MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) ツールを使用して、Windows ランタイム コンポーネント プロジェクトからリソース ファイルをダンプすることもできます。 たとえば、Visual Studio コマンド プロンプト ウィンドウで次のように入力します。makepri dump /if MyComponent.pri /of MyComponent.pri.xml .pri ファイルについて詳しくは、「[リソース管理システム (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)」をご覧ください。
+> **注:** Visual Studio 常に、.pri ファイルを生成、Windows ランタイム コンポーネントをビルドするとき、プロジェクトにすべてのリソースが含まれていない場合でもします。 コンポーネントにテスト アプリが含まれる場合、bin\\debug\\AppX フォルダーでアプリ パッケージの内容を調べると、.pri ファイルを使用するかどうかを確認できます。 コンポーネントの .pri ファイルがそこにない場合は、.pri ファイルを配布する必要はありません。 または、[MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) ツールを使用して、Windows ランタイム コンポーネント プロジェクトからリソース ファイルをダンプすることもできます。 たとえば、Visual Studio コマンド プロンプト ウィンドウで次のように入力します。makepri dump /if MyComponent.pri /of MyComponent.pri.xml .pri ファイルについて詳しくは、「[リソース管理システム (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)」をご覧ください。
 
 ## <a name="distribution-by-extension-sdk"></a>拡張 SDK による配布
 

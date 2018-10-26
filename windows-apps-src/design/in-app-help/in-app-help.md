@@ -7,17 +7,15 @@ template: detail.hbs
 ms.author: quradic
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 6208b71b-37a7-40f5-91b0-19b665e7458a
 ms.localizationpriority: medium
-ms.openlocfilehash: 55c7f5d4ba7a8c66a7555bfad4bb6b79afec07a0
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 089b71464234abe21d7dc8613d46ef6778f0f5a6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393231"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547317"
 ---
 # <a name="in-app-help-pages"></a>アプリ内ヘルプのページ
 

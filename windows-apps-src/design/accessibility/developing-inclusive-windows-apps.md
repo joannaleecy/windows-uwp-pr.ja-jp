@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a8bafb02baf4d70c41cd7a75c283903c05680b0
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 2adb3c67c4c7c1d024cd969af15cc12baa424511
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1394301"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545537"
 ---
 # <a name="developing-inclusive-windows-apps"></a>包括性を備えた Windows アプリの開発  
 

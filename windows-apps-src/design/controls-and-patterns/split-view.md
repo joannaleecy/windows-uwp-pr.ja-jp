@@ -8,20 +8,18 @@ template: detail.hbs
 ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: cde4b5d95a0c978faa647fcc108d74874ff52c40
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: c5efe23955d1064eae639bf6e9ddd0a3a83dc315
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5520159"
+ms.locfileid: "5542203"
 ---
 # <a name="split-view-control"></a>分割ビュー コントロール
 

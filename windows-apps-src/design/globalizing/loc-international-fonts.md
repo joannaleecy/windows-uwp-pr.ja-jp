@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: 28a129154a4829d51a029e9374a40145644a7f2a
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 9513ed03f70a0b5efca0472bb4b0598a33a05fc2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395411"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544015"
 ---
 # <a name="international-fonts"></a>国際フォント
 

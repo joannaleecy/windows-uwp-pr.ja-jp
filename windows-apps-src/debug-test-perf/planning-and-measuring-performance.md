@@ -6,19 +6,17 @@ description: ユーザーは、高い応答性と自然な使用感、そして�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d25620c0fc86f76b8c0d4de6e606250186b9ce37
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: e62e724cceb458ba922143e61058dffa8d16a0b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894786"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547884"
 ---
 # <a name="planning-for-performance"></a>パフォーマンスの計画
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 ユーザーは、高い応答性と自然な使用感、そしてバッテリーが消耗しないことをアプリに期待しています。 技術的には、パフォーマンスは機能要件ではありませんが、パフォーマンスを機能として扱うことで、ユーザーの期待に沿うことができます。 鍵となる要因は、目標の明確化と測定の実施です。 パフォーマンスが重要なシナリオを決定し、優れたパフォーマンスとは何を意味するかを定義します。 次に、プロジェクトの初期とライフサイクル全体で十分な回数の測定を行って、目標を達成できることを確認します。
@@ -44,7 +42,7 @@ ms.locfileid: "894786"
 | Continuous (継続)              | 反応がよいと感じない      | 500 ミリ秒 | 5 秒        | インターネットからファイルをダウンロードする                                            |
 | Captive (占有)                 | 遅い、ユーザーが切り替えを検討する可能性がある    | 500 ミリ秒 | 10 秒       | ストアから複数のアプリをインストールする                                         |
 
- 
+ 
 
 これで、インタラクション クラスをアプリのパフォーマンスのシナリオに割り当てることができます。 各シナリオに、アプリを参照した時点、ユーザー エクスペリエンスの一部、およびインタラクション クラスを割り当てることができます。 次に示すのは、サンプルのレシピ紹介アプリのための提案です。
 
@@ -175,7 +173,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
     -   一貫性のある測定結果が得られるように、アプリを複数回実行して、テストのランダム要素を排除します。
 -   低電力での利用可能性をテストします。 ユーザーのデバイスは、開発用のコンピューターに比べ、大幅に低電力である可能性があります。 Windows は、モバイル デバイスなどの低電力デバイスでの動作を考慮して設計されています。 プラットフォームで動作するアプリが、これらのデバイスでも高いパフォーマンスを発揮できるようにする必要があります。 経験則として、低電力デバイスでの実行速度はデスクトップ コンピューターの約 1/4 であると考えられるため、これに応じて目標を設定します。
 -   アプリのパフォーマンスを測定するには、Microsoft Visual Studio や Windows Performance Analyzer のようなツールを組み合わせて使います。 Visual Studio は、ソース コードのリンク設定など、アプリに焦点を当てた分析を行うように設計されています。 Windows Performance Analyzer は、システム情報、タッチ操作イベントに関する情報、ディスクの入出力 (I/O) に関する情報、グラフィックス処理ユニット (GPU) のコストに関する情報の提供など、システムに焦点を当てた分析を行うように設計されています。 どちらのツールでも、トレースをキャプチャしてエクスポートし、共有トレースと事後検証トレースを再開することができます。
--   認定を受けるためにアプリをストアに提出する前に、[Windows アプリ認定キット テスト](windows-app-certification-kit-tests.md)の「パフォーマンスのテスト」セクションと [Windows ストア アプリのテスト ケース](https://msdn.microsoft.com/library/windows/apps/Dn275879)の「パフォーマンスと安定性」セクションの説明に従って、パフォーマンス関連のテスト ケースをテスト プランに組み込みます。
+-   認定のため、ストアにアプリを提出する前に、 [Windows アプリ認定キットのテスト](windows-app-certification-kit-tests.md)の「パフォーマンス テスト」セクションで説明されて、パフォーマンスに関連するテスト_ケースをテスト プランに組み込むことを確認して、"パフォーマンスと[UWP アプリのテスト_ケース](https://msdn.microsoft.com/library/windows/apps/Dn275879)の安定性"セクションです。
 
 詳しくは、次のリソースとプロファイリング ツールをご覧ください。
 

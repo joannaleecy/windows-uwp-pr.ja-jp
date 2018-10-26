@@ -5,16 +5,14 @@ description: XAML の ScrollViewer と ExpressionAnimations を使用して、�
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、アニメーション
 ms.localizationpriority: medium
-ms.openlocfilehash: 58e696bc3d376b80b21149a9e55a2b0547a91c0c
-ms.sourcegitcommit: 67cb03db41556cf0d58993073654cd0706aede84
-ms.translationtype: HT
+ms.openlocfilehash: a078d096a9cffe26e9b342250726dd75cdf48817
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
-ms.locfileid: "1480718"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543570"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>既存の ScrollViewer エクスペリエンスを強化する
 

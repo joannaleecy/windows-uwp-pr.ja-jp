@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0b87f827e7a878b1952ca1970841c3fd5584db
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 4c959ced5ada9145ca494dd023c9aa802d7dccc2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045155"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544585"
 ---
 # <a name="block-compression"></a>ブロック圧縮
 
@@ -105,7 +103,7 @@ Direct3D は圧縮スキームをいくつか実装しています。それぞ�
 | 成分が 1 つの色             | 1 つの成分 (8)                     | [BC4](#bc4)                    |
 | 成分が 2 つの色             | 2 つの成分 (8:8)                  | [BC5](#bc5)                    |
 
- 
+ 
 
 -   [BC1](#bc1)
 -   [BC2](#bc2)
@@ -417,7 +415,7 @@ u = f; // 'u' becomes 1.
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 

@@ -9,15 +9,13 @@ keywords: デバイス, 入力, 操作
 ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c36e60d0435db6536ea7bb0eee3011937668cb7
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 6f5e6c96c67052f1933bf4fb69988ae1eae27ee0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395391"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550837"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>ユニバーサル Windows プラットフォーム (UWP) アプリ用デバイスの基本情報
 
@@ -133,7 +131,7 @@ UI に関する考慮事項
 
 すべてのコンピューティング デバイスの中で最も広く使われている電話では、限られた画面領域と基本的な入力方法を使って、さまざまな操作を行うことができます。 電話にはさまざまなサイズがあり、大きい電話はファブレットと呼ばれます。 ファブレットでのアプリのエクスペリエンスは、電話でのエクスペリエンスと似ていますが、画面領域が大きくなることで、コンテンツ操作時に重要な変更が可能になります。
 
-互換性のある Windows 10 Mobile デバイスの新しいエクスペリエンスである電話用 Continuum を使用すると、ユーザーが電話をモニターに接続し、マウスやキーボードを使用して、その電話をノート PC のように使うことができます。 詳しくは、「[電話用 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)」をご覧ください。
+互換性のある windows 10 モバイル デバイスの新しいエクスペリエンスで電話用 Continuum は、ユーザーは電話をモニターに接続し、でも、マウスやキーボードを使用してラップトップように使う。 詳しくは、「[電話用 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)」をご覧ください。
 
 画面サイズ
 -   電話の場合、4" ～ 5"
@@ -166,7 +164,7 @@ UI に関する考慮事項
 -   移動センサー (複数)
 -   位置センサー (複数)
 
- 
+ 
 
 ## <a name="surface-hub-devices"></a>Surface Hub デバイス
 
@@ -199,7 +197,7 @@ UI に関する考慮事項
 -   カメラ
 -   マイク
 
- 
+ 
 
 ## <a name="windows-iot-devices"></a>Windows IoT デバイス
 

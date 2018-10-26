@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c9feb6460512a7266dfd5d2979b89084f6487f5
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 3af31535dcdb1cb5eb8beebbbb91312adafe353a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653451"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546954"
 ---
 # <a name="guidelines-for-targeting"></a>ターゲット設定のガイドライン
 
@@ -104,7 +102,7 @@ Windows のタッチ補正では、タッチ デジタイザーで検出され�
 </tbody>
 </table>
 
- 
+ 
 
 表に示したターゲット サイズの推奨サイズは、個々のシナリオの必要に応じて調整できます。 この推奨サイズの設定では、次の点が考慮されています。
 
@@ -160,7 +158,7 @@ Windows では、ここで示した最小サイズや推奨する余白サイズ
 * [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **サンプルのアーカイブ**
-* [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [入力: タッチのヒット テストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [XAML のスクロール、パン、ズームのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -168,9 +166,9 @@ Windows では、ここで示した最小サイズや推奨する余白サイズ
 * [入力: Windows 8 のジェスチャのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX タッチ入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

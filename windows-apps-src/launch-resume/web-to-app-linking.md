@@ -1,33 +1,31 @@
 ---
 author: TylerMSFT
-title: アプリの URI ハンドラーを使用して web サイト用のアプリを有効にします。
-description: Web サイトの機能のアプリをサポートすることで、アプリでユーザーの活動をドライブします。
+title: アプリの URI ハンドラーを使用して web サイト向けアプリを有効にします。
+description: ユーザーを導くアプリと web サイトの機能のアプリをサポートします。
 keywords: Windows でのディープ リンクの設定
 ms.author: twhitney
 ms.date: 08/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 8482c3b14a6845dc3bfd5912c8260b5cd3214249
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 7f6438b8d1d7b8a8ce47ed4e5baddcb59285e660
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958315"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548826"
 ---
-# <a name="enable-apps-for-websites-using-app-uri-handlers"></a>アプリの URI ハンドラーを使用して web サイト用のアプリを有効にします。
+# <a name="enable-apps-for-websites-using-app-uri-handlers"></a>アプリの URI ハンドラーを使用して web サイト向けアプリを有効にします。
 
-Web サイト用のアプリは、アプリが起動の代わりに、ブラウザーを開いて、web サイトへのリンクを開いたときにできるように、web サイトでアプリを関連付けます。 アプリがインストールされていない場合、web サイトを通常どおり、ブラウザーで開きます。 検証済みのコンテンツ所有者だけがリンクに登録できるため、ユーザーはこのエクスペリエンスを信頼することができます。 ユーザーがすべてが登録されている web-に-アプリへのリンクの設定に移動してにチェックできる > アプリ > web サイト用のアプリです。
+Web サイト用のアプリ、アプリと web サイトに関連付けるため、ブラウザーが開くのではなく、アプリが起動して web サイトへのリンクを開いたときです。 アプリがインストールされていない場合、web サイトは通常どおり、ブラウザーで開きます。 検証済みのコンテンツ所有者だけがリンクに登録できるため、ユーザーはこのエクスペリエンスを信頼することができます。 ユーザーはすべて、登録されている web とアプリへのリンクの設定に移動して確認することが > アプリ > web サイト向けアプリ。
 
-Web のアプリのリンクを有効にするのには必要があります。
+Web とアプリのリンクを有効にする必要があります。
 - アプリが処理する URI をマニフェスト ファイル内に指定します。
-- アプリと web サイト間の関係を定義する JSON ファイルを指定します。 アプリと同じホスト ルートで、アプリ パッケージ ファミリ名マニフェストの宣言を実行します。
+- アプリと web サイトの間の関連付けを定義する JSON ファイルです。 ホストのルート、同じアプリとしてアプリのパッケージ ファミリ名とマニフェストの宣言を実行します。
 - アプリでアクティブ化を処理します。
 
 > [!Note]
-> Windows 10 の作成者の更新プログラムを開始、サポートされているリンクをクリックしてで Microsoft Edge は、対応するアプリを起動します。 サポートされているリンクを他のブラウザー (例: Internet Explorer など) をクリックしてでは、参照のエクスペリエンスで保持されます。
+> クリックしてされた Microsoft Edge でサポートされているリンクは、Windows 10 Creators update 以降では、対応するアプリを起動します。 サポートされているへのリンク (例: Internet Explorer など)、その他のブラウザーでクリックしてでは、閲覧エクスペリエンスで保持されます。
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>http リンクや https リンクを処理できるようにアプリ マニフェストに登録する
 
@@ -80,7 +78,7 @@ Windows によって、Web サイトへの https 接続が行われ、Web サー
 | **\***       | 任意の部分文字列を表します      |
 | **?**        | 1 つの文字を表します |
 
-たとえば、 `"excludePaths" : [ "/news/*", "/blog/*" ]` 、上記の例では、アプリは、下にあるもの**を除く**web サイトのアドレス (例: msn.com) で始まるすべてのパスをサポート`/news/`と`/blog/`します。 つまり、**msn.com/weather.html** はサポートされますが、****msn.com/news/topnews.html**** はサポートされません。
+たとえば、`"excludePaths" : [ "/news/*", "/blog/*" ]`上記の例では、アプリが下にあるもの**を除き**web サイトのアドレス (例: msn.com) で始まるすべてのパスをサポート`/news/`と`/blog/`します。 つまり、**msn.com/weather.html** はサポートされますが、****msn.com/news/topnews.html**** はサポートされません。
 
 ### <a name="multiple-apps"></a>複数のアプリ
 
@@ -168,9 +166,9 @@ protected override void OnActivated(IActivatedEventArgs e)
 -   パッケージ ファミリ名 (PFN): アプリの PFN
 -   ファイル パス: ローカルな検証のための JSON ファイル (C:\\SomeFolder\\windows-app-web-link など)
 
-場合は、ツールは何か、そのファイルをアップロードするときに入力規則が有効です。 エラー コードがある場合は使用できません。
+場合は、ツールは何も返さない、そのファイルをアップロードするときの検証が動作します。 エラー コードがある場合は機能しません。
 
-パスのローカルの入力規則の一部として側にロードされているアプリの一致を強制する次のレジストリ キーを有効にすることができます。
+アプリのサイド ローディング ローカルの検証の一部として対応付けのパスを強制的に次のレジストリ キーを有効にすることができます。
 
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
@@ -199,7 +197,7 @@ AppModel\SystemAppData\YourApp\AppUriHandlers`
 
 ## <a name="see-also"></a>関連項目
 
-[プロジェクトのアプリを web 例](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
-[windows.protocol 登録](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
-[URI のライセンス認証を処理](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-[サンプルの関連付けを起動する](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)LaunchUriAsync() API を使用する方法を示します。
+[Web とアプリのサンプル プロジェクト](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
+[windows.protocol の登録](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
+[URI のアクティブ化の処理](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+[関連付けを起動するサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)では、LaunchUriAsync() API の使い方を示しています。

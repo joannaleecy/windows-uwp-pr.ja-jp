@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 292adb2f06022fbb8fc063c49442cd69ccf64534
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 245581e4eb2a8526b242feadb5877590283e24f9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044141"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549929"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Texture2D と Texture2DArray のサブリソースのタイル表示
 
@@ -38,7 +36,7 @@ ms.locfileid: "1044141"
 | BC1、4                       | 512 x 256                       |
 | BC2、3、5、6、7                 | 256 x 256                       |
 
- 
+ 
 
 ストリーミング リソースでサポートされない形式のビット数は、96 bpp 形式、ビデオ形式、DXGI\_FORMAT\_R1\_UNORM、DXGI\_FORMAT\_R8G8\_B8G8\_UNORM、および DXGI\_FORMAT\_R8R8\_G8B8\_UNORM です。
 
@@ -55,7 +53,7 @@ ms.locfileid: "1044141"
 | 8                           | 4 x 2                           |
 | 16                          | 4 x 4                           |
 
- 
+ 
 
 サンプル数 1 および 4 だけが、ストリーミング リソースにサポート (および許可) される必要があります。 ストリーミング リソースは現在、2、8、および 16 をサポートしていません (表示されていますが)。
 
@@ -70,9 +68,9 @@ ms.locfileid: "1044141"
 
 [ストリーミング リソースの領域をタイル表示する方法](how-a-streaming-resource-s-area-is-tiled.md)
 
- 
+ 
 
- 
+ 
 
 
 

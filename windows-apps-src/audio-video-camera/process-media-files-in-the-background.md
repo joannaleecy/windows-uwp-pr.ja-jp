@@ -6,18 +6,17 @@ title: バックグラウンドでのメディア ファイルの処理
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8d3166b40120799818598300a049a4148a40d2cc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 866fedf35aa6f1f585825195b18cdd1fed4bad11
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243364"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548373"
 ---
 # <a name="process-media-files-in-the-background"></a>バックグラウンドでのメディア ファイルの処理
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 この記事では、[**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。
@@ -78,7 +77,7 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 前の手順で Progress オブジェクトを作成するために使ったメソッド **Progress** で、バックグラウンド タスク インスタンスの進行状況を設定します。 これにより、進行状況がフォアグラウンド アプリ (実行されている場合) に渡されます。
 
-[!code-cs[進行状況](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
+[!code-cs[Progress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
 
 **SendToastNotification** ヘルパー メソッドは、テキスト コンテンツしかないトーストのテンプレート XML ドキュメントを取得することによって新しいトースト通知を作成します。 トースト XML のテキスト要素が設定された後、XML ドキュメントから新しい [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) オブジェクトが作成されます。 最後に、[**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659) を呼び出すことによってトーストがユーザーに表示されます。
 
@@ -127,9 +126,13 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-**MediaProcessingTrigger** オブジェクトの [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) メソッドを呼び出してバックグラウンド タスクを起動します。 このメソッドによって返される [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) オブジェクトにより、バックグラウンド タスクが正常に起動されたかどうかを把握することができます。正常に起動されなかった場合は、バックグラウンド タスクが起動しなかった理由を把握できます。
+一般的なアプリは、アプリが、 **OnNavigatedTo**イベントなどの最初に起動されたときに、バック グラウンド タスクを登録します。
+
+**MediaProcessingTrigger** オブジェクトの [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) メソッドを呼び出してバックグラウンド タスクを起動します。 このメソッドによって返される [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) オブジェクトにより、バックグラウンド タスクが正常に起動されたかどうかを把握することができます。正常に起動されなかった場合は、バックグラウンド タスクが起動しなかった理由を把握できます。 
 
 [!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
+
+UI コントロールの**クリックして**イベントなど、一般的なアプリは、ユーザー操作への応答としてバック グラウンド タスクを起動します。
 
 バックグラウンド タスクが操作の進行状況を更新すると、**OnProgress** イベント ハンドラーが呼び出されます。 この機会を使って、進行状況情報によって UI を更新することができます。
 
@@ -140,9 +143,9 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 [!code-cs[OnCompleted](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnCompleted)]
 
 
- 
+ 
 
- 
+ 
 
 
 

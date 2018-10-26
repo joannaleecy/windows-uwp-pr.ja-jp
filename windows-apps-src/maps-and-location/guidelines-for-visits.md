@@ -6,16 +6,14 @@ ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
 ms.author: pafarley
 ms.date: 05/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, マップ, 位置情報, geovisit, ジオビジット
 ms.localizationpriority: medium
-ms.openlocfilehash: 9152cf934e53557daef7d971c1d4227105cd77fe
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 3a78b2689a10dff50696e5e65cc44f79a6f1ea7d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675079"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545524"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>ビジット追跡の使用ガイドライン
 

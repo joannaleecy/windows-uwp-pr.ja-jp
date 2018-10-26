@@ -6,16 +6,14 @@ title: PlayReady DRM
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c466587a9e1d190368de0f142fea9d902e731aba
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 773216dc392f7bb234e232f3dd3e7c2190a22de1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692197"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543769"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -23,7 +21,7 @@ ms.locfileid: "1692197"
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリに PlayReady で保護されたメディア コンテンツを追加する方法について説明します。
 
-PlayReady DRM を使うと、開発者はコンテンツ プロバイダーが定義したアクセス ルールを適用しながら、ユーザーに PlayReady コンテンツを提供することができる UWP アプリを作成できます。 ここでは、Windows 10 用の Microsoft PlayReady DRM に加えられた変更と、PlayReady UWP アプリを変更して、以前の Windows 8.1 バージョンから Windows 10 バージョンに加えられた変更をサポートする方法について説明します。
+PlayReady DRM を使うと、開発者はコンテンツ プロバイダーが定義したアクセス ルールを適用しながら、ユーザーに PlayReady コンテンツを提供することができる UWP アプリを作成できます。 このセクションでは、以前の Windows8.1 バージョンから windows 10 バージョンに加えられた変更をサポートするために、PlayReady UWP アプリを変更する方法と windows 10 用の Microsoft PlayReady DRM に加えられた変更について説明します。
  
 | トピック                                                                     | 説明                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -32,7 +30,7 @@ PlayReady DRM を使うと、開発者はコンテンツ プロバイダーが�
 
 ## <a name="whats-new-in-playready-drm"></a>PlayReady DRM の新機能
 
-次に、Windows 10 用の PlayReady DRM に関する新機能や変更点について説明します。
+次の一覧では、新しい機能と windows 10 用の PlayReady DRM に加えられた変更について説明します。
 
 -   追加されたハードウェア デジタル著作権管理 (HWDRM)。
 
@@ -402,16 +400,16 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
 PlayReady で保護された UWP アプリの作成を開始する前に、次のソフトウェアがシステムにインストールされている必要があります。
 
 -   Windows 10。
--   UWP アプリ用の PlayReady DRM のサンプルをコンパイルする場合、サンプルをコンパイルするには Microsoft Visual Studio 2015 以降を使う必要があります。 引き続き、Microsoft Visual Studio 2013 を使って、Windows 8.1 ストア アプリ用の PlayReady DRM の任意のサンプルをコンパイルできます。
+-   UWP アプリの PlayReady DRM の任意のサンプルをコンパイルするが場合、は、Microsoft Visual Studio2015 を使用する必要がありますか、後で、サンプルをコンパイルします。 任意の Windows8.1 ストア アプリ用の PlayReady DRM のサンプルをコンパイルするのに Microsoft Visual Studio2013 を引き続き使用できます。
 
 <!--This is no longer available-->
 <!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->
 
 ## <a name="playready-uwp-app-migration-guide"></a>PlayReady UWP アプリの移行ガイド
 
-このセクションには、既にある PlayReady Windows 8.x ストア アプリを Windows 10 に移行する方法についての情報が含まれています。
+このセクションには、既にある PlayReady Windows 8.x ストア アプリを windows 10 に移行する方法に関する情報が含まれます。
 
-Windows 10 の PlayReady UWP アプリの名前空間は、**Microsoft.Media.PlayReadyClient** から [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454) に変更されました。 つまり、コード内で以前の名前空間を探し、新しい名前空間に置き換える必要があります。 winmd ファイルは、引き続き参照されます。 このファイルは、Windows 10 オペレーティング システムの windows.media.winmd の 1 つであり、 TH の Windows SDK の一部として、windows.winmd に含まれています。 winmd ファイルは、UWP では、windows.foundation.univeralappcontract.winmd で参照されます。
+Windows 10 の PlayReady UWP アプリの名前空間は、 **Microsoft.Media.PlayReadyClient**から[**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454)に変更されました。 つまり、コード内で以前の名前空間を探し、新しい名前空間に置き換える必要があります。 winmd ファイルは、引き続き参照されます。 Windows 10 オペレーティング システムで windows.media.winmd の一部です。 TH の Windows SDK の一部として、windows.winmd に含まれています。 winmd ファイルは、UWP では、windows.foundation.univeralappcontract.winmd で参照されます。
 
 PlayReady で保護された高解像度 (HD) コンテンツ (1080p) および超高解像度 (UHD) コンテンツを再生するには、PlayReady ハードウェア DRM を実装する必要があります。 PlayReady ハードウェア DRM を実装する方法について詳しくは、「[ハードウェア DRM](hardware-drm.md)」をご覧ください。
 
@@ -466,7 +464,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
     ```
 
 4.  手順 3. で作成したサービスの要求を使ってライセンスの取得を実行します。 ライセンスは、再生セッションに格納されます。
-5.  再生のメディア ソースに再生セッションを結び付けます。 次に例を示します。
+5.  再生のメディア ソースに再生セッションに結び付けます。 次に例を示します。
 
     ```cs
     licenseSession.configureMediaProtectionManager( mediaProtectionManager );

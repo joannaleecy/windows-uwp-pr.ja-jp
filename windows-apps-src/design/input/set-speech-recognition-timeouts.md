@@ -9,15 +9,13 @@ keywords: スピーチ, 音声, 音声認識, 自然言語, ディクテーシ�
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c82e0d77804e293176c53a9d8079e32054f9cca6
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 00923b4448d96943cf00eade46c39c42e87c4f96
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652751"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549569"
 ---
 # <a name="set-speech-recognition-timeouts"></a>音声認識のタイムアウトの設定
 
@@ -35,9 +33,9 @@ ms.locfileid: "1652751"
 -   BabbleTimeout: SpeechRecognizer が、認識できないサウンド (雑音) のリッスンを継続し、音声入力が終了したと見なし、認識処理を終了するまでの時間の長さ。
 -   EndSilenceTimeout: SpeechRecognizer が (認識結果が生成された後の) 無音を検出し、音声入力が終了したと見なす時間の長さ。
 
-**注**  タイムアウトは認識エンジンごとに設定できます。
+**注:** タイムアウトは、認識エンジンごとに設定できます。
 
- 
+ 
 
 ```CSharp
 // Set timeout settings.
@@ -52,9 +50,9 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 * [音声操作](speech-interactions.md)
 **サンプル**
 * [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

@@ -6,18 +6,17 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a629fb07bfa2e3f8bb3d070e9fe4994baba4336b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 17ee99553b5713acb1917ccb697abb2387d00da2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246497"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549199"
 ---
 # <a name="xphase-attribute"></a>x:Phase 属性
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) や [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) の項目を段階的にレンダリングし、パン エクスペリエンスを向上させるには、**x:Phase** を [{x:Bind} マークアップ拡張](x-bind-markup-extension.md)と共に使用します。 **x:Phase** では、宣言的な方法により、[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) イベントを使ってリスト項目のレンダリングを手動で制御するのと同じ結果を得ることができます。 「[GridView と ListView の項目を段階的に更新する](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)」もご覧ください。
 
@@ -33,7 +32,7 @@ ms.locfileid: "246497"
 
 | 用語 | 説明 |
 |------|-------------|
-| PhaseValue | 要素が処理されるフェーズを示す数値。 既定値は 0 です。 | 
+| PhaseValue | 要素が処理されるフェーズを示す数値。 既定値は 0 です。 | 
 
 ## <a name="remarks"></a>注釈
 
@@ -45,23 +44,23 @@ ms.locfileid: "246497"
 
 ```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
-    <Grid Width="200" Height="80">
-        <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="75" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Image Grid.RowSpan="4" Source="{x:Bind ImageData}" MaxWidth="70" MaxHeight="70" x:Phase="3"/>
-        <TextBlock Text="{x:Bind DisplayName}" Grid.Column="1" FontSize="12"/>
-        <TextBlock Text="{x:Bind prettyDate}"  Grid.Column="1"  Grid.Row="1" FontSize="12" x:Phase="1"/>
-        <TextBlock Text="{x:Bind prettyFileSize}"  Grid.Column="1"  Grid.Row="2" FontSize="12" x:Phase="2"/>
-        <TextBlock Text="{x:Bind prettyImageSize}"  Grid.Column="1"  Grid.Row="3" FontSize="12" x:Phase="2"/>
-    </Grid>
+    <Grid Width="200" Height="80">
+        <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="75" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Grid.RowSpan="4" Source="{x:Bind ImageData}" MaxWidth="70" MaxHeight="70" x:Phase="3"/>
+        <TextBlock Text="{x:Bind DisplayName}" Grid.Column="1" FontSize="12"/>
+        <TextBlock Text="{x:Bind prettyDate}"  Grid.Column="1"  Grid.Row="1" FontSize="12" x:Phase="1"/>
+        <TextBlock Text="{x:Bind prettyFileSize}"  Grid.Column="1"  Grid.Row="2" FontSize="12" x:Phase="2"/>
+        <TextBlock Text="{x:Bind prettyImageSize}"  Grid.Column="1"  Grid.Row="3" FontSize="12" x:Phase="2"/>
+    </Grid>
 </DataTemplate>
 ```
 
@@ -82,5 +81,5 @@ ms.locfileid: "246497"
 
 フェージングは、 [{x:Bind}](x-bind-markup-extension.md) バインディングにのみ影響し、 [{Binding}](binding-markup-extension.md) バインディングには影響しません。
 
-フェージングが適用されるのは、フェージングを認識するコントロールを使用して項目テンプレートがレンダリングされるときのみです。 Windows 10 の場合は、[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) です。 フェージングは、他の項目コントロールで使用されるデータ テンプレートには適用されません。また、[**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) または [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) セクション (この場合、すべての UI 要素が同時にデータ バインドされる) などの他のシナリオでも適用されません。
+フェージングが適用されるのは、フェージングを認識するコントロールを使用して項目テンプレートがレンダリングされるときのみです。 Windows 10 では、 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)と[**GridView を**](https://msdn.microsoft.com/library/windows/apps/br242705)場合します。 フェージングは、他の項目コントロールで使用されるデータ テンプレートには適用されません。また、[**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) または [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) セクション (この場合、すべての UI 要素が同時にデータ バインドされる) などの他のシナリオでも適用されません。
 

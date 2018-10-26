@@ -6,16 +6,14 @@ ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ms.author: elcowle
 ms.date: 10/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, オーディオ, ゲーム, サンプル
 ms.localizationpriority: medium
-ms.openlocfilehash: 4534675395f415ccd742dff646bc6c498aa7faa6
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 89612e3fbc4ef2ccb855f7709820f9445d0fd77c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700908"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546862"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>Marble Maze のサンプルへのオーディオの追加
 
@@ -352,7 +350,7 @@ CoTaskMemFree(waveFormat);
 > [!IMPORTANT]
 > [MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177) メソッドは、**CoTaskMemAlloc** を使って [WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799) オブジェクトを割り当てます。 したがって、このオブジェクトを使い終えたら必ず、**CoTaskMemFree** を呼び出す必要があります。
 
- 
+ 
 
 **MediaStreamer::Initialize** メソッドは、ストリームの長さ **m\_maxStreamLengthInBytes** (バイト単位) を計算して終了します。 そのために、[IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) メソッドを呼び出してオーディオ ストリームの継続時間 (100 ナノ秒単位) を取得し、継続時間をセクションに変換した後、平均データ転送速度 (バイト/秒単位) を乗算します。 Marble Maze は後でこの値を使って、各ゲームプレイ音を保持するバッファーを割り当てます。
 
@@ -402,7 +400,7 @@ enum SoundEvent
 | MenuChangeEvent   | MenuChange.wav | ユーザーが現在のメニュー項目を変更するときに再生されます。 |
 | MenuSelectedEvent | MenuSelect.wav | ユーザーがメニュー項目を選択するときに再生されます。           |
 
- 
+ 
 
 以下の例では、**Audio::CreateResources** メソッドを使って BGM のソース ボイスを作成しています。 [XAUDIO2\_SEND\_DESCRIPTOR](https://msdn.microsoft.com/library/windows/desktop/ee419244) 構造体は、別のボイスからの送信先であるターゲット ボイスを定義し、フィルターを使うかどうかを指定します。 Marble Maze は、**Audio::SetSoundEffectFilter** メソッドを呼び出し、フィルターを使って、転がるボールの音に変化を与えています。 [XAUDIO2\_VOICE\_SENDS](https://msdn.microsoft.com/library/windows/desktop/ee419246) 構造体は、単一の出力ボイスからデータを受け取るための一連のボイスを定義します。 Marble Maze は、ソース ボイスからのデータを、マスタリング ボイス (再生するサウンドのドライ、つまり変更されない部分が対象) と 2 つのサブミックス ボイス (再生するサウンドのウェット、つまりリバーブのかかった部分を実装) に送ります。
 

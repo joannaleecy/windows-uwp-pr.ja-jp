@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bbdd567a6ed9af523c720b6ad5a7136a5c59d1cd
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: fb7ff4b23f9735347ce75e2e565c1b420ec936d6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044331"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547746"
 ---
 # <a name="depth-buffers"></a>深度バッファー
 
@@ -56,9 +54,9 @@ z バッファーを使うと、レンダリング中にオーバーヘッドが
 
 [深度バッファーとステンシル バッファー](depth-and-stencil-buffers.md)
 
- 
+ 
 
- 
+ 
 
 
 

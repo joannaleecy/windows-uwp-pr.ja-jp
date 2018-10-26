@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b707356b2d90ad4839fdc7f6e52370b74ea4857a
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 17d58a05a57fa833003b7c229db91473f6cde3d4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044051"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545723"
 ---
 # <a name="rasterizer-rs-stage"></a>ラスタライザー (RS) ステージ
 
@@ -53,9 +51,9 @@ ms.locfileid: "1044051"
 
 [グラフィックス パイプライン](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

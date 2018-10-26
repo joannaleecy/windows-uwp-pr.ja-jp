@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a26679bab35590d61f9188f64df977fbaf78d90
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e808bf0fe1f521a60aa347efd148ede96be95964
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653231"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548902"
 ---
 # <a name="compressed-texture-resources"></a>圧縮テクスチャ リソース
 
@@ -39,7 +37,7 @@ ms.locfileid: "1653231"
 
 Direct3D では、3D モデルのテクスチャに使用する、サーフェスを圧縮するためのサービスが用意されています。 ここでは、圧縮テクスチャ サーフェスのデータの作成および操作について説明します。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>このセクションの内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>説明するトピックは次のとおりです。
 
 
 <table>
@@ -73,16 +71,16 @@ Direct3D では、3D モデルのテクスチャに使用する、サーフェ�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [テクスチャ](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

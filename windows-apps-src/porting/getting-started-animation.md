@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 title: アニメーションを始める
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: このプロジェクトでは、四角形を移動し、フェード効果を適用した後でもう一度表示します。
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a45de584c4374afefe0fdca198eb7234351ac42d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 4822a436225bea92fdf1e981ad33378996adefe4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243948"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550880"
 ---
 # <a name="getting-started-animation"></a>はじめに: アニメーション
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 ## <a name="adding-animations"></a>アニメーションの追加
 
@@ -129,7 +128,7 @@ MainPage.xaml ファイルを **XAML** ビューで開くと、デザイナー�
 
 この XAML を手動で編集するか、または Blend に戻って操作を続行することができます。 Blend を使うと興味を引くユーザー インターフェイスを作成することが楽しくなり、グラフィカル ツールを使用してそれらをアニメーション化する機能によって開発時間を大幅に高速化することができます。 アニメーションについて詳しくは、「[アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)」をご覧ください。
 
-**注:** JavaScript と HTML を使った Windows ストア アプリのアニメーションについて詳しくは、「[UI のアニメーション化 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)」をご覧ください。
+**注:** <span class="legacy-term">JavaScript と HTML を使った UWP アプリ</span>のアニメーションについて詳しくは、[アニメーション化 UI (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)を参照してください。
 
 ### <a name="next-step"></a>次の手順
 

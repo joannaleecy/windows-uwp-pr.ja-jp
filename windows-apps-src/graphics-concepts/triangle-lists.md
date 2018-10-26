@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a034e5e55faf06dc5486c277bf091dc849269d0
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 4f5c8c7354ef0f7e9bd4878e4d78aa045ab7fbd0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043241"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547367"
 ---
 # <a name="triangle-lists"></a>トライアングル リスト
 
@@ -69,9 +67,9 @@ d3dDevice->DrawPrimitive( D3DPT_TRIANGLELIST, 0, 2 );
 
 [プリミティブ](primitives.md)
 
- 
+ 
 
- 
+ 
 
 
 

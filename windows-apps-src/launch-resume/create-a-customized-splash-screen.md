@@ -1,25 +1,23 @@
 ---
 author: TylerMSFT
 title: スプラッシュ画面の表示時間の延長
-description: アプリに追加スプラッシュ画面を作成すると、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。
+description: アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 83551438a629e39407c24cfd98d4a761ba3c039b
-ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.localizationpriority: medium
+ms.openlocfilehash: 80242b95e64f0d642df0284c94455d60825f6daf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/26/2017
-ms.locfileid: "693228"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549292"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>スプラッシュ スクリーンの表示時間の延長
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 **重要な API**
@@ -30,13 +28,13 @@ ms.locfileid: "693228"
 
 アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 読み込み状況をリアルタイムにユーザーに表示する場合や、アプリの最初の UI の準備に時間がかかる場合、追加スプラッシュ画面を使って起動時のエクスペリエンスを定義できます。
 
-> **注:** このトピックで "追加スプラッシュ画面" という用語は、表示される時間が延長されたスプラッシュ画面を指します。 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを拡張するサブクラスやこのクラスから派生したサブクラスという意味ではありません。
+> **注:** 語句「追加スプラッシュ画面」、このトピックでは、表示されるスプラッシュ画面、画面上の一定の時間を指します。 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを拡張するサブクラスやこのクラスから派生したサブクラスという意味ではありません。
 
- 
+ 
 
 追加スプラッシュ画面の外観は、次の推奨事項に従って、既定のスプラッシュ画面に厳密に似せるようにしてください。
 
--   この追加スプラッシュ画面ページでは、アプリ マニフェスト内でスプラッシュ画面に指定したイメージ (アプリのスプラッシュ画面のイメージ) と一致する 620 x 300 ピクセルのイメージを使います。 Microsoft Visual Studio 2015 では、スプラッシュ画面の設定はアプリ マニフェストの **[ビジュアル資産]** タブの **[スプラッシュ画面]** セクション (Package.appxmanifest ファイル) に保存されています。
+-   この追加スプラッシュ画面ページでは、アプリ マニフェスト内でスプラッシュ画面に指定したイメージ (アプリのスプラッシュ画面のイメージ) と一致する 620 x 300 ピクセルのイメージを使います。 Microsoft Visual の Studio2015 では、スプラッシュ画面の設定は、アプリ マニフェスト (Package.appxmanifest ファイル) で、[**ビジュアル資産**] タブの [**スプラッシュ画面**] セクションで保存されます。
 -   追加スプラッシュ画面では、アプリ マニフェスト内でスプラッシュ画面に指定した背景色 (アプリのスプラッシュ画面の背景) と一致する背景色を使います。
 -   コードでは、[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを使って、アプリのスプラッシュ画面画像の座標が、既定のスプラッシュ画面と同じになるようにします。
 -   コードでは、[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを使って追加スプラッシュ画面上の項目を配置し直すことで、ウィンドウ サイズ変更イベント (画面が回転されたり、画面上で次の別のアプリに移動したりするなど) に応答するようにする必要があります。
@@ -48,7 +46,7 @@ ms.locfileid: "693228"
 
 また、このトピックでは、C#、Visual Basic、C++ を使って、既にあるユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクト用の追加スプラッシュ画面を作成することを想定しています。
 
--   Visual Studio 2015 でアプリを開きます。
+-   Visual Studio2015 では、アプリを開きます。
 -   メニュー バーから **[プロジェクト]** を開き、**[新しい項目の追加]** をクリックします。 **[新しい項目の追加]** ダイアログ ボックスが表示されます。
 -   このダイアログ ボックスから新しい**空白のページ**をアプリに追加します。 このトピックでは、追加スプラッシュ画面ページの名前を "ExtendedSplash" とします。
 
@@ -77,9 +75,9 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     </Grid>
 ```
 
-**注:** このコードでは [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) の幅を 20 ピクセルに設定しています。 この幅はアプリに合わせて手動で設定できますが、20 ピクセル未満の幅ではコントロールがレンダリングされません。
+**注:** このコードでは、 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)の幅を 20 ピクセルに設定します。 この幅はアプリに合わせて手動で設定できますが、20 ピクセル未満の幅ではコントロールがレンダリングされません。
 
- 
+ 
 
 ## <a name="essential-code-for-an-extended-splash-screen-class"></a>追加スプラッシュ画面クラスの基本的なコード
 
@@ -221,9 +219,9 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     }
     ```
 
-    **注:** イメージの場所を取得する前に、クラス変数 (`splash`) に有効な [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) オブジェクトが含まれていることを確認してください (例を参照)。
+    **注:** を取得しようとする前に、イメージの場所を確認クラス変数 (`splash`) の例に示すように、有効な[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763)オブジェクトが含まれています。
 
-     
+     
 
 8.  **(省略可能) クラス メソッドを追加して保存済みのセッション状態を復元する**
 
@@ -267,7 +265,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ## <a name="complete-code"></a>コードを完成させる
 
 
-> **注:** 次のコードは、前の手順に示したスニペットとは少し異なります。
+> **注:** 次のコードは少し異なります、前の手順に示したスニペットします。
 -   ExtendedSplash.xaml には `DismissSplash` ボタンが含まれています。 このボタンがクリックされると、イベント ハンドラーである `DismissSplashButton_Click` が `DismissExtendedSplash` メソッドを呼び出します。 アプリで、リソースの読み込みまたは UI の初期化の完了時に `DismissExtendedSplash` を呼び出します。
 -   このアプリは、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) ナビゲーションを使う、UWP アプリのプロジェクト テンプレートも使います。 その結果、App.xaml.cs ファイルで、起動アクティブ化ハンドラー ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) は `rootFrame` を定義し、それを使ってアプリのウィンドウのコンテンツを設定します。
 
@@ -421,7 +419,7 @@ namespace SplashScreenExample
 }
 ```
 
-App.xaml.cs: このプロジェクトは、UWP アプリの **[新しいアプリケーション (XAML)]** プロジェクト テンプレートを使って Visual Studio 2015 で作成されました。 `OnNavigationFailed` と `OnSuspending` の両方のイベント ハンドラーは自動的に生成され、追加スプラッシュ画面を実装するために変更する必要はありません。 このトピックでは、`OnLaunched` のみを変更します。
+App.xaml.cs: このプロジェクトが Visual Studio2015 で、UWP アプリの**空白のアプリ (XAML)** のプロジェクト テンプレートを使用して作成されます。 `OnNavigationFailed` と `OnSuspending` の両方のイベント ハンドラーは自動的に生成され、追加スプラッシュ画面を実装するために変更する必要はありません。 このトピックでは、`OnLaunched` のみを変更します。
 
 アプリにプロジェクト テンプレートを使わなかった場合、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) ナビゲーションを使用しないように変更した `OnLaunched` の例については、手順 4「[起動アクティブ化ハンドラーの変更](#modify-the-launch-activation-handler)」をご覧ください。
 
@@ -552,6 +550,6 @@ namespace SplashScreenExample
 * [**Windows.ApplicationModel.Activation.SplashScreen.ImageLocation プロパティ**](https://msdn.microsoft.com/library/windows/apps/br224765)
 * [**Windows.ApplicationModel.Core.CoreApplicationView.Activated イベント**](https://msdn.microsoft.com/library/windows/apps/br225018)
 
- 
+ 
 
- 
+ 

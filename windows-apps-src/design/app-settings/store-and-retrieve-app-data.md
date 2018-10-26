@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 11/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f73a99ea4dc58880f1de517853a05aa0b0d6dd6b
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 2af9aec9742a950f7bd35794ff4d10763e6c2c5c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512904"
+ms.locfileid: "5548456"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>設定と他のアプリ データを保存して取得する
 

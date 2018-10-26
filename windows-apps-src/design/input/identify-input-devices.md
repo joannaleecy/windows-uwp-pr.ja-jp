@@ -9,15 +9,13 @@ keywords: デバイス, デジタイザー, 入力, 操作
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 40abeae4048784599deadd9a1a62a995447159be
-ms.sourcegitcommit: 03a3c02c7b3b0b0a3d1b14705cc1fd73788ac034
-ms.translationtype: HT
+ms.openlocfilehash: 77d2a914147fb2cd20f8043e0b52a824ddf3710d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "1903196"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546614"
 ---
 # <a name="identify-input-devices"></a>入力デバイスの識別
 
@@ -31,9 +29,9 @@ ms.locfileid: "1903196"
 
 接続されているマウスによって公開されているプロパティを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) クラスを使います。 新しい **MouseCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**注**  ここで説明するプロパティによって返される値は、検出されたすべてのマウスに基づきます。ブール型プロパティは、少なくとも 1 つのマウスが特定の機能をサポートする場合は 0 以外の値を返し、数値プロパティは、いずれか 1 つのマウスで公開されている最大値を返します。
+**注:** ここで説明するプロパティによって返される値が検出されたすべてのマウスに基づきますブール型プロパティが少なくとも 1 つのマウスが特定の機能がサポートする数値プロパティは、いずれかによって公開されている最大値を返す場合、0 以外を返す。マウスします。
 
- 
+ 
 
 次のコードでは、一連の [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を使って、個別のマウスのプロパティと値を表示しています。
 
@@ -69,9 +67,9 @@ private void GetKeyboardProperties()
 
 タッチ デジタイザーが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) クラスを使います。 新しい **TouchCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**注**  ここで説明するプロパティによって返される値は、検出されたすべてのタッチ デジタイザーに基づきます。ブール型プロパティは、少なくとも 1 つのデジタイザーが特定の機能をサポートする場合は 0 以外の値を返し、数値プロパティは、いずれか 1 つのデジタイザーで公開されている最大値を返します。
+**注:** ここで説明するプロパティによって返される値はすべての検出されたタッチ デジタイザーに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデジタイザーが特定の機能をサポートし、数値プロパティは、最大値を返します。任意の 1 つのデジタイザーで公開されます。
 
- 
+ 
 
 次のコードでは、一連の [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を使って、タッチのプロパティと値を表示しています。
 
@@ -89,7 +87,7 @@ private void GetTouchProperties()
 
 検出されたデバイスがポインター入力 (タッチ、タッチパッド、マウス、ペン) をサポートしているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) クラスを使います。 新しい **PointerDevice** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**注**  ここで説明するプロパティによって返される値は、検出されたすべてのポインター デバイスに基づきます。ブール型プロパティは、少なくとも 1 つのデバイスが特定の機能をサポートする場合は 0 以外の値を返し、数値プロパティは、いずれか 1 つのポインター デバイスで公開されている最大値を返します。
+**注:** ここで説明するプロパティによって返される値はすべてのポインターが検出されたデバイスに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデバイスが特定の機能をサポートし、数値プロパティは、公開されている最大値を返します。によって任意の 1 つのポインター デバイス。
 
 次のコードでは、テーブルを使って、各ポインター デバイスのプロパティと値を表示しています。
 
@@ -188,9 +186,9 @@ private void GetPointerDevices()
 
 **サンプルのアーカイブ**
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
- 
+ 
 
- 
+ 
 
 
 

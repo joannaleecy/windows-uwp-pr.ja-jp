@@ -6,16 +6,14 @@ ms.assetid: 2A466C16-1F51-4D8D-AD13-704B6D3C7BEC
 ms.author: wdg-dev-content
 ms.date: 03/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, 入力, 未加工のゲーム コントローラー
 ms.localizationpriority: medium
-ms.openlocfilehash: b6ae3bc05069fc1c79a4227775b13e48d1cd6030
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: c57db3f9604e20d0dc83d6c3cf2ced87b1f5dcc1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675519"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546737"
 ---
 # <a name="raw-game-controller"></a>未加工のゲーム コントローラー
 

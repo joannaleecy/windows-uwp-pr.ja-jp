@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b5a318a9fc5667beda26ef77d5795697b2383eb
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 84178a4e5cf993574e7553da44beecf13622bd65
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044481"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544552"
 ---
 # <a name="pixel-shader-ps-stage"></a>ピクセル シェーダー (PS) ステージ
 
@@ -56,9 +54,9 @@ ms.locfileid: "1044481"
 
 [グラフィックス パイプライン](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

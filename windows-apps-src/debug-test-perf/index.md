@@ -6,16 +6,14 @@ description: Microsoft Visual Studio とその他のツールを使ってデバ�
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e2a919af3cb532ce19427967f305cb03adc149a1
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: a6651c6d1117648522f95c7e7c85aad11ceed42f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517846"
+ms.locfileid: "5549242"
 ---
 # <a name="debugging-testing-and-performance"></a>デバッグ、テスト、パフォーマンス
 

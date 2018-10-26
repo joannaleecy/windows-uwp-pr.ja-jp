@@ -6,16 +6,14 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 47280437ad902d0679e0ef266bbd7ad9b6b635af
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 6eca73beae6634d1809c0e9e779d80a43b495a65
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044761"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544370"
 ---
 # <a name="lighting-overview"></a>光源の概要
 
@@ -79,9 +77,9 @@ Direct3D は、組み合わせることで最終的な色を生み出す 4 つ�
 
 [照明および素材](lights-and-materials.md)
 
- 
+ 
 
- 
+ 
 
 
 

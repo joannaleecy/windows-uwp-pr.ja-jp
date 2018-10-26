@@ -6,16 +6,14 @@ title: MediaFrameReader を使ったオーディオ フレームの処理
 ms.author: drewbat
 ms.date: 04/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7606596937c0fa3297c049da1a313c155b1a35b9
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: d69e8d8cca3932045d4b43d727210f84e816f30b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833254"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542829"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>MediaFrameReader を使ったオーディオ フレームの処理
 
@@ -25,14 +23,14 @@ ms.locfileid: "1833254"
 > この記事で説明している機能は、Windows 10 バージョン 1803 以降でのみ利用できます。
 
 > [!NOTE] 
-> **MediaFrameReader** を使ってカラー カメラ、深度カメラ、赤外線カメラなど、さまざまなフレーム ソースからのフレームを表示する方法を示す、ユニバーサル Windows アプリのサンプルがあります。 詳しくは、「[カメラ フレームのサンプル](http://go.microsoft.com/fwlink/?LinkId=823230)」をご覧ください。
+> **MediaFrameReader** を使って色、深度、赤外線カメラなど、さまざまなフレーム ソースからのフレームを表示する方法を示す、ユニバーサル Windows アプリのサンプルがあります。 詳しくは、「[カメラ フレームのサンプル](http://go.microsoft.com/fwlink/?LinkId=823230)」をご覧ください。
 
 ## <a name="setting-up-your-project"></a>プロジェクトの設定
 オーディオ フレームを取得するためのプロセスは、他の種類のメディア フレームを取得する場合とほぼ同じです。 **MediaCapture** を使う他のアプリと同様に、カメラ デバイスにアクセスする前にアプリが *webcam* 機能を使うことを宣言する必要があります。 アプリがオーディオ デバイスからキャプチャする場合は、*microphone* デバイス機能も宣言する必要があります。 
 
 **アプリ マニフェストに機能を追加する**
 
-1.  Microsoft Visual Studio では、**ソリューション エクスプローラー**で **package.appxmanifest** 項目をダブルクリックして、アプリケーション マニフェストのデザイナーを開きます。
+1.  Microsoft Visual Studio では、**ソリューション エクスプローラー**で **package.appxmanifest** 項目をダブルクリックし、アプリケーション マニフェストのデザイナーを開きます。
 2.  **[機能]** タブをクリックします。
 3.  **[Web カメラ]** のボックスと **[マイク]** のボックスをオンにします。
 4.  画像ライブラリとビデオ ライブラリにアクセスするには、**[画像ライブラリ]** のボックスと **[ビデオ ライブラリ]** のボックスをオンにします。
@@ -85,7 +83,7 @@ ms.locfileid: "1833254"
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [カメラ フレームのサンプル](http://go.microsoft.com/fwlink/?LinkId=823230)
 * [オーディオ グラフ](audio-graphs.md)
- 
+ 
 
 
 

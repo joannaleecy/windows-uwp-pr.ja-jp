@@ -6,25 +6,23 @@ description: このセクションでは、RFCOMM、GATT、低エネルギー (L
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: da12a9121cf54334cef1eccf8b41b43683126eff
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 19f381b7fbd53ee50d4589201edf74ac1f241d40
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "299716"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549638"
 ---
 # <a name="bluetooth"></a>Bluetooth
-このセクションには、どこからでも Windows プラットフォーム (UWP) アプリに Bluetooth を統合する方法についての記事が含まれています。 アプリの管理を実装することもできますが 2 つの異なる bluetooth テクノロジがあります。
+このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリに Bluetooth を統合する方法に関する記事が含まれています。 アプリ内に実装することも可能 2 つの異なる bluetooth テクノロジがあります。
 
-## <a name="classic-bluetooth-rfcomm"></a>クラシック Bluetooth (RFCOMM)
-Bluetooth 者の前にデバイスよく使われるこのプロトコル Bluetooth を使って通信します。 このプロトコルはシンプルな省の必要はありません。 デバイスとデバイス通信に便利です。 サンプルのコードを含む、このプロトコルの詳細については、 [Bluetooth RFCOMM](send-or-receive-files-with-rfcomm.md)トピックを参照してください。
+## <a name="classic-bluetooth-rfcomm"></a>従来の Bluetooth (RFCOMM)
+Bluetooth LE、前にデバイスは Bluetooth を使用した通信がこのプロトコルをよく使われます。 このプロトコルは、シンプルでの消費電力の削減することがなくデバイスの通信に役立つです。 このプロトコルは、コード サンプルを含むについて詳しくは、 [Bluetooth RFCOMM](send-or-receive-files-with-rfcomm.md)のトピックを参照してください。
 
 ## <a name="bluetooth-low-energy-le"></a>Bluetooth 低エネルギー (LE)
-Bluetooth 低エネルギー (LE) は、プロトコルの検出を効率的に使用エネルギーの使用状況の条件を持つデバイス間の通信を定義する仕様です。 サンプル コードなどの詳細については、 [Bluetooth 低エネルギー](bluetooth-low-energy-overview.md)トピックを参照してください。
+Bluetooth 低エネルギー (LE) は、プロトコルの検出、効率的な電力使用状況の条件を搭載したデバイス間の通信を定義する仕様です。 コード サンプルを含むの詳細については、 [Bluetooth 低エネルギー](bluetooth-low-energy-overview.md)トピックを参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 - [Bluetooth に関する開発者向け FAQ](bluetooth-dev-faq.md)

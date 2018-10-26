@@ -6,17 +6,15 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 04/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f4fc4cd9701778b3919896cf90929272e6b0923
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 62e39e8e2cf1caa5673a925481848147cf445188
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477381"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545957"
 ---
 # <a name="page-transitions"></a>ページ切り替え効果
 

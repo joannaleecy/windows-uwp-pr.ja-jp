@@ -6,16 +6,14 @@ ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 842f1bf1642e79d4bd2651560fdf7208cfb1877d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516327"
+ms.locfileid: "5546558"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} マークアップ拡張
 

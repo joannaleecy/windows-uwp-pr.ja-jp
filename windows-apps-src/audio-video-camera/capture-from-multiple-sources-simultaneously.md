@@ -6,16 +6,14 @@ title: MediaFrameSourceGroup を使用して複数のソースからキャプチ
 ms.author: drewbat
 ms.date: 09/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, キャプチャ, ビデオ
 ms.localizationpriority: medium
-ms.openlocfilehash: 40c496dcda6d4876aaadc590070bacab243fb253
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: ae52026d5fb1ab3c140edfdcd1f92f7d3d0fd143
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832690"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545275"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>MediaFrameSourceGroup を使用して複数のソースからキャプチャする
 
@@ -79,9 +77,9 @@ Windows 10、バージョン 1803 以降では、オーディオとビデオに�
 * [メディア項目、プレイリスト、トラック](media-playback-with-mediasource.md)
 
 
- 
+ 
 
- 
+ 
 
 
 

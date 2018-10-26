@@ -6,16 +6,14 @@ description: 列挙用の名前空間によって、システムに内部接続�
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cf6e8fe3205d70479a590bf73f7a01cd7ac3848
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: df6082665136442c03273dea4132417b0fd7033c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958917"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544168"
 ---
 # <a name="enumerate-devices"></a>デバイスの列挙
 
@@ -72,7 +70,7 @@ async void enumerateSnapshot(){
 | **DeviceInformation.Kind**       | [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトで表されるデバイス オブジェクトの種類を示します。 これは、デバイスのカテゴリでも種類でもありません。 1 つのデバイスを、種類の異なる複数の **DeviceInformation** オブジェクトで表すことができます。 このプロパティに指定できる値とそれらの相互関係については、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) をご覧ください。                           |
 | **DeviceInformation.Properties** | このプロパティ バッグには、[**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトについて要求される情報が含まれています。 最も一般的なプロパティは、[**DeviceInformation.Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name) のように、**DeviceInformation** オブジェクトのプロパティとして簡単に参照されます。 詳しくは、「[デバイス情報のプロパティ](device-information-properties.md)」をご覧ください。                                                                |
 
- 
+ 
 
 ## <a name="devicepicker-ui"></a>DevicePicker UI
 
@@ -86,9 +84,9 @@ async void enumerateSnapshot(){
 
 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) を表示すると、デバイスの追加、削除、更新に合わせて、UI の内容が自動的に更新されます。
 
-**注**  [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) を使って [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) を指定することはできません。 特定の **DeviceInformationKind** のデバイスが必要な場合は、[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を作成して独自の UI を提供する必要があります。
+**注:** [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841)を使用して[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)を指定することはできません。 特定の **DeviceInformationKind** のデバイスが必要な場合は、[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を作成して独自の UI を提供する必要があります。
 
- 
+ 
 
 キャスト メディア コンテンツと DIAL を使う場合は、それぞれに独自のピッカーが用意されています。 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn972525) と [**DialDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn946783) です。
 
@@ -127,9 +125,9 @@ async void enumerateSnapshot(){
 
 バックグラウンド タスクによるデバイスの監視は、上で説明した [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を作成する方法によく似ています。 実際、最初に前のセクションの説明に従って通常の **DeviceWatcher** オブジェクトを作成する必要があります。 オブジェクトを作成したら、[**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start) の代わりに [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) を使います。 **GetBackgroundTrigger** を呼び出すときに目的の通知 (追加、削除、更新) を指定する必要があります。 更新または削除を要求する際には追加も要求する必要があります。 トリガーを登録すると、すぐにバックグラウンドで **DeviceWatcher** の実行が開始されます。 それ以降、条件に一致する新しい通知を受け取るたびに、バックグラウンド タスクがアプリケーションをトリガーして、前回のトリガー以降の最新の変更が提供されます。
 
-**重要:** [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) が最初にアプリケーションをトリガーするのは、ウォッチャーが **EnumerationCompleted** 状態に達したときです。 したがって、そのときには最初の結果がすべて含まれます。 その後にアプリケーションがトリガーされるときには、前回のトリガー以降に発生した追加、更新、削除の通知のみが含まれます。 最初の結果が一度に 1 つずつ送られるのではなく、**EnumerationCompleted** に達した後にまとめて送られるため、フォアグラウンドの [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) オブジェクトとは若干異なります。
+**重要な**初めて[**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838)が、アプリケーションをトリガーは、ウォッチャーが**EnumerationCompleted**状態に達したときになります。 したがって、そのときには最初の結果がすべて含まれます。 その後にアプリケーションがトリガーされるときには、前回のトリガー以降に発生した追加、更新、削除の通知のみが含まれます。 最初の結果が一度に 1 つずつ送られるのではなく、**EnumerationCompleted** に達した後にまとめて送られるため、フォアグラウンドの [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) オブジェクトとは若干異なります。
 
- 
+ 
 
 ワイヤレス プロトコルの中には、バックグラウンドでスキャンするときにはフォアグラウンドでスキャンするときと動作が異なるものや、そもそもバックグラウンドでのスキャンをサポートしていないものもあります。 バックグラウンド スキャンについては 3 つの可能性があります。 次の表は、それらの可能性と、そのアプリケーションに対する影響を示しています。 たとえば、Bluetooth と Wi-Fi Direct はバックグラウンド スキャンをサポートしていないため、拡張子によって [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) をサポートしません。
 
@@ -139,7 +137,7 @@ async void enumerateSnapshot(){
 | バックグラウンドで可能なのはパッシブ スキャンのみ | パッシブ スキャンが行われるまで待つことになるため、デバイスの検出に時間がかかる場合があります。                                                           |
 | バックグラウンド スキャンはサポートされていない            | [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) でデバイスが検出されず、更新も報告されません。 |
 
- 
+ 
 
 バックグラウンド タスクとしてのスキャンをサポートしていないプロトコルが [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) に含まれていてもトリガーは機能しますが、 そのプロトコルで更新や結果を取得することはできません。 その他のプロトコルやデバイスの更新は通常どおりに検出されます。
 
@@ -160,9 +158,9 @@ async void enumerateSnapshot(){
 すべての [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトが、[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) と [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx) の 2 つの情報を組み合わせて個別に識別されています。 この 2 つの情報を手元に残しておくと、**DeviceInformation** オブジェクトが失われたとしても、この情報を [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) に渡して再び作成することができます。 この場合、アプリと統合するデバイスのユーザー設定を保存できます。
 
 
- 
+ 
 
- 
+ 
 
 
 

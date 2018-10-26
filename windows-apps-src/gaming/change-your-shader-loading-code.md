@@ -6,19 +6,18 @@ ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D, シェーダー パイプライン
-ms.openlocfilehash: 20d02d9b9724c0cfd8120d4d38fa476b9efa3bb3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: f8e3671b5d3490cf565db34ec891c203ee1f7c7a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246722"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547123"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>OpenGL ES 2.0 と Direct3D のシェーダー パイプラインの比較
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 **重要な API**
@@ -54,7 +53,7 @@ Direct3D では、シェーダー リソースは、コンパイルと読み込�
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | glCreateShader | コンパイルされたシェーダー オブジェクトが正常に読み込まれた後で [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) と [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) を呼び出し、それらに CSO をバッファーとして渡します。 |
 
- 
+ 
 
 ## <a name="compiling-a-shader"></a>シェーダーのコンパイル
 
@@ -66,7 +65,7 @@ Direct3D のシェーダーは、ユニバーサル Windows プラットフォ�
 | glCompileShader                        | なし。 シェーダーを Visual Studio の .cso ファイルにコンパイルし、パッケージに含めます。                                                                                     |
 | コンパイルの状態に glGetShaderiv を使用 | なし。 コンパイルでエラーが発生した場合は、Visual Studio の FX Compiler (FXC) からのコンパイル出力を調べてください。 コンパイルが成功すると、対応する CSO ファイルが作成されます。 |
 
- 
+ 
 
 ## <a name="loading-a-shader"></a>シェーダーの読み込み
 
@@ -77,7 +76,7 @@ Direct3D のシェーダーは、ユニバーサル Windows プラットフォ�
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ShaderSource  | コンパイルされたシェーダー オブジェクトが正常に読み込まれた後で [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) と [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) を呼び出します。 |
 
- 
+ 
 
 ## <a name="setting-up-the-pipeline"></a>パイプラインの設定
 
@@ -91,7 +90,7 @@ OpenGL ES 2.0 には、実行のための複数のシェーダーを含む "シ�
 | glUseProgram    | なし。 Direct3D 11 では、シェーダー プログラム オブジェクト アブストラクションは使われません。                          |
 | glGetProgramiv  | 作成した、[**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) への参照を使います。 |
 
- 
+ 
 
 静的な [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) メソッドを使って [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) と [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/dn280493) のインスタンスを作成します。
 
@@ -108,7 +107,7 @@ D3D11CreateDevice(
   creationFlags, // Set set debug and Direct2D compatibility flags.
   featureLevels, // List of feature levels this app can support.
   ARRAYSIZE(featureLevels),
-  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for Windows Store apps.
+  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for UWP apps.
   &device, // Returns the Direct3D device created.
   &m_featureLevel, // Returns feature level of device created.
   &m_d3dContext // Returns the device's immediate context.
@@ -136,7 +135,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
- 
+ 
 
 ## <a name="configuring-the-vertex-shaders"></a>頂点シェーダーの構成
 
@@ -149,7 +148,7 @@ Direct3D 11 の頂点シェーダーの構成は、シェーダーの読み込�
 | glGetShaderiv、glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476489)                       |
 | glGetUniformfv、glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446793) |
 
- 
+ 
 
 ## <a name="configuring-the-pixel-shaders"></a>ピクセル シェーダーの構成
 
@@ -162,7 +161,7 @@ Direct3D 11 のピクセル シェーダーの構成は、シェーダーの読�
 | glGetShaderiv、glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
 | glGetUniformfv、glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645) |
 
- 
+ 
 
 ## <a name="generating-the-final-results"></a>最終結果の生成
 
@@ -174,7 +173,7 @@ Direct3D 11 のピクセル シェーダーの構成は、シェーダーの読�
 | glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)、[**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (または [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385) の他の Draw\* メソッド) |
 | eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)                                                                                                                                                                              |
 
- 
+ 
 
 ## <a name="porting-glsl-to-hlsl"></a>HLSL への GLSL の移植
 
@@ -186,7 +185,7 @@ GLSL と HLSL は、複合型のサポートと全体的な構文以外はそれ
 | Direct3D 11 HLSL          | ～ 4.30。                                                                                                                                                                                                                    | SM 5.0                |
 | OpenGL ES 2.0 向けの GLSL ES | 1.40。 OpenGL ES 2.0 向けの GLSL ES の以前の実装では、1.10 から 1.30 までを使用できます。 glGetString(GL\_SHADING\_LANGUAGE\_VERSION) または glGetString(SHADING\_LANGUAGE\_VERSION) で元のコードをチェックし、バージョンを調べてください。 | ～ SM 2.0               |
 
- 
+ 
 
 2 つのシェーダー言語の違いと一般的な構文のマッピングについて詳しくは、「[GLSL と HLSL の対応を示すリファレンス](glsl-to-hlsl-reference.md)」をご覧ください。
 
@@ -209,7 +208,7 @@ Direct3D 11 HLSL セマンティクスは、uniform や属性名と同様に、�
 | gl\_FragColor       | シェーダーに提供される RGBA カラー データを表す COLOR(n)。 座標データと同様に処理されることに注意してください。このセマンティクスは、単に色データであることを示すために使用します。 |
 | gl\_FragData\[n\]   | ピクセル シェーダーからターゲット テクスチャまたはその他のピクセル バッファーへの書き込みを表す SV\_Target\[n\]。                                                                               |
 
- 
+ 
 
 セマンティクスのコーディングに使うメソッドは、OpenGL ES 2.0 での組み込みメソッドの使用と同じではありません。 OpenGL では、構成または宣言なしで組み込みメソッドの多くに直接アクセスできます。Direct3D では、特定のセマンティクスを使うために、特定の定数バッファーでフィールドを宣言するか、シェーダーの **main()** メソッドの戻り値として宣言する必要があります。
 
@@ -246,9 +245,9 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 Direct3D でのセマンティクスの使用について詳しくは、「[HLSL セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)」をご覧ください。
 
- 
+ 
 
- 
+ 
 
 
 

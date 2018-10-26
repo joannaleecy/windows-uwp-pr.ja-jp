@@ -6,25 +6,23 @@ description: C# と Visual Basic で記述されたユニバーサル Windows �
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 3b7dfb274c5a6d55204a467fc894bac5fd044048
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 31279de84b8f00e4489a7aae962caa231bb16dc1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894646"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543227"
 ---
 # <a name="improve-garbage-collection-performance"></a>ガベージ コレクションのパフォーマンスの向上
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 C# と Visual Basic で記述されたユニバーサル Windows プラットフォーム (UWP) アプリは、.NET ガベージ コレクターによって、自動的にメモリ管理が行われます。 このセクションでは、UWP アプリでの .NET ガーベジ コレクターの動作とパフォーマンスに関するベスト プラクティスについて説明します。 .NET ガーベジ コレクターのしくみと、ガーベジ コレクターのパフォーマンスをデバッグおよび分析するためのツールについて詳しくは、「[ガベージ コレクション](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx)」をご覧ください。
 
-**注**  ガベージ コレクターの既定の動作に介入が必要な場合、アプリに関して一般的なメモリの問題があることを強く示唆しています。 詳しくは、「[Memory Usage Tool while debugging in Visual Studio 2015 (Visual Studio でのユーザー モード デバッグの設定)](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx)」をご覧ください。 このトピックは、C# と Visual Basic にのみ適用されます。
+**注:** がある一般的なメモリの問題、アプリのことを強く示唆ガベージ コレクターの既定の動作に介入する必要があります。 詳しくは、「[Memory Usage Tool while debugging in Visual Studio 2015 (Visual Studio でのユーザー モード デバッグの設定)](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx)」をご覧ください。 このトピックは、C# と Visual Basic にのみ適用されます。
 
- 
+ 
 
 ガーベジ コレクターは、ガベージ コレクションで実行する必要がある作業の量とマネージ ヒープのメモリ消費量とのバランスを考慮して、実行するタイミングを決めます。 ガーベジ コレクターがこの処理を行う方法の 1 つとして、ヒープをジェネレーション別に分け、ほとんどの場合はヒープの一部のみのコレクションを実行します。 マネージ ヒープには、次の 3 つのジェネレーションがあります。
 
@@ -46,8 +44,8 @@ C# と Visual Basic で記述されたユニバーサル Windows プラットフ
 
 [**GC.Collect(n)**](https://msdn.microsoft.com/library/windows/apps/xaml/y46kxc5e.aspx) を呼び出すと、ジェネレーション別にガベージ コレクションを実行できます。n には、コレクションを実行するジェネレーション (0、1、または 2) を指定します。
 
-**注**  アプリでは、ガベージ コレクションを強制的に実行しないでください。ガーベジ コレクターはコレクションの実行に最も適したタイミングを判断するためにさまざまなヒューリスティックを使うため、コレクションを強制的に実行すると、多くの場合は CPU が不必要に使われます。 ただし、アプリ内のたくさんのオブジェクトが使われなくなることがわかっており、そのメモリをシステムに返す必要がある場合は、ガベージ コレクションを強制的に実行してもかまいません。 たとえば、ゲームの読み込みシーケンスの最後にコレクションを実行すると、ゲームプレイが始まる前にメモリを解放できます。
- 
+**注:** ことをしないために、強制的にガベージ コレクション アプリでガベージ コレクターでは、さまざまなヒューリスティックを使用して、コレクションを実行する最適なタイミングを判断し、コレクションを強制する CPU 活用が不要な多くの場合はお勧めします。 ただし、アプリ内のたくさんのオブジェクトが使われなくなることがわかっており、そのメモリをシステムに返す必要がある場合は、ガベージ コレクションを強制的に実行してもかまいません。 たとえば、ゲームの読み込みシーケンスの最後にコレクションを実行すると、ゲームプレイが始まる前にメモリを解放できます。
+ 
 ガベージ コレクションが誤って何度も実行されないようにするには、[**GCCollectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/bb495757.aspx) を **Optimized** に設定します。 これにより、コレクションが妥当で生産的であると判断した場合にのみ、ガベージ コレクターがコレクションを開始するようになります。
 
 ## <a name="reduce-garbage-collection-time"></a>ガベージ コレクションの実行時間の短縮
@@ -82,9 +80,9 @@ C# と Visual Basic で記述されたユニバーサル Windows プラットフ
 
 オブジェクト参照をインデックスに置き換えると、アプリに複雑な変更が加わり、混乱を招く可能性があります。また、この手法は、大きなオブジェクトに多数の参照が含まれている場合が最も効果的です。 アプリでのガベージ コレクションの実行時間の長さが、参照の多いオブジェクトに関連していることがわかっている場合にのみ行ってください。
 
- 
+ 
 
- 
+ 
 
 
 

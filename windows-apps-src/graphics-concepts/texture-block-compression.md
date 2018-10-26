@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f3dc2c29f30c32afda71406917afeec95bbd2ec
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 46c58da3dbe425b055855423aa9e9cebaa06f929
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044791"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544960"
 ---
 # <a name="texture-block-compression"></a>テクスチャのブロック圧縮
 
@@ -25,7 +23,7 @@ Direct3D 11 では、テクスチャのブロック圧縮 (BC) サポートが�
 
 BC1 ～ BC5 形式のサポートなど、Direct3D 11 より前のブロック圧縮アルゴリズムのサポートに関する具体的な情報については、「[ブロック圧縮 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb694531)」をご覧ください。
 
-* * ファイル形式に関する注意事項: * *、BC6H と BC7 テクスチャ圧縮の形式は、圧縮テクスチャ データを格納する DDS ファイル形式を使用します。 詳しくは、「[DDS 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/bb943991)」をご覧ください。
+**ファイル形式に関する注意:** BC6H および BC7 テクスチャ圧縮形式では、圧縮されたテクスチャ データを格納するための DDS ファイル形式を使用します。 詳しくは、「[DDS 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/bb943991)」をご覧ください。
 
 ## <a name="span-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanblock-compression-formats-supported-in-direct3d-11"></a><span id="Block_Compression_Formats_Supported_in_Direct3D_11"></span><span id="block_compression_formats_supported_in_direct3d_11"></span><span id="BLOCK_COMPRESSION_FORMATS_SUPPORTED_IN_DIRECT3D_11"></span>Direct3D 11 でサポートされるブロック圧縮形式
 
@@ -40,7 +38,7 @@ BC1 ～ BC5 形式のサポートなど、Direct3D 11 より前のブロック�
 | 3 チャネル ハイ ダイナミック レンジ (HDR) カラー | 「半」浮動小数点\*の 3 カラー チャネル (16 ビット:16 ビット:16 ビット) | BC6H               | Direct3D 11                     |
 | 3 チャネル カラー、アルファ チャネルはオプション  | 3 カラー チャネル (チャネルあたり 4 ～ 7 ビット)、および 0 ～ 8 ビットのアルファ  | BC7                | Direct3D 11                     |
 
- 
+ 
 
 \*「半」浮動小数点は、オプションの符号ビット、5 ビットのバイアス付き指数部、および 10 または 11 ビットの仮数部からなる 16 ビット値。
 ## <a name="span-idbc1bc2andb3formatsspanspan-idbc1bc2andb3formatsspanspan-idbc1bc2andb3formatsspanbc1-bc2-and-b3-formats"></a><span id="BC1__BC2__and_B3_Formats"></span><span id="bc1__bc2__and_b3_formats"></span><span id="BC1__BC2__AND_B3_FORMATS"></span>BC1、BC2、および B3 形式
@@ -54,7 +52,7 @@ BC1、BC2、および BC3 形式は Direct3D 9 DXTn テクスチャ圧縮形式�
 | BC2                      | DXGI\_FORMAT\_BC2\_UNORM、DXGI\_FORMAT\_BC2\_UNORM\_SRGB、DXGI\_FORMAT\_BC2\_TYPELESS | D3DFMT\_DXT2\*、FourCC="DXT2"、D3DFMT\_DXT3、FourCC="DXT3" | 16                        |
 | BC3                      | DXGI\_FORMAT\_BC3\_UNORM、DXGI\_FORMAT\_BC3\_UNORM\_SRGB、DXGI\_FORMAT\_BC3\_TYPELESS | D3DFMT\_DXT4\*、FourCC="DXT4"、D3DFMT\_DXT5、FourCC="DXT5" | 16                        |
 
- 
+ 
 
 \*これらの圧縮スキーム (DXT2 と DXT4) では、Direct3D 9 プリマルチプライ済みアルファ形式と標準のアルファ形式が区別されません。 これらの区別は、レンダリング時にプログラム可能なシェーダーで処理する必要があります。
 
@@ -66,7 +64,7 @@ BC1、BC2、および BC3 形式は Direct3D 9 DXTn テクスチャ圧縮形式�
 | BC4                      | DXGI\_FORMAT\_BC4\_UNORM、DXGI\_FORMAT\_BC4\_SNORM、DXGI\_FORMAT\_BC4\_TYPELESS | FourCC="ATI1"                | 8                         |
 | BC5                      | DXGI\_FORMAT\_BC5\_UNORM、DXGI\_FORMAT\_BC5\_SNORM、DXGI\_FORMAT\_BC5\_TYPELESS | FourCC="ATI2"                | 16                        |
 
- 
+ 
 
 ## <a name="span-idbc6hformatspanspan-idbc6hformatspanspan-idbc6hformatspanbc6h-format"></a><span id="BC6H_Format"></span><span id="bc6h_format"></span><span id="BC6H_FORMAT"></span>BC6H 形式
 
@@ -77,7 +75,7 @@ BC1、BC2、および BC3 形式は Direct3D 9 DXTn テクスチャ圧縮形式�
 |--------------------------|----------------------------------------------------------------------------------|------------------------------|---------------------------|
 | BC6H                     | DXGI\_FORMAT\_BC6H\_UF16、DXGI\_FORMAT\_BC6H\_SF16、DXGI\_FORMAT\_BC6H\_TYPELESS | 該当なし                          | 16                        |
 
- 
+ 
 
 BC6H 形式では、4 x 4 のピクセル ブロックごとに異なるエンコード モードを選択できます。 全部で 14 種類のエンコード モードを利用でき、それぞれのモードには、表示されるテクスチャの画質に少しずつ異なるトレードオフがあります。 モードの選択によって、ソース コンテンツに合わせて品質レベルを選択または適合させたハードウェアで高速デコードできますが、検索領域の複雑さも大幅に増加します。
 
@@ -90,7 +88,7 @@ BC6H 形式では、4 x 4 のピクセル ブロックごとに異なるエン�
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------|---------------------------|
 | BC7                      | DXGI\_FORMAT\_BC7\_UNORM、DXGI\_FORMAT\_BC7\_UNORM\_SRGB、DXGI\_FORMAT\_BC7\_TYPELESS | 該当なし                          | 16                        |
 
- 
+ 
 
 BC7 形式では、4 x 4 のピクセル ブロックごとに異なるエンコード モードを選択できます。 全部で 8 種類のエンコード モードを利用でき、それぞれのモードには、表示されるテクスチャの画質に少しずつ異なるトレードオフがあります。 モードの選択によって、ソース コンテンツに合わせて品質レベルを選択または適合させたハードウェアで高速デコードできますが、検索領域の複雑さも大幅に増加します。
 
@@ -101,9 +99,9 @@ BC7 形式では、4 x 4 のピクセル ブロックごとに異なるエンコ
 
 [テクスチャ](https://msdn.microsoft.com/library/windows/desktop/ff476902)
 
- 
+ 
 
- 
+ 
 
 
 

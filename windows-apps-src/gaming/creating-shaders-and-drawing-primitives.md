@@ -6,19 +6,18 @@ ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、ゲーム、シェーダー、プリミティブ、DirectX
-ms.openlocfilehash: 62f4b9b641a3c365659e44893a8a7801f2c1f6c0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 475a69837796b0b64be27c96f10b42d5b61390c1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243292"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546727"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a>シェーダーの作成とプリミティブの描画
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。
 
@@ -292,9 +291,9 @@ SimpleVertexShader.cso ファイルからデータを読み取り、そのデー
 
 [プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)
 
- 
+ 
 
- 
+ 
 
 
 

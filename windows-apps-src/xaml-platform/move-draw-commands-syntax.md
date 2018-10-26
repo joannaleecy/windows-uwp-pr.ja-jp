@@ -6,16 +6,14 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a66faebf8447253cc158ea8aa2312eb61474bc08
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: d77049cbaa289fe8621e8cf91883952e6edda9b2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675259"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550696"
 ---
 # <a name="move-and-draw-commands-syntax"></a>移動と描画のコマンド構文
 
@@ -83,7 +81,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 大文字の **M** は *startPoint* が絶対座標であることを示し、小文字の **m** は、*startPoint* が前の点からのオフセットか、前の点がない場合は (0,0) からのオフセットであることを示します。
 
-**注**  移動コマンドに続けて複数の点を指定することもできます。 これらの点の間には、直線コマンドを指定した場合と同様に直線が描画されます。 ただし、これは推奨されるスタイルではありません。代わりに専用の直線コマンドを使ってください。
+**注:** 移動コマンドの後に複数のポイントを指定することはできます。 これらの点の間には、直線コマンドを指定した場合と同様に直線が描画されます。 ただし、これは推奨されるスタイルではありません。代わりに専用の直線コマンドを使ってください。
 
 **描画コマンド**
 
@@ -141,7 +139,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 |------|-------------|
 | *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線の 1 つ目の制御点。曲線の開始接線を決定します。 |
 | *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線の 2 つ目の制御点。曲線の終了接線を決定します。 |
-| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 描画される曲線の終点。 | 
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 描画される曲線の終点。 | 
 
 **二次ベジエ曲線コマンド**
 
@@ -197,7 +195,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 | *isLargeArcFlag* | 円弧の角度を 180°以上にする場合は 1、それ以外の場合は 0 に設定します。 |
 | *sweepDirectionFlag* | 円弧を正方向の角度に描画する場合は 1、それ以外の場合は 0 に設定します。 |
 | *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 描画される円弧の終点。|
- 
+ 
 **終了コマンド**
 
 現在の図を終了し、現在の点と図の始点を結ぶ直線を作成します。 このコマンドは、図の最後のセグメントと最初のセグメントの間に線結合 (角) を作成します。
@@ -212,7 +210,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 構文 |
 |--------|
-| *x*,*y*<br/> - または - <br/>*x* *y* |
+| *x*,*y*<br/> - または - <br/>*x**y* |
 
 | 用語 | 説明 |
 |------|-------------|
@@ -231,11 +229,11 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>移動と描画のコマンドを生成するデザイン ツール
 
-Blend for Microsoft Visual Studio 2015 で**ペン** ツールやその他の描画ツールを使うと、通常、[**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) オブジェクトが移動と描画のコマンドと共に生成されます。
+**ペン**ツールやその他の描画ツールを使用して、blend for Microsoft Visual Studio2015 は通常と移動の[**パス**](/uwp/api/Windows.UI.Xaml.Shapes.Path)オブジェクトを生成し、描画のコマンドします。
 
 Windows ランタイムのコントロール用の既定の XAML テンプレートを見ると、定義されているコントロールのパーツの一部に、移動と描画のコマンドのデータが含まれていることに気付くことがあります。 たとえば、一部のコントロールで使われる [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) では、データが移動と描画のコマンドとして定義されています。
 
-その他のよく使われるベクター グラフィックス デザイン ツールにも、ベクターを XAML 形式で出力できるエクスポーターやプラグインがあります。 これらは通常、レイアウト コンテナーに [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) オブジェクトを作成し、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) に移動と描画のコマンドを設定します。 XAML には、別々のブラシを適用できるように複数の **Path** 要素が含まれている場合があります。 これらのエクスポーターやプラグインの多くは、本来は Windows Presentation Foundation (WPF) の XAML や Silverlight 用に作成されたものですが、XAML のパス構文は Windows ランタイム XAML と同じです。 通常、エクスポーターからの XAML の大部分を Windows ランタイムの XAML ページに直接貼り付けることができます  (ただし、変換後の XAML に **RadialGradientBrush** が含まれている場合、このブラシは Windows ランタイム XAML でサポートされないため、使うことはできません)。
+その他のよく使われるベクター グラフィックス デザイン ツールにも、ベクターを XAML 形式で出力できるエクスポーターやプラグインがあります。 これらは通常、レイアウト コンテナーに [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) オブジェクトを作成し、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) に移動と描画のコマンドを設定します。 XAML には、別々のブラシを適用できるように複数の **Path** 要素が含まれている場合があります。 Windows Presentation Foundation (WPF) XAML や Silverlight 用に作成されたこれらのエクスポーターやプラグインの多くが、XAML のパス構文は Windows ランタイム XAML と同じです。 通常、エクスポーターからの XAML の大部分を Windows ランタイムの XAML ページに直接貼り付けることができます  (ただし、変換後の XAML に **RadialGradientBrush** が含まれている場合、このブラシは Windows ランタイム XAML でサポートされないため、使うことはできません)。
 
 ## <a name="related-topics"></a>関連トピック
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b882c70701d2ea2f8abef14a7d3319616696ea4
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 672d7b2ddc913ea3a966fbd0a095367521a27d7c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044731"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550194"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明なテクスチャと 1 ビットのアルファ テクスチャ
 
@@ -70,7 +68,7 @@ else
 | 2            | Bitmap Word\_0 |
 | 3            | Bitmap Word\_1 |
 
- 
+ 
 
 Color\_0 および Color\_1 (2 つの極端な色) は、次のようなレイアウトになります。
 
@@ -80,7 +78,7 @@ Color\_0 および Color\_1 (2 つの極端な色) は、次のようなレイ�
 | 10:5        | 緑のカラー コンポーネント |
 | 15:11       | 赤のカラー コンポーネント   |
 
- 
+ 
 
 \*最下位ビット
 
@@ -97,7 +95,7 @@ Bitmap Word\_0 のレイアウトは次のようになります。
 | 13:12         | Texel\[1\]\[2\] |
 | 15:14 (MSB\*) | Texel\[1\]\[3\] |
 
- 
+ 
 
 \*最上位ビット (MSB)
 
@@ -114,7 +112,7 @@ Bitmap Word\_1 のレイアウトは次のようになります。
 | 13:12       | Texel\[3\]\[2\] |
 | 15:14 (MSB) | Texel\[3\]\[3\] |
 
- 
+ 
 
 ## <a name="span-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanexample-of-opaque-color-encoding"></a><span id="Example_of_Opaque_Color_Encoding"></span><span id="example_of_opaque_color_encoding"></span><span id="EXAMPLE_OF_OPAQUE_COLOR_ENCODING"></span>不透明な色のエンコードの例
 
@@ -134,9 +132,9 @@ Bitmap Word\_1 のレイアウトは次のようになります。
 
 これは、図に示された次の一連の色のようになります。
 
-**注**   イメージでは、ピクセル (0,0) が左上に表示されます。
+**注:** 左上に、イメージのピクセル (0, 0) が表示されます。
 
- 
+ 
 
 ![エンコードされた不透明なグラデーションの図](images/redsquares.png)
 
@@ -169,9 +167,9 @@ Bitmap Word\_1 のレイアウトは次のようになります。
 
 [圧縮テクスチャ リソース](compressed-texture-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

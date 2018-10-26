@@ -6,16 +6,14 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ms.author: normesta
 ms.date: 09/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ルート, マップ, 位置情報, ルート案内
 ms.localizationpriority: medium
-ms.openlocfilehash: c837eac53d7063a4b70bac62b64558e3411c70cd
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 69283f6b53f3a8483376e3b8fe77a4491d4b01b1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690328"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545083"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>地図へのルートとルート案内の表示
 
@@ -27,7 +25,7 @@ ms.locfileid: "1690328"
 >アプリでの地図の使用について詳しくは、[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)をダウンロードしてください。
 >地図表示がアプリの主要機能でない場合は、代わりに Windows マップ アプリを起動することを検討します。 `bingmaps:`、`ms-drive-to:`、`ms-walk-to:` の各 UI スキームを使って、Windows マップ アプリを起動し、特定の地図やターン バイ ターン方式のルート案内を表示することができます。 詳しくは、「[Windows マップ アプリの起動](https://msdn.microsoft.com/library/windows/apps/mt228341)」をご覧ください。
 
- 
+ 
 ## <a name="an-intro-to-maproutefinder-results"></a>MapRouteFinder 結果の概要
 
 
@@ -64,7 +62,7 @@ ms.locfileid: "1690328"
 >[!IMPORTANT]
 >マップ サービスを使用する前に、マップ認証キーを指定する必要があります。 詳しくは、「[マップ認証キーの要求](authentication-key.md)」をご覧ください。
 
- 
+ 
 
 ```csharp
 using System;
@@ -147,7 +145,7 @@ You have reached your destination.
 >[!IMPORTANT]
 >マップ サービスまたはマップ コントロールを使用する前に、マップ認証キーを指定する必要があります。 詳しくは、「[マップ認証キーの要求](authentication-key.md)」をご覧ください。
 
- 
+ 
 
 ```csharp
 using System;
@@ -218,7 +216,7 @@ private async void ShowRouteOnMap()
   BasicGeoposition point2 = new BasicGeoposition() { Latitude = 47.6205, Longitude = -122.3493 };
   BasicGeoposition point3 = new BasicGeoposition() { Latitude = 48.649693, Longitude = -122.144908 };
 
-  // Get Driving Route from point A  to point B thru point C
+  // Get Driving Route from point A  to point B thru point C
   var path = new List<EnhancedWaypoint>();
 
   path.Add(new EnhancedWaypoint(new Geopoint(point1), WaypointKind.Stop));

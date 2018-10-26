@@ -6,16 +6,14 @@ ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 連絡先, カレンダー, 予定, メール メッセージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 2224ab78d5f3424904dfc2e211d9890648080574
-ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
-ms.translationtype: HT
+ms.openlocfilehash: c020a871863df6fac3dabc3ffab4bafc57227b50
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "1905337"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549324"
 ---
 # <a name="contacts-my-people-and-calendar"></a>連絡先、マイ連絡先、カレンダー
 
@@ -35,7 +33,7 @@ ms.locfileid: "1905337"
 | [マイ連絡先の共有](my-people-sharing.md) | マイ連絡先の共有のサポートを追加する方法について説明します。マイ連絡先の共有によりユーザーは、ファイルをエクスプローラーからピン留めされたマイ連絡先にドラッグして、ピン留めされた連絡先とコンテンツを共有できます。 |
 | [マイ連絡先の通知](my-people-notifications.md) | マイ連絡先の通知を作成して使用する方法について説明します。マイ連絡先の通知は、ピン留めした連絡先から送信される新しい種類のトースト通知です。 |
 
- 
+ 
 
 ## <a name="related-topics"></a>関連トピック
 

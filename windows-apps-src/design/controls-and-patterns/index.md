@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: ad1ba185e70a34a4e7bfed0609412ac7bbca2d4a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: fdaa8cd73bb2f1199e7214206ec2b0b52628a906
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653691"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550923"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>UWP アプリのコントロールとパターン
  
@@ -32,20 +30,19 @@ UWP アプリ開発では、<i>コントロール</i>は、コンテンツを表
 
 XAML と C# でコントロールを追加し、スタイルを指定するための一般的な手順とコード例を示します。
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b><a href="controls-and-events-intro.md">コントロールの追加とイベントの処理</a></b> <br/>
-アプリにコントロールを追加するには、アプリの UI にコントロールを追加する、コントロールのプロパティを設定する、コントロールを動作させるためのコードをコントロールのイベント ハンドラーに追加するといった、3 つの重要な手順があります。</li>
-</ul> 
-</p>
-  </div>
-  <div class="side-by-side-content-right">
-   <p><b><a href="xaml-styles.md">コントロールのスタイル</a></b> <br/>
+:::row:::
+    :::column:::
+      <p><b><a href="controls-and-events-intro.md">コントロールの追加とイベントの処理</a></b> <br/>
+アプリにコントロールを追加するには、アプリの UI にコントロールを追加する、コントロールのプロパティを設定する、コントロールを動作させるためのコードをコントロールのイベント ハンドラーに追加するといった、3 つの重要な手順があります。</p>
+    :::column-end:::
+    :::column:::
+      <p><b><a href="xaml-styles.md">コントロールのスタイル</a></b> <br/>
 XAML フレームワークを使って、さまざまな方法でアプリの外観をカスタマイズできます。 スタイルを使うと、コントロールのプロパティに値を設定し、その設定を再利用することで、複数のコントロールの外観を統一できます。</p>
-  </div>
-</div>
-</div>
+    :::column-end:::
+:::row-end:::
+
+## <a name="get-the-windows-ui-library"></a>Windows UI のライブラリを入手します。
+一部のコントロールは、Windows UI のライブラリでのみ利用できます。 それを取得するのには、 [Windows UI のライブラリの概要とインストールの手順](/uwp/toolkits/winui/)を参照してください。
 
 ## <a name="alphabetical-index"></a>アルファベット順インデックス 
 
@@ -67,7 +64,7 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 
 <li style="list-style-type: none;"><a href="date-and-time.md">日付と時刻コントロール</a></li>
 
-<li style="list-style-type: none;"><a href="dialogs.md">ダイアログとポップアップ</a></li>
+<li style="list-style-type: none;"><a href="dialogs-and-flyouts/index.md">ダイアログとポップアップ</a></li>
 
 <li style="list-style-type: none;"><a href="flipview.md">フリップ ビュー</a></li>
 
@@ -95,6 +92,8 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 
 <li style="list-style-type: none;"><a href="person-picture.md">ユーザー画像</a></li>
 
+<li style="list-style-type: none;"><a href="pivot.md">ピボット</a></li>
+
 <li style="list-style-type: none;"><a href="progress-controls.md">プログレス コントロール</a></li>
 
 <li style="list-style-type: none;"><a href="radio-button.md">ラジオ ボタン</a></li>
@@ -112,8 +111,6 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 <li style="list-style-type: none;"><a href="slider.md">Slider</a></li>
 
 <li style="list-style-type: none;"><a href="split-view.md">分割ビュー</a></li>
-
-<li style="list-style-type: none;"><a href="tabs-pivot.md">タブとピボット</a></li>
 
 <li style="list-style-type: none;"><a href="text-controls.md">テキスト コントロール</a></li>
 

@@ -8,23 +8,21 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fbd6566afeff365a91c5d2ee670c0cafcb3def0
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: b79edc5499343498801081dd00554128c3b57eae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395011"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546244"
 ---
 # <a name="mouse-interactions"></a>マウス操作
 
 
 ユニバーサル Windows プラットフォーム (UWP) アプリの設計をタッチ入力用に最適化し、既定の基本的なマウスのサポートを利用します。
 
- 
+ 
 
 ![マウス](images/input-patterns/input-mouse.jpg)
 
@@ -69,10 +67,10 @@ ms.locfileid: "1395011"
 <td align="left"><p>右クリックによる選択とコマンド</p></td>
 <td align="left"><p>右クリックして、ナビゲーション バー (使用できる場合) と、グローバル コマンドを含むアプリ バーを表示します。 要素を右クリックして選択し、その要素に対応する状況依存のコマンドを備えたアプリ バーを表示します。</p>
 <div class="alert">
-<strong>注</strong>  選択コマンドやアプリ バーのコマンドが適切な UI 動作ではない場合は、右クリックでコンテキスト メニューを表示します。 ただし、すべてのコマンド動作にアプリ バーを使うことを強くお勧めします。
+<strong>注:</strong>選択コマンドやアプリ バー コマンドが適切な UI 動作ではない場合は、コンテキスト メニューを表示するを右クリックします。 ただし、すべてのコマンド動作にアプリ バーを使うことを強くお勧めします。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -100,10 +98,10 @@ ms.locfileid: "1395011"
 
 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) イベントを使うと、ポインター入力デバイスごとに別々のコードを記述しなくても、基本的な入力機能を実装できます。 ただし、このオブジェクトのポインター イベント、ジェスチャ イベント、操作イベントを使って、各デバイスの特別な機能 (マウス ホイール イベントなど) を利用することもできます。
 
-**サンプル:  **[アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=264996)で、この機能の動作を実際に確かめることができます。
+**サンプル:** この機能では、[アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=264996)の動作を参照してください。
 
 
-- [入力: デバイス機能のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231530)
+- [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
 
 - [入力サンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 
@@ -153,10 +151,10 @@ ms.locfileid: "1395011"
 * [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
- 
+ 
+ 
 
- 
+ 
 
 
 

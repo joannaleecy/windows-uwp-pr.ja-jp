@@ -6,16 +6,14 @@ description: デバイスにはそれぞれ DeviceInformation プロパティが
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c8fe51fd98f70e6f920a7421a9932e69bba11377
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 2ad87bdfa468c98a2e10d57f81b8e8d187bfbcef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959248"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543369"
 ---
 # <a name="device-information-properties"></a>デバイス情報プロパティ
 
@@ -38,7 +36,7 @@ ms.locfileid: "959248"
 要求できるプロパティは、わかりやすい名前を持つ一般的なプロパティだけではありません。 基になる GUID とプロパティ ID (PID) を指定することで、個別のデバイスまたはドライバーによって提供されたカスタム プロパティも含め、利用可能なすべてのプロパティを要求できます。 カスタム プロパティの指定形式は「`{GUID} PID`」です。 例:"`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`"します。 
 
 > [!Note]
-> デバイス ドライバーのデバイス プロパティ キー ヘッダー ファイルのプロパティの Guid の一覧が表示されます。
+> デバイス ドライバーのデバイス プロパティ キー ヘッダー ファイルのプロパティの Guid の一覧を確認できます。
 
 一部のプロパティは、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) のすべてのオブジェクトで共通していますが、ほとんどのプロパティは特定の種類に固有です。 以下のセクションでは、**DeviceInformationKind** ごとに並べ替えた共通プロパティの一部を紹介しています。 さまざまな種類の関係性について詳しくは、「**DeviceInformationKind**」をご覧ください。
 
@@ -57,7 +55,7 @@ ms.locfileid: "959248"
 | **System.Devices.Icon**               | String  | アイコンのパス。                                                                                                                                                                                                                                                                                                                                                                                                |
 | **System.ItemNameDisplay**            | String  | デバイス オブジェクトに最適な表示名。                                                                                                                                                                                                                                                                                                                                                              |
 
- 
+ 
 
 ## <a name="device-properties"></a>デバイスのプロパティ
 
@@ -75,7 +73,7 @@ ms.locfileid: "959248"
 | **System.Devices.Present**            | Boolean    | デバイスが現在存在し、利用できるかどうかを示します。                                                                                                                                                                                                                         |
 | **System.ItemNameDisplay**            | String     | このデバイス オブジェクトに最適な表示名。 この場合は、これがユーザーにとって最適な名前であるとは限りません。 関連付けられている **DeviceContainer** または **DeviceInterface** の **System.ItemNameDisplay** を参照すると、もっとわかりやすい名前が見つかる可能性があります。 |
 
- 
+ 
 
 ## <a name="devicecontainer-properties"></a>DeviceContainer プロパティ
 
@@ -95,7 +93,7 @@ ms.locfileid: "959248"
 | **System.Devices.Paired**         | Boolean    | **DeviceInformationKind.Device** 子オブジェクトのどれかが、現在システムとペアリングされたワイヤレス デバイスまたはネットワーク デバイスであるかどうかを示します。             |
 | **System.ItemNameDisplay**        | String     | このデバイスに最適な表示名。                                                                                                                             |
 
- 
+ 
 
 ## <a name="deviceinterfaceclass-properties"></a>DeviceInterfaceClass プロパティ
 
@@ -103,7 +101,7 @@ ms.locfileid: "959248"
 |----------------------------|--------|----------------------------------------|
 | **System.ItemNameDisplay** | String | このデバイスに最適な表示名。 |
 
- 
+ 
 
 ## <a name="associationendpoint-properties"></a>AssociationEndpoint プロパティ
 
@@ -124,7 +122,7 @@ ms.locfileid: "959248"
 | **System.Devices.Aep.SignalStrength** | Int32      | デバイスのシグナルの強さ。 このプロパティは、一部のプロトコルにのみ適用されます。                                                                                                                                                                                                                                                                                                                                                                                                |
 | **System.ItemNameDisplay**            | String     | デバイスに最適な表示名。                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
- 
+ 
 
 ## <a name="associationendpointcontainer-properties"></a>AssociationEndpointContainer プロパティ
 
@@ -146,7 +144,7 @@ ms.locfileid: "959248"
 | **System.Devices.AepContainer.SupportsVideo**       | Boolean    | このデバイスがビデオのキャストをサポートしているかどうかを示します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **System.ItemNameDisplay**                          | String     | デバイスに最適な表示名。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
- 
+ 
 
 ## <a name="associationendpointservice-properties"></a>AssociationEndpointService プロパティ
 
@@ -160,8 +158,8 @@ ms.locfileid: "959248"
 | **System.Devices.AeoService.ServiceId**         | String  | このサービスの ID。 これは [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) の値でもあります。 |
 | **System.ItemNameDisplay**                      | String  | このサービスに最適な表示名。                                                                           |
 
- 
+ 
 
- 
+ 
 
- 
+ 

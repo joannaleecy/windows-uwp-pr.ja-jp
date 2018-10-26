@@ -5,16 +5,15 @@ description: Xbox 開発者向け設定にアクセスする方法について�
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
-ms.openlocfilehash: dfde4c45a4aa5a520e0aa98cd7f31f7d84854e08
-ms.sourcegitcommit: 0e44f197e7e649d542ec3f67cd790a61dbe1226f
+ms.localizationpriority: medium
+ms.openlocfilehash: 8f3d0c09b242f8d60b06ee0dc510ad9a756466c5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2017
-ms.locfileid: "662502"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544562"
 ---
 # <a name="developer-settings-api-reference"></a>開発者向け設定 API のリファレンス   
 この API を使用して、開発に役立つ Xbox One 設定にアクセスできます。
@@ -44,18 +43,20 @@ GET | /ext/settings
 **応答**   
 応答は、すべての設定を含む設定の JSON 配列です。 設定オブジェクトには、それぞれ次のフィールドが含まれています。
 
-Name: (文字列) 設定の名前。
-Value: (文字列) 設定の値。
-RequiresReboot: ("Yes" | "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。
-Disabled - ("Yes" | "No") このフィールドは、設定が無効であるかどうかと編集不可であるかを示します。
-Category: (文字列) 設定のカテゴリ。
-Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。
+* Name: (文字列) 設定の名前。
+* Value: (文字列) 設定の値。
+* RequiresReboot: ("Yes" | "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。
+* Disabled - ("Yes" | "No") このフィールドは、設定が無効であるかどうかと編集不可であるかを示します。
+* Category: (文字列) 設定のカテゴリ。
+* Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。
 
-設定が数値の場合: Min - (数値) このフィールドは、設定の最小数値を示します。
-Max - (数値) このフィールドは、設定の最大数値を示します。
+設定が、多くの場合。
+* Min - (数値) このフィールドは、設定の最小限の数値を示します。
+* Max - (数値) このフィールドは、設定の最大の数値を示します。
 
-設定が選択の場合: OptionsVariable - ("Yes" | "No") このフィールドは、設定オプションが可変であるかどうか、再起動しなくても有効なオプションが変化する可能性があるかどうかを示します。
-Options - 有効な選択オプションを文字列として含む JSON 配列。
+設定の場合は選択します。
+* OptionsVariable - ("Yes"|"No") このフィールドを示すかどうか、オプションの設定、変数場合は、再起動しなくても有効なオプションを変更することができます。
+* Options - 有効な選択オプションを文字列として含む JSON 配列。
 
 **状態コード**
 
@@ -93,18 +94,20 @@ GET | /ext/settings/\<設定名\>
 **応答**   
 応答は、次のフィールドを含む JSON オブジェクトです。
 
-Name: (文字列) 設定の名前。
-Value: (文字列) 設定の値。
-RequiresReboot: ("Yes" | "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。
-Disabled - ("Yes" | "No") このフィールドは、設定が無効であるかどうかと編集不可であるかを示します。
-Category: (文字列) 設定のカテゴリ。
-Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。
+* Name: (文字列) 設定の名前。
+* Value: (文字列) 設定の値。
+* RequiresReboot: ("Yes" | "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。
+* Disabled - ("Yes" | "No") このフィールドは、設定が無効であるかどうかと編集不可であるかを示します。
+* Category: (文字列) 設定のカテゴリ。
+* Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。
 
-設定が数値の場合: Min - (数値) このフィールドは、設定の最小数値を示します。
-Max - (数値) このフィールドは、設定の最大数値を示します。
+設定が、多くの場合。
+* Min - (数値) このフィールドは、設定の最小限の数値を示します。
+* Max - (数値) このフィールドは、設定の最大の数値を示します。
 
-設定が選択の場合: OptionsVariable - ("Yes" | "No") このフィールドは、設定オプションが可変であるかどうか、再起動しなくても有効なオプションが変化する可能性があるかどうかを示します。
-Options - 有効な選択オプションを文字列として含む JSON 配列。
+設定の場合は選択します。
+* OptionsVariable - ("Yes"|"No") このフィールドを示すかどうか、オプションの設定、変数場合は、再起動しなくても有効なオプションを変更することができます。
+* Options - 有効な選択オプションを文字列として含む JSON 配列。
 
 **状態コード**
 

@@ -5,16 +5,14 @@ title: x:Bind の関数
 ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 7e00762f389791fb3972b6f224759d35bf547e38
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470294"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542767"
 ---
 # <a name="functions-in-xbind"></a>x:Bind の関数
 

@@ -8,15 +8,13 @@ keywords: デバイス, デジタイザー, 入力, 操作, 挿入
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 85f683d88dea19da1417afa6c47bc1f4263b2381
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: aa83e202078336884ff2e1924ebc223bbe13dcdd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895385"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548633"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>入力の挿入によるユーザー入力のシミュレート
 

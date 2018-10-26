@@ -5,16 +5,14 @@ author: muhsinking
 ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 92a75227331269a59986f93163850c5ea4043ce9
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 33e567db01916367c8ea30d98e59f421581ac7aa
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673459"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547090"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>アプリケーションにマイ連絡先のサポートを追加する
 

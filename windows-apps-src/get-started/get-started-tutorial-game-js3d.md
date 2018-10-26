@@ -5,17 +5,15 @@ author: abbycar
 ms.author: abigailc
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: fa3722c5b011d16ca793b3541efe124b7c255dfd
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 0183e19135758f73dfea9b63535437ff9b66011a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5519322"
+ms.locfileid: "5542595"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>hree.js を使用して 3D JavaScript ゲームを作成する
 

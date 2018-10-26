@@ -5,16 +5,14 @@ title: 申請オプションの管理
 ms.author: wdg-dev-content
 ms.date: 05/09/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 公開の保留, 公開日, 申請を送信して公開, 制限付き機能の承認
 ms.localizationpriority: medium
-ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 51b816ece884f1464d0dbf039aef5d80e2ca7341
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470482"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548446"
 ---
 # <a name="manage-submission-options"></a>申請オプションの管理
 

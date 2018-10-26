@@ -7,21 +7,19 @@ keywords: 連絡先, SMS, 送信
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-ms.openlocfilehash: e5c3678e6c12a65b6821d2fc2a54e0710f7dcef3
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 06d84646685c6944ab0e816b42cf6fb2125f8a57
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665356"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545567"
 ---
 # <a name="send-an-sms-message"></a>SMS メッセージの送信
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
-
 このトピックでは、SMS の作成ダイアログを起動して、ユーザーが SMS メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、SMS の各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。
+
+このコードを呼び出すと、パッケージ マニフェスト内**チャット**、 **smsSend**、および**chatSystem**機能を宣言します。 これらは、[制限付き機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)がアプリで使うことができます。 ストアにアプリを公開する場合は、承認を作成する必要があります。 [アカウントの種類、場所、および料金](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)を参照してください。
 
 ## <a name="launch-the-compose-sms-dialog"></a>SMS の作成ダイアログの起動
 
@@ -53,6 +51,15 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
         chatMessage.Recipients.Add(phone.Number);
     }
     await Windows.ApplicationModel.Chat.ChatMessageManager.ShowComposeSmsMessageAsync(chatMessage);
+}
+```
+
+次のコードを使用して、アプリを実行しているデバイスが SMS メッセージを送信できるかどうかを判断することができます。
+
+```csharp
+if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.ApplicationModel.Chat"))
+{
+   // Call code here.
 }
 ```
 

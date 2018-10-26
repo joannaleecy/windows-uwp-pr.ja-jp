@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: quradic
 ms.date: 01/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: df1eec58d936ba4f03e1eadae534abf0620b1a39
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 8499f64e265cfeaa0a21c111c1aec1e2d3adb8ff
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521017"
+ms.locfileid: "5550377"
 ---
 # <a name="thumbnail-images"></a>サムネイル画像
 

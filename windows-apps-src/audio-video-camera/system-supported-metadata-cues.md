@@ -6,16 +6,14 @@ title: システムでサポートされているタイミングが設定され�
 ms.author: drewbat
 ms.date: 04/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, メタデータ, キュー, 音声, チャプター
 ms.localizationpriority: medium
-ms.openlocfilehash: 9229e123b5a28cbcf64937cfeb7a57c961e71786
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 1e97c913764db24c68ce7becdba0fc283e1a3b73
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692247"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545262"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>システムでサポートされているタイミングが設定されたメタデータのキュー
 この記事では、メディア ファイルやストリームに埋め込まれる可能性がある、タイミングが設定されたメタデータのいくつかの形式を活用する方法について説明します。 UWP アプリは、これらのメタデータ キューが発生したときに、メディア パイプラインで再生中に発生したイベントについて登録できます。 アプリでは、[**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) クラスを使って独自のカスタム メタデータ キューを実装できますが、この記事ではメディア パイプラインで自動的に検出される、次のようなメタデータ標準に重点を置いて説明します。
@@ -189,7 +187,7 @@ emsg ボックス メタデータ イベントに登録した後、[**MediaPlaye
 * [メディア項目、プレイリスト、トラック](media-playback-with-mediasource.md)
 
 
- 
+ 
 
 
 

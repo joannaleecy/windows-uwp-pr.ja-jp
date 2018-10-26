@@ -6,19 +6,17 @@ ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 予定, カレンダー
-ms.openlocfilehash: d4bc4832dd489508eabbddd486f782ac8b0191a3
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 345bbabb2bd80f0cbb8465941bec07c7172156e8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665696"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548922"
 ---
 # <a name="manage-appointments"></a>予定の管理
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 名前空間を使うと、ユーザーのカレンダー アプリで予定の作成と管理を行うことができます。 ここでは、予定を作成してカレンダー アプリに追加し、カレンダー アプリで置換して、カレンダー アプリから削除する方法を示します。 さらに、カレンダー アプリの一定の期間を表示し、予定の繰り返しオブジェクトを作る方法も示します。
@@ -286,7 +284,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**注**  Windows Phone ストア アプリでは、[**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) は [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) と同じように機能し、予定を追加するための編集可能なダイアログが表示されます。
+**注:** 用 Windows Phone ストア アプリ、 [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)ように機能[**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)予定を追加するために表示されるダイアログが編集可能なことにします。
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>ユーザーのカレンダーで予定を置換する
 
@@ -574,6 +572,6 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 ## <a name="related-topics"></a>関連トピック
 
 * [予定 API のサンプル](http://go.microsoft.com/fwlink/p/?linkid=309836)
- 
+ 
 
- 
+ 

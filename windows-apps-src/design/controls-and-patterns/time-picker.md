@@ -8,22 +8,20 @@ template: detail.hbs
 ms.author: mukin
 ms.date: 05/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b54716798b41bb7f7ac0da53f895cf91735e4e31
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: c30b310deb509b9abfcd49531f85ea109cb12864
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494069"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545937"
 ---
-# <a name="time-picker"></a>時刻の選択
+# <a name="time-picker"></a>時刻の選択コントロール
  
 
 時刻の選択は、ユーザーがタッチ、マウス、またはキーボード入力を使って時刻値を選択できる標準化された方法です。 
@@ -32,7 +30,7 @@ ms.locfileid: "1494069"
 
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
-時刻の選択コントロールを使って、ユーザーが 1 つの時刻を選べるようにします。
+時刻の選択コントロールを使って、ユーザーが単一の時刻値を選べるようにします。
 
 適切なコントロールの選択について詳しくは、「[日付と時刻コントロール](date-and-time.md)」をご覧ください。
 

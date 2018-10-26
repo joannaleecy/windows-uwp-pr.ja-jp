@@ -7,17 +7,15 @@ template: detail.hbs
 ms.author: quradic
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
 ms.localizationpriority: medium
-ms.openlocfilehash: 9208293367e4368a92116990f2557522028154ff
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 6e4cb60526fda9495249cd310ad434878941a97d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393371"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545043"
 ---
 # <a name="guidelines-for-app-help"></a>アプリのヘルプのガイドライン
 

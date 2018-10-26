@@ -6,19 +6,17 @@ description: 起動とアクティブ化を処理する方法を向上させる�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: e36103953ad3fb04ee5beef7e263fc326f817c0b
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 25ddcc6c9ceaecd858733a0222c22c18682041b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894766"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545249"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>アプリ起動時のパフォーマンスのベスト プラクティス
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 起動とアクティブ化を処理する方法を向上させることによって、最適な起動時間のユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 
@@ -54,7 +52,7 @@ UWP アプリがユーザーのコンピューターに届くまで、アプリ�
 
 Ngen.exe は、使用されたことがありネイティブ イメージを持たない、コンピューター上のすべてのアプリをプリコンパイルします。 プリコンパイルが必要なアプリが多い場合には時間がかかりますが、その後の実行時間が大幅に高速化されます。
 
-アプリが再コンパイルされると、ネイティブ イメージは使われなくなります。 一方、アプリをジャスト イン タイムでコンパイルする場合は、アプリは実行時にコンパイルされます。 新しいネイティブ イメージを取得するには、Ngen.exe をもう一度実行する必要があります。
+アプリが再コンパイルされると、ネイティブ イメージは使われなくなります。 一方、アプリをジャスト イン タイムでコンパイルする場合は、アプリは実行時にコンパイルされます。 新しいネイティブ イメージを取得するためには Ngen.exe をもう一度実行する必要があります。
 
 ### <a name="defer-work-as-long-as-possible"></a>可能な限りの処理の遅延
 

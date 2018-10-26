@@ -6,16 +6,14 @@ ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 27b458c7ec5cabdc27ebd90c9eb024df2f35e402
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 6fd7377294e0d460720f6a16e71981ab0924ac9a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664955"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549282"
 ---
 # <a name="launch-the-windows-maps-app"></a>Windows マップ アプリの起動
 
@@ -103,7 +101,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?cp=40.726966~-74.006076&where=New%20York            | 指定した中心点の近くのニューヨークを検索します。                             |
 | bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | 指定した境界ボックス (ニューヨーク市) の中でピザを検索します。      |
 
- 
+ 
 ## <a name="display-multiple-points"></a>複数のポイントの表示
 
 
@@ -117,7 +115,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | Fake\_Business\_with\_Underscore という名前のプッシュピンと共にニューヨークを表示します。                                                  |
 | bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669 | Hotel List という名前の一覧、およびラスベガスにあるシーザーズ パレスとベラジオの 2 つのプッシュピンを表示し、ズーム レベルを 16 に設定します。 |
 
- 
+ 
 
 ## <a name="display-directions-and-traffic"></a>ルート案内と交通情報の表示
 
@@ -251,10 +249,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </ul>
 <p>Windows 10 では、航空写真表示と 3D ビューのスタイルは同じです。</p>
 <div class="alert">
-**注**  **sty** パラメーターを省略すると、sty=r と同じ結果が表示されます。
+**注:** **sty**パラメーターを省略することも同じ結果として sty = r します。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -289,10 +287,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>ss=1</p></td>
 <td align="left"><p><code>ss=1</code> の場合は、ストリート レベルの画像が表示されることを示します。 <b>ss</b> パラメーターを省略すると、<code>ss=0</code> と同じ結果が表示されます。 <b>cp</b> パラメーターと組み合わせて使うと、ストリート レベル ビューの場所を指定できます。</p>
 <div class="alert">
-**注**  ストリート レベルの画像は、すべての地域で利用できるわけではありません。
+**注:** ストリート レベルの画像は、すべての地域では利用可能なではありません。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -303,10 +301,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>trfc=1</p></td>
 <td align="left"><p>交通情報を地図に含めるかどうかを指定します。 trfc パラメーターを省略すると、<code>trfc=0</code> と同じ結果が表示されます。</p>
 <div class="alert">
-**注**  交通情報のデータは、すべての地域で利用できるわけではありません。
+**注:** すべての地域でトラフィックのデータは使用できません。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
@@ -332,10 +330,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>不完全なルートが指定されている場合は、ルートの線は表示されません。</p>
 <p>**mode** パラメーターと組み合わせて使うと、交通手段のモード (自動車、公共交通機関、徒歩) を指定できます。 **mode** が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。</p>
 <div class="alert">
-**注**  **pos** パラメーターの値によって場所が指定されている場合、その場所に対してタイトルを使うことができます。 緯度と経度が表示される代わりに、タイトルが表示されます。
+**注:** **pos**パラメーターの値によって場所が指定されている場合は、場所に対してタイトルを使うことができます。 緯度と経度が表示される代わりに、タイトルが表示されます。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -377,7 +375,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </tbody>
 </table>
 
-  
+  
 <span id="ms-drive-to-param-reference"/>
 
 ## <a name="ms-drive-to-parameter-reference"></a>ms-drive-to: のパラメーター リファレンス
@@ -387,7 +385,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 > **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#display-directions-and-traffic)」をご覧ください。
 
- 
+ 
 
 | パラメーター | 定義 | 例 | 詳細 |
 |------------|-----------|---------|---------|
@@ -395,7 +393,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | **destination.longitude** | 目的地の経度 | 例: destination.longitude=-122.141964733601 | 目的地の経度です。 有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。 |
 | **destination.name** | 目的地の名前 | 例: destination.name=Redmond, WA | 目的地の名前です。 **destination.name** 値をエンコードする必要はありません。 |
 
- 
+ 
 <span id="ms-walk-to-param-reference"/>
 
 ## <a name="ms-walk-to-parameter-reference"></a>ms-walk-to: のパラメーター リファレンス
@@ -404,7 +402,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ターン バイ ターン方式の徒歩ルート案内の要求を起動する URI は、エンコードする必要がありません。その形式は、次のようになります。
 
 > **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#display-directions-and-traffic)」をご覧ください。
- 
+ 
 
 | パラメーター | 定義 | 例 | 詳細 |
 |-----------|------------|---------|----------|
@@ -414,7 +412,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ## <a name="ms-settings-parameter-reference"></a>ms-settings: のパラメーター リファレンス
 
-**ms-settings:** URI スキームのマップ アプリ固有のパラメーターの構文は、次のように定義されます。 **maps-downloadmaps** は、**ms-settings:** URI と共に **ms-settings:maps-downloadmaps?** の形式で指定され、オフライン マップの設定ページを示します。 
+**ms-settings:** URI スキームのマップ アプリ固有のパラメーターの構文は、次のように定義されます。 **maps-downloadmaps** は、**ms-settings:** URI と共に **ms-settings:maps-downloadmaps?** の形式で指定され、オフライン マップの設定ページを示します。 
 
 | パラメーター | 定義 | 例 | 詳細 |
 |-----------|------------|---------|----------|

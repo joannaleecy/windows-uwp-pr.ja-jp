@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: 4999109d0f3594313cbf0093060117c583414a09
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 9f02b1f389a118ee5505c40d8c6dde1ee9472a0f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1394591"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550778"
 ---
 # <a name="numeralsystem-values"></a>NumeralSystem 値
 

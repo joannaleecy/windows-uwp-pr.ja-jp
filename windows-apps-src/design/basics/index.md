@@ -6,23 +6,19 @@ keywords: UWP アプリのレイアウト, ユニバーサル Windows プラッ�
 ms.author: mijacobs
 ms.date: 3/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d092a3fe1120dc5763b5c30ed834c1902a1f8752
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 22ab5ad60ed397092e61f2c43cde4eb2e0c86c4f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842379"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550466"
 ---
 # <a name="design-basics-for-uwp-apps"></a>UWP アプリの設計の基本
 
 ![ヒーロー イメージ](images/header-design-basics.svg)
 
 ユニバーサル Windows プラットフォーム (UWP) の設計ガイダンスは、美しく洗練されたアプリを設計および構築するのに役立つリソースです。 これは規範的な規則の一覧ではなく、進化する Fluent Design System、およびアプリ構築コミュニティのニーズに適応するように設計された生きたドキュメントです。 
-
-<!-- This introduction provides an overview of the Fluent Design System, UWP app design basics, and the XAML platform, helping you build user interfaces (UI) that scale beautifully across a range of devices. -->
 
 ## <a name="overview"></a>概要
 

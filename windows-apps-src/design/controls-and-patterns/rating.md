@@ -6,20 +6,18 @@ template: detail.hbs
 ms.author: quradic
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, UWP
 pm-contact: abarlow
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 242ecdaf128e1e01b1bdeac4cce649504b8efc74
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 45cea3986f149714b1f0f14743bdecd83f8b6782
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5519032"
+ms.locfileid: "5544158"
 ---
 # <a name="rating-control"></a>評価コントロール
 

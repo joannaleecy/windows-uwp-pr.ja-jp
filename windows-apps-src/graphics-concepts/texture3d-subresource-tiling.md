@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d51d20ddaeca5aa0689104b3dd71e36b1a5d4132
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 17970d509fa2bf6b80431e1c07b5d135c7dcb112
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043991"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544357"
 ---
 # <a name="texture3d-subresource-tiling"></a>Texture3D サブリソースのタイル表示
 
@@ -25,9 +23,9 @@ ms.locfileid: "1043991"
 
 次の表では、[**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) のタイル表示を受け取り、x/y 次元をそれぞれ 4 で割り、16 レイヤーの深度を追加します。 最初の平面 (最初の 16 レイヤーの深度を定義するタイルの 2D 平面) のすべてのタイルが、後続の平面の前に表示されます。
 
-**注** ストリーミング リソースでの [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) のサポートは、ストリーミング リソースの最初の実装では公開されませんが、今後のリリースでのサポートに備えて必要なタイル形状をここに示します。
+**注:** ストリーミング リソースでの[**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562)のサポートがない、ストリーミング リソースの最初の実装で公開されているが、今後のリリースでのサポートに備えて必要なタイル形状はここに記載されています。
 
- 
+ 
 
 | ビット/ピクセル (1 サンプル/ピクセル) | タイルの寸法 (ピクセル、W x H x D) |
 |-----------------------------|---------------------------------|
@@ -39,7 +37,7 @@ ms.locfileid: "1043991"
 | BC1、4                       | 128 x 64 x 16                       |
 | BC2、3、5、6、7                 | 64 x 64 x 16                        |
 
- 
+ 
 
 ストリーミング リソースでサポートされない形式のビット数は、96 bpp 形式、ビデオ形式、DXGI\_FORMAT\_R1\_UNORM、DXGI\_FORMAT\_R8G8\_B8G8\_UNORM、および DXGI\_FORMAT\_R8R8\_G8B8\_UNORM です。
 
@@ -48,9 +46,9 @@ ms.locfileid: "1043991"
 
 [ストリーミング リソースの領域をタイル表示する方法](how-a-streaming-resource-s-area-is-tiled.md)
 
- 
+ 
 
- 
+ 
 
 
 

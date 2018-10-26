@@ -6,16 +6,14 @@ description: 個人用、会社用の開発者アカウントを多数の国と�
 ms.author: wdg-dev-content
 ms.date: 08/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 開発者アカウント, 個人, 会社, ビジネス
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 619b245ed6037192fe8b846a20d9fe0fe97baa24
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517752"
+ms.locfileid: "5544970"
 ---
 # <a name="account-types-locations-and-fees"></a>アカウントの種類、場所、料金
 

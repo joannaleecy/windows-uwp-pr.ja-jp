@@ -6,16 +6,14 @@ ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 ms.author: elcowle
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, 入力, サンプル
 ms.localizationpriority: medium
-ms.openlocfilehash: 2be43690726112d8597747ee51dd94baf0f40f0e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 0b7e9a3f655b8be1b93334ed8decf9fe6fa8bbf2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817047"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544473"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Marble Maze サンプルへの入力と対話機能の追加
 
@@ -27,7 +25,7 @@ ms.locfileid: "1817047"
 > [!NOTE]
 > このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
 
- 
+ 
 このドキュメントでは、ゲームで入力を扱う際に重要となるいくつかの事柄について説明します。取り上げる内容は次のとおりです。
 
 -   可能な限り、多様な入力デバイスをサポートし、ゲーム ユーザーの好みや技量に幅広く対応します。 ゲーム コントローラーやセンサーは、必ずしも使う必要はありませんが、プレーヤーのエクスペリエンスを高めるために使用を強くお勧めします。 ゲーム コントローラーとセンサー API は、これらの入力デバイスと容易に連携できるように設計されています。
@@ -50,12 +48,12 @@ Marble Maze は、メニュー項目の選択に関して Xbox コントロー�
 > [!NOTE]
 > このドキュメントでは、タッチとマウスの両方の入力をタッチと呼び、ポインター イベントを使うすべてのデバイスをポインターと呼びます。 タッチとマウスは標準のポインター イベントを利用するため、どちらのデバイスでもメニュー項目の選択とゲーム プレイの制御を行うことができます。
 
- 
+ 
 
 > [!NOTE]
 > デバイスを回転させて大理石を転がす際、方向が変わるのを防ぐために、パッケージ マニフェストは、ゲームでサポートされる回転として **Landscape** (横) のみを設定します。 パッケージ マニフェストを表示するには、Visual Studio の**ソリューション エクスプローラー**で、**Package.appxmanifest** を開きます。
 
- 
+ 
 
 ## <a name="initializing-input-devices"></a>入力デバイスの初期化
 
@@ -541,7 +539,7 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 > [!IMPORTANT]
 > Xbox コントローラーを使うときは、常にデッド ゾーンを考慮してください。 デッド ゾーンとは、ゲームパッド間の、最初の移動に対する感度の差異を指します。 小さな移動があったときに、あるコントローラーでは測定値が生成されないのに、別のコントローラーでは測定値が生成されることがあります。 これをゲームで考慮するために、サムスティックの最初の移動に対して、移動なしと見なすゾーンを作成します。 デッド ゾーンについて詳しくは、「[サムスティックの読み取り](gamepad-and-vibration.md#reading-the-thumbsticks)」をご覧ください。
 
- 
+ 
 
 ###  <a name="applying-input-to-the-game-state"></a>ゲームの状態への入力の適用
 
@@ -550,7 +548,7 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 > [!TIP]
 > アプリケーションで用いられる入力方法が 1 つであっても、常に入力値を正規化することをお勧めします。 そうすることで、ゲームの他のコンポーネント (物理シミュレーションなど) が入力を解釈する方法を簡略化でき、さまざまな画面解像度で動作するゲームが作成しやすくなります。
 
- 
+ 
 
 入力を処理した後、**MarbleMazeMain::Update** メソッドは、大理石に対する迷路の傾きの影響を表すベクターを作成します。 次の例は、Marble Maze が [XMVector3Normalize](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.geometric.xmvector3normalize) 関数を使って正規化された重力ベクターを作成する方法を示します。 **maxTilt** 変数は迷路の傾きの量を制限し、迷路が横向きに傾けられるのを防ぎます。
 
@@ -621,9 +619,9 @@ if (marblePosition.z >= resetDepth)
 * [Marble Maze サンプルへの視覚的なコンテンツの追加](adding-visual-content-to-the-marble-maze-sample.md)
 * [Marble Maze、C++ と DirectX での UWP ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
- 
+ 
 
- 
+ 
 
 
 

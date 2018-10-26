@@ -9,15 +9,13 @@ keywords: タッチ, ポインター, 入力, ユーザーの操作
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ef67c179e691d14f3636a663a24ebbb862c35f7
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: fbb2b6e5edee47d75d7115a38f95abf5ae71529a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675189"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543482"
 ---
 # <a name="touch-interactions"></a>タッチ操作
 
@@ -78,14 +76,13 @@ ms.locfileid: "1675189"
 
 
 
-**注**  
-間接的な入力には、25 年以上の改良を経ているという利点があります。 ホバーすると表示されるヒントなどの機能は、タッチパッド、マウス、ペン/スタイラス、キーボード入力での UI の操作を解決するために特別に設計されています。 このような UI 機能は、他のデバイスのユーザー エクスペリエンスを損なうことなく、タッチ入力で充実したエクスペリエンスを提供するために再設計されました。
+**注:** 間接的な入力には、25 年以上の改良のメリットが必要があります。 ホバーすると表示されるヒントなどの機能は、タッチパッド、マウス、ペン/スタイラス、キーボード入力での UI の操作を解決するために特別に設計されています。 このような UI 機能は、他のデバイスのユーザー エクスペリエンスを損なうことなく、タッチ入力で充実したエクスペリエンスを提供するために再設計されました。
 
- 
+ 
 
 ## <a name="use-touch-feedback"></a>タッチのフィードバックの使用
 
-アプリの対話的操作中に視覚的なフィードバックが適切に表示されると、その対話的操作がアプリと Windows プラットフォームの両方でどのように解釈されるかに関する認識、学習、適応に役立ちます。 視覚的なフィードバックの用途は、対話的操作の成功の表示、システム状態の中継、コントロール感の向上、エラーの低減、システムと入力デバイスに関するユーザーの理解の支援、対話的操作の促進などです。
+アプリの対話的操作中に適切な視覚的なフィードバックは、ユーザーを認識、学習、およびアプリと、Windowsplatform の両方でその対話的操作を解釈する方法に合わせて調整に役立ちます。 視覚的なフィードバックの用途は、対話的操作の成功の表示、システム状態の中継、コントロール感の向上、エラーの低減、システムと入力デバイスに関するユーザーの理解の支援、対話的操作の促進などです。
 
 位置に基づく正確性が求められる操作をタッチ入力で行う場合は、視覚的なフィードバックが重要です。 タッチ入力が検出された場所に必ずフィードバックを表示して、アプリとそのコントロールで定義されたカスタム ターゲット設定規則をユーザーが把握できるようにします。
 
@@ -156,9 +153,9 @@ ms.locfileid: "1675189"
 -   複合操作をサポートしてください。 たとえば、ピンチによるズームを行いながら指をドラッグしてパンできるようにします。
 -   対話式操作を時間で区別しないでください。 実行にかかる時間に関係なく、同じ対話式操作を行うと同じ結果が得られるようにします。 時間ベースのアクティブ化では、ユーザーは遅延を強いられるので、直接操作のイマーシブの特性が損なわれ、システムの応答性が低く感じられるようになります。
 
-    **注**  ただし、特定の時間制限のある対話式操作を使って学習や調査に役立てる場合は例外です (長押しなど)。
+    **注:** 例外は、学習および (例、押し) 用の探索を支援するタイミングが設定された特定の操作を使うことができます。
 
-     
+     
 
 -   適切な説明と視覚的な合図を使うと、高度な対話式操作を非常に効果的に使用できます。
 
@@ -207,7 +204,7 @@ UWP でサポートされている基本的なタッチ ジェスチャのセッ
 | ピンチ          | 操作ジェスチャ | 2 本以上の指で画面をタッチし、それらの指を近づけていきます。                         |
 | ストレッチ        | 操作ジェスチャ | 2 本以上の指で画面をタッチし、それらの指を離していきます。                           |
 
- 
+ 
 
 <!-- mijacobs: Removing for now. We don't have a real page to link to yet. 
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
@@ -239,7 +236,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 | [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | マウス ホイールのデルタ値が変化すると発生します。         |
 | [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | すべてのポインター イベントのデータを提供します。                         |
 
- 
+ 
 
 次の例に、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)、[**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) の各イベントを使って [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) オブジェクトに対するタップ操作を処理する方法を示します。
 
@@ -435,15 +432,15 @@ End Sub
 | [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | 操作の実行速度を指定します。                                                                                         |
 | [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) イベントのデータを指定します。                                       |
 
- 
+ 
 
 ジェスチャは、一連の操作イベントで構成されます。 ユーザーが画面をタッチしたときなど、各ジェスチャは [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) イベントから始まります。
 
 次に、1 つ以上の [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) イベントが発生します。 たとえば、画面をタッチして画面上で指をドラッグした場合です。 最後に、対話的操作が完了すると [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) イベントが発生します。
 
-**注**  タッチ画面モニターがない場合は、シミュレーターでマウスとマウス ホイール インターフェイスを使って操作イベント コードをテストできます。
+**注:** タッチ画面モニターをお持ちでない場合は、マウスとマウス ホイール インターフェイスを使用して、シミュレーターで操作イベント コードをテストすることができます。
 
- 
+ 
 
 次の例に、[**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) イベントを使って、[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) に対するスライド操作を処理し、画面上でオブジェクトを移動する方法を示します。
 
@@ -607,9 +604,9 @@ End Sub
 * [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
+ 
 
- 
+ 
 
 
 

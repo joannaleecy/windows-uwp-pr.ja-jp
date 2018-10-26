@@ -8,19 +8,17 @@ template: detail.hbs
 ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 98f2c147c6fc5ceb88693b42b90a66c61f20820a
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 3f5fccf10a28e1c2dd7f0f6001d2c64ca2354f76
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493849"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545391"
 ---
 # <a name="flip-view"></a>フリップ ビュー
 

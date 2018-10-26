@@ -6,19 +6,17 @@ description: ベータ テストを行うと、まだリリースされていな
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 6f5a4e7f2961143f44acb533f045783fb4e4b7c1
-ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.localizationpriority: medium
+ms.openlocfilehash: 7d1e60270b43a8c14067df70ff3e8489f4af2887
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/26/2017
-ms.locfileid: "692908"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544748"
 ---
 # <a name="beta-testing"></a>ベータ テスト
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 *ベータ テスト*を行うと、まだリリースされていないアプリをアプリ開発チームの外部の人に自分のデバイスで試してもらい、その人たちからのフィードバックに基づいてアプリを改善することができます。
@@ -36,7 +34,7 @@ ms.locfileid: "692908"
 -   さまざまなデバイスでアプリをテストできます。
 -   他の方法では見つからないパフォーマンスの問題やその他のバグを特定できます。
 -   ユーザー エクスペリエンスの向上につながる実際の使用状況の情報が得られます。
--   Windows ストアで公開される評価に影響を与えずにフィードバックを受け取れます。
+-   Microsoft Store で公開される評価に影響を与えずにフィードバックを受け取れます。
 
 ## <a name="when-to-beta-test"></a>ベータ テストを行う時期
 
@@ -48,9 +46,9 @@ ms.locfileid: "692908"
 
 ベータ テスト用にアプリをストアに提出する方法については、「[ベータ テストとターゲット配布](https://msdn.microsoft.com/library/windows/apps/Mt185377)」を参照してください。
 
- 
+ 
 
- 
+ 
 
 
 

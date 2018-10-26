@@ -6,19 +6,18 @@ ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX, 2D, グラフィックス
-ms.openlocfilehash: 702b47d4002e9a2d0d62cc67e71432bb630e21d4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8628588cdc20179e9505e45694d43788eb1d7cb6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243217"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543157"
 ---
 # <a name="2d-graphics-for-directx-games"></a>DirectX ゲームの 2D グラフィックス
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 ここでは、2D ビットマップ グラフィックスおよびエフェクトの用途と、これらを実際のゲームで使用する方法について説明します。
 
@@ -62,16 +61,3 @@ DirectX では、2D グラフィックスは 3D パイプラインの一部と�
 -   [Direct2D の概要](https://msdn.microsoft.com/library/windows/desktop/dd370987)
 -   [Direct2D クイック スタート](https://msdn.microsoft.com/library/windows/desktop/dd535473)
 -   [Direct2D と Direct3D の相互運用性に関する概要](https://msdn.microsoft.com/library/windows/desktop/dd370966)
-
-> **注:**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
- 
-
- 
-
- 
-
-
-
-

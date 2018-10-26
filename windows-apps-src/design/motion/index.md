@@ -8,19 +8,17 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ffe26e949be254e85d28dde4a98a1730baa84a3e
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: def37c31ef0a64a9b1017d40d281457513fba0db
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843485"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546799"
 ---
 # <a name="motion-for-uwp-apps"></a>UWP アプリのモーション
 
@@ -60,7 +58,8 @@ Fluent モーションはアプリで目的を果たします。 これは、ユ
 
 ## <a name="motion-articles"></a>モーションの記事
 
-:::row::: :::column:::
+:::row:::
+    :::column:::
         ### [Timing and easing](timing-and-easing.md)
         Timing and easing are important elements that make motion feel natural for objects entering, exiting, or moving within the UI.
     :::column-end:::
@@ -68,7 +67,9 @@ Fluent モーションはアプリで目的を果たします。 これは、ユ
         ### [Directionality and gravity](directionality-and-gravity.md)
         Directional signals help provide a solid mental model of the journey a user takes across experiences. Directional movement is subject to forces like gravity, which reinforces the natural feel of the movement.
     :::column-end:::
-:::row-end::: :::row::: :::column:::
+:::row-end:::
+:::row:::
+    :::column:::
         ### [Page transitions](page-transitions.md)
         Page transitions navigate users between pages in an app, providing feedback about the relationship between pages. They help users understand where they are in the navigation hierarchy.
     :::column-end:::

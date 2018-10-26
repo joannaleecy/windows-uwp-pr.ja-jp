@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e3cbb0badc9001096bd36ba08251638ad4e60872
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 0a1cb6cee78d7c7d1e59e64dd151539ce6b3e5d7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653071"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550709"
 ---
 # <a name="edge-based-ui-animations"></a>エッジに基づく UI アニメーション
 
@@ -57,9 +55,9 @@ ms.locfileid: "1653071"
 * [フェードのアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
 * [位置変更のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
 
- 
+ 
 
- 
+ 
 
 
 

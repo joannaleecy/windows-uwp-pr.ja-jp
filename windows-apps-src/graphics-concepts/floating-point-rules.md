@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8706b10756eeec5d4b8a872c0d436a157ef74970
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: bcfdb8f6258547ff210d80136a6113e04092aad2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044941"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545835"
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>浮動小数点の規則
 
@@ -33,12 +31,10 @@ Direct3D では、いくつかの浮動小数点表現がサポートされて�
 これらの規則のいくつかは、IEEE-754 が複数の選択肢を提供している中の 1 つの選択肢の場合があります。
 
 -   0 での除算は +/- INF になります。ただし、0/0 の結果は NaN になります。
--   (+/-) 0 の対数 (log) は -INF になります。
-     
+-   (+/-) 0 の対数 (log) は -INF になります。  
 
     負の値 (-0 以外) の対数 (log) は NaN になります。
--   負の値の逆数平方根 (rsq) または平方根 (sqrt) は、NaN になります。
-     
+-   負の値の逆数平方根 (rsq) または平方根 (sqrt) は、NaN になります。  
 
     -0 は例外です。sqrt(-0) は -0 になり、rsq(-0) は -INF になります。
 -   INF - INF = NaN
@@ -158,9 +154,9 @@ float11/float10 の値 (v) は次の規則に従います。
 
 [テクスチャ](https://msdn.microsoft.com/library/windows/desktop/ff476902)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -5,17 +5,15 @@ description: Xbox での Unity UWP 開発。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c8bebd6b15a58979975180536cf037b2c61e71b
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: f9851b76b218ed4241ccb617979c127d03f57ee7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690418"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547802"
 ---
 # <a name="bringing-unity-games-to-uwp-on-xbox"></a>Xbox の UWP への Unity ゲームの移行
 

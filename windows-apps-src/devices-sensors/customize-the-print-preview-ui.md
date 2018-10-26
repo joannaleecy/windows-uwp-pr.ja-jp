@@ -6,16 +6,14 @@ description: このセクションでは、印刷プレビュー UI の印刷オ
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: fe4086cc87699083304594eb4ccc8e7bb137b19f
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 71fb45842e8aaa4200e2597ac0736d911ac9bf34
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518650"
+ms.locfileid: "5549796"
 ---
 # <a name="customize-the-print-preview-ui"></a>印刷プレビュー UI のカスタマイズ
 

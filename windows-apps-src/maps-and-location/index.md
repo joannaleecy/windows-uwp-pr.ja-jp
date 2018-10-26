@@ -6,29 +6,28 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 地図, 位置情報, マップ サービス
-ms.openlocfilehash: 9f2c15c8d4bab5a764b8973c4eecb220ed6d8f38
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665336"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548224"
 ---
 # <a name="maps-and-location-overview"></a>地図と位置情報の概要
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 このセクションでは、アプリで地図の表示、マップ サービスの使用、位置情報の検索、ジオフェンスのセットアップを行う方法について説明します。 また、Windows マップ アプリを起動し、特定の地図やルート、ターン バイ ターン方式のルート案内を表示する方法についても説明します。
 
-> **ヒント** アプリで地図と位置情報を使う方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
+> [!TIP]
+> マップと位置情報、アプリでの使用について詳しくは、github の[Windows ユニバーサル-サンプルのリポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードします。
 -   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 -   [UWP の位置情報のサンプル](http://go.microsoft.com/fwlink/p/?linkid=533278)
 
- 
+ 
 
 ## <a name="display-maps"></a>地図の表示
 
@@ -46,7 +45,7 @@ ms.locfileid: "665336"
 
 ## <a name="access-map-services"></a>マップ サービスへのアクセス
 
-[**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の API を使って、ルート、ルート案内、ジオコーディング機能をアプリに追加します。 また、ユーザーがオフライン マップを簡単に管理できるように、適切なページで設定アプリを直接起動することもできます。
+[**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の API を使って、ルート、ルート案内、ジオコーディング機能をアプリに追加します。
 
 | トピック | 説明 |
 |-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -54,7 +53,7 @@ ms.locfileid: "665336"
 | [関心のあるポイント (POI) の地図への表示](display-poi.md) | プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 |
 | [ルートとルート案内の表示](routes-and-directions.md) | ルートとルート案内を要求し、アプリで表示します。 |
 | [ジオコーディングと逆ジオコーディングの実行](geocoding.md) | 住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、[**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスのメソッドを呼び出します。 |
-
+| [検索してオフラインで使用するマップ パッケージをダウンロードします。](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 以前は、アプリをオフライン マップをダウンロード、設定アプリをユーザーに指示する必要があります。 これで、( [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、 [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)などに基づきます)。 特定の領域にダウンロードしたパッケージを検索する[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)名前空間のクラスを使用できます。 <br> ことができますも確認するマップ パッケージのダウンロードされた状態のリッスンし、アプリをそのままにユーザーを必要とせず、ダウンロードを開始します。 <br> リファレンス コンテンツと[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)の両方でこれを行う方法の例になることがわかります。
 
 ## <a name="get-the-users-location"></a>ユーザーの位置情報の取得
 
@@ -64,7 +63,8 @@ ms.locfileid: "665336"
 |-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [マップ認証キーの要求](authentication-key.md) | [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) や [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスをアプリで使うには、アプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 この記事では、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。 |
 | [位置認識アプリの設計ガイドライン](guidelines-and-checklist-for-detecting-location.md) | ユーザーの位置情報にアクセスする必要があるアプリを構築するためのパフォーマンス ガイドラインです。 |
-| [ユーザーの位置情報の取得](get-location.md) | ユーザーの位置情報にアクセスして取得します。 |
+| [ユーザーの位置情報の取得](get-location.md) | ユーザーの位置情報にアクセスして取得します。 | 
+| [ビジット追跡の使用ガイドライン](guidelines-for-visits.md) | 実用的な位置情報追跡に役立つ強力なビジット追跡機能を使用する方法について説明します。 |
 | [ジオフェンスの設計ガイドライン](guidelines-for-geofencing.md) | ジオフェンス機能を利用するアプリのパフォーマンス ガイドラインです。 |
 | [ジオフェンスのセットアップ](set-up-a-geofence.md) | アプリでジオフェンスをセットアップし、フォアグラウンドとバックグラウンドで通知を処理する方法について説明します。 |
 

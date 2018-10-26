@@ -6,16 +6,14 @@ ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
 ms.author: elcowle
 ms.date: 08/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, サンプル, DirectX, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 91b3e37664543b57839387a187d0876f4830222c
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 7a808c36ab319d76f16c653c5812ebe4b269ec59
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488826"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543626"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Marble Maze、C++ と DirectX での UWP ゲームの開発
 
@@ -30,7 +28,7 @@ ms.locfileid: "1488826"
 > [!IMPORTANT]
 > Marble Maze は、UWP ゲームを作成するためのベスト プラクティスと考えられる設計パターンを示しています。 各自のプラクティスと開発するゲームの固有の要件に適合するように、このゲームの実装の詳細を利用できます。 各自のニーズに適合する別のテクニックやライブラリがある場合はそれを自由にお使いください  (ただし、コードが [Windows アプリ認定キット](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)によるテストに合格することを常に確かめてください。) ゲームの開発を成功させるために Marble Maze の実装が不可欠であると見なされる場合は、このドキュメントでその点を強調しています。
 
- 
+ 
 
 ## <a name="introducing-marble-maze"></a>Marble Maze について
 
@@ -55,7 +53,7 @@ Marble Maze では、ユーザーは複数の方法でゲーム ボードを操�
 ## <a name="who-should-read-this"></a>このドキュメントの対象読者
 
 
-Windows 10 の 3D ゲームやその他のグラフィックス重視のアプリケーションの作成に関心がある場合は、このセクションを読んでください。 このドキュメントで説明する基本原則とプラクティスを活用して、各自の UWP ゲームを作成してください。 C++ と DirectX のプログラミングの知識または強い興味があれば、このドキュメントを活用するのに役に立ちます。 DirectX の経験がない場合でも、類似の 3D グラフィックスのプログラミング環境の経験があれば役に立ちます。
+3D ゲームやその他のグラフィックス重視のアプリケーションを windows 10 の作成に関心がある場合はこのします。 このドキュメントで説明する基本原則とプラクティスを活用して、各自の UWP ゲームを作成してください。 C++ と DirectX のプログラミングの知識または強い興味があれば、このドキュメントを活用するのに役に立ちます。 DirectX の経験がない場合でも、類似の 3D グラフィックスのプログラミング環境の経験があれば役に立ちます。
 
 ドキュメント「[チュートリアル: DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-uwp-directx-game.md)」に、DirectX と C++ を使った基本的な 3D シューティング ゲームを実装するサンプルの説明があります。
 
@@ -101,11 +99,11 @@ Marble Maze には再利用可能なコンポーネントがたくさん用意�
 | [Marble Maze サンプルへの入力と対話機能の追加](adding-input-and-interactivity-to-the-marble-maze-sample.md) | ユーザーがメニュー間を移動し、ゲーム ボードを操作できるように、Marble Maze が加速度計入力、タッチ入力、Xbox One コントローラー入力を処理する方法について説明します。 入力を操作するときに留意するベスト プラクティスについても説明します。 |
 | [Marble Maze のサンプルへのオーディオの追加](adding-audio-to-the-marble-maze-sample.md)                                     | Marble Maze でオーディオを操作して音楽とサウンド エフェクトをゲームのエクスペリエンスに追加する方法について説明します。                                                                                                                                                  |
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

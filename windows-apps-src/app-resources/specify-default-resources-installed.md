@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f88a6d6be6bf938564f0a31eac118983c256a7e
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: daa40656c72812e19c7f6f5fa71e50c2206670af
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395991"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546535"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>アプリで使用する既定のリソースを指定する
 
