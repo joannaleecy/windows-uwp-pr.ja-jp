@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 143b96171091406fb91954685143e4f86c036ffb
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570901"
+ms.locfileid: "5639389"
 ---
 # <a name="add-a-splash-screen"></a><span data-ttu-id="c449c-104">スプラッシュ画面の追加</span><span class="sxs-lookup"><span data-stu-id="c449c-104">Add a splash screen</span></span>
 

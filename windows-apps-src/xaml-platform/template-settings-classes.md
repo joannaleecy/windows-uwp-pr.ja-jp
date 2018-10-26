@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7b08138ab22d4cf2cbf4fb5273759f000a7c94
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5552459"
+ms.locfileid: "5666618"
 ---
 # <a name="template-settings-classes"></a><span data-ttu-id="4df16-104">Template settings (テンプレート設定) クラス</span><span class="sxs-lookup"><span data-stu-id="4df16-104">Template settings classes</span></span>
 

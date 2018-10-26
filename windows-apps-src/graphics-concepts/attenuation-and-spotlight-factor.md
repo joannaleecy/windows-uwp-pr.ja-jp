@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 65b9f6700ddd11c41193820a5247a90c2382c98b
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558181"
+ms.locfileid: "5639039"
 ---
 # <a name="attenuation-and-spotlight-factor"></a><span data-ttu-id="9e003-104">減衰とスポットライト係数</span><span class="sxs-lookup"><span data-stu-id="9e003-104">Attenuation and spotlight factor</span></span>
 

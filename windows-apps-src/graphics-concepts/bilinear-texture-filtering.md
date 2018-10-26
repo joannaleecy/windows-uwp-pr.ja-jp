@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 48e16162a76b1a599c1a43e763243be4348810af
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5592792"
+ms.locfileid: "5653943"
 ---
 # <a name="bilinear-texture-filtering"></a><span data-ttu-id="499e8-104">バイリニア テクスチャ フィルタリング</span><span class="sxs-lookup"><span data-stu-id="499e8-104">Bilinear texture filtering</span></span>
 

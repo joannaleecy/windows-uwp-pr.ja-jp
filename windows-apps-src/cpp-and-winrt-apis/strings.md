@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、文字列
 ms.localizationpriority: medium
 ms.openlocfilehash: 72032c3c522a8434d266842a83c443889e8efc19
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5593810"
+ms.locfileid: "5665282"
 ---
 # <a name="string-handling-in-cwinrt"></a><span data-ttu-id="c1b6f-104">C++/WinRT での文字列の処理</span><span class="sxs-lookup"><span data-stu-id="c1b6f-104">String handling in C++/WinRT</span></span>
 

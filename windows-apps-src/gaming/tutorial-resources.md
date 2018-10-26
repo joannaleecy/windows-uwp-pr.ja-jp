@@ -8,11 +8,11 @@ ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cb837965746eb1c2c7deab613eec239a83cac294
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558993"
+ms.locfileid: "5665239"
 ---
 # <a name="extend-the-game-sample"></a><span data-ttu-id="f362d-104">ゲーム サンプルの紹介</span><span class="sxs-lookup"><span data-stu-id="f362d-104">Extend the game sample</span></span>
 

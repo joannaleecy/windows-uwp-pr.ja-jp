@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fbbe1978cc59afcc7d681331dadc9a06e3eb2d0
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5564443"
+ms.locfileid: "5638355"
 ---
 # <a name="launch-an-app-for-results"></a><span data-ttu-id="e0533-105">結果を取得するためのアプリの起動</span><span class="sxs-lookup"><span data-stu-id="e0533-105">Launch an app for results</span></span>
 

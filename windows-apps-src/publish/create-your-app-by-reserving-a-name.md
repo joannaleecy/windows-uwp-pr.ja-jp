@@ -9,11 +9,11 @@ ms.date: 10/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b8666d478b59bfb5975150903cf08fc2a43e938c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570335"
+ms.locfileid: "5665518"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a><span data-ttu-id="ca1b4-103">名前の予約によるアプリの作成</span><span class="sxs-lookup"><span data-stu-id="ca1b4-103">Create your app by reserving a name</span></span>
 

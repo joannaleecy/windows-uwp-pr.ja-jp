@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6461b6889f110bde8929e1f370f9197caa33e5f3
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5549023"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5599316"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a><span data-ttu-id="a3901-104">マネージ Windows ランタイム コンポーネントの配布</span><span class="sxs-lookup"><span data-stu-id="a3901-104">Distributing a managed Windows Runtime Component</span></span>
 

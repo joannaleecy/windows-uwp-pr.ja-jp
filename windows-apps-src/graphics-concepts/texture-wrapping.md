@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 28dcb134b87ac136b341d5b1f349ac9d656ef642
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5592997"
+ms.locfileid: "5641746"
 ---
 # <a name="texture-wrapping"></a><span data-ttu-id="e05c5-104">テクスチャの折り返し</span><span class="sxs-lookup"><span data-stu-id="e05c5-104">Texture wrapping</span></span>
 
