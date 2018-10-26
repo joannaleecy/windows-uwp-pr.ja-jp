@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: b80eda57ff700d732ba2402582ed6402acca4fc6
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5549232"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5605061"
 ---
 # <a name="resource-management-system"></a><span data-ttu-id="16962-103">リソース管理システム</span><span class="sxs-lookup"><span data-stu-id="16962-103">Resource Management System</span></span>
 <span data-ttu-id="16962-104">リソース管理システムには、ビルド時と実行時の両方の機能があります。</span><span class="sxs-lookup"><span data-stu-id="16962-104">The Resource Management System has both build-time and run-time features.</span></span> <span data-ttu-id="16962-105">ビルド時に、システムは、アプリとしてパッケージ化されているリソースのさまざまなバリエーションすべてのインデックスを作成します。</span><span class="sxs-lookup"><span data-stu-id="16962-105">At build time, the system creates an index of all the different variants of the resources that are packaged up with your app.</span></span> <span data-ttu-id="16962-106">このインデックスがパッケージ リソース インデックス (PRI) であり、アプリのパッケージにも含まれています。</span><span class="sxs-lookup"><span data-stu-id="16962-106">This index is the Package Resource Index, or PRI, and it's also included in your app's package.</span></span> <span data-ttu-id="16962-107">実行時に、システムは、有効になっているユーザーやコンピューターの設定を検出し、PRI でその情報を参照して、それらの設定に最適なリソースを自動的に読み込みます。</span><span class="sxs-lookup"><span data-stu-id="16962-107">At run-time, the system detects the user and machine settings that are in effect, consults the information in the PRI, and automatically loads the resources that are the best match for those settings.</span></span>

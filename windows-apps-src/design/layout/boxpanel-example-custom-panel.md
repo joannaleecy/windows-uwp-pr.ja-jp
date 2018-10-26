@@ -15,11 +15,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d29b85c7ec3ec9ec0114a3a49dff834f859511e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563063"
+ms.locfileid: "5640618"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a><span data-ttu-id="51d32-103">BoxPanel、カスタム パネルの例</span><span class="sxs-lookup"><span data-stu-id="51d32-103">BoxPanel, an example custom panel</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fe2460dfc5ab11a9168f1d1d87207d2b9490026
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5572601"
+ms.locfileid: "5594093"
 ---
 # <a name="xaml-syntax-guide"></a><span data-ttu-id="23459-104">XAML 構文のガイド</span><span class="sxs-lookup"><span data-stu-id="23459-104">XAML syntax guide</span></span>
 

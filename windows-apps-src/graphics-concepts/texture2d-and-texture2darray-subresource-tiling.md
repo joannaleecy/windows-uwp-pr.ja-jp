@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 245581e4eb2a8526b242feadb5877590283e24f9
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5549929"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5611157"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a><span data-ttu-id="5aaa1-104">Texture2D と Texture2DArray のサブリソースのタイル表示</span><span class="sxs-lookup"><span data-stu-id="5aaa1-104">Texture2D and Texture2DArray subresource tiling</span></span>
 

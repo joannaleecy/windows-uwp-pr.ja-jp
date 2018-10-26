@@ -13,11 +13,11 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: fae2a222ae20c64e8e8adb2abfa973d62216239e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5547357"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5595270"
 ---
 # <a name="xaml-lighting"></a><span data-ttu-id="7cad5-104">XAML の照明</span><span class="sxs-lookup"><span data-stu-id="7cad5-104">XAML lighting</span></span>
 

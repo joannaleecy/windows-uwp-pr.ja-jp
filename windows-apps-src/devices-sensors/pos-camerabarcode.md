@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: c647846aaaf8f7a5cef96e267ad979dc68ee004a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5549536"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5593017"
 ---
 # <a name="camera-barcode-scanner"></a><span data-ttu-id="7c9db-104">カメラ バーコード スキャナー</span><span class="sxs-lookup"><span data-stu-id="7c9db-104">Camera barcode scanner</span></span>
 <span data-ttu-id="7c9db-105">カメラ バーコード スキャナーは、Windows によって、コンピューターに接続されているカメラとソフトウェア デコーダーがペアリングされたときに動的に作成されます。</span><span class="sxs-lookup"><span data-stu-id="7c9db-105">A camera barcode scanner is created dynamically as Windows pairs the camera(s) attached to your computer with a software decoder.</span></span>  <span data-ttu-id="7c9db-106">カメラとデコーダーのペアはそれぞれ完全な機能を持つバーコード スキャナーです。</span><span class="sxs-lookup"><span data-stu-id="7c9db-106">Each camera - decoder pair is a fully functional barcode scanner.</span></span>   

@@ -14,11 +14,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f9bb6daeb01e264cf9cdb0fa9ee9c66738fec972
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5567492"
+ms.locfileid: "5593526"
 ---
 # <a name="nested-ui-in-list-items"></a><span data-ttu-id="8daae-103">リスト項目の入れ子になった UI</span><span class="sxs-lookup"><span data-stu-id="8daae-103">Nested UI in list items</span></span>
 

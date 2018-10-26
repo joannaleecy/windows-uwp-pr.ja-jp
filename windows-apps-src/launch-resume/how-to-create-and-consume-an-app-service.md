@@ -8,16 +8,16 @@ ms.author: twhitney
 ms.date: 09/18/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e51bde685e15ab9e24921a495eec18a0df799455
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 1407187f9883f44bb9fdc56fd3ae80820b5920f8
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5553347"
+ms.locfileid: "5597614"
 ---
 # <a name="create-and-consume-an-app-service"></a><span data-ttu-id="f073e-104">アプリ サービスの作成と利用</span><span class="sxs-lookup"><span data-stu-id="f073e-104">Create and consume an app service</span></span>
 
-<span data-ttu-id="f073e-105">アプリ サービスは、他の UWP アプリにサービスを提供する UWP アプリです。</span><span class="sxs-lookup"><span data-stu-id="f073e-105">App services are UWP apps that provide services to other UWP apps.</span></span> <span data-ttu-id="f073e-106">これは、デバイス上にある Web サービスのようなものです。</span><span class="sxs-lookup"><span data-stu-id="f073e-106">They are analogous to web services, on a device.</span></span> <span data-ttu-id="f073e-107">アプリ サービスは、バック グラウンド タスクとしてホスト アプリで実行され、そのサービスを他のアプリに提供することができます。</span><span class="sxs-lookup"><span data-stu-id="f073e-107">An app service runs as a background task in the host app and can provide its service to other apps.</span></span> <span data-ttu-id="f073e-108">たとえば、アプリ サービスによって、他のアプリで使用できるバー コード スキャナー サービスが提供される場合があります。</span><span class="sxs-lookup"><span data-stu-id="f073e-108">For example, an app service might provide a bar code scanner service that other apps could use.</span></span> <span data-ttu-id="f073e-109">また、アプリのエンタープライズ スイートに共通のスペル チェック アプリ サービスを備えておき、そのサービスを同じスイート内の他のアプリから利用可能にする場合もあるでしょう。</span><span class="sxs-lookup"><span data-stu-id="f073e-109">Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.</span></span>  <span data-ttu-id="f073e-110">アプリ サービスでは、同じデバイス上のアプリから呼び出せる UI を持たないサービスを作成できます。また、Windows 10 バージョン 1607 以降では、リモート デバイスからも呼び出せます。</span><span class="sxs-lookup"><span data-stu-id="f073e-110">App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices.</span></span> 
+<span data-ttu-id="f073e-105">アプリ サービスは、他の UWP アプリにサービスを提供する UWP アプリです。</span><span class="sxs-lookup"><span data-stu-id="f073e-105">App services are UWP apps that provide services to other UWP apps.</span></span> <span data-ttu-id="f073e-106">これは、デバイス上にある Web サービスのようなものです。</span><span class="sxs-lookup"><span data-stu-id="f073e-106">They are analogous to web services, on a device.</span></span> <span data-ttu-id="f073e-107">アプリ サービスは、バック グラウンド タスクとしてホスト アプリで実行され、そのサービスを他のアプリに提供することができます。</span><span class="sxs-lookup"><span data-stu-id="f073e-107">An app service runs as a background task in the host app and can provide its service to other apps.</span></span> <span data-ttu-id="f073e-108">たとえば、アプリ サービスによって、他のアプリで使用できるバー コード スキャナー サービスが提供される場合があります。</span><span class="sxs-lookup"><span data-stu-id="f073e-108">For example, an app service might provide a bar code scanner service that other apps could use.</span></span> <span data-ttu-id="f073e-109">また、アプリのエンタープライズ スイートに共通のスペル チェック アプリ サービスを備えておき、そのサービスを同じスイート内の他のアプリから利用可能にする場合もあるでしょう。</span><span class="sxs-lookup"><span data-stu-id="f073e-109">Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.</span></span>  <span data-ttu-id="f073e-110">アプリ サービスでは、同じデバイス上のアプリから呼び出せる UI を持たないサービスを作成できます。また、Windows 10 バージョン 1607 以降では、リモート デバイスからも呼び出せます。</span><span class="sxs-lookup"><span data-stu-id="f073e-110">App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices.</span></span>
 
 <span data-ttu-id="f073e-111">Windows 10 バージョン 1607 以降では、ホスト アプリと同じプロセスで実行されるアプリ サービスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="f073e-111">Starting in Windows 10, version 1607, you can create app services that run in the same process as the host app.</span></span> <span data-ttu-id="f073e-112">この記事では、別のバックグラウンド プロセスで実行されるアプリ サービスの作成と利用に重点を置いて説明します。</span><span class="sxs-lookup"><span data-stu-id="f073e-112">This article focuses on creating and consuming an app service that runs in a separate background process.</span></span> <span data-ttu-id="f073e-113">プロバイダーと同じプロセスでアプリ サービスを実行する詳細については、「[ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する](convert-app-service-in-process.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f073e-113">See [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) for more details about running an app service in the same process as the provider.</span></span>
 
@@ -238,6 +238,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
            if (status != AppServiceConnectionStatus.Success)
            {
                textBox.Text= "Failed to connect";
+               this.inventoryService = null;
                return;
            }
        }

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.openlocfilehash: 378841414f97abb313584e6bcd033914440713a6
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5564856"
+ms.locfileid: "5596118"
 ---
 # <a name="style-for-uwp-apps"></a><span data-ttu-id="b30fb-104">UWP アプリのスタイル</span><span class="sxs-lookup"><span data-stu-id="b30fb-104">Style for UWP apps</span></span>
 

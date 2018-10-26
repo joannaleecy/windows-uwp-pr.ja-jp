@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c959ced5ada9145ca494dd023c9aa802d7dccc2
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5544585"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5622091"
 ---
 # <a name="block-compression"></a><span data-ttu-id="07eb3-105">ブロック圧縮</span><span class="sxs-lookup"><span data-stu-id="07eb3-105">Block compression</span></span>
 

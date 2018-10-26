@@ -15,11 +15,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c926f9dc7a87b83550bb2cd3a5bff856ec27866
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5554332"
+ms.locfileid: "5594133"
 ---
 # <a name="check-boxes"></a><span data-ttu-id="4845a-103">チェック ボックス</span><span class="sxs-lookup"><span data-stu-id="4845a-103">Check boxes</span></span>
 

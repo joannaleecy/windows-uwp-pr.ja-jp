@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, パッケージ化, パッケージ構成, フラット バンドル
 ms.localizationpriority: medium
 ms.openlocfilehash: b877996dd5fa32ac764fb587092f501320931527
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5567015"
+ms.locfileid: "5621701"
 ---
 # <a name="flat-bundle-app-packages"></a><span data-ttu-id="11de1-104">フラット バンドル アプリ パッケージ</span><span class="sxs-lookup"><span data-stu-id="11de1-104">Flat bundle app packages</span></span> 
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ec2986594b043fa088450609e655f4b56b95e25
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5551684"
+ms.locfileid: "5598488"
 ---
 # <a name="events-and-routed-events-overview"></a><span data-ttu-id="3453a-104">イベントとルーティング イベントの概要</span><span class="sxs-lookup"><span data-stu-id="3453a-104">Events and routed events overview</span></span>
 

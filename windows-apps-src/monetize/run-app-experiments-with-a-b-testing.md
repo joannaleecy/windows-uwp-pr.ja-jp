@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験
 ms.localizationpriority: medium
 ms.openlocfilehash: bbb72098a7a0b4557183bfb2f1a4e0c2650c4a29
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5551854"
+ms.locfileid: "5611581"
 ---
 # <a name="run-app-experiments-with-ab-testing"></a><span data-ttu-id="98138-103">A/B テストを使用してアプリの実験を実行する</span><span class="sxs-lookup"><span data-stu-id="98138-103">Run app experiments with A/B testing</span></span>
 

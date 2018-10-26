@@ -9,11 +9,11 @@ keywords: Windows 10、UWP
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
 ms.openlocfilehash: d75eb60de1af031bbda4e5bdb37cf1fc17fe6ee0
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5554530"
+ms.locfileid: "5596940"
 ---
 # <a name="respond-to-customer-feedback"></a><span data-ttu-id="a9efb-104">顧客のフィードバックに返信する</span><span class="sxs-lookup"><span data-stu-id="a9efb-104">Respond to customer feedback</span></span>
 

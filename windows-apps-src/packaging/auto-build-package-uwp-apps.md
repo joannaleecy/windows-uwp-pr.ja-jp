@@ -9,11 +9,11 @@ keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fd82e4574ab6c6aff30d762f2eacc0d62fd6bdf
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5565042"
+ms.locfileid: "5594166"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a><span data-ttu-id="c7fa5-104">UWP アプリの自動ビルドを設定する</span><span class="sxs-lookup"><span data-stu-id="c7fa5-104">Set up automated builds for your UWP app</span></span>
 

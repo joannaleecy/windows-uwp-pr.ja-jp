@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 03fbed5a0145a093b1e7a2535012077644aaf2e2
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570119"
+ms.locfileid: "5592977"
 ---
 # <a name="use-a-software-trigger"></a><span data-ttu-id="20866-104">ソフトウェア トリガーの使用</span><span class="sxs-lookup"><span data-stu-id="20866-104">Use a software trigger</span></span>
 

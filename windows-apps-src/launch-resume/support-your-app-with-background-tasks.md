@@ -9,11 +9,11 @@ ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: a72d13689b278c1048cab6b1fcb4fd788658602c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5567831"
+ms.locfileid: "5597038"
 ---
 # <a name="support-your-app-with-background-tasks"></a><span data-ttu-id="5e6af-104">バックグラウンド タスクによるアプリのサポート</span><span class="sxs-lookup"><span data-stu-id="5e6af-104">Support your app with background tasks</span></span>
 

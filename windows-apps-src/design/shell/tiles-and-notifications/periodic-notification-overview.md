@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d02bfb8b8bd112a969895d4f2bd5d324fce9d6b8
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5567644"
+ms.locfileid: "5594700"
 ---
 # <a name="periodic-notification-overview"></a><span data-ttu-id="f26e4-103">定期的な通知の概要</span><span class="sxs-lookup"><span data-stu-id="f26e4-103">Periodic notification overview</span></span>
  
