@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 01/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e002247cabb6389ddf23860499ebf1f166b03a
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 55272df2c4ddec411e9e17a67d0a8128a8334db3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474407"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562050"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a><span data-ttu-id="01d20-103">多言語アプリ ツールキット 4.0 の使用</span><span class="sxs-lookup"><span data-stu-id="01d20-103">Use the Multilingual App Toolkit 4.0</span></span>
 

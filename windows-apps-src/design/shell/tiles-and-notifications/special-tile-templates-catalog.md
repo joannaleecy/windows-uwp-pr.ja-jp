@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e408509f4cebbc89587237c6e0dc67bc88b1558
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 74b915e4d698503a13c5066348f4e46ebd3125c8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5523120"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563960"
 ---
 # <a name="special-tile-templates"></a><span data-ttu-id="c336a-103">特別なタイル テンプレート</span><span class="sxs-lookup"><span data-stu-id="c336a-103">Special tile templates</span></span>
  

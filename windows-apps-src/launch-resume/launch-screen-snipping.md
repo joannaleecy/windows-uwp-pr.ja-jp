@@ -5,16 +5,14 @@ description: このトピックでは、ms screenclip と ms screensketch の UR
 ms.author: quradic
 ms.date: 8/1/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10、uwp、uri、切り取り領域、スケッチ
 ms.localizationpriority: medium
-ms.openlocfilehash: e18662125ef72051a289b3f1d0f3dc09b452d256
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 64df8d9768fa20a6d6819e93fe06904feede6223
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513482"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564217"
 ---
 # <a name="launch-screen-snipping"></a><span data-ttu-id="41dea-105">画面切り取りの起動</span><span class="sxs-lookup"><span data-stu-id="41dea-105">Launch screen snipping</span></span>
 

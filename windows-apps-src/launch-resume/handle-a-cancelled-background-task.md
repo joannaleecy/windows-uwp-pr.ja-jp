@@ -6,20 +6,18 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 91de18af818113d79564ee8dfba7519a0f131246
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516200"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560312"
 ---
 # <a name="handle-a-cancelled-background-task"></a><span data-ttu-id="28b5b-104">取り消されたバックグラウンド タスクの処理</span><span class="sxs-lookup"><span data-stu-id="28b5b-104">Handle a cancelled background task</span></span>
 

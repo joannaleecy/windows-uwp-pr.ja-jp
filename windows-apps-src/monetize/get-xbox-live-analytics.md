@@ -5,16 +5,14 @@ title: Xbox Live の分析データの取得
 ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析
 ms.localizationpriority: medium
-ms.openlocfilehash: 68bc3389276acc910272d57e9cc859a7e8ffd6c7
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 8ef566ed473c7d65ceeb290ee76bfa043f4766f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514956"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563138"
 ---
 # <a name="get-xbox-live-analytics-data"></a><span data-ttu-id="bbba0-104">Xbox Live の分析データの取得</span><span class="sxs-lookup"><span data-stu-id="bbba0-104">Get Xbox Live analytics data</span></span>
 

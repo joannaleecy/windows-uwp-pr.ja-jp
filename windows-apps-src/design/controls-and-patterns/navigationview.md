@@ -6,20 +6,18 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e53a02723475c61898fdd152eaf30fcbf7f3500
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 8503c8cde942129c4e7ad6994afb6cd9b29f19a1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514536"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562063"
 ---
 # <a name="navigation-view"></a><span data-ttu-id="52b39-103">ナビゲーション ビュー</span><span class="sxs-lookup"><span data-stu-id="52b39-103">Navigation view</span></span>
 

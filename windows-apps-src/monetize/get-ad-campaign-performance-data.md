@@ -6,16 +6,14 @@ title: 広告キャンペーンのパフォーマンス データの取得
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 広告キャンペーン
 ms.localizationpriority: medium
-ms.openlocfilehash: ce3f51e0eec2356262811bd126f0a63d555c28bd
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 337342378fc42b33c0bddb980b143ab195305458
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5520432"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559608"
 ---
 # <a name="get-ad-campaign-performance-data"></a><span data-ttu-id="5425c-104">広告キャンペーンのパフォーマンス データの取得</span><span class="sxs-lookup"><span data-stu-id="5425c-104">Get ad campaign performance data</span></span>
 

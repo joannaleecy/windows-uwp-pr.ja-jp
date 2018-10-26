@@ -6,16 +6,14 @@ author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a4685a891facab39cb984f0b2d5f697e22477233
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 5dde0607b76d36b24c851c705ca62f71df052f65
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469466"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561800"
 ---
 # <a name="drag-and-drop"></a><span data-ttu-id="d7eab-104">ドラッグ アンド ドロップ</span><span class="sxs-lookup"><span data-stu-id="d7eab-104">Drag and drop</span></span>
 

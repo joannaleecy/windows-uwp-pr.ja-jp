@@ -6,16 +6,14 @@ ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.author: wdg-dev-content
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a43f3b4c5684d93ea6986c4d1f1e4dae46c1a959
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: dd775b1fa653df5aca9b4738249757c052c181ed
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521163"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564158"
 ---
 # <a name="guidance-for-app-package-management"></a><span data-ttu-id="02465-103">アプリ パッケージ管理のガイダンス</span><span class="sxs-lookup"><span data-stu-id="02465-103">Guidance for app package management</span></span>
 

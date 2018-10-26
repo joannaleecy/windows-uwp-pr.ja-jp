@@ -6,16 +6,14 @@ ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
 ms.author: twhitney
 ms.date: 06/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dff7b641cad99407ce22e7a4d4b58c10e0ae94d1
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: a5a0af7b7227f149722cf34a368fc588198880ef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5480210"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561270"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a><span data-ttu-id="492c6-106">URI に応じた既定のアプリの起動</span><span class="sxs-lookup"><span data-stu-id="492c6-106">Launch the default app for a URI</span></span>
 

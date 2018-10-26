@@ -5,16 +5,14 @@ description: PointOfService デバイスを列挙する方法の詳細
 ms.author: jken
 ms.date: 10/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 8796b2ea025a00015881d39449f2dd99d57121f8
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 10804b006cb7ab542c74e363af5134634b7651e3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512844"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559965"
 ---
 # <a name="enumerating-point-of-service-devices"></a><span data-ttu-id="aa666-104">POS デバイスの列挙</span><span class="sxs-lookup"><span data-stu-id="aa666-104">Enumerating Point of Service devices</span></span>
 <span data-ttu-id="aa666-105">このセクションでは、システムが利用できるデバイスを照会するために使用する[デバイス セレクターを定義](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)し、次のいずれかの方法でこのセレクターを使用して POS デバイスを列挙する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="aa666-105">In this section you will learn how to [define a device selector](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector) that is used to query devices available to the system and use this selector to enumerate Point of Service devices using one of the following methods:</span></span>

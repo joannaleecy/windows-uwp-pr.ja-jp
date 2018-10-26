@@ -6,16 +6,14 @@ ms.author: pafarley
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
-ms.openlocfilehash: 38596ad12ac309db5dc60e4a5183eee9bf8c7b7c
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: d64901c08e2945f34e66055d8e2e7d3a8301f66e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518460"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562811"
 ---
 # <a name="take-a-test-javascript-api"></a><span data-ttu-id="23d7a-103">テスト JavaScript API</span><span class="sxs-lookup"><span data-stu-id="23d7a-103">Take a Test JavaScript API</span></span>
 

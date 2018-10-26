@@ -6,16 +6,14 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 位置, 地図, 位置情報
 ms.localizationpriority: medium
-ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: d0101124febc52da379d2e829e86bdbba7583851
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514299"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561717"
 ---
 # <a name="guidelines-for-location-aware-apps"></a><span data-ttu-id="a9786-103">位置認識アプリのガイドライン</span><span class="sxs-lookup"><span data-stu-id="a9786-103">Guidelines for location-aware apps</span></span>
 
