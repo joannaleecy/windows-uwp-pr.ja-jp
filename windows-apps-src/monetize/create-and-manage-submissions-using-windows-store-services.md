@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API
 ms.localizationpriority: medium
 ms.openlocfilehash: f85f586d58d159e9fb4751933f14f6b74cd94f96
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562649"
+ms.locfileid: "5617679"
 ---
 # <a name="create-and-manage-submissions"></a>申請の作成と管理
 

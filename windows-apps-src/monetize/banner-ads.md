@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 広告, 宣伝, AdControl, バナー広告
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a8a08f81328be5dcf28a3f73a592e88e1edd135
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558545"
+ms.locfileid: "5597154"
 ---
 # <a name="banner-ads"></a>バナー広告
 

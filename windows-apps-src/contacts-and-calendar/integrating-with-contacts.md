@@ -10,11 +10,11 @@ keywords: Windows 10, UWP, 連絡先, 連絡先カード, 注釈
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
 ms.openlocfilehash: eb1c01a4fe370f899da185dc39b7d3abe6a1904e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558830"
+ms.locfileid: "5605051"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>アプリを連絡先カードの操作に接続する
 

@@ -14,11 +14,11 @@ dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: eadc0763e7f99930bee3d2a388a881c52e89f609
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5552844"
+ms.locfileid: "5621841"
 ---
 # <a name="person-picture-control"></a>ユーザー画像コントロール
 

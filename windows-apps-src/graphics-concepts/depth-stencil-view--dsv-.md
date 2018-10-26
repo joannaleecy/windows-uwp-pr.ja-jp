@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a64af02bc62a5e7d605f752504027c66f5dc7f7
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562478"
+ms.locfileid: "5621741"
 ---
 # <a name="depth-stencil-view-dsv"></a>深度ステンシル ビュー (DSV)
 

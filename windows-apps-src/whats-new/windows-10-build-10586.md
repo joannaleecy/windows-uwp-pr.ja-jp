@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 99abbc0e06f84fea87c4bbc96cb912424f9a2272
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5569261"
+ms.locfileid: "5593612"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-10586"></a>Windows 10 ビルド 10586 の開発者向け新着情報
 

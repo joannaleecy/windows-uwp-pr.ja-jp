@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
 ms.openlocfilehash: c38fe989bd854d44bb7dc3c0cba36a4ae145854c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5564237"
+ms.locfileid: "5597404"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>Windows 10 開発者向け新については、ビルド 10240
 

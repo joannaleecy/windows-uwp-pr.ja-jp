@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b79bfa9ecdf76d2d59e3c0991240d88599dbe6dd
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5569403"
+ms.locfileid: "5605225"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>ピッカーでファイルやフォルダーを開く
 
