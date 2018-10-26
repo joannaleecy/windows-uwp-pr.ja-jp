@@ -6,16 +6,14 @@ ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.author: wdg-dev-content
 ms.date: 10/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5095aafd0b78b6b8cadc0e3852e2079507800c75
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 0628dcfc5ece046ca728763876e8e00c9a2d5904
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5519101"
+ms.locfileid: "5542892"
 ---
 # <a name="supported-languages"></a><span data-ttu-id="51d59-103">サポートされている言語</span><span class="sxs-lookup"><span data-stu-id="51d59-103">Supported languages</span></span>
 

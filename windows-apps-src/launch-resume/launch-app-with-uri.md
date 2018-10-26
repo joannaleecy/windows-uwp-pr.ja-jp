@@ -6,16 +6,14 @@ ms.assetid: a40c4ce2-4f41-4a55-aeb3-1beb3e84e839
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f801e9093676ec9fbf55c4ec4af7c5c444ed3ead
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 9126d33c18ede90e9c20339d9a793f3ab2835e76
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513394"
+ms.locfileid: "5545815"
 ---
 # <a name="launch-an-app-with-a-uri"></a><span data-ttu-id="d25b1-104">URI を使ったアプリの起動</span><span class="sxs-lookup"><span data-stu-id="d25b1-104">Launch an app with a URI</span></span>
 

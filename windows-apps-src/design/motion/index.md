@@ -8,59 +8,58 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ffe26e949be254e85d28dde4a98a1730baa84a3e
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: def37c31ef0a64a9b1017d40d281457513fba0db
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843485"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546799"
 ---
-# <a name="motion-for-uwp-apps"></a><span data-ttu-id="9e4ec-103">UWP アプリのモーション</span><span class="sxs-lookup"><span data-stu-id="9e4ec-103">Motion for UWP apps</span></span>
+# <a name="motion-for-uwp-apps"></a><span data-ttu-id="c5c9c-103">UWP アプリのモーション</span><span class="sxs-lookup"><span data-stu-id="c5c9c-103">Motion for UWP apps</span></span>
 
 ![ヒーロー イメージ](images/header-motion2.svg)
 
-<span data-ttu-id="9e4ec-105">Fluent モーションはアプリで目的を果たします。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-105">Fluent motion serves a purpose in your app.</span></span> <span data-ttu-id="9e4ec-106">これは、ユーザーの動作に基づいてインテリジェントなフィードバックを提供し、UI にアクティブな印象を与え、アプリ内でユーザーのナビゲーションを誘導します。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-106">It gives intelligent feedback based on the user's behavior, keeps the UI feeling alive, and guides the user's navigation through your app.</span></span> <span data-ttu-id="9e4ec-107">Fluent モーションは、ユーザーとそのデジタル エクスペリエンス間の感情面の結び付きを生み出します。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-107">Fluent motion elicits an emotional connection between a user and their digital experience.</span></span> <span data-ttu-id="9e4ec-108">マイクロソフトでは、ユーザーが既に現実世界から認識している自然な動きの基盤のうえに構築し、そこからシステムを拡張します。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-108">We build on a foundation of natural movement the user already understands from the physical world, and we extend our system from there.</span></span>
+<span data-ttu-id="c5c9c-105">Fluent モーションはアプリで目的を果たします。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-105">Fluent motion serves a purpose in your app.</span></span> <span data-ttu-id="c5c9c-106">これは、ユーザーの動作に基づいてインテリジェントなフィードバックを提供し、UI にアクティブな印象を与え、アプリ内でユーザーのナビゲーションを誘導します。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-106">It gives intelligent feedback based on the user's behavior, keeps the UI feeling alive, and guides the user's navigation through your app.</span></span> <span data-ttu-id="c5c9c-107">Fluent モーションは、ユーザーとそのデジタル エクスペリエンス間の感情面の結び付きを生み出します。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-107">Fluent motion elicits an emotional connection between a user and their digital experience.</span></span> <span data-ttu-id="c5c9c-108">マイクロソフトでは、ユーザーが既に現実世界から認識している自然な動きの基盤のうえに構築し、そこからシステムを拡張します。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-108">We build on a foundation of natural movement the user already understands from the physical world, and we extend our system from there.</span></span>
 
-## <a name="fluent-motion-principles"></a><span data-ttu-id="9e4ec-109">Fluent モーションの原則</span><span class="sxs-lookup"><span data-stu-id="9e4ec-109">Fluent motion principles</span></span>
+## <a name="fluent-motion-principles"></a><span data-ttu-id="c5c9c-109">Fluent モーションの原則</span><span class="sxs-lookup"><span data-stu-id="c5c9c-109">Fluent motion principles</span></span>
 
-### <a name="physical"></a><span data-ttu-id="9e4ec-110">物理</span><span class="sxs-lookup"><span data-stu-id="9e4ec-110">Physical</span></span>
+### <a name="physical"></a><span data-ttu-id="c5c9c-110">物理</span><span class="sxs-lookup"><span data-stu-id="c5c9c-110">Physical</span></span>
 
-<span data-ttu-id="9e4ec-111">動作中のオブジェクトは、現実世界でのオブジェクトの動作を示します。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-111">Objects in motion exhibit behaviors of objects in the real world.</span></span> <span data-ttu-id="9e4ec-112">滑らかで応答性の高い動きによって、自然な操作性を感じさせるエクスペリエンスが実現され、感情面の結び付きが生みだされ、個性が追加されます。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-112">Fluid, responsive movement makes the experience feel natural, creating emotional connections and adding personality.</span></span>
+<span data-ttu-id="c5c9c-111">動作中のオブジェクトは、現実世界でのオブジェクトの動作を示します。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-111">Objects in motion exhibit behaviors of objects in the real world.</span></span> <span data-ttu-id="c5c9c-112">滑らかで応答性の高い動きによって、自然な操作性を感じさせるエクスペリエンスが実現され、感情面の結び付きが生みだされ、個性が追加されます。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-112">Fluid, responsive movement makes the experience feel natural, creating emotional connections and adding personality.</span></span>
 
 ![物理モーションの UI の例](images/Physical.gif)
-> <span data-ttu-id="9e4ec-114">タッチで UI を操作すると、UI の動きが、操作の速度に直接関連します。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-114">When you interact with UI via touch, the movement of the UI is directly related to the velocity of the interaction.</span></span> <span data-ttu-id="9e4ec-115">また、タッチは直接操作であるため、操作するオブジェクトが周囲のオブジェクトに影響します。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-115">And because touch is direct manipulation, the object you interect with affects the objects around it.</span></span>
+> <span data-ttu-id="c5c9c-114">タッチで UI を操作すると、UI の動きが、操作の速度に直接関連します。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-114">When you interact with UI via touch, the movement of the UI is directly related to the velocity of the interaction.</span></span> <span data-ttu-id="c5c9c-115">また、タッチは直接操作であるため、操作するオブジェクトが周囲のオブジェクトに影響します。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-115">And because touch is direct manipulation, the object you interect with affects the objects around it.</span></span>
 
-### <a name="functional"></a><span data-ttu-id="9e4ec-116">機能性</span><span class="sxs-lookup"><span data-stu-id="9e4ec-116">Functional</span></span>
+### <a name="functional"></a><span data-ttu-id="c5c9c-116">機能性</span><span class="sxs-lookup"><span data-stu-id="c5c9c-116">Functional</span></span>
 
-<span data-ttu-id="9e4ec-117">モーションは目的を果たし、確信があります。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-117">Motion serves a purpose and has conviction.</span></span> <span data-ttu-id="9e4ec-118">複雑さに関してユーザーをサポートし、階層を確立する手助けをします。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-118">It guides the user through complexity and helps establish hierarchy.</span></span> <span data-ttu-id="9e4ec-119">モーションは、パフォーマンスが向上した印象を与え、体感する待ち時間を隠蔽することでユーザー エクスペリエンスを最適化します。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-119">Movement gives the impression of enhanced performance and optimizes the user experience by hiding perceived latency.</span></span>
+<span data-ttu-id="c5c9c-117">モーションは目的を果たし、確信があります。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-117">Motion serves a purpose and has conviction.</span></span> <span data-ttu-id="c5c9c-118">複雑さに関してユーザーをサポートし、階層を確立する手助けをします。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-118">It guides the user through complexity and helps establish hierarchy.</span></span> <span data-ttu-id="c5c9c-119">モーションは、パフォーマンスが向上した印象を与え、体感する待ち時間を隠蔽することでユーザー エクスペリエンスを最適化します。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-119">Movement gives the impression of enhanced performance and optimizes the user experience by hiding perceived latency.</span></span>
 
 ![機能的なモーションの UI の例](images/functional.gif)
-> <span data-ttu-id="9e4ec-121">ページ切り替えは、目的に特化されています。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-121">Page transitions are purpose-built.</span></span> <span data-ttu-id="9e4ec-122">ページが相互に関連する方法に関するヒントを提供します。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-122">They give hints about how pages are related to each other.</span></span> <span data-ttu-id="9e4ec-123">パフォーマンスが最適でない場合でも速く感じられるような方法で移動します。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-123">They move in a manner that's perceived as fast even when performance is not optimal.</span></span>
+> <span data-ttu-id="c5c9c-121">ページ切り替えは、目的に特化されています。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-121">Page transitions are purpose-built.</span></span> <span data-ttu-id="c5c9c-122">ページが相互に関連する方法に関するヒントを提供します。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-122">They give hints about how pages are related to each other.</span></span> <span data-ttu-id="c5c9c-123">パフォーマンスが最適でない場合でも速く感じられるような方法で移動します。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-123">They move in a manner that's perceived as fast even when performance is not optimal.</span></span>
 
-### <a name="continuous"></a><span data-ttu-id="9e4ec-124">継続性</span><span class="sxs-lookup"><span data-stu-id="9e4ec-124">Continuous</span></span>
+### <a name="continuous"></a><span data-ttu-id="c5c9c-124">継続性</span><span class="sxs-lookup"><span data-stu-id="c5c9c-124">Continuous</span></span>
 
-<span data-ttu-id="9e4ec-125">ポイントからポイントへの滑らか動きは、自然に目を引きつけ、ユーザーを誘導します。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-125">Fluid movement from point to point naturally draws the eye and guides the user.</span></span> <span data-ttu-id="9e4ec-126">適切にユーザーのタスクをまとめて、よりコンシューマブルで親しみやすく感じられるようにします。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-126">It elegantly stitches together a user’s task, making it feel more consumable and friendly.</span></span>
+<span data-ttu-id="c5c9c-125">ポイントからポイントへの滑らか動きは、自然に目を引きつけ、ユーザーを誘導します。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-125">Fluid movement from point to point naturally draws the eye and guides the user.</span></span> <span data-ttu-id="c5c9c-126">適切にユーザーのタスクをまとめて、よりコンシューマブルで親しみやすく感じられるようにします。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-126">It elegantly stitches together a user’s task, making it feel more consumable and friendly.</span></span>
 
 ![継続的なモーションの UI の例](images/continuous3.gif)
-> <span data-ttu-id="9e4ec-128">オブジェクトは、シーン間を移動したり、シーン内でモーフィングして継続性を提供し、ユーザーがコンテキストを維持できるようにします。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-128">Objects can travel from scene to scene or morph within a scene to provide continuity and help the user maintain context.</span></span>
+> <span data-ttu-id="c5c9c-128">オブジェクトは、シーン間を移動したり、シーン内でモーフィングして継続性を提供し、ユーザーがコンテキストを維持できるようにします。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-128">Objects can travel from scene to scene or morph within a scene to provide continuity and help the user maintain context.</span></span>
 
-### <a name="contextual"></a><span data-ttu-id="9e4ec-129">状況依存</span><span class="sxs-lookup"><span data-stu-id="9e4ec-129">Contextual</span></span>
+### <a name="contextual"></a><span data-ttu-id="c5c9c-129">状況依存</span><span class="sxs-lookup"><span data-stu-id="c5c9c-129">Contextual</span></span>
 
-<span data-ttu-id="9e4ec-130">インテリジェントなモーションは、UI を操作する方法に沿った方法でユーザーにフィードバックを提供します。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-130">Intelligent motion provides feedback to the user in a manner that's aligned with how they manipulated the UI.</span></span> <span data-ttu-id="9e4ec-131">操作はユーザーを中心にしています。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-131">Interaction is centered around the user.</span></span> <span data-ttu-id="9e4ec-132">動きはフォーム ファクターに適切であると感じられ、シナリオに基づいて設計されています。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-132">The movement feels appropriate to the form-factor and designed around the scenario.</span></span> <span data-ttu-id="9e4ec-133">各ユーザーにとって快適である必要があります。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-133">It should be comfortable for each user.</span></span>
+<span data-ttu-id="c5c9c-130">インテリジェントなモーションは、UI を操作する方法に沿った方法でユーザーにフィードバックを提供します。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-130">Intelligent motion provides feedback to the user in a manner that's aligned with how they manipulated the UI.</span></span> <span data-ttu-id="c5c9c-131">操作はユーザーを中心にしています。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-131">Interaction is centered around the user.</span></span> <span data-ttu-id="c5c9c-132">動きはフォーム ファクターに適切であると感じられ、シナリオに基づいて設計されています。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-132">The movement feels appropriate to the form-factor and designed around the scenario.</span></span> <span data-ttu-id="c5c9c-133">各ユーザーにとって快適である必要があります。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-133">It should be comfortable for each user.</span></span>
 
 ![状況依存のモーションの UI の例](images/Contextual.gif)
-> <span data-ttu-id="9e4ec-135">アニメーションはユーザーの操作に沿ったものである必要があります。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-135">Animation should tie back to the user interaction.</span></span> <span data-ttu-id="9e4ec-136">コンテキスト メニューは、ユーザーがアクティブ化したポイントから展開されます。</span><span class="sxs-lookup"><span data-stu-id="9e4ec-136">A context menu is deployed from a point where the user activated it.</span></span> 
+> <span data-ttu-id="c5c9c-135">アニメーションはユーザーの操作に沿ったものである必要があります。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-135">Animation should tie back to the user interaction.</span></span> <span data-ttu-id="c5c9c-136">コンテキスト メニューは、ユーザーがアクティブ化したポイントから展開されます。</span><span class="sxs-lookup"><span data-stu-id="c5c9c-136">A context menu is deployed from a point where the user activated it.</span></span> 
 
-## <a name="motion-articles"></a><span data-ttu-id="9e4ec-137">モーションの記事</span><span class="sxs-lookup"><span data-stu-id="9e4ec-137">Motion articles</span></span>
+## <a name="motion-articles"></a><span data-ttu-id="c5c9c-137">モーションの記事</span><span class="sxs-lookup"><span data-stu-id="c5c9c-137">Motion articles</span></span>
 
-<span data-ttu-id="9e4ec-138">:::row::: :::column:::</span><span class="sxs-lookup"><span data-stu-id="9e4ec-138">:::row::: :::column:::</span></span>
+:::row:::
+    :::column:::
         ### [Timing and easing](timing-and-easing.md)
         Timing and easing are important elements that make motion feel natural for objects entering, exiting, or moving within the UI.
     :::column-end:::
@@ -68,7 +67,9 @@ ms.locfileid: "1843485"
         ### [Directionality and gravity](directionality-and-gravity.md)
         Directional signals help provide a solid mental model of the journey a user takes across experiences. Directional movement is subject to forces like gravity, which reinforces the natural feel of the movement.
     :::column-end:::
-<span data-ttu-id="9e4ec-139">:::row-end::: :::row::: :::column:::</span><span class="sxs-lookup"><span data-stu-id="9e4ec-139">:::row-end::: :::row::: :::column:::</span></span>
+:::row-end:::
+:::row:::
+    :::column:::
         ### [Page transitions](page-transitions.md)
         Page transitions navigate users between pages in an app, providing feedback about the relationship between pages. They help users understand where they are in the navigation hierarchy.
     :::column-end:::
@@ -76,4 +77,4 @@ ms.locfileid: "1843485"
         ### [Connected animation](connected-animation.md)
         Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.
     :::column-end:::
-<span data-ttu-id="9e4ec-140">:::row-end:::</span><span class="sxs-lookup"><span data-stu-id="9e4ec-140">:::row-end:::</span></span>
+:::row-end:::

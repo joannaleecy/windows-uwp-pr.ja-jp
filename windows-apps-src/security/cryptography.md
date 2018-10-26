@@ -6,16 +6,14 @@ author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: aa01cc3d70db7a94667e944d1a1739e911f94b0c
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 0caa3f63d8a92c75bdce10cdb277967dca21fafb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469771"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550996"
 ---
 # <a name="cryptography"></a><span data-ttu-id="c9def-105">暗号化</span><span class="sxs-lookup"><span data-stu-id="c9def-105">Cryptography</span></span>
 

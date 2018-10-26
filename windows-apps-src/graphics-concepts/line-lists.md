@@ -8,34 +8,32 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 66e2c6a455e64ce7ac782c268045f4c14dadcf7b
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 5a514fb072dd95b9de2c29e097e8387c0f1068a4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1042991"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546697"
 ---
-# <a name="line-lists"></a><span data-ttu-id="72d50-106">線リスト</span><span class="sxs-lookup"><span data-stu-id="72d50-106">Line lists</span></span>
+# <a name="line-lists"></a><span data-ttu-id="fb04e-106">線リスト</span><span class="sxs-lookup"><span data-stu-id="fb04e-106">Line lists</span></span>
 
 
-<span data-ttu-id="72d50-107">線リストとは、独立した直線セグメントの一覧を指します。</span><span class="sxs-lookup"><span data-stu-id="72d50-107">A line list is a list of isolated, straight line segments.</span></span> <span data-ttu-id="72d50-108">線リストは、3D シーンに氷雨や豪雨を追加する場合などに便利です。</span><span class="sxs-lookup"><span data-stu-id="72d50-108">Line lists are useful for such tasks as adding sleet or heavy rain to a 3D scene.</span></span> <span data-ttu-id="72d50-109">アプリケーションは、頂点の配列を入力することで線リストを作成します。</span><span class="sxs-lookup"><span data-stu-id="72d50-109">Applications create a line list by filling an array of vertices.</span></span> <span data-ttu-id="72d50-110">線リストの頂点の数は、2 以上の偶数でなければならない点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="72d50-110">Note that the number of vertices in a line list must be an even number greater than or equal to two.</span></span>
+<span data-ttu-id="fb04e-107">線リストとは、独立した直線セグメントの一覧を指します。</span><span class="sxs-lookup"><span data-stu-id="fb04e-107">A line list is a list of isolated, straight line segments.</span></span> <span data-ttu-id="fb04e-108">線リストは、3D シーンに氷雨や豪雨を追加する場合などに便利です。</span><span class="sxs-lookup"><span data-stu-id="fb04e-108">Line lists are useful for such tasks as adding sleet or heavy rain to a 3D scene.</span></span> <span data-ttu-id="fb04e-109">アプリケーションは、頂点の配列を入力することで線リストを作成します。</span><span class="sxs-lookup"><span data-stu-id="fb04e-109">Applications create a line list by filling an array of vertices.</span></span> <span data-ttu-id="fb04e-110">線リストの頂点の数は、2 以上の偶数でなければならない点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="fb04e-110">Note that the number of vertices in a line list must be an even number greater than or equal to two.</span></span>
 
--   [<span data-ttu-id="72d50-111">例</span><span class="sxs-lookup"><span data-stu-id="72d50-111">Example</span></span>](#example)
--   [<span data-ttu-id="72d50-112">関連トピック</span><span class="sxs-lookup"><span data-stu-id="72d50-112">Related topics</span></span>](#related-topics)
+-   [<span data-ttu-id="fb04e-111">例</span><span class="sxs-lookup"><span data-stu-id="fb04e-111">Example</span></span>](#example)
+-   [<span data-ttu-id="fb04e-112">関連トピック</span><span class="sxs-lookup"><span data-stu-id="fb04e-112">Related topics</span></span>](#related-topics)
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span data-ttu-id="72d50-113"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例</span><span class="sxs-lookup"><span data-stu-id="72d50-113"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example</span></span>
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span data-ttu-id="fb04e-113"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例</span><span class="sxs-lookup"><span data-stu-id="fb04e-113"><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Example</span></span>
 
 
-<span data-ttu-id="72d50-114">次の図は、レンダリングされた線リストを示しています。</span><span class="sxs-lookup"><span data-stu-id="72d50-114">The following illustration shows a rendered line list.</span></span>
+<span data-ttu-id="fb04e-114">次の図は、レンダリングされた線リストを示しています。</span><span class="sxs-lookup"><span data-stu-id="fb04e-114">The following illustration shows a rendered line list.</span></span>
 
 ![線リストの図](images/linelst.png)
 
-<span data-ttu-id="72d50-116">線リストには、素材やテクスチャを適用できます。</span><span class="sxs-lookup"><span data-stu-id="72d50-116">You can apply materials and textures to a line list.</span></span> <span data-ttu-id="72d50-117">素材やテクスチャの色は描画された線にのみ表示され、線の間の点には表示されません。</span><span class="sxs-lookup"><span data-stu-id="72d50-117">The colors in the material or texture appear only along the lines drawn, not at any point in between the lines.</span></span>
+<span data-ttu-id="fb04e-116">線リストには、素材やテクスチャを適用できます。</span><span class="sxs-lookup"><span data-stu-id="fb04e-116">You can apply materials and textures to a line list.</span></span> <span data-ttu-id="fb04e-117">素材やテクスチャの色は描画された線にのみ表示され、線の間の点には表示されません。</span><span class="sxs-lookup"><span data-stu-id="fb04e-117">The colors in the material or texture appear only along the lines drawn, not at any point in between the lines.</span></span>
 
-<span data-ttu-id="72d50-118">次のコードは、この線リストの頂点の作成方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="72d50-118">The following code shows how to create vertices for this line list.</span></span>
+<span data-ttu-id="fb04e-118">次のコードは、この線リストの頂点の作成方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="fb04e-118">The following code shows how to create vertices for this line list.</span></span>
 
 ```
 struct CUSTOMVERTEX
@@ -54,7 +52,7 @@ CUSTOMVERTEX Vertices[] =
 };
 ```
 
-<span data-ttu-id="72d50-119">次のコード例は、線リストを Direct3D でレンダリングする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="72d50-119">The code example below shows how to render a line list in Direct3D.</span></span>
+<span data-ttu-id="fb04e-119">次のコード例は、線リストを Direct3D でレンダリングする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="fb04e-119">The code example below shows how to render a line list in Direct3D.</span></span>
 
 ```
 //
@@ -64,14 +62,14 @@ CUSTOMVERTEX Vertices[] =
 d3dDevice->DrawPrimitive( D3DPT_LINELIST, 0, 3 );
 ```
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="72d50-120"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="72d50-120"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="fb04e-120"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="fb04e-120"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="72d50-121">プリミティブ</span><span class="sxs-lookup"><span data-stu-id="72d50-121">Primitives</span></span>](primitives.md)
+[<span data-ttu-id="fb04e-121">プリミティブ</span><span class="sxs-lookup"><span data-stu-id="fb04e-121">Primitives</span></span>](primitives.md)
 
- 
+ 
 
- 
+ 
 
 
 

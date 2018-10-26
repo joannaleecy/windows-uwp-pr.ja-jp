@@ -6,16 +6,14 @@ title: ネイティブ イメージを使って、.NET デスクトップ アプ
 ms.author: normesta
 ms.date: 06/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, ネイティブ コンパイラを画像します。
 ms.localizationpriority: medium
-ms.openlocfilehash: d98b576fb51a8f9507802796ab359d0d00d21998
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 231d5aa895cb4cf63ade01660df61e32424e67c7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517537"
+ms.locfileid: "5549116"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a><span data-ttu-id="fcc9e-103">ネイティブ イメージを使って、.NET デスクトップ アプリを最適化します。</span><span class="sxs-lookup"><span data-stu-id="fcc9e-103">Optimize your .NET Desktop apps with native images</span></span>
 

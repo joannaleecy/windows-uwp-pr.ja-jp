@@ -6,16 +6,14 @@ author: PatrickFarley
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f446299dcf1a0bcf93d483d13c926c6e4cd230f
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 6e41ef25f0d4cce3b36187862936136d84988ad0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512229"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550870"
 ---
 # <a name="authentication-and-user-identity"></a><span data-ttu-id="b7e20-104">認証とユーザー ID</span><span class="sxs-lookup"><span data-stu-id="b7e20-104">Authentication and user identity</span></span>
 

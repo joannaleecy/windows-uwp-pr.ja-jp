@@ -6,16 +6,14 @@ ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
 ms.date: 08/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10、uwp、レビュー、コメント、レビュー担当者
 ms.localizationpriority: medium
-ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b3b246ec0127373dba2385f249640c09940105fa
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479949"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544901"
 ---
 # <a name="reviews-report"></a><span data-ttu-id="e600b-103">レビュー レポート</span><span class="sxs-lookup"><span data-stu-id="e600b-103">Reviews report</span></span>
 

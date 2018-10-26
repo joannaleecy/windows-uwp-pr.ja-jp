@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: af8b2489346e1ef81c5cae304802814b79b8b950
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 59a2e93f7c09266b0e33d58bf6a2571e60c7a607
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474000"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545700"
 ---
 # <a name="notifications-visualizer"></a><span data-ttu-id="61a76-103">Notifications Visualizer</span><span class="sxs-lookup"><span data-stu-id="61a76-103">Notifications Visualizer</span></span>
 

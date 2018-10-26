@@ -5,17 +5,15 @@ title: ユーザー セグメントを作成する
 ms.author: wdg-dev-content
 ms.date: 07/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, セグメント, セグメント, 対象グループ, ユーザー
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ec3bdd1d46927c9d6037906ebdb07e7a5c8f3f1
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: d6de398dd69bb71f2bc895877ac2d734efbec3ad
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482284"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550344"
 ---
 # <a name="create-customer-segments"></a><span data-ttu-id="62bb6-103">ユーザー セグメントを作成する</span><span class="sxs-lookup"><span data-stu-id="62bb6-103">Create customer segments</span></span>
 

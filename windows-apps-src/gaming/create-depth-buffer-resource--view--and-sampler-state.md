@@ -6,42 +6,41 @@ ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、ゲーム、Direct3D、深度バッファー
-ms.openlocfilehash: 87e4248545288f4725e0cf0b104a75f1925ad3a3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 091ac04b2a41c54fbce7294bcf6651f4ad4aafd2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243223"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549334"
 ---
-# <a name="create-depth-buffer-device-resources"></a><span data-ttu-id="dd1cb-104">深度バッファーのデバイス リソースの作成</span><span class="sxs-lookup"><span data-stu-id="dd1cb-104">Create depth buffer device resources</span></span>
+# <a name="create-depth-buffer-device-resources"></a><span data-ttu-id="3821d-104">深度バッファーのデバイス リソースの作成</span><span class="sxs-lookup"><span data-stu-id="3821d-104">Create depth buffer device resources</span></span>
 
 
-<span data-ttu-id="dd1cb-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="dd1cb-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]</span><span class="sxs-lookup"><span data-stu-id="dd1cb-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
 
-<span data-ttu-id="dd1cb-107">シャドウ ボリュームの深度のテストをサポートするために必要な Direct3D デバイス リソースを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-107">Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes.</span></span> <span data-ttu-id="dd1cb-108">「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 1 です。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-108">Part 1 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).</span></span>
+<span data-ttu-id="3821d-105">シャドウ ボリュームの深度のテストをサポートするために必要な Direct3D デバイス リソースを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3821d-105">Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes.</span></span> <span data-ttu-id="3821d-106">「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 1 です。</span><span class="sxs-lookup"><span data-stu-id="3821d-106">Part 1 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).</span></span>
 
-## <a name="resources-youll-need"></a><span data-ttu-id="dd1cb-109">必要なリソース</span><span class="sxs-lookup"><span data-stu-id="dd1cb-109">Resources you'll need</span></span>
-
-
-<span data-ttu-id="dd1cb-110">シャドウ ボリュームの深度マップをレンダリングするには、次の Direct3D デバイス依存リソースが必要です。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-110">Rendering a depth map for shadow volumes requires the following Direct3D device-dependent resources:</span></span>
-
--   <span data-ttu-id="dd1cb-111">深度マップのリソース (バッファー)</span><span class="sxs-lookup"><span data-stu-id="dd1cb-111">A resource (buffer) for the depth map</span></span>
--   <span data-ttu-id="dd1cb-112">リソースの深度ステンシル ビューとシェーダー リソース ビュー</span><span class="sxs-lookup"><span data-stu-id="dd1cb-112">A depth stencil view and shader resource view for the resource</span></span>
--   <span data-ttu-id="dd1cb-113">比較サンプラーの状態オブジェクト</span><span class="sxs-lookup"><span data-stu-id="dd1cb-113">A comparison sampler state object</span></span>
--   <span data-ttu-id="dd1cb-114">ライトの POV マトリックスの定数バッファー</span><span class="sxs-lookup"><span data-stu-id="dd1cb-114">Constant buffers for light POV matrices</span></span>
--   <span data-ttu-id="dd1cb-115">シャドウ マップをレンダリングするためのビューポート (通常は正方形のビューポート)</span><span class="sxs-lookup"><span data-stu-id="dd1cb-115">A viewport for rendering the shadow map (typically a square viewport)</span></span>
--   <span data-ttu-id="dd1cb-116">前面のカリングを有効にするためのレンダリングの状態オブジェクト</span><span class="sxs-lookup"><span data-stu-id="dd1cb-116">A rendering state object to enable front face culling</span></span>
--   <span data-ttu-id="dd1cb-117">レンダリングの状態オブジェクトをまだ使っていない場合は、背面のカリングに戻るために、このオブジェクトも必要になります。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-117">You will also need a rendering state object to switch back to back face culling, if you don't already use one.</span></span>
-
-<span data-ttu-id="dd1cb-118">これらのリソースの作成をデバイス依存リソースの作成ルーチンに含める必要があることに注意してください。そうすれば、新しいデバイス ドライバーがインストールされたり、別のグラフィックス アダプターに接続されているモニターにユーザーがアプリを移動したりした場合などに、レンダラーがデバイス依存リソースを再作成できます。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-118">Note that creation of these resources needs to be included in a device-dependent resource creation routine, that way your renderer can recreate them if (for example) a new device driver is installed, or the user moves your app to a monitor attached to a different graphics adapter.</span></span>
-
-## <a name="check-feature-support"></a><span data-ttu-id="dd1cb-119">サポートされている機能</span><span class="sxs-lookup"><span data-stu-id="dd1cb-119">Check feature support</span></span>
+## <a name="resources-youll-need"></a><span data-ttu-id="3821d-107">必要なリソース</span><span class="sxs-lookup"><span data-stu-id="3821d-107">Resources you'll need</span></span>
 
 
-<span data-ttu-id="dd1cb-120">深度マップを作成する前に、Direct3D デバイスで [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) メソッドを呼び出し、**D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT** を要求して、[**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) 構造体を提供します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-120">Before creating the depth map, call the [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) method on the Direct3D device, request **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT**, and provide a [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) structure.</span></span>
+<span data-ttu-id="3821d-108">シャドウ ボリュームの深度マップをレンダリングするには、次の Direct3D デバイス依存リソースが必要です。</span><span class="sxs-lookup"><span data-stu-id="3821d-108">Rendering a depth map for shadow volumes requires the following Direct3D device-dependent resources:</span></span>
+
+-   <span data-ttu-id="3821d-109">深度マップのリソース (バッファー)</span><span class="sxs-lookup"><span data-stu-id="3821d-109">A resource (buffer) for the depth map</span></span>
+-   <span data-ttu-id="3821d-110">リソースの深度ステンシル ビューとシェーダー リソース ビュー</span><span class="sxs-lookup"><span data-stu-id="3821d-110">A depth stencil view and shader resource view for the resource</span></span>
+-   <span data-ttu-id="3821d-111">比較サンプラーの状態オブジェクト</span><span class="sxs-lookup"><span data-stu-id="3821d-111">A comparison sampler state object</span></span>
+-   <span data-ttu-id="3821d-112">ライトの POV マトリックスの定数バッファー</span><span class="sxs-lookup"><span data-stu-id="3821d-112">Constant buffers for light POV matrices</span></span>
+-   <span data-ttu-id="3821d-113">シャドウ マップをレンダリングするためのビューポート (通常は正方形のビューポート)</span><span class="sxs-lookup"><span data-stu-id="3821d-113">A viewport for rendering the shadow map (typically a square viewport)</span></span>
+-   <span data-ttu-id="3821d-114">前面のカリングを有効にするためのレンダリングの状態オブジェクト</span><span class="sxs-lookup"><span data-stu-id="3821d-114">A rendering state object to enable front face culling</span></span>
+-   <span data-ttu-id="3821d-115">レンダリングの状態オブジェクトをまだ使っていない場合は、背面のカリングに戻るために、このオブジェクトも必要になります。</span><span class="sxs-lookup"><span data-stu-id="3821d-115">You will also need a rendering state object to switch back to back face culling, if you don't already use one.</span></span>
+
+<span data-ttu-id="3821d-116">これらのリソースの作成をデバイス依存リソースの作成ルーチンに含める必要があることに注意してください。そうすれば、新しいデバイス ドライバーがインストールされたり、別のグラフィックス アダプターに接続されているモニターにユーザーがアプリを移動したりした場合などに、レンダラーがデバイス依存リソースを再作成できます。</span><span class="sxs-lookup"><span data-stu-id="3821d-116">Note that creation of these resources needs to be included in a device-dependent resource creation routine, that way your renderer can recreate them if (for example) a new device driver is installed, or the user moves your app to a monitor attached to a different graphics adapter.</span></span>
+
+## <a name="check-feature-support"></a><span data-ttu-id="3821d-117">サポートされている機能</span><span class="sxs-lookup"><span data-stu-id="3821d-117">Check feature support</span></span>
+
+
+<span data-ttu-id="3821d-118">深度マップを作成する前に、Direct3D デバイスで [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) メソッドを呼び出し、**D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT** を要求して、[**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) 構造体を提供します。</span><span class="sxs-lookup"><span data-stu-id="3821d-118">Before creating the depth map, call the [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) method on the Direct3D device, request **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT**, and provide a [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) structure.</span></span>
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -58,14 +57,14 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 ```
 
-<span data-ttu-id="dd1cb-121">この構造体がサポートされていない場合は、サンプル比較関数を呼び出すシェーダー モデル 4 レベル 9\_x 向けにコンパイルされたシェーダーを読み込まないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-121">If this feature is not supported, do not try to load shaders compiled for shader model 4 level 9\_x that call sample comparison functions.</span></span> <span data-ttu-id="dd1cb-122">この機能がサポートされない場合、GPU がレガシ デバイスであり、ドライバーが更新されていないため WDDM 1.2 以上がサポートされないというケースがほとんどです。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-122">In many cases, lack of support for this feature means that the GPU is a legacy device with a driver that isn't updated to support at least WDDM 1.2.</span></span> <span data-ttu-id="dd1cb-123">デバイスが機能レベル 10\_0 以上をサポートしている場合は、代わりにシェーダー モデル 4\_0 向けにコンパイルされたサンプル比較を読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-123">If the device supports at least feature level 10\_0 then you can load a sample comparison shader compiled for shader model 4\_0 instead.</span></span>
+<span data-ttu-id="3821d-119">この構造体がサポートされていない場合は、サンプル比較関数を呼び出すシェーダー モデル 4 レベル 9\_x 向けにコンパイルされたシェーダーを読み込まないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="3821d-119">If this feature is not supported, do not try to load shaders compiled for shader model 4 level 9\_x that call sample comparison functions.</span></span> <span data-ttu-id="3821d-120">この機能がサポートされない場合、GPU がレガシ デバイスであり、ドライバーが更新されていないため WDDM 1.2 以上がサポートされないというケースがほとんどです。</span><span class="sxs-lookup"><span data-stu-id="3821d-120">In many cases, lack of support for this feature means that the GPU is a legacy device with a driver that isn't updated to support at least WDDM 1.2.</span></span> <span data-ttu-id="3821d-121">デバイスが機能レベル 10\_0 以上をサポートしている場合は、代わりにシェーダー モデル 4\_0 向けにコンパイルされたサンプル比較を読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="3821d-121">If the device supports at least feature level 10\_0 then you can load a sample comparison shader compiled for shader model 4\_0 instead.</span></span>
 
-## <a name="create-depth-buffer"></a><span data-ttu-id="dd1cb-124">深度バッファーの作成</span><span class="sxs-lookup"><span data-stu-id="dd1cb-124">Create depth buffer</span></span>
+## <a name="create-depth-buffer"></a><span data-ttu-id="3821d-122">深度バッファーの作成</span><span class="sxs-lookup"><span data-stu-id="3821d-122">Create depth buffer</span></span>
 
 
-<span data-ttu-id="dd1cb-125">まず、高精度深度形式の深度マップを作成してください。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-125">First, try creating the depth map with a higher-precision depth format.</span></span> <span data-ttu-id="dd1cb-126">最初に、一致するシェーダー リソース ビュー プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-126">Set up matching shader resource view properties first.</span></span> <span data-ttu-id="dd1cb-127">デバイス メモリの不足やハードウェアでサポートされない形式などが原因でリソースの作成が失敗した場合は、低精度形式を試して、照合するプロパティを変更してください。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-127">If the resource creation fails, for example due to low device memory or a format that the hardware doesn't support, try a lower-precision format and change properties to match.</span></span>
+<span data-ttu-id="3821d-123">まず、高精度深度形式の深度マップを作成してください。</span><span class="sxs-lookup"><span data-stu-id="3821d-123">First, try creating the depth map with a higher-precision depth format.</span></span> <span data-ttu-id="3821d-124">最初に、一致するシェーダー リソース ビュー プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="3821d-124">Set up matching shader resource view properties first.</span></span> <span data-ttu-id="3821d-125">デバイス メモリの不足やハードウェアでサポートされない形式などが原因でリソースの作成が失敗した場合は、低精度形式を試して、照合するプロパティを変更してください。</span><span class="sxs-lookup"><span data-stu-id="3821d-125">If the resource creation fails, for example due to low device memory or a format that the hardware doesn't support, try a lower-precision format and change properties to match.</span></span>
 
-<span data-ttu-id="dd1cb-128">中程度の解像度の Direct3D 機能レベル 9\_1 デバイスでレンダリングする場合など、低精度の深度形式だけが必要な場合は、この手順はオプションです。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-128">This step is optional if you only need a low-precision depth format, for example when rendering on medium-resolution Direct3D feature level 9\_1 devices.</span></span>
+<span data-ttu-id="3821d-126">中程度の解像度の Direct3D 機能レベル 9\_1 デバイスでレンダリングする場合など、低精度の深度形式だけが必要な場合は、この手順はオプションです。</span><span class="sxs-lookup"><span data-stu-id="3821d-126">This step is optional if you only need a low-precision depth format, for example when rendering on medium-resolution Direct3D feature level 9\_1 devices.</span></span>
 
 ```cpp
 D3D11_TEXTURE2D_DESC shadowMapDesc;
@@ -85,7 +84,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-<span data-ttu-id="dd1cb-129">次に、リソース ビューを作成します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-129">Then create the resource views.</span></span> <span data-ttu-id="dd1cb-130">深度ステンシル ビューで mip スライスを 0 に設定し、シェーダー リソース ビューで mip レベルを 1 に設定します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-130">Set the mip slice to zero on the depth stencil view and set mip levels to 1 on the shader resource view.</span></span> <span data-ttu-id="dd1cb-131">両方とも TEXTURE2D のテクスチャ ディメンションを持ち、一致する [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059) を使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-131">Both have a texture dimension of TEXTURE2D, and both need to use a matching [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).</span></span>
+<span data-ttu-id="3821d-127">次に、リソース ビューを作成します。</span><span class="sxs-lookup"><span data-stu-id="3821d-127">Then create the resource views.</span></span> <span data-ttu-id="3821d-128">深度ステンシル ビューで mip スライスを 0 に設定し、シェーダー リソース ビューで mip レベルを 1 に設定します。</span><span class="sxs-lookup"><span data-stu-id="3821d-128">Set the mip slice to zero on the depth stencil view and set mip levels to 1 on the shader resource view.</span></span> <span data-ttu-id="3821d-129">両方とも TEXTURE2D のテクスチャ ディメンションを持ち、一致する [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059) を使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="3821d-129">Both have a texture dimension of TEXTURE2D, and both need to use a matching [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).</span></span>
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
@@ -113,14 +112,14 @@ hr = pD3DDevice->CreateShaderResourceView(
     );
 ```
 
-## <a name="create-comparison-state"></a><span data-ttu-id="dd1cb-132">比較の状態の作成</span><span class="sxs-lookup"><span data-stu-id="dd1cb-132">Create comparison state</span></span>
+## <a name="create-comparison-state"></a><span data-ttu-id="3821d-130">比較の状態の作成</span><span class="sxs-lookup"><span data-stu-id="3821d-130">Create comparison state</span></span>
 
 
-<span data-ttu-id="dd1cb-133">ここで、比較サンプラーの状態オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-133">Now create the comparison sampler state object.</span></span> <span data-ttu-id="dd1cb-134">機能レベル 9\_1 では D3D11\_COMPARISON\_LESS\_EQUAL のみがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-134">Feature level 9\_1 only supports D3D11\_COMPARISON\_LESS\_EQUAL.</span></span> <span data-ttu-id="dd1cb-135">フィルタリングの選択肢について詳しくは、「[ハードウェアの範囲でのシャドウ マップのサポート](target-a-range-of-hardware.md)」をご覧ください。シャドウ マップの高速化のために、ポイント フィルタリングを選ぶこともできます。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-135">Filtering choices are explained more in [Supporting shadow maps on a range of hardware](target-a-range-of-hardware.md) - or you can just pick point filtering for faster shadow maps.</span></span>
+<span data-ttu-id="3821d-131">ここで、比較サンプラーの状態オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="3821d-131">Now create the comparison sampler state object.</span></span> <span data-ttu-id="3821d-132">機能レベル 9\_1 では D3D11\_COMPARISON\_LESS\_EQUAL のみがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="3821d-132">Feature level 9\_1 only supports D3D11\_COMPARISON\_LESS\_EQUAL.</span></span> <span data-ttu-id="3821d-133">フィルタリングの選択肢について詳しくは、「[ハードウェアの範囲でのシャドウ マップのサポート](target-a-range-of-hardware.md)」をご覧ください。シャドウ マップの高速化のために、ポイント フィルタリングを選ぶこともできます。</span><span class="sxs-lookup"><span data-stu-id="3821d-133">Filtering choices are explained more in [Supporting shadow maps on a range of hardware](target-a-range-of-hardware.md) - or you can just pick point filtering for faster shadow maps.</span></span>
 
-<span data-ttu-id="dd1cb-136">D3D11\_TEXTURE\_ADDRESS\_BORDER アドレス モードを指定できます。これは、機能レベル 9\_1 のデバイスで機能します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-136">Note that you can specify the D3D11\_TEXTURE\_ADDRESS\_BORDER address mode and it will work on feature level 9\_1 devices.</span></span> <span data-ttu-id="dd1cb-137">これは、深度のテストの実行前に、ピクセルがライトの視錐台内にあるかどうかをテストしないピクセル シェーダーに適用されます。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-137">This applies to pixel shaders that don't test whether the pixel is in the light's view frustum before doing the depth test.</span></span> <span data-ttu-id="dd1cb-138">各境界線に 0 または 1 を指定することで、ライトの視錐台の外にあるピクセルが深度テストにパスするかどうかを制御できます。結果的に、ライトに照らされているか、シャドウ内にあるかを制御できます。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-138">By specifying 0 or 1 for each border, you can control whether pixels outside the light's view frustum pass or fail the depth test, and therefore whether they are lit or in shadow.</span></span>
+<span data-ttu-id="3821d-134">D3D11\_TEXTURE\_ADDRESS\_BORDER アドレス モードを指定できます。これは、機能レベル 9\_1 のデバイスで機能します。</span><span class="sxs-lookup"><span data-stu-id="3821d-134">Note that you can specify the D3D11\_TEXTURE\_ADDRESS\_BORDER address mode and it will work on feature level 9\_1 devices.</span></span> <span data-ttu-id="3821d-135">これは、深度のテストの実行前に、ピクセルがライトの視錐台内にあるかどうかをテストしないピクセル シェーダーに適用されます。</span><span class="sxs-lookup"><span data-stu-id="3821d-135">This applies to pixel shaders that don't test whether the pixel is in the light's view frustum before doing the depth test.</span></span> <span data-ttu-id="3821d-136">各境界線に 0 または 1 を指定することで、ライトの視錐台の外にあるピクセルが深度テストにパスするかどうかを制御できます。結果的に、ライトに照らされているか、シャドウ内にあるかを制御できます。</span><span class="sxs-lookup"><span data-stu-id="3821d-136">By specifying 0 or 1 for each border, you can control whether pixels outside the light's view frustum pass or fail the depth test, and therefore whether they are lit or in shadow.</span></span>
 
-<span data-ttu-id="dd1cb-139">機能レベル 9\_1 では、**MinLOD** を 0 に設定し、**MaxLOD** を **D3D11\_FLOAT32\_MAX** に設定し、**MaxAnisotropy** を 0 に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-139">On feature level 9\_1, the following required values must be set: **MinLOD** is set to zero, **MaxLOD** is set to **D3D11\_FLOAT32\_MAX**, and **MaxAnisotropy** is set to zero.</span></span>
+<span data-ttu-id="3821d-137">機能レベル 9\_1 では、**MinLOD** を 0 に設定し、**MaxLOD** を **D3D11\_FLOAT32\_MAX** に設定し、**MaxAnisotropy** を 0 に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3821d-137">On feature level 9\_1, the following required values must be set: **MinLOD** is set to zero, **MaxLOD** is set to **D3D11\_FLOAT32\_MAX**, and **MaxAnisotropy** is set to zero.</span></span>
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -152,10 +151,10 @@ DX::ThrowIfFailed(
     );
 ```
 
-## <a name="create-render-states"></a><span data-ttu-id="dd1cb-140">レンダリングの状態の作成</span><span class="sxs-lookup"><span data-stu-id="dd1cb-140">Create render states</span></span>
+## <a name="create-render-states"></a><span data-ttu-id="3821d-138">レンダリングの状態の作成</span><span class="sxs-lookup"><span data-stu-id="3821d-138">Create render states</span></span>
 
 
-<span data-ttu-id="dd1cb-141">次に、前面のカリングを有効にするために使用できるレンダリングの状態を作成します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-141">Now create a render state you can use to enable front face culling.</span></span> <span data-ttu-id="dd1cb-142">機能レベル 9\_1 のデバイスの場合、**DepthClipEnable** を **true** に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-142">Note that feature level 9\_1 devices require **DepthClipEnable** set to **true**.</span></span>
+<span data-ttu-id="3821d-139">次に、前面のカリングを有効にするために使用できるレンダリングの状態を作成します。</span><span class="sxs-lookup"><span data-stu-id="3821d-139">Now create a render state you can use to enable front face culling.</span></span> <span data-ttu-id="3821d-140">機能レベル 9\_1 のデバイスの場合、**DepthClipEnable** を **true** に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3821d-140">Note that feature level 9\_1 devices require **DepthClipEnable** set to **true**.</span></span>
 
 ```cpp
 D3D11_RASTERIZER_DESC drawingRenderStateDesc;
@@ -171,7 +170,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-<span data-ttu-id="dd1cb-143">背面のカリングを有効にするために使用できるレンダリングの状態を作成します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-143">Create a render state you can use to enable back face culling.</span></span> <span data-ttu-id="dd1cb-144">レンダリング コードで既に背面のカリングを有効にしている場合は、この手順を省略できます。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-144">If your rendering code already turns on back face culling, then you can skip this step.</span></span>
+<span data-ttu-id="3821d-141">背面のカリングを有効にするために使用できるレンダリングの状態を作成します。</span><span class="sxs-lookup"><span data-stu-id="3821d-141">Create a render state you can use to enable back face culling.</span></span> <span data-ttu-id="3821d-142">レンダリング コードで既に背面のカリングを有効にしている場合は、この手順を省略できます。</span><span class="sxs-lookup"><span data-stu-id="3821d-142">If your rendering code already turns on back face culling, then you can skip this step.</span></span>
 
 ```cpp
 D3D11_RASTERIZER_DESC shadowRenderStateDesc;
@@ -188,10 +187,10 @@ DX::ThrowIfFailed(
     );
 ```
 
-## <a name="create-constant-buffers"></a><span data-ttu-id="dd1cb-145">定数バッファーの作成</span><span class="sxs-lookup"><span data-stu-id="dd1cb-145">Create constant buffers</span></span>
+## <a name="create-constant-buffers"></a><span data-ttu-id="3821d-143">定数バッファーの作成</span><span class="sxs-lookup"><span data-stu-id="3821d-143">Create constant buffers</span></span>
 
 
-<span data-ttu-id="dd1cb-146">ライトの位置からのレンダリングのために定数バッファーを忘れずに作成してください。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-146">Don't forget to create a constant buffer for rendering from the light's point of view.</span></span> <span data-ttu-id="dd1cb-147">シェーダーにライトの位置を指定するために、この定数バッファーを使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-147">You can also use this constant buffer to specify the light position to the shader.</span></span> <span data-ttu-id="dd1cb-148">ポイント ライトには遠近投影マトリックスを使い、指向性ライト (太陽光など) には正投影マトリックスを使います。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-148">Use a perspective matrix for point lights, and use an orthogonal matrix for directional lights (such as sunlight).</span></span>
+<span data-ttu-id="3821d-144">ライトの位置からのレンダリングのために定数バッファーを忘れずに作成してください。</span><span class="sxs-lookup"><span data-stu-id="3821d-144">Don't forget to create a constant buffer for rendering from the light's point of view.</span></span> <span data-ttu-id="3821d-145">シェーダーにライトの位置を指定するために、この定数バッファーを使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="3821d-145">You can also use this constant buffer to specify the light position to the shader.</span></span> <span data-ttu-id="3821d-146">ポイント ライトには遠近投影マトリックスを使い、指向性ライト (太陽光など) には正投影マトリックスを使います。</span><span class="sxs-lookup"><span data-stu-id="3821d-146">Use a perspective matrix for point lights, and use an orthogonal matrix for directional lights (such as sunlight).</span></span>
 
 ```cpp
 DX::ThrowIfFailed(
@@ -203,7 +202,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-<span data-ttu-id="dd1cb-149">定数バッファーにデータを入力します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-149">Fill the constant buffer data.</span></span> <span data-ttu-id="dd1cb-150">定数バッファーは初期化中に一度更新し、前のフレームからライトの値が変更された場合にもう一度更新します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-150">Update the constant buffers once during initialization, and again if the light values have changed since the previous frame.</span></span>
+<span data-ttu-id="3821d-147">定数バッファーにデータを入力します。</span><span class="sxs-lookup"><span data-stu-id="3821d-147">Fill the constant buffer data.</span></span> <span data-ttu-id="3821d-148">定数バッファーは初期化中に一度更新し、前のフレームからライトの値が変更された場合にもう一度更新します。</span><span class="sxs-lookup"><span data-stu-id="3821d-148">Update the constant buffers once during initialization, and again if the light values have changed since the previous frame.</span></span>
 
 ```cpp
 {
@@ -245,10 +244,10 @@ context->UpdateSubresource(
     );
 ```
 
-## <a name="create-a-viewport"></a><span data-ttu-id="dd1cb-151">ビューポートの作成</span><span class="sxs-lookup"><span data-stu-id="dd1cb-151">Create a viewport</span></span>
+## <a name="create-a-viewport"></a><span data-ttu-id="3821d-149">ビューポートの作成</span><span class="sxs-lookup"><span data-stu-id="3821d-149">Create a viewport</span></span>
 
 
-<span data-ttu-id="dd1cb-152">シャドウ マップにレンダリングするための個別のビューポートが必要です。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-152">You need a separate viewport to render to the shadow map.</span></span> <span data-ttu-id="dd1cb-153">ビューポートはデバイス ベースのリソースではありません。コードの別の場所で自由に作成できます。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-153">The viewport isn't a device-based resource; you're free to create it elsewhere in your code.</span></span> <span data-ttu-id="dd1cb-154">シャドウ マップと同時にビューポートを作成すると、ビューポートのサイズとシャドウ マップのサイズの整合性を保つのが簡単になります。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-154">Creating the viewport along with the shadow map can help make it more convenient to keep the dimension of the viewport congruent with the shadow map dimension.</span></span>
+<span data-ttu-id="3821d-150">シャドウ マップにレンダリングするための個別のビューポートが必要です。</span><span class="sxs-lookup"><span data-stu-id="3821d-150">You need a separate viewport to render to the shadow map.</span></span> <span data-ttu-id="3821d-151">ビューポートはデバイス ベースのリソースではありません。コードの別の場所で自由に作成できます。</span><span class="sxs-lookup"><span data-stu-id="3821d-151">The viewport isn't a device-based resource; you're free to create it elsewhere in your code.</span></span> <span data-ttu-id="3821d-152">シャドウ マップと同時にビューポートを作成すると、ビューポートのサイズとシャドウ マップのサイズの整合性を保つのが簡単になります。</span><span class="sxs-lookup"><span data-stu-id="3821d-152">Creating the viewport along with the shadow map can help make it more convenient to keep the dimension of the viewport congruent with the shadow map dimension.</span></span>
 
 ```cpp
 // Init viewport for shadow rendering
@@ -259,11 +258,11 @@ m_shadowViewport.MinDepth = 0.f;
 m_shadowViewport.MaxDepth = 1.f;
 ```
 
-<span data-ttu-id="dd1cb-155">このチュートリアルの次のパートでは、[深度バッファーへのレンダリング](render-the-shadow-map-to-the-depth-buffer.md)によってシャドウ マップを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="dd1cb-155">In the next part of this walkthrough, learn how to create the shadow map by [rendering to the depth buffer](render-the-shadow-map-to-the-depth-buffer.md).</span></span>
+<span data-ttu-id="3821d-153">このチュートリアルの次のパートでは、[深度バッファーへのレンダリング](render-the-shadow-map-to-the-depth-buffer.md)によってシャドウ マップを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3821d-153">In the next part of this walkthrough, learn how to create the shadow map by [rendering to the depth buffer](render-the-shadow-map-to-the-depth-buffer.md).</span></span>
 
- 
+ 
 
- 
+ 
 
 
 

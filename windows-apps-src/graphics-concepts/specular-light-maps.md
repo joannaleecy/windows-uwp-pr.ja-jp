@@ -8,31 +8,29 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6da5292396a334e50c61fb4638334aae27581d7d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 6bd9db0afa914ef7a56dbd55c938129b86a43743
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043111"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545855"
 ---
-# <a name="specular-light-maps"></a><span data-ttu-id="81f07-104">反射ライト マップ</span><span class="sxs-lookup"><span data-stu-id="81f07-104">Specular light maps</span></span>
+# <a name="specular-light-maps"></a><span data-ttu-id="70204-104">反射ライト マップ</span><span class="sxs-lookup"><span data-stu-id="70204-104">Specular light maps</span></span>
 
 
-<span data-ttu-id="81f07-105">光源から照射されると、反射率の高いマテリアルを使用している光沢のあるオブジェクトには反射光が適用されます。</span><span class="sxs-lookup"><span data-stu-id="81f07-105">When illuminated by a light source, shiny objects that use highly reflective materials receive specular highlights.</span></span> <span data-ttu-id="81f07-106">照明モジュールによって生成された鏡面ハイライトを使用するのではなく、反射ライト マップをプリミティブに適用した方が、より正確なハイライトが得られる場合があります。</span><span class="sxs-lookup"><span data-stu-id="81f07-106">Sometimes you can get more accurate highlights by applying specular light maps to primitives, rather than using the specular highlights produced by the lighting module.</span></span>
+<span data-ttu-id="70204-105">光源から照射されると、反射率の高いマテリアルを使用している光沢のあるオブジェクトには反射光が適用されます。</span><span class="sxs-lookup"><span data-stu-id="70204-105">When illuminated by a light source, shiny objects that use highly reflective materials receive specular highlights.</span></span> <span data-ttu-id="70204-106">照明モジュールによって生成された鏡面ハイライトを使用するのではなく、反射ライト マップをプリミティブに適用した方が、より正確なハイライトが得られる場合があります。</span><span class="sxs-lookup"><span data-stu-id="70204-106">Sometimes you can get more accurate highlights by applying specular light maps to primitives, rather than using the specular highlights produced by the lighting module.</span></span>
 
-<span data-ttu-id="81f07-107">反射光のマッピングを実行するには、プリミティブのテクスチャに反射光マップを追加し、RGB ライト マップを調整 (RGB ライト マップによる結果を乗算) します。</span><span class="sxs-lookup"><span data-stu-id="81f07-107">To perform specular light mapping, add the specular light map to the primitive's texture, then modulate (multiply the result by) the RGB light map.</span></span>
+<span data-ttu-id="70204-107">反射光のマッピングを実行するには、プリミティブのテクスチャに反射光マップを追加し、RGB ライト マップを調整 (RGB ライト マップによる結果を乗算) します。</span><span class="sxs-lookup"><span data-stu-id="70204-107">To perform specular light mapping, add the specular light map to the primitive's texture, then modulate (multiply the result by) the RGB light map.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="81f07-108"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="81f07-108"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="70204-108"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="70204-108"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="81f07-109">テクスチャでのライト マッピング</span><span class="sxs-lookup"><span data-stu-id="81f07-109">Light mapping with textures</span></span>](light-mapping-with-textures.md)
+[<span data-ttu-id="70204-109">テクスチャでのライト マッピング</span><span class="sxs-lookup"><span data-stu-id="70204-109">Light mapping with textures</span></span>](light-mapping-with-textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

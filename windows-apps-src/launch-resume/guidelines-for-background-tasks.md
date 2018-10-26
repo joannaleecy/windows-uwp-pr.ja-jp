@@ -6,16 +6,14 @@ ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
-ms.openlocfilehash: 7adfecbe216dce25d0f80eb3ef1f528196299db4
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: fd98a3019efc8f2774fb7a1b52f5dcd27778cd2a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518900"
+ms.locfileid: "5560828"
 ---
 # <a name="guidelines-for-background-tasks"></a><span data-ttu-id="b4381-104">バックグラウンド タスクのガイドライン</span><span class="sxs-lookup"><span data-stu-id="b4381-104">Guidelines for background tasks</span></span>
 

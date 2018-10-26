@@ -7,15 +7,13 @@ keywords: uwp アプリ 開発 スレッディング 非同期 プラットフ�
 ms.author: mijacobs
 ms.date: 3/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: de821f436b1ca44d3626a1029aa0a288273f8b84
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: d4b775901fbb5140b63a76676705f2d2f2ba5f68
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "2736683"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5550476"
 ---
 <div> 
 <h1>UWP アプリの開発</h1>
@@ -229,7 +227,7 @@ ms.locfileid: "2736683"
                     <div style="display:block" class="cardText">
                         <h3>移植</h3>
                         <p style="display:block"><a href="/windows/uwp/porting/">概要</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">Windows Phone Silverlight から UWP へ</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone Silverlight UWP から</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows ランタイム 8.x から UWP へ</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">デスクトップ ブリッジ</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-migrate">デスクトップと UWP でコードを共有する</a></p>

@@ -5,16 +5,14 @@ description: アプリで堅牢なフォームを作成するために必要と�
 ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: 概要, uwp, windows 10, 学習トラック, レイアウト, フォーム
 ms.localizationpriority: medium
-ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 2d1018857d727d1cc96ded813390a397c6d94e44
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517098"
+ms.locfileid: "5560591"
 ---
 # <a name="create-and-customize-a-form"></a><span data-ttu-id="340be-104">フォームを作成してカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="340be-104">Create and customize a form</span></span>
 

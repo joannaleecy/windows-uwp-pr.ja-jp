@@ -6,16 +6,14 @@ ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 ms.author: wdg-dev-content
 ms.date: 01/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b32ebcff59e89046c45d1a0f23d3bca1c268a6b9
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 8ec447eaf971fecc46e8c84395d8bf6f69942ace
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518828"
+ms.locfileid: "5542839"
 ---
 # <a name="download-analytics-reports"></a><span data-ttu-id="f0db2-103">分析レポートのダウンロード</span><span class="sxs-lookup"><span data-stu-id="f0db2-103">Download analytics reports</span></span>
 

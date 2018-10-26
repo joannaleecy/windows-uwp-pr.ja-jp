@@ -6,25 +6,23 @@ description: このセクションでは、RFCOMM、GATT、低エネルギー (L
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: da12a9121cf54334cef1eccf8b41b43683126eff
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 19f381b7fbd53ee50d4589201edf74ac1f241d40
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "299716"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549638"
 ---
-# <a name="bluetooth"></a><span data-ttu-id="f5234-104">Bluetooth</span><span class="sxs-lookup"><span data-stu-id="f5234-104">Bluetooth</span></span>
-<span data-ttu-id="f5234-105">このセクションには、どこからでも Windows プラットフォーム (UWP) アプリに Bluetooth を統合する方法についての記事が含まれています。</span><span class="sxs-lookup"><span data-stu-id="f5234-105">This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="f5234-106">アプリの管理を実装することもできますが 2 つの異なる bluetooth テクノロジがあります。</span><span class="sxs-lookup"><span data-stu-id="f5234-106">There are two different bluetooth technologies that you can choose to implement in your app.</span></span>
+# <a name="bluetooth"></a><span data-ttu-id="957f9-104">Bluetooth</span><span class="sxs-lookup"><span data-stu-id="957f9-104">Bluetooth</span></span>
+<span data-ttu-id="957f9-105">このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリに Bluetooth を統合する方法に関する記事が含まれています。</span><span class="sxs-lookup"><span data-stu-id="957f9-105">This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="957f9-106">アプリ内に実装することも可能 2 つの異なる bluetooth テクノロジがあります。</span><span class="sxs-lookup"><span data-stu-id="957f9-106">There are two different bluetooth technologies that you can choose to implement in your app.</span></span>
 
-## <a name="classic-bluetooth-rfcomm"></a><span data-ttu-id="f5234-107">クラシック Bluetooth (RFCOMM)</span><span class="sxs-lookup"><span data-stu-id="f5234-107">Classic Bluetooth (RFCOMM)</span></span>
-<span data-ttu-id="f5234-108">Bluetooth 者の前にデバイスよく使われるこのプロトコル Bluetooth を使って通信します。</span><span class="sxs-lookup"><span data-stu-id="f5234-108">Before Bluetooth LE, devices commonly used this protocol to communicate using Bluetooth.</span></span> <span data-ttu-id="f5234-109">このプロトコルはシンプルな省の必要はありません。 デバイスとデバイス通信に便利です。</span><span class="sxs-lookup"><span data-stu-id="f5234-109">This protocol is simple and useful for device-to-device communication without the need of energy savings.</span></span> <span data-ttu-id="f5234-110">サンプルのコードを含む、このプロトコルの詳細については、 [Bluetooth RFCOMM](send-or-receive-files-with-rfcomm.md)トピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="f5234-110">For more information about this protocol, including code samples, see the [Bluetooth RFCOMM](send-or-receive-files-with-rfcomm.md) topic.</span></span>
+## <a name="classic-bluetooth-rfcomm"></a><span data-ttu-id="957f9-107">従来の Bluetooth (RFCOMM)</span><span class="sxs-lookup"><span data-stu-id="957f9-107">Classic Bluetooth (RFCOMM)</span></span>
+<span data-ttu-id="957f9-108">Bluetooth LE、前にデバイスは Bluetooth を使用した通信がこのプロトコルをよく使われます。</span><span class="sxs-lookup"><span data-stu-id="957f9-108">Before Bluetooth LE, devices commonly used this protocol to communicate using Bluetooth.</span></span> <span data-ttu-id="957f9-109">このプロトコルは、シンプルでの消費電力の削減することがなくデバイスの通信に役立つです。</span><span class="sxs-lookup"><span data-stu-id="957f9-109">This protocol is simple and useful for device-to-device communication without the need of energy savings.</span></span> <span data-ttu-id="957f9-110">このプロトコルは、コード サンプルを含むについて詳しくは、 [Bluetooth RFCOMM](send-or-receive-files-with-rfcomm.md)のトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="957f9-110">For more information about this protocol, including code samples, see the [Bluetooth RFCOMM](send-or-receive-files-with-rfcomm.md) topic.</span></span>
 
-## <a name="bluetooth-low-energy-le"></a><span data-ttu-id="f5234-111">Bluetooth 低エネルギー (LE)</span><span class="sxs-lookup"><span data-stu-id="f5234-111">Bluetooth Low-Energy (LE)</span></span>
-<span data-ttu-id="f5234-112">Bluetooth 低エネルギー (LE) は、プロトコルの検出を効率的に使用エネルギーの使用状況の条件を持つデバイス間の通信を定義する仕様です。</span><span class="sxs-lookup"><span data-stu-id="f5234-112">Bluetooth Low Energy (LE) is a specification that defines protocols for discovery and communication between devices that have an efficient energy usage requirement.</span></span> <span data-ttu-id="f5234-113">サンプル コードなどの詳細については、 [Bluetooth 低エネルギー](bluetooth-low-energy-overview.md)トピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="f5234-113">For more information including code samples, see the [Bluetooth Low Energy](bluetooth-low-energy-overview.md) topic.</span></span>
+## <a name="bluetooth-low-energy-le"></a><span data-ttu-id="957f9-111">Bluetooth 低エネルギー (LE)</span><span class="sxs-lookup"><span data-stu-id="957f9-111">Bluetooth Low-Energy (LE)</span></span>
+<span data-ttu-id="957f9-112">Bluetooth 低エネルギー (LE) は、プロトコルの検出、効率的な電力使用状況の条件を搭載したデバイス間の通信を定義する仕様です。</span><span class="sxs-lookup"><span data-stu-id="957f9-112">Bluetooth Low Energy (LE) is a specification that defines protocols for discovery and communication between devices that have an efficient energy usage requirement.</span></span> <span data-ttu-id="957f9-113">コード サンプルを含むの詳細については、 [Bluetooth 低エネルギー](bluetooth-low-energy-overview.md)トピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="957f9-113">For more information including code samples, see the [Bluetooth Low Energy](bluetooth-low-energy-overview.md) topic.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="f5234-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="f5234-114">See Also</span></span>
-- [<span data-ttu-id="f5234-115">Bluetooth に関する開発者向け FAQ</span><span class="sxs-lookup"><span data-stu-id="f5234-115">Bluetooth developer FAQ</span></span>](bluetooth-dev-faq.md)
+## <a name="see-also"></a><span data-ttu-id="957f9-114">参照</span><span class="sxs-lookup"><span data-stu-id="957f9-114">See Also</span></span>
+- [<span data-ttu-id="957f9-115">Bluetooth に関する開発者向け FAQ</span><span class="sxs-lookup"><span data-stu-id="957f9-115">Bluetooth developer FAQ</span></span>](bluetooth-dev-faq.md)

@@ -7,8 +7,6 @@ template: detail.hbs
 ms.author: quradic
 ms.date: 10/2/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
 pm-contact: kisai
@@ -16,12 +14,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b3afb0cba92e5f3c08de19c926bd5fb949185379
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 922dccc61954e2022cbe76f2ca5d5b1f9e548733
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517413"
+ms.locfileid: "5560604"
 ---
 # <a name="buttons"></a><span data-ttu-id="87995-103">ボタン</span><span class="sxs-lookup"><span data-stu-id="87995-103">Buttons</span></span>
 

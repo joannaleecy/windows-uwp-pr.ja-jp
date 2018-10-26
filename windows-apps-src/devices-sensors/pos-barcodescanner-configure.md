@@ -5,16 +5,14 @@ description: 目的の用途のバーコード スキャナーを構成する方
 ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: b33c1d33fe88a09de36e8f80a3034b915d338861
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 07198b382be911f30016f2106949d2dea751afa5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515938"
+ms.locfileid: "5546161"
 ---
 # <a name="configure-a-barcode-scanner"></a><span data-ttu-id="e7bc2-104">バーコード スキャナーの構成</span><span class="sxs-lookup"><span data-stu-id="e7bc2-104">Configure a barcode scanner</span></span>
 

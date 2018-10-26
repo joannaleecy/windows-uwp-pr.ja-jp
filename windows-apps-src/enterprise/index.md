@@ -6,16 +6,14 @@ author: awkoren
 ms.author: alkoren
 ms.date: 08/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: ffdc88449c025ba0a590ccc2bbd3f0c05346630f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521764"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552125"
 ---
 # <a name="enterprise"></a><span data-ttu-id="f0a7d-104">Enterprise</span><span class="sxs-lookup"><span data-stu-id="f0a7d-104">Enterprise</span></span>
 

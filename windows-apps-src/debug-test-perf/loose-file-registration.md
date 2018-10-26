@@ -5,16 +5,14 @@ description: このガイドでは、ルーズ ファイルのレイアウトの
 ms.author: cdon
 ms.date: 6/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, デバイス ポータル、アプリ マネージャー, 展開, sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a96a78cf03ce4994ddee1c929997b12a2d028f
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 16dc7c3d8182e249134be941d466574cddc36157
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515872"
+ms.locfileid: "5548182"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a><span data-ttu-id="b1a0c-104">ルーズ ファイルの登録によるアプリを展開します。</span><span class="sxs-lookup"><span data-stu-id="b1a0c-104">Deploy an app through loose file registration</span></span> 
 

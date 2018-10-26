@@ -6,8 +6,6 @@ ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ms.author: jimwalk
 ms.date: 07/12/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
@@ -15,12 +13,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 3b52c801ffcf1cfe916e41cfd102a37397fadfee
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469041"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546634"
 ---
 # <a name="custom-dependency-properties"></a><span data-ttu-id="085e9-104">カスタム依存関係プロパティ</span><span class="sxs-lookup"><span data-stu-id="085e9-104">Custom dependency properties</span></span>
 

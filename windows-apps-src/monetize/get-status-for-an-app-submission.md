@@ -6,16 +6,14 @@ title: アプリの申請の状態の取得
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請, 状態
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d14ce17f4e6dff08351ca0764f3b6a173550426
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 5399a090c664049ef66e2d1933eb1ba2798c8228
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472011"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550367"
 ---
 # <a name="get-the-status-of-an-app-submission"></a><span data-ttu-id="578f9-104">アプリの申請の状態の取得</span><span class="sxs-lookup"><span data-stu-id="578f9-104">Get the status of an app submission</span></span>
 

@@ -6,16 +6,14 @@ title: スポット広告
 ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, 広告コントロール, スポット
 ms.localizationpriority: medium
-ms.openlocfilehash: 547a582064262d18467df4868df17a08e73b279c
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f25b607b382b179ecf82d277ca2ac7e06d596a06
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477712"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548476"
 ---
 # <a name="interstitial-ads"></a><span data-ttu-id="0ab21-104">スポット広告</span><span class="sxs-lookup"><span data-stu-id="0ab21-104">Interstitial ads</span></span>
 
