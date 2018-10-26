@@ -6,16 +6,14 @@ ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ms.author: wdg-dev-content
 ms.date: 05/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ベータ テスト, 限定配布, ベータ, ベータ版, テスト, テスター
 ms.localizationpriority: medium
-ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: e57490e2ad9c3991baf40b6c4d15d35def59f94f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512603"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569997"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a><span data-ttu-id="412f8-103">ベータ テストとターゲット配布</span><span class="sxs-lookup"><span data-stu-id="412f8-103">Beta testing and targeted distribution</span></span>
 

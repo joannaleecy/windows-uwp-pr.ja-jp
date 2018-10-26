@@ -6,16 +6,14 @@ ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 ms.author: wdg-dev-content
 ms.date: 10/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ada2e0610e81e986deba3ddab5e87547e05fe108
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 20f0f06d0927d61c062a0514d84bef993da6e932
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479511"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570626"
 ---
 # <a name="about-community-ads"></a><span data-ttu-id="c949d-103">コミュニティ広告について</span><span class="sxs-lookup"><span data-stu-id="c949d-103">About community ads</span></span>
 

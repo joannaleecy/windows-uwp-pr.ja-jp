@@ -6,20 +6,18 @@ ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 556a787eb1e92e4c8adb7457235afb45c02df2dc
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: e64f36eb400d683da1cb52a819da5aa245a41ac4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521097"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569663"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a><span data-ttu-id="b5b03-104">バックグラウンド タスクを実行するための条件の設定</span><span class="sxs-lookup"><span data-stu-id="b5b03-104">Set conditions for running a background task</span></span>
 

@@ -6,20 +6,20 @@ ms.assetid: 62e9b125-f899-4df6-ad96-570fdbcb8bc5
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: c0426320e978c88bc2db67398e626c0ed3794edc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: c883de1e05b827b6f1c37ad1f911f930b7019ad6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "244051"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571477"
 ---
-# <a name="launch-an-app-through-file-activation"></a><span data-ttu-id="93494-104">ファイルのアクティブ化によるアプリの起動</span><span class="sxs-lookup"><span data-stu-id="93494-104">Launch an app through file activation</span></span>
+# <a name="launch-an-app-through-file-activation"></a><span data-ttu-id="7d423-104">ファイルのアクティブ化によるアプリの起動</span><span class="sxs-lookup"><span data-stu-id="7d423-104">Launch an app through file activation</span></span>
 
-<span data-ttu-id="93494-105">このセクションでは、特定の種類のファイルを開くと、アプリが起動するように設定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="93494-105">This section shows how to set up your app to launch when a file of a certain type is opened.</span></span>
+<span data-ttu-id="7d423-105">このセクションでは、特定の種類のファイルを開くと、アプリが起動するように設定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7d423-105">This section shows how to set up your app to launch when a file of a certain type is opened.</span></span>
 
-| <span data-ttu-id="93494-106">トピック</span><span class="sxs-lookup"><span data-stu-id="93494-106">Topic</span></span> | <span data-ttu-id="93494-107">説明</span><span class="sxs-lookup"><span data-stu-id="93494-107">Description</span></span> |
+| <span data-ttu-id="7d423-106">トピック</span><span class="sxs-lookup"><span data-stu-id="7d423-106">Topic</span></span> | <span data-ttu-id="7d423-107">説明</span><span class="sxs-lookup"><span data-stu-id="7d423-107">Description</span></span> |
 |-------|-------------|
-| [<span data-ttu-id="93494-108">ファイルに応じた既定のアプリの起動</span><span class="sxs-lookup"><span data-stu-id="93494-108">Launch the default app for a file</span></span>](launch-the-default-app-for-a-file.md) | <span data-ttu-id="93494-109">ファイルに応じて既定のアプリを起動する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="93494-109">Learn how to launch the default app for a file.</span></span> |
-| [<span data-ttu-id="93494-110">ファイルのアクティブ化の処理</span><span class="sxs-lookup"><span data-stu-id="93494-110">Handle file activation</span></span>](handle-file-activation.md) | <span data-ttu-id="93494-111">アプリを特定のファイルの種類の既定のハンドラーとして登録する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="93494-111">Learn how to register your app to become the default handler for a certain file type.</span></span> |
+| [<span data-ttu-id="7d423-108">ファイルに応じた既定のアプリの起動</span><span class="sxs-lookup"><span data-stu-id="7d423-108">Launch the default app for a file</span></span>](launch-the-default-app-for-a-file.md) | <span data-ttu-id="7d423-109">ファイルに応じて既定のアプリを起動する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7d423-109">Learn how to launch the default app for a file.</span></span> |
+| [<span data-ttu-id="7d423-110">ファイルのアクティブ化の処理</span><span class="sxs-lookup"><span data-stu-id="7d423-110">Handle file activation</span></span>](handle-file-activation.md) | <span data-ttu-id="7d423-111">アプリを特定のファイルの種類の既定のハンドラーとして登録する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7d423-111">Learn how to register your app to become the default handler for a certain file type.</span></span> |

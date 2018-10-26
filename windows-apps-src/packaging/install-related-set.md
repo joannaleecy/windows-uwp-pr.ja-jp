@@ -5,16 +5,14 @@ description: このセクションでは、アプリ インストーラーによ
 ms.author: lahugh
 ms.date: 1/4/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 965ef217fa00131504841ef2209dbe6aa54f50af
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 4caf4333bb3d442779aedac2028b0996cbd17645
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512242"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571903"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a><span data-ttu-id="b8694-105">アプリ インストーラー ファイルを使用して関連セットをインストールする</span><span class="sxs-lookup"><span data-stu-id="b8694-105">Install a related set using an App Installer file</span></span>
 
