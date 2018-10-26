@@ -6,16 +6,14 @@ description: Windows Device Portal で、モバイル デバイスの構成と�
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 0531cbefef509f7bc323829031b366bec3c798d8
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6f267fbcaecfdf9f1888e47d8dbe35d9cc469f4c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468284"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553717"
 ---
 # <a name="device-portal-for-mobile"></a><span data-ttu-id="0562d-104">モバイル用 Device Portal</span><span class="sxs-lookup"><span data-stu-id="0562d-104">Device Portal for Mobile</span></span>
 

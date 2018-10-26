@@ -6,20 +6,18 @@ ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 45f6e10bc355e3a2dc054d54fef35fbeb1095dc7
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: f65751e894d45bab5b39382c7bec43d5f06f18b2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514510"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553024"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a><span data-ttu-id="fd559-104">バックグラウンド タスクによるシステム イベントへの応答</span><span class="sxs-lookup"><span data-stu-id="fd559-104">Respond to system events with background tasks</span></span>
 

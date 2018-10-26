@@ -6,16 +6,14 @@ ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
 ms.date: 09/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 取得, アプリの売り上げ, アプリのダウンロード, インストール, ファネル, 購入, コンバージョン, チャネル, アプリ ページ ビュー
 ms.localizationpriority: medium
-ms.openlocfilehash: 75a3ce152257d10fe392b3f64381b3e82bc79961
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: c2ccb3088d0ef241f950a5f5fcf3f40969bc0531
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513999"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552280"
 ---
 # <a name="acquisitions-report"></a><span data-ttu-id="5128f-103">取得レポート</span><span class="sxs-lookup"><span data-stu-id="5128f-103">Acquisitions report</span></span>
 

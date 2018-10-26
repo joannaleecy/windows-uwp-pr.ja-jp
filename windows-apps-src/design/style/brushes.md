@@ -6,16 +6,14 @@ description: Brush オブジェクトは、コントロールの領域、テキ�
 ms.author: jimwalk
 ms.date: 07/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0473ee984461bf46be4ebf866a564f0d51e0cfc5
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: e96604daa9f8736601f52c917b556369ec620e96
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518953"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553278"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a><span data-ttu-id="9c927-104">ブラシを使用して背景、前景、輪郭を描画する</span><span class="sxs-lookup"><span data-stu-id="9c927-104">Using brushes to paint backgrounds, foregrounds, and outlines</span></span>
 

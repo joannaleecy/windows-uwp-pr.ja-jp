@@ -6,16 +6,14 @@ title: 広告の UI とユーザー エクスペリエンスのガイドライ�
 ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, ガイドライン, ベスト プラクティス
 ms.localizationpriority: medium
-ms.openlocfilehash: c7f5e762593773e529610989741274d9fb5b9be7
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 323190b01cad8a0832d57386f6bde9fde4f2180c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521444"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552818"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a><span data-ttu-id="b9a89-104">広告の UI とユーザー エクスペリエンスのガイドライン</span><span class="sxs-lookup"><span data-stu-id="b9a89-104">UI and user experience guidelines for ads</span></span>
 

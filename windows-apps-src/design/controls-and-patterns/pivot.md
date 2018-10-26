@@ -6,20 +6,18 @@ template: detail.hbs
 ms.author: quradic
 ms.date: 06/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 386fba3cec00de6c443daa60409fe3bb74621fa1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5480888"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553727"
 ---
 # <a name="pivot"></a><span data-ttu-id="268c1-103">ピボット</span><span class="sxs-lookup"><span data-stu-id="268c1-103">Pivot</span></span>
 

@@ -6,16 +6,14 @@ title: JavaScript ウォークスルーでのエラー処理
 ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, エラー処理, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e25de40c7fd28cb43c308bd0361b400e7bf6909
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 65887bba125d8d7db1b224c1842da8c9ab34f117
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5520881"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558227"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a><span data-ttu-id="cffdc-104">JavaScript ウォークスルーでのエラー処理</span><span class="sxs-lookup"><span data-stu-id="cffdc-104">Error handling in JavaScript walkthrough</span></span>
 

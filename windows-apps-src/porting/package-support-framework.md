@@ -6,16 +6,14 @@ title: MSIX コンテナー内で実行してから、デスクトップ アプ�
 ms.author: normesta
 ms.date: 07/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c8e4649fad0e467e0656415e2fd49a9fea05109
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6bb29a50ef4fc8c5a56e410a59802b217c033cbc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475298"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553449"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a><span data-ttu-id="3ab7d-103">MSIX パッケージにパッケージのサポートのフレームワークを使用して、ランタイムの修正プログラムを適用します。</span><span class="sxs-lookup"><span data-stu-id="3ab7d-103">Apply runtime fixes to an MSIX package by using the Package Support Framework</span></span>
 

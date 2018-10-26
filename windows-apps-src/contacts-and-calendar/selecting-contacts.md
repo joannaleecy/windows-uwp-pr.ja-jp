@@ -7,64 +7,62 @@ keywords: 連絡先, 単一の連絡先の選択, 複数の連絡先の選択, �
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-ms.openlocfilehash: 861d3d7a68596cbec289050391775d665ac6979d
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: a721e618864155e4eec66d222e8eeafa2e0ca038
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665096"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557043"
 ---
-# <a name="select-contacts"></a><span data-ttu-id="e29ca-104">連絡先の選択</span><span class="sxs-lookup"><span data-stu-id="e29ca-104">Select contacts</span></span>
-
-<span data-ttu-id="e29ca-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="e29ca-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="e29ca-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="e29ca-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
+# <a name="select-contacts"></a><span data-ttu-id="4f77e-104">連絡先の選択</span><span class="sxs-lookup"><span data-stu-id="4f77e-104">Select contacts</span></span>
 
 
-<span data-ttu-id="e29ca-107">[**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) 名前空間では、複数の方法で連絡先を選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="e29ca-107">Through the [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) namespace, you have several options for selecting contacts.</span></span> <span data-ttu-id="e29ca-108">ここでは、1 つまたは複数の連絡先を選ぶ方法について説明します。また、アプリで必要な連絡先情報だけを取得するように連絡先ピッカーを構成する方法についても説明します。</span><span class="sxs-lookup"><span data-stu-id="e29ca-108">Here, we'll show you how to select a single contact or multiple contacts, and we'll show you how to configure the contact picker to retrieve only the contact information that your app needs.</span></span>
 
-## <a name="set-up-the-contact-picker"></a><span data-ttu-id="e29ca-109">連絡先ピッカーを設定する</span><span class="sxs-lookup"><span data-stu-id="e29ca-109">Set up the contact picker</span></span>
+<span data-ttu-id="4f77e-105">[**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) 名前空間では、複数の方法で連絡先を選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="4f77e-105">Through the [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) namespace, you have several options for selecting contacts.</span></span> <span data-ttu-id="4f77e-106">ここでは、1 つまたは複数の連絡先を選ぶ方法について説明します。また、アプリで必要な連絡先情報だけを取得するように連絡先ピッカーを構成する方法についても説明します。</span><span class="sxs-lookup"><span data-stu-id="4f77e-106">Here, we'll show you how to select a single contact or multiple contacts, and we'll show you how to configure the contact picker to retrieve only the contact information that your app needs.</span></span>
 
-<span data-ttu-id="e29ca-110">[**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) のインスタンスを作成し、変数に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="e29ca-110">Create an instance of [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) and assign it to a variable.</span></span>
+## <a name="set-up-the-contact-picker"></a><span data-ttu-id="4f77e-107">連絡先ピッカーを設定する</span><span class="sxs-lookup"><span data-stu-id="4f77e-107">Set up the contact picker</span></span>
+
+<span data-ttu-id="4f77e-108">[**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) のインスタンスを作成し、変数に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="4f77e-108">Create an instance of [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) and assign it to a variable.</span></span>
 
 ```cs
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ```
 
-## <a name="set-the-selection-mode-optional"></a><span data-ttu-id="e29ca-111">選択モードを設定する (省略可能)</span><span class="sxs-lookup"><span data-stu-id="e29ca-111">Set the selection mode (optional)</span></span>
+## <a name="set-the-selection-mode-optional"></a><span data-ttu-id="4f77e-109">選択モードを設定する (省略可能)</span><span class="sxs-lookup"><span data-stu-id="4f77e-109">Set the selection mode (optional)</span></span>
 
-<span data-ttu-id="e29ca-112">連絡先ピッカーの既定の動作では、ユーザーが選んだ連絡先について、利用可能なすべてのデータが取得されます。</span><span class="sxs-lookup"><span data-stu-id="e29ca-112">By default, the contact picker retrieves all of the available data for the contacts that the user selects.</span></span> <span data-ttu-id="e29ca-113">[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) プロパティを使うと、アプリに必要なデータ フィールドだけを取得するように連絡先ピッカーを構成できます。</span><span class="sxs-lookup"><span data-stu-id="e29ca-113">The [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) property lets you configure the contact picker to retrieve only the data fields that your app needs.</span></span> <span data-ttu-id="e29ca-114">利用可能な連絡先データのうちの一部だけが必要な場合は、この方法で連絡先ピッカーを使うと効率的です。</span><span class="sxs-lookup"><span data-stu-id="e29ca-114">This is a more efficient way to use the contact picker if you only need a subset of the available contact data.</span></span>
+<span data-ttu-id="4f77e-110">連絡先ピッカーの既定の動作では、ユーザーが選んだ連絡先について、利用可能なすべてのデータが取得されます。</span><span class="sxs-lookup"><span data-stu-id="4f77e-110">By default, the contact picker retrieves all of the available data for the contacts that the user selects.</span></span> <span data-ttu-id="4f77e-111">[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) プロパティを使うと、アプリに必要なデータ フィールドだけを取得するように連絡先ピッカーを構成できます。</span><span class="sxs-lookup"><span data-stu-id="4f77e-111">The [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) property lets you configure the contact picker to retrieve only the data fields that your app needs.</span></span> <span data-ttu-id="4f77e-112">利用可能な連絡先データのうちの一部だけが必要な場合は、この方法で連絡先ピッカーを使うと効率的です。</span><span class="sxs-lookup"><span data-stu-id="4f77e-112">This is a more efficient way to use the contact picker if you only need a subset of the available contact data.</span></span>
 
-<span data-ttu-id="e29ca-115">最初に、[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) プロパティを **Fields** に設定します。</span><span class="sxs-lookup"><span data-stu-id="e29ca-115">First, set the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) property to **Fields**:</span></span>
+<span data-ttu-id="4f77e-113">最初に、[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) プロパティを **Fields** に設定します。</span><span class="sxs-lookup"><span data-stu-id="4f77e-113">First, set the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) property to **Fields**:</span></span>
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-<span data-ttu-id="e29ca-116">次に、[**DesiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) プロパティを使って、連絡先ピッカーで取得するフィールドを指定します。</span><span class="sxs-lookup"><span data-stu-id="e29ca-116">Then, use the [**DesiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) property to specify the fields that you want the contact picker to retrieve.</span></span> <span data-ttu-id="e29ca-117">次の例では、メール アドレスを取得するように連絡先ピッカーを構成しています。</span><span class="sxs-lookup"><span data-stu-id="e29ca-117">This example configures the contact picker to retrieve email addresses:</span></span>
+<span data-ttu-id="4f77e-114">次に、[**DesiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) プロパティを使って、連絡先ピッカーで取得するフィールドを指定します。</span><span class="sxs-lookup"><span data-stu-id="4f77e-114">Then, use the [**DesiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) property to specify the fields that you want the contact picker to retrieve.</span></span> <span data-ttu-id="4f77e-115">次の例では、メール アドレスを取得するように連絡先ピッカーを構成しています。</span><span class="sxs-lookup"><span data-stu-id="4f77e-115">This example configures the contact picker to retrieve email addresses:</span></span>
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
 ```
 
-## <a name="launch-the-picker"></a><span data-ttu-id="e29ca-118">ピッカーを起動する</span><span class="sxs-lookup"><span data-stu-id="e29ca-118">Launch the picker</span></span>
+## <a name="launch-the-picker"></a><span data-ttu-id="4f77e-116">ピッカーを起動する</span><span class="sxs-lookup"><span data-stu-id="4f77e-116">Launch the picker</span></span>
 
 ```cs
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-<span data-ttu-id="e29ca-119">ユーザーが連絡先を複数選べるようにする場合は、[**PickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync) を使います。</span><span class="sxs-lookup"><span data-stu-id="e29ca-119">Use [**PickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync) if you want the user to select one or more contacts.</span></span>
+<span data-ttu-id="4f77e-117">ユーザーが連絡先を複数選べるようにする場合は、[**PickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync) を使います。</span><span class="sxs-lookup"><span data-stu-id="4f77e-117">Use [**PickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync) if you want the user to select one or more contacts.</span></span>
 
 ```cs
 public IList<Contact> contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
-## <a name="process-the-contacts"></a><span data-ttu-id="e29ca-120">連絡先を処理する</span><span class="sxs-lookup"><span data-stu-id="e29ca-120">Process the contacts</span></span>
+## <a name="process-the-contacts"></a><span data-ttu-id="4f77e-118">連絡先を処理する</span><span class="sxs-lookup"><span data-stu-id="4f77e-118">Process the contacts</span></span>
 
-<span data-ttu-id="e29ca-121">ピッカーから制御が戻ったら、ユーザーが連絡先を選んだかどうかを調べ、</span><span class="sxs-lookup"><span data-stu-id="e29ca-121">When the picker returns, check whether the user has selected any contacts.</span></span> <span data-ttu-id="e29ca-122">選んでいた場合は連絡先情報を処理します。</span><span class="sxs-lookup"><span data-stu-id="e29ca-122">If so, process the contact information.</span></span>
+<span data-ttu-id="4f77e-119">ピッカーから制御が戻ったら、ユーザーが連絡先を選んだかどうかを調べ、</span><span class="sxs-lookup"><span data-stu-id="4f77e-119">When the picker returns, check whether the user has selected any contacts.</span></span> <span data-ttu-id="4f77e-120">選んでいた場合は連絡先情報を処理します。</span><span class="sxs-lookup"><span data-stu-id="4f77e-120">If so, process the contact information.</span></span>
 
-<span data-ttu-id="e29ca-123">1 つの連絡先を処理する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="e29ca-123">This example shows how to processes a single contact.</span></span> <span data-ttu-id="e29ca-124">この例では、連絡先の名前を取得し、*OutputName* と呼ばれる [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) コントロールにコピーしています。</span><span class="sxs-lookup"><span data-stu-id="e29ca-124">Here we retrieve the contact's name and copy it into a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) control called *OutputName*.</span></span>
+<span data-ttu-id="4f77e-121">1 つの連絡先を処理する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="4f77e-121">This example shows how to processes a single contact.</span></span> <span data-ttu-id="4f77e-122">この例では、連絡先の名前を取得し、*OutputName* と呼ばれる [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) コントロールにコピーしています。</span><span class="sxs-lookup"><span data-stu-id="4f77e-122">Here we retrieve the contact's name and copy it into a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) control called *OutputName*.</span></span>
 
 ```cs
 if (contact != null)
@@ -77,7 +75,7 @@ else
 }
 ```
 
-<span data-ttu-id="e29ca-125">複数の連絡先を処理する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="e29ca-125">This example shows how to process multiple contacts.</span></span>
+<span data-ttu-id="4f77e-123">複数の連絡先を処理する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="4f77e-123">This example shows how to process multiple contacts.</span></span>
 
 ```cs
 if (contacts != null && contacts.Count > 0)
@@ -89,9 +87,9 @@ if (contacts != null && contacts.Count > 0)
 }
 ```
 
-## <a name="complete-example-single-contact"></a><span data-ttu-id="e29ca-126">完全な例 (1 つの連絡先)</span><span class="sxs-lookup"><span data-stu-id="e29ca-126">Complete example (single contact)</span></span>
+## <a name="complete-example-single-contact"></a><span data-ttu-id="4f77e-124">完全な例 (1 つの連絡先)</span><span class="sxs-lookup"><span data-stu-id="4f77e-124">Complete example (single contact)</span></span>
 
-<span data-ttu-id="e29ca-127">この例では、連絡先ピッカーを使って、1 つの連絡先の名前、メール アドレス、電話番号、住所を取得しています。</span><span class="sxs-lookup"><span data-stu-id="e29ca-127">This example uses the contact picker to retrieve a single contact's name along with an email address, location or phone number.</span></span>
+<span data-ttu-id="4f77e-125">この例では、連絡先ピッカーを使って、1 つの連絡先の名前、メール アドレス、電話番号、住所を取得しています。</span><span class="sxs-lookup"><span data-stu-id="4f77e-125">This example uses the contact picker to retrieve a single contact's name along with an email address, location or phone number.</span></span>
 
 ```cs
 // ...
@@ -169,9 +167,9 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 }
 ```
 
-## <a name="complete-example-multiple-contacts"></a><span data-ttu-id="e29ca-128">完全な例 (複数の連絡先)</span><span class="sxs-lookup"><span data-stu-id="e29ca-128">Complete example (multiple contacts)</span></span>
+## <a name="complete-example-multiple-contacts"></a><span data-ttu-id="4f77e-126">完全な例 (複数の連絡先)</span><span class="sxs-lookup"><span data-stu-id="4f77e-126">Complete example (multiple contacts)</span></span>
 
-<span data-ttu-id="e29ca-129">次の例では、連絡先ピッカーを使って複数の連絡先を取得し、`OutputContacts` という名前の [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) コントロールに追加しています。</span><span class="sxs-lookup"><span data-stu-id="e29ca-129">This example uses the contact picker to retrieve multiple contacts and then adds the contacts to a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) control called `OutputContacts`.</span></span>
+<span data-ttu-id="4f77e-127">次の例では、連絡先ピッカーを使って複数の連絡先を取得し、`OutputContacts` という名前の [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) コントロールに追加しています。</span><span class="sxs-lookup"><span data-stu-id="4f77e-127">This example uses the contact picker to retrieve multiple contacts and then adds the contacts to a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) control called `OutputContacts`.</span></span>
 
 ```cs
 MainPage rootPage = MainPage.Current;
@@ -232,6 +230,6 @@ public class ContactItemAdapter
 }
 ```
 
-## <a name="summary-and-next-steps"></a><span data-ttu-id="e29ca-130">要約と次のステップ</span><span class="sxs-lookup"><span data-stu-id="e29ca-130">Summary and next steps</span></span>
+## <a name="summary-and-next-steps"></a><span data-ttu-id="4f77e-128">要約と次のステップ</span><span class="sxs-lookup"><span data-stu-id="4f77e-128">Summary and next steps</span></span>
 
-<span data-ttu-id="e29ca-131">ここでは、連絡先ピッカーを使って連絡先情報を取得する基本的な方法について説明しました。</span><span class="sxs-lookup"><span data-stu-id="e29ca-131">Now you have a basic understanding of how to use the contact picker to retrieve contact information.</span></span> <span data-ttu-id="e29ca-132">連絡先や連絡先選択ツールの使い方に関するその他の例については、GitHub から [ユニバーサル Windows アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619979) をダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="e29ca-132">Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to use contacts and the contact picker.</span></span>
+<span data-ttu-id="4f77e-129">ここでは、連絡先ピッカーを使って連絡先情報を取得する基本的な方法について説明しました。</span><span class="sxs-lookup"><span data-stu-id="4f77e-129">Now you have a basic understanding of how to use the contact picker to retrieve contact information.</span></span> <span data-ttu-id="4f77e-130">連絡先や連絡先選択ツールの使い方に関するその他の例については、GitHub から [ユニバーサル Windows アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619979) をダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="4f77e-130">Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to use contacts and the contact picker.</span></span>

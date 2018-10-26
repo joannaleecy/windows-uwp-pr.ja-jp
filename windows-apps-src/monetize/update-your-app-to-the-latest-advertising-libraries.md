@@ -5,17 +5,15 @@ title: バナー広告用の最新の Advertising ライブラリを使用する
 ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 広告, 宣伝, AdControl, AdMediatorControl, 移行
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: 87cd734196e66021555002a43cb41719c88a1cf8
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 2e57cc24554f851ba79cfc47e917b92b3ad3047e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469058"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559572"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a><span data-ttu-id="db51f-104">バナー広告用の最新の Advertising ライブラリを使用するようにアプリを更新する</span><span class="sxs-lookup"><span data-stu-id="db51f-104">Update your app to the latest advertising libraries for banner ads</span></span>
 

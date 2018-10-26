@@ -5,16 +5,14 @@ description: アプリ インストーラー ファイルを使ってアプリ�
 ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング
 ms.localizationpriority: medium
-ms.openlocfilehash: e94eb0e819796dda456899bb877057e4532f5ce9
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 499bb0b32e494441e547421094f42fbc6156044a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5522241"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554464"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a><span data-ttu-id="d1ec4-104">アプリ インストーラー ファイルを使ったインストールに関する問題のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="d1ec4-104">Troubleshoot installation issues with the App Installer file</span></span>
 

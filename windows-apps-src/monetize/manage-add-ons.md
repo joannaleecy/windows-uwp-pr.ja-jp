@@ -6,16 +6,14 @@ title: アドオンの管理
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: be0d383fc271084fe20a958d20f6fa3a340da187
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: ab09f72e9cf2bd46246751aab790aa6bab84de10
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5520987"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553242"
 ---
 # <a name="manage-add-ons"></a><span data-ttu-id="96c2b-104">アドオンの管理</span><span class="sxs-lookup"><span data-stu-id="96c2b-104">Manage add-ons</span></span>
 

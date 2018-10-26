@@ -6,16 +6,14 @@ title: アドオンの作成
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの作成, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: a24355ca09380c46d8e648899ca2fe96f9e989c7
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 36b6be05d1efc1cbc23f26a509230750c8896c87
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5522343"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558263"
 ---
 # <a name="create-an-add-on"></a><span data-ttu-id="21426-104">アドオンの作成</span><span class="sxs-lookup"><span data-stu-id="21426-104">Create an add-on</span></span>
 

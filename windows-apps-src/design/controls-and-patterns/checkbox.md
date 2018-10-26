@@ -8,20 +8,18 @@ template: detail.hbs
 ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a3e6180c23208f02c3f7fb2294eabe2ee080f504
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 9c926f9dc7a87b83550bb2cd3a5bff856ec27866
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468712"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554332"
 ---
 # <a name="check-boxes"></a><span data-ttu-id="4845a-103">チェック ボックス</span><span class="sxs-lookup"><span data-stu-id="4845a-103">Check boxes</span></span>
 

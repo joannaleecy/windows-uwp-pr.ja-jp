@@ -6,16 +6,14 @@ ms.assetid: 5b4231c0-5060-49e2-a577-b747e20cf633
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト
 ms.localizationpriority: medium
-ms.openlocfilehash: 02d04074ece0033da8c3454a95bc35af201903f3
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 1e6d3d4a549c5e815464ef696a938b44dbe6128c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512434"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552217"
 ---
 # <a name="discover-remote-devices"></a><span data-ttu-id="cebc1-104">リモート デバイスの検出</span><span class="sxs-lookup"><span data-stu-id="cebc1-104">Discover remote devices</span></span>
 <span data-ttu-id="cebc1-105">アプリは、ワイヤレス ネットワーク、Bluetooth、およびクラウド接続を使って、検出側デバイスと同じ Microsoft アカウントでサインインしている Windows デバイスを検出できます。</span><span class="sxs-lookup"><span data-stu-id="cebc1-105">Your app can use the wireless network, Bluetooth, and cloud connection to discover Windows devices that are signed on with the same Microsoft account as the discovering device.</span></span> <span data-ttu-id="cebc1-106">リモート デバイスを検出するために特別なソフトウェアをインストールする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="cebc1-106">The remote devices do not need to have any special software installed in order to be discoverable.</span></span>

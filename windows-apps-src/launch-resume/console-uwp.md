@@ -6,15 +6,13 @@ keywords: console uwp
 ms.author: twhitney
 ms.date: 08/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e4c1b1df8ad29635f38ae5b373685d3504a4eb60
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 7e5923176f5f9fff1a6e4f30a7ba2419e99c074b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477699"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553737"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a><span data-ttu-id="6eaf8-104">ユニバーサル Windows プラットフォームを使用してコンソール アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="6eaf8-104">Create a Universal Windows Platform console app</span></span>
 

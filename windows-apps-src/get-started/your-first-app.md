@@ -6,16 +6,14 @@ description: 好みのプログラミング言語を使用して windows 10 用�
 ms.author: quradic
 ms.date: 1/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 初めてのアプリ, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e2272ab761e1fa0bc9514f226a73a66a10662b
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 64da4418e25f77f49854c054d9cb468f0d89f16c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512110"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557645"
 ---
 # <a name="create-your-first-app"></a><span data-ttu-id="b85a6-104">初めてのアプリの作成</span><span class="sxs-lookup"><span data-stu-id="b85a6-104">Create your first app</span></span>
 

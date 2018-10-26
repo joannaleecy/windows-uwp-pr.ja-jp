@@ -8,20 +8,18 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: abarlow
 design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 32fa7d5931a0d80ee98fc41a14018b00e7c1438f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 987202969f22a5b1b34efc9089ea7f7f08282d8c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470958"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559086"
 ---
 # <a name="parallax"></a><span data-ttu-id="8aea0-103">視差</span><span class="sxs-lookup"><span data-stu-id="8aea0-103">Parallax</span></span>
 

@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 50d2d5d6dd53ffcb14ed6223e2fd0f85324a8438
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517794"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556800"
 ---
 # <a name="controls-by-function"></a><span data-ttu-id="e3711-103">機能別コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-103">Controls by function</span></span>
 

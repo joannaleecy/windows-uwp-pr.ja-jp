@@ -6,16 +6,14 @@ ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.author: jimwalk
 ms.date: 07/12/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ca58613a5874cde10d2bb5322c3f930e1fbce44
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 1ec2986594b043fa088450609e655f4b56b95e25
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518986"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551684"
 ---
 # <a name="events-and-routed-events-overview"></a><span data-ttu-id="3453a-104">イベントとルーティング イベントの概要</span><span class="sxs-lookup"><span data-stu-id="3453a-104">Events and routed events overview</span></span>
 
