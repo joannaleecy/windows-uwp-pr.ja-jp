@@ -6,16 +6,14 @@ ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.author: wdg-dev-content
 ms.date: 01/12/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d6132c2ede9f14cd1f4d29195916c8b484abfe9f
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 0b03984bf858d805142ac768ecf8ddd69a6232db
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516139"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564929"
 ---
 # <a name="create-add-on-store-listings"></a><span data-ttu-id="91098-103">アドオンのストア登録情報の作成</span><span class="sxs-lookup"><span data-stu-id="91098-103">Create add-on Store listings</span></span>
 

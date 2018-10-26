@@ -5,16 +5,14 @@ title: C++/WinRT の弱参照
 ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、強力な弱、参照
 ms.localizationpriority: medium
-ms.openlocfilehash: 414a73c8df31e4547b8bd154945a8e9960529320
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: c37319ce7f7d29acfc2c1822e76fadc29b5ec863
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515820"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570719"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a><span data-ttu-id="86156-104">C++ し、強固で弱参照/WinRT</span><span class="sxs-lookup"><span data-stu-id="86156-104">Strong and weak references in C++/WinRT</span></span>
 

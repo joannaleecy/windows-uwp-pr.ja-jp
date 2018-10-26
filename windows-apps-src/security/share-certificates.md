@@ -6,16 +6,14 @@ author: PatrickFarley
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 863658438ce53f2c74faddb845a7d17c6ec3130c
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 044b1b60b80cec1fc40adda6b9b6d44bee34ce7c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512657"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571236"
 ---
 # <a name="share-certificates-between-apps"></a><span data-ttu-id="de89b-104">アプリ間での証明書の共有</span><span class="sxs-lookup"><span data-stu-id="de89b-104">Share certificates between apps</span></span>
 

@@ -7,15 +7,13 @@ keywords: Windows 10, UWP, アドオン, アプリ内購入, IAP, Windows.Servic
 ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bf04632c4c99f2d58e3cd936e678af168750ff0
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6c5a5536ef1853a726421bdc75269f0cb5c1a84b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482928"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571661"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a><span data-ttu-id="a4c10-104">アプリとアドオンのアプリ内購入の有効化</span><span class="sxs-lookup"><span data-stu-id="a4c10-104">Enable in-app purchases of apps and add-ons</span></span>
 

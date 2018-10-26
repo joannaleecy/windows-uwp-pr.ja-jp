@@ -6,20 +6,18 @@ ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: a0950bfc9d90ba893be8ca52cc295b38b142798e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514426"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564496"
 ---
 # <a name="attached-properties-overview"></a><span data-ttu-id="aaf08-104">添付プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="aaf08-104">Attached properties overview</span></span>
 

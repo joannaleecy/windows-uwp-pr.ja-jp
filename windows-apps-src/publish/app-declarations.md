@@ -6,16 +6,14 @@ ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.author: wdg-dev-content
 ms.date: 12/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6c1fc444dbd106f4eeb0996903f71701a96a9735
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469313"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564403"
 ---
 # <a name="product-declarations"></a><span data-ttu-id="464a0-103">製品の宣言</span><span class="sxs-lookup"><span data-stu-id="464a0-103">Product declarations</span></span>
 

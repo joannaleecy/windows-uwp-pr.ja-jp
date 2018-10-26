@@ -6,15 +6,13 @@ keywords: 最新情報, 更新, 機能, 開発者向けガイダンス, Windows 
 ms.author: quradic
 ms.date: 09/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 33091903ebf1a7ff1150dcaa9bd83a3e76417926
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 436b610be942b33849b6da31cf5f9353a505a700
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468493"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567244"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a><span data-ttu-id="3e372-104">Windows 開発者向けドキュメントの最新情報、2017 年 9 月</span><span class="sxs-lookup"><span data-stu-id="3e372-104">What's New in the Windows Developer Docs in September 2017</span></span>
 

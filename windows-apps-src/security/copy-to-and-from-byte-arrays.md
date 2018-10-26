@@ -6,16 +6,14 @@ author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: cc7119ba2d97bfc6e1fb3f1a519b6d650027b1a3
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 22ce577f7d70b3750a365462b64181a27e71428e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512176"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567164"
 ---
 # <a name="copy-to-and-from-byte-arrays"></a><span data-ttu-id="4ff88-104">バイト配列間のコピー</span><span class="sxs-lookup"><span data-stu-id="4ff88-104">Copy to and from byte arrays</span></span>
 

@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f1236c2ade0423f6e092024e786741f3f3bf6d11
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: b30835e31e86c0c98d0c134ed28adca4413650c9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512512"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566966"
 ---
 # <a name="masterdetails-pattern"></a><span data-ttu-id="f7c4f-103">マスター/詳細パターン</span><span class="sxs-lookup"><span data-stu-id="f7c4f-103">Master/details pattern</span></span>
 

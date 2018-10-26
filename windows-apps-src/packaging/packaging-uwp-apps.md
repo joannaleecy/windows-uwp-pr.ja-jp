@@ -6,19 +6,17 @@ description: ユニバーサル Windows プラットフォーム (UWP) アプリ
 ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce80206823694f06e4aa5c3480b4dcb30c4f95c
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: ba0ed6cb2fe2b932dcb3011ff7cf9cf7ce197182
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521728"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564522"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a><span data-ttu-id="7f467-104">Visual Studio で UWP アプリをパッケージ化する</span><span class="sxs-lookup"><span data-stu-id="7f467-104">Package a UWP app with Visual Studio</span></span>
 

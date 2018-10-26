@@ -6,16 +6,14 @@ ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a1a82c91aeafa253427d8e526b38b8ac304591a2
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 562348d5077f29af9a0d0776cb421455d45444dc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483494"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566203"
 ---
 # <a name="advertising-performance-report"></a><span data-ttu-id="8fdc9-103">[広告パフォーマンス] レポート</span><span class="sxs-lookup"><span data-stu-id="8fdc9-103">Advertising performance report</span></span>
 

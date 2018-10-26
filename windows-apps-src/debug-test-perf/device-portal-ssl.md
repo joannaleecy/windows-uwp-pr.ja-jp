@@ -6,16 +6,14 @@ description: TBD
 ms.author: pafarley
 ms.date: 07/11/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 525c64ab289d26a4835168f410ac4ba3fc14343a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518838"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564969"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a><span data-ttu-id="f6b80-104">カスタムの SSL 証明書で Device Portal をプロビジョニングする</span><span class="sxs-lookup"><span data-stu-id="f6b80-104">Provision Device Portal with a custom SSL certificate</span></span>
 <span data-ttu-id="f6b80-105">Windows 10 の Creators Update では、Windows Device Portal には、デバイスの管理者 HTTPS 通信で使われるカスタム証明書をインストールするための方法が追加されました。</span><span class="sxs-lookup"><span data-stu-id="f6b80-105">In the Windows 10 Creators Update, Windows Device Portal added a way for device administrators to install a custom certificate for use in HTTPS communication.</span></span> 

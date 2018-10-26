@@ -8,24 +8,22 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 06161919c0f0eb041d54a351c08674160e894072
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a2f9bc985b69b71bedfd8d198f2a313f073b81a7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652191"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569763"
 ---
-# <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span data-ttu-id="0a027-105"><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>ストリーミング リソースのプロセスとデバイス間での共有</span><span class="sxs-lookup"><span data-stu-id="0a027-105"><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>Streaming resource cross-process and device sharing</span></span>
+# <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span data-ttu-id="77c65-105"><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>ストリーミング リソースのプロセスとデバイス間での共有</span><span class="sxs-lookup"><span data-stu-id="77c65-105"><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>Streaming resource cross-process and device sharing</span></span>
 
 
-<span data-ttu-id="0a027-106">タイル プールは、従来のリソースと同様に、他のプロセスと共有することができます。</span><span class="sxs-lookup"><span data-stu-id="0a027-106">Tile pools can be shared with other processes just like traditional resources.</span></span> <span data-ttu-id="0a027-107">タイル プールを参照するストリーミング リソースは、デバイスやプロセス間で共有できません。</span><span class="sxs-lookup"><span data-stu-id="0a027-107">Streaming resources that reference tile pools can't be shared across devices and processes.</span></span> <span data-ttu-id="0a027-108">ただし、個々のプロセスで独自のストリーミング リソースを作成し、これらのストリーミング リソース間で共有されるタイル プールにマップできます。</span><span class="sxs-lookup"><span data-stu-id="0a027-108">But separate processes can create their own streaming resources that map to tile pools that are shared between those streaming resources.</span></span>
+<span data-ttu-id="77c65-106">タイル プールは、従来のリソースと同様に、他のプロセスと共有することができます。</span><span class="sxs-lookup"><span data-stu-id="77c65-106">Tile pools can be shared with other processes just like traditional resources.</span></span> <span data-ttu-id="77c65-107">タイル プールを参照するストリーミング リソースは、デバイスやプロセス間で共有できません。</span><span class="sxs-lookup"><span data-stu-id="77c65-107">Streaming resources that reference tile pools can't be shared across devices and processes.</span></span> <span data-ttu-id="77c65-108">ただし、個々のプロセスで独自のストリーミング リソースを作成し、これらのストリーミング リソース間で共有されるタイル プールにマップできます。</span><span class="sxs-lookup"><span data-stu-id="77c65-108">But separate processes can create their own streaming resources that map to tile pools that are shared between those streaming resources.</span></span>
 
-<span data-ttu-id="0a027-109">共有タイル プールのサイズは変更できません。</span><span class="sxs-lookup"><span data-stu-id="0a027-109">Shared tile pools can't be resized.</span></span>
+<span data-ttu-id="77c65-109">共有タイル プールのサイズは変更できません。</span><span class="sxs-lookup"><span data-stu-id="77c65-109">Shared tile pools can't be resized.</span></span>
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="0a027-110"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="0a027-110"><span id="in-this-section"></span>In this section</span></span>
+## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="77c65-110"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="77c65-110"><span id="in-this-section"></span>In this section</span></span>
 
 
 <table>
@@ -35,28 +33,28 @@ ms.locfileid: "1652191"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><span data-ttu-id="0a027-111">トピック</span><span class="sxs-lookup"><span data-stu-id="0a027-111">Topic</span></span></th>
-<th align="left"><span data-ttu-id="0a027-112">説明</span><span class="sxs-lookup"><span data-stu-id="0a027-112">Description</span></span></th>
+<th align="left"><span data-ttu-id="77c65-111">トピック</span><span class="sxs-lookup"><span data-stu-id="77c65-111">Topic</span></span></th>
+<th align="left"><span data-ttu-id="77c65-112">説明</span><span class="sxs-lookup"><span data-stu-id="77c65-112">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="stencil-formats-not-supported-with-streaming-resources.md"><span data-ttu-id="0a027-113">ステンシルの書式はストリーミング リソースでサポートされない</span><span class="sxs-lookup"><span data-stu-id="0a027-113">Stencil formats not supported with streaming resources</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="0a027-114">ステンシルを含む書式は、ストリーミング リソースではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="0a027-114">Formats that contain stencil aren't supported with streaming resources.</span></span></p></td>
+<td align="left"><p><a href="stencil-formats-not-supported-with-streaming-resources.md"><span data-ttu-id="77c65-113">ステンシルの書式はストリーミング リソースでサポートされない</span><span class="sxs-lookup"><span data-stu-id="77c65-113">Stencil formats not supported with streaming resources</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="77c65-114">ステンシルを含む書式は、ストリーミング リソースではサポートされません。</span><span class="sxs-lookup"><span data-stu-id="77c65-114">Formats that contain stencil aren't supported with streaming resources.</span></span></p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="0a027-115"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="0a027-115"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="77c65-115"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="77c65-115"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="0a027-116">ストリーミング リソースの作成</span><span class="sxs-lookup"><span data-stu-id="0a027-116">Creating streaming resources</span></span>](creating-streaming-resources.md)
+[<span data-ttu-id="77c65-116">ストリーミング リソースの作成</span><span class="sxs-lookup"><span data-stu-id="77c65-116">Creating streaming resources</span></span>](creating-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

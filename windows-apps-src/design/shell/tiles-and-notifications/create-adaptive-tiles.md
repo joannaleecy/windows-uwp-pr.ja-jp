@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 761d87654ef340f4b539dbefa0950c58f627d310
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f0af7dc153f75826444a517d4958bfeba53b103d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468765"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565522"
 ---
 # <a name="create-adaptive-tiles"></a><span data-ttu-id="3d2fd-103">アダプティブ タイルの作成</span><span class="sxs-lookup"><span data-stu-id="3d2fd-103">Create adaptive tiles</span></span>
 

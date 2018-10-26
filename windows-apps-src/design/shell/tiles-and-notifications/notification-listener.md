@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 06/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 通知リスナー, usernotificationlistener, ドキュメント, 通知へのアクセス
 ms.localizationpriority: medium
-ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 635ee4cbdd0139ec9e431726ea5b040713abe97d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5520403"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568835"
 ---
 # <a name="notification-listener-access-all-notifications"></a><span data-ttu-id="8a286-103">通知リスナー: すべての通知にアクセスする</span><span class="sxs-lookup"><span data-stu-id="8a286-103">Notification listener: Access all notifications</span></span>
 
