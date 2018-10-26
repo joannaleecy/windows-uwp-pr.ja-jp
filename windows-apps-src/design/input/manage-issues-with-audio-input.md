@@ -9,17 +9,15 @@ keywords: スピーチ, 音声, 音声認識, 自然言語, ディクテーシ�
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9528bd19fb1afb72311e57dd90c8f6f9eb0b9620
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 094acdbcb5c5b3bf45bad757344be5187ae37cbc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653121"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570570"
 ---
-# <a name="manage-issues-with-audio-input"></a>オーディオ入力の問題の管理
+# <a name="manage-issues-with-audio-input"></a>音声入力の問題の管理
 
 
 オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。
@@ -30,7 +28,7 @@ ms.locfileid: "1653121"
 ## <a name="assess-audio-input-quality"></a>オーディオ入力の品質を評価する
 
 
-音声認識がアクティブな場合は、音声認識エンジンの [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) イベントを使用して、1 つ以上のオーディオの問題によって音声入力が妨げられている可能性があるかどうかを判断します。 イベント引数 ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) には、[**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) プロパティがあり、オーディオ入力で検出された問題の説明が含まれています。
+音声認識がアクティブな場合は、音声認識エンジンの [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) イベントを使用して、1 つ以上のオーディオの問題によって音声入力が妨げられている可能性があるかどうかを判断します。 イベント引数 ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) には、[**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) プロパティがあり、音声入力で検出された問題の説明が含まれています。
 
 認識は、多すぎる背景の雑音、ミュートされたマイク、およびスピーカーのボリュームや速度の影響を受ける場合があります。
 
@@ -113,9 +111,9 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 **サンプル**
 * [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

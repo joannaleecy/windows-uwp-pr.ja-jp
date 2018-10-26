@@ -6,16 +6,14 @@ title: Windows アプリの Windows 10 S 対応のテスト
 ms.author: normesta
 ms.date: 05/11/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10 S, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 69cceb86710cea0e9066454fba4ef4e1746633d1
-ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
-ms.translationtype: HT
+ms.openlocfilehash: 3307506c5cf62d04cd19fbc302ad14bfcedd0045
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1874320"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567423"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>Windows アプリの S モードの Windows 10 をテストする
 
@@ -40,8 +38,8 @@ Device Guard コード整合性ポリシーは、[こちら](https://go.microsof
 |ポリシー |適用 |署名用の証明書 |ファイル名 |
 |--|--|--|--|
 |監査モード ポリシー |問題をログに記録/ブロックしない |ストア |SiPolicy_Audit.p7b |
-|実稼働モード ポリシー |〇 |ストア |SiPolicy_Enforced.p7b |
-|自己署名アプリを使用する実稼働モード ポリシー |〇 |AppX テスト証明書  |SiPolicy_DevModeEx_Enforced.p7b |
+|実稼働モード ポリシー |はい |ストア |SiPolicy_Enforced.p7b |
+|自己署名アプリを使用する実稼働モード ポリシー |はい |AppX テスト証明書  |SiPolicy_DevModeEx_Enforced.p7b |
 
 監査モード ポリシーから開始することをお勧めします。 コードの整合性イベント ログを確認し、その情報を使用してアプリを調整することができます。 最終的なテストの準備ができたら、実稼働モード ポリシーを適用します。
 
@@ -59,7 +57,7 @@ Device Guard コード整合性ポリシーは、[こちら](https://go.microsof
 #### <a name="optional-find-specific-failure-points-in-the-call-stack"></a>(省略可能) 呼び出し履歴で特定の障害箇所を見つける
 呼び出し履歴でブロックに関する問題が発生している特定のポイントを見つけるには、次のレジストリ キーを追加してから、[カーネル モード デバッグ環境をセットアップ](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging)します。
 
-|キー|名前|種類|値|
+|キー|名前|型|値|
 |--|---|--|--|
 |HKEY_LOCAL_MACHINE\SYSTEM\CurentControlSet\Control\CI| DebugFlags |REG_DWORD | 1 |
 

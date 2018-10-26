@@ -7,15 +7,13 @@ keywords: Windows 10, UWP, 試用, アプリ内購入, IAP, Windows.ApplicationM
 ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d9fb3ba5b0fbd1e964450a75d8e0e417265e7f
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: ae98a3fdea561179b6cd76035715d53521143d35
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514707"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565416"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>試用版での機能の除外または制限
 

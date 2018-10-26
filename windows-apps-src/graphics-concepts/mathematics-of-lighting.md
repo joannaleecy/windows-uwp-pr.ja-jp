@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a3d28f3a1197ba915bf145cdac77c709cebd3fa2
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 19734964c9b4ab087f7d5fd6ea749b57cccce26c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653371"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568471"
 ---
 # <a name="mathematics-of-lighting"></a>光源の計算
 
@@ -62,11 +60,11 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="ambient-lighting.md">環境光</a></p></td>
-<td align="left"><p>環境光は、シーンに一定の照明を生成します。 頂点法線、光の方向、光の位置、減衰などの他の照明要素に依存していないため、すべてのオブジェクト頂点を同じように照らします。 環境光は、すべての方向において一定であり、オブジェクトのすべてのピクセルが同じように色付けされます。 すぐに計算されますが、オブジェクトは平面的で非現実的なままです。</p></td>
+<td align="left"><p>環境光は、シーンに一定のライティングを付加します。 頂点法線、光の方向、光の位置、減衰などの他の照明要素に依存していないため、すべてのオブジェクト頂点を同じように照らします。 環境光は、すべての方向において一定であり、オブジェクトのすべてのピクセルが同じように色付けされます。 すぐに計算されますが、オブジェクトは平面的で非現実的なままです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="diffuse-lighting.md">拡散光</a></p></td>
-<td align="left"><p><em>拡散光</em>は、光の方向とオブジェクト サーフェスの法線の両方によって決まります。 光の方向を変更し、サーフェスの法線ベクトルを変更すると、拡散光がオブジェクトのサーフェス上で変化します。 オブジェクト頂点ごとに変化するため、拡散光の方が計算に時間がかかりますが、オブジェクトに陰影が付き、3 次元 (3D) の奥行きが出るというメリットがあります。</p></td>
+<td align="left"><p><em>拡散光</em>は、ライトの方向とオブジェクトのサーフェス法線の両方に依存します。 光の方向を変更し、サーフェスの法線ベクトルを変更すると、拡散光がオブジェクトのサーフェス上で変化します。 オブジェクト頂点ごとに変化するため、拡散光の方が計算に時間がかかりますが、オブジェクトに陰影が付き、3 次元 (3D) の奥行きが出るというメリットがあります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="specular-lighting.md">反射光</a></p></td>
@@ -87,16 +85,16 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [照明および素材](lights-and-materials.md)
 
- 
+ 
 
- 
+ 
 
 
 

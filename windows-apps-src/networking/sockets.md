@@ -6,16 +6,14 @@ ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.author: stwhi
 ms.date: 06/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 31d05f57c674b7b882cf3494e8fb29611963f83c
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 9e0e73f4224b1577a5219d239f8c11bf5ecc0b73
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983483"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565673"
 ---
 # <a name="sockets"></a>ソケット
 ソケットは、下位レベルのデータ転送テクノロジであり、多くのネットワーク プロトコルがこの上に実装されています。 UWP は、接続が長期間維持されるか、確立された接続が必要あるかどうかに関係なく、クライアント/サーバー アプリケーションまたは ピア ツー ピア アプリケーションの TCP および UDP ソケット クラスを提供します。
@@ -1206,7 +1204,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-次の例は、C# の場合だけでなくあらゆる UWP 言語に当てはまります。 送信をまとめてバッチ処理する [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) と [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) での動作に依存しています。 この手法は、出力ストリームでのすべての操作が完了した後にのみ返されることが保証される (Windows 10 の時点では) 出力ストリームで [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) を呼び出します。
+次の例は、C# の場合だけでなくあらゆる UWP 言語に当てはまります。 送信をまとめてバッチ処理する [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) と [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) での動作に依存しています。 手法では、その出力ストリームで、windows 10 の時点で、出力ストリームに対するすべての操作が完了した後にのみを返すことが保証[**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync)を呼び出します。
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -1280,7 +1278,7 @@ private:
 
 -   書き込まれる **IBuffer** インスタンスの内容は、非同期書き込みが完了するまで変更できません。
 -   **FlushAsync**パターンは、**StreamSocket.OutputStream** と **DatagramSocket.OutputStream** のみで機能します。
--   **FlushAsync** パターンは、Windows10 以降でのみ機能します。
+-   **FlushAsync**パターンでは、windows 10 以降でのみ動作します。
 -   状況によっては、**FlushAsync** パターンの代わりに [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) を使います。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket でのポートの共有

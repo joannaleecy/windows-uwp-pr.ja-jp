@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bbaa0a6e02529bad55e2d90c90510a2ec1b40dd5
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 01a410e0e2759dcdfd6adff9c25238447fe4138b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044351"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566193"
 ---
 # <a name="projection-transform"></a>射影トランスフォーム
 
@@ -77,9 +75,9 @@ Direct3D では、現在設定されている射影行列を使って w ベー�
 
 [変換](transforms.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 ms.author: wdg-dev-content
 ms.date: 10/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, リンク, windows store プロトコル, アプリにリンクする, アプリへのリンク
 ms.localizationpriority: medium
-ms.openlocfilehash: 0025321aa73a66cc0a976bd347e613de3c3c4765
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 5028a3902e62d188db5283ec6186fe5364b53de0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516158"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568677"
 ---
 # <a name="link-to-your-app"></a>アプリへのリンク
 

@@ -6,16 +6,14 @@ description: センサーは、デバイスとその周囲の実際の世界の�
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bf1d905874fc420dc0a39c1082e213e4ea4c327
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 0e05c18bd2c8fa2ddd7d6a9bc8e474d02f27a93e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959177"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567373"
 ---
 # <a name="sensors"></a>センサー
 
@@ -112,7 +110,7 @@ ms.locfileid: "959177"
 
 デバイスの方向に合わせてビューを変更するアプリでは、傾斜計センサーを使うことができます。 また、デバイスのヨー、ピッチ、ロールに合わせて飛行機を表示するアプリでも、傾斜計の読み取り値を使います。
 
-例の実装、傾斜の例を参照してください。[https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer)します。
+実装例について、傾斜計のサンプルを参照してください。[https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer)します。
 
 ## <a name="light-sensor"></a>光センサー
 

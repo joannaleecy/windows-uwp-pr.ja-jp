@@ -1,21 +1,19 @@
 ---
 author: drewbatgit
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
-description: この記事では、AdvancedPhotoCapture クラスを使って、ハイ ダイナミック レンジ (HDR) 写真と低光量写真をキャプチャする方法について説明します。
-title: ハイ ダイナミック レンジ (HDR) 写真と低光量写真のキャプチャ
+description: この記事では、AdvancedPhotoCapture クラスを使って、ハイ ダイナミック レンジ (HDR) とローライトの写真をキャプチャする方法について説明します。
+title: ハイ ダイナミック レンジ (HDR) とローライトの写真のキャプチャ
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ffdba499d8e38bb9248071daeddd850f921e931e
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: cc81fdc03096dd8cac5e844a496b38da78eb6136
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843362"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564691"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>ハイ ダイナミック レンジ (HDR) 写真と低光量写真のキャプチャ
 
@@ -61,7 +59,7 @@ HDR キャプチャに関連したその他の記事を以下に示します。
 
 ### <a name="configure-and-prepare-the-advancedphotocapture-object"></a>AdvancedPhotoCapture オブジェクトを構成して準備する
 
-[**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) インスタンスにはコード内の複数の場所からアクセスする必要があるため、そのオブジェクトを保持するメンバー変数を宣言する必要があります。
+[**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) インスタンスにはコード内の複数の場所からアクセスする必要があるので、そのオブジェクトを保持するメンバー変数を宣言する必要があります。
 
 [!code-cs[DeclareAdvancedCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareAdvancedCapture)]
 
@@ -75,7 +73,7 @@ HDR キャプチャに関連したその他の記事を以下に示します。
 
 ### <a name="capture-an-hdr-photo"></a>HDR 写真をキャプチャする
 
-HDR 写真をキャプチャするには、[**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) オブジェクトの [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181388) メソッドを呼び出します。 このメソッドから返される [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/mt181378) オブジェクトの [**Frame**](https://msdn.microsoft.com/library/windows/apps/mt181382) プロパティに、キャプチャされた写真が格納されています。
+HDR の写真をキャプチャするには、[**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) オブジェクトの [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181388) メソッドを呼び出します。 このメソッドから返される [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/mt181378) オブジェクトの [**Frame**](https://msdn.microsoft.com/library/windows/apps/mt181382) プロパティに、キャプチャされた写真が格納されています。
 
 [!code-cs[CaptureHdrPhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureHdrPhotoAsync)]
 
@@ -117,9 +115,9 @@ HDR 写真のキャプチャには、2 つのステップがあります。 複�
 
 
 ## <a name="low-light-photo-capture"></a>低光量写真のキャプチャ
-Windows 10 バージョン 1607 以降では、**AdvancedPhotoCapture** により、低光量設定でキャプチャされた写真の品質を高める組み込みアルゴリズムを使って、写真をキャプチャすることができます。 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture) クラスの低光量機能を使うと、システムは現在のシーンを評価し、必要に応じて、低光量の状況に合わせてアルゴリズムを適用します。 システムでアルゴリズムが必要ないと判断された場合は、通常のキャプチャが実行されます。
+Windows 10 バージョン 1607 以降では、**AdvancedPhotoCapture** により、ローライトの設定でキャプチャされた写真の品質を高める組み込みアルゴリズムを使って、写真をキャプチャすることが可能です。 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture) クラスのローライト機能を使うと、システムは現在のシーンを評価し、必要に応じて、ローライトの状況に合わせてアルゴリズムを適用します。 システムでアルゴリズムが必要ないと判断された場合は、通常のキャプチャが実行されます。
 
-低光量写真のキャプチャを使用する前に、現在アプリを実行しているデバイスがこの手法をサポートしているかどうかを調べます。このためには、**MediaCapture** オブジェクトの [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) を取得し、その [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840) プロパティを取得します。 ビデオ デバイス コントローラーの [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/mt147844) コレクションに [**AdvancedPhotoMode.LowLight**](https://msdn.microsoft.com/library/windows/apps/mt147845) が含まれているかどうかを確認してください。 コレクションに含まれている場合、**AdvancedPhotoCapture** を使った低光量のキャプチャがサポートされています。 
+ローライトの写真のキャプチャを使用する前に、現在アプリを実行しているデバイスがこの手法をサポートしているかどうかを調べます。このためには、**MediaCapture** オブジェクトの [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) を取得し、その [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840) プロパティを取得します。 ビデオ デバイス コントローラーの [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/mt147844) コレクションに [**AdvancedPhotoMode.LowLight**](https://msdn.microsoft.com/library/windows/apps/mt147845) が含まれているかどうかを確認してください。 コレクションに含まれている場合、**AdvancedPhotoCapture** を使った低光量のキャプチャがサポートされています。 
 [!code-cs[LowLightSupported1](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetLowLightSupported1)]
 
 [!code-cs[LowLightSupported2](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetLowLightSupported2)]
@@ -142,7 +140,7 @@ Windows 10 バージョン 1607 以降では、**AdvancedPhotoCapture** によ�
 
 画像をディスクに保存する **SaveCapturedFrameAsync** ヘルパー メソッドについては、この記事で後述しています。
 
-**AdvancedPhotoCapture** オブジェクトを再構成しなくても低光量の写真を複数キャプチャすることができますが、キャプチャが終わったら [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture.FinishAsync) を呼び出し、オブジェクトと、関連付けられているリソースをクリーンアップする必要があります。
+**AdvancedPhotoCapture** オブジェクトを再構成しなくてもローライトの写真を複数キャプチャすることができますが、キャプチャが終わったら [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture.FinishAsync) を呼び出し、オブジェクトと、関連付けられているリソースをクリーンアップする必要があります。
 
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
@@ -150,7 +148,7 @@ Windows 10 バージョン 1607 以降では、**AdvancedPhotoCapture** によ�
 [**AdvancedPhotoCapture.CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture.CaptureAsync) は、キャプチャした写真を表す [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedCapturedPhoto) オブジェクトを返します。 このオブジェクトが公開するのは、画像を表す [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame) オブジェクトを返す、[**Frame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedCapturedPhoto.Frame) プロパティです。 [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture.OptionalReferencePhotoCaptured) イベントも、イベント引数で **CapturedFrame** オブジェクトを提供します。 この型のオブジェクトを取得した後は、[**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) の作成や、ファイルへの画像の保存など、多くのことを実行できるようになります。 
 
 ## <a name="get-a-softwarebitmap-from-a-capturedframe"></a>CapturedFrame から SoftwareBitmap を取得する
-**SoftwareBitmap** を **CapturedFrame** オブジェクトから取得するのは、オブジェクトの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame.SoftwareBitmap) プロパティにアクセスするだけなので、簡単です。 ただし、**AdvancedPhotoCapture** での **SoftwareBitmap** の使用は、ほとんどのエンコード形式でサポートされていないため、使用する前にプロパティが null になっていないことを確認する必要があります。
+**SoftwareBitmap** を **CapturedFrame** オブジェクトから取得するのは、オブジェクトの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame.SoftwareBitmap) プロパティにアクセスするだけなので、簡単です。 ただし、**AdvancedPhotoCapture** での **SoftwareBitmap** の使用は、ほとんどのエンコード形式においてサポートされていないため、使用する前にプロパティが null になっていないことを確認する必要があります。
 
 [!code-cs[SoftwareBitmapFromCapturedFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapFromCapturedFrame)]
 

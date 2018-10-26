@@ -6,19 +6,18 @@ ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, 一時停止, DirectX
-ms.openlocfilehash: 028350f3e4bf6bda5a72663c009e8117c9311b3e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 204d61430f59c820e9ef9ef36832cd1c24ee7f9c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243176"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569653"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a>アプリを一時停止する方法 (DirectX と C++)
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。
 
@@ -100,7 +99,7 @@ void App::Run()
 ## <a name="call-trim"></a>Trim() を呼び出す
 
 
-Windows 8.1 以降では、DirectX を使った Windows ストア アプリはいずれも、中断時に [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) を呼び出す必要があります。 この呼び出しは、アプリに割り当てた一時バッファーをすべて解放するようにグラフィックス ドライバーに対して指示するものであり、アプリが中断状態にある間に終了してメモリ リソースが再利用される可能性を低く抑えることができます。 Windows 8.1 では、これが認定要件となっています。
+以降 Windows8.1 では、すべての DirectX UWP アプリ呼び出す必要があります[**idxgidevice 3::trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346)中断時にします。 この呼び出しは、アプリに割り当てた一時バッファーをすべて解放するようにグラフィックス ドライバーに対して指示するものであり、アプリが中断状態にある間に終了してメモリ リソースが再利用される可能性を低く抑えることができます。 これは、Windows8.1 の認定要件です。
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -151,9 +150,9 @@ void DX::DeviceResources::Trim()
 * [アプリを再開する方法 (DirectX と C++)](how-to-resume-an-app-directx-and-cpp.md)
 * [アプリをアクティブ化する方法 (DirectX と C++)](how-to-activate-an-app-directx-and-cpp.md)
 
- 
+ 
 
- 
+ 
 
 
 

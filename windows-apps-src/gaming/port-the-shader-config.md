@@ -6,16 +6,14 @@ ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, 移植, シェーダー, Direct3D, OpenGL
 ms.localizationpriority: medium
-ms.openlocfilehash: 09e8d6441ffc65095ac69d7388a2735821487539
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: bbf7e05a93ccce4188d62f9800a5f225be713cc6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "243310"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567224"
 ---
 # <a name="port-the-shader-objects"></a>シェーダー オブジェクトの移植
 
@@ -29,9 +27,9 @@ ms.locfileid: "243310"
 
 OpenGL ES 2.0 から簡単なレンダラーを移植する場合、最初の手順では、Direct3D 11 の対応する頂点シェーダー オブジェクトとフラグメント シェーダー オブジェクトを設定し、コンパイル後にメイン プログラムがシェーダー オブジェクトと通信できるようにします。
 
-> **注:** 新しい Direct3D プロジェクトを作成しましたか?  作成していない場合は、「[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)」の指示に従ってください。 このチュートリアルでは、画面に描画するために DXGI リソースと Direct3D リソースを作成していることを前提としています。これらのリソースは、テンプレートで提供されます。
+> **注:** 新しい Direct3D プロジェクトを作成するかどうか。 作成していない場合は、「[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)」の指示に従ってください。 このチュートリアルでは、画面に描画するために DXGI リソースと Direct3D リソースを作成していることを前提としています。これらのリソースは、テンプレートで提供されます。
 
- 
+ 
 
 OpenGL ES 2.0 と同じように、Direct3D のコンパイル済みシェーダーは描画コンテキストに関連付ける必要があります。 ただし、Direct3D にはもともとシェーダー プログラム オブジェクトという概念がありません。そのため、代わりに、シェーダーを [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) に直接割り当てる必要があります。 この手順では、OpenGL ES 2.0 のシェーダー オブジェクトを作成してバインドするプロセスに従い、Direct3D で対応する API の動作を実現します。
 
@@ -82,9 +80,9 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 
 Direct3D では、シェーダーは実行時にコンパイルされず、常に、プログラムの他の部分をコンパイルしたときに、CSO ファイルにコンパイルされます。 Microsoft Visual Studio でアプリをコンパイルすると、HLSL ファイルは、アプリで読み込む必要がある CSO (.cso) ファイルにコンパイルされます。 アプリをパッケージ化するときは、これらの CSO ファイルを必ず含めてください。
 
-> **注:** 次の例では、**auto** キーワードとラムダ構文を使って、シェーダーの読み込みとコンパイルを非同期的に実行します。 ReadDataAsync() はテンプレートに実装されているメソッドで、CSO ファイルをバイト データの配列 (fileData) として読み取ります。
+> **注:** 次の例は、シェーダーの読み込みと**auto**キーワードとラムダ構文を使用して非同期でコンパイルを実行します。 ReadDataAsync() はテンプレートに実装されているメソッドで、CSO ファイルをバイト データの配列 (fileData) として読み取ります。
 
- 
+ 
 
 Direct3D 11: シェーダーのコンパイル
 
@@ -320,9 +318,9 @@ m_d3dContext->UpdateSubresource(
 
 [画面への描画](draw-to-the-screen.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -9,15 +9,13 @@ keywords: キーボード, テキスト, 入力, ユーザーの操作
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e28d90cdac94f4eafa153de161a338b9d4c7bf5e
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: c0bc236fd3e9e37a759f83e3f24bfcad4817f068
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653891"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564370"
 ---
 # <a name="selecting-text-and-images"></a>テキストと画像の選択
 
@@ -51,20 +49,20 @@ ms.locfileid: "1653891"
 
 **考慮事項と推奨事項**
 
-Windows の言語フレームワークによって公開されるビルトイン コントロールを利用して、選択や操作の動作など、完全なプラットフォームのユーザー操作エクスペリエンスを実現するアプリを作成してください。 ビルトイン コントロールの対話式操作の機能は、大部分の UWP アプリにとって十分なものです。
+選択と操作の動作を含む、プラットフォームの完全なユーザー操作エクスペリエンスを提供する Windowsto ビルドのアプリの言語フレームワークによって公開されるビルトイン コントロールを使用します。 ビルトイン コントロールの対話式操作の機能は、大部分の UWP アプリにとって十分なものです。
 
 標準の UWP テキスト コントロールを使う場合、このトピックで説明した選択の動作と視覚効果はカスタマイズできません。
 
 **テキスト選択**
 
-アプリにテキストの選択をサポートするカスタム UI を実装する必要がある場合は、ここで説明する Windows の選択動作に従うことをお勧めします。
+アプリでは、カスタムの UI テキストの選択をサポートしている必要がある場合は、ここで説明した Windowsselection 動作に従うことをお勧めします。
 
 **編集可能なコンテンツと編集不可のコンテンツ**
 
 
-タッチでは、選択操作は主に挿入カーソルの設定や単語の選択を行うタップ、選択範囲の変更を行うスライドなどのジェスチャを通じて実行されます。 他の Windowsタッチ操作と同様に、時間制限のある対話式操作は情報 UI を表示するための長押しジェスチャに制限されます。 詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
+タッチでは、選択操作は主に挿入カーソルの設定や単語の選択を行うタップ、選択範囲の変更を行うスライドなどのジェスチャを通じて実行されます。 同様に Windowstouch 他の対話式操作時間制限のある対話式操作に制限は情報 UI を表示するジェスチャを保持します。 詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
 
-Windowsでは、選択操作のために "編集可能" と "編集不可" の 2 つの状態が認識され、その状態に合わせて選択 UI、フィードバック、機能が調整されます。
+Windowsrecognizes 2 つの可能な状態で編集可能なと編集不可、選択操作し、それに応じて選択 UI、フィードバック、および機能を調整します。
 
 **編集可能なコンテンツ**
 
@@ -82,9 +80,9 @@ Windowsでは、選択操作のために "編集可能" と "編集不可" の 2
 
 ![選択範囲内またはグリッパー上でタップ (または長押し) してコンテキスト メニューを呼び出します。](images/textselection-show-context.png)
 
-**注:**  これらの対話式操作は、綴りに間違いのある単語の場合は若干異なります。 綴りに誤りがあるとしてマークされている単語をタップすると、単語全体が強調表示されて、スペル候補のコンテキスト メニューが呼び出されます。
+**注:** スペル ミスの場合はこのような操作が異なります。 綴りに誤りがあるとしてマークされている単語をタップすると、単語全体が強調表示されて、スペル候補のコンテキスト メニューが呼び出されます。
 
- 
+ 
 
 **編集不可のコンテンツ**
 
@@ -113,7 +111,7 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
 
 
 **開発者向け**
-* [カスタム ユーザー対話式操作](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [カスタム ユーザー操作](https://msdn.microsoft.com/library/windows/apps/mt185599)
 
 **サンプル**
 * [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
@@ -122,7 +120,7 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
 * [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **サンプルのアーカイブ**
-* [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [入力: タッチのヒット テストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [XAML のスクロール、パン、ズームのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -130,9 +128,9 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
 * [入力: Windows 8 のジェスチャのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX タッチ入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

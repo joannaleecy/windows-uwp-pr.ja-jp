@@ -8,24 +8,22 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e2750de79dbdb01081aa099ff955fcef2999dcbf
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 6f690e08d211692b05f0a80722aa4a3e3a06b39f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652498"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569198"
 ---
 # <a name="lighting"></a>光源
 
 
 光源は、シーン内のオブジェクトを照射するのに使われます。 各オブジェクト頂点の色は、現在のテクスチャ マップ、頂点の色、光源に基づきます。
 
-**注**   このセクションは、固定関数パイプラインにのみ当てはまります。 プログラム可能なシェーダーは、すべての光源を明示的に実行します。
+**注:** このセクションは、固定関数パイプラインのみです。 プログラム可能なシェーダーは、すべての光源を明示的に実行します。
 
- 
+ 
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>このセクションの内容
 
@@ -61,16 +59,16 @@ ms.locfileid: "1652498"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [Direct3D グラフィックスの学習ガイド](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

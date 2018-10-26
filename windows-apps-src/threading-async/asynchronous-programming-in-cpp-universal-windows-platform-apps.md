@@ -1,27 +1,25 @@
 ---
 author: normesta
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: ここでは、ppltasks.h の concurrency 名前空間で定義された task クラスを使って Visual C++ コンポーネント拡張機能 (C++/CX) の非同期メソッドを実装する際に推奨される方法について説明します。
+description: この記事では VisualC コンポーネント拡張機能での非同期メソッドに推奨される方法について説明します。 (、C++/cli CX) ppltasks.h の concurrency 名前空間で定義された task クラスを使用しています。
 title: C++ での非同期プログラミング
 ms.author: normesta
 ms.date: 05/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、スレッド、非同期、C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 869ba45929e015f27c5342af57da450f0b99b607
-ms.sourcegitcommit: c104b653601d9b81cfc8bb6032ca434cff8fe9b1
-ms.translationtype: HT
+ms.openlocfilehash: 33b110e713608260cd5c19544292e9211904a730
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "1921210"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571210"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>C++/CX での非同期プログラミング
 > [!NOTE]
 > このトピックは、C++/CX アプリケーションの管理ができるようにすることを目的としています。 ただし、新しいアプリケーションには [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) を使用することをお勧めします。 C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。
 
-ここでは、ppltasks.h の `concurrency` 名前空間で定義された `task` クラスを使って Visual C++ コンポーネント拡張機能 (C++/CX) の非同期メソッドを実装する際に推奨される方法について説明します。
+この記事では VisualC コンポーネント拡張機能での非同期メソッドに推奨される方法について説明します。 (、C++/cli CX) を使用して、`task`クラスで定義されている、 `concurrency` ppltasks.h で名前空間です。
 
 ## <a name="universal-windows-platform-uwp-asynchronous-types"></a>ユニバーサル Windows プラットフォーム (UWP) の非同期型
 ユニバーサル Windows プラットフォーム (UWP) には、非同期メソッドを呼び出すためのモデルが明確に定義されており、非同期メソッドを使う必要がある型があります。 UWP の非同期モデルについて詳しくない場合は、この記事の前に「[非同期プログラミング][AsyncProgramming]」をご覧ください。
@@ -116,7 +114,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 -   2 つ目の後続タスクは値ベースであるため、[**DeleteAsync**][deleteAsync] を呼び出して開始された操作から例外がスローされると、2 つ目の後続タスクは実行されません。
 
-**注:** タスク チェーンの作成は、**task** クラスを使って非同期操作を構成する方法の 1 つにすぎません。 結合演算子 (**&&**) や選択演算子 (**||**) を使って操作を構成することもできます。 詳しくは、「[タスクの並列処理 (同時実行ランタイム)][taskParallelism]」をご覧ください。
+**注:** 非同期操作を作成する、 **task**クラスを使用する方法の 1 つは、タスク チェーンを作成します。 結合演算子 (**&&**) や選択演算子 (**||**) を使って操作を構成することもできます。 詳しくは、「[タスクの並列処理 (同時実行ランタイム)][taskParallelism]」をご覧ください。
 
 ## <a name="lambda-function-return-types-and-task-return-types"></a>ラムダ関数の戻り値の型とタスクの戻り値の型
 継続タスクでは、ラムダ関数の戻り値の型が **task** オブジェクトでラップされます。 ラムダが **double** を返す場合、継続タスクの型は **task<double>** になります。 ただし、タスク オブジェクトは、戻り値の型を必要以上に入れ子にしないように設計されています。 ラムダが **IAsyncOperation<SyndicationFeed^>^** を返す場合、継続は、**task<task<SyndicationFeed^>>** や **task<IAsyncOperation<SyndicationFeed^>^>^** ではなく、**task<SyndicationFeed^>** を返します。 *非同期ラップ解除*と呼ばれるこの処理により、さらに、継続内の非同期操作が完了しないと次の継続が呼び出されないようになります。

@@ -6,16 +6,14 @@ ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, 移植, ゲーム ループ, Direct3D 9, DirectX 11
 ms.localizationpriority: medium
-ms.openlocfilehash: baf230559ebeb285d5faa3e2de8e38b355638070
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 4db2ed74144ead22643ece17a7496b6267f7e6b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488846"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569422"
 ---
 # <a name="port-the-game-loop"></a>ゲーム ループの移植
 
@@ -37,9 +35,9 @@ Direct3D 9 のビューポートを使ってデスクトップ ウィンドウ�
 
 UWP 環境には、はるかに簡単なシステムが用意されています。 DirectX を使った Microsoft Store ゲームでは、従来のウィンドウを設定する代わりに、[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を実装します。 このインターフェイスは、アプリ コンテナー内の [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) で直接 DirectX アプリやゲームを実行するために存在します。
 
-> **注**   Windows では、ソース アプリケーション オブジェクトや [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) などのリソースへの管理ポインターが提供されます。 「[**オブジェクト演算子 (^) へのハンドル (^)**]https://msdn.microsoft.com/ja-jp/library/windows/apps/yk97tc08.aspx」をご覧ください。
+> **注:**  Windows は、ソース アプリケーション オブジェクトや[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)などのリソースへの管理ポインターを提供します。 [**オブジェクト演算子 (^) へのハンドル**を] を参照してください。https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspxします。
 
- 
+ 
 
 "main" クラスには、[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) から継承し、5 つの **IFrameworkView** メソッド ([**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)、[**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)) を実装する必要があります。 (実質的に) ゲームが存在する場所となる **IFrameworkView** の作成に加えて、**IFrameworkView** のインスタンスを作成するファクトリ クラスを実装する必要があります。 ゲームにはこれまでどおり **main()** と呼ばれるメソッドを含む実行可能ファイルが存在しますが、main で実行できる操作は、ファクトリを使って、**IFrameworkView** のインスタンスを作成することだけです。
 
@@ -141,9 +139,9 @@ Microsoft Store ゲームの開発に関する次の詳しい記事をご覧く�
 -   [ゲームのオーディオ](working-with-audio-in-your-directx-game.md)
 -   [ゲームのムーブ/ルック コントロール](tutorial--adding-move-look-controls-to-your-directx-game.md)
 
- 
+ 
 
- 
+ 
 
 
 

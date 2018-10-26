@@ -6,18 +6,17 @@ ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 4b76c16d276af295a1b2eed292ebeffc56b2e604
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8d48ccb93a411e92b57059192de38366f27353a3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246498"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569178"
 ---
 # <a name="xkey-attribute"></a>x:Key 属性
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 リソースとして作成されて参照される、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内に存在する要素を一意に識別します。
 
@@ -42,7 +41,7 @@ ms.locfileid: "246498"
 | 用語 | 説明 |
 |------|-------------|
 | object | 共有可能な任意のオブジェクト。 「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。 |
-| stringKeyValue | _XamlName_> の文法に準拠する必要がある、キーとして使われる実際の文字列。 以下の「XamlName の文法」をご覧ください。 | 
+| stringKeyValue | _XamlName_> の文法に準拠する必要がある、キーとして使われる実際の文字列。 以下の「XamlName の文法」をご覧ください。 | 
 
 ##  <a name="xamlname-grammar"></a>XamlName の文法
 

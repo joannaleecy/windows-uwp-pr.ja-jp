@@ -5,16 +5,14 @@ title: xDefaultBindMode 属性
 ms.author: jimwalk
 ms.date: 02/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eae77a51f925eaff27a7919ecfa60552d0fbae5
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+ms.openlocfilehash: 2696cb46591757421795b15083ea7fdab54943c5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1672979"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565826"
 ---
 # <a name="xdefaultbindmode-attribute"></a>x:DefaultBindMode 属性
 

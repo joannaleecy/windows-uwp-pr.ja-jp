@@ -6,16 +6,14 @@ description: StorageFile.IsAvailable プロパティを使って、Microsoft One
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c5de157d320b401fdc0e542eb0f1bdc241e2f21
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 87eb93fbc100d143ab9fe75d34bb9c4d2caaf01d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "459759"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569713"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Microsoft OneDrive ファイルが利用可能かどうかの確認
 
@@ -51,7 +49,7 @@ ms.locfileid: "459759"
 | オンラインのみとマークされている OneDrive ファイル       | True   | ユーザー設定に基づく | False   |
 | ネットワーク ファイル                              | True   | ユーザー設定に基づく | False   |
 
- 
+ 
 
 次の手順では、ファイルが現在利用できるかどうかを判別する方法を示しています。
 

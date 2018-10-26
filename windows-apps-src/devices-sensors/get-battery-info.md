@@ -6,16 +6,14 @@ description: Windows.Devices.Power 名前空間で、API を使って詳細な�
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c191a9f2da29f0ad10d0ba61507873b4fd652ddc
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: c745b99104495b4d0b3c60202c378285dbfdd7b6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959077"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565353"
 ---
 # <a name="get-battery-information"></a>バッテリー情報の取得
 
@@ -32,7 +30,7 @@ ms.locfileid: "959077"
 
 一部のデバイスにはバッテリーが複数あり、各バッテリーがデバイスの消費エネルギー全体にどのように関与しているのか明確でない場合があります。 [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) クラスはまさにそのような用途に使います。 *バッテリー集計*レポートはデバイスに接続されたすべてのバッテリー コントローラーを表し、1 つの全体的な [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトを提供できます。
 
-**注:** [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) クラスは、実際にはバッテリー コントローラーに対応します。 デバイスに応じて、コントローラーは物理的なバッテリーに接続されることもあれば、デバイス エンクロージャに接続されることもあります。 そのため、バッテリーがなくても、バッテリ オブジェクトを作ることができます。 また、バッテリ オブジェクトは **null** にすることもできます。
+**注:**[**バッテリ**](https://msdn.microsoft.com/library/windows/apps/Dn895004)クラスは、実際にはバッテリー コント ローラーに対応します。 デバイスに応じて、コントローラーは物理的なバッテリーに接続されることもあれば、デバイス エンクロージャに接続されることもあります。 そのため、バッテリーがなくても、バッテリ オブジェクトを作ることができます。 また、バッテリ オブジェクトは **null** にすることもできます。
 
 集計バッテリー オブジェクトを指定したら、[**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) を呼び出して、対応する [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) を取得します。
 
@@ -340,7 +338,7 @@ namespace App1
 
 最後に、この基本的なバッテリー アプリを実行します: **[デバッグ]** メニューで **[デバッグの開始]** をクリックしてソリューションをテストします。
 
-**ヒント:** [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトから数値を受け取るには、**ローカル コンピューター**または (Windows Phone などの) 外部**デバイス**上のアプリをデバッグします。 デバイス エミュレーターでデバッグした場合、**BatteryReport** オブジェクトは容量や消費率のプロパティに **null** を返します。
+**ヒント:** [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)オブジェクトから数値を受信する、**ローカル コンピューター**または (Windows Phone) などの外部**デバイス**でアプリをデバッグします。 デバイス エミュレーターでデバッグした場合、**BatteryReport** オブジェクトは容量や消費率のプロパティに **null** を返します。
 
- 
+ 
 

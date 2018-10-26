@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e66fd373f2c1aaa18ca7cd0a7e8a463fce024e14
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: ce8f71f126aa536f4e235c58f9f5c5ddf13654df
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044841"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568855"
 ---
 # <a name="tile-access-limitations-with-duplicate-mappings"></a>重複するマッピングを含むタイルのアクセス制限
 
@@ -85,9 +83,9 @@ Copy\* 操作のコピー元とコピー先の領域内のタイルで、重な�
 
 [ストリーミング リソースへのパイプライン アクセス](pipeline-access-to-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

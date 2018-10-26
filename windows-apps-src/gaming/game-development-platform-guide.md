@@ -6,16 +6,14 @@ ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, テクノロジ, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 496e0f8386b60247090035d4c4d1f7aa986f8560
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: c6896bda0498483efb4d77e1fa2a6ef82e0f8789
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690758"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567581"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>UWP アプリのゲーム テクノロジ
 
@@ -23,12 +21,12 @@ ms.locfileid: "1690758"
 
 このガイドでは、ユニバーサル Windows プラットフォーム (UWP) ゲームの開発に利用できるテクノロジについて説明します。
 
-##  <a name="benefits-of-windows-10-for-game-development"></a>ゲーム開発向けの Windows 10 のメリット
+##  <a name="benefits-of-windows10-for-game-development"></a>ゲーム開発向けの windows 10 のメリット
 
 
-Windows 10 で UWP が導入されたことにより、作成した Windows 10 のタイトルはすべての Microsoft プラットフォームに対応できます。 以前のバージョンの Windows から無料で移行できるため、Windows 10 のユーザー数は着実に増加しています。 これらの 2 つの事実を組み合わせると、Windows 10 のタイトルは、Microsoft Store を通じて膨大な数のユーザーに提供できることを意味します。
+Windows 10 で UWP の導入により、windows 10 のタイトルはすべての Microsoft プラットフォームに対応することになります。 以前のバージョンの Windows から無料で移行は、windows 10 クライアント数が徐々 に増加します。 これら 2 つの組み合わせは、windows 10 のタイトルが膨大な数の Microsoft Store 経由でお客様に到達できることを意味します。
 
-また Windows 10 には、特にゲームに便利な、多くの新しい機能が用意されています。
+さらに、windows 10 には、ゲームに特に便利な多くの新しい機能が用意されています。
 
 -   メモリのページングの削減および全体的なメモリ システム サイズの削減
 -   グラフィックス メモリの管理機能の向上により、フォアグラウンドのゲームに、より多くのメモリがアクティブに割り当てられ、保護されます。
@@ -41,7 +39,7 @@ Windows 10 で UWP が導入されたことにより、作成した Windows 10 �
 ## <a name="development-environment"></a>開発環境
 
 
-UWP 用のゲームを作成するには、Visual Studio 2015 以降をインストールして開発環境をセットアップする必要があります。 Visual Studio 2015 を使うことによって、UWP アプリを作成でき、ゲーム開発用のツールが提供されます。
+Uwp ゲームを作成するには、Visual Studio 2015 以降をインストールして開発環境をセットアップする必要があります。 お勧めします、Visual Studio の最新バージョンをインストールする最新の開発とセキュリティ更新プログラムにアクセスを提供します。 Visual Studio では、UWP アプリを作成することができ、ゲームの開発ツールを提供します。
 
 -   Visual Studio の DX ゲームのプログラミング用ツール: Visual Studio には、画像、モデル、シェーダー リソースを作成、編集、プレビュー、エクスポートするためのツールが用意されています。 また、ビルド時のリソースの変換や、DirectX グラフィックス コードのデバッグに使うことができるツールもあります。 詳しくは、「[ゲーム プログラミング用の Visual Studio ツールの使用](set-up-visual-studio-for-game-development.md)」をご覧ください。
 -   Visual Studio グラフィックス診断機能: オプション機能として、グラフィックス診断ツールを Windows 内から利用できるようになりました。 診断ツールを使って、グラフィックス デバッグやグラフィックス フレーム分析を実行し、リアルタイムで GPU 使用率を監視できます。 詳しくは、「[DirectX ランタイムと Visual Studio グラフィックス診断機能の使用](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)」をご覧ください。
@@ -95,7 +93,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     </tbody>
     </table>
 
-     
+     
 
 -   2D グラフィックスおよび UI API: テキストやユーザー インターフェイスなどの 2D グラフィックスに関する API です。 すべての 2D グラフィックスおよび UI API はオプションです。
 
@@ -138,7 +136,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     </tbody>
     </table>
 
-     
+     
 
 -   オーディオ: オーディオの再生やオーディオ エフェクトの適用に関する API です。 ゲームでオーディオ API を使う方法について詳しくは、「[ゲームのオーディオ](working-with-audio-in-your-directx-game.md)」をご覧ください。
 
@@ -173,7 +171,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     </tbody>
     </table>
 
-     
+     
 
 -   入力: キーボード、マウス、ゲームパッド、その他のユーザー入力ソースからの入力に関する API です。
 
@@ -224,7 +222,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     </tbody>
     </table>
 
-     
+     
 
 -   数値演算: 一般的に使用される数値演算の簡素化に関する API です。
 
@@ -251,7 +249,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     </tbody>
     </table>
 
-     
+     
 
 -   ネットワーク: インターネットまたはプライベート ネットワーク上の他のコンピューターやデバイスとの通信に関する API です。
 
@@ -286,7 +284,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     </tbody>
     </table>
 
-     
+     
 
 -   サポート ユーティリティ: Windows 10 API に基づいて構築されたライブラリです。
 
@@ -321,11 +319,11 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     </tbody>
     </table>
 
-     
+     
 
 ## <a name="xbox-live-services"></a>Xbox Live サービス
 
-[Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator) では、開発者はだれでも Xbox Live を自分の UWP ゲームに統合して、Xbox One や Windows 10 に公開することができます。 最小限の開発時間で、サインイン、プレゼンス、ランキングなどの Xbox Live ソーシャル エクスペリエンスをタイトルに統合できます。 Xbox Live のソーシャル機能では、5,500 万人以上のアクティブ ゲーマーに情報を発信して、オーディエンスを自然に増やすことができます。
+[Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)には、自分の UWP ゲームに Xbox Live を統合して、Xbox One と windows 10 に公開するすべての開発者ができます。 最小限の開発時間で、サインイン、プレゼンス、ランキングなどの Xbox Live ソーシャル エクスペリエンスをタイトルに統合できます。 Xbox Live のソーシャル機能では、5,500 万人以上のアクティブ ゲーマーに情報を発信して、オーディエンスを自然に増やすことができます。
 
 Xbox Live の他の機能にアクセスしたり、マーケティングと開発に関する専用のサポートを受けたり、Xbox One ストアのメイン ページで取り上げられたりすることを希望する場合は、[ID@Xbox](http://www.xbox.com/developers/id) プログラムへの登録を申し込んでください。 Xbox Live クリエーターズ プログラム、および ID@Xbox プログラムで利用できる機能については、[機能表](../xbox-live/developer-program-overview.md#feature-table)をご覧ください。
 
@@ -356,9 +354,9 @@ Windows ゲーム開発 API を使って独自のゲーム エンジンを作成
 
 Microsoft Store へのゲームの提出については、「[ゲームの申請と公開](e2e.md#submitting-and-publishing-your-game)」をご覧ください。
 
- 
+ 
 
- 
+ 
 
 
 

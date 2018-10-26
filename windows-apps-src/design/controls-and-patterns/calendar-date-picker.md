@@ -8,20 +8,18 @@ template: detail.hbs
 ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f523cf479423da8edab7017ed4f1e7e30bd1d50
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 6756d8c64f33de8d16d6aa455c3fad694a6306d5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493929"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568072"
 ---
 # <a name="calendar-date-picker"></a>カレンダーの日付の選択コントロール
 

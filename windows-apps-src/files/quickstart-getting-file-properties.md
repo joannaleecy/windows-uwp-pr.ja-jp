@@ -6,16 +6,14 @@ description: StorageFile オブジェクトで表されるファイルのプロ�
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f3edb012f04026251d151da99f34accb9e1848c3
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 8fc44300376efb5b56f390457e516f35a3ec4202
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662732"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565462"
 ---
 # <a name="get-file-properties"></a>ファイルのプロパティの取得
 
@@ -32,7 +30,7 @@ ms.locfileid: "1662732"
 > [!NOTE]
 > 「[File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995)」(ファイル アクセスのサンプル) もご覧ください。
 
- 
+ 
 
 
 ## <a name="prerequisites"></a>前提条件
@@ -49,9 +47,9 @@ ms.locfileid: "1662732"
 
 多くの最上位ファイル プロパティは、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) クラスのメンバーとしてアクセスできます。 これらのプロパティには、ファイル属性、コンテンツの種類、作成日、表示名、ファイルの種類などがあります。
 
-**注:** 必ず **picturesLibrary** 機能を宣言してください。
+**注:** **picturesLibrary**機能を宣言に注意してください。
 
- 
+ 
 
 この例では、画像ライブラリ内のすべてのファイルを列挙して、各ファイルの最上位プロパティの一部にアクセスします。
 
@@ -142,6 +140,6 @@ foreach (Windows.Storage.StorageFile file in files)
 }
 ```
 
- 
+ 
 
- 
+ 

@@ -8,21 +8,19 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc30dbd9fd501d310bb037726414356354af294
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 9bffed44921df05a72025e86917901a65fe7ea82
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653421"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565442"
 ---
 # <a name="rotation"></a>回転
 
 
-この記事では、新しい Windows UI の回転について説明し、UWP アプリでこの新しい操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
+この記事では、新しい Windows UI の回転について説明し、UWP アプリでこの新しい対話式操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
 
 > **重要な API**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
@@ -48,8 +46,7 @@ ms.locfileid: "1653421"
 
 ![回転がサポートされる異なる指の配置を示す図](images/ux-rotate-positions.png)
 
-**注:**  
-ユーザーが接触点とは無関係に回転の中心点を指定できる場合を除いて (例: 描画アプリやレイアウト アプリ)、直観に従い多くの場合、回転の中心点は 2 つのタッチした点のどちらかになります。 以下の図では、回転の中心点がこのような制約を受けない場合に、どのようにユーザー エクスペリエンスが低下するかについて説明します。
+**注:** 直感的とはほとんどの場合、回転の中心点の 2 つのタッチ ポイントのいずれかの場合は、ユーザーが接触点 (例: 描画アプリやレイアウトのアプリケーション) とは無関係な回転の中心点を指定できます。 以下の図では、回転の中心点がこのような制約を受けない場合に、どのようにユーザー エクスペリエンスが低下するかについて説明します。
 
 1 番目の図は、最初のタッチ ポイント (親指) と 2 番目のタッチ ポイント (人差し指) を示します。人差し指は木に、親指は丸太にタッチしています。
 
@@ -64,9 +61,9 @@ ms.locfileid: "1653421"
 
 ![回転の中心点が最初に 2 つタッチした点のどちらでもなく、絵の左端の中央に制約された状態で回転する絵を示す図](images/ux-rotate-points4.png)
 
- 
+ 
 
-Windows8 では、自由、制約付き、複合の 3 種類の回転をサポートします。
+Windows8 は 3 種類の回転をサポートしています: 自由、制約付き、および結合します。
 
 <table>
 <colgroup>
@@ -75,7 +72,7 @@ Windows8 では、自由、制約付き、複合の 3 種類の回転をサポ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">タイプ</th>
+<th align="left">種類</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -93,16 +90,16 @@ Windows8 では、自由、制約付き、複合の 3 種類の回転をサポ�
 <td align="left">複合回転</td>
 <td align="left"><p>複合回転は自由回転をサポートしますが、(<a href="guidelines-for-panning.md">パン</a>におけるレールのように) 90°単位のスナップ位置のゾーンでは制約付き回転によって強制されます。 ユーザーが各 90° のゾーンの外でオブジェクトを離した場合にはオブジェクトはその位置にとどまりますが、それ以外の場合にはオブジェクトは自動的にスナップ位置まで回転します。</p>
 <div class="alert">
-<strong>注:</strong>  ユーザー インターフェイスのレールは、ターゲットの周辺の領域において、特定の値または位置に向けて動きが制約され選択に影響を与える機能です。
+<strong>注:</strong>ユーザー インターフェイスのレールはターゲットの周辺の領域がに向けてする特定の値または場所の選択に影響を与える動き機能します。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="related-topics"></a>関連トピック
 
@@ -114,7 +111,7 @@ Windows8 では、自由、制約付き、複合の 3 種類の回転をサポ�
 * [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **サンプルのアーカイブ**
-* [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [入力: タッチのヒット テストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [XAML のスクロール、パン、ズームのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -122,9 +119,9 @@ Windows8 では、自由、制約付き、複合の 3 種類の回転をサポ�
 * [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX タッチ入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

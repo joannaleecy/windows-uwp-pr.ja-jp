@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b49afdd4a9fe1db28c8195bdf166d6a74e153020
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: f1643638eaf7eb625defe1f25b44cae20faf0a5c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653801"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568268"
 ---
 # <a name="optical-zoom-and-resizing"></a>光学式ズームとサイズ変更
 
@@ -27,7 +25,7 @@ ms.locfileid: "1653801"
 
 > **重要な API**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、[**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
-光学式ズームを使うと、ユーザーはコンテンツ領域内でコンテンツの表示を拡大できます (光学式ズームはコンテンツ領域自体に対して実行されます)。これに対して、サイズ変更を使うと、ユーザーはコンテンツ領域の表示を変更せずに、1 つまたは複数のオブジェクトの相対的なサイズを変更できます (サイズ変更はコンテンツ領域内のオブジェクトに対して実行されます)。
+光学式ズームを使うと、ユーザーはコンテンツの表示を拡大できます (コンテンツ領域自体に対して実行されます)。一方、サイズ変更を使うと、コンテンツ領域の表示は変更せずに、1 つまたは複数のオブジェクトの相対的なサイズをユーザーが変更できます (コンテンツ領域内のオブジェクトに対して実行されます)。
 
 光学式ズーム操作とセマンティック ズーム操作は両方とも、ピンチ ジェスチャとストレッチ ジェスチャ (指を広げて拡大、互いに近づけて縮小)、Ctrl キーを押しながらマウスのスクロール ホイールをスクロール、または Ctrl キーを (テンキーがない場合は Shift キーも同時に) 押しながらプラス (+) キーまたはマイナス (-) キーを押して実行します。
 
@@ -41,10 +39,9 @@ ms.locfileid: "1653801"
 
 ![指を互いに近づけてオブジェクトを縮小し、広げて拡大する](images/objectresize.png)
 
-**注:**  
-光学式ズームと[セマンティック ズーム](../controls-and-patterns/semantic-zoom.md)を混同しないように気を付けてください。 どちらの操作でも同じジェスチャが使われますが、セマンティック ズームは、単一のビュー内で整理されたコンテンツを表示したりナビゲーションしたりする場合に使われます (コンピューターのフォルダー構造、ドキュメント ライブラリ、フォト アルバムなど)。
+**注:**  [セマンティック ズーム](../controls-and-patterns/semantic-zoom.md)と光学式ズームを混同しないでください。 どちらの操作でも同じジェスチャが使われますが、セマンティック ズームは、単一のビュー内で整理されたコンテンツを表示したりナビゲーションしたりする場合に使われます (コンピューターのフォルダー構造、ドキュメント ライブラリ、フォト アルバムなど)。
 
- 
+ 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
 
@@ -70,10 +67,9 @@ ms.locfileid: "1653801"
     -   サイズ変更できるアイテムがサイズ変更できるキャンバスまたはアート ボードに表示される描画アプリケーション。
     -   地図などの埋め込みオブジェクトがある Web ページ。
 
-    **注:**  
-    どのような場合でも、すべてのタッチ ポイントがサイズ変更できるオブジェクト内にある場合以外は、コンテンツ領域のサイズが変更されます。
+    **注:** すべてのタッチ ポイントがサイズ変更できるオブジェクト内にあるすべての場合、コンテンツ領域がサイズ変更します。
 
-     
+     
 
 ## <a name="related-articles"></a>関連記事
 
@@ -85,7 +81,7 @@ ms.locfileid: "1653801"
 * [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **サンプルのアーカイブ**
-* [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [入力: タッチのヒット テストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [XAML のスクロール、パン、ズームのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -93,9 +89,9 @@ ms.locfileid: "1653801"
 * [入力: Windows 8 のジェスチャのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX タッチ入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

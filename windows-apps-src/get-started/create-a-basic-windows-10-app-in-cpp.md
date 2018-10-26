@@ -1,36 +1,35 @@
 ---
 author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: C++ を使った Hello World アプリの作成 (Windows 10)
-description: Microsoft Visual Studio 2017 では、C++ を使って、Windows 10 (Windows 10 を実行するスマートフォンも含む) で実行されるアプリを開発できます。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI を使います。
+title: 作成、Hello World アプリでは、C++/CX (windows 10)
+description: Microsoft Visual の Studio2017 を使用できます C + + CX windows 10 を実行するスマート フォンなど、windows 10 で実行されるアプリの開発にします。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI を使います。
 ms.author: jken
-ms.date: 03/26/2017
+ms.date: 06/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0701266e67be8fde53d4436f0461cb362d6d67df
-ms.sourcegitcommit: 3522d888781ff6f063b129b54760a5cbefd38139
-ms.translationtype: HT
+ms.openlocfilehash: bc2258557c492956130424069e6e0c4b73f28056
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "1937048"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571467"
 ---
-# <a name="create-a-hello-world-app-in-c"></a>"Hello world" アプリを C++ で作成する
+# <a name="create-a-hello-world-app-in-ccx"></a>"Hello world"アプリで作成する C + + CX
 
-Microsoft Visual Studio 2017 では、Extensible Application Markup Language (XAML) で定義されている UI を使い、Windows 10 で動作するアプリを C++ で開発できます。
+> [!IMPORTANT]
+> このチュートリアルでは、C++/cli CX します。 Microsoft がリリースされると、C++/WinRT: 完全に標準化された最新の c++ 17 言語プロジェクション Windows ランタイム (WinRT) Api のです。 この言語について詳しくを参照してください[、C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)します。 
+
+Microsoft Visual の Studio2017 を使用できます C + + CX Extensible Application Markup Language (XAML) で定義された UI と windows 10 で実行されるアプリの開発にします。
 
 > [!NOTE]
-> このチュートリアルでは、Visual Studio Community 2017 を使います。 異なるバージョンの Visual Studio を使っている場合には、見た目が多少異なることがあります。
+> このチュートリアルでは、Visual Studio Community 2017 を使用します。 異なるバージョンの Visual Studio を使っている場合には、見た目が多少異なることがあります。
 
+## <a name="before-you-start"></a>開始前の作業
 
-## <a name="before-you-start"></a>はじめに...
-
--   このチュートリアルでは、Windows 10 が実行されているコンピューターで、Visual Studio Community 2017 か、Community バージョン以外のいずれかの Visual Studio 2017 を使います。 ツールをダウンロードするには、[ツールの入手に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=532666)をご覧ください。
--   このトピックは、標準 C++、XAML、「[XAML の概要](https://msdn.microsoft.com/library/windows/apps/Mt185595)」で説明されている概念のいずれについても基本的な知識があることを前提としています。
+-   このチュートリアルを完了するには、windows 10 を実行しているコンピューターで Visual StudioCommunity 2017 か、Community バージョン以外の Visual Studio2017 のいずれかを使う必要があります。 ツールをダウンロードするには、[ツールの入手に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=532666)をご覧ください。
+-   C + の基本的な知識があると仮定すると/CX、XAML では、 [XAML の概要](https://msdn.microsoft.com/library/windows/apps/Mt185595)で説明されている概念です。
 -   Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトに戻すには、メニュー バーで **[ウィンドウ]**、**[ウィンドウ レイアウトのリセット]** の順にクリックします。
-
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>C++ デスクトップ アプリと Windows アプリの比較
 
@@ -38,7 +37,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 ### <a name="whats-the-same"></a>同じ部分
 
--   Windows ランタイム環境からアクセスできない Windows 関数をコードから呼び出さない限り、STL と CRT (一部例外あり)、さらに他のあらゆる C++ ライブラリを使うことができます。
+-   コードのみが、Windows ランタイム環境からアクセス可能な Windows 関数を呼び出していれば、STL と CRT (一部例外あり)、やその他のあらゆる C++ ライブラリを使用することができます。
 
 -   使い慣れたビジュアル デザイナーがある場合は、Microsoft Visual Studio に組み込まれたデザイナーを引き続き使うことができます。また、より多機能な Blend for Visual Studio を使うこともできます。 手動で UI のコーディングを行うことに慣れている場合は、XAML を手動で記述できます。
 
@@ -46,9 +45,9 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 -   Visual Studio のデバッガー、プロファイラー、その他開発ツールをこれまでどおり使います。
 
--   Visual C++ コンパイラでネイティブ マシン コードにコンパイルされるアプリを引き続き作成します。 C++ で作成された UWP アプリは、マネージ ランタイム環境では実行されません。
+-   Visual C++ コンパイラでネイティブ マシン コードにコンパイルされるアプリを引き続き作成します。 UWP アプリでは、C++/cli CX は、マネージ ランタイム環境で実行しないでください。
 
-### <a name="whats-new"></a>異なる部分
+### <a name="whats-new"></a>最新情報
 
 -   UWP アプリとユニバーサル Windows アプリの設計原則は、デスクトップ アプリの設計原則とは大きく異なります。 ウィンドウの境界線、ラベル、ダイアログ ボックスなどの強調は解除され、 コンテンツが最も目立つように表示されます。 優れたユニバーサル Windows アプリには、こうした原則が計画段階の初期から活かされています。
 
@@ -62,17 +61,17 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 -   Microsoft Store と Windows Phone ストアでは、認定プロセスを通じてアプリの安全性が検証され、何百万ものユーザーに公開されます。
 
-## <a name="hello-world-store-app-in-c"></a>C++ を使った Hello World ストア アプリ
+## <a name="hello-world-store-app-in-ccx"></a>Hello World ストア アプリでは、C++/cli CX
 
-初めてのアプリは "Hello World" という名前です。このアプリでは、インタラクティビティ、レイアウト、スタイルに関する基本的な機能の使い方を学びます。 アプリは、Windows ユニバーサル アプリ プロジェクト テンプレートを使って作成します。 Windows 8.1 や Windows Phone 8.1 用のアプリを開発したことがあれば、Visual Studio で 3 つのプロジェクト (Windows アプリ用、Windows Phone アプリ用、共有コード用) を使った経験があるでしょう。 Windows 10 ユニバーサル Windows プラットフォーム (UWP) を使うと、プロジェクトを 1 つ開発すれば、すべてのデバイス (Windows 10 が実行されているデスクトップ コンピューターやノート PC、タブレット、携帯電話、VR デバイスなどのデバイス) で動作させることができます。
+初めてのアプリは "Hello World" という名前です。このアプリでは、インタラクティビティ、レイアウト、スタイルに関する基本的な機能の使い方を学びます。 アプリは、Windows ユニバーサル アプリ プロジェクト テンプレートを使って作成します。 Windows8.1 や Windows Phone 8.1 用アプリを開発した場合は、3 つのプロジェクトを Visual Studio、Windows アプリの 1 つは、電話アプリと共有コード用に 1 つである必要がある注意してください可能性があります。 Windows 10 のユニバーサル Windows プラットフォーム (UWP) などの windows 10、タブレット、携帯電話、VR デバイスなどのデバイスを実行しているコンピューターのデスクトップやノート pc、すべてのデバイスで実行されているプロジェクトが 1 つだけすることもできます。
 
 それでは、次に示す基礎から始めましょう。
 
--   Visual Studio 2017 でユニバーサル Windows プロジェクトを作成する方法。
+-   Visual Studio2017 でユニバーサル Windows プロジェクトを作成する方法。
 
 -   作成されるプロジェクトとファイルを把握する方法。
 
--   Visual C++ コンポーネント拡張機能 (C++/CX) の拡張機能を把握する方法と、それを使うタイミング。
+-   VisualC ではコンポーネント拡張機能内の拡張機能を把握する方法 (、C++/cli CX)、およびそれらを使用する場合。
 
 **まず Visual Studio でソリューションを作成する**
 
@@ -89,9 +88,9 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 4.  プロジェクトの名前を入力します。 ここでは、名前を "HelloWorld" とします。
 
- ![[新しいプロジェクト] ダイアログ ボックスの C++ プロジェクト テンプレート ](images/vs2017-uwp-01.png)
+ ![C++/cli で新しいプロジェクト] ダイアログ ボックスの CX プロジェクト テンプレート ](images/vs2017-uwp-01.png)
 
-5.  **[OK]** を選択します。
+5.  **[OK]** をクリックします。
 
 > [!NOTE]
 > Visual Studio を初めて使う場合は、[設定] ダイアログ ボックスが表示され、**開発者モード**を有効にするよう求められることがあります。 開発者モードは、アプリをストアからだけではなく、直接実行するためのアクセス許可など、特定の機能を有効にする特別な設定です。 詳しくは、「[デバイスを開発用に有効にする](enable-your-device-for-development.md)」をご覧ください。 先に進むには、**[開発者モード]** を選択し、**[はい]** をクリックしてダイアログ ボックスを閉じます。
@@ -104,7 +103,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 ### <a name="about-the-project-files"></a>プロジェクト ファイルについて
 
-プロジェクト フォルダー内のすべての .xaml ファイルには、対応する .xaml.h ファイルと .xaml.cpp ファイルが同じフォルダーに、.g ファイルと .g.hpp ファイルが [生成されたファイル] フォルダーにそれぞれ存在します。このフォルダーはプロジェクト内ではなく、ディスク上にあります。 UI 要素を作成してデータ ソースに接続 (DataBinding) するには、XAML ファイルに変更を加えます。 イベント ハンドラーにカスタム ロジックを追加するには、.h ファイルと .cpp ファイルに変更を加えます。 自動生成ファイルは、XAML マークアップから C++ への変換を表します。 これらのファイルは変更しないでください。ただし、ファイルを観察すると、分離コードの働きをより深く理解できます。 基本的に、生成されたファイルには、XAML ルート要素の部分クラスの定義が記述されています。これは、\*.xaml.h ファイルや .cpp ファイルで変更するクラスと同じです。 生成されたファイルには、XAML UI の子要素がクラスのメンバーとして宣言されており、開発者がコードの中で参照することができます。 ビルド時には、生成されたコードと自分で記述したコードとがマージされてクラス定義が完成し、コンパイルされます。
+プロジェクト フォルダー内のすべての .xaml ファイルには、対応する .xaml.h ファイルと .xaml.cpp ファイルが同じフォルダーに、.g ファイルと .g.hpp ファイルが [生成されたファイル] フォルダーにそれぞれ存在します。このフォルダーはプロジェクト内ではなく、ディスク上にあります。 UI 要素を作成してデータ ソースに接続 (DataBinding) するには、XAML ファイルに変更を加えます。 イベント ハンドラーにカスタム ロジックを追加するには、.h ファイルと .cpp ファイルに変更を加えます。 自動生成されたファイルには、C++、XAML マークアップの変換を表す/CX します。 これらのファイルは変更しないでください。ただし、ファイルを観察すると、分離コードの働きをより深く理解できます。 基本的に、生成されたファイルには、XAML ルート要素の部分クラスの定義が記述されています。これは、\*.xaml.h ファイルや .cpp ファイルで変更するクラスと同じです。 生成されたファイルには、XAML UI の子要素がクラスのメンバーとして宣言されており、開発者がコードの中で参照することができます。 ビルド時には、生成されたコードと自分で記述したコードとがマージされてクラス定義が完成し、コンパイルされます。
 
 まずプロジェクト ファイルを見てみましょう。
 
@@ -120,7 +119,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 **ref クラス**
 
-Windows ランタイムのほぼすべてのクラスは、Windows API のすべての型 (XAML コントロール、アプリ内のページ、App クラス自体、すべてのデバイス オブジェクトとネットワーク オブジェクト、すべてのコンテナー型) を含んでおり、**ref クラス** として宣言されます  (**value class** または **value struct** の Windows 型もわずかに存在します)。 ref クラスはすべての言語から利用できます。 C++ では、これらの型の有効期間が (ガベージ コレクションではなく) 自動参照カウントによって制御されるため、それらのオブジェクトを明示的に削除することはできません。 ref クラスは独自に作成することもできます。
+Windows ランタイムのほぼすべてのクラスは、Windows API のすべての型 (XAML コントロール、アプリ内のページ、App クラス自体、すべてのデバイス オブジェクトとネットワーク オブジェクト、すべてのコンテナー型) を含んでおり、**ref クラス** として宣言されます  (**value class** または **value struct** の Windows 型もわずかに存在します)。 ref クラスはすべての言語から利用できます。 C++/cli CX、これらの型の有効期間は自動参照されるため、これらのオブジェクトを明示的に削除する (ガベージ コレクションではなく) をカウントによって制御されます。 ref クラスは独自に作成することもできます。
 
 ```cpp
 namespace HelloWorld
@@ -310,7 +309,7 @@ MainPage::MainPage()
 
 どちらを使えばいいでしょうか。 どちらでも好きなほうを使用できます。 お勧めするとすれば、主に画像やビデオを表示するアプリには濃色テーマ、テキストが大量に含まれるアプリには淡色テーマです。 カスタム配色を使う場合は、アプリの外観に最もよく合ったテーマを使ってください。 このチュートリアルの残りの部分では、スクリーンショットで淡色テーマを使います。
 
-**注:** テーマは、アプリの起動時に適用されます。アプリの実行中にテーマを変更することはできません。
+**注:**、アプリの起動時、アプリの実行中は変更できませんにテーマを適用します。
 
 ### <a name="using-system-styles"></a>システム スタイルの使用
 
@@ -332,12 +331,12 @@ MainPage::MainPage()
      XAML デザイン サーフェイスで、テキストの外観が変化します。 XAML エディターで、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) の XAML が更新されます。
 
     ```xaml
-    <TextBlock Text="What's your name?" Style="{StaticResource BaseTextStyle}"/>
+    <TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
     ```
 
 7.  このプロセスを繰り返してフォント サイズを設定し、**BaseTextBlockStyle** を `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 要素に割り当てます。
 
-    **ヒント:** この [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) にはテキストはありませんが、マウス ポインターを XAML デザイン サーフェイスの上に移動すると、対応する位置に青色の輪郭が表示されて、選択できます。  
+    **ヒント:** が選択できるように XAML デザイン サーフェイスの上にポインターを移動するときにこの[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)でにテキストがありませんが、青色の輪郭を示しています。  
 
     XAML は次のようになります。
 
@@ -405,9 +404,9 @@ MainPage::MainPage()
 
 これで、最初のチュートリアルは終わりです。 このチュートリアルでは、Windows ユニバーサル アプリにコンテンツを追加する方法、そのコンテンツで対話式操作を実現する方法、見た目を変更する方法の 3 点について説明しました。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-Windows 8.1 や Windows Phone 8.1 を対象とする Windows ユニバーサル アプリ プロジェクトがある場合は、そのプロジェクトを Windows 10 に移植できます。 この移植を自動的に行うプロセスはありませんが、手動で実行することができます。 新しい Windows ユニバーサル プロジェクトを使って開発を始めることで、最新のプロジェクト システム構造を入手し、お使いのコード ファイルをプロジェクトのディレクトリ構造にコピーしたり、項目をプロジェクトに追加したりすることができます。また、このトピックのガイダンスに従い、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) を使って XAML を書き換えることもできます。 詳しくは、「[Windows ランタイム 8 プロジェクトのユニバーサル Windows プラットフォーム (UWP) プロジェクトへの移植](https://msdn.microsoft.com/library/windows/apps/Mt188203)」と「[ユニバーサル Windows プラットフォームへの移植 (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525)」をご覧ください。
+Windows8.1 や Windows Phone 8.1 を対象とする Windows ユニバーサル アプリ プロジェクトがある場合は、windows 10 へ移植することができます。 この移植を自動的に行うプロセスはありませんが、手動で実行することができます。 新しい Windows ユニバーサル プロジェクトを使って開発を始めることで、最新のプロジェクト システム構造を入手し、お使いのコード ファイルをプロジェクトのディレクトリ構造にコピーしたり、項目をプロジェクトに追加したりすることができます。また、このトピックのガイダンスに従い、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) を使って XAML を書き換えることもできます。 詳しくは、「[Windows ランタイム 8 プロジェクトのユニバーサル Windows プラットフォーム (UWP) プロジェクトへの移植](https://msdn.microsoft.com/library/windows/apps/Mt188203)」と「[ユニバーサル Windows プラットフォームへの移植 (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525)」をご覧ください。
 
 UWP アプリと統合する既存の C++ コードがある場合、たとえば、既存のアプリケーションに新しい UWP UI を作成する場合は、「[方法: ユニバーサル Windows プロジェクトで既存の C++ コードを使う](http://go.microsoft.com/fwlink/p/?LinkId=619623)」をご覧ください。
 

@@ -6,16 +6,14 @@ title: Windows 10 向けのデスクトップ アプリを強化する
 ms.author: normesta
 ms.date: 10/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 18c3634912633242fdab41ea4d600ee42da80464
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 5e76d3d517be73417777eb31dfc3994f92186522
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518963"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565961"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Windows 10 向けのデスクトップ アプリを強化する
 

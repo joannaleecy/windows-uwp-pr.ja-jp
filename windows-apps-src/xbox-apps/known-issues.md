@@ -5,17 +5,15 @@ description: Xbox 開発者プログラムの UWP の既知の問題を示しま
 ms.author: mstahl
 ms.date: 03/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
-ms.openlocfilehash: b93da1603056a75c746e0e5c2a8ebe1d4044a1e5
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 798192dd898af5a7107087b4a9708e1a1d0cb9b5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690398"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570467"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開発者プログラムの UWP の既知の問題
 

@@ -6,16 +6,14 @@ ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、ゲーム、テクスチャ、DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b2b6623788f361f8118bd60800fab29f020a493
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 252613bbea7f4cdb720758d3435cf0920dd93efa
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "243373"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567333"
 ---
 # <a name="apply-textures-to-primitives"></a>プリミティブへのテクスチャの適用
 
@@ -524,9 +522,9 @@ private:
 
 ここでは、生のテクスチャ データを読み込んで、そのデータを 3D プリミティブに適用しました。
 
- 
+ 
 
- 
+ 
 
 
 

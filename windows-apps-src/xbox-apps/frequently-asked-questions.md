@@ -5,17 +5,15 @@ description: Xbox の UWP についてのよく寄せられる質問。
 ms.author: mstahl
 ms.date: 03/29/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
-ms.openlocfilehash: 132c92da974ce6c2c859f57e3f664618f4b76638
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 4b2ea47f819d3a187621615ee3a85be5af895d3b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690008"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565767"
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 

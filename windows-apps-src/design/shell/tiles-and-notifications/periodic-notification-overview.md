@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4525cf151d53790a44995bd8a8dd77a88332cdd0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: d02bfb8b8bd112a969895d4f2bd5d324fce9d6b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673449"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567644"
 ---
 # <a name="periodic-notification-overview"></a>定期的な通知の概要
  
@@ -29,9 +27,9 @@ ms.locfileid: "1673449"
 
 定期的な通知では、最小限のクラウド サービスとクライアントの投資で、ライブ タイルを更新することができます。 定期的な通知は、同じコンテンツを多数のユーザーに配信する優れた方法です。
 
-**注**   詳しくは、Windows 8.1 の[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードしてご覧ください。また、Windows 10 アプリでソース コードを再利用することもできます。
+**注:**  Windows8.1[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードし、windows 10 アプリでソース コードを再利用して、詳細については、します。
 
- 
+ 
 
 ## <a name="how-it-works"></a>しくみ
 
@@ -110,4 +108,4 @@ Windows でダウンロードを行うタイルの通知ごとに、一意の UR
 * [定期的な通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761461)
 * [バッジの定期的な通知を設定する方法](https://msdn.microsoft.com/library/windows/apps/hh761476)
 * [タイルの定期的な通知を設定する方法](https://msdn.microsoft.com/library/windows/apps/hh761476)
- 
+ 

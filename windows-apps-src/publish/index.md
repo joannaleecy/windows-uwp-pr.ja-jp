@@ -4,23 +4,21 @@ layout: LandingPage
 Description: See how to publish your Windows apps to the Microsoft Store.
 title: Windows アプリを公開する
 ms.author: wdg-dev-content
-ms.date: 01/08/2018
+ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 公開する, 公開, 販売, 販売する, 配布, 配布する, store, ダッシュボード
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
-ms.localizationpriority: high
-ms.openlocfilehash: 37cfce48a60f95109dfff99b45750fa8fbe1f220
-ms.sourcegitcommit: 4e39a2bdb5b895ed09b64957dc1a86ccf1f8e1af
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 98e47934f936b6995ab37623b610869219254b85
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "1718666"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566123"
 ---
 # <a name="publish-windows-apps-and-games"></a>Windows アプリとゲームを公開する  
  
-Windows デベロッパー センター ダッシュボードを使用すると、アプリとゲームを Microsoft Store に公開できます。 <a href="//developer.microsoft.com/store/register">今すぐサインアップしましょう。</a>
+[Windows デベロッパー センター ダッシュ ボード](https://partner.microsoft.com/dashboard)を使用して、アプリやゲームを Microsoft Store に公開することができます。 <a href="//developer.microsoft.com/store/register">今すぐサインアップしましょう。</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
@@ -123,8 +121,8 @@ Windows デベロッパー センター ダッシュボードを使用すると�
                 </div>
                 <div class="cardText">
                     <h3>アプリの販売促進</h3>   
-                    <p><a href="generate-promotional-codes.md">プロモーション コードを生成する</a></p>
                     <p><a href="create-an-ad-campaign-for-your-app.md">広告キャンペーンの作成</a></p>
+                    <p><a href="generate-promotional-codes.md">プロモーション コードを生成する</a></p>
                     <p><a href="put-apps-and-add-ons-on-sale.md">セール価格の提供</a></p>
                 </div>
             </div>

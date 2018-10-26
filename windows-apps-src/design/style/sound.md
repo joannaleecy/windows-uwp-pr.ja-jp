@@ -8,20 +8,18 @@ ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c6e85bcbf131755af6909fd0ae7ee42bc36544b8
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: b3ac54ed60debed0462d31543d05712922068ca0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842802"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565366"
 ---
 # <a name="sound"></a>サウンド
 

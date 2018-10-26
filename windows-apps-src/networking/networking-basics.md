@@ -6,16 +6,14 @@ ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ms.author: stwhi
 ms.date: 06/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e68d674ecb3ab29170036d1dff6c69ab3ba759c
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 50ac9fcf984fa6c4ebad7e480ebfc2d002256e26
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018558"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569693"
 ---
 # <a name="networking-basics"></a>ネットワークの基本
 ネットワーク対応アプリで実行する必要がある事柄について説明します。
@@ -40,7 +38,7 @@ ms.locfileid: "2018558"
 | **sharedUserCertificates** | ソフトウェア証明書とハードウェア証明書 (スマート カード証明書など) にアプリがアクセスできるようにします。 この機能が実行時に呼び出されると、ユーザーは、カードの挿入や証明書の選択などの行動をとる必要があります。 <br/> この機能では、ソフトウェア証明書やハードウェア証明書、スマート カードが、アプリでの身分証明に使われます。 この機能は、企業や銀行、行政サービスで身分証明に使うことができます。 |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>アプリがフォア グラウンドにないときの通信
-「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/mt299103)」には、アプリがフォアグラウンドでないときにバックグラウンド タスクを使って処理を実行する方法に関する一般的な情報が含まれています。 具体的には、アプリがフォアグラウンド アプリでないときにネットワーク経由でそのアプリのデータが到着した場合は、到着通知を受け取るための特別な手順のコードを実行する必要があります。 Windows 8 では、このためにコントロール チャネル トリガーを使っていました。これらのトリガーは、Windows 10 でも引き続きサポートされます。 コントロール チャネル トリガーの使い方について詳しくは[**ここ**](https://msdn.microsoft.com/library/windows/apps/hh701032)をご覧ください。 Windows 10 の新しいテクノロジでは、プッシュ対応ストリーム ソケットなどのいくつかのシナリオでオーバーヘッドが小さい優れた機能であるソケット ブローカーとソケット アクティビティ トリガーを利用できます。
+「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/mt299103)」には、アプリがフォアグラウンドでないときにバックグラウンド タスクを使って処理を実行する方法に関する一般的な情報が含まれています。 具体的には、アプリがフォアグラウンド アプリでないときにネットワーク経由でそのアプリのデータが到着した場合は、到着通知を受け取るための特別な手順のコードを実行する必要があります。 この目的で Windows8、コントロール チャネル トリガーを使用して、windows 10 で引き続きサポートされています。 コントロール チャネル トリガーの使い方について詳しくは[**ここ**](https://msdn.microsoft.com/library/windows/apps/hh701032)をご覧ください。 Windows 10 の新しいテクノロジでプッシュ対応ストリーム ソケットなどのいくつかのシナリオのオーバーヘッドが小さい優れた機能を提供します。 ソケット ブローカーとソケット アクティビティ トリガーします。
 
 アプリで [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、または [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) を使っている場合は、開いているソケットの所有権をシステムが提供するソケット ブローカーに移譲した後、フォアグラウンドから離れるか、アプリを終了できます。 移譲されたソケットで接続が行われるか、そのソケットでトラフィックが到着すると、アプリまたは指定されたバックグラウンド タスクがアクティブ化します。 アプリが実行されていない場合は、開始されます。 その後、ソケット ブローカーは、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) を使って、新しいトラフィックが到着していることをアプリに通知します。 アプリは、ソケット ブローカーからソケットを取り戻し、そのソケットのトラフィックを処理します。 つまり、アプリがネットワーク トラフィックをアクティブに処理していないときに消費するシステム リソースが非常に少なくなります。
 
@@ -468,7 +466,7 @@ using Windows::Storage::Streams;
 ネットワーク経由で接続するときに、認証資格情報を提供する方法。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>StreamSocket クラスによるクライアント証明書の提供
-[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows10 では、クライアント証明書を [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) オブジェクトに提供できます (これは TLS ハンドシェイクが開始される前に設定する必要があります)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
+[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 、Windows 10 では、 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (このする必要がありますが設定されるオブジェクトは TLS ハンドシェイクが開始される前に) のクライアント証明書を提供できます。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
 
 これを実装する方法を示すコード スニペットを次に示します。
 

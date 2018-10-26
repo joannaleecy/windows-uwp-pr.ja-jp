@@ -2,20 +2,18 @@
 author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: ピッカーによるファイルの保存
-description: FileSavePicker を使って、アプリで保存するファイルの名前とその保存場所をユーザーが指定できるようにします。
+description: FileSavePicker を使って、ユーザーがアプリで保存するファイルの名前とその保存場所を指定できるようにします。
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 007030d1449768f484db7902fdd74867ff1f701b
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 2a053047324fcb795a30951d70c5e0e78fbb5547
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663742"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564621"
 ---
 # <a name="save-a-file-with-a-picker"></a>ピッカーによるファイルの保存
 
@@ -27,9 +25,9 @@ ms.locfileid: "1663742"
 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、アプリで保存するファイルの名前とその保存場所をユーザーが指定できるようにします。
 
 > [!NOTE]
-> また、[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)に関するページも参照してください。
+> また、[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)に関するページも参照してください。
 
- 
+ 
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -63,14 +61,14 @@ savePicker.SuggestedFileName = "New Document";
 この例では、3 つのプロパティ [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880)、[**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875)、および [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878) を設定します。
 
 > [!NOTE]
-> [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) オブジェクトは、[**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891) を使ってファイル ピッカーを表示します。
-     
+>[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) オブジェクトは、[**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891) を使ってファイル ピッカーを表示します。
+     
 - このサンプルでは [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) を使って、ドキュメントまたはテキスト ファイルを保存する場所として [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) をアプリのローカル フォルダーに設定しています。 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) を保存するファイルの種類 (音楽、画像、ビデオ、ドキュメントなど) に適切な場所に設定します。 ユーザーは、開始場所から別の場所に移動できます。
 
 - サンプルでは、保存したファイルを確実にアプリから開くことができるように、サポートするファイルの種類 (Microsoft Word 文書とテキスト ファイル) を [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) を使って指定しています。 指定したすべてのファイルの種類をアプリはサポートする必要があります。 ユーザーは、ファイルの種類を指定して保存できます。 また、別のファイルの種類を選んで、ファイルの種類を変更することもできます。 既定では、リストの先頭にあるファイルの種類が選択されます。これを制御するには、[**DefaultFileExtension**](https://msdn.microsoft.com/library/windows/apps/br207873) プロパティを設定します。
 
 > [!NOTE]
-> また、ファイル ピッカーでは、現在選ばれているファイルの種類を使って表示されるファイルがフィルター処理され、選ばれているファイルの種類に一致するファイルの種類だけがユーザーに表示されます。
+> また、ファイル ピッカーでは、現在選ばれているファイルの種類を使って表示されるファイルがフィルター処理され、選ばれているファイルの種類に一致するファイルの種類だけがユーザーに表示されます。
 
 - ユーザーの入力の手間を多少なりとも軽減するために、この例では [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878) を設定しています。 提示するファイル名は、ユーザーが保存するファイルにできる限り関係のあるものにします。 たとえば、Word のように、ファイルが既にある場合はその名前を提示し、まだ名前のないファイルを保存している場合はドキュメントの 1 行目を提示します。
 
@@ -109,4 +107,4 @@ savePicker.SuggestedFileName = "New Document";
 
 この例では、ファイルが有効であることをチェックし、ファイルにそのファイル名を書き込みます。 また、「[ファイルの作成、書き込み、および読み取り](quickstart-reading-and-writing-files.md)」もご覧ください。
 
-**ヒント** その他の処理を実行する前に、必ず保存されたファイルをチェックしてファイルの有効性を確認する必要があります。 その後、アプリに適したコンテンツをファイルに保存できるほか、選ばれたファイルが有効でない場合は適切な動作を実行できます。
+**ヒント:** が有効で、他の処理を実行する前に確認を保存したファイルを常に確認する必要があります。 その後、アプリに適したコンテンツをファイルに保存できるほか、選ばれたファイルが有効でない場合は適切な動作を実行できます。

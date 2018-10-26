@@ -9,16 +9,14 @@ isNew: true
 ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: da1248937d8f7d1a5a1da27e376690cde2ac7ef6
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: a3e87fea7dfce66b16ccdf04ef13950c092660c8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842852"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565931"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>ゲームパッドとリモコンの操作
 

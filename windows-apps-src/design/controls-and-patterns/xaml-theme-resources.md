@@ -11,16 +11,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f7e92f1652b4c67ef63ca3cf3b536126e3c995
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: e576814617204749a37963ac5f2724f290520349
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832710"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567654"
 ---
 # <a name="xaml-theme-resources"></a>XAML テーマ リソース
 
@@ -96,7 +94,8 @@ XAML フレームワークには、"Light" と "Dark" のテーマに合わせ�
 | SystemListLowColor              | ListLow                | \#19000000 | \#19FFFFFF |
 | SystemListMediumColor           | ListMedium             | \#33000000 | \#33FFFFFF |
 
-:::row::: :::column:::
+:::row:::
+    :::column:::
         #### Light theme
     :::column-end:::
     :::column:::
@@ -106,19 +105,47 @@ XAML フレームワークには、"Light" と "Dark" のテーマに合わせ�
 
 #### <a name="base"></a>基本
 
-:::row::: :::column::: ![淡色テーマ (基本)](images/themes/light-base.png) :::column-end::: :::column::: ![濃色テーマ (基本)](images/themes/dark-base.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The base light theme](images/themes/light-base.png)
+    :::column-end:::
+    :::column:::
+        ![The base dark theme](images/themes/dark-base.png)
+    :::column-end:::
+:::row-end:::
 
 #### <a name="alt"></a>代替
 
-:::row::: :::column::: ![淡色テーマ (代替)](images/themes/light-alt.png) :::column-end::: :::column::: ![濃色テーマ (代替)](images/themes/dark-alt.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The alt light theme](images/themes/light-alt.png)
+    :::column-end:::
+    :::column:::
+        ![The alt dark theme](images/themes/dark-alt.png)
+    :::column-end:::
+:::row-end:::
 
 #### <a name="list"></a>リスト
 
-:::row::: :::column::: ![淡色テーマ (リスト)](images/themes/light-list.png) :::column-end::: :::column::: ![濃色テーマ (リスト)](images/themes/dark-list.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The list light theme](images/themes/light-list.png)
+    :::column-end:::
+    :::column:::
+        ![The list dark theme](images/themes/dark-list.png)
+    :::column-end:::
+:::row-end:::
 
 #### <a name="chrome"></a>クロム
 
-:::row::: :::column::: ![淡色テーマ (クロム)](images/themes/light-chrome.png) :::column-end::: :::column::: ![濃色テーマ (クロム)](images/themes/dark-chrome.png) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![The chrome light theme](images/themes/light-chrome.png)
+    :::column-end:::
+    :::column:::
+        ![The chrome dark theme](images/themes/dark-chrome.png)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="windows-system-high-contrast-colors"></a>Windows システムのハイ コントラストの色
 
@@ -350,7 +377,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 </Style>
 ```
 
-**注**: [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) スタイルには、[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) に含まれているテキスト見本スタイルのすべては含まれていません。これは主に、**RichTextBlock** のブロック ベースのドキュメント オブジェクト モデルでは、個々のテキスト要素への属性の設定がより簡単になっているためです。 また、XAML コンテンツ プロパティを使って [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
+**注**: **RichTextBlock**のブロック ベースのドキュメント オブジェクト モデルでは、簡単に個々 のテキストの属性を設定するために主に、 [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)スタイルは[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)は、すべてのテキスト見本スタイルがないです。要素です。 また、XAML コンテンツ プロパティを使って [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
 
 ## <a name="miscellaneous-named-styles"></a>その他の名前付きスタイル
 

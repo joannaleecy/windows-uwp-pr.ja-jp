@@ -6,15 +6,13 @@ keywords: XAML, UWP, 概要
 ms.author: mijacobs
 ms.date: 08/31/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45510b8129a69641fdb64c13939ccb9b4376a654
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 11f279de206a84e61144789ba43a268f2b896fee
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674949"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570190"
 ---
 # <a name="tutorial-create-custom-styles"></a>チュートリアル: カスタム スタイルを作成する
 
@@ -64,8 +62,7 @@ PhotoLab アプリには、次の 2 つのプライマリ ページがありま�
 
     [Windows.XAML.Ui.Shapes 名前空間](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)には、7 つの図形が用意されており、ここから選ぶことができます。 楕円形、四角形のほか、パスと呼ばれるものを使うと、どのような図形でも (ユニコーンでも!) 作成できます。 
     
-    <!-- TODO reduce size -->
-    ![ユニコーン](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size --> ![ユニコーン](../basics/images/xaml-basics/unicorn.png)
     
     > **参考情報:** 「[図形の描画](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)」という記事には、XAML の図形について知っておく必要があるすべての情報が含まれています。 
     

@@ -6,18 +6,16 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 04263122c1a96aadc5e4d0ad8f804730d3a2a20f
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 6c389aa207b0756a222c1c82ea99ea007b451b1e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514216"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569854"
 ---
 # <a name="app-icons-and-logos"></a>アプリのアイコンとロゴ 
 

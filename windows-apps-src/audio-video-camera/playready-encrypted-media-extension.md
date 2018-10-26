@@ -1,35 +1,33 @@
 ---
 author: drewbatgit
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: このセクションでは、以前の Windows 8.1 から、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady Web アプリを変更する方法について説明します。
+description: このセクションでは、以前の Windows8.1 バージョンから windows 10 バージョンに加えられた変更をサポートするために、PlayReady web アプリを変更する方法について説明します。
 title: PlayReady の Encrypted Media Extension
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a8cc35115b2805b2191424edca671c53c252c549
-ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.localizationpriority: medium
+ms.openlocfilehash: b73464ea10aa835b82df17605e983ebdfb9cd890
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2017
-ms.locfileid: "907148"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570096"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-このセクションでは、以前の Windows 8.1 から、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady Web アプリを変更する方法について説明します。
+このセクションでは、以前の Windows8.1 バージョンから windows 10 バージョンに加えられた変更をサポートするために、PlayReady web アプリを変更する方法について説明します。
 
 Internet Explorer で PlayReady メディア要素を使うと、開発者はコンテンツ プロバイダーが定義したアクセス ルールを適用しながら、ユーザーに PlayReady コンテンツを提供することのできる Web アプリを作成することができます。 ここでは、HTML5 と JavaScript のみを使って、既存の Web アプリに PlayReady メディア要素を追加する方法について説明します。
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension の新機能
 
-このセクションでは、Windows 10 で PlayReady コンテンツ保護を有効にするために PlayReady Encrypted Media Extension (EME) に加えられた変更を示します。
+このセクションでは、windows 10 で PlayReady コンテンツ保護を有効にするために、PlayReady Encrypted Media Extension (EME) を加えられた変更の一覧を示します。
 
-次に、Windows 10 の PlayReady Encrypted Media Extension に関する新機能や変更点について説明します。
+次の一覧では、新しい機能と windows 10 の PlayReady Encrypted Media Extension に加えられた変更について説明します。
 
 -   追加されたハードウェア デジタル著作権管理 (DRM)。
 
@@ -38,10 +36,10 @@ Internet Explorer で PlayReady メディア要素を使うと、開発者はコ
 -   永続的でないライセンスの事前の取得を提供します。
 -   1 つのメッセージで複数のライセンスを取得できるようにします。
 
-    Windows 8.1 のように PlayReady オブジェクトと複数のキー識別子 (KeyID) を使うか、[Content Decryption Model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) と複数の KeyID を使うことができます。
+    複数のキー識別子 (Keyid)、Windows8.1 に示すように PlayReady オブジェクトを使用するかと複数の Keyid [content decryption model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)を使用します。
 
     > [!NOTE]
-    > Windows10 では、複数のキー識別子が CDMData の &lt;KeyID&gt; でサポートされます。
+    > 下で windows 10 では、複数のキー識別子がサポートされている&lt;KeyID&gt; CDMData にします。
 
 -   リアルタイムの有効期限のサポートや期間限定ライセンス (LDL) が追加されました。
 
@@ -270,7 +268,7 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>Encrypted Media Extension のプログラミングについての考慮事項
 
-このセクションでは、PlayReady 対応の Windows 10 用の Web アプリを作成するときに検討する必要があるプログラミングの考慮事項を示します。
+このセクションでは、windows 10 の PlayReady が有効な web アプリを作成するときに考慮プログラミングの考慮事項を示します。
 
 アプリで作成した **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトは、アプリが終了するまで有効なままである必要があります。 これらのオブジェクトが必ず有効な状態にとどまるようにする方法の 1 つは、それらをグローバル変数として割り当てることです (関数内でローカル変数宣言された場合、変数はスコープ外になり、ガベージ コレクションの対象になります)。 次の例では、変数 *g\_msMediaKeys* と *g\_mediaKeySession* をグローバル変数として割り当てています。これらの変数は、関数内で **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトに割り当てられます。
 

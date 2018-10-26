@@ -6,16 +6,14 @@ title: コモン コントロールの概要
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b02bd99fdb93fdaaba5dce8f0bb6d25bb190188
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: bbb07da7fa28aed6e45c97d128f9bd04ca986fe7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "243897"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572032"
 ---
 # <a name="getting-started-common-controls"></a>はじめに: コモン コントロール
 
@@ -26,7 +24,7 @@ ms.locfileid: "243897"
 
 UWP コントロールが優れている点は、実行されているデバイスの種類を検出して、それに応じて外観と機能を変更できることです。 たとえば、プロジェクトが [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) コントロールを使用している場合、たとえば、電話と比較して、デスクトップ コンピューターで異なる外観と動作に自動的に最適化します。 何もする必要はありません。コントロールが実行時に自動的に調整します。
 
-| iOS のコントロール (クラス/プロトコル) | UWP コントロール |
+| iOS のコントロール (クラス/プロトコル) | 同等の UWP コントロール |
 |------------------------------|--------------------------------------|
 | アクティビティ インジケーター (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> 「[クイック スタート: プログレス コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)」もご覧ください。 |
 | 広告バナー ビュー (**ADBannerView**) と広告バナー ビュー デリゲート (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> 「[アプリでの広告の表示](../monetize/display-ads-in-your-app.md)」もご覧ください。 |
@@ -34,7 +32,7 @@ UWP コントロールが優れている点は、実行されているデバイ�
 | 日付の選択 (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | 画像ビュー (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> 「[Image と ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382)」もご覧ください。 |
 | ラベル (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> 「[クイック スタート: テキストの表示](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392)」もご覧ください。 |
-| 地図ビュー (MKMapView) と地図ビュー デリゲート (MKMapViewDelegate) | [UWP アプリ用 Bing マップ](http://go.microsoft.com/fwlink/p/?LinkId=263496)を参照してください。 |
+| 地図ビュー (MKMapView) と地図ビュー デリゲート (MKMapViewDelegate) | [UWP アプリ用 Bing Maps](http://go.microsoft.com/fwlink/p/?LinkId=263496)を参照してください。 |
 | ナビゲーション コント ローラー (UINavigationController) とナビゲーション コント ローラー デリゲート (UINavigationControllerDelegate) | [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> 「[ナビゲーション](https://msdn.microsoft.com/library/windows/apps/mt187344)」もご覧ください。 |
 | ページ コントロール (UIPageControl) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> 「[ナビゲーション](https://msdn.microsoft.com/library/windows/apps/mt187344)」もご覧ください。 |
 | ピッカー ビュー (UIPickerView) とピッカー ビュー デリゲート (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> 「[コンボ ボックスとリスト ボックスの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616)」もご覧ください。 |
@@ -55,7 +53,7 @@ UWP コントロールが優れている点は、実行されているデバイ�
 
 その他のコントロールについては、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」をご覧ください。
 
-**メモ** JavaScript と HTML を使用して UWP アプリ用のコントロールのリストは、[コントロール] の一覧](https://msdn.microsoft.com/library/windows/apps/hh465453)を参照してください。
+**注:** JavaScript と HTML を使った UWP アプリ用のコントロールの一覧、[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/hh465453)を参照してください。
 
 ### <a name="next-step"></a>次のステップ
 

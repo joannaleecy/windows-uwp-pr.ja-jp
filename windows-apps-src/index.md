@@ -3,19 +3,17 @@ author: mijacobs
 layout: LandingPage
 description: ユニバーサル Windows プラットフォーム (UWP) では、どのような Windows デバイス (PC、電話、Xbox One、HoloLens など) 向けのアプリでも構築して、ストアに公開できます。
 title: UWP ドキュメンテーション - UWP アプリ開発者 |Microsoft Docs
-ms.prod: windows
 ms.topic: landing-page
 ms.author: mijacobs
 ms.date: 08/4/2017
-ms.technology: uwp
 keywords: Windows UWP, ユニバーサル Windows プラットフォーム, Windows ランタイム API、Windows API、Windows API リファレンス、WinRT API, Windows API リファレンス, UWP API、UWP API リファレンス, UWP の開発, UWP の設計, UWP の公開
 ms.localizationpriority: medium
-ms.openlocfilehash: 48c5dc7352a44e3e07b78e78ae0b5e099660ec4f
-ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
-ms.translationtype: HT
+ms.openlocfilehash: 9e7cd5a012204b5b9ccab4e87993273f65c3849c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1893867"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569373"
 ---
 # <a name="universal-windows-platform-documentation"></a>ユニバーサル Windows プラットフォームのドキュメント
 ユニバーサル Windows プラットフォーム (UWP) では、どのような Windows デバイス (PC、電話、Xbox One、HoloLens など) 向けのアプリでも構築して、Microsoft Store に公開できます。
@@ -260,4 +258,29 @@ ms.locfileid: "1893867"
             </div>
         </div>
     </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_support.svg" alt=" " />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>コミュニティとサポート</h3>
+                        <p>
+                            <a href="https://twitter.com/WindowsDocs">@WindowsDocstwitter</a>
+                        </p>
+                        <p>
+                            <a href="http://aka.ms/OneDevMinute">YouTube で OneDevMinute</a>
+                        </p>
+                        <p>
+                            <a href="https://developer.microsoft.com/windows/support">Windows 開発者向けサポート</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>    
 </ul>

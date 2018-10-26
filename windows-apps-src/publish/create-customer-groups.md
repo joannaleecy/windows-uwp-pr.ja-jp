@@ -5,17 +5,15 @@ title: ユーザー グループを作成する
 ms.author: wdg-dev-content
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ユーザー グループ, セグメント, フライト グループ, 既知のユーザー グループ
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
-ms.openlocfilehash: 88101d9f8cc7ca40d37f88202667f36ecf5d8a3f
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: c8a2a1454baa1d5b1f09226e501233aa4c076373
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521688"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566815"
 ---
 # <a name="create-customer-groups"></a>ユーザー グループを作成する
 

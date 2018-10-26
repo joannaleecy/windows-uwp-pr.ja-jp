@@ -6,16 +6,14 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: Windows 10, UWP, ゲーム, DirectX, リソースの読み込み
+keywords: Windows 10、UWP、ゲーム、DirectX、リソースの読み込み
 ms.localizationpriority: medium
-ms.openlocfilehash: 12dd2fd39ff0b39e747488952779cfeb180f06fa
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 1bea3f515ba8ff810fc6dfd6281f0488c4f3e235
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983555"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565330"
 ---
 # <a name="load-resources-in-your-directx-game"></a>DirectX ゲームでのリソースの読み込み
 
@@ -73,7 +71,7 @@ ms.locfileid: "1983555"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="instructions"></a>手順
 
@@ -216,7 +214,7 @@ void ResourceLoading::CreateDeviceResources()
 -   それ以降の (numVertices \* sizeof(**BasicVertex**)) ビットには頂点データが含まれています。
 -   データの最後の (numIndices \* 16) ビットには、一連の uint16 値として表されたインデックス データが含まれています。
 
-要するに、読み込んだメッシュ データのビット レベルのレイアウトを把握するということです。 また、エンディアンが一致するようにします。 Windows 8 プラットフォームはすべてリトル エンディアンです。
+要するに、読み込んだメッシュ データのビット レベルのレイアウトを把握するということです。 また、エンディアンが一致するようにします。 Windows8 プラットフォームはすべてリトル エンディアンです。
 
 この例では、**LoadMeshAsync** メソッドから CreateMesh メソッドを呼び出して、ビット レベルの解釈を行っています。
 
@@ -707,9 +705,9 @@ task<void> BasicLoader::LoadShaderAsync(
 * [BasicReaderWriter のコード一式](complete-code-for-basicreaderwriter.md)
 * [DDSTextureLoader のコード一式](complete-code-for-ddstextureloader.md)
 
- 
+ 
 
- 
+ 
 
 
 

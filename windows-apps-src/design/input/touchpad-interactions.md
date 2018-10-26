@@ -9,22 +9,20 @@ keywords: タッチパッド, PTP, タッチ, ポインター, 入力, ユーザ
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 54911cbab3124da30b416f328675353349883175
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 1c77e7a220618273e0fb8fb75cf3de2247534f5b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1394371"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565032"
 ---
 # <a name="touchpad-design-guidelines"></a>タッチパッドの設計ガイドライン
 
 
 ユーザーがタッチパッドで操作できるようにアプリを設計します。 タッチパッドは、間接的なマルチタッチ入力と、マウスのようなポインティング デバイスの精密入力を組み合わせたものです。 この組み合わせにより、タッチパッドはタッチに最適化された UI にも、生産性アプリのより小さいターゲットにも適しています。
 
- 
+ 
 
 ![タッチパッド](images/input-patterns/input-touchpad.jpg)
 
@@ -118,7 +116,7 @@ ms.locfileid: "1394371"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="hardware"></a>ハードウェア
 
@@ -168,7 +166,7 @@ ms.locfileid: "1394371"
 * [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
+ 
 
 
 

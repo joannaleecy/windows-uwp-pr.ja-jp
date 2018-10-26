@@ -6,16 +6,14 @@ ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f99396b117efcf7c3bed3cb64f24b519734cc858
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 68ef1a9372523ea489677620acc039642bfc64ae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517022"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568566"
 ---
 # <a name="trademark-and-copyright-protection"></a>商標と著作権の保護
 

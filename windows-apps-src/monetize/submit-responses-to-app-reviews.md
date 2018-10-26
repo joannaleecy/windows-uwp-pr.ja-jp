@@ -6,16 +6,14 @@ title: レビューに対する返信の送信
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store レビュー API, アドオンの入手数
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ec6661ec0ef65174b6218957450540edceaa5a0
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 0fdfe811a90eae1e67ef7f626815be1ef78a4c61
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483099"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571057"
 ---
 # <a name="submit-responses-to-reviews"></a>レビューに対する返信の送信
 

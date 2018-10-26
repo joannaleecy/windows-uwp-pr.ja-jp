@@ -6,19 +6,18 @@ ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, 深度, 効果, プリミティブ, DirectX
-ms.openlocfilehash: 923bce3dd5f340b97fd6d4e7b31c4ed2e949ca94
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: f81c441910cd0d0205641a119c243cb22d0b695e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243340"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569465"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>プリミティブに対する深度と各種効果の使用
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 ここでは、深度、視点、色、その他の効果をプリミティブに対して使う方法について説明します。
 
@@ -454,9 +453,9 @@ private:
 
 [プリミティブへのテクスチャの適用](applying-textures-to-primitives.md)
 
- 
+ 
 
- 
+ 
 
 
 

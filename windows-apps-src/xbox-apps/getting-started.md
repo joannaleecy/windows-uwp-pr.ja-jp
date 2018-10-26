@@ -5,16 +5,14 @@ description: UWP 開発のために PC と Xbox One を設定する方法。
 ms.author: scotmi
 ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: da260b4f9f5f50d97d39af883217dfbae91a566e
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: b45386d93d37d00b8448a4f4a3548be6de7f685b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518868"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564764"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Xbox One の UWP アプリ開発の概要
 

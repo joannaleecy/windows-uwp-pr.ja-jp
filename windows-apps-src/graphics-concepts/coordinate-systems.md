@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 738f9f5852642bdc1431358979f633cd91d1399d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 1b8faed0719419d4be8ac1e5d493610ec2660598
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045021"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565565"
 ---
 # <a name="coordinate-systems"></a>座標系
 
@@ -56,9 +54,9 @@ Direct3D は、左手座標系を使用します。 左手および右手座標�
 
 [座標系とジオメトリ](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

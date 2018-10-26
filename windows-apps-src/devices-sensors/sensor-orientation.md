@@ -6,16 +6,14 @@ description: Accelerometer、Gyrometer、Compass、Inclinometer、および Orie
 ms.author: mukin
 ms.date: 05/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 307601836bc0a734c78adffd5403468d714d6b44
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: f3205bfa2da1b83fe2c341b1c810f155e796b804
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989436"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566103"
 ---
 # <a name="sensor-orientation"></a>センサーの向き
 

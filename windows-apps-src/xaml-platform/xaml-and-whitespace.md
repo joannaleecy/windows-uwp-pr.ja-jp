@@ -6,31 +6,30 @@ ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 88d4b155acb38a3ab11cc180d112fb3434af87a0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 560f820ec2ecc7f28145ec29c31a60c1e4573d7e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "244413"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565429"
 ---
 # <a name="xaml-and-whitespace"></a>XAML と空白
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 XAML で使われる空白処理規則について説明します。
 
 ## <a name="whitespace-processing"></a>空白処理
 
-XML と同じように、XAML での空白文字には、スペース、改行、タブがあります。 これらは、それぞれ Unicode 値 0020、000A、0009 に対応します。 既定では、XAML プロセッサが XAML ファイル内の要素間にある内部テキストを検出すると、この空白の正規化が行われます。
+XML で一貫性のある、XAML での空白文字領域とは、改行、タブです。これらはそれぞれ Unicode 値 0020、000 a、0009 になります。 既定では、XAML プロセッサが XAML ファイル内の要素間にある内部テキストを検出すると、この空白の正規化が行われます。
 
 -   東アジアの文字間の改行文字は削除されます。
 -   すべての空白文字 (スペース、改行、タブ) はスペースに変換されます。
 -   連続した複数のスペースはすべて削除され、1 つのスペースに置換されます。
 -   開始タグの直後にあるスペースは削除されます。
 -   終了タグの直前にあるスペースは削除されます。
--   *東アジアの文字*は、Unicode 文字範囲 U+20000 から U+2FFFD と U+30000 から U+3FFFD のセットとして定義されます。 このサブセットは *CJK 漢字*とも呼ばれることもあります。 詳しくは、http://www.unicode.org をご覧ください。
+-   *東アジアの文字*は、Unicode 文字範囲 U+20000 から U+2FFFD と U+30000 から U+3FFFD のセットとして定義されます。 このサブセットは *CJK 漢字*とも呼ばれることもあります。 詳細については、次を参照してください。http://www.unicode.orgします。
 
 "既定" とは、**xml:space** 属性の既定値によって示される状態に相当します。
 

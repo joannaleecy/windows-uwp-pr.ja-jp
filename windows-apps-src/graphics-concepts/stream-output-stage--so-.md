@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c3ed335360d7b259c045722b65bb08a71b6e0c
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a86aa5a78bc4df9deaeea239356345c33736d942
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044041"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568845"
 ---
 # <a name="stream-output-so-stage"></a>ストリーム出力 (SO) ステージ
 
@@ -47,7 +45,7 @@ ms.locfileid: "1044041"
 
 ストリーム出力 (SO) ステージでは、ジオメトリ シェーダー (GS) ステージなど、直前のアクティブなステージからメモリ内の 1 つ以上のバッファーに、頂点データを連続して出力 (ストリーミング) します。 ジオメトリ シェーダー (GS) ステージがアクティブでない場合、ストリーム出力 (SO) ステージでは、ドメイン シェーダー (DS) ステージから (DS もアクティブでない場合は、頂点シェーダー (VS) ステージから) メモリ内のバッファーに頂点データを継続して出力します。
 
-三角形または行のストリップが入力アセンブラー (IA) ステージにバインドされると、各ストリップをストリームする前に、リストに変換されます。頂点常に記述として完了プリミティブ (たとえば、3 頂点の三角形を一度に)。不完全なプリミティブはアウト ストリーミング配信されることはありません。ナチュラル プリミティブ型では、データをストリーミングする前にナチュラル データを破棄します。
+三角形ストリップまたはライン ストリップが入力アセンブラー (IA) ステージにバインドされている場合、ストリーム アウトする前に、各ストリップがリストに変換されます。頂点が常に (たとえば、3 つの頂点の三角形、一度に); の完全なプリミティブとして書き出さ不完全なプリミティブがストリーム出力されることはありません。隣接性を持つプリミティブ型は、アウト データをストリーミングする前に隣接性データを破棄します。
 
 ストリーム出力ステージでは、同時に最大 4 つのバッファーまでサポートします。
 
@@ -59,9 +57,9 @@ ms.locfileid: "1044041"
 
 [グラフィックス パイプライン](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

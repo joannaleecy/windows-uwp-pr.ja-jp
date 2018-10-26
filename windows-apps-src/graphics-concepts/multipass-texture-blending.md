@@ -8,24 +8,22 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36af11829728e07c00b3306d5a997764db130c9f
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: c55f371e97daba5f81945812f8179eb708bbadd6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043091"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567184"
 ---
 # <a name="multipass-texture-blending"></a>マルチパス テクスチャ ブレンド
 
 
 Direct3D アプリケーションでは、複数のレンダリング パスでさまざまなテクスチャを 1 つのプリミティブに適用することで、多彩な特殊効果を実現することができます。 これを表す一般的な用語が*マルチパス テクスチャ ブレンド*です。 通常、マルチパス テクスチャ ブレンドは、さまざまなテクスチャから複数のカラーを適用して、複雑なライティング モデルやシェーディング モデルの効果をエミュレートするために使用されます。 このような適用は*ライト マッピング*と呼ばれます。 「[テクスチャでのライト マッピング](light-mapping-with-textures.md)」をご覧ください。
 
-**注**   デバイスによっては、単一パス内のプリミティブに複数のテクスチャを適用できます。 「[テクスチャ ブレンド](texture-blending.md)」をご覧ください。
+**注:** デバイスによっては複数の 1 つのパスでプリミティブにテクスチャを適用できます。 「[テクスチャ ブレンド](texture-blending.md)」をご覧ください。
 
- 
+ 
 
 ユーザーのハードウェアで複数テクスチャ ブレンドがサポートされていない場合、アプリケーションはマルチパス テクスチャ ブレンドを使って同じ視覚効果を実現できます。 ただし、アプリケーションは複数テクスチャ ブレンドを使ったときに生じる可能性があるフレーム レートに対応できません。
 
@@ -43,9 +41,9 @@ C/C++ アプリケーションでマルチパス テクスチャ ブレンドを
 
 [テクスチャ ブレンド](texture-blending.md)
 
- 
+ 
 
- 
+ 
 
 
 

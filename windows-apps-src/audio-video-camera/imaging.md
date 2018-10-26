@@ -6,16 +6,14 @@ title: ビットマップ画像の作成、編集、保存
 ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e9e1b50b1ade8b2bd11306d4ec8460af7d67db9
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: dc7d3d70291d29102af614f29fd4531523a961e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690068"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564347"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>ビットマップ画像の作成、編集、保存
 
@@ -121,7 +119,7 @@ Direct3D サーフェスから **SoftwareBitmap** オブジェクトを作成す
 
 ## <a name="transcode-an-image-file"></a>画像ファイルのトランスコード
 
-画像ファイルを [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) から [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) に直接トランスコードすることができます。 トランスコードの対象となるファイルから [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) を作成します。 入力ストリームから新しい **BitmapDecoder** を作成します。 エンコーダーの書き込み先となる新しい [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) を作成し、[**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) を呼び出します。このとき、引数にインメモリ ストリームとデコーダー オブジェクトを渡します。 トランスコードではエンコード オプションはサポートされません。オプションを指定する場合は、代わりに [**CreateAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.createasync) を使う必要があります。 入力画像ファイルのプロパティのうち、エンコーダーに対して明示的に指定しなかったプロパティはすべて、元のまま出力ファイルに書き込まれます。 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) を呼び出すと、インメモリ ストリームへのエンコードをエンコーダーが開始します。 最後に、ファイル ストリームとインメモリ ストリームを先頭までシークし、[**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) を呼び出してインメモリ ストリームをファイル ストリームに書き込みます。
+画像ファイルを [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) から [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) に直接トランスコードすることができます。 トランスコードの対象となるファイルから [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) を作成します。 入力ストリームから新しい **BitmapDecoder** を作成します。 エンコーダーの書き込み先となる新しい [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) を作成し、[**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) を呼び出します。このとき、引数にインメモリ ストリームとデコーダー オブジェクトを渡します。 トランスコードではエンコード オプションはサポートされません。オプションを指定する場合は、代わりに [**CreateAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.createasync) を使う必要があります。 入力画像ファイルのプロパティのうち、エンコーダーに対して明示的に指定しなかったプロパティはすべて元のまま、出力ファイルに書き込まれます。 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) を呼び出すと、インメモリ ストリームへのエンコードをエンコーダーが開始します。 最後に、ファイル ストリームとインメモリ ストリームを先頭までシークし、[**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) を呼び出してインメモリ ストリームをファイル ストリームに書き込みます。
 
 [!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 
@@ -129,9 +127,9 @@ Direct3D サーフェスから **SoftwareBitmap** オブジェクトを作成す
 
 * [BitmapEncoder オプション リファレンス](bitmapencoder-options-reference.md)
 * [画像のメタデータ](image-metadata.md)
- 
+ 
 
- 
+ 
 
 
 

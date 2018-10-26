@@ -5,17 +5,15 @@ title: カスタムのオーディオ特殊効果
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: 576277ab4bf3d2ea3bfe679da4039da194aabb70
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: a9c62dac489be07a08acc4ad17ecb79bcc54f57a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843262"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565110"
 ---
 # <a name="custom-audio-effects"></a>カスタムのオーディオ特殊効果
 
@@ -85,7 +83,7 @@ ms.locfileid: "1843262"
 > 2.  **[ビルド]** タブを選択します。
 > 3.  **[アンセーフ コードの許可]** チェック ボックスをオンにします。
 
- 
+ 
 
 これで、**ProcessFrame** メソッドの実装を効果に追加できます。 最初に、入力と出力の両方のオーディオ フレームから [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioBuffer) オブジェクトを取得します。 出力フレームが書き込み用で、入力フレームが読み取り用です。 次に、[**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046) を呼び出して、各バッファーの [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671) を取得します。 その後、実際のデータ バッファーを取得するために、先ほど定義した COM 相互運用機能のインターフェイス (**IMemoryByteAccess**) として **IMemoryBufferReference** オブジェクトをキャストし、**GetBuffer** を呼び出します。
 
@@ -134,7 +132,7 @@ TimeIndependent [**TimeIndependent**](https://msdn.microsoft.com/library/windows
 [!code-cs[UsingAudioEffectComponent](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUsingAudioEffectComponent)]
 
 ### <a name="add-your-custom-effect-to-an-audiograph-node"></a>AudioGraph ノードにカスタム効果を追加する
-オーディオ グラフの使用に関する概要については、「[オーディオ グラフ](audio-graphs.md)」を参照してください。 次のコード スニペットは、この記事で説明したエコー効果をオーディオ グラフ ノードに追加する例を示しています。 まず、[**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet) が作成され、効果によって定義された **Mix** プロパティの値が設定されます。 次に、[**AudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.AudioEffectDefinition) コンストラクターが呼び出され、カスタム効果の種類とプロパティ セットの完全なクラス名が渡されます。 最後に、既存の [**FileInputNode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.CreateAudioFileInputNodeResult.FileInputNode) の [**EffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioFileInputNode.EffectDefinitions)プロパティに効果の定義が追加され、カスタム効果によるオーディオの処理が行われます。 
+オーディオ グラフの使用に関する概要については、「[オーディオ グラフ](audio-graphs.md)」をご覧ください。 次のコード スニペットは、この記事で説明したエコー効果をオーディオ グラフ ノードに追加する例を示しています。 まず、[**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet) が作成され、効果によって定義された **Mix** プロパティの値が設定されます。 次に、[**AudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.AudioEffectDefinition) コンストラクターが呼び出され、カスタム効果の種類とプロパティ セットの完全なクラス名が渡されます。 最後に、既存の [**FileInputNode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.CreateAudioFileInputNodeResult.FileInputNode) の [**EffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioFileInputNode.EffectDefinitions)プロパティに効果の定義が追加され、カスタム効果によるオーディオの処理が行われます。 
 
 [!code-cs[AddCustomEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddCustomEffect)]
 
@@ -154,7 +152,7 @@ TimeIndependent [**TimeIndependent**](https://msdn.microsoft.com/library/windows
 * [Win2D ドキュメント](http://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [メディア再生](media-playback.md)
 
- 
+ 
 
 
 

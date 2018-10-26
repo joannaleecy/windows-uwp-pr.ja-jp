@@ -6,18 +6,17 @@ ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 9f6c8ebe6285981e0af74448b88e0290de3a66ee
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 18cf7a63dea7a1913293e5cd174b8f6c69b5baf6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246501"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565182"
 ---
 # <a name="xaml-intrinsic-data-types"></a>XAML 固有のデータ型
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 Windows ランタイムの XAML は、共通言語ランタイム (CLR) や、C++ のような他のプログラミング言語で頻繁に使われるプリミティブである複数のデータ型に対して、言語レベルのサポートを提供します。
 
@@ -34,18 +33,18 @@ Windows ランタイムの XAML は、次の型に対する言語レベルのサ
 
 これらの XAML 言語プリミティブは、通常、XAML で **x:** プレフィックスを使うオブジェクト要素を定義する場合のみ使われます。 他のすべての XAML 言語機能は、一般に属性形式で、またはマークアップ拡張として使われます。
 
-**注:** 慣例により、"x:" プレフィックスを含む、XAML とその他すべての XAML 言語要素の言語プリミティブが表示されます。 これは、XAML 言語要素が実際のマークアップでいかによく使われているかを表しています。 この規則は、XAML の説明書や XAML の仕様に従っています。
+**注:** 慣例により、XAML とその他のすべての XAML 言語要素の言語プリミティブは、「x:」プレフィックスで表示します。 これは、XAML 言語要素が実際のマークアップでいかによく使われているかを表しています。 この規則は、XAML の説明書や XAML の仕様に従っています。
 
 ## <a name="other-xaml-primitives"></a>その他の XAML プリミティブ
 
 XAML 2009 の仕様には、**x:Uri**、**x:Single** など、他の XAML 言語レベルのプリミティブに関する情報が記載されています。 このトピックの表に示されていない場合、他の XAML ボキャブラリまたは XAML 2009 の仕様で定義されている他の XAML 言語プリミティブは、現在 Windows ランタイムの XAML ではサポートされていません。
 
-**注:** 日付と時刻 ([**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) または [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) または [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx) を使うプロパティ) は、XAML プリミティブでは設定できません。 これらのプロパティは一般に、XAML ではまったく設定できません。これは、Windows ランタイム XAML パーサーには、日付と時刻に対する既定の from 文字列変換の動作がないためです。 すべての日付と時刻のプロパティの初期化値には、ページまたは要素を読み込むときに実行されるコード ビハインドを使う必要があります。
+**注:** 日付と時刻 ( [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)または[**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)または[**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)を使うプロパティ) は、XAML プリミティブで設定できません。 これらのプロパティは一般に、XAML ではまったく設定できません。これは、Windows ランタイム XAML パーサーには、日付と時刻に対する既定の from 文字列変換の動作がないためです。 すべての日付と時刻のプロパティの初期化値には、ページまたは要素を読み込むときに実行されるコード ビハインドを使う必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 
 * [XAML の概要](xaml-overview.md)
 * [XAML 構文のガイド](xaml-syntax-guide.md)
 * [ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)
- 
+ 
 

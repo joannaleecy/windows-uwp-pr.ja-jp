@@ -8,20 +8,18 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d5d4a5e5a9fa656737ae86451a38a00edbe99c92
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 9bbb723cc039d6ecca8a5ebcd30ef03559076934
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652451"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570832"
 ---
 # <a name="light-mapping-with-textures"></a>テクスチャでのライト マッピング
 
 
-ライト マップは、3D シーン内の照明に関する情報を含むテクスチャまたはテクスチャのグループです。 ライト マップは、ライトおよびシャドウの領域をプリミティブにマップします。 マルチパスおよび複数テクスチャ ブレンドにより、アプリケーションがシェーディング手法より現実的な外観によってシーンをレンダリングできるようになります。
+ライト マップは、3D シーンの照明に関する情報が含まれるテクスチャまたはテクスチャのグループです。 ライト マップは、ライトおよびシャドウの領域をプリミティブにマップします。 マルチパスおよび複数テクスチャ ブレンドにより、アプリケーションがシェーディング手法より現実的な外観によってシーンをレンダリングできるようになります。
 
 アプリケーションが 3D シーンを現実的にレンダリングするには、光源がシーンの外観に与える効果を考慮に入れる必要があります。 フラットおよびグロー シェーディングなどの手法は、この点においては貴重なツールですが、ニーズを満たすのには不十分な可能性があります。 Direct3D は、マルチパスおよび複数テクスチャ ブレンドをサポートします。 これらの機能により、アプリケーションがシェーディング手法だけを使ってレンダリングされたシーンより現実的な外観によってシーンをレンダリングできるようになります。 1 つ以上のライト マップを適用することにより、アプリケーションは光と影の領域をそのプリミティブにマップできます。
 
@@ -56,7 +54,7 @@ Direct3D のテクスチャ ブレンドを使ってライト マップを実行
 </tr>
 <tr class="even">
 <td align="left"><p><a href="color-light-maps.md">カラー ライト マップ</a></p></td>
-<td align="left"><p>カラー ライト マップは、ライト マップ内で照明情報に RGB データを使います。 アプリケーションは通常、カラー ライト マップを使う場合の方が現実的に 3D シーンをレンダリングします。</p></td>
+<td align="left"><p>色の付いたライト マップは、そのライト情報にライト マップの RGB データを使用します。 アプリケーションは通常、カラー ライト マップを使う場合の方が現実的に 3D シーンをレンダリングします。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="specular-light-maps.md">反射ライト マップ</a></p></td>
@@ -64,21 +62,21 @@ Direct3D のテクスチャ ブレンドを使ってライト マップを実行
 </tr>
 <tr class="even">
 <td align="left"><p><a href="diffuse-light-maps.md">拡散ライト マップ</a></p></td>
-<td align="left"><p>つや消しサーフェスでは、拡散光が反射します。 拡散光の明るさは、光源からの距離と、サーフェスの法線および光源方向ベクトルの角度によって決まります。 テクスチャ ライト マップは、複雑な拡散光をシミュレートできます。</p></td>
+<td align="left"><p>マット サーフェスには、拡散光の反射があります。 拡散光の明るさは、光源からの距離と、サーフェスの法線および光源方向ベクトルの角度によって決まります。 テクスチャ ライト マップは、複雑な拡散光をシミュレートできます。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [テクスチャ](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

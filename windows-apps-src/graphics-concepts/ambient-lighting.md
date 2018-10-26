@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b44ae8348e7b9d1d8dff0b98e5f1c553ec79b2
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 87b5c72ef99e3802a348ddfd28951bc2865891e5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044131"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565225"
 ---
 # <a name="ambient-lighting"></a>環境光
 
@@ -40,7 +38,7 @@ Ambient Lighting = Cₐ\*\[Gₐ + sum(Atten<sub>i</sub>\*Spot<sub>i</sub>\*L<sub
 | sum               | 該当なし           | なし           | 環境光の合計                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | i 番目のライトのアンビエント色                                                                              |
 
- 
+ 
 
 Cₐ の値は、次のいずれかになります。
 
@@ -48,9 +46,9 @@ Cₐ の値は、次のいずれかになります。
 -   AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2 で、2 つ目の頂点色が頂点の宣言で指定されている場合は、頂点色 2。
 -   マテリアルのアンビエント色。
 
-**注:** AMBIENTMATERIALSOURCE オプションが使用されていて、頂点色が指定されていない場合は、マテリアルのアンビエント色が使用されます。
+**注:** どちら AMBIENTMATERIALSOURCE オプションを使用して、頂点の色が指定されていない場合マテリアルのアンビエント色を使用します。
 
- 
+ 
 
 マテリアルのアンビエント色を使用するには、下記のコード例に示すように、SetMaterial を使用します。
 
@@ -89,9 +87,9 @@ Ambient.a = 0.0f;
 
 [光源の計算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

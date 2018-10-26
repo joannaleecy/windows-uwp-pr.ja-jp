@@ -5,21 +5,19 @@ description: Xbox の開発環境に UWP を設定してテストする手順
 ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
-ms.openlocfilehash: f2b8792832bd4014732ee0535ccaa74b2a3e00d3
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 2234b7d39f130da03562176f0df878701d524635
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689868"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568664"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>Xbox の開発環境に UWP を設定する
 
-Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP) は、ローカル ネットワークを介して Xbox One 本体に接続されている開発用 PC で構成されます。
+Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP) は、ローカル ネットワークを介して Xbox One コンソールに接続されている開発用 PC で構成されます。
 開発用 PC には、Windows 10、Visual Studio 2017 または Visual Studio 2015 Update 3、Windows 10 SDK ビルド 14393 以降などの幅広いサポート ツールが必要です。
 
 
@@ -27,7 +25,7 @@ Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP)
 
 ## <a name="visual-studio-setup"></a>Visual Studio のセットアップ
 
-1. Visual Studio 2017 または Visual Studio 2015 Update 3 をインストールします。 詳しい情報とインストール方法については、「[Windows 10 のダウンロードとツール](https://dev.windows.com/downloads)」をご覧ください。
+1. Visual Studio 2017、Visual Studio 2015 Update 3、または Visual Studio の最新リリースをインストールします。 詳しい情報とインストール方法については、「[Windows 10 のダウンロードとツール](https://dev.windows.com/downloads)」をご覧ください。 開発者とセキュリティの最新の更新プログラムを受信できるように、最新バージョンの Visual Studio を使用することをお勧めします。
 
 2. Visual Studio 2017 をインストールする場合、必ず**ユニバーサル Windows プラットフォーム開発**ワークロードを選択してください。 C++ 開発者の場合、必ず **[ユニバーサル Windows プラットフォーム開発]** の右側にある **[概要]** ウィンドウで **[C++ ユニバーサル Windows プラットフォーム ツール]** チェック ボックスもオンにしてください。 既定のインストールの一部ではありません。
 
@@ -48,7 +46,7 @@ Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP)
 
 ## <a name="setting-up-your-xbox-one"></a>Xbox One の設定
 
-Xbox One にアプリを展開する前に、ユーザーが本体にサインインする必要があります。 既存の Xbox Live アカウントを使用することも、開発者モードで本体の新しいアカウントを作成することもできます。 
+Xbox One にアプリを展開する前に、ユーザーがコンソールにサインインする必要があります。 既存の Xbox Live アカウントを使用することも、開発者モードで本体の新しいアカウントを作成することもできます。 
 
 ## <a name="create-your-first-app"></a>初めてのアプリの作成
 
@@ -124,7 +122,7 @@ Xbox One にアプリを展開する前に、ユーザーが本体にサイン�
 
 これで、Xbox に初めての UWP アプリが正しく作成および展開されました。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 - [Xbox One 開発者モードのアクティブ化](devkit-activation.md)  
 - [Windows 10 用のダウンロードとツール](https://dev.windows.com/downloads)  
 - [Windows Insider Program](http://go.microsoft.com/fwlink/?LinkId=780552)  

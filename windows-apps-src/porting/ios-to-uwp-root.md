@@ -7,16 +7,14 @@ ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 211d491d801526a4c29090103dacbb1f7fc61c37
-ms.sourcegitcommit: 921932016303e6b2e81143dda8aaacae9989d356
-ms.translationtype: HT
+ms.openlocfilehash: c769876b13eede84a776676aed69274d34e4bbbf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2018
-ms.locfileid: "1513947"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570421"
 ---
 # <a name="move-from-ios-to-uwp"></a>iOS から UWP への移行
 

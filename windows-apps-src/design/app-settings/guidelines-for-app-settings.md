@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 75e40a0aeb950960d660172e23b277b9ca0b0329
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: 56a952950fa9f2d9d57d5beaed397dd72f64ea54
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638739"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570974"
 ---
 # <a name="guidelines-for-app-settings"></a>アプリ設定のガイドライン
 

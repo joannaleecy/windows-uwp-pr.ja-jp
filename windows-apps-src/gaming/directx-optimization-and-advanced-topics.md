@@ -6,16 +6,14 @@ ms.assetid: b5f29fb2-3bcf-43b2-9a68-f8819473bf62
 ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX, 最適化, マルチサンプリング, スワップ チェーン
 ms.localizationpriority: medium
-ms.openlocfilehash: ab9de7f9275322d02c73184a59180e580ed37928
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e1a9b16dcf8c40c2b1db4af172d97009563e677a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652981"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566828"
 ---
 # <a name="optimization-and-advanced-topics-for-directx-games"></a>DirectX ゲームの最適化と高度なトピック
 

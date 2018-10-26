@@ -5,16 +5,14 @@ title: ユーザーへのアピールとアプリの宣伝
 ms.author: wdg-dev-content
 ms.date: 10/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ca47bfb26649f2e8a9fc1344c3264d90548eb836
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 783531d3663f14ffbeb5b0fad950e41b14e39ddf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517517"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568121"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>ユーザーへのアピールとアプリの宣伝
 

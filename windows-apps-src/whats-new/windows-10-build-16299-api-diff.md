@@ -6,15 +6,13 @@ keywords: 新着情報, 新機能, 更新プログラム, Windows 10, 1709, fall
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e779f50857bc74f7e5d4912bde167cb9ed8ac101
-ms.sourcegitcommit: e2dfc05b989b8e1e02c79dfa664b16d509edc5de
-ms.translationtype: HT
+ms.openlocfilehash: 95f7b7adb351db840647cc3f4a69ad7f43663a03
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2017
-ms.locfileid: "1456950"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568737"
 ---
 # <a name="new-apis-in-windows-10-build-16299"></a>Windows 10 ビルド 16299 の新しい API
 

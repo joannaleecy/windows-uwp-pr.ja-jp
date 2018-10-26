@@ -6,19 +6,18 @@ ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX 11
-ms.openlocfilehash: 7dda21925e31785e0ce7c3dfc72ba173b8686743
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 06a4c9b434afedabc17a48e9929da8dc4460fe03
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243297"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567204"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 の移植に関する FAQ
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 ユニバーサル Windows プラットフォーム (UWP) へのゲームの移植についてよく寄せられる質問に対してお答えします。
@@ -47,10 +46,10 @@ Direct3D デバイスは、ビデオ メモリにリソースを作成するた�
 
 [DirectX ツール キット (DirectXTK)](http://go.microsoft.com/fwlink/p/?LinkID=248929) コミュニティのプロジェクトには、Direct3D 11 で利用できるヘルパー クラスが用意されています。
 
-##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-windows-store"></a>デスクトップと Windows ストアのコード パスを維持する方法を教えてください。
+##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>デスクトップと Microsoft Store のコード パスを維持する方法
 
 
-Chuck Walbourn 氏による[ゲームの二重用途のコーディング手法](http://go.microsoft.com/fwlink/p/?LinkID=286210)に関する記事シリーズで、デスクトップと Windows ストア コード パスの間でコードを共有する方法のガイダンスが提供されています。
+Chuck Walbourn の記事シリーズで[ゲームの二重用途のコーディング手法](http://go.microsoft.com/fwlink/p/?LinkID=286210)では、デスクトップと Microsoft Store のコード パスの間でコードを共有に関するガイダンスを提供します。
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>DirectX UWP アプリの画像リソースを読み込む方法を教えてください。
 
@@ -124,7 +123,7 @@ Direct3D デバイスを作成するとアンチエイリアシング (マルチ
 ## <a name="how-do-i-debug-my-shaders"></a>シェーダーをデバッグするにはどうしたらよいですか。
 
 
-Microsoft Visual Studio 2015 には、DirectX グラフィックスの診断ツールが含まれています。 「[DirectX グラフィックスのデバッグ](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)」をご覧ください。
+Microsoft Visual Studio2015 には、DirectX グラフィックスの診断ツールが含まれています。 「[DirectX グラフィックスのデバッグ](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)」をご覧ください。
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>*x* 関数に相当する Direct3D 11 の要素は何ですか。
 
@@ -136,9 +135,9 @@ Microsoft Visual Studio 2015 には、DirectX グラフィックスの診断ツ�
 
 「DirectX 11 API への DirectX 9 の機能のマッピング」の「[サーフェス形式のマッピング](feature-mapping.md#surface-format-mapping)」をご覧ください。
 
- 
+ 
 
- 
+ 
 
 
 

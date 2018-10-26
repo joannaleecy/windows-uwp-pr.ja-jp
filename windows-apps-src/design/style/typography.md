@@ -5,16 +5,14 @@ title: UWP アプリの文字体裁
 ms.author: mijacobs
 ms.date: 04/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 505167775b61908be7f47068dbf3221c293f6112
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 62f5aa7d1089b38131c742c588ae741e88197533
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843372"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565012"
 ---
 # <a name="typography"></a>文字体裁
 
@@ -30,9 +28,16 @@ ms.locfileid: "1843372"
 
 アプリで英語以外の言語を表示する場合、または異なるフォントを選択する場合は、「[言語](#Languages)」と「[フォント](#Fonts)」のセクションで、弊社が UWP アプリ向けに推奨するフォントを確認してください。
 
-:::row::: :::column::: ![推奨](images/do.svg) UI のフォントを統一してください。
-:::column-end::: :::column::: ![非推奨](images/dont.svg) 複数のフォントを混在させないでください。
-:::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Pick one font for your UI.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Don't mix multiple fonts.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="size-and-scaling"></a>サイズとスケーリング
 
@@ -42,14 +47,27 @@ UWP アプリのフォント サイズは、すべてのデバイスで自動的
 
 スケーリング システムのしくみを踏まえ、実際の物理ピクセルではなく、有効ピクセルに基づいてデザインしてください。異なる画面サイズや解像度に応じてフォント サイズを変更する必要はありません。
 
-:::row::: :::column::: ![推奨](images/do.svg) UWP の[書体見本](#type-ramp)に従います。
-:::column-end::: :::column::: ![非推奨](images/dont.svg) 12 ピクセルよりも小さいフォント サイズを使用しないでください。
-:::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Follow the UWP [type ramp](#type-ramp) sizing.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use a font size smaller than 12 px.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="hierarchy"></a>階層
 
-:::row::: :::column::: ユーザーはページを斜め読みするとき、視覚的な階層を手掛かりにしています。見出しは内容を要約し、本文は詳細を説明するものと想定されます。 アプリでわかりやすい視覚的階層を作成するためには、UWP 書体見本に従ってください。
-:::column-end::: :::column::: ![テキスト ブロックのスタイル](images/type/type-hierarchy.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
+    :::column-end:::
+    :::column:::
+        ![text block styles](images/type/type-hierarchy.svg)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="type-ramp"></a>書体見本
 
@@ -59,8 +77,14 @@ UWP 書体見本は、ユーザーがコンテンツを読みやすいように�
 
 ### <a name="using-the-type-ramp"></a>書体見本の使用
 
-:::row::: :::column::: 各レベルの書体見本は、XAML の[静的リソース](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)としてアクセスできます。 これらのスタイルは、`*TextBlockStyle` 名前付け規則に従っています。
-:::column-end::: :::column::: ![テキスト ブロックのスタイル](images/type/text-block-type-ramp.svg) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
+    :::column-end:::
+    :::column:::
+        ![text block styles](images/type/text-block-type-ramp.svg)
+    :::column-end:::
+:::row-end:::
 
 ```XAML
 <TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
@@ -72,7 +96,10 @@ UWP 書体見本は、ユーザーがコンテンツを読みやすいように�
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
 
-:::row::: :::column::: ![推奨](images/do.svg) ほとんどのテキストは、"Body" スタイルを使用して表示してください。
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Use "Body" for most text.
 
         Use "Base" for titles when space is constrained.
     :::column-end:::
@@ -96,23 +123,37 @@ UWP 書体見本は、ユーザーがコンテンツを読みやすいように�
 
 ## <a name="character-count"></a>文字カウント
 
-:::row::: :::column::: ![推奨](images/do.svg) 読みやすさを確保するため、1 行当たり 50 ～ 60 文字の文字カウントを維持します。
-:::column-end::: :::column::: ![非推奨](images/dont.svg) 1 行当たりの文字カウントが 20 文字を下回るか 60 文字を超えると読みにくくなります。
-:::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Keep to 50–60 letters per line for ease of reading.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Less than 20 characters or more than 60 characters per line is difficult to read.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="clipping-and-ellipses"></a>クリッピングと省略記号
 
 テキストの量が利用可能なスペースを超えている場合は、テキストをクリッピングすることが推奨されます。クリッピングは、ほとんどの [UWP テキスト コントロール](../controls-and-patterns/text-controls.md) で既定の処理です。
 
-![いくつかのテキストがクリッピングされているデバイス フレームを示します。](images/type/clipping.svg)
+![いくつかのテキスト クリッピングがあるデバイス フレームを示します。](images/type/clipping.svg)
 
 ```xaml
 <TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>
 ```
 
-:::row::: :::column::: ![推奨](images/do.svg) テキストをクリップし、複数行を使用できる場合は、行を折り返します。
-:::column-end::: :::column::: ![非推奨](images/dont.svg) すっきりと表示するため、省略記号は使用しないでください。
-:::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Clip text, and wrap if multiple lines are enabled.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use ellipses to avoid visual clutter.
+    :::column-end:::
+:::row-end:::
 
 **注**: 表示領域が不明確な場合 (領域が異なる背景色によって明確に表示されていない場合など)、または詳細テキストへのリンクがある場合は、省略記号を使用します。
 

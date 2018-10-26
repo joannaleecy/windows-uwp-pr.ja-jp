@@ -1,24 +1,23 @@
 ---
 author: TylerMSFT
 title: 結果を取得するためのアプリの起動
-description: 別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。 これは、&quot;結果を取得するためのアプリの起動&quot; と呼ばれます。
+description: 別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。 これは、"結果を取得するためのアプリの起動" と呼ばれます。
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8aa2070606f7ef077dfa4392d576f212b2f8ea84
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 0fbbe1978cc59afcc7d681331dadc9a06e3eb2d0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246696"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564443"
 ---
 # <a name="launch-an-app-for-results"></a>結果を取得するためのアプリの起動
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 **重要な API**
@@ -28,7 +27,7 @@ ms.locfileid: "246696"
 
 別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。 これは、"*結果を取得するためのアプリの起動*" と呼ばれます。 この例では、[**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) を使って、結果を取得するためのアプリの起動方法を示しています。
 
-Windows 10 での新しいアプリ間通信 API により、各 Windows アプリ (および Windows Web アプリ) 間でのアプリの起動と、データおよびファイルの交換が可能になります。 このため、複数のアプリを基にマッシュアップ ソリューションを構築できます。 これらの新しい API を使うと、複数のアプリを使う必要のあった複雑な作業をシームレスに処理できるようになります。 たとえば、アプリでソーシャル ネットワーキング アプリを起動して連絡先を選んだり、チェックアウト アプリを起動して支払処理を実行したりすることができます。
+新しいアプリ間の通信 windows 10 での Api を使うと Windows アプリ (および Windows Web アプリ) をアプリと exchange のデータとファイルを起動できます。 このため、複数のアプリを基にマッシュアップ ソリューションを構築できます。 これらの新しい API を使うと、複数のアプリを使う必要のあった複雑な作業をシームレスに処理できるようになります。 たとえば、アプリでソーシャル ネットワーキング アプリを起動して連絡先を選んだり、チェックアウト アプリを起動して支払処理を実行したりすることができます。
 
 結果を得るために起動するアプリは、起動されたアプリと呼ばれます。 アプリを起動するアプリは、呼び出し元アプリと呼ばれます。 この例では、呼び出し元アプリと、起動されたアプリの両方を記述します。
 
@@ -204,6 +203,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 * [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)
 * [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)
 
- 
+ 
 
- 
+ 

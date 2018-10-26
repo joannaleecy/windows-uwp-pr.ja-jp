@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cd6f279505a960be0b9e1e2e5918a769ff56930
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e48045e27e8ee7796f5dda2afb691a9f6e5371b2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655061"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565340"
 ---
 # <a name="control-patterns-and-interfaces"></a>コントロール パターンとインターフェイス  
 
@@ -63,7 +61,7 @@ Microsoft UI オートメーションのコントロール パターン、それ
 | **Transform** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | サイズ変更、移動、回転が可能なコントロールに使われます。 デザイナー、フォーム、グラフィカル エディター、描画アプリなどでよく使われます。 |
 | **Value** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | 値の範囲をサポートしないコントロールの値をクライアントが取得または設定できるようにします。 |
 | **VirtualizedItem** | [**IVirtualizedItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242668) | 仮想化されていて、UI オートメーション要素として完全にアクセスできるようにする必要があるコンテナー内の項目を公開します。 |
-| **Window** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | ウィンドウ固有の情報を公開します。ウィンドウは、Microsoft Windows オペレーティング システムの基本概念です。 たとえば、子ウィンドウ、ダイアログなどのコントロールはウィンドウです。 |
+| **Window** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | Windows に固有の情報、コントロールのオペレーティング システムの基本概念を公開します。 たとえば、子ウィンドウ、ダイアログなどのコントロールはウィンドウです。 |
 
 > [!NOTE]
 > 既存の XAML コントロールで、必ずしもこれらすべてのパターンの実装が見られるわけではありません。 一部のパターンでは、パターンの一般的な UI オートメーション フレームワーク定義との等価性を維持し、そのパターンをサポートするための純粋なカスタム実装を必要とするオートメーション ピア シナリオに対応することだけを目的としてインターフェイスが使用されている場合があります。

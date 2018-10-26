@@ -6,16 +6,14 @@ ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, 入力
 ms.localizationpriority: medium
-ms.openlocfilehash: 26510cac6e4d42ee5eb36a7ae09c9c1518b47089
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: bb7d70c20aeb2b91d8a6db863e165e017810e924
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "300176"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571186"
 ---
 # <a name="input-for-games"></a>ゲームの入力
 
@@ -47,17 +45,17 @@ UWP ゲームでのレース ホイールの使用方法について詳しくは
 
 ### <a name="flight-sticks"></a>フライト スティック
 
-飛行機の棒は、平面または宇宙船のコックピットに含まれているフライト枚の外観を再現するゲーム入力デバイスです。 フライトを迅速かつ正確に制御するのに最適な入力デバイスです。
+フライト スティックは、航空機や宇宙船のコックピットにあるフライト スティックの操作感を再現するゲームの入力デバイスです。 フライトを迅速かつ正確に制御するのに最適な入力デバイスです。
 
-UWP ゲームのフライト スティックを使用する方法の詳細については、[フライト スティック](flight-stick.md)を参照してください。
+UWP ゲームでフライト スティックの使用方法の詳細については、[フライト スティック](flight-stick.md)を参照してください。
 
-### <a name="raw-game-controllers"></a>生ゲーム コント ローラー
+### <a name="raw-game-controllers"></a>未加工のゲーム コント ローラー
 
 未加工のゲーム コントローラーは、さまざまな種類の一般的なゲーム コントローラーの入力を備えた、ゲーム コントローラーの汎用的な表現です。 これらの入力は、名前のないボタン、スイッチ、軸の単純な配列として公開されます。 未加工のゲーム コントローラーを使用すると、ユーザーが使っているコントローラーの種類に関係なく、カスタム入力マッピングを作成することができます。
 
-UWP ゲームで生ゲーム コント ローラーの使用方法の詳細については、[生ゲーム コント ローラー](raw-game-controller.md)を参照してください。
+UWP ゲームで未加工のゲーム コント ローラーを使用する方法について詳しくは、[未加工のゲーム コント ローラー](raw-game-controller.md)を参照してください。
 
-### <a name="ui-navigation-controllers"></a>ナビゲーション コント ローラーの UI
+### <a name="ui-navigation-controllers"></a>UI ナビゲーション コント ローラー
 
 UI ナビゲーション コントローラーは、UI ナビゲーション コマンドの共通ボキャブラリを提供するために存在する論理入力デバイスです。UI ナビゲーション コマンドは、複数の異なるゲームや物理入力デバイス間に一貫性のあるユーザー エクスペリエンスを生み出します。 ゲームのユーザー インターフェイスには、デバイス固有のインターフェイスではなく、UINavigationController インターフェイスを使用するようにします。
 

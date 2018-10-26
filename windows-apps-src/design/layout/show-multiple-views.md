@@ -5,16 +5,14 @@ title: アプリの複数のビューの表示
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: Windows 10、UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bda75f71b1230974ecb4d136e5b40e85b7e5259
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 048b62e5131852c917b6ec6cd66273760509ef02
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843412"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570868"
 ---
 # <a name="show-multiple-views-for-an-app"></a>アプリの複数のビューの表示
 
@@ -152,4 +150,4 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 * [ApplicationViewSwitcher](https://msdn.microsoft.com/library/windows/apps/dn281094)
 * [CreateNewView](https://msdn.microsoft.com/library/windows/apps/dn297278)
- 
+ 

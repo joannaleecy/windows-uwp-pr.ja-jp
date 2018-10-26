@@ -6,16 +6,14 @@ ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
 ms.date: 06/28/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 83c4645a09a38a76dfd230436e858e222d817eab
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 3a99ad15d9157f13dfba9d55ad02202f62011ad9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517527"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567812"
 ---
 # <a name="in-app-ads"></a>アプリ内広告
 

@@ -6,16 +6,14 @@ title: メディアのインポート
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d456c2030180c73aba39a1e9a613bb68254384bd
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 36f8956e2ca167d98bb8e6ecf35ce3d131d7b032
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692207"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564919"
 ---
 # <a name="import-media-from-a-device"></a>デバイスからのメディアのインポート
 

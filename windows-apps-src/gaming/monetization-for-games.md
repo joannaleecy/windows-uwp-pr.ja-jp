@@ -6,15 +6,14 @@ ms.assetid: 79f4e177-d8e7-45d3-8a78-31d4c2fe298a
 ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, 収益化
-ms.openlocfilehash: c2dde3a4f9796b02c969017533b0092b0deaa860
-ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+ms.localizationpriority: medium
+ms.openlocfilehash: 82dd225f25162035b1bb65677c3bd4a7f7503b14
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/08/2017
-ms.locfileid: "877736"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571216"
 ---
 #  <a name="monetization-for-games"></a>ゲームの収益化
 
@@ -23,14 +22,14 @@ ms.locfileid: "877736"
 以前は、ゲームから収益を得るには、価格を設定し、それがストアで購入されるのを待つ以外に方法はありませんでした。 しかし今は、さまざまなオプションがあります。 実店舗での販売や、オンラインでの販売 (物理メディアまたはソフト コピー) のほか、ゲームを無料で公開する代わりに広告を表示したり、無料のゲーム内で有料のアイテムを販売したりする方法もあります。 ゲーム自体も、もはや単体の製品ではありません。 メインのゲームに関連して追加のコンテンツを販売する方法が主流となっています。
 
 UWP ゲームの販売促進や収益化には、次の方法があります。
-* Windows ストアで販売する。Windows ストアは、[世界規模の販売チャネル](#worldwide-distribution-channel)を介して製品を提供するセキュリティで保護されたオンライン ストアです。 世界中のゲーマーが、[販売者の設定する価格](#set-a-price-for-your-game)でゲームをオンラインで購入できます。
+* [世界規模](#worldwide-distribution-channel)のセキュリティで保護された、オンラインのストア製品には、Microsoft Store でゲームを配置します。 世界中のゲーマーが、[販売者の設定する価格](#set-a-price-for-your-game)でゲームをオンラインで購入できます。
 * Windows SDK の API を使って[ゲーム内購入](#in-game-purchases)を作成する。 ゲーマーはゲーム内からアイテムを購入したり、特別な機器、スキン、地図、ゲーム レベルなどの追加のコンテンツを購入したりすることができます。
 * [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) の API を使って、広告ネットワークから供給される広告を表示する。 [ゲーム内で広告を表示](#display-ads-in-your-game)し、ゲーマーがビデオ広告を見るとゲーム内のリワードがもらえるオプションを提供できます。
 * [広告キャンペーンによってゲームの可能性を最大限に広げる](#maximize-your-games-potential-through-ad-campaigns)。 有料広告、コミュニティ広告 (無料)、または自社広告 (無料) キャンペーンを使ってゲームを宣伝し、ユーザー ベースを拡大します。
 
 ## <a name="worldwide-distribution-channel"></a>世界規模の販売チャネル
 
-Windows ストアでは、世界中の 200 以上の国や地域のユーザーにダウンロード配信でゲームを提供し、Visa、MasterCard、PayPal などのさまざまな請求方法を通じて料金を受け取ることができます。 すべての国と地域の一覧については、「[価格設定と市場設定](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)」をご覧ください。
+Microsoft Store ことができます、ゲームで利用できるようにダウンロード 200 以上の国と地域、世界中の請求方法を通じて支払い Visa、Mastercard、PayPal などのさまざまな形式をサポートします。 すべての国と地域の一覧については、「[価格設定と市場設定](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)」をご覧ください。
 
 ## <a name="set-a-price-for-your-game"></a>ゲームの価格設定
 
@@ -50,13 +49,13 @@ Windows ストアでは、世界中の 200 以上の国や地域のユーザー�
 
 ## <a name="in-game-purchases"></a>ゲーム内購入
 
-ゲーム内購入とは、ゲームの中で購入できる製品です。 これらの製品は、一般に_アプリ内購入_とも呼ばれます。 Windows ストアでは、これらの製品を_アドオン_と呼びます。 [アドオンの公開](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)には、Windows デベロッパー センター ダッシュボードを使います。 また、ゲームのコードでアドオンを有効にする必要があります。
+ゲーム内購入とは、ゲームの中で購入できる製品です。 これらの製品は、一般に_アプリ内購入_とも呼ばれます。 Microsoft Store でこれらの製品には_アドオン_は呼び出されます。 [アドオンの公開](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)には、Windows デベロッパー センター ダッシュボードを使います。 また、ゲームのコードでアドオンを有効にする必要があります。
 
 ### <a name="types-of-add-ons"></a>アドオンの種類
 
 ストアでは、_永続的_と_コンシューマブル_の 2 種類のアドオンを作成できます。 永続的なアドオンは、指定された時間にわたって使うことができ、有効期限の間に一度だけ購入できる項目です。 コンシューマブルなアドオンとは、繰り返し購入して使うことができる項目です。
 
-コンシューマブルを作成する際は、追跡方法として、それらの項目が_開発者による管理_か_ストアによる管理_か (この機能は Windows 10、バージョン 1607 以降で使用可能) を決定してください。 開発者により管理されるコンシューマブルの場合、開発者はゲーマーが持つ項目の残高を追跡する責任があります。ストアで管理されるコンシューマブルの場合、Windows ストアが開発者に代わって項目の残高を追跡します。 詳しくは、「[コンシューマブルなアドオン購入の有効化](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)」をご覧ください。
+コンシューマブルを作成する際は、追跡方法として、それらの項目が_開発者による管理_か_ストアによる管理_か (この機能は Windows 10、バージョン 1607 以降で使用可能) を決定してください。 開発者により管理されるコンシューマブルの場合のゲーマー; アイテムの残量を追跡責任があります。ストアで管理されるコンシューマブルの場合、Microsoft Store の追跡項目の残高をします。 詳しくは、「[コンシューマブルなアドオン購入の有効化](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)」をご覧ください。
 
 ### <a name="create-in-game-purchases"></a>ゲーム内購入の作成
 
@@ -93,7 +92,7 @@ Windows ストアでは、世界中の 200 以上の国や地域のユーザー�
 
 1. Visual Studio でゲーム ソリューションを開きます。
 2. Visual Studio 内で、__[プロジェクト]__ > __[ストア]__ > __[アプリ パッケージの作成]__ の順に選びます。
-3. __[Windows ストアにアップロードするパッケージを作成しますか?]__ オプションで __[はい]__ を選びます。
+3. __、Microsoft Store にアップロードするパッケージをビルドするかどうか。__ オプションで、 __[はい]__ を選択します。
 4. デベロッパー センターの開発者アカウントにサインインします。 アカウントを持っていない場合は、開発者アカウントに[登録](https://developer.microsoft.com/store/register)できます。
 5. アップロード パッケージを作成するアプリを選びます。 アプリの申請をまだ作成していない場合は、新しいアプリ名を指定して新しい申請を作成します。 詳しくは、「[名前の予約によるアプリの作成](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)」をご覧ください。
 6. パッケージが正常に作成されたら、__[Windows アプリ認定キットを起動する]__ をクリックしてテスト プロセスを開始します。
@@ -105,7 +104,7 @@ Windows ストアでは、世界中の 200 以上の国や地域のユーザー�
 2. __[ダッシュボード概要]__ ページまたは __[すべてのアプリ]__ ページで、目的のアプリをクリックします。 アプリの申請をまだ作成していない場合は、__[新しいアプリの作成]__ をクリックして名前を予約します。
 3. __[アプリの概要]__ ページで、__[提出を開始する]__ をクリックします。
 4. この新しい申請を構成します。 [申請] ページで、次の手順を実行します。
-    * __[価格と使用可能状況]__ をクリックします。 __[表示]__ セクションで __[このアプリを非表示にして取得できないようにします]__'を選び、 開発チームのみがゲームにアクセスできるように設定します。 詳しくは、「[分布と認知度](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)」をご覧ください。
+    * __[価格と使用可能状況]__ をクリックします。 __可視性__] セクションでは、「__このアプリを非表示にし… 取得できないように__' 開発チームのみゲームへのアクセスを確保を選択します。 詳しくは、「[分布と認知度](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)」をご覧ください。
     * __[プロパティ]__ をクリックします。 __[カテゴリとサブカテゴリ]__ セクションで __[ゲーム]__ を選択し、ゲームに適したサブカテゴリを選びます。
     * __[年齢区分]__ をクリックします。 質問表に正確に入力します。
     * __[パッケージ]__ をクリックします。 前の手順で作成したゲーム パッケージをアップロードします。
@@ -141,7 +140,7 @@ Windows ストアでは、世界中の 200 以上の国や地域のユーザー�
 * [価格と使用可能状況](https://msdn.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
 * [ストア登録情報](https://msdn.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
 
-ゲームに多くのアドオンがある場合は、__Windows ストア申請 API__ を使ってプログラムによってアドオンを作成できます。 詳しくは、「[Windows ストア サービスを使用した申請の作成と管理](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)」をご覧ください。
+ゲームに多くのアドオンがある場合は、 __Microsoft Store 申請 API__を使用してプログラムでに作成できます。 詳しくは、次を参照してください。[作成し、Microsoft Store サービスを使用した申請の管理](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)します。
 
 ## <a name="display-ads-in-your-game"></a>ゲーム内での広告の表示
 
@@ -158,11 +157,11 @@ Microsoft Advertising SDK を使って表示できる広告には、いくつか
 
 ### <a name="which-ads-are-displayed"></a>表示される広告
 
-既定では、アプリはマイクロソフトの有料広告ネットワークの広告を表示します。 広告の収益を最大化するには、広告ユニットの広告仲介を有効化することで、その他の有料広告ネットワークの広告を表示できます。 現在提供されている広告ネットワークについて詳しくは、[広告仲介](../publish/monetize-with-ads.md#ad-mediation)のガイダンスをご覧ください。
+既定では、アプリはマイクロソフトの有料広告ネットワークの広告を表示します。 広告の収益を最大化するには、広告ユニットの広告仲介を有効化することで、その他の有料広告ネットワークの広告を表示できます。 現在提供されている広告ネットワークについて詳しくは、[広告仲介](../publish/in-app-ads.md#mediation)のガイダンスをご覧ください。
 
 ### <a name="which-markets-allow-ads-to-be-displayed"></a>広告を表示できる市場
 
-広告がサポートされるすべての国と地域の一覧については、「[広告ネットワークでサポートされる市場](../publish/monetize-with-ads.md#network-markets)」をご覧ください。
+広告がサポートされるすべての国と地域の一覧については、「[広告ネットワークでサポートされる市場](../publish/in-app-ads.md#network-markets)」をご覧ください。
 
 ### <a name="apis-for-displaying-ads"></a>広告を表示するための API
 

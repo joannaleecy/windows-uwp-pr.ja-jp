@@ -8,8 +8,6 @@ op-migration-status: ready
 ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
 pm-contact: yulikl
@@ -17,12 +15,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce64e6002bd71bd0806fb5574dc404ac4df856a9
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 60bbf42acb90d81892fec2788c83c3595f5b6b2f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5519012"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568101"
 ---
 # <a name="command-bar"></a>コマンド バー
 

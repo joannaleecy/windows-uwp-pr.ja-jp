@@ -6,16 +6,14 @@ title: MediaFrameReader を使ったメディア フレームの処理
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e12481d18773a6dc97fa25f05af080086363b54
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 722a411bc6363d3a10b5db0f609b08f5d14b3f8d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832483"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566153"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>MediaFrameReader を使ったメディア フレームの処理
 
@@ -38,7 +36,7 @@ ms.locfileid: "1832483"
 
 **アプリ マニフェストに機能を追加する**
 
-1.  Microsoft Visual Studio では、**ソリューション エクスプローラー**で **package.appxmanifest** 項目をダブルクリックして、アプリケーション マニフェストのデザイナーを開きます。
+1.  Microsoft Visual Studio では、**ソリューション エクスプローラー**で **package.appxmanifest** 項目をダブルクリックし、アプリケーション マニフェストのデザイナーを開きます。
 2.  **[機能]** タブをクリックします。
 3.  **[Web カメラ]** のボックスと **[マイク]** のボックスをオンにします。
 4.  画像ライブラリとビデオ ライブラリにアクセスするには、**画像ライブラリ**のボックスと**ビデオ ライブラリ**のボックスをオンにします。
@@ -258,9 +256,9 @@ Windows、バージョン 1709 以降では、**MediaFrameReader** から取得�
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [カメラ フレームのサンプル](http://go.microsoft.com/fwlink/?LinkId=823230)
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: fefb50f508d2c211cf764f10f2f86216d9bf42c1
-ms.sourcegitcommit: be5b71a8ec7b686d5f93d56d10cb9a50c3c5bb4a
+ms.openlocfilehash: 05549b0f3696067689f7e8fbd05dfb0f8f1bb528
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "243246"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567956"
 ---
 # <a name="port-from-directx-9-to-universal-windows-platform-uwp"></a>DirectX 9 からユニバーサル Windows プラットフォーム (UWP) への移植
 
@@ -37,9 +35,9 @@ ms.locfileid: "243246"
 -   Direct3D 9 と Direct3D 11 のグラフィックス フレームワークを直接比較するには、「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」に従ってください。 また、このチュートリアルには、アプリ ウィンドウとビューポートを設定するコードが含まれています。
 -   DirectX 9 からの移植に関する一般的な質問への回答については、「[DirectX 11 の移植に関する FAQ](directx-porting-faq.md)」をご覧ください。
 
- 
+ 
 
- 
+ 
 
 
 

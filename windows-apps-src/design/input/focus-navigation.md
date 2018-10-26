@@ -9,18 +9,16 @@ ms.date: 03/02/2018
 ms.author: kbridge
 ms.topic: article
 pm-contact: miguelrb
-ms.prod: windows
-ms.technology: uwp
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 73b1c73fdd971eb4448aea62bc8c64ceac17a2b4
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: f4c86847e02c4ba987f8b1dcc42016145b175193
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843352"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568806"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>キーボード、ゲームパッド、リモコン、アクセシビリティ ツールのフォーカス ナビゲーション
 

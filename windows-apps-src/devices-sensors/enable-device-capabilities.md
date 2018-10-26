@@ -2,34 +2,31 @@
 author: muhsinking
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: デバイス機能を有効にする
-description: このチュートリアルでは、Microsoft Visual Studio でデバイス機能を宣言する方法について説明します。 カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。
+description: このチュートリアルでは、Microsoft Visual Studio のデバイス機能の宣言方法について説明します。 カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 693a33bc212f6fe1b35414a20f2a6c44393c0b87
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: a7250c41795373b089f7a4c76b603c169b1e4dc3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989446"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566273"
 ---
 # <a name="enable-device-capabilities"></a>デバイス機能を有効にする
 
 
 
-このチュートリアルでは、Microsoft Visual Studio でデバイス機能を宣言する方法について説明します。 カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。
+このチュートリアルでは、Microsoft Visual Studio のデバイス機能の宣言方法について説明します。 カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。
 
 ## <a name="specify-the-device-capabilities-your-app-will-use"></a>アプリで使うデバイス機能を指定する
 
 
 Windows アプリでは、特定の種類のデバイスを使う場合にアプリ パッケージ マニフェストに指定する必要があります。 Visual Studio では、ほとんどの機能を[マニフェスト デザイナー](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)で宣言できます。また、「[パッケージ マニフェストでデバイス機能を (手動で) 指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263092)」で説明しているように、機能を手動で追加することもできます。 このチュートリアルでは、マニフェスト デザイナーを使っていることを前提としています。
 
-**注**  
-プリンター、スキャナー、センサーなどのいくつかのデバイスの種類は、アプリ パッケージ マニフェストで宣言する必要はありません。
+**注:** プリンター、スキャナー、センサーなどのデバイスの種類によっては、アプリ パッケージ マニフェストで宣言する必要はありません。
 
 -   Visual Studio のソリューション エクスプローラーで、パッケージ マニフェスト ファイル **Package.appxmanifest** をダブルクリックします。
 -   **[機能]** タブを開きます。

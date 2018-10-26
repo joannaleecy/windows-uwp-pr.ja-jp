@@ -5,16 +5,14 @@ title: 適切なプッシュ通知チャネルの種類を選択する
 ms.author: mijacobs
 ms.date: 07/07/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d6607f6464cc938e7edde7ab0317809fabfeee65
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: db2cf1c732669a2ae45b8a5eb427e8864446c800
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483010"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570636"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>適切なプッシュ通知チャネルの種類を選択する
 
