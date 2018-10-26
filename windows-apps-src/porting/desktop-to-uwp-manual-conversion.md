@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 0482c9a770d23ccebb094c00de7cab08cd6ab1cb
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 29fd7faec6f78b5f01469e7bfa6c01a8831f07eb
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5547050"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5641152"
 ---
 # <a name="package-a-desktop-application-manually"></a>デスクトップ アプリケーションを手動でパッケージ化します。
 
@@ -158,7 +158,7 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
 
 ## <a name="optional-add-target-based-unplated-assets"></a>(省略可能) ターゲット ベースのプレートなしのアセットを追加する
 
-ターゲット ベースのアセットは、Windows タスク バー、タスク ビュー、スナップ アシスト、Alt + Tab キーを押したとき、およびスタート画面のタイルの右下に表示されるアイコンおよびタイルで使用されます。 これらについて詳しくは、[こちら](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets#target-based-assets)をご覧ください。
+ターゲット ベースのアセットは、Windows タスク バー、タスク ビュー、スナップ アシスト、Alt + Tab キーを押したとき、およびスタート画面のタイルの右下に表示されるアイコンおよびタイルで使用されます。 これらについて詳しくは、[こちら](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets)をご覧ください。
 
 1. 正しい 44 x 44 画像を取得して、画像保存用のフォルダー (Assets) にコピーします。
 

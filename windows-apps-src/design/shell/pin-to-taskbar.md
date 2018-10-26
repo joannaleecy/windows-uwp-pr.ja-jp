@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, タスク バー、タスク バー マネージャー、タスク バーにピン留め、プライマリ タイル
 ms.localizationpriority: medium
 ms.openlocfilehash: 47fcd1f9d090c49ecbd49e05696b33f789973160
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5543652"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5642616"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>アプリをタスク バーにピン留めする
 
