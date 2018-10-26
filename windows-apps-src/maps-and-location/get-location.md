@@ -4,22 +4,20 @@ title: ユーザーの位置情報の取得
 description: ユーザーの位置情報を検索し、位置の変更に対応します。 ユーザーの位置情報へのアクセスは、設定アプリのプライバシー設定で管理されています。 このトピックでは、アプリにユーザーの位置情報へのアクセス許可が与えられているかどうかを確認する方法についても説明します。
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 ms.author: pafarley
-ms.date: 02/08/2017
+ms.date: 11/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 地図, 位置情報, 位置情報機能
-ms.openlocfilehash: f5af2815783568cb234f1196e065f18b145c7e68
-ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.localizationpriority: medium
+ms.openlocfilehash: 2187bafa9fd2b4fdce049f3ef11d4e6766613de3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2017
-ms.locfileid: "695744"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558062"
 ---
 # <a name="get-the-users-location"></a>ユーザーの位置情報の取得
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 ユーザーの位置情報を検索し、位置の変更に対応します。 ユーザーの位置情報へのアクセスは、設定アプリのプライバシー設定で管理されています。 このトピックでは、アプリにユーザーの位置情報へのアクセス許可が与えられているかどうかを確認する方法についても説明します。
@@ -48,7 +46,7 @@ ms.locfileid: "695744"
 
 ### <a name="step-1-request-access-to-the-users-location"></a>手順 1. ユーザーの位置情報へのアクセス許可を求める
 
-アプリに Consentless Location 機能 (「注意」を参照) がない場合は、ユーザーの位置情報へアクセスする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) メソッドを使用してユーザーの位置情報へのアクセス許可を求める必要があります。 **RequestAccessAsync** メソッドは UI スレッドから呼び出す必要があり、アプリがフォアグラウンドで実行されている必要があります。 アプリがユーザーの位置情報にアクセスするには、先にユーザーがその情報へのアクセス許可をアプリに与える必要があります。\*
+粗い位置情報機能は、アプリがあるない限り (注をご覧ください)、位置情報にアクセスする前に、 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)メソッドを使用してユーザーの位置情報へのアクセスを要求する必要があります。 **RequestAccessAsync** メソッドは UI スレッドから呼び出す必要があり、アプリがフォアグラウンドで実行されている必要があります。 アプリがユーザーの位置情報にアクセスするには、先にユーザーがその情報へのアクセス許可をアプリに与える必要があります。\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -60,7 +58,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) メソッドを使って、ユーザーに位置情報へのアクセス許可を求めます。 ユーザーに対するこの要求はアプリごとに 1 回だけ行われます。 アクセス許可の付与または拒否を行った後、このメソッドはユーザーにアクセス許可を求めなくなります。 ユーザーが位置情報へのアクセス許可を求められた後にそのアクセス許可を変更できるように、位置情報の設定へのリンクを用意することをお勧めします。これについては、このトピックの後半で紹介します。
 
->注意: Consentless Location 機能により、アプリはユーザーによる明示的な許可を必要とせずに、意図的にあいまいにされた (不正確な) 位置情報を取得できます (ただしシステム全体の位置情報スイッチは **on** のままである必要があります)。 アプリで Consentless Location を使用する方法について詳しくは、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) クラスの [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) メソッドをご覧ください。
+>注: 粗い位置情報機能では、ユーザーの明示的なアクセス許可 (システム全体の位置情報スイッチする必要があります**で**、ただし) を取得することがなく、意図的に暗号化されている (不正確な) 位置情報を取得するアプリができます。 アプリの粗い場所を利用する方法については、 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx)クラスの[**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions)メソッドを参照してください。
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>手順 2. ユーザーの位置情報を取得し、位置情報のアクセス許可の変更を登録する
 
@@ -265,7 +263,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 アプリがユーザーの位置情報にアクセスする前に、デバイスで **[位置情報]** を有効にする必要があります。 **設定**アプリで、次の**位置情報に関するプライバシー設定**がオンになっていることを確認します。
 
--   **[このデバイスの位置情報]** が **オン**  になっている (Windows 10 Mobile には適用されません)
+-   **このデバイス] の位置情報****オン (windows 10 Mobile では適用されません)**
 -   位置情報サービス設定の **[位置情報]** が **オン** になっている
 -   **[位置情報を使うことができるアプリを選ぶ]** で、アプリが **オン** になっている
 

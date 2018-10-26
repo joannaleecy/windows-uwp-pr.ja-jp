@@ -9,19 +9,17 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e9d6780d2b435ff8a18bdb716cd3500a753286f0
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: efb6c8a9324419ea099041f34c341152351575f6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493719"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558913"
 ---
 # <a name="auto-suggest-box"></a>自動提案ボックス
 
@@ -159,7 +157,7 @@ AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補�
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
 
--   自動提案ボックスを使って検索を実行したときに、入力したテキストに対応する検索結果が存在しなかった場合は、"検索結果が見つかりませんでした" という 1 行を表示します。これにより、ユーザーは検索要求が実行されたことがわかります。
+-   自動提案ボックスを使って検索を実行したときに、入力したテキストに対応する検索結果が存在しなかった場合は、"検索結果が見つかりませんでした" という 1 行を表示します。これにより、検索要求が実行されたことがユーザーに伝わります。
 
     ![検索結果のない自動提案ボックスの例](images/controls_autosuggest_noresults.png)
 

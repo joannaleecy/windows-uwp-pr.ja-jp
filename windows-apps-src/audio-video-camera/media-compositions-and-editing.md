@@ -6,18 +6,17 @@ title: メディアのコンポジションと編集
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 66d14ae9335edcc5535d0dcc37cca2273874f61d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: f32d63bf03a469d8282262c358153140587d9033
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246727"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557353"
 ---
 # <a name="media-compositions-and-editing"></a>メディアのコンポジションと編集
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 この記事では、[**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間の API を使って、オーディオとビデオのソース ファイルからメディア コンポジションを作成するアプリを開発する方法について説明します。 このフレームワークには、複数のビデオ クリップをまとめて追加したり、ビデオや画像のオーバーレイを追加したり、バックグラウンド オーディオを追加したり、オーディオとビデオの効果を追加したりする作業をプログラムから実行できる機能が備わっています。 作成したメディア コンポジションは、フラットなメディア ファイルにレンダリングして再生したり共有したりできるほか、コンポジションをディスクにシリアル化したりディスクから逆シリアル化したりすることもできるので、過去に作成されたコンポジションを読み込んで変更を加えるような機能をユーザーに提供することができます。 その機能はいずれも、使いやすい Windows ランタイムのインターフェイスとして用意されているため、低レベルの [Microsoft メディア ファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197) API と比べて、これらの作業を実行するために必要なコードの量や複雑さは大幅に軽減されます。
@@ -152,9 +151,9 @@ ms.locfileid: "246727"
 
 -   コンポジション内のメディア ファイルが、アプリがアクセスできる場所になく、アプリの [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) クラスの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) プロパティに存在しない場合、コンポジションの読み込み時にエラーがスローされます。
 
- 
+ 
 
- 
+ 
 
 
 

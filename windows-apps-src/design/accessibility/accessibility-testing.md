@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mhopkins
 ms.date: 05/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 02ba4a94bdca7ae9964cc40e7aba40f72beb5429
-ms.sourcegitcommit: e020e9a4d947368a68e4eeba1eea65e9b3a725af
-ms.translationtype: HT
+ms.openlocfilehash: 9b23d06f84a0d798a1e8b9c45a41d33751037402
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2018
-ms.locfileid: "1924355"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551810"
 ---
 # <a name="accessibility-testing"></a>アクセシビリティ テスト  
 
@@ -165,7 +163,7 @@ Windows 10 バージョン 1607 以降では、ナレーターで新しい開発
 
 ## <a name="related-topics"></a>関連トピック  
 * [アクセシビリティ](accessibility.md)
-* [避けるプラクティス](practices-to-avoid.md)
+* [避ける事項](practices-to-avoid.md)
 * [UI オートメーション](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
 * [Windows のアクセシビリティ](http://go.microsoft.com/fwlink/p/?LinkId=320802)
 * [ナレーターの概要](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

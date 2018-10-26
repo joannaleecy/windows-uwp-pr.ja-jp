@@ -10,19 +10,17 @@ keywords: Mixed Reality、Hololens、拡張現実、視線、音声、コント�
 ms.author: jken
 ms.date: 2/5/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4532325e51389b64704cd089b72ee183266069
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: 0f392d1d6c8eaa309e1774e8a98671a7743fdc9d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1639969"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554550"
 ---
 # <a name="designing-for-mixed-reality"></a>Mixed Reality 向けの設計
 

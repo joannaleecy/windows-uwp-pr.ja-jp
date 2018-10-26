@@ -6,16 +6,14 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 32beeae8d2398457311a14fa53afe330acdc75f2
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 32f55b0a387221b792e37072f129edddf285195b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700848"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552691"
 ---
 # <a name="transform-overview"></a>変換の概要
 
@@ -32,7 +30,7 @@ ms.locfileid: "1700848"
 | 射影空間への射影変換    | 次のステージは[射影変換](projection-transform.md)です。これにより、ビュー空間から射影空間への変換が行われます。 パイプラインのこの部分では、シーンに奥行き感を与えるために、オブジェクトが通常はビューアーからの距離に基づいてスケーリングされます。つまり、近くのオブジェクトは遠くのオブジェクトよりも大きく見えるように調整されます。 わかりやすくするために、このドキュメントでは、射影変換後に頂点が存在する空間を "射影空間"** と呼びます。 グラフィックスの解説書によっては、射影空間を "透視射影変換後の同次空間"** と呼ぶ場合もあります。 すべての射影変換でシーン内のオブジェクトのサイズが変更されるとは限りません。 このような射影は、"アフィン変換"** や "直行変換"** と呼ばれることがあります。 |
 | スクリーン空間でのクリッピング                      | パイプラインの最後の部分では、画面に表示されない頂点がすべて削除されます。これにより、表示されないオブジェクトの色や影の計算にラスタライザーが時間を費やすことはなくなります。 このプロセスを "クリッピング"** と呼びます。 クリッピング後、残りの頂点はビューポート パラメーターに従ってスケーリングされ、スクリーン座標に変換されます。 結果として得られる頂点は "スクリーン空間"** に存在し、シーンがラスタライズされるときに画面に表示されます。                                                                                                                                                                                                                                                    |
 
- 
+ 
 
 変換は、オブジェクト ジオメトリをある座標空間から別の座標空間に変換するために使われます。 Direct3D では、行列を使って 3D 変換を実行します。 行列は 3D 変換を作成します。 複数の行列を結合することで、複数の変換を含む 1 つの行列を作成できます。
 
@@ -163,9 +161,9 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 
 [変換](transforms.md)
 
- 
+ 
 
- 
+ 
 
 
 

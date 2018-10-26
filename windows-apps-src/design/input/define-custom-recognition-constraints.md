@@ -9,15 +9,13 @@ keywords: スピーチ, 音声, 音声認識, 自然言語, ディクテーシ�
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fdc38c39591a63800eb5d985022bb7ee569d7203
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 86ed884c3e9811c65d414dce6c0697e20dbd4711
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653481"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559308"
 ---
 # <a name="define-custom-recognition-constraints"></a>カスタム認識の制約の定義
 
@@ -182,7 +180,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-この SRGS ファイル (srgs.grxml) は、解釈タグを含みます。 これらのタグは、文法に合致するデータをアプリに返すしくみです。 文法は、World Wide Web コンソーシアム (W3C) の[音声認識のための意味解釈 (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) 仕様に準拠している必要があります。
+この SRGS ファイル (srgs.grxml) は、解釈タグを含みます。 これらのタグは、文法に合致するデータをアプリに返すしくみです。 文法は、World Wide Web コンソーシアム (W3C)[の音声認識 (Sisr) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765)仕様に準拠している必要があります。
 
 以下では、"yes" と "no" のバリエーションをリッスンします。
 
@@ -241,9 +239,9 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 **サンプル**
 * [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

@@ -6,19 +6,18 @@ ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D, バッファー, uniform, 頂点属性
-ms.openlocfilehash: d25495b282dce38c3dcad0ec996c185e64165b13
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: bc0192eb4b89ef91bc895a96e46cd39524f24c44
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243358"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558237"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 **重要な API**
@@ -41,7 +40,7 @@ OpenGL ES 2.0 では、4 つの方法で (定数データは uniform として�
 | フレーム バッファー オブジェクト (FBO) | レンダー ターゲット (「[**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)」と「[**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)」をご覧ください)。                                       |
 | バック バッファー               | スワップ チェーンと "バック バッファー" サーフェス (「[**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)」と「[**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343)」をご覧ください)。                       |
 
- 
+ 
 
 ## <a name="port-buffers"></a>バッファーの移植
 
@@ -298,9 +297,9 @@ struct VertexShaderInput
 };
 ```
 
- 
+ 
 
- 
+ 
 
 
 

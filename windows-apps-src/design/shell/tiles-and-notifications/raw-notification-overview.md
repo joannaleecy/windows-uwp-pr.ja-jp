@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 887600366fdf1bf3951091df27d10f54516c2bf0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 3e1a015d5d51ad0c15f20755afcb0d324acd1f36
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674549"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556052"
 ---
 # <a name="raw-notification-overview"></a>直接通知の概要
 
@@ -28,7 +26,7 @@ ms.locfileid: "1674549"
 > [!IMPORTANT]
 > 直接通知について理解するには、「[Windows プッシュ通知サービス (WNS) の概要](windows-push-notification-services--wns--overview.md)」で説明されている概念を理解していれば理想的です。
 
- 
+ 
 
 トースト、タイル、バッジのプッシュ通知の場合と同様に、直接通知は割り当てられたチャネルの URI (Uniform Resource Identifier) を介してアプリのクラウド サービスから WNS にプッシュされます。 その後、WNS はそのチャネルに関連付けられているデバイスとユーザー アカウントに通知を配信します。 他のプッシュ通知とは異なり、直接通知にはフォーマットの規定はありません。 ペイロードのコンテンツは、すべてアプリで定義されます。
 
@@ -97,7 +95,7 @@ ms.locfileid: "1674549"
 > [!IMPORTANT]
 > 直接通知のバックグラウンド タスクを使用する前に、[**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_) を使用してアプリにバックグラウンド アクセスを許可する必要があります。
 
- 
+ 
 
 バックグラウンド タスクは [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) に登録する必要があります。 登録されていないと、直接通知を受け取ったときにそのタスクが実行されません。
 
@@ -117,7 +115,7 @@ ms.locfileid: "1674549"
 ## <a name="other-resources"></a>その他のリソース
 
 
-詳しくは、Windows 8.1 の[直接通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=241553)や Windows 8.1 の[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=231476)をダウンロードし、Windows 10 アプリでそれらのソース コードを再利用してください。
+Windows8.1、および[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=231476)の Windows8.1、[直接通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=241553)をダウンロードして、windows 10 アプリでそれらのソース コードを再利用して詳しくを知ることができます。
 
 ## <a name="related-topics"></a>関連トピック
 
@@ -126,9 +124,9 @@ ms.locfileid: "1674549"
 * [クイック スタート: 実行中のアプリのプッシュ通知の中断](https://msdn.microsoft.com/library/windows/apps/jj709908)
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
- 
+ 
 
- 
+ 
 
 
 

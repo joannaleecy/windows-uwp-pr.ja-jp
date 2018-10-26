@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1c73f9b279f9cc3a6854db8a8509ae99904e70
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 2b7d9adfd9e058d4364470b07ef3e9129ade88b3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674849"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555686"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows プッシュ通知サービス (WNS) の概要
  
@@ -55,7 +53,7 @@ WNS を使って通知を送るには、アプリをストア ダッシュボー
 
 ### <a name="important-notes"></a>重要な注意
 
--   アプリの通知チャネルの URI は、常に同じであるとは限りません。 アプリを実行するたびに新しいチャネルを要求し、URI が変更されたらサービスを更新することをお勧めします。 チャネルの URI の文字列はブラック ボックスと見なし、変更しないようにしてください。 現時点で、チャネルの URI は 30 日が経過すると有効期限切れになります。 Windows 10 アプリのバックグラウンドでそのチャネルを定期的に更新する場合は、Windows 8.1 の[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードし、紹介されているソース コードやパターンを再利用することができます。
+-   アプリの通知チャネルの URI は、常に同じであるとは限りません。 アプリを実行するたびに新しいチャネルを要求し、URI が変更されたらサービスを更新することをお勧めします。 チャネルの URI の文字列はブラック ボックスと見なし、変更しないようにしてください。 現時点で、チャネルの URI は 30 日が経過すると有効期限切れになります。 場合は、windows 10 アプリを定期的に更新、バック グラウンドでそのチャネル Windows8.1[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードして、ソース コードやパターンを示してを再利用することができます。
 -   クラウド サービスとクライアント アプリの間のインターフェイスは開発者が実装します。 独自のサービスに対するアプリの認証プロセスでは、データの送信に HTTPS などのセキュリティで保護されたプロトコルを使うことをお勧めします。
 -   クラウド サービスでは、チャネルの URI で必ず "notify.windows.com" ドメインを使うことが重要です。 他のドメインのチャネルに通知をプッシュしないでください。 アプリのコールバックが侵害された場合、悪意のある攻撃者によってチャネルの URI が送信され、WNS がなりすまされるおそれがあります。 ドメインを調べないと、そのような攻撃者に対して、気付かないうちに情報を開示してしまう可能性があります。
 -   クラウド サービスが期限切れのチャネルに通知を配信しようとすると、WNS は[応答コード 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes) を返します。 このコードを受け取った後、サービスはその URI に対して通知を送らないようにする必要があります。
@@ -76,9 +74,9 @@ WNS の認証方式は、[OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=22
 
 WNS に対する認証では、クラウド サービスからの HTTP 要求の送信に Secure Sockets Layer (SSL) を使います。 パラメーターの形式は "application/x-www-for-urlencoded" です。 "client\_id" フィールドにパッケージ SID を指定し、"client\_secret" フィールドに秘密鍵を指定します。 構文について詳しくは、[アクセス トークン要求](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request)のリファレンスをご覧ください。
 
-**注**  次のコードは単なる例であり、切り取って貼り付けても独自のコードで使うことはできません。
+**注:** これは、例、独自のコードで使用できる正常にない切り取り、貼り付けコードだけです。
 
- 
+ 
 
 ``` http
  POST /accesstoken.srf HTTP/1.1
@@ -164,20 +162,20 @@ WNS はクラウド サービスを認証し、成功した場合、"200 OK" と
 ## <a name="push-notifications-and-battery-saver"></a>プッシュ通知とバッテリー セーバー
 
 
-バッテリー セーバーは、デバイスでのバックグラウンド アクティビティを制限することでバッテリーの寿命を延ばします。 Windows 10 を使うと、バッテリーが指定されたしきい値を下回ったときに、ユーザーは自動的にバッテリー セーバーをオンになるように設定することができます。 バッテリー セーバーがオンのときは、電力を節約するため、プッシュ通知の受信は無効になります。 ただし、これにはいくつかの例外があります。 次の Windows 10 バッテリ セーバー設定 (**[設定]** アプリにあります) により、バッテリ セーバーがオンになっているときでも、プッシュ通知を受け取ることができます。
+バッテリー セーバーは、デバイスでのバックグラウンド アクティビティを制限することでバッテリーの寿命を延ばします。 Windows 10 では、ユーザーがバッテリが指定したしきい値を下回ったときに自動的にオンにする、バッテリー節約機能を設定できます。 バッテリー セーバーがオンのときは、電力を節約するため、プッシュ通知の受信は無効になります。 ただし、これにはいくつかの例外があります。 (、**設定**アプリが見つかりません) 次の windows 10 バッテリ セーバー設定では、アプリがバッテリー セーバーがオンにしている場合でも、プッシュ通知を受信できるようにします。
 
--   **[バッテリー節約機能がオンのときも、すべてのアプリケーションからのプッシュ通知を許可する]**: この設定では、バッテリー節約機能がオンになっているときでも、すべてのアプリがプッシュ通知を受け取ることができます。 この設定が適用されるのは、デスクトップ エディション (Home、Pro、Enterprise、Education の各エディション) 用 Windows 10 のみです。
+-   **[バッテリー節約機能がオンのときも、すべてのアプリケーションからのプッシュ通知を許可する]**: この設定では、バッテリー節約機能がオンになっているときでも、すべてのアプリがプッシュ通知を受け取ることができます。 この設定が windows 10 デスクトップ エディション (Home、Pro、Enterprise、および Education) にのみ適用されることに注意してください。
 -   **[常に許可]**: この設定では、バッテリー節約機能がオンになっているときでも、プッシュ通知の受け取りを含めて、バックグラウンドで特定のアプリを実行できます。 この一覧は、ユーザーによって手動で管理されます。
 
-これら 2 つの設定の状態を確認する方法はありませんが、バッテリ セーバーの状態を確認することはできます。 Windows 10 では、[**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus) プロパティを使って、バッテリ セーバーの状態を確認します。 アプリでは、[**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) イベントを使って、バッテリ セーバーの変更をリッスンすることもできます。
+これら 2 つの設定の状態を確認する方法はありませんが、バッテリ セーバーの状態を確認することはできます。 Windows 10 には、バッテリ セーバーの状態をチェックする[**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus)プロパティを使います。 アプリでは、[**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) イベントを使って、バッテリ セーバーの変更をリッスンすることもできます。
 
-アプリがプッシュ通知を多用している場合は、バッテリ セーバーがオンの時は通知を受け取らないことをユーザーに通知し、**バッテリ セーバーの設定**を簡単に調整できるようにすることをお勧めします。 Windows 10 でバッテリ セーバー設定の URI スキーム `ms-settings:batterysaver-settings` を使って、設定アプリへの便利なリンクを提供することができます。
+アプリがプッシュ通知を多用している場合は、バッテリ セーバーがオンの時は通知を受け取らないことをユーザーに通知し、**バッテリ セーバーの設定**を簡単に調整できるようにすることをお勧めします。 バッテリー節約機能設定の URI スキームを使用して、windows 10 で`ms-settings:batterysaver-settings`、設定アプリへの便利なリンクを提供することができます。
 
-**ヒント**   バッテリー節約機能の設定をユーザーに通知するときは、今後、メッセージを表示しないようにする方法を提供することをお勧めします。 たとえば、次の例の [`dontAskMeAgainBox`] チェックボックスは、[**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) でユーザーの設定を保持します。
+**ヒント:**  、今後このメッセージを抑制する方法を提供することをお勧めしますバッテリ セーバーの設定に関するユーザーに通知するという場合です。 たとえば、次の例の [`dontAskMeAgainBox`] チェックボックスは、[**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) でユーザーの設定を保持します。
 
- 
+ 
 
-Windows 10 でバッテリー セーバーがオンになっているかどうかを確認する方法の例を示します。 この例では、ユーザーに通知し、[設定] アプリを**バッテリ セーバー設定**で起動します。 `dontAskAgainSetting` により、ユーザーは再度通知を表示しないようにする場合に、メッセージを非表示にすることができます。
+バッテリー節約機能がオンである windows 10 で確認する方法の例を次に示します。 この例では、ユーザーに通知し、[設定] アプリを**バッテリ セーバー設定**で起動します。 `dontAskAgainSetting` により、ユーザーは再度通知を表示しないようにする場合に、メッセージを非表示にすることができます。
 
 ```cs
 using System;
@@ -256,9 +254,9 @@ async public void CheckForEnergySaving()
 * [プッシュ通知サービスの要求ヘッダーと応答ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435)
 * [プッシュ通知のガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [直接通知](https://msdn.microsoft.com/library/windows/apps/hh761488)
- 
+ 
 
- 
+ 
 
 
 

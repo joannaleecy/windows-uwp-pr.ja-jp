@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 982a590f602aa1692de91536d50cbadb19f8f1d1
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: e2ff4e2ff079e15c0af41e3232c4b70c582a6a25
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043051"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553697"
 ---
 # <a name="hazard-tracking-versus-tile-pool-resources"></a>ハザード追跡対タイル プール リソース
 
@@ -34,9 +32,9 @@ ms.locfileid: "1043051"
 
 [タイル プールにマッピングされます](mappings-are-into-a-tile-pool.md)
 
- 
+ 
 
- 
+ 
 
 
 

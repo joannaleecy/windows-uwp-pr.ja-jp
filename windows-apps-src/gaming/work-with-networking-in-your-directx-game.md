@@ -6,19 +6,18 @@ ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, ネットワーク, DirectX
-ms.openlocfilehash: ce94dda0eaf156f1e09fefbd76f50bc764050970
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: cc30a66db3fb01edebf4705ecb2e85ea4dbb94d6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246800"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551343"
 ---
 # <a name="networking-for-games"></a>ゲームのネットワーク
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 ネットワーク機能を開発し、DirectX ゲームに組み込む方法について説明します。
 
@@ -48,10 +47,10 @@ DirectX ゲームに使うことのできる Networking API は、多数あり�
 
 ゲームに使うことができる主要なネットワーク API には、次のようなものがあります。
 
--   TCP とソケット - 信頼性の高い接続を実現します。 TCP は、セキュリティを必要としないゲーム操作に使います。 TCP を使うとサーバーの規模変更が容易であるため、インフラストラクチャ (クライアント サーバーまたはインターネット ピア ツー ピア) モデルのゲームでよく使われます。 TCP は、Wi-Fi Direct と Bluetooth を経由したアドホック (ローカル ピア ツー ピア) ゲームでも使うことができます。 TCP は一般的に、ゲーム オブジェクトの動き、文字操作、テキスト チャットなどの操作に使います。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、Windows ストア ゲームで使うことができる TCP ソケットを提供します。 **StreamSocket** クラスは、[**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の関連クラスと共に使われます。
+-   TCP とソケット - 信頼性の高い接続を実現します。 TCP は、セキュリティを必要としないゲーム操作に使います。 TCP を使うとサーバーの規模変更が容易であるため、インフラストラクチャ (クライアント サーバーまたはインターネット ピア ツー ピア) モデルのゲームでよく使われます。 TCP は、Wi-Fi Direct と Bluetooth を経由したアドホック (ローカル ピア ツー ピア) ゲームでも使うことができます。 TCP は一般的に、ゲーム オブジェクトの動き、文字操作、テキスト チャットなどの操作に使います。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)クラスは、Microsoft Store ゲームで使用できる TCP ソケットを提供します。 **StreamSocket** クラスは、[**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の関連クラスと共に使われます。
 -   SSL を使う TCP とソケット - 信頼性の高い接続を提供して改ざんを防ぎます。 SSL を伴う TCP 接続は、セキュリティを必要とするゲーム操作で使います。 SSL の暗号化とオーバーヘッドにより、待機時間とパフォーマンスのコストが増加するため、セキュリティが必要な場合にのみ使うようにします。 一般的に、SSL を伴う TCP は、ログイン、アセットの購入とトレーディング、ゲーム キャラクターの作成と管理に使います。 SSL をサポートする TCP ソケットは、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスで提供されます。
--   UDP とソケット - 信頼性の低いネットワーク転送を低いオーバーヘッドで提供します。 UDP は、待機時間を短くする必要があり、ある程度のパケット損失を許容できるゲーム操作に使われます。 これは、ファイティング ゲーム、シューティング、トレーサー、ネットワーク オーディオ、ボイス チャットなどによく使われます。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスは、Windows ストア ゲームで使うことができる UDP ソケットを提供します。 **DatagramSocket** クラスは、[**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の関連クラスと共に使われます。
--   HTTP クライアント - HTTP サーバーへの、信頼性の高い接続を実現します。 最も一般的なネットワーク シナリオは、Web サイトにアクセスして情報を取得または保存することです。 単純な例としては、Web サイトを使ってユーザー情報とゲームのスコアを保存するゲームが考えられます。 HTTP クライアントは、SSL と組み合わせてセキュリティを強化すると、ログイン、購入、アセットのトレーディング、ゲーム キャラクターの作成、管理に使うことができます。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) クラスは、Windows ストア ゲームで使う最新の HTTP クライアント API を提供します。 **HttpClient** クラスは、[**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間の関連クラスと共に使われます。
+-   UDP とソケット - 信頼性の低いネットワーク転送を低いオーバーヘッドで提供します。 UDP は、待機時間を短くする必要があり、ある程度のパケット損失を許容できるゲーム操作に使われます。 これは、ファイティング ゲーム、シューティング、トレーサー、ネットワーク オーディオ、ボイス チャットなどによく使われます。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)クラスは、Microsoft Store ゲームで使用できる UDP ソケットを提供します。 **DatagramSocket** クラスは、[**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の関連クラスと共に使われます。
+-   HTTP クライアント - HTTP サーバーへの、信頼性の高い接続を実現します。 最も一般的なネットワーク シナリオは、Web サイトにアクセスして情報を取得または保存することです。 単純な例としては、Web サイトを使ってユーザー情報とゲームのスコアを保存するゲームが考えられます。 HTTP クライアントは、SSL と組み合わせてセキュリティを強化すると、ログイン、購入、アセットのトレーディング、ゲーム キャラクターの作成、管理に使うことができます。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)クラスは、最新の HTTP クライアント API の使用では、Microsoft Store ゲームを提供します。 **HttpClient** クラスは、[**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間の関連クラスと共に使われます。
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>DirectX ゲームでのネットワーク例外の処理
 

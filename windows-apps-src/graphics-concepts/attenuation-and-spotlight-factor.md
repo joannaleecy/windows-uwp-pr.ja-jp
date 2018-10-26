@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 18746ef231f7d2b387866fba82e4f12a44476001
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 65b9f6700ddd11c41193820a5247a90c2382c98b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044621"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558181"
 ---
 # <a name="attenuation-and-spotlight-factor"></a>減衰とスポットライト係数
 
@@ -39,7 +37,7 @@ Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
 | att2<sub>i</sub> | 0.0           | 浮動小数点 | 2 次減衰係数                    | 0 ～正の無限大 |
 | d                | なし           | 浮動小数点 | 頂点の位置からライトの位置までの距離 | なし            |
 
- 
+ 
 
 -   Atten = 1 (指向性ライトの場合)
 -   Atten = 0 (ライトと頂点との距離がライトの範囲を超えている場合)
@@ -54,7 +52,7 @@ d = |L<sub>dir</sub> |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
 | L<sub>dir</sub> | なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点の位置からライトの位置への方向ベクトル |
 
- 
+ 
 
 d がライトの範囲を超えると、Direct3D はそれ以上減衰を計算せず、ライトから頂点へのエフェクトも適用しなくなります。
 
@@ -76,7 +74,7 @@ d がライトの範囲を超えると、Direct3D はそれ以上減衰を計算
 | theta<sub>i</sub> | 0.0           | 浮動小数点 | スポットライトの本影の角度 (ラジアン)    | \[0, pi)                 |
 | falloff           | 0.0           | 浮動小数点 | 減衰係数                           | (-infinity, +infinity)   |
 
- 
+ 
 
 この場合
 
@@ -89,7 +87,7 @@ rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 | L<sub>dcs</sub> | なし           | 3D ベクトル (x、y、z 浮動小数点値) | カメラ空間でのライトの負の方向         |
 | L<sub>dir</sub> | なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点の位置からライトの位置への方向ベクトル |
 
- 
+ 
 
 ライトの減衰を計算した後、Direct3D は、スポットライトのエフェクト (適用可能な場合)、サーフェスからのライトの反射角度、および現在のマテリアルの反射率も考慮して、頂点のディフューズ成分とスペキュラ成分を計算します。 詳しくは、「[ライトの種類](light-types.md)」の「スポットライト」をご覧ください。
 
@@ -98,9 +96,9 @@ rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 
 [光源の計算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

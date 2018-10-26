@@ -6,16 +6,14 @@ ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a0baee79873203f9f52fd1e9acae03c7647240
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e7541a8f54f64197c17acea5f1737e36b0e6f670
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652811"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556866"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>簡単な OpenGL ES 2.0 レンダラーの Direct3D 11 への移植
 
@@ -84,9 +82,9 @@ typedef struct
 
 この構造体には、インスタンスが 1 つあり、頂点シェーディングされた非常に簡単なメッシュをレンダリングするために必要なコンポーネントがすべて含まれています。
 
-> **注:** このトピックの OpenGL ES 2.0 コードはすべて Khronos Group が提供する Windows API の実装に基づいており、Windows C プログラミング構文を使っています。
+> **注:** このトピックの OpenGL ES 2.0 コードは、Khronos Group によって提供される Windows API の実装に基づいてし、Windows C プログラミング構文を使用します。
 
- 
+ 
 
 ## <a name="what-you-need-to-know"></a>理解しておく必要があること
 
@@ -134,7 +132,7 @@ typedef struct
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>その他の情報
 
@@ -143,9 +141,9 @@ typedef struct
 -   [テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)
 -   [Direct3D 11 への OpenGL ES 2.0 のマッピング](map-concepts-and-infrastructure.md)
 
- 
+ 
 
- 
+ 
 
 
 

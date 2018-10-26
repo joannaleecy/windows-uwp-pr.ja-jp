@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 032518fe793db99309d098b28f2f8e94bbb072ba
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9de6759fb15aef4b32a5e9022a27cab09af300f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043931"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553497"
 ---
 # <a name="camera-space-transformations"></a>カメラの空間変換
 
@@ -56,16 +54,16 @@ L<sub>dir</sub> = norm(V \* Lₚ) これらのパラメータの定義を次の�
 | Lₚ              | なし           | 3D ベクトル (x、y、z 浮動小数点値) | カメラ空間でのライトの位置                            |
 | vMatrix         | ID      | 浮動小数点値の 4 x 4 マトリックス           | ビュー変換を含む行列                      |
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [光源の計算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

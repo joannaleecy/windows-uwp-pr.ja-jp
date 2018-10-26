@@ -4,22 +4,20 @@ Description: The Microsoft Store enforces certain rules related to version numbe
 title: パッケージ バージョンの番号付け
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cf93cf06b273605b91c31da5b6a6b8cef8dae39
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 045e44d3ba243b4c4fbf68ba37e91c06eb022d27
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470410"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558774"
 ---
 # <a name="package-version-numbering"></a>パッケージ バージョンの番号付け
 
-提供する各パッケージには、バージョン番号がある必要があります (アプリ マニフェストの **Package/Identity** 要素の **Version** 属性の値として提供されます)。 Microsoft Store ではバージョン番号に関する特定の規則が適用され、別の OS バージョンでは機能が多少異なります。
+提供する各パッケージには、バージョン番号がある必要があります (アプリ マニフェストの [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 要素の **Version** 属性の値として提供されます)。 Microsoft Store ではバージョン番号に関する特定の規則が適用され、別の OS バージョンでは機能が多少異なります。
 
 > [!NOTE]
 > このトピックでは「パッケージ」していますが、.msix/.appx および.msixbundle/.appxbundle ファイルの両方のバージョン番号に同じ規則が適用記載します。
@@ -28,7 +26,7 @@ ms.locfileid: "5470410"
 ## <a name="version-numbering-for-windows10-packages"></a>Windows 10 パッケージのバージョン番号付け
 
 > [!IMPORTANT]
-> Windows 10 (UWP) パッケージのバージョン番号の最後 (4 番目) のセクションはストア用に予約されておりままにしてする必要があります 0 (ただし、ストアでは、このセクションの値を変更可能性があります)、パッケージをビルドするとします。
+> Windows 10 (UWP) パッケージのバージョン番号の最後 (4 番目) のセクションはストア用に予約されておりままにしてする必要があります 0 (ただし、ストアでは、このセクションの値を変更可能性があります)、パッケージをビルドするとします。 その他のセクションでは、0 ~ 65535 (を除き、最初のセクションが 0 にすることはできません) の整数に設定する必要があります。
 
 公開された申請から UWP パッケージを選択するとき、Microsoft Store は常にユーザーの Windows 10 デバイスに適用可能な最も高いバージョンのパッケージを使用します。 これにより高い柔軟性が与えられ、特定のデバイスの種類のユーザーにどのパッケージを提供するかを管理することができます。 重要なことに、これらのパッケージは任意の順序で申請することができます。後続の各申請でより高いバージョンのパッケージを提供する必要はありません。
 

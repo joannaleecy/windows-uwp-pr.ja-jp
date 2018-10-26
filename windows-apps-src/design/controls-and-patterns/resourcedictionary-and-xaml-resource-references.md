@@ -11,16 +11,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 399963b0d0c9ef4d3860daf1b090af28c9cf97d0
-ms.sourcegitcommit: 67cb03db41556cf0d58993073654cd0706aede84
-ms.translationtype: HT
+ms.openlocfilehash: 8b5d2a55610b6cec2f9026a5834b00ad7015a9c6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
-ms.locfileid: "1480628"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555159"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary と XAML リソースの参照
 
@@ -99,11 +97,13 @@ XAML リソースは、マークアップから 2 回以上参照されるオブ
 
     <Page.Resources>
         <Style TargetType="Button">
-              <Setter Property="Background" Value="red"/>
+            <Setter Property="Background" Value="Red"/>
         </Style>
-    </Page.Resources> 
+    </Page.Resources>
+    <Grid>
        <!-- This button will have a red background. -->
        <Button Content="Button" Height="100" VerticalAlignment="Center" Width="100"/>
+    </Grid>
 </Page>
 ```
 
@@ -113,9 +113,10 @@ XAML リソースは、マークアップから 2 回以上参照されるオブ
 
 その他のディクショナリなどのリソース ディクショナリのメンバーにアクセスします。
 
-> **注**&nbsp;&nbsp;コード内でこのリソース検索を実行すると、`Page.Resources` ディクショナリ内のリソースだけが検索されます。 [StaticResource マークアップ拡張](../../xaml-platform/staticresource-markup-extension.md)とは異なり、最初のディクショナリでリソースが見つからない場合に、コードは `Application.Resources` ディクショナリにフォールバックしません。
+> [!WARNING]
+> コード内のリソースだけでリソース検索を実行すると、`Page.Resources`のディクショナリです。 [StaticResource マークアップ拡張](../../xaml-platform/staticresource-markup-extension.md)とは異なり、最初のディクショナリでリソースが見つからない場合に、コードは `Application.Resources` ディクショナリにフォールバックしません。
 
- 
+ 
 
 この例では、ページのリソース ディクショナリから `redButtonStyle` リソースを取得する方法を示します。
 
@@ -203,29 +204,7 @@ sealed partial class App : Application
 
 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) は、コントロールの継承元の基底クラスであり、[Resources](https://msdn.microsoft.com/library/windows/apps/br208740) プロパティがあります。 そのため、任意の **FrameworkElement** にローカル リソース ディクショナリを追加できます。
 
-ここでは、リソース ディクショナリがページ要素に追加されます。
-
-```XAML
-<Page
-    x:Class="MSDNSample.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-    <Page.Resources>
-        <x:String x:Key="greeting">Hello world</x:String>
-    </Page.Resources>
-
-    <Border>
-        <Border.Resources>
-            <x:String x:Key="greeting">Hola mundo</x:String>
-        </Border.Resources>
-        <TextBlock Text="{StaticResource greeting}" Foreground="Gray" VerticalAlignment="Center"/>
-    </Border>
-</Page>
-
-```
-
-ここでは、[Page](https://msdn.microsoft.com/library/windows/apps/br227503) と [Border](https://msdn.microsoft.com/library/windows/apps/br209250) の両方にリソース ディクショナリがあり、どちらにも "greeting" というリソースがあります。 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) は **Border** 内にあるため、そのリソース検索はまず **Border** のリソースを検索した後、**Page** のリソース、[Application](https://msdn.microsoft.com/library/windows/apps/br242324) のリソースの順に検索します。 **TextBlock** には、"Hola mundo" と表示されます。
+ここでは、[Page](https://msdn.microsoft.com/library/windows/apps/br227503) と [Border](https://msdn.microsoft.com/library/windows/apps/br209250) の両方にリソース ディクショナリがあり、どちらにも "greeting" というリソースがあります。 'TextBlock2' という名前の[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)は**境界線**、内でそのリソース検索はまず、**境界線**のリソースし、**ページ**のリソース、および[アプリケーション](https://msdn.microsoft.com/library/windows/apps/br242324)リソース。 **TextBlock** には、"Hola mundo" と表示されます。
 
 コードからその要素のリソースにアクセスするには、その要素の [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) プロパティを使います。 XAML ではなくコード内の [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) のリソースにアクセスすると、親要素のディクショナリではなくそのディクショナリのみ検索されます。
 
@@ -234,16 +213,25 @@ sealed partial class App : Application
     x:Class="MSDNSample.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
     <Page.Resources>
         <x:String x:Key="greeting">Hello world</x:String>
     </Page.Resources>
+    
+    <StackPanel>
+        <!-- Displays "Hello world" -->
+        <TextBlock x:Name="textBlock1" Text="{StaticResource greeting}"/>
 
-    <Border x:Name="border">
-        <Border.Resources>
-            <x:String x:Key="greeting">Hola mundo</x:String>
-        </Border.Resources>
-    </Border>
+        <Border x:Name="border">
+            <Border.Resources>
+                <x:String x:Key="greeting">Hola mundo</x:String>
+            </Border.Resources>
+            <!-- Displays "Hola mundo" -->
+            <TextBlock x:Name="textBlock2" Text="{StaticResource greeting}"/>
+        </Border>
+
+        <!-- Displays "Hola mundo", set in code. -->
+        <TextBlock x:Name="textBlock3"/>
+    </StackPanel>
 </Page>
 
 ```
@@ -254,7 +242,7 @@ sealed partial class App : Application
         public MainPage()
         {
             this.InitializeComponent();
-            string str = (string)border.Resources["greeting"];
+            textBlock3.Text = (string)border.Resources["greeting"];
         }
     }
 ```
@@ -359,7 +347,7 @@ sealed partial class App : Application
 
 </ResourceDictionary>
 
-<!—Dictionary2.xaml -->
+<!-- Dictionary2.xaml -->
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -407,7 +395,7 @@ XAML リソース参照の検索の動作は、実際に使用が適用される
 
 > **注**&nbsp;&nbsp;このリソース検索動作と共に XAML マークアップ スタイルの規則も利用するために、すべての即時リソースをページのルート レベルに定義するのは一般的なやり方です。
 
- 
+ 
 
 要求されたリソースが即時リソースに見つからない場合、次の検索手順では [Application.Resources](https://msdn.microsoft.com/library/windows/apps/br242338) プロパティが確認されます。 **Application.Resources** は、アプリのナビゲーション構造で複数のページによって参照されるアプリ固有のリソースを挿入するのに最適な場所です。
 
@@ -463,7 +451,7 @@ XAML リソース参照の検索の動作は、実際に使用が適用される
 
 [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) のシナリオのほとんどが、XAML のみで処理されます。 UI 定義ファイルの XAML ノード セットまたは XAML ファイルとして **ResourceDictionary** コンテナーとリソースを宣言します。 次に、XAML リソース参照を使って、XAML の他の部分からリソースを要求します。 それでも、アプリの実行中にコードを実行して **ResourceDictionary** の内容を調整するというシナリオ、または、少なくとも **ResourceDictionary** の内容を照会して、リソースが定義済みかどうか確認するというシナリオもあります。 これらのコードは **ResourceDictionary** インスタンスで呼び出されるため、最初に [FrameworkElement.Resources](https://msdn.microsoft.com/library/windows/apps/br208740) を取得することでオブジェクト ツリー内のどこかにある即時 **ResourceDictionary** を取得するか、`Application.Current.Resources` を取得する必要があります。
 
-C\# または Microsoft Visual Basic コードでは、インデクサー ([Item](https://msdn.microsoft.com/library/windows/apps/jj603134)) を使って所定の [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) 内のリソースを参照できます。 **ResourceDictionary** は、文字列キーを持つディクショナリであるため、インデクサーは整数インデックスではなく文字列キーを使います。 Visual C++ コンポーネント拡張機能 (C++/CX) コードでは、[Lookup](https://msdn.microsoft.com/library/windows/apps/br208800) を使います。
+C\# または Microsoft Visual Basic コードでは、インデクサー ([Item](https://msdn.microsoft.com/library/windows/apps/jj603134)) を使って所定の [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) 内のリソースを参照できます。 **ResourceDictionary** は、文字列キーを持つディクショナリであるため、インデクサーは整数インデックスではなく文字列キーを使います。 VisualC ではコンポーネント拡張機能 (、C++/cli CX) コードでは、[参照](https://msdn.microsoft.com/library/windows/apps/br208800)を使用します。
 
 コードを使って [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) を調査または変更するときは、[Lookup](https://msdn.microsoft.com/library/windows/apps/br208800) や [Item](https://msdn.microsoft.com/library/windows/apps/jj603134) などの API の動作で、即時リソースからアプリ リソースまで走査することはありません。XAML ページを読み込むときにのみ実行される XAML パーサーの動作とは異なります。 実行時、キーのスコープはその時点で使っている **ResourceDictionary** インスタンスに対して自己完結しています。 ただし、そのスコープは [MergedDictionaries](https://msdn.microsoft.com/library/windows/apps/br208801) まで広がりません。
 
@@ -484,7 +472,7 @@ C\# または Microsoft Visual Basic コードでは、インデクサー ([Item
 
 高度なシナリオとして、このトピックで説明した XAML リソース参照の検索の動作とは異なる動作を持つクラスを実装できます。 そのためには、[CustomXamlResourceLoader](https://msdn.microsoft.com/library/windows/apps/br243327) クラスを実装します。すると、[StaticResource](../../xaml-platform/staticresource-markup-extension.md) または [ThemeResource](../../xaml-platform/themeresource-markup-extension.md) を使う代わりにリソース参照に [CustomResource markup extension](https://msdn.microsoft.com/library/windows/apps/mt185580) を使って、この動作にアクセスできるようになります。 ほとんどのアプリにこれを必要とするシナリオはありません。 詳しくは、「[CustomXamlResourceLoader](https://msdn.microsoft.com/library/windows/apps/br243327)」をご覧ください。
 
- 
+ 
 ## <a name="related-topics"></a>関連トピック
 
 * [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794)
@@ -495,9 +483,9 @@ C\# または Microsoft Visual Basic コードでは、インデクサー ([Item
 * [コントロールのスタイル](xaml-styles.md)
 * [x:Key 属性](https://msdn.microsoft.com/library/windows/apps/mt204787)
 
- 
+ 
 
- 
+ 
 
 
 

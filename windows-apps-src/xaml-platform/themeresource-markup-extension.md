@@ -6,16 +6,14 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2b292688d05e9886851016f2d3526a1926e418
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 024e48380941c0d79eef65780396ec9b89edc3c7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675099"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557661"
 ---
 # <a name="themeresource-markup-extension"></a>{ThemeResource} マークアップ拡張
 
@@ -71,7 +69,7 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 **ThemeResource** は、一連の依存型の値で使われる場合があります。 たとえば、キーを持つリソースである [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) で使われる [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) で **ThemeResource** 参照を使うことがあります。 ただし、キーを持つ **SolidColorBrush** リソースを使う任意の UI プロパティで **ThemeResource** 参照を使うこともあります。この場合、テーマが変更されたときに動的な値の変更を可能にするのはそれぞれの [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) タイプのプロパティです。
 
-**注**  テーマ切り替え時の `{ThemeResource}` および実行時リソースの評価は Windows 8.1 XAML ではサポートされますが、Windows 8 をターゲットとするアプリの XAML ではサポートされません。
+**注:** `{ThemeResource}`とテーマ切り替え実行時のリソースの評価が Windows8.1 XAML でサポートされていますが、Windows8 をターゲットとするアプリの XAML でサポートされていません。
 
 ### <a name="system-resources"></a>システム リソース
 
@@ -140,13 +138,13 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 この [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 値は、システム リソースに対するもう 1 つの **ThemeResource** 参照です。 システム リソースを参照し、テーマの変更に応じてシステム リソースを変更する場合は、**ThemeResource** を使って参照を行う必要があります。
 
-## <a name="windows-8-behavior"></a>Windows 8 の動作
+## <a name="windows8-behavior"></a>Windows8 動作
 
-Windows 8 では **ThemeResource** マークアップ拡張はサポートされていませんでしたが、Windows 8.1 以降で利用できるようになりました。 また、Windows 8 は、Windows ランタイム アプリのテーマ関連リソースの動的切り替えをサポートしていません。 XAML テンプレートとスタイルのテーマ変更を認識するには、アプリを再起動する必要がありました。 これは褒められたユーザー エクスペリエンスではありません。そのため、アプリを再コンパイルして Windows 8.1 をターゲットにすることを強くお勧めします。そうすれば、**ThemeResource** を利用したスタイルを使うことができ、ユーザーがテーマを切り替えたときに動的にテーマを切り替えることができます。 Windows 8 用にコンパイルしたアプリは、Windows 8.1 上で実行しても Windows 8 のときと同じ動作になります。
+Windows8 **ThemeResource**マークアップ拡張機能をサポートしていませんが、Windows8.1 で利用できます。 また、Windows8 では、Windows ランタイム アプリのテーマに関連するリソースを動的に切り替えしなかったできません。 XAML テンプレートとスタイルのテーマ変更を認識するには、アプリを再起動する必要がありました。 これは、手順は、優れたユーザー エクスペリエンスのためアプリを再コンパイルしてターゲット Windows8.1 を強くお勧めできるように、 **ThemeResource**使用法とスタイルを使用してには、ユーザーがときに、テーマを動的に切り替えることができます。 Windows8 が Windows8.1 で実行されている Windows8 動作を使い続ける用にコンパイルしたアプリ。
 
 ## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>設計時ツールの **{ThemeResource}** マークアップ拡張のサポート
 
-MicrosoftVisual Studio 2013 では、XAML ページで **{ThemeResource}** マークアップ拡張を使うときに Microsoft IntelliSense のドロップダウンに可能なキー値を含めることができます。 たとえば、「{ThemeResource」と入力するとすぐに、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)のリソース キーが表示されます。
+Microsoft Visual Studio2013 は、XAML ページで、 **{ThemeResource}** マークアップ拡張機能を使用する場合、Microsoft IntelliSense のドロップダウンに可能なキー値を含めることができます。 たとえば、「{ThemeResource」と入力するとすぐに、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)のリソース キーが表示されます。
 
 **{ThemeResource}** の一部としてリソース キーが存在すると、**[定義へ移動]** (F12 キー) 機能でそのリソースを解決して、テーマ リソースが定義されている設計時の generic.xaml を表示できます。 テーマ リソースを何度も定義されるため (テーマごとに)、**[定義へ移動]** ではファイルで見つかった最初の定義に移動します。これは **Default** の定義です。 他の定義が必要な場合は、ファイル内のキー名を検索して、他のテーマの定義を参照できます。
 
@@ -156,5 +154,5 @@ MicrosoftVisual Studio 2013 では、XAML ページで **{ThemeResource}** マ�
 * [XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [x:Key 属性](x-key-attribute.md)
- 
+ 
 

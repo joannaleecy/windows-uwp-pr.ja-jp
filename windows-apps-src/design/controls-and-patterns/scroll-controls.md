@@ -8,20 +8,18 @@ template: detail.hbs
 ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP
 pm-contact: Abarlow, pagildea
 design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: daf21154832b46bdd2d9b046b39dadc88bb32d33
-ms.sourcegitcommit: e020e9a4d947368a68e4eeba1eea65e9b3a725af
-ms.translationtype: HT
+ms.openlocfilehash: 983f80c705aba44fe096f9dfa05b71b0cf28f294
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2018
-ms.locfileid: "1924385"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558708"
 ---
 # <a name="scroll-viewer-controls"></a>スクロール ビューアー コントロール
 

@@ -8,22 +8,20 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cea4368ce995ce50726499b6c1c6875f83b72e7b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: ce3b1ebfc2f18a06ff4fa960c91749f61f5011d9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652331"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556486"
 ---
 # <a name="coordinate-systems-and-geometry"></a>座標系とジオメトリ
 
 
 Direct3D アプリケーションをプログラムするには、3D ジオメトリの原理を実務で熟知していることが必要です。 ここでは、3D シーンを作成するための最も重要なジオメトリの概念について説明します。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>このセクションの内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>説明するトピックは、次のとおりです。
 
 
 <table>
@@ -73,16 +71,16 @@ Direct3D アプリケーションをプログラムするには、3D ジオメ�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [Direct3D グラフィックスの学習ガイド](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

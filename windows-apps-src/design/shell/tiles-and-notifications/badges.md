@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fc09e7a9d98d04c53aac0d76293b9d8e4dc6ed91
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 667efeb67c956f8d4378b0e7e4011f7e06977519
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515807"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557273"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>UWP アプリ向けのバッジ通知
 

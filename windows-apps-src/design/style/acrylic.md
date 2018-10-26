@@ -6,20 +6,18 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: yulikl
 design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bf91725a62c8d03c37448ddf69b072461288f11
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: f9d56090e8fc1de83eeb4e8a68ca1830692c5b2f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514926"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552250"
 ---
 # <a name="acrylic-material"></a>アクリル素材
 

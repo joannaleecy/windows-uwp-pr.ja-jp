@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e26a446bdd1e5a692e826d2c0ba303688bbd3d7
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: cca90c705c7bb4dd1c7e283a9c3ed267cd282b56
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044201"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554454"
 ---
 # <a name="constant-buffer-view-cbv"></a>定数バッファー ビュー (CBV)
 
@@ -32,9 +30,9 @@ ms.locfileid: "1044201"
 
 [ビュー](views.md)
 
- 
+ 
 
- 
+ 
 
 
 

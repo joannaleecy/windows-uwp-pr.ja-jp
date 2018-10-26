@@ -5,15 +5,15 @@ description: 相対マウス制御を使用して、ゲーム内でのマウス�
 ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, マウス, 入力
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
-ms.openlocfilehash: dff08052af7f005366f9cb5154b307c13a316953
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: adf3b629095f633521b99133ce1961e5c8408ef5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243103"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552072"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>相対マウス移動と CoreWindow
 
@@ -67,11 +67,11 @@ void MoveLookController::OnMouseMoved(
     pointerDelta.y = static_cast<float>(args->MouseDelta.Y);
 
     float2 rotationDelta;
-    rotationDelta = pointerDelta * ROTATION_GAIN;    // scale for control sensitivity
+    rotationDelta = pointerDelta * ROTATION_GAIN;   // scale for control sensitivity
 
     // update our orientation based on the command
-    m_pitch -= rotationDelta.y;                        // mouse y increases down, but pitch increases up
-    m_yaw   -= rotationDelta.x;                        // yaw defined as CCW around y-axis
+    m_pitch -= rotationDelta.y;                     // mouse y increases down, but pitch increases up
+    m_yaw   -= rotationDelta.x;                     // yaw defined as CCW around y-axis
 
     // limit pitch to straight up or straight down
     float limit = (float)(M_PI/2) - 0.01f;

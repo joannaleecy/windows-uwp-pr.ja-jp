@@ -5,16 +5,14 @@ title: Xbox Live のマルチプレイヤー データの取得
 ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, マルチプレイヤー
 ms.localizationpriority: medium
-ms.openlocfilehash: 84255c97186accfcafc561eeb77e0fdb6924b5e9
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 86f6b4c5742b4abc9bfd5b56e0242376770516a7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517481"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552240"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>Xbox Live のマルチプレイヤー データの取得
 

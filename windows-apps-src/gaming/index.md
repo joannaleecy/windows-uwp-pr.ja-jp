@@ -6,15 +6,14 @@ ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ms.author: mtoepke
 ms.date: 06/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX
-ms.openlocfilehash: 2f98c038c745615d16227334d7e87426394d5c79
-ms.sourcegitcommit: a61e9fc06f74dc54c36abf7acb85eeb606e475b8
+ms.localizationpriority: medium
+ms.openlocfilehash: 1642251ac7019d8bdf0216487eb7085d616863cf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2017
-ms.locfileid: "678221"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553054"
 ---
 # <a name="game-programming"></a>ゲーム プログラミング
 
@@ -29,11 +28,6 @@ ms.locfileid: "678221"
 
 DirectX を使用した UWP ゲームの開発について学ぶには、[DirectX プログラミング](directx-programming.md)をご覧ください。
 
-> **注意**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
- 
-
 ゲーム開発の概要とチュートリアルを最大限に活用するには、次のテーマについて理解している必要があります。
 
 -   Microsoft C++ コンポーネント拡張 (C++/CX) これは自動参照カウントが組み込まれた Microsoft C++ の更新であり、DirectX 11.1 以降のバージョンを使って UWP ゲームを開発するための言語です。
@@ -41,9 +35,9 @@ DirectX を使用した UWP ゲームの開発について学ぶには、[Direct
 -   Windows プログラミングの基本的な概念
 -   Direct3D 9 または 11 API に関する基本的な知識
 
- 
+ 
 
- 
+ 
 
 
 

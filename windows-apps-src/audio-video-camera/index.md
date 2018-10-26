@@ -6,16 +6,14 @@ title: オーディオ、ビデオ、カメラ
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eede959fedfa170d40d8dde3d73a3c0c6468ed5
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: ed222b9ebefd0035064717f78fb91518d3164d13
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815457"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552340"
 ---
 # <a name="audio-video-and-camera"></a>オーディオ、ビデオ、カメラ
 
@@ -46,11 +44,11 @@ ms.locfileid: "1815457"
 ## <a name="see-also"></a>関連項目
 - [UWP アプリの開発](https://developer.microsoft.com/windows/develop)
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

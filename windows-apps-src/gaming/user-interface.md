@@ -6,16 +6,14 @@ ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX, テンプレート
 ms.localizationpriority: medium
-ms.openlocfilehash: e0252607fcc456a1200231b401ca47132664e9c9
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: d27e4bb0d643b859958f887133a128572ca31225
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488806"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555394"
 ---
 # <a name="directx-game-project-templates"></a>DirectX ゲーム プロジェクト テンプレート
 
@@ -28,12 +26,12 @@ DirectX とユニバーサル Windows プラットフォーム (UWP) のテン�
 
 プロジェクトを作成するには、次の作業が必要です。
 
--   [Microsoft Visual Studio 2015 をダウンロードします](https://www.visualstudio.com/vs-2015-product-editions)。 Visual Studio 2015 には、デバッグ ツールなど、グラフィックス プログラミングのためのツールが含まれています。 DirectX グラフィックス、ゲーム機能、ツールの概要については、「[DirectX ゲーム開発用の Visual Studio ツール](set-up-visual-studio-for-game-development.md)」をご覧ください。
+-   [Microsoft Visual Studio2015 をダウンロード](https://www.visualstudio.com/vs-2015-product-editions)します。 Visual Studio2015 では、グラフィックス プログラミングでは、デバッグ ツールなどのツールがあります。 DirectX グラフィックス、ゲーム機能、ツールの概要については、「[DirectX ゲーム開発用の Visual Studio ツール](set-up-visual-studio-for-game-development.md)」をご覧ください。
 
 ## <a name="choosing-a-template"></a>テンプレートの選択
 
 
-Visual Studio 2015 には、DirectX と UWP のテンプレートが 3 つ用意されています。
+Visual Studio2015 には、次の 3 つの DirectX と UWP のテンプレートが含まれています。
 
 -   DirectX 11 アプリ (ユニバーサル Windows) - DirectX 11 アプリ (ユニバーサル Windows) テンプレートは、DirectX 11 を使ってアプリ ウィンドウに直接レンダリングする UWP プロジェクトを作成します。
 -   DirectX 12 アプリ (ユニバーサル Windows) - DirectX 12 アプリ (ユニバーサル Windows) テンプレートは、DirectX 12 を使ってアプリ ウィンドウに直接レンダリングする UWP プロジェクトを作成します。

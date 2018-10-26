@@ -7,17 +7,15 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: feac752cd076023181247742315fc43d637d0f38
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: ed358f88470dfe1ba1c48cd3daf1ed54135ed987
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493919"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559374"
 ---
 # <a name="inking-controls"></a>インク コントロール
 

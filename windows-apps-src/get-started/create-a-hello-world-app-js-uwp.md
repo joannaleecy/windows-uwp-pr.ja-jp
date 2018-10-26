@@ -2,24 +2,22 @@
 author: GrantMeStrength
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: Hello, world アプリを作成する (JS)
-description: このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを JavaScript と HTML で作る方法について説明します。
+description: このチュートリアルでは、対象を JavaScript と HTML を使って単純な & \#0034; を作成する方法こんにちは, world & \#0034;windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象とするアプリです。
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b541f2388fd4980af4b405a89ee6a04b700a3e84
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 4d8fb1dc486c039007c3ea0d4ee36d72c0c511f9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692743"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556856"
 ---
 # <a name="create-a-hello-world-app-js"></a>Hello, world アプリを作成する (JS)
 
-このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な "Hello, world" アプリを JavaScript と HTML で作る方法について説明します。 Microsoft Visual Studio プロジェクトを 1 つ開発すれば、あらゆる Windows 10 デバイスで動作するアプリを構築できます。
+このチュートリアルは、JavaScript と HTML を使って、シンプルなを作成する方法を教えて「こんにちは, world」アプリを windows 10 のユニバーサル Windows プラットフォーム (UWP) をターゲットとします。 Microsoft Visual Studio でプロジェクトを 1 つは、任意の windows 10 デバイスで実行されるアプリをビルドすることができます。
 
 > [!NOTE]
 > このチュートリアルでは、Visual Studio Community 2017 を使います。 異なるバージョンの Visual Studio を使っている場合には、見た目が多少異なることがあります。
@@ -27,14 +25,14 @@ ms.locfileid: "1692743"
 
 ここでは、次の方法について説明します。
 
--   **Windows 10** と **UWP** を対象とする新しい **Visual Studio 2017** プロジェクトを作る。
+-   **Windows 10**と**UWP**を対象とする新しい**Visual Studio 2017**プロジェクトを作成します。
 -   HTML と JavaScript のコンテンツを追加する
 -   Visual Studio のローカル デスクトップでプロジェクトを実行する
 
 ## <a name="before-you-start"></a>はじめに...
 
 -   [UWP アプリとは](universal-application-platform-guide.md)。
--   このチュートリアルを行うには、Windows 10 と Visual Studio 2017 が必要です。 [準備してください](get-set-up.md)。
+-   このチュートリアルを完了するには、windows 10 と Visual Studio2017 が必要です。 [準備してください](get-set-up.md)。
 -   また、Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトを変更した場合は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** を使って、レイアウトをリセットできます。
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>手順 1. Visual Studio で新しいプロジェクトを作る
@@ -159,7 +157,7 @@ function sayHello() {
 ## <a name="summary"></a>まとめ
 
 
-これで、Windows 10 と UWP 用の JavaScript アプリを作成できました。 これは極端にシンプルな例ですが、これに好きな JavaScript ライブラリやフレームワークを追加して、独自のアプリを作成することができます。 また、これは UWP アプリなので、ストアに公開できます。 サード パーティのフレームワークを追加する方法の例については、以下のプロジェクトをご覧ください。
+これで、windows 10 と UWP の JavaScript アプリを作成しました。 これは極端にシンプルな例ですが、これに好きな JavaScript ライブラリやフレームワークを追加して、独自のアプリを作成することができます。 また、これは UWP アプリなので、ストアに公開できます。 サード パーティのフレームワークを追加する方法の例については、以下のプロジェクトをご覧ください。
 
 * [JavaScript と CreateJS で記述された Microsoft Store 向けのシンプルな 2D UWP ゲーム](get-started-tutorial-game-js2d.md)
 * [JavaScript と threeJS で記述された Microsoft Store 向けの 3D UWP ゲーム](get-started-tutorial-game-js3d.md)

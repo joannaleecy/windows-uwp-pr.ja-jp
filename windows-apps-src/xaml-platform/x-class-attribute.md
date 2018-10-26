@@ -6,18 +6,17 @@ ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d3105e8ac345e1eb6f0d974f8ea29e741dae9f58
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 6746969b1b717183894d6b941be41c9aca452960
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "244536"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552868"
 ---
 # <a name="xclass-attribute"></a>x:Class 属性
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 マークアップとコード ビハインドの間で部分クラスを結合するための XAML コンパイルを設定します。 コードの部分クラスは、個別のコード ファイルで定義され、マークアップ部分クラスは XAML コンパイル時のコード生成によって作成されます。
 
@@ -35,7 +34,7 @@ ms.locfileid: "244536"
 | 用語 | 説明 |
 |------|-------------|
 | 名前空間 | 省略可能。 _classname_ で識別される部分クラスが含まれている名前空間を指定します。 _名前空間_を指定すると、_名前空間_と_クラス名_がドット (.) で区切られます。 _名前空間_を省略すると、_クラス名_には名前空間がないものと見なされます。 |
-| classname | 必須。 ロードされた XAML とその XAML のコード ビハインドを結び付ける部分クラスの名前を指定します。 | 
+| classname | 必須。 ロードされた XAML とその XAML のコード ビハインドを結び付ける部分クラスの名前を指定します。 | 
 
 ## <a name="remarks"></a>注釈
 

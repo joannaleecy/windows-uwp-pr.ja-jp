@@ -7,15 +7,13 @@ keywords: アプリ間通信, プロセス間通信, IPC, バック グラウン
 ms.author: twhitney
 ms.date: 09/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7475ae8db964b23de89488d883c135158ea20e74
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: e51bde685e15ab9e24921a495eec18a0df799455
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516482"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553347"
 ---
 # <a name="create-and-consume-an-app-service"></a>アプリ サービスの作成と利用
 

@@ -7,20 +7,18 @@ template: detail.hbs
 ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: fddda4e870ba37d5ec3a2ec2a385e5f8c7c1ed9c
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: d19d18d55c973644f5c3f99ae3d442e6dbf3a724
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1392821"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554853"
 ---
 # <a name="inverted-lists"></a>反転リスト
 

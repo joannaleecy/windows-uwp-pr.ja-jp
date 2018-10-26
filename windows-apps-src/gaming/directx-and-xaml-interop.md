@@ -6,16 +6,14 @@ ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX, XAML の相互運用機能
 ms.localizationpriority: medium
-ms.openlocfilehash: 107501bb06af62035e78ef1ac65291b2bdec5c62
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 7f3a70be3dd31b0a5e4214621ab9fb4efa72cc54
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674989"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555182"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX と XAML の相互運用機能
 
@@ -25,9 +23,9 @@ ms.locfileid: "1674989"
 
 アプリが主に 2D レンダリングに重点を置いているときは、[Win2D](https://github.com/microsoft/win2d) Windows ランタイム ライブラリの使用が必要になる場合があります。 このライブラリは Microsoft によって管理されており、コア Direct2D のテクノロジを基盤として構築されています。 2D グラフィックスを実装する使用パターンを大幅に簡略化し、このドキュメントで説明する手法の一部の便利な抽象化が含まれています。 詳しくは、プロジェクトのページをご覧ください。 このドキュメントでは、Win2D を使用*しない*ことを選択したアプリ開発者向けのガイダンスを示します。
 
-> **注**  DirectX API は Windows ランタイム型として定義されていないため、DirectX と相互運用する XAML UWP コンポーネントを開発するときは Visual C++ コンポーネント拡張機能 (C++/CX) を使うのが一般的です。 また、DirectX の呼び出しを独立した Windows ランタイム メタデータ ファイルにラップすると、C# と DirectX を利用する XAML を使って UWP アプリを作成できます。
+> **注:** DirectX Api として定義されていない Windows ランタイム型では、通常では VisualC コンポーネント拡張機能を使用するため (、C++/cli CX) を DirectX と相互運用する XAML UWP コンポーネントを開発します。 また、DirectX の呼び出しを独立した Windows ランタイム メタデータ ファイルにラップすると、C# と DirectX を利用する XAML を使って UWP アプリを作成できます。
 
- 
+ 
 
 ## <a name="xaml-and-directx"></a>XAML と DirectX
 
@@ -386,7 +384,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 > **注**   一般に、DirectX アプリでは、サイズが表示ウィンドウのサイズ (通常は、ほとんどの Microsoft Store ゲームのネイティブの画面解像度) と同じである横方向のスワップ チェーンを作る必要があります。 これにより、表示される XAML オーバーレイがない場合はアプリで最適なスワップ チェーンの実装が使われます。 縦モードに回転した場合、アプリは既にあるスワップ チェーンで [IDXGISwapChain1::SetRotation](https://msdn.microsoft.com/library/windows/desktop/hh446801) を呼び出し、必要に応じてコンテンツに変換を適用して、同じスワップ チェーンで [SetSwapChain](https://msdn.microsoft.com/library/windows/desktop/dn302144) をもう一度呼び出す必要があります。 同様に、アプリは、[IDXGISwapChain::ResizeBuffers](https://msdn.microsoft.com/library/windows/desktop/bb174577) 呼び出しによってスワップ チェーンのサイズが変更されるたびに、同じスワップ チェーンで **SetSwapChain** をもう一度呼び出す必要があります。
 
 
- 
+ 
 
 [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) オブジェクトをコード ビハインドで作って更新する基本的なプロセスを次に示します。
 
@@ -471,9 +469,9 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 * [ISwapChainPanelNative](https://msdn.microsoft.com/library/windows/desktop/dn302143)
 * [Direct3D 11 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ff476345)
 
- 
+ 
 
- 
+ 
 
 
 

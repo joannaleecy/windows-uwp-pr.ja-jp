@@ -5,17 +5,15 @@ title: フライトの申請に関するロールアウト率の更新
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロールアウト, フライトの申請, 更新, 割合
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd360f4c4aac0e628699e52534ee3e2f42e49d4
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 1ff8b79e04d188ab79ac76ad1c5d47ab5ee37563
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516644"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557250"
 ---
 # <a name="update-the-rollout-percentage-for-a-flight-submission"></a>フライトの申請に関するロールアウト率の更新
 

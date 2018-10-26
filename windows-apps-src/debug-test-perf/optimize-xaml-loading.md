@@ -6,16 +6,14 @@ description: UI が複雑な場合は、XAML マークアップを解析し、�
 ms.author: jimwalk
 ms.date: 08/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e6e664e7d549ecc2fc3db28609c99ca477b3d58
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 884825f2e9639f620d8db4e6110791fddf2d7e77
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674089"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557625"
 ---
 # <a name="optimize-your-xaml-markup"></a>XAML マークアップの最適化
 
@@ -159,11 +157,11 @@ ListView とその子はメモリに読み込まれていません。
 
 ### <a name="resources-with-xname"></a>x:Name を含むリソース
 
-リソースを参照するときは、[x:Key 属性](../xaml-platform/x-key-attribute.md)を使います。 [x:Name 属性](../xaml-platform/x-name-attribute.md)を持つリソースは、プラットフォームの最適化のメリットが適用されず、ResourceDictionary が作成されるとすぐにインスタンス化されます。 x:Name は、アプリがこのリソースへのフィールド アクセスを必要としていることをプラットフォームに伝達します。その結果、プラットフォームでは参照を作成する何かを作成する必要が生じるため、リソースがインスタンス化されることになります。
+リソースを参照するときは、[x:Key 属性](../xaml-platform/x-key-attribute.md)を使います。 [x:Name 属性](../xaml-platform/x-name-attribute.md)を持つリソースは、プラットフォームの最適化のメリットが適用されず、ResourceDictionary が作成されるとすぐにインスタンス化されます。 これは、x: Name がプラットフォームに対し、アプリがこのリソースへのフィールド アクセスを必要としており、プラットフォームは参照を作成するものを何か作成する必要があると指示するからです。
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>UserControl 内の ResourceDictionary
 
-[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) の内部に定義された ResourceDictionary にはペナルティが発生します。 プラットフォームは、UserControl のすべてのインスタンスに対して、このような ResourceDictionary のコピーを作成します。 頻繁に使われる UserControl がある場合は、UserControl から ResourceDictionary を移動し、ページ レベルに配置してください。
+[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) の内部に定義された ResourceDictionary にはペナルティが発生します。 プラットフォームは、UserControl のすべてのインスタンスに対して、このような ResourceDictionary のコピーを作成します。 よく使われる UserControl を使っている場合、UserControl から ResourceDictionary を移動し、ページ レベルに配置します。
 
 ### <a name="resource-and-resourcedictionary-scope"></a>リソースと ResourceDictionary のスコープ
 
@@ -295,7 +293,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 複数の要素を重ねて効果を作成する代わりに、複合要素を使います。 次の例では、結果は 2 色の図形になり、上半分は黒 ([Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) の背景)、下半分は灰色 (**Grid** の黒い背景の上にアルファ ブレンドされた半透明の白い [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)) で表示されます。 この場合、結果を得るために必要なピクセルの 150% が塗りつぶされることになります。
 
-**非効率的**
+**非効率的。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -325,7 +323,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 レイアウト パネルには、領域の色指定と、子要素のレイアウトの 2 つの目的があります。 z オーダーの要素の領域が既に塗られている場合は、前面のレイアウト パネルでその領域を塗りつぶす必要はありません。代わりに、パネルではその子を重点的にレイアウトします。 次に例を示します。
 
-**非効率的**
+**非効率的。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -356,7 +354,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 オブジェクトの周りに境界線を描画するには、[Border](https://msdn.microsoft.com/library/windows/apps/BR209253) 要素を使います。 次の例では、[TextBox](https://msdn.microsoft.com/library/windows/apps/BR209683) を囲む間に合わせの境界線として [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) を使用しています。 この方法では、中央のセル内のすべてのピクセルが複数回描画されます。
 
-**非効率的**
+**非効率的。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -417,7 +415,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 </Canvas>
 ```
 
-[CacheMode](https://msdn.microsoft.com/library/windows/apps/BR228084) を使っていることに注目してください。 ただし、サブ図形がアニメーション化されている場合は、この方法を使わないでください。フレームごとにビットマップ キャッシュの再生成が必要になる可能性があり、過剰な描画を抑えるという目的に反するためです。
+[CacheMode](https://msdn.microsoft.com/library/windows/apps/BR228084) を使っていることに注目してください。 サブ図形がアニメーション化されている場合は、この方法を使わないでください。その目的に反し、各フレームでビットマップ キャッシュを再生成することが必要になる可能性があるためです。
 
 ## <a name="use-xbf2"></a>XBF2 の使用
 
@@ -425,7 +423,7 @@ XBF2 は、実行時にすべてのテキスト解析コストを回避する XA
 
 フレームワークが提供する XAML の組み込みのコントロールとディクショナリは、既に XBF2 に完全に対応しています。 独自のアプリでは、プロジェクト ファイルで TargetPlatformVersion 8.2 以降を宣言していることを確認します。
 
-XBF2 があるかどうかを確認するには、バイナリ エディターでアプリを開きます。XBF2 がある場合、12 番目と 13 番目のバイトは 00 02 になります。
+XBF2 があるかどうかを確認するには、バイナリ エディターでアプリを開きます。XBF2 がある場合、12 番目と 13 番目のバイトは 00 02 です。
 
 ## <a name="related-articles"></a>関連記事
 

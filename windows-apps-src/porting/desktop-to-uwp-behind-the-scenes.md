@@ -5,17 +5,15 @@ title: Desktop Bridge の内側
 ms.author: normesta
 ms.date: 05/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e6cd2b305a9d52a2239be46cc7f77650cdd6531
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 2ff5cd40cad43a73a8ba51a25710e2f2cbaf2a7b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512457"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554648"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>パッケージ デスクトップ アプリケーションの内側
 

@@ -6,27 +6,26 @@ ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: e9f0a148238b8f91c4643954c7f575e742f69d5e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: e01c9e5698ec1d7a23298b46f6bde9e1bbf36b04
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "244526"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553416"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>Windows ランタイム コンポーネントに配列を渡す
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 Windows ユニバーサル プラットフォーム (UWP) では、パラメーターは入力または出力のどちらかに使用され、両方に使用されることはありません。 つまり、メソッドに渡される配列の内容および配列自体は、入力か出力のどちらかに使用されます。 配列の内容が入力に使用される場合、メソッドは配列から読み取りを行いますが、書き込みはしません。 配列の内容が出力に使用される場合、メソッドは配列に書き込みを行いますが、読み取りはしません。 .NET framework の配列は参照型であり、配列の参照が値 (Visual Basic では **ByVal**) で渡されるときも配列の内容は変更可能であるため、これは配列パラメーターにとって問題となります。 [Windows ランタイム メタデータのエクスポート ツール (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) では、コンテキストから判別できない場合、パラメーターに ReadOnlyArrayAttribute 属性または WriteOnlyArrayAttribute 属性を適用して、配列の用途を指定する必要があります。 配列の使用方法は、次のように決定されます。
 
 -   戻り値、または出力パラメーター (Visual Basic では、[OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 属性の **ByRef** パラメーター) の場合、配列は常に出力に使用されます。 ReadOnlyArrayAttribute 属性は適用しないでください。 出力パラメーターで WriteOnlyArrayAttribute 属性を適用することはできますが、冗長になります。
 
-    > **注意:** Visual Basic のコンパイラは、出力専用の規則を強制しません。 出力パラメーターからの読み取りは行わないでください。**Nothing** が含まれている可能性があります。 常に新しい配列を割り当ててください。
- 
+    > **注意:** Visual Basic のコンパイラが出力専用の規則を強制しません。 出力パラメーターからの読み取りは行わないでください。**Nothing** が含まれている可能性があります。 常に新しい配列を割り当ててください。
+ 
 -   **ref** 修飾子 (Visual Basic では **ByRef**) を持つパラメーターは使用できません。 Winmdexp.exe によりエラーが生成されます。
 -   値で渡されるパラメーターの場合、[ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) 属性または [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) 属性を適用して、配列の内容が入力と出力のどちらで使用されるのかを指定する必要があります。 両方の属性を指定すると、エラーになります。
 

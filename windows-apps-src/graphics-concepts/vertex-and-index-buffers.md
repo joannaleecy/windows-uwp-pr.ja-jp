@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 120e15762a0c9c8fb0313ec756dc64e469c9b37b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 2327036eb53ac34c406aef53163be642468fbddc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652911"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556265"
 ---
 # <a name="vertex-and-index-buffers"></a>頂点バッファーとインデックス バッファー
 
@@ -53,16 +51,16 @@ ms.locfileid: "1652911"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [Direct3D グラフィックスの学習ガイド](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

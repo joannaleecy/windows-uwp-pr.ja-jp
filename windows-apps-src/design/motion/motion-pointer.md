@@ -6,16 +6,14 @@ ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
 ms.author: jimwalk
 ms.date: 08/9/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 479da70c48fd28d6f877917f6a8cc6e411cf659b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 7c54218582b3ef31df07a5969ad5e83be7af2952
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652581"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557020"
 ---
 # <a name="pointer-click-animations"></a>ポインター クリックのアニメーション
 
@@ -39,9 +37,9 @@ ms.locfileid: "1652581"
 * [**PointerUpThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/hh969168)
 * [**PointerDownThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/hh969164)
 
- 
+ 
 
- 
+ 
 
 
 

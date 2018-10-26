@@ -6,22 +6,20 @@ ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2271c8029a733e1ab05c19b2110352fee5b04fc2
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 98c537ef3b2a5d002644cc554eae72b89a1799b0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663952"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558870"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>自動再生による自動起動
 
 **自動再生**を使って、コンピューターにデバイスが接続されたときのオプションとしてアプリを提供できます。 これには、カメラやメディア プレーヤーなどのボリューム デバイス以外のデバイス、または USB サム ドライブ、SD カード、DVD などのボリューム デバイスが含まれます。 また**自動再生**では、近接通信 (タップ) を使って 2 台の PC 間でユーザーがファイルを共有するときにアプリをオプションとして提供することもできます。
 
-> **注:** デバイスの製造元がデバイスの**自動再生**ハンドラーとして [Microsoft Store デバイス アプリ](http://go.microsoft.com/fwlink/p/?LinkID=301381)を関連付ける場合は、デバイス メタデータでアプリを識別することができます。 詳しくは、「[Microsoft Store デバイス アプリの自動再生](http://go.microsoft.com/fwlink/p/?LinkId=306684)」をご覧ください。
+> **注:** デバイスの製造元がデバイスの**自動再生**ハンドラーとして、 [Microsoft Store デバイス アプリ](http://go.microsoft.com/fwlink/p/?LinkID=301381)を関連付ける場合は、デバイス メタデータでアプリを識別することができます。 詳しくは、「[Microsoft Store デバイス アプリの自動再生](http://go.microsoft.com/fwlink/p/?LinkId=306684)」をご覧ください。
 
 ## <a name="register-for-autoplay-content"></a>自動再生コンテンツに登録する
 
@@ -36,7 +34,7 @@ ms.locfileid: "1663952"
 | 音楽の共有  | PlayMusicFilesOnArrival |
 | ビデオの共有 | PlayVideoFilesOnArrival |
 
- 
+ 
 ファイルが近接通信を使って共有されている場合、**FileActivatedEventArgs** オブジェクトの **Files** プロパティには、すべての共有ファイルを含むルート フォルダーへの参照が含まれます。
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>手順 1: 新しいプロジェクトを作成し、自動再生宣言を追加する
@@ -110,7 +108,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注:** `DisplayImages` メソッドと `CopyImages` メソッドは、以下の手順で追加されます。
+> **注:**、`DisplayImages`と`CopyImages`メソッドは、次の手順で追加されます。
 
 ### <a name="step-4-add-code-to-display-images"></a>手順 4: 画像を表示するコードを追加する
 
@@ -222,7 +220,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 1.  F5 キーを押して、アプリを (デバッグ モードで) ビルドおよび展開します。
 2.  アプリを実行するには、カメラのメモリ カードまたはカメラの他のストレージ デバイスを PC に挿入します。 次に、自動再生のオプションの一覧から package.appxmanifest ファイルで指定したコンテンツ イベント オプションのいずれかを選びます。 このサンプル コードは、カメラのメモリ カードの DCIM フォルダーにある画像の表示またはコピーのみを行います。 カメラのメモリ カードの AVCHD または PRIVATE\\ACHD フォルダーに画像が格納される場合は、適宜コードを更新する必要があります。
-    **注:** カメラのメモリ カードがない場合は、ルートに **DCIM** という名前のフォルダーがあり、DCIM フォルダーに画像が含まれるサブフォルダーがあれば、フラッシュ ドライブを使うことができます。
+    **注:** カメラのメモリ カードをお持ちでない場合場合は、ルートに**DCIM**をという名前のフォルダーがあり、画像が含まれている DCIM フォルダーのサブフォルダーがある場合、フラッシュ ドライブを使用できます。
 
 ## <a name="register-for-an-autoplay-device"></a>自動再生デバイスに登録する
 
@@ -231,9 +229,9 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 ここでは、PC にカメラが接続されたときに**自動再生**オプションとしてアプリを識別する方法を示します。 アプリは、**WPD\\ImageSourceAutoPlay** イベントのハンドラーとして登録されます。 これは、カメラなどのイメージング デバイスが MTP を使う ImageSource であることを通知するときに Windows ポータブル デバイス (WPD) システムによって生成される一般的なイベントです。 詳しくは、「[Windows ポータブル デバイス](https://msdn.microsoft.com/library/windows/hardware/ff597729)」をご覧ください。
 
-**重要:** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) API は[デスクトップ デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631)の一部です。 アプリでは、デスクトップ デバイス ファミリの Windows 10 デバイス (PC など) でのみこれらの API を使えます。
+**重要な** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api は、[デスクトップ デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631)の一部です。 アプリでは、Pc など、デスクトップ デバイス ファミリで windows 10 デバイスでのみこれらの Api を使用できます。
 
- 
+ 
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>手順 1: 新しいプロジェクトを作成し、自動再生宣言を追加する
 
@@ -340,7 +338,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-> **注:** `ShowImages` メソッドは、次の手順で追加されます。
+> **注:**、`ShowImages`メソッドは、次の手順で追加されます。
 
 ### <a name="step-5-add-code-to-display-device-information"></a>手順 5: デバイス情報を表示するコードを追加する
 
@@ -368,7 +366,7 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 }
 ```
 
-> **注:** `GetImageList` メソッドと `GetThumbnail` メソッドは、以下の手順で追加されます。
+> **注:**、`GetImageList`と`GetThumbnail`メソッドは、次の手順で追加されます。
 
 ### <a name="step-6-add-code-to-display-images"></a>手順 6: 画像を表示するコードを追加する
 
@@ -411,7 +409,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 
 1.  F5 キーを押して、アプリを (デバッグ モードで) ビルドおよび展開します。
 2.  アプリを実行するには、コンピューターにカメラを接続します。 次に、自動再生オプションの一覧からアプリを選びます。
-    **注:** すべてのカメラが **WPD\\ImageSource** 自動再生デバイス イベントのためのアドバタイズを行うわけではありません。
+    **注:** **\\imagesource**自動再生デバイス イベントのすべてのカメラをアドバタイズします。
 
 ## <a name="configure-removable-storage"></a>リムーバブル記憶域を構成する
 
@@ -436,8 +434,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 2.  [Package.appxmanifest] ファイルを開き、**[機能]** タブを選択します。**[リムーバブル記憶域]** 機能を選択します。 これで、アプリはリムーバブル記憶域デバイス上のファイルとフォルダーにアクセスできるようになります。
 3.  マニフェスト ファイルで **[宣言]** タブを選び、**[使用可能な宣言]** ドロップダウンから **[自動再生コンテンツ]** を選んで **[追加]** をクリックします。 **[サポートされる宣言]** ボックスの一覧に追加された新しい **[自動再生コンテンツ]** 項目を選びます。
 
-    **注:** また、カスタム自動再生イベントに対して **[自動再生デバイス]** の宣言を追加することもできます。
-    
+    **注:** または、こともできますカスタム自動再生イベントに対して、**自動再生デバイス**宣言を追加します。  
 4.  **[自動再生コンテンツ]** イベント宣言の **[起動アクション]** セクションで、最初の起動アクションについて下記の表の値を入力します。
 5.  **[使用可能な宣言]** ドロップダウン リストで、**[ファイルの種類の関連付け]** を選び、**[追加]** をクリックします。 新しい **[ファイルの種類の関連付け]** 宣言の [プロパティ] で、**[表示名]** フィールドを **".ms ファイルを表示する"**、**[名前]** フィールドを **ms\_association** に設定します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をクリックします。 **[ファイルの種類]** フィールドを **.ms** に設定します。 コンテンツ イベントの場合は、自動再生で、アプリに明示的に関連付けられていないファイルの種類はすべて除外されます。
 6.  マニフェスト ファイルを保存して閉じます。
@@ -480,9 +477,9 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注:**  `DisplayFiles` メソッドは、次の手順で追加されます。
+> **注:**、`DisplayFiles`メソッドは、次の手順で追加されます。
 
- 
+ 
 
 ### <a name="step-5-add-code-to-display-folders"></a>手順 5: フォルダーを表示するコードを追加する
 
@@ -558,6 +555,6 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
   </Applications>
 ```
 
- 
+ 
 
- 
+ 

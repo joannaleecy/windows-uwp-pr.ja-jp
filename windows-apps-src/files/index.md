@@ -6,16 +6,14 @@ description: アプリの設定の読み取りと書き込み、ファイルや�
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c29a14c91b66e10f4f23e8305eb7781e682eba6
-ms.sourcegitcommit: 97b47dafbd0593d19d96f9722f35052f13e591a9
-ms.translationtype: HT
+ms.openlocfilehash: 80c6292c12568d7f1017ca67707689ce9539c804
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2018
-ms.locfileid: "1502916"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552502"
 ---
  # <a name="files-folders-and-libraries"></a>ファイル、フォルダー、およびライブラリ
 
@@ -43,6 +41,6 @@ ms.locfileid: "1502916"
 [ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)
 
 [ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)
- 
+ 
 
- 
+ 

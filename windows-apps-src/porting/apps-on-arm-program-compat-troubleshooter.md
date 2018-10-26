@@ -5,16 +5,14 @@ description: アプリが ARM で正しく動作しない場合に互換性の�
 ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10 s, 常時接続, 互換性トラブルシューティング ツール, ARM 版 Windows
 ms.localizationpriority: medium
-ms.openlocfilehash: d517b2e455f6ad75d3158c7899ad70a774cabc46
-ms.sourcegitcommit: 11edca90aaf7856c762e68903483079d30ad3877
-ms.translationtype: HT
+ms.openlocfilehash: 4765ad324e90167c7279c9245bccd840bce1163d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
-ms.locfileid: "1595163"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555005"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>プログラム互換性のトラブルシューティング ツール (ARM)
 x86 アプリが ARM64 上の Windows 10 用に作成された新しい機能をサポートするようにエミュレーションします。 エミュレーションは、最適なエクスペリエンスの結果の最適化を実行することがあります。 プログラム互換性のトラブルシューティング ツールを使って x86 アプリのエミュレーション設定を切り替えることができるため、既定の最適化が減少し、互換性が強化される可能性があります。

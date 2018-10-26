@@ -6,16 +6,14 @@ ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 82d01ab6fc70397824b4bd6b267dd5e7cdeac0ee
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 309dd2aedb2195362652da93c13648d07e5ea9f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975804"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559694"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom フィード
 
@@ -48,7 +46,7 @@ Web フィードは、テキストやリンク、画像といった個々のエ�
 
 ネットワーク分離は、ネットワーク アクセスを試みる [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 名前空間と [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) 名前空間のすべてのクラス要素に影響します。 ネットワーク分離は、Windows によって能動的かつ強制的に適用されます。 適切なネットワーク機能が有効になっていなければ、ネットワーク アクセスを付随する **Windows.Web.Syndication** 名前空間や **Windows.Web.AtomPub** 名前空間のクラス要素の呼び出しは失敗する可能性があります。
 
-アプリのネットワーク機能は、アプリのビルド時にアプリ マニフェストで構成します。 通常、ネットワーク機能は、アプリの開発時に Microsoft Visual Studio 2015 で追加します。 アプリ マニフェスト ファイルをテキスト エディターで直接編集してネットワーク機能を設定することもできます。
+アプリのネットワーク機能は、アプリのビルド時にアプリ マニフェストで構成します。 ネットワーク機能は通常、アプリを開発するときは、Microsoft Visual Studio2015 を使用して追加します。 アプリ マニフェスト ファイルをテキスト エディターで直接編集してネットワーク機能を設定することもできます。
 
 ネットワーク分離とネットワーク機能について詳しくは、「[ネットワークの基本](networking-basics.md)」トピックの「機能」セクションをご覧ください。
 

@@ -5,27 +5,25 @@ description: ApiInformation を使って、以前のバージョンとの互換�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
-ms.openlocfilehash: f9a5425e0d14b2ded4d14a986a622a0aceda1b3c
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: e25a3bd447519ce344a95a1c335451f731552487
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700768"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556196"
 ---
 # <a name="version-adaptive-code"></a>バージョン アダプティブ コード
 
-アダプティブ コードの記述については、[アダプティブ UI の作成](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)と同じように考えることができます。 最小画面で実行するように基本 UI を設計し、より大きな画面でアプリが実行されていることを検出したときに要素を移動または追加できます。 アダプティブ コードでは、最小の OS バージョンで実行するように基本コードを記述し、新機能が搭載されたより高いバージョンでアプリが実行されていることを検出したときに、手動で選んだ機能を追加できます。
+アダプティブ コードの記述については、[アダプティブ UI の作成](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)と同じように考えることができます。 最小画面で実行するように基本 UI を設計し、より大きな画面でアプリが実行されていることを検出したときに要素を移動または追加できます。 アダプティブ コードの場合、最小の OS バージョンで実行するように基本コードを記述し、新機能が提供されているより高いバージョンでアプリが実行されていることを検出したときに、機能を手動で選んで追加できます。
 
 ApiInformation に関する重要な背景情報、API コントラクト、Visual Studio の構成については、「[バージョン アダプティブ アプリ](version-adaptive-apps.md)」をご覧ください。
 
 ### <a name="runtime-api-checks"></a>ランタイム API チェック
 
-呼び出す API が存在するかどうかをテストするには、コード内の条件で [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) クラスを使います。 この条件は、アプリがどこで実行された場合でも評価されますが、API が存在して呼び出すことができるデバイスでのみ **true** と評価されます。 これにより、特定の OS バージョンでのみ利用できる API を使うアプリを作成するためのバージョン アダプティブ コードを記述できます。
+呼び出す API が存在するかどうかをテストするために、コードの条件で [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) クラスを使います。 このテストの条件は、アプリの実行時に必ず評価されますが、API が存在するデバイスに対してのみ **true** と評価され、呼び出しが可能になります。 これにより、特定の OS バージョンでのみ利用できる API を使うアプリを作成するためのバージョン アダプティブ コードを記述できます。
 
 ここでは、Windows Insider Preview の新機能をターゲットにするための具体的な例を示します。 **ApiInformation** を使う場合の一般的な概要については、[デバイス ファミリの概要に関する記事](https://docs.microsoft.com/en-us/uwp/extension-sdks/device-families-overview#writing-code)と [API コントラクトを使った機能の動的な検出に関するブログの投稿](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)をご覧ください。
 
@@ -299,7 +297,7 @@ public MainPage()
 ```
 
 > [!IMPORTANT]
-> このチェックでは `mediaControl` オブジェクトを `MediaPlayerUserControl` または `MediaElementUserControl` に設定するだけです。 これらの条件チェックは、MediaPlayerElement API と MediaElement API のどちらを使うかを判断する必要があるコード内の任意の場所で実行する必要があります。 チェックを一度実行してから結果をキャッシュし、キャッシュされた結果をアプリ全体で使う必要があります。
+> このチェックでは `mediaControl` オブジェクトを `MediaPlayerUserControl` または `MediaElementUserControl` に設定するだけです。 コード内の MediaPlayerElement API と MediaElement API のどちらを使うのかを判断する必要がある他の場所でこれらの条件付きチェックを実行する必要があります。 チェックを一度実行してから結果をキャッシュし、キャッシュされた結果をアプリ全体で使う必要があります。
 
 ## <a name="state-trigger-examples"></a>状態トリガーの例
 

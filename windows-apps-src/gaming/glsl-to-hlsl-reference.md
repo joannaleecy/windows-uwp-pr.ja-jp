@@ -6,16 +6,14 @@ ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, シェーダー
 ms.localizationpriority: medium
-ms.openlocfilehash: 601cdd696290a1b22d7ed38d968a32db53b78ea1
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 30c925f9ebb07d578147dfba373fdeb3baa364fe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691411"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557131"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL と HLSL の対応を示すリファレンス
 
@@ -45,7 +43,7 @@ OpenGL ES 2.0 と Direct3D 11 には多くの類似点があります。 どち�
 | サード パーティのライブラリ (たとえば、Simple DirectMedia Layer (SDL)) によって高レベルのモジュールを提供 | Direct2D などの高レベルのモジュールは下位モジュールに基づいて構築されるため、Windows アプリの開発が簡略化             |
 | ハードウェア ベンダーは拡張子によって区別                                                         | Microsoft は、汎用的な方法で API にオプション機能を追加するため、特定のハードウェア ベンダーに限定されない |
 
- 
+ 
 
 GLSL と HLSL は一般に次の点で異なります。
 
@@ -69,10 +67,10 @@ GLSL と HLSL は一般に次の点で異なります。
 <td align="left">グラフィックス API に統合されたシェーダー コンパイル</td>
 <td align="left">HLSL コンパイラが中間バイナリ表現に<a href="https://msdn.microsoft.com/library/windows/desktop/bb509633">シェーダーをコンパイルし</a>、その後で Direct3D がそれをドライバーに渡します。
 <div class="alert">
-<strong>注</strong>  このバイナリ表現はハードウェアに依存していません。 通常はアプリの実行時ではなくアプリのビルド時にコンパイルされます。
+<strong>注:</strong>このバイナリ表現はハードウェアに依存しません。 通常はアプリの実行時ではなくアプリのビルド時にコンパイルされます。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -98,10 +96,10 @@ GLSL と HLSL は一般に次の点で異なります。
 <td align="left">行優先マトリックス (既定)</td>
 <td align="left">列優先マトリックス (既定)
 <div class="alert">
-<strong>注</strong>   1 つの変数のレイアウトを変更するには、<strong>row_major</strong> 型修飾子を使います。 詳しくは、「<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">変数の構文</a>」をご覧ください。 コンパイラ フラグまたはプラグマを指定してグローバルな既定値を変更することもできます。
+<strong>注:</strong>  <strong>row_major</strong>の種類の修飾子を使用して 1 つの変数のレイアウトを変更します。 詳しくは、「<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">変数の構文</a>」をご覧ください。 コンパイラ フラグまたはプラグマを指定してグローバルな既定値を変更することもできます。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
@@ -111,11 +109,11 @@ GLSL と HLSL は一般に次の点で異なります。
 </tbody>
 </table>
 
- 
+ 
 
-> **注:** HLSL には、2 つの個別のオブジェクトとしてテクスチャとサンプラーがあります。 GLSL では、Direct3D 9 と同様に、テクスチャのバインドはサンプラーの状態の一部です。
+> **注:** HLSL がテクスチャとサンプラーとして 2 つのオブジェクトです。 GLSL では、Direct3D 9 と同様に、テクスチャのバインドはサンプラーの状態の一部です。
 
- 
+ 
 
 GLSL では、事前定義されたグローバル変数として OpenGL の状態の多くを示します。 たとえば、GLSL では、**gl\_Position** 変数を使って頂点の位置を指定し、**gl\_FragColor** 変数を使ってフラグメントの色を指定します。 HLSL では、アプリ コードからシェーダーに Direct3D の状態を明示的に渡します。 たとえば、Direct3D と HLSL を使う場合は、頂点シェーダーへの入力が頂点バッファーのデータ形式に一致し、アプリ コードの定数バッファーの構造がシェーダー コードの定数バッファー ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) の構造と一致する必要があります。
 
@@ -162,7 +160,7 @@ GLSL では、グローバル シェーダーの変数の宣言に修飾子を�
 </tbody>
 </table>
 
- 
+ 
 
 GLSL では、修飾子のない変数は、各シェーダーに対してプライベートな通常のグローバル変数に過ぎません。
 
@@ -274,7 +272,7 @@ HLSL に GLSL の型を移植する場合は、次の表を参考にしてくだ
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="porting-glsl-pre-defined-global-variables-to-hlsl"></a>HLSL への GLSL の定義済みグローバル変数の移植
 
@@ -382,7 +380,7 @@ GLSL の定義済みグローバル変数を HLSL に移植する場合は、次
 </tbody>
 </table>
 
- 
+ 
 
 頂点シェーダーの入力とピクセル シェーダーの入力に位置や色などを指定するには、セマンティクスを使います。 入力レイアウトのセマンティクス値と頂点シェーダーの入力を一致させる必要があります。 例については、「[HLSL への GLSL 変数の移植の例](#examples-of-porting-glsl-variables-to-hlsl)」をご覧ください。 HLSL セマンティクスについて詳しくは、「[セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)」をご覧ください。
 
@@ -503,14 +501,14 @@ HLSL のピクセル シェーダー コード
 // The COLOR semantic must match the semantic in the vertex shader code.
 struct PixelShaderInput
 {
-    float4 pos : SV_Position;
-    float4 color : COLOR; // Color for the pixel
+    float4 pos : SV_Position;
+    float4 color : COLOR; // Color for the pixel
 };
 
-// Set the pixel color value for the renter target. 
+// Set the pixel color value for the renter target. 
 float4 main(PixelShaderInput input) : SV_Target
 {
-    return input.color;
+    return input.color;
 }
 ```
 
@@ -525,7 +523,7 @@ OpenGL のレンダリング コード
 // Bind shaders to the pipeline. 
 // Both vertex shader and fragment shader are in a program.
 glUseProgram(m_shader->getProgram());
- 
+ 
 // Input asssembly 
 // Get the position and color attributes of the vertex.
 
@@ -534,13 +532,13 @@ glEnableVertexAttribArray(m_positionLocation);
 
 m_colorLocation = glGetAttribColor(m_shader->getProgram(), "color");
 glEnableVertexAttribArray(m_colorLocation);
- 
+ 
 // Bind the vertex buffer object to the input assembler.
 glBindBuffer(GL_ARRAY_BUFFER, m_geometryBuffer);
 glVertexAttribPointer(m_positionLocation, 4, GL_FLOAT, GL_FALSE, 0, NULL);
 glBindBuffer(GL_ARRAY_BUFFER, m_colorBuffer);
 glVertexAttribPointer(m_colorLocation, 3, GL_FLOAT, GL_FALSE, 0, NULL);
- 
+ 
 // Draw a triangle with 3 vertices.
 glDrawArray(GL_TRIANGLES, 0, 3);
 ```
@@ -551,7 +549,7 @@ Direct3D のレンダリング コード
 // Bind the vertex shader and pixel shader to the pipeline.
 m_d3dDeviceContext->VSSetShader(vertexShader.Get(),nullptr,0);
 m_d3dDeviceContext->PSSetShader(pixelShader.Get(),nullptr,0);
- 
+ 
 // Declare the inputs that the shaders expect.
 m_d3dDeviceContext->IASetInputLayout(inputLayout.Get());
 m_d3dDeviceContext->IASetVertexBuffers(0, 1, vertexBuffer.GetAddressOf(), &stride, &offset);
@@ -568,9 +566,9 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 * [OpenGL ES 2.0 から Direct3D 11 への移植](port-from-opengl-es-2-0-to-directx-11-1.md)
 
- 
+ 
 
- 
+ 
 
 
 

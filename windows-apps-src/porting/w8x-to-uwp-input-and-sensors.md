@@ -1,24 +1,23 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。
-title: 入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植&quot;
+title: 入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植'
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 2ccc9b0d81b69a06973feac8d554aa0ab47f2af0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8e15014e39ed6d980cbe80daa0a129ff83a021b9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243816"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557939"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 前のトピックは、「[XAML と UI の移植](w8x-to-uwp-porting-xaml-and-ui.md)」でした。
@@ -35,18 +34,18 @@ ms.locfileid: "243816"
 ## <a name="background-audio"></a>バックグラウンド オーディオ
 
 
-[**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352) プロパティについては、**ForegroundOnlyMedia** と **BackgroundCapableMedia** が Windows 10 アプリでは使われなくなりました。 代わりに Windows Phone ストア アプリ モデルを使ってください。 詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」をご覧ください。
+[**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352)プロパティに、windows 10 アプリの**ForegroundOnlyMedia**と**BackgroundCapableMedia**は推奨されなくなりました。 代わりに Windows Phone ストア アプリ モデルを使ってください。 詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」をご覧ください。
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>アプリが実行されているプラットフォームの検出
 
 
-アプリの対応に関する考え方は、Windows 10 で変わりました。 また新しい概念モデルでは、アプリはユニバーサル Windows プラットフォーム (UWP) をターゲットとし、すべての Windows デバイスで実行されます。 また、特定のデバイス ファミリ専用の機能を使うように指定することができます。 必要な場合は、アプリのターゲットを 1 つまたは複数のデバイス ファミリに限定するオプションをアプリに設定することもできます。 デバイス ファミリの説明や、ターゲットにするデバイス ファミリを決定する方法について詳しくは、「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
+Windows 10 でアプリを対象とした変更について考えたりの方法です。 また新しい概念モデルでは、アプリはユニバーサル Windows プラットフォーム (UWP) をターゲットとし、すべての Windows デバイスで実行されます。 また、特定のデバイス ファミリ専用の機能を使うように指定することができます。 必要な場合は、アプリのターゲットを 1 つまたは複数のデバイス ファミリに限定するオプションをアプリに設定することもできます。 デバイス ファミリの説明や、ターゲットにするデバイス ファミリを決定する方法について詳しくは、「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
 ユニバーサル 8.1 アプリが実行されているオペレーティング システムを検出するコードがそのアプリに含まれている場合、ロジックによってはそのコードの変更が必要になることがあります。 アプリが値をパススルーし、その値を処理しないとき、場合によっては、オペレーティング システムに関する情報を継続して収集する必要があります。
 
-**注:** 機能の有無を検出する際に、オペレーティング システムやデバイス ファミリを使わないことをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](w8x-to-uwp-porting-to-a-uwp-project.md)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
+**注:** 機能の有無を検出するのには、オペレーティング システムやデバイス ファミリをいない使用することをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](w8x-to-uwp-porting-to-a-uwp-project.md)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
 
- 
+ 
 
 さまざまなデバイスに合わせてアプリの UI を調整するには、推奨される方法がいくつかあります。 これまでと同様に、自動的にサイズ調整される要素と動的レイアウト パネルを引き続き使います。 また、XAML マークアップで、有効ピクセル (以前の表示ピクセル) 単位でサイズを引き続き使います。これにより、UI がさまざまな解像度やスケール ファクターに対応します (「[有効ピクセル、視聴距離、スケール ファクター](w8x-to-uwp-porting-xaml-and-ui.md)」をご覧ください)。 Visual State Manager のアダプティブなトリガーとセッターを使って、UI をウィンドウ サイズに対応させることもできます (「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください)。
 
@@ -72,11 +71,11 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 ## <a name="location"></a>位置情報
 
 
-アプリ パッケージ マニフェストで位置情報機能を宣言するアプリを Windows 10 で実行する場合、システムはエンド ユーザーに同意を求めます。 これは、アプリが Windows Phone ストア アプリの場合でも、Windows 10 アプリの場合でも同じです。 アプリが独自の同意プロンプトを表示する場合や、オン/オフ切り替えを提供する場合、エンド ユーザーの確認を 1 回のみにするためにその機能を削除できます。
+位置情報機能をアプリ パッケージ マニフェストで宣言するアプリは、windows 10 で実行しているシステムに同意をエンドユーザーが求められます。 これは、アプリは、Windows Phone ストア アプリまたは windows 10 アプリかどうか。 アプリが独自の同意プロンプトを表示する場合や、オン/オフ切り替えを提供する場合、エンド ユーザーの確認を 1 回のみにするためにその機能を削除できます。
 
- 
+ 
 
- 
+ 
 
 
 

@@ -5,16 +5,14 @@ description: 自然な動作のアニメーション、およびそれらをア�
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、アニメーション
 ms.localizationpriority: medium
-ms.openlocfilehash: fe877a6a2c16366d99550a3748ee190fd2a45d3d
-ms.sourcegitcommit: 67cb03db41556cf0d58993073654cd0706aede84
-ms.translationtype: HT
+ms.openlocfilehash: 537e722917f00d590428dd2b5ee2d24e023e52b6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2018
-ms.locfileid: "1480708"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551363"
 ---
 # <a name="natural-motion-animations"></a>自然な動作のアニメーション
 

@@ -6,16 +6,14 @@ ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 ms.author: joanlee
 ms.date: 03/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、ゲーム、クラウド サービス
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a0ffc3779f604b68c699e30068e07f3461f568d
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 5d15d3e6b6beb773a8d606db7a5d8a17544270be
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700828"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552184"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>UWP ゲーム用のクラウド サービスの使用
 
@@ -54,7 +52,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
     <tr class="header" align="left">
         <th>開発者</th>
         <th>説明</th>
-        <th>主なゲーム シナリオ</th>
+        <th>主なゲームのシナリオ</th>
         <th>詳細</th>
     </tr>
     <tr>
@@ -203,7 +201,7 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 ## <a name="learning-resources"></a>学習リソース
 
 * //build 2016: [CodeLabs &mdash; Microsoft Azure App Service と Microsoft SQL Azure バックエンドを使ってゲームのスコアを Unity に保存する](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* //build 2017: [Microsoft Azure を使用して世界レベルのゲーム エクスペリエンスを提供する: Halo、Hitman、Walking Dead などのタイトルから得た教訓 (ビデオ)](https://channel9.msdn.com/Events/Build/2017/P4062)
+* //build 2017:[配信できる世界最高クラスのゲーム エクスペリエンスを Microsoft Azure を使用する: Halo、Hitman、WalkingDead (ビデオ) などのタイトルから得た教訓](https://channel9.msdn.com/Events/Build/2017/P4062)
 * Azure 使用の共通ゲーミング ワークロードをサポートするために設計された、再利用可能な構成要素、プロジェクト、サービス、ベスト プラクティス (GitHub): [Azure 上のゲーム用構成要素](https://github.com/MicrosoftDX/nether)
 * [Azure 上のゲーミング サービス (ビデオ)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 
@@ -232,6 +230,6 @@ SDK を使用して、このソリューションを、モバイル、PC、ま�
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
 
- 
+ 
 
- 
+ 

@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: Visual Studio の操作方法
 title: Visual Studio の操作方法
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 30849b23e9fbdca38f8401afe0f6f7df4b498121
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8219f1600297dfa60345fe8130e8954558b8ac61
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243935"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555992"
 ---
 # <a name="getting-started-getting-around-in-visual-studio"></a>はじめに: Visual Studio の操作方法
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
 ## <a name="getting-around-in-microsoft-visual-studio"></a>Microsoft Visual Studio の操作方法
 

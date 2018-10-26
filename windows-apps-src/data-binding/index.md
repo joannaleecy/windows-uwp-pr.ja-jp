@@ -6,16 +6,14 @@ description: データ バインディングは、アプリの UI でデータ�
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: edc3dc53a7cf536bbabce108647cf54693c3ab05
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 37193d28bbb060bc7e315a15dd83fc0084a6b861
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521346"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557952"
 ---
 # <a name="data-binding"></a>データ バインディング
 

@@ -5,17 +5,15 @@ title: ユニバーサル Windows プラットフォーム (UWP) の概要
 author: QuinnRadich
 ms.author: quradic
 ms.date: 03/23/2018
-ms.prod: windows
 ms.topic: article
 keywords: 概要, windows 10, uwp, xaml, c#
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d7ad7835e56b874c37b9376eb00278fea055dd1
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 0193209c1a603bb253b07b084dd62d29c91009a3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512166"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552964"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 アプリの概要 
  

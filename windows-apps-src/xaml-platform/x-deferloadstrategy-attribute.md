@@ -1,21 +1,19 @@
 ---
 author: jwmsft
 title: xDeferLoadStrategy 属性
-description: xDeferLoadStrategy は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。
+description: xDeferLoadStrategy は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ff89fea215ea4af58ab9b51a40baeb81ecb39bcc
-ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.openlocfilehash: cd958ba5f9025430be2736329c5a909233461039
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "1881103"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555254"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 属性
 
@@ -36,7 +34,7 @@ ms.locfileid: "1881103"
 
 **x:DeferLoadStrategy** を使う際の制約を以下に示します。
 
-- 要素を後で検索する手段として、要素の [x:Name](x-name-attribute.md) を定義する必要があります。
+- [X: Name](x-name-attribute.md)を定義する必要があります要素、そこにする必要があります、要素を後で検索する手段です。
 - 遅延できるのは、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) または [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) から派生した型のみです。
 - [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)、または [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) のルート要素は遅延できません。
 - [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の要素は遅延できません。
@@ -59,9 +57,9 @@ ms.locfileid: "1881103"
 - 要素のバインドが評価されます。
 - 遅延要素を含むプロパティに関するプロパティ変更通知を受信するように登録した場合は、通知が生成されます。
 
-遅延要素は入れ子にできますが、最も外側の要素から実体化する必要があります。  親が実体化される前に子要素を実体化しようとすると、例外が生成されます。
+遅延要素は入れ子にできますが、最も外側の要素から実体化する必要があります。 親が実体化される前に子要素を実体化しようとすると、例外が生成されます。
 
-通常は、最初のフレームに表示できないものを遅延させることをお勧めします。 遅延対象の候補を見つけるための指針の 1 つは、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) が折りたたまれた状態で作成されている要素を探すことです。 また、ユーザーの操作によってトリガーされる UI は、遅延できる要素がないか探す対象として適しています。
+通常は、最初のフレームに表示できないものを遅延させることをお勧めします。遅延対象の候補を見つけるための指針の 1 つは、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) が折りたたまれた状態で作成されている要素を探すことです。 また、ユーザーの操作によってトリガーされる UI は、遅延できる要素がないか探す対象として適しています。
 
 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) の遅延要素に注意してください。この場合、遅延要素により起動時間が短縮しますが、作成する内容によっては、パンのパフォーマンスも低下することがあります。 パンのパフォーマンスを向上させる方法については、[{x:Bind} マークアップ拡張](x-bind-markup-extension.md) および [x:Phase 属性](x-phase-attribute.md) に関するドキュメントをご覧ください。
 
@@ -73,19 +71,19 @@ ms.locfileid: "1881103"
 
 ```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
-    <Grid.RowDefinitions>
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="Auto" />
-    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
 
-    <Rectangle Height="100" Width="100" Fill="#F65314" Margin="0,0,4,4" />
-    <Rectangle Height="100" Width="100" Fill="#7CBB00" Grid.Column="1" Margin="4,0,0,4" />
-    <Rectangle Height="100" Width="100" Fill="#00A1F1" Grid.Row="1" Margin="0,4,4,0" />
-    <Rectangle Height="100" Width="100" Fill="#FFBB00" Grid.Row="1" Grid.Column="1" Margin="4,4,0,0" />
+    <Rectangle Height="100" Width="100" Fill="#F65314" Margin="0,0,4,4" />
+    <Rectangle Height="100" Width="100" Fill="#7CBB00" Grid.Column="1" Margin="4,0,0,4" />
+    <Rectangle Height="100" Width="100" Fill="#00A1F1" Grid.Row="1" Margin="0,4,4,0" />
+    <Rectangle Height="100" Width="100" Fill="#FFBB00" Grid.Row="1" Grid.Column="1" Margin="4,4,0,0" />
 </Grid>
 <Button x:Name="RealizeElements" Content="Realize Elements" Click="RealizeElements_Click"/>
 ```
@@ -94,6 +92,6 @@ ms.locfileid: "1881103"
 private void RealizeElements_Click(object sender, RoutedEventArgs e)
 {
     // This will realize the deferred grid.
-    this.FindName("DeferredGrid");
+    this.FindName("DeferredGrid");
 }
 ```

@@ -12,16 +12,14 @@ op-migration-status: ready
 ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ccd4081491c861db0084ba3d59ec727328cf7d28
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: d9856d564ffd36226a841c38eba65df0b62ee306
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675589"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557493"
 ---
 # <a name="xaml-custom-panels-overview"></a>XAML カスタム パネルの概要
 

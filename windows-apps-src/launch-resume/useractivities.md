@@ -6,15 +6,13 @@ keywords: ユーザー アクティビティ、ユーザー アクティビテ�
 ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 53aac2375d60df3cd9493f315b20431961378fe8
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 37b7ed35edecb95deb4b3ba568227f4cd8e32d9a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472364"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553757"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>デバイス間でもユーザーのアクティビティを継続する
 

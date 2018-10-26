@@ -6,19 +6,18 @@ ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, DirectX, 移植
-ms.openlocfilehash: e255bceae44ace0722a2df0c53d60ec0f8fa35fe
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: dea6455b4e9aaef2a4239ef70d0919a4b8841bc5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243179"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559539"
 ---
 # <a name="plan-your-directx-port"></a>DirectX の移植の計画
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 **要約**
 
@@ -38,9 +37,9 @@ Direct3D 9 から Direct3D 11 へのアップグレードは、変更箇所を�
 
 D3DX と DXUT のヘルパー ライブラリは、独自のヘルパー ライブラリか、コミュニティ ツールに置き換える必要があります。 詳しくは、「[DirectX 11 API への DirectX 9 の機能のマッピング](feature-mapping.md)」をご覧ください。
 
-> **注:** [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) または [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) を使うと、D3DX と DXUT で実現されていた機能の一部を置き換えることができます。
+> **注:**  [DirectX ツール キット](http://go.microsoft.com/fwlink/p/?LinkID=248929)または[DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926)を使用して一部の機能と、D3DX と DXUT で提供された以前の置換することができます。
 
- 
+ 
 
 アセンブリ言語で記述されたシェーダーは、シェーダー モデル 4 レベル 9\_1 または 9\_3 の機能を使って HLSL にアップグレードする必要があります。また、Effects ライブラリ向けに記述されたシェーダーは、より新しいバージョンの HLSL 構文に更新する必要があります。 詳しくは、「[DirectX 11 API への DirectX 9 の機能のマッピング](feature-mapping.md)」をご覧ください。
 
@@ -64,9 +63,9 @@ Microsoft のテンプレートとコード サンプルでは新しい C++ 機�
 -   マネージ リファレンス ([**^ 演算子**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)) と [**マネージ クラス**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (ref クラス) は、Windows ランタイムの基本となる部分です。 Windows ランタイム コンポーネントとのインターフェイスとして機能するマネージ ref クラスを使う必要があります。具体的には、[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) などです。詳しくはチュートリアルをご覧ください。
 -   Direct3D 11 の COM インターフェイスを操作する場合は、[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) テンプレート型を使うと COM ポインターが使いやすくなります。
 
- 
+ 
 
- 
+ 
 
 
 

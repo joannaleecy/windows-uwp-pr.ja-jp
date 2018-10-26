@@ -6,15 +6,13 @@ keywords: DirectX, XAML
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32696b739b430ecab25b5138f9aba9eb0ab40204
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: cb837965746eb1c2c7deab613eec239a83cac294
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673729"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558993"
 ---
 # <a name="extend-the-game-sample"></a>ゲーム サンプルの紹介
 
@@ -27,7 +25,7 @@ ms.locfileid: "1673729"
 ## <a name="using-xaml-for-the-overlay"></a>オーバーレイに XAML を適用
 
 
-ここで詳しく説明していない方法の 1 つとして、オーバーレイに対し [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) に代わり XAML を使う方法があります。 XAML には、Direct2D に比べ、ユーザー インターフェイス要素を描画するときの利点が数多くあります。 最も重要な利点は、Windows 10 の外観を DirectX ゲームに統合する作業が容易になるという点です。 UWP アプリを定義する共通した要素、スタイル、動作の多くが XAML モデルに緊密に統合されるため、ゲーム開発者による実装作業がはるかに容易になります。 作成するゲームのデザインに複雑なユーザー インターフェイスが含まれる場合は、Direct2D の代わりに XAML の使用を検討してください。
+ここで詳しく説明していない方法の 1 つとして、オーバーレイに対し [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) に代わり XAML を使う方法があります。 XAML には、Direct2D に比べ、ユーザー インターフェイス要素を描画するときの利点が数多くあります。 最も重要な利点は、windows 10 の見た目や操作感を便利な DirectX ゲームに組み込むことができます。 UWP アプリを定義する共通した要素、スタイル、動作の多くが XAML モデルに緊密に統合されるため、ゲーム開発者による実装作業がはるかに容易になります。 作成するゲームのデザインに複雑なユーザー インターフェイスが含まれる場合は、Direct2D の代わりに XAML の使用を検討してください。
 
 XAML を使用して、以前に作成した Direct2D のゲーム インターフェイスに似たインターフェイスを作成できます。
 

@@ -7,15 +7,13 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.author: twhitney
 ms.date: 01/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 53cc58930180f5ae7c3ec661feeb42433486afca
-ms.sourcegitcommit: b0b2fa760f4699b79b02e69061d85d529d90ef0a
-ms.translationtype: HT
+ms.openlocfilehash: cf8496393c5b500ab30d08608e90a0e156422ce3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2018
-ms.locfileid: "1533767"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554962"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル
 
@@ -60,7 +58,7 @@ Windows 10 バージョン 1607 では、もう 2 つのアプリ モデルの�
 |**ClosedByUser** | ユーザーは、タブレット モードでの閉じるジェスチャや、Alt キーを押しながら F4 キーを押すことによって、アプリを終了しました。 ユーザーがアプリを閉じた場合、アプリはまず中断され、次に終了します。 | アプリは基本的に Terminated 状態に至る手順と同じ手順に従うため、Terminated 状態と同じ方法でこれを処理します。|
 |**Running** | ユーザーがアプリを起動しようとしたときに、アプリは既に開いていました。 | なし。 アプリの別のインスタンスが起動されないことに注意してください。 既に実行中のインスタンスが、単にアクティブ化されます。 |
 
-**注**  *現在のユーザー セッション*は、Windows ログオンに基づきます。 現在のユーザーがログオフ、Windows のシャットダウンや再起動を行っていない限り、現在のユーザー セッションは、ロック画面認証やユーザーの切り替えなどのイベント間で保持されます。 
+**注:***現在のユーザー セッション*は、Windows ログオンに基づいています。 現在のユーザーがログオフ、Windows のシャットダウンや再起動を行っていない限り、現在のユーザー セッションは、ロック画面認証やユーザーの切り替えなどのイベント間で保持されます。 
 
 注意すべき重要な状況が 1 つあります。デバイスに十分なリソースがある場合、応答性の最適化のために事前起動がオプトインされている、使用頻度の高いアプリをオペレーティング システムが事前起動することです。 事前起動されたアプリは、バックグラウンドで起動され、すぐに中断されます。これにより、ユーザーがこれらのアプリに切り替えたときに、アプリを起動するよりも高速に再開することができます。
 
@@ -87,7 +85,7 @@ Windows によって、アプリの起動時に、アプリのスプラッシュ
 
 これらのメソッドのイベント データには、既に説明した同じ [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) プロパティが含まれており、アプリがアクティブ化される前の状態を確認することができます。 前の「[アプリの起動](#app-launch)」セクションで説明した方法と同じ方法で、状態と対処を解釈します。
 
-**注** コンピューターの管理者アカウントを使ってログオンしている場合は、UWP アプリをアクティブ化できません。
+**注:** 場合は、コンピューターの管理者アカウントを使用してログオンには、UWP アプリをアクティブ化することはできません。
 
 ## <a name="running-in-the-background"></a>バックグラウンドでの実行 ##
 
@@ -177,7 +175,7 @@ Windows 10 バージョン 1607 以降では、アプリは、アプリ自体と
 
 アプリは、中断されている間、受信登録したネットワーク イベントを受け取りません。 これらのネットワーク イベントはキューに入れられず、受け取ることができません。 そのため、再開時にアプリでネットワーク ステータスをテストする必要があります。
 
-**注:** [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントは UI とは異なるスレッドで発生するため、再開ハンドラーが UI とやり取りする場合はディスパッチャーを使う必要があります。 これを行う方法のコード例については、[バックグラウンド スレッドからの UI スレッドの更新に関するページ](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)をご覧ください。
+**注:**、再開ハンドラーのコードは、UI と通信する場合は、 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)イベントがないに発生するため、UI スレッドからディスパッチャーを使う必要があります。 これを行う方法のコード例については、[バックグラウンド スレッドからの UI スレッドの更新に関するページ](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)をご覧ください。
 
 一般的なガイドラインについては、[アプリの中断と再開のガイドラインに関するページ](https://msdn.microsoft.com/library/windows/apps/hh465088)をご覧ください。
 
@@ -185,9 +183,9 @@ Windows 10 バージョン 1607 以降では、アプリは、アプリ自体と
 
 一般に、アプリを閉じる処理はユーザーが行う必要はなく、Windows で管理されます。 ただし、ユーザーはジェスチャを使うか、Alt + F4 キーを押すか、Windows Phone でタスク スイッチャーを使って、アプリを閉じることができます。
 
-ユーザーがアプリを閉じたことを示すイベントはありません。 アプリがユーザーによって閉じられたとき、その状態を保存する機会を提供するために、アプリはまず中断されます。 Windows 8.1 以降では、ユーザーがアプリを閉じても、アプリは明示的に終了されるのではなく、画面と切り替えリストから消えるだけです。
+ユーザーがアプリを閉じたことを示すイベントはありません。 アプリがユーザーによって閉じられたとき、その状態を保存する機会を提供するために、アプリはまず中断されます。 Windows8.1 以降では、アプリは、ユーザーによって閉じられると、アプリが画面から削除されると切り替えリストが明示的に終了します。
 
-**ユーザーが閉じた場合の動作: **ユーザーがアプリを閉じたときに、Windows によって閉じられたときとは異なる動作にする必要がある場合は、アクティブ化イベント ハンドラーを使って、アプリをユーザーが終了したか、または Windows によって終了されたかを特定できます。 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体に関するリファレンスの **ClosedByUser** 状態と **Terminated** 状態の説明をご覧ください。
+**ユーザーによって閉じられた動作:** アプリは、Windows によって閉じられたよりも、ユーザーが閉じたときに、異なる処理を実行する必要がある場合、アプリのユーザーによって、または Windows によって終了されたかどうかを判断する、アクティブ化イベント ハンドラーを使用することができます。 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体に関するリファレンスの **ClosedByUser** 状態と **Terminated** 状態の説明をご覧ください。
 
 必要でない限り、アプリをプログラムで閉じないことをお勧めします。 たとえば、メモリ リークが検出された場合などは、ユーザーの個人データのセキュリティを確保するためにアプリ自体で閉じてもかまいません。
 
@@ -226,6 +224,6 @@ Windows 10 バージョン 1607 以降では、アプリは、アプリ自体と
 * [シングル プロセス モデルでのバックグラウンド アクティビティ](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [バックグラウンドでのメディアの再生](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 
- 
+ 
 
- 
+ 

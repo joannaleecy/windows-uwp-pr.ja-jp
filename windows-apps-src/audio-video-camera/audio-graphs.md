@@ -6,16 +6,14 @@ title: オーディオ グラフ
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 26b9f49c8f21c7c60fb99fd8eaf24156a8aed3d9
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: cdd1548a4d120027afd06a178cc338c88cb5cc4b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832503"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558273"
 ---
 # <a name="audio-graphs"></a>オーディオ グラフ
 
@@ -47,7 +45,7 @@ Windows ランタイム オーディオ グラフ API:
 -   XAudio2 よりもずっと簡単です。
 -   C++ 用にサポートされていますが、C# からも使用できます。
 -   オーディオ ファイル (圧縮ファイル形式など) を使うことができます。 XAudio2 はオーディオ バッファーのみで動作します。ファイル I/O 機能はありません。
--   Windows 10 では、低待機時間オーディオ パイプラインを使うことができます。
+-   Windows 10 では、低待機時間オーディオ パイプラインを使用できます。
 -   既定のエンドポイント パラメーターの使用時にエンドポイントの自動切り替えをサポートします。 たとえば、ユーザーがデバイスのスピーカーからヘッドホンに切り替えると、オーディオが自動的に新しい入力にリダイレクトされます。
 
 ## <a name="audiograph-class"></a>AudioGraph クラス
@@ -270,9 +268,9 @@ Windows 10 バージョン 1607 以降、**AudioGraph** は空間オーディオ
 
 ## <a name="see-also"></a>関連項目
 - [メディア再生](media-playback.md)
- 
+ 
 
- 
+ 
 
 
 

@@ -6,19 +6,17 @@ description: レイアウトは、CPU 使用率とメモリ オーバーヘッ�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 40afd15da7e225ea82814ab2fa680a3c95e00488
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894746"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553862"
 ---
 # <a name="optimize-your-xaml-layout"></a>XAML レイアウトの最適化
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 **重要な API**
 
@@ -28,7 +26,7 @@ ms.locfileid: "894746"
 
 ## <a name="reduce-layout-structure"></a>レイアウトの構造を減らす
 
-レイアウトのパフォーマンス向上の効果が最も大きいのは、UI 要素のツリーの階層構造を簡略化することです。 パネルはビジュアル ツリーに存在しますが、これらは構造型の要素であり、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) や [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) などの*ピクセル生成要素*ではありません。 通常、非ピクセル生成要素の数を減らすことによりツリーを簡略化すると、パフォーマンスの大幅な向上につながります。
+レイアウトのパフォーマンス向上の効果が最も大きいのは、UI 要素のツリーの階層構造を簡略化することです。 パネルはビジュアル ツリーに存在しますが、これらは構造型の要素であり、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) や [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) などの*ピクセル生成要素*ではありません。 通常、非ピクセル生成要素の数を減らすことによりツリーを簡略化すると、パフォーマンスの大幅な向上につながります。
 
 多くの UI は、パネルを入れ子にすることによって実装されており、結果として、パネルと要素のツリーが深くて複雑な構造になっています。 パネルを入れ子にすると便利ですが、多くの場合は、同じ UI をより複雑な 1 つのパネルを使って実現することができます。 1 つのパネルを使用すると、パフォーマンスが向上します。
 
@@ -138,7 +136,7 @@ ms.locfileid: "894746"
 
 一般的な UI 要件として、要素が互いに重なり合ったレイアウトがあります。 通常、この方法で要素を配置するために、パディング、余白、整列、変換が使用されます。 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) コントロールは、重なり合った要素のレイアウトのパフォーマンスを向上させるために最適化されています。
 
-**重要**  パフォーマンスの向上を確認するために、単一セルの [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) を使用します。 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) や [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions) は定義しないでください。
+**重要な**向上を確認する、単一セルの[**グリッド**](https://msdn.microsoft.com/library/windows/apps/BR242704)を使用します。 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) や [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions) は定義しないでください。
 
 ### <a name="examples"></a>例
 

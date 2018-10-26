@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1412ce6567687a5ee95ca4df384b8cf109809754
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 3c23cc07c84e9a77b36c812c6f273f518e98838e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045145"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553836"
 ---
 # <a name="resource-types"></a>リソースの種類
 
@@ -48,7 +46,7 @@ ms.locfileid: "1045145"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idbufferresourcesspanspan-idbufferresourcesspanspan-idbufferresourcesspanspan-idbuffer-resourcesspanbuffer-resources"></a><span id="Buffer_Resources"></span><span id="buffer_resources"></span><span id="BUFFER_RESOURCES"></span><span id="buffer-resources"></span>バッファー リソース
 

@@ -6,16 +6,14 @@ ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: a00a24d2c270e1c4f3aa3b8b716a6637d5da4af1
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 532c2a0a9779ae3eaedb2217175dc0805514f792
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652211"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555241"
 ---
 # <a name="map-opengl-es-20-to-direct3d-11"></a>Direct3D 11 への OpenGL ES 2.0 のマッピング
 
@@ -54,16 +52,16 @@ OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャ�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="notes-on-specific-opengl-es-20-providers"></a>特定の OpenGL ES 2.0 プロバイダーに関する注意事項
 
 
 これらのトピックでは、Khronos OpenGL ES 2.0 仕様とプラットフォームにとらわれない C を使います。iOS と Android はいずれも同じ仕様を使い、これらのプラットフォーム向けに作成された OpenGL ES 2.0 コードは、ここで解説するコード スニペットに非常によく似ています。ただし、これらは通常、オブジェクト指向の API として公開されます。 また、各プラットフォームの複雑さと言語の違いが原因で、特にメソッドのパラメーターの型や、一般的な言語構文に若干の相違がある場合があります。 たとえば iOS は、Objective-C を使います。 Android は C++ を使うことができますが、開発者は純粋な Java の実装に依存している場合があります。 この点を考慮しても、これらのトピックは全体的な概念としては有益であり、OpenGL ES API の構造と用途は異なりません。
 
- 
+ 
 
- 
+ 
 
 
 

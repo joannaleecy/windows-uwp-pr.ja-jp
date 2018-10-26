@@ -6,16 +6,14 @@ ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a001f461f78acf79438bb15b03aac00a05f29a3
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 8dcf1749f1e7db4d514466d6a753d6f8cace5713
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691621"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555522"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>DirectX 11 API への DirectX 9 の機能のマッピング
 
@@ -240,7 +238,7 @@ Direct3D 9 から Direct3D 11 にコードの変換を行う場合は、次の�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="surface-format-mapping"></a>サーフェス形式のマッピング
 
@@ -346,20 +344,20 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>注</strong>   Direct3D 9 の動作を取得するには、シェーダーで .r スウィズルを使って赤を他の成分に複製します。
+<strong>注:</strong>  direct3d9 の動作を取得するのには、その他のコンポーネントを赤を複製するシェーダーで .r スウィズルを使用します。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>注</strong>   Direct3D 9 の動作を取得するには、シェーダーでスウィズル .rrrg を使ってアルファ成分に赤を複製し、緑を移動します。
+<strong>注:</strong> 赤を複製し、direct3d9 の動作を取得するアルファ成分を緑を移動するシェーダーでスウィズル .rrrg を使用します。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -402,10 +400,10 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>注</strong>   Direct3D 9 ではデータは 255.0f だけスケールアップされましたが、これはシェーダーで処理できます。
+<strong>注:</strong>  direct3d9 でのデータは 255.0f、スケール アップが、これは、シェーダーで処理できます。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -416,10 +414,10 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>注</strong>   Direct3D 9 ではデータは 255.0f だけスケールアップされましたが、これはシェーダーで処理できます。
+<strong>注:</strong>  direct3d9 でのデータは 255.0f、スケール アップが、これは、シェーダーで処理できます。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -430,10 +428,10 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM と DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>注</strong>   API とハードウェアの観点からは、DXT1 と DXT2 は同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
+<strong>注:</strong>  DXT1 と DXT2 API とハードウェアの観点から同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -444,10 +442,10 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM と DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>注</strong>   API とハードウェアの観点からは、DXT3 と DXT4 は同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
+<strong>注:</strong>  DXT3 と DXT4 API とハードウェアの観点から同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -510,10 +508,10 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>注</strong>   D3D9 の動作を取得するには、シェーダーで .r スウィズルを使って赤を他の成分に複製します。
+<strong>注:</strong>  D3D9 の動作を取得するには、その他のコンポーネントを赤を複製するシェーダーで .r スウィズルを使用します。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
@@ -584,30 +582,30 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>注</strong>   シェーダーは UINT 値を取得しますが、Direct3D 9 スタイルの integral float (0.0f、1.0f... 255.f) が必要な場合、UINT をシェーダーで float32 に変換できます。
+<strong>注:</strong> シェーダーは UINT 値を取得しますが、浮動小数点値が必要な場合は、direct3d9 スタイル (0.0 f、1.0 f.255.f)、UINT をシェーダーで float32 に変換できます。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>注</strong>   シェーダーは SINT 値を取得しますが、Direct3D 9 スタイルの integral float が必要な場合、SINT をシェーダーで float32 に変換できます。
+<strong>注:</strong> シェーダーは SINT 値を取得しますが、だけ SINT をシェーダーで float32 に変換する direct3d9 スタイルの integral が必要な場合です。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>注</strong>   シェーダーは SINT 値を取得しますが、Direct3D 9 スタイルの integral float が必要な場合、SINT をシェーダーで float32 に変換できます。
+<strong>注:</strong> シェーダーは SINT 値を取得しますが、だけ SINT をシェーダーで float32 に変換する direct3d9 スタイルの integral が必要な場合です。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -650,30 +648,30 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>注</strong>   機能レベル 10.0 以降が必要です。
+<strong>注:</strong> 機能レベル 10.0 以降が必要です
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>注</strong>   機能レベル 10.0 以降が必要です。
+<strong>注:</strong> 機能レベル 10.0 以降が必要です
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

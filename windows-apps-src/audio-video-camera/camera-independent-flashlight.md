@@ -6,18 +6,17 @@ title: カメラに依存しない懐中電灯
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7777b1b3f72090667f1e75f3c9e23b6adcd9f2d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 913faf70531509a604cde52bb71886c128edae46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243155"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555558"
 ---
 # <a name="camera-independent-flashlight"></a>カメラに依存しない懐中電灯
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 この記事では、デバイスのライトにアクセスして使う方法を説明します (存在する場合)。 ライト機能は、デバイスのカメラやカメラのフラッシュ機能とは別に管理されます。 この記事では、ライトへの参照の取得および設定の調整に加えて、使用されていないときにライトのリソースを正しく解放する方法と、ライトが別のアプリで使用されている場合に利用状況の変化を検出する方法も説明します。
@@ -79,7 +78,7 @@ ms.locfileid: "243155"
 ## <a name="related-topics"></a>関連トピック
 - [メディア再生](media-playback.md)
 
- 
+ 
 
 
 

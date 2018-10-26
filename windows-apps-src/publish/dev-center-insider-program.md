@@ -5,17 +5,15 @@ author: JnHs
 ms.author: wdg-dev-content
 ms.date: 06/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, insider, デベロッパー センター insider, プレビュー機能
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
-ms.openlocfilehash: 430d8588b83dd605848bba63f46dc5a440c28cf3
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: c9e7725eb7780ba39cb812a61cba31c0a6b6616e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473738"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559364"
 ---
 # <a name="dev-center-insider-program"></a>デベロッパー センター Insider Program
 

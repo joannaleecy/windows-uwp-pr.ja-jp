@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2717a482e0ea1ad80f0f13dc09bb6789863ef7e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9ce2082479261cd96fb1c5bafd5f2df06bf6f239
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044271"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558688"
 ---
 # <a name="emissive-lighting"></a>放射光
 
@@ -33,7 +31,7 @@ ms.locfileid: "1044271"
 |-----------|---------------|----------------------------------------------------------------------|-----------------|
 | Cₑ        | (0,0,0,0)     | 赤、緑、青、およびアルファ透明度 (すべての浮動小数点値) | 放射色。 |
 
- 
+ 
 
 Cₑ の値は、color 1 または color 2 です。 頂点の色が指定されていない場合は、素材の放射色が使用されます。
 
@@ -57,9 +55,9 @@ Cₑ の値は、color 1 または color 2 です。 頂点の色が指定され
 
 [光源の計算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

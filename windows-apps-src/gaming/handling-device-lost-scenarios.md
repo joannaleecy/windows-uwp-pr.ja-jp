@@ -6,19 +6,18 @@ ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX 11, デバイス喪失
-ms.openlocfilehash: 3d7a93ed0b1ce78cba278232eb5325e463c12789
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 888b3ec7ab667a8a92ae638a9d5c456c3180df0d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243288"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558605"
 ---
 # <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>Direct3D 11 でのデバイス削除シナリオの処理
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 このトピックでは、グラフィックス アダプターが削除または再初期化されたときに Direct3D と DXGI デバイス インターフェイス チェーンを再作成する方法について説明します。
 
@@ -29,7 +28,7 @@ DirectX 9 では、D3D デバイスが非動作状態になったときに、ア
 -   グラフィックス デバイスが応答を停止してリセットされた場合。
 -   グラフィックス アダプターが物理的に接続された場合、または取り外された場合。
 
-このような状況になると、DXGI はエラー コードを返して、Direct3D デバイスの再起動とデバイス リソースの再作成が必要であることを知らせます。 このチュートリアルでは、グラフィックス アダプターのリセット、削除、変更という事態が生じた場合に、Direct3D 11 アプリとゲームがそれを検出して対応できるようにする方法について説明します。 コード例は、Microsoft Visual Studio 2015 に付属する DirectX 11 アプリ (ユニバーサル Windows) テンプレートから採用しています。
+このような状況になると、DXGI はエラー コードを返して、Direct3D デバイスの再起動とデバイス リソースの再作成が必要であることを知らせます。 このチュートリアルでは、グラフィックス アダプターのリセット、削除、変更という事態が生じた場合に、Direct3D 11 アプリとゲームがそれを検出して対応できるようにする方法について説明します。 コード例は、Microsoft Visual Studio2015 に付属する DirectX 11 アプリ (ユニバーサル Windows) テンプレートから採用されます。
 
 ## <a name="instructions"></a>手順
 
@@ -169,4 +168,4 @@ DXGI デバイス削除エラーが繰り返し発生する場合は、アプリ
 
 Visual Studio の開発者コマンド プロンプトでは、Visual Studio グラフィックス診断に関連する Direct3D イベントのキャプチャと再生を行うコマンド ライン ツール "dxcap" がサポートされます。 アプリの実行中はコマンド ライン オプション "-forcetdr" を使って、GPU タイムアウトの検出と回復イベントを強制できるため、DXGI\_ERROR\_DEVICE\_REMOVED がトリガーされ、エラー処理コードをテストできます。
 
-> **注** DXCap とそのサポート DLL は、Windows 10 向けグラフィックス ツール (Windows SDK では配布されなくなりました) の一部として system32/syswow64 にインストールされます。 代わりに、オプションの OS コンポーネントであるオンデマンドのグラフィックス ツール機能を通じて提供され、Windows 10 でグラフィックス ツールを有効にして使うにはこれをインストールする必要があります。 Windows 10 向けグラフィックス ツールをインストールする方法について詳しくは、<https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools> をご覧ください。
+> **注** DXCap とそのサポート DLL は、Windows 10 向けグラフィックス ツール (Windows SDK では配布されなくなりました) の一部として system32/syswow64 にインストールされます。 代わりに、オプションの OS コンポーネントであるオンデマンドのグラフィックス ツール機能を通じて提供され、Windows 10 でグラフィックス ツールを有効にして使うにはこれをインストールする必要があります。 Windows 10 向けグラフィックス ツールをインストールする方法について詳しくはここにあります。 <https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>

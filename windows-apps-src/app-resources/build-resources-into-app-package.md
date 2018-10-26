@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: cf175a8d202588700a293aa2771d59590ef9691a
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 61b526cd7aa2da8733457b16dd0487ef4ead9cca
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393861"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555778"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>リソースをリソース パックではなくアプリ パッケージに組み込む
 
@@ -32,7 +30,7 @@ Visual Studio を構成して、2 つの方法のいずれかでアプリ パッ
 ## <a name="option-1-use-priconfigpackagingxml-to-build-resources-into-your-app-package"></a>オプション 1. priconfig.packaging.xml を使用して、アプリ パッケージにリソースを組み込む
 
 1. Visual Studio で、新しい項目をプロジェクトに追加します。 XML ファイルを選択し、ファイルに `priconfig.packaging.xml` という名前を付けます。
-2. ソリューション エクスプ ローラーで、`priconfig.packaging.xml` を選択し、[プロパティ] ウィンドウを確認します。 ファイルの [ビルド アクション] を [なし] に設定し、[出力ディレクトリにコピー] を [コピーしない] に設定します。
+2. ソリューション エクスプローラーで、`priconfig.packaging.xml` を選択し、[プロパティ] ウィンドウを確認します。 ファイルの [ビルド アクション] を [なし] に設定し、[出力ディレクトリにコピー] を [コピーしない] に設定します。
 3. ファイルの内容をこの XML に置き換えます。
    ```xml
    <packaging>

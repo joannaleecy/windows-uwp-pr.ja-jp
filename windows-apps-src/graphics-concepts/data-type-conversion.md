@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c7f68984274cbdb3adec0a88a0c99f7a7342380
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a6ceb1e779f8622d3e358bc131b21f6ec66ac2f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045115"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556415"
 ---
 # <a name="data-type-conversion"></a>データ型の変換
 
@@ -37,7 +35,7 @@ ms.locfileid: "1045115"
 | FLOAT | Direct3D で定義された任意の表現の浮動小数点値。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | SRGB  | n ビットの数値ですべての桁が 0 の場合は 0.0f、すべての桁が 1 の場合は 1.0f を表す点で UNORM と同様です。 ただし、UNORM とは異なり、SRGB では、すべての桁が 0 である値からすべての桁が 1 である値までの符号なし整数エンコードのシーケンスは、0.0f ～ 1.0f の数値の浮動小数点で表した値に対して非線形数列を表します。 大まかにいえば、この非線形の数列である SRGB をカラーのシーケンスとして表示すると、平均的な視聴者には、平均的な表示条件下および平均的なディスプレイ上で、輝度レベルの直線的な変化に見えます。 詳細については、IEC (国際電気標準会議) の SRGB カラー規格である IEC 61996-2-1 を参照してください。                |
 
- 
+ 
 
 前述の各用語は、通常、"形式名修飾子" として使用されます。これらは、メモリ内のデータのレイアウト方法と、メモリからまたはシェーダーなどのパイプライン ユニットからのトランスポート パス (潜在的にフィルター処理を含む) で実行される変換の両方を表します。
 
@@ -189,7 +187,7 @@ ms.locfileid: "1045115"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanfixed-point-integer-conversion"></a><span id="Fixed_Point_Integer_Conversion"></span><span id="fixed_point_integer_conversion"></span><span id="FIXED_POINT_INTEGER_CONVERSION"></span>固定小数点整数の変換
 
@@ -238,22 +236,22 @@ Direct3D では、次の 2 つの状況で固定小数点整数表現を使用�
 <td align="left">固定小数点整数</td>
 <td align="left">FLOAT</td>
 <td align="left"><p>浮動小数点型に変換する固定小数点表現があり、その合計ビット数は 24 ビット以下で、うち小数部は 23 ビット以下であるとします。 特定の固定小数点数 fxp を i.f の形式とします (i ビットの整数、f ビットの小数)。 浮動小数点型への変換は次に示す疑似コードのようになります。</p>
-<p>結果を浮動 = (フロート) (fxp &gt; &gt; f) +//整数を抽出します。</p>
-((フロート) (fxp &amp; (2<sup>f</sup> - 1))/(<sup>f</sup>2))。分数を抽出します。</td>
+<p>float result = (float) (fxp &gt; &gt; f) +///整数を抽出</p>
+((float) (fxp &amp; (2<sup>f</sup> - 1))/(2<sup>f</sup>));小数を抽出します。</td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [付録](appendix.md)
 
- 
+ 
 
- 
+ 
 
 
 

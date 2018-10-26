@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e9f023d65ecb914343b1366e76d3a0f2a6621451
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e627cc4ad9918afeabfc61544872169425bd98a3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655041"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551906"
 ---
 # <a name="accessibility-overview"></a>アクセシビリティの概要  
 
@@ -125,7 +123,7 @@ UI コントロールでは、テーマの XAML リソース ディクショナ�
 
 多くの場合、幅広いユーザーが利用できるようにするために、重要な情報を複数の方法で伝えることができます。 たとえば、アイコンと色の両方を使って情報を目立つようにすると、色覚に障碍があるユーザーが確認しやすくなります。また、効果音と一緒に視覚的な警告も表示すると、聴覚障碍があるユーザーに便利です。
 
-必要に応じて、不要な要素やアニメーションがまったくないアクセシビリティ対応のユーザー インターフェイス要素を代わりに使えるようにしたり、ユーザー操作が効率的になるように簡略化したりできます。 次のコード例は、ユーザー設定に応じて、ある [**UserControl**](https://msdn.microsoft.com/library/windows/apps/BR227647) インスタンスの代わりに別のインスタンスを表示する方法を示しています。
+必要に応じて、不要な要素やアニメーションがまったくないアクセシビリティ対応のユーザー インターフェイス要素を代わりに使えるようにしたり、ユーザー操作が効率的になるように簡略化したりできます。 次のコード例は、1 つの [**UserControl**](https://msdn.microsoft.com/library/windows/apps/BR227647) インスタンスを表示して、ユーザー設定に応じて UserControl の別のインスタンスを表示する方法を示しています。
 
 XAML
 ```xml

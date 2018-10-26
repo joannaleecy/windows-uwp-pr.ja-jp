@@ -6,16 +6,14 @@ title: Dynamic Adaptive Streaming over HTTP (DASH) プロファイルのサポ�
 ms.author: drewbat
 ms.date: 02/15/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c411d479430f793d85863f66c64758155b8a5758
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 7a4ec9f9e81010d39af496da156afa676f4b3714
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842339"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553288"
 ---
 # <a name="dynamic-adaptive-streaming-over-http-dash-profile-support"></a>Dynamic Adaptive Streaming over HTTP (DASH) プロファイルのサポート
 
@@ -23,7 +21,7 @@ ms.locfileid: "1842339"
 ## <a name="supported-dash-profiles"></a>サポートされている DASH プロファイル
 次の表では、UWP アプリでサポートされている DASH プロファイルを示します。
 
-|タグ | マニフェストの種類 | 説明|7 月にリリースされた Windows 10|Windows 10 バージョン 1511|Windows 10 バージョン 1607 |Windows 10 Version 1607 |Windows 10 Version 1703|
+|タグ | マニフェストの種類 | 説明|7 月にリリースされた Windows 10|Windows 10 バージョン 1511|Windows 10 バージョン 1607 |Windows 10 バージョン 1607 |Windows 10 Version 1703|
 |----------------|------|-------|-----------|--------------|---------|-------|--------|
 |urn:mpeg&#58;dash:profile:isoff-live:2011 | 静的 |     |サポートされる            |  サポートされる              | サポートされる        |サポートされる| サポートされる|
 |urn:mpeg&#58;dash:profile:isoff-main:2011 |        | ベスト エフォート | サポートされる            |  サポートされる              | サポートされる        |サポートされる| サポートされる|
@@ -43,9 +41,9 @@ ms.locfileid: "1842339"
 
 * [メディア再生](media-playback.md)
 * [アダプティブ ストリーミング](adaptive-streaming.md)
- 
+ 
 
- 
+ 
 
 
 

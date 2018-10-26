@@ -5,16 +5,14 @@ description: ユニバーサル Windows プラットフォームでファイル�
 ms.author: twhitney
 ms.date: 05/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: 概要, uwp, windows 10, 学習トラック, ファイル, ファイル io, ファイルの読み取り, ファイルの書き込み, ファイルの作成, テキストの書き込み, テキストの読み取り
 ms.localizationpriority: medium
-ms.openlocfilehash: ae89b5c0e072eceec155009c07b3b3a7cf563a20
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 02ac4d3f157343182097e67dc8825dde940302c3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521414"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553163"
 ---
 # <a name="work-with-files"></a>ファイルの操作
 

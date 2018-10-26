@@ -6,16 +6,14 @@ title: メディア ファイルのトランスコード
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c13471d67033790c01a07e53af667c2a078894
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: babf91e681004942bb3b66eb43622742fa183125
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1831976"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556695"
 ---
 # <a name="transcode-media-files"></a>メディア ファイルのトランスコード
 
@@ -86,11 +84,18 @@ ms.locfileid: "1831976"
 
 
 ## <a name="encode-a-metadata-stream"></a>メタデータ ストリームをエンコードする
+Windows 10、バージョン 1803 以降でタイミングが設定されたメタデータを含めることができますとメディア ファイルのコード変換します。 上記のビデオ トランス コード例とは異なり組み込みのメディア エンコード プロファイルの作成方法、 [**MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)などを使用する必要があります手動で作成するメタデータのエンコード プロファイルをエンコードするメタデータの種類をサポートするには.
 
-
+このメタデータ incoding プロファイルを作成するのには、まずトランス コードするメタデータのエンコード方法を説明する [**TimedMetadataEncodingProperties**] のオブジェクトを作成します。 サブタイプのプロパティは、メタデータの種類を指定する GUID です。 各メタデータの種類のエンコードの詳細は、専用が Windows によって指定されていません。 この例では、GoPro メタデータ (gprs) の GUID が使用されます。 次に、 [**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata)は、メタデータの形式に固有のストリーム形式を記述するデータのバイナリ blob を設定すると呼ばれます。 次に、 **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor)エンコードのプロパティから作成される、トラックのラベルと名前が、アプリケーション、メタデータ ストリームを識別し、必要に応じて UI にストリーム名を表示する endcoded ストリームの読み取りできるようにします。 
  
+[!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
 
- 
+**TimedMetadataStreamDescriptor**を作成した後は、ビデオ、オーディオ、およびファイルにエンコードするメタデータを説明する**MediaEncodingProfile**を作成できます。 最後の例で作成した**TimedMetadataStreamDescriptor**では、この例のヘルパー関数に渡されたされ、 [**SetTimedMetadataTracks**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks)を呼び出すことによって**MediaEncodingProfile**に追加されます。
+
+[!code-cs[GetMediaEncodingProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetMediaEncodingProfile)]
+ 
+
+ 
 
 
 

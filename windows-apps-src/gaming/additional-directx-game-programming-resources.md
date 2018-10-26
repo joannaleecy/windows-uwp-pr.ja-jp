@@ -6,19 +6,18 @@ ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、ゲーム、プログラミング
-ms.openlocfilehash: 736f5f5864edc9c7a976e8e0f062779ddd1f86c5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: d201caefedca0d810f78d893ea779bd6b814f007
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243318"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559454"
 ---
 # <a name="game-programming-resources"></a>ゲーム プログラミング リソース
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
 Windows でのゲーム プログラミングについて詳しくは、次のリソースをご覧ください。
@@ -32,7 +31,7 @@ Windows でのゲーム プログラミングについて詳しくは、次の�
 ## <a name="game-design-guidance"></a>ゲーム設計のガイダンス
 
 
--   [Windows ストア アプリの UX ガイドラインの索引](https://msdn.microsoft.com/library/windows/apps/hh465424)
+-   [UWP アプリのインデックスの UX ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465424)
 
 ## <a name="blogs"></a>ブログ
 
@@ -48,7 +47,7 @@ Windows でのゲーム プログラミングについて詳しくは、次の�
 -   [DirectXTex テクスチャ処理ライブラリに関するページ](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   Microsoft Visual Studio [ グラフィックス診断](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx) に関するページ
 -   [Win2D](https://github.com/Microsoft/Win2D) - GPU アクセラレーションを使った即時モードの 2D グラフィックス レンダリング用の、使いやすい Windows ランタイム API です。
--   [Windows ストア用 ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387) - OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行します。
+-   [Microsoft Store 用の ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387) - OpenGL ES コンテンツを実行 Windows で OpenGL ES API 呼び出しを DirectX 11 API 呼び出しを変換することによってします。
 
 ## <a name="gdc-2015-game-dev-session-videos"></a>GDC 2015 のゲーム開発セッションのビデオ
 
@@ -81,9 +80,9 @@ Windows でのゲーム プログラミングについて詳しくは、次の�
 -   [CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=76627)
 -   [GameDev.net](http://go.microsoft.com/fwlink/p/?LinkID=288870)
 
- 
+ 
 
- 
+ 
 
 
 

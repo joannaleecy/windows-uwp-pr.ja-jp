@@ -6,27 +6,26 @@ ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, タッチ, コントロール, DirectX, 入力
-ms.openlocfilehash: 44d5071ee0cd695351c77630d699a1a060f477d6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 53c4a91f3ef20c11783796c3ca362f74b3f39adb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243354"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553014"
 ---
 # <a name="touch-controls-for-games"></a>ゲームのタッチ コントロール
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 ここでは、DirectX を使うユニバーサル Windows プラットフォーム (UWP) C++ ゲームに、基本的なタッチ コントロールを追加する方法について説明します。 具体的には、平面に固定されたカメラを動かすタッチ ベースのコントロールを、指またはスタイラスでドラッグするとカメラの視点がシフトする Direct3D 環境に追加する方法を紹介します。
 
 これらのコントロールは、プレイヤーが地図やプレイフィールドなどの 3D 環境でドラッグしてスクロールまたはパンを行うゲームに組み込むことができます。 たとえば、戦略ゲームやパズル ゲームでは、これらのコントロールを使って、プレイヤーが左右にパンすることで画面より大きいゲーム環境を確認できるようにすることが可能です。
 
-> **注**  ここで紹介するコードは、マウス ベースのパン コントロールにも利用できます。 ポインター関連のイベントは、Windows ランタイム API で抽象化されるため、タッチまたはマウス ベースのポインター イベントを処理できます。
+> **注:** コードは、マウス ベースのパン コントロールでも動作します。 ポインター関連のイベントは、Windows ランタイム API で抽象化されるため、タッチまたはマウス ベースのポインター イベントを処理できます。
 
- 
+ 
 
 ## <a name="objectives"></a>目標
 
@@ -344,14 +343,12 @@ void CameraPanController::Update( CoreWindow ^window )
 
 これで、 一連の簡単なカメラ パンのタッチ コントロールがゲームに実装されました。
 
-> **注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

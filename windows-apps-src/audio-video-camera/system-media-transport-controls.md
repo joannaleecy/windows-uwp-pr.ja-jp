@@ -6,18 +6,17 @@ title: システム メディア トランスポート コントロールの手�
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 1c0b24bce21ed145d61f6b5d05392a6fc3cc30aa
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: b0ece9a25a2fd2892553d66847c39637e7faae70
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243372"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554063"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>システム メディア トランスポート コントロールの手動制御
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
 
 Windows 10 バージョン 1607 以降、[ **MediaPlayer** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) クラスを使ってメディアを再生する UWP アプリは、既定でシステム メディア トランスポート コントロール (SMTC) と自動的に統合されます。 これは、ほとんどのシナリオの SMTC と対話するための推奨される方法です。 SMTC の **MediaPlayer** との既定の統合のカスタマイズについて詳しくは、「[システム メディア トランスポート コントロールとの統合](integrate-with-systemmediatransportcontrols.md)」をご覧ください。
 
@@ -93,7 +92,7 @@ SMTC の手動コントロールの実装が必要になるシナリオがいく
 | [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/mt218756)     | [**PlaybackRateChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218757)     |
 | [**ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt218758) | [**ShuffleEnabledChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218759) |
 
- 
+ 
 これらのコントロールの 1 つに対するユーザーの操作を処理するには、最初に、関連付けられているイベントのハンドラーを登録します。
 
 [!code-cs[RegisterPlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterPlaybackChangedHandler)]
@@ -114,10 +113,10 @@ SMTC の手動コントロールの実装が必要になるシナリオがいく
 
 ## <a name="related-topics"></a>関連トピック
 * [メディア再生](media-playback.md)
-* [システム メディア トランスポート コントロールとの統合](integrate-with-systemmediatransportcontrols.md) 
+* [システム メディア トランスポート コントロールとの統合](integrate-with-systemmediatransportcontrols.md) 
 * [システム メディア トランスポートのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
- 
+ 
 
 
 

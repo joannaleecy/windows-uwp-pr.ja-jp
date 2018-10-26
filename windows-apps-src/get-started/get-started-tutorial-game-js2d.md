@@ -1,21 +1,19 @@
 ---
 title: JavaScript で UWP ゲームを作成する
-description: JavaScript および CreateJS で作成された、Microsoft ストア ゲーム、単純な UWP
+description: JavaScript と CreateJS で記述された Microsoft Store のゲームのシンプルな UWP
 author: GrantMeStrength
 ms.author: jken
 ms.date: 02/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 87625c05ea13dcb8af2c06dfba7b35308200b5eb
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 60060bb3ec7a644d29523483d0d31c0497c543d1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1018612"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558525"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>JavaScript で UWP ゲームを作成する
 
@@ -28,13 +26,13 @@ ms.locfileid: "1018612"
 ## <a name="introduction"></a>はじめに
 
 
-Microsoft ストア平均にアプリを公開して共有 (したり販売!) のさまざまなデバイスでのユーザーの数百万します。  
+Microsoft Store にアプリを公開することができます共有 (または販売!) 何百万もの多くの異なるデバイス上のユーザーとします。  
 
-Microsoft ストアにアプリを発行するためとして UWP (ユニバーサル Windows プラットフォーム) アプリを記述する必要があります。 ただし、UWP はきわめて柔軟であり、多様な言語およびフレームワークをサポートしています。 これを証明するために、いくつかの CreateJS ライブラリを活用して JavaScript で記述されたシンプルなゲームをサンプルとして紹介します。このサンプルでは、スプライトの記述、ゲーム ループの作成、キーボードとマウスのサポート、さまざまな画面サイズへの調整の方法を示します。
+Microsoft Store にアプリを公開するために、UWP (ユニバーサル Windows プラットフォーム) アプリとして記述する必要があります。 ただし、UWP はきわめて柔軟であり、多様な言語およびフレームワークをサポートしています。 これを証明するために、いくつかの CreateJS ライブラリを活用して JavaScript で記述されたシンプルなゲームをサンプルとして紹介します。このサンプルでは、スプライトの記述、ゲーム ループの作成、キーボードとマウスのサポート、さまざまな画面サイズへの調整の方法を示します。
 
 このプロジェクトは、Visual Studio を使って JavaScript で構築します。 少し変更を加えると、Web サイトでホスティングすることも、他のプラットフォームに合わせることもできます。 
 
-**メモ:** これは、not、完全な (または適切な) ゲームです。JavaScript およびサード パーティのライブラリを使用して、アプリ、Microsoft ストアに公開する準備ができていることを示すために設計されています。
+**注:** ない、完全な (または適切な) のゲームアプリようにする、Microsoft Store に公開する準備が JavaScript やサード パーティのライブラリを使用する方法を示すために設計されています。
 
 
 ## <a name="requirements"></a>要件
@@ -73,7 +71,7 @@ Microsoft ストアにアプリを発行するためとして UWP (ユニバー�
 
 ## <a name="walkthough"></a>チュートリアル
 
-F5 キーでゲームを開始した場合は、内部的に何が起こっているのか疑問に思うかもしれません。 回答は、「いない多く」ように、コードの多くは、現在コメント アウトします。現在のところが表示されますは恐竜、Space キーを押してに ineffectual 要請します。 
+F5 キーでゲームを開始した場合は、内部的に何が起こっているのか疑問に思うかもしれません。 その答えは、"できません"とコードの多くは、現在コメント アウトします。これまでは、すべてが表示されますが、恐竜 Space キーを押すだけ要請です。 
 
 ### <a name="1-setting-the-stage"></a>1. ステージを設定する
 
@@ -92,7 +90,7 @@ EaselJS では、*stage* と呼ばれる新しいオブジェクトが提供さ�
 
 ### <a name="2-loading-the-bitmaps"></a>2. ビットマップを読み込む
 
-EaselJS では、数種類のグラフィック オブジェクトが提供されます。 単純な図形 (空に使用する青色の長方形など)、ビットマップ (後で追加する雲など)、テキスト オブジェクト、ストライプを作成できます。 スプライト (SpriteSheet) を使用して [http://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 複数の画像を含む 1 つのビットマップします。 たとえば、この SpriteSheet を使用して、共有アニメーションの複数フレームを格納することができます。
+EaselJS では、数種類のグラフィック オブジェクトが提供されます。 単純な図形 (空に使用する青色の長方形など)、ビットマップ (後で追加する雲など)、テキスト オブジェクト、ストライプを作成できます。 スプライト (SpriteSheet) を使用して [http://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 複数の画像を含む単一ビットマップです。 たとえば、この SpriteSheet を使用して、共有アニメーションの複数フレームを格納することができます。
 
 ![Walking Dino スプライト シート](images/JS2D_4.png)
 
@@ -170,7 +168,7 @@ EaselJS では、数種類のグラフィック オブジェクトが提供さ�
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds</a>) をご覧ください。</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
- 
+ 
 そのためのコードは既に **main.js** に含まれ、CreateJS ライブラリの EaselJS から提供されています。 次のような内容です。
 
 ```
@@ -259,9 +257,9 @@ Gamestate は、ゲームで一般的に使用される設計パターンです�
 
 アプリをもう一度実行すると、ウィンドウのサイズを変更したときの結果が改善されます。
 
-## <a name="publishing-to-the-microsoft-store"></a>Microsoft ストアに公開
+## <a name="publishing-to-the-microsoft-store"></a>Microsoft Store への公開
 
-(最初に向上するを想定しています)。 Microsoft ストアに公開することはその UWP のアプリがある場合は、これで 
+UWP アプリがある場合は、ここでは、(もう少し改善がまず!)、Microsoft Store に申請を公開することもできます。 
 
 このプロセスにはいくつかの手順が必要になります。
 
@@ -269,7 +267,7 @@ Gamestate は、ゲームで一般的に使用される設計パターンです�
 2. アプリの申請[チェックリスト](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)を使用する必要があります。
 3. [認定](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)を受けるために、アプリを提出する必要があります。
 
-詳細については、 [UWP アプリの発行](https://developer.microsoft.com/en-us/store/publish-apps)を参照してください。
+詳細については、 [UWP アプリの公開](https://developer.microsoft.com/en-us/store/publish-apps)を参照してください。
 
 ## <a name="suggestions-for-other-features"></a>その他のおすすめ機能
 

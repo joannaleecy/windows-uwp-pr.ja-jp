@@ -6,15 +6,13 @@ keywords: 新着情報については、新機能, 更新, 更新プログラム
 ms.author: quradic
 ms.date: 10/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff1db524c5c6bcaf8111573e260dc96a13a99321
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: e979428191151f680f51d8d4cf2f37f70b0b369d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513371"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554116"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>開発者は、ビルド 17763 新機能では、Windows 10 の新規作成
 

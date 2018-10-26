@@ -6,22 +6,19 @@ description: ListView と GridView のパフォーマンスと起動時間を、
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cff6e2785434eb4fdb922d8b89b55aca242655f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 25eeea58e1e03eedfca3aaafda1cee13cac1f3c4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816907"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553647"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView と GridView の UI の最適化
 
 
-**注**  
-詳しくは、//build/ セッション「[Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView (ユーザーが GridView と ListView で大量のデータを操作するときのパフォーマンスを大幅に向上させる)](https://channel9.msdn.com/events/build/2013/3-158)」をご覧ください。
+**注:** の詳細は、//build/ セッション[大幅に向上させるパフォーマンス大規模な大量のデータを GridView と ListView でユーザーが操作するとき](https://channel9.msdn.com/events/build/2013/3-158)を参照してください。
 
 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) のパフォーマンスと起動時間を、UI の仮想化や要素の削減、項目の段階的な更新を通して向上させます。 データ仮想化の手法については、[ListView と GridView のデータ仮想化](listview-and-gridview-data-optimization.md)」をご覧ください。
 
@@ -325,5 +322,5 @@ private void ListView_ChoosingItemContainer
 
 異なる項目テンプレートを使う項目が均一に分布していない場合、パン中に新しい項目テンプレートを作成することが必要になる可能性が高く、仮想化によって提供される利点の多くが打ち消されます。 さらに、項目テンプレート セレクターでは、特定のコンテナーが現在のデータ項目用に再利用できるかどうかを評価する際に、対象として検討される候補は 5 つだけです。 このため、アプリで項目テンプレート セレクターを使用する前に、データが項目テンプレート セレクターでの使用に適しているかどうかを慎重に検討する必要があります。 コレクションがほぼ同種の項目で構成される場合、セレクターはほとんど毎回 (状況によっては常に) 同じ種類を返すことになります。 ほぼ同種の中のまれな例外を処理するためにかかるコストに注意し、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (または 2 つの項目コントロール) の使用が妥当であるかどうかを検討します。
 
- 
+ 
 

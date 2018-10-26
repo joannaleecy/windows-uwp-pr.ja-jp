@@ -7,15 +7,13 @@ keywords: DirectX ゲームのサンプル, ゲームのサンプル, ユニバ�
 ms.author: joanlee
 ms.date: 12/01/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c043b20cb00873bf115ff2d65306bc727d23a02a
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: 1c589eeb71d93619b92254207ddc5eb1b1494a55
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877224"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553747"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>DirectX を使った単純なユニバーサル Windows プラットフォーム (UWP) ゲームの作成
 
@@ -41,7 +39,7 @@ UWP DirectX ゲームの基本的な概念とコンポーネントを使い、Di
 ##  <a name="direct3d-uwp-shooting-game-sample"></a>Direct3D UWP シューティング ゲームのサンプル
 
 
-このサンプルは、プレイヤーが動く標的に弾を撃つ、簡単なファーストパーソン シューティング ギャラリーを実装しています。 標的に命中するたびにポイントが与えられ、プレイヤーは難度が上がっていく 6 つのレベルを進むことができます。 レベルの最後に、ポイントが集計されて、プレイヤーに最終スコアが与えられます。
+このサンプルは、プレイヤーが動く標的に弾を撃つ、簡単なファーストパーソン シューティング ギャラリーを実装しています。 標的に命中するたびにポイントが与えられ、プレーヤーは難度が上がっていく 6 つのレベルを進むことができます。 レベルの最後に、ポイントが集計されて、プレーヤーに最終スコアが与えられます。
 
 サンプルで示されているゲームの概念は、次のとおりです。
 

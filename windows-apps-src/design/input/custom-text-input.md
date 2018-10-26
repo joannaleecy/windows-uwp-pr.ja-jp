@@ -5,19 +5,17 @@ title: カスタム テキスト入力の概要
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
-keywords: キーボード, テキスト, 基本的なテキスト, カスタム テキスト, テキスト サービス フレームワーク, 入力, ユーザーの操作
+keywords: キーボード, テキスト, 基本的なテキスト, カスタム テキスト, テキスト サービス フレームワーク, 入力, ユーザー操作
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 734d18d7320ecc3157fbc9896db28989e0791e8d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 14a2811f59b8de33db51b255aee8892abf553198
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655564"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555414"
 ---
 # <a name="custom-text-input"></a>カスタム テキスト入力
 
@@ -63,7 +61,7 @@ ms.locfileid: "1655564"
 | **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範囲の開始位置は、最初の文字の直前の ACP です。 |
 | **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範囲の終了位置は、最後の文字の直後の ACP です。     |
 
- 
+ 
 
 たとえば、前に示したテキスト範囲で、範囲 \[0, 5\] は "Hello" という単語を指します。 **StartCaretPosition** は、常に **EndCaretPosition** 以下である必要があります。 範囲 \[5, 0\] は無効です。
 
@@ -159,7 +157,6 @@ ms.locfileid: "1655564"
 
 **サンプル**
 * [カスタム編集コントロールのサンプル](https://go.microsoft.com/fwlink/?linkid=831024)
- 
 **サンプルのアーカイブ**
 * [XAML テキスト編集のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=251417)
 

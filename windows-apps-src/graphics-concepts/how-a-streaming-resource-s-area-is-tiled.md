@@ -10,15 +10,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d9bf664da5223ff62f0e3612587e4572dab58e68
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 49ad096389c27fb65970424569c7c1d2ea0cb097
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653152"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557797"
 ---
 # <a name="how-a-streaming-resources-area-is-tiled"></a>ストリーミング リソースの領域をタイル表示する方法
 
@@ -58,7 +56,7 @@ ms.locfileid: "1653152"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="buffer-tiling.md">バッファーのタイル表示</a></p></td>
-<td align="left"><p><a href="introduction-to-buffers.md">バッファー</a> リソースは 64 KB のタイルに分割されます。サイズが 64 KB の倍数でない場合は、最後のタイルに空きが生じます。</p></td>
+<td align="left"><p><a href="introduction-to-buffers.md">バッファー </a> リソースは 64 KB のタイルに分割されます。サイズが 64 KB の倍数でない場合は、最後のタイルに空きが生じます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="mipmap-packing.md">ミップマップのパッキング</a></p></td>
@@ -67,16 +65,16 @@ ms.locfileid: "1653152"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [ストリーミング リソースの作成](creating-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

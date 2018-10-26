@@ -6,19 +6,17 @@ description: 定期的に実行される作業項目の作成方法を説明し�
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、定期的な作業項目、スレッド、タイマー
-ms.openlocfilehash: 59dd19692143b155c33f8fdd7f3197f724ebb0ac
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665276"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558883"
 ---
 # <a name="create-a-periodic-work-item"></a>定期的な作業項目の作成
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ** 重要な API **
 
@@ -33,9 +31,9 @@ ms.locfileid: "665276"
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) は [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) オブジェクトを返します。 タイマーを取り消す必要が生じた場合は、このオブジェクトを格納します。
 
-> **注:** 間隔の値を 0 にする (または 1 ミリ秒未満の値にする) ことは避けてください。 この場合、定期タイマーは 1 回限りのタイマーとして動作します。
+> **注:** 回避 0 の値を指定する (または 1 ミリ秒未満の値) の間隔をします。 この場合、定期タイマーは 1 回限りのタイマーとして動作します。
 
-> **注:**  [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使って UI にアクセスしたり、作業項目の進捗状況を表示したりすることができます。
+> **注:** を UI にアクセスし、作業項目の進捗状況を表示する[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)を使用することができます。
 
 次の例では、60 秒ごとに 1 回実行される作業項目を作成します。
 
@@ -209,4 +207,4 @@ ms.locfileid: "665276"
 * [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)
 * [スレッド プールを使うためのベスト プラクティス](best-practices-for-using-the-thread-pool.md)
 * [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)
- 
+ 

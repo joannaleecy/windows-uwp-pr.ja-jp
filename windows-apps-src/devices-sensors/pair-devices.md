@@ -6,16 +6,14 @@ description: 一部のデバイスは、使う前にペアリングする必要�
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 86cac8248db896f56757dae7678d6e146835884c
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 64f4756df37cbfaf041e432b7e4a890123f52d2f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673999"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554972"
 ---
 # <a name="pair-devices"></a>デバイスのペアリング
 
@@ -31,9 +29,9 @@ ms.locfileid: "1673999"
 -   基本ペアリング
 -   カスタム ペアリング
 
-**ヒント:** 使用にあたってペアリングする必要がないデバイスもあります。 これについては、自動ペアリングに関するセクションで説明します。
+**ヒント:** 一部のデバイスを使用するためにペアリングする必要はありません。 これについては、自動ペアリングに関するセクションで説明します。
 
- 
+ 
 
 ## <a name="automatic-pairing"></a>自動ペアリング
 
@@ -74,6 +72,6 @@ ms.locfileid: "1673999"
 
 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API の使い方を示すサンプルをダウンロードするには、[ここ](http://go.microsoft.com/fwlink/?LinkID=620536)をクリックしてください。
 
- 
+ 
 
- 
+ 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2bdcf77a9c150195a7a4c27a064d26c525472a
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 1d57c60e8cba9be75e936c55800bac93f8df3e30
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044821"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556616"
 ---
 # <a name="tessellator-ts-stage"></a>テッセレータ (TS) ステージ
 
@@ -72,7 +70,7 @@ Direct3D グラフィックス パイプラインは、ハードウェアでテ�
     | Integer              | TessFactor 範囲: \[1..64\] |
     | Pow2                 | TessFactor 範囲: \[1..64\] |
 
-     
+     
 
 テッセレーションは、[ハル シェーダー](hull-shader-stage--hs-.md)と[ドメイン シェーダー](domain-shader-stage--ds-.md)の 2 つのプログラム可能なシェーダー ステージにより実装されます。 これらのシェーダー ステージは、シェーダー モデル 5 で定義された HLSL コードでプログラムされます。 シェーダー ターゲットは hs\_5\_0 と ds\_5\_0 です。 タイトルによってシェーダーが作成され、その後、シェーダーがパイプラインにバインドされるときにランタイムに渡されるコンパイル済みのシェーダーから、ハードウェア用のコードが抽出されます。
 
@@ -97,9 +95,9 @@ Direct3D グラフィックス パイプラインは、ハードウェアでテ�
 
 [グラフィックス パイプライン](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

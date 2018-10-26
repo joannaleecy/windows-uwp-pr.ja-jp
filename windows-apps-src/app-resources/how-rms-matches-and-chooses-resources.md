@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: bb1168401aaa715f8d1c459691dfa1b1ca38ccbe
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: d31c9fd3a6f8f57f3e78d88d3ad754d4848a9cad
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690428"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551694"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>リソース管理システムでのリソースの照合と選択の仕組み
 リソースを要求すると、現在のリソース コンテキストにある程度一致するリソース候補がいくつか存在する場合があります。 リソース管理システムはすべての候補を分析して、返すのに最もよい候補を決定します。 これはすべての修飾子を考慮して、すべての候補をランク付けすることで実行されます。
@@ -24,7 +22,7 @@ ms.locfileid: "1690428"
 
 言語タグの照合のしくみの詳細については、「[リソース管理システムでの言語タグの照合の仕組み](how-rms-matches-lang-tags.md)」を参照してください。
 
-スケールやコントラストのような修飾子の場合、常に最低限の一致が存在します。 たとえば、"scale-400" というコンテキストに対して、"scale-100" で修飾された候補は、"scale-200" または (完全一致の) "scale-400" で修飾された候補ほどではなくても、ある程度は一致します。
+スケールやコントラストのような修飾子の場合、常に最低限の一致が存在します。 たとえば、修飾された候補は"scale-100「で修飾された候補といないです小さな程度"scale-400"のコンテキストに一致」200% スケール「または (完全一致の)」scale-400"します。
 
 しかし、言語や住んでいる地域のような修飾子の場合、比較してもまったく一致しないことがあります (ある程度の一致の他に)。 たとえば、言語が "en-US" で修飾された候補は、"en-GB" というコンテキストに対して部分的に一致しますが、"fr" で修飾された候補はまったく一致しません。 同様に、住んでいる地域が "155" (西欧) で修飾された候補は、住んでいる地域の設定が "FR" のユーザーのコンテキストにある程度一致しますが、"US" で修飾された候補はまったく一致しません。
 

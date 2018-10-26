@@ -7,19 +7,17 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 412ba7e36c2bb36562ceee13bb1e204ff402a882
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 9983c62804dad4f0202fc83e3f9b5f23714352d2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843869"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555640"
 ---
 # <a name="timing-and-easing"></a>タイミングとイージング
 
@@ -41,19 +39,38 @@ Fluent のモーションのタイミングでは、ベースラインとして 
 
 ### <a name="150ms-exit"></a>**150ミリ秒** (終了)
 
-:::row::: :::column::: シーンから出る、または閉じられるオブジェクトやページに使用します。
-終了する UI の非常に速い方向性フィードバックを可能にします。ここでは、スムーズなアニメーションを実現するためにタイミングがフレーム レートを妨げることはありません。
-:::column-end::: :::column::: ![150 ミリ秒のモーション](images/150msAlt.gif) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Use for objects or pages that are exiting the scene or closing.
+        Allows for very quick directional feedback of exiting UI where timing does not impede upon framerate to achieve a smooth animation.
+    :::column-end:::
+    :::column:::
+        ![150ms motion](images/150msAlt.gif)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="300ms-enter"></a>**300 ミリ秒** (入力)
 
-:::row::: :::column::: シーンに入るまたは開かれるオブジェクトやページに使用します。
-シーンに入るときにコンテンツを彩るために適切な時間が確保されます。
-:::column-end::: :::column::: ![300 ミリ秒のモーション](images/300ms.gif) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Use for objects or pages that are entering the scene or opening.
+        Allows a reasonable amount of time to celebrate content as it enters the scene.
+    :::column-end:::
+    :::column:::
+        ![300ms motion](images/300ms.gif)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="500ms-move"></a>**≤500 ミリ秒** (移動)
 
-:::row::: :::column::: 単一のシーンまたは複数のシーンを移動するオブジェクトに使用します。 :::column-end::: :::column::: ![500 ミリ秒のモーション](images/500ms.gif) :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Use for objects which are translating across a single scene or multiple scenes. 
+    :::column-end:::
+    :::column:::
+        ![500ms motion](images/500ms.gif)
+    :::column-end:::
+:::row-end:::
 
 ## <a name="easing-in-fluent-motion"></a>Fluent モーションのイージング
 
@@ -69,7 +86,9 @@ Fluent のモーションのタイミングでは、ベースラインとして 
 
 ### <a name="accelerate-exit"></a>**高速化**(終了)
 
-:::row::: :::column::: シーンから出る UI またはオブジェクトに使用します。
+:::row:::
+    :::column:::
+        Use for UI or objects that are exiting the scene.
 
         Objects become powered and gain momentum until they reach escape velocity.
         The resulting feel is that the object is trying its hardest to get out of the user's way and make room for new content to come in.
@@ -106,7 +125,9 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 
 ### <a name="decelerate-enter"></a>**減速**(入力)
 
-:::row::: :::column::: 移動または生成によりシーンに入るオブジェクトまたは UI に使用します。
+:::row:::
+    :::column:::
+        Use for objects or UI entering the scene, either navigating or spawning.
 
         Once on-scene, the object is met with extreme friction, which slows the object to rest.
         The resulting feel is that the object traveled from a long distance away and entered at an extreme velocity, or is quickly returning to a rest state.
@@ -145,8 +166,10 @@ _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 
 ### <a name="standard-easing-move"></a>**標準的なイージング**(移動)
 
-:::row::: :::column::: これは、システム内部のアニメーション化されたパラメーターの変更に対するベースライン イージングです。
-単純な位置変更など、画面上で状態ごとに変化するオブジェクトに標準的なイージングを使用します。 また、拡大するオブジェクトのように、シーン内でモーフィングするオブジェクトに使用します。
+:::row:::
+    :::column:::
+        This is the baseline easing for any animated parameter change inside of the system.
+        Use standard easing for objects that change from state to state on-screen, such as a simple position change. Also, use it for objects morphing in-scene, like an object that grows.
 
         The resulting feel is that objects changing state from A to B are overcoming, and taken over by, natural forces.
     :::column-end:::

@@ -6,18 +6,17 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 234d90382fb62e6f0be9683dfb7b01d9fa80a185
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 83919cc46694279bc35e046c97acf27c64a196f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "244545"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555221"
 ---
 # <a name="staticresource-markup-extension"></a>{StaticResource} マークアップ拡張
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 定義済みリソースへの参照を評価することで、任意の XAML 属性の値を提供します。 リソースは [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) で定義されており、**StaticResource** の使用では **ResourceDictionary** 内のそのリソースのキーを参照します。
 
@@ -41,8 +40,7 @@ ms.locfileid: "244545"
 
 **StaticResource** がリソース ディクショナリの項目に解決される規則は、このトピックでは説明していません。 そのような規則は、参照とリソースがいずれもテンプレートに存在するかどうかや、マージされたリソース ディクショナリを使うかどうかなどによって異なります。 リソースの定義方法と [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の適切な使用方法 (サンプル コードを含む) について詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。
 
-**重要**  
-**StaticResource** は、XAML ファイルの中で辞書的に定義されているリソースへの前方参照を行うことはできません。 そのようなことを試みることはサポートしていません。 前方参照が失敗しなかったとしても、そのようなことを試みるだけでパフォーマンスの低下を招きます。 最善の結果を得るには、前方参照を避けるようにリソース ディクショナリの構成を調整します。
+**重要な** **StaticResource**が定義されているリソースへの前方参照を行うをしようとする必要があります、XAML ファイルの中で辞書します。 そのようなことを試みることはサポートしていません。 前方参照が失敗しなかったとしても、そのようなことを試みるだけでパフォーマンスの低下を招きます。 最善の結果を得るには、前方参照を避けるようにリソース ディクショナリの構成を調整します。
 
 解決できないキーに **StaticResource** を指定しようとすると、実行時に XAML の解析で例外が発生します。 デザイン ツールでも、警告やエラーが通知されることがあります。
 
@@ -79,7 +77,7 @@ XAML でもう少し先に進むと、リソースが要求されています。
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>設計時ツールの **{StaticResource}** マークアップ拡張のサポート
 
-MicrosoftVisualStudio2013 では、XAML ページで **{StaticResource}** マークアップ拡張を使うときに Microsoft IntelliSense のドロップダウンに可能なキー値を含めることができます。 たとえば、"{StaticResource" と入力するとすぐに、現在の検索範囲のリソース キーが IntelliSense のドロップダウンに表示されます。 ページ レベル ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) とアプリ レベル ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) で持つ一般的なリソースに加えて、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)と、プロジェクトで使っている拡張機能のリソースも表示されます。
+Microsoft Visual Studio2013 は、XAML ページで、 **{StaticResource}** マークアップ拡張機能を使用する場合、Microsoft IntelliSense のドロップダウンに可能なキー値を含めることができます。 たとえば、"{StaticResource" と入力するとすぐに、現在の検索範囲のリソース キーが IntelliSense のドロップダウンに表示されます。 ページ レベル ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) とアプリ レベル ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) で持つ一般的なリソースに加えて、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)と、プロジェクトで使っている拡張機能のリソースも表示されます。
 
 **{StaticResource}** の一部としてリソース キーが存在すると、**[定義へ移動]** (F12 キー) 機能でそのリソースを解決して、リソースが定義されているディクショナリを表示できます。 テーマ リソースの場合は、設計時の generic.xaml に移動します。
 

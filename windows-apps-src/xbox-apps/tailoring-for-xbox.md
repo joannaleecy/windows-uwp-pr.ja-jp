@@ -5,16 +5,14 @@ description: Xbox 用のアプリを最適化する方法を説明します。
 ms.author: wdg-dev-content
 ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1794e4b7ddf97b0b5c41ff29295892e512453a07
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 604e6dc5381a36d4dbda70e3435e5cd6fa44cc04
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "927257"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551896"
 ---
 # <a name="xbox-best-practices"></a>Xbox ベスト プラクティス
 
@@ -26,7 +24,7 @@ ms.locfileid: "927257"
 
 ### <a name="do-turn-off-mouse-mode"></a>*行うこと:* マウス モードをオフにします
 
-ユーザーの Xbox では、そのコント ローラーが好きです。 コントローラー入力用に最適化するには、[マウス モードを無効](how-to-disable-mouse-mode.md)にし、方向ナビゲーション ([X-Y フォーカス](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)とも呼ばれます) を有効にします。 フォーカス トラップし、アクセスできないユーザー インターフェイス確認します。
+Xbox ユーザーは、それぞれのコント ローラーを好みます。 コントローラー入力用に最適化するには、[マウス モードを無効](how-to-disable-mouse-mode.md)にし、方向ナビゲーション ([X-Y フォーカス](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)とも呼ばれます) を有効にします。 フォーカスのトラップとアクセスできない UI に注意します。
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*行うこと:* 10 フィート エクスペリエンス向けの適切なフォーカス用の四角形を描画します
 
@@ -47,7 +45,7 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ### <a name="consider-use-tv-safe-colors"></a>*考慮すること:* テレビ セーフ カラーを使用します
 
-テレビでは、コンピューター モニターほど極端な色の輝度は処理されません。 不自然な縞模様や色あせた画像が表示されないように、アプリでは高輝度の色を使わないようにする必要があります。 また、テレビの間の違いに留意してください。テレビによって色の表現が大きく異なる場合があります。** アプリ見た目を引き立てるを使えるようにする方法を理解する[色](../design/devices/designing-for-tv.md#colors)を読みます。
+テレビでは、コンピューター モニターほど極端な色の輝度は処理されません。 不自然な縞模様や色あせた画像が表示されないように、アプリでは高輝度の色を使わないようにする必要があります。 また、テレビの間の違いに留意してください。テレビによって色の表現が大きく異なる場合があります。** 読み取りに[色](../design/devices/designing-for-tv.md#colors)の全員に適切に表示する方法について説明しました。
 
 ### <a name="remember-you-can-disable-scaling"></a>*憶えておくこと:* スケーリングを無効にできます
 
@@ -67,12 +65,12 @@ UWP アプリは、コントロールやフォントなどの UI 要素がすべ
 - [UWP の開発 1: アダプティブ UI の作成](https://channel9.msdn.com/Events/Build/2016/L724-R1)
 - [ブラウザーに留まらない Web アプリ: クロスプラットフォームとクロス デバイスの遭遇](https://channel9.msdn.com/Events/Build/2016/B888)
 
-## <a name="app-dev-on-xbox"></a>Xbox でのアプリの開発
+## <a name="app-dev-on-xbox"></a>App Dev on Xbox
 
-**Xbox でのアプリ開発**イベントは、出発点 Xbox でアプリを作成する新しい開発者向けです。
+**App Dev on Xbox**イベントは、Xbox アプリの構築に新しい開発者向けの適切な開始点です。
 
-* [記録されたセッションで表示します。](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
-* [ブログの投稿を参照します。](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
+* [記録されたセッションを視聴します。](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
+* [ブログの投稿を読み取る](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
 ## <a name="see-also"></a>関連項目
 

@@ -8,20 +8,18 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f456d6d3fc1b1300e80c39b01eaed1b654159cd
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 9eb129609b2fa8564b04d128c3cb06251b044360
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652881"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556721"
 ---
 # <a name="transforms"></a>変換
 
 
-Direct3D の処理の中で、ジオメトリを固定機能ジオメトリ パイプラインに通す部分を担うのが変換エンジンです。 変換エンジンは、モデルとビューアーをワールド座標に配置し、画面表示のために頂点を投影し、ビューポートに頂点をクリッピングします。 また、照明の計算を実行し、各頂点での拡散要素と反射要素を決定します。
+Direct3D の機能の一部で、ジオメトリを固定機能ジオメトリ パイプラインに挿入する変換エンジンです。 変換エンジンは、モデルとビューアーをワールド座標に配置し、画面表示のために頂点を投影し、ビューポートに頂点をクリッピングします。 また、照明の計算を実行し、各頂点での拡散要素と反射要素を決定します。
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>このセクションの内容
 
@@ -57,16 +55,16 @@ Direct3D の処理の中で、ジオメトリを固定機能ジオメトリ パ�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [座標系とジオメトリ](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

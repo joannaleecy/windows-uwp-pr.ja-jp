@@ -6,19 +6,18 @@ ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、ゲーム、OpenGL、Direct3D
-ms.openlocfilehash: d2642abbfbfc6030aa00f68f30d4a45eb0e86ee1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 2308c0b931b58209d1233205c355ac09680803dd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243356"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554767"
 ---
 # <a name="plan-your-port-from-opengl-es-20-to-direct3d"></a>OpenGL ES 2.0 から Direct3D への移植の計画
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 **重要な API**
@@ -65,7 +64,7 @@ Direct3D 11 は、9\_1 (Direct3D 9.1) から 11\_1 のハードウェア "機能
 | [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)                  | DirectXMath は、一般的な線形代数と三角法の種類、値、関数を処理するための API とマクロのセットを提供します。 これらの型と関数は、Direct3D とそのシェーダーの操作に対応しています。                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | [DirectX HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509580) | Direct3D シェーダーで使われる現在の HLSL 構文です。 Direct3D Shader Model 5.0 を実装します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
- 
+ 
 
 ## <a name="review-the-windows-runtime-apis-and-template-library"></a>Windows ランタイム API とテンプレート ライブラリの確認
 
@@ -108,7 +107,7 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 | [**XMMatrixPerspectiveOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419983)   | 右手による遠近投影マトリックスのカスタム バージョンを作成します。                                                    |
 | [**XMMatrixPerspectiveRH**](https://msdn.microsoft.com/library/windows/desktop/ee419984)                     | 右手による遠近投影マトリックスを作成します。                                                                        |
 
- 
+ 
 
 ## <a name="opengl-es20-to-direct3d-11-porting-frequently-asked-questions"></a>OpenGL ES2.0 から Direct3D 11 への移植についてよく寄せられる質問
 
@@ -116,9 +115,9 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 -   質問: "通常、自分の OpenGL コードで特定の文字列やパターンを検索し、それを対応する Direct3D の要素と置き換えることはできますか"
 -   回答: いいえ。 OpenGL ES 2.0 と Direct3D 11 は、グラフィックス パイプライン モデルの異なる世代に基づいています。 レンダリング コンテキストやシェーダーのインスタンス化など、概念と API の間に表面的な類似点はありますが、このガイダンスと Direct3D 11 のリファレンスを調べて、1 対 1 のマッピングを試みる代わりに、パイプラインを再作成するときに最適な選択ができるようにしてください。 ただし、GLSL から HLSL に移植する場合、GLSL の変数、組み込みメソッド、関数の一連の共通エイリアスを作成すると、移植が容易になるだけでなく、1 ペアのシェーダー コード ファイルだけを維持することができます。
 
- 
+ 
 
- 
+ 
 
 
 

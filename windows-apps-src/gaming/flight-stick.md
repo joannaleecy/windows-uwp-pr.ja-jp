@@ -6,16 +6,14 @@ ms.assetid: DC633F6B-FDC9-4D6E-8401-305861F31192
 ms.author: wdg-dev-content
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, 入力, フライト スティック
 ms.localizationpriority: medium
-ms.openlocfilehash: aa9fd4e0acb0c4917ddf75481baebe7a5f36b7a5
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: ebe7695b3f16271f3adedae658c0d62d38d7c078
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674029"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557333"
 ---
 # <a name="flight-stick"></a>フライト スティック
 

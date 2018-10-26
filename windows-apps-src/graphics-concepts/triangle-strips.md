@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5032ee6cc592be61422903df96c8beabcf4ffe06
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: f60f0f65868d4dec67bf77a329d4b952c20ec44a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044021"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552596"
 ---
 # <a name="triangle-strips"></a>トライアングル ストリップ
 
@@ -83,9 +81,9 @@ d3dDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP, 0, 4);
 
 [プリミティブ](primitives.md)
 
- 
+ 
 
- 
+ 
 
 
 

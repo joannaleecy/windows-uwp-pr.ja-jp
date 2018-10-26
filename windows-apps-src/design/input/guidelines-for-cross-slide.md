@@ -6,16 +6,14 @@ ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.author: kbridge
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ecce3c9e0eee30864c2777b657e9b951a8ab0b06
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 5c9234463ad011cc0b4d289bba9fe1ff1873ed46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393831"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559434"
 ---
 # <a name="guidelines-for-cross-slide"></a>クロススライドのガイドライン
 
@@ -60,16 +58,16 @@ ms.locfileid: "1393831"
 
 クロススライドは、単一の方向にスクロールするリストやコレクションに使います。 詳しくは、「[ListView コントロールの追加](https://msdn.microsoft.com/library/windows/apps/hh465382)」をご覧ください。
 
-**注:**  Web ブラウザーや電子ブック リーダーのように、コンテンツ領域を 2 方向にパンできる場合は、時間制限のある長押しの対話式操作を使って、画像やハイパーリンクなどのオブジェクトのコンテキスト メニューを呼び出すようにしてください。
+**注:** 画像やハイパーリンクなどのオブジェクトのコンテキスト メニューを呼び出すため、コンテンツ領域を web ブラウザーや電子ブック リーダーなどの 2 つの方向にパンする場合と長押時間制限のある対話式操作に使用する必要があります。
 
- 
+ 
 
 |                                                                                         |                                                                                         |
 |-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
 | ![水平方向にパンする 2 次元のリスト](images/groupedlistview1.png)                | ![垂直方向にパンする 1 次元のリスト](images/listviewlistlayout.png)                |
 | 水平方向にパンする 2 次元のリスト。 項目を選択または移動するには垂直方向にドラッグします。 | 垂直方向にパンする 1 次元のリスト。 項目を選択または移動するには水平方向にドラッグします。 |
 
- 
+ 
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 
@@ -150,9 +148,9 @@ ms.locfileid: "1393831"
 * [入力: Windows 8 のジェスチャのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX タッチ入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

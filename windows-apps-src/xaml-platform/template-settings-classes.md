@@ -6,18 +6,17 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: ff1b373e2038824c6349961b3b878f5570babceb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 4d7b08138ab22d4cf2cbf4fb5273759f000a7c94
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246527"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552459"
 ---
 # <a name="template-settings-classes"></a>Template settings (テンプレート設定) クラス
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -57,7 +56,7 @@ UI にコントロールを追加し、コントロールのプロパティを�
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) テンプレートの完全な XAML は数百行あり、これは一部のみの抜粋です。 次の XAML は、進行状況不定の回転アニメーションを示す 6 つの [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 要素の 1 つであるコントロール部を定義しています。 開発者は、アニメーションの進行状況を表す円が気に入らない場合は、別のグラフィック プリミティブや別の基本図形を使うことができます。 たとえば、正方形に配置した一連の [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 要素を使った **ProgressRing** を作成できます。 その場合、新しいテンプレートの個別の各 **Rectangle** コンポーネントは次のようになります。
+[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) テンプレートの完全な XAML は数百行あり、これは一部のみの抜粋です。 次の XAML は、進行状況不定の回転アニメーションを示す 6 つの [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 要素の 1 つであるコントロール部を定義しています。 開発者は、アニメーションの進行状況を表す円が気に入らない場合は、別のグラフィック プリミティブや別の基本図形を使うことができます。 たとえば、正方形に配置した一連の [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 要素を使った **ProgressRing** を作成できます。 その場合、新しいテンプレートの個別の各 **Rectangle** コンポーネントは次のようになります。
 
 ```xml
 <Rectangle
@@ -98,8 +97,7 @@ UI にコントロールを追加し、コントロールのプロパティを�
 
 ここでも、テンプレートの XAML は量が多いため、一部のみを抜粋して示しています。 これは、それぞれ同じ [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) プロパティを使用する、複数ある状態とテーマのアニメーションのうちの 1 つにすぎません。 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) では、バインドを利用して **ComboBoxTemplateSettings** 値を使うと、テンプレート内の関連アニメーションが共有値に基づく位置で停止および開始し、スムーズに遷移します。
 
-**注**  
-コントロール テンプレートの一部として **TemplateSettings** 値を使う場合は、値の型に一致したプロパティを設定してください。 そうしないと、バインドのターゲットの型を **TemplateSettings** 値の異なるソース型から変換できるように、バインドの値のコンバーターを作成することが必要になる場合があります。 詳しくは、「[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)」をご覧ください。
+**注:**  **TemplateSettings**値を使用する、コントロール テンプレートの一部としてとき、は、値の型に一致するプロパティを設定することを確認してください。 そうしないと、バインドのターゲットの型を **TemplateSettings** 値の異なるソース型から変換できるように、バインドの値のコンバーターを作成することが必要になる場合があります。 詳しくは、「[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 

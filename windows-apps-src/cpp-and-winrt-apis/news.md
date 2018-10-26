@@ -5,16 +5,14 @@ title: 新機能、C++/WinRT
 ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ニュース、ものの新機能
 ms.localizationpriority: medium
-ms.openlocfilehash: bc6be28e112dfdd14b3585bd88ba066fbeae382d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 1ada059dc2acfa96dd61b6f3460e25736d96ff68
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470688"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551787"
 ---
 # <a name="whats-new-in-cwinrt"></a>新機能、C++/WinRT
 

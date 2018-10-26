@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 93ef65b5ed22c04555d2959d0dca80be5eb09f23
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: ec7d57e75d00f3418d4ff176c1ae4256eeab6983
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1651891"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554421"
 ---
 # <a name="reposition-animations"></a>位置変更アニメーション
 
@@ -42,7 +40,7 @@ ms.locfileid: "1651891"
 * [**RepositionThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ title: 'Python のコード例: アプリ、アドオン、およびフライト
 ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, Python
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dc6f9854ed3fabeb788b99297cd2b33cdc1b79b
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 6fdd7dce766e2d1804c5b0973dcf3e51cbae99c0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515789"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556127"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python のコード例: アプリ、アドオン、およびフライトの申請
 

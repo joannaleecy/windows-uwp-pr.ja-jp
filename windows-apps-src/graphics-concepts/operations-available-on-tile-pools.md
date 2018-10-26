@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ae2c34a6df243914fdef6b2cbb990d8be94ec33
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: ec546d467f338bbbe2f4dbf89015a4487e001718
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043601"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555768"
 ---
 # <a name="operations-available-on-tile-pools"></a>タイル プールで利用可能な操作
 
@@ -35,9 +33,9 @@ ms.locfileid: "1043601"
 
 [ストリーミング リソースの作成](creating-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -5,16 +5,15 @@ description: Xbox での HTML UWP ゲーム開発。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
-ms.openlocfilehash: 5c139a80f8f24b47047cc2a8b6fb6f812f54f0e6
-ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.localizationpriority: medium
+ms.openlocfilehash: 7c32a02532ab544e7697d59fa4f1ca93231183d3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2017
-ms.locfileid: "900896"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559003"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>HTML ゲームの Xbox での UWP への移行
 Xbox One は HTML 5 ゲーム用の優れたプラットフォームです。 HTML 5 ゲームは、[Microsoft Edge](https://developer.microsoft.com/microsoft-edge/) ブラウザー エンジンで実行されます。 Microsoft Edge は高速で、WebGL やキャンバスなど、HTML 5 と CSS 3 の機能を完全にサポートしています。
@@ -23,7 +22,7 @@ Xbox One は HTML 5 ゲーム用の優れたプラットフォームです。 HT
 
 HTML ゲームのプレイ フィールドは他の種類のゲームと同じレベルです。 開発者は、コント ローラーの入力や Kinect などのネイティブ API をすべて利用できます。
 
-Xbox One はユニバーサル Windows プラットフォームで動作するため、他の Microsoft デバイスと同様に、ホストされた Web アプリ (すべてがサーバーから提供されるアプリケーション) がサポートされます。 詳しくは、「[ホストされたWebアプリ](http://microsoftedge.github.io/WebAppsDocs/en-US/win10/HWA.htm)」をご覧ください。
+Xbox One はユニバーサル Windows プラットフォームで実行されるため、他の Microsoft デバイスと同様に、完全にサーバーから提供されるアプリケーションである、ホストされた Web アプリをサポートします。 詳しくは、「[ホストされたWebアプリ](http://microsoftedge.github.io/WebAppsDocs/en-US/win10/HWA.htm)」をご覧ください。
 
 
 次のビデオでは、Xbox でのパッケージ Web アプリとホストされた Web アプリについて、それらの作成方法を含めて詳しく説明します。

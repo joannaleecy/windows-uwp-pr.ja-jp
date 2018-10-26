@@ -3,18 +3,16 @@ author: TerryWarwick
 title: POS (店舗販売時点管理) デバイスのサポート
 description: この記事には、POS (店舗販売時点管理) デバイス クラスの各ハードウェアのサポートに関する情報が含まれています
 ms.author: jken
-ms.date: 05/1/2018
+ms.date: 06/13/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb2468497115c9595f6fd17ab61b30caed507ab
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832096"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559252"
 ---
 # <a name="supported-point-of-service-peripherals"></a>サポートされている POS 周辺機器
 
@@ -27,18 +25,76 @@ ms.locfileid: "1832096"
 |
 
 
-### <a name="compatible-barcode-scanners"></a>互換性のあるバーコード スキャナー
-| カテゴリ | 接続 | 製造元/モデル |
-|--------------|-----------|-----------|
-| **1D ハンドヘルド スキャナー** | **USB** |Honeywell Voyager 1200g<br/>Honeywell Voyager 1202g<br/>Honeywell Voyager 1202-bf<br/>Honeywell Voyager 145Xg (アップグレード可能)|
-| **1D ハンドヘルド スキャナー** | **Bluetooth** |Socket Mobile CHS 7Ci<br/> Socket Mobile CHS 7Di<br/> Socket Mobile CHS 7Mi<br/> Socket Mobile CHS 7Pi<br/>Socket Mobile DuraScan D700<br/> Socket Mobile DuraScan D730<br/>Socket Mobile SocketScan S800 (旧 CHS 8Ci) <br/>|
-|**2D ハンドヘルド スキャナー** | **USB** |Code Reader™ 950<br/>Code Reader™ 1021<br/>Code Reader™ 1421<br/> Honeywell Granit 198Xi<br/>Honeywell Granit 191Xi<br/>Honeywell Xenon 1900g<br/>Honeywell Xenon 1902g<br/>Honeywell Xenon 1902g-bf<br/>Honeywell Xenon 1900h<br/>Honeywell Xenon 1902h<br/>Honeywell Voyager 145Xg (アップグレード可能)<br/>Honeywell Voyager 1602g<br/>Intermec SG20<br/>Zebra DS2278<br/>Zebra DS8108 ¹<hr><small>¹ 最小ファームウェア 016 (2018.01.18) が必要です。 [123Scan](http://www.zebra.com/123Scan) を使用してアップグレード可能</small>|
-|**2D ハンドヘルド スキャナー** | **Bluetooth** |Socket Mobile SocketScan S850 (旧 CHS 8Qi)|
-| **プレゼンテーション スキャナー** | **USB** |Code Reader™ 5000<br/>Honeywell Genesis 7580g<br/>Honeywell Orbit 7190g|
-| **インカウンター スキャナー** | **USB** |Honeywell Stratos 2700|
-| **スキャン エンジン** | **USB** | Honeywell N5680<br/>Honeywell N3680|
-| **Windows Mobile デバイス**| **組み込み** |Bluebird EF400<br/>Bluebird EF500<br/>Bluebird EF500R<br/>Honeywell CT50<br/>Honeywell D75e<br/>Janam XT2<br/>Panasonic FZ-E1<br/>Panasonic FZ-F1<br/>PointMobile PM80<br/>Zebra TC700j|
-| **Windows Mobile デバイス**| **カスタム** | HP Elite X3 とバーコード スキャナー ジャケット |
+| 製造元  | モデル                          | 機能 | [接続]    | 種類         | Mode                      |
+|---------------|--------------------------------|------------|--------------|--------------|---------------------------|
+| コード          | Reader™ 950                    | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| コード          | Reader™ 1021                   | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| コード          | Reader™ 1421                   | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| コード          | Reader™ 5000                   | 2 D         | USB          | プレゼンテーション | HID POS スキャナー           |
+| Honeywell     | Genesis 7580 g                  | 2 D         | USB          | プレゼンテーション | HID POS スキャナー           |
+| Honeywell     | Granit 198Xi                   | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Granit 191Xi                   | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | N5680                          | 2 D         | 内部     | コンポーネント    | HID POS スキャナー           |
+| Honeywell     | N3680                          | 2 D         | 内部     | コンポーネント    | HID POS スキャナー           |
+| Honeywell     | オービット 7190 g                    | 2 D         | USB          | プレゼンテーション | HID POS スキャナー           |
+| Honeywell     | Stratos 2700                   | 2 D         | USB          | カウンター   | HID POS スキャナー           |
+| Honeywell     | Voyager 1200 g                  | 1D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Voyager 1202 g                  | 1D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Voyager 1202-bf                | 1D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Voyager 145Xg                  | 1 D/2 D ¹   | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Voyager 1602 g                  | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Xenon 1900 g                    | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Xenon 1902 g                    | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Xenon 1902g-bf                 | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Xenon 1900h                    | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Xenon 1902h                    | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| HP            | バーコード スキャナーの値 (HR2150) | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Intermec      | SG20                           | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Socket Mobile | CHS 7Ci                        | 1D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | CHS 7Di                        | 1D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | CHS 7mi                        | 1D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | CHS 7Pi                        | 1D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | CHS 8Ci                        | 1D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | DuraScan D700                  | 1D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | DuraScan D730                  | 1D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | DuraScan D740                  | 2 D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | SocketScan S700                | 1D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | SocketScan S730                | 1D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | SocketScan S740                | 2 D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | SocketScan S800                | 1D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Socket Mobile | SocketScan S850                | 2 D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Zebra         | DS2278                         | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Zebra         | DS8108²                        | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+|
+
+
+Honeywell でバーコードを 2D をサポートするために ¹ Upgradable <br/>
+² 最小ファームウェア 016 (2018.01.18) が必要です。 アップグレード可能 Zebra [123 scan](http://www.zebra.com/123Scan)を使用します。 
+
+
+<hr>
+
+### <a name="windows-devices-with-built-in-barcode-scanner"></a>組み込みのバーコード スキャナーを使った Windows デバイス
+| 製造元   | モデル | オペレーティング システム |
+|----------------|-------|------------------|
+| Innowi         | ChecOut M | Windows 10   |
+
+### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>組み込みのバーコード スキャナーを持つ Windows Mobile デバイス
+| 製造元   | モデル | オペレーティング システム |
+|----------------|-------|------------------|
+| Bluebird       | EF400 | Windows Mobile   |
+| Bluebird       | EF500 | Windows Mobile   |
+| Bluebird       | EF500R | Windows Mobile   |
+| Honeywell      | CT50   | Windows Mobile   |
+| Honeywell      | D75e | Windows Mobile   |
+| Janam          | XT2      | Windows Mobile   |
+| Panasonic      | FZ-E1 | Windows Mobile   |
+| Panasonic      | FZ-F1 |Windows Mobile   |
+| PointMobile    | PM80 | Windows Mobile   |
+| Zebra          | TC700j | Windows Mobile   |
+| HP             | Elite X3 ジャケット | Windows Mobile   |
+
+
 
 
 ## <a name="cash-drawer"></a>キャッシュ ドロワー
