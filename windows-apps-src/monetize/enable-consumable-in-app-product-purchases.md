@@ -7,15 +7,13 @@ keywords: UWP, コンシューマブル, アドオン, アプリ内購入, IAP, 
 ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dc64adb6cf3dafd30dfbe218403510fe1b80803
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: cfc3d1947b65412749539916e2776288db363df8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521027"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569508"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>コンシューマブルなアプリ内製品購入の有効化
 

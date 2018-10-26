@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 521b3254fd8f3f86e8b55923627b8560d2991ae6
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: d6b9c67220c282ef1677559d586013c14366967a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044111"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572158"
 ---
 # <a name="vertex-shader-vs-stage"></a>頂点シェーダー (VS) ステージ
 
@@ -60,9 +58,9 @@ ms.locfileid: "1044111"
 
 [グラフィックス パイプライン](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

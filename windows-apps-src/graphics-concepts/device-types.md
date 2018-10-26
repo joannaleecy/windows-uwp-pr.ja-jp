@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1aff4fed2f69c455157b21b6cce93e37a1b48c39
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: cbf7d984226984391da340c74791dad4a6c0d8fb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043211"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571621"
 ---
 # <a name="device-types"></a>デバイスの種類
 
@@ -52,9 +50,9 @@ REF を使用することが必要になるその他の機会として、HAL デ
 
 [デバイス](devices.md)
 
- 
+ 
 
- 
+ 
 
 
 

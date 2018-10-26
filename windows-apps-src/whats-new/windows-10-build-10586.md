@@ -6,16 +6,14 @@ keywords: 新着情報, 新機能, 更新, 更新プログラム, 機能, 新規
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 ms.localizationpriority: medium
-ms.openlocfilehash: 01dc7b2ef7d55153373bf86e9e24e8703c83d869
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 99abbc0e06f84fea87c4bbc96cb912424f9a2272
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1397337"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569261"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-10586"></a>Windows 10 ビルド 10586 の開発者向け新着情報
 
@@ -25,7 +23,7 @@ Windows 10 ビルド 10586 (November Update またはバージョン 1511 とも
 
 機能 | 説明
  :---- | :----
- ユーザー エクスペリエンス | 新しい [Windows.UI.StartScreen.JumpList](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx) クラスと [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx) クラスを利用すると、アプリでは、アプリで使用するシステム管理ジャンプ リストの種類をプログラムで選択したり、ジャンプ リストへカスタム タスク エントリ ポイントやカスタム グループを追加することができます。
+ ユーザー エクスペリエンス | 新しい [Windows.UI.StartScreen.JumpList](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx) と [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx) クラスでは、アプリで使用するシステム管理ジャンプ リストの種類のプログラムによる選択や、ジャンプ リストへのカスタム タスク エントリ ポイントとカスタム グループの追加が実現されています。
  入力 | [キーボード デリバリー インターセプター](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.keyboarddeliveryinterceptor.aspx)。 アプリでショートカット キーやアクセス キー (またはホット キー)、アクセラレータ キー、アプリケーション キーなどの、キーボードからの生の入力のシステム プロセスを上書きします。ただし、Secure Attention Sequence (SAS) キーの組み合わせは除きます。 Ctrl + Alt + Del と Windows + L を含む Secure Attention Sequence (SAS) キーの組み合わせは引き続きシステムで処理されます。 <br /><br />[UWP アプリ](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.corewindow.aspx)と[従来の Windows アプリ](https://msdn.microsoft.com/library/windows/desktop/hh454903(v=vs.85).aspx)のポインター入力のチェーンはプロセスを超えて処理されます。 プロセス間の入力チェーンを実現する新しいポインター イベント。 <br /><br />[従来のデスクトップ アプリ用のインク プレゼンター](https://msdn.microsoft.com/library/windows/desktop/mt622165(v=vs.85).aspx)。 インク プレゼンター API では、アプリの [DirectComposition](https://msdn.microsoft.com/library/windows/desktop/hh437371(v=vs.85).aspx) ビジュアル ツリーに挿入された [InkPresenter](https://msdn.microsoft.com/library/windows/desktop/windows.ui.input.inking.inkpresenter.aspx) オブジェクトを通じて、入力、処理、インク入力 (標準と変更) の描画の Microsoft Win32 アプリによる管理を実現しています。
 ネットワーク | WebSocket ユーザー向け: [MessageWebSocket.OutputStream.FlushAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.datawriter.flushasync.aspx) と [StreamWebSocket.OutputStream.FlushAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.datawriter.flushasync.aspx) の実装がすべて完了し、後は以前に発行された WriteAsync 呼び出しの完了を待つのみとなりました。 これにより、[FlushAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.datawriter.flushasync.aspx) 呼び出し時に WebSocket が無効な状態にあると、既存のコードが例外をスローする場合があります。 <br /><br />新しいプロパティ [CookieUsageBehavior](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx) が既存の [Windows.Web.Http.Filters.HttpBaseProtocolFilter クラス](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx)に追加されました。 これにより、開発者は、システムによる Cookie の処理方法を制御できるようになります。
 ORTC | Microsoft Edge に実装された [ORTC (Object Real-Time Communications)](https://msdn.microsoft.com/library/mt433097(v=vs.85).aspx) を使用すると、ネイティブ Javascript API を通じ、ブラウザー、モバイル デバイス、サーバーの間で直接、Web の音声通話とビデオ通話をリアルタイムで行うことができます。 開発者は ORTC API と、グループ ビデオ通話、サイマルキャスト、スケーラブル ビデオ コーディング (SVC) などのサポートを使用して、Microsoft Edge ブラウザー上に高度なリアルタイム音声/ビデオ コミュニケーション アプリケーションを構築することができるようになりました。 ORTC API を使った Microsoft Edge ブラウザー間の 1 対 1 の音声/ビデオ通話のデモは、[テスト ドライブ サイトとデモ](https://developer.microsoft.com/microsoft-edge/testdrive/demos/ortcdemo/)をご覧ください。

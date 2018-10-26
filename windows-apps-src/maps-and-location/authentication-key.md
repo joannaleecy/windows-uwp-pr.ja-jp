@@ -6,20 +6,18 @@ ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、マップ認証キー、マップ コントロール
-ms.openlocfilehash: 7b964c19933db460b8f6b0cc7791165ad86adb6c
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665596"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571027"
 ---
 # <a name="request-a-maps-authentication-key"></a>マップ認証キーの要求
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) や [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスを [ユニバーサル Windows アプリ](https://msdn.microsoft.com/library/windows/apps/dn894631) で使うには、そのアプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 このトピックでは、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。
@@ -35,7 +33,7 @@ ms.locfileid: "665596"
 
 新しいキーを作成するには
 
-1.  ブラウザーで、Bing Maps Developer Center ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)) にアクセスします。
+1.  ブラウザーで、Bing Maps Developer Center に移動します ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
 
 2.  サインインを求められた場合は、Microsoft アカウントを入力して、**[Sign in] (サインイン)** をクリックします。
 
@@ -49,7 +47,7 @@ ms.locfileid: "665596"
 
 7.  **[Create Key] (キーの作成)** フォームの入力が完了したら、**[Create] (作成)** をクリックします。
 
-    -   **[Application name] (アプリケーション名):** アプリケーションの名前です。
+    -   **[Application name]:** アプリケーションの名前です。
     -   **[Application URL] (オプション):** アプリケーションの URL です。
     -   **[Key type]:** **[Basic]** または **[Enterprise]** を選びます。
     -   **[Application type]:** ユニバーサル Windows アプリで使うには、**[Universal Windows App]** を選びます。

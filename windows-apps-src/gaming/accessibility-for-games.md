@@ -6,16 +6,14 @@ ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
 ms.author: joanlee
 ms.date: 11/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、アクセシビリティ、ゲーム
 ms.localizationpriority: medium
-ms.openlocfilehash: b417bd53e24e72b1d5d3f357bced5cc756231a43
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 79426a302be59af73536081cd13e14cad4facbe3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692074"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570262"
 ---
 #  <a name="making-games-accessible"></a>ゲームをアクセシビリティ対応にする
 
@@ -53,7 +51,7 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 
 ### <a name="social-space-and-quality-of-life"></a>ソーシャルな空間と生活の質
 
-ビデオ ゲームは最も収益を上げているエンターテイメントの 1 つであり、ゲームをして何時間も楽しむことができます。 一部のユーザーにとっては、ゲームはエンターテイメントの 1 つというだけでなく、病室のベッドや慢性的な苦痛、身体の衰弱をもたらす社会不安からの逃避手段でもあります。 ゲーマーは、ビデオ ゲームの世界に送り出され、その世界のメイン キャラクターとなります。 ゲームを通じて、障碍に起因する日々の重圧を一時的に忘れ、他の状況では出会うことのない人々と交流する機会をもたらすソーシャルな空間が作り出され、そこに参加することができます。 
+ビデオ ゲームは最も収益を上げているエンターテイメントの 1 つであり、ゲームをして何時間も楽しむことができます。 一部のユーザーにとっては、ゲームは娯楽の 1 つというだけでなく、病室のベッドや慢性的な苦痛、身体の衰弱をもたらす社会不安からの逃避手段でもあります。 ゲーマーは、ビデオ ゲームの世界に送り出され、その世界のメイン キャラクターとなります。 ゲームを通じて、障碍に起因する日々の重圧を一時的に忘れ、他の状況では出会うことのない人々と交流する機会をもたらすソーシャルな空間が作り出され、そこに参加することができます。 
 
 ゲームもカルチャです。 友人が皆話していることと同じことに参加できることは、ユーザーの生活の質を高めるうえできわめて重要なことです。
 
@@ -170,7 +168,7 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 
 錐状体には 3 種類 (赤、緑、青) があり、これらの働きによって色を適切に認識できるようになっています。 色覚障碍は、3 種類の感光錐体の 1 つ以上が期待どおりに機能しない場合に発生します。 色覚障碍の度合いは、赤色光、緑色光、青色光に対する感受性が低いものの色知覚にはほとんど問題がない状態から、どの色もまったく知覚できない状態までさまざまです。 
 
-青色光に対する感受性が低い症例はあまり多くないため、色覚障碍に対応するデザインでは、赤色覚障碍または緑色覚障碍のユーザーに合わせて色を選択します。
+青色光に対する感受性が低い症例はあまり多くないため、色覚障碍に対応するデザインでは、赤色覚異常または緑色覚異常のユーザーに合わせて色を選択します。
  
   + 赤/緑色覚異常のユーザーが区別できる色の組み合わせを使います。
   
@@ -273,7 +271,7 @@ Xbox One の標準コントローラーと Xbox Elite コントローラーは�
 * [Epilepsy foundation](http://www.epilepsy.com/)
 
 ## <a name="related-links"></a>関連リンク
-* [インクルーシブ デザイン](https://www.microsoft.com/design/inclusive)
+* [包括的なデザイン](https://www.microsoft.com/design/inclusive)
 * [Microsoft アクセシビリティ開発者ハブ](https://developer.microsoft.com/windows/accessible-apps)
 * [アクセシビリティ対応 UWP アプリの設計](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
 * [アクセシビリティ ソフトウェアのエンジニアリング (電子書籍)](https://www.microsoft.com/download/details.aspx?id=19262)

@@ -6,18 +6,17 @@ title: BitmapEncoder オプションのリファレンス
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: adfd360c22fd6737d9e95e6e3153f4e2767a4c99
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 13f19ce909703b6748ab00aec1026e30d5c70a64
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243053"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570580"
 ---
 # <a name="bitmapencoder-options-reference"></a>BitmapEncoder オプションのリファレンス
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 この記事では、[**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) で使用できるエンコーディング オプションを示します。 エンコーディング オプションは、対応する名前の文字列と特定のデータ型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)) の値によって定義されます。 画像の操作について詳しくは、「[ビットマップ画像の作成、編集、保存](imaging.md)」をご覧ください。
 
@@ -35,14 +34,14 @@ ms.locfileid: "243053"
 | SuppressApp0            | boolean      | App0 メタデータ ブロックの作成を抑制するかどうかを示します。                                        | JPEG          |
 | EnableV5Header32bppBGRA | boolean      | アルファをサポートするバージョン 5 BMP にエンコードするかどうかを示します。                                         | BMP           |
 
- 
+ 
 
 ## <a name="related-topics"></a>関連トピック
 
 * [ビットマップ画像の作成、編集、保存](imaging.md)
 * [サポートされているコーデック](supported-codecs.md)
 
- 
+ 
 
 
 

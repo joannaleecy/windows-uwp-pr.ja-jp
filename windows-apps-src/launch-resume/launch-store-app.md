@@ -1,29 +1,27 @@
 ---
 author: TylerMSFT
 title: Microsoft Store アプリの起動
-description: ここでは、ms-windows-store URI スキームについて説明します。 アプリは、この uri を使用して、ストア内の特定のページに Microsoft ストア アプリを起動することができます。
+description: ここでは、ms-windows-store URI スキームについて説明します。 アプリは、この URI スキームを使用して、ストア内の特定のページに Microsoft Store アプリを起動することができます。
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b97e4da92a7cd4066ca555189f052e3e82006fe
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 42dfecd7d1bc2c298a70fec2bdebfc4c4f9dd66c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975654"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571943"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Microsoft Store アプリの起動
 
 
 
-ここでは、**ms-windows-store:** URI スキームについて説明します。 アプリは、この uri を使用して、 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)メソッドを使用してストア内の特定のページには、Microsoft ストア アプリを起動することができます。
+ここでは、**ms-windows-store:** URI スキームについて説明します。 アプリは、この URI スキームを使用して、 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)メソッドを使用して、ストア内の特定のページに Microsoft Store アプリを起動することができます。
 
-この例では、ゲーム ページにストアを開く方法を示します。
+この例では、ゲームのページにストアを開く方法を示します。
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
@@ -139,6 +137,6 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 </table>
 
- 
+ 
 
- 
+ 

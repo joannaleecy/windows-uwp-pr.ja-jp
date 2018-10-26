@@ -6,15 +6,13 @@ keywords: UWP, Windows 10, テキスト, 記述, ボイス, トーン, 設計, U
 ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a2feb7f21f9a307632b08714ff617a4ce3aa649
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 8022b3bb5ca312be259c554f46dc9f432ea3caeb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843292"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571487"
 ---
 # <a name="writing-style"></a>記述スタイル
 
@@ -42,25 +40,46 @@ ms.locfileid: "1843292"
 
 テキストは、ユーザーが読んで一目で理解できる必要があります。 不要な前置きを付けて単語を長くしないでください。 重要なポイントが最も目立つようにします。常に、アイデアの中核部分を示した後で、説明を追加します。
 
-:::row::: :::column::: ![Do](images/do.svg) **[フィルター]** を選択して画像に効果を追加します。
-:::column-end::: :::column::: ![不適切](images/dont.svg) 視覚効果や変更を画像に追加する場合は、**[フィルター]** を選択します。
-:::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        Select **filters** to add effects to your image.
+    :::column-end:::
+    :::column:::
+        ![Don't](images/dont.svg)
+        If you want to add visual effects or alterations to your image, select **filters.**
+    :::column-end:::
+:::row-end:::
 
 ## <a name="emphasize-action"></a>アクションを強調する
 
 アプリは、アクションによって定義されます。 ユーザーはアプリを使用するときにアクションを実行し、アプリはユーザーに応答するときにアクションを実行します。 アプリ全体のテキストで*能動態*を使用していることを確認します。 ユーザーや機能は、アクションが実行される対象ではなく、アクションを実行するものとして記述する必要があります。
 
-:::row::: :::column::: ![適切](images/do.svg) アプリを再起動して変更内容を表示します。
-:::column-end::: :::column::: ![不適切](images/dont.svg) アプリが再起動されたときに、変更内容が適用されます。
-:::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        Restart the app to see your changes.
+    :::column-end:::
+    :::column:::
+        ![Don't](images/dont.svg)
+        The changes will be applied when the app is restarted.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="short-and-sweet"></a>短く、わかりやすく
 
 ユーザーはテキストをざっと見て、多くの場合、より大きな単語のブロック全体をスキップします。 必要な情報やプレゼンテーションを犠牲してはいけませんが、必要以上に語句を使用しないでください。 これは、短い文や語句を多用することを意味する場合もあれば、 長い文で単語や構造を慎重に選ぶことを意味する場合もあります。
 
-:::row::: :::column::: ![適切](images/do.svg) 画像をアップロードできませんでした。 もう一度この問題が発生した場合は、アプリを再起動してください。 心配しないでください。再起動すると画像が復元されます。
-:::column-end::: :::column::: ![不適切](images/dont.svg) エラーが発生したため、画像をアップロードできませんでした。 もう一度やり直してください。この問題がもう一度発生した場合は、アプリを再起動する必要があります。 心配は要りません。作業内容はローカルに保存されており、再起動すると復元されます。
-:::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        We couldn't upload the picture. If this happens again, try restarting the app. But don't worry — your picture will be waiting when you come back.
+    :::column-end:::
+    :::column:::
+        ![Don't](images/dont.svg)
+        An error occured, and we weren't able to upload the picture. Please try again, and if you encounter this problem again, you may need to restart the app. But don't worry — we've saved your work locally, and it'll be waiting for you when you come back.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="style-conventions"></a>スタイルの規則
 
@@ -73,8 +92,14 @@ ms.locfileid: "1843292"
 * 自分の視点から書く場合は、"私たち" を使います。 暖かい口調で、ユーザーが自分をアプリのエクスペリエンスの一部だと感じられるように話しかけます。
 * アプリの開発者が自分だけであっても、アプリの視点を "私" と表現しないでください。
 
-:::row::: :::column::: ![適切](images/do.svg) その場所にファイルを保存できませんでした。
-:::column-end::: :::column::: :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        We couldn't save your file to that location.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="abbreviations"></a>略語
 
@@ -84,8 +109,14 @@ ms.locfileid: "1843292"
 * 混同しやすい複数の略語を使用しないでください。
 * アプリをローカライズしている場合、または、ユーザーが第二言語として英語を話す場合は、略語を使用しないでください。
 
-:::row::: :::column::: ![適切](images/do.svg) ユニバーサル Windows プラットフォーム (UWP) の設計ガイダンスは、美しく洗練されたアプリを設計および構築するのに役立つリソースです。 すべての UWP アプリに含まれている設計機能を使うと、デバイスに応じてスケーリングするユーザー インターフェイス (UI) を構築できます。
-:::column-end::: :::column::: :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every UWP app, you can build user interfaces (UI) that scale across a range of devices.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="contractions"></a>短縮形
 
@@ -93,8 +124,14 @@ ms.locfileid: "1843292"
 * テキストに自然に溶け込んでいる場合は、短縮形を使用してください。
 * スペースの節約や、テキストを堅苦しくするためだけに、不自然な短縮形を使用しないでください。
 
-:::row::: :::column::: ![適切](images/do.svg) 画像に問題がなければ、**[保存]** をクリックしてギャラリーに追加します。 ギャラリーから、友人と画像を共有できます。
-:::column-end::: :::column::: :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        When you're happy with your image, select **save** to add it to your gallery. From there, you'll be able to share it with friends.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="periods"></a>ピリオド
 
@@ -102,12 +139,18 @@ ms.locfileid: "1843292"
 * ツールチップ、エラー メッセージ、ダイアログの完全文の末尾には、ピリオドを使用します。
 * ボタン、ラジオ ボタン、ラベル、チェック ボックスのテキストの末尾には、ピリオドを使用しません。
 
-:::row::: :::column::: ![適切](images/do.svg) <b>接続していません.</b>
-* ネットワーク ケーブルが接続されていることを確認します。
-* 機内モードでないことを確認します。
-* ワイヤレス スイッチがオンであることを確認します。
-* ルーターを再起動します。
-:::column-end::: :::column::: :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        <b>You’re not connected.</b>
+        * Check that your network cables are plugged in.
+        * Make sure you're not in airplane mode.
+        * See if your wireless switch is turned on.
+        * Restart your router.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="capitalization"></a>大文字化
 
@@ -115,11 +158,17 @@ ms.locfileid: "1843292"
 * 固有名詞の先頭は大文字にします。
 * アプリ内のすべてのテキスト文字列の先頭 (すべての文、ラベル、タイトルの先頭) は大文字にします。
 
-:::row::: :::column::: ![適切](images/do.svg) <b>Which part is giving you trouble? (何でお困りですか)</b>
-* I forgot your password. (パスワードを忘れた)
-* It won't accept password. (パスワードがエラーになる)
-Someone else might be using my account. (他のユーザーが自分のパスワードを使用している可能性がある)
-:::column-end::: :::column::: :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        <b>Which part is giving you trouble?</b>
+        * I forgot your password.
+        * It won't accept password.
+        * Someone else might be using my account.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ## <a name="error-messages"></a>エラー メッセージ
 
@@ -133,16 +182,24 @@ Someone else might be using my account. (他のユーザーが自分のパスワ
 
 * 余分な情報を除外することで**簡潔かつ明瞭である**ようにします。
 
-:::row::: :::column::: ![適切](images/do.svg) <b>接続していません。</b>
-* ネットワーク ケーブルが接続されていることを確認します。
-* 機内モードでないことを確認します。
-* ワイヤレス スイッチがオンであることを確認します。
-* ルーターを再起動します。
-:::column-end::: :::column::: :::column-end::: :::row-end::: 
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        <b>You’re not connected.</b>
+        * Check that your network cables are plugged in.
+        * Make sure you're not in airplane mode.
+        * See if your wireless switch is turned on.
+        * Restart your router.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end::: 
 
 ## <a name="dialogs"></a>ダイアログ
 
-:::row::: :::column::: エラー メッセージの作成に関するアドバイスは、その多くが、アプリのダイアログ向けにテキストを作成する際にも当てはまります。 ユーザーはダイアログが表示されることを想定していますが、それでもアプリの通常の流れを中断することには変わりありません。ダイアログは、ユーザーが表示前の状態に戻ることができるように、有用かつ簡潔である必要があります。
+:::row:::
+    :::column:::
+        Many of the same advice for writing error messages also applies when creating the text for any dialogs in your app. While dialogs are expected by the user, they still interrupt the normal flow of the app, and need to be helpful and concise so the user can get back to what they were doing.
 
         But most important is the "call and response" between the title of a dialog and its buttons. Make sure that your buttons are clear answers to the question posed by the title, and that their format is consistent across your app.
     :::column-end:::
@@ -157,9 +214,17 @@ Someone else might be using my account. (他のユーザーが自分のパスワ
 
 ## <a name="buttons"></a>ボタン
 
-:::row::: :::column::: ボタンに表示するテキストは、ユーザーが一目で読み取ることができる簡潔さと、ボタンの機能がすぐにわかる明瞭さを備えている必要があります。 ボタンのテキストは、2、3 語の短い単語が上限です。多くはそれよりも短くする必要があります。
-ボタンのテキストを作成する際は、すべてのボタンがアクションを表すことに注意してください。 ボタンのテキストは、必ず*能動態*を使用して、反応ではなく動作を表す単語を使用します。
-:::column-end::: :::column::: ![適切](images/do.svg) * 今すぐインストール * 共有 :::column-end::: :::row-end:::
+:::row:::
+    :::column:::
+        Text on buttons needs to be concise enough that users can read it all at a glance and clear enough that the button's function is immediately obvious. The longest the text on a button should ever be is a couple short words, and many should be shorter than that.
+        When writing the text for buttons, remember that every button represents an action. Be sure to use the *active voice* in button text, to use words that represent actions rather than reactions.
+    :::column-end:::
+    :::column:::
+        ![Do](images/do.svg)
+        * Install now
+        * Share
+    :::column-end:::
+:::row-end:::
 
 ## <a name="spoken-experiences"></a>音声エクスペリエンス
 

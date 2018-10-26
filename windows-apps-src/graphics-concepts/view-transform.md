@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b7e0fdf265bdbc28d4d81e3a2ead8ca0ee7ca35d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 40f9312b4b85e9f6e54a8bf02c6d07df35b8b626
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044001"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571140"
 ---
 # <a name="view-transform"></a>ビュー変換
 
@@ -43,9 +41,9 @@ Direct3D は、ワールド行列とビュー行列を使っていくつかの�
 
 [変換](transforms.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
 ms.author: elcowle
 ms.date: 09/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, サンプル, DirectX, 構造
 ms.localizationpriority: medium
-ms.openlocfilehash: c26b547d5cc94f3277d0c898804e65d75e6d17e2
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 1272200bf128443c82807aec9df5559f207819e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700878"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569118"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze のアプリケーション構造
 
@@ -27,7 +25,7 @@ DirectX ユニバーサル Windows プラットフォーム (UWP) アプリの�
 > [!NOTE]
 > このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
 
- 
+ 
 ## 
 このドキュメントでは、ゲーム コードを構成する際に重要となるいくつかのことがらについて説明します。取り上げる内容は次のとおりです。
 
@@ -59,13 +57,13 @@ Marble Maze の一部のコンポーネントは、変更なしで、または�
 | MediaStreamer.h、MediaStreamer.cpp         | メディア ファンデーションを使ってゲームによるオーディオ リソースの管理を補助する **MediaStreamer** クラスを定義しています。                                                                            |
 | PersistentState.h、PersistentState.cpp     | バッキング ストアとの間でプリミティブ データ型の読み取りと書き込みを行う **PersistentState** クラスを定義しています。                                                                      |
 | Physics.h、Physics.cpp                     | 大理石と迷路間の物理シミュレーションを実装する **Physics** クラスを定義しています。                                                                              |
-| Primitives.h                               | ゲームで使用される幾何学型を定義しています。                                                                                                                                   |
+| Primitives.h                               | ゲームで使われる幾何学型を定義しています。                                                                                                                                   |
 | SampleOverlay.h、SampleOverlay.cpp         | 一般的な 2D とユーザー インターフェイスのデータと操作を提供する **SampleOverlay** クラスを定義しています。                                                                               |
 | SDKMesh.h、SDKMesh.cpp                     | SDK メッシュ (.sdkmesh) 形式のメッシュを読み込んで表示する **SDKMesh** クラスを定義しています。                                                                                |
 | StepTimer.h               | 合計時間と経過時間を簡単に取得できるようにする **StepTimer** クラスを定義しています。
 | UserInterface.h、UserInterface.cpp         | メニュー システムやハイ スコア表などのユーザー インターフェイスに関連する機能を定義しています。                                                                        |
 
- 
+ 
 
 ##  <a name="design-time-versus-run-time-resource-formats"></a>設計時と実行時のリソース形式
 
@@ -85,7 +83,7 @@ HLSL シェーダーは、設計時と実行時で異なる形式を使うリソ
 
 Marble Maze は、一般的な UWP アプリのライフ サイクルに従っています。 UWP アプリのライフ サイクルについて詳しくは、「[アプリのライフサイクル](https://msdn.microsoft.com/library/windows/apps/mt243287)」をご覧ください。
 
-UWP ゲームの初期化時には、通常、Direct3D、Direct2D などのランタイム コンポーネントと、ゲームで使用される入力、オーディオ、または物理ライブラリが初期化されます。 また、ゲームを開始する前に必要なゲーム固有のリソースも読み込まれます。 この初期化は、ゲーム セッション中に 1 回行われます。
+UWP ゲームの初期化時には、通常、Direct3D、Direct2D などのランタイム コンポーネントと、ゲームで使われる入力、オーディオ、または物理ライブラリが初期化されます。 また、ゲームを開始する前に必要なゲーム固有のリソースも読み込まれます。 この初期化は、ゲーム セッション中に 1 回行われます。
 
 初期化後、ゲームは通常、*ゲーム ループ*を実行します。 このループでは、ゲームは通常、4 つの操作を実行します。それらは、Windows イベントの処理、入力の収集、シーン オブジェクトの更新、シーンの表示です。 ゲームがシーンを更新するときに、現在の入力状態をシーン オブジェクトに適用し、オブジェクトの衝突などの物理的なイベントをシミュレートすることができます。 また、効果音の再生やネットワーク経由のデータ送信など、その他のアクティビティも実行できます。 ゲームがシーンを表示するときに、シーンの現在の状態がキャプチャされ、ディスプレイ デバイスに描画されます。 以降のセクションでは、これらのアクティビティについてさらに詳しく説明します。
 
@@ -114,7 +112,7 @@ UWP ゲームの初期化時には、通常、Direct3D、Direct2D などのラ�
 > [!NOTE]
 > また、準備ができたらメイン メニューを表示することもでき、残りのアセットをバックグラウンドで読み込み続けることができます。 すべてのリソースが読み込まれる前にユーザーがメニューのオプションを選択した場合は、進行状況バーを表示するなどして、シーン リソースが読み込み中であることを示すことができます。
 
- 
+ 
 
 ゲームに含まれているゲーム アセットが比較的少ない場合でも、非同期的に読み込むことをお勧めします。これには 2 つの理由があります。 1 つの理由は、すべてのデバイスとすべての構成ですべてのリソースをすばやく読み込めることを保証することが難しいことです。 また、非同期的な読み込みを早期に組み込むことによって、機能の追加による規模の拡大にもコードが対応できるようになります。
 
@@ -134,7 +132,7 @@ UWP アプリの非同期プログラミングについて詳しくは、「[C++
 > [!TIP]
 > Windows ランタイム C++ ライブラリの一部であるゲーム コード (つまり DLL) を記述している場合は、アプリとその他のライブラリで使える非同期操作を作る方法を学ぶために「[UWP アプリ用に C++ で非同期操作を作成](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)」を読むことを検討してください。
 
- 
+ 
 
 ## <a name="the-game-loop"></a>ゲーム ループ
 
@@ -289,7 +287,7 @@ m_persistentState->Initialize(
     "MarbleMaze");
 ```
 
-Marble Maze は、大理石がチェックポイントやゴールを通過したときに **MarbleMazeMain::Update** メソッドで状態を保存し、ウィンドウからフォーカスが移動されたときに **MarbleMazeMain::OnFocusChange** メソッドで状態を保存します。 中断の通知に対処できる時間は数秒しかないため、ゲームが大量の状態データを保持する場合は、同様の方法でときどき状態を固定ストレージに保存することをお勧めします。 これにより、アプリが中断通知を受け取ったときに、変更があった状態データを保存するだけで済みます。
+Marble Maze は、大理石がチェックポイントやゴールを通過したときに **MarbleMazeMain::Update** メソッドで状態を保存し、ウィンドウからフォーカスが移動されたときに **MarbleMazeMain::OnFocusChange** メソッドで状態を保存します。 中断の通知に対処できる時間は数秒しかないので、ゲームが大量の状態データを保持する場合は、同様の方法でときどき状態を固定ストレージに保存することをお勧めします。 これにより、アプリが中断通知を受け取ったときに、変更があった状態データを保存するだけで済みます。
 
 中断と再開の通知に応答するために、**MarbleMazeMain** クラスは、中断時と再開時に呼び出される **SaveState** メソッドと **LoadState** メソッドを定義します。 **MarbleMazeMain::OnSuspending** メソッドは中断イベントを処理し、**MarbleMazeMain::OnResuming** メソッドは再開イベントを処理します。
 
@@ -431,9 +429,9 @@ void MarbleMazeMain::LoadState()
 * [Marble Maze サンプルの基礎](marble-maze-sample-fundamentals.md)
 * [Marble Maze、C++ と DirectX での UWP ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c90d3d32876bdfd6b91f597ad94eba33907e90
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 6b39211c4b21a68fc0e563f73805805dcf1f4641
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675199"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570368"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>プッシュ通知ウィザードにより生成されるコード
  
@@ -211,9 +209,9 @@ function sendNotifications(request) {
 
 sendNotifications 関数は、1 つの通知をトースト通知として送信します。 他の種類のプッシュ通知を使うこともできます。
 
-**ヒント**  スクリプトの編集中にヘルプを表示する方法については、[サーバー側の JavaScript で IntelliSense を有効にする方法](http://go.microsoft.com/fwlink/p/?LinkId=309275)に関するページをご覧ください。
+**ヒント:** スクリプトの編集中にヘルプを取得する方法について詳しくは、[サーバー側の JavaScript の IntelliSense を有効にする](http://go.microsoft.com/fwlink/p/?LinkId=309275)を参照してください。
 
- 
+ 
 
 ## <a name="push-notification-types"></a>プッシュ通知の種類
 
@@ -237,9 +235,9 @@ Window Azure のモバイル サービスの柔軟性が不十分な場合、C# 
 
 モバイル サービスでスケジュール済みタスクを実行して、プッシュ通知を送ることもできます。 「[Mobile Services での繰り返し発生するジョブのスケジュール](http://go.microsoft.com/fwlink/p/?linkid=301694)」をご覧ください。
 
-**警告**  プッシュ通知ウィザードは 1 回だけ実行してください。もう一度実行して、別のモバイル サービスの登録コードを追加しないようにしてください。 このウィザードをプロジェクトごとに複数回実行すると、生成されるコードで [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) メソッドの呼び出しが重複し、ランタイムの例外が発生します。 複数のモバイル サービスのプッシュ通知を登録するには、ウィザードを 1 回だけ実行し、登録コードを上書きして、**CreatePushNotificationChannelForApplicationAsync** の呼び出しが同時に実行されないようにしてください。 そのために、ウィザードによって push.register.\* に生成されたコード (**CreatePushNotificationChannelForApplicationAsync** の呼び出しを含む) を OnLaunched イベント以外の場所に移すという方法もありますが、細かい処理はアプリのアーキテクチャによって異なります。
+**警告**プッシュ通知ウィザードは 1 回実行して、別のモバイル サービスの登録コードを追加するもう一度、[ウィザードを実行しないでください。 このウィザードをプロジェクトごとに複数回実行すると、生成されるコードで [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) メソッドの呼び出しが重複し、ランタイムの例外が発生します。 複数のモバイル サービスのプッシュ通知を登録するには、ウィザードを 1 回だけ実行し、登録コードを上書きして、**CreatePushNotificationChannelForApplicationAsync** の呼び出しが同時に実行されないようにしてください。 そのために、ウィザードによって push.register.\* に生成されたコード (**CreatePushNotificationChannelForApplicationAsync** の呼び出しを含む) を OnLaunched イベント以外の場所に移すという方法もありますが、細かい処理はアプリのアーキテクチャによって異なります。
 
- 
+ 
 
 ## <a name="related-topics"></a>関連トピック
 
@@ -249,9 +247,9 @@ Window Azure のモバイル サービスの柔軟性が不十分な場合、C# 
 * [Window Azure のモバイル サービスへの接続 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
 * [Window Azure のモバイル サービスへの接続 (C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
 * [クイック スタート: モバイル サービスでのプッシュ通知の追加 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
- 
+ 
 
- 
+ 
 
 
 

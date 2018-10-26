@@ -6,16 +6,14 @@ description: ユーザーがピッカーを操作してファイルやフォル�
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f025504d8024a23810a7d5dd2b0b28414fe5a62
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: b79bfa9ecdf76d2d59e3c0991240d88599dbe6dd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662592"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569403"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>ピッカーでファイルやフォルダーを開く
 
@@ -28,7 +26,7 @@ ms.locfileid: "1662592"
 ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 ファイルへのアクセスには [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスと [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) クラス、フォルダーへのアクセスには [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) を使います。
 
 > [!NOTE]
-> ファイル ピッカーのサンプルについては、[ファイル ピッカーのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=619994)をご覧ください。
+> ファイル ピッカーのサンプルについては、[ファイル ピッカーのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=619994)をご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 

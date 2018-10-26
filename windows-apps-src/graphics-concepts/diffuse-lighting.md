@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 84036edd2071d9545b3a492ea5cf0b397d9e722e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 5846edda167823b7ae161d332fbde450ccf20d72
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044431"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572168"
 ---
 # <a name="diffuse-lighting"></a>拡散光
 
@@ -41,7 +39,7 @@ ms.locfileid: "1044431"
 | Atten           | なし           | FLOAT         | 光の減衰。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。 |
 | Spot            | なし           | FLOAT         | スポットライト係数。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。  |
 
- 
+ 
 
 減衰 (Atten) またはスポット ライトの特性 (Spot) を計算するには、「[減衰とスポット ライトの係数](attenuation-and-spotlight-factor.md)」を参照してください。
 
@@ -73,9 +71,9 @@ ms.locfileid: "1044431"
 
 [光源の計算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

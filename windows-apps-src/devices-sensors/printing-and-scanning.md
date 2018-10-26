@@ -6,16 +6,14 @@ description: このセクションでは、ユニバーサル Windows アプリ�
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 印刷、3dprinting、3 d 印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c4ada5d58743bf19ed27dfbdd2676f2a267129f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 51afa49dac094bdd203e080c682e681f752d15e4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473814"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569743"
 ---
 # <a name="printing-and-scanning"></a>印刷とスキャン
 

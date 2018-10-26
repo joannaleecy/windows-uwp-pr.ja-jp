@@ -10,15 +10,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f269b352dc3d7ea7c63c04fdbfc487fae490bf1e
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: dac89fc678e35b1e3a39d26d836f03c18d3c4684
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653661"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569082"
 ---
 # <a name="streaming-resources"></a>ストリーミング リソース
 
@@ -59,7 +57,7 @@ ms.locfileid: "1653661"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
@@ -68,9 +66,9 @@ ms.locfileid: "1653661"
 
 [リソース](resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

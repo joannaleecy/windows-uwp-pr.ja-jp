@@ -6,16 +6,14 @@ description: 方位センサーを使ってデバイスの向きを判断する�
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a9270ba675b0797344d3370aec433de90d80d5
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 49199a91f6713b3f18928eaafb6875a49deaf451
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958887"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570676"
 ---
 # <a name="use-the-orientation-sensor"></a>方位センサーの使用
 
@@ -48,7 +46,7 @@ ms.locfileid: "958887"
 
 ## <a name="prerequisites"></a>前提条件
 
-Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベントについて理解している必要があります。
+Extensible Application Markup Language (XAML)、Microsoft VisualC \#、およびイベントを理解する必要があります。
 
 使うデバイスやエミュレーターが方位センサーをサポートしている必要があります。
 
