@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 年齢区分, ゲームの評価, iarc, 評価, アンケート, レーティング機関, コンテンツ区分
 ms.localizationpriority: medium
 ms.openlocfilehash: 53692f7d3f5ae9d4a5e6bdcc1d5909467987d264
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5545547"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5666568"
 ---
 # <a name="age-ratings"></a>年齢区分
 
@@ -40,7 +40,7 @@ ms.locfileid: "5545547"
 > 韓国の法律により、韓国で入手可能なゲームは韓国の [Game Rating Board](http://go.microsoft.com/fwlink/p/?LinkId=228256) の評価を受ける必要があります。 韓国で提供する可能性のあるゲームを提出する場合は、この追加セクションに入力し、評価証明書をアップロードする必要があります。 アプリがゲームではない場合や、そのアプリを韓国で提供しない場合は、このセクションは空白のままでかまいません。
 
 > [!NOTE]
-> If you are submitting a game that will be available in Taiwan, you are required by law to register the provided CSRR rating using [this form](https://go.microsoft.com/fwlink/?linkid=867281). 
+> 台湾での利用が可能になるゲームを提出する場合は、提供された CSRR レーティングを[こちらのフォーム](https://go.microsoft.com/fwlink/?linkid=867281)で登録することが法律で義務付けられています。 
 
 <span id="appeal" />
 

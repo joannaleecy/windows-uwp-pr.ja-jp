@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 84b42460ce5368bdac6ab84a9f9c65d0cb8231a1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5542552"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5599342"
 ---
 # <a name="blending-stages"></a>ブレンド ステージ
 
