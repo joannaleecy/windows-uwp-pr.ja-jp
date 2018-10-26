@@ -5,16 +5,14 @@ description: Xbox アリーナ参加者のユーザー シナリオについて�
 ms.author: kevinasg
 ms.date: 10-10-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fba27dd7a5726161e82869f44746ba3bfe4261e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 43666021132b436caebe7f4b379f0e5296ae0976
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473526"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563189"
 ---
 # <a name="participant-user-scenarios"></a><span data-ttu-id="26e99-104">参加者のユーザー シナリオ</span><span class="sxs-lookup"><span data-stu-id="26e99-104">Participant user scenarios</span></span>
 

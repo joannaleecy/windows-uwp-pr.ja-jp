@@ -7,16 +7,14 @@ description: " GET (/media/{marketplaceId}/details)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4178eac74e58699f322d004577520893f582f874
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f45a7fe66898f8118777452c949fa2e4e4b4fd2c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478007"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571155"
 ---
 # <a name="get-mediamarketplaceiddetails"></a><span data-ttu-id="33ef0-104">GET (/media/{marketplaceId}/details)</span><span class="sxs-lookup"><span data-stu-id="33ef0-104">GET (/media/{marketplaceId}/details)</span></span>
 <span data-ttu-id="33ef0-105">返します提供の詳細とメタデータについての 1 つまたは複数の項目です。</span><span class="sxs-lookup"><span data-stu-id="33ef0-105">Returns offer details and metadata about one or more items.</span></span>

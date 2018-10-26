@@ -7,16 +7,14 @@ description: " POST ({itemID})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 910e2e46725c8628d6984983c808bf5fc9937f9f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 369e5fa3dd3a64ffb61c0f79ca086e440fe5ce53
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5480909"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561226"
 ---
 # <a name="post-itemid"></a><span data-ttu-id="27722-104">POST ({itemID})</span><span class="sxs-lookup"><span data-stu-id="27722-104">POST ({itemID})</span></span>
 <span data-ttu-id="27722-105">または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント、要求された時間の長さによって、コンシューマブルの数量。</span><span class="sxs-lookup"><span data-stu-id="27722-105">Indicates that all or a portion of a consumable inventory item has been used and decrements the quantity of the consumable by the requested amount.</span></span>

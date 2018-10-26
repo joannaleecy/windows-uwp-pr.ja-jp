@@ -7,16 +7,14 @@ description: " /serviceconfigs/{scid}/batch"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a48bf9c30370238adc83376a524e9c61abb4af13
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: bbef851aeee79a4f105aa6aa4f8447d7aa9d458a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479908"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570360"
 ---
 # <a name="serviceconfigsscidbatch"></a><span data-ttu-id="aa149-104">/serviceconfigs/{scid}/batch</span><span class="sxs-lookup"><span data-stu-id="aa149-104">/serviceconfigs/{scid}/batch</span></span>
 <span data-ttu-id="aa149-105">サービス構成の識別子レベルでバッチ クエリの POST 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="aa149-105">Supports a POST operation for a batch query at the service configuration identifier level.</span></span>

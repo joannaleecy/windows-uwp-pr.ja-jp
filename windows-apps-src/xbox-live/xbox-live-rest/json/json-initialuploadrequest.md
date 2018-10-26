@@ -7,16 +7,14 @@ description: " InitialUploadRequest (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: eac2405b8668179fa60921ca45012a417e61b352
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: c8f85c4cd270a66680512cbd6d807ca1d6e183cc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475506"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560389"
 ---
 # <a name="initialuploadrequest-json"></a><span data-ttu-id="aa84c-104">InitialUploadRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="aa84c-104">InitialUploadRequest (JSON)</span></span>
 <span data-ttu-id="aa84c-105">POST GameClip の本文は、要求をアップロードします。</span><span class="sxs-lookup"><span data-stu-id="aa84c-105">The body of a POST GameClip upload request.</span></span> 

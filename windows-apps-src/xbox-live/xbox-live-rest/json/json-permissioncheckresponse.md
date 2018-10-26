@@ -7,16 +7,14 @@ description: " PermissionCheckResponse (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f04da7d375b404a5d05dcf5d5e9905b00b7545d9
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 4f6607cb981748b4c1673bac7d34563eadadf3cc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5467986"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562483"
 ---
 # <a name="permissioncheckresponse-json"></a><span data-ttu-id="23bbf-104">PermissionCheckResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="23bbf-104">PermissionCheckResponse (JSON)</span></span>
 <span data-ttu-id="23bbf-105">1 つの対象ユーザーに対して単一のアクセス許可の設定の 1 人のユーザーからのチェックの結果。</span><span class="sxs-lookup"><span data-stu-id="23bbf-105">The results of a check from a single user for a single permission setting against a single target user.</span></span> 

@@ -6,16 +6,14 @@ ms.assetid: 5ec7cec6-4296-483d-960d-2f025af6896e
 ms.author: aablackm
 ms.date: 07/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, プレイヤーの統計, ランキング
 ms.localizationpriority: medium
-ms.openlocfilehash: 89f3f2662bbff2fdacb77c44078de922b6a37b24
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 3cc6855a572a1636e92f3bcbf0a8e0d9a96a8bb4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5526950"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565135"
 ---
 # <a name="player-stats"></a><span data-ttu-id="f3226-104">プレイヤーの統計</span><span class="sxs-lookup"><span data-stu-id="f3226-104">Player stats</span></span>
 

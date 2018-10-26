@@ -7,16 +7,14 @@ description: " EDS の表"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ae8c61d8afae6788f2f99e4e2beff262c011fc60
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: e5f259ec7515d43e677ebb70d70bc9b92acbebae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471192"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562710"
 ---
 # <a name="eds-tables"></a><span data-ttu-id="48ee5-104">EDS の表</span><span class="sxs-lookup"><span data-stu-id="48ee5-104">EDS Tables</span></span>
 

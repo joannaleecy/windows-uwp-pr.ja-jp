@@ -7,16 +7,14 @@ description: " PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 92cf7ab408b14e74a8f231d6c81e3077a0a40be5
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: a9826018154c5a959fbb9b956e9062b14473a675
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475404"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571613"
 ---
 # <a name="put-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a><span data-ttu-id="9fe91-104">PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})</span><span class="sxs-lookup"><span data-stu-id="9fe91-104">PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})</span></span>
 <span data-ttu-id="9fe91-105">作成、更新、またはセッションに参加します。</span><span class="sxs-lookup"><span data-stu-id="9fe91-105">Creates, updates, or joins a session.</span></span>

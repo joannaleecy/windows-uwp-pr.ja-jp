@@ -7,16 +7,14 @@ description: " DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateN
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 03adb20f796e7bff59214999febad38434a2a287
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: c1da15e233dad672370c2edee859589998be8732
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471692"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560658"
 ---
 # <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersindex"></a><span data-ttu-id="86ec2-104">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index})</span><span class="sxs-lookup"><span data-stu-id="86ec2-104">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index})</span></span>
 <span data-ttu-id="86ec2-105">指定したメンバーをセッションから削除します。</span><span class="sxs-lookup"><span data-stu-id="86ec2-105">Removes the specified members from a session.</span></span>

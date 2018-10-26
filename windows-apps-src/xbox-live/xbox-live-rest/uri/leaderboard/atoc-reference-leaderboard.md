@@ -7,16 +7,14 @@ description: " ランキング URI"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a2c8ca1cdac0b6a2ad2f981d2a57d926cf4e1f5
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 66c588f833dd90abac5c3eb4c6d6380db473913e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471544"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560357"
 ---
 # <a name="leaderboards-uris"></a><span data-ttu-id="33c1c-104">ランキング URI</span><span class="sxs-lookup"><span data-stu-id="33c1c-104">Leaderboards URIs</span></span>
 

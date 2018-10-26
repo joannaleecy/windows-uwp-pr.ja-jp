@@ -7,16 +7,14 @@ description: " POST (/system/strings/validate)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4795b1ee19017e5598655117a41617e348986503
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 9328fec688b968378b84125101c315c6f67c8ad9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5527119"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563674"
 ---
 # <a name="post-systemstringsvalidate"></a><span data-ttu-id="2186a-104">POST (/system/strings/validate)</span><span class="sxs-lookup"><span data-stu-id="2186a-104">POST (/system/strings/validate)</span></span>
 <span data-ttu-id="2186a-105">検証のための文字列の配列を受け取り、同じサイズの結果の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="2186a-105">Accepts an array of strings for validation and returns an array of results of equal size.</span></span> <span data-ttu-id="2186a-106">これらの Uri のドメインが`client-strings.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="2186a-106">The domain for these URIs is `client-strings.xboxlive.com`.</span></span>

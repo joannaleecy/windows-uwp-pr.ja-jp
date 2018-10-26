@@ -7,16 +7,14 @@ description: " POST (/users/xuid(xuid)/lists/PINS/{listname})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 77789014fcd242aad70e7302b01907bc10b8bbab
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 160d69114aadaf98178209f2230fe91548393da2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483146"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571882"
 ---
 # <a name="post-usersxuidxuidlistspinslistname"></a><span data-ttu-id="69aae-104">POST (/users/xuid(xuid)/lists/PINS/{listname})</span><span class="sxs-lookup"><span data-stu-id="69aae-104">POST (/users/xuid(xuid)/lists/PINS/{listname})</span></span>
 <span data-ttu-id="69aae-105">クエリ文字列パラメーター **insertIndex**に基づいてインデックスの一覧に項目を挿入します。</span><span class="sxs-lookup"><span data-stu-id="69aae-105">Inserts items into the list at the index based on the query string parameter **insertIndex**.</span></span> <span data-ttu-id="69aae-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="69aae-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>

@@ -6,16 +6,14 @@ ms.assetid: 5e7abfb7-5d68-4e77-a941-13dd081268ac
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
-ms.openlocfilehash: 604fcf1e77a1ca4666c14216be5c690362c9048b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 0622014160c3e0b675bd0cf53793eeb06ef907c5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469237"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571866"
 ---
 # <a name="how-to-get-the-xbox-development-kit-xdk"></a><span data-ttu-id="96ce9-104">Xbox 開発キット (XDK) を取得する方法</span><span class="sxs-lookup"><span data-stu-id="96ce9-104">How to get the Xbox Development Kit (XDK)</span></span>
 

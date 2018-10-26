@@ -7,16 +7,14 @@ description: " GET (/media/{marketplaceId}/metadata/mediaItemTypes)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eb16d6052d07ed90d99c327b4955b5d8bedabff
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 79736e58f558f7638d63360d48c4e1fe4f0eca9b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470865"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569944"
 ---
 # <a name="get-mediamarketplaceidmetadatamediaitemtypes"></a><span data-ttu-id="5106c-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes)</span><span class="sxs-lookup"><span data-stu-id="5106c-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes)</span></span>
 <span data-ttu-id="5106c-105">EDS の特定のバージョンのサポートされているすべての mediaItemTypes の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="5106c-105">Lists all supported mediaItemTypes for the given EDS version.</span></span> <span data-ttu-id="5106c-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5106c-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>

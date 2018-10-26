@@ -6,16 +6,14 @@ ms.assetid: 6cb2cb10-811a-4b20-9b9b-a3fc59a033c2
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成, コンテキスト検索, ゲーム クリップ, 配信
 ms.localizationpriority: medium
-ms.openlocfilehash: 79197dc7db3f15aba5fc9d494a5e8408878f0dba
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 7e1b63693ac3d6d1cb68a15a2c32bf730cf54dec
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473088"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567731"
 ---
 # <a name="configuring-contextual-search"></a><span data-ttu-id="eb76d-104">コンテキスト検索の構成</span><span class="sxs-lookup"><span data-stu-id="eb76d-104">Configuring Contextual Search</span></span>
 

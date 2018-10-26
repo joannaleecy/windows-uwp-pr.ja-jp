@@ -7,16 +7,14 @@ description: " POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 492b2ff62927812337f1b94f487a2649c0446f00
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f376937d8263c44b4ac211eb6de637849b390683
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5481586"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561084"
 ---
 # <a name="post-jsonusersbatchscidssciddatapathandfilenamejson"></a><span data-ttu-id="01e39-104">POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)</span><span class="sxs-lookup"><span data-stu-id="01e39-104">POST (/json/users/batch/scids/{scid}/data/{pathAndFileName},json)</span></span>
 <span data-ttu-id="01e39-105">同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="01e39-105">Downloads multiple files from multiple users with the same filename.</span></span> <span data-ttu-id="01e39-106">ファイルのダウンロードについては、要求の URI によって決まります。</span><span class="sxs-lookup"><span data-stu-id="01e39-106">The file to be downloaded is determined by the URI of the request.</span></span> <span data-ttu-id="01e39-107">要求の本文には、ダウンロードするファイル持つにはユーザーの Xuid のリストが含まれています。</span><span class="sxs-lookup"><span data-stu-id="01e39-107">The body of the request contains the list of XUIDs of the users whose files to download.</span></span> <span data-ttu-id="01e39-108">応答の本文が含まれるマルチパート MIME メッセージ、独自のヘッダーのセットを特定のユーザーのファイルを表す、各部分になります。</span><span class="sxs-lookup"><span data-stu-id="01e39-108">The body of the response will be a multi-part MIME message, with each part representing a file for a particular user with its own set of headers.</span></span> <span data-ttu-id="01e39-109">成功と失敗の混在する応答の部分のことができます。</span><span class="sxs-lookup"><span data-stu-id="01e39-109">It's possible for the parts of the response to be a mix of successes and failures.</span></span> <span data-ttu-id="01e39-110">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="01e39-110">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

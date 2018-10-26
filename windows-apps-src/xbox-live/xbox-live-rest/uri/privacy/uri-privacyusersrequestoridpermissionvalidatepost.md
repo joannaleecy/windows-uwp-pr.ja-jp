@@ -7,16 +7,14 @@ description: " POST (/users/{requestorId}/permission/validate)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: edffbbff7fb9cd5fc4e471a6af1f494f4a35ea57
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 08affb27b09137bebf30f1e96502dbc9ee3e1189
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471843"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570068"
 ---
 # <a name="post-usersrequestoridpermissionvalidate"></a><span data-ttu-id="311a8-104">POST (/users/{requestorId}/permission/validate)</span><span class="sxs-lookup"><span data-stu-id="311a8-104">POST (/users/{requestorId}/permission/validate)</span></span>
 <span data-ttu-id="311a8-105">一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no に対する回答を取得します。</span><span class="sxs-lookup"><span data-stu-id="311a8-105">Gets a set of yes-or-no answers about whether the user is allowed to perform specified actions with a set of target users.</span></span>

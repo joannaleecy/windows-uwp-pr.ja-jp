@@ -7,40 +7,38 @@ description: " DeviceEndpoint (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: bfae4eac9ecf0177026183cc25bac5526bbba62f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: d14384e06c7c117eaaeda146d383bccfffd2fdf1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483318"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561048"
 ---
-# <a name="deviceendpoint-json"></a><span data-ttu-id="b68ab-104">DeviceEndpoint (JSON)</span><span class="sxs-lookup"><span data-stu-id="b68ab-104">DeviceEndpoint (JSON)</span></span>
+# <a name="deviceendpoint-json"></a><span data-ttu-id="82668-104">DeviceEndpoint (JSON)</span><span class="sxs-lookup"><span data-stu-id="82668-104">DeviceEndpoint (JSON)</span></span>
  
 <a id="ID4EO"></a>
 
  
-## <a name="deviceendpoint"></a><span data-ttu-id="b68ab-105">DeviceEndpoint</span><span class="sxs-lookup"><span data-stu-id="b68ab-105">DeviceEndpoint</span></span>
+## <a name="deviceendpoint"></a><span data-ttu-id="82668-105">DeviceEndpoint</span><span class="sxs-lookup"><span data-stu-id="82668-105">DeviceEndpoint</span></span>
  
-<span data-ttu-id="b68ab-106">DeviceEndpoint オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="b68ab-106">The DeviceEndpoint object has the following specification.</span></span>
+<span data-ttu-id="82668-106">DeviceEndpoint オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="82668-106">The DeviceEndpoint object has the following specification.</span></span>
  
-| <span data-ttu-id="b68ab-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="b68ab-107">Member</span></span>| <span data-ttu-id="b68ab-108">種類</span><span class="sxs-lookup"><span data-stu-id="b68ab-108">Type</span></span>| <span data-ttu-id="b68ab-109">説明</span><span class="sxs-lookup"><span data-stu-id="b68ab-109">Description</span></span>| 
+| <span data-ttu-id="82668-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="82668-107">Member</span></span>| <span data-ttu-id="82668-108">種類</span><span class="sxs-lookup"><span data-stu-id="82668-108">Type</span></span>| <span data-ttu-id="82668-109">説明</span><span class="sxs-lookup"><span data-stu-id="82668-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="b68ab-110">deviceName</span><span class="sxs-lookup"><span data-stu-id="b68ab-110">deviceName</span></span>| <span data-ttu-id="b68ab-111">string</span><span class="sxs-lookup"><span data-stu-id="b68ab-111">string</span></span>| <span data-ttu-id="b68ab-112">省略可能。</span><span class="sxs-lookup"><span data-stu-id="b68ab-112">Optional.</span></span> <span data-ttu-id="b68ab-113">該当する場合は、デバイスのフレンドリ名。</span><span class="sxs-lookup"><span data-stu-id="b68ab-113">A friendly name for the device, if applicable.</span></span> <span data-ttu-id="b68ab-114">現在、この値は使用しません。</span><span class="sxs-lookup"><span data-stu-id="b68ab-114">Currently this value is not used.</span></span>| 
-| <span data-ttu-id="b68ab-115">endpointUri</span><span class="sxs-lookup"><span data-stu-id="b68ab-115">endpointUri</span></span>| <span data-ttu-id="b68ab-116">string</span><span class="sxs-lookup"><span data-stu-id="b68ab-116">string</span></span>| <span data-ttu-id="b68ab-117">必須。</span><span class="sxs-lookup"><span data-stu-id="b68ab-117">Required.</span></span> <span data-ttu-id="b68ab-118">クライアント プラットフォーム (Windows または Windows Phone) が、プッシュ通知サービス (WNS または MPNS) から入手した URL です。</span><span class="sxs-lookup"><span data-stu-id="b68ab-118">The URL that the client platform (Windows or Windows Phone) has obtained from its push notification service (WNS or MPNS).</span></span>| 
-| <span data-ttu-id="b68ab-119">locale</span><span class="sxs-lookup"><span data-stu-id="b68ab-119">locale</span></span>| <span data-ttu-id="b68ab-120">string</span><span class="sxs-lookup"><span data-stu-id="b68ab-120">string</span></span>| <span data-ttu-id="b68ab-121">必須。</span><span class="sxs-lookup"><span data-stu-id="b68ab-121">Required.</span></span> <span data-ttu-id="b68ab-122">このエンドポイントに送信される通知の目的の言語です。</span><span class="sxs-lookup"><span data-stu-id="b68ab-122">The desired language of notifications sent to this endpoint.</span></span> <span data-ttu-id="b68ab-123">優先順位の値をコンマ区切りのリストであることができます。</span><span class="sxs-lookup"><span data-stu-id="b68ab-123">Can be a list of comma-separated values in preference order.</span></span> <span data-ttu-id="b68ab-124">例:「DE-DE, EN-US, en」。</span><span class="sxs-lookup"><span data-stu-id="b68ab-124">Example: "de-DE, en-US, en".</span></span>| 
-| <span data-ttu-id="b68ab-125">プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="b68ab-125">platform</span></span>| <span data-ttu-id="b68ab-126">string</span><span class="sxs-lookup"><span data-stu-id="b68ab-126">string</span></span>| <span data-ttu-id="b68ab-127">省略可能。</span><span class="sxs-lookup"><span data-stu-id="b68ab-127">Optional.</span></span> <span data-ttu-id="b68ab-128">現在サポートされている値は、"WindowsPhone"および"Windows"です。</span><span class="sxs-lookup"><span data-stu-id="b68ab-128">Currently supported values are "WindowsPhone" and "Windows".</span></span> <span data-ttu-id="b68ab-129">指定しない場合は、デバイス トークンから取得されます。</span><span class="sxs-lookup"><span data-stu-id="b68ab-129">If not specified, it is derived from the Device token.</span></span>| 
-| <span data-ttu-id="b68ab-130">platformVersion</span><span class="sxs-lookup"><span data-stu-id="b68ab-130">platformVersion</span></span>| <span data-ttu-id="b68ab-131">string</span><span class="sxs-lookup"><span data-stu-id="b68ab-131">string</span></span>| <span data-ttu-id="b68ab-132">省略可能。</span><span class="sxs-lookup"><span data-stu-id="b68ab-132">Optional.</span></span> <span data-ttu-id="b68ab-133">この文字列の形式は、各プラットフォームに固有です。</span><span class="sxs-lookup"><span data-stu-id="b68ab-133">The format of this string is particular to each platform.</span></span> <span data-ttu-id="b68ab-134">現在、この値は使用しません。</span><span class="sxs-lookup"><span data-stu-id="b68ab-134">Currently this value is not used.</span></span>| 
-| <span data-ttu-id="b68ab-135">systemId</span><span class="sxs-lookup"><span data-stu-id="b68ab-135">systemId</span></span>| <span data-ttu-id="b68ab-136">GUID</span><span class="sxs-lookup"><span data-stu-id="b68ab-136">GUID</span></span>| <span data-ttu-id="b68ab-137">必須。</span><span class="sxs-lookup"><span data-stu-id="b68ab-137">Required.</span></span> <span data-ttu-id="b68ab-138">「アプリ インスタンス」の一意の識別子 (デバイス/ユーザーの組み合わせ)。</span><span class="sxs-lookup"><span data-stu-id="b68ab-138">Unique identifier for the "app instance" (device/user combination).</span></span> <span data-ttu-id="b68ab-139">ベスト プラクティスの実装では、アプリのインストール/最初の実行時にランダムな GUID を生成するのには、し、アプリの以降の実行時にその値を使用してに進みます。</span><span class="sxs-lookup"><span data-stu-id="b68ab-139">Best practice implementation is for an app to generate a random GUID upon install/first-run, and continue to use that value on subsequent runs of the app.</span></span>| 
-| <span data-ttu-id="b68ab-140">titleId</span><span class="sxs-lookup"><span data-stu-id="b68ab-140">titleId</span></span>| <span data-ttu-id="b68ab-141">32 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="b68ab-141">32-bit unsigned integer</span></span>| <span data-ttu-id="b68ab-142">必須。</span><span class="sxs-lookup"><span data-stu-id="b68ab-142">Required.</span></span> <span data-ttu-id="b68ab-143">サービスに呼び出しを発行するゲームのタイトル ID です。</span><span class="sxs-lookup"><span data-stu-id="b68ab-143">The Title ID of the game issuing the call to the service.</span></span>| 
+| <span data-ttu-id="82668-110">deviceName</span><span class="sxs-lookup"><span data-stu-id="82668-110">deviceName</span></span>| <span data-ttu-id="82668-111">string</span><span class="sxs-lookup"><span data-stu-id="82668-111">string</span></span>| <span data-ttu-id="82668-112">省略可能。</span><span class="sxs-lookup"><span data-stu-id="82668-112">Optional.</span></span> <span data-ttu-id="82668-113">該当する場合は、デバイスのフレンドリ名。</span><span class="sxs-lookup"><span data-stu-id="82668-113">A friendly name for the device, if applicable.</span></span> <span data-ttu-id="82668-114">現在、この値は使用しません。</span><span class="sxs-lookup"><span data-stu-id="82668-114">Currently this value is not used.</span></span>| 
+| <span data-ttu-id="82668-115">endpointUri</span><span class="sxs-lookup"><span data-stu-id="82668-115">endpointUri</span></span>| <span data-ttu-id="82668-116">string</span><span class="sxs-lookup"><span data-stu-id="82668-116">string</span></span>| <span data-ttu-id="82668-117">必須。</span><span class="sxs-lookup"><span data-stu-id="82668-117">Required.</span></span> <span data-ttu-id="82668-118">この URL は、クライアント プラットフォーム (Windows または Windows Phone) が、プッシュ通知サービス (WNS または MPNS) から入手したです。</span><span class="sxs-lookup"><span data-stu-id="82668-118">The URL that the client platform (Windows or Windows Phone) has obtained from its push notification service (WNS or MPNS).</span></span>| 
+| <span data-ttu-id="82668-119">locale</span><span class="sxs-lookup"><span data-stu-id="82668-119">locale</span></span>| <span data-ttu-id="82668-120">string</span><span class="sxs-lookup"><span data-stu-id="82668-120">string</span></span>| <span data-ttu-id="82668-121">必須。</span><span class="sxs-lookup"><span data-stu-id="82668-121">Required.</span></span> <span data-ttu-id="82668-122">このエンドポイントに送信される通知の目的の言語です。</span><span class="sxs-lookup"><span data-stu-id="82668-122">The desired language of notifications sent to this endpoint.</span></span> <span data-ttu-id="82668-123">優先順位の値をコンマ区切りのリストであることができます。</span><span class="sxs-lookup"><span data-stu-id="82668-123">Can be a list of comma-separated values in preference order.</span></span> <span data-ttu-id="82668-124">例:「DE-DE, EN-US, en」します。</span><span class="sxs-lookup"><span data-stu-id="82668-124">Example: "de-DE, en-US, en".</span></span>| 
+| <span data-ttu-id="82668-125">プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="82668-125">platform</span></span>| <span data-ttu-id="82668-126">string</span><span class="sxs-lookup"><span data-stu-id="82668-126">string</span></span>| <span data-ttu-id="82668-127">省略可能。</span><span class="sxs-lookup"><span data-stu-id="82668-127">Optional.</span></span> <span data-ttu-id="82668-128">現在サポートされている値は、"WindowsPhone"および"Windows"です。</span><span class="sxs-lookup"><span data-stu-id="82668-128">Currently supported values are "WindowsPhone" and "Windows".</span></span> <span data-ttu-id="82668-129">指定しない場合は、デバイス トークンから導出されます。</span><span class="sxs-lookup"><span data-stu-id="82668-129">If not specified, it is derived from the Device token.</span></span>| 
+| <span data-ttu-id="82668-130">platformVersion</span><span class="sxs-lookup"><span data-stu-id="82668-130">platformVersion</span></span>| <span data-ttu-id="82668-131">string</span><span class="sxs-lookup"><span data-stu-id="82668-131">string</span></span>| <span data-ttu-id="82668-132">省略可能。</span><span class="sxs-lookup"><span data-stu-id="82668-132">Optional.</span></span> <span data-ttu-id="82668-133">この文字列の形式は、各プラットフォームを特定します。</span><span class="sxs-lookup"><span data-stu-id="82668-133">The format of this string is particular to each platform.</span></span> <span data-ttu-id="82668-134">現在、この値は使用しません。</span><span class="sxs-lookup"><span data-stu-id="82668-134">Currently this value is not used.</span></span>| 
+| <span data-ttu-id="82668-135">systemId</span><span class="sxs-lookup"><span data-stu-id="82668-135">systemId</span></span>| <span data-ttu-id="82668-136">GUID</span><span class="sxs-lookup"><span data-stu-id="82668-136">GUID</span></span>| <span data-ttu-id="82668-137">必須。</span><span class="sxs-lookup"><span data-stu-id="82668-137">Required.</span></span> <span data-ttu-id="82668-138">「アプリ インスタンス」の一意の識別子 (デバイス/ユーザーの組み合わせ)。</span><span class="sxs-lookup"><span data-stu-id="82668-138">Unique identifier for the "app instance" (device/user combination).</span></span> <span data-ttu-id="82668-139">ベスト プラクティスの実装では、インストール/最初の実行時にランダムな GUID を生成するアプリはあり、引き続き、アプリの後続の実行でその値を使用します。</span><span class="sxs-lookup"><span data-stu-id="82668-139">Best practice implementation is for an app to generate a random GUID upon install/first-run, and continue to use that value on subsequent runs of the app.</span></span>| 
+| <span data-ttu-id="82668-140">titleId</span><span class="sxs-lookup"><span data-stu-id="82668-140">titleId</span></span>| <span data-ttu-id="82668-141">32 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="82668-141">32-bit unsigned integer</span></span>| <span data-ttu-id="82668-142">必須。</span><span class="sxs-lookup"><span data-stu-id="82668-142">Required.</span></span> <span data-ttu-id="82668-143">サービスに呼び出しを発行するゲームのタイトル ID です。</span><span class="sxs-lookup"><span data-stu-id="82668-143">The Title ID of the game issuing the call to the service.</span></span>| 
   
 <a id="ID4EGD"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="b68ab-144">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="b68ab-144">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="82668-144">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="82668-144">Sample JSON syntax</span></span>
  
 
 ```json
@@ -61,17 +59,17 @@ ms.locfileid: "5483318"
 <a id="ID4EPD"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="b68ab-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="b68ab-145">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="82668-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="82668-145">See also</span></span>
  
 <a id="ID4ERD"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="b68ab-146">Parent</span><span class="sxs-lookup"><span data-stu-id="b68ab-146">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="82668-146">Parent</span><span class="sxs-lookup"><span data-stu-id="82668-146">Parent</span></span> 
 
-[<span data-ttu-id="b68ab-147">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="b68ab-147">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="82668-147">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="82668-147">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E4D"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="b68ab-148">リファレンス</span><span class="sxs-lookup"><span data-stu-id="b68ab-148">Reference</span></span>   
+##### <a name="reference"></a><span data-ttu-id="82668-148">リファレンス</span><span class="sxs-lookup"><span data-stu-id="82668-148">Reference</span></span>   

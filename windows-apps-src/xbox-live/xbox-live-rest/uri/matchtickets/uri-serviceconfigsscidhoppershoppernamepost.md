@@ -7,16 +7,14 @@ description: " POST (/serviceconfigs/{scid}/hoppers/{hoppername})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 089aba60b80e629a8068bcf39f009ac97fc6ad66
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 13e4347c6b7da12e2355a711fbdd13301b94ae71
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471935"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567728"
 ---
 # <a name="post-serviceconfigsscidhoppershoppername"></a><span data-ttu-id="e8354-104">POST (/serviceconfigs/{scid}/hoppers/{hoppername})</span><span class="sxs-lookup"><span data-stu-id="e8354-104">POST (/serviceconfigs/{scid}/hoppers/{hoppername})</span></span>
 

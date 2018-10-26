@@ -7,16 +7,14 @@ description: " POST (/users/xuid({xuid})/resetreputation)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fefcfd0f49449095b08a1463931513440bc69c1
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: a297b98e278c80312ab52cec5fd84efec0d28647
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472078"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562156"
 ---
 # <a name="post-usersxuidxuidresetreputation"></a><span data-ttu-id="960cc-104">POST (/users/xuid({xuid})/resetreputation)</span><span class="sxs-lookup"><span data-stu-id="960cc-104">POST (/users/xuid({xuid})/resetreputation)</span></span>
 <span data-ttu-id="960cc-105">により、実施チームは、アカウント ハイジャック (たとえば) したら、任意の値をいくつかを指定したユーザーの評判スコアを設定します。</span><span class="sxs-lookup"><span data-stu-id="960cc-105">Enables the Enforcement team to set the specified user's Reputation Scores to some arbitrary values after (for example) an account hijacking.</span></span> <span data-ttu-id="960cc-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="960cc-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>

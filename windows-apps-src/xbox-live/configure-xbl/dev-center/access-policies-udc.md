@@ -6,16 +6,14 @@ ms.assetid: ''
 ms.author: kevinasg
 ms.date: 02/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: 8a19c6e116cb6c2f3cd8e2f2d8541516ebf89de9
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 3975d3252c1891d8d36303b038cce8df93c89d08
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472924"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562638"
 ---
 # <a name="configure-access-policies-on-dev-center"></a><span data-ttu-id="08545-104">デベロッパー センターでのアクセス ポリシーを構成します。</span><span class="sxs-lookup"><span data-stu-id="08545-104">Configure access policies on Dev Center</span></span>
 

@@ -7,16 +7,14 @@ description: " MediaRecord (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f43dfe64f515772509c5c304b728a896a58f5076
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 435affbeca63548b51cc4e97a9355e467346e017
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470040"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571597"
 ---
 # <a name="mediarecord-json"></a><span data-ttu-id="cc360-104">MediaRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="cc360-104">MediaRecord (JSON)</span></span>
  

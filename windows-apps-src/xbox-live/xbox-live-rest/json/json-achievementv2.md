@@ -7,16 +7,14 @@ description: " Achievement (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e82306119e428dd9279e26d1497d44b371b9587e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: eb86c5b1f99b539d32df4fa6c8f33847ee594ac9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482800"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560376"
 ---
 # <a name="achievement-json"></a><span data-ttu-id="9a0be-104">Achievement (JSON)</span><span class="sxs-lookup"><span data-stu-id="9a0be-104">Achievement (JSON)</span></span>
 <span data-ttu-id="9a0be-105">実績オブジェクト (バージョン 2)。</span><span class="sxs-lookup"><span data-stu-id="9a0be-105">An Achievement object (version 2).</span></span>

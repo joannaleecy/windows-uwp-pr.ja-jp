@@ -5,16 +5,14 @@ description: トーナメント エクスペリエンスでのプレイヤーの
 ms.author: kevinasg
 ms.date: 10-10-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d69ab3a5f2ce6092a2aac8dd9cb532ac0848b16
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: e243f4d765912fc15e3676a647b670487fea3e8c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475179"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570195"
 ---
 # <a name="match-engagement"></a><span data-ttu-id="0c4bb-104">マッチの交戦</span><span class="sxs-lookup"><span data-stu-id="0c4bb-104">Match engagement</span></span>
 

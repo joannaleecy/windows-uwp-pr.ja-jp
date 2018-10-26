@@ -5,16 +5,14 @@ description: C++ で Xbox Integrated Multiplayer (XIM) を使用する方法に�
 ms.author: kevinasg
 ms.date: 04/24/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, Xbox One, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ec5824bc878937ee891f9ff6e038de1c35b0c81
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 2e4645de174bb572b75a8d5a5dcbb4091a693e75
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472617"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563975"
 ---
 # <a name="using-xim-c"></a><span data-ttu-id="d58e3-104">XIM (C++) の使用</span><span class="sxs-lookup"><span data-stu-id="d58e3-104">Using XIM (C++)</span></span>
 

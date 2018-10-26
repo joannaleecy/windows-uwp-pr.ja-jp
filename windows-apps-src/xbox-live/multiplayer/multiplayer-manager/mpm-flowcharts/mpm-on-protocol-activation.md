@@ -6,16 +6,14 @@ ms.assetid: f375af52-a18d-4845-aae7-0762d8ec0f1e
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f38bbe0993988f542496aa0cd8b23bc5d7d36e4
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: d23e9390b96ecb0e06ad3d80fcabcd438ee96491
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479296"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568260"
 ---
 # <a name="flowchart---handle-protocol-activation"></a><span data-ttu-id="cf905-104">フローチャート - プロトコルのアクティブ化を処理する</span><span class="sxs-lookup"><span data-stu-id="cf905-104">Flowchart - Handle protocol activation</span></span>
 
