@@ -6,16 +6,14 @@ ms.assetid: 4ab320d6-8050-41a9-9f00-faaad3b128fd
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015, ステータス コード, セッション
 ms.localizationpriority: medium
-ms.openlocfilehash: 39320e9bf051c0cb2fd1c9936cd5472f46d6d38e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 31e8e73008505457949fd8123b1c4bd1452785ef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473217"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554098"
 ---
 # <a name="multiplayer-session-status-codes"></a><span data-ttu-id="6fe96-104">マルチプレイヤー セッション ステータス コード</span><span class="sxs-lookup"><span data-stu-id="6fe96-104">Multiplayer Session Status Codes</span></span>
 

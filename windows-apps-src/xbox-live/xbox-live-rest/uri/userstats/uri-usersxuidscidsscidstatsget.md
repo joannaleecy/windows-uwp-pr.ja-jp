@@ -7,16 +7,14 @@ description: " GET (/users/xuid({xuid})/scids/{scid}/stats)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ed96418141aec049a9577924597a07da4313b7e2
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: bca091bf25d7900b78890b3dd13616342536797c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469002"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555327"
 ---
 # <a name="get-usersxuidxuidscidsscidstats"></a><span data-ttu-id="ec686-104">GET (/users/xuid({xuid})/scids/{scid}/stats)</span><span class="sxs-lookup"><span data-stu-id="ec686-104">GET (/users/xuid({xuid})/scids/{scid}/stats)</span></span>
 <span data-ttu-id="ec686-105">スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストで、サービス構成を取得します。</span><span class="sxs-lookup"><span data-stu-id="ec686-105">Gets a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.</span></span>

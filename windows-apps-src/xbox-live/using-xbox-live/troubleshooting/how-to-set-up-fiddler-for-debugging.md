@@ -6,16 +6,14 @@ ms.assetid: 7d76e444-027b-4659-80d5-5b2bf56d199e
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, fiddler, サービス呼び出し, トラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eaa21ca792ab3071cb06a9e564f7ad1826782b4
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: e8d1acabbf6059b8a5989a471c01d98243e53fb4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5481415"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556475"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a><span data-ttu-id="00236-104">Fiddler を使用した Xbox Live のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="00236-104">Troubleshooting Xbox Live using Fiddler</span></span>
 

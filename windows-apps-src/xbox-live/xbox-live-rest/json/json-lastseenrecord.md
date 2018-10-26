@@ -7,16 +7,14 @@ description: " LastSeenRecord (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: de0ffd7c9c6c42f2a0ebf633ebcbba8a89a1b8b8
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: fc16e1364346792a39be98dc0232579652b11dd3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472766"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5541927"
 ---
 # <a name="lastseenrecord-json"></a><span data-ttu-id="20fde-104">LastSeenRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="20fde-104">LastSeenRecord (JSON)</span></span>
 <span data-ttu-id="20fde-105">利用できるは、ユーザーには、有効な DeviceRecord があるないと、ユーザーが最後システムに表示されていた場合について説明します。</span><span class="sxs-lookup"><span data-stu-id="20fde-105">Information about when the system last saw a user, available when the user has no valid DeviceRecord.</span></span> 

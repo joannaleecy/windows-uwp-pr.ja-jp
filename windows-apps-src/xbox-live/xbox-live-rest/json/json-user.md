@@ -7,16 +7,14 @@ description: " User (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7070d829000821cb48d8fcbaa4fde1d6f393b16a
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: e58134a945c37dacd338cdcf80a24160b4b70356
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472798"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5541843"
 ---
 # <a name="user-json"></a><span data-ttu-id="f095d-104">User (JSON)</span><span class="sxs-lookup"><span data-stu-id="f095d-104">User (JSON)</span></span>
 <span data-ttu-id="f095d-105">ユーザーのランキング データが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f095d-105">Contains user leaderboard data.</span></span> 

@@ -7,16 +7,14 @@ description: " TitleBlob (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 91423df8367c275f40cd7f856a60070e1a46ad40
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 8c11c57d84d5aae34b92c66d2a97ebfc78526fe6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474941"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5543644"
 ---
 # <a name="titleblob-json"></a><span data-ttu-id="b9115-104">TitleBlob (JSON)</span><span class="sxs-lookup"><span data-stu-id="b9115-104">TitleBlob (JSON)</span></span>
 <span data-ttu-id="b9115-105">記憶域のタイトルに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="b9115-105">Contains information about a title from storage.</span></span> 

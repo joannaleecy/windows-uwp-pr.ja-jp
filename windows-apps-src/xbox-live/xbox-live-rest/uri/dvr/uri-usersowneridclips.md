@@ -7,16 +7,14 @@ description: " /users/{ownerId}/clips"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b0819ab8f0014b945a2340ebf7252bbe9d8d8726
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 71ff7c0fa72d329ff570bfcb7982f00a0eaabf66
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479859"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555668"
 ---
 # <a name="usersowneridclips"></a><span data-ttu-id="f25db-104">/users/{ownerId}/clips</span><span class="sxs-lookup"><span data-stu-id="f25db-104">/users/{ownerId}/clips</span></span>
 <span data-ttu-id="f25db-105">ユーザーのクリップのアクセスの一覧です。</span><span class="sxs-lookup"><span data-stu-id="f25db-105">Access list of user's clips.</span></span> <span data-ttu-id="f25db-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。</span><span class="sxs-lookup"><span data-stu-id="f25db-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>

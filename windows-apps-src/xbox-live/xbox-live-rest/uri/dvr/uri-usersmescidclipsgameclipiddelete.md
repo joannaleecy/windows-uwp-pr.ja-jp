@@ -7,16 +7,14 @@ description: " DELETE (/users/me/scids/{scid}/clips/{gameClipId})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a68d765cfdec81da064b0522ea2ff9a4be12bafb
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: d5e012c21e13902dbbf611d3fb7a4ffa20b31743
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5476252"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556703"
 ---
 # <a name="delete-usersmescidsscidclipsgameclipid"></a><span data-ttu-id="af5e6-104">DELETE (/users/me/scids/{scid}/clips/{gameClipId})</span><span class="sxs-lookup"><span data-stu-id="af5e6-104">DELETE (/users/me/scids/{scid}/clips/{gameClipId})</span></span>
 <span data-ttu-id="af5e6-105">これらの Uri のドメインは、ゲーム クリップを削除`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。</span><span class="sxs-lookup"><span data-stu-id="af5e6-105">Delete game clip The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>

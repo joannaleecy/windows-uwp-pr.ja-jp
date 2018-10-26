@@ -7,16 +7,14 @@ description: " /media/{marketplaceId}/details"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b8dcea7c0987a2bc783adae0398c9579ded2fe8
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 62d0fc09d851f16c2af4126c9d3f7edccfec96a1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473214"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552451"
 ---
 # <a name="mediamarketplaceiddetails"></a><span data-ttu-id="a60df-104">/media/{marketplaceId}/details</span><span class="sxs-lookup"><span data-stu-id="a60df-104">/media/{marketplaceId}/details</span></span>
 <span data-ttu-id="a60df-105">返します提供の詳細とメタデータについての 1 つまたは複数の項目です。</span><span class="sxs-lookup"><span data-stu-id="a60df-105">Returns offer details and metadata about one or more items.</span></span> <span data-ttu-id="a60df-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a60df-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>

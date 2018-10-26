@@ -7,16 +7,14 @@ description: " GET (/users/me/inventory)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 270f36d354ee4561d12f78644436ad51e286768c
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 793f2688a6f8f32ec8ff8018ed2967ed7ea58280
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477555"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556687"
 ---
 # <a name="get-usersmeinventory"></a><span data-ttu-id="211d3-104">GET (/users/me/inventory)</span><span class="sxs-lookup"><span data-stu-id="211d3-104">GET (/users/me/inventory)</span></span>
 <span data-ttu-id="211d3-105">呼び出し元に指定されたユーザーに関連付けられているインベントリのセットを提供します。</span><span class="sxs-lookup"><span data-stu-id="211d3-105">Provides the set of inventory currently associated with the provided user back to the caller.</span></span>

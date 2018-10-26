@@ -7,16 +7,14 @@ description: " QueryClipsResponse (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4efe0e93527560e31a471fce2c74b1cc254101ad
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 565d4a215cfebb652fb93d1a6d24fac8f4467819
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479686"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557511"
 ---
 # <a name="queryclipsresponse-json"></a><span data-ttu-id="aef96-104">QueryClipsResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="aef96-104">QueryClipsResponse (JSON)</span></span>
 <span data-ttu-id="aef96-105">一覧のページング情報と共にゲーム クリップの戻り値の一覧をラップします。</span><span class="sxs-lookup"><span data-stu-id="aef96-105">Wraps the list of return game clips along with paging information for the list.</span></span> 

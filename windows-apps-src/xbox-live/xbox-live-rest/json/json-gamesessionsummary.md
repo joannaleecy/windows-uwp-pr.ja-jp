@@ -7,16 +7,14 @@ description: " GameSessionSummary (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 610f771641352447f9d38fc4217231ba3230e6fb
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 7a57397bc0770ff9e828ef3195e919be0d9bc78c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473581"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5543516"
 ---
 # <a name="gamesessionsummary-json"></a><span data-ttu-id="6caa0-104">GameSessionSummary (JSON)</span><span class="sxs-lookup"><span data-stu-id="6caa0-104">GameSessionSummary (JSON)</span></span>
 <span data-ttu-id="6caa0-105">ゲーム セッションの集計データを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6caa0-105">A JSON object representing summary data for a game session.</span></span> 

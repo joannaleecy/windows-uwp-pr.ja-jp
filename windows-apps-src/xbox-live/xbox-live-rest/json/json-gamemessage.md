@@ -7,16 +7,14 @@ description: " GameMessage (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 089d2a492c8878e79bd60de1226c948e1eee7e0f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 983b1d3d3bf9388478cc1e759edddb0aa56d6515
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478641"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550034"
 ---
 # <a name="gamemessage-json"></a><span data-ttu-id="f0212-104">GameMessage (JSON)</span><span class="sxs-lookup"><span data-stu-id="f0212-104">GameMessage (JSON)</span></span>
 <span data-ttu-id="f0212-105">ゲーム セッションのメッセージ キューにメッセージのデータを定義する JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="f0212-105">A JSON object defining data for a message in a game session's message queue.</span></span> 

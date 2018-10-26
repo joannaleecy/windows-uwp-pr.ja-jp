@@ -7,16 +7,14 @@ description: " ResetReputation (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 494f4a8977a298265c264b050d6a222bd2bdd7d2
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 1c2462419559ad179b2824b2735a5aad4ee63725
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471226"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556545"
 ---
 # <a name="resetreputation-json"></a><span data-ttu-id="a4d55-104">ResetReputation (JSON)</span><span class="sxs-lookup"><span data-stu-id="a4d55-104">ResetReputation (JSON)</span></span>
 <span data-ttu-id="a4d55-105">ユーザーの既存のスコアを変更する必要があります新しい基本評判スコアが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a4d55-105">Contains the new base Reputation scores to which a user's existing scores should be changed.</span></span> 

@@ -7,16 +7,14 @@ description: " PermissionCheckBatchResponse (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bc3d574274bdef6d0033e9f5313457706dd509e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 75fc5c1c47b31b37510c9340984edfe92c0642b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5476532"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556423"
 ---
 # <a name="permissioncheckbatchresponse-json"></a><span data-ttu-id="57d9f-104">PermissionCheckBatchResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="57d9f-104">PermissionCheckBatchResponse (JSON)</span></span>
 <span data-ttu-id="57d9f-105">バッチのアクセス許可の結果は、複数のユーザーのアクセス許可の値の一覧を確認します。</span><span class="sxs-lookup"><span data-stu-id="57d9f-105">The results of a batch permission check for a list of permission values for multiple users.</span></span> 

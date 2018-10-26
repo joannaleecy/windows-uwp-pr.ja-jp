@@ -7,16 +7,14 @@ description: " GET (/sessions/{sessionId}/scids/{scid})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 19e15f2376349011e49cfc91465e759e92c881b0
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: a1cb9c7f35413b3ba8983eed3a6957cdd34ba685
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469011"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5543886"
 ---
 # <a name="get-sessionssessionidscidsscid"></a><span data-ttu-id="7c346-104">GET (/sessions/{sessionId}/scids/{scid})</span><span class="sxs-lookup"><span data-stu-id="7c346-104">GET (/sessions/{sessionId}/scids/{scid})</span></span>
 <span data-ttu-id="7c346-105">このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="7c346-105">Retrieves quota information for this storage type.</span></span> <span data-ttu-id="7c346-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="7c346-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

@@ -7,16 +7,14 @@ description: " /users/xuid({xuid})/achievements/{scid}/{achievementid}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f58b4b5f8cf135aaaad5e23095c4c00278dcec83
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f02968cc4f1aee9d162720a83c763c52d2fbe84a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479634"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558650"
 ---
 # <a name="usersxuidxuidachievementsscidachievementid"></a><span data-ttu-id="a219d-104">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span><span class="sxs-lookup"><span data-stu-id="a219d-104">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span></span>
 <span data-ttu-id="a219d-105">構成済みのメタデータとユーザー固有のデータを含む、実績の詳細を返します。</span><span class="sxs-lookup"><span data-stu-id="a219d-105">Returns details about the achievement, including its configured metadata and user-specific data.</span></span> 

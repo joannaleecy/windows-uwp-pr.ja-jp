@@ -7,16 +7,14 @@ description: " DELETE (/users/xuid(xuid)/lists/PINS/{listname})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 0749229af844c7b71496351000cadece7544bfc6
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: d4e8391569580164e8c259d89cdfbb0456f70c89
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469143"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5549947"
 ---
 # <a name="delete-usersxuidxuidlistspinslistname"></a><span data-ttu-id="1748f-104">DELETE (/users/xuid(xuid)/lists/PINS/{listname})</span><span class="sxs-lookup"><span data-stu-id="1748f-104">DELETE (/users/xuid(xuid)/lists/PINS/{listname})</span></span>
 <span data-ttu-id="1748f-105">一覧から項目を削除します。</span><span class="sxs-lookup"><span data-stu-id="1748f-105">Removes items from a list.</span></span> <span data-ttu-id="1748f-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="1748f-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>

@@ -7,16 +7,14 @@ description: " GET (/users/xuid({xuid})/scids/{scid}/stats?include=valuemetadata
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c795dbd2b6193798b472e51526bdd9e2f6b4622
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 330d00bb4f1ec31b51274bdc6a11af85f43e5723
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5476606"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558252"
 ---
 # <a name="get-usersxuidxuidscidsscidstatsincludevaluemetadata"></a><span data-ttu-id="adbee-104">GET (/users/xuid({xuid})/scids/{scid}/stats?include=valuemetadata)</span><span class="sxs-lookup"><span data-stu-id="adbee-104">GET (/users/xuid({xuid})/scids/{scid}/stats?include=valuemetadata)</span></span>
 <span data-ttu-id="adbee-105">指定されたサービス構成でのユーザーに対して、統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="adbee-105">Gets a list of specified statistics, including metadata associated with the statistic values, for a user in a specified service configuration.</span></span>

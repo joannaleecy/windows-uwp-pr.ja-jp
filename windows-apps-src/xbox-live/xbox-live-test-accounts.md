@@ -6,16 +6,14 @@ ms.assetid: e8076233-c93c-4961-86ac-27ec74917ebc
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, テスト アカウント
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ba24c02d59a992ecacf0be89197511c5e133c59
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 2316a40e9524240b20645419ca8952d27374ca04
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482920"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555023"
 ---
 # <a name="xbox-live-test-accounts"></a><span data-ttu-id="7cb2d-104">Xbox Live テスト アカウント</span><span class="sxs-lookup"><span data-stu-id="7cb2d-104">Xbox Live test accounts</span></span>
 

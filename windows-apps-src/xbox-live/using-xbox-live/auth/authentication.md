@@ -6,16 +6,14 @@ ms.assetid: 7a9dfb3c-1ccc-4948-a218-37101069c91a
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 認証, サインイン
 ms.localizationpriority: medium
-ms.openlocfilehash: 61a4b0ef33d346b8ed4d3e0b8e074ede1edeba23
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f74453ee618fe19d1e6c32e99c5710abc65a6037
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470839"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555301"
 ---
 # <a name="authentication"></a><span data-ttu-id="29c7d-104">認証</span><span class="sxs-lookup"><span data-stu-id="29c7d-104">Authentication</span></span>
 

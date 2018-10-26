@@ -5,16 +5,14 @@ description: WinRT プロジェクションと共に Xbox Live ゲーム チャ�
 ms.author: kevinasg
 ms.date: 4/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ca62427a5e8f51143ef9e40faf24272ffbe97d7
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 65587bc47f6c6cca0412935f6a2a463df5ba38ca
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477798"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553489"
 ---
 # <a name="using-game-chat-2-winrt-projections"></a><span data-ttu-id="407ba-104">ゲーム チャット 2 (WinRT プロジェクション) の使用</span><span class="sxs-lookup"><span data-stu-id="407ba-104">Using Game Chat 2 (WinRT Projections)</span></span>
 

@@ -7,16 +7,14 @@ description: " /titles/{titleId}/sessions/{sessionId}/allocationStatus"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f8137980bddbf494c989f4f8a39c2f6edaf3d30a
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 203e0eb87502d618d5bc4649d7bb81861c41b23a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468122"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5547167"
 ---
 # <a name="titlestitleidsessionssessionidallocationstatus"></a><span data-ttu-id="08661-104">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span><span class="sxs-lookup"><span data-stu-id="08661-104">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span></span>
 <span data-ttu-id="08661-105">特定のタイトル id とセッション id、チケットの要求の状態を取得します。</span><span class="sxs-lookup"><span data-stu-id="08661-105">For the given title id and session id, get status of the ticket request.</span></span> <span data-ttu-id="08661-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="08661-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>

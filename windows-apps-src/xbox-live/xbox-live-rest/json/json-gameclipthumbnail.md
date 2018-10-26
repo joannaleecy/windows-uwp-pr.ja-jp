@@ -7,16 +7,14 @@ description: " GameClipThumbnail (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 681a269cd861f741e2bbde3554acc1b25104d90d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 8dbf2343f293c7a78c467da651f2185b738b9df8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5481619"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559709"
 ---
 # <a name="gameclipthumbnail-json"></a><span data-ttu-id="d52dc-104">GameClipThumbnail (JSON)</span><span class="sxs-lookup"><span data-stu-id="d52dc-104">GameClipThumbnail (JSON)</span></span>
 <span data-ttu-id="d52dc-105">個々 のサムネイルに関連する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="d52dc-105">Contains the information related to an individual thumbnail.</span></span> <span data-ttu-id="d52dc-106">1 つのクリップを複数のサイズが存在することができ、表示用の適切なものを選択するクライアントがします。</span><span class="sxs-lookup"><span data-stu-id="d52dc-106">There can be multiple sizes per clip, and it is up to the client to select the proper one for display.</span></span> 

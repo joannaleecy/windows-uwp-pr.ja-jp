@@ -6,16 +6,14 @@ ms.assetid: 470914df-cbb5-4580-b33a-edb353873e32
 ms.author: kevinasg
 ms.date: 09-14-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント
 ms.localizationpriority: medium
-ms.openlocfilehash: 12654a89cc43c323c4fa516c4d78f15553441671
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 928aaad0ebe6735f55367748ad1d1ae40585ba5a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478491"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557048"
 ---
 # <a name="arena-title-integration-guide"></a><span data-ttu-id="68b1a-104">アリーナ タイトル統合ガイド</span><span class="sxs-lookup"><span data-stu-id="68b1a-104">Arena title integration guide</span></span>
 

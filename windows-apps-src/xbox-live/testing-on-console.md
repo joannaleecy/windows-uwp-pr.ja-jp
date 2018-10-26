@@ -5,16 +5,14 @@ description: Xbox Live 本体で Xbox Live サービスをテストする方法�
 ms.author: aablackm
 ms.date: 08/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ゲーム、xbox、xbox live, xbox one
 ms.localizationpriority: low
-ms.openlocfilehash: 5500f6f396d6dae179e434283097c34274d9b829
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 4958cdf5ee0fd0788118dc818564c2c8538dd716
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469008"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553112"
 ---
 # <a name="testing-on-the-xbox-one-console"></a><span data-ttu-id="cf7e2-104">Xbox One 本体上でのテスト</span><span class="sxs-lookup"><span data-stu-id="cf7e2-104">Testing on the Xbox One console</span></span>
 

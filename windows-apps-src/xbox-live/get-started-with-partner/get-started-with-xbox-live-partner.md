@@ -6,16 +6,14 @@ ms.assetid: 69ab75d1-c0e7-4bad-bf8f-5df5cfce13d5
 ms.author: kevinasg
 ms.date: 06/07/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, パートナー, ID@Xbox
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f2f4d957bcfae1bfeb62f043f666f14bee4649b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: fc9f6831f3c759c9d49ea936a458c84cbf4c0edf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5467999"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551050"
 ---
 # <a name="get-started-with-xbox-live-as-a-managed-partner-or-an-idxbox-developer"></a><span data-ttu-id="0a77e-104">対象パートナーまたは ID@Xbox 開発者として Xbox Live の利用を開始する</span><span class="sxs-lookup"><span data-stu-id="0a77e-104">Get started with Xbox Live as a managed partner or an ID@Xbox developer</span></span>
 

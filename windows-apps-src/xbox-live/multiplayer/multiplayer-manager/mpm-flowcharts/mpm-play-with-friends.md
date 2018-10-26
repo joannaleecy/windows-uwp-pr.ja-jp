@@ -6,16 +6,14 @@ ms.assetid: ead5b172-6410-4aae-97fc-3c295745d27e
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
-ms.openlocfilehash: d0b48d529894511f4e2ef43b8ec76dde44ce5c50
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 866b4da39314e120906a8e2de841432d09bfe2ef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5476667"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5542132"
 ---
 # <a name="flowchart---play-a-multiplayerco-op-game-with-friends"></a><span data-ttu-id="144b9-104">フローチャート - フレンドとマルチプレイヤー/協力型ゲームをプレイする</span><span class="sxs-lookup"><span data-stu-id="144b9-104">Flowchart - Play a multiplayer/co-op game with friends</span></span>
 

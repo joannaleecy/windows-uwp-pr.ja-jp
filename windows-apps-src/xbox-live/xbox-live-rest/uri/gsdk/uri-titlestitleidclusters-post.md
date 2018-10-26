@@ -7,16 +7,14 @@ description: " POST (/titles/{titleId}/clusters)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 459624ea487c158f3fc92b9c6024b086d49c204e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: ee4c623161e822442a31da3aa0db3cab07d0dd57
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477507"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552760"
 ---
 # <a name="post-titlestitleidclusters"></a><span data-ttu-id="48eba-104">POST (/titles/{titleId}/clusters)</span><span class="sxs-lookup"><span data-stu-id="48eba-104">POST (/titles/{titleId}/clusters)</span></span>
 <span data-ttu-id="48eba-105">Xbox Live Compute サーバー インスタンスを作成するクライアントをできる URI。</span><span class="sxs-lookup"><span data-stu-id="48eba-105">URI that allows a client to create an Xbox Live Compute server instance.</span></span> <span data-ttu-id="48eba-106">これらの Uri のドメインが`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="48eba-106">The domain for these URIs is `gameserverms.xboxlive.com`.</span></span>

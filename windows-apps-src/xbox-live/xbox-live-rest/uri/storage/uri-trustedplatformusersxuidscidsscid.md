@@ -7,16 +7,14 @@ description: " /trustedplatform/users/xuid({xuid})/scids/{scid}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b4efd1a4f8cbd31e78bb4f3173e81e1070c41ab0
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 267feea306fd44025ed098315c51c13edf47305c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477190"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557090"
 ---
 # <a name="trustedplatformusersxuidxuidscidsscid"></a><span data-ttu-id="21d57-104">/trustedplatform/users/xuid({xuid})/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="21d57-104">/trustedplatform/users/xuid({xuid})/scids/{scid}</span></span>
 <span data-ttu-id="21d57-105">このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="21d57-105">Retrieves quota information for this storage type.</span></span> <span data-ttu-id="21d57-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="21d57-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

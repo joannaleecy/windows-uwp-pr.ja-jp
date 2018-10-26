@@ -7,16 +7,14 @@ description: " PUT (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{t
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: df924f8665424bf540eb1651cfa69737080588d5
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 1d54150038180116118bd2692bbfad057e54483d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473072"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557064"
 ---
 # <a name="put-sessionssessionidscidssciddatapathandfilenametype"></a><span data-ttu-id="a247f-104">PUT (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})</span><span class="sxs-lookup"><span data-stu-id="a247f-104">PUT (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})</span></span>
 <span data-ttu-id="a247f-105">ファイルをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="a247f-105">Uploads a file.</span></span> <span data-ttu-id="a247f-106">データやメタデータが送信される 1 つのメッセージで、または一連の小さいブロックのデータやメタデータが送信される複数のブロック アップロードとして完全なアップロードでは、データをアップロードできます。</span><span class="sxs-lookup"><span data-stu-id="a247f-106">The data can be uploaded in a full upload in which the data and metadata are sent in a single message, or as a multi-block upload in which the data and metadata are sent in a series of smaller blocks.</span></span> <span data-ttu-id="a247f-107">1 つのメッセージとしては 4 つのメガバイトよりも小さいファイルのみを送信できます。</span><span class="sxs-lookup"><span data-stu-id="a247f-107">Only files that are smaller than four megabytes can be sent as a single message.</span></span> <span data-ttu-id="a247f-108">Json の種類のデータの複数のブロックのアップロードはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="a247f-108">Multi-block upload is not supported for data of type json.</span></span> <span data-ttu-id="a247f-109">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a247f-109">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

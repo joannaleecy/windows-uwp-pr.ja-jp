@@ -7,16 +7,14 @@ description: " EDS パラメーター"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d3ab2880bee2e6a6f5cf7a5350244e786e5e615
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: e115f240eb26ea782d67f2c96fd0f702d1844973
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473016"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557035"
 ---
 # <a name="eds-parameters"></a><span data-ttu-id="20932-104">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="20932-104">EDS Parameters</span></span>
 

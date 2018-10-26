@@ -7,16 +7,14 @@ description: " PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName}
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f6bcc90cc9758540bd7688e2d54a9f31262116d9
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 043a6e9c162a21c1082d621b339b1d04822b90b5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477789"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5544926"
 ---
 # <a name="put-jsonusersxuidxuidscidssciddatapathandfilenamejson"></a><span data-ttu-id="6f891-104">PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)</span><span class="sxs-lookup"><span data-stu-id="6f891-104">PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)</span></span>
 <span data-ttu-id="6f891-105">ファイルをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="6f891-105">Uploads a file.</span></span> <span data-ttu-id="6f891-106">Json の種類のデータの複数のブロックのアップロードはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="6f891-106">Multi-block upload is not supported for data of type json.</span></span> <span data-ttu-id="6f891-107">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="6f891-107">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

@@ -6,16 +6,14 @@ ms.assetid: e54c98ce-e049-4189-a50d-bb1cb319697c
 ms.author: aablackm
 ms.date: 03/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 認証, サインイン
 ms.localizationpriority: medium
-ms.openlocfilehash: e6e833601bc02052a841c78bc4f140cb9f45e74f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 36373fbc25c7f478bda9bbbf14f996f3997e91d2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473075"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557832"
 ---
 # <a name="authentication-for-uwp-projects"></a><span data-ttu-id="b4fbb-104">UWP プロジェクトの認証</span><span class="sxs-lookup"><span data-stu-id="b4fbb-104">Authentication for UWP projects</span></span>
 

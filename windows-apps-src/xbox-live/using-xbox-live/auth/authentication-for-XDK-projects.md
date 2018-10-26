@@ -6,16 +6,14 @@ ms.assetid: 713bb2e3-80c5-4ac9-8697-257525f243d3
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 594c966ab3d1e70d5a423da0e4681ecfca22f4b0
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 3d11a9ce213e8ba1cb51d633cd11364285a64154
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472415"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5545860"
 ---
 # <a name="authentication-for-xdk-projects"></a><span data-ttu-id="07ce3-104">XDK プロジェクトの認証</span><span class="sxs-lookup"><span data-stu-id="07ce3-104">Authentication for XDK projects</span></span>
 

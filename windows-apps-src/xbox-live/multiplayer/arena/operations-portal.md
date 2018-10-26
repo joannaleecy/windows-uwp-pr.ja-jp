@@ -5,16 +5,14 @@ description: 操作ポータルを使用して、Xbox のトーナメントを�
 ms.author: kevinasg
 ms.date: 06-18-2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one、アリーナ、トーナメント、操作, ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 84b2deb0a192d7e7b8d8360ec703d4eb5d3a0a23
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 96f253804727d138769f596ffb1fa7c6e7bc8861
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5476915"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553480"
 ---
 # <a name="xbox-arena-operations-portal"></a><span data-ttu-id="4dc10-104">Xbox アリーナ操作ポータル</span><span class="sxs-lookup"><span data-stu-id="4dc10-104">Xbox Arena Operations Portal</span></span>
 

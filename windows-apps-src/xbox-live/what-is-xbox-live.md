@@ -6,16 +6,14 @@ ms.assetid: 5a402113-b485-46f3-a30e-73f4b71492b6
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 74d6ec0f38f86fb355941bb84f8e2157bf4d1f86
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6962db1c6677cbdecb04148afa94127d26bf88a0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470921"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5549992"
 ---
 # <a name="what-is-xbox-live"></a><span data-ttu-id="dc4c7-104">Xbox Live とは</span><span class="sxs-lookup"><span data-stu-id="dc4c7-104">What is Xbox Live?</span></span>
 

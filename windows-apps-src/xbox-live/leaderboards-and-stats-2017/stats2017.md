@@ -5,16 +5,14 @@ description: 統計 2017年の概要
 ms.author: aablackm
 ms.date: 07/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one、プレイヤーの統計、ランキング, 統計 2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24e953dcca8f57b689cdee879551b188aa01f42f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f395c12214acbbbc410047277185f2f2ea829767
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5481090"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5548299"
 ---
 # <a name="stats-2017"></a><span data-ttu-id="2aba9-104">統計 2017</span><span class="sxs-lookup"><span data-stu-id="2aba9-104">Stats 2017</span></span>
 

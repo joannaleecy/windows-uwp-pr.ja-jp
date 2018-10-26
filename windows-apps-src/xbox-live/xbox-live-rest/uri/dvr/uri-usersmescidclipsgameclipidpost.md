@@ -7,16 +7,14 @@ description: " POST (/users/me/scids/{scid}/clips/{gameClipId})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 28c8b9e20e990c51c6b3d7e56e72f4d5d6551b39
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6cd0972554c1beecce270d306c8a7ea94214cee6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482819"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554871"
 ---
 # <a name="post-usersmescidsscidclipsgameclipid"></a><span data-ttu-id="c7c45-104">POST (/users/me/scids/{scid}/clips/{gameClipId})</span><span class="sxs-lookup"><span data-stu-id="c7c45-104">POST (/users/me/scids/{scid}/clips/{gameClipId})</span></span>
 <span data-ttu-id="c7c45-105">ユーザーのデータのゲーム クリップ メタデータを更新します。</span><span class="sxs-lookup"><span data-stu-id="c7c45-105">Update game clip metadata for the user's own data.</span></span> <span data-ttu-id="c7c45-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。</span><span class="sxs-lookup"><span data-stu-id="c7c45-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>

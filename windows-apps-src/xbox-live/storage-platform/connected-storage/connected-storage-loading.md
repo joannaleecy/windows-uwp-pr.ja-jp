@@ -6,16 +6,14 @@ ms.assetid: c660a456-fe7d-453a-ae7b-9ecaa2ba0a15
 ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: d3252ad2ffb9145088f38f4a8d6c7c5ebc94e9e5
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 5a54076f6105c4dbef257408a4af0cfe19f0574e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482013"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555333"
 ---
 # <a name="use-connected-storage-to-load-data"></a><span data-ttu-id="6060c-104">接続ストレージを使ったデータの読み込み</span><span class="sxs-lookup"><span data-stu-id="6060c-104">Use Connected Storage to load data</span></span>
 

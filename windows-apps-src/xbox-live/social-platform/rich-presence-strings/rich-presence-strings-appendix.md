@@ -6,16 +6,14 @@ ms.assetid: 626c1661-3be9-49e4-a5ce-d3f5abd79a9b
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: b2fd29f69b919e5a3e700c451f9ecb21ba2c9cdd
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f7d9ae51e64adaad18ae0723709537ab045eae1a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5480893"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555330"
 ---
 # <a name="rich-presence-appendix"></a><span data-ttu-id="5c23e-104">リッチ プレゼンスの付録</span><span class="sxs-lookup"><span data-stu-id="5c23e-104">Rich Presence appendix</span></span>
 

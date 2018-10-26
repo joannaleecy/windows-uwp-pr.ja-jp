@@ -6,16 +6,14 @@ ms.assetid: ''
 ms.author: heba
 ms.date: 07/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, コントローラー サポート
 ms.localizationpriority: medium
-ms.openlocfilehash: 29b9dcc18d3930300354d2fdcef78d68314f6514
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b4fb8f710a04b2243f32daadc652aca8404d4577
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5481022"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553109"
 ---
 # <a name="add-controller-support-to-xbox-live-prefabs"></a><span data-ttu-id="35053-104">コントローラー サポートを Xbox Live プレハブに追加する</span><span class="sxs-lookup"><span data-stu-id="35053-104">Add controller support to Xbox Live prefabs</span></span>
 

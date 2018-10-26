@@ -6,16 +6,14 @@ ms.assetid: f8fd1caa-b1e9-4882-a01f-8f17820dfb55
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 53126e185b9d94c911abab8999e3ca1da8691c7c
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b5a9c86e9fd56bab3e4eb30206f64debdf6ac9bf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5476747"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552464"
 ---
 # <a name="configure-your-xbox-development-console"></a><span data-ttu-id="cabf0-104">Xbox 開発機本体を構成する</span><span class="sxs-lookup"><span data-stu-id="cabf0-104">Configure your Xbox development console</span></span>
 

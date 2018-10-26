@@ -6,16 +6,14 @@ ms.assetid: 35e055c2-3c84-4d73-bb86-fc776327d901
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a0fca6cb2f1819e9780ba5956bcb1e12fab2c4ea
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 4ac421b78f5b0c6ccadd787c16edc817c7694173
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471149"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5542053"
 ---
 # <a name="achievements"></a><span data-ttu-id="e8a5b-104">実績</span><span class="sxs-lookup"><span data-stu-id="e8a5b-104">Achievements</span></span>
 

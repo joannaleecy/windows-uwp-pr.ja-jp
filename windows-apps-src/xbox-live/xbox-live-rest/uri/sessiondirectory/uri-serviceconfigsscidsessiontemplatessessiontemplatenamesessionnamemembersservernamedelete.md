@@ -7,16 +7,14 @@ description: " DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateN
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 12feca7761faa441023f2f242903d4fec2f0284d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f4806e84fae8885299e869f539dea41caa2e3a74
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483185"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557898"
 ---
 # <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameserversserver-name"></a><span data-ttu-id="4b76f-104">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})</span><span class="sxs-lookup"><span data-stu-id="4b76f-104">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})</span></span>
 <span data-ttu-id="4b76f-105">指定されたサーバーは、セッションから削除します。</span><span class="sxs-lookup"><span data-stu-id="4b76f-105">Removes the specified server from a session.</span></span>

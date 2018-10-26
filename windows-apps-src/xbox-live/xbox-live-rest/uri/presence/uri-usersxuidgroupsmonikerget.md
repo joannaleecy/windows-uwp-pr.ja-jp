@@ -7,16 +7,14 @@ description: " GET (/users/xuid({xuid})/groups/{moniker} )"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 40f562c29e6860d7d566b96f34dfce8b9b438c7a
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 703cef34be83e667c7758de306e0890c8109d665
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478721"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554171"
 ---
 # <a name="get-usersxuidxuidgroupsmoniker-"></a><span data-ttu-id="36e7f-104">GET (/users/xuid({xuid})/groups/{moniker} )</span><span class="sxs-lookup"><span data-stu-id="36e7f-104">GET (/users/xuid({xuid})/groups/{moniker} )</span></span>
 <span data-ttu-id="36e7f-105">グループの PresenceRecord を取得します。</span><span class="sxs-lookup"><span data-stu-id="36e7f-105">Gets the PresenceRecord for a group.</span></span> <span data-ttu-id="36e7f-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="36e7f-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>

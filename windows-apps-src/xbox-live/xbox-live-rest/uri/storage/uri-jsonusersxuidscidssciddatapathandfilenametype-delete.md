@@ -7,16 +7,14 @@ description: " DELETE (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileNa
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b260461de0458f53f5edb93256dcb409d8397ee
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 289cff81a916f3d1ce62e8d778923d3c9e332000
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470888"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5545323"
 ---
 # <a name="delete-jsonusersxuidxuidscidssciddatapathandfilenamejson"></a><span data-ttu-id="2c1fd-104">DELETE (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)</span><span class="sxs-lookup"><span data-stu-id="2c1fd-104">DELETE (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)</span></span>
 <span data-ttu-id="2c1fd-105">ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="2c1fd-105">Deletes a file.</span></span> <span data-ttu-id="2c1fd-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="2c1fd-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

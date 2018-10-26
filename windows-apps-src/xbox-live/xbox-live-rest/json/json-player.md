@@ -7,16 +7,14 @@ description: " Player (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 25d9262ac16eab3d1c2f35960445321fa3872c30
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 90d0aa970fce8256a28be169b0afe49892d21d07
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479293"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5549973"
 ---
 # <a name="player-json"></a><span data-ttu-id="2bdd6-104">Player (JSON)</span><span class="sxs-lookup"><span data-stu-id="2bdd6-104">Player (JSON)</span></span>
 <span data-ttu-id="2bdd6-105">ゲーム セッションにプレイヤーのデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="2bdd6-105">Contains data for a player in a game session.</span></span> 

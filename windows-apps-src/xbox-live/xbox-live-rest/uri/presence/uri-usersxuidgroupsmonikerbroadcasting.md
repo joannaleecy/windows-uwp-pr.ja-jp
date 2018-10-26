@@ -7,16 +7,14 @@ description: " /users/xuid({xuid})/groups/{moniker}/broadcasting"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a3d2e5c0bcbb0c59eabdffdd148e4b7f013c3f40
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: dc5bd4804d706d05aa1b4ef48199c36b21e322bc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478961"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554673"
 ---
 # <a name="usersxuidxuidgroupsmonikerbroadcasting"></a><span data-ttu-id="77da2-104">/users/xuid({xuid})/groups/{moniker}/broadcasting</span><span class="sxs-lookup"><span data-stu-id="77da2-104">/users/xuid({xuid})/groups/{moniker}/broadcasting</span></span>
 <span data-ttu-id="77da2-105">URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="77da2-105">Accesses the presence record of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI.</span></span> <span data-ttu-id="77da2-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="77da2-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>

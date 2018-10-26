@@ -7,16 +7,14 @@ description: ユーザーの Xbox コンシューマブルの項目の rESTful �
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed278542fa538a1297069b0f7d67d413e180f30
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 52854a00340ce288db24030158ec39c55f6cb071
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5481075"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556093"
 ---
 # <a name="usersmeconsumablesitemid"></a><span data-ttu-id="a0e19-104">/users/me/consumables/{itemID}</span><span class="sxs-lookup"><span data-stu-id="a0e19-104">/users/me/consumables/{itemID}</span></span>
 <span data-ttu-id="a0e19-105">特定のコンシューマブルなインベントリ項目の詳細情報の完全なセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="a0e19-105">Accesses the full set of details for a specific consumable inventory item.</span></span>

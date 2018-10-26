@@ -6,16 +6,14 @@ ms.assetid: e0f307d2-ea02-48ea-bcdf-828272a894d4
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b2516987d1f56ba1da482854b6c6a390e1001db
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6de9aa9c1e85655a9295370a963a485de5eb474a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479378"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550734"
 ---
 # <a name="configuring-featured-stats-or-leaderboards-on-universal-dev-center-with-data-platform-2017"></a><span data-ttu-id="a9ca8-104">データ プラットフォーム 2017 を使用した、ユニバーサル デベロッパー センターでの注目の統計とランキングの構成</span><span class="sxs-lookup"><span data-stu-id="a9ca8-104">Configuring Featured Stats or Leaderboards on Universal Dev Center with Data Platform 2017</span></span>
 
