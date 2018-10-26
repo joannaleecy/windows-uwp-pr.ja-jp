@@ -10,19 +10,17 @@ keywords: Xbox, テレビ, 10 フィート エクスペリエンス, ゲーム�
 ms.author: elcowle
 ms.date: 12/5/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c9751ef316dbec7334fc12242d71dd58ae2cb262
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 098bc97de27d58fdc1d582e0db264ef04f0d3e61
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700968"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572351"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Xbox およびテレビ向け設計
 
@@ -189,7 +187,7 @@ Xbox One の UWP アプリでは、**メニュー** ボタンを押してコン�
 
 | 操作   | キーボード/マウス   | ゲームパッド      | 組み込み済み:  | 推奨: |
 |---------------|------------|--------------|----------------|------------------|
-| ページ アップ/ダウン  | ページ アップ/ダウン | 左/右トリガー | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 垂直スクロールをサポートするビュー
+| ページ アップ/ダウン  | PageUp/PageDown キー | 左/右トリガー | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 垂直スクロールをサポートするビュー
 | ページの左/右 | なし | L/R ボタン | [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 水平スクロールをサポートするビュー
 | ズーム イン/アウト        | Ctrl + 正符号 (+)/負符号 (-) | 左/右トリガー | なし | `ScrollViewer`、拡大と縮小をサポートするビュー |
 | ナビゲーション ウィンドウを開く/閉じる | なし | 表示 | なし | ナビゲーション ウィンドウ |
@@ -258,19 +256,19 @@ XY フォーカス ナビゲーションはユーザーの動作を上下左右�
 
 ```xml
 <StackPanel>
-    <Button x:Name="MyBtnLeft"
+    <Button x:Name="MyBtnLeft"
             Content="Search" />
-    <Button x:Name="MyBtnRight"
+    <Button x:Name="MyBtnRight"
             Content="Delete"/>
-    <Button x:Name="MyBtnTop"
+    <Button x:Name="MyBtnTop"
             Content="Update" />
-    <Button x:Name="MyBtnDown"
+    <Button x:Name="MyBtnDown"
             Content="Undo" />
-    <Button Content="Home"  
+    <Button Content="Home"  
             XYFocusLeft="{x:Bind MyBtnLeft}"
-            XYFocusRight="{x:Bind MyBtnRight}"
-            XYFocusDown="{x:Bind MyBtnDown}"
-            XYFocusUp="{x:Bind MyBtnTop}" />
+            XYFocusRight="{x:Bind MyBtnRight}"
+            XYFocusDown="{x:Bind MyBtnDown}"
+            XYFocusUp="{x:Bind MyBtnTop}" />
 </StackPanel>
 ```
 
@@ -279,8 +277,8 @@ XY フォーカス ナビゲーションはユーザーの動作を上下左右�
 フォーカスが特定の方向でコントロールから移動することを防ぐには、`XYFocus*` プロパティを使ってそのコントロールで方向を指定します。
 
 ```xml
-<Button Name="HomeButton"  
-        Content="Home"  
+<Button Name="HomeButton"  
+        Content="Home"  
         XYFocusLeft ="{x:Bind HomeButton}" />
 ```
 
@@ -324,7 +322,7 @@ XY フォーカス ナビゲーションはユーザーの動作を上下左右�
 
 `CommandBar` の項目を縦方向に重ねることはできませんが、UI レイアウトで適切な場合はスクロール方向と異なる向き (たとえば、縦方向にスクロールするリストの左右や、横方向にスクロールするリストの上下) に項目を配置することも検討できます。
 
-ユーザーが項目に簡単にアクセスできる必要がある `CommandBar` をアプリで使う場合、それらの項目を [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 内に配置して `CommandBar` から削除することを検討できます。 `ContextFlyout` は、[UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) のプロパティであり、その要素に関連づけられた[コンテキスト メニュー](../controls-and-patterns/dialogs.md)です。 PC では、`ContextFlyout` を持つ要素を右クリックすると、そのコンテキスト メニューがポップアップ表示されます。 Xbox One では、このような要素にフォーカスがあるときに**メニュー** ボタンを押すと、コンテキスト メニューがポップアップ表示されます。
+ユーザーが項目に簡単にアクセスできる必要がある `CommandBar` をアプリで使う場合、それらの項目を [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 内に配置して `CommandBar` から削除することを検討できます。 `ContextFlyout` は、[UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) のプロパティであり、その要素に関連づけられた[コンテキスト メニュー](../controls-and-patterns/dialogs-and-flyouts/index.md)です。 PC では、`ContextFlyout` を持つ要素を右クリックすると、そのコンテキスト メニューがポップアップ表示されます。 Xbox One では、このような要素にフォーカスがあるときに**メニュー** ボタンを押すと、コンテキスト メニューがポップアップ表示されます。
 
 ### <a name="ui-layout-challenges"></a>UI レイアウトの問題
 

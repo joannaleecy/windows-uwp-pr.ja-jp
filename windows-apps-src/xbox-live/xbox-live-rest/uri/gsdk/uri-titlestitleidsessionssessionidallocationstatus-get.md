@@ -7,19 +7,17 @@ description: " GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e351bed37e0761be1f884400f81a3da537967d2
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 67b50aba65477637689a7a15ea44d02299de1026
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483509"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5543736"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
-そのセッション Id によって識別される sessionhost の割り当てを取得します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`。
+その sessionId によって識別 sessionhost の割り当てを取得します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [必要な要求ヘッダー](#ID4E4)
   * [必要な応答ヘッダー](#ID4EEB)
@@ -44,21 +42,21 @@ ms.locfileid: "5483509"
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合、サービスは次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合、サービスは、次のメンバーを含む JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | 
-| description| 返します。 空の文字列を (左での下位互換性)。| 
-| clusterId| 返します。 空の文字列を (左での下位互換性)。| 
-| ホスト名| セッションのホストの URL です。| 
+| description| 空の文字列 (左での下位互換性) を返します。| 
+| clusterId| 空の文字列 (左での下位互換性) を返します。| 
+| ホスト名| セッションのホストの URL。| 
 | status| キューに入れ、満たされると、または中止されたことを示します。| 
 | sessionHostId| セッション ホストの id。| 
-| セッション Id| 割り当て時に提供されているクライアント セッションの id。| 
-| secureContext| セキュリティで保護されたデバイスのアドレスです。| 
-| portMappings| インスタンスのポートのマッピングです。| 
+| sessionId| (割り当て時) に提供されるクライアント セッション id。| 
+| secureContext| セキュア デバイス アドレスです。| 
+| portMappings| インスタンスのポート マッピングします。| 
 | 地域| インスタンスの場所です。| 
-| ticketId| (左内の下位互換性) 現在のセッション ID です。| 
-| gameHostId| (左内の下位互換性) 現在の sessionHostId です。| 
+| ticketId| 現在のセッション ID です (左での下位互換性)。| 
+| gameHostId| (左での下位互換性) 現在 sessionHostId します。| 
  
 <a id="ID4EGD"></a>
 
@@ -104,11 +102,11 @@ ms.locfileid: "5483509"
  
 ### <a name="remarks"></a>注釈
  
-タイトルがサービスへの呼び出しを再試行するは、次の応答コードを受信したときのみ。
+次の応答コードを受信したとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
  
    * 200-成功 
-   * 400-要求には、無効なパラメーターが含まれています。 
-   * 401-権限がありません 
-   * 404-タイトル ID やチケットの ID が無効であるか、または見つかりません。 
-   * 500: 予期しないサーバー エラーです。 
+   * 400-要求が無効なパラメーターが含まれています 
+   * 401: Unauthorized 
+   * 404-チケット ID、タイトル ID が無効であるか、または見つかりません。 
+   * 500-サーバーの予期しないエラー。 
     

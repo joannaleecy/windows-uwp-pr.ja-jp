@@ -6,16 +6,14 @@ ms.assetid: a0bacf59-120a-4ffc-85e1-fbeec5db1308
 ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: c331e85ef5a0012dd038b9b565106ad076333c07
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 8740d9287ff63ba113266d6c7cf39f2a21823d4b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5526894"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557400"
 ---
 # <a name="connected-storage"></a>接続ストレージ
 

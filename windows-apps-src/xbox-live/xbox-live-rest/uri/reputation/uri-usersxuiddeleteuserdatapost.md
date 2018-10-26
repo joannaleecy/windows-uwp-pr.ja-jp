@@ -7,16 +7,14 @@ description: " POST (/users/xuid({xuid})/deleteuserdata)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bcb7b1c6c23f39846084ba4e6583553e2ff04a1
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 4a58d7e231f5f3820bbf076dd2c454c11606f266
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469155"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554739"
 ---
 # <a name="post-usersxuidxuiddeleteuserdata"></a>POST (/users/xuid({xuid})/deleteuserdata)
 テスト ユーザーの評判のデータを完全にリセットします。 テストのみです。
@@ -25,7 +23,7 @@ ms.locfileid: "5469155"
   * [URI パラメーター](#ID4E5)
   * [Authorization](#ID4EJB)
   * [必要な要求ヘッダー](#ID4E3B)
-  * [HTTP ステータス ・ コード](#ID4EHC)
+  * [HTTP ステータス コード](#ID4EHC)
   * [応答本文](#ID4EJF)
 
 <a id="ID4EQ"></a>
@@ -35,7 +33,7 @@ ms.locfileid: "5469155"
 
 この API を呼び出すと、ユーザーからすべてのフィードバック項目と評判のデータが削除されます。 パートナーは、Retail を除くすべてのサンド ボックスに対してこの API を呼び出すことがあります。 執行チームは、サンド ボックス ID を持つには、この API を呼び出すことがあります。
 
-これらの Uri のドメインは、 `reputation.xboxlive.com`。 この URI は、常にポート 10443 で呼び出されます。
+これらの Uri のドメインが`reputation.xboxlive.com`します。 この URI は、常にポート 10443 で呼び出されます。
 
 <a id="ID4E5"></a>
 
@@ -65,14 +63,14 @@ Retail サンド ボックスで、 **PartnerClaim**に執行チームからで�
 <a id="ID4EHC"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス ・ コード
+## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスは、このリソースにこのメソッドを使用して行われた要求への応答では、このセクションのステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧については、[標準的な HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- |
 | 200| OK| セッションが正常に取得されました。|
-| 400| 要求が正しくありません。| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。|
+| 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。|
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。|
 | 404| Not Found します。| 指定されたリソースは見つかりませんでした。|
 | 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。|

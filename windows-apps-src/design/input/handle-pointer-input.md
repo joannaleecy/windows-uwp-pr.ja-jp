@@ -5,19 +5,17 @@ title: ポインター入力の処理
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
-keywords: ペン, マウス, タッチパッド, タッチ, ポインター, 入力, ユーザーの操作
+keywords: ペン, マウス, タッチパッド, タッチ, ポインター, 入力, ユーザー操作
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a0753081af4128cf2cad3eeff9d8c919c42eb596
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: ba685f30eb0cf94314996587073a82440cf6c951
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895141"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572611"
 ---
 # <a name="handle-pointer-input"></a>ポインター入力の処理
 
@@ -37,7 +35,7 @@ ms.locfileid: "1895141"
 
 > [!NOTE]
 > アプリで必要な場合は、デバイス固有の情報も HID の生データから昇格されます。
- 
+ 
 
 入力スタックの各入力ポイント (または接触) は、さまざまなポインター イベント ハンドラーの [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) パラメーターによって公開される [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) オブジェクトで表されます。 マルチペンまたはマルチタッチ入力の場合、各接触は固有の入力ポインターとして扱われます。
 
@@ -50,7 +48,7 @@ UWP アプリでは、次のポインター イベントをリッスンするこ
 
 > [!NOTE]
 > ポインターの入力を特定の UI 要素に制限するには、ポインター イベント ハンドラー内で、その要素に対して [**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918) を呼び出します。 要素によってポインターがキャプチャされると、そのオブジェクトだけがポインター入力イベントを受け取ります。これは、ポインターがオブジェクトの境界領域の外部に移動した場合でも同様です。 **CapturePointer** が成功するには、[**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976) (マウス ボタンの押下、タッチやスタイラスの接触) が true であることが必要です。
- 
+ 
 
 <table>
 <colgroup>
@@ -77,12 +75,12 @@ UWP アプリでは、次のポインター イベントをリッスンするこ
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208965"><strong>PointerCaptureLost</strong></a></p></td>
-<td align="left"><p>別の UI 要素がポインターをキャプチャした場合、ポインターが離された場合、別のポインターがプログラムでキャプチャされた場合に発生します。</p>
+<td align="left"><p>別の UI 要素がポインターをキャプチャしたか、ポインターが離されたか、別のポインターがプログラムでキャプチャされたときに発生します。</p>
 <div class="alert">
-<strong>注</strong>  対応するポインター キャプチャ イベントはありません。
+<strong>注:</strong>対応するポインター キャプチャ イベントはありません。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -91,7 +89,7 @@ UWP アプリでは、次のポインター イベントをリッスンするこ
 <ul>
 <li>タッチでは、このイベントが発生するには、直接タッチするか、要素の境界領域内に移動することによって、指が接触する必要があります。</li>
 <li>マウスとタッチパッドでは、常に表示される画面上のカーソルがあり、マウスやタッチパッドのボタンが押されなくてもこのイベントが発生します。</li>
-<li>タッチと同様に、ペンによってこのイベントが発生します。発生するのは、ペンで要素に直接タッチしたとき、または要素の境界領域内に移動したときです。 ただし、ペンにはホバー状態 ([IsInRange](https://msdn.microsoft.com/library/windows/apps/br227977)) もあり、true の場合に、このイベントが発生します。</li>
+<li>タッチと同様に、直接ペンでタッチするか、要素の境界領域内に移動することによって、このイベントが起動されます。 ただし、ペンにはホバー状態 ([IsInRange](https://msdn.microsoft.com/library/windows/apps/br227977)) もあり、true の場合に、このイベントが発生します。</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -127,7 +125,7 @@ UWP アプリでは、次のポインター イベントをリッスンするこ
 <p>マウス入力が最初に検出されたときに、マウス入力が、割り当てられている単一のポインターと関連付けられます。 マウス ボタン (左ボタン、ホイール、または右ボタン) をクリックすると、[PointerMoved](https://msdn.microsoft.com/library/windows/apps/br208970) イベントによってポインターとそのボタンの間に 2 番目の関連付けが行われます。</p></td>
 </tr>
 </tbody>
-</table> 
+</table> 
 
 ## <a name="pointer-event-example"></a>ポインター イベントの例
 
@@ -198,7 +196,7 @@ UWP アプリでは、次のポインター イベントをリッスンするこ
 
 ### <a name="listen-for-pointer-events"></a>ポインター イベントをリッスンする
 
-ほとんどの場合、イベント ハンドラーの [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) を使ってポインター情報を取得することをお勧めします。
+ほとんどの場合は、イベント ハンドラーの [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) を介してポインター情報を取得することをお勧めします。
 
 必要なポインターの詳細をイベント引数が公開していない場合は、[**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) の [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) メソッドと [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) メソッドによって公開される拡張 [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 情報にアクセスできます。
 
@@ -247,8 +245,7 @@ public MainPage()
 -   このハンドラーは、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベントを管理します。 イベント ログにイベントを追加し、アクティブなポインターのディクショナリにポインターを追加して、ポインターの詳細を表示します。
 
     > [!NOTE]
-    > [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベントと [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) イベントは、常にペアで発生するわけではありません。 アプリでは、ポインターの押下を終了させる可能性のあるすべてのイベント ([**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)、[**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) など) をリッスンして処理する必要があります。
-         
+    > [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベントと [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) イベントは、常にペアで発生するわけではありません。 アプリでは、ポインターの押下を終了させる可能性のあるすべてのイベント ([**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)、[**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) など) をリッスンして処理する必要があります。      
 
 ```csharp
 /// <summary>
@@ -330,7 +327,7 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 -   このハンドラーは、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) イベントを管理します。 イベント ログにイベントを追加し、ポインターの詳細を更新します。
 
     > [!Important]
-    > マウス入力が最初に検出されたときに、マウス入力が、割り当てられている単一のポインターと関連付けられます。 マウス ボタン (左ボタン、ホイール、または右ボタン) をクリックすると、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベントによってポインターとそのボタンの間に 2 番目の関連付けが行われます。 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) イベントは、同じマウス ボタンを離したときにだけ発生します (イベントが完了するまではそのポインターに他のボタンが関連付けられることはありません)。 この排他的な関連付けのために、他のマウス ボタンをクリックした場合は、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) イベントによってルーティングされます。     
+    > マウス入力が最初に検出されたときに、マウス入力が、割り当てられている単一のポインターと関連付けられます。 マウス ボタン (左ボタン、ホイール、または右ボタン) をクリックすると、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベントによってポインターとそのボタンの間に 2 番目の関連付けが行われます。 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) イベントは、同じマウス ボタンを離したときにだけ発生します (イベントが完了するまではそのポインターに他のボタンが関連付けられることはありません)。 この排他的な関連付けのために、他のマウス ボタンをクリックした場合は、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) イベントによってルーティングされます。     
 
 ```csharp
 /// <summary>
@@ -536,7 +533,7 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 -   このハンドラーは、[**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) イベントを管理します。 イベント ログにイベントを追加し、ポインター配列からポインターを削除して、ポインターの詳細を更新します。
 
     > [!NOTE]
-    > [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) が [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) の代わりに発生することがあります。 ポインターのキャプチャは、さまざまな理由で失われることがあります。たとえば、ユーザーの操作、プログラムによる別のポインターのキャプチャ、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) の呼び出しなどが原因となります。     
+    > [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) が [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) の代わりに発生することがあります。 ポインターのキャプチャは、さまざまな理由で失われることがあります。たとえば、ユーザーの操作、プログラムによる別のポインターのキャプチャ、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) の呼び出しなどが原因となります。     
 
 ```csharp
 /// <summary>
@@ -602,7 +599,7 @@ void CreateInfoPop(PointerPoint ptrPt)
 }
 ```
 
--   次に、そのポインターと関連付けられた、既にある [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) のポインター情報を更新するための方法を指定します。
+-   次に、そのポインターと関連付けられた、既にある [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) でポインター情報を更新するための手段を提供します。
 
 ```csharp
 /// <summary>
@@ -965,7 +962,7 @@ MainPage.xaml を次に示します。
 * [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **サンプルのアーカイブ**
-* [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [入力: タッチのヒット テストのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231590)

@@ -7,16 +7,14 @@ description: " /json/users/xuid({xuid})/scids/{scid}"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b1d43a9c1ed9f0bb1d68a3f1995c759e96a6bc64
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 1fcd28fa86198e4015226bf04ad0badafbe1438a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478737"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5541975"
 ---
 # <a name="jsonusersxuidxuidscidsscid"></a>/json/users/xuid({xuid})/scids/{scid}
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

@@ -7,16 +7,14 @@ description: " /users/{ownerId}/summary"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cf5fc70d2f4b149f7a5c6dd20c5aaf22cafe2a7
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 67b7d207eee53a2e78b5e7ea4bcb37bb47ef9436
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468902"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5543562"
 ---
 # <a name="usersowneridsummary"></a>/users/{ownerId}/summary
 呼び出し元の観点から所有者に関する集計データにアクセスします。

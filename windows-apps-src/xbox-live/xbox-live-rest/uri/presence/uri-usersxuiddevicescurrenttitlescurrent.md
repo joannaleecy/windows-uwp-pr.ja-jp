@@ -7,16 +7,14 @@ description: " /users/xuid({xuid})/devices/current/titles/current"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fe5e366c48dc5cc7586604584adb6af00207b85
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 44174d70cdb568529889e4ce51d0a2b118063d60
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471186"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556523"
 ---
 # <a name="usersxuidxuiddevicescurrenttitlescurrent"></a>/users/xuid({xuid})/devices/current/titles/current
 タイトルまたはタイトルのユーザーの有無にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。

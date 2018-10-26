@@ -7,16 +7,14 @@ description: " PresenceRecord (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c365760f68aa7c87422e747606175ae9a12f0574
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 25916d2b9cdcbbc50a46dd03ab95bedccdcaf73e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468957"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5547918"
 ---
 # <a name="presencerecord-json"></a>PresenceRecord (JSON)
 1 人のユーザーのオンライン プレゼンスに関するデータ。

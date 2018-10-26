@@ -6,16 +6,14 @@ ms.assetid: ''
 ms.author: kevinasg
 ms.date: 10/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox、ゲーム, uwp, windows 10, Xbox one、xbox live 概要を要約すると、公開をまとめた表、xbox live 履歴、コマンド バー、[履歴] タブ
-ms.openlocfilehash: c0c2305d655aba37b3959d388bd457b9d86fe1db
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: c2f8f661b55d105e1f1410bafd09903f55882aaa
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5481412"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5541924"
 ---
 # <a name="the-xbox-live-configuration-summary-page"></a>Xbox Live 構成の概要] ページ
 

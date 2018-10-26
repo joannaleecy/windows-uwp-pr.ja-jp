@@ -7,16 +7,14 @@ description: " HopperStatsResults (JSON)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 17b6bf856dd87abc72a000cb92724baf91452d73
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: d428c08a28769dfd2b62c1730779c3442fed9e86
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474050"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5542040"
 ---
 # <a name="hopperstatsresults-json"></a>HopperStatsResults (JSON)
 ホッパーの統計情報を表す JSON オブジェクト。 

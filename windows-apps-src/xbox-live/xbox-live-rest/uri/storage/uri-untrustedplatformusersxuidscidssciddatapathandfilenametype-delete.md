@@ -7,16 +7,14 @@ description: " DELETE (/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f7c8a4ce74fc1e958c143d1baa08bfbcd5e72706
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 3b4ab581a5fc7323a320626f499525e86591ed14
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5481975"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5543697"
 ---
 # <a name="delete-untrustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a>DELETE (/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})
 ファイルを削除します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

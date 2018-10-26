@@ -7,16 +7,14 @@ description: " GET (/users/{ownerId}/summary)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 73ba0cd060b3432de1cbb641a8991283974da192
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: e67fe557b712c48697cd3b788bc10545e32e9d61
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5526838"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5547738"
 ---
 # <a name="get-usersowneridsummary"></a>GET (/users/{ownerId}/summary)
 呼び出し元の観点から所有者に関する集計データを取得します。

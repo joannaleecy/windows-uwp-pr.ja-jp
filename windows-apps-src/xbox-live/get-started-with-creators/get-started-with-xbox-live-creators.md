@@ -6,16 +6,14 @@ ms.assetid: 2a744405-7ee4-42b4-8f36-9916e8c3a530
 ms.author: kevinasg
 ms.date: 12/13/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e79846ecb0fce63d371b9ade7efa01ca0561b952
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: e037101ac5f75107770db6be93cb0c6687edfbd9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479309"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555760"
 ---
 # <a name="get-started-with-the-xbox-live-creators-program"></a>Xbox Live クリエーターズ プログラムの概要
  

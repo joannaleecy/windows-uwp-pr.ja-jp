@@ -7,16 +7,14 @@ description: " POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateNam
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ed9a461b630f1ec277190c43efa99aa74492b0e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 8244f0c2d66d8d6039d2eb17b78e82f15f73d4d2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469624"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557524"
 ---
 # <a name="post-serviceconfigsscidsessiontemplatessessiontemplatenamebatch"></a>POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch)
 複数の Xbox ユーザー Id には、バッチ クエリを作成します。
@@ -27,7 +25,7 @@ ms.locfileid: "5469624"
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4EKB)
   * [クエリ文字列パラメーター](#ID4EVB)
-  * [HTTP ステータス ・ コード](#ID4EGF)
+  * [HTTP ステータス コード](#ID4EGF)
   * [要求本文](#ID4ENF)
   * [応答本文](#ID4EWF)
 
@@ -76,7 +74,7 @@ ms.locfileid: "5469624"
 <a id="ID4EGF"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス ・ コード
+## <a name="http-status-codes"></a>HTTP ステータス コード
 サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4ENF"></a>
 

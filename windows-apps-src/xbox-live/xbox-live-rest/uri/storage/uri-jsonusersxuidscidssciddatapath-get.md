@@ -7,26 +7,24 @@ description: " GET (/json/users/xuid({xuid})/scids/{scid}/data/{path})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ef285dfa79c47c9bd058d593c1102e581cbe460
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 352056562a59df0e06f05745f73009c597c22afe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469938"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5544577"
 ---
 # <a name="get-jsonusersxuidxuidscidssciddatapath"></a>GET (/json/users/xuid({xuid})/scids/{scid}/data/{path})
-指定されたパスのファイル情報の一覧を示します。 これらの Uri のドメインは、 `titlestorage.xboxlive.com`。
+指定されたパスのファイル情報の一覧を示します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
   * [オプションのクエリ文字列パラメーター](#ID4ECB)
   * [Authorization](#ID4EUC)
   * [必要な要求ヘッダー](#ID4EBD)
   * [要求本文](#ID4EKE)
-  * [HTTP ステータス ・ コード](#ID4EXE)
+  * [HTTP ステータス コード](#ID4EXE)
   * [応答本文](#ID4EKCAC)
  
 <a id="ID4EX"></a>
@@ -73,20 +71,20 @@ ms.locfileid: "5469938"
  
 ## <a name="request-body"></a>要求本文 
  
-オブジェクトはこの要求の本文に送信されません。
+この要求の本文には、オブジェクトは送信されません。
   
 <a id="ID4EXE"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス ・ コード 
+## <a name="http-status-codes"></a>HTTP ステータス コード 
  
-サービスは、このリソースにこのメソッドを使用して行われた要求への応答では、このセクションのステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧については、[標準的な HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 200| OK | 要求が成功しました。| 
 | 201| Created | エンティティが作成されました。| 
-| 400| 要求が正しくありません。 | サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
+| 400| Bad Request | サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません | 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden | ユーザーまたはサービスの要求は許可されていません。| 
 | 404| Not Found します。 | 指定されたリソースは見つかりませんでした。| 

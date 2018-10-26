@@ -7,16 +7,14 @@ description: " GET (/global/scids/{scid})"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4087c9857e657bd2621ab1fdb85d06abbfd8f5ef
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 42bb3b02afb3f29789e7f2b9d2d93c1efa3c2789
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471596"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553505"
 ---
 # <a name="get-globalscidsscid"></a>GET (/global/scids/{scid})
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

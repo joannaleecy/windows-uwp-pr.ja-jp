@@ -7,16 +7,14 @@ description: " GET (/serviceconfigs/{scid}/hoppers/{name}/stats)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 242a3bd3a2e6112436ec3f7aa3dad60c05619314
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: f6af4a534e94c6ca068727dbe0f584316d724537
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5467889"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555589"
 ---
 # <a name="get-serviceconfigsscidhoppersnamestats"></a>GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 
@@ -28,7 +26,7 @@ ms.locfileid: "5467889"
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4E5)
   * [Authorization](#ID4EJB)
-  * [HTTP ステータス ・ コード](#ID4E3C)
+  * [HTTP ステータス コード](#ID4E3C)
   * [要求本文](#ID4EFD)
   * [応答本文](#ID4EQD)
 
@@ -52,7 +50,7 @@ ms.locfileid: "5467889"
 
 ## <a name="authorization"></a>Authorization
 
-| 型| 必須かどうか| 説明| 応答がない場合は、|
+| 型| 必須かどうか| 説明| 不足している場合、応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | XUID (ユーザー ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。 | 403|
 | 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
@@ -61,7 +59,7 @@ ms.locfileid: "5467889"
 <a id="ID4E3C"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス ・ コード
+## <a name="http-status-codes"></a>HTTP ステータス コード
 サービスは、MPSD に適用される HTTP ステータス コードを返します。  
 <a id="ID4EFD"></a>
 

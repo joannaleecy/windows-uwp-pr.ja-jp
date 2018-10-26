@@ -7,16 +7,14 @@ description: " /media/{marketplaceId}/crossMediaGroupSearch"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 8357937fa210d74fd8393be0e4746863c477b63c
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 9c20d7f931674711018f2829d0e1c69b0eb127df
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5476994"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5547504"
 ---
 # <a name="mediamarketplaceidcrossmediagroupsearch"></a>/media/{marketplaceId}/crossMediaGroupSearch
 いくつかの異なるメディア グループからの項目にアクセスします。 これらの Uri のドメインが`eds.xboxlive.com`します。

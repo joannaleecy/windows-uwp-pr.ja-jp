@@ -5,16 +5,14 @@ description: Xbox Live SDK の新機能
 ms.author: aablackm
 ms.date: 10/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f199b0efb7ea3071beb1dfa4555fcd0bcf5a36f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 22c70f0dee1226057a69cb876dac4f4512b378b5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473208"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5542791"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live の新機能
 [Xbox Live API GitHub コミット履歴](https://github.com/Microsoft/xbox-live-api/commits/master)に関するページで、Xbox Live API に最近加えられたすべてのコード変更について確認することもできます。

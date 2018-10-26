@@ -7,19 +7,17 @@ description: " GET (/media/{marketplaceId}/crossMediaGroupSearch)"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 430dbce8b3ac2a79709c5f0761124aa7a78cab5e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 79ee12abf91618ea5afe6a928b27006623e46c2d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469268"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5549316"
 ---
 # <a name="get-mediamarketplaceidcrossmediagroupsearch"></a>GET (/media/{marketplaceId}/crossMediaGroupSearch)
-いくつかの異なるメディア グループから項目を取得します。 これらの Uri のドメインは、 `eds.xboxlive.com`。
+いくつかの異なるメディア グループから項目を取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EEB)

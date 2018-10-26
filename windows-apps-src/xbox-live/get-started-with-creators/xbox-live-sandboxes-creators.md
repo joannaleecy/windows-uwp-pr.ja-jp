@@ -6,16 +6,14 @@ ms.assetid: e7daf845-e6cb-4561-9dfa-7cfba882f494
 ms.author: kevinasg
 ms.date: 10/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b9175eda1d73a7678ac9fd304dc60ef228a57c7f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 8d1774227dc98c4bfa007e7171ce6fddfceea2f2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478628"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550040"
 ---
 # <a name="xbox-live-sandboxes-introduction"></a>Xbox Live のサンドボックスの概要
 

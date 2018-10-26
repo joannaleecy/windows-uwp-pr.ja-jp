@@ -6,16 +6,14 @@ ms.assetid: b6fc5bdb-ba7b-4687-985e-894182f066da
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 実績, リワード
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a84ac7296ccbb3aed82f676f09083dc9c16b17
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: f26ca230cc7b9a41a078ac436c4c0c46e88ea70c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5526835"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554248"
 ---
 # <a name="achievement-rewards"></a>実績のリワード
 

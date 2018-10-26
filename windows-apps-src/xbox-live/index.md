@@ -5,16 +5,14 @@ description: Xbox Live サービスを使用して、ゲームを Xbox Live ゲ�
 ms.author: kevinasg
 ms.date: 08/22/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, Xbox, Xbox Live
 ms.localizationpriority: medium
-ms.openlocfilehash: 72ace5104d7f774cb12dfc1303aba1f625115d7d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 66906737de1183425320f8a46b8d0642a3210122
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "3881472"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5547501"
 ---
 # <a name="what-is-xbox-live"></a>Xbox Live とは
 

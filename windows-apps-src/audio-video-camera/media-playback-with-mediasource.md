@@ -6,16 +6,14 @@ title: メディア項目、プレイリスト、トラック
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 241f3f62f8bf8965f7bc718c2dfe0c7e76866c51
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 73b6a19e2385f1a9b8afa4672df50d17ac16ec97
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832473"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572531"
 ---
 # <a name="media-items-playlists-and-tracks"></a>メディア項目、プレイリスト、トラック
 
@@ -137,7 +135,7 @@ Windows 10 バージョン 1607 以降では、アプリが実行されている
 
 挿入されるトラックへの参照を取得したら、そのトラックの [**SupportInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.SupportInfo) プロパティの [**DecoderStatus**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrackSupportInfo.DecoderStatus) を確認します。 この値が [**FullySupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) の場合は、トラックの再生に必要な適切なコーデックがデバイス上に存在します。 この値が [**Degraded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) の場合は、システムでトラックを再生することはできるものの、何らかの方法で再生が劣化することになります。 たとえば、5.1 オーディオ トラックが、2 チャンネル ステレオで再生される可能性があります。 このような場合は、UI を更新して、ユーザーに対し品質の低下を通知することをお勧めします。 この値が [**UnsupportedSubtype**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) または [**UnsupportedEncoderProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) の場合は、デバイス上に存在する現在のコーデックではトラックを再生できません。 ユーザーに通知してその項目の再生をスキップするか、ユーザーが正しいコーデックをダウンロードできる UI の実装が必要になる場合があります。 トラックの [**GetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.GetEncodingProperties) メソッドは、再生に必要なコーデックを確認するために使用します。
 
-最後に、トラックの [**OpenFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.OpenFailed) イベントを登録します。このイベントは、デバイス上でトラックがサポートされているが、パイプラインの不明なエラーによってトラックを開けなかった場合に発生します。
+最後に、トラックの [**OpenFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.OpenFailed) イベントを登録します。このイベントは、デバイス上でトラックがサポートされているものの、パイプラインの不明なエラーによってトラックを開けなかった場合に発生します。
 
 [!code-cs[AudioTracksChanged_CodecCheck](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAudioTracksChanged_CodecCheck)]
 
@@ -196,7 +194,7 @@ Windows 10 Version 1703 以降では、**DataCue.Properties** プロパティが
 
 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) を使うことにより、**MediaPlaybackItem** オブジェクトによって表されるメディア項目の再生リストを作成できます。
 
-**注:** [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 内の項目は、ギャップレス再生を使用してレンダリングされます。 システムは、MP3 または AAC でエンコードされたファイルで提供されるメタデータを使用して、ギャップレス再生に必要な遅延またはパディングの補正を決定します。 MP3 または AAC でエンコードされているファイルでこのメタデータが提供されない場合は、システムがヒューリスティックによって遅延またはパディングを決定します。 ロスレス形式 (PCM、FLAC、ALAC など) の場合、これらのエンコーダーによる遅延やパディングが発生しないため、システムが実行する処理はありません。
+**注:** [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955)内の項目は、ギャップレス再生を使用してレンダリングされます。 システムは、MP3 または AAC でエンコードされたファイルで提供されるメタデータを使用して、ギャップレス再生に必要な遅延またはパディングの補正を決定します。 MP3 または AAC でエンコードされているファイルでこのメタデータが提供されない場合は、システムがヒューリスティックによって遅延またはパディングを決定します。 ロスレス形式 (PCM、FLAC、ALAC など) の場合、これらのエンコーダーによる遅延やパディングが発生しないため、システムが実行する処理はありません。
 
 最初に、**MediaPlaybackList** を格納するための変数を宣言します。
 

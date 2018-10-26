@@ -6,16 +6,14 @@ ms.assetid: 790a49ad-eff4-4916-8578-968ca8483211
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity
 ms.localizationpriority: medium
-ms.openlocfilehash: 8787e0d1be8449ab60ed5753593c65c0a892ae74
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 4260b860bb761af36a7c2b7b6c12bb7a832dc199
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478194"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556392"
 ---
 # <a name="add-xbox-live-support-to-unity-for-uwp-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a>ID@Xbox および対象パートナー向けに、IL2CPP スクリプト バックエンドを使用して、Xbox Live サポートを UWP 用 Unity に追加する
 

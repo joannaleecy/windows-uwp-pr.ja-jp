@@ -7,16 +7,14 @@ description: " /users/me/scids/{scid}/clips"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ddb5800be9f96b7b90ed816f094cb38d83ee4727
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6fc3daea84dc0d938d80f85affec2292ca2b490c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474339"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5544853"
 ---
 # <a name="usersmescidsscidclips"></a>/users/me/scids/{scid}/clips
 最初のアクセスは、要求をアップロードします。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。

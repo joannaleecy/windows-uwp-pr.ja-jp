@@ -6,16 +6,14 @@ ms.assetid: d43b5030-a639-4445-ba33-7bddd35d13e1
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
-ms.openlocfilehash: d8d9ef17872fd40f8a0fcf0f67020a38c33075cd
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 1a08ed2620bf3483cdfe4d77d683cc3abec26f7b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483486"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556077"
 ---
 # <a name="flowchart---send-an-invitation-to-another-player"></a>フローチャート - 別のプレイヤーに招待を送信する
 

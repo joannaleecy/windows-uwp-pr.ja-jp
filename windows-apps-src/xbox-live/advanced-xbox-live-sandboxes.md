@@ -6,16 +6,14 @@ ms.assetid: bd8a2c51-2434-4cfe-8601-76b08321a658
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Xbox One, XDK, 対象パートナー, サンドボックス, コンテンツの分離
 ms.localizationpriority: medium
-ms.openlocfilehash: 02817869aeba78ad1b86e12d4bbd31a1107d3195
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 025a6ecbf4431ff465a70e8a11324d170748d117
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471987"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554190"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高度な Xbox Live のサンドボックス
 

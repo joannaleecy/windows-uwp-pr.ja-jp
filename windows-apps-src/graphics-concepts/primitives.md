@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f94f859b57a0be9cfbb2d81d635ae7714129256
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 349d4aa4fbf35bd7dccbd48b0251f5bb9e90a779
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652541"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572331"
 ---
 # <a name="primitives"></a>プリミティブ
 
@@ -52,7 +50,7 @@ ms.locfileid: "1652541"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="triangle-lists.md">トライアングル リスト</a></p></td>
-<td align="left"><p>トライアングル リストとは、独立した三角形の一覧を指します。 これらの独立した三角形は、距離が近い場合もそうでない場合もあります。 三角形の一覧には、最低 3 つの頂点が必須で、頂点の総数は 3 で割り切れる必要があります。</p></td>
+<td align="left"><p>トライアングル リストとは、独立した三角形のリストです。 これらの独立した三角形は、距離が近い場合もそうでない場合もあります。 三角形の一覧には、最低 3 つの頂点が必須で、頂点の総数は 3 で割り切れる必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="triangle-strips.md">トライアングル ストリップ</a></p></td>
@@ -61,16 +59,16 @@ ms.locfileid: "1652541"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [座標系とジオメトリ](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

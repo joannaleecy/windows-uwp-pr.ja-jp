@@ -6,16 +6,14 @@ ms.assetid: 630cb5fc-5d48-4026-8d6c-3aa617d75b2e
 ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 5185ae50b428302c26b7a38389e4b925dcecd552
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 8a741dbb202f9c5573342bb15098fc4553a7edc7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477174"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552549"
 ---
 # <a name="managing-local-connected-storage"></a>ローカル接続ストレージの管理
 接続ストレージは、ゲーム データをクラウドに保存するために使用されますが、接続ストレージ サービスへのローカル ストレージ コンポーネントもあります。 PC を使っているか本体を使っているかに関係なく、接続ストレージ データのローカル キャッシュが存在し、クラウドに同期されたデータが含まれています。 XDK タイトルを作成するのか UWP タイトルを作成するのかに関係なく、ローカルの接続ストレージ データを管理できるツールが用意されています。

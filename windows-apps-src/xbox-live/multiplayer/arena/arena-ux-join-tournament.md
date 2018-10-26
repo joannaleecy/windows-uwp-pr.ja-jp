@@ -5,16 +5,14 @@ description: プレイヤーがゲームのトーナメントに参加するた�
 ms.author: kevinasg
 ms.date: 10-10-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d5f1e4c658d2638f53baaa4176ba741990c667f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 701545085f095bd9c26598ac063780c49ee94c0d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469243"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558779"
 ---
 # <a name="join-a-tournament-by-using-the-arena-ui"></a>アリーナ UI を使ってトーナメントに参加する
 

@@ -6,16 +6,14 @@ ms.assetid: 4bb6fa66-34d1-4db9-87c8-7e24ad5afc0a
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live、Xbox、ゲーム、UWP、Windows 10、Xbox One、サンプル、サンプル
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ff1d53f8f1fe17e3fec5331f65920b7a36ec15
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 30078629f164f30fffcecb0dce76046b896c21f6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "3881474"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558429"
 ---
 # <a name="xbox-live-samples"></a>Xbox Live のサンプル
 
@@ -23,7 +21,7 @@ ms.locfileid: "3881474"
 * [Xbox 開発キットのサンプル](#xdk-samples)
 
 ## <a name="xbox-live-api-samples"></a>Xbox Live API のサンプル
-サンプルは、両方の Xbox Live クリエーターズ プログラムとID@Xboxで Xbox Live サンプル GitHub リポジトリで Xbox Live API の使用方法を示すが見つかること[https://github.com/Microsoft/xbox-live-samples](https://github.com/Microsoft/xbox-live-samples)
+サンプルは、両方の Xbox Live クリエーターズ プログラムとID@Xbox、Xbox Live サンプル GitHub リポジトリで Xbox Live API の使用方法を示すが見つかること[https://github.com/Microsoft/xbox-live-samples](https://github.com/Microsoft/xbox-live-samples)
 
 | サンプル名             | プラットフォーム | 言語                     | 説明                                                                                                                                                                                                           |
 |:------------------------|:----------|:------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

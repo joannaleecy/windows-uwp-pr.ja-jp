@@ -9,15 +9,13 @@ keywords: スピーチ, 音声, 音声認識, 自然言語, ディクテーシ�
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 471f222bb22293ccb3b66f5387d43b74fc53b910
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 7e042a9bbedee3ded0601eda06da8e349c4b788c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653871"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572671"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>音声認識エンジンの言語の指定
 
@@ -60,9 +58,9 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 インストールされている言語はデバイスによって異なる場合があります。 特定の制約を使う際にある言語に依存する場合は、その言語が存在するかどうかを確認してください。
 
-**注**  新しい言語パックをインストールした場合は、再起動が必要です。 指定の言語がサポートされていない場合や、指定の言語のインストールが完了していない場合は、エラー コード SPERR\_NOT\_FOUND (0x8004503a) の例外が発生します。
+**注:** 新しい言語パックをインストールした後、再起動が必要です。 指定の言語がサポートされていない場合や、指定の言語のインストールが完了していない場合は、エラー コード SPERR\_NOT\_FOUND (0x8004503a) の例外が発生します。
 
- 
+ 
 
 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) クラスの 2 つの静的プロパティのいずれかを調べて、デバイスでサポートされる言語を特定します。
 
@@ -105,9 +103,9 @@ SRGS 文法は、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.micro
 **サンプル**
 
 * [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

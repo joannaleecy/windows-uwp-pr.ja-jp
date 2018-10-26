@@ -6,16 +6,14 @@ title: カメラ プレビューの表示
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bba681a60d51167d1fc3d6bf8bf4050a7db2152f
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: b258569b707f50051eaa266e2cae5b9971894cf3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692953"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572231"
 ---
 # <a name="display-the-camera-preview"></a>カメラ プレビューの表示
 
@@ -30,7 +28,7 @@ ms.locfileid: "1692953"
 
 **アプリ マニフェストに機能を追加する**
 
-1.  Microsoft Visual Studio では、**ソリューション エクスプローラー**で **package.appxmanifest** 項目をダブルクリックして、アプリケーション マニフェストのデザイナーを開きます。
+1.  Microsoft Visual Studio では、**ソリューション エクスプローラー**で **package.appxmanifest** 項目をダブルクリックし、アプリケーション マニフェストのデザイナーを開きます。
 2.  **[機能]** タブをクリックします。
 3.  **[Web カメラ]** のボックスと **[マイク]** のボックスをオンにします。
 

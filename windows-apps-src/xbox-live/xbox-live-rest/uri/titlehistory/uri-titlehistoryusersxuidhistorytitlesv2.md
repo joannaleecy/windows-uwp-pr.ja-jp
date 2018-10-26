@@ -7,16 +7,14 @@ description: " /users/xuid({xuid})/history/titles"
 ms.author: kevinasg
 ms.date: 20-12-2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a4780c92fc16adb697783ecee50d36523ff92998
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 9e8520cc07a146bc720220b43da937f9d3ef0c86
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5480193"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5545368"
 ---
 # <a name="usersxuidxuidhistorytitles"></a>/users/xuid({xuid})/history/titles
  

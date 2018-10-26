@@ -6,16 +6,14 @@ title: MediaCapture を使った基本的な写真、ビデオ、およびオー
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 81205dc7122c75345b686240f79200d8304704b7
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 7204c01cc80c50dacb2009b2138a7c046974dc62
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843422"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572261"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ
 
@@ -66,7 +64,7 @@ Windows バージョン 1803 以降では、**CaptureAsync** から返された 
 Windows 10 バージョン 1803 以降では、**MediaCapture** によって返された **CapturedFrame** の [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) プロパティにアクセスして、圧縮されていない形式でキャプチャした写真に関する EXIF 情報などのメタデータを取得できます。 以前のリリースでは、このデータにアクセスできるのは、圧縮ファイル形式にキャプチャされた写真のヘッダーでのみでした。 このデータを [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) に渡すと、画像ファイルを手動で書き込むことができます。 ビットマップのエンコードについて詳しくは、「[ビットマップ画像の作成、編集、保存](imaging.md)」をご覧ください。  [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues) プロパティにアクセスすると、画像をキャプチャしたときに使用された露出やフラッシュ設定などのフレーム コントロールの値にもアクセスできます。 詳しくは、「[写真とビデオのキャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-photo-and-video-capture.md)」をご覧ください。
 
 ## <a name="capture-a-photo-to-a-file"></a>ファイルへの写真のキャプチャ
-一般的な写真アプリでは、キャプチャした写真をディスクやクラウド ストレージに保存し、写真の向きなどのメタデータをファイルに追加する必要があります。 次の例では、ファイルに写真をキャプチャする方法を示します。 後で画像ファイルから **SoftwareBitmap** を作成するオプションもあります。 
+典型的な写真アプリでは、キャプチャした写真をディスクやクラウド ストレージに保存し、写真の向きなどのメタデータをファイルに追加する必要があります。 次の例では、ファイルに写真をキャプチャする方法を示します。 後で画像ファイルから **SoftwareBitmap** を作成するオプションもあります。 
 
 この例で示されている方法では、写真をインメモリ ストリームにキャプチャし、写真をストリームからディスク上のファイルにコード変換します。 この例では、[**GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.GetLibraryAsync) を使ってユーザーのピクチャ ライブラリを取得し、次に [**SaveFolder**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.SaveFolder) プロパティを使って既定の保存フォルダーを取得します。 このフォルダーにアクセスするには、必ず**ピクチャ ライブラリ**機能をアプリ マニフェストに追加してください。 [**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFolder.CreateFileAsync) は、写真の保存先となる新しい [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile) を作成します。
 
@@ -131,7 +129,7 @@ Windows 10 バージョン 1607 以降では、ビデオの録画を一時停止
 
 
 ## <a name="capture-audio"></a>オーディオのキャプチャ 
-前に示したビデオのキャプチャと同じ手法を用いて、アプリにオーディオ キャプチャ機能を簡単に追加することができます。 次の例では、アプリケーション データ フォルダーに **StorageFile** を作成します。 [**PrepareLowLagRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagRecordToStorageFileAsync) を呼び出して、ファイルと [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile) (この例では、静的メソッド [**CreateMp3**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp3) によって生成) を渡すことによって、キャプチャ セッションを初期化します。 録音を開始するには、[**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StartAsync) を呼び出します。
+前に示したビデオのキャプチャと同じ手法を用いて、アプリにオーディオ キャプチャ機能を簡単に追加することができます。 次の例では、アプリケーション データ フォルダーに **StorageFile** を作成します。 [**PrepareLowLagRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagRecordToStorageFileAsync) を呼び出して、ファイルと、[**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile) を渡すことによって、キャプチャ セッションを初期化します。この例では、MediaEncodingProfile は静的メソッド [**CreateMp3**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp3) によって生成されます。 録音を開始するには、[**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StartAsync) を呼び出します。
 
 [!code-cs[StartAudioCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartAudioCapture)]
 

@@ -6,16 +6,14 @@ ms.assetid: ''
 ms.author: kevinasg
 ms.date: 11/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: 80bd83fed60c17f0c575f0b5e3847c902a6c0e62
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b39c4ef33db0792856f06aaf282b7804012984a5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470053"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553352"
 ---
 # <a name="configure-achievements-2017-on-dev-center"></a>デベロッパー センターでの Achievements 2017 の構成
 

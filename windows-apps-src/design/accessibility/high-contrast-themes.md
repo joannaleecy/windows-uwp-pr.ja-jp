@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mhopkins
 ms.date: 09/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a0fde9aecd4b9a07fcddbb1e97c11d2681b41a0
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 7cf8b634cfc7ba66cde107150b54ecec76b2861d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662162"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572631"
 ---
 # <a name="high-contrast-themes"></a>ハイ コントラスト テーマ  
 

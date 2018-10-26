@@ -6,16 +6,14 @@ ms.assetid: 7e6e7b69-d7c3-42fa-bcc4-6d68947f6fdb
 ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
-ms.openlocfilehash: bd39074e67c58e20154083be66211dbefc9f782d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 640ae98c947280732165c7e63d951a91a2f65a3b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471456"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553508"
 ---
 # <a name="programming-rich-presence"></a>リッチ プレゼンスのプログラミング
 

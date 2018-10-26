@@ -6,16 +6,14 @@ ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c74b05974bcfd9dd8c592d18f6f5fe4ff388f03
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 1fe2460dfc5ab11a9168f1d1d87207d2b9490026
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675349"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572601"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 構文のガイド
 
@@ -242,7 +240,7 @@ XML や HTML などのマークアップ言語でプロパティ値を設定す�
 
 XAML のもう 1 つの規則は、要素の属性がどのような順序でも設定できる必要があるというものです。 たとえば、`<Rectangle Height="50" Width="100" />` と `<Rectangle Width="100"  Height="50" />` の間には違いがありません。 順序をどちらにするかは、スタイルの問題です。
 
-**注:** XML エディター以外のデザイン サーフェイスを使うと、通常は XAML デザイナーによって並び順の規則が提示されますが、その XAML は後で自由に編集して、属性を並べ替えたり、新たな属性を導入したりできます。
+**注:** XAML デザイナー多くの場合の宣伝順序指定の規則、XML エディター以外のデザイン サーフェイスを使用するが、属性を並べ替えたり、新たに導入に後で、その XAML を自由に編集することができます。
 
 ## <a name="attached-properties"></a>添付プロパティ
 
@@ -271,8 +269,8 @@ Windows ランタイム XAML には、次のシナリオをサポートする添
 
 左中かっこ記号 (\{) はマークアップ拡張シーケンスの開始を表すため、この記号で始まるリテラル文字列値を指定するには、エスケープ シーケンスを使う必要があります。 エスケープ シーケンスは "\{\}" です。 たとえば、単一の左中かっこを表す文字列値を指定するには、属性値を "\{\}\{" として指定します。 このほか、"\{" 値を文字列として指定するために、代替引用符 (**""** で区切られた属性値内の **'** など) を使うこともできます。
 
-**注:** "\\}" は、引用符で囲まれている属性の内側にある場合にも機能します。
- 
+**注:**「\\}」は、引用符で囲まれた属性内である場合にも機能します。
+ 
 ## <a name="enumeration-values"></a>列挙値
 
 Windows ランタイム API の多くのプロパティでは、値として列挙型が使われます。 メンバーが読み取り/書き込みプロパティの場合には、属性値を指定することによって設定できます。 プロパティの値に使う列挙値を指定するには、定数名の非修飾名を使います。 たとえば、XAML で [**UIElement.Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) を設定するには、`<Button Visibility="Visible"/>` のように記述します。 次に、文字列として "Visible" が [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006) 列挙値、**Visible** の名前付きの定数に直接マップされます。
@@ -280,7 +278,7 @@ Windows ランタイム API の多くのプロパティでは、値として列�
 -   修飾された形式は機能しないので、使わないでください。 たとえば、`<Button Visibility="Visibility.Visible"/>` のような XAML は無効です。
 -   定数の値を使わないでください。 要するに、列挙体の整数値に依存しないようにしてください。この整数値は、明示的または暗黙的な列挙体の定義方法に応じて変わります。 一見、機能しているように見えても、永続的でない実装の詳細となるものに依存しているため、XAML でもコードでも好ましくない方法です。 たとえば、`<Button Visibility="1"/>` のように記述しないでください。
 
-**注:** XAML と列挙体を使う API のリファレンス トピックで、「**構文**」の「**プロパティ値**」セクションに表示される列挙型へのリンクをクリックします。 列挙体のページに移動するので、その列挙体の名前付き定数を確認できます。
+**注:** で XAML を使用して、列挙体を使用する Api のリファレンス トピック、**構文**の**プロパティの値**のセクションで列挙型へのリンクをクリックします。 列挙体のページに移動するので、その列挙体の名前付き定数を確認できます。
 
 列挙体は、フラグのように機能します。つまり、**FlagsAttribute** で属性が設定されます。 フラグのように機能する列挙体の値の組み合わせを XAML 属性値として指定する必要がある場合は、各列挙体定数の名前を使います。各名前はコンマ (,) で区切り、空白文字は含めません。 フラグのような属性は、Windows ランタイム XAML ボキャブラリでは一般的ではありませんが、それが利用できる例の 1 つが [**ManipulationModes**](https://msdn.microsoft.com/library/windows/apps/br227934) で、XAML でフラグのように機能する列挙値の設定がサポートされています。
 
@@ -290,7 +288,7 @@ Windows ランタイム API の多くのプロパティでは、値として列�
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Windows ランタイム リファレンスでの XAML プレースホルダーの規則
 
-XAML を使用できる Windows ランタイム API のリファレンス トピックでいずれかの「**構文**」セクションを調べたことがあれば、構文にかなりの数のプレースホルダーが含まれていることに気付いたことでしょう。 XAML 構文は使用法構文なので、C#、Microsoft Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX) の構文とは異なります。 独自の XAML ファイルでの具体的な使い方を示しますが、使用できる値について説明し過ぎないようにしています。 そのため、通常は使用法としてリテラルとプレースホルダーを混ぜて文法を説明し、プレースホルダーの一部は「**XAML 値**」のセクションで定義します。
+XAML を使用できる Windows ランタイム API のリファレンス トピックでいずれかの「**構文**」セクションを調べたことがあれば、構文にかなりの数のプレースホルダーが含まれていることに気付いたことでしょう。 XAML 構文は、c#、Microsoft Visual Basic、または VisualC ではコンポーネント拡張機能とは異なる (、C++/cli CX) 構文 XAML 構文は使用法構文であるためです。 独自の XAML ファイルでの具体的な使い方を示しますが、使用できる値について説明し過ぎないようにしています。 そのため、通常は使用法としてリテラルとプレースホルダーを混ぜて文法を説明し、プレースホルダーの一部は「**XAML 値**」のセクションで定義します。
 
 プロパティの XAML 構文で型名または要素名が表示されている場合、それらの名前は、元はプロパティを定義する型のための名前です。 しかし、Windows ランタイム XAML は、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) ベースのクラスのクラス継承モデルをサポートしています。 そのため、多くの場合、実際の定義クラスではなく、プロパティまたは属性を最初に定義したクラスから派生したクラスの属性を使います。 たとえば、深い継承を使って、任意の [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 派生クラスの属性として [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) を設定できます  (例: `<Button Visibility="Visible" />`)。 そのため、XAML 使用方法の構文で示されている要素名が厳密に文字どおりであるとは考えないでください。そのクラスを表す要素と、派生クラスを表す要素でも、その構文が使用できることがあります。 定義要素として示されている型が、現実に使うことはまれであるか不可能である場合、その型の名前は構文内で意図的に小文字にしてあります。 たとえば、**UIElement.Visibility** の構文は、次のようになっています。
 
@@ -320,5 +318,5 @@ XAML の使用方法のセクションでも、さまざまな一般化された
 * [XAML の概要](xaml-overview.md)
 * [XAML 名前空間と名前空間マッピング](xaml-namespaces-and-namespace-mapping.md)
 * [ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)
- 
+ 
 
