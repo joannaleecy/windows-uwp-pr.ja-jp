@@ -8,19 +8,17 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e5dcf7652469179b038a2835f4751a285eea9ee9
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 09b75eccdfcdd1d046618b92565fa3453a8b300e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493689"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561017"
 ---
 # <a name="rich-edit-box"></a>リッチ エディット ボックス
 

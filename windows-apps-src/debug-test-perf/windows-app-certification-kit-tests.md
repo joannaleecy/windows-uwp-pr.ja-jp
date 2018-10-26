@@ -6,16 +6,14 @@ description: Windows アプリ認定キットには、多くアプリが Microso
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
-ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 65afbaa4440a5bce43ca6d48126e6cc2b8316466
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516268"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561912"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
 

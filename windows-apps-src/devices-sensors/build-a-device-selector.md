@@ -6,16 +6,14 @@ description: デバイス セレクターを作成すると、デバイスを列
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c80f604e9b8dc31eec1fe684f073bceb2337d91f
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 036ea8b7d9797112dca9b6594e9bc1e33e923588
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959167"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563148"
 ---
 # <a name="build-a-device-selector"></a>デバイス セレクターのビルド
 
@@ -40,9 +38,9 @@ ms.locfileid: "959167"
 
 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API では、AQS の標準的な構文が使われますが、一部の演算子はサポートされていません。 フィルター文字列の作成に使えるプロパティの一覧については、「[デバイス情報プロパティ](device-information-properties.md)」をご覧ください。
 
-**注意:** `{GUID} PID` 形式を使って定義したカスタム プロパティは AQS フィルター文字列の作成に使えません。 これは、プロパティの型が一般的な既知のプロパティ名から派生しているためです。
+**注意:** カスタム プロパティを使用して定義されている、 `{GUID} PID` 、AQS フィルター文字列を構築するときは、形式を使用することはできません。 これは、プロパティの型が一般的な既知のプロパティ名から派生しているためです。
 
- 
+ 
 
 次の表は、AQS 演算子とそれがサポートするパラメーターの型の一覧です。
 
@@ -64,9 +62,9 @@ ms.locfileid: "959167"
 | **COP\_APPLICATION\_SPECIFIC** | サポートされていません                                                               |
 
 
-> **ヒント:** **COP\_EQUAL** または **COP\_NOTEQUAL** に **NULL** を指定できます。 これは空のプロパティに変換されます。つまり、値は存在しません。 AQS では、空のかっこ \[\] を使って **NULL** を指定できます。
+> **ヒント:** **cop \_notequal**または**COP\_NOTEQUAL** **NULL**を指定することができます。 これは空のプロパティに変換されます。つまり、値は存在しません。 AQS では、空のかっこ \[\] を使って **NULL** を指定できます。
 
-> **重要:** **COP\_VALUE\_CONTAINS** および **COP\_VALUE\_NOTCONTAINS** の演算子を使うと、文字列と文字列配列で異なる動作をします。 文字列の場合、大文字と小文字を区別する検索が実行され、デバイスに部分文字列として指定された文字列が含まれているかどうかを確認します。 文字列配列の場合、部分文字列は検索されません。 文字列配列を使って、配列を検索し、指定された文字列全体が含まれているかどうかを確認します。 配列内の要素に部分文字列が含まれているかどうかを確認するために、文字列配列を検索することはできません。
+> **重要な**文字列と文字列の配列で異なる動作、 **cop \_value\_contains** **\_value\_notcontains**演算子を使用する場合。 文字列の場合、大文字と小文字を区別する検索が実行され、デバイスに部分文字列として指定された文字列が含まれているかどうかを確認します。 文字列配列の場合、部分文字列は検索されません。 文字列配列を使って、配列を検索し、指定された文字列全体が含まれているかどうかを確認します。 配列内の要素に部分文字列が含まれているかどうかを確認するために、文字列配列を検索することはできません。
 
 1 つの AQS フィルター文字列により結果を適切に絞り込むことができない場合は、受け取った結果をさらにフィルター処理できます。 ただしその場合は、最初の AQS フィルター文字列によりできる限り結果を絞り込んでから、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API に渡すことをお勧めします。 これにより、アプリのパフォーマンスを向上させることができます。
 
@@ -115,6 +113,6 @@ System.Devices.IpAddress:<>[]
 System.Devices.IpAddress:=[]
 ```
 
- 
+ 
 
- 
+ 

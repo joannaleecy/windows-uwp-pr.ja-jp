@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 54471a62a62bc1b7f520e06b90edd137a277f580
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+ms.openlocfilehash: d6b9d76dd20c4537fadf8c0701c200740c31b784
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1672919"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559651"
 ---
 # <a name="expose-basic-accessibility-information"></a>基本的なアクセシビリティ情報の開示  
 

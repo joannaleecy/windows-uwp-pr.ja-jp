@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7106b36b367716fdb53af3da506e60d019ac4e8e
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a4e2bbac12ddd3b60b2e4dd78f37b8934a8afea8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653851"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562603"
 ---
 # <a name="output-merger-om-stage"></a>出力マージャー (OM) ステージ
 
@@ -41,7 +39,7 @@ OM ステージでは、次のものを組み合わせて使用することで�
 
 ![データのブレンディングのしくみ](images/d3d10-blend-state.png)
 
-概念的には、このフロー チャートが出力結合 (OM) ステージで 2 回実行されると考えることができます。RGB データのブレンディングと、それと並行して実行されるアルファ データのブレンディングです。 API を使用してブレンディング ステートを作成および設定する方法については「[ブレンド機能の構成](https://msdn.microsoft.com/library/windows/desktop/bb205072)」を参照してください。
+概念的には、このフロー チャートが出力マージャー ステージで 2 回実行されると考えることができます。RGB データのブレンディングと、それと並行して実行されるアルファ データのブレンディングです。 API を使用してブレンディング ステートを作成および設定する方法については「[ブレンド機能の構成](https://msdn.microsoft.com/library/windows/desktop/bb205072)」を参照してください。
 
 固定機能ブレンディングは、レンダー ターゲットごとに個別に有効にすることができます。 ただし、ブレンディング制御は 1 組しかないため、ブレンディングが有効なすべての RenderTargets に同じブレンディングが適用されます。 ブレンディング値 (BlendFactor を含む) は常に、ブレンディング前にレンダー ターゲット フォーマットの範囲にクランプされます。 クランプは、レンダー ターゲット タイプを考慮して、レンダー ターゲットごとに実行されます。 ただし、クランプされない float16、float11、および float10 フォーマットは例外で、これらのフォーマットのブレンディング処理は、少なくとも出力フォーマットと同じ精度/範囲で実行できます。 NaN および符号付きのゼロは、すべての場合について伝搬されます (0.0 のブレンドの重みを含みます)。
 
@@ -55,7 +53,7 @@ sRGB レンダー ターゲットを使用する際、ランタイムはブレ�
 
 ### <a name="span-iddepth-stencil-testspanspan-iddepth-stencil-testspanspan-iddepth-stencil-testspandepth-stencil-testing-overview"></a><span id="Depth-Stencil-Test"></span><span id="depth-stencil-test"></span><span id="DEPTH-STENCIL-TEST"></span>深度/ステンシル テストの概要
 
-テクスチャ リソースとして作成される深度/ステンシル バッファーは、深度データとステンシル データの両方を格納できます。 深度データは、カメラに最も近い位置に配置されたピクセルを特定するために使用され、ステンシル データは、更新可能なピクセルをマスクするために使用されます。 最終的には、深度値とステンシル値のデータの両方が、ピクセルを描画する必要があるかどうかを決定するために出力結合 (OM) ステージで使用されます。 次の図は、深度/ステンシル テストがどのように実行されるかを概念的に示したものです。
+テクスチャ リソースとして作成される深度/ステンシル バッファーは、深度データとステンシル データの両方を格納できます。 深度データは、カメラに最も近い位置に配置されたピクセルを特定するために使用され、ステンシル データは、更新可能なピクセルをマスクするために使用されます。 最終的には、深度値とステンシル値のデータの両方が、ピクセルを描画する必要があるかどうかを決定するために出力マージャー ステージで使用されます。 次の図は、深度/ステンシル テストがどのように実行されるかを概念的に示したものです。
 
 ![深度/ステンシル テストのしくみ](images/d3d10-depth-stencil-test.png)
 
@@ -63,7 +61,7 @@ sRGB レンダー ターゲットを使用する際、ランタイムはブレ�
 
 深度バッファーを使用して描画するピクセルを決定する処理は、深度バッファーリングと呼ばれます。また、z バッファーリングと呼ばれることもあります。
 
-(補間とピクセル シェーダーのどちらから送信されたかに関係なく) 深度値が出力結合 (OM) ステージに到達すると、常に、浮動小数点ルールを使用して、深度バッファーのフォーマット/精度に従って z = min(Viewport.MaxDepth,max(Viewport.MinDepth,z)) にクランプされます。 クランプ後、深度値は、DepthFunc を使用して既存の深度バッファー値と比較されます。 深度バッファーがバインドされていない場合は、常に深度テストに合格します。
+(補間とピクセル シェーダーのどちらから送信されたかに関係なく) 深度値が出力マージャー ステージに到達すると、常に、浮動小数点ルールを使用して、深度バッファーのフォーマット/精度に従って z = min(Viewport.MaxDepth,max(Viewport.MinDepth,z)) にクランプされます。 クランプ後、深度値は、DepthFunc を使用して既存の深度バッファー値と比較されます。 深度バッファーがバインドされていない場合は、常に深度テストに合格します。
 
 深度バッファー フォーマットにステンシル成分がない場合、または深度バッファーがバインドされていない場合は、常にステンシル テストに合格します。
 
@@ -113,21 +111,21 @@ sRGB レンダー ターゲットを使用する際、ランタイムはブレ�
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="configuring-depth-stencil-functionality.md">深度/ステンシル機能の構成</a></p></td>
-<td align="left"><p>ここでは、出力結合 (OM) ステージの深度/ステンシル バッファーと深度/ステンシル ステートを設定する手順について説明します。</p></td>
+<td align="left"><p>ここでは、出力マージャー ステージの深度/ステンシル バッファーと深度/ステンシル ステートを設定する手順について説明します。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [グラフィックス パイプライン](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

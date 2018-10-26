@@ -6,19 +6,18 @@ ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10、UWP、ゲーム、BasicReaderWriter
-ms.openlocfilehash: 1dc7ba0b25ceeb5b27bc718bed1db0e2db39b6c0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 7a5d644a2a141a83316575a235805fa56657bf3a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243265"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561406"
 ---
 # <a name="complete-code-for-basicreaderwriter"></a>BasicReaderWriter のコード一式
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。 [BasicLoader](complete-code-for-basicloader.md) クラスで使われます。
 
@@ -262,9 +261,9 @@ task<void> BasicReaderWriter::WriteDataAsync(
 }
 ```
 
- 
+ 
 
- 
+ 
 
 
 

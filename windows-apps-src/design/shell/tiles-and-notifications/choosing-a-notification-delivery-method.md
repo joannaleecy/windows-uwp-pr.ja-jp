@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: de9b0e5d1e8e461561d228448fc1998ad4ff0fd9
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: c01b96f70bd39c43f321935aa47393ada0400319
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393961"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559924"
 ---
 # <a name="choose-a-notification-delivery-method"></a>通知配信方法の選択
 
@@ -96,7 +94,7 @@ ms.locfileid: "1393961"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="local-notifications"></a>ローカル通知
 
@@ -171,9 +169,9 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 * [定期的な通知の概要](periodic-notification-overview.md)
 * [Windows プッシュ通知サービス (WNS) の概要](windows-push-notification-services--wns--overview.md)
 * [GitHub でのユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
- 
+ 
 
- 
+ 
 
 
 

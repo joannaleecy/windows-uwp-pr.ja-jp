@@ -8,19 +8,17 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d0e8fa7dd30f0646bbfd9671598bae22d1cd3126
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 16ebc375a72984af8bbc40823121d2d94689fcf2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494059"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563940"
 ---
 # <a name="rich-text-block"></a>リッチ テキスト ブロック
 

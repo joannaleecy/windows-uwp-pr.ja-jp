@@ -6,20 +6,18 @@ ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
-ms.openlocfilehash: 450f95e68c85a325e43127df90ffeddbaa850afa
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 7e8df200e8e989015834608d38cb8dfb0d36917b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488866"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560485"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>レンダリング フレームワーク I: レンダリングの概要
 
-これまでのトピックでは、Windows ランタイムで動作するユニバーサル Windows プラットフォーム (UWP) ゲームを構築する方法、ステート マシンを定義してゲームのフローを処理する方法について説明してきました。 ここでは、レンダリング フレームワークをアセンブルする方法について説明します。 サンプル ゲームで Direct3D 11 (通常は DirectX 11 と呼ばれます) を使用して、ゲームのシーンをレンダリングする方法を見てみましょう。
+これまでのトピックでは、Windows ランタイムで動作するユニバーサル Windows プラットフォーム (UWP) ゲームを構築する方法、ステート マシンを定義してゲームのフローを処理する方法について説明してきました。 ここでは、レンダリング フレームワークをアセンブルする方法について説明します。 サンプル ゲームで Direct3D11 (通常は DirectX 11 と呼ばれます) を使用して、ゲームのシーンをレンダリングする方法を見てみましょう。
 
 >[!Note]
 >このサンプルの最新ゲーム コードをダウンロードしていない場合は、[Direct3D ゲーム サンプルのページ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)に移動してください。 このサンプルは、UWP 機能のサンプルの大規模なコレクションの一部です。 サンプルをダウンロードする手順については、「[GitHub から UWP のサンプルを取得する](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)」をご覧ください。
@@ -620,7 +618,7 @@ __DX::DeviceResources__ クラスは、__DeviceResources.cpp__/__.h__ ファイ�
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX Graphics Infrastructure (DXGI) は、Direct3D 10、10.1、11、11.1 で必要とされる低レベルのタスクの一部をカプセル化する、Windows Vista で導入された新しいサブシステムです。 マルチスレッド アプリケーションで DXGI を使用する場合、デッドロックが発生しないように特に注意する必要があります。 詳細については、[DirectX グラフィックス インフラストラクチャ (DXGI): ベスト プラクティスのマルチスレッドに関する説明](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)を参照してください。
+Microsoft DirectX グラフィックス インフラストラクチャ (DXGI) は、direct3d10 で必要とされる低レベルのタスクの一部をカプセル化 WindowsVista で導入された新しいサブシステム 10.1、11、11.1 します。 マルチスレッド アプリケーションで DXGI を使用する場合、デッドロックが発生しないように特に注意する必要があります。 詳細については、[DirectX グラフィックス インフラストラクチャ (DXGI): ベスト プラクティスのマルチスレッドに関する説明](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)を参照してください。
 
 ### <a name="feature-level"></a>機能レベル
 
@@ -630,7 +628,7 @@ Microsoft DirectX Graphics Infrastructure (DXGI) は、Direct3D 10、10.1、11�
 
 機能レベルを使用すると、デバイスを作成するときに、必要な機能レベルのデバイスを作成してみることができます。 デバイスの作成に成功した場合は、その機能レベルが存在します。失敗した場合は、ハードウェアはその機能レベルをサポートしていません。 低い機能レベルでデバイスを再作成してみることも、アプリケーションの終了を選択することもできます。 たとえば、12\_0 機能レベルでは、Direct3D 11.3 や Direct3D 12、およびシェーダー モデル 5.1 が必要です。 詳細については、[Direct3D の各機能レベルの概要に関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)を参照してください。
 
-機能レベルを使用して、Direct3D 9 や Microsoft Direct3D 10、Direct3D 11 のアプリケーションを開発し、9、10、または 11 のハードウェアで実行できます (いくつか例外があります)。 詳細については、[Direct3D の機能レベルに関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)を参照してください。
+機能レベルを使用して、Direct3D9 や Microsoft Direct3D10、Direct3D11 では、アプリケーションを開発し、9、10 または 11 のハードウェア (一部例外あり) で実行できます。 詳細については、[Direct3D の機能レベルに関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)を参照してください。
 
 ### <a name="stereo-rendering"></a>ステレオ レンダリング
 
@@ -677,7 +675,7 @@ Direct3D では、3 つの変換を使用して 3D モデル座標をピクセ�
 
 射影変換では、視錐台を立方体に変換します。 視錐台とは、ビューポートのカメラに対して相対的に配置された、シーン内の 3D ボリュームです。 ビューポートとは、3D シーンが投影される 2D の四角形です。 詳細については、「[ビューポートとクリッピング](../graphics-concepts/viewports-and-clipping.md)」を参照してください。
 
-視錐台の近くの端は遠くの端よりも小さいので、この変換にはカメラの近くのオブジェクトを拡大するという効果があり、これによってシーンに遠近感が生まれます。 したがって、プレイヤーに近いオブジェクトは大きく表示され、遠くにあるオブジェクトは小さく表示されます。
+視錐台の近くの端は遠くの端よりも小さいので、このトランスフォームにはカメラの近くのオブジェクトを拡大するという効果があり、これによってシーンに遠近感が生まれます。 したがって、プレイヤーに近いオブジェクトは大きく表示され、遠くにあるオブジェクトは小さく表示されます。
 
 数学的には、射影変換は、通常、スケーリングおよび遠近法の両方の行列です。 カメラのレンズと同様に機能します。 詳細については、「[射影変換](../graphics-concepts/projection-transform.md)」を参照してください。
 

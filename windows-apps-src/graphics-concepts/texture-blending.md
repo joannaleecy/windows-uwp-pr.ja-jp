@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f1014ed205c5cf0eda2c9b71c8406a98394b1463
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d4121bd402b048ee6102ed3be30b94a66e274273
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652901"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562200"
 ---
 # <a name="texture-blending"></a>テクスチャ ブレンド
 
@@ -34,9 +32,9 @@ Direct3D では、テクスチャ ステージの使用によって、単一パ�
 
 上の図のように、テクスチャ ステージは、指定された演算子を使用して、2 つの引数をブレンドします。 一般的な演算には、引数のカラーまたはアルファ成分の単純な乗算や加算がありますが、実際にサポートされている演算は 24 を超えます。 ステージの引数には、関連付けられたテクスチャ、反復処理されるカラーまたはアルファ (グーロー シェーディング時に反復処理)、任意のカラーとアルファ、以前のテクスチャ ステージの結果などがあります。
 
-**注**   Direct3D では、カラー ブレンドとアルファ ブレンドは区別されます。 アプリケーションでは、カラーとアルファについて個々にブレンドの演算と引数を設定し、これらの設定の結果は互いに独立しています。
+**注:**  Direct3D は、色のアルファ ブレンドからブレンドを区別します。 アプリケーションでは、カラーとアルファについて個々にブレンドの演算と引数を設定し、これらの設定の結果は互いに独立しています。
 
- 
+ 
 
 複数のブレンド ステージで、引数と演算を組み合わせて使用することによって、単純なフローベースのブレンド言語を定義できます。 1 つのステージの結果は別のステージに移行し、さらにそのステージから次のステージに移行します。 その後も同様に続きます。結果が、ステージからステージに渡され、最終的にポリゴンでラスター化される概念を、一般にテクスチャ ブレンディング カスケードと呼びます。 次の図は、個々のテクスチャ ステージがテクスチャ ブレンディング カスケードを構成しているようすを示しています。
 
@@ -74,16 +72,16 @@ Direct3D では、テクスチャ ステージの使用によって、単一パ�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [テクスチャ](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

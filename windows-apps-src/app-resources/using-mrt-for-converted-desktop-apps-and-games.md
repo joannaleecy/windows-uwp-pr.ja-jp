@@ -5,16 +5,14 @@ description: .NET または Win32 アプリやゲームを AppX パッケージ�
 ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, MRT, PRI,  リソース, ゲーム, Centennial, Desktop App Converter, MUI, サテライト アセンブリ
 ms.localizationpriority: medium
-ms.openlocfilehash: 098ec71f2f3e487b76f9992c297ad7cba9ac5538
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 927e0c5438ea11b751fba40cb76210d0bce112d4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396481"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562073"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>レガシ アプリやゲームで Windows 10 のリソース管理システムを使用する
 
@@ -307,7 +305,7 @@ PRI ファイルがビルドされました。次はパッケージをビルド�
  * `/f` (前の手順で作成された) 使用するマッピング ファイルを設定します 
  * `/p` 出力パッケージの名前を設定します
  * `/o` 出力ファイルが存在する場合、上書きします
-0. パッケージが作成されたら、それに署名する必要があります。 署名証明書を取得する最も簡単な方法は、Visual Studioで空のユニバーサル Windows プロジェクトを作成して、作成された `.pfx` ファイルをコピーすることです。また `MakeCert` ユーティリティと `Pvk2Pfx` ユーティリティを使って、手動で作成することもできます。これについて詳しくは、[MSDN の**アプリ パッケージの署名証明書を作成する方法**のトピック] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx) をご覧ください。 
+0. パッケージが作成されたら、それに署名する必要があります。 署名証明書を取得する最も簡単な方法は、Visual Studio で空のユニバーサル Windows プロジェクトを作成し、コピー、`.pfx`が作成されるファイルは 1 つを使って手動で作成できます、`MakeCert`と`Pvk2Pfx`ユーティリティ」の説明に従って [、**を作成する方法アプリ パッケージの署名証明書**MSDN のトピック] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)します。 
  * **重要:** 署名証明書を手動で作成した場合、必ずソース プロジェクトまたはパッケージ ソースとは別のディレクトリにファイルを配置します。そうしない場合、秘密キーも含めてパッケージに含まれてしまう場合があります。
 0. パッケージに署名するには、次のコマンドを使用します。 `AppxManifest.xml` の `Identity` 要素で指定されている `Publisher` は、証明書の `Subject` と一致する必要があります (これは `<PublisherDisplayName>` 要素では**ありません**。それはユーザーに表示されるローカライズされた表示名です)。 通常と同様に、`contoso_demo...` のファイル名をプロジェクトに適した名前で置き換えます。さらに `.pfx` ファイルが現在のディレクトリにないことを確認します (**これは非常に重要です**。そうしない場合、プライベート署名キーを含めて、パッケージの一部として作成されてしまいます)。
 

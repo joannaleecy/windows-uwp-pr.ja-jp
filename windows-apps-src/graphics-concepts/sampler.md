@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ec409f734e2f3e338f6bfe064a0bed29936980f6
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: ae15e41ec1d6493f33a776c11d74e28b2c95dc34
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043521"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564578"
 ---
 # <a name="sampler"></a>サンプラー
 
@@ -32,9 +30,9 @@ ms.locfileid: "1043521"
 
 [ビュー](views.md)
 
- 
+ 
 
- 
+ 
 
 
 

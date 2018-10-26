@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eee30882373513bd352777aff0ae6399f047bbec
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 0a64af02bc62a5e7d605f752504027c66f5dc7f7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044151"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562478"
 ---
 # <a name="depth-stencil-view-dsv"></a>深度ステンシル ビュー (DSV)
 
@@ -30,9 +28,9 @@ ms.locfileid: "1044151"
 
 [ビュー](views.md)
 
- 
+ 
 
- 
+ 
 
 
 

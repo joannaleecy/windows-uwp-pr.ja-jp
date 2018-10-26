@@ -6,19 +6,18 @@ ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, 待機時間, DXGI, スワップ チェーン, DirectX
-ms.openlocfilehash: 9f2babdac40e3baf27bec9b2e214e9350d1f2539
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 51a1dd6d7f1c39d82201d3b9741276a54e4c06a8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243183"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563774"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>DXGI 1.3 スワップ チェーンによる遅延の減少
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 DXGI 1.3 を使って、スワップ チェーンが新しいフレームのレンダリング開始の適切な時間を通知するまで待機することで、実質的なフレーム待機時間を削減します。 ゲームでは一般的に、プレイヤーの入力を受け取った時点からゲームがその入力に応答して表示を更新するまでの待機時間を、可能な限り短縮する必要があります。 このトピックでは、Direct3D 11.2 以降で利用できるようになった、ゲーム内の実際のフレーム待機時間を最小化する手法について説明します。
 
@@ -38,9 +37,9 @@ DXGI 1.3 を使って、スワップ チェーンが新しいフレームのレ�
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **注** 一部の他のフラグと異なり、このフラグは [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) を使って追加または削除できません。 このフラグの設定が、スワップ チェーンが作成された時点の設定と異なっている場合、DXGI はエラー コードを返します。
+> **注:**  、いくつかのフラグとこのフラグを追加できませんまたは[**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)を使用して削除します。 このフラグの設定が、スワップ チェーンが作成された時点の設定と異なっている場合、DXGI はエラー コードを返します。
 
- 
+ 
 
 ```cpp
 // If the swap chain already exists, resize it.
@@ -159,9 +158,9 @@ Windows でのマルチスレッド プログラミングについて詳しく�
 * [同期](https://msdn.microsoft.com/library/windows/desktop/ms686353)
 * [イベント オブジェクトの使用 (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)
 
- 
+ 
 
- 
+ 
 
 
 

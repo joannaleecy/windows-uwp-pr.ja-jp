@@ -6,21 +6,20 @@ description: チェーン内でバインドされた CollectionViewSource イン
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 9f297cdb3fdc90ab7c024bce3aa93db69465c5d3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 60d283f41c495f9612311e4b9b9da3df1a44d498
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243079"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564026"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>階層データをバインドしてマスター/詳細ビューを作る方法
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-> **注**  [マスター/詳細のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619991)もご覧ください。
+> **注:** も、[マスター/詳細のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619991)をご覧ください。
 
 チェーン内でバインドされた [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスに項目コントロールをバインドすることによって、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。 このトピックでは、できる限り [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)を使用し、必要に応じて、より柔軟な (ただし効率は低下する) [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)を使います。
 
@@ -225,7 +224,7 @@ namespace MasterDetailsBinding
 
 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) に直接バインドすることによって、コレクション自体ではパスが見つからない、バインディング内の現在の項目にバインドすることを意味します。 バインディングのパスとして **CurrentItem** プロパティを指定する必要はありませんが、あいまいさがある場合は指定することもできます。 たとえば、チーム ビューを表す [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) で、[**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) プロパティが `Teams`**CollectionViewSource** にバインドされているとします。 しかし、**CollectionViewSource** が必要に応じてチームの一覧から現在選択されているチームを自動的に示すため、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内のコントロールは `Team` クラスのプロパティにバインドされます。
 
- 
+ 
 
- 
+ 
 

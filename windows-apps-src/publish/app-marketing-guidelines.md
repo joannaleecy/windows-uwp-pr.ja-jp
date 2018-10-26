@@ -6,16 +6,14 @@ ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.author: wdg-dev-content
 ms.date: 10/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: d065504385a5e7a743bd4936e9240565d3207a36
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479720"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561687"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store のアプリのガイドラインをマーケティング
 

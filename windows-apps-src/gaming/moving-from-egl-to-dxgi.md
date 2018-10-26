@@ -6,19 +6,18 @@ ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, EGL, DXGI, Direct3D
-ms.openlocfilehash: 7d7e4058eccd39911bd84d3967ef07b93b6ee89d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 64f237fd26a2ed7328e2c2264da17d3a5d7ba588
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246909"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561290"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>EGL コードと DXGI および Direct3D の比較
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 **重要な API**
@@ -31,9 +30,9 @@ DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同
 
 DXGI と Direct3D は EGL に似ており、グラフィックス リソースを構成するためのメソッドや、シェーダーの描画先となり、ウィンドウに結果を表示するために使われるレンダリング コンテキストを取得するためのメソッドがあります。 ただし、DXGI と Direct3D にはかなりのオプションがあるため、EGL からの移植の際には、適切に設定するための余分な作業が必要です。
 
-> **注**   このガイダンスは、Khronos Group による EGL 1.4 のオープン仕様 ([Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)) に基づいています。 その他のプラットフォームと開発言語に固有の構文の違いは、このガイダンスでは説明していません。
+> **注:** このガイダンスは、Khronos Group の EGL 1.4 のオープンな仕様に基づく: [Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011年) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)します。 その他のプラットフォームと開発言語に固有の構文の違いは、このガイダンスでは説明していません。
 
- 
+ 
 
 ## <a name="how-does-dxgi-and-direct3d-compare"></a>DXGI と Direct3D の比較方法
 
@@ -50,7 +49,7 @@ EGL と同様に、DXGI と Direct3D には次の動作のための API が用�
 -   特定のレンダー ターゲットにレンダリングする (テクスチャなど)。
 -   グラフィックス リソースを使ったレンダリングの結果でウィンドウの表示サーフェスを更新する。
 
-グラフィックス パイプラインを構成するための基本的な Direct3D プロセスについては、Microsoft Visual Studio 2015 で DirectX 11 アプリ (ユニバーサル Windows) テンプレートをチェックしてください。 その基本レンダリング クラスは、Direct3D 11 のグラフィックス インフラストラクチャを設定し、それに基づいて基本的なリソースを構成したり、画面の回転などのユニバーサル Windows プラットフォーム (UWP) アプリの機能をサポートしたりするうえで、適切なベースラインとなります。
+グラフィックス パイプラインを構成するための基本的な Direct3D プロセスを確認するには、DirectX 11 アプリ (ユニバーサル Windows) テンプレートは、Microsoft Visual Studio2015 してください。 その基本レンダリング クラスは、Direct3D 11 のグラフィックス インフラストラクチャを設定し、それに基づいて基本的なリソースを構成したり、画面の回転などのユニバーサル Windows プラットフォーム (UWP) アプリの機能をサポートしたりするうえで、適切なベースラインとなります。
 
 EGL は Direct3D 11 と比べて API が非常に少なくなっています。プラットフォームに特定の命名規則や専門用語に慣れていないと、Direct3D 11 の理解は難しい場合があります。 ここでは、初心者の役に立つ簡単な概要を示します。
 
@@ -63,7 +62,7 @@ EGL は Direct3D 11 と比べて API が非常に少なくなっています。�
 | **EGLContext**  | Direct3D では、[**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) インターフェイスでコマンドを構成し、グラフィックス パイプラインに発行します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **EGLConfig**   | Direct3D 11 では、バッファー、テクスチャ、ステンシル、シェーダーなどのグラフィックス リソースを、[**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) インターフェイスのメソッドで作成、構成します。                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
- 
+ 
 
 ここで、UWP アプリ用の DXGI と Direct3D でシンプルなグラフィックスの表示、リソース、コンテキストを設定するための最も基本的なプロセスを示します。
 
@@ -75,9 +74,9 @@ EGL は Direct3D 11 と比べて API が非常に少なくなっています。�
 6.  パイプラインが実行され、フレームがバック バッファーに描画されたら、[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) でそれを画面に表示します。
 
 このプロセスについて詳しく調べるには、「[DirectX グラフィックスの概要](https://msdn.microsoft.com/library/windows/desktop/hh309467)」をご覧ください。 この記事の残りの部分では、基本的なグラフィックス パイプラインの設定と管理に関する一般的な手順の多くについて説明します。
-> **注**   Windows デスクトップ アプリには、[**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083) など、Direct3D スワップ チェーンを取得するためのさまざまな API があります。[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトは使われません。
+> **注:**  Windows デスクトップ アプリが[**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)などの Direct3D スワップ チェーンを取得するためさまざまな Api があるし、 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)オブジェクトを使わないでください。
 
- 
+ 
 
 ## <a name="obtaining-a-window-for-display"></a>表示のためのウィンドウの取得
 
@@ -164,7 +163,7 @@ void SimpleDirect3DApp::SetWindow(CoreWindow^ window)
   swapChainDesc.SampleDesc.Quality = 0;
   swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
   swapChainDesc.BufferCount = 2; // Use double-buffering to minimize latency.
-  swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL; // All Windows Store apps must use this SwapEffect.
+  swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL; // All UWP apps must use this SwapEffect.
   swapChainDesc.Flags = 0;
 
   // ...
@@ -281,7 +280,7 @@ D3D11CreateDevice(
   creationFlags, // Set set debug and Direct2D compatibility flags.
   featureLevels, // List of feature levels this app can support.
   ARRAYSIZE(featureLevels),
-  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for Windows Store apps.
+  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for UWP apps.
   &device, // Returns the Direct3D device created.
   &m_featureLevel, // Returns feature level of device created.
   &d3dContext // Returns the device immediate context.
@@ -395,7 +394,7 @@ UWP アプリでは、[**CoreWindow::Close**](https://msdn.microsoft.com/library
 | eglDestroySurface                | なし。 グラフィックス リソースは、UWP アプリの CoreWindow がプラットフォームによって閉じられたときにクリーンアップされます。                                                                                                                                                                                                                                                                                                                                                                                                 |
 | eglGetCurrentDisplay             | 現在のメイン アプリ ウィンドウへの参照を取得するには、[**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出します。                                                                                                                                                                                                                                                                                                                                                         |
 | eglGetCurrentSurface             | これが現在の [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) です。 通常、これのスコープはレンダラー オブジェクトに限定されます。                                                                                                                                                                                                                                                                                                                                                         |
-| eglGetError                      | エラーは、DirectX インターフェイスのほとんどのメソッドによって返される HRESULT として取得されます。 メソッドから HRESULT が返されない場合は、[**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) を呼び出します。 システム エラーを HRESULT 値に変換するには、[**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746) マクロを使います。                                                                                                                                                                                                  |
+| eglGetError                      | エラーは、DirectX インターフェイスのほとんどのメソッドによって返される HRESULT として取得されます。 メソッドから HRESULT が返されない場合は、[**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) を呼び出します。 システム エラーを anHRESULTvalue 変換、[**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746)を使用してマクロです。                                                                                                                                                                                                  |
 | eglInitialize                    | 現在のメイン アプリ ウィンドウへの参照を取得するには、[**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出します。                                                                                                                                                                                                                                                                                                                                                         |
 | eglMakeCurrent                   | [**ID3D11DeviceContext1::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) を使って、現在のコンテキストに描画するためのレンダー ターゲットを設定します。                                                                                                                                                                                                                                                                                                                                  |
 | eglQueryContext                  | なし。 ただし、[**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) インスタンスからレンダリング ターゲットと一部の構成データを取得できます  (利用できるメソッドの一覧については、リンクをご覧ください)。                                                                                                                                                                                                                                                                                           |
@@ -410,11 +409,11 @@ UWP アプリでは、[**CoreWindow::Close**](https://msdn.microsoft.com/library
 | eglWaitGL                        | 共有サーフェスについては、IDXGIKeyedMutex を使います。 一般的な GPU マルチスレッドについては、「[マルチスレッド](https://msdn.microsoft.com/library/windows/desktop/ff476891)」をご覧ください。                                                                                                                                                                                                                                                                                                                                    |
 | eglWaitNative                    | 共有サーフェスについては、IDXGIKeyedMutex を使います。 一般的な GPU マルチスレッドについては、「[マルチスレッド](https://msdn.microsoft.com/library/windows/desktop/ff476891)」をご覧ください。                                                                                                                                                                                                                                                                                                                                    |
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ title: ビデオ キャプチャのための手動カメラ制御
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e4bad8d38676c8298026e66be31e2493ae7d4117
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 91f9d21f6df09bf8f3cad3e5a43f3ed94049338e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816037"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562544"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>ビデオ キャプチャのための手動カメラ制御
 
@@ -44,7 +42,7 @@ HDR ビデオ処理を有効または無効にするには、[**HdrVideoControl.
 
 ## <a name="exposure-priority"></a>露出の優先順位
 
-[**ExposurePriorityVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926644) は、有効であれば、キャプチャ デバイスからのビデオ フレームを評価し、低光量シーンのビデオがキャプチャされているかどうかを判断します。 その場合は、各フレームの露出時間を長くし、キャプチャしたビデオの画質を向上するために、キャプチャするビデオのフレーム レートが引き下げられます。
+[**ExposurePriorityVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926644) は、有効であれば、キャプチャ デバイスからのビデオ フレームを評価し、ローライト シーンのビデオがキャプチャされているかどうかを判断します。 その場合は、各フレームの露出時間を長くし、キャプチャしたビデオの画質を向上するために、キャプチャするビデオのフレーム レートが引き下げられます。
 
 [**ExposurePriorityVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926647) プロパティをチェックして、現在のデバイスで露出の優先順位コントロールがサポートされているかどうかを確認してください。
 
@@ -94,7 +92,7 @@ Windows 10、バージョン 1803 以降では、デバイスでサポートさ�
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [MediaFrameReader を使ったメディア フレームの処理](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
- 
+ 
 
 
 

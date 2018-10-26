@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: 485d16cb9c40769c123719f8f55e81d804f220a3
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 04a0288d0b28c12eb68cf56225747224e8df9777
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393991"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563458"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>テンプレートとパターンを使った日付と時刻の書式設定
 
@@ -29,7 +27,7 @@ ms.locfileid: "1393991"
 
 ただし、表示する [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) オブジェクトの構成要素の順序や形式をより細かく制御する場合は、コンストラクターの *formatTemplate* 引数に書式パターンを渡すことができます。 書式パターンでは特別な構文を使用します。これにより、任意に選んだカスタム形式で表示するために、**DateTime** オブジェクトの個々のコンポーネントを取得できます (たとえば、月の名称のみを取得したり、年の値のみを取得したりすることができます)。 さらに、パターンをローカライズして、他の言語や地域に対応させることができます。
 
-**注**  ここで説明しているのは、単なる書式パターンの概要です。 書式テンプレートと書式パターンの詳細については、[**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) クラスの「解説」セクションを参照してください。
+**注:** これは、単なる書式パターンの概要。 書式テンプレートと書式パターンについて詳しくは、[**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) クラスの「解説」セクションをご覧ください。
 
 ## <a name="the-difference-between-format-templates-and-format-patterns"></a>書式テンプレートと書式パターンの違い
 
@@ -63,7 +61,7 @@ Ja-JP: "{month.integer}月{day.integer}日"
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-上のフォーマッタでは、中かっこ {{}} 内の個々のコンポーネントについてカルチャ固有の値が返されます。 ただし、書式パターンのコンポーネントの順序は不変です。 要求どおりのものが得られても、それがカルチャに適している場合と適していない場合があります。 このフォーマッタは英語 (米国) で有効ですが、フランス語 (フランス) または日本語では有効ではありません。
+上のフォーマッタでは、角かっこ内の個々 のコンポーネントのカルチャ固有の値を返します。{}します。 ただし、書式パターンのコンポーネントの順序は不変です。 要求どおりのものが得られても、それがカルチャに適している場合と適していない場合があります。 このフォーマッタは英語 (米国) で有効ですが、フランス語 (フランス) または日本語では有効ではありません。
 
 ``` syntax
 En-US: January 1
@@ -117,7 +115,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` は、リソース ファイル (.resw) でローカライズ可能なリソースを参照するリソース識別子です。 既定の言語が英語 (米国) である場合、これは、"{0} | {1}" の値に設定され、"{0}" は日付で "{1}" は時刻であることを示すコメントが追加されます。 このようにして、翻訳者は必要に応じて書式項目を調整できます。 たとえば、時刻を日付より前に配置する方が一部の言語や地域では自然であると思われる場合は、項目の順序を変更できます。 また、"|" を別の区切り文字に置き換えることもできます。
+`CustomDateTimeFormatString` は、リソース ファイル (.resw) でローカライズ可能なリソースを参照するリソース識別子です。 この、英語 (米国) の既定の言語の値を設定が"{0} |{1}"ことを示すコメントを"{0}"は日付と"{1}"は時間です。 このようにして、翻訳者は必要に応じて書式項目を調整できます。 たとえば、時刻を日付より前に配置する方が一部の言語や地域では自然であると思われる場合は、項目の順序を変更できます。 また、"|" を別の区切り文字に置き換えることもできます。
 
 また、この例を実装する別の方法として、2 つのフォーマッタを照会して書式パターンを検索し、それらの書式パターンを連結して、結果として生成される書式パターンから 3 つ目のフォーマッタを構築することができます。
 

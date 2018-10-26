@@ -5,16 +5,14 @@ description: カメラ バーコード スキャナーの使用方法につい�
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 861233de6967a6199bae5d81c1a3938bf8645246
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 12aabff66fc116f510dced78aa56f3df5f84c850
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976034"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559995"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>カメラ バーコード スキャナーの概要
 ## <a name="step-1-add-capability-declarations-to-your-app-manifest"></a>手順 1: アプリ マニフェストに機能宣言を追加する
@@ -88,3 +86,14 @@ Windows に付属しているデコーダーを使用するカメラ バーコ�
 
 > [!TIP]
 > アプリケーションでカメラ バーコード スキャナーのプレビューをホストする方法については、「[プレビューのホスト](pos-camerabarcode-hosting-preview.md)」を参照してください。
+
+## <a name="step-8-initiate-scan"></a>手順 8: 開始スキャン 
+[**StartSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync) を呼び出すことでスキャン プロセスを開始できます。  
+[**IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) の値に応じて、スキャナーはバーコードを 1 つだけスキャンして停止することも、[**StopSoftwareTriggerAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StopSoftwareTriggerAsync) を呼び出すまで継続的にスキャンすることもできます。
+
+[**IsDisabledOnDataReceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) を目的の値に設定することで、バーコードがデコードされたときのスキャナー動作を制御します。
+
+| 値 | 説明 |
+| ----- | ----------- |
+| True   | バーコードを 1 つだけスキャンして停止する |
+| False  | 停止せずに継続的にバーコードをスキャンする |

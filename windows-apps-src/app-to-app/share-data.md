@@ -6,16 +6,14 @@ author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d283ce0211b28f9d41e4689c978e8731c677698d
-ms.sourcegitcommit: c11e7163010cb7547aeaca96e9b90a3c3a8ef31e
-ms.translationtype: HT
+ms.openlocfilehash: 63e07e56acc8767e4acbad3688c13d75527e9c6f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2018
-ms.locfileid: "1541115"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560726"
 ---
 # <a name="share-data"></a>データの共有
 
@@ -107,5 +105,5 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 * [DataRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx)
 * [FailWithDisplayText](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx)
 * [ShowShareUi](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx)
- 
+ 
 

@@ -6,16 +6,14 @@ ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.author: wdg-dev-content
 ms.date: 12/14/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: c56bfc65e279a461d33de0e98b1a9ea51bd901cb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521579"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562679"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>受取りアカウントの設定と税関連の書類
 

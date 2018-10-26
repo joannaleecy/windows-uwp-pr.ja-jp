@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7991d4e611bc27c59f9d63b5ff1d34823f60ed60
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 72f58521e01d46437ba44453b94d12a82bb3e639
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044461"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561508"
 ---
 # <a name="texture-resources"></a>テクスチャ リソース
 
@@ -35,9 +33,9 @@ Direct3D は、テクスチャ ステージの概念による複数のテクス�
 
 [テクスチャ](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

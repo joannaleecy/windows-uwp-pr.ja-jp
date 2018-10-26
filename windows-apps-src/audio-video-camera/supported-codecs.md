@@ -6,16 +6,14 @@ title: サポートされているコーデック
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d520437f9be9d2e2bc6fe8243c3d34b17ef2d9
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 57a604b1b3996019bcf6e39bc88c9a59a74cb51c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "303676"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562837"
 ---
 # <a name="supported-codecs"></a>サポートされているコーデック
 
@@ -30,7 +28,7 @@ ms.locfileid: "303676"
 > [!NOTE] 
 > AMR-NB のサポートが示されている場合、Server SKU ではこのコーデックがサポートされません。
 
- 
+ 
 
 ### <a name="desktop"></a>デスクトップ
 
@@ -341,7 +339,7 @@ ms.locfileid: "303676"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="mobile"></a>モバイル
 
@@ -652,7 +650,7 @@ ms.locfileid: "303676"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-x86"></a>IoT Core (x86)
 
@@ -963,7 +961,7 @@ ms.locfileid: "303676"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-arm"></a>IoT Core (ARM)
 
@@ -1274,7 +1272,7 @@ ms.locfileid: "303676"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xbox"></a>Xbox
 
@@ -1585,7 +1583,7 @@ ms.locfileid: "303676"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="video-codec--format-support"></a>ビデオのコーデックおよび形式のサポート
 
@@ -1595,7 +1593,7 @@ ms.locfileid: "303676"
 > H.265 のサポートが示されている場合、必ずしもデバイス ファミリ内のすべてのデバイスでサポートされるわけではありません。
 > MPEG-2/MPEG-1 のサポートが示されている場合、オプションの Microsoft DVD ユニバーサル Windows アプリのインストールでのみサポートされます。
 
- 
+ 
 
 ### <a name="desktop"></a>デスクトップ
 
@@ -1814,7 +1812,7 @@ ms.locfileid: "303676"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="mobile"></a>モバイル
 
@@ -2033,7 +2031,7 @@ ms.locfileid: "303676"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-x86"></a>IoT Core (x86)
 
@@ -2252,7 +2250,7 @@ ms.locfileid: "303676"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-arm"></a>IoT (ARM)
 
@@ -2471,7 +2469,7 @@ ms.locfileid: "303676"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xbox"></a>Xbox
 
@@ -2690,7 +2688,7 @@ ms.locfileid: "303676"
 </tbody>
 </table>
 
-## <a name="image-codec--format-support"></a>イメージのコーデックおよび形式のサポート 
+## <a name="image-codec--format-support"></a>イメージのコーデックおよび形式のサポート 
 
 <table>
 <colgroup>

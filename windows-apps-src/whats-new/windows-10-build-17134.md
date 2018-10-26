@@ -6,15 +6,13 @@ keywords: 新着情報, 新機能, 更新, 更新プログラム, 機能, 新規
 ms.author: quradic
 ms.date: 4/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 7b25df0a8445322ceb422fd6485f7d08c1c49a25
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5522045"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563197"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Windows 10 ビルド 17134 の開発者向け新着情報
 

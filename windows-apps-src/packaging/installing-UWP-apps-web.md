@@ -5,16 +5,14 @@ description: このセクションでは、ユーザーが直接 Web ページ�
 ms.author: lahugh
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: d0368743e3afa6e9cdb5e5ac95672430416fc824
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 98a761bf04b56d13745f2505b8d0806fc4fdf3e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1434787"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560987"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>Web ページから UWP アプリをインストールする
 
@@ -31,8 +29,11 @@ ms.locfileid: "1434787"
 このメカニズムでは、オペレーティング システムのプロトコル アクティブ化スキームにアプリ インストーラーが登録されます。 ユーザーが Web リンクをクリックすると、その Web リンクに登録されているアプリについて、ブラウザーが OS に確認します。 そのスキームが、アプリ インストーラーによって指定されたプロトコル アクティブ化スキームに一致すると、アプリ インストーラーが呼び出されます。 このメカニズムはブラウザーに依存しないことに注意してください。 この点は、サイト管理者などにとって有益です。この機能を Web ページに組み込む場合に、Web ブラウザーの相違点を考慮する必要がありません。 
 
 ### <a name="requirements-for-protocol-activation-scheme"></a>プロトコルのアクティブ化スキームの要件
-   - バイト範囲要求をサポートする Web サーバー (HTTP/1.1)
-   - アプリ パッケージが HTTP/1.1 プロトコル対応のサーバーでホストされていること   
+
+1. Web サーバーは、バイト範囲要求 (http/1.1) をサポートする必要があります。
+    - Http/1.1 プロトコルをサポートするサーバーはバイト範囲要求のサポートが必要 
+2. Web サーバーが Windows 10 アプリ パッケージのコンテンツの種類について知っておく必要があります。
+    - [Web 構成ファイル](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)の一部として、新しいコンテンツの種類を宣言する方法を示します
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>Web ページでこの機能を有効にする方法 
 アプリ開発者が独自の Web サイトでアプリ パッケージをホストする場合は、以下の手順を実行する必要があります。

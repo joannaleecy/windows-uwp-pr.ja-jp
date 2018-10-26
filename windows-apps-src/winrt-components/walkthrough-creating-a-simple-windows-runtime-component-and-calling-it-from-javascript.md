@@ -6,33 +6,32 @@ ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 381e1d264e27d2b68e644895d0b795128540a5d7
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 49b9fe0833151155b11b7d7b796e395bb6a2ca7f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246619"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564661"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>チュートリアル: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
 
 
 このチュートリアルでは、Visual Basic または C# で .NET Framework を使って、Windows ランタイム コンポーネントにパッケージ化される独自の Windows ランタイム型を作成する方法と、JavaScript を使って Windows 用にビルドされたユニバーサル Windows アプリからコンポーネントを呼び出す方法について説明します。
 
-Visual Studio では、C# または Visual Basic で作成された Windows ランタイム コンポーネントをアプリに簡単に追加し、JavaScript から呼び出すことのできる Windows ランタイム型を簡単に作成できます。 内部では、Windows ランタイム型は、ユニバーサル Windows アプリで許可されている .NET Framework の機能をすべて使用できます  (詳しくは、「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)」と「[Windows ストア アプリ用 .NET の概要](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)」をご覧ください)。外部では、型のメンバーはパラメーターと戻り値の Windows ランタイム型だけを公開できます。 ソリューションをビルドすると、Visual Studio は .NET Framework の Windows ランタイム コンポーネント プロジェクトをビルドし、Windows メタデータ (.winmd) ファイルを作成するビルド ステップを実行します。 これが、Visual Studio がアプリに含める Windows ランタイム コンポーネントです。
+Visual Studio では、C# または Visual Basic で作成された Windows ランタイム コンポーネントをアプリに簡単に追加し、JavaScript から呼び出すことのできる Windows ランタイム型を簡単に作成できます。 内部では、Windows ランタイム型は、ユニバーサル Windows アプリで許可されている .NET Framework の機能をすべて使用できます  (詳しくは、参照[は、c# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)および[.NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx))。外部では、型のメンバーは、パラメーターの Windows ランタイム型だけを公開し、値を返すできます。 ソリューションをビルドすると、Visual Studio は .NET Framework の Windows ランタイム コンポーネント プロジェクトをビルドし、Windows メタデータ (.winmd) ファイルを作成するビルド ステップを実行します。 これが、Visual Studio がアプリに含める Windows ランタイム コンポーネントです。
 
-> **注:** .NET Framework では、一般的に使用される .NET Framework の型 (プリミティブ データ型やコレクション型など) を対応する Windows ランタイム型に自動的にマップします。 .NET Framework のこれら型は、Windows ランタイム コンポーネントのパブリック インターフェイスで使用でき、対応する Windows ランタイム型としてコンポーネントのユーザーに表示されます。 「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)」をご覧ください。
+> **注:**.NET Framework は、プリミティブ データ型やコレクション型など、よく使われるいくつか .NET Framework 型を対応する Windows ランタイム型に自動的にマップします。 .NET Framework のこれら型は、Windows ランタイム コンポーネントのパブリック インターフェイスで使用でき、対応する Windows ランタイム型としてコンポーネントのユーザーに表示されます。 「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)」をご覧ください。
 
 このチュートリアルでは、次のタスクについて説明します。 JavaScript で Windows アプリを設定する最初のセクションを完了したら、任意の順序で残りのセクションに進むことができます。
 
 ## <a name="prerequisites"></a>前提条件:
 
--   Windows 10
--   Microsoft Visual Studio 2015 または Microsoft Visual Studio Community 2015
+-   Windows10
+-   Microsoft Visual Studio2015 または Microsoft Visual Studio Community2015
 
 ## <a name="creating-a-simple-windows-runtime-class"></a>単純な Windows ランタイム クラスの作成
 
@@ -100,14 +99,14 @@ function basics2() {
 
 各メンバー名の最初の文字が大文字から小文字に変更されていることに注意してください。 この変換は、Windows ランタイムの自然な使い方を可能にするために JavaScript が提供するサポートの一部です。 名前空間とクラス名は pascal 規約に従って大文字小文字が使い分けられます。 すべて小文字のイベント名を除き、メンバー名は camel 規約に従っています。 「[JavaScript での Windows ランタイムの使用](https://msdn.microsoft.com/library/hh710230.aspx)」をご覧ください。 camel 規約の規則はわかりにくい場合があります。 通常、一連の先頭の大文字は小文字で表示されますが、3 つの大文字の後に小文字が続く場合は、最初の 2 つの文字だけが小文字で表示されます。たとえば、IDStringKind という名前のメンバーは idStringKind と表示されます。 Visual Studio では、Windows ランタイム コンポーネント プロジェクトをビルドし、JavaScript プロジェクトで IntelliSense を使って正しい大文字小文字の区別を確認できます。
 
-同様に、.NET Framework は、マネージ コードでの Windows ランタイムの自然な使い方を可能にするためのサポートを提供します。 これについては、この記事の以降のセクションと、「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)」および「[Windows ストア アプリおよび Windows ランタイムのための .NET Framework サポート](https://msdn.microsoft.com/library/hh694558.aspx)」をご覧ください。
+同様に、.NET Framework は、マネージ コードでの Windows ランタイムの自然な使い方を可能にするためのサポートを提供します。 これは、記事では、 [c# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)および[UWP アプリと Windows ランタイムの .NET Framework のサポート](https://msdn.microsoft.com/library/hh694558.aspx)と、この記事の以降のセクションで説明します。
 
 ## <a name="create-a-simple-user-interface"></a>単純なユーザー インターフェイスを作成する
 
 
 JavaScript プロジェクトで、default.html ファイルを開き、次のコードに示すように本文を更新します。 このコードには、サンプル アプリのコントロールの完全なセットが含まれています。また、クリック イベントの関数名も指定されています。
 
-> **注:** アプリを初めて実行するときは、Basics1 ボタンと Basics2 ボタンだけがサポートされています。
+> **注:** Basics1 と Basics2 ボタンだけがサポートされているアプリを初めて実行するとします。
 
 ```html
 <body>
@@ -184,9 +183,9 @@ Visual Studio では、まずクラス ライブラリをコンパイルし、[W
 
 [Basics 2] ボタンをクリックして SampleProperty プロパティの値を増やし、新しい値を出力領域に表示します。 文字列や数値などのプリミティブ型は、パラメーターの型や戻り値の型として使用でき、マネージ コードと JavaScript の間で渡すことができます。 JavaScript の数値は倍精度浮動小数点形式で保存されるため、.NET Framework の数値型に変換されます。
 
-> **注:** 既定では、ブレークポイントは JavaScript コードでのみ設定できます。 Visual Basic または C# のコードをデバッグするときは、「C# および Visual Basic での Windows ランタイム コンポーネントの作成」をご覧ください。
+> **注:** 既定では、JavaScript コードでのみブレークポイントを設定することができます。 Visual Basic または C# のコードをデバッグするときは、「C# および Visual Basic での Windows ランタイム コンポーネントの作成」をご覧ください。
 
- 
+ 
 
 デバッグを停止してアプリを閉じるには、アプリから Visual Studio に切り替え、Shift キーを押しながら F5 キーを押します。
 
@@ -195,9 +194,9 @@ Visual Studio では、まずクラス ライブラリをコンパイルし、[W
 
 Windows ランタイムは、JavaScript またはマネージ コードから呼び出すことができます。 Windows ランタイム オブジェクトはこの 2 つの間で受け渡すことができ、イベントはどちらの側からでも処理できます。 ただし、JavaScript と .NET Framework では Windows ランタイムをサポートする方法が異なるため、この 2 つの環境での Windows ランタイム型の使用方法は細部が異なります。 次の例では、[Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.propertyset.aspx) クラスを使用して、これらの違いを示します。 この例では、マネージ コードで PropertySet コレクションのインスタンスを作成し、コレクションの変更を追跡するイベント ハンドラーを登録します。 次に、コレクションを取得し、独自のイベント ハンドラーを登録して、コレクションを使用する JavaScript コードを追加します。 最後に、マネージ コードからコレクションに変更を加え、マネージ例外を処理する JavaScript を示すメソッドを追加します。
 
-> **重要:** この例では、UI スレッドでイベントを発生させます。 非同期呼び出しなどでバックグラウンド スレッドからイベントを発生させる場合は、JavaScript がそのイベントを処理できるように、追加の作業が必要になります。 詳しくは、「[Windows ランタイム コンポーネントでのイベントの発生](raising-events-in-windows-runtime-components.md)」をご覧ください。
+> **重要な**この例では UI スレッドでイベントを発生させますです。 非同期呼び出しなどでバックグラウンド スレッドからイベントを発生させる場合は、JavaScript がそのイベントを処理できるように、追加の作業が必要になります。 詳しくは、「[Windows ランタイム コンポーネントでのイベントの発生](raising-events-in-windows-runtime-components.md)」をご覧ください。
 
- 
+ 
 
 SampleComponent プロジェクトで、PropertySetStats という名前の新しい **public sealed** クラス (Visual Basic では **Public NotInheritable** クラス) を追加します。 このクラスは、PropertySet コレクションをラップし、MapChanged イベントを処理します。 イベント ハンドラーは発生した各種変更の数を追跡し、DisplayStats メソッドは HTML 形式のレポートを生成します。 追加の **using** ステートメント (Visual Basic では **Imports** ステートメント) に注意してください。このステートメントで既存の **using** ステートメントを上書きするのではなく、このステートメントを既存の using ステートメントに追加する必要があります。
 
@@ -271,7 +270,7 @@ SampleComponent プロジェクトで、PropertySetStats という名前の新�
 > End Class
 > ```
 
-イベント ハンドラーは使い慣れた .NET Framework のイベント パターンに従いますが、イベントの送信元 (この例では PropertySet オブジェクト) が、Windows ランタイム インターフェイス [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx) をインスタンス化したものである IObservableMap&lt;string, object&gt; インターフェイス (Visual Basic では IObservableMap(Of String, Object)) にキャストされる点が異なります (必要に応じて、送信元をその型にキャストできます)。また、イベント引数は、オブジェクトとしてではなくインターフェイスとして示されます。
+イベント ハンドラー (この場合は、PropertySet オブジェクト) のイベントのセンダーは、IObservableMap にキャストされる点を除けば、使い慣れた .NET Framework のイベントのパターンに依存して&lt;文字列オブジェクト、&gt;インターフェイス (IObservableMap (文字列のオブジェクト) でVisual Basic)、これは、Windows ランタイム インターフェイスのインスタンス化[IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx)します。 (必要に応じてその型に送信者をキャストにできます。)また、イベント引数は、オブジェクトではなくインターフェイスとして表示されます。
 
 default.js ファイルで、次のように runtime1 関数を追加します。 このコードでは、PropertySetStats オブジェクトを作成し、PropertySet コレクションを取得します。また、独自のイベント ハンドラーである onMapChanged 関数を追加して、MapChanged イベントを処理します。 コレクションの変更後、runtime1 は DisplayStats メソッドを呼び出して、変更の種類の概要を表示します。
 
@@ -376,7 +375,7 @@ runtimeButton2.addEventListener("click", runtime2, false);
 
 アプリを実行するには、F5 キーを押します。 **[Runtime 1]**、**[Runtime 2]** の順にクリックします。 JavaScript イベント ハンドラーはコレクションの最初の変更を報告します。 ただし、2 番目の変更には重複するキーがあります。 .NET Framework ディクショナリのユーザーは、Add メソッドが例外をスローすることを想定しており、実際にそのとおりになります。 JavaScript が .NET Framework の例外を処理します。
 
-> **注:** JavaScript コードから例外のメッセージを表示することはできません。 メッセージ テキストはスタック トレースに置き換えられます。 詳しくは、「C# および Visual Basic での Windows ランタイム コンポーネントの作成」の「例外のスロー」をご覧ください。
+> **注:** JavaScript コードからの例外のメッセージを表示することはできません。 メッセージ テキストはスタック トレースに置き換えられます。 詳しくは、「C# および Visual Basic での Windows ランタイム コンポーネントの作成」の「例外のスロー」をご覧ください。
 
 一方、JavaScript が重複するキーで insert メソッドを呼び出したときには、項目の値が変更されました。 「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)」に記載されているように、動作のこの違いは、JavaScript と .NET Framework で Windows ランタイムをサポートする方法が異なることに起因しています。
 
@@ -414,9 +413,9 @@ runtimeButton2.addEventListener("click", runtime2, false);
 
 ディクショナリは、[Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx) によって実装され、Windows ランタイム インターフェイスにマップされるインターフェイスとして返される必要があることに注意してください。 この例では、インターフェイスは IDictionary&lt;int, string&gt; (Visual Basic では IDictionary(Of Integer, String)) です。 Windows ランタイム型の IMap&lt;int, string&gt; がマネージ コードに渡されると、IDictionary&lt;int, string&gt; として表示され、マネージ型が JavaScript に渡されると、この逆になります。
 
-**重要:** マネージ型が複数のインターフェイスを実装している場合、JavaScript はリストの最初に表示されるインターフェイスを使用します。 たとえば、Dictionary&lt;int, string&gt; を JavaScript コードに返した場合、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表示されます。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
+**重要な**マネージ型が複数のインターフェイスを実装する場合は、JavaScript はリストの最初に表示されるインターフェイスです。 たとえば、Dictionary&lt;int, string&gt; を JavaScript コードに返した場合、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表示されます。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
 
- 
+ 
 
 新しいメソッドをテストしてディクショナリを使用するには、returns1 関数と returns2 関数を default.js に追加します。
 
@@ -473,7 +472,7 @@ JavaScript は厳密に型指定された言語ではないため、厳密に型
 
 予期しない動作がもう 1 つあります。未割り当ての JavaScript 変数を文字列引数として渡すと、"undefined" という文字列が返されます。 つまり、.NET Framework のコレクション型を JavaScript コードに渡すときには注意が必要です。
 
-> **注:** 大量のテキストを連結する場合は、showMap 関数に示すように、コードを .NET Framework メソッドに移動し、StringBuilder クラスを使うことで、この連結をより効率的に実行できます。
+> **注:** 大量のテキストを連結する場合は、ためより効率的に .NET Framework メソッドにコードを移動し、StringBuilder クラスを使用して、showMap 関数に示すようにします。
 
 Windows ランタイム コンポーネントから独自のジェネリック型を公開することはできませんが、次のようなコードを使って Windows ランタイム クラスの .NET Framework ジェネリック コレクションを返すことができます。
 
@@ -675,7 +674,7 @@ GetPrimesInRangeAsync は非常にシンプルな素数ファインダーであ�
     -   [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) オブジェクトは、返された結果の処理、キャンセルへの対応、進行状況レポートの処理を行う関数を提供します。
     -   AsyncInfo.Run メソッドは、キャンセル ソースと、IProgress&lt;T&gt; インターフェイスを実装するオブジェクトを作成します。 デリゲートに対して、キャンセル ソースからの [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx) トークンと、[IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) インターフェイスの両方を渡します。
 
-        > **注:** Promise オブジェクトが取り消し機能に対応する関数を提供しない場合、AsyncInfo.Run は引き続き取り消し可能なトークンを渡し、取り消しが引き続き発生する可能性があります。 Promise オブジェクトが進行状況の更新を処理する関数を提供しない場合、AsyncInfo.Run は IProgress&lt;T&gt; を実装するオブジェクトを引き続き提供しますが、レポートは無視されます。
+        > **注:** Promise オブジェクトが取り消しに対応する関数を提供しないかどうか、AsyncInfo.Run は引き続き取り消し可能なトークンを渡しおよび取り消しが発生します。 Promise オブジェクトが進行状況の更新を処理する関数を提供しない場合、AsyncInfo.Run は IProgress&lt;T&gt; を実装するオブジェクトを引き続き提供しますが、レポートは無視されます。
 
     -   デリゲートは [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) メソッドを使って、トークンと進行状況インターフェイスを使う開始タスクを作成します。 開始タスクのデリゲートは、目的の結果を計算するラムダ関数によって提供されます。 この詳細については後述します。
     -   AsyncInfo.Run メソッドは、[IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) インターフェイスを実装するオブジェクトを作成し、Windows ランタイムのキャンセル メカニズムをトークン ソースに関連付け、Promise オブジェクトの進行状況レポート関数を IProgress&lt;T&gt; インターフェイスに関連付けます。
@@ -738,6 +737,6 @@ asyncCancel 関数は、WinJS.Promise オブジェクトの cancel メソッド�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Windows ストア アプリ用 .NET の概要](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [UWP アプリの概要の .NET](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [UWP アプリの .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [チュートリアル: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

@@ -6,16 +6,14 @@ description: データ バインディングは、モデル-ビュー-ビュー�
 ms.author: karler
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eda370db8b68232066052cca3d0abfa6e3876167
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 8a70603c26c7123af50fc920d327ccef332b7ed6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5520527"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560005"
 ---
 # <a name="data-binding-and-mvvm"></a>データ バインディングと MVVM
 

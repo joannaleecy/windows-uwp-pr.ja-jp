@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bbcdd17643f64ada02ff1045e57c873f40b2c36
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: c48b7b007c1af1eaf6013d5f6e99468713d50745
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044691"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562273"
 ---
 # <a name="basic-texturing-concepts"></a>テクスチャリングの基本概念
 
@@ -36,9 +34,9 @@ Direct3D のテクスチャはビットマップであるため、どんなビ�
 
 [テクスチャ](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

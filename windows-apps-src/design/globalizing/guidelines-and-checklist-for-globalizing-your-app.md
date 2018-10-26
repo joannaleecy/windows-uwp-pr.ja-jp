@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: 288b0509a269453e89ff827ddf27eced3ecd4c75
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 177332515db26eca7cef7a7be75c5752a239a8f1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673889"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562981"
 ---
 # <a name="guidelines-for-globalization"></a>グローバリゼーションのガイドライン
 
@@ -39,7 +37,7 @@ ms.locfileid: "1673889"
 | テキストとフォントを正しく表示する。 | テキストに適したフォント、フォント サイズ、方向は、市場によって異なります。 詳細については、「[**レイアウトやフォントの調整と RTL のサポート**](adjust-layout-and-fonts--and-support-rtl.md)」および「[国際フォント](loc-international-fonts.md)」を参照してください。 |
 
 ## <a name="important-apis"></a>重要な API
- 
+ 
 * [Globalization](/uwp/api/Windows.Globalization?branch=live)
 * [GeographicRegion.CurrenciesInUse](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
 * [Language.CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)

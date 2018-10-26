@@ -2,23 +2,21 @@
 author: muhsinking
 title: アダプティブ レイアウトの作成のチュートリアル
 description: この記事では、XAML のアダプティブ レイアウトの基本について説明します。
-keywords: XAML, UWP, 概要
+keywords: XAML、UWP、概要
 ms.author: mukin
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fee97ecefd2d0c0694bd50ef7255488f3fb567f3
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: 000aa2d8f3684aa813b85076d9124a87a71b6a8c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1639975"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563303"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>チュートリアル: アダプティブ レイアウトの作成
 
-このチュートリアルでは、XAML のアダプティブなカスタム レイアウト機能の基本的な使い方について説明します。このレイアウト機能を使用すると、どのようなデバイスでもそのデバイス用に最適化されたアプリを作成できます。 新しい DataTemplate を作成する方法、ウィンドウ スナップ位置を追加する方法、VisualStateManager 要素および AdaptiveTrigger 要素を使用してアプリのレイアウトをカスタマイズする方法を学習します。 ここでは、これらのツールを使用して、より小さなデバイス画面向けにイメージ編集プログラムをカスタマイズします。 
+このチュートリアルでは、XAML のアダプティブなカスタム レイアウト機能の基本的な使い方について説明します。このレイアウト機能を使用すると、どのようなデバイスでもそのデバイス用に最適化されたアプリを作成できます。 新しい DataTemplate を作成する方法、ウィンドウ スナップ位置を追加する方法、VisualStateManager 要素および AdaptiveTrigger 要素を使用してアプリのレイアウトをカスタマイズする方法を学習します。 ここでは、これらのツールを使用して、より小さなデバイス画面向けにイメージ編集プログラムを最適化します。 
 
 作業するイメージ編集プログラムには、次の 2 つのページ/画面があります。
 
@@ -40,7 +38,7 @@ ms.locfileid: "1639975"
 
 このチュートリアルでは、PhotoLab サンプルの簡易バージョンから開始します。 
 
-1. [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) にアクセスします。 これで、サンプルの GitHub ページが表示されます。 
+1. 移動[https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)します。 これで、サンプルの GitHub ページが表示されます。 
 2. 次に、サンプルを複製またはダウンロードする必要があります。 **[Clone or download]** (複製またはダウンロード) ボタンをクリックします。 サブメニューが表示されます。
     <figure>
         <img src="../basics/images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
@@ -50,7 +48,7 @@ ms.locfileid: "1639975"
     **GitHub に慣れていない場合:**
     
     a.  **[Download ZIP]** (ZIP をダウンロード) をクリックし、ファイルをローカルに保存します。 これで、必要なすべてのプロジェクト ファイルを含む .zip ファイルがダウンロードされます。
-    b.  ファイルを展開します。 エクスプローラーを使用して、ダウンロードした .zip ファイルに移動し、ファイルを右クリックして **[すべて展開]** を選択します。.c  サンプルのローカル コピーに移動し、`Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` ディレクトリに移動します。    
+    b.  ファイルを展開します。 エクスプローラーを使用して、ダウンロードした .zip ファイルに移動し、ファイルを右クリックして **[すべて展開]** を選択します。c. サンプルのローカル コピーに移動し、`Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` ディレクトリに移動します。    
 
     **GitHub に慣れている場合:**
 
@@ -59,7 +57,7 @@ ms.locfileid: "1639975"
 
 3. `Photolab.sln` をクリックしてプロジェクトを開きます。
 
-## <a name="part-1-run-the-mobile-emulator"></a>パート 1: モバイル エミュレーターを実行する
+## <a name="part-1-run-the-mobile-emulator"></a>手順 1: モバイル エミュレーターを実行する
 
 Visual Studio ツールバーで、ソリューション プラットフォームを必ず x86 または x64 (ARM は不可) に設定してから、ターゲット デバイスをローカル コンピューターから変更して、インストール済みのいずれかのモバイル エミュレーター (Mobile Emulator 10.0.15063 WVGA 5 inch 1GB など) に設定します。 **F5** を押して、選択したモバイル エミュレーターで Photo Gallery アプリを実行します。
 

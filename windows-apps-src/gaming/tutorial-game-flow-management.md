@@ -6,16 +6,14 @@ ms.assetid: 6c33bf09-b46a-4bb5-8a59-ca83ce257eb3
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 57763c25d1fe9bd4f1e55aa9083e755f7f257029
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 610b794c0ded6791e93c14d8960366132afd973b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655121"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560439"
 ---
 # <a name="game-flow-management"></a>ゲームのフロー管理
 
@@ -41,7 +39,7 @@ ms.locfileid: "1655121"
 
 中断状態では、ゲーム プレイは中断されますが、ゲームのリソースはメモリに残されます。 
 
-同様に、再開イベントでは、サンプル ゲームが前回中断または終了された時点から再開されます。 サンプル ゲームが終了後に再起動されると、通常どおり開始され、その後、最後の既知の状態が判断されるため、プレイヤーはゲームの続きを即座に続行できます。
+同様に、再開イベントでは、サンプル ゲームが前回中断または終了された時点から再開されます。 サンプル ゲームが終了後に再起動されると、通常どおり開始され、その後、最後の既知の状態が判断されるため、プレーヤーはゲームの続きを即座に続行できます。
 
 状態に応じて、異なるオプションがプレイヤーに表示されます。 
 
@@ -220,7 +218,7 @@ void GameMain::Update()
 -   スコアとゲーム プレイの現在の状態に関する情報が含まれている HUD。
 -   一時停止ビットマップ。これは、ゲームの一時停止/中断状態中にテキストがオーバーレイされる黒の四角形です。 これがゲーム オーバーレイです。 これについては、「[ユーザー インターフェイスの追加](tutorial--adding-a-user-interface.md)」で詳しく説明します。
 
-当然のことながら、オーバーレイにもステート マシンがあります。 オーバーレイは、レベル開始またはゲーム オーバーのメッセージを表示できます。 これは、ゲームが一時停止または中断されたときに、プレイヤーに表示する必要があるゲームの状態に関する情報を出力するキャンバスのように機能します。
+当然のことながら、オーバーレイにもステート マシンがあります。 オーバーレイは、レベル開始またはゲーム オーバーのメッセージを表示できます。 これは、ゲームが一時停止または中断されたときに、プレーヤーに表示する必要があるゲームの状態に関する情報を出力するキャンバスのように機能します。
 
 オーバーレイのレンダリングには、ゲームの状態に応じて、6 つの画面のいずれかを指定できます。 
 1. ゲームの開始時のリソースの読み込み画面
@@ -293,7 +291,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 <td align="left">OnDpiChanged</td>
 <td align="left"><a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a> を処理します。 ディスプレイの DPI が変更されていて、それに応じてゲームそのリソースを調整します。
 <div class="alert">
-<strong>注</strong>  [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) 座標の単位は、[Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987) と同様に、DIP (デバイスに依存しないピクセル数) です。 このため、2D アセットまたはプリミティブを正しく表示するには、Direct2D に DPI の変更を通知する必要があります。
+<strong>注:</strong>[<strong>CoreWindow</strong>] (https://msdn.microsoft.com/library/windows/desktop/hh404559)座標は、 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987)の Dip (デバイスに依存しないピクセル) にします。 このため、2D アセットまたはプリミティブを正しく表示するには、Direct2D に DPI の変更を通知する必要があります。
 </div>
 <div>
 </div></td>

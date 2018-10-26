@@ -6,16 +6,14 @@ ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, セットアップ, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b1a993f16d2d9403f16c1f4cc15805b0c5f36a9
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 9100e80e0b4ac436ae872698e94fe29e5c8cab46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488916"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559628"
 ---
 # <a name="set-up-the-game-project"></a>ゲーム プロジェクトのセットアップ
 
@@ -37,7 +35,7 @@ ms.locfileid: "1488916"
 
 ### <a name="use-directx-template-to-create-a-project"></a>DirectX テンプレートを使用してプロジェクトを作成する
 
-Visual Studio テンプレートは、優先する言語および技術に基づいて、特定の種類のアプリ向けの設定とコード ファイルを集めたものです。 Microsoft Visual Studio 2017 には多くのテンプレートがあり、これらを使うと、ゲームやグラフィックス アプリを簡単に開発することができます。 テンプレートを使わない場合、基本的なグラフィックス レンダリングや表示フレームワークの大部分を自分で開発しなければならず、これは新人のゲーム開発者にとっては骨の折れる仕事となります。
+Visual Studio テンプレートは、優先する言語および技術に基づいて、特定の種類のアプリ向けの設定とコード ファイルを集めたものです。 Microsoft Visual の Studio2017 では多くのゲームやグラフィックス アプリの開発が大幅に容易になることができますテンプレートことがわかります。 テンプレートを使わない場合、基本的なグラフィックス レンダリングや表示フレームワークの大部分を自分で開発しなければならず、これは新人のゲーム開発者にとっては骨の折れる仕事となります。
 
 このチュートリアルで使用するテンプレートは、**DirectX 11 アプリ (ユニバーサル Windows)** です。 
 
@@ -155,7 +153,7 @@ void App::Run()
 | SamplePixelShader.hlsl       | Content                | 非常に基本的なピクセル シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                            |
 | SampleVertexShader.hlsl      | Content                | 非常に基本的な頂点シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                           |
 | ShaderStructures.h           | Content                | MVP 行列と頂点単位のデータを頂点シェーダーに送信するために使用できるシェーダー構造体が含まれています。  |
-| pch.h/.cpp                   | Main                   | DirectX 11 API など、Direct3D アプリで使われる API 用のすべての Windows システム インクルードが含まれます。| 
+| pch.h/.cpp                   | Main                   | DirectX 11 API など、Direct3D アプリで使われる API 用のすべての Windows システム インクルードが含まれます。| 
 
 ### <a name="next-steps"></a>次の手順
 
@@ -163,9 +161,9 @@ void App::Run()
 
 次のセクションは、「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-uwp-app-framework.md)」です。 テンプレートで提供される概念やコンポーネントの多くを、このゲームでどのように使用し、拡張しているかについて説明します。
 
- 
+ 
 
- 
+ 
 
 
 

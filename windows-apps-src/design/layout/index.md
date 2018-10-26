@@ -6,16 +6,14 @@ keywords: UWP アプリのレイアウト, ユニバーサル Windows プラッ�
 ms.author: mijacobs
 ms.date: 3/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ba6710f0517709ae0d94ae5f03b8f448f44e256
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 4dd8717b50460f5353bea67840a337a063f6603a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842369"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560624"
 ---
 # <a name="layout"></a>レイアウト
 
@@ -23,7 +21,8 @@ ms.locfileid: "1842369"
 
 次の記事は、さまざまな画面サイズ、ウィンドウ サイズ、解像度、向きで適切に表示される柔軟な UI を作成する際に役立ちます。
 
-:::row::: :::column:::
+:::row:::
+    :::column:::
         ### [Page layout](page-layout.md)
         Walk through a basic page layout structure.
     :::column-end:::
@@ -33,7 +32,8 @@ ms.locfileid: "1842369"
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column:::
+:::row:::
+    :::column:::
         ### [Responsive design techniques](responsive-design.md)
         Learn about responsive design techniques that optimize your app's layout for breakpoints.
     :::column-end:::
@@ -43,7 +43,8 @@ ms.locfileid: "1842369"
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column:::
+:::row:::
+    :::column:::
         ### [Multiple views](show-multiple-views.md)
         Show independent parts of your app in separate windows.
     :::column-end:::
@@ -53,7 +54,8 @@ ms.locfileid: "1842369"
     :::column-end:::
 :::row-end:::
 
-:::row::: :::column:::
+:::row:::
+    :::column:::
         ### [Layout panels](layout-panels.md)
         Learn about each type of layout panel an how to use them to arrange UI elements.
     :::column-end:::

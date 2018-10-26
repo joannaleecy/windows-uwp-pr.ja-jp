@@ -8,16 +8,14 @@ keywords: Surface Dial, Windows ホイール, RadialController, ラジアル コ
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: a443dd7505ce399d82cbd33c5691ec9b35a18b93
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 0a360bf936843450f5646c0e4e03ad9c3bac34d2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983699"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562392"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial の操作
 

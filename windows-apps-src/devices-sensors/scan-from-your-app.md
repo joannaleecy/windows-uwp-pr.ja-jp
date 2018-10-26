@@ -6,19 +6,17 @@ description: フラットベッド、フィーダー、自動構成の各スキ�
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: c1db020b242c43808d356076641e375cb1581ed3
-ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.localizationpriority: medium
+ms.openlocfilehash: f9128056cbb3b9218d164b243948d9dd16af0786
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2017
-ms.locfileid: "696157"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563217"
 ---
 # <a name="scan-from-your-app"></a>アプリからスキャンする
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 **重要な API**
 
@@ -28,7 +26,7 @@ ms.locfileid: "696157"
 
 フラットベッド、フィーダー、自動構成の各スキャン ソースを使ってアプリからコンテンツをスキャンする方法について説明します。
 
-**重要**  [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API はデスクトップ [デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/Dn894631) の一部です。 アプリでは、デスクトップ版の Windows 10 でのみこれらの API を使用できます。
+**重要な** [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) Api は、デスクトップ[デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/Dn894631)の一部です。 アプリでは、windows 10 のデスクトップ バージョンでのみこれらの Api を使用できます。
 
 アプリからスキャンを実行するにはまず、新しい [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを宣言し、[**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 型を取得することによって、利用できるスキャナーをリストする必要があります。 WIA ドライバーと共にインストールされているローカルのスキャナーのみがリストされ、アプリから利用することができます。
 
@@ -102,8 +100,8 @@ Windows はスキャナーを自動的には検出しません。 アプリが�
 
 既定の設定でスキャンを行う場合、アプリは、[**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 名前空間を使ってスキャナーを選び、そのソースからスキャンを実行します。 スキャンの設定は変更されません。 この場合、自動構成、フラットベッド、フィーダーのいずれかのスキャナーが選ばれます。 このタイプのスキャンは、意図しないソースからスキャンが実行されたとしても (意図したフィーダーではなくフラットベッドからスキャンされるなど) スキャン操作が正常に実行される可能性は最も高くなります。
 
-**注**  スキャンする文書をユーザーがフィーダーに置いた場合、フィーダーからではなくフラットベッドからスキャンが実行されます。 空のフィーダーからスキャンを実行した場合、スキャン ジョブからは一切、スキャンしたファイルが生成されません。
- 
+**注:** フィーダーでスキャンするドキュメントを配置して、ユーザー場合と、スキャナーが代わりに、フラット ベッドからスキャンされます。 空のフィーダーからスキャンを実行した場合、スキャン ジョブからは一切、スキャンしたファイルが生成されません。
+ 
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,
         folder).AsTask(cancellationToken.Token, progress);
@@ -113,7 +111,7 @@ Windows はスキャナーを自動的には検出しません。 アプリが�
 
 デバイスの[自動構成スキャン](https://msdn.microsoft.com/library/windows/hardware/Ff539393)を使うと、最適なスキャン設定でスキャンを実行することができます。 このオプションでは、スキャン対象のコンテンツに応じた最適なスキャン設定 (カラー モード、スキャン解像度など) をデバイスが自動的に判断します。 スキャン設定は、新しいスキャン ジョブの実行時にその都度選択されます。
 
-**注**  スキャナーによっては、この機能がサポートされない場合もあります。この機能を使う場合は、スキャナーがこの機能をサポートしているかどうかを先にチェックする必要があります。
+**注:**、アプリでこの設定を使用する前に、スキャナーがこの機能をサポートしているかを確認する必要がありますので、すべてのスキャナーがこの機能をサポートします。
 
 この例では、スキャナーが自動構成に対応しているかどうかをアプリがまずチェックしたうえで、スキャンを実行しています。 フラットベッド スキャナーまたはフィーダー スキャナーを指定する場合は、単に **AutoConfigured** を **Flatbed** または **Feeder** に置き換えます。
 

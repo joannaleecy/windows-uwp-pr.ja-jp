@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 10/18/2017
 ms.topic: landing-page
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: dbb1f6f54f618c3c3d709c57903db7f8e928627e
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 80f57ba29d31da0b4d49b620e916e39d4ef69842
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674809"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561826"
 ---
 # <a name="usability-for-uwp-apps"></a>UWP アプリの操作性
 

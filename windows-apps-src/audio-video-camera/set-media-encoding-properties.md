@@ -6,18 +6,17 @@ title: MediaCapture の形式、解像度、およびフレーム レートの�
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: cf46cefc6491178444a13917a3ce2b0ffb73c19a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: ba07f897111e27dc895aa187172841cac4b44f73
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243216"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561869"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>MediaCapture の形式、解像度、およびフレーム レートの設定
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 この記事では、[**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) インターフェイスを使用して、カメラのプレビュー ストリームとキャプチャした写真/ビデオの解像度およびフレーム レートを設定する方法を説明します。 プレビュー ストリームの縦横比をキャプチャしたメディアの縦横比と一致させる方法についても説明します。
@@ -33,8 +32,7 @@ ms.locfileid: "243216"
 
 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) インターフェイスの機能をラップする単純なヘルパー クラスを作成すると、特定の条件を満たす一連のエンコード プロパティを容易に選択できます。 特に、エンコード プロパティの機能の次のような動作に対して、このヘルパー クラスが便利です。
 
-**警告**  
-[**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) メソッドは、[**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 列挙値のメンバー (**VideoRecord**、**Photo** など) を受け取り、キャプチャした写真またはビデオの解像度などのストリーム エンコード設定を表す、[**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) オブジェクトまたは [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) オブジェクトのリストを返します。 指定された **MediaStreamType** 値に関係なく、**GetAvailableMediaStreamProperties** を呼び出した結果には、**ImageEncodingProperties** または **VideoEncodingProperties** が含まれている可能性があります。 このため、いずれかのプロパティ値にアクセスする前に、常に各戻り値の型を確認し、適切な型にキャストする必要があります。
+**警告** 、 [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994)メソッド[**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640)列挙体の**VideoRecord**や**写真**などのメンバーを受け取り、いずれかの[**の一覧を返しますImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993)またはストリームを伝える[**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217)オブジェクトがキャプチャした写真やビデオの解像度などの設定をエンコードします。 指定された **MediaStreamType** 値に関係なく、**GetAvailableMediaStreamProperties** を呼び出した結果には、**ImageEncodingProperties** または **VideoEncodingProperties** が含まれている可能性があります。 このため、いずれかのプロパティ値にアクセスする前に、常に各戻り値の型を確認し、適切な型にキャストする必要があります。
 
 次に示すヘルパー クラスでは、型の確認と [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) または [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) へのキャストを処理しています。これにより、アプリのコードでは、2 つの型を区別する必要がなくなります。 これに加えて、ヘルパー クラスは、プロパティの縦横比、フレーム レート (ビデオ エンコード プロパティの場合のみ)、アプリの UI でエンコード プロパティをわかりやすく表示するためのフレンドリ名を使用できるように、プロパティを公開します。
 
@@ -78,17 +76,16 @@ ms.locfileid: "243216"
 
 -   必要以上のピクセルがプレビュー ストリーム パイプラインを通過しないように、[**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) のサイズに最も近いプレビュー解像度を選択します。
 
-**重要**  
-デバイスによっては、カメラのプレビュー ストリームとキャプチャ ストリームで別々の縦横比を設定することも可能です。 この不一致によってフレームのトリミングが生じた場合、プレビューで表示されなかったコンテンツがキャプチャしたメディアに存在するという結果を招く可能性があり、これは否定的なユーザー エクスペリエンスにつながります。 プレビュー ストリームとキャプチャ ストリームには、微小な公差範囲内で同一の縦横比を使用することを強くお勧めします。 縦横比がほぼ一致していれば、キャプチャとプレビューにまったく異なる解像度を有効にしても問題ありません。
+**重要な**をカメラのプレビュー ストリームの縦横比が異なるを設定し、キャプチャ ストリームの一部のデバイスで変更することができます。 この不一致によってフレームのトリミングが生じた場合、プレビューで表示されなかったコンテンツがキャプチャしたメディアに存在するという結果を招く可能性があり、これは否定的なユーザー エクスペリエンスにつながります。 プレビュー ストリームとキャプチャ ストリームには、微小な公差範囲内で同一の縦横比を使用することを強くお勧めします。 縦横比がほぼ一致していれば、キャプチャとプレビューにまったく異なる解像度を有効にしても問題ありません。
 
 
 写真やビデオのキャプチャ ストリームをプレビュー ストリームの縦横比に一致させるために、この例では [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) を呼び出し、**VideoPreview** 列挙値を渡して、プレビュー ストリームの現在のストリーム プロパティを要求しています。 次に、プレビュー ストリームとまったく同じでなくても、近似値であれば、その縦横比を許容できるように、縦横比の微小な公差範囲を定義しています。 次に、プレビュー ストリームについて定義済みの公差範囲に縦横比が含まれるような **StreamPropertiesHelper** オブジェクトだけを選択できるように、Linq 拡張メソッドが使用されています。
 
 [!code-cs[MatchPreviewAspectRatio](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
 
- 
+ 
 
- 
+ 
 
 
 

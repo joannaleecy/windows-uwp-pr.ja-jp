@@ -9,16 +9,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d680ddfb1dd121d2b9763c1d8af646db6de4797
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 113acbe1f4e9bb3814b2f9b61beb79488995d3e3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494039"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563346"
 ---
 # <a name="media-player"></a>メディア プレーヤー
 
@@ -101,9 +99,9 @@ XAML で [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/wi
 ### <a name="set-the-media-source"></a>メディア ソースを設定する
 ネットワーク上のファイルまたはアプリに埋め込まれたファイルを再生する場合は、ファイルのパスを使用して [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) プロパティを [MediaSource](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) に設定します。
 
-**ヒント**  インターネットからファイルを開くには、アプリのマニフェスト (Package.appxmanifest) で **Internet (Client)** 機能を宣言する必要があります。 機能の宣言について詳しくは、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/mt270968)」をご覧ください。
+**ヒント:**、インターネットからファイルを開くには、アプリのマニフェスト (Package.appxmanifest) での**インターネット (クライアント)** 機能を宣言する必要があります。 機能の宣言について詳しくは、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/mt270968)」をご覧ください。
 
- 
+ 
 
 次のコードでは、XAML で定義した [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) の [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) プロパティを、[TextBox](https://msdn.microsoft.com/library/windows/apps/br209683) に入力したファイルのパスに設定してみます。
 

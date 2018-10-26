@@ -6,16 +6,14 @@ title: メディアの中断の作成、スケジュール、管理
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b8d25047435ece1c55a982e69be45fa0e6efb74
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 0feb7f6771254bf500e4b64fd0e632daad9817e4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843665"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560025"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a>メディアの中断の作成、スケジュール、管理
 
@@ -88,10 +86,6 @@ ms.locfileid: "1843665"
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
-## <a name="get-information-about-the-current-media-break"></a>現在のメディアの中断に関する情報の取得
-この時期で既に説明したように、[**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) プロパティを使うと、現在再生されているメディアの中断内のメディア アイテムを調べることができます。 UI を更新するため、現在再生中のアイテムを定期的にチェックできます。 必ず、最初に [**CurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.CurrentBreak) プロパティが null でないかどうかをチェックしてください。 プロパティが null の場合、現在再生中のメディアの中断はありません。
-
-[!code-cs[GetCurrentBreakItemIndex](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetGetCurrentBreakItemIndex)]
 
 ## <a name="access-the-current-playback-session"></a>現在の再生セッションへのアクセス
 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) オブジェクトは、**MediaPlayer** クラスを使って、現在再生中のメディア コンテンツに関連するデータとイベントを提供します。 [ **MediaBreakManager** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) にも、再生中のメディアの中断コンテンツに特に関連するデータとイベントを取得するためにアクセスできる **MediaPlaybackSession** があります。 再生セッションから入手できる情報には、現在の再生状態、再生中か一時停止中か、コンテンツ内の現在の再生位置などがあります。 メディアの中断コンテンツの縦横比がメイン コンテンツと異なる場合、[**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) プロパティおよび [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight) プロパティと [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) を使って、ビデオ UI を調整することができます。 アプリのパフォーマンスに関する貴重な利用統計情報を示す、[**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted)、[**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded)、[**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged) などのイベントを受け取ることもできます。
@@ -107,9 +101,9 @@ ms.locfileid: "1843665"
 * [MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)
 * [システム メディア トランスポート コントロールの手動制御](system-media-transport-controls.md)
 
- 
+ 
 
- 
+ 
 
 
 

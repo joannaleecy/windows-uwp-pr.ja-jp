@@ -6,16 +6,14 @@ ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.author: wdg-dev-content
 ms.date: 11/3/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bceb1d2cc6682698d0ad06ed4b1865f3d6510442
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: eb8958adaeb78a068ae2baad30b7bc9fa96561a2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5519137"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561350"
 ---
 # <a name="feedback-report"></a>フィードバック レポート
 

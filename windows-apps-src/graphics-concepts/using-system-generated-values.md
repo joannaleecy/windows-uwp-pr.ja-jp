@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a99cb28818cd8fc3fd9057b3df72a678c2d1aca
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9f187495568892f5b489f6e109669811f4c45ab1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044891"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561528"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>システム生成値の使用
 
@@ -68,7 +66,7 @@ IA ステージは、各プリミティブにプリミティブ ID を追加し�
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
- 
+ 
 
 トライアングル ストリップのインスタンス U には 3 つの三角形プリミティブがあり、次のシステム生成値が与えられます。
 
@@ -77,7 +75,7 @@ IA ステージは、各プリミティブにプリミティブ ID を追加し�
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 0   | 0   | 0   |
 
- 
+ 
 
 次の表に、インスタンス V のシステム生成値を示します。
 
@@ -86,7 +84,7 @@ IA ステージは、各プリミティブにプリミティブ ID を追加し�
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
- 
+ 
 
 トライアングル ストリップのインスタンス V には 3 つの三角形プリミティブがあり、次のシステム生成値が与えられます。
 
@@ -95,7 +93,7 @@ IA ステージは、各プリミティブにプリミティブ ID を追加し�
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 1   | 1   | 1   |
 
- 
+ 
 
 [入力アセンブラー (IA) ステージ](input-assembler-stage--ia-.md)では、頂点、プリミティブ、インスタンスの ID が生成されます。各インスタンスには、一意のインスタンス ID が与えられることに注意してください。 データはストリップ カットで終了し、それによってトライアングル ストリップの各インスタンスが分離されます。
 
@@ -104,9 +102,9 @@ IA ステージは、各プリミティブにプリミティブ ID を追加し�
 
 [入力アセンブラー (IA) ステージ](input-assembler-stage--ia-.md)
 
- 
+ 
 
- 
+ 
 
 
 

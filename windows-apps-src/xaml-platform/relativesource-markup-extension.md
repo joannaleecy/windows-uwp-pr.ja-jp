@@ -6,16 +6,14 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c89793dd92a458c47a33aac4f7d4c728088cf1dc
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 5bb9d241569afdbbc9df95fa11cd2261e78c077a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674359"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562728"
 ---
 # <a name="relativesource-markup-extension"></a>{RelativeSource} マークアップ拡張
 
@@ -43,7 +41,7 @@ ms.locfileid: "1674359"
 | 用語 | 説明 |
 |------|-------------|
 | {RelativeSource Self} | <strong>Self</strong> の [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) 値を生成します。 ターゲット要素をこのバインドのソースとして使う必要があります。 要素の 1 つのプロパティを同じ要素の別のプロパティにバインドする場合に便利です。 |
-| {RelativeSource TemplatedParent} | このバインドのソースとして適用される [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391) を生成します。 ランタイム情報をテンプレート レベルでバインドに適用する場合に便利です。 | 
+| {RelativeSource TemplatedParent} | このバインドのソースとして適用される [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391) を生成します。 ランタイム情報をテンプレート レベルでバインドに適用する場合に便利です。 | 
 
 ## <a name="remarks"></a>注釈
 
@@ -64,7 +62,7 @@ ms.locfileid: "1674359"
 
 オブジェクトの [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) を自分自身に設定する方法として `RelativeSource={RelativeSource Self}` を使うこともできます。  たとえば、独自のデータ バインドのために準備の完了したビュー モデルを既に提供しているカスタム プロパティによって [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラスが拡張されている SDK のサンプルで、この技法を確認できます。 `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**注**  XAML での **RelativeSource** の使用法には、意図されている使用法、つまり、バインド式の一部として XAML で [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) の値を設定する方法のみが示されています。 ただし、値が [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) のプロパティを設定する場合は、理論的にそれ以外の使用法も可能です。
+**注:** **RelativeSource**の XAML の使用量が意図されている使用法のみを示しています。 バインド式の一部として XAML で[**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)の値を設定します。 ただし、値が [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) のプロパティを設定する場合は、理論的にそれ以外の使用法も可能です。
 
 ## <a name="related-topics"></a>関連トピック
 

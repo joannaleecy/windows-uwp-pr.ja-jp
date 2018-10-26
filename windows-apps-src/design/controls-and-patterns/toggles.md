@@ -8,20 +8,18 @@ template: detail.hbs
 ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 796ee4ffaa551c23286110ec7164f511655d6017
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: d166e872af0824c9eb5df15510f9597d0303f483
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468926"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560015"
 ---
 # <a name="toggle-switches"></a>トグル スイッチ
 
@@ -71,7 +69,7 @@ ms.locfileid: "5468926"
 - 変更を有効にするためにユーザーが追加の手順を実行する必要があるときは、チェック ボックスを使います。 たとえば、ユーザーが [送信] や [次へ] などのボタンをクリックして変更を適用する必要がある場合は、チェック ボックスを使います。
 - 1 つの設定または機能に関連する複数の項目をユーザーが選択できるようにする場合、チェック ボックスを使います。
 
-## <a name="toggle-switches-in-the-windows-ui"></a>Windows UI 内のスイッチを切り替えます。
+## <a name="toggle-switches-in-the-windows-ui"></a>Windows UI のトグル スイッチ
 
 以下の画像に、Windows UI でのトグル スイッチの使用例を示します。 次に示すのは、スマート ストレージ設定画面でのトグル スイッチの使用例です。
 

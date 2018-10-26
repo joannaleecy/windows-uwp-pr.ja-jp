@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a8c909a64ec0f9a92eeea91761946742266dcfc
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 0486fbab829b7c4ce501f9ac20dac97e6abef595
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395761"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560223"
 ---
 # <a name="create-custom-transport-controls"></a>カスタム トランスポート コントロールを作成する
 

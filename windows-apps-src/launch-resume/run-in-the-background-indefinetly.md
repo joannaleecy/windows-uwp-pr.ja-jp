@@ -7,15 +7,13 @@ keywords: バック グラウンド タスク、延長実行セッション, リ
 ms.author: twhitney
 ms.date: 10/3/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: af0f7670f2b131671ce82708d2b0a826db0fcfb1
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: eb6e0735620c4a940d3414f22aaa4f09bb608424
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521932"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561879"
 ---
 # <a name="run-in-the-background-indefinitely"></a>バックグラウンドで無期限に実行する
 

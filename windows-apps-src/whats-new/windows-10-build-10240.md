@@ -1,27 +1,25 @@
 ---
 author: QuinnRadich
-Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
-title: Windows 10 ビルド 10240 の新着情報 - 2015 年 7 月
+Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
+title: Windows 10 ビルド 10240 - 2015 年 7 月の新機能
 keywords: 新着情報, 新機能, 更新, 更新プログラム, 機能, 新規, Windows 10, 1507, 10240
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: c5d3a9cf8a3281e7cd1f7efa460f13f8a17b10bb
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: c38fe989bd854d44bb7dc3c0cba36a4ae145854c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1397141"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564237"
 ---
-# <a name="whats-new-in-windows-10-for-developers-build-10240"></a>Windows 10 ビルド 10240 の開発者向け新着情報
+# <a name="whats-new-in-windows10-for-developers-build-10240"></a>Windows 10 開発者向け新については、ビルド 10240
 
-Windows 10 ビルド 10240 と更新された SDK では、優れたユニバーサル Windows プラットフォーム アプリを作るためツール、機能、エクスペリエンスを利用できます。 Windows 10 への[ツールと SDK のインストール](http://go.microsoft.com/fwlink/?LinkId=821431)が完了したら、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)をどのように使用できるかを試したりすることができます。
+Windows 10 ビルド 10240 と更新された SDK では、優れたユニバーサル Windows プラットフォーム アプリを作るためツール、機能、エクスペリエンスを利用できます。 Windows 10 への[ツールと SDK のインストール](http://go.microsoft.com/fwlink/?LinkId=821431)が完了したら、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)を試したりすることができます。
 
-以下では、Windows 10 ビルド 10240 (Windows 10 バージョン 1507 とも呼ばれます) の新機能をそれぞれ見ていきます。
+Windows 10 ビルド 10240 (Windows 10 バージョン 1507 とも呼ばれます) の新機能によって確認を次に示します。
 
 ## <a name="adaptive-layouts"></a>アダプティブ レイアウト
 
@@ -188,7 +186,7 @@ Visual Studio のライブ ビジュアル ツリー機能 | Visual Studio に�
 
 機能 | 説明
  :---- | :----
-Microsoft Edge | Microsoft Edge は、Windows 10 用にビルドされた新しい既定のブラウザーです。 最新の JavaScript 機能など、Microsoft Edge に含まれている開発者向けの機能と標準の概要について詳しくは、「[Microsoft Edge Developer Guide](https://developer.microsoft.com/microsoft-edge/platform/documentation/dev-guide/)」(Microsoft Edge 開発者向けガイド)をご覧ください。
+Microsoft Edge | Microsoft Edge は、Windows 10 用にビルドされた新しい既定のブラウザーです。 最新の JavaScript 機能など、Microsoft Edge に含まれている開発者向けの機能と標準の概要について詳しくは、[Microsoft Edge 開発者向けガイド](https://developer.microsoft.com/microsoft-edge/platform/documentation/dev-guide/)をご覧ください。
 WebView による閲覧 | [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) コントロールは、新しい Microsoft Edge ブラウザーと同じレンダリング エンジンを使います。 これにより、最も正確な、HTML 規格に準拠したモードでレンダリングを実行できます。
 オフ スレッド WebView | [WebView.ExecutionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.executionmode.aspx) を指定することで、Web コンテンツの処理と表示を別々のバック グラウンド スレッドで実行できます。 これにより、特定のシナリオでパフォーマンスを改善することができます。
 WebView.UnsupportedUriSchemeIdentified イベント | 新しい [WebView.UnsupportedUriSchemeIdentified](https://msdn.microsoft.com//library/windows/apps/windows.ui.xaml.controls.webview.unsupportedurischemeidentified.aspx) イベントを使用して、アプリにおけるサポートされない URI スキームの処理方法を指定できます。 このイベントを処理することで、サポートされない URI スキームのカスタム処理をアプリで実行することができます。 HTML WebView コントロールについては、[MSWebViewUnsupportedUriSchemeIdentified](https://msdn.microsoft.com/library/windows/apps/dn803906.aspx) イベントの説明をご覧ください。

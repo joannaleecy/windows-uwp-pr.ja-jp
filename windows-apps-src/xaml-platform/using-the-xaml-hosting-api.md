@@ -5,16 +5,14 @@ title: デスクトップ アプリケーションで API をホストしてい�
 ms.author: mcleans
 ms.date: 09/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp, windows forms, wpf
 keywords: windows 10、uwp、windows フォーム、wpf、win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 5803646c3b613a5a57992a9791215138cf996966
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 2ba64e32a25feaee9245bbfe2b598c756b29df98
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474026"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562243"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>デスクトップ アプリケーションで API をホストしている UWP XAML を使う
 
@@ -61,7 +59,7 @@ API をホストしている UWP XAML では、これらの前提条件があり
 
     * **C++ Win32:** 使用するプロジェクトを構成することをお勧めします[、C++/WinRT](../cpp-and-winrt-apis/index.md)します。 ダウンロードし、インストール、 [、C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)から Visual Studio Marketplace し、追加、 ```<CppWinRTEnabled>true</CppWinRTEnabled>``` .vcxproj ファイルとして記述[は、ここ](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)にプロパティ。
 
-    * **Windows フォーム、WPF:**[次の手順](../porting/desktop-to-uwp-enhance.md#modify-a-net-project-to-use-uwp-apis)に従います。
+    * **Windows フォーム、WPF:**[次の手順](../porting/desktop-to-uwp-enhance.md)に従います。
 
 ## <a name="architecture-of-xaml-islands"></a>XAML 諸島のアーキテクチャ
 

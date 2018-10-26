@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c70293960947070a0a6b94d7a63fd55f503c8e18
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 70380dd0bd07cfe0c81e8339f8606029663b47d4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045071"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562853"
 ---
 # <a name="bc7-format"></a>BC7 形式
 
@@ -65,7 +63,7 @@ BC7 ブロックには、複数のエンドポイントのペアを含むこと�
 | 色とアルファの組み合わせ    | 必須  | なし           | なし                | オプション       | 必須             | オプション | 必須           |
 | 色とアルファが別々 | 必須  | 必須      | オプション           | なし            | 必須             | なし      | 必須           |
 
- 
+ 
 
 BC7 は、2 つのエンドポイント間の近似線上に色のパレットを定義します。 モード値によって、ブロックごとのエンドポイント ペアの補間の数が決まります。 BC7 はテクセルごとに 1 つのパレット インデックスを格納します。
 
@@ -356,9 +354,9 @@ BC7 では、次のいずれかの方法でアルファ成分をエンコード�
 
 [テクスチャのブロック圧縮](texture-block-compression.md)
 
- 
+ 
 
- 
+ 
 
 
 

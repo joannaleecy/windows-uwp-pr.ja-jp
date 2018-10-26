@@ -5,17 +5,15 @@ author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, セキュリティ
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: ac2e29d5219809058edee2d7a92c2e2475d9752e
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 1bf1ae02a1c1937c02b6c750872dc784d28cd8e0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521047"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562945"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Windows Hello コンパニオン (IoT) デバイスを使った Windows のロック解除
 

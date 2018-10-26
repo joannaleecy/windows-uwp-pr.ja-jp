@@ -9,15 +9,13 @@ keywords: スピーチ, 音声, 音声認識, 自然言語, ディクテーシ�
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bdbe841e486a5024c594b1458e3beb57e228e1d
-ms.sourcegitcommit: db09dcb08da5995c46c2729896e56be3774ee5ba
-ms.translationtype: HT
+ms.openlocfilehash: 4006cdedffdbc601b498ce64caddfdefcbf4877a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "1554248"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564188"
 ---
 # <a name="speech-interactions"></a>音声操作
 
@@ -32,7 +30,7 @@ Windows アプリケーションの **Cortana** ではカスタマイズした�
 
 ## <a name="speech-interaction-design"></a>音声操作の設計
 
-音声操作を十分に考慮して設計し実装することにより、音声操作は、ユーザーがアプリを操作する場合に信頼性が高く使いやすい手段となります。また、音声操作によってキーボード、マウス、タッチ、ジェスチャを保管したり、これらの代わりに音声操作を使うこともできます。
+音声機能が適切に設計され、実装されていると、ユーザーがアプリを楽しく確実に操作できる手段になります。音声機能によって、キーボード、マウス、タッチ、ジェスチャを補完することも、場合によってはこれらの代替として使うこともできます。
 
 次のガイドラインと推奨事項では、最適な形で音声認識と TTS をアプリの操作エクスペリエンスに統合する方法について説明します。
 
@@ -214,7 +212,7 @@ TTS では、プレーンテキストまたは SSML から音声出力が生成�
 | [音声認識エンジンの言語の指定](specify-the-speech-recognizer-language.md) | 音声認識に使われるインストール済みの言語を選ぶ方法について説明します。 |
 | [カスタム認識の制約の定義](define-custom-recognition-constraints.md) | 音声認識のカスタム制約を定義して使う方法について説明します。 |
 | [継続的なディクテーションの有効化](enable-continuous-dictation.md) |長い形式の継続的なディクテーション音声入力をキャプチャし、認識する方法について説明します。 |
-| [オーディオ入力の問題の管理](manage-issues-with-audio-input.md) | オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。 |
+| [音声入力の問題の管理](manage-issues-with-audio-input.md) | オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。 |
 | [音声認識のタイムアウトの設定](set-speech-recognition-timeouts.md) | 音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。 |
 
 ## <a name="related-articles"></a>関連記事
@@ -222,12 +220,12 @@ TTS では、プレーンテキストまたは SSML から音声出力が生成�
 * [音声操作](https://msdn.microsoft.com/library/windows/apps/mt185614)
 * [Cortana の操作](https://msdn.microsoft.com/library/windows/apps/mt185598)
 
- **サンプル**
+ **サンプル**
 
 * [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

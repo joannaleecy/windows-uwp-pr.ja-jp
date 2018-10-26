@@ -5,17 +5,15 @@ description: このチュートリアルでは、Windows 10 で GPIO、I2C、SPI
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: acpi
 keywords: windows 10, UWP, ACPI, GPIO, I2C, SPI, UEFI
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: b6a8877d2991f953853339ac8fea3efad6d735c6
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.openlocfilehash: 09957c19414f586a49a1a2cb9186aa027dc1de07
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2018
-ms.locfileid: "1618427"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560571"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>GPIO、I2C、SPI へのユーザー モード アクセスの有効化
 
@@ -740,7 +738,7 @@ devcon status *msft8000
 
 rhproxy が実行されると、ユーザー モードからアクセスできるデバイス インターフェイスが作成されています。 いくつかのコマンド ライン ツールを使用してデバイスを列挙し、デバイスが存在していることを確認します。
 
-[https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) リポジトリを複製し、`GpioTestTool`、`I2cTestTool`、`SpiTestTool`、および `Mincomm` サンプルをビルドします。 テスト対象デバイスにツールをコピーし、次のコマンドを使用してデバイスを列挙します。
+複製、[https://github.com/ms-iot/samples](https://github.com/ms-iot/samples)リポジトリとビルド、 `GpioTestTool`、 `I2cTestTool`、 `SpiTestTool`、および`Mincomm`サンプルです。 テスト対象デバイスにツールをコピーし、次のコマンドを使用してデバイスを列挙します。
 ```
 I2cTestTool.exe -list
 SpiTestTool.exe -list
@@ -797,7 +795,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 | IoT-SPI | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-SPI |
 | CustomSerialDeviceAccess | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomSerialDeviceAccess |
 
-### <a name="run-the-hlk-tests"></a>HLK テストを実行する
+### <a name="run-the-hlk-tests"></a>HLK テストの実行
 
 [Hardware Lab Kit (HLK)](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit) をダウンロードします。 以下のテストが用意されています。
  * [GPIO WinRT 機能とストレス テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
@@ -824,7 +822,7 @@ HLK マネージャーで、[Resource Hub Proxy device] を選択します。
 
 ## <a name="resources"></a>リソース
 
-| ターゲット | リンク |
+| 移動先 | リンク |
 |-------------|------|
 | ACPI 5.0 の仕様 | http://acpi.info/spec.htm |
 | Asl.exe (Microsoft ASL Compiler) | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
@@ -847,7 +845,7 @@ HLK マネージャーで、[Resource Hub Proxy device] を選択します。
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>付録 A - Raspberry Pi ASL の一覧
 
-ヘッダーのピン配列: https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
+ヘッダーのピン配列:https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1009,7 +1007,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### <a name="appendix-b---minnowboardmax-asl-listing"></a>付録 B - MinnowBoardMax ASL の一覧
 
-ヘッダーのピン配列: https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
+ヘッダーのピン配列:https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)

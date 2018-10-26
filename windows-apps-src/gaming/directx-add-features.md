@@ -6,16 +6,14 @@ ms.assetid: 78e17048-a4a5-47d3-b250-19375b6f186c
 ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX, XAML, 画面の向き, 入力
 ms.localizationpriority: medium
-ms.openlocfilehash: 35e86c8b9c3aebdea558d9aebb118715db1c23a5
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: be3f8e57a592512335a826c142876d1ff3c53e5b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652761"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560322"
 ---
 # <a name="add-features-to-directx-games"></a>DirectX ゲームへの機能の追加
 

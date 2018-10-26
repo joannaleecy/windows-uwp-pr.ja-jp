@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: abff26c7f2e874d4a5e8e964fe716fcf2f1592cb
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: be88f06cd5893f2f67697a54754826440bdf7d18
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045095"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563867"
 ---
 # <a name="bc6h-format"></a>BC6H 形式
 
@@ -34,15 +32,15 @@ BC6H は、次の DXGI \ _FORMAT 列挙値によって指定されます。
 -   **DXGI\_FORMAT\_BC6H\_UF16**。 この BC6H 形式は、16 ビット浮動小数点カラー チャネル値の符号ビットを使用しません。
 -   **DXGI\_FORMAT\_BC6H\_SF16**。 この BC6H 形式は、16 ビット浮動小数点カラー チャネル値の符号ビットを使用します。
 
-**注:** カラー チャネルの 16 ビット浮動小数点形式は、「半」浮動小数点形式とも呼ばれます。 この形式には、次のビット レイアウトがあります。
+**注:**  16 ビット浮動小数点形式のカラー チャネルは、多くの場合と呼ばれます「半」浮動小数点形式です。 この形式には、次のビット レイアウトがあります。
 |                       |                                                 |
 |-----------------------|-------------------------------------------------|
 | UF16 (符号なし浮動小数点) | 5 指数ビット + 11 仮数ビット              |
 | SF16 (符号付き浮動小数点)   | 1 符号ビット + 5 指数ビット + 10 仮数ビット |
 
- 
+ 
 
- 
+ 
 
 BC6H 形式は、[Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (配列を含む)、Texture3D、または TextureCube (配列を含む) のテクスチャ リソースに使用できます。 同様に、この形式は、これらのリソースに関連付けられた任意のミップマップ サーフェスに適用されます。
 
@@ -114,7 +112,7 @@ decompress_bc6h(x, y, block)
 | 13   | 63 ビット           | 0 ビット    | 60 ビット (12.8, 12.8, 12.8)       | 5 ビット (01011) |
 | 14   | 63 ビット           | 0 ビット    | 60 ビット (16.4, 16.4, 16.4)       | 5 ビット (01111) |
 
- 
+ 
 
 この表の各形式は、モード ビットによって一意に識別できます。 最初の 10 個のモードは 2 領域のタイルに使用され、モード ビット フィールドは 2 または 5 ビット長とすることができます。 これらのブロックには、圧縮されたカラー エンドポイント (72 または 75 ビット)、パーティション (5ビット)、およびパーティション インデックス (46ビット) のフィールドもあります。
 
@@ -160,7 +158,7 @@ BC6H では、アルファ チャネルはモードに関係なく常に 1.0 を
 | by    | endpt\[1\].A\[2\] |
 | bz    | endpt\[1\].B\[2\] |
 
- 
+ 
 
 Endpt\[i\] (i は 0 または 1) は、それぞれ 0 番目または 1 番目のエンドポイントを示します。
 ## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>エンドポイント値の符号拡張
@@ -329,9 +327,9 @@ unsigned short finish_unquantize(int comp)
 
 [テクスチャのブロック圧縮](texture-block-compression.md)
 
- 
+ 
 
- 
+ 
 
 
 

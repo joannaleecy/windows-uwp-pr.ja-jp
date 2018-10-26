@@ -6,19 +6,18 @@ ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, ゲーム, DirectX, 入力待ち時間
-ms.openlocfilehash: cf83b02a6388f71f94641e7c24e011a540790fa0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a2e92dc10dbcdc3a511c1b1a1271ae759cc03c60
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "243359"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564631"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの入力待ち時間の最適化
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 入力待ち時間は、ゲームの操作性に大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。 また、適切な入力イベントの最適化によってバッテリー残量を節約できます。 適切な CoreDispatcher 入力イベント処理オプションを選択して、ゲームで入力ができる限り滑らかに処理されるようにする方法を説明します。
 
@@ -236,7 +235,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Microsoft Visual Studio 2015 の **DirectX 11 および XAML アプリ (ユニバーサル Windows)** テンプレートを使うと、ゲーム ループが同じような方法で複数のスレッドに分割されます。 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) オブジェクトを使って、入力処理専用のスレッドが開始され、XAML UI スレッドとは独立したレンダリング スレッドも作成されます。 これらのテンプレートについて詳しくは、「[テンプレートからのユニバーサル Windows プラットフォームおよび DirectX ゲーム プロジェクトの作成](user-interface.md)」をご覧ください。
+Microsoft Visual Studio2015 で**DirectX 11 および XAML アプリ (ユニバーサル Windows)** テンプレートは、ゲーム ループを同様の方法で複数のスレッドに分割します。 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) オブジェクトを使って、入力処理専用のスレッドが開始され、XAML UI スレッドとは独立したレンダリング スレッドも作成されます。 これらのテンプレートについて詳しくは、「[テンプレートからのユニバーサル Windows プラットフォームおよび DirectX ゲーム プロジェクトの作成](user-interface.md)」をご覧ください。
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>入力待ち時間を短縮する他の方法
 
@@ -249,7 +248,7 @@ DirectX ゲームは、画面上に見える内容を更新することでユー
 
 ![図 1 Directx における入力待ち時間 ](images/input-latency1.png)
 
-Windows 8.1 では、DXGI にスワップ チェーンの **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** フラグが導入されました。このフラグを使うと、アプリは現在のキューを空の状態に維持するためにヒューリスティックを実装しなくても、この待ち時間を簡単に減らすことができます。 このフラグによって作成されたスワップ チェーンは、waitable スワップ チェーンと呼ばれます。 図 2 は、waitable スワップ チェーンを使った場合のおおよそのライフサイクルと入力イベントに対する応答を示しています。
+Windows8.1、DXGI にスワップ チェーンのアプリを簡単にキュー空のままにするためにヒューリスティックを実装することがなくこの待機時間を減らすことができますが、 **dxgi \_swap\_chain\_flag\_frame\_latency\_waitable\_object**フラグが導入されました。 このフラグによって作成されたスワップ チェーンは、waitable スワップ チェーンと呼ばれます。 図 2 は、waitable スワップ チェーンを使った場合のおおよそのライフサイクルと入力イベントに対する応答を示しています。
 
 図 2
 
@@ -257,9 +256,9 @@ Windows 8.1 では、DXGI にスワップ チェーンの **DXGI\_SWAP\_CHAIN\_F
 
 これらの図からわかるのは、ディスプレイの更新速度により決まる 16.7 ミリ秒という割り当て時間内にゲームが各フレームをレンダリングして表示できる場合、2 つのフル フレームによって入力待ち時間を短縮できる可能性があるということです。 ジグソー パズルのサンプルでは、waitable スワップ チェーンを使い、 を呼び出して現在のキューの制限を制御します。` m_deviceResources->SetMaximumFrameLatency(1);`
 
- 
+ 
 
- 
+ 
 
 
 

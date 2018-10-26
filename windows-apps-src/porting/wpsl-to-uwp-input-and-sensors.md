@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。
-title: I/O、デバイス、アプリ モデルの Windows Phone Silverlight から UWP への移植
+title: I/O、デバイス、およびアプリ モデル WindowsPhone Silverlight から UWP への移植 '
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 5df57d0bd5d2104278f653d78b1e478a034a38ac
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a0041fd154a4ce32930e10e21175706e8e7ad988
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246538"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560190"
 ---
-#  <a name="porting-windows-phone-silverlight-to-uwp-for-io-device-and-app-model"></a>I/O、デバイス、アプリ モデルの Windows Phone Silverlight から UWP への移植
+#  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>I/O、デバイス、およびアプリ モデルの WindowsPhone Silverlight UWP からへの移植
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 前のトピックは、「[XAML と UI の移植](wpsl-to-uwp-porting-xaml-and-ui.md)」でした。
 
@@ -25,9 +24,9 @@ ms.locfileid: "246538"
 
 ## <a name="application-lifecycle-process-lifetime-management"></a>アプリケーションのライフサイクル (プロセス ライフタイム管理)
 
-Windows Phone Silverlight アプリには、破棄後に再アクティブ化をサポートするために、該当するアプリケーションの状態とビュー状態を保存、復元するためのコードが含まれます。 ユニバーサル Windows プラットフォーム (UWP) アプリのアプリ ライフサイクルと Windows Phone Silverlight アプリのライフサイクルには大きな関係性がありますが、共に同様に、任意の時点でユーザーが選ぶフォアグラウンドの任意のアプリで利用可能なリソースを最大化することを目的として設計されています。 コードは、新しいシステムに合理的な容易さで適合することがわかります。
+WindowsPhone Silverlight アプリには、保存、廃棄と後に再アクティブ化をサポートするためにアプリケーションの状態とビュー状態を復元するためのコードが含まれています。 ユニバーサル Windows プラットフォーム (UWP) アプリのアプリのライフ サイクルは共にと WindowsPhone Silverlight アプリでは、両方とも利用可能なリソースを最大限に高めることを目的と同じ設計しているために、ユーザーが選択した任意のアプリ、任意の時点でフォア グラウンドします。 コードは、新しいシステムに合理的な容易さで適合することがわかります。
 
-**注:** ハードウェアの **[戻る]** ボタンを押すと、Windows Phone Silverlight アプリが自動的に終了します。 UWP アプリでは、モバイル デバイスのハードウェアの **[戻る]** ボタンを押しても自動的に終了*しません*。 その代わりに、アプリは一時停止します。その後、終了することができます。 ただし、そうした詳細は、アプリケーション ライフ サイクル イベントに適切に応答するアプリに対して透過です。
+**注:** 自動的にハードウェア **[戻る**] ボタンを押すと、WindowsPhone Silverlight アプリが終了します。 UWP アプリでは、モバイル デバイスのハードウェアの **[戻る]** ボタンを押しても自動的に終了*しません*。 その代わりに、アプリは一時停止します。その後、終了することができます。 ただし、そうした詳細は、アプリケーション ライフ サイクル イベントに適切に応答するアプリに対して透過です。
 
 "デバウンス時間" は、アプリが非アクティブになり、システムで中断イベントが発生するまでの時間です。 UWP アプリにはデバウンス時間がありません。このため、アプリが非アクティブになるとすぐに中断イベントが発生します。
 
@@ -35,17 +34,17 @@ Windows Phone Silverlight アプリには、破棄後に再アクティブ化を
 
 ## <a name="camera"></a>カメラ
 
-Windows Phone Silverlight カメラ キャプチャ コードでは、**Microsoft.Devices.Camera** クラス、**Microsoft.Devices.PhotoCamera** クラス、**Microsoft.Phone.Tasks.CameraCaptureTask** クラスを使います。 ユニバーサル Windows プラットフォーム (UWP) へのコードの移植では、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) クラスを使うことができます。 コードの例については、[**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) のトピックをご覧ください。 このメソッドでは、ストレージ ファイルに写真をキャプチャできます。また、アプリ パッケージ マニフェストに**マイク**と **Web カメラ**の[**デバイス機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)を設定する必要があります。
+WindowsPhone Silverlight カメラ キャプチャ コードでは、 **Microsoft.Devices.Camera**、 **Microsoft.Devices.PhotoCamera**、または**Microsoft.Phone.Tasks.CameraCaptureTask**クラスを使います。 ユニバーサル Windows プラットフォーム (UWP) へのコードの移植では、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) クラスを使うことができます。 コードの例については、[**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) のトピックをご覧ください。 そのメソッドでは、ストレージ ファイルに写真のキャプチャでき、**マイク**および**web カメラ**は、[**デバイスの機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)をアプリのパッケージ マニフェストに設定する必要があります。
 
-もう 1 つのオプションは、[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) クラスです。このクラスでも、**マイク**と **Web カメラ**の[**デバイス機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)が必要です。
+別のオプションは、**マイク** **web カメラ**の[**デバイス機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)する必要もあります[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)クラスです。
 
 レンズ アプリは、UWP アプリではサポートされません。
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>アプリが実行されているプラットフォームの検出
 
-アプリの対応に関する考え方は、Windows 10 で変わりました。 また新しい概念モデルでは、アプリはユニバーサル Windows プラットフォーム (UWP) をターゲットとし、すべての Windows デバイスで実行されます。 また、特定のデバイス ファミリ専用の機能を使うように指定することができます。 必要な場合は、アプリのターゲットを 1 つまたは複数のデバイス ファミリに限定するオプションをアプリに設定することもできます。 デバイス ファミリの説明や、ターゲットにするデバイス ファミリを決定する方法について詳しくは、「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
+Windows 10 でアプリを対象とした変更について考えたりの方法です。 また新しい概念モデルでは、アプリはユニバーサル Windows プラットフォーム (UWP) をターゲットとし、すべての Windows デバイスで実行されます。 また、特定のデバイス ファミリ専用の機能を使うように指定することができます。 必要な場合は、アプリのターゲットを 1 つまたは複数のデバイス ファミリに限定するオプションをアプリに設定することもできます。 デバイス ファミリの説明や、ターゲットにするデバイス ファミリを決定する方法について詳しくは、「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
-**注:** 機能の有無を検出する際に、オペレーティング システムやデバイス ファミリを使わないことをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](wpsl-to-uwp-porting-to-a-uwp-project.md)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
+**注:** 機能の有無を検出するのには、オペレーティング システムやデバイス ファミリをいない使用することをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](wpsl-to-uwp-porting-to-a-uwp-project.md)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
 
 さまざまなデバイスに合わせてアプリの UI を調整するには、推奨される方法がいくつかあります。 これまでと同様に、自動的にサイズ調整される要素と動的レイアウト パネルを引き続き使います。 また、XAML マークアップで、有効ピクセル (以前の表示ピクセル) 単位のサイズを引き続き使います。これにより、UI がさまざまな解像度やスケール ファクターに対応します (「[表示/有効ピクセル、視聴距離、スケール ファクター](wpsl-to-uwp-porting-xaml-and-ui.md)」をご覧ください)。 Visual State Manager のアダプティブなトリガーとセッターを使って、UI をウィンドウ サイズに対応させることもできます (「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください)。
 
@@ -70,7 +69,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 ## <a name="device-status"></a>デバイスの状態
 
-Windows Phone Silverlight アプリでは、アプリが実行中のデバイスに関する情報を取得するために **Microsoft.Phone.Info.DeviceStatus** クラスを使うことができます。 **Microsoft.Phone.Info** 名前空間に直接相当する UWP の要素はありませんが、ここでは **DeviceStatus** クラスのメンバーを呼び出す代わりに、UWP アプリで使うことができるプロパティとイベントがいくつかあります。
+WindowsPhone Silverlight アプリは、アプリが実行されているデバイスに関する情報を取得するのに**Microsoft.Phone.Info.DeviceStatus**クラスを使用することができます。 **Microsoft.Phone.Info** 名前空間に直接相当する UWP の要素はありませんが、ここでは **DeviceStatus** クラスのメンバーを呼び出す代わりに、UWP アプリで使うことができるプロパティとイベントがいくつかあります。
 
 | Windows Phone Silverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -89,7 +88,7 @@ Windows Phone Silverlight アプリでは、アプリが実行中のデバイス
 
 ## <a name="location"></a>位置情報
 
-アプリ パッケージ マニフェストで位置情報機能を宣言するアプリを Windows 10 で実行する場合、システムはエンド ユーザーに同意を求めます。 アプリが独自の同意プロンプトを表示する場合や、オン/オフ切り替えを提供する場合、エンド ユーザーの確認を 1 回のみにするためにその機能を削除できます。
+位置情報機能をアプリ パッケージ マニフェストで宣言するアプリは、windows 10 で実行しているシステムに同意をエンドユーザーが求められます。 アプリが独自の同意プロンプトを表示する場合や、オン/オフ切り替えを提供する場合、エンド ユーザーの確認を 1 回のみにするためにその機能を削除できます。
 
 ## <a name="orientation"></a>向き
 

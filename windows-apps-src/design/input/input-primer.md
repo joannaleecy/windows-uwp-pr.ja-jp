@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f59675c3feaab47ee79eaf160c5592876b7564a2
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 9babc1f96b83123cef4bf103f4d13696697cc897
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862101"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562014"
 ---
 # <a name="interaction-primer"></a>操作の基本情報
 
@@ -68,7 +66,7 @@ UWP では "スマート" な状況依存の対話式操作システムが採用
 
 ## <a name="cortana"></a>Cortana
 
-Windows 10 では、**Cortana** の機能拡張を利用して、ユーザーの音声コマンドを処理し、アプリケーションを起動して、単一のアクションを実行することができます。
+Windows 10 では、 **Cortana**拡張機能は、ユーザーの音声コマンドを処理し、1 つのアクションを実行するアプリケーションを起動することができます。
 
 ### <a name="device-support"></a>デバイスのサポート
 
@@ -91,7 +89,7 @@ Windows 10 では、**Cortana** の機能拡張を利用して、ユーザーの
 ### <a name="more-info"></a>詳細
 
 [Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)
- 
+ 
 
 ## <a name="speech"></a>音声認識
 
@@ -140,13 +138,13 @@ Windows 10 では、**Cortana** の機能拡張を利用して、ユーザーの
 ### <a name="more-info"></a>詳細
 
 [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
- 
+ 
 
 ## <a name="pen"></a>ペン
 
 ペン (スタイラス) は、マウス同様ピクセル単位のポインティング デバイスとして動作し、デジタル インク入力には最適なデバイスです。
 
-**注**  ペン デバイスには、アクティブとパッシブの 2 種類があります。
+**注:** ペン デバイスの 2 種類があります: アクティブとパッシブします。
   -   電気的な回路が組み込まれていないパッシブなペンは、1 本の指からのタッチ入力を効果的にエミュレートします。 このペンには、接触の圧力に基づいて入力を認識する基本的なデバイス ディスプレイが必要です。 ユーザーは入力サーフェスに手を置きながら書き込むことがよくあるため、パーム リジェクションの失敗が原因で入力データが汚染されることがあります。
   -   アクティブなペンには電気的な回路が組み込まれています。このペンは複雑なデバイス ディスプレイで動作して、より広範な入力データ (ホバー、近接通信データを含む) をシステムやアプリに提供できます。 パーム リジェクションは、はるかに堅牢です。
 
@@ -173,7 +171,7 @@ Windows のインク プラットフォームでペンを使うと、自然な�
 ### <a name="more-info"></a>詳細
 
 [ペンの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn456352)
- 
+ 
 
 ## <a name="touch"></a>タッチ
 
@@ -208,7 +206,7 @@ Surface Hub デバイスは、100 か所の独自の同時タッチ接触を認�
 ### <a name="more-info"></a>詳細
 
 [タッチの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465370)
- 
+ 
 
 ## <a name="touchpad"></a>タッチパッド
 
@@ -232,13 +230,13 @@ Surface Hub デバイスは、100 か所の独自の同時タッチ接触を認�
 ### <a name="more-info"></a>詳細
 
 [タッチパッドの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn456353)
- 
+ 
 
 ## <a name="keyboard"></a>キーボード
 
 キーボードはテキスト用の主要な入力デバイスであり、多くの場合、特定の障碍のあるユーザーや、キーボードを使った方がアプリをすばやく効率よく操作できると考えるユーザーにとって欠かせません。
 
-互換性のある Windows 10 Mobile デバイスの新しいエクスペリエンスである[電話用 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431) を利用すると、ユーザーは電話をマウスやキーボードに接続して、その電話をノート PC のように使うことができます。
+[電話用 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)、互換性のある windows 10 モバイル デバイスの新しいエクスペリエンスでユーザーは、マウスとキーボードにラップトップように使うをその電話を接続できます。
 
 ### <a name="device-support"></a>デバイスのサポート
 
@@ -260,7 +258,7 @@ OSK は、物理的なキーボードの代わりに使うことができる視�
 
 タッチ キーボードは、タッチ入力でのテキスト入力に使われる、視覚的なソフトウェア キーボードです。 タッチ キーボードはテキスト入力専用であり (ハードウェア キーボードをエミュレートしません)、テキスト フィールドや編集可能なテキスト コントロールにフォーカスがあるときにだけ表示されるので、OSK の代わりになるものではありません。 タッチ キーボードは、アプリ コマンドやシステム コマンドをサポートしていません。
 
-**注**  OSK の方がタッチ キーボードより優先され、OSK が表示されている場合はタッチ キーボードは表示されません。
+**注:** OSK の方が、OSK が存在するかどうかは表示されませんが、タッチ キーボード経由で優先順位。
 
 一般的にキーボードには、次のような特徴があります。
 
@@ -272,7 +270,7 @@ OSK は、物理的なキーボードの代わりに使うことができる視�
 ### <a name="more-info"></a>詳細
 
 [キーボードの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh972345)
- 
+ 
 
 ## <a name="mouse"></a>マウス
 
@@ -299,7 +297,7 @@ OSK は、物理的なキーボードの代わりに使うことができる視�
 ### <a name="more-info"></a>詳細
 
 [マウスの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn456351)
- 
+ 
 
 ## <a name="gesture"></a>ジェスチャ
 
@@ -370,6 +368,6 @@ Windows でサポートされている対話式操作のエクスペリエンス
 
 
 
- 
+ 
 
- 
+ 

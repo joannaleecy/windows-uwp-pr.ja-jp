@@ -7,20 +7,18 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 265a916613d0aae82fba8ca085a2584069ae1a39
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: f2b6270fcd7bc3dcf45d6e80dd547ee783d8e9ae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674229"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562882"
 ---
 # <a name="color-picker"></a>カラー ピッカー
 

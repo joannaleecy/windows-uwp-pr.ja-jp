@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: UI の背後には、ビジネス レイヤーとデータ レイヤーがあります。
-title: Windows Phone Silverlight のビジネス レイヤーとデータ レイヤーの UWP への移植
+title: WindowsPhone Silverlight のビジネスおよび UWP へのデータ レイヤーの移植
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 860b42ca05c95768ca694d13971da278e2129142
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 301dcbe95d7509db07d5b7dd11a16460063bbffe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "244437"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561925"
 ---
-#  <a name="porting-windows-phone-silverlight-business-and-data-layers-to-uwp"></a>Windows Phone Silverlight のビジネス レイヤーとデータ レイヤーの UWP への移植
+#  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>WindowsPhone Silverlight のビジネスおよび UWP へのデータ レイヤーの移植
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 前のトピックは、「[入出力、デバイス、アプリ モデルの移植](wpsl-to-uwp-input-and-sensors.md)」でした。
 
@@ -29,11 +28,11 @@ UI の背後には、ビジネス レイヤーとデータ レイヤーがあり
 
 ## <a name="background-processing"></a>バックグラウンド処理
 
-Windows Phone Silverlight アプリは、アプリがフォアグラウンドにない間、タスクを実行するためにマネージド **ScheduledTaskAgent** オブジェクトを使うことができます。 UWP アプリでは、同様の方法でバックグラウンド タスクを作成、登録するために [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) クラスを使います。 バックグラウンド タスクの処理を実装するクラスを定義します。 システムでは、バックグラウンド タスクを定期的に実行し、処理を実行するクラスの [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドを呼び出します。 UWP アプリでは、アプリ パッケージ マニフェストで**バックグラウンド タスク**の宣言を忘れずに設定します。 詳しくは、「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/mt299103)」をご覧ください。
+WindowsPhone Silverlight アプリは、アプリがフォア グラウンドにないときにタスクを実行するのに管理**ScheduledTaskAgent**オブジェクトを使用できます。 UWP アプリでは、同様の方法でバックグラウンド タスクを作成、登録するために [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) クラスを使います。 バックグラウンド タスクの処理を実装するクラスを定義します。 システムでは、バックグラウンド タスクを定期的に実行し、処理を実行するクラスの [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドを呼び出します。 UWP アプリでは、アプリ パッケージ マニフェストで**バックグラウンド タスク**の宣言を忘れずに設定します。 詳しくは、「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/mt299103)」をご覧ください。
 
-Windows Phone Silverlight アプリでは、バックグラウンドで大きなデータ ファイルを転送するために **BackgroundTransferService** クラスを使います。 UWP アプリは、このために [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 名前空間の API を使います。 機能は同様のパターンを使って転送を開始しますが、新しい API では機能と性能が向上しています。 詳しくは、「[バックグラウンドでのデータの転送](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975)」をご覧ください。
+バック グラウンドで大きなデータ ファイルを転送するには、WindowsPhone Silverlight アプリは、 **BackgroundTransferService**クラスを使用します。 UWP アプリは、このために [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 名前空間の API を使います。 機能は同様のパターンを使って転送を開始しますが、新しい API では機能と性能が向上しています。 詳しくは、「[バックグラウンドでのデータの転送](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975)」をご覧ください。
 
-Windows Phone Silverlight アプリは、フォアグラウンドにない間にオーディオを再生するために **Microsoft.Phone.BackgroundAudio** 名前空間のマネージ クラスを使います。 UWP は Windows Phone ストア アプリ モデルを使います。詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」および[バックグラウンド オーディオ](http://go.microsoft.com/fwlink/p/?linkid=619997)のサンプルをご覧ください。
+WindowsPhone Silverlight アプリは、アプリがフォア グラウンドにないときにオーディオを再生する**Microsoft.Phone.BackgroundAudio**名前空間のマネージ クラスを使います。 UWP は Windows Phone ストア アプリ モデルを使います。詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」および[バックグラウンド オーディオ](http://go.microsoft.com/fwlink/p/?linkid=619997)のサンプルをご覧ください。
 
 ## <a name="cloud-services-networking-and-databases"></a>クラウド サービス、ネットワーク、データベース
 
@@ -47,13 +46,13 @@ UWP アプリには、現在、大量のデータ アクセスを実行するシ
 
 ## <a name="launchers-and-choosers"></a>ランチャーとセレクター
 
-(**Microsoft.Phone.Tasks** 名前空間の) Launcher (ランチャー) および Chooser (セレクター) により、Windows Phone Silverlight アプリはメールの作成、写真の選択、別のアプリとの特定種類のデータ共有など、一般的な操作を実行するためにオペレーティング システムとやり取りできます。 相当する UWP の型を見つけるには、「[Windows Phone Silverlight から Windows 10 への名前空間とクラスのマッピング](wpsl-to-uwp-namespace-and-class-mappings.md)」のトピックで **Microsoft.Phone.Tasks** を検索してください。 これには、ランチャーおよびピッカーと呼ばれる同様のメカニズムから、アプリ間でデータを共有するコントラクトの実装に至るまで、一連の型が含まれます。
+ランチャーとセレクター ( **Microsoft.Phone.Tasks**名前空間にあります) では、WindowsPhone Silverlight アプリは、メールの作成、写真を選択または特定の種類の共有などの一般的な操作を実行するオペレーティング システムを操作できるの別のアプリとデータです。 [Windows Phone Silverlight は、windows 10 の名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)を対応する UWP 型を見つけるトピックでは、 **Microsoft.Phone.Tasks**を検索します。 これには、ランチャーおよびピッカーと呼ばれる同様のメカニズムから、アプリ間でデータを共有するコントラクトの実装に至るまで、一連の型が含まれます。
 
-Windows Phone Silverlight アプリでは、たとえば写真選択タスクの使用中に、休止中の状態にするか、破棄することもできます。 UWP アプリは、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスの使用中はアクティブで実行中のままになります。
+WindowsPhone Silverlight アプリ配置できます休止状態にまたは廃棄でも、たとえば、写真選択タスクを使用する場合。 UWP アプリは、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスの使用中はアクティブで実行中のままになります。
 
 ## <a name="monetization-trial-mode-and-in-app-purchases"></a>収益化 (試用モードとアプリ内購入)
 
-Windows Phone Silverlight アプリでは、試用モードとアプリ内購入機能の大半で UWP の [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) クラスを使うことができるため、コードを移植する必要がありません。 ただし、Windows Phone Silverlight アプリは、購入用のアプリを提示するために **MarketplaceDetailTask.Show** を呼び出します。
+WindowsPhone Silverlight アプリは、コードを移植する必要があるように、試用モードと、アプリ内購入機能のほとんどの UWP [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)クラスを使用できます。 ただし、WindowsPhone Silverlight アプリが購入用アプリを提供する**MarketplaceDetailTask.Show**を呼び出します。
 
 ```csharp
     private void Buy()
@@ -77,7 +76,7 @@ UWP の  [**RequestAppPurchaseAsync**](https://msdn.microsoft.com/library/wind
 
 ## <a name="notifications-for-tile-or-toast-updates"></a>タイルまたはトーストの更新通知
 
-Windows Phone Silverlight アプリでは、通知はプッシュ通知モデルの拡張機能の 1 つです。 Windows プッシュ通知サービス (WNS) から通知を受信した場合、タイル更新またはトーストにより UI にこの情報を提示できます。 通知機能の UI 側の移植については、「[タイルとトースト](w8x-to-uwp-porting-xaml-and-ui.md)」をご覧ください。
+通知は、WindowsPhone Silverlight アプリのプッシュ通知モデルの拡張機能です。 Windows プッシュ通知サービス (WNS) から通知を受信した場合、タイル更新またはトーストにより UI にこの情報を提示できます。 通知機能の UI 側の移植については、「[タイルとトースト](w8x-to-uwp-porting-xaml-and-ui.md)」をご覧ください。
 
 UWP アプリで通知を使う方法について詳しくは、「[トースト通知の送信](https://msdn.microsoft.com/library/windows/apps/xaml/hh868266)」をご覧ください。
 
@@ -85,7 +84,7 @@ C++、C#、または Visual Basic を使った Windows ランタイム アプリ
 
 ## <a name="storage-file-access"></a>ストレージ (ファイル アクセス)
 
-キーと値のペアとしてアプリ設定を分離ストレージに格納する Windows Phone Silverlight コードは、簡単に移植できます。 ここでは、まず Windows Phone Silverlight バージョンの移植前後の例を示します。
+分離ストレージのキー/値ペアとしてアプリの設定を格納する WindowsPhone Silverlight コードは簡単に移植します。 ここでは前に、と後で例では、まず、WindowsPhone Silverlight バージョンです。
 
 ```csharp
     var propertySet = IsolatedStorageSettings.ApplicationSettings;
@@ -104,7 +103,7 @@ C++、C#、または Visual Basic を使った Windows ランタイム アプリ
     string myFavoriteAuthor = propertySet.ContainsKey(key) ? (string)propertySet[key] : "<none>";
 ```
 
-**Windows.Storage** 名前空間のサブセットは利用可能ですが、多くの Windows Phone Silverlight アプリがより長くサポートされている **IsolatedStorageFile** クラスによりファイル i/o を実行しています。 次に、**IsolatedStorageFile** を使うことを前提としてファイルの記述と読み取りを行う移植前後の例を示します。まず、Windows Phone Silverlight バージョンです。
+**Windows.Storage**名前空間のサブセットでは、利用できるように、多くの WindowsPhone Silverlight アプリは、i/o **IsolatedStorageFile**をクラスがサポートされているなったファイルを実行します。 **IsolatedStorageFile**が使用される、まず、WindowsPhone Silverlight バージョンのファイルの読み取りと手書きの前に、と後で例を次に示します。
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";
@@ -132,7 +131,7 @@ C++、C#、または Visual Basic を使った Windows ランタイム アプリ
     string myFavoriteAuthor = await Windows.Storage.FileIO.ReadTextAsync(file);
 ```
 
-Windows Phone Silverlight アプリは、オプションの SD カードに読み取り専用のアクセスを行います。 UWP アプリは、オプションの SD カードに読み取り専用のアクセスを行います。 詳しくは、「[SD カードへのアクセス](https://msdn.microsoft.com/library/windows/apps/mt188699)」をご覧ください。
+WindowsPhone Silverlight アプリでは、オプションの SD カードへの読み取り専用のアクセスがあります。 UWP アプリは、オプションの SD カードに読み取り専用のアクセスを行います。 詳しくは、「[SD カードへのアクセス](https://msdn.microsoft.com/library/windows/apps/mt188699)」をご覧ください。
 
 UWP アプリでの写真、音楽、ビデオ ファイルへのアクセスについて詳しくは、「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](https://msdn.microsoft.com/library/windows/apps/mt188703)」をご覧ください。
 
@@ -143,5 +142,5 @@ UWP アプリでの写真、音楽、ビデオ ファイルへのアクセスに
 ## <a name="related-topics"></a>関連トピック
 
 * [名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)
- 
+ 
 

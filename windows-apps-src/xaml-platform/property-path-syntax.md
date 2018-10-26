@@ -6,16 +6,14 @@ ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2939150e1ca15dfc910d92ea669e794026ef8685
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674679"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560246"
 ---
 # <a name="property-path-syntax"></a>プロパティ パス構文
 
@@ -58,7 +56,7 @@ Windows ランタイムでは、任意の依存関係プロパティのターゲ
 
 たとえば、"Teams" (順序指定された一覧) の一覧を含むビジネス オブジェクトがあるとします。それぞれには、各プレイヤーの姓がキーとして使われている、"Players" という辞書があるとします。 たとえば、2 番目のチームの特定のプレイヤーのプロパティ パスは、"Teams\[1\].Players\[Smith\]" となります  (一覧はインデックス 0 で始まるため、"Teams" の 2 番目の項目を示すには 1 を使います)。
 
-**注:** C++ データ ソースに対してインデックスを付けられる局面は限られています。詳しくは、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
+**注:** C++ データ ソースに対してインデックスのサポートが制限されます。[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
 ### <a name="attached-properties"></a>添付プロパティ
 
@@ -96,7 +94,7 @@ XAML でアニメーションを定義する方法について詳しくは、「
 
 これは一般的なシナリオではありませんが、添付プロパティがアニメーションの種類と一致するプロパティ値を持つ限り、添付プロパティをアニメーション化することもあります。 添付プロパティの識別名には既にドットが含まれているため、ドットがオブジェクトとプロパティのステップとして処理されないように、すべての添付プロパティ名をかっこで囲む必要があります。 たとえば、オブジェクトの [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 添付プロパティをアニメーション化することを指定する文字列として、プロパティ パス "(Grid.Row)" を使います。
 
-**注:** この例では、[**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) の値は **Int32** プロパティ型です。 したがって、**Double** アニメーションを使ってこれをアニメーション化することはできません。 その代わり、[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) コンポーネントを持つ [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) を定義します。ここで、[**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) は、"0"、"1" などの整数に設定します。
+**注:** この例では、 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795)の値は、 **Int32**プロパティ型です。 したがって、**Double** アニメーションを使ってこれをアニメーション化することはできません。 その代わり、[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) コンポーネントを持つ [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) を定義します。ここで、[**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) は、"0"、"1" などの整数に設定します。
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>アニメーション ターゲット設定プロパティ パスのプロパティの規則
 

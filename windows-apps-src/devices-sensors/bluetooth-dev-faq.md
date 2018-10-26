@@ -5,39 +5,37 @@ description: この記事には、UWP Bluetooth API に関連するよく寄せ�
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: c0af6a19e17a62ed82c32e68ea1732e1f51d4641
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 03ee8074a64b210d33498c8de135a76900d968f0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "301926"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562223"
 ---
 # <a name="bluetooth-developer-faq"></a>Bluetooth に関する開発者向け FAQ
 
 この記事には、UWP Bluetooth API のよく寄せられる質問に対する回答が含まれています。
 
-## <a name="what-apis-do-i-use-bluetooth-classic-rfcomm-or-bluetooth-low-energy-gatt"></a>どのような Api を使用すればよいですか。 Bluetooth クラシック (RFCOMM)、または Bluetooth 低エネルギー (GATT) ですか。
-Windows に関連する差に置かれてこの回答を保持してこの一般的なトピックに関するさまざまなディスカッションのオンラインがあります。 一般的なガイドラインを紹介します。
+## <a name="what-apis-do-i-use-bluetooth-classic-rfcomm-or-bluetooth-low-energy-gatt"></a>どのような Api を使って行うかどうか。 Bluetooth クラシック (RFCOMM)、または Bluetooth 低エネルギー (GATT) かどうか。
+この一般的なトピックに関するさまざまなコメント オンラインみましょうに関しては、Windows の違いの正方形に収まらないこの応答を維持がします。 一般的なガイドラインを以下に示します。
 
 ### <a name="bluetooth-le-windowsdevicesbluetoothgenericattributeprofile"></a>Bluetooth LE (Windows.Devices.Bluetooth.GenericAttributeProfile)
 
-Bluetooth 低エネルギーをサポートしているデバイスを使って通信する場合は、GATT Api を使用します。 使っている場合は大文字と小文字頻度が低い、低帯域幅が低の電源が必要です、Bluetooth 低エネルギーです。 この機能が含まれている主な名前空間は、 [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)です。 
+Bluetooth 低エネルギーをサポートするデバイスと通信している場合は、GATT Api を使用します。 使用している場合、事例または不定期な低の帯域幅ですが、低電力が必要です Bluetooth 低エネルギーは、応答します。 この機能が含まれている主な名前空間では、 [Windows.Devices.Bluetooth.GenericAttributeProfile](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)です。 
 
 **Bluetooth LE を使用しない場合**
-- 高帯域幅、頻度の高いシナリオします。 頻繁に大量のデータとの同期を保持する必要がある場合は、Bluetooth クラシックまたはも WiFi の使用を検討してください。 
+- 高帯域幅、頻度の高いシナリオ。 常に大量のデータとの同期を維持する必要がある場合は、Bluetooth 従来型またはも WiFi の使用を検討してください。 
 
 ### <a name="bluetooth-classic-windowsdevicesbluetoothrfcomm"></a>Bluetooth クラシック (Windows.Devices.Bluetooth.Rfcomm)
 
-RFCOMM Api では、開発者、socket 双方向のポート スタイルの通信を実行できます。 Socket がした後、そこから読み書きの方法は、標準。 この実装[Rfcomm チャットのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat)に表示されます。 
+RFCOMM Api は、スタイル、シリアル ポートの双方向通信を実行する、ソケットを開発者に提供します。 ソケットをした後への書き込みと、そこからの読み取りの方法は、非常に標準的です。 [Rfcomm チャット サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat)では、この実装が表示されます。 
 
 **Bluetooth Rfcomm を使用しない場合** 
-- 通知します。 Bluetooth GATT プロトコルでは、この特定のコマンドがあり、小さい電力大幅と応答時間が短縮になります。 
-- 類似性またはプレゼンスの検出を確認します。 [広告 Api](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement)を使用して Bluetooth LE 経由で接続が向上します。 
+- 通知します。 Bluetooth GATT プロトコルはこの特定のコマンドしほど電源描画大幅にし、応答時間が短縮が発生します。 
+- 近接通信またはプレゼンスの検出を確認します。 [アドバタイズ Api](https://docs.microsoft.com/en-us/uwp/api/windows.devices.bluetooth.advertisement)を使用し、Bluetooth LE 経由で接続する方が適切です。 
 
 
 ## <a name="why-does-my-bluetooth-le-device-stop-responding-after-a-disconnect"></a>Bluetooth LE デバイスが、切断後、応答を停止する理由を教えてください。
@@ -67,24 +65,24 @@ Windows 10 リリース 1511 以降では、開発者はこのペアリング処
 
 Bluetooth RFCOMM (クラシック) デバイスでは必要ありません。 Windows 10 リリース 1607 以降では、簡単に近くにあるデバイスを照会し、そのデバイスに接続できます。 更新された[RFCOMM チャット サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat)で、この機能について説明しています。 
 
-**(14393 と下)** この機能が Bluetooth 低エネルギー (GATT クライアント) で利用できるようにする必要がありますペア、[設定] ページまたは順序の access で[Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) Api を使用してこれらのデバイス
+**(14393 と下)** 引き続きしたイメージをペアのいずれかの設定] ページまたはアクセスの順序で[Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) Api を使用してこれらのデバイスは、この機能を Bluetooth Low Energy (GATT クライアント) を利用できません。
 
-**(15030 および上)** Bluetooth デバイスをペアリングは必要ありません。 新しい非同期 Api の使用などの GetGattServicesAsync GetCharacteristicsAsync リモート デバイスの現在の状態のクエリを実行するためにします。 詳細については、[クライアントのドキュメント](gatt-client.md)を参照してください。 
+**(15030 以降)** Bluetooth デバイスのペアリングが不要になった。 新しい非同期 Api を使用して、リモート デバイスの現在の状態を照会するために GetGattServicesAsync や GetCharacteristicsAsync などの。 詳細については、[クライアントのドキュメント](gatt-client.md)を参照してください。 
 
-## <a name="when-should-i-pair-with-a-device-before-communicating-with-it"></a>する必要がありますはペアリング デバイスと通信する前によいですか。
-一般的には、デバイスを使って信頼されている、長期的なデータの債券場合は、ペアリング (ユーザー設定] ページの参照を促すまたはデバイスの列挙およびペアリング Api を使って)。 (温度センサーまたはビーコン) は、デバイスが公開公開だけを読み取る情報が必要な場合、接続するか、広告の残存作業時間にデバイスのペアリングを作成せずにリッスンします。 デバイスのホストの組み合わせがサポートしていないために、相互運用性の問題を長期的にこのできなくなります。 
+## <a name="when-should-i-pair-with-a-device-before-communicating-with-it"></a>する必要がありますか、デバイスとペアリングと通信する前にかどうか。
+一般に、デバイスで、信頼されている、長期的な接着状態を必要とする場合は、([設定] ページにユーザーを誘導するまたはデバイスの列挙とペアリングの Api を使用する) とペアリングします。 (温度センサーまたはビーコン) をデバイスが近日公開だけをオフの情報を読み取る必要がある場合、接続するしたり、デバイスとペアリングする任意の作業を行うことがなくアドバタイズをリッスンします。 これにより、相互運用性の問題、長い目でデバイスのホストはペアリングをサポートしていないためです。 
 
-## <a name="do-all-windows-devices-support-peripheral-role"></a>すべての Windows デバイスでは、周辺の役割をサポートしてよいですか。
+## <a name="do-all-windows-devices-support-peripheral-role"></a>すべての Windows デバイスでは、周辺機器ロールをサポートしてかどうか。
 
-いいえこのハードウェア依存する機能が、方法を提供されて (BluetoothAdapter.IsPeripheralRoleSupported) クエリにサポートされているかどうかどうか。  現在サポートされているデバイスは、Windows Phone の 8992 + RPi3 (Windows IoT)。 
+No – これは、ハードウェア依存する機能が、用意されているメソッド (BluetoothAdapter.IsPeripheralRoleSupported) クエリをサポートされているかどうかどうか。  現在サポートされているデバイスには、Windows Phone 8992 + および RPi3 (Windows IoT)。 
 
-## <a name="can-i-access-these-apis-from-win32"></a>Win32 からこれらの Api にアクセスする方法
+## <a name="can-i-access-these-apis-from-win32"></a>Win32 からこれらの Api にアクセスできますか。
 
-はい、これらのすべての Api が連携する必要があります。 このブログでは、[デスクトップ アプリケーションから Windows Api](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)方法について説明します。 
-## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>この機能*の挿入 SKU ここ*の上に存在する予定ですか。
+はい、これらすべての Api が動作する必要があります。 このブログでは、[デスクトップ アプリケーションからの Windows Api](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)を呼び出す方法について説明します。 
+## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>この機能なって *- 挿入 SKU ここで*の上に存在するかどうか。
 
-**Bluetooth LE**: はい、すべての機能は OneCore があり、機能 Bluetooth LE 重ねると、最新のデバイスで利用可能にする必要があります。 
-> 注意: 周辺の役割はハードウェアに依存して一部の Windows Server エディション Bluetooth サポートされていません。 
+**Bluetooth LE**: はい、すべての機能 OneCore では、Bluetooth LE スタックに機能するいると、最新のデバイスで利用可能にする必要があります。 
+> 注意: 周辺機器ロールは、ハードウェアに依存して、Bluetooth をサポートしていない一部の Windows Server エディション。 
 
-**Bluetooth BR/EDR (クラシック)**: いくつかのバリエーションが存在しないが、プロファイル レベルのサポートが非常に似ています。 [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles)と[電話](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)の[RFCOMM](send-or-receive-files-with-rfcomm.md)でこれらのプロファイルがサポートされているドキュメントのドキュメントを参照してください。
+**Bluetooth BR/EDR (クラシック)**: いくつかのバリエーションの存在があって、プロファイル レベルのサポートとよく似ています。 [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles)と[電話](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)の[RFCOMM](send-or-receive-files-with-rfcomm.md)とこれらのサポートされているプロファイル ドキュメントにドキュメントをご覧ください。
 

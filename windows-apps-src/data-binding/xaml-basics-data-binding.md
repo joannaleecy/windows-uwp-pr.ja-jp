@@ -6,15 +6,13 @@ keywords: XAML, UWP, 概要
 ms.author: karler
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aea8cfde83e6e3c5446503291f6a7c6235b3cbf4
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 8000d9105481bc177eb2fc64646aec009fd80d36
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817370"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562534"
 ---
 # <a name="create-data-bindings"></a>データ バインディングを作成する
 

@@ -5,20 +5,18 @@ title: 連絡先カード
 ms.author: mijacobs
 ms.date: 03/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, UWP
 pm-contact: kele
 design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ed520c8ad71203a2f2f9888f775d7ca51d0089f
-ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
-ms.translationtype: HT
+ms.openlocfilehash: 7b20ac0692aef0e4809bb879747551e049a26df7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1874340"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560538"
 ---
 # <a name="contact-card"></a>連絡先カード
 
