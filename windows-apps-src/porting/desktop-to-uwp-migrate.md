@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a4eda15a18a441da2e06db17aaf7bea3d1842d1
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5653913"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708519"
 ---
 # <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a><span data-ttu-id="692a0-103">デスクトップ アプリケーションと UWP アプリでコードを共有します。</span><span class="sxs-lookup"><span data-stu-id="692a0-103">Share code between a desktop application and a UWP app</span></span>
 

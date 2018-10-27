@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: 9448e8f4a61241879b739ff10fd000ea8c130d52
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5595536"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706616"
 ---
 # <a name="uwp-apis-available-to-a-packaged-desktop-app"></a><span data-ttu-id="4523d-103">パッケージ デスクトップ アプリを利用可能な UWP Api</span><span class="sxs-lookup"><span data-stu-id="4523d-103">UWP APIs available to a packaged desktop app</span></span>
 

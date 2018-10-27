@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, スワップ チェーン スケーリング, オーバーレイ, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d159a78412bea528c1a12428288daebe31d1fe1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5560505"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5705391"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a><span data-ttu-id="a8690-104">スワップ チェーンのスケーリングとオーバーレイ</span><span class="sxs-lookup"><span data-stu-id="a8690-104">Swap chain scaling and overlays</span></span>
 

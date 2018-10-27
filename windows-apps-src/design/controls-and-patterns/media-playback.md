@@ -12,11 +12,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 113acbe1f4e9bb3814b2f9b61beb79488995d3e3
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5596494"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710842"
 ---
 # <a name="media-player"></a><span data-ttu-id="a188e-103">メディア プレーヤー</span><span class="sxs-lookup"><span data-stu-id="a188e-103">Media player</span></span>
 

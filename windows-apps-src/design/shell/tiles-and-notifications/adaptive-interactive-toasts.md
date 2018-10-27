@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, トースト通知, 対話型トースト, アダプティブ トースト, トーストのコンテンツ, トースト ペイロード
 ms.localizationpriority: medium
 ms.openlocfilehash: 791b1dcede799de4ecf8480d994a5c0f1ddb58af
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5642424"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706418"
 ---
 # <a name="toast-content"></a><span data-ttu-id="f62c6-103">トーストのコンテンツ</span><span class="sxs-lookup"><span data-stu-id="f62c6-103">Toast content</span></span>
 

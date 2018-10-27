@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b943807f6102c80af76fecb650087f4f2e91b9c6
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5572651"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708795"
 ---
 # <a name="composition-effects"></a><span data-ttu-id="25b9b-104">コンポジション効果</span><span class="sxs-lookup"><span data-stu-id="25b9b-104">Composition effects</span></span>
 

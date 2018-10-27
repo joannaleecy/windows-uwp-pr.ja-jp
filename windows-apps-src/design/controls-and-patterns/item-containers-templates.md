@@ -15,11 +15,11 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f5a9756a8afc267c9ec8763af49ba02714c2b4f0
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563336"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707777"
 ---
 # <a name="item-containers-and-templates"></a><span data-ttu-id="44818-103">項目コンテナーやテンプレート</span><span class="sxs-lookup"><span data-stu-id="44818-103">Item containers and templates</span></span>
 

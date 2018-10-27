@@ -10,11 +10,11 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ce3ec15a45f812162c7aab0cb9683183d7196ae3
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5547017"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706979"
 ---
 # <a name="text-scaling"></a><span data-ttu-id="1d3e0-103">テキストの拡大縮小</span><span class="sxs-lookup"><span data-stu-id="1d3e0-103">Text scaling</span></span>
 

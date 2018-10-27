@@ -8,11 +8,11 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b89cad4c299f7326d0bb7d9ea4b8c6685f70f26c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5551992"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707547"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a><span data-ttu-id="0962e-104">アプリのサブスクリプション アドオンの有効化</span><span class="sxs-lookup"><span data-stu-id="0962e-104">Enable subscription add-ons for your app</span></span>
 

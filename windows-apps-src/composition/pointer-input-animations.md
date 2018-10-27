@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、UWP、アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: b69899761e1c4a139fd2b15d6810440df5192487
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5598342"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706269"
 ---
 # <a name="pointer-based-animations"></a><span data-ttu-id="9cbe3-104">ポインター ベース アニメーション</span><span class="sxs-lookup"><span data-stu-id="9cbe3-104">Pointer-based animations</span></span>
 

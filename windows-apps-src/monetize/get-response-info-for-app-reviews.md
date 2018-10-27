@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store レビュー API, 返信情報
 ms.localizationpriority: medium
 ms.openlocfilehash: 71497a858060109eaac0f593ce03f2ba3cbf03cc
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5572441"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710533"
 ---
 # <a name="get-response-info-for-reviews"></a><span data-ttu-id="9eb17-104">レビューへの返信情報の取得</span><span class="sxs-lookup"><span data-stu-id="9eb17-104">Get response info for reviews</span></span>
 

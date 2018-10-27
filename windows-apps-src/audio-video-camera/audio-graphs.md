@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cdd1548a4d120027afd06a178cc338c88cb5cc4b
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5598531"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707052"
 ---
 # <a name="audio-graphs"></a><span data-ttu-id="dee88-104">オーディオ グラフ</span><span class="sxs-lookup"><span data-stu-id="dee88-104">Audio graphs</span></span>
 

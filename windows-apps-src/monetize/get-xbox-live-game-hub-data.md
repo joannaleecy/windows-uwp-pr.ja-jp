@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, ゲーム ハブ
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e029e74920f5782e40a0a1737a5a43723ff8835
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5639485"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710878"
 ---
 # <a name="get-xbox-live-game-hub-data"></a><span data-ttu-id="31a80-104">Xbox Live ゲーム ハブのデータの取得</span><span class="sxs-lookup"><span data-stu-id="31a80-104">Get Xbox Live Game Hub data</span></span>
 
