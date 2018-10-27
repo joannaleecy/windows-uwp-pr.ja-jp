@@ -4,16 +4,16 @@ author: KevinAsgari
 description: タイトルに Xbox Live アリーナ プラットフォームのサポートを組み込む方法について説明します。
 ms.assetid: 470914df-cbb5-4580-b33a-edb353873e32
 ms.author: kevinasg
-ms.date: 09-14-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント
 ms.localizationpriority: medium
-ms.openlocfilehash: 928aaad0ebe6735f55367748ad1d1ae40585ba5a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: b4171aac6cb7643a79454b7fc40b92a16e7ef75e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5557048"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5694921"
 ---
 # <a name="arena-title-integration-guide"></a>アリーナ タイトル統合ガイド
 

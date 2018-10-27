@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-medialocaledetailsget.html
 author: KevinAsgari
 description: " GET (/media/{marketplaceId}/details)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f45a7fe66898f8118777452c949fa2e4e4b4fd2c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 6f0cb0fdd3d50a45f4cbeeedacc38bada5874c86
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5571155"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5696595"
 ---
 # <a name="get-mediamarketplaceiddetails"></a>GET (/media/{marketplaceId}/details)
 返します提供の詳細とメタデータについての 1 つまたは複数の項目です。

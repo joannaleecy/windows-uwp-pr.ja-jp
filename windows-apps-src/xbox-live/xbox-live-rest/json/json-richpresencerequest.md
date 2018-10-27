@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-richpresencerequest.html
 author: KevinAsgari
 description: " RichPresenceRequest (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e8e9a14cab4f749f99dc0dabaef25fbe1267c5e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 92e52e4ebb58abb3a522f81a5ae4cce6486785f0
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5565570"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5696488"
 ---
 # <a name="richpresencerequest-json"></a>RichPresenceRequest (JSON)
 リッチ プレゼンス情報の使用に関する情報を要求します。 

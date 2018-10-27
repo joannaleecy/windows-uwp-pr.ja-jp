@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-gameclipsserviceerrorresponse.html
 author: KevinAsgari
 description: " GameClipsServiceErrorResponse (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 8884f7679e0ba5ee27159c87d2bc753d2f483970
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 70cc7d7796a9f58cc092e85f4ae28b46c0ee17e5
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5568827"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703615"
 ---
 # <a name="gameclipsserviceerrorresponse-json"></a>GameClipsServiceErrorResponse (JSON)
 /Users/{ownerId} {scid}/scids//clips/{gameClipId} への応答の省略可能な部分/uri 形式/{gameClipUriType} API です。 

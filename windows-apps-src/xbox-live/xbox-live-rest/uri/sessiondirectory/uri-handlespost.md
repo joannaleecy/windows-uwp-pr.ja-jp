@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-handlespost.html
 author: KevinAsgari
 description: " POST (/handles)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e4f0fc4a96dcf16d40ac6e97d9183444da0e301f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: aa749dac2638dbdb1f474300e9799e3e67827079
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5541888"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5681891"
 ---
 # <a name="post-handles"></a>POST (/handles)
 ユーザーの現在のアクティビティのマルチプレイヤー セッションを設定し、必要な場合は、セッション メンバーを招待します。

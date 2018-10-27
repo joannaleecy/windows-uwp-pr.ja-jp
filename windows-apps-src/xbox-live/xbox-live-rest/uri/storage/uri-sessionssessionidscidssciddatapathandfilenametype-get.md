@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapathandfil
 author: KevinAsgari
 description: " GET (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: eeae36f104cb6c7c35c7c2d5bff85c0f4b6586a0
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 2bb5e9bab04608486380cd1b33f34b4d363ba2a7
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558494"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5695789"
 ---
 # <a name="get-sessionssessionidscidssciddatapathandfilenametype"></a>GET (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})
 ファイルをダウンロードします。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

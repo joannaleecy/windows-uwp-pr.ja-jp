@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-medialocalecontentratingget.html
 author: KevinAsgari
 description: " GET (/media/{marketplaceId}/contentRating)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf11052ef8c523febe2e3faffc05e837e8fa3bf
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: e4cfbbccea617a19d85b9f5601c33f94839dd9ae
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5548524"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5697460"
 ---
 # <a name="get-mediamarketplaceidcontentrating"></a>GET (/media/{marketplaceId}/contentRating)
 コンテンツの規制のトークンを取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。

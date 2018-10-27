@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-reference-lists.html
 author: KevinAsgari
 description: " リスト URI"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 454cf5b64d5125396c5ea5519b8bd16113bc153b
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 63c84b68f990392d17342e333b18e5f5d38d2266
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559929"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5705310"
 ---
 # <a name="lists-uris"></a>リスト URI
  

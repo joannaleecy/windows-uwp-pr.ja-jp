@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-gamemessage.html
 author: KevinAsgari
 description: " GameMessage (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 983b1d3d3bf9388478cc1e759edddb0aa56d6515
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: f8d04b0487c7b42becd9a899c3532a6e5221f22e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5550034"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706024"
 ---
 # <a name="gamemessage-json"></a>GameMessage (JSON)
 ゲーム セッションのメッセージ キューにメッセージのデータを定義する JSON オブジェクト。 

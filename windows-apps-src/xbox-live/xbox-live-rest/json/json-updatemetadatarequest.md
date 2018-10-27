@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-updatemetadatarequest.html
 author: KevinAsgari
 description: " UpdateMetadataRequest (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ac315552420135870d0a3c83354bc53fba903f6
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: a0b7a3d90e5a69807e3ac9532a58a845568c93f2
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558726"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5701754"
 ---
 # <a name="updatemetadatarequest-json"></a>UpdateMetadataRequest (JSON)
 このメタデータは、クリップを更新する必要があります。 

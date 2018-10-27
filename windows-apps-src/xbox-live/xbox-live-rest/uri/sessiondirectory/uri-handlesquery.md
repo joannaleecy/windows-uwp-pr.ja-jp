@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-handlesquery.html
 author: KevinAsgari
 description: " /handles/query"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a56d730a85d1e7ecaafa4dde1e78c6531dc3f8
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.openlocfilehash: d4ce38768923f9adb2cdb8e2237e9afcb774433b
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5666274"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5695161"
 ---
 # <a name="handlesquery"></a>/handles/query
 セッション ハンドルのクエリを作成する POST 操作をサポートしています。 

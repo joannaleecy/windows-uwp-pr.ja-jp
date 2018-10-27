@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-devicerecord.html
 author: KevinAsgari
 description: " DeviceRecord (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f4a59b31825a3f139912ead802300161f92d17f6
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: ecfaf3ff6ee83c2d577614dc613939669ef60d62
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558206"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5683277"
 ---
 # <a name="devicerecord-json"></a>DeviceRecord (JSON)
 、その種類とそれに対するアクティブなタイトルなど、デバイスに関する情報。 

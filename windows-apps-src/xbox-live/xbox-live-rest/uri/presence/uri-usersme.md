@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersme.html
 author: KevinAsgari
 description: " /users/me"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ee54e22da8d18bf04ce5d58c1d4a01a9d3adf5f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: ca3df8759080a58fd869acac081a447839152dac
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5546606"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5695033"
 ---
 # <a name="usersme"></a>/users/me
 現在のユーザーのプレゼンスにアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。

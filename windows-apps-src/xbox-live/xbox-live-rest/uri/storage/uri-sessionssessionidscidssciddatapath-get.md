@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapath-get.h
 author: KevinAsgari
 description: " GET (/sessions/{sessionId}/scids/{scid}/data/{path})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a9c2d018384f7bd9f390c1321b75bb0ad6f16cf7
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: b925bfe28255633c32ebc97dee4d8a32e8958594
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5545682"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687311"
 ---
 # <a name="get-sessionssessionidscidssciddatapath"></a>GET (/sessions/{sessionId}/scids/{scid}/data/{path})
 指定されたパスのファイル情報の一覧を示します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

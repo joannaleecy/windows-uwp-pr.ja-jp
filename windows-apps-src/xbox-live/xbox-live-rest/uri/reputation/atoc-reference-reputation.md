@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-reference-reputation.html
 author: KevinAsgari
 description: " 評判 URI"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c1aac5dd1aec62189b241312e3157bfdf762d9f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 56c7627a3b0761419537d10e595afc38943e7354
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5551122"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693887"
 ---
 # <a name="reputation-uris"></a>評判 URI
  

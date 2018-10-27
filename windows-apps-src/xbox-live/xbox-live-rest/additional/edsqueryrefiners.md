@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/edsqueryrefiners.html
 author: KevinAsgari
 description: " EDS クエリの絞り込み条件"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 86d6394d0070b6b6a933932eb648923a048e199f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 52cbb5240c686d79d2b0532e46d7bf2f6dd85066
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559475"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5705426"
 ---
 # <a name="eds-query-refiners"></a>EDS クエリの絞り込み条件
  

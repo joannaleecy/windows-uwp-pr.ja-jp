@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-aggregatesessionsresponse.html
 author: KevinAsgari
 description: " AggregateSessionsResponse (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f5c1c9052801e5072696c24347e2ca691ee0600c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 590acdd89d83fa21a401b5573053ba341f7f05c7
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5549541"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5689646"
 ---
 # <a name="aggregatesessionsresponse-json"></a>AggregateSessionsResponse (JSON)
 ユーザーの適合性のセッションは、集計されたデータが含まれています。 

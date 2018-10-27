@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-scidhoppernameticketid.html
 author: KevinAsgari
 description: " /serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 19021d01f5f3af65b8a239a9a7521646e78e0bd6
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 2c64d54b3f1d8515018e256400af8e04f77d8955
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5557439"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5684467"
 ---
 # <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a>/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 

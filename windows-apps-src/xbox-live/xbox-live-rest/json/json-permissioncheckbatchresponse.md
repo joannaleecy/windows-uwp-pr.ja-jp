@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-permissioncheckbatchresponse.html
 author: KevinAsgari
 description: " PermissionCheckBatchResponse (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 75fc5c1c47b31b37510c9340984edfe92c0642b8
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 4b9996c8631b44eafcee3d5300c330ed4d89a296
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5556423"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5699996"
 ---
 # <a name="permissioncheckbatchresponse-json"></a>PermissionCheckBatchResponse (JSON)
 バッチのアクセス許可の結果は、複数のユーザーのアクセス許可の値の一覧を確認します。 

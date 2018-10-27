@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-sessionentry.html
 author: KevinAsgari
 description: " SessionEntry (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c0f4464b7d8fe92a7422ce42d230dc298772f49f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: a8ec59202300912d4646b0e759e7bbf037853608
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5560639"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708058"
 ---
 # <a name="sessionentry-json"></a>SessionEntry (JSON)
 フィットネス セッションのデータが含まれています。 

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-titlehistoryusersxuidhistorytitlesv2.htm
 author: KevinAsgari
 description: " /users/xuid({xuid})/history/titles"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e8520cc07a146bc720220b43da937f9d3ef0c86
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: b404b6b48139236397e765f885caef953acd87ff
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5545368"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5681956"
 ---
 # <a name="usersxuidxuidhistorytitles"></a>/users/xuid({xuid})/history/titles
  

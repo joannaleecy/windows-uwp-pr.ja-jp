@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuid.html
 author: KevinAsgari
 description: " /users/xuid({xuid})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 174573d23d7ff44dc5e49e421fe5565cc5ebc76f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: e0cc89d7411f513c23e74caf2c7cd151bcbf7df3
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559890"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700856"
 ---
 # <a name="usersxuidxuid"></a>/users/xuid({xuid})
 別のユーザーまたはクライアントの有無にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。

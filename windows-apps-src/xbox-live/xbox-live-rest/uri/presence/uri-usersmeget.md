@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersmeget.html
 author: KevinAsgari
 description: " GET (/users/me)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c490afccf15873bd7df0cc04b6aa84dfe19caa2
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 825b101ef5b450910f0bd9b2ab84991daa8074a7
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566605"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700510"
 ---
 # <a name="get-usersme"></a>GET (/users/me)
 ユーザーの XUID を把握することがなく、現在のユーザーの[PresenceRecord](../../json/json-presencerecord.md)を取得します。

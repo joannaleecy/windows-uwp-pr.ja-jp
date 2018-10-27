@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersmeresetreputationpost.html
 author: KevinAsgari
 description: " POST (/users/me/resetreputation)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: d8384c86d2f0ffeb4088eac90003b586f3e5e45f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: a08d4b8ecb72bc1db7e9607f0118f0e80e1e2980
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5543745"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5681651"
 ---
 # <a name="post-usersmeresetreputation"></a>POST (/users/me/resetreputation)
 により、実施チームは、アカウント ハイジャック (たとえば) 後、現在のユーザーの評判スコアをいくつかの任意の値に設定します。 これらの Uri のドメインが`reputation.xboxlive.com`します。

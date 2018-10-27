@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-reputationusersbatchfeedbackpost.html
 author: KevinAsgari
 description: " POST (/users/batchfeedback)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b94a4f601a4e4f332f5210a74b24a709871ebd6f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 4163e25559ef91ad0309ab6080ee4ed4f54c7c3e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5555419"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706694"
 ---
 # <a name="post-usersbatchfeedback"></a>POST (/users/batchfeedback)
 タイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するタイトルのサービスによって使用されます。 これらの Uri のドメインが`reputation.xboxlive.com`します。

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersbatchprofilesettingspost.html
 author: KevinAsgari
 description: " POST (/users/batch/profile/settings)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ed6d07a89b7ef2f18b254111d5edd6d7cdb94d45
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: b947bf1d9897416623472e078bc49e9ea9df164d
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562552"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5697615"
 ---
 # <a name="post-usersbatchprofilesettings"></a>POST (/users/batch/profile/settings)
 ユーザーまたはユーザーのプロファイルを取得します。 これらの Uri のドメインが`profile.xboxlive.com`します。

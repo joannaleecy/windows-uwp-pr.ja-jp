@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-localecrossmediagroupsearch.html
 author: KevinAsgari
 description: " /media/{marketplaceId}/crossMediaGroupSearch"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c20d7f931674711018f2829d0e1c69b0eb127df
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.openlocfilehash: 6a5a672c2b9abf986ac46850c8d43ad9ff927871
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5618415"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691848"
 ---
 # <a name="mediamarketplaceidcrossmediagroupsearch"></a>/media/{marketplaceId}/crossMediaGroupSearch
 いくつかの異なるメディア グループからの項目にアクセスします。 これらの Uri のドメインが`eds.xboxlive.com`します。

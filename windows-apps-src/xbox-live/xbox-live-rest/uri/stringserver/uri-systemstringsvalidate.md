@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-systemstringsvalidate.html
 author: KevinAsgari
 description: " /system/strings/validate"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: be40226c13badd5d1052b4ead0f08793d761f820
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 37f87dd58d260d414bb5dcfcd551d77c051e5aa6
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5564838"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5696494"
 ---
 # <a name="systemstringsvalidate"></a>/system/strings/validate
 検証のための文字列の配列にアクセスします。 これらの Uri のドメインが`client-strings.xboxlive.com`します。

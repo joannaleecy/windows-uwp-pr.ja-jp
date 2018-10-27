@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersmegroupsmoniker.html
 author: KevinAsgari
 description: " /users/me/groups/{moniker}"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: cfc214c7149b42135598ccda3fd95dba40ca1ea4
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 1c8701e87274195e206f779263afc339a089d7f8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5550547"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5683524"
 ---
 # <a name="usersmegroupsmoniker"></a>/users/me/groups/{moniker}
 [グループの PresenceRecord にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。

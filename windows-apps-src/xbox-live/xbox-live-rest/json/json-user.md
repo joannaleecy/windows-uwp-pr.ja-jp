@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-user.html
 author: KevinAsgari
 description: " User (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e58134a945c37dacd338cdcf80a24160b4b70356
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 255fe2918f10bb3b941cf2023ff358c58e191cbf
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5541843"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687095"
 ---
 # <a name="user-json"></a>User (JSON)
 ユーザーのランキング データが含まれています。 

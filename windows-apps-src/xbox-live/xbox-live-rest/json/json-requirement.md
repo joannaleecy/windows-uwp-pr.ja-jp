@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-requirement.html
 author: KevinAsgari
 description: " Requirement (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a020d81a45aabd6253ba11e8e9ac5bb8b6c4a77
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 1d03f9139bcd8067c5d0b945c92bf09728a28366
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5571686"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703549"
 ---
 # <a name="requirement-json"></a>Requirement (JSON)
 実績とそれらに対応するため、ユーザーは、どのくらいのロック解除条件。 

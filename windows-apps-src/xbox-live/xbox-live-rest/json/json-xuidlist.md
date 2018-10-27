@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-xuidlist.html
 author: KevinAsgari
 description: " XuidList (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c3851d9f196f7ee8cccfd6dce6dd8f36f4b7ec3
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.openlocfilehash: 990357eef8ef0ea8ec43822090a5133a10f8ec6c
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5621683"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5690908"
 ---
 # <a name="xuidlist-json"></a>XuidList (JSON)
 操作を実行するに Xuid のリスト。 
