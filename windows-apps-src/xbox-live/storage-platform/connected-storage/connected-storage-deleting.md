@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 94e77a1059f4c114c94969763317f380a7c49618
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5556296"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703377"
 ---
 # <a name="use-connected-storage-to-delete-data"></a><span data-ttu-id="d8c0b-104">接続ストレージを使ったデータの削除</span><span class="sxs-lookup"><span data-stu-id="d8c0b-104">Use Connected Storage to delete data</span></span>
 

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-trustedplatformusersxuidscidssciddatapat
 author: KevinAsgari
 description: " DELETE (/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 6df7d9d7f33cb09d58b86cd699444cf466be7896
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: e00c0f9e668f8d57bd904d40b8f6fcf91090496d
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5556526"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5695713"
 ---
 # <a name="delete-trustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a><span data-ttu-id="87c70-104">DELETE (/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})</span><span class="sxs-lookup"><span data-stu-id="87c70-104">DELETE (/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})</span></span>
 <span data-ttu-id="87c70-105">ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="87c70-105">Deletes a file.</span></span> <span data-ttu-id="87c70-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="87c70-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

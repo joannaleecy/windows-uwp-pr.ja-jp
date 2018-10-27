@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidat
 author: KevinAsgari
 description: " POST (/users/{requestorId}/permission/validate)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 08affb27b09137bebf30f1e96502dbc9ee3e1189
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 0848aaa74fcecec599c701d944c54defae1fa011
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570068"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707267"
 ---
 # <a name="post-usersrequestoridpermissionvalidate"></a><span data-ttu-id="311a8-104">POST (/users/{requestorId}/permission/validate)</span><span class="sxs-lookup"><span data-stu-id="311a8-104">POST (/users/{requestorId}/permission/validate)</span></span>
 <span data-ttu-id="311a8-105">一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no に対する回答を取得します。</span><span class="sxs-lookup"><span data-stu-id="311a8-105">Gets a set of yes-or-no answers about whether the user is allowed to perform specified actions with a set of target users.</span></span>

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-mediaasset.html
 author: KevinAsgari
 description: " MediaAsset (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 832e6aa44a320c6d3d1c5a339a839c7b6074a8d0
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: b50cb58f6c6262d653e90e1e6ca9666cecadf680
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5548982"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5685689"
 ---
 # <a name="mediaasset-json"></a><span data-ttu-id="52fc3-104">MediaAsset (JSON)</span><span class="sxs-lookup"><span data-stu-id="52fc3-104">MediaAsset (JSON)</span></span>
 <span data-ttu-id="52fc3-105">実績やそのリワードに関連付けられているメディア アセット。</span><span class="sxs-lookup"><span data-stu-id="52fc3-105">The media assets associated with the achievement or its rewards.</span></span>

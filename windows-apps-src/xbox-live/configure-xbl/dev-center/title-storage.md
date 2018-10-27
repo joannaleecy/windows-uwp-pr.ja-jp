@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, タイトル ストレージ, Windows デベロッパー センター
 ms.openlocfilehash: c756dabe437f535a09418417e30a22565d22acdf
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5568824"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5697417"
 ---
 # <a name="configure-storage-for-you-title-on-windows-dev-center"></a><span data-ttu-id="38dd2-104">Windows デベロッパー センターでのタイトルのストレージの構成</span><span class="sxs-lookup"><span data-stu-id="38dd2-104">Configure storage for you title on Windows Dev Center</span></span>
 

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-userclaims.html
 author: KevinAsgari
 description: " UserClaims (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 92595459537e10b9786022e2a450a117496eaffa
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 718c5847a1588e492c5d290d042dd4d5a9ca4283
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5556109"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691755"
 ---
 # <a name="userclaims-json"></a><span data-ttu-id="240fd-104">UserClaims (JSON)</span><span class="sxs-lookup"><span data-stu-id="240fd-104">UserClaims (JSON)</span></span>
 <span data-ttu-id="240fd-105">現在の認証されたユーザーに関する情報を返します。</span><span class="sxs-lookup"><span data-stu-id="240fd-105">Returns information about the current authenticated user.</span></span> 

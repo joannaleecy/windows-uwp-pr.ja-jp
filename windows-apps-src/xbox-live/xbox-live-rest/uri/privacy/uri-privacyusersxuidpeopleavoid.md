@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-privacyusersxuidpeopleavoid.html
 author: KevinAsgari
 description: " /users/{ownerId}/people/avoid"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b77aaba437f279cc5dc29265a3adb46ab1f74c12
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 3f4e7523790f527cc8c5816a01dd10ae92112af8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5555717"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5696592"
 ---
 # <a name="usersowneridpeopleavoid"></a><span data-ttu-id="7ad8e-104">/users/{ownerId}/people/avoid</span><span class="sxs-lookup"><span data-stu-id="7ad8e-104">/users/{ownerId}/people/avoid</span></span>
 <span data-ttu-id="7ad8e-105">ユーザーの回避一覧にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="7ad8e-105">Accesses the Avoid list for a user</span></span>

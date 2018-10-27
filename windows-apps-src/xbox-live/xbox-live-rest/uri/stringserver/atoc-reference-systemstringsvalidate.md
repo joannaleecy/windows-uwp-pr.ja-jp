@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-reference-systemstringsvalidate.html
 author: KevinAsgari
 description: " システム文字列の検証 URI"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dddf3d9c0a1506e510ece494130e0915a19983e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 3fedb5a94fe9bd265502c107aba919a9f5aec643
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559018"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5681976"
 ---
 # <a name="system-strings-validatation-uris"></a><span data-ttu-id="a6167-104">システム文字列の検証 URI</span><span class="sxs-lookup"><span data-stu-id="a6167-104">System Strings Validatation URIs</span></span>
  

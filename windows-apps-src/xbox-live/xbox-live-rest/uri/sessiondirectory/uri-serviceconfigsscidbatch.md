@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidbatch.html
 author: KevinAsgari
 description: " /serviceconfigs/{scid}/batch"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: bbef851aeee79a4f105aa6aa4f8447d7aa9d458a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: f32b4d3198d073a13d48ef5ec0cbb817a2a29d6e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570360"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691649"
 ---
 # <a name="serviceconfigsscidbatch"></a><span data-ttu-id="aa149-104">/serviceconfigs/{scid}/batch</span><span class="sxs-lookup"><span data-stu-id="aa149-104">/serviceconfigs/{scid}/batch</span></span>
 <span data-ttu-id="aa149-105">サービス構成の識別子レベルでバッチ クエリの POST 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="aa149-105">Supports a POST operation for a batch query at the service configuration identifier level.</span></span>

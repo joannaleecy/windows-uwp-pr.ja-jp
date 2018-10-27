@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-trustedplatformusersxuidscidssciddatapat
 author: KevinAsgari
 description: " /trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cf642b5ee7961df760709c5a28a8bb49897e021
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 39e28a246693299c4a733f698ca27c3dc89d3f96
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5556096"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5682814"
 ---
 # <a name="trustedplatformusersxuidxuidscidssciddatapath"></a><span data-ttu-id="c12b8-104">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="c12b8-104">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span></span>
 <span data-ttu-id="c12b8-105">指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="c12b8-105">Lists file information at a specified path.</span></span> <span data-ttu-id="c12b8-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="c12b8-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

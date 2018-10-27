@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/edstables.html
 author: KevinAsgari
 description: " EDS の表"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f259ec7515d43e677ebb70d70bc9b92acbebae
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 6cb33b2bdbbccfa447b48c161a8ee18a53f9e619
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562710"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706961"
 ---
 # <a name="eds-tables"></a><span data-ttu-id="48ee5-104">EDS の表</span><span class="sxs-lookup"><span data-stu-id="48ee5-104">EDS Tables</span></span>
 

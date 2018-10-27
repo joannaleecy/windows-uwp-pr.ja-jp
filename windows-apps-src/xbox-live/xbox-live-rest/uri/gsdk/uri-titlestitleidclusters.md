@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-titlestitleidclusters.html
 author: KevinAsgari
 description: " /titles/{titleId}/clusters"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ce2fbc5b429961292ff0c881bcdba080e36b4dd1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: f790d596eb393976bdfdac68c9aba4b00b50d4f3
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566725"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5704946"
 ---
 # <a name="titlestitleidclusters"></a><span data-ttu-id="26343-104">/titles/{titleId}/clusters</span><span class="sxs-lookup"><span data-stu-id="26343-104">/titles/{titleId}/clusters</span></span>
 <span data-ttu-id="26343-105">により、クライアントは、タイトルの Xbox Live Compute サーバー インスタンスを作成する URI。</span><span class="sxs-lookup"><span data-stu-id="26343-105">URI that allows a client to create an Xbox Live Compute server instance for a title.</span></span> <span data-ttu-id="26343-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="26343-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>

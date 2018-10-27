@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/edscommonheaders.html
 author: KevinAsgari
 description: " EDS 共通ヘッダー"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: aa1a2db9681acef2b6d95d67d19d5d10d2c65277
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 80a38dfa2dad97b4383f86328ddbf61d6e4a299f
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5544491"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5692157"
 ---
 # <a name="eds-common-headers"></a><span data-ttu-id="fa8e9-104">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="fa8e9-104">EDS Common Headers</span></span>
 

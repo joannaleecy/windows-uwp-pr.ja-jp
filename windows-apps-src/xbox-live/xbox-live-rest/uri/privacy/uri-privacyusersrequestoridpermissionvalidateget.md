@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidat
 author: KevinAsgari
 description: " GET (/users/{requestorId}/permission/validate)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 81ff5f7b1d5d31ec993deacb4a90495b26b13428
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 5e0ec0b8b4de64a5580ffdd83407602ee410da9c
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5549989"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687600"
 ---
 # <a name="get-usersrequestoridpermissionvalidate"></a><span data-ttu-id="1ddba-104">GET (/users/{requestorId}/permission/validate)</span><span class="sxs-lookup"><span data-stu-id="1ddba-104">GET (/users/{requestorId}/permission/validate)</span></span>
 <span data-ttu-id="1ddba-105">ユーザーをターゲット ユーザーと、指定されたアクションの実行を許可するかどうかに関するはいまたは no 応答を取得します。</span><span class="sxs-lookup"><span data-stu-id="1ddba-105">Gets a yes-or-no answer about whether the user is allowed to perform the specified action with a target user.</span></span>

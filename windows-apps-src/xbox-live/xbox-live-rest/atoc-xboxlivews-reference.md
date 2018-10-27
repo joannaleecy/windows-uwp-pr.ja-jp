@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference.html
 author: KevinAsgari
 description: " Xbox Live サービス RESTful リファレンス"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a99bca8375d542fc549c35166c32b049e5fcbd68
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 1f58c9028d506b6f2773529e3c1e8f8fdfbff4d6
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5568643"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691939"
 ---
 # <a name="xbox-live-services-restful-reference"></a><span data-ttu-id="c63f8-104">Xbox Live サービス RESTful リファレンス</span><span class="sxs-lookup"><span data-stu-id="c63f8-104">Xbox Live Services RESTful Reference</span></span>
 

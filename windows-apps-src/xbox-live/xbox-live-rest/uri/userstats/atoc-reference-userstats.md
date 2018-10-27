@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-reference-userstats.html
 author: KevinAsgari
 description: " ユーザー統計 URI"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cfe41c465e729d3f0808258d82a4da200ac5581
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: f850cfcb99df079698a685399680bfdb6e32c813
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562159"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5702446"
 ---
 # <a name="user-statistics-uris"></a><span data-ttu-id="5db2d-104">ユーザー統計 URI</span><span class="sxs-lookup"><span data-stu-id="5db2d-104">User Statistics URIs</span></span>
  

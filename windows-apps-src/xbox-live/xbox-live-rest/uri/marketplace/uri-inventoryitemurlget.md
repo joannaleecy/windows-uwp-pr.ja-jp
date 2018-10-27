@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-inventoryitemurlget.html
 author: KevinAsgari
 description: " GET (/inventory/{itemID})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: d152f0dc5b0b8070c533c1019111284080d85eb0
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 1aaef11864a513b42cb5a1c036e7699477884b4a
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5549141"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706182"
 ---
 # <a name="get-inventoryitemid"></a><span data-ttu-id="d8cc7-104">GET (/inventory/{itemID})</span><span class="sxs-lookup"><span data-stu-id="d8cc7-104">GET (/inventory/{itemID})</span></span>
 <span data-ttu-id="d8cc7-105">特定のインベントリ項目の詳細の完全なセットを提供します。</span><span class="sxs-lookup"><span data-stu-id="d8cc7-105">Provides the full set of details for a specific inventory item.</span></span> <span data-ttu-id="d8cc7-106">これらの Uri のドメインが`inventory.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="d8cc7-106">The domain for these URIs is `inventory.xboxlive.com`.</span></span>

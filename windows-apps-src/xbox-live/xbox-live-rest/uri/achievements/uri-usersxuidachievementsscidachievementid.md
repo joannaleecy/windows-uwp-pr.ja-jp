@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidachievementsscidachievementid.h
 author: KevinAsgari
 description: " /users/xuid({xuid})/achievements/{scid}/{achievementid}"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f02968cc4f1aee9d162720a83c763c52d2fbe84a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 9766222ea3a1c8671eadd42458b1c5aceaf0f587
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558650"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5689392"
 ---
 # <a name="usersxuidxuidachievementsscidachievementid"></a><span data-ttu-id="a219d-104">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span><span class="sxs-lookup"><span data-stu-id="a219d-104">/users/xuid({xuid})/achievements/{scid}/{achievementid}</span></span>
 <span data-ttu-id="a219d-105">構成済みのメタデータとユーザー固有のデータを含む、実績の詳細を返します。</span><span class="sxs-lookup"><span data-stu-id="a219d-105">Returns details about the achievement, including its configured metadata and user-specific data.</span></span> 

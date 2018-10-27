@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/authorizationtypes.html
 author: KevinAsgari
 description: " 承認のタイプ"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a3abf2bcc5833669fb61dbc59134ff53c7a1dc9
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 0269b3e95e2c5b3e36c1c199e5af36527639a149
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5542027"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693812"
 ---
 # <a name="authorization-types"></a><span data-ttu-id="aeb39-104">承認のタイプ</span><span class="sxs-lookup"><span data-stu-id="aeb39-104">Authorization Types</span></span>
  

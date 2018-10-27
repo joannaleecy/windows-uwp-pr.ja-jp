@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-reputationusersxuidfeedbackpost.html
 author: KevinAsgari
 description: " POST (/users/xuid({xuid})/feedback)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7df5311a50c2192404fa83d39cbb57e7f5f239f2
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: d6e74674334268ccf65f3055fdc4d53d9f5f3867
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5565151"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5704840"
 ---
 # <a name="post-usersxuidxuidfeedback"></a><span data-ttu-id="5a6b5-104">POST (/users/xuid({xuid})/feedback)</span><span class="sxs-lookup"><span data-stu-id="5a6b5-104">POST (/users/xuid({xuid})/feedback)</span></span>
 <span data-ttu-id="5a6b5-105">シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。</span><span class="sxs-lookup"><span data-stu-id="5a6b5-105">Used from your title if you desire to add a feedback option in your game, as opposed to using the shell.</span></span> <span data-ttu-id="5a6b5-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5a6b5-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>

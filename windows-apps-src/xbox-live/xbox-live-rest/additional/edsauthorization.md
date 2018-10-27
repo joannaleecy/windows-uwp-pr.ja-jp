@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/edsauthorization.html
 author: KevinAsgari
 description: " EDS 承認"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c4233555093823f09c6c43d92f6863574191068f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 6e3d7ac0204f9a87f60e6437738aae66f4a6d67b
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5547622"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687314"
 ---
 # <a name="eds-authorization"></a><span data-ttu-id="f73e3-104">EDS 承認</span><span class="sxs-lookup"><span data-stu-id="f73e3-104">EDS Authorization</span></span>
  

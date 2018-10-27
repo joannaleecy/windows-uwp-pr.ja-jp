@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidresetreputation.html
 author: KevinAsgari
 description: " /users/xuid({xuid})/resetreputation"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e7211d44f2f1581bd60f62b0fdd8f2b6957ef3c4
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: ba9221b7b213cfd6c92a9a6cfcd5c6dec5c051fb
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558255"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5684241"
 ---
 # <a name="usersxuidxuidresetreputation"></a><span data-ttu-id="f09a6-104">/users/xuid({xuid})/resetreputation</span><span class="sxs-lookup"><span data-stu-id="f09a6-104">/users/xuid({xuid})/resetreputation</span></span>
 <span data-ttu-id="f09a6-105">指定したユーザーの評判スコアにアクセスするに執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="f09a6-105">Enables the Enforcement team to access the specified user's Reputation scores.</span></span> <span data-ttu-id="f09a6-106">これらの Uri のドメインとポート番号を`reputation.xboxlive.com:10433`します。</span><span class="sxs-lookup"><span data-stu-id="f09a6-106">The domain and port number for these URIs is `reputation.xboxlive.com:10433`.</span></span>

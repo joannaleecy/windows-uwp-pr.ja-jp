@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-handleshandleidget.html
 author: KevinAsgari
 description: " GET (/handles/{handle-id})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 15d917d66cceb2efa301a8059c3c2b63901e88b9
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 39d39db0fa17c85dfad3dcca7526d13618835135
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562470"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706760"
 ---
 # <a name="get-handleshandle-id"></a><span data-ttu-id="69d24-104">GET (/handles/{handle-id})</span><span class="sxs-lookup"><span data-stu-id="69d24-104">GET (/handles/{handle-id})</span></span>
 <span data-ttu-id="69d24-105">ハンドル ID で指定されたハンドルを取得します。</span><span class="sxs-lookup"><span data-stu-id="69d24-105">Retrieves handles specified by handle ID.</span></span>

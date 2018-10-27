@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-serviceerrorresponse.html
 author: KevinAsgari
 description: " ServiceErrorResponse (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 376444b5f7d8fce16e264ebce920a7efd1fa7009
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 4da4a36bca0cad761ef4dda89f86b23f6cf44c30
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558432"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703226"
 ---
 # <a name="serviceerrorresponse-json"></a><span data-ttu-id="324f9-104">ServiceErrorResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="324f9-104">ServiceErrorResponse (JSON)</span></span>
 <span data-ttu-id="324f9-105">サービスのエラーが発生したときは、適切な HTTP エラー コードが返されます。</span><span class="sxs-lookup"><span data-stu-id="324f9-105">When a service error is encountered, an appropriate HTTP error code will be returned.</span></span> <span data-ttu-id="324f9-106">必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下で定義されています。</span><span class="sxs-lookup"><span data-stu-id="324f9-106">Optionally, the service may also include a ServiceErrorResponse object as defined below.</span></span> <span data-ttu-id="324f9-107">運用環境での低いデータを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="324f9-107">In production environments, less data may be included.</span></span> 

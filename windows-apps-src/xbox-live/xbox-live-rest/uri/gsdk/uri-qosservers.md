@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-qosservers.html
 author: KevinAsgari
 description: " /qosservers"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7342e22fa396ffc8326a14951b07e30f80beab69
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: fbf22063c3eabc61f97b4892e0a2a9bb9c24e387
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5550632"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707245"
 ---
 # <a name="qosservers"></a><span data-ttu-id="88a39-104">/qosservers</span><span class="sxs-lookup"><span data-stu-id="88a39-104">/qosservers</span></span>
 <span data-ttu-id="88a39-105">URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="88a39-105">URI called by a client to get the list of QoS servers available for use with Xbox Live Compute.</span></span> <span data-ttu-id="88a39-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="88a39-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>

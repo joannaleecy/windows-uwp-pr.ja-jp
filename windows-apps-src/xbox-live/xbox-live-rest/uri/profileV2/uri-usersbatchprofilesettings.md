@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersbatchprofilesettings.html
 author: KevinAsgari
 description: " /users/batch/profile/settings"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 6af95f35a0f7710a300c80e7b6100607a572cac9
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 273f693c52d880b1b33153704dfee084f7210e2e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563651"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5688550"
 ---
 # <a name="usersbatchprofilesettings"></a><span data-ttu-id="7a3df-104">/users/batch/profile/settings</span><span class="sxs-lookup"><span data-stu-id="7a3df-104">/users/batch/profile/settings</span></span>
 <span data-ttu-id="7a3df-105">ユーザーまたはユーザーのプロファイルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="7a3df-105">Access the profile for a user or users.</span></span> <span data-ttu-id="7a3df-106">これらの Uri のドメインが`profile.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="7a3df-106">The domain for these URIs is `profile.xboxlive.com`.</span></span>

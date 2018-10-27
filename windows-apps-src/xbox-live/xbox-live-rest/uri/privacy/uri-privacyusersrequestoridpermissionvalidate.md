@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidat
 author: KevinAsgari
 description: " /users/{requestorId}/permission/validate"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e3eb7f2c92be1b459a72dd32eef737d72e9ac84c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 5aadd94fbee7fff63ff6c98dc2f71e5b50ed7343
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5568986"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5699113"
 ---
 # <a name="usersrequestoridpermissionvalidate"></a><span data-ttu-id="b81cf-104">/users/{requestorId}/permission/validate</span><span class="sxs-lookup"><span data-stu-id="b81cf-104">/users/{requestorId}/permission/validate</span></span>
  

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxmessageidget.html
 author: KevinAsgari
 description: " GET (/users/xuid({xuid})/inbox/{messageId})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 84aac27702fc4c871bd41a5aa9ab574bcef57e21
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: e3885caae38d1ce69d3ae8e6f7d8de8839cb30ef
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5547843"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5702251"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a><span data-ttu-id="8631b-104">GET (/users/xuid({xuid})/inbox/{messageId})</span><span class="sxs-lookup"><span data-stu-id="8631b-104">GET (/users/xuid({xuid})/inbox/{messageId})</span></span>
 <span data-ttu-id="8631b-105">サービスでの読み取りとしてマークすること、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。</span><span class="sxs-lookup"><span data-stu-id="8631b-105">Retrieves the detailed message text for a particular user message, marking it as read on the service.</span></span>

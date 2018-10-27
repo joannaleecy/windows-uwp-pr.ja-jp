@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-gameclip.html
 author: KevinAsgari
 description: " GameClip (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c648e6c9ec85eb73c4019f14db6c117cda920b87
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: a0882125e1cf7f82be6273e5f456d22cdf79891e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5543898"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5699487"
 ---
 # <a name="gameclip-json"></a><span data-ttu-id="6adec-104">GameClip (JSON)</span><span class="sxs-lookup"><span data-stu-id="6adec-104">GameClip (JSON)</span></span>
  

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-reward.html
 author: KevinAsgari
 description: " Reward (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 86bf3ec7df1647f1d9833241fafbec98a9e1987c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 41b8aafc25c3f8ae8ca677f8049235f327c0e36e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5567073"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5682070"
 ---
 # <a name="reward-json"></a><span data-ttu-id="ff41c-104">Reward (JSON)</span><span class="sxs-lookup"><span data-stu-id="ff41c-104">Reward (JSON)</span></span>
 <span data-ttu-id="ff41c-105">実績に関連付けられたリワードです。</span><span class="sxs-lookup"><span data-stu-id="ff41c-105">The reward associated with the achievement.</span></span>

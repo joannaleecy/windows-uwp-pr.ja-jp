@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-permissioncheckbatchrequest.html
 author: KevinAsgari
 description: " PermissionCheckBatchRequest (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ba6e18d4e89af28d413a2be82b72c76c96a00b1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: d781f472dc9179f25002d3e103af2cedf3ebd931
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5556815"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5694681"
 ---
 # <a name="permissioncheckbatchrequest-json"></a><span data-ttu-id="f8a2c-104">PermissionCheckBatchRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="f8a2c-104">PermissionCheckBatchRequest (JSON)</span></span>
 <span data-ttu-id="f8a2c-105">PermissionCheckBatchRequest オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="f8a2c-105">Collection of PermissionCheckBatchRequest objects.</span></span> 

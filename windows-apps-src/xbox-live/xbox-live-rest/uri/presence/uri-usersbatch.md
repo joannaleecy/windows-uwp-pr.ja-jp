@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersbatch.html
 author: KevinAsgari
 description: " /users/batch"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 975bc1ad7566c218dbb3e697199f16753eb507d9
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: a300dff23a76a3554850f4a5fa7dcddc5bc274b1
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5550905"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700817"
 ---
 # <a name="usersbatch"></a><span data-ttu-id="93422-104">/users/batch</span><span class="sxs-lookup"><span data-stu-id="93422-104">/users/batch</span></span>
 <span data-ttu-id="93422-105">ユーザーのバッチのプレゼンスをアクセスします。</span><span class="sxs-lookup"><span data-stu-id="93422-105">Access presence for a batch of users.</span></span> <span data-ttu-id="93422-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="93422-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>

@@ -3,16 +3,16 @@ title: アリーナによる通知
 author: KevinAsgari
 description: トーナメントの各ステージの進行に伴って、プレイヤーに表示される Xbox アリーナの通知について説明します。
 ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: 086f7bd5e319dc6810517a434c986f0e6cb24eab
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 2637603f129e40f3cdf2f2ca9cff8aa5dfb8a3e1
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5557508"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5690241"
 ---
 # <a name="arena-notifications"></a><span data-ttu-id="965c3-104">アリーナによる通知</span><span class="sxs-lookup"><span data-stu-id="965c3-104">Arena notifications</span></span>
 

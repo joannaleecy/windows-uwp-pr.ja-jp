@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmonikerbroadcastingcountg
 author: KevinAsgari
 description: " GET (/users/xuid({xuid})/groups/{moniker}/broadcasting/count )"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a293d2152824ec20e6e6aeda9c8036ae73d6afee
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: c33977a2cc7a96db07bb48fd0902663b306e71a5
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5551135"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5689874"
 ---
 # <a name="get-usersxuidxuidgroupsmonikerbroadcastingcount-"></a><span data-ttu-id="5e12f-104">GET (/users/xuid({xuid})/groups/{moniker}/broadcasting/count )</span><span class="sxs-lookup"><span data-stu-id="5e12f-104">GET (/users/xuid({xuid})/groups/{moniker}/broadcasting/count )</span></span>
 <span data-ttu-id="5e12f-105">URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーの数を取得します。</span><span class="sxs-lookup"><span data-stu-id="5e12f-105">Retrieves the count of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI.</span></span> <span data-ttu-id="5e12f-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5e12f-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>

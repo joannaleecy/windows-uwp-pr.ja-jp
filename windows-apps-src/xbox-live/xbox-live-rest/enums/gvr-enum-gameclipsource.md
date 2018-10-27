@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/gvr-enum-gameclipsource.html
 author: KevinAsgari
 description: " GameClipSource 列挙型"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 820c09f582e5c51c13af2c262dec23f66a76117f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 470ee6056beaa96ff120ade912680d09908531d6
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558067"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5696703"
 ---
 # <a name="gameclipsource-enumeration"></a><span data-ttu-id="4e716-104">GameClipSource 列挙型</span><span class="sxs-lookup"><span data-stu-id="4e716-104">GameClipSource Enumeration</span></span>
 <span data-ttu-id="4e716-105">GameClipSource 列挙型をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4e716-105">Details the GameClipSource enumeration.</span></span> 

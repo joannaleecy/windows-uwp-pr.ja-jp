@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox、ゲーム, uwp, windows 10, Xbox one、xbox live 概要を要約すると、公開をまとめた表、xbox live 履歴、コマンド バー、[履歴] タブ
 ms.openlocfilehash: c2f8f661b55d105e1f1410bafd09903f55882aaa
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5541924"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5697067"
 ---
 # <a name="the-xbox-live-configuration-summary-page"></a><span data-ttu-id="7968f-104">Xbox Live 構成の概要] ページ</span><span class="sxs-lookup"><span data-stu-id="7968f-104">The Xbox Live configuration summary page</span></span>
 

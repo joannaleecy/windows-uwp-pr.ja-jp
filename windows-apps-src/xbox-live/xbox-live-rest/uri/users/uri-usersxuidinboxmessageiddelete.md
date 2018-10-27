@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxmessageiddelete.html
 author: KevinAsgari
 description: " DELETE (/users/xuid({xuid})/inbox/{messageId})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e2da1c7e59032f79e50d2bfc152b31de4f4a5d59
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 9d550147fe18a0233fd4f0a62ccb2826ef2a5c03
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5560395"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5683146"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a><span data-ttu-id="664a2-104">DELETE (/users/xuid({xuid})/inbox/{messageId})</span><span class="sxs-lookup"><span data-stu-id="664a2-104">DELETE (/users/xuid({xuid})/inbox/{messageId})</span></span>
 <span data-ttu-id="664a2-105">ユーザーの受信トレイでユーザーのメッセージを削除します。</span><span class="sxs-lookup"><span data-stu-id="664a2-105">Deletes a user message in the user's inbox.</span></span> <span data-ttu-id="664a2-106">これらの Uri のドメインが`msg.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="664a2-106">The domain for these URIs is `msg.xboxlive.com`.</span></span>

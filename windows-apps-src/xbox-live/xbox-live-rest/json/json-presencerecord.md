@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-presencerecord.html
 author: KevinAsgari
 description: " PresenceRecord (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 25916d2b9cdcbbc50a46dd03ab95bedccdcaf73e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: febf5e377c73572e4e231f830d737b4e704d262e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5547918"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5685721"
 ---
 # <a name="presencerecord-json"></a><span data-ttu-id="a502b-104">PresenceRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="a502b-104">PresenceRecord (JSON)</span></span>
 <span data-ttu-id="a502b-105">1 人のユーザーのオンライン プレゼンスに関するデータ。</span><span class="sxs-lookup"><span data-stu-id="a502b-105">Data about the online presence of a single user.</span></span>

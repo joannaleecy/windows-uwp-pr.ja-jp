@@ -3,16 +3,16 @@ title: アリーナ API の UI メタデータ
 author: KevinAsgari
 description: Xbox アリーナ API のすべての UI メタデータの一覧を示します。
 ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: b745af2209e0679e2d47180f9744a7e80036f7aa
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: e2f785836b6d81213ca3e13d9687fd67beae1259
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566722"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708435"
 ---
 # <a name="arena-apis-a-comprehensive-list-of-ui-metadata"></a><span data-ttu-id="9a062-104">アリーナ API: すべての UI メタデータ一覧</span><span class="sxs-lookup"><span data-stu-id="9a062-104">Arena APIs: A comprehensive list of UI metadata</span></span>
 

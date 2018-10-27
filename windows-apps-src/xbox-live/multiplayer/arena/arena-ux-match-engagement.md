@@ -3,16 +3,16 @@ title: マッチの交戦
 author: KevinAsgari
 description: トーナメント エクスペリエンスでのプレイヤーの進行に伴う UX の各ステージについて説明します。
 ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: e243f4d765912fc15e3676a647b670487fea3e8c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 4746cd0092b1a23b948a3bd9a551624c236cfd5e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570195"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5689662"
 ---
 # <a name="match-engagement"></a><span data-ttu-id="0c4bb-104">マッチの交戦</span><span class="sxs-lookup"><span data-stu-id="0c4bb-104">Match engagement</span></span>
 

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemute.html
 author: KevinAsgari
 description: " /users/{ownerId}/people/mute"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 23c8ab6fd50df5d24fe4deb2882c91431853be60
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 569aa173a0074fd147092716b9a36d53acaef0db
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5555491"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5701599"
 ---
 # <a name="usersowneridpeoplemute"></a><span data-ttu-id="944da-104">/users/{ownerId}/people/mute</span><span class="sxs-lookup"><span data-stu-id="944da-104">/users/{ownerId}/people/mute</span></span>
 <span data-ttu-id="944da-105">ユーザーのミュート リストにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="944da-105">Accesses the mute list for a user.</span></span>

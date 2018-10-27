@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-gsdk-uri-reference.html
 author: KevinAsgari
 description: " ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 757375f18ddf935b19baad84501dfd4d5415a197
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 9eff98593c122001cab591b9f45793aa6649736a
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559161"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703786"
 ---
 # <a name="game-server-universal-resource-identifier-uri-reference"></a><span data-ttu-id="752d9-104">ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="752d9-104">Game Server Universal Resource Identifier (URI) Reference</span></span>
 <span data-ttu-id="752d9-105">Uri のクライアントで、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。</span><span class="sxs-lookup"><span data-stu-id="752d9-105">URIs used by clients to create Game Server Development Kit server instances for a title.</span></span> <span data-ttu-id="752d9-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="752d9-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>

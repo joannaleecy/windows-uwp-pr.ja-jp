@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5751ad77607f989963b94d8b0ea2dee574098fe0
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5569523"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5704804"
 ---
 # <a name="introduction-to-xbox-live-apis"></a><span data-ttu-id="81103-104">Xbox Live API の概要</span><span class="sxs-lookup"><span data-stu-id="81103-104">Introduction to Xbox Live APIs</span></span>
 

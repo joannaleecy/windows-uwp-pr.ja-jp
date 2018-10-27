@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidsscid.html
 author: KevinAsgari
 description: " /sessions/{sessionId}/scids/{scid}"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: adacabd7a1491266abae63da0e4fd709129382a3
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 923c2e2f1570e00bc686fa2e8387094692f98e93
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5541875"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5696500"
 ---
 # <a name="sessionssessionidscidsscid"></a><span data-ttu-id="9b697-104">/sessions/{sessionId}/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="9b697-104">/sessions/{sessionId}/scids/{scid}</span></span>
 <span data-ttu-id="9b697-105">このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="9b697-105">Retrieves quota information for this storage type.</span></span> <span data-ttu-id="9b697-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="9b697-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

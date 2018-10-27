@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-multiplayersession.html
 author: KevinAsgari
 description: " MultiplayerSession (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: d904c57976f113927ca82a6a42263c3044f03150
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 3ece4cc753bcaf10b3e9ff36543647515891464a
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5549313"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5702532"
 ---
 # <a name="multiplayersession-json"></a><span data-ttu-id="90bf5-104">MultiplayerSession (JSON)</span><span class="sxs-lookup"><span data-stu-id="90bf5-104">MultiplayerSession (JSON)</span></span>
 <span data-ttu-id="90bf5-105">**MultiplayerSession**を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="90bf5-105">A JSON object representing the **MultiplayerSession**.</span></span> 

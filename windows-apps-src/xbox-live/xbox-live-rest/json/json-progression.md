@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-progression.html
 author: KevinAsgari
 description: " Progression (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 52985b27fd25399113b8378a1fa68d24a06a0191
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 173c7dd42e0e5fda0d18e270c32a594171ebd7b6
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563068"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691604"
 ---
 # <a name="progression-json"></a><span data-ttu-id="30e11-104">Progression (JSON)</span><span class="sxs-lookup"><span data-stu-id="30e11-104">Progression (JSON)</span></span>
 <span data-ttu-id="30e11-105">実績をロック解除に向けたユーザーの進行します。</span><span class="sxs-lookup"><span data-stu-id="30e11-105">The user's progression toward unlocking the achievement.</span></span> 

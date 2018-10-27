@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeopletargetidget.html
 author: KevinAsgari
 description: " GET (/users/{ownerId}/people/{targetid})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 595c6404357f024979c8279c896fcc940ae9f99d
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: b9c821e9d2cecc0b9a6bd02da650d40385a3fd91
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5552683"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687909"
 ---
 # <a name="get-usersowneridpeopletargetid"></a><span data-ttu-id="8f8d3-104">GET (/users/{ownerId}/people/{targetid})</span><span class="sxs-lookup"><span data-stu-id="8f8d3-104">GET (/users/{ownerId}/people/{targetid})</span></span>
 <span data-ttu-id="8f8d3-105">呼び出し元のユーザーのコレクションからターゲット ID でユーザーを取得します。</span><span class="sxs-lookup"><span data-stu-id="8f8d3-105">Gets a person by target ID from caller's people collection.</span></span> <span data-ttu-id="8f8d3-106">これらの Uri のドメインが`social.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="8f8d3-106">The domain for these URIs is `social.xboxlive.com`.</span></span>

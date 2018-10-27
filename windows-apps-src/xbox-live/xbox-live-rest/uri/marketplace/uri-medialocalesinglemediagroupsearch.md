@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-medialocalesinglemediagroupsearch.html
 author: KevinAsgari
 description: " /media/{marketplaceId}/singleMediaGroupSearch"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f7ec6a785569e76e4c65637f306be2fbb4497e31
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 3157f7152d7bf4d864d706e04a7ea345e248a431
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5543889"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5692531"
 ---
 # <a name="mediamarketplaceidsinglemediagroupsearch"></a><span data-ttu-id="2fd01-104">/media/{marketplaceId}/singleMediaGroupSearch</span><span class="sxs-lookup"><span data-stu-id="2fd01-104">/media/{marketplaceId}/singleMediaGroupSearch</span></span>
 <span data-ttu-id="2fd01-105">1 つのメディア グループ内の項目を検索をできます。</span><span class="sxs-lookup"><span data-stu-id="2fd01-105">Allows search for items within a single media group.</span></span> <span data-ttu-id="2fd01-106">非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してこの検索から返されるデータのページにアクセスできることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="2fd01-106">Note that pages of data returned from this search can be accessed non-sequentially using the skipItems parameter instead of using the continuation token.</span></span> <span data-ttu-id="2fd01-107">この API は、クエリの絞り込み条件を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="2fd01-107">This API accepts Query Refiners.</span></span>

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-titlehistoryusersxuidhistorytitlesgetv2.
 author: KevinAsgari
 description: " GET (/users/xuid({xuid})/history/titles)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f99e75cb484259b108664a892f05103fa9dc860
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: bf858750d04e6be95e75d7c6c74d09cadde6789f
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5543895"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703965"
 ---
 # <a name="get-usersxuidxuidhistorytitles"></a><span data-ttu-id="9db25-104">GET (/users/xuid({xuid})/history/titles)</span><span class="sxs-lookup"><span data-stu-id="9db25-104">GET (/users/xuid({xuid})/history/titles)</span></span>
 <span data-ttu-id="9db25-105">タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="9db25-105">Gets a list of titles for which the user has unlocked or made progress on its achievements.</span></span> <span data-ttu-id="9db25-106">この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。</span><span class="sxs-lookup"><span data-stu-id="9db25-106">This API does not return a user's full history of titles played or launched.</span></span> <span data-ttu-id="9db25-107">これらの Uri のドメインが`achievements.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="9db25-107">The domain for these URIs is `achievements.xboxlive.com`.</span></span>

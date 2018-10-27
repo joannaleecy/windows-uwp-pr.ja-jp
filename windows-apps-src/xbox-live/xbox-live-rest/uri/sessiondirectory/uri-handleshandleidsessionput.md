@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsessionput.html
 author: KevinAsgari
 description: " PUT (/handles/{handle-id}/session)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ad0ef031924c0f101ba46b25192265c554ea17
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: ca8bd73ce7b71ddbe4a159a4d3e089c5adb9ad87
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5571581"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5683423"
 ---
 # <a name="put-handleshandle-idsession"></a><span data-ttu-id="3bca8-104">PUT (/handles/{handle-id}/session)</span><span class="sxs-lookup"><span data-stu-id="3bca8-104">PUT (/handles/{handle-id}/session)</span></span>
 <span data-ttu-id="3bca8-105">作成またはハンドルを逆参照によって、セッションを更新します。</span><span class="sxs-lookup"><span data-stu-id="3bca8-105">Creates or updates a session by dereferencing a handle.</span></span>

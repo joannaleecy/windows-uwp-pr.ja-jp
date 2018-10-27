@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemuteget.html
 author: KevinAsgari
 description: " GET (/users/{ownerId}/people/mute)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e4dab0c8a3bfe569fe4fdff0ccec05ca788df49b
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: fd9c5a1f95873028d38dfacea9d91393ab7dba12
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562842"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5695842"
 ---
 # <a name="get-usersowneridpeoplemute"></a><span data-ttu-id="c1c13-104">GET (/users/{ownerId}/people/mute)</span><span class="sxs-lookup"><span data-stu-id="c1c13-104">GET (/users/{ownerId}/people/mute)</span></span>
 <span data-ttu-id="c1c13-105">ユーザーのミュートの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="c1c13-105">Gets the mute list for a user.</span></span>

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-achievementsusersxuidachievementsv2.html
 author: KevinAsgari
 description: " /users/xuid({xuid})/achievements"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c1468f14dbb49e4b4f5780f1e34834f565599db9
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 094476d4e846fb7e4194f67d3de6bd1d9c7316df
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5541930"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5695474"
 ---
 # <a name="usersxuidxuidachievements"></a><span data-ttu-id="e4258-104">/users/xuid({xuid})/achievements</span><span class="sxs-lookup"><span data-stu-id="e4258-104">/users/xuid({xuid})/achievements</span></span>
  

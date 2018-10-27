@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapathandfil
 author: KevinAsgari
 description: " /sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 41fe5f1f77424615d7d5452fc361400cdbb29e7f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: d2c2c592e6bfd1eca029378dda230b2fa72ee5c0
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5569605"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5699719"
 ---
 # <a name="sessionssessionidscidssciddatapathandfilenametype"></a><span data-ttu-id="c9051-104">/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="c9051-104">/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}</span></span>
 <span data-ttu-id="c9051-105">ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="c9051-105">Downloads a file.</span></span> <span data-ttu-id="c9051-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="c9051-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionhosts.html
 author: KevinAsgari
 description: " /titles/{titleId}/sessionhosts"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 10ceab8cedb8a4047e4e431716a2b58c060e7e99
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 77868d4bce61c80e9f8ebd0744822c9ade27327e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5551951"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693166"
 ---
 # <a name="titlestitleidsessionhosts"></a><span data-ttu-id="83754-104">/titles/{titleId}/sessionhosts</span><span class="sxs-lookup"><span data-stu-id="83754-104">/titles/{titleId}/sessionhosts</span></span>
 <span data-ttu-id="83754-105">特定のタイトル id が割り当ての Xbox Live Compute sessionhost を要求します。これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="83754-105">Requests a Xbox Live Compute sessionhost to be allocated for a given title id. The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>

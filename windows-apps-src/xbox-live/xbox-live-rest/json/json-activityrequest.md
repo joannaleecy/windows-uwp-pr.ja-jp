@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-activityrequest.html
 author: KevinAsgari
 description: " ActivityRequest (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 21cb2684bb3125e0a7fb0447d5f8d4da63608ebf
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 6cb39036ccc75f4caec5a0fa6f961d2462ce5bda
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5543748"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5695928"
 ---
 # <a name="activityrequest-json"></a><span data-ttu-id="d27e9-104">ActivityRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="d27e9-104">ActivityRequest (JSON)</span></span>
 <span data-ttu-id="d27e9-105">1 つまたは複数のユーザーのリッチ プレゼンスに関する情報を要求します。</span><span class="sxs-lookup"><span data-stu-id="d27e9-105">A request for information about one or more users' rich presence.</span></span> 

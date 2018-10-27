@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-gamesession.html
 author: KevinAsgari
 description: " GameSession (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a5778d5f18917e7d87803d38bedcafacfa0c382c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: a62dd48857ed9c7ba8601d5ca08179c6a32b0db5
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566955"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687071"
 ---
 # <a name="gamesession-json"></a><span data-ttu-id="7b8ba-104">GameSession (JSON)</span><span class="sxs-lookup"><span data-stu-id="7b8ba-104">GameSession (JSON)</span></span>
 <span data-ttu-id="7b8ba-105">マルチプレイヤー セッションのゲーム データを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7b8ba-105">A JSON object representing game data for a multiplayer session.</span></span> 

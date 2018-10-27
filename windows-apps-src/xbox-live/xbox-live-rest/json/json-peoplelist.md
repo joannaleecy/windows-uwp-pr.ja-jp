@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-peoplelist.html
 author: KevinAsgari
 description: " PeopleList (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ce30460351857a930ab91a32d9b983e623006e61
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 261ab440091ce3825c1025e2831b054807910e94
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5546044"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5705127"
 ---
 # <a name="peoplelist-json"></a><span data-ttu-id="ab901-104">PeopleList (JSON)</span><span class="sxs-lookup"><span data-stu-id="ab901-104">PeopleList (JSON)</span></span>
 <span data-ttu-id="ab901-105">[Person](json-person.md)オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="ab901-105">Collection of [Person](json-person.md) objects.</span></span> 

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-inventoryconsumablesitemurlpost.html
 author: KevinAsgari
 description: " POST ({itemID})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 369e5fa3dd3a64ffb61c0f79ca086e440fe5ce53
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: da2a3fc507915f3ed20b718f5a40cca3d0ba5e0b
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5561226"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5696516"
 ---
 # <a name="post-itemid"></a><span data-ttu-id="27722-104">POST ({itemID})</span><span class="sxs-lookup"><span data-stu-id="27722-104">POST ({itemID})</span></span>
 <span data-ttu-id="27722-105">または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント、要求された時間の長さによって、コンシューマブルの数量。</span><span class="sxs-lookup"><span data-stu-id="27722-105">Indicates that all or a portion of a consumable inventory item has been used and decrements the quantity of the consumable by the requested amount.</span></span>

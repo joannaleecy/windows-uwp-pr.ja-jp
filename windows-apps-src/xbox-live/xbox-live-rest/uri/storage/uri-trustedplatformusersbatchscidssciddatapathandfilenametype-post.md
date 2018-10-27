@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-trustedplatformusersbatchscidssciddatapa
 author: KevinAsgari
 description: " POST (/trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ecedb1bdc3f8fe248228b63be5b0e3a696a7bb
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 1bd069b6d2264b204c818b1886d59a5784789f90
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570618"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5692972"
 ---
 # <a name="post-trustedplatformusersbatchscidssciddatapathandfilenametype"></a><span data-ttu-id="28ad4-104">POST (/trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type})</span><span class="sxs-lookup"><span data-stu-id="28ad4-104">POST (/trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type})</span></span>
 <span data-ttu-id="28ad4-105">同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="28ad4-105">Downloads multiple files from multiple users with the same filename.</span></span> <span data-ttu-id="28ad4-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="28ad4-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-gameresult.html
 author: KevinAsgari
 description: " GameResult (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 874a58e13e9c385a8783f6385fbe4e245ebbfd75
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: bfb87b331fabf61ecd44dddf14a1f9c1ede51cff
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5568393"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5686349"
 ---
 # <a name="gameresult-json"></a><span data-ttu-id="f1ac3-104">GameResult (JSON)</span><span class="sxs-lookup"><span data-stu-id="f1ac3-104">GameResult (JSON)</span></span>
 <span data-ttu-id="f1ac3-105">ゲーム セッションの結果を示すデータを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="f1ac3-105">A JSON object representing data that describes the results of a game session.</span></span> 

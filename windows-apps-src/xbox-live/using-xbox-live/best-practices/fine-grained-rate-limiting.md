@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, スロットリング, レート制限
 ms.localizationpriority: medium
 ms.openlocfilehash: b4af61b6fc629e45366a935cc82688afb0e72193
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559267"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703042"
 ---
 # <a name="xbox-live-fine-grained-rate-limiting"></a><span data-ttu-id="09293-104">Xbox Live のきめ細かなレート制限</span><span class="sxs-lookup"><span data-stu-id="09293-104">Xbox Live fine grained rate limiting</span></span>
 

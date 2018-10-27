@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-medialocalefields.html
 author: KevinAsgari
 description: " /media/{marketplaceId}/fields"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5256555ccc81e17b8d0a2cfdfeb26c207e93561f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 495441a15fbb35f201333dc7dd85c45a7c101c8a
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562101"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5689806"
 ---
 # <a name="mediamarketplaceidfields"></a><span data-ttu-id="0bdfe-104">/media/{marketplaceId}/fields</span><span class="sxs-lookup"><span data-stu-id="0bdfe-104">/media/{marketplaceId}/fields</span></span>
 <span data-ttu-id="0bdfe-105">フィールド トークンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="0bdfe-105">Accesses the fields token.</span></span> <span data-ttu-id="0bdfe-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="0bdfe-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>

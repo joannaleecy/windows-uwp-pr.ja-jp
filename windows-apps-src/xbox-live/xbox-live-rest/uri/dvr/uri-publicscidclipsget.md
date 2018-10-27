@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-publicscidclipsget.html
 author: KevinAsgari
 description: " GET (/public/scids/{scid}/clips)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b7249d9822c4e11a1c75529bdb5eb515487c5c53
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 0c7c00e9322881aedafeddddcd5129ae0248e718
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5550501"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5683481"
 ---
 # <a name="get-publicscidsscidclips"></a><span data-ttu-id="dfa58-104">GET (/public/scids/{scid}/clips)</span><span class="sxs-lookup"><span data-stu-id="dfa58-104">GET (/public/scids/{scid}/clips)</span></span>
 <span data-ttu-id="dfa58-105">パブリック クリップを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="dfa58-105">List public clips.</span></span> <span data-ttu-id="dfa58-106">この URI のドメインが`gameclipsmetadata.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="dfa58-106">The domain for this URI is `gameclipsmetadata.xboxlive.com`.</span></span>

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-reference-users.html
 author: KevinAsgari
 description: " ユーザー URI"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 35e5764ccbdb68f1f98ab91b041e6955f6b33034
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: f06174faa01ceebcd997141c7c2cc943b66797e4
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558713"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700208"
 ---
 # <a name="users-uris"></a><span data-ttu-id="4b1ab-104">ユーザー URI</span><span class="sxs-lookup"><span data-stu-id="4b1ab-104">Users URIs</span></span>
  

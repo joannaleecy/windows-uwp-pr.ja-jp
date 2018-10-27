@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-gameclipuri.html
 author: KevinAsgari
 description: " GameClipUri (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de2193dc2ea08bea9b1fb60020e8bcbd10c7a3c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: db92c3e405029d76264b0e1e9b159ae2650d6650
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5567517"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5705527"
 ---
 # <a name="gameclipuri-json"></a><span data-ttu-id="4991e-104">GameClipUri (JSON)</span><span class="sxs-lookup"><span data-stu-id="4991e-104">GameClipUri (JSON)</span></span>
  

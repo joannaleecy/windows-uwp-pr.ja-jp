@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-feedback.html
 author: KevinAsgari
 description: " Feedback (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eae84d7e8e5071555dbc54697804ddf6662be49
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 287287879f6b7f2334d23a9ff1836a61ddd1ce42
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5564802"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693883"
 ---
 # <a name="feedback-json"></a><span data-ttu-id="11f43-104">Feedback (JSON)</span><span class="sxs-lookup"><span data-stu-id="11f43-104">Feedback (JSON)</span></span>
 <span data-ttu-id="11f43-105">プレイヤーに関するフィードバックの情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="11f43-105">Contains feedback information about a player.</span></span>

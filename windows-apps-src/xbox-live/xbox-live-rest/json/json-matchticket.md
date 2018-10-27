@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-matchticket.html
 author: KevinAsgari
 description: " MatchTicket (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e1e57815baac226e447eada56f4dcd5559f300
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 5dbc410c809358c6df7a4eb2686b81c4017ed550
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570214"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5704405"
 ---
 # <a name="matchticket-json"></a><span data-ttu-id="8d634-104">MatchTicket (JSON)</span><span class="sxs-lookup"><span data-stu-id="8d634-104">MatchTicket (JSON)</span></span>
 <span data-ttu-id="8d634-105">プレイヤーがマルチプレイヤー セッション ディレクトリ (MPSD) を通じて他のプレイヤーを検索に使用するマッチ チケットを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="8d634-105">A JSON object representing a match ticket, used by players to locate other players through the multiplayer session directory (MPSD).</span></span> 
