@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bffed44921df05a72025e86917901a65fe7ea82
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5565442"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693055"
 ---
 # <a name="rotation"></a><span data-ttu-id="0ab3f-103">回転</span><span class="sxs-lookup"><span data-stu-id="0ab3f-103">Rotation</span></span>
 

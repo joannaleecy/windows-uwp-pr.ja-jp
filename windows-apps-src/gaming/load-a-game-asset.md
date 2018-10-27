@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、DirectX、リソースの読み込み
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bea3f515ba8ff810fc6dfd6281f0488c4f3e235
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5641798"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691402"
 ---
 # <a name="load-resources-in-your-directx-game"></a><span data-ttu-id="f5ddf-104">DirectX ゲームでのリソースの読み込み</span><span class="sxs-lookup"><span data-stu-id="f5ddf-104">Load resources in your DirectX game</span></span>
 

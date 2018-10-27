@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 3f92c8fd-4096-4972-97da-01ae5db6423c
 ms.localizationpriority: medium
 ms.openlocfilehash: f58fa4c3a9a1abd407f635f27de3a545c3aafc6c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570007"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5691575"
 ---
 # <a name="media-capture-api-reference"></a><span data-ttu-id="82995-104">メディア キャプチャ API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="82995-104">Media Capture API reference</span></span> #
 

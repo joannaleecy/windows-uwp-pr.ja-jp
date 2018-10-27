@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 8caae5110b137245fd15fcc6e1b3cb61025d72ef
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5560653"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5690203"
 ---
 # <a name="intro-to-certificates"></a><span data-ttu-id="11ef2-104">証明書の概要</span><span class="sxs-lookup"><span data-stu-id="11ef2-104">Intro to certificates</span></span>
 

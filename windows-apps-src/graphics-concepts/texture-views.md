@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9506b86fc16861984e539c52bdd92eed544079a8
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5597536"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5692992"
 ---
 # <a name="texture-views"></a><span data-ttu-id="fa515-104">テクスチャ ビュー</span><span class="sxs-lookup"><span data-stu-id="fa515-104">Texture views</span></span>
 

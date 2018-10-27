@@ -10,11 +10,11 @@ keywords: windows 10、UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ms.openlocfilehash: 0327437c809455cf191dcfc572e4a5145b73eb49
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5556787"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693037"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a><span data-ttu-id="e86ea-103">チュートリアル: Grid と StackPanel を使った単純な天気予報アプリの作成</span><span class="sxs-lookup"><span data-stu-id="e86ea-103">Tutorial: Use Grid and StackPanel to create a simple weather app</span></span>
 
