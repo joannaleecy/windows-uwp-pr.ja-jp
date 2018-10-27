@@ -368,7 +368,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
   <tr>
     <td>スウェーデン *</td>
     <td>スイス *</td>
-    <td>台湾 *</td>
+    <td>Taiwan *</td>
     <td>タジキスタン</td>
   </tr>
   <tr>
@@ -410,7 +410,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
   <tr>
     <td>ベトナム</td>
     <td>ワリス・フテュナ諸島</td>
-    <td>西サハラ (紛争中)</td>
+    <td>Western Sahara (Disputed)</td>
     <td>イエメン</td>
   </tr>
   <tr>
