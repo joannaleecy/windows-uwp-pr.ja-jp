@@ -12,11 +12,11 @@ dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b20ac0692aef0e4809bb879747551e049a26df7
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5560538"
+ms.locfileid: "5693544"
 ---
 # <a name="contact-card"></a>連絡先カード
 

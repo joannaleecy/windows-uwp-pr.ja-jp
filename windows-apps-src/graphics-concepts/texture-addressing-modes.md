@@ -14,11 +14,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e817dcc92741ca2e738784f387cfe49399a108c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5552808"
+ms.locfileid: "5686129"
 ---
 # <a name="texture-addressing-modes"></a>テクスチャのアドレス指定モード
 

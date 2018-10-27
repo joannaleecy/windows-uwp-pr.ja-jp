@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, ゲーム, ブロードキャスト
 ms.localizationpriority: medium
 ms.openlocfilehash: ae70c29927925abcf948435ed768871ba2427fd9
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5542747"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5682835"
 ---
 # <a name="manage-game-broadcasting"></a>ゲームのブロードキャストを管理する
 この記事では、UWP アプリのゲームのブロードキャストを管理する方法を示します。 ユーザーは、Windows に組み込まれているシステム UI を使用してゲームのブロードキャストを開始する必要がありますが、Windows 10 バージョン 1709 以降、アプリでシステムのブロードキャスト UI を起動でき、ブロードキャストが開始および停止されたときには通知を受信できます。
