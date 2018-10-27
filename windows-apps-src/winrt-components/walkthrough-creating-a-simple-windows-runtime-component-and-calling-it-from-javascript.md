@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 49b9fe0833151155b11b7d7b796e395bb6a2ca7f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5564661"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703149"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a><span data-ttu-id="fa650-104">チュートリアル: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し</span><span class="sxs-lookup"><span data-stu-id="fa650-104">Walkthrough: Creating a Simple Windows Runtime component and calling it from JavaScript</span></span>
 

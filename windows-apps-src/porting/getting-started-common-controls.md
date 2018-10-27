@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bbb07da7fa28aed6e45c97d128f9bd04ca986fe7
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5638194"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5702832"
 ---
 # <a name="getting-started-common-controls"></a><span data-ttu-id="b79cf-104">はじめに: コモン コントロール</span><span class="sxs-lookup"><span data-stu-id="b79cf-104">Getting started: Common Controls</span></span>
 

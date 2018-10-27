@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1859d758806b4e92758decb40b8a30d02acb254d
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5639320"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5698963"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a><span data-ttu-id="19fca-105">ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー</span><span class="sxs-lookup"><span data-stu-id="19fca-105">Files and folders in the Music, Pictures, and Videos libraries</span></span>
 

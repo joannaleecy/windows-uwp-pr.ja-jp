@@ -14,11 +14,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: b506b439ff98da873823bd586bb5388fe360b2ba
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5571631"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5704003"
 ---
 # <a name="search-and-find-in-page"></a><span data-ttu-id="113fb-103">検索とページ内検索</span><span class="sxs-lookup"><span data-stu-id="113fb-103">Search and find-in-page</span></span>
 

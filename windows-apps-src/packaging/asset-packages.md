@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, パッケージ化, パッケージ レイアウト, アセット パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 98980e67d24eb96aa55af7fefe10b5e4c2cdfa67
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5599079"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700583"
 ---
 # <a name="introduction-to-asset-packages"></a><span data-ttu-id="93249-104">アセット パッケージの概要</span><span class="sxs-lookup"><span data-stu-id="93249-104">Introduction to asset packages</span></span>
 

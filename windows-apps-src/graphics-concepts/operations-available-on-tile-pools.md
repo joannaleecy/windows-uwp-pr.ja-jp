@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ec546d467f338bbbe2f4dbf89015a4487e001718
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5555768"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700563"
 ---
 # <a name="operations-available-on-tile-pools"></a><span data-ttu-id="13428-104">タイル プールで利用可能な操作</span><span class="sxs-lookup"><span data-stu-id="13428-104">Operations available on tile pools</span></span>
 

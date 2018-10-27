@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, Microsoft Store ID キー, 更新
 ms.localizationpriority: medium
 ms.openlocfilehash: 95ee20628108bd3ea8eb9e48955a356410e91b1b
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5546363"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700864"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a><span data-ttu-id="68eb3-104">Microsoft Store ID キーの更新</span><span class="sxs-lookup"><span data-stu-id="68eb3-104">Renew a Microsoft Store ID key</span></span>
 

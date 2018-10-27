@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e2ff4e2ff079e15c0af41e3232c4b70c582a6a25
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5553697"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5701402"
 ---
 # <a name="hazard-tracking-versus-tile-pool-resources"></a><span data-ttu-id="a9f93-104">ハザード追跡対タイル プール リソース</span><span class="sxs-lookup"><span data-stu-id="a9f93-104">Hazard tracking versus tile pool resources</span></span>
 

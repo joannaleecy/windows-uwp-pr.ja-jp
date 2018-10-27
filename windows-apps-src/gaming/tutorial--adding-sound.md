@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, サウンド
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d1c95fe883cf2517855a3b6f1c4dfc6c9b6dd9a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5557303"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5698344"
 ---
 # <a name="add-sound"></a><span data-ttu-id="c7ebf-104">サウンドの追加</span><span class="sxs-lookup"><span data-stu-id="c7ebf-104">Add sound</span></span>
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9898a050131813b7b2431f8fc11397eee7c7942c
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5548294"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5701028"
 ---
 # <a name="light-types"></a><span data-ttu-id="2aebc-105">光源の種類</span><span class="sxs-lookup"><span data-stu-id="2aebc-105">Light types</span></span>
 

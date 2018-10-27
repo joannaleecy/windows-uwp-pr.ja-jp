@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 398c44db6a391008605ed6fa4dad877bcead035d
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562991"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703920"
 ---
 # <a name="accessing-homegroup-content"></a><span data-ttu-id="36e5e-104">ホームグループ コンテンツへのアクセス</span><span class="sxs-lookup"><span data-stu-id="36e5e-104">Accessing HomeGroup content</span></span>
 

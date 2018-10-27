@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、コレクション
 ms.localizationpriority: medium
 ms.openlocfilehash: 93b486021813abf320645888d4f19971dc2c80ab
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5548386"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700111"
 ---
 # <a name="collections-with-cwinrt"></a><span data-ttu-id="6c1dc-104">C++/WinRT でのコレクション</span><span class="sxs-lookup"><span data-stu-id="6c1dc-104">Collections with C++/WinRT</span></span>
 

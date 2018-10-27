@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
 ms.openlocfilehash: 9abd10a352243e7c7ca7e665b3fb5ee774e0346e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562233"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5701498"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a><span data-ttu-id="bc9a4-103">デスクトップ アプリケーションのパッケージを準備します。</span><span class="sxs-lookup"><span data-stu-id="bc9a4-103">Prepare to package a desktop application</span></span>
 

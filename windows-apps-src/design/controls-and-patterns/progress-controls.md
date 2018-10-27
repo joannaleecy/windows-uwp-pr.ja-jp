@@ -15,11 +15,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 352a4ce0bc37297fb4d53cb5246d18af88f749b7
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5638114"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5702100"
 ---
 # <a name="progress-controls"></a><span data-ttu-id="67b29-103">プログレス コントロール</span><span class="sxs-lookup"><span data-stu-id="67b29-103">Progress controls</span></span>
 

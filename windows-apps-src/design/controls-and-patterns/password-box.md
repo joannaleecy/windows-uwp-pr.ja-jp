@@ -15,11 +15,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: c9e283c8f5c116e300b98d7e4078d91e4dac207e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5543340"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5699829"
 ---
 # <a name="password-box"></a><span data-ttu-id="dccfa-103">パスワード ボックス</span><span class="sxs-lookup"><span data-stu-id="dccfa-103">Password box</span></span>
 

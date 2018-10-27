@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
 ms.openlocfilehash: 36df4e7d8060b9e4420a5fe1a2144ad29520c7f7
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5546423"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703037"
 ---
 # <a name="manage-ad-campaigns"></a><span data-ttu-id="22053-104">広告キャンペーンの管理</span><span class="sxs-lookup"><span data-stu-id="22053-104">Manage ad campaigns</span></span>
 

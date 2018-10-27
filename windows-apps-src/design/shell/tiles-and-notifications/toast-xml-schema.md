@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bcfc56264ab3063995fd9f2b06bd93e9406cd37e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5543257"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5704043"
 ---
 # <a name="toast-content-xml-schema"></a><span data-ttu-id="0dcdd-103">トースト通知のコンテンツの XML スキーマ</span><span class="sxs-lookup"><span data-stu-id="0dcdd-103">Toast content XML schema</span></span>
 
