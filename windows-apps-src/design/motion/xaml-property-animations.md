@@ -10,11 +10,11 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: 9372ba818805446948a444632e809ec06691c5e5
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5666708"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5697336"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>コンポジション アニメーションでの XAML 要素をアニメーション化
 

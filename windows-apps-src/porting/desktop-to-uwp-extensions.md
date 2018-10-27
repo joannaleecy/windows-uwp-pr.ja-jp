@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: 252b1309f1218a872ea49dcce7048b890a6139b4
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5554892"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5697943"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Windows 10 にパッケージ化されたデスクトップ アプリケーションを統合します。
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, ビデオ, スケジューラ, Javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 158817aa0abea1ddb1247188ec69389a7682e899
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5556239"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5697402"
 ---
 # <a name="show-ads-in-video-content"></a>ビデオ コンテンツに広告を表示する
 

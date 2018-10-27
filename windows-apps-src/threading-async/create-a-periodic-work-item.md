@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、定期的な作業項目、スレッド、タイマー
 ms.localizationpriority: medium
 ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558883"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5702590"
 ---
 # <a name="create-a-periodic-work-item"></a>定期的な作業項目の作成
 

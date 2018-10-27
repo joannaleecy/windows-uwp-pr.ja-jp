@@ -9,11 +9,11 @@ keywords: Windows 10, UWP, 広告, 宣伝, AdControl, AdMediatorControl, 移行
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e57cc24554f851ba79cfc47e917b92b3ad3047e
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5640217"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5698863"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>バナー広告用の最新の Advertising ライブラリを使用するようにアプリを更新する
 

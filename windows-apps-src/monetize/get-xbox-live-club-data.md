@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, クラブ
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a37b30634006f0865d0ba1c1c2844a7acf4139
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5547238"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5697356"
 ---
 # <a name="get-xbox-live-club-data"></a>Xbox Live クラブのデータの取得
 

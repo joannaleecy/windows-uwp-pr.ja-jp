@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、非同期
 ms.localizationpriority: medium
 ms.openlocfilehash: 04d91fc7166812f53e8b2238b1a47c8aeb9c425f
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5569004"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703847"
 ---
 # <a name="asynchronous-programming"></a>非同期プログラミング
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) とは、c#、Microsoft Visual Basic.NET、C++、および JavaScript での形式での非同期プログラミングについて説明します。

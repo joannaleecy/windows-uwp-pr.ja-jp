@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d04ea3506fc909b115ba9aab397ded9e4464479
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5555653"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5698163"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>UWP アプリでのペン操作と Windows Ink
 
