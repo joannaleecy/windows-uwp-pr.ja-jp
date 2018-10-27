@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fe2643aa5acfc666ad2cd714f1b5aa762622206
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5593770"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693335"
 ---
 # <a name="vat-info"></a>VAT 情報
 

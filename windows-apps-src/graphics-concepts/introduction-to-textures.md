@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f88cccc3f32449d09c01450bf159b3fca6a3d59f
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5598692"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5689644"
 ---
 # <a name="introduction-to-textures"></a>テクスチャの概要
 
