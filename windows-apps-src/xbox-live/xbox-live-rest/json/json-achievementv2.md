@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-achievementv2.html
 author: KevinAsgari
 description: " Achievement (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: eb86c5b1f99b539d32df4fa6c8f33847ee594ac9
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.openlocfilehash: 12a9cee88a2fdc5b0244119399620c3448f54f75
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5618431"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706829"
 ---
 # <a name="achievement-json"></a>Achievement (JSON)
 実績オブジェクト (バージョン 2)。

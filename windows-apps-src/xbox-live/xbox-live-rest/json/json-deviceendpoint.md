@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-deviceendpoint.html
 author: KevinAsgari
 description: " DeviceEndpoint (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: d14384e06c7c117eaaeda146d383bccfffd2fdf1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 7dafe60c0d26846d10113a641986842cc52e0334
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5561048"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703456"
 ---
 # <a name="deviceendpoint-json"></a>DeviceEndpoint (JSON)
  
