@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a2fd10df36954b611745135b77872fa3597ac55d
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5597644"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687841"
 ---
 # <a name="use-app-services-and-extensions"></a><span data-ttu-id="59f99-104">アプリ サービスと拡張機能の使用</span><span class="sxs-lookup"><span data-stu-id="59f99-104">Use app services and extensions</span></span>
 

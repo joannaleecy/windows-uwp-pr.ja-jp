@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7327304e2b42ff5ff71be136220b58e99c6228d2
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5542509"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5711159"
 ---
 # <a name="rasterizer-ordered-view-rov"></a><span data-ttu-id="c29d0-104">ラスタライザー順序指定ビュー (ROV)</span><span class="sxs-lookup"><span data-stu-id="c29d0-104">Rasterizer ordered view (ROV)</span></span>
 

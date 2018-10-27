@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d1e4afd620b871d4273699aea5c02cc9faec80
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5642503"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5688167"
 ---
 # <a name="midi"></a><span data-ttu-id="ed626-104">MIDI</span><span class="sxs-lookup"><span data-stu-id="ed626-104">MIDI</span></span>
 

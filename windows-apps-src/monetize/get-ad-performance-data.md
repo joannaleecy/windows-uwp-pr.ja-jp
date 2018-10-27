@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 広告, パフォーマンス
 ms.localizationpriority: medium
 ms.openlocfilehash: 30f24b2494470f60371e466bb4d1e1878475d963
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559911"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5686744"
 ---
 # <a name="get-ad-performance-data"></a><span data-ttu-id="62acd-104">広告のパフォーマンス データの取得</span><span class="sxs-lookup"><span data-stu-id="62acd-104">Get ad performance data</span></span>
 

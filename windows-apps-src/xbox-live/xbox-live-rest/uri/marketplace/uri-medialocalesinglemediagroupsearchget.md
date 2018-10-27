@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-medialocalesinglemediagroupsearchget.htm
 author: KevinAsgari
 description: " GET (media/{marketplaceId}/singleMediaGroupSearch)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f4bda7a80dd70db5d6d8b2f812a28ce76e2d4cfd
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 581fec6739c64d9d6cd093d8b8f58b1488b82680
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5568299"
+ms.locfileid: "5710992"
 ---
 # <a name="get-mediamarketplaceidsinglemediagroupsearch"></a><span data-ttu-id="65923-104">GET (media/{marketplaceId}/singleMediaGroupSearch)</span><span class="sxs-lookup"><span data-stu-id="65923-104">GET (media/{marketplaceId}/singleMediaGroupSearch)</span></span>
 <span data-ttu-id="65923-105">1 つのメディア グループ内の項目を検索をできます。</span><span class="sxs-lookup"><span data-stu-id="65923-105">Allows search for items within a single media group.</span></span> <span data-ttu-id="65923-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="65923-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, iap, アプリ内購入, アプリ内製品, iap の申請
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d7045c09dfa56c15027fda94eeb21e5d744aa45
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563715"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687653"
 ---
 # <a name="add-on-submissions"></a><span data-ttu-id="eeec5-103">アドオンの申請</span><span class="sxs-lookup"><span data-stu-id="eeec5-103">Add-on submissions</span></span>
 

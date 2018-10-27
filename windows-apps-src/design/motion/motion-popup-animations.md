@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a304df30986c904f19cc2401c9a1fb468514f6f
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5622051"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5687882"
 ---
 # <a name="pop-up-ui-animations"></a><span data-ttu-id="21063-103">ポップアップ UI のアニメーション</span><span class="sxs-lookup"><span data-stu-id="21063-103">Pop-up UI animations</span></span>
 

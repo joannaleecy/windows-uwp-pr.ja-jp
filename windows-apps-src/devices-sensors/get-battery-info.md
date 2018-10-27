@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c745b99104495b4d0b3c60202c378285dbfdd7b6
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5593556"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5686930"
 ---
 # <a name="get-battery-information"></a><span data-ttu-id="9ac66-104">バッテリー情報の取得</span><span class="sxs-lookup"><span data-stu-id="9ac66-104">Get battery information</span></span>
 

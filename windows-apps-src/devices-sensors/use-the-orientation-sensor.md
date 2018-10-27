@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 49199a91f6713b3f18928eaafb6875a49deaf451
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570676"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5686954"
 ---
 # <a name="use-the-orientation-sensor"></a><span data-ttu-id="b5dff-104">方位センサーの使用</span><span class="sxs-lookup"><span data-stu-id="b5dff-104">Use the orientation sensor</span></span>
 

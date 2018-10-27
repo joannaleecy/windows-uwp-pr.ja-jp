@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c62624e83d1e8334cce711869088817e2f9dc5e0
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566263"
+ms.locfileid: "5683772"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a><span data-ttu-id="41ce3-104">iOS と UWP のアプリ開発方法の選択</span><span class="sxs-lookup"><span data-stu-id="41ce3-104">Selecting an approach to iOS and UWP app development</span></span>
 

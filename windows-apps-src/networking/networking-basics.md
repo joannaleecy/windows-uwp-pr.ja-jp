@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 50ac9fcf984fa6c4ebad7e480ebfc2d002256e26
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5666778"
+ms.locfileid: "5711023"
 ---
 # <a name="networking-basics"></a><span data-ttu-id="bcf5d-104">ネットワークの基本</span><span class="sxs-lookup"><span data-stu-id="bcf5d-104">Networking basics</span></span>
 <span data-ttu-id="bcf5d-105">ネットワーク対応アプリで実行する必要がある事柄について説明します。</span><span class="sxs-lookup"><span data-stu-id="bcf5d-105">Things you must do for any network-enabled app.</span></span>

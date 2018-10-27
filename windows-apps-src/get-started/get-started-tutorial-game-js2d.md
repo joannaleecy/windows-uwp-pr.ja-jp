@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: 60060bb3ec7a644d29523483d0d31c0497c543d1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5558525"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5688613"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a><span data-ttu-id="14e84-104">JavaScript で UWP ゲームを作成する</span><span class="sxs-lookup"><span data-stu-id="14e84-104">Create a UWP game in JavaScript</span></span>
 
