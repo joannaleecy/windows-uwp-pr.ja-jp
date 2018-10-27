@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 評判, プレイヤー フィードバック
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a0d6693fb1d97a408a8b6559bb7c317a0af0030
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5568241"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708471"
 ---
 # <a name="sending-player-feedback-from-your-title"></a>タイトルからのプレイヤー フィードバックの送信
 Xbox Live メンバーの大多数は良いプレイヤーですが、他のプレイヤーのゲーム エクスペリエンスを不愉快なものにする "悪いプレイヤー" もわずかとはいえ存在します。 こうした少数のユーザーは、ユーザーとタイトルから送信されたフィードバックによって識別されます。 このような "悪いプレイヤー" に対しては、良いプレイヤーを妨害できないようにマルチプレイヤー エクスペリエンスを制限することにより、良いプレイヤーを保護します。 Xbox ではシステムで他のユーザーの情報を正確に保つためにユーザーからの報告に大きく依存していますが、Xbox One のタイトルもユーザーの評判や評価の正確さを大幅に向上させるのに直接貢献できます。

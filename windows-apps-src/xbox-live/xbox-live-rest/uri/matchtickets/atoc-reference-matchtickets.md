@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-reference-matchtickets.html
 author: KevinAsgari
 description: " マッチメイキング URI"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f680e6252fe5e46cf131539178fc96cda379a338
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 6c0c8f700efa40b197348b58509c2e3b04b26f0e
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5564352"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708306"
 ---
 # <a name="matchmaking-uris"></a>マッチメイキング URI
  

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-reference-storagev2.html
 author: KevinAsgari
 description: " タイトル ストレージ URI"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e642974c22306d6f9c66d6254f2a32afe2c70a4e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: e17bb64fd31c8a3cf86b57453e709e15b0cf7e6f
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563562"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710699"
 ---
 # <a name="title-storage-uris"></a>タイトル ストレージ URI
  

@@ -3,16 +3,16 @@ title: Xbox アリーナ操作ポータル
 author: KevinAsgari
 description: 操作ポータルを使用して、Xbox のトーナメントを管理する方法について説明します。
 ms.author: kevinasg
-ms.date: 06-18-2018
+ms.date: 10/12/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one、アリーナ、トーナメント、操作, ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 96f253804727d138769f596ffb1fa7c6e7bc8861
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: d22212e4fc3d01ced50b557c4ec4a1e9619ebe61
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5553480"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5693826"
 ---
 # <a name="xbox-arena-operations-portal"></a>Xbox アリーナ操作ポータル
 

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-reference-leaderboard.html
 author: KevinAsgari
 description: " ランキング URI"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c588f833dd90abac5c3eb4c6d6380db473913e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: f229ad872140ba4b0d21049f13ab4f4320e746d1
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5560357"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710916"
 ---
 # <a name="leaderboards-uris"></a>ランキング URI
 

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-scidsscidleaderboardsleaderboardnameget.
 author: KevinAsgari
 description: " GET (/scids/{scid}/leaderboards/{leaderboardname})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 469b231b845c93274418926c1d0998e03e4f764e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 6b1460f544e82394f48a54030f8da70fb9224c4a
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5547889"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710541"
 ---
 # <a name="get-scidsscidleaderboardsleaderboardname"></a>GET (/scids/{scid}/leaderboards/{leaderboardname})
  

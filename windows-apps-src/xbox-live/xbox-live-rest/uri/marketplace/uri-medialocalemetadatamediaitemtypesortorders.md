@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypesortorde
 author: KevinAsgari
 description: " /media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 9240e0b76e5a9b9b9b26a97fde650b56ac1490b1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 59b2e59315d9b787f75221391c39cdc6a0faf89b
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5541901"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708013"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypesortorders"></a>/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders
 利用可能なアクセスは、特定 mediaitem 型と EDS の特定のバージョン向けの注文を並べ替えます。 これらの Uri のドメインが`eds.xboxlive.com`します。

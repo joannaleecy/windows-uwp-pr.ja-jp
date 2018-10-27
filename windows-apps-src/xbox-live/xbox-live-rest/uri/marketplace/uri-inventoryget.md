@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-inventoryget.html
 author: KevinAsgari
 description: " GET (/users/me/inventory)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 793f2688a6f8f32ec8ff8018ed2967ed7ea58280
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: ae3a64c844fd888e8ad5c8e319e430efc53aae01
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5556687"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700791"
 ---
 # <a name="get-usersmeinventory"></a>GET (/users/me/inventory)
 呼び出し元に指定されたユーザーに関連付けられているインベントリのセットを提供します。

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-scidsscidleaderboardsleaderboardname.htm
 author: KevinAsgari
 description: " /scids/{scid}/leaderboards/{leaderboardname}"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c548dc9f23ad06c8c62803cec988ec7c22b94947
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: c8cd21fdd3b11aa7307465782bcc10e27488aedb
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5565867"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708032"
 ---
 # <a name="scidsscidleaderboardsleaderboardname"></a>/scids/{scid}/leaderboards/{leaderboardname}
 定義済みグローバル ランキングにアクセスします。 これらの Uri のドメインが`leaderboards.xboxlive.com`します。

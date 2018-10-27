@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersowneridclipsget.html
 author: KevinAsgari
 description: " GET (/users/{ownerId}/clips)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 73a49092fe82ba4e582551d31eb9854cd62dae21
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 586f4ea2ac8e7fceffd347bd53f40ac531bbb114
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5548953"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5697526"
 ---
 # <a name="get-usersowneridclips"></a>GET (/users/{ownerId}/clips)
 ユーザーのクリップの一覧を取得します。

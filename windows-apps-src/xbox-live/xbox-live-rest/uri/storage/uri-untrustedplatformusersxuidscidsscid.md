@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-untrustedplatformusersxuidscidsscid.html
 author: KevinAsgari
 description: " /untrustedplatform/users/xuid({xuid})/scids/{scid}"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ebb33e15fc60ee81c8d64f38651fbe54a10453b
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 5a92286e6dd8484315b8d9ce0696e5192502e954
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5550829"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709711"
 ---
 # <a name="untrustedplatformusersxuidxuidscidsscid"></a>/untrustedplatform/users/xuid({xuid})/scids/{scid}
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

@@ -3,16 +3,16 @@ title: Xbox のトーナメント情報の提供
 author: KevinAsgari
 description: ゲームのトーナメント情報を提供するための UI の作成方法について説明します。
 ms.author: kevinasg
-ms.date: 10-10-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: dc460f66ec37d32bfa21d8eaa59066d51beabfac
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 05e8e48ac6995adb36fac998bfbd8cf9fa0dbf7f
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563381"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709807"
 ---
 # <a name="discovering-xbox-tournaments"></a>Xbox のトーナメント情報の提供
 
