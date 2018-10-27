@@ -9,11 +9,11 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロー�
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 ms.localizationpriority: medium
 ms.openlocfilehash: e943e27275f5938960f673ac68572593cf4ece57
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5593750"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709388"
 ---
 # <a name="update-the-rollout-percentage-for-an-app-submission"></a>アプリの申請に関するロールアウト率の更新
 

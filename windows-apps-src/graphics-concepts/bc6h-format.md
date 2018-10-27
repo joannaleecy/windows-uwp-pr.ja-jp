@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: be88f06cd5893f2f67697a54754826440bdf7d18
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563867"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708961"
 ---
 # <a name="bc6h-format"></a>BC6H 形式
 

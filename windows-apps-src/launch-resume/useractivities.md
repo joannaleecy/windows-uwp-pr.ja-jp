@@ -8,11 +8,11 @@ ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 37b7ed35edecb95deb4b3ba568227f4cd8e32d9a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5553757"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706289"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>デバイス間でもユーザーのアクティビティを継続する
 

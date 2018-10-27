@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c17c802e77d13e6e980ed5046c19bfc106d5cff
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 451a8041e0a81d43d91692e92046c32d458e0982
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563273"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710615"
 ---
 # <a name="app-capability-declarations"></a>アプリ機能の宣言
 
@@ -211,6 +211,8 @@ ms.locfileid: "5563273"
 | **昇格** | **AllowElevation**制限付き機能には、起動、またはアプリの有効期間中に自動昇格を必要とする既存のデスクトップ機能を維持するには、Microsoft パートナーや企業によって作成されたアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 のみが承認されるため基幹業務アプリの企業がビジネス向け Microsoft ストアでプライベート ストアを展開します。  |
 | **Windows チーム デバイスの資格情報** | **TeamEditionDeviceCredentials**制限付き機能には、Windows 10 バージョン 1703 以降を実行する Surface Hub デバイスでデバイス アカウントの資格情報を要求する Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 |
 | **Windows チーム アプリケーション ビュー** | **TeamEditionView**制限付き機能には、Windows 10 バージョン 1703 以降を実行する Surface Hub デバイスでのアプリケーションのビューをホストするための Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリでこの機能を宣言することはお勧めしません。 ほとんどの開発者の方は、この機能の使用が承認されません。 |
+| **カメラの処理の拡張機能** | **CameraProcessingExtension**制限付き機能には、直接カメラの制御なし、カメラからキャプチャしたイメージを処理するアプリができます。<br /><br />[Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider)名前空間で Api を呼び出すには、この機能が必要です。<br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。 |
+| **データ使用量の管理*** | **NetworkDataUsageManagement**制限付き機能には、ネットワーク データの使用状況に関する情報を収集するアプリができます。<br /><br />この機能を呼び出す[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)が必要です。<br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。 |
 
 ## <a name="custom-capabilities"></a>カスタムの機能
 
