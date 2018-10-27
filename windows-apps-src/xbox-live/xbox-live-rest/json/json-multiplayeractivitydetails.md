@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/json-multiplayeractivitydetails.html
 author: KevinAsgari
 description: " MultiplayerActivityDetails (JSON)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aa38b7a0a5b2bc951eeade2c9980e802a66c3b7
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: a23b4f984bc7edef77af7e020b62fcc7d8fcbf9f
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5545995"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707704"
 ---
 # <a name="multiplayeractivitydetails-json"></a><span data-ttu-id="82362-104">MultiplayerActivityDetails (JSON)</span><span class="sxs-lookup"><span data-stu-id="82362-104">MultiplayerActivityDetails (JSON)</span></span>
 <span data-ttu-id="82362-105">**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="82362-105">A JSON object representing the **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**.</span></span> 

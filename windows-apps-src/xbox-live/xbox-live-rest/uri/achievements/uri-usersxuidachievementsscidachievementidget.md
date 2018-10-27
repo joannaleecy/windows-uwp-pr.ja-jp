@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidachievementsscidachievementidge
 author: KevinAsgari
 description: " GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c36b2c70f525029032c67208c9e2a9266d421010
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 313a97b4c8a2bd95d619cbe6491c3ecb6cac1c0b
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5570169"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707934"
 ---
 # <a name="get-usersxuidxuidachievementsscidachievementid"></a><span data-ttu-id="0dcc4-104">GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})</span><span class="sxs-lookup"><span data-stu-id="0dcc4-104">GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})</span></span>
 <span data-ttu-id="0dcc4-105">実績の詳細を取得します。</span><span class="sxs-lookup"><span data-stu-id="0dcc4-105">Gets the details of the Achievement.</span></span> <span data-ttu-id="0dcc4-106">これらの Uri のドメインが`achievements.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="0dcc4-106">The domain for these URIs is `achievements.xboxlive.com`.</span></span>

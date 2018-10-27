@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersowneridsummaryget.html
 author: KevinAsgari
 description: " GET (/users/{ownerId}/summary)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e67fe557b712c48697cd3b788bc10545e32e9d61
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 60938acedd58934ec8b758d435776f227e82b91d
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5547738"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707248"
 ---
 # <a name="get-usersowneridsummary"></a><span data-ttu-id="5d90b-104">GET (/users/{ownerId}/summary)</span><span class="sxs-lookup"><span data-stu-id="5d90b-104">GET (/users/{ownerId}/summary)</span></span>
 <span data-ttu-id="5d90b-105">呼び出し元の観点から所有者に関する集計データを取得します。</span><span class="sxs-lookup"><span data-stu-id="5d90b-105">Gets summary data about the owner from the caller's perspective.</span></span>

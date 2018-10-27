@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-uris.html
 author: KevinAsgari
 description: " ユニバーサル リソース識別子 (URI) リファレンス"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c06ece90cf386b0c7362c730193ae492a7c60ed3
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 406b7921c4967c9b1f12fb06d19f50ff12d16311
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5564458"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708422"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a><span data-ttu-id="97042-104">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="97042-104">Universal Resource Identifier (URI) Reference</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 評判, プレイヤー フィードバック
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a0d6693fb1d97a408a8b6559bb7c317a0af0030
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5568241"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708471"
 ---
 # <a name="sending-player-feedback-from-your-title"></a><span data-ttu-id="e73a5-104">タイトルからのプレイヤー フィードバックの送信</span><span class="sxs-lookup"><span data-stu-id="e73a5-104">Sending player feedback from your title</span></span>
 <span data-ttu-id="e73a5-105">Xbox Live メンバーの大多数は良いプレイヤーですが、他のプレイヤーのゲーム エクスペリエンスを不愉快なものにする "悪いプレイヤー" もわずかとはいえ存在します。</span><span class="sxs-lookup"><span data-stu-id="e73a5-105">The majority of Xbox Live members are awesome, but there are a small percentage of "Bad Apples" who hurt other people's game experiences.</span></span> <span data-ttu-id="e73a5-106">こうした少数のユーザーは、ユーザーとタイトルから送信されたフィードバックによって識別されます。</span><span class="sxs-lookup"><span data-stu-id="e73a5-106">We identify these small percentages of users through user and title submitted feedback.</span></span> <span data-ttu-id="e73a5-107">このような "悪いプレイヤー" に対しては、良いプレイヤーを妨害できないようにマルチプレイヤー エクスペリエンスを制限することにより、良いプレイヤーを保護します。</span><span class="sxs-lookup"><span data-stu-id="e73a5-107">We help protect the rest of the population by ensuring that these "Bad Apples" have a limited multiplayer experience where they can't interfere with good players' games.</span></span> <span data-ttu-id="e73a5-108">Xbox ではシステムで他のユーザーの情報を正確に保つためにユーザーからの報告に大きく依存していますが、Xbox One のタイトルもユーザーの評判や評価の正確さを大幅に向上させるのに直接貢献できます。</span><span class="sxs-lookup"><span data-stu-id="e73a5-108">Xbox relies heavily on users to report other users to keep the system accurate, but titles in Xbox One can directly participate and dramatically help improve the accuracy of the user reputation population.</span></span>

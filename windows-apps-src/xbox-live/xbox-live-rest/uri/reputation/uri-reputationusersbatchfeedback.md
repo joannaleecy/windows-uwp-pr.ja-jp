@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-reputationusersbatchfeedback.html
 author: KevinAsgari
 description: " /users/batchfeedback"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a06026b412aee93edc411e636238696d8420692
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: f6756cb057de1d5ad2e3e3f5039f55f4e52c12da
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566599"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5704376"
 ---
 # <a name="usersbatchfeedback"></a><span data-ttu-id="57919-104">/users/batchfeedback</span><span class="sxs-lookup"><span data-stu-id="57919-104">/users/batchfeedback</span></span>
  

@@ -3,16 +3,16 @@ title: Xbox アリーナ
 author: KevinAsgari
 description: Xbox アリーナを使用して、ゲームのトーナメントを実行する方法を説明します。
 ms.author: kevinasg
-ms.date: 09-20-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: 576f358659df590f487d7a42a06f4e997dffabf8
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 84944060bac0a14e78cb4a5b28bbc848a71d7602
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5569339"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708399"
 ---
 # <a name="xbox-arena"></a><span data-ttu-id="65976-104">Xbox アリーナ</span><span class="sxs-lookup"><span data-stu-id="65976-104">Xbox Arena</span></span>
 

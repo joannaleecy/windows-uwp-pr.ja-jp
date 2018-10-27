@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-handlesqueryincludepost.html
 author: KevinAsgari
 description: " POST (/handles/query?include=relatedInfo)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f95a1464d60714404f35d090b3925b71df82c17e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 2caffd029e5b5c79eb411678621643a48f65e1f1
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5561986"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700214"
 ---
 # <a name="post-handlesqueryincluderelatedinfo"></a><span data-ttu-id="391e5-104">POST (/handles/query?include=relatedInfo)</span><span class="sxs-lookup"><span data-stu-id="391e5-104">POST (/handles/query?include=relatedInfo)</span></span>
 <span data-ttu-id="391e5-105">セッションの関連する情報が含まれているセッション ハンドルに対するクエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="391e5-105">Creates queries for session handles that include related session information.</span></span>

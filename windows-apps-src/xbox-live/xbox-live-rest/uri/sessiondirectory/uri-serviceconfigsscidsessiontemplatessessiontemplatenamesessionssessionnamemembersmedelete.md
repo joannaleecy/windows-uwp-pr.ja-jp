@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessio
 author: KevinAsgari
 description: " DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c98a48d08db456c303ff3c8f5095c3eab2412990
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: e67b48653b7cccb3a9ff30bc833df0f9d3189638
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566065"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709562"
 ---
 # <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a><span data-ttu-id="6c020-104">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)</span><span class="sxs-lookup"><span data-stu-id="6c020-104">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)</span></span>
 <span data-ttu-id="6c020-105">メンバーをセッションから削除します。</span><span class="sxs-lookup"><span data-stu-id="6c020-105">Removes a member from a session.</span></span>

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersxuidinbox.html
 author: KevinAsgari
 description: " /users/xuid({xuid})/inbox"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f8bdff1aa3ea2ac7874b493323cd6ddaba9e99a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 890ee500cc29ca6766830e7a8b648865dfbb159d
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5569068"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706671"
 ---
 # <a name="usersxuidxuidinbox"></a><span data-ttu-id="e1955-104">/users/xuid({xuid})/inbox</span><span class="sxs-lookup"><span data-stu-id="e1955-104">/users/xuid({xuid})/inbox</span></span>
 <span data-ttu-id="e1955-105">ユーザーへのアクセスの Xbox LIVE サービスの受信トレイのメッセージを提供します。</span><span class="sxs-lookup"><span data-stu-id="e1955-105">Provides access to a user's messaging inbox for Xbox LIVE Services.</span></span> <span data-ttu-id="e1955-106">これらの Uri のドメインが`msg.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="e1955-106">The domain for these URIs is `msg.xboxlive.com`.</span></span>

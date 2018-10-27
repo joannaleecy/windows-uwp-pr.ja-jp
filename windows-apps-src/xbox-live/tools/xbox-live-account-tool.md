@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, テスト, テスト アカウント
 ms.localizationpriority: medium
 ms.openlocfilehash: e76f12ab9ebaffff6b106c13c033d5a7210346d0
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563308"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708324"
 ---
 # <a name="xbox-live-account-tool"></a><span data-ttu-id="ca5ea-104">Xbox Live Account Tool</span><span class="sxs-lookup"><span data-stu-id="ca5ea-104">Xbox Live Account Tool</span></span>
 

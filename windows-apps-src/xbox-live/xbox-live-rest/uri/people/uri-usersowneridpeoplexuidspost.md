@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeoplexuidspost.html
 author: KevinAsgari
 description: " POST (/users/{ownerId}/people/xuids)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 549f8e74111c2f34ca3072b5b25480106be67f33
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 91bcae367e42b3dc728b794d1e68550e86dcfeaa
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5547472"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5701943"
 ---
 # <a name="post-usersowneridpeoplexuids"></a><span data-ttu-id="ed418-104">POST (/users/{ownerId}/people/xuids)</span><span class="sxs-lookup"><span data-stu-id="ed418-104">POST (/users/{ownerId}/people/xuids)</span></span>
 <span data-ttu-id="ed418-105">呼び出し元のユーザーからコレクションに対応する XUID によってユーザーを取得します。</span><span class="sxs-lookup"><span data-stu-id="ed418-105">Gets people by XUID from caller's people collection.</span></span> <span data-ttu-id="ed418-106">これらの Uri のドメインが`social.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="ed418-106">The domain for these URIs is `social.xboxlive.com`.</span></span>

@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidssciddatapathandfilenam
 author: KevinAsgari
 description: " /json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ccb37382cb24824806d07219232632f01bc64c06
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: fb630c8537fa4190585b6f95274a6cd4760a2987
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5559590"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710261"
 ---
 # <a name="jsonusersxuidxuidscidssciddatapathandfilenamejson"></a><span data-ttu-id="efdc4-104">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json</span><span class="sxs-lookup"><span data-stu-id="efdc4-104">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json</span></span>
 <span data-ttu-id="efdc4-105">ダウンロード、アップロード、またはファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="efdc4-105">Downloads, uploads, or deletes a file.</span></span> <span data-ttu-id="efdc4-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="efdc4-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

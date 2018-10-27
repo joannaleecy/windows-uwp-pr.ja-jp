@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipspost.html
 author: KevinAsgari
 description: " POST (/users/me/scids/{scid}/clips)"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 68e87cef7adeb4c50dcb841db6737626500bfe70
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: dd074b6ffc7b5367992c984e7e3c24b036f0f11d
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5548540"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5707423"
 ---
 # <a name="post-usersmescidsscidclips"></a><span data-ttu-id="72304-104">POST (/users/me/scids/{scid}/clips)</span><span class="sxs-lookup"><span data-stu-id="72304-104">POST (/users/me/scids/{scid}/clips)</span></span>
 <span data-ttu-id="72304-105">初期のアップロード要求を実行します。</span><span class="sxs-lookup"><span data-stu-id="72304-105">Make an initial upload request.</span></span> <span data-ttu-id="72304-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。</span><span class="sxs-lookup"><span data-stu-id="72304-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>

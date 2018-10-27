@@ -5,16 +5,16 @@ permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessio
 author: KevinAsgari
 description: " /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}"
 ms.author: kevinasg
-ms.date: 20-12-2017
+ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bd61e7a3092fb094e7c4dc03c9644299bd5a8f1
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 84fd31c4dded819467bf5538183480bdfb9bdd04
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5555924"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5703657"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a><span data-ttu-id="c937c-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}</span><span class="sxs-lookup"><span data-stu-id="c937c-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}</span></span>
 <span data-ttu-id="c937c-105">PUT と取得の操作を作成してセッションを取得をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="c937c-105">Supports PUT and GET operations to create and retrieve sessions.</span></span>
