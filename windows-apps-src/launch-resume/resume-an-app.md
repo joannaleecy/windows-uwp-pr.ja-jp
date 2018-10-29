@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 717c819aaa732cf8d29e0a701a1fec81485f48ac
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5696943"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5742402"
 ---
 # <a name="handle-app-resume"></a><span data-ttu-id="d2e41-104">アプリの再開の処理</span><span class="sxs-lookup"><span data-stu-id="d2e41-104">Handle app resume</span></span>
 
