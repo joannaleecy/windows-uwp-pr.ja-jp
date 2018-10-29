@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b4c2e0f6e99099df4bdda9452521acf3b0cd2b8f
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5692746"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5745062"
 ---
 # <a name="point-lists"></a>ポイント リスト
 

@@ -12,11 +12,11 @@ keywords: Windows 10, UWP
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
 ms.openlocfilehash: 08d861355a235c9217f51ce6f925224a27a562ef
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5683323"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5746338"
 ---
 # <a name="custom-video-effects"></a>カスタムのビデオ特殊効果
 

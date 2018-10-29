@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, バナー, 広告コントロール, スポット広告
 ms.localizationpriority: medium
 ms.openlocfilehash: 738c643f3c83a4f88f5c52c7337c467366ac8fe5
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5710924"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5745332"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Microsoft Advertising SDK を使用したアプリでの広告の表示
 
@@ -33,7 +33,7 @@ Microsoft Advertising SDK を使用して、Windows 10 用ユニバーサル Win
 <tbody>
 <tr>
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
-<td align="left"><b>開始</b><br/><br/>
+<td align="left"><b>使ってみる</b><br/><br/>
     <a href="http://aka.ms/ads-sdk-uwp">Microsoft Advertising SDK のインストール</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>

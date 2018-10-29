@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c73e51cac3823be7c1abcce223c9d7fecfc58ae
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5706042"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5745918"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>広告キャンペーンに関してよく寄せられる質問
 
@@ -43,7 +43,7 @@ ms.locfileid: "5706042"
 
 広告キャンペーンは、以下の国または地域で現在サポートされています。
 
-Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.
+アルジェリア、アルゼンチン、オーストラリア、オーストリア、バハマ、バーレーン、バルバドス、ベルギー、ベリーズ、ボリビア、ブラジル、カナダ、チリ、中国、コロンビア、デンマーク、ドミニカ共和国、エクアドル、エジプト、エルサルバドル、フィンランド、フランス、ドイツ、グアテマラ、ハイチ、ホンジュラス、香港特別行政区、インド、インドネシア、イラク、アイルランド、イタリア、ジャマイカ、ヨルダン、クウェート、レバノン、マレーシア、メキシコ、モロッコ、ニュージーランド、オランダ、ニカラグア、ノルウェー、オマーン、パナマ、パラグアイ、ペルー、フィリピン、プエルトリコ、カタール、サウジアラビア、シンガポール、スペイン、南アフリカ、スウェーデン、スイス、台湾、タイ、トリニダード・トバゴ、チュニジア、アラブ首長国連邦、英国、米国、ウルグアイ、ベネズエラ、ベトナム。
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>広告キャンペーンではどの言語がサポートされていますか。
 

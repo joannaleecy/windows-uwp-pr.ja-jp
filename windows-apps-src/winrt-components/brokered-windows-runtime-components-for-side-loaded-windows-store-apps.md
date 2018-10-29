@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
 ms.openlocfilehash: 3228cd80e7a9e8efb5dca1ec3a2d469e40a52c8a
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5699991"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5744070"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>サイド ローディングされた UWP アプリのための Windows ランタイム コンポーネント ブローカー
 
