@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 00923b4448d96943cf00eade46c39c42e87c4f96
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5691192"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5759458"
 ---
 # <a name="set-speech-recognition-timeouts"></a><span data-ttu-id="bbe41-103">音声認識のタイムアウトの設定</span><span class="sxs-lookup"><span data-stu-id="bbe41-103">Set speech recognition timeouts</span></span>
 
