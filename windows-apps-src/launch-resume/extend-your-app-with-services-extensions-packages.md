@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 拡張, コンポーネント化, アプリ サービス, パッケージ, 拡張機能
 ms.localizationpriority: medium
 ms.openlocfilehash: 624d52ff96fb2537afa3affb2d842aa29e1e6667
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5700417"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5749644"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a><span data-ttu-id="a7587-104">サービス、拡張機能、パッケージでアプリを拡張する</span><span class="sxs-lookup"><span data-stu-id="a7587-104">Extend your app with services, extensions, and packages</span></span>
 

@@ -11,11 +11,11 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c389aa207b0756a222c1c82ea99ea007b451b1e
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5685851"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5748940"
 ---
 # <a name="app-icons-and-logos"></a><span data-ttu-id="76d2c-103">アプリのアイコンとロゴ</span><span class="sxs-lookup"><span data-stu-id="76d2c-103">App icons and logos</span></span> 
 
