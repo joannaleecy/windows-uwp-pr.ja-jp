@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, カスタマイズ, 登録情報, 説明, 以前
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a9e29108692bd3703fce6b1d3a1b42f3c31bcdc
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5690678"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5741467"
 ---
 # <a name="create-platform-specific-store-listings"></a>プラットフォーム固有の Store 登録情報の作成
 

@@ -3,16 +3,16 @@ author: stevewhims
 description: C++/WinRT での Windows ランタイム API の作成と使用に関する質問への回答です。
 title: C++/WinRT についてよく寄せられる質問
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/26/2018
 ms.topic: article
 keywords: wwindows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 頻繁, 質問, 質問, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a2ea3dddc592379199017408652cab0a2a68fbb
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.openlocfilehash: 612eb6ced57fb2a8ca5d855ef9c156b0b9ae4440
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5696477"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5742525"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT についてよく寄せられる質問
 可能性はの作成と Windows ランタイム Api の使用に関する質問への回答[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)します。
@@ -51,7 +51,7 @@ Windows ランタイム クラス (ランタイム クラス) を*使用*する�
 #pragma comment(lib, "windowsapp")
 ```
 
-**WindowsApp.lib**をリンクできるリンカーのエラーを解決することをお勧めしますしないでください。 ただし、Visual Studio と、Microsoft Store によってしたがってことはできなくアプリケーションに正常にする (つまりの提出を検証するために使用する[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)のテストに合格するようにアプリケーションを必要としない場合取り込まれる、Microsoft Store)、その代わりに代替のスタティック リンク ライブラリをリンクすることができます。 たとえば、リンカーのエラーを指す場合**CoIncrementMTAUsage** (または**WINRT_CoIncrementMTAUsage**)、し、解決できますが (たとえば、 **WindowsApp.lib**のバージョンがない場合、どうしても必要な場合は、Ole32.lib をリンクして関数をエクスポート)。
+ある代替のスタティック リンク ライブラリではなく**WindowsApp.lib**をリンクできるリンカーのエラーを解決する、それ以外の場合、アプリケーションがおよび Visual Studio で使用する[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)のテストを渡すされません重要です。Microsoft Store (したがってことはできなくに、Microsoft Store に正常に取り込まれるように、アプリケーションの意味) の提出を検証します。
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>[**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) を実装するかどうかとその方法
 自身のデストラクターのリソースを解放するランタイム クラスを使用し、そのランタイム クラスが実装するコンパイル ユニット (Windows ランタイム クライアント アプリで一般的に使用するための Windows ランタイム コンポーネント) 以外で使用されるように設計されている場合、確定終了処理が不足する言語でランタイム クラスの使用をサポートするために、**IClosable** も実装することをお勧めします。 デストラクター、[**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close)、または両方が呼び出されたときにリソースが解放されるようにしてください。 **IClosable::Close** は必要に応じて呼び出すことができます。

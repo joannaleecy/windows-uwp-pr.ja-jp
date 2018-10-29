@@ -15,11 +15,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 922dccc61954e2022cbe76f2ca5d5b1f9e548733
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5686458"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5741229"
 ---
 # <a name="buttons"></a>ボタン
 

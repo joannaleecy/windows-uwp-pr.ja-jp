@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 価格設定, アプリの価格設定, アプリの価格, アプリの販売, 価格変更, カスタム価格, 価格, 料金, コスト, 基本価格の上書き, 自由設定価格, 自由設定
 ms.localizationpriority: medium
 ms.openlocfilehash: 99e11e29c5625d528777046075f01a824f1b0b37
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5686992"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5740541"
 ---
 # <a name="set-and-schedule-app-pricing"></a>アプリの価格の設定とスケジュール
 
