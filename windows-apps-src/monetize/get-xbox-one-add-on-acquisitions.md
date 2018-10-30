@@ -1,20 +1,20 @@
 ---
 author: Xansky
 description: 集計アドオン入手データを取得するのに、Microsoft Store 分析 API の以下のメソッドを使用します。
-title: Xbox One アドオンを入手します。
+title: Xbox One アドオンの入手数の取得
 ms.author: mhopkins
 ms.date: 10/18/2018
 ms.topic: article
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, Xbox One のアドオンの入手数
 ms.localizationpriority: medium
 ms.openlocfilehash: e703c0c07e981ebf21ad3388ad178eabdd5c068d
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5702802"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5755670"
 ---
-# <a name="get-xbox-one-add-on-acquisitions"></a>Xbox One アドオンを入手します。
+# <a name="get-xbox-one-add-on-acquisitions"></a>Xbox One アドオンの入手数の取得
 
 Microsoft Store 分析 API 集計アドオン入手データを取得する JSON 形式で、Xbox One ゲームを Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析のパートナー センター ダッシュ ボードで利用するには、このメソッドを使います。
 

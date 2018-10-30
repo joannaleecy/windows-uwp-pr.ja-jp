@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e979428191151f680f51d8d4cf2f37f70b0b369d
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.openlocfilehash: 1503b6816a1ebd687ddd320c550c4476a4c5a038
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5684250"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5752997"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>開発者は、ビルド 17763 新機能では、Windows 10 の新規作成
 
@@ -94,7 +94,7 @@ Fall Creators Update 以降、以下のビデオが公開されました。Windo
 
 ### <a name="cwinrt"></a>C++/WinRT
 
-C++/WinRT では、新しい方法の作成と Windows ランタイム Api を使用します。 ヘッダー ファイルに単独の実装は、最新のアプリの機能を最上位アクセス権を提供するために設計されています。 [ビデオを見る](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be)をしくみ、し、[開発者ドキュメント](../cpp-and-winrt-apis/index.md)を詳しく説明します。
+C++/WinRT では、新しい方法の作成と Windows ランタイム Api を使用します。 ヘッダー ファイルに単独で実装は、最新のアプリの機能を最上位アクセス権を提供するために設計されています。 [ビデオを見る](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be)をしくみ、し、[開発者ドキュメント](../cpp-and-winrt-apis/index.md)を詳しく説明します。
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>開発者向けスタートアップ ガイド: を作成して Windows 10 上のフォームをカスタマイズします。
 
