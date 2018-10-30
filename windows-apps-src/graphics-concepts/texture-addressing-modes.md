@@ -14,11 +14,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e817dcc92741ca2e738784f387cfe49399a108c
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5686129"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5767883"
 ---
 # <a name="texture-addressing-modes"></a><span data-ttu-id="1032f-108">テクスチャのアドレス指定モード</span><span class="sxs-lookup"><span data-stu-id="1032f-108">Texture addressing modes</span></span>
 

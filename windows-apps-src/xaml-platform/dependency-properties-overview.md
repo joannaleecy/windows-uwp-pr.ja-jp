@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fbf6e7ee8a224a6957428fddd11a2922adbecf4
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5702358"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5768082"
 ---
 # <a name="dependency-properties-overview"></a><span data-ttu-id="1c8e4-104">依存関係プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="1c8e4-104">Dependency properties overview</span></span>
 
