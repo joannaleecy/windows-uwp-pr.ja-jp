@@ -15,11 +15,11 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ee00a9af23be945ad27ab4b39eec127ec397894
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5706408"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5762863"
 ---
 # <a name="list-view-and-grid-view"></a><span data-ttu-id="1be9a-103">リスト ビューとグリッド ビュー</span><span class="sxs-lookup"><span data-stu-id="1be9a-103">List view and grid view</span></span>
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 72bea3badb19991883e2a6cc62463ab2dc58ec4a
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5698107"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5759538"
 ---
 # <a name="monochrome-light-maps"></a><span data-ttu-id="daad7-104">モノクロ ライト マップ</span><span class="sxs-lookup"><span data-stu-id="daad7-104">Monochrome light maps</span></span>
 

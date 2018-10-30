@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bbb723cc039d6ecca8a5ebcd30ef03559076934
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5698883"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5762447"
 ---
 # <a name="light-mapping-with-textures"></a><span data-ttu-id="e9014-104">テクスチャでのライト マッピング</span><span class="sxs-lookup"><span data-stu-id="e9014-104">Light mapping with textures</span></span>
 
