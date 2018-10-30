@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f06174faa01ceebcd997141c7c2cc943b66797e4
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5700208"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5749734"
 ---
 # <a name="users-uris"></a><span data-ttu-id="4b1ab-104">ユーザー URI</span><span class="sxs-lookup"><span data-stu-id="4b1ab-104">Users URIs</span></span>
  

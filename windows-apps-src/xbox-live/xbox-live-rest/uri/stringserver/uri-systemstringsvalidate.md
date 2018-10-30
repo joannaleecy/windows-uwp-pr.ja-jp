@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 37f87dd58d260d414bb5dcfcd551d77c051e5aa6
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5696494"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5743711"
 ---
 # <a name="systemstringsvalidate"></a><span data-ttu-id="024e2-104">/system/strings/validate</span><span class="sxs-lookup"><span data-stu-id="024e2-104">/system/strings/validate</span></span>
 <span data-ttu-id="024e2-105">検証のための文字列の配列にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="024e2-105">Accesses an array of strings for validation.</span></span> <span data-ttu-id="024e2-106">これらの Uri のドメインが`client-strings.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="024e2-106">The domain for these URIs is `client-strings.xboxlive.com`.</span></span>

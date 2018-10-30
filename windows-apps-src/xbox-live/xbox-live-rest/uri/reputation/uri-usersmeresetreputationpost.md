@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a08d4b8ecb72bc1db7e9607f0118f0e80e1e2980
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5681651"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5744165"
 ---
 # <a name="post-usersmeresetreputation"></a><span data-ttu-id="4f95c-104">POST (/users/me/resetreputation)</span><span class="sxs-lookup"><span data-stu-id="4f95c-104">POST (/users/me/resetreputation)</span></span>
 <span data-ttu-id="4f95c-105">により、実施チームは、アカウント ハイジャック (たとえば) 後、現在のユーザーの評判スコアをいくつかの任意の値に設定します。</span><span class="sxs-lookup"><span data-stu-id="4f95c-105">Enables the Enforcement team to set the current user's Reputation Scores to some arbitrary values after (for example) an account hijacking.</span></span> <span data-ttu-id="4f95c-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="4f95c-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>

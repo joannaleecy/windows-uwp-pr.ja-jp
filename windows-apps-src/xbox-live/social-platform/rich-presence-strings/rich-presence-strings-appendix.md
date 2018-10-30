@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: f7d9ae51e64adaad18ae0723709537ab045eae1a
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5685412"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5746903"
 ---
 # <a name="rich-presence-appendix"></a><span data-ttu-id="5c23e-104">リッチ プレゼンスの付録</span><span class="sxs-lookup"><span data-stu-id="5c23e-104">Rich Presence appendix</span></span>
 

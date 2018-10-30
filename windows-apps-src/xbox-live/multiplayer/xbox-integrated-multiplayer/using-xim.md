@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, Xbox One, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e4645de174bb572b75a8d5a5dcbb4091a693e75
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5689304"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5746648"
 ---
 # <a name="using-xim-c"></a><span data-ttu-id="d58e3-104">XIM (C++) の使用</span><span class="sxs-lookup"><span data-stu-id="d58e3-104">Using XIM (C++)</span></span>
 

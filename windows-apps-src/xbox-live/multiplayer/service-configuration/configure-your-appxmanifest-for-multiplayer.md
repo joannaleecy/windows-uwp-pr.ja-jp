@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, プロトコルのアクティブ化, マルチプレイヤー
 ms.localizationpriority: medium
 ms.openlocfilehash: 35cdb8765ba40e1a6d4a7c624b1a81f37a8f7fa0
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5707688"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5763073"
 ---
 # <a name="configure-your-appxmanifest-for-multiplayer"></a><span data-ttu-id="2c5da-104">マルチプレイヤー用に AppXManifest を構成する</span><span class="sxs-lookup"><span data-stu-id="2c5da-104">Configure your AppXManifest for Multiplayer</span></span>
 

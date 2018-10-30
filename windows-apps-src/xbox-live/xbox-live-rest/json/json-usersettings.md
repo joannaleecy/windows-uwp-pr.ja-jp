@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 67b9edcb4ffd4c0da6929de8dfd47652cf7ab375
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5709049"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5755186"
 ---
 # <a name="usersettings-json"></a><span data-ttu-id="85c27-104">UserSettings (JSON)</span><span class="sxs-lookup"><span data-stu-id="85c27-104">UserSettings (JSON)</span></span>
 <span data-ttu-id="85c27-105">現在の認証されたユーザーの設定を返します。</span><span class="sxs-lookup"><span data-stu-id="85c27-105">Returns settings for current authenticated user.</span></span> 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 186300b160c611eae58566d51ef50bc6920e2ad0
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5701089"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5743587"
 ---
 # <a name="troubleshooting-xbox-live-setup-on-windows-pc"></a><span data-ttu-id="85e90-104">Windows PC での Xbox Live セットアップのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="85e90-104">Troubleshooting Xbox Live setup on Windows PC</span></span>
 

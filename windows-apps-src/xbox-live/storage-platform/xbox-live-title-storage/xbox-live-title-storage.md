@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4186a0fe6d6023703c3e1e88e2d78519f793e9e6
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5681982"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5763096"
 ---
 # <a name="xbox-live-title-storage"></a><span data-ttu-id="db440-104">Xbox Live タイトル ストレージ</span><span class="sxs-lookup"><span data-stu-id="db440-104">Xbox Live Title Storage</span></span>
 
