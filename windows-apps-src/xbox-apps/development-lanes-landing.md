@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
 ms.localizationpriority: medium
 ms.openlocfilehash: b531782e00ab380e64de0fe5f4e6b1737c1f5669
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5692295"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5758192"
 ---
 # <a name="bringing-existing-games-to-xbox"></a><span data-ttu-id="a461c-104">既存のゲームの Xbox への移行</span><span class="sxs-lookup"><span data-stu-id="a461c-104">Bringing existing games to Xbox</span></span>
 
