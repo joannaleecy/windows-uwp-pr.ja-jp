@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, プッシュピン
 ms.localizationpriority: medium
 ms.openlocfilehash: 13c0ea463cbab97e03c87c4e558bba0eff92300c
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5711099"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5765158"
 ---
 # <a name="display-points-of-interest-on-a-map"></a><span data-ttu-id="d711f-104">関心のあるポイントの地図への表示</span><span class="sxs-lookup"><span data-stu-id="d711f-104">Display points of interest on a map</span></span>
 
