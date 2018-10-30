@@ -10,11 +10,11 @@ keywords: windows 10, uwp, タイトル バー
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ebe590f98afef031ab183589fc7dcfc29cd9493
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5706464"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5764304"
 ---
 # <a name="title-bar-customization"></a>タイトル バーのカスタマイズ
 
