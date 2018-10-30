@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: ec865b56254b624655e29df43a42ebedd58e4cf0
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5684048"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5740823"
 ---
 # <a name="windows-dev-center-service-configuration"></a>Windows デベロッパー センターのサービス構成
 
@@ -30,7 +30,7 @@ Xbox Live 構成にアクセスするページ、 [Windows デベロッパー �
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-* [要約](dev-center/summary.md)
+* [まとめ](dev-center/summary.md)
 
 * [Xbox Live のセットアップ](dev-center/xbox-live-setup.md)
 
