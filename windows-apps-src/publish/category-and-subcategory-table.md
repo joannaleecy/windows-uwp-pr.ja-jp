@@ -4,16 +4,16 @@ Description: Listing your app in the right category and subcategory helps custom
 title: カテゴリとサブカテゴリの一覧
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, カテゴリ, サブカテゴリ, ジャンル, 分類, ジャンル
 ms.localizationpriority: medium
-ms.openlocfilehash: a4e85542793fff34609817995fb213eb4f3b7d54
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2c3ea799d030b64c5b4cc67f75cbdd664a8b83da
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5750423"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5840817"
 ---
 # <a name="category-and-subcategory-table"></a>カテゴリとサブカテゴリの一覧
 
@@ -22,7 +22,7 @@ ms.locfileid: "5750423"
 
 アプリに最も適したカテゴリを 1 つ選ぶ必要があります。 利用可能な場合は、サブカテゴリを選ぶこともできます。 どのカテゴリやサブカテゴリを使えばよいかわからない場合、または、ぴったりだと思えるものが見つからない場合は、同じようなアプリを見つけるときに調べる可能性が高いと思われるカテゴリを選んでください。
 
-カテゴリとして**ゲーム**を選択した場合、少なくとも 1 つのサブカテゴリ (ゲームの場合は*ジャンル*とも呼ばれる) を選択する必要があります。 ゲームに該当するジャンルを必要な数だけ選択できます。 ゲームを Xbox のユーザーに公開するには、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を有効にするか、[概念の承認](../gaming/concept-approval.md)プロセスを通過する必要がある点に注意してください)。 
+カテゴリの**ゲーム**を選択すると、少なくとも 1 つのサブカテゴリ (ゲームの*ジャンル*と呼ばれます) を選択する必要があります。 ゲームに該当するジャンルを必要な数だけ選択できます。 ゲームを Xbox のユーザーに公開するには、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を有効にするか、[概念の承認](../gaming/concept-approval.md)プロセスを通過する必要がある点に注意してください)。 
 
 > [!IMPORTANT] 
 > **ゲーム**カテゴリでアプリを公開する場合、新しい申請で別のカテゴリを選択することはできません。引き続き**ゲーム**カテゴリで公開する必要があります (ただし、新しい申請でジャンルの選択は変更できます)。 同様に、ゲーム以外のカテゴリで公開したアプリを更新するときに、**ゲーム**のカテゴリを選ぶこともできません。
@@ -149,38 +149,6 @@ Microsoft Store では、アプリを以下のカテゴリとサブカテゴリ�
   </tr>
 </tbody>
 </table>
-
-
-<!--
-| Category                    | Subcategory                                       |
-|-----------------------------|---------------------------------------------------|
-| Books + reference           | E-reader <br> Fiction <br> Nonfiction <br> Reference |
-| Business                    | Accounting + finance <br> Collaboration <br> CRM <br> Data + analytics <br> File management <br> Inventory + logistics <br> Legal + HR <br> Project management <br> Remote desktop <br> Sales + marketing <br> Time + expenses |
-| Developer tools             | Database <br> Design tools <br> Development kits <br> Networking <br> Reference + training <br> Servers <br> Utilities <br> Web hosting |
-| Education                   | Books + reference <br> Early learning <br> Instructional tools <br> Language <br> Study aids |
-| Entertainment               | (None)                                            |
-| Food + dining               | (None)                                            |
-| Games                       | Action + adventure <br> Card + board <br> Casino <br> Classics <br> Educational <br> Family + kids <br> Fighting <br> Multi-Player Online Battle Arena <br> Music <br> Other <br> Platformer <br> Puzzle + trivia <br> Racing + flying <br> Role playing <br> Shooter <br> Simulation <br> Sports <br> Strategy <br> Tools <br> Word |
-| Government + politics       | (None)                                            |
-| Health + fitness            | (None)                                            |
-| Kids + family               | Books + reference <br> Entertainment <br> Hobbies + toys <br> Sports + activities <br> Travel |
-| Lifestyle                   | Automotive <br> DIY <br> Home + garden <br> Relationships <br> Special interest <br> Style + fashion |
-| Medical                     | (None)                                            |
-| Multimedia design           | Illustration + graphic design <br> Music production <br> Photo + video production |
-| Music                       | (None)                                            |
-| Navigation + maps           | (None)                                            |
-| News + weather              | News <br> Weather                                 |
-| Personal finance            | Banking + investments <br> Budgeting + taxes      |
-| Personalization             | Ringtones + sounds <br> Themes <br> Wallpaper + lock screens |
-| Photo + video               | (None)                                            |
-| Productivity                | (None)                                            |
-| Security                    | PC protection <br> Personal security              |
-| Shopping                    | (None)                                            |
-| Social                      | (None)                                            |
-| Sports                      | (None)                                            |
-| Travel                      | City guides <br> Hotels                           |
-| Utilities + tools           | Backup + manage <br> File managers                |
--->
 
 > [!NOTE] 
 > Windows 8.x と Windows Phone 8.x 以前のユーザー向けの Microsoft Store で使われているカテゴリやサブカテゴリの一部は、上記のカテゴリと表記が異なる場合があります。 

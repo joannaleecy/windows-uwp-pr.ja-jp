@@ -4,19 +4,18 @@ Description: When submitting an add-on, the options on the Properties page help 
 title: アドオン プロパティの入力
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, アドオン, プロパティ, サブスクリプション期間, 製品の有効期間, コンテンツの種類, iap, アプリ内購入, アプリ内製品
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f616e4da96c1a2c59822d1370b49016dbca1bb7
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: fa0559c79b758373347427c0aa88b351c0fbddf0
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745558"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5816471"
 ---
 # <a name="enter-add-on-properties"></a>アドオン プロパティの入力
-
 
 アドオンを提出するとき、**[プロパティ]** ページのオプションは、ユーザーに提供される場合のアドオン動作を決めるのに役立ちます。
 
@@ -32,7 +31,7 @@ ms.locfileid: "5745558"
 
 ## <a name="product-lifetime"></a>製品の有効期限
 
-製品の種類として **[永続的]** を選んだ場合、**[製品の有効期限]** がここに表示されます。 永続的なアドオンの **[製品の有効期限]** の既定値は、**[無期限]** です。つまり、アドオンの期限は切れません。 必要に応じて、設定した期間の後でアドオンの期限が切れるように **[製品の有効期限]** を設定できます (1 から 365 日間のオプションがあります)。
+製品の種類として **[永続的]** を選んだ場合、**[製品の有効期限]** がここに表示されます。 永続的なアドオンの **[製品の有効期限]** の既定値は、**[無期限]** です。つまり、アドオンの期限は切れません。 場合は、(1 から 365 日間のオプション) と期間を設定した後、アドオンの有効期限が切れるように**製品の有効期限**を変更することができます。
 
 
 ## <a name="quantity"></a>数量

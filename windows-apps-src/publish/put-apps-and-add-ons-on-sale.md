@@ -4,20 +4,20 @@ Description: You can promote your app or add-on in the Microsoft Store by puttin
 title: アプリとアドオンの販売
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a815a5ba233808abb0c6159893ed306ddc96c51e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 6c1c646e1e60c6b71559cfde1280a09d380298ed
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5749911"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814503"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>アプリとアドオンの販売
 
-期間限定で特売することにより Microsoft Store でアプリやアドオンの販促活動をすることができます。 製品を低い価格帯で提供することも、割引率を適用することもできます。
+期間限定で特売することにより Microsoft Store でアプリやアドオンの販促活動をすることができます。 製品を低い価格帯で提供することも、割引率を適用することもできます。 あり、すべてのユーザーに特売を提供またはその他の製品のいずれかを所有しているユーザーの排他的なプランを作成するかどうかを選択できます。
 
 > [!NOTE]
 > サブスクリプション アドオンでは、セール価格はサポートされていません。
@@ -27,7 +27,7 @@ ms.locfileid: "5749911"
 開発者が指定した、製品の特売期間中は、ユーザーは割引価格で製品を購入できるようになります。 価格を **[無料]** にした場合は、特売期間中、無料でダウンロードできます。
 
 > [!IMPORTANT]
-> セール価格は、Xbox One を含む、windows 10 デバイスのユーザーにのみ表示されます。 その他の製品のいずれかを所有しているユーザーに提供されるセールは、Windows 10 バージョン 1607 以降のユーザーにのみ表示されます。
+> セール価格は、Xbox One を含む、windows 10 デバイスのユーザーにのみ表示されます。 その他の製品のいずれかの所有者のみを提供することがセールスは、Windows 10 バージョン 1607 以降のユーザーにのみ表示されます。
 > 
 > 他のオペレーティング システムでは、アプリやアドオンの通常価格がユーザーに表示され、セール価格で購入することはできません。 価格は新しい申請で異なる価格帯を選択することでいつでも変更できますが、その場合、期間限定販売としては表示されません。
 

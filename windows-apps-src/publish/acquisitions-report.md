@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details.
+Description: The Acquisitions report in Partner Center lets you see who has acquired and installed your app, along with demographic and platform details.
 title: '[取得] レポート'
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 09/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 取得, アプリの売り上げ, アプリのダウンロード, インストール, ファネル, 購入, コンバージョン, チャネル, アプリ ページ ビュー
 ms.localizationpriority: medium
-ms.openlocfilehash: c2ccb3088d0ef241f950a5f5fcf3f40969bc0531
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: bbd84b32a4e94687ff50f553137a86885094a7d6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5769228"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813309"
 ---
 # <a name="acquisitions-report"></a>取得レポート
 
 
-Windows デベロッパー センター ダッシュ ボードでの**取得]** レポートでは、取得してと共に、人口統計データ、アプリをインストールしたユーザーを表示できますプラットフォームの詳細、およびについて windows 10 (Xbox を含む) のユーザーがアプリの情報を示しています。登録情報。 最後の時間、または 70 ~ 2 時間の期間のリアルタイムの入手データの近く表示することもできます。 
+[パートナー センター](https://partner.microsoft.com/dashboard)での**取得]** レポートでは、取得してと共に、人口統計データ、アプリをインストールしたユーザーを表示できます。 プラットフォームの詳細と、アプリの内容が windows 10 (Xbox を含む) のユーザーにアクセスする方法に関する情報を示しています。 最後の時間、または 70 ~ 2 時間の期間のリアルタイムの入手データの近く表示することもできます。 
 
-このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。 または、[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使って、プログラムでこのデータを取得することもできます。
+パートナー中央揃え、または[レポートをダウンロード](download-analytic-reports.md)してオフラインでは、このデータを表示できます。 または、[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使って、プログラムでこのデータを取得することもできます。
 
 このレポートでは、**取得**は、新しいユーザーがアプリのライセンスを入手したことを意味します (有料の場合も無料の場合も含む)。 **インストール**は、アプリが Windows 10 デバイスにインストールされたことを表します。
 

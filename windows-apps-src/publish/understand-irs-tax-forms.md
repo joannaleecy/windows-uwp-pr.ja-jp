@@ -3,17 +3,17 @@ author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: マイクロソフトが発行する IRS の税関連の書類について
 ms.author: wdg-dev-content
-ms.date: 10/25/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 課税, irs, 米国内国歳入庁, 税, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: e16333b061c3f50d4c0d66b0704bf0977570595e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 326de9b3160f492566306b18252bbc3bacf58531
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742152"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5836070"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>マイクロソフトが発行する IRS の税関連の書類について
 
@@ -25,8 +25,8 @@ ms.locfileid: "5742152"
 
 | IRS の税関連の書類 | 説明 | 利用可能時期 |
 |--------------|-------------|--------------|
-|1099-MISC、1099-K | マイクロソフトのマーケットプレースへの参加に関する販売アクティビティや開発者への支払いに関連します。 | 書類には **1 月 31 日**までの消印が押されます。また、同時に .pdf コピーがデベロッパー センターで利用可能になります (**[ダッシュボード]、[アカウント設定]、[税プロファイル]** の順に移動します)。 |
-|1042-S | 米国の源泉徴収税の対象になる開発者への支払いに関連します。 | 書類には **3 月 15 日**までの消印が押されます。また、同時に .pdf コピーがデベロッパー センターで利用可能になります (**[ダッシュボード]、[アカウント設定]、[税プロファイル]** の順に移動します)。 |
+|1099-MISC、1099-K | マイクロソフトのマーケットプレースへの参加に関する販売アクティビティや開発者への支払いに関連します。 | 書類がするまでの消印で**年 1 月 31**日と .pdf コピーが[パートナー センター](https://partner.microsoft.com/dashboard)で利用可能になります (で**アカウント設定] > 税務プロファイル**) と同時 |
+|1042-S | 米国の源泉徴収税の対象になる開発者への支払いに関連します。 | 書類がするまでの消印で**3 月 15 日**と .pdf コピーがパートナー センターで利用可能になります (で**アカウント設定] > 税務プロファイル**) と同時 |
 
 > [!NOTE]
 > IRS の税関連の書類を使用して、アドレスは、[税務プロファイル](setting-up-your-payout-account-and-tax-forms.md#tax-forms)内の住所から取得されます。 住所を変更した場合は、**[税プロファイル]** の住所も変更するようにしてください。
@@ -106,7 +106,7 @@ ms.locfileid: "5742152"
     <td valign="top"><b>W8 フォームをすべて記入した際に支払いが源泉徴収されたのはなぜですか。</b></td>
     <td valign="top">税金は次のいずれかの場合に源泉徴収されます。<br>
      1. W8 の租税条約の項がすべて正しく記載されていなかった場合<br>
-     2. 米国との租税条約がない国に在住している場合<br><br>更新した W8 フォームを送信するには、いつでもデベロッパー センターにアクセスすることができます。<br><br><b>注</b>: すべての収益とは、源泉徴収の対象です。</td>
+     2. 米国との租税条約がない国に在住している場合<br><br>更新した W8 フォームを送信するには、いつでもパートナー センターにアクセスすることができます。<br><br><b>注</b>: すべての収益とは、源泉徴収の対象です。</td>
   </tr>
   <tr>
     <td valign="top"><b>適切な条約情報を使って更新した W8 フォームを提出しました。 マイクロソフトは源泉徴収された税金を払い戻してくれますか。</b></td>
