@@ -3,16 +3,16 @@ author: jnHs
 Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 title: 正確なリリース スケジュールの構成
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, スケジュール, リリース日, 日付, 公開
 ms.localizationpriority: medium
-ms.openlocfilehash: 910f0aea10e763316bedab7b96b21705c537282c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 6474fc334922d49489c377a0c29841fc45889e1d
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5749037"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5816926"
 ---
 # <a name="configure-precise-release-scheduling"></a>正確なリリース スケジュールの構成
 
@@ -30,7 +30,7 @@ ms.locfileid: "5749037"
 > [!IMPORTANT]
 > [スケジュール] セクションで指定した日付は、Windows 10 のユーザーにのみ適用されます。
 >
->アプリが以前の OS バージョンをサポートしている場合は、アプリが認定に合格して公開プロセスが完了すると、選択したリリース日を過ぎていなくても、該当する OS バージョンのユーザーはそのアプリの登録情報を参照できるようになります。 これらのユーザーには、選択した **[購入の停止]** の日付も一切適用されません。これらのユーザーは、([[表示]](choose-visibility-options.md#discoverability) セクションで新しい設定を選択して更新を申請した場合、または **[アプリの概要]** ページで **[アプリの提供を停止する]** を選択した場合を除いて) 引き続きアプリを入手できます。
+>以前に公開されたアプリで選択した **[購入の停止**日付以前の OS バージョンをサポートしている場合は、これらのユーザーには適用されません。(のセクションでは、[可視性](choose-visibility-options.md#discoverability)、新しい選択と更新プログラムを提出する場合を除き、または**アプリが使用できないように****アプリの概要**ページから選択した場合など) にアプリを入手することがあります。
 
 
 ## <a name="base-schedule"></a>基本スケジュール
@@ -60,7 +60,7 @@ ms.locfileid: "5749037"
 
 既定では、**[購入の停止]** は [実行しない] に設定されます。 これを変更するには、ドロップダウンの **[次の時点]** を選択し、上で説明したように日付と時刻を指定します。 選択した日時になると、ユーザーはアプリを入手できなくなります。
 
-重要な点として、このオプションには、[[表示]](choose-visibility-options.md#discoverability) セクションで **[この製品をストアで提供しますが、検索はできないようにします]** を選択し、**[購入の停止: 直接リンクを知っているユーザーは製品のストア登録情報を表示できます。ただし、製品をダウンロードできるのは、以前にその製品を所有していたか、またはプロモーション コードを持っている場合で、かつ Windows 10 デバイスを使用している場合のみです。]** を選択した場合と同じ効果があります。 新しいユーザーへのアプリの提供を完全に停止するには、[アプリの概要] ページで **[アプリの提供を停止する]** をクリックします。 詳しくは、「[アプリをストアから削除する](guidance-for-app-package-management.md#removing-an-app-from-the-store)」をご覧ください。
+このオプションは、[可視性](choose-visibility-options.md#discoverability)」セクションで**このアプリ検索検索はできないように**を選択して **[購入の停止と同じような影響を理解することが重要: 直接リンクを知っているユーザーは製品のストアで確認できます登録情報をダウンロードできるのみが、以前にその製品を所有するまたはプロモーション コードも、Windows 10 デバイスを使用している場合**。 新しいユーザーへのアプリの提供を完全に停止するには、[アプリの概要] ページで **[アプリの提供を停止する]** をクリックします。 詳しくは、「[アプリをストアから削除する](guidance-for-app-package-management.md#removing-an-app-from-the-store)」をご覧ください。
 
 > [!TIP]
 > **[購入の停止]** で日付を選択し、後からもう一度アプリを提供することにした場合は、新しい申請を作成して、**[購入の停止]** を **[実行しない]** に戻すことができます。 更新された申請が公開されると、アプリが再び利用可能になります。

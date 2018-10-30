@@ -3,20 +3,20 @@ author: jnHs
 Description: Attract customers and promote your apps
 title: ユーザーへのアピールとアプリの宣伝
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 783531d3663f14ffbeb5b0fad950e41b14e39ddf
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 0880105fccca297204c27e80099f0cfc6d016a27
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5759122"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5815432"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>ユーザーへのアピールとアプリの宣伝
 
-アプリは、Microsoft Store が完成したら、できるだけ多くの顧客の前面入手します。 Microsoft では、広告キャンペーン、プロモーション コード、セール価格など、製品を宣伝し、顧客ベースの拡大を図るうえで役立つさまざまな機能を提供しています。
+アプリは、Microsoft Store が完成したら、できるだけ多くの顧客の前面入手します。 [パートナー センター](https://partner.microsoft.com/dashboard)に役立つ多くの機能は、製品を宣伝し、基本、広告キャンペーン、プロモーション コード、セール価格などを含む、顧客の拡大を提供します。
 
 -   [プロモーション コードを生成する](generate-promotional-codes.md)
 -   [アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)

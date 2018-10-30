@@ -4,16 +4,16 @@ Description: When you finish creating your app's submission and click Submit to 
 title: アプリの認定プロセス
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.author: wdg-dev-content
-ms.date: 07/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 公開, 前処理, 認定, リリース, 保留, 申請, 公開, ステータス、時間
 ms.localizationpriority: medium
-ms.openlocfilehash: 24eec7e0f9b52d83d9cda5b964e6b23274a5e6e6
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 161a95141511bc00b1d1a707e893d85dccfa8409
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5740617"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5835939"
 ---
 # <a name="the-app-certification-process"></a>アプリの認定プロセス
 

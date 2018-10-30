@@ -1,25 +1,25 @@
 ---
 author: JnHs
-Description: Learn how to send notifications from Windows Dev Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
+Description: Learn how to send notifications from Partner Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
 title: アプリのユーザーにターゲット プッシュ通知を送信する
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, ターゲット通知, プッシュ通知, トースト, タイル
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
-ms.openlocfilehash: 51da748b1f28a658886543fbf0eaab01e3f74394
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 7c2cf6c9cbd4aa0b25afea47a2fe82774c3c87a7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748203"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813456"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>アプリのユーザーに通知を送信する
 
 アプリ開発者として成功するには、適切なメッセージを適切なタイミングで送信してユーザーを惹きつけることが重要です。 通知を使用すると、アプリの評価、アドオンの購入、新機能の試用、別のアプリのダウンロード (場合によっては、[プロモーション コード](generate-promotional-codes.md)の提供による無料ダウンロード) などの実行をユーザーに促すことができます。
 
-Windows デベロッパー センターは、通知の送信に使用できる、データドリブンの顧客エンゲージメント プラットフォームを提供しています。すべてのアプリ ユーザーを対象にすることも、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 のアプリ ユーザーだけを対象にすることもできます。 <!-- You can also send a single notification to all of the customers for multiple apps. -->
+[パートナー センター](https://partner.microsoft.com/dashboard)は、データドリブンの顧客エンゲージメント プラットフォームをすべてのアプリのユーザーに通知を送信するを使用する場合、またはのみ[顧客で定義した条件を満たす、アプリの Windows 10 ユーザーのサブセットを対象としました。セグメント](create-customer-segments.md)します。 アプリの 1 つ以上の顧客に送信される通知を作成することもできます。
 
 > [!IMPORTANT]
 > これらの通知は、UWP アプリでのみ使用できます。
@@ -37,19 +37,19 @@ Windows デベロッパー センターは、通知の送信に使用できる�
 
 通知を使用してユーザーと関わりあうには、次の 3 ステップを実行する必要があります。
 
-1. **プッシュ通知を受け取るためにアプリを登録します。** これを実行するには、アプリで Microsoft Store Services SDK への参照を追加し、デベロッパー センターとアプリ間で通知チャネルを登録するコードを数行追加します。 そのチャネルを使用して、通知をユーザーに配信します。 詳しくは、「[ターゲット プッシュ通知用のアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
+1. **プッシュ通知を受け取るためにアプリを登録します。** これには、アプリで、Microsoft Store Services SDK への参照を追加し、数行のパートナー センターとアプリの間で通知チャネルを登録するコードを追加します。 そのチャネルを使用して、通知をユーザーに配信します。 詳しくは、「[ターゲット プッシュ通知用のアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
 2. **対象とするユーザーを決定します。** すべてのアプリ ユーザーに通知を送信することも、(単一のアプリ用に作成した通知を) *セグメント*と呼ばれるユーザー グループに送信することもできます。セグメントは、人口統計や収入の条件に基づいて定義できます。 詳しくは、「[顧客セグメントの作成](create-customer-segments.md)」をご覧ください。
 3. **通知のコンテンツを作成して送信します。** たとえば、新しいユーザーにアプリの評価を促す通知の作成や、アドオンの購入を促進する特別サービスを含む通知の送信などが考えられます。
 
 
 ## <a name="to-create-and-send-a-notification"></a>通知を作成して送信するには
 
-ダッシュボードで通知を作成し、特定の顧客セグメントに送信するには、以下の手順に従います。
+パートナー センターで通知を作成し、特定の顧客セグメントに送信するには、次の手順に従います。
 
 > [!NOTE]
-> アプリでデベロッパー センターからの通知を受信するには、まずアプリ内で [RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) メソッドを呼び出して、通知の受信用にアプリを登録する必要があります。 このメソッドは、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) に含まれています。 このメソッドを呼び出す方法の詳細 (コード例を含む) については、「[ターゲット プッシュ通知用のアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
+> アプリは、パートナー センターからの通知を受信できる、前に通知を受信するアプリを登録するアプリでまず[RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)メソッドを呼び出す必要があります。 このメソッドは、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) に含まれています。 このメソッドを呼び出す方法の詳細 (コード例を含む) については、「[ターゲット プッシュ通知用のアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
 
-1. [Windows デベロッパー センター ダッシュボード](https://partner.microsoft.com/dashboard/)で、**[Engage] (関心を引く)** セクションを展開し、**[通知]** を選びます。
+1. [パートナー センター](https://partner.microsoft.com/dashboard)で**利用率の引き上げ**] セクションを展開し、**通知**を選択します。
 2. **[通知]** ページで、**[新しい通知]** を選びます。
 3. セクションでは、**テンプレートを選択して**、送信し、 **[ok]** をクリックする[通知の種類](#notification-template-types)を選択します。
 4. 次のページで、ドロップダウン メニューを使って通知を生成する **1 つのアプリ**または**複数のアプリ**を選びます。 [Microsoft Store Services SDK を使用して通知を受信するように構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)されているアプリのみを選択できます。
@@ -111,20 +111,20 @@ Windows デベロッパー センターは、通知の送信に使用できる�
 ### <a name="to-measure-notification-performance"></a>通知のパフォーマンスを測定するには
 
 1.  通知を作成するときに、**[通知のコンテンツ]** セクションで **[アプリの起動率の追跡]** チェック ボックスを選択します。
-2.  アプリで [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) メソッドを呼び出して、ターゲット通知への応答としてアプリが起動されたことをデベロッパー センターに通知します。 このメソッドは Microsoft Store Services SDK によって提供されます。 このメソッドを呼び出す方法について詳しくは、「[デベロッパー センターの通知を受け取るようにアプリを構成する](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
+2.  アプリでは、アプリがターゲット通知への応答で起動されたことをパートナー センターに通知する[ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)メソッドを呼び出します。 このメソッドは Microsoft Store Services SDK によって提供されます。 このメソッドを呼び出す方法について詳しくは、[パートナー センターの通知を受信するアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)を参照してください。
 
 
 ### <a name="to-view-notification-performance"></a>通知のパフォーマンスを表示するには
 
-前述のとおり、通知のパフォーマンスを測定するように通知とアプリを構成すると、ダッシュボードを使用して通知のパフォーマンス状態を表示できます。
+前述のように、通知のパフォーマンスを測定するには、通知とアプリを構成したら、通知のパフォーマンスを確認できます。
 
 各通知の詳細データを確認するには。
 
-1.  Windows デベロッパー センター ダッシュボードで、**[利用率の引き上げ]** セクションを展開し、**[通知]** を選びます。
+1.  パートナー センターで、**利用率の引き上げ**] セクションを展開し、**通知**を選択します。
 2.  既にある通知の表で**進行状況**または**完了**、選択、通知ごとの大まかなパフォーマンスを確認する**配信率**と**アプリの起動率**の列を確認します。
 3.  さらに詳細なパフォーマンスを確認するには、通知名を選択します。 **[配信統計]** セクションでは、通知に関する以下の**状態**について、**[カウント]** と **[割合]** の情報を確認できます。
     * **失敗**: 何らかの理由で、通知が配信されませんでした。 これは、Windows 通知サービスで問題が発生した場合などに発生します。
-    * **チャネルの有効期限エラー**: アプリとデベロッパー センター間のチャネルの有効期限が切れているため、通知を配信できませんでした。 これは、顧客が長期間アプリを開いていない場合などに発生します。
+    * **チャネルの有効期限エラー**: アプリとパートナー センター間のチャネルが切れているために、通知を配信できませんでした。 これは、顧客が長期間アプリを開いていない場合などに発生します。
     * **送信中**: 通知がキューで送信待ちになっています。
     * **送信済み**: 通知が送信されました。
     * **起動**: 通知が送信され、顧客が通知をクリックして、その結果、アプリが開かれました。 これは、アプリの起動のみを追跡することに注意してください。 ストアを起動して評価をするなど、他のアクションを実行するよう顧客に促す通知は、この状態には含まれていません。
@@ -132,7 +132,7 @@ Windows デベロッパー センターは、通知の送信に使用できる�
 
 ユーザー アクティビティ データは、すべての通知を分析するには。
 
-1.  Windows デベロッパー センター ダッシュボードで、**[利用率の引き上げ]** セクションを展開し、**[通知]** を選びます。
+1.  パートナー センターで、**利用率の引き上げ**] セクションを展開し、**通知**を選択します。
 2.  [**通知**] ページで、**解析**] タブをクリックします。このタブでは、次のデータが表示されます。
     * トーストとアクション センターの通知のさまざまなユーザー操作の状態のグラフ ビュー。
     * トーストとアクションのレートでのクリック - の世界地図ビュー中央に通知します。
@@ -140,7 +140,7 @@ Windows デベロッパー センターは、通知の送信に使用できる�
 
 ## <a name="translate-your-notifications"></a>通知の翻訳
 
-通知を最大限に活用するには、顧客が希望する言語に翻訳することを検討します。 デベロッパー センターでは、優れた [Microsoft Translator](https://www.microsoft.com/translator/home.aspx) サービスを活用して、通知を簡単に自動的に翻訳できます。
+通知を最大限に活用するには、顧客が希望する言語に翻訳することを検討します。 パートナー センターを容易に、 [Microsoft Translator](https://www.microsoft.com/translator/home.aspx)サービスを活用して、通知を自動的に翻訳します。
 
 1.  通知を既定の言語で記述したら、**[言語の追加]** (**[通知のコンテンツ]** セクションの **[言語]** メニューの下) を選択します。
 2.  **[言語の追加]** ウィンドウで、通知を表示する追加の言語を選択し、**[更新]** を選択します。

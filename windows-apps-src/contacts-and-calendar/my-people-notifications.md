@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 943d236699ccab6d61e5394426077a32d7249592
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5751940"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5817153"
 ---
 # <a name="my-people-notifications"></a>マイ連絡先の通知
 

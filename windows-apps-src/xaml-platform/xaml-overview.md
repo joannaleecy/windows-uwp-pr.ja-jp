@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: b2576c11e50092b5d8e70189e0e8a88cfab716f9
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752356"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5818077"
 ---
 # <a name="xaml-overview"></a>XAML の概要
 

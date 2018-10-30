@@ -3,16 +3,16 @@ author: JnHs
 Description: Target specific segments of your customers with personalized content to increase engagement, retention, and monetization.
 title: 対象のプランによるエンゲージメントとコンバージョンの最大化
 ms.author: wdg-dev-content
-ms.date: 11/10/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, 対象のプラン, プラン, 販売, 通知
 ms.localizationpriority: medium
-ms.openlocfilehash: a808f334692d7775a34bc760bcd799cb87d05b6e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 0f6e1f8119522cd0441157131362d860feff3410
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5769078"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5815057"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>対象のプランによるエンゲージメントとコンバージョンの最大化
 
@@ -25,7 +25,7 @@ ms.locfileid: "5769078"
 
 対象のプランを使うには、次の 3 ステップを実行します。
 
-1. **ダッシュボードでプランを作成する。** **[Engage] (関心を引く) の [対象のプラン]** ページに移動して、プランを作成します。 このプロセスについては、以降で詳しく説明します。
+1. **[パートナー センター](https://partner.microsoft.com/dashboard)で、プランを作成します。** **[Engage] (関心を引く) の [対象のプラン]** ページに移動して、プランを作成します。 このプロセスについては、以降で詳しく説明します。
 2. **アプリ内販売エクスペリエンスを実装する。** *Microsoft Store ターゲット オファー API*コードで使うアプリの特定のユーザー向けの利用可能なプランを取得します。 対象のプラン用のアプリ内エクスペリエンスを作成する必要もあります。 詳しくは、「[ストア サービスを使ってターゲット オファーを管理する](../monetize/manage-targeted-offers-using-windows-store-services.md)」をご覧ください。
 3. **アプリをストアに提出する。** プランをユーザーに提供するには、アプリ内販売エクスペリエンスを実装して、アプリを発行する必要があります。
 
@@ -34,9 +34,7 @@ ms.locfileid: "5769078"
 
 ## <a name="to-create-and-send-a-targeted-offer"></a>対象のプランを作成して送信するには
 
-ダッシュボードで対象のプランを作成するには、次の手順に従います。
-
-1.  Windows デベロッパー センター ダッシュボードで、左側のナビゲーション メニューの **[Engage] (関心を引く)** を展開して、**[対象のプラン]** を選びます。
+1.  [パートナー センター](https://partner.microsoft.com/dashboard)で、左側のナビゲーション メニューで [**利用率の引き上げ**を展開し、**対象のプラン**を選択します。
 2.  **[対象のプラン]** ページで、利用可能なプランを確認します。 実装するプランについて、**[新しいプランの作成]** を選びます。
 
     > [!NOTE]
@@ -46,7 +44,7 @@ ms.locfileid: "5769078"
 4.  他のプランを作成する場合は、手順 2 ～ 3 を繰り返します。 種類は同じでも、プランごとに別のアドオンを選ぶと、同じアプリに同じ種類のプランを複数実装できます。 また、同じアドオンを複数のプランの種類に関連付けることもできます。
 5.  プランの作成が完了したら、**[保存]** をクリックします。
 
-プランの実装後は、**[対象のプラン]** ページでプランごとのコンバージョン数の合計を確認できます。
+プランの実装後は、プランごとのコンバージョン数の合計を表示するパートナー センターで、**対象のプラン**のページに返すことができます。
 
 プランを使わないことにした場合 (または使い続ける必要がなくなった場合) は、**[削除]** をクリックします。
 

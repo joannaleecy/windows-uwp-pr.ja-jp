@@ -4,16 +4,16 @@ Description: If you encounter errors after submitting your app to the Store, you
 title: 申請エラーの解決
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d997d2523012588348512311980f9bb4a7160b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 0ba47bdf964cab66182aadc6dafb0ae6d34c3ea7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5758443"
+ms.locfileid: "5811979"
 ---
 # <a name="resolve-submission-errors"></a>申請エラーの解決
 
@@ -31,6 +31,9 @@ Win32 と UWP の両方のバイナリが含まれているパッケージを提
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 以前のバージョン
 
+> [!IMPORTANT]
+> 2018 年 10 月 31 日の時点で、新しく作成した製品が Windows Phone を対象とするパッケージを含めることはできません 8.x 以前のバージョン。 詳しくは、この[ブログ記事](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)を参照してください。
+
 前処理中に Windows Phone のパッケージに関する問題が検出されると、**エラー 2001** が表示されることがあります。 ほとんどの場合は、アプリのパッケージをリビルドしてエラーを修正する必要があります。 処理が完了したら、[パッケージ](upload-app-packages.md) ページで古いパッケージを新しいパッケージに置き換えてから、**[ストアに提出]** をもう一度クリックします。
 
 このエラーの原因になる問題はいくつかあります。 次の一覧を調べて、どの問題が自分のパッケージに当てはまるか判断してください。
@@ -45,7 +48,7 @@ Win32 と UWP の両方のバイナリが含まれているパッケージを提
 
 ## <a name="nameidentity-errors"></a>名前/ID エラー
 
-「**パッケージ内で見つかった名前が、予約したアプリ名のいずれにも該当しません。アプリ名を予約するか、この言語に対応した正しいアプリ名でパッケージを更新してください**」ということを示すエラーが表示された場合、パッケージに誤った名前を入力した可能性があります。 また、このエラーは、デベロッパー センターで予約していないアプリ名を使用している場合にも発生することがあります。 通常、このエラーは次の手順に従って解決できます。
+「**パッケージ内で見つかった名前が、予約したアプリ名のいずれにも該当しません。アプリ名を予約するか、この言語に対応した正しいアプリ名でパッケージを更新してください**」ということを示すエラーが表示された場合、パッケージに誤った名前を入力した可能性があります。 このエラーは、パートナー センターでアプリ名を予約していないを使用している場合にも発生することができます。 通常、このエラーは次の手順に従って解決できます。
 
 - アプリの [[アプリ ID]](view-app-identity-details.md) ページ (**[アプリ管理]** の下) に移動して、アプリに ID が割り当てられているかどうかを確認します。 割り当てられていない場合は、ID を作成するオプションが表示されます。 ID を作成するためには、アプリの名前を予約する必要があります。 その名前がパッケージで使用されている名前であることを確認してください。
 - アプリに ID が既に割り当てられているときでも、場合によっては、パッケージで使用する名前を予約する必要があります。 **[アプリ管理]** で、[[アプリ名の管理]](manage-app-names.md) をクリックします。 使用する名前を入力し、**[アプリ名を予約]** をクリックします。

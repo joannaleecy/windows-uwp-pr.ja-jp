@@ -4,16 +4,16 @@ Description: You can publish line-of-business (LOB) apps directly to enterprises
 title: LOB アプリの企業への配布
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, LOB, 基幹業務, エンタープライズ アプリ, ビジネス向け Store, 教育機関向け Store, 企業
 ms.localizationpriority: medium
-ms.openlocfilehash: c491e5db7b5cea0a1b2a6bb9387f1432d007bed2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d90a3b3b0eb216dbc07bbc331d7d461ed0f825c4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5758146"
+ms.locfileid: "5816481"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>LOB アプリの企業への配布
 
@@ -24,7 +24,7 @@ ms.locfileid: "5758146"
 > 現在、ビジネス向け Microsoft ストアまたは教育機関向け Microsoft ストアを通じて企業に排他的に配布できるのは無料アプリだけです。 有料アプリを LOB として申請しても、企業が利用できるようにはなりません。 
 
 > [!IMPORTANT]
-> [Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使って、LOB アプリを直接企業に公開することはできません。 LOB アプリのすべての申請は、Windows デベロッパー センター ダッシュボードを使って行う必要があります。
+> [Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使って、LOB アプリを直接企業に公開することはできません。 パートナー センターで LOB アプリのすべての申請を公開する必要があります。
 
 
 ## <a name="set-up-the-enterprise-association"></a>企業の関連付けの設定
@@ -94,7 +94,7 @@ LOB として既に公開したアプリに更新プログラムを公開する�
 
 ビジネス向け Microsoft ストアまたは教育向け Microsoft ストアで企業にアプリを提供することで、アプリはストアによって確実に署名され、標準的なストア ポリシーに準拠します。
 
-企業は場合によっては、Windows デベロッパー センターで LOB アプリを申請したくないことがあります (コンプライアンス上の理由や、追加の機能を必要とするアプリなど)。 このような企業では、ビジネス向け Microsoft ストアや教育向け Microsoft ストアを使わずに、サイドローディングによってアプリをコンピューターに直接展開できます。
+場合によっては、企業しない場合があります (コンプライアンス上の理由やその他の機能を必要とするアプリなど)、パートナー センターを通じて提出するには、その LOB アプリ。 このような企業では、ビジネス向け Microsoft ストアや教育向け Microsoft ストアを使わずに、サイドローディングによってアプリをコンピューターに直接展開できます。
 
 詳しくは、「[Windows 10 での LOB アプリのサイドローディング](http://go.microsoft.com/fwlink/p/?LinkId=623433)」をご覧ください。
 

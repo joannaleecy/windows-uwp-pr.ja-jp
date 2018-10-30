@@ -4,16 +4,16 @@ Description: Follow these guidelines to prepare your app's packages for submissi
 title: アプリ パッケージの要件
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, パッケージ要件, パッケージ, パッケージ形式, サポートされているバージョン, 提出
 ms.localizationpriority: medium
-ms.openlocfilehash: 5270215e1f4834a7e7c86ed4b3052ed4f791d57e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1c76cb26d91ecd1f72b71f90b9ef464cdf52ba55
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5764576"
+ms.locfileid: "5815515"
 ---
 # <a name="app-package-requirements"></a>アプリ パッケージの要件
 
@@ -74,6 +74,8 @@ UWP アプリでは、Visual Studio は、アプリ バンドル (.msixbundle �
 | パッケージのサイズ         | .msixbundle または .appxbundle: バンドルあたり最大 25 GB <br>Windows 10時 25分を対象とするパッケージを .msix または .appx パッケージあたり最大 GB<br>Windows 8.1 を対象とする .appx パッケージ: パッケージあたり最大 8 GB <br> Windows 8 を対象とする .appx パッケージ: パッケージあたり最大 2 GB <br> Windows Phone 8.1 を対象とする .appx パッケージ: パッケージあたり最大 4 GB <br> .xap パッケージ: パッケージあたり最大 1 GB                                                                           |
 | ブロック マップ ハッシュ     | SHA2-256 アルゴリズム                                                   |
 
+> [!IMPORTANT]
+> 2018 年 10 月 31 日の時点で、新しく作成した製品が Windows 8.x/Windows を対象とするパッケージを含めることはできません Phone 8.x 以前のバージョン。 詳しくは、この[ブログ記事](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)を参照してください。
 
 ## <a name="supported-versions"></a>サポートされているバージョン
 

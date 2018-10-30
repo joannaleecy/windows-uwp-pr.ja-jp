@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 821a28109c511bb2bd96bf5cbccb190cbe928abc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f7e211ebfa28421340e716c0176cab80a9511671
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741577"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5818456"
 ---
 #<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Android と iOS 開発者向けの Windows アプリ概念マッピング
 
@@ -300,7 +300,7 @@ ms.locfileid: "5741577"
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>アプリのライフサイクル。</strong> <br><br>アプリの起動時、中断時、再開時、終了時にイベントを処理し、アプリケーションの状態を保存/復元したり他のタスクを実行したりする機会を提供します。</td>
-<td align="left">アクティビティのそれぞれに、<strong>再開</strong>などの状態を持つ独自の<strong>アクティビティ ライフサイクル</strong>があります。 <strong>onResume</strong> などの<strong>ライフサイクル コールバック</strong>が<strong>アクティビティ クラス</strong>に実装されます。</td>
+<td align="left">アクティビティのそれぞれに、<strong>再開</strong>などの状態を持つ独自の<strong>アクティビティ ライフサイクル</strong>があります。 <strong>OnResume</strong>など<strong>のライフ サイクル コールバック</strong>は、<strong>アクティビティ クラス</strong>に実装されています。</td>
 <td align="left"><strong>アプリケーションのライフサイクル</strong>には<strong>中断</strong>などの状態があります。 <strong>applicationDidEnterBackground:</strong> などのメソッドを<strong>アプリケーションのデリゲート オブジェクト</strong>に実装して、状態が変わったときにコードを実行できます。</td>
 <td align="left">アプリケーションには<strong>アプリの実行状態</strong> NotRunning、Activated、Running、Suspending、Suspended、Resuming があります。<br/><br/><strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">Application クラス</a></strong>のメソッド OnLaunched、OnActivated、Suspending、Resuming をアプリに実装して、状態が変わったときにコードを実行できます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">アプリのライフサイクル</a></td>
 </tr>

@@ -4,16 +4,16 @@ Description: To understand your tax considerations for price selection, payout i
 title: 有料アプリの税の詳細
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.author: wdg-dev-content
-ms.date: 6/1/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 税金, アプリの税, 税の要件, コマース拡張, 税率
 ms.localizationpriority: medium
-ms.openlocfilehash: 322ebef077fde5e7ab03751b6bcc7b799fd82893
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ab6cae6bc923cf03e777170eb4804d749573fb91
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742002"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5816757"
 ---
 # <a name="tax-details-for-paid-apps"></a>有料アプリの税の詳細
 
