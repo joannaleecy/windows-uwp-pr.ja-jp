@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: caa0063c0aa919e094abedd96b6205e83467e0e5
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5689714"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5755607"
 ---
 # <a name="create-a-windows-hello-login-app"></a><span data-ttu-id="e3fcf-104">Windows Hello ログイン アプリの作成</span><span class="sxs-lookup"><span data-stu-id="e3fcf-104">Create a Windows Hello login app</span></span>
 

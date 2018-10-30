@@ -10,51 +10,51 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ce3ec15a45f812162c7aab0cb9683183d7196ae3
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5706979"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5754052"
 ---
-# <a name="text-scaling"></a><span data-ttu-id="1d3e0-103">テキストの拡大縮小</span><span class="sxs-lookup"><span data-stu-id="1d3e0-103">Text scaling</span></span>
+# <a name="text-scaling"></a><span data-ttu-id="5fa57-103">テキストの拡大縮小</span><span class="sxs-lookup"><span data-stu-id="5fa57-103">Text scaling</span></span>
 
 ![テキストの 100% に 225% のスケーリングの例](images/coretext/text-scaling-news-hero-small.png)  
-*<span data-ttu-id="1d3e0-105">Windows 10 (100% に 225%) でスケーリング テキストの例</span><span class="sxs-lookup"><span data-stu-id="1d3e0-105">Example of text scaling in Windows 10 (100% to 225%)</span></span>*
+*<span data-ttu-id="5fa57-105">Windows 10 (100% に 225%) でスケーリング テキストの例</span><span class="sxs-lookup"><span data-stu-id="5fa57-105">Example of text scaling in Windows 10 (100% to 225%)</span></span>*
 
-## <a name="overview"></a><span data-ttu-id="1d3e0-106">概要</span><span class="sxs-lookup"><span data-stu-id="1d3e0-106">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="5fa57-106">概要</span><span class="sxs-lookup"><span data-stu-id="5fa57-106">Overview</span></span>
 
-<span data-ttu-id="1d3e0-107">(モバイル デバイスから Surface Hub の大きな画面にデスクトップのモニターにラップトップ) コンピューターの画面上のテキストの読み取りは、多くの人にとって困難なことができます。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-107">Reading text on a computer screen (from mobile device to laptop to desktop monitor to the giant screen of a Surface Hub) can be challenging for many people.</span></span> <span data-ttu-id="1d3e0-108">逆に、一部のユーザーは、アプリや web サイトで必要以上にするために使用するフォント サイズを検索します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-108">Conversely, some users find the font sizes used in apps and web sites to be larger than necessary.</span></span>
+<span data-ttu-id="5fa57-107">(モバイル デバイスから Surface Hub の大きな画面にデスクトップのモニターにラップトップ) コンピューターの画面上のテキストの読み取りは、多くの人にとって困難なことができます。</span><span class="sxs-lookup"><span data-stu-id="5fa57-107">Reading text on a computer screen (from mobile device to laptop to desktop monitor to the giant screen of a Surface Hub) can be challenging for many people.</span></span> <span data-ttu-id="5fa57-108">逆に、一部のユーザーは、アプリや web サイトで必要以上にするために使用するフォント サイズを検索します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-108">Conversely, some users find the font sizes used in apps and web sites to be larger than necessary.</span></span>
 
-<span data-ttu-id="1d3e0-109">テキストはを幅広いユーザーできるだけ読みやすいことを確認するには、Windows には、ユーザーが OS と個々 のアプリケーションの両方の間での相対的なフォント サイズを変更する機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-109">To ensure text is as legible as possible for the broadest range of users, Windows provides the ability for users to change relative font size across both the OS and individual applications.</span></span> <span data-ttu-id="1d3e0-110">拡大鏡アプリ (これ通常だけ、画面の領域内のすべてを拡大し、独自の操作性の問題が導入されています) を使って、ディスプレイの解像度を変更または DPI スケーリングのサイズを変更の表示と一般的な表示に基づくすべての証明書利用者ではなく距離)、ユーザーは、テキストだけで、100% (既定のサイズ) からの範囲のサイズを変更する設定にすばやくアクセスできる最大 225% です。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-110">Instead of using a magnifier app (which typically just enlarges everything within an area of the screen and introduces its own usability issues), changing display resolution, or relying on DPI scaling (which resizes everything based on display and typical viewing distance), a user can quickly access a setting to resize just text, ranging from 100% (the default size) up to 225%.</span></span>
+<span data-ttu-id="5fa57-109">テキストはを幅広いユーザーできるだけ読みやすいことを確認するには、Windows には、ユーザーが OS と個々 のアプリケーションの両方の間での相対的なフォント サイズを変更する機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="5fa57-109">To ensure text is as legible as possible for the broadest range of users, Windows provides the ability for users to change relative font size across both the OS and individual applications.</span></span> <span data-ttu-id="5fa57-110">拡大鏡アプリ (これ通常だけ、画面の領域内のすべてを拡大し、独自の操作性の問題が導入されています) を使って、ディスプレイの解像度を変更または DPI スケーリングのサイズを変更の表示と一般的な表示に基づくすべての証明書利用者ではなく距離)、ユーザーは、テキストだけで、100% (既定のサイズ) からの範囲のサイズを変更する設定にすばやくアクセスできる最大 225% です。</span><span class="sxs-lookup"><span data-stu-id="5fa57-110">Instead of using a magnifier app (which typically just enlarges everything within an area of the screen and introduces its own usability issues), changing display resolution, or relying on DPI scaling (which resizes everything based on display and typical viewing distance), a user can quickly access a setting to resize just text, ranging from 100% (the default size) up to 225%.</span></span>
 
-## <a name="support"></a><span data-ttu-id="1d3e0-111">サポート</span><span class="sxs-lookup"><span data-stu-id="1d3e0-111">Support</span></span>
+## <a name="support"></a><span data-ttu-id="5fa57-111">サポート</span><span class="sxs-lookup"><span data-stu-id="5fa57-111">Support</span></span>
 
-<span data-ttu-id="1d3e0-112">ユニバーサル Windows アプリケーション (標準および PWA)、既定でスケーリング テキストをサポートします。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-112">Universal Windows applications (both standard and PWA), support text scaling by default.</span></span>
+<span data-ttu-id="5fa57-112">ユニバーサル Windows アプリケーション (標準および PWA)、既定でスケーリング テキストをサポートします。</span><span class="sxs-lookup"><span data-stu-id="5fa57-112">Universal Windows applications (both standard and PWA), support text scaling by default.</span></span>
 
-<span data-ttu-id="1d3e0-113">カスタム コントロール、カスタム テキスト サーフェス、ハード コードされたコントロールの高さ、古いフレームワークは、またはサード パーティのフレームワークで、UWP アプリケーションが含まれる場合可能性がありますを加えることがいくつかの更新に一貫性があり、便利なユーザー エクスペリエンスことを確認します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-113">If your UWP application includes custom controls, custom text surfaces, hard-coded control heights, older frameworks, or 3rd party frameworks, you likely have to make some updates to ensure a consistent and useful experience for your users.</span></span>  
+<span data-ttu-id="5fa57-113">カスタム コントロール、カスタム テキスト サーフェス、ハード コードされたコントロールの高さ、古いフレームワークは、またはサード パーティのフレームワークで、UWP アプリケーションが含まれる場合可能性がありますを加えることがいくつかの更新に一貫性があり、便利なユーザー エクスペリエンスことを確認します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-113">If your UWP application includes custom controls, custom text surfaces, hard-coded control heights, older frameworks, or 3rd party frameworks, you likely have to make some updates to ensure a consistent and useful experience for your users.</span></span>  
 
-<span data-ttu-id="1d3e0-114">DirectWrite、GDI、および XAML SwapChainPanels ネイティブにサポートしていませんテキストのスケーリング、Win32 のサポートは、メニューのアイコン、およびツールバーに制限されますが。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-114">DirectWrite, GDI, and XAML SwapChainPanels do not natively support text scaling, while Win32 support is limited to menus, icons, and toolbars.</span></span>  
+<span data-ttu-id="5fa57-114">DirectWrite、GDI、および XAML SwapChainPanels ネイティブにサポートしていませんテキストのスケーリング、Win32 のサポートは、メニューのアイコン、およびツールバーに制限されますが。</span><span class="sxs-lookup"><span data-stu-id="5fa57-114">DirectWrite, GDI, and XAML SwapChainPanels do not natively support text scaling, while Win32 support is limited to menus, icons, and toolbars.</span></span>  
 
 <!-- If you want to support text scaling in your application with these frameworks, you’ll need to support the text scaling change event outlined below and provide alternative sizes for your UI and content.   -->
 
-## <a name="user-experience"></a><span data-ttu-id="1d3e0-115">ユーザーによるインストール</span><span class="sxs-lookup"><span data-stu-id="1d3e0-115">User experience</span></span>
+## <a name="user-experience"></a><span data-ttu-id="5fa57-115">ユーザーによるインストール</span><span class="sxs-lookup"><span data-stu-id="5fa57-115">User experience</span></span>
 
-<span data-ttu-id="1d3e0-116">ユーザーがテキストの倍率を調整できる]-> [設定の大きなスライダー テキストにすると簡単ビジョン/ディスプレイの画面]-> [します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-116">Users can adjust text scale with the Make text bigger slider on the Settings -> Ease of Access -> Vision/Display screen.</span></span>
+<span data-ttu-id="5fa57-116">ユーザーがテキストの倍率を調整できる]-> [設定の大きなスライダー テキストにすると簡単ビジョン/ディスプレイの画面]-> [します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-116">Users can adjust text scale with the Make text bigger slider on the Settings -> Ease of Access -> Vision/Display screen.</span></span>
 
 ![テキストの 100% に 225% のスケーリングの例](images/coretext/text-scaling-settings-100-small.png)  
-*<span data-ttu-id="1d3e0-118">設定から設定テキスト スケール簡単]-> [ビジョン/ディスプレイの画面]-> [</span><span class="sxs-lookup"><span data-stu-id="1d3e0-118">Text scale setting from Settings -> Ease of Access -> Vision/Display screen</span></span>*
+*<span data-ttu-id="5fa57-118">設定から設定テキスト スケール簡単]-> [ビジョン/ディスプレイの画面]-> [</span><span class="sxs-lookup"><span data-stu-id="5fa57-118">Text scale setting from Settings -> Ease of Access -> Vision/Display screen</span></span>*
 
-## <a name="ux-guidance"></a><span data-ttu-id="1d3e0-119">UX ガイダンス</span><span class="sxs-lookup"><span data-stu-id="1d3e0-119">UX guidance</span></span>
+## <a name="ux-guidance"></a><span data-ttu-id="5fa57-119">UX ガイダンス</span><span class="sxs-lookup"><span data-stu-id="5fa57-119">UX guidance</span></span>
 
-<span data-ttu-id="1d3e0-120">テキストのサイズが変更されたコントロールとコンテナーする必要がありますもサイズを変更して、テキストとその新しいレイアウトに対応するために再配置されます。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-120">As text is resized, controls and containers must also resize and reflow to accommodate the text and its new layout.</span></span> <span data-ttu-id="1d3e0-121">アプリ、フレームワーク、およびプラットフォームに応じて以前は、既に説明したようこの作業の大半に行われます。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-121">As mentioned previously, depending on the app, framework, and platform, much of this work is done for you.</span></span> <span data-ttu-id="1d3e0-122">次の UX ガイダンスでは、このようなことがない場合について説明します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-122">The following UX guidance covers those cases where it's not.</span></span>
+<span data-ttu-id="5fa57-120">テキストのサイズが変更されたコントロールとコンテナーする必要がありますもサイズを変更して、テキストとその新しいレイアウトに対応するために再配置されます。</span><span class="sxs-lookup"><span data-stu-id="5fa57-120">As text is resized, controls and containers must also resize and reflow to accommodate the text and its new layout.</span></span> <span data-ttu-id="5fa57-121">アプリ、フレームワーク、およびプラットフォームに応じて以前は、既に説明したようこの作業の大半に行われます。</span><span class="sxs-lookup"><span data-stu-id="5fa57-121">As mentioned previously, depending on the app, framework, and platform, much of this work is done for you.</span></span> <span data-ttu-id="5fa57-122">次の UX ガイダンスでは、このようなことがない場合について説明します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-122">The following UX guidance covers those cases where it's not.</span></span>
 
-### <a name="use-the-platform-controls"></a><span data-ttu-id="1d3e0-123">プラットフォーム コントロールを使う</span><span class="sxs-lookup"><span data-stu-id="1d3e0-123">Use the platform controls</span></span>
+### <a name="use-the-platform-controls"></a><span data-ttu-id="5fa57-123">プラットフォーム コントロールを使う</span><span class="sxs-lookup"><span data-stu-id="5fa57-123">Use the platform controls</span></span>
 
-<span data-ttu-id="1d3e0-124">言ったこれ既にかどうか。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-124">Did we say this already?</span></span> <span data-ttu-id="1d3e0-125">繰り返しますが: 最小限の作業するときに、最も包括的なユーザー エクスペリエンスを実現するためにさまざまな Windows アプリのフレームワークで提供される組み込みのコントロールが常に使用可能な限り、します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-125">It's worth repeating: When possible, always use the built-in controls provided with the various Windows app frameworks to get the most comprehensive user experience possible for the least amount of effort.</span></span>
+<span data-ttu-id="5fa57-124">言ったこれ既にかどうか。</span><span class="sxs-lookup"><span data-stu-id="5fa57-124">Did we say this already?</span></span> <span data-ttu-id="5fa57-125">繰り返しますが: 最小限の作業するときに、最も包括的なユーザー エクスペリエンスを実現するためにさまざまな Windows アプリのフレームワークで提供される組み込みのコントロールが常に使用可能な限り、します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-125">It's worth repeating: When possible, always use the built-in controls provided with the various Windows app frameworks to get the most comprehensive user experience possible for the least amount of effort.</span></span>
 
-<span data-ttu-id="1d3e0-126">たとえば、すべての UWP テキスト コントロールは、テンプレート化やカスタマイズを加えなくてもエクスペリエンスをスケーリングする完全なテキストをサポートします。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-126">For example, all UWP text controls support the full text scaling experience without any customization or templating.</span></span>
+<span data-ttu-id="5fa57-126">たとえば、すべての UWP テキスト コントロールは、テンプレート化やカスタマイズを加えなくてもエクスペリエンスをスケーリングする完全なテキストをサポートします。</span><span class="sxs-lookup"><span data-stu-id="5fa57-126">For example, all UWP text controls support the full text scaling experience without any customization or templating.</span></span>
 
-<span data-ttu-id="1d3e0-127">次に、いくつか標準的なテキスト コントロールにはが含まれている基本的な UWP アプリのスニペットを示します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-127">Here's a snippet from a basic UWP app that includes a couple of standard text controls:</span></span>
+<span data-ttu-id="5fa57-127">次に、いくつか標準的なテキスト コントロールにはが含まれている基本的な UWP アプリのスニペットを示します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-127">Here's a snippet from a basic UWP app that includes a couple of standard text controls:</span></span>
 
 ``` xaml
 <Grid>
@@ -95,13 +95,13 @@ ms.locfileid: "5706979"
 ```
 
 ![アニメーション化されたテキストが 100% に 225% のスケーリング](images/coretext/text-scaling.gif)  
-*<span data-ttu-id="1d3e0-129">アニメーション化されたテキストのスケーリング</span><span class="sxs-lookup"><span data-stu-id="1d3e0-129">Animated text scaling</span></span>*
+*<span data-ttu-id="5fa57-129">アニメーション化されたテキストのスケーリング</span><span class="sxs-lookup"><span data-stu-id="5fa57-129">Animated text scaling</span></span>*
 
-### <a name="use-auto-sizing"></a><span data-ttu-id="1d3e0-130">自動サイズ変更を使用します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-130">Use auto-sizing</span></span>
+### <a name="use-auto-sizing"></a><span data-ttu-id="5fa57-130">自動サイズ変更を使用します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-130">Use auto-sizing</span></span>
 
-<span data-ttu-id="1d3e0-131">コントロールの絶対サイズを指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-131">Don't specify absolute sizes for your controls.</span></span> <span data-ttu-id="1d3e0-132">可能であれば、[プラットフォームのユーザーとデバイスの設定に基づいて自動的に、コントロールのサイズを変更することができます。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-132">Whenever possible, let the platform resize your controls automatically based on user and device settings.</span></span>  
+<span data-ttu-id="5fa57-131">コントロールの絶対サイズを指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="5fa57-131">Don't specify absolute sizes for your controls.</span></span> <span data-ttu-id="5fa57-132">可能であれば、[プラットフォームのユーザーとデバイスの設定に基づいて自動的に、コントロールのサイズを変更することができます。</span><span class="sxs-lookup"><span data-stu-id="5fa57-132">Whenever possible, let the platform resize your controls automatically based on user and device settings.</span></span>  
 
-<span data-ttu-id="1d3e0-133">前の例からのこのスニペットで使用して、`Auto`と`*`一連のグリッドの列とできるように、プラットフォームの幅の値は、グリッド内に含まれる要素のサイズに基づくアプリのレイアウトを調整します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-133">In this snippet from the previous example, we use the `Auto` and `*` width values for a set of grid columns and let the platform adjust the app layout based on the size of the elements contained within the grid.</span></span>
+<span data-ttu-id="5fa57-133">前の例からのこのスニペットで使用して、`Auto`と`*`一連のグリッドの列とできるように、プラットフォームの幅の値は、グリッド内に含まれる要素のサイズに基づくアプリのレイアウトを調整します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-133">In this snippet from the previous example, we use the `Auto` and `*` width values for a set of grid columns and let the platform adjust the app layout based on the size of the elements contained within the grid.</span></span>
 
 ``` xaml
 <Grid.ColumnDefinitions>
@@ -111,13 +111,13 @@ ms.locfileid: "5706979"
 </Grid.ColumnDefinitions>
 ```
 
-### <a name="use-text-wrapping"></a><span data-ttu-id="1d3e0-134">テキストの折り返し</span><span class="sxs-lookup"><span data-stu-id="1d3e0-134">Use text wrapping</span></span>
+### <a name="use-text-wrapping"></a><span data-ttu-id="5fa57-134">テキストの折り返し</span><span class="sxs-lookup"><span data-stu-id="5fa57-134">Use text wrapping</span></span>
 
-<span data-ttu-id="1d3e0-135">アプリのレイアウトは柔軟性および適応可能なことを確認するには、(多くのコントロールでサポートされないテキストの折り返し既定ではテキストが含まれているすべてのコントロールでテキストの折り返しを有効にします。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-135">To ensure the layout of your app is as flexible and adaptable as possible, enable text wrapping in any control that contains text (many controls do not support text wrapping by default).</span></span>
+<span data-ttu-id="5fa57-135">アプリのレイアウトは柔軟性および適応可能なことを確認するには、(多くのコントロールでサポートされないテキストの折り返し既定ではテキストが含まれているすべてのコントロールでテキストの折り返しを有効にします。</span><span class="sxs-lookup"><span data-stu-id="5fa57-135">To ensure the layout of your app is as flexible and adaptable as possible, enable text wrapping in any control that contains text (many controls do not support text wrapping by default).</span></span>
 
-<span data-ttu-id="1d3e0-136">プラットフォームで他のメソッドを使用して、クリッピングを含む、レイアウトを調整するテキストの折り返しを指定しない場合 (前の例をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-136">If you don't specify text wrapping, the platform uses other methods to adjust the layout, including clipping (see previous example).</span></span>
+<span data-ttu-id="5fa57-136">プラットフォームで他のメソッドを使用して、クリッピングを含む、レイアウトを調整するテキストの折り返しを指定しない場合 (前の例をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="5fa57-136">If you don't specify text wrapping, the platform uses other methods to adjust the layout, including clipping (see previous example).</span></span>
 
-<span data-ttu-id="1d3e0-137">ここでは、使用して、`AcceptsReturn`と`TextWrapping`、レイアウトを確認するテキスト ボックスのプロパティはできる限り柔軟なします。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-137">Here, we use the `AcceptsReturn` and `TextWrapping` TextBox properties to ensure our layout is as flexible as possible.</span></span>
+<span data-ttu-id="5fa57-137">ここでは、使用して、`AcceptsReturn`と`TextWrapping`、レイアウトを確認するテキスト ボックスのプロパティはできる限り柔軟なします。</span><span class="sxs-lookup"><span data-stu-id="5fa57-137">Here, we use the `AcceptsReturn` and `TextWrapping` TextBox properties to ensure our layout is as flexible as possible.</span></span>
 
 ``` xaml
 <TextBox PlaceholderText="Type something here" 
@@ -125,16 +125,16 @@ ms.locfileid: "5706979"
 ```
 
 ![テキストとテキストの折り返し 225% に 100% のスケーリングをアニメーション化](images/coretext/text-scaling-textwrap.gif)  
-*<span data-ttu-id="1d3e0-139">テキストの折り返しをスケーリング アニメーション化されたテキスト</span><span class="sxs-lookup"><span data-stu-id="1d3e0-139">Animated text scaling with text wrapping</span></span>*
+*<span data-ttu-id="5fa57-139">テキストの折り返しをスケーリング アニメーション化されたテキスト</span><span class="sxs-lookup"><span data-stu-id="5fa57-139">Animated text scaling with text wrapping</span></span>*
 
-### <a name="specify-text-trimming-behavior"></a><span data-ttu-id="1d3e0-140">テキストのトリミングの動作を指定します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-140">Specify text trimming behavior</span></span>
+### <a name="specify-text-trimming-behavior"></a><span data-ttu-id="5fa57-140">テキストのトリミングの動作を指定します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-140">Specify text trimming behavior</span></span>
 
-<span data-ttu-id="1d3e0-141">テキストの折り返しが優先される動作でない場合は、ほとんどのテキスト コントロールには、テキストをクリップまたはテキストのトリミングの動作の省略記号を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-141">If text wrapping is not the preferred behavior, most text controls let either clip your text or specify ellipses for the text trimming behavior.</span></span> <span data-ttu-id="1d3e0-142">クリッピングは省略記号領域を占有自体の省略記号を優先します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-142">Clipping is preferred to ellipses as ellipses take up space themselves.</span></span>
+<span data-ttu-id="5fa57-141">テキストの折り返しが優先される動作でない場合は、ほとんどのテキスト コントロールには、テキストをクリップまたはテキストのトリミングの動作の省略記号を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="5fa57-141">If text wrapping is not the preferred behavior, most text controls let either clip your text or specify ellipses for the text trimming behavior.</span></span> <span data-ttu-id="5fa57-142">クリッピングは省略記号領域を占有自体の省略記号を優先します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-142">Clipping is preferred to ellipses as ellipses take up space themselves.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="1d3e0-143">テキストをクリップする必要がある場合は、開始しない、文字列の末尾をクリップできます。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-143">If you need to clip your text, clip the end of the string, not the beginning.</span></span>
+> <span data-ttu-id="5fa57-143">テキストをクリップする必要がある場合は、開始しない、文字列の末尾をクリップできます。</span><span class="sxs-lookup"><span data-stu-id="5fa57-143">If you need to clip your text, clip the end of the string, not the beginning.</span></span>
 
-<span data-ttu-id="1d3e0-144">この例で方法を示します TextBlock のテキストをクリップ[TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming)プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-144">In this example, we show how to clip text in a TextBlock using the [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming) property.</span></span>
+<span data-ttu-id="5fa57-144">この例で方法を示します TextBlock のテキストをクリップ[TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming)プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-144">In this example, we show how to clip text in a TextBlock using the [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming) property.</span></span>
 
 ``` xaml
 <TextBlock TextTrimming="Clip">
@@ -143,13 +143,13 @@ ms.locfileid: "5706979"
 ```
 
 ![テキストとテキストがクリッピングされて 225% に 100% のスケーリング](images/coretext/text-scaling-clipping-small.png)  
-*<span data-ttu-id="1d3e0-146">テキストとテキストがクリッピングされてスケーリング</span><span class="sxs-lookup"><span data-stu-id="1d3e0-146">Text scaling with text clipping</span></span>*
+*<span data-ttu-id="5fa57-146">テキストとテキストがクリッピングされてスケーリング</span><span class="sxs-lookup"><span data-stu-id="5fa57-146">Text scaling with text clipping</span></span>*
 
-### <a name="use-a-tooltip"></a><span data-ttu-id="1d3e0-147">Tooltip します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-147">Use a tooltip</span></span>
+### <a name="use-a-tooltip"></a><span data-ttu-id="5fa57-147">Tooltip します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-147">Use a tooltip</span></span>
 
-<span data-ttu-id="1d3e0-148">テキストをクリップする場合は、ユーザーへの完全なテキストを提供するヒントを使用します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-148">If you clip text, use a tooltip to provide the full text to your users.</span></span>
+<span data-ttu-id="5fa57-148">テキストをクリップする場合は、ユーザーへの完全なテキストを提供するヒントを使用します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-148">If you clip text, use a tooltip to provide the full text to your users.</span></span>
 
-<span data-ttu-id="1d3e0-149">ここでは、ヒントは、テキストの折り返しがサポートされていない TextBlock を追加します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-149">Here, we add a tooltip to a TextBlock that doesn't support text wrapping:</span></span>
+<span data-ttu-id="5fa57-149">ここでは、ヒントは、テキストの折り返しがサポートされていない TextBlock を追加します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-149">Here, we add a tooltip to a TextBlock that doesn't support text wrapping:</span></span>
 
 ``` xaml
 <TextBlock TextTrimming="Clip">
@@ -160,23 +160,23 @@ ms.locfileid: "5706979"
 </TextBlock>
 ```
 
-### <a name="dont-scale-font-based-icons-or-symbols"></a><span data-ttu-id="1d3e0-150">フォント ベースのアイコンや記号、拡大縮小されません。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-150">Don’t scale font-based icons or symbols</span></span>
+### <a name="dont-scale-font-based-icons-or-symbols"></a><span data-ttu-id="5fa57-150">フォント ベースのアイコンや記号、拡大縮小されません。</span><span class="sxs-lookup"><span data-stu-id="5fa57-150">Don’t scale font-based icons or symbols</span></span>
 
-<span data-ttu-id="1d3e0-151">フォント ベースのアイコンを強調または装飾を使用する場合は、これらの文字でのスケーリングを無効にします。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-151">When using font-based icons for emphasis or decoration, disable scaling on these characters.</span></span>
+<span data-ttu-id="5fa57-151">フォント ベースのアイコンを強調または装飾を使用する場合は、これらの文字でのスケーリングを無効にします。</span><span class="sxs-lookup"><span data-stu-id="5fa57-151">When using font-based icons for emphasis or decoration, disable scaling on these characters.</span></span>
 
-<span data-ttu-id="1d3e0-152">[IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)プロパティを設定する`false`ほとんどの XAML コントロールです。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-152">Set the [IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled) property to `false` for most XAML controls.</span></span>
+<span data-ttu-id="5fa57-152">[IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)プロパティを設定する`false`ほとんどの XAML コントロールです。</span><span class="sxs-lookup"><span data-stu-id="5fa57-152">Set the [IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled) property to `false` for most XAML controls.</span></span>
 
-### <a name="support-text-scaling-natively"></a><span data-ttu-id="1d3e0-153">スケーリングをネイティブにサポート テキスト</span><span class="sxs-lookup"><span data-stu-id="1d3e0-153">Support text scaling natively</span></span>
+### <a name="support-text-scaling-natively"></a><span data-ttu-id="5fa57-153">スケーリングをネイティブにサポート テキスト</span><span class="sxs-lookup"><span data-stu-id="5fa57-153">Support text scaling natively</span></span>
 
-<span data-ttu-id="1d3e0-154">カスタム フレームワークやコントロールで[TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings システム イベントを処理します。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-154">Handle the [TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings system event in your custom framework and controls.</span></span> <span data-ttu-id="1d3e0-155">このイベントは、ユーザーがシステムにテキストの倍率を設定するたびにします。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-155">This event is raised each time the user sets the text scaling factor on their system.</span></span>
+<span data-ttu-id="5fa57-154">カスタム フレームワークやコントロールで[TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings システム イベントを処理します。</span><span class="sxs-lookup"><span data-stu-id="5fa57-154">Handle the [TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings system event in your custom framework and controls.</span></span> <span data-ttu-id="5fa57-155">このイベントは、ユーザーがシステムにテキストの倍率を設定するたびにします。</span><span class="sxs-lookup"><span data-stu-id="5fa57-155">This event is raised each time the user sets the text scaling factor on their system.</span></span>
 
-## <a name="summary"></a><span data-ttu-id="1d3e0-156">要約</span><span class="sxs-lookup"><span data-stu-id="1d3e0-156">Summary</span></span>
+## <a name="summary"></a><span data-ttu-id="5fa57-156">まとめ</span><span class="sxs-lookup"><span data-stu-id="5fa57-156">Summary</span></span>
 
-<span data-ttu-id="1d3e0-157">このトピックでは、Windows でのサポートをスケーリングするテキストの概要を説明し、ユーザー エクスペリエンスをカスタマイズする方法についての UX と開発者向けガイダンスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="1d3e0-157">This topic provides an overview of text scaling support in Windows and includes UX and developer guidance on how to customize the user experience.</span></span>
+<span data-ttu-id="5fa57-157">このトピックでは、Windows でのサポートをスケーリングするテキストの概要を説明し、ユーザー エクスペリエンスをカスタマイズする方法についての UX と開発者向けガイダンスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="5fa57-157">This topic provides an overview of text scaling support in Windows and includes UX and developer guidance on how to customize the user experience.</span></span>
 
-## <a name="related-articles"></a><span data-ttu-id="1d3e0-158">関連記事</span><span class="sxs-lookup"><span data-stu-id="1d3e0-158">Related articles</span></span>
+## <a name="related-articles"></a><span data-ttu-id="5fa57-158">関連記事</span><span class="sxs-lookup"><span data-stu-id="5fa57-158">Related articles</span></span>
 
-### <a name="api-reference"></a><span data-ttu-id="1d3e0-159">API リファレンス</span><span class="sxs-lookup"><span data-stu-id="1d3e0-159">API reference</span></span>
+### <a name="api-reference"></a><span data-ttu-id="5fa57-159">API リファレンス</span><span class="sxs-lookup"><span data-stu-id="5fa57-159">API reference</span></span>
 
-- [<span data-ttu-id="1d3e0-160">IsTextScaleFactorEnabled</span><span class="sxs-lookup"><span data-stu-id="1d3e0-160">IsTextScaleFactorEnabled</span></span>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)
-- [<span data-ttu-id="1d3e0-161">TextScaleFactorChanged</span><span class="sxs-lookup"><span data-stu-id="1d3e0-161">TextScaleFactorChanged</span></span>](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged)
+- [<span data-ttu-id="5fa57-160">IsTextScaleFactorEnabled</span><span class="sxs-lookup"><span data-stu-id="5fa57-160">IsTextScaleFactorEnabled</span></span>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)
+- [<span data-ttu-id="5fa57-161">TextScaleFactorChanged</span><span class="sxs-lookup"><span data-stu-id="5fa57-161">TextScaleFactorChanged</span></span>](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged)

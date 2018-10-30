@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f02b1f389a118ee5505c40d8c6dde1ee9472a0f
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5692007"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5752503"
 ---
 # <a name="numeralsystem-values"></a><span data-ttu-id="64566-103">NumeralSystem 値</span><span class="sxs-lookup"><span data-stu-id="64566-103">NumeralSystem values</span></span>
 

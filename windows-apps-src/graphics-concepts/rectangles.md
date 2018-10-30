@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cb870fa851e51773d95d23ebf9d31f76774924de
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5711046"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5752853"
 ---
 # <a name="rectangles"></a><span data-ttu-id="4bf36-104">矩形</span><span class="sxs-lookup"><span data-stu-id="4bf36-104">Rectangles</span></span>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 943d236699ccab6d61e5394426077a32d7249592
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5708489"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5751940"
 ---
 # <a name="my-people-notifications"></a><span data-ttu-id="d9a27-104">マイ連絡先の通知</span><span class="sxs-lookup"><span data-stu-id="d9a27-104">My People notifications</span></span>
 

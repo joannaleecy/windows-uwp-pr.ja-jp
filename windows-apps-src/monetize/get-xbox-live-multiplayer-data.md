@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, マルチプレイヤー
 ms.localizationpriority: medium
 ms.openlocfilehash: 86f6b4c5742b4abc9bfd5b56e0242376770516a7
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5709554"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5753733"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a><span data-ttu-id="18315-104">Xbox Live のマルチプレイヤー データの取得</span><span class="sxs-lookup"><span data-stu-id="18315-104">Get Xbox Live multiplayer data</span></span>
 

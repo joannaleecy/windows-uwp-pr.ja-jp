@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f5c8c7354ef0f7e9bd4878e4d78aa045ab7fbd0
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5703329"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5755972"
 ---
 # <a name="triangle-lists"></a><span data-ttu-id="4e123-106">トライアングル リスト</span><span class="sxs-lookup"><span data-stu-id="4e123-106">Triangle lists</span></span>
 
