@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b86298ca671282dea201e3088bc60845231fe007
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5700887"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5767208"
 ---
 # <a name="launch-the-windows-settings-app"></a>Windows 設定アプリの起動
 
@@ -203,7 +203,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 |-------------|-----|
 | 同期電話 | ms-settings:mobile-devices  |
 
-## <a name="privacy"></a>プライバシー
+## <a name="privacy"></a>Privacy
 
 |[設定] ページ| URI |
 |-------------|-----|
@@ -277,7 +277,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | スマートフォン | ms-settings:phone |
 | 電源とスリープ | ms-settings:powersleep |
 | サウンド | ms-settings:sounds |
-| 記憶域 | ms-settings:storagesense |
+| Storage | ms-settings:storagesense |
 | ストレージ センサー | ms-settings:storagepolicies |
 
 ## <a name="time-and-language"></a>時刻と言語
