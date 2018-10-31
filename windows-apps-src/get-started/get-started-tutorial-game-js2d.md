@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 60060bb3ec7a644d29523483d0d31c0497c543d1
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 597451826958c355dad9f9380dbdc1264bc87883
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5817635"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5865797"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>JavaScript で UWP ゲームを作成する
 
@@ -63,7 +63,7 @@ Microsoft Store にアプリを公開するために、UWP (ユニバーサル W
 
 これでゲームを実行できます。
 
-**F5** キーを押して、アプリの実行を開始します。 ウィンドウが開き、牧歌的風景の中に、ありふれた恐竜が表示されます。 それでは、アプリを調べていきましょう。重要な部分について説明し、他の機能についても、その都度明らかにします。
+**F5** キーを押して、アプリの実行を開始します。 ウィンドウを開いていると、(スパース) 場合は、のどか横向きありふれた恐竜が表示されます。 それでは、アプリを調べていきましょう。重要な部分について説明し、他の機能についても、その都度明らかにします。
 
 ![ありふれた恐竜の背中に、ニンジャ キャットが乗っている](images/JS2D_3.png)
 

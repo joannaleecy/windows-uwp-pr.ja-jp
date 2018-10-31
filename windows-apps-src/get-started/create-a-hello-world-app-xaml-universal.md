@@ -8,12 +8,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, 初めてのアプリ, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: b28d0237deda78291816a52affd1fa7b4768640b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: d6fa9fa708df376edc94d34ea14d8dad4aed10df
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839790"
+ms.locfileid: "5864916"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>"Hello, world" アプリを作成する (XAML)
 
@@ -85,7 +85,7 @@ ms.locfileid: "5839790"
 -   App.xaml は、アプリ全体で使われるリソースを宣言するファイルです。
 -   App.xaml.cs は、App.xaml の分離コード ファイルです。 すべての分離コード ページと同じように、`InitializeComponent` メソッドを呼び出すコンストラクターが含まれています。 `InitializeComponent` メソッドは自分で記述する必要はありません。 Visual Studio によって生成されるこのメソッドの主な目的は、XAML ファイルに宣言された要素を初期化することです。
 -   App.xaml.cs は、アプリのエントリ ポイントです。
--   App.xaml.cs には、アプリのアクティブ化と中断を処理するためのメソッドも含まれています。
+-   App.xaml.cs には、[アクティブ化](../launch-resume/activate-an-app.md)と、アプリの[中断](../launch-resume/suspend-an-app.md)を処理するメソッドも含まれています。
 
 *MainPage.xaml*
 
@@ -95,12 +95,14 @@ ms.locfileid: "5839790"
 
 *Package.appxmanifest*
 -   名前、説明、タイル、開始ページなど、アプリを説明するマニフェスト ファイルです。
--   アプリに含まれるファイルの一覧が含まれています。
+-   依存関係、リソースと、アプリが含まれているファイルの一覧が含まれます。
 
 *一連のロゴ イメージ*
--   Assets/Square150x150Logo.scale-200.png は、スタート メニュー内のアプリを表します。
+-   Assets/Square150x150Logo.scale-200.png と Wide310x150Logo.scale 200.png は、[スタート] メニューで、アプリ (中] または [ワイド サイズ) を表します。
+-   Assets/Square44x44Logo.png は、[スタート] メニューのタスク バーとタスク マネージャーのアプリの一覧でアプリを表します。
 -   Assets/StoreLogo.png は、Microsoft Store 内のアプリを表します。
 -   Assets/SplashScreen.scale-200.png は、アプリが起動したときに表示するスプラッシュ画面です。
+-   システムがロックされているときに、ロック画面上のアプリを表す Assets/LockScreenLogo.scale-200.png を使用できます。
 
 ## <a name="step-2-adding-a-button"></a>手順 2. ボタンを追加する
 

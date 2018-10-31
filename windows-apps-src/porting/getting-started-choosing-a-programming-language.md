@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b374a007bf562b2a1c8ba0afe42e75e04bc63e
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5814536"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5862979"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>はじめに: プログラミング言語の選択
 
@@ -26,23 +26,23 @@ C++、C#、Microsoft Visual Basic、JavaScript を使って開発できます。
 
 この記事では C# を中心に扱いますが、独自の利点がある他の言語についても検討することをお勧めします。 たとえば、特にグラフィックスを多用した際のアプリのパフォーマンスが最も重要視される場合は、C++ が適切です。 Visual Basic アプリの開発者にとっては、Microsoft .NET バージョンの Visual Basic が適切です。 JavaScript と HTML5 の組み合わせは、Web 開発の経歴がある開発者向けです。 詳しくは、次のいずれかのトピックをご覧ください。
 
--   [C++ を使った初めての UWP アプリを作成します。](../get-started/create-a-basic-windows-10-app-in-cpp.md)
--   [C# または Visual Basic を使った初めての UWP アプリを作成します。](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [JavaScript を使った初めての UWP アプリを作成します。](../get-started/create-a-hello-world-app-js-uwp.md)
+-   [C++ を使用して、最初の UWP アプリケーションを作成します。](../get-started/create-a-basic-windows-10-app-in-cpp.md)
+-   [C# または Visual Basic を使用して、最初の UWP アプリケーションを作成します。](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [JavaScript を使用して、最初の UWP アプリケーションを作成します。](../get-started/create-a-hello-world-app-js-uwp.md)
 
-**注:** 3D グラフィックスを使用するアプリの場合、OpenGL 規格と OpenGL ES 規格は UWP アプリのネイティブで利用できません。 OpenGL ES のコードを Microsoft DirectX に書き換えない場合は、**Angle** に関心を持つかもしれません。 Angle は OpenGL API 呼び出しを DirectX API 呼び出しに翻訳することにより、OpenGL を DirectX に変換するように設計された進行中のプロジェクトです。 詳しくは、次のトピックをご覧ください。
+**注**3D グラフィックを使用するアプリケーションでは、OpenGL と OpenGL ES の標準ではありません UWP アプリケーションのネイティブに使用できます。 OpenGL ES のコードを Microsoft DirectX に書き換えない場合は、**Angle** に関心を持つかもしれません。 Angle は OpenGL API 呼び出しを DirectX API 呼び出しに翻訳することにより、OpenGL を DirectX に変換するように設計された進行中のプロジェクトです。 詳しくは、次のトピックをご覧ください。
 -   [Angle](https://code.google.com/p/angleproject/)
--   [DirectX を使った初めての UWP アプリを作成します。](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [DirectX を使った UWP アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [DirectX を使用して、最初の UWP アプリケーションを作成します。](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [DirectX を使用する UWP アプリケーションのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [DirectX SDK の場所](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
 ## <a name="giving-c-a-go"></a>C# を試してみる
 
 iOS 開発者は、Objective-C と Swift を日常的に使っています。 両方に最も近い Microsoft プログラミング言語は C# です。 ほとんどの開発者とほとんどのアプリにおいて、最も簡単かつ短期間に学習して使用できる言語は C# と考えられます。そこで、この記事の情報とチュートリアルでは、この言語を中心に取り上げています。 C# について詳しくは、次のトピックをご覧ください。
 
--   [C# または Visual Basic を使った初めての UWP アプリを作成します。](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [C# を使用する UWP アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=263453)
--   [Visual C#]](http://go.microsoft.com/fwlink/p/?LinkId=263450)
+-   [C# または Visual Basic を使用して、最初の UWP アプリケーションを作成します。](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [UWP アプリケーション サンプル C# を使用します。](http://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [Visual C#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
 
 次に示すのは、Objective-C と C# で書かれたクラスです。 最初に Objective-C バージョンを示し、その後に C# バージョンを示します。
 

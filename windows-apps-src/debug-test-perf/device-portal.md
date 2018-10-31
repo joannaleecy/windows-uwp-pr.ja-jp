@@ -6,14 +6,14 @@ description: Windows Device Portal で、ネットワーク経由でリモート
 ms.author: pafarley
 ms.date: 12/12/2017
 ms.topic: article
-keywords: windows 10, uwp, デバイス ポータル
+keywords: windows 10、uwp、デバイスのポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 240cbb84713fb09b0bc51d70ca93b640797f2752
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5830440"
+ms.locfileid: "5867638"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal の概要
 
