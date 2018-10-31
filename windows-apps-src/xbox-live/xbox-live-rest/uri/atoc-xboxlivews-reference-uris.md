@@ -9,16 +9,16 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 406b7921c4967c9b1f12fb06d19f50ff12d16311
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f5615cb0a8a5fa15652724040057c43697fa0782
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5755662"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828134"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>ユニバーサル リソース識別子 (URI) リファレンス
 
-このセクションでは、Uniform Resource Identifier (Uri) に関する詳細情報を提供し、および Xbox Live サービスで使用されるハイパー テキスト トランスポート プロトコル (HTTP) 方法。
+このセクションでは、Uniform Resource Identifier (Uri) と Xbox Live サービスで使用されるハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
 
 <a id="ID4EAB"></a>
 
