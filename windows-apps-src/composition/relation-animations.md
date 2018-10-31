@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: cde3868d1a554396bfda7c13ea0c71bd037416bc
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839350"
+ms.locfileid: "5866515"
 ---
 # <a name="relation-based-animations"></a><span data-ttu-id="5fb08-104">関係ベース アニメーション</span><span class="sxs-lookup"><span data-stu-id="5fb08-104">Relation based animations</span></span>
 

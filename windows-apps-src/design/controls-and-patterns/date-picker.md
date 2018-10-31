@@ -16,11 +16,11 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f258ff63d2cf9badfc1066f46c97ecc14b90f5f
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5818382"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5861864"
 ---
 # <a name="date-picker"></a><span data-ttu-id="5d27c-103">日付の選択コントロール</span><span class="sxs-lookup"><span data-stu-id="5d27c-103">Date picker</span></span>
 

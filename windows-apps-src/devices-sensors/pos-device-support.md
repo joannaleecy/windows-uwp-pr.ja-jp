@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5814879"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5862439"
 ---
 # <a name="supported-point-of-service-peripherals"></a><span data-ttu-id="c8350-104">サポートされている POS 周辺機器</span><span class="sxs-lookup"><span data-stu-id="c8350-104">Supported Point of Service Peripherals</span></span>
 

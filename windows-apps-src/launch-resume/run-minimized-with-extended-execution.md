@@ -9,11 +9,11 @@ keywords: windows 10, UWP, 延長実行, 最小化, ExtendedExecutionSession, �
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
 ms.openlocfilehash: 30e05259306a222a3cb18268aeb58a8380f6d4d2
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5813257"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5862660"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a><span data-ttu-id="ca8ea-104">延長実行を使ってアプリの中断を延期する</span><span class="sxs-lookup"><span data-stu-id="ca8ea-104">Postpone app suspension with extended execution</span></span>
 

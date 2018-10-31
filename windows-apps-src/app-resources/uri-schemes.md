@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 59cd664e268e9e62786728aeb122ec52acd721c0
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5816861"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5862916"
 ---
 # <a name="uri-schemes"></a><span data-ttu-id="c94af-103">URI スキーム</span><span class="sxs-lookup"><span data-stu-id="c94af-103">URI schemes</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 451a8041e0a81d43d91692e92046c32d458e0982
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5831941"
+ms.locfileid: "5867664"
 ---
 # <a name="app-capability-declarations"></a><span data-ttu-id="c6175-104">アプリ機能の宣言</span><span class="sxs-lookup"><span data-stu-id="c6175-104">App capability declarations</span></span>
 

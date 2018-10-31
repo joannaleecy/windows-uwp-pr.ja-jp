@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d1c35af3dd1f8826fbd61268c5c47cef9d77146a
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5825112"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5865592"
 ---
 # <a name="devices"></a><span data-ttu-id="b6044-105">デバイス</span><span class="sxs-lookup"><span data-stu-id="b6044-105">Devices</span></span>
 

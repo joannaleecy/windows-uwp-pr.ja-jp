@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: 173198c2c61530704dad02e2e92e6a7e47aae420
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5838802"
+ms.locfileid: "5862597"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a><span data-ttu-id="3ff22-103">日付、時刻、数値の形式のグローバル化</span><span class="sxs-lookup"><span data-stu-id="3ff22-103">Globalize your date/time/number formats</span></span>
 

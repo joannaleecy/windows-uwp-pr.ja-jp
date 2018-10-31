@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0129b44b6f1c6c8b18555e3e0e0b350a695cabe1
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5814125"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5867402"
 ---
 # <a name="streaming-resource-creation-parameters"></a><span data-ttu-id="a5388-104">ストリーミング リソースの作成パラメーター</span><span class="sxs-lookup"><span data-stu-id="a5388-104">Streaming resource creation parameters</span></span>
 

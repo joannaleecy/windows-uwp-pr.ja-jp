@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d77049cbaa289fe8621e8cf91883952e6edda9b2
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5813738"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5865922"
 ---
 # <a name="move-and-draw-commands-syntax"></a><span data-ttu-id="e598f-104">移動と描画のコマンド構文</span><span class="sxs-lookup"><span data-stu-id="e598f-104">Move and draw commands syntax</span></span>
 
