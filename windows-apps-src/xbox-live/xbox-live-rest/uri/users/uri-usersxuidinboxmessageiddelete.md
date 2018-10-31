@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d550147fe18a0233fd4f0a62ccb2826ef2a5c03
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5759215"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5830279"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a><span data-ttu-id="664a2-104">DELETE (/users/xuid({xuid})/inbox/{messageId})</span><span class="sxs-lookup"><span data-stu-id="664a2-104">DELETE (/users/xuid({xuid})/inbox/{messageId})</span></span>
 <span data-ttu-id="664a2-105">ユーザーの受信トレイでユーザーのメッセージを削除します。</span><span class="sxs-lookup"><span data-stu-id="664a2-105">Deletes a user message in the user's inbox.</span></span> <span data-ttu-id="664a2-106">これらの Uri のドメインが`msg.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="664a2-106">The domain for these URIs is `msg.xboxlive.com`.</span></span>

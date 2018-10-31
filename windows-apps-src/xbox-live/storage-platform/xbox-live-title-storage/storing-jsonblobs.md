@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, タイトル ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 629bc38e8d5e5afa4c9d78349587585d0701b3de
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5752146"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828291"
 ---
 # <a name="storing-a-json-blob-in-xbox-live-title-storage"></a><span data-ttu-id="65aa2-104">Xbox Live タイトル ストレージへの JSON BLOB の保存</span><span class="sxs-lookup"><span data-stu-id="65aa2-104">Storing a JSON blob in Xbox Live Title Storage</span></span>
 

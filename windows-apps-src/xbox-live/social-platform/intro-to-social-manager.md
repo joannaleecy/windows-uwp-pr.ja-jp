@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: e4a9f244b3ce699e097b8de34556a21e423f8d5e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5739813"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5838416"
 ---
 # <a name="introduction-to-social-manager"></a><span data-ttu-id="6836b-104">Social Manager の概要</span><span class="sxs-lookup"><span data-stu-id="6836b-104">Introduction to Social Manager</span></span>
 

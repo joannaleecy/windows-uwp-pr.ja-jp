@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7222e3d64bd90f0c542f7235118e837b42d3929f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5746123"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831242"
 ---
 # <a name="put-usersxuidxuidlistspinslistname"></a><span data-ttu-id="d7c00-104">PUT (/users/xuid(xuid)/lists/PINS/{listname})</span><span class="sxs-lookup"><span data-stu-id="d7c00-104">PUT (/users/xuid(xuid)/lists/PINS/{listname})</span></span>
 <span data-ttu-id="d7c00-105">要求の本文内の各項目に指定されたインデックスに従ってリスト内の項目を更新します。</span><span class="sxs-lookup"><span data-stu-id="d7c00-105">Updates the items in a list according to the indexes specified for each item in the request body.</span></span> <span data-ttu-id="d7c00-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="d7c00-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>
