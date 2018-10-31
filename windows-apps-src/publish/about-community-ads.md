@@ -4,16 +4,16 @@ Description: You can cross-promote your app with apps published by other develop
 title: コミュニティ広告について
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 ms.author: wdg-dev-content
-ms.date: 10/04/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 20f0f06d0927d61c062a0514d84bef993da6e932
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 745be156d36e1fb15594d839b0b06d87425ae914
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748478"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5819339"
 ---
 # <a name="about-community-ads"></a>コミュニティ広告について
 
@@ -30,19 +30,15 @@ ms.locfileid: "5748478"
 
 ### <a name="opt-in-to-community-ads"></a>コミュニティ広告へのオプトイン
 
-**収入を増やす**にオプトインする必要がありますコミュニティ広告キャンペーンを作成するには、アプリのいずれかを前に&gt;Windows デベロッパー センター ダッシュ ボードで**アプリ内広告**ページ。
+**収入を増やす**にオプトインする必要がありますコミュニティ広告キャンペーンを作成するには、アプリのいずれかを前に&gt;[パートナー センター](https://partner.microsoft.com/dashboard)での**アプリ内広告**ページ。
 
 UWP アプリにコミュニティ広告にオプトイン。
 
-1. **アプリ内広告**] ページで [**仲介設定**] セクションでは、アプリで使っている広告ユニットを選択します。
-2. **[Microsoft が選択のアプリの最適な仲介設定**オプションを選択すると、コミュニティ広告は、広告ユニットに自動的に有効です。 そうしないと、**ターゲット**のドロップダウンで、基本構成または市場固有の構成を選択して、**他の広告ネットワーク**の一覧で、[ **Microsoft コミュニティ広告**ボックスを確認します。
+1. 使用している、アプリとスクロール ダウン**仲介の設定**に広告ユニットを選択します。
+2. **自分の設定を最適化できるように Microsoft**が選択されて、コミュニティ広告は、広告ユニットに自動的に有効です。 そうしないと、**ターゲット**のドロップダウンで、基本構成または市場固有の構成を選択して、**他の広告ネットワーク**の一覧で、[ **Microsoft コミュニティ広告**ボックスを確認します。
 
     > [!NOTE]
     > **重み**のフィールドを使用すると、有料ネットワークやコミュニティ広告など、他の広告ネットワークから表示する広告の割合を指定します。
-
-Windows コミュニティ広告にオプトインする 8.x または Windows Phone 8.x アプリでは、
-
-1. **アプリ内広告**] ページで、**自分のアプリにコミュニティ広告を表示する**] ボックスを確認します。
 
 この設定をした後にアプリを再公開する必要はありません。 オプトインすると、[広告キャンペーンを作成](create-an-ad-campaign-for-your-app.md)するときに、キャンペーンの種類に **[コミュニティ広告 (無料)]** を選べるようになります。
 
