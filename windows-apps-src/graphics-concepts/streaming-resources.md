@@ -12,11 +12,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: dac89fc678e35b1e3a39d26d836f03c18d3c4684
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748581"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5830641"
 ---
 # <a name="streaming-resources"></a><span data-ttu-id="0e482-108">ストリーミング リソース</span><span class="sxs-lookup"><span data-stu-id="0e482-108">Streaming resources</span></span>
 

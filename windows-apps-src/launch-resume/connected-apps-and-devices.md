@@ -9,11 +9,11 @@ keywords: windows 10, uwp, 接続されているデバイス、リモート シ�
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c462bb28de23db735b957870cf456d3649282ae
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756111"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5834016"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a><span data-ttu-id="fb10b-104">接続されるアプリやデバイス ("Rome" プロジェクト)</span><span class="sxs-lookup"><span data-stu-id="fb10b-104">Connected apps and devices (Project Rome)</span></span>
 

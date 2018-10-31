@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cfd9692620273952483ec7da65a69b643cb5bf4f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5762377"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5830707"
 ---
 # <a name="deploy-barcode-scanner-profiles-with-mdm"></a><span data-ttu-id="cf7d3-104">MDM によるバーコード スキャナー プロファイルの展開</span><span class="sxs-lookup"><span data-stu-id="cf7d3-104">Deploy barcode scanner profiles with MDM</span></span>
 

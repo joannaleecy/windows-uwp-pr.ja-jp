@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 申請 API, コード例, ゲーム オプション, トレーラー, 詳細な登録情報, Java
 ms.localizationpriority: medium
 ms.openlocfilehash: d6d64e317d2ff75be4aeb1f0e7df512287ae914a
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5754212"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5838547"
 ---
 # <a name="java-sample-app-submission-with-game-options-and-trailers"></a><span data-ttu-id="88afb-104">Java のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請</span><span class="sxs-lookup"><span data-stu-id="88afb-104">Java sample: app submission with game options and trailers</span></span>
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c55f371e97daba5f81945812f8179eb708bbadd6
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5768625"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835119"
 ---
 # <a name="multipass-texture-blending"></a><span data-ttu-id="5ef4a-104">マルチパス テクスチャ ブレンド</span><span class="sxs-lookup"><span data-stu-id="5ef4a-104">Multipass texture blending</span></span>
 

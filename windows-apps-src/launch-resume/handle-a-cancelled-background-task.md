@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 91de18af818113d79564ee8dfba7519a0f131246
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5768016"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5832550"
 ---
 # <a name="handle-a-cancelled-background-task"></a><span data-ttu-id="28b5b-104">取り消されたバックグラウンド タスクの処理</span><span class="sxs-lookup"><span data-stu-id="28b5b-104">Handle a cancelled background task</span></span>
 

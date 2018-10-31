@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f8a6165df7bf839154ede4db3fda8a5e1662880
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757254"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831656"
 ---
 # <a name="getting-started-what-next"></a><span data-ttu-id="6fc42-104">はじめに: 次の手順</span><span class="sxs-lookup"><span data-stu-id="6fc42-104">Getting started: What next?</span></span>
 

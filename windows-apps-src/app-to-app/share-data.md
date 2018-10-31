@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 63e07e56acc8767e4acbad3688c13d75527e9c6f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5763359"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5838391"
 ---
 # <a name="share-data"></a><span data-ttu-id="39879-104">データの共有</span><span class="sxs-lookup"><span data-stu-id="39879-104">Share data</span></span>
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cbb8b61c8eeef1a842a7c6b61d09670f056bb409
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5758037"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5834045"
 ---
 # <a name="tile-pool-creation"></a><span data-ttu-id="df898-105">タイル プールの作成</span><span class="sxs-lookup"><span data-stu-id="df898-105">Tile pool creation</span></span>
 
