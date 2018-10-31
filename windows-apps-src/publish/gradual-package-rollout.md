@@ -3,17 +3,17 @@ author: JnHs
 Description: When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10.
 title: 段階的なパッケージのロールアウト
 ms.author: wdg-dev-content
-ms.date: 12/05/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
-ms.openlocfilehash: fa252f5d7d4d608ff2583693662e187757714d6f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ab2db3d34ed223b318d65ec497cc0feb7cb16342
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5749848"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5840496"
 ---
 # <a name="gradual-package-rollout"></a><span data-ttu-id="952d3-103">段階的なパッケージのロールアウト</span><span class="sxs-lookup"><span data-stu-id="952d3-103">Gradual package rollout</span></span>
 

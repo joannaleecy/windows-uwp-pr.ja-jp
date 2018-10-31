@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2778014220dc0e75e286e2b6e4af56ea8a2412b2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5744562"
+ms.locfileid: "5840229"
 ---
 # <a name="session-directory-uris"></a><span data-ttu-id="cbf41-104">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="cbf41-104">Session Directory URIs</span></span>
 

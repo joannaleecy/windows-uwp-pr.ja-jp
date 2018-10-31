@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 14f5c416fff63ba5a14480f804b9382c27f7e53a
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5750637"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5840486"
 ---
 # <a name="smart-cards"></a><span data-ttu-id="cd068-104">スマート カード</span><span class="sxs-lookup"><span data-stu-id="cd068-104">Smart cards</span></span>
 
