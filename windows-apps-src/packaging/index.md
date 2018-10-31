@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, パッケージ化
 ms.localizationpriority: medium
 ms.openlocfilehash: d8728094292f1de81eb90752ee496090df4cb6e0
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757404"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5816248"
 ---
 # <a name="packaging-apps"></a><span data-ttu-id="9734f-104">アプリのパッケージ化</span><span class="sxs-lookup"><span data-stu-id="9734f-104">Packaging apps</span></span>
 

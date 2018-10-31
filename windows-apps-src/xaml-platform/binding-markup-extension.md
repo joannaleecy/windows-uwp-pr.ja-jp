@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 69d316ad48645d8995e602b270a5615322c8b43f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761501"
+ms.locfileid: "5813993"
 ---
 # <a name="binding-markup-extension"></a><span data-ttu-id="ec492-104">{Binding} マークアップ拡張</span><span class="sxs-lookup"><span data-stu-id="ec492-104">{Binding} markup extension</span></span>
 

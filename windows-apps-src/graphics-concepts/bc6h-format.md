@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: be88f06cd5893f2f67697a54754826440bdf7d18
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746840"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814102"
 ---
 # <a name="bc6h-format"></a><span data-ttu-id="01ec1-104">BC6H 形式</span><span class="sxs-lookup"><span data-stu-id="01ec1-104">BC6H format</span></span>
 

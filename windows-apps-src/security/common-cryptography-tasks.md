@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bca6496498c9d7a9caaf958fdc7e74dc16ccc98
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761001"
+ms.locfileid: "5817549"
 ---
 # <a name="common-cryptography-tasks"></a><span data-ttu-id="eb4a2-104">一般的な暗号化タスク</span><span class="sxs-lookup"><span data-stu-id="eb4a2-104">Common cryptography tasks</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ba07f897111e27dc895aa187172841cac4b44f73
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746377"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814905"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a><span data-ttu-id="4d2fb-104">MediaCapture の形式、解像度、およびフレーム レートの設定</span><span class="sxs-lookup"><span data-stu-id="4d2fb-104">Set format, resolution, and frame rate for MediaCapture</span></span>
 

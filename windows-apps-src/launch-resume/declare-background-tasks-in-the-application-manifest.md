@@ -9,11 +9,11 @@ ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 343cca5b89dbe5fd7e1309b9487e8939218203d0
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760735"
+ms.locfileid: "5814895"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a><span data-ttu-id="3591c-104">アプリケーション マニフェストでのバックグラウンド タスクの宣言</span><span class="sxs-lookup"><span data-stu-id="3591c-104">Declare background tasks in the application manifest</span></span>
 

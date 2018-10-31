@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: babf91e681004942bb3b66eb43622742fa183125
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5749519"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5816560"
 ---
 # <a name="transcode-media-files"></a><span data-ttu-id="6d4d6-104">メディア ファイルのトランスコード</span><span class="sxs-lookup"><span data-stu-id="6d4d6-104">Transcode media files</span></span>
 

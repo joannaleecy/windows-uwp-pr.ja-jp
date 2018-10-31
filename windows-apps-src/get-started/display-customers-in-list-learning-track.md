@@ -8,11 +8,11 @@ ms.topic: article
 keywords: 概要, uwp, windows 10, 学習トラック, データ バインディング, 一覧
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e58231d644616a088eb06f24a2465c240e10c16
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756065"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5819806"
 ---
 # <a name="display-customers-in-a-list"></a><span data-ttu-id="8fd54-104">一覧での顧客の表示</span><span class="sxs-lookup"><span data-stu-id="8fd54-104">Display customers in a list</span></span>
 

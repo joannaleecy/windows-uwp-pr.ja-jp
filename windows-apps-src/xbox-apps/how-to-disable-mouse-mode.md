@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cc6989103442deb364654ec006c0fe4b1455511
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5763196"
+ms.locfileid: "5814218"
 ---
 # <a name="how-to-disable-mouse-mode"></a><span data-ttu-id="3ae7f-104">マウス モードを無効にする方法</span><span class="sxs-lookup"><span data-stu-id="3ae7f-104">How to disable mouse mode</span></span>
 <span data-ttu-id="3ae7f-105">マウス モードは、すべてのアプリケーションについて既定でオンになっています。つまり、オプトアウトしていないすべてのアプリケーションがマウス ポインターを受け取ります (コンソール上の Edge ブラウザー内のアプリケーションに似ています)。</span><span class="sxs-lookup"><span data-stu-id="3ae7f-105">Mouse mode is on by default for all applications, which means that all applications that have not opted out will receive a mouse pointer (similar to the one in the Edge browser on the console).</span></span> <span data-ttu-id="3ae7f-106">コントローラーの方向移動操作を最適化するため、マウス モードは無効にすることを強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="3ae7f-106">We strongly recommend that you turn this off and optimize for directional controller navigation.</span></span>   

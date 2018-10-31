@@ -14,11 +14,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: fa990d7e4733c90b7ea46cec881ea502dd6a11b2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5747016"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5819368"
 ---
 # <a name="text-controls"></a><span data-ttu-id="ac1ca-103">テキスト コントロール</span><span class="sxs-lookup"><span data-stu-id="ac1ca-103">Text controls</span></span>
 

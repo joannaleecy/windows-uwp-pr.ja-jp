@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b5a3425c49a30ddb96fcb7a8a2c8b83fbb6dff3
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5764928"
+ms.locfileid: "5814039"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a><span data-ttu-id="f09d0-104">Windows ランタイム 8.x の XAML と UI の UWP への移植</span><span class="sxs-lookup"><span data-stu-id="f09d0-104">Porting Windows Runtime 8.x XAML and UI to UWP</span></span>
 

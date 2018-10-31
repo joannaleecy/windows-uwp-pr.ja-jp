@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請, 状態
 ms.localizationpriority: medium
 ms.openlocfilehash: e3db0b4823b4bc6d8ac50e40026b21f288f9e64c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5758832"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814552"
 ---
 # <a name="get-the-status-of-a-package-flight-submission"></a><span data-ttu-id="75965-104">パッケージ フライトの申請の状態の取得</span><span class="sxs-lookup"><span data-stu-id="75965-104">Get the status of a package flight submission</span></span>
 

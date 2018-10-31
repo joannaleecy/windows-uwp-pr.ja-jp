@@ -9,11 +9,11 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 62c62aacd894163ef2c65b9ddfe6d8299733a2e5
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760466"
+ms.locfileid: "5812658"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a><span data-ttu-id="8c411-104">チュートリアル: UWP アプリでインクをサポートする</span><span class="sxs-lookup"><span data-stu-id="8c411-104">Tutorial: Support ink in your UWP app</span></span>
 

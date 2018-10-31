@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c05cbf2ce0b2f6288e6beb9c84df9d2b42bd6f2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5755555"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814341"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a><span data-ttu-id="04f9a-103">Desktop App Converter を使用してデスクトップ アプリケーションをパッケージ化します。</span><span class="sxs-lookup"><span data-stu-id="04f9a-103">Package a desktop application using the Desktop App Converter</span></span>
 
