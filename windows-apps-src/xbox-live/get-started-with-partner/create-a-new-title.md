@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: abf35c30b1e9e1aae24cee5ee2969456a98d13e9
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5747865"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5824428"
 ---
 # <a name="create-a-new-title-for-xbox-live"></a><span data-ttu-id="a2bae-104">Xbox Live 用の新しいタイトルを作成する</span><span class="sxs-lookup"><span data-stu-id="a2bae-104">Create a new title for Xbox Live</span></span>
 

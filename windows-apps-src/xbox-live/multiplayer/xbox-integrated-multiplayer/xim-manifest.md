@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Integrated Multiplayer, マニフェスト
 ms.localizationpriority: medium
 ms.openlocfilehash: f83cad8ffc78fa34d5b5198d53dd024e363ff038
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5744604"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5816957"
 ---
 # <a name="xim-project-configuration"></a><span data-ttu-id="84b31-104">XIM プロジェクト構成</span><span class="sxs-lookup"><span data-stu-id="84b31-104">XIM Project Configuration</span></span>
 

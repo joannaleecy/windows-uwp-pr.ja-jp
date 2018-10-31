@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 8740d9287ff63ba113266d6c7cf39f2a21823d4b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760006"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5817518"
 ---
 # <a name="connected-storage"></a><span data-ttu-id="65d57-104">接続ストレージ</span><span class="sxs-lookup"><span data-stu-id="65d57-104">Connected Storage</span></span>
 

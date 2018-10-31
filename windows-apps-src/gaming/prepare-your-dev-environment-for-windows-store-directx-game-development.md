@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, テンプレート, ツール, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: ac33b242e2351c21ea22aa9bbb6bf74693e8d4ef
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5744753"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829141"
 ---
 # <a name="project-templates-and-tools-for-games"></a><span data-ttu-id="f77bd-104">ゲームのプロジェクト テンプレートとツール</span><span class="sxs-lookup"><span data-stu-id="f77bd-104">Project templates and tools for games</span></span>
 

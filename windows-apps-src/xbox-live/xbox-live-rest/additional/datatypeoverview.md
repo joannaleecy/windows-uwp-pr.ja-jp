@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8129be6220dc6c9ae1d125087fee52ca17d33424
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5743551"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5814792"
 ---
 # <a name="data-type-overview"></a><span data-ttu-id="3d3c6-104">データ型の概要</span><span class="sxs-lookup"><span data-stu-id="3d3c6-104">Data Type Overview</span></span>
  

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fa0a405d811f2ad6497149d62e08b974dc873575
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5746135"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5811480"
 ---
 # <a name="enumerations-used-in-javascript-object-notation-json-objects"></a><span data-ttu-id="72c34-104">JavaScript Object Notation (JSON) オブジェクトで使用される列挙型</span><span class="sxs-lookup"><span data-stu-id="72c34-104">Enumerations Used In JavaScript Object Notation (JSON) Objects</span></span>
  

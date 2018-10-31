@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4da4a36bca0cad761ef4dda89f86b23f6cf44c30
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5752521"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5818390"
 ---
 # <a name="serviceerrorresponse-json"></a><span data-ttu-id="324f9-104">ServiceErrorResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="324f9-104">ServiceErrorResponse (JSON)</span></span>
 <span data-ttu-id="324f9-105">サービスのエラーが発生したときは、適切な HTTP エラー コードが返されます。</span><span class="sxs-lookup"><span data-stu-id="324f9-105">When a service error is encountered, an appropriate HTTP error code will be returned.</span></span> <span data-ttu-id="324f9-106">必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下で定義されています。</span><span class="sxs-lookup"><span data-stu-id="324f9-106">Optionally, the service may also include a ServiceErrorResponse object as defined below.</span></span> <span data-ttu-id="324f9-107">運用環境での低いデータを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="324f9-107">In production environments, less data may be included.</span></span> 

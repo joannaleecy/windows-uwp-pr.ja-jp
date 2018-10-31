@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
 ms.localizationpriority: medium
 ms.openlocfilehash: 65587bc47f6c6cca0412935f6a2a463df5ba38ca
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5749189"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5812693"
 ---
 # <a name="using-game-chat-2-winrt-projections"></a><span data-ttu-id="407ba-104">ゲーム チャット 2 (WinRT プロジェクション) の使用</span><span class="sxs-lookup"><span data-stu-id="407ba-104">Using Game Chat 2 (WinRT Projections)</span></span>
 
