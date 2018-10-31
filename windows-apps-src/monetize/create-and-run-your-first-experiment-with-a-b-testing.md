@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
 ms.localizationpriority: medium
 ms.openlocfilehash: eb6e3f245aaaff46156964b5a6b37b21d22a2102
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766654"
+ms.locfileid: "5822656"
 ---
 # <a name="create-and-run-your-first-experiment"></a><span data-ttu-id="fe467-103">最初の実験を作成して実行する</span><span class="sxs-lookup"><span data-stu-id="fe467-103">Create and run your first experiment</span></span>
 
