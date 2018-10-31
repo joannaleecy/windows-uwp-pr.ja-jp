@@ -3,16 +3,16 @@ author: jnHs
 Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: 表示オプションを選択する
 ms.author: wdg-dev-content
-ms.date: 08/10/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 表示, プライベート対象ユーザー, 入手可能, 見つけやすさ
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a83f1ea4547e60547e427cedd5ad5338e450762
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ec6bc85c15ccf9926939c3bc2e208289c8dc4bcc
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757987"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5826604"
 ---
 # <a name="choose-visibility-options"></a>表示オプションを選択する
 
@@ -60,7 +60,7 @@ ms.locfileid: "5757987"
 - 組織のライセンス設定に関係なく、プライベート対象ユーザーに含まれているユーザーでも、ビジネス向け Microsoft Store と教育機関向け Microsoft Store からはアプリを入手できなくなります。
 - Microsoft Store では、プライベート対象ユーザーに含まれているユーザーが Microsoft アカウントでサインインしているときだけアプリを表示して入手できますが、それらのユーザーがプライベート対象ユーザーに含まれていないユーザーに情報やスクリーンショットを見せることは防止できません。 機密性が重要な場合、アプリの詳細を他のユーザーに知らせないことを信頼できるユーザーのみプライベート対象ユーザーに含めてください。
 - テスターには、必ずフィードバックを提供する方法を知らせてください。 通常、テスターがフィードバック Hub にフィードバックを残すことがないようにしてください。そのフィードバックは他のユーザーが参照できるためです。 メールを送信したり、他の方法でフィードバックを提供したりするためのリンクを記載することを検討してください。
-- プライベート対象ユーザーのユーザーによって書き込まれたどのレビューでも表示可能になります。 ただし、申請が **[Public audience]** (パブリック対象ユーザー) に移動されても、これらのレビューはアプリの Store 登録情報に公開されません。 プライベート対象ユーザーが書き込んだレビューは、デベロッパー センターで[レビュー レポート](reviews-report.md)を表示することで読むことができますが、このデータをダウンロードしたり、[Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) を使ってそれらのレビューにプログラムによってアクセスすることはできません。
+- プライベート対象ユーザーのユーザーによって書き込まれたどのレビューでも表示可能になります。 ただし、申請が **[Public audience]** (パブリック対象ユーザー) に移動されても、これらのレビューはアプリの Store 登録情報に公開されません。 [レビュー レポート](reviews-report.md)を表示することによって、プライベート対象ユーザーによって書き込まれたレビューを読み取ることができますが、このデータをダウンロードしたり、 [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md)を使用して、これらのレビューにプログラムでアクセスすることはできません。
 - アプリを **[Private audience]** (プライベート対象ユーザー) から **[Public audience]** (パブリック対象ユーザー) に移動すると、Store 登録情報に表示される **[Release date]** (リリース日) はパブリック対象ユーザーに最初に公開された日になります。
 
 ## <a name="discoverability"></a>見つけやすさ

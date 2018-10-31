@@ -4,16 +4,16 @@ Description: The App properties page of the app submission process lets you defi
 title: アプリのプロパティの入力
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, ゲーム設定, 表示モード, システム要件, ハードウェア要件, 最小ハードウェア, 推奨されるハードウェア, プライバシー ポリシー, サポートの問い合わせ先情報, アプリ Web サイト, サポート情報
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b7fffe4c687009f71c9908ca9391278a172209a
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 9356c536946508c4531170cde8982e7b79c6e4f6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746057"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5823418"
 ---
 # <a name="enter-app-properties"></a>アプリのプロパティの入力
 
@@ -60,7 +60,7 @@ Microsoft Store でアプリの分類に使うカテゴリを (該当する場�
 
 ## <a name="game-settings"></a>ゲーム設定
 
-このセクションは、製品のカテゴリとして **[ゲーム]** を選択した場合にのみ表示されます。 ここでは、ゲームがサポートしている機能を指定できます。 このセクションで指定した情報はすべて、製品のストア登録情報に表示されます。
+このセクションは、製品のカテゴリとして **[ゲーム]** を選択した場合にのみ表示されます。 ここでは、ゲームがサポートしている機能を指定できます。 このセクションで指定した情報は、製品のストアに表示される一覧表示します。
 
 ゲームでマルチプレイヤー オプションのいずれかをサポートしている場合は、セッションあたりの最小プレイヤー数と最大プレイヤー数を指定してください。 最小または最大のプレイヤー数として 1,000 人より大きい値を入力することはできません。
 

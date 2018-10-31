@@ -4,26 +4,26 @@ Description: You can respond directly to reviews of your app to let customers kn
 title: 顧客のレビューに返信する
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.author: wdg-dev-content
-ms.date: 7/17/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 応答、応答することを確認します。
 ms.localizationpriority: medium
-ms.openlocfilehash: f4bad59e298ef65cc7aaf6561b77cc86eeff832e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 823ca28618540dbaab1f4e5711ee59d277b0c894
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748375"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5824128"
 ---
 # <a name="respond-to-customer-reviews"></a>顧客のレビューに返信する
 
 
 フィードバックをリッスンしているユーザーにわかるようにするアプリのレビューに返信できます。 レビューへの返信機能を使えば、追加した機能や、顧客のコメントに基づいて修正したバグについて顧客に伝えたり、アプリを改善する方法についてさらに細かいフィードバックを得たりできます。 すべての windows 10 ユーザーを表示向け Microsoft ストアでの応答が表示されます。 (これらは、オプトアウトしていないし、Windows 10、バージョン 1803 以降を実行するデバイスを使用している) 場合は、顧客にメールで返信を送信することもできます。
 
-アプリのレビューを表示し、返信するには、Windows デベロッパー センター ダッシュボードで目的のアプリを探します。 左側のナビゲーション メニューで、**[分析]** を展開し、**[レビュー]** をクリックして[レビュー レポート](reviews-report.md)を表示します。 返信を提供する**レビューに返信**を選択します。
+アプリのレビューを表示し、返信するには、[パートナー センター](https://partner.microsoft.com/dashboard)でアプリを検索します。 左側のナビゲーション メニューで、**分析**を展開し、 [[レビュー] レポート](reviews-report.md)を表示する**レビュー**をクリックします。 返信を提供する**レビューに返信**を選択します。
 
 > [!TIP]
-> だけでなく、ダッシュ ボードを使用して、レビューに返信する、または[デベロッパー センター アプリ](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)を使用してレビュー[プログラムによって](../monetize/submit-responses-to-app-reviews.md)に返信できます。
+> レビューに返信するには、パートナー センターを使って、返信するレビュー[プログラムで](../monetize/submit-responses-to-app-reviews.md)、または[デベロッパー センター アプリ](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)を使って返信できます。
 
 既定では、元の顧客のレビューのすぐ下のストアに返信が投稿されます。 これらの応答は、Windows 10 デバイスでストアを表示するすべての顧客に表示されます。 レビュー担当者、ユーザーが Windows 10、バージョン 1803 以降を実行しているデバイスを使用して、それらをメールへの返信オプトアウトしていない場合は、返信のコピーも送信されるその顧客にメールでします。  顧客にメールでおが含まれます返信を提出するために、有効なメール アドレスを入力する必要があります。 直接連絡するときに、このメール アドレスを使用できます。
 

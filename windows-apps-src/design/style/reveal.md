@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bcbd1dfceb0dc51addfe9572fba746680745b26
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: db71916c9297296c4d3bb89e05032c5f413f332e
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752213"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5824874"
 ---
 # <a name="reveal-highlight"></a>表示ハイライト
 
@@ -115,7 +115,7 @@ ms.locfileid: "5752213"
 
 ## <a name="enabling-reveal-on-custom-controls"></a>カスタム コントロールで表示効果を有効にする
 
-表示効果は、カスタム コントロールにも追加できます。 その前に、表示効果の動作についてもう少し詳しく知っておくと便利です。 表示効果は、2 つの独立した効果 (**表示効果の境界線**と**表示効果のホバー**) で構成されています。
+表示効果は、カスタム コントロールにも追加できます。 実行する前に、表示効果のしくみについてもう少し詳しく知っておくと便利です。 表示効果は、2 つの独立した効果 (**表示効果の境界線**と**表示効果のホバー**) で構成されています。
 
 - **表示効果の境界線**では、ポインターが近付くと、対話型要素の境界線が表示されます。 この効果では、現在フォーカスが置かれているオブジェクトと類似したアクションを、近くにある他のオブジェクトでも実行できることが示されます。
 - **表示効果のホバー**では、ホバーされた (フォーカスが置かれた) 項目の周囲に淡く発光する図形が描画され、クリック時には押下操作のアニメーションが再生されます。 

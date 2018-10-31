@@ -1,35 +1,35 @@
 ---
 author: jnHs
-Description: The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
+Description: The first step in creating a new app in Partner Center is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
 title: 名前の予約によるアプリの作成
 keywords: windows 10, uwp, 名前の予約, アプリ名, アプリの名前, 名前, 製品名, 名前付け, 予約名, タイトル, 名前, 題名
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b8666d478b59bfb5975150903cf08fc2a43e938c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: a94a07eb80e0b181e49a74beba7690d8a57bfaa6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5755766"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827321"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>名前の予約によるアプリの作成
 
-アプリ名の予約は、最初の手順は、 [Windows デベロッパー センター ダッシュ ボード](https://partner.microsoft.com/dashboard)で新しいアプリを作成します。 各予約名 (アプリの*タイトル*と呼ばれることもあります) は、Microsoft Store 全体で一意でなければなりません。
+アプリ名の予約は、最初の手順は、[パートナー センター](https://partner.microsoft.com/dashboard)で新しいアプリを作成します。 各予約名 (アプリの*タイトル*と呼ばれることもあります) は、Microsoft Store 全体で一意でなければなりません。
 
 アプリの構築をまだ開始していない場合でも、アプリの名前を予約することができます。 その他のユーザー名を使用できるように、できるだけ早くこれを行うことをお勧めします。 その名前の予約を維持sるには、3 か月以内にアプリを申請する必要がある点に注意してください。
 
 [アプリのパッケージをアップロード](upload-app-packages.md)するには、アプリに予約した名前と [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) の値が一致している必要があります。 アプリのパッケージを作成するために Microsoft Visual Studio を使う場合は、この属性が自動的に入力されます。
 
 > [!IMPORTANT]
-> アプリの追加の名前を予約することができ、ダッシュ ボードで最初に、アプリを作成するときを予約するものではなく、アプリの公開されているバージョンでそれらのいずれかを使用することができます。 ただし、ここで入力した最初の名前が、アプリの[id の詳細](view-app-identity-details.md)など、**パッケージ ファミリ名 (PFN)** の一部使用されることに注意します。 これらの値は、一部のユーザーに表示される場合がありすることはできません、変更されたため、必ず、名前を予約するが、このような使用に適していること。
+> 、アプリの追加の名前を予約して、パートナー センターで最初に、アプリを作成するときを予約するものではなく、アプリの公開されているバージョンでそれらのいずれかを使用することができます。 ただし、ここで入力した最初の名前が、アプリの[id の詳細](view-app-identity-details.md)など、**パッケージ ファミリ名 (PFN)** の一部使用されることに注意します。 これらの値は、一部のユーザーに表示される場合がありすることはできません、変更されたため、必ず、名前を予約するが、このような使用に適していること。
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>新しい名前の予約によるアプリの作成
 
-名前の予約は、ダッシュボードでのアプリを作るための最初の手順です。 
+パートナー センターでアプリを作成する最初の手順は、名前を予約します。 
 
 1.  **[概要]** ページで、**[新しいアプリの作成]** をクリックします。
 2.  使う名前をテキスト ボックスに入力して、**[使用可能か確認]** を選びます。 名前が利用可能な場合は、緑色のチェック マークが表示されます  (入力した名前が他の開発者によって既に予約または使用されている場合は、名前が利用できないことを示すエラー メッセージが表示されます)。
@@ -58,7 +58,7 @@ ms.locfileid: "5755766"
 
 ## <a name="manage-additional-app-names"></a>追加のアプリ名の管理
 
-Windows デベロッパー センター ダッシュボードの各アプリの **[アプリ管理]** セクションで、**[アプリ名の管理]** ページから追加の名前を追加および管理できます。
+追加して、パートナー センターで、アプリの各**アプリ管理**] セクションで**アプリ名の管理**ページの追加の名前を管理することができます。
 
 アプリを複数の言語で提供し、言語ごとに異なる名前を使う場合などに、同じアプリに複数の名前を予約しておきたいことがあります。 アプリの名前を完全に変更する場合は、追加の名前を予約する必要があります。
 

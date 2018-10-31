@@ -4,16 +4,16 @@ Description: The Payout summary shows you details about the money you’ve earne
 title: 支払いの概要
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
-ms.date: 02/13/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 入金状況, ステートメントの, 支払い額, 売り上げ, 入金い, 支払い, 収益
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cc0b38c8118a3cfc8b157eacecab91f7ac2b120
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 5f6369247f0e287ec2698213b7f0b7be7e1f21d4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5751255"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827431"
 ---
 # <a name="payout-summary"></a>入金状況
 
@@ -29,7 +29,7 @@ Azure Marketplace で製品を販売する場合、**[入金状況]** に正常�
 >
 > 支払いは毎月行われます (支払いのしきい値に達している場合)。 通常、支払いは、該当する月の 15 日に行われます。 支払いが受取りアカウントに到着するまで、通常は 3 ～ 10 営業日かかることに注意してください。 詳しくは、「[支払しきい値、方法、期間](payment-thresholds-methods-and-timeframes.md)」をご覧ください。
 
-**入金状況**を確認するには、デベロッパー センターの右上隅付近に表示される **[支払い]** アイコンをクリックして、**[入金状況]** を選択します。
+**入金状況**を表示するには、パートナー センターで、右上隅付近に表示される**支払い**のアイコンをクリックし、**入金状況**を選択します。
 
 ## <a name="current-proceeds-and-payments"></a>現在の収益とお支払い
 

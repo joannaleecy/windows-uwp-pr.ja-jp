@@ -4,16 +4,16 @@ Description: The Microsoft Store enforces certain rules related to version numbe
 title: パッケージ バージョンの番号付け
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 10/25/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 045e44d3ba243b4c4fbf68ba37e91c06eb022d27
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 5bd34c285a74c0fbe7e51f1f3fa53cdde33733dd
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741686"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5825036"
 ---
 # <a name="package-version-numbering"></a>パッケージ バージョンの番号付け
 
@@ -64,6 +64,9 @@ Windows 10 をすべての市場で実行されること、1 つのコードベ�
 
 
 ## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>バージョン番号付け Windows8.1 (以前) と Windows Phone 8.1 パッケージ
+
+> [!IMPORTANT]
+> 2018 年 10 月 31 日の時点で、新しく作成した製品が Windows 8.x/Windows を対象とするパッケージを含めることはできません Phone 8.x 以前のバージョン。 詳しくは、この[ブログ記事](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)を参照してください。
 
 Windows Phone 8.1 を対象とする .appx パッケージでは、新しい申請のパッケージのバージョン番号は最後の申請 (または、以前の申請) に含まれるパッケージの番号より常に大きい必要があります。
 

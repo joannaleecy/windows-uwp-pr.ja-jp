@@ -1,27 +1,27 @@
 ---
 author: jnHs
-Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
+Description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
 title: Xbox 分析レポート
 ms.author: wdg-dev-content
-ms.date: 06/04/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計情報
 ms.localizationpriority: medium
-ms.openlocfilehash: e3a5ec3c81b9cddce4c38ad7f764d35bd6f34f86
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: c2c1f54a402fc4ae7184f1d588cc255525f762c2
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748012"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827395"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析レポート
 
-Windows デベロッパー センター ダッシュボードの **Xbox 分析レポート**には、ゲームの Xbox 機能に関するユーザーのエンゲージメント状況の統計情報が示されます。 また、クライアント エラーの解決に役立つ、サービスの正常性情報も提供されます。
+[パートナー センター](https://partner.microsoft.com/dashboard)で**Xbox 分析**レポートでは、ユーザーを引き付ける方法、ゲームの Xbox 機能に関する統計情報が表示されます。 また、クライアント エラーの解決に役立つ、サービスの正常性情報も提供されます。
 
 > [!IMPORTANT]
 > このレポートは、Xbox 用のゲームまたは Xbox Live サービスを使用するゲームを公開する場合にのみ表示されます。 これを行うには、[概念の承認プロセス](../gaming/concept-approval.md)、 [Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)によって公開されたゲームとゲームの経由で提出が含まれているについて学習する必要があります、[ID@Xboxプログラム](../xbox-live/developer-program-overview.md#id)します。 [Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を通じて公開されたゲームは、このレポートに表示されているされません。
 
-**Xbox 分析**レポートは、ゲームに対する左側のナビゲーション メニューで、**[分析]** を展開して **[Xbox 分析]** を選択すると表示できます。  このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。
+ゲームの左側のナビゲーション メニューから**Xbox 分析**レポートを表示するには**分析**を展開し、 **Xbox 分析**を選択します。  パートナー中央揃え、または[レポートをダウンロード](download-analytic-reports.md)してオフラインでは、このデータを表示できます。
 
 
 ## <a name="overview-tab"></a>[概要] タブ

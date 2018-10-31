@@ -1,25 +1,25 @@
 ---
 author: JnHs
-Description: Get detailed analytics for your Windows apps, in the dashboard or via other methods.
+Description: Get detailed analytics for your Windows apps, in Partner Center or via other methods.
 title: アプリのパフォーマンスの分析
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.author: wdg-dev-content
-ms.date: 07/17/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、uwp、分析、レポート、ダッシュ ボード、アプリ、データ、メトリック
 ms.localizationpriority: medium
-ms.openlocfilehash: e31ae50a1895c5878a2183b7f63ce3080623f7e9
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5768446"
+ms.locfileid: "5824967"
 ---
 # <a name="analyze-app-performance"></a>アプリのパフォーマンスの分析
 
-アプリについての詳しい分析を Windows デベロッパー センター ダッシュボードで確認できます。 統計情報とチャートでは、アプリの状況 (獲得したユーザーから、ユーザーによるアプリの使い方、ユーザーによるアプリの評判まで) を知ることができます。 アプリの正常性、広告の使用状況などに関するメトリックも確認できます。
+[パートナー センター](https://partner.microsoft.com/dashboard)で、アプリの詳細な分析を表示することができます。 統計情報とチャートでは、アプリの状況 (獲得したユーザーから、ユーザーによるアプリの使い方、ユーザーによるアプリの評判まで) を知ることができます。 アプリの正常性、広告の使用状況などに関するメトリックも確認できます。
 
-ダッシュボードで分析レポートを表示するか、[必要なレポートをダウンロード](download-analytic-reports.md)してデータをオフラインで分析できます。 [ダッシュボードを使わずに分析データにアクセスする](#no-dashboard)こともできます。
+分析レポートを表示するデータをオフラインで分析するパートナー センターまたは[必要なレポートのダウンロード](download-analytic-reports.md)で直接します。 用意していますいくつかの方法のパートナー センター外部にも、分析データに[アクセス](#outside)します。
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>すべてのアプリについての主要な分析を表示する
 
@@ -45,11 +45,11 @@ ms.locfileid: "5768446"
 > [!NOTE]
 > アプリの実際の機能や実装によっては、これらのレポートの一部にデータが含まれていないことがあります。
 
-<span id="no-dashboard"/>
+<span id="outside"/>
 
-## <a name="access-analytics-data-without-using-the-dev-center-dashboard"></a>デベロッパー センター ダッシュボードを使わずに分析データにアクセスする
+## <a name="access-analytics-data-outside-of-partner-center"></a>パートナー センター外部にも分析データにアクセス
 
-ダッシュボードにレポートを表示するだけでなく、さまざまな方法でアプリ分析にアクセスできます。
+パートナー センターでレポートを表示する、だけでなくさまざまな方法でアプリ分析にアクセスすることができます。
 
 ### <a name="microsoft-store-analytics-api"></a>Microsoft Store 分析 API
 
@@ -57,7 +57,7 @@ ms.locfileid: "5768446"
 
 ### <a name="windows-dev-center-content-pack-for-power-bi"></a>Power BI 用 Windows デベロッパー センター コンテンツ パック
 
-[Power BI 用 Windows デベロッパー センター コンテンツ パック](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)を使うと、デベロッパー センターの分析データを Power BI で確認および監視できます。 Power BI とは、ビジネス データの 1 つのビューを提供するクラウド ベースのビジネス分析サービスです。
+[Power BI 用 Windows デベロッパー センター コンテンツ パック](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)を使用して、調査と Power BI でパートナー センター分析データを監視します。 Power BI とは、ビジネス データの 1 つのビューを提供するクラウド ベースのビジネス分析サービスです。
 
 Power BI を使って分析データにアクセスするには、まず、次のリソースをご覧ください。
 
@@ -66,7 +66,7 @@ Power BI を使って分析データにアクセスするには、まず、次�
 * [Power BI 用 Windows デベロッパー センター コンテンツ パックを使って分析データに接続する方法](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続する際には、デベロッパー センター アカウントに関連付けられた Azure AD ディレクトリの資格情報を指定することをお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 関連付けをセットアップする方法について詳しくは、「[Azure Active Directory とデベロッパー センター アカウントとの関連付け](associate-azure-ad-with-dev-center.md)」をご覧ください。
+> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続するには、パートナー センター アカウントに関連付けられている Azure AD ディレクトリからの資格情報を指定することお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 関連付けをセットアップについて詳しくは、 [Azure Active Directory の関連付け](associate-azure-ad-with-dev-center.md)を参照してください。
 
 ### <a name="dev-center-app"></a>Dev Center アプリ
 
