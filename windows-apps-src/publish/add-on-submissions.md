@@ -1,30 +1,30 @@
 ---
 author: jnHs
-Description: Add-ons are published through the Windows Dev Center dashboard.
+Description: Add-ons (or in-app products) are published through Partner Center.
 title: アドオンの申請
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.author: wdg-dev-content
-ms.date: 05/09/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, iap, アプリ内購入, アプリ内製品, iap の申請
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d7045c09dfa56c15027fda94eeb21e5d744aa45
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 28fd2e104de12cc297ce5d28ddd18b0ce550a5d0
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5759076"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828410"
 ---
 # <a name="add-on-submissions"></a>アドオンの申請
 
 アドオン (アプリ内製品とも呼ばれる) は、お客様が購入可能なアプリの補助アイテムです。 アドオンは、楽しいと思われる新しいゲーム レベル、またはその他の新機能に対するユーザーのエンゲージメントとできます。 アドオンは収益を得るためだけでなく、お客様との意見交換や顧客エンゲージメントの獲得を促すためにも役立ちます。
 
-アドオンは Windows デベロッパー センター ダッシュボードを使って公開します。 また、アプリのコードで [アドオンを有効にする](../monetize/in-app-purchases-and-trials.md)ことも必要です。
+アドオンは、[パートナー センター](https://partner.microsoft.com/dashboard)を通じて公開されすると、アクティブな[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)を持っている必要があります。 また、アプリのコードで [アドオンを有効にする](../monetize/in-app-purchases-and-trials.md)ことも必要です。
 
-アドオンの申請プロセスでは、最初に、[その製品の種類と製品 ID を定義](set-your-add-on-product-id.md)して、ダッシュボードでアドオンを作成します。 その後、Microsoft Store 経由でアドオンを購入できるように、申請を作成します。 [アプリの申請](app-submissions.md)と同時にまたは別々にアドオンを申請できます。 アプリがストアに公開された後は、アプリを再び申請することなく、アドオンを[更新](#updating-an-add-on-after-publication)できます。
+アドオンの申請プロセスには、最初に[その製品の種類と製品 ID を定義すること](set-your-add-on-product-id.md)によって、パートナー センターでアドオンを作成します。 その後、Microsoft Store 経由でアドオンを購入できるように、申請を作成します。 [アプリの申請](app-submissions.md)と同時にまたは別々にアドオンを申請できます。 アプリがストアに公開された後は、アプリを再び申請することなく、アドオンを[更新](#updating-an-add-on-after-publication)できます。
 
 > [!NOTE]
-> ドキュメントのこのセクションでは、デベロッパー センター ダッシュボードでアドオンを申請する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアドオン申請を自動化することもできます。
+> ドキュメントのこのセクションでは、パートナー センターでのアドオンを申請する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアドオン申請を自動化することもできます。
 
 
 ## <a name="checklist-for-submitting-an-add-on"></a>アドオンの申請用チェック リスト
@@ -85,9 +85,9 @@ ms.locfileid: "5759076"
 
 公開したアドオンはいつでも変更できます。 アドオンの変更が送信され、アプリに独立して公開されるためを一般に、価格や説明の更新などのアドオンを変更するためにアプリ全体を更新する必要はありません。
 
+更新プログラムを送信するには、追加のページでは、パートナー センターに移動し、**更新**] をクリックします。 これにより、開始点として、以前の申請から情報を使用して、アドオンの新しい申請が作成されます。 、し、[**ストアに提出**] をクリックし、変更を行います。
+
+既に提供されているアドオンを削除する場合は、新しい申請を作成して、[[分布と認知度]](set-add-on-pricing-and-availability.md) オプションを **[ストアに表示しない]** に変更し、**[購入の停止]** オプションを選択します。 アドオンへの参照を削除する場合、必要に応じて、アプリのコードを更新してください (以前に公開されたアプリが Windows 8.1 を以前のバージョンがサポートする場合に特にこの表示の設定には適用されませんそれらのユーザー)。
+
 > [!IMPORTANT]
-> Windows 8.x のユーザーがこのアプリを利用できる場合、アドオンの更新がこれらのユーザーにも表示されるようにするために、新しいアプリの申請を作成して公開する必要があります。 同様に、アプリを公開した後で、Windows 8.x を対象とする新しいアドオンをアプリに追加する場合は、アドオンを参照するようにアプリのコードを更新して、アプリを再申請する必要があります。 それ以外の場合、新しいアドオンは、Windows 8.x のユーザーには表示されません。
-
-更新を申請するには、ダッシュボードでアドオンのページに移動し、**[更新]** をクリックします。 これにより、開始点として、以前の申請から情報を使用して、アドオンの新しい申請が作成されます。 、し、[**ストアに提出**] をクリックし、変更を行います。
-
-既に提供されているアドオンを削除する場合は、新しい申請を作成して、[[分布と認知度]](set-add-on-pricing-and-availability.md) オプションを **[ストアに表示しない]** に変更し、**[購入の停止]** オプションを選択します。 アドオンへの参照も削除するには、必要に応じて、アプリのコードを更新してください (特にアプリが以前に Windows 8.1 をサポートしていた場合、この表示の設定はそれらのユーザーには適用されません)。
+> 以前に公開されたアプリが Windows のユーザーに利用可能なかどうかは作成して、アドオンの更新をこれらのユーザーに表示されるようにするために、新しいアプリの申請を公開する必要がある 8.x、します。 同様に、アプリを公開した後で、Windows 8.x を対象とする新しいアドオンをアプリに追加する場合は、アドオンを参照するようにアプリのコードを更新して、アプリを再申請する必要があります。 それ以外の場合、新しいアドオンは、Windows 8.x のユーザーには表示されません。

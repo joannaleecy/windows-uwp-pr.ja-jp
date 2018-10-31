@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0066d38aaa3f5802ff5b1d380d405e60d90cad49
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5767666"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828201"
 ---
 # <a name="streaming-resources-texture-sampling-features"></a>ストリーミング リソース テクスチャ サンプリング機能
 

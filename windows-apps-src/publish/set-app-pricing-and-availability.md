@@ -4,16 +4,16 @@ Description: The Pricing and availability page of the app submission process let
 title: アプリの価格と使用可能状況の設定
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
-ms.date: 05/11/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 価格, 使用可能状況, 見つけやすさ, 無料試用版, 試用版, トライアル, アプリ, リリース日
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f394bbe644d679b48c239a305594900ca0f7e46
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: a21cc94dd9b22304c715cc0e6b038ffdac6da02b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746118"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828113"
 ---
 # <a name="set-app-pricing-and-availability"></a>アプリの価格と使用可能状況の設定
 
