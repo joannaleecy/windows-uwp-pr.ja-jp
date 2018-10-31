@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, social manager, people
 ms.localizationpriority: medium
 ms.openlocfilehash: 711f04f29321736ae8adc887b54ce752963908c5
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5749600"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5824670"
 ---
 # <a name="social-manager-memory-and-performance-overview"></a><span data-ttu-id="09adf-104">Social Manager のメモリーとパフォーマンスの概要</span><span class="sxs-lookup"><span data-stu-id="09adf-104">Social Manager Memory and Performance Overview</span></span>
 

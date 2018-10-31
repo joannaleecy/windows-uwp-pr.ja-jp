@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, エラー, サービス呼び出し
 ms.localizationpriority: medium
 ms.openlocfilehash: 1728af14afb0840975ad175608da3f0e9b03645d
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5749636"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5824621"
 ---
 # <a name="error-handling"></a><span data-ttu-id="a8dfe-104">エラー処理</span><span class="sxs-lookup"><span data-stu-id="a8dfe-104">Error handling</span></span>
 
