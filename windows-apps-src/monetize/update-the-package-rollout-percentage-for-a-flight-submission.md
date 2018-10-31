@@ -9,11 +9,11 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロー�
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ff8b79e04d188ab79ac76ad1c5d47ab5ee37563
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746960"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827865"
 ---
 # <a name="update-the-rollout-percentage-for-a-flight-submission"></a><span data-ttu-id="3295b-104">フライトの申請に関するロールアウト率の更新</span><span class="sxs-lookup"><span data-stu-id="3295b-104">Update the rollout percentage for a flight submission</span></span>
 

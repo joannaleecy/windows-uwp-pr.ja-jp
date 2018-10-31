@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, Java
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3280b6b9c0f012f36588d6eb0297b415e07f78
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5750228"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5825396"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a><span data-ttu-id="a0b9a-104">Java のコード例: アプリ、アドオン、およびフライトの申請</span><span class="sxs-lookup"><span data-stu-id="a0b9a-104">Java sample: submissions for apps, add-ons, and flights</span></span>
 

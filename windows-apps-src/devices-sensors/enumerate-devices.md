@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: df6082665136442c03273dea4132417b0fd7033c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745941"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827603"
 ---
 # <a name="enumerate-devices"></a><span data-ttu-id="d4600-104">デバイスの列挙</span><span class="sxs-lookup"><span data-stu-id="d4600-104">Enumerate devices</span></span>
 

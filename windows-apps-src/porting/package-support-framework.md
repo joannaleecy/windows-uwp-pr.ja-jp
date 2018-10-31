@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bb29a50ef4fc8c5a56e410a59802b217c033cbc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5765376"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827875"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a><span data-ttu-id="3ab7d-103">MSIX パッケージにパッケージのサポートのフレームワークを使用して、ランタイムの修正プログラムを適用します。</span><span class="sxs-lookup"><span data-stu-id="3ab7d-103">Apply runtime fixes to an MSIX package by using the Package Support Framework</span></span>
 
