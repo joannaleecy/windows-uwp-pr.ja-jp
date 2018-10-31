@@ -1,53 +1,53 @@
 ---
 author: jnHs
-Description: In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory.
-title: Azure Active Directory とデベロッパー センター アカウントとの関連付け
+Description: In order to add and manage account users, you must first associate your Partner Center account with your organization's Azure Active Directory.
+title: パートナー センター アカウントに Azure Active Directory を関連付ける
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, azure ad, azure テナント, aad テナント, azure ad テナント, テナント管理, テナント
 ms.localizationpriority: medium
-ms.openlocfilehash: d5cf68a1e4cbd770d45d5c2def9a80a57203c062
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: a76021f53417d30b91db282a194f6dc6ca268c1f
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5743848"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835478"
 ---
-# <a name="associate-azure-active-directory-with-your-dev-center-account"></a>Azure Active Directory とデベロッパー センター アカウントとの関連付け
+# <a name="associate-azure-active-directory-with-your-partner-center-account"></a>パートナー センター アカウントに Azure Active Directory を関連付ける
 
-[アカウント ユーザーを追加および管理](add-users-groups-and-azure-ad-applications.md)するには、まずデベロッパー センター アカウントを組織の Azure Active Directory に関連付けます。 
+アカウント ユーザーを[追加および管理](add-users-groups-and-azure-ad-applications.md)の順序で、組織の Azure Active Directory と、パートナー センター アカウントを最初に関連付ける必要があります。 
 
-Windows デベロッパー センターでは、複数のユーザー アカウントのアクセスと管理に Azure AD を利用します。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、デベロッパー センター内から新しい Azure AD テナントを追加料金なしで作成できます。
+[パートナー センター](https://partner.microsoft.com/dashboard)では、複数のユーザー アカウントのアクセスや管理に Azure AD を活用します。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合、作成、新しい Azure AD テナントからパートナー センター内で追加料金なし。
 
 > [!TIP]
-> このトピックは Windows アプリ開発者プログラムに固有の内容ですが、テナントの関連付けとユーザーの管理は Windows デスクトップ アプリケーション プログラム (詳しくは「[Windows デスクトップ アプリケーション プログラム](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)」を参照) のアカウントでも Windows ハードウェア開発者プログラム (**マネージャー** ロールという記述は、**管理者**ロールのハードウェア アカウントにも適用されます。詳しくは「[ダッシュボードの管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)」を参照) のアカウントでも同様に機能します。
+> このトピックでは、[パートナー センター](https://partner.microsoft.com/dashboard)では、Windows アプリ開発者プログラムに固有ですが、テナントの関連付けとユーザーの管理でも同様に機能、Windows デスクトップ アプリケーション プログラムでのアカウント ( [Windows デスクトップ アプリケーション プログラム](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)を参照してください。詳しくは) と、Windows ハードウェア開発者プログラム (**マネージャー**の役割への参照も**管理者**ロールを持つハードウェア アカウントに適用されます。 詳しくは、[ダッシュ ボードの管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)を参照してください)。
 
-1 つの Azure AD テナントを複数のデベロッパー センター アカウントに関連付けることもできます。 複数のアカウント ユーザーを追加には 1 つの Azure AD テナントをデベロッパー センター アカウントに関連付けるだけでかまいませんが、複数の Azure AD テナントを 1 つのデベロッパー センター アカウントに追加することもできます。 デベロッパー センター アカウントで**マネージャー** ロールを持つすべてのユーザーは、Azure AD テナントの追加と削除を行うことができます。
+1 つの Azure AD テナントを複数のパートナー センター アカウントに関連付けることができます。 複数のアカウント ユーザーを追加するために、パートナー センター アカウントに関連付けられている 1 つの Azure AD テナントにのみ必要がありますが、複数の Azure AD テナントを 1 つのパートナー センター アカウントに追加するオプションもあります。 します。 パートナー センター アカウントに**マネージャー**の役割を持つすべてのユーザーを追加し、アカウントから Azure AD テナントを削除するオプションとなります。
 
 > [!IMPORTANT]
-> デベロッパー センター アカウントを Azure AD テナントと関連付けた後、そのテナントでアカウント ユーザーを追加および管理するには、**マネージャー** ロールを持つ同じテナントのユーザーとしてデベロッパー センターにサインインする必要があります。
+> パートナー センターのアカウントを Azure AD テナントに関連付けることを追加し、そのテナントでアカウント ユーザーを管理するためにする必要があります**マネージャー**の役割を持つ同じテナントのユーザーとしてパートナー センターにサインインします。
 
 
-## <a name="associate-your-dev-center-account-with-your-organizations-existing-azure-ad-tenant"></a>デベロッパー センター アカウントと組織の既存の Azure AD テナントを関連付ける
+## <a name="associate-your-partner-center-account-with-your-organizations-existing-azure-ad-tenant"></a>パートナー センター アカウントと組織の既存の Azure AD テナントを関連付ける
 
-組織で既に Azure AD が使用されている場合は、次の手順に従ってデベロッパー センター アカウントをリンクします。
+組織に既に Azure AD を使用した場合は、パートナー センター アカウントにリンクする次の手順に従います。
 
-1.  [Windows デベロッパー センター ダッシュ ボード](https://partner.microsoft.com/dashboard)から (右上隅のダッシュ ボードの) 近くにある歯車アイコンを選択し、[**アカウント設定**] を選択します。 [**設定**] メニューには、**テナント**を選択します。
-2.  **[Azure AD と デベロッパー センター アカウントの関連付け]** を選びます。
+1.  [パートナー センター](https://partner.microsoft.com/dashboard)では、(右上隅のダッシュ ボードの) 近くにある歯車アイコンを選択し、**開発者向け設定**] を選択します。 [**設定**] メニューには、**テナント**を選択します。
+2.  **Azure AD をパートナー センター アカウントの関連付け**を選択します。
 3.  関連付けるテナントの Azure AD 資格情報を入力します。
 4.  Azure AD テナントの組織とドメイン名を確認します。 関連付けを完了するには、**[確認]** を選びます。
-5.  関連付けができたら、デベロッパー センターの **[ユーザー]** ページで、いつでもアカウント ユーザーを追加して管理することができます。
+5.  関連付けが成功した場合は、ことができます追加し、パートナー センターで**ユーザー**のセクションでアカウント ユーザーの管理を準備します。
 
 > [!IMPORTANT]
-> 新しいユーザーを作成したり、Azure AD に他の変更を加えたりするには、[グローバル管理者のアクセス許可](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)を持つアカウントを使ってその Azure AD にサインインする必要があります。 ただし、テナントを関連付けたり、そのテナントに既に存在しているユーザーをデベロッパー センター アカウントに追加したりする場合、グローバル管理者のアクセス許可は必要ありません。
+> 新しいユーザーを作成したり、Azure AD に他の変更を加えたりするには、[グローバル管理者のアクセス許可](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)を持つアカウントを使ってその Azure AD にサインインする必要があります。 ただし、パートナー センター アカウントにテナントに既に存在しているユーザーを追加するか、テナントを関連付けたり、グローバル管理者のアクセス許可を必要はありません。
 
 
-## <a name="create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account"></a>デベロッパー センター アカウントに関連付ける新しい Azure AD を作成する
+## <a name="create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account"></a>パートナー センター アカウントに関連付ける新しい Azure AD を作成します。
 
-デベロッパー センター アカウントをリンクする Azure AD を準備する必要がある場合は、次の手順に従います。
+パートナー センター アカウントをリンクする新しい Azure AD を設定する必要がある場合は次の手順に従います。
 
-1.  [Windows デベロッパー センター ダッシュ ボード](https://partner.microsoft.com/dashboard)から (右上隅のダッシュ ボードの) 近くにある歯車アイコンを選択し、[**アカウント設定**] を選択します。 [**設定**] メニューには、**テナント**を選択します。
+1.  [パートナー センター](https://partner.microsoft.com/dashboard)から (右上隅のダッシュ ボードの) 近くにある歯車アイコンを選択し、**開発者向け設定**] を選択します。 [**設定**] メニューには、**テナント**を選択します。
 2.  **[新しい Azure AD の作成]** を選びます。
 3.  新しい Azure AD のディレクトリ情報を入力します。
     - **[ドメイン名]**: ".onmicrosoft.com" との組み合わせで Azure AD ドメインを示す一意の名前。 たとえば、「example」と入力した場合、Azure AD ドメインは "example.onmicrosoft.com" になります。
@@ -59,26 +59,26 @@ Windows デベロッパー センターでは、複数のユーザー アカウ�
 
 ## <a name="manage-azure-ad-tenant-associations"></a>Azure AD テナントの関連付けの管理
 
-Azure AD テナントをデベロッパー センター アカウントに関連付けると、新しいテナントを追加したり、**[テナント]** ページから既存のテナントを削除したりすることができます。
+Azure AD テナントは、パートナー センター アカウントに関連付けられているが後、は、新しいテナントを追加または**テナント**ページから既存のテナントを削除できます。
 
 
-### <a name="add-multiple-azure-ad-tenants-to-your-dev-center-account"></a>デベロッパー センター アカウントへの複数の Azure AD テナントの追加
+### <a name="add-multiple-azure-ad-tenants-to-your-partner-center-account"></a>パートナー センター アカウントに複数の Azure AD テナントを追加します。
 
-デベロッパー センター アカウントの**マネージャー** ロールを持つユーザーは、Azure AD テナントをアカウントに関連付けることができます。
+パートナー センターのアカウント**マネージャー**の役割を持つユーザーは、アカウントを使用して、Azure AD テナントを関連付けることができます。
 
 新しいテナントを関連付けるには、**[別の Azure AD テナントの関連付け]** を選び、上記の手順に従います。 関連付ける Azure AD テナントの資格情報が求められる点に注意してください。
 
 
-### <a name="remove-an-azure-ad-tenant-from-your-dev-center-account"></a>デベロッパー センター アカウントからの Azure AD テナントの削除
+### <a name="remove-an-azure-ad-tenant-from-your-partner-center-account"></a>パートナー センター アカウントから Azure AD テナントを削除します。
 
-デベロッパー センター アカウントの**マネージャー** ロールを持つユーザーは、Azure AD テナントをアカウントから削除することができます。
+パートナー センターのアカウント**マネージャー**の役割を持つユーザーは、アカウントから Azure AD テナントを削除することができます。
 
 > [!IMPORTANT]
-> テナントを削除すると、そのテナントからデベロッパー センター アカウントに追加されたすべてのユーザーはアカウントにサインインできなくなります。 
+> テナントを削除すると、そのテナントからパートナー センター アカウントに追加されたすべてのユーザーはできなくアカウントにサインインします。 
 
-テナントを削除するには、(**アカウントの設定**) で、**テナント**のページでその名前を検索し、**削除**] を選択します。 テナントの削除を確認するメッセージが表示されます。 これを行うと、そのテナント内のどのデベロッパー センター ユーザーもデベロッパー センター アカウントにログインできなくなり、それらのユーザー用に構成したすべてのアクセス許可が削除されます。
+テナントを削除するには、(**アカウントの設定**) で、**テナント**のページでその名前を検索し、**削除**] を選択します。 テナントの削除を確認するメッセージが表示されます。 これを行うと、そのテナント内のユーザーは、パートナー センター アカウントにサインインできなくし、それらのユーザー用に構成したすべてのアクセス許可は削除されます。
 
 > [!TIP]
-> 現在、同じテナントのアカウントを使ってデベロッパー センターにサインインしている場合、テナントを削除することはできません。 テナントを削除するには、アカウントに関連付けられた別のテナントの**マネージャー**としてデベロッパー センターにサインインする必要があります。 アカウントにテナントが 1 つだけ関連付けられている場合、アカウントを開いた Microsoft アカウントを使ってサインインした後のみそのテナントを削除できます。
+> 現在サインインしているパートナー センターに同じテナントのアカウントを使っている場合は、テナントを削除することはできません。 テナントを削除するには、必要がありますにサインインするパートナー センター**マネージャー**として別のテナントのアカウントに関連付けられています。 アカウントにテナントが 1 つだけ関連付けられている場合、アカウントを開いた Microsoft アカウントを使ってサインインした後のみそのテナントを削除できます。
 
 

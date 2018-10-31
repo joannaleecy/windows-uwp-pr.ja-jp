@@ -5,15 +5,15 @@ title: アプリの申請
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: チェックリスト, windows, uwp, 申請, 提出, ゲーム, アプリ, 送信
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b3aed7c5fe912155904b3b0da666427e6727d19d
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 55235c78df29513e8d7b28e7643aec5c3a256f1d
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742322"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5833639"
 ---
 # <a name="app-submissions"></a>アプリの申請
 
@@ -23,12 +23,15 @@ ms.locfileid: "5742322"
 申請は、アプリが完成して公開する準備ができたときに開始できます。または、1 行のコードを記述する前でも情報を入力し始めることができます。 戻るできたらいつでも作業できるように、申請を更新プログラムが保存されます。
 
 > [!NOTE]
-> [Windows デベロッパー センター](https://partner.microsoft.com/dashboard)にアクセスし、Microsoft Store にアプリを提出するために、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
+> アクティブな[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)は、Microsoft Store にアプリを提出するために[パートナー センター](https://partner.microsoft.com/dashboard)でが必要です。
 
-アプリが公開された後は、ダッシュボードで別の申請を作成して更新バージョンを公開できます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されているアプリに対して新しい申請を作成するには、[アプリの概要] ページに表示されている前回の申請の横にある **[更新]** をクリックします。 こともできます[ストアからアプリを削除](guidance-for-app-package-management.md#removing-an-app-from-the-store)する必要がある場合は (し、利用できるように、後でもう一度たい場合)。
+アプリが公開されると、パートナー センターで別の申請を作成して更新バージョンを公開することができます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されたアプリの新しい申請を作成するには、その**概要**ページに表示されている前回の申請の横にある**更新**をクリックします。 こともできます[ストアからアプリを削除](guidance-for-app-package-management.md#removing-an-app-from-the-store)する必要がある場合は (し、利用できるように、後でもう一度たい場合)。
 
 > [!NOTE]
-> このセクションでは、デベロッパー センター ダッシュボードでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリ申請を自動化することもできます。
+> ドキュメントのこのセクションでは、パートナー センターでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリ申請を自動化することもできます。
+
+> [!IMPORTANT]
+> 2018 年 10 月 31 日の時点で、新しく作成した製品が Windows 8.x/Windows を対象とするパッケージを含めることはできません Phone 8.x 以前のバージョン。 詳しくは、この[ブログ記事](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)を参照してください。
 
 ## <a name="app-submission-checklist"></a>アプリの申請用チェック リスト
 
@@ -91,17 +94,20 @@ ms.locfileid: "5742322"
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **説明**               | 必須                                    | [人の心をつかむアプリの説明を書く](write-a-great-app-description.md) |
 | **今回のバージョンでの新機能**   | 省略可能                                 | [リリース ノート](create-app-store-listings.md#whats-new-in-this-version)       |
-| **アプリの機能**              | 省略可能                                    | [アプリの機能](create-app-store-listings.md#app-features)         |
+| **アプリの機能**              | 省略可能                                    | [製品の機能](create-app-store-listings.md#product-features)         |
 | **スクリーンショット**               | 必須 (スクリーンショット 1 つ以上。4 つ以上を推奨)          | [スクリーンショット](app-screenshots-and-images.md#screenshots)          |
 | **Microsoft Store ロゴ**               | 推奨。一部の OS バージョンで必須 | [Microsoft Store ロゴ](app-screenshots-and-images.md#store-logos)             |
-| **追加のアート資産**     | 推奨 (特に一部の OS バージョンで推奨)         | [追加のアート資産](app-screenshots-and-images.md#additional-art-assets) |
 | **トレーラー**                  | 省略可能                                    | [トレーラー](app-screenshots-and-images.md#trailers)                | 
-| **補足的なフィールド**  | オプション                                    | [補足情報](create-app-store-listings.md#supplemental-fields) 
+| **Windows 10 と Xbox の画像 (16:9 スーパー ヒーロー アート)**     | 推奨        | [Windows 10 と Xbox の画像 (16:9 スーパー ヒーロー アート)
+(app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+| **Xbox 画像**     | Xbox に公開する場合に必要な適切な表示        | [Xbox 画像
+(アプリのスクリーン ショット-images.md #xbox の画像) |
+| **補足的なフィールド**  | オプション                                    | [補足的なフィールド](create-app-store-listings.md#supplemental-fields) 
 | **検索語句**              | 省略可能                                    | [検索語句](create-app-store-listings.md#search-terms)         |
 | **著作権と商標の情報** | 省略可能                                 | [著作権と商標の情報](create-app-store-listings.md#copyright-and-trademark-info) |
 | **追加のライセンス条項**  | 省略可能                                    | [追加のライセンス条項](create-app-store-listings.md#additional-license-terms) |
 | **Developed by (開発元)**              | 省略可能                                    | [Developed by (開発元)](create-app-store-listings.md#developed-by)                   |
-| **プラットフォーム固有の Store 登録情報** | 省略可能                               | [プラットフォーム固有の Store 登録情報の作成](create-platform-specific-store-listings.md)  |
+
 
 <span/>
 

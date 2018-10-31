@@ -1,25 +1,25 @@
 ---
 author: jnHs
-Description: Manage and view details related to each of your apps in the Windows Dev Center dashboard, and configure services such as A/B testing and maps.
+Description: Manage and view details related to each of your apps in Partner Center, and configure services such as A/B testing and maps.
 title: アプリの管理とサービス
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.author: wdg-dev-content
-ms.date: 07/18/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f1bb8202613385a9ffc3e48ec95873d3270c10a8
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 112f69704c502f1aa394aa1dd8d544aa0728477d
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766908"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835372"
 ---
 # <a name="app-management-and-services"></a>アプリの管理とサービス
 
-Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、通知、A/B テスト、マップなどのサービスを構成できます。
+管理および各アプリに関連する詳細を表示する [パートナー センターでは、通知などのサービスを構成 B は、テスト、およびマップします。
 
-ダッシュボードでアプリを操作するとき、左側のナビゲーション メニューに **[サービス]** と **[アプリ管理]** のセクションが表示されます。 これらのセクションを展開すると、次の機能にアクセスできます。
+パートナー センターでアプリを使用する場合の**サービス**と**アプリの管理**セクションでは、左側のナビゲーション メニューが表示されます。 これらのセクションを展開すると、次の機能にアクセスできます。
 
 ## <a name="services"></a>サービス
 
@@ -39,7 +39,7 @@ Windows デベロッパー センター ダッシュボードで各アプリに�
 
 ## <a name="maps"></a>マップ
 
-Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 **[マップ]** ページの **[サービス]** セクションでこのトークンを取得できます。
+Windows Phone 8.1 と以前公開したアプリでマップ サービスを使用するには、マップ サービス アプリケーション ID とトークンがアプリのコードに含める必要があります。 **[マップ]** ページの **[サービス]** セクションでこのトークンを取得できます。
 
 > [!NOTE]
 > Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key)」をご覧ください。
@@ -90,7 +90,7 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
 **WNS/MPNS** ] セクションでは、作成したり、アプリのユーザーに通知を送信するためのオプションが提供されます。 
 
 > [!TIP]
-> UWP アプリの場合は、ダッシュ ボードで**の通知**オプションを使用してお勧めします。 この機能では、すべてのアプリのユーザーに通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 ユーザーのターゲットのサブセットにします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
+> UWP アプリの場合は、パートナー センターで**通知**機能を使用してお勧めします。 この機能では、すべてのアプリのユーザーに通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 ユーザーのターゲットのサブセットにします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
 
 アプリのパッケージの種類とその具体的な要件に応じて、次のオプションのいずれかを使用することも。 
 
@@ -98,7 +98,7 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
 
 -   **Microsoft Azure Mobile Apps** を使うと、プッシュ通知の送信や、アプリ ユーザーの認証や管理、クラウドでのアプリ データの保存をすることができます。 詳しくは、[モバイル アプリに関するドキュメント](http://go.microsoft.com/fwlink/p/?LinkId=221116)をご覧ください。
 
--   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone の .xap パッケージと一緒に使うことができます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使用している場合は、 **WNS/MPNS** ] ページで提供されるフィールドに証明書をアップロードする必要があります。 詳しくは、「[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](http://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
+-   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone 向けの公開されていたの .xap パッケージで使用できます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使用している場合は、 **WNS/MPNS** ] ページで提供されるフィールドに証明書をアップロードする必要があります。 詳しくは、「[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](http://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
  
 
  

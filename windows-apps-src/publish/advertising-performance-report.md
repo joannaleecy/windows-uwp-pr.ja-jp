@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: To view performance data for the ad units in your apps, use the advertising performance report on the Windows Dev Center dashboard.
+Description: To view performance data for the ad units in your apps, use the advertising performance report in Partner Center.
 title: '[広告パフォーマンス] レポート'
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
-ms.date: 05/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 562348d5077f29af9a0d0776cb421455d45444dc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2cc47e934ca75eb581808483f7875fea901943b3
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742262"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5836651"
 ---
-# <a name="advertising-performance-report"></a>[広告パフォーマンス] レポート
+# <a name="advertising-performance-report"></a>広告パフォーマンス レポート
 
 
-**[広告パフォーマンス] レポート**は、コミュニティ広告など、[広告ユニット](in-app-ads.md)のパフォーマンスを示します。 このレポートには、[広告仲介](in-app-ads.md#mediation)を使う UWP アプリの複数のプロバイダーからのデータが含まれます。
+[パートナー センター](https://partner.microsoft.com/dashboard)で**の広告パフォーマンス レポート**では、コミュニティ広告など、[広告ユニット](in-app-ads.md)の実施状況を表示します。 このレポートには、[広告仲介](in-app-ads.md#mediation)を使う UWP アプリの複数のプロバイダーからのデータが含まれます。
 
-このレポートを表示するには、左側のナビゲーション メニューで **[分析]** を展開し、**[広告パフォーマンス]** を選びます。 このデータは、ダッシュボードで表示することも、ページの矢印アイコンをクリックすることによりレポートをダウンロードしてオフラインで表示することもできます。 このデータは、[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[広告のパフォーマンス データの取得](../monetize/get-ad-performance-data.md)メソッドを使ってプログラムで取得することもできます。
+このレポートを表示するには、左側のナビゲーション メニューで **[分析]** を展開し、**[広告パフォーマンス]** を選びます。 パートナー センターで、このデータを表示したり、ページの矢印アイコンをクリックしてオフラインで表示するレポートのデータをダウンロードできます。 このデータは、[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[広告のパフォーマンス データの取得](../monetize/get-ad-performance-data.md)メソッドを使ってプログラムで取得することもできます。
 
 [広告パフォーマンス] レポートのデータを見るときは、さまざまなソースから新しいデータを受け取って処理するため、過去 3 日間のレポートのデータは変化する可能性があることにご注意ください。 また、最大で過去 90 日間のデータが再構成される可能性があります。
 

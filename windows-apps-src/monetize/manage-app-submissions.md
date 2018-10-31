@@ -8,12 +8,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請
 ms.localizationpriority: medium
-ms.openlocfilehash: b042e3cc3e92bce7a895e717c6bc20c2e11d1677
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 0f95e91c1ef9e47ab3371a1481237dc510eddae7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748680"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831538"
 ---
 # <a name="manage-app-submissions"></a>アプリの申請の管理
 
@@ -592,7 +592,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 | 値           | 型    | 説明             |
 |-----------------|---------|------|
-|     date            |    string     |  ISO 8601 形式で表された、レポートが生成された日付と時刻です。    |
+|     date            |    string     |  日付と ISO 8601 形式でレポートが生成された時刻。    |
 |     reportUrl            |    string     |  レポートにアクセスできる URL です。    |
 
 

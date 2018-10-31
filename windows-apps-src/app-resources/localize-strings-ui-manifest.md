@@ -10,12 +10,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e57d5c8ae4d1586de9f16455dc178c5e154fbf
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: c9789e21bd4d2a598db292721cabfe58d7c12ebe
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760529"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5836694"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)」をご覧ください。
@@ -259,7 +259,7 @@ private void RefreshUIText()
 ## <a name="loading-strings-from-a-class-library-or-a-windows-runtime-library"></a>クラス ライブラリまたは Windows ランタイム ライブラリから文字列を読み込む
 参照されているクラス ライブラリ (ユニバーサル Windows) または [Windows ランタイム ライブラリ (ユニバーサル Windows)](../winrt-components/index.md) の文字列リソースは、通常、構築プロセス中にそれらが含まれているパッケージのサブフォルダーに追加されます。 このような文字列のリソース識別子は、通常、*LibraryName/ResourcesFileName/ResourceIdentifier* という形式になります。
 
-ライブラリは、独自のリソースについて、ResourceLoader を取得できます。 たとえば、次のコードは、ライブラリ、またはそれを参照するアプリで、ライブラリの文字列リソースの ResourceLoader を取得できます。
+ライブラリは、独自のリソースについて、ResourceLoader を取得できます。 たとえば、次のコードは、ライブラリ、またはそれを参照するアプリが、ライブラリの文字列リソースの ResourceLoader を取得する方法を示します。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");

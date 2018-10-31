@@ -4,23 +4,23 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: アカウントの種類、場所、料金
 description: 個人用、会社用の開発者アカウントを多数の国と地域に提供しています。
 ms.author: wdg-dev-content
-ms.date: 08/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 開発者アカウント, 個人, 会社, ビジネス
 ms.localizationpriority: medium
-ms.openlocfilehash: 619b245ed6037192fe8b846a20d9fe0fe97baa24
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 7600f8a6bef19ca2d7b301931d0198638f91dc1b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741623"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831577"
 ---
 # <a name="account-types-locations-and-fees"></a>アカウントの種類、場所、料金
 
-個人用、会社用のアカウントを多数の[国と地域](#developer-account-and-app-submission-markets)に提供しています。 どちらの種類のアカウントでも、アプリを Microsoft Store に公開し、追加の Microsoft 開発者プログラムに参加できます。
+Windows では、[パートナー センター](https://partner.microsoft.com/dashboard)のプランでプログラムの両方の個人と、会社の多数の[国や地域](#developer-account-and-app-submission-markets)でアカウント。 どちらの種類のアカウントは、アプリをストアに公開して、その他の Microsoft プログラムに参加するためのアクセスを提供します。
 
 > [!NOTE]
-> アカウントにサインアップするときは必ず、開発者アカウントとして使う Microsoft アカウントでサインインしてください。 後で[追加のユーザーをアカウントに追加](manage-account-users.md)できます。
+> 開発者アカウントを開くときは、開発者アカウントを使用する Microsoft アカウントを使って[パートナー センター](https://partner.microsoft.com/dashboard)にサインインしてください。 後で[追加のユーザーをアカウントに追加](manage-account-users.md)できます。
 
 [サインアップ プロセスを開始する](http://go.microsoft.com/fwlink/p/?LinkId=615100)ときには、個人のアカウントと会社のアカウントのどちらを作るかを選ぶ必要があります。 どちらの種類のアカウントでも、アプリ、ゲーム、アドイン、サービスを提出できます。
 

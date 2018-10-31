@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bf15f71071355ddf61d820fc33949b10d42cdfa
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d8e3ab04c2842fc08fb8b0aa298660bfbd0cfd7f
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741295"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5833196"
 ---
 # <a name="manage-add-on-submissions"></a>アドオンの申請の管理
 
@@ -336,7 +336,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 | 値           | 型    | 説明               |
 |-----------------|---------|------|
-|     date            |    string     |  ISO 8601 形式で表された、レポートが生成された日付と時刻です。    |
+|     date            |    string     |  日付と ISO 8601 形式でレポートが生成された時刻。    |
 |     reportUrl            |    string     |  レポートにアクセスできる URL です。    |
 
 ## <a name="enums"></a>列挙型

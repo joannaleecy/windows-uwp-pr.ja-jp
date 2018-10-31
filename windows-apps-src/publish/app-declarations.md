@@ -4,16 +4,16 @@ Description: Product declarations help make sure your app is displayed appropria
 title: 製品の宣言
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.author: wdg-dev-content
-ms.date: 12/05/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1fc444dbd106f4eeb0996903f71701a96a9735
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: de519f37c5eacfa64f23d0f438701d4ae9dbc934
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5747830"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831161"
 ---
 # <a name="product-declarations"></a>製品の宣言
 
@@ -46,16 +46,14 @@ ms.locfileid: "5747830"
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。
 
-このチェック ボックスはユーザーを外部ドライブなどのメディアが SD カードなど、または非システム ボリュームにドライブまたは外部のリムーバブル ストレージにアプリをインストールできるように、既定でオンです。 (Windows Phone 8.1 では、これが以前指定して StoreManifest.xml。)
+このチェック ボックスはユーザーを外部ドライブなどのメディアが SD カードなど、または非システム ボリュームにドライブまたは外部のリムーバブル ストレージにアプリをインストールできるように、既定でオンです。
 
-アプリが代替ドライブやリムーバブル記憶域にインストールされていることを防ぐのみがデバイスに内部ハード ドライブへのインストールを許可する場合は、このチェック ボックスをオフにします。
-
-注アプリ*だけ*が参照できるように、インストールを制限するオプションはありませんが、リムーバブル記憶域メディアにインストールされます。
+アプリが代替ドライブやリムーバブル記憶域にインストールされていることを防ぐのみがデバイスに内部ハード ドライブへのインストールを許可する場合は、このチェック ボックスをオフにします。 (注アプリ*だけ*が参照できるように、インストールを制限するオプションがないことはリムーバブル記憶域メディアにインストールする)。
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows では、このアプリのデータを OneDrive への自動バックアップに含めることができます。
 
-このボックスは、Windows が OneDrive に自動バックアップすることをユーザーが選んだ場合にアプリのデータを含めることができるように、既定でオンになっています。 (Windows Phone 8.1 では、これが以前指定して StoreManifest.xml。)
+このボックスは、Windows が OneDrive に自動バックアップすることをユーザーが選んだ場合にアプリのデータを含めることができるように、既定でオンになっています。
 
 アプリのデータが自動バックアップに含まれないようにする場合は、このボックスをオフにします。
 

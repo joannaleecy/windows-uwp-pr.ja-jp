@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: The Reviews report in the Windows Dev Center dashboard lets you see the reviews (comments) that customers entered when rating your app in the Store.
+Description: The Reviews report in Partner Center lets you see the reviews (comments) that customers entered when rating your app in the Store.
 title: レビュー レポート
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
@@ -8,19 +8,19 @@ ms.date: 08/16/2018
 ms.topic: article
 keywords: windows 10、uwp、レビュー、コメント、レビュー担当者
 ms.localizationpriority: medium
-ms.openlocfilehash: b3b246ec0127373dba2385f249640c09940105fa
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 777decb9b060cc411d6150f199cd7a02f9ffc6cb
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5769098"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831448"
 ---
 # <a name="reviews-report"></a>レビュー レポート
 
 
-**レビュー**レポートでは、Windows デベロッパー センター ダッシュ ボードでは、ストアでアプリを評価するときにユーザーが入力されたレビュー (コメント) を確認できます。
+**レビュー**レポートでは、[パートナー センター](https://partner.microsoft.com/dashboard)では、ストアでアプリを評価するときにユーザーが入力されたレビュー (コメント) を確認できます。
 
-このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。 または、メソッドを使用して、[アプリのレビューの取得](../monetize/get-app-reviews.md) [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)でこのデータをプログラムで取得できます。
+パートナー中央揃え、または[レポートをダウンロード](download-analytic-reports.md)してオフラインでは、このデータを表示できます。 または、メソッドを使用して、[アプリのレビューの取得](../monetize/get-app-reviews.md) [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)でこのデータをプログラムで取得できます。
 
 顧客のレビューに[このページから直接](respond-to-customer-reviews.md)、プログラムによって[Microsoft Store レビュー API 経由で](../monetize/submit-responses-to-app-reviews.md)または[デベロッパー センター アプリ](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)を使用してに応答することもできます。
 
@@ -114,7 +114,7 @@ ms.locfileid: "5769098"
 
 ## <a name="responding-to-customer-reviews"></a>顧客のレビューへの返信
 
-Microsoft ストアのデベロッパー センター ダッシュ ボード、 [Microsoft Store レビュー API](../monetize/submit-responses-to-app-reviews.md)、または[デベロッパー センター アプリ](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)を使用するには、多くの顧客のレビューに返信を送信します。 詳しくは、「[顧客のレビューに返信する](respond-to-customer-reviews.md)」をご覧ください。
+[パートナー センター](https://partner.microsoft.com/dashboard)、 [Microsoft Store レビュー API](../monetize/submit-responses-to-app-reviews.md)、または[デベロッパー センター アプリ](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)を使用するには、多くの顧客のレビューに返信を送信します。 詳しくは、「[顧客のレビューに返信する](respond-to-customer-reviews.md)」をご覧ください。
 
 アプリについて確認した評価とレビューに基づいて検討できるその他の対応を以下に示します。
 

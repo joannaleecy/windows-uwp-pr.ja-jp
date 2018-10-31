@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Insights report in the Windows Dev Center dashboard
+Description: The Insights report in Partner Center highlights significant changes about your apps.
 title: インサイト レポート
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、uwp、インサイト、トレンド、異常、異常、データの変更
 ms.localizationpriority: medium
-ms.openlocfilehash: 082f6e133217061d319301ec3f65ed035a3eef23
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 324666095c26eb8d05732ce7e1ad3217b210d406
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745042"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5838001"
 ---
 # <a name="insights-report"></a>インサイト レポート
 
 
-Windows デベロッパー センター ダッシュ ボードで**インサイト**レポートには、重要な変更内容 (増加または特定のメトリックの増減)、取得、正常性, や使用状況データの場合は、過去 30 日経由で検出されましたが強調表示されます。 これらのレポートのそれぞれですべてのグラフを表示することがなく可能性のある重要な変更について簡単に説明を取得できます。
+[パートナー センター](https://partner.microsoft.com/dashboard)で**インサイト**レポートには、重要な変更内容 (増加または特定のメトリックの増減)、取得、正常性, や使用状況データの場合は、過去 30 日経由で検出されましたが強調表示されます。 これらのレポートのそれぞれですべてのグラフを表示することがなく可能性のある重要な変更について簡単に説明を取得できます。
 
 > [!NOTE]
 > このレポートのデータには、過去 30 日間について説明します。 このレポートの別の期間を選択することはできません。

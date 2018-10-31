@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: Manage ad campaigns for your apps in the Windows Dev Center dashboard.
+Description: Manage ad campaigns for your apps in Partner Center.
 title: 広告キャンペーンの管理
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.author: wdg-dev-content
@@ -8,17 +8,17 @@ ms.date: 06/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 77271d75b29cb13c1d3d1948a9f06a42e940bcb9
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1c53ae429e4cb912ce0ed2480c8cab814cbfaf96
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748405"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835537"
 ---
 # <a name="manage-your-ad-campaign"></a>広告キャンペーンの管理
 
 
-アプリのキャンペーンを管理するには、ダッシュボードの左側のナビゲーション メニューで **[ユーザーへのアピール]** を展開して、**[広告キャンペーン]** を選びます。 アプリに関連付けられたすべての広告キャンペーンが、各広告キャンペーンのインプレッション数、クリック数、インストール数と合わせて表示されます。 インプレッション数、クリック数、インストール数について詳しくは、「[[広告キャンペーン] レポート](promote-your-app-report.md)」でこれらの用語の定義をご覧ください。
+[パートナー センター](https://partner.microsoft.com/dashboard)でのアプリの広告キャンペーンを管理するには、左側のナビゲーション メニューで**ユーザーへのアピール**を展開し、**広告キャンペーン**を選択します。 アプリに関連付けられたすべての広告キャンペーンが、各広告キャンペーンのインプレッション数、クリック数、インストール数と合わせて表示されます。 インプレッション数、クリック数、インストール数について詳しくは、「[[広告キャンペーン] レポート](promote-your-app-report.md)」でこれらの用語の定義をご覧ください。
 
 広告キャンペーンの一覧をフィルター処理するには、**[セクション フィルター]** ドロップダウンをクリックし、次のフィルターから選びます。
 
