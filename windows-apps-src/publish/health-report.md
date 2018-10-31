@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Health report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
+Description: The Health report in Partner Center lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
 title: '[正常性] レポート'
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 正常性, クラッシュ, 応答停止イベント, アプリの正常性, 正常性データ, スタック トレース, cab ファイル, 失敗, エラー, pdb, シンボル
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c32468bfa933ea0d9d56150f0b2610eb1668e5
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 06cf6a7050f7598e86582393a92b92d1bdd877d1
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766200"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829766"
 ---
-# <a name="health-report"></a>[正常性] レポート
+# <a name="health-report"></a>状態レポート
 
-Windows デベロッパー センター ダッシュボードの**状態**レポートによって、クラッシュや応答停止イベントなど、アプリの品質とパフォーマンスに関連するデータを取得できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。 該当する場合、さらにデバッグのスタック トレースや CAB ファイルを表示できます。
+[パートナー センター](https://partner.microsoft.com/dashboard)で**の正常性**レポートでは、クラッシュや応答停止イベントなど、アプリの品質とパフォーマンスに関連するデータを取得できます。 パートナー中央揃え、または[レポートをダウンロード](download-analytic-reports.md)してオフラインでは、このデータを表示できます。 該当する場合、さらにデバッグのスタック トレースや CAB ファイルを表示できます。
 
 または、[Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使って、プログラムによりこのレポートのデータを取得することもできます。
 

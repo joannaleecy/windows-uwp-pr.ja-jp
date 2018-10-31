@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Feedback report in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
+Description: The Feedback report in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
 title: フィードバック レポート
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.author: wdg-dev-content
-ms.date: 11/3/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eb8958adaeb78a068ae2baad30b7bc9fa96561a2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ab5e5f3fe533568079869c4fbd62530504544bf7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5744054"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828978"
 ---
 # <a name="feedback-report"></a>フィードバック レポート
 
-Windows デベロッパー センターのダッシュボードの**フィードバック レポート**により、Windows 10 のユーザーがフィードバック Hub から送信した問題、提案、賛成票を参照できます。 このデータは、ダッシュボードで表示することも、データをエクスポートしてオフラインで表示することもできます。
+**フィードバック] レポート**では、パートナー センターでは、問題、提案、賛成票を Windows 10 のユーザーがフィードバック Hub から送信したを参照できます。 パートナー センターで、このデータを表示したり、オフラインで表示するデータをエクスポートすることができます。
 
 > [!NOTE]
 > またフィードバックを確認していることを顧客に伝えるため、このレポートから直接[フィードバックに返信](respond-to-customer-feedback.md)できます。
@@ -26,7 +26,7 @@ Windows デベロッパー センターのダッシュボードの**フィード
 
 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) のフィードバック API を使って、ユーザーが直接[アプリからフィードバック Hub を起動](../monetize/launch-feedback-hub-from-your-app.md)するようにできます。 フィードバック Hub をサポートする Windows 10 デバイスにアプリをダウンロードしたユーザーはだれでも、フィードバック Hub アプリを使ってフィードバックを残すことができます。 このため、特に促していないからのフィードバックのアプリ内で場合でも、このレポートでユーザーのフィードバックを表示する場合があります。
 
-また、[パッケージ フライト](package-flights.md)を使っている場合にもフィードバックは有効です。各ユーザーがデバイスにインストールした特定のパッケージが [フィードバック] レポートに表示されるためです。
+フィードバックも役に立ちます**フィードバック**] レポートには、フィードバックを行ったとき、各顧客がデバイスにインストールしていた特定のパッケージが表示されるため、[パッケージ フライト](package-flights.md)を使用する場合。
 
 > [!TIP]
 > 過去 30 日以内にレビュー、評価、およびすべてのアプリの間でユーザーからのフィードバックの概要を確認、左側のナビゲーション メニューでの**利用率の引き上げ**を展開し、選択**レビューとフィードバック**。 

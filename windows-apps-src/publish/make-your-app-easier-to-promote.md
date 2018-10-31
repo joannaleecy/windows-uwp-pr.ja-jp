@@ -4,16 +4,16 @@ Description: Get your app noticed! Aside from making your app the best it can be
 title: アプリの販売促進を容易にする
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.author: wdg-dev-content
-ms.date: 3/13/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 販売促進, プロモーション, おすすめ, ショーケース, Microsoft Store
 ms.localizationpriority: medium
-ms.openlocfilehash: ede4cc948b20ee90b9d2e3866e7c342caa1e2be8
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 43970ce024408032f0e2e9891eaae34efa68e014
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752493"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5830132"
 ---
 # <a name="make-your-app-easier-to-promote"></a>アプリの販売促進を容易にする
 
@@ -29,7 +29,7 @@ Microsoft Store では、さまざまなアプリをカテゴリ別またはテ�
 
     Microsoft Store でアプリを取り上げる際に、[アプリのスクリーン ショットや画像](app-screenshots-and-images.md)がさまざまなレイアウトで使われる場合があります。 アプリを表す優れたスクリーン ショットを設計する必要があり、最初のスクリーン ショットは特に代表的で魅力のあるものを選びます。 スクリーンショットのセットを複数用意して、アプリがサポートするデバイスの種類ごとに、アプリがどのように表示されるかを示すとよいでしょう。
 
-    Microsoft Store でアプリが取り上げられる可能性を最大限に高めるには、該当する画像をすべて Store 登録情報の **[Microsoft Store ロゴ]** セクションと **[追加のアート資産]** セクションに含めてください。 **9:16 ポスター アート (720 x 1080 または 1440 x 2160 ピクセル)** 画像と **16:9 スーパー ヒーロー アート (1920 x 1080 または 3840 x 2160 ピクセル)** 画像は、特に Windows 10 (Xbox を含む) で重要です。 アプリで Xbox または Holographic デバイス ファミリがサポートされている場合、それらのデバイス ファミリの該当する画像もすべて提供することをお勧めします。 詳細とガイドラインについては、「[アプリのスクリーンショット、画像、トレーラー](app-screenshots-and-images.md)」をご覧ください。
+    Microsoft Store でアプリが取り上げられる可能性を最大限に高めるには、該当する画像をすべて Store 登録情報の **[Microsoft Store ロゴ]** セクションと **[追加のアート資産]** セクションに含めてください。 **9時 16分ポスター アート (720 x 1080 または 1440 x 2160 ピクセル)** および**16:9 スーパー ヒーロー アート (1920 x 1080 または 3840 x 2160 ピクセル)** の画像は特に重要です。 アプリで Xbox または Holographic デバイス ファミリがサポートされている場合、それらのデバイス ファミリの該当する画像もすべて提供することをお勧めします。 詳細とガイドラインについては、「[アプリのスクリーンショット、画像、トレーラー](app-screenshots-and-images.md)」をご覧ください。
 
 -   **無料バージョンと有料バージョンを別々に作るのではなく、1 つのバージョンとしてアプリを作る**
 

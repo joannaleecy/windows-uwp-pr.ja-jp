@@ -8,12 +8,12 @@ ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: c6c71cf98d9720cc5bfea219f565529b3308c49c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f5d47bbe87e9319def2e8c6500fd954f2a291e18
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756788"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829912"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe のコマンド ライン オプション
 
@@ -22,9 +22,11 @@ ms.locfileid: "5756788"
 > [!NOTE]
 > MakePri.exe は、Windows ソフトウェア開発キットをインストールするときに、 **Windows SDK for UWP アプリの管理**オプションを確認する場合にインストールされます。 パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャの名前のフォルダー)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
 
-## <a name="makepri-commands"></a>MakePri のコマンド
+## <a name="getting-help-from-the-command-line"></a>コマンドラインからのヘルプの取得
 
-`MakePri.exe help` を実行すると、MakePri.exe で使用できるコマンドが表示されます。
+実行できる`MakePri.exe help`または`MakePri.exe /?`MakePri.exe を使用して使用できるコマンドを表示します。 発行することも`MakePri.exe <command> /?`コマンドについてと、非常にまれなケースで詳細を表示する場合でも`MakePri.exe <command> <option>`オプションの詳細を確認します。
+
+## <a name="makepri-commands"></a>MakePri のコマンド
 
 ```
 C:\>makepri help
@@ -424,7 +426,7 @@ MakePri は、インデクサーのメタデータ ファイルにリソース �
 /IndexOptions(io) <OPTIONS>
 ```
 
-**オプション**は、次のオプションから構成される、コンマ区切りリスト。
+**オプション**では、次のオプションの構成、コンマ区切りの一覧を示します。
 
 - HiddenFiles(hf) +/。 インデックス (+) または (-) を無視するファイルやフォルダーを非表示します。
 - LinkedFiles(lf) +/。 インデックス (+) または (-) を無視するファイルやフォルダーをリンクします。

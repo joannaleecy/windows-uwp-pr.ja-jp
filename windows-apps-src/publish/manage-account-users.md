@@ -1,31 +1,31 @@
 ---
 author: jnHs
-Description: Add users to your Dev Center account and assign them roles with specific permissions.
+Description: Add users to your Partner Center account and assign them roles with specific permissions.
 title: アカウント ユーザーの管理
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
-ms.date: 07/11/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, アカウント ユーザー, ユーザー、azure ad, マルチ ユーザー、複数のユーザーを管理します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b659a12d972612d07f78504d46af396617513b4
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 01517ebd2cc4b86fa1ac440446a5cc59172014b3
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5755743"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829872"
 ---
 # <a name="manage-account-users"></a>アカウント ユーザーの管理
 
-Azure Active Directory を使って、追加のユーザーをデベロッパー センター アカウントに追加し、管理できます。 各ユーザーに必要なロールまたはカスタムのアクセス許可を定義できます。 ユーザーのグループや Azure AD アプリケーションにロールを割り当てることもできます。
+Azure Active Directory を使用して、追加して、[パートナー センター](https://partner.microsoft.com/dashboard)アカウントに追加のユーザーを管理することができます。 各ユーザーに必要なロールまたはカスタムのアクセス許可を定義できます。 ユーザーのグループや Azure AD アプリケーションに役割を割り当てることもできます。
 
-アカウント ユーザーを追加および管理するには、まずデベロッパー センター アカウントを組織の Azure Active Directory に関連付けます。 
+追加して、アカウントのユーザーの管理、組織の Azure Active Directory と最初に、パートナー センター アカウントを関連付ける必要があります。 
 
 このセクションでは、次の操作手順について説明します。
 
--   [Azure Active Directory とデベロッパー センター アカウントとの関連付け](associate-azure-ad-with-dev-center.md)
--   [デベロッパー センター アカウントへのユーザー、グループ、Azure AD アプリケーションの追加](add-users-groups-and-azure-ad-applications.md)
+-   [パートナー センター アカウントに Azure Active Directory を関連付ける](associate-azure-ad-with-dev-center.md)
+-   [ユーザー、グループ、およびパートナー センター アカウントに Azure AD アプリケーションを追加します。](add-users-groups-and-azure-ad-applications.md)
 -   [アカウント ユーザーのロールとカスタムのアクセス許可の設定](set-custom-permissions-for-account-users.md)
 
 > [!TIP]
-> このセクションは Windows アプリ開発者プログラムに固有の内容ですが、テナントの関連付けとユーザーの管理は Windows ハードウェア開発者プログラム (詳しくは「[ダッシュボードの管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)」を参照) のアカウントでも Windows デスクトップ アプリケーション プログラム (詳しくは「[Windows デスクトップ アプリケーション プログラム](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)」を参照) のアカウントでも同様に機能します。
+> これらのトピックでは、パートナー センターで、Windows アプリ開発者プログラムに固有ですが、Windows ハードウェア開発者プログラムでのアカウントのテナントの関連付けとユーザーの管理機能同様に (詳しくは、[ダッシュ ボードの管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)をご覧ください) か、Windows デスクトップ アプリケーション プログラム (詳しくは、 [Windows デスクトップ アプリケーション プログラム](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)をご覧ください)。

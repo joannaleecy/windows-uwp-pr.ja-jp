@@ -3,21 +3,21 @@ author: JnHs
 Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
 title: ユーザー セグメントを作成する
 ms.author: wdg-dev-content
-ms.date: 07/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, セグメント, セグメント, 対象グループ, ユーザー
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
-ms.openlocfilehash: d6de398dd69bb71f2bc895877ac2d734efbec3ad
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: b53c3c3480a986e77ad44f95831b1be5ce016808
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745312"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828718"
 ---
 # <a name="create-customer-segments"></a>ユーザー セグメントを作成する
 
-プロモーションやエンゲージメントの目的で、ユーザー ベースのサブセットをターゲットに設定する場合があります。 これを行うには、Windows デベロッパー センターで、選択した統計上の条件や収益上の条件を満たす Windows 10 ユーザーを含む[ユーザー グループ](create-customer-groups.md) (*セグメント*とも呼ばれます) を作成します。
+プロモーションやエンゲージメントの目的で、ユーザー ベースのサブセットをターゲットに設定する場合があります。 [パートナー センター](https://partner.microsoft.com/dashboard)で[顧客グループ](create-customer-groups.md)を人口統計データを満たす Windows 10 のユーザーまたは選択した収益条件を含む、*セグメント*と呼ばれるの型を作成して、これを実現できます。
 
 たとえば、50 歳以上のユーザーや、Microsoft Store で 10 ドル以上を費やしたユーザーのみを含む、セグメントを作成できます。 また、これらの条件を組み合わせて、Windows ストアで 10 ドル以上を費やした 50 歳以上のすべてのユーザーを含むセグメントを作成することもできます。 
 
@@ -35,7 +35,7 @@ ms.locfileid: "5745312"
 
 ## <a name="to-create-a-customer-segment"></a>ユーザー セグメントを作成するには
 
-1.  Windows デベロッパー センター ダッシュボードで、左側のナビゲーション メニューの **[Engage] (関心を引く)** を展開して、**[ユーザー グループ]** を選びます。
+1.  [パートナー センター](https://partner.microsoft.com/dashboard)では、左側のナビゲーション メニューで**利用率の引き上げ**を展開し、**ユーザー グループ**を選択します。
 2.  **[ユーザー グループ]** ページで、次のいずれかの手順を実行します。
  - **[自分のユーザー グループ]** セクションで、**[新しいグループの作成]** を選択して、セグメントを最初から定義します。 次のページで、**[セグメント]** ラジオ ボタンを選びます。
  - **[テンプレート セグメント**] セクションで、定義済みのセグメントの 1 つの横に表示された **[コピー]** を選びます (定義済みのセグメントは、そのまま使用することも、必要に合わせて変更することもできます)。

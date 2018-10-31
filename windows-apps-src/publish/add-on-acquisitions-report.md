@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
+Description: The Add-on acquisitions report in Partner Center lets you see how many add-ons you've sold, along with demographic and platform details.
 title: '[アドオン取得] レポート'
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
-ms.date: 05/24/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, アドオン販売, アドオン取得, IAP 売り上げ, アプリ内製品, iap, アドオン
 ms.localizationpriority: medium
-ms.openlocfilehash: a1b25067104a664cb90ef068749d9e4cd00bcc80
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 63884d9cce24e6b85f3001ac4c6eb1a07141bfd4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761862"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829799"
 ---
 # <a name="add-on-acquisitions-report"></a>[アドオン取得] レポート
 
 
-Windows デベロッパー センター ダッシュ ボードで**アドオンの取得]** レポートでは、人口統計データと共に、販売したアドオンの数を表示できます。 プラットフォームの詳細、および windows 10 (Xbox を含む) のユーザーのコンバージョン情報を示しています。 最後の時間、または 70 ~ 2 時間の期間のリアルタイムの入手データの近く表示することもできます。
+[パートナー センター](https://partner.microsoft.com/dashboard)での**アドオンの取得]** レポートでは、人口統計データと共に、販売したアドオンの数を表示できます。 プラットフォームの詳細、および windows 10 (Xbox を含む) のユーザーのコンバージョン情報を示しています。 最後の時間、または 70 ~ 2 時間の期間のリアルタイムの入手データの近く表示することもできます。
 
-このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。 または、[Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[アドオンの入手数の取得](../monetize/get-in-app-acquisitions.md)メソッドを使って、プログラムでこのデータを取得できます。
+パートナー中央揃え、または[レポートをダウンロード](download-analytic-reports.md)してオフラインでは、このデータを表示できます。 または、[Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[アドオンの入手数の取得](../monetize/get-in-app-acquisitions.md)メソッドを使って、プログラムでこのデータを取得できます。
 
 このレポートで、アドオン取得とは、ユーザーが開発者からアドオンを購入 (または、無料で提供している場合は、支払いなしでアドオンを獲得) したことを意味します。 同じユーザーが同じコンシューマブルなアドオンを複数回購入した場合は、個別のアドオン取得としてカウントされます。
 

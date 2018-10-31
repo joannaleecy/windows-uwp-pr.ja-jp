@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 実績, リワード
 ms.localizationpriority: medium
-ms.openlocfilehash: f26ca230cc7b9a41a078ac436c4c0c46e88ea70c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 6c7d192bfe4b156e3767617ad9243efd1d94bd8e
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5763298"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5818768"
 ---
 # <a name="achievement-rewards"></a>実績のリワード
 
@@ -66,7 +66,7 @@ Xbox Live では、次の種類のリワードがサポートされます。
 
 1. タイトルの起動時またはタイトルが中断から再開するときに実績サービスを照会して、どのロック解除した実績にアプリ内リワードがあるかを確認し、それぞれのリワード コードを取得します。 常にこれを実行して、タイトルが実行されていないときにロック解除された可能性がある実績、または別の本体でロック解除された可能性がある実績をすべて確実に把握する必要があります。  
 
-    クエリを行うために、RESTful の実績 URI または Microsoft.Xbox.Services.Achievements 名前空間の API を使用できます。
+    クエリを実行するには、Microsoft.Xbox.Services.Achievements Namespace で RESTful の実績 Uri または Api を使用することができます。
 
 2. 実績のいずれかがロック解除されたときに通知を受け取るように登録します。 これはオプションですが、ほとんどのタイトルにとって好ましい可能性があります。 タイトルは、ロック解除が発生したときにタイトルが実際に実行されている場合にのみ、この通知を受け取ることに注意してください。 これは、前の手順が重要であるもう 1 つの理由です。
 
