@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 93c8a9ad51baab0edf96d08682aefce99ba04fd5
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5814238"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5859868"
 ---
 # <a name="about-house-ads"></a>自社広告について
 

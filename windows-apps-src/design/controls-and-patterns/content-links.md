@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8a63e91bd5415f33118294a03567bb5e670ae2
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 3bbf7bdf1f41b1dff1049674f3b4463bac6ccb80
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839823"
+ms.locfileid: "5860083"
 ---
 # <a name="content-links-in-text-controls"></a>テキスト コントロールのコンテンツ リンク
 
@@ -28,7 +28,7 @@ RichEditBox でユーザーがアンパサンド (@) 記号を使用してエン
 > **重要な API**: [ContentLink クラス](/uwp/api/windows.ui.xaml.documents.contentlink)、[ContentLinkInfo クラス](/uwp/api/windows.ui.text.contentlinkinfo)、[RichEditTextRange クラス](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
-> コンテンツ リンクの API は次の名前空間に拡散されます。 Windows.UI.Xaml.Controls、Windows.UI.Xaml.Documents、および Windows.UI.Text。
+> 次の名前空間の間でコンテンツ リンクの Api に拡散されます。 Windows.UI.Xaml.Controls、Windows.UI.Xaml.Documents、および Windows.UI.Text。
 
 
 
