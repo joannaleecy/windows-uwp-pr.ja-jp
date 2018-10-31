@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: 04a0288d0b28c12eb68cf56225747224e8df9777
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5829017"
+ms.locfileid: "5888891"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a><span data-ttu-id="b12d4-103">テンプレートとパターンを使った日付と時刻の書式設定</span><span class="sxs-lookup"><span data-stu-id="b12d4-103">Use templates and patterns to format dates and times</span></span>
 

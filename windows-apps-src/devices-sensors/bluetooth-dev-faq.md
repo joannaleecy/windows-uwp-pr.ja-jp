@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
 ms.openlocfilehash: 03ee8074a64b210d33498c8de135a76900d968f0
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5836123"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5860613"
 ---
 # <a name="bluetooth-developer-faq"></a><span data-ttu-id="6b0a1-104">Bluetooth に関する開発者向け FAQ</span><span class="sxs-lookup"><span data-stu-id="6b0a1-104">Bluetooth Developer FAQ</span></span>
 

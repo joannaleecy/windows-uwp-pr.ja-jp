@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, win32, デスクトップ, トースト通知, トーストの送信, ローカル トーストの送信, デスクトップ ブリッジ, C++, cpp, c プラスプラス, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f1cd95d6dfff6b4c9038fd5a773d1438b1b7176
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5814404"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5888991"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a><span data-ttu-id="c6e9b-103">デスクトップ C++ WRL アプリからのローカル トースト通知の送信</span><span class="sxs-lookup"><span data-stu-id="c6e9b-103">Send a local toast notification from desktop C++ WRL apps</span></span>
 

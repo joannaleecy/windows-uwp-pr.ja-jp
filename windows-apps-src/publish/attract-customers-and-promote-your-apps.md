@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0880105fccca297204c27e80099f0cfc6d016a27
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5815432"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5888688"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a><span data-ttu-id="b912a-103">ユーザーへのアピールとアプリの宣伝</span><span class="sxs-lookup"><span data-stu-id="b912a-103">Attract customers and promote your apps</span></span>
 
