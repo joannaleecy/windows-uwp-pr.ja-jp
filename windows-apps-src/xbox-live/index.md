@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, Xbox, Xbox Live
 ms.localizationpriority: medium
 ms.openlocfilehash: 66906737de1183425320f8a46b8d0642a3210122
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5836241"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5871792"
 ---
 # <a name="what-is-xbox-live"></a>Xbox Live とは
 
