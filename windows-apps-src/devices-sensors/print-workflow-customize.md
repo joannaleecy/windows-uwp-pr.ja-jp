@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: f58c0c8397831595c237b7bd9fe4eafb25594ab3
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5871309"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5947583"
 ---
 # <a name="customize-the-print-workflow"></a><span data-ttu-id="f7be8-104">印刷ワークフローのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="f7be8-104">Customize the print workflow</span></span>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 623ca1484091f9f15b5a6dbedb85ed9d5149154e
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5872999"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5924108"
 ---
 # <a name="layout-panels"></a><span data-ttu-id="b6392-103">レイアウト パネル</span><span class="sxs-lookup"><span data-stu-id="b6392-103">Layout panels</span></span>
 

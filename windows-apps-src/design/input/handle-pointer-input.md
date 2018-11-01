@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ba685f30eb0cf94314996587073a82440cf6c951
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5868327"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5922390"
 ---
 # <a name="handle-pointer-input"></a><span data-ttu-id="c1257-103">ポインター入力の処理</span><span class="sxs-lookup"><span data-stu-id="c1257-103">Handle pointer input</span></span>
 

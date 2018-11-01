@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, 削除, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c5d9e905f6b3d8acffc53e943d946f6ac7c3c68
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5863651"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5941625"
 ---
 # <a name="delete-an-add-on-submission"></a><span data-ttu-id="55d93-104">アドオンの申請の削除</span><span class="sxs-lookup"><span data-stu-id="55d93-104">Delete an add-on submission</span></span>
 

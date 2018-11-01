@@ -14,11 +14,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 17391b48b7b75209321f35ffd20610e17e3935c4
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5877114"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5947603"
 ---
 # <a name="semantic-zoom"></a><span data-ttu-id="e30e0-103">セマンティック ズーム</span><span class="sxs-lookup"><span data-stu-id="e30e0-103">Semantic zoom</span></span>
 

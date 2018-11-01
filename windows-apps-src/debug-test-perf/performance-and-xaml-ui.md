@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dfc4e5d3d2741cf36a1a9aae8c0c22feed5305e
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5879447"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5920398"
 ---
 # <a name="performance"></a><span data-ttu-id="62475-104">パフォーマンス</span><span class="sxs-lookup"><span data-stu-id="62475-104">Performance</span></span>
 

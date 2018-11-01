@@ -11,11 +11,11 @@ pm-contact: chigy
 design-contact: balrayit
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a87e7366765b7c8b304e930fed0d3c45900aad9
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5883945"
+ms.locfileid: "5947511"
 ---
 # <a name="z-depth-and-shadow"></a><span data-ttu-id="d6def-104">Z 深度とシャドウ</span><span class="sxs-lookup"><span data-stu-id="d6def-104">Z-depth and shadow</span></span>
 

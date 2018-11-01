@@ -15,11 +15,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b6512782d5fa3423dcfee98c98223d77995deeb
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5872939"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5924919"
 ---
 # <a name="sliders"></a><span data-ttu-id="c8fb7-103">スライダー</span><span class="sxs-lookup"><span data-stu-id="c8fb7-103">Sliders</span></span>
 
