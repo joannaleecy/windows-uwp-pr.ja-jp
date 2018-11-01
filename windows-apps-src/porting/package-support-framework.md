@@ -8,12 +8,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb29a50ef4fc8c5a56e410a59802b217c033cbc
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: f17bb6bbefb2fd3266edac20ca1f23af76eb0a3c
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5827875"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884483"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>MSIX パッケージにパッケージのサポートのフレームワークを使用して、ランタイムの修正プログラムを適用します。
 
@@ -65,13 +65,13 @@ PSF には、ファイルのリダイレクトの修正など、今すぐに使�
 
 ### <a name="file-redirection-fixup"></a>ファイルのリダイレクトの修正
 
-MSIX コンテナー内で実行されるアプリケーションからアクセス可能ではないディレクトリ内のデータの読み取りを書いたりするのに試みをリダイレクトするのには、[ファイルのリダイレクトの修正](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)を使用できます。
+MSIX コンテナー内で実行されるアプリケーションからアクセス可能ではないディレクトリ内のデータの読み取りを書いたりするのに試みをリダイレクトするのには、[ファイルのリダイレクトの修正](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup)を使用できます。
 
-たとえば、アプリケーションが、アプリケーションの実行可能ファイルと同じディレクトリで公開されているログ ファイルに書き込む場合、は、ローカル アプリ データ ストアなどの別の場所にそのログ ファイルを作成する[ファイルのリダイレクトの修正](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)を使用できます。
+たとえば、アプリケーションが、アプリケーションの実行可能ファイルと同じディレクトリで公開されているログ ファイルに書き込む場合、は、ローカル アプリ データ ストアなどの別の場所にそのログ ファイルを作成する[ファイルのリダイレクトの修正](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup)を使用できます。
 
 ### <a name="runtime-fixes-from-the-community"></a>コミュニティからランタイムの修正プログラム
 
-当社の[GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop)ページにコミュニティの投稿を確認してください。 他の開発者が自分のような問題を解決してされ、実行時の修正プログラムと共有できます。
+当社の[GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework)ページにコミュニティの投稿を確認してください。 他の開発者が自分のような問題を解決してされ、実行時の修正プログラムと共有できます。
 
 ## <a name="apply-a-runtime-fix"></a>ランタイムの修正プログラムを適用します。
 
@@ -88,7 +88,7 @@ Windows SDK と次の手順では、いくつかの簡単なツールを使用�
 
 ### <a name="create-the-package-layout-folder"></a>パッケージ レイアウトのフォルダーを作成します。
 
-.Msix (.appx) ファイルが既にある場合は、その内容をパッケージのステージング領域として使用されるレイアウト フォルダーに展開できます。  これを行う、 **x64 ツールのネイティブのコマンド プロンプト for VS 2017**、または手動で実行可能ファイルの検索パスで SDK bin パス。
+.Msix (.appx) ファイルが既にある場合は、その内容をパッケージのステージング領域として使用されるレイアウト フォルダーに展開できます。 これを行う SDK のインストール パスに基づき、makemsix ツールを使用してコマンド プロンプトから、これは、Windows 10 PC 上の makemsix.exe ツールの検索場所: x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makemsix.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makemsix.exe
 
 ```
 makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -103,11 +103,7 @@ makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 
 ### <a name="get-the-package-support-framework-files"></a>パッケージのサポート フレームワーク ファイルを取得します。
 
-Visual Studio を使って、PSF Nuget パッケージを取得できます。 スタンドアロン Nuget コマンド ライン ツールを使用して取得できます。
-
-#### <a name="get-the-package-by-using-visual-studio"></a>Visual Studio を使って、パッケージを取得します。
-
-Visual Studio で、ソリューションまたはプロジェクト ノードを右クリックし、Nuget パッケージの管理コマンドのいずれかを選択します。  検索**Microsoft.PackageSupportFramework** **PSF**上 Nuget.org パッケージを検索します。次に、インストールします。
+スタンドアロン Nuget コマンド ライン ツールを使用して、または Visual Studio によって、PSF Nuget パッケージを取得できます。
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>コマンド ライン ツールを使用して、パッケージを取得します。
 
@@ -117,15 +113,20 @@ Visual Studio で、ソリューションまたはプロジェクト ノード�
 nuget install Microsoft.PackageSupportFramework
 ```
 
+#### <a name="get-the-package-by-using-visual-studio"></a>Visual Studio を使って、パッケージを取得します。
+
+Visual Studio で、ソリューションまたはプロジェクト ノードを右クリックし、Nuget パッケージの管理コマンドのいずれかを選択します。  検索**Microsoft.PackageSupportFramework** **PSF**上 Nuget.org パッケージを検索します。次に、インストールします。
+
+
 ### <a name="add-the-package-support-framework-files-to-your-package"></a>サポート フレームワークのパッケージ ファイルをパッケージに追加します。
 
 パッケージのディレクトリに必要な 32 ビットと 64 ビット PSF Dll と実行可能ファイルを追加します。 次の表をガイドとして使用してください。 含める必要があるランタイムのすべての修正プログラムもします。 ここでは、ファイルのリダイレクトのランタイムの修正プログラムが必要です。
 
 | アプリケーションの実行可能ファイルは、x64 | アプリケーションの実行可能ファイルは、x86 |
 |-------------------------------|-----------|
-| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |
-| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) |
-| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) |
+| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |
+| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) |
+| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) |
 
 パッケージの内容は次のようになります。
 

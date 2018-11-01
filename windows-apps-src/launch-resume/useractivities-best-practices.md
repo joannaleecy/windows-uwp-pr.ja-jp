@@ -8,11 +8,11 @@ ms.date: 08/23/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 199499e8737d638301f32d01a00ac603e3f5348f
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5838100"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5885390"
 ---
 # <a name="user-activities-best-practices"></a>ユーザー アクティビティのベスト プラクティス
 
