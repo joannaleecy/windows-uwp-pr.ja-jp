@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1711cf9ffeaafaa3bf20ac455dc9314245546b9a
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5827525"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5881319"
 ---
 # <a name="handleshandleid"></a>/handles/{handleId}
 識別子により指定されたセッション ハンドルの削除と取得の操作をサポートしています。 

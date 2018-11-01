@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e816a6f9ebb0918cd779bb16a7d439041a2d45b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5811467"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5880176"
 ---
 # <a name="batch"></a>/batch
 複数のプレイヤーの統計情報の複雑なバッチ要求は、複数のタイトルにアクセスします。 これらの Uri のドメインが`userstats.xboxlive.com`します。
