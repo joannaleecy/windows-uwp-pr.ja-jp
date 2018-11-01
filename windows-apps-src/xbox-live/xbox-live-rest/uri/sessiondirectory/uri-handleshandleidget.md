@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 39d39db0fa17c85dfad3dcca7526d13618835135
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5828517"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5882939"
 ---
 # <a name="get-handleshandle-id"></a><span data-ttu-id="69d24-104">GET (/handles/{handle-id})</span><span class="sxs-lookup"><span data-stu-id="69d24-104">GET (/handles/{handle-id})</span></span>
 <span data-ttu-id="69d24-105">ハンドル ID で指定されたハンドルを取得します。</span><span class="sxs-lookup"><span data-stu-id="69d24-105">Retrieves handles specified by handle ID.</span></span>

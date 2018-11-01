@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 287287879f6b7f2334d23a9ff1836a61ddd1ce42
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5823617"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5867630"
 ---
 # <a name="feedback-json"></a><span data-ttu-id="86e21-104">Feedback (JSON)</span><span class="sxs-lookup"><span data-stu-id="86e21-104">Feedback (JSON)</span></span>
 <span data-ttu-id="86e21-105">プレイヤーに関するフィードバックの情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="86e21-105">Contains feedback information about a player.</span></span>

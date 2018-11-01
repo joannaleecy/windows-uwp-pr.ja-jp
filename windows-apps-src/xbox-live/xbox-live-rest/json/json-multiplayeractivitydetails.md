@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a23b4f984bc7edef77af7e020b62fcc7d8fcbf9f
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5827371"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884294"
 ---
 # <a name="multiplayeractivitydetails-json"></a><span data-ttu-id="d62bb-104">MultiplayerActivityDetails (JSON)</span><span class="sxs-lookup"><span data-stu-id="d62bb-104">MultiplayerActivityDetails (JSON)</span></span>
 <span data-ttu-id="d62bb-105">**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="d62bb-105">A JSON object representing the **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**.</span></span> 

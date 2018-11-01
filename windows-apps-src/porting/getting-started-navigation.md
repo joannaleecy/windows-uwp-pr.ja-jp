@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cb4550a7da3b9b547a1d723d5ae8da260149ba2
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5815525"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5888108"
 ---
 # <a name="getting-started-navigation"></a><span data-ttu-id="76329-104">はじめに: ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="76329-104">Getting started: Navigation</span></span>
 

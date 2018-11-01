@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 38fa1ad62b2e76dceda79744c59eb59ddc50ea90
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5818425"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5865449"
 ---
 # <a name="handleshandleidsession"></a><span data-ttu-id="98e93-104">/handles/{handleId}/session</span><span class="sxs-lookup"><span data-stu-id="98e93-104">/handles/{handleId}/session</span></span>
 <span data-ttu-id="98e93-105">PUT および GET 操作セッションでは、ハンドルを逆参照を使用してをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="98e93-105">Supports PUT and GET operations for a session, using handle dereferencing.</span></span> 

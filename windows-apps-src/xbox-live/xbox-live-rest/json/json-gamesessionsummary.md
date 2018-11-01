@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e7f91062ca9bbc19bd56cfc2773aece95e7fc30
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5821977"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5881860"
 ---
 # <a name="gamesessionsummary-json"></a><span data-ttu-id="6caa0-104">GameSessionSummary (JSON)</span><span class="sxs-lookup"><span data-stu-id="6caa0-104">GameSessionSummary (JSON)</span></span>
 <span data-ttu-id="6caa0-105">ゲーム セッションの集計データを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6caa0-105">A JSON object representing summary data for a game session.</span></span> 

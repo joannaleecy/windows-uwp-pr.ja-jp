@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: da73760969e7a4a9e268644555d0790980b16123
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5815457"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5866089"
 ---
 # <a name="delete-handleshandleid"></a><span data-ttu-id="59dc9-104">DELETE (/handles/{handleId})</span><span class="sxs-lookup"><span data-stu-id="59dc9-104">DELETE (/handles/{handleId})</span></span>
 <span data-ttu-id="59dc9-105">ハンドル ID で指定されたハンドルを削除します。</span><span class="sxs-lookup"><span data-stu-id="59dc9-105">Deletes handles specified by handle ID.</span></span>

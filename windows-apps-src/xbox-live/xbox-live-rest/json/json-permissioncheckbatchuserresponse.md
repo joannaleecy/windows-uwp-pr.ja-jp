@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: da918cbbf76a757e16aea10cf4fbc6b2646de9fc
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5837582"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884006"
 ---
 # <a name="permissioncheckbatchuserresponse-json"></a><span data-ttu-id="afd7f-104">PermissionCheckBatchUserResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="afd7f-104">PermissionCheckBatchUserResponse (JSON)</span></span>
 <span data-ttu-id="afd7f-105">バッチのアクセス許可の理由は、1 つのターゲット ユーザーのアクセス許可の値の一覧を確認します。</span><span class="sxs-lookup"><span data-stu-id="afd7f-105">The reasons of a batch permission check for list of permission values for a single target user.</span></span> 

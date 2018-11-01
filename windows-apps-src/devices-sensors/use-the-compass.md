@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4af6b0fb339ba1fde3ea94f456eac98be8a1db9b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839853"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5887727"
 ---
 # <a name="use-the-compass"></a><span data-ttu-id="7910a-104">コンパスの使用</span><span class="sxs-lookup"><span data-stu-id="7910a-104">Use the compass</span></span>
 

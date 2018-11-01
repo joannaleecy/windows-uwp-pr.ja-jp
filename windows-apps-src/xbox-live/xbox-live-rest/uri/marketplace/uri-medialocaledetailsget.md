@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f0cb0fdd3d50a45f4cbeeedacc38bada5874c86
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5836511"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5876590"
 ---
 # <a name="get-mediamarketplaceiddetails"></a><span data-ttu-id="33ef0-104">GET (/media/{marketplaceId}/details)</span><span class="sxs-lookup"><span data-stu-id="33ef0-104">GET (/media/{marketplaceId}/details)</span></span>
 <span data-ttu-id="33ef0-105">返します提供の詳細とメタデータについての 1 つまたは複数の項目です。</span><span class="sxs-lookup"><span data-stu-id="33ef0-105">Returns offer details and metadata about one or more items.</span></span>

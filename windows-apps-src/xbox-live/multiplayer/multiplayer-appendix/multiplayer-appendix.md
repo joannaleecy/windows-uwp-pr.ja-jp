@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 051a81f68440b293d7198dcdd68479cf3f28e22a
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5836075"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5859299"
 ---
 # <a name="multiplayer-appendix"></a><span data-ttu-id="0003f-104">マルチプレイヤーの付録</span><span class="sxs-lookup"><span data-stu-id="0003f-104">Multiplayer appendix</span></span>
 
