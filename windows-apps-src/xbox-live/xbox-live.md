@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, ゲーム, xbox, xbox live
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ad2ce09d5a1100c64f9d12c604340456999fe70
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839508"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5859540"
 ---
 # <a name="xbox-live"></a>Xbox Live
 

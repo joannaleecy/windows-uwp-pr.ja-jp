@@ -60,7 +60,7 @@ Dial は、次の 3 つの基本的なジェスチャをサポートしていま
 6. Windows デバイスに戻り、[**Bluetooth またはその他のデバイスを追加する**] を選びます。
 7. [**デバイスの追加**] ダイアログ ボックスで、[**Bluetooth**] > [**Surface Dial**] の順に選びます。 Surface Dial が接続されて、[**Bluetooth とその他のデバイス**] 設定ページの [**マウス、キーボード、ペン**] の下のデバイスの一覧に追加されます。
 8. Dial を数秒ほど長押しして、組み込みのメニューが表示されるかどうかテストします。
-9. (Dial ダイヤルはバイブレーションします)、画面にメニューが表示されない場合は、Bluetooth の設定に戻すには、デバイスを削除し、もう一度デバイスを接続してみてくださいに移動します。
+9. If the menu isn't displayed on your screen (the Dial should also vibrate), go back to the Bluetooth settings, remove the device, and try connecting the device again.
 
 > [!NOTE]
 > ホイール デバイスは [**ホイール**] 設定から構成できます。
