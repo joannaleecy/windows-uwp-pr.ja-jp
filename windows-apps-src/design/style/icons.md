@@ -12,12 +12,12 @@ keywords: Windows 10, UWP
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d5f1ded66ce9d41c386fb55ba8a4e609450d20d
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 31bc1d33bccbf2d1948a119ea42bfef2599f3336
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5826717"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5874098"
 ---
 # <a name="icons-for-uwp-apps"></a>UWP アプリのアイコン
 
@@ -137,7 +137,7 @@ ms.locfileid: "5826717"
 
 ## <a name="make-the-icon-do-something"></a>アイコンで何かを行う
 
-アイコンができたら、次の手順として、それをコマンドやナビゲーション操作に関連付けて、何かを行うようにすることです。 これを行うには、最善の方法では、ボタンまたはコマンド バーにアイコンを追加します。 
+アイコンを作成したら、次の手順は、コマンドやナビゲーション操作に関連付けることで何にすることです。 これを行うには、最善の方法では、ボタンまたはコマンド バーにアイコンを追加します。 
 
 ![コマンド バーのイメージ](images/icons/app-bar-desktop.svg)
 
