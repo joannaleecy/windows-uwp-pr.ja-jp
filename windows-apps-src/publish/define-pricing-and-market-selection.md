@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 市場, 国, 地域
 ms.localizationpriority: medium
 ms.openlocfilehash: ef7136868fc9c212640c142db2751bd6e9a0b179
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5835442"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5882891"
 ---
 # <a name="define-market-selection"></a>市場の選択の定義
 
@@ -302,7 +302,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
   <tr>
     <td>パキスタン</td>
     <td>パラオ</td>
-    <td>Palestinian Authority</td>
+    <td>パレスチナ自治政府</td>
     <td>パナマ</td>
   </tr>
   <tr>
@@ -368,7 +368,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
   <tr>
     <td>スウェーデン *</td>
     <td>スイス *</td>
-    <td>Taiwan *</td>
+    <td>台湾 *</td>
     <td>タジキスタン</td>
   </tr>
   <tr>
@@ -410,7 +410,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
   <tr>
     <td>ベトナム</td>
     <td>ワリス・フテュナ諸島</td>
-    <td>Western Sahara (Disputed)</td>
+    <td>西サハラ (紛争中)</td>
     <td>イエメン</td>
   </tr>
   <tr>
@@ -468,7 +468,7 @@ Commerce Expansion Adjustment は、有効日現在、指定された国/地域�
 | スペイン                | ギフト カード       | 2.24%                         | 2016 年 3 月     |
 | スウェーデン               | ギフト カード       | 2.24%                         | 2016 年 3 月     |
 | スイス          | ギフト カード       | 2.24%                         | 2016 年 3 月     |
-| Taiwan               | ギフト カード       | 2.24%                         | 2016 年 3 月     |
+| 台湾               | ギフト カード       | 2.24%                         | 2016 年 3 月     |
 | トルコ               | ギフト カード       | 2.24%                         | 2016 年 3 月     |
 | アラブ首長国連邦 | ギフト カード       | 2.24%                         | 2016 年 3 月     |
 | 英国       | ギフト カード       | 2.24%                         | 2016 年 3 月     |
@@ -661,7 +661,7 @@ Windows 8.x 向けの "その他の国と地域" に含まれている市場は�
   </tr>
   <tr>
     <td>パラオ</td>
-    <td>Palestinian Authority</td>
+    <td>パレスチナ自治政府</td>
     <td>パナマ</td>
     <td>パプアニューギニア</td>
   </tr>
