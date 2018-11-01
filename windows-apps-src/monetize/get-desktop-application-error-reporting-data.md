@@ -8,15 +8,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, デスクトップ アプリケーション
 ms.localizationpriority: medium
 ms.openlocfilehash: fb48efb2a1792d1c6691dfd38d0a5e36faac6e0b
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5887869"
+ms.locfileid: "5919332"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>デスクトップ アプリケーションのエラー報告データの取得
 
-[Windows デスクトップ アプリケーション プログラム](https://msdn.microsoft.com/library/windows/desktop/mt826504)に追加したデスクトップ アプリケーションに関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドは、過去 30 日以内に発生したエラーをのみ取得できます。 この情報は、Windows デベロッパー センター ダッシュボードにあるデスクトップ アプリケーションの[正常性レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)でも確認できます。
+[Windows デスクトップ アプリケーション プログラム](https://msdn.microsoft.com/library/windows/desktop/mt826504)に追加したデスクトップ アプリケーションに関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドは、過去 30 日間に発生したエラーのみを取得できます。 この情報は、Windows デベロッパー センター ダッシュボードにあるデスクトップ アプリケーションの[正常性レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)でも確認できます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -47,7 +47,7 @@ ms.locfileid: "5887869"
 | パラメーター        | 型   |  説明      |  必須かどうか  
 |---------------|--------|---------------|------|
 | applicationId | string | エラー報告データを取得するデスクトップ アプリケーションの製品 ID です。 デスクトップ アプリケーションの製品 ID を取得するには、[デベロッパー センターでデスクトップ アプリケーションの分析レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)のいずれか (**正常性レポート**など) を開き、URL から製品 ID を取得します。 |  必須  |
-| startDate | date | 取得するエラー報告データの日付範囲の開始日を ```mm/dd/yyyy``` の形式で指定します。 既定値は現在の日付です。<p/><p/>**注:**&nbsp;&nbsp;以下のメソッドは、過去 30 日以内に発生したエラーのみを取得できます。  |  必須ではない  |
+| startDate | date | 取得するエラー報告データの日付範囲の開始日を ```mm/dd/yyyy``` の形式で指定します。 既定値は現在の日付です。<p/><p/>**注:**&nbsp;&nbsp;このメソッドでは、過去 30 日間に発生したエラーを取得できるだけです。  |  必須ではない  |
 | endDate | date | 取得するエラー報告データの日付範囲の終了日を ```mm/dd/yyyy``` の形式で指定します。 既定値は現在の日付です。   |  必須ではない  |
 | top | int | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  必須ではない  |
 | skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  必須ではない  |

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fcbc1566d2b2b5ffc6889a57dd7656a3466d2a9
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5882560"
+ms.locfileid: "5919710"
 ---
 # <a name="xaml-namescopes"></a>XAML 名前スコープ
 
@@ -32,7 +32,7 @@ XAML 名前スコープ内の名前の最も一般的な用途は、オブジェ
 
 技術的には、XAML 自体はマークアップ コンパイラ パスを使います。この際、XAML と、コード ビハインド用に定義した部分クラスがまとめてコンパイルされます。 マークアップで定義された **Name** 属性または [x:Name](x-name-attribute.md) 属性を持つ各オブジェクト要素が、XAML と同名の内部フィールドを生成します。 初期状態では、このフィールドは空です。 続いて、クラスが **InitializeComponent** メソッドを生成します。このメソッドは、すべての XAML が読み込まれた後にのみ呼び出されます。 **InitializeComponent** ロジックにおいて、各内部フィールドには、名前文字列が等しいかどうかを評価した結果を表す [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) の戻り値が設定されます。 このインフラストラクチャは、コンパイル後に Windows ランタイム アプリ プロジェクトの /obj サブフォルダーに XAML ページごとに作成される ".g" (生成) ファイルで確認できます。 リフレクションを実行した場合は、結果として作成されるアセンブリのメンバーとしてのフィールドや **InitializeComponent** メソッドの存在を確認することもできます。それ以外の場合は、インターフェイス言語の内容を調べます。
 
-**注:** VisualC ではコンポーネント拡張機能に具体的には (、C++/cli CX) アプリでは、 **x: Name**参照のバッキング フィールドが、XAML ファイルのルート要素に対して作成されません。 C++/CX のコード ビハインドからルート オブジェクトを参照する必要がある場合は、他の API またはツリー走査を使ってください。 たとえば、既知の名前付き子要素に対して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した後、[**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) を呼び出します。
+**注**VisualC ではコンポーネントの拡張機能について具体的には (C + + CX) アプリケーションでは、XAML ファイルのルート要素の**X:name**参照のバッキング フィールドは作成されません。 C++/CX のコード ビハインドからルート オブジェクトを参照する必要がある場合は、他の API またはツリー走査を使ってください。 たとえば、既知の名前付き子要素に対して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した後、[**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) を呼び出します。
 
 ## <a name="creating-objects-at-run-time-with-xamlreaderload"></a>XamlReader.Load を使った実行時におけるオブジェクトの作成
 

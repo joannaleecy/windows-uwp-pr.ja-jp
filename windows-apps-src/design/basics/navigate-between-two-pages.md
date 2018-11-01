@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 91a1ca0ee99833280aaa41ca4d9c94d043a78e0a
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873752"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5919837"
 ---
 # <a name="implement-navigation-between-two-pages"></a>2 ページ間でのナビゲーションを実装する
 
@@ -89,7 +89,7 @@ Page1.xaml に次のコンテンツを追加します。
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)要素とその後、ルート[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)の子要素として、 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)要素です。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)要素と後のルートの[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)の子要素として、 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)要素です。
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -126,7 +126,7 @@ Page2.xaml に次のコンテンツを追加します。
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)要素とその後、ルート[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)の子要素として、 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)要素です。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)要素と後のルートの[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)の子要素として、 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)要素です。
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -298,7 +298,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> このコードは、アプリの初期ウィンドウ フレームへのナビゲーションが失敗した場合、アプリの例外をスローするのに[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)の戻り値を使用します。 **Navigate** が **true** を返す場合は、ナビゲーションが行われます。
+> コードをここでは、アプリケーションの初期ウィンドウ フレームへの移動が失敗した場合は、アプリケーション例外をスローするのに[**移動**](https://msdn.microsoft.com/library/windows/apps/br242694)の戻り値を使用します。 **Navigate** が **true** を返す場合は、ナビゲーションが行われます。
 
 次に、アプリをビルドして実行します。 "Click to go to page 2" と書かれているリンクをクリックします。 上部に "Page 2" と書かれた 2 番目のページが読み込まれ、フレームに表示される必要があります。
 
@@ -318,7 +318,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 このアプリでは、ページ間の移動は行いますが、実際に何かの処理を行うわけではありません。 多くの場合、アプリに複数のページがあれば、ページ間で情報を共有する必要があります。 最初のページから 2 番目のページへ情報を渡してみましょう。
 
-Page1.xaml、追加した**HyperlinkButton**を次[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)で以前置き換えます。
+、Page1.xaml で追加した**HyperlinkButton**を次の[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)で以前のバージョン置き換えます。
 
 次に、テキスト文字列を入力するための [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) ラベルと [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) `name` を追加します。
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, シャドウ ボリューム, 深度バッファー, DirectX 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 269f8423795d7c2515ce555cf8e65f14a8c63431
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5884076"
+ms.locfileid: "5919687"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装
 
@@ -57,7 +57,7 @@ ms.locfileid: "5884076"
 ## <a name="shadow-mapping-application-to-direct3d-9-desktop-porting"></a>Direct3D 9 デスクトップに対するシャドウ マップの適用の移植
 
 
-Windows8 で機能レベル 9 \_1 と 9 \_3 に深度の比較機能します。 シャドウ ボリュームを含むレンダリング コードを DirectX 11 に移行できるようになりました。Direct3D 11 レンダラーは機能レベル 9 のデバイスと下位互換性を持ちます。 このチュートリアルでは、Direct3D 11 のアプリやゲームで深度のテストを使って従来のシャドウ ボリュームを実装する方法を説明します。 コードは次のプロセスに対応しています。
+Windows8 adde d 深度比較の機能レベルの 9\_1 と 9\_3 の機能にします。 シャドウ ボリュームを含むレンダリング コードを DirectX 11 に移行できるようになりました。Direct3D 11 レンダラーは機能レベル 9 のデバイスと下位互換性を持ちます。 このチュートリアルでは、Direct3D 11 のアプリやゲームで深度のテストを使って従来のシャドウ ボリュームを実装する方法を説明します。 コードは次のプロセスに対応しています。
 
 1.  シャドウ マッピング用の Direct3D デバイス リソースを作成する。
 2.  レンダリング パスを追加して深度マップを作成する。
@@ -70,7 +70,7 @@ Windows8 で機能レベル 9 \_1 と 9 \_3 に深度の比較機能します。
 ## <a name="prerequisites"></a>前提条件
 
 
-[ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの開発環境を準備する](prepare-your-dev-environment-for-windows-store-directx-game-development.md)必要があります。 テンプレートはまだ必要ありませんが、このチュートリアルのコード サンプルをビルドする Microsoft Visual Studio2015 必要があります。
+[ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの開発環境を準備する](prepare-your-dev-environment-for-windows-store-directx-game-development.md)必要があります。 テンプレートは、必要ありませんが、このチュートリアルのコード サンプルをビルドするのには、Microsoft Visual Studio2015 する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 

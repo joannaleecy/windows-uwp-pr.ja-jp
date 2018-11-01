@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f8699ee06da545e3b34711f496a887fd7aa2c935
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5874982"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5919720"
 ---
 # <a name="file-access-permissions"></a>ファイル アクセス許可
 
@@ -24,9 +24,9 @@ ms.locfileid: "5874982"
 新しいアプリを作成すると、既定でファイル システムの次の場所にアクセスできます。
 
 ### <a name="application-install-directory"></a>アプリケーションのインストール ディレクトリ
-ユーザーのシステムで、アプリがインストールされているフォルダーです。
+アプリがユーザーのシステムにインストールされているフォルダーです。
 
-ファイルにアクセスする 2 つの主要な方法し、フォルダーで、アプリのインストール ディレクトリ。
+ファイルにアクセスする主な方法は 2 つとアプリの内のフォルダーは、ディレクトリをインストールします。
 
 1. 次のように、アプリのインストール ディレクトリを表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) を取得できます。
 
@@ -89,12 +89,12 @@ URI の "ms-appx:///" プレフィックスは、アプリのインストール 
 
 さらに、他の場所とは異なり、[ユニバーサル Windows プラットフォーム (UWP) アプリの Win32 と COM](https://msdn.microsoft.com/library/windows/apps/br205757) や [Microsoft Visual Studio の C/C++ 標準ライブラリ関数](http://msdn.microsoft.com/library/hh875057.aspx)を使ってアプリのインストール ディレクトリ内のファイルにアクセスすることもできます。
 
-アプリのインストール ディレクトリは読み取り専用です。 ファイル ピッカーでは、インストール ディレクトリにアクセスをできなくなります。
+アプリのインストール ディレクトリは読み取り専用です。 ファイル選択ウィンドウで、インストール ディレクトリへのアクセスを取得できません。
 
 ### <a name="application-data-locations"></a>アプリケーション データの場所
 アプリがデータを保存できるフォルダーです。 これらのフォルダー (ローカル、移動、一時) は、アプリのインストール時に作成されます。
 
-アプリのデータの場所からファイルとフォルダーにアクセスする 2 つの主要な方法はあります。
+アプリのデータの場所からファイルとフォルダーにアクセスするのには主に 2 つの方法があります。
 
 1.  [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) プロパティを使ってアプリ データ フォルダーを取得します。
 
@@ -161,7 +161,7 @@ URI の "ms-appdata:///local/" プレフィックスは、アプリのローカ�
 
 さらに、他の場所とは異なり、[UWP アプリの Win32 と COM](https://msdn.microsoft.com/library/windows/apps/br205757) や Visual Studio の C/C++ 標準ライブラリ関数を使ってアプリ データの場所にあるファイルにアクセスすることもできます。
 
-ファイル ピッカーでローカル、移動、または一時フォルダーにアクセスすることはできません。
+ファイル選択ウィンドウでは、ローカル、移動、または一時フォルダーにアクセスできません。
 
 ### <a name="removable-devices"></a>リムーバブル デバイス
 さらに、接続されているデバイス上の一部のファイルに既定でアクセスできます。 これは、[自動再生拡張機能](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay)を使って、ユーザーがデバイス (カメラや USB サム ドライブなど) をシステムに接続したときに自動的に起動されるようにする場合に使うことができます。 アプリでアクセスできるファイルの種類は、アプリ マニフェストのファイルの種類の関連付けの宣言で指定されたものだけに制限されます。
@@ -171,8 +171,8 @@ URI の "ms-appdata:///local/" プレフィックスは、アプリのローカ�
 > [!NOTE]
 > SD カードやその他のリムーバブル デバイスにアクセスする方法について詳しくは、「[SD カードへのアクセス](access-the-sd-card.md)」をご覧ください。
 
-## <a name="locations-that-uwp-apps-can-access"></a>UWP アプリがアクセスできる場所
-### <a name="users-downloads-folder"></a>ユーザーの"ダウンロード"フォルダー
+## <a name="locations-that-uwp-apps-can-access"></a>UWP のアプリケーションがアクセスできる場所
+### <a name="users-downloads-folder"></a>ユーザーのダウンロードのフォルダー
 
 ダウンロードされたファイルが保存される既定のフォルダーです。
 
@@ -257,7 +257,7 @@ Downloads フォルダーにファイルやフォルダーを作成する場合�
 | 場所 | 機能 | Windows.Storage API |
 |----------|------------|---------------------|
 | ユーザーがアクセス権を持つすべてのファイル。 例: ドキュメント、画像、写真、ダウンロード、デスクトップ、OneDrive などです。 | broadFileSystemAccess<br><br>これは、制限付き機能です。 最初に使うとき、システムはユーザーにアクセスを許可するかどうかを要求します。 アクセスは、[設定] > [プライバシー] > [ファイル システム] で構成できます。 この機能を宣言するアプリを Microsoft Store に提出する場合、アプリでこの機能が必要となる理由およびこの機能の使用目的に関する追加の説明を提供する必要があります。<br>この機能は、[**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 名前空間の API で動作します。 | なし |
-| ドキュメント | DocumentsLibrary <br><br>注: アプリ マニフェストにファイルの種類の関連付けの宣言を追加して、この場所でアクセスできるファイルの種類を指定する必要があります。 <br><br>この機能は、アプリが次の条件を満たす場合に使います。<br>- 有効な OneDrive URL またはリソース ID を使った、特定の OneDrive コンテンツへのクロスプラットフォーム オフライン アクセスを容易にする<br>、中に自動的にユーザーの OneDrive にファイルを開いて保存オフライン | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
+| ドキュメント | DocumentsLibrary <br><br>注: アプリ マニフェストにファイルの種類の関連付けの宣言を追加して、この場所でアクセスできるファイルの種類を指定する必要があります。 <br><br>この機能は、アプリが次の条件を満たす場合に使います。<br>- 有効な OneDrive URL またはリソース ID を使った、特定の OneDrive コンテンツへのクロスプラットフォーム オフライン アクセスを容易にする<br>保存が自動的にユーザーの OneDrive ファイルを開いてオフライン | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | ミュージック     | MusicLibrary <br>「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)」もご覧ください。 | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | ピクチャ  | PicturesLibrary<br> 「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)」もご覧ください。 | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
 | ビデオ    | VideosLibrary<br>「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)」もご覧ください。 | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   

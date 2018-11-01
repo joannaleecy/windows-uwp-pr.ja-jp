@@ -9,35 +9,35 @@ ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 55235c78df29513e8d7b28e7643aec5c3a256f1d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5875513"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5919885"
 ---
 # <a name="app-submissions"></a>アプリの申請
 
 
 [名前を予約してアプリを作成](create-your-app-by-reserving-a-name.md)したら、そのアプリを公開するための作業を開始できます。 まず、**申請**を作成します。
 
-申請は、アプリが完成して公開する準備ができたときに開始できます。または、1 行のコードを記述する前でも情報を入力し始めることができます。 戻るできたらいつでも作業できるように、申請を更新プログラムが保存されます。
+申請は、アプリが完成して公開する準備ができたときに開始できます。または、1 行のコードを記述する前でも情報を入力し始めることができます。 戻って準備ができているときに作業できるように、お客様のご提案を行う更新プログラムが保存されます。
 
 > [!NOTE]
-> アクティブな[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)は、Microsoft Store にアプリを提出するために[パートナー センター](https://partner.microsoft.com/dashboard)でが必要です。
+> [パートナー ・ センター](https://partner.microsoft.com/dashboard)で Microsoft ストアにアプリケーションを送信するためにアクティブな[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)必要があります。
 
-アプリが公開されると、パートナー センターで別の申請を作成して更新バージョンを公開することができます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されたアプリの新しい申請を作成するには、その**概要**ページに表示されている前回の申請の横にある**更新**をクリックします。 こともできます[ストアからアプリを削除](guidance-for-app-package-management.md#removing-an-app-from-the-store)する必要がある場合は (し、利用できるように、後でもう一度たい場合)。
+アプリを公開した後、パートナー ・ センターで別の提出書類を作成することによって更新されたバージョンを発行できます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 発行したアプリケーションの新しい提出書類を作成するには、[**概要**] ページで、表示されている最新の提出書類の横にある**更新**をクリックします。 ことも[、ストアからアプリを削除する](guidance-for-app-package-management.md#removing-an-app-from-the-store)ように (とし、利用できるように、後でもう一度希望の場合) する必要がある場合。
 
 > [!NOTE]
-> ドキュメントのこのセクションでは、パートナー センターでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリ申請を自動化することもできます。
+> マニュアルのこのセクションでは、パートナー ・ センターでのアプリケーションの提出書類を作成する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリ申請を自動化することもできます。
 
 > [!IMPORTANT]
-> 2018 年 10 月 31 日の時点で、新しく作成した製品が Windows 8.x/Windows を対象とするパッケージを含めることはできません Phone 8.x 以前のバージョン。 詳しくは、この[ブログ記事](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)を参照してください。
+> 2018 年 10 月 31日の時点で新しく作成した製品が Windows 8.x/Windows を対象とするパッケージを含めることはできません電話 8.x 以前のバージョンです。 詳細については、この[ブログの投稿](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)を参照してください。
 
 ## <a name="app-submission-checklist"></a>アプリの申請用チェック リスト
 
 ここで示しているのは、アプリの申請を作成するときに提供できる詳細情報と、詳細情報のリンクです。
 
-提供または指定する情報は必須のものと、 省略可能なものがあります。提供されている既定値は必要に応じて変更できます。 ここに記載されての順序でこれらのセクションで動作する必要はありません。
+提供または指定する情報は必須のものと、 省略可能なものがあります。提供されている既定値は必要に応じて変更できます。 ここで記載されている順序でこれらのセクションで作業する必要はありません。
 
 ### <a name="pricing-and-availability-page"></a>[価格と使用可能状況] ページ
 | フィールド名                    | コメント                                       | 詳しい情報                                                             |
@@ -98,11 +98,11 @@ ms.locfileid: "5875513"
 | **スクリーンショット**               | 必須 (スクリーンショット 1 つ以上。4 つ以上を推奨)          | [スクリーンショット](app-screenshots-and-images.md#screenshots)          |
 | **Microsoft Store ロゴ**               | 推奨。一部の OS バージョンで必須 | [Microsoft Store ロゴ](app-screenshots-and-images.md#store-logos)             |
 | **トレーラー**                  | 省略可能                                    | [トレーラー](app-screenshots-and-images.md#trailers)                | 
-| **Windows 10 と Xbox の画像 (16:9 スーパー ヒーロー アート)**     | 推奨        | [Windows 10 と Xbox の画像 (16:9 スーパー ヒーロー アート)
+| **Windows 10 と Xbox の画像 (16:9 スーパー ヒーロー アート)**     | 推奨        | [10 の Windows と Xbox イメージ (16:9 のスーパー ヒーローのアート)
 (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
-| **Xbox 画像**     | Xbox に公開する場合に必要な適切な表示        | [Xbox 画像
-(アプリのスクリーン ショット-images.md #xbox の画像) |
-| **補足的なフィールド**  | オプション                                    | [補足的なフィールド](create-app-store-listings.md#supplemental-fields) 
+| **Xbox 画像**     | Xbox を発行する場合に、適切な表示に必要な        | [Xbox イメージ
+(アプリケーションのスクリーン ショット-images.md #xbox のイメージ) |
+| **補足のフィールド**  | オプション                                    | [補足のフィールド](create-app-store-listings.md#supplemental-fields) 
 | **検索語句**              | 省略可能                                    | [検索語句](create-app-store-listings.md#search-terms)         |
 | **著作権と商標の情報** | 省略可能                                 | [著作権と商標の情報](create-app-store-listings.md#copyright-and-trademark-info) |
 | **追加のライセンス条項**  | 省略可能                                    | [追加のライセンス条項](create-app-store-listings.md#additional-license-terms) |
@@ -117,7 +117,7 @@ ms.locfileid: "5875513"
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **公開の保留オプション**     | 既定: この申請が認定されたら、すぐに申請を公開します (または [スケジュール] セクションで選択した各日付で公開します)      | [公開の保留オプション](manage-submission-options.md#publishing-hold-options)    
 | **認定の注意書き**     | 推奨          | [認定の注意書き](notes-for-certification.md)             |
-| **制限付き機能**     | 製品が、[制限付き機能](../packaging/app-capability-declarations.md#restricted-capabilities)を宣言するかどうかに必要な    | [制限付き機能](manage-submission-options.md#publishing-hold-options)       
+| **制限付き機能**     | 製品宣言の[制限された機能](../packaging/app-capability-declarations.md#restricted-capabilities)が必要    | [制限付き機能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 
