@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cbaa56f9c25c0e4ea1f10c79b4f7d1100748532
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5834622"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5885238"
 ---
 # <a name="optimize-suspendresume"></a><span data-ttu-id="f551f-104">中断/再開の最適化</span><span class="sxs-lookup"><span data-stu-id="f551f-104">Optimize suspend/resume</span></span>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, パッケージ化, パッケージ レイアウト, アセット パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 9342b4ce35cb50037813ed2210e2d7246411ad92
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5823388"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884963"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a><span data-ttu-id="a51f5-105">パッケージ レイアウトを使ったパッケージの作成</span><span class="sxs-lookup"><span data-stu-id="a51f5-105">Package creation with the packaging layout</span></span>  
 

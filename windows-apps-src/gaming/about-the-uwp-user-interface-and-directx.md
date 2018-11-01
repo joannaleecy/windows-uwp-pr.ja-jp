@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、DirectX、アプリ オブジェクト
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e29a19410915836be3c54c0dc04a6d7dc29ceeb
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5817007"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884721"
 ---
 # <a name="the-app-object-and-directx"></a><span data-ttu-id="e5ac0-104">アプリ オブジェクトと DirectX</span><span class="sxs-lookup"><span data-stu-id="e5ac0-104">The app object and DirectX</span></span>
 

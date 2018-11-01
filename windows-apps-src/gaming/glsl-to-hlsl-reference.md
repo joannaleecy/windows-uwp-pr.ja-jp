@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, シェーダー
 ms.localizationpriority: medium
 ms.openlocfilehash: 30c925f9ebb07d578147dfba373fdeb3baa364fe
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5833123"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5885532"
 ---
 # <a name="glsl-to-hlsl-reference"></a><span data-ttu-id="73f12-104">GLSL と HLSL の対応を示すリファレンス</span><span class="sxs-lookup"><span data-stu-id="73f12-104">GLSL-to-HLSL reference</span></span>
 
