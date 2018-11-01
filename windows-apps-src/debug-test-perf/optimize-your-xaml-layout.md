@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5835292"
+ms.locfileid: "5875382"
 ---
 # <a name="optimize-your-xaml-layout"></a><span data-ttu-id="eaf1b-105">XAML レイアウトの最適化</span><span class="sxs-lookup"><span data-stu-id="eaf1b-105">Optimize your XAML layout</span></span>
 

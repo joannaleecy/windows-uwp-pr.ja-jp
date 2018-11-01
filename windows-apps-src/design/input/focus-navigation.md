@@ -14,11 +14,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f4c86847e02c4ba987f8b1dcc42016145b175193
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5822403"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5874933"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a><span data-ttu-id="d3363-103">キーボード、ゲームパッド、リモコン、アクセシビリティ ツールのフォーカス ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="d3363-103">Focus navigation for keyboard, gamepad, remote control, and accessibility tools</span></span>
 

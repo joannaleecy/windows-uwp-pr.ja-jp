@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b0ece9a25a2fd2892553d66847c39637e7faae70
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5829667"
+ms.locfileid: "5873263"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a><span data-ttu-id="20d39-104">システム メディア トランスポート コントロールの手動制御</span><span class="sxs-lookup"><span data-stu-id="20d39-104">Manual control of the System Media Transport Controls</span></span>
 
