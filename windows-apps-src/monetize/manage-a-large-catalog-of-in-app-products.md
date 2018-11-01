@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, カタログ, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: eb286c9487b57cf36f9dc558902a0da532bfdc0a
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5831118"
+ms.locfileid: "5878438"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a><span data-ttu-id="ed4f4-104">アプリ内製品の大規模なカタログの管理</span><span class="sxs-lookup"><span data-stu-id="ed4f4-104">Manage a large catalog of in-app products</span></span>
 

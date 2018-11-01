@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 46954968f11f000025ee352676d3f0d17ecb9621
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5816432"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5882457"
 ---
 # <a name="conditional-xaml"></a><span data-ttu-id="8fec4-104">条件付き XAML</span><span class="sxs-lookup"><span data-stu-id="8fec4-104">Conditional XAML</span></span>
 

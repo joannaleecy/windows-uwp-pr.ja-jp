@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
 ms.openlocfilehash: 346383504abd7927cf863afa59bcb574ddd2495d
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5815949"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5879649"
 ---
 # <a name="manage-delivery-lines"></a><span data-ttu-id="3d89d-104">配信ラインの管理</span><span class="sxs-lookup"><span data-stu-id="3d89d-104">Manage delivery lines</span></span>
 

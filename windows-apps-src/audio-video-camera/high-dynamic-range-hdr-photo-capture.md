@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cc81fdc03096dd8cac5e844a496b38da78eb6136
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5812612"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5879029"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a><span data-ttu-id="1e3b4-104">ハイ ダイナミック レンジ (HDR) 写真と低光量写真のキャプチャ</span><span class="sxs-lookup"><span data-stu-id="1e3b4-104">High dynamic range (HDR) and low-light photo capture</span></span>
 

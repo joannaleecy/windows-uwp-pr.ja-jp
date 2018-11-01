@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: f64072f2f04b5cd45b3b75ccad908ef6906c00f5
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5821750"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5879599"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a><span data-ttu-id="5819b-103">リソース管理システムでの言語タグの照合の仕組み</span><span class="sxs-lookup"><span data-stu-id="5819b-103">How the Resource Management System matches language tags</span></span>
 

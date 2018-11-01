@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, XAML の相互運用機能
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f3a70be3dd31b0a5e4214621ab9fb4efa72cc54
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5825756"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5880277"
 ---
 # <a name="directx-and-xaml-interop"></a><span data-ttu-id="d18b0-104">DirectX と XAML の相互運用機能</span><span class="sxs-lookup"><span data-stu-id="d18b0-104">DirectX and XAML interop</span></span>
 
