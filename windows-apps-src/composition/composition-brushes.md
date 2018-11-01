@@ -8,17 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1122ae00f9b84980a7793deef08a30a16711b4be
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 730d5ae9062fe39533cd615facaf5beaa7d02ffd
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5823688"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5876085"
 ---
 # <a name="composition-brushes"></a>コンポジションのブラシ
 ブラシによって描画されているために、すべての UWP アプリケーションから、画面に表示されることが表示されます。 ブラシを使用すると、シンプルで単色の色から画像や複雑な効果のチェーンに描画に至るまでコンテンツを持つユーザー インターフェイス (UI) オブジェクトを使ってペイントできます。 このトピックでは、CompositionBrush と描画の概念を説明します。
 
-注意してください、XAML UWP アプリでは、操作するとき、 [XAML ブラシ](/windows/uwp/design/style/brushes)や[CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush)の UIElement をペイントする選択を実行できます。 通常より簡単かつ XAML ブラシで自分のシナリオがサポートされている場合は、XAML ブラシを選択することをお勧めです。 たとえば、テキストまたは画像を持つ図形の塗りつぶしの変更、ボタンの色をアニメーション化します。 その一方で、アニメーションのマスクやアニメーションの 9 グリッド stretch またはエフェクト チェーンを使ってペイントなどのような XAML ブラシでサポートされていない処理を実行しようとすることができますに使用する場合、CompositionBrush[を使用して、UIElement の描画XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)します。
+注意してください、XAML UWP アプリでは、操作するとき、 [XAML ブラシ](/windows/uwp/design/style/brushes)や[CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush)の UIElement をペイントする選択を実行できます。 通常より簡単かつ XAML ブラシで自分のシナリオがサポートされている場合は、XAML ブラシを選択することをお勧めです。 たとえば、テキストまたは画像を持つ図形の塗りつぶしの変更、ボタンの色をアニメーション化します。 その一方で、アニメーションのマスクやアニメーションの 9 グリッド stretch またはエフェクト チェーンを使ってペイントなどの XAML ブラシでサポートされていない処理を実行しようとすることができますに使用する場合、CompositionBrush[を使用して、UIElement の描画XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)します。
 
 ビジュアル レイヤーを使用する場合、CompositionBrush は[SpriteVisual](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual)の領域を塗りつぶすために使用する必要があります。
 

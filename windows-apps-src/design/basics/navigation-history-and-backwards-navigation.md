@@ -9,12 +9,12 @@ ms.date: 06/21/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 42bc7fdb91a8c7642e132d4ac3d93be1f0927df0
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: d2f437db1a1792df22fd084cedee31cb6e590d24
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5840011"
+ms.locfileid: "5873191"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP アプリのナビゲーション履歴と前に戻る移動
 
@@ -287,21 +287,6 @@ bool App::On_BackRequested()
 以前、UWP アプリは前に戻る移動のために [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) を使用しました。 API は引き続き下位の互換性を確保するサポートされているがしなくなった[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)に依存することをお勧めします。 代わりに、アプリで独自のアプリ内の戻るボタンを描画してください。
 
 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)を使用して、アプリが引き続き発生する場合、システム UI を表示する、システムで戻るボタンが使用。
-
-- アプリが**タブ付きしない**場合は、タイトル バーの内部、戻るボタンがレンダリングします。 "戻る"ボタンの視覚エクスペリエンスとユーザーの操作では、以前のビルドから変更されません。
-
-    ![タイトル バーの戻るボタン](images/nav-back-pc.png)
-
-- アプリが**タブ付き**のかどうか、戻るボタンは、新しいシステムの戻る内部にレンダリング バー。
-
-    ![戻るボタンのバーに描画されるシステム](images/back-nav/tabs.png)
-
-### <a name="system-back-bar"></a>システムの戻るバー
-
-> [!NOTE]
-> "システムの戻るバー"は、公式の名前ではなく説明のみです。
-
-システムの戻るバーは、タブ バンドとアプリのコンテンツ領域間に挿入されている「バンド」です。 バンドは、アプリの幅に沿って表示され、左端に戻るボタンが配置されます。 バンドには、戻るボタンの適切なタッチ ターゲットのサイズを確認する 32 ピクセルの高さがあります。
 
 - アプリが**タブ付きしない**場合は、タイトル バーの内部、戻るボタンがレンダリングします。 "戻る"ボタンの視覚エクスペリエンスとユーザーの操作では、以前のビルドから変更されません。
 

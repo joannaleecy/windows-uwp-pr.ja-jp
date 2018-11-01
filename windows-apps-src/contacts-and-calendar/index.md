@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 連絡先, カレンダー, 予定, メール メッセージ
 ms.localizationpriority: medium
 ms.openlocfilehash: c020a871863df6fac3dabc3ffab4bafc57227b50
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5819057"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5875455"
 ---
 # <a name="contacts-my-people-and-calendar"></a>連絡先、マイ連絡先、カレンダー
 
