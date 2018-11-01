@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 1642251ac7019d8bdf0216487eb7085d616863cf
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5883007"
+ms.locfileid: "5920302"
 ---
 # <a name="game-programming"></a><span data-ttu-id="01d9d-105">ゲーム プログラミング</span><span class="sxs-lookup"><span data-stu-id="01d9d-105">Game programming</span></span>
 

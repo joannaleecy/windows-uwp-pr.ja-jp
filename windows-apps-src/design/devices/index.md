@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f5e6c96c67052f1933bf4fb69988ae1eae27ee0
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5864214"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5920233"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a><span data-ttu-id="d0f3d-103">ユニバーサル Windows プラットフォーム (UWP) アプリ用デバイスの基本情報</span><span class="sxs-lookup"><span data-stu-id="d0f3d-103">Device primer for Universal Windows Platform (UWP) apps</span></span>
 

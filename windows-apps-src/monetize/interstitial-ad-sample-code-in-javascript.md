@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP, 広告, Advertising, スポット, JavaScript, サンプルコード
 ms.localizationpriority: medium
 ms.openlocfilehash: 42ff810808e0e7b8d83152f7d23e535c721d3405
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5875012"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5918777"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a><span data-ttu-id="16768-104">JavaScript を使ったスポット広告のサンプル コード</span><span class="sxs-lookup"><span data-stu-id="16768-104">Interstitial ad sample code in JavaScript</span></span>
 

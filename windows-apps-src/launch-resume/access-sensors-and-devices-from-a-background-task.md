@@ -9,11 +9,11 @@ ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 1666d64c26c8ccfecda142e50f2e672d0f4c8864
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5866863"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5918985"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a><span data-ttu-id="045c3-104">バックグラウンド タスクからのセンサーやデバイスへのアクセス</span><span class="sxs-lookup"><span data-stu-id="045c3-104">Access sensors and devices from a background task</span></span>
 

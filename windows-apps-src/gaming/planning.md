@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 計画, アクセシビリティ, クラウド, 収益化, パッケージ化, テクノロジ, 概念, 承認
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d350077e3199bdc875d4ad89559cb88ae8950c9
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5861791"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5921528"
 ---
 # <a name="planning-for-uwp-games"></a><span data-ttu-id="82664-104">UWP ゲームの計画</span><span class="sxs-lookup"><span data-stu-id="82664-104">Planning for UWP games</span></span>
 

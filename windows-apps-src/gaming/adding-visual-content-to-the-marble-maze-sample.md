@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、サンプル、DirectX、グラフィックス
 ms.localizationpriority: medium
 ms.openlocfilehash: 5171578b844829ec590b654194639ed6c8ebbfe1
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5861031"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5922730"
 ---
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a><span data-ttu-id="7dbe8-104">Marble Maze サンプルへの視覚的なコンテンツの追加</span><span class="sxs-lookup"><span data-stu-id="7dbe8-104">Adding visual content to the Marble Maze sample</span></span>
 
