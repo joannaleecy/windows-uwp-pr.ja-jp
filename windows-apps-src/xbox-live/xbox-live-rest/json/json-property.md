@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d37054d03f6ebe8299db78673dc631c9b4b4bc16
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5813497"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5860964"
 ---
 # <a name="property-json"></a><span data-ttu-id="e86a1-104">Property (JSON)</span><span class="sxs-lookup"><span data-stu-id="e86a1-104">Property (JSON)</span></span>
 <span data-ttu-id="e86a1-105">マッチメイ キング要求条件のクライアントによって提供されるプロパティ データが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e86a1-105">Contains property data provided by the client for matchmaking request criteria.</span></span>

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3011ca3622e79bc3b2062f1c572d2f1db3167b87
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5811283"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5859515"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatename"></a><span data-ttu-id="117af-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}</span><span class="sxs-lookup"><span data-stu-id="117af-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}</span></span>
 <span data-ttu-id="117af-105">セッション テンプレート名のセットを取得する GET 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="117af-105">Supports a GET operation to retrieve a set of session template names.</span></span> 

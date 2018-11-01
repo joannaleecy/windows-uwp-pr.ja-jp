@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 320f7feee3d1e1aca57a46550ee08d565307e89c
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5829123"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5871746"
 ---
 # <a name="post-serviceconfigsscidbatch"></a><span data-ttu-id="69e4f-104">POST (/serviceconfigs/{scid}/batch)</span><span class="sxs-lookup"><span data-stu-id="69e4f-104">POST (/serviceconfigs/{scid}/batch)</span></span>
 <span data-ttu-id="69e4f-105">サービス構成に対して複数の Xbox ユーザー Id には、バッチ クエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="69e4f-105">Creates a batch query on multiple Xbox user IDs for the service configuration.</span></span>

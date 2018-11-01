@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2997dd22b64103ed910f32dd2cc1430d3758fdfd
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5835134"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5872788"
 ---
 # <a name="inventoryitem-json"></a><span data-ttu-id="7ab64-104">inventoryItem (JSON)</span><span class="sxs-lookup"><span data-stu-id="7ab64-104">inventoryItem (JSON)</span></span>
 <span data-ttu-id="7ab64-105">コアのインベントリ項目の権利を付与できる標準の項目を表します。</span><span class="sxs-lookup"><span data-stu-id="7ab64-105">The core inventory item represents the standard item on which an entitlement can be granted.</span></span>

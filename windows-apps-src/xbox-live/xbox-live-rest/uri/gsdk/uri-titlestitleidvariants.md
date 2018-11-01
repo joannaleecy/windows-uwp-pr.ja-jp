@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 82b44cfab560cc7954ace22d703b0fba87883f91
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5828996"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5860638"
 ---
 # <a name="titlestitleidvariants"></a><span data-ttu-id="7d7c1-104">/titles/{titleId}/variants</span><span class="sxs-lookup"><span data-stu-id="7d7c1-104">/titles/{titleId}/variants</span></span>
 <span data-ttu-id="7d7c1-105">URI は、タイトルの利用可能な言語バリアントを取得するクライアントによって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="7d7c1-105">URI called by a client to get the available variants for a title.</span></span> <span data-ttu-id="7d7c1-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="7d7c1-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>

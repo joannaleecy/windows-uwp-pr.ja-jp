@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e0cc89d7411f513c23e74caf2c7cd151bcbf7df3
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5837531"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5863371"
 ---
 # <a name="usersxuidxuid"></a><span data-ttu-id="626e3-104">/users/xuid({xuid})</span><span class="sxs-lookup"><span data-stu-id="626e3-104">/users/xuid({xuid})</span></span>
 <span data-ttu-id="626e3-105">別のユーザーまたはクライアントの有無にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="626e3-105">Access the presence of another user or client.</span></span> <span data-ttu-id="626e3-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="626e3-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>

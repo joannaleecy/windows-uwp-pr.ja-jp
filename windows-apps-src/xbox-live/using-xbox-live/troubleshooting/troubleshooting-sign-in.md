@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, サインイン, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: ca291312345646bb48691615854503f5121c8888
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5813357"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5876468"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a><span data-ttu-id="dde9d-104">Xbox Live サインインのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="dde9d-104">Troubleshooting Xbox Live sign-in</span></span>
 
