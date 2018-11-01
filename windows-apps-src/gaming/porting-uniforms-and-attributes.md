@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D, バッファー, uniform, 頂点属性
 ms.localizationpriority: medium
 ms.openlocfilehash: bc0192eb4b89ef91bc895a96e46cd39524f24c44
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5821256"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5869189"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a><span data-ttu-id="90789-104">OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較</span><span class="sxs-lookup"><span data-stu-id="90789-104">Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D</span></span>
 

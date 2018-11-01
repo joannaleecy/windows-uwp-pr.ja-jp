@@ -9,11 +9,11 @@ keywords: windows 10, uwp, バージョン, 作成, バージョン, windows, �
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e2b241d0369d50e600a5497811ac7d4bbb823bc
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5820327"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5870129"
 ---
 # <a name="choose-a-uwp-version"></a><span data-ttu-id="a140b-105">UWP バージョンの選択</span><span class="sxs-lookup"><span data-stu-id="a140b-105">Choose a UWP version</span></span>
 

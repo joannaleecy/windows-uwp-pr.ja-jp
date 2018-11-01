@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, パッケージ化, パッケージ レイアウト, アセット パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: efdf560158e2b57ae9e05ecc31d49c7cf981d8c0
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5817891"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5871019"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a><span data-ttu-id="a523e-104">アセット パッケージとパッケージ圧縮を使った開発</span><span class="sxs-lookup"><span data-stu-id="a523e-104">Developing with asset packages and package folding</span></span> 
 

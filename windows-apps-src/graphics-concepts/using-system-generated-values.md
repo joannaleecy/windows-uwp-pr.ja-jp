@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f187495568892f5b489f6e109669811f4c45ab1
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5826200"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5871551"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span data-ttu-id="a47f7-104"><span id="direct3dconcepts.using_system-generated_values"></span>システム生成値の使用</span><span class="sxs-lookup"><span data-stu-id="a47f7-104"><span id="direct3dconcepts.using_system-generated_values"></span>Using system-generated values</span></span>
 

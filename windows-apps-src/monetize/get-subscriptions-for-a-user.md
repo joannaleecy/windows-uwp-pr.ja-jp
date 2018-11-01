@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 購入 API, サブスクリプション
 ms.localizationpriority: medium
 ms.openlocfilehash: b8fe6262ca6ef52ca94ade2c56b18f5e71951f07
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5813394"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5873920"
 ---
 # <a name="get-subscriptions-for-a-user"></a><span data-ttu-id="1aa2b-104">ユーザーのサブスクリプションの取得</span><span class="sxs-lookup"><span data-stu-id="1aa2b-104">Get subscriptions for a user</span></span>
 

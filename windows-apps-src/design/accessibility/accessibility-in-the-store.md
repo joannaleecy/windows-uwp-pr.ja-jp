@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 990af773c600c2c87cfe6bc477ed1d6799379fb2
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5838123"
+ms.locfileid: "5870437"
 ---
 # <a name="accessibility-in-the-store"></a><span data-ttu-id="ddf53-103">Microsoft Store 内のアクセシビリティ</span><span class="sxs-lookup"><span data-stu-id="ddf53-103">Accessibility in the Store</span></span>  
 

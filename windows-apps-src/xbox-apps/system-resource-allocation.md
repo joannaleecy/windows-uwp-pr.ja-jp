@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
 ms.openlocfilehash: f4c96fd3c124f8853a91f8db4385f7d42e254834
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5818004"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5869308"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a><span data-ttu-id="212a3-104">Xbox One 上の UWP アプリとゲームのシステム リソース</span><span class="sxs-lookup"><span data-stu-id="212a3-104">System resources for UWP apps and games on Xbox One</span></span>
 

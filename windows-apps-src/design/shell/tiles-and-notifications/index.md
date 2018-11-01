@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: eaca23a72ff794a85ffd8ac13c3f522cabf32aa7
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5838208"
+ms.locfileid: "5871249"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a><span data-ttu-id="6b785-103">UWP アプリのタイル、バッジ、通知</span><span class="sxs-lookup"><span data-stu-id="6b785-103">Tiles, badges, and notifications for UWP apps</span></span>
  

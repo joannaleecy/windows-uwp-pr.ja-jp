@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, GLSL, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 47fa601a7e0ff307108713a0a6fcd7a5468b0468
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5815269"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5869508"
 ---
 # <a name="port-the-glsl"></a><span data-ttu-id="01e27-104">GLSL の移植</span><span class="sxs-lookup"><span data-stu-id="01e27-104">Port the GLSL</span></span>
 

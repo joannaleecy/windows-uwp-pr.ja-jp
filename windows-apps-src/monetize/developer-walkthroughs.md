@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, チュートリアル
 ms.localizationpriority: medium
 ms.openlocfilehash: eed52167655e16b3245bdb5f918244f95b378676
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5834812"
+ms.locfileid: "5869433"
 ---
 # <a name="implement-ads-in-your-app"></a><span data-ttu-id="60ea3-104">アプリでの広告の実装</span><span class="sxs-lookup"><span data-stu-id="60ea3-104">Implement ads in your app</span></span>
 

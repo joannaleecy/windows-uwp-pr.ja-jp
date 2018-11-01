@@ -8,11 +8,11 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 76de6c5c1e8925dd8b166a8d99c39116bf66141d
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5829720"
+ms.locfileid: "5870728"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a><span data-ttu-id="40159-104">新機能、Windows 開発者向けドキュメントの 2018 年 8 月</span><span class="sxs-lookup"><span data-stu-id="40159-104">What's New in the Windows Developer Docs in August 2018</span></span>
 

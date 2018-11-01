@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、データ、型
 ms.localizationpriority: medium
 ms.openlocfilehash: 5aa6e17fcd95813b6abe05e9e42ad7c86657159f
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5838871"
+ms.locfileid: "5873939"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a><span data-ttu-id="a5b92-104">標準 C++ のデータ型と C++/WinRT</span><span class="sxs-lookup"><span data-stu-id="a5b92-104">Standard C++ data types and C++/WinRT</span></span>
 

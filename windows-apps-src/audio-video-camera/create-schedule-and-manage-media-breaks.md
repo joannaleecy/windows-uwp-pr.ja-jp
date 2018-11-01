@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0feb7f6771254bf500e4b64fd0e632daad9817e4
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5813103"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5874480"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a><span data-ttu-id="0c075-104">メディアの中断の作成、スケジュール、管理</span><span class="sxs-lookup"><span data-stu-id="0c075-104">Create, schedule, and manage media breaks</span></span>
 

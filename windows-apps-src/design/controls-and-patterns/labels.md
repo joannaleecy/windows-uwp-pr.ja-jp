@@ -14,11 +14,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: c17b2a539a01572bed984b86f72f5439896fac87
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5820127"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5871069"
 ---
 # <a name="labels"></a><span data-ttu-id="f1b60-103">ラベル</span><span class="sxs-lookup"><span data-stu-id="f1b60-103">Labels</span></span>
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e808bf0fe1f521a60aa347efd148ede96be95964
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5835312"
+ms.locfileid: "5871637"
 ---
 # <a name="compressed-texture-resources"></a><span data-ttu-id="b4972-104">圧縮テクスチャ リソース</span><span class="sxs-lookup"><span data-stu-id="b4972-104">Compressed texture resources</span></span>
 

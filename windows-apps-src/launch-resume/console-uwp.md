@@ -8,11 +8,11 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e5923176f5f9fff1a6e4f30a7ba2419e99c074b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5819077"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5873797"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a><span data-ttu-id="6eaf8-104">ユニバーサル Windows プラットフォームを使用してコンソール アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="6eaf8-104">Create a Universal Windows Platform console app</span></span>
 
