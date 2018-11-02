@@ -8,12 +8,12 @@ ms.date: 10/30/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d1774227dc98c4bfa007e7171ce6fddfceea2f2
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: bb11578fcc641c34b4337d90ee37d4084b16da55
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5865901"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5929536"
 ---
 # <a name="xbox-live-sandboxes-introduction"></a>Xbox Live のサンドボックスの概要
 
@@ -107,3 +107,7 @@ Xbox デベロッパー ポータルを使用して、本体でサンドボッ�
 
 1. **[クイックアクション]** にある **[サンドボックスの変更]** をクリックします。
 2. サンドボックス ID を入力し、**[保存すて再起動]** をクリックします。
+
+### <a name="sign-in-with-the-xbox-app"></a>Xbox アプリでのサインイン
+
+開発用に、サインインしている Xbox Live に、テスト対象アカウントを使用することを確認することが、タイトルの適切なサンド ボックスを使用して PC を切り替えることです。 これは、 [Xbox Live のアプリ](https://www.xbox.com/en-US/xbox-app)に署名することで実行できます。 開発環境が起動すると、目的のサンド ボックスの Xbox アプリを使用するが、その他の Xbox Live として同じ制約を使用してサインイン ユーザー サービスのサンド ボックス内で実行されています。 これにより、サンド ボックスの有効なアカウントを使用していることを確認すると便利です。

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 25d5e1d88ec631c3d9105d0291710ca6d0389f13
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5886439"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5946282"
 ---
 # <a name="the-need-for-streaming-resources"></a>ストリーミング リソースのニーズ
 
