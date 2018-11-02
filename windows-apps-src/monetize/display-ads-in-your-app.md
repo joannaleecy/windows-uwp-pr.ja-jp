@@ -8,12 +8,12 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, バナー, 広告コントロール, スポット広告
 ms.localizationpriority: medium
-ms.openlocfilehash: 738c643f3c83a4f88f5c52c7337c467366ac8fe5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 7acf2424a7d2fee322ba799ec670f0576b33a208
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938094"
+ms.locfileid: "5970671"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Microsoft Advertising SDK を使用したアプリでの広告の表示
 
@@ -92,7 +92,7 @@ Microsoft Advertising SDK では、アプリで使用できるさまざまな種
 
 ## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>手順 3: 広告ユニットを作成し、仲介を構成する
 
-アプリのテストが完了し、Microsoft Store にそのアプリを提出する準備ができたら、Windows デベロッパー センター ダッシュボードの [[アプリ内広告](../publish/in-app-ads.md)] ページで広告ユニットを作成します。 次に、アプリがライブ広告を受信できるように、この広告ユニットを使用するようにアプリのコードを更新します。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
+アプリのテストが完了し、ストアに提出する準備ができたら、パートナー センターで[アプリ内広告](../publish/in-app-ads.md)] ページで広告ユニットを作成します。 次に、アプリがライブ広告を受信できるように、この広告ユニットを使用するようにアプリのコードを更新します。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
 
 既定では、アプリはマイクロソフトの有料広告ネットワークの広告を表示します。 広告の収益を最大化するには、広告ユニットの[広告仲介](ad-mediation-service.md)を有効化することで、Taboola や Smaato など、その他の有料広告ネットワークの広告を表示できます。 また、Microsoft アプリ プロモーション キャンペーンの広告を用意することでも、アプリ プロモーション機能を強化できます。
 
@@ -100,9 +100,9 @@ UWP アプリで広告仲介の使用を開始するには、広告ユニット�
 
 ## <a name="step-4-submit-your-app-and-review-performance"></a>手順 4: アプリを提出してパフォーマンスを確認する
 
-広告を含むアプリの開発が完了したら、デベロッパー センター ダッシュボードに[更新したアプリを提出](https://docs.microsoft.com/windows/uwp/publish/app-submissions)できます。それにより、ストアでアプリを利用できるようになります。 広告を表示するアプリは、[Microsoft Store ポリシーの第 10.10 項](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)と、[アプリ開発者契約の追加条項 E](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) で指定されたその他の要件を満たしている必要があります。
+広告を含むアプリの開発が完了したら、ストアで利用できるようにするパートナー センターでの[更新されたアプリを提出](https://docs.microsoft.com/windows/uwp/publish/app-submissions)することができます。 広告を表示するアプリは、[Microsoft Store ポリシーの第 10.10 項](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)と、[アプリ開発者契約の追加条項 E](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) で指定されたその他の要件を満たしている必要があります。
 
-アプリがストアで公開されて利用できるようになったら、ダッシュボードで[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認して、継続的に仲介の設定に変更を加えることで、広告のパフォーマンスを最適化できます。 広告の収益は[入金状況](../publish/payout-summary.md)に表示されます。
+後、アプリが公開されてストア、パートナー センターで、[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認し、引き続き、広告のパフォーマンスを最適化するために、仲介設定を変更できます。 広告の収益は[入金状況](../publish/payout-summary.md)に表示されます。
 
 <span id="additional-help" />
 
