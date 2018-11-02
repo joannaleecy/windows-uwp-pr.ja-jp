@@ -12,12 +12,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: f641ec3333ed0eda1fdfa5ff82ef236b5ec186ba
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: cf3a69de36f1292dd6ccabb945a33a893064bd02
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927106"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971895"
 ---
 # <a name="combo-box"></a>コンボ ボックス
 
@@ -169,15 +169,15 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 #### <a name="selected-item-behavior-change"></a>選択した項目の動作の変更
 
-RS5 で (Windows SDK バージョン 10.0.NNNNN.0 (Windows 10、バージョン YYMM) 選択した項目の動作が編集可能なコンボ ボックスをサポートするために更新されます。
+Windows 10、バージョン 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) で選択した項目の動作が編集可能なコンボ ボックスをサポートするために更新された後で、またはします。
 
-RS5、SelectedItem プロパティの値の前に (およびそのため、「selectedvalue」と SelectedIndex)、コンボ ボックス項目のコレクション内にする必要がありました。 前の例では、設定を使用して`colorComboBox.SelectedItem = "Pink"`結果します。
+SDK 17763、SelectedItem プロパティの値の前に (およびそのため、「selectedvalue」と SelectedIndex)、コンボ ボックス項目のコレクション内にする必要がありました。 前の例では、設定を使用して`colorComboBox.SelectedItem = "Pink"`結果します。
 
 - SelectedItem = null
 - 「Selectedvalue」= null
 - SelectedIndex は-1
 
-RS5 以降では、SelectedItem プロパティの値 (そのため、および「selectedvalue」と SelectedIndex) コンボ ボックスの項目のコレクション内にする必要はありません。 前の例では、設定を使用して`colorComboBox.SelectedItem = "Pink"`結果します。
+Sdk 17763 以降、SelectedItem プロパティの値 (とそのため、「selectedvalue」と SelectedIndex)、コンボ ボックス項目のコレクション内にする必要はありません。 前の例では、設定を使用して`colorComboBox.SelectedItem = "Pink"`結果します。
 
 - SelectedItem ピンク =
 - 「Selectedvalue」ピンク =
@@ -192,7 +192,7 @@ RS5 以降では、SelectedItem プロパティの値 (そのため、および�
 ## <a name="make-a-combo-box-editable"></a>コンボ ボックスを編集します。
 
 > [!IMPORTANT]
-> この機能[最新の Windows 10 Insider Preview ビルドと SDK](https://insider.windows.com/for-developers/)が必要です。
+> この機能は、Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) を必要とまたはそれ以降。
 
 コンボ ボックスで、ユーザーは既定では、オプションの事前に定義された一覧から選択します。 ただし、これには一覧には、有効な値のサブセットのみが含まれて、ユーザーに記載されていないその他の値を入力できる必要がありますである場合があります。 これをサポートするには、ことができますコンボ ボックス編集可能です。
 
