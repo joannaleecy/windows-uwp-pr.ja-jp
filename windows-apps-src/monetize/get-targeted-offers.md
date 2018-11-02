@@ -8,12 +8,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store ターゲット オファー API, ターゲット オファーの取得
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a0e9237c7c803a64ec20df0c501773f690f5e9
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 87d59a4b5dabbc76c231e84034d701fccfe36fcf
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931868"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5972454"
 ---
 # <a name="get-targeted-offers"></a>ターゲット オファーを取得する
 
@@ -57,7 +57,7 @@ Authorization: Bearer <Microsoft Account token>
 
 | フィールド      | 型   | 説明         |
 |------------|--------|------------------|
-| offers      | array  | 現在のユーザーが利用できるターゲット オファーに関連付けられているアドオンの製品 ID の配列。 これらの製品 ID は、Windows デベロッパー センター ダッシュボードにあるアプリの **[ターゲット オファー]** ページで指定されます。            |
+| offers      | array  | 現在のユーザーが利用できるターゲット オファーに関連付けられているアドオンの製品 ID の配列。 これらの製品 Id は、パートナー センターでのアプリの**対象のプラン**] ページで指定されます。            |
 | trackingId  | string | 必要に応じて独自のコードまたはサービスでターゲット オファーの追跡に使用できる GUID です。 |
 
 

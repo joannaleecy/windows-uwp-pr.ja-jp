@@ -4,19 +4,19 @@ description: 接続型アニメーションを使用すると、2 つの異な�
 title: 接続型アニメーション
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 10/25/2017
+ms.date: 10/04/2018
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 77050103bb78788a5c1868a41d315edd6832a5fe
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 51cf9dd0d28590d86bf05cc16634e465e260626c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938849"
+ms.locfileid: "5977084"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>UWP アプリ用の接続型アニメーション
 
@@ -55,9 +55,9 @@ ms.locfileid: "5938849"
 ## <a name="configure-connected-animation"></a>接続型アニメーションを構成します。
 
 > [!IMPORTANT]
-> この機能は、アプリのターゲット バージョンは、RS5 である必要があります (Windows SDK バージョン 10.0.NNNNN.0 (Windows 10、バージョン YYMM) 以上。 構成プロパティでは、以前の Sdk で利用できません。 RS5 より小さい最小バージョンをターゲットにする (Windows SDK バージョン 10.0.NNNNN.0 (Windows 10、バージョン YYMM) を使用してアダプティブ コードや条件付き XAML します。 詳しくは、[バージョン アダプティブ アプリ](/debug-test-perf/version-adaptive-apps)を参照してください。
+> この機能では、アプリのターゲット バージョンの Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) である必要がありますまたはそれ以降。 構成プロパティでは、以前の Sdk で利用できません。 SDK 17763 より小さい最小バージョンをターゲットにするか、アダプティブ コードや条件付き XAML を使用します。 詳しくは、[バージョン アダプティブ アプリ](/debug-test-perf/version-adaptive-apps)を参照してください。
 
-接続型アニメーションをさらには、Fluent design を具体化以降 RS5 では、アニメーションを提供することによって構成に合わせた前方用と前に戻るページのナビゲーション。
+接続型アニメーションをさらに Windows 10、バージョン 1809、以降では Fluent design を具体化アニメーションを提供することによって構成に合わせた前方用と前に戻るページのナビゲーション。
 
 アニメーションは、構成を指定するには、ConnectedAnimation に構成プロパティを設定します。 (これの例を示しますが、次のセクションに表示されます)。
 
@@ -74,7 +74,7 @@ ms.locfileid: "5938849"
 
 | [BasicConnectedAnimationConfiguration]() |
 | - |
-| これは、既定の (およびのみ) RS5 より前の SDK バージョンで使用されるアニメーション (Windows SDK バージョン 10.0.NNNNN.0 (Windows 10、バージョン YYMM)。 |
+| これは、既定の (およびのみ) Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) より前のバージョンで使用されるアニメーションです。 |
 
 ### <a name="connectedanimationservice-configuration"></a>ConnectedAnimationService の構成
 

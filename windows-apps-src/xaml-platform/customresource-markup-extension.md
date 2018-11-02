@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fb88fc3a764a89dfe7ac8a9c399149b6b98eca5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933469"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5973504"
 ---
 # <a name="customresource-markup-extension"></a>{CustomResource} マークアップ拡張
 

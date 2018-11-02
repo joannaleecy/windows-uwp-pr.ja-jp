@@ -8,12 +8,12 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 55843f229252b2f68df096442f27544a59ce69cd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 495bf2e58fafd9e321937bd6fdb3be8c8dea68e2
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945241"
+ms.locfileid: "5973614"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C# のコード例 : アプリ、アドオン、およびフライトの申請
 
@@ -38,7 +38,7 @@ ms.locfileid: "5945241"
 次の例では、コマンド ライン プログラムを実装し、この記事の他のサンプル メソッドを呼び出して、Microsoft Store 申請 API のさまざまな使用方法を示します。 このプログラムを採用するには、次の手順を実行してください。
 
 * ```ApplicationId```、```InAppProductId```、および ```FlightId``` プロパティを、管理するアプリ、アドオン、およびパッケージ フライトの ID に割り当てます。
-* ```ClientId``` および ```ClientSecret``` プロパティをアプリのクライアント ID とキーに割り当て、```TokenEndpoint``` URL 内の文字列 *tenantid* をアプリのテナント ID に置き換えます。 詳しくは、[Azure AD アプリケーションを Windows デベロッパー センター アカウントに関連付ける方法](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)をご覧ください。
+* ```ClientId``` および ```ClientSecret``` プロパティをアプリのクライアント ID とキーに割り当て、```TokenEndpoint``` URL 内の文字列 *tenantid* をアプリのテナント ID に置き換えます。 詳細については、 [Azure AD アプリケーションをパートナー センター アカウントに関連付ける方法](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)をご覧ください。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
@@ -56,13 +56,13 @@ ms.locfileid: "5945241"
 
 ## <a name="create-an-app-submission"></a>アプリの申請の作成
 
-次の例では、Microsoft Store 申請 API のいくつかのメソッドを使ってアプリの申請を更新するクラスを実装します。 クラスの ```RunAppSubmissionUpdateSample``` メソッドは、新しい申請を最後に公開された申請の複製として作成し、複製された申請を更新して Windows デベロッパー センターにコミットします。 具体的には、```RunAppSubmissionUpdateSample``` メソッドは次のタスクを実行します。
+次の例では、Microsoft Store 申請 API のいくつかのメソッドを使ってアプリの申請を更新するクラスを実装します。 ```RunAppSubmissionUpdateSample```クラスのメソッドの最後に公開された申請の複製として新しい申請を作成して、次を更新し、パートナー センターに複製された申請をコミットします。 具体的には、```RunAppSubmissionUpdateSample``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたアプリのデータを取得](get-an-app.md)します。
 2. 次に、[アプリの保留中の申請を削除](delete-an-app-submission.md)します (存在する場合)。
 3. その後、[アプリの新しい申請を作成](create-an-app-submission.md)します (新しい申請は、最後に公開された申請のコピーです)。
 4. 新しい申請の詳細を変更し、申請の新しいパッケージを Azure Blob Storage にアップロードします。
-5. 次に、新しい申請を[更新](update-an-app-submission.md)してから Windows デベロッパー センターに[コミット](commit-an-app-submission.md)します。
+5. 次に、その[更新プログラム](update-an-app-submission.md)とし、パートナー センターに新しい申請を[コミット](commit-an-app-submission.md)します。
 6. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-an-app-submission.md)します。
 
 > [!div class="tabbedCodeSnippets"]
@@ -77,7 +77,7 @@ ms.locfileid: "5945241"
 1. まず、メソッドは[新しアドオンを作成](create-an-add-on.md)します。
 2. 次に、その[アドオンの新しい申請を作成](create-an-add-on-submission.md)します。
 3. 申請のアイコンが含まれた ZIP アーカイブを Azure Blob Storage にアップロードします。
-4. 次に、[Windows デベロッパー センターに新しい申請をコミット](commit-an-add-on-submission.md)します。
+4. 次に、その[パートナー センターに新しい申請をコミット](commit-an-add-on-submission.md)します。
 5. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-an-add-on-submission.md)します。
 
 > [!div class="tabbedCodeSnippets"]
@@ -87,12 +87,12 @@ ms.locfileid: "5945241"
 
 ## <a name="update-an-add-on-submission"></a>アドオンの申請の更新
 
-次の例では、Microsoft Store 申請 API のいくつかのメソッドを使って既存のアドオンの申請を更新するクラスを実装します。 クラスの ```RunInAppProductSubmissionUpdateSample``` メソッドは、新しい申請を最後に公開された申請の複製として作成し、複製された申請を更新して Windows デベロッパー センターにコミットします。 具体的には、```RunInAppProductSubmissionUpdateSample``` メソッドは次のタスクを実行します。
+次の例では、Microsoft Store 申請 API のいくつかのメソッドを使って既存のアドオンの申請を更新するクラスを実装します。 ```RunInAppProductSubmissionUpdateSample```クラスのメソッドの最後に公開された申請の複製として新しい申請を作成して、次を更新し、パートナー センターに複製された申請をコミットします。 具体的には、```RunInAppProductSubmissionUpdateSample``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたアドオンのデータを取得](get-an-add-on.md)します。
 2. 次に、[アドオンの保留中の申請を削除](delete-an-add-on-submission.md)します (存在する場合)。
 3. その後、[アドオンの新しい申請を作成](create-an-add-on-submission.md)します (新しい申請は、最後に公開された申請のコピーです)。
-5. 次に、新しい申請を[更新](update-an-add-on-submission.md)してから Windows デベロッパー センターに[コミット](commit-an-add-on-submission.md)します。
+5. 次に、その[更新プログラム](update-an-add-on-submission.md)とし、パートナー センターに新しい申請を[コミット](commit-an-add-on-submission.md)します。
 6. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-an-add-on-submission.md)します。
 
 > [!div class="tabbedCodeSnippets"]
@@ -102,13 +102,13 @@ ms.locfileid: "5945241"
 
 ## <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 
-次の例では、Microsoft Store 申請 API のいくつかのメソッドを使ってパッケージ フライトの申請を更新するクラスを実装します。 クラスの ```RunFlightSubmissionUpdateSample``` メソッドは、新しい申請を最後に公開された申請の複製として作成し、複製された申請を更新して Windows デベロッパー センターにコミットします。 具体的には、```RunFlightSubmissionUpdateSample``` メソッドは次のタスクを実行します。
+次の例では、Microsoft Store 申請 API のいくつかのメソッドを使ってパッケージ フライトの申請を更新するクラスを実装します。 ```RunFlightSubmissionUpdateSample```クラスのメソッドの最後に公開された申請の複製として新しい申請を作成して、次を更新し、パートナー センターに複製された申請をコミットします。 具体的には、```RunFlightSubmissionUpdateSample``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたパッケージ フライトのデータを取得](get-a-flight.md)します。
 2. 次に、[パッケージ フライトの保留中の申請を削除](delete-a-flight-submission.md)します (存在する場合)。
 3. その後、[パッケージ フライトの新しい申請を作成](create-a-flight-submission.md)します (新しい申請は、最後に公開された申請のコピーです)。
 4. 申請の新しいパッケージを Azure Blob Storage にアップロードします。
-5. 次に、新しい申請を[更新](update-a-flight-submission.md)してから Windows デベロッパー センターに[コミット](commit-a-flight-submission.md)します。
+5. 次に、その[更新プログラム](update-a-flight-submission.md)とし、パートナー センターに新しい申請を[コミット](commit-a-flight-submission.md)します。
 6. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-a-flight-submission.md)します。
 
 > [!div class="tabbedCodeSnippets"]

@@ -8,16 +8,16 @@ ms.date: 10/18/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox One ゲームの入手数
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ca46903e581922cc571a854d9fa110fa261ece
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 1bf37fa03209561540d63dd4f63a76878f9d813c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5941032"
+ms.locfileid: "5976593"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Xbox One ゲームの入手数の取得
 
-Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、デベロッパー センター ダッシュボードの [XDP 分析] で利用できる Xbox One ゲームに関する集計入手データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
+Microsoft Store 分析 API 集計入手データを取得する JSON 形式で、Xbox One ゲームを Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析ダッシュ ボードで利用するには、このメソッドを使います。
 
 ## <a name="prerequisites"></a>前提条件
 

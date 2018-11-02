@@ -7,12 +7,12 @@ ms.date: 08/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アドオンのコンバージョン, チャネル
 ms.localizationpriority: medium
-ms.openlocfilehash: d64af06acb730160f7f9f7f0e9eda96074b3eac7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0cf4e0f2cad0ea497e7d97c9b415ab385703c5c4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940268"
+ms.locfileid: "5974676"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>チャネルごとのアドオンのコンバージョンの取得
 
@@ -21,7 +21,7 @@ ms.locfileid: "5940268"
 * *コンバージョン*は、(Microsoft アカウントでサインインした) ユーザーが、アドオン (有料の場合も無料の場合も含む) のライセンスを新しく取得したことを意味します。
 * *チャネル* はユーザーがアプリの内容ページにアクセスするために使用した方法 (たとえば、ストアを通じて、または[カスタム アプリ プロモーション キャンペーン](../publish/create-a-custom-app-promotion-campaign.md)) です。
 
-この情報は、Windows デベロッパー センター ダッシュボードの[アドオン取得レポート](../publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id)でも確認することができます。
+この情報は、[アドオン取得] レポート](../publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id)では、パートナー センターで利用可能なもできます。
 
 ## <a name="prerequisites"></a>前提条件
 

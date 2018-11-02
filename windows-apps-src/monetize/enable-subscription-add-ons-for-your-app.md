@@ -7,12 +7,12 @@ ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b89cad4c299f7326d0bb7d9ea4b8c6685f70f26c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 207203805dfee0fd54a9d6d6fd4987b098710f4c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933114"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5973707"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>アプリのサブスクリプション アドオンの有効化
 
@@ -35,7 +35,7 @@ UWP アプリのサブスクリプション アドオンでは、次の機能を
 
 アプリでサブスクリプション アドオンを購入できるようにするには、次の手順に従います。
 
-1. デベロッパー センター ダッシュボードでサブスクリプションの[アドオンの申請を作成](../publish/add-on-submissions.md)し、申請を公開します。 アドオンの申請プロセスに従い、次のプロパティをよく確認します。
+1. パートナー センターで、サブスクリプション[アドオンの申請を作成](../publish/add-on-submissions.md)し、申請を公開します。 アドオンの申請プロセスに従い、次のプロパティをよく確認します。
 
     * [製品の種類](../publish/set-your-add-on-product-id.md#product-type): **[サブスクリプション]** を選択していることを確認します。
 
@@ -70,8 +70,8 @@ UWP アプリのサブスクリプション アドオンでは、次の機能を
 
 これらの例には、次の前提条件があります。
 * **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。
-* Windows デベロッパー センター ダッシュボードで[アプリの申請を作成](https://docs.microsoft.com/windows/uwp/publish/app-submissions)し、このアプリが Microsoft Store で公開されている。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
-* デベロッパー センター ダッシュボードで[アプリのサブスクリプション アドオンを作成](../publish/add-on-submissions.md)した。
+* パートナー センター内にある[アプリの申請を作成](https://docs.microsoft.com/windows/uwp/publish/app-submissions)し、このアプリがストアに公開します。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
+* パートナー センターで[、アプリのサブスクリプション アドオンを作成した](../publish/add-on-submissions.md)あります。
 
 これらの例のコードは、次の点を前提としています。
 * コード ファイルに **Windows.Services.Store** 名前空間と **System.Threading.Tasks** 名前空間を使うための **using** ステートメントがある。

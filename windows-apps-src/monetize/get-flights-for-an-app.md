@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
-description: Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライト情報を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
-title: アプリのパッケージ フライトの取得
+description: パートナー センター アカウントに登録されているアプリのパッケージ フライト情報を取得する、Microsoft Store 申請 API でこのメソッドを使います。
+title: アプリのパッケージ フライトの入手
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライト, パッケージ フライト
 ms.localizationpriority: medium
-ms.openlocfilehash: 847e837c67990b5cbdb3a7a28c0c8115e96c8644
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: f67bb76e1d964dd246be16870a7c76591eb1e7d6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930393"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5974273"
 ---
-# <a name="get-package-flights-for-an-app"></a>アプリのパッケージ フライトの取得
+# <a name="get-package-flights-for-an-app"></a>アプリのパッケージ フライトの入手
 
-Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトの一覧を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。 パッケージ フライトについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。
+パートナー センター アカウントに登録されているアプリのパッケージ フライトを一覧表示、Microsoft Store 申請 API でこのメソッドを使います。 パッケージ フライトについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -115,7 +115,7 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 404  | パッケージ フライトは見つかりませんでした。 |
-| 409  | アプリが、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能を使用しています。  |
+| 409  | アプリでは、 [Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センターの機能を使用します。  |
 
 
 ## <a name="related-topics"></a>関連トピック

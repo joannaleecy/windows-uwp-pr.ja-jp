@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
-description: Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを作成するには、Microsoft Store 申請 API の以下のメソッドを使います。
+description: パートナー センター アカウントに登録されているアプリのパッケージ フライトを作成する、Microsoft Store 申請 API でこのメソッドを使います。
 title: パッケージ フライトの作成
 ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの作成
 ms.localizationpriority: medium
-ms.openlocfilehash: 57ad1847e8989cb6aed20024d1c13d36e154d834
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 1e7fec507497784849bdda76ed0fdd4993181731
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933512"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5977562"
 ---
 # <a name="create-a-package-flight"></a>パッケージ フライトの作成
 
-Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを作成するには、Microsoft Store 申請 API の以下のメソッドを使います。
+パートナー センター アカウントに登録されているアプリのパッケージ フライトを作成する、Microsoft Store 申請 API でこのメソッドを使います。
 
 > [!NOTE]
 > このメソッドは、申請なしでパッケージ フライトを作成します。 パッケージ フライトの申請を作成するには、「[パッケージ フライト申請の管理](manage-flight-submissions.md)」のメソッドをご覧ください。
@@ -100,7 +100,7 @@ Content-Type: application/json
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | string  | パッケージ フライトの ID。 この値は、デベロッパー センターによって提供されます。  |
+| flightId            | string  | パッケージ フライトの ID。 この値は、パートナー センターによって提供されます。  |
 | friendlyName           | string  | 要求で指定されているパッケージ フライトの名前。   |  
 | groupIds           | array  | 要求で指定されている、パッケージ フライトに関連付けられているフライト グループの ID を含む文字列の配列。 フライト グループについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。   |
 | rankHigherThan           | string  | 要求で指定されている、現在のパッケージ フライトの次に低位のパッケージ フライトのフレンドリ名。 フライト グループの順位について詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。  |
@@ -113,7 +113,7 @@ Content-Type: application/json
 | エラー コード |  説明   |
 |--------|------------------|
 | 400  | 要求が無効です。 |
-| 409  | 現在の状態が原因でパッケージ フライトを作成できませんでした。または、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアプリで使用されています。 |   
+| 409  | 現在の状態が原因パッケージ フライトを作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック
