@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 112f69704c502f1aa394aa1dd8d544aa0728477d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: 7ffac7fa77191bbe56e7aa3870c71c3c02254d72
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881424"
+ms.locfileid: "5933945"
 ---
 # <a name="app-management-and-services"></a>アプリの管理とサービス
 
@@ -39,12 +39,9 @@ ms.locfileid: "5881424"
 
 ## <a name="maps"></a>マップ
 
-Windows Phone 8.1 と以前公開したアプリでマップ サービスを使用するには、マップ サービス アプリケーション ID とトークンがアプリのコードに含める必要があります。 **[マップ]** ページの **[サービス]** セクションでこのトークンを取得できます。
+Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 Bing Maps Developer Center から、マップ認証キーを要求し、アプリに追加する方法について詳しくは、詳しくは[、マップ認証キーの要求](../maps-and-location/authentication-key.md)を参照してください。 
 
-> [!NOTE]
-> Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key)」をご覧ください。
-
-詳しくは、「[マップ サービスの使用](use-map-services.md)」をご覧ください。
+Windows Phone 8.1 と以前公開したアプリのみの**マップ**ページを使用します。 これらのアプリでマップ サービスを使用するには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンを要求する必要があります。 **トークンを取得する**] をクリックすると、マップ サービス アプリケーション ID (**ApplicationID**) を生成し、アプリの認証トークン (**AuthenticationToken**) サービスをマップしますがします。 必ずをパッケージ化する前に、コードにこれらの値を追加し、アプリを提出してください。 詳細については、「[Windows Phone 8 でマップ コントロールをページに追加する方法](http://go.microsoft.com/fwlink/p/?LinkId=614882)」を参照してください。
 
 ## <a name="product-collections-and-purchases"></a>製品のコレクションと購入
 

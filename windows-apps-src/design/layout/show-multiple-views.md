@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 048b62e5131852c917b6ec6cd66273760509ef02
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5869720"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5934414"
 ---
 # <a name="show-multiple-views-for-an-app"></a>アプリの複数のビューの表示
 

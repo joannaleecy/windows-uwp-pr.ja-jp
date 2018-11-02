@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bd9db0afa914ef7a56dbd55c938129b86a43743
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5887020"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5937390"
 ---
 # <a name="specular-light-maps"></a>反射ライト マップ
 
