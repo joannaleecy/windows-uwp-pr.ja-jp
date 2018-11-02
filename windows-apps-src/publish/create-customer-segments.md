@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp, セグメント, セグメント, 対象グループ, ユーザー
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
-ms.openlocfilehash: b53c3c3480a986e77ad44f95831b1be5ce016808
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: 8aa61056a25fca4193cf325c8573813bf1f6a560
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5882778"
+ms.locfileid: "5929606"
 ---
 # <a name="create-customer-segments"></a>ユーザー セグメントを作成する
 
@@ -43,7 +43,7 @@ ms.locfileid: "5882778"
 4.  **[このアプリからユーザーを含める]** のリストで、対象とするアプリの 1 つを選択します。
 5.  **[包含条件の定義]** セクションで、セグメントのフィルター条件を指定します。
 
-    フィルター条件は、**[取得]**、**[取得元]**、**[使用状況]**、**[統計データ]**、**[評価]**、**[Churn prediction] (チャーン予測)**、**[ストアでの入手]**、**[ストアでの購入]**、**[ストアでの支出額]** など、さまざまな条件から選ぶことができます。
+    さまざまなフィルター条件は、**取得****取得元**、**統計データ**、**評価**、**チャーン予測入力**、**ストアの購入**、**ストアの取得数**、および**ストアから選択することができます。費やす**します。
 
     たとえば、18 ～ 24 歳のアプリ ユーザーのみを含むセグメントを作成する場合には、フィルター条件としてドロップダウン リストから **[統計データ]**、**[年齢グループ]**、**[次の値に一致する]**、**[18 ～ 24]** を選択します。
 

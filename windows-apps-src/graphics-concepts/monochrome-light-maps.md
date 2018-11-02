@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 72bea3badb19991883e2a6cc62463ab2dc58ec4a
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5876463"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5929324"
 ---
 # <a name="monochrome-light-maps"></a>モノクロ ライト マップ
 
