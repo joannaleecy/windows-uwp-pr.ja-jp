@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, レーシング ハンドル, フォース フィードバック
 ms.localizationpriority: medium
 ms.openlocfilehash: 20b4b35bb729ee49dbfd3f2b2b2a029a4319521c
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5861097"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5926173"
 ---
 # <a name="racing-wheel-and-force-feedback"></a>レーシング ハンドルとフォース フィードバック
 
@@ -41,7 +41,7 @@ Xbox One レーシング ハンドルでは、オプションのデバイス機�
 
 ### <a name="force-feedback"></a>フォース フィードバック
 
-Some Xbox One racing wheels offer true force feedback&mdash;that is, they can apply actual forces on an axis of control such as their steering wheel&mdash;not just simple vibration. ゲームはこの機能を利用して、一層の没入感を演出し (_クラッシュ ダメージのシミュレーション_、"道路の感覚")、運転をさらに難しくします。
+一部の Xbox One レーシング ハンドルには、単なるバイブレーションではなく、真のフォース フィードバック &mdash; つまり、ハンドルなどのコントロール軸に実際の力を加えることができます &mdash; が備わっています ゲームはこの機能を利用して、一層の没入感を演出し (_クラッシュ ダメージのシミュレーション_、"道路の感覚")、運転をさらに難しくします。
 
 詳しくは、「[フォース フィードバックの概要](#force-feedback-overview)」をご覧ください。
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, 状態
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a656d06c2be720e4231ccf4ee0e5626466b5fd8
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5861451"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5929750"
 ---
 # <a name="get-the-status-of-an-add-on-submission"></a>アドオンの申請の状態の取得
 

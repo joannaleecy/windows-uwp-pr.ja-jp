@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c0bc236fd3e9e37a759f83e3f24bfcad4817f068
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5864681"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5929248"
 ---
 # <a name="selecting-text-and-images"></a>テキストと画像の選択
 

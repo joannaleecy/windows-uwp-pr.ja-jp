@@ -8,19 +8,19 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 応答、応答することを確認します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 823ca28618540dbaab1f4e5711ee59d277b0c894
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: 32ded7cc66cda75fbb6edb9ab9d84c21c2d02cff
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5877166"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5930811"
 ---
 # <a name="respond-to-customer-reviews"></a>顧客のレビューに返信する
 
 
 フィードバックをリッスンしているユーザーにわかるようにするアプリのレビューに返信できます。 レビューへの返信機能を使えば、追加した機能や、顧客のコメントに基づいて修正したバグについて顧客に伝えたり、アプリを改善する方法についてさらに細かいフィードバックを得たりできます。 すべての windows 10 ユーザーを表示向け Microsoft ストアでの応答が表示されます。 (これらは、オプトアウトしていないし、Windows 10、バージョン 1803 以降を実行するデバイスを使用している) 場合は、顧客にメールで返信を送信することもできます。
 
-アプリのレビューを表示し、返信するには、[パートナー センター](https://partner.microsoft.com/dashboard)でアプリを検索します。 左側のナビゲーション メニューで、**分析**を展開し、 [[レビュー] レポート](reviews-report.md)を表示する**レビュー**をクリックします。 返信を提供する**レビューに返信**を選択します。
+アプリのレビューを表示し、返信するには、[パートナー センター](https://partner.microsoft.com/dashboard)でアプリを検索します。 左側のナビゲーション メニューで、展開*分析** [[レビュー] レポート](reviews-report.md)を表示する**レビュー**をクリックします。 返信を提供する**レビューに返信**を選択します。
 
 > [!TIP]
 > レビューに返信するには、パートナー センターを使って、返信するレビュー[プログラムで](../monetize/submit-responses-to-app-reviews.md)、または[デベロッパー センター アプリ](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)を使って返信できます。

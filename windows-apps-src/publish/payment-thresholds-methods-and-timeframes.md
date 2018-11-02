@@ -954,7 +954,7 @@ ms.locfileid: "5921176"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台湾</td>
+    <td>Taiwan</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>25 USD</td>
@@ -2016,7 +2016,7 @@ ms.locfileid: "5921176"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台湾</td>
+    <td>Taiwan</td>
     <td>50 USD</td>
     <td>電信送金</td>
     <td>50 USD</td>
@@ -3064,7 +3064,7 @@ ms.locfileid: "5921176"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>台湾</td>
+    <td>Taiwan</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>25 USD</td>
@@ -4055,7 +4055,7 @@ ms.locfileid: "5921176"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台湾</td>
+    <td>Taiwan</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>25 USD</td>
