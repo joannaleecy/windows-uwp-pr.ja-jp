@@ -11,69 +11,69 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 50d2d5d6dd53ffcb14ed6223e2fd0f85324a8438
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5859669"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5940712"
 ---
-# <a name="controls-by-function"></a><span data-ttu-id="e3711-103">機能別コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-103">Controls by function</span></span>
+# <a name="controls-by-function"></a><span data-ttu-id="baedd-103">機能別コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-103">Controls by function</span></span>
 
-<span data-ttu-id="e3711-104">Windows の XAML UI フレームワークには、UI 開発をサポートする多くのコントロールのライブラリが用意されています。</span><span class="sxs-lookup"><span data-stu-id="e3711-104">The XAML UI framework for Windows provides an extensive library of controls that support UI development.</span></span> <span data-ttu-id="e3711-105">これらのコントロールの一部は視覚的に表示されますが、それ以外のコントロールは他のコントロールまたはコンテンツ (画像やメディアなど) のコンテナーとして機能します。</span><span class="sxs-lookup"><span data-stu-id="e3711-105">Some of these controls have a visual representation; others function as the containers for other controls or content, such as images and media.</span></span> 
+<span data-ttu-id="baedd-104">Windows の XAML UI フレームワークには、UI 開発をサポートする多くのコントロールのライブラリが用意されています。</span><span class="sxs-lookup"><span data-stu-id="baedd-104">The XAML UI framework for Windows provides an extensive library of controls that support UI development.</span></span> <span data-ttu-id="baedd-105">これらのコントロールの一部は視覚的に表示されますが、それ以外のコントロールは他のコントロールまたはコンテンツ (画像やメディアなど) のコンテナーとして機能します。</span><span class="sxs-lookup"><span data-stu-id="baedd-105">Some of these controls have a visual representation; others function as the containers for other controls or content, such as images and media.</span></span> 
 
-<span data-ttu-id="e3711-106">[XAML UI の基本のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619992)をダウンロードすると、Windows UI コントロールの多くを実際に見ることができます。</span><span class="sxs-lookup"><span data-stu-id="e3711-106">You can see many of the Windows UI controls in action by downloading the [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992).</span></span>
+<span data-ttu-id="baedd-106">[XAML UI の基本のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619992)をダウンロードすると、Windows UI コントロールの多くを実際に見ることができます。</span><span class="sxs-lookup"><span data-stu-id="baedd-106">You can see many of the Windows UI controls in action by downloading the [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992).</span></span>
 
 <table>
-<th align="left"><span data-ttu-id="e3711-107">XAML コントロール ギャラリー</span><span class="sxs-lookup"><span data-stu-id="e3711-107">XAML Controls Gallery</span></span><th>
+<th align="left"><span data-ttu-id="baedd-107">XAML コントロール ギャラリー</span><span class="sxs-lookup"><span data-stu-id="baedd-107">XAML Controls Gallery</span></span><th>
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p><span data-ttu-id="e3711-108"><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリがインストールされた場合は、ここをクリックして<a href="xamlcontrolsgallery:/item/NavigationView">、アプリを開き NavigationView の動作を参照してください。</a></span><span class="sxs-lookup"><span data-stu-id="e3711-108">If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a></span></span> </p>
+    <p><span data-ttu-id="baedd-108"><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリがインストールされた場合は、ここをクリックして<a href="xamlcontrolsgallery:/item/NavigationView">、アプリを開き NavigationView の動作を参照してください。</a></span><span class="sxs-lookup"><span data-stu-id="baedd-108">If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a></span></span> </p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT"><span data-ttu-id="e3711-109">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</span><span class="sxs-lookup"><span data-stu-id="e3711-109">Get the XAML Controls Gallery app (Microsoft Store)</span></span></a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics"><span data-ttu-id="e3711-110">ソース コード (GitHub) を入手する</span><span class="sxs-lookup"><span data-stu-id="e3711-110">Get the source code (GitHub)</span></span></a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT"><span data-ttu-id="baedd-109">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</span><span class="sxs-lookup"><span data-stu-id="baedd-109">Get the XAML Controls Gallery app (Microsoft Store)</span></span></a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics"><span data-ttu-id="baedd-110">ソース コード (GitHub) を入手する</span><span class="sxs-lookup"><span data-stu-id="baedd-110">Get the source code (GitHub)</span></span></a></li>
     </ul>
 </td>
 </tr>
 </table>
 
 
-<span data-ttu-id="e3711-111">アプリで使うことができる一般的な XAML コントロールの機能別の一覧を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="e3711-111">Here's a list by function of the common XAML controls you can use in your app.</span></span>
+<span data-ttu-id="baedd-111">アプリで使うことができる一般的な XAML コントロールの機能別の一覧を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="baedd-111">Here's a list by function of the common XAML controls you can use in your app.</span></span>
 
-## <a name="appbars-and-commands"></a><span data-ttu-id="e3711-112">アプリ バーとコマンド</span><span class="sxs-lookup"><span data-stu-id="e3711-112">Appbars and commands</span></span>
+## <a name="appbars-and-commands"></a><span data-ttu-id="baedd-112">アプリ バーとコマンド</span><span class="sxs-lookup"><span data-stu-id="baedd-112">Appbars and commands</span></span>
 
-### <a name="app-bar"></a><span data-ttu-id="e3711-113">アプリ バー</span><span class="sxs-lookup"><span data-stu-id="e3711-113">App bar</span></span>
-<span data-ttu-id="e3711-114">アプリ特有のコマンドを表示するツール バー。</span><span class="sxs-lookup"><span data-stu-id="e3711-114">A toolbar for displaying application-specific commands.</span></span> <span data-ttu-id="e3711-115">「コマンド バー」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e3711-115">See Command bar.</span></span>
+### <a name="app-bar"></a><span data-ttu-id="baedd-113">アプリ バー</span><span class="sxs-lookup"><span data-stu-id="baedd-113">App bar</span></span>
+<span data-ttu-id="baedd-114">アプリ特有のコマンドを表示するツール バー。</span><span class="sxs-lookup"><span data-stu-id="baedd-114">A toolbar for displaying application-specific commands.</span></span> <span data-ttu-id="baedd-115">「コマンド バー」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="baedd-115">See Command bar.</span></span>
 
-<span data-ttu-id="e3711-116">リファレンス: [AppBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-116">Reference: [AppBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.aspx)</span></span> 
+<span data-ttu-id="baedd-116">リファレンス: [AppBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-116">Reference: [AppBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.aspx)</span></span> 
 
-### <a name="app-bar-button"></a><span data-ttu-id="e3711-117">アプリ バーのボタン</span><span class="sxs-lookup"><span data-stu-id="e3711-117">App bar button</span></span>
-<span data-ttu-id="e3711-118">アプリ バー スタイルを使ってコマンドを表示するボタン。</span><span class="sxs-lookup"><span data-stu-id="e3711-118">A button for showing commands using app bar styling.</span></span>
+### <a name="app-bar-button"></a><span data-ttu-id="baedd-117">アプリ バーのボタン</span><span class="sxs-lookup"><span data-stu-id="baedd-117">App bar button</span></span>
+<span data-ttu-id="baedd-118">アプリ バー スタイルを使ってコマンドを表示するボタン。</span><span class="sxs-lookup"><span data-stu-id="baedd-118">A button for showing commands using app bar styling.</span></span>
 
 ![アプリ バーのボタン アイコン](images/controls/app-bar-buttons.png) 
 
-<span data-ttu-id="e3711-120">リファレンス: [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、[SymbolIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx)、[BitmapIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx)、[FontIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx)、[PathIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-120">Reference: [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [SymbolIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx), [BitmapIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx), [FontIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx), [PathIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx)</span></span> 
+<span data-ttu-id="baedd-120">リファレンス: [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、[SymbolIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx)、[BitmapIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx)、[FontIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx)、[PathIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-120">Reference: [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [SymbolIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx), [BitmapIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx), [FontIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx), [PathIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx)</span></span> 
 
-<span data-ttu-id="e3711-121">デザインと使い方: [アプリ バーとコマンド バーのコントロールのガイド](app-bars.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-121">Design and how-to: [App bar and command bar control guide](app-bars.md)</span></span> 
+<span data-ttu-id="baedd-121">デザインと使い方: [アプリ バーとコマンド バーのコントロールのガイド](app-bars.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-121">Design and how-to: [App bar and command bar control guide](app-bars.md)</span></span> 
 
-<span data-ttu-id="e3711-122">サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span><span class="sxs-lookup"><span data-stu-id="e3711-122">Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span></span>
+<span data-ttu-id="baedd-122">サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span><span class="sxs-lookup"><span data-stu-id="baedd-122">Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span></span>
 
-### <a name="app-bar-separator"></a><span data-ttu-id="e3711-123">アプリ バーの区分線</span><span class="sxs-lookup"><span data-stu-id="e3711-123">App bar separator</span></span>
-<span data-ttu-id="e3711-124">コマンド バーのコマンドのグループを視覚的に区切ります。</span><span class="sxs-lookup"><span data-stu-id="e3711-124">Visually separates groups of commands in a command bar.</span></span>
+### <a name="app-bar-separator"></a><span data-ttu-id="baedd-123">アプリ バーの区分線</span><span class="sxs-lookup"><span data-stu-id="baedd-123">App bar separator</span></span>
+<span data-ttu-id="baedd-124">コマンド バーのコマンドのグループを視覚的に区切ります。</span><span class="sxs-lookup"><span data-stu-id="baedd-124">Visually separates groups of commands in a command bar.</span></span>
 
-<span data-ttu-id="e3711-125">リファレンス: [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-125">Reference: [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx)</span></span> 
+<span data-ttu-id="baedd-125">リファレンス: [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-125">Reference: [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx)</span></span> 
 
-<span data-ttu-id="e3711-126">サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span><span class="sxs-lookup"><span data-stu-id="e3711-126">Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span></span>
+<span data-ttu-id="baedd-126">サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span><span class="sxs-lookup"><span data-stu-id="baedd-126">Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span></span>
 
-### <a name="app-bar-toggle-button"></a><span data-ttu-id="e3711-127">アプリ バーのトグル ボタン</span><span class="sxs-lookup"><span data-stu-id="e3711-127">App bar toggle button</span></span>
-<span data-ttu-id="e3711-128">コマンド バーでコマンドを切り替えるボタン。</span><span class="sxs-lookup"><span data-stu-id="e3711-128">A button for toggling commands in a command bar.</span></span>
+### <a name="app-bar-toggle-button"></a><span data-ttu-id="baedd-127">アプリ バーのトグル ボタン</span><span class="sxs-lookup"><span data-stu-id="baedd-127">App bar toggle button</span></span>
+<span data-ttu-id="baedd-128">コマンド バーでコマンドを切り替えるボタン。</span><span class="sxs-lookup"><span data-stu-id="baedd-128">A button for toggling commands in a command bar.</span></span>
 
-<span data-ttu-id="e3711-129">リファレンス: [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-129">Reference: [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx)</span></span> 
+<span data-ttu-id="baedd-129">リファレンス: [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-129">Reference: [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx)</span></span> 
 
-<span data-ttu-id="e3711-130">サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span><span class="sxs-lookup"><span data-stu-id="e3711-130">Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span></span>
+<span data-ttu-id="baedd-130">サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span><span class="sxs-lookup"><span data-stu-id="baedd-130">Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span></span>
 
-### <a name="command-bar"></a><span data-ttu-id="e3711-131">コマンド バー</span><span class="sxs-lookup"><span data-stu-id="e3711-131">Command bar</span></span>
-<span data-ttu-id="e3711-132">アプリ バーのボタン要素のサイズ変更を処理する専用のアプリ バー。</span><span class="sxs-lookup"><span data-stu-id="e3711-132">A specialized app bar that handles the resizing of app bar button elements.</span></span>
+### <a name="command-bar"></a><span data-ttu-id="baedd-131">コマンド バー</span><span class="sxs-lookup"><span data-stu-id="baedd-131">Command bar</span></span>
+<span data-ttu-id="baedd-132">アプリ バーのボタン要素のサイズ変更を処理する専用のアプリ バー。</span><span class="sxs-lookup"><span data-stu-id="baedd-132">A specialized app bar that handles the resizing of app bar button elements.</span></span>
 
 ![コマンド バー コントロール](images/command-bar-compact.png)
 
@@ -84,16 +84,16 @@ ms.locfileid: "5859669"
     <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click"/>
 </CommandBar>
 ```
-<span data-ttu-id="e3711-134">リファレンス: [CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-134">Reference: [CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx)</span></span> 
+<span data-ttu-id="baedd-134">リファレンス: [CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-134">Reference: [CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx)</span></span> 
 
-<span data-ttu-id="e3711-135">デザインと使い方: [アプリ バーとコマンド バーのコントロールのガイド](app-bars.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-135">Design and how-to: [App bar and command bar control guide](app-bars.md)</span></span>
+<span data-ttu-id="baedd-135">デザインと使い方: [アプリ バーとコマンド バーのコントロールのガイド](app-bars.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-135">Design and how-to: [App bar and command bar control guide](app-bars.md)</span></span>
 
-<span data-ttu-id="e3711-136">サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span><span class="sxs-lookup"><span data-stu-id="e3711-136">Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span></span>
+<span data-ttu-id="baedd-136">サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span><span class="sxs-lookup"><span data-stu-id="baedd-136">Sample code: [XAML Commanding sample](http://go.microsoft.com/fwlink/p/?LinkId=620019)</span></span>
 
-## <a name="buttons"></a><span data-ttu-id="e3711-137">ボタン</span><span class="sxs-lookup"><span data-stu-id="e3711-137">Buttons</span></span>
+## <a name="buttons"></a><span data-ttu-id="baedd-137">ボタン</span><span class="sxs-lookup"><span data-stu-id="baedd-137">Buttons</span></span>
 
-### <a name="button"></a><span data-ttu-id="e3711-138">ボタン</span><span class="sxs-lookup"><span data-stu-id="e3711-138">Button</span></span>
-<span data-ttu-id="e3711-139">ユーザーの入力に応答して **Click** イベントを発生させるコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-139">A control that responds to user input and raises a **Click** event.</span></span>
+### <a name="button"></a><span data-ttu-id="baedd-138">ボタン</span><span class="sxs-lookup"><span data-stu-id="baedd-138">Button</span></span>
+<span data-ttu-id="baedd-139">ユーザーの入力に応答して **Click** イベントを発生させるコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-139">A control that responds to user input and raises a **Click** event.</span></span>
 
 ![標準的なボタン](images/controls/button.png)
 
@@ -102,15 +102,15 @@ ms.locfileid: "5859669"
         Click="Button_Click" />
 ```
 
-<span data-ttu-id="e3711-141">リファレンス: [Button](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-141">Reference: [Button](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx)</span></span> 
+<span data-ttu-id="baedd-141">リファレンス: [Button](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-141">Reference: [Button](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx)</span></span> 
 
-<span data-ttu-id="e3711-142">デザインと使い方: [ボタン コントロールのガイド](buttons.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-142">Design and how-to: [Buttons control guide](buttons.md)</span></span> 
+<span data-ttu-id="baedd-142">デザインと使い方: [ボタン コントロールのガイド](buttons.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-142">Design and how-to: [Buttons control guide](buttons.md)</span></span> 
 
-### <a name="hyperlink"></a><span data-ttu-id="e3711-143">ハイパーリンク</span><span class="sxs-lookup"><span data-stu-id="e3711-143">Hyperlink</span></span>
-<span data-ttu-id="e3711-144">「ハイパーリンク ボタン」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e3711-144">See Hyperlink button.</span></span>
+### <a name="hyperlink"></a><span data-ttu-id="baedd-143">ハイパーリンク</span><span class="sxs-lookup"><span data-stu-id="baedd-143">Hyperlink</span></span>
+<span data-ttu-id="baedd-144">「ハイパーリンク ボタン」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="baedd-144">See Hyperlink button.</span></span>
 
-### <a name="hyperlink-button"></a><span data-ttu-id="e3711-145">ハイパーリンク ボタン</span><span class="sxs-lookup"><span data-stu-id="e3711-145">Hyperlink button</span></span>
-<span data-ttu-id="e3711-146">ブラウザーでマークアップ テキストとして表示され、指定された URI を開くボタンです。</span><span class="sxs-lookup"><span data-stu-id="e3711-146">A button that appears as marked up text and opens the specified URI in a browser.</span></span>
+### <a name="hyperlink-button"></a><span data-ttu-id="baedd-145">ハイパーリンク ボタン</span><span class="sxs-lookup"><span data-stu-id="baedd-145">Hyperlink button</span></span>
+<span data-ttu-id="baedd-146">ブラウザーでマークアップ テキストとして表示され、指定された URI を開くボタンです。</span><span class="sxs-lookup"><span data-stu-id="baedd-146">A button that appears as marked up text and opens the specified URI in a browser.</span></span>
 
 ![ハイパーリンク ボタン](images/controls/hyperlink-button.png)
 
@@ -119,12 +119,12 @@ ms.locfileid: "5859669"
                  NavigateUri="http://www.microsoft.com"/>
 ```
 
-<span data-ttu-id="e3711-148">リファレンス: [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-148">Reference: [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx)</span></span> 
+<span data-ttu-id="baedd-148">リファレンス: [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-148">Reference: [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx)</span></span> 
 
-<span data-ttu-id="e3711-149">デザインと使い方: [ハイパーリンク コントロールのガイド](hyperlinks.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-149">Design and how-to: [Hyperlinks control guide](hyperlinks.md)</span></span>
+<span data-ttu-id="baedd-149">デザインと使い方: [ハイパーリンク コントロールのガイド](hyperlinks.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-149">Design and how-to: [Hyperlinks control guide](hyperlinks.md)</span></span>
 
-### <a name="repeat-button"></a><span data-ttu-id="e3711-150">繰り返しボタン</span><span class="sxs-lookup"><span data-stu-id="e3711-150">Repeat button</span></span>
-<span data-ttu-id="e3711-151">押されたときから離されるまでの間、繰り返し **Click** イベントを発生させるボタン。</span><span class="sxs-lookup"><span data-stu-id="e3711-151">A button that raises its **Click** event repeatedly from the time it's pressed until it's released.</span></span> 
+### <a name="repeat-button"></a><span data-ttu-id="baedd-150">繰り返しボタン</span><span class="sxs-lookup"><span data-stu-id="baedd-150">Repeat button</span></span>
+<span data-ttu-id="baedd-151">押されたときから離されるまでの間、繰り返し **Click** イベントを発生させるボタン。</span><span class="sxs-lookup"><span data-stu-id="baedd-151">A button that raises its **Click** event repeatedly from the time it's pressed until it's released.</span></span> 
 
 ![繰り返しボタン コントロール](images/controls/repeat-button.png) 
 
@@ -133,14 +133,14 @@ ms.locfileid: "5859669"
               Click="RepeatButton_Click" />
 ```
 
-<span data-ttu-id="e3711-153">リファレンス: [RepeatButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-153">Reference: [RepeatButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx)</span></span> 
+<span data-ttu-id="baedd-153">リファレンス: [RepeatButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-153">Reference: [RepeatButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx)</span></span> 
 
-<span data-ttu-id="e3711-154">デザインと使い方: [ボタン コントロールのガイド](buttons.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-154">Design and how-to: [Buttons control guide](buttons.md)</span></span> 
+<span data-ttu-id="baedd-154">デザインと使い方: [ボタン コントロールのガイド](buttons.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-154">Design and how-to: [Buttons control guide](buttons.md)</span></span> 
 
-## <a name="collectiondata-controls"></a><span data-ttu-id="e3711-155">コレクション コントロールとデータ コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-155">Collection/data controls</span></span>
+## <a name="collectiondata-controls"></a><span data-ttu-id="baedd-155">コレクション コントロールとデータ コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-155">Collection/data controls</span></span>
 
-### <a name="flip-view"></a><span data-ttu-id="e3711-156">FlipView</span><span class="sxs-lookup"><span data-stu-id="e3711-156">Flip view</span></span>
-<span data-ttu-id="e3711-157">ユーザーが 1 つずつめくって表示することができる項目のコレクションを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-157">A control that presents a collection of items that the user can flip through, one item at a time.</span></span>
+### <a name="flip-view"></a><span data-ttu-id="baedd-156">FlipView</span><span class="sxs-lookup"><span data-stu-id="baedd-156">Flip view</span></span>
+<span data-ttu-id="baedd-157">ユーザーが 1 つずつめくって表示することができる項目のコレクションを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-157">A control that presents a collection of items that the user can flip through, one item at a time.</span></span>
 
 ```xaml
 <FlipView x:Name="flipView1" SelectionChanged="FlipView_SelectionChanged">
@@ -150,12 +150,12 @@ ms.locfileid: "5859669"
 </FlipView>
 ```
 
-<span data-ttu-id="e3711-158">リファレンス: [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-158">Reference: [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx)</span></span> 
+<span data-ttu-id="baedd-158">リファレンス: [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-158">Reference: [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx)</span></span> 
 
-<span data-ttu-id="e3711-159">デザインと使い方: [FlipView コントロールのガイド](flipview.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-159">Design and how-to: [Flip view control guide](flipview.md)</span></span> 
+<span data-ttu-id="baedd-159">デザインと使い方: [FlipView コントロールのガイド](flipview.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-159">Design and how-to: [Flip view control guide](flipview.md)</span></span> 
 
-### <a name="grid-view"></a><span data-ttu-id="e3711-160">グリッド ビュー</span><span class="sxs-lookup"><span data-stu-id="e3711-160">Grid view</span></span>
-<span data-ttu-id="e3711-161">縦方向にスクロールできる複数行と複数列で項目のコレクションを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-161">A control that presents a collection of items in rows and columns that can scroll vertically.</span></span>
+### <a name="grid-view"></a><span data-ttu-id="baedd-160">グリッド ビュー</span><span class="sxs-lookup"><span data-stu-id="baedd-160">Grid view</span></span>
+<span data-ttu-id="baedd-161">縦方向にスクロールできる複数行と複数列で項目のコレクションを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-161">A control that presents a collection of items in rows and columns that can scroll vertically.</span></span>
 
 ```xaml
 <GridView x:Name="gridView1" SelectionChanged="GridView_SelectionChanged">
@@ -164,23 +164,23 @@ ms.locfileid: "5859669"
 </GridView>
 ```
 
-<span data-ttu-id="e3711-162">リファレンス: [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-162">Reference: [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)</span></span> 
+<span data-ttu-id="baedd-162">リファレンス: [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-162">Reference: [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)</span></span> 
 
-<span data-ttu-id="e3711-163">デザインと使い方: [リスト](lists.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-163">Design and how-to: [Lists](lists.md)</span></span> 
+<span data-ttu-id="baedd-163">デザインと使い方: [リスト](lists.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-163">Design and how-to: [Lists](lists.md)</span></span> 
 
-<span data-ttu-id="e3711-164">サンプル コード: [ListView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)</span><span class="sxs-lookup"><span data-stu-id="e3711-164">Sample code: [ListView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)</span></span>
+<span data-ttu-id="baedd-164">サンプル コード: [ListView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)</span><span class="sxs-lookup"><span data-stu-id="baedd-164">Sample code: [ListView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)</span></span>
 
-### <a name="items-control"></a><span data-ttu-id="e3711-165">項目コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-165">Items control</span></span>
-<span data-ttu-id="e3711-166">データ テンプレートで指定された UI にある項目のコレクションを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-166">A control that presents a collection of items in a UI specified by a data template.</span></span> 
+### <a name="items-control"></a><span data-ttu-id="baedd-165">項目コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-165">Items control</span></span>
+<span data-ttu-id="baedd-166">データ テンプレートで指定された UI にある項目のコレクションを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-166">A control that presents a collection of items in a UI specified by a data template.</span></span> 
 
 ```xaml
 <ItemsControl/>
 ```
 
-<span data-ttu-id="e3711-167">リファレンス: [ItemsControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-167">Reference: [ItemsControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx)</span></span> 
+<span data-ttu-id="baedd-167">リファレンス: [ItemsControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-167">Reference: [ItemsControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx)</span></span> 
 
-### <a name="list-view"></a><span data-ttu-id="e3711-168">リスト ビュー</span><span class="sxs-lookup"><span data-stu-id="e3711-168">List view</span></span>
-<span data-ttu-id="e3711-169">縦方向にスクロールできるリストで項目のコレクションを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-169">A control that presents a collection of items in a list that can scroll vertically.</span></span>
+### <a name="list-view"></a><span data-ttu-id="baedd-168">リスト ビュー</span><span class="sxs-lookup"><span data-stu-id="baedd-168">List view</span></span>
+<span data-ttu-id="baedd-169">縦方向にスクロールできるリストで項目のコレクションを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-169">A control that presents a collection of items in a list that can scroll vertically.</span></span>
 
 ```xaml
 <ListView x:Name="listView1" SelectionChanged="ListView_SelectionChanged">
@@ -189,16 +189,16 @@ ms.locfileid: "5859669"
 </ListView>
 ```
 
-<span data-ttu-id="e3711-170">リファレンス: [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-170">Reference: [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)</span></span> 
+<span data-ttu-id="baedd-170">リファレンス: [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-170">Reference: [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)</span></span> 
 
-<span data-ttu-id="e3711-171">デザインと使い方: [リスト](lists.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-171">Design and how-to: [Lists](lists.md)</span></span> 
+<span data-ttu-id="baedd-171">デザインと使い方: [リスト](lists.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-171">Design and how-to: [Lists](lists.md)</span></span> 
 
-<span data-ttu-id="e3711-172">サンプル コード: [ListView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)</span><span class="sxs-lookup"><span data-stu-id="e3711-172">Sample code: [ListView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)</span></span>
+<span data-ttu-id="baedd-172">サンプル コード: [ListView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)</span><span class="sxs-lookup"><span data-stu-id="baedd-172">Sample code: [ListView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)</span></span>
 
-## <a name="date-and-time-controls"></a><span data-ttu-id="e3711-173">日付と時刻コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-173">Date and time controls</span></span>
+## <a name="date-and-time-controls"></a><span data-ttu-id="baedd-173">日付と時刻コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-173">Date and time controls</span></span>
 
-### <a name="calendar-date-picker"></a><span data-ttu-id="e3711-174">カレンダーの日付の選択コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-174">Calendar date picker</span></span>
-<span data-ttu-id="e3711-175">ドロップダウン カレンダー表示を使って、ユーザーが日付を選択できるコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-175">A control that lets a user select a date using a drop-down calendar display.</span></span>
+### <a name="calendar-date-picker"></a><span data-ttu-id="baedd-174">カレンダーの日付の選択コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-174">Calendar date picker</span></span>
+<span data-ttu-id="baedd-175">ドロップダウン カレンダー表示を使って、ユーザーが日付を選択できるコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-175">A control that lets a user select a date using a drop-down calendar display.</span></span>
 
 ![カレンダー ビューが開いたカレンダーの日付の選択コントロール](images/controls/calendar-date-picker-open.png)
 
@@ -206,23 +206,23 @@ ms.locfileid: "5859669"
 <CalendarDatePicker/>
 ```
 
-<span data-ttu-id="e3711-177">リファレンス: [CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-177">Reference: [CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</span></span> 
+<span data-ttu-id="baedd-177">リファレンス: [CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-177">Reference: [CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</span></span> 
 
-<span data-ttu-id="e3711-178">デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-178">Design and how-to: [Calendar, date, and time controls](date-and-time.md)</span></span>
+<span data-ttu-id="baedd-178">デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-178">Design and how-to: [Calendar, date, and time controls](date-and-time.md)</span></span>
  
-### <a name="calendar-view"></a><span data-ttu-id="e3711-179">カレンダー ビュー</span><span class="sxs-lookup"><span data-stu-id="e3711-179">Calendar view</span></span>
-<span data-ttu-id="e3711-180">ユーザーが 1 つまたは複数の日付を選択できる、構成可能なカレンダー表示。</span><span class="sxs-lookup"><span data-stu-id="e3711-180">A configurable calendar display that lets a user select single or multiple dates.</span></span>
+### <a name="calendar-view"></a><span data-ttu-id="baedd-179">カレンダー ビュー</span><span class="sxs-lookup"><span data-stu-id="baedd-179">Calendar view</span></span>
+<span data-ttu-id="baedd-180">ユーザーが 1 つまたは複数の日付を選択できる、構成可能なカレンダー表示。</span><span class="sxs-lookup"><span data-stu-id="baedd-180">A configurable calendar display that lets a user select single or multiple dates.</span></span>
 
 ```xaml
 <CalendarView/>
 ```
 
-<span data-ttu-id="e3711-181">リファレンス: [CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-181">Reference: [CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</span></span> 
+<span data-ttu-id="baedd-181">リファレンス: [CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-181">Reference: [CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</span></span> 
 
-<span data-ttu-id="e3711-182">デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-182">Design and how-to: [Calendar, date, and time controls](date-and-time.md)</span></span> 
+<span data-ttu-id="baedd-182">デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-182">Design and how-to: [Calendar, date, and time controls](date-and-time.md)</span></span> 
 
-### <a name="date-picker"></a><span data-ttu-id="e3711-183">日付の選択コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-183">Date picker</span></span>
-<span data-ttu-id="e3711-184">ユーザーが日付を選択できるコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-184">A control that lets a user select a date.</span></span>
+### <a name="date-picker"></a><span data-ttu-id="baedd-183">日付の選択コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-183">Date picker</span></span>
+<span data-ttu-id="baedd-184">ユーザーが日付を選択できるコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-184">A control that lets a user select a date.</span></span>
 
 ![日付の選択コントロール](images/controls/date-picker.png)
 
@@ -230,12 +230,12 @@ ms.locfileid: "5859669"
 <DatePicker Header="Arrival Date"/>
 ```
 
-<span data-ttu-id="e3711-186">リファレンス: [DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-186">Reference: [DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</span></span> 
+<span data-ttu-id="baedd-186">リファレンス: [DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-186">Reference: [DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</span></span> 
 
-<span data-ttu-id="e3711-187">デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-187">Design and how-to: [Calendar, date, and time controls](date-and-time.md)</span></span>
+<span data-ttu-id="baedd-187">デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-187">Design and how-to: [Calendar, date, and time controls](date-and-time.md)</span></span>
  
-### <a name="time-picker"></a><span data-ttu-id="e3711-188">時刻の選択コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-188">Time picker</span></span>
-<span data-ttu-id="e3711-189">ユーザーが時間値を設定できるコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-189">A control that lets a user set a time value.</span></span>
+### <a name="time-picker"></a><span data-ttu-id="baedd-188">時刻の選択コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-188">Time picker</span></span>
+<span data-ttu-id="baedd-189">ユーザーが時間値を設定できるコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-189">A control that lets a user set a time value.</span></span>
 
 ![TimePicker コントロール](images/controls/time-picker.png) 
 
@@ -243,17 +243,17 @@ ms.locfileid: "5859669"
 <TimePicker Header="Arrival Time"/>
 ```
 
-<span data-ttu-id="e3711-191">リファレンス: [TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-191">Reference: [TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</span></span> 
+<span data-ttu-id="baedd-191">リファレンス: [TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-191">Reference: [TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</span></span> 
 
-<span data-ttu-id="e3711-192">デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-192">Design and how-to: [Calendar, date, and time controls](date-and-time.md)</span></span>
+<span data-ttu-id="baedd-192">デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-192">Design and how-to: [Calendar, date, and time controls](date-and-time.md)</span></span>
 
-## <a name="flyouts"></a><span data-ttu-id="e3711-193">ポップアップ</span><span class="sxs-lookup"><span data-stu-id="e3711-193">Flyouts</span></span>
+## <a name="flyouts"></a><span data-ttu-id="baedd-193">ポップアップ</span><span class="sxs-lookup"><span data-stu-id="baedd-193">Flyouts</span></span>
 
-### <a name="context-menu"></a><span data-ttu-id="e3711-194">ショートカット メニュー</span><span class="sxs-lookup"><span data-stu-id="e3711-194">Context menu</span></span>
-<span data-ttu-id="e3711-195">「メニュー ポップアップ」および「ポップアップ メニュー」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e3711-195">See Menu flyout and Popup menu.</span></span>
+### <a name="context-menu"></a><span data-ttu-id="baedd-194">ショートカット メニュー</span><span class="sxs-lookup"><span data-stu-id="baedd-194">Context menu</span></span>
+<span data-ttu-id="baedd-195">「メニュー ポップアップ」および「ポップアップ メニュー」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="baedd-195">See Menu flyout and Popup menu.</span></span>
 
-### <a name="flyout"></a><span data-ttu-id="e3711-196">ポップアップ</span><span class="sxs-lookup"><span data-stu-id="e3711-196">Flyout</span></span>
-<span data-ttu-id="e3711-197">ユーザーの操作が必要であることを示すメッセージを表示します</span><span class="sxs-lookup"><span data-stu-id="e3711-197">Displays a message that requires user interaction.</span></span> <span data-ttu-id="e3711-198">(ダイアログでは他のユーザー操作がブロックされますが、ポップアップでは別のウィンドウが作成されず、操作もブロックされません)。</span><span class="sxs-lookup"><span data-stu-id="e3711-198">(Unlike a dialog, a flyout does not create a separate window, and does not block other user interaction.)</span></span>
+### <a name="flyout"></a><span data-ttu-id="baedd-196">ポップアップ</span><span class="sxs-lookup"><span data-stu-id="baedd-196">Flyout</span></span>
+<span data-ttu-id="baedd-197">ユーザーの操作が必要であることを示すメッセージを表示します</span><span class="sxs-lookup"><span data-stu-id="baedd-197">Displays a message that requires user interaction.</span></span> <span data-ttu-id="baedd-198">(ダイアログでは他のユーザー操作がブロックされますが、ポップアップでは別のウィンドウが作成されず、操作もブロックされません)。</span><span class="sxs-lookup"><span data-stu-id="baedd-198">(Unlike a dialog, a flyout does not create a separate window, and does not block other user interaction.)</span></span>
 
 ![ポップアップ コントロール](images/controls/flyout.png)
 
@@ -266,12 +266,12 @@ ms.locfileid: "5859669"
 </Flyout>
 ```
 
-<span data-ttu-id="e3711-200">リファレンス: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-200">Reference: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx)</span></span> 
+<span data-ttu-id="baedd-200">リファレンス: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-200">Reference: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx)</span></span> 
 
-<span data-ttu-id="e3711-201">デザインと使い方:[ポップアップ](dialogs-and-flyouts/flyouts.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-201">Design and how-to: [Flyouts](dialogs-and-flyouts/flyouts.md)</span></span> 
+<span data-ttu-id="baedd-201">デザインと使い方:[ポップアップ](dialogs-and-flyouts/flyouts.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-201">Design and how-to: [Flyouts](dialogs-and-flyouts/flyouts.md)</span></span> 
 
-### <a name="menu-flyout"></a><span data-ttu-id="e3711-202">メニュー ポップアップ</span><span class="sxs-lookup"><span data-stu-id="e3711-202">Menu flyout</span></span>
-<span data-ttu-id="e3711-203">ユーザーが現在行っている内容に関連するコマンドまたはオプションの一覧を一時的に表示します。</span><span class="sxs-lookup"><span data-stu-id="e3711-203">Temporarily displays a list of commands or options related to what the user is currently doing.</span></span>
+### <a name="menu-flyout"></a><span data-ttu-id="baedd-202">メニュー ポップアップ</span><span class="sxs-lookup"><span data-stu-id="baedd-202">Menu flyout</span></span>
+<span data-ttu-id="baedd-203">ユーザーが現在行っている内容に関連するコマンドまたはオプションの一覧を一時的に表示します。</span><span class="sxs-lookup"><span data-stu-id="baedd-203">Temporarily displays a list of commands or options related to what the user is currently doing.</span></span>
 
 ![メニュー ポップアップ コントロール](images/controls/menu-flyout.png) 
 
@@ -286,21 +286,21 @@ ms.locfileid: "5859669"
 </MenuFlyout>
 ```
 
-<span data-ttu-id="e3711-205">リファレンス: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)、[MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-205">Reference: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx), [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)</span></span> 
+<span data-ttu-id="baedd-205">リファレンス: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)、[MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-205">Reference: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx), [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx), [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)</span></span> 
 
-<span data-ttu-id="e3711-206">デザインと使い方:[メニューとコンテキスト メニュー](menus.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-206">Design and how-to: [Menus and context menus](menus.md)</span></span> 
+<span data-ttu-id="baedd-206">デザインと使い方:[メニューとコンテキスト メニュー](menus.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-206">Design and how-to: [Menus and context menus](menus.md)</span></span> 
 
-<span data-ttu-id="e3711-207">サンプル コード: [XAML ショートカット メニューのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620021)</span><span class="sxs-lookup"><span data-stu-id="e3711-207">Sample code: [XAML Context Menu sample](http://go.microsoft.com/fwlink/p/?LinkId=620021)</span></span>
+<span data-ttu-id="baedd-207">サンプル コード: [XAML ショートカット メニューのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620021)</span><span class="sxs-lookup"><span data-stu-id="baedd-207">Sample code: [XAML Context Menu sample](http://go.microsoft.com/fwlink/p/?LinkId=620021)</span></span>
 
-### <a name="popup-menu"></a><span data-ttu-id="e3711-208">ポップアップ メニュー</span><span class="sxs-lookup"><span data-stu-id="e3711-208">Popup menu</span></span>
-<span data-ttu-id="e3711-209">指定したコマンドを表示するためのカスタム メニュー。</span><span class="sxs-lookup"><span data-stu-id="e3711-209">A custom menu that presents commands that you specify.</span></span>
+### <a name="popup-menu"></a><span data-ttu-id="baedd-208">ポップアップ メニュー</span><span class="sxs-lookup"><span data-stu-id="baedd-208">Popup menu</span></span>
+<span data-ttu-id="baedd-209">指定したコマンドを表示するためのカスタム メニュー。</span><span class="sxs-lookup"><span data-stu-id="baedd-209">A custom menu that presents commands that you specify.</span></span>
 
-<span data-ttu-id="e3711-210">リファレンス: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-210">Reference: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx)</span></span> 
+<span data-ttu-id="baedd-210">リファレンス: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-210">Reference: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx)</span></span> 
 
-<span data-ttu-id="e3711-211">デザインと使い方:[ダイアログ ボックス](dialogs-and-flyouts/dialogs.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-211">Design and how-to: [Dialogs](dialogs-and-flyouts/dialogs.md)</span></span> 
+<span data-ttu-id="baedd-211">デザインと使い方:[ダイアログ ボックス](dialogs-and-flyouts/dialogs.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-211">Design and how-to: [Dialogs](dialogs-and-flyouts/dialogs.md)</span></span> 
 
-### <a name="tooltip"></a><span data-ttu-id="e3711-212">ヒント</span><span class="sxs-lookup"><span data-stu-id="e3711-212">Tooltip</span></span>
-<span data-ttu-id="e3711-213">要素についての情報を表示するポップアップ ウィンドウ。</span><span class="sxs-lookup"><span data-stu-id="e3711-213">A pop-up window that displays information for an element.</span></span> 
+### <a name="tooltip"></a><span data-ttu-id="baedd-212">ヒント</span><span class="sxs-lookup"><span data-stu-id="baedd-212">Tooltip</span></span>
+<span data-ttu-id="baedd-213">要素についての情報を表示するポップアップ ウィンドウ。</span><span class="sxs-lookup"><span data-stu-id="baedd-213">A pop-up window that displays information for an element.</span></span> 
  
 ![ヒント コントロール](images/controls/tool-tip.png)
 
@@ -309,41 +309,41 @@ ms.locfileid: "5859669"
         ToolTipService.ToolTip="Click to perform action" />
 ```
 
-<span data-ttu-id="e3711-215">リファレンス: [ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx)、[ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-215">Reference: [ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx), [ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx)</span></span> 
+<span data-ttu-id="baedd-215">リファレンス: [ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx)、[ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-215">Reference: [ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx), [ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx)</span></span> 
 
-<span data-ttu-id="e3711-216">デザインと使い方: ヒントのガイドライン</span><span class="sxs-lookup"><span data-stu-id="e3711-216">Design and how-to: Guidelines for tooltips</span></span> 
+<span data-ttu-id="baedd-216">デザインと使い方: ヒントのガイドライン</span><span class="sxs-lookup"><span data-stu-id="baedd-216">Design and how-to: Guidelines for tooltips</span></span> 
 
-## <a name="images"></a><span data-ttu-id="e3711-217">画像</span><span class="sxs-lookup"><span data-stu-id="e3711-217">Images</span></span>
+## <a name="images"></a><span data-ttu-id="baedd-217">画像</span><span class="sxs-lookup"><span data-stu-id="baedd-217">Images</span></span>
 
-### <a name="image"></a><span data-ttu-id="e3711-218">画像</span><span class="sxs-lookup"><span data-stu-id="e3711-218">Image</span></span>
-<span data-ttu-id="e3711-219">画像を表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-219">A control that presents an image.</span></span>
+### <a name="image"></a><span data-ttu-id="baedd-218">画像</span><span class="sxs-lookup"><span data-stu-id="baedd-218">Image</span></span>
+<span data-ttu-id="baedd-219">画像を表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-219">A control that presents an image.</span></span>
 
 ```xaml
 <Image Source="Assets/Logo.png" />
 ```
 
-<span data-ttu-id="e3711-220">リファレンス: [Image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-220">Reference: [Image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)</span></span> 
+<span data-ttu-id="baedd-220">リファレンス: [Image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-220">Reference: [Image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)</span></span> 
 
-<span data-ttu-id="e3711-221">デザインと使い方: [Image と ImageBrush](images-imagebrushes.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-221">Design and how-to: [Image and ImageBrush](images-imagebrushes.md)</span></span> 
+<span data-ttu-id="baedd-221">デザインと使い方: [Image と ImageBrush](images-imagebrushes.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-221">Design and how-to: [Image and ImageBrush](images-imagebrushes.md)</span></span> 
 
-<span data-ttu-id="e3711-222">サンプル コード: [XAML 画像のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226867)</span><span class="sxs-lookup"><span data-stu-id="e3711-222">Sample code: [XAML images sample](http://go.microsoft.com/fwlink/p/?linkid=226867)</span></span>
+<span data-ttu-id="baedd-222">サンプル コード: [XAML 画像のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226867)</span><span class="sxs-lookup"><span data-stu-id="baedd-222">Sample code: [XAML images sample](http://go.microsoft.com/fwlink/p/?linkid=226867)</span></span>
 
-## <a name="graphics-and-ink"></a><span data-ttu-id="e3711-223">グラフィックスとインク</span><span class="sxs-lookup"><span data-stu-id="e3711-223">Graphics and ink</span></span>
+## <a name="graphics-and-ink"></a><span data-ttu-id="baedd-223">グラフィックスとインク</span><span class="sxs-lookup"><span data-stu-id="baedd-223">Graphics and ink</span></span>
 
-### <a name="inkcanvas"></a><span data-ttu-id="e3711-224">InkCanvas</span><span class="sxs-lookup"><span data-stu-id="e3711-224">InkCanvas</span></span>
-<span data-ttu-id="e3711-225">インク ストロークを受信し、表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-225">A control that receives and displays ink strokes.</span></span>
+### <a name="inkcanvas"></a><span data-ttu-id="baedd-224">InkCanvas</span><span class="sxs-lookup"><span data-stu-id="baedd-224">InkCanvas</span></span>
+<span data-ttu-id="baedd-225">インク ストロークを受信し、表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-225">A control that receives and displays ink strokes.</span></span>
 
 ```xaml
 <InkCanvas/>
 ```
 
-<span data-ttu-id="e3711-226">リファレンス: [InkCanvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.inkcanvas.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-226">Reference: [InkCanvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.inkcanvas.aspx)</span></span> 
+<span data-ttu-id="baedd-226">リファレンス: [InkCanvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.inkcanvas.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-226">Reference: [InkCanvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.inkcanvas.aspx)</span></span> 
 
-### <a name="shapes"></a><span data-ttu-id="e3711-227">図形</span><span class="sxs-lookup"><span data-stu-id="e3711-227">Shapes</span></span>
-<span data-ttu-id="e3711-228">楕円形、四角形、直線、ベジエ パスなどのように表示できる、保持モードの各種グラフィック オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="e3711-228">Various retained mode graphical objects that can be presented like ellipses, rectangles, lines, Bezier paths, etc.</span></span>
+### <a name="shapes"></a><span data-ttu-id="baedd-227">図形</span><span class="sxs-lookup"><span data-stu-id="baedd-227">Shapes</span></span>
+<span data-ttu-id="baedd-228">楕円形、四角形、直線、ベジエ パスなどのように表示できる、保持モードの各種グラフィック オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="baedd-228">Various retained mode graphical objects that can be presented like ellipses, rectangles, lines, Bezier paths, etc.</span></span>
 
-![<span data-ttu-id="e3711-229">多角形](images/controls/shapes-polygon.png) 
-![パス</span><span class="sxs-lookup"><span data-stu-id="e3711-229">A polygon](images/controls/shapes-polygon.png) 
+![<span data-ttu-id="baedd-229">多角形](images/controls/shapes-polygon.png) 
+![パス</span><span class="sxs-lookup"><span data-stu-id="baedd-229">A polygon](images/controls/shapes-polygon.png) 
 ![A path</span></span>](images/controls/shapes-path.png) 
 
 ```xaml
@@ -352,16 +352,16 @@ ms.locfileid: "5859669"
 <Rectangle/>
 ```
 
-<span data-ttu-id="e3711-230">リファレンス: [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-230">Reference: [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx)</span></span> 
+<span data-ttu-id="baedd-230">リファレンス: [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-230">Reference: [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx)</span></span> 
 
-<span data-ttu-id="e3711-231">操作方法: [図形の描画](../../graphics/drawing-shapes.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-231">How to: [Drawing shapes](../../graphics/drawing-shapes.md)</span></span> 
+<span data-ttu-id="baedd-231">操作方法: [図形の描画](../../graphics/drawing-shapes.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-231">How to: [Drawing shapes](../../graphics/drawing-shapes.md)</span></span> 
 
-<span data-ttu-id="e3711-232">サンプル コード: [XAML ベクターベース描画のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226866)</span><span class="sxs-lookup"><span data-stu-id="e3711-232">Sample code: [XAML vector-based drawing sample](http://go.microsoft.com/fwlink/p/?linkid=226866)</span></span>
+<span data-ttu-id="baedd-232">サンプル コード: [XAML ベクターベース描画のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226866)</span><span class="sxs-lookup"><span data-stu-id="baedd-232">Sample code: [XAML vector-based drawing sample](http://go.microsoft.com/fwlink/p/?linkid=226866)</span></span>
 
-## <a name="layout-controls"></a><span data-ttu-id="e3711-233">レイアウト コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-233">Layout controls</span></span>
+## <a name="layout-controls"></a><span data-ttu-id="baedd-233">レイアウト コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-233">Layout controls</span></span>
 
-### <a name="border"></a><span data-ttu-id="e3711-234">境界線</span><span class="sxs-lookup"><span data-stu-id="e3711-234">Border</span></span>
-<span data-ttu-id="e3711-235">境界線、背景、またはこの両方を他のオブジェクトの周囲に描画するコンテナー コントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-235">A container control that draws a border, background, or both, around another object.</span></span>
+### <a name="border"></a><span data-ttu-id="baedd-234">境界線</span><span class="sxs-lookup"><span data-stu-id="baedd-234">Border</span></span>
+<span data-ttu-id="baedd-235">境界線、背景、またはこの両方を他のオブジェクトの周囲に描画するコンテナー コントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-235">A container control that draws a border, background, or both, around another object.</span></span>
 
 ![2 つの四角形の周囲の境界線](images/controls/border.png) 
 
@@ -376,10 +376,10 @@ ms.locfileid: "5859669"
 </Border>
 ```
 
-<span data-ttu-id="e3711-237">リファレンス: [Border](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-237">Reference: [Border](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)</span></span>
+<span data-ttu-id="baedd-237">リファレンス: [Border](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-237">Reference: [Border](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)</span></span>
 
-### <a name="canvas"></a><span data-ttu-id="e3711-238">キャンバス</span><span class="sxs-lookup"><span data-stu-id="e3711-238">Canvas</span></span>
-<span data-ttu-id="e3711-239">キャンバスの左上隅を基準とする子要素の絶対配置をサポートするレイアウト パネル。</span><span class="sxs-lookup"><span data-stu-id="e3711-239">A layout panel that supports the absolute positioning of child elements relative to the top left corner of the canvas.</span></span>
+### <a name="canvas"></a><span data-ttu-id="baedd-238">キャンバス</span><span class="sxs-lookup"><span data-stu-id="baedd-238">Canvas</span></span>
+<span data-ttu-id="baedd-239">キャンバスの左上隅を基準とする子要素の絶対配置をサポートするレイアウト パネル。</span><span class="sxs-lookup"><span data-stu-id="baedd-239">A layout panel that supports the absolute positioning of child elements relative to the top left corner of the canvas.</span></span>
  
 ![キャンバス レイアウト パネル](images/controls/canvas.png) 
 
@@ -392,10 +392,10 @@ ms.locfileid: "5859669"
 </Canvas>
 ```
 
-<span data-ttu-id="e3711-241">リファレンス: [Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-241">Reference: [Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)</span></span>
+<span data-ttu-id="baedd-241">リファレンス: [Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-241">Reference: [Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)</span></span>
  
-### <a name="grid"></a><span data-ttu-id="e3711-242">グリッド</span><span class="sxs-lookup"><span data-stu-id="e3711-242">Grid</span></span>
-<span data-ttu-id="e3711-243">複数行と複数列での子要素の配置をサポートするレイアウト パネル。</span><span class="sxs-lookup"><span data-stu-id="e3711-243">A layout panel that supports the arranging of child elements in rows and columns.</span></span>
+### <a name="grid"></a><span data-ttu-id="baedd-242">グリッド</span><span class="sxs-lookup"><span data-stu-id="baedd-242">Grid</span></span>
+<span data-ttu-id="baedd-243">複数行と複数列での子要素の配置をサポートするレイアウト パネル。</span><span class="sxs-lookup"><span data-stu-id="baedd-243">A layout panel that supports the arranging of child elements in rows and columns.</span></span>
 
 ![グリッド レイアウト パネル](images/controls/grid.png) 
 
@@ -416,13 +416,13 @@ ms.locfileid: "5859669"
 </Grid>
 ```
 
-<span data-ttu-id="e3711-245">リファレンス: [Grid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-245">Reference: [Grid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)</span></span>
+<span data-ttu-id="baedd-245">リファレンス: [Grid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-245">Reference: [Grid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)</span></span>
  
-### <a name="panning-scroll-viewer"></a><span data-ttu-id="e3711-246">パン スクロール ビューアー</span><span class="sxs-lookup"><span data-stu-id="e3711-246">Panning scroll viewer</span></span>
-<span data-ttu-id="e3711-247">「スクロール ビューアー」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e3711-247">See Scroll viewer.</span></span>
+### <a name="panning-scroll-viewer"></a><span data-ttu-id="baedd-246">パン スクロール ビューアー</span><span class="sxs-lookup"><span data-stu-id="baedd-246">Panning scroll viewer</span></span>
+<span data-ttu-id="baedd-247">「スクロール ビューアー」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="baedd-247">See Scroll viewer.</span></span>
 
-### <a name="relativepanel"></a><span data-ttu-id="e3711-248">RelativePanel</span><span class="sxs-lookup"><span data-stu-id="e3711-248">RelativePanel</span></span>
-<span data-ttu-id="e3711-249">互いまたは親パネルを基準にして、子オブジェクトの位置を決定し、調整できるパネル。</span><span class="sxs-lookup"><span data-stu-id="e3711-249">A panel that lets you position and align child objects in relation to each other or the parent panel.</span></span>
+### <a name="relativepanel"></a><span data-ttu-id="baedd-248">RelativePanel</span><span class="sxs-lookup"><span data-stu-id="baedd-248">RelativePanel</span></span>
+<span data-ttu-id="baedd-249">互いまたは親パネルを基準にして、子オブジェクトの位置を決定し、調整できるパネル。</span><span class="sxs-lookup"><span data-stu-id="baedd-249">A panel that lets you position and align child objects in relation to each other or the parent panel.</span></span>
 
 ![RelativePanel レイアウト パネル](images/controls/relative-panel.png) 
 
@@ -433,15 +433,15 @@ ms.locfileid: "5859669"
 </RelativePanel>
 ```
 
-<span data-ttu-id="e3711-251">リファレンス: [RelativePanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-251">Reference: [RelativePanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)</span></span>
+<span data-ttu-id="baedd-251">リファレンス: [RelativePanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-251">Reference: [RelativePanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)</span></span>
 
-### <a name="scroll-bar"></a><span data-ttu-id="e3711-252">スクロール バー</span><span class="sxs-lookup"><span data-stu-id="e3711-252">Scroll bar</span></span>
-<span data-ttu-id="e3711-253">「スクロール ビューアー」をご覧ください </span><span class="sxs-lookup"><span data-stu-id="e3711-253">See scroll viewer.</span></span> <span data-ttu-id="e3711-254">(ScrollBar は ScrollViewer の要素です。</span><span class="sxs-lookup"><span data-stu-id="e3711-254">(ScrollBar is an element of ScrollViewer.</span></span> <span data-ttu-id="e3711-255">通常、スタンドアロン コントロールとしては使用しません)。</span><span class="sxs-lookup"><span data-stu-id="e3711-255">You don't typically use it as a stand-alone control.)</span></span>
+### <a name="scroll-bar"></a><span data-ttu-id="baedd-252">スクロール バー</span><span class="sxs-lookup"><span data-stu-id="baedd-252">Scroll bar</span></span>
+<span data-ttu-id="baedd-253">「スクロール ビューアー」をご覧ください </span><span class="sxs-lookup"><span data-stu-id="baedd-253">See scroll viewer.</span></span> <span data-ttu-id="baedd-254">(ScrollBar は ScrollViewer の要素です。</span><span class="sxs-lookup"><span data-stu-id="baedd-254">(ScrollBar is an element of ScrollViewer.</span></span> <span data-ttu-id="baedd-255">通常、スタンドアロン コントロールとしては使用しません)。</span><span class="sxs-lookup"><span data-stu-id="baedd-255">You don't typically use it as a stand-alone control.)</span></span>
 
-<span data-ttu-id="e3711-256">リファレンス: [ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-256">Reference: [ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)</span></span>
+<span data-ttu-id="baedd-256">リファレンス: [ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-256">Reference: [ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)</span></span>
  
-### <a name="scroll-viewer"></a><span data-ttu-id="e3711-257">スクロール ビューアー</span><span class="sxs-lookup"><span data-stu-id="e3711-257">Scroll viewer</span></span>
-<span data-ttu-id="e3711-258">ユーザーが、コンテンツのパンとズームを実行できるようにするコンテナー コントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-258">A container control that lets the user pan and zoom its content.</span></span>
+### <a name="scroll-viewer"></a><span data-ttu-id="baedd-257">スクロール ビューアー</span><span class="sxs-lookup"><span data-stu-id="baedd-257">Scroll viewer</span></span>
+<span data-ttu-id="baedd-258">ユーザーが、コンテンツのパンとズームを実行できるようにするコンテナー コントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-258">A container control that lets the user pan and zoom its content.</span></span>
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10" 
@@ -452,14 +452,14 @@ ms.locfileid: "5859669"
 </ScrollViewer>
 ```
 
-<span data-ttu-id="e3711-259">リファレンス: [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-259">Reference: [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx)</span></span>
+<span data-ttu-id="baedd-259">リファレンス: [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-259">Reference: [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx)</span></span>
 
-<span data-ttu-id="e3711-260">デザインと使い方: [スクロールとパンのコントロールのガイド](scroll-controls.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-260">Design and how-to: [Scroll and panning controls guide](scroll-controls.md)</span></span> 
+<span data-ttu-id="baedd-260">デザインと使い方: [スクロールとパンのコントロールのガイド](scroll-controls.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-260">Design and how-to: [Scroll and panning controls guide](scroll-controls.md)</span></span> 
 
-<span data-ttu-id="e3711-261">サンプル コード: [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238577)</span><span class="sxs-lookup"><span data-stu-id="e3711-261">Sample code: [XAML scrolling, panning and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=238577)</span></span>
+<span data-ttu-id="baedd-261">サンプル コード: [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238577)</span><span class="sxs-lookup"><span data-stu-id="baedd-261">Sample code: [XAML scrolling, panning and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=238577)</span></span>
 
-### <a name="stack-panel"></a><span data-ttu-id="e3711-262">スタック パネル</span><span class="sxs-lookup"><span data-stu-id="e3711-262">Stack panel</span></span>
-<span data-ttu-id="e3711-263">子要素を水平方向または垂直方向の単一行に配置するレイアウト パネル。</span><span class="sxs-lookup"><span data-stu-id="e3711-263">A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically.</span></span>
+### <a name="stack-panel"></a><span data-ttu-id="baedd-262">スタック パネル</span><span class="sxs-lookup"><span data-stu-id="baedd-262">Stack panel</span></span>
+<span data-ttu-id="baedd-263">子要素を水平方向または垂直方向の単一行に配置するレイアウト パネル。</span><span class="sxs-lookup"><span data-stu-id="baedd-263">A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically.</span></span>
 
 ![スタック パネル レイアウト コントロール](images/controls/stack-panel.png) 
 
@@ -472,10 +472,10 @@ ms.locfileid: "5859669"
 </StackPanel>
 ```
 
-<span data-ttu-id="e3711-265">リファレンス: [StackPanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-265">Reference: [StackPanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)</span></span>
+<span data-ttu-id="baedd-265">リファレンス: [StackPanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-265">Reference: [StackPanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)</span></span>
  
-### <a name="variablesizedwrapgrid"></a><span data-ttu-id="e3711-266">VariableSizedWrapGrid</span><span class="sxs-lookup"><span data-stu-id="e3711-266">VariableSizedWrapGrid</span></span>
-<span data-ttu-id="e3711-267">複数行と複数列での子要素の配置をサポートするレイアウト パネル。</span><span class="sxs-lookup"><span data-stu-id="e3711-267">A layout panel that supports the arranging of child elements in rows and columns.</span></span> <span data-ttu-id="e3711-268">各子要素を、複数の行と列に配置できます。</span><span class="sxs-lookup"><span data-stu-id="e3711-268">Each child element can span multiple rows and columns.</span></span>
+### <a name="variablesizedwrapgrid"></a><span data-ttu-id="baedd-266">VariableSizedWrapGrid</span><span class="sxs-lookup"><span data-stu-id="baedd-266">VariableSizedWrapGrid</span></span>
+<span data-ttu-id="baedd-267">複数行と複数列での子要素の配置をサポートするレイアウト パネル。</span><span class="sxs-lookup"><span data-stu-id="baedd-267">A layout panel that supports the arranging of child elements in rows and columns.</span></span> <span data-ttu-id="baedd-268">各子要素を、複数の行と列に配置できます。</span><span class="sxs-lookup"><span data-stu-id="baedd-268">Each child element can span multiple rows and columns.</span></span>
 
 ![可変サイズ折り返しグリッド レイアウト パネル](images/controls/variable-sized-wrap-grid.png) 
 
@@ -492,10 +492,10 @@ ms.locfileid: "5859669"
 </VariableSizedWrapGrid>
 ```
 
-<span data-ttu-id="e3711-270">リファレンス: [VariableSizedWrapGrid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-270">Reference: [VariableSizedWrapGrid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)</span></span>
+<span data-ttu-id="baedd-270">リファレンス: [VariableSizedWrapGrid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-270">Reference: [VariableSizedWrapGrid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)</span></span>
 
-### <a name="viewbox"></a><span data-ttu-id="e3711-271">Viewbox</span><span class="sxs-lookup"><span data-stu-id="e3711-271">Viewbox</span></span>
-<span data-ttu-id="e3711-272">コンテンツを指定されたサイズに拡大縮小するコンテナー コントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-272">A container control that scales its content to a specified size.</span></span>
+### <a name="viewbox"></a><span data-ttu-id="baedd-271">Viewbox</span><span class="sxs-lookup"><span data-stu-id="baedd-271">Viewbox</span></span>
+<span data-ttu-id="baedd-272">コンテンツを指定されたサイズに拡大縮小するコンテナー コントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-272">A container control that scales its content to a specified size.</span></span>
 
 ![Viewbox コントロール](images/controls/view-box.png) 
 
@@ -511,29 +511,29 @@ ms.locfileid: "5859669"
 </Viewbox>
 ```
 
-<span data-ttu-id="e3711-274">リファレンス: [Viewbox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.viewbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-274">Reference: [Viewbox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.viewbox.aspx)</span></span>
+<span data-ttu-id="baedd-274">リファレンス: [Viewbox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.viewbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-274">Reference: [Viewbox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.viewbox.aspx)</span></span>
  
-### <a name="zooming-scroll-viewer"></a><span data-ttu-id="e3711-275">ズーム スクロール ビューアー</span><span class="sxs-lookup"><span data-stu-id="e3711-275">Zooming scroll viewer</span></span>
-<span data-ttu-id="e3711-276">「スクロール ビューアー」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e3711-276">See Scroll viewer.</span></span>
+### <a name="zooming-scroll-viewer"></a><span data-ttu-id="baedd-275">ズーム スクロール ビューアー</span><span class="sxs-lookup"><span data-stu-id="baedd-275">Zooming scroll viewer</span></span>
+<span data-ttu-id="baedd-276">「スクロール ビューアー」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="baedd-276">See Scroll viewer.</span></span>
 
-## <a name="media-controls"></a><span data-ttu-id="e3711-277">メディア コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-277">Media controls</span></span>
+## <a name="media-controls"></a><span data-ttu-id="baedd-277">メディア コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-277">Media controls</span></span>
 
-### <a name="audio"></a><span data-ttu-id="e3711-278">オーディオ</span><span class="sxs-lookup"><span data-stu-id="e3711-278">Audio</span></span>
-<span data-ttu-id="e3711-279">「メディア要素」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e3711-279">See Media element.</span></span>
+### <a name="audio"></a><span data-ttu-id="baedd-278">オーディオ</span><span class="sxs-lookup"><span data-stu-id="baedd-278">Audio</span></span>
+<span data-ttu-id="baedd-279">「メディア要素」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="baedd-279">See Media element.</span></span>
 
-### <a name="media-element"></a><span data-ttu-id="e3711-280">メディア要素</span><span class="sxs-lookup"><span data-stu-id="e3711-280">Media element</span></span>
-<span data-ttu-id="e3711-281">オーディオとビデオのコンテンツを再生するコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-281">A control that plays audio and video content.</span></span>
+### <a name="media-element"></a><span data-ttu-id="baedd-280">メディア要素</span><span class="sxs-lookup"><span data-stu-id="baedd-280">Media element</span></span>
+<span data-ttu-id="baedd-281">オーディオとビデオのコンテンツを再生するコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-281">A control that plays audio and video content.</span></span>
 
 ```xaml
 <MediaElement x:Name="myMediaElement"/>
 ```
 
-<span data-ttu-id="e3711-282">リファレンス: [MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-282">Reference: [MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx)</span></span> 
+<span data-ttu-id="baedd-282">リファレンス: [MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-282">Reference: [MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx)</span></span> 
 
-<span data-ttu-id="e3711-283">デザインと使い方: [メディア要素コントロールのガイド](media-playback.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-283">Design and how-to: [Media element control guide](media-playback.md)</span></span>
+<span data-ttu-id="baedd-283">デザインと使い方: [メディア要素コントロールのガイド](media-playback.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-283">Design and how-to: [Media element control guide](media-playback.md)</span></span>
 
-### <a name="mediatransportcontrols"></a><span data-ttu-id="e3711-284">MediaTransportControls</span><span class="sxs-lookup"><span data-stu-id="e3711-284">MediaTransportControls</span></span>
-<span data-ttu-id="e3711-285">MediaElement の再生コントロールを提供するコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-285">A control that provides playback controls for a MediaElement.</span></span>
+### <a name="mediatransportcontrols"></a><span data-ttu-id="baedd-284">MediaTransportControls</span><span class="sxs-lookup"><span data-stu-id="baedd-284">MediaTransportControls</span></span>
+<span data-ttu-id="baedd-285">MediaElement の再生コントロールを提供するコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-285">A control that provides playback controls for a MediaElement.</span></span>
 
 ![トランスポート コントロールを含むメディア要素](images/controls/media-transport-controls.png) 
 
@@ -541,28 +541,28 @@ ms.locfileid: "5859669"
 <MediaTransportControls MediaElement="myMediaElement"/>
 ```
 
-<span data-ttu-id="e3711-287">リファレンス: [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-287">Reference: [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx)</span></span> 
+<span data-ttu-id="baedd-287">リファレンス: [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-287">Reference: [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx)</span></span> 
 
-<span data-ttu-id="e3711-288">デザインと使い方: [メディア要素コントロールのガイド](media-playback.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-288">Design and how-to: [Media element control guide](media-playback.md)</span></span> 
+<span data-ttu-id="baedd-288">デザインと使い方: [メディア要素コントロールのガイド](media-playback.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-288">Design and how-to: [Media element control guide](media-playback.md)</span></span> 
 
-<span data-ttu-id="e3711-289">サンプル コード: [メディア トランスポート コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620023)</span><span class="sxs-lookup"><span data-stu-id="e3711-289">Sample code: [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023)</span></span>
+<span data-ttu-id="baedd-289">サンプル コード: [メディア トランスポート コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620023)</span><span class="sxs-lookup"><span data-stu-id="baedd-289">Sample code: [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023)</span></span>
 
-### <a name="video"></a><span data-ttu-id="e3711-290">ビデオ</span><span class="sxs-lookup"><span data-stu-id="e3711-290">Video</span></span>
-<span data-ttu-id="e3711-291">「メディア要素」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e3711-291">See Media element.</span></span>
+### <a name="video"></a><span data-ttu-id="baedd-290">ビデオ</span><span class="sxs-lookup"><span data-stu-id="baedd-290">Video</span></span>
+<span data-ttu-id="baedd-291">「メディア要素」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="baedd-291">See Media element.</span></span>
 
-## <a name="navigation"></a><span data-ttu-id="e3711-292">ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="e3711-292">Navigation</span></span>
+## <a name="navigation"></a><span data-ttu-id="baedd-292">ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="baedd-292">Navigation</span></span>
 
-### <a name="navigationview"></a><span data-ttu-id="e3711-293">NavigationView</span><span class="sxs-lookup"><span data-stu-id="e3711-293">NavigationView</span></span>
+### <a name="navigationview"></a><span data-ttu-id="baedd-293">NavigationView</span><span class="sxs-lookup"><span data-stu-id="baedd-293">NavigationView</span></span>
 
-<span data-ttu-id="e3711-294">適応コンテナーと、左側のナビゲーション ウィンドウで、上部のナビゲーションとタブ パターンを実装する柔軟なナビゲーション モデルの場合。</span><span class="sxs-lookup"><span data-stu-id="e3711-294">An adaptable container and flexible navigation model that implements the left navigation pane, top navigation and tabs pattern.</span></span>
+<span data-ttu-id="baedd-294">適応コンテナーと、左側のナビゲーション ウィンドウで、上部のナビゲーションとタブ パターンを実装する柔軟なナビゲーション モデルの場合。</span><span class="sxs-lookup"><span data-stu-id="baedd-294">An adaptable container and flexible navigation model that implements the left navigation pane, top navigation and tabs pattern.</span></span>
 
-<span data-ttu-id="e3711-295">リファレンス: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)</span><span class="sxs-lookup"><span data-stu-id="e3711-295">Reference: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)</span></span>
+<span data-ttu-id="baedd-295">リファレンス: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)</span><span class="sxs-lookup"><span data-stu-id="baedd-295">Reference: [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)</span></span>
 
-<span data-ttu-id="e3711-296">デザインと使い方: [NavigationView コントロールのガイド](navigationview.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-296">Design and how-to: [NavigationView control guide](navigationview.md)</span></span>
+<span data-ttu-id="baedd-296">デザインと使い方: [NavigationView コントロールのガイド](navigationview.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-296">Design and how-to: [NavigationView control guide](navigationview.md)</span></span>
 
-### <a name="splitview"></a><span data-ttu-id="e3711-297">SplitView</span><span class="sxs-lookup"><span data-stu-id="e3711-297">SplitView</span></span>
+### <a name="splitview"></a><span data-ttu-id="baedd-297">SplitView</span><span class="sxs-lookup"><span data-stu-id="baedd-297">SplitView</span></span>
 
-<span data-ttu-id="e3711-298">2 つのビューを持つコンテナー コントロール。1 つはメイン コンテンツ用で、もう 1 つは、通常、ナビゲーション メニューに使います。</span><span class="sxs-lookup"><span data-stu-id="e3711-298">A container control with two views; one view for the main content and another view that is typically used for a navigation menu.</span></span>
+<span data-ttu-id="baedd-298">2 つのビューを持つコンテナー コントロール。1 つはメイン コンテンツ用で、もう 1 つは、通常、ナビゲーション メニューに使います。</span><span class="sxs-lookup"><span data-stu-id="baedd-298">A container control with two views; one view for the main content and another view that is typically used for a navigation menu.</span></span>
 
 ![分割ビュー コントロール](images/controls/split-view.png) 
 
@@ -577,28 +577,28 @@ ms.locfileid: "5859669"
 </SplitView>
 ```
 
-<span data-ttu-id="e3711-300">リファレンス: [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-300">Reference: [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx)</span></span> 
+<span data-ttu-id="baedd-300">リファレンス: [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-300">Reference: [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx)</span></span> 
 
-<span data-ttu-id="e3711-301">デザインと使い方: [分割ビュー コントロールのガイド](split-view.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-301">Design and how-to: [Split view control guide](split-view.md)</span></span>
+<span data-ttu-id="baedd-301">デザインと使い方: [分割ビュー コントロールのガイド](split-view.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-301">Design and how-to: [Split view control guide](split-view.md)</span></span>
 
-### <a name="web-view"></a><span data-ttu-id="e3711-302">Web ビュー</span><span class="sxs-lookup"><span data-stu-id="e3711-302">Web view</span></span>
+### <a name="web-view"></a><span data-ttu-id="baedd-302">Web ビュー</span><span class="sxs-lookup"><span data-stu-id="baedd-302">Web view</span></span>
 
-<span data-ttu-id="e3711-303">Web コンテンツをホストするコンテナー コントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-303">A container control that hosts web content.</span></span>
+<span data-ttu-id="baedd-303">Web コンテンツをホストするコンテナー コントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-303">A container control that hosts web content.</span></span>
 
 ```xaml
 <WebView x:Name="webView1" Source="http://dev.windows.com" 
          Height="400" Width="800"/>
 ```
 
-<span data-ttu-id="e3711-304">リファレンス: [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-304">Reference: [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx)</span></span> 
+<span data-ttu-id="baedd-304">リファレンス: [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-304">Reference: [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx)</span></span> 
 
-<span data-ttu-id="e3711-305">デザインと使い方: Web ビューのガイドライン</span><span class="sxs-lookup"><span data-stu-id="e3711-305">Design and how-to: Guidelines for Web views</span></span> 
+<span data-ttu-id="baedd-305">デザインと使い方: Web ビューのガイドライン</span><span class="sxs-lookup"><span data-stu-id="baedd-305">Design and how-to: Guidelines for Web views</span></span> 
 
-<span data-ttu-id="e3711-306">サンプル コード: [XAML WebView コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238582)</span><span class="sxs-lookup"><span data-stu-id="e3711-306">Sample code: [XAML WebView control sample](http://go.microsoft.com/fwlink/p/?linkid=238582)</span></span>
+<span data-ttu-id="baedd-306">サンプル コード: [XAML WebView コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238582)</span><span class="sxs-lookup"><span data-stu-id="baedd-306">Sample code: [XAML WebView control sample](http://go.microsoft.com/fwlink/p/?linkid=238582)</span></span>
 
-### <a name="semantic-zoom"></a><span data-ttu-id="e3711-307">セマンティック ズーム</span><span class="sxs-lookup"><span data-stu-id="e3711-307">Semantic zoom</span></span>
+### <a name="semantic-zoom"></a><span data-ttu-id="baedd-307">セマンティック ズーム</span><span class="sxs-lookup"><span data-stu-id="baedd-307">Semantic zoom</span></span>
 
-<span data-ttu-id="e3711-308">ユーザーが、項目のコレクションの 2 つの異なる表示の間でズームを実行できるようにするコンテナー コントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-308">A container control that lets the user zoom between two views of a collection of items.</span></span>
+<span data-ttu-id="baedd-308">ユーザーが、項目のコレクションの 2 つの異なる表示の間でズームを実行できるようにするコンテナー コントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-308">A container control that lets the user zoom between two views of a collection of items.</span></span>
 
 ```xaml
 <SemanticZoom>
@@ -611,20 +611,20 @@ ms.locfileid: "5859669"
 </SemanticZoom>
 ```
 
-<span data-ttu-id="e3711-309">リファレンス: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-309">Reference: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx)</span></span> 
+<span data-ttu-id="baedd-309">リファレンス: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-309">Reference: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx)</span></span> 
 
-<span data-ttu-id="e3711-310">デザインと使い方: [セマンティック ズーム コントロールのガイド](semantic-zoom.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-310">Design and how-to: [Semantic zoom control guide](semantic-zoom.md)</span></span>
+<span data-ttu-id="baedd-310">デザインと使い方: [セマンティック ズーム コントロールのガイド](semantic-zoom.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-310">Design and how-to: [Semantic zoom control guide](semantic-zoom.md)</span></span>
 
-<span data-ttu-id="e3711-311">サンプル コード: [XAML GridView のグループ化と SemanticZoom のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226564)</span><span class="sxs-lookup"><span data-stu-id="e3711-311">Sample code: [XAML GridView grouping and SemanticZoom sample](http://go.microsoft.com/fwlink/p/?linkid=226564)</span></span>
+<span data-ttu-id="baedd-311">サンプル コード: [XAML GridView のグループ化と SemanticZoom のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226564)</span><span class="sxs-lookup"><span data-stu-id="baedd-311">Sample code: [XAML GridView grouping and SemanticZoom sample](http://go.microsoft.com/fwlink/p/?linkid=226564)</span></span>
 
-## <a name="progress-controls"></a><span data-ttu-id="e3711-312">プログレス コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-312">Progress controls</span></span>
+## <a name="progress-controls"></a><span data-ttu-id="baedd-312">プログレス コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-312">Progress controls</span></span>
 
-### <a name="progress-bar"></a><span data-ttu-id="e3711-313">進行状況バー</span><span class="sxs-lookup"><span data-stu-id="e3711-313">Progress bar</span></span>
-<span data-ttu-id="e3711-314">バーを表示して進行状況を示すコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-314">A control that indicates progress by displaying a bar.</span></span>
+### <a name="progress-bar"></a><span data-ttu-id="baedd-313">進行状況バー</span><span class="sxs-lookup"><span data-stu-id="baedd-313">Progress bar</span></span>
+<span data-ttu-id="baedd-314">バーを表示して進行状況を示すコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-314">A control that indicates progress by displaying a bar.</span></span>
 
 ![進行状況バー コントロール](images/controls/progress-bar-determinate.png)
 
-<span data-ttu-id="e3711-316">特定の値を表示する進行状況バー。</span><span class="sxs-lookup"><span data-stu-id="e3711-316">A progress bar that shows a specific value.</span></span>
+<span data-ttu-id="baedd-316">特定の値を表示する進行状況バー。</span><span class="sxs-lookup"><span data-stu-id="baedd-316">A progress bar that shows a specific value.</span></span>
 
 ```xaml
 <ProgressBar x:Name="progressBar1" Value="50" Width="100"/>
@@ -632,18 +632,18 @@ ms.locfileid: "5859669"
 
 ![進行状況不定バー コントロール](images/controls/progress-bar-indeterminate.png)
 
-<span data-ttu-id="e3711-318">進行状況が不定であることを表す進行状況バー。</span><span class="sxs-lookup"><span data-stu-id="e3711-318">A progress bar that shows indeterminate progress.</span></span>
+<span data-ttu-id="baedd-318">進行状況が不定であることを表す進行状況バー。</span><span class="sxs-lookup"><span data-stu-id="baedd-318">A progress bar that shows indeterminate progress.</span></span>
 
 ```xaml
 <ProgressBar x:Name="indeterminateProgressBar1" IsIndeterminate="True" Width="100"/>
 ```
 
-<span data-ttu-id="e3711-319">リファレンス: [ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-319">Reference: [ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)</span></span> 
+<span data-ttu-id="baedd-319">リファレンス: [ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-319">Reference: [ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)</span></span> 
 
-<span data-ttu-id="e3711-320">デザインと使い方: [プログレス コントロールのガイド](progress-controls.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-320">Design and how-to: [Progress controls guide](progress-controls.md)</span></span> 
+<span data-ttu-id="baedd-320">デザインと使い方: [プログレス コントロールのガイド](progress-controls.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-320">Design and how-to: [Progress controls guide](progress-controls.md)</span></span> 
 
-### <a name="progress-ring"></a><span data-ttu-id="e3711-321">進行状況リング</span><span class="sxs-lookup"><span data-stu-id="e3711-321">Progress ring</span></span>
-<span data-ttu-id="e3711-322">リングを表示して進行状況が不定であることを示すコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-322">A control that indicates indeterminate progress by displaying a ring.</span></span> 
+### <a name="progress-ring"></a><span data-ttu-id="baedd-321">進行状況リング</span><span class="sxs-lookup"><span data-stu-id="baedd-321">Progress ring</span></span>
+<span data-ttu-id="baedd-322">リングを表示して進行状況が不定であることを示すコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-322">A control that indicates indeterminate progress by displaying a ring.</span></span> 
 
 ![進行状況リング コントロール](images/controls/progress-ring.png) 
 
@@ -651,28 +651,28 @@ ms.locfileid: "5859669"
 <ProgressRing x:Name="progressRing1" IsActive="True"/>
 ```
 
-<span data-ttu-id="e3711-324">リファレンス: [ProgressRing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-324">Reference: [ProgressRing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)</span></span> 
+<span data-ttu-id="baedd-324">リファレンス: [ProgressRing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-324">Reference: [ProgressRing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)</span></span> 
 
-<span data-ttu-id="e3711-325">デザインと使い方: [プログレス コントロールのガイド](progress-controls.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-325">Design and how-to: [Progress controls guide](progress-controls.md)</span></span> 
+<span data-ttu-id="baedd-325">デザインと使い方: [プログレス コントロールのガイド](progress-controls.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-325">Design and how-to: [Progress controls guide](progress-controls.md)</span></span> 
 
-## <a name="text-controls"></a><span data-ttu-id="e3711-326">テキスト コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-326">Text controls</span></span>
+## <a name="text-controls"></a><span data-ttu-id="baedd-326">テキスト コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-326">Text controls</span></span>
 
-### <a name="auto-suggest-box"></a><span data-ttu-id="e3711-327">自動提案ボックス</span><span class="sxs-lookup"><span data-stu-id="e3711-327">Auto suggest box</span></span>
-<span data-ttu-id="e3711-328">ユーザーが入力するときに、候補のテキストを表示するテキスト入力ボックスです。</span><span class="sxs-lookup"><span data-stu-id="e3711-328">A text input box that provides suggested text as the user types.</span></span>
+### <a name="auto-suggest-box"></a><span data-ttu-id="baedd-327">自動提案ボックス</span><span class="sxs-lookup"><span data-stu-id="baedd-327">Auto suggest box</span></span>
+<span data-ttu-id="baedd-328">ユーザーが入力するときに、候補のテキストを表示するテキスト入力ボックスです。</span><span class="sxs-lookup"><span data-stu-id="baedd-328">A text input box that provides suggested text as the user types.</span></span>
 
 ![検索の自動提案ボックス](images/controls/auto-suggest-box.png) 
 
-<span data-ttu-id="e3711-330">リファレンス: [AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-330">Reference: [AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</span></span>
+<span data-ttu-id="baedd-330">リファレンス: [AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-330">Reference: [AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</span></span>
 
-<span data-ttu-id="e3711-331">デザインと使い方: [テキスト コントロール](text-controls.md)、[自動提案ボックス コントロールのガイド](auto-suggest-box.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-331">Design and how-to: [Text controls](text-controls.md), [Auto suggest box control guide](auto-suggest-box.md)</span></span>
+<span data-ttu-id="baedd-331">デザインと使い方: [テキスト コントロール](text-controls.md)、[自動提案ボックス コントロールのガイド](auto-suggest-box.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-331">Design and how-to: [Text controls](text-controls.md), [Auto suggest box control guide](auto-suggest-box.md)</span></span>
 
-<span data-ttu-id="e3711-332">サンプル コード: [AutoSuggestBox の移行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619996)</span><span class="sxs-lookup"><span data-stu-id="e3711-332">Sample code: [AutoSuggestBox migration sample](http://go.microsoft.com/fwlink/p/?LinkId=619996)</span></span>
+<span data-ttu-id="baedd-332">サンプル コード: [AutoSuggestBox の移行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619996)</span><span class="sxs-lookup"><span data-stu-id="baedd-332">Sample code: [AutoSuggestBox migration sample](http://go.microsoft.com/fwlink/p/?LinkId=619996)</span></span>
 
-### <a name="multi-line-text-box"></a><span data-ttu-id="e3711-333">複数行テキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e3711-333">Multi-line text box</span></span>
-<span data-ttu-id="e3711-334">「テキスト ボックス」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e3711-334">See Text box.</span></span>
+### <a name="multi-line-text-box"></a><span data-ttu-id="baedd-333">複数行テキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="baedd-333">Multi-line text box</span></span>
+<span data-ttu-id="baedd-334">「テキスト ボックス」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="baedd-334">See Text box.</span></span>
 
-### <a name="password-box"></a><span data-ttu-id="e3711-335">パスワード ボックス</span><span class="sxs-lookup"><span data-stu-id="e3711-335">Password box</span></span>
-<span data-ttu-id="e3711-336">パスワードを入力するためのコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-336">A control for entering passwords.</span></span>
+### <a name="password-box"></a><span data-ttu-id="baedd-335">パスワード ボックス</span><span class="sxs-lookup"><span data-stu-id="baedd-335">Password box</span></span>
+<span data-ttu-id="baedd-336">パスワードを入力するためのコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-336">A control for entering passwords.</span></span>
 
  ![パスワード ボックス](images/controls/password-box.png)
 
@@ -681,36 +681,36 @@ ms.locfileid: "5859669"
              PasswordChanged="PasswordBox_PasswordChanged" />
 ```
 
-<span data-ttu-id="e3711-338">リファレンス: [PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-338">Reference: [PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</span></span> 
+<span data-ttu-id="baedd-338">リファレンス: [PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-338">Reference: [PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</span></span> 
 
-<span data-ttu-id="e3711-339">デザインと使い方: [テキスト コントロール](text-controls.md)、[パスワード ボックス コントロールのガイド](password-box.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-339">Design and how-to: [Text controls](text-controls.md), [Password box control guide](password-box.md)</span></span> 
+<span data-ttu-id="baedd-339">デザインと使い方: [テキスト コントロール](text-controls.md)、[パスワード ボックス コントロールのガイド](password-box.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-339">Design and how-to: [Text controls](text-controls.md), [Password box control guide](password-box.md)</span></span> 
 
-<span data-ttu-id="e3711-340">サンプル コード: [XAML テキスト表示のサンプル](http://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML テキスト編集のサンプル](http://go.microsoft.com/fwlink/p/?linkid=251417)</span><span class="sxs-lookup"><span data-stu-id="e3711-340">Sample code: [XAML text display sample](http://go.microsoft.com/fwlink/p/?linkid=238579), [XAML text editing sample](http://go.microsoft.com/fwlink/p/?linkid=251417)</span></span>
+<span data-ttu-id="baedd-340">サンプル コード: [XAML テキスト表示のサンプル](http://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML テキスト編集のサンプル](http://go.microsoft.com/fwlink/p/?linkid=251417)</span><span class="sxs-lookup"><span data-stu-id="baedd-340">Sample code: [XAML text display sample](http://go.microsoft.com/fwlink/p/?linkid=238579), [XAML text editing sample](http://go.microsoft.com/fwlink/p/?linkid=251417)</span></span>
 
-### <a name="rich-edit-box"></a><span data-ttu-id="e3711-341">リッチ エディット ボックス</span><span class="sxs-lookup"><span data-stu-id="e3711-341">Rich edit box</span></span>
-<span data-ttu-id="e3711-342">書式付きテキスト、ハイパーリンク、イメージなどを含んだリッチ テキスト ドキュメントを編集できるコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-342">A control that lets a user edit rich text documents with content like formatted text, hyperlinks, and images.</span></span>
+### <a name="rich-edit-box"></a><span data-ttu-id="baedd-341">リッチ エディット ボックス</span><span class="sxs-lookup"><span data-stu-id="baedd-341">Rich edit box</span></span>
+<span data-ttu-id="baedd-342">書式付きテキスト、ハイパーリンク、イメージなどを含んだリッチ テキスト ドキュメントを編集できるコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-342">A control that lets a user edit rich text documents with content like formatted text, hyperlinks, and images.</span></span>
 
 ```xaml
 <RichEditBox />
 ```
 
-<span data-ttu-id="e3711-343">リファレンス: [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-343">Reference: [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</span></span> 
+<span data-ttu-id="baedd-343">リファレンス: [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-343">Reference: [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</span></span> 
 
-<span data-ttu-id="e3711-344">デザインと使い方: [テキスト コントロール](text-controls.md)、[リッチ エディット ボックス コントロールのガイド](rich-edit-box.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-344">Design and how-to: [Text controls](text-controls.md), [Rich edit box control guide](rich-edit-box.md)</span></span>
+<span data-ttu-id="baedd-344">デザインと使い方: [テキスト コントロール](text-controls.md)、[リッチ エディット ボックス コントロールのガイド](rich-edit-box.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-344">Design and how-to: [Text controls](text-controls.md), [Rich edit box control guide](rich-edit-box.md)</span></span>
 
-<span data-ttu-id="e3711-345">サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)</span><span class="sxs-lookup"><span data-stu-id="e3711-345">Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)</span></span>
+<span data-ttu-id="baedd-345">サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)</span><span class="sxs-lookup"><span data-stu-id="baedd-345">Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)</span></span>
 
-### <a name="search-box"></a><span data-ttu-id="e3711-346">検索ボックス</span><span class="sxs-lookup"><span data-stu-id="e3711-346">Search box</span></span>
-<span data-ttu-id="e3711-347">「自動提案ボックス」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e3711-347">See Auto suggest box.</span></span>
+### <a name="search-box"></a><span data-ttu-id="baedd-346">検索ボックス</span><span class="sxs-lookup"><span data-stu-id="baedd-346">Search box</span></span>
+<span data-ttu-id="baedd-347">「自動提案ボックス」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="baedd-347">See Auto suggest box.</span></span>
 
-### <a name="single-line-text-box"></a><span data-ttu-id="e3711-348">単一行テキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e3711-348">Single-line text box</span></span>
-<span data-ttu-id="e3711-349">「テキスト ボックス」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e3711-349">See Text box.</span></span>
+### <a name="single-line-text-box"></a><span data-ttu-id="baedd-348">単一行テキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="baedd-348">Single-line text box</span></span>
+<span data-ttu-id="baedd-349">「テキスト ボックス」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="baedd-349">See Text box.</span></span>
 
-### <a name="static-textparagraph"></a><span data-ttu-id="e3711-350">静的テキスト/段落</span><span class="sxs-lookup"><span data-stu-id="e3711-350">Static text/paragraph</span></span>
-<span data-ttu-id="e3711-351">「テキスト ブロック」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e3711-351">See Text block.</span></span>
+### <a name="static-textparagraph"></a><span data-ttu-id="baedd-350">静的テキスト/段落</span><span class="sxs-lookup"><span data-stu-id="baedd-350">Static text/paragraph</span></span>
+<span data-ttu-id="baedd-351">「テキスト ブロック」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="baedd-351">See Text block.</span></span>
 
-### <a name="text-block"></a><span data-ttu-id="e3711-352">テキスト ブロック</span><span class="sxs-lookup"><span data-stu-id="e3711-352">Text block</span></span>
-<span data-ttu-id="e3711-353">テキストを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-353">A control that displays text.</span></span>
+### <a name="text-block"></a><span data-ttu-id="baedd-352">テキスト ブロック</span><span class="sxs-lookup"><span data-stu-id="baedd-352">Text block</span></span>
+<span data-ttu-id="baedd-353">テキストを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-353">A control that displays text.</span></span>
 
 ![テキスト ブロック コントロール](images/controls/text-block.png) 
 
@@ -718,14 +718,14 @@ ms.locfileid: "5859669"
 <TextBlock x:Name="textBlock1" Text="I am a TextBlock"/>
 ```
 
-<span data-ttu-id="e3711-355">リファレンス: [TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-355">Reference: [TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</span></span> 
+<span data-ttu-id="baedd-355">リファレンス: [TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-355">Reference: [TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</span></span> 
 
-<span data-ttu-id="e3711-356">デザインと使い方: [テキスト コントロール](text-controls.md)、[テキスト ブロック コントロールのガイド](text-block.md)、[リッチ テキスト ブロック コントロールのガイド](rich-text-block.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-356">Design and how-to: [Text controls](text-controls.md), [Text block control guide](text-block.md), [Rich text block control guide](rich-text-block.md)</span></span>
+<span data-ttu-id="baedd-356">デザインと使い方: [テキスト コントロール](text-controls.md)、[テキスト ブロック コントロールのガイド](text-block.md)、[リッチ テキスト ブロック コントロールのガイド](rich-text-block.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-356">Design and how-to: [Text controls](text-controls.md), [Text block control guide](text-block.md), [Rich text block control guide](rich-text-block.md)</span></span>
 
-<span data-ttu-id="e3711-357">サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)</span><span class="sxs-lookup"><span data-stu-id="e3711-357">Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)</span></span>
+<span data-ttu-id="baedd-357">サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)</span><span class="sxs-lookup"><span data-stu-id="baedd-357">Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)</span></span>
 
-### <a name="text-box"></a><span data-ttu-id="e3711-358">テキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e3711-358">Text box</span></span>
-<span data-ttu-id="e3711-359">1 行または複数行のプレーンテキスト フィールド。</span><span class="sxs-lookup"><span data-stu-id="e3711-359">A single-line or multi-line plain text field.</span></span>
+### <a name="text-box"></a><span data-ttu-id="baedd-358">テキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="baedd-358">Text box</span></span>
+<span data-ttu-id="baedd-359">1 行または複数行のプレーンテキスト フィールド。</span><span class="sxs-lookup"><span data-stu-id="baedd-359">A single-line or multi-line plain text field.</span></span>
 
 ![テキスト ボックス コントロール](images/controls/text-box.png) 
 
@@ -734,16 +734,16 @@ ms.locfileid: "5859669"
          TextChanged="TextBox_TextChanged"/>
 ```
 
-<span data-ttu-id="e3711-361">リファレンス: [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-361">Reference: [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</span></span> 
+<span data-ttu-id="baedd-361">リファレンス: [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-361">Reference: [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</span></span> 
 
-<span data-ttu-id="e3711-362">デザインと使い方: [テキスト コントロール](text-controls.md)、[テキスト ボックス コントロールのガイド](text-box.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-362">Design and how-to: [Text controls](text-controls.md), [Text box control guide](text-box.md)</span></span> 
+<span data-ttu-id="baedd-362">デザインと使い方: [テキスト コントロール](text-controls.md)、[テキスト ボックス コントロールのガイド](text-box.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-362">Design and how-to: [Text controls](text-controls.md), [Text box control guide](text-box.md)</span></span> 
 
-<span data-ttu-id="e3711-363">サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)</span><span class="sxs-lookup"><span data-stu-id="e3711-363">Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)</span></span>
+<span data-ttu-id="baedd-363">サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)</span><span class="sxs-lookup"><span data-stu-id="baedd-363">Sample code: [XAML text sample](http://go.microsoft.com/fwlink/p/?linkid=238578)</span></span>
 
-## <a name="selection-controls"></a><span data-ttu-id="e3711-364">選択コントロール</span><span class="sxs-lookup"><span data-stu-id="e3711-364">Selection controls</span></span>
+## <a name="selection-controls"></a><span data-ttu-id="baedd-364">選択コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-364">Selection controls</span></span>
 
-### <a name="check-box"></a><span data-ttu-id="e3711-365">チェック ボックス</span><span class="sxs-lookup"><span data-stu-id="e3711-365">Check box</span></span>
-<span data-ttu-id="e3711-366">ユーザーがオンまたはオフにできるコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-366">A control that a user can select or clear.</span></span>
+### <a name="check-box"></a><span data-ttu-id="baedd-365">チェック ボックス</span><span class="sxs-lookup"><span data-stu-id="baedd-365">Check box</span></span>
+<span data-ttu-id="baedd-366">ユーザーがオンまたはオフにできるコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-366">A control that a user can select or clear.</span></span>
 
 ![チェック ボックスの 3 状態](images/templates-checkbox-states-default.png)
 
@@ -752,12 +752,12 @@ ms.locfileid: "5859669"
           Checked="CheckBox_Checked"/>
 ```
 
-<span data-ttu-id="e3711-368">リファレンス: [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-368">Reference: [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx)</span></span> 
+<span data-ttu-id="baedd-368">リファレンス: [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-368">Reference: [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx)</span></span> 
 
-<span data-ttu-id="e3711-369">デザインと使い方: [チェック ボックス コントロールのガイド](checkbox.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-369">Design and how-to: [Check box control guide](checkbox.md)</span></span> 
+<span data-ttu-id="baedd-369">デザインと使い方: [チェック ボックス コントロールのガイド](checkbox.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-369">Design and how-to: [Check box control guide](checkbox.md)</span></span> 
 
-### <a name="combo-box"></a><span data-ttu-id="e3711-370">コンボ ボックス</span><span class="sxs-lookup"><span data-stu-id="e3711-370">Combo box</span></span>
-<span data-ttu-id="e3711-371">ユーザーが選択できる項目のドロップダウン リスト。</span><span class="sxs-lookup"><span data-stu-id="e3711-371">A drop-down list of items a user can select from.</span></span>
+### <a name="combo-box"></a><span data-ttu-id="baedd-370">コンボ ボックス</span><span class="sxs-lookup"><span data-stu-id="baedd-370">Combo box</span></span>
+<span data-ttu-id="baedd-371">ユーザーが選択できる項目のドロップダウン リスト。</span><span class="sxs-lookup"><span data-stu-id="baedd-371">A drop-down list of items a user can select from.</span></span>
 
 ![開かれた状態のコンボ ボックス](images/controls/combo-box-open.png) 
 
@@ -770,12 +770,12 @@ ms.locfileid: "5859669"
 </ComboBox>
 ```
 
-<span data-ttu-id="e3711-373">リファレンス: [ComboBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-373">Reference: [ComboBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx)</span></span> 
+<span data-ttu-id="baedd-373">リファレンス: [ComboBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-373">Reference: [ComboBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx)</span></span> 
 
-<span data-ttu-id="e3711-374">デザインと使い方: [リスト](lists.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-374">Design and how-to: [Lists](lists.md)</span></span> 
+<span data-ttu-id="baedd-374">デザインと使い方: [リスト](lists.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-374">Design and how-to: [Lists](lists.md)</span></span> 
 
-### <a name="list-box"></a><span data-ttu-id="e3711-375">リスト ボックス</span><span class="sxs-lookup"><span data-stu-id="e3711-375">List box</span></span>
-<span data-ttu-id="e3711-376">ユーザーが選択できる項目のインライン リストを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-376">A control that presents an inline list of items that the user can select from.</span></span> 
+### <a name="list-box"></a><span data-ttu-id="baedd-375">リスト ボックス</span><span class="sxs-lookup"><span data-stu-id="baedd-375">List box</span></span>
+<span data-ttu-id="baedd-376">ユーザーが選択できる項目のインライン リストを表示するコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-376">A control that presents an inline list of items that the user can select from.</span></span> 
 
 ![リスト ボックス コントロール](images/controls/list-box.png)
 
@@ -788,12 +788,12 @@ ms.locfileid: "5859669"
 </ListBox>
 ```
 
-<span data-ttu-id="e3711-378">リファレンス: [ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-378">Reference: [ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx)</span></span> 
+<span data-ttu-id="baedd-378">リファレンス: [ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-378">Reference: [ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx)</span></span> 
 
-<span data-ttu-id="e3711-379">デザインと使い方: [リスト](lists.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-379">Design and how-to: [Lists](lists.md)</span></span> 
+<span data-ttu-id="baedd-379">デザインと使い方: [リスト](lists.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-379">Design and how-to: [Lists](lists.md)</span></span> 
 
-### <a name="radio-button"></a><span data-ttu-id="e3711-380">ラジオ ボタン</span><span class="sxs-lookup"><span data-stu-id="e3711-380">Radio button</span></span>
-<span data-ttu-id="e3711-381">ユーザーがオプションのグループから 1 つのオプションを選択できるようにするコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-381">A control that allows a user to select a single option from a group of options.</span></span> <span data-ttu-id="e3711-382">グループ化されたラジオ ボタンは、それぞれ相互に排他的です。</span><span class="sxs-lookup"><span data-stu-id="e3711-382">When radio buttons are grouped together, they are mutually exclusive.</span></span>
+### <a name="radio-button"></a><span data-ttu-id="baedd-380">ラジオ ボタン</span><span class="sxs-lookup"><span data-stu-id="baedd-380">Radio button</span></span>
+<span data-ttu-id="baedd-381">ユーザーがオプションのグループから 1 つのオプションを選択できるようにするコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-381">A control that allows a user to select a single option from a group of options.</span></span> <span data-ttu-id="baedd-382">グループ化されたラジオ ボタンは、それぞれ相互に排他的です。</span><span class="sxs-lookup"><span data-stu-id="baedd-382">When radio buttons are grouped together, they are mutually exclusive.</span></span>
 
 ![ラジオ ボタン コントロール](images/controls/radio-button.png)
 
@@ -806,12 +806,12 @@ ms.locfileid: "5859669"
              Checked="RadioButton_Checked"/>
 ```
 
-<span data-ttu-id="e3711-384">リファレンス: [RadioButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-384">Reference: [RadioButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx)</span></span> 
+<span data-ttu-id="baedd-384">リファレンス: [RadioButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-384">Reference: [RadioButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx)</span></span> 
 
-<span data-ttu-id="e3711-385">デザインと使い方: [ラジオ ボタン コントロールのガイド](radio-button.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-385">Design and how-to: [Radio button control guide](radio-button.md)</span></span>
+<span data-ttu-id="baedd-385">デザインと使い方: [ラジオ ボタン コントロールのガイド](radio-button.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-385">Design and how-to: [Radio button control guide](radio-button.md)</span></span>
  
-### <a name="slider"></a><span data-ttu-id="e3711-386">スライダー</span><span class="sxs-lookup"><span data-stu-id="e3711-386">Slider</span></span>
-<span data-ttu-id="e3711-387">ユーザーがトラックに沿って Thumb コントロールを動かすことで値の範囲から選択できるようにするコントロール。</span><span class="sxs-lookup"><span data-stu-id="e3711-387">A control that lets the user select from a range of values by moving a Thumb control along a track.</span></span>
+### <a name="slider"></a><span data-ttu-id="baedd-386">スライダー</span><span class="sxs-lookup"><span data-stu-id="baedd-386">Slider</span></span>
+<span data-ttu-id="baedd-387">ユーザーがトラックに沿って Thumb コントロールを動かすことで値の範囲から選択できるようにするコントロール。</span><span class="sxs-lookup"><span data-stu-id="baedd-387">A control that lets the user select from a range of values by moving a Thumb control along a track.</span></span>
 
 ![スライダー コントロール](images/controls/slider.png)
 
@@ -819,24 +819,24 @@ ms.locfileid: "5859669"
 <Slider x:Name="slider1" Width="100" ValueChanged="Slider_ValueChanged" />
 ```
 
-<span data-ttu-id="e3711-389">リファレンス: [Slider](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-389">Reference: [Slider](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)</span></span> 
+<span data-ttu-id="baedd-389">リファレンス: [Slider](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-389">Reference: [Slider](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)</span></span> 
 
-<span data-ttu-id="e3711-390">デザインと使い方: [スライダー コントロールのガイド](slider.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-390">Design and how-to: [Slider control guide](slider.md)</span></span> 
+<span data-ttu-id="baedd-390">デザインと使い方: [スライダー コントロールのガイド](slider.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-390">Design and how-to: [Slider control guide](slider.md)</span></span> 
 
-### <a name="toggle-button"></a><span data-ttu-id="e3711-391">トグル ボタン</span><span class="sxs-lookup"><span data-stu-id="e3711-391">Toggle button</span></span>
-<span data-ttu-id="e3711-392">2 つの状態を切り替えることができるボタン。</span><span class="sxs-lookup"><span data-stu-id="e3711-392">A button that can be toggled between 2 states.</span></span>
+### <a name="toggle-button"></a><span data-ttu-id="baedd-391">トグル ボタン</span><span class="sxs-lookup"><span data-stu-id="baedd-391">Toggle button</span></span>
+<span data-ttu-id="baedd-392">2 つの状態を切り替えることができるボタン。</span><span class="sxs-lookup"><span data-stu-id="baedd-392">A button that can be toggled between 2 states.</span></span>
 
 ```xaml
 <ToggleButton x:Name="toggleButton1" Content="Button" 
               Checked="ToggleButton_Checked"/>
 ```
 
-<span data-ttu-id="e3711-393">リファレンス: [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-393">Reference: [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)</span></span>
+<span data-ttu-id="baedd-393">リファレンス: [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-393">Reference: [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)</span></span>
 
-<span data-ttu-id="e3711-394">デザインと使い方: [トグル コントロールのガイド](toggles.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-394">Design and how-to: [Toggle control guide](toggles.md)</span></span> 
+<span data-ttu-id="baedd-394">デザインと使い方: [トグル コントロールのガイド](toggles.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-394">Design and how-to: [Toggle control guide](toggles.md)</span></span> 
 
-### <a name="toggle-switch"></a><span data-ttu-id="e3711-395">トグル スイッチ</span><span class="sxs-lookup"><span data-stu-id="e3711-395">Toggle switch</span></span>
-<span data-ttu-id="e3711-396">2 つの状態を切り替えることができるスイッチ。</span><span class="sxs-lookup"><span data-stu-id="e3711-396">A switch that can be toggled between 2 states.</span></span>
+### <a name="toggle-switch"></a><span data-ttu-id="baedd-395">トグル スイッチ</span><span class="sxs-lookup"><span data-stu-id="baedd-395">Toggle switch</span></span>
+<span data-ttu-id="baedd-396">2 つの状態を切り替えることができるスイッチ。</span><span class="sxs-lookup"><span data-stu-id="baedd-396">A switch that can be toggled between 2 states.</span></span>
 
 ![トグル スイッチ コントロール](images/controls/toggle-switch.png) 
 
@@ -846,6 +846,6 @@ ms.locfileid: "5859669"
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-<span data-ttu-id="e3711-398">リファレンス: [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx)</span><span class="sxs-lookup"><span data-stu-id="e3711-398">Reference: [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx)</span></span> 
+<span data-ttu-id="baedd-398">リファレンス: [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx)</span><span class="sxs-lookup"><span data-stu-id="baedd-398">Reference: [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx)</span></span> 
 
-<span data-ttu-id="e3711-399">デザインと使い方: [トグル コントロールのガイド](toggles.md)</span><span class="sxs-lookup"><span data-stu-id="e3711-399">Design and how-to: [Toggle control guide](toggles.md)</span></span> 
+<span data-ttu-id="baedd-399">デザインと使い方: [トグル コントロールのガイド](toggles.md)</span><span class="sxs-lookup"><span data-stu-id="baedd-399">Design and how-to: [Toggle control guide](toggles.md)</span></span> 

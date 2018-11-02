@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8219f1600297dfa60345fe8130e8954558b8ac61
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5872391"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5935575"
 ---
 # <a name="getting-started-getting-around-in-visual-studio"></a><span data-ttu-id="37da5-104">はじめに: Visual Studio の操作方法</span><span class="sxs-lookup"><span data-stu-id="37da5-104">Getting started: Getting around in Visual Studio</span></span>
 

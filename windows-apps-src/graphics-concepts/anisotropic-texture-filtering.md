@@ -10,23 +10,23 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e91c707b31de859d61ae926518c40812758320e
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873732"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5937982"
 ---
-# <a name="anisotropic-texture-filtering"></a><span data-ttu-id="471df-105">異方性テクスチャ フィルタ リング</span><span class="sxs-lookup"><span data-stu-id="471df-105">Anisotropic texture filtering</span></span>
+# <a name="anisotropic-texture-filtering"></a><span data-ttu-id="7598c-105">異方性テクスチャ フィルタ リング</span><span class="sxs-lookup"><span data-stu-id="7598c-105">Anisotropic texture filtering</span></span>
 
 
-<span data-ttu-id="471df-106">サーフェスがスクリーンの平面に対して角度をなして配置されている 3D オブジェクトのテクセルに見られるゆがみを*異方性*と呼びます。</span><span class="sxs-lookup"><span data-stu-id="471df-106">*Anisotropy* is the distortion visible in the texels of a 3D object whose surface is oriented at an angle with respect to the plane of the screen.</span></span> <span data-ttu-id="471df-107">異方性プリミティブのピクセルをテクセルにマッピングすると、形状がゆがみます。</span><span class="sxs-lookup"><span data-stu-id="471df-107">When a pixel from an anisotropic primitive is mapped to texels, its shape is distorted.</span></span> <span data-ttu-id="471df-108">Direct3D では、テクスチャ空間に逆マッピングされたスクリーン ピクセルの伸長度 (長さを幅で割ったもの) としてピクセルの異方性を測定します。</span><span class="sxs-lookup"><span data-stu-id="471df-108">Direct3D measures the anisotropy of a pixel as the elongation - that is, length divided by width - of a screen pixel that is inverse-mapped into texture space.</span></span>
+<span data-ttu-id="7598c-106">サーフェスがスクリーンの平面に対して角度をなして配置されている 3D オブジェクトのテクセルに見られるゆがみを*異方性*と呼びます。</span><span class="sxs-lookup"><span data-stu-id="7598c-106">*Anisotropy* is the distortion visible in the texels of a 3D object whose surface is oriented at an angle with respect to the plane of the screen.</span></span> <span data-ttu-id="7598c-107">異方性プリミティブのピクセルをテクセルにマッピングすると、形状がゆがみます。</span><span class="sxs-lookup"><span data-stu-id="7598c-107">When a pixel from an anisotropic primitive is mapped to texels, its shape is distorted.</span></span> <span data-ttu-id="7598c-108">Direct3D では、テクスチャ空間に逆マッピングされたスクリーン ピクセルの伸長度 (長さを幅で割ったもの) としてピクセルの異方性を測定します。</span><span class="sxs-lookup"><span data-stu-id="7598c-108">Direct3D measures the anisotropy of a pixel as the elongation - that is, length divided by width - of a screen pixel that is inverse-mapped into texture space.</span></span>
 
-<span data-ttu-id="471df-109">異方性テクスチャ フィルタリングを線形テクスチャ フィルタリングまたはミップマップ テクスチャ フィルタリングと共に使用することで、レンダリング結果を向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="471df-109">You can use anisotropic texture filtering in conjunction with linear texture filtering or mipmap texture filtering to improve rendering results.</span></span>
+<span data-ttu-id="7598c-109">異方性テクスチャ フィルタリングを線形テクスチャ フィルタリングまたはミップマップ テクスチャ フィルタリングと共に使用することで、レンダリング結果を向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="7598c-109">You can use anisotropic texture filtering in conjunction with linear texture filtering or mipmap texture filtering to improve rendering results.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="471df-110"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="471df-110"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="7598c-110"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="7598c-110"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="471df-111">テクスチャ フィルタリング</span><span class="sxs-lookup"><span data-stu-id="471df-111">Texture filtering</span></span>](texture-filtering.md)
+[<span data-ttu-id="7598c-111">テクスチャ フィルタリング</span><span class="sxs-lookup"><span data-stu-id="7598c-111">Texture filtering</span></span>](texture-filtering.md)
 
  
 

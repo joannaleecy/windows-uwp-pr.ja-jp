@@ -9,34 +9,34 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, エラー処理, JavaScript, XAML, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: a9fa05ed2ee946fcec9ffb5ff21abd9011db0f2a
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881907"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5942789"
 ---
-# <a name="handle-ad-errors"></a><span data-ttu-id="d3c20-104">広告のエラー処理</span><span class="sxs-lookup"><span data-stu-id="d3c20-104">Handle ad errors</span></span>
+# <a name="handle-ad-errors"></a><span data-ttu-id="40bee-104">広告のエラー処理</span><span class="sxs-lookup"><span data-stu-id="40bee-104">Handle ad errors</span></span>
 
-<span data-ttu-id="d3c20-105">[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)、[InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad)、[NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) の各クラスには、広告関連のエラーが発生した場合に発生する **ErrorOccurred** イベントがあります。</span><span class="sxs-lookup"><span data-stu-id="d3c20-105">The [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol),  [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad), and [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) classes each have an **ErrorOccurred** event that is raised if an ad-related error occurs.</span></span> <span data-ttu-id="d3c20-106">アプリ コードでこのイベントを処理し、イベント引数オブジェクトの [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) プロパティと [ErrorMessage](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) プロパティを調べて、エラーの原因を特定することができます。</span><span class="sxs-lookup"><span data-stu-id="d3c20-106">Your app code can handle this event and examine the [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) and [ErrorMessage](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) properties of the event args object to help determine the cause of the error.</span></span>
+<span data-ttu-id="40bee-105">[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)、[InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad)、[NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) の各クラスには、広告関連のエラーが発生した場合に発生する **ErrorOccurred** イベントがあります。</span><span class="sxs-lookup"><span data-stu-id="40bee-105">The [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol),  [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad), and [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) classes each have an **ErrorOccurred** event that is raised if an ad-related error occurs.</span></span> <span data-ttu-id="40bee-106">アプリ コードでこのイベントを処理し、イベント引数オブジェクトの [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) プロパティと [ErrorMessage](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) プロパティを調べて、エラーの原因を特定することができます。</span><span class="sxs-lookup"><span data-stu-id="40bee-106">Your app code can handle this event and examine the [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) and [ErrorMessage](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) properties of the event args object to help determine the cause of the error.</span></span>
 
 <span id="bkmk-dotnet"/>
 
-## <a name="xaml-apps"></a><span data-ttu-id="d3c20-107">XAML アプリ</span><span class="sxs-lookup"><span data-stu-id="d3c20-107">XAML apps</span></span>
+## <a name="xaml-apps"></a><span data-ttu-id="40bee-107">XAML アプリ</span><span class="sxs-lookup"><span data-stu-id="40bee-107">XAML apps</span></span>
 
-<span data-ttu-id="d3c20-108">XAML アプリで広告関連のエラーを処理するには:</span><span class="sxs-lookup"><span data-stu-id="d3c20-108">To handle ad-related errors in a XAML app:</span></span>
+<span data-ttu-id="40bee-108">XAML アプリで広告関連のエラーを処理するには:</span><span class="sxs-lookup"><span data-stu-id="40bee-108">To handle ad-related errors in a XAML app:</span></span>
 
-1. <span data-ttu-id="d3c20-109">**AdControl**、**InterstitialAd**、**NativeAdsManagerV2** オブジェクトの **ErrorOccurred** イベントを、イベント ハンドラー デリゲートの名前に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="d3c20-109">Assign the **ErrorOccurred** event of your **AdControl**, **InterstitialAd**, or **NativeAdsManagerV2** object to the name of an event handler delegate.</span></span>
+1. <span data-ttu-id="40bee-109">**AdControl**、**InterstitialAd**、**NativeAdsManagerV2** オブジェクトの **ErrorOccurred** イベントを、イベント ハンドラー デリゲートの名前に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="40bee-109">Assign the **ErrorOccurred** event of your **AdControl**, **InterstitialAd**, or **NativeAdsManagerV2** object to the name of an event handler delegate.</span></span>
 
-2. <span data-ttu-id="d3c20-110">送信元の **Object** と [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs) オブジェクトの、2 つのパラメーターを受け取るようにエラー イベント処理デリゲートのコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="d3c20-110">Code the error event handling delegate so that it takes two parameters: an **Object** for the sender and an [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs) object.</span></span>
+2. <span data-ttu-id="40bee-110">送信元の **Object** と [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs) オブジェクトの、2 つのパラメーターを受け取るようにエラー イベント処理デリゲートのコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="40bee-110">Code the error event handling delegate so that it takes two parameters: an **Object** for the sender and an [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs) object.</span></span>
 
-<span data-ttu-id="d3c20-111">**OnAdError** という名前のデリゲートを *myBannerAdControl* という名前の **AdControl** オブジェクトの **ErrorOccurred** イベントに割り当てる例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="d3c20-111">Here is an example that assigns a delegate named **OnAdError** to the **ErrorOccurred** event of an **AdControl** object named *myBannerAdControl*.</span></span>
+<span data-ttu-id="40bee-111">**OnAdError** という名前のデリゲートを *myBannerAdControl* という名前の **AdControl** オブジェクトの **ErrorOccurred** イベントに割り当てる例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="40bee-111">Here is an example that assigns a delegate named **OnAdError** to the **ErrorOccurred** event of an **AdControl** object named *myBannerAdControl*.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
 ``` csharp
 myBannerAdControl.ErrorOccurred = OnAdError;
 ```
 
-<span data-ttu-id="d3c20-112">Visual Studio の出力ウィンドウにエラー情報を書き込む **OnAdError** デリゲートの定義例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="d3c20-112">Here is an example definition of the **OnAdError** delegate that writes error information to the output window in Visual Studio.</span></span>
+<span data-ttu-id="40bee-112">Visual Studio の出力ウィンドウにエラー情報を書き込む **OnAdError** デリゲートの定義例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="40bee-112">Here is an example definition of the **OnAdError** delegate that writes error information to the output window in Visual Studio.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
 ``` csharp
@@ -47,19 +47,19 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 }
 ```
 
-<span data-ttu-id="d3c20-113">XAML および C# での **AdControl** エラー処理について説明するチュートリアルについては、「[XAML/C# チュートリアルでのエラー処理](error-handling-in-xamlc-walkthrough.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d3c20-113">See [Error handling in XAML/C# walkthrough](error-handling-in-xamlc-walkthrough.md) for a walkthrough that demonstrates **AdControl** error handling in XAML and C#.</span></span>
+<span data-ttu-id="40bee-113">XAML および C# での **AdControl** エラー処理について説明するチュートリアルについては、「[XAML/C# チュートリアルでのエラー処理](error-handling-in-xamlc-walkthrough.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="40bee-113">See [Error handling in XAML/C# walkthrough](error-handling-in-xamlc-walkthrough.md) for a walkthrough that demonstrates **AdControl** error handling in XAML and C#.</span></span>
 
 <span id="bkmk-javascript"/>
 
-## <a name="javascripthtml-apps"></a><span data-ttu-id="d3c20-114">JavaScript/HTML アプリ</span><span class="sxs-lookup"><span data-stu-id="d3c20-114">JavaScript/HTML apps</span></span>
+## <a name="javascripthtml-apps"></a><span data-ttu-id="40bee-114">JavaScript/HTML アプリ</span><span class="sxs-lookup"><span data-stu-id="40bee-114">JavaScript/HTML apps</span></span>
 
-<span data-ttu-id="d3c20-115">JavaScript アプリで **ErrorOccur** エラーを処理するには:</span><span class="sxs-lookup"><span data-stu-id="d3c20-115">To handle **ErrorOccur** errors in a JavaScript app:</span></span>
+<span data-ttu-id="40bee-115">JavaScript アプリで **ErrorOccur** エラーを処理するには:</span><span class="sxs-lookup"><span data-stu-id="40bee-115">To handle **ErrorOccur** errors in a JavaScript app:</span></span>
 
-1.  <span data-ttu-id="d3c20-116">**onErrorOccurred** イベントをイベント ハンドラーに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="d3c20-116">Assign the **onErrorOccurred** event to an event handler.</span></span>
+1.  <span data-ttu-id="40bee-116">**onErrorOccurred** イベントをイベント ハンドラーに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="40bee-116">Assign the **onErrorOccurred** event to an event handler.</span></span>
 
-2.  <span data-ttu-id="d3c20-117">イベント ハンドラーのコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="d3c20-117">Code the event handler.</span></span>
+2.  <span data-ttu-id="40bee-117">イベント ハンドラーのコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="40bee-117">Code the event handler.</span></span>
 
-<span data-ttu-id="d3c20-118">**errorLogger** という名前のイベント ハンドラーを **AdControl** オブジェクトの **ErrorOccurred** イベントに割り当てる例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="d3c20-118">Here is an example that assigns an event handler named **errorLogger** to the **ErrorOccurred** event of an **AdControl** object.</span></span>
+<span data-ttu-id="40bee-118">**errorLogger** という名前のイベント ハンドラーを **AdControl** オブジェクトの **ErrorOccurred** イベントに割り当てる例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="40bee-118">Here is an example that assigns an event handler named **errorLogger** to the **ErrorOccurred** event of an **AdControl** object.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
 ``` html
@@ -69,11 +69,11 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 </div>
 ```
 
-<span data-ttu-id="d3c20-119">エラー処理関数は宣言型で、[markSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) 関数内で囲む必要があります。</span><span class="sxs-lookup"><span data-stu-id="d3c20-119">The error handling function is declarative and must be enclosed in the [markSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) function.</span></span>
+<span data-ttu-id="40bee-119">エラー処理関数は宣言型で、[markSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) 関数内で囲む必要があります。</span><span class="sxs-lookup"><span data-stu-id="40bee-119">The error handling function is declarative and must be enclosed in the [markSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) function.</span></span>
 
-<span data-ttu-id="d3c20-120">エラーが発生すると、エラー ハンドラーが JavaScript エラー オブジェクトをキャッチします。</span><span class="sxs-lookup"><span data-stu-id="d3c20-120">The error handler catches the JavaScript error object when an error occurs.</span></span> <span data-ttu-id="d3c20-121">エラー オブジェクトは 2 つの引数をエラー ハンドラーに提供します。</span><span class="sxs-lookup"><span data-stu-id="d3c20-121">The error object provides two arguments to the error handler.</span></span> <span data-ttu-id="d3c20-122">詳しくは、「[非同期 Windows ランタイム メソッドからの特殊なエラー プロパティ](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d3c20-122">For more information, see [Special Error Properties from Asynchronous Windows Runtime Methods](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx).</span></span>
+<span data-ttu-id="40bee-120">エラーが発生すると、エラー ハンドラーが JavaScript エラー オブジェクトをキャッチします。</span><span class="sxs-lookup"><span data-stu-id="40bee-120">The error handler catches the JavaScript error object when an error occurs.</span></span> <span data-ttu-id="40bee-121">エラー オブジェクトは 2 つの引数をエラー ハンドラーに提供します。</span><span class="sxs-lookup"><span data-stu-id="40bee-121">The error object provides two arguments to the error handler.</span></span> <span data-ttu-id="40bee-122">詳しくは、「[非同期 Windows ランタイム メソッドからの特殊なエラー プロパティ](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="40bee-122">For more information, see [Special Error Properties from Asynchronous Windows Runtime Methods](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx).</span></span>
 
-<span data-ttu-id="d3c20-123">**onErrorOccurred** イベントを処理する **errorLogger** という名前のエラー処理関数の例を示します。</span><span class="sxs-lookup"><span data-stu-id="d3c20-123">Here is an example of an error handling function named **errorLogger** that handles the **onErrorOccurred** event.</span></span>
+<span data-ttu-id="40bee-123">**onErrorOccurred** イベントを処理する **errorLogger** という名前のエラー処理関数の例を示します。</span><span class="sxs-lookup"><span data-stu-id="40bee-123">Here is an example of an error handling function named **errorLogger** that handles the **onErrorOccurred** event.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
 ``` javascript
@@ -84,4 +84,4 @@ window.errorLogger = function (sender, evt) {
 });
 ```
 
-<span data-ttu-id="d3c20-124">JavaScript での **AdControl** エラー処理について説明するチュートリアルについては、「[JavaScript チュートリアルでのエラー処理](error-handling-in-javascript-walkthrough.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d3c20-124">See [Error Handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md) for a walkthrough that demonstrates **AdControl** error handling in JavaScript.</span></span>
+<span data-ttu-id="40bee-124">JavaScript での **AdControl** エラー処理について説明するチュートリアルについては、「[JavaScript チュートリアルでのエラー処理](error-handling-in-javascript-walkthrough.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="40bee-124">See [Error Handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md) for a walkthrough that demonstrates **AdControl** error handling in JavaScript.</span></span>
