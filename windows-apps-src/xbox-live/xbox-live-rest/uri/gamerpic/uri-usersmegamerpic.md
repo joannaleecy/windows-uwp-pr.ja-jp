@@ -10,33 +10,33 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5383cfc5a39eadd8d4fd13cb1762e03e85d5c5e0
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5887126"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5937594"
 ---
-# <a name="usersmegamerpic"></a><span data-ttu-id="4fb57-104">/users/me/gamerpic</span><span class="sxs-lookup"><span data-stu-id="4fb57-104">/users/me/gamerpic</span></span>
-<span data-ttu-id="4fb57-105">1080 x 1080 ゲーマー アイコンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="4fb57-105">Accesses a 1080x1080 gamerpic.</span></span>  
+# <a name="usersmegamerpic"></a><span data-ttu-id="ad3f2-104">/users/me/gamerpic</span><span class="sxs-lookup"><span data-stu-id="ad3f2-104">/users/me/gamerpic</span></span>
+<span data-ttu-id="ad3f2-105">1080 x 1080 ゲーマー アイコンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="ad3f2-105">Accesses a 1080x1080 gamerpic.</span></span>  
 <a id="ID4EQ"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="4fb57-106">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="4fb57-106">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="ad3f2-106">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="ad3f2-106">Valid methods</span></span>
 
-[<span data-ttu-id="4fb57-107">PUT (/users/me/gamerpic)</span><span class="sxs-lookup"><span data-stu-id="4fb57-107">PUT (/users/me/gamerpic)</span></span>](uri-usersmegamerpicput.md)
+[<span data-ttu-id="ad3f2-107">PUT (/users/me/gamerpic)</span><span class="sxs-lookup"><span data-stu-id="ad3f2-107">PUT (/users/me/gamerpic)</span></span>](uri-usersmegamerpicput.md)
 
-<span data-ttu-id="4fb57-108">&nbsp;&nbsp;1080 x 1080 ゲーマー アイコンをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="4fb57-108">&nbsp;&nbsp;Uploads a 1080x1080 gamerpic.</span></span>
+<span data-ttu-id="ad3f2-108">&nbsp;&nbsp;1080 x 1080 ゲーマー アイコンをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="ad3f2-108">&nbsp;&nbsp;Uploads a 1080x1080 gamerpic.</span></span>
  
 <a id="ID4E1"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="4fb57-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="4fb57-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ad3f2-109">関連項目</span><span class="sxs-lookup"><span data-stu-id="ad3f2-109">See also</span></span>
  
 <a id="ID4E3"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="4fb57-110">Parent</span><span class="sxs-lookup"><span data-stu-id="4fb57-110">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="ad3f2-110">Parent</span><span class="sxs-lookup"><span data-stu-id="ad3f2-110">Parent</span></span> 
 
-[<span data-ttu-id="4fb57-111">ゲーマーアイコン URI</span><span class="sxs-lookup"><span data-stu-id="4fb57-111">Gamerpic URIs</span></span>](atoc-reference-gamerpic.md)
+[<span data-ttu-id="ad3f2-111">ゲーマーアイコン URI</span><span class="sxs-lookup"><span data-stu-id="ad3f2-111">Gamerpic URIs</span></span>](atoc-reference-gamerpic.md)
 
    

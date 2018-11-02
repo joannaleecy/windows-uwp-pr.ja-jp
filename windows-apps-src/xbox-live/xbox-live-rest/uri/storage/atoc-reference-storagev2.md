@@ -10,107 +10,107 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e17bb64fd31c8a3cf86b57453e709e15b0cf7e6f
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5867216"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5931997"
 ---
-# <a name="title-storage-uris"></a><span data-ttu-id="02532-104">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="02532-104">Title Storage URIs</span></span>
+# <a name="title-storage-uris"></a><span data-ttu-id="18bae-104">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="18bae-104">Title Storage URIs</span></span>
  
-<span data-ttu-id="02532-105">このセクションでは、*タイトル ストレージ*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドの詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="02532-105">This section provides details about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *title storage*.</span></span>
+<span data-ttu-id="18bae-105">このセクションでは、*タイトル ストレージ*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドの詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="18bae-105">This section provides details about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *title storage*.</span></span>
  
-<span data-ttu-id="02532-106">どのプラットフォームで実行されるゲームでも、このサービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="02532-106">Games running on all platforms can use this service.</span></span>
+<span data-ttu-id="18bae-106">どのプラットフォームで実行されるゲームでも、このサービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="18bae-106">Games running on all platforms can use this service.</span></span>
  
-<span data-ttu-id="02532-107">これらの Uri のドメインは、titlestorage.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="02532-107">The domain for these URIs is titlestorage.xboxlive.com.</span></span>
+<span data-ttu-id="18bae-107">これらの Uri のドメインは、titlestorage.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="18bae-107">The domain for these URIs is titlestorage.xboxlive.com.</span></span>
  
 <a id="ID4EFB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="02532-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="02532-108">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="18bae-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="18bae-108">In this section</span></span>
 
-[<span data-ttu-id="02532-109">/global/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="02532-109">/global/scids/{scid}</span></span>](uri-globalscidsscid.md)
+[<span data-ttu-id="18bae-109">/global/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="18bae-109">/global/scids/{scid}</span></span>](uri-globalscidsscid.md)
 
-<span data-ttu-id="02532-110">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="02532-110">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span>
+<span data-ttu-id="18bae-110">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="18bae-110">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span>
 
-[<span data-ttu-id="02532-111">/global/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="02532-111">/global/scids/{scid}/data/{path}</span></span>](uri-globalscidssciddatapath.md)
+[<span data-ttu-id="18bae-111">/global/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="18bae-111">/global/scids/{scid}/data/{path}</span></span>](uri-globalscidssciddatapath.md)
 
-<span data-ttu-id="02532-112">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="02532-112">&nbsp;&nbsp;Lists file information at a specified path.</span></span> 
+<span data-ttu-id="18bae-112">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="18bae-112">&nbsp;&nbsp;Lists file information at a specified path.</span></span> 
 
-[<span data-ttu-id="02532-113">/global/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="02532-113">/global/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-globalscidssciddatapathandfilenametype.md)
+[<span data-ttu-id="18bae-113">/global/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="18bae-113">/global/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-globalscidssciddatapathandfilenametype.md)
 
-<span data-ttu-id="02532-114">&nbsp;&nbsp;ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="02532-114">&nbsp;&nbsp;Downloads a file.</span></span>
+<span data-ttu-id="18bae-114">&nbsp;&nbsp;ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="18bae-114">&nbsp;&nbsp;Downloads a file.</span></span>
 
-[<span data-ttu-id="02532-115">/json/users/batch/scids/{scid}/data/{pathAndFileName},json</span><span class="sxs-lookup"><span data-stu-id="02532-115">/json/users/batch/scids/{scid}/data/{pathAndFileName},json</span></span>](uri-jsonusersbatchscidssciddatapathandfilenametype.md)
+[<span data-ttu-id="18bae-115">/json/users/batch/scids/{scid}/data/{pathAndFileName},json</span><span class="sxs-lookup"><span data-stu-id="18bae-115">/json/users/batch/scids/{scid}/data/{pathAndFileName},json</span></span>](uri-jsonusersbatchscidssciddatapathandfilenametype.md)
 
-<span data-ttu-id="02532-116">&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="02532-116">&nbsp;&nbsp;Downloads multiple files from multiple users with the same filename.</span></span>
+<span data-ttu-id="18bae-116">&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="18bae-116">&nbsp;&nbsp;Downloads multiple files from multiple users with the same filename.</span></span>
 
-[<span data-ttu-id="02532-117">/json/users/xuid({xuid})/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="02532-117">/json/users/xuid({xuid})/scids/{scid}</span></span>](uri-jsonusersxuidscidsscid.md)
+[<span data-ttu-id="18bae-117">/json/users/xuid({xuid})/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="18bae-117">/json/users/xuid({xuid})/scids/{scid}</span></span>](uri-jsonusersxuidscidsscid.md)
 
-<span data-ttu-id="02532-118">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="02532-118">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span>
+<span data-ttu-id="18bae-118">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="18bae-118">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span>
 
-[<span data-ttu-id="02532-119">/json/users/xuid({xuid})/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="02532-119">/json/users/xuid({xuid})/scids/{scid}/data/{path}</span></span>](uri-jsonusersxuidscidssciddatapath.md)
+[<span data-ttu-id="18bae-119">/json/users/xuid({xuid})/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="18bae-119">/json/users/xuid({xuid})/scids/{scid}/data/{path}</span></span>](uri-jsonusersxuidscidssciddatapath.md)
 
-<span data-ttu-id="02532-120">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="02532-120">&nbsp;&nbsp;Lists file information at a specified path.</span></span> 
+<span data-ttu-id="18bae-120">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="18bae-120">&nbsp;&nbsp;Lists file information at a specified path.</span></span> 
 
-[<span data-ttu-id="02532-121">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json</span><span class="sxs-lookup"><span data-stu-id="02532-121">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json</span></span>](uri-jsonusersxuidscidssciddatapathandfilenametype.md)
+[<span data-ttu-id="18bae-121">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json</span><span class="sxs-lookup"><span data-stu-id="18bae-121">/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json</span></span>](uri-jsonusersxuidscidssciddatapathandfilenametype.md)
 
-<span data-ttu-id="02532-122">&nbsp;&nbsp;ダウンロード、アップロード、またはファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="02532-122">&nbsp;&nbsp;Downloads, uploads, or deletes a file.</span></span>
+<span data-ttu-id="18bae-122">&nbsp;&nbsp;ダウンロード、アップロード、またはファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="18bae-122">&nbsp;&nbsp;Downloads, uploads, or deletes a file.</span></span>
 
-[<span data-ttu-id="02532-123">/sessions/{sessionId}/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="02532-123">/sessions/{sessionId}/scids/{scid}</span></span>](uri-sessionssessionidscidsscid.md)
+[<span data-ttu-id="18bae-123">/sessions/{sessionId}/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="18bae-123">/sessions/{sessionId}/scids/{scid}</span></span>](uri-sessionssessionidscidsscid.md)
 
-<span data-ttu-id="02532-124">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="02532-124">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span>
+<span data-ttu-id="18bae-124">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="18bae-124">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span>
 
-[<span data-ttu-id="02532-125">/sessions/{sessionId}/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="02532-125">/sessions/{sessionId}/scids/{scid}/data/{path}</span></span>](uri-sessionssessionidscidssciddatapath.md)
+[<span data-ttu-id="18bae-125">/sessions/{sessionId}/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="18bae-125">/sessions/{sessionId}/scids/{scid}/data/{path}</span></span>](uri-sessionssessionidscidssciddatapath.md)
 
-<span data-ttu-id="02532-126">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="02532-126">&nbsp;&nbsp;Lists file information at a specified path.</span></span> 
+<span data-ttu-id="18bae-126">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="18bae-126">&nbsp;&nbsp;Lists file information at a specified path.</span></span> 
 
-[<span data-ttu-id="02532-127">/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="02532-127">/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-sessionssessionidscidssciddatapathandfilenametype.md)
+[<span data-ttu-id="18bae-127">/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="18bae-127">/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-sessionssessionidscidssciddatapathandfilenametype.md)
 
-<span data-ttu-id="02532-128">&nbsp;&nbsp;ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="02532-128">&nbsp;&nbsp;Downloads a file.</span></span>
+<span data-ttu-id="18bae-128">&nbsp;&nbsp;ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="18bae-128">&nbsp;&nbsp;Downloads a file.</span></span>
 
-[<span data-ttu-id="02532-129">/trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="02532-129">/trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-trustedplatformusersbatchscidssciddatapathandfilenametype.md)
+[<span data-ttu-id="18bae-129">/trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="18bae-129">/trustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-trustedplatformusersbatchscidssciddatapathandfilenametype.md)
 
-<span data-ttu-id="02532-130">&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="02532-130">&nbsp;&nbsp;Downloads multiple files from multiple users with the same filename.</span></span>
+<span data-ttu-id="18bae-130">&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="18bae-130">&nbsp;&nbsp;Downloads multiple files from multiple users with the same filename.</span></span>
 
-[<span data-ttu-id="02532-131">/trustedplatform/users/xuid({xuid})/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="02532-131">/trustedplatform/users/xuid({xuid})/scids/{scid}</span></span>](uri-trustedplatformusersxuidscidsscid.md)
+[<span data-ttu-id="18bae-131">/trustedplatform/users/xuid({xuid})/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="18bae-131">/trustedplatform/users/xuid({xuid})/scids/{scid}</span></span>](uri-trustedplatformusersxuidscidsscid.md)
 
-<span data-ttu-id="02532-132">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="02532-132">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span>
+<span data-ttu-id="18bae-132">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="18bae-132">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span>
 
-[<span data-ttu-id="02532-133">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="02532-133">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span></span>](uri-trustedplatformusersxuidscidssciddatapath.md)
+[<span data-ttu-id="18bae-133">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="18bae-133">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span></span>](uri-trustedplatformusersxuidscidssciddatapath.md)
 
-<span data-ttu-id="02532-134">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="02532-134">&nbsp;&nbsp;Lists file information at a specified path.</span></span> 
+<span data-ttu-id="18bae-134">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="18bae-134">&nbsp;&nbsp;Lists file information at a specified path.</span></span> 
 
-[<span data-ttu-id="02532-135">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="02532-135">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-trustedplatformusersxuidscidssciddatapathandfilenametype.md)
+[<span data-ttu-id="18bae-135">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="18bae-135">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-trustedplatformusersxuidscidssciddatapathandfilenametype.md)
 
-<span data-ttu-id="02532-136">&nbsp;&nbsp;ダウンロード、アップロード、またはファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="02532-136">&nbsp;&nbsp;Downloads, uploads, or deletes a file.</span></span>
+<span data-ttu-id="18bae-136">&nbsp;&nbsp;ダウンロード、アップロード、またはファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="18bae-136">&nbsp;&nbsp;Downloads, uploads, or deletes a file.</span></span>
 
-[<span data-ttu-id="02532-137">/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="02532-137">/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.md)
+[<span data-ttu-id="18bae-137">/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="18bae-137">/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-untrustedplatformusersbatchscidssciddatapathandfilenametype.md)
 
-<span data-ttu-id="02532-138">&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="02532-138">&nbsp;&nbsp;Downloads multiple files from multiple users with the same filename.</span></span>
+<span data-ttu-id="18bae-138">&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="18bae-138">&nbsp;&nbsp;Downloads multiple files from multiple users with the same filename.</span></span>
 
-[<span data-ttu-id="02532-139">/untrustedplatform/users/xuid({xuid})/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="02532-139">/untrustedplatform/users/xuid({xuid})/scids/{scid}</span></span>](uri-untrustedplatformusersxuidscidsscid.md)
+[<span data-ttu-id="18bae-139">/untrustedplatform/users/xuid({xuid})/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="18bae-139">/untrustedplatform/users/xuid({xuid})/scids/{scid}</span></span>](uri-untrustedplatformusersxuidscidsscid.md)
 
-<span data-ttu-id="02532-140">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="02532-140">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span>
+<span data-ttu-id="18bae-140">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="18bae-140">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span>
 
-[<span data-ttu-id="02532-141">/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="02532-141">/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span></span>](uri-untrustedplatformusersxuidscidssciddatapath.md)
+[<span data-ttu-id="18bae-141">/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="18bae-141">/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span></span>](uri-untrustedplatformusersxuidscidssciddatapath.md)
 
-<span data-ttu-id="02532-142">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="02532-142">&nbsp;&nbsp;Lists file information at a specified path.</span></span> 
+<span data-ttu-id="18bae-142">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="18bae-142">&nbsp;&nbsp;Lists file information at a specified path.</span></span> 
 
-[<span data-ttu-id="02532-143">/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="02532-143">/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-untrustedplatformusersxuidscidssciddatapathandfilenametype.md)
+[<span data-ttu-id="18bae-143">/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="18bae-143">/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}</span></span>](uri-untrustedplatformusersxuidscidssciddatapathandfilenametype.md)
 
-<span data-ttu-id="02532-144">&nbsp;&nbsp;ダウンロード、アップロード、またはファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="02532-144">&nbsp;&nbsp;Downloads, uploads, or deletes a file.</span></span>
+<span data-ttu-id="18bae-144">&nbsp;&nbsp;ダウンロード、アップロード、またはファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="18bae-144">&nbsp;&nbsp;Downloads, uploads, or deletes a file.</span></span>
  
 <a id="ID4E5C"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="02532-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="02532-145">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="18bae-145">関連項目</span><span class="sxs-lookup"><span data-stu-id="18bae-145">See also</span></span>
  
 <a id="ID4EAD"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="02532-146">Parent</span><span class="sxs-lookup"><span data-stu-id="02532-146">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="18bae-146">Parent</span><span class="sxs-lookup"><span data-stu-id="18bae-146">Parent</span></span> 
 
-[<span data-ttu-id="02532-147">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="02532-147">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="18bae-147">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="18bae-147">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

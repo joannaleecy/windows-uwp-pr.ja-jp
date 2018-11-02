@@ -10,36 +10,36 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 273f693c52d880b1b33153704dfee084f7210e2e
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5879123"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5922207"
 ---
-# <a name="usersbatchprofilesettings"></a><span data-ttu-id="7a3df-104">/users/batch/profile/settings</span><span class="sxs-lookup"><span data-stu-id="7a3df-104">/users/batch/profile/settings</span></span>
-<span data-ttu-id="7a3df-105">ユーザーまたはユーザーのプロファイルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="7a3df-105">Access the profile for a user or users.</span></span> <span data-ttu-id="7a3df-106">これらの Uri のドメインが`profile.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="7a3df-106">The domain for these URIs is `profile.xboxlive.com`.</span></span>
+# <a name="usersbatchprofilesettings"></a><span data-ttu-id="2450e-104">/users/batch/profile/settings</span><span class="sxs-lookup"><span data-stu-id="2450e-104">/users/batch/profile/settings</span></span>
+<span data-ttu-id="2450e-105">ユーザーまたはユーザーのプロファイルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="2450e-105">Access the profile for a user or users.</span></span> <span data-ttu-id="2450e-106">これらの Uri のドメインが`profile.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="2450e-106">The domain for these URIs is `profile.xboxlive.com`.</span></span>
   
 <a id="ID4EV"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="7a3df-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="7a3df-107">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="2450e-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="2450e-107">Valid methods</span></span>
 
-[<span data-ttu-id="7a3df-108">POST (/users/batch/profile/settings)</span><span class="sxs-lookup"><span data-stu-id="7a3df-108">POST (/users/batch/profile/settings)</span></span>](uri-usersbatchprofilesettingspost.md)
+[<span data-ttu-id="2450e-108">POST (/users/batch/profile/settings)</span><span class="sxs-lookup"><span data-stu-id="2450e-108">POST (/users/batch/profile/settings)</span></span>](uri-usersbatchprofilesettingspost.md)
 
-<span data-ttu-id="7a3df-109">&nbsp;&nbsp;ユーザーまたはユーザーのプロファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="7a3df-109">&nbsp;&nbsp;Get the profile for a user or users.</span></span>
+<span data-ttu-id="2450e-109">&nbsp;&nbsp;ユーザーまたはユーザーのプロファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="2450e-109">&nbsp;&nbsp;Get the profile for a user or users.</span></span>
  
 <a id="ID4E6"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="7a3df-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="7a3df-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2450e-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="2450e-110">See also</span></span>
  
 <a id="ID4EBB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="7a3df-111">Parent</span><span class="sxs-lookup"><span data-stu-id="7a3df-111">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="2450e-111">Parent</span><span class="sxs-lookup"><span data-stu-id="2450e-111">Parent</span></span> 
 
-[<span data-ttu-id="7a3df-112">プロフィール URI</span><span class="sxs-lookup"><span data-stu-id="7a3df-112">Profiles URIs</span></span>](atoc-reference-profiles.md)
+[<span data-ttu-id="2450e-112">プロフィール URI</span><span class="sxs-lookup"><span data-stu-id="2450e-112">Profiles URIs</span></span>](atoc-reference-profiles.md)
 
- [<span data-ttu-id="7a3df-113">Profile (JSON)</span><span class="sxs-lookup"><span data-stu-id="7a3df-113">Profile (JSON)</span></span>](../../json/json-profile.md)
+ [<span data-ttu-id="2450e-113">Profile (JSON)</span><span class="sxs-lookup"><span data-stu-id="2450e-113">Profile (JSON)</span></span>](../../json/json-profile.md)
 
    

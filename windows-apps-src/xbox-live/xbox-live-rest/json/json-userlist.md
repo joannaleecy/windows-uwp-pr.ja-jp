@@ -10,29 +10,29 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fdbf983413ef68bb3afa0ca6f23fc182a6fece5e
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5885844"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5945747"
 ---
-# <a name="userlist-json"></a><span data-ttu-id="991e8-104">UserList (JSON)</span><span class="sxs-lookup"><span data-stu-id="991e8-104">UserList (JSON)</span></span>
-<span data-ttu-id="991e8-105">[ユーザー](json-user.md)オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="991e8-105">A collection of [User](json-user.md) objects.</span></span> 
+# <a name="userlist-json"></a><span data-ttu-id="d3ec3-104">UserList (JSON)</span><span class="sxs-lookup"><span data-stu-id="d3ec3-104">UserList (JSON)</span></span>
+<span data-ttu-id="d3ec3-105">[ユーザー](json-user.md)オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="d3ec3-105">A collection of [User](json-user.md) objects.</span></span> 
 <a id="ID4ER"></a>
 
  
-## <a name="userlist"></a><span data-ttu-id="991e8-106">UserList</span><span class="sxs-lookup"><span data-stu-id="991e8-106">UserList</span></span>
+## <a name="userlist"></a><span data-ttu-id="d3ec3-106">UserList</span><span class="sxs-lookup"><span data-stu-id="d3ec3-106">UserList</span></span>
  
-<span data-ttu-id="991e8-107">UserList オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="991e8-107">The UserList object has the following specification.</span></span>
+<span data-ttu-id="d3ec3-107">UserList オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="d3ec3-107">The UserList object has the following specification.</span></span>
  
-| <span data-ttu-id="991e8-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="991e8-108">Member</span></span>| <span data-ttu-id="991e8-109">種類</span><span class="sxs-lookup"><span data-stu-id="991e8-109">Type</span></span>| <span data-ttu-id="991e8-110">説明</span><span class="sxs-lookup"><span data-stu-id="991e8-110">Description</span></span>| 
+| <span data-ttu-id="d3ec3-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="d3ec3-108">Member</span></span>| <span data-ttu-id="d3ec3-109">種類</span><span class="sxs-lookup"><span data-stu-id="d3ec3-109">Type</span></span>| <span data-ttu-id="d3ec3-110">説明</span><span class="sxs-lookup"><span data-stu-id="d3ec3-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="991e8-111">ユーザー</span><span class="sxs-lookup"><span data-stu-id="991e8-111">users</span></span>| <span data-ttu-id="991e8-112">[User (JSON)](json-user.md)の配列</span><span class="sxs-lookup"><span data-stu-id="991e8-112">Array of [User (JSON)](json-user.md)</span></span>| <span data-ttu-id="991e8-113">次の JSON 例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="991e8-113">See JSON example below.</span></span>| 
+| <span data-ttu-id="d3ec3-111">ユーザー</span><span class="sxs-lookup"><span data-stu-id="d3ec3-111">users</span></span>| <span data-ttu-id="d3ec3-112">[User (JSON)](json-user.md)の配列</span><span class="sxs-lookup"><span data-stu-id="d3ec3-112">Array of [User (JSON)](json-user.md)</span></span>| <span data-ttu-id="d3ec3-113">次の JSON 例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d3ec3-113">See JSON example below.</span></span>| 
   
 <a id="ID4EPB"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="991e8-114">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="991e8-114">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="d3ec3-114">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="d3ec3-114">Sample JSON syntax</span></span>
  
 
 ```json
@@ -50,13 +50,13 @@ ms.locfileid: "5885844"
 <a id="ID4EYB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="991e8-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="991e8-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d3ec3-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="d3ec3-115">See also</span></span>
  
 <a id="ID4E1B"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="991e8-116">Parent</span><span class="sxs-lookup"><span data-stu-id="991e8-116">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="d3ec3-116">Parent</span><span class="sxs-lookup"><span data-stu-id="d3ec3-116">Parent</span></span> 
 
-[<span data-ttu-id="991e8-117">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="991e8-117">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="d3ec3-117">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="d3ec3-117">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

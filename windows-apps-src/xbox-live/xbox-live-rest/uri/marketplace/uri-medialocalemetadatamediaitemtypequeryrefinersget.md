@@ -10,53 +10,53 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 103ca7677777cd874cc0b5a4e771952e6ac03498
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5862793"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5941465"
 ---
-# <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefiners"></a><span data-ttu-id="fed45-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners)</span><span class="sxs-lookup"><span data-stu-id="fed45-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners)</span></span>
-<span data-ttu-id="fed45-105">指定したメディア項目の種類のクエリの絞り込み条件の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="fed45-105">Lists the query refiners for the given media item type.</span></span> <span data-ttu-id="fed45-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="fed45-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>
+# <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefiners"></a><span data-ttu-id="215cc-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners)</span><span class="sxs-lookup"><span data-stu-id="215cc-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners)</span></span>
+<span data-ttu-id="215cc-105">指定したメディア項目の種類のクエリの絞り込み条件の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="215cc-105">Lists the query refiners for the given media item type.</span></span> <span data-ttu-id="215cc-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="215cc-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="fed45-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="fed45-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="215cc-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="215cc-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="fed45-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="fed45-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="215cc-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="215cc-108">URI parameters</span></span>
  
-| <span data-ttu-id="fed45-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="fed45-109">Parameter</span></span>| <span data-ttu-id="fed45-110">型</span><span class="sxs-lookup"><span data-stu-id="fed45-110">Type</span></span>| <span data-ttu-id="fed45-111">説明</span><span class="sxs-lookup"><span data-stu-id="fed45-111">Description</span></span>| 
+| <span data-ttu-id="215cc-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="215cc-109">Parameter</span></span>| <span data-ttu-id="215cc-110">型</span><span class="sxs-lookup"><span data-stu-id="215cc-110">Type</span></span>| <span data-ttu-id="215cc-111">説明</span><span class="sxs-lookup"><span data-stu-id="215cc-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="fed45-112">marketplaceId</span><span class="sxs-lookup"><span data-stu-id="fed45-112">marketplaceId</span></span>| <span data-ttu-id="fed45-113">string</span><span class="sxs-lookup"><span data-stu-id="fed45-113">string</span></span>| <span data-ttu-id="fed45-114">必須。</span><span class="sxs-lookup"><span data-stu-id="fed45-114">Required.</span></span> <span data-ttu-id="fed45-115">文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。</span><span class="sxs-lookup"><span data-stu-id="fed45-115">String value obtained from the <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>.</span></span>| 
-| <span data-ttu-id="fed45-116">mediaitemtype</span><span class="sxs-lookup"><span data-stu-id="fed45-116">mediaitemtype</span></span>| <span data-ttu-id="fed45-117">string</span><span class="sxs-lookup"><span data-stu-id="fed45-117">string</span></span>| <span data-ttu-id="fed45-118">必須。</span><span class="sxs-lookup"><span data-stu-id="fed45-118">Required.</span></span> <span data-ttu-id="fed45-119">値のいずれかの[GET (/media/{marketplaceId}//metadata/mediagroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)します。</span><span class="sxs-lookup"><span data-stu-id="fed45-119">One of the values from [GET (/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md).</span></span>| 
+| <span data-ttu-id="215cc-112">marketplaceId</span><span class="sxs-lookup"><span data-stu-id="215cc-112">marketplaceId</span></span>| <span data-ttu-id="215cc-113">string</span><span class="sxs-lookup"><span data-stu-id="215cc-113">string</span></span>| <span data-ttu-id="215cc-114">必須。</span><span class="sxs-lookup"><span data-stu-id="215cc-114">Required.</span></span> <span data-ttu-id="215cc-115">文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。</span><span class="sxs-lookup"><span data-stu-id="215cc-115">String value obtained from the <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>.</span></span>| 
+| <span data-ttu-id="215cc-116">mediaitemtype</span><span class="sxs-lookup"><span data-stu-id="215cc-116">mediaitemtype</span></span>| <span data-ttu-id="215cc-117">string</span><span class="sxs-lookup"><span data-stu-id="215cc-117">string</span></span>| <span data-ttu-id="215cc-118">必須。</span><span class="sxs-lookup"><span data-stu-id="215cc-118">Required.</span></span> <span data-ttu-id="215cc-119">値のいずれかの[GET (/media/{marketplaceId}//metadata/mediagroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)します。</span><span class="sxs-lookup"><span data-stu-id="215cc-119">One of the values from [GET (/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md).</span></span>| 
   
 <a id="ID4EAB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="fed45-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="fed45-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="215cc-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="215cc-120">See also</span></span>
  
 <a id="ID4ECB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="fed45-121">Parent</span><span class="sxs-lookup"><span data-stu-id="fed45-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="215cc-121">Parent</span><span class="sxs-lookup"><span data-stu-id="215cc-121">Parent</span></span> 
 
-[<span data-ttu-id="fed45-122">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners</span><span class="sxs-lookup"><span data-stu-id="fed45-122">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners</span></span>](uri-medialocalemetadatamediaitemtypequeryrefiners.md)
+[<span data-ttu-id="215cc-122">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners</span><span class="sxs-lookup"><span data-stu-id="215cc-122">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners</span></span>](uri-medialocalemetadatamediaitemtypequeryrefiners.md)
 
   
 <a id="ID4EMB"></a>
 
  
-##### <a name="further-information"></a><span data-ttu-id="fed45-123">詳細情報</span><span class="sxs-lookup"><span data-stu-id="fed45-123">Further Information</span></span> 
+##### <a name="further-information"></a><span data-ttu-id="215cc-123">詳細情報</span><span class="sxs-lookup"><span data-stu-id="215cc-123">Further Information</span></span> 
 
-[<span data-ttu-id="fed45-124">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="fed45-124">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
+[<span data-ttu-id="215cc-124">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="215cc-124">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
 
- [<span data-ttu-id="fed45-125">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="fed45-125">EDS Parameters</span></span>](../../additional/edsparameters.md)
+ [<span data-ttu-id="215cc-125">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="215cc-125">EDS Parameters</span></span>](../../additional/edsparameters.md)
 
- [<span data-ttu-id="fed45-126">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="fed45-126">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
+ [<span data-ttu-id="215cc-126">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="215cc-126">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
 
- [<span data-ttu-id="fed45-127">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="fed45-127">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
+ [<span data-ttu-id="215cc-127">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="215cc-127">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
 
- [<span data-ttu-id="fed45-128">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="fed45-128">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)
+ [<span data-ttu-id="215cc-128">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="215cc-128">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)
 
    
