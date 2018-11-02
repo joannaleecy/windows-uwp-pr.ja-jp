@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, クリエーター
 ms.localizationpriority: medium
 ms.openlocfilehash: f6e7a89f694c174a0c93fb45eb7642d70456c895
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5924451"
+ms.locfileid: "5997294"
 ---
 # <a name="add-player-stats-and-leaderboards-to-your-unity-project"></a><span data-ttu-id="7e9ea-104">Unity プロジェクトにプレイヤーの統計とランキングを追加する</span><span class="sxs-lookup"><span data-stu-id="7e9ea-104">Add player stats and leaderboards to your Unity project</span></span>
 

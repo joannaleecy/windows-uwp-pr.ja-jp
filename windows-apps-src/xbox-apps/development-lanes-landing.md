@@ -9,26 +9,26 @@ keywords: Windows 10, UWP
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
 ms.localizationpriority: medium
 ms.openlocfilehash: b531782e00ab380e64de0fe5f4e6b1737c1f5669
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932018"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970754"
 ---
-# <a name="bringing-existing-games-to-xbox"></a><span data-ttu-id="a461c-104">既存のゲームの Xbox への移行</span><span class="sxs-lookup"><span data-stu-id="a461c-104">Bringing existing games to Xbox</span></span>
+# <a name="bringing-existing-games-to-xbox"></a><span data-ttu-id="9403f-104">既存のゲームの Xbox への移行</span><span class="sxs-lookup"><span data-stu-id="9403f-104">Bringing existing games to Xbox</span></span>
 
 
-<span data-ttu-id="a461c-105">ゲームで使用されるテクノロジに応じて、ゲームを Xbox の UWP に移行するための手順をいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="a461c-105">Depending on the technologies used by your game, following are some steps to help bring your game to UWP on Xbox.</span></span>
+<span data-ttu-id="9403f-105">ゲームで使用されるテクノロジに応じて、ゲームを Xbox の UWP に移行するための手順をいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="9403f-105">Depending on the technologies used by your game, following are some steps to help bring your game to UWP on Xbox.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a461c-106">UWP をサポートするすべてのゲーム エンジンが一覧に含まれているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="a461c-106">Not all game engines that support the UWP are listed.</span></span> <span data-ttu-id="a461c-107">ゲームで使用されるテクノロジが記載されていない場合は、UWP のサポートについて製品開発者に確認してください。</span><span class="sxs-lookup"><span data-stu-id="a461c-107">If a technology that your game uses isn't listed, check with the product developer for information on UWP support.</span></span>
+> <span data-ttu-id="9403f-106">UWP をサポートするすべてのゲーム エンジンが一覧に含まれているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="9403f-106">Not all game engines that support the UWP are listed.</span></span> <span data-ttu-id="9403f-107">ゲームで使用されるテクノロジが記載されていない場合は、UWP のサポートについて製品開発者に確認してください。</span><span class="sxs-lookup"><span data-stu-id="9403f-107">If a technology that your game uses isn't listed, check with the product developer for information on UWP support.</span></span>
 
-| <span data-ttu-id="a461c-108">エンジン</span><span class="sxs-lookup"><span data-stu-id="a461c-108">Engine</span></span>      | <span data-ttu-id="a461c-109">説明</span><span class="sxs-lookup"><span data-stu-id="a461c-109">Description</span></span> |
+| <span data-ttu-id="9403f-108">エンジン</span><span class="sxs-lookup"><span data-stu-id="9403f-108">Engine</span></span>      | <span data-ttu-id="9403f-109">説明</span><span class="sxs-lookup"><span data-stu-id="9403f-109">Description</span></span> |
 |------------|-------------|
-|[<span data-ttu-id="a461c-110">カスタム C++</span><span class="sxs-lookup"><span data-stu-id="a461c-110">Custom C++</span></span>](development-lanes-custom-cpp.md)| <span data-ttu-id="a461c-111">UWP を使った、Xbox での C++ ゲーム開発に関連する情報です。</span><span class="sxs-lookup"><span data-stu-id="a461c-111">Information pertaining to C++ game development on Xbox using the UWP.</span></span> |
-|[<span data-ttu-id="a461c-112">Unity</span><span class="sxs-lookup"><span data-stu-id="a461c-112">Unity</span></span>](development-lanes-unity.md)| <span data-ttu-id="a461c-113">既存のゲームを Unity から Xbox に移行するためのチュートリアルです。</span><span class="sxs-lookup"><span data-stu-id="a461c-113">Tutorial that helps take existing games from Unity to Xbox.</span></span> |
-|[<span data-ttu-id="a461c-114">HTML/JS</span><span class="sxs-lookup"><span data-stu-id="a461c-114">HTML / JS</span></span>](development-lanes-html.md)| <span data-ttu-id="a461c-115">Xbox での HTML ゲーム開発に関連する情報です。</span><span class="sxs-lookup"><span data-stu-id="a461c-115">Information pertaining to HTML game development on Xbox.</span></span> |
+|[<span data-ttu-id="9403f-110">カスタム C++</span><span class="sxs-lookup"><span data-stu-id="9403f-110">Custom C++</span></span>](development-lanes-custom-cpp.md)| <span data-ttu-id="9403f-111">UWP を使った、Xbox での C++ ゲーム開発に関連する情報です。</span><span class="sxs-lookup"><span data-stu-id="9403f-111">Information pertaining to C++ game development on Xbox using the UWP.</span></span> |
+|[<span data-ttu-id="9403f-112">Unity</span><span class="sxs-lookup"><span data-stu-id="9403f-112">Unity</span></span>](development-lanes-unity.md)| <span data-ttu-id="9403f-113">既存のゲームを Unity から Xbox に移行するためのチュートリアルです。</span><span class="sxs-lookup"><span data-stu-id="9403f-113">Tutorial that helps take existing games from Unity to Xbox.</span></span> |
+|[<span data-ttu-id="9403f-114">HTML/JS</span><span class="sxs-lookup"><span data-stu-id="9403f-114">HTML / JS</span></span>](development-lanes-html.md)| <span data-ttu-id="9403f-115">Xbox での HTML ゲーム開発に関連する情報です。</span><span class="sxs-lookup"><span data-stu-id="9403f-115">Information pertaining to HTML game development on Xbox.</span></span> |
 
-## <a name="see-also"></a><span data-ttu-id="a461c-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="a461c-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9403f-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="9403f-116">See also</span></span>
 
-- [<span data-ttu-id="a461c-117">Xbox One の UWP</span><span class="sxs-lookup"><span data-stu-id="a461c-117">UWP on Xbox One</span></span>](index.md)
+- [<span data-ttu-id="9403f-117">Xbox One の UWP</span><span class="sxs-lookup"><span data-stu-id="9403f-117">UWP on Xbox One</span></span>](index.md)
