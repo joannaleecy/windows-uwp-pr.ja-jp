@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 64f4756df37cbfaf041e432b7e4a890123f52d2f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945755"
+ms.locfileid: "5971419"
 ---
 # <a name="pair-devices"></a><span data-ttu-id="00e89-105">デバイスのペアリング</span><span class="sxs-lookup"><span data-stu-id="00e89-105">Pair devices</span></span>
 

@@ -10,33 +10,33 @@ ms.topic: article
 keywords: Windows 10、デスクトップ ブリッジ、セカンダリ タイル、ピン留め、クイックスタート、コード サンプル、例、デスクトップ アプリケーション、Win32、WinForms、WPF
 ms.localizationpriority: medium
 ms.openlocfilehash: 44e37b47e22d10f509afd5d7503fa8f7a43ab365
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5928265"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5976583"
 ---
-# <a name="pin-secondary-tiles-from-desktop-application"></a><span data-ttu-id="a17f4-103">デスクトップ アプリケーションからセカンダリ タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="a17f4-103">Pin secondary tiles from desktop application</span></span>
+# <a name="pin-secondary-tiles-from-desktop-application"></a><span data-ttu-id="d890c-103">デスクトップ アプリケーションからセカンダリ タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="d890c-103">Pin secondary tiles from desktop application</span></span>
 
 
-<span data-ttu-id="a17f4-104">[デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使うと、Windows デスクトップ アプリケーション (Win32、Windows フォーム、WPF など) でセカンダリ タイルをピン留めできます。</span><span class="sxs-lookup"><span data-stu-id="a17f4-104">Thanks to the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), Windows desktop applications (like Win32, Windows Forms, and WPF) can pin secondary tiles!</span></span>
+<span data-ttu-id="d890c-104">[デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使うと、Windows デスクトップ アプリケーション (Win32、Windows フォーム、WPF など) でセカンダリ タイルをピン留めできます。</span><span class="sxs-lookup"><span data-stu-id="d890c-104">Thanks to the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), Windows desktop applications (like Win32, Windows Forms, and WPF) can pin secondary tiles!</span></span>
 
 ![セカンダリ タイルのスクリーン ショット](images/secondarytiles.png)
 
 > [!IMPORTANT]
-> <span data-ttu-id="a17f4-106">**Fall Creators Update が必要**: デスクトップ ブリッジ アプリからセカンダリ タイルをピン留めするには、SDK 16299 をターゲットとし、ビルド 16299 以降を実行している必要があります。</span><span class="sxs-lookup"><span data-stu-id="a17f4-106">**Requires Fall Creators Update**: You must target SDK 16299 and be running build 16299 or later to pin secondary tiles from Desktop Bridge apps.</span></span>
+> <span data-ttu-id="d890c-106">**Fall Creators Update が必要**: デスクトップ ブリッジ アプリからセカンダリ タイルをピン留めするには、SDK 16299 をターゲットとし、ビルド 16299 以降を実行している必要があります。</span><span class="sxs-lookup"><span data-stu-id="d890c-106">**Requires Fall Creators Update**: You must target SDK 16299 and be running build 16299 or later to pin secondary tiles from Desktop Bridge apps.</span></span>
 
-<span data-ttu-id="a17f4-107">WPF または WinForms アプリケーションからのセカンダリ タイルの追加は、純粋な UWP アプリとよく似ています。</span><span class="sxs-lookup"><span data-stu-id="a17f4-107">Adding a secondary tile from your WPF or WinForms application is very similar to a pure UWP app.</span></span> <span data-ttu-id="a17f4-108">唯一の違いは、メイン ウィンドウのハンドル (HWND) を指定する必要があることです。</span><span class="sxs-lookup"><span data-stu-id="a17f4-108">The only difference is that you must specify your main window handle (HWND).</span></span> <span data-ttu-id="a17f4-109">これは、タイルをピン留めするときに、モーダル ダイアログが表示され、タイルをピン留めするかどうかをユーザーに確認するためです。</span><span class="sxs-lookup"><span data-stu-id="a17f4-109">This is because when pinning a tile, Windows displays a modal dialog asking the user to confirm whether they would like to pin the tile.</span></span> <span data-ttu-id="a17f4-110">デスクトップ アプリケーションが、SecondaryTile オブジェクトのオーナー ウィンドウを構成しない場合、ダイアログ ボックスを描画する位置を認識することができず、操作は失敗します。</span><span class="sxs-lookup"><span data-stu-id="a17f4-110">If the desktop application doesn't configure the SecondaryTile object with the owner window, Windows doesn't know where to draw the dialog and the operation will fail.</span></span>
-
-
-## <a name="package-your-app-with-desktop-bridge"></a><span data-ttu-id="a17f4-111">デスクトップ ブリッジを使ったアプリのパッケージ化</span><span class="sxs-lookup"><span data-stu-id="a17f4-111">Package your app with Desktop Bridge</span></span>
-
-<span data-ttu-id="a17f4-112">デスクトップ ブリッジを使ってアプリをパッケージ化していない場合、UWP API を使用する前に、[デスクトップ ブリッジを使ってアプリをパッケージ化する](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)必要があります。</span><span class="sxs-lookup"><span data-stu-id="a17f4-112">If you have not packaged your app with the Desktop Bridge, [you must do so first](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) before you can use any UWP APIs.</span></span>
+<span data-ttu-id="d890c-107">WPF または WinForms アプリケーションからのセカンダリ タイルの追加は、純粋な UWP アプリとよく似ています。</span><span class="sxs-lookup"><span data-stu-id="d890c-107">Adding a secondary tile from your WPF or WinForms application is very similar to a pure UWP app.</span></span> <span data-ttu-id="d890c-108">唯一の違いは、メイン ウィンドウのハンドル (HWND) を指定する必要があることです。</span><span class="sxs-lookup"><span data-stu-id="d890c-108">The only difference is that you must specify your main window handle (HWND).</span></span> <span data-ttu-id="d890c-109">これは、タイルをピン留めするときに、モーダル ダイアログが表示され、タイルをピン留めするかどうかをユーザーに確認するためです。</span><span class="sxs-lookup"><span data-stu-id="d890c-109">This is because when pinning a tile, Windows displays a modal dialog asking the user to confirm whether they would like to pin the tile.</span></span> <span data-ttu-id="d890c-110">デスクトップ アプリケーションが、SecondaryTile オブジェクトのオーナー ウィンドウを構成しない場合、ダイアログ ボックスを描画する位置を認識することができず、操作は失敗します。</span><span class="sxs-lookup"><span data-stu-id="d890c-110">If the desktop application doesn't configure the SecondaryTile object with the owner window, Windows doesn't know where to draw the dialog and the operation will fail.</span></span>
 
 
-## <a name="enable-access-to-iinitializewithwindow-interface"></a><span data-ttu-id="a17f4-113">IInitializeWithWindow インターフェイスへのアクセスを有効にする</span><span class="sxs-lookup"><span data-stu-id="a17f4-113">Enable access to IInitializeWithWindow interface</span></span>
+## <a name="package-your-app-with-desktop-bridge"></a><span data-ttu-id="d890c-111">デスクトップ ブリッジを使ったアプリのパッケージ化</span><span class="sxs-lookup"><span data-stu-id="d890c-111">Package your app with Desktop Bridge</span></span>
 
-<span data-ttu-id="a17f4-114">アプリケーションが C# や Visual Basic などのマネージ言語で記述されている場合、次の C# の例に示すように、アプリのコードで [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) と GUID 属性を使用して IInitializeWithWindow インターフェイスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="a17f4-114">If your application is written in a managed language such as C# or Visual Basic, declare the IInitializeWithWindow interface in your app's code with the [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) and Guid attribute as shown in the following C# example.</span></span> <span data-ttu-id="a17f4-115">この例では、コード ファイルに System.Runtime.InteropServices 名前空間の using ステートメントが指定されていることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="a17f4-115">This example assumes that your code file has a using statement for the System.Runtime.InteropServices namespace.</span></span>
+<span data-ttu-id="d890c-112">デスクトップ ブリッジを使ってアプリをパッケージ化していない場合、UWP API を使用する前に、[デスクトップ ブリッジを使ってアプリをパッケージ化する](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)必要があります。</span><span class="sxs-lookup"><span data-stu-id="d890c-112">If you have not packaged your app with the Desktop Bridge, [you must do so first](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) before you can use any UWP APIs.</span></span>
+
+
+## <a name="enable-access-to-iinitializewithwindow-interface"></a><span data-ttu-id="d890c-113">IInitializeWithWindow インターフェイスへのアクセスを有効にする</span><span class="sxs-lookup"><span data-stu-id="d890c-113">Enable access to IInitializeWithWindow interface</span></span>
+
+<span data-ttu-id="d890c-114">アプリケーションが C# や Visual Basic などのマネージ言語で記述されている場合、次の C# の例に示すように、アプリのコードで [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) と GUID 属性を使用して IInitializeWithWindow インターフェイスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="d890c-114">If your application is written in a managed language such as C# or Visual Basic, declare the IInitializeWithWindow interface in your app's code with the [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) and Guid attribute as shown in the following C# example.</span></span> <span data-ttu-id="d890c-115">この例では、コード ファイルに System.Runtime.InteropServices 名前空間の using ステートメントが指定されていることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="d890c-115">This example assumes that your code file has a using statement for the System.Runtime.InteropServices namespace.</span></span>
 
 ```csharp
 [ComImport]
@@ -48,12 +48,12 @@ public interface IInitializeWithWindow
 }
 ```
 
-<span data-ttu-id="a17f4-116">または、C++ で記述されている場合、コードに **shobjidl.h** ヘッダー ファイルへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="a17f4-116">Alternatively, if you are using C++, add a reference to the **shobjidl.h** header file in your code.</span></span> <span data-ttu-id="a17f4-117">このヘッダー ファイルには、*IInitializeWithWindow* インターフェイスの宣言が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a17f4-117">This header file contains the declaration of the *IInitializeWithWindow* interface.</span></span>
+<span data-ttu-id="d890c-116">または、C++ で記述されている場合、コードに **shobjidl.h** ヘッダー ファイルへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="d890c-116">Alternatively, if you are using C++, add a reference to the **shobjidl.h** header file in your code.</span></span> <span data-ttu-id="d890c-117">このヘッダー ファイルには、*IInitializeWithWindow* インターフェイスの宣言が含まれています。</span><span class="sxs-lookup"><span data-stu-id="d890c-117">This header file contains the declaration of the *IInitializeWithWindow* interface.</span></span>
 
 
-## <a name="initialize-the-secondary-tile"></a><span data-ttu-id="a17f4-118">セカンダリ タイルを初期化する</span><span class="sxs-lookup"><span data-stu-id="a17f4-118">Initialize the secondary tile</span></span>
+## <a name="initialize-the-secondary-tile"></a><span data-ttu-id="d890c-118">セカンダリ タイルを初期化する</span><span class="sxs-lookup"><span data-stu-id="d890c-118">Initialize the secondary tile</span></span>
 
-<span data-ttu-id="a17f4-119">通常の UWP アプリの場合とまったく同じように、新しいセカンダリ タイル オブジェクトを初期化します。</span><span class="sxs-lookup"><span data-stu-id="a17f4-119">Initialize a new secondary tile object exactly like you would with a normal UWP app.</span></span> <span data-ttu-id="a17f4-120">セカンダリ タイルの作成とピン留めについて詳しくは、「[セカンダリ タイルをピン留めする](secondary-tiles-pinning.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a17f4-120">To learn more about creating and pinning secondary tiles, see [Pin secondary tiles](secondary-tiles-pinning.md).</span></span>
+<span data-ttu-id="d890c-119">通常の UWP アプリの場合とまったく同じように、新しいセカンダリ タイル オブジェクトを初期化します。</span><span class="sxs-lookup"><span data-stu-id="d890c-119">Initialize a new secondary tile object exactly like you would with a normal UWP app.</span></span> <span data-ttu-id="d890c-120">セカンダリ タイルの作成とピン留めについて詳しくは、「[セカンダリ タイルをピン留めする](secondary-tiles-pinning.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d890c-120">To learn more about creating and pinning secondary tiles, see [Pin secondary tiles](secondary-tiles-pinning.md).</span></span>
 
 ```csharp
 // Initialize the tile with required arguments
@@ -66,9 +66,9 @@ SecondaryTile tile = new SecondaryTile(
 ```
 
 
-## <a name="assign-the-window-handle"></a><span data-ttu-id="a17f4-121">ウィンドウ ハンドルを割り当てる</span><span class="sxs-lookup"><span data-stu-id="a17f4-121">Assign the window handle</span></span>
+## <a name="assign-the-window-handle"></a><span data-ttu-id="d890c-121">ウィンドウ ハンドルを割り当てる</span><span class="sxs-lookup"><span data-stu-id="d890c-121">Assign the window handle</span></span>
 
-<span data-ttu-id="a17f4-122">これは、デスクトップ アプリケーションにとって重要な手順です。</span><span class="sxs-lookup"><span data-stu-id="a17f4-122">This is the key step for desktop applications.</span></span> <span data-ttu-id="a17f4-123">オブジェクトを [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) オブジェクトにキャストします。</span><span class="sxs-lookup"><span data-stu-id="a17f4-123">Cast the object to an [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) object.</span></span> <span data-ttu-id="a17f4-124">次に [IInitializeWithWindow.Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) メソッドを呼び出し、モーダル ダイアログのオーナーにするウィンドウのハンドルを渡します。</span><span class="sxs-lookup"><span data-stu-id="a17f4-124">Then, call the [IInitializeWithWindow.Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) method, and pass the handle of the window that you want to be the owner for the modal dialog.</span></span> <span data-ttu-id="a17f4-125">次の C# の例は、アプリのメイン ウィンドウのハンドルをメソッドに渡す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="a17f4-125">The following C# example shows how to pass the handle of your app’s main window to the method.</span></span>
+<span data-ttu-id="d890c-122">これは、デスクトップ アプリケーションにとって重要な手順です。</span><span class="sxs-lookup"><span data-stu-id="d890c-122">This is the key step for desktop applications.</span></span> <span data-ttu-id="d890c-123">オブジェクトを [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) オブジェクトにキャストします。</span><span class="sxs-lookup"><span data-stu-id="d890c-123">Cast the object to an [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) object.</span></span> <span data-ttu-id="d890c-124">次に [IInitializeWithWindow.Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) メソッドを呼び出し、モーダル ダイアログのオーナーにするウィンドウのハンドルを渡します。</span><span class="sxs-lookup"><span data-stu-id="d890c-124">Then, call the [IInitializeWithWindow.Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) method, and pass the handle of the window that you want to be the owner for the modal dialog.</span></span> <span data-ttu-id="d890c-125">次の C# の例は、アプリのメイン ウィンドウのハンドルをメソッドに渡す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="d890c-125">The following C# example shows how to pass the handle of your app’s main window to the method.</span></span>
 
 ```csharp
 // Assign the window handle
@@ -77,9 +77,9 @@ initWindow.Initialize(System.Diagnostics.Process.GetCurrentProcess().MainWindowH
 ```
 
 
-## <a name="pin-the-tile"></a><span data-ttu-id="a17f4-126">タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="a17f4-126">Pin the tile</span></span>
+## <a name="pin-the-tile"></a><span data-ttu-id="d890c-126">タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="d890c-126">Pin the tile</span></span>
 
-<span data-ttu-id="a17f4-127">最後に、通常の UWP アプリと同様、タイルのピン留めを要求します。</span><span class="sxs-lookup"><span data-stu-id="a17f4-127">Finally, request to pin the tile as you would a normal UWP app.</span></span>
+<span data-ttu-id="d890c-127">最後に、通常の UWP アプリと同様、タイルのピン留めを要求します。</span><span class="sxs-lookup"><span data-stu-id="d890c-127">Finally, request to pin the tile as you would a normal UWP app.</span></span>
 
 ```csharp
 // Pin the tile
@@ -89,18 +89,18 @@ bool isPinned = await tile.RequestCreateAsync();
 ```
 
 
-## <a name="send-tile-notifications"></a><span data-ttu-id="a17f4-128">タイル通知を送信する</span><span class="sxs-lookup"><span data-stu-id="a17f4-128">Send tile notifications</span></span>
+## <a name="send-tile-notifications"></a><span data-ttu-id="d890c-128">タイル通知を送信する</span><span class="sxs-lookup"><span data-stu-id="d890c-128">Send tile notifications</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="a17f4-129">**2018 年 4 月のバージョン 17134.81 以降が必要**: ビルド 17134.81 以降を実行してデスクトップ ブリッジ アプリからセカンダリ タイルにタイル通知またはバッジ通知を送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a17f4-129">**Requires April 2018 version 17134.81 or later**: You must be running build 17134.81 or later to send tile or badge notifications to secondary tiles from Desktop Bridge apps.</span></span> <span data-ttu-id="a17f4-130">この.81 サービス更新プログラムの前に、デスクトップ ブリッジ アプリからセカンダリ タイルにタイル通知またはバッジ通知を送信するときに a 0x80070490 *要素が見つかりません*という例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="a17f4-130">Before this .81 servicing update, a 0x80070490 *Element not found* exception would occur when sending tile or badge notifications to secondary tiles from Desktop Bridge apps.</span></span>
+> <span data-ttu-id="d890c-129">**2018 年 4 月のバージョン 17134.81 以降が必要**: ビルド 17134.81 以降を実行してデスクトップ ブリッジ アプリからセカンダリ タイルにタイル通知またはバッジ通知を送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d890c-129">**Requires April 2018 version 17134.81 or later**: You must be running build 17134.81 or later to send tile or badge notifications to secondary tiles from Desktop Bridge apps.</span></span> <span data-ttu-id="d890c-130">この.81 サービス更新プログラムの前に、デスクトップ ブリッジ アプリからセカンダリ タイルにタイル通知またはバッジ通知を送信するときに a 0x80070490 *要素が見つかりません*という例外が発生します。</span><span class="sxs-lookup"><span data-stu-id="d890c-130">Before this .81 servicing update, a 0x80070490 *Element not found* exception would occur when sending tile or badge notifications to secondary tiles from Desktop Bridge apps.</span></span>
 
-<span data-ttu-id="a17f4-131">タイル通知またはバッジ通知の送信は UWP アプリと同じです。</span><span class="sxs-lookup"><span data-stu-id="a17f4-131">Sending tile or badge notifications is the same as UWP apps.</span></span> <span data-ttu-id="a17f4-132">手順については、「[ローカル タイル通知の送信](sending-a-local-tile-notification.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a17f4-132">See [Send a local tile notification](sending-a-local-tile-notification.md) to get started.</span></span>
+<span data-ttu-id="d890c-131">タイル通知またはバッジ通知の送信は UWP アプリと同じです。</span><span class="sxs-lookup"><span data-stu-id="d890c-131">Sending tile or badge notifications is the same as UWP apps.</span></span> <span data-ttu-id="d890c-132">手順については、「[ローカル タイル通知の送信](sending-a-local-tile-notification.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d890c-132">See [Send a local tile notification](sending-a-local-tile-notification.md) to get started.</span></span>
 
 
-## <a name="resources"></a><span data-ttu-id="a17f4-133">リソース</span><span class="sxs-lookup"><span data-stu-id="a17f4-133">Resources</span></span>
+## <a name="resources"></a><span data-ttu-id="d890c-133">リソース</span><span class="sxs-lookup"><span data-stu-id="d890c-133">Resources</span></span>
 
-* [<span data-ttu-id="a17f4-134">完全なコード例</span><span class="sxs-lookup"><span data-stu-id="a17f4-134">Full code sample</span></span>](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
-* [<span data-ttu-id="a17f4-135">セカンダリ タイルの概要</span><span class="sxs-lookup"><span data-stu-id="a17f4-135">Secondary tiles overview</span></span>](secondary-tiles.md)
-* [<span data-ttu-id="a17f4-136">セカンダリ タイルをピン留めする (UWP)</span><span class="sxs-lookup"><span data-stu-id="a17f4-136">Pin secondary tiles (UWP)</span></span>](secondary-tiles-pinning.md)
-* [<span data-ttu-id="a17f4-137">デスクトップ ブリッジ</span><span class="sxs-lookup"><span data-stu-id="a17f4-137">Desktop Bridge</span></span>](https://developer.microsoft.com/windows/bridges/desktop)
-* [<span data-ttu-id="a17f4-138">デスクトップ ブリッジのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="a17f4-138">Desktop Bridge code samples</span></span>](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+* [<span data-ttu-id="d890c-134">完全なコード例</span><span class="sxs-lookup"><span data-stu-id="d890c-134">Full code sample</span></span>](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
+* [<span data-ttu-id="d890c-135">セカンダリ タイルの概要</span><span class="sxs-lookup"><span data-stu-id="d890c-135">Secondary tiles overview</span></span>](secondary-tiles.md)
+* [<span data-ttu-id="d890c-136">セカンダリ タイルをピン留めする (UWP)</span><span class="sxs-lookup"><span data-stu-id="d890c-136">Pin secondary tiles (UWP)</span></span>](secondary-tiles-pinning.md)
+* [<span data-ttu-id="d890c-137">デスクトップ ブリッジ</span><span class="sxs-lookup"><span data-stu-id="d890c-137">Desktop Bridge</span></span>](https://developer.microsoft.com/windows/bridges/desktop)
+* [<span data-ttu-id="d890c-138">デスクトップ ブリッジのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="d890c-138">Desktop Bridge code samples</span></span>](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

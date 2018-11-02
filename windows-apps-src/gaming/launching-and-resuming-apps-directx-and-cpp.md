@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 起動, 再開
 ms.localizationpriority: medium
 ms.openlocfilehash: ebcec430c4fc916e77ebdf25ee53deb23b02185d
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945660"
+ms.locfileid: "5977405"
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a><span data-ttu-id="7c146-104">アプリの起動と再開 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="7c146-104">Launching and resuming apps (DirectX and C++)</span></span>
 

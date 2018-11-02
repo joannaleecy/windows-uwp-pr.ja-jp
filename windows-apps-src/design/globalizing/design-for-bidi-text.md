@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ, RTL, LTR
 ms.localizationpriority: medium
 ms.openlocfilehash: 24e4c5dfce4aa3e773ab8c334ca732ac5ed53030
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5943876"
+ms.locfileid: "5975076"
 ---
 # <a name="design-your-app-for-bidirectional-text"></a><span data-ttu-id="62e5f-103">双方向テキストに対応したアプリを設計する</span><span class="sxs-lookup"><span data-stu-id="62e5f-103">Design your app for bidirectional text</span></span>
 

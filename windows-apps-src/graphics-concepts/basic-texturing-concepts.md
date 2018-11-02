@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c48b7b007c1af1eaf6013d5f6e99468713d50745
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5942739"
+ms.locfileid: "5974503"
 ---
 # <a name="basic-texturing-concepts"></a><span data-ttu-id="caae3-104">テクスチャリングの基本概念</span><span class="sxs-lookup"><span data-stu-id="caae3-104">Basic texturing concepts</span></span>
 
