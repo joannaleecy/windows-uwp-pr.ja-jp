@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d4121bd402b048ee6102ed3be30b94a66e274273
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920279"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970016"
 ---
 # <a name="texture-blending"></a>テクスチャ ブレンド
 

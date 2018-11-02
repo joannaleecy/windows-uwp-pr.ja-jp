@@ -8,12 +8,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: 71247b8e04e63e5f792a872256dd79447c4d36cd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6762d31ea7ebaeb966cd60f121591ba1534517a3
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927965"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969072"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Microsoft Store に要求を送信する
 
@@ -79,7 +79,7 @@ public async Task<bool> AddUserToFlightGroup()
 |  *requestKind*                   |  デバイスの最も順位の高いフライト グループを返すには 7 を指定し、現在のユーザーとデバイスの最も順位の高いフライト グループを返すには 8 を指定します。 *requestKind* パラメーターには値 8 を使うことをお勧めします。この値は、現在のユーザーおよびデバイスの両方のメンバーシップにおいて最も順位の高いフライト グループを返すためです。  |
 |  *parametersAsJson*                   |  次の例に示すように、データを含む JSON 形式の文字列を渡します。  |
 
-次の例は、JSON 形式のデータを *parametersAsJson* に渡す方法を示しています。 *type* フィールドは、文字列 *GetRemoteVariables* に割り当てる必要があります。 Windows デベロッパー センター ダッシュボードでリモート変数を定義したプロジェクトの ID フィールドに *projectId* フィールドを割り当てます。
+次の例は、JSON 形式のデータを *parametersAsJson* に渡す方法を示しています。 *type* フィールドは、文字列 *GetRemoteVariables* に割り当てる必要があります。 *ProjectId*フィールドは、パートナー センターでリモート変数を定義したプロジェクトの ID に割り当てます。
 
 ```json
 { 

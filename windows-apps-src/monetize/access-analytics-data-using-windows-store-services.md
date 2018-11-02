@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: Microsoft Store 分析 API を使うと、自分または自分の組織の Windows デベロッパー センター アカウントに登録されているアプリの分析データをプログラムで取得できます。
+description: Microsoft Store 分析 API を使って、自分または自分の組織に登録されているアプリの分析データをプログラムによって取得 ' Windows パートナー センター アカウント。
 title: ストア サービスを使った分析データへのアクセス
 ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 876500bf57de386ca551a1b51a02df62657f147c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8656270b81e0aae46c5d4f3a7b651135c163f76d
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938922"
+ms.locfileid: "5970056"
 ---
 # <a name="access-analytics-data-using-store-services"></a>ストア サービスを使った分析データへのアクセス
 
-*Microsoft Store 分析 API* を使うと、自分または自分の組織の Windows デベロッパー センター アカウントに登録されているアプリの分析データをプログラムで取得できます。 この API では、アプリおよびアドオン (アプリ内製品または IAP とも呼ばれます) の入手数、エラー、アプリの評価とレビューに関するデータを取得できます。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
+プログラムで、自分または自分の組織の Windows のパートナー センター アカウントに登録されているアプリの分析データを取得するには、 *Microsoft Store 分析 API*を使用します。 この API では、アプリおよびアドオン (アプリ内製品または IAP とも呼ばれます) の入手数、エラー、アプリの評価とレビューに関するデータを取得できます。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
 次の手順で、このプロセスについて詳しく説明しています。
 
@@ -31,17 +31,17 @@ ms.locfileid: "5938922"
 
 Microsoft Store 分析 API を呼び出すコードの作成を開始する前に、次の前提条件が満たされていることを確認します。
 
-* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしで[デベロッパー センター内から新しい Azure AD を作成](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)できます。
+* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合、追加料金なしの[パートナー センターで新しい Azure AD を作成](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)できます。
 
-* Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのテナント ID とクライアント ID を取得してキーを生成する必要があります。 Azure AD アプリケーションは、Microsoft Store 分析 API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
+* Azure AD アプリケーションをパートナー センター アカウントに関連付け、テナント ID とアプリケーションのクライアント ID を取得して、キーを生成する必要があります。 Azure AD アプリケーションは、Microsoft Store 分析 API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
     > [!NOTE]
     > この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
 
-Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、必要な値を取得するには:
+Azure AD アプリケーションをパートナー センター アカウントに関連付けと必要な値を取得します。
 
-1.  デベロッパー センターで、[組織のデベロッパー センター アカウントと組織の Azure AD ディレクトリを関連付けます](../publish/associate-azure-ad-with-dev-center.md)。
+1.  パートナー センターで、[組織のパートナー センターのアカウントを組織の Azure AD ディレクトリを関連付けます](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  次に、デベロッパー センターの **[アカウント設定]** セクションの **[ユーザー]** ページで、デベロッパー センター アカウントの分析データへのアクセスに使うアプリやサービスを表す [Azure AD アプリケーションを追加](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)します。 このアプリケーションに必ず**マネージャー** ロールを割り当てます。 アプリケーションが Azure AD ディレクトリにまだ存在しない場合は、[デベロッパー センターで新しい Azure AD アプリケーションを作成](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)することができます。
+2.  次に、パートナー センター、 [Azure AD アプリケーションの追加](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)を表す、アプリまたはサービスのパートナー センターのアカウントの分析データへのアクセスを使用する**アカウント設定**] セクションで、**ユーザー**ページから。 このアプリケーションに必ず**マネージャー** ロールを割り当てます。 アプリケーションが存在しない場合、Azure AD ディレクトリで実行できます[を新規作成パートナー センターで Azure AD アプリケーション](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)します。
 
 3.  **[ユーザー]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。
 
@@ -66,7 +66,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-POST URI の *tenant\_id* の値と *client \_id* および *client \_secret* のパラメーターには、前のセクションでデベロッパー センターから取得したテナント ID、クライアント ID、キーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
+POST URI と*client \_id*と*client \_secret*パラメーターで、 *tenant\_id*値のテナント ID、クライアント ID および前のセクションで、パートナー センターから取得したアプリケーションのキーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
 
 アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
 
@@ -78,7 +78,7 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 分析 AP
 
 ### <a name="methods-for-uwp-apps"></a>UWP アプリ向けのメソッド
 
-次の分析メソッドは、デベロッパー センターの UWP アプリで利用できます。
+次の分析メソッドは、パートナー センターで UWP アプリで使用できます。
 
 | シナリオ       | メソッド      |
 |---------------|--------------------|
@@ -111,7 +111,7 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 分析 AP
 
 ### <a name="methods-for-xbox-one-games"></a>Xbox One ゲーム向けのメソッド
 
-次の追加のメソッドは、Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、デベロッパー センター ダッシュボードの [XDP 分析] で利用できる Xbox One ゲームの開発者アカウントで使うことができます。
+次の追加のメソッドは、Xbox デベロッパー ポータル (XDP) を通じて取り込ま Xbox One のゲームの開発者アカウントで利用できる XDP 分析ダッシュ ボードで利用可能です。
 
 | シナリオ       | メソッド      |
 |---------------|--------------------|

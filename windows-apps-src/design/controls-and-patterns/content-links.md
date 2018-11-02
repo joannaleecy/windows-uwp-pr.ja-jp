@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bbf7bdf1f41b1dff1049674f3b4463bac6ccb80
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3939995aa2f29f4590c8c71a877b69f0cb81d2ec
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5929616"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969178"
 ---
 # <a name="content-links-in-text-controls"></a>テキスト コントロールのコンテンツ リンク
 
@@ -164,7 +164,7 @@ People ピッカーは、**ms-people** プロトコルを使用する Uri で Co
 - LinkContentKind が "People" でない場合、**People** アプリが開きます。 たとえば、これは ContentLinkChanged イベント ハンドラーで LinkContentKind を変更した場合に発生する可能性があります。
 
 > [!TIP]
-> アプリから他のアプリや Web サイトを開く方法の詳細については、[URI を使ったアプリの起動] の下にあるトピックを参照してください (/windows/uwp/launch-resume/launch-app-with-uri)。
+> アプリから他のアプリや web サイトを開くについて詳しくは、 [Uri を使ったアプリの起動](/windows/uwp/launch-resume/launch-app-with-uri)の下のトピックを参照してください。
 
 #### <a name="invoked"></a>Invoked
 

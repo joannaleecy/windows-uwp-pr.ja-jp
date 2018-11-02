@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
-ms.openlocfilehash: 50960a079e2c38d52d3a15403aef091ea99d7696
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 271d60e6fbc0bd6336aa8aa8ec9edbb2b965c7f4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5925456"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5981003"
 ---
 # <a name="manage-targeting-profiles"></a>ターゲット プロファイルの管理
 
@@ -145,7 +145,7 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  対象プロファイルの ID。     |   ○    |       |   ×      |       
 |  name   |  文字列   |   対象プロファイルの名前。    |    ×   |      |  ○     |       
-|  targetingType   |  文字列   |  次のいずれかの値です。 <ul><li>**Auto**: デベロッパー センターでのアプリの設定に基づいて Microsoft が対象プロファイルを選択できるようにする場合は、この値を指定します。</li><li>**Manual**: 独自の対象プロファイルを定義する場合は、この値を指定します。</li></ul>     |  ×     |  Auto    |   ○    |       
+|  targetingType   |  文字列   |  次のいずれかの値です。 <ul><li>**自動**: Microsoft パートナー センターでのアプリの設定に基づくターゲット プロファイルを選択できるようにするには、この値を指定します。</li><li>**Manual**: 独自の対象プロファイルを定義する場合は、この値を指定します。</li></ul>     |  ×     |  Auto    |   ○    |       
 |  age   |  配列   |   対象とするユーザーの年齢範囲を識別する 1 つ以上の整数です。 整数の詳しい一覧については、この記事の「[年齢の値](#age-values)」をご覧ください。    |    ×    |  null    |     ×    |       
 |  gender   |  配列   |  対象とするユーザーの性別を識別する 1 つ以上の整数です。 整数の詳しい一覧については、この記事の「[性別の値](#gender-values)」をご覧ください。       |  ×    |  null    |     ×    |       
 |  country   |  配列   |  対象とするユーザーの国コードを識別する 1 つ以上の整数です。 整数の詳しい一覧については、この記事の「[国コードの値](#country-code-values)」をご覧ください。    |  ×    |  null   |      ×   |       

@@ -7,17 +7,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, ゲーム ハブ
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e029e74920f5782e40a0a1737a5a43723ff8835
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: f565f0fc3799ebf2d23f9dd7b9320323588f4caa
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919372"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5997741"
 ---
 # <a name="get-xbox-live-game-hub-data"></a>Xbox Live ゲーム ハブのデータの取得
 
 
-[Xbox Live 対応ゲーム](../xbox-live/index.md)のゲーム ハブ データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、Windows デベロッパー センター ダッシュボードの [Xbox 分析レポート](../publish/xbox-analytics-report.md)でも確認できます。
+[Xbox Live 対応ゲーム](../xbox-live/index.md)のゲーム ハブ データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、 [Xbox 分析レポート](../publish/xbox-analytics-report.md)では、パートナー センターで利用可能なもできます。
 
 > [!IMPORTANT]
 > このメソッドは、Xbox のゲームまたは Xbox Live サービスを使用するゲームのみサポートします。 これらのゲームは、[概念の承認プロセス](../gaming/concept-approval.md)を完了する必要があります。これには、[Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)が発行したゲームと [ID@Xbox プログラム](../xbox-live/developer-program-overview.md#id)を介して申請されたゲームが含まれます。 このメソッドでは、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を介して発行されたゲームは現在サポートされていません。

@@ -9,32 +9,32 @@ keywords: windows 10, uwp, バージョン, 作成, バージョン, windows, �
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e2b241d0369d50e600a5497811ac7d4bbb823bc
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919058"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969390"
 ---
 # <a name="choose-a-uwp-version"></a>UWP バージョンの選択
 
 Windows 10 の各バージョンでは、新機能や強化された機能が UWP プラットフォームに提供されます。 Microsoft Visual Studio で UWP アプリを作成するときは、ターゲットのバージョンを選択できます。 [.NET Standard 2.0](https://docs.microsoft.com/dotnet/standard/net-standard) を使うプロジェクトには、ビルド 16299 以降の**最小バージョン**が必要です。
 
 > [!WARNING]
-> UWP プロジェクトを Visual Studio の現在のバージョンで作成された 2015 を Visual Studio で開くことができません。
+> Visual Studio 2015 では、現在のバージョンの Visual Studio で作成された UWP プロジェクトを開くことができません。
 
 次の表に、Windows 10 で利用できるバージョンを示します。 この表は、Windows 10 でのみサポートされる UWP アプリを作成する場合にだけ適用されることに注意してください。 以前のバージョンの Windows 向けに UWP アプリを開発することはできません。また、目的のバージョンをターゲットにするには、[SDK の適切なビルドをインストール](http://go.microsoft.com/fwlink/?LinkId=821431)する必要があります。 
 
 | バージョン | 説明 |
 | --- | --- |
-| 17763 (バージョン 1809) を構築します。 | これは、Windows の 10、2018年 10 月にリリースの最新バージョンです。 **このバージョンの Windows をターゲットにするには、Visual Studio 2017 を使用している_必要があります_。** このリリースの主な新機能は次のとおりです。 </br> \* **Windows マシンの学習:** Windows マシンの学習がこれで正式に、最先端の機械学習モデルの迅速な評価やサポートなどの機能を提供します。 このプラットフォームについて詳しくは、「[Windows Machine Learning](https://docs.microsoft.com/windows/ai/)」をご覧ください。 </br> \* **流暢なデザイン:** Windows 10 には、メニュー バー、コマンド バーのポップアップ、および XAML プロパティのアニメーションなどの新機能が追加されました。 最新情報については、「[Fluent Design の概要](../design/fluent-design-system/index.md)」をご覧ください。 </br> これらは、Windows のこのリリースで追加されたその他の多くの機能についてを参照してください[デベロッパー センター](https://developer.microsoft.com/windows/windows-10-for-developers)やより詳細なページの[開発者のための Windows 10 の新機能](../whats-new/windows-10-build-17763.md)
-| ビルド 17134 (バージョン 1803) | これで 2018年 4 月 10 の Windows のバージョンがリリースされましたが。 **このバージョンの Windows をターゲットにするには、Visual Studio 2017 を使用している_必要があります_。** このリリースの主な新機能は次のとおりです。 </br> \* **Fluent Design:** ツリー ビュー、引っ張って更新、ナビゲーション ビューなど、Windows 10 に追加された新機能です。 最新情報については、「[Fluent Design の概要](../design/fluent-design-system/index.md)」をご覧ください。 </br> \* **コンソール UWP アプリ:** C++/WinRT または C++/CX の UWP コンソール アプリを作成して、DOS や PowerShell などのコンソール ウィンドウで実行できるようになりました。 </br> このリリースの Windows で追加されたこれらの機能や他の多くの機能については、[デベロッパー センター](https://developer.microsoft.com/windows/windows-10-for-developers)または「[Windows 10 の開発者向け新着情報](../whats-new/windows-10-build-17134.md)」の詳細ページをご覧ください。
+| ビルド 17763 (バージョン 1809) | これは、2018 年の年 10 月にリリースされた Windows 10 の最新バージョンです。 **このバージョンの Windows をターゲットにするには、Visual Studio 2017 を使用している_必要があります_。** このリリースの主な新機能は次のとおりです。 </br> \* **Windows Machine Learning:** Windows Machine Learning ができるようになりました正式に起動、最先端の機械学習モデルの評価を高速化とサポートなどの機能を提供します。 このプラットフォームについて詳しくは、「[Windows Machine Learning](https://docs.microsoft.com/windows/ai/)」をご覧ください。 </br> \* **Fluent Design:** Windows 10 に、メニュー バー、コマンド バーのポップアップ、および XAML プロパティのアニメーションなどの新しい機能が追加されました。 最新情報については、「[Fluent Design の概要](../design/fluent-design-system/index.md)」をご覧ください。 </br> これらのパラメーターやその他の Windows のこのリリースで追加された多くの機能には、[開発者向けの Windows 10 の新機能](../whats-new/windows-10-build-17763.md)で[、デベロッパー センター](https://developer.microsoft.com/windows/windows-10-for-developers)または詳細ページにアクセスします。
+| ビルド 17134 (バージョン 1803) | これは Windows 10 のバージョンは、2018 年 4 月にリリースされました。 **このバージョンの Windows をターゲットにするには、Visual Studio 2017 を使用している_必要があります_。** このリリースの主な新機能は次のとおりです。 </br> \* **Fluent Design:** ツリー ビュー、引っ張って更新、ナビゲーション ビューなど、Windows 10 に追加された新機能です。 最新情報については、「[Fluent Design の概要](../design/fluent-design-system/index.md)」をご覧ください。 </br> \* **コンソール UWP アプリ:** C++/WinRT または C++/CX の UWP コンソール アプリを作成して、DOS や PowerShell などのコンソール ウィンドウで実行できるようになりました。 </br> このリリースの Windows で追加されたこれらの機能や他の多くの機能については、[デベロッパー センター](https://developer.microsoft.com/windows/windows-10-for-developers)または「[Windows 10 の開発者向け新着情報](../whats-new/windows-10-build-17134.md)」の詳細ページをご覧ください。
 | ビルド 16299 (Fall Creators Update バージョン 1709) | このバージョンの Windows 10 は、2017 年 10 月にリリースされました。 **このバージョンの Windows をターゲットにするには、Visual Studio 2017 を使用している_必要があります_。** このリリースの主な新機能は次のとおりです。 </br> \* **.NET Standard 2.0:** .NET API の数が大幅に増えており、お気に入りの NuGet パッケージとサード パーティ製ライブラリが .NET Standard に組み込まれています。 詳しくは、[こちら](https://docs.microsoft.com/dotnet/standard/net-standard)のドキュメントをご覧ください。 これらの新しい API にアクセスするには、**最小バージョン**をビルド 16299 に設定する必要がある点に注意してください。 </br> \* **Fluent Design: **照明、深度、視点、および動きを使ってアプリを強化し、重要な UI 要素にユーザーが専念できるようにしています。 </br> \* **条件付き XAML:** プロパティを簡単に設定し、実行時に API があるかどうかに基づいてオブジェクトをインスタンス化できるため、デバイスやバージョン間でアプリをシームレスに実行できるようになります。 </br> このリリースの Windows で追加されたこれらの機能や他の多くの機能については、[デベロッパー センター](https://developer.microsoft.com/windows/windows-10-for-developers)または「[Windows 10 の開発者向け新着情報](../whats-new/windows-10-build-16299.md)」の詳細ページをご覧ください。
 | ビルド 15063 (Creators Update バージョン 1703) | このバージョンの Windows 10 は、2017 年 3 月にリリースされました。 **このバージョンの Windows をターゲットにするには、Visual Studio 2017 を使用している_必要があります_。** このリリースの主な新機能は次のとおりです。  </br> \* **インクの解析:** Windows Ink で、インク ストロークを筆記のストロークか描画のストロークかに分類し、テキスト、図形、基本的なレイアウト構造を認識できるようになりました。 </br> \* **Windows.Ui.Composition API:** アプリ全体でアニメーションを簡単に組み合わせ、適用することができます。 </br> \* **ライブ編集:** アプリの実行中に XAML を編集し、適用される変更内容をリアルタイムで確認できます。 </br> このリリースの Windows で追加されたこれらの機能や他の多くの機能については、[デベロッパー センター](https://developer.microsoft.com/windows/windows-10-for-developers)または「[Windows 10 の開発者向け新着情報](../whats-new/windows-10-build-15063.md)」の詳細ページをご覧ください。  |
 | ビルド 14393 (Anniversary Update バージョン 1607) | このバージョンの Windows 10 は、2016 年 7 月にリリースされました。 このリリースの主な新機能は次のとおりです。 </br> \* **Windows Ink:** InkCanvas と InkToolbar の各コントロールが新しく追加されました。 </br> \* **Cortana API:** 新しい Cortana アクションを使って、Cortana のサポートをアプリの特定の機能と統合できます。 </br> \* **Windows Hello:** Microsoft Edge が Windows Hello をサポートするようになり、Web 開発者が生体認証にアクセスできるようになりました。 </br> このリリースの Windows で追加されたこれらの機能や他の多くの機能については、[デベロッパー センター](https://developer.microsoft.com/windows/windows-10-for-developers)または「[Windows 10 の開発者向け新着情報](../whats-new/windows-10-build-14393.md)」の詳細ページをご覧ください。  |
 | ビルド 10586 (November Update バージョン 1511) | このバージョンの Windows 10 は、2015 年 11 月にリリースされました。 このリリースでは主な新機能として、Microsoft Edge のビデオ通信用 ORTC (オブジェクト リアルタイム通信) APIと、アプリで Windows Hello 顔認証を使うためのプロバイダー API が導入されました。 [このビルドで導入された機能について詳しくはこちらをご覧ください。](../whats-new/windows-10-build-10586.md) |
 | ビルド 10240 (Windows 10 バージョン 1507) | 2015 年 7 月にリリースされた Windows 10 の初期リリース バージョンです。 [このビルドで導入された機能について詳しくはこちらをご覧ください。](../whats-new/windows-10-build-10240.md) |
 
-新しい開発者と一般ユーザーを対象に常にコードを記述する開発者が Windows (17763) の最新のビルドを使用することを強くお勧めします。 エンタープライズ アプリを開発する場合は、**最小バージョン**で古いバージョンをサポートすることを検討してください。
+新しい開発者と常に、一般的なユーザーを対象にコードを記述する開発者が最新のビルドの Windows (17763) を使用することを強くお勧めします。 エンタープライズ アプリを開発する場合は、**最小バージョン**で古いバージョンをサポートすることを検討してください。
 
 ## <a name="whats-different-in-each-uwp-version"></a>UWP バージョンの比較
 
@@ -42,13 +42,13 @@ Windows 10 の各バージョンでは、新機能や強化された機能が UW
 
 すべてのデバイス ファミリとそのバージョン、およびすべての API コントラクトとそのバージョンを列挙したリファレンス トピックについては、「[デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx)」と「[APIコントラクト](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx)」をご覧ください。
 
-## <a name="net-api-availability-in-uwp-versions"></a>UWP のバージョンの .NET API の可用性
+## <a name="net-api-availability-in-uwp-versions"></a>UWP バージョンの .NET API の使用可能状況
 
-UWP では、**ターゲットのバージョン**や、プロジェクトの**最低限のバージョン**に関係なく使用可能な .NET Api の一部のサブセットをサポートします。 [このページが使用可能な型の詳細についてを提供](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)します。
+UWP では、**ターゲット バージョン**や、プロジェクトの**最小バージョン**に関係なく利用できる .NET Api の一部のサブセットをサポートします。 [このページは利用可能な種類の詳細を提供します](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
 
-再利用可能なクロスプラット フォームのライブラリを作成する場合は、.NET の標準ではサポートされて UWP です。 [.NET の標準のドキュメント](https://docs.microsoft.com/dotnet/standard/net-standard)を標準の .NET バージョンでサポートされている UWP の情報を提供します。
+クロス プラットフォームの再利用可能なライブラリを作成する場合は、.NET Standard でサポートされて UWP。 [.NET Standard のドキュメント](https://docs.microsoft.com/dotnet/standard/net-standard)を .NET Standard ではサポートされている UWP バージョン情報を提供します。
 
-デスクトップ アプリケーションを開発する場合を参照してください代わりに[.NET Framework のバージョンとの依存関係](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies).NET framework の可用性の詳細については。
+デスクトップ アプリを開発する場合について代わりに[.NET Framework のバージョンと依存関係](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies).NET framework の可用性について詳しくは、
 
 ## <a name="choose-which-version-to-use-for-your-app"></a>アプリで使用するバージョンの選択
 

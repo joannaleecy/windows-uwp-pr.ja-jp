@@ -8,19 +8,19 @@ ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e0d2bed4f2da49596a4859916637225bbbfd97
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 89e9fff8f041c4beb2a897c7be75b2f6e009f809
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945624"
+ms.locfileid: "5968716"
 ---
 # <a name="enable-in-app-product-purchases"></a>アプリ内製品購入の有効化
 
 アプリが無料であるかどうかにかかわらず、コンテンツ、その他のアプリ、アプリの新機能 (ゲームの次のレベルのロック解除など) をアプリ内から直接販売できます。 ここでは、アプリ内で製品を販売できるようにする方法について説明します。
 
 > [!IMPORTANT]
-> この記事では、[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーを使って、アプリ内製品の購入を有効化する方法について説明します。 この名前空間は更新されなくなり、新機能も追加されないため、代わりに [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間を使用することをお勧めします。 **Windows.Services.Store** 名前空間は、Microsoft Store で管理されるコンシューマブルなアドオンやサブスクリプションなど、最新の種類のアドオンをサポートしており、Windows デベロッパー センターと Microsoft Store で今後サポートされる製品および機能の種類と互換性を持つように設計されています。 **Windows.Services.Store** 名前空間は、Windows 10 バージョン 1607 で導入され、Visual Studio で、**Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするプロジェクトでのみ使用できます。 **Windows.Services.Store**名前空間を使用してアプリ内製品購入の有効化についての詳細については、[この記事](enable-in-app-purchases-of-apps-and-add-ons.md)をご覧ください。
+> この記事では、[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーを使って、アプリ内製品の購入を有効化する方法について説明します。 この名前空間は更新されなくなり、新機能も追加されないため、代わりに [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間を使用することをお勧めします。 **Windows.Services.Store**名前空間では、ストアで管理されるコンシューマブルなアドオンやサブスクリプションなど、最新のアドオンの種類をサポートし、今後の製品とパートナー センターとストアでサポートされる機能の種類に対応するのには設計されています。 **Windows.Services.Store** 名前空間は、Windows 10 バージョン 1607 で導入され、Visual Studio で、**Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするプロジェクトでのみ使用できます。 **Windows.Services.Store**名前空間を使用してアプリ内製品購入の有効化についての詳細については、[この記事](enable-in-app-purchases-of-apps-and-add-ons.md)をご覧ください。
 
 > [!NOTE]
 > アプリ内製品は、アプリの試用版では提供できません。 アプリの試用版を使用中のユーザーがアプリ内製品を購入できるのは、通常版のアプリを購入する場合のみです。
@@ -54,7 +54,7 @@ ms.locfileid: "5945624"
     * "RainbowThemePack"
 
   > [!NOTE]
-  > コードで使用するアプリ内販売トークンは、[デベロッパー センター ダッシュボードでアプリの対応するアドオンを定義する](../publish/add-on-submissions.md)ときに指定する、[製品 ID](../publish/set-your-add-on-product-id.md#product-id) 値と一致している必要があります。
+  > コードで使用するアプリ内販売トークンはときに指定する[製品 ID](../publish/set-your-add-on-product-id.md#product-id)値と一致する必要があります[パートナー センターでのアプリの対応するアドオンを定義](../publish/add-on-submissions.md)します。
 
 2.  **条件ブロック内に機能のコードを記述する**
 
@@ -80,10 +80,10 @@ ms.locfileid: "5945624"
 
 ## <a name="step-4-configure-the-in-app-product-offer-in-the-store"></a>手順 4: ストアでアプリ内製品を構成する
 
-デベロッパー センター ダッシュボードでアプリに移動し、アプリ内製品と一致する[アドオンを作成](../publish/add-on-submissions.md)します。 アドオンの製品 ID、種類、価格などのプロパティを定義します。 テストのときに WindowsStoreProxy.xml で設定した構成と同じ構成になっていることを確認してください。
+パートナー センターで、アプリと[アドオンを作成](../publish/add-on-submissions.md)する製品と一致するアプリ内に移動します。 アドオンの製品 ID、種類、価格などのプロパティを定義します。 テストのときに WindowsStoreProxy.xml で設定した構成と同じ構成になっていることを確認してください。
 
   > [!NOTE]
-  > コードで使用するアプリ内販売トークンは、デベロッパー センター ダッシュボードで対応するアドオンに対して指定する、[製品 ID](../publish/set-your-add-on-product-id.md#product-id) 値と一致している必要があります。
+  > コードで使用するアプリ内販売トークンは、パートナー センターで対応するアドオンに対して指定した[製品 ID](../publish/set-your-add-on-product-id.md#product-id)の値と一致する必要があります。
 
 ## <a name="remarks"></a>注釈
 

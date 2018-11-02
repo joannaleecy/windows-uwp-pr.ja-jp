@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f113f47a905e8b542dde4c982a162341fc0196
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: ad6381562b37b1a759a575e070edd6b1bf63402d
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920694"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5991237"
 ---
 # <a name="get-an-add-on-submission"></a>アドオンの申請の取得
 
@@ -24,8 +24,8 @@ ms.locfileid: "5920694"
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
-* デベロッパー センター アカウントにアドオン申請を作成します。 この操作は、デベロッパー センター ダッシュボードまたは[アドオン申請の作成](create-an-add-on-submission.md)メソッドを使って実行できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* アプリのいずれかのアドオンの申請を作成します。 [アドオンの申請を作成する](create-an-add-on-submission.md)方法を使用して行うことができますパートナー センターで、これを行うこともできます。
 
 ## <a name="request"></a>要求
 
@@ -47,8 +47,8 @@ ms.locfileid: "5920694"
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | 必須。 取得する申請が含まれるアドオンのストア ID です。 ストア ID はデベロッパー センター ダッシュボードで利用できます。また、[アドオンの作成](create-an-add-on.md)または[アドオンの詳細の取得](get-all-add-ons.md)要求の応答データに含まれています。  |
-| submissionId | string | 必須。 取得する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 デベロッパー センター ダッシュボードで作成された申請の場合、この ID はダッシュボードの申請ページの URL にも含まれています。  |
+| inAppProductId | string | 必須。 取得する申請が含まれるアドオンのストア ID です。 パートナー センターで、ストア ID は利用可能なとを[作成アドオン](create-an-add-on.md)または[アドオンの詳細を取得](get-all-add-ons.md)する要求の応答データに含まれています。  |
+| submissionId | string | 必須。 取得する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なも。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -140,7 +140,7 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 404  | 申請は見つかりませんでした。 |
-| 409  | 指定されたアドオンに申請が属していないか、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能をアドオンが使用しています。 |   
+| 409  | 指定されたアドオンに、申請が属していないか、アドオンは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

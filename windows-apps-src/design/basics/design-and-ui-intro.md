@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 422a6b40c86a84367054a20cabe1a0b0a32cb89d
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919766"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970262"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP アプリ設計の概要
 
@@ -27,11 +27,11 @@ ms.locfileid: "5919766"
 
 ## <a name="effective-pixels-and-scaling"></a>有効ピクセルとスケーリング
 
-UWP のアプリは、タブレット PC をお使いのテレビからすべての[10 の Windows デバイス](../devices/index.md)で実行します。 さまざまなデバイスとデバイスの画面サイズに適した UI を設計するにはどのようにするでしょうか。
+UWP アプリでは、タブレット、PC、TV からすべての[Windows 10 デバイス](../devices/index.md)で実行します。 さまざまなデバイスや画面サイズで適切な外観の UI を設計するには、どのように行うかどうか。
 
 ![さまざまなデバイス上にある同じアプリ](images/universal-image-1.jpg)
 
-UWP が見やすく、かつ簡単にすべてのデバイスと画面のサイズとの対話になるように自動的に UI 要素を調整することによってことができます。
+UWP は、読みやすくしやすいですべてのデバイスや画面サイズとの対話になるように UI 要素を自動的に調整することで役立ちます。
 
 デバイスでアプリを実行するとき、システムでは、UI 要素を画面に表示する方法を正規化するアルゴリズムを使います。 このスケーリング アルゴリズムでは、視聴距離と画面の密度 (ピクセル/インチ) を考慮して、体感的なサイズを最適化します (物理的なサイズではありません)。 スケーリング アルゴリズムによって、10 フィート離れた Surface Hub における 24 ピクセルのフォントが、数インチ離れた 5 インチ サイズの電話における 24 ピクセルのフォントと同じようにユーザーに読みやすい状態で表示されます。
 

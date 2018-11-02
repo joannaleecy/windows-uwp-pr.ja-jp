@@ -7,12 +7,12 @@ ms.date: 06/15/2018
 ms.topic: article
 keywords: Windows 10, UWP, 評価, レビュー
 ms.localizationpriority: medium
-ms.openlocfilehash: d736fa47251c85491a29b324a3ed59181a5060c8
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: c00e69ed7d5057db4f835f3d91320806067d86e1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935096"
+ms.locfileid: "5981191"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>アプリの評価とレビューを求める
 
@@ -20,7 +20,7 @@ ms.locfileid: "5935096"
 * アプリのコンテキストで評価とレビュー ダイアログを直接表示する。
 * Microsoft Store のアプリの評価とレビュー ページをプログラムで開く。
 
-評価とレビューのデータを分析する準備が整ったら、Windows デベロッパー センター ダッシュボードでデータを参照するか、Microsoft Store 分析 API を使ってプログラムでこのデータを取得することができます。
+評価とレビューのデータを分析する準備ができたら、パートナー センターでデータを表示したり、Microsoft Store 分析 API を使用してプログラムでこのデータを取得できます。
 
 > [!IMPORTANT]
 > アプリ内で評価関数を追加するには、すべてのレビューは星評価選んだに関係なく、ストアの評価のメカニズムをユーザーに送信する必要があります。 ユーザーからのフィードバックやご意見を収集する場合は、明確なは、アプリの評価やストアでのレビューに関連しないが、アプリ開発者に直接送信されることがあります。 開発者倫理規定[Fraudulent または悪意を持つアクティビティ](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)に関連する詳細情報を参照してください。
@@ -102,7 +102,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 ## <a name="analyze-your-ratings-and-reviews-data"></a>評価とレビュー データの分析
 
 ユーザーから提出された評価とレビューのデータを分析するには、いくつかの方法があります。
-* Windows デベロッパー センター ダッシュボードの[レビュー](../publish/reviews-report.md) レポートを使って、ユーザーから提出された評価とレビューを確認できます。 このレポートは、ダウンロードしてオフラインで参照することもできます。
+* パートナー センターで[レビュー](../publish/reviews-report.md)レポートを使用すると、顧客から評価とレビューを参照してください。 このレポートは、ダウンロードしてオフラインで参照することもできます。
 * Microsoft Store 分析 API の[アプリの評価の取得](get-app-ratings.md)メソッドと[アプリのレビューの取得](get-app-reviews.md)メソッドを使って、ユーザーから提出された評価とレビューをプログラムによって JSON 形式で取得できます。
 
 ## <a name="related-topics"></a>関連トピック

@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, Java
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a3280b6b9c0f012f36588d6eb0297b415e07f78
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4a0df9fe873ab7d7330e06a18bb1816df3157d7a
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930738"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970796"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java のコード例: アプリ、アドオン、およびフライトの申請
 
@@ -70,13 +70,13 @@ ms.locfileid: "5930738"
 
 ## <a name="create-an-app-submission"></a>アプリの申請の作成
 
-次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アプリの申請を作成する方法を示しています。 これを行うために、```SubmitNewApplicationSubmission``` メソッドは、新しい申請を最後に公開された申請の複製として作成し、複製された申請を更新して Windows デベロッパー センターにコミットします。 具体的には、```SubmitNewApplicationSubmission``` メソッドは次のタスクを実行します。
+次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アプリの申請を作成する方法を示しています。 これを行うには、```SubmitNewApplicationSubmission```メソッドは、最後に公開された申請の複製として新しい申請を作成および更新し、パートナー センターに複製された申請をコミットします。 具体的には、```SubmitNewApplicationSubmission``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたアプリのデータを取得](get-an-app.md)します。
 2. 次に、[アプリの保留中の申請を削除](delete-an-app-submission.md)します (存在する場合)。
 3. その後、[アプリの新しい申請を作成](create-an-app-submission.md)します (新しい申請は、最後に公開された申請のコピーです)。
 4. 新しい申請の詳細を変更し、申請の新しいパッケージを Azure Blob Storage にアップロードします。
-5. 次に、新しい申請を[更新](update-an-app-submission.md)してから Windows デベロッパー センターに[コミット](commit-an-app-submission.md)します。
+5. 次に、その[更新プログラム](update-an-app-submission.md)とし、パートナー センターに新しい申請を[コミット](commit-an-app-submission.md)します。
 6. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-an-app-submission.md)します。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L97-L183)]
@@ -85,13 +85,13 @@ ms.locfileid: "5930738"
 
 ## <a name="create-an-add-on-submission"></a>アドオンの申請の作成
 
-次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アドオンの申請を作成する方法を示しています。 これを行うために、```SubmitNewInAppProductSubmission``` メソッドは、新しい申請を最後に公開された申請の複製として作成し、複製された申請を更新して Windows デベロッパー センターにコミットします。 具体的には、```SubmitNewInAppProductSubmission``` メソッドは次のタスクを実行します。
+次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アドオンの申請を作成する方法を示しています。 これを行うには、```SubmitNewInAppProductSubmission```メソッド最後に公開された申請の複製として新しい申請を作成し、更新プログラムし、パートナー センターに複製された申請をコミットします。 具体的には、```SubmitNewInAppProductSubmission``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたアドオンのデータを取得](get-an-add-on.md)します。
 2. 次に、[アドオンの保留中の申請を削除](delete-an-add-on-submission.md)します (存在する場合)。
 3. その後、[アドオンの新しい申請を作成](create-an-add-on-submission.md)します (新しい申請は、最後に公開された申請のコピーです)。
 4. 申請のアイコンが含まれた ZIP アーカイブを Azure Blob Storage にアップロードします。
-5. 次に、新しい申請を[更新](update-an-add-on-submission.md)してから Windows デベロッパー センターに[コミット](commit-an-add-on-submission.md)します。
+5. 次に、その[更新プログラム](update-an-add-on-submission.md)とし、パートナー センターに新しい申請を[コミット](commit-an-add-on-submission.md)します。
 6. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-an-add-on-submission.md)します。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L347-L431)]
@@ -100,13 +100,13 @@ ms.locfileid: "5930738"
 
 ## <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 
-次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、パッケージ フライトの申請を作成する方法を示しています。 これを行うために、```SubmitNewFlightSubmission``` メソッドは、新しい申請を最後に公開された申請の複製として作成し、複製された申請を更新して Windows デベロッパー センターにコミットします。 具体的には、```SubmitNewFlightSubmission``` メソッドは次のタスクを実行します。
+次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、パッケージ フライトの申請を作成する方法を示しています。 これを行うには、```SubmitNewFlightSubmission```メソッド最後に公開された申請の複製として新しい申請を作成し、更新プログラムし、パートナー センターに複製された申請をコミットします。 具体的には、```SubmitNewFlightSubmission``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたパッケージ フライトのデータを取得](get-a-flight.md)します。
 2. 次に、[パッケージ フライトの保留中の申請を削除](delete-a-flight-submission.md)します (存在する場合)。
 3. その後、[パッケージ フライトの新しい申請を作成](create-a-flight-submission.md)します (新しい申請は、最後に公開された申請のコピーです)。
 4. 申請の新しいパッケージを Azure Blob Storage にアップロードします。
-5. 次に、新しい申請を[更新](update-a-flight-submission.md)してから Windows デベロッパー センターに[コミット](commit-a-flight-submission.md)します。
+5. 次に、その[更新プログラム](update-a-flight-submission.md)とし、PartnerCenter に新しい申請を[コミット](commit-a-flight-submission.md)します。
 6. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-a-flight-submission.md)します。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L223-L308)]

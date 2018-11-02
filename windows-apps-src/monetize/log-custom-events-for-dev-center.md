@@ -1,32 +1,32 @@
 ---
 author: Xansky
-Description: You can log custom events from your UWP app and review those events in the Usage report on the Windows Dev Center dashboard.
-title: デベロッパー センターのカスタム イベントをログに記録する
+Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
+title: パートナー センターのカスタム イベントをログに記録します。
 ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, イベントをログ記録
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4dcb11b46b50677b87f9feea6db8b87bfb29d4
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 47c1eb02434dc71cb7da949d58ec38cf3b4cf65a
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921468"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970345"
 ---
-# <a name="log-custom-events-for-dev-center"></a>デベロッパー センターのカスタム イベントをログに記録する
+# <a name="log-custom-events-for-partner-center"></a>パートナー センターのカスタム イベントをログに記録します。
 
-Windows デベロッパー センター ダッシュボードの[利用状況レポート](https://msdn.microsoft.com/windows/uwp/publish/usage-report)では、お客様によるアプリの利用状況を確認でき、ユニバーサル Windows プラットフォーム (UWP) で定義したカスタム イベントに関する情報を取得できます。 カスタムイベントは、アプリ内のイベントやアクティビティを表す任意の文字列です。 たとえば、ゲームで *firstLevelPassed*、*secondLevelPassed* という名前のカスタム イベントを定義して、ユーザーがゲームの各レベルをクリアしたときに記録されるようにできます。
+パートナー センターでの[使用状況] レポート](https://msdn.microsoft.com/windows/uwp/publish/usage-report)では、ユニバーサル Windows プラットフォーム (UWP) アプリで定義したカスタム イベントに関する情報を取得できます。 カスタムイベントは、アプリ内のイベントやアクティビティを表す任意の文字列です。 たとえば、ゲームで *firstLevelPassed*、*secondLevelPassed* という名前のカスタム イベントを定義して、ユーザーがゲームの各レベルをクリアしたときに記録されるようにできます。
 
-アプリからのカスタム イベントをログに記録するには、カスタム イベントの文字列を Microsoft Store Services SDK で提供されている [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) メソッドに渡します。 デベロッパー センター ダッシュボードにある[利用状況レポート](https://msdn.microsoft.com/windows/uwp/publish/usage-report)の**カスタム イベント**のセクションで、カスタム イベントが発生した合計回数を確認できます。
+アプリからのカスタム イベントをログに記録するには、カスタム イベントの文字列を Microsoft Store Services SDK で提供されている [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) メソッドに渡します。 パートナー センターでの[利用状況レポート](https://msdn.microsoft.com/windows/uwp/publish/usage-report)の**カスタム イベント**のセクションで、カスタム イベントした合計回数を確認できます。
 
 > [!NOTE]
-> デベロッパー センターに記録したカスタム イベントは [Windows イベント](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)とは無関係のため、**イベント ビューアー**には表示されません。
+> パートナー センターに記録したカスタム イベントは、 [Windows イベント](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)に関連するされず、これらの**イベント ビューアー**には表示されません。
 
 ## <a name="prerequisites"></a>前提条件
 
-ダッシュ ボードでアプリの**利用状況レポート**のカスタム ログ イベントを確認する前に、ストアでアプリを公開する必要があります。
+**使用状況] レポート**でカスタム ログ イベントを確認するにはパートナー センターでのアプリの前に、アプリは、ストアで公開する必要があります。
 
 ## <a name="how-to-log-custom-events"></a>カスタム イベントをログに記録する方法
 

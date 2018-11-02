@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アドオンの入手数
 ms.localizationpriority: medium
-ms.openlocfilehash: c1fb44457b8589c9e1525de9c8dca2801c0c47bf
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4adb202df2806caeb0dc88469521b0f373886c43
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940321"
+ms.locfileid: "5969693"
 ---
 # <a name="get-add-on-acquisitions"></a>アドオンの入手数の取得
 
-日付範囲やその他のオプション フィルターを指定して、アプリのアドオンに関する集計入手データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、Windows デベロッパー センター ダッシュボードの[アドオン取得レポート](../publish/add-on-acquisitions-report.md)でも確認することができます。
+日付範囲やその他のオプション フィルターを指定して、アプリのアドオンに関する集計入手データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、[アドオン取得] レポート](../publish/add-on-acquisitions-report.md)では、パートナー センターで利用可能なもできます。
 
 ## <a name="prerequisites"></a>前提条件
 

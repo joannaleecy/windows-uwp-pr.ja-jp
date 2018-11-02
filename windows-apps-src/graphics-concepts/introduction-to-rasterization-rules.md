@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 65522195b9729ddd4f2ebeb193f43c905359eda2
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5942126"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5980931"
 ---
 # <a name="introduction-to-rasterization-rules"></a>ラスター化規則の概要
 

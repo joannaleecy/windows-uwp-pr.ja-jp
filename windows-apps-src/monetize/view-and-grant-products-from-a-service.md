@@ -8,12 +8,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, 製品の表示, 製品の付与
 ms.localizationpriority: medium
-ms.openlocfilehash: 41e1437e8b55474d3fcc0c34919e23d14a86ea89
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 21be5f50a78dd1bd1ef7c549add04a3b7c494dd1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940929"
+ms.locfileid: "5991618"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>サービスから製品の権利を管理する
 
@@ -32,7 +32,7 @@ ms.locfileid: "5940929"
 次の手順は、Microsoft Store コレクション API および購入 API を使用するプロセス全体を表したものです。
 
 1.  [Azure ad アプリケーションを構成](#step-1)します。
-2.  [Windows デベロッパー センター ダッシュ ボードでアプリに、Azure AD アプリケーション ID を関連付けます](#step-2)。
+2.  [パートナー センターでアプリに、Azure AD アプリケーション ID を関連付けます](#step-2)。
 3.  サービスで、発行元 ID を表す [Azure AD アクセス トークンを作成します](#step-3)。
 4.  クライアントの Windows アプリを[Microsoft Store ID キーを作成](#step-4)現在のユーザーとキーのパスの id を表す、サービスにバックアップします。
 5.  必要な Azure AD のアクセス トークンと Microsoft Store ID キーを取得した後、[サービスから Microsoft Store コレクション API または Microsoft Store 購入 API を呼び出します](#step-5)。
@@ -72,14 +72,14 @@ Microsoft Store コレクション API または購入 API を使う前に、Azu
 
 <span id="step-2"/>
 
-## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-windows-dev-center"></a>手順 2: Azure AD アプリケーション ID を Windows デベロッパー センターで、クライアント アプリに関連付ける
+## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-partner-center"></a>手順 2: Azure AD アプリケーション ID をパートナー センターで、クライアント アプリに関連付ける
 
-Microsoft Store コレクション API または購入所有権と、アプリやアドオンの購入を構成する API を使う前に、デベロッパー センター ダッシュ ボードで、アプリ (またはアドオンを含むアプリ) で、Azure AD アプリケーション ID を関連付ける必要があります。
+Microsoft Store コレクション API または購入所有権と、アプリやアドオンの購入を構成する API を使う前に、パートナー センターで、アプリ (またはアドオンを含むアプリ) で、Azure AD アプリケーション ID を関連付ける必要があります。
 
 > [!NOTE]
 > この作業を行うのは一度だけです。
 
-1.  [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインし、アプリを選択します。
+1.  [パートナー センター](https://partner.microsoft.com/dashboard)にサインインし、アプリを選択します。
 2.  **サービス**に移動&gt;**製品のコレクションと購入**ページを利用可能な**クライアント ID**フィールドのいずれかに Azure AD アプリケーション ID を入力します。
 
 <span id="step-3"/>

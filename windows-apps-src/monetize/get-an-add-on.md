@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
-description: Windows デベロッパー センター アカウントに登録されているアプリのアドオンに関する情報を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
-title: アドオンの取得
+description: パートナー センター アカウントに登録されているアプリのアドオンに関する情報を取得する、Microsoft Store 申請 API でこのメソッドを使います。
+title: アドオンの入手
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36638c3e3890d5e2bca149d1006469bb97057f05
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 9620b0b7cf4d1ecb583215b2ab0fafe0e82712bf
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5924968"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5991684"
 ---
-# <a name="get-an-add-on"></a>アドオンの取得
+# <a name="get-an-add-on"></a>アドオンの入手
 
-Windows デベロッパー センター アカウントに登録されているアプリのアドオン (アプリ内製品または IAP とも呼ばれます) に関する情報を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
+パートナー センター アカウントに登録されているアプリのアドオン (別名アプリ内製品または IAP) に関する情報を取得する、Microsoft Store 申請 API でこのメソッドを使います。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -46,7 +46,7 @@ Windows デベロッパー センター アカウントに登録されている�
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | string | 必須。 取得するアドオンのストア ID。 ストア ID はデベロッパー センター ダッシュボードで確認できます。  |
+| id | string | 必須。 取得するアドオンのストア ID。 ストア ID は、パートナー センターで利用できます。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -99,7 +99,7 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 404  | 指定したアドオンは見つかりませんでした。 |
-| 409  | アドオンが、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能を使用しています。  |
+| 409  | アドオンは、 [Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センターの機能を使用します。  |
 
 
 ## <a name="related-topics"></a>関連トピック

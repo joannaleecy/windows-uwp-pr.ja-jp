@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: Windows デベロッパー センター アカウントに登録されている特定のアプリに関する情報を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
-title: アプリの取得
+description: パートナー センター アカウントに登録されている特定のアプリに関する情報を取得する、Microsoft Store 申請 API でこのメソッドを使います。
+title: アプリの入手
 ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ
 ms.localizationpriority: medium
-ms.openlocfilehash: 94c46363f75c75bb595b184e5a142e737a32ea50
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4c43a946234c738198e7ab929171051e4bafff63
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933436"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5997651"
 ---
-# <a name="get-an-app"></a>アプリの取得
+# <a name="get-an-app"></a>アプリの入手
 
-Windows デベロッパー センター アカウントに登録されている特定のアプリに関する情報を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
+パートナー センター アカウントに登録されている特定のアプリに関する情報を取得する、Microsoft Store 申請 API でこのメソッドを使います。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -93,7 +93,7 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 404  | 指定したアプリは見つかりませんでした。 |
-| 409  | アプリが、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能を使用しています。  |
+| 409  | アプリでは、 [Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センターの機能を使用します。  |
 
 
 ## <a name="related-topics"></a>関連トピック

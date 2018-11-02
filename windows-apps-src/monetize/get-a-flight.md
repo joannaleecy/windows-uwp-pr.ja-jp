@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
-description: Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトに関するデータを取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
+description: パートナー センター アカウントに登録されているアプリのパッケージ フライトに関するデータを取得するのに、Microsoft Store 申請 API の以下のメソッドを使用します。
 title: パッケージ フライトの取得
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライト, パッケージ フライト
 ms.localizationpriority: medium
-ms.openlocfilehash: 772dd59ad25cd5439df8b88cd8818f98334c2969
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 09fd5c703e4a601ad28a05156aec9133444cfd9e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940795"
+ms.locfileid: "5970405"
 ---
 # <a name="get-a-package-flight"></a>パッケージ フライトの取得
 
-Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトに関するデータを取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
+パートナー センター アカウントに登録されているアプリのパッケージ フライトに関するデータを取得するのに、Microsoft Store 申請 API の以下のメソッドを使用します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -46,8 +46,8 @@ Windows デベロッパー センター アカウントに登録されている�
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必須。 取得するパッケージ フライトが含まれるアプリのストア ID。 アプリのストア ID は、デベロッパー センター ダッシュボードで確認できます。  |
-| flightId | string | 必須。 取得するパッケージ フライトの ID。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 デベロッパー センター ダッシュボードで作成されたフライトの場合、この ID はダッシュボードのフライト ページの URL にも含まれています。  |
+| applicationId | string | 必須。 取得するパッケージ フライトが含まれるアプリのストア ID。 アプリのストア ID は、パートナー センターで利用できます。  |
+| flightId | string | 必須。 取得するパッケージ フライトの ID。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライト、この ID はパートナー センターでのフライト ページの URL で利用可能なも。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -90,7 +90,7 @@ Authorization: Bearer <your access token>
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | string  | パッケージ フライトの ID。 この値は、デベロッパー センターによって提供されます。  |
+| flightId            | string  | パッケージ フライトの ID。 この値は、パートナー センターによって提供されます。  |
 | friendlyName           | string  | 開発者によって指定されているパッケージ フライトの名前。   |  
 | lastPublishedFlightSubmission       | object | パッケージ フライトの最後に公開された申請に関する情報を提供するオブジェクト。 詳しくは、以下の「[申請オブジェクト](#submission_object)」セクションをご覧ください。  |
 | pendingFlightSubmission        | object  |  パッケージ フライトの現在保留中の申請に関する情報を提供するオブジェクト。 詳しくは、以下の「[申請オブジェクト](#submission_object)」セクションをご覧ください。  |   
@@ -118,7 +118,7 @@ Authorization: Bearer <your access token>
 |--------|---------------------  |
 | 400  | 要求が無効です。 |
 | 404  | 指定されたパッケージ フライトは見つかりませんでした。   |   
-| 409  | アプリが、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能を使用しています。 |                                                                                                 
+| 409  | アプリでは、 [Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センターの機能を使用します。 |                                                                                                 
 
 
 ## <a name="related-topics"></a>関連トピック

@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a721e618864155e4eec66d222e8eeafa2e0ca038
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5928305"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970332"
 ---
 # <a name="select-contacts"></a>連絡先の選択
 

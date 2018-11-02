@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store レビュー API, アドオンの入手数
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fdfe811a90eae1e67ef7f626815be1ef78a4c61
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8a8a336d477e7d66222632821f0fa0855faae6f7
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5928593"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970116"
 ---
 # <a name="submit-responses-to-reviews"></a>レビューに対する返信の送信
 
@@ -23,7 +23,7 @@ ms.locfileid: "5928593"
 顧客はレビューを送信するときに、レビューへの返信を受け取らないことを選択できます。 顧客が返信を受け取らないように指定しているレビューに返信すると、このメソッドの返信の本文には、返信ができなかったことが示されます。 このメソッドを呼び出す前に、任意で、[アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)メソッドを使用して、特定のレビューへの返信が許可されているかどうかを確認できます。
 
 > [!NOTE]
-> このメソッドを使ってプログラムでレビューに返信する以外に、[Windows デベロッパー センター ダッシュボード](../publish/respond-to-customer-reviews.md)を使ってレビューに返信することもできます。
+> プログラムでレビューに返信するには、このメソッドを使って、返信できます返信することもレビューを[パートナー センターを使用](../publish/respond-to-customer-reviews.md)します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -67,7 +67,7 @@ ms.locfileid: "5928593"
 
 | 値        | 型   | 説明           |  必須かどうか  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | string |  返信対象のレビューがあるアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。   |  ○  |
+| ApplicationId | string |  返信対象のレビューがあるアプリのストア ID です。 ストア ID は、パートナー センターの[アプリ id] ページ](../publish/view-app-identity-details.md)で利用できます。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。   |  ○  |
 | ReviewId | string |  返信するレビューの ID です (これは GUID です)。 レビュー ID は、Microsoft Store 分析 API の[アプリのレビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で取得できます。   |  ○  |
 | ResponseText | string | 提出する返信です。 返信は、[こちらのガイドライン](../publish/respond-to-customer-reviews.md#guidelines-for-responses)に従う必要があります。   |  ○  |
 | SupportEmail | string | アプリのサポート メール アドレスです。顧客はこのアドレスを使用して、直接連絡できます。 したがって、有効なメール アドレスである必要があります。     |  ○  |
@@ -146,7 +146,7 @@ Content-Type: application/json
 
 ## <a name="related-topics"></a>関連トピック
 
-* [デベロッパー センターのダッシュボードを使用して顧客のレビューに返信する](../publish/respond-to-customer-reviews.md)
+* [パートナー センターを使用して顧客のレビューに返信するには](../publish/respond-to-customer-reviews.md)
 * [Microsoft Store サービスを使ってレビューに返信する](respond-to-reviews-using-windows-store-services.md)
 * [アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)
 * [アプリのレビューの取得](get-app-reviews.md)

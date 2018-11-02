@@ -7,12 +7,12 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, 広告, 広告, 広告仲介
 ms.localizationpriority: medium
-ms.openlocfilehash: f8ebffbd7a2fa209289c99780e0bbbea94afac2e
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 9adae5b000277b774536c8b307cc1bc055ce3bc4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920631"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971248"
 ---
 # <a name="microsoft-ad-mediation-service"></a>マイクロソフトの広告仲介サービス
 
@@ -30,7 +30,7 @@ ms.locfileid: "5920631"
 
 ## <a name="manage-complexity-of-ad-network-relationships"></a>広告ネットワークの関係の複雑さの管理  
 
-広告仲介サービスはさまざまな広告ネットワークと統合されるため、開発者がこの作業を行う必要はありません。 Microsoft Advertising SDK を使用してアプリで広告を表示したら、[デベロッパー センター ダッシュボードを使用して](../publish/in-app-ads.md#mediation-settings)広告仲介設定を変更し、複数の広告ネットワークからの広告を表示します。 コードを変更することなく、新しい広告ネットワークから広告を取得できるという利点があります。
+広告仲介サービスはさまざまな広告ネットワークと統合されるため、開発者がこの作業を行う必要はありません。 Microsoft Advertising SDK を使用して、アプリに広告を表示した後は、広告仲介の設定を変更することができます[パートナー センターで](../publish/in-app-ads.md#mediation-settings)複数の広告ネットワークから広告を表示します。 コードを変更することなく、新しい広告ネットワークから広告を取得できるという利点があります。
 
 マイクロソフトでは、開発者に代わって広告ネットワークとのエンド ツー エンドの関係を管理します。 開発者が余分な手間をかける必要はなく、広告ネットワークの統合から、広告の提供、レポートおよび支払いまですべてマイクロソフトが行います。
 
@@ -49,7 +49,7 @@ ms.locfileid: "5920631"
 
 新しい広告ネットワークは自動的に含まれ、学習予算を通じてパフォーマンスが評価されます。 短時間に、広告ネットワークは大量のイベント内で自分の場所を見つけます。 これにより、広告ネットワークの競争力が強化され、開発者は、アプリの収益化を最大限に活用できます。
 
-[推奨される仲介設定](../publish/in-app-ads.md#mediation-settings)を使用してアプリ内広告で得られる収入を最大化することを強くお勧めします。 これにより、アルゴリズムでアプリの最適な収益を可能にすることができます。 ただし、デベロッパー センター ダッシュボードで独自の仲介設定を自由に選択し、広告を提供する広告ネットワークや広告を提供する順序をより詳細に制御することもできます。
+[推奨される仲介設定](../publish/in-app-ads.md#mediation-settings)を使用してアプリ内広告で得られる収入を最大化することを強くお勧めします。 これにより、アルゴリズムでアプリの最適な収益を可能にすることができます。 ただしより広告と、順序を提供する広告ネットワーク細かく制御するパートナー センターで、独自の仲介設定を選択することもあります。
 
 ## <a name="rich-data-and-signals"></a>豊富なデータと信号
 
