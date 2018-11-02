@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store ターゲット オファー API, ターゲット オファーの取得
 ms.localizationpriority: medium
 ms.openlocfilehash: e6a0e9237c7c803a64ec20df0c501773f690f5e9
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873088"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5931868"
 ---
 # <a name="get-targeted-offers"></a><span data-ttu-id="39657-104">ターゲット オファーを取得する</span><span class="sxs-lookup"><span data-stu-id="39657-104">Get targeted offers</span></span>
 

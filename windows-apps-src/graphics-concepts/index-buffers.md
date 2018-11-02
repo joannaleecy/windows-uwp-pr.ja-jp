@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0df56ebeefdbdabe5904547d77e90077549422c2
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5876626"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5929140"
 ---
 # <a name="index-buffers"></a><span data-ttu-id="a524f-104">インデックス バッファー</span><span class="sxs-lookup"><span data-stu-id="a524f-104">Index buffers</span></span>
 

@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: ec27464c2bcece46e4a658cc59ac8ef0b7f390f7
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5885178"
+ms.locfileid: "5933011"
 ---
 # <a name="settings-page-dev-home"></a><span data-ttu-id="08822-104">[設定] ページ (Dev Home)</span><span class="sxs-lookup"><span data-stu-id="08822-104">Settings Page (Dev Home)</span></span>
    

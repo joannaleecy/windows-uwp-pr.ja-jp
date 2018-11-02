@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
 ms.localizationpriority: medium
 ms.openlocfilehash: f9851b76b218ed4241ccb617979c127d03f57ee7
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5879963"
+ms.locfileid: "5931943"
 ---
 # <a name="bringing-unity-games-to-uwp-on-xbox"></a><span data-ttu-id="2430c-104">Xbox の UWP への Unity ゲームの移行</span><span class="sxs-lookup"><span data-stu-id="2430c-104">Bringing Unity games to UWP on Xbox</span></span>
 

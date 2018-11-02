@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML で、テンプレート化された、カスタム コントロール
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e06a28125b3cf3a760d7e9170512b6467c0170d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5878586"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5930258"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a><span data-ttu-id="a4713-105">C++/WinRT による XAML カスタム (テンプレート化) コントロール</span><span class="sxs-lookup"><span data-stu-id="a4713-105">XAML custom (templated) controls with C++/WinRT</span></span>
 

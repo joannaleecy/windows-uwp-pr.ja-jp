@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: 6208b71b-37a7-40f5-91b0-19b665e7458a
 ms.localizationpriority: medium
 ms.openlocfilehash: 089b71464234abe21d7dc8613d46ef6778f0f5a6
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5865992"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5931976"
 ---
 # <a name="in-app-help-pages"></a><span data-ttu-id="87798-103">アプリ内ヘルプのページ</span><span class="sxs-lookup"><span data-stu-id="87798-103">In-app help pages</span></span>
 

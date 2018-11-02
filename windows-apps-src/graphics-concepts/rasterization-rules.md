@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 72be66c3bf7b0e58092ae3a7e1baf82c9e686f0c
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5888457"
+ms.locfileid: "5933545"
 ---
 # <a name="rasterization-rules"></a><span data-ttu-id="b6d86-104">ラスター化ルール</span><span class="sxs-lookup"><span data-stu-id="b6d86-104">Rasterization rules</span></span>
 
