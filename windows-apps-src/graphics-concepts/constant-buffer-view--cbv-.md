@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cca90c705c7bb4dd1c7e283a9c3ed267cd282b56
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5887929"
+ms.locfileid: "5927060"
 ---
 # <a name="constant-buffer-view-cbv"></a><span data-ttu-id="beabc-105">定数バッファー ビュー (CBV)</span><span class="sxs-lookup"><span data-stu-id="beabc-105">Constant buffer view (CBV)</span></span>
 

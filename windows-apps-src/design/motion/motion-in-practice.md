@@ -13,11 +13,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 36081c14cfb75a1cedb103ba17eff4a05f5e4e83
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5865237"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5927076"
 ---
 # <a name="bringing-it-together"></a><span data-ttu-id="a14f8-103">まとめる</span><span class="sxs-lookup"><span data-stu-id="a14f8-103">Bringing it together</span></span>
 

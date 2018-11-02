@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e625522b0e9fd03fda49eb28bbedb20c00c15634
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5873160"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5929893"
 ---
 # <a name="guidance-for-app-package-management"></a><span data-ttu-id="bb4ab-103">アプリ パッケージ管理のガイダンス</span><span class="sxs-lookup"><span data-stu-id="bb4ab-103">Guidance for app package management</span></span>
 

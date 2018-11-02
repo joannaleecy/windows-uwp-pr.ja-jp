@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 56a952950fa9f2d9d57d5beaed397dd72f64ea54
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5876925"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5926433"
 ---
 # <a name="guidelines-for-app-settings"></a><span data-ttu-id="2f177-103">アプリ設定のガイドライン</span><span class="sxs-lookup"><span data-stu-id="2f177-103">Guidelines for app settings</span></span>
 

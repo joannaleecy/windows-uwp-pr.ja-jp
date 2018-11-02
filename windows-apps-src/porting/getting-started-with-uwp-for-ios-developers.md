@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 485dc6f93cb0fd83601b3202ef9965e625b2a0b4
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5867444"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5925786"
 ---
 # <a name="getting-started-with-uwp-for-ios-developers"></a><span data-ttu-id="a4d27-104">iOS 開発者のための UWP の概要</span><span class="sxs-lookup"><span data-stu-id="a4d27-104">Getting started with UWP for iOS developers</span></span>
 
