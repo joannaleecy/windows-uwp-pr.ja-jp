@@ -8,11 +8,11 @@ ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8022b3bb5ca312be259c554f46dc9f432ea3caeb
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5944236"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5993015"
 ---
 # <a name="writing-style"></a><span data-ttu-id="e9385-104">記述スタイル</span><span class="sxs-lookup"><span data-stu-id="e9385-104">Writing style</span></span>
 

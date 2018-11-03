@@ -9,55 +9,55 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, Microsoft Store ID キー, 更新
 ms.localizationpriority: medium
 ms.openlocfilehash: 95ee20628108bd3ea8eb9e48955a356410e91b1b
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5918813"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5989599"
 ---
-# <a name="renew-a-microsoft-store-id-key"></a><span data-ttu-id="68eb3-104">Microsoft Store ID キーの更新</span><span class="sxs-lookup"><span data-stu-id="68eb3-104">Renew a Microsoft Store ID key</span></span>
+# <a name="renew-a-microsoft-store-id-key"></a><span data-ttu-id="ef704-104">Microsoft Store ID キーの更新</span><span class="sxs-lookup"><span data-stu-id="ef704-104">Renew a Microsoft Store ID key</span></span>
 
 
-<span data-ttu-id="68eb3-105">Microsoft Store のキーを更新するには、以下のメソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="68eb3-105">Use this method to renew a Microsoft Store key.</span></span> <span data-ttu-id="68eb3-106">[Microsoft Store ID キーを生成](view-and-grant-products-from-a-service.md#step-4)する場合、キーは 90 日間有効です。</span><span class="sxs-lookup"><span data-stu-id="68eb3-106">When you [generate a Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4), the key is valid for 90 days.</span></span> <span data-ttu-id="68eb3-107">キーの有効期限が切れたら、有効期限切れのキーとこのメソッドを使って、新しいキーを再ネゴシエートできます。</span><span class="sxs-lookup"><span data-stu-id="68eb3-107">After the key expires, you can use the expired key to renegotiate a new key by using this method.</span></span>
+<span data-ttu-id="ef704-105">Microsoft Store のキーを更新するには、以下のメソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="ef704-105">Use this method to renew a Microsoft Store key.</span></span> <span data-ttu-id="ef704-106">[Microsoft Store ID キーを生成](view-and-grant-products-from-a-service.md#step-4)する場合、キーは 90 日間有効です。</span><span class="sxs-lookup"><span data-stu-id="ef704-106">When you [generate a Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4), the key is valid for 90 days.</span></span> <span data-ttu-id="ef704-107">キーの有効期限が切れたら、有効期限切れのキーとこのメソッドを使って、新しいキーを再ネゴシエートできます。</span><span class="sxs-lookup"><span data-stu-id="ef704-107">After the key expires, you can use the expired key to renegotiate a new key by using this method.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="68eb3-108">前提条件</span><span class="sxs-lookup"><span data-stu-id="68eb3-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="ef704-108">前提条件</span><span class="sxs-lookup"><span data-stu-id="ef704-108">Prerequisites</span></span>
 
 
-<span data-ttu-id="68eb3-109">このメソッドを使用するための要件:</span><span class="sxs-lookup"><span data-stu-id="68eb3-109">To use this method, you will need:</span></span>
+<span data-ttu-id="ef704-109">このメソッドを使用するための要件:</span><span class="sxs-lookup"><span data-stu-id="ef704-109">To use this method, you will need:</span></span>
 
-* <span data-ttu-id="68eb3-110">対象ユーザー URI の値が `https://onestore.microsoft.com` の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="68eb3-110">An Azure AD access token that has the audience URI value `https://onestore.microsoft.com`.</span></span>
-* <span data-ttu-id="68eb3-111">[アプリのクライアント側コードから生成](view-and-grant-products-from-a-service.md#step-4)された有効期限切れの Microsoft Store ID キー。</span><span class="sxs-lookup"><span data-stu-id="68eb3-111">An expired Microsoft Store ID key that was [generated from client-side code in your app](view-and-grant-products-from-a-service.md#step-4).</span></span>
+* <span data-ttu-id="ef704-110">対象ユーザー URI の値が `https://onestore.microsoft.com` の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="ef704-110">An Azure AD access token that has the audience URI value `https://onestore.microsoft.com`.</span></span>
+* <span data-ttu-id="ef704-111">[アプリのクライアント側コードから生成](view-and-grant-products-from-a-service.md#step-4)された有効期限切れの Microsoft Store ID キー。</span><span class="sxs-lookup"><span data-stu-id="ef704-111">An expired Microsoft Store ID key that was [generated from client-side code in your app](view-and-grant-products-from-a-service.md#step-4).</span></span>
 
-<span data-ttu-id="68eb3-112">詳しくは、「[サービスによる製品の権利の管理](view-and-grant-products-from-a-service.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="68eb3-112">For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).</span></span>
+<span data-ttu-id="ef704-112">詳しくは、「[サービスによる製品の権利の管理](view-and-grant-products-from-a-service.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ef704-112">For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).</span></span>
 
-## <a name="request"></a><span data-ttu-id="68eb3-113">要求</span><span class="sxs-lookup"><span data-stu-id="68eb3-113">Request</span></span>
+## <a name="request"></a><span data-ttu-id="ef704-113">要求</span><span class="sxs-lookup"><span data-stu-id="ef704-113">Request</span></span>
 
-### <a name="request-syntax"></a><span data-ttu-id="68eb3-114">要求の構文</span><span class="sxs-lookup"><span data-stu-id="68eb3-114">Request syntax</span></span>
+### <a name="request-syntax"></a><span data-ttu-id="ef704-114">要求の構文</span><span class="sxs-lookup"><span data-stu-id="ef704-114">Request syntax</span></span>
 
-| <span data-ttu-id="68eb3-115">キーの種類</span><span class="sxs-lookup"><span data-stu-id="68eb3-115">Key type</span></span>    | <span data-ttu-id="68eb3-116">メソッド</span><span class="sxs-lookup"><span data-stu-id="68eb3-116">Method</span></span> | <span data-ttu-id="68eb3-117">要求 URI</span><span class="sxs-lookup"><span data-stu-id="68eb3-117">Request URI</span></span>                                              |
+| <span data-ttu-id="ef704-115">キーの種類</span><span class="sxs-lookup"><span data-stu-id="ef704-115">Key type</span></span>    | <span data-ttu-id="ef704-116">メソッド</span><span class="sxs-lookup"><span data-stu-id="ef704-116">Method</span></span> | <span data-ttu-id="ef704-117">要求 URI</span><span class="sxs-lookup"><span data-stu-id="ef704-117">Request URI</span></span>                                              |
 |-------------|--------|----------------------------------------------------------|
-| <span data-ttu-id="68eb3-118">コレクション</span><span class="sxs-lookup"><span data-stu-id="68eb3-118">Collections</span></span> | <span data-ttu-id="68eb3-119">POST</span><span class="sxs-lookup"><span data-stu-id="68eb3-119">POST</span></span>   | ```https://collections.mp.microsoft.com/v6.0/b2b/keys/renew``` |
-| <span data-ttu-id="68eb3-120">購入</span><span class="sxs-lookup"><span data-stu-id="68eb3-120">Purchase</span></span>    | <span data-ttu-id="68eb3-121">POST</span><span class="sxs-lookup"><span data-stu-id="68eb3-121">POST</span></span>   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
+| <span data-ttu-id="ef704-118">コレクション</span><span class="sxs-lookup"><span data-stu-id="ef704-118">Collections</span></span> | <span data-ttu-id="ef704-119">POST</span><span class="sxs-lookup"><span data-stu-id="ef704-119">POST</span></span>   | ```https://collections.mp.microsoft.com/v6.0/b2b/keys/renew``` |
+| <span data-ttu-id="ef704-120">購入</span><span class="sxs-lookup"><span data-stu-id="ef704-120">Purchase</span></span>    | <span data-ttu-id="ef704-121">POST</span><span class="sxs-lookup"><span data-stu-id="ef704-121">POST</span></span>   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
 
 
-### <a name="request-header"></a><span data-ttu-id="68eb3-122">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="68eb3-122">Request header</span></span>
+### <a name="request-header"></a><span data-ttu-id="ef704-122">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="ef704-122">Request header</span></span>
 
-| <span data-ttu-id="68eb3-123">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="68eb3-123">Header</span></span>         | <span data-ttu-id="68eb3-124">型</span><span class="sxs-lookup"><span data-stu-id="68eb3-124">Type</span></span>   | <span data-ttu-id="68eb3-125">説明</span><span class="sxs-lookup"><span data-stu-id="68eb3-125">Description</span></span>                                                                                           |
+| <span data-ttu-id="ef704-123">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="ef704-123">Header</span></span>         | <span data-ttu-id="ef704-124">型</span><span class="sxs-lookup"><span data-stu-id="ef704-124">Type</span></span>   | <span data-ttu-id="ef704-125">説明</span><span class="sxs-lookup"><span data-stu-id="ef704-125">Description</span></span>                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| <span data-ttu-id="68eb3-126">Host</span><span class="sxs-lookup"><span data-stu-id="68eb3-126">Host</span></span>           | <span data-ttu-id="68eb3-127">string</span><span class="sxs-lookup"><span data-stu-id="68eb3-127">string</span></span> | <span data-ttu-id="68eb3-128">**collections.mp.microsoft.com** または **purchase.mp.microsoft.com** の値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="68eb3-128">Must be set to the value **collections.mp.microsoft.com** or **purchase.mp.microsoft.com**.</span></span>           |
-| <span data-ttu-id="68eb3-129">Content-Length</span><span class="sxs-lookup"><span data-stu-id="68eb3-129">Content-Length</span></span> | <span data-ttu-id="68eb3-130">number</span><span class="sxs-lookup"><span data-stu-id="68eb3-130">number</span></span> | <span data-ttu-id="68eb3-131">要求の本文の長さ。</span><span class="sxs-lookup"><span data-stu-id="68eb3-131">The length of the request body.</span></span>                                                                       |
-| <span data-ttu-id="68eb3-132">Content-Type</span><span class="sxs-lookup"><span data-stu-id="68eb3-132">Content-Type</span></span>   | <span data-ttu-id="68eb3-133">string</span><span class="sxs-lookup"><span data-stu-id="68eb3-133">string</span></span> | <span data-ttu-id="68eb3-134">要求と応答の種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="68eb3-134">Specifies the request and response type.</span></span> <span data-ttu-id="68eb3-135">現時点では、サポートされている唯一の値は **application/json** です。</span><span class="sxs-lookup"><span data-stu-id="68eb3-135">Currently, the only supported value is **application/json**.</span></span> |
+| <span data-ttu-id="ef704-126">Host</span><span class="sxs-lookup"><span data-stu-id="ef704-126">Host</span></span>           | <span data-ttu-id="ef704-127">string</span><span class="sxs-lookup"><span data-stu-id="ef704-127">string</span></span> | <span data-ttu-id="ef704-128">**collections.mp.microsoft.com** または **purchase.mp.microsoft.com** の値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ef704-128">Must be set to the value **collections.mp.microsoft.com** or **purchase.mp.microsoft.com**.</span></span>           |
+| <span data-ttu-id="ef704-129">Content-Length</span><span class="sxs-lookup"><span data-stu-id="ef704-129">Content-Length</span></span> | <span data-ttu-id="ef704-130">number</span><span class="sxs-lookup"><span data-stu-id="ef704-130">number</span></span> | <span data-ttu-id="ef704-131">要求の本文の長さ。</span><span class="sxs-lookup"><span data-stu-id="ef704-131">The length of the request body.</span></span>                                                                       |
+| <span data-ttu-id="ef704-132">Content-Type</span><span class="sxs-lookup"><span data-stu-id="ef704-132">Content-Type</span></span>   | <span data-ttu-id="ef704-133">string</span><span class="sxs-lookup"><span data-stu-id="ef704-133">string</span></span> | <span data-ttu-id="ef704-134">要求と応答の種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="ef704-134">Specifies the request and response type.</span></span> <span data-ttu-id="ef704-135">現時点では、サポートされている唯一の値は **application/json** です。</span><span class="sxs-lookup"><span data-stu-id="ef704-135">Currently, the only supported value is **application/json**.</span></span> |
 
 
-### <a name="request-body"></a><span data-ttu-id="68eb3-136">要求本文</span><span class="sxs-lookup"><span data-stu-id="68eb3-136">Request body</span></span>
+### <a name="request-body"></a><span data-ttu-id="ef704-136">要求本文</span><span class="sxs-lookup"><span data-stu-id="ef704-136">Request body</span></span>
 
-| <span data-ttu-id="68eb3-137">パラメーター</span><span class="sxs-lookup"><span data-stu-id="68eb3-137">Parameter</span></span>     | <span data-ttu-id="68eb3-138">型</span><span class="sxs-lookup"><span data-stu-id="68eb3-138">Type</span></span>   | <span data-ttu-id="68eb3-139">説明</span><span class="sxs-lookup"><span data-stu-id="68eb3-139">Description</span></span>                       | <span data-ttu-id="68eb3-140">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="68eb3-140">Required</span></span> |
+| <span data-ttu-id="ef704-137">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ef704-137">Parameter</span></span>     | <span data-ttu-id="ef704-138">型</span><span class="sxs-lookup"><span data-stu-id="ef704-138">Type</span></span>   | <span data-ttu-id="ef704-139">説明</span><span class="sxs-lookup"><span data-stu-id="ef704-139">Description</span></span>                       | <span data-ttu-id="ef704-140">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="ef704-140">Required</span></span> |
 |---------------|--------|-----------------------------------|----------|
-| <span data-ttu-id="68eb3-141">serviceTicket</span><span class="sxs-lookup"><span data-stu-id="68eb3-141">serviceTicket</span></span> | <span data-ttu-id="68eb3-142">string</span><span class="sxs-lookup"><span data-stu-id="68eb3-142">string</span></span> | <span data-ttu-id="68eb3-143">Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="68eb3-143">The Azure AD access token.</span></span>        | <span data-ttu-id="68eb3-144">必須</span><span class="sxs-lookup"><span data-stu-id="68eb3-144">Yes</span></span>      |
-| <span data-ttu-id="68eb3-145">key</span><span class="sxs-lookup"><span data-stu-id="68eb3-145">key</span></span>           | <span data-ttu-id="68eb3-146">string</span><span class="sxs-lookup"><span data-stu-id="68eb3-146">string</span></span> | <span data-ttu-id="68eb3-147">有効期限が切れた Microsoft Store ID キー。</span><span class="sxs-lookup"><span data-stu-id="68eb3-147">The expired Microsoft Store ID key.</span></span> | <span data-ttu-id="68eb3-148">はい</span><span class="sxs-lookup"><span data-stu-id="68eb3-148">Yes</span></span>       |
+| <span data-ttu-id="ef704-141">serviceTicket</span><span class="sxs-lookup"><span data-stu-id="ef704-141">serviceTicket</span></span> | <span data-ttu-id="ef704-142">string</span><span class="sxs-lookup"><span data-stu-id="ef704-142">string</span></span> | <span data-ttu-id="ef704-143">Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="ef704-143">The Azure AD access token.</span></span>        | <span data-ttu-id="ef704-144">必須</span><span class="sxs-lookup"><span data-stu-id="ef704-144">Yes</span></span>      |
+| <span data-ttu-id="ef704-145">key</span><span class="sxs-lookup"><span data-stu-id="ef704-145">key</span></span>           | <span data-ttu-id="ef704-146">string</span><span class="sxs-lookup"><span data-stu-id="ef704-146">string</span></span> | <span data-ttu-id="ef704-147">有効期限が切れた Microsoft Store ID キー。</span><span class="sxs-lookup"><span data-stu-id="ef704-147">The expired Microsoft Store ID key.</span></span> | <span data-ttu-id="ef704-148">はい</span><span class="sxs-lookup"><span data-stu-id="ef704-148">Yes</span></span>       |
 
 
-### <a name="request-example"></a><span data-ttu-id="68eb3-149">要求の例</span><span class="sxs-lookup"><span data-stu-id="68eb3-149">Request example</span></span>
+### <a name="request-example"></a><span data-ttu-id="ef704-149">要求の例</span><span class="sxs-lookup"><span data-stu-id="ef704-149">Request example</span></span>
 
 ```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
@@ -71,17 +71,17 @@ Host: collections.mp.microsoft.com
 }
 ```
 
-## <a name="response"></a><span data-ttu-id="68eb3-150">応答</span><span class="sxs-lookup"><span data-stu-id="68eb3-150">Response</span></span>
+## <a name="response"></a><span data-ttu-id="ef704-150">応答</span><span class="sxs-lookup"><span data-stu-id="ef704-150">Response</span></span>
 
 
-### <a name="response-body"></a><span data-ttu-id="68eb3-151">応答本文</span><span class="sxs-lookup"><span data-stu-id="68eb3-151">Response body</span></span>
+### <a name="response-body"></a><span data-ttu-id="ef704-151">応答本文</span><span class="sxs-lookup"><span data-stu-id="ef704-151">Response body</span></span>
 
-| <span data-ttu-id="68eb3-152">パラメーター</span><span class="sxs-lookup"><span data-stu-id="68eb3-152">Parameter</span></span> | <span data-ttu-id="68eb3-153">型</span><span class="sxs-lookup"><span data-stu-id="68eb3-153">Type</span></span>   | <span data-ttu-id="68eb3-154">説明</span><span class="sxs-lookup"><span data-stu-id="68eb3-154">Description</span></span>                                                                                                            |
+| <span data-ttu-id="ef704-152">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ef704-152">Parameter</span></span> | <span data-ttu-id="ef704-153">型</span><span class="sxs-lookup"><span data-stu-id="ef704-153">Type</span></span>   | <span data-ttu-id="ef704-154">説明</span><span class="sxs-lookup"><span data-stu-id="ef704-154">Description</span></span>                                                                                                            |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|
-| <span data-ttu-id="68eb3-155">key</span><span class="sxs-lookup"><span data-stu-id="68eb3-155">key</span></span>       | <span data-ttu-id="68eb3-156">string</span><span class="sxs-lookup"><span data-stu-id="68eb3-156">string</span></span> | <span data-ttu-id="68eb3-157">以降の Microsoft Store コレクション API または Microsoft Store 購入 API の呼び出しで使用できる、更新された Microsoft Store のキー。</span><span class="sxs-lookup"><span data-stu-id="68eb3-157">The refreshed Microsoft Store key that can be used in future calls to the Microsoft Store collections API or purchase API.</span></span> |
+| <span data-ttu-id="ef704-155">key</span><span class="sxs-lookup"><span data-stu-id="ef704-155">key</span></span>       | <span data-ttu-id="ef704-156">string</span><span class="sxs-lookup"><span data-stu-id="ef704-156">string</span></span> | <span data-ttu-id="ef704-157">以降の Microsoft Store コレクション API または Microsoft Store 購入 API の呼び出しで使用できる、更新された Microsoft Store のキー。</span><span class="sxs-lookup"><span data-stu-id="ef704-157">The refreshed Microsoft Store key that can be used in future calls to the Microsoft Store collections API or purchase API.</span></span> |
 
 
-### <a name="response-example"></a><span data-ttu-id="68eb3-158">応答の例</span><span class="sxs-lookup"><span data-stu-id="68eb3-158">Response example</span></span>
+### <a name="response-example"></a><span data-ttu-id="ef704-158">応答の例</span><span class="sxs-lookup"><span data-stu-id="ef704-158">Response example</span></span>
 
 ```syntax
 HTTP/1.1 200 OK
@@ -98,19 +98,19 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 }
 ```
 
-## <a name="error-codes"></a><span data-ttu-id="68eb3-159">エラー コード</span><span class="sxs-lookup"><span data-stu-id="68eb3-159">Error codes</span></span>
+## <a name="error-codes"></a><span data-ttu-id="ef704-159">エラー コード</span><span class="sxs-lookup"><span data-stu-id="ef704-159">Error codes</span></span>
 
 
-| <span data-ttu-id="68eb3-160">コード</span><span class="sxs-lookup"><span data-stu-id="68eb3-160">Code</span></span> | <span data-ttu-id="68eb3-161">エラー</span><span class="sxs-lookup"><span data-stu-id="68eb3-161">Error</span></span>        | <span data-ttu-id="68eb3-162">内部エラー コード</span><span class="sxs-lookup"><span data-stu-id="68eb3-162">Inner error code</span></span>           | <span data-ttu-id="68eb3-163">説明</span><span class="sxs-lookup"><span data-stu-id="68eb3-163">Description</span></span>   |
+| <span data-ttu-id="ef704-160">コード</span><span class="sxs-lookup"><span data-stu-id="ef704-160">Code</span></span> | <span data-ttu-id="ef704-161">エラー</span><span class="sxs-lookup"><span data-stu-id="ef704-161">Error</span></span>        | <span data-ttu-id="ef704-162">内部エラー コード</span><span class="sxs-lookup"><span data-stu-id="ef704-162">Inner error code</span></span>           | <span data-ttu-id="ef704-163">説明</span><span class="sxs-lookup"><span data-stu-id="ef704-163">Description</span></span>   |
 |------|--------------|----------------------------|---------------|
-| <span data-ttu-id="68eb3-164">401</span><span class="sxs-lookup"><span data-stu-id="68eb3-164">401</span></span>  | <span data-ttu-id="68eb3-165">権限がありません</span><span class="sxs-lookup"><span data-stu-id="68eb3-165">Unauthorized</span></span> | <span data-ttu-id="68eb3-166">AuthenticationTokenInvalid</span><span class="sxs-lookup"><span data-stu-id="68eb3-166">AuthenticationTokenInvalid</span></span> | <span data-ttu-id="68eb3-167">Azure AD アクセス トークンが無効です。</span><span class="sxs-lookup"><span data-stu-id="68eb3-167">The Azure AD access token is invalid.</span></span> <span data-ttu-id="68eb3-168">場合によっては、ServiceError の詳細に追加情報が含まれていることがあります (トークンの有効期限切れや *appid* 要求の欠落など)。</span><span class="sxs-lookup"><span data-stu-id="68eb3-168">In some cases the details of the ServiceError will contain more information, such as when the token is expired or the *appid* claim is missing.</span></span> |
-| <span data-ttu-id="68eb3-169">401</span><span class="sxs-lookup"><span data-stu-id="68eb3-169">401</span></span>  | <span data-ttu-id="68eb3-170">権限がありません</span><span class="sxs-lookup"><span data-stu-id="68eb3-170">Unauthorized</span></span> | <span data-ttu-id="68eb3-171">InconsistentClientId</span><span class="sxs-lookup"><span data-stu-id="68eb3-171">InconsistentClientId</span></span>       | <span data-ttu-id="68eb3-172">Microsoft Store ID キーの *clientId* 要求と Azure AD アクセス トークンの *appid* 要求が一致しません。</span><span class="sxs-lookup"><span data-stu-id="68eb3-172">The *clientId* claim in the Microsoft Store ID key and the *appid* claim in the Azure AD access token do not match.</span></span>                                                                     |
+| <span data-ttu-id="ef704-164">401</span><span class="sxs-lookup"><span data-stu-id="ef704-164">401</span></span>  | <span data-ttu-id="ef704-165">権限がありません</span><span class="sxs-lookup"><span data-stu-id="ef704-165">Unauthorized</span></span> | <span data-ttu-id="ef704-166">AuthenticationTokenInvalid</span><span class="sxs-lookup"><span data-stu-id="ef704-166">AuthenticationTokenInvalid</span></span> | <span data-ttu-id="ef704-167">Azure AD アクセス トークンが無効です。</span><span class="sxs-lookup"><span data-stu-id="ef704-167">The Azure AD access token is invalid.</span></span> <span data-ttu-id="ef704-168">場合によっては、ServiceError の詳細に追加情報が含まれていることがあります (トークンの有効期限切れや *appid* 要求の欠落など)。</span><span class="sxs-lookup"><span data-stu-id="ef704-168">In some cases the details of the ServiceError will contain more information, such as when the token is expired or the *appid* claim is missing.</span></span> |
+| <span data-ttu-id="ef704-169">401</span><span class="sxs-lookup"><span data-stu-id="ef704-169">401</span></span>  | <span data-ttu-id="ef704-170">権限がありません</span><span class="sxs-lookup"><span data-stu-id="ef704-170">Unauthorized</span></span> | <span data-ttu-id="ef704-171">InconsistentClientId</span><span class="sxs-lookup"><span data-stu-id="ef704-171">InconsistentClientId</span></span>       | <span data-ttu-id="ef704-172">Microsoft Store ID キーの *clientId* 要求と Azure AD アクセス トークンの *appid* 要求が一致しません。</span><span class="sxs-lookup"><span data-stu-id="ef704-172">The *clientId* claim in the Microsoft Store ID key and the *appid* claim in the Azure AD access token do not match.</span></span>                                                                     |
 
 
-## <a name="related-topics"></a><span data-ttu-id="68eb3-173">関連トピック</span><span class="sxs-lookup"><span data-stu-id="68eb3-173">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="ef704-173">関連トピック</span><span class="sxs-lookup"><span data-stu-id="ef704-173">Related topics</span></span>
 
 
-* [<span data-ttu-id="68eb3-174">サービスから製品の権利を管理する</span><span class="sxs-lookup"><span data-stu-id="68eb3-174">Manage product entitlements from a service</span></span>](view-and-grant-products-from-a-service.md)
-* [<span data-ttu-id="68eb3-175">製品の照会</span><span class="sxs-lookup"><span data-stu-id="68eb3-175">Query for products</span></span>](query-for-products.md)
-* [<span data-ttu-id="68eb3-176">コンシューマブルな製品をフルフィルメント完了として報告する</span><span class="sxs-lookup"><span data-stu-id="68eb3-176">Report consumable products as fulfilled</span></span>](report-consumable-products-as-fulfilled.md)
-* [<span data-ttu-id="68eb3-177">無料の製品の付与</span><span class="sxs-lookup"><span data-stu-id="68eb3-177">Grant free products</span></span>](grant-free-products.md)
+* [<span data-ttu-id="ef704-174">サービスから製品の権利を管理する</span><span class="sxs-lookup"><span data-stu-id="ef704-174">Manage product entitlements from a service</span></span>](view-and-grant-products-from-a-service.md)
+* [<span data-ttu-id="ef704-175">製品の照会</span><span class="sxs-lookup"><span data-stu-id="ef704-175">Query for products</span></span>](query-for-products.md)
+* [<span data-ttu-id="ef704-176">コンシューマブルな製品をフルフィルメント完了として報告する</span><span class="sxs-lookup"><span data-stu-id="ef704-176">Report consumable products as fulfilled</span></span>](report-consumable-products-as-fulfilled.md)
+* [<span data-ttu-id="ef704-177">無料の製品の付与</span><span class="sxs-lookup"><span data-stu-id="ef704-177">Grant free products</span></span>](grant-free-products.md)
