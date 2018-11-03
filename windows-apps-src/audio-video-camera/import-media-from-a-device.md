@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 36f8956e2ca167d98bb8e6ecf35ce3d131d7b032
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921548"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5978433"
 ---
 # <a name="import-media-from-a-device"></a>デバイスからのメディアのインポート
 

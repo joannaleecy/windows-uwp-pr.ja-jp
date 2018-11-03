@@ -1,32 +1,32 @@
 ---
 author: Xansky
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
-description: Windows デベロッパー センター アカウントに登録されているアプリのアドオンの申請を管理するには、Microsoft Store 申請 API の以下のメソッドを使います。
+description: パートナー センター アカウントに登録されているアプリのアドオンの申請を管理するのに、Microsoft Store 申請 API でこれらのメソッドを使用します。
 title: アドオンの申請の管理
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: d8e3ab04c2842fc08fb8b0aa298660bfbd0cfd7f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0ae0e07b588415094281683ff762c02ed5242654
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930403"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5981589"
 ---
 # <a name="manage-add-on-submissions"></a>アドオンの申請の管理
 
 Microsoft Store 申請 API には、アプリのアドオン (アプリ内製品または IAP とも呼ばれます) 申請を管理するために使用できるメソッドが用意されています。 Microsoft Store 申請 API の概要については、「[Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
 > [!IMPORTANT]
-> Microsoft Store 申請 API を使ってアドオンの提出を作成する場合、申請にさらに変更を加えるには、必ずデベロッパー センター ダッシュボードではなく API のみを使用してください。 最初に API を使って作成した申請を、ダッシュボードを使って変更した場合、API を使ってその申請を変更またはコミットすることができなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この場合、申請を削除して新しい申請を作成する必要があります。
+> Microsoft Store 申請 API を使用して、アドオンの申請を作成する場合は、さらに変更を申請にパートナー センターで変更を加えるよりも、API を使用してのみを必ず。 パートナー センターを使用して、API を使用して最初に作成した申請を変更する場合は、変更または API を使用して、その申請をコミットすることはできなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この場合、申請を削除して新しい申請を作成する必要があります。
 
 <span id="methods-for-add-on-submissions" />
 
 ## <a name="methods-for-managing-add-on-submissions"></a>アドオンの申請を管理するためのメソッド
 
-アドオンの申請を取得、作成、更新、コミット、または削除するには、次のメソッドを使用します。 これらのメソッドを使用するには、アドオンをお客様自身のデベロッパー センター アカウントに用意しておく必要があります。 アドオンは、[製品の種類と製品 ID を定義する](../publish/set-your-add-on-product-id.md)か、「[アドオンの管理](manage-add-ons.md)」で説明されている Microsoft Store 申請 API のメソッドを使って、ダッシュボードで作成できます。
+アドオンの申請を取得、作成、更新、コミット、または削除するには、次のメソッドを使用します。 これらのメソッドを使用することができます前に、アドオンはパートナー センター アカウントに既に存在する必要があります。 [製品の種類と製品 ID を定義すること](../publish/set-your-add-on-product-id.md)によって、またはで説明されている[アドオンの管理](manage-add-ons.md)で、Microsoft Store 申請 API のメソッドを使用して、パートナー センターでアドオンを作成できます。
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ Microsoft Store 申請 API には、アプリのアドオン (アプリ内製品
 
 アドオンの申請を作成するには、次のプロセスに従います。
 
-1. 「[Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」に記載されている前提条件が満たされていない場合は、前提条件を整えてください。これには、Azure AD アプリケーションの Windows デベロッパー センター アカウントへの関連付けや、クライアント ID およびキーの取得が含まれます。 この作業は 1 度行うだけでよく、クライアント ID とキーを入手したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。  
+1. 場合はまだ準備ができていないため、完全な前提条件で説明されている[作成し、Microsoft Store サービスを使用した申請の管理](create-and-manage-submissions-using-windows-store-services.md)など、Azure AD アプリケーションをパートナー センター アカウントに関連付けると、クライアントの ID とキーを取得します。 この作業は 1 度行うだけでよく、クライアント ID とキーを入手したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。  
 
 2. [Azure AD アクセス トークンを取得します](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 このアクセス トークンを Microsoft Store 申請 API のメソッドに渡す必要があります。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
@@ -121,7 +121,7 @@ Microsoft Store 申請 API には、アプリのアドオン (アプリ内製品
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 次のメソッドを実行して、申請をコミットします。 これで、申請が完了し、更新がアカウントに適用されていることがデベロッパー センターに通知されます。 詳しくは、「[アドオンの申請のコミット](commit-an-add-on-submission.md)」をご覧ください。
+5. 次のメソッドを実行して、申請をコミットします。 これでパートナー センターに通知は、申請が完了して、更新がアカウントに適用できるようになりましたする必要があります。 詳しくは、「[アドオンの申請のコミット](commit-an-add-on-submission.md)」をご覧ください。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
@@ -135,7 +135,7 @@ Microsoft Store 申請 API には、アプリのアドオン (アプリ内製品
 
     申請の状態を確認するには、応答本文の *status* の値を確認します。 この値が **CommitStarted** から **PreProcessing** (要求が成功した場合) または **CommitFailed** (要求でエラーが発生した場合) に変わっています。 エラーがある場合は、*statusDetails* フィールドにエラーについての詳細情報が含まれています。
 
-7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 上記のメソッドを使うか、デベロッパー センターのダッシュボードから、申請の進行状況を引き続き監視できます。
+7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 または、以前のメソッドを使用して、パートナー センターにアクセスして申請の進行状況を監視する続行することができます。
 
 <span/>
 
@@ -232,7 +232,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 | 値      | 型   | 説明        |
 |------------|--------|----------------------|
-| id            | string  | 申請 ID。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求、[すべてのアドオンの取得](get-all-add-ons.md)要求、[アドオンの取得](get-an-add-on.md)要求に対する応答データで確認できます。 デベロッパー センター ダッシュボードで作成された申請の場合、この ID はダッシュボードの申請ページの URL にも含まれています。  |
+| id            | string  | 申請 ID。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求、[すべてのアドオンの取得](get-all-add-ons.md)要求、[アドオンの取得](get-an-add-on.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なも。  |
 | contentType           | string  |  アドオンで提供されている[コンテンツの種類](../publish/enter-add-on-properties.md#content-type)です。 次のいずれかの値を使用できます。 <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
 | keywords           | array  | アドオンの[キーワード](../publish/enter-add-on-properties.md#keywords)の文字列を最大 10 個含む配列です。 アプリでは、これらのキーワードを使ってアドオンを照会できます。   |
 | lifetime           | string  |  アドオンの有効期間です。 次のいずれかの値を使用できます。 <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
@@ -245,7 +245,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 | status  | string  |  申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | object  |  エラーに関する情報など、申請のステータスに関する追加情報が保持される[ステータスの詳細に関するリソース](#status-details-object)です。 |
 | fileUploadUrl           | string  | 申請のパッケージのアップロードに使用する共有アクセス署名 (SAS) URI です。 申請用に新しいパッケージを追加する場合は、パッケージを含む ZIP アーカイブをこの URI にアップロードします。 詳しくは、「[アドオンの申請の作成](#create-an-add-on-submission)」をご覧ください。  |
-| friendlyName  | 文字列  |  デベロッパー センター ダッシュボードに表示される申請のフレンドリ名です。 この値は、申請を作成するときに生成されます。  |
+| friendlyName  | string  |  パートナー センターに示すように、申請のフレンドリ名。 この値は、申請を作成するときに生成されます。  |
 
 <span id="listing-object" />
 
@@ -292,8 +292,8 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 > [!IMPORTANT]
 > **セール** リソースはサポートを終了しました。現在、Microsoft Store 申請 API を使ってアドオンの申請の販売データを取得または変更することはできません。 将来的には、Microsoft Store 申請 API を更新して、アドオンの申請のセール情報にプログラムでアクセスする新しい方法を導入する予定です。
->    * [アドオンの申請を取得する GET メソッド](get-an-add-on-submission.md)を呼び出すと、*セール* リソースは空になります。 引き続きデベロッパー センター ダッシュボードを使って、アドオンの申請のセール データを取得することができます。
->    * [アドオンの申請を更新する PUT メソッド](update-an-add-on-submission.md)を呼び出すとき、*セール*の値に含まれた情報は無視されます。 引き続きデベロッパー センター ダッシュボードを使って、アドオンの申請のセール データを変更することができます。
+>    * [アドオンの申請を取得する GET メソッド](get-an-add-on-submission.md)を呼び出すと、*セール* リソースは空になります。 パートナー センターを使って、アドオンの申請のセール データを取得する続行することができます。
+>    * [アドオンの申請を更新する PUT メソッド](update-an-add-on-submission.md)を呼び出すとき、*セール*の値に含まれた情報は無視されます。 パートナー センターを使って、アドオンの申請のセール データを変更する続行することができます。
 
 このリソースには、次の値があります。
 
@@ -354,7 +354,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 |  Base               |   価格帯が設定されていない場合、アドオンの基本価格が使用されます。      |     
 |  NotAvailable              |   アドオンは指定された地域で提供されていません。    |     
 |  Free              |   アドオンは無償です。    |    
-|  Tier*xxxx*               |   アドオンの価格帯を指定する文字列 (**Tier<em>xxxx</em>** の形式)。 現在のところ、次の範囲の価格帯がサポートされています。<br/><br/><ul><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **true** の場合、アカウントで利用可能な価格帯値は **Tier1012** - **Tier1424** です。</li><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **false** の場合、アカウントで利用可能な価格帯値は **Tier2** - **Tier96** です。</li></ul>各価格帯に関連付けられた市場固有の価格を含む、開発者アカウントで利用可能な価格帯の詳しい表を参照するには、デベロッパー センター ダッシュボードでいずれかのアプリ申請の **[価格と使用可能状況]** ページにアクセスし、**[市場と特別価格]** セクションで **[view table]** (表を表示) リンクをクリックします (一部の開発者アカウントでは、このリンクは **[Pricing]** (価格) セクションにあります)。     |
+|  Tier*xxxx*               |   アドオンの価格帯を指定する文字列 (**Tier<em>xxxx</em>** の形式)。 現在のところ、次の範囲の価格帯がサポートされています。<br/><br/><ul><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **true** の場合、アカウントで利用可能な価格帯値は **Tier1012** - **Tier1424** です。</li><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **false** の場合、アカウントで利用可能な価格帯値は **Tier2** - **Tier96** です。</li></ul>価格の完全な表をご覧くださいに、各階層に関連付けられている市場固有の価格を含む、開発者アカウントで利用可能な階層がパートナー センターで、アプリの申請の**価格と使用可能状況**のページに移動し、**市場と特別価格**のセクションで**テーブルを表示**リンクをクリックして (一部の開発者アカウントでは、このリンクは、**価格**のセクションで)。     |
 
 <span id="submission-status-code" />
 
@@ -385,4 +385,4 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 * [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [Microsoft Store 申請 API を使用したアドオンの管理](manage-add-ons.md)
-* [デベロッパー センター ダッシュボードからのアドオンの申請](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)
+* [パートナー センターでのアドオンの申請](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)

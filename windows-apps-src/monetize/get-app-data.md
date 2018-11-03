@@ -1,25 +1,25 @@
 ---
 author: Xansky
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: Windows デベロッパー センター アカウントに登録されているアプリのデータを取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
+description: パートナー センター アカウントに登録されているアプリに関するデータを取得、Microsoft Store 申請 API でこれらのメソッドを使用します。
 title: アプリ データの取得
 ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ データ
 ms.localizationpriority: medium
-ms.openlocfilehash: 96f30e38a05eefe3e51f0ba632585f269b96efb8
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: ecda61bff6fac407dbde175f584a09d6b871d989
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945122"
+ms.locfileid: "5985982"
 ---
 # <a name="get-app-data"></a>アプリ データの取得
 
-デベロッパー センター アカウント内の既存のアプリのデータを取得するには、Microsoft Store 申請 API の以下のメソッドを使います。 Microsoft Store 申請 API の概要については、「[Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
+パートナー センター アカウント内の既存のアプリに関するデータを取得するのに、Microsoft Store 申請 API の以下のメソッドを使用します。 Microsoft Store 申請 API の概要については、「[Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
-これらのメソッドを使う前に、アプリが既にデベロッパー センター アカウントに存在している必要があります。 アプリの申請を作成または管理する方法については、「[アプリ申請の管理](manage-app-submissions.md)」のメソッドを参照してください。
+これらのメソッドを使用する前に、アプリが、パートナー センター アカウントに存在既にする必要があります。 アプリの申請を作成または管理する方法については、「[アプリ申請の管理](manage-app-submissions.md)」のメソッドを参照してください。
 
 <table>
 <colgroup>
@@ -102,7 +102,7 @@ Microsoft Store 申請 API に関するすべての[前提条件](create-and-man
 | primaryName   | string  | アプリのプライマリ名です。      |
 | packageFamilyName | string  | アプリのパッケージ ファミリ名です。      |
 | packageIdentityName          | string  | アプリのパッケージ ID 名です。                       |
-| publisherName       | string  | アプリに関連付けられている Windows 発行元 ID です。 これは、Windows デベロッパー センター ダッシュボードのアプリの「[アプリ ID](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」ページに表示される「**パッケージ/ID/発行者**」値と同じです。       |
+| publisherName       | string  | アプリに関連付けられている Windows 発行元 ID です。 これは、パートナー センターで、アプリの[アプリ id](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) ] ページに表示される**パッケージ/id/発行者**値に対応します。       |
 | firstPublishedDate      | string  | アプリが最初に発行された日付 (ISO 8601 形式)。   |
 | lastPublishedApplicationSubmission       | object | アプリの最後に公開された申請に関する情報を提供する[申請のリソース](#submission_object)。    |
 | pendingApplicationSubmission        | object  |  アプリの現在保留中の申請に関する情報を提供する[申請のリソース](#submission_object)。   |   
@@ -157,7 +157,7 @@ Microsoft Store 申請 API に関するすべての[前提条件](create-and-man
 
 | 値           | 型    | 説明           |
 |-----------------|---------|------------------------|
-| flightId            | string  | パッケージ フライトの ID。 この値は、デベロッパー センターによって提供されます。  |
+| flightId            | string  | パッケージ フライトの ID。 この値は、パートナー センターによって提供されます。  |
 | friendlyName           | string  | 開発者によって指定されているパッケージ フライトの名前。   |
 | lastPublishedFlightSubmission       | object | パッケージ フライトの最後に公開された申請に関する情報を提供する[申請のリソース](#submission_object)。   |
 | pendingFlightSubmission        | object  |  パッケージ フライトの現在保留中の申請に関する情報を提供する[申請のリソース](#submission_object)。  |    

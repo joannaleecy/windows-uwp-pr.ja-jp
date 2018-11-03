@@ -11,11 +11,11 @@ ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ms.openlocfilehash: e28d557280ab253a09d5697f369c694e490d3c7d
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5929024"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5978621"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>UWP アプリのコントロールとパターン
  

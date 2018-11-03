@@ -8,32 +8,32 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
 ms.localizationpriority: medium
-ms.openlocfilehash: eb6e3f245aaaff46156964b5a6b37b21d22a2102
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: e5a4c3607486a7163648c7aa5a0e1d03d37e421f
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935949"
+ms.locfileid: "5985013"
 ---
 # <a name="create-and-run-your-first-experiment"></a>最初の実験を作成して実行する
 
 このチュートリアルでは、次の作業を行います。
-* デベロッパー センター ダッシュボードで実験[プロジェクト](run-app-experiments-with-a-b-testing.md#terms)を作成します。この実験では、アプリのボタンのテキストと色を表すリモート変数をいくつか定義します。
-* リモート変数の値を取得し、そのデータを使用してボタンの背景色を変更し、デベロッパー センターでビュー イベントとコンバージョン イベントのデータをログに記録するアプリを作成します。
+* テキストと、アプリのボタンの色を表すいくつかのリモート変数を定義するパートナー センターで実験[プロジェクト](run-app-experiments-with-a-b-testing.md#terms)を作成します。
+* リモート変数値を取得し、このデータを使用して、ボタンの背景色を変更し、ビューをログに記録するコードを含むアプリを作成し、コンバージョン イベントのデータは、パートナー センターに戻ります。
 * アプリのボタンの背景色を変更するとボタンのクリック回数が正常に増えるかどうかをテストする実験をプロジェクトに作成します。
 * アプリを実行して、実験データを収集します。
-* デベロッパー センター ダッシュボードで実験結果を確認し、アプリのすべてのユーザーに有効なバリエーションを選択して、実験を完了します。
+* パートナー センターで、実験の結果を確認する、アプリのすべてのユーザーに対して有効にするバリエーションを選択し、実験を完了します。
 
-デベロッパー センターでの A/B テストの概要については、「[A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)」をご覧ください。
+A の概要については B は、パートナー センターでは、テスト/[使用してアプリの実験を実行 B テスト](run-app-experiments-with-a-b-testing.md)します。
 
 ## <a name="prerequisites"></a>前提条件
 
-このチュートリアルを実行するには、Windows デベロッパー センターのアカウントが必要です。また、「[A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)」の説明に従って開発用コンピューターを構成する必要があります。
+このチュートリアルには、パートナー センターのアカウントが必要し、」の説明に従って、開発用コンピューターを構成する必要があります[使用してアプリの実験を実行 B テスト](run-app-experiments-with-a-b-testing.md)します。
 
-## <a name="create-a-project-with-remote-variables-in-windows-dev-center"></a>Windows デベロッパー センターでリモート変数を含むプロジェクトを作成する
+## <a name="create-a-project-with-remote-variables-in-partner-center"></a>パートナー センターでリモート変数を含むプロジェクトを作成します。
 
-1. [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。
-2. 実験の作成に使用するアプリが既にデベロッパー センターにある場合は、ダッシュボードでそのアプリを選択します。 ダッシュボードにまだアプリがない場合は、[名前を予約して新しいアプリを作成](../publish/create-your-app-by-reserving-a-name.md)し、ダッシュボードでそのアプリを選択します。
+1. [パートナー センター](https://partner.microsoft.com/dashboard)にサインインします。
+2. 実験の作成に使用するパートナー センターでアプリを既にがある場合は、パートナー センターでそのアプリを選択します。 されていないしている場合、アプリ パートナー センターで、[新しい名前を予約してアプリを作成](../publish/create-your-app-by-reserving-a-name.md)し、パートナー センターでそのアプリを選択します。
 3. ナビゲーション ウィンドウで、**[サービス]** をクリックし、**[実験]** をクリックします。
 4. 次のページの **[プロジェクト]** セクションで、**[新しいプロジェクト]** ボタンをクリックします。
 5. **[新しいプロジェクト]** ページで、新しいプロジェクトの名前として「**Button Click Experiments**」と入力します。
@@ -53,14 +53,14 @@ ms.locfileid: "5935949"
 5. **ソリューション エクスプローラー**で、MainPage.xaml をダブルクリックして、アプリでメイン ページのデザイナーを開きます。
 6. **[ツールボックス]** からページに**ボタン**をドラッグします。
 7. デザイナーでボタンをダブルクリックしてコード ファイルを開き、**Click** イベントのイベント ハンドラーを追加します。  
-8. コード ファイルのすべての内容を次のコードで置き換えます。 ```projectId``` 変数を、前のセクションでデベロッパー センター ダッシュボードから取得した[プロジェクト ID](run-app-experiments-with-a-b-testing.md#terms) 値に割り当てます。
+8. コード ファイルのすべての内容を次のコードで置き換えます。 割り当てる、```projectId```変数を前のセクションで、パートナー センターから取得した[プロジェクト ID](run-app-experiments-with-a-b-testing.md#terms)値。
     [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
 9. コード ファイルを保存して、プロジェクトをビルドします。
 
-## <a name="create-the-experiment-in-windows-dev-center"></a>Windows デベロッパー センターで実験を作成する
+## <a name="create-the-experiment-in-partner-center"></a>パートナー センターで、実験を作成します。
 
-1. Windows デベロッパー センター ダッシュボードの **Button Click Experiments** プロジェクト ページに戻ります。
+1. パートナー センターで**Button Click Experiments**プロジェクト ページに戻ります。
 2. **[Experiments]** セクションで、**[新しい実験]** ボタンをクリックします。
 3. **[実験の詳細]** セクションで、**[実験名]** フィールドに「**Optimize Button Clicks**」と入力します。
 4. **[ビュー イベント]** セクションで、**[ビュー イベント名]** フィールドに「**userViewedButton**」と入力します。 この名前が、前のセクションで追加したコードで記録したビュー イベント文字列と一致することに注意してください。
@@ -90,13 +90,13 @@ ms.locfileid: "5935949"
 前のセクションの手順を完了して少なくとも数時間経ってから、次の手順に従って実験の実行結果を確認し、実験の実行を完了します。
 
 > [!NOTE]
-> 実験をアクティブ化するとすぐに、デベロッパー センターでは、実験のデータをログに記録するようにインストルメント化されたアプリからデータの収集が開始されます。 ただし、実験のデータがダッシュボードに表示されるまでに数時間かかることがあります。
+> 実験をアクティブ化するとすぐにすぐにパートナー センターが実験のデータをログにインストルメント化されたアプリからデータの収集を開始します。 ただし、実験のデータがパートナー センターで表示される数時間がかかることができます。
 
-1. デベロッパー センターで、アプリの **[実験]** ページに戻ります。
+1. パートナー センターで、アプリの**実験**のページに戻ります。
 2. **[アクティブな実験]** セクションで、**[Optimize Button Clicks]** (ボタンのクリックを最適化) をクリックしてこの実験のページに移動します。
-3. **[Results summary]** (結果の要約) セクションと **[Results details]** (結果の詳細) セクションに表示される結果が想定した結果と一致していることを確認します。 これらのセクションについて詳しくは、「[デベロッパー センター ダッシュボードで実験を管理する](manage-your-experiment.md#review-the-results-of-your-experiment)」をご覧ください。
+3. **[Results summary]** (結果の要約) セクションと **[Results details]** (結果の詳細) セクションに表示される結果が想定した結果と一致していることを確認します。 これらのセクションについて詳しくは、[パートナー センターで実験の管理](manage-your-experiment.md#review-the-results-of-your-experiment)を参照してください。
     > [!NOTE]
-    > デベロッパー センターで報告されるのは、24 時間以内に発生した、各ユーザーの最初のコンバージョン イベントのみです。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、多数のコンバージョン イベントを使用する単一のユーザーによって、サンプルのユーザー グループの実験の実行結果が歪曲されないようにすることを目的としています。
+    > パートナー センターでは、24 時間の期間に各ユーザーの最初のコンバージョン イベントのみを報告します。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、多数のコンバージョン イベントを使用する単一のユーザーによって、サンプルのユーザー グループの実験の実行結果が歪曲されないようにすることを目的としています。
 
 4. これで、実験の実行を終了できるようになりました。 **[Results summary]** (結果の要約) セクションの **[Variation B]** (バリエーション B) 列で、**[切り替え]** をクリックします。 これで、アプリのすべてのユーザーが青色のボタンに切り替えられます。
 5. **[OK]** をクリックして、実験の実行を終了することを確認します。
@@ -105,8 +105,8 @@ ms.locfileid: "5935949"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [プロジェクトを作成し、パートナー センターでリモート変数を定義します。](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [アプリの実験用のコードを記述する](code-your-experiment-in-your-app.md)
-* [デベロッパー センター ダッシュボードで実験を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
-* [デベロッパー センター ダッシュボードで実験を管理する](manage-your-experiment.md)
+* [パートナー センターで実験を定義します。](define-your-experiment-in-the-dev-center-dashboard.md)
+* [パートナー センターで実験を管理します。](manage-your-experiment.md)
 * [A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)

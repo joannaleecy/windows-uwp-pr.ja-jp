@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 広告, パフォーマンス
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f24b2494470f60371e466bb4d1e1878475d963
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 7310eeb04915933adc149165fa6774ed2f413814
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927586"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5982804"
 ---
 # <a name="get-ad-performance-data"></a>広告のパフォーマンス データの取得
 
 
 日付範囲やその他のオプション フィルターを指定して、アプリケーションの広告のパフォーマンスに関する集計データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドは、データを JSON 形式で返します。
 
-このメソッドは、Windows デベロッパー センター ダッシュボードの[広告パフォーマンス レポート](../publish/advertising-performance-report.md)で提供されるデータと同じデータを返します。
+このメソッドは、パートナー センターで[の広告パフォーマンス レポート](../publish/advertising-performance-report.md)で提供される同じデータを返します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -118,12 +118,12 @@ Authorization: Bearer <your access token>
 | applicationId       | string | 広告のパフォーマンス データを取得するアプリのストア ID です。     |
 | applicationName     | string | アプリの表示名です。                         |
 | adUnitId           | string | 広告ユニットの ID です。        |
-| adUnitName           | string | デベロッパー センター ダッシュ ボードで開発者によって指定されている広告ユニットの名前です。              |
+| adUnitName           | string | パートナー センターで開発者によって指定されている広告ユニットの名前。              |
 | adProvider           |  string  |  広告プロバイダーの名前です。   |
 | deviceType          | string | 広告が提供されたデバイスの種類です。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                              |
 | market              | string | 広告が提供された市場の ISO 3166 国コードです。             |
 | accountCurrencyCode     | string | アカウントの通貨コードです。        |
-| pubCenterAppName       |  string  |   デベロッパー センターでアプリに関連付けられている、pubCenter アプリの名前です。   |
+| pubCenterAppName       |  string  |   パートナー センターでアプリに関連付けられている、pubCenter アプリの名前。   |
 | adProviderRequests        | int | 指定した広告プロバイダーに対する広告要求の数です。                 |
 | impressions           | int | 広告インプレッションの数です。        |
 | clicks            | int | クリックの数です。       |

@@ -8,12 +8,12 @@ ms.date: 03/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, 製品の表示
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dded9b66fbae4f65b936335eda406d8773420c4
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3e5d6376420a1ee4ac166330371cf6e058d3476e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920056"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5979107"
 ---
 # <a name="query-for-products"></a>製品の照会
 
@@ -134,7 +134,7 @@ CollectionItemContractV6 オブジェクトには以下のパラメーターが�
 | devOfferId           | string             | アプリ内購入からのプラン ID。              | 省略可能       |
 | endDate              | datetime           | 項目の終了日。              | 必須      |
 | fulfillmentData      | string             | 該当なし         | 省略可能       |
-| inAppOfferToken      | string             | Windows デベロッパー センター ダッシュボードで項目に割り当てられている、開発者が指定した製品 ID 文字列。 製品 ID の例は *product123* です。 | 省略可能       |
+| inAppOfferToken      | string             | パートナー センターでの項目に割り当てられている開発者が指定した製品 ID 文字列です。 製品 ID の例では、 *product123*です。 | 省略可能       |
 | itemId               | string             | ユーザーが所有する他の項目からこのコレクション項目を識別する ID。 この ID は製品ごとに一意です。   | 必須      |
 | localTicketReference | string             | 要求本文の *localTicketReference* で指定された ID。                  | 必須      |
 | modifiedDate         | datetime           | この項目が最後に更新された日付。              | 必須      |

@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
-description: Windows デベロッパー センター アカウントに登録されているアプリのアプリ内購入に関する情報を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
-title: アプリのアドオンの取得
+description: パートナー センターに登録されているアプリのアプリ内購入に関する情報を取得、Microsoft Store 申請 API の以下のメソッドを使用します。
+title: アプリのアドオンの入手
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: a9924bf749499318c257001eafffabd902cddaa9
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3689a4fe16d016bb23bb7141630fd1f6a7b83142
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932679"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5978565"
 ---
-# <a name="get-add-ons-for-an-app"></a>アプリのアドオンの取得
+# <a name="get-add-ons-for-an-app"></a>アプリのアドオンの入手
 
-Windows デベロッパー センター アカウントに登録されているアプリのアドオンの一覧を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
+パートナー センター アカウントに登録されているアプリのアドオンを一覧表示する、Microsoft Store 申請 API でこのメソッドを使います。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -111,7 +111,7 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 404  | アドオンは見つかりませんでした。 |
-| 409  | アドオンが、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能を使用しています。  |
+| 409  | アドオンは、 [Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)は、パートナー センターの機能を使用します。  |
 
 
 ## <a name="related-topics"></a>関連トピック

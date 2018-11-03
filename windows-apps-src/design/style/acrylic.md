@@ -13,11 +13,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f9d56090e8fc1de83eeb4e8a68ca1830692c5b2f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5944606"
+ms.locfileid: "5979703"
 ---
 # <a name="acrylic-material"></a>アクリル素材
 

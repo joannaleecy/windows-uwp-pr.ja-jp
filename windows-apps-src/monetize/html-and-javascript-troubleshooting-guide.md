@@ -8,12 +8,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, AdControl, トラブルシューティング, HTML, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cd19b574d6128fa1f88196c8c35f368b12c3531
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 38f0b36769d13d119965e7d15c5812b9ba1d6ecd
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5947057"
+ms.locfileid: "5983930"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>HTML と JavaScript のトラブルシューティング ガイド
 
@@ -48,7 +48,7 @@ ms.locfileid: "5947057"
     </head>
     ```
 
-3.  アプリケーション ID と広告ユニット ID を確認します。 これらの ID は、Windows デベロッパー センターで取得したアプリケーション ID と広告ユニット ID に一致している必要があります。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
+3.  アプリケーション ID と広告ユニット ID を確認します。 これらの Id は、アプリケーション ID とパートナー センターで取得した広告ユニット ID に一致する必要があります。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -273,7 +273,7 @@ ms.locfileid: "5947057"
     });  
     ```
 
-4.  アプリケーション ID と広告ユニット ID を確認します。 これらの ID は、Windows デベロッパー センターで取得したアプリケーション ID と広告ユニット ID に一致している必要があります。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
+4.  アプリケーション ID と広告ユニット ID を確認します。 これらの Id は、アプリケーション ID とパートナー センターで取得した広告ユニット ID に一致する必要があります。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript

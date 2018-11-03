@@ -8,16 +8,16 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 評価
 ms.localizationpriority: medium
-ms.openlocfilehash: 892e3ae8ffcc8277f09afe8d1aef41e9905c2f85
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6b118abe32fe350277e02ed1f1f1d721e4c1690e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5922859"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5983706"
 ---
 # <a name="get-app-ratings"></a>アプリの評価の取得
 
-日付範囲やその他のオプション フィルターを指定して、集計評価データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、Windows デベロッパー センター ダッシュボードの[レビュー レポート](../publish/reviews-report.md)でも確認することができます。
+日付範囲やその他のオプション フィルターを指定して、集計評価データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、 [[レビュー] レポート](../publish/reviews-report.md)では、パートナー センターで利用可能なもできます。
 
 ## <a name="prerequisites"></a>前提条件
 

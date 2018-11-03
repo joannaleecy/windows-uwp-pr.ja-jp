@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
-description: 新しいアドオンの申請または更新されたアドオンの申請を Windows デベロッパー センターにコミットするには、Microsoft Store 申請 API の以下のメソッドを使います。
+description: パートナー センターへの新規または更新されたアドオンの申請をコミットするのに、Microsoft Store 申請 API の以下のメソッドを使用します。
 title: アドオンの申請のコミット
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請のコミット, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 52dce19410741c0ac7b006b14d572ec7280a5e2c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6f0d7ed15d3328ceffa9aa65a38c129f735c41ba
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926249"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5985501"
 ---
 # <a name="commit-an-add-on-submission"></a>アドオンの申請のコミット
 
-新しいアドオンの申請または更新されたアドオンの申請を Windows デベロッパー センターにコミットするには、Microsoft Store 申請 API の以下のメソッドを使います (アドオンはアプリ内製品または IAP とも呼ばれます)。 コミット アクションにより、申請データ (関連アイコンを含む) がアップロードされたことがデベロッパー センターに通知されます。 通知を受けたデベロッパー センターは、申請データに対する変更をインジェストと公開のためにコミットします。 適切にコミットされると、申請に対する変更はデベロッパー センター ダッシュボードに表示されます。
+パートナー センターに (別名アプリ内製品または IAP) の新規または更新されたアドオンの申請をコミットするのに、Microsoft Store 申請 API の以下のメソッドを使用します。 コミット アクション パートナー センターに通知 (関連アイコンを含む)、申請データをアップロードされています。 応答には、パートナー センターは、インジェストと公開の申請のデータへの変更をコミットします。 コミット操作が成功した後、申請に対する変更は、パートナー センターで表示されます。
 
 コミット操作が Microsoft Store 申請 API を使ったアドオンの申請プロセスにどのように適合するかについては、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
 
@@ -49,8 +49,8 @@ ms.locfileid: "5926249"
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | 必須。 コミットする申請が含まれるアドオンのストア ID です。 ストア ID は、[すべてのアドオン取得](get-all-add-ons.md)要求と[アドオン作成](create-an-add-on.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。 |
-| submissionId | string | 必須。 コミットする申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 デベロッパー センター ダッシュボードで作成された申請の場合、この ID はダッシュボードの申請ページの URL にも含まれています。  |
+| inAppProductId | string | 必須。 コミットする申請が含まれるアドオンのストア ID です。 パートナー センターで、ストア ID は利用可能なと、[すべてのアドオンを取得](get-all-add-ons.md)し[、アドオンを作成](create-an-add-on.md)する要求の応答データに含まれています。 |
+| submissionId | string | 必須。 コミットする申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なも。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -91,7 +91,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求パラメーターが有効ではありません。 |
 | 404  | 指定した申請は見つかりませんでした。 |
-| 409  | 指定した申請は見つかりましたが、現在の状態でコミットできなかったか、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアドオンで使用されています。 |
+| 409  | 指定した申請は見つかりましたが、現在の状態でコミットできなかった可能性がありますかアドオンは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)パートナー センターの機能を使用します。 |
 
 
 ## <a name="related-topics"></a>関連トピック

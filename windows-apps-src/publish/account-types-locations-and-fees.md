@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 開発者アカウント, 個人, 会社, ビジネス
 ms.localizationpriority: medium
 ms.openlocfilehash: 7600f8a6bef19ca2d7b301931d0198638f91dc1b
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5944391"
+ms.locfileid: "5980653"
 ---
 # <a name="account-types-locations-and-fees"></a>アカウントの種類、場所、料金
 
@@ -228,7 +228,7 @@ Windows では、[パートナー センター](https://partner.microsoft.com/da
 |  スワジランド | 19 USD | 99 USD | 支払の受け取りなし | × | 
 |  スウェーデン | 123 SEK | 700 SEK | 銀行 (SEK) | ○ | 
 |  スイス | 17 CHF | 90 CHF | 銀行 (CHF) | ○ | 
-|  Taiwan | 568 TWD | 2,840 TWD | 銀行 (USD) | ○ | 
+|  台湾 | 568 TWD | 2,840 TWD | 銀行 (USD) | ○ | 
 |  タジキスタン | 19 USD | 99 USD | 銀行 (USD) | × | 
 |  タンザニア | 19 USD | 99 USD | 銀行 (TZS) | × | 
 |  タイ | 601 THB | 3,000 THB | 銀行 (THB) | ○ | 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、アーケード スティック、入力
 ms.localizationpriority: medium
 ms.openlocfilehash: 13bc03559fb32156f5ff8bb29ed96f8a1e4ac84f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945317"
+ms.locfileid: "5981700"
 ---
 # <a name="arcade-stick"></a>アーケード スティック
 

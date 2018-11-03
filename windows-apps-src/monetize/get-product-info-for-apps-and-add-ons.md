@@ -8,12 +8,12 @@ ms.date: 02/08/2018
 ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f82bc3045d56f93e8d42ea183e2ac2bc788380
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: f1544ee3404e77ec7565c626a6ca96e439832c90
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5934444"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5978737"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>アプリとアドオンの製品情報の取得
 
@@ -28,8 +28,8 @@ ms.locfileid: "5934444"
 
 これらの例には、次の前提条件があります。
 * **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。
-* Windows デベロッパー センター ダッシュボードで[アプリの申請を作成](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)し、このアプリが Microsoft Store で公開されている。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
-* アプリのアドオンの製品情報を取得する場合、[デベロッパー センター ダッシュボードでアドオンを作成](../publish/add-on-submissions.md)する必要もあります。
+* パートナー センター内にある[アプリの申請を作成](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)し、このアプリがストアに公開します。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
+* アプリのアドオンの製品情報を取得する場合は、する必要もあります[パートナー センターでのアドオンを作成](../publish/add-on-submissions.md)します。
 
 これらの例のコードは、次の点を前提としています。
 * コードは、```workingProgressRing``` という名前の [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) と ```textBlock``` という名前の [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を含む [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキストで実行されます。 これらのオブジェクトは、それぞれ非同期操作が発生していることを示するためと、出力メッセージを表示するために使用されます。

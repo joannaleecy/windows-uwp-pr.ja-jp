@@ -8,12 +8,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, 試用版, コンシューマブル, 永続的, サブスクリプション
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a93e10f7b440ac7c1926bc64bba4d9be248710
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 2c1c4ea1923ff81754b9c8ed8328ba6ec670a3f1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927720"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5979037"
 ---
 # <a name="in-app-purchases-and-trials"></a>アプリ内購入と試用版
 
@@ -21,7 +21,7 @@ Windows SDK に用意されている API を使用して、以下の機能を実
 
 * **アプリ内購入**&nbsp;&nbsp; アプリが無料であるかどうかにかかわらず、コンテンツやアプリの新機能 (ゲームの次のレベルのロック解除など) をアプリ内から直接販売できます。
 
-* **試用版機能**&nbsp;&nbsp;アプリを [Windows デベロッパー センター ダッシュボードで無料試用版](../publish/set-app-pricing-and-availability.md#free-trial)として構成した場合、試用期間中に一部の機能を除外または制限することによって、アプリの通常版を購入するようユーザーを促すことができます。 また、ユーザーがアプリを購入する前の試用期間中にだけバナーや透かしなどを表示する機能を有効にすることもできます。
+* **試用版機能**&nbsp;&nbsp;かどうかは[アプリをパートナー センターで無料試用版として構成](../publish/set-app-pricing-and-availability.md#free-trial)すると、するように仕向けるを除外または、試用期間中に一部の機能を制限することによって、アプリの通常版を購入する顧客です。 また、顧客がアプリを購入する前の試用期間中にだけバナーや透かしなどが表示されるようにもできます。
 
 この記事では、UWP アプリでのアプリ内購入と試用版のしくみについて、その概要を説明します。
 
@@ -31,12 +31,12 @@ Windows SDK に用意されている API を使用して、以下の機能を実
 
 UWP アプリにアプリ内購入機能や試用版機能を追加する際に使用できる名前空間は、2 つあります。どちらの名前空間を使用するかは、アプリのターゲットとなる Windows 10 のバージョンによって決まります。 これらの名前空間の API は同じ目的を果たしますが、その設計は大きく異なります。また、この 2 つの API 間にコードの互換性はありません。
 
-* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;Windows 10 バージョン 1607 以降の場合、アプリはこの名前空間の API を使用して、アプリ内購入および試用版を実装することができます。 Visual Studio でアプリ プロジェクトのターゲットが **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降である場合は、この名前空間のメンバーを使用することをお勧めします。 この名前空間は、ストアで管理されるコンシューマブルなアドオンなど、最新の種類のアドオンをサポートしており、Windows デベロッパー センターとストアで今後サポートされる製品および機能の種類と互換性を持つように設計されています。 この名前空間について詳しくは、この記事の「[Windows.Services.Store 名前空間を使用するアプリ内購入と試用版](#api_intro)」をご覧ください。
+* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;Windows 10 バージョン 1607 以降の場合、アプリはこの名前空間の API を使用して、アプリ内購入および試用版を実装することができます。 Visual Studio でアプリ プロジェクトのターゲットが **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降である場合は、この名前空間のメンバーを使用することをお勧めします。 この名前空間は、最新の種類のアドオンをストアで管理されるコンシューマブルなアドオンをサポートし、今後の製品とパートナー センターとストアでサポートされる機能の種類に対応するのには設計されています。 この名前空間について詳しくは、この記事の「[Windows.Services.Store 名前空間を使用するアプリ内購入と試用版](#api_intro)」をご覧ください。
 
 * **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;Windows 10 のすべてのバージョンでは、この名前空間にあるアプリ内購入と試用版向けの以前の API がサポートされています。 **Windows.ApplicationModel.Store** 名前空間については、「[Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)」をご覧ください。
 
 > [!IMPORTANT]
-> **Windows.ApplicationModel.Store** 名前空間は今後更新されず、新機能も追加されないため、アプリでは、可能であれば代わりに **Windows.Services.Store** 名前空間を使うことをお勧めします。 **Windows.ApplicationModel.Store** 名前空間は、[デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使う Windows デスクトップ アプリケーションや、デベロッパー センターの開発サンドボックスを使うアプリまたはゲーム (たとえば、Xbox Live と統合されるゲームがすべて該当します) ではサポートされません。
+> **Windows.ApplicationModel.Store** 名前空間は今後更新されず、新機能も追加されないため、アプリでは、可能であれば代わりに **Windows.Services.Store** 名前空間を使うことをお勧めします。 [デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用する Windows デスクトップ アプリケーションで、またはアプリまたはパートナー センターで開発サンド ボックスを使用するゲーム、 **Windows.ApplicationModel.Store**名前空間がサポートされていません (たとえば、このような場合にゲームのいずれかのXbox Live と統合)。
 
 <span id="concepts" />
 
@@ -46,13 +46,13 @@ UWP アプリにアプリ内購入機能や試用版機能を追加する際に�
 
 アドオンとは、ユーザーがアプリのコンテキストで利用できる製品や機能のことです。たとえば、アプリやゲームで使用される通貨、ゲームの新しい地図や武器、広告を表示せずにアプリを使用できる機能などに加え、音楽やビデオなどのデジタル コンテンツを提供できるアプリなら、そのようなコンテンツのことも表します。 すべてのアプリとアドオンは、そのアプリやアドオンを使用する権利がユーザーにあるかどうかを示す関連付けられたライセンスを備えます。 アプリまたはアドオンを試用版として使用する権利がユーザーにある場合は、その試用版に関する追加情報もライセンスによって提供されます。
 
-アプリでユーザーにアドオンを提供するには、[デベロッパー センター ダッシュボードでアプリのアドオンを定義します](../publish/add-on-submissions.md)。これにより、そのアドオンがストアで認識されます。 その後で、アプリで **Windows.Services.Store** または **Windows.ApplicationModel.Store** 名前空間の API を使用して、アプリ内購入としてユーザーに販売するアドオンを提供することができます。
+アドオンをアプリでユーザーに提供するには、必要があります[パートナー センターでのアプリのアドオンを定義](../publish/add-on-submissions.md)ので、ストアで認識されます。 その後で、アプリで **Windows.Services.Store** または **Windows.ApplicationModel.Store** 名前空間の API を使用して、アプリ内購入としてユーザーに販売するアドオンを提供することができます。
 
 UWP アプリでは、次の種類のアドオンを提供できます。
 
 | アドオンの種類 |  説明  |
 |---------|-------------------|
-| 永続的  |  [Windows デベロッパー センター ダッシュボード](../publish/enter-iap-properties.md)で指定した有効期間のあいだ保持されるアドオンです。 <p/><p/>既定では、永続的なアドオンの有効期限が切れることはありません。この場合、アドオンは 1 回のみ購入することができます。 アドオンで特定の期間を指定している場合、期限が切れた後、ユーザーはアドオンを再購入できます。 |
+| 永続的  |  その[パートナー センターで指定](../publish/enter-iap-properties.md)有効期間のあいだ保持されるアドオンです。 <p/><p/>既定では、永続的なアドオンの有効期限が切れることはありません。この場合、アドオンは 1 回のみ購入することができます。 アドオンで特定の期間を指定している場合、期限が切れた後、ユーザーはアドオンを再購入できます。 |
 | 開発者により管理されるコンシューマブル  |  購入して使用し、消費した後でもう一度購入可能なアドオンです。 アドオンが表すユーザーのアイテムの残量の追跡は開発者が行います。<p/><p/>ユーザーがアドオンに関連付けられたアイテムを消費したら、ユーザーの残量を保持し、ユーザーによってすべてのアイテムが消費されたらアドオンの購入をフルフィルメント完了として Microsoft Store に報告する義務が開発者にあります。 以前のアドオン購入をフルフィルメント完了としてアプリで報告するまで、ユーザーがそのアドオンを再購入することはできません。 <p/><p/>たとえば、アドオンがゲーム内の 100 コインを表しており、ユーザーによって 10 コインが消費されている場合、アプリまたはサービスでは、ユーザーの 90 コインの残高を保持する必要があります。 ユーザーによって 100 コインすべてが消費されたら、アプリでそのアドオンをフルフィルメント完了として報告する必要があります。その後、ユーザーは 100 コイン アドオンを再購入できます。    |
 | Microsoft Store で管理されるコンシューマブル  |  購入し、使用した後にいつでも再購入できるアドオンです。 アドオンが表すユーザーのアイテムの残量は Microsoft Store で追跡します。<p/><p/>アドオンに関連付けられたアイテムがユーザーにより消費されたら、そのアイテムをフルフィルメント完了として Microsoft Store に報告する義務が開発者にあり、Microsoft Store によってユーザーの残量が更新されます。 ユーザーは、必要な回数だけアドオンを購入できます (最初にアイテムを使用する必要はありません)。 アプリでは、ユーザーのアイテムの現在の残量をいつでも照会できます。 <p/><p/> たとえば、アドオンがゲーム内の 100 のコインの初期量を表しており、ユーザーによって 50 コインが消費された場合、そのアドオンの 50 ユニットがフルフィルメント完了したことをアプリで Microsoft Store に報告すると、Microsoft Store により残高が更新されます。 ユーザーがアドオンを再購入して 100 個以上のコインを獲得した場合、合計で 150 個のコインを手にします。 <p/><p/>**注:**&nbsp;&nbsp;Microsoft Store で管理されるコンシューマブルを使用するには、Visual Studio でアプリが **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降をターゲットとし、**Windows.ApplicationModel.Store** 名前空間ではなく、**Windows.Services.Store** 名前空間を使用する必要があります。  |
 | サブスクリプション | アドオンを使い続けるために定期的な間隔でユーザーが継続的に課金する永続的なアドオンです。 ユーザーはいつでもサブスクリプションをキャンセルして、それ以降の課金を取り消すことができます。 <p/><p/>**注**&nbsp;&nbsp;サブスクリプション アドオンを使用するには、Visual Studio でアプリが **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降をターゲットとし、**Windows.ApplicationModel.Store** 名前空間ではなく、**Windows.Services.Store** 名前空間を使用する必要があります。  |
@@ -128,7 +128,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 
 **Windows.Services.Store** 名前空間を使用して、アプリでアプリ内購入をユーザーに提供するには:
 
-1. ユーザーが購入できるアドオンをアプリで提供する場合、[デベロッパー センター ダッシュ ボードで、アプリに関するアドオンの申請を作成](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)します。
+1. 場合は、アプリは、ユーザーが購入すると、[パートナー センターでのアプリのアドオンの申請を作成する](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)アドオンを提供します。
 
 2. [アプリで提供されるアプリやアドオンの製品情報を取得](get-product-info-for-apps-and-add-ons.md)してから、[ライセンスがアクティブになっているかどうかを判断](get-license-info-for-apps-and-add-ons.md)する (つまり、アプリやアドオンを使用するためのライセンスをユーザーが所有しているかどうかを判断する) ようにアプリのコードを記述します。 ライセンスがアクティブになっていない場合、ユーザーに販売するためのアプリやアドオンをアプリ内購入として提供する UI を表示します。
 
@@ -146,7 +146,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 
 **Windows.Services.Store** 名前空間を使用して、アプリの試用版の機能を除外または制限するには:
 
-1. [Windows デベロッパー センター ダッシュ ボードで、アプリを無料試用版として構成します](../publish/set-app-pricing-and-availability.md#free-trial)。
+1. [パートナー センターで無料試用版としてアプリを構成](../publish/set-app-pricing-and-availability.md#free-trial)します。
 
 2. [アプリで提供されるアプリやアドオンの製品情報を取得](get-product-info-for-apps-and-add-ons.md)してから、[アプリに関連付けられているライセンスが試用版ライセンスになっているかどうかを判断](get-license-info-for-apps-and-add-ons.md)するようにアプリのコードを記述します。
 
@@ -160,15 +160,15 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 
 アプリで **Windows.Services.Store** 名前空間の API を使用してアプリ内購入や試用版機能を実装する場合は、アプリを Store に公開してからそのアプリを開発デバイスにダウンロードし、そのライセンスを使用してテストを行う必要があります。 コードをテストするには次のプロセスに従います。
 
-1. アプリがまだ公開されておらず、Microsoft Store で利用できない場合、アプリが [Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)の最低限の要件を満たしていることを確認し、Windows デベロッパー センター ダッシュボードに[そのアプリを申請](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)します。その後で、アプリが認定プロセスに合格したことを確認します。 テスト中に[ストアでアプリを検索できないようにアプリを構成する](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)ことも可能です。 [パッケージ フライト](../publish/package-flights.md)の適切な構成に注意してください。 正しく構成されているパッケージをフライト可能性がありますできませんをダウンロードします。
+1. アプリがまだ公開されてストア内でない場合は、アプリがパートナー センターで、[アプリの提出](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)を、 [Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)の最小要件を満たしているかどうかを確認し、アプリが認定プロセスが合格かどうかを確認します。 テスト中に[ストアでアプリを検索できないようにアプリを構成する](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)ことも可能です。 [パッケージ フライト](../publish/package-flights.md)の適切な構成に注意してください。 正しく構成されているパッケージをフライト可能性がありますできませんをダウンロードします。
 
 2. 次に、以下の操作が完了していることを確認します。
 
     * [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラス、および **Windows.Services.Store** 名前空間にある他の関連する型を使用するアプリのコードを、[アプリ内購入](#implement-iap)や[試用版機能](#implement-trial)を実装するように記述します。
-    * ユーザーが購入できるアドオンをアプリで提供する場合、[デベロッパー センター ダッシュ ボードで、アプリに関するアドオンの申請を作成](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)します。
-    * アプリの試用版で一部の機能を除外または制限する場合は、[Windows デベロッパー センター ダッシュ ボードで、アプリを無料試用版として構成します](../publish/set-app-pricing-and-availability.md#free-trial)。
+    * アプリでは、[パートナー センターでのアプリのアドオンの申請を作成する](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)ユーザーが購入できるアドオンを提供します。 場合、
+    * 除外または[パートナー センターで無料試用版としてのアプリの構成](../publish/set-app-pricing-and-availability.md#free-trial)アプリの試用版で一部の機能を制限する場合。
 
-3. プロジェクトを Visual Studio で開き、**[プロジェクト]** メニューをクリックし、**[ストア]** をポイントして、**[アプリケーションをストアと関連付ける]** をクリックします。 ウィザードの手順を完了し、テストに使用する Windows デベロッパー センター アカウントのアプリとアプリ プロジェクトを関連付けます。
+3. プロジェクトを Visual Studio で開き、**[プロジェクト]** メニューをクリックし、**[ストア]** をポイントして、**[アプリケーションをストアと関連付ける]** をクリックします。 手順を完了し、ウィザードを使用してテストするパートナー センターのアカウントでのアプリとアプリ プロジェクトを関連付けます。
     > [!NOTE]
     > プロジェクトとストアのアプリを関連付けていない場合、[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) メソッドにより、戻り値の **ExtendedError** プロパティがエラー コード値 0x803F6107 に設定されます。 この値は、ストアにそのアプリに関する情報がないことを示します。
 4. まだ前の手順で指定したストアのアプリをインストールしていない場合は、アプリをインストールし、アプリを一度実行してから閉じます。 これにより、アプリの有効なライセンスが開発用デバイスにインストールされます。
@@ -227,7 +227,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 
 ### <a name="products-skus-and-availabilities"></a>製品、SKU、および可用性
 
-ストア内のすべての製品には少なくとも 1 つの *SKU* があり、各 SKU ごとに少なくとも 1 つの*可用性*があります。 Windows デベロッパー センター ダッシュボードでは、ほとんどの場合、これらの概念は開発者から抽象化されており、多くの開発者はアプリまたはアドオンの SKU や可用性を定義することはありません。 ただし、**Windows.Services.Store** 名前空間のストア製品のオブジェクト モデルには SKU と可用性が含まれているため、シナリオによっては、これらの概念の基本的な知識があると役に立つことがあります。
+ストア内のすべての製品には少なくとも 1 つの *SKU* があり、各 SKU ごとに少なくとも 1 つの*可用性*があります。 これらの概念はパートナー センターで、ほとんどの開発者から抽象化し、Sku や可用性アプリまたはアドオンのほとんどの開発者が定義されることはありません。 ただし、**Windows.Services.Store** 名前空間のストア製品のオブジェクト モデルには SKU と可用性が含まれているため、シナリオによっては、これらの概念の基本的な知識があると役に立つことがあります。
 
 | オブジェクト |  説明  |
 |---------|-------------------|
@@ -243,8 +243,8 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 
 ストア内の製品のストア ID は 12 文字の英数字文字列です。たとえば、```9NBLGGH4R315``` のようになります。 ストア内の製品のストア ID は、次のようにさまざまな方法で取得できます。
 
-* アプリの場合、ストア ID は、デベロッパー センター ダッシュボードの [[アプリ ID] ページ](../publish/view-app-identity-details.md)で取得できます。
-* アドオンの場合、ストア ID はダッシュボードのアドオンの概要ページで取得できます。
+* パートナー センターで、アプリの[アプリ id] ページ](../publish/view-app-identity-details.md)で、ストア ID を取得できます。
+* アドオンの場合、追加の概要ページでは、パートナー センターのストア ID を取得できます。
 * 製品の場合、その製品を表す [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) オブジェクトの [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.storeid) プロパティを使用するにより、ストア ID をプログラムで取得することもできます。
 
 製品の SKU と可用性の場合は、その SKU と可用性にも形式の異なる固有のストア ID が用意されています。
@@ -258,10 +258,10 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 
 ## <a name="how-to-use-product-ids-for-add-ons-in-your-code"></a>コードでアドオンの製品 ID を使用する方法
 
-アプリのコンテキストでユーザーがアドオンを利用できるようにするには、デベロッパー センター ダッシュボードで[アドオンの申請を作成する](../publish/add-on-submissions.md)ときに、アドオン用の[固有の製品 ID を入力](../publish/set-your-add-on-product-id.md#product-id)しなければなりません。 この製品 ID を使用することでコード内でアドオンを参照できます。ただし、製品 ID を使用できる特定のシナリオは、アプリのアプリ内購入に使用する名前空間によって異なります。
+アプリのコンテキストでユーザーにアドオンを利用できるようにする場合は、する必要があります[一意の製品 ID を入力して](../publish/set-your-add-on-product-id.md#product-id)アドオンのとパートナー センターでの[アドオンの申請を作成](../publish/add-on-submissions.md)します。 この製品 ID を使用することでコード内でアドオンを参照できます。ただし、製品 ID を使用できる特定のシナリオは、アプリのアプリ内購入に使用する名前空間によって異なります。
 
 > [!NOTE]
-> デベロッパー センター ダッシュボードでアドオン用に入力する製品 ID は、アドオンの[ストア ID](#store-ids) とは異なります。 ストア ID はデベロッパー センターによって生成されます。
+> パートナー センターでアドオン用に入力する製品 ID とは異なります、アドオンの[ストア ID です](#store-ids)。 ストア ID は、パートナー センターによって生成されます。
 
 ### <a name="apps-that-use-the-windowsservicesstore-namespace"></a>Windows.Services.Store 名前空間を使うアプリ
 
@@ -272,7 +272,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 
 ### <a name="apps-that-use-the-windowsapplicationmodelstore-namespace"></a>Windows.ApplicationModel.Store 名前空間を使うアプリ
 
-アプリで **Windows.ApplicationModel.Store** 名前空間を使用している場合は、ほとんどの操作に、デベロッパー センター ダッシュボードでアドオンに割り当てた製品 ID を使用する必要があります。 次に、例を示します。
+アプリは、 **Windows.ApplicationModel.Store**名前空間を使用している場合は、ほとんどの操作には、パートナー センターでアドオンに割り当てた製品 ID を使用する必要があります。 以下に例を示します。
 
 * アドオンを表す [ProductListing](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting) や、アドオンのライセンスを表す [ProductLicense](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense) を識別するには、製品 ID を使用します。 製品 ID は、[ProductListing.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.ProductId) プロパティおよび [ProductLicense.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense.ProductId) プロパティにより公開されます。
 
