@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, アドオン, iap, 価格
 ms.localizationpriority: medium
 ms.openlocfilehash: 6dc557306fe2e5e24ce1210e75ac5f29628306ae
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935635"
+ms.locfileid: "5988424"
 ---
 # <a name="set-add-on-pricing-and-availability"></a><span data-ttu-id="9f853-103">アドオンの価格と使用可能状況の設定</span><span class="sxs-lookup"><span data-stu-id="9f853-103">Set add-on pricing and availability</span></span>
 
