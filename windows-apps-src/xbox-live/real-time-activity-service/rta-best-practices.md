@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リアルタイム アクティビティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 60a049436bb04d8ad2c66582492977f9637bcf5d
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5941981"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5976338"
 ---
 # <a name="real-time-activity-rta-best-practices"></a><span data-ttu-id="cb66c-104">リアルタイム アクティビティ (RTA) のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="cb66c-104">Real Time Activity (RTA) Best Practices</span></span>
 <span data-ttu-id="cb66c-105">これらのベスト プラクティスにより、タイトルで RTA を最大限に活用できます。</span><span class="sxs-lookup"><span data-stu-id="cb66c-105">These best practices will help you make the most out of your title's use of RTA.</span></span>

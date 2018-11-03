@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c90dbca0e16cf1dcebc53fd8fa90006ca7ae7caf
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5936609"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5985608"
 ---
 # <a name="titleassociation-json"></a><span data-ttu-id="ded86-104">TitleAssociation (JSON)</span><span class="sxs-lookup"><span data-stu-id="ded86-104">TitleAssociation (JSON)</span></span>
 <span data-ttu-id="ded86-105">実績に関連付けられているタイトルです。</span><span class="sxs-lookup"><span data-stu-id="ded86-105">A title that is associated with the achievement.</span></span> 

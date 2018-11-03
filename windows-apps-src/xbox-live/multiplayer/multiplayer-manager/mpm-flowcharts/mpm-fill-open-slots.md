@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bf9a6ad5ce7f2641ad8f3d23efd01b7fd80c559
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5919813"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5983860"
 ---
 # <a name="flowchart---fill-open-slots-in-a-multiplayer-game"></a><span data-ttu-id="98a05-104">フローチャート - マルチプレイヤー ゲームで空いているスロットを埋める</span><span class="sxs-lookup"><span data-stu-id="98a05-104">Flowchart - Fill open slots in a multiplayer game</span></span>
 

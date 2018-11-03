@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 227cd378a92fcdfec88e1ae0ccd7173986d37abf
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5918616"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5989551"
 ---
 # <a name="multiplayer-session-browse"></a><span data-ttu-id="50e8e-104">マルチプレイヤー セッション参照</span><span class="sxs-lookup"><span data-stu-id="50e8e-104">Multiplayer session browse</span></span>
 

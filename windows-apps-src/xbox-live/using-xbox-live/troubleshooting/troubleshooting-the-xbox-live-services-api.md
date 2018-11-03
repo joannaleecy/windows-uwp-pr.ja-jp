@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, トラブルシューティング, エラー, ログ
 ms.localizationpriority: medium
 ms.openlocfilehash: fad6a36c3678a6b3c48dcbd78d9c19ed843a118f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940158"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995500"
 ---
 # <a name="troubleshooting-the-xbox-live-apis"></a><span data-ttu-id="10375-104">Xbox Live API のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="10375-104">Troubleshooting the Xbox Live APIs</span></span>
 

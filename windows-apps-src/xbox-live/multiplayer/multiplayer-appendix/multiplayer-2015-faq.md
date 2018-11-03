@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c6778ebc90d917a883a437d905112cf32a6829
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5920215"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992101"
 ---
 # <a name="multiplayer-2015-faq-and-troubleshooting"></a><span data-ttu-id="81ab5-104">マルチプレイヤー 2015 の FAQ とトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="81ab5-104">Multiplayer 2015 FAQ and troubleshooting</span></span>
 

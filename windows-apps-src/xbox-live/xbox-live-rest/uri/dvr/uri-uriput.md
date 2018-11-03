@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 56a5150e354568f3ea7ec772953bd1e1e8efa579
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940204"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5976986"
 ---
 # <a name="put-uri"></a><span data-ttu-id="5b938-104">PUT (/{uri})</span><span class="sxs-lookup"><span data-stu-id="5b938-104">PUT (/{uri})</span></span>
 <span data-ttu-id="5b938-105">ゲーム クリップのデータをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="5b938-105">Upload game clip data.</span></span>

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ef2559177bcecb7c1c23fbc1f08bed065cf4bae9
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5934517"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5979383"
 ---
 # <a name="get-handleshandleidsession"></a><span data-ttu-id="d031c-104">GET (/handles/{handleId}/session)</span><span class="sxs-lookup"><span data-stu-id="d031c-104">GET (/handles/{handleId}/session)</span></span>
 <span data-ttu-id="d031c-105">指定したハンドル識別子セッション オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="d031c-105">Gets a session object for the specified handle identifier.</span></span>

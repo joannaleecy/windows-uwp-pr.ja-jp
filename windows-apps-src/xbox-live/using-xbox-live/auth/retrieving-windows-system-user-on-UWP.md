@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, システム ユーザー
 ms.localizationpriority: medium
 ms.openlocfilehash: bd783c4e1614cc558f80472765a77138d1abf409
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5933678"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5969523"
 ---
 # <a name="retrieving-the-windows-system-user-in-a-universal-windows-platform-uwp-title"></a><span data-ttu-id="80662-104">ユニバーサル Windows プラットフォーム (UWP) での Windows システム ユーザーの取得</span><span class="sxs-lookup"><span data-stu-id="80662-104">Retrieving the Windows System User in a Universal Windows Platform (UWP) title</span></span>
 

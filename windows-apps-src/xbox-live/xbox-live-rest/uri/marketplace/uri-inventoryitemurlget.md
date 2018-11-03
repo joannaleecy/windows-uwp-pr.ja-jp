@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aaef11864a513b42cb5a1c036e7699477884b4a
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5918374"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5989644"
 ---
 # <a name="get-inventoryitemid"></a><span data-ttu-id="83c26-104">GET (/inventory/{itemID})</span><span class="sxs-lookup"><span data-stu-id="83c26-104">GET (/inventory/{itemID})</span></span>
 <span data-ttu-id="83c26-105">特定のインベントリ項目の詳細の完全なセットを提供します。</span><span class="sxs-lookup"><span data-stu-id="83c26-105">Provides the full set of details for a specific inventory item.</span></span> <span data-ttu-id="83c26-106">これらの Uri のドメインが`inventory.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="83c26-106">The domain for these URIs is `inventory.xboxlive.com`.</span></span>

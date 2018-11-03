@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one、アリーナ、トーナメント、操作, ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: d22212e4fc3d01ced50b557c4ec4a1e9619ebe61
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5944915"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995959"
 ---
 # <a name="xbox-arena-operations-portal"></a><span data-ttu-id="f376c-104">Xbox アリーナ操作ポータル</span><span class="sxs-lookup"><span data-stu-id="f376c-104">Xbox Arena Operations Portal</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0704fe3919a84df718c9c1fba44a4fff85ee02ca
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5931221"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5975136"
 ---
 # <a name="common-issues-when-adapting-your-multiplayer-2014-title-to-multiplayer-2015"></a><span data-ttu-id="694f2-104">マルチプレイヤー 2014 のタイトルをマルチプレイヤー 2015 に適合させるときの一般的な問題</span><span class="sxs-lookup"><span data-stu-id="694f2-104">Common issues When adapting your multiplayer 2014 title to multiplayer 2015</span></span>
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ecfaf3ff6ee83c2d577614dc613939669ef60d62
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5927787"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5987633"
 ---
 # <a name="devicerecord-json"></a><span data-ttu-id="96c63-104">DeviceRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="96c63-104">DeviceRecord (JSON)</span></span>
 <span data-ttu-id="96c63-105">、その種類とそれに対するアクティブなタイトルなど、デバイスに関する情報。</span><span class="sxs-lookup"><span data-stu-id="96c63-105">Information about a device, including its type and the titles active on it.</span></span> 

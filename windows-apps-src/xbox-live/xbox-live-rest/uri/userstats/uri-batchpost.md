@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cf59d532b303402bc17320621a92ee7a0bc77934
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5941122"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5971612"
 ---
 # <a name="post-batch"></a><span data-ttu-id="437da-104">POST (/batch)</span><span class="sxs-lookup"><span data-stu-id="437da-104">POST (/batch)</span></span>
 <span data-ttu-id="437da-105">POST メソッドは、複数のタイトルに複数のプレイヤーの統計情報の複雑なバッチ要求の GET メソッドとして機能します。</span><span class="sxs-lookup"><span data-stu-id="437da-105">POST method that functions as a GET method for complex batch requests for multiple player statistics across multiple titles.</span></span> <span data-ttu-id="437da-106">これらの Uri のドメインが`userstats.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="437da-106">The domain for these URIs is `userstats.xboxlive.com`.</span></span>

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 08cbb5710a2bcafc1edfdf78a8f96561961ef8cd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5923785"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5978646"
 ---
 # <a name="get-usersxuidxuidscidsscidstatsincludevaluemetadata"></a><span data-ttu-id="d3595-104">GET (/users/xuid({xuid})/scids/{scid}/stats?include=valuemetadata)</span><span class="sxs-lookup"><span data-stu-id="d3595-104">GET (/users/xuid({xuid})/scids/{scid}/stats?include=valuemetadata)</span></span>
 <span data-ttu-id="d3595-105">指定されたサービス構成でのユーザーに対して、統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="d3595-105">Gets a list of specified statistics, including metadata associated with the statistic values, for a user in a specified service configuration.</span></span>

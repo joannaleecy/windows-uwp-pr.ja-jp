@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bcc9998127006028c0b364c1df9ad57b53c5f4a
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945256"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5980599"
 ---
 # <a name="titlestitleidsessionssessionidallocationstatus"></a><span data-ttu-id="b775b-104">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span><span class="sxs-lookup"><span data-stu-id="b775b-104">/titles/{titleId}/sessions/{sessionId}/allocationStatus</span></span>
 <span data-ttu-id="b775b-105">特定のタイトル id とセッション id、チケットの要求の状態を取得します。</span><span class="sxs-lookup"><span data-stu-id="b775b-105">For the given title id and session id, get status of the ticket request.</span></span> <span data-ttu-id="b775b-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="b775b-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>

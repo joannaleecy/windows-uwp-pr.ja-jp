@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成, xboxservices.config
 ms.localizationpriority: medium
 ms.openlocfilehash: d25aecb92fc668e4d75901a2d4857ac0a56d1999
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5918509"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5972534"
 ---
 # <a name="xboxservicesconfig-file-description"></a><span data-ttu-id="d5d58-104">XboxServices.config ファイルの説明</span><span class="sxs-lookup"><span data-stu-id="d5d58-104">XboxServices.config file description</span></span>
 

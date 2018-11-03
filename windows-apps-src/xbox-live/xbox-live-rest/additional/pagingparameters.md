@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 337093fe7c75efee1be1ff18f94249b6693cdf84
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938256"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5974230"
 ---
 # <a name="paging-parameters"></a><span data-ttu-id="3efd9-104">ページング パラメーター</span><span class="sxs-lookup"><span data-stu-id="3efd9-104">Paging Parameters</span></span>
  

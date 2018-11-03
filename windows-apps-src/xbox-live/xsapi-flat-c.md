@@ -8,11 +8,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one、c, xsapi
 ms.localizationpriority: medium
 ms.openlocfilehash: b8d48fbaa35ddfb81b8aba77e4129c19e2a55af7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5943396"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5979560"
 ---
 # <a name="introduction-to-the-xbox-live-c-apis"></a><span data-ttu-id="24354-104">Xbox Live C Api の概要</span><span class="sxs-lookup"><span data-stu-id="24354-104">Introduction to the Xbox Live C APIs</span></span>
 

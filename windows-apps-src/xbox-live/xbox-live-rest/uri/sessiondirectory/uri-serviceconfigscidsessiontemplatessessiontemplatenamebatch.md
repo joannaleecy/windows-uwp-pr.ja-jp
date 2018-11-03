@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c1f1add0104ad166620dbdff79936e6a99379df3
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938811"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5986237"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatenamebatch"></a><span data-ttu-id="a4a5a-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch</span><span class="sxs-lookup"><span data-stu-id="a4a5a-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch</span></span>
 <span data-ttu-id="a4a5a-105">セッション テンプレート レベルでバッチ クエリを作成する POST 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="a4a5a-105">Supports a POST operation to create a batch query at the session template level.</span></span>

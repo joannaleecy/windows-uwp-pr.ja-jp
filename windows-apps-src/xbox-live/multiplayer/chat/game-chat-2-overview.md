@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット, ゲーム チャット 2, 音声によるコミュニケーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 211769593fb2801aee31cfcd8b20869fab27314e
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5927858"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5981964"
 ---
 # <a name="game-chat-2-overview"></a><span data-ttu-id="2e874-104">ゲーム チャット 2 の概要</span><span class="sxs-lookup"><span data-stu-id="2e874-104">Game Chat 2 Overview</span></span>
 
