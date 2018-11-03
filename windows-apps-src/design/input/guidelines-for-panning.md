@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 31725c6cb9a966f02f8d1f8d62ca980e72c95326
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0ca4bf518837f072fb58fc0a152e08a82cf5dfad
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939745"
+ms.locfileid: "5989629"
 ---
 # <a name="guidelines-for-panning"></a>パンのガイドライン
 
@@ -84,7 +84,7 @@ ms.locfileid: "5939745"
 > <strong>Windows 10 Fall Creators Update - 動作の変更</strong>
 > </div>
 > 既定では、UWP アプリでのアクティブ ペンは、テキストの選択ではなく、(タッチ、タッチパッド、パッシブ ペンなどと同様に) スクロール/パンを実行するようになりました。  
-> アプリが以前の動作に依存している場合は、ペン スクロールを上書きして、以前の動作に戻すことができます。 詳しくは、API リファレンスの [ScrollViewer クラス] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) のトピックをご覧ください。
+> アプリが以前の動作に依存している場合は、ペン スクロールを上書きして、以前の動作に戻すことができます。 詳細については、 [ScrollViewer クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer)の API リファレンス トピックを参照してください。
 
 入力デバイスに応じて、ユーザーは次のいずれかを使って、パン対応領域内でパンを実行します。
 

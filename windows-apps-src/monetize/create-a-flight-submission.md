@@ -1,19 +1,19 @@
 ---
 author: Xansky
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
-description: Windows デベロッパー センター アカウントに登録されているアプリの新しいパッケージ フライトの申請を作成するには、Microsoft Store 申請 API の以下のメソッドを使います。
+description: パートナー センター アカウントに登録されているアプリの新しいパッケージ フライトの申請を作成する、Microsoft Store 申請 API でこのメソッドを使います。
 title: パッケージ フライトの申請の作成
 ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請の作成
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b06f922de1de1dd9943d460672fab218b51a5eb
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4cdcc0f06820600523be111d67d3cad5e38b6ceb
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5925859"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5989980"
 ---
 # <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 
@@ -29,8 +29,8 @@ ms.locfileid: "5925859"
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
-* デベロッパー センター アカウントでアプリのパッケージ フライトを作成します。 これは、デベロッパー センター ダッシュボードで行うことも、[パッケージ フライトの作成](create-a-flight.md)のメソッドを使って行うこともできます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* アプリのパッケージ フライトを作成します。 パートナー センターで、これを行うか、[パッケージ フライトの作成](create-a-flight.md)方法を使用して、これを行うことができます。
 
 ## <a name="request"></a>要求
 
@@ -119,7 +119,7 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 400  | 要求が無効なため、パッケージ フライトの申請を作成できませんでした。 |
-| 409  | アプリの現在の状態が原因でパッケージ フライトの申請を作成できませんでした。または、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアプリで使用されています。 |   
+| 409  | アプリの現在の状態が原因パッケージ フライトの申請を作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

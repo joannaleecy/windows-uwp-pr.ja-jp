@@ -1,36 +1,36 @@
 ---
 author: Xansky
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
-description: Windows デベロッパー センター アカウントに登録されているアプリの申請を管理するには、Microsoft Store 申請 API の以下のメソッドを使います。
+description: パートナー センター アカウントに登録されているアプリの申請を管理するのに、Microsoft Store 申請 API でこれらのメソッドを使用します。
 title: アプリの申請の管理
 ms.author: mhopkins
 ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f95e91c1ef9e47ab3371a1481237dc510eddae7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 76bc7932665e3f9893c6f0aa9644b9edc07a6dcf
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921080"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5996675"
 ---
 # <a name="manage-app-submissions"></a>アプリの申請の管理
 
 Microsoft Store 申請 API には、段階的なパッケージのロールアウトなど、アプリの申請を管理するために使用できるメソッドが用意されています。 Microsoft Store 申請 API の概要については、「[Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
 > [!IMPORTANT]
-> Microsoft Store 申請 API を使ってアプリの提出を作成する場合、申請にさらに変更を加えるには、必ずデベロッパー センター ダッシュボードではなく API のみを使用してください。 最初に API を使って作成した申請を、ダッシュボードを使って変更した場合、API を使ってその申請を変更またはコミットすることができなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この問題が発生した場合は、申請を削除して、新しい申請を作成する必要があります。
+> アプリの申請を作成する、Microsoft Store 申請 API を使用する場合は、さらに変更する、申請を使ってパートナー センターではなく API のみを必ずします。 パートナー センターを使用して、API を使用して最初に作成した申請を変更する場合は、変更または API を使用して、その申請をコミットすることはできなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この問題が発生した場合は、申請を削除して、新しい申請を作成する必要があります。
 
 > [!IMPORTANT]
-> この API を使って、[ビジネス向け Microsoft Store や教育機関向け Microsoft Store でのボリューム購入](../publish/organizational-licensing.md)の申請を公開したり、[LOB アプリ](../publish/distribute-lob-apps-to-enterprises.md)の申請を直接企業に発行したりすることはできません。 このようなシナリオでは、どちらの場合も Windows デベロッパー センター ダッシュボードを使って申請を公開する必要があります。
+> この API を使って、[ビジネス向け Microsoft Store や教育機関向け Microsoft Store でのボリューム購入](../publish/organizational-licensing.md)の申請を公開したり、[LOB アプリ](../publish/distribute-lob-apps-to-enterprises.md)の申請を直接企業に発行したりすることはできません。 これらのシナリオの両方の申請を公開するのにパートナー センターを使用する必要があります。
 
 
 <span id="methods-for-app-submissions" />
 
 ## <a name="methods-for-managing-app-submissions"></a>アプリの申請を管理するためのメソッド
 
-アプリの申請を取得、作成、更新、コミット、または削除するには、次のメソッドを使用します。 これらのメソッドを使用するには、アプリをお客様自身のデベロッパー センター アカウントに用意し、まずダッシュボードでそのアプリの申請を 1 つ作成しておく必要があります。 詳しくは、「[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)」をご覧ください。
+アプリの申請を取得、作成、更新、コミット、または削除するには、次のメソッドを使用します。 これらのメソッドを使用する前に、アプリは、パートナー センター アカウントに既に存在する必要があります、まずパートナー センターで、アプリの 1 つの申請を作成する必要があります。 詳しくは、「[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)」をご覧ください。
 
 <table>
 <colgroup>
@@ -127,7 +127,7 @@ Microsoft Store 申請 API には、段階的なパッケージのロールア�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 次のメソッドを実行して、[アプリの申請をコミット](commit-an-app-submission.md)します。 これで、申請が完了し、更新がアカウントに適用されていることがデベロッパー センターに通知されます。
+5. 次のメソッドを実行して、[アプリの申請をコミット](commit-an-app-submission.md)します。 これでパートナー センターに通知は、申請が完了して、更新がアカウントに適用できるようになりましたする必要があります。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit
@@ -141,13 +141,13 @@ Microsoft Store 申請 API には、段階的なパッケージのロールア�
 
     申請の状態を確認するには、応答本文の *status* の値を確認します。 この値が **CommitStarted** から **PreProcessing** (要求が成功した場合) または **CommitFailed** (要求でエラーが発生した場合) に変わっています。 エラーがある場合は、*statusDetails* フィールドにエラーについての詳細情報が含まれています。
 
-7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 上記のメソッドを使うか、デベロッパー センターのダッシュボードから、申請の進行状況を引き続き監視できます。
+7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 または、以前のメソッドを使用して、パートナー センターにアクセスして申請の進行状況を監視する続行することができます。
 
 <span id="manage-gradual-package-rollout">
 
 ## <a name="methods-for-managing-a-gradual-package-rollout"></a>段階的なパッケージのロールアウトを管理するためのメソッド
 
-アプリの申請で更新されたパッケージを、アプリの Windows 10 のユーザーの一部に、段階的にロールアウトできます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 新しい申請を作成することなく、公開された申請のロールアウトの割合を変更する (または更新を停止する) ことができます。 デベロッパー センターで段階的なパッケージのロールアウトの有効化と管理を行う方法などについて詳しくは、[この記事](../publish/gradual-package-rollout.md)をご覧ください。
+アプリの申請で更新されたパッケージを、アプリの Windows 10 のユーザーの一部に、段階的にロールアウトできます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 新しい申請を作成することなく、公開された申請のロールアウトの割合を変更する (または更新を停止する) ことができます。 詳しくなどを有効にして、パートナー センターで、段階的なパッケージのロールアウトを管理する方法については、[この記事](../publish/gradual-package-rollout.md)を参照してください。
 
 アプリの申請の段階的なパッケージのロールアウトをプログラムによって有効化するには、Microsoft Store 申請 API のメソッドを使用して、次の手順に従います。
 
@@ -339,7 +339,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 | 値      | 型   | 説明      |
 |------------|--------|-------------------|
-| id            | string  | 申請 ID。 この ID は、[アプリの申請の作成](create-an-app-submission.md)要求、[すべてのアプリの取得](get-all-apps.md)要求、[アプリの取得](get-an-app.md)要求に対する応答データで確認できます。 デベロッパー センター ダッシュボードで作成された申請の場合、この ID はダッシュボードの申請ページの URL にも含まれています。  |
+| id            | string  | 申請 ID。 この ID は、[アプリの申請の作成](create-an-app-submission.md)要求、[すべてのアプリの取得](get-all-apps.md)要求、[アプリの取得](get-an-app.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なも。  |
 | applicationCategory           | string  |   アプリの[カテゴリとサブカテゴリ](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table)を指定する文字列です。 カテゴリとサブカテゴリは、アンダースコア "_" で 1 つの文字列に連結します (例: **BooksAndReference_EReader**)。      |  
 | pricing           |  object  | アプリの価格設定情報が保持される[価格リソース](#pricing-object)です。        |   
 | visibility           |  string  |  アプリの表示です。 次のいずれかの値を使用できます。 <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
@@ -362,7 +362,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 | enterpriseLicensing           |  string  |  アプリのエンタープライズ ライセンス動作を示す[エンタープライズ ライセンス値](#enterprise-licensing)のいずれかです。  |    
 | allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  [アプリを将来の Windows 10 デバイス ファミリで利用できるようにする](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)ことを Microsoft が許可されているかどうかを示すします。    |    
 | allowTargetFutureDeviceFamilies           | object   |  キーと値のペアのディクショナリです。各キーは [Windows 10 デバイス ファミリ](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) を表し、各値は指定されたデバイス ファミリをアプリがターゲットにできるかどうかを示すブール値です。     |    
-| friendlyName           |   文字列  |  デベロッパー センター ダッシュボードに表示される申請のフレンドリ名です。 この値は、申請を作成するときに生成されます。       |  
+| friendlyName           |   string  |  パートナー センターに示すように、申請のフレンドリ名。 この値は、申請を作成するときに生成されます。       |  
 | trailers           |  array |   アプリの登録情報用のビデオ トレーラーを表す[トレーラー リソース](#trailer-object)を 15 個まで格納する配列です。<br/><br/>   |  
 
 
@@ -389,8 +389,8 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 > [!IMPORTANT]
 > **セール** リソースはサポートを終了しました。現在、Microsoft Store 申請 API を使ってアプリの申請の販売データを取得または変更することはできません。 将来的には、Microsoft Store 申請 API を更新して、アプリの申請のセール情報にプログラムでアクセスする新しい方法を導入する予定です。
->    * [アプリの申請を取得する GET メソッド](get-an-app-submission.md)を呼び出すと、*セール* リソースは空になります。 引き続きデベロッパー センター ダッシュボードを使って、アプリの申請のセール データを取得することができます。
->    * [アプリの申請を更新する PUT メソッド](update-an-app-submission.md)を呼び出すとき、*セール*の値に含まれた情報は無視されます。 引き続きデベロッパー センター ダッシュボードを使って、アプリの申請のセール データを変更することができます。
+>    * [アプリの申請を取得する GET メソッド](get-an-app-submission.md)を呼び出すと、*セール* リソースは空になります。 パートナー センターを使って、アプリの申請のセール データを取得する続行することができます。
+>    * [アプリの申請を更新する PUT メソッド](update-an-app-submission.md)を呼び出すとき、*セール*の値に含まれた情報は無視されます。 パートナー センターを使って、アプリの申請のセール データを変更する続行することができます。
 
 このリソースには、次の値があります。
 
@@ -425,9 +425,9 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 |  copyrightAndTrademarkInfo                |   string      |  (省略可能) [著作権や商標の情報](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info)です。  |
 |  keywords                |  array       |  結果にアプリが表示される確率を高める[キーワード](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)の配列です。    |
 |  licenseTerms                |    string     | アプリの[ライセンス条項](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) (省略可能) です。     |
-|  privacyPolicy                |   string      |   この値は使われなくなりました。 アプリのプライバシー ポリシーの URL を設定または変更するには、デベロッパー センター ダッシュボードの[プロパティ](../publish/enter-app-properties.md#privacy-policy-url) ページを使用する必要があります。 この値は、申請 API の呼び出しから省略することができます。 この値を設定しても無視されます。       |
-|  supportContact                |   string      |  この値は使われなくなりました。 アプリのサポート連絡先の URL やメール アドレスを設定または変更するには、デベロッパー センター ダッシュボードの[プロパティ](../publish/enter-app-properties.md#support-contact-info) ページを使用する必要があります。 この値は、申請 API の呼び出しから省略することができます。 この値を設定しても無視されます。        |
-|  websiteUrl                |   string      |  この値は使われなくなりました。 アプリの Web ページの URL を設定または変更するには、デベロッパー センター ダッシュボードの[プロパティ](../publish/enter-app-properties.md#website) ページを使用する必要があります。 この値は、申請 API の呼び出しから省略することができます。 この値を設定しても無視されます。      |    
+|  privacyPolicy                |   string      |   この値は使われなくなりました。 設定したり、アプリのプライバシー ポリシーの URL を変更したりはパートナー センターでの[プロパティ](../publish/enter-app-properties.md#privacy-policy-url)ページでこれを行う必要があります。 この値は、申請 API の呼び出しから省略することができます。 この値を設定しても無視されます。       |
+|  supportContact                |   string      |  この値は使われなくなりました。 設定したり、アプリのサポートの連絡先の URL やメールのアドレスを変更したりはパートナー センターでの[プロパティ](../publish/enter-app-properties.md#support-contact-info)ページでこれを行う必要があります。 この値は、申請 API の呼び出しから省略することができます。 この値を設定しても無視されます。        |
+|  websiteUrl                |   string      |  この値は使われなくなりました。 設定またはアプリの web ページの URL を変更はパートナー センターでの[プロパティ](../publish/enter-app-properties.md#website)ページでこれを行う必要があります。 この値は、申請 API の呼び出しから省略することができます。 この値を設定しても無視されます。      |    
 |  description               |    string     |   アプリの登録情報の[説明](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description)です。   |     
 |  features               |    array     |  アプリの[機能](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features)を示す最大 20 個の文字列の配列です。     |
 |  releaseNotes               |  string       |  アプリの[リリース ノート](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes)です。    |
@@ -451,7 +451,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 |-----------------|---------|------|
 |  fileName               |    string     |   申請用にアップロードした ZIP アーカイブに含まれている画像ファイルの名前です。    |     
 |  fileStatus               |   string      |  画像ファイルの状態です。 次のいずれかの値を使用できます。 <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
-|  id  |  string  | 画像の ID です。 この値は、デベロッパー センターによって提供されます。  |
+|  id  |  string  | 画像の ID です。 この値は、パートナー センターによって提供されます。  |
 |  description  |  string  | 画像の説明です。  |
 |  imageType  |  string  | 画像の種類を示します。 現在サポートされている文字列は次のとおりです。 <p/>[スクリーン ショット画像](../publish/app-screenshots-and-images.md#screenshots): <ul><li>Screenshot (デスクトップのスクリーンショットにはこの値を使用します)</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[ストア ロゴ](../publish/app-screenshots-and-images.md#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icon (1:1 の 300 x 300 ピクセルのロゴにはこの値を使用します)</li></ul><p/>[プロモーション画像](../publish/app-screenshots-and-images.md#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Xbox 画像](../publish/app-screenshots-and-images.md#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[オプションのプロモーション画像](../publish/app-screenshots-and-images.md#optional-promotional-images): <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
 
@@ -460,7 +460,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 ### <a name="gaming-options-resource"></a>ゲーム オプション リソース
 
-このリソースにはアプリのゲーム関連の設定が保持されます。 このリソースの値は、デベロッパー センター ダッシュボードの申請の[ゲーム設定](../publish/enter-app-properties.md#game-settings)に対応します。
+このリソースにはアプリのゲーム関連の設定が保持されます。 このリソースの値は、パートナー センターでの申請の[ゲームの設定](../publish/enter-app-properties.md#game-settings)に対応します。
 
 ```json
 {
@@ -567,13 +567,13 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 このリソースには、次の値があります。  
 
 > [!NOTE]
-> [アプリの申請の更新](update-an-app-submission.md)のメソッドを呼び出す場合、要求本文に必要なのは、このオブジェクトの *fileName*、*fileStatus*、*minimumDirectXVersion*、*minimumSystemRam* の値のみです。 他の値はデベロッパー センターによって設定されます。
+> [アプリの申請の更新](update-an-app-submission.md)のメソッドを呼び出す場合、要求本文に必要なのは、このオブジェクトの *fileName*、*fileStatus*、*minimumDirectXVersion*、*minimumSystemRam* の値のみです。 パートナー センターによっては、他の値が設定されます。
 
 | 値           | 型    | 説明                   |
 |-----------------|---------|------|
 | fileName   |   string      |  パッケージの名前。    |  
 | fileStatus    | string    |  パッケージの状態です。 次のいずれかの値を使用できます。 <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  string   |  パッケージを一意に識別する ID です。 この値は、デベロッパー センターによって提供されます。   |     
+| id    |  string   |  パッケージを一意に識別する ID です。 この値は、パートナー センターによって提供されます。   |     
 | version    |  string   |  アプリ パッケージのバージョンです。 詳しくは、「[パッケージ バージョンの番号付け](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering)」をご覧ください。   |   
 | architecture    |  string   |  パッケージのアーキテクチャ (ARM など) です。   |     
 | languages    | array    |  アプリがサポートする言語の言語コードの配列です。 詳しくは、「[サポートされている言語](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)」をご覧ください。    |     
@@ -639,13 +639,13 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 | fallbackSubmissionId    |  string   |  段階的なロールアウトのパッケージを入手しないユーザーが受信する申請の ID。   |          
 
 > [!NOTE]
-> *packageRolloutStatus* と *fallbackSubmissionId* の値はデベロッパー センターで割り当てられます。これらの値は、開発者が設定する値ではありません。 これらの値を要求本文に含めても、これらの値は無視されます。
+> *PackageRolloutStatus*と*fallbackSubmissionId*値は、パートナー センターで割り当てられているし、開発者が設定するものではありません。 これらの値を要求本文に含めると、これらの値は無視されます。
 
 <span id="trailer-object" />
 
 ### <a name="trailers-resource"></a>トレーラー リソース
 
-このリソースは、アプリの登録情報のビデオ トレーラーを表します。 このリソースの値は、デベロッパー センター ダッシュボードの申請の[トレーラー](../publish/app-screenshots-and-images.md#trailers) オプションに対応します。
+このリソースは、アプリの登録情報のビデオ トレーラーを表します。 このリソースの値は、パートナー センターでの申請の[トレーラー](../publish/app-screenshots-and-images.md#trailers)オプションに対応します。
 
 [アプリの申請リソース](#app-submission-object)の *trailers* 配列には最大 15 個のトレーラー リソースを追加できます。 申請用のトレーラー ビデオ ファイルとサムネイル画像をアップロードするには、申請用のパッケージと登録情報の画像が含まれているものと同一の ZIP アーカイブにこれらのファイルを追加し、この ZIP アーカイブを申請用の共有アクセス署名 (SAS) URI にアップロードします。 ZIP アーカイブを SAS URI にアップロードする方法について詳しくは、「[アプリの申請の作成](#create-an-app-submission)」をご覧ください。
 
@@ -677,9 +677,9 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 | 値           | 型    | 説明        |
 |-----------------|---------|------|
-|  id               |    string     |   トレーラーの ID です。 この値は、デベロッパー センターによって提供されます。   |
+|  id               |    string     |   トレーラーの ID です。 この値は、パートナー センターによって提供されます。   |
 |  videoFileName               |    string     |    申請用のファイルが含まれた ZIP アーカイブ内のトレーラー ビデオ ファイルの名前です。    |     
-|  videoFileId               |   string      |  トレーラー ビデオ ファイルの ID です。 この値は、デベロッパー センターによって提供されます。   |     
+|  videoFileId               |   string      |  トレーラー ビデオ ファイルの ID です。 この値は、パートナー センターによって提供されます。   |     
 |  trailerAssets               |   object      |  キーと値のペアのディクショナリです。各キーは言語コードであり、各値はトレーラーの追加のロケール固有アセットを含む[トレーラー アセット リソース](#trailer-assets-object)です。 サポートされている言語コードについて詳しくは、「[サポートされている言語](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)」をご覧ください。    |     
 
 > [!NOTE]
@@ -706,7 +706,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 | 値           | 型    | 説明           |
 |-----------------|---------|------|
 |  fileName               |    string     |   申請用にアップロードした ZIP アーカイブに含まれているサムネイル画像ファイルの名前です。    |     
-|  id  |  string  | サムネイル画像の ID です。 この値は、デベロッパー センターによって提供されます。  |
+|  id  |  string  | サムネイル画像の ID です。 この値は、パートナー センターによって提供されます。  |
 |  description  |  string  | サムネイル画像の説明です。 この値はメタデータのみです。ユーザーには表示されません。   |
 
 <span/>
@@ -726,7 +726,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 |  Base               |   価格帯が設定されていない場合、アプリの基本価格が使用されます。      |     
 |  NotAvailable              |   アプリは指定された地域で提供されていません。    |     
 |  Free              |   アプリは無償です。    |    
-|  Tier*xxx*               |   アプリの価格帯を指定する文字列 (**Tier<em>xxxx</em>** の形式)。 現在のところ、次の範囲の価格帯がサポートされています。<br/><br/><ul><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **true** の場合、アカウントで利用可能な価格帯値は **Tier1012** - **Tier1424** です。</li><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **false** の場合、アカウントで利用可能な価格帯値は **Tier2** - **Tier96** です。</li></ul>各価格帯に関連付けられた市場固有の価格を含む、開発者アカウントで利用可能な価格帯の詳しい表を参照するには、デベロッパー センター ダッシュボードでいずれかのアプリ申請の **[価格と使用可能状況]** ページにアクセスし、**[市場と特別価格]** セクションで **[view table]** (表を表示) リンクをクリックします (一部の開発者アカウントでは、このリンクは **[Pricing]** (価格) セクションにあります)。    |
+|  Tier*xxx*               |   アプリの価格帯を指定する文字列 (**Tier<em>xxxx</em>** の形式)。 現在のところ、次の範囲の価格帯がサポートされています。<br/><br/><ul><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **true** の場合、アカウントで利用可能な価格帯値は **Tier1012** - **Tier1424** です。</li><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **false** の場合、アカウントで利用可能な価格帯値は **Tier2** - **Tier96** です。</li></ul>価格の完全な表をご覧くださいに、各階層に関連付けられている市場固有の価格を含む、開発者アカウントで利用可能な階層がパートナー センターで、アプリの申請の**価格と使用可能状況**のページに移動し、**市場と特別価格**のセクションで**テーブルを表示**リンクをクリックして (一部の開発者アカウントでは、このリンクは、**価格**のセクションで)。    |
 
 
 <span id="enterprise-licensing" />
@@ -736,7 +736,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 次の値は、アプリに対する組織のライセンス動作を表します。 これらのオプションについて詳しくは、「[組織のライセンス オプション](https://msdn.microsoft.com/windows/uwp/publish/organizational-licensing)」をご覧ください。
 
 > [!NOTE]
-> アプリに対する組織のライセンス オプションは申請 API を通じて構成できますが、この API を使って[ビジネス向け Microsoft Store や教育機関向け Microsoft Store でのボリューム購入](../publish/organizational-licensing.md)の申請を公開することはできません。 ビジネス向け Microsoft Store for Business や教育機関向け Microsoft Store に申請を公開するには、Windows デベロッパー センター ダッシュボードを使う必要があります。
+> アプリに対する組織のライセンス オプションは申請 API を通じて構成できますが、この API を使って[ビジネス向け Microsoft Store や教育機関向け Microsoft Store でのボリューム購入](../publish/organizational-licensing.md)の申請を公開することはできません。 ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアへの申請を公開するには、パートナー センターを使用する必要があります。
 
 
 | 値           |  説明      |
@@ -775,4 +775,4 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 * [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [Microsoft Store 申請 API を使用したアプリ データの取得](get-app-data.md)
-* [デベロッパー センター ダッシュボードからのアプリの申請](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
+* [パートナー センターでアプリの申請](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)

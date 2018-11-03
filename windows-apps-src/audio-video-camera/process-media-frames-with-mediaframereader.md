@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 722a411bc6363d3a10b5db0f609b08f5d14b3f8d
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: c733fe0f4e8ee955c68ff4ec30bd9f9f2675899d
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939247"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5993929"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>MediaFrameReader を使ったメディア フレームの処理
 
@@ -46,7 +46,7 @@ ms.locfileid: "5939247"
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>フレーム ソースとフレーム ソース グループを選択する
-メディア フレームを処理する多くのアプリは、デバイスの色、深度カメラなど、複数のソースからフレームを一度に取得する必要があります。 [**MediaFrameSourceGroup**] (https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) オブジェクトは、同時に使用できるメディア フレーム ソースのセットを表します。 静的メソッド [ **MediaFrameSourceGroup.FindAllAsync** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync) を呼び出して、現在のデバイスでサポートされているフレーム ソースのすべてのグループの一覧を取得します。
+メディア フレームを処理する多くのアプリは、デバイスの色、深度カメラなど、複数のソースからフレームを一度に取得する必要があります。 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup)オブジェクトは、同時に使用できるメディア フレーム ソースのセットを表します。 静的メソッド [ **MediaFrameSourceGroup.FindAllAsync** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync) を呼び出して、現在のデバイスでサポートされているフレーム ソースのすべてのグループの一覧を取得します。
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 

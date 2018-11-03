@@ -1,23 +1,23 @@
 ---
 author: Xansky
-Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in the Dev Center dashboard.
-title: ダッシュボードで実験を定義する
+Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in Partner Center.
+title: パートナー センターで実験を定義します。
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験
+keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
 ms.localizationpriority: medium
-ms.openlocfilehash: 2acbeb0f67985537524a352507910f5e526ae0bd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 98c1d48524bcc525f57f42e5364d27611602ab52
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939860"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995101"
 ---
-# <a name="define-your-experiment-in-the-dashboard"></a>ダッシュボードで実験を定義する
+# <a name="define-your-experiment-in-partner-center"></a>パートナー センターで実験を定義します。
 
-[デベロッパー センター ダッシュボードでプロジェクトを作成して、リモート変数を定義](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)し、[アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)したら、プロジェクトで実験を作成することができます。 実験を作成するときは、ゴールとユーザーが受け取るバリエーションを定義します。
+[プロジェクトを作成しパートナー センターでリモート変数を定義](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)し、[実験用のアプリのコード](code-your-experiment-in-your-app.md)、した後、プロジェクトで実験を作成する準備ができたらします。 実験を作成するときは、ゴールとユーザーが受け取るバリエーションを定義します。
 
 実験の作成および実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
@@ -26,7 +26,7 @@ ms.locfileid: "5939860"
 
 ## <a name="create-your-experiment"></a>実験を作成する
 
-1. [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。
+1. [パートナー センター](https://partner.microsoft.com/dashboard)にサインインします。
 2. **[アプリ]** で、実験を作成するアプリを選択します。
 3. ナビゲーション ウィンドウで、**[サービス]** を選択し、**[実験]** を選択します。
 4. **[実験]** ページのプロジェクトの表で、実験を追加するプロジェクトを決め、そのプロジェクトの **[実験の追加]** リンクをクリックします。
@@ -36,7 +36,7 @@ ms.locfileid: "5939860"
     > ユーザーに公開する実験 (ユーザーに提供されるアプリのバージョンで使用されているプロジェクト ID に関連付けられている実験) を作成する場合には、このチェック ボックスをオンにしないでください。 実験がアクティブなときに実験を編集すると、実験の結果が無効になります。
 
 7. **[プロジェクト名]** ドロップダウンでは、現在のプロジェクトが自動的に選択されています。 別のプロジェクトに新しい実験を追加する場合は、ここでそのプロジェクトを選択できます。 それ以外の場合は、この選択はそのままにします。
-8.   [プロジェクトID](run-app-experiments-with-a-b-testing.md#terms) の値をメモしておきます。 [アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)する場合、バリエーション データを受け取り、ビュー イベントとコンバージョン イベントをデベロッパー センターにレポートできるように、コードでこの ID を参照する必要があります。
+8.   [プロジェクトID](run-app-experiments-with-a-b-testing.md#terms) の値をメモしておきます。 [実験用のアプリのコード](code-your-experiment-in-your-app.md)をする必要がありますで参照するときこの ID コード バリエーション データを受信し、パートナー センターにビュー イベントとコンバージョン イベントを報告できます。
 9. **[ビュー イベント]** セクションで、実験の[ビュー イベント](run-app-experiments-with-a-b-testing.md#terms) の名前を **[ビュー イベント名]** フィールドに入力します。
 10. **[ゴールとコンバージョン イベント]** セクションで、実験のゴールを 1 つ以上定義します。
   * **[ゴール名]** フィールドに、わかりやすいゴールの名前を入力します。 実験を実行すると、この名前が実験の結果の要約に表示されます。
@@ -44,7 +44,7 @@ ms.locfileid: "5939860"
   * **[目標]** フィールドで、コンバージョン イベントの発生回数を最大化するか最小化するかに応じて、**[最大化]** または **[最小化]** を選択します。 この情報は、実験の結果の要約で使用されます。
 
 > [!NOTE]
-> デベロッパー センターで報告されるのは、24 時間以内に発生した、各ユーザー ビューの最初のコンバージョン イベントのみです。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、コンバージョンを行ったユーザーの数を最大化することをゴールとしていた場合に、単一のユーザーによって、サンプルのユーザー グループの実験の結果が歪曲されないようにすることを目的としています。
+> パートナー センターでは、24 時間の期間内の各ユーザー ビューの最初のコンバージョン イベントのみを報告します。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、コンバージョンを行ったユーザーの数を最大化することをゴールとしていた場合に、単一のユーザーによって、サンプルのユーザー グループの実験の結果が歪曲されないようにすることを目的としています。
 
 <span id="define-the-variations-and-settings-for-the-experiment" />
 
@@ -66,7 +66,7 @@ ms.locfileid: "5939860"
 
 実験の必須フィールドへの入力が完了したら、**[保存]** をクリックして実験を保存します。
 
-実験のパラメーターに問題がなく、実験をアクティブ化する準備ができたら、**[アクティブ化]** をクリックして、アプリから実験データの収集を開始することができます。 実験がアクティブになっていると、アプリはバリエーション変数を取得し、デベロッパー センターにビュー イベントとコンバージョン イベントをレポートできます。 詳しくは、「[デベロッパー センター ダッシュボードで実験を実行および管理します](manage-your-experiment.md)」をご覧ください。
+実験のパラメーターに問題がなく、実験をアクティブ化する準備ができたら、**[アクティブ化]** をクリックして、アプリから実験データの収集を開始することができます。 実験がアクティブになって、アプリはバリエーション変数を取得し、パートナー センターにビュー イベントとコンバージョン イベントを報告できます。 詳細について[を実行し実験を管理するパートナー センターで](manage-your-experiment.md)参照してください。
 
 > [!IMPORTANT]
 > 1 つのプロジェクトには、同時に 1 つのアクティブな実験のみを含むことができます。 実験の作成時に **[編集可能な実験]** チェック ボックスをオンにしていないと、実験をアクティブ化した後で実験のパラメーターを変更できなくなります。 アプリで実験のコードを記述してから実験をアクティブ化することをお勧めします。
@@ -87,14 +87,14 @@ ms.locfileid: "5939860"
 4. 複製された実験で、ターゲットのバリエーションの配布が正しいことを確認します。
 5. 複製された実験をアクティブ化して、ユーザーに実験をリリースします。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-デベロッパー センター ダッシュボードで実験を定義し、アプリでその実験のコードを記述したら、[デベロッパー センター ダッシュボードで実験を実行および管理します](manage-your-experiment.md)。
+パートナー センターで、実験を定義して、アプリで、実験のコード[を実行しパートナー センターで実験を管理](manage-your-experiment.md)する準備ができたらします。
 
 ## <a name="related-topics"></a>関連トピック
 
-* [プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [プロジェクトを作成し、パートナー センターでリモート変数を定義します。](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [アプリの実験用のコードを記述する](code-your-experiment-in-your-app.md)
-* [デベロッパー センター ダッシュボードで実験を管理する](manage-your-experiment.md)
+* [パートナー センターで実験を管理します。](manage-your-experiment.md)
 * [A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)

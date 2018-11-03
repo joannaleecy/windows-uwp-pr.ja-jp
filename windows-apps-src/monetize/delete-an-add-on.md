@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
-description: Windows デベロッパー センター アカウントに登録されているアプリのアドオンを削除するには、Microsoft Store 申請 API の以下のメソッドを使います。
+description: パートナー センター アカウントに登録されているアプリのアドオンを削除するのに、Microsoft Store 申請 API の以下のメソッドを使用します。
 title: アドオンの削除
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, 削除, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: db8c394cac29afabba5229e21712320c82b89364
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 53c7125b48c32c8e39861f933f80fb88d6d904be
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935066"
+ms.locfileid: "5989771"
 ---
 # <a name="delete-an-add-on"></a>アドオンの削除
 
-Windows デベロッパー センター アカウントに登録されているアプリのアドオン (アプリ内製品または IAP とも呼ばれます) を削除するには、Microsoft Store 申請 API の以下のメソッドを使います。
+パートナー センター アカウントに登録されているアプリのアドオン (別名アプリ内製品または IAP) を削除する、Microsoft Store 申請 API の以下のメソッドを使います。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -46,7 +46,7 @@ Windows デベロッパー センター アカウントに登録されている�
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | string | 必須。 削除するアドオンのストア ID。 ストア ID はデベロッパー センター ダッシュボードで確認できます。  |
+| id | string | 必須。 削除するアドオンのストア ID。 ストア ID は、パートナー センターで利用できます。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求が無効です。 |
 | 404  | 指定したアドオンは見つかりませんでした。  |
-| 409  | 指定したアドオンは見つかりましたが、現在の状態で削除できなかったか、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアドオンで使用されています。 |   
+| 409  | 指定したアドオンは見つかりましたが、現在の状態で削除できなかった可能性がありますかは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)パートナー センター機能、アドオンで使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

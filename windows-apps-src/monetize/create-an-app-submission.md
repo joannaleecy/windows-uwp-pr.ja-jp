@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: Windows デベロッパー センター アカウントに登録されているアプリの新しい申請を作成するには、Microsoft Store 申請 API の以下のメソッドを使います。
+description: パートナー センター アカウントに登録されているアプリの新しい申請を作成する、Microsoft Store 申請 API でこのメソッドを使います。
 title: アプリの申請の作成
 ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請の作成
 ms.localizationpriority: medium
-ms.openlocfilehash: 740e65d79636c9e5451e68fa84ce2eae4e3252c6
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: fd97efca42049fd9f5adc4d051688074d91132fa
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5935695"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992066"
 ---
 # <a name="create-an-app-submission"></a>アプリの申請の作成
 
-Windows デベロッパー センター アカウントに登録されているアプリの新しい申請を作成するには、Microsoft Store 申請 API の以下のメソッドを使います。 このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-app-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-app-submission.md)します。
+パートナー センター アカウントに登録されているアプリの新しい申請を作成する、Microsoft Store 申請 API でこのメソッドを使います。 このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-app-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-app-submission.md)します。
 
 このメソッドが Microsoft Store 申請 API を使ったアプリの申請の作成プロセスにどのように適合するかについては、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。
 
@@ -188,7 +188,7 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 400  | 要求が無効なため、申請を作成できませんでした。 |
-| 409  | アプリの現在の状態が原因で申請を作成できませんでした。または、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアプリで使用されています。 |   
+| 409  | アプリの現在の状態が原因、申請を作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

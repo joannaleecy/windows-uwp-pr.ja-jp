@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, 既知の問題, トラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: 3adbc12b0e891461a97bb90575141517b280be76
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d1b3b1fb68ed246d6a5a8334c5cf4d1c0754b719
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941816"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992561"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>アプリ内広告の既知の問題とトラブルシューティング
 
@@ -42,7 +42,7 @@ ms.locfileid: "5941816"
 
 広告が表示されない場合、ネットワーク エラーを含むさまざまな理由があります。 次の理由も考えられます。
 
-* Windows デベロッパー センターで、アプリのコードの **AdControl** を超えるサイズまたはこれよりも小さいサイズの広告ユニットが選択されています。
+* パートナー センターで大きいまたはアプリのコードで**AdControl**のサイズより小さいサイズの広告ユニットを選択します。
 
 * 広告ユニット ID に[テスト モードの値](set-up-ad-units-in-your-app.md#test-ad-units)を使ってライブ アプリを実行した場合、広告は表示されません。
 
@@ -60,7 +60,7 @@ ms.locfileid: "5941816"
 
 * サイドローディングされたアプリやエミュレーターで実行されているアプリには、ライブ広告は表示されません。
 
-ライブ広告ユニットによってテスト広告が提供されているとき、Windows デベロッパー センターには、広告ユニットの状態として **"Active and serving test ads"** が表示されます。 現時点で、これは、電話アプリには適用されません。
+ライブ広告ユニットがテスト広告を提供すると、広告ユニットのステータスはパートナー センターで**アクティブ、およびサービスのテスト広告**表示されます。 現時点で、これは、電話アプリには適用されません。
 
 
 <span id="reference_errors"/>

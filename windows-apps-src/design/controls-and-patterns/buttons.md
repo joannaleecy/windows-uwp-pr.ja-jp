@@ -15,49 +15,49 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 922dccc61954e2022cbe76f2ca5d5b1f9e548733
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919464"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5989536"
 ---
 # <a name="buttons"></a>ボタン
 
-ボタンは、特定の操作を直ちに実行する方法をユーザーに与えます。 ナビゲーション、繰り返されるアクションは、メニューを表示するなど、特定のタスクに特化していくつかのボタンです。
+ボタンは、特定の操作を直ちに実行する方法をユーザーに与えます。 いくつかのボタンはナビゲーション、繰り返される操作は、メニューを表示するなど、特定のタスクの特殊な。
 
 ![ボタンの例](images/controls/button.png)
 
-XAML フレームワークには、いくつかの特殊なボタン コントロールと同様に標準のボタン コントロールが用意されています。
+XAML フレームワークでは、いくつかの特殊なボタン コントロールと同様に、標準的なボタン コントロールを提供します。
 
 コントロール | 説明
 ------- | -----------
-[ボタン](/uwp/api/windows.ui.xaml.controls.button) | 即時の操作を開始します。 Click イベントまたはコマンド バインディングを使用できます。
+[ボタン](/uwp/api/windows.ui.xaml.controls.button) | 即座にアクションを開始します。 Click イベントまたはコマンドのバインディングを使用できます。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 押されている間に継続的には、Click イベントを発生させるボタンです。
-[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A ボタンをナビゲーションに使用される、ハイパーリンクのようにスタイルが適用されます。 詳しくは、「[ハイパーリンク](hyperlinks.md)」をご覧ください。
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 開くには、接続されているフライアウト シェブロン ボタンです。
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 2 つの辺を持つボタンです。 一側の操作を開始して、反対側にメニューが開きます。
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 2 つの辺を持つトグル ボタンです。 一方をオン/オフを切り替えます、反対側にメニューが開きます。
+[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A ボタンをナビゲーションの使用、ハイパーリンクのようにスタイルが適用されます。 詳しくは、「[ハイパーリンク](hyperlinks.md)」をご覧ください。
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 添付のポップアップを開く山形記号のボタンです。
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 2 つの辺ボタンです。 一方の辺の操作を開始して、その他の側にメニューが開きます。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 2 つの辺とトグル ボタン。 一方の辺をオン/オフを切り替えます、反対側メニューが開きます。
 
-| **Windows の UI ライブラリを取得します。** |
+| **Windows UI のライブラリを入手します。** |
 | - |
-| DropDownButton、SplitButton、および ToggleSplitButton は、NuGet パッケージの新しいコントロールと UWP のアプリケーションの UI 機能を含む、Windows UI ライブラリの一部として含まれています。 インストール方法など、詳細な情報については、 [Windows の UI ライブラリの概要](https://docs.microsoft.com/uwp/toolkits/winui/)を参照してください。 |
+| DropDownButton、分割ボタンと ToggleSplitButton は、Windows UI のライブラリ、新しいコントロールと UWP アプリの UI の機能が含まれている NuGet パッケージの一部として含まれています。 詳しくは、インストール手順を含む、 [Windows UI のライブラリの概要](https://docs.microsoft.com/uwp/toolkits/winui/)をご覧ください。 |
 
-| **プラットフォーム Api** | **Windows UI ライブラリの Api** |
+| **プラットフォーム Api** | **Windows UI ライブラリ Api** |
 | - | - |
-| して[[イベント] をクリックして](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)[コマンドのプロパティ](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton クラス](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)、 [SplitButton クラス](/uwp/api/microsoft.ui.xaml.controls.splitbutton)、 [ToggleSplitButton クラス](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| して[クリックしてイベント](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)、[コマンドのプロパティ](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton クラス](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)、 [SplitButton クラス](/uwp/api/microsoft.ui.xaml.controls.splitbutton)、 [ToggleSplitButton クラス](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
-**ボタン**を使用すると、ユーザーがフォームを送信するなどの操作が直ちに開始できるようにします。
+ユーザーがフォームの送信など、即座にアクションを開始できるようにするには、**ボタン**を使います。
 
-別のページに移動するのには、アクション ボタンを使用しません。[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton)を使用してください。 詳しくは、「[ハイパーリンク](hyperlinks.md)」をご覧ください。
-> 例外: ウィザードでのページの移動には、[戻る] と [次へ] というラベルのボタンを使います。 他の種類の下位または上位のレベルでは、ナビゲーションを使用して、 [[戻る] ボタン](../basics/navigation-history-and-backwards-navigation.md)。
+別のページに移動する操作では、ボタンを使用しないでください。[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton)を使用してください。 詳しくは、「[ハイパーリンク](hyperlinks.md)」をご覧ください。
+> 例外: ウィザードでのページの移動には、[戻る] と [次へ] というラベルのボタンを使います。 他の種類の前に戻るまたは、上位レベルへのナビゲーションを使用して、 [[戻る] ボタン](../basics/navigation-history-and-backwards-navigation.md)。
 
-ユーザーは、繰り返しアクションをトリガーするときの**RepeatButton**を使用します。 たとえば、カウンターの値を増減する、RepeatButton を使用します。
+ユーザーは、繰り返しアクションをトリガーする場合は、 **RepeatButton**を使用します。 たとえば、カウンターの値を増減する、RepeatButton を使用します。
 
-ボタンに複数のオプションを含むフライアウトがあるときの**DropDownButton**を使用します。 既定のシェブロン ボタンにフライアウトが含まれていることを視覚を提供します。
+ボタンには、その他のオプションが含まれているポップアップ場合は、 **DropDownButton**を使用します。 既定の山形記号は、視覚、ボタンにはポップアップが含まれているを提供します。
 
-の**SplitButton**は、ユーザーが直接操作を開始するかを選択していないその他のオプションから個別にする場合に使用します。
+ユーザーを即座にアクションを開始またはいない追加のオプションからを個別に選択できるようにする場合は、 **SplitButton**を使用します。
 
 ## <a name="examples"></a>例
 
@@ -206,22 +206,22 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="create-a-drop-down-button"></a>ドロップ ダウン ボタンを作成します。
+## <a name="create-a-drop-down-button"></a>ドロップダウン ボタンを作成します。
 
-> DropDownButton Windows 10、1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) のバージョンを必要とするまたはそれ以降、または[Windows の UI ライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)です。
+> DropDownButton には、Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) が必要ですか、後で、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton)には、他のオプションが含まれている添付のフライアウトを使用している視覚的なインジケーターとして、山形の記号を表示するボタンです。 フライアウトは、標準のボタンと同じ動作があります。外観だけとは異なります。
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton)は、その他のオプションが含まれている添付のポップアップが設定されている視覚的なインジケーターとして、山形記号を表示するボタンです。 ポップアップ; の標準的なボタンと同じ動作があります。外観だけが異なります。
 
-ドロップ ダウン ボタンは、Click イベントを継承しますが、通常これを使用しません。 代わりに、フライアウトのプロパティを使用して、フライアウトを接続し、フライアウトのメニュー オプションを使用してアクションを起動します。 フライアウトは、ボタンがクリックされたときに自動的に開きます。
+ドロップダウン ボタンには、Click イベントが継承されますが、通常は使用しません。 代わりに、ポップアップ プロパティを使用して、ポップアップをアタッチし、ポップアップ メニュー オプションを使用して、アクションを起動します。 ポップアップは、ボタンがクリックされたときに自動的に開きます。
 
 > [!TIP]
-> フライアウト方法の詳細については、[メニューおよびコンテキスト メニュー](menus.md)を参照してください。
+> ポップアップについて詳しくは、[メニューとコンテキスト メニュー](menus.md)を参照してください。
 
-### <a name="example---drop-down-button"></a>ドロップ ダウン ボタンの使用例
+### <a name="example---drop-down-button"></a>例 - ドロップダウン ボタン
 
-次の使用例は、RichEditBox 内の段落の配置のためのコマンドを含むフライアウトを使用して、ドロップ ダウン ボタンを作成する方法を示しています。 (他の情報やコードを参照してください[リッチ エディット ボックス](rich-edit-box.md))。
+この例では、RichEditBox で段落の配置のコマンドを含むポップアップをドロップダウン ボタンを作成する方法を示します。 (詳細とコードは、参照[リッチ エディット ボックス](rich-edit-box.md))。
 
-![ドロップ ダウン ボタンの配置コマンドを使用して](images/drop-down-button-align.png)
+![ドロップダウン ボタンを配置コマンド](images/drop-down-button-align.png)
 
 ```xaml
 <DropDownButton ToolTipService.ToolTip="Alignment">
@@ -267,26 +267,26 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-split-button"></a>分割ボタンを作成します。
 
-> SplitButton Windows 10、1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) のバージョンを必要とするまたはそれ以降、または[Windows の UI ライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)です。
+> SplitButton には、Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) が必要ですか、後で、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-の[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)は、個別に呼び出すことができる 2 つの部分です。 1 つの部品では、標準のボタンのように動作し、直接操作を呼び出します。 他のパーツは、ユーザーが選択できる追加のオプションを含むポップアップを起動します。
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)は、個別に呼び出すことができる 2 つの部分です。 1 つの部分では、標準的なボタンのように動作し、即座にアクションを呼び出します。 他の部分では、ユーザーが選択できる追加のオプションが含まれているポップアップを呼び出します。
 
 > [!NOTE]
-> タッチで呼び出されると、分割ボタンのドロップダウン ボタンとして動作します。ボタンの両方の半分は、フライアウトを呼び出します。 入力の他のメソッドでは、ユーザーは個別にボタンのいずれかの半分を呼び出すことができます。
+> タッチで呼び出されると、分割ボタンと同様に動作ドロップダウン ボタンボタンの両方の部分では、ポップアップを呼び出します。 入力の他の方法では、ユーザーが、ボタンのいずれかの半分を個別に呼び出すことができます。
 
-分割ボタンの通常の動作は次のとおりです。
+一般的な分割ボタンの動作は次のとおりです。
 
-- ユーザーは、ボタンの部分をクリックすると、ドロップダウン ・ リストで現在選択されているオプションを起動するのには、Click イベントを処理します。
-- ドロップダウンが開いているときは、オプションを両方の変更に、ドロップダウン リスト内のアイテムのハンドルの呼び出しが選択され、し、呼び出すこと。 フライアウトの項目を呼び出すために、ボタンのタッチを使用する場合、イベントは発生しません] をクリックします。
+- ユーザーは、ボタンの一部をクリックすると、ドロップダウンで、現在選択されているオプションを起動する Click イベントを処理します。
+- ドロップダウンが開いているときは、オプションが両方の変更にドロップダウン リストで項目のハンドルの呼び出しが選択されると、それを呼び出します。 ために、ポップアップの項目を呼び出すことが重要ボタンの Click イベントがタッチを使用する場合に発生しません。
 
 > [!TIP]
-> ドロップでアイテムを配置し、その呼び出しを処理する方法はたくさんあります。 リスト ビューまたは GridView を使用する方法の 1 つが SelectionChanged イベントを処理します。 その場合、 [SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus)を**false**に設定します。 ユーザーが各変更の項目を呼び出すことがなく、キーボードを使用してオプション間を移動できます。
+> ドロップ内の項目を配置し、その呼び出しを処理する方法はたくさんあります。 ListView または GridView を使用する場合、SelectionChanged イベントを処理する方法の 1 つことです。 これを行う場合[SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus)を**false**に設定します。 これにより、ユーザーが変更されるたびに、項目を呼び出さずにキーボードを使用してオプションを移動します。
 
-### <a name="example---split-button"></a>分割ボタンの使用例
+### <a name="example---split-button"></a>例 - 分割ボタン
 
-次の使用例は、RichEditBox で選択したテキストの前景色を変更するために使用される分割ボタンを作成する方法を示します。 (他の情報やコードを参照してください[リッチ エディット ボックス](rich-edit-box.md))。
+この例では、RichEditBox で選択したテキストの前景色を変更するために使用されるボタン分割を作成する方法を示します。 (詳細とコードは、参照[リッチ エディット ボックス](rich-edit-box.md))。
 
-![前景の色を選択するための分割ボタン](images/split-button-rtb.png)
+![前景色を選択するための分割ボタン](images/split-button-rtb.png)
 
 ```xaml
 <SplitButton ToolTipService.ToolTip="Foreground color"
@@ -372,30 +372,30 @@ public sealed partial class MainPage : Page
 }
 ```
 
-## <a name="create-a-toggle-split-button"></a>分割のトグル ボタンを作成します。
+## <a name="create-a-toggle-split-button"></a>トグル ボタン分割を作成します。
 
-> Windows 10、1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) のバージョンが必要です ToggleSplitButton またはそれ以降、または[Windows の UI ライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> ToggleSplitButton には、Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) が必要ですか、後で、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-の[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)は、個別に呼び出すことができる 2 つの部分です。 1 つの部品は、オンまたはオフにできるトグル ボタンのように動作します。 他のパーツは、ユーザーが選択できる追加のオプションを含むポップアップを起動します。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)は、個別に呼び出すことができる 2 つの部分です。 1 つの部分は、オンまたはオフにできるトグル ボタンのように動作します。 他の部分では、ユーザーが選択できる追加のオプションが含まれているポップアップを呼び出します。
 
-分割のトグル ボタンは有効にするまたは機能を無効にする機能で、ユーザーが選択できる複数のオプションがある場合に通常使用されます。 など、ドキュメントのエディターで、される可能性があります無効を切り替えるリスト、リストのスタイルを選択するドロップダウンを使用します。
+トグル ボタン分割は通常を有効または機能、ユーザーが選択される複数のオプションがあるときに、機能を無効に使われます。 たとえば、ドキュメントのエディターで、される可能性がありますを有効にしてリスト オンまたはオフ、ドロップダウン リストのスタイルの選択に使用します。
 
 > [!NOTE]
-> タッチで呼び出されると、[分割] ボタンは、ドロップ ダウン ボタンとして動作します。 入力の他のメソッドでは、ユーザーは個別にボタンのいずれかの半分を呼び出すことができます。 タッチ、ボタンの両方の半分、フライアウトを起動します。 したがって、ボタンをオンまたはオフに切り替えるには、ポップアップのコンテンツのオプションを含める必要があります。
+> タッチで呼び出されると、分割ボタンはドロップダウン ボタンとして動作します。 入力の他の方法では、ユーザーが、ボタンのいずれかの半分を個別に呼び出すことができます。 タッチでは、ボタンの両方の半分は、ポップアップを呼び出します。 そのため、ポップアップ コンテンツ] をオンまたはオフ切り替えのオプションを含める必要があります。
 
-### <a name="differences-with-togglebutton"></a>トグル ボタンとの相違点
+### <a name="differences-with-togglebutton"></a>トグル ボタンとの違い
 
-[トグル ボタン](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)とは異なり、ToggleSplitButton は、中間状態がありません。 その結果、これらの違いを点に注意する必要があります。
+[トグル ボタン](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)とは異なり ToggleSplitButton は不確定の状態はありません。 その結果、これらの違いを点に注意する必要があります。
 
-- ToggleSplitButton には、 **IsThreeState**プロパティまたは**中間状態**のイベントはありません。
-- [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked)プロパティは、同じ**ブール値**、 **null 許容のブール値**ではありません。
-- ToggleSplitButton には、 [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged)イベントのみです。別の**オン**と**オフにした場合**のイベントはありません。
+- ToggleSplitButton には、 **IsThreeState**プロパティまたは**中間状態**イベントはありません。
+- [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked)プロパティは、単**bool**、 **null 許容ブール値**ではありません。
+- ToggleSplitButton が[IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged)イベントのみです。独立した**Checked**イベントと**Unchecked**イベントはありません。
 
-### <a name="example---toggle-split-button"></a>例 - 表示/非表示の分割ボタン
+### <a name="example---toggle-split-button"></a>例 - トグル分割ボタン
 
-スプリット ボタンの切り替えの設定をオンまたはオフを切り替えたり、リストを有効にされる可能性があり、RichEditBox で、リストのスタイルを変更する次の使用例を示しています。 (他の情報やコードを参照してください[リッチ エディット ボックス](rich-edit-box.md))。
+次の例方法を示していますボタン分割トグルをオンまたはオフ、書式設定の一覧を有効にする使わ可能性のある RichEditBox で、リストのスタイルを変更します。 (詳細とコードは、参照[リッチ エディット ボックス](rich-edit-box.md))。
 
-![トグル ボタン] ボックスの一覧のスタイルを選択するための分割](images/toggle-split-button-open.png)
+![リストのスタイルを選択するためのトグル分割ボタン](images/toggle-split-button-open.png)
 
 ```xaml
 <ToggleSplitButton x:Name="ListButton"
