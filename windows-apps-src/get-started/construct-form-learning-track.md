@@ -8,11 +8,11 @@ ms.topic: article
 keywords: 概要, uwp, windows 10, 学習トラック, レイアウト, フォーム
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d1018857d727d1cc96ded813390a397c6d94e44
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919276"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5987431"
 ---
 # <a name="create-and-customize-a-form"></a>フォームを作成してカスタマイズする
 
@@ -46,9 +46,9 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 ## <a name="what-goes-in-a-form"></a>フォームに含めるもの
 
-各種の [XAML コントロール](../design/controls-and-patterns/controls-and-events-intro.md) を使用してフォームに入力する必要があります。 XAML コントロールは使い慣れているかもしれませんが、思い出す必要がある場合は、自由に目を通してください。 特に、ユーザーがテキストを入力するか、または値の一覧から選択できるようにするコントロールが必要になります。 これは、基本的なリストを追加するオプションの – だけでは、外観し、動作を理解するために十分な読み取り、それらのすべてにする必要はありません。
+各種の [XAML コントロール](../design/controls-and-patterns/controls-and-events-intro.md) を使用してフォームに入力する必要があります。 XAML コントロールは使い慣れているかもしれませんが、思い出す必要がある場合は、自由に目を通してください。 特に、ユーザーがテキストを入力するか、または値の一覧から選択できるようにするコントロールが必要になります。 これは、追加のオプションの基本的なリスト – 外観やしくみを理解するために十分なに関するすべての情報を読み取る必要はありません。
 
-* [テキスト ボックス](../design/controls-and-patterns/text-box.md)では、アプリに入力した文字を使用できます。
+* [TextBox](../design/controls-and-patterns/text-box.md)では、アプリにユーザーがテキストを入力できます。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) では、ユーザーが 2 つのオプションから選択できます。
 * [DatePicker](../design/controls-and-patterns/date-picker.md) では、ユーザーが日付値を選択できます。
 * [TimePicker](../design/controls-and-patterns/time-picker.md) では、ユーザーが時刻値を選択できます。
@@ -134,7 +134,7 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 ## <a name="going-further"></a>追加情報
 
-ここではフォームを作成しましたが、レイアウトとコントロールの概念は、作成する可能性のあるすべての XAML UI で適用可能です。 自由にドキュメントをリンクしているし、フォームがある場合は、新しい UI 機能を追加して、ユーザー エクスペリエンスをさらに改良を試してみて戻ってください。 詳細なレイアウト機能をステップ バイ ステップのガイダンスを設定する場合は、[適応型レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)を参照してください。
+ここではフォームを作成しましたが、レイアウトとコントロールの概念は、作成する可能性のあるすべての XAML UI で適用可能です。 自由に戻ってがある場合、新しい UI 機能を追加して、ユーザー エクスペリエンスを絞り込むフォームの実験し、リンクしたドキュメントです。 詳細なレイアウト機能を使ってステップ バイ ステップのガイダンスを設定する場合、[アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)をご覧ください。
 
 また、フォームは真空に存在する必要はありません。一歩進んで、自分のフォームを[マスター/詳細パターン](../design/controls-and-patterns/master-details.md)または[ピボット コントロール](../design/controls-and-patterns/tabs-pivot.md)に組み込むことができます。 または、自分のフォームで分離コードを使用する場合は、[イベントの概要](../xaml-platform/events-and-routed-events-overview.md)を参照して作業を開始することをお勧めします。
 

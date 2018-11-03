@@ -1,19 +1,19 @@
 ---
 author: Xansky
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
-description: Windows デベロッパー センター アカウントに登録されているアプリのアドオンを管理するには、Microsoft Store 申請 API の以下のメソッドを使います。
+description: パートナー センター アカウントに登録されているアプリのアドオンを管理するのに、Microsoft Store 申請 API でこれらのメソッドを使用します。
 title: アドオンの管理
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: ab09f72e9cf2bd46246751aab790aa6bab84de10
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: c3861d5a135e0ee7a688a93a57cce801a05cf9a5
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5922281"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5987598"
 ---
 # <a name="manage-add-ons"></a>アドオンの管理
 

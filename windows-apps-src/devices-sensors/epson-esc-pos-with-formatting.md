@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ecc1a61b7db339c7c0c46168255d32bfbc241a1
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930235"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988605"
 ---
 # <a name="epson-escpos-with-formatting"></a>書式設定における Epson ESC/POS
 

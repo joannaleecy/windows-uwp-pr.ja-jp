@@ -8,16 +8,16 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad667f1da8b14c2ab60fb79369f0f4c51306ff6
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: e947314da1309c3f31af292bc70addbad8b0d4d9
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5947903"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5987928"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>アプリのエラーに関する詳細情報の取得
 
-アプリの特定のエラーに関する詳細データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドで取得できるのは、過去 30 日以内に発生したエラーの詳細のみです。 詳細なエラー データは、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションで確認することもできます。
+アプリの特定のエラーに関する詳細データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドで取得できるのは、過去 30 日以内に発生したエラーの詳細のみです。 詳細なエラー データも利用可能な[正常性レポート](../publish/health-report.md)では、パートナー センターの [**エラー** ] セクションでできます。
 
 このメソッドを使うには、その前にまず「[エラー報告データの取得](get-error-reporting-data.md)」のメソッドを使って、詳細情報を取得するエラーの ID を取得する必要があります。
 
@@ -51,7 +51,7 @@ ms.locfileid: "5947903"
 
 | パラメーター        | 型   |  説明      |  必須かどうか  
 |---------------|--------|---------------|------|
-| applicationId | string | 詳細なエラー データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。 |  必須  |
+| applicationId | string | 詳細なエラー データを取得するアプリのストア ID です。 ストア ID は、パートナー センターでの[アプリ id] ページ](../publish/view-app-identity-details.md)で利用できます。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。 |  必須  |
 | failureHash | string | 取得する詳細情報の対象となるエラーの一意の ID です。 目的のエラーについてこの ID を取得するには、「[エラー報告データの取得](get-error-reporting-data.md)」のメソッドを使い、そのメソッドの応答本文で **failureHash** の値を使います。 |  必須  |
 | startDate | date | 取得する詳細なエラー データの日付範囲の開始日です。 既定値は、現在の日付の 30 日前です。<p/><p/>**注:**&nbsp;&nbsp;以下のメソッドが取得できるは、過去 30 日以内に発生したエラーの詳細のみです。 |  必須ではない  |
 | endDate | date | 取得する詳細なエラー データの日付範囲の終了日です。 既定値は現在の日付です。 |  必須ではない  |

@@ -8,16 +8,16 @@ ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b078f0573d94e80b590f473f7c9a9b0395115ee
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d428128430a6d7743ebdf94fb8d9aff8286d8d77
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930867"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988216"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>アプリの試用版の実装
 
-試用期間中はアプリを無料で使用できるように、アプリを [Windows デベロッパー センター ダッシュボードで無料試用版](../publish/set-app-pricing-and-availability.md#free-trial)として構成した場合、試用期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。 どのような機能を制限するかをコーディング開始前に決め、完全なライセンスが購入されたときにだけその機能が正しく動作するようにアプリを設定します。 また、ユーザーがアプリを購入する前の試用期間中にだけバナーや透かしなどを表示する機能を有効にすることもできます。
+場合は[アプリをパートナー センターで無料試用版として構成](../publish/set-app-pricing-and-availability.md#free-trial)する顧客を使用できるように、アプリを無料試用期間中、することが、ようユーザーに促すを除外または、試用期間中に一部の機能を制限して、アプリの通常版にアップグレードします。 どのような機能を制限するかをコーディング開始前に決め、完全なライセンスが購入されたときにだけその機能が正しく動作するようにアプリを設定します。 また、ユーザーがアプリを購入する前の試用期間中にだけバナーや透かしなどを表示する機能を有効にすることもできます。
 
 この記事では、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間の [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスのメンバーを使用して、アプリの試用ライセンスがユーザーにあるかどうかを判定したり、アプリの実行中にライセンスが変更されたときに通知を受け取る方法を説明します。 
 
@@ -63,7 +63,7 @@ ms.locfileid: "5930867"
 
 この例には、次の前提条件があります。
 * **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。
-* Windows デベロッパー センター ダッシュ ボードで、期限なしの[無料試用版](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)として構成したアプリを作成し、そのアプリがストアで公開されている。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
+* 時間制限なしの[無料試用版](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)として構成されているパートナー センターでアプリを作成し、このアプリがストアで公開されています。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
 
 この例のコードは、次の点を前提としています。
 * コードは、```workingProgressRing``` という名前の [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) と ```textBlock``` という名前の [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を含む [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキストで実行されます。 これらのオブジェクトは、それぞれ非同期操作が発生していることを示するためと、出力メッセージを表示するために使用されます。

@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, フィードバック Hub, 起動
 ms.localizationpriority: medium
-ms.openlocfilehash: 16802cd7b181a6381845a4f71efdbdfb2f3eb747
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8a92f839d122f6dbdf45693c99f984317421961d
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5937029"
+ms.locfileid: "5987474"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>アプリからのフィードバック Hub の起動
 
-フィードバック Hub を起動するユニバーサル Windows プラットフォーム (UWP) アプリにコントロール (ボタンなど) を追加してフィードバックを送信することをユーザーにお勧めできます。 フィードバック Hub は、Windows およびインストール済みアプリでフィードバックを 1 か所で収集できるようにするプレインストール アプリです。 フィードバック Hub を介してアプリに送信されたすべてのユーザー フィードバックは、Windows デベロッパー センター ダッシュ ボードの[フィードバック レポート](../publish/feedback-report.md)で収集および表示されるため、ユーザーが送信した問題、提案、賛成票を 1 つのレポートで確認できます。
+フィードバック Hub を起動するユニバーサル Windows プラットフォーム (UWP) アプリにコントロール (ボタンなど) を追加してフィードバックを送信することをユーザーにお勧めできます。 フィードバック Hub は、Windows およびインストール済みアプリでフィードバックを 1 か所で収集できるようにするプレインストール アプリです。 フィードバック Hub を介してアプリ用に送信されるすべてのユーザーのフィードバックが収集され、問題、提案、賛成票を 1 つのレポートで、ユーザーが送信したを確認できるように、パートナー センターで、[フィードバック] レポート](../publish/feedback-report.md)でユーザーに表示されます。
 
 アプリからフィードバック Hub を起動するには、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) が提供する API を使用します。 この API を使用して、設計ガイドラインに準拠したアプリの UI 要素からフィードバック Hub を起動することをお勧めします。
 

@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, 削除, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c5d9e905f6b3d8acffc53e943d946f6ac7c3c68
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: ca534cfc7c38dba9d77749e17f15dd66766de7ca
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941625"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5987819"
 ---
 # <a name="delete-an-add-on-submission"></a>アドオンの申請の削除
 
@@ -46,8 +46,8 @@ ms.locfileid: "5941625"
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | 必須。 削除する申請に含まれているアドオンのストア ID です。 ストア ID はデベロッパー センター ダッシュボードで確認できます。  |
-| submissionId | string | 必須。 削除する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 デベロッパー センター ダッシュボードで作成された申請の場合、この ID はダッシュボードの申請ページの URL にも含まれています。  |
+| inAppProductId | string | 必須。 削除する申請に含まれているアドオンのストア ID です。 ストア ID は、パートナー センターで利用できます。  |
+| submissionId | string | 必須。 削除する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なも。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -76,7 +76,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求パラメーターが有効ではありません。 |
 | 404  | 指定した申請は見つかりませんでした。 |
-| 409  | 指定した申請は見つかりましたが、現在の状態で削除できなかったか、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアドオンで使用されています。 |
+| 409  | 指定した申請は見つかりましたが、現在の状態で削除できなかった可能性がありますかアドオンは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |
 
 
 ## <a name="related-topics"></a>関連トピック

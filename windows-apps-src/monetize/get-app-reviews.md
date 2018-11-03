@@ -8,17 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, レビュー
 ms.localizationpriority: medium
-ms.openlocfilehash: 61ce463be2ef2d5e3328c132302704f50c336105
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 656f00ec8a7711a43c44790b04ea01dace4c4ee2
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926660"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988742"
 ---
 # <a name="get-app-reviews"></a>アプリのレビューの取得
 
 
-日付範囲やその他のオプション フィルターを指定して、レビュー データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、Windows デベロッパー センター ダッシュボードの[レビュー レポート](../publish/reviews-report.md)でも確認することができます。
+日付範囲やその他のオプション フィルターを指定して、レビュー データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、 [[レビュー] レポート](../publish/reviews-report.md)では、パートナー センターで利用可能なもできます。
 
 レビューを取得した後、Microsoft Store レビュー API の[アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)メソッドと[アプリ レビューへの返信の提出](submit-responses-to-app-reviews.md)のメソッドを使って、プログラムでレビューに返信できます。
 

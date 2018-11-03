@@ -8,12 +8,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, AdControl, トラブルシューティング, XAML, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ad78c282231d2f7ae7b3261fec0b0c1b59abc45
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 12789767694e4ab3fa13efec4a31c8db4acd5420
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932272"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5989195"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML と C# のトラブルシューティング ガイド
 
@@ -39,7 +39,7 @@ ms.locfileid: "5932272"
 
 1.  Package.appxmanifest で **[インターネット (クライアント)]** 機能が選択されていることを確認します。
 
-2.  アプリケーション ID と広告ユニット ID を確認します。 これらの ID は、Windows デベロッパー センターで取得したアプリケーション ID と広告ユニット ID に一致している必要があります。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
+2.  アプリケーション ID と広告ユニット ID を確認します。 これらの Id は、アプリケーション ID とパートナー センターで取得した広告ユニット ID に一致する必要があります。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -175,7 +175,7 @@ ms.locfileid: "5932272"
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  アプリケーション ID と広告ユニット ID を確認します。 これらの ID は、Windows デベロッパー センターで取得したアプリケーション ID と広告ユニット ID に一致している必要があります。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
+3.  アプリケーション ID と広告ユニット ID を確認します。 これらの Id は、アプリケーション ID とパートナー センターで取得した広告ユニット ID に一致する必要があります。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs

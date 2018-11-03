@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
-ms.openlocfilehash: 36df4e7d8060b9e4420a5fe1a2144ad29520c7f7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6c86c0d5d1a10442c7addeed11cdbfc37846f337
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920902"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988100"
 ---
 # <a name="manage-ad-campaigns"></a>広告キャンペーンの管理
 
 アプリのプロモーション用の広告キャンペーンを作成、編集、取得するには、[Microsoft Store プロモーション API](run-ad-campaigns-using-windows-store-services.md) の以下のメソッドを使います。 このメソッドを使って作成した各キャンペーンに関連付けることができるのは、1 つのアプリのみです。
 
->**注**&nbsp;&nbsp;Windows デベロッパー センター ダッシュボードを使用して広告キャンペーンを作成し、管理することもできます。プログラムにより作成したキャンペーンには、ダッシュボードからアクセスできます。 ダッシュボードでの広告キャンペーンの管理について詳しくは、「[アプリ向けの広告キャンペーンの作成](../publish/create-an-ad-campaign-for-your-app.md)」をご覧ください。
+>**注:**&nbsp;&nbsp;プログラムで作成したキャンペーンには、パートナー センターでアクセスできることとも作成して、パートナー センターを使用して広告キャンペーンを管理することができます。 パートナー センターでの広告キャンペーンの管理について詳しくは、[アプリの広告キャンペーンの作成](../publish/create-an-ad-campaign-for-your-app.md)を参照してください。
 
 これらのメソッドを使ってキャンペーンを作成または更新する場合、通常は以下のメソッドも 1 つ以上呼び出し、キャンペーンに関連付けられた*配信ライン*、*対象プロファイル*、*クリエイティブ*を管理します。 キャンペーン、配信ライン、ターゲット プロファイル、クリエイティブ間の関係について詳しくは、「[Microsoft Store サービスを使用した広告キャンペーンの実行](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)」をご覧ください。
 
@@ -33,7 +33,7 @@ ms.locfileid: "5920902"
 
 * Microsoft Store プロモーション API に関するすべての[前提条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 
-  >**注**&nbsp;&nbsp;前提条件の一部として、[デベロッパー センター ダッシュボードで有料の広告キャンペーンを少なくとも 1 つ作成する](../publish/create-an-ad-campaign-for-your-app.md)必要があります。また、ダッシュボードで、広告キャンペーンの支払い方法を少なくとも 1 つ追加する必要があります。 この API を使用して作成した広告キャンペーンの配信ラインでは、ダッシュ ボードの **[アプリの宣伝]** ページで選んだ既定の支払い方法に対して自動的に請求が行われます。
+  >**注:**&nbsp;&nbsp;前提条件の一部として、そのする[パートナー センターで、少なくとも 1 つの有料の広告キャンペーンを作成](../publish/create-an-ad-campaign-for-your-app.md)していることを確認する、広告キャンペーンの支払い方法を少なくとも 1 つパートナー センターで追加します。 この API を使用して作成した広告キャンペーンの配信ラインでは、パートナー センターでの**広告キャンペーン**] ページで選んだ既定の支払い方法を自動的に請求されます。
 
 * これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
