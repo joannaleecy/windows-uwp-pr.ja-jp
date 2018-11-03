@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, fiddler, サービス呼び出し, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: e8d1acabbf6059b8a5989a471c01d98243e53fb4
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5928025"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995319"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a><span data-ttu-id="21974-104">Fiddler を使用した Xbox Live のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="21974-104">Troubleshooting Xbox Live using Fiddler</span></span>
 
