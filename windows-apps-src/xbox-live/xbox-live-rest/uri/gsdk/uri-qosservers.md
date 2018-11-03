@@ -10,30 +10,30 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fbf22063c3eabc61f97b4892e0a2a9bb9c24e387
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931768"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5991390"
 ---
-# <a name="qosservers"></a><span data-ttu-id="88a39-104">/qosservers</span><span class="sxs-lookup"><span data-stu-id="88a39-104">/qosservers</span></span>
-<span data-ttu-id="88a39-105">URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="88a39-105">URI called by a client to get the list of QoS servers available for use with Xbox Live Compute.</span></span> <span data-ttu-id="88a39-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="88a39-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
+# <a name="qosservers"></a><span data-ttu-id="9721b-104">/qosservers</span><span class="sxs-lookup"><span data-stu-id="9721b-104">/qosservers</span></span>
+<span data-ttu-id="9721b-105">URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="9721b-105">URI called by a client to get the list of QoS servers available for use with Xbox Live Compute.</span></span> <span data-ttu-id="9721b-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="9721b-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="88a39-107">ホスト名</span><span class="sxs-lookup"><span data-stu-id="88a39-107">Host Name</span></span>](#ID4EZ)
+  * [<span data-ttu-id="9721b-107">ホスト名</span><span class="sxs-lookup"><span data-stu-id="9721b-107">Host Name</span></span>](#ID4EZ)
  
 <a id="ID4EZ"></a>
 
  
-## <a name="host-name"></a><span data-ttu-id="88a39-108">ホスト名</span><span class="sxs-lookup"><span data-stu-id="88a39-108">Host Name</span></span>
+## <a name="host-name"></a><span data-ttu-id="9721b-108">ホスト名</span><span class="sxs-lookup"><span data-stu-id="9721b-108">Host Name</span></span>
  
-<span data-ttu-id="88a39-109">gameserverds.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="88a39-109">gameserverds.xboxlive.com</span></span>
+<span data-ttu-id="9721b-109">gameserverds.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="9721b-109">gameserverds.xboxlive.com</span></span>
   
 <a id="ID4EDB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="88a39-110">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="88a39-110">Valid Methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="9721b-110">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="9721b-110">Valid Methods</span></span>
 
-[<span data-ttu-id="88a39-111">GET</span><span class="sxs-lookup"><span data-stu-id="88a39-111">GET</span></span>](uri-qosservers-get.md)
+[<span data-ttu-id="9721b-111">GET</span><span class="sxs-lookup"><span data-stu-id="9721b-111">GET</span></span>](uri-qosservers-get.md)
 
-<span data-ttu-id="88a39-112">&nbsp;&nbsp;URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="88a39-112">&nbsp;&nbsp;URI called by a client to get the list of QoS servers available for use with Xbox Live Compute.</span></span>
+<span data-ttu-id="9721b-112">&nbsp;&nbsp;URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="9721b-112">&nbsp;&nbsp;URI called by a client to get the list of QoS servers available for use with Xbox Live Compute.</span></span>
  
