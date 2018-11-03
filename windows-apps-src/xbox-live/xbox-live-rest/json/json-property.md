@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d37054d03f6ebe8299db78673dc631c9b4b4bc16
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5934750"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5972778"
 ---
 # <a name="property-json"></a>Property (JSON)
 マッチメイ キング要求条件のクライアントによって提供されるプロパティ データが含まれています。

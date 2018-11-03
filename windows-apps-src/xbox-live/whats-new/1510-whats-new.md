@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 09f8fe60cf30ee14b9b0e0c8f1c1c98feef1fa59
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5920507"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5988708"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---october-2015"></a>Xbox Live SDK の新規事項 - October 2015
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター, シングル サインオン
 ms.openlocfilehash: 42f3e77e8f1f622d8c275769b6f77fdd85a1bff0
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5927970"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5989700"
 ---
 # <a name="configure-single-sign-on-in-dev-center"></a>デベロッパー センターでのシングル サインオンの構成
 

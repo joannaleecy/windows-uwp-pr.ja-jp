@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 86853a490ab407fa96d40c4b2e3deb42c5f346a3
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5919485"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5968181"
 ---
 # <a name="post-usersxuidxuidoutbox"></a>POST (/users/xuid({xuid})/outbox)
 受信者の一覧を指定されたメッセージを送信します。

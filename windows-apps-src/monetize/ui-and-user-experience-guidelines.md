@@ -8,12 +8,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, ガイドライン, ベスト プラクティス
 ms.localizationpriority: medium
-ms.openlocfilehash: 323190b01cad8a0832d57386f6bde9fde4f2180c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4d502c721f98269c1256510a6f91f8c6dc8cd0fb
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5942441"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5994400"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>広告の UI とユーザー エクスペリエンスのガイドライン
 
@@ -73,7 +73,7 @@ ms.locfileid: "5942441"
 
 * [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) オブジェクトのスワップ、またはユーザー操作を伴わない強制的なページ更新など、任意の手段でバナー広告の組み込み最短更新タイマーを回避する。
 
-* 開発およびテスト中、またはエミュレーターでライブ広告ユニット (つまり、Windows デベロッパー センター ダッシュボードから取得した広告ユニット) を使用する。
+* ライブ広告ユニット (つまり、パートナー センターから取得する広告ユニット) を使用して、開発およびテスト中、またはエミュレーターでします。
 
 * アプリのコンテキストで実行している Microsoft Advertising ライブラリ以外の手段で広告サービスを呼び出すコードを記述または配布する。
 
@@ -157,7 +157,7 @@ ms.locfileid: "5942441"
 
 * 連鎖的な広告の単なるバックアップとして、スポット広告を要求する。 スポット広告を要求し、[InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) イベントを受信した場合、アプリに表示できる次のスポット広告は、[InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) メソッド経由で表示できる必要があります。
 
-* 開発およびテスト中、またはエミュレーターでライブ広告ユニット (つまり、Windows デベロッパー センター ダッシュボードから取得した広告ユニット) を使用する。
+* ライブ広告ユニット (つまり、パートナー センターから取得する広告ユニット) を使用して、開発およびテスト中、またはエミュレーターでします。
 
 * アプリのコンテキストで実行している Microsoft Advertising ライブラリ以外の手段で広告サービスを呼び出すコードを記述または配布する。
 

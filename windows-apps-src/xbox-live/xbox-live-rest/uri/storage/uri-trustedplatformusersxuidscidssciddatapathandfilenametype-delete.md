@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e00c0f9e668f8d57bd904d40b8f6fcf91090496d
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938253"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5968388"
 ---
 # <a name="delete-trustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a>DELETE (/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})
 ファイルを削除します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

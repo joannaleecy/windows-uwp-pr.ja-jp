@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 298aaa1ae410badd24aa413cc4ada499b3521c74
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939875"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5982660"
 ---
 # <a name="handles"></a>/handles
 Xbox One ダッシュ ボードのユーザー エクスペリエンスに表示するために必要な場合は、セッション メンバーを招待して、ユーザーの現在のアクティビティのセッションを設定する POST 操作をサポートしています。 
