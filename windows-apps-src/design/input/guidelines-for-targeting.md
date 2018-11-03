@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3af31535dcdb1cb5eb8beebbbb91312adafe353a
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940443"
+ms.locfileid: "5984678"
 ---
 # <a name="guidelines-for-targeting"></a><span data-ttu-id="b8d32-103">ターゲット設定のガイドライン</span><span class="sxs-lookup"><span data-stu-id="b8d32-103">Guidelines for targeting</span></span>
 

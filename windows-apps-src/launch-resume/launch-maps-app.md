@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fd7377294e0d460720f6a16e71981ab0924ac9a
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5937341"
+ms.locfileid: "5985181"
 ---
 # <a name="launch-the-windows-maps-app"></a><span data-ttu-id="08704-104">Windows マップ アプリの起動</span><span class="sxs-lookup"><span data-stu-id="08704-104">Launch the Windows Maps app</span></span>
 

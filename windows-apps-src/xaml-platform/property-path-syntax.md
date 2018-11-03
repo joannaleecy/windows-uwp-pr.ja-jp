@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5944480"
+ms.locfileid: "5984161"
 ---
 # <a name="property-path-syntax"></a><span data-ttu-id="561c7-104">プロパティ パス構文</span><span class="sxs-lookup"><span data-stu-id="561c7-104">Property-path syntax</span></span>
 

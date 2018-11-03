@@ -13,19 +13,19 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 31bc1d33bccbf2d1948a119ea42bfef2599f3336
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927576"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5979519"
 ---
-# <a name="icons-for-uwp-apps"></a><span data-ttu-id="85a42-103">UWP アプリのアイコン</span><span class="sxs-lookup"><span data-stu-id="85a42-103">Icons for UWP apps</span></span>
+# <a name="icons-for-uwp-apps"></a><span data-ttu-id="5f424-103">UWP アプリのアイコン</span><span class="sxs-lookup"><span data-stu-id="5f424-103">Icons for UWP apps</span></span>
 
 ![アイコンのヘッダー画像](images/icons/header-icons.png)
 
-<span data-ttu-id="85a42-105">アイコンは、アクション、概念、または製品の簡潔にした視覚表現を提供します。</span><span class="sxs-lookup"><span data-stu-id="85a42-105">Icons provide a visual shorthand for an action, concept, or product.</span></span> <span data-ttu-id="85a42-106">シンボリック イメージに意味を凝縮することによって、アイコンは言語の壁を乗り越えることができ、非常に価値のあるリソースである画面領域を節約するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="85a42-106">By compressing meaning into a symbolic image, icons can cross language barriers and help conserve an extremely valuable resource: screen space.</span></span> 
+<span data-ttu-id="5f424-105">アイコンは、アクション、概念、または製品の簡潔にした視覚表現を提供します。</span><span class="sxs-lookup"><span data-stu-id="5f424-105">Icons provide a visual shorthand for an action, concept, or product.</span></span> <span data-ttu-id="5f424-106">シンボリック イメージに意味を凝縮することによって、アイコンは言語の壁を乗り越えることができ、非常に価値のあるリソースである画面領域を節約するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="5f424-106">By compressing meaning into a symbolic image, icons can cross language barriers and help conserve an extremely valuable resource: screen space.</span></span> 
 
-<span data-ttu-id="85a42-107">アイコンはアプリ内、およびアプリの外部に表示されます。</span><span class="sxs-lookup"><span data-stu-id="85a42-107">Icons can appear in apps—and outside them:</span></span> 
+<span data-ttu-id="5f424-107">アイコンはアプリ内、およびアプリの外部に表示されます。</span><span class="sxs-lookup"><span data-stu-id="5f424-107">Icons can appear in apps—and outside them:</span></span> 
 
 :::row:::
     :::column:::
@@ -42,11 +42,11 @@ ms.locfileid: "5927576"
     :::column-end:::
 :::row-end:::
 
-<span data-ttu-id="85a42-108">この記事では、アプリ内のアイコンについて説明します。</span><span class="sxs-lookup"><span data-stu-id="85a42-108">This article describes icons within your app.</span></span> <span data-ttu-id="85a42-109">アプリの外部のアイコン (アプリ アイコン) の詳細については、「[アプリおよびタイル アイコンに関する記事](/windows/uwp/design/shell/tiles-and-notifications/app-assets)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="85a42-109">To learn about icons outside your app (app icons), see the [app and tile icons article](/windows/uwp/design/shell/tiles-and-notifications/app-assets).</span></span>
+<span data-ttu-id="5f424-108">この記事では、アプリ内のアイコンについて説明します。</span><span class="sxs-lookup"><span data-stu-id="5f424-108">This article describes icons within your app.</span></span> <span data-ttu-id="5f424-109">アプリの外部のアイコン (アプリ アイコン) の詳細については、「[アプリおよびタイル アイコンに関する記事](/windows/uwp/design/shell/tiles-and-notifications/app-assets)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5f424-109">To learn about icons outside your app (app icons), see the [app and tile icons article](/windows/uwp/design/shell/tiles-and-notifications/app-assets).</span></span>
 
-## <a name="when-to-use-icons"></a><span data-ttu-id="85a42-110">アイコンを使う状況</span><span class="sxs-lookup"><span data-stu-id="85a42-110">When to use icons</span></span>
+## <a name="when-to-use-icons"></a><span data-ttu-id="5f424-110">アイコンを使う状況</span><span class="sxs-lookup"><span data-stu-id="5f424-110">When to use icons</span></span>
 
-<span data-ttu-id="85a42-111">アイコンは領域を節約できますが、アイコンをいつ使用する必要があるか説明します。</span><span class="sxs-lookup"><span data-stu-id="85a42-111">Icons can save space, but when should you use them?</span></span> 
+<span data-ttu-id="5f424-111">アイコンは領域を節約できますが、アイコンをいつ使用する必要があるか説明します。</span><span class="sxs-lookup"><span data-stu-id="5f424-111">Icons can save space, but when should you use them?</span></span> 
 
 :::row:::
     :::column:::
@@ -80,11 +80,11 @@ ms.locfileid: "5927576"
 
 
 
-## <a name="using-the-right-type-of-icon"></a><span data-ttu-id="85a42-112">適切な種類のアイコンの使用</span><span class="sxs-lookup"><span data-stu-id="85a42-112">Using the right type of icon</span></span>
+## <a name="using-the-right-type-of-icon"></a><span data-ttu-id="5f424-112">適切な種類のアイコンの使用</span><span class="sxs-lookup"><span data-stu-id="5f424-112">Using the right type of icon</span></span>
 
-<span data-ttu-id="85a42-113">アイコンを作成する方法は数多くあります。</span><span class="sxs-lookup"><span data-stu-id="85a42-113">There are many ways to create an icon.</span></span> <span data-ttu-id="85a42-114">Segoe MDL2 アセットなどの記号フォントを使用できます。</span><span class="sxs-lookup"><span data-stu-id="85a42-114">You can use a symbol font like Segoe MDL2 Assets.</span></span> <span data-ttu-id="85a42-115">独自のベクター ベースのイメージを作成できます。</span><span class="sxs-lookup"><span data-stu-id="85a42-115">You could create you own vector-based image.</span></span> <span data-ttu-id="85a42-116">ビットマップ画像も使用できますが、お勧めしません。</span><span class="sxs-lookup"><span data-stu-id="85a42-116">You can even use a bitmap image, although we don't recommend it.</span></span> <span data-ttu-id="85a42-117">アプリにアイコンを追加するさまざまな方法の概要を次に示します。</span><span class="sxs-lookup"><span data-stu-id="85a42-117">Here's a summary of the different ways you can add an icon to your app.</span></span> 
+<span data-ttu-id="5f424-113">アイコンを作成する方法は数多くあります。</span><span class="sxs-lookup"><span data-stu-id="5f424-113">There are many ways to create an icon.</span></span> <span data-ttu-id="5f424-114">Segoe MDL2 アセットなどの記号フォントを使用できます。</span><span class="sxs-lookup"><span data-stu-id="5f424-114">You can use a symbol font like Segoe MDL2 Assets.</span></span> <span data-ttu-id="5f424-115">独自のベクター ベースのイメージを作成できます。</span><span class="sxs-lookup"><span data-stu-id="5f424-115">You could create you own vector-based image.</span></span> <span data-ttu-id="5f424-116">ビットマップ画像も使用できますが、お勧めしません。</span><span class="sxs-lookup"><span data-stu-id="5f424-116">You can even use a bitmap image, although we don't recommend it.</span></span> <span data-ttu-id="5f424-117">アプリにアイコンを追加するさまざまな方法の概要を次に示します。</span><span class="sxs-lookup"><span data-stu-id="5f424-117">Here's a summary of the different ways you can add an icon to your app.</span></span> 
 
-### <a name="use-a-predefined-icon"></a><span data-ttu-id="85a42-118">定義済みのアイコンを使用します。</span><span class="sxs-lookup"><span data-stu-id="85a42-118">Use a predefined icon.</span></span>
+### <a name="use-a-predefined-icon"></a><span data-ttu-id="5f424-118">定義済みのアイコンを使用します。</span><span class="sxs-lookup"><span data-stu-id="5f424-118">Use a predefined icon.</span></span>
 :::row:::
     :::column:::
         Microsoft provides over 1000 icons in the form of the Segoe MDL2 Assets font. It might not be intuitive to get an icon from a font, but our font display technology means these icons will look crisp and sharp on any display, at any resolution, and at any size. 
@@ -94,7 +94,7 @@ ms.locfileid: "5927576"
     :::column-end:::
 :::row-end:::
 
-### <a name="use-a-font"></a><span data-ttu-id="85a42-119">フォントを使用します。</span><span class="sxs-lookup"><span data-stu-id="85a42-119">Use a font.</span></span>
+### <a name="use-a-font"></a><span data-ttu-id="5f424-119">フォントを使用します。</span><span class="sxs-lookup"><span data-stu-id="5f424-119">Use a font.</span></span>
 :::row:::
     :::column:::
         You don't have to use the Segoe MDL2 Assets font--you can use any font the user has installed on their system, such as Wingdings or Webdings.
@@ -104,7 +104,7 @@ ms.locfileid: "5927576"
     :::column-end:::
 :::row-end:::
 
-### <a name="use-a-scalable-vector-graphics-svg-file"></a><span data-ttu-id="85a42-120">スケーラブル ベクター グラフィックス (SVG) ファイルを使用します。</span><span class="sxs-lookup"><span data-stu-id="85a42-120">Use a Scalable Vector Graphics (SVG) file.</span></span>
+### <a name="use-a-scalable-vector-graphics-svg-file"></a><span data-ttu-id="5f424-120">スケーラブル ベクター グラフィックス (SVG) ファイルを使用します。</span><span class="sxs-lookup"><span data-stu-id="5f424-120">Use a Scalable Vector Graphics (SVG) file.</span></span>
 :::row:::
     :::column:::
         SVG resources are ideal for icons, because they always look sharp at any size or resolution. Most drawing applications can export to SVG. 
@@ -114,7 +114,7 @@ ms.locfileid: "5927576"
     :::column-end:::
 :::row-end:::
 
-### <a name="use-geometry-objects"></a><span data-ttu-id="85a42-121">ジオメトリ オブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="85a42-121">Use Geometry objects.</span></span>
+### <a name="use-geometry-objects"></a><span data-ttu-id="5f424-121">ジオメトリ オブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="5f424-121">Use Geometry objects.</span></span>
 :::row:::
     :::column:::
         Like SVG files, geometries are a vector-based resource, so they always look sharp. However, creating a geometry is complicated because you have to individually specify each point and curve. It's really only a good choice if you need to modify the icon while your app is running (to animate it, for example). For instructions, see [Move and draw commands for geometries](../../xaml-platform/move-draw-commands-syntax.md). 
@@ -124,7 +124,7 @@ ms.locfileid: "5927576"
     :::column-end:::
 :::row-end:::
 
-### <a name="you-can-also-use-a-bitmap-image-such-as-png-gif-or-jpeg-although-we-dont-recommend-it"></a><span data-ttu-id="85a42-122">お勧めしませんが、PNG、GIF、JPEG などのビットマップ画像を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="85a42-122">You can also use a bitmap image, such as PNG, GIF, or JPEG, although we don't recommend it.</span></span>
+### <a name="you-can-also-use-a-bitmap-image-such-as-png-gif-or-jpeg-although-we-dont-recommend-it"></a><span data-ttu-id="5f424-122">お勧めしませんが、PNG、GIF、JPEG などのビットマップ画像を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="5f424-122">You can also use a bitmap image, such as PNG, GIF, or JPEG, although we don't recommend it.</span></span>
 :::row:::
     :::column:::
         Bitmap images are created at a specific size, so they have to be scaled up or down depending on how large you want the icon to be and the resolution of the screen. When the image is scaled down (shrunk), it can appear blurry; when it's scaled up, it can appear blocky and pixelated. If you have to use a bitmap image we recommend using a PNG or GIF over a JPEG. 
@@ -135,17 +135,17 @@ ms.locfileid: "5927576"
     :::column-end:::
 :::row-end:::
 
-## <a name="make-the-icon-do-something"></a><span data-ttu-id="85a42-123">アイコンで何かを行う</span><span class="sxs-lookup"><span data-stu-id="85a42-123">Make the icon do something</span></span>
+## <a name="make-the-icon-do-something"></a><span data-ttu-id="5f424-123">アイコンで何かを行う</span><span class="sxs-lookup"><span data-stu-id="5f424-123">Make the icon do something</span></span>
 
-<span data-ttu-id="85a42-124">アイコンを作成したら、次の手順は、コマンドやナビゲーション操作に関連付けることで何にすることです。</span><span class="sxs-lookup"><span data-stu-id="85a42-124">Once you have an icon, the next step is to make it do something by associating it with command or a navigation action.</span></span> <span data-ttu-id="85a42-125">これを行うには、最善の方法では、ボタンまたはコマンド バーにアイコンを追加します。</span><span class="sxs-lookup"><span data-stu-id="85a42-125">The best way to do this is to add the icon to a button or a command bar.</span></span> 
+<span data-ttu-id="5f424-124">アイコンを作成したら、次の手順は、コマンドやナビゲーション操作に関連付けることで何にすることです。</span><span class="sxs-lookup"><span data-stu-id="5f424-124">Once you have an icon, the next step is to make it do something by associating it with command or a navigation action.</span></span> <span data-ttu-id="5f424-125">これを行うには、最善の方法では、ボタンまたはコマンド バーにアイコンを追加します。</span><span class="sxs-lookup"><span data-stu-id="5f424-125">The best way to do this is to add the icon to a button or a command bar.</span></span> 
 
 ![コマンド バーのイメージ](images/icons/app-bar-desktop.svg)
 
-## <a name="create-an-icon-button"></a><span data-ttu-id="85a42-127">アイコン ボタンの作成</span><span class="sxs-lookup"><span data-stu-id="85a42-127">Create an icon button</span></span>
+## <a name="create-an-icon-button"></a><span data-ttu-id="5f424-127">アイコン ボタンの作成</span><span class="sxs-lookup"><span data-stu-id="5f424-127">Create an icon button</span></span>
 
-<span data-ttu-id="85a42-128">アイコンは標準的なボタンに配置することができます。</span><span class="sxs-lookup"><span data-stu-id="85a42-128">You can put an icon in a standard button.</span></span> <span data-ttu-id="85a42-129">ボタンは幅広い場所で使用できるため、アクション アイコンが表示される場所に関して、柔軟性がやや高くなります。</span><span class="sxs-lookup"><span data-stu-id="85a42-129">Since you can use buttons in a wider variet of places, this gives you a little more flexibility for where your action icon appears.</span></span> 
+<span data-ttu-id="5f424-128">アイコンは標準的なボタンに配置することができます。</span><span class="sxs-lookup"><span data-stu-id="5f424-128">You can put an icon in a standard button.</span></span> <span data-ttu-id="5f424-129">ボタンは幅広い場所で使用できるため、アクション アイコンが表示される場所に関して、柔軟性がやや高くなります。</span><span class="sxs-lookup"><span data-stu-id="5f424-129">Since you can use buttons in a wider variet of places, this gives you a little more flexibility for where your action icon appears.</span></span> 
 
-<span data-ttu-id="85a42-130">ボタンにアイコンを追加する方法は次のようにいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="85a42-130">The are a few ways to add an icon to a button:</span></span>
+<span data-ttu-id="5f424-130">ボタンにアイコンを追加する方法は次のようにいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="5f424-130">The are a few ways to add an icon to a button:</span></span>
 
 :::row:::
     :::column span="2":::
@@ -183,7 +183,7 @@ ms.locfileid: "5927576"
 </Button>
 ```
 
-## <a name="create-a-series-of-icons-in-a-command-bar"></a><span data-ttu-id="85a42-131">コマンド バーでの一連のアイコンの作成</span><span class="sxs-lookup"><span data-stu-id="85a42-131">Create a series of icons in a command bar</span></span>
+## <a name="create-a-series-of-icons-in-a-command-bar"></a><span data-ttu-id="5f424-131">コマンド バーでの一連のアイコンの作成</span><span class="sxs-lookup"><span data-stu-id="5f424-131">Create a series of icons in a command bar</span></span>
 
 :::row:::
     :::column span:::
@@ -194,7 +194,7 @@ ms.locfileid: "5927576"
     :::column-end:::
 :::row-end:::
 
-<span data-ttu-id="85a42-132">最も簡単な方法は、指定した定義済みのアイコンの一覧を使用することです。"戻る" または "停止" などのアイコン名を指定するだけで、システムが描画します。</span><span class="sxs-lookup"><span data-stu-id="85a42-132">The easiest way is to use the list of predefined icons we provide—simply specify the icon name, such as "Back" or "Stop", and the system will draw it:</span></span> 
+<span data-ttu-id="5f424-132">最も簡単な方法は、指定した定義済みのアイコンの一覧を使用することです。"戻る" または "停止" などのアイコン名を指定するだけで、システムが描画します。</span><span class="sxs-lookup"><span data-stu-id="5f424-132">The easiest way is to use the list of predefined icons we provide—simply specify the icon name, such as "Back" or "Stop", and the system will draw it:</span></span> 
 
 ``` xaml
 <CommandBar>
@@ -208,18 +208,18 @@ ms.locfileid: "5927576"
 </CommandBar>
 
 ```
-<span data-ttu-id="85a42-133">アイコン名の完全な一覧については、「[Symbol 列挙値](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="85a42-133">For the complete list of icon names, see the [Symbol enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol).</span></span> 
+<span data-ttu-id="5f424-133">アイコン名の完全な一覧については、「[Symbol 列挙値](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5f424-133">For the complete list of icon names, see the [Symbol enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol).</span></span> 
 
-<span data-ttu-id="85a42-134">コマンド バーにあるボタンにアイコンを指定する方法は他にもあります。</span><span class="sxs-lookup"><span data-stu-id="85a42-134">There are other ways to provide icons for a button in a command bar:</span></span>
+<span data-ttu-id="5f424-134">コマンド バーにあるボタンにアイコンを指定する方法は他にもあります。</span><span class="sxs-lookup"><span data-stu-id="5f424-134">There are other ways to provide icons for a button in a command bar:</span></span>
 
-+ <span data-ttu-id="85a42-135">[FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) - アイコンは指定されたフォント ファミリのグリフに基づきます。</span><span class="sxs-lookup"><span data-stu-id="85a42-135">[FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) - the icon is based on a glyph from the specified font family.</span></span>
-+ <span data-ttu-id="85a42-136">[BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon) - アイコンは指定された **URI** を持つビットマップ画像ファイルに基づきます。</span><span class="sxs-lookup"><span data-stu-id="85a42-136">[BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon) - the icon is based on a bitmap image file with the specified **Uri**.</span></span>
-+ <span data-ttu-id="85a42-137">[PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) - アイコンは [Path](/uwp/api/windows.ui.xaml.shapes.path) データに基づきます。</span><span class="sxs-lookup"><span data-stu-id="85a42-137">[PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) - the icon is based on [Path](/uwp/api/windows.ui.xaml.shapes.path) data.</span></span>
++ <span data-ttu-id="5f424-135">[FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) - アイコンは指定されたフォント ファミリのグリフに基づきます。</span><span class="sxs-lookup"><span data-stu-id="5f424-135">[FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon) - the icon is based on a glyph from the specified font family.</span></span>
++ <span data-ttu-id="5f424-136">[BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon) - アイコンは指定された **URI** を持つビットマップ画像ファイルに基づきます。</span><span class="sxs-lookup"><span data-stu-id="5f424-136">[BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon) - the icon is based on a bitmap image file with the specified **Uri**.</span></span>
++ <span data-ttu-id="5f424-137">[PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) - アイコンは [Path](/uwp/api/windows.ui.xaml.shapes.path) データに基づきます。</span><span class="sxs-lookup"><span data-stu-id="5f424-137">[PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) - the icon is based on [Path](/uwp/api/windows.ui.xaml.shapes.path) data.</span></span>
 
-<span data-ttu-id="85a42-138">コマンド バーの詳細については、「[コマンド バーの記事](../controls-and-patterns/app-bars.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="85a42-138">To learn more about command bars, see the [command bar article](../controls-and-patterns/app-bars.md).</span></span> 
+<span data-ttu-id="5f424-138">コマンド バーの詳細については、「[コマンド バーの記事](../controls-and-patterns/app-bars.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5f424-138">To learn more about command bars, see the [command bar article](../controls-and-patterns/app-bars.md).</span></span> 
 
 
 
-## <a name="related-articles"></a><span data-ttu-id="85a42-139">関連記事</span><span class="sxs-lookup"><span data-stu-id="85a42-139">Related articles</span></span>
+## <a name="related-articles"></a><span data-ttu-id="5f424-139">関連記事</span><span class="sxs-lookup"><span data-stu-id="5f424-139">Related articles</span></span>
 
-* [<span data-ttu-id="85a42-140">タイルとアイコン アセットのガイドライン</span><span class="sxs-lookup"><span data-stu-id="85a42-140">Guidelines for tile and icon assets</span></span>](../shell/tiles-and-notifications/app-assets.md)
+* [<span data-ttu-id="5f424-140">タイルとアイコン アセットのガイドライン</span><span class="sxs-lookup"><span data-stu-id="5f424-140">Guidelines for tile and icon assets</span></span>](../shell/tiles-and-notifications/app-assets.md)

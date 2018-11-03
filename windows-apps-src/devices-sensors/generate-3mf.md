@@ -12,11 +12,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d7acfdb6312770f51d8870549218344ad8c4330
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5943724"
+ms.locfileid: "5985306"
 ---
 # <a name="generate-a-3mf-package"></a><span data-ttu-id="bdb15-103">3MF パッケージの生成</span><span class="sxs-lookup"><span data-stu-id="bdb15-103">Generate a 3MF package</span></span>
 

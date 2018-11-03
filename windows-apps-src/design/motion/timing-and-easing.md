@@ -13,11 +13,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 9983c62804dad4f0202fc83e3f9b5f23714352d2
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945924"
+ms.locfileid: "5978837"
 ---
 # <a name="timing-and-easing"></a><span data-ttu-id="21aa7-103">タイミングとイージング</span><span class="sxs-lookup"><span data-stu-id="21aa7-103">Timing and easing</span></span>
 

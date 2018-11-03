@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bcad4a5e22249d4d7faed08fe9cc9af4c3fb338
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5943265"
+ms.locfileid: "5978967"
 ---
 # <a name="domain-shader-ds-stage"></a><span data-ttu-id="4b4d1-104">ドメイン シェーダー (DS) ステージ</span><span class="sxs-lookup"><span data-stu-id="4b4d1-104">Domain Shader (DS) stage</span></span>
 
