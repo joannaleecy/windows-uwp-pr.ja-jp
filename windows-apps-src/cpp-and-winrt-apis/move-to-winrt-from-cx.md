@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 移植, 移行, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 35fe84747624c9a855df5520322546b83772379b
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5978997"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6029613"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a><span data-ttu-id="c29a9-104">C++/CX から C++/WinRT への移行</span><span class="sxs-lookup"><span data-stu-id="c29a9-104">Move to C++/WinRT from C++/CX</span></span>
 

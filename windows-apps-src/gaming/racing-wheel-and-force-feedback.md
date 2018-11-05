@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, レーシング ハンドル, フォース フィードバック
 ms.localizationpriority: medium
 ms.openlocfilehash: 20b4b35bb729ee49dbfd3f2b2b2a029a4319521c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5972668"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6029938"
 ---
 # <a name="racing-wheel-and-force-feedback"></a><span data-ttu-id="dc6ef-104">レーシング ハンドルとフォース フィードバック</span><span class="sxs-lookup"><span data-stu-id="dc6ef-104">Racing wheel and force feedback</span></span>
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 090dcab3b46b031a16be35973e1183220d5b1da0
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970872"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6028821"
 ---
 # <a name="stencil-buffers"></a><span data-ttu-id="dc009-104">ステンシル バッファー</span><span class="sxs-lookup"><span data-stu-id="dc009-104">Stencil buffers</span></span>
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 65522195b9729ddd4f2ebeb193f43c905359eda2
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5980931"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6028018"
 ---
 # <a name="introduction-to-rasterization-rules"></a><span data-ttu-id="b8a56-105">ラスター化規則の概要</span><span class="sxs-lookup"><span data-stu-id="b8a56-105">Introduction to rasterization rules</span></span>
 

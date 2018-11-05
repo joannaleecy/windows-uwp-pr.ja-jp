@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 7cb93c410f583884f75f21d9beda03db87c024f9
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5984390"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6027802"
 ---
 # <a name="handle-app-suspend"></a><span data-ttu-id="8b70c-104">アプリの中断の処理</span><span class="sxs-lookup"><span data-stu-id="8b70c-104">Handle app suspend</span></span>
 

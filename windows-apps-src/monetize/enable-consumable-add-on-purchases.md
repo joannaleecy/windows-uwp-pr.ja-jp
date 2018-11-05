@@ -9,11 +9,11 @@ ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e4687833b55f1456d298b552f5cce897f8b4eaa1
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5980941"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6027978"
 ---
 # <a name="enable-consumable-add-on-purchases"></a><span data-ttu-id="6ae3a-104">コンシューマブルなアドオン購入の有効化</span><span class="sxs-lookup"><span data-stu-id="6ae3a-104">Enable consumable add-on purchases</span></span>
 
