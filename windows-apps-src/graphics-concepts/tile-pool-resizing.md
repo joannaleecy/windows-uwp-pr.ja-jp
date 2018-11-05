@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e676b28750375a353bb41ce8e14ec1d4c3371c4c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5968537"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6038921"
 ---
 # <a name="tile-pool-resizing"></a>タイル プールのサイズ変更
 

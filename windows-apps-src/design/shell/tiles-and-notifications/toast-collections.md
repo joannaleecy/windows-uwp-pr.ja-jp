@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, 通知, コレクション, コレクション, グループの通知, 通知のグループ化, グループ、整理, アクション センター, トースト
 ms.localizationpriority: medium
 ms.openlocfilehash: be7c4ec2e9a47eeeb00663ae94f89e44c6751352
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5982527"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6038991"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>コレクションを使用したトースト通知のグループ化
 コレクションを使用してアクション センターでアプリのトーストを整理します。 コレクションにより、ユーザーはアクション センター内での情報をより簡単に見つけることができ、開発者が通知をより適切に管理できるようになります。  下の API では、通知のコレクションの削除、作成、および更新が可能です。

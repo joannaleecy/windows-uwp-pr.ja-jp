@@ -8,11 +8,11 @@ ms.topic: article
 keywords: 概要, uwp, windows 10, 学習トラック, 設定, 設定の保存, 設定の読み込み
 ms.localizationpriority: medium
 ms.openlocfilehash: 18b11ea100915f8b6ff52db5223284da6f24a1d4
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996253"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6038861"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>UWP アプリでの設定の保存と読み込み
 

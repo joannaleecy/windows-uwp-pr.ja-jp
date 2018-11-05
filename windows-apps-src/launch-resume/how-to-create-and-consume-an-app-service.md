@@ -9,11 +9,11 @@ ms.date: 09/18/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1407187f9883f44bb9fdc56fd3ae80820b5920f8
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5986028"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6038881"
 ---
 # <a name="create-and-consume-an-app-service"></a>アプリ サービスの作成と利用
 
