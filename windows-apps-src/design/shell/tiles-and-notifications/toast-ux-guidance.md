@@ -1,6 +1,6 @@
 ---
 author: manoskow
-Description: Learn how to create effective and user-focused notifications that make your users prductive and happy.
+Description: Learn how to create effective and user-focused notifications that make your users productive and happy.
 title: トーストの UX ガイダンス
 label: Toast UX Guidance
 template: detail.hbs
@@ -9,12 +9,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, 通知, コレクション、グループ、ux, ux ガイダンスについては、ガイダンス、アクション、トースト、アクション センター、noninterruptive、効果的な通知、侵入通知、アクション可能な管理、整理
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c77719bd45c3169ec02a280099d27e10099a25c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 4ac7eab73f2bcfa57ac37ea6da99e1da6b235159
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5974719"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032703"
 ---
 # <a name="toast-notification-ux-guidance"></a>トースト通知の UX ガイダンス
 通知は、現代の生活に必要な部分これらのユーザーの生産性アプリや web サイト、ほかのすべての更新プログラムで最新の現在の猶予期間と役立ちます。 ただし、通知は overbearing に便利で、ユーザーを中心とした方法でない設計されている場合、侵入からすばやくにできます。 通知は 1 つを右クリックしてから、無効にされている可能性はほとんどありませんオフにすると、それらが再びオンになります。  開いているこのエンゲージメント チャネルを維持することができますが、通知、ユーザーの画面領域と時刻を尊重を確認しておきます。
@@ -57,7 +57,7 @@ ctionable 通知は、優れた効率の高いエクスペリエンスをアプ�
 両方の関連のコンテンツが一緒に維持するための方法でこれらの gorup 通知 (つまりと思われるスポーツ アプリでのさまざまなスポーツ リーグを分離するグループ チャットでメッセージを並べ替える)。 コレクションは、ヘッダーより巧妙なが優先順位を決定しより迅速に通知を選択するユーザーは、一方のグループ notificaitons にわかりやすい方法です。 
 
 ## <a name="other-resources"></a>その他のリソース
-これら 4 つのポイント上記とは、ガイダンス、利用統計情報の独自の分析とファーストおよびサード パーティ製の実験を通じて efffective を発見したことです。 留意、ただしを次のガイドラインがその: ガイドライン。  これらの規則のエンゲージメントと、通知の生産性を向上させるのに役立ちますが、何もユーザーを中心としたと独自のデータから学習を置き換えることが確実にしています。  
+これら 4 つのポイント上記とは、ガイダンスが記載効果的な利用統計情報、当社の分析とファーストおよびサード パーティ製の実験を通じてです。 留意、ただしを次のガイドラインがその: ガイドライン。  これらの規則のエンゲージメントと、通知の生産性を向上させるのに役立ちますが、何もユーザーを中心としたと独自のデータから学習を置き換えることが確実にしています。  
 
 現在、UWP アプリに通知を送信する場合は、[デベロッパー センター](https://developer.microsoft.com/en-us/windows)で、通知で発生した問題を分析を表示する! このデータは、無料[Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK)または[WNS Api](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)を使用します。 これらの測定値により、windows プラットフォームで、通知に何が起きる洞察もユーザーが通知と対話する方法とします。 このダッシュ ボードにアクセスで画面左側にある利用率の引き上げ] メニューに移動して > の通知ページ内で「分析」タブをクリックし、通知します。  これは、デベロッパー センター ポータルから通知を送信に移動すると、同じ場所に配置されます。
 

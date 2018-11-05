@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f60f0f65868d4dec67bf77a329d4b952c20ec44a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996544"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032690"
 ---
 # <a name="triangle-strips"></a>トライアングル ストリップ
 

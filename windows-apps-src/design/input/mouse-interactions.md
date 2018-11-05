@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b79edc5499343498801081dd00554128c3b57eae
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 3ec0f99f069950776ab934c82bd3197bdd6c9dd6
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970169"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032926"
 ---
 # <a name="mouse-interactions"></a>マウス操作
 
@@ -98,14 +98,14 @@ ms.locfileid: "5970169"
 
 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) イベントを使うと、ポインター入力デバイスごとに別々のコードを記述しなくても、基本的な入力機能を実装できます。 ただし、このオブジェクトのポインター イベント、ジェスチャ イベント、操作イベントを使って、各デバイスの特別な機能 (マウス ホイール イベントなど) を利用することもできます。
 
-**サンプル:** この機能では、[アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=264996)の動作を参照してください。
+**サンプル:** この機能では、[アプリのサンプル](https://go.microsoft.com/fwlink/p/?LinkID=264996)の動作を参照してください。
 
 
-- [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
+- [入力: デバイス機能のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231530)
 
-- [入力サンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
+- [入力サンプル](https://go.microsoft.com/fwlink/p/?linkid=226855)
 
-- [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+- [入力: GestureRecognizer によるジェスチャと操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
 
 ## <a name="guidelines-for-visual-feedback"></a>視覚的なフィードバックのガイドライン
 
@@ -141,16 +141,16 @@ ms.locfileid: "5970169"
 * [入力デバイスの識別](identify-input-devices.md)
 
 **サンプル**
-* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本的な入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [待機時間が短い入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [ユーザー操作モードのサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [フォーカスの視覚効果のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **サンプルのアーカイブ**
-* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [入力: デバイス機能のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力: XAML ユーザー入力イベントのサンプル](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML のスクロール、パン、ズームのサンプル](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力: GestureRecognizer によるジェスチャと操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
  
 
