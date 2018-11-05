@@ -15,11 +15,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d166e872af0824c9eb5df15510f9597d0303f483
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970945"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6023451"
 ---
 # <a name="toggle-switches"></a><span data-ttu-id="feba8-103">トグル スイッチ</span><span class="sxs-lookup"><span data-stu-id="feba8-103">Toggle switches</span></span>
 

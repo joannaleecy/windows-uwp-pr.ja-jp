@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 9ef40050-7df6-49bd-8563-1bd58bb6e3f0
 ms.localizationpriority: medium
 ms.openlocfilehash: 3be6cfbc40fc645bfb66ef2f0fb9b8b5f2976da8
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5974035"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6023216"
 ---
 # <a name="uwp-on-xbox-one-samples"></a><span data-ttu-id="a0dba-104">Xbox One サンプルの UWP</span><span class="sxs-lookup"><span data-stu-id="a0dba-104">UWP on Xbox One samples</span></span>
 
