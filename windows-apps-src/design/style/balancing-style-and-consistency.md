@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c6344f6737e9628961393eb1e3080daf31740537
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5968445"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6025235"
 ---
 # <a name="balancing-style-and-consistency"></a>スタイルと一貫性のバランスをとる
 

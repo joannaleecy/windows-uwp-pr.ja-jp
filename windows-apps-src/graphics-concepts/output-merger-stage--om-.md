@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a4e2bbac12ddd3b60b2e4dd78f37b8934a8afea8
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5983542"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6034988"
 ---
 # <a name="output-merger-om-stage"></a>出力マージャー (OM) ステージ
 

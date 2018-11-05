@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f454c7e7386ba829cf6c99edc0b5b8f2d831f00
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5969478"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6025192"
 ---
 # <a name="optional-packages-with-executable-code"></a>実行可能コードを使用したオプション パッケージ
  

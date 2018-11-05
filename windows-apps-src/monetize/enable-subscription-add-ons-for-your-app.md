@@ -8,11 +8,11 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 207203805dfee0fd54a9d6d6fd4987b098710f4c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5973707"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6024836"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>アプリのサブスクリプション アドオンの有効化
 

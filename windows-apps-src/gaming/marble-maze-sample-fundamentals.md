@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, サンプル, DirectX, 基礎
 ms.localizationpriority: medium
 ms.openlocfilehash: f595c8f429c93a13d6342c281a90f3b0f5741621
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5993216"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6035179"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze サンプルの基礎
 

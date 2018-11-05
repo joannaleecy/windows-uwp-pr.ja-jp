@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, コントロール, 入力
 ms.localizationpriority: medium
 ms.openlocfilehash: 4aaacee011b3732b8d1456935239d7a4a5405a4d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5985837"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6035169"
 ---
 # <a name="add-controls"></a>コントロールの追加
 

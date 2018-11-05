@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2caffd029e5b5c79eb411678621643a48f65e1f1
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5995519"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6044632"
 ---
 # <a name="post-handlesqueryincluderelatedinfo"></a>POST (/handles/query?include=relatedInfo)
 セッションの関連する情報が含まれているセッション ハンドルに対するクエリを作成します。
