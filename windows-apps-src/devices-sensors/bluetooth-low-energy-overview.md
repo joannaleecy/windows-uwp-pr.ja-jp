@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、uwp、bluetooth、bluetooth LE、低エネルギー、gatt、ギャップ、中央、周辺機器、クライアント、サーバー、ウォッチャー、発行元
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5bef16c76ee14c2abb7a5a41ab02d150a97333
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5973381"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6038572"
 ---
 # <a name="bluetooth-low-energy"></a><span data-ttu-id="0d52b-104">Bluetooth 低エネルギー</span><span class="sxs-lookup"><span data-stu-id="0d52b-104">Bluetooth Low Energy</span></span>
 <span data-ttu-id="0d52b-105">Bluetooth 低エネルギー (LE) は、プロトコルの検出、電源効率の高いデバイス間の通信を定義する仕様です。</span><span class="sxs-lookup"><span data-stu-id="0d52b-105">Bluetooth Low Energy (LE) is a specification that defines protocols for discovery and communication between power-efficient devices.</span></span> <span data-ttu-id="0d52b-106">デバイスの検出は、汎用的なアクセス プロファイル (ギャップ) プロトコルを使って行われます。</span><span class="sxs-lookup"><span data-stu-id="0d52b-106">Discovery of devices is done through the Generic Access Profile (GAP) protocol.</span></span> <span data-ttu-id="0d52b-107">後の検出、デバイスの通信は、Generic Attribute (GATT) プロトコルを使って行われます。</span><span class="sxs-lookup"><span data-stu-id="0d52b-107">After discovery, device-to-device communication is done through the Generic Attribute (GATT) protocol.</span></span> <span data-ttu-id="0d52b-108">このトピックでは、UWP アプリで Bluetooth LE の簡単な概要を示します。</span><span class="sxs-lookup"><span data-stu-id="0d52b-108">This topic provides a quick overview of Bluetooth LE in UWP apps.</span></span> <span data-ttu-id="0d52b-109">Bluetooth LE の詳細を参照してください[Bluetooth Core 仕様](https://www.bluetooth.com/specifications/bluetooth-core-specification)バージョン 4.0 では、Bluetooth LE が導入されました。</span><span class="sxs-lookup"><span data-stu-id="0d52b-109">To see more detail about Bluetooth LE, see the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification) version 4.0, where Bluetooth LE was introduced.</span></span> 

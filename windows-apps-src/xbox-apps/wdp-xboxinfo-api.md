@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, xbox, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b0e2bab0ce7d5525e8032809954ff656a74a61c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5971541"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6039297"
 ---
 # <a name="xbox-info-api-reference"></a><span data-ttu-id="89588-104">Xbox 情報 API リファレンス</span><span class="sxs-lookup"><span data-stu-id="89588-104">Xbox Info API reference</span></span>   
 <span data-ttu-id="89588-105">この API を使用して Xbox One のデバイス情報にアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="89588-105">You can access Xbox One device information using this API.</span></span>

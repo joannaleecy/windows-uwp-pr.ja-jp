@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 位置, 地図, 位置情報
 ms.localizationpriority: medium
 ms.openlocfilehash: d0101124febc52da379d2e829e86bdbba7583851
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5969904"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6039046"
 ---
 # <a name="guidelines-for-location-aware-apps"></a><span data-ttu-id="6559e-103">位置認識アプリのガイドライン</span><span class="sxs-lookup"><span data-stu-id="6559e-103">Guidelines for location-aware apps</span></span>
 

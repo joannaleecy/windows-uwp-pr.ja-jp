@@ -12,11 +12,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: b437055704c307dc3e3fa506a9885ff892585503
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5997681"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6038961"
 ---
 # <a name="globalization-and-localization"></a><span data-ttu-id="d5ee9-103">グローバリゼーションとローカライズ</span><span class="sxs-lookup"><span data-stu-id="d5ee9-103">Globalization and localization</span></span>
 

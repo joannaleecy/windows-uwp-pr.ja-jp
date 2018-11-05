@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 14a2811f59b8de33db51b255aee8892abf553198
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5974709"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032160"
 ---
 # <a name="custom-text-input"></a><span data-ttu-id="50430-103">カスタム テキスト入力</span><span class="sxs-lookup"><span data-stu-id="50430-103">Custom text input</span></span>
 

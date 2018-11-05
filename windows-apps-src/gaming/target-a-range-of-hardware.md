@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP, ゲーム, シャドウ マップ, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: a9c53578fc67c13aafa1c8e39ad1d2910981081d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5973827"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6037298"
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a><span data-ttu-id="e7009-104">ハードウェアの範囲でのシャドウ マップのサポート</span><span class="sxs-lookup"><span data-stu-id="e7009-104">Support shadow maps on a range of hardware</span></span>
 

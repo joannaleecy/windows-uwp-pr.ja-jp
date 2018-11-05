@@ -15,11 +15,11 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: c30b310deb509b9abfcd49531f85ea109cb12864
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5977713"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6033863"
 ---
 # <a name="time-picker"></a><span data-ttu-id="b9e42-103">時刻の選択コントロール</span><span class="sxs-lookup"><span data-stu-id="b9e42-103">Time picker</span></span>
  

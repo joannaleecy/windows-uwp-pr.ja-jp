@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アプリの入手数
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c2e972b46c830dd6c9ea778e525f0abceda3e99
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970892"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6031627"
 ---
 # <a name="get-app-acquisitions"></a><span data-ttu-id="d9d4a-104">アプリの入手数の取得</span><span class="sxs-lookup"><span data-stu-id="d9d4a-104">Get app acquisitions</span></span>
 

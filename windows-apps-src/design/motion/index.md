@@ -14,11 +14,11 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: def37c31ef0a64a9b1017d40d281457513fba0db
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5981310"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6035611"
 ---
 # <a name="motion-for-uwp-apps"></a><span data-ttu-id="bb10f-103">UWP アプリのモーション</span><span class="sxs-lookup"><span data-stu-id="bb10f-103">Motion for UWP apps</span></span>
 

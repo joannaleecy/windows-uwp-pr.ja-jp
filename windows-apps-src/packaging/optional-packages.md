@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10、uwp、オプション パッケージ、関連セット, パッケージの拡張機能、visual studio
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a782ba90fbf350d9a18098d342c05c75dca6ceb
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5978176"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6033717"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a><span data-ttu-id="21703-105">オプション パッケージと関連セットの作成</span><span class="sxs-lookup"><span data-stu-id="21703-105">Optional packages and related set authoring</span></span>
 <span data-ttu-id="21703-106">オプション パッケージには、メイン パッケージに統合できるコンテンツが格納されます。</span><span class="sxs-lookup"><span data-stu-id="21703-106">Optional packages contain content that can be integrated with a main package.</span></span> <span data-ttu-id="21703-107">これらはダウンロード可能なコンテンツ (DLC)、サイズ制約の大規模なアプリを分割するために役立ちます。 または、元のアプリから分離して追加コンテンツを出荷します。</span><span class="sxs-lookup"><span data-stu-id="21703-107">These are useful for downloadable content (DLC), dividing a large app for size restraints, or for shipping any additional content separate from your original app.</span></span>

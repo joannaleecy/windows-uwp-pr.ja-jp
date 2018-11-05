@@ -10,12 +10,12 @@ ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: baf23062595d5d81fc59a2d757dcbada685c0f97
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 3440a0c64c0546b12c7f2c1bf1ea30168886d1db
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5969002"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6031594"
 ---
 # <a name="guidelines-for-visual-feedback"></a><span data-ttu-id="23d1f-103">視覚的なフィードバックのガイドライン</span><span class="sxs-lookup"><span data-stu-id="23d1f-103">Guidelines for visual feedback</span></span>
 
@@ -117,20 +117,20 @@ ms.locfileid: "5969002"
 * [<span data-ttu-id="23d1f-173">カスタム ユーザー操作</span><span class="sxs-lookup"><span data-stu-id="23d1f-173">Custom user interactions</span></span>](https://msdn.microsoft.com/library/windows/apps/mt185599)
 
 **<span data-ttu-id="23d1f-174">サンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-174">Samples</span></span>**
-* [<span data-ttu-id="23d1f-175">基本的な入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-175">Basic input sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [<span data-ttu-id="23d1f-176">待機時間が短い入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-176">Low latency input sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [<span data-ttu-id="23d1f-177">ユーザー操作モードのサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-177">User interaction mode sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [<span data-ttu-id="23d1f-178">フォーカスの視覚効果のサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-178">Focus visuals sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [<span data-ttu-id="23d1f-175">基本的な入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-175">Basic input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [<span data-ttu-id="23d1f-176">待機時間が短い入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-176">Low latency input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [<span data-ttu-id="23d1f-177">ユーザー操作モードのサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-177">User interaction mode sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [<span data-ttu-id="23d1f-178">フォーカスの視覚効果のサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-178">Focus visuals sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **<span data-ttu-id="23d1f-179">サンプルのアーカイブ</span><span class="sxs-lookup"><span data-stu-id="23d1f-179">Archive samples</span></span>**
-* [<span data-ttu-id="23d1f-180">入力: XAML ユーザー入力イベントのサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-180">Input: XAML user input events sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [<span data-ttu-id="23d1f-181">入力: デバイス機能のサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-181">Input: Device capabilities sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [<span data-ttu-id="23d1f-182">入力: タッチのヒット テストのサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-182">Input: Touch hit testing sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [<span data-ttu-id="23d1f-183">XAML のスクロール、パン、ズームのサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="23d1f-183">XAML scrolling, panning, and zooming sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [<span data-ttu-id="23d1f-184">入力: 簡略化されたインクのサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-184">Input: Simplified ink sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [<span data-ttu-id="23d1f-185">入力: Windows 8 のジェスチャのサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="23d1f-185">Input: Windows 8 gestures sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [<span data-ttu-id="23d1f-186">入力: 操作とジェスチャ (C++) のサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="23d1f-186">Input: Manipulations and gestures (C++) sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [<span data-ttu-id="23d1f-187">DirectX タッチ入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-187">DirectX touch input sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [<span data-ttu-id="23d1f-180">入力: XAML ユーザー入力イベントのサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-180">Input: XAML user input events sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [<span data-ttu-id="23d1f-181">入力: デバイス機能のサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-181">Input: Device capabilities sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [<span data-ttu-id="23d1f-182">入力: タッチのヒット テストのサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-182">Input: Touch hit testing sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [<span data-ttu-id="23d1f-183">XAML のスクロール、パン、ズームのサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="23d1f-183">XAML scrolling, panning, and zooming sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [<span data-ttu-id="23d1f-184">入力: 簡略化されたインクのサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-184">Input: Simplified ink sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [<span data-ttu-id="23d1f-185">入力: Windows 8 のジェスチャのサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="23d1f-185">Input: Windows 8 gestures sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [<span data-ttu-id="23d1f-186">入力: 操作とジェスチャ (C++) のサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="23d1f-186">Input: Manipulations and gestures (C++) sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [<span data-ttu-id="23d1f-187">DirectX タッチ入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="23d1f-187">DirectX touch input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
