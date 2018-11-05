@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2373d18b51015652bc1ef3035402e1da95a54abf
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5985880"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6044572"
 ---
 # <a name="vectors-vertices-and-quaternions"></a><span data-ttu-id="40ba6-105">ベクター、頂点、四元数</span><span class="sxs-lookup"><span data-stu-id="40ba6-105">Vectors, vertices, and quaternions</span></span>
 

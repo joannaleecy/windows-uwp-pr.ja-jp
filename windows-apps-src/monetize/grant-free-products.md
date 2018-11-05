@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 購入 API, 製品の付与
 ms.localizationpriority: medium
 ms.openlocfilehash: 27503148d4406cb0ba1c2ce9782ca7131c8ce081
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5984578"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6024217"
 ---
 # <a name="grant-free-products"></a><span data-ttu-id="55d17-104">無料の製品の付与</span><span class="sxs-lookup"><span data-stu-id="55d17-104">Grant free products</span></span>
 

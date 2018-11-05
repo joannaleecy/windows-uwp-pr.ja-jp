@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f32d63bf03a469d8282262c358153140587d9033
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5971561"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6025764"
 ---
 # <a name="media-compositions-and-editing"></a><span data-ttu-id="7239f-104">メディアのコンポジションと編集</span><span class="sxs-lookup"><span data-stu-id="7239f-104">Media compositions and editing</span></span>
 

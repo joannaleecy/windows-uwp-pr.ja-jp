@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、トラブルシューティング、HRESULT、エラー
 ms.localizationpriority: medium
 ms.openlocfilehash: f1a25b606def215defb8be0e0a38c628349f2440
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5984522"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6023631"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a><span data-ttu-id="afcf0-104">C++/WinRT に関する問題のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="afcf0-104">Troubleshooting C++/WinRT issues</span></span>
 

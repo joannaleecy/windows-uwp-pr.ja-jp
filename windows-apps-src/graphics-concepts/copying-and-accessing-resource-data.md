@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e7b0f06711b4a908f8990dfb16968400c685c15f
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5988153"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6027031"
 ---
 # <a name="copying-and-accessing-resource-data"></a><span data-ttu-id="47c92-105">リソース データのコピーとアクセス</span><span class="sxs-lookup"><span data-stu-id="47c92-105">Copying and accessing resource data</span></span>
 

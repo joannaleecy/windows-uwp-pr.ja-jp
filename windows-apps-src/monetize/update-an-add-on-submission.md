@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, 更新, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b363132924af5fca976fda814b185155292385e
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5994228"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6026197"
 ---
 # <a name="update-an-add-on-submission"></a><span data-ttu-id="4bb08-104">アドオンの申請の更新</span><span class="sxs-lookup"><span data-stu-id="4bb08-104">Update an add-on submission</span></span>
 
