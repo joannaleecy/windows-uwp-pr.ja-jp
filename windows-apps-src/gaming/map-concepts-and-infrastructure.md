@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 532c2a0a9779ae3eaedb2217175dc0805514f792
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5983519"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047407"
 ---
 # <a name="map-opengl-es-20-to-direct3d-11"></a><span data-ttu-id="737d3-104">Direct3D 11 への OpenGL ES 2.0 のマッピング</span><span class="sxs-lookup"><span data-stu-id="737d3-104">Map OpenGL ES 2.0 to Direct3D 11</span></span>
 

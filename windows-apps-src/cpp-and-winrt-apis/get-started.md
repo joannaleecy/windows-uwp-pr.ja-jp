@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 取得, 取得, 開始
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cb8e18904f61976103689c8d83475ec248eb38b
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5979349"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6048795"
 ---
 # <a name="get-started-with-cwinrt"></a><span data-ttu-id="82833-104">C++/WinRT の使用を開始する</span><span class="sxs-lookup"><span data-stu-id="82833-104">Get started with C++/WinRT</span></span>
 

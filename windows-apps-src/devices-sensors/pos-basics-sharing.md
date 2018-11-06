@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 591ba592d1c17b03ae29c6fb98ef546bc18b8bdc
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5976817"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6050158"
 ---
 # <a name="pointofservice-device-sharing"></a><span data-ttu-id="33fd3-104">PointOfService デバイスの共有</span><span class="sxs-lookup"><span data-stu-id="33fd3-104">PointOfService device sharing</span></span>
 

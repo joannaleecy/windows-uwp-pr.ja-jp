@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ
 ms.localizationpriority: medium
 ms.openlocfilehash: a689f540cb939cea3549b6660f2daf9a70f9b1f6
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5988110"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6046845"
 ---
 # <a name="get-all-apps"></a><span data-ttu-id="645c5-104">すべてのアプリの入手</span><span class="sxs-lookup"><span data-stu-id="645c5-104">Get all apps</span></span>
 

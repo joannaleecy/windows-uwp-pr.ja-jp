@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 50d2d5d6dd53ffcb14ed6223e2fd0f85324a8438
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996398"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6051072"
 ---
 # <a name="controls-by-function"></a><span data-ttu-id="baedd-103">機能別コントロール</span><span class="sxs-lookup"><span data-stu-id="baedd-103">Controls by function</span></span>
 

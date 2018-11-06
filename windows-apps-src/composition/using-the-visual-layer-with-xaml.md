@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f25cda10d5fde88bbe2cff75406cc0454780a5b
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5983256"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6048951"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a><span data-ttu-id="bace3-104">XAML でのビジュアル レイヤーの使用</span><span class="sxs-lookup"><span data-stu-id="bace3-104">Using the Visual Layer with XAML</span></span>
 

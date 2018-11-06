@@ -15,11 +15,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 922dccc61954e2022cbe76f2ca5d5b1f9e548733
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5989536"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6048461"
 ---
 # <a name="buttons"></a><span data-ttu-id="aad81-103">ボタン</span><span class="sxs-lookup"><span data-stu-id="aad81-103">Buttons</span></span>
 

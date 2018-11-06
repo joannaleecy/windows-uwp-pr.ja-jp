@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e0faf3a0b6a4f13c0fce24aa093cf94a1e7ee7e
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5982465"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047224"
 ---
 # <a name="fiddler-settings-api-reference"></a><span data-ttu-id="f948f-104">Fiddler 設定 API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="f948f-104">Fiddler settings API reference</span></span>   
 <span data-ttu-id="f948f-105">この REST API を使って、開発機での Fiddler のネットワーク トレースを有効または無効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="f948f-105">You can enable and disable Fiddler network tracing on your devkit using this REST API.</span></span>

@@ -8,12 +8,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 563807798cefe083fa1de85dc1f7e4c3ae679211
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 018740b9ceaa10425ec71f6a2775d547b7c30e82
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5992518"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6048481"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a><span data-ttu-id="bb70f-103">言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する</span><span class="sxs-lookup"><span data-stu-id="bb70f-103">Tailor your resources for language, scale, high contrast, and other qualifiers</span></span>
 
@@ -39,7 +39,7 @@ ms.locfileid: "5992518"
 
 <span data-ttu-id="bb70f-126">アセット ファイルが含まれるフォルダーに、修飾子を使用して名前を付ける例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="bb70f-126">Here is an example of using qualifiers to name folders that contain asset files.</span></span> <span data-ttu-id="bb70f-127">修飾子ごとに複数のアセット ファイルがある場合は、フォルダー名に修飾子を使用します。</span><span class="sxs-lookup"><span data-stu-id="bb70f-127">Use qualifiers in folder names if you have several asset files per qualifier.</span></span> <span data-ttu-id="bb70f-128">これにより、フォルダー レベルで一度だけ修飾子を設定すると、この修飾子がフォルダー内のすべての項目に適用されます。</span><span class="sxs-lookup"><span data-stu-id="bb70f-128">That way, you set the qualifier once at the folder level, and the qualifier applies to everything inside the folder.</span></span>
 
-```
+```console
 \Assets\Images\contrast-standard\<logo.png, and other image files>
 \Assets\Images\contrast-high\<logo.png, and other image files>
 \Assets\Images\contrast-black\<logo.png, and other image files>
@@ -52,7 +52,7 @@ ms.locfileid: "5992518"
 
 <span data-ttu-id="bb70f-133">フォルダーを作成して名前を付ける代わりに、修飾子を使用してリソース ファイル自体の名前を付けることもできます。</span><span class="sxs-lookup"><span data-stu-id="bb70f-133">Instead of creating and naming folders, you can use a qualifier to name the resource files themselves.</span></span> <span data-ttu-id="bb70f-134">1 つの修飾子につきリソース ファイルが 1 つのみの場合は、この方法が適しています。</span><span class="sxs-lookup"><span data-stu-id="bb70f-134">You might prefer to do this if you only have one resource file per qualifier.</span></span> <span data-ttu-id="bb70f-135">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="bb70f-135">Here’s an example.</span></span>
 
-```
+```console
 \Assets\Images\logo.contrast-standard.png
 \Assets\Images\logo.contrast-high.png
 \Assets\Images\logo.contrast-black.png
@@ -68,7 +68,7 @@ ms.locfileid: "5992518"
 ## <a name="actual-and-neutral-qualifier-matches"></a><span data-ttu-id="bb70f-140">修飾子の実際の一致と中立的な一致</span><span class="sxs-lookup"><span data-stu-id="bb70f-140">Actual and neutral qualifier matches</span></span>
 <span data-ttu-id="bb70f-141">修飾子の値の*すべて*にリソース ファイルを指定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="bb70f-141">You don’t need to provide a resource file for *every* qualifier value.</span></span> <span data-ttu-id="bb70f-142">たとえば、ハイ コントラスト用と標準コントラスト用にビジュアル アセットを各 1 つのみ必要とする場合は、これらのアセット名を次のように付けることができます。</span><span class="sxs-lookup"><span data-stu-id="bb70f-142">For example, if you find that you only need one visual asset for high contrast and one for standard contrast, then you can name those assets like this.</span></span>
 
-```
+```console
 \Assets\Images\logo.contrast-high.png
 \Assets\Images\logo.png
 ```
@@ -81,7 +81,7 @@ ms.locfileid: "5992518"
 
 <span data-ttu-id="bb70f-156">必要なアセット セットが、ハイ コントラスト用に 1 つと標準コントラスト用に 1 つのみである場合は、ファイル名の代わりにフォルダー名を使用できます。</span><span class="sxs-lookup"><span data-stu-id="bb70f-156">If you only need one set of assets for high contrast and one set for standard contrast, then you can use folder names instead of file names.</span></span> <span data-ttu-id="bb70f-157">この場合、フォルダー名を省略すると、完全に中立的な一致になります。</span><span class="sxs-lookup"><span data-stu-id="bb70f-157">In this case, omitting the folder name entirely gives you the neutral match.</span></span>
 
-```
+```console
 \Assets\Images\contrast-high\<logo.png, and other images to load when high contrast theme is not None>
 \Assets\Images\<logo.png, and other images to load when high contrast theme is None>
 ```
@@ -92,7 +92,7 @@ ms.locfileid: "5992518"
 
 <span data-ttu-id="bb70f-160">修飾子は、フォルダー名とファイル名で組み合わせることができます。</span><span class="sxs-lookup"><span data-stu-id="bb70f-160">You can combine qualifiers in folder and file names.</span></span> <span data-ttu-id="bb70f-161">たとえば、ハイ コントラスト モードがオンであり\*\* 表示倍率が 400 のときに、イメージ アセットをアプリに読み込むとします。</span><span class="sxs-lookup"><span data-stu-id="bb70f-161">For example, you may want your app to load image assets when high contrast mode is on *and* the display scale factor is 400.</span></span> <span data-ttu-id="bb70f-162">これを行う方法の 1 つは、入れ子になったフォルダーの使用です。</span><span class="sxs-lookup"><span data-stu-id="bb70f-162">One way to do this is with nested folders.</span></span>
 
-```
+```console
 \Assets\Images\contrast-high\scale-400\<logo.png, and other image files>
 ```
 
@@ -100,7 +100,7 @@ ms.locfileid: "5992518"
 
 <span data-ttu-id="bb70f-164">もう 1 つのオプションは、複数の修飾子を結合して 1 つのフォルダー名にすることです。</span><span class="sxs-lookup"><span data-stu-id="bb70f-164">Another option is to combine multiple qualifiers in one folder name.</span></span>
 
-```
+```console
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
@@ -108,7 +108,7 @@ ms.locfileid: "5992518"
 
 <span data-ttu-id="bb70f-167">同じ形式で、複数の修飾子を結合して 1 つのファイル名にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="bb70f-167">You can combine multiple qualifiers in a file name in the same format.</span></span>
 
-```
+```console
 \Assets\Images\logo.contrast-high_scale-400.png
 ```
 
@@ -160,14 +160,14 @@ public void SetLicenseLevel(BrandID brand)
 
 <span data-ttu-id="bb70f-190">ただし他に方法がなければ、XAML ビュー (XAML ビューは、UI レイアウトとコントロールを含む XAML ファイル) を格納するフォルダーの名前として devicefamily という修飾子を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="bb70f-190">But as a last resort it is possible to use devicefamily qualifiers to name folders that contain your XAML views (a XAML view is a XAML file that contains UI layout and controls).</span></span>
 
-```
+```console
 \devicefamily-desktop\<MainPage.xaml, and other markup files to load when running on a desktop computer>
 \devicefamily-mobile\<MainPage.xaml, and other markup files to load when running on a phone>
 ```
 
 <span data-ttu-id="bb70f-191">または、次のようにファイルに命名することもできます。</span><span class="sxs-lookup"><span data-stu-id="bb70f-191">Or you can name files.</span></span>
 
-```
+```console
 \MainPage.devicefamily-desktop.xaml
 \MainPage.devicefamily-mobile.xaml
 ```
@@ -203,21 +203,21 @@ public void SetLicenseLevel(BrandID brand)
 
 <span data-ttu-id="bb70f-212">`language` 修飾子は通常、リソース ファイル (`.resw`) が含まれているフォルダーの命名に使用します。</span><span class="sxs-lookup"><span data-stu-id="bb70f-212">You typically use a `language` qualifier to name the folders that contain your Resources Files (`.resw`).</span></span>
 
-```
+```console
 \Strings\language-en\Resources.resw
 \Strings\language-ja\Resources.resw
 ```
 
 <span data-ttu-id="bb70f-213">`language` 修飾子の `language-` の部分 (修飾子名) は省略することができます。</span><span class="sxs-lookup"><span data-stu-id="bb70f-213">You can omit the `language-` part of a `language` qualifier (that is, the qualifier name).</span></span> <span data-ttu-id="bb70f-214">これは他の種類の修飾子には適用されません。また、適用できるのはフォルダー名の場合のみです。</span><span class="sxs-lookup"><span data-stu-id="bb70f-214">You can’t do this with the other kinds of qualifiers; and you can only do it in a folder name.</span></span>
 
-```
+```console
 \Strings\en\Resources.resw
 \Strings\ja\Resources.resw
 ```
 
 <span data-ttu-id="bb70f-215">フォルダーに名前を付ける代わりに、`language` 修飾子を使用してリソース ファイル自体の名前を付けることもできます。</span><span class="sxs-lookup"><span data-stu-id="bb70f-215">Instead of naming folders, you can use `language` qualifiers to name the Resources Files themselves.</span></span>
 
-```
+```console
 \Strings\Resources.language-en.resw
 \Strings\Resources.language-ja.resw
 ```
@@ -234,7 +234,7 @@ public void SetLicenseLevel(BrandID brand)
 
 <span data-ttu-id="bb70f-228">フォルダー レベルで修飾子を設定する例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="bb70f-228">Here’s an example of setting the qualifier at the folder level.</span></span>
 
-```
+```console
 \Assets\Images\scale-100\<logo.png, and other image files>
 \Assets\Images\scale-200\<logo.png, and other image files>
 \Assets\Images\scale-400\<logo.png, and other image files>
@@ -242,7 +242,7 @@ public void SetLicenseLevel(BrandID brand)
 
 <span data-ttu-id="bb70f-229">この例では、ファイル レベルで修飾子を設定します。</span><span class="sxs-lookup"><span data-stu-id="bb70f-229">And this example sets it at the file level.</span></span>
 
-```
+```console
 \Assets\Images\logo.scale-100.png
 \Assets\Images\logo.scale-200.png
 \Assets\Images\logo.scale-400.png

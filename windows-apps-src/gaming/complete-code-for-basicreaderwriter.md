@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、BasicReaderWriter
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a5d644a2a141a83316575a235805fa56657bf3a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5990828"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047427"
 ---
 # <a name="complete-code-for-basicreaderwriter"></a><span data-ttu-id="83ae0-104">BasicReaderWriter のコード一式</span><span class="sxs-lookup"><span data-stu-id="83ae0-104">Complete code for BasicReaderWriter</span></span>
 

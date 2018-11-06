@@ -7,12 +7,12 @@ ms.author: twhitney
 ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a1722c22c717ec1a349f6e7d48c1e151209eab2c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: c4c326dbafa719273c4535a42d58184c7ce360fe
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5997016"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6050168"
 ---
 # <a name="create-and-host-an-app-extension"></a><span data-ttu-id="4dcef-104">アプリ拡張機能の作成とホスト</span><span class="sxs-lookup"><span data-stu-id="4dcef-104">Create and host an app extension</span></span>
 
@@ -64,7 +64,7 @@ _<span data-ttu-id="4dcef-134">MathExtensionHost プロジェクト内の Packag
         <Extensions>
             <uap3:Extension Category="windows.appExtensionHost">
                 <uap3:AppExtensionHost>
-                  <uap3:Name>microsoft.com.MathExt</uap3:Name>
+                  <uap3:Name>com.microsoft.mathext</uap3:Name>
                 </uap3:AppExtensionHost>
           </uap3:Extension>
         </Extensions>
@@ -99,7 +99,7 @@ _<span data-ttu-id="4dcef-147">MathExtension プロジェクト内の Package.ap
         <Extensions>
           ...
           <uap3:Extension Category="windows.appExtension">
-            <uap3:AppExtension Name="Microsoft.com.MathExt"
+            <uap3:AppExtension Name="com.microsoft.mathext"
                                Id="power"
                                DisplayName="x^y"
                                Description="Exponent"
@@ -366,7 +366,7 @@ _<span data-ttu-id="4dcef-278">MathExtension プロジェクト内の Package.ap
      <uap:AppService Name="com.microsoft.sqrtservice" />      <!-- This must match the contents of <Service>...</Service> -->
    </uap:Extension>
    <uap3:Extension Category="windows.appExtension">
-     <uap3:AppExtension Name="Microsoft.com.MathExt" Id="sqrt" DisplayName="Sqrt(x)" Description="Square root" PublicFolder="Public">
+     <uap3:AppExtension Name="com.microsoft.mathext" Id="sqrt" DisplayName="Sqrt(x)" Description="Square root" PublicFolder="Public">
        <uap3:Properties>
          <Service>com.microsoft.powservice</Service>   <!-- this must match <uap:AppService Name=...> -->
        </uap3:Properties>
