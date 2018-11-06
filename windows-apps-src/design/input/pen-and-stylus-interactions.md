@@ -10,12 +10,12 @@ ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d04ea3506fc909b115ba9aab397ded9e4464479
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: a9a9dd4347cc682f384c2d408d30820acf76ce34
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5982137"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047507"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>UWP アプリでのペン操作と Windows Ink
 
@@ -52,7 +52,7 @@ Windows Ink UX のガイドラインについては、「[手描き入力コン�
 | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) | XAMLUI プラットフォーム コントロール、既定では、受信し、ペンからのすべての入力をインク ストロークか消去ストロークとして表示します。<br/>InkCanvas の使用方法について詳しくは、「[Windows インク ストロークのテキスト認識](convert-ink-to-text.md)」と「[Windows Ink ストローク データの保存と取得](save-and-load-ink.md)」をご覧ください。 |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールと共にインスタンス化される分離コード オブジェクトです ([**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) プロパティによって公開されます)。 **InkCanvas** によって公開される既定の手描き入力機能のすべてと、追加のカスタマイズや個人用設定のための包括的な API のセットを提供します。<br/>InkPresenter の使用方法について詳しくは、「[Windows Ink ストロークのテキスト認識](convert-ink-to-text.md)」と「[Windows Ink ストローク データの保存と取得](save-and-load-ink.md)」をご覧ください。 |
 | [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | 関連付けられた[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)のインク関連機能をアクティブ化するボタンのカスタマイズと拡張可能なコレクションを含む XAMLUI プラットフォーム コントロールです。<br/>InkToolbar の使用方法について詳しくは、「[InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手描き入力アプリに追加する](ink-toolbar.md)」をご覧ください。 |
-| [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | 既定の [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールの代わりに、ユニバーサル Windows アプリが指定した Direct2D デバイス コンテキストにインク ストロークをレンダリングできます。 これにより、手描き入力エクスペリエンスの全面的なカスタマイズが実現されます。<br/>詳しくは、「[複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)」をご覧ください。 |
+| [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | 既定の [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールの代わりに、ユニバーサル Windows アプリが指定した Direct2D デバイス コンテキストにインク ストロークをレンダリングできます。 これにより、手描き入力エクスペリエンスの全面的なカスタマイズが実現されます。<br/>詳しくは、「[複雑なインクのサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620314)」をご覧ください。 |
 
 ## <a name="basic-inking-with-inkcanvas"></a>InkCanvas による基本的な手描き入力
 
@@ -456,7 +456,7 @@ Windows Ink プラットフォームには、変更された入力を必要と�
 
 ドライ インクを [SwapChainPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.swapchainpanel) 用にカスタマイズすることもできますが、UI スレッドとの同期は保証されません。インクを SwapChainPanel にレンダリングしたタイミングと、インクが InkCanvas から取り除かれるタイミングの間にずれが生じる可能性があります。
 
-この機能の完全な例については、「[複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)」をご覧ください。
+この機能の完全な例については、「[複雑なインクのサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620314)」をご覧ください。
 
 > [!NOTE]
 > カスタム ドライ レンダリングと [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
@@ -484,18 +484,18 @@ Windows Ink プラットフォームには、変更された入力を必要と�
 
 **サンプル**
 * [入門チュートリアル: UWP アプリでのインクのサポート](https://aka.ms/appsample-ink)
-* [単純なインクのサンプル (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雑なインクのサンプル (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [インクのサンプル (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [単純なインクのサンプル (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [複雑なインクのサンプル (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [インクのサンプル (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [塗り絵帳のサンプル](https://aka.ms/cpubsample-coloringbook)
 * [Family Notes のサンプル](https://aka.ms/cpubsample-familynotessample)
-* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本的な入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [待機時間が短い入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [ユーザー操作モードのサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [フォーカスの視覚効果のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **サンプルのアーカイブ**
-* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [入力: デバイス機能のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力: XAML ユーザー入力イベントのサンプル](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML のスクロール、パン、ズームのサンプル](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力: GestureRecognizer によるジェスチャと操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)

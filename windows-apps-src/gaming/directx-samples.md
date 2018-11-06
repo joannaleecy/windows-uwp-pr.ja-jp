@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, サンプル, 3D
 ms.localizationpriority: medium
 ms.openlocfilehash: f5929a0256c7f9808079f902a258b3fd094f241c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5991767"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047357"
 ---
 # <a name="directx-samples"></a>DirectX のサンプル
 

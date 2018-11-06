@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bc7d04a826bd8be0947e8d84ab8dbff6f67e8027
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5973916"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6046242"
 ---
 # <a name="streaming-resources-features-tiers"></a>ストリーミング リソース機能の階層
 

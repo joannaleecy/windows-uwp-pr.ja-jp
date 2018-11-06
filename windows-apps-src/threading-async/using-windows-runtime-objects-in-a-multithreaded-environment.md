@@ -9,11 +9,11 @@ ms.author: normesta
 keywords: Windows 10, UWP, タイマー, スレッド
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f4b8249a81cb7d71ba1f4775fd858ae87779c85
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996718"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047873"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>マルチスレッド環境での Windows ランタイム オブジェクトの使用
 この記事では、C# および Visual Basic コードからオブジェクト (Windows ランタイム や Windows ランタイム コンポーネントによって提供されるオブジェクト) を呼び出すとき、.NET Framework がどのようにこの呼び出しを処理するかについて説明します。

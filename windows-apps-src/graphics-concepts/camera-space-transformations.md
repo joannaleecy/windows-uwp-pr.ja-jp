@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9de6759fb15aef4b32a5e9022a27cab09af300f8
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970559"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047527"
 ---
 # <a name="camera-space-transformations"></a>カメラの空間変換
 

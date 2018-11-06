@@ -8,12 +8,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 563807798cefe083fa1de85dc1f7e4c3ae679211
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 018740b9ceaa10425ec71f6a2775d547b7c30e82
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5992518"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6048481"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する
 
@@ -39,7 +39,7 @@ ms.locfileid: "5992518"
 
 アセット ファイルが含まれるフォルダーに、修飾子を使用して名前を付ける例を次に示します。 修飾子ごとに複数のアセット ファイルがある場合は、フォルダー名に修飾子を使用します。 これにより、フォルダー レベルで一度だけ修飾子を設定すると、この修飾子がフォルダー内のすべての項目に適用されます。
 
-```
+```console
 \Assets\Images\contrast-standard\<logo.png, and other image files>
 \Assets\Images\contrast-high\<logo.png, and other image files>
 \Assets\Images\contrast-black\<logo.png, and other image files>
@@ -52,7 +52,7 @@ ms.locfileid: "5992518"
 
 フォルダーを作成して名前を付ける代わりに、修飾子を使用してリソース ファイル自体の名前を付けることもできます。 1 つの修飾子につきリソース ファイルが 1 つのみの場合は、この方法が適しています。 次に例を示します。
 
-```
+```console
 \Assets\Images\logo.contrast-standard.png
 \Assets\Images\logo.contrast-high.png
 \Assets\Images\logo.contrast-black.png
@@ -68,7 +68,7 @@ ms.locfileid: "5992518"
 ## <a name="actual-and-neutral-qualifier-matches"></a>修飾子の実際の一致と中立的な一致
 修飾子の値の*すべて*にリソース ファイルを指定する必要はありません。 たとえば、ハイ コントラスト用と標準コントラスト用にビジュアル アセットを各 1 つのみ必要とする場合は、これらのアセット名を次のように付けることができます。
 
-```
+```console
 \Assets\Images\logo.contrast-high.png
 \Assets\Images\logo.png
 ```
@@ -81,7 +81,7 @@ ms.locfileid: "5992518"
 
 必要なアセット セットが、ハイ コントラスト用に 1 つと標準コントラスト用に 1 つのみである場合は、ファイル名の代わりにフォルダー名を使用できます。 この場合、フォルダー名を省略すると、完全に中立的な一致になります。
 
-```
+```console
 \Assets\Images\contrast-high\<logo.png, and other images to load when high contrast theme is not None>
 \Assets\Images\<logo.png, and other images to load when high contrast theme is None>
 ```
@@ -92,7 +92,7 @@ ms.locfileid: "5992518"
 
 修飾子は、フォルダー名とファイル名で組み合わせることができます。 たとえば、ハイ コントラスト モードがオンであり** 表示倍率が 400 のときに、イメージ アセットをアプリに読み込むとします。 これを行う方法の 1 つは、入れ子になったフォルダーの使用です。
 
-```
+```console
 \Assets\Images\contrast-high\scale-400\<logo.png, and other image files>
 ```
 
@@ -100,7 +100,7 @@ ms.locfileid: "5992518"
 
 もう 1 つのオプションは、複数の修飾子を結合して 1 つのフォルダー名にすることです。
 
-```
+```console
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
@@ -108,7 +108,7 @@ ms.locfileid: "5992518"
 
 同じ形式で、複数の修飾子を結合して 1 つのファイル名にすることもできます。
 
-```
+```console
 \Assets\Images\logo.contrast-high_scale-400.png
 ```
 
@@ -160,14 +160,14 @@ public void SetLicenseLevel(BrandID brand)
 
 ただし他に方法がなければ、XAML ビュー (XAML ビューは、UI レイアウトとコントロールを含む XAML ファイル) を格納するフォルダーの名前として devicefamily という修飾子を使用することもできます。
 
-```
+```console
 \devicefamily-desktop\<MainPage.xaml, and other markup files to load when running on a desktop computer>
 \devicefamily-mobile\<MainPage.xaml, and other markup files to load when running on a phone>
 ```
 
 または、次のようにファイルに命名することもできます。
 
-```
+```console
 \MainPage.devicefamily-desktop.xaml
 \MainPage.devicefamily-mobile.xaml
 ```
@@ -203,21 +203,21 @@ public void SetLicenseLevel(BrandID brand)
 
 `language` 修飾子は通常、リソース ファイル (`.resw`) が含まれているフォルダーの命名に使用します。
 
-```
+```console
 \Strings\language-en\Resources.resw
 \Strings\language-ja\Resources.resw
 ```
 
 `language` 修飾子の `language-` の部分 (修飾子名) は省略することができます。 これは他の種類の修飾子には適用されません。また、適用できるのはフォルダー名の場合のみです。
 
-```
+```console
 \Strings\en\Resources.resw
 \Strings\ja\Resources.resw
 ```
 
 フォルダーに名前を付ける代わりに、`language` 修飾子を使用してリソース ファイル自体の名前を付けることもできます。
 
-```
+```console
 \Strings\Resources.language-en.resw
 \Strings\Resources.language-ja.resw
 ```
@@ -234,7 +234,7 @@ Windows では、ディスプレイの DPI (1 インチあたりのドット数)
 
 フォルダー レベルで修飾子を設定する例を次に示します。
 
-```
+```console
 \Assets\Images\scale-100\<logo.png, and other image files>
 \Assets\Images\scale-200\<logo.png, and other image files>
 \Assets\Images\scale-400\<logo.png, and other image files>
@@ -242,7 +242,7 @@ Windows では、ディスプレイの DPI (1 インチあたりのドット数)
 
 この例では、ファイル レベルで修飾子を設定します。
 
-```
+```console
 \Assets\Images\logo.scale-100.png
 \Assets\Images\logo.scale-200.png
 \Assets\Images\logo.scale-400.png

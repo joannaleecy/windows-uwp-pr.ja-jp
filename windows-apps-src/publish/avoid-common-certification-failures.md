@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f37412ac88b001f412a1495f2b4efa029cf4d3a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5975010"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047347"
 ---
 # <a name="avoid-common-certification-failures"></a>一般的な認定エラーの回避
 
