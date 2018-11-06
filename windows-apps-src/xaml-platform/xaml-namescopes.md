@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fcbc1566d2b2b5ffc6889a57dd7656a3466d2a9
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5988585"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6049623"
 ---
 # <a name="xaml-namescopes"></a>XAML 名前スコープ
 

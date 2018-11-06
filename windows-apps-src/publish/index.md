@@ -10,11 +10,11 @@ keywords: windows 10, uwp, 公開する, 公開, 販売, 販売する, 配布, �
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ms.openlocfilehash: 229e1eab05e392a4091c9eee5bc9af948c678d96
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5983499"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6049453"
 ---
 # <a name="publish-windows-apps-and-games"></a>Windows アプリとゲームを公開する  
  
