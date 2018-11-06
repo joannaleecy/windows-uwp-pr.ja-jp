@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live、Xbox、ゲーム、UWP、Windows 10、Xbox One、サンプル、サンプル
 ms.localizationpriority: medium
 ms.openlocfilehash: 30078629f164f30fffcecb0dce76046b896c21f6
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5992035"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6028855"
 ---
 # <a name="xbox-live-samples"></a><span data-ttu-id="00989-104">Xbox Live のサンプル</span><span class="sxs-lookup"><span data-stu-id="00989-104">Xbox Live Samples</span></span>
 

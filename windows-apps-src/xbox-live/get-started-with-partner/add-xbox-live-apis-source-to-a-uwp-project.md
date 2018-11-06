@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0900786f4aeb8e2baf1bfe7a9fcc302ac857f91a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5969751"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6048800"
 ---
 # <a name="add-and-compile-the-xbox-live-apis-source-in-your-uwp-project"></a><span data-ttu-id="be60f-104">UWP プロジェクトで Xbox Live API のソースを追加し、コンパイルする</span><span class="sxs-lookup"><span data-stu-id="be60f-104">Add and compile the Xbox Live APIs source in your UWP project</span></span>
 

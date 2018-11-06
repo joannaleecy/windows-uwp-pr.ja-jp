@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ae3a64c844fd888e8ad5c8e319e430efc53aae01
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5994115"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6036245"
 ---
 # <a name="get-usersmeinventory"></a><span data-ttu-id="3823a-104">GET (/users/me/inventory)</span><span class="sxs-lookup"><span data-stu-id="3823a-104">GET (/users/me/inventory)</span></span>
 <span data-ttu-id="3823a-105">呼び出し元に指定されたユーザーに関連付けられているインベントリのセットを提供します。</span><span class="sxs-lookup"><span data-stu-id="3823a-105">Provides the set of inventory currently associated with the provided user back to the caller.</span></span>

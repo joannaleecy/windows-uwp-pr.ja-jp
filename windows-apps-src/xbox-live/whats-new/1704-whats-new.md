@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live、Xbox、ゲーム、UWP、Windows 10、Xbox One、アリーナ、トーナメント
 ms.localizationpriority: medium
 ms.openlocfilehash: e223c0c9bfca3b516d7eb623aba968cc8b547747
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5986205"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6027165"
 ---
 # <a name="whats-new-for-the-xbox-live-apis---april-2017"></a><span data-ttu-id="523c7-104">Xbox Live API の新規事項 - April 2017</span><span class="sxs-lookup"><span data-stu-id="523c7-104">What's new for the Xbox Live APIs - April 2017</span></span>
 

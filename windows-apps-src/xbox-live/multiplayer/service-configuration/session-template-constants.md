@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, セッション テンプレート
 ms.localizationpriority: medium
 ms.openlocfilehash: 17c7fa48ee637dbca20b67872113a8d43e04da84
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5974609"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6031884"
 ---
 # <a name="session-template-constants"></a><span data-ttu-id="575a9-104">セッション テンプレートの定数</span><span class="sxs-lookup"><span data-stu-id="575a9-104">Session template constants</span></span>
 

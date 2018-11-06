@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4db098998f63f2889b268f086dc3bfdca217bdd5
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5983656"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6022930"
 ---
 # <a name="get-usersxuidxuidscidsscidstats"></a><span data-ttu-id="39080-104">GET (/users/xuid({xuid})/scids/{scid}/stats)</span><span class="sxs-lookup"><span data-stu-id="39080-104">GET (/users/xuid({xuid})/scids/{scid}/stats)</span></span>
 <span data-ttu-id="39080-105">スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストで、サービス構成を取得します。</span><span class="sxs-lookup"><span data-stu-id="39080-105">Gets a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.</span></span>

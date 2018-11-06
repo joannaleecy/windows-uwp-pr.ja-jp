@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015, セッション テンプレート, MPSD
 ms.localizationpriority: medium
 ms.openlocfilehash: ad551d07d94f90d89f8abda0b188ea281b4930c2
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5986534"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6034792"
 ---
 # <a name="mpsd-session-details"></a><span data-ttu-id="aad9b-104">MPSD セッションの詳細</span><span class="sxs-lookup"><span data-stu-id="aad9b-104">MPSD Session Details</span></span>
 

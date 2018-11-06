@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 444f765101c1067b6a13125099040c64197848e4
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5995503"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6043862"
 ---
 # <a name="profile-json"></a><span data-ttu-id="b5413-104">Profile (JSON)</span><span class="sxs-lookup"><span data-stu-id="b5413-104">Profile (JSON)</span></span>
 <span data-ttu-id="b5413-105">ユーザーの個人用プロファイル設定します。</span><span class="sxs-lookup"><span data-stu-id="b5413-105">The personal profile settings for a user.</span></span> 

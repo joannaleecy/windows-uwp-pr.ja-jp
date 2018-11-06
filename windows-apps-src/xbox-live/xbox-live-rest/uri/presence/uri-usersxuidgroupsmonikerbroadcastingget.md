@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e38cbcdf746fee1cf96d977af24490bc549b7f6
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5979527"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6031920"
 ---
 # <a name="get-usersxuidxuidgroupsmonikerbroadcasting-"></a><span data-ttu-id="5cd45-104">GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )</span><span class="sxs-lookup"><span data-stu-id="5cd45-104">GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )</span></span>
 <span data-ttu-id="5cd45-105">URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードを取得します。</span><span class="sxs-lookup"><span data-stu-id="5cd45-105">Retrieves the presence record of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI.</span></span> <span data-ttu-id="5cd45-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5cd45-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>

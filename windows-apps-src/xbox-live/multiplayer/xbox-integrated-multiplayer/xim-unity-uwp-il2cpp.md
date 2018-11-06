@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
 ms.openlocfilehash: 4171fa830059eb557106ad3a7c485a6e96deeec6
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5984117"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6032415"
 ---
 # <a name="use-xim-unity-with-il2cpp"></a><span data-ttu-id="fb4bb-104">XIM (Unity と IL2CPP) の使用</span><span class="sxs-lookup"><span data-stu-id="fb4bb-104">Use XIM (Unity with IL2CPP)</span></span>
 

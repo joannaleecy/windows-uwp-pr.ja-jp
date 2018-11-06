@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015, ステータス コード, セッション
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e8e73008505457949fd8123b1c4bd1452785ef
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5980110"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6042508"
 ---
 # <a name="multiplayer-session-status-codes"></a><span data-ttu-id="58bda-104">マルチプレイヤー セッション ステータス コード</span><span class="sxs-lookup"><span data-stu-id="58bda-104">Multiplayer Session Status Codes</span></span>
 

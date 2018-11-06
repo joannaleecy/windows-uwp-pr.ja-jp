@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Windows デベロッパー センター, Xbox Live セットアップ
 ms.openlocfilehash: 761d5e721220a3094c455273a71d029fc8c26ba1
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5978192"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6044626"
 ---
 # <a name="configure-xbox-live-setup-on-windows-dev-center"></a><span data-ttu-id="65ebb-104">Windows デベロッパー センターでの Xbox Live セットアップの構成</span><span class="sxs-lookup"><span data-stu-id="65ebb-104">Configure Xbox Live Setup on Windows Dev Center</span></span>
 

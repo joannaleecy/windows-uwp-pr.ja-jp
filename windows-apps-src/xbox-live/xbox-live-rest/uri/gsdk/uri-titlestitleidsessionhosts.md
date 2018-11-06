@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 77868d4bce61c80e9f8ebd0744822c9ade27327e
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5994732"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6038996"
 ---
 # <a name="titlestitleidsessionhosts"></a><span data-ttu-id="865e4-104">/titles/{titleId}/sessionhosts</span><span class="sxs-lookup"><span data-stu-id="865e4-104">/titles/{titleId}/sessionhosts</span></span>
 <span data-ttu-id="865e4-105">特定のタイトル id が割り当ての Xbox Live Compute sessionhost を要求します。これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="865e4-105">Requests a Xbox Live Compute sessionhost to be allocated for a given title id. The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>

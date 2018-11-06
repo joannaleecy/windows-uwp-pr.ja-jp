@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b175c76a610df13f7527327bdb490bc7a8399a2
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5991673"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6043247"
 ---
 # <a name="flowchart---play-a-multiplayer-game-by-using-smartmatch-matchmaking"></a><span data-ttu-id="d24b7-104">フローチャート - SmartMatch マッチメイキングを使用してマルチプレイヤー ゲームをプレイする</span><span class="sxs-lookup"><span data-stu-id="d24b7-104">Flowchart - Play a multiplayer game by using SmartMatch matchmaking</span></span>
 

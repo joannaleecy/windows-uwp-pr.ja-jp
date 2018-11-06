@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム, クリエーター
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fb9c9aa4267e7485b8e1583ff011b6d1cd6070e
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5982411"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6025240"
 ---
 # <a name="developer-program-overview"></a><span data-ttu-id="cc885-104">開発者プログラムの概要</span><span class="sxs-lookup"><span data-stu-id="cc885-104">Developer program overview</span></span>
 

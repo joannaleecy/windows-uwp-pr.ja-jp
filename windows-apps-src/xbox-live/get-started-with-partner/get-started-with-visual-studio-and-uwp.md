@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ba9339ac9e383c9f4ac8107b79caa947cb09615
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5970433"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6030847"
 ---
 # <a name="get-started-using-visual-studio-for-uwp-games"></a><span data-ttu-id="7411c-104">UWP ゲーム用 Visual Studio の使用に関する概要</span><span class="sxs-lookup"><span data-stu-id="7411c-104">Get started using Visual Studio for UWP games</span></span>
 

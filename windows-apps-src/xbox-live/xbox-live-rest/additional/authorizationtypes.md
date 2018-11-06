@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0269b3e95e2c5b3e36c1c199e5af36527639a149
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5991580"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6030953"
 ---
 # <a name="authorization-types"></a><span data-ttu-id="8a4e1-104">承認のタイプ</span><span class="sxs-lookup"><span data-stu-id="8a4e1-104">Authorization Types</span></span>
  

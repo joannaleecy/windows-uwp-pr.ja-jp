@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー
 ms.localizationpriority: medium
 ms.openlocfilehash: 17a02d525e99338ee5c21ae510a5dc48a0fc75ec
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5984768"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6037382"
 ---
 # <a name="xbox-live-multiplayer-platform"></a><span data-ttu-id="bb21a-104">Xbox Live マルチプレイヤー プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="bb21a-104">Xbox Live Multiplayer Platform</span></span>
 
