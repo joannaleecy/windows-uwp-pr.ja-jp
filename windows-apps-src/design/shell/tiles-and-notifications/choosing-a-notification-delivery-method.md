@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c01b96f70bd39c43f321935aa47393ada0400319
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5977643"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6045844"
 ---
 # <a name="choose-a-notification-delivery-method"></a><span data-ttu-id="373ec-103">通知配信方法の選択</span><span class="sxs-lookup"><span data-stu-id="373ec-103">Choose a notification delivery method</span></span>
 

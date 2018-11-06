@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 待機時間, DXGI, スワップ チェーン, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 51a1dd6d7f1c39d82201d3b9741276a54e4c06a8
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5972987"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6041215"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a><span data-ttu-id="6e087-104">DXGI 1.3 スワップ チェーンによる遅延の減少</span><span class="sxs-lookup"><span data-stu-id="6e087-104">Reduce latency with DXGI 1.3 swap chains</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 730d5ae9062fe39533cd615facaf5beaa7d02ffd
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5980323"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6047088"
 ---
 # <a name="composition-brushes"></a><span data-ttu-id="c7628-105">コンポジションのブラシ</span><span class="sxs-lookup"><span data-stu-id="c7628-105">Composition brushes</span></span>
 <span data-ttu-id="c7628-106">ブラシによって描画されているために、すべての UWP アプリケーションから、画面に表示されることが表示されます。</span><span class="sxs-lookup"><span data-stu-id="c7628-106">Everything visible on your screen from a UWP application is visible because it was painted by a Brush.</span></span> <span data-ttu-id="c7628-107">ブラシを使用すると、シンプルで単色の色から画像や複雑な効果のチェーンに描画に至るまでコンテンツを持つユーザー インターフェイス (UI) オブジェクトを使ってペイントできます。</span><span class="sxs-lookup"><span data-stu-id="c7628-107">Brushes enable you to paint user interface (UI) objects with content ranging from simple, solid colors to images or drawings to complex effects chain.</span></span> <span data-ttu-id="c7628-108">このトピックでは、CompositionBrush と描画の概念を説明します。</span><span class="sxs-lookup"><span data-stu-id="c7628-108">This topic introduces the concepts of painting with CompositionBrush.</span></span>

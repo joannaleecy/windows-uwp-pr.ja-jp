@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 14259fb6949eaa100d51fbdbda6f96bd07a4fa80
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5992310"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6042440"
 ---
 # <a name="opengl-es-20-to-direct3d-11-reference"></a><span data-ttu-id="5d87f-104">OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス</span><span class="sxs-lookup"><span data-stu-id="5d87f-104">OpenGL ES 2.0 to Direct3D 11 reference</span></span>
 

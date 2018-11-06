@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライト, パッケージ フライト
 ms.localizationpriority: medium
 ms.openlocfilehash: 09fd5c703e4a601ad28a05156aec9133444cfd9e
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970405"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6040441"
 ---
 # <a name="get-a-package-flight"></a><span data-ttu-id="7beec-104">パッケージ フライトの取得</span><span class="sxs-lookup"><span data-stu-id="7beec-104">Get a package flight</span></span>
 

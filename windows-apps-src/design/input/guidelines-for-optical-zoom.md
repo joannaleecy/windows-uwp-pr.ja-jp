@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f1643638eaf7eb625defe1f25b44cae20faf0a5c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 2087debd758a24b50ac1885cb68d4b97ea2898fd
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5990361"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6040240"
 ---
 # <a name="optical-zoom-and-resizing"></a><span data-ttu-id="811ef-103">光学式ズームとサイズ変更</span><span class="sxs-lookup"><span data-stu-id="811ef-103">Optical zoom and resizing</span></span>
 
@@ -75,20 +75,20 @@ ms.locfileid: "5990361"
 
 
 **<span data-ttu-id="811ef-145">サンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-145">Samples</span></span>**
-* [<span data-ttu-id="811ef-146">基本的な入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-146">Basic input sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [<span data-ttu-id="811ef-147">待機時間が短い入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-147">Low latency input sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [<span data-ttu-id="811ef-148">ユーザー操作モードのサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-148">User interaction mode sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [<span data-ttu-id="811ef-149">フォーカスの視覚効果のサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-149">Focus visuals sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [<span data-ttu-id="811ef-146">基本的な入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-146">Basic input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [<span data-ttu-id="811ef-147">待機時間が短い入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-147">Low latency input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [<span data-ttu-id="811ef-148">ユーザー操作モードのサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-148">User interaction mode sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [<span data-ttu-id="811ef-149">フォーカスの視覚効果のサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-149">Focus visuals sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **<span data-ttu-id="811ef-150">サンプルのアーカイブ</span><span class="sxs-lookup"><span data-stu-id="811ef-150">Archive samples</span></span>**
-* [<span data-ttu-id="811ef-151">入力: XAML ユーザー入力イベントのサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-151">Input: XAML user input events sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [<span data-ttu-id="811ef-152">入力: デバイス機能のサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-152">Input: Device capabilities sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [<span data-ttu-id="811ef-153">入力: タッチのヒット テストのサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-153">Input: Touch hit testing sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [<span data-ttu-id="811ef-154">XAML のスクロール、パン、ズームのサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="811ef-154">XAML scrolling, panning, and zooming sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [<span data-ttu-id="811ef-155">入力: 簡略化されたインクのサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-155">Input: Simplified ink sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [<span data-ttu-id="811ef-156">入力: Windows 8 のジェスチャのサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="811ef-156">Input: Windows 8 gestures sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [<span data-ttu-id="811ef-157">入力: 操作とジェスチャ (C++) のサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="811ef-157">Input: Manipulations and gestures (C++) sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [<span data-ttu-id="811ef-158">DirectX タッチ入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-158">DirectX touch input sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [<span data-ttu-id="811ef-151">入力: XAML ユーザー入力イベントのサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-151">Input: XAML user input events sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [<span data-ttu-id="811ef-152">入力: デバイス機能のサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-152">Input: Device capabilities sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [<span data-ttu-id="811ef-153">入力: タッチのヒット テストのサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-153">Input: Touch hit testing sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [<span data-ttu-id="811ef-154">XAML のスクロール、パン、ズームのサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="811ef-154">XAML scrolling, panning, and zooming sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [<span data-ttu-id="811ef-155">入力: 簡略化されたインクのサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-155">Input: Simplified ink sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [<span data-ttu-id="811ef-156">入力: Windows 8 のジェスチャのサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="811ef-156">Input: Windows 8 gestures sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [<span data-ttu-id="811ef-157">入力: 操作とジェスチャ (C++) のサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="811ef-157">Input: Manipulations and gestures (C++) sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [<span data-ttu-id="811ef-158">DirectX タッチ入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="811ef-158">DirectX touch input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

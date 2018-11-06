@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ジオコーディング, 地図, 位置情報
 ms.localizationpriority: medium
 ms.openlocfilehash: bdd956dece4435ceb8e14121ec2b545095af3a11
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5976797"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6043415"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a><span data-ttu-id="e6277-104">ジオコーディングと逆ジオコーディングの実行</span><span class="sxs-lookup"><span data-stu-id="e6277-104">Perform geocoding and reverse geocoding</span></span>
 

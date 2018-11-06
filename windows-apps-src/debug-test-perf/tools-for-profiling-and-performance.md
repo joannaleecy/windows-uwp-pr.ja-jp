@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 21b51e50415e85f8cb1ddca6c358c8d27aa5f0fe
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5995183"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6042493"
 ---
 # <a name="tools-for-profiling-and-performance"></a><span data-ttu-id="042e1-104">プロファイリングとパフォーマンスに関するツール</span><span class="sxs-lookup"><span data-stu-id="042e1-104">Tools for profiling and performance</span></span>
 

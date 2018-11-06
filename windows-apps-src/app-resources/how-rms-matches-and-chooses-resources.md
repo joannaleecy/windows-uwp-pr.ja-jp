@@ -8,12 +8,12 @@ ms.date: 10/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: d31c9fd3a6f8f57f3e78d88d3ad754d4848a9cad
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: c7576f98045bce3bcfcee093aa8d61059354d45a
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996857"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6045279"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a><span data-ttu-id="e1feb-103">リソース管理システムでのリソースの照合と選択の仕組み</span><span class="sxs-lookup"><span data-stu-id="e1feb-103">How the Resource Management System matches and chooses resources</span></span>
 <span data-ttu-id="e1feb-104">リソースを要求すると、現在のリソース コンテキストにある程度一致するリソース候補がいくつか存在する場合があります。</span><span class="sxs-lookup"><span data-stu-id="e1feb-104">When a resource is requested, there may be several candidates that match the current resource context to some degree.</span></span> <span data-ttu-id="e1feb-105">リソース管理システムはすべての候補を分析して、返すのに最もよい候補を決定します。</span><span class="sxs-lookup"><span data-stu-id="e1feb-105">The Resource Management System will analyze all of the candidates and determine the best candidate to return.</span></span> <span data-ttu-id="e1feb-106">これはすべての修飾子を考慮して、すべての候補をランク付けすることで実行されます。</span><span class="sxs-lookup"><span data-stu-id="e1feb-106">This is done by taking all qualifiers into consideration to rank all of the candidates.</span></span>
@@ -41,7 +41,7 @@ ms.locfileid: "5996857"
 ## <a name="example-of-choosing-a-resource-candidate"></a><span data-ttu-id="e1feb-133">リソース候補を選択する例</span><span class="sxs-lookup"><span data-stu-id="e1feb-133">Example of choosing a resource candidate</span></span>
 <span data-ttu-id="e1feb-134">次のようなファイルがあるとします。</span><span class="sxs-lookup"><span data-stu-id="e1feb-134">Consider these files.</span></span>
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -53,7 +53,7 @@ de/images/logo.jpg
 
 <span data-ttu-id="e1feb-135">また、現在のコンテキストの設定は次のようになっているとします。</span><span class="sxs-lookup"><span data-stu-id="e1feb-135">And suppose that these are the settings in the current context.</span></span>
 
-```
+```console
 Application language: en-US; fr-FR;
 Scale: 400
 Contrast: Standard
@@ -61,7 +61,7 @@ Contrast: Standard
 
 <span data-ttu-id="e1feb-136">ハイ コントラストとドイツ語はこの設定に定義されているコンテキストに一致しないため、リソース管理システムによって 3 つのファイルが除外されます。</span><span class="sxs-lookup"><span data-stu-id="e1feb-136">The Resource Management System eliminates three of the files, because high contrast and the German language do not match the context defined by the settings.</span></span> <span data-ttu-id="e1feb-137">これによって、次の候補が残ります。</span><span class="sxs-lookup"><span data-stu-id="e1feb-137">That leaves these candidates.</span></span>
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -70,7 +70,7 @@ fr/images/logo.scale-100.jpg
 
 <span data-ttu-id="e1feb-138">これらの残りの候補について、リソース管理システムは、優先度が最も高いコンテキスト修飾子である言語を使用します。</span><span class="sxs-lookup"><span data-stu-id="e1feb-138">For those remaining candidates, the Resource Management System uses the highest-priority context qualifier, which is language.</span></span> <span data-ttu-id="e1feb-139">設定で英語がフランス語よりも先にリストされているため、英語のリソースはフランス語のリソースよりも一致率が高くなります。</span><span class="sxs-lookup"><span data-stu-id="e1feb-139">The English resources are a closer match than the French ones because English is listed before French in the settings.</span></span>
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -78,13 +78,13 @@ en/images/logo.scale-100.jpg
 
 <span data-ttu-id="e1feb-140">次に、リソース管理システムでは、次に優先順位の高いコンテキスト修飾子であるスケールを使用します。</span><span class="sxs-lookup"><span data-stu-id="e1feb-140">Next, the Resource Management System uses the next-highest priority context qualifier, scale.</span></span> <span data-ttu-id="e1feb-141">このため、次のリソースが返されます。</span><span class="sxs-lookup"><span data-stu-id="e1feb-141">So this is the resource returned.</span></span>
 
-```
+```console
 en/images/logo.scale-400.jpg
 ```
 
 <span data-ttu-id="e1feb-142">高度な [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) メソッドを使うと、コンテキスト設定に一致する順にすべての候補を取得できます。</span><span class="sxs-lookup"><span data-stu-id="e1feb-142">You can use the advanced [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) method to retrieve all of the candidates in the order that they match the context settings.</span></span> <span data-ttu-id="e1feb-143">前述の例では、**ResolveAll** は次の順序で候補を返します。</span><span class="sxs-lookup"><span data-stu-id="e1feb-143">For the example we just walked through, **ResolveAll** returns candidates in this order.</span></span>
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -94,7 +94,7 @@ fr/images/logo.scale-100.jpg
 ## <a name="example-of-producing-a-fallback-choice"></a><span data-ttu-id="e1feb-144">フォールバック選択肢を生成する例</span><span class="sxs-lookup"><span data-stu-id="e1feb-144">Example of producing a fallback choice</span></span>
 <span data-ttu-id="e1feb-145">次のようなファイルがあるとします。</span><span class="sxs-lookup"><span data-stu-id="e1feb-145">Consider these files.</span></span>
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -105,7 +105,7 @@ de/images/contrast-standard/logo.jpg
 
 <span data-ttu-id="e1feb-146">また、現在のコンテキストの設定は次のようになっているとします。</span><span class="sxs-lookup"><span data-stu-id="e1feb-146">And suppose that these are the settings in the current context.</span></span>
 
-```
+```console
 User language: de-DE;
 Scale: 400
 Contrast: High
@@ -113,7 +113,7 @@ Contrast: High
 
 <span data-ttu-id="e1feb-147">すべてのファイルがコンテキストに一致しないため、除外されます。</span><span class="sxs-lookup"><span data-stu-id="e1feb-147">All the files are eliminated because they do not match the context.</span></span> <span data-ttu-id="e1feb-148">そこで、既定のパスが使われます。PRI ファイルの作成時の既定値は次のようになっていました (「[MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="e1feb-148">So we enter a default pass, where the default (see [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md)) during creation of the PRI file was this.</span></span>
 
-```
+```console
 Language: fr-FR;
 Scale: 400
 Contrast: Standard
@@ -121,7 +121,7 @@ Contrast: Standard
 
 <span data-ttu-id="e1feb-149">これにより、現在のユーザーまたは既定値に一致するすべてのリソースが候補となります。</span><span class="sxs-lookup"><span data-stu-id="e1feb-149">This leaves all the resources that match either the current user or the default.</span></span>
 
-```
+```console
 fr/images/contrast-standard/logo.scale-400.jpg
 fr/images/contrast-standard/logo.scale-100.jpg
 de/images/contrast-standard/logo.jpg
@@ -129,7 +129,7 @@ de/images/contrast-standard/logo.jpg
 
 <span data-ttu-id="e1feb-150">リソース管理システムは、優先順位が最も高いコンテキスト修飾子である言語を使って、スコアが最も高い名前付きリソースを返します。</span><span class="sxs-lookup"><span data-stu-id="e1feb-150">The Resource Management System uses the highest-priority context qualifier, language, to return the named resource with the highest score.</span></span>
 
-```
+```console
 de/images/contrast-standard/logo.jpg
 ```
 

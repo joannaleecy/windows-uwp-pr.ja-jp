@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ データ
 ms.localizationpriority: medium
 ms.openlocfilehash: ecda61bff6fac407dbde175f584a09d6b871d989
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5985982"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6044301"
 ---
 # <a name="get-app-data"></a><span data-ttu-id="3d371-104">アプリ データの取得</span><span class="sxs-lookup"><span data-stu-id="3d371-104">Get app data</span></span>
 

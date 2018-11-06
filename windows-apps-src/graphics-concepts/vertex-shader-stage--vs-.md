@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d6b9c67220c282ef1677559d586013c14366967a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5997322"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6045771"
 ---
 # <a name="vertex-shader-vs-stage"></a><span data-ttu-id="3e3f2-105">頂点シェーダー (VS) ステージ</span><span class="sxs-lookup"><span data-stu-id="3e3f2-105">Vertex Shader (VS) stage</span></span>
 
